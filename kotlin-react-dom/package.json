@@ -1,0 +1,19 @@
+{
+  "name": "@hypnosphi/kotlin-react-dom",
+  "version": "$react_dom_version",
+  "description": "Kotlin wrapper for React DOM library",
+  "files": [
+    "build",
+    "src",
+    "package.json"
+  ],
+  "main": "build/classes/main/kotlin-react-dom.js",
+  "repository": "https://github.com/Hypnosphi/kotlin-wrappers",
+  "peerDependencies": {
+    "kotlin": "^$kotlin_version",
+    "@hypnosphi/kotlin-react": "^$react_version",
+    "react-dom": "^15.5.4"
+  },
+  "author": "Filipp Riabchun",
+  "license": "Apache-2-0"
+}

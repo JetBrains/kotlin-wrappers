@@ -1,0 +1,19 @@
+{
+  "name": "@hypnosphi/kotlin-react",
+  "version": "$react_version",
+  "description": "Kotlin wrapper for React library",
+  "files": [
+    "build",
+    "src",
+    "package.json"
+  ],
+  "main": "build/classes/main/kotlin-react.js",
+  "repository": "https://github.com/Hypnosphi/kotlin-wrappers",
+  "peerDependencies": {
+    "kotlin": "^$kotlin_version",
+    "@hypnosphi/kotlin-extensions": "^$kotlinext_version",
+    "react": "^15.5.0"
+  },
+  "author": "Filipp Riabchun",
+  "license": "Apache-2-0"
+}

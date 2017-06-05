@@ -1,0 +1,20 @@
+{
+  "name": "@hypnosphi/kotlin-extensions",
+  "version": "$kotlinext_version",
+  "description": "Kotlin wrappers for standard JS entities plus some helpers",
+  "files": [
+    "build",
+    "src",
+    "package.json"
+  ],
+  "main": "build/classes/main/kotlin-extensions.js",
+  "repository": "https://github.com/Hypnosphi/kotlin-wrappers",
+  "peerDependencies": {
+    "kotlin": "^$kotlin_version"
+  },
+  "dependencies": {
+    "core-js": "2.4.1"
+  },
+  "author": "Filipp Riabchun",
+  "license": "Apache-2-0"
+}

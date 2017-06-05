@@ -1,0 +1,72 @@
+group 'org.jetbrains'
+version '1.0-SNAPSHOT'
+
+buildscript {
+    apply from: 'versions.gradle'
+
+    repositories {
+        mavenCentral()
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+    }
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath "com.moowork.gradle:gradle-node-plugin:$node_plugin_version"
+    }
+}
+
+subprojects {
+    apply plugin: 'kotlin2js'
+    apply plugin: 'com.moowork.node'
+
+    repositories {
+        jcenter()
+    }
+
+    dependencies {
+        compile "org.jetbrains.kotlin:kotlin-stdlib-js:$kotlin_version"
+        compile "org.jetbrains.kotlinx:kotlinx-html-js:$kotlinx_html_version"
+    }
+
+    def projectName = name
+
+    compileKotlin2Js {
+        kotlinOptions {
+            outputFile = "$projectDir/build/classes/main/${projectName}.js"
+            moduleKind = "commonjs"
+            sourceMap = true
+        }
+    }
+
+    task processPkg(type: Copy) {
+        from '.'
+        into 'build/npm'
+        include 'package.json'
+        expand(
+            kotlin_version: "$kotlin_version",
+            kotlinext_version: "$kotlinext_version",
+            mocha_version: "$mocha_version",
+            react_version: "$react_version",
+            react_dom_version: "$react_dom_version",
+        )
+    }
+
+    task prepublish(type: Copy) {
+        from '.'
+        into 'build/npm'
+        exclude 'package.json'
+        exclude 'build/npm'
+    }
+
+    npm_publish {
+        args = ['--access', 'public']
+        execOverrides {
+            it.workingDir = 'build/npm'
+        }
+    }
+    npm_publish.dependsOn prepublish
+    npm_publish.dependsOn processPkg
+    prepublish.dependsOn build
+    compileKotlin2Js.dependsOn clean
+}
