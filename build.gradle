@@ -6,6 +6,7 @@ buildscript {
 
     repositories {
         mavenCentral()
+        jcenter()
         maven {
             url "https://plugins.gradle.org/m2/"
         }
@@ -13,6 +14,7 @@ buildscript {
     dependencies {
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         classpath "com.moowork.gradle:gradle-node-plugin:$node_plugin_version"
+        classpath "com.jfrog.bintray.gradle:gradle-bintray-plugin:$bintray_plugin_version"
     }
 }
 
@@ -22,6 +24,9 @@ subprojects {
 
     repositories {
         jcenter()
+        maven {
+            url  "http://dl.bintray.com/hypnosphi/kotlin-wrappers"
+        }
     }
 
     dependencies {
@@ -68,5 +73,38 @@ subprojects {
     npm_publish.dependsOn prepublish
     npm_publish.dependsOn processPkg
     prepublish.dependsOn build
-    compileKotlin2Js.dependsOn clean
+
+    ext.configurePublishing = { v ->
+        apply plugin: 'com.jfrog.bintray'
+        apply plugin: 'maven-publish'
+        apply plugin: 'java'
+
+        bintray {
+            user = System.getenv('BINTRAY_USER')
+            key = System.getenv('BINTRAY_KEY')
+            publish = true
+            pkg {
+                repo = 'kotlin-wrappers'
+                name = projectName
+                userOrg = 'hypnosphi'
+                licenses = ['Apache-2.0']
+                vcsUrl = 'https://github.com/Hypnosphi/kotlin-wrappers.git'
+                version {
+                    name = v
+                }
+            }
+            publications = ['Publication']
+        }
+
+        publishing {
+            publications {
+                Publication(MavenPublication) {
+                    from components.java
+                    groupId 'org.jetbrains'
+                    artifactId projectName
+                    version v
+                }
+            }
+        }
+    }
 }
