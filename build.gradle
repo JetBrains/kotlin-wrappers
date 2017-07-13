@@ -5,6 +5,7 @@ buildscript {
     apply from: 'versions.gradle'
 
     repositories {
+        maven { url "https://dl.bintray.com/kotlin/kotlin-dev" }
         mavenCentral()
         jcenter()
         maven {
@@ -23,6 +24,7 @@ subprojects {
     apply plugin: 'com.moowork.node'
 
     repositories {
+        maven { url "https://dl.bintray.com/kotlin/kotlin-dev" }
         jcenter()
         maven {
             url  "http://dl.bintray.com/hypnosphi/kotlin-wrappers"
@@ -74,11 +76,12 @@ subprojects {
     npm_publish.dependsOn processPkg
     prepublish.dependsOn build
 
-    ext.configurePublishing = { v ->
+    ext.configurePublishing = { baseVersion ->
         apply plugin: 'com.jfrog.bintray'
         apply plugin: 'maven-publish'
         apply plugin: 'java'
 
+        def v = "$baseVersion-kotlin-$kotlin_version"
         bintray {
             user = System.getenv('BINTRAY_USER')
             key = System.getenv('BINTRAY_KEY')

@@ -1,5 +1,5 @@
 configurePublishing(react_version)
 dependencies {
 //    compile project(':kotlin-extensions')
-    compile "org.jetbrains:kotlin-extensions:$kotlinext_version"
+    compile "org.jetbrains:kotlin-extensions:$kotlinext_version-kotlin-$kotlin_version"
 }
