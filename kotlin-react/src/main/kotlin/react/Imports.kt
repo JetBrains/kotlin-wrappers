@@ -40,7 +40,7 @@ external object React {
         open fun componentWillUpdate(nextProps: P, nextState: S): Unit
         open fun componentDidUpdate(prevProps: P, prevState: S): Unit
         open fun componentWillUnmount(): Unit
-        abstract fun render(): ReactElement?
+        abstract fun render(): dynamic
     }
 
     abstract class PureComponent<P: RProps, S: RState>(

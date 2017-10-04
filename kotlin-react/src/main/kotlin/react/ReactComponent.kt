@@ -37,9 +37,9 @@ fun <S: RState> React.Component<*, S>.setState(buildState: S.() -> Unit) =
 
 inline fun <P: RProps> rFunction(
     displayName: String,
-    crossinline render: RBuilder.(P) -> ReactElement?
+    crossinline render: RBuilder.(P) -> Unit
 ): RClass<P> {
-    val fn = { props: P -> buildElement { render(props) } } as RClass<P>
+    val fn = { props: P -> buildElements { render(props) } } as RClass<P>
     fn.displayName = displayName
     return fn
 }
@@ -60,7 +60,7 @@ abstract class RComponent<P: RProps, S: RState> : React.Component<P, S> {
         childList.addAll(React.Children.toArray(props.children))
     }
 
-    abstract fun RBuilder.render(): ReactElement?
+    abstract fun RBuilder.render()
 
-    override fun render(): ReactElement? = buildElement { render() }
+    override fun render() = buildElements { render() }
 }

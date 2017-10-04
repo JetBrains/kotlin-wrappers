@@ -7,16 +7,16 @@ external interface HOC<out P : RProps, in R : RProps> : JsFunction<Nothing?, RCl
 operator fun <P : RProps, R: RProps> HOC<P, R>.invoke(component: RClass<P>) =
     call(null, component)
 
-operator fun <P : RProps, R: RProps> HOC<P, R>.invoke(component: RBuilder.(P) -> ReactElement) =
+operator fun <P : RProps, R: RProps> HOC<P, R>.invoke(component: RBuilder.(P) -> Unit) =
     call(null, { props: P ->
-        buildElement {
+        buildElements {
             component(props)
         }
     })
 
-operator fun <P : RProps, R: RProps> HOC<P, R>.invoke(config: Any, component: RBuilder.(P) -> ReactElement) =
+operator fun <P : RProps, R: RProps> HOC<P, R>.invoke(config: Any, component: RBuilder.(P) -> Unit) =
     call(null, { props: P ->
-        buildElement {
+        buildElements {
             component(props)
         }
     }, config)

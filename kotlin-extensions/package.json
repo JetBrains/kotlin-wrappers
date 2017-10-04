@@ -1,5 +1,5 @@
 {
-  "name": "@hypnosphi/kotlin-extensions",
+  "name": "@jetbrains/kotlin-extensions",
   "version": "$kotlinext_version",
   "description": "Kotlin wrappers for standard JS entities plus some helpers",
   "files": [

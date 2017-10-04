@@ -70,10 +70,6 @@ open class RBuilderSingle : RBuilder() {
     var result: ReactElement? = null
 
     override fun child(element: ReactElement): ReactElement {
-        if (result != null) {
-            throw IllegalStateException("React only allows single element be returned from render() function")
-        }
-
         result = element
         return element
     }

@@ -1,5 +1,5 @@
 {
-  "name": "@hypnosphi/kotlin-mocha",
+  "name": "@jetbrains/kotlin-mocha",
   "version": "$mocha_version",
   "description": "Kotlin wrapper for Mocha test framework",
   "files": [
