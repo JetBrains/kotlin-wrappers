@@ -62,8 +62,8 @@ open class RBuilder {
 open class RBuilderMultiple : RBuilder() {
 }
 
-fun buildElements(handler: RBuilder.() -> Unit): List<Any> =
-    RBuilder().apply(handler).childList
+fun buildElements(handler: RBuilder.() -> Unit): Array<Any> =
+    RBuilder().apply(handler).childList.toTypedArray()
 
 open class RBuilderSingle : RBuilder() {
 }
