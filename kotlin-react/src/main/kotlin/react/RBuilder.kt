@@ -62,8 +62,10 @@ open class RBuilder {
 open class RBuilderMultiple : RBuilder() {
 }
 
-fun buildElements(handler: RBuilder.() -> Unit): Array<Any> =
-    RBuilder().apply(handler).childList.toTypedArray()
+fun buildElements(handler: RBuilder.() -> Unit): dynamic {
+    val nodes = RBuilder().apply(handler).childList
+    return if (nodes.size == 1) nodes.first() else nodes.toTypedArray()
+}
 
 open class RBuilderSingle : RBuilder() {
 }
