@@ -7,8 +7,17 @@ import kotlin.reflect.*
 annotation class ReactDsl
 
 @ReactDsl
-abstract class RBuilder {
-    abstract fun child(element: ReactElement): ReactElement
+open class RBuilder {
+    val childList = mutableListOf<Any>()
+
+    fun child(element: ReactElement): ReactElement {
+        childList.add(element)
+        return element
+    }
+
+    operator fun String.unaryPlus() {
+        childList.add(this)
+    }
 
     fun <P: RProps> child(type: Any, props: P, children: List<Any>) =
         child(React.createElement(type, props, *children.toTypedArray()))
@@ -51,34 +60,18 @@ abstract class RBuilder {
 }
 
 open class RBuilderMultiple : RBuilder() {
-    val childList = mutableListOf<Any>()
-
-    override fun child(element: ReactElement): ReactElement {
-        childList.add(element)
-        return element
-    }
-
-    operator fun String.unaryPlus() {
-        childList.add(this)
-    }
 }
 
-fun buildElements(handler: RBuilderMultiple.() -> Unit): List<Any> =
-    RBuilderMultiple().apply(handler).childList
+fun buildElements(handler: RBuilder.() -> Unit): List<Any> =
+    RBuilder().apply(handler).childList
 
 open class RBuilderSingle : RBuilder() {
-    var result: ReactElement? = null
-
-    override fun child(element: ReactElement): ReactElement {
-        result = element
-        return element
-    }
 }
 
 inline fun buildElement(handler: RBuilder.() -> Unit): ReactElement? =
-    RBuilderSingle().apply(handler).result
+    RBuilder().apply(handler).childList.first() as ReactElement?
 
-open class RElementBuilder<out P : RProps>(open val attrs: P) : RBuilderMultiple() {
+open class RElementBuilder<out P : RProps>(open val attrs: P) : RBuilder() {
     fun attrs(handler: P.() -> Unit) {
         attrs.handler()
     }

@@ -17,7 +17,7 @@ external interface DOMProps: WithClassName {
     var dangerouslySetInnerHTML: InnerHTML?
 }
 
-open class RDOMBuilder<T: Tag>(factory: (TagConsumer<Unit>) -> T) : RBuilderMultiple() {
+open class RDOMBuilder<T: Tag>(factory: (TagConsumer<Unit>) -> T) : RBuilder() {
     fun setProp(attribute: String, value: Any?) {
         val key = fixAttributeName(attribute)
         props.asDynamic()[key] = value
