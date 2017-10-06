@@ -43,6 +43,7 @@ subprojects {
             outputFile = "$projectDir/build/classes/main/${projectName}.js"
             moduleKind = "commonjs"
             sourceMap = true
+            sourceMapEmbedSources = "always"
         }
     }
 
