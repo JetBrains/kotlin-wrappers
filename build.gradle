@@ -27,7 +27,7 @@ subprojects {
         maven { url "https://dl.bintray.com/kotlin/kotlin-dev" }
         jcenter()
         maven {
-            url  "http://dl.bintray.com/hypnosphi/kotlin-wrappers"
+            url "http://dl.bintray.com/jetbrains/kotlin-wrappers"
         }
     }
 
@@ -89,9 +89,9 @@ subprojects {
             pkg {
                 repo = 'kotlin-wrappers'
                 name = projectName
-                userOrg = 'hypnosphi'
+                userOrg = 'jetbrains'
                 licenses = ['Apache-2.0']
-                vcsUrl = 'https://github.com/Hypnosphi/kotlin-wrappers.git'
+                vcsUrl = 'https://github.com/JetBrains/kotlin-wrappers.git'
                 version {
                     name = v
                 }
