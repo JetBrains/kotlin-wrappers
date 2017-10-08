@@ -5,7 +5,8 @@
   "files": [
     "build",
     "src",
-    "package.json"
+    "package.json",
+    "README.md"
   ],
   "main": "build/classes/main/kotlin-mocha.js",
   "repository": "https://github.com/JetBrains/kotlin-wrappers",
