@@ -1,8 +1,10 @@
 package react
 
-// Can't use @file:JsModule here because of https://youtrack.jetbrains.com/issue/KT-17871
+// TODO replace with @file:JsModule once https://youtrack.jetbrains.com/issue/KT-17871 is fixed
 @JsModule("react")
 external object React {
+    // See https://reactjs.org/docs/react-component.html
+
     fun <P : RProps> createElement(type: Any, props: P, vararg child: Any?): ReactElement
     fun <P : RProps> cloneElement(element: ReactElement, props: P, vararg child: Any?): ReactElement
     fun cloneElement(element: dynamic, props: dynamic, vararg child: Any?): ReactElement

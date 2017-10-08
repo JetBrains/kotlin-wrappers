@@ -55,7 +55,7 @@ abstract class RComponent<P : RProps, S : RState> : React.Component<P, S> {
     }
 
     open fun S.init() {}
-    // if you use this one, don't forget to pass props to constructor
+    // if you use this method, don't forget to pass props to the constructor first
     open fun S.init(props: P) {}
 
     fun RBuilder.children() {
