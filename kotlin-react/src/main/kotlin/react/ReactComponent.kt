@@ -3,6 +3,7 @@ package react
 import kotlinext.js.*
 
 external interface RProps
+
 val RProps.children: Any get() = asDynamic().children
 var RProps.key: String
     get() = error("key cannot be read from props")
@@ -32,10 +33,10 @@ external interface ReactUpdater {
     fun enqueueCallback(dest: Any, callback: Any, method: String)
 }
 
-fun <S: RState> React.Component<*, S>.setState(buildState: S.() -> Unit) =
+fun <S : RState> React.Component<*, S>.setState(buildState: S.() -> Unit) =
     setState({ assign(it, buildState) })
 
-inline fun <P: RProps> rFunction(
+inline fun <P : RProps> rFunction(
     displayName: String,
     crossinline render: RBuilder.(P) -> Unit
 ): RClass<P> {
@@ -44,11 +45,12 @@ inline fun <P: RProps> rFunction(
     return fn
 }
 
-abstract class RComponent<P: RProps, S: RState> : React.Component<P, S> {
-    constructor(): super() {
+abstract class RComponent<P : RProps, S : RState> : React.Component<P, S> {
+    constructor() : super() {
         state = jsObject { init() }
     }
-    constructor(props: P): super(props) {
+
+    constructor(props: P) : super(props) {
         state = jsObject { init(props) }
     }
 

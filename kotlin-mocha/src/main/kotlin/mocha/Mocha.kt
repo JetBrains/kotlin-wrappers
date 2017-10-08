@@ -7,10 +7,11 @@ external interface Suite {
 }
 
 external interface SuiteBuilder<out R>
+
 operator fun <R> SuiteBuilder<R>.invoke(description: String, callback: () -> Unit): R =
     asDynamic()(description, callback)
 
-external interface ContextDefinition: SuiteBuilder<Suite> {
+external interface ContextDefinition : SuiteBuilder<Suite> {
     val only: SuiteBuilder<Suite>
     val skip: SuiteBuilder<Unit>
     fun timeout(ms: Number)
@@ -32,14 +33,16 @@ external interface Test : Runnable {
 }
 
 external interface MochaDone
+
 operator fun MochaDone.invoke(error: Throwable) = asDynamic()(error)
 operator fun MochaDone.invoke() = asDynamic()()
 
-external interface TestBuilder<out R>: SuiteBuilder<R>
+external interface TestBuilder<out R> : SuiteBuilder<R>
+
 fun <R> TestBuilder<R>.async(description: String, callback: (MochaDone) -> Unit): R =
     asDynamic()(description, callback)
 
-external interface TestDefinition: TestBuilder<Test> {
+external interface TestDefinition : TestBuilder<Test> {
     val only: TestBuilder<Test>
     val skip: TestBuilder<Unit>
     fun timeout(ms: Number)

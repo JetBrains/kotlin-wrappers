@@ -19,10 +19,10 @@ open class RBuilder {
         childList.add(this)
     }
 
-    fun <P: RProps> child(type: Any, props: P, children: List<Any>) =
+    fun <P : RProps> child(type: Any, props: P, children: List<Any>) =
         child(React.createElement(type, props, *children.toTypedArray()))
 
-    fun <P : RProps> child(type: Any, props : P, handler: RHandler<P>): ReactElement {
+    fun <P : RProps> child(type: Any, props: P, handler: RHandler<P>): ReactElement {
         val children = with(RElementBuilder(props)) {
             handler()
             childList
@@ -38,15 +38,15 @@ open class RBuilder {
         children: List<Any> = emptyList()
     ) = child(this, clone(props), children)
 
-    fun <P : RProps, C: React.Component<P, *>> child(klazz: KClass<C>, handler: RHandler<P>): ReactElement {
+    fun <P : RProps, C : React.Component<P, *>> child(klazz: KClass<C>, handler: RHandler<P>): ReactElement {
         val rClass = klazz.js as RClass<P>
         return rClass(handler)
     }
 
-    inline fun <P: RProps, reified C: React.Component<P, *>> child(noinline handler: RHandler<P>) =
+    inline fun <P : RProps, reified C : React.Component<P, *>> child(noinline handler: RHandler<P>) =
         child(C::class, handler)
 
-    fun <P : RProps, C: React.Component<P, *>> node(
+    fun <P : RProps, C : React.Component<P, *>> node(
         klazz: KClass<C>,
         props: P,
         children: List<Any> = emptyList()
@@ -55,7 +55,7 @@ open class RBuilder {
         return rClass.node(props, children)
     }
 
-    inline fun <P: RProps, reified C: React.Component<P, *>> node(props: P, children: List<Any> = emptyList()) =
+    inline fun <P : RProps, reified C : React.Component<P, *>> node(props: P, children: List<Any> = emptyList()) =
         node(C::class, props, children)
 }
 

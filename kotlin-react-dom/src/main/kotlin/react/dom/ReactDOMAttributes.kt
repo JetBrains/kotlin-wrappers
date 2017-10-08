@@ -199,7 +199,7 @@ private val events = listOf(
     "wmode",
     "wrap")
 
-private val attrsMap = events.map {it.toLowerCase() to it}.toMap().toMutableMap().apply {
+private val attrsMap = events.map { it.toLowerCase() to it }.toMap().toMutableMap().apply {
     put("class", "className")
     put("ondblclick", "onDoubleClick")
 }

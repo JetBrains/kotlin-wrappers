@@ -16,7 +16,7 @@ fun Child.asElementOrNull(): ReactElement? = when {
     else -> null
 }
 
-external interface ReactElement: Child {
+external interface ReactElement : Child {
     val props: RProps
 }
 
@@ -26,7 +26,7 @@ fun React.Children.forEachElement(children: Any?, handler: (ReactElement) -> Uni
         element?.let(handler)
     }
 
-inline fun <P: RProps> React.cloneElement(
+inline fun <P : RProps> React.cloneElement(
     element: ReactElement,
     vararg child: Any?,
     props: P.() -> Unit

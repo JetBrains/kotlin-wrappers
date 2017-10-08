@@ -3,8 +3,8 @@ package react
 // Can't use @file:JsModule here because of https://youtrack.jetbrains.com/issue/KT-17871
 @JsModule("react")
 external object React {
-    fun <P: RProps> createElement(type: Any, props: P, vararg child: Any?): ReactElement
-    fun <P: RProps> cloneElement(element: ReactElement, props: P, vararg child: Any?): ReactElement
+    fun <P : RProps> createElement(type: Any, props: P, vararg child: Any?): ReactElement
+    fun <P : RProps> cloneElement(element: ReactElement, props: P, vararg child: Any?): ReactElement
     fun cloneElement(element: dynamic, props: dynamic, vararg child: Any?): ReactElement
     fun isValidElement(element: Any): Boolean
 
@@ -18,7 +18,7 @@ external object React {
         fun toArray(children: Any?): Array<out Child>
     }
 
-    abstract class Component<P: RProps, S: RState> (
+    abstract class Component<P : RProps, S : RState>(
         props: RProps = definedExternally,
         context: RContext = definedExternally,
         updater: ReactUpdater = definedExternally
@@ -43,7 +43,7 @@ external object React {
         abstract fun render(): dynamic
     }
 
-    abstract class PureComponent<P: RProps, S: RState>(
+    abstract class PureComponent<P : RProps, S : RState>(
         props: RProps = definedExternally,
         context: RContext = definedExternally,
         updater: ReactUpdater = definedExternally
