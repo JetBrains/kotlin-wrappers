@@ -8,3 +8,6 @@ fun render(container: Element?, handler: RBuilder.() -> Unit) =
 
 fun hydrate(container: Element?, handler: RBuilder.() -> Unit) =
     hydrate(buildElements(handler), container)
+
+fun createPortal(container: Element?, handler: RBuilder.() -> Unit) =
+    createPortal(buildElements(handler), container)
