@@ -27,7 +27,7 @@ subprojects {
         maven { url "https://dl.bintray.com/kotlin/kotlin-dev" }
         jcenter()
         maven {
-            url "http://dl.bintray.com/jetbrains/kotlin-wrappers"
+            url "http://dl.bintray.com/kotlin/kotlin-js-wrappers"
         }
     }
 
@@ -88,9 +88,9 @@ subprojects {
             key = System.getenv('BINTRAY_KEY')
             publish = true
             pkg {
-                repo = 'kotlin-wrappers'
+                repo = 'kotlin-js-wrappers'
                 name = projectName
-                userOrg = 'jetbrains'
+                userOrg = 'kotlin'
                 licenses = ['Apache-2.0']
                 vcsUrl = 'https://github.com/JetBrains/kotlin-wrappers.git'
                 version {
