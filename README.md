@@ -6,3 +6,5 @@ This repository hosts a number of [Kotlin](https://kotlinlang.org) wrappers for 
 To learn more please refer to the READMEs of individual modules: 
 [kotlin-extensions](kotlin-extensions/README.md), [kotlin-mocha](kotlin-mocha/README.md), [kotlin-react](kotlin-react/README.md), 
 [kotlin-react-dom](kotlin-react-dom/README.md).
+
+Artifacts installable using Maven and Gradle are published to [Bintray](https://bintray.com/kotlin/kotlin-js-wrappers).
