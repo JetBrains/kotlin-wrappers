@@ -1,6 +1,6 @@
 ## kotlin-react-dom
 
-Kotlin wrapper for React DOM library
+Kotlin wrapper for React DOM library. Major version number of this wrapper matches that of React DOM itself.
 
 ### Installation
 

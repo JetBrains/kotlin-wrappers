@@ -1,6 +1,6 @@
 ## kotlin-mocha
 
-Kotlin wrapper for Mocha test framework
+Kotlin wrapper for Mocha test framework. Major version number of this wrapper matches that of Mocha itself.
 
 ### Installation
 

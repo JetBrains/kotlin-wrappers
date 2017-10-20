@@ -1,6 +1,6 @@
 ## kotlin-react
 
-Kotlin wrapper for React library
+Kotlin wrapper for React library. Major version number of this wrapper matches that of React itself.
 
 ### Installation
 
