@@ -8,7 +8,7 @@ Kotlin wrapper for React library. Major version number of this wrapper matches t
 
 See the [Bintray page](https://bintray.com/kotlin/kotlin-js-wrappers/kotlin-react) for Maven and Gradle installation instructions.
 
-### Creating a simple React components with Kotlin
+### Creating a simple React component with Kotlin
 
 As you might know, the simplest way to define a React component in JavaScript is to write a function. Like this:
 
@@ -20,7 +20,7 @@ export function Welcome(props) {
 }
 ```
 
-Here's how we can write this component in Kotlin: 
+Here's what the equivalent Kotlin code looks like: 
 
 ```kotlin
 package hello
@@ -35,11 +35,11 @@ fun RBuilder.hello(name: String") {
 }
 ```
 
-`RBuilder` is a class responsible for working with the DSL that provides JSX-like syntax.
+`RBuilder` lets you construct your component's markup using builders, similarly to JSX.
   
-While in JavaScript the type annotations for props using PropTypes are optional, in Kotlin you have to add a type annotation for `name`.
+When writing React code in JavaScript the type annotations for props (via `PropTypes`) are optional, but in Kotlin they are not.
 
-Here's an example of a component defined using a class:
+Here's an example of a component defined using a class with a `name` property of type `String`:
 
 ```kotlin
 package welcome
