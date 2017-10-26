@@ -35,7 +35,7 @@ fun RBuilder.hello(name: String") {
 }
 ```
 
-`RBuilder` lets you construct your component's markup using builders, similarly to JSX.
+`RBuilder` lets you construct your component's markup using [type-safe builders](https://kotlinlang.org/docs/reference/type-safe-builders.html), similarly to JSX.
   
 When writing React code in JavaScript the type annotations for props (via `PropTypes`) are optional, but in Kotlin they are not.
 
