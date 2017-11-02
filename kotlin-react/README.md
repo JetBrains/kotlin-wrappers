@@ -28,7 +28,7 @@ package hello
 import react.*
 import react.dom.*
 
-fun RBuilder.hello(name: String") {
+fun RBuilder.hello(name: String) {
     div {
         +"Hello, $name"
     }
