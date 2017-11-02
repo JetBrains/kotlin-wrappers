@@ -65,3 +65,13 @@ fun RBuilder.welcome(name: String = "John") = child(Welcome::class) {
     attrs.name = name
 }
 ```
+
+And here's how we can use this component in another component:
+
+```kotlin
+import welcome.*
+
+fun RBuilder.app {
+    welcome("Jane")
+}
+```
