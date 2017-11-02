@@ -71,12 +71,7 @@ And here's how we can use this component in another component:
 ```kotlin
 import welcome.*
 
-class App : RComponent<RProps, RState>() {
-    override fun RBuilder.render() {
-        div("App-welcome") {
-            key="welcome"
-            welcome("Jane")
-        }
-    }
+fun RBuilder.app {
+    welcome("Jane")
 }
 ```
