@@ -1,5 +1,6 @@
 package react.dom
 
+import kotlinext.js.js
 import kotlinx.html.*
 import kotlin.reflect.*
 
@@ -223,3 +224,12 @@ var INPUT.defaultValue by StringAttr
 var TEXTAREA.defaultValue by StringAttr
 
 var TEXTAREA.value by StringAttr
+
+var CommonAttributeGroupFacade.jsStyle: dynamic
+    get() = if (style != "") style else js {}
+    set(value) {
+        style = value
+    }
+
+inline fun CommonAttributeGroupFacade.jsStyle(handler: dynamic.() -> Unit) =
+    handler(jsStyle)

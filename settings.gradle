@@ -5,3 +5,4 @@ include 'kotlin-mocha'
 include 'kotlin-react'
 include 'kotlin-react-dom'
 
+include 'examples'
