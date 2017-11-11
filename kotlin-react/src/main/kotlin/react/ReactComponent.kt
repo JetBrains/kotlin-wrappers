@@ -2,6 +2,7 @@ package react
 
 import kotlinext.js.*
 
+// Props
 external interface RProps
 
 val RProps.children: Any get() = asDynamic().children
@@ -16,12 +17,18 @@ var RProps.ref: (dynamic) -> Unit
         asDynamic().ref = value
     }
 
-
+// State
 external interface RState
 
 class BoxedState<T>(var state: T) : RState
 
+// Context
 external interface RContext
+
+// Error info
+external interface RErrorInfo
+
+val RErrorInfo.componentStack: Any get() = asDynamic().componentStack
 
 external interface RClass<in P : RProps> {
     var displayName: String?

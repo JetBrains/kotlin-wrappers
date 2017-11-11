@@ -35,13 +35,20 @@ external object React {
         fun forceUpdate(callback: () -> Unit = definedExternally)
 
         open fun getChildContext(): RContext?
+
         open fun componentWillMount(): Unit
         open fun componentDidMount(): Unit
+
         open fun componentWillReceiveProps(nextProps: P): Unit
+
         open fun shouldComponentUpdate(nextProps: P, nextState: S): Boolean
         open fun componentWillUpdate(nextProps: P, nextState: S): Unit
         open fun componentDidUpdate(prevProps: P, prevState: S): Unit
+
         open fun componentWillUnmount(): Unit
+
+        open fun componentDidCatch(error: String, info: RErrorInfo): Unit
+
         abstract fun render(): dynamic
     }
 
