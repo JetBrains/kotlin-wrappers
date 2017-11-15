@@ -20,7 +20,7 @@ export function Welcome(props) {
 }
 ```
 
-Here's what the equivalent Kotlin code looks like: 
+Here's what the roughly equivalent Kotlin code looks like: 
 
 ```kotlin
 package hello
@@ -29,7 +29,7 @@ import react.*
 import react.dom.*
 
 fun RBuilder.hello(name: String) {
-    div {
+    h1 {
         +"Hello, $name"
     }
 }
