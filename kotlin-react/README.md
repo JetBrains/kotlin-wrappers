@@ -52,11 +52,9 @@ interface WelcomeProps: RProps {
 }
 
 class Welcome(props: WelcomeProps): RComponent<WelcomeProps, RState>() {
-    val name = props.name
-    override fun RBuilder.render() {
+    override fun RBuilder.render() {
         div {
-            key = "welcome"
-            +"Hello, $name"
+            +"Hello, ${props.name}"
         }
     }
 }
@@ -74,4 +72,4 @@ import welcome.*
 fun RBuilder.app {
     welcome("Jane")
 }
-```
+`
