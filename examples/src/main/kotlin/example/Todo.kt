@@ -28,6 +28,7 @@ class Todo(props: TodoProps) : RComponent<TodoProps, TodoState>(props) {
 
 
                 attrs {
+                    value = state.text
                     placeholder = "Input todo text here..."
                     onChangeFunction = {
                         val target = it.target as HTMLInputElement
@@ -44,6 +45,7 @@ class Todo(props: TodoProps) : RComponent<TodoProps, TodoState>(props) {
                         if(state.text.isNotEmpty()){
                             setState{
                                 items.add(text)
+                                text = "" //clear the input text after add into Todo list
                             }
                         }
                     }
