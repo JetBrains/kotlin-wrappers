@@ -5,19 +5,18 @@ import react.*
 import react.dom.*
 
 interface TodoProps : RProps {
-    var items: MutableList<String?>
+    var initialItems: List<String?>   //revise to immutable per Hypnosphi  proposal.
 }
 
 interface TodoState : RState {
-    var items: MutableList<String?>
+    var items: List<String?>
     var text: String
 }
 
 class Todo(props: TodoProps) : RComponent<TodoProps, TodoState>(props) {
     override fun TodoState.init(props: TodoProps) {
-        items = props.items
+        items = props.initialItems
         text = ""
-
     }
 
     override fun RBuilder.render() {
@@ -38,14 +37,15 @@ class Todo(props: TodoProps) : RComponent<TodoProps, TodoState>(props) {
                     }
                 }
             }
-            button{
+
+            button {
                 +"Add"
-                attrs{
+                attrs {
                     onClickFunction = {
-                        if(state.text.isNotEmpty()){
-                            setState{
-                                items.add(text)
-                                text = "" //clear the input text after add into Todo list
+                        if (state.text.isNotEmpty()) {
+                            setState {
+                                items += text
+                                text = ""  //clear the input text after add to list
                             }
                         }
                     }
@@ -54,7 +54,6 @@ class Todo(props: TodoProps) : RComponent<TodoProps, TodoState>(props) {
 
 
 //            +state.text
-
 
 
             h3 {
@@ -67,11 +66,10 @@ class Todo(props: TodoProps) : RComponent<TodoProps, TodoState>(props) {
                                 +"X"
                                 attrs {
                                     onClickFunction = {
-//                                        console.log(index, item)
+                                        //                                        console.log(index, item)
                                         setState {
-                                            items.removeAt(index)
+                                            items = items.filterIndexed { i, _ -> i != index }
                                         }
-//                                        console.log(state.items)
                                     }
                                 }
                             }
@@ -84,5 +82,6 @@ class Todo(props: TodoProps) : RComponent<TodoProps, TodoState>(props) {
 
 }
 
-fun RBuilder.todo(items: MutableList<String?> = mutableListOf("Hello", "World")) = child(Todo::class) {
-    attrs.items = items
+fun RBuilder.todo(items: List<String?> = listOf("Hello", "World")) = child(Todo::class) {
+    attrs.initialItems = items
+}
