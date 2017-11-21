@@ -5,7 +5,7 @@ import react.*
 import react.dom.*
 
 interface TodoProps : RProps {
-    var initialItems: List<String?>   //revise to immutable per Hypnosphi  proposal.
+    var initialItems: List<String?>
 }
 
 interface TodoState : RState {
@@ -21,14 +21,12 @@ class Todo(props: TodoProps) : RComponent<TodoProps, TodoState>(props) {
 
     override fun RBuilder.render() {
         div {
-
             input(type = InputType.text, name = "itemText") {
                 key = "itemText"
 
-
                 attrs {
                     value = state.text
-                    placeholder = "Input todo text here..."
+                    placeholder = "Add a to-do item"
                     onChangeFunction = {
                         val target = it.target as HTMLInputElement
                         setState {
@@ -45,16 +43,12 @@ class Todo(props: TodoProps) : RComponent<TodoProps, TodoState>(props) {
                         if (state.text.isNotEmpty()) {
                             setState {
                                 items += text
-                                text = ""  //clear the input text after add to list
+                                text = ""
                             }
                         }
                     }
                 }
             }
-
-
-//            +state.text
-
 
             h3 {
                 ul {
@@ -63,10 +57,9 @@ class Todo(props: TodoProps) : RComponent<TodoProps, TodoState>(props) {
                             key = index.toString()
                             +item.toString()
                             button {
-                                +"X"
+                                +"×"
                                 attrs {
                                     onClickFunction = {
-                                        //                                        console.log(index, item)
                                         setState {
                                             items = items.filterIndexed { i, _ -> i != index }
                                         }
@@ -79,7 +72,6 @@ class Todo(props: TodoProps) : RComponent<TodoProps, TodoState>(props) {
             }
         }
     }
-
 }
 
 fun RBuilder.todo(items: List<String?> = listOf("Hello", "World")) = child(Todo::class) {

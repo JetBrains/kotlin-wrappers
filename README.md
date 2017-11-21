@@ -14,6 +14,10 @@ All wrappers are available on npm: `npm install @jetbrains/<wrapper name>`
 
 Artifacts installable using Maven and Gradle are published to [Bintray](https://bintray.com/kotlin/kotlin-js-wrappers).
 
+## Examples
+
+[To-do list example](examples/src/main/kotlin/example/Todo.kt)
+
 ## Real-world examples
 
 [KotlinConf App](https://github.com/JetBrains/kotlinconf-app/) — an application developed at JetBrains to showcase multiplatform projects in Kotlin. The web-based part of the app is written using React and Kotlin/JS. 
