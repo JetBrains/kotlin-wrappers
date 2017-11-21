@@ -35,6 +35,15 @@ subprojects {
         compile "org.jetbrains.kotlinx:kotlinx-html-js:$kotlinx_html_version"
     }
 
+    task sourcesJar(type: Jar) {
+        classifier = 'sources'
+        from sourceSets.main.allSource
+    }
+
+    artifacts {
+        archives sourcesJar
+    }
+
     def projectName = name
 
     compileKotlin2Js {
@@ -107,6 +116,8 @@ subprojects {
                     groupId 'org.jetbrains'
                     artifactId projectName
                     version v
+
+                    artifact sourcesJar
                 }
             }
         }
