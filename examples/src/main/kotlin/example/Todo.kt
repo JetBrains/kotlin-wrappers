@@ -1,8 +1,14 @@
+package example
+
 import kotlinx.html.*
 import kotlinx.html.js.*
-import org.w3c.dom.HTMLInputElement
+import org.w3c.dom.*
 import react.*
 import react.dom.*
+
+/**
+ * A to-do list implementation by Scott_Huang@qq.com
+ */
 
 interface TodoProps : RProps {
     var initialItems: List<String?>

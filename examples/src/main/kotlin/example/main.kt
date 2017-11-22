@@ -1,3 +1,5 @@
+package example
+
 import kotlinext.js.js
 import react.RBuilder
 import react.dom.div
