@@ -16,7 +16,8 @@ Artifacts installable using Maven and Gradle are published to [Bintray](https://
 
 ## Examples
 
-[To-do list example](examples/src/main/kotlin/example/Todo.kt)
+[To-do list example](examples/src/main/kotlin/example/Todo.kt) 
+
 [Tic-Tac-Toe example](examples/src/main/kotlin/example/TicTacToe.kt)
 
 ## Real-world examples
