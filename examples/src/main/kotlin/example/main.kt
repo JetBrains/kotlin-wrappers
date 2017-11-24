@@ -1,12 +1,12 @@
 package example
 
-import kotlinext.js.js
-import react.RBuilder
-import react.dom.div
-import react.dom.jsStyle
+import kotlinext.js.*
+import react.*
+import react.dom.*
 
 fun RBuilder.app() {
     div {
+        // Three different ways to define style properties are listed below
         attrs.jsStyle = js {
             width = "100px"
         }
