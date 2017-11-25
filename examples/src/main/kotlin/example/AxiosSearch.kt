@@ -4,7 +4,6 @@ package example
 
 /**
  * An example to show how to leverage axios lib to fetch remote data by Scott_Huang@qq.com (Zhiliang.Huang@gmail.com)
- * (Btw, Vue.js formally leverage axios for ajax related works, so it should be good if React.js also use it)
  *
  * Date: Nov 25, 2017
  */
@@ -26,11 +25,9 @@ interface AxiosState : RState {
     var zipResult: ZipResult
 }
 
-// You need input correct axios.min.js link address in public\static\index.html
-// I personally download axios.min.js proactive in put it into public\static\js folder
-// <script src="%PUBLIC_URL%/static/js/axios.min.js"></script>
-// or you can put   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>     into index.html to avoid proactive download to local
-// And we provide a simple fun to wrap axios.js, it is not type safe, suggest JB team to provide a formal wrapping for this useful lib
+//Per Hypnosphi advice, change to common js way.
+//you should need "npm install axios --save" in advance in your project folder
+@JsModule("axios")
 external fun axios(config: dynamic): dynamic
 
 
