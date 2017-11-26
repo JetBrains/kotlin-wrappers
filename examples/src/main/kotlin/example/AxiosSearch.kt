@@ -9,7 +9,6 @@ package example
  */
 
 import kotlinext.js.js
-
 import kotlinx.html.*
 import kotlinx.html.js.*
 import org.w3c.dom.HTMLInputElement
@@ -28,13 +27,46 @@ interface AxiosState : RState {
 //Per Hypnosphi advice, change to common js way.
 //you should need "npm install axios --save" in advance in your project folder
 @JsModule("axios")
-external fun axios(config: dynamic): dynamic
+external fun axios(config: AxiosConfigSettings): dynamic
+
+//add simple type for this example
+external interface AxiosConfigSettings {
+    var url: String
+    var timeout: Number
+}
 
 
 class AxiosSearch(props: AxiosProps) : RComponent<AxiosProps, AxiosState>(props) {
     override fun AxiosState.init(props: AxiosProps) {
-        zipCode = "" 
+        zipCode = ""
         zipResult = ZipResult("", "", "")
+    }
+
+    private fun remoteSearchZip(zipCode: String) {
+        val config: AxiosConfigSettings = js {
+            url = "http://ziptasticapi.com/" + zipCode
+            timeout = 3000
+        }
+        axios(config).then { response ->
+            setState {
+                zipResult = ZipResult(response.data.country, response.data.state, response.data.city)
+            }
+        }.catch { error: dynamic ->
+            setState {
+                zipResult = ZipResult("", "", "Find error, please open your console to learn detail.")
+            }
+            console.log(error)
+        }
+    }
+
+    private fun handleChange(targetValue: String) {
+        setState {
+            zipCode = targetValue
+            zipResult = ZipResult("", "", "")
+        }
+        if (targetValue.length == 5) {
+            remoteSearchZip(targetValue)
+        }
     }
 
     override fun RBuilder.render() {
@@ -49,25 +81,7 @@ class AxiosSearch(props: AxiosProps) : RComponent<AxiosProps, AxiosState>(props)
                     title = infoText
                     onChangeFunction = {
                         val target = it.target as HTMLInputElement
-                        setState {
-                            zipCode = target.value
-                            zipResult = ZipResult("", "", "")
-                        }
-                        if (target.value.length == 5) {
-                            axios(js {
-                                url = "http://ziptasticapi.com/" + target.value
-                                timeout = 3000
-                            }).then({ response ->
-                                setState {
-                                    zipResult = ZipResult(response.data.country, response.data.state, response.data.city)
-                                }
-                            }).catch(p0 = { error ->
-                                setState {
-                                    zipResult = ZipResult("", "", "Find error, please open your console to learn detail.")
-                                }
-                                console.log(error)
-                            })
-                        }
+                        handleChange(target.value)
                     }
                 }
             }
