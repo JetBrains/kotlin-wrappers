@@ -19,10 +19,13 @@ fun RBuilder.app(props: RProps) {
 
         attrs.jsStyle.backgroundColor = "red"
 
-        // custom attributes
+        // Setting an attribute
+        attrs.attributes["title"] = "My title"
+
+        // Setting a custom attribute
         attrs["my-attribute"] = "my-value"
 
-        // appending children from props
+        // Appending children from props
         props.children()
     }
 }
