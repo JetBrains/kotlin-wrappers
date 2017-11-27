@@ -4,8 +4,8 @@ ext {
     node_plugin_version = '1.2.0'
     bintray_plugin_version = '1.7.3'
 
-    kotlinext_version = '1.0.0-pre.9'
-    mocha_version = '3.0.0-pre.9'
-    react_version = '16.0.0-pre.9'
-    react_dom_version = '16.0.0-pre.9'
+    kotlinext_version = '1.0.0-pre.10'
+    mocha_version = '3.0.0-pre.10'
+    react_version = '16.0.0-pre.10'
+    react_dom_version = '16.0.0-pre.10'
 }

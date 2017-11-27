@@ -57,6 +57,10 @@ open class RBuilder {
 
     inline fun <P : RProps, reified C : React.Component<P, *>> node(props: P, children: List<Any> = emptyList()) =
         node(C::class, props, children)
+
+    fun RProps.children() {
+        childList.addAll(React.Children.toArray(children))
+    }
 }
 
 open class RBuilderMultiple : RBuilder() {

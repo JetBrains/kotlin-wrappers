@@ -66,7 +66,7 @@ abstract class RComponent<P : RProps, S : RState> : React.Component<P, S> {
     open fun S.init(props: P) {}
 
     fun RBuilder.children() {
-        childList.addAll(React.Children.toArray(props.children))
+        props.children()
     }
 
     abstract fun RBuilder.render()
