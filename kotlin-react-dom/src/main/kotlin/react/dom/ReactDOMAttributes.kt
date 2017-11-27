@@ -233,3 +233,7 @@ var CommonAttributeGroupFacade.jsStyle: dynamic
 
 inline fun CommonAttributeGroupFacade.jsStyle(handler: dynamic.() -> Unit) =
     handler(jsStyle)
+
+operator fun Tag.set(name: String, value: String) {
+    attributes[name] = value
+}

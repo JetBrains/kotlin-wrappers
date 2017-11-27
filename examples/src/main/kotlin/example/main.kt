@@ -4,7 +4,7 @@ import kotlinext.js.*
 import react.*
 import react.dom.*
 
-fun RBuilder.app() {
+fun RBuilder.app(props: RProps) {
     div {
         // Three different ways to define style properties are listed below
         attrs.jsStyle = js {
@@ -18,5 +18,8 @@ fun RBuilder.app() {
         }
 
         attrs.jsStyle.backgroundColor = "red"
+
+        // custom attributes
+        attrs["my-attribute"] = "my-value"
     }
 }
