@@ -225,13 +225,13 @@ var TEXTAREA.defaultValue by StringAttr
 
 var TEXTAREA.value by StringAttr
 
-var CommonAttributeGroupFacade.jsStyle: dynamic
-    get() = if (style != "") style else js {}
+var Tag.jsStyle: dynamic
+    get() = attributes["style"] ?: js {}
     set(value) {
-        style = value
+        attributes["style"] = value
     }
 
-inline fun CommonAttributeGroupFacade.jsStyle(handler: dynamic.() -> Unit) =
+inline fun Tag.jsStyle(handler: dynamic.() -> Unit) =
     handler(jsStyle)
 
 operator fun Tag.set(name: String, value: String) {
