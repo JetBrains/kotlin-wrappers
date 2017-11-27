@@ -4,10 +4,11 @@ package example
 
 /**
  * An example to show how to leverage axios lib to fetch remote data by Scott_Huang@qq.com (Zhiliang.Huang@gmail.com)
- *
+ * Review by @Hypnosphi
  * Date: Nov 25, 2017
  */
 
+import kotlinext.js.js
 import kotlinext.js.jsObject
 import kotlinx.html.*
 import kotlinx.html.js.*
@@ -22,12 +23,14 @@ interface AxiosProps : RProps {
 interface AxiosState : RState {
     var zipCode: String
     var zipResult: ZipResult
+    var errorMessage: String
 }
 
 //Per Hypnosphi advice, change to common js way.
 //you should need "npm install axios --save" in advance in your project folder
 @JsModule("axios")
 external fun axios(config: AxiosConfigSettings): dynamic
+//external fun <T> axios(config: AxiosConfigSettings): Promise<AxiosResponse<T>>
 
 //add enhanced typing for axios
 external interface AxiosConfigSettings {
@@ -49,7 +52,7 @@ external interface AxiosConfigSettings {
     var onUploadProgress: dynamic
     var onDowndloadProgress: dynamic
     var maxContentLength: Number
-    var validateStatus: (Number)->Boolean
+    var validateStatus: (Number) -> Boolean
     var maxRedirects: Number
     var httpAgent: dynamic
     var httpsAgent: dynamic
@@ -80,6 +83,7 @@ class AxiosSearch(props: AxiosProps) : RComponent<AxiosProps, AxiosState>(props)
     override fun AxiosState.init(props: AxiosProps) {
         zipCode = ""
         zipResult = ZipResult("", "", "")
+        errorMessage = ""
     }
 
     private fun remoteSearchZip(zipCode: String) {
@@ -90,6 +94,7 @@ class AxiosSearch(props: AxiosProps) : RComponent<AxiosProps, AxiosState>(props)
         axios(config).then { response: AxiosResponse<Data> ->
             setState {
                 zipResult = ZipResult(response.data.country, response.data.state, response.data.city)
+                errorMessage = ""
             }
             console.log(response.status)
             console.log(response.statusText)
@@ -98,7 +103,8 @@ class AxiosSearch(props: AxiosProps) : RComponent<AxiosProps, AxiosState>(props)
             console.log(response.data)
         }.catch { error: AxiosError ->
             setState {
-                zipResult = ZipResult("Find error:", error.message, ". Please open your console to learn detail")
+                zipResult = ZipResult("", "", "")
+                errorMessage = error.message
             }
             console.log(error.message)
             console.log(error)
@@ -109,6 +115,7 @@ class AxiosSearch(props: AxiosProps) : RComponent<AxiosProps, AxiosState>(props)
         setState {
             zipCode = targetValue
             zipResult = ZipResult("", "", "")
+            errorMessage = ""
         }
         if (targetValue.length == 5) {
             remoteSearchZip(targetValue)
@@ -135,7 +142,16 @@ class AxiosSearch(props: AxiosProps) : RComponent<AxiosProps, AxiosState>(props)
             h1 {
                 +"zip code ${state.zipCode} detail result is: "
                 +"${state.zipResult.country} ${state.zipResult.state} ${state.zipResult.city} "
+                if (!state.errorMessage.isNullOrEmpty()) div {
+                    attrs.style = js {
+                        color = "red"
+                    }
+                    +"Find error: "
+                    +state.errorMessage
+                    +". Please open your console to learn detail"
+                }
             }
+
         }
     }
 }
