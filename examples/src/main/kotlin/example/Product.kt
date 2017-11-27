@@ -42,7 +42,7 @@ fun RBuilder.productRow(name: String, price: Double, isStocked: Boolean) {
     }
 }
 
-fun RBuilder.productTable(products: Array<PRODUCT>, filterText: String, inStockOnly: Boolean) {
+fun RBuilder.productTable(products: Array<Product>, filterText: String, inStockOnly: Boolean) {
     var lastCategory = ""
 
     table {
@@ -122,18 +122,18 @@ interface ProductState : RState {
     var inStockOnly: Boolean
 }
 
-data class PRODUCT(val category: String, val price: Double, val isStocked: Boolean, val name: String)
+data class Product(val category: String, val price: Double, val isStocked: Boolean, val name: String)
 
 var products = arrayOf(
-    PRODUCT("Sporting Goods", 49.9, true, "Football"),
-    PRODUCT("Sporting Goods", 9.9, true, "Baseball"),
-    PRODUCT("Sporting Goods", 29.9, false, "Basketball"),
-    PRODUCT("Electronics", 99.9, true, "iPod Touch"),
-    PRODUCT("Electronics", 999.9, false, "iPhone X"),
-    PRODUCT("Electronics", 199.9, true, "Nexus")
+    Product("Sporting Goods", 49.9, true, "Football"),
+    Product("Sporting Goods", 9.9, true, "Baseball"),
+    Product("Sporting Goods", 29.9, false, "Basketball"),
+    Product("Electronics", 99.9, true, "iPod Touch"),
+    Product("Electronics", 999.9, false, "iPhone X"),
+    Product("Electronics", 199.9, true, "Nexus")
 )
 
-class Product(props: ProductProps) : RComponent<ProductProps, ProductState>(props) {
+class ProductComponent(props: ProductProps) : RComponent<ProductProps, ProductState>(props) {
     override fun ProductState.init(props: ProductProps) {
         filterText = ""
         inStockOnly = false
@@ -161,6 +161,6 @@ class Product(props: ProductProps) : RComponent<ProductProps, ProductState>(prop
     }
 }
 
-fun RBuilder.product() = child(Product::class) {
+fun RBuilder.product() = child(ProductComponent::class) {
 
 }
