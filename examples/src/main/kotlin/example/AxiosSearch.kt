@@ -35,6 +35,17 @@ external interface AxiosConfigSettings {
     var timeout: Number
 }
 
+external interface AxiosError {
+    var message: String
+}
+
+external interface AxiosResponse {
+    var data: dynamic
+    var status: Number
+    var statusText: String
+    var header: dynamic
+    var config: AxiosConfigSettings
+}
 
 class AxiosSearch(props: AxiosProps) : RComponent<AxiosProps, AxiosState>(props) {
     override fun AxiosState.init(props: AxiosProps) {
@@ -47,13 +58,13 @@ class AxiosSearch(props: AxiosProps) : RComponent<AxiosProps, AxiosState>(props)
             url = "http://ziptasticapi.com/" + zipCode
             timeout = 3000
         }
-        axios(config).then { response ->
+        axios(config).then { response: AxiosResponse ->
             setState {
                 zipResult = ZipResult(response.data.country, response.data.state, response.data.city)
             }
-        }.catch { error: dynamic ->
+        }.catch { error: AxiosError ->
             setState {
-                zipResult = ZipResult("", "", "Find error, please open your console to learn detail.")
+                zipResult = ZipResult("Find error:", error.message, ". Please open your console to learn detail")
             }
             console.log(error)
         }
