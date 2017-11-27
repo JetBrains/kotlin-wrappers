@@ -226,7 +226,11 @@ var TEXTAREA.defaultValue by StringAttr
 var TEXTAREA.value by StringAttr
 
 var Tag.jsStyle: dynamic
-    get() = attributes["style"] ?: js {}
+    get() {
+        val value = attributes["style"] ?: js {}
+        jsStyle = value
+        return value
+    }
     set(value) {
         attributes["style"] = value
     }
