@@ -20,8 +20,12 @@ Artifacts installable using Maven and Gradle are published to [Bintray](https://
 
 [Tic-Tac-Toe example](examples/src/main/kotlin/example/TicTacToe.kt)
 
-[Thinking-in-react-way-product example](examples/src/main/kotlin/example/Product.kt)
+A port of "Thinking in React" [example](examples/src/main/kotlin/example/Product.kt)
 
 ## Real-world examples
 
-[KotlinConf App](https://github.com/JetBrains/kotlinconf-app/) — an application developed at JetBrains to showcase multiplatform projects in Kotlin. The web-based part of the app is written using React and Kotlin/JS. 
+[KotlinConf App](https://github.com/JetBrains/kotlinconf-app/) — an application developed at JetBrains to showcase multiplatform projects in Kotlin. The web-based part of the app is written using React and Kotlin/JS.
+
+## Contributing
+
+Contributions to this project are welcome! Please see the open [issues](https://github.com/JetBrains/kotlin-wrappers/issues) or chat with us on the #javascript channel in our [Slack](http://slack.kotlinlang.org/). 
