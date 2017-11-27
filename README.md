@@ -28,4 +28,4 @@ A port of "Thinking in React" [example](examples/src/main/kotlin/example/Product
 
 ## Contributing
 
-Contributions to this project are welcome! Please see the open [issues](https://github.com/JetBrains/kotlin-wrappers/issues) or chat with us on the #javascript channel in our [Slack](http://slack.kotlinlang.org/). 
+Contributions to this project are welcome! Please see the open [issues](https://github.com/JetBrains/kotlin-wrappers/issues) or chat with us on the **#react** channel in our [Slack](http://slack.kotlinlang.org/). 
