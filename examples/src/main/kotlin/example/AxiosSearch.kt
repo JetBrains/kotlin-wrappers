@@ -61,12 +61,19 @@ external interface AxiosError {
     var message: String
 }
 
-external interface AxiosResponse {
-    var data: dynamic
-    var status: Number
-    var statusText: String
-    var headers: dynamic
-    var config: AxiosConfigSettings
+external interface AxiosResponse<T> {
+    val data: T
+    val status: Number
+    val statusText: String
+    val headers: dynamic
+    val config: AxiosConfigSettings
+}
+
+//just for this zip code search response data
+external interface Data {
+    val country: String
+    val state: String
+    val city: String
 }
 
 class AxiosSearch(props: AxiosProps) : RComponent<AxiosProps, AxiosState>(props) {
@@ -80,7 +87,7 @@ class AxiosSearch(props: AxiosProps) : RComponent<AxiosProps, AxiosState>(props)
             url = "http://ziptasticapi.com/" + zipCode
             timeout = 3000
         }
-        axios(config).then { response: AxiosResponse ->
+        axios(config).then { response: AxiosResponse<Data> ->
             setState {
                 zipResult = ZipResult(response.data.country, response.data.state, response.data.city)
             }
