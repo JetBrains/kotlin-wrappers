@@ -59,4 +59,6 @@ external object React {
     ) : Component<P, S> {
         final override fun shouldComponentUpdate(nextProps: P, nextState: S): Boolean
     }
+
+    val Fragment: RClass<RProps>?
 }
