@@ -22,6 +22,8 @@ Artifacts installable using Maven and Gradle are published to [Bintray](https://
 
 A port of "Thinking in React" [example](examples/src/main/kotlin/example/Product.kt)
 
+An [axios-search-example](examples/src/main/kotlin/example/AxiosSearch.kt) to show how to leverage famous networking lib **axios** to fetch remote data, also can learn how to **add typing for an external lib** . Btw, React just UI, so you need other libs to empower your app to do none UI matters.
+
 ## Real-world examples
 
 [KotlinConf App](https://github.com/JetBrains/kotlinconf-app/) — an application developed at JetBrains to showcase multiplatform projects in Kotlin. The web-based part of the app is written using React and Kotlin/JS.
