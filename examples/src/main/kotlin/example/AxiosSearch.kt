@@ -84,13 +84,13 @@ class AxiosSearch(props: AxiosProps) : RComponent<AxiosProps, AxiosState>(props)
             timeout = 3000
         }
 
-        axios<ZipData>(config).then({ response ->
+        axios<ZipData>(config).then { response ->
             setState {
                 zipResult = ZipResult(response.data.country, response.data.state, response.data.city)
                 errorMessage = ""
             }
             console.log(response)
-        }).catch { error ->
+        }.catch { error ->
             setState {
                 zipResult = ZipResult("", "", "")
                 errorMessage = error.message ?: ""
