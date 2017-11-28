@@ -5,7 +5,7 @@ package example
 /**
  * An example to show how to leverage axios lib to fetch remote data by Scott_Huang@qq.com (Zhiliang.Huang@gmail.com)
  * Review by @Hypnosphi
- * Date: Nov 25, 2017
+ * Date: Nov 25 ~ 28, 2017
  */
 
 import kotlinext.js.js
@@ -15,6 +15,7 @@ import kotlinx.html.js.*
 import org.w3c.dom.HTMLInputElement
 import react.*
 import react.dom.*
+import kotlin.js.Promise
 
 data class ZipResult(val country: String, val state: String, val city: String)
 interface AxiosProps : RProps {
@@ -29,8 +30,8 @@ interface AxiosState : RState {
 //Per Hypnosphi advice, change to common js way.
 //you should need "npm install axios --save" in advance in your project folder
 @JsModule("axios")
-external fun axios(config: AxiosConfigSettings): dynamic
-//external fun <T> axios(config: AxiosConfigSettings): Promise<AxiosResponse<T>>
+//external fun axios(config: AxiosConfigSettings): dynamic
+external fun <T> axios(config: AxiosConfigSettings): Promise<AxiosResponse<T>>
 
 //add enhanced typing for axios
 external interface AxiosConfigSettings {
@@ -60,9 +61,6 @@ external interface AxiosConfigSettings {
     var cancelToken: dynamic
 }
 
-external interface AxiosError {
-    var message: String
-}
 
 external interface AxiosResponse<T> {
     val data: T
@@ -73,7 +71,7 @@ external interface AxiosResponse<T> {
 }
 
 //just for this zip code search response data
-external interface Data {
+external interface ZipData {
     val country: String
     val state: String
     val city: String
@@ -91,7 +89,8 @@ class AxiosSearch(props: AxiosProps) : RComponent<AxiosProps, AxiosState>(props)
             url = "http://ziptasticapi.com/" + zipCode
             timeout = 3000
         }
-        axios(config).then { response: AxiosResponse<Data> ->
+        //First, you have to put the { response -> ... } lambda in parentheses, because it's not actually the last argument of then
+        axios<ZipData>(config).then({ response ->
             setState {
                 zipResult = ZipResult(response.data.country, response.data.state, response.data.city)
                 errorMessage = ""
@@ -101,10 +100,11 @@ class AxiosSearch(props: AxiosProps) : RComponent<AxiosProps, AxiosState>(props)
             console.log(response.config)
             console.log(response.headers)
             console.log(response.data)
-        }.catch { error: AxiosError ->
+        }).catch { error ->
             setState {
                 zipResult = ZipResult("", "", "")
-                errorMessage = error.message
+                // the Elvis operator is needed because `Throwable::message` is nullable
+                errorMessage = error.message ?: ""
             }
             console.log(error.message)
             console.log(error)
