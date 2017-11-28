@@ -22,7 +22,7 @@ Artifacts installable using Maven and Gradle are published to [Bintray](https://
 
 A port of "Thinking in React" [example](examples/src/main/kotlin/example/Product.kt)
 
-An [axios-search-example](examples/src/main/kotlin/example/AxiosSearch.kt) to show how to leverage famous networking lib **axios** to fetch remote data, also can learn how to **add typing for an external lib** . Btw, React just UI, so you need other libs to empower your app to do none UI matters.
+An [example of using axios](examples/src/main/kotlin/example/AxiosSearch.kt) to fetch remote data. It also demonstrates how to add typings for an external library.
 
 ## Real-world examples
 
