@@ -16,13 +16,17 @@ Artifacts installable using Maven and Gradle are published to [Bintray](https://
 
 ## Examples
 
-[To-do list example](examples/src/main/kotlin/example/Todo.kt) 
+1. [To-do list example](examples/src/main/kotlin/example/Todo.kt) 
 
-[Tic-Tac-Toe example](examples/src/main/kotlin/example/TicTacToe.kt)
+2. [Tic-Tac-Toe example](examples/src/main/kotlin/example/TicTacToe.kt)
 
-A port of "Thinking in React" [example](examples/src/main/kotlin/example/Product.kt)
+3. A port of "Thinking in React" [example](examples/src/main/kotlin/example/Product.kt)
 
-An [example of using axios](examples/src/main/kotlin/example/AxiosSearch.kt) to fetch remote data. It also demonstrates how to add typings for an external library.
+4. An [example of using axios](examples/src/main/kotlin/example/AxiosSearch.kt) to fetch remote data. It also demonstrates how to add typings for an external library.
+
+5. An [example of using Quill](examples/src/main/kotlin/example/Quill.kt) to show how to leverage external react component.
+
+Now, we have 5 examples, the first 3 tell people for how to build Kotlin-react component by yourself, and the 4th AxiosSearch show how to leverage existing external JS lib, and the 5th example show how to leverage existing external react component. The newcomers should be able start build their real Kotlin-React app after grasp these examples one by one.
 
 ## Real-world examples
 
