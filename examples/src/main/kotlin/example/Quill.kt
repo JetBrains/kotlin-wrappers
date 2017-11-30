@@ -1,17 +1,14 @@
 package example
 
 /**
- * An example to show how to leverage external react component by Scott_Huang@qq.com (Zhiliang.Huang@gmail.com)
- * An import from https://www.npmjs.com/package/react-quill
- * Date: Nov 29, 2017
+ * An example of using an external React component by Scott_Huang@qq.com (Zhiliang.Huang@gmail.com)
+ *
+ * Run `npm install react-quill --save`
+ * Add `require ("react-quill/dist/quill.snow.css")` to index.kt to include the CSS
  */
 
 import react.*
-import react.dom.div
-
-//npm install react-quill --save  ==> It will install module in your project
-//And then you can add below sentences in your index.kt to enable react-quill module
-//require("react-quill/dist/quill.snow.css")
+import react.dom.*
 
 @JsModule("react-quill")
 external val reactQuill: RClass<ReactQuillProps>
