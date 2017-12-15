@@ -27,6 +27,7 @@ Artifacts installable using Maven and Gradle are published to [Bintray](https://
 5. An [example of using Quill](examples/src/main/kotlin/example/Quill.kt) that shows how to use an external React component.
 
 Follow these examples to learn how to start developing your React apps with Kotlin. Good luck and have fun! 
+You also can clone [my-kotlin-react-sample](https://github.com/ScottHuangZL/my-kotlin-app) to see the result directly.
 
 ## Real-world examples
 
