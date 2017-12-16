@@ -63,6 +63,10 @@ open class RDOMBuilder<out T : Tag>(factory: (TagConsumer<Unit>) -> T) : RBuilde
 
     val attrs: T = factory(consumer)
 
+    operator fun Tag.set(name: String, value: String) {
+        props.asDynamic()[name] = value
+    }
+
     protected val props: DOMProps = jsObject {}
 
     init {

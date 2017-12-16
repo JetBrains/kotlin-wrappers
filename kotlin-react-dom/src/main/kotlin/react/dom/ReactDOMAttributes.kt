@@ -237,7 +237,3 @@ var Tag.jsStyle: dynamic
 
 inline fun Tag.jsStyle(handler: dynamic.() -> Unit) =
     handler(jsStyle)
-
-operator fun Tag.set(name: String, value: String) {
-    attributes[name] = value
-}

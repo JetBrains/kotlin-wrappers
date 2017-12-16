@@ -24,6 +24,7 @@ fun RBuilder.app(props: RProps) {
 
         // Setting a custom attribute
         attrs["my-attribute"] = "my-value"
+        attrs["class"] = "class"
 
         // Appending children from props
         props.children()
