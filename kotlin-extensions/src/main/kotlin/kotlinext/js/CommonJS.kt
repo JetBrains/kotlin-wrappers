@@ -16,8 +16,4 @@ external object require {
     fun context(directory: String, useSubdirectories: Boolean, regExp: RegExp): Context
 }
 
-fun foo() {
-    require.context("src", true, js("/\\.css$/"))
-}
-
 inline operator fun require.invoke(module: String) = asDynamic()(module)
