@@ -148,7 +148,7 @@ inline fun RBuilder.nav(classes: String? = null, block: RDOMBuilder<NAV>.() -> U
 
 inline fun RBuilder.noScript(classes: String? = null, block: RDOMBuilder<NOSCRIPT>.() -> Unit): ReactElement = tag(block) { NOSCRIPT(attributesMapOf("class", classes), it) }
 
-inline fun RBuilder.object_(classes: String? = null, block: RDOMBuilder<OBJECT_>.() -> Unit): ReactElement = tag(block) { OBJECT_(attributesMapOf("class", classes), it) }
+inline fun RBuilder.object_(classes: String? = null, block: RDOMBuilder<OBJECT>.() -> Unit): ReactElement = tag(block) { OBJECT(attributesMapOf("class", classes), it) }
 
 inline fun RBuilder.ol(classes: String? = null, block: RDOMBuilder<OL>.() -> Unit): ReactElement = tag(block) { OL(attributesMapOf("class", classes), it) }
 
@@ -225,6 +225,6 @@ inline fun RBuilder.tr(classes: String? = null, block: RDOMBuilder<TR>.() -> Uni
 
 inline fun RBuilder.ul(classes: String? = null, block: RDOMBuilder<UL>.() -> Unit): ReactElement = tag(block) { UL(attributesMapOf("class", classes), it) }
 
-inline fun RBuilder.var_(classes: String? = null, block: RDOMBuilder<VAR_>.() -> Unit): ReactElement = tag(block) { VAR_(attributesMapOf("class", classes), it) }
+inline fun RBuilder.var_(classes: String? = null, block: RDOMBuilder<VAR>.() -> Unit): ReactElement = tag(block) { VAR(attributesMapOf("class", classes), it) }
 
 inline fun RBuilder.video(classes: String? = null, block: RDOMBuilder<VIDEO>.() -> Unit): ReactElement = tag(block) { VIDEO(attributesMapOf("class", classes), it) }
