@@ -71,7 +71,11 @@ val Fragment: RClass<RProps> = React.Fragment ?: { props: RProps -> props.childr
 
 fun buildElements(handler: RBuilder.() -> Unit): dynamic {
     val nodes = RBuilder().apply(handler).childList
-    return if (nodes.size == 1) nodes.first() else React.createElement(Fragment, js {}, *nodes.toTypedArray())
+    return when {
+        nodes.size == 0 -> null
+        nodes.size == 1 -> nodes.first()
+        else -> React.createElement(Fragment, js {}, *nodes.toTypedArray())
+    }
 }
 
 open class RBuilderSingle : RBuilder() {

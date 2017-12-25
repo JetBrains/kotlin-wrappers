@@ -1,6 +1,6 @@
 package react.dom
 
-import kotlinext.js.js
+import kotlinext.js.*
 import kotlinx.html.*
 import kotlin.reflect.*
 

@@ -1,6 +1,6 @@
 package kotlinext.js
 
-import kotlin.js.RegExp
+import kotlin.js.*
 
 external interface Context: JsFunction1<String, dynamic> {
     fun resolve(module: String): String
@@ -12,7 +12,8 @@ fun requireAll(context: Context) = context.keys().forEach(context::invoke)
 
 external object require {
     fun resolve(module: String): String
-    // webpack-specific
+
+    // Note: require.context is a webpack-specific function
     fun context(directory: String, useSubdirectories: Boolean, regExp: RegExp): Context
 }
 
