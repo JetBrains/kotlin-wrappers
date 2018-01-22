@@ -72,4 +72,8 @@ import welcome.*
 fun RBuilder.app {
     welcome("Jane")
 }
-`
+```
+
+### Internals
+
+[Imports.kt](src/main/kotlin/react/Imports.kt) contains type definitions for React. The remaining classes ([React.kt](src/main/kotlin/react/React.kt) and others) provide higher-level APIs on top of that definition.

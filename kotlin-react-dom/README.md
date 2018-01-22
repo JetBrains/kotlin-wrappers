@@ -7,3 +7,6 @@ Kotlin wrapper for React DOM library. Major version number of this wrapper match
 `npm i @jetbrains/kotlin-react-dom`
 
 See the [Bintray page](https://bintray.com/kotlin/kotlin-js-wrappers/kotlin-react-dom) for Maven and Gradle installation instructions.
+
+### Internals
+[Imports.kt](src/main/kotlin/react/dom/Imports.kt) contains type definitions for ReactDOM. The remaining classes ([ReactDOM.kt](src/main/kotlin/react/dom/ReactDOM.kt) and others) provide higher-level APIs on top of that definition.
