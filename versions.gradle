@@ -1,11 +1,11 @@
 ext {
-    kotlin_version = '1.2.0'
+    kotlin_version = '1.2.20'
     kotlinx_html_version = '0.6.8'
     node_plugin_version = '1.2.0'
     bintray_plugin_version = '1.8.0'
 
-    kotlinext_version = '1.0.0-pre.17'
-    mocha_version = '3.0.0-pre.17'
-    react_version = '16.2.0-pre.17'
-    react_dom_version = '16.2.0-pre.17'
+    kotlinext_version = '1.0.0-pre.18'
+    mocha_version = '3.0.0-pre.18'
+    react_version = '16.2.0-pre.18'
+    react_dom_version = '16.2.0-pre.18'
 }
