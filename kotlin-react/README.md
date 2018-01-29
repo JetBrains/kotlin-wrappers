@@ -51,7 +51,7 @@ interface WelcomeProps: RProps {
     var name: String
 }
 
-class Welcome(props: WelcomeProps): RComponent<WelcomeProps, RState>() {
+class Welcome: RComponent<WelcomeProps, RState>() {
     override fun RBuilder.render() {
         div {
             +"Hello, ${props.name}"
