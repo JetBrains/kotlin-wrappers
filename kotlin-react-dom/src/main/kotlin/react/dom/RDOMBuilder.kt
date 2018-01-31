@@ -63,9 +63,32 @@ open class RDOMBuilder<out T : Tag>(factory: (TagConsumer<Unit>) -> T) : RBuilde
 
     val attrs: T = factory(consumer)
 
-    operator fun Tag.set(name: String, value: String) {
+    operator fun Tag.get(name: String) = props.asDynamic()[name]
+    operator fun Tag.set(name: String, value: Any) {
         props.asDynamic()[name] = value
     }
+
+    // See https://facebook.github.io/react/docs/forms.html
+    var INPUT.defaultChecked: Boolean
+        get() = this["defaultChecked"] ?: false
+        set(value) {
+            this["defaultChecked"] = value
+        }
+
+    var SELECT.values: Set<String>
+        get() {
+            val valuesArr: Array<String> = this["value"] ?: arrayOf()
+            return valuesArr.toSet()
+        }
+        set(value) {
+            this["value"] = value.toTypedArray()
+        }
+
+    var SELECT.value: String
+        get() = ""
+        set(value) {
+            values = setOf(value)
+        }
 
     protected val props: DOMProps = jsObject {}
 
