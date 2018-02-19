@@ -40,7 +40,7 @@ external interface ReactUpdater {
     fun enqueueCallback(dest: Any, callback: Any, method: String)
 }
 
-fun <S : RState> React.Component<*, S>.setState(buildState: S.() -> Unit) =
+fun <S : RState> Component<*, S>.setState(buildState: S.() -> Unit) =
     setState({ assign(it, buildState) })
 
 inline fun <P : RProps> rFunction(
@@ -52,7 +52,7 @@ inline fun <P : RProps> rFunction(
     return fn
 }
 
-abstract class RComponent<P : RProps, S : RState> : React.Component<P, S> {
+abstract class RComponent<P : RProps, S : RState> : Component<P, S> {
     constructor() : super() {
         state = jsObject { init() }
     }

@@ -20,18 +20,18 @@ external interface ReactElement : Child {
     val props: RProps
 }
 
-fun React.Children.forEachElement(children: Any?, handler: (ReactElement) -> Unit) =
+fun Children.forEachElement(children: Any?, handler: (ReactElement) -> Unit) =
     forEach(children) {
         val element = it.asElementOrNull()
         element?.let(handler)
     }
 
-inline fun <P : RProps> React.cloneElement(
+inline fun <P : RProps> cloneElement(
     element: ReactElement,
     vararg child: Any?,
     props: P.() -> Unit
-): ReactElement = React.cloneElement(element, jsObject(props), *child)
+): ReactElement = cloneElement(element, jsObject(props), *child)
 
-fun React.clone(element: dynamic, props: dynamic, child: Any? = null): ReactElement =
-    React.cloneElement(element, props, *React.Children.toArray(child))
+fun clone(element: dynamic, props: dynamic, child: Any? = null): ReactElement =
+    cloneElement(element, props, *Children.toArray(child))
 

@@ -110,7 +110,7 @@ open class RDOMBuilder<out T : Tag>(factory: (TagConsumer<Unit>) -> T) : RBuilde
         props.ref = handler
     }
 
-    open fun create(): ReactElement = React.createElement(attrs.tagName, props, *childList.toTypedArray())
+    open fun create(): ReactElement = createElement(attrs.tagName, props, *childList.toTypedArray())
 }
 
 

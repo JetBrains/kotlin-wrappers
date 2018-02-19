@@ -20,7 +20,7 @@ open class RBuilder {
     }
 
     fun <P : RProps> child(type: Any, props: P, children: List<Any>) =
-        child(React.createElement(type, props, *children.toTypedArray()))
+        child(createElement(type, props, *children.toTypedArray()))
 
     fun <P : RProps> child(type: Any, props: P, handler: RHandler<P>): ReactElement {
         val children = with(RElementBuilder(props)) {
@@ -38,15 +38,15 @@ open class RBuilder {
         children: List<Any> = emptyList()
     ) = child(this, clone(props), children)
 
-    fun <P : RProps, C : React.Component<P, *>> child(klazz: KClass<C>, handler: RHandler<P>): ReactElement {
+    fun <P : RProps, C : Component<P, *>> child(klazz: KClass<C>, handler: RHandler<P>): ReactElement {
         val rClass = klazz.js as RClass<P>
         return rClass(handler)
     }
 
-    inline fun <P : RProps, reified C : React.Component<P, *>> child(noinline handler: RHandler<P>) =
+    inline fun <P : RProps, reified C : Component<P, *>> child(noinline handler: RHandler<P>) =
         child(C::class, handler)
 
-    fun <P : RProps, C : React.Component<P, *>> node(
+    fun <P : RProps, C : Component<P, *>> node(
         klazz: KClass<C>,
         props: P,
         children: List<Any> = emptyList()
@@ -55,11 +55,11 @@ open class RBuilder {
         return rClass.node(props, children)
     }
 
-    inline fun <P : RProps, reified C : React.Component<P, *>> node(props: P, children: List<Any> = emptyList()) =
+    inline fun <P : RProps, reified C : Component<P, *>> node(props: P, children: List<Any> = emptyList()) =
         node(C::class, props, children)
 
     fun RProps.children() {
-        childList.addAll(React.Children.toArray(children))
+        childList.addAll(Children.toArray(children))
     }
 }
 
@@ -67,14 +67,14 @@ open class RBuilderMultiple : RBuilder() {
 }
 
 // fallback for React >=16.0 <16.2
-val Fragment: RClass<RProps> = React.Fragment ?: { props: RProps -> props.children } as RClass<RProps>
+val RFragment: RClass<RProps> = Fragment ?: { props: RProps -> props.children } as RClass<RProps>
 
 fun buildElements(handler: RBuilder.() -> Unit): dynamic {
     val nodes = RBuilder().apply(handler).childList
     return when {
         nodes.size == 0 -> null
         nodes.size == 1 -> nodes.first()
-        else -> React.createElement(Fragment, js {}, *nodes.toTypedArray())
+        else -> createElement(RFragment, js {}, *nodes.toTypedArray())
     }
 }
 
