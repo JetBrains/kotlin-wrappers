@@ -1,0 +1,3 @@
+package redux
+
+interface RAction
