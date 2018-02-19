@@ -9,13 +9,7 @@ class RStore<S>(var reducer: (S, RAction) -> S, preloadedState: S) {
     val state: S
         get() = store.getState()
 
-    var listener: (() -> Unit)? = null
-        set(value) {
-            if (value != null) unsubscriber = store.subscribe(value)
-            else unsubscriber?.invoke()
-        }
-
-    private var unsubscriber: (() -> Unit)? = null
+    fun subscribe(listener: () -> Unit) = store.subscribe(listener)
 
     fun dispatch(action: RAction) = store.dispatch(js {
         type = "WRAPPER_ACTION"

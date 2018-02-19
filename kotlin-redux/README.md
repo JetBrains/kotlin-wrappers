@@ -40,9 +40,8 @@ myStore.dispatch(MyAction())
 Note that internally, kotlin-redux uses a single action type and reducer to dispatch the actions
 that you write in Kotlin. This is done to adapt Redux to a type-safe environment.
 
-To subscribe to your store, set the store's `listener` to a lambda expression. To unsubscribe, just 
-set it to `null`.
+Subscribing to your store works as usual.
 
 ```
-myStore.listener = { println(myStore.state) }
+unsubscribe = myStore.subscribe { println(myStore.state) }
 ```
