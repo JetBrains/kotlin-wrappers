@@ -4,5 +4,8 @@ include 'kotlin-extensions'
 include 'kotlin-mocha'
 include 'kotlin-react'
 include 'kotlin-react-dom'
+include 'kotlin-redux'
 
 include 'examples'
+include 'kotlin-redux'
+

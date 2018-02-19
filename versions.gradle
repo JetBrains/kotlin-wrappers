@@ -8,4 +8,5 @@ ext {
     mocha_version = '3.0.0-pre.20'
     react_version = '16.2.0-pre.20'
     react_dom_version = '16.2.0-pre.20'
+    redux_version = '3.7.2'
 }
