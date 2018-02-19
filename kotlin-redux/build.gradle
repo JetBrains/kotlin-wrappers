@@ -1,0 +1,5 @@
+configurePublishing(redux_version)
+
+dependencies {
+    compile project(":kotlin-extensions")
+}
