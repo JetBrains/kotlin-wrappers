@@ -1,4 +1,5 @@
 @file:JsModule("react")
+
 package react
 
 // See https://reactjs.org/docs/react-component.html
@@ -18,7 +19,7 @@ external object Children {
     fun toArray(children: Any?): Array<out Child>
 }
 
-external abstract class Component<P : RProps, S : RState>(
+abstract external class Component<P : RProps, S : RState>(
     props: RProps = definedExternally,
     context: RContext = definedExternally,
     updater: ReactUpdater = definedExternally
@@ -45,12 +46,12 @@ external abstract class Component<P : RProps, S : RState>(
 
     open fun componentWillUnmount(): Unit
 
-    open fun componentDidCatch(error: String, info: RErrorInfo): Unit
+    open fun componentDidCatch(error: Throwable, info: RErrorInfo): Unit
 
     abstract fun render(): dynamic
 }
 
-external abstract class PureComponent<P : RProps, S : RState>(
+abstract external class PureComponent<P : RProps, S : RState>(
     props: RProps = definedExternally,
     context: RContext = definedExternally,
     updater: ReactUpdater = definedExternally
