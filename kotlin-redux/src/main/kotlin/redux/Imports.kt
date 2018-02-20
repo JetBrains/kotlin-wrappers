@@ -2,7 +2,7 @@
 package redux
 
 @JsName("createStore")
-internal external class Store<out S>(reducer: (S, dynamic) -> S, preloadedState: S) {
+internal external class Store<out S>(reducer: (S, WrapperAction) -> S, preloadedState: S) {
     fun getState(): S
     fun dispatch(action: dynamic)
     fun subscribe(listener: () -> Unit): () -> Unit
