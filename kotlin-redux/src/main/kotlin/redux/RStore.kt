@@ -16,8 +16,13 @@ class RStore<S>(var reducer: (S, RAction) -> S, preloadedState: S) {
         this.action = action
     })
 
-    private fun wrapperReducer(state: S, action: dynamic) = when (action.type) {
+    private fun wrapperReducer(state: S, action: WrapperAction) = when (action.type) {
         "WRAPPER_ACTION" -> reducer(state, action.action)
         else -> state
     }
+}
+
+internal interface WrapperAction {
+    val type: String
+    val action: RAction
 }
