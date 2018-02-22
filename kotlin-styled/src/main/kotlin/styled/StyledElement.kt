@@ -1,5 +1,3 @@
-@file:Suppress("unused")
-
 package styled
 
 import kotlinext.js.*
@@ -7,7 +5,7 @@ import styled.properties.*
 import kotlin.reflect.*
 
 open class StyledElement {
-    val declarations = HashMap<String, Any>()
+    val declarations = ES6Map<String, Any>()
 
     inner class WithDefault<T : Any>(val default: () -> T) {
         operator fun getValue(thisRef: Any, property: KProperty<*>): T {

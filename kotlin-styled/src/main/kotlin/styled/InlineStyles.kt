@@ -19,13 +19,13 @@ fun RDOMBuilder<*>.inlineStyles(builder: StyledElement.() -> Unit) {
 
 fun StyledElement.toStyle(): Any {
     val res = js { }
-    declarations.forEach {
-        if ((it.value !is String) && (it.value !is Number)) {
-            val conv = it.value.toString()
-            res[it.key] = conv
+    declarations.forEach { src, v ->
+        if ((v !is String) && (v !is Number)) {
+            val conv = v.toString()
+            res[src] = conv
         }
         else {
-            res[it.key] = it.value
+            res[src] = v
         }
     }
     return prefixer.prefix(res)
