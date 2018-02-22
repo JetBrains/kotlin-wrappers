@@ -11,7 +11,7 @@ data class Rule(val selector: String, val block: RuleSet)
 
 interface RuleContainer {
     fun StringBuilder.buildRules(indent: String) {
-        val resolvedRules = ES6Map<String, CSSBuilder>()
+        val resolvedRules = HashMap<String, CSSBuilder>()
         rules.forEach { (selector, block) ->
             if (!resolvedRules.containsKey(selector)) {
                 resolvedRules[selector] = CSSBuilder("$indent  ", allowClasses = false)
@@ -20,9 +20,9 @@ interface RuleContainer {
             rule.block()
         }
 
-        resolvedRules.forEach { key, value ->
-            append("$key {\n")
-            append(value)
+        resolvedRules.forEach {
+            append("$it.key {\n")
+            append(it.value)
             append("}\n")
         }
     }
@@ -41,8 +41,8 @@ class CSSBuilder(private val indent: String = "", val allowClasses: Boolean = tr
     var classes = mutableListOf<String>()
 
     override fun toString() = buildString {
-        declarations.forEach { k, v ->
-            append("${k.hyphenize()}: $v;\n")
+        declarations.forEach {
+            append("${it.key.hyphenize()}: ${it.value};\n")
         }
 
         buildRules(indent)

@@ -152,7 +152,7 @@ object Styled {
 
     fun createElement(type: Any, css: CSSBuilder, props: WithClassName, children: List<Any>): ReactElement {
         if (!enabledInline || css.rules.isNotEmpty()) {
-            if (!enabledShortCircuit || css.rules.isNotEmpty() || css.declarations.size() > 0) {
+            if (!enabledShortCircuit || css.rules.isNotEmpty() || css.declarations.size > 0) {
                 val wrappedType = wrap(type)
                 val styledProps = props as StyledProps
                 styledProps.css = css.toString()
