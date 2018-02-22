@@ -1,4 +1,4 @@
 configurePublishing(styled_version)
 dependencies {
-    compile project(':kotlin-react')
+    compile project(':kotlin-react-dom')
 }
