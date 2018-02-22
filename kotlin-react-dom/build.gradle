@@ -1,6 +1,5 @@
 configurePublishing(react_dom_version)
 dependencies {
     compile project(":kotlin-react")
-//    compile "org.jetbrains:kotlin-react:$react_version-kotlin-$kotlin_version"
     compile "org.jetbrains.kotlinx:kotlinx-html-js:$kotlinx_html_version"
 }
