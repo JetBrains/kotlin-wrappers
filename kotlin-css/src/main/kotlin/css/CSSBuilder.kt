@@ -1,7 +1,5 @@
 package css
 
-import css.properties.*
-
 typealias RuleSet = CSSBuilder.() -> Unit
 
 fun ruleSet(set: RuleSet) = set
@@ -34,7 +32,7 @@ interface RuleContainer {
 }
 
 
-class CSSBuilder(private val indent: String = "", val allowClasses: Boolean = true) : StyledElement(), RuleContainer {
+class CSSBuilder(val indent: String = "", val allowClasses: Boolean = true) : StyledElement(), RuleContainer {
     var styleName: String? = null
 
     var classes = mutableListOf<String>()
@@ -149,15 +147,4 @@ class CSSBuilder(private val indent: String = "", val allowClasses: Boolean = tr
         }
         this.forEach { classes.add(it) }
     }
-
-    fun animation(
-        duration: Time = 0.s,
-        timing: Timing = Timing.ease,
-        delay: Time = 0.s,
-        iterationCount: IterationCount = 1.times,
-        direction: AnimationDirection = AnimationDirection.normal,
-        fillMode: FillMode = FillMode.none,
-        playState: PlayState = PlayState.running,
-        handler: KeyframesBuilder.() -> Unit
-    ) = animation(keyframes(indent, handler), duration, timing, delay, iterationCount, direction, fillMode, playState)
 }

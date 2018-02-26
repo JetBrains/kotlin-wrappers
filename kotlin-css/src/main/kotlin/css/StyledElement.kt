@@ -241,5 +241,3 @@ fun StyledElement.padding(vertical: LinearDimension? = null, horizontal: LinearD
 
 fun StyledElement.padding(top: LinearDimension, right: LinearDimension, bottom: LinearDimension) =
     padding(top, right, bottom, right)
-
-expect fun StyledElement.url(url: String): Image
