@@ -1,7 +1,8 @@
 package example
 
 import kotlinext.js.*
-import kotlinx.html.*
+import kotlinx.html.InputType
+import kotlinx.html.unsafe
 import react.*
 import react.dom.*
 
