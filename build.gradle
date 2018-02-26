@@ -20,8 +20,6 @@ buildscript {
 }
 
 subprojects {
-    apply plugin: 'kotlin2js'
-
     repositories {
         maven { url "https://dl.bintray.com/kotlin/kotlin-dev" }
         jcenter()
@@ -30,28 +28,32 @@ subprojects {
         }
     }
 
-    dependencies {
-        compile "org.jetbrains.kotlin:kotlin-stdlib-js:$kotlin_version"
-        compile "org.jetbrains.kotlinx:kotlinx-html-js:$kotlinx_html_version"
-    }
-
-    task sourcesJar(type: Jar) {
-        classifier = 'sources'
-        from sourceSets.main.allSource
-    }
-
-    artifacts {
-        archives sourcesJar
-    }
-
     def projectName = name
 
-    compileKotlin2Js {
-        kotlinOptions {
-            outputFile = "$projectDir/build/classes/main/${projectName}.js"
-            moduleKind = "commonjs"
-            sourceMap = true
-            sourceMapEmbedSources = "always"
+    ext.applyKotlinJS = {
+        apply plugin: 'kotlin2js'
+
+        dependencies {
+            compile "org.jetbrains.kotlin:kotlin-stdlib-js:$kotlin_version"
+            compile "org.jetbrains.kotlinx:kotlinx-html-js:$kotlinx_html_version"
+        }
+
+        compileKotlin2Js {
+            kotlinOptions {
+                outputFile = "$projectDir/build/classes/main/${projectName}.js"
+                moduleKind = "commonjs"
+                sourceMap = true
+                sourceMapEmbedSources = "always"
+            }
+        }
+
+        task sourcesJar(type: Jar) {
+            classifier = 'sources'
+            from sourceSets.main.allSource
+        }
+
+        artifacts {
+            archives sourcesJar
         }
     }
 

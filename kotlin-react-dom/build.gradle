@@ -1,4 +1,7 @@
+applyKotlinJS()
+
 configurePublishing(react_dom_version)
+
 dependencies {
     compile project(":kotlin-react")
     compile "org.jetbrains.kotlinx:kotlinx-html-js:$kotlinx_html_version"
