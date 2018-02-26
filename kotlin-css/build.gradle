@@ -11,6 +11,7 @@ project("kotlin-css-js") {
 
     dependencies {
         compile "org.jetbrains.kotlin:kotlin-stdlib-js:$kotlin_version"
+        compile project(":kotlin-extensions")
         expectedBy project(":kotlin-css")
     }
 }

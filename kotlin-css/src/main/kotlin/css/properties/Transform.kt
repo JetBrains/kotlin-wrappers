@@ -1,6 +1,6 @@
-package styled.properties
+package css.properties
 
-import styled.*
+import css.*
 
 class Angle(val value: String) {
     override fun toString() = value

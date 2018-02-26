@@ -1,6 +1,4 @@
-package styled
-
-import kotlinext.js.*
+package css
 
 private val hyphenize: (String) -> String = memoizeString {
     buildString {

@@ -1,5 +1,6 @@
 package styled
 
+import css.*
 import kotlinext.js.*
 import react.dom.*
 
@@ -23,8 +24,7 @@ fun StyledElement.toStyle(): Any {
         if ((it.value !is String) && (it.value !is Number)) {
             val conv = it.value.toString()
             res[it.key] = conv
-        }
-        else {
+        } else {
             res[it.key] = it.value
         }
     }

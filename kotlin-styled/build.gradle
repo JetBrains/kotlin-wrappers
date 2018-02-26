@@ -3,5 +3,6 @@ applyKotlinJS()
 configurePublishing(styled_version)
 
 dependencies {
+    compile project(":kotlin-css")
     compile project(':kotlin-react-dom')
 }

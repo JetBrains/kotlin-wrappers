@@ -1,6 +1,6 @@
-package styled.properties
+package css.properties
 
-import styled.*
+import css.*
 
 fun StyledElement.border(width: LinearDimension, style: BorderStyle, color: Color) {
     border = "$width $style $color"

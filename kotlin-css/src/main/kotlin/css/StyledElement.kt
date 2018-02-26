@@ -1,9 +1,8 @@
 @file:Suppress("unused")
 
-package styled
+package css
 
-import kotlinext.js.*
-import styled.properties.*
+import css.properties.*
 import kotlin.reflect.*
 
 open class StyledElement {
@@ -243,3 +242,4 @@ fun StyledElement.padding(vertical: LinearDimension? = null, horizontal: LinearD
 fun StyledElement.padding(top: LinearDimension, right: LinearDimension, bottom: LinearDimension) =
     padding(top, right, bottom, right)
 
+expect fun StyledElement.url(url: String): Image

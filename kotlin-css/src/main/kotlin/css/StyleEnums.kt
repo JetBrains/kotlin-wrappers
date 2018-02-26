@@ -1,6 +1,4 @@
-package styled
-
-import kotlinext.js.*
+package css
 
 @Suppress("EnumEntryName")
 enum class Align {
@@ -361,9 +359,4 @@ class Image(val value: String) {
     }
 
     override fun toString() = value
-}
-
-fun StyledElement.url(url: String): Image {
-    val resolvedUrl = require("static/$url")
-    return Image("url($resolvedUrl)")
 }

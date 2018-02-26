@@ -1,6 +1,6 @@
-package styled.properties
+package css.properties
 
-import styled.*
+import css.*
 import kotlin.reflect.*
 
 class Transition(val property: String, val duration: Time, private val timing: Timing, private val delay: Time) {

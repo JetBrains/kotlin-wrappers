@@ -1,6 +1,6 @@
-package styled.properties
+package css.properties
 
-import styled.*
+import css.*
 
 @Suppress("EnumEntryName")
 enum class TextDecorationLine {

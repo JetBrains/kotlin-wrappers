@@ -1,5 +1,6 @@
 package styled
 
+import css.*
 import kotlinext.js.*
 import kotlin.reflect.*
 
@@ -34,8 +35,7 @@ open class StyleSheet(var name: String, val isStatic: Boolean = false) {
                                 r()
                             }
                         }
-                    }
-                    else {
+                    } else {
                         ".$name-${it.first}" {
                             for (r in it.second.ruleSets) {
                                 r()
@@ -55,16 +55,13 @@ class CssHolder(private val sheet: StyleSheet, internal vararg val ruleSets: Rul
             sheet.inject()
             if (property.name == "root") {
                 +sheet.name
-            }
-            else {
+            } else {
                 +"${sheet.name}-${property.name}"
             }
-        }
-        else {
+        } else {
             if (styleName == null) {
                 styleName = sheet.name + "-" + property.name
-            }
-            else {
+            } else {
                 styleName += " "
                 styleName += sheet.name + "-" + property.name
             }

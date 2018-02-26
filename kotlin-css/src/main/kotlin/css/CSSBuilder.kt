@@ -1,7 +1,6 @@
-package styled
+package css
 
-import kotlinext.js.*
-import styled.properties.*
+import css.properties.*
 
 typealias RuleSet = CSSBuilder.() -> Unit
 

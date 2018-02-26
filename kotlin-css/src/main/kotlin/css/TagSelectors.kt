@@ -1,4 +1,4 @@
-package styled
+package css
 
 class TagSelector(val tagName: String)
 

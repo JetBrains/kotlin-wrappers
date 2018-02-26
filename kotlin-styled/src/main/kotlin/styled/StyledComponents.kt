@@ -1,5 +1,6 @@
 package styled
 
+import css.*
 import kotlinext.js.*
 import kotlinx.html.*
 import react.*
@@ -158,15 +159,13 @@ object Styled {
                     styledProps.asDynamic()["data-style"] = css.styleName
                 }
                 return createElement(wrappedType, styledProps, *children.toTypedArray())
-            }
-            else {
+            } else {
                 if (css.classes.isNotEmpty()) {
                     props.className = css.classes.joinToString(separator = " ")
                 }
                 return createElement(type, props, *children.toTypedArray())
             }
-        }
-        else {
+        } else {
             props.asDynamic().style = css.toStyle()
             return createElement(type, props, *children.toTypedArray())
         }

@@ -1,7 +1,6 @@
-package styled.properties
+package css.properties
 
-import kotlinext.js.*
-import styled.*
+import css.*
 
 class KeyframesBuilder(private val indent: String = "") : RuleContainer {
     override fun toString() =
@@ -19,7 +18,8 @@ class KeyframesBuilder(private val indent: String = "") : RuleContainer {
 }
 
 inline fun keyframes(indent: String = "", handler: KeyframesBuilder.() -> Unit): String {
-    val builder = KeyframesBuilder(indent)
-    builder.handler()
-    return StyledComponents.keyframes(builder.toString())
+    return ""
+//    val builder = KeyframesBuilder(indent)
+//    builder.handler()
+//    return StyledComponents.keyframes(builder.toString())
 }
