@@ -68,6 +68,7 @@ subprojects {
             into 'build/npm'
             include 'package.json'
             expand(
+                    css_version: "$css_version",
                     kotlin_version: "$kotlin_version",
                     kotlinext_version: "$kotlinext_version",
                     mocha_version: "$mocha_version",
