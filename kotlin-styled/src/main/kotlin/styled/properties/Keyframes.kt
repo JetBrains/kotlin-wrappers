@@ -1,5 +1,6 @@
 package styled.properties
 
+import kotlinext.js.*
 import styled.*
 
 class KeyframesBuilder(private val indent: String = "") : RuleContainer {
