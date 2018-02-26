@@ -10,7 +10,7 @@ data class Rule(val selector: String, val block: RuleSet)
 
 interface RuleContainer {
     fun StringBuilder.buildRules(indent: String) {
-        val resolvedRules = HashMap<String, CSSBuilder>()
+        val resolvedRules = LinkedHashMap<String, CSSBuilder>()
         rules.forEach { (selector, block) ->
             if (!resolvedRules.containsKey(selector)) {
                 resolvedRules[selector] = CSSBuilder("$indent  ", allowClasses = false)
