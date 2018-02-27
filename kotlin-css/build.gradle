@@ -8,6 +8,7 @@ dependencies {
 
 project("kotlin-css-js") {
     apply plugin: 'kotlin-platform-js'
+    applyKotlinJS()
 
     dependencies {
         compile "org.jetbrains.kotlin:kotlin-stdlib-js:$kotlin_version"
