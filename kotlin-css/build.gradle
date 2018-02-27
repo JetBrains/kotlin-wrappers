@@ -7,6 +7,8 @@ dependencies {
 }
 
 project("kotlin-css-js") {
+    configurePublishing(css_version)
+
     apply plugin: 'kotlin-platform-js'
     applyKotlinJS()
 
@@ -18,6 +20,8 @@ project("kotlin-css-js") {
 }
 
 project("kotlin-css-jvm") {
+    configurePublishing(css_version)
+
     apply plugin: 'kotlin-platform-jvm'
 
     dependencies {
