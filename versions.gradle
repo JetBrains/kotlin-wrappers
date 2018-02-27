@@ -6,18 +6,18 @@ ext {
     bintray_plugin_version = '1.8.0'
 
     // kotlin-css
-    css_version = '1.0.0-pre.8'
+    css_version = '1.0.0-pre.9'
 
     // kotlin-extensions
-    kotlinext_version = '1.0.1-pre.8'
+    kotlinext_version = '1.0.1-pre.9'
 
     // kotlin-mocha
-    mocha_version = '3.0.1-pre.8'
+    mocha_version = '3.0.1-pre.9'
 
     // kotlin-react, kotlin-react-dom
-    react_version = '16.2.1-pre.8'
-    react_dom_version = '16.2.1-pre.8'
+    react_version = '16.2.1-pre.9'
+    react_dom_version = '16.2.1-pre.9'
 
     // kotlin-styled
-    styled_version = '1.0.0-pre.8'
+    styled_version = '1.0.0-pre.9'
 }

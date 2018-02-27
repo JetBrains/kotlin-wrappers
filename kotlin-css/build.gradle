@@ -10,7 +10,6 @@ project("kotlin-css-js") {
     configurePublishing(css_version)
 
     apply plugin: 'kotlin-platform-js'
-    applyKotlinJS()
 
     dependencies {
         compile "org.jetbrains.kotlin:kotlin-stdlib-js:$kotlin_version"
