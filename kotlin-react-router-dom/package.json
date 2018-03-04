@@ -1,0 +1,20 @@
+{
+  "name": "@jetbrains/kotlin-react-router-dom",
+  "version": "$react_router_dom",
+  "description": "Kotlin wrapper for React Router DOM library",
+  "files": [
+    "build",
+    "src",
+    "package.json",
+    "README.md"
+  ],
+  "main": "build/classes/main/kotlin-react-router-dom.js",
+  "repository": "https://github.com/JetBrains/kotlin-wrappers",
+  "peerDependencies": {
+    "kotlin": "^$kotlin_version",
+    "@jetbrains/kotlin-react": "^$react_version",
+    "react-router-dom": "^4.2.0"
+  },
+  "author": "JetBrains",
+  "license": "Apache-2-0"
+}
