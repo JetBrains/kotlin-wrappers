@@ -17,7 +17,7 @@ ext {
     // kotlin-react, kotlin-react-dom, kotlin-react-router-dom
     react_version = '16.2.1-pre.10'
     react_dom_version = '16.2.1-pre.10'
-    react_router_dom = "4.2.0-pre.10"
+    react_router_dom = "4.2.2-pre.10"
 
     // kotlin-styled
     styled_version = '1.0.0-pre.10'

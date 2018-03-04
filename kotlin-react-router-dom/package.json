@@ -13,7 +13,7 @@
   "peerDependencies": {
     "kotlin": "^$kotlin_version",
     "@jetbrains/kotlin-react": "^$react_version",
-    "react-router-dom": "^4.2.0"
+    "react-router-dom": "^4.2.2"
   },
   "author": "JetBrains",
   "license": "Apache-2-0"
