@@ -1,1 +1,3 @@
+applyKotlinJS()
+
 configurePublishing(kotlinext_version)

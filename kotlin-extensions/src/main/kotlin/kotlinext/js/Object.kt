@@ -36,5 +36,11 @@ external object Object {
     fun keys(o: Any): Array<String>
 }
 
+fun Any.getOwnPropertyNames(): Array<String> {
+    @Suppress("UNUSED_VARIABLE")
+    val me = this
+    return js("Object.getOwnPropertyNames(me)")
+}
+
 @JsModule("core-js/library/fn/object/assign")
 external fun <T, R : T> assign(dest: R, src: T): R

@@ -1,0 +1,31 @@
+configurePublishing(css_version)
+
+apply plugin: 'kotlin-platform-common'
+
+dependencies {
+    compile "org.jetbrains.kotlin:kotlin-stdlib-common:$kotlin_version"
+}
+
+project("kotlin-css-js") {
+    configurePublishing(css_version)
+
+    apply plugin: 'kotlin-platform-js'
+    applyKotlinJS()
+
+    dependencies {
+        compile "org.jetbrains.kotlin:kotlin-stdlib-js:$kotlin_version"
+        compile project(":kotlin-extensions")
+        expectedBy project(":kotlin-css")
+    }
+}
+
+project("kotlin-css-jvm") {
+    configurePublishing(css_version)
+
+    apply plugin: 'kotlin-platform-jvm'
+
+    dependencies {
+        compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+        expectedBy project(":kotlin-css")
+    }
+}

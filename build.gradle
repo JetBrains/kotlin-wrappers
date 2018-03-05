@@ -22,8 +22,6 @@ buildscript {
 }
 
 subprojects {
-    apply plugin: 'kotlin2js'
-
     repositories {
         maven { url "https://dl.bintray.com/kotlin/kotlin-dev" }
         maven { url "https://kotlin.bintray.com/kotlinx" }
@@ -33,28 +31,23 @@ subprojects {
         }
     }
 
-    dependencies {
-        compile "org.jetbrains.kotlin:kotlin-stdlib-js:$kotlin_version"
-        compile "org.jetbrains.kotlinx:kotlinx-html-js:$kotlinx_html_version"
-    }
-
-    task sourcesJar(type: Jar) {
-        classifier = 'sources'
-        from sourceSets.main.allSource
-    }
-
-    artifacts {
-        archives sourcesJar
-    }
-
     def projectName = name
 
-    compileKotlin2Js {
-        kotlinOptions {
-            outputFile = "$projectDir/build/classes/main/${projectName}.js"
-            moduleKind = "commonjs"
-            sourceMap = true
-            sourceMapEmbedSources = "always"
+    ext.applyKotlinJS = {
+        apply plugin: 'kotlin2js'
+
+        dependencies {
+            compile "org.jetbrains.kotlin:kotlin-stdlib-js:$kotlin_version"
+            compile "org.jetbrains.kotlinx:kotlinx-html-js:$kotlinx_html_version"
+        }
+
+        compileKotlin2Js {
+            kotlinOptions {
+                outputFile = "$projectDir/build/classes/main/${projectName}.js"
+                moduleKind = "commonjs"
+                sourceMap = true
+                sourceMapEmbedSources = "always"
+            }
         }
     }
 
@@ -69,12 +62,14 @@ subprojects {
             into 'build/npm'
             include 'package.json'
             expand(
+                    css_version: "$css_version",
                     kotlin_version: "$kotlin_version",
                     kotlinext_version: "$kotlinext_version",
                     mocha_version: "$mocha_version",
                     react_version: "$react_version",
                     react_dom_version: "$react_dom_version",
                     redux_version: "$redux_version"
+                    styled_version: "$styled_version",
             )
         }
 
@@ -94,6 +89,15 @@ subprojects {
         npm_publish.dependsOn prepublish
         npm_publish.dependsOn processPkg
         prepublish.dependsOn build
+
+        task sourcesJar(type: Jar) {
+            classifier = 'sources'
+            from sourceSets.main.allSource
+        }
+
+        artifacts {
+            archives sourcesJar
+        }
 
         def v = "$baseVersion-kotlin-$kotlin_version"
         bintray {
