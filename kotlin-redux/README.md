@@ -45,3 +45,20 @@ Subscribing to your store works as usual.
 ```
 unsubscribe = myStore.subscribe { println(myStore.state) }
 ```
+
+### Serialization
+
+If you need to serialize actions, you can do so using
+[kotlinx.serialization](https://github.com/Kotlin/kotlinx.serialization). Just mark the actions you
+want to serialize with `@Serializable`, and you can serialize them and deserialize them in a
+type-safe manner using `serializeAction()` and `deserializeAction()`:
+
+```
+val jsonAction = serializeAction(MyAction())
+
+val action = when (JSON.parse((StringSerializer to StringSerializer).map, jsonAction)["type"]) {
+	"MyAction" -> deserializeAction<MyAction>(jsonAction)
+	"MyOtherAction" -> deserializeAction<MyOtherAction>(jsonAction)
+	else -> null
+}
+```

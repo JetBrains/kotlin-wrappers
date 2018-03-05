@@ -1,5 +1,8 @@
+apply plugin: 'kotlinx-serialization'
+
 configurePublishing(redux_version)
 
 dependencies {
     compile project(":kotlin-extensions")
+    compile "org.jetbrains.kotlinx:kotlinx-serialization-runtime-js:$kotlinx_serialization_version"
 }
