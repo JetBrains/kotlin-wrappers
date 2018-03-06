@@ -7,7 +7,7 @@ dependencies {
 }
 
 project("kotlin-css-js") {
-    configurePublishing(css_version)
+    configurePublishingWithNPM(css_version)
 
     apply plugin: 'kotlin-platform-js'
     applyKotlinJS()

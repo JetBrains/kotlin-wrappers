@@ -1,13 +1,13 @@
 {
-  "name": "@jetbrains/kotlin-css",
+  "name": "@jetbrains/kotlin-css-js",
   "version": "$css_version",
   "description": "Platform-agnostic CSS primitives",
   "files": [
     "build",
-    "src",
     "package.json",
     "README.md"
   ],
+  "main": "build/classes/main/kotlin-css-js.js",
   "repository": "https://github.com/JetBrains/kotlin-wrappers",
   "peerDependencies": {
     "kotlin": "^$kotlin_version",
