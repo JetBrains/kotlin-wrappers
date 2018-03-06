@@ -1,0 +1,19 @@
+{
+  "name": "@jetbrains/kotlin-styled",
+  "version": "$css_version",
+  "description": "Kotlin wrappers for styled-components and inline-style-prefixer",
+  "files": [
+    "build",
+    "src",
+    "package.json",
+    "README.md"
+  ],
+  "main": "build/classes/main/kotlin-styled.js",
+  "repository": "https://github.com/JetBrains/kotlin-wrappers",
+  "peerDependencies": {
+    "kotlin": "^$kotlin_version",
+    "@jetbrains/kotlin-extensions": "^$kotlinext_version"
+  },
+  "author": "Leonid Khachaturov",
+  "license": "Apache-2-0"
+}
