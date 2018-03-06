@@ -1,4 +1,4 @@
-configurePublishing(css_version, false)
+configurePublishing(css_version)
 
 apply plugin: 'kotlin-platform-common'
 
@@ -7,7 +7,7 @@ dependencies {
 }
 
 project("kotlin-css-js") {
-    configurePublishing(css_version, true)
+    configurePublishingWithNPM(css_version)
 
     apply plugin: 'kotlin-platform-js'
     applyKotlinJS()
@@ -20,7 +20,7 @@ project("kotlin-css-js") {
 }
 
 project("kotlin-css-jvm") {
-    configurePublishing(css_version, false)
+    configurePublishing(css_version)
 
     apply plugin: 'kotlin-platform-jvm'
 

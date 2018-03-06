@@ -1,6 +1,6 @@
 applyKotlinJS()
 
-configurePublishing(styled_version, true)
+configurePublishingWithNPM(styled_version)
 
 dependencies {
     compile project(":kotlin-css")
