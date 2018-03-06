@@ -48,7 +48,7 @@ subprojects {
         }
     }
 
-    ext.configurePublishing = { baseVersion ->
+    ext.configurePublishing = { baseVersion, publishNpmPackage ->
         apply plugin: 'com.moowork.node'
         apply plugin: 'com.jfrog.bintray'
         apply plugin: 'maven-publish'
@@ -76,15 +76,18 @@ subprojects {
             exclude 'build/npm'
         }
 
-        npm_publish {
-            args = ['--access', 'public']
-            execOverrides {
-                it.workingDir = 'build/npm'
-            }
-        }
-        npm_publish.dependsOn prepublish
-        npm_publish.dependsOn processPkg
         prepublish.dependsOn build
+
+        if (publishNpmPackage) {
+            npm_publish {
+                args = ['--access', 'public']
+                execOverrides {
+                    it.workingDir = 'build/npm'
+                }
+            }
+            npm_publish.dependsOn prepublish
+            npm_publish.dependsOn processPkg
+        }
 
         task sourcesJar(type: Jar) {
             classifier = 'sources'
