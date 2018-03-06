@@ -15,7 +15,7 @@ external class SwitchComponent : Component<RProps, RState> {
 }
 
 @JsName("Route")
-external class RouteComponent : Component<RouteProps, RState> {
+external class RouteComponent<T : RProps> : Component<RouteProps<T>, RState> {
     override fun render(): ReactElement?
 }
 
@@ -24,14 +24,25 @@ external class LinkComponent : Component<LinkProps, RState> {
     override fun render(): ReactElement?
 }
 
-external interface RouteProps : RProps {
+external interface RouteProps<T : RProps> : RProps {
     var path: String
     var exact: Boolean
+    var strict: Boolean
     var component: RClass<RProps>
-    var render: () -> ReactElement?
+    var render: (props: RouteResultProps<T>) -> ReactElement?
 }
 
 external interface LinkProps : RProps {
     var to: String
     var replace: Boolean
+}
+
+external interface RouteResultProps<T : RProps> : RProps {
+    var match: RouteResultMatch<T>
+}
+
+external interface RouteResultMatch<T : RProps> {
+    var url: String
+    var path: String
+    var params: T
 }

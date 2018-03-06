@@ -13,15 +13,24 @@ See the [Bintray page](https://bintray.com/kotlin/kotlin-js-wrappers/kotlin-reac
 ### Examples
 
 ```kotlin
+interface IdProps : RProps {
+    var id: Int
+}
+
 class RootComponent : RComponent<RProps, RState>() {
     override fun RBuilder.render() {
         hashRouter {
             switch {
                 route("/", IndexComponent::class, exact = true)
-                route("/login") {
+                route("/login", strict = true) {
                     login(privders = listOf("plain", "facebook"))
                     a(href = "#/") {
                         +"Back"
+                    }
+                }
+                route<IdProps>("/user/:id") { props ->
+                    div {
+                        +"User id: ${props.match.params.id}"
                     }
                 }
             }

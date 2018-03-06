@@ -7,23 +7,53 @@ fun RBuilder.hashRouter(handler: RHandler<RProps>) = child(HashRouterComponent::
 
 fun RBuilder.switch(handler: RHandler<RProps>) = child(SwitchComponent::class, handler)
 
-fun RBuilder.route(path: String, component: KClass<out Component<*, *>>, exact: Boolean = false) =
-    child(RouteComponent::class) {
+fun RBuilder.route(
+    path: String,
+    component: KClass<out Component<*, *>>,
+    exact: Boolean = false,
+    strict: Boolean = false
+): ReactElement {
+    return child<RouteProps<RProps>, RouteComponent<RProps>> {
         attrs {
             this.path = path
             this.exact = exact
+            this.strict = strict
             this.component = component.js.unsafeCast<RClass<RProps>>()
         }
     }
+}
 
-fun RBuilder.route(path: String, exact: Boolean = false, render: () -> ReactElement?) =
-    child(RouteComponent::class) {
+fun <T : RProps> RBuilder.route(
+    path: String,
+    exact: Boolean = false,
+    strict: Boolean = false,
+    render: (props: RouteResultProps<T>) -> ReactElement?
+): ReactElement {
+    return child<RouteProps<T>, RouteComponent<T>> {
         attrs {
             this.path = path
             this.exact = exact
+            this.strict = strict
             this.render = render
         }
     }
+}
+
+fun RBuilder.route(
+    path: String,
+    exact: Boolean = false,
+    strict: Boolean = false,
+    render: () -> ReactElement?
+): ReactElement {
+    return child<RouteProps<RProps>, RouteComponent<RProps>> {
+        attrs {
+            this.path = path
+            this.exact = exact
+            this.strict = strict
+            this.render = { render() }
+        }
+    }
+}
 
 fun RBuilder.routeLink(to: String, replace: Boolean = false, handler: RHandler<RProps>?) = child(LinkComponent::class) {
     attrs {
