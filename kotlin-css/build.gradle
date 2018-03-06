@@ -20,7 +20,7 @@ project("kotlin-css-js") {
 }
 
 project("kotlin-css-jvm") {
-    configurePublishing(css_version)
+    configurePublishingWithNPM(css_version)
 
     apply plugin: 'kotlin-platform-jvm'
 
