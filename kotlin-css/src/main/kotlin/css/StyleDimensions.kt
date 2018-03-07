@@ -7,6 +7,12 @@ class LinearDimension(val value: String) {
     companion object {
         val auto = LinearDimension("auto")
         val initial = LinearDimension("initial")
+        val available = LinearDimension("available")
+        val borderBox = LinearDimension("border-box")
+        val contentBox = LinearDimension("content-box")
+        val maxContent = LinearDimension("max-content")
+        val minContent = LinearDimension("min-content")
+        val fitContent = LinearDimension("fit-content")
     }
 
     private val valueCalcSafe: String
