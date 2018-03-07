@@ -17,4 +17,6 @@ external object require {
     fun context(directory: String, useSubdirectories: Boolean, regExp: RegExp): Context
 }
 
+external fun require(module: String): dynamic
+
 inline operator fun require.invoke(module: String) = asDynamic()(module)
