@@ -1,8 +1,8 @@
+@file:Suppress("unused")
 package redux
 
 import kotlinext.js.js
 
-@Suppress("unused")
 class RStore<S>(var reducer: (S, RAction) -> S, preloadedState: S) {
     private val store = Store(::wrapperReducer, preloadedState)
 
@@ -12,14 +12,11 @@ class RStore<S>(var reducer: (S, RAction) -> S, preloadedState: S) {
     fun subscribe(listener: () -> Unit) = store.subscribe(listener)
 
     fun dispatch(action: RAction) = store.dispatch(js {
-        type = "WRAPPER_ACTION"
+        type = action::class.simpleName
         this.action = action
-    })
+    } as WrapperAction)
 
-    private fun wrapperReducer(state: S, action: WrapperAction) = when (action.type) {
-        "WRAPPER_ACTION" -> reducer(state, action.action)
-        else -> state
-    }
+    private fun wrapperReducer(state: S, action: WrapperAction) = reducer(state, action.action)
 }
 
 internal interface WrapperAction {
