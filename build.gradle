@@ -54,38 +54,6 @@ subprojects {
         apply plugin: 'maven-publish'
         apply plugin: 'java'
 
-        task processPkg(type: Copy) {
-            from '.'
-            into 'build/npm'
-            include 'package.json'
-            expand(
-                    css_version: "$css_version",
-                    kotlin_version: "$kotlin_version",
-                    kotlinext_version: "$kotlinext_version",
-                    mocha_version: "$mocha_version",
-                    react_version: "$react_version",
-                    react_dom_version: "$react_dom_version",
-                    styled_version: "$styled_version",
-            )
-        }
-
-        task prepublish(type: Copy) {
-            from '.'
-            into 'build/npm'
-            exclude 'package.json'
-            exclude 'build/npm'
-        }
-
-        npm_publish {
-            args = ['--access', 'public']
-            execOverrides {
-                it.workingDir = 'build/npm'
-            }
-        }
-        npm_publish.dependsOn prepublish
-        npm_publish.dependsOn processPkg
-        prepublish.dependsOn build
-
         task sourcesJar(type: Jar) {
             classifier = 'sources'
             from sourceSets.main.allSource
@@ -125,5 +93,42 @@ subprojects {
                 }
             }
         }
+    }
+
+    ext.configurePublishingWithNPM = { baseVersion ->
+        configurePublishing(baseVersion)
+
+        task processPkg(type: Copy) {
+            from '.'
+            into 'build/npm'
+            include 'package.json'
+            expand(
+                    css_version: "$css_version",
+                    kotlin_version: "$kotlin_version",
+                    kotlinext_version: "$kotlinext_version",
+                    mocha_version: "$mocha_version",
+                    react_version: "$react_version",
+                    react_dom_version: "$react_dom_version",
+                    styled_version: "$styled_version",
+            )
+        }
+
+        task prepublish(type: Copy) {
+            from '.'
+            into 'build/npm'
+            exclude 'package.json'
+            exclude 'build/npm'
+        }
+
+        npm_publish {
+            args = ['--access', 'public']
+            execOverrides {
+                it.workingDir = 'build/npm'
+            }
+        }
+
+        npm_publish.dependsOn prepublish
+        npm_publish.dependsOn processPkg
+        prepublish.dependsOn build
     }
 }

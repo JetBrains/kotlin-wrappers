@@ -1,6 +1,6 @@
 applyKotlinJS()
 
-configurePublishing(react_version)
+configurePublishingWithNPM(react_version)
 
 dependencies {
     compile project(':kotlin-extensions')

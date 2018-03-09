@@ -14,10 +14,13 @@ private val hyphenize: (String) -> String = memoizeString {
 private fun <R> memoizeString(fn: (String) -> R): (String) -> R {
     val map = LinkedHashMap<String, R>()
     return {
-        if (!map.containsKey(it)) {
-            map[it] = fn(it)
+        synchronized(map) {
+            if (!map.containsKey(it)) {
+                map[it] = fn(it)
+            }
+
+            map[it]!!
         }
-        map[it]!!
     }
 }
 
