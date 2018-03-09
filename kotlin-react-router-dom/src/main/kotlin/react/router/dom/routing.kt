@@ -24,6 +24,11 @@ external class LinkComponent : Component<LinkProps, RState> {
     override fun render(): ReactElement?
 }
 
+@JsName("Redirect")
+external class RedirectComponent : Component<RedirectProps, RState> {
+    override fun render(): ReactElement?
+}
+
 external interface RouteProps<T : RProps> : RProps {
     var path: String
     var exact: Boolean
@@ -45,4 +50,12 @@ external interface RouteResultMatch<T : RProps> {
     var url: String
     var path: String
     var params: T
+}
+
+external interface RedirectProps : RProps {
+    var from: String
+    var to: String
+    var push: Boolean
+    var exact: Boolean
+    var strict: Boolean
 }

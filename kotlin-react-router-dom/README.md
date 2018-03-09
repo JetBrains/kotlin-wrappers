@@ -33,6 +33,7 @@ class RootComponent : RComponent<RProps, RState>() {
                         +"User id: ${props.match.params.id}"
                     }
                 }
+                redirect(from = "/redirect", to = "/redirected")
             }
         }
     }

@@ -62,3 +62,19 @@ fun RBuilder.routeLink(to: String, replace: Boolean = false, handler: RHandler<R
     }
     handler?.invoke(this)
 }
+
+fun RBuilder.redirect(
+    from: String,
+    to: String,
+    push: Boolean = false,
+    exact: Boolean = false,
+    strict: Boolean = false
+) = child(RedirectComponent::class) {
+    attrs {
+        this.from = from
+        this.to = to
+        this.push = push
+        this.exact = exact
+        this.strict = strict
+    }
+}
