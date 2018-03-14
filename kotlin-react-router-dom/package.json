@@ -1,6 +1,6 @@
 {
   "name": "@jetbrains/kotlin-react-router-dom",
-  "version": "$react_router_dom",
+  "version": "$react_router_dom_version",
   "description": "Kotlin wrapper for React Router DOM library",
   "files": [
     "build",
@@ -15,6 +15,6 @@
     "@jetbrains/kotlin-react": "^$react_version",
     "react-router-dom": "^4.2.2"
   },
-  "author": "JetBrains",
+  "author": "Andrius Semionovas",
   "license": "Apache-2-0"
 }

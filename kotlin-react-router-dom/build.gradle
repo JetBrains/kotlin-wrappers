@@ -1,6 +1,6 @@
 applyKotlinJS()
 
-configurePublishing(react_router_dom)
+configurePublishing(react_router_dom_version)
 
 dependencies {
     compile project(":kotlin-react")
