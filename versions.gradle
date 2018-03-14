@@ -14,9 +14,10 @@ ext {
     // kotlin-mocha
     mocha_version = '3.0.1-pre.16'
 
-    // kotlin-react, kotlin-react-dom
-    react_version = '16.2.1-pre.16'
-    react_dom_version = '16.2.1-pre.16'
+    // kotlin-react, kotlin-react-dom, kotlin-react-router-dom
+    react_version = '16.2.1-pre.17'
+    react_dom_version = '16.2.1-pre.17'
+    react_router_dom = '4.2.2-pre.17'
 
     // kotlin-styled
     styled_version = '1.0.0-pre.16'

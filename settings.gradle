@@ -15,6 +15,9 @@ include 'kotlin-mocha'
 include 'kotlin-react'
 include 'kotlin-react-dom'
 
+// Kotlin/JS: React router wrappers
+include 'kotlin-react-router-dom'
+
 // Kotlin/JS: styled-components wrappers
 include 'kotlin-styled'
 
