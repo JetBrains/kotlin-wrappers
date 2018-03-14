@@ -123,7 +123,7 @@ class CSSBuilder(val indent: String = "", val allowClasses: Boolean = true) : St
 
     fun specific(specificity: Int = 2, block: RuleSet) = "&".repeat(specificity)(block)
 
-    fun media(query: String, block: RuleSet) = "@media ($query)"(block)
+    fun media(query: String, block: RuleSet) = "@media $query"(block)
 
     operator fun RuleSet.unaryPlus() = this()
 
