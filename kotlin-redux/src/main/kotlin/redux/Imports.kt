@@ -4,7 +4,7 @@ package redux
 external fun <S, A> createStore(
         reducer: Reducer<S, A>,
         preloadedState: S,
-        enhancer: (StoreCreator<S, dynamic>) -> StoreCreator<S, A> = definedExternally
+        enhancer: Enhancer<S, dynamic, A> = definedExternally
 ): Store<S, A>
 
 external interface Store<S, A> {
