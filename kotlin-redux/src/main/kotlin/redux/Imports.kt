@@ -1,7 +1,11 @@
 @file:JsModule("redux")
 package redux
 
-external fun <S, A> createStore(reducer: Reducer<S, A>, preloadedState: S): Store<S, A>
+external fun <S, A> createStore(
+        reducer: Reducer<S, A>,
+        preloadedState: S,
+        enhancer: (StoreCreator<S, dynamic>) -> StoreCreator<S, A> = definedExternally
+): Store<S, A>
 
 external interface Store<S, A> {
     fun getState(): S
