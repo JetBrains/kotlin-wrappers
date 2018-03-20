@@ -1,7 +1,6 @@
 package kotlinx.css
 
-const val UNIT = 8
-private const val ZERO_CONST = "0"
+private const val ZERO = "0"
 
 class LinearDimension(val value: String) {
     companion object {
@@ -16,14 +15,14 @@ class LinearDimension(val value: String) {
     }
 
     private val valueCalcSafe: String
-        get() = if (value == ZERO_CONST) "0px" else value
+        get() = if (value == ZERO) "0px" else value
 
     override fun toString() = value
 
     operator fun unaryMinus() = LinearDimension(when {
         value.startsWith('-') -> value.substring(1)
         value.startsWith("calc") -> "calc(0px - $value)"
-        value == ZERO_CONST -> value
+        value == ZERO -> value
         else -> "-$value"
     })
 
@@ -35,7 +34,7 @@ class LinearDimension(val value: String) {
 
 private fun value(number: Number, unit: String): String {
     return if (number == 0)
-        ZERO_CONST
+        ZERO
     else
         number.toString() + unit
 }
@@ -45,6 +44,3 @@ val Number.pct: LinearDimension get() = LinearDimension(value(this, "%"))
 val Number.px: LinearDimension get() = LinearDimension(value(this, "px"))
 val Number.vw: LinearDimension get() = LinearDimension(value(this, "vw"))
 val Number.vh: LinearDimension get() = LinearDimension(value(this, "vh"))
-
-val Int.unit get() = (this * UNIT).px
-val Double.unit get() = (this * UNIT).px
