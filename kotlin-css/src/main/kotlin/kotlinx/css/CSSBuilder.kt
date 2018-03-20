@@ -1,4 +1,4 @@
-package css
+package kotlinx.css
 
 typealias RuleSet = CSSBuilder.() -> Unit
 

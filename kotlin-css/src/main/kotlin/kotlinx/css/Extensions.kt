@@ -1,4 +1,4 @@
-package css
+package kotlinx.css
 
 private val hyphenize: (String) -> String = memoizeString {
     buildString {

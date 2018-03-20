@@ -1,4 +1,4 @@
-package css
+package kotlinx.css
 
 @Suppress("EnumEntryName")
 enum class Align {

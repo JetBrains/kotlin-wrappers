@@ -1,8 +1,8 @@
 package styled
 
-import css.*
-import css.properties.*
 import kotlinext.js.*
+import kotlinx.css.*
+import kotlinx.css.properties.*
 
 fun CSSBuilder.animation(
     duration: Time = 0.s,

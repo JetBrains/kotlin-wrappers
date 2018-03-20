@@ -1,4 +1,4 @@
-package css
+package kotlinx.css
 
 const val UNIT = 8
 private const val ZERO_CONST = "0"
