@@ -3,7 +3,7 @@
 Kotlin wrapper for [React Router DOM library](https://reacttraining.com/react-router/). 
 Major version number of this wrapper matches that of React Router DOM itself.
 
-Only hash routing is supported for now.
+Both BrowserRouter and HashRouter are supported.
 
 ### Installation
 
@@ -38,5 +38,12 @@ class RootComponent : RComponent<RProps, RState>() {
             }
         }
     }
+}
+```
+
+For **BrowserRouter** just exchange hashRouter with:
+```kotlin
+browserRouter {
+    //routing code ...
 }
 ```
