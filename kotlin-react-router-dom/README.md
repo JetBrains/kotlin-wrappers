@@ -20,7 +20,7 @@ interface IdProps : RProps {
 
 class RootComponent : RComponent<RProps, RState>() {
     override fun RBuilder.render() {
-        hashRouter {
+        hashRouter { // or "browserRouter"
             switch {
                 route("/", IndexComponent::class, exact = true)
                 route("/login", strict = true) {
@@ -38,12 +38,5 @@ class RootComponent : RComponent<RProps, RState>() {
             }
         }
     }
-}
-```
-
-For **BrowserRouter** just exchange hashRouter with:
-```kotlin
-browserRouter {
-    //routing code ...
 }
 ```
