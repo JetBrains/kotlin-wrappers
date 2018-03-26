@@ -1,7 +1,7 @@
 {
   "name": "@jetbrains/kotlin-css",
   "version": "$css_version",
-  "description": "Platform-agnostic CSS primitives",
+  "description": "Platform-agnostic CSS primitives (common module)",
   "files": [
     "build",
     "src",
@@ -10,8 +10,8 @@
   ],
   "repository": "https://github.com/JetBrains/kotlin-wrappers",
   "peerDependencies": {
-    "kotlin": "^$kotlin_version",
-    "@jetbrains/kotlin-extensions": "^$kotlinext_version"
+    "@jetbrains/kotlin-extensions": "^$kotlinext_version",
+    "kotlin": "^$kotlin_version"
   },
   "author": "Leonid Khachaturov",
   "license": "Apache-2-0"

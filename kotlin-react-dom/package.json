@@ -11,8 +11,8 @@
   "main": "build/classes/main/kotlin-react-dom.js",
   "repository": "https://github.com/JetBrains/kotlin-wrappers",
   "peerDependencies": {
-    "kotlin": "^$kotlin_version",
     "@jetbrains/kotlin-react": "^$react_version",
+    "kotlin": "^$kotlin_version",
     "react-dom": ">=15.x.x <=16.x.x"
   },
   "author": "Filipp Riabchun",

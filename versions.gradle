@@ -6,19 +6,19 @@ ext {
     bintray_plugin_version = '1.8.0'
 
     // kotlin-css
-    css_version = '1.0.0-pre.20'
+    css_version = '1.0.0-pre.21'
 
     // kotlin-extensions
-    kotlinext_version = '1.0.1-pre.20'
+    kotlinext_version = '1.0.1-pre.21'
 
     // kotlin-mocha
-    mocha_version = '3.0.1-pre.20'
+    mocha_version = '3.0.1-pre.21'
 
     // kotlin-react, kotlin-react-dom, kotlin-react-router-dom
-    react_version = '16.2.1-pre.20'
-    react_dom_version = '16.2.1-pre.20'
-    react_router_dom_version = '4.2.2-pre.20'
+    react_version = '16.2.1-pre.21'
+    react_dom_version = '16.2.1-pre.21'
+    react_router_dom_version = '4.2.2-pre.21'
 
     // kotlin-styled
-    styled_version = '1.0.0-pre.20'
+    styled_version = '1.0.0-pre.21'
 }

@@ -11,8 +11,12 @@
   "main": "build/classes/main/kotlin-styled.js",
   "repository": "https://github.com/JetBrains/kotlin-wrappers",
   "peerDependencies": {
+    "@jetbrains/kotlin-css": "^$css_version",
+    "@jetbrains/kotlin-css-js": "^$css_version",
+    "@jetbrains/kotlin-extensions": "^$kotlinext_version",
+    "inline-style-prefixer": "^4.0.0",
     "kotlin": "^$kotlin_version",
-    "@jetbrains/kotlin-extensions": "^$kotlinext_version"
+    "styled-components": "^3.2.3"
   },
   "author": "Leonid Khachaturov",
   "license": "Apache-2-0"
