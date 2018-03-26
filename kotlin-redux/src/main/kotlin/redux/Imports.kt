@@ -13,3 +13,5 @@ external interface Store<S, A> {
     fun subscribe(listener: () -> Unit): () -> Unit
     fun replaceReducer(nextReducer: Reducer<S, A>)
 }
+
+external fun <S, A> combineReducers(reducers: dynamic): Reducer<S, A>
