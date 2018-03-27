@@ -25,9 +25,9 @@ like this:
 
 ```kotlin
 fun RBuilder.div() {
-	div("some-class") {
-	    +"Hello world!"
-	}
+    div("some-class") {
+        +"Hello world!"
+    }
 }
 ```
 
@@ -35,14 +35,14 @@ With `kotlin-styled` you never have to leave Kotlin:
 
 ```kotlin
 fun RBuilder.div() {
-	styledDiv {
-	    css {
-	        padding(vertical = 16.px)
+    styledDiv {
+        css {
+            padding(vertical = 16.px)
 	        
-	        backgroundColor = Color.green
-	    }    
-	    +"Hello world!"
-	}
+            backgroundColor = Color.green
+        }    
+        +"Hello world!"
+    }
 }
 ```
 
@@ -59,12 +59,12 @@ object ComponentStyles : StyleSheet("ComponentStyles", isStatic = true) {
 }
 
 fun RBuilder.div() {
-	styledDiv {
-	    css {
-	        +ComponentStyles.wrapper
-	    }
-	    +"Hello world!"
-	}
+    styledDiv {
+        css {
+            +ComponentStyles.wrapper
+        }
+        +"Hello world!"
+    }
 }
 ```
 
