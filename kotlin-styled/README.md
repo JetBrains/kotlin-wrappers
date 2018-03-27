@@ -71,7 +71,7 @@ fun RBuilder.div() {
 The latter is much easier to debug in the browser as well: when inspecting the element you'll see readable class names, 
 e.g. `class="ComponentStyles-wrapper"` rather than generated ones.
 
-### CSS properties
+### CSS Properties
 
 The DSL supports most common CSS properties and values, including animations, transforms, shadows, and flexbox. 
 **SVG properties as well as CSS grids are not supported yet, contributions are welcome**. 
@@ -83,13 +83,13 @@ css {
 }
 ```
 
-### CSS selectors
+### CSS Selectors
 
 The DSL allows you to use most CSS selectors. See 
 [CSSBuilder](https://github.com/JetBrains/kotlin-wrappers/blob/master/kotlin-css/src/main/kotlin/kotlinx/css/CSSBuilder.kt#L35)
 for more details. **Contributions are welcome**.
 
-### Global styles
+### Global Styles
 
 To create a global stylesheet use the `CSSBuilder` class and the `StyledComponents.injectGlobal()` function:
 
