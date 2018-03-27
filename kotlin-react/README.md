@@ -6,7 +6,8 @@ Kotlin wrapper for React library. Major version number of this wrapper matches t
 
 `npm i @jetbrains/kotlin-react`
 
-See the [Bintray page](https://bintray.com/kotlin/kotlin-js-wrappers/kotlin-react) for Maven and Gradle installation instructions.
+See the [Bintray page](https://bintray.com/kotlin/kotlin-js-wrappers/kotlin-react) for Maven and Gradle 
+installation instructions.
 
 ### Creating a simple React component with Kotlin
 
@@ -29,15 +30,17 @@ import react.*
 import react.dom.*
 
 fun RBuilder.hello(name: String) {
-    h1 {
+    h1 {
         +"Hello, $name"
     }
 }
 ```
 
-`RBuilder` lets you construct your component's markup using [type-safe builders](https://kotlinlang.org/docs/reference/type-safe-builders.html), similarly to JSX.
+`RBuilder` lets you construct your component's markup using 
+[type-safe builders](https://kotlinlang.org/docs/reference/type-safe-builders.html), similarly to JSX.
   
-When writing React code in JavaScript the type annotations for props (via `PropTypes`) are optional, but in Kotlin they are not.
+When writing React code in JavaScript the type annotations for props (via `PropTypes`) are optional, but in Kotlin 
+they are not.
 
 Here's an example of a component defined using a class with a `name` property of type `String`:
 
@@ -52,9 +55,9 @@ interface WelcomeProps: RProps {
 }
 
 class Welcome: RComponent<WelcomeProps, RState>() {
-    override fun RBuilder.render() {
+     override fun RBuilder.render() {
         div {
-            +"Hello, ${props.name}"
+            +"Hello, ${props.name}"
         }
     }
 }
@@ -76,4 +79,5 @@ fun RBuilder.app {
 
 ### Internals
 
-[Imports.kt](src/main/kotlin/react/Imports.kt) contains type definitions for React. The remaining classes ([React.kt](src/main/kotlin/react/React.kt) and others) provide higher-level APIs on top of that definition.
+[Imports.kt](src/main/kotlin/react/Imports.kt) contains type definitions for React. The remaining classes 
+([React.kt](src/main/kotlin/react/React.kt) and others) provide higher-level APIs on top of that definition.

@@ -22,7 +22,7 @@ contributions are welcome**.
 `kotlin-css` is a low-level library. After constructing a stylesheet you can serialize it into a string and do with it 
 as you please:
 
-```
+```kotlin
 val styles = CSSBuilder().apply {
     body {
         margin = 0.px

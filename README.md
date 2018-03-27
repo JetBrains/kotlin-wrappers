@@ -2,13 +2,17 @@
 
 # Kotlin Wrappers
 
-This repository hosts a number of [Kotlin](https://kotlinlang.org) wrappers for popular JavaScript libraries: react, react-dom, and mocha.
+This repository hosts a number of [Kotlin](https://kotlinlang.org) wrappers for popular JavaScript libraries, such as
+[React](https://reactjs.org/), [Mocha](https://mochajs.org/), and [styled-components](https://www.styled-components.com/).
 
-To learn more please refer to the READMEs of individual modules: 
-[kotlin-extensions](kotlin-extensions/README.md), 
-[kotlin-mocha](kotlin-mocha/README.md), 
-[kotlin-react](kotlin-react/README.md), 
-[kotlin-react-dom](kotlin-react-dom/README.md).
+To learn more please refer to the READMEs of individual modules:
+* [kotlin-css](kotlin-css/README.md), 
+* [kotlin-extensions](kotlin-extensions/README.md), 
+* [kotlin-mocha](kotlin-mocha/README.md), 
+* [kotlin-react](kotlin-react/README.md), 
+* [kotlin-react-dom](kotlin-react-dom/README.md),
+* [kotlin-react-router-dom](kotlin-react-router-dom/README.md),
+* [kotlin-styled](kotlin-styled/README.md).
 
 All wrappers are available on npm: `npm install @jetbrains/<wrapper name>`
 
@@ -22,7 +26,8 @@ Artifacts installable using Maven and Gradle are published to [Bintray](https://
 
 3. A port of "Thinking in React" [example](examples/src/main/kotlin/example/Product.kt)
 
-4. An [example of using axios](examples/src/main/kotlin/example/AxiosSearch.kt) to fetch remote data. It also demonstrates how to add typings for an external library.
+4. An [example of using axios](examples/src/main/kotlin/example/AxiosSearch.kt) to fetch remote data. It also 
+demonstrates how to add typings for an external library.
 
 5. An [example of using Quill](examples/src/main/kotlin/example/Quill.kt) that shows how to use an external React component.
 
@@ -31,8 +36,11 @@ You also can clone [my-kotlin-react-sample](https://github.com/ScottHuangZL/my-k
 
 ## Real-world examples
 
-[KotlinConf App](https://github.com/JetBrains/kotlinconf-app/) — an application developed at JetBrains to showcase multiplatform projects in Kotlin. The web-based part of the app is written using React and Kotlin/JS.
+[KotlinConf App](https://github.com/JetBrains/kotlinconf-app/) — an application developed at JetBrains to showcase 
+multiplatform projects in Kotlin. The web-based part of the app is written using React and Kotlin/JS.
 
 ## Contributing
 
-Contributions to this project are welcome! Please see the open [issues](https://github.com/JetBrains/kotlin-wrappers/issues) or chat with us on the **#react** channel in our [Slack](http://slack.kotlinlang.org/). 
+Contributions to this project are welcome! Please see the open 
+[issues](https://github.com/JetBrains/kotlin-wrappers/issues) or chat with us on the **#react** channel in our 
+[Slack](http://slack.kotlinlang.org/). 

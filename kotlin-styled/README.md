@@ -23,7 +23,7 @@ because `kotlin-styled` implements this exact idea... in Kotlin.
 When using just `kotlin-react` you would create a regular CSS file and then you would reference CSS classes from Kotlin 
 like this:
 
-```
+```kotlin
 fun RBuilder.div() {
 	div("some-class") {
 	    +"Hello world!"
@@ -33,7 +33,7 @@ fun RBuilder.div() {
 
 With `kotlin-styled` you never have to leave Kotlin:
 
-```
+```kotlin
 fun RBuilder.div() {
 	styledDiv {
 	    css {
@@ -49,7 +49,7 @@ fun RBuilder.div() {
 While you can mix markup and styles in one-off scenarios like the example above, most times you would probably want to 
 have them separated to enable code reuse:
 
-```
+```kotlin
 object ComponentStyles : StyleSheet("ComponentStyles", isStatic = true) {
     val wrapper by css {
         padding(vertical = 16.px)
@@ -77,7 +77,7 @@ The DSL supports most common CSS properties and values, including animations, tr
 **SVG properties as well as CSS grids are not supported yet, contributions are welcome**. 
 However, you can use `put("property", "value")` syntax for any unsupported property:
 
-```
+```kotlin
 css {
     put("will-change", "transform")
 }
@@ -93,7 +93,7 @@ for more details. **Contributions are welcome**.
 
 To create a global stylesheet use the `CSSBuilder` class and the `StyledComponents.injectGlobal()` function:
 
-```
+```kotlin
 val styles = CSSBuilder().apply {
     body {
         margin = 0.px
