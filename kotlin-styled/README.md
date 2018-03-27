@@ -1,23 +1,27 @@
 ## kotlin-styled
 
-Kotlin wrappers for [styled-components](https://www.styled-components.com/) and [inline-style-prefixer](https://github.com/rofrischmann/inline-style-prefixer).
+Kotlin wrappers for [styled-components](https://www.styled-components.com/) and 
+[inline-style-prefixer](https://github.com/rofrischmann/inline-style-prefixer).
 
 ### Installation
 
 `npm i @jetbrains/kotlin-css @jetbrains/kotlin-css-js @jetbrains/kotlin-styled inline-style-prefixer styled-components`
 
-See the [Bintray page](https://bintray.com/kotlin/kotlin-js-wrappers/kotlin-styled) for Maven and Gradle installation instructions.
+See the [Bintray page](https://bintray.com/kotlin/kotlin-js-wrappers/kotlin-styled) for Maven and Gradle installation 
+instructions.
 
 ### Getting Started
 
-`kotlin-styled` is a great fit for applications built using `kotlin-react`. It gives you not only a type-safe way of authoring stylesheets, 
-but it also takes care of adding vendor prefixes for your CSS rules, assembling stylesheets, and injecting them into the DOM.
+`kotlin-styled` is a great fit for applications built using `kotlin-react`. It gives you not only a type-safe way of 
+authoring stylesheets, but it also takes care of adding vendor prefixes for your CSS rules, assembling stylesheets, 
+and injecting them into the DOM.
 
-If you are not familiar with [styled-components](https://www.styled-components.com/) or CSS-in-JS in general, now would be a good time to
-[inform yourself about the concept](https://hackernoon.com/all-you-need-to-know-about-css-in-js-984a72d48ebc), because `kotlin-styled`
-implements this exact idea... in Kotlin.
+If you are not familiar with [styled-components](https://www.styled-components.com/) or CSS-in-JS in general, now would 
+be a good time to [inform yourself about the concept](https://hackernoon.com/all-you-need-to-know-about-css-in-js-984a72d48ebc), 
+because `kotlin-styled` implements this exact idea... in Kotlin.
 
-When using just `kotlin-react` you would create a regular CSS file and then you would reference CSS classes from Kotlin like this:
+When using just `kotlin-react` you would create a regular CSS file and then you would reference CSS classes from Kotlin 
+like this:
 
 ```
 fun RBuilder.div() {
@@ -42,8 +46,8 @@ fun RBuilder.div() {
 }
 ```
 
-While you can mix markup and styles in one-off scenarios like the example above, most times you would probably want to have them separated to 
-enable code reuse:
+While you can mix markup and styles in one-off scenarios like the example above, most times you would probably want to 
+have them separated to enable code reuse:
 
 ```
 object ComponentStyles : StyleSheet("ComponentStyles", isStatic = true) {
@@ -64,4 +68,38 @@ fun RBuilder.div() {
 }
 ```
 
-The latter is much easier to debug in the browser as well: when inspecting the element you'll see readable class names, e.g. `class="ComponentStyles-wrapper"` rather than generated ones.
+The latter is much easier to debug in the browser as well: when inspecting the element you'll see readable class names, 
+e.g. `class="ComponentStyles-wrapper"` rather than generated ones.
+
+### CSS properties
+
+The DSL supports most common CSS properties and values, including animations, transforms, shadows, and flexbox. 
+**SVG properties as well as CSS grids are not supported yet, contributions are welcome**. 
+However, you can use `put("property", "value")` syntax for any unsupported property:
+
+```
+css {
+    put("will-change", "transform")
+}
+```
+
+### CSS selectors
+
+The DSL allows you to use most CSS selectors. See 
+[CSSBuilder](https://github.com/JetBrains/kotlin-wrappers/blob/master/kotlin-css/src/main/kotlin/kotlinx/css/CSSBuilder.kt#L35)
+for more details. **Contributions are welcome**.
+
+### Global styles
+
+To create a global stylesheet use the `CSSBuilder` class and the `StyledComponents.injectGlobal()` function:
+
+```
+val styles = CSSBuilder().apply {
+    body {
+        margin = 0.px
+        padding = 0.px
+    }
+}
+
+StyledComponents.injectGlobal(styles.toString())
+```
