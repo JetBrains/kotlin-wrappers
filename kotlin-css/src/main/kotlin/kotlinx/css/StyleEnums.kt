@@ -94,12 +94,57 @@ class Color(val value: String) {
     }
 
     override fun toString() = value
+
+    fun withAlpha(alpha: Double): Color {
+        if (alpha < 0 || alpha > 1) {
+            throw IllegalArgumentException(
+                    "Alpha should be a number between 0.0 (fully transparent) and 1.0 (fully opaque)")
+        } else {
+            val rgb = toRGB()
+            return Color("rgba(${rgb.first},${rgb.second},${rgb.third},$alpha)")
+        }
+    }
+
+
+    private fun fromRGBNotation(): Triple<Int, Int, Int> {
+        // Match for rgb(255, 255, 255) | rgba(255, 255, 255, 0.5)
+        val pattern = "^rgba?\\((\\d{1,3}),?\\s*(\\d{1,3}),?\\s*(\\d{1,3}),?\\s*(\\d\\.\\d)?\\)\$"
+        val match = Regex(pattern, RegexOption.IGNORE_CASE).find(value)
+        val ints = (1..3).map {
+            val int = match?.groups?.get(it)?.value?.toInt()
+            if (int == null || int < 0 || int > 255) {
+                throw IllegalArgumentException("Expected rgb or rgba notation, got $value")
+            } else {
+                int
+            }
+        }
+        return Triple(ints[0], ints[1], ints[2])
+    }
+
+    private fun toRGB(): Triple<Int, Int, Int> {
+        return when {
+            value.startsWith("rgb") -> fromRGBNotation()
+            // Matches #rgb
+            value.startsWith("#") && value.length == 4 -> Triple(
+                    (value[1].toString() * 2).toInt(16),
+                    (value[2].toString() * 2).toInt(16),
+                    (value[3].toString() * 2).toInt(16)
+            )
+            // Matches both #rrggbb and #rrggbbaa
+            value.startsWith("#") && (value.length == 7 || value.length == 9) -> Triple(
+                    (value.substring(1..2)).toInt(16),
+                    (value.substring(3..4)).toInt(16),
+                    (value.substring(5..6)).toInt(16)
+            )
+            else -> throw IllegalArgumentException("Only hexadecimal, rgb, and rgba notations are accepted, got $value")
+        }
+    }
 }
 
 fun rgb(red: Int, green: Int, blue: Int) = Color("rgb($red, $green, $blue)")
 fun rgba(red: Int, green: Int, blue: Int, alpha: Double) = Color("rgba($red, $green, $blue, $alpha)")
-fun blackAlpha(alpha: Double) = rgba(0, 0, 0, alpha)
-fun whiteAlpha(alpha: Double) = rgba(255, 255, 255, alpha)
+fun blackAlpha(alpha: Double) = Color.black.withAlpha(alpha)
+fun whiteAlpha(alpha: Double) = Color.white.withAlpha(alpha)
 
 @Suppress("EnumEntryName")
 enum class Cursor {
