@@ -78,7 +78,6 @@ enum class Clear {
 }
 
 class Color(val value: String) {
-    // Reserved for basic constants only, actual theming is done in XTheme and AppTheme
     companion object {
         val transparent = Color("transparent")
 
@@ -97,8 +96,7 @@ class Color(val value: String) {
 
     fun withAlpha(alpha: Double): Color {
         if (alpha < 0 || alpha > 1) {
-            throw IllegalArgumentException(
-                    "Alpha should be a number between 0.0 (fully transparent) and 1.0 (fully opaque)")
+            throw IllegalArgumentException("Alpha should be a number between 0.0 (fully transparent) and 1.0 (fully opaque)")
         } else {
             val rgb = toRGB()
             return Color("rgba(${rgb.first},${rgb.second},${rgb.third},$alpha)")
@@ -124,17 +122,19 @@ class Color(val value: String) {
     private fun toRGB(): Triple<Int, Int, Int> {
         return when {
             value.startsWith("rgb") -> fromRGBNotation()
+
             // Matches #rgb
             value.startsWith("#") && value.length == 4 -> Triple(
-                    (value[1].toString() * 2).toInt(16),
-                    (value[2].toString() * 2).toInt(16),
-                    (value[3].toString() * 2).toInt(16)
+                (value[1].toString() * 2).toInt(16),
+                (value[2].toString() * 2).toInt(16),
+                (value[3].toString() * 2).toInt(16)
             )
+
             // Matches both #rrggbb and #rrggbbaa
             value.startsWith("#") && (value.length == 7 || value.length == 9) -> Triple(
-                    (value.substring(1..2)).toInt(16),
-                    (value.substring(3..4)).toInt(16),
-                    (value.substring(5..6)).toInt(16)
+                (value.substring(1..2)).toInt(16),
+                (value.substring(3..4)).toInt(16),
+                (value.substring(5..6)).toInt(16)
             )
             else -> throw IllegalArgumentException("Only hexadecimal, rgb, and rgba notations are accepted, got $value")
         }
