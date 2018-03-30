@@ -49,9 +49,17 @@ external interface LinkProps : RProps {
 
 external interface RouteResultProps<T : RProps> : RProps {
     var match: RouteResultMatch<T>
+    var location: RouteResultLocation
+}
+
+external interface RouteResultLocation {
+    var hash: String
+    var pathname: String
+    var search: String
 }
 
 external interface RouteResultMatch<T : RProps> {
+    var isExact: Boolean
     var url: String
     var path: String
     var params: T
