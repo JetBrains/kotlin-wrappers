@@ -48,8 +48,15 @@ external interface LinkProps : RProps {
 }
 
 external interface RouteResultProps<T : RProps> : RProps {
-    var match: RouteResultMatch<T>
+    var history: RouteResultHistory
     var location: RouteResultLocation
+    var match: RouteResultMatch<T>
+}
+
+external interface RouteResultHistory {
+    var location: RouteResultLocation
+
+    fun push(path: String)
 }
 
 external interface RouteResultLocation {
