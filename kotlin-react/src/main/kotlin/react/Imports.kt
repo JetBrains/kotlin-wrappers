@@ -35,13 +35,23 @@ abstract external class Component<P : RProps, S : RState>(
 
     open fun getChildContext(): RContext?
 
+    open fun getDerivedStateFromProps(nextProps: P, prevState: S): Unit
+
     open fun componentWillMount(): Unit
+    open fun UNSAFE_componentWillMount(): Unit
+
     open fun componentDidMount(): Unit
 
     open fun componentWillReceiveProps(nextProps: P): Unit
+    open fun UNSAFE_componentWillReceiveProps(nextProps: P): Unit
 
     open fun shouldComponentUpdate(nextProps: P, nextState: S): Boolean
+
+    open fun getSnapshotBeforeUpdate(prevProps: P, prevState: S): Unit
+
     open fun componentWillUpdate(nextProps: P, nextState: S): Unit
+    open fun UNSAFE_componentWillUpdate(nextProps: P, nextState: S): Unit
+
     open fun componentDidUpdate(prevProps: P, prevState: S): Unit
 
     open fun componentWillUnmount(): Unit
