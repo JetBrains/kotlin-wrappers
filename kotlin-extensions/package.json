@@ -3,8 +3,7 @@
   "version": "$kotlinext_version",
   "description": "Kotlin wrappers for standard JS objects plus some helpers",
   "files": [
-    "build",
-    "src",
+    "build/classes",
     "package.json",
     "README.md"
   ],

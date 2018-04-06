@@ -3,8 +3,7 @@
   "version": "$css_version",
   "description": "Platform-agnostic CSS primitives (common module)",
   "files": [
-    "build",
-    "src",
+    "build/classes",
     "package.json",
     "README.md"
   ],

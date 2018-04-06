@@ -3,8 +3,7 @@
   "version": "$css_version",
   "description": "Kotlin wrappers for styled-components and inline-style-prefixer",
   "files": [
-    "build",
-    "src",
+    "build/classes",
     "package.json",
     "README.md"
   ],

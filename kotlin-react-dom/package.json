@@ -3,8 +3,7 @@
   "version": "$react_dom_version",
   "description": "Kotlin wrapper for React DOM library",
   "files": [
-    "build",
-    "src",
+    "build/classes",
     "package.json",
     "README.md"
   ],

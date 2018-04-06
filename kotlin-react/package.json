@@ -3,8 +3,7 @@
   "version": "$react_version",
   "description": "Kotlin wrapper for React library",
   "files": [
-    "build",
-    "src",
+    "build/classes",
     "package.json",
     "README.md"
   ],
