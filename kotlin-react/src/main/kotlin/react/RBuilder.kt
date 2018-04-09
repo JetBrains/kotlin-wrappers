@@ -33,6 +33,19 @@ open class RBuilder {
     operator fun <P : RProps> RClass<P>.invoke(handler: RHandler<P>) =
         child(this, jsObject {}, handler)
 
+    operator fun <T> RProvider<T>.invoke(value: T, handler: RHandler<RProviderProps<T>>) =
+        child(this, jsObject { this.value = value }, handler)
+
+    operator fun <T> RConsumer<T>.invoke(handler: RBuilder.(T) -> Unit) =
+        child(this, jsObject<RConsumerProps<T>> {
+            this.children = { value ->
+                with(RBuilder()) {
+                    handler(value)
+                    childList.toTypedArray()
+                }
+            }
+        }) {}
+
     fun <P : RProps> RClass<P>.node(
         props: P,
         children: List<Any> = emptyList()

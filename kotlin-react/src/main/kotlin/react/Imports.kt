@@ -20,20 +20,15 @@ external object Children {
 }
 
 abstract external class Component<P : RProps, S : RState>(
-    props: RProps = definedExternally,
-    context: RContext = definedExternally,
-    updater: ReactUpdater = definedExternally
+    props: RProps = definedExternally
 ) {
     open val props: P
     var state: S
-    val context: RContext
 
     fun setState(partialState: S, callback: () -> Unit = definedExternally)
     fun setState(transformState: (S) -> S, callback: () -> Unit = definedExternally)
 
     fun forceUpdate(callback: () -> Unit = definedExternally)
-
-    open fun getChildContext(): RContext?
 
     open fun getDerivedStateFromProps(nextProps: P, prevState: S): Unit
 
@@ -62,11 +57,11 @@ abstract external class Component<P : RProps, S : RState>(
 }
 
 abstract external class PureComponent<P : RProps, S : RState>(
-    props: RProps = definedExternally,
-    context: RContext = definedExternally,
-    updater: ReactUpdater = definedExternally
+    props: RProps = definedExternally
 ) : Component<P, S> {
     final override fun shouldComponentUpdate(nextProps: P, nextState: S): Boolean
 }
 
 external val Fragment: RClass<RProps>?
+
+external fun <T> createContext(defaultValue: T = definedExternally): RContext<T>

@@ -22,9 +22,6 @@ external interface RState
 
 class BoxedState<T>(var state: T) : RState
 
-// Context
-external interface RContext
-
 // Error info
 external interface RErrorInfo
 
@@ -34,10 +31,22 @@ external interface RClass<in P : RProps> {
     var displayName: String?
 }
 
-external interface ReactUpdater {
-    fun enqueueSetState(dest: Any, state: Any?)
-    fun enqueueReplaceState(dest: Any, state: Any?)
-    fun enqueueCallback(dest: Any, callback: Any, method: String)
+external interface RProviderProps<T> : RProps {
+    var value: T
+}
+
+external interface RProvider<T> : RClass<RProviderProps<T>>
+
+external interface RConsumerProps<T> : RProps {
+    var children: (T) -> Any
+}
+
+external interface RConsumer<T> : RClass<RConsumerProps<T>>
+
+// Context
+external interface RContext<T> {
+    val Provider: RProvider<T>
+    val Consumer: RConsumer<T>
 }
 
 fun <S : RState> Component<*, S>.setState(buildState: S.() -> Unit) =
