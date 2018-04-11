@@ -62,7 +62,8 @@ abstract external class PureComponent<P : RProps, S : RState>(
     final override fun shouldComponentUpdate(nextProps: P, nextState: S): Boolean
 }
 
-external val Fragment: RClass<RProps>?
+external val Fragment: RClass<RProps>
+external val StrictMode: RClass<RProps>
 
 external fun <T> createContext(defaultValue: T = definedExternally): RContext<T>
 

@@ -79,15 +79,12 @@ open class RBuilder {
 open class RBuilderMultiple : RBuilder() {
 }
 
-// fallback for React >=16.0 <16.2
-val RFragment: RClass<RProps> = Fragment ?: { props: RProps -> props.children } as RClass<RProps>
-
 fun buildElements(handler: RBuilder.() -> Unit): dynamic {
     val nodes = RBuilder().apply(handler).childList
     return when {
         nodes.size == 0 -> null
         nodes.size == 1 -> nodes.first()
-        else -> createElement(RFragment, js {}, *nodes.toTypedArray())
+        else -> createElement(Fragment, js {}, *nodes.toTypedArray())
     }
 }
 
