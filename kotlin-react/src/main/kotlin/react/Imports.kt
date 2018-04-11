@@ -65,3 +65,5 @@ abstract external class PureComponent<P : RProps, S : RState>(
 external val Fragment: RClass<RProps>?
 
 external fun <T> createContext(defaultValue: T = definedExternally): RContext<T>
+
+external fun <T> createRef(): RRef<T>

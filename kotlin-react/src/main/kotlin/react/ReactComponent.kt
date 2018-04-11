@@ -11,11 +11,16 @@ var RProps.key: String
     set(value) {
         asDynamic().key = value
     }
-var RProps.ref: (dynamic) -> Unit
+
+var RProps.ref: RRef<*>
     get() = error("ref cannot be read from props")
     set(value) {
         asDynamic().ref = value
     }
+
+fun <T> RProps.ref(ref: (T?) -> Unit) {
+    asDynamic().ref = ref
+}
 
 // State
 external interface RState
@@ -47,6 +52,10 @@ external interface RConsumer<T> : RClass<RConsumerProps<T>>
 external interface RContext<T> {
     val Provider: RProvider<T>
     val Consumer: RConsumer<T>
+}
+
+external interface RRef<out T> {
+    val current: T?
 }
 
 fun <S : RState> Component<*, S>.setState(buildState: S.() -> Unit) =

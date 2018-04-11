@@ -108,8 +108,14 @@ open class RElementBuilder<out P : RProps>(open val attrs: P) : RBuilder() {
             attrs.key = value
         }
 
+    var ref: RRef<*>
+        get() = attrs.ref
+        set(value) {
+            attrs.ref = value
+        }
+
     fun ref(handler: (dynamic) -> Unit) {
-        attrs.ref = handler
+        attrs.ref(handler)
     }
 }
 

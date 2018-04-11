@@ -106,8 +106,14 @@ open class RDOMBuilder<out T : Tag>(factory: (TagConsumer<Unit>) -> T) : RBuilde
             props.key = value
         }
 
+    var ref: RRef<*>
+        get() = props.ref
+        set(value) {
+            props.ref = value
+        }
+
     fun ref(handler: (dynamic) -> Unit) {
-        props.ref = handler
+        props.ref(handler)
     }
 
     open fun create(): ReactElement = createElement(attrs.tagName, props, *childList.toTypedArray())
