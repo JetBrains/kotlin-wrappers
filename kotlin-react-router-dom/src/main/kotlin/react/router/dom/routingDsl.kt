@@ -1,7 +1,7 @@
 package react.router.dom
 
 import react.*
-import kotlin.reflect.KClass
+import kotlin.reflect.*
 
 fun RBuilder.hashRouter(handler: RHandler<RProps>) = child(HashRouterComponent::class, handler)
 

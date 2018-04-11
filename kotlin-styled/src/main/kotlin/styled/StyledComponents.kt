@@ -124,7 +124,7 @@ object Styled {
             val extractAttrs = { styledProps: StyledProps ->
                 val props = clone(styledProps)
                 styledProps.forwardRef?.let {
-                    props.ref = it
+                    props.ref(it)
                 }
                 js("delete props._css; delete props._forwardRef; delete props._styleDisplayName;")
                 createElement(type, props, props.children)
@@ -153,7 +153,7 @@ object Styled {
                 val ref = styledProps.asDynamic().ref
                 if (ref != null && styledProps.forwardRef == null) {
                     styledProps.forwardRef = ref
-                    styledProps.ref = {}
+                    styledProps.ref<Any> {  }
                 }
                 if (css.styleName != null) {
                     styledProps.asDynamic()["data-style"] = css.styleName
