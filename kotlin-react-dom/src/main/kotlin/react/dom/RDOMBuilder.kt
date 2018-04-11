@@ -106,7 +106,7 @@ open class RDOMBuilder<out T : Tag>(factory: (TagConsumer<Unit>) -> T) : RBuilde
             props.key = value
         }
 
-    var ref: RRef<*>
+    var ref: RRef
         get() = props.ref
         set(value) {
             props.ref = value

@@ -108,7 +108,7 @@ open class RElementBuilder<out P : RProps>(open val attrs: P) : RBuilder() {
             attrs.key = value
         }
 
-    var ref: RRef<*>
+    var ref: RRef
         get() = attrs.ref
         set(value) {
             attrs.ref = value
@@ -120,3 +120,12 @@ open class RElementBuilder<out P : RProps>(open val attrs: P) : RBuilder() {
 }
 
 typealias RHandler<P> = RElementBuilder<P>.() -> Unit
+
+fun <P : RProps> forwardRef(handler: RBuilder.(RProps, RRef) -> Unit): RClass<P> {
+    return rawForwardRef { props, ref ->
+        with(RBuilder()) {
+            handler(props, ref)
+            childList.toTypedArray()
+        }
+    }
+}

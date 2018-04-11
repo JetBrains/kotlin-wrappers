@@ -12,7 +12,7 @@ var RProps.key: String
         asDynamic().key = value
     }
 
-var RProps.ref: RRef<*>
+var RProps.ref: RRef
     get() = error("ref cannot be read from props")
     set(value) {
         asDynamic().ref = value
@@ -54,7 +54,9 @@ external interface RContext<T> {
     val Consumer: RConsumer<T>
 }
 
-external interface RRef<out T> {
+external interface RRef
+
+external interface RReadableRef<out T> : RRef {
     val current: T?
 }
 

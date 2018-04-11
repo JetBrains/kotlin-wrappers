@@ -66,4 +66,7 @@ external val Fragment: RClass<RProps>?
 
 external fun <T> createContext(defaultValue: T = definedExternally): RContext<T>
 
-external fun <T> createRef(): RRef<T>
+external fun <T> createRef(): RReadableRef<T>
+
+@JsName("forwardRef")
+external fun <P : RProps> rawForwardRef(forward: (props: P, ref: RRef) -> Any): RClass<P>
