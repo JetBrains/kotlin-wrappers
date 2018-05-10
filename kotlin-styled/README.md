@@ -80,8 +80,12 @@ The DSL supports most common CSS properties and values, including animations, tr
 However, you can use `put("property", "value")` syntax for any unsupported property:
 
 ```kotlin
-css {
-    put("will-change", "transform")
+fun RBuilder.div() {
+    styledDiv {
+        css {
+            put("will-change", "transform")
+        }
+    }
 }
 ```
 
@@ -90,6 +94,67 @@ css {
 The DSL allows you to use most CSS selectors. See 
 [CSSBuilder](https://github.com/JetBrains/kotlin-wrappers/blob/master/kotlin-css/src/main/kotlin/kotlinx/css/CSSBuilder.kt#L35)
 for more details. **Contributions are welcome**.
+
+```kotlin
+object ComponentStyles : StyleSheet("ComponentStyles", isStatic = true) {
+    // Example of an ".element:hover" selector
+    val element by css {        
+        backgroundColor = Color.green
+        
+        hover {
+            backgroundColor = Color.red
+        }
+    }
+    
+    // Example of a ".wrapper > *" selector
+    val wrapper by css {
+        children {
+            // CSS properties
+        }
+    }
+    
+    // Example of a ".wrapper > div" selector
+    val wrapper by css {
+        children("div") {
+            // CSS properties
+        }
+    }
+    
+    // Example of a ".wrapper:hover .inner" selector 
+    val wrapper by css {
+        // CSS properties
+    }
+    
+    val inner by css {
+        backgroundColor = Color.green
+        
+        ancestorHover("${ComponentStyles.name}-${ComponentStyles::wrapper.name}") {
+            backgroundColor = Color.red
+        }
+    }        
+}
+
+fun RBuilder.div() {
+    styledDiv {
+        css {
+            +ComponentStyles.element
+        }
+        +"An element"
+    }
+
+    styledDiv {
+        css {
+            +ComponentStyles.wrapper
+        }
+        styledDiv {
+            css {
+                +ComponentStyles.inner
+            }
+            +"Inner element"
+        }
+    }
+}
+```
 
 ### Global Styles
 
