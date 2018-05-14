@@ -4,7 +4,9 @@ Kotlin wrapper for Mocha test framework. Major version number of this wrapper ma
 
 ### Installation
 
-`npm i @jetbrains/kotlin-mocha`
+1. `npm i @jetbrains/kotlin-mocha`
+
+2. `npm run gen-idea-libs`
 
 See the [Bintray page](https://bintray.com/kotlin/kotlin-js-wrappers/kotlin-mocha) for Maven and Gradle 
 installation instructions.

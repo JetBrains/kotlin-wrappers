@@ -7,7 +7,9 @@ Both BrowserRouter and HashRouter are supported.
 
 ### Installation
 
-`npm i @jetbrains/kotlin-react-router-dom`
+1. `npm i @jetbrains/kotlin-react-router-dom`
+
+2. `npm run gen-idea-libs`
 
 See the [Bintray page](https://bintray.com/kotlin/kotlin-js-wrappers/kotlin-react-router-dom) for Maven and Gradle 
 installation instructions.

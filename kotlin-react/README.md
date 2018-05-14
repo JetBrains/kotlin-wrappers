@@ -4,7 +4,9 @@ Kotlin wrapper for React library. Major version number of this wrapper matches t
 
 ### Installation
 
-`npm i @jetbrains/kotlin-react`
+1. `npm i @jetbrains/kotlin-react`
+
+2. `npm run gen-idea-libs`
 
 See the [Bintray page](https://bintray.com/kotlin/kotlin-js-wrappers/kotlin-react) for Maven and Gradle 
 installation instructions.

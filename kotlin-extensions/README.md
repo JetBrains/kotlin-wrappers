@@ -5,7 +5,9 @@ Kotlin wrappers for standard JS objects as well as some helpers required for
 
 ### Installation
 
-`npm i @jetbrains/kotlin-extensions`
+1. `npm i @jetbrains/kotlin-extensions`
+
+2. `npm run gen-idea-libs` 
 
 See the [Bintray page](https://bintray.com/kotlin/kotlin-js-wrappers/kotlin-extensions) for Maven and Gradle 
 installation instructions.
