@@ -14,28 +14,27 @@ val Int.times get() = IterationCount("$this")
 
 @Suppress("EnumEntryName")
 enum class AnimationDirection {
-    normal,
-    reverse,
-    alternate,
-    alternateReverse;
+    initial, inherit, unset,
+
+    normal, reverse, alternate, alternateReverse;
 
     override fun toString() = name.hyphenize()
 }
 
 @Suppress("EnumEntryName")
 enum class FillMode {
-    none,
-    forwards,
-    backwards,
-    both;
+    initial, inherit, unset,
+
+    none, forwards, backwards, both;
 
     override fun toString() = name
 }
 
 @Suppress("EnumEntryName")
 enum class PlayState {
-    running,
-    paused;
+    initial, inherit, unset,
+
+    running, paused;
 
     override fun toString() = name
 }

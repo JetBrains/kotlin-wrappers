@@ -34,6 +34,8 @@ fun cubicBezier(x1: Double, y1: Double, x2: Double, y2: Double) = Timing("cubic-
 
 @Suppress("EnumEntryName")
 enum class TransitionDirection {
+    initial, inherit, unset,
+
     start, end;
 
     override fun toString() = name
