@@ -45,6 +45,7 @@ external interface RouteProps<T : RProps> : RProps {
 external interface LinkProps : RProps {
     var to: String
     var replace: Boolean
+    var className: String?
 }
 
 external interface RouteResultProps<T : RProps> : RProps {

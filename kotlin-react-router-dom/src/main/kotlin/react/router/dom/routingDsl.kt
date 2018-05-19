@@ -57,10 +57,16 @@ fun RBuilder.route(
     }
 }
 
-fun RBuilder.routeLink(to: String, replace: Boolean = false, handler: RHandler<RProps>?) = child(LinkComponent::class) {
+fun RBuilder.routeLink(
+        to: String,
+        replace: Boolean = false,
+        className: String? = null,
+        handler: RHandler<RProps>?
+) = child(LinkComponent::class) {
     attrs {
         this.to = to
         this.replace = replace
+        this.className = className
     }
     handler?.invoke(this)
 }
