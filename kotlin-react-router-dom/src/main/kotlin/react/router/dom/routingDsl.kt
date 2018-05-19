@@ -71,6 +71,26 @@ fun RBuilder.routeLink(
     handler?.invoke(this)
 }
 
+fun RBuilder.navLink(
+        to: String,
+        replace: Boolean = false,
+        className: String? = null,
+        activeClassName: String = "active",
+        exact: Boolean = false,
+        isActive: (() -> Unit)? = null,
+        handler: RHandler<RProps>?
+) = child(NavLinkComponent::class) {
+    attrs {
+        this.to = to
+        this.replace = replace
+        this.className = className
+        this.activeClassName = activeClassName
+        this.exact = exact
+        this.isActive = isActive
+    }
+    handler?.invoke(this)
+}
+
 fun RBuilder.redirect(
     from: String,
     to: String,

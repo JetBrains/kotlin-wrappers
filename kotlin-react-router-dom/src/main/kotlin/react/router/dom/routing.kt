@@ -29,6 +29,11 @@ external class LinkComponent : Component<LinkProps, RState> {
     override fun render(): ReactElement?
 }
 
+@JsName("NavLink")
+external class NavLinkComponent : Component<NavLinkProps, RState> {
+    override fun render(): ReactElement?
+}
+
 @JsName("Redirect")
 external class RedirectComponent : Component<RedirectProps, RState> {
     override fun render(): ReactElement?
@@ -46,6 +51,13 @@ external interface LinkProps : RProps {
     var to: String
     var replace: Boolean
     var className: String?
+}
+
+external interface NavLinkProps : LinkProps {
+    var activeClassName: String
+    var exact: Boolean
+    var strict: Boolean
+    var isActive: (() -> Unit)?
 }
 
 external interface RouteResultProps<T : RProps> : RProps {
