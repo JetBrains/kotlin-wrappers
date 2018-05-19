@@ -77,6 +77,7 @@ fun RBuilder.navLink(
         className: String? = null,
         activeClassName: String = "active",
         exact: Boolean = false,
+        strict: Boolean = false,
         isActive: (() -> Unit)? = null,
         handler: RHandler<RProps>?
 ) = child(NavLinkComponent::class) {
@@ -86,6 +87,7 @@ fun RBuilder.navLink(
         this.className = className
         this.activeClassName = activeClassName
         this.exact = exact
+        this.strict = strict
         this.isActive = isActive
     }
     handler?.invoke(this)
