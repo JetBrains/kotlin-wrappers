@@ -58,10 +58,10 @@ fun RBuilder.route(
 }
 
 fun RBuilder.routeLink(
-        to: String,
-        replace: Boolean = false,
-        className: String? = null,
-        handler: RHandler<RProps>?
+    to: String,
+    replace: Boolean = false,
+    className: String? = null,
+    handler: RHandler<RProps>?
 ) = child(LinkComponent::class) {
     attrs {
         this.to = to
@@ -72,14 +72,14 @@ fun RBuilder.routeLink(
 }
 
 fun RBuilder.navLink(
-        to: String,
-        replace: Boolean = false,
-        className: String? = null,
-        activeClassName: String = "active",
-        exact: Boolean = false,
-        strict: Boolean = false,
-        isActive: (() -> Unit)? = null,
-        handler: RHandler<RProps>?
+    to: String,
+    replace: Boolean = false,
+    className: String? = null,
+    activeClassName: String = "active",
+    exact: Boolean = false,
+    strict: Boolean = false,
+    isActive: (() -> Unit)? = null,
+    handler: RHandler<RProps>?
 ) = child(NavLinkComponent::class) {
     attrs {
         this.to = to
