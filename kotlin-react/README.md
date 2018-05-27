@@ -79,6 +79,23 @@ fun RBuilder.app {
 }
 ```
 
+### Using the getDerivedStateFromProps lifecycle method (React 16.3+)
+
+There is currently no proper way to declare static members from Kotlin/JS (see [KT-18891](https://youtrack.jetbrains.com/issue/KT-18891)), 
+so please do the following instead:
+
+```kotlin
+class MyComponent: RComponent<MyComponentProps, MyComponentState>() {
+     override fun MyComponentState.init(props: MyComponentProps) {
+        MyComponent::class.js.asDynamic().getDerivedStateFromProps = { p: TickerProps, s: TickerState ->
+            {
+                console.log(p, s)
+            }
+        }
+     }
+}
+```
+
 ### Internals
 
 [Imports.kt](src/main/kotlin/react/Imports.kt) contains type definitions for React. The remaining classes 
