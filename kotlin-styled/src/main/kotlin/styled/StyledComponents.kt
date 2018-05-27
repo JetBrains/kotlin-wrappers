@@ -114,6 +114,10 @@ external object StyledComponents {
     val isStyledComponent: Boolean
 }
 
+fun StyledComponents.injectGlobal(handler: CSSBuilder.() -> Unit) {
+    StyledComponents.injectGlobal(CSSBuilder().apply { handler() }.toString())
+}
+
 object Styled {
     private const val enabledInline = false
     private const val enabledShortCircuit = true
