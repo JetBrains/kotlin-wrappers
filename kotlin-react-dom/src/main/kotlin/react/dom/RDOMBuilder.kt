@@ -28,6 +28,10 @@ open class RDOMBuilder<out T : Tag>(factory: (TagConsumer<Unit>) -> T) : RBuilde
             setProp(attribute, value)
         }
 
+        override fun onTagComment(content: CharSequence) {
+            throw IllegalStateException("Comments are not supported")
+        }
+
         override fun onTagContent(content: CharSequence): Unit {
             childList.add(content)
         }
