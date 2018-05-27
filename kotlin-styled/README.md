@@ -96,7 +96,7 @@ The DSL allows you to use most CSS selectors. See
 for more details. **Contributions are welcome**.
 
 ```kotlin
-object ComponentStyles : StyleSheet("ComponentStyles", isStatic = true) {
+object ComponentStyles : StyleSheet("ComponentStyles") {
     // Example of an ".element:hover" selector
     val element by css {        
         backgroundColor = Color.green
@@ -128,6 +128,7 @@ object ComponentStyles : StyleSheet("ComponentStyles", isStatic = true) {
     val inner by css {
         backgroundColor = Color.green
         
+        // Use reflection to refer to other elements, it's longer but safer than using hard-coded class names
         ancestorHover("${ComponentStyles.name}-${ComponentStyles::wrapper.name}") {
             backgroundColor = Color.red
         }
