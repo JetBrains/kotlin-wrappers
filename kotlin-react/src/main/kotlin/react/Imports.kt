@@ -30,8 +30,6 @@ abstract external class Component<P : RProps, S : RState>(
 
     fun forceUpdate(callback: () -> Unit = definedExternally)
 
-    open fun getDerivedStateFromProps(nextProps: P, prevState: S): Unit
-
     open fun componentWillMount(): Unit
     open fun UNSAFE_componentWillMount(): Unit
 
