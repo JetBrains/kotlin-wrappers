@@ -95,6 +95,8 @@ The DSL allows you to use most CSS selectors. See
 [CSSBuilder](https://github.com/JetBrains/kotlin-wrappers/blob/master/kotlin-css/src/main/kotlin/kotlinx/css/CSSBuilder.kt#L35)
 for more details. **Contributions are welcome**.
 
+After creating a `StyleSheet` just go ahead and start using it in a component, it will be injected automatically.
+
 ```kotlin
 object ComponentStyles : StyleSheet("ComponentStyles") {
     // Example of an ".element:hover" selector
