@@ -88,9 +88,7 @@ so please do the following instead:
 class MyComponent: RComponent<MyComponentProps, MyComponentState>() {
      override fun MyComponentState.init(props: MyComponentProps) {
         MyComponent::class.js.asDynamic().getDerivedStateFromProps = { p: TickerProps, s: TickerState ->
-            {
-                console.log(p, s)
-            }
+            console.log(p, s)
         }
      }
 }
