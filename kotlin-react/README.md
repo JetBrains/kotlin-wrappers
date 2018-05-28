@@ -87,7 +87,8 @@ so please do the following instead:
 ```kotlin
 class MyComponent: RComponent<MyComponentProps, MyComponentState>() {
      override fun MyComponentState.init(props: MyComponentProps) {
-        MyComponent::class.js.asDynamic().getDerivedStateFromProps = { p: TickerProps, s: TickerState ->
+        // Note: it's MyComponent::class.js, not MyComponent::class 
+        MyComponent::class.js.asDynamic().getDerivedStateFromProps = { p: MyComponentProps, s: MyComponentState ->
             console.log(p, s)
         }
      }
