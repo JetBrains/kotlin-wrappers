@@ -40,12 +40,12 @@ abstract external class Component<P : RProps, S : RState>(
 
     open fun shouldComponentUpdate(nextProps: P, nextState: S): Boolean
 
-    open fun getSnapshotBeforeUpdate(prevProps: P, prevState: S): Unit
+    open fun getSnapshotBeforeUpdate(prevProps: P, prevState: S): Any
 
     open fun componentWillUpdate(nextProps: P, nextState: S): Unit
     open fun UNSAFE_componentWillUpdate(nextProps: P, nextState: S): Unit
 
-    open fun componentDidUpdate(prevProps: P, prevState: S): Unit
+    open fun componentDidUpdate(prevProps: P, prevState: S, snapshot: Any): Unit
 
     open fun componentWillUnmount(): Unit
 
