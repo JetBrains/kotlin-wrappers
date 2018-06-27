@@ -290,9 +290,9 @@ class FontStyle(val value: String) {
 enum class FlexDirection {
     initial, inherit, unset,
 
-    column, row;
+    column, columnReverse, row, rowReverse;
 
-    override fun toString() = name
+    override fun toString() = name.hyphenize()
 }
 
 enum class Grow {
