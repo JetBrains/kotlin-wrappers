@@ -112,40 +112,54 @@ class Color(val value: String) {
         if (alpha < 0 || alpha > 1) {
             throw IllegalArgumentException("Alpha should be a number between 0.0 (fully transparent) and 1.0 (fully opaque)")
         } else {
-            val rgb = toRGB()
-            return Color("rgba(${rgb.first},${rgb.second},${rgb.third},$alpha)")
+            val rgba = toRGBA()
+            return Color("rgba(${rgba.red},${rgba.green},${rgba.blue},${alpha * rgba.alpha})")
         }
     }
 
+    private data class RGBA(
+        val red: Int,
+        val green: Int,
+        val blue: Int,
+        val alpha: Double = 1.0
+    )
 
-    private fun fromRGBNotation(): Triple<Int, Int, Int> {
+    private fun fromRGBANotation(): RGBA {
         // Match for rgb(255, 255, 255) | rgba(255, 255, 255, 0.5)
-        val pattern = "^rgba?\\((\\d{1,3}),?\\s*(\\d{1,3}),?\\s*(\\d{1,3}),?\\s*(\\d\\.\\d)?\\)\$"
+        val pattern = "^rgba?\\((\\d{1,3}),?\\s*(\\d{1,3}),?\\s*(\\d{1,3}),?\\s*(\\d?\\.\\d+)?\\)\$"
         val match = Regex(pattern, RegexOption.IGNORE_CASE).find(value)
-        val ints = (1..3).map {
-            val int = match?.groups?.get(it)?.value?.toInt()
+
+        fun getColorByte(index: Int): Int {
+            val int = match?.groups?.get(index)?.value?.toInt()
+
             if (int == null || int < 0 || int > 255) {
                 throw IllegalArgumentException("Expected rgb or rgba notation, got $value")
             } else {
-                int
+                return int
             }
         }
-        return Triple(ints[0], ints[1], ints[2])
+
+        val red = getColorByte(1)
+        val green = getColorByte(2)
+        val blue = getColorByte(3)
+        val alpha = match?.groups?.get(4)?.value?.toDouble() ?: 1.0
+
+        return RGBA(red, green, blue, alpha)
     }
 
-    private fun toRGB(): Triple<Int, Int, Int> {
+    private fun toRGBA(): RGBA {
         return when {
-            value.startsWith("rgb") -> fromRGBNotation()
+            value.startsWith("rgb") -> fromRGBANotation()
 
             // Matches #rgb
-            value.startsWith("#") && value.length == 4 -> Triple(
+            value.startsWith("#") && value.length == 4 -> RGBA(
                 (value[1].toString() * 2).toInt(16),
                 (value[2].toString() * 2).toInt(16),
                 (value[3].toString() * 2).toInt(16)
             )
 
             // Matches both #rrggbb and #rrggbbaa
-            value.startsWith("#") && (value.length == 7 || value.length == 9) -> Triple(
+            value.startsWith("#") && (value.length == 7 || value.length == 9) -> RGBA(
                 (value.substring(1..2)).toInt(16),
                 (value.substring(3..4)).toInt(16),
                 (value.substring(5..6)).toInt(16)
