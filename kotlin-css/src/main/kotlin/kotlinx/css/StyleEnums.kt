@@ -126,7 +126,7 @@ class Color(val value: String) {
 
     private fun fromRGBANotation(): RGBA {
         // Match for rgb(255, 255, 255) | rgba(255, 255, 255, 0.5)
-        val pattern = "^rgba?\\((\\d{1,3}),?\\s*(\\d{1,3}),?\\s*(\\d{1,3}),?\\s*(\\d?\\.\\d+)?\\)\$"
+        val pattern = "^rgba?\\((\\d{1,3}),?\\s*(\\d{1,3}),?\\s*(\\d{1,3}),?\\s*(\\d|(?:\\d?\\.\\d+))?\\)\$"
         val match = Regex(pattern, RegexOption.IGNORE_CASE).find(value)
 
         fun getColorByte(index: Int): Int {
@@ -143,6 +143,10 @@ class Color(val value: String) {
         val green = getColorByte(2)
         val blue = getColorByte(3)
         val alpha = match?.groups?.get(4)?.value?.toDouble() ?: 1.0
+
+        if (alpha < 0 || alpha > 1) {
+            throw IllegalArgumentException("Expected rgb or rgba notation, got $value")
+        }
 
         return RGBA(red, green, blue, alpha)
     }
