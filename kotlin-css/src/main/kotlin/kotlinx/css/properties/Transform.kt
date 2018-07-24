@@ -1,6 +1,6 @@
-package css.properties
+package kotlinx.css.properties
 
-import css.*
+import kotlinx.css.*
 
 class Angle(val value: String) {
     override fun toString() = value

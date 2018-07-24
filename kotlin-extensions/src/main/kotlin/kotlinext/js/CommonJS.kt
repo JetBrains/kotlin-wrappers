@@ -2,7 +2,7 @@ package kotlinext.js
 
 import kotlin.js.*
 
-external interface Context: JsFunction1<String, dynamic> {
+external interface Context : JsFunction1<String, dynamic> {
     fun resolve(module: String): String
     fun keys(): Array<String>
     val id: Int

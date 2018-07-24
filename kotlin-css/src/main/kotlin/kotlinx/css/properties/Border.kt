@@ -1,6 +1,6 @@
-package css.properties
+package kotlinx.css.properties
 
-import css.*
+import kotlinx.css.*
 
 fun StyledElement.border(width: LinearDimension, style: BorderStyle, color: Color) {
     border = "$width $style $color"

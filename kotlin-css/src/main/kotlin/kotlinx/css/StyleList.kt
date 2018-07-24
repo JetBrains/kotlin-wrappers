@@ -1,4 +1,4 @@
-package css
+package kotlinx.css
 
 open class StyleList<in T>(private val delimiter: String) {
     private val list = mutableListOf<T>()

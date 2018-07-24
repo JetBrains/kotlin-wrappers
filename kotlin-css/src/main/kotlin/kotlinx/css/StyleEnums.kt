@@ -1,20 +1,18 @@
-package css
+package kotlinx.css
 
 @Suppress("EnumEntryName")
 enum class Align {
-    // Basic keywords
-    auto,
-    stretch,
-    center,
-    flexStart,
-    flexEnd,
-    baseline;
+    initial, inherit, unset,
+
+    auto, stretch, center, flexStart, flexEnd, baseline;
 
     override fun toString() = name.hyphenize()
 }
 
 @Suppress("EnumEntryName")
 enum class JustifyContent {
+    initial, inherit, unset,
+
     center,
     start,
     end,
@@ -37,6 +35,8 @@ enum class JustifyContent {
 
 @Suppress("EnumEntryName")
 enum class BackgroundRepeat {
+    initial, inherit, unset,
+
     repeatX, repeatY, repeat, noRepeat;
 
     override fun toString() = name.hyphenize()
@@ -44,6 +44,8 @@ enum class BackgroundRepeat {
 
 @Suppress("EnumEntryName")
 enum class BackgroundAttachment {
+    initial, inherit, unset,
+
     scroll, fixed, local;
 
     override fun toString(): String = name
@@ -51,13 +53,17 @@ enum class BackgroundAttachment {
 
 @Suppress("EnumEntryName")
 enum class BorderCollapse {
-    separate, collapse, initial, inherit;
+    initial, inherit, unset,
+
+    separate, collapse;
 
     override fun toString() = name
 }
 
 @Suppress("EnumEntryName")
 enum class BorderStyle {
+    initial, inherit, unset,
+
     none, dotted, dashed, solid;
 
     override fun toString(): String = name
@@ -65,6 +71,8 @@ enum class BorderStyle {
 
 @Suppress("EnumEntryName")
 enum class BoxSizing {
+    initial, inherit, unset,
+
     contentBox, borderBox;
 
     override fun toString() = name.hyphenize()
@@ -72,14 +80,19 @@ enum class BoxSizing {
 
 @Suppress("EnumEntryName")
 enum class Clear {
+    initial, inherit, unset,
+
     none, left, right, both;
 
     override fun toString(): String = name
 }
 
 class Color(val value: String) {
-    // Reserved for basic constants only, actual theming is done in XTheme and AppTheme
     companion object {
+        val initial = Color("initial")
+        val inherit = Color("inherit")
+        val unset = Color("unset")
+
         val transparent = Color("transparent")
 
         val black = Color("#000")
@@ -94,15 +107,81 @@ class Color(val value: String) {
     }
 
     override fun toString() = value
+
+    fun withAlpha(alpha: Double): Color {
+        if (alpha < 0 || alpha > 1) {
+            throw IllegalArgumentException("Alpha should be a number between 0.0 (fully transparent) and 1.0 (fully opaque)")
+        } else {
+            val rgba = toRGBA()
+            return Color("rgba(${rgba.red},${rgba.green},${rgba.blue},${alpha * rgba.alpha})")
+        }
+    }
+
+    private data class RGBA(
+        val red: Int,
+        val green: Int,
+        val blue: Int,
+        val alpha: Double = 1.0
+    )
+
+    private fun fromRGBANotation(): RGBA {
+        // Match for rgb(255, 255, 255) | rgba(255, 255, 255, 0.5)
+        val pattern = "^rgba?\\((\\d{1,3}),?\\s*(\\d{1,3}),?\\s*(\\d{1,3}),?\\s*(\\d|(?:\\d?\\.\\d+))?\\)\$"
+        val match = Regex(pattern, RegexOption.IGNORE_CASE).find(value)
+
+        fun getColorByte(index: Int): Int {
+            val int = match?.groups?.get(index)?.value?.toInt()
+
+            if (int == null || int < 0 || int > 255) {
+                throw IllegalArgumentException("Expected rgb or rgba notation, got $value")
+            } else {
+                return int
+            }
+        }
+
+        val red = getColorByte(1)
+        val green = getColorByte(2)
+        val blue = getColorByte(3)
+        val alpha = match?.groups?.get(4)?.value?.toDouble() ?: 1.0
+
+        if (alpha < 0 || alpha > 1) {
+            throw IllegalArgumentException("Expected rgb or rgba notation, got $value")
+        }
+
+        return RGBA(red, green, blue, alpha)
+    }
+
+    private fun toRGBA(): RGBA {
+        return when {
+            value.startsWith("rgb") -> fromRGBANotation()
+
+            // Matches #rgb
+            value.startsWith("#") && value.length == 4 -> RGBA(
+                (value[1].toString() * 2).toInt(16),
+                (value[2].toString() * 2).toInt(16),
+                (value[3].toString() * 2).toInt(16)
+            )
+
+            // Matches both #rrggbb and #rrggbbaa
+            value.startsWith("#") && (value.length == 7 || value.length == 9) -> RGBA(
+                (value.substring(1..2)).toInt(16),
+                (value.substring(3..4)).toInt(16),
+                (value.substring(5..6)).toInt(16)
+            )
+            else -> throw IllegalArgumentException("Only hexadecimal, rgb, and rgba notations are accepted, got $value")
+        }
+    }
 }
 
 fun rgb(red: Int, green: Int, blue: Int) = Color("rgb($red, $green, $blue)")
 fun rgba(red: Int, green: Int, blue: Int, alpha: Double) = Color("rgba($red, $green, $blue, $alpha)")
-fun blackAlpha(alpha: Double) = rgba(0, 0, 0, alpha)
-fun whiteAlpha(alpha: Double) = rgba(255, 255, 255, alpha)
+fun blackAlpha(alpha: Double) = Color.black.withAlpha(alpha)
+fun whiteAlpha(alpha: Double) = Color.white.withAlpha(alpha)
 
 @Suppress("EnumEntryName")
 enum class Cursor {
+    initial, inherit, unset,
+
     auto, default, none, // General
     contextMenu, help, pointer, progress, wait, // Links & status
     cell, crosshair, text, verticalText, // Selection
@@ -124,6 +203,8 @@ val String.quoted get() = QuotedString(this)
 
 @Suppress("EnumEntryName")
 enum class Direction {
+    initial, inherit, unset,
+
     ltr, rtl;
 
     override fun toString(): String = name
@@ -131,6 +212,8 @@ enum class Direction {
 
 @Suppress("EnumEntryName")
 enum class Display {
+    initial, inherit, unset,
+
     block, `inline`, runIn,
 
     flow, flowRoot, table, flex, grid, subgrid,
@@ -148,6 +231,10 @@ enum class Display {
 
 class FlexBasis(val value: String) {
     companion object {
+        val initial = FlexBasis("initial")
+        val inherit = FlexBasis("inherit")
+        val unset = FlexBasis("unset")
+
         val auto = FlexBasis("auto")
         val content = FlexBasis("content")
         val minContent = FlexBasis("min-content")
@@ -164,6 +251,8 @@ val LinearDimension.basis get() = FlexBasis(toString())
 
 @Suppress("EnumEntryName")
 enum class FlexWrap {
+    initial, inherit, unset,
+
     nowrap, wrap, wrapReverse;
 
     override fun toString() = name.hyphenize()
@@ -171,6 +260,8 @@ enum class FlexWrap {
 
 @Suppress("EnumEntryName")
 enum class Float {
+    initial, inherit, unset,
+
     left, right, none;
 
     override fun toString(): String = name.hyphenize()
@@ -178,6 +269,10 @@ enum class Float {
 
 class FontWeight(val value: String) {
     companion object {
+        val initial = FontWeight("initial")
+        val inherit = FontWeight("inherit")
+        val unset = FontWeight("unset")
+
         val normal = FontWeight("normal")
         val bold = FontWeight("bold")
         val bolder = FontWeight("bolder")
@@ -198,6 +293,10 @@ class FontWeight(val value: String) {
 
 class FontStyle(val value: String) {
     companion object {
+        val initial = FontStyle("initial")
+        val inherit = FontStyle("inherit")
+        val unset = FontStyle("unset")
+
         val normal = FontStyle("normal")
         val italic = FontStyle("italic")
     }
@@ -207,9 +306,11 @@ class FontStyle(val value: String) {
 
 @Suppress("EnumEntryName")
 enum class FlexDirection {
-    column, row;
+    initial, inherit, unset,
 
-    override fun toString() = name
+    column, columnReverse, row, rowReverse;
+
+    override fun toString() = name.hyphenize()
 }
 
 enum class Grow {
@@ -218,6 +319,8 @@ enum class Grow {
 
 @Suppress("EnumEntryName")
 enum class Hyphens {
+    initial, inherit, unset,
+
     none, manual, auto;
 
     override fun toString() = name
@@ -225,6 +328,8 @@ enum class Hyphens {
 
 @Suppress("EnumEntryName")
 enum class ListStyleType {
+    initial, inherit, unset,
+
     none, disc, circle, square, decimal;
 
     override fun toString(): String = name.hyphenize()
@@ -232,6 +337,8 @@ enum class ListStyleType {
 
 @Suppress("EnumEntryName")
 enum class Outline {
+    initial, inherit, unset,
+
     none;
 
     override fun toString(): String = name
@@ -239,6 +346,8 @@ enum class Outline {
 
 @Suppress("EnumEntryName")
 enum class Overflow {
+    initial, inherit, unset,
+
     visible, hidden, scroll, auto;
 
     override fun toString(): String = name
@@ -246,6 +355,8 @@ enum class Overflow {
 
 @Suppress("EnumEntryName")
 enum class OverflowWrap {
+    initial, inherit, unset,
+
     normal, breakWord;
 
     override fun toString(): String = name.hyphenize()
@@ -253,6 +364,8 @@ enum class OverflowWrap {
 
 @Suppress("EnumEntryName")
 enum class PointerEvents {
+    initial, inherit, unset,
+
     auto, none;
 
     override fun toString(): String = name
@@ -260,6 +373,8 @@ enum class PointerEvents {
 
 @Suppress("EnumEntryName")
 enum class Position {
+    initial, inherit, unset,
+
     static, relative, absolute, fixed, sticky;
 
     override fun toString() = name
@@ -267,6 +382,8 @@ enum class Position {
 
 @Suppress("EnumEntryName")
 enum class ScrollBehavior {
+    initial, inherit, unset,
+
     auto, smooth;
 
     override fun toString() = name
@@ -274,6 +391,8 @@ enum class ScrollBehavior {
 
 @Suppress("EnumEntryName")
 enum class TextAlign {
+    initial, inherit, unset,
+
     left, right, center, justify, justifyAll, start, end, matchParent;
 
     override fun toString() = name.hyphenize()
@@ -281,13 +400,17 @@ enum class TextAlign {
 
 @Suppress("EnumEntryName")
 enum class TableLayout {
-    auto, fixed, initial, inherit;
+    initial, inherit, unset,
+
+    auto, fixed;
 
     override fun toString() = name
 }
 
 @Suppress("EnumEntryName")
 enum class TextOverflow {
+    initial, inherit, unset,
+
     clip, ellipsis;
 
     override fun toString() = name
@@ -295,6 +418,8 @@ enum class TextOverflow {
 
 @Suppress("EnumEntryName")
 enum class TextTransform {
+    initial, inherit, unset,
+
     capitalize, uppercase, lowercase, none, fullWidth;
 
     override fun toString() = name.hyphenize()
@@ -302,6 +427,8 @@ enum class TextTransform {
 
 @Suppress("EnumEntryName")
 enum class UserSelect {
+    initial, inherit, unset,
+
     none, auto, text, contain, all;
 
     override fun toString() = name
@@ -309,6 +436,10 @@ enum class UserSelect {
 
 class VerticalAlign(val value: String) {
     companion object {
+        val initial = VerticalAlign("initial")
+        val inherit = VerticalAlign("inherit")
+        val unset = VerticalAlign("unset")
+
         val baseline = VerticalAlign("baseline")
         val sub = VerticalAlign("sub")
         val `super` = VerticalAlign("super")
@@ -327,6 +458,8 @@ val LinearDimension.down get() = VerticalAlign((-this).toString())
 
 @Suppress("EnumEntryName")
 enum class Visibility {
+    initial, inherit, unset,
+
     visible, hidden, collapse;
 
     override fun toString() = name
@@ -334,6 +467,8 @@ enum class Visibility {
 
 @Suppress("EnumEntryName")
 enum class WhiteSpace {
+    initial, inherit, unset,
+
     normal, nowrap, pre, preWrap, preLine;
 
     override fun toString() = name.hyphenize()
@@ -341,6 +476,8 @@ enum class WhiteSpace {
 
 @Suppress("EnumEntryName")
 enum class WordBreak {
+    initial, inherit, unset,
+
     normal, breakAll, breakWord, keepAll;
 
     override fun toString() = name.hyphenize()
@@ -348,6 +485,8 @@ enum class WordBreak {
 
 @Suppress("EnumEntryName")
 enum class WordWrap {
+    initial, inherit, unset,
+
     normal, breakWord;
 
     override fun toString() = name.hyphenize()

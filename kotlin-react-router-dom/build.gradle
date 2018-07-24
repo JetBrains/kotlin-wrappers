@@ -1,0 +1,7 @@
+applyKotlinJS()
+
+configurePublishingWithNPM(react_router_dom_version)
+
+dependencies {
+    compile project(":kotlin-react")
+}

@@ -5,7 +5,7 @@ external interface TemplateTag<in T, out R> {
 }
 
 operator fun <T, R> TemplateTag<T, R>.invoke(strings: Array<String>, vararg values: T) =
-        this.call(null, strings, *values)
+    this.call(null, strings, *values)
 
 operator fun <T, R> TemplateTag<T, R>.invoke(string: String, vararg values: T) = this(arrayOf(string), *values)
 operator fun <T, R> TemplateTag<T, R>.invoke(vararg values: T) = this(emptyArray(), *values)

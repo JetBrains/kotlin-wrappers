@@ -28,6 +28,10 @@ open class RDOMBuilder<out T : Tag>(factory: (TagConsumer<Unit>) -> T) : RBuilde
             setProp(attribute, value)
         }
 
+        override fun onTagComment(content: CharSequence) {
+            throw IllegalStateException("Comments are not supported")
+        }
+
         override fun onTagContent(content: CharSequence): Unit {
             childList.add(content)
         }
@@ -106,8 +110,14 @@ open class RDOMBuilder<out T : Tag>(factory: (TagConsumer<Unit>) -> T) : RBuilde
             props.key = value
         }
 
+    var ref: RRef
+        get() = props.ref
+        set(value) {
+            props.ref = value
+        }
+
     fun ref(handler: (dynamic) -> Unit) {
-        props.ref = handler
+        props.ref(handler)
     }
 
     open fun create(): ReactElement = createElement(attrs.tagName, props, *childList.toTypedArray())

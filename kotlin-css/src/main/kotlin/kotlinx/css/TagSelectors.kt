@@ -1,4 +1,4 @@
-package css
+package kotlinx.css
 
 class TagSelector(val tagName: String)
 

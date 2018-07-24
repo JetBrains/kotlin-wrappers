@@ -1,7 +1,7 @@
 package styled
 
-import css.*
 import kotlinext.js.*
+import kotlinx.css.*
 import kotlinx.html.*
 import react.*
 import react.dom.*
@@ -114,6 +114,10 @@ external object StyledComponents {
     val isStyledComponent: Boolean
 }
 
+fun StyledComponents.injectGlobal(handler: CSSBuilder.() -> Unit) {
+    StyledComponents.injectGlobal(CSSBuilder().apply { handler() }.toString())
+}
+
 object Styled {
     private const val enabledInline = false
     private const val enabledShortCircuit = true
@@ -124,7 +128,7 @@ object Styled {
             val extractAttrs = { styledProps: StyledProps ->
                 val props = clone(styledProps)
                 styledProps.forwardRef?.let {
-                    props.ref = it
+                    props.ref(it)
                 }
                 js("delete props._css; delete props._forwardRef; delete props._styleDisplayName;")
                 createElement(type, props, props.children)
@@ -153,7 +157,7 @@ object Styled {
                 val ref = styledProps.asDynamic().ref
                 if (ref != null && styledProps.forwardRef == null) {
                     styledProps.forwardRef = ref
-                    styledProps.ref = {}
+                    styledProps.ref<Any> {  }
                 }
                 if (css.styleName != null) {
                     styledProps.asDynamic()["data-style"] = css.styleName

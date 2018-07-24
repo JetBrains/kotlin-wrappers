@@ -20,29 +20,32 @@ external object Children {
 }
 
 abstract external class Component<P : RProps, S : RState>(
-    props: RProps = definedExternally,
-    context: RContext = definedExternally,
-    updater: ReactUpdater = definedExternally
+    props: RProps = definedExternally
 ) {
     open val props: P
     var state: S
-    val context: RContext
 
     fun setState(partialState: S, callback: () -> Unit = definedExternally)
     fun setState(transformState: (S) -> S, callback: () -> Unit = definedExternally)
 
     fun forceUpdate(callback: () -> Unit = definedExternally)
 
-    open fun getChildContext(): RContext?
-
     open fun componentWillMount(): Unit
+    open fun UNSAFE_componentWillMount(): Unit
+
     open fun componentDidMount(): Unit
 
     open fun componentWillReceiveProps(nextProps: P): Unit
+    open fun UNSAFE_componentWillReceiveProps(nextProps: P): Unit
 
     open fun shouldComponentUpdate(nextProps: P, nextState: S): Boolean
+
+    open fun getSnapshotBeforeUpdate(prevProps: P, prevState: S): Any
+
     open fun componentWillUpdate(nextProps: P, nextState: S): Unit
-    open fun componentDidUpdate(prevProps: P, prevState: S): Unit
+    open fun UNSAFE_componentWillUpdate(nextProps: P, nextState: S): Unit
+
+    open fun componentDidUpdate(prevProps: P, prevState: S, snapshot: Any): Unit
 
     open fun componentWillUnmount(): Unit
 
@@ -52,11 +55,17 @@ abstract external class Component<P : RProps, S : RState>(
 }
 
 abstract external class PureComponent<P : RProps, S : RState>(
-    props: RProps = definedExternally,
-    context: RContext = definedExternally,
-    updater: ReactUpdater = definedExternally
+    props: RProps = definedExternally
 ) : Component<P, S> {
     final override fun shouldComponentUpdate(nextProps: P, nextState: S): Boolean
 }
 
-external val Fragment: RClass<RProps>?
+external val Fragment: RClass<RProps>
+external val StrictMode: RClass<RProps>
+
+external fun <T> createContext(defaultValue: T = definedExternally): RContext<T>
+
+external fun <T> createRef(): RReadableRef<T>
+
+@JsName("forwardRef")
+external fun <P : RProps> rawForwardRef(forward: (props: P, ref: RRef) -> Any): RClass<P>

@@ -3,18 +3,15 @@
   "version": "$kotlinext_version",
   "description": "Kotlin wrappers for standard JS objects plus some helpers",
   "files": [
-    "build",
-    "src",
+    "build/classes",
     "package.json",
     "README.md"
   ],
   "main": "build/classes/main/kotlin-extensions.js",
   "repository": "https://github.com/JetBrains/kotlin-wrappers",
   "peerDependencies": {
+    "core-js": "^2.5.3",
     "kotlin": "^$kotlin_version"
-  },
-  "dependencies": {
-    "core-js": "2.4.1"
   },
   "author": "Filipp Riabchun",
   "license": "Apache-2-0"

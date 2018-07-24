@@ -5,7 +5,7 @@ import kotlinx.html.attributes.*
 import react.*
 
 inline fun <T : Tag> RBuilder.styledTag(block: StyledDOMBuilder<T>.() -> Unit, noinline factory: (TagConsumer<Unit>) -> T) =
-    child(StyledDOMBuilder(factory).apply { block() }.create())
+    child(StyledDOMBuilder(factory).apply(block).create())
 
 
 inline fun RBuilder.styledA(href: String? = null, target: String? = null, block: StyledDOMBuilder<A>.() -> Unit) = styledTag(block) { A(attributesMapOf("href", href, "target", target), it) }
