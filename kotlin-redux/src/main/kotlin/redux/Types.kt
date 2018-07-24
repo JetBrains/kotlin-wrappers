@@ -1,13 +1,15 @@
 package redux
 
+import kotlinx.html.A
+
 external interface Action {
     val type: String
 }
 
-external interface Store<S, A> {
+external interface Store<S, A, R> {
     fun getState(): S
 
-    fun dispatch(action: A): A
+    fun dispatch(action: A): R
 
     fun subscribe(listener: () -> Unit): () -> Unit
 
@@ -16,16 +18,16 @@ external interface Store<S, A> {
 
 external interface ReducerContainer<S, A>
 
-external interface MiddlewareApi<S, A> {
+external interface MiddlewareApi<S, A, R> {
     fun getState(): S
 
-    fun dispatch(action: A): A
+    fun dispatch(action: A): R
 }
 
 typealias Reducer<S, A> = (S, A) -> S
 
-typealias StoreCreator<S, A> = (Reducer<S, A>, S) -> Store<S, A>
+typealias StoreCreator<S, A, R> = (Reducer<S, A>, S) -> Store<S, A, R>
 
-typealias Enhancer<S, A1, A2> = (StoreCreator<S, A2>) -> StoreCreator<S, A1>
+typealias Enhancer<S, A1, R1, A2, R2> = (StoreCreator<S, A1, R1>) -> StoreCreator<S, A2, R2>
 
-typealias Middleware<S, A1, A2> = (MiddlewareApi<S, A2>) -> ((A2) -> A1) -> (A2) -> A1
+typealias Middleware<S, A1, R1, A2, R2> = (MiddlewareApi<S, A1, R1>) -> ((A1) -> R1) -> (A2) -> R2
