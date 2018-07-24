@@ -5,18 +5,18 @@ Kotlin wrapper for Redux library. Major version number of this wrapper matches t
 ## Creating and using a store in Kotlin
 
 In Redux, the store is an object that contains a state, which could be anything. In Kotlin, this is 
-no different; just use RStore instead of createStore. Note that initializing the state is
-mandatory.
+no different. Just note that you must specify the preloaded state. Also, it is encouraged that you
+use the rEnhancer function to adapt redux to kotlin.
 
 ```
-val myStore = RStore(::myReducer, someState)
+val myStore = createStore(::myReducer, someState, rEnhancer())
 ```
 Access the state with the store's `state` field.
 
 ```
 myStore.state
 ```
-In Kotlin, Actions can be written as classes. Just implement the `RAction` interface.
+If you are using rEnhancer, Actions can be written as classes. Just implement the `RAction` interface.
 
 ```
 class MyAction : RAction
@@ -37,18 +37,28 @@ You can now dispatch the action as usual.
 myStore.dispatch(MyAction())
 ```
 
-Note that internally, kotlin-redux uses a single action type and reducer to dispatch the actions
-that you write in Kotlin. This is done to adapt Redux to a type-safe environment.
-
 Subscribing to your store works as usual.
 
 ```
-unsubscribe = myStore.subscribe { println(myStore.state) }
+val unsubscribe = myStore.subscribe { println(myStore.state) }
+```
+
+### Middleware
+
+Middleware works as usual. However, if you are using rEnhancer, it is important to keep in mind the
+order in which you compose rEnhacer and applyMiddleware. If you specify rEnhancer first, then your
+middleware will be passed actions that rEnhancer has already processed. If you specify rEnhancer 
+last, it will be passed your unprocessed RActions.
+
+```
+compose(rEnhacer(), applyMiddleware(someMiddleware)) // Middleware works with standard actions
+
+compose(applyMiddleware(someMiddleware), rEnhacer()) // Middleware works with RActions
 ```
 
 ### Serialization
 
-If you need to serialize actions, you can do so using
+If you need to serialize RActions to json, you can do so using
 [kotlinx.serialization](https://github.com/Kotlin/kotlinx.serialization). Just mark the actions you
 want to serialize with `@Serializable`, and you can serialize them and deserialize them in a
 type-safe manner using `serializeAction()` and `deserializeAction()`:
