@@ -72,3 +72,9 @@ val action = when (JSON.parse((StringSerializer to StringSerializer).map, jsonAc
 	else -> null
 }
 ```
+
+### Limitations
+
+Note that combineReducers will convert any kotlin lists to javascript arrays without kotlin's type
+system noticing, which can cause all sorts of nasty errors. If you are using combineReducers, make
+sure to use arrays and not lists in your state.
