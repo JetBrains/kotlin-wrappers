@@ -1,5 +1,6 @@
 package redux
 
+import kotlinext.js.Object
 import kotlinext.js.assign
 import kotlinext.js.js
 
@@ -8,6 +9,18 @@ val <S> Store<S, *, *>.state: S get() = getState()
 fun <S, A> combineReducers(reducers: Map<String, Reducer<*, A>>): Reducer<S, A> = combineReducers(js {
     reducers.forEach { this[it.value] = it.key }
 }.unsafeCast<ReducerContainer<S, A>>())
+
+fun <A, R> bindActionCreators(actionCreators: Map<String, (Array<Any>) -> A>, dispatch: (A) -> R): Map<String, (Array<Any>) -> R> {
+    val result = mutableMapOf<String, (Array<Any>) -> R>()
+    with(bindActionCreators(js {
+        actionCreators.forEach { this[it.key] = it.value }
+    }.unsafeCast<ActionCreatorContainer<A>>(), dispatch)) {
+        Object.keys(this).forEach {
+            result[it] = asDynamic()[it]
+        }
+    }
+    return result
+}
 
 fun <S> rEnhancer(): Enhancer<S, Action, Action, RAction, WrapperAction> = { next ->
     { reducer, initialState ->

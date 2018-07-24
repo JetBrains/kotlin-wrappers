@@ -1,7 +1,5 @@
 package redux
 
-import kotlinx.html.A
-
 external interface Action {
     val type: String
 }
@@ -17,6 +15,10 @@ external interface Store<S, A, R> {
 }
 
 external interface ReducerContainer<S, A>
+
+external interface ActionCreatorContainer<A>
+
+external interface BoundActionCreatorContainer<A, R>
 
 external interface MiddlewareApi<S, A, R> {
     fun getState(): S
