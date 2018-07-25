@@ -11,7 +11,7 @@ ext {
     mocha_version = '3.0.1-pre.1'
     react_version = '16.2.1-pre.1'
     react_dom_version = '16.2.1-pre.1'
-    redux_version = '3.7.2'
+    redux_version = '4.0.0'
 
     // kotlin-css
     css_version = '1.0.0-pre.10'
