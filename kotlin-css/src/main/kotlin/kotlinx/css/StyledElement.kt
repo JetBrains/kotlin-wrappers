@@ -1,8 +1,8 @@
 @file:Suppress("unused")
 
-package css
+package kotlinx.css
 
-import css.properties.*
+import kotlinx.css.properties.*
 import kotlin.reflect.*
 
 open class StyledElement {

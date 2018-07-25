@@ -1,19 +1,19 @@
 {
-  "name": "@jetbrains/kotlin-react-dom",
-  "version": "$react_dom_version",
-  "description": "Kotlin wrapper for React DOM library",
+  "name": "@jetbrains/kotlin-react-router-dom",
+  "version": "$react_router_dom_version",
+  "description": "Kotlin wrapper for React Router DOM library",
   "files": [
     "build/classes",
     "package.json",
     "README.md"
   ],
-  "main": "build/classes/main/kotlin-react-dom.js",
+  "main": "build/classes/main/kotlin-react-router-dom.js",
   "repository": "https://github.com/JetBrains/kotlin-wrappers",
   "peerDependencies": {
     "@jetbrains/kotlin-react": "^$react_version",
     "kotlin": "^$kotlin_version",
-    "react-dom": ">=15.x.x <=16.x.x"
+    "react-router-dom": "^4.3.1"
   },
-  "author": "Filipp Riabchun",
+  "author": "Andrius Semionovas",
   "license": "Apache-2-0"
 }

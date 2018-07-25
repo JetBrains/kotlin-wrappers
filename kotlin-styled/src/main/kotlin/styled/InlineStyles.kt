@@ -1,7 +1,7 @@
 package styled
 
-import css.*
 import kotlinext.js.*
+import kotlinx.css.*
 import react.dom.*
 
 @JsModule("inline-style-prefixer")

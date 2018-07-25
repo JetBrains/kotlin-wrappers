@@ -1,3 +1,3 @@
 applyKotlinJS()
 
-configurePublishing(mocha_version)
+configurePublishingWithNPM(mocha_version)

@@ -33,6 +33,19 @@ open class RBuilder {
     operator fun <P : RProps> RClass<P>.invoke(handler: RHandler<P>) =
         child(this, jsObject {}, handler)
 
+    operator fun <T> RProvider<T>.invoke(value: T, handler: RHandler<RProviderProps<T>>) =
+        child(this, jsObject { this.value = value }, handler)
+
+    operator fun <T> RConsumer<T>.invoke(handler: RBuilder.(T) -> Unit) =
+        child(this, jsObject<RConsumerProps<T>> {
+            this.children = { value ->
+                with(RBuilder()) {
+                    handler(value)
+                    childList.toTypedArray()
+                }
+            }
+        }) {}
+
     fun <P : RProps> RClass<P>.node(
         props: P,
         children: List<Any> = emptyList()
@@ -66,15 +79,12 @@ open class RBuilder {
 open class RBuilderMultiple : RBuilder() {
 }
 
-// fallback for React >=16.0 <16.2
-val RFragment: RClass<RProps> = Fragment ?: { props: RProps -> props.children } as RClass<RProps>
-
 fun buildElements(handler: RBuilder.() -> Unit): dynamic {
     val nodes = RBuilder().apply(handler).childList
     return when {
         nodes.size == 0 -> null
         nodes.size == 1 -> nodes.first()
-        else -> createElement(RFragment, js {}, *nodes.toTypedArray())
+        else -> createElement(Fragment, js {}, *nodes.toTypedArray())
     }
 }
 
@@ -95,9 +105,24 @@ open class RElementBuilder<out P : RProps>(open val attrs: P) : RBuilder() {
             attrs.key = value
         }
 
+    var ref: RRef
+        get() = attrs.ref
+        set(value) {
+            attrs.ref = value
+        }
+
     fun ref(handler: (dynamic) -> Unit) {
-        attrs.ref = handler
+        attrs.ref(handler)
     }
 }
 
 typealias RHandler<P> = RElementBuilder<P>.() -> Unit
+
+fun <P : RProps> forwardRef(handler: RBuilder.(RProps, RRef) -> Unit): RClass<P> {
+    return rawForwardRef { props, ref ->
+        with(RBuilder()) {
+            handler(props, ref)
+            childList.toTypedArray()
+        }
+    }
+}

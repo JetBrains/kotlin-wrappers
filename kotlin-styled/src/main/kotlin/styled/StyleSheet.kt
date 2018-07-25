@@ -1,7 +1,7 @@
 package styled
 
-import css.*
 import kotlinext.js.*
+import kotlinx.css.*
 import kotlin.reflect.*
 
 open class StyleSheet(var name: String, val isStatic: Boolean = false) {
