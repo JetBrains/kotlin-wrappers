@@ -245,7 +245,6 @@ var Tag.style: RuleSet
                 else -> it.value
             }
         }
-
     }
 
 inline fun Tag.jsStyle(handler: dynamic.() -> Unit) =
