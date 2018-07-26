@@ -24,6 +24,7 @@ buildscript {
 subprojects {
     repositories {
         maven { url "https://dl.bintray.com/kotlin/kotlin-dev" }
+        maven { url "https://kotlin.bintray.com/kotlinx" }
         jcenter()
         maven {
             url "http://dl.bintray.com/kotlin/kotlin-js-wrappers"
