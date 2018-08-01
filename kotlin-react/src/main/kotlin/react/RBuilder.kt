@@ -39,10 +39,7 @@ open class RBuilder {
     operator fun <T> RConsumer<T>.invoke(handler: RBuilder.(T) -> Unit) =
         child(this, jsObject<RConsumerProps<T>> {
             this.children = { value ->
-                with(RBuilder()) {
-                    handler(value)
-                    childList.toTypedArray()
-                }
+                buildElements { handler(value) }
             }
         }) {}
 
@@ -120,9 +117,6 @@ typealias RHandler<P> = RElementBuilder<P>.() -> Unit
 
 fun <P : RProps> forwardRef(handler: RBuilder.(RProps, RRef) -> Unit): RClass<P> {
     return rawForwardRef { props, ref ->
-        with(RBuilder()) {
-            handler(props, ref)
-            childList.toTypedArray()
-        }
+        buildElements { handler(props, ref) }
     }
 }
