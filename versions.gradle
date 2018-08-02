@@ -1,6 +1,6 @@
 ext {
     // External dependencies
-    kotlin_version = '1.2.51'
+    kotlin_version = '1.2.60'
     kotlinx_html_version = '0.6.11'
     node_plugin_version = '1.2.0'
     bintray_plugin_version = '1.8.0'
@@ -15,8 +15,8 @@ ext {
     mocha_version = '3.0.1-pre.35'
 
     // kotlin-react, kotlin-react-dom, kotlin-react-router-dom
-    react_version = '16.4.1-pre.35'
-    react_dom_version = '16.4.1-pre.35'
+    react_version = '16.4.2-pre.35'
+    react_dom_version = '16.4.2-pre.35'
     react_router_dom_version = '4.3.1-pre.35'
 
     // kotlin-styled
