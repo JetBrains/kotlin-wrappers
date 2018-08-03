@@ -11,9 +11,9 @@
   "main": "build/classes/main/kotlin-redux.js",
   "repository": "https://github.com/JetBrains/kotlin-wrappers",
   "peerDependencies": {
+    "@jetbrains/kotlin-extensions": "^$kotlinext_version",
     "kotlin": "^$kotlin_version",
-    "@jetbrains/kotlin-extensions": "1.0.0-pre.20",
-    "redux": "^3.7.2"
+    "redux": "^4.0.0"
   },
   "author": "Aidan Heller",
   "license": "Apache-2-0"

@@ -12,6 +12,7 @@ To learn more please refer to the READMEs of individual modules:
 * [kotlin-react](kotlin-react/README.md), 
 * [kotlin-react-dom](kotlin-react-dom/README.md),
 * [kotlin-react-router-dom](kotlin-react-router-dom/README.md),
+* [kotlin-redux](kotlin-redux/README.md),
 * [kotlin-styled](kotlin-styled/README.md).
 
 All wrappers are available on npm: `npm install @jetbrains/<wrapper name>`
