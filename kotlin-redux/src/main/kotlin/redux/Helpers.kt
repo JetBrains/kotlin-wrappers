@@ -27,6 +27,7 @@ fun <S> rEnhancer(): Enhancer<S, Action, Action, RAction, WrapperAction> = { nex
         fun wrapperReducer(reducer: Reducer<S, RAction>): Reducer<S, WrapperAction> {
             return { state, action -> reducer(state, action.action) }
         }
+
         val store = (next.unsafeCast<StoreCreator<S, WrapperAction, WrapperAction>>())(wrapperReducer(reducer), initialState)
         assign(assign(js {}, store)) {
             dispatch = { action: RAction ->

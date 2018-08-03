@@ -1,6 +1,6 @@
 apply plugin: 'kotlinx-serialization'
 
-configurePublishing(redux_version)
+configurePublishingWithNPM(redux_version)
 
 dependencies {
     compile project(":kotlin-extensions")

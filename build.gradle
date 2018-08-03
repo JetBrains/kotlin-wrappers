@@ -113,8 +113,8 @@ subprojects {
                     react_version: "$react_version",
                     react_dom_version: "$react_dom_version",
                     react_router_dom_version: "$react_router_dom_version",
-                    styled_version: "$styled_version",
-                    redux_version: "$redux_version"
+                    redux_version: "$redux_version",
+                    styled_version: "$styled_version"
             )
         }
 
