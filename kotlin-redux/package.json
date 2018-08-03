@@ -1,0 +1,20 @@
+{
+  "name": "@jetbrains/kotlin-redux",
+  "version": "$redux_version",
+  "description": "Kotlin wrapper for Redux library",
+  "files": [
+    "build",
+    "src",
+    "package.json",
+    "README.md"
+  ],
+  "main": "build/classes/main/kotlin-redux.js",
+  "repository": "https://github.com/JetBrains/kotlin-wrappers",
+  "peerDependencies": {
+    "kotlin": "^$kotlin_version",
+    "@jetbrains/kotlin-extensions": "1.0.0-pre.20",
+    "redux": "^3.7.2"
+  },
+  "author": "Aidan Heller",
+  "license": "Apache-2-0"
+}
