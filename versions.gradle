@@ -2,7 +2,7 @@ ext {
     // External dependencies
     kotlin_version = '1.2.60'
     kotlinx_html_version = '0.6.11'
-    kotlinx_serialization_version = '0.4.1'
+    kotlinx_serialization_version = '0.6.1-SNAPSHOT'
     node_plugin_version = '1.2.0'
     bintray_plugin_version = '1.8.0'
 
@@ -20,8 +20,9 @@ ext {
     react_dom_version = '16.4.2-pre.37'
     react_router_dom_version = '4.3.1-pre.37'
     
-    // kotlin-redux
+    // kotlin-redux, kotlin-react-redux
     redux_version = '4.0.0-pre.37'
+    react_redux_version = '5.0.7-pre.37'
 
     // kotlin-styled
     styled_version = '1.0.0-pre.37'
