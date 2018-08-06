@@ -2,27 +2,27 @@ ext {
     // External dependencies
     kotlin_version = '1.2.60'
     kotlinx_html_version = '0.6.11'
-    kotlinx_serialization_version = '0.6.1-SNAPSHOT'
+    kotlinx_serialization_version = '0.6.1'
     node_plugin_version = '1.2.0'
     bintray_plugin_version = '1.8.0'
 
     // kotlin-css
-    css_version = '1.0.0-pre.37'
+    css_version = '1.0.0-pre.38'
 
     // kotlin-extensions
-    kotlinext_version = '1.0.1-pre.37'
+    kotlinext_version = '1.0.1-pre.38'
 
     // kotlin-mocha
-    mocha_version = '3.0.1-pre.37'
+    mocha_version = '3.0.1-pre.38'
 
     // kotlin-react, kotlin-react-dom, kotlin-react-router-dom
-    react_version = '16.4.2-pre.37'
-    react_dom_version = '16.4.2-pre.37'
-    react_router_dom_version = '4.3.1-pre.37'
+    react_version = '16.4.2-pre.38'
+    react_dom_version = '16.4.2-pre.38'
+    react_router_dom_version = '4.3.1-pre.38'
     
     // kotlin-redux
-    redux_version = '4.0.0-pre.37'
+    redux_version = '4.0.0-pre.38'
 
     // kotlin-styled
-    styled_version = '1.0.0-pre.37'
+    styled_version = '1.0.0-pre.38'
 }

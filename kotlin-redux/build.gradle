@@ -1,4 +1,5 @@
 applyKotlinJS()
+
 apply plugin: 'kotlinx-serialization'
 
 configurePublishingWithNPM(redux_version)
