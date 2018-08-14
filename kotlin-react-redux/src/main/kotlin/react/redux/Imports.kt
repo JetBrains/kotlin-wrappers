@@ -1,10 +1,7 @@
 @file:JsModule("react-redux")
 package react.redux
 
-import react.Component
-import react.RProps
-import react.RState
-import react.ReactElement
+import react.*
 import redux.Store
 
 external class Provider : Component<ProviderProps, RState> {
@@ -14,3 +11,10 @@ external class Provider : Component<ProviderProps, RState> {
 external interface ProviderProps : RProps {
     var store: Store<*, *, *>
 }
+
+external fun <S, A, R, OP : RProps, SP : RProps, DP : RProps, P : RProps> connect(
+        mapStateToProps: ((S, OP) -> SP)? = definedExternally,
+        mapDispatchToProps: (((A) -> R, OP) -> DP)? = definedExternally,
+        mergeProps: ((SP, DP, OP) -> P)? = definedExternally,
+        options: Options<S, OP, SP, P>? = definedExternally
+): (RClass<P>) -> RClass<OP>
