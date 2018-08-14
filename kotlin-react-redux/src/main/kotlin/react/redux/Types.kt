@@ -25,3 +25,7 @@ external interface FactoryOptions<P : RProps> {
     val wrappedComponentName: String?
     val wrappedComponent: RClass<P>?
 }
+
+typealias Selector<S, OP, P> = (S, OP) -> P
+
+typealias SelectorFactory<S, A, R, OP, P> = ((A) -> R, FactoryOptions<P>) -> Selector<S, OP, P>
