@@ -1,7 +1,6 @@
 package react.dom
 
 import kotlinext.js.*
-import kotlinx.css.*
 import kotlinx.html.*
 import kotlin.reflect.*
 
@@ -236,20 +235,5 @@ var Tag.jsStyle: dynamic
         attributes["style"] = value
     }
 
-var Tag.style: RuleSet
-    get() = error("Style cannot be read from props.")
-    set(value) = jsStyle {
-        CSSBuilder().apply(value).declarations.forEach {
-            this[it.key] = when (it.value) {
-                !is String, !is Number -> it.value.toString()
-                else -> it.value
-            }
-        }
-    }
-
 inline fun Tag.jsStyle(handler: dynamic.() -> Unit) =
     handler(jsStyle)
-
-fun Tag.style(handler: RuleSet) {
-    style = handler
-}
