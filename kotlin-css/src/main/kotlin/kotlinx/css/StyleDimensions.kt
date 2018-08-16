@@ -40,6 +40,7 @@ private fun value(number: Number, unit: String): String {
 }
 
 val Number.em: LinearDimension get() = LinearDimension(value(this, "em"))
+val Number.rem: LinearDimension get() = LinearDimension(value(this, "rem"))
 val Number.pct: LinearDimension get() = LinearDimension(value(this, "%"))
 val Number.px: LinearDimension get() = LinearDimension(value(this, "px"))
 val Number.vw: LinearDimension get() = LinearDimension(value(this, "vw"))
