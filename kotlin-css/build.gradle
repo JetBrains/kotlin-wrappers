@@ -4,6 +4,8 @@ apply plugin: 'kotlin-platform-common'
 
 dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib-common:$kotlin_version"
+    testCompile "org.jetbrains.kotlin:kotlin-test-common:$kotlin_version"
+    testCompile "org.jetbrains.kotlin:kotlin-test-annotations-common:$kotlin_version"
 }
 
 project("kotlin-css-js") {
@@ -15,6 +17,8 @@ project("kotlin-css-js") {
     dependencies {
         compile "org.jetbrains.kotlin:kotlin-stdlib-js:$kotlin_version"
         compile project(":kotlin-extensions")
+        testCompile "org.jetbrains.kotlin:kotlin-test:$kotlin_version"
+        testCompile "org.jetbrains.kotlin:kotlin-test-js:$kotlin_version"
         expectedBy project(":kotlin-css")
     }
 }
@@ -26,6 +30,8 @@ project("kotlin-css-jvm") {
 
     dependencies {
         compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+        testCompile "org.jetbrains.kotlin:kotlin-test:$kotlin_version"
+        testCompile "org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version"
         expectedBy project(":kotlin-css")
     }
 }

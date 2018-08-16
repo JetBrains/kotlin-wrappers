@@ -5,3 +5,5 @@
 build/
 ts/
 
+kotlin-wrappers.ipr
+kotlin-wrappers.iws
