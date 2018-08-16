@@ -81,12 +81,12 @@ fun RBuilder.app {
 
 ### Type-safe inline styles
 
-There is no built-in way to write inline styles in a type-safe manner. However, it can be done by 
-[kotlin-css](https://github.com/JetBrains/kotlin-wrappers/tree/master/kotlin-css) and a simple utility function.
+There is no built-in capability for writing inline styles in a type-safe manner. However, it can be done by adding a 
+dependency on [kotlin-css](https://github.com/JetBrains/kotlin-wrappers/tree/master/kotlin-css) and a simple utility function.
 
 ```kotlin
 var Tag.style: RuleSet
-    get() = error("Style cannot be read from props.")
+    get() = error("style cannot be read from props")
     set(value) = jsStyle {
         CSSBuilder().apply(value).declarations.forEach {
             this[it.key] = when (it.value) {
