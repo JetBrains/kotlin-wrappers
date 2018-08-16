@@ -75,8 +75,7 @@ class CSSBuilder(val indent: String = "", val allowClasses: Boolean = true) : St
 
     fun descendants(selector: String? = null, block: RuleSet) = "& ${selector?.let { it } ?: "*"}"(block)
 
-    // TODO refactor, uses a dev-mode property!
-    fun ancestorHover(styleName: String, block: RuleSet) = "[data-style*=\"$styleName\"]:hover &"(block)
+    fun ancestorHover(selector: String, block: RuleSet) = "$selector:hover &"(block)
 
     // https://developer.mozilla.org/en/docs/Web/CSS/Pseudo-elements
     fun after(block: RuleSet) = "&::after" {

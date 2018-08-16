@@ -7,22 +7,22 @@ ext {
     bintray_plugin_version = '1.8.0'
 
     // kotlin-css
-    css_version = '1.0.0-pre.38'
+    css_version = '1.0.0-pre.39'
 
     // kotlin-extensions
-    kotlinext_version = '1.0.1-pre.38'
+    kotlinext_version = '1.0.1-pre.39'
 
     // kotlin-mocha
-    mocha_version = '3.0.1-pre.38'
+    mocha_version = '3.0.1-pre.39'
 
     // kotlin-react, kotlin-react-dom, kotlin-react-router-dom
-    react_version = '16.4.2-pre.38'
-    react_dom_version = '16.4.2-pre.38'
-    react_router_dom_version = '4.3.1-pre.38'
+    react_version = '16.4.2-pre.39'
+    react_dom_version = '16.4.2-pre.39'
+    react_router_dom_version = '4.3.1-pre.39'
     
     // kotlin-redux
-    redux_version = '4.0.0-pre.38'
+    redux_version = '4.0.0-pre.39'
 
     // kotlin-styled
-    styled_version = '1.0.0-pre.38'
+    styled_version = '1.0.0-pre.39'
 }
