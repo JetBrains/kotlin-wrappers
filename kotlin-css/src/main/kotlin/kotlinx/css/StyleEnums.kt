@@ -2,11 +2,7 @@
 
 package kotlinx.css
 
-import kotlin.math.PI
-import kotlin.math.abs
-import kotlin.math.max
-import kotlin.math.min
-import kotlin.math.roundToInt
+import kotlin.math.*
 
 @Suppress("EnumEntryName")
 enum class Align {
@@ -98,7 +94,7 @@ enum class Clear {
 /**
  * See [CSS Color Module Level 3](https://www.w3.org/TR/2018/REC-css-color-3-20180619/)
  *
- * This class represents a CSS color value.  String parameters to the constructor argument
+ * This class represents a CSS color value. String parameters to the constructor argument
  * can take one of the following forms:
  *
  *  * HTML color name, e.g. ``Red``, ``DarkSalmon`` (case-insensitive), though in this case the use of the pre-defined constants is recommended.
@@ -107,7 +103,7 @@ enum class Clear {
  *  * ``hsl(0..360, 0-100%, 0..100%)`` or ``hsla(0..360, 0-100%, 0..100%, 0..1)``
  *
  * Technically, the Hue parameter to ``hsl`` or ``hsla`` can exceed ``360``, because it represents a *degree* (angle) on
- * the color wheel.  But as per the algorithm proposed by the W3C, the value will ultimately be capped to ``360`` through
+ * the color wheel. But as per the algorithm proposed by the W3C, the value will ultimately be capped to ``360`` through
  * a series of modulus operations; see section *4.2.4. HSL color values* of the above specification.
  */
 @Suppress("SpellCheckingInspection")
@@ -115,7 +111,7 @@ class Color(val value: String) {
 
     private var rgb: String? = null
 
-    private constructor(value: String, rgb: String): this(value) {
+    private constructor(value: String, rgb: String) : this(value) {
         this.rgb = rgb
     }
 
@@ -123,15 +119,15 @@ class Color(val value: String) {
         val initial = Color("initial")
         val inherit = Color("inherit")
         val unset = Color("unset")
+
         val transparent = Color("transparent")
         val currentColor = Color("currentColor")
 
-        // W3C predefined HTML colors (140), see the referenced specification above.
-        //
+        // W3C predefined HTML colors (147), see the referenced specification above.
         val aliceBlue = Color("aliceblue", "#f0f8ff")
         val antiqueWhite = Color("antiquewhite", "#faebd7")
         val aqua = Color("aqua", "#00ffff")
-        val aquaMarine = Color("aquamarine", "#7fffd4")
+        val aquamarine = Color("aquamarine", "#7fffd4")
         val azure = Color("azure", "#f0ffff")
         val beige = Color("beige", "#f5f5dc")
         val bisque = Color("bisque", "#ffe4c4")
@@ -145,15 +141,16 @@ class Color(val value: String) {
         val chartreuse = Color("chartreuse", "#7fff00")
         val chocolate = Color("chocolate", "#d2691e")
         val coral = Color("coral", "#ff7f50")
-        val cornFlowerBlue = Color("cornflowerblue", "#6495ed")
+        val cornflowerBlue = Color("cornflowerblue", "#6495ed")
         val cornsilk = Color("cornsilk", "#fff8dc")
         val crimson = Color("crimson", "#dc143c")
         val cyan = Color("cyan", "#00ffff")
         val darkBlue = Color("darkblue", "#00008b")
         val darkCyan = Color("darkcyan", "#008b8b")
-        val darkGoldenRod = Color("darkgoldenrod", "#b8860b")
+        val darkGoldenrod = Color("darkgoldenrod", "#b8860b")
         val darkGray = Color("darkgray", "#a9a9a9")
         val darkGreen = Color("darkgreen", "#006400")
+        val darkGrey = Color("darkgrey", "#a9a9a9")
         val darkKhaki = Color("darkkhaki", "#bdb76b")
         val darkMagenta = Color("darkmagenta", "#8b008b")
         val darkOliveGreen = Color("darkolivegreen", "#556b2f")
@@ -164,24 +161,27 @@ class Color(val value: String) {
         val darkSeaGreen = Color("darkseagreen", "#8fbc8f")
         val darkSlateBlue = Color("darkslateblue", "#483d8b")
         val darkSlateGray = Color("darkslategray", "#2f4f4f")
+        val darkSlateGrey = Color("darkslategrey", "#2f4f4f")
         val darkTurquoise = Color("darkturquoise", "#00ced1")
         val darkViolet = Color("darkviolet", "#9400d3")
         val deepPink = Color("deeppink", "#ff1493")
         val deepSkyBlue = Color("deepskyblue", "#00bfff")
         val dimGray = Color("dimgray", "#696969")
+        val dimGrey = Color("dimgrey", "#696969")
         val dodgerBlue = Color("dodgerblue", "#1e90ff")
-        val fireBrick = Color("firebrick", "#b22222")
+        val firebrick = Color("firebrick", "#b22222")
         val floralWhite = Color("floralwhite", "#fffaf0")
         val forestGreen = Color("forestgreen", "#228b22")
         val fuchsia = Color("fuchsia", "#ff00ff")
         val gainsboro = Color("gainsboro", "#dcdcdc")
         val ghostWhite = Color("ghostwhite", "#f8f8ff")
         val gold = Color("gold", "#ffd700")
-        val goldenRod = Color("goldenrod", "#daa520")
+        val goldenrod = Color("goldenrod", "#daa520")
         val gray = Color("gray", "#808080")
         val green = Color("green", "#008000")
         val greenYellow = Color("greenyellow", "#adff2f")
-        val honeyDew = Color("honeydew", "#f0fff0")
+        val grey = Color("grey", "#808080")
+        val honeydew = Color("honeydew", "#f0fff0")
         val hotPink = Color("hotpink", "#ff69b4")
         val indianRed = Color("indianred", "#cd5c5c")
         val indigo = Color("indigo", "#4b0082")
@@ -197,11 +197,13 @@ class Color(val value: String) {
         val lightGoldenrodYellow = Color("lightgoldenrodyellow", "#fafad2")
         val lightGray = Color("lightgray", "#d3d3d3")
         val lightGreen = Color("lightgreen", "#90ee90")
+        val lightGrey = Color("lightgrey", "#d3d3d3")
         val lightPink = Color("lightpink", "#ffb6c1")
         val lightSalmon = Color("lightsalmon", "#ffa07a")
         val lightSeaGreen = Color("lightseagreen", "#20b2aa")
         val lightSkyBlue = Color("lightskyblue", "#87cefa")
         val lightSlateGray = Color("lightslategray", "#778899")
+        val lightSlateGrey = Color("lightslategrey", "#778899")
         val lightSteelBlue = Color("lightsteelblue", "#b0c4de")
         val lightYellow = Color("lightyellow", "#ffffe0")
         val lime = Color("lime", "#00ff00")
@@ -209,7 +211,7 @@ class Color(val value: String) {
         val linen = Color("linen", "#faf0e6")
         val magenta = Color("magenta", "#ff00ff")
         val maroon = Color("maroon", "#800000")
-        val mediumAquaMarine = Color("mediumaquamarine", "#66cdaa")
+        val mediumAquamarine = Color("mediumaquamarine", "#66cdaa")
         val mediumBlue = Color("mediumblue", "#0000cd")
         val mediumOrchid = Color("mediumorchid", "#ba55d3")
         val mediumPurple = Color("mediumpurple", "#9370d8")
@@ -230,7 +232,7 @@ class Color(val value: String) {
         val orange = Color("orange", "#ffa500")
         val orangeRed = Color("orangered", "#ff4500")
         val orchid = Color("orchid", "#da70d6")
-        val paleGoldenRod = Color("palegoldenrod", "#eee8aa")
+        val paleGoldenrod = Color("palegoldenrod", "#eee8aa")
         val paleGreen = Color("palegreen", "#98fb98")
         val paleTurquoise = Color("paleturquoise", "#afeeee")
         val paleVioletRed = Color("palevioletred", "#db7093")
@@ -254,6 +256,7 @@ class Color(val value: String) {
         val skyBlue = Color("skyblue", "#87ceeb")
         val slateBlue = Color("slateblue", "#6a5acd")
         val slateGray = Color("slategray", "#708090")
+        val slateGrey = Color("slategrey", "#708090")
         val snow = Color("snow", "#fffafa")
         val springGreen = Color("springgreen", "#00ff7f")
         val steelBlue = Color("steelblue", "#4682b4")
@@ -273,7 +276,7 @@ class Color(val value: String) {
         val normalizePercent = { v: Int -> normalize<Int>(min = 0, max = 100, value = v) }
         val normalizeRGB = { v: Int -> normalize<Int>(min = 0, max = 255, value = v) }
         val normalizeAlpha = normalizeFractionalPercent
-        val normalizeHue: (Double) -> Int = { v: Double -> (((v % 360) + 360) % 360).roundToInt() }   // algorithm for capping from W3C
+        val normalizeHue: (Double) -> Int = { v: Double -> (((v % 360) + 360) % 360).roundToInt() } // algorithm for capping from W3C
     }
 
     override fun toString() = value
@@ -281,7 +284,7 @@ class Color(val value: String) {
     fun withAlpha(alpha: Double) =
         when {
             value.startsWith("hsl", true) -> with(fromHSLANotation()) { hsla(hue, saturation, lightness, normalizeAlpha(alpha) * this.alpha) }
-            else                          -> with(toRGBA()) { rgba(red, green, blue, normalizeAlpha(alpha) * this.alpha) }
+            else -> with(toRGBA()) { rgba(red, green, blue, normalizeAlpha(alpha) * this.alpha) }
         }
 
     /**
@@ -296,10 +299,10 @@ class Color(val value: String) {
 
         val lightness = hsla.lightness + (hsla.lightness * (normalizePercent(percent) / 100.0)).roundToInt()
         val newHSLa = hsla.copy(lightness = normalizePercent(lightness))
-        return if (isHSLA)
+        return if (isHSLA) {
             hsla(newHSLa.hue, newHSLa.saturation, newHSLa.lightness, newHSLa.alpha)
-        else {
-            with (newHSLa.asRGBA()) { rgba(red, green, blue, alpha) }
+        } else {
+            with(newHSLa.asRGBA()) { rgba(red, green, blue, alpha) }
         }
     }
 
@@ -315,10 +318,10 @@ class Color(val value: String) {
 
         val darkness = hsla.lightness - (hsla.lightness * (normalizePercent(percent) / 100.0)).roundToInt()
         val newHSLa = hsla.copy(lightness = normalizePercent(darkness))
-        return if (isHSLA)
+        return if (isHSLA) {
             hsla(newHSLa.hue, newHSLa.saturation, newHSLa.lightness, newHSLa.alpha)
-        else {
-            with (newHSLa.asRGBA()) { rgba(red, green, blue, alpha) }
+        } else {
+            with(newHSLa.asRGBA()) { rgba(red, green, blue, alpha) }
         }
     }
 
@@ -334,10 +337,10 @@ class Color(val value: String) {
 
         val saturation = hsla.saturation + (hsla.saturation * (normalizePercent(percent) / 100.0)).roundToInt()
         val newHSLa = hsla.copy(saturation = normalizePercent(saturation))
-        return if (isHSLA)
+        return if (isHSLA) {
             hsla(newHSLa.hue, newHSLa.saturation, newHSLa.lightness, newHSLa.alpha)
-        else {
-            with (newHSLa.asRGBA()) { rgba(red, green, blue, alpha) }
+        } else {
+            with(newHSLa.asRGBA()) { rgba(red, green, blue, alpha) }
         }
     }
 
@@ -353,10 +356,10 @@ class Color(val value: String) {
 
         val desaturation = hsla.saturation - (hsla.saturation * (normalizePercent(percent) / 100.0)).roundToInt()
         val newHSLa = hsla.copy(saturation = normalizePercent(desaturation))
-        return if (isHSLA)
+        return if (isHSLA) {
             hsla(newHSLa.hue, newHSLa.saturation, newHSLa.lightness, newHSLa.alpha)
-        else {
-            with (newHSLa.asRGBA()) { rgba(red, green, blue, alpha) }
+        } else {
+            with(newHSLa.asRGBA()) { rgba(red, green, blue, alpha) }
         }
     }
 
@@ -381,9 +384,9 @@ class Color(val value: String) {
             val s = if (chroma != 0.0) normalizeFractionalPercent(chroma / (1.0 - abs((2.0 * lg) - 1.0))) else 0.0
             val h = when (cMax) {
                 cMin -> 0.0
-                r    -> 60 * (((g - b) / chroma) % 6.0)
-                g    -> 60 * (((b - r) / chroma) + 2)
-                b    -> 60 * (((r - g) / chroma) + 4)
+                r -> 60 * (((g - b) / chroma) % 6.0)
+                g -> 60 * (((b - r) / chroma) + 2)
+                b -> 60 * (((r - g) / chroma) + 4)
                 else -> error("Unexpected value for max") // theoretically unreachable bc maxOf(r, g, b) above
             }
 
@@ -405,7 +408,7 @@ class Color(val value: String) {
                     (hu < 1.0 / 6) -> m1 + (m2 - m1) * 6 * hu
                     (hu < 1.0 / 2) -> m2
                     (hu < 2.0 / 3) -> m1 + ((m2 - m1) * 6 * (2.0 / 3 - hu))
-                    else           -> m1
+                    else -> m1
                 }
             }
 
@@ -431,15 +434,16 @@ class Color(val value: String) {
         val match = Regex(pattern, RegexOption.IGNORE_CASE).find(value)
 
         fun getHSLParameter(index: Int) =
-            match?.groups?.get(index)?.value ?: throw IllegalArgumentException("Expected hsl or hsla notation, got $value")
+            match?.groups?.get(index)?.value
+                ?: throw IllegalArgumentException("Expected hsl or hsla notation, got $value")
 
         val hueShape = getHSLParameter(1)
         val hue = normalizeHue(when {
             hueShape.endsWith("grad", true) -> hueShape.substringBefore("grad").toDouble() * (9.0 / 10)
-            hueShape.endsWith("rad", true)  -> (hueShape.substringBefore("rad").toDouble() * 180) / PI
+            hueShape.endsWith("rad", true) -> (hueShape.substringBefore("rad").toDouble() * 180) / PI
             hueShape.endsWith("turn", true) -> hueShape.substringBefore("turn").toDouble() * 360.0
-            hueShape.endsWith("deg", true)  -> hueShape.substringBefore("deg").toDouble()
-            else                            -> hueShape.toDouble()
+            hueShape.endsWith("deg", true) -> hueShape.substringBefore("deg").toDouble()
+            else -> hueShape.toDouble()
         })
         val saturation = normalizePercent(getHSLParameter(2).toInt())
         val lightness = normalizePercent(getHSLParameter(3).toInt())
@@ -454,11 +458,12 @@ class Color(val value: String) {
         val match = Regex(pattern, RegexOption.IGNORE_CASE).find(value)
 
         fun getRGBParameter(index: Int): Int {
-            val group = match?.groups?.get(index)?.value ?: throw IllegalArgumentException("Expected rgb or rgba notation, got $value")
+            val group = match?.groups?.get(index)?.value
+                ?: throw IllegalArgumentException("Expected rgb or rgba notation, got $value")
 
             return when {
                 (group.endsWith('%')) -> (normalizeFractionalPercent(group.substringBefore('%').toDouble() / 100.0) * 255.0).toInt()
-                else                  -> normalizeRGB(group.toInt())
+                else -> normalizeRGB(group.toInt())
             }
         }
 
@@ -501,10 +506,10 @@ fun hsla(hue: Int, saturation: Int, lightness: Int, alpha: Double) = Color("hsla
 fun blackAlpha(alpha: Double) = Color.black.withAlpha(alpha)
 fun whiteAlpha(alpha: Double) = Color.white.withAlpha(alpha)
 
-private inline fun <reified T: Number> normalize(min: Number, max: Number, value: Number): T = when (value) {
-    is Int    -> max(min.toInt(), min(max.toInt(), value.toInt())) as T
+private inline fun <reified T : Number> normalize(min: Number, max: Number, value: Number): T = when (value) {
+    is Int -> max(min.toInt(), min(max.toInt(), value.toInt())) as T
     is Double -> max(min.toDouble(), min(max.toDouble(), value.toDouble())) as T
-    else      -> error("Expected parameters if type Int or Double")
+    else -> error("Expected parameters of type Int or Double")
 }
 
 @Suppress("EnumEntryName")
