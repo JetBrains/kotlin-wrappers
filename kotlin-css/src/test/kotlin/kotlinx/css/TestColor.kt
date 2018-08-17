@@ -62,7 +62,7 @@ class TestColor {
       asserter.assertEquals("Parsed HSL lightness value is incorrect", 50, hsl.lightness)
    }
 
-   @Test fun testParseHSL_Rad() {
+   @Test fun testParseHSL_Grad() {
       val color = Color("hsl(100grad, 100%, 50%)")
       val hsl = color.fromHSLANotation()
       asserter.assertEquals("Parsed HSL hue value is incorrect", 90, hsl.hue)
@@ -70,7 +70,7 @@ class TestColor {
       asserter.assertEquals("Parsed HSL lightness value is incorrect", 50, hsl.lightness)
    }
 
-   @Test fun testParseHSL_Grad() {
+   @Test fun testParseHSL_Rad() {
       val color = Color("hsl(1.5708rad, 100%, 50%)")
       val hsl = color.fromHSLANotation()
       asserter.assertEquals("Parsed HSL hue value is incorrect", 90, hsl.hue)
@@ -130,7 +130,7 @@ class TestColor {
       asserter.assertEquals("Converted RGBa blue value is incorrect", 0xA3, rgba.blue)
       asserter.assertEquals("Converted RGBa alpha/opacity value is incorrect", 1.0, rgba.alpha)
 
-      asserter.assertEquals("", "rgba(230, 201, 163, 1.0)", color.value)
+      asserter.assertEquals("Generated RGBa string not as expected", "rgba(230, 201, 163, 1.0)", color.value)
    }
 
    @Test fun testSaturate() {
@@ -148,6 +148,6 @@ class TestColor {
       asserter.assertEquals("Converted RGBa blue value is incorrect", 0x82, rgba.blue)
       asserter.assertEquals("Converted RGBa alpha/opacity value is incorrect", 1.0, rgba.alpha)
 
-      asserter.assertEquals("", "rgba(227, 185, 130, 1.0)", color.value)
+      asserter.assertEquals("Generated RGBa string not as expected", "rgba(227, 185, 130, 1.0)", color.value)
    }
 }
