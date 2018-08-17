@@ -504,9 +504,10 @@ fun hsla(hue: Int, saturation: Int, lightness: Int, alpha: Double) = Color("hsla
 fun blackAlpha(alpha: Double) = Color.black.withAlpha(alpha)
 fun whiteAlpha(alpha: Double) = Color.white.withAlpha(alpha)
 
+// Restricts value to a [min, max] range
 private inline fun <reified T : Number> normalize(min: Number, max: Number, value: Number): T = when (value) {
-    is Int -> max(min.toInt(), min(max.toInt(), value.toInt())) as T
-    is Double -> max(min.toDouble(), min(max.toDouble(), value.toDouble())) as T
+    is Int -> kotlin.math.max(min.toInt(), kotlin.math.min(max.toInt(), value.toInt())) as T
+    is Double -> kotlin.math.max(min.toDouble(), kotlin.math.min(max.toDouble(), value.toDouble())) as T
     else -> error("Expected parameters of type Int or Double")
 }
 
