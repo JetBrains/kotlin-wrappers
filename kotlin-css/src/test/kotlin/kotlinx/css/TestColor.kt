@@ -189,4 +189,17 @@ class TestColor {
         asserter.assertEquals("Parsed RGBa blue value is incorrect", 255, rgba.blue)
         asserter.assertEquals("Parsed RGBa alpha value is incorrect", 0.1, rgba.alpha)
     }
+
+    @Test
+    fun testWithAlpha() {
+        val rgb = rgb(0, 0, 0).withAlpha(0.1)
+        val rgba = rgba(0, 0, 0, 0.5).withAlpha(0.1)
+        val hex = Color("#000").withAlpha(0.1)
+        val hexa = Color("#00000000").withAlpha(0.1)
+
+        asserter.assertEquals("Alpha conversion is incorrect", "rgba(0, 0, 0, 0.1)", rgb.toString())
+        asserter.assertEquals("Alpha conversion is incorrect", "rgba(0, 0, 0, 0.05)", rgba.toString())
+        asserter.assertEquals("Alpha conversion is incorrect", "rgba(0, 0, 0, 0.1)", hex.toString())
+        asserter.assertEquals("Alpha conversion is incorrect", "rgba(0, 0, 0, 0.1)", hexa.toString())
+    }
 }
