@@ -108,7 +108,6 @@ enum class Clear {
  */
 @Suppress("SpellCheckingInspection")
 class Color(val value: String) {
-
     private var rgb: String? = null
 
     private constructor(value: String, rgb: String) : this(value) {
@@ -496,7 +495,6 @@ class Color(val value: String) {
             else -> throw IllegalArgumentException("Only hexadecimal, rgb, and rgba notations are accepted, got $v")
         }
     }
-
 }
 
 fun rgb(red: Int, green: Int, blue: Int) = Color("rgb($red, $green, $blue)")
