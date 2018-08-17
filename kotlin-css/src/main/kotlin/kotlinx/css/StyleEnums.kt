@@ -271,11 +271,12 @@ class Color(val value: String) {
         val yellow = Color("yellow", "#ffff00")
         val yellowGreen = Color("yellowgreen", "#9acd3")
 
-        val normalizeFractionalPercent = { v: Double -> normalize<Double>(min = 0.0, max = 1.0, value = v) }
-        val normalizePercent = { v: Int -> normalize<Int>(min = 0, max = 100, value = v) }
-        val normalizeRGB = { v: Int -> normalize<Int>(min = 0, max = 255, value = v) }
-        val normalizeAlpha = normalizeFractionalPercent
+        val normalizeFractionalPercent = { v: Double -> normalize(min = 0.0, max = 1.0, value = v) }
+        val normalizePercent = { v: Int -> normalize(min = 0, max = 100, value = v) }
+        val normalizeRGB = { v: Int -> normalize(min = 0, max = 255, value = v) }
         val normalizeHue: (Double) -> Int = { v: Double -> (((v % 360) + 360) % 360).roundToInt() } // algorithm for capping from W3C
+
+        val normalizeAlpha = normalizeFractionalPercent
     }
 
     override fun toString() = value
@@ -505,11 +506,11 @@ fun blackAlpha(alpha: Double) = Color.black.withAlpha(alpha)
 fun whiteAlpha(alpha: Double) = Color.white.withAlpha(alpha)
 
 // Restricts value to a [min, max] range
-private inline fun <reified T : Number> normalize(min: T, max: T, value: T): T = when (T::class) {
-    Int::class -> kotlin.math.max(min.toInt(), kotlin.math.min(max.toInt(), value.toInt())) as T
-    Double::class -> kotlin.math.max(min.toDouble(), kotlin.math.min(max.toDouble(), value.toDouble())) as T
-    else -> error("Expected parameters of type Int or Double")
-}
+private fun normalize(min: Int, max: Int, value: Int): Int =
+    kotlin.math.max(min, kotlin.math.min(max, value))
+
+private fun normalize(min: Double, max: Double, value: Double): Double =
+    kotlin.math.max(min, kotlin.math.min(max, value))
 
 @Suppress("EnumEntryName")
 enum class Cursor {
