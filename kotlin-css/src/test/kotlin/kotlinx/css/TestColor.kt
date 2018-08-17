@@ -165,4 +165,28 @@ class TestColor {
 
         asserter.assertEquals("Generated RGBa string not as expected", "rgba(227, 185, 130, 1.0)", color.value)
     }
+
+    @Test
+    fun testBlackAlpha() {
+        val color = blackAlpha(0.1)
+        val rgba = color.toRGBA()
+
+        asserter.assertEquals("String representation is incorrect", "rgba(0, 0, 0, 0.1)", color.toString())
+        asserter.assertEquals("Parsed RGBa red value is incorrect", 0, rgba.red)
+        asserter.assertEquals("Parsed RGBa green value is incorrect", 0, rgba.green)
+        asserter.assertEquals("Parsed RGBa blue value is incorrect", 0, rgba.blue)
+        asserter.assertEquals("Parsed RGBa alpha value is incorrect", 0.1, rgba.alpha)
+    }
+
+    @Test
+    fun testWhiteAlpha() {
+        val color = whiteAlpha(0.1)
+        val rgba = color.toRGBA()
+
+        asserter.assertEquals("String representation is incorrect", "rgba(255, 255, 255, 0.1)", color.toString())
+        asserter.assertEquals("Parsed RGBa red value is incorrect", 255, rgba.red)
+        asserter.assertEquals("Parsed RGBa green value is incorrect", 255, rgba.green)
+        asserter.assertEquals("Parsed RGBa blue value is incorrect", 255, rgba.blue)
+        asserter.assertEquals("Parsed RGBa alpha value is incorrect", 0.1, rgba.alpha)
+    }
 }
