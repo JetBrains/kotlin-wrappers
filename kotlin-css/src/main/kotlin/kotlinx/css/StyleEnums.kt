@@ -512,6 +512,17 @@ private fun normalize(min: Int, max: Int, value: Int): Int =
 private fun normalize(min: Double, max: Double, value: Double): Double =
     kotlin.math.max(min, kotlin.math.min(max, value))
 
+class ColumnGap(val value: String) {
+    companion object {
+        val initial = ColumnGap("initial")
+        val inherit = ColumnGap("inherit")
+        val normal = ColumnGap("normal")
+        val unset = ColumnGap("unset")
+    }
+
+    override fun toString(): String = value
+}
+
 @Suppress("EnumEntryName")
 enum class Cursor {
     initial, inherit, unset,
@@ -647,6 +658,205 @@ enum class FlexDirection {
     override fun toString() = name.hyphenize()
 }
 
+class Gap(val value: String) {
+    companion object {
+        val initial = Gap("initial")
+        val inherit = Gap("inherit")
+        val normal = Gap("normal")
+        val unset = Gap("unset")
+    }
+
+    override fun toString(): String = value
+}
+
+class GridAutoColumns(val value: String) {
+    constructor(vararg dims: LinearDimension) : this(dims.joinToString(" "))
+
+    constructor(vararg values: GridAutoColumns) : this(values.joinToString(" "))
+
+    companion object {
+        val auto = GridAutoColumns("auto")
+        val maxContent = GridAutoColumns("max-content")
+        val minContent = GridAutoColumns("min-content")
+
+        fun fitContent(argument: GridAutoColumns) = GridAutoColumns("min-max(auto, max(auto, $argument))")
+        fun minMax(min: LinearDimension, max: LinearDimension) = GridAutoColumns("min-max($min, $max)")
+        fun minMax(min: GridAutoColumns, max: GridAutoColumns) = GridAutoColumns("min-max($min, $max)")
+    }
+
+    override fun toString(): String = value
+}
+
+class GridAutoFlow private constructor(val value: String) {
+    companion object {
+        val initial = GridAutoFlow("initial")
+        val inherit = GridAutoFlow("inherit")
+        val unset = GridAutoFlow("unset")
+
+        val column = GridAutoFlow("column")
+        val columnDense = GridAutoFlow("column dense")
+        val dense = GridAutoFlow("dense")
+        val row = GridAutoFlow("row")
+        val rowDense = GridAutoFlow("row dense")
+    }
+
+    override fun toString(): String = value
+}
+
+class GridAutoRows(val value: String) {
+    constructor(vararg dims: LinearDimension) : this(dims.joinToString(" "))
+
+    constructor(vararg values: GridAutoRows) : this(values.joinToString(" "))
+
+    companion object {
+        val auto = GridAutoRows("auto")
+        val maxContent = GridAutoRows("max-content")
+        val minContent = GridAutoRows("min-content")
+
+        fun fitContent(argument: GridAutoRows) = GridAutoRows("min-max(auto, max(auto, $argument))")
+        fun minMax(min: LinearDimension, max: LinearDimension) = GridAutoRows("min-max($min, $max)")
+        fun minMax(min: GridAutoRows, max: GridAutoRows) = GridAutoRows("min-max($min, $max)")
+    }
+
+    override fun toString(): String = value
+}
+
+class GridColumn(val value: String) {
+    companion object {
+        val auto = GridColumn("auto")
+    }
+
+    override fun toString(): String = value
+}
+
+class GridColumnEnd(val value: String) {
+    companion object {
+        val auto = GridColumnEnd("auto")
+    }
+
+    override fun toString(): String = value
+}
+
+class GridColumnGap(val value: String) {
+    companion object {
+        val initial = GridColumnGap("initial")
+        val inherit = GridColumnGap("inherit")
+        val normal = GridColumnGap("normal")
+        val unset = GridColumnGap("unset")
+    }
+
+    override fun toString(): String = value
+}
+
+class GridColumnStart(val value: String) {
+    companion object {
+        val auto = GridColumnStart("auto")
+    }
+
+    override fun toString(): String = value
+}
+
+class GridGap(val value: String) {
+    companion object {
+        val initial = GridGap("initial")
+        val inherit = GridGap("inherit")
+        val unset = GridGap("unset")
+    }
+
+    override fun toString(): String = value
+}
+
+class GridRow(val value: String) {
+    companion object {
+        val auto = GridRow("auto")
+    }
+
+    override fun toString(): String = value
+}
+
+class GridRowEnd(val value: String) {
+    companion object {
+        val auto = GridRowEnd("auto")
+    }
+
+    override fun toString(): String = value
+}
+
+class GridRowGap(val value: String) {
+    companion object {
+        val initial = GridRowGap("initial")
+        val inherit = GridRowGap("inherit")
+        val normal = GridRowGap("normal")
+        val unset = GridRowGap("unset")
+    }
+
+    override fun toString(): String = value
+}
+
+class GridRowStart(val value: String) {
+    companion object {
+        val auto = GridRowStart("auto")
+    }
+
+    override fun toString(): String = value
+}
+
+class GridTemplate(val value: String) {
+    companion object {
+        val none = GridTemplate("none")
+    }
+
+    override fun toString(): String = value
+}
+
+class GridTemplateAreas(val value: String) {
+    companion object {
+        val none = GridTemplateAreas("none")
+    }
+
+    override fun toString(): String = value
+}
+
+class GridTemplateColumns(val value: String) {
+    constructor(vararg dims: LinearDimension) : this(dims.joinToString(" "))
+
+    constructor(vararg values: GridAutoRows) : this(values.joinToString(" "))
+
+    companion object {
+        val auto = GridTemplateColumns("auto")
+        val maxContent = GridTemplateColumns("max-content")
+        val minContent = GridTemplateColumns("min-content")
+        val none = GridTemplateColumns("none")
+
+        fun fitContent(dim: LinearDimension) = GridTemplateColumns("min(max-content, max(auto, $dim))")
+        fun minMax(min: LinearDimension, max: LinearDimension) = GridTemplateColumns("min-max($min, $max)")
+        fun minMax(min: GridTemplateColumns, max: GridTemplateColumns) = GridTemplateColumns("min-max($min, $max)")
+        fun repeat(argument: String) = GridTemplateColumns("repeat($argument)")
+    }
+
+    override fun toString(): String = value
+}
+
+class GridTemplateRows(val value: String) {
+    constructor(vararg dims: LinearDimension) : this(dims.joinToString(" "))
+
+    constructor(vararg values: GridAutoRows) : this(values.joinToString(" "))
+
+    companion object {
+        val auto = GridTemplateRows("auto")
+        val maxContent = GridTemplateRows("max-content")
+        val minContent = GridTemplateRows("min-content")
+        val none = GridTemplateRows("none")
+
+        fun fitContent(dim: LinearDimension) = GridTemplateRows("min(max-content, max(auto, $dim))")
+        fun minMax(min: LinearDimension, max: LinearDimension) = GridTemplateRows("min-max($min, $max)")
+        fun minMax(min: GridTemplateRows, max: GridTemplateRows) = GridTemplateRows("min-max($min, $max)")
+        fun repeat(argument: String) = GridTemplateRows("repeat($argument)")
+    }
+
+    override fun toString(): String = value
+}
+
 enum class Grow {
     NONE, GROW, SHRINK, GROW_SHRINK
 }
@@ -712,6 +922,17 @@ enum class Position {
     static, relative, absolute, fixed, sticky;
 
     override fun toString() = name
+}
+
+class RowGap(val value: String) {
+    companion object {
+        val initial = RowGap("initial")
+        val inherit = RowGap("inherit")
+        val normal = RowGap("normal")
+        val unset = RowGap("unset")
+    }
+
+    override fun toString(): String = value
 }
 
 @Suppress("EnumEntryName")
