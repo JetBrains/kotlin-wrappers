@@ -1,0 +1,9 @@
+applyKotlinJS()
+
+configurePublishingWithNPM(react_redux_version)
+
+dependencies {
+    compile project(":kotlin-extensions")
+    compile project(":kotlin-react")
+    compile project(":kotlin-redux")
+}

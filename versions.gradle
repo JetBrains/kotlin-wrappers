@@ -20,8 +20,9 @@ ext {
     react_dom_version = '16.4.2-pre.47'
     react_router_dom_version = '4.3.1-pre.47'
     
-    // kotlin-redux
+    // kotlin-redux, kotlin-react-redux
     redux_version = '4.0.0-pre.47'
+    react_redux_version = '5.0.7-pre.47'
 
     // kotlin-styled
     styled_version = '1.0.0-pre.47'
