@@ -79,6 +79,28 @@ fun RBuilder.app {
 }
 ```
 
+### Type-safe inline styles
+
+There is no built-in capability for writing inline styles in a type-safe manner. However, it can be done by adding a 
+dependency on [kotlin-css](https://github.com/JetBrains/kotlin-wrappers/tree/master/kotlin-css) and a simple utility function.
+
+```kotlin
+var Tag.style: RuleSet
+    get() = error("style cannot be read from props")
+    set(value) = jsStyle {
+        CSSBuilder().apply(value).declarations.forEach {
+            this[it.key] = when (it.value) {
+                !is String, !is Number -> it.value.toString()
+                else -> it.value
+            }
+        }
+    }
+    
+fun Tag.style(handler: RuleSet) {
+    style = handler
+}
+```
+
 ### Using the getDerivedStateFromProps lifecycle method (React 16.3+)
 
 There is currently no proper way to declare static members from Kotlin/JS (see [KT-18891](https://youtrack.jetbrains.com/issue/KT-18891)), 

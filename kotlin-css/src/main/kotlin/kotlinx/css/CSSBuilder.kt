@@ -31,7 +31,6 @@ interface RuleContainer {
     }
 }
 
-
 class CSSBuilder(val indent: String = "", val allowClasses: Boolean = true) : StyledElement(), RuleContainer {
     var styleName: String? = null
 
@@ -66,6 +65,10 @@ class CSSBuilder(val indent: String = "", val allowClasses: Boolean = true) : St
     fun lastChild(block: RuleSet) = "&:last-child"(block)
     fun lastOfType(block: RuleSet) = "&:last-of-type"(block)
     fun link(block: RuleSet) = "&:link"(block)
+    fun nthChild(arg: String, block: RuleSet) = "&:nth-child($arg)"(block)
+    fun nthLastChild(arg: String, block: RuleSet) = "&:nth-last-child($arg)"(block)
+    fun nthLastOfType(arg: String, block: RuleSet) = "&:nth-last-of-type($arg)"(block)
+    fun nthOfType(arg: String, block: RuleSet) = "&:nth-of-type($arg)"(block)
     fun onlyChild(block: RuleSet) = "&:only-child"(block)
     fun onlyOfType(block: RuleSet) = "&:only-of-type"(block)
     fun visited(block: RuleSet) = "&:visited"(block)
@@ -75,8 +78,7 @@ class CSSBuilder(val indent: String = "", val allowClasses: Boolean = true) : St
 
     fun descendants(selector: String? = null, block: RuleSet) = "& ${selector?.let { it } ?: "*"}"(block)
 
-    // TODO refactor, uses a dev-mode property!
-    fun ancestorHover(styleName: String, block: RuleSet) = "[data-style*=\"$styleName\"]:hover &"(block)
+    fun ancestorHover(selector: String, block: RuleSet) = "$selector:hover &"(block)
 
     // https://developer.mozilla.org/en/docs/Web/CSS/Pseudo-elements
     fun after(block: RuleSet) = "&::after" {
