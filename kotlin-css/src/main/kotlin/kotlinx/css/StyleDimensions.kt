@@ -39,15 +39,18 @@ private fun value(number: Number, unit: String): String {
         number.toString() + unit
 }
 
-val Number.cm: LinearDimension get() = LinearDimension(value(this, "cm")) // Centimeter
+val Number.cm: LinearDimension get() = LinearDimension(value(this, "cm"))     // Centimeter
 val Number.em: LinearDimension get() = LinearDimension(value(this, "em"))
 val Number.ex: LinearDimension get() = LinearDimension(value(this, "ex"))
-val Number.mm: LinearDimension get() = LinearDimension(value(this, "mm")) // Millimeter
-val Number.pc: LinearDimension get() = LinearDimension(value(this, "pc")) // Pica
+val Number.fr: LinearDimension get() = LinearDimension(value(this, "fr"))
+val Number.mm: LinearDimension get() = LinearDimension(value(this, "mm"))     // Millimeter
+val Number.pc: LinearDimension get() = LinearDimension(value(this, "pc"))     // Pica
 val Number.pct: LinearDimension get() = LinearDimension(value(this, "%"))
-val Number.pt: LinearDimension get() = LinearDimension(value(this, "pt")) // Point
-val Number.px: LinearDimension get() = LinearDimension(value(this, "px")) // Pixel
-val Number.rem: LinearDimension get() = LinearDimension(value(this, "rem")) // Root em
-val Number.vh: LinearDimension get() = LinearDimension(value(this, "vh")) // Viewport height
-val Number.vw: LinearDimension get() = LinearDimension(value(this, "vw")) // Viewport width
-val Number.`in`: LinearDimension get() = LinearDimension(value(this, "in")) // Inch
+val Number.pt: LinearDimension get() = LinearDimension(value(this, "pt"))     // Point
+val Number.px: LinearDimension get() = LinearDimension(value(this, "px"))     // Pixel
+val Number.rem: LinearDimension get() = LinearDimension(value(this, "rem"))   // Root em
+val Number.vmin: LinearDimension get() = LinearDimension(value(this, "vmin")) // 1/100th of the smallest side
+val Number.vmax: LinearDimension get() = LinearDimension(value(this, "vh"))   // 1/100th of the largest side
+val Number.vh: LinearDimension get() = LinearDimension(value(this, "vh"))     // 1/100th of the viewport height
+val Number.vw: LinearDimension get() = LinearDimension(value(this, "vw"))     // 1/100th of the viewport width
+val Number.`in`: LinearDimension get() = LinearDimension(value(this, "in"))   // Inch

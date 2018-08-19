@@ -14,6 +14,7 @@ open class StyledElement {
             if (!ex) {
                 declarations[property.name] = default()
             }
+            @Suppress("UNCHECKED_CAST")
             return declarations[property.name] as T
         }
 
@@ -72,6 +73,7 @@ open class StyledElement {
 
     var clear: Clear by declarations
     var color: Color by declarations
+    var columnGap: ColumnGap by declarations
     var content: QuotedString by declarations
     var cursor: Cursor by declarations
 
@@ -89,6 +91,27 @@ open class StyledElement {
     var fontSize: LinearDimension by declarations
     var fontWeight: FontWeight by declarations
     var fontStyle: FontStyle by declarations
+
+    var gap: Gap by declarations
+    var gridAutoColumns: GridAutoColumns by declarations
+    var gridAutoFlow: GridAutoFlow by declarations
+    var gridAutoRows: GridAutoRows by declarations
+    var gridColumn: GridColumn by declarations
+    var gridColumnEnd: GridColumnEnd by declarations
+    @Deprecated("The gridColumnGap property is deprecated.", ReplaceWith("Use columnGap instead"))
+    var gridColumnGap: GridColumnGap by declarations
+    var gridColumnStart: GridColumnStart by declarations
+    @Deprecated("The gridGap property is deprecated.", ReplaceWith("Use gap instead"))
+    var gridGap: GridGap by declarations
+    var gridRow: GridRow by declarations
+    var gridRowEnd: GridRowEnd by declarations
+    @Deprecated("The gridRowGap property is deprecated.", ReplaceWith("Use rowGap instead"))
+    var gridRowGap: GridRowGap by declarations
+    var gridRowStart: GridRowStart by declarations
+    var gridTemplate: GridTemplate by declarations
+    var gridTemplateAreas: GridTemplateAreas by declarations
+    var gridTemplateColumns: GridTemplateColumns by declarations
+    var gridTemplateRows: GridTemplateRows by declarations
 
     var height: LinearDimension by declarations
 
@@ -127,6 +150,7 @@ open class StyledElement {
     var position: Position by declarations
 
     var right: LinearDimension by declarations
+    var rowGap: RowGap by declarations
 
     var scrollBehavior: ScrollBehavior by declarations
 
