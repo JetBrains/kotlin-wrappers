@@ -18,7 +18,7 @@ instructions.
 ### Getting Started
 
 `kotlin-css` is a DSL for authoring stylesheets in Kotlin. The DSL supports most common CSS properties and values, 
-including animations, transforms, shadows, and flexbox. **SVG properties as well as CSS grids are not supported yet, 
+including animations, transforms, shadows, flexbox, and grids. **SVG properties are not supported yet, 
 contributions are welcome**.
 
 `kotlin-css` is a low-level library. After constructing a stylesheet you can serialize it into a string and do with it 

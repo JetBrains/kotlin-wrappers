@@ -75,8 +75,8 @@ e.g. `class="ComponentStyles-wrapper"` rather than generated ones.
 
 ### CSS Properties
 
-The DSL supports most common CSS properties and values, including animations, transforms, shadows, and flexbox. 
-**SVG properties as well as CSS grids are not supported yet, contributions are welcome**. 
+The DSL supports most common CSS properties and values, including animations, transforms, shadows, flexbox, and grids. 
+**SVG properties are not supported yet, contributions are welcome**. 
 However, you can use `put("property", "value")` syntax for any unsupported property:
 
 ```kotlin

@@ -2,7 +2,6 @@ package kotlinx.css
 
 typealias RuleSet = CSSBuilder.() -> Unit
 
-@Suppress("unused")
 fun ruleSet(set: RuleSet) = set
 
 data class Rule(val selector: String, val block: RuleSet)
@@ -32,8 +31,6 @@ interface RuleContainer {
     }
 }
 
-
-@Suppress("unused")
 class CSSBuilder(val indent: String = "", val allowClasses: Boolean = true) : StyledElement(), RuleContainer {
     var styleName: String? = null
 
