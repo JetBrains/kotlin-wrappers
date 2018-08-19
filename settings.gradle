@@ -14,8 +14,10 @@ include 'kotlin-mocha'
 // Kotlin/JS: React wrappers
 include 'kotlin-react'
 include 'kotlin-react-dom'
-include 'kotlin-redux'
+
+// Kotlin/JS: Redux wrappers
 include 'kotlin-react-redux'
+include 'kotlin-redux'
 
 // Kotlin/JS: React Router wrappers
 include 'kotlin-react-router-dom'

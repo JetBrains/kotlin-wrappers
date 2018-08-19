@@ -13,9 +13,9 @@ installation instructions.
 
 ### Usage
 
-Using the provider is just like in javascript.
+Using the provider is just like in JavaScript:
 
-```
+```kotlin
 provider(store) {
     app()
 }
@@ -23,9 +23,9 @@ provider(store) {
 
 However, you may want to use `rConnect` to connect your components, because it allows you to use 
 type-safe builders instead of returning props objects. If you would like to just use `connect` as usual,
-you can do that too.
+you can do that too:
 
-```
+```kotlin
 val connectedComponent: RClass<OwnProps> = 
         rConnect<State, RAction, WrapperAction, OwnProps, StateProps, DispatchProps, WrappedComponentProps>(
             { state, ownProps ->

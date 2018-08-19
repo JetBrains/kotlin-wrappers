@@ -1,7 +1,6 @@
 package kotlinx.css
 
-import kotlin.test.Test
-import kotlin.test.asserter
+import kotlin.test.*
 
 class TestGrid {
     @Test

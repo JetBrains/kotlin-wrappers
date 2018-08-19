@@ -11,6 +11,7 @@ To learn more please refer to the READMEs of individual modules:
 * [kotlin-mocha](kotlin-mocha/README.md), 
 * [kotlin-react](kotlin-react/README.md), 
 * [kotlin-react-dom](kotlin-react-dom/README.md),
+* [kotlin-react-redux](kotlin-react-redux/README.md),
 * [kotlin-react-router-dom](kotlin-react-router-dom/README.md),
 * [kotlin-redux](kotlin-redux/README.md),
 * [kotlin-styled](kotlin-styled/README.md).
@@ -38,7 +39,7 @@ You also can clone [my-kotlin-react-sample](https://github.com/ScottHuangZL/my-k
 ## Real-world examples
 
 [KotlinConf App](https://github.com/JetBrains/kotlinconf-app/) — an application developed at JetBrains to showcase 
-multiplatform projects in Kotlin. The web-based part of the app is written using React and Kotlin/JS.
+multi-platform projects in Kotlin. The web-based part of the app is written using React and Kotlin/JS.
 
 ## Contributing
 

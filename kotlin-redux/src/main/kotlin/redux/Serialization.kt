@@ -2,9 +2,9 @@
 
 package redux
 
-import kotlinx.serialization.internal.StringSerializer
-import kotlinx.serialization.map
-import kotlinx.serialization.json.JSON
+import kotlinx.serialization.*
+import kotlinx.serialization.internal.*
+import kotlinx.serialization.json.*
 
 inline fun <reified A : RAction> serializeAction(action: A): String {
     return "{\"type\":\"${A::class.simpleName}\",${JSON.stringify(action).drop(1)}"

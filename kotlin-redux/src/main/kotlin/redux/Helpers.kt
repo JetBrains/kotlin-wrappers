@@ -1,8 +1,6 @@
 package redux
 
-import kotlinext.js.Object
-import kotlinext.js.assign
-import kotlinext.js.js
+import kotlinext.js.*
 
 val <S> Store<S, *, *>.state: S get() = getState()
 

@@ -1,7 +1,6 @@
 package react.redux
 
-import react.RClass
-import react.RProps
+import react.*
 
 external interface ConnectOptions<P : RProps> : FactoryOptions<P> {
     val getDisplayName: ((String) -> String)?
