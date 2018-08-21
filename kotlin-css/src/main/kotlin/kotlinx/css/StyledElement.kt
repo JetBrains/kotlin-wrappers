@@ -30,8 +30,10 @@ open class StyledElement {
 
     var background: String by declarations
     var backgroundAttachment: BackgroundAttachment by declarations
+    var backgroundClip: BackgroundClip by declarations
     var backgroundColor: Color by declarations
     var backgroundImage: Image by declarations
+    var backgroundOrigin: BackgroundOrigin by declarations
     var backgroundPosition: String by declarations
     var backgroundRepeat: BackgroundRepeat by declarations
     var backgroundSize: String by declarations

@@ -56,6 +56,24 @@ enum class BackgroundAttachment {
 }
 
 @Suppress("EnumEntryName")
+enum class BackgroundClip {
+    initial, inherit, unset,
+
+    borderBox, paddingBox, contentBox, text;
+
+    override fun toString(): String = name.hyphenize()
+}
+
+@Suppress("EnumEntryName")
+enum class BackgroundOrigin {
+    initial, inherit, unset,
+
+    borderBox, paddingBox, contentBox;
+
+    override fun toString(): String = name.hyphenize()
+}
+
+@Suppress("EnumEntryName")
 enum class BorderCollapse {
     initial, inherit, unset,
 
