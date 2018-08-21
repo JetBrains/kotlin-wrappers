@@ -51,10 +51,10 @@ class CSSBuilder(val indent: String = "", val allowClasses: Boolean = true) : St
     operator fun TagSelector.invoke(block: RuleSet) = tagName(block)
 
     // https://developer.mozilla.org/en/docs/Web/CSS/Pseudo-classes
-    // The more exotic ones were omitted
+    // The experimental ones were omitted
     fun active(block: RuleSet) = "&:active"(block)
-
     fun checked(block: RuleSet) = "&:checked"(block)
+    fun default(block: RuleSet) = "&:default"(block)
     fun disabled(block: RuleSet) = "&:disabled"(block)
     fun empty(block: RuleSet) = "&:empty"(block)
     fun enabled(block: RuleSet) = "&:enabled"(block)
@@ -62,15 +62,25 @@ class CSSBuilder(val indent: String = "", val allowClasses: Boolean = true) : St
     fun firstOfType(block: RuleSet) = "&:first-of-type"(block)
     fun focus(block: RuleSet) = "&:focus"(block)
     fun hover(block: RuleSet) = "&:hover"(block)
+    fun indeterminate(block: RuleSet) = "&:indeterminate"(block)
+    fun inRange(block: RuleSet) = "&:in-range"(block)
+    fun invalid(block: RuleSet) = "&:invalid"(block)
     fun lastChild(block: RuleSet) = "&:last-child"(block)
     fun lastOfType(block: RuleSet) = "&:last-of-type"(block)
     fun link(block: RuleSet) = "&:link"(block)
-    fun nthChild(arg: String, block: RuleSet) = "&:nth-child($arg)"(block)
-    fun nthLastChild(arg: String, block: RuleSet) = "&:nth-last-child($arg)"(block)
-    fun nthLastOfType(arg: String, block: RuleSet) = "&:nth-last-of-type($arg)"(block)
-    fun nthOfType(arg: String, block: RuleSet) = "&:nth-of-type($arg)"(block)
+    fun not(selector: String, block: RuleSet) = "&:not($selector)"(block)
+    fun nthChild(selector: String, block: RuleSet) = "&:nth-child($selector)"(block)
+    fun nthLastChild(selector: String, block: RuleSet) = "&:nth-last-child($selector)"(block)
+    fun nthLastOfType(selector: String, block: RuleSet) = "&:nth-last-of-type($selector)"(block)
+    fun nthOfType(selector: String, block: RuleSet) = "&:nth-of-type($selector)"(block)
     fun onlyChild(block: RuleSet) = "&:only-child"(block)
     fun onlyOfType(block: RuleSet) = "&:only-of-type"(block)
+    fun optional(block: RuleSet) = "&:optional"(block)
+    fun outOfRange(block: RuleSet) = "&:out-of-range"(block)
+    fun readOnly(block: RuleSet) = "&:read-only"(block)
+    fun readWrite(block: RuleSet) = "&:read-write"(block)
+    fun required(block: RuleSet) = "&:required"(block)
+    fun valid(block: RuleSet) = "&:valid"(block)
     fun visited(block: RuleSet) = "&:visited"(block)
 
     // Children & descendants
