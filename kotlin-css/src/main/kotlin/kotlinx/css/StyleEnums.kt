@@ -898,6 +898,15 @@ enum class ListStyleType {
 }
 
 @Suppress("EnumEntryName")
+enum class ObjectFit {
+    initial, inherit, unset,
+
+    contain, cover, fill, none, scaleDown;
+
+    override fun toString(): String = name.hyphenize()
+}
+
+@Suppress("EnumEntryName")
 enum class Outline {
     initial, inherit, unset,
 

@@ -136,6 +136,8 @@ open class StyledElement {
     var minHeight: LinearDimension by declarations
     var maxHeight: LinearDimension by declarations
 
+    var objectFit: ObjectFit by declarations
+    var objectPosition: String by declarations
     var opacity: Number by declarations
     var outline: Outline by declarations
     var overflow: Overflow by declarations
