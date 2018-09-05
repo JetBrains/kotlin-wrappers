@@ -20,6 +20,8 @@ All wrappers are available on npm: `npm install @jetbrains/<wrapper name>`
 
 Artifacts installable using Maven and Gradle are published to [Bintray](https://bintray.com/kotlin/kotlin-js-wrappers).
 
+**All packages require JDK 8 to be installed.**
+
 ## Examples
 
 1. [To-do list example](examples/src/main/kotlin/example/Todo.kt) 
