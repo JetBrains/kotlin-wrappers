@@ -2,8 +2,6 @@ package kotlinx.css
 
 class TagSelector(val tagName: String)
 
-val star get() = TagSelector("*")
-
 val a get() = TagSelector("a")
 val abbr get() = TagSelector("abbr")
 val area get() = TagSelector("area")

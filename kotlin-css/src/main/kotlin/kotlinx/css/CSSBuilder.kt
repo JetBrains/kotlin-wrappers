@@ -116,6 +116,9 @@ class CSSBuilder(val indent: String = "", val allowClasses: Boolean = true) : St
 
     fun adjacentSibling(selector: String, block: RuleSet) = "+ $selector"(block)
 
+    // Universal selector
+    fun universal(block: RuleSet) = "*"(block)
+
     operator fun compareTo(rule: Rule): Int {
         // remove current rule
         rules.removeAt(rules.lastIndex)
