@@ -5,7 +5,7 @@ import kotlinext.js.*
 val <S> Store<S, *, *>.state: S get() = getState()
 
 fun <S, A> combineReducers(reducers: Map<String, Reducer<*, A>>): Reducer<S, A> = combineReducers(js {
-    reducers.forEach { this[it.value] = it.key }
+    reducers.forEach { this[it.key] = it.value }
 }.unsafeCast<ReducerContainer<S, A>>())
 
 fun <A, R> bindActionCreators(actionCreators: Map<String, (Array<Any>) -> A>, dispatch: (A) -> R): Map<String, (Array<Any>) -> R> {
