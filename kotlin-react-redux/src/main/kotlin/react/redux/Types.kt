@@ -3,26 +3,26 @@ package react.redux
 import react.*
 
 external interface ConnectOptions<P : RProps> : FactoryOptions<P> {
-    val getDisplayName: ((String) -> String)?
-    val methodName: String?
-    val renderCountProp: String?
-    val shouldHandleStateChanges: Boolean?
-    val storeKey: String?
-    val withRef: Boolean?
+    var getDisplayName: ((String) -> String)?
+    var methodName: String?
+    var renderCountProp: String?
+    var shouldHandleStateChanges: Boolean?
+    var storeKey: String?
+    var withRef: Boolean?
 }
 
 external interface Options<S, OP : RProps, SP : RProps, P : RProps> : ConnectOptions<P> {
-    val pure: Boolean?
-    val areStatesEqual: ((S, S) -> Boolean)?
-    val areOwnPropsEqual: ((OP, OP) -> Boolean)?
-    val areStatePropsEqual: ((SP, SP) -> Boolean)?
-    val areMergedPropsEqual: ((P, P) -> Boolean)?
+    var pure: Boolean?
+    var areStatesEqual: ((S, S) -> Boolean)?
+    var areOwnPropsEqual: ((OP, OP) -> Boolean)?
+    var areStatePropsEqual: ((SP, SP) -> Boolean)?
+    var areMergedPropsEqual: ((P, P) -> Boolean)?
 }
 
 external interface FactoryOptions<P : RProps> {
-    val displayName: String?
-    val wrappedComponentName: String?
-    val wrappedComponent: RClass<P>?
+    var displayName: String?
+    var wrappedComponentName: String?
+    var wrappedComponent: RClass<P>?
 }
 
 typealias Selector<S, OP, P> = (S, OP) -> P
