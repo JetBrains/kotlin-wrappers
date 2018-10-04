@@ -6,7 +6,7 @@ import react.*
 fun <S, OP : RProps, P : RProps> rConnect(
     mapStateToProps: P.(S, OP) -> Unit,
     options: (Options<S, OP, P, P>.() -> Unit) = {}
-): (RClass<P>) -> RClass<OP> {
+): HOC<P, OP> {
     return connect<S, Any, Any, OP, P, RProps, P>(
         { state: S, ownProps: OP ->
             js {
@@ -26,7 +26,7 @@ fun <S, OP : RProps, P : RProps> rConnect(
 fun <A, R, OP : RProps, P : RProps> rConnect(
     mapDispatchToProps: P.((A) -> R, OP) -> Unit,
     options: (Options<Any, OP, RProps, P>.() -> Unit) = {}
-): (RClass<P>) -> RClass<OP> {
+): HOC<P, OP> {
     return connect<Any, A, R, OP, RProps, P, P>(
         undefined,
         { dispatch, ownProps ->
@@ -47,7 +47,7 @@ fun <S, A, R, OP : RProps, SP : RProps, DP : RProps, P : RProps> rConnect(
     mapStateToProps: SP.(S, OP) -> Unit,
     mapDispatchToProps: DP.((A) -> R, OP) -> Unit,
     options: (Options<S, OP, SP, P>.() -> Unit) = {}
-): (RClass<P>) -> RClass<OP> {
+): HOC<P, OP> {
     return connect<S, A, R, OP, SP, DP, P>(
         { state, ownProps ->
             js {
@@ -73,7 +73,7 @@ fun <S, A, R, OP : RProps, SP : RProps, DP : RProps, P : RProps> rConnect(
     mapDispatchToProps: DP.((A) -> R, OP) -> Unit,
     mergeProps: P.(SP, DP, OP) -> Unit,
     options: (Options<S, OP, SP, P>.() -> Unit) = {}
-): (RClass<P>) -> RClass<OP> {
+): HOC<P, OP> {
     return connect<S, A, R, OP, SP, DP, P>(
         { state, ownProps ->
             js {
