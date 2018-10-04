@@ -18,9 +18,9 @@ external fun <S, A, R, OP : RProps, SP : RProps, DP : RProps, P : RProps> connec
     mapDispatchToProps: (((A) -> R, OP) -> DP)? = definedExternally,
     mergeProps: ((SP, DP, OP) -> P)? = definedExternally,
     options: Options<S, OP, SP, P>? = definedExternally
-): (RClass<P>) -> RClass<OP>
+): HOC<P, OP>
 
 external fun <S, A, R, OP : RProps, P : RProps> connectAdvanced(
     selectorFactory: SelectorFactory<S, A, R, OP, P>,
     options: ConnectOptions<P> = definedExternally
-): (RClass<P>) -> RClass<OP>
+): HOC<P, OP>
