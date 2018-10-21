@@ -3,6 +3,21 @@ package react.redux
 import kotlinext.js.*
 import react.*
 
+fun <A, R> rConnect(
+        options: (Options<Any, RProps, RProps, DispatchProps<A, R>>.() -> Unit) = {}
+): HOC<DispatchProps<A, R>, RProps> {
+    return connect<Any, A, R, RProps, RProps, RProps, DispatchProps<A, R>>(
+            undefined,
+            undefined,
+            undefined,
+            js {
+                getDisplayName = { name: String -> "RConnect($name)" }
+                methodName = "rConnect"
+                options(this)
+            }.unsafeCast<Options<Any, RProps, RProps, DispatchProps<A, R>>>()
+    )
+}
+
 fun <S, OP : RProps, P : RProps> rConnect(
     mapStateToProps: P.(S, OP) -> Unit,
     options: (Options<S, OP, P, P>.() -> Unit) = {}
