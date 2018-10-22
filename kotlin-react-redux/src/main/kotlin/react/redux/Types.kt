@@ -28,3 +28,7 @@ external interface FactoryOptions<P : RProps> {
 typealias Selector<S, OP, P> = (S, OP) -> P
 
 typealias SelectorFactory<S, A, R, OP, P> = ((A) -> R, FactoryOptions<P>) -> Selector<S, OP, P>
+
+interface DispatchProps<A, R> : RProps {
+    var dispatch: (A) -> R
+}
