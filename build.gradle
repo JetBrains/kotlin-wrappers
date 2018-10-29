@@ -15,9 +15,9 @@ buildscript {
     }
     dependencies {
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath "org.jetbrains.kotlin:kotlin-serialization:$kotlin_version"
         classpath "com.moowork.gradle:gradle-node-plugin:$node_plugin_version"
         classpath "com.jfrog.bintray.gradle:gradle-bintray-plugin:$bintray_plugin_version"
-        classpath "org.jetbrains.kotlinx:kotlinx-gradle-serialization-plugin:$kotlinx_serialization_version"
     }
 }
 
