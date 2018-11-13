@@ -2,6 +2,8 @@
 
 package react
 
+import kotlin.js.*
+
 // See https://reactjs.org/docs/react-component.html
 
 external fun <P : RProps> createElement(type: Any, props: P, vararg child: Any?): ReactElement
@@ -60,12 +62,27 @@ abstract external class PureComponent<P : RProps, S : RState>(
     final override fun shouldComponentUpdate(nextProps: P, nextState: S): Boolean
 }
 
+// Fragment (16+)
 external val Fragment: RClass<RProps>
-external val StrictMode: RClass<RProps>
 
+// Context (16.3+)
 external fun <T> createContext(defaultValue: T = definedExternally): RContext<T>
 
+// Refs (16.3+)
 external fun <T> createRef(): RReadableRef<T>
 
 @JsName("forwardRef")
 external fun <P : RProps> rawForwardRef(forward: (props: P, ref: RRef) -> Any): RClass<P>
+
+// StrictMode (16.3+)
+external val StrictMode: RClass<RProps>
+
+// Memo (16.6+)
+external val memo: HOC<*, *>
+
+// Lazy (16.6+)
+external fun <P : RProps> lazy(loadComponent: () -> Promise<RClass<P>>): RClass<P>
+
+// Suspense (16.6+)
+external interface SuspenseProps : RProps
+external val Suspense: RClass<SuspenseProps>

@@ -1,6 +1,8 @@
 package react
 
 import kotlinext.js.*
+import kotlinx.coroutines.*
+import kotlin.js.*
 
 external interface Child
 
@@ -35,3 +37,42 @@ inline fun <P : RProps> cloneElement(
 fun clone(element: dynamic, props: dynamic, child: Any? = null): ReactElement =
     cloneElement(element, props, *Children.toArray(child))
 
+// 16.6+
+fun <P : RProps> rLazy(loadComponent: suspend () -> RClass<P>): RClass<P> {
+    return lazy {
+        Promise<RClass<P>> { resolve, reject ->
+            GlobalScope.launch {
+                try {
+                    resolve(loadComponent())
+                } catch (e: Throwable) {
+                    reject(e)
+                }
+            }
+        }
+    }
+}
+
+// 16.6+
+fun SuspenseProps.fallback(handler: RBuilder.() -> Unit) {
+    asDynamic().fallback = buildElements(handler)
+}
+
+/**
+ * Usage:
+ *
+ * companion object : ReactStatics<RProps, RState> {
+ *     ...
+ * }
+ *
+ * in your class components
+ */
+abstract class ReactStatics<P : RProps, S : RState> : RClass<P> {
+    val defaultProps: P? = undefined
+
+    // 16.3+
+    val getDerivedStateFromProps: ((P, S) -> S?)? = undefined
+
+    // 16.6+
+    val getDerivedStateFromError: ((Throwable) -> S?)? = undefined
+    val contextType: RContext<*>? = undefined
+}

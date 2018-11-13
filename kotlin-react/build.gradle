@@ -4,4 +4,8 @@ configurePublishingWithNPM(react_version)
 
 dependencies {
     compile project(':kotlin-extensions')
+
+    compile "org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlinx_coroutines_version"
+    compile "org.jetbrains.kotlinx:kotlinx-coroutines-core-common:$kotlinx_coroutines_version"
+    compile "org.jetbrains.kotlinx:kotlinx-coroutines-core-js:$kotlinx_coroutines_version"
 }

@@ -48,12 +48,13 @@ external interface RConsumerProps<T> : RProps {
 
 external interface RConsumer<T> : RClass<RConsumerProps<T>>
 
-// Context
+// Context (16.3+)
 external interface RContext<T> {
     val Provider: RProvider<T>
     val Consumer: RConsumer<T>
 }
 
+// Refs (16.3+)
 external interface RRef
 
 external interface RReadableRef<out T> : RRef {
