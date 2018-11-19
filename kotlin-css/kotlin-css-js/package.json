@@ -1,6 +1,6 @@
 {
   "name": "@jetbrains/kotlin-css-js",
-  "version": "$css_version",
+  "version": "$kotlin_css_js_version",
   "description": "Platform-agnostic CSS primitives (JS module)",
   "files": [
     "build/classes",
@@ -10,7 +10,7 @@
   "main": "build/classes/main/kotlin-css-js.js",
   "repository": "https://github.com/JetBrains/kotlin-wrappers",
   "peerDependencies": {
-    "@jetbrains/kotlin-extensions": "^$kotlinext_version",
+    "@jetbrains/kotlin-extensions": "^$kotlin_extensions_version",
     "kotlin": "^$kotlin_version"
   },
   "author": "Leonid Khachaturov",

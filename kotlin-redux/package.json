@@ -1,6 +1,6 @@
 {
   "name": "@jetbrains/kotlin-redux",
-  "version": "$redux_version",
+  "version": "$kotlin_redux_version",
   "description": "Kotlin wrapper for Redux library",
   "files": [
     "build",
@@ -11,7 +11,7 @@
   "main": "build/classes/main/kotlin-redux.js",
   "repository": "https://github.com/JetBrains/kotlin-wrappers",
   "peerDependencies": {
-    "@jetbrains/kotlin-extensions": "^$kotlinext_version",
+    "@jetbrains/kotlin-extensions": "^$kotlin_extensions_version",
     "kotlin": "^$kotlin_version",
     "redux": "^4.0.0"
   },

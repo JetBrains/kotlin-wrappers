@@ -1,6 +1,6 @@
 {
   "name": "@jetbrains/kotlin-styled",
-  "version": "$css_version",
+  "version": "$kotlin_styled_version",
   "description": "Kotlin wrappers for styled-components and inline-style-prefixer",
   "files": [
     "build/classes",
@@ -10,9 +10,9 @@
   "main": "build/classes/main/kotlin-styled.js",
   "repository": "https://github.com/JetBrains/kotlin-wrappers",
   "peerDependencies": {
-    "@jetbrains/kotlin-css": "^$css_version",
-    "@jetbrains/kotlin-css-js": "^$css_version",
-    "@jetbrains/kotlin-extensions": "^$kotlinext_version",
+    "@jetbrains/kotlin-css": "^$kotlin_css_version",
+    "@jetbrains/kotlin-css-js": "^$kotlin_css_js_version",
+    "@jetbrains/kotlin-extensions": "^$kotlin_extensions_version",
     "css-in-js-utils": "^2.0.1",
     "inline-style-prefixer": "^5.0.1",
     "kotlin": "^$kotlin_version",
