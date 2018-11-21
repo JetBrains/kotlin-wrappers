@@ -1,6 +1,6 @@
 {
   "name": "@jetbrains/kotlin-css-jvm",
-  "version": "$kotlin_css_jvm_version",
+  "version": "$kotlin_css_version",
   "description": "Platform-agnostic CSS primitives (JVM module)",
   "files": [
     "build/classes",

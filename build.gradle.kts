@@ -5,15 +5,16 @@ import org.jetbrains.kotlin.gradle.tasks.Kotlin2JsCompile
 import com.jfrog.bintray.gradle.BintrayExtension
 import com.jfrog.bintray.gradle.tasks.BintrayUploadTask
 
-apply {
-    from("versions.gradle.kts")
-}
-
 group = "org.jetbrains"
 version = "1.0-SNAPSHOT"
 
-val kotlinVersion = extra.get("kotlin_version")
-val kotlinxHtmlVersion = extra.get("kotlinx_html_version")
+plugins {
+    id("kotlin2js") version Versions["kotlin_version"] apply false
+    id("com.jfrog.bintray") version Versions["bintray_plugin_version"] apply true
+    id("com.moowork.node") version Versions["node_plugin_version"] apply false
+    `maven-publish`
+    java
+}
 
 buildscript {
     repositories {
@@ -25,19 +26,11 @@ buildscript {
     }
 
     dependencies {
-        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.3.0")
-        classpath("org.jetbrains.kotlin:kotlin-serialization:1.3.0")
-        classpath("com.moowork.gradle:gradle-node-plugin:1.2.0")
-        classpath("com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.4")
+        classpath(Dependencies.kotlinGradlePlugin)
+        classpath(Dependencies.kotlinSerialization)
+        classpath(Dependencies.gradleNodePlugin)
+        classpath(Dependencies.gradleBintrayPlugin)
     }
-}
-
-plugins {
-    id("kotlin2js") version "1.3.0" apply false
-    id("com.jfrog.bintray") version "1.8.4" apply true
-    id("com.moowork.node") version "1.2.0" apply false
-    `maven-publish`
-    java
 }
 
 allprojects {
@@ -58,7 +51,7 @@ configure(subprojects.filter { !it.name.startsWith("kotlin-css") }) {
 
     dependencies {
         compile(kotlin("stdlib-js"))
-        compile("org.jetbrains.kotlinx:kotlinx-html-js:$kotlinxHtmlVersion")
+        compile(Dependencies.kotlinxHtmlJs)
     }
 
     val projectName = name
@@ -83,7 +76,7 @@ configure(subprojects.filter { it.name != "examples"}) {
 
     val publicationName = "Publication"
     val projectName = name
-    val projectVersion = "${projectVersion(name)}-kotlin-$kotlinVersion"
+    val projectVersion = "${projectVersion()}-kotlin-${Versions["kotlin_version"]}"
 
     tasks.withType<BintrayUploadTask>().configureEach {
         extension = BintrayExtension(project).apply {
@@ -135,18 +128,11 @@ configure(subprojects.filter { it.name != "examples"}) {
             }
         }
 
-
-        val versions = mutableMapOf<String, Any?>()
-        versions["kotlin_version"] = kotlinVersion
-        rootProject.subprojects.filter { it.name != "examples" }.forEach {
-            versions[projectKey(it.name)] = projectVersion(it.name)
-        }
-
         val processPkg by creating(Copy::class) {
             from(".")
             into("build/npm")
             include("package.json")
-            expand(versions)
+            expand(Versions)
         }
 
         val prepublish by creating(Copy::class) {
@@ -166,7 +152,3 @@ configure(subprojects.filter { it.name != "examples"}) {
         }
     }
 }
-
-fun projectKey(projectName: String) = "${projectName.replace("-", "_")}_version"
-
-fun Project.projectVersion(projectName: String) = rootProject.extra.get(projectKey(projectName))
