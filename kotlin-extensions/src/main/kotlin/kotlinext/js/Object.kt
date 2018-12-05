@@ -43,4 +43,4 @@ fun Any.getOwnPropertyNames(): Array<String> {
 }
 
 @JsModule("core-js/library/fn/object/assign")
-external fun <T, R : T> assign(dest: R, src: T): R
+external fun <T, R : T> assign(dest: R, vararg src: T): R
