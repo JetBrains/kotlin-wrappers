@@ -69,3 +69,7 @@ class CssHolder(private val sheet: StyleSheet, internal vararg val ruleSets: Rul
         }
     }
 }
+
+fun <T : StyleSheet> T.getClassName(getClass: (T) -> KProperty0<RuleSet>): String {
+    return "$name-${getClass(this).name}"
+}
