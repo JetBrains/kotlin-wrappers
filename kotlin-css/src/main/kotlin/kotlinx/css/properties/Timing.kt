@@ -2,15 +2,14 @@ package kotlinx.css.properties
 
 import kotlinx.css.*
 
-class Time(val value: String) {
-    override fun toString() = value
+class Time(override val value: String) : CssValue(value) {
 }
 
 val Number.s get() = Time("${this}s")
 val Number.ms get() = Time("${this}ms")
 
 
-class Timing(val value: String) {
+class Timing(override val value: String) : CssValue(value) {
     companion object {
         val ease = Timing("ease")
         val linear = Timing("linear")
@@ -26,8 +25,6 @@ class Timing(val value: String) {
         val materialAcceleration = cubicBezier(0.4, 0.0, 1.0, 1.0)
         val materialSharp = cubicBezier(0.4, 0.0, 0.6, 1.0)
     }
-
-    override fun toString() = value
 }
 
 fun cubicBezier(x1: Double, y1: Double, x2: Double, y2: Double) = Timing("cubic-bezier($x1, $y1, $x2, $y2)")

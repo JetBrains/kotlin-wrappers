@@ -2,8 +2,7 @@ package kotlinx.css.properties
 
 import kotlinx.css.*
 
-class Angle(val value: String) {
-    override fun toString() = value
+class Angle(override val value: String) : CssValue(value) {
 }
 
 val Number.deg get() = Angle("${this}deg")

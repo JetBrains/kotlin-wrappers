@@ -4,6 +4,10 @@ package kotlinx.css
 
 import kotlin.math.*
 
+abstract class CssValue(open val value: String) {
+    override fun toString() = value
+}
+
 @Suppress("EnumEntryName")
 enum class Align {
     initial, inherit, unset,
@@ -125,7 +129,7 @@ enum class Clear {
  * a series of modulus operations; see section *4.2.4. HSL color values* of the above specification.
  */
 @Suppress("SpellCheckingInspection")
-class Color(val value: String) {
+class Color(override val value: String) : CssValue(value) {
     private var rgb: String? = null
 
     private constructor(value: String, rgb: String) : this(value) {
@@ -296,8 +300,6 @@ class Color(val value: String) {
 
         val normalizeAlpha = normalizeFractionalPercent
     }
-
-    override fun toString() = value
 
     fun withAlpha(alpha: Double) =
         when {
@@ -530,15 +532,13 @@ private fun normalize(min: Int, max: Int, value: Int): Int =
 private fun normalize(min: Double, max: Double, value: Double): Double =
     kotlin.math.max(min, kotlin.math.min(max, value))
 
-class ColumnGap(val value: String) {
+class ColumnGap(override val value: String) : CssValue(value) {
     companion object {
         val initial = ColumnGap("initial")
         val inherit = ColumnGap("inherit")
         val normal = ColumnGap("normal")
         val unset = ColumnGap("unset")
     }
-
-    override fun toString(): String = value
 }
 
 @Suppress("EnumEntryName")
@@ -558,7 +558,7 @@ enum class Cursor {
 }
 
 // Enquotes the value
-class QuotedString(val value: String) {
+class QuotedString(override val value: String) : CssValue(value) {
     override fun toString(): String = "'$value'"
 }
 
@@ -592,7 +592,7 @@ enum class Display {
     override fun toString(): String = name.hyphenize()
 }
 
-class FlexBasis(val value: String) {
+class FlexBasis(override val value: String) : CssValue(value) {
     companion object {
         val initial = FlexBasis("initial")
         val inherit = FlexBasis("inherit")
@@ -606,8 +606,6 @@ class FlexBasis(val value: String) {
         val fill = FlexBasis("fill")
         val zero = FlexBasis("0")
     }
-
-    override fun toString(): String = value
 }
 
 val LinearDimension.basis get() = FlexBasis(toString())
@@ -630,7 +628,7 @@ enum class Float {
     override fun toString(): String = name.hyphenize()
 }
 
-class FontWeight(val value: String) {
+class FontWeight(override val value: String) : CssValue(value) {
     companion object {
         val initial = FontWeight("initial")
         val inherit = FontWeight("inherit")
@@ -650,11 +648,9 @@ class FontWeight(val value: String) {
         val w200 = FontWeight("200")
         val w100 = FontWeight("100")
     }
-
-    override fun toString(): String = value
 }
 
-class FontStyle(val value: String) {
+class FontStyle(override val value: String) : CssValue(value) {
     companion object {
         val initial = FontStyle("initial")
         val inherit = FontStyle("inherit")
@@ -663,8 +659,6 @@ class FontStyle(val value: String) {
         val normal = FontStyle("normal")
         val italic = FontStyle("italic")
     }
-
-    override fun toString(): String = value
 }
 
 @Suppress("EnumEntryName")
@@ -676,18 +670,16 @@ enum class FlexDirection {
     override fun toString() = name.hyphenize()
 }
 
-class Gap(val value: String) {
+class Gap(override val value: String) : CssValue(value) {
     companion object {
         val initial = Gap("initial")
         val inherit = Gap("inherit")
         val normal = Gap("normal")
         val unset = Gap("unset")
     }
-
-    override fun toString(): String = value
 }
 
-class GridAutoColumns(val value: String) {
+class GridAutoColumns(override val value: String) : CssValue(value) {
     constructor(vararg dims: LinearDimension) : this(dims.joinToString(" "))
 
     constructor(vararg values: GridAutoColumns) : this(values.joinToString(" "))
@@ -701,11 +693,9 @@ class GridAutoColumns(val value: String) {
         fun minMax(min: LinearDimension, max: LinearDimension) = GridAutoColumns("min-max($min, $max)")
         fun minMax(min: GridAutoColumns, max: GridAutoColumns) = GridAutoColumns("min-max($min, $max)")
     }
-
-    override fun toString(): String = value
 }
 
-class GridAutoFlow private constructor(val value: String) {
+class GridAutoFlow private constructor(override val value: String) : CssValue(value) {
     companion object {
         val initial = GridAutoFlow("initial")
         val inherit = GridAutoFlow("inherit")
@@ -717,11 +707,9 @@ class GridAutoFlow private constructor(val value: String) {
         val row = GridAutoFlow("row")
         val rowDense = GridAutoFlow("row dense")
     }
-
-    override fun toString(): String = value
 }
 
-class GridAutoRows(val value: String) {
+class GridAutoRows(override val value: String) : CssValue(value) {
     constructor(vararg dims: LinearDimension) : this(dims.joinToString(" "))
 
     constructor(vararg values: GridAutoRows) : this(values.joinToString(" "))
@@ -735,107 +723,83 @@ class GridAutoRows(val value: String) {
         fun minMax(min: LinearDimension, max: LinearDimension) = GridAutoRows("min-max($min, $max)")
         fun minMax(min: GridAutoRows, max: GridAutoRows) = GridAutoRows("min-max($min, $max)")
     }
-
-    override fun toString(): String = value
 }
 
-class GridColumn(val value: String) {
+class GridColumn(override val value: String) : CssValue(value) {
     companion object {
         val auto = GridColumn("auto")
     }
-
-    override fun toString(): String = value
 }
 
-class GridColumnEnd(val value: String) {
+class GridColumnEnd(override val value: String) : CssValue(value) {
     companion object {
         val auto = GridColumnEnd("auto")
     }
-
-    override fun toString(): String = value
 }
 
-class GridColumnGap(val value: String) {
+class GridColumnGap(override val value: String) : CssValue(value) {
     companion object {
         val initial = GridColumnGap("initial")
         val inherit = GridColumnGap("inherit")
         val normal = GridColumnGap("normal")
         val unset = GridColumnGap("unset")
     }
-
-    override fun toString(): String = value
 }
 
-class GridColumnStart(val value: String) {
+class GridColumnStart(override val value: String) : CssValue(value) {
     companion object {
         val auto = GridColumnStart("auto")
     }
-
-    override fun toString(): String = value
 }
 
-class GridGap(val value: String) {
+class GridGap(override val value: String) : CssValue(value) {
     companion object {
         val initial = GridGap("initial")
         val inherit = GridGap("inherit")
         val unset = GridGap("unset")
     }
-
-    override fun toString(): String = value
 }
 
-class GridRow(val value: String) {
+class GridRow(override val value: String) : CssValue(value) {
     companion object {
         val auto = GridRow("auto")
     }
-
-    override fun toString(): String = value
 }
 
-class GridRowEnd(val value: String) {
+class GridRowEnd(override val value: String) : CssValue(value) {
     companion object {
         val auto = GridRowEnd("auto")
     }
-
-    override fun toString(): String = value
 }
 
-class GridRowGap(val value: String) {
+class GridRowGap(override val value: String) : CssValue(value) {
     companion object {
         val initial = GridRowGap("initial")
         val inherit = GridRowGap("inherit")
         val normal = GridRowGap("normal")
         val unset = GridRowGap("unset")
     }
-
-    override fun toString(): String = value
 }
 
-class GridRowStart(val value: String) {
+class GridRowStart(override val value: String) : CssValue(value) {
     companion object {
         val auto = GridRowStart("auto")
     }
-
-    override fun toString(): String = value
 }
 
-class GridTemplate(val value: String) {
+class GridTemplate(override val value: String) : CssValue(value) {
     companion object {
         val none = GridTemplate("none")
     }
-
-    override fun toString(): String = value
 }
 
-class GridTemplateAreas(val value: String) {
+class GridTemplateAreas(override val value: String) : CssValue(value) {
     companion object {
         val none = GridTemplateAreas("none")
     }
-
-    override fun toString(): String = value
 }
 
-class GridTemplateColumns(val value: String) {
+class GridTemplateColumns(override val value: String) : CssValue(value) {
     constructor(vararg dims: LinearDimension) : this(dims.joinToString(" "))
 
     constructor(vararg values: GridAutoRows) : this(values.joinToString(" "))
@@ -851,11 +815,9 @@ class GridTemplateColumns(val value: String) {
         fun minMax(min: GridTemplateColumns, max: GridTemplateColumns) = GridTemplateColumns("min-max($min, $max)")
         fun repeat(argument: String) = GridTemplateColumns("repeat($argument)")
     }
-
-    override fun toString(): String = value
 }
 
-class GridTemplateRows(val value: String) {
+class GridTemplateRows(override val value: String) : CssValue(value) {
     constructor(vararg dims: LinearDimension) : this(dims.joinToString(" "))
 
     constructor(vararg values: GridAutoRows) : this(values.joinToString(" "))
@@ -871,8 +833,6 @@ class GridTemplateRows(val value: String) {
         fun minMax(min: GridTemplateRows, max: GridTemplateRows) = GridTemplateRows("min-max($min, $max)")
         fun repeat(argument: String) = GridTemplateRows("repeat($argument)")
     }
-
-    override fun toString(): String = value
 }
 
 enum class Grow {
@@ -951,15 +911,13 @@ enum class Position {
     override fun toString() = name
 }
 
-class RowGap(val value: String) {
+class RowGap(override val value: String) : CssValue(value) {
     companion object {
         val initial = RowGap("initial")
         val inherit = RowGap("inherit")
         val normal = RowGap("normal")
         val unset = RowGap("unset")
     }
-
-    override fun toString(): String = value
 }
 
 @Suppress("EnumEntryName")
@@ -1016,7 +974,7 @@ enum class UserSelect {
     override fun toString() = name
 }
 
-class VerticalAlign(val value: String) {
+class VerticalAlign(override val value: String) : CssValue(value) {
     companion object {
         val initial = VerticalAlign("initial")
         val inherit = VerticalAlign("inherit")
@@ -1031,8 +989,6 @@ class VerticalAlign(val value: String) {
         val top = VerticalAlign("top")
         val bottom = VerticalAlign("bottom")
     }
-
-    override fun toString() = value
 }
 
 val LinearDimension.up get() = VerticalAlign(toString())
@@ -1074,10 +1030,8 @@ enum class WordWrap {
     override fun toString() = name.hyphenize()
 }
 
-class Image(val value: String) {
+class Image(override val value: String) : CssValue(value) {
     companion object {
         val none = Image("none")
     }
-
-    override fun toString() = value
 }

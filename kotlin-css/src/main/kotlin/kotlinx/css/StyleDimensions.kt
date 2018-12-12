@@ -2,7 +2,7 @@ package kotlinx.css
 
 private const val ZERO = "0"
 
-class LinearDimension(val value: String) {
+class LinearDimension(override val value: String) : CssValue(value) {
     companion object {
         val auto = LinearDimension("auto")
         val initial = LinearDimension("initial")
@@ -16,8 +16,6 @@ class LinearDimension(val value: String) {
 
     private val valueCalcSafe: String
         get() = if (value == ZERO) "0px" else value
-
-    override fun toString() = value
 
     operator fun unaryMinus() = LinearDimension(when {
         value.startsWith('-') -> value.substring(1)

@@ -53,6 +53,7 @@ class CSSBuilder(val indent: String = "", val allowClasses: Boolean = true) : St
     // https://developer.mozilla.org/en/docs/Web/CSS/Pseudo-classes
     // The experimental ones were omitted
     fun active(block: RuleSet) = "&:active"(block)
+
     fun checked(block: RuleSet) = "&:checked"(block)
     fun default(block: RuleSet) = "&:default"(block)
     fun disabled(block: RuleSet) = "&:disabled"(block)
@@ -144,6 +145,16 @@ class CSSBuilder(val indent: String = "", val allowClasses: Boolean = true) : St
 
     fun media(query: String, block: RuleSet) = "@media $query"(block)
 
+    fun root(block: RuleSet) {
+        ":root" {
+            block()
+        }
+    }
+
+    fun setCustomProperty(name: String, value: CssValue) {
+        put("--$name", value.value)
+    }
+
     operator fun RuleSet.unaryPlus() = this()
 
     operator fun String.unaryPlus() {
@@ -166,4 +177,8 @@ class CSSBuilder(val indent: String = "", val allowClasses: Boolean = true) : St
         }
         this.forEach { classes.add(it) }
     }
+}
+
+fun String.toCustomProperty(): String {
+    return "var(--$this)"
 }

@@ -2,12 +2,10 @@ package kotlinx.css.properties
 
 import kotlinx.css.*
 
-class IterationCount(val value: String) {
+class IterationCount(override val value: String) : CssValue(value) {
     companion object {
         val infinite = IterationCount("infinite")
     }
-
-    override fun toString() = value
 }
 
 val Int.times get() = IterationCount("$this")
