@@ -76,6 +76,7 @@ open class StyledElement {
     var clear: Clear by declarations
     var color: Color by declarations
     var columnGap: ColumnGap by declarations
+    var contain: Contain by declarations
     var content: QuotedString by declarations
     var cursor: Cursor by declarations
 
