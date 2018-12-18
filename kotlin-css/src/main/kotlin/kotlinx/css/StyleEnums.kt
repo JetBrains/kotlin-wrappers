@@ -542,6 +542,15 @@ class ColumnGap(override val value: String) : CssValue(value) {
 }
 
 @Suppress("EnumEntryName")
+enum class Contain {
+    initial, inherit, unset,
+
+    none, strict, content, size, layout, style, paint;
+
+    override fun toString(): String = name
+}
+
+@Suppress("EnumEntryName")
 enum class Cursor {
     initial, inherit, unset,
 
