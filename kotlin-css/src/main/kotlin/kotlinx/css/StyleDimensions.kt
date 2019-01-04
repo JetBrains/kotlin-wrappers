@@ -4,9 +4,11 @@ private const val ZERO = "0"
 
 class LinearDimension(override val value: String) : CssValue(value) {
     companion object {
+        val none = LinearDimension("none")
         val auto = LinearDimension("auto")
         val initial = LinearDimension("initial")
-        val available = LinearDimension("available")
+        val available = LinearDimension("available") // old name
+        val fillAvailable = LinearDimension("fill-available") // new name
         val borderBox = LinearDimension("border-box")
         val contentBox = LinearDimension("content-box")
         val maxContent = LinearDimension("max-content")
