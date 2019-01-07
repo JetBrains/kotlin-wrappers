@@ -26,12 +26,54 @@ type-safe builders instead of returning props objects. If you would like to just
 you can do that too:
 
 ```kotlin
-val connectedComponent: RClass<OwnProps> = 
-        rConnect<State, RAction, WrapperAction, OwnProps, StateProps, DispatchProps, WrappedComponentProps>(
-            { state, ownProps ->
-                someProp = state.something
-            }, { state, ownProps ->
-               someOtherProp = { dispatch(SomeAction()) }
+
+val connectedComponent: RClass<ConnectedComponentProps> = 
+        rConnect<State, RAction, WrapperAction, ConnectedComponentProps, StateProps, DispatchProps, WrappedComponentProps>(
+            { state, props ->
+                prop1 = state.prop1
+                ...
+            }, { dispatch, props ->
+               eventHandler1 = { dispatch(SomeAction()) }
+               ...
            }
-        )(someComponent)
+        )(WrappedComponent::class.js as RClass<WrappedComponentProps>)
+        
+// ...
+
+class ParentComponent: RComponent {
+    override fun RBuilder.render() {
+        connectedComponent {}
+    }
+}
+
+```
+
+### rConnect Type Parameters
+
+```
+interface WrappedComponentProps : RProps {
+    var prop1: Int?
+    var eventHandler1: (someValue: Int?) -> Unit
+}
+
+internal interface StateProps: RProps {
+    var prop1: Int?
+}
+
+internal interface DispatchProps: RProps {
+    var eventHandler1: (someValue: Int?) -> Unit
+}
+
+class WrappedComponent(props: WrappedComponentProps) : RComponent<WrappedComponentProps, RState>(props) {
+ ...
+}
+
+private val mapStateToProps: StateProps.(AppState, WrappedComponentProps) -> Unit = {state, props ->
+    prop1 = state.prop1
+}
+
+private val mapDispatchToProps: DispatchProps.((RAction) -> WrapperAction, WrappedComponentProps) -> Unit = {dispatch, props ->
+    eventHandler1 = { dispatch(SomeAction()) }
+}
+
 ```
