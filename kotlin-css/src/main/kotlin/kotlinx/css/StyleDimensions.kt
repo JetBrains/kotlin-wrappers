@@ -7,6 +7,7 @@ class LinearDimension(override val value: String) : CssValue(value) {
         val none = LinearDimension("none")
         val auto = LinearDimension("auto")
         val initial = LinearDimension("initial")
+        val inherit = LinearDimension("inherit")
         val available = LinearDimension("available") // old name
         val fillAvailable = LinearDimension("fill-available") // new name
         val borderBox = LinearDimension("border-box")
