@@ -16,7 +16,7 @@ buildscript {
     dependencies {
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         classpath "org.jetbrains.kotlin:kotlin-serialization:$kotlin_version"
-        classpath "com.moowork.gradle:gradle-node-plugin:$node_plugin_version"
+        classpath "com.github.node-gradle:gradle-node-plugin:$node_plugin_version"
         classpath "com.jfrog.bintray.gradle:gradle-bintray-plugin:$bintray_plugin_version"
     }
 }
@@ -52,7 +52,7 @@ subprojects {
     }
 
     ext.configurePublishing = { baseVersion ->
-        apply plugin: 'com.moowork.node'
+        apply plugin: 'com.github.node-gradle.node'
         apply plugin: 'com.jfrog.bintray'
         apply plugin: 'maven-publish'
         apply plugin: 'java'
