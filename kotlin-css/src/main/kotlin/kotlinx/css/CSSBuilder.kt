@@ -143,8 +143,14 @@ class CSSBuilder(val indent: String = "", val allowClasses: Boolean = true) : St
         "$selector &"(block)
     }
 
+    // https://developer.mozilla.org/en-US/docs/Web/CSS/At-rule
     fun media(query: String, block: RuleSet) = "@media $query"(block)
 
+    fun supports(query: String, block: RuleSet) = "@supports $query"(block)
+
+    fun fontFace(query: String, block: RuleSet) = "@font-face $query"(block)
+
+    // Custom properties
     fun root(block: RuleSet) {
         ":root" {
             block()
@@ -155,6 +161,7 @@ class CSSBuilder(val indent: String = "", val allowClasses: Boolean = true) : St
         put("--$name", value.value)
     }
 
+    // Operator overrides
     operator fun RuleSet.unaryPlus() = this()
 
     operator fun String.unaryPlus() {
