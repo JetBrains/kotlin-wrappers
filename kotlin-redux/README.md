@@ -66,7 +66,7 @@ manner using `serializeAction()` and `deserializeAction()`:
 ```
 val jsonAction = serializeAction(MyAction())
 
-val action = when (JSON.parse((StringSerializer to StringSerializer).map, jsonAction)["type"]) {
+val action = when (Json.parse((StringSerializer to StringSerializer).map, jsonAction)["type"]) {
 	"MyAction" -> deserializeAction<MyAction>(jsonAction)
 	"MyOtherAction" -> deserializeAction<MyOtherAction>(jsonAction)
 	else -> null
