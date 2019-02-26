@@ -145,6 +145,7 @@ open class StyledElement {
     var overflowX: Overflow by declarations
     var overflowY: Overflow by declarations
     var overflowWrap: OverflowWrap by declarations
+    var overscrollBehavior: OverscrollBehavior by declarations
 
     var padding: String by declarations
     var paddingTop: LinearDimension by declarations

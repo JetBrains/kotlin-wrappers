@@ -903,6 +903,15 @@ enum class OverflowWrap {
 }
 
 @Suppress("EnumEntryName")
+enum class OverscrollBehavior {
+    initial, inherit, unset,
+
+    auto, contain, none;
+
+    override fun toString(): String = name
+}
+
+@Suppress("EnumEntryName")
 enum class PointerEvents {
     initial, inherit, unset,
 
