@@ -1,4 +1,4 @@
-[![JetBrains team project](http://jb.gg/badges/team.svg)](https://confluence.jetbrains.com/display/ALL/JetBrains+on+GitHub)
+[![JetBrains team project](https://jb.gg/badges/team.svg)](https://confluence.jetbrains.com/display/ALL/JetBrains+on+GitHub)
 
 # Kotlin Wrappers
 
@@ -47,4 +47,4 @@ multi-platform projects in Kotlin. The web-based part of the app is written usin
 
 Contributions to this project are welcome! Please see the open 
 [issues](https://github.com/JetBrains/kotlin-wrappers/issues) or chat with us on the **#react** channel in our 
-[Slack](http://slack.kotlinlang.org/). 
+[Slack](https://slack.kotlinlang.org/). 

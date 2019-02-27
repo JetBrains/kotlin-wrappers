@@ -80,7 +80,7 @@ class AxiosSearch(props: AxiosProps) : RComponent<AxiosProps, AxiosState>(props)
 
     private fun remoteSearchZip(zipCode: String) {
         val config: AxiosConfigSettings = jsObject {
-            url = "http://ziptasticapi.com/" + zipCode
+            url = "https://ziptasticapi.com/$zipCode"
             timeout = 3000
         }
 
