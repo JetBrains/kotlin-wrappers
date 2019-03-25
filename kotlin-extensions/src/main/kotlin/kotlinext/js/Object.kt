@@ -42,5 +42,5 @@ fun Any.getOwnPropertyNames(): Array<String> {
     return js("Object.getOwnPropertyNames(me)")
 }
 
-@JsModule("core-js/library/fn/object/assign")
+@JsModule("core-js/features/object/assign")
 external fun <T, R : T> objectAssign(dest: R, vararg src: T): R
