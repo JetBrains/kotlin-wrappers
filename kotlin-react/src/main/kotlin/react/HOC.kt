@@ -20,3 +20,6 @@ operator fun <P : RProps, R : RProps> HOC<P, R>.invoke(config: Any, component: R
             component(props)
         }
     }, config)
+
+fun <P : RProps> allOf(vararg hocs: HOC<P, P>): (component: RClass<P>) -> RClass<P> =
+    { hocs.fold(it) { acc, hoc -> hoc(acc) } }
