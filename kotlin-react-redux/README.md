@@ -35,7 +35,7 @@ val connectedComponent: RClass<ConnectedComponentProps> =
         eventHandler1 = { dispatch(SomeAction()) }
         // ...
     }
-    )(WrappedComponent::class.js as RClass<WrappedComponentProps>)
+    )(WrappedComponent::class.rClass)
 
 // ...
 
