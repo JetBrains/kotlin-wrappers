@@ -3,6 +3,7 @@ package react
 import kotlinext.js.*
 import kotlinx.coroutines.*
 import kotlin.js.*
+import kotlin.reflect.*
 
 external interface Child
 
@@ -36,6 +37,9 @@ inline fun <P : RProps> cloneElement(
 
 fun clone(element: dynamic, props: dynamic, child: Any? = null): ReactElement =
     cloneElement(element, props, *Children.toArray(child))
+
+val <P : RProps, T : RComponent<P, *>> KClass<T>.rClass get() =
+    js.unsafeCast<RClass<P>>()
 
 // 16.6+
 fun <P : RProps> rLazy(loadComponent: suspend () -> RClass<P>): RClass<P> {
