@@ -43,3 +43,8 @@ class RootComponent : RComponent<RProps, RState>() {
     }
 }
 ```
+
+### Tutorial
+
+See [lawik123/kotlin-poc-frontend-react-redux](https://github.com/lawik123/kotlin-poc-frontend-react-redux).
+This project is an implementation/translation of the react-redux [Todo List example project](https://redux.js.org/basics/example) in Kotlin (with the addition of react-router).

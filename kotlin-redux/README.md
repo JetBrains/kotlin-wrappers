@@ -78,3 +78,8 @@ val action = when (Json.parse((StringSerializer to StringSerializer).map, jsonAc
 Note that `combineReducers` will convert any Kotlin lists to JavaScript arrays without Kotlin's type
 system noticing, which can cause all sorts of nasty errors. If you are using `combineReducers`, make
 sure to use arrays and not lists in your state.
+
+### Tutorial
+
+See [lawik123/kotlin-poc-frontend-react-redux](https://github.com/lawik123/kotlin-poc-frontend-react-redux).
+This project is an implementation/translation of the react-redux [Todo List example project](https://redux.js.org/basics/example) in Kotlin (with the addition of react-router).
