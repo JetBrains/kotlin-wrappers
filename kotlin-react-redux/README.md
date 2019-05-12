@@ -74,3 +74,8 @@ private val mapDispatchToProps: DispatchProps.((RAction) -> WrapperAction, Wrapp
     eventHandler1 = { dispatch(SomeAction()) }
 }
 ```
+
+### Tutorial
+
+See [lawik123/kotlin-poc-frontend-react-redux](https://github.com/lawik123/kotlin-poc-frontend-react-redux).
+This project is an implementation/translation of the react-redux [Todo List example project](https://redux.js.org/basics/example) in Kotlin (with the addition of react-router).
