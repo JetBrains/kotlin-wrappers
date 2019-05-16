@@ -70,6 +70,9 @@ external interface RouteResultHistory {
     var location: RouteResultLocation
 
     fun push(path: String)
+    fun go(n: Int)
+    fun goBack()
+    fun goForward()
 }
 
 external interface RouteResultLocation {
