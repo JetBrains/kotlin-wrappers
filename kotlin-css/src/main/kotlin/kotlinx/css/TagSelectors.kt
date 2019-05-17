@@ -19,8 +19,11 @@ val br get() = TagSelector("br")
 val button get() = TagSelector("button")
 
 val canvas get() = TagSelector("canvas")
+val caption get() = TagSelector("caption")
 val cite get() = TagSelector("cite")
 val code get() = TagSelector("code")
+val col get() = TagSelector("col")
+val colgroup get() = TagSelector("colgroup")
 val command get() = TagSelector("command")
 
 val datalist get() = TagSelector("datalist")
@@ -98,8 +101,14 @@ val sup get() = TagSelector("sup")
 val svg get() = TagSelector("svg")
 
 val table get() = TagSelector("table")
+val tbody get() = TagSelector("tbody")
+val td get() = TagSelector("td")
 val textarea get() = TagSelector("textarea")
+val tfoot get() = TagSelector("tfoot")
+val th get() = TagSelector("th")
+val thead get() = TagSelector("thead")
 val time get() = TagSelector("time")
+val tr get() = TagSelector("tr")
 
 val ul get() = TagSelector("ul")
 
