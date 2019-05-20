@@ -929,6 +929,15 @@ enum class Position {
     override fun toString() = name
 }
 
+@Suppress("EnumEntryName")
+enum class Resize {
+    none, both, horizontal,
+
+    vertical, initial, inherit;
+
+    override fun toString() = name
+}
+
 class RowGap(override val value: String) : CssValue(value) {
     companion object {
         val initial = RowGap("initial")

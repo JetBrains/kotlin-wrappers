@@ -155,6 +155,7 @@ open class StyledElement {
     var pointerEvents: PointerEvents by declarations
     var position: Position by declarations
 
+    var resize: Resize by declarations
     var right: LinearDimension by declarations
     var rowGap: RowGap by declarations
 
