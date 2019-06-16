@@ -8,185 +8,186 @@ import kotlin.reflect.*
 open class StyledElement {
     val declarations = LinkedHashMap<String, Any>()
 
-    inner class WithDefault<T : Any>(val default: () -> T) {
-        operator fun getValue(thisRef: Any, property: KProperty<*>): T {
-            val ex = declarations.containsKey(property.name)
-            if (!ex) {
-                declarations[property.name] = default()
-            }
-            @Suppress("UNCHECKED_CAST")
-            return declarations[property.name] as T
-        }
-
-        operator fun setValue(thisRef: Any, property: KProperty<*>, value: T) {
-            declarations[property.name] = value
-        }
-    }
-
-    var alignContent: Align by declarations
-    var alignItems: Align by declarations
-    var alignSelf: Align by declarations
-    var animation by WithDefault { Animations() }
-
-    var background: String by declarations
-    var backgroundAttachment: BackgroundAttachment by declarations
-    var backgroundClip: BackgroundClip by declarations
-    var backgroundColor: Color by declarations
-    var backgroundImage: Image by declarations
-    var backgroundOrigin: BackgroundOrigin by declarations
-    var backgroundPosition: String by declarations
-    var backgroundRepeat: BackgroundRepeat by declarations
-    var backgroundSize: String by declarations
-
-    var border: String by declarations
-    var borderTop: String by declarations
-    var borderRight: String by declarations
-    var borderBottom: String by declarations
-    var borderLeft: String by declarations
-    var borderSpacing: LinearDimension by declarations
-
-    var borderRadius: LinearDimension by declarations
-    var borderTopLeftRadius: LinearDimension by declarations
-    var borderTopRightRadius: LinearDimension by declarations
-    var borderBottomLeftRadius: LinearDimension by declarations
-    var borderBottomRightRadius: LinearDimension by declarations
-
-    var borderStyle: BorderStyle by declarations
-    var borderTopStyle: BorderStyle by declarations
-    var borderRightStyle: BorderStyle by declarations
-    var borderBottomStyle: BorderStyle by declarations
-    var borderLeftStyle: BorderStyle by declarations
-
-    var borderWidth: LinearDimension by declarations
-    var borderTopWidth: LinearDimension by declarations
-    var borderRightWidth: LinearDimension by declarations
-    var borderBottomWidth: LinearDimension by declarations
-    var borderLeftWidth: LinearDimension by declarations
-
-    var borderColor: Color by declarations
-    var borderTopColor: Color by declarations
-    var borderRightColor: Color by declarations
-    var borderBottomColor: Color by declarations
-    var borderLeftColor: Color by declarations
-
-    var bottom: LinearDimension by declarations
-    var boxSizing: BoxSizing by declarations
-    var boxShadow by WithDefault { BoxShadows() }
-
-    var clear: Clear by declarations
-    var color: Color by declarations
-    var columnGap: ColumnGap by declarations
-    var contain: Contain by declarations
-    var content: QuotedString by declarations
-    var cursor: Cursor by declarations
-
-    var direction: Direction by declarations
-    var display: Display by declarations
-
-    var filter: String by declarations
-    var flexDirection: FlexDirection by declarations
-    var flexGrow: Double by declarations
-    var flexShrink: Double by declarations
-    var flexBasis: FlexBasis by declarations
-    var flexWrap: FlexWrap by declarations
-    var float: Float by declarations
-    var fontFamily: String by declarations
-    var fontSize: LinearDimension by declarations
-    var fontWeight: FontWeight by declarations
-    var fontStyle: FontStyle by declarations
-
-    var gap: Gap by declarations
-    var gridAutoColumns: GridAutoColumns by declarations
-    var gridAutoFlow: GridAutoFlow by declarations
-    var gridAutoRows: GridAutoRows by declarations
-    var gridColumn: GridColumn by declarations
-    var gridColumnEnd: GridColumnEnd by declarations
-    @Deprecated("The gridColumnGap property is deprecated.", ReplaceWith("Use columnGap instead"))
-    var gridColumnGap: GridColumnGap by declarations
-    var gridColumnStart: GridColumnStart by declarations
-    @Deprecated("The gridGap property is deprecated.", ReplaceWith("Use gap instead"))
-    var gridGap: GridGap by declarations
-    var gridRow: GridRow by declarations
-    var gridRowEnd: GridRowEnd by declarations
-    @Deprecated("The gridRowGap property is deprecated.", ReplaceWith("Use rowGap instead"))
-    var gridRowGap: GridRowGap by declarations
-    var gridRowStart: GridRowStart by declarations
-    var gridTemplate: GridTemplate by declarations
-    var gridTemplateAreas: GridTemplateAreas by declarations
-    var gridTemplateColumns: GridTemplateColumns by declarations
-    var gridTemplateRows: GridTemplateRows by declarations
-
-    var height: LinearDimension by declarations
-
-    var hyphens: Hyphens by declarations
-
-    var justifyContent: JustifyContent by declarations
-
-    var left: LinearDimension by declarations
-    var letterSpacing: LinearDimension by declarations
-    var lineHeight: LineHeight by declarations
-    var listStyleType: ListStyleType by declarations
-
-    var margin: String by declarations
-    var marginTop: LinearDimension by declarations
-    var marginRight: LinearDimension by declarations
-    var marginBottom: LinearDimension by declarations
-    var marginLeft: LinearDimension by declarations
-    var minWidth: LinearDimension by declarations
-    var maxWidth: LinearDimension by declarations
-    var minHeight: LinearDimension by declarations
-    var maxHeight: LinearDimension by declarations
-
-    var objectFit: ObjectFit by declarations
-    var objectPosition: String by declarations
-    var opacity: Number by declarations
-    var outline: Outline by declarations
-    var overflow: Overflow by declarations
-    var overflowX: Overflow by declarations
-    var overflowY: Overflow by declarations
-    var overflowWrap: OverflowWrap by declarations
-    var overscrollBehavior: OverscrollBehavior by declarations
-
-    var padding: String by declarations
-    var paddingTop: LinearDimension by declarations
-    var paddingRight: LinearDimension by declarations
-    var paddingBottom: LinearDimension by declarations
-    var paddingLeft: LinearDimension by declarations
-    var pointerEvents: PointerEvents by declarations
-    var position: Position by declarations
-
-    var right: LinearDimension by declarations
-    var rowGap: RowGap by declarations
-
-    var scrollBehavior: ScrollBehavior by declarations
-
-    var textAlign: TextAlign by declarations
-    var textDecoration: TextDecoration by declarations
-    var textOverflow: TextOverflow by declarations
-    var textTransform: TextTransform by declarations
-    var top: LinearDimension by declarations
-    var transform by WithDefault { Transforms() }
-    var transition by WithDefault { Transitions() }
-
-    var verticalAlign: VerticalAlign by declarations
-    var visibility: Visibility by declarations
-
-    var whiteSpace: WhiteSpace by declarations
-    var width: LinearDimension by declarations
-    var wordBreak: WordBreak by declarations
-    var wordWrap: WordWrap by declarations
-
-    var userSelect: UserSelect by declarations
-
-    var tableLayout: TableLayout by declarations
-    var borderCollapse: BorderCollapse by declarations
-
-    var zIndex: Int by declarations
-
     fun put(key: String, value: String) {
         declarations[key] = value
     }
 }
+
+private class CSSProperty<T>(private val default: (() -> T)? = null) {
+    operator fun getValue(thisRef: StyledElement, property: KProperty<*>): T {
+        default?.let { default ->
+            if (!thisRef.declarations.containsKey(property.name)) {
+                thisRef.declarations[property.name] = default() as Any
+            }
+        }
+        
+        return thisRef.declarations[property.name] as T
+    }
+
+    operator fun setValue(thisRef: StyledElement, property: KProperty<*>, value: T) {
+        thisRef.declarations[property.name] = value as Any
+    }
+}
+
+var StyledElement.alignContent: Align by CSSProperty()
+var StyledElement.alignItems: Align by CSSProperty()
+var StyledElement.alignSelf: Align by CSSProperty()
+var StyledElement.animation by CSSProperty { Animations() }
+
+var StyledElement.background: String by CSSProperty()
+var StyledElement.backgroundAttachment: BackgroundAttachment by CSSProperty()
+var StyledElement.backgroundClip: BackgroundClip by CSSProperty()
+var StyledElement.backgroundColor: Color by CSSProperty()
+var StyledElement.backgroundImage: Image by CSSProperty()
+var StyledElement.backgroundOrigin: BackgroundOrigin by CSSProperty()
+var StyledElement.backgroundPosition: String by CSSProperty()
+var StyledElement.backgroundRepeat: BackgroundRepeat by CSSProperty()
+var StyledElement.backgroundSize: String by CSSProperty()
+
+var StyledElement.border: String by CSSProperty()
+var StyledElement.borderTop: String by CSSProperty()
+var StyledElement.borderRight: String by CSSProperty()
+var StyledElement.borderBottom: String by CSSProperty()
+var StyledElement.borderLeft: String by CSSProperty()
+var StyledElement.borderSpacing: LinearDimension by CSSProperty()
+
+var StyledElement.borderRadius: LinearDimension by CSSProperty()
+var StyledElement.borderTopLeftRadius: LinearDimension by CSSProperty()
+var StyledElement.borderTopRightRadius: LinearDimension by CSSProperty()
+var StyledElement.borderBottomLeftRadius: LinearDimension by CSSProperty()
+var StyledElement.borderBottomRightRadius: LinearDimension by CSSProperty()
+
+var StyledElement.borderStyle: BorderStyle by CSSProperty()
+var StyledElement.borderTopStyle: BorderStyle by CSSProperty()
+var StyledElement.borderRightStyle: BorderStyle by CSSProperty()
+var StyledElement.borderBottomStyle: BorderStyle by CSSProperty()
+var StyledElement.borderLeftStyle: BorderStyle by CSSProperty()
+
+var StyledElement.borderWidth: LinearDimension by CSSProperty()
+var StyledElement.borderTopWidth: LinearDimension by CSSProperty()
+var StyledElement.borderRightWidth: LinearDimension by CSSProperty()
+var StyledElement.borderBottomWidth: LinearDimension by CSSProperty()
+var StyledElement.borderLeftWidth: LinearDimension by CSSProperty()
+
+var StyledElement.borderColor: Color by CSSProperty()
+var StyledElement.borderTopColor: Color by CSSProperty()
+var StyledElement.borderRightColor: Color by CSSProperty()
+var StyledElement.borderBottomColor: Color by CSSProperty()
+var StyledElement.borderLeftColor: Color by CSSProperty()
+
+var StyledElement.bottom: LinearDimension by CSSProperty()
+var StyledElement.boxSizing: BoxSizing by CSSProperty()
+var StyledElement.boxShadow by CSSProperty { BoxShadows() }
+
+var StyledElement.clear: Clear by CSSProperty()
+var StyledElement.color: Color by CSSProperty()
+var StyledElement.columnGap: ColumnGap by CSSProperty()
+var StyledElement.contain: Contain by CSSProperty()
+var StyledElement.content: QuotedString by CSSProperty()
+var StyledElement.cursor: Cursor by CSSProperty()
+
+var StyledElement.direction: Direction by CSSProperty()
+var StyledElement.display: Display by CSSProperty()
+
+var StyledElement.filter: String by CSSProperty()
+var StyledElement.flexDirection: FlexDirection by CSSProperty()
+var StyledElement.flexGrow: Double by CSSProperty()
+var StyledElement.flexShrink: Double by CSSProperty()
+var StyledElement.flexBasis: FlexBasis by CSSProperty()
+var StyledElement.flexWrap: FlexWrap by CSSProperty()
+var StyledElement.float: Float by CSSProperty()
+var StyledElement.fontFamily: String by CSSProperty()
+var StyledElement.fontSize: LinearDimension by CSSProperty()
+var StyledElement.fontWeight: FontWeight by CSSProperty()
+var StyledElement.fontStyle: FontStyle by CSSProperty()
+
+var StyledElement.gap: Gap by CSSProperty()
+var StyledElement.gridAutoColumns: GridAutoColumns by CSSProperty()
+var StyledElement.gridAutoFlow: GridAutoFlow by CSSProperty()
+var StyledElement.gridAutoRows: GridAutoRows by CSSProperty()
+var StyledElement.gridColumn: GridColumn by CSSProperty()
+var StyledElement.gridColumnEnd: GridColumnEnd by CSSProperty()
+@Deprecated("The gridColumnGap property is deprecated.", ReplaceWith("Use columnGap instead"))
+var StyledElement.gridColumnGap: GridColumnGap by CSSProperty()
+var StyledElement.gridColumnStart: GridColumnStart by CSSProperty()
+@Deprecated("The gridGap property is deprecated.", ReplaceWith("Use gap instead"))
+var StyledElement.gridGap: GridGap by CSSProperty()
+var StyledElement.gridRow: GridRow by CSSProperty()
+var StyledElement.gridRowEnd: GridRowEnd by CSSProperty()
+@Deprecated("The gridRowGap property is deprecated.", ReplaceWith("Use rowGap instead"))
+var StyledElement.gridRowGap: GridRowGap by CSSProperty()
+var StyledElement.gridRowStart: GridRowStart by CSSProperty()
+var StyledElement.gridTemplate: GridTemplate by CSSProperty()
+var StyledElement.gridTemplateAreas: GridTemplateAreas by CSSProperty()
+var StyledElement.gridTemplateColumns: GridTemplateColumns by CSSProperty()
+var StyledElement.gridTemplateRows: GridTemplateRows by CSSProperty()
+
+var StyledElement.height: LinearDimension by CSSProperty()
+
+var StyledElement.hyphens: Hyphens by CSSProperty()
+
+var StyledElement.justifyContent: JustifyContent by CSSProperty()
+
+var StyledElement.left: LinearDimension by CSSProperty()
+var StyledElement.letterSpacing: LinearDimension by CSSProperty()
+var StyledElement.lineHeight: LineHeight by CSSProperty()
+var StyledElement.listStyleType: ListStyleType by CSSProperty()
+
+var StyledElement.margin: String by CSSProperty()
+var StyledElement.marginTop: LinearDimension by CSSProperty()
+var StyledElement.marginRight: LinearDimension by CSSProperty()
+var StyledElement.marginBottom: LinearDimension by CSSProperty()
+var StyledElement.marginLeft: LinearDimension by CSSProperty()
+var StyledElement.minWidth: LinearDimension by CSSProperty()
+var StyledElement.maxWidth: LinearDimension by CSSProperty()
+var StyledElement.minHeight: LinearDimension by CSSProperty()
+var StyledElement.maxHeight: LinearDimension by CSSProperty()
+
+var StyledElement.objectFit: ObjectFit by CSSProperty()
+var StyledElement.objectPosition: String by CSSProperty()
+var StyledElement.opacity: Number by CSSProperty()
+var StyledElement.outline: Outline by CSSProperty()
+var StyledElement.overflow: Overflow by CSSProperty()
+var StyledElement.overflowX: Overflow by CSSProperty()
+var StyledElement.overflowY: Overflow by CSSProperty()
+var StyledElement.overflowWrap: OverflowWrap by CSSProperty()
+var StyledElement.overscrollBehavior: OverscrollBehavior by CSSProperty()
+
+var StyledElement.padding: String by CSSProperty()
+var StyledElement.paddingTop: LinearDimension by CSSProperty()
+var StyledElement.paddingRight: LinearDimension by CSSProperty()
+var StyledElement.paddingBottom: LinearDimension by CSSProperty()
+var StyledElement.paddingLeft: LinearDimension by CSSProperty()
+var StyledElement.pointerEvents: PointerEvents by CSSProperty()
+var StyledElement.position: Position by CSSProperty()
+
+var StyledElement.right: LinearDimension by CSSProperty()
+var StyledElement.rowGap: RowGap by CSSProperty()
+
+var StyledElement.scrollBehavior: ScrollBehavior by CSSProperty()
+
+var StyledElement.textAlign: TextAlign by CSSProperty()
+var StyledElement.textDecoration: TextDecoration by CSSProperty()
+var StyledElement.textOverflow: TextOverflow by CSSProperty()
+var StyledElement.textTransform: TextTransform by CSSProperty()
+var StyledElement.top: LinearDimension by CSSProperty()
+var StyledElement.transform by CSSProperty { Transforms() }
+var StyledElement.transition by CSSProperty { Transitions() }
+
+var StyledElement.verticalAlign: VerticalAlign by CSSProperty()
+var StyledElement.visibility: Visibility by CSSProperty()
+
+var StyledElement.whiteSpace: WhiteSpace by CSSProperty()
+var StyledElement.width: LinearDimension by CSSProperty()
+var StyledElement.wordBreak: WordBreak by CSSProperty()
+var StyledElement.wordWrap: WordWrap by CSSProperty()
+
+var StyledElement.userSelect: UserSelect by CSSProperty()
+
+var StyledElement.tableLayout: TableLayout by CSSProperty()
+var StyledElement.borderCollapse: BorderCollapse by CSSProperty()
+
+var StyledElement.zIndex: Int by CSSProperty()
 
 fun StyledElement.flex(flexGrow: Double = 0.0, flexShrink: Double = 0.0, flexBasis: FlexBasis? = null) {
     this.flexGrow = flexGrow
