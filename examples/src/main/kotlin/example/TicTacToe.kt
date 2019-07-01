@@ -86,7 +86,7 @@ class TicTacToe(props: TicTacToeProps) : RComponent<TicTacToeProps, TicTacToeSta
             val newSquare = (
                 squares.slice(0 until i) +
                     (if (state.xIsNext) "X" else "O") +
-                    squares.slice(i + 1..9)
+                    squares.slice(i + 1..8)
                 ).toTypedArray()
 
             val historyCopy = state.history.slice(0..state.stepNumber).toMutableList()
