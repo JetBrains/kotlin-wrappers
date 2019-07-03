@@ -18,32 +18,25 @@ open class StyleSheet(var name: String, val isStatic: Boolean = false) {
     fun inject() {
         if (!isLoaded && isStatic) {
             isLoaded = true
+
+            // Unmangle the keys, e.g. "wrapper_r2j0kd$_0" -> "wrapper"
             val keys = this.getOwnPropertyNames()
                 .filter { it.endsWith("\$_0") }
                 .filter { this.asDynamic()[it] is CssHolder }
-                .map {
-                    it to this.asDynamic()[it] as CssHolder
-                }
-                .map { it.first.substring(0, it.first.length - 3) to it.second /*strip '$_0'*/ }
+                .map { it to this.asDynamic()[it] as CssHolder }
+                .map { it.first.removeSuffix("\$_0") to it.second }
                 .map { it.first.substring(0, it.first.lastIndexOf('_')) to it.second }
 
             val builder = CSSBuilder(allowClasses = false).apply {
                 keys.forEach {
-                    if (it.first == "root") {
-                        ".$name" {
-                            for (r in it.second.ruleSets) {
-                                r()
-                            }
-                        }
-                    } else {
-                        ".$name-${it.first}" {
-                            for (r in it.second.ruleSets) {
-                                r()
-                            }
+                    ".$name-${it.first}" {
+                        for (r in it.second.ruleSets) {
+                            r()
                         }
                     }
                 }
             }
+
             StyledComponents.injectGlobal(builder.toString())
         }
     }
@@ -53,17 +46,12 @@ class CssHolder(private val sheet: StyleSheet, internal vararg val ruleSets: Rul
     operator fun getValue(thisRef: Any?, property: KProperty<*>): RuleSet = {
         if (sheet.isStatic && allowClasses) {
             sheet.inject()
-            if (property.name == "root") {
-                +sheet.name
-            } else {
-                +"${sheet.name}-${property.name}"
-            }
+            +"${sheet.name}-${property.name}"
         } else {
             if (styleName == null) {
-                styleName = sheet.name + "-" + property.name
+                styleName = "${sheet.name}-${property.name}"
             } else {
-                styleName += " "
-                styleName += sheet.name + "-" + property.name
+                styleName += " ${sheet.name}-${property.name}"
             }
             ruleSets.forEach { it() }
         }
