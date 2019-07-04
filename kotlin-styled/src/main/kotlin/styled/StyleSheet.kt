@@ -48,11 +48,7 @@ class CssHolder(private val sheet: StyleSheet, internal vararg val ruleSets: Rul
             sheet.inject()
             +"${sheet.name}-${property.name}"
         } else {
-            if (styleName == null) {
-                styleName = "${sheet.name}-${property.name}"
-            } else {
-                styleName += " ${sheet.name}-${property.name}"
-            }
+            styleName.add("${sheet.name}-${property.name}")
             ruleSets.forEach { it() }
         }
     }

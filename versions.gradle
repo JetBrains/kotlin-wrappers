@@ -1,6 +1,6 @@
 ext {
     // External dependencies
-    kotlin_version = '1.3.40'
+    kotlin_version = '1.3.41'
     kotlinx_html_version = '0.6.12'
     kotlinx_coroutines_version = '1.2.2'
     kotlinx_serialization_version = '0.11.1'
@@ -8,23 +8,23 @@ ext {
     bintray_plugin_version = '1.8.4'
 
     // kotlin-css
-    css_version = '1.0.0-pre.76'
+    css_version = '1.0.0-pre.77'
 
     // kotlin-extensions
-    kotlinext_version = '1.0.1-pre.76'
+    kotlinext_version = '1.0.1-pre.77'
 
     // kotlin-mocha
-    mocha_version = '3.0.1-pre.76'
+    mocha_version = '3.0.1-pre.77'
 
     // kotlin-react, kotlin-react-dom, kotlin-react-router-dom
-    react_version = '16.6.0-pre.76'
-    react_dom_version = '16.6.0-pre.76'
-    react_router_dom_version = '4.3.1-pre.76'
+    react_version = '16.6.0-pre.77'
+    react_dom_version = '16.6.0-pre.77'
+    react_router_dom_version = '4.3.1-pre.77'
 
     // kotlin-redux, kotlin-react-redux
-    redux_version = '4.0.0-pre.76'
-    react_redux_version = '5.0.7-pre.76'
+    redux_version = '4.0.0-pre.77'
+    react_redux_version = '5.0.7-pre.77'
 
     // kotlin-styled
-    styled_version = '1.0.0-pre.76'
+    styled_version = '1.0.0-pre.77'
 }

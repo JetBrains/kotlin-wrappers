@@ -119,8 +119,6 @@ fun StyledComponents.injectGlobal(handler: CSSBuilder.() -> Unit) {
 }
 
 object Styled {
-    private const val enabledInline = false
-    private const val enabledShortCircuit = true
     private val cache = mutableMapOf<dynamic, dynamic>()
 
     private fun wrap(type: dynamic) =
@@ -146,31 +144,26 @@ object Styled {
         }
 
     fun createElement(type: Any, css: CSSBuilder, props: WithClassName, children: List<Any>): ReactElement {
-        if (!enabledInline || css.rules.isNotEmpty()) {
-            if (!enabledShortCircuit || css.rules.isNotEmpty() || css.declarations.size > 0) {
-                val wrappedType = wrap(type)
-                val styledProps = props as StyledProps
-                styledProps.css = css.toString()
-                if (css.classes.isNotEmpty()) {
-                    styledProps.className = css.classes.joinToString(separator = " ")
-                }
-                val ref = styledProps.asDynamic().ref
-                if (ref != null && styledProps.forwardRef == null) {
-                    styledProps.forwardRef = ref
-                    styledProps.ref<Any> {  }
-                }
-                if (css.styleName != null) {
-                    styledProps.asDynamic()["data-style"] = css.styleName
-                }
-                return createElement(wrappedType, styledProps, *children.toTypedArray())
-            } else {
-                if (css.classes.isNotEmpty()) {
-                    props.className = css.classes.joinToString(separator = " ")
-                }
-                return createElement(type, props, *children.toTypedArray())
+        if (css.rules.isNotEmpty() || css.declarations.size > 0) {
+            val wrappedType = wrap(type)
+            val styledProps = props as StyledProps
+            styledProps.css = css.toString()
+            if (css.classes.isNotEmpty()) {
+                styledProps.className = css.classes.joinToString(separator = " ")
             }
+            val ref = styledProps.asDynamic().ref
+            if (ref != null && styledProps.forwardRef == null) {
+                styledProps.forwardRef = ref
+                styledProps.ref<Any> {  }
+            }
+            if (css.styleName.isNotEmpty()) {
+                styledProps.asDynamic()["data-style"] = css.styleName.joinToString(separator = " ")
+            }
+            return createElement(wrappedType, styledProps, *children.toTypedArray())
         } else {
-            props.asDynamic().style = css.toStyle()
+            if (css.classes.isNotEmpty()) {
+                props.className = css.classes.joinToString(separator = " ")
+            }
             return createElement(type, props, *children.toTypedArray())
         }
     }

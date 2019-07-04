@@ -32,9 +32,9 @@ interface RuleContainer {
 }
 
 class CSSBuilder(val indent: String = "", val allowClasses: Boolean = true) : StyledElement(), RuleContainer {
-    var styleName: String? = null
-
     var classes = mutableListOf<String>()
+
+    var styleName = mutableListOf<String>()
 
     override fun toString() = buildString {
         declarations.forEach {
