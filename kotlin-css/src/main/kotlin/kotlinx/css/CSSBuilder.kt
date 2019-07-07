@@ -4,14 +4,18 @@ typealias RuleSet = CSSBuilder.() -> Unit
 
 fun ruleSet(set: RuleSet) = set
 
-data class Rule(val selector: String, val block: RuleSet)
+data class Rule(val selector: String, val passStaticClassesToParent: Boolean = false, val block: RuleSet)
 
 interface RuleContainer {
     fun StringBuilder.buildRules(indent: String) {
         val resolvedRules = LinkedHashMap<String, CSSBuilder>()
-        rules.forEach { (selector, block) ->
+        rules.forEach { (selector, passStaticClassesToParent, block) ->
             if (!resolvedRules.containsKey(selector)) {
-                resolvedRules[selector] = CSSBuilder("$indent  ", allowClasses = false)
+                resolvedRules[selector] = CSSBuilder(
+                    "$indent  ",
+                    allowClasses = false,
+                    parent = if (passStaticClassesToParent) this@RuleContainer else null
+                )
             }
             val rule = resolvedRules[selector]!!
             rule.block()
@@ -26,12 +30,19 @@ interface RuleContainer {
 
     val rules: MutableList<Rule>
 
-    fun rule(selector: String, block: RuleSet) = Rule(selector, block).apply {
-        rules.add(this)
-    }
+    fun rule(selector: String, block: RuleSet) = rule(selector, false, block)
+
+    fun rule(selector: String, passStaticClassesToParent: Boolean, block: RuleSet) =
+        Rule(selector, passStaticClassesToParent, block).apply {
+            rules.add(this)
+        }
 }
 
-class CSSBuilder(val indent: String = "", val allowClasses: Boolean = true) : StyledElement(), RuleContainer {
+class CSSBuilder(
+    val indent: String = "",
+    val allowClasses: Boolean = true,
+    val parent: RuleContainer? = null
+) : StyledElement(), RuleContainer {
     var classes = mutableListOf<String>()
 
     var styleName = mutableListOf<String>()
@@ -46,7 +57,8 @@ class CSSBuilder(val indent: String = "", val allowClasses: Boolean = true) : St
 
     override val rules = mutableListOf<Rule>()
 
-    operator fun String.invoke(block: RuleSet) = rule(this, block)
+    operator fun String.invoke(block: RuleSet) =
+        rule(this, false, block)
 
     operator fun TagSelector.invoke(block: RuleSet) = tagName(block)
 
@@ -137,7 +149,9 @@ class CSSBuilder(val indent: String = "", val allowClasses: Boolean = true) : St
         "&.$selector"(block)
     }
 
-    fun specific(specificity: Int = 2, block: RuleSet) = "&".repeat(specificity)(block)
+    fun specific(specificity: Int = 2, block: RuleSet): Rule {
+        return rule("&".repeat(specificity), passStaticClassesToParent = true, block = block)
+    }
 
     fun prefix(selector: String, block: RuleSet) {
         "$selector &"(block)
@@ -164,25 +178,18 @@ class CSSBuilder(val indent: String = "", val allowClasses: Boolean = true) : St
     // Operator overrides
     operator fun RuleSet.unaryPlus() = this()
 
-    operator fun String.unaryPlus() {
-        if (!allowClasses) {
-            throw RuntimeException("class names are not allowed for this builder")
-        }
-        classes.add(this)
-    }
+    operator fun String.unaryPlus() = addClass(this)
 
-    operator fun Array<String>.unaryPlus() {
-        if (!allowClasses) {
-            throw RuntimeException("class names are not allowed for this builder")
-        }
-        this.forEach { classes.add(it) }
-    }
+    operator fun Array<String>.unaryPlus() = this.forEach { addClass(it) }
 
-    operator fun Iterable<String>.unaryPlus() {
-        if (!allowClasses) {
-            throw RuntimeException("class names are not allowed for this builder")
+    operator fun Iterable<String>.unaryPlus() = this.forEach { addClass(it) }
+
+    private fun addClass(className: String) {
+        if (allowClasses) {
+            classes.add(className)
+        } else {
+            (parent as? CSSBuilder)?.addClass(className)
         }
-        this.forEach { classes.add(it) }
     }
 }
 

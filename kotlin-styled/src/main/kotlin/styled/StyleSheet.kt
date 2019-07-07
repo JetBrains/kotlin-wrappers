@@ -44,18 +44,24 @@ open class StyleSheet(var name: String, val isStatic: Boolean = false) {
 
 class CssHolder(private val sheet: StyleSheet, internal vararg val ruleSets: RuleSet) {
     operator fun getValue(thisRef: Any?, property: KProperty<*>): RuleSet = {
-        if (sheet.isStatic && allowClasses) {
+        if (sheet.isStatic) {
+            +(sheet.getClassName(property))
             sheet.inject()
-            +"${sheet.name}-${property.name}"
-        } else {
-            styleName.add("${sheet.name}-${property.name}")
+        }
+
+        if (!sheet.isStatic || !allowClasses) {
+            styleName.add(sheet.getClassName(property))
             ruleSets.forEach { it() }
         }
     }
 }
 
 fun <T : StyleSheet> T.getClassName(getClass: (T) -> KProperty0<RuleSet>): String {
-    return "$name-${getClass(this).name}"
+    return getClassName(getClass(this))
+}
+
+private fun StyleSheet.getClassName(property: KProperty<*>): String {
+    return "$name-${property.name}"
 }
 
 fun <T : StyleSheet> T.getClassSelector(getClass: (T) -> KProperty0<RuleSet>): String {
