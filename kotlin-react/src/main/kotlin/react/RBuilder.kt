@@ -120,3 +120,29 @@ fun <P : RProps> forwardRef(handler: RBuilder.(RProps, RRef) -> Unit): RClass<P>
         buildElements { handler(props, ref) }
     }
 }
+
+typealias FunctionalComponent<P> = (props: P) -> dynamic
+
+/**
+ * Get functional component from [func]
+ */
+fun <P : RProps> functionalComponent(
+    func: RBuilder.(props: P) -> Unit
+): FunctionalComponent<P> {
+    return { props: P ->
+        buildElements {
+            func(props)
+        }
+    }
+}
+
+/**
+ * Append functional component [functionalComponent] as child of current builder
+ */
+fun <P : RProps> RBuilder.child(
+    functionalComponent: FunctionalComponent<P>,
+    props: P = jsObject {},
+    handler: RHandler<P> = {}
+): ReactElement {
+    return child(functionalComponent, props, handler)
+}
