@@ -109,12 +109,6 @@ external fun rawUseLayoutEffect(effect: () -> dynamic, dependencies: RDependenci
 @JsName("useLayoutEffect")
 external fun rawUseLayoutEffect(effect: () -> dynamic)
 
-// Layout Effect Hook
-@JsName("useMutationEffect")
-external fun rawUseMutationEffect(effect: () -> dynamic, dependencies: RDependenciesArray)
-@JsName("useMutationEffect")
-external fun rawUseMutationEffect(effect: () -> dynamic)
-
 // Context Hook
 external fun <T> useContext(context: RContext<T>): T
 
@@ -131,4 +125,8 @@ external interface RMutableRef<T> : RRef {
 external fun <T> useRef(initialValue: T): RMutableRef<T>
 
 // Imperative Methods Hook
-external fun <T> useImperativeMethods(ref: RRef, createInstance: () -> dynamic, inputs: RDependenciesArray): Unit
+external fun useImperativeHandle(ref: RRef, createInstance: () -> dynamic, inputs: RDependenciesArray): Unit
+
+// Debug Value Hook
+external fun useDebugValue(value: Any)
+external fun <T> useDebugValue(value: T, format: (value: T) -> Any)
