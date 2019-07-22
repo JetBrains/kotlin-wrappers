@@ -64,7 +64,7 @@ fun SuspenseProps.fallback(handler: RBuilder.() -> Unit) {
 /**
  * Usage:
  *
- * companion object : ReactStatics<RProps, RState, RComponent, Nothing> {
+ * companion object : RStatics<RProps, RState, RComponent, Nothing>(RComponent::class) {
  *     init {
  *         defaultProps = ...
  *         ...

@@ -101,19 +101,20 @@ fun Tag.style(handler: RuleSet) {
 }
 ```
 
-### Using the getDerivedStateFromProps lifecycle method (React 16.3+)
+### Declaring static fields and lifecycle methods (contextType, getDerivedStateFromProps(), etc.)
 
-There is currently no proper way to declare static members from Kotlin/JS (see [KT-18891](https://youtrack.jetbrains.com/issue/KT-18891)), 
+There is currently no easy way to declare static members from Kotlin/JS (see [KT-18891](https://youtrack.jetbrains.com/issue/KT-18891)), 
 so please do the following instead:
 
 ```kotlin
 class MyComponent: RComponent<MyComponentProps, MyComponentState>() {
-     override fun MyComponentState.init(props: MyComponentProps) {
-        // Note: it's MyComponent::class.js, not MyComponent::class 
-        MyComponent::class.js.asDynamic().getDerivedStateFromProps = { p: MyComponentProps, s: MyComponentState ->
-            console.log(p, s)
+    companion object : RStatics<MyComponentProps, MyComponentState, MyComponent, Nothing>(MyComponent::class) {
+        init {
+            getDerivedStateFromProps = { props, state ->
+                // ...
+            }
         }
-     }
+    }
 }
 ```
 
