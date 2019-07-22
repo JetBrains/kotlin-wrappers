@@ -10,7 +10,7 @@
   "main": "build/classes/main/kotlin-extensions.js",
   "repository": "https://github.com/JetBrains/kotlin-wrappers",
   "peerDependencies": {
-    "core-js": "^3.0.0",
+    "core-js": "^3.1.4",
     "kotlin": "^$kotlin_version"
   },
   "author": "Filipp Riabchun",

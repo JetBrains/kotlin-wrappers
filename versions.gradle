@@ -1,30 +1,30 @@
 ext {
     // External dependencies
     kotlin_version = '1.3.41'
-    kotlinx_html_version = '0.6.12'
-    kotlinx_coroutines_version = '1.2.2'
-    kotlinx_serialization_version = '0.11.1'
-    node_plugin_version = '1.5.1'
-    bintray_plugin_version = '1.8.4'
+    kotlinx_html_version = '0.6.12' // https://github.com/Kotlin/kotlinx.html/releases
+    kotlinx_coroutines_version = '1.2.2' // https://github.com/Kotlin/kotlinx.coroutines/releases
+    kotlinx_serialization_version = '0.11.1' // https://github.com/Kotlin/kotlinx.serialization/releases
+    node_plugin_version = '1.5.1' // https://github.com/node-gradle/gradle-node-plugin/releases
+    bintray_plugin_version = '1.8.4' // https://github.com/bintray/gradle-bintray-plugin/releases
 
     // kotlin-css
-    css_version = '1.0.0-pre.78'
+    css_version = '1.0.0-pre.79'
 
     // kotlin-extensions
-    kotlinext_version = '1.0.1-pre.78'
+    kotlinext_version = '1.0.1-pre.79'
 
     // kotlin-mocha
-    mocha_version = '3.0.1-pre.78'
+    mocha_version = '3.0.1-pre.79'
 
     // kotlin-react, kotlin-react-dom, kotlin-react-router-dom
-    react_version = '16.6.0-pre.78'
-    react_dom_version = '16.6.0-pre.78'
-    react_router_dom_version = '4.3.1-pre.78'
+    react_version = '16.8.6-pre.79'
+    react_dom_version = '16.8.6-pre.79'
+    react_router_dom_version = '4.3.1-pre.79'
 
     // kotlin-redux, kotlin-react-redux
-    redux_version = '4.0.0-pre.78'
-    react_redux_version = '5.0.7-pre.78'
+    redux_version = '4.0.0-pre.79'
+    react_redux_version = '5.0.7-pre.79'
 
     // kotlin-styled
-    styled_version = '1.0.0-pre.78'
+    styled_version = '1.0.0-pre.79'
 }

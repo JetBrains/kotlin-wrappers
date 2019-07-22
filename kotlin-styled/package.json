@@ -13,8 +13,8 @@
     "@jetbrains/kotlin-css": "^$css_version",
     "@jetbrains/kotlin-css-js": "^$css_version",
     "@jetbrains/kotlin-extensions": "^$kotlinext_version",
-    "css-in-js-utils": "^2.0.1",
-    "inline-style-prefixer": "^5.0.1",
+    "css-in-js-utils": "^3.0.2",
+    "inline-style-prefixer": "^5.1.0",
     "kotlin": "^$kotlin_version",
     "styled-components": "^3.4.10"
   },
