@@ -4,6 +4,7 @@ typealias RDependenciesArray = Array<dynamic>
 typealias RDependenciesList = List<dynamic>
 
 typealias RSetState<T> = (value: T) -> Unit
+
 fun <T> useState(initValue: T): Pair<T, RSetState<T>> {
     val jsTuple = rawUseState(initValue)
     val currentValue = jsTuple[0] as T
@@ -11,8 +12,9 @@ fun <T> useState(initValue: T): Pair<T, RSetState<T>> {
     return currentValue to setState
 }
 
-typealias RReducer<S, A>  = (state: S, action: A) -> S
-typealias RDispatch<A>  = (action: A) -> Unit
+typealias RReducer<S, A> = (state: S, action: A) -> S
+typealias RDispatch<A> = (action: A) -> Unit
+
 fun <S, A> useReducer(reducer: RReducer<S, A>, initState: S, initialAction: A? = null): Pair<S, RDispatch<A>> {
     val jsTuple = if (initialAction != null) {
         rawUseReducer(reducer, initState, initialAction)
@@ -29,6 +31,7 @@ fun <S, A> useReducer(reducer: RReducer<S?, A>): Pair<S?, RDispatch<A>> {
 }
 
 typealias RCleanup = () -> Unit
+
 fun useEffectWithCleanup(dependencies: RDependenciesList? = null, effect: () -> RCleanup) {
     if (dependencies != null) {
         rawUseEffect(effect, dependencies.toTypedArray())

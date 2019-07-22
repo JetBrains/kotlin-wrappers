@@ -20,7 +20,7 @@ private class CSSProperty<T>(private val default: (() -> T)? = null) {
                 thisRef.declarations[property.name] = default() as Any
             }
         }
-        
+
         return thisRef.declarations[property.name] as T
     }
 

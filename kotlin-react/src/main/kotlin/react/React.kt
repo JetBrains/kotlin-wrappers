@@ -75,7 +75,7 @@ fun SuspenseProps.fallback(handler: RBuilder.() -> Unit) {
  */
 open class RStatics<P : RProps, S : RState, C : Component<P, S>, CTX : RContext<Any>?>(
         klazz: KClass<C>
-): RComponentClassStatics<P, S, CTX> {
+) : RComponentClassStatics<P, S, CTX> {
     private val jsClass = klazz.js.asDynamic()
 
     override var displayName: String?

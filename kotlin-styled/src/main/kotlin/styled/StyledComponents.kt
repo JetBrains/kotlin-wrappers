@@ -154,7 +154,7 @@ object Styled {
             val ref = styledProps.asDynamic().ref
             if (ref != null && styledProps.forwardRef == null) {
                 styledProps.forwardRef = ref
-                styledProps.ref<Any> {  }
+                styledProps.ref<Any> { }
             }
             if (css.styleName.isNotEmpty()) {
                 styledProps.asDynamic()["data-style"] = css.styleName.joinToString(separator = " ")
