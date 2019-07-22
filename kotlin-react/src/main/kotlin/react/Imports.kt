@@ -86,3 +86,47 @@ external fun <P : RProps> lazy(loadComponent: () -> Promise<RClass<P>>): RClass<
 // Suspense (16.6+)
 external interface SuspenseProps : RProps
 external val Suspense: RClass<SuspenseProps>
+
+// State Hook
+@JsName("useState")
+external fun <T> rawUseState(initValue: T): RDependenciesArray
+
+// Reducer Hook
+@JsName("useReducer")
+external fun <S, A> rawUseReducer(reducer: RReducer<S, A>, initialState: S): RDependenciesArray
+@JsName("useReducer")
+external fun <S, A> rawUseReducer(reducer: RReducer<S, A>, initialState: S, initialAction: A): RDependenciesArray
+
+// Effect Hook
+@JsName("useEffect")
+external fun rawUseEffect(effect: () -> dynamic, dependencies: RDependenciesArray)
+@JsName("useEffect")
+external fun rawUseEffect(effect: () -> dynamic)
+
+// Layout Effect Hook
+@JsName("useLayoutEffect")
+external fun rawUseLayoutEffect(effect: () -> dynamic, dependencies: RDependenciesArray)
+@JsName("useLayoutEffect")
+external fun rawUseLayoutEffect(effect: () -> dynamic)
+
+// Context Hook
+external fun <T> useContext(context: RContext<T>): T
+
+// Callback Hook
+external fun useCallback(callback: () -> Unit, dependencies: RDependenciesArray): () -> Unit
+
+// Memo Hook
+external fun <T> useMemo(callback: () -> T, dependencies: RDependenciesArray): T
+
+// Ref Hook
+external interface RMutableRef<T> : RRef {
+    var current: T
+}
+external fun <T> useRef(initialValue: T): RMutableRef<T>
+
+// Imperative Methods Hook
+external fun useImperativeHandle(ref: RRef, createInstance: () -> dynamic, inputs: RDependenciesArray): Unit
+
+// Debug Value Hook
+external fun useDebugValue(value: Any)
+external fun <T> useDebugValue(value: T, format: (value: T) -> Any)
