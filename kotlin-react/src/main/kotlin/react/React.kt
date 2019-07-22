@@ -64,19 +64,47 @@ fun SuspenseProps.fallback(handler: RBuilder.() -> Unit) {
 /**
  * Usage:
  *
- * companion object : ReactStatics<RProps, RState> {
- *     ...
+ * companion object : ReactStatics<RProps, RState, RComponent, Nothing> {
+ *     init {
+ *         defaultProps = ...
+ *         ...
+ *     }
  * }
  *
  * in your class components
  */
-abstract class ReactStatics<P : RProps, S : RState> : RClass<P> {
-    val defaultProps: P? = undefined
+open class RStatics<P : RProps, S : RState, C : Component<P, S>, CTX : RContext<Any>?>(
+        klazz: KClass<C>
+): RComponentClassStatics<P, S, CTX> {
+    private val jsClass = klazz.js.asDynamic()
 
-    // 16.3+
-    val getDerivedStateFromProps: ((P, S) -> S?)? = undefined
+    override var displayName: String?
+        get() = jsClass.displayName
+        set(value) {
+            jsClass.displayName = value
+        }
 
-    // 16.6+
-    val getDerivedStateFromError: ((Throwable) -> S?)? = undefined
-    val contextType: RContext<*>? = undefined
+    override var defaultProps: P?
+        get() = jsClass.defaultProps
+        set(value) {
+            jsClass.defaultProps = value
+        }
+
+    override var contextType: CTX
+        get() = jsClass.contextType
+        set(value) {
+            jsClass.contextType = value
+        }
+
+    override var getDerivedStateFromProps: ((P, S) -> S?)?
+        get() = jsClass.getDerivedStateFromProps
+        set(value) {
+            jsClass.getDerivedStateFromProps = value
+        }
+
+    override var getDerivedStateFromError: ((Throwable) -> S?)?
+        get() = jsClass.getDerivedStateFromError
+        set(value) {
+            jsClass.getDerivedStateFromError = value
+        }
 }
