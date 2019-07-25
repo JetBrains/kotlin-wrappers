@@ -12,6 +12,13 @@ fun <T> useState(initValue: T): Pair<T, RSetState<T>> {
     return currentValue to setState
 }
 
+fun <T> useState(valueInitializer: () -> T): Pair<T, RSetState<T>> {
+    val jsTuple = rawUseState(valueInitializer)
+    val currentValue = jsTuple[0] as T
+    val setState = jsTuple[1] as RSetState<T>
+    return currentValue to setState
+}
+
 typealias RReducer<S, A> = (state: S, action: A) -> S
 typealias RDispatch<A> = (action: A) -> Unit
 
