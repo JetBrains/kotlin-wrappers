@@ -88,6 +88,14 @@ external interface SuspenseProps : RProps
 
 external val Suspense: RClass<SuspenseProps>
 
+// Profiler (16.9+)
+external interface ProfilerProps : RProps {
+    var id: String
+    var onRender: (id: String, phase: String, actualDuration: Number, baseDuration: Number, startTime: Number, commitTime: Number, interactions: dynamic) -> Unit
+}
+
+external val Profiler : RClass<ProfilerProps>
+
 // State Hook (16.8+)
 @JsName("useState")
 external fun <T> rawUseState(initValue: T): RDependenciesArray
