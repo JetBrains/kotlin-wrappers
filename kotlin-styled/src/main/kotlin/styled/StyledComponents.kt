@@ -3,8 +3,10 @@ package styled
 import kotlinext.js.*
 import kotlinx.css.*
 import kotlinx.html.*
+import org.w3c.dom.*
 import react.*
 import react.dom.*
+import kotlin.browser.*
 
 typealias AnyTagStyledBuilder = StyledDOMBuilder<CommonAttributeGroupFacade>
 typealias AnyBuilder = AnyTagStyledBuilder.() -> Unit
@@ -100,18 +102,47 @@ external interface Styler : TemplateTag<(StyledProps) -> String, dynamic> {
     fun withConfig(config: StylerConfig): Styler
 }
 
+external interface Keyframes {
+    fun getName(): String
+}
+
 @JsModule("styled-components")
 external object StyledComponents {
     fun default(target: (StyledProps) -> ReactElement): Styler
 
     // A helper method to create keyframes for animations.
-    val keyframes: TemplateTag<Nothing, String>
+    val keyframes: TemplateTag<Nothing, Keyframes>
 
-    // A helper method to write global CSS. It does not return a component, but adds the styles to the stylesheet directly.
-    val injectGlobal: TemplateTag<Nothing, Unit>
+    // Use for injecting keyframes
+    val css: TemplateTag<dynamic, String>
+
+    // Create component with style, should be mounted
+    val createGlobalStyle: TemplateTag<Nothing, Component<RProps, RState>>
 
     // A utility to help identify styled components.
     val isStyledComponent: Boolean
+}
+
+/**
+ * @deprecated Use [StyledComponents.keyframes] and [StyledComponents.css] instead
+ */
+inline fun StyledComponents.keyframesName(string: String): String {
+    val keyframe = StyledComponents.keyframes(string)
+    StyledComponents.css(keyframe)
+
+    return keyframe.getName()
+}
+
+private var globalStylesCounter = 0
+
+/**
+ * @deprecated Use [StyledComponents.createGlobalStyle] instead
+ */
+fun StyledComponents.injectGlobal(string: String) {
+    val globalStyleComponent = createGlobalStyle(string)
+    val element = window.document.body!!.appendChild(window.document.createElement("div")) as Element
+    element.setAttribute("id", "sc-global-style-${globalStylesCounter++}")
+    render(createElement(globalStyleComponent, js {}), element)
 }
 
 fun StyledComponents.injectGlobal(handler: CSSBuilder.() -> Unit) {
