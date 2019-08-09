@@ -143,7 +143,10 @@ fun StyledComponents.injectGlobal(string: String) {
     val globalStyleComponent = createGlobalStyle(string)
     val element = window.document.body!!.appendChild(window.document.createElement("div")) as Element
     element.setAttribute("id", "sc-global-style-${globalStylesCounter++}")
-    render(createElement(globalStyleComponent, js {}), element)
+    val reactElement = createElement(globalStyleComponent, js {})
+    Promise.resolve(Unit).then {
+        render(reactElement, element)
+    }
 }
 
 fun StyledComponents.injectGlobal(handler: CSSBuilder.() -> Unit) {
