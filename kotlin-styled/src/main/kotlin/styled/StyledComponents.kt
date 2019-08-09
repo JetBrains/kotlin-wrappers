@@ -7,6 +7,7 @@ import org.w3c.dom.*
 import react.*
 import react.dom.*
 import kotlin.browser.*
+import kotlin.js.*
 
 typealias AnyTagStyledBuilder = StyledDOMBuilder<CommonAttributeGroupFacade>
 typealias AnyBuilder = AnyTagStyledBuilder.() -> Unit
@@ -108,7 +109,7 @@ external interface Keyframes {
 
 @JsModule("styled-components")
 external object StyledComponents {
-    fun default(target: (StyledProps) -> ReactElement): Styler
+    fun default(target: dynamic): Styler
 
     // A helper method to create keyframes for animations.
     val keyframes: TemplateTag<Nothing, Keyframes>
@@ -154,24 +155,7 @@ object Styled {
 
     private fun wrap(type: dynamic) =
         cache.getOrPut(type) {
-            val extractAttrs = { styledProps: StyledProps ->
-                val props = clone(styledProps)
-                styledProps.forwardRef?.let {
-                    props.ref(it)
-                }
-                js("delete props._css; delete props._forwardRef; delete props._styleDisplayName;")
-                createElement(type, props, props.children)
-            }
-
-            val displayName: String = when {
-                type is String -> type
-                type.displayName != null -> type.displayName
-                type.name != null -> type.name
-                else -> ""
-            }
-            extractAttrs.asDynamic().displayName = "__$displayName"
-
-            (StyledComponents.default(extractAttrs))({ it.css })
+            (StyledComponents.default(type))({ it.css })
         }
 
     fun createElement(type: Any, css: CSSBuilder, props: WithClassName, children: List<Any>): ReactElement {
@@ -181,11 +165,6 @@ object Styled {
             styledProps.css = css.toString()
             if (css.classes.isNotEmpty()) {
                 styledProps.className = css.classes.joinToString(separator = " ")
-            }
-            val ref = styledProps.asDynamic().ref
-            if (ref != null && styledProps.forwardRef == null) {
-                styledProps.forwardRef = ref
-                styledProps.ref<Any> { }
             }
             if (css.styleName.isNotEmpty()) {
                 styledProps.asDynamic()["data-style"] = css.styleName.joinToString(separator = " ")
