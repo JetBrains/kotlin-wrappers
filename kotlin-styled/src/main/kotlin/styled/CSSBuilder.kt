@@ -18,5 +18,5 @@ fun CSSBuilder.animation(
 inline fun keyframes(indent: String = "", handler: KeyframesBuilder.() -> Unit): String {
     val builder = KeyframesBuilder(indent)
     builder.handler()
-    return StyledComponents.keyframes(builder.toString())
+    return StyledComponents.keyframesName(builder.toString())
 }
