@@ -133,8 +133,8 @@ external object StyledComponents {
  * @deprecated Use [StyledComponents.keyframes] and [StyledComponents.css] instead
  */
 inline fun StyledComponents.keyframesName(string: String): String {
-    val keyframe = StyledComponents.keyframes(string)
-    StyledComponents.css(keyframe)
+    val keyframe = keyframes(string)
+    injectGlobal(css(keyframe))
 
     return keyframe.getName()
 }
