@@ -2,7 +2,7 @@ package kotlinx.css.properties
 
 import kotlinx.css.*
 
-fun StyledElement.border(width: LinearDimension, style: BorderStyle, color: Color, borderRadius: LinearDimension?) {
+fun StyledElement.border(width: LinearDimension, style: BorderStyle, color: Color, borderRadius: LinearDimension? = null) {
     border = "$width $style $color"
 
     borderRadius?.let {
