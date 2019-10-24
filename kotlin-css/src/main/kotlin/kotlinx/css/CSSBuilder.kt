@@ -74,6 +74,7 @@ class CSSBuilder(
     fun firstChild(block: RuleSet) = "&:first-child"(block)
     fun firstOfType(block: RuleSet) = "&:first-of-type"(block)
     fun focus(block: RuleSet) = "&:focus"(block)
+    fun focusWithin(block: RuleSet) = "&:focus-within"(block)
     fun hover(block: RuleSet) = "&:hover"(block)
     fun indeterminate(block: RuleSet) = "&:indeterminate"(block)
     fun inRange(block: RuleSet) = "&:in-range"(block)
@@ -163,6 +164,12 @@ class CSSBuilder(
     fun supports(query: String, block: RuleSet) = "@supports $query"(block)
 
     fun fontFace(query: String, block: RuleSet) = "@font-face $query"(block)
+
+    fun retina(block: RuleSet) {
+        media("(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)") {
+            block()
+        }
+    }
 
     // Custom properties
     fun root(block: RuleSet) {
