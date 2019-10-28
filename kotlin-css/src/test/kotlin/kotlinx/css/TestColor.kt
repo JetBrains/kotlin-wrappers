@@ -144,7 +144,7 @@ class TestColor {
         asserter.assertEquals("Converted RGBa blue value is incorrect", 0xA3, rgba.blue)
         asserter.assertEquals("Converted RGBa alpha/opacity value is incorrect", 1.0, rgba.alpha)
 
-        asserter.assertEquals("Generated RGBa string not as expected", "rgba(230, 201, 163, 1.0)", color.value)
+        asserter.assertEquals("Generated RGBa string is incorrect", "rgba(230, 201, 163, 1.0)", color.value)
     }
 
     @Test
@@ -163,7 +163,7 @@ class TestColor {
         asserter.assertEquals("Converted RGBa blue value is incorrect", 0x82, rgba.blue)
         asserter.assertEquals("Converted RGBa alpha/opacity value is incorrect", 1.0, rgba.alpha)
 
-        asserter.assertEquals("Generated RGBa string not as expected", "rgba(227, 185, 130, 1.0)", color.value)
+        asserter.assertEquals("Generated RGBa string is incorrect", "rgba(227, 185, 130, 1.0)", color.value)
     }
 
     @Test
@@ -201,5 +201,13 @@ class TestColor {
         asserter.assertEquals("Alpha conversion is incorrect", "rgba(0, 0, 0, 0.05)", rgba.toString())
         asserter.assertEquals("Alpha conversion is incorrect", "rgba(0, 0, 0, 0.1)", hex.toString())
         asserter.assertEquals("Alpha conversion is incorrect", "rgba(0, 0, 0, 0.1)", hexa.toString())
+    }
+
+    @Test
+    fun testBlend() {
+        val source = whiteAlpha(0.1)
+        val mix = source.blend(Color("#1a3b66"))
+
+        asserter.assertEquals("Alpha blending is incorrect", "rgb(49, 79, 117)", mix.toString())
     }
 }

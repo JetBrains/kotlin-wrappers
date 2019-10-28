@@ -307,6 +307,18 @@ class Color(override val value: String) : CssValue(value) {
             else -> with(toRGBA()) { rgba(red, green, blue, normalizeAlpha(alpha) * this.alpha) }
         }
 
+    // https://stackoverflow.com/questions/2049230/convert-rgba-color-to-rgb
+    fun blend(backgroundColor: Color): Color {
+        val source = this.toRGBA()
+        val background = backgroundColor.toRGBA()
+
+        val targetR = ((1 - source.alpha) * background.red) + (source.alpha * source.red)
+        val targetG = ((1 - source.alpha) * background.green) + (source.alpha * source.green)
+        val targetB = ((1 - source.alpha) * background.blue) + (source.alpha * source.blue)
+
+        return rgb(targetR.roundToInt(), targetG.roundToInt(), targetB.roundToInt())
+    }
+
     /**
      * Lighten the color by the specified percent (between 0-100), returning a new instance of Color.
      *
