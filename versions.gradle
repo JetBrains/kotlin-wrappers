@@ -8,23 +8,23 @@ ext {
     bintray_plugin_version = '1.8.4' // https://github.com/bintray/gradle-bintray-plugin/releases
 
     // kotlin-css
-    css_version = '1.0.0-pre.88'
+    css_version = '1.0.0-pre.89'
 
     // kotlin-extensions
-    kotlinext_version = '1.0.1-pre.88'
+    kotlinext_version = '1.0.1-pre.89'
 
     // kotlin-mocha
-    mocha_version = '3.0.1-pre.88'
+    mocha_version = '3.0.1-pre.89'
 
     // kotlin-react, kotlin-react-dom, kotlin-react-router-dom
-    react_version = '16.9.0-pre.88'
-    react_dom_version = '16.9.0-pre.88'
-    react_router_dom_version = '4.3.1-pre.88'
+    react_version = '16.9.0-pre.89'
+    react_dom_version = '16.9.0-pre.89'
+    react_router_dom_version = '4.3.1-pre.89'
 
     // kotlin-redux, kotlin-react-redux
-    redux_version = '4.0.0-pre.88'
-    react_redux_version = '5.0.7-pre.88'
+    redux_version = '4.0.0-pre.89'
+    react_redux_version = '5.0.7-pre.89'
 
     // kotlin-styled
-    styled_version = '1.0.0-pre.88'
+    styled_version = '1.0.0-pre.89'
 }

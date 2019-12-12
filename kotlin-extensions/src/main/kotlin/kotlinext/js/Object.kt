@@ -34,6 +34,7 @@ external object Object {
     fun isFrozen(o: Any): Boolean
     fun isExtensible(o: Any): Boolean
     fun keys(o: Any): Array<String>
+    fun <T, R : T> assign(dest: R, vararg src: T): R
 }
 
 fun Any.getOwnPropertyNames(): Array<String> {
@@ -42,5 +43,8 @@ fun Any.getOwnPropertyNames(): Array<String> {
     return js("Object.getOwnPropertyNames(me)")
 }
 
-@JsModule("core-js/features/object/assign")
-external fun <T, R : T> objectAssign(dest: R, vararg src: T): R
+@Deprecated(
+    message = "Use Object.assign instead",
+    replaceWith = ReplaceWith("Object.assign(dest, *src)","kotlinext.js")
+)
+fun <T, R : T> objectAssign(dest: R, vararg src: T): R = Object.assign(dest, *src)

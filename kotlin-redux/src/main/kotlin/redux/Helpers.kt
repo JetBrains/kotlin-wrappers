@@ -27,7 +27,7 @@ fun <S> rEnhancer(): Enhancer<S, Action, Action, RAction, WrapperAction> = { nex
         }
 
         val store = (next.unsafeCast<StoreCreator<S, WrapperAction, WrapperAction>>())(wrapperReducer(reducer), initialState)
-        assign(assign(js {}, store)) {
+        assign(Object.assign(js {}, store)) {
             dispatch = { action: RAction ->
                 val result = store.dispatch(js {
                     type = action::class.simpleName
