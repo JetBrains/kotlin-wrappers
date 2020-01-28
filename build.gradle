@@ -1,6 +1,10 @@
 group 'org.jetbrains'
 version '1.0-SNAPSHOT'
 
+wrapper {
+    distributionType = Wrapper.DistributionType.ALL
+}
+
 buildscript {
     apply from: 'versions.gradle'
 
