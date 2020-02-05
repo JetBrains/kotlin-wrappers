@@ -125,7 +125,7 @@ external fun rawUseLayoutEffect(effect: () -> dynamic)
 external fun <T> useContext(context: RContext<T>): T
 
 // Callback Hook (16.8+)
-external fun useCallback(callback: () -> Unit, dependencies: RDependenciesArray): () -> Unit
+external fun <T: Function<*>> useCallback(callback: T, dependencies: RDependenciesArray): T
 
 // Memo Hook (16.8+)
 external fun <T> useMemo(callback: () -> T, dependencies: RDependenciesArray): T
