@@ -94,7 +94,7 @@ external interface ProfilerProps : RProps {
     var onRender: (id: String, phase: String, actualDuration: Number, baseDuration: Number, startTime: Number, commitTime: Number, interactions: dynamic) -> Unit
 }
 
-external val Profiler : RClass<ProfilerProps>
+external val Profiler: RClass<ProfilerProps>
 
 // State Hook (16.8+)
 @JsName("useState")
@@ -125,7 +125,7 @@ external fun rawUseLayoutEffect(effect: () -> dynamic)
 external fun <T> useContext(context: RContext<T>): T
 
 // Callback Hook (16.8+)
-external fun <T: Function<*>> useCallback(callback: T, dependencies: RDependenciesArray): T
+external fun <T : Function<*>> useCallback(callback: T, dependencies: RDependenciesArray): T
 
 // Memo Hook (16.8+)
 external fun <T> useMemo(callback: () -> T, dependencies: RDependenciesArray): T
