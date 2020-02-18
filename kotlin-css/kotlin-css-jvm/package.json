@@ -13,5 +13,5 @@
     "kotlin": "^$kotlin_version"
   },
   "author": "Leonid Khachaturov",
-  "license": "Apache-2-0"
+  "license": "Apache-2.0"
 }
