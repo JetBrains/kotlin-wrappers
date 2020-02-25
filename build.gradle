@@ -38,19 +38,31 @@ subprojects {
     def projectName = name
 
     ext.applyKotlinJS = {
-        apply plugin: 'kotlin2js'
+        apply plugin: 'org.jetbrains.kotlin.js'
+
+        kotlin {
+            target  {
+                useCommonJs()
+            }
+        }
 
         dependencies {
             compile "org.jetbrains.kotlin:kotlin-stdlib-js:$kotlin_version"
             compile "org.jetbrains.kotlinx:kotlinx-html-js:$kotlinx_html_version"
         }
 
-        compileKotlin2Js {
+        compileKotlinJs {
             kotlinOptions {
                 outputFile = "$projectDir/build/classes/main/${projectName}.js"
                 moduleKind = "commonjs"
                 sourceMap = true
                 sourceMapEmbedSources = "always"
+            }
+        }
+        compileKotlinJsIr {
+            kotlinOptions {
+                moduleKind = "commonjs"
+                sourceMap = false
             }
         }
     }
@@ -59,15 +71,13 @@ subprojects {
         apply plugin: 'com.github.node-gradle.node'
         apply plugin: 'com.jfrog.bintray'
         apply plugin: 'maven-publish'
-        apply plugin: 'java'
-
-        task sourcesJar(type: Jar) {
-            classifier = 'sources'
-            from sourceSets.main.allSource
-        }
 
         artifacts {
-            archives sourcesJar
+            if (kotlin instanceof org.jetbrains.kotlin.gradle.dsl.KotlinJsProjectExtension) {
+                archives JsSourcesJar
+            } else {
+                archives kotlinSourcesJar
+            }
         }
 
         def v = "$baseVersion-kotlin-$kotlin_version"
@@ -91,12 +101,16 @@ subprojects {
         publishing {
             publications {
                 Publication(MavenPublication) {
-                    from components.java
+                    from components.kotlin
                     groupId 'org.jetbrains'
                     artifactId projectName
                     version v
 
-                    artifact sourcesJar
+                    if (kotlin instanceof org.jetbrains.kotlin.gradle.dsl.KotlinJsProjectExtension) {
+                        artifact  JsSourcesJar
+                    } else {
+                        artifact kotlinSourcesJar
+                    }
                 }
             }
         }

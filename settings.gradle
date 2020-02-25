@@ -1,3 +1,14 @@
+pluginManagement {
+    repositories {
+        mavenCentral()
+        mavenLocal()
+        gradlePluginPortal()
+        maven {
+            setUrl("https://dl.bintray.com/kotlin/kotlin-eap")
+        }
+    }
+}
+
 rootProject.name = 'kotlin-wrappers'
 
 // Platform-agnostic CSS support
