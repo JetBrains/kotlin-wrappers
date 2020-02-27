@@ -13,10 +13,10 @@
     "@jetbrains/kotlin-css": "^$css_version",
     "@jetbrains/kotlin-css-js": "^$css_version",
     "@jetbrains/kotlin-extensions": "^$kotlinext_version",
-    "css-in-js-utils": "^3.0.2",
-    "inline-style-prefixer": "^5.1.0",
+    "css-in-js-utils": "^3.0.4",
+    "inline-style-prefixer": "^5.1.2",
     "kotlin": "^$kotlin_version",
-    "styled-components": "^4.3.2"
+    "styled-components": "^5.0.1"
   },
   "author": "Leonid Khachaturov",
   "license": "Apache-2.0"
