@@ -38,8 +38,9 @@ inline fun <P : RProps> cloneElement(
 fun clone(element: dynamic, props: dynamic, child: Any? = null): ReactElement =
     cloneElement(element, props, *Children.toArray(child))
 
-val <P : RProps, T : RComponent<P, *>> KClass<T>.rClass get() =
-    js.unsafeCast<RClass<P>>()
+val <P : RProps, T : RComponent<P, *>> KClass<T>.rClass
+    get() =
+        js.unsafeCast<RClass<P>>()
 
 // 16.6+
 fun <P : RProps> rLazy(loadComponent: suspend () -> RClass<P>): RClass<P> {
@@ -74,7 +75,7 @@ fun SuspenseProps.fallback(handler: RBuilder.() -> Unit) {
  * in your class components
  */
 open class RStatics<P : RProps, S : RState, C : Component<P, S>, CTX : RContext<Any>?>(
-        klazz: KClass<C>
+    klazz: KClass<C>
 ) : RComponentClassStatics<P, S, CTX> {
     private val jsClass = klazz.js.asDynamic()
 

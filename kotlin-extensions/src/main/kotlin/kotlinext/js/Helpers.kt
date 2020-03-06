@@ -14,8 +14,8 @@ fun <T : Any> clone(obj: T) = Object.assign(jsObject<T> {}, obj)
 inline fun <T : Any> assign(obj: T, builder: T.() -> Unit) = clone(obj).apply(builder)
 
 @Deprecated(
-        message = "Use Object.assign instead",
-        replaceWith = ReplaceWith("Object.assign(dest, src)","kotlinext.js")
+    message = "Use Object.assign instead",
+    replaceWith = ReplaceWith("Object.assign(dest, src)", "kotlinext.js")
 )
 fun <T, R : T> assign(dest: R, src: T): R = Object.assign(dest, src)
 

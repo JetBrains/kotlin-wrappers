@@ -45,6 +45,6 @@ fun Any.getOwnPropertyNames(): Array<String> {
 
 @Deprecated(
     message = "Use Object.assign instead",
-    replaceWith = ReplaceWith("Object.assign(dest, *src)","kotlinext.js")
+    replaceWith = ReplaceWith("Object.assign(dest, *src)", "kotlinext.js")
 )
 fun <T, R : T> objectAssign(dest: R, vararg src: T): R = Object.assign(dest, *src)

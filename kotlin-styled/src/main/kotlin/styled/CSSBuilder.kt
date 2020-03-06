@@ -1,6 +1,5 @@
 package styled
 
-import kotlinext.js.*
 import kotlinx.css.*
 import kotlinx.css.properties.*
 
