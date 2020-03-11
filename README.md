@@ -38,11 +38,6 @@ demonstrates how to add typings for an external library.
 Follow these examples to learn how to start developing your React apps with Kotlin. Good luck and have fun! 
 You also can clone [my-kotlin-react-sample](https://github.com/ScottHuangZL/my-kotlin-app) to see the result directly.
 
-## Real-world examples
-
-[KotlinConf App](https://github.com/JetBrains/kotlinconf-app/) — an application developed at JetBrains to showcase 
-multi-platform projects in Kotlin. The web-based part of the app is written using React and Kotlin/JS.
-
 ## Contributing
 
 Contributions to this project are welcome! Please see the open 
