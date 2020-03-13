@@ -78,7 +78,7 @@ external fun <P : RProps> rawForwardRef(forward: (props: P, ref: RRef) -> Any): 
 external val StrictMode: RClass<RProps>
 
 // Memo (16.6+)
-external val memo: HOC<*, *>
+external fun <P : RProps> memo(fc: FunctionalComponent<P>): FunctionalComponent<P>
 
 // Lazy (16.6+)
 external fun <P : RProps> lazy(loadComponent: () -> Promise<RClass<P>>): RClass<P>
