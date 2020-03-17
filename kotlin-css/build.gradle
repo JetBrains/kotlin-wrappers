@@ -45,6 +45,22 @@ kotlin {
     }
 }
 
+configurePublishing(css_version)
+
+[
+        generateMetadataFileForJsPublication,
+        generateMetadataFileForJvmPublication,
+        generateMetadataFileForKotlinMultiplatformPublication,
+        generatePomFileForJsPublication,
+        generatePomFileForJvmPublication,
+        generatePomFileForKotlinMultiplatformPublication,
+        publishJsPublicationToMavenLocal,
+        publishJvmPublicationToMavenLocal,
+        publishKotlinMultiplatformPublicationToMavenLocal
+].forEach { task ->
+    task.enabled = false
+}
+
 project("kotlin-css-js") {
     applyKotlinJS()
 

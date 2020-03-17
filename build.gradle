@@ -75,6 +75,9 @@ subprojects {
         artifacts {
             if (kotlin instanceof org.jetbrains.kotlin.gradle.dsl.KotlinJsProjectExtension) {
                 archives JsSourcesJar
+            } else if (kotlin instanceof org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension) {
+                archives jvmSourcesJar
+                archives jsSourcesJar
             } else {
                 archives kotlinSourcesJar
             }
@@ -95,21 +98,37 @@ subprojects {
                     name = v
                 }
             }
-            publications = ['Publication']
+            def publication
+            if (kotlin instanceof org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension) {
+                publication = 'metadata'
+            } else {
+                publication = 'Publication'
+            }
+            publications = [publication]
         }
 
         publishing {
             publications {
-                Publication(MavenPublication) {
-                    from components.kotlin
-                    groupId 'org.jetbrains'
-                    artifactId projectName
-                    version v
+                if (kotlin instanceof org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension) {
+                    all {
+                        if (name == "metadata") {
+                            groupId 'org.jetbrains'
+                            artifactId "$projectName"
+                            version v
+                        }
+                    }
+                } else {
+                    Publication(MavenPublication) {
+                        from components.kotlin
+                        groupId 'org.jetbrains'
+                        artifactId projectName
+                        version v
 
-                    if (kotlin instanceof org.jetbrains.kotlin.gradle.dsl.KotlinJsProjectExtension) {
-                        artifact  JsSourcesJar
-                    } else {
-                        artifact kotlinSourcesJar
+                        if (kotlin instanceof org.jetbrains.kotlin.gradle.dsl.KotlinJsProjectExtension) {
+                            artifact JsSourcesJar
+                        } else {
+                            artifact kotlinSourcesJar
+                        }
                     }
                 }
             }
