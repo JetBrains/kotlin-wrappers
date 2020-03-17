@@ -10,24 +10,24 @@ kotlin {
             dependencies {
                 api "org.jetbrains.kotlin:kotlin-stdlib-common:$kotlin_version"
             }
-            
+
         }
         commonTest {
             kotlin.srcDirs += "src/test/kotlin"
             dependencies {
-            api "org.jetbrains.kotlin:kotlin-test-common:$kotlin_version"
-            api "org.jetbrains.kotlin:kotlin-test-annotations-common:$kotlin_version"
+                api "org.jetbrains.kotlin:kotlin-test-common:$kotlin_version"
+                api "org.jetbrains.kotlin:kotlin-test-annotations-common:$kotlin_version"
             }
         }
         jvmMain {
             dependencies {
-            api "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+                api "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
             }
         }
         jvmTest {
             dependencies {
-            api "org.jetbrains.kotlin:kotlin-test:$kotlin_version"  
-            api "org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version"
+                api "org.jetbrains.kotlin:kotlin-test:$kotlin_version"
+                api "org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version"
             }
         }
         jsMain {
@@ -45,6 +45,22 @@ kotlin {
     }
 }
 
+configurePublishing(css_version)
+
+[
+        generateMetadataFileForJsPublication,
+        generateMetadataFileForJvmPublication,
+        generateMetadataFileForKotlinMultiplatformPublication,
+        generatePomFileForJsPublication,
+        generatePomFileForJvmPublication,
+        generatePomFileForKotlinMultiplatformPublication,
+        publishJsPublicationToMavenLocal,
+        publishJvmPublicationToMavenLocal,
+        publishKotlinMultiplatformPublicationToMavenLocal
+].forEach { task ->
+    task.enabled = false
+}
+
 project("kotlin-css-js") {
     applyKotlinJS()
 
@@ -55,13 +71,13 @@ project("kotlin-css-js") {
     }
 }
 
- project("kotlin-css-jvm") {
+project("kotlin-css-jvm") {
 
-     apply plugin: 'org.jetbrains.kotlin.jvm'
+    apply plugin: 'org.jetbrains.kotlin.jvm'
 
-     configurePublishingWithNPM(css_version)
+    configurePublishingWithNPM(css_version)
 
-     dependencies {
-         api project(":kotlin-css")
-     }
- }
+    dependencies {
+        api project(":kotlin-css")
+    }
+}
