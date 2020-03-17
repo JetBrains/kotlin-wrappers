@@ -248,8 +248,8 @@ fun StyledElement.margin(all: LinearDimension?) = margin(all, all, all, all)
 fun StyledElement.margin(vertical: LinearDimension? = null, horizontal: LinearDimension? = null) =
     margin(vertical, horizontal, vertical, horizontal)
 
-fun StyledElement.margin(top: LinearDimension, right: LinearDimension, bottom: LinearDimension) =
-    margin(top, right, bottom, right)
+fun StyledElement.margin(top: LinearDimension, horizontal: LinearDimension, bottom: LinearDimension) =
+    margin(top, horizontal, bottom, horizontal)
 
 fun StyledElement.padding(top: LinearDimension? = null,
                           right: LinearDimension? = null,
@@ -270,5 +270,5 @@ fun StyledElement.padding(all: LinearDimension?) = padding(all, all, all, all)
 fun StyledElement.padding(vertical: LinearDimension? = null, horizontal: LinearDimension? = null) =
     padding(vertical, horizontal, vertical, horizontal)
 
-fun StyledElement.padding(top: LinearDimension, right: LinearDimension, bottom: LinearDimension) =
-    padding(top, right, bottom, right)
+fun StyledElement.padding(top: LinearDimension, horizontal: LinearDimension, bottom: LinearDimension) =
+    padding(top, horizontal, bottom, horizontal)
