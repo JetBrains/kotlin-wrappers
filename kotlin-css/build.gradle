@@ -1,3 +1,5 @@
+import org.gradle.api.publish.maven.internal.artifact.FileBasedMavenArtifact
+
 apply plugin: 'org.jetbrains.kotlin.multiplatform'
 
 kotlin {
@@ -47,20 +49,6 @@ kotlin {
 
 configurePublishing(css_version)
 
-[
-        generateMetadataFileForJsPublication,
-        generateMetadataFileForJvmPublication,
-        generateMetadataFileForKotlinMultiplatformPublication,
-        generatePomFileForJsPublication,
-        generatePomFileForJvmPublication,
-        generatePomFileForKotlinMultiplatformPublication,
-        publishJsPublicationToMavenLocal,
-        publishJvmPublicationToMavenLocal,
-        publishKotlinMultiplatformPublicationToMavenLocal
-].forEach { task ->
-    task.enabled = false
-}
-
 project("kotlin-css-js") {
     applyKotlinJS()
 
@@ -68,6 +56,24 @@ project("kotlin-css-js") {
 
     dependencies {
         api project(":kotlin-css")
+    }
+}
+
+// to publish gradle metadata
+tasks.getByName("bintrayUpload") {
+    doFirst {
+        publishing.publications
+                .withType(MavenPublication.class)
+                .forEach { publication ->
+                    def moduleFile = buildDir.toPath().resolve("publications/${publication.name}/module.json").toFile()
+                    if (moduleFile.exists()) {
+                        publication.artifact(new FileBasedMavenArtifact(moduleFile) {
+                            String getDefaultExtension() {
+                                return "module"
+                            }
+                        })
+                    }
+                }
     }
 }
 

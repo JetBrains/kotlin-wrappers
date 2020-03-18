@@ -98,26 +98,28 @@ subprojects {
                     name = v
                 }
             }
-            def publication
             if (kotlin instanceof org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension) {
-                publication = 'metadata'
+                publications = ['kotlinMultiplatform', 'metadata', 'js', 'jvm']
             } else {
-                publication = 'Publication'
+                publications = ['Publication']
             }
-            publications = [publication]
         }
 
         publishing {
             publications {
                 if (kotlin instanceof org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension) {
                     all {
-                        if (name == "metadata") {
-                            groupId 'org.jetbrains'
-                            artifactId "$projectName"
-                            version v
+                        def artifactName
+                        if (name == "kotlinMultiplatform") {
+                            artifactName = ""
+                        } else {
+                            artifactName = "-$name"
                         }
+                        groupId 'org.jetbrains'
+                        artifactId "$projectName$artifactName"
+                        version v
                     }
-                } else {
+                } else if (!projectName.contains("kotlin-css")) {
                     Publication(MavenPublication) {
                         from components.kotlin
                         groupId 'org.jetbrains'
