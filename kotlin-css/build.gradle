@@ -59,24 +59,6 @@ project("kotlin-css-js") {
     }
 }
 
-// to publish gradle metadata
-tasks.getByName("bintrayUpload") {
-    doFirst {
-        publishing.publications
-                .withType(MavenPublication.class)
-                .forEach { publication ->
-                    def moduleFile = buildDir.toPath().resolve("publications/${publication.name}/module.json").toFile()
-                    if (moduleFile.exists()) {
-                        publication.artifact(new FileBasedMavenArtifact(moduleFile) {
-                            String getDefaultExtension() {
-                                return "module"
-                            }
-                        })
-                    }
-                }
-    }
-}
-
 project("kotlin-css-jvm") {
 
     apply plugin: 'org.jetbrains.kotlin.jvm'

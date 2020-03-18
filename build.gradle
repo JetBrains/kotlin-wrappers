@@ -1,3 +1,5 @@
+import org.gradle.api.publish.maven.internal.artifact.FileBasedMavenArtifact
+
 group 'org.jetbrains'
 version '1.0-SNAPSHOT'
 
@@ -100,8 +102,26 @@ subprojects {
             }
             if (kotlin instanceof org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension) {
                 publications = ['kotlinMultiplatform', 'metadata', 'js', 'jvm']
-            } else {
+            } else if (!projectName.contains("kotlin-css")) {
                 publications = ['Publication']
+            }
+        }
+
+        // to publish gradle metadata
+        tasks.getByName("bintrayUpload") {
+            doFirst {
+                publishing.publications
+                        .withType(MavenPublication.class)
+                        .forEach { publication ->
+                            def moduleFile = buildDir.toPath().resolve("publications/${publication.name}/module.json").toFile()
+                            if (moduleFile.exists()) {
+                                publication.artifact(new FileBasedMavenArtifact(moduleFile) {
+                                    String getDefaultExtension() {
+                                        return "module"
+                                    }
+                                })
+                            }
+                        }
             }
         }
 
@@ -119,7 +139,7 @@ subprojects {
                         artifactId "$projectName$artifactName"
                         version v
                     }
-                } else if (!projectName.contains("kotlin-css")) {
+                } else {
                     Publication(MavenPublication) {
                         from components.kotlin
                         groupId 'org.jetbrains'
