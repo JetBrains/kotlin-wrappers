@@ -22,12 +22,16 @@ fun <T> useState(valueInitializer: () -> T): Pair<T, RSetState<T>> {
     return currentValue to setState
 }
 
-private class ReactStateDelegate<T>(private val useState: Pair<T, RSetState<T>>) : ReadWriteProperty<Any?, T> {
+private class ReactStateDelegate<T>(useState: Pair<T, RSetState<T>>) : ReadWriteProperty<Any?, T> {
+    private val state = useState.first
+
+    private val setState = useState.second
+
     override operator fun getValue(thisRef: Any?, property: KProperty<*>): T =
-            useState.first
+            state
 
     override operator fun setValue(thisRef: Any?, property: KProperty<*>, value: T) {
-        useState.second(value)
+        setState(value)
     }
 }
 
