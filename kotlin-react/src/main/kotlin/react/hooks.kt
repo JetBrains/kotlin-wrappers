@@ -1,5 +1,8 @@
 package react
 
+import kotlin.properties.ReadWriteProperty
+import kotlin.reflect.KProperty
+
 typealias RDependenciesArray = Array<dynamic>
 typealias RDependenciesList = List<dynamic>
 
@@ -18,6 +21,18 @@ fun <T> useState(valueInitializer: () -> T): Pair<T, RSetState<T>> {
     val setState = jsTuple[1] as RSetState<T>
     return currentValue to setState
 }
+
+private class ReactStateDelegate<T>(private val useState: Pair<T, RSetState<T>>) : ReadWriteProperty<Any?, T> {
+    override operator fun getValue(thisRef: Any?, property: KProperty<*>): T =
+            useState.first
+
+    override operator fun setValue(thisRef: Any?, property: KProperty<*>, value: T) {
+        useState.second(value)
+    }
+}
+
+fun <T> state(initValue: T): ReadWriteProperty<Any?, T> =
+        ReactStateDelegate(useState(initValue))
 
 typealias RReducer<S, A> = (state: S, action: A) -> S
 typealias RDispatch<A> = (action: A) -> Unit
