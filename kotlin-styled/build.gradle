@@ -1,4 +1,6 @@
-applyKotlinJS()
+plugins {
+  id 'kotlin2js'
+}
 
 configurePublishingWithNPM(styled_version)
 

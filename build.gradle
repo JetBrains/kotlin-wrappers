@@ -41,21 +41,21 @@ subprojects {
       "org.jetbrains.kotlin:kotlin-$module:$kotlin_version"
     }
 
-    ext.applyKotlinJS = {
-        apply plugin: 'kotlin2js'
-
+    plugins.withType(org.jetbrains.kotlin.gradle.plugin.Kotlin2JsPluginWrapper) {
         dependencies {
             compile kotlin("stdlib-js")
             compile "org.jetbrains.kotlinx:kotlinx-html-js:$kotlinx_html_version"
         }
 
-        compileKotlin2Js {
+        tasks {
+          compileKotlin2Js {
             kotlinOptions {
-                outputFile = "$projectDir/build/classes/main/${projectName}.js"
-                moduleKind = "commonjs"
-                sourceMap = true
-                sourceMapEmbedSources = "always"
+              outputFile = "$projectDir/build/classes/main/${projectName}.js"
+              moduleKind = "commonjs"
+              sourceMap = true
+              sourceMapEmbedSources = "always"
             }
+          }
         }
     }
 

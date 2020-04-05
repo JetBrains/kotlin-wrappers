@@ -1,4 +1,6 @@
-applyKotlinJS()
+plugins {
+  id 'kotlin2js'
+}
 
 dependencies {
     compile project(':kotlin-react-dom')
