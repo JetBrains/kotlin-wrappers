@@ -37,11 +37,15 @@ subprojects {
 
     def projectName = name
 
+    ext.kotlin = { module ->
+      "org.jetbrains.kotlin:kotlin-$module:$kotlin_version"
+    }
+
     ext.applyKotlinJS = {
         apply plugin: 'kotlin2js'
 
         dependencies {
-            compile "org.jetbrains.kotlin:kotlin-stdlib-js:$kotlin_version"
+            compile kotlin("stdlib-js")
             compile "org.jetbrains.kotlinx:kotlinx-html-js:$kotlinx_html_version"
         }
 
