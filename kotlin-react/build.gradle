@@ -1,4 +1,6 @@
-applyKotlinJS()
+plugins {
+  id 'org.jetbrains.kotlin.js'
+}
 
 configurePublishingWithNPM(react_version)
 

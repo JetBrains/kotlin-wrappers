@@ -41,9 +41,7 @@ subprojects {
 
     def projectName = name
 
-    ext.applyKotlinJS = {
-        apply plugin: 'org.jetbrains.kotlin.js'
-
+    plugins.withType(org.jetbrains.kotlin.gradle.plugin.KotlinJsPluginWrapper) {
         kotlin {
             target  {
                 useCommonJs()
