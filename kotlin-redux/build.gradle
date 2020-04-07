@@ -1,6 +1,7 @@
-applyKotlinJS()
-
-apply plugin: 'kotlinx-serialization'
+plugins {
+  id 'org.jetbrains.kotlin.js'
+  id 'org.jetbrains.kotlin.plugin.serialization'
+}
 
 configurePublishingWithNPM(redux_version)
 

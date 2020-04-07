@@ -1,6 +1,6 @@
-import org.gradle.api.publish.maven.internal.artifact.FileBasedMavenArtifact
-
-apply plugin: 'org.jetbrains.kotlin.multiplatform'
+plugins {
+  id 'org.jetbrains.kotlin.multiplatform'
+}
 
 kotlin {
     js()
@@ -50,7 +50,7 @@ kotlin {
 configurePublishing(css_version)
 
 project("kotlin-css-js") {
-    applyKotlinJS()
+    apply plugin: 'org.jetbrains.kotlin.js'
 
     configurePublishingWithNPM(css_version)
 
@@ -60,7 +60,6 @@ project("kotlin-css-js") {
 }
 
 project("kotlin-css-jvm") {
-
     apply plugin: 'org.jetbrains.kotlin.jvm'
 
     configurePublishingWithNPM(css_version)

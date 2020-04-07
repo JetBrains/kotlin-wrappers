@@ -1,3 +1,5 @@
-applyKotlinJS()
+plugins {
+  id 'org.jetbrains.kotlin.js'
+}
 
 configurePublishingWithNPM(mocha_version)
