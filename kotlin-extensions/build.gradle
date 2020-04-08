@@ -2,4 +2,4 @@ plugins {
   id 'org.jetbrains.kotlin.js'
 }
 
-configurePublishingWithNPM(kotlinext_version)
+configurePublishingWithNPM()

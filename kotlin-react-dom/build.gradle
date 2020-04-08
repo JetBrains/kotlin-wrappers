@@ -2,7 +2,7 @@ plugins {
   id 'org.jetbrains.kotlin.js'
 }
 
-configurePublishingWithNPM(react_dom_version)
+configurePublishingWithNPM()
 
 dependencies {
     compile project(":kotlin-react")

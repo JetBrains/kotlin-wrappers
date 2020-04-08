@@ -67,7 +67,7 @@ subprojects {
         }
     }
 
-    ext.configurePublishing = { baseVersion ->
+    ext.configurePublishing = {
         apply plugin: 'com.github.node-gradle.node'
         apply plugin: 'com.jfrog.bintray'
         apply plugin: 'maven-publish'
@@ -83,7 +83,7 @@ subprojects {
             }
         }
 
-        def v = "$baseVersion-kotlin-$kotlin_version"
+        def v = Versions.publishVersion(project)
         bintray {
             user = System.getenv('BINTRAY_USER')
             key = System.getenv('BINTRAY_KEY')
@@ -155,8 +155,8 @@ subprojects {
         }
     }
 
-    ext.configurePublishingWithNPM = { baseVersion ->
-        configurePublishing(baseVersion)
+    ext.configurePublishingWithNPM = {
+        configurePublishing()
 
         task processPkg(type: Copy) {
             from '.'
