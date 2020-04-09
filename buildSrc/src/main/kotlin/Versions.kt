@@ -5,7 +5,7 @@ import org.gradle.api.Project
 private fun Project.version(target: String): String =
     property("${target}_version") as String
 
-fun Project.publishVersion(): String {
+internal fun Project.publishVersion(): String {
     val target = name
         .removePrefix("kotlin-")
         .let {

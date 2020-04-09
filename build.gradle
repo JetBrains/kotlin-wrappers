@@ -1,13 +1,8 @@
-import org.gradle.api.publish.maven.internal.artifact.FileBasedMavenArtifact
-
 plugins {
     id "org.jetbrains.kotlin.multiplatform" version "$kotlin_version" apply false
     id "org.jetbrains.kotlin.jvm" version "$kotlin_version" apply false
     id "org.jetbrains.kotlin.js" version "$kotlin_version" apply false
     id "org.jetbrains.kotlin.plugin.serialization" version "$kotlin_version" apply false
-
-    id "com.github.node-gradle.node" version "$node_plugin_version" apply false
-    id "com.jfrog.bintray" version "$bintray_plugin_version" apply false
 }
 
 group 'org.jetbrains'
@@ -52,96 +47,8 @@ subprojects {
         }
     }
 
-    ext.configurePublishing = {
-        apply plugin: 'com.github.node-gradle.node'
-        apply plugin: 'com.jfrog.bintray'
-        apply plugin: 'maven-publish'
-
-        artifacts {
-            if (kotlin instanceof org.jetbrains.kotlin.gradle.dsl.KotlinJsProjectExtension) {
-                archives JsSourcesJar
-            } else if (kotlin instanceof org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension) {
-                archives jvmSourcesJar
-                archives jsSourcesJar
-            } else {
-                archives kotlinSourcesJar
-            }
-        }
-
-        def v = Versions.publishVersion(project)
-        bintray {
-            user = System.getenv('BINTRAY_USER')
-            key = System.getenv('BINTRAY_KEY')
-            publish = true
-            pkg {
-                repo = 'kotlin-js-wrappers'
-                name = projectName
-                userOrg = 'kotlin'
-                licenses = ['Apache-2.0']
-                vcsUrl = 'https://github.com/JetBrains/kotlin-wrappers.git'
-                version {
-                    name = v
-                }
-            }
-            if (kotlin instanceof org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension) {
-                publications = ['kotlinMultiplatform', 'metadata', 'js', 'jvm']
-            } else if (!projectName.contains("kotlin-css")) {
-                publications = ['Publication']
-            }
-        }
-
-        // to publish gradle metadata
-        tasks.getByName("bintrayUpload") {
-            doFirst {
-                publishing.publications
-                        .withType(MavenPublication.class)
-                        .forEach { publication ->
-                            def moduleFile = buildDir.toPath().resolve("publications/${publication.name}/module.json").toFile()
-                            if (moduleFile.exists()) {
-                                publication.artifact(new FileBasedMavenArtifact(moduleFile) {
-                                    String getDefaultExtension() {
-                                        return "module"
-                                    }
-                                })
-                            }
-                        }
-            }
-        }
-
-        publishing {
-            publications {
-                if (kotlin instanceof org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension) {
-                    all {
-                        def artifactName
-                        if (name == "kotlinMultiplatform") {
-                            artifactName = ""
-                        } else {
-                            artifactName = "-$name"
-                        }
-                        groupId 'org.jetbrains'
-                        artifactId "$projectName$artifactName"
-                        version v
-                    }
-                } else {
-                    Publication(MavenPublication) {
-                        from components.kotlin
-                        groupId 'org.jetbrains'
-                        artifactId projectName
-                        version v
-
-                        if (kotlin instanceof org.jetbrains.kotlin.gradle.dsl.KotlinJsProjectExtension) {
-                            artifact JsSourcesJar
-                        } else {
-                            artifact kotlinSourcesJar
-                        }
-                    }
-                }
-            }
-        }
-    }
-
     ext.configurePublishingWithNPM = {
-        configurePublishing()
+        apply plugin: "publishing-conventions"
 
         task processPkg(type: Copy) {
             from '.'

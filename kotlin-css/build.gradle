@@ -47,7 +47,7 @@ kotlin {
     }
 }
 
-configurePublishing()
+apply plugin: 'publishing-conventions'
 
 project("kotlin-css-js") {
     apply plugin: 'org.jetbrains.kotlin.js'
