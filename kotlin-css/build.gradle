@@ -47,12 +47,12 @@ kotlin {
     }
 }
 
-configurePublishing(css_version)
+configurePublishing()
 
 project("kotlin-css-js") {
     apply plugin: 'org.jetbrains.kotlin.js'
 
-    configurePublishingWithNPM(css_version)
+    configurePublishingWithNPM()
 
     dependencies {
         api project(":kotlin-css")
@@ -62,7 +62,7 @@ project("kotlin-css-js") {
 project("kotlin-css-jvm") {
     apply plugin: 'org.jetbrains.kotlin.jvm'
 
-    configurePublishingWithNPM(css_version)
+    configurePublishingWithNPM()
 
     dependencies {
         api project(":kotlin-css")
