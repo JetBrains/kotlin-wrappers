@@ -17,8 +17,6 @@ subprojects {
         maven { url "https://dl.bintray.com/kotlin/kotlin-js-wrappers" }
     }
 
-    def projectName = name
-
     plugins.withType(org.jetbrains.kotlin.gradle.plugin.KotlinJsPluginWrapper) {
         kotlin {
             target  {
@@ -33,7 +31,7 @@ subprojects {
 
         compileKotlinJs {
             kotlinOptions {
-                outputFile = "$projectDir/build/classes/main/${projectName}.js"
+                outputFile = "$projectDir/build/classes/main/${project.name}.js"
                 moduleKind = "commonjs"
                 sourceMap = true
                 sourceMapEmbedSources = "always"
@@ -45,10 +43,6 @@ subprojects {
                 sourceMap = false
             }
         }
-    }
-
-    ext.configurePublishingWithNPM = {
-      apply plugin: "npm-publishing-conventions"
     }
 }
 

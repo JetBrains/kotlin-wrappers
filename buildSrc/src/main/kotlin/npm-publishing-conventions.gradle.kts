@@ -32,7 +32,7 @@ tasks {
 }
 
 fun versionMap(): Map<String, String> =
-    listOf(
+    sequenceOf(
         "css",
         "kotlin",
         "kotlinext",
