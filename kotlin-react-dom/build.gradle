@@ -1,9 +1,0 @@
-plugins {
-  id 'org.jetbrains.kotlin.js'
-  id 'npm-publishing-conventions'
-}
-
-dependencies {
-    compile project(":kotlin-react")
-    compile "org.jetbrains.kotlinx:kotlinx-html-js:$kotlinx_html_version"
-}

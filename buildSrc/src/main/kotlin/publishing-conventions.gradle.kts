@@ -1,6 +1,4 @@
-import org.gradle.api.publish.PublishingExtension
 import org.gradle.api.publish.maven.internal.artifact.FileBasedMavenArtifact
-import org.gradle.kotlin.dsl.configure
 
 plugins {
     id("com.jfrog.bintray")
