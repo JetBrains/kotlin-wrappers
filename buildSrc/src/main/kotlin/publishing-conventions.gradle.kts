@@ -1,8 +1,6 @@
 import org.gradle.api.publish.maven.internal.artifact.FileBasedMavenArtifact
-import org.gradle.kotlin.dsl.*
 
 plugins {
-    id("com.github.node-gradle.node")
     id("com.jfrog.bintray")
     `maven-publish`
 }

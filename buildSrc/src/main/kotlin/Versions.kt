@@ -1,9 +1,12 @@
-@file:JvmName("Versions")
-
 import org.gradle.api.Project
 
 private fun Project.version(target: String): String =
     property("${target}_version") as String
+
+internal fun Project.versionPair(target: String): Pair<String, String> {
+    val propertyName = "${target}_version"
+    return propertyName to property(propertyName) as String
+}
 
 internal fun Project.publishVersion(): String {
     val target = name
