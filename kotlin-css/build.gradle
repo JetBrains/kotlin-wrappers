@@ -1,5 +1,6 @@
 plugins {
   id 'org.jetbrains.kotlin.multiplatform'
+  id 'publishing-conventions'
 }
 
 kotlin {
@@ -46,8 +47,6 @@ kotlin {
         }
     }
 }
-
-apply plugin: 'publishing-conventions'
 
 project("kotlin-css-js") {
     apply plugin: 'org.jetbrains.kotlin.js'

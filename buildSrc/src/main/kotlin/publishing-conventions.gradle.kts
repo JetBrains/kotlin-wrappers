@@ -1,22 +1,26 @@
+import org.gradle.api.publish.PublishingExtension
 import org.gradle.api.publish.maven.internal.artifact.FileBasedMavenArtifact
+import org.gradle.kotlin.dsl.configure
 
 plugins {
     id("com.jfrog.bintray")
     `maven-publish`
 }
 
-artifacts {
-    when {
-        isKotlinJsProject ->
-            archives(tasks.named("JsSourcesJar"))
+afterEvaluate {
+    artifacts {
+        when {
+            isKotlinJsProject ->
+                archives(tasks.named("JsSourcesJar"))
 
-        isKotlinMultiplatformProject -> {
-            archives(tasks.named("jvmSourcesJar"))
-            archives(tasks.named("jsSourcesJar"))
+            isKotlinMultiplatformProject -> {
+                archives(tasks.named("jvmSourcesJar"))
+                archives(tasks.named("jsSourcesJar"))
+            }
+
+            else ->
+                archives(tasks.named("kotlinSourcesJar"))
         }
-
-        else ->
-            archives(tasks.named("kotlinSourcesJar"))
     }
 }
 
