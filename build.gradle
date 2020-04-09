@@ -17,8 +17,6 @@ subprojects {
         maven { url "https://dl.bintray.com/kotlin/kotlin-js-wrappers" }
     }
 
-    def projectName = name
-
     plugins.withType(org.jetbrains.kotlin.gradle.plugin.KotlinJsPluginWrapper) {
         kotlin {
             target  {
@@ -33,7 +31,7 @@ subprojects {
 
         compileKotlinJs {
             kotlinOptions {
-                outputFile = "$projectDir/build/classes/main/${projectName}.js"
+                outputFile = "$projectDir/build/classes/main/${project.name}.js"
                 moduleKind = "commonjs"
                 sourceMap = true
                 sourceMapEmbedSources = "always"
@@ -45,46 +43,6 @@ subprojects {
                 sourceMap = false
             }
         }
-    }
-
-    ext.configurePublishingWithNPM = {
-        apply plugin: "publishing-conventions"
-
-        task processPkg(type: Copy) {
-            from '.'
-            into 'build/npm'
-            include 'package.json'
-            expand(
-                    css_version: "$css_version",
-                    kotlin_version: "$kotlin_version",
-                    kotlinext_version: "$kotlinext_version",
-                    mocha_version: "$mocha_version",
-                    react_version: "$react_version",
-                    react_dom_version: "$react_dom_version",
-                    react_redux_version: "$react_redux_version",
-                    react_router_dom_version: "$react_router_dom_version",
-                    redux_version: "$redux_version",
-                    styled_version: "$styled_version"
-            )
-        }
-
-        task prepublish(type: Copy) {
-            from '.'
-            into 'build/npm'
-            exclude 'package.json'
-            exclude 'build/npm'
-        }
-
-        npm_publish {
-            args = ['--access', 'public']
-            execOverrides {
-                it.workingDir = 'build/npm'
-            }
-        }
-
-        npm_publish.dependsOn prepublish
-        npm_publish.dependsOn processPkg
-        prepublish.dependsOn build
     }
 }
 

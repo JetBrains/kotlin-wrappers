@@ -1,5 +1,4 @@
 plugins {
   id 'org.jetbrains.kotlin.js'
+  id 'npm-publishing-conventions'
 }
-
-configurePublishingWithNPM()

@@ -1,9 +1,8 @@
 plugins {
   id 'org.jetbrains.kotlin.js'
   id 'org.jetbrains.kotlin.plugin.serialization'
+  id 'npm-publishing-conventions'
 }
-
-configurePublishingWithNPM()
 
 dependencies {
     compile project(":kotlin-extensions")
