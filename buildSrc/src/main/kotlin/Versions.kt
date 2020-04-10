@@ -1,6 +1,6 @@
 import org.gradle.api.Project
 
-private fun Project.version(target: String): String =
+internal fun Project.version(target: String): String =
     property("${target}_version") as String
 
 internal fun Project.versionPair(target: String): Pair<String, String> {
