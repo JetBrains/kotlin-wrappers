@@ -73,8 +73,7 @@ fun useLayoutEffect(dependencies: RDependenciesList? = null, effect: () -> Unit)
         undefined
     }
     if (dependencies != null) {
-        rawUseLayoutEffect(rawEffect, dependencies.toTypedArray()
-        )
+        rawUseLayoutEffect(rawEffect, dependencies.toTypedArray())
     } else {
         rawUseLayoutEffect(rawEffect)
     }

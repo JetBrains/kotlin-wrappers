@@ -3,10 +3,12 @@ package kotlinx.css
 private val hyphenize: (String) -> String = memoizeString {
     buildString {
         it.forEach {
-            append(when (it) {
-                in 'A'..'Z' -> "-${it.toLowerCase()}"
-                else -> it
-            })
+            append(
+                when (it) {
+                    in 'A'..'Z' -> "-${it.toLowerCase()}"
+                    else -> it
+                }
+            )
         }
     }
 }

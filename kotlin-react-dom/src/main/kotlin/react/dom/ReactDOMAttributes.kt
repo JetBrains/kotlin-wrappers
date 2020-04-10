@@ -198,7 +198,8 @@ private val events = listOf(
     "value",
     "width",
     "wmode",
-    "wrap")
+    "wrap"
+)
 
 private val attrsMap = events.map { it.toLowerCase() to it }.toMap().toMutableMap().apply {
     put("class", "className")

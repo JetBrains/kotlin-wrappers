@@ -12,9 +12,11 @@ enum class TextDecorationLine {
 }
 
 
-class TextDecoration(private val lines: Set<TextDecorationLine>,
-                     val style: TextDecorationStyle? = null,
-                     val color: Color? = null) {
+class TextDecoration(
+    private val lines: Set<TextDecorationLine>,
+    val style: TextDecorationStyle? = null,
+    val color: Color? = null
+) {
     companion object {
         val none = TextDecoration(setOf())
     }
@@ -38,8 +40,10 @@ enum class TextDecorationStyle {
     override fun toString() = name
 }
 
-fun StyledElement.textDecoration(vararg lines: TextDecorationLine,
-                                 style: TextDecorationStyle? = null,
-                                 color: Color? = null) {
+fun StyledElement.textDecoration(
+    vararg lines: TextDecorationLine,
+    style: TextDecorationStyle? = null,
+    color: Color? = null
+) {
     textDecoration = TextDecoration(lines.toSet(), style, color)
 }
