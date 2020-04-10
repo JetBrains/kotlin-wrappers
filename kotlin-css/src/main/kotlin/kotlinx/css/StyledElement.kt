@@ -107,13 +107,16 @@ var StyledElement.gridAutoFlow: GridAutoFlow by CSSProperty()
 var StyledElement.gridAutoRows: GridAutoRows by CSSProperty()
 var StyledElement.gridColumn: GridColumn by CSSProperty()
 var StyledElement.gridColumnEnd: GridColumnEnd by CSSProperty()
+
 @Deprecated("The gridColumnGap property is deprecated.", ReplaceWith("Use columnGap instead"))
 var StyledElement.gridColumnGap: GridColumnGap by CSSProperty()
 var StyledElement.gridColumnStart: GridColumnStart by CSSProperty()
+
 @Deprecated("The gridGap property is deprecated.", ReplaceWith("Use gap instead"))
 var StyledElement.gridGap: GridGap by CSSProperty()
 var StyledElement.gridRow: GridRow by CSSProperty()
 var StyledElement.gridRowEnd: GridRowEnd by CSSProperty()
+
 @Deprecated("The gridRowGap property is deprecated.", ReplaceWith("Use rowGap instead"))
 var StyledElement.gridRowGap: GridRowGap by CSSProperty()
 var StyledElement.gridRowStart: GridRowStart by CSSProperty()
@@ -210,10 +213,12 @@ fun StyledElement.grow(grow: Grow) {
     }
 }
 
-private fun getShorthandValue(top: LinearDimension?,
-                              right: LinearDimension?,
-                              bottom: LinearDimension?,
-                              left: LinearDimension?): String {
+private fun getShorthandValue(
+    top: LinearDimension?,
+    right: LinearDimension?,
+    bottom: LinearDimension?,
+    left: LinearDimension?
+): String {
     return if (top == bottom && right == left) {
         if (top == right) {
             "$top"
@@ -229,10 +234,12 @@ private fun getShorthandValue(top: LinearDimension?,
     }
 }
 
-fun StyledElement.margin(top: LinearDimension? = null,
-                         right: LinearDimension? = null,
-                         bottom: LinearDimension? = null,
-                         left: LinearDimension? = null) {
+fun StyledElement.margin(
+    top: LinearDimension? = null,
+    right: LinearDimension? = null,
+    bottom: LinearDimension? = null,
+    left: LinearDimension? = null
+) {
     if (top != null && right != null && bottom != null && left != null) {
         margin = getShorthandValue(top, right, bottom, left)
     } else {
@@ -251,10 +258,12 @@ fun StyledElement.margin(vertical: LinearDimension? = null, horizontal: LinearDi
 fun StyledElement.margin(top: LinearDimension, right: LinearDimension, bottom: LinearDimension) =
     margin(top, right, bottom, right)
 
-fun StyledElement.padding(top: LinearDimension? = null,
-                          right: LinearDimension? = null,
-                          bottom: LinearDimension? = null,
-                          left: LinearDimension? = null) {
+fun StyledElement.padding(
+    top: LinearDimension? = null,
+    right: LinearDimension? = null,
+    bottom: LinearDimension? = null,
+    left: LinearDimension? = null
+) {
     if (top != null && right != null && bottom != null && left != null) {
         padding = getShorthandValue(top, right, bottom, left)
     } else {

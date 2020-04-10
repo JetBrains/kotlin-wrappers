@@ -84,10 +84,10 @@ class TicTacToe(props: TicTacToeProps) : RComponent<TicTacToeProps, TicTacToeSta
 
         if (squares[i].isNullOrEmpty() and calculateWinner(squares).isNullOrEmpty()) {
             val newSquare = (
-                squares.slice(0 until i) +
-                    (if (state.xIsNext) "X" else "O") +
-                    squares.slice(i + 1..8)
-                ).toTypedArray()
+                    squares.slice(0 until i) +
+                            (if (state.xIsNext) "X" else "O") +
+                            squares.slice(i + 1..8)
+                    ).toTypedArray()
 
             val historyCopy = state.history.slice(0..state.stepNumber).toMutableList()
 

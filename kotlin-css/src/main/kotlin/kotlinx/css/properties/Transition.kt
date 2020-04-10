@@ -29,10 +29,12 @@ fun StyledElement.transition(
     delay: Time = 0.s
 ) = transition(property.name.hyphenize(), duration, timing, delay)
 
-fun CSSBuilder.delayUnhover(vararg properties: KProperty<*>,
-                            duration: Time = 300.ms,
-                            timing: Timing = Timing.materialDeceleration,
-                            delay: Time = 0.s) = !hover {
+fun CSSBuilder.delayUnhover(
+    vararg properties: KProperty<*>,
+    duration: Time = 300.ms,
+    timing: Timing = Timing.materialDeceleration,
+    delay: Time = 0.s
+) = !hover {
     when {
         properties.isNotEmpty() -> properties.forEach {
             transition(it, duration, timing, delay)

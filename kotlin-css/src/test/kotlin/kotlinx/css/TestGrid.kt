@@ -11,10 +11,12 @@ class TestGrid {
             gridAutoColumns = GridAutoColumns("10fr 1fr 200px")
         }.invoke(cssBuilder)
 
-        asserter.assertEquals("Unexpected generated CSS block", """
+        asserter.assertEquals(
+            "Unexpected generated CSS block", """
             grid-auto-columns: 10fr 1fr 200px;
 
-            """.trimIndent(), cssBuilder.toString())
+            """.trimIndent(), cssBuilder.toString()
+        )
     }
 
     @Test
@@ -25,10 +27,12 @@ class TestGrid {
             gridAutoColumns = GridAutoColumns(10.fr, 1.fr, 200.px)
         }.invoke(cssBuilder)
 
-        asserter.assertEquals("Unexpected generated CSS block", """
+        asserter.assertEquals(
+            "Unexpected generated CSS block", """
             grid-auto-columns: 10fr 1fr 200px;
 
-            """.trimIndent(), cssBuilder.toString())
+            """.trimIndent(), cssBuilder.toString()
+        )
     }
 
     @Test
@@ -39,10 +43,12 @@ class TestGrid {
             gridAutoColumns = GridAutoColumns.auto
         }.invoke(cssBuilder)
 
-        asserter.assertEquals("Unexpected generated CSS block", """
+        asserter.assertEquals(
+            "Unexpected generated CSS block", """
             grid-auto-columns: auto;
 
-            """.trimIndent(), cssBuilder.toString())
+            """.trimIndent(), cssBuilder.toString()
+        )
     }
 
     @Test
@@ -53,10 +59,12 @@ class TestGrid {
             gridAutoColumns = GridAutoColumns.fitContent(GridAutoColumns.minMax(10.px, 20.px))
         }.invoke(cssBuilder)
 
-        asserter.assertEquals("Unexpected generated CSS block", """
+        asserter.assertEquals(
+            "Unexpected generated CSS block", """
             grid-auto-columns: min-max(auto, max(auto, min-max(10px, 20px)));
 
-            """.trimIndent(), cssBuilder.toString())
+            """.trimIndent(), cssBuilder.toString()
+        )
     }
 
     @Test
@@ -67,10 +75,12 @@ class TestGrid {
             gridAutoColumns = GridAutoColumns.maxContent
         }.invoke(cssBuilder)
 
-        asserter.assertEquals("Unexpected generated CSS block", """
+        asserter.assertEquals(
+            "Unexpected generated CSS block", """
             grid-auto-columns: max-content;
 
-            """.trimIndent(), cssBuilder.toString())
+            """.trimIndent(), cssBuilder.toString()
+        )
     }
 
     @Test
@@ -81,10 +91,12 @@ class TestGrid {
             gridAutoColumns = GridAutoColumns.minContent
         }.invoke(cssBuilder)
 
-        asserter.assertEquals("Unexpected generated CSS block", """
+        asserter.assertEquals(
+            "Unexpected generated CSS block", """
             grid-auto-columns: min-content;
 
-            """.trimIndent(), cssBuilder.toString())
+            """.trimIndent(), cssBuilder.toString()
+        )
     }
 
     @Test
@@ -95,10 +107,12 @@ class TestGrid {
             gridAutoColumns = GridAutoColumns.minMax(10.fr, 20.fr)
         }.invoke(cssBuilder)
 
-        asserter.assertEquals("Unexpected generated CSS block", """
+        asserter.assertEquals(
+            "Unexpected generated CSS block", """
             grid-auto-columns: min-max(10fr, 20fr);
 
-            """.trimIndent(), cssBuilder.toString())
+            """.trimIndent(), cssBuilder.toString()
+        )
     }
 
     @Test
@@ -109,10 +123,12 @@ class TestGrid {
             gridAutoColumns = GridAutoColumns.minMax(GridAutoColumns.auto, GridAutoColumns(10.fr))
         }.invoke(cssBuilder)
 
-        asserter.assertEquals("Unexpected generated CSS block", """
+        asserter.assertEquals(
+            "Unexpected generated CSS block", """
             grid-auto-columns: min-max(auto, 10fr);
 
-            """.trimIndent(), cssBuilder.toString())
+            """.trimIndent(), cssBuilder.toString()
+        )
     }
 
     @Test
@@ -123,10 +139,12 @@ class TestGrid {
             gridAutoFlow = GridAutoFlow.initial
         }.invoke(cssBuilder)
 
-        asserter.assertEquals("Unexpected generated CSS block", """
+        asserter.assertEquals(
+            "Unexpected generated CSS block", """
             grid-auto-flow: initial;
 
-            """.trimIndent(), cssBuilder.toString())
+            """.trimIndent(), cssBuilder.toString()
+        )
     }
 
     @Test
@@ -137,10 +155,12 @@ class TestGrid {
             gridAutoFlow = GridAutoFlow.inherit
         }.invoke(cssBuilder)
 
-        asserter.assertEquals("Unexpected generated CSS block", """
+        asserter.assertEquals(
+            "Unexpected generated CSS block", """
             grid-auto-flow: inherit;
 
-            """.trimIndent(), cssBuilder.toString())
+            """.trimIndent(), cssBuilder.toString()
+        )
     }
 
     @Test
@@ -151,10 +171,12 @@ class TestGrid {
             gridAutoFlow = GridAutoFlow.unset
         }.invoke(cssBuilder)
 
-        asserter.assertEquals("Unexpected generated CSS block", """
+        asserter.assertEquals(
+            "Unexpected generated CSS block", """
             grid-auto-flow: unset;
 
-            """.trimIndent(), cssBuilder.toString())
+            """.trimIndent(), cssBuilder.toString()
+        )
     }
 
     @Test
@@ -165,10 +187,12 @@ class TestGrid {
             gridAutoFlow = GridAutoFlow.column
         }.invoke(cssBuilder)
 
-        asserter.assertEquals("Unexpected generated CSS block", """
+        asserter.assertEquals(
+            "Unexpected generated CSS block", """
             grid-auto-flow: column;
 
-            """.trimIndent(), cssBuilder.toString())
+            """.trimIndent(), cssBuilder.toString()
+        )
     }
 
     @Test
@@ -179,10 +203,12 @@ class TestGrid {
             gridAutoFlow = GridAutoFlow.columnDense
         }.invoke(cssBuilder)
 
-        asserter.assertEquals("Unexpected generated CSS block", """
+        asserter.assertEquals(
+            "Unexpected generated CSS block", """
             grid-auto-flow: column dense;
 
-            """.trimIndent(), cssBuilder.toString())
+            """.trimIndent(), cssBuilder.toString()
+        )
     }
 
     @Test
@@ -193,10 +219,12 @@ class TestGrid {
             gridAutoFlow = GridAutoFlow.dense
         }.invoke(cssBuilder)
 
-        asserter.assertEquals("Unexpected generated CSS block", """
+        asserter.assertEquals(
+            "Unexpected generated CSS block", """
             grid-auto-flow: dense;
 
-            """.trimIndent(), cssBuilder.toString())
+            """.trimIndent(), cssBuilder.toString()
+        )
     }
 
     @Test
@@ -207,10 +235,12 @@ class TestGrid {
             gridAutoFlow = GridAutoFlow.row
         }.invoke(cssBuilder)
 
-        asserter.assertEquals("Unexpected generated CSS block", """
+        asserter.assertEquals(
+            "Unexpected generated CSS block", """
             grid-auto-flow: row;
 
-            """.trimIndent(), cssBuilder.toString())
+            """.trimIndent(), cssBuilder.toString()
+        )
     }
 
     @Test
@@ -221,10 +251,12 @@ class TestGrid {
             gridAutoFlow = GridAutoFlow.rowDense
         }.invoke(cssBuilder)
 
-        asserter.assertEquals("Unexpected generated CSS block", """
+        asserter.assertEquals(
+            "Unexpected generated CSS block", """
             grid-auto-flow: row dense;
 
-            """.trimIndent(), cssBuilder.toString())
+            """.trimIndent(), cssBuilder.toString()
+        )
     }
 
     @Test
@@ -235,10 +267,12 @@ class TestGrid {
             gridAutoRows = GridAutoRows("10fr 1fr 200px")
         }.invoke(cssBuilder)
 
-        asserter.assertEquals("Unexpected generated CSS block", """
+        asserter.assertEquals(
+            "Unexpected generated CSS block", """
             grid-auto-rows: 10fr 1fr 200px;
 
-            """.trimIndent(), cssBuilder.toString())
+            """.trimIndent(), cssBuilder.toString()
+        )
     }
 
     @Test
@@ -249,10 +283,12 @@ class TestGrid {
             gridAutoRows = GridAutoRows(10.fr, 1.fr, 200.px)
         }.invoke(cssBuilder)
 
-        asserter.assertEquals("Unexpected generated CSS block", """
+        asserter.assertEquals(
+            "Unexpected generated CSS block", """
             grid-auto-rows: 10fr 1fr 200px;
 
-            """.trimIndent(), cssBuilder.toString())
+            """.trimIndent(), cssBuilder.toString()
+        )
     }
 
     @Test
@@ -263,10 +299,12 @@ class TestGrid {
             gridAutoRows = GridAutoRows.auto
         }.invoke(cssBuilder)
 
-        asserter.assertEquals("Unexpected generated CSS block", """
+        asserter.assertEquals(
+            "Unexpected generated CSS block", """
             grid-auto-rows: auto;
 
-            """.trimIndent(), cssBuilder.toString())
+            """.trimIndent(), cssBuilder.toString()
+        )
     }
 
     @Test
@@ -277,10 +315,12 @@ class TestGrid {
             gridAutoRows = GridAutoRows.fitContent(GridAutoRows.minMax(10.px, 20.px))
         }.invoke(cssBuilder)
 
-        asserter.assertEquals("Unexpected generated CSS block", """
+        asserter.assertEquals(
+            "Unexpected generated CSS block", """
             grid-auto-rows: min-max(auto, max(auto, min-max(10px, 20px)));
 
-            """.trimIndent(), cssBuilder.toString())
+            """.trimIndent(), cssBuilder.toString()
+        )
     }
 
     @Test
@@ -291,10 +331,12 @@ class TestGrid {
             gridAutoRows = GridAutoRows.maxContent
         }.invoke(cssBuilder)
 
-        asserter.assertEquals("Unexpected generated CSS block", """
+        asserter.assertEquals(
+            "Unexpected generated CSS block", """
             grid-auto-rows: max-content;
 
-            """.trimIndent(), cssBuilder.toString())
+            """.trimIndent(), cssBuilder.toString()
+        )
     }
 
     @Test
@@ -305,10 +347,12 @@ class TestGrid {
             gridAutoRows = GridAutoRows.minContent
         }.invoke(cssBuilder)
 
-        asserter.assertEquals("Unexpected generated CSS block", """
+        asserter.assertEquals(
+            "Unexpected generated CSS block", """
             grid-auto-rows: min-content;
 
-            """.trimIndent(), cssBuilder.toString())
+            """.trimIndent(), cssBuilder.toString()
+        )
     }
 
     @Test
@@ -319,10 +363,12 @@ class TestGrid {
             gridAutoRows = GridAutoRows.minMax(10.fr, 20.fr)
         }.invoke(cssBuilder)
 
-        asserter.assertEquals("Unexpected generated CSS block", """
+        asserter.assertEquals(
+            "Unexpected generated CSS block", """
             grid-auto-rows: min-max(10fr, 20fr);
 
-            """.trimIndent(), cssBuilder.toString())
+            """.trimIndent(), cssBuilder.toString()
+        )
     }
 
     @Test
@@ -333,10 +379,12 @@ class TestGrid {
             gridAutoRows = GridAutoRows.minMax(GridAutoRows.auto, GridAutoRows(10.fr))
         }.invoke(cssBuilder)
 
-        asserter.assertEquals("Unexpected generated CSS block", """
+        asserter.assertEquals(
+            "Unexpected generated CSS block", """
             grid-auto-rows: min-max(auto, 10fr);
 
-            """.trimIndent(), cssBuilder.toString())
+            """.trimIndent(), cssBuilder.toString()
+        )
     }
 
     @Test
@@ -347,9 +395,11 @@ class TestGrid {
             gridTemplateRows = GridTemplateRows.repeat("auto-fill")
         }.invoke(cssBuilder)
 
-        asserter.assertEquals("Unexpected generated CSS block", """
+        asserter.assertEquals(
+            "Unexpected generated CSS block", """
             grid-template-rows: repeat(auto-fill);
 
-            """.trimIndent(), cssBuilder.toString())
+            """.trimIndent(), cssBuilder.toString()
+        )
     }
 }

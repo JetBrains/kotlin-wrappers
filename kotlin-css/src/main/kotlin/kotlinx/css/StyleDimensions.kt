@@ -20,12 +20,14 @@ class LinearDimension(override val value: String) : CssValue(value) {
     private val valueCalcSafe: String
         get() = if (value == ZERO) "0px" else value
 
-    operator fun unaryMinus() = LinearDimension(when {
-        value.startsWith('-') -> value.substring(1)
-        value.startsWith("calc") -> "calc(0px - $value)"
-        value == ZERO -> value
-        else -> "-$value"
-    })
+    operator fun unaryMinus() = LinearDimension(
+        when {
+            value.startsWith('-') -> value.substring(1)
+            value.startsWith("calc") -> "calc(0px - $value)"
+            value == ZERO -> value
+            else -> "-$value"
+        }
+    )
 
     operator fun plus(other: LinearDimension) = LinearDimension("calc($valueCalcSafe + ${other.valueCalcSafe})")
     operator fun minus(other: LinearDimension) = LinearDimension("calc($valueCalcSafe - ${other.valueCalcSafe})")

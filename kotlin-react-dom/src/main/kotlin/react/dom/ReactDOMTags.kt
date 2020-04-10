@@ -9,13 +9,15 @@ inline fun <T : Tag> RBuilder.tag(block: RDOMBuilder<T>.() -> Unit, noinline fac
         block()
     }.create())
 
-inline fun RBuilder.a(href: String? = null, target: String? = null, classes: String? = null, block: RDOMBuilder<A>.() -> Unit): ReactElement = tag(block) { A(attributesMapOf("href", href, "target", target, "class", classes), it) }
+inline fun RBuilder.a(href: String? = null, target: String? = null, classes: String? = null, block: RDOMBuilder<A>.() -> Unit): ReactElement =
+    tag(block) { A(attributesMapOf("href", href, "target", target, "class", classes), it) }
 
 inline fun RBuilder.abbr(classes: String? = null, block: RDOMBuilder<ABBR>.() -> Unit): ReactElement = tag(block) { ABBR(attributesMapOf("class", classes), it) }
 
 inline fun RBuilder.address(classes: String? = null, block: RDOMBuilder<ADDRESS>.() -> Unit): ReactElement = tag(block) { ADDRESS(attributesMapOf("class", classes), it) }
 
-inline fun RBuilder.area(shape: AreaShape? = null, alt: String? = null, classes: String? = null, block: RDOMBuilder<AREA>.() -> Unit): ReactElement = tag(block) { AREA(attributesMapOf("Shape", shape?.enumEncode(), "alt", alt, "class", classes), it) }
+inline fun RBuilder.area(shape: AreaShape? = null, alt: String? = null, classes: String? = null, block: RDOMBuilder<AREA>.() -> Unit): ReactElement =
+    tag(block) { AREA(attributesMapOf("Shape", shape?.enumEncode(), "alt", alt, "class", classes), it) }
 
 inline fun RBuilder.article(classes: String? = null, block: RDOMBuilder<ARTICLE>.() -> Unit): ReactElement = tag(block) { ARTICLE(attributesMapOf("class", classes), it) }
 
@@ -37,7 +39,13 @@ inline fun RBuilder.body(classes: String? = null, block: RDOMBuilder<BODY>.() ->
 
 inline fun RBuilder.br(classes: String? = null, block: RDOMBuilder<BR>.() -> Unit): ReactElement = tag(block) { BR(attributesMapOf("class", classes), it) }
 
-inline fun RBuilder.button(formEncType: ButtonFormEncType? = null, formMethod: ButtonFormMethod? = null, type: ButtonType? = null, classes: String? = null, block: RDOMBuilder<BUTTON>.() -> Unit): ReactElement = tag(block) { BUTTON(attributesMapOf("formenctype", formEncType?.enumEncode(), "formmethod", formMethod?.enumEncode(), "type", type?.enumEncode(), "class", classes), it) }
+inline fun RBuilder.button(
+    formEncType: ButtonFormEncType? = null,
+    formMethod: ButtonFormMethod? = null,
+    type: ButtonType? = null,
+    classes: String? = null,
+    block: RDOMBuilder<BUTTON>.() -> Unit
+): ReactElement = tag(block) { BUTTON(attributesMapOf("formenctype", formEncType?.enumEncode(), "formmethod", formMethod?.enumEncode(), "type", type?.enumEncode(), "class", classes), it) }
 
 inline fun RBuilder.canvas(classes: String? = null, content: String = ""): ReactElement = tag({ +content }) { CANVAS(attributesMapOf("class", classes), it) }
 inline fun RBuilder.canvas(classes: String? = null, block: RDOMBuilder<CANVAS>.() -> Unit): ReactElement = tag(block) { CANVAS(attributesMapOf("class", classes), it) }
@@ -52,7 +60,8 @@ inline fun RBuilder.col(classes: String? = null, block: RDOMBuilder<COL>.() -> U
 
 inline fun RBuilder.colGroup(classes: String? = null, block: RDOMBuilder<COLGROUP>.() -> Unit): ReactElement = tag(block) { COLGROUP(attributesMapOf("class", classes), it) }
 
-inline fun RBuilder.command(type: CommandType? = null, classes: String? = null, block: RDOMBuilder<COMMAND>.() -> Unit): ReactElement = tag(block) { COMMAND(attributesMapOf("type", type?.enumEncode(), "class", classes), it) }
+inline fun RBuilder.command(type: CommandType? = null, classes: String? = null, block: RDOMBuilder<COMMAND>.() -> Unit): ReactElement =
+    tag(block) { COMMAND(attributesMapOf("type", type?.enumEncode(), "class", classes), it) }
 
 inline fun RBuilder.dataList(classes: String? = null, block: RDOMBuilder<DATALIST>.() -> Unit): ReactElement = tag(block) { DATALIST(attributesMapOf("class", classes), it) }
 
@@ -84,7 +93,8 @@ inline fun RBuilder.figure(classes: String? = null, block: RDOMBuilder<FIGURE>.(
 
 inline fun RBuilder.footer(classes: String? = null, block: RDOMBuilder<FOOTER>.() -> Unit): ReactElement = tag(block) { FOOTER(attributesMapOf("class", classes), it) }
 
-inline fun RBuilder.form(action: String? = null, encType: FormEncType? = null, method: FormMethod? = null, classes: String? = null, block: RDOMBuilder<FORM>.() -> Unit): ReactElement = tag(block) { FORM(attributesMapOf("action", action, "enctype", encType?.enumEncode(), "method", method?.enumEncode(), "class", classes), it) }
+inline fun RBuilder.form(action: String? = null, encType: FormEncType? = null, method: FormMethod? = null, classes: String? = null, block: RDOMBuilder<FORM>.() -> Unit): ReactElement =
+    tag(block) { FORM(attributesMapOf("action", action, "enctype", encType?.enumEncode(), "method", method?.enumEncode(), "class", classes), it) }
 
 inline fun RBuilder.h1(classes: String? = null, block: RDOMBuilder<H1>.() -> Unit): ReactElement = tag(block) { H1(attributesMapOf("class", classes), it) }
 
@@ -110,18 +120,31 @@ inline fun RBuilder.html(block: RDOMBuilder<HTML>.() -> Unit): ReactElement = ta
 
 inline fun RBuilder.i(classes: String? = null, block: RDOMBuilder<I>.() -> Unit): ReactElement = tag(block) { I(attributesMapOf("class", classes), it) }
 
-inline fun RBuilder.iframe(sandbox: IframeSandbox? = null, classes: String? = null, content: String = ""): ReactElement = tag({ +content }) { IFRAME(attributesMapOf("sandbox", sandbox?.enumEncode(), "class", classes), it) }
-inline fun RBuilder.iframe(sandbox: IframeSandbox? = null, classes: String? = null, block: RDOMBuilder<IFRAME>.() -> Unit): ReactElement = tag(block) { IFRAME(attributesMapOf("sandbox", sandbox?.enumEncode(), "class", classes), it) }
+inline fun RBuilder.iframe(sandbox: IframeSandbox? = null, classes: String? = null, content: String = ""): ReactElement =
+    tag({ +content }) { IFRAME(attributesMapOf("sandbox", sandbox?.enumEncode(), "class", classes), it) }
 
-inline fun RBuilder.img(alt: String? = null, src: String? = null, classes: String? = null, block: RDOMBuilder<IMG>.() -> Unit): ReactElement = tag(block) { IMG(attributesMapOf("alt", alt, "src", src, "class", classes), it) }
+inline fun RBuilder.iframe(sandbox: IframeSandbox? = null, classes: String? = null, block: RDOMBuilder<IFRAME>.() -> Unit): ReactElement =
+    tag(block) { IFRAME(attributesMapOf("sandbox", sandbox?.enumEncode(), "class", classes), it) }
 
-inline fun RBuilder.input(type: InputType? = null, formEncType: InputFormEncType? = null, formMethod: InputFormMethod? = null, name: String? = null, classes: String? = null, block: RDOMBuilder<INPUT>.() -> Unit): ReactElement = tag(block) { INPUT(attributesMapOf("type", type?.enumEncode(), "formenctype", formEncType?.enumEncode(), "formmethod", formMethod?.enumEncode(), "name", name, "class", classes), it) }
+inline fun RBuilder.img(alt: String? = null, src: String? = null, classes: String? = null, block: RDOMBuilder<IMG>.() -> Unit): ReactElement =
+    tag(block) { IMG(attributesMapOf("alt", alt, "src", src, "class", classes), it) }
+
+inline fun RBuilder.input(
+    type: InputType? = null,
+    formEncType: InputFormEncType? = null,
+    formMethod: InputFormMethod? = null,
+    name: String? = null,
+    classes: String? = null,
+    block: RDOMBuilder<INPUT>.() -> Unit
+): ReactElement =
+    tag(block) { INPUT(attributesMapOf("type", type?.enumEncode(), "formenctype", formEncType?.enumEncode(), "formmethod", formMethod?.enumEncode(), "name", name, "class", classes), it) }
 
 inline fun RBuilder.ins(classes: String? = null, block: RDOMBuilder<INS>.() -> Unit): ReactElement = tag(block) { INS(attributesMapOf("class", classes), it) }
 
 inline fun RBuilder.kbd(classes: String? = null, block: RDOMBuilder<KBD>.() -> Unit): ReactElement = tag(block) { KBD(attributesMapOf("class", classes), it) }
 
-inline fun RBuilder.keyGen(keyType: KeyGenKeyType? = null, classes: String? = null, block: RDOMBuilder<KEYGEN>.() -> Unit): ReactElement = tag(block) { KEYGEN(attributesMapOf("keytype", keyType?.enumEncode(), "class", classes), it) }
+inline fun RBuilder.keyGen(keyType: KeyGenKeyType? = null, classes: String? = null, block: RDOMBuilder<KEYGEN>.() -> Unit): ReactElement =
+    tag(block) { KEYGEN(attributesMapOf("keytype", keyType?.enumEncode(), "class", classes), it) }
 
 inline fun RBuilder.label(classes: String? = null, block: RDOMBuilder<LABEL>.() -> Unit): ReactElement = tag(block) { LABEL(attributesMapOf("class", classes), it) }
 
@@ -129,7 +152,8 @@ inline fun RBuilder.legend(classes: String? = null, block: RDOMBuilder<LEGEND>.(
 
 inline fun RBuilder.li(classes: String? = null, block: RDOMBuilder<LI>.() -> Unit): ReactElement = tag(block) { LI(attributesMapOf("class", classes), it) }
 
-inline fun RBuilder.link(href: String? = null, rel: String? = null, type: String? = null, block: RDOMBuilder<LINK>.() -> Unit): ReactElement = tag(block) { LINK(attributesMapOf("href", href, "rel", rel, "type", type), it) }
+inline fun RBuilder.link(href: String? = null, rel: String? = null, type: String? = null, block: RDOMBuilder<LINK>.() -> Unit): ReactElement =
+    tag(block) { LINK(attributesMapOf("href", href, "rel", rel, "type", type), it) }
 
 inline fun RBuilder.map(name: String? = null, classes: String? = null, block: RDOMBuilder<MAP>.() -> Unit): ReactElement = tag(block) { MAP(attributesMapOf("name", name, "class", classes), it) }
 
@@ -152,7 +176,8 @@ inline fun RBuilder.object_(classes: String? = null, block: RDOMBuilder<OBJECT>.
 
 inline fun RBuilder.ol(classes: String? = null, block: RDOMBuilder<OL>.() -> Unit): ReactElement = tag(block) { OL(attributesMapOf("class", classes), it) }
 
-inline fun RBuilder.optGroup(label: String? = null, classes: String? = null, block: RDOMBuilder<OPTGROUP>.() -> Unit): ReactElement = tag(block) { OPTGROUP(attributesMapOf("label", label, "class", classes), it) }
+inline fun RBuilder.optGroup(label: String? = null, classes: String? = null, block: RDOMBuilder<OPTGROUP>.() -> Unit): ReactElement =
+    tag(block) { OPTGROUP(attributesMapOf("label", label, "class", classes), it) }
 
 inline fun RBuilder.option(classes: String? = null, content: String = ""): ReactElement = tag({ +content }) { OPTION(attributesMapOf("class", classes), it) }
 inline fun RBuilder.option(classes: String? = null, block: RDOMBuilder<OPTION>.() -> Unit): ReactElement = tag(block) { OPTION(attributesMapOf("class", classes), it) }
@@ -207,12 +232,16 @@ inline fun RBuilder.tbody(classes: String? = null, block: RDOMBuilder<TBODY>.() 
 
 inline fun RBuilder.td(classes: String? = null, block: RDOMBuilder<TD>.() -> Unit): ReactElement = tag(block) { TD(attributesMapOf("class", classes), it) }
 
-inline fun RBuilder.textArea(rows: String? = null, cols: String? = null, wrap: TextAreaWrap? = null, classes: String? = null, content: String = ""): ReactElement = tag({ +content }) { TEXTAREA(attributesMapOf("rows", rows, "cols", cols, "wrap", wrap?.enumEncode(), "class", classes), it) }
-inline fun RBuilder.textArea(rows: String? = null, cols: String? = null, wrap: TextAreaWrap? = null, classes: String? = null, block: RDOMBuilder<TEXTAREA>.() -> Unit): ReactElement = tag(block) { TEXTAREA(attributesMapOf("rows", rows, "cols", cols, "wrap", wrap?.enumEncode(), "class", classes), it) }
+inline fun RBuilder.textArea(rows: String? = null, cols: String? = null, wrap: TextAreaWrap? = null, classes: String? = null, content: String = ""): ReactElement =
+    tag({ +content }) { TEXTAREA(attributesMapOf("rows", rows, "cols", cols, "wrap", wrap?.enumEncode(), "class", classes), it) }
+
+inline fun RBuilder.textArea(rows: String? = null, cols: String? = null, wrap: TextAreaWrap? = null, classes: String? = null, block: RDOMBuilder<TEXTAREA>.() -> Unit): ReactElement =
+    tag(block) { TEXTAREA(attributesMapOf("rows", rows, "cols", cols, "wrap", wrap?.enumEncode(), "class", classes), it) }
 
 inline fun RBuilder.tfoot(classes: String? = null, block: RDOMBuilder<TFOOT>.() -> Unit): ReactElement = tag(block) { TFOOT(attributesMapOf("class", classes), it) }
 
-inline fun RBuilder.th(scope: ThScope? = null, classes: String? = null, block: RDOMBuilder<TH>.() -> Unit): ReactElement = tag(block) { TH(attributesMapOf("scope", scope?.enumEncode(), "class", classes), it) }
+inline fun RBuilder.th(scope: ThScope? = null, classes: String? = null, block: RDOMBuilder<TH>.() -> Unit): ReactElement =
+    tag(block) { TH(attributesMapOf("scope", scope?.enumEncode(), "class", classes), it) }
 
 inline fun RBuilder.thead(classes: String? = null, block: RDOMBuilder<THEAD>.() -> Unit): ReactElement = tag(block) { THEAD(attributesMapOf("class", classes), it) }
 

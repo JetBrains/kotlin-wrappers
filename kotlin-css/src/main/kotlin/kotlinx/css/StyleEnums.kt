@@ -399,7 +399,8 @@ class Color(override val value: String) : CssValue(value) {
         val red: Int,
         val green: Int,
         val blue: Int,
-        val alpha: Double = 1.0) {
+        val alpha: Double = 1.0
+    ) {
 
         // Algorithm adapted from http://www.niwa.nu/2013/05/math-behind-colorspace-conversions-rgb-hsl/
         fun asHSLA(): HSLA {
@@ -430,7 +431,8 @@ class Color(override val value: String) : CssValue(value) {
         val hue: Int,
         val saturation: Int,
         val lightness: Int,
-        val alpha: Double = 1.0) {
+        val alpha: Double = 1.0
+    ) {
 
         // Algorithm from W3C link referenced in class comment (section 4.2.4. HSL color values)
         fun asRGBA(): RGBA {
@@ -470,13 +472,15 @@ class Color(override val value: String) : CssValue(value) {
                 ?: throw IllegalArgumentException("Expected hsl or hsla notation, got $value")
 
         val hueShape = getHSLParameter(1)
-        val hue = normalizeHue(when {
-            hueShape.endsWith("grad", true) -> hueShape.substringBefore("grad").toDouble() * (9.0 / 10)
-            hueShape.endsWith("rad", true) -> (hueShape.substringBefore("rad").toDouble() * 180) / PI
-            hueShape.endsWith("turn", true) -> hueShape.substringBefore("turn").toDouble() * 360.0
-            hueShape.endsWith("deg", true) -> hueShape.substringBefore("deg").toDouble()
-            else -> hueShape.toDouble()
-        })
+        val hue = normalizeHue(
+            when {
+                hueShape.endsWith("grad", true) -> hueShape.substringBefore("grad").toDouble() * (9.0 / 10)
+                hueShape.endsWith("rad", true) -> (hueShape.substringBefore("rad").toDouble() * 180) / PI
+                hueShape.endsWith("turn", true) -> hueShape.substringBefore("turn").toDouble() * 360.0
+                hueShape.endsWith("deg", true) -> hueShape.substringBefore("deg").toDouble()
+                else -> hueShape.toDouble()
+            }
+        )
         val saturation = normalizePercent(getHSLParameter(2).toInt())
         val lightness = normalizePercent(getHSLParameter(3).toInt())
         val alpha = normalizeAlpha(match?.groups?.get(4)?.value?.toDouble() ?: 1.0)
