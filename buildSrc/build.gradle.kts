@@ -11,6 +11,6 @@ kotlinDslPluginOptions {
 }
 
 dependencies {
-    implementation("com.github.node-gradle:gradle-node-plugin:${property("node_plugin_version")}")
-    implementation("com.jfrog.bintray.gradle:gradle-bintray-plugin:${property("bintray_plugin_version")}")
+    implementation("com.github.node-gradle:gradle-node-plugin:${property("node-plugin.version")}")
+    implementation("com.jfrog.bintray.gradle:gradle-bintray-plugin:${property("bintray-plugin.version")}")
 }

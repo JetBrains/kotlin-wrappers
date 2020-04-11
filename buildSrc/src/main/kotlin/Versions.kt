@@ -1,10 +1,10 @@
 import org.gradle.api.Project
 
 internal fun Project.version(target: String): String =
-    property("${target}_version") as String
+    property("${target}.version") as String
 
 internal fun Project.versionPair(target: String): Pair<String, String> {
-    val propertyName = "${target}_version"
+    val propertyName = "${target}.version"
     return propertyName to property(propertyName) as String
 }
 
@@ -15,7 +15,7 @@ internal fun Project.publishVersion(): String {
             when {
                 it.startsWith("css") -> "css"
                 it == "extensions" -> "kotlinext"
-                else -> it.replace("-", "_")
+                else -> it
             }
         }
 
