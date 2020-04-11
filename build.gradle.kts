@@ -5,9 +5,6 @@ plugins {
     kotlin("js") apply false
 }
 
-group = "org.jetbrains"
-version = "1.0-SNAPSHOT"
-
 subprojects {
     repositories {
         jcenter()
