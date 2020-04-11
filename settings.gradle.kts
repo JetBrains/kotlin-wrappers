@@ -1,3 +1,5 @@
+rootProject.name = "kotlin-wrappers"
+
 pluginManagement {
     resolutionStrategy {
         plugins {
@@ -14,8 +16,6 @@ pluginManagement {
         maven("https://dl.bintray.com/kotlin/kotlin-eap")
     }
 }
-
-rootProject.name = "kotlin-wrappers"
 
 // Platform-agnostic CSS support
 include("kotlin-css")

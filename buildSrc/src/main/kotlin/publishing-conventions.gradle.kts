@@ -68,14 +68,14 @@ publishing {
                     else -> "-$name"
                 }
 
-                groupId = "org.jetbrains"
+                groupId = project.group.toString()
                 artifactId = "${project.name}$artifactName"
                 version = publishVersion
             }
         } else {
             create<MavenPublication>("Publication") {
                 from(components["kotlin"])
-                groupId = "org.jetbrains"
+                groupId = project.group.toString()
                 artifactId = project.name
                 version = publishVersion
 
