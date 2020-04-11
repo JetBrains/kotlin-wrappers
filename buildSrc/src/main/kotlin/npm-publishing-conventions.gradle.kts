@@ -38,9 +38,9 @@ fun versionMap(): Map<String, String> =
         "kotlinext",
         "mocha",
         "react",
-        "react_dom",
-        "react_redux",
-        "react_router_dom",
+        "react-dom",
+        "react-redux",
+        "react-router-dom",
         "redux",
         "styled"
     ).associate(::versionPair)

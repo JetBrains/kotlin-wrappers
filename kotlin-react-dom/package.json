@@ -1,6 +1,6 @@
 {
   "name": "@jetbrains/kotlin-react-dom",
-  "version": "$react_dom_version",
+  "version": "$react-dom.version",
   "description": "Kotlin wrapper for React DOM library",
   "files": [
     "build/classes",
@@ -10,8 +10,8 @@
   "main": "build/classes/main/kotlin-react-dom.js",
   "repository": "https://github.com/JetBrains/kotlin-wrappers",
   "peerDependencies": {
-    "@jetbrains/kotlin-react": "^$react_version",
-    "kotlin": "^$kotlin_version",
+    "@jetbrains/kotlin-react": "^$react.version",
+    "kotlin": "^$kotlin.version",
     "react-dom": ">=15.x.x <=16.x.x"
   },
   "author": "Filipp Riabchun",

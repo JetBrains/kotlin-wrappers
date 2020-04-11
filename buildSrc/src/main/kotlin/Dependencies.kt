@@ -1,10 +1,13 @@
 import org.gradle.api.Project
 
 fun Project.kotlinxHtml(name: String): String =
-    "org.jetbrains.kotlinx:kotlinx-html-$name:${version("kotlinx_html")}"
+    kotlinx("kotlinx-html", name)
 
 fun Project.kotlinxCoroutines(name: String): String =
-    "org.jetbrains.kotlinx:kotlinx-coroutines-$name:${version("kotlinx_coroutines")}"
+    kotlinx("kotlinx-coroutines", name)
 
 fun Project.kotlinxSerialization(name: String): String =
-    "org.jetbrains.kotlinx:kotlinx-serialization-$name:${version("kotlinx_serialization")}"
+    kotlinx("kotlinx-serialization", name)
+
+private fun Project.kotlinx(projectName:String, name: String): String =
+    "org.jetbrains.kotlinx:$projectName-$name:${version(projectName)}"

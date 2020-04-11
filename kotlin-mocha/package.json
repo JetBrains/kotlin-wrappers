@@ -1,6 +1,6 @@
 {
   "name": "@jetbrains/kotlin-mocha",
-  "version": "$mocha_version",
+  "version": "$mocha.version",
   "description": "Kotlin wrapper for Mocha test framework",
   "files": [
     "build/classes",
@@ -10,7 +10,7 @@
   "main": "build/classes/main/kotlin-mocha.js",
   "repository": "https://github.com/JetBrains/kotlin-wrappers",
   "peerDependencies": {
-    "kotlin": "^$kotlin_version",
+    "kotlin": "^$kotlin.version",
     "mocha": "^3.0.0"
   },
   "author": "Filipp Riabchun",
