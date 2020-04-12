@@ -28,7 +28,7 @@ private class ReactStateDelegate<T>(useState: Pair<T, RSetState<T>>) : ReadWrite
     private val setState = useState.second
 
     override operator fun getValue(thisRef: Any?, property: KProperty<*>): T =
-            state
+        state
 
     override operator fun setValue(thisRef: Any?, property: KProperty<*>, value: T) {
         setState(value)
@@ -36,10 +36,10 @@ private class ReactStateDelegate<T>(useState: Pair<T, RSetState<T>>) : ReadWrite
 }
 
 fun <T> state(initValue: T): ReadWriteProperty<Any?, T> =
-        ReactStateDelegate(useState(initValue))
+    ReactStateDelegate(useState(initValue))
 
 fun <T> state(valueInitializer: () -> T): ReadWriteProperty<Any?, T> =
-        ReactStateDelegate(useState(valueInitializer))
+    ReactStateDelegate(useState(valueInitializer))
 
 typealias RReducer<S, A> = (state: S, action: A) -> S
 typealias RDispatch<A> = (action: A) -> Unit

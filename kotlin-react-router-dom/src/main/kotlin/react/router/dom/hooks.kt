@@ -4,17 +4,17 @@ import kotlinext.js.Object
 import kotlinext.js.jsObject
 import react.RProps
 
-fun <T: RProps> useParams(): T? {
+fun <T : RProps> useParams(): T? {
     val rawParams = rawUseParams()
 
     return if (Object.keys(rawParams as Any).isEmpty()) null else rawParams as T
 }
 
-fun <T: RProps> useRouteMatch(
-        exact: Boolean = false,
-        strict: Boolean = false,
-        sensitive: Boolean = false,
-        vararg path: String
+fun <T : RProps> useRouteMatch(
+    exact: Boolean = false,
+    strict: Boolean = false,
+    sensitive: Boolean = false,
+    vararg path: String
 ): RouteResultMatch<T>? {
     val options: RouteMatchOptions = jsObject {
         this.path = path
