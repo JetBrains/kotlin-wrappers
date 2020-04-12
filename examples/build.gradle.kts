@@ -4,4 +4,5 @@ plugins {
 
 dependencies {
     compile(project(":kotlin-react-dom"))
+    compile(project(":kotlin-react-router-dom"))
 }
