@@ -12,7 +12,7 @@
   "peerDependencies": {
     "@jetbrains/kotlin-react": "^$react_version",
     "kotlin": "^$kotlin_version",
-    "react-router-dom": "^4.3.1"
+    "react-router-dom": "^5.1.2"
   },
   "author": "Andrius Semionovas",
   "license": "Apache-2.0"
