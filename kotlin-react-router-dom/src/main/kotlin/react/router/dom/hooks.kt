@@ -23,7 +23,7 @@ fun <T: RProps> useRouteMatch(
         this.sensitive = sensitive
     }
 
-    return rawRouteMatch(options)
+    return rawUseRouteMatch(options)
 }
 
 external interface RouteMatchOptions {

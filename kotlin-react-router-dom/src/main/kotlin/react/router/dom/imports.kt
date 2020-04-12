@@ -14,5 +14,5 @@ external fun useLocation(): RouteResultLocation
 external fun rawUseParams(): dynamic
 
 @JsName("useRouteMatch")
-external fun <T: RProps> rawRouteMatch(options: dynamic): RouteResultMatch<T>
+external fun <T: RProps> rawUseRouteMatch(options: dynamic): RouteResultMatch<T>
 
