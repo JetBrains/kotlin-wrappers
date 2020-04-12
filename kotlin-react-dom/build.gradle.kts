@@ -4,5 +4,6 @@ plugins {
 }
 
 dependencies {
-    compile(project(":kotlin-react"))
+    implementation(project(":kotlin-extensions"))
+    implementation(project(":kotlin-react"))
 }

@@ -16,8 +16,8 @@ subprojects {
 
     plugins.withType<KotlinJsPluginWrapper> {
         dependencies {
-            "compile"(kotlin("stdlib-js"))
-            "compile"(kotlinxHtml("js"))
+            "implementation"(kotlin("stdlib-js"))
+            "implementation"(kotlinxHtml("js"))
         }
 
         tasks {
