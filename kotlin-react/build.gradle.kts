@@ -4,9 +4,9 @@ plugins {
 }
 
 dependencies {
-    compile(project(":kotlin-extensions"))
+    implementation(project(":kotlin-extensions"))
 
-    compile(kotlinxCoroutines("core"))
-    compile(kotlinxCoroutines("core-common"))
-    compile(kotlinxCoroutines("core-js"))
+    implementation(kotlinxCoroutines("core"))
+    implementation(kotlinxCoroutines("core-common"))
+    implementation(kotlinxCoroutines("core-js"))
 }

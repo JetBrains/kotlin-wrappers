@@ -4,7 +4,7 @@ plugins {
 }
 
 dependencies {
-    compile(project(":kotlin-extensions"))
-    compile(project(":kotlin-react"))
-    compile(project(":kotlin-redux"))
+    implementation(project(":kotlin-extensions"))
+    implementation(project(":kotlin-react"))
+    implementation(project(":kotlin-redux"))
 }

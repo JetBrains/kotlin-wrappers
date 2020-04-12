@@ -5,6 +5,6 @@ plugins {
 }
 
 dependencies {
-    compile(project(":kotlin-extensions"))
-    compile(kotlinxSerialization("runtime-js"))
+    implementation(project(":kotlin-extensions"))
+    implementation(kotlinxSerialization("runtime-js"))
 }

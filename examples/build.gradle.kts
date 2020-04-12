@@ -3,6 +3,8 @@ plugins {
 }
 
 dependencies {
-    compile(project(":kotlin-react-dom"))
-    compile(project(":kotlin-react-router-dom"))
+    implementation(project(":kotlin-extensions"))
+    implementation(project(":kotlin-react"))
+    implementation(project(":kotlin-react-dom"))
+    implementation(project(":kotlin-react-router-dom"))
 }
