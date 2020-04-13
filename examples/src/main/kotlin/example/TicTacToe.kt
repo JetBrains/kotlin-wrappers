@@ -58,9 +58,7 @@ fun RBuilder.board(initialSquares: Array<String?>, onClick: (Int) -> () -> Unit)
     attrs.onClick = onClick
 }
 
-interface TicTacToeProps : RProps {
-
-}
+interface TicTacToeProps : RProps
 
 interface TicTacToeState : RState {
     var history: Array<Array<String?>>

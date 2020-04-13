@@ -112,8 +112,7 @@ fun RBuilder.searchBar(
 }
 
 
-interface ProductProps : RProps {
-}
+interface ProductProps : RProps
 
 interface ProductState : RState {
     var filterText: String

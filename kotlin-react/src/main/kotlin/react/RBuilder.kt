@@ -73,20 +73,18 @@ open class RBuilder {
     }
 }
 
-open class RBuilderMultiple : RBuilder() {
-}
+open class RBuilderMultiple : RBuilder()
 
 fun buildElements(handler: RBuilder.() -> Unit): dynamic {
     val nodes = RBuilder().apply(handler).childList
-    return when {
-        nodes.size == 0 -> null
-        nodes.size == 1 -> nodes.first()
+    return when (nodes.size) {
+        0 -> null
+        1 -> nodes.first()
         else -> createElement(Fragment, js {}, *nodes.toTypedArray())
     }
 }
 
-open class RBuilderSingle : RBuilder() {
-}
+open class RBuilderSingle : RBuilder()
 
 inline fun buildElement(handler: RBuilder.() -> Unit): ReactElement? =
     RBuilder().apply(handler).childList.first() as ReactElement?
