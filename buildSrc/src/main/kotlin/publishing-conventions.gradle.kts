@@ -5,23 +5,6 @@ plugins {
     `maven-publish`
 }
 
-afterEvaluate {
-    artifacts {
-        when {
-            isKotlinJsProject ->
-                archives(tasks.named("JsSourcesJar"))
-
-            isKotlinMultiplatformProject -> {
-                archives(tasks.named("jvmSourcesJar"))
-                archives(tasks.named("jsSourcesJar"))
-            }
-
-            else ->
-                archives(tasks.named("kotlinSourcesJar"))
-        }
-    }
-}
-
 val publishVersion = publishVersion()
 
 bintray {
@@ -38,10 +21,13 @@ bintray {
             name = publishVersion
         }
     }
-    if (isKotlinMultiplatformProject) {
-        setPublications("kotlinMultiplatform", "metadata", "js", "jvm")
-    } else if (!project.name.contains("kotlin-css")) {
-        setPublications("Publication")
+
+    when {
+        isKotlinMultiplatformProject ->
+            setPublications("kotlinMultiplatform", "metadata", "js", "jvm")
+
+        "kotlin-css" !in project.name ->
+            setPublications("Publication")
     }
 }
 
@@ -79,10 +65,12 @@ publishing {
                 artifactId = project.name
                 version = publishVersion
 
-                if (isKotlinJsProject) {
-                    artifact(tasks.getByName<Zip>("JsSourcesJar"))
-                } else {
-                    artifact(tasks.getByName<Zip>("kotlinSourcesJar"))
+                when {
+                    isKotlinJsProject ->
+                        artifact(tasks.getByName<Zip>("JsSourcesJar"))
+
+                    isKotlinJvmProject ->
+                        artifact(tasks.getByName<Zip>("kotlinSourcesJar"))
                 }
             }
         }
