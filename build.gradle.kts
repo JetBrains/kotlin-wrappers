@@ -1,4 +1,5 @@
 import org.jetbrains.kotlin.gradle.dsl.KotlinJsCompile
+import org.jetbrains.kotlin.gradle.dsl.KotlinJsProjectExtension
 import org.jetbrains.kotlin.gradle.plugin.KotlinJsPluginWrapper
 
 plugins {
@@ -15,6 +16,12 @@ subprojects {
     }
 
     plugins.withType<KotlinJsPluginWrapper> {
+        extensions.getByType<KotlinJsProjectExtension>().apply {
+            target {
+                browser()
+            }
+        }
+
         dependencies {
             "implementation"(kotlin("stdlib-js"))
             "implementation"(kotlinxHtml("js"))
