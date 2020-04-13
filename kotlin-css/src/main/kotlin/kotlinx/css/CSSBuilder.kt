@@ -98,9 +98,9 @@ class CSSBuilder(
     fun visited(block: RuleSet) = "&:visited"(block)
 
     // Children & descendants
-    fun children(selector: String? = null, block: RuleSet) = "& > ${selector?.let { it } ?: "*"}"(block)
+    fun children(selector: String? = null, block: RuleSet) = "& > ${selector ?: "*"}"(block)
 
-    fun descendants(selector: String? = null, block: RuleSet) = "& ${selector?.let { it } ?: "*"}"(block)
+    fun descendants(selector: String? = null, block: RuleSet) = "& ${selector ?: "*"}"(block)
 
     fun ancestorHover(selector: String, block: RuleSet) = "$selector:hover &"(block)
 

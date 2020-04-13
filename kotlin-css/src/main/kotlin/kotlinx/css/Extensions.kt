@@ -29,17 +29,4 @@ private fun <R> memoizeString(fn: (String) -> R): (String) -> R {
 
 fun String.hyphenize() = hyphenize(this)
 
-operator fun String.times(n: Int): String {
-    return when (n) {
-        0 -> ""
-        1 -> this
-        else -> {
-            var i = 0
-            var result: String = this
-            while (++i < n) {
-                result += this
-            }
-            result
-        }
-    }
-}
+operator fun String.times(n: Int): String = repeat(n)
