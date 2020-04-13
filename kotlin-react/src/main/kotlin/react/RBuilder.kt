@@ -94,14 +94,14 @@ open class RElementBuilder<out P : RProps>(open val attrs: P) : RBuilder() {
     }
 
     var key: String
-        @Deprecated(message = "Write only property", level = DeprecationLevel.HIDDEN)
+        @Deprecated(message = "Write-only property", level = DeprecationLevel.HIDDEN)
         get() = error("")
         set(value) {
             attrs.key = value
         }
 
     var ref: RRef
-        @Deprecated(message = "Write only property", level = DeprecationLevel.HIDDEN)
+        @Deprecated(message = "Write-only property", level = DeprecationLevel.HIDDEN)
         get() = error("")
         set(value) {
             attrs.ref = value
