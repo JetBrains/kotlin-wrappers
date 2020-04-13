@@ -293,12 +293,21 @@ class Color(override val value: String) : CssValue(value) {
         val yellow = Color("yellow", "#ffff00")
         val yellowGreen = Color("yellowgreen", "#9acd3")
 
-        val normalizeFractionalPercent = { v: Double -> normalize(min = 0.0, max = 1.0, value = v) }
-        val normalizePercent = { v: Int -> normalize(min = 0, max = 100, value = v) }
-        val normalizeRGB = { v: Int -> normalize(min = 0, max = 255, value = v) }
-        val normalizeHue: (Double) -> Int = { v: Double -> (((v % 360) + 360) % 360).roundToInt() } // algorithm for capping from W3C
+        fun normalizeFractionalPercent(value: Double):Double =
+            value.coerceIn(minimumValue = 0.0, maximumValue = 1.0)
 
-        val normalizeAlpha = normalizeFractionalPercent
+        fun normalizePercent(value: Int):Int =
+            value.coerceIn(minimumValue = 0, maximumValue = 100)
+
+        fun normalizeRGB(value: Int):Int =
+            value.coerceIn(minimumValue = 0, maximumValue = 255)
+
+        // algorithm for capping from W3C
+        fun normalizeHue(value: Double): Int =
+            (((value % 360) + 360) % 360).roundToInt()
+
+        fun normalizeAlpha(value: Double):Double =
+            normalizeFractionalPercent(value)
     }
 
     fun withAlpha(alpha: Double) =
@@ -540,13 +549,6 @@ fun hsl(hue: Int, saturation: Int, lightness: Int) = Color("hsl($hue, $saturatio
 fun hsla(hue: Int, saturation: Int, lightness: Int, alpha: Double) = Color("hsla($hue, $saturation%, $lightness%, $alpha)")
 fun blackAlpha(alpha: Double) = Color.black.withAlpha(alpha)
 fun whiteAlpha(alpha: Double) = Color.white.withAlpha(alpha)
-
-// Restricts value to a [min, max] range
-private fun normalize(min: Int, max: Int, value: Int): Int =
-    kotlin.math.max(min, kotlin.math.min(max, value))
-
-private fun normalize(min: Double, max: Double, value: Double): Double =
-    kotlin.math.max(min, kotlin.math.min(max, value))
 
 class ColumnGap(override val value: String) : CssValue(value) {
     companion object {
