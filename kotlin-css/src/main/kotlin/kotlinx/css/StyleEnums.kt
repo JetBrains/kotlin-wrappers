@@ -293,20 +293,20 @@ class Color(override val value: String) : CssValue(value) {
         val yellow = Color("yellow", "#ffff00")
         val yellowGreen = Color("yellowgreen", "#9acd3")
 
-        fun normalizeFractionalPercent(value: Double):Double =
+        fun normalizeFractionalPercent(value: Double): Double =
             value.coerceIn(minimumValue = 0.0, maximumValue = 1.0)
 
-        fun normalizePercent(value: Int):Int =
+        fun normalizePercent(value: Int): Int =
             value.coerceIn(minimumValue = 0, maximumValue = 100)
 
-        fun normalizeRGB(value: Int):Int =
+        fun normalizeRGB(value: Int): Int =
             value.coerceIn(minimumValue = 0, maximumValue = 255)
 
         // algorithm for capping from W3C
         fun normalizeHue(value: Double): Int =
             (((value % 360) + 360) % 360).roundToInt()
 
-        fun normalizeAlpha(value: Double):Double =
+        fun normalizeAlpha(value: Double): Double =
             normalizeFractionalPercent(value)
     }
 
