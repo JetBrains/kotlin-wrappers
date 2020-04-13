@@ -9,7 +9,7 @@ inline fun <T : Any> jsObject(builder: T.() -> Unit): T {
 
 inline fun js(builder: dynamic.() -> Unit): dynamic = jsObject(builder)
 
-fun <T : Any> clone(obj: T) = Object.assign(jsObject<T> {}, obj)
+fun <T : Any> clone(obj: T) = Object.assign(jsObject {}, obj)
 
 inline fun <T : Any> assign(obj: T, builder: T.() -> Unit) = clone(obj).apply(builder)
 
