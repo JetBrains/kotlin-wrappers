@@ -67,3 +67,8 @@ private fun StyleSheet.getClassName(property: KProperty<*>): String {
 fun <T : StyleSheet> T.getClassSelector(getClass: (T) -> KProperty0<RuleSet>): String {
     return ".${getClassName(getClass)}"
 }
+
+/**
+ * Use this function to assign a CSS class without any properties to an element
+ */
+fun StyleSheet.cssMarker() = CssHolder(this, {})
