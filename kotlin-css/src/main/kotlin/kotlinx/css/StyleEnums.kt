@@ -535,11 +535,16 @@ class Color(override val value: String) : CssValue(value) {
 }
 
 fun rgb(red: Int, green: Int, blue: Int) = Color("rgb($red, $green, $blue)")
-fun rgba(red: Int, green: Int, blue: Int, alpha: Double) = Color("rgba($red, $green, $blue, $alpha)")
+fun rgba(red: Int, green: Int, blue: Int, alpha: Double) = Color("rgba($red, $green, $blue, ${formatAlpha(alpha)})")
 fun hsl(hue: Int, saturation: Int, lightness: Int) = Color("hsl($hue, $saturation%, $lightness%)")
-fun hsla(hue: Int, saturation: Int, lightness: Int, alpha: Double) = Color("hsla($hue, $saturation%, $lightness%, $alpha)")
+fun hsla(hue: Int, saturation: Int, lightness: Int, alpha: Double) = Color("hsla($hue, $saturation%, $lightness%, ${formatAlpha(alpha)})")
 fun blackAlpha(alpha: Double) = Color.black.withAlpha(alpha)
 fun whiteAlpha(alpha: Double) = Color.white.withAlpha(alpha)
+
+private fun formatAlpha(alpha: Double): String =
+    alpha.toString().let {
+        if ("." in it) it else "$it.0"
+    }
 
 // Restricts value to a [min, max] range
 private fun normalize(min: Int, max: Int, value: Int): Int =

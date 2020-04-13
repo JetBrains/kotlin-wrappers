@@ -4,49 +4,50 @@ plugins {
 }
 
 kotlin {
-    js()
     jvm()
+    js {
+        browser()
+    }
 
     sourceSets {
         val commonMain by getting {
             kotlin.srcDir("src/main/kotlin")
             dependencies {
-                api(kotlin("stdlib-common"))
+                implementation(kotlin("stdlib-common"))
             }
         }
 
         val commonTest by getting {
             kotlin.srcDir("src/test/kotlin")
             dependencies {
-                api(kotlin("test-common"))
-                api(kotlin("test-annotations-common"))
+                implementation(kotlin("test-common"))
+                implementation(kotlin("test-annotations-common"))
             }
         }
 
         val jvmMain by getting {
             dependencies {
-                api(kotlin("stdlib-jdk8"))
+                implementation(kotlin("stdlib-jdk8"))
             }
         }
 
         val jvmTest by getting {
             dependencies {
-                api(kotlin("test"))
-                api(kotlin("test-junit"))
+                implementation(kotlin("test"))
+                implementation(kotlin("test-junit"))
             }
         }
 
         val jsMain by getting {
             dependencies {
-                api(kotlin("stdlib-js"))
-                api(project(":kotlin-extensions"))
+                implementation(kotlin("stdlib-js"))
             }
         }
 
         val jsTest by getting {
             dependencies {
-                api(kotlin("test"))
-                api(kotlin("test-js"))
+                implementation(kotlin("test"))
+                implementation(kotlin("test-js"))
             }
         }
     }
