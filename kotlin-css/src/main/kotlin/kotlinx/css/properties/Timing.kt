@@ -2,8 +2,7 @@ package kotlinx.css.properties
 
 import kotlinx.css.*
 
-class Time(override val value: String) : CssValue(value) {
-}
+class Time(override val value: String) : CssValue(value)
 
 val Number.s get() = Time("${this}s")
 val Number.ms get() = Time("${this}ms")
