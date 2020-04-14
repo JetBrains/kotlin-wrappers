@@ -85,8 +85,10 @@ fun buildElements(handler: RBuilder.() -> Unit): dynamic {
 
 open class RBuilderSingle : RBuilder()
 
-inline fun buildElement(handler: RBuilder.() -> Unit): ReactElement? =
-    RBuilder().apply(handler).childList.first() as ReactElement?
+inline fun buildElement(handler: RBuilder.() -> Unit): ReactElement =
+    RBuilder().apply(handler)
+        .childList.first()
+        .unsafeCast<ReactElement>()
 
 open class RElementBuilder<out P : RProps>(open val attrs: P) : RBuilder() {
     fun attrs(handler: P.() -> Unit) {
