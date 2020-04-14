@@ -42,7 +42,8 @@ fun RBuilder.div() {
             padding(vertical = 16.px)
 	        
             backgroundColor = Color.green
-        }    
+        }
+
         +"Hello world!"
     }
 }
@@ -65,6 +66,7 @@ fun RBuilder.div() {
         css {
             +ComponentStyles.wrapper
         }
+
         +"Hello world!"
     }
 }
@@ -142,6 +144,7 @@ fun RBuilder.div() {
         css {
             +ComponentStyles.element
         }
+
         +"An element"
     }
 
@@ -149,10 +152,12 @@ fun RBuilder.div() {
         css {
             +ComponentStyles.wrapper
         }
+
         styledDiv {
             css {
                 +ComponentStyles.inner
             }
+
             +"Inner element"
         }
     }
@@ -166,8 +171,8 @@ To create a global stylesheet use the `CSSBuilder` class and the `StyledComponen
 ```kotlin
 val styles = CSSBuilder().apply {
     body {
-        margin = 0.px
-        padding = 0.px
+        margin(0.px)
+        padding(0.px)
     }
 }
 
