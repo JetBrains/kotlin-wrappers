@@ -86,9 +86,9 @@ inline fun <P : RProps> rFunction(
     displayName: String,
     crossinline render: RBuilder.(P) -> Unit
 ): RClass<P> {
-    val fn = { props: P -> buildElements { render(props) } } as RClass<P>
-    fn.displayName = displayName
-    return fn
+    val fn = { props: P -> buildElements { render(props) } }
+    return fn.unsafeCast<RClass<P>>()
+        .also { it.displayName = displayName }
 }
 
 abstract class RComponent<P : RProps, S : RState> : Component<P, S> {
