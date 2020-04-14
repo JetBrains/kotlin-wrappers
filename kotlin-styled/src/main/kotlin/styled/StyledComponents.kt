@@ -92,6 +92,7 @@ inline fun CustomStyledProps.css(noinline handler: RuleSet) {
     css!!.add(handler)
 }
 
+@Suppress("NOTHING_TO_INLINE")
 inline fun <P : CustomStyledProps> RElementBuilder<P>.css(noinline handler: RuleSet) = attrs.css(handler)
 
 external interface StylerConfig {
@@ -167,9 +168,9 @@ object Styled {
         }
 
     fun createElement(type: Any, css: CSSBuilder, props: WithClassName, children: List<Any>): ReactElement {
-        if (css.rules.isNotEmpty() || css.declarations.size > 0) {
+        if (css.rules.isNotEmpty() || css.declarations.isNotEmpty()) {
             val wrappedType = wrap(type)
-            val styledProps = props as StyledProps
+            val styledProps = props.unsafeCast<StyledProps>()
             styledProps.css = css.toString()
             if (css.classes.isNotEmpty()) {
                 styledProps.className = css.classes.joinToString(separator = " ")
