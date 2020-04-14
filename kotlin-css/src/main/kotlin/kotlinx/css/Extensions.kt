@@ -1,32 +1,10 @@
 package kotlinx.css
 
-private val hyphenize: (String) -> String = memoizeString {
-    buildString {
-        it.forEach {
-            append(
-                when (it) {
-                    in 'A'..'Z' -> "-${it.toLowerCase()}"
-                    else -> it
-                }
-            )
-        }
+private val CAPITAL_LETTER = Regex("[A-Z]")
+
+fun String.hyphenize(): String =
+    replace(CAPITAL_LETTER) {
+        "-${it.value.toLowerCase()}"
     }
-}
-
-private fun <R> memoizeString(fn: (String) -> R): (String) -> R {
-    val map = LinkedHashMap<String, R>()
-    return {
-        synchronized(map) {
-            if (!map.containsKey(it)) {
-                map[it] = fn(it)
-            }
-
-            map[it]!!
-        }
-    }
-}
-
-
-fun String.hyphenize() = hyphenize(this)
 
 operator fun String.times(n: Int): String = repeat(n)
