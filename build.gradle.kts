@@ -1,6 +1,7 @@
 import org.jetbrains.kotlin.gradle.dsl.KotlinJsCompile
 import org.jetbrains.kotlin.gradle.dsl.KotlinJsProjectExtension
 import org.jetbrains.kotlin.gradle.plugin.KotlinJsPluginWrapper
+import org.jetbrains.kotlin.gradle.dsl.KotlinCompile
 
 plugins {
     kotlin("js") apply false
@@ -41,6 +42,12 @@ subprojects {
                     }
                 }
             }
+        }
+    }
+
+    tasks.withType<KotlinCompile<*>> {
+        if (!name.endsWith("JsIr")) {
+            kotlinOptions.allWarningsAsErrors = true
         }
     }
 }
