@@ -3,19 +3,31 @@
 package redux
 
 import kotlinx.serialization.*
-import kotlinx.serialization.builtins.*
 import kotlinx.serialization.json.*
 
-@UnstableDefault
+val defaultJson = Json(
+    JsonConfiguration.Stable.copy(
+        isLenient = true,
+        ignoreUnknownKeys = true,
+        serializeSpecialFloatingPointValues = true,
+        useArrayPolymorphism = true
+    )
+)
+
 @ImplicitReflectionSerializer
 inline fun <reified A : RAction> serializeAction(action: A): String {
-    return "{\"type\":\"${A::class.simpleName}\",${Json.stringify(action).drop(1)}"
+    var obj = defaultJson.toJson(action) as JsonObject
+    obj = JsonObject(obj + ("type" to JsonPrimitive(A::class.simpleName)))
+    return defaultJson.stringify(obj)
 }
 
-@UnstableDefault
 @ImplicitReflectionSerializer
 inline fun <reified A : RAction> deserializeAction(action: String): A? {
-    val t = String.serializer() to String.serializer()
-    val map = Json.parse(MapSerializer(t.first, t.second), action)
-    return if (map["type"] == A::class.simpleName) Json.nonstrict.parse(action) else null
+    val obj = defaultJson.parseJson(action) as JsonObject
+    val type: String? = obj.getPrimitiveOrNull("type")?.contentOrNull
+    return if (type == A::class.simpleName) {
+        defaultJson.parse(action)
+    } else {
+        null
+    }
 }
