@@ -17,7 +17,7 @@ external interface JsObject {
     fun propertyIsEnumerable(v: String): Boolean
 }
 
-fun Any.asJsObject() = this as JsObject
+fun Any.asJsObject() = unsafeCast<JsObject>()
 
 external object Object {
     fun <P, T : P> getPrototypeOf(o: T): P?
