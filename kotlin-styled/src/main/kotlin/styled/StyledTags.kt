@@ -155,7 +155,7 @@ inline fun RBuilder.styledNav(block: StyledDOMBuilder<NAV>.() -> Unit) = styledT
 
 inline fun RBuilder.styledNoScript(block: StyledDOMBuilder<NOSCRIPT>.() -> Unit) = styledTag(block) { NOSCRIPT(emptyMap, it) }
 
-inline fun RBuilder.styledObject_(block: StyledDOMBuilder<OBJECT_>.() -> Unit) = styledTag(block) { OBJECT_(emptyMap, it) }
+inline fun RBuilder.styledObject(block: StyledDOMBuilder<OBJECT>.() -> Unit) = styledTag(block) { OBJECT(emptyMap, it) }
 
 inline fun RBuilder.styledOl(block: StyledDOMBuilder<OL>.() -> Unit) = styledTag(block) { OL(emptyMap, it) }
 
@@ -235,6 +235,6 @@ inline fun RBuilder.styledTr(block: StyledDOMBuilder<TR>.() -> Unit) = styledTag
 
 inline fun RBuilder.styledUl(block: StyledDOMBuilder<UL>.() -> Unit) = styledTag(block) { UL(emptyMap, it) }
 
-inline fun RBuilder.styledVar_(block: StyledDOMBuilder<VAR_>.() -> Unit) = styledTag(block) { VAR_(emptyMap, it) }
+inline fun RBuilder.styledVar(block: StyledDOMBuilder<VAR>.() -> Unit) = styledTag(block) { VAR(emptyMap, it) }
 
 inline fun RBuilder.styledVideo(block: StyledDOMBuilder<VIDEO>.() -> Unit) = styledTag(block) { VIDEO(emptyMap, it) }
