@@ -140,6 +140,7 @@ fun <P : RProps> functionalComponent(
 /**
  * Append functional component [functionalComponent] as child of current builder
  */
+@Suppress("EXTENSION_SHADOWED_BY_MEMBER")
 fun <P : RProps> RBuilder.child(
     functionalComponent: FunctionalComponent<P>,
     props: P = jsObject {},
