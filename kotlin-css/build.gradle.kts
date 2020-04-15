@@ -52,21 +52,3 @@ kotlin {
         }
     }
 }
-
-project("kotlin-css-js") {
-    apply(plugin = "org.jetbrains.kotlin.js")
-    apply(plugin = "npm-publishing-conventions")
-
-    dependencies {
-        "api"(project(":kotlin-css"))
-    }
-}
-
-project("kotlin-css-jvm") {
-    apply(plugin = "org.jetbrains.kotlin.jvm")
-    apply(plugin = "npm-publishing-conventions")
-
-    dependencies {
-        "api"(project(":kotlin-css"))
-    }
-}
