@@ -3,7 +3,6 @@ plugins {
     `maven-publish`
 }
 
-val publishEnabled = project.name != "kotlin-css-js" && project.name != "kotlin-css-jvm"
 val publishVersion = publishVersion()
 
 bintray {
@@ -23,7 +22,7 @@ bintray {
         isKotlinMultiplatformProject ->
             setPublications("kotlinMultiplatform", "metadata", "js", "jvm")
 
-        publishEnabled ->
+        isKotlinJsProject ->
             setPublications("kotlin")
     }
 }
@@ -44,7 +43,7 @@ publishing.publications {
                 artifact(project.moduleArtifact(name))
             }
 
-        publishEnabled ->
+        isKotlinJsProject ->
             create<MavenPublication>("kotlin") {
                 from(components["kotlin"])
                 groupId = project.group.toString()
