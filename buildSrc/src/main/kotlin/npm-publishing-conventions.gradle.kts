@@ -2,7 +2,6 @@ import com.moowork.gradle.node.npm.NpmTask
 
 plugins {
     id("com.github.node-gradle.node")
-    id("maven-publishing-conventions")
 }
 
 tasks {
