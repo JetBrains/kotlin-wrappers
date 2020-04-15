@@ -1,6 +1,6 @@
 plugins {
     kotlin("multiplatform")
-    `publishing-conventions`
+    `maven-publishing-conventions`
 }
 
 kotlin {

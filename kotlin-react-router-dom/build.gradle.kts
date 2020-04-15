@@ -1,6 +1,6 @@
 plugins {
     kotlin("js")
-    `npm-publishing-conventions`
+    `publishing-conventions`
 }
 
 dependencies {

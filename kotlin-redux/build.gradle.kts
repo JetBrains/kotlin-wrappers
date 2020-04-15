@@ -1,7 +1,7 @@
 plugins {
     kotlin("js")
     kotlin("plugin.serialization")
-    `npm-publishing-conventions`
+    `publishing-conventions`
 }
 
 dependencies {
