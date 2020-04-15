@@ -3,6 +3,8 @@ import org.gradle.api.publish.PublicationArtifact
 import org.gradle.api.publish.maven.internal.artifact.FileBasedMavenArtifact
 import java.io.File
 
+// TODO: remove after bug fix
+//  https://github.com/bintray/gradle-bintray-plugin/issues/229
 fun Project.moduleArtifact(publicationName: String): PublicationArtifact =
     ModuleArtifact(buildDir.resolve("publications/$publicationName/module.json"))
 
