@@ -1,54 +1,37 @@
-import org.gradle.api.publish.maven.internal.artifact.FileBasedMavenArtifact
-
 plugins {
     id("com.jfrog.bintray")
     `maven-publish`
 }
 
+val publishEnabled = project.name != "kotlin-css-js" && project.name != "kotlin-css-jvm"
 val publishVersion = publishVersion()
 
 bintray {
     user = System.getenv("BINTRAY_USER")
     key = System.getenv("BINTRAY_KEY")
     publish = true
-    with(pkg) {
+    pkg.run {
         repo = "kotlin-js-wrappers"
         name = project.name
         userOrg = "kotlin"
         setLicenses("Apache-2.0")
         vcsUrl = "https://github.com/JetBrains/kotlin-wrappers.git"
-        with(version) {
-            name = publishVersion
-        }
+        version.name = publishVersion
     }
 
     when {
         isKotlinMultiplatformProject ->
             setPublications("kotlinMultiplatform", "metadata", "js", "jvm")
 
-        "kotlin-css" !in project.name ->
-            setPublications("Publication")
+        publishEnabled ->
+            setPublications("kotlin")
     }
 }
 
-// to publish gradle metadata
-tasks.named("bintrayUpload") {
-    doFirst {
-        publishing.publications
-            .withType<MavenPublication>()
-            .forEach { publication ->
-                val moduleFile = buildDir.resolve("publications/${publication.name}/module.json")
-                if (moduleFile.exists()) {
-                    publication.artifact(MetadataModuleArtifact(moduleFile))
-                }
-            }
-    }
-}
-
-publishing {
-    publications {
-        if (isKotlinMultiplatformProject) {
-            withType<MavenPublication>().all {
+publishing.publications {
+    when {
+        isKotlinMultiplatformProject ->
+            withType<MavenPublication>().configureEach {
                 val artifactName = when (name) {
                     "kotlinMultiplatform" -> ""
                     else -> "-$name"
@@ -57,26 +40,19 @@ publishing {
                 groupId = project.group.toString()
                 artifactId = "${project.name}$artifactName"
                 version = publishVersion
+
+                artifact(project.moduleArtifact(name))
             }
-        } else {
-            create<MavenPublication>("Publication") {
+
+        publishEnabled ->
+            create<MavenPublication>("kotlin") {
                 from(components["kotlin"])
                 groupId = project.group.toString()
                 artifactId = project.name
                 version = publishVersion
 
-                when {
-                    isKotlinJsProject ->
-                        artifact(tasks.getByName<Zip>("JsSourcesJar"))
-
-                    isKotlinJvmProject ->
-                        artifact(tasks.getByName<Zip>("kotlinSourcesJar"))
-                }
+                artifact(project.moduleArtifact(name))
+                artifact(tasks.getByName<Zip>("JsSourcesJar"))
             }
-        }
     }
-}
-
-class MetadataModuleArtifact(moduleFile: File) : FileBasedMavenArtifact(moduleFile) {
-    override fun getDefaultExtension() = "module"
 }
