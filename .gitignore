@@ -1,7 +1,8 @@
 *.iml
 .DS_Store
 .gradle/
-.idea/*
+**/.idea/*
+!.idea/icon.png
 !.idea/vcs.xml
 build/
 ts/
