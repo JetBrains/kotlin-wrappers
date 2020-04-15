@@ -94,7 +94,7 @@ open class RDOMBuilder<out T : Tag>(factory: (TagConsumer<Unit>) -> T) : RBuilde
             values = setOf(value)
         }
 
-    protected val props: DOMProps = jsObject {}
+    protected val props: DOMProps = jsObject()
 
     init {
         attrs.attributesEntries.forEach { setProp(it.key, it.value) }

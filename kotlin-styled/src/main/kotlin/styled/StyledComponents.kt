@@ -62,7 +62,7 @@ inline fun StyledBuilder<*>.css(handler: RuleSet) = css.handler()
 
 class StyledElementBuilder<P : WithClassName>(
     override val type: Any,
-    attrs: P = jsObject {}
+    attrs: P = jsObject()
 ) : RElementBuilder<P>(attrs), StyledBuilder<P> {
     override val css = CSSBuilder()
 
@@ -149,7 +149,7 @@ fun StyledComponents.injectGlobal(string: String) {
     val globalStyleComponent = createGlobalStyle(string)
     val element = window.document.body!!.appendChild(window.document.createElement("div")) as Element
     element.setAttribute("id", "sc-global-style-${globalStylesCounter++}")
-    val reactElement = createElement(globalStyleComponent, js {})
+    val reactElement = createElement(globalStyleComponent, jsObject())
     Promise.resolve(Unit).then {
         render(reactElement, element)
     }

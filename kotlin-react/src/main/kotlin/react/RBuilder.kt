@@ -31,7 +31,7 @@ open class RBuilder {
     }
 
     operator fun <P : RProps> RClass<P>.invoke(handler: RHandler<P>) =
-        child(this, jsObject {}, handler)
+        child(this, jsObject(), handler)
 
     operator fun <T> RProvider<T>.invoke(value: T, handler: RHandler<RProviderProps<T>>) =
         child(this, jsObject { this.value = value }, handler)
@@ -143,7 +143,7 @@ fun <P : RProps> functionalComponent(
 @Suppress("EXTENSION_SHADOWED_BY_MEMBER")
 fun <P : RProps> RBuilder.child(
     functionalComponent: FunctionalComponent<P>,
-    props: P = jsObject {},
+    props: P = jsObject(),
     handler: RHandler<P> = {}
 ): ReactElement {
     return child(functionalComponent, props, handler)

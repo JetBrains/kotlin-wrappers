@@ -1,15 +1,15 @@
 package kotlinext.js
 
-inline fun <T : Any> jsObject(builder: T.() -> Unit): T {
-    val obj: T = js("({})")
-    return obj.apply {
-        builder()
-    }
-}
+@Suppress("NOTHING_TO_INLINE")
+inline fun <T : Any> jsObject(): T =
+    js("({})")
+
+inline fun <T : Any> jsObject(builder: T.() -> Unit): T =
+    jsObject<T>().apply(builder)
 
 inline fun js(builder: dynamic.() -> Unit): dynamic = jsObject(builder)
 
-fun <T : Any> clone(obj: T) = Object.assign(jsObject {}, obj)
+fun <T : Any> clone(obj: T) = Object.assign(jsObject(), obj)
 
 inline fun <T : Any> assign(obj: T, builder: T.() -> Unit) = clone(obj).apply(builder)
 
