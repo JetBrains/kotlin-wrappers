@@ -1,5 +1,5 @@
 {
-  "name": "@jetbrains/kotlin-react-router-dom",
+  "name": "$name",
   "version": "$version",
   "description": "Kotlin wrapper for React Router DOM library",
   "files": [
@@ -8,12 +8,12 @@
     "README.md"
   ],
   "main": "build/classes/main/kotlin-react-router-dom.js",
-  "repository": "https://github.com/JetBrains/kotlin-wrappers",
+  "repository": "$repo.url",
   "peerDependencies": {
     "@jetbrains/kotlin-react": "^$react.version",
     "kotlin": "^$kotlin.version",
     "react-router-dom": "^5.1.2"
   },
   "author": "Andrius Semionovas",
-  "license": "Apache-2.0"
+  "license": "$license"
 }

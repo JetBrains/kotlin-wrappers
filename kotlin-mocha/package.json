@@ -1,5 +1,5 @@
 {
-  "name": "@jetbrains/kotlin-mocha",
+  "name": "$name",
   "version": "$version",
   "description": "Kotlin wrapper for Mocha test framework",
   "files": [
@@ -8,11 +8,11 @@
     "README.md"
   ],
   "main": "build/classes/main/kotlin-mocha.js",
-  "repository": "https://github.com/JetBrains/kotlin-wrappers",
+  "repository": "$repo.url",
   "peerDependencies": {
     "kotlin": "^$kotlin.version",
     "mocha": "^3.0.0"
   },
   "author": "Filipp Riabchun",
-  "license": "Apache-2.0"
+  "license": "$license"
 }

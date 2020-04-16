@@ -1,13 +1,22 @@
 import org.gradle.api.Project
 
+private const val REPO_URL = "https://github.com/JetBrains/kotlin-wrappers"
+private const val LICENSE = "Apache-2.0"
+
 internal fun Project.packageJsonFilter(): (String) -> String {
-    val map = mapOf("version" to npmVersion()) + versionMap()
-    return { line ->
-        var result = line
-        for ((key, value) in map) {
-            result = result.replace("${'$'}$key", value)
+    val map = mapOf(
+        "name" to "@jetbrains/$name",
+        "version" to npmVersion(),
+        "repo.url" to REPO_URL,
+        "license" to LICENSE
+    )
+        .plus(versionMap())
+        .mapKeys { "${'$'}${it.key}" }
+
+    return {
+        map.entries.fold(it) { line, (key, value) ->
+            line.replace(key, value)
         }
-        result
     }
 }
 
