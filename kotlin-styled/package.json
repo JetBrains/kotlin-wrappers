@@ -1,5 +1,5 @@
 {
-  "name": "@jetbrains/kotlin-styled",
+  "name": "$name",
   "version": "$version",
   "description": "Kotlin wrappers for styled-components and inline-style-prefixer",
   "files": [

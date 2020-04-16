@@ -5,6 +5,7 @@ private const val LICENSE = "Apache-2.0"
 
 internal fun Project.packageJsonFilter(): (String) -> String {
     val map = mapOf(
+        "name" to "@jetbrains/$name",
         "version" to npmVersion(),
         "repo.url" to REPO_URL,
         "license" to LICENSE

@@ -1,5 +1,5 @@
 {
-  "name": "@jetbrains/kotlin-react-dom",
+  "name": "$name",
   "version": "$version",
   "description": "Kotlin wrapper for React DOM library",
   "files": [
