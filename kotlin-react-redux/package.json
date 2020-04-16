@@ -2,12 +2,6 @@
   "name": "$name",
   "version": "$version",
   "description": "Kotlin wrapper for React Redux library",
-  "files": [
-    "build",
-    "src",
-    "package.json",
-    "README.md"
-  ],
   "main": "$main.js",
   "repository": "$repo.url",
   "peerDependencies": {
