@@ -17,6 +17,7 @@ tasks {
 
     val prepublish = register<Copy>("prepublish") {
         from(".")
+        from(jsDistDir)
         into(BUILD_NPM)
         exclude(PACKAGE_JSON)
         exclude(BUILD_NPM)
