@@ -5,7 +5,7 @@ import java.io.File
 private val Project.jsProjectId: String
     get() = "${rootProject.name}-$name"
 
-internal val Task.jsProjectId: String
+private val Task.jsProjectId: String
     get() = project.jsProjectId
 
 internal val Task.jsDistDir: File
@@ -15,3 +15,10 @@ internal val Task.jsDistDir: File
         .resolve("packages")
         .resolve(jsProjectId)
         .resolve("kotlin")
+
+internal val Task.jsOutputFileName: String
+    get() = if (project.isKotlinMultiplatformProject) {
+        "${jsProjectId}.js"
+    } else {
+        "${project.name}.js"
+    }

@@ -8,7 +8,7 @@
     "package.json",
     "README.md"
   ],
-  "main": "build/classes/main/kotlin-redux.js",
+  "main": "$main.js",
   "repository": "$repo.url",
   "peerDependencies": {
     "@jetbrains/kotlin-extensions": "^$kotlinext.version",

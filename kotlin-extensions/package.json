@@ -7,7 +7,7 @@
     "package.json",
     "README.md"
   ],
-  "main": "build/classes/main/kotlin-extensions.js",
+  "main": "$main.js",
   "repository": "$repo.url",
   "peerDependencies": {
     "kotlin": "^$kotlin.version"

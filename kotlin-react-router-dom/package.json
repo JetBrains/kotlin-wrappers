@@ -7,7 +7,7 @@
     "package.json",
     "README.md"
   ],
-  "main": "build/classes/main/kotlin-react-router-dom.js",
+  "main": "$main.js",
   "repository": "$repo.url",
   "peerDependencies": {
     "@jetbrains/kotlin-react": "^$react.version",

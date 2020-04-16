@@ -12,7 +12,7 @@ tasks {
         from(".")
         into(BUILD_NPM)
         include(PACKAGE_JSON)
-        filter(project.packageJsonFilter())
+        filter(packageJsonFilter())
     }
 
     val prepublish = register<Copy>("prepublish") {

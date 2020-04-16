@@ -7,7 +7,7 @@
     "package.json",
     "README.md"
   ],
-  "main": "build/classes/main/kotlin-mocha.js",
+  "main": "$main.js",
   "repository": "$repo.url",
   "peerDependencies": {
     "kotlin": "^$kotlin.version",

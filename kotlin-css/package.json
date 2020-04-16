@@ -7,7 +7,7 @@
     "package.json",
     "README.md"
   ],
-  "main": "kotlin-wrappers-kotlin-css.js",
+  "main": "$main.js",
   "repository": "$repo.url",
   "peerDependencies": {
     "@jetbrains/kotlin-extensions": "^$kotlinext.version",
