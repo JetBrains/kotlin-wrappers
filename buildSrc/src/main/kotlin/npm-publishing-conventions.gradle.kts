@@ -12,7 +12,7 @@ tasks {
         from(".")
         into(BUILD_NPM)
         include(PACKAGE_JSON)
-        expand(versionMap())
+        filter(project.packageJsonFilter())
     }
 
     val prepublish = register<Copy>("prepublish") {
@@ -33,17 +33,3 @@ tasks {
         dependsOn(processPkg)
     }
 }
-
-fun versionMap(): Map<String, String> =
-    sequenceOf(
-        "css",
-        "kotlin",
-        "kotlinext",
-        "mocha",
-        "react",
-        "react-dom",
-        "react-redux",
-        "react-router-dom",
-        "redux",
-        "styled"
-    ).associate(::versionPair)
