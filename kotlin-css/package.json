@@ -1,6 +1,6 @@
 {
   "name": "@jetbrains/kotlin-css",
-  "version": "$css.version",
+  "version": "$version",
   "description": "Platform-agnostic CSS primitives (common module)",
   "files": [
     "build/classes",

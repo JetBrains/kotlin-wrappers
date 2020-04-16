@@ -1,6 +1,6 @@
 {
   "name": "@jetbrains/kotlin-react",
-  "version": "$react.version",
+  "version": "$version",
   "description": "Kotlin wrapper for React library",
   "files": [
     "build/classes",

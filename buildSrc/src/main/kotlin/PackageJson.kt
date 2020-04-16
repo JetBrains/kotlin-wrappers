@@ -1,7 +1,7 @@
 import org.gradle.api.Project
 
 internal fun Project.packageJsonFilter(): (String) -> String {
-    val map = versionMap()
+    val map = mapOf("version" to npmVersion()) + versionMap()
     return { line ->
         var result = line
         for ((key, value) in map) {
