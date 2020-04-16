@@ -5,13 +5,20 @@ import java.io.File
 private val Project.jsProjectId: String
     get() = "${rootProject.name}-$name"
 
-internal val Task.jsProjectId: String
+private val Task.jsProjectId: String
     get() = project.jsProjectId
 
 internal val Task.jsDistDir: File
-    get() = project.rootProject
-        .buildDir
-        .resolve("js")
-        .resolve("packages")
-        .resolve(jsProjectId)
-        .resolve("kotlin")
+    get() = if (project.isKotlinMultiplatformProject) {
+        project.rootProject.buildDir
+            .resolve("js/packages/$jsProjectId/kotlin")
+    } else {
+        project.buildDir.resolve("classes/main")
+    }
+
+internal val Task.jsOutputFileName: String
+    get() = if (project.isKotlinMultiplatformProject) {
+        "${jsProjectId}.js"
+    } else {
+        "${project.name}.js"
+    }

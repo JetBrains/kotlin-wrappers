@@ -2,13 +2,7 @@
   "name": "$name",
   "version": "$version",
   "description": "Kotlin wrapper for React Redux library",
-  "files": [
-    "build",
-    "src",
-    "package.json",
-    "README.md"
-  ],
-  "main": "build/classes/main/kotlin-react-redux.js",
+  "main": "$main.js",
   "repository": "$repo.url",
   "peerDependencies": {
     "@jetbrains/kotlin-extensions": "^$kotlinext.version",

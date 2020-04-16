@@ -1,12 +1,13 @@
-import org.gradle.api.Project
+import org.gradle.api.Task
 
 private const val REPO_URL = "https://github.com/JetBrains/kotlin-wrappers"
 private const val LICENSE = "Apache-2.0"
 
-internal fun Project.packageJsonFilter(): (String) -> String {
+internal fun Task.packageJsonFilter(): (String) -> String {
     val map = mapOf(
-        "name" to "@jetbrains/$name",
-        "version" to npmVersion(),
+        "name" to "@jetbrains/${project.name}",
+        "version" to project.npmVersion(),
+        "main.js" to jsOutputFileName,
         "repo.url" to REPO_URL,
         "license" to LICENSE
     )
@@ -20,7 +21,7 @@ internal fun Project.packageJsonFilter(): (String) -> String {
     }
 }
 
-private fun Project.versionMap(): Map<String, String> =
+private fun Task.versionMap(): Map<String, String> =
     sequenceOf(
         "css",
         "kotlin",
@@ -32,4 +33,4 @@ private fun Project.versionMap(): Map<String, String> =
         "react-router-dom",
         "redux",
         "styled"
-    ).associate(::versionPair)
+    ).associate(project::versionPair)
