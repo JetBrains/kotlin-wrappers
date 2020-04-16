@@ -11,14 +11,12 @@ kotlin {
 
     sourceSets {
         val commonMain by getting {
-            kotlin.srcDir("src/main/kotlin")
             dependencies {
                 implementation(kotlin("stdlib-common"))
             }
         }
 
         val commonTest by getting {
-            kotlin.srcDir("src/test/kotlin")
             dependencies {
                 implementation(kotlin("test-common"))
                 implementation(kotlin("test-annotations-common"))
