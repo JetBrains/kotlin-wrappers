@@ -11,7 +11,6 @@
   "repository": "https://github.com/JetBrains/kotlin-wrappers",
   "peerDependencies": {
     "@jetbrains/kotlin-css": "^$css.version",
-    "@jetbrains/kotlin-css-js": "^$css.version",
     "@jetbrains/kotlin-extensions": "^$kotlinext.version",
     "css-in-js-utils": "^3.0.4",
     "inline-style-prefixer": "^5.1.2",
