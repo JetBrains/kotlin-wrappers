@@ -1,6 +1,6 @@
 {
   "name": "@jetbrains/kotlin-react-dom",
-  "version": "$react-dom.version",
+  "version": "$version",
   "description": "Kotlin wrapper for React DOM library",
   "files": [
     "build/classes",

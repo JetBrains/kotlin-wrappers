@@ -1,6 +1,6 @@
 {
   "name": "@jetbrains/kotlin-mocha",
-  "version": "$mocha.version",
+  "version": "$version",
   "description": "Kotlin wrapper for Mocha test framework",
   "files": [
     "build/classes",

@@ -1,6 +1,6 @@
 {
   "name": "@jetbrains/kotlin-styled",
-  "version": "$css.version",
+  "version": "$version",
   "description": "Kotlin wrappers for styled-components and inline-style-prefixer",
   "files": [
     "build/classes",

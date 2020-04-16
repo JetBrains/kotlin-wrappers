@@ -8,7 +8,7 @@ internal fun Project.versionPair(target: String): Pair<String, String> {
     return propertyName to property(propertyName) as String
 }
 
-internal fun Project.publishVersion(): String {
+internal fun Project.npmVersion(): String {
     val target = name
         .removePrefix("kotlin-")
         .let {
@@ -19,5 +19,8 @@ internal fun Project.publishVersion(): String {
             }
         }
 
-    return "${version(target)}-kotlin-${version("kotlin")}"
+    return version(target)
 }
+
+internal fun Project.publishVersion(): String =
+    "${npmVersion()}-kotlin-${version("kotlin")}"

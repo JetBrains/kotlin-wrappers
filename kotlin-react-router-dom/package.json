@@ -1,6 +1,6 @@
 {
   "name": "@jetbrains/kotlin-react-router-dom",
-  "version": "$react-router-dom.version",
+  "version": "$version",
   "description": "Kotlin wrapper for React Router DOM library",
   "files": [
     "build/classes",

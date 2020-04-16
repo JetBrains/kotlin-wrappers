@@ -1,6 +1,6 @@
 {
   "name": "@jetbrains/kotlin-redux",
-  "version": "$redux.version",
+  "version": "$version",
   "description": "Kotlin wrapper for Redux library",
   "files": [
     "build",

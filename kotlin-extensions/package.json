@@ -1,6 +1,6 @@
 {
   "name": "@jetbrains/kotlin-extensions",
-  "version": "$kotlinext.version",
+  "version": "$version",
   "description": "Kotlin wrappers for standard JS objects plus some helpers",
   "files": [
     "build/classes",
