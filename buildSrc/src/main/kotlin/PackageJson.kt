@@ -1,13 +1,14 @@
 import org.gradle.api.Project
 
 internal fun Project.packageJsonFilter(): (String) -> String {
-    val map = mapOf("version" to npmVersion()) + versionMap()
-    return { line ->
-        var result = line
-        for ((key, value) in map) {
-            result = result.replace("${'$'}$key", value)
+    val map = mapOf("version" to npmVersion())
+        .plus(versionMap())
+        .mapKeys { "${'$'}${it.key}" }
+
+    return {
+        map.entries.fold(it) { line, (key, value) ->
+            line.replace(key, value)
         }
-        result
     }
 }
 
