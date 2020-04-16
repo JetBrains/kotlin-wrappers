@@ -9,12 +9,12 @@
     "README.md"
   ],
   "main": "build/classes/main/kotlin-redux.js",
-  "repository": "https://github.com/JetBrains/kotlin-wrappers",
+  "repository": "$repo.url",
   "peerDependencies": {
     "@jetbrains/kotlin-extensions": "^$kotlinext.version",
     "kotlin": "^$kotlin.version",
     "redux": "^4.0.0"
   },
   "author": "Aidan Heller",
-  "license": "Apache-2.0"
+  "license": "$license"
 }

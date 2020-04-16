@@ -8,12 +8,12 @@
     "README.md"
   ],
   "main": "build/classes/main/kotlin-react-dom.js",
-  "repository": "https://github.com/JetBrains/kotlin-wrappers",
+  "repository": "$repo.url",
   "peerDependencies": {
     "@jetbrains/kotlin-react": "^$react.version",
     "kotlin": "^$kotlin.version",
     "react-dom": ">=15.x.x <=16.x.x"
   },
   "author": "Filipp Riabchun",
-  "license": "Apache-2.0"
+  "license": "$license"
 }

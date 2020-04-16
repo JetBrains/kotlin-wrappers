@@ -9,7 +9,7 @@
     "README.md"
   ],
   "main": "build/classes/main/kotlin-react-redux.js",
-  "repository": "https://github.com/JetBrains/kotlin-wrappers",
+  "repository": "$repo.url",
   "peerDependencies": {
     "@jetbrains/kotlin-extensions": "^$kotlinext.version",
     "@jetbrains/kotlin-react": "^$react.version",
@@ -18,5 +18,5 @@
     "react-redux": "^5.0.7"
   },
   "author": "Aidan Heller",
-  "license": "Apache-2.0"
+  "license": "$license"
 }

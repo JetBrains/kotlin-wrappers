@@ -8,10 +8,10 @@
     "README.md"
   ],
   "main": "build/classes/main/kotlin-extensions.js",
-  "repository": "https://github.com/JetBrains/kotlin-wrappers",
+  "repository": "$repo.url",
   "peerDependencies": {
     "kotlin": "^$kotlin.version"
   },
   "author": "Filipp Riabchun",
-  "license": "Apache-2.0"
+  "license": "$license"
 }
