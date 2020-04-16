@@ -4,9 +4,9 @@ Platform-agnostic CSS primitives.
 
 ### Installation
 
-To use `kotlin-css` in the browser, install `kotlin-css` and `kotlin-css-js` using npm or Yarn:
+To use `kotlin-css` in the browser, install `kotlin-css` using npm or Yarn:
 
-1. `npm i @jetbrains/kotlin-css @jetbrains/kotlin-css-js`
+1. `npm i @jetbrains/kotlin-css`
 
 2. `npm run gen-idea-libs` 
 

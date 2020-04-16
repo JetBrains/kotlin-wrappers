@@ -5,7 +5,7 @@ Kotlin wrappers for [styled-components](https://www.styled-components.com/) and
 
 ### Installation
 
-1. `npm i @jetbrains/kotlin-css @jetbrains/kotlin-css-js @jetbrains/kotlin-styled inline-style-prefixer styled-components`
+1. `npm i @jetbrains/kotlin-css @jetbrains/kotlin-styled inline-style-prefixer styled-components`
 
 2. `npm run gen-idea-libs`
 
