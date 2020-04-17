@@ -27,6 +27,8 @@ bintray {
     }
 }
 
+addBintrayMetadataSupport(publishing.publications)
+
 publishing.publications {
     when {
         isKotlinMultiplatformProject ->
@@ -39,8 +41,6 @@ publishing.publications {
                 groupId = project.group.toString()
                 artifactId = "${project.name}$artifactName"
                 version = publishVersion
-
-                artifact(project.moduleArtifact(name))
             }
 
         isKotlinJsProject ->
@@ -50,7 +50,6 @@ publishing.publications {
                 artifactId = project.name
                 version = publishVersion
 
-                artifact(project.moduleArtifact(name))
                 artifact(tasks.getByName<Zip>("JsSourcesJar"))
             }
     }
