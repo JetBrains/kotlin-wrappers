@@ -13,29 +13,20 @@ open class StyledElement {
     }
 }
 
-private class CSSProperty<T : Any>(
-    private val default: (() -> T)? = null
-) {
-    operator fun getValue(
-        thisRef: StyledElement,
-        property: KProperty<*>
-    ): T {
-        val value = if (default != null) {
-            thisRef.declarations.getOrPut(property.name, default)
-        } else {
-            thisRef.declarations.getValue(property.name)
+private class CSSProperty<T>(private val default: (() -> T)? = null) {
+    operator fun getValue(thisRef: StyledElement, property: KProperty<*>): T {
+        default?.let { default ->
+            if (!thisRef.declarations.containsKey(property.name)) {
+                thisRef.declarations[property.name] = default() as Any
+            }
         }
 
         @Suppress("UNCHECKED_CAST")
-        return value as T
+        return thisRef.declarations[property.name] as T
     }
 
-    operator fun setValue(
-        thisRef: StyledElement,
-        property: KProperty<*>,
-        value: T
-    ) {
-        thisRef.declarations[property.name] = value
+    operator fun setValue(thisRef: StyledElement, property: KProperty<*>, value: T) {
+        thisRef.declarations[property.name] = value as Any
     }
 }
 
