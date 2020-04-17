@@ -4,12 +4,9 @@ plugins {
     id("com.github.node-gradle.node")
 }
 
-val Task.npmBuildDir: File
-    get() = project.buildDir.resolve("npm")
-
 tasks {
-    val prepublish = register<Copy>("prepublish") {
-        from(jsDistDir)
+    val prepareNpmPublish = register<Copy>("prepareNpmPublish") {
+        from(jsOutputDir)
 
         from(".") {
             include("package.json")
@@ -29,6 +26,6 @@ tasks {
         setArgs(listOf("--access", "public"))
         setWorkingDir(npmBuildDir)
 
-        dependsOn(prepublish)
+        dependsOn(prepareNpmPublish)
     }
 }

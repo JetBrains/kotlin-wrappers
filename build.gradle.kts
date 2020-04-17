@@ -34,7 +34,7 @@ subprojects {
                     moduleKind = "commonjs"
 
                     if (name == "compileKotlinJs") {
-                        outputFile = "${project.projectDir}/build/classes/main/${project.name}.js"
+                        outputFile = jsOutputFile
                         sourceMapEmbedSources = "always"
                         sourceMap = true
                     } else {
