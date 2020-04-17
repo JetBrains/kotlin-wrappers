@@ -28,18 +28,16 @@ subprojects {
             "implementation"(kotlinxHtml("js"))
         }
 
-        tasks {
-            withType<KotlinJsCompile>().configureEach {
-                kotlinOptions {
-                    moduleKind = "commonjs"
+        tasks.withType<KotlinJsCompile>().configureEach {
+            kotlinOptions {
+                moduleKind = "commonjs"
 
-                    if (name == "compileKotlinJs") {
-                        outputFile = "${project.projectDir}/build/classes/main/${project.name}.js"
-                        sourceMapEmbedSources = "always"
-                        sourceMap = true
-                    } else {
-                        sourceMap = false
-                    }
+                if (name == "compileKotlinJs") {
+                    outputFile = jsOutputFile
+                    sourceMapEmbedSources = "always"
+                    sourceMap = true
+                } else {
+                    sourceMap = false
                 }
             }
         }
