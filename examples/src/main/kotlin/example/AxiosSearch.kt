@@ -14,7 +14,6 @@ import react.*
 import react.dom.*
 import kotlin.js.*
 
-// Import the axios library (run "npm install axios --save" to install)
 @JsModule("axios")
 external fun <T> axios(config: AxiosConfigSettings): Promise<AxiosResponse<T>>
 
