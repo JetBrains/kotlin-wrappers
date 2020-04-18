@@ -2,11 +2,10 @@ import org.jetbrains.kotlin.gradle.dsl.KotlinJsCompile
 import org.jetbrains.kotlin.gradle.dsl.KotlinJsProjectExtension
 import org.jetbrains.kotlin.gradle.plugin.KotlinJsPluginWrapper
 import org.jetbrains.kotlin.gradle.dsl.KotlinCompile
-import org.jetbrains.kotlin.gradle.targets.js.webpack.KotlinWebpack
-import org.jetbrains.kotlin.gradle.tasks.KotlinJsDce
 
 plugins {
     kotlin("js") apply false
+    id("kotlin-1.3-compat")
 }
 
 subprojects {
@@ -50,17 +49,6 @@ subprojects {
             kotlinOptions.allWarningsAsErrors = true
         }
     }
-
-    // Kotlin 1.3.72
-    // COMPAT START
-    tasks.withType<KotlinJsDce>().configureEach {
-        enabled = false
-    }
-
-    tasks.withType<KotlinWebpack>().configureEach {
-        enabled = false
-    }
-    // COMPAT END
 }
 
 tasks.wrapper {
