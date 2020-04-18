@@ -1,13 +1,6 @@
 {
-  "name": "$name",
-  "version": "$version",
-  "description": "$description",
-  "main": "$main.js",
-  "repository": "$repo.url",
   "peerDependencies": {
     "kotlin": "^$kotlin.version",
     "mocha": "^3.0.0"
-  },
-  "author": "$author",
-  "license": "$license"
+  }
 }

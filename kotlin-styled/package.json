@@ -1,9 +1,4 @@
 {
-  "name": "$name",
-  "version": "$version",
-  "description": "$description",
-  "main": "$main.js",
-  "repository": "$repo.url",
   "peerDependencies": {
     "@jetbrains/kotlin-css": "^$css.version",
     "@jetbrains/kotlin-extensions": "^$kotlinext.version",
@@ -11,7 +6,5 @@
     "inline-style-prefixer": "^5.1.2",
     "kotlin": "^$kotlin.version",
     "styled-components": "^5.0.1"
-  },
-  "author": "$author",
-  "license": "$license"
+  }
 }

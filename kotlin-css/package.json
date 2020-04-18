@@ -1,13 +1,6 @@
 {
-  "name": "$name",
-  "version": "$version",
-  "description": "$description",
-  "main": "$main.js",
-  "repository": "$repo.url",
   "peerDependencies": {
     "@jetbrains/kotlin-extensions": "^$kotlinext.version",
     "kotlin": "^$kotlin.version"
-  },
-  "author": "$author",
-  "license": "$license"
+  }
 }
