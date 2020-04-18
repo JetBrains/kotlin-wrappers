@@ -1,5 +1,6 @@
 import org.json.JSONObject
 import org.gradle.api.Task
+import org.jetbrains.kotlin.gradle.targets.js.npm.NpmDependency
 
 private const val REPO_URL = "https://github.com/JetBrains/kotlin-wrappers"
 private const val LICENSE = "Apache-2.0"
@@ -20,19 +21,18 @@ internal fun Task.generatePackageJson(): String =
     }.toString(2)
 
 private val Task.peerDependencies: JSONObject
-    get() = defaultPeerDependencies().apply {
+    get() = JSONObject().apply {
         put("kotlin", "^${project.kotlinVersion}")
 
         project.relatedProjects()
             .forEach { put(it.npmName, "^${it.npmVersion}") }
+
+        project.nmpDependencies()
+            .forEach { put(it.name, it.peerVersion) }
     }
 
-private fun Task.defaultPeerDependencies(): JSONObject {
-    val sourceFile = project.projectDir
-        .resolve("package.json")
-        .takeIf { it.exists() }
-        ?: return JSONObject()
-
-    return JSONObject(sourceFile.readText())
-        .getJSONObject("peerDependencies")
-}
+private val NpmDependency.peerVersion: String
+    get() = when (name) {
+        "react", "react-dom" -> ">=15.x.x <=16.x.x"
+        else -> version
+    }
