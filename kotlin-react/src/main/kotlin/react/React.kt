@@ -38,7 +38,7 @@ inline fun <P : RProps> cloneElement(
 fun clone(element: dynamic, props: dynamic, child: Any? = null): ReactElement =
     cloneElement(element, props, *Children.toArray(child))
 
-val <P : RProps, T : RComponent<P, *>> KClass<T>.rClass
+val <P : RProps, T : Component<P, *>> KClass<T>.rClass
     get() =
         js.unsafeCast<RClass<P>>()
 
