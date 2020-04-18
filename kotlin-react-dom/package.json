@@ -1,14 +1,7 @@
 {
-  "name": "$name",
-  "version": "$version",
-  "description": "$description",
-  "main": "$main.js",
-  "repository": "$repo.url",
   "peerDependencies": {
     "@jetbrains/kotlin-react": "^$react.version",
     "kotlin": "^$kotlin.version",
     "react-dom": ">=15.x.x <=16.x.x"
-  },
-  "author": "$author",
-  "license": "$license"
+  }
 }

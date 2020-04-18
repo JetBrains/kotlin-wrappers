@@ -5,13 +5,20 @@ plugins {
 }
 
 tasks {
+    val generateNpmPackageJson = register("generateNpmPackageJson") {
+        val packageJson = temporaryDir.resolve("package.json")
+
+        outputs.file(packageJson)
+
+        doLast {
+            packageJson.writeText(generatePackageJson())
+        }
+    }
+
     val prepareNpmPublish = register<Copy>("prepareNpmPublish") {
         from(jsOutputDir)
 
-        from(".") {
-            include("package.json")
-            filter(packageJsonFilter())
-        }
+        from(generateNpmPackageJson)
 
         from(".") {
             include("README.md")
