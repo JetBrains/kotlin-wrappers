@@ -9,7 +9,7 @@ private fun Task.prop(propertyName: String): String =
 
 internal fun Task.generatePackageJson(): String =
     JSONObject().apply {
-        put("name", "@jetbrains/${project.name}")
+        put("name", project.npmName)
         put("description", prop("description"))
         put("version", project.npmVersion())
         put("main", jsOutputFileName)

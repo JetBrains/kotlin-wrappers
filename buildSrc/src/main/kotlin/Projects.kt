@@ -8,6 +8,9 @@ internal fun Project.versionPair(target: String): Pair<String, String> {
     return propertyName to property(propertyName) as String
 }
 
+internal val Project.npmName: String
+    get() = "@jetbrains/$name"
+
 internal fun Project.npmVersion(): String {
     val target = name
         .removePrefix("kotlin-")
