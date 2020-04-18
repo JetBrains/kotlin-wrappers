@@ -1,7 +1,7 @@
 {
   "name": "$name",
   "version": "$version",
-  "description": "Kotlin wrapper for Redux library",
+  "description": "$description",
   "main": "$main.js",
   "repository": "$repo.url",
   "peerDependencies": {
@@ -9,6 +9,6 @@
     "kotlin": "^$kotlin.version",
     "redux": "^4.0.0"
   },
-  "author": "Aidan Heller",
+  "author": "$author",
   "license": "$license"
 }

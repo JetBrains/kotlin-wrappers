@@ -1,7 +1,7 @@
 {
   "name": "$name",
   "version": "$version",
-  "description": "Kotlin wrappers for styled-components and inline-style-prefixer",
+  "description": "$description",
   "main": "$main.js",
   "repository": "$repo.url",
   "peerDependencies": {
@@ -12,6 +12,6 @@
     "kotlin": "^$kotlin.version",
     "styled-components": "^5.0.1"
   },
-  "author": "Leonid Khachaturov",
+  "author": "$author",
   "license": "$license"
 }
