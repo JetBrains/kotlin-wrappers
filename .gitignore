@@ -1,11 +1,12 @@
-*.iml
 .DS_Store
 .gradle/
+build/
+
 **/.idea/*
 !.idea/icon.png
 !.idea/vcs.xml
-build/
-ts/
+*.iml
+*.ipr
+*.iws
 
-kotlin-wrappers.ipr
-kotlin-wrappers.iws
+ts/
