@@ -89,7 +89,7 @@ external interface RouteResultMatch<T : RProps> {
 }
 
 external interface RedirectProps : RProps {
-    var from: String
+    var from: String?
     var to: String
     var push: Boolean
     var exact: Boolean

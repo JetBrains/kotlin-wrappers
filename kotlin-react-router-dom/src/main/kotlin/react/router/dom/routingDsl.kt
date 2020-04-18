@@ -94,7 +94,7 @@ fun RBuilder.navLink(
 }
 
 fun RBuilder.redirect(
-    from: String,
+    from: String? = null,
     to: String,
     push: Boolean = false,
     exact: Boolean = false,
