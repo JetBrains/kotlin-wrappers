@@ -10,7 +10,11 @@ kotlinDslPluginOptions {
     experimentalWarning.set(false)
 }
 
+fun version(target:String):String =
+    property("${target}.version") as String
+
 dependencies {
-    implementation("com.github.node-gradle:gradle-node-plugin:${property("node-plugin.version")}")
-    implementation("com.jfrog.bintray.gradle:gradle-bintray-plugin:${property("bintray-plugin.version")}")
+    implementation("com.github.node-gradle:gradle-node-plugin:${version("node-plugin")}")
+    implementation("com.jfrog.bintray.gradle:gradle-bintray-plugin:${version("bintray-plugin")}")
+    implementation("org.json:json:${version("json")}")
 }
