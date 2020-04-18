@@ -14,19 +14,26 @@ internal fun Task.generatePackageJson(): String =
         put("version", project.npmVersion())
         put("main", jsOutputFileName)
         put("repository", REPO_URL)
-        put("peerDependencies", peerDependencies())
+        put("peerDependencies", peerDependencies)
         put("author", prop("author"))
         put("license", LICENSE)
     }.toString(2)
 
-private fun Task.peerDependencies(): JSONObject {
+private val Task.peerDependencies: JSONObject
+    get() = defaultPeerDependencies().apply {
+        put("kotlin", "^${project.kotlinVersion}")
+    }
+
+private fun Task.defaultPeerDependencies(): JSONObject {
+    val sourceFile = project.projectDir
+        .resolve("package.json")
+        .takeIf { it.exists() }
+        ?: return JSONObject()
+
     val map = versionMap()
         .mapKeys { "${'$'}${it.key}" }
 
-    val source = project.projectDir
-        .resolve("package.json").readText()
-
-    val content = map.entries.fold(source) { data, (key, value) ->
+    val content = map.entries.fold(sourceFile.readText()) { data, (key, value) ->
         data.replace(key, value)
     }
 
@@ -37,7 +44,6 @@ private fun Task.peerDependencies(): JSONObject {
 private fun Task.versionMap(): Map<String, String> =
     sequenceOf(
         "css",
-        "kotlin",
         "kotlinext",
         "mocha",
         "react",

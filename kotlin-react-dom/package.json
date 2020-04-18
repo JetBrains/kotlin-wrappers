@@ -1,7 +1,6 @@
 {
   "peerDependencies": {
     "@jetbrains/kotlin-react": "^$react.version",
-    "kotlin": "^$kotlin.version",
     "react-dom": ">=15.x.x <=16.x.x"
   }
 }

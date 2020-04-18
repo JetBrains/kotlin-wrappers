@@ -1,6 +1,5 @@
 {
   "peerDependencies": {
-    "kotlin": "^$kotlin.version",
     "mocha": "^3.0.0"
   }
 }

@@ -22,5 +22,8 @@ internal fun Project.npmVersion(): String {
     return version(target)
 }
 
+internal val Project.kotlinVersion: String
+    get() = version("kotlin")
+
 internal fun Project.publishVersion(): String =
-    "${npmVersion()}-kotlin-${version("kotlin")}"
+    "${npmVersion()}-kotlin-$kotlinVersion"

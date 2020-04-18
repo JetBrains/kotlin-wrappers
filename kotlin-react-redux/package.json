@@ -3,7 +3,6 @@
     "@jetbrains/kotlin-extensions": "^$kotlinext.version",
     "@jetbrains/kotlin-react": "^$react.version",
     "@jetbrains/kotlin-redux": "^$redux.version",
-    "kotlin": "^$kotlin.version",
     "react-redux": "^5.0.7"
   }
 }
