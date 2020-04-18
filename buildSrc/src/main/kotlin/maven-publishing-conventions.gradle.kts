@@ -1,5 +1,6 @@
 plugins {
     id("com.jfrog.bintray")
+    id("bintray-metadata")
     `maven-publish`
 }
 
@@ -26,8 +27,6 @@ bintray {
             setPublications("kotlin")
     }
 }
-
-addBintrayMetadataSupport(publishing.publications)
 
 publishing.publications {
     when {
