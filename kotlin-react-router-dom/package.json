@@ -1,6 +1,5 @@
 {
   "peerDependencies": {
-    "@jetbrains/kotlin-react": "^$react.version",
     "react-router-dom": "^5.1.2"
   }
 }

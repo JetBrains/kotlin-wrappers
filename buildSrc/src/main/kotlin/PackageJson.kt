@@ -11,7 +11,7 @@ internal fun Task.generatePackageJson(): String =
     JSONObject().apply {
         put("name", project.npmName)
         put("description", prop("description"))
-        put("version", project.npmVersion())
+        put("version", project.npmVersion)
         put("main", jsOutputFileName)
         put("repository", REPO_URL)
         put("peerDependencies", peerDependencies)
@@ -22,6 +22,9 @@ internal fun Task.generatePackageJson(): String =
 private val Task.peerDependencies: JSONObject
     get() = defaultPeerDependencies().apply {
         put("kotlin", "^${project.kotlinVersion}")
+
+        project.relatedProjects()
+            .forEach { put(it.npmName, "^${it.npmVersion}") }
     }
 
 private fun Task.defaultPeerDependencies(): JSONObject {
@@ -30,26 +33,6 @@ private fun Task.defaultPeerDependencies(): JSONObject {
         .takeIf { it.exists() }
         ?: return JSONObject()
 
-    val map = versionMap()
-        .mapKeys { "${'$'}${it.key}" }
-
-    val content = map.entries.fold(sourceFile.readText()) { data, (key, value) ->
-        data.replace(key, value)
-    }
-
-    return JSONObject(content)
+    return JSONObject(sourceFile.readText())
         .getJSONObject("peerDependencies")
 }
-
-private fun Task.versionMap(): Map<String, String> =
-    sequenceOf(
-        "css",
-        "kotlinext",
-        "mocha",
-        "react",
-        "react-dom",
-        "react-redux",
-        "react-router-dom",
-        "redux",
-        "styled"
-    ).associate(project::versionPair)
