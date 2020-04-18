@@ -1,13 +1,13 @@
 {
   "name": "$name",
   "version": "$version",
-  "description": "Platform-agnostic CSS primitives (common module)",
+  "description": "$description",
   "main": "$main.js",
   "repository": "$repo.url",
   "peerDependencies": {
     "@jetbrains/kotlin-extensions": "^$kotlinext.version",
     "kotlin": "^$kotlin.version"
   },
-  "author": "Leonid Khachaturov",
+  "author": "$author",
   "license": "$license"
 }

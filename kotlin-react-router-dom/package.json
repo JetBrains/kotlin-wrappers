@@ -1,7 +1,7 @@
 {
   "name": "$name",
   "version": "$version",
-  "description": "Kotlin wrapper for React Router DOM library",
+  "description": "$description",
   "main": "$main.js",
   "repository": "$repo.url",
   "peerDependencies": {
@@ -9,6 +9,6 @@
     "kotlin": "^$kotlin.version",
     "react-router-dom": "^5.1.2"
   },
-  "author": "Andrius Semionovas",
+  "author": "$author",
   "license": "$license"
 }

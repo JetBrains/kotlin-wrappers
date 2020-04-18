@@ -1,13 +1,13 @@
 {
   "name": "$name",
   "version": "$version",
-  "description": "Kotlin wrapper for Mocha test framework",
+  "description": "$description",
   "main": "$main.js",
   "repository": "$repo.url",
   "peerDependencies": {
     "kotlin": "^$kotlin.version",
     "mocha": "^3.0.0"
   },
-  "author": "Filipp Riabchun",
+  "author": "$author",
   "license": "$license"
 }

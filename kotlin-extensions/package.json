@@ -1,12 +1,12 @@
 {
   "name": "$name",
   "version": "$version",
-  "description": "Kotlin wrappers for standard JS objects plus some helpers",
+  "description": "$description",
   "main": "$main.js",
   "repository": "$repo.url",
   "peerDependencies": {
     "kotlin": "^$kotlin.version"
   },
-  "author": "Filipp Riabchun",
+  "author": "$author",
   "license": "$license"
 }

@@ -1,7 +1,7 @@
 {
   "name": "$name",
   "version": "$version",
-  "description": "Kotlin wrapper for React DOM library",
+  "description": "$description",
   "main": "$main.js",
   "repository": "$repo.url",
   "peerDependencies": {
@@ -9,6 +9,6 @@
     "kotlin": "^$kotlin.version",
     "react-dom": ">=15.x.x <=16.x.x"
   },
-  "author": "Filipp Riabchun",
+  "author": "$author",
   "license": "$license"
 }
