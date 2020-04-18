@@ -37,11 +37,8 @@ external object Object {
     fun <T, R : T> assign(dest: R, vararg src: T): R
 }
 
-fun Any.getOwnPropertyNames(): Array<String> {
-    @Suppress("UNUSED_VARIABLE")
-    val me = this
-    return js("Object.getOwnPropertyNames(me)")
-}
+fun Any.getOwnPropertyNames(): Array<String> =
+    Object.getOwnPropertyNames(this)
 
 @Deprecated(
     message = "Use Object.assign instead",
