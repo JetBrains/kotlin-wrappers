@@ -76,36 +76,4 @@ fun SuspenseProps.fallback(handler: RBuilder.() -> Unit) {
  */
 open class RStatics<P : RProps, S : RState, C : Component<P, S>, CTX : RContext<Any>?>(
     klazz: KClass<C>
-) : RComponentClassStatics<P, S, CTX> {
-    private val jsClass = klazz.js.asDynamic()
-
-    override var displayName: String?
-        get() = jsClass.displayName
-        set(value) {
-            jsClass.displayName = value
-        }
-
-    override var defaultProps: P?
-        get() = jsClass.defaultProps
-        set(value) {
-            jsClass.defaultProps = value
-        }
-
-    override var contextType: CTX
-        get() = jsClass.contextType
-        set(value) {
-            jsClass.contextType = value
-        }
-
-    override var getDerivedStateFromProps: ((P, S) -> S?)?
-        get() = jsClass.getDerivedStateFromProps
-        set(value) {
-            jsClass.getDerivedStateFromProps = value
-        }
-
-    override var getDerivedStateFromError: ((Throwable) -> S?)?
-        get() = jsClass.getDerivedStateFromError
-        set(value) {
-            jsClass.getDerivedStateFromError = value
-        }
-}
+) : RComponentClassStatics<P, S, CTX> by klazz.js.unsafeCast<RComponentClassStatics<P, S, CTX>>()
