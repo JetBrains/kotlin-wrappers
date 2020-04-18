@@ -1,5 +1,0 @@
-{
-  "peerDependencies": {
-    "kotlin": "^$kotlin.version"
-  }
-}

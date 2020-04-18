@@ -1,10 +1,7 @@
 {
   "peerDependencies": {
-    "@jetbrains/kotlin-css": "^$css.version",
-    "@jetbrains/kotlin-extensions": "^$kotlinext.version",
     "css-in-js-utils": "^3.0.4",
     "inline-style-prefixer": "^5.1.2",
-    "kotlin": "^$kotlin.version",
     "styled-components": "^5.0.1"
   }
 }

@@ -1,6 +1,0 @@
-{
-  "peerDependencies": {
-    "@jetbrains/kotlin-extensions": "^$kotlinext.version",
-    "kotlin": "^$kotlin.version"
-  }
-}

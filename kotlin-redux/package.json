@@ -1,7 +1,5 @@
 {
   "peerDependencies": {
-    "@jetbrains/kotlin-extensions": "^$kotlinext.version",
-    "kotlin": "^$kotlin.version",
     "redux": "^4.0.0"
   }
 }
