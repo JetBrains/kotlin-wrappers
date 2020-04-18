@@ -39,9 +39,6 @@ val RErrorInfo.componentStack: Any get() = asDynamic().componentStack
 // TODO: Should extend RComponentClassStatics, but has problems with generic params
 external interface RClass<in P : RProps> : RComponentClassStatics<RProps, RState, RContext<Any>?>
 
-internal inline val <P : RProps, C : Component<P, *>> KClass<C>.rClass: RClass<P>
-    get() = js.unsafeCast<RClass<P>>()
-
 external interface RComponentClassStatics<P : RProps, S : RState, C : RContext<Any>?> {
     var displayName: String?
 
