@@ -1,22 +1,16 @@
 {
-  "name": "@jetbrains/kotlin-react-redux",
-  "version": "$react_redux_version",
+  "name": "$name",
+  "version": "$version",
   "description": "Kotlin wrapper for React Redux library",
-  "files": [
-    "build",
-    "src",
-    "package.json",
-    "README.md"
-  ],
-  "main": "build/classes/main/kotlin-react-redux.js",
-  "repository": "https://github.com/JetBrains/kotlin-wrappers",
+  "main": "$main.js",
+  "repository": "$repo.url",
   "peerDependencies": {
-    "@jetbrains/kotlin-extensions": "^$kotlinext_version",
-    "@jetbrains/kotlin-react": "^$react_version",
-    "@jetbrains/kotlin-redux": "^$redux_version",
-    "kotlin": "^$kotlin_version",
+    "@jetbrains/kotlin-extensions": "^$kotlinext.version",
+    "@jetbrains/kotlin-react": "^$react.version",
+    "@jetbrains/kotlin-redux": "^$redux.version",
+    "kotlin": "^$kotlin.version",
     "react-redux": "^5.0.7"
   },
   "author": "Aidan Heller",
-  "license": "Apache-2.0"
+  "license": "$license"
 }

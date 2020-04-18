@@ -1,17 +1,12 @@
 {
-  "name": "@jetbrains/kotlin-extensions",
-  "version": "$kotlinext_version",
+  "name": "$name",
+  "version": "$version",
   "description": "Kotlin wrappers for standard JS objects plus some helpers",
-  "files": [
-    "build/classes",
-    "package.json",
-    "README.md"
-  ],
-  "main": "build/classes/main/kotlin-extensions.js",
-  "repository": "https://github.com/JetBrains/kotlin-wrappers",
+  "main": "$main.js",
+  "repository": "$repo.url",
   "peerDependencies": {
-    "kotlin": "^$kotlin_version"
+    "kotlin": "^$kotlin.version"
   },
   "author": "Filipp Riabchun",
-  "license": "Apache-2.0"
+  "license": "$license"
 }

@@ -56,8 +56,7 @@ external interface AxiosResponse<T> {
 
 data class ZipResult(val country: String, val state: String, val city: String)
 
-interface AxiosProps : RProps {
-}
+interface AxiosProps : RProps
 
 interface AxiosState : RState {
     var zipCode: String

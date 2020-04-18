@@ -1,3 +1,5 @@
+@file:Suppress("NOTHING_TO_INLINE")
+
 package styled
 
 import kotlinx.html.*
@@ -14,7 +16,8 @@ inline fun RBuilder.styledAbbr(block: StyledDOMBuilder<ABBR>.() -> Unit) = style
 
 inline fun RBuilder.styledAddress(block: StyledDOMBuilder<ADDRESS>.() -> Unit) = styledTag(block) { ADDRESS(emptyMap, it) }
 
-inline fun RBuilder.styledArea(shape: AreaShape? = null, alt: String? = null, block: StyledDOMBuilder<AREA>.() -> Unit) = styledTag(block) { AREA(attributesMapOf("Shape", shape?.enumEncode(), "alt", alt), it) }
+inline fun RBuilder.styledArea(shape: AreaShape? = null, alt: String? = null, block: StyledDOMBuilder<AREA>.() -> Unit) =
+    styledTag(block) { AREA(attributesMapOf("Shape", shape?.enumEncode(), "alt", alt), it) }
 
 inline fun RBuilder.styledArticle(block: StyledDOMBuilder<ARTICLE>.() -> Unit) = styledTag(block) { ARTICLE(emptyMap, it) }
 
@@ -36,7 +39,8 @@ inline fun RBuilder.styledBody(block: StyledDOMBuilder<BODY>.() -> Unit) = style
 
 inline fun RBuilder.styledBr(block: StyledDOMBuilder<BR>.() -> Unit) = styledTag(block) { BR(emptyMap, it) }
 
-inline fun RBuilder.styledButton(formEncType: ButtonFormEncType? = null, formMethod: ButtonFormMethod? = null, type: ButtonType? = null, block: StyledDOMBuilder<BUTTON>.() -> Unit) = styledTag(block) { BUTTON(attributesMapOf("formenctype", formEncType?.enumEncode(), "formmethod", formMethod?.enumEncode(), "type", type?.enumEncode()), it) }
+inline fun RBuilder.styledButton(formEncType: ButtonFormEncType? = null, formMethod: ButtonFormMethod? = null, type: ButtonType? = null, block: StyledDOMBuilder<BUTTON>.() -> Unit) =
+    styledTag(block) { BUTTON(attributesMapOf("formenctype", formEncType?.enumEncode(), "formmethod", formMethod?.enumEncode(), "type", type?.enumEncode()), it) }
 
 inline fun RBuilder.styledCanvas(content: String = "") = styledTag({ +content }) { CANVAS(emptyMap, it) }
 inline fun RBuilder.styledCanvas(block: StyledDOMBuilder<CANVAS>.() -> Unit) = styledTag(block) { CANVAS(emptyMap, it) }
@@ -83,7 +87,8 @@ inline fun RBuilder.styledFigure(block: StyledDOMBuilder<FIGURE>.() -> Unit) = s
 
 inline fun RBuilder.styledFooter(block: StyledDOMBuilder<FOOTER>.() -> Unit) = styledTag(block) { FOOTER(emptyMap, it) }
 
-inline fun RBuilder.styledForm(action: String? = null, encType: FormEncType? = null, method: FormMethod? = null, block: StyledDOMBuilder<FORM>.() -> Unit) = styledTag(block) { FORM(attributesMapOf("action", action, "enctype", encType?.enumEncode(), "method", method?.enumEncode()), it) }
+inline fun RBuilder.styledForm(action: String? = null, encType: FormEncType? = null, method: FormMethod? = null, block: StyledDOMBuilder<FORM>.() -> Unit) =
+    styledTag(block) { FORM(attributesMapOf("action", action, "enctype", encType?.enumEncode(), "method", method?.enumEncode()), it) }
 
 inline fun RBuilder.styledH1(block: StyledDOMBuilder<H1>.() -> Unit) = styledTag(block) { H1(emptyMap, it) }
 
@@ -114,7 +119,8 @@ inline fun RBuilder.styledIframe(sandbox: IframeSandbox? = null, block: StyledDO
 
 inline fun RBuilder.styledImg(alt: String? = null, src: String? = null, block: StyledDOMBuilder<IMG>.() -> Unit) = styledTag(block) { IMG(attributesMapOf("alt", alt, "src", src), it) }
 
-inline fun RBuilder.styledInput(type: InputType? = null, formEncType: InputFormEncType? = null, formMethod: InputFormMethod? = null, name: String? = null, block: StyledDOMBuilder<INPUT>.() -> Unit) = styledTag(block) { INPUT(attributesMapOf("type", type?.enumEncode(), "formenctype", formEncType?.enumEncode(), "formmethod", formMethod?.enumEncode(), "name", name), it) }
+inline fun RBuilder.styledInput(type: InputType? = null, formEncType: InputFormEncType? = null, formMethod: InputFormMethod? = null, name: String? = null, block: StyledDOMBuilder<INPUT>.() -> Unit) =
+    styledTag(block) { INPUT(attributesMapOf("type", type?.enumEncode(), "formenctype", formEncType?.enumEncode(), "formmethod", formMethod?.enumEncode(), "name", name), it) }
 
 inline fun RBuilder.styledIns(block: StyledDOMBuilder<INS>.() -> Unit) = styledTag(block) { INS(emptyMap, it) }
 
@@ -128,7 +134,8 @@ inline fun RBuilder.styledLegend(block: StyledDOMBuilder<LEGEND>.() -> Unit) = s
 
 inline fun RBuilder.styledLi(block: StyledDOMBuilder<LI>.() -> Unit) = styledTag(block) { LI(emptyMap, it) }
 
-inline fun RBuilder.styledLink(href: String? = null, rel: String? = null, type: String? = null, block: StyledDOMBuilder<LINK>.() -> Unit) = styledTag(block) { LINK(attributesMapOf("href", href, "rel", rel, "type", type), it) }
+inline fun RBuilder.styledLink(href: String? = null, rel: String? = null, type: String? = null, block: StyledDOMBuilder<LINK>.() -> Unit) =
+    styledTag(block) { LINK(attributesMapOf("href", href, "rel", rel, "type", type), it) }
 
 inline fun RBuilder.styledMap(name: String? = null, block: StyledDOMBuilder<MAP>.() -> Unit) = styledTag(block) { MAP(attributesMapOf("name", name), it) }
 
@@ -139,7 +146,8 @@ inline fun RBuilder.styledMath(block: StyledDOMBuilder<MATH>.() -> Unit) = style
 inline fun RBuilder.styledMathml(content: String = "") = styledTag({ +content }) { MATHML(emptyMap, it) }
 inline fun RBuilder.styledMathml(block: StyledDOMBuilder<MATHML>.() -> Unit) = styledTag(block) { MATHML(emptyMap, it) }
 
-inline fun RBuilder.styledMeta(name: String? = null, content: String? = null, block: StyledDOMBuilder<META>.() -> Unit) = styledTag(block) { META(attributesMapOf("name", name, "content", content), it) }
+inline fun RBuilder.styledMeta(name: String? = null, content: String? = null, block: StyledDOMBuilder<META>.() -> Unit) =
+    styledTag(block) { META(attributesMapOf("name", name, "content", content), it) }
 
 inline fun RBuilder.styledMeter(block: StyledDOMBuilder<METER>.() -> Unit) = styledTag(block) { METER(emptyMap, it) }
 
@@ -147,7 +155,7 @@ inline fun RBuilder.styledNav(block: StyledDOMBuilder<NAV>.() -> Unit) = styledT
 
 inline fun RBuilder.styledNoScript(block: StyledDOMBuilder<NOSCRIPT>.() -> Unit) = styledTag(block) { NOSCRIPT(emptyMap, it) }
 
-inline fun RBuilder.styledObject_(block: StyledDOMBuilder<OBJECT_>.() -> Unit) = styledTag(block) { OBJECT_(emptyMap, it) }
+inline fun RBuilder.styledObject(block: StyledDOMBuilder<OBJECT>.() -> Unit) = styledTag(block) { OBJECT(emptyMap, it) }
 
 inline fun RBuilder.styledOl(block: StyledDOMBuilder<OL>.() -> Unit) = styledTag(block) { OL(emptyMap, it) }
 
@@ -206,8 +214,11 @@ inline fun RBuilder.styledTbody(block: StyledDOMBuilder<TBODY>.() -> Unit) = sty
 
 inline fun RBuilder.styledTd(block: StyledDOMBuilder<TD>.() -> Unit) = styledTag(block) { TD(emptyMap, it) }
 
-inline fun RBuilder.styledTextArea(rows: String? = null, cols: String? = null, wrap: TextAreaWrap? = null, content: String = "") = styledTag({ +content }) { TEXTAREA(attributesMapOf("rows", rows, "cols", cols, "wrap", wrap?.enumEncode()), it) }
-inline fun RBuilder.styledTextArea(rows: String? = null, cols: String? = null, wrap: TextAreaWrap? = null, block: StyledDOMBuilder<TEXTAREA>.() -> Unit) = styledTag(block) { TEXTAREA(attributesMapOf("rows", rows, "cols", cols, "wrap", wrap?.enumEncode()), it) }
+inline fun RBuilder.styledTextArea(rows: String? = null, cols: String? = null, wrap: TextAreaWrap? = null, content: String = "") =
+    styledTag({ +content }) { TEXTAREA(attributesMapOf("rows", rows, "cols", cols, "wrap", wrap?.enumEncode()), it) }
+
+inline fun RBuilder.styledTextArea(rows: String? = null, cols: String? = null, wrap: TextAreaWrap? = null, block: StyledDOMBuilder<TEXTAREA>.() -> Unit) =
+    styledTag(block) { TEXTAREA(attributesMapOf("rows", rows, "cols", cols, "wrap", wrap?.enumEncode()), it) }
 
 inline fun RBuilder.styledTfoot(block: StyledDOMBuilder<TFOOT>.() -> Unit) = styledTag(block) { TFOOT(emptyMap, it) }
 
@@ -224,6 +235,6 @@ inline fun RBuilder.styledTr(block: StyledDOMBuilder<TR>.() -> Unit) = styledTag
 
 inline fun RBuilder.styledUl(block: StyledDOMBuilder<UL>.() -> Unit) = styledTag(block) { UL(emptyMap, it) }
 
-inline fun RBuilder.styledVar_(block: StyledDOMBuilder<VAR_>.() -> Unit) = styledTag(block) { VAR_(emptyMap, it) }
+inline fun RBuilder.styledVar(block: StyledDOMBuilder<VAR>.() -> Unit) = styledTag(block) { VAR(emptyMap, it) }
 
 inline fun RBuilder.styledVideo(block: StyledDOMBuilder<VIDEO>.() -> Unit) = styledTag(block) { VIDEO(emptyMap, it) }

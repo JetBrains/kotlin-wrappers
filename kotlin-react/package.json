@@ -1,19 +1,14 @@
 {
-  "name": "@jetbrains/kotlin-react",
-  "version": "$react_version",
+  "name": "$name",
+  "version": "$version",
   "description": "Kotlin wrapper for React library",
-  "files": [
-    "build/classes",
-    "package.json",
-    "README.md"
-  ],
-  "main": "build/classes/main/kotlin-react.js",
-  "repository": "https://github.com/JetBrains/kotlin-wrappers",
+  "main": "$main.js",
+  "repository": "$repo.url",
   "peerDependencies": {
-    "@jetbrains/kotlin-extensions": "^$kotlinext_version",
-    "kotlin": "^$kotlin_version",
+    "@jetbrains/kotlin-extensions": "^$kotlinext.version",
+    "kotlin": "^$kotlin.version",
     "react": ">=15.x.x <=16.x.x"
   },
   "author": "Filipp Riabchun",
-  "license": "Apache-2.0"
+  "license": "$license"
 }

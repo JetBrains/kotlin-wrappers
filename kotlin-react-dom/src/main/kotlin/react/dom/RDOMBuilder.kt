@@ -94,7 +94,7 @@ open class RDOMBuilder<out T : Tag>(factory: (TagConsumer<Unit>) -> T) : RBuilde
             values = setOf(value)
         }
 
-    protected val props: DOMProps = jsObject {}
+    protected val props: DOMProps = jsObject()
 
     init {
         attrs.attributesEntries.forEach { setProp(it.key, it.value) }
@@ -105,13 +105,15 @@ open class RDOMBuilder<out T : Tag>(factory: (TagConsumer<Unit>) -> T) : RBuilde
     }
 
     var key: String
-        get() = props.key
+        @Deprecated(message = "Write-only property", level = DeprecationLevel.HIDDEN)
+        get() = error("")
         set(value) {
             props.key = value
         }
 
     var ref: RRef
-        get() = props.ref
+        @Deprecated(message = "Write-only property", level = DeprecationLevel.HIDDEN)
+        get() = error("")
         set(value) {
             props.ref = value
         }

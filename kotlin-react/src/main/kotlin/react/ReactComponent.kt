@@ -1,19 +1,23 @@
 package react
 
 import kotlinext.js.*
+import kotlin.reflect.KClass
 
 // Props
 external interface RProps
 
 val RProps.children: Any get() = asDynamic().children
+
 var RProps.key: String
-    get() = error("key cannot be read from props")
+    @Deprecated(message = "Write-only property", level = DeprecationLevel.HIDDEN)
+    get() = error("")
     set(value) {
         asDynamic().key = value
     }
 
 var RProps.ref: RRef
-    get() = error("ref cannot be read from props")
+    @Deprecated(message = "Write-only property", level = DeprecationLevel.HIDDEN)
+    get() = error("")
     set(value) {
         asDynamic().ref = value
     }
@@ -34,6 +38,9 @@ val RErrorInfo.componentStack: Any get() = asDynamic().componentStack
 
 // TODO: Should extend RComponentClassStatics, but has problems with generic params
 external interface RClass<in P : RProps> : RComponentClassStatics<RProps, RState, RContext<Any>?>
+
+internal inline val <P : RProps, C : Component<P, *>> KClass<C>.rClass: RClass<P>
+    get() = js.unsafeCast<RClass<P>>()
 
 external interface RComponentClassStatics<P : RProps, S : RState, C : RContext<Any>?> {
     var displayName: String?
@@ -79,9 +86,9 @@ inline fun <P : RProps> rFunction(
     displayName: String,
     crossinline render: RBuilder.(P) -> Unit
 ): RClass<P> {
-    val fn = { props: P -> buildElements { render(props) } } as RClass<P>
-    fn.displayName = displayName
-    return fn
+    val fn = { props: P -> buildElements { render(props) } }
+    return fn.unsafeCast<RClass<P>>()
+        .also { it.displayName = displayName }
 }
 
 abstract class RComponent<P : RProps, S : RState> : Component<P, S> {

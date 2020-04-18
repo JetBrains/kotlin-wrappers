@@ -56,10 +56,7 @@ fun RBuilder.productTable(products: Array<Product>, filterText: String, inStockO
                 lastCategory = it.category
 
                 //show the product per filter text and inStock flag
-                if (!(
-                    (filterText.isNotEmpty() and !it.name.toUpperCase().contains(filterText.toUpperCase())) or
-                        (inStockOnly and !it.isStocked))
-                    ) {
+                if (!((filterText.isNotEmpty() and !it.name.toUpperCase().contains(filterText.toUpperCase())) or (inStockOnly and !it.isStocked))) {
                     productRow(it.name, it.price, it.isStocked)
                 }
             }
@@ -102,10 +99,11 @@ class SearchBar(props: SearchBarProps) : RComponent<SearchBarProps, RState>(prop
     }
 }
 
-fun RBuilder.searchBar(initialInStockOnly: Boolean,
-                       initialFilterText: String,
-                       handleFilterInputChange: (String) -> () -> Unit,
-                       handleInStockInputClick: () -> () -> Unit
+fun RBuilder.searchBar(
+    initialInStockOnly: Boolean,
+    initialFilterText: String,
+    handleFilterInputChange: (String) -> () -> Unit,
+    handleInStockInputClick: () -> () -> Unit
 ) = child(SearchBar::class) {
     attrs.onClick = handleInStockInputClick()
     attrs.onChange = handleFilterInputChange
@@ -114,8 +112,7 @@ fun RBuilder.searchBar(initialInStockOnly: Boolean,
 }
 
 
-interface ProductProps : RProps {
-}
+interface ProductProps : RProps
 
 interface ProductState : RState {
     var filterText: String

@@ -31,7 +31,7 @@ open class RBuilder {
     }
 
     operator fun <P : RProps> RClass<P>.invoke(handler: RHandler<P>) =
-        child(this, jsObject {}, handler)
+        child(this, jsObject(), handler)
 
     operator fun <T> RProvider<T>.invoke(value: T, handler: RHandler<RProviderProps<T>>) =
         child(this, jsObject { this.value = value }, handler)
@@ -48,10 +48,11 @@ open class RBuilder {
         children: List<Any> = emptyList()
     ) = child(this, clone(props), children)
 
-    fun <P : RProps, C : Component<P, *>> child(klazz: KClass<C>, handler: RHandler<P>): ReactElement {
-        val rClass = klazz.js as RClass<P>
-        return rClass(handler)
-    }
+    fun <P : RProps, C : Component<P, *>> child(
+        klazz: KClass<C>,
+        handler: RHandler<P>
+    ): ReactElement =
+        klazz.rClass.invoke(handler)
 
     inline fun <P : RProps, reified C : Component<P, *>> child(noinline handler: RHandler<P>) =
         child(C::class, handler)
@@ -60,10 +61,8 @@ open class RBuilder {
         klazz: KClass<C>,
         props: P,
         children: List<Any> = emptyList()
-    ): ReactElement {
-        val rClass = klazz.js as RClass<P>
-        return rClass.node(props, children)
-    }
+    ): ReactElement =
+        klazz.rClass.node(props, children)
 
     inline fun <P : RProps, reified C : Component<P, *>> node(props: P, children: List<Any> = emptyList()) =
         node(C::class, props, children)
@@ -73,23 +72,23 @@ open class RBuilder {
     }
 }
 
-open class RBuilderMultiple : RBuilder() {
-}
+open class RBuilderMultiple : RBuilder()
 
 fun buildElements(handler: RBuilder.() -> Unit): dynamic {
     val nodes = RBuilder().apply(handler).childList
-    return when {
-        nodes.size == 0 -> null
-        nodes.size == 1 -> nodes.first()
+    return when (nodes.size) {
+        0 -> null
+        1 -> nodes.first()
         else -> createElement(Fragment, js {}, *nodes.toTypedArray())
     }
 }
 
-open class RBuilderSingle : RBuilder() {
-}
+open class RBuilderSingle : RBuilder()
 
-inline fun buildElement(handler: RBuilder.() -> Unit): ReactElement? =
-    RBuilder().apply(handler).childList.first() as ReactElement?
+inline fun buildElement(handler: RBuilder.() -> Unit): ReactElement =
+    RBuilder().apply(handler)
+        .childList.first()
+        .unsafeCast<ReactElement>()
 
 open class RElementBuilder<out P : RProps>(open val attrs: P) : RBuilder() {
     fun attrs(handler: P.() -> Unit) {
@@ -97,13 +96,15 @@ open class RElementBuilder<out P : RProps>(open val attrs: P) : RBuilder() {
     }
 
     var key: String
-        get() = attrs.key
+        @Deprecated(message = "Write-only property", level = DeprecationLevel.HIDDEN)
+        get() = error("")
         set(value) {
             attrs.key = value
         }
 
     var ref: RRef
-        get() = attrs.ref
+        @Deprecated(message = "Write-only property", level = DeprecationLevel.HIDDEN)
+        get() = error("")
         set(value) {
             attrs.ref = value
         }
@@ -139,9 +140,10 @@ fun <P : RProps> functionalComponent(
 /**
  * Append functional component [functionalComponent] as child of current builder
  */
+@Suppress("EXTENSION_SHADOWED_BY_MEMBER")
 fun <P : RProps> RBuilder.child(
     functionalComponent: FunctionalComponent<P>,
-    props: P = jsObject {},
+    props: P = jsObject(),
     handler: RHandler<P> = {}
 ): ReactElement {
     return child(functionalComponent, props, handler)
