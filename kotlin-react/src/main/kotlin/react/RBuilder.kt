@@ -153,3 +153,20 @@ fun <P : RProps> RBuilder.child(
 ): ReactElement {
     return child(functionalComponent, props, handler)
 }
+
+fun <T, P: RProps> RBuilder.childFunction(
+    functionalComponent: FunctionalComponent<P>,
+    handler: RHandler<P> = {},
+    children: RBuilder.(T) -> Unit
+): ReactElement {
+    return childFunction(functionalComponent, jsObject<P>(), handler, children)
+}
+
+fun <T, P: RProps> RBuilder.childFunction(
+    functionalComponent: FunctionalComponent<P>,
+    props: P,
+    handler: RHandler<P> = {},
+    children: RBuilder.(T) -> Unit
+): ReactElement {
+    return child(functionalComponent, RElementBuilder(props).apply(handler).attrs, listOf { value: T -> buildElement { children(value) } })
+}
