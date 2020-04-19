@@ -57,6 +57,17 @@ open class RBuilder {
     inline fun <P : RProps, reified C : Component<P, *>> child(noinline handler: RHandler<P>) =
         child(C::class, handler)
 
+    fun <T, P : RProps, C : Component<P, *>> childFunction(
+            klazz: KClass<C>,
+            handler: RHandler<P>,
+            children: RBuilder.(T) -> Unit
+    ) = child(klazz.rClass, RElementBuilder(jsObject<P>()).apply(handler).attrs, listOf { value: T -> buildElement { children(value) } })
+
+    inline fun <T, P : RProps, reified C : Component<P, *>> childFunction(
+            noinline handler: RHandler<P>,
+            noinline children: RBuilder.(T) -> Unit
+    ) = childFunction(C::class, handler, children)
+
     fun <P : RProps, C : Component<P, *>> node(
         klazz: KClass<C>,
         props: P,
