@@ -70,6 +70,11 @@ open class RBuilder {
     fun RProps.children() {
         childList.addAll(Children.toArray(children))
     }
+
+    @Suppress("UNCHECKED_CAST")
+    fun <T> RProps.children(value: T) {
+        childList.add((children as (T) -> Any).invoke(value))
+    }
 }
 
 open class RBuilderMultiple : RBuilder()
