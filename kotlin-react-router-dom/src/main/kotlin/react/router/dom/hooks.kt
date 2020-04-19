@@ -11,11 +11,15 @@ fun <T : RProps> useParams(): T? {
 }
 
 fun <T : RProps> useRouteMatch(
+    vararg path: String,
     exact: Boolean = false,
     strict: Boolean = false,
-    sensitive: Boolean = false,
-    vararg path: String
+    sensitive: Boolean = false
 ): RouteResultMatch<T>? {
+    if (path.isEmpty()) {
+        return rawUseRouteMatch(null)
+    }
+
     val options: RouteMatchOptions = jsObject {
         this.path = path
         this.exact = exact
