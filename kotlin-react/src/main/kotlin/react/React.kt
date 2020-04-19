@@ -38,13 +38,12 @@ inline fun <P : RProps> cloneElement(
 fun clone(element: dynamic, props: dynamic, child: Any? = null): ReactElement =
     cloneElement(element, props, *Children.toArray(child))
 
-val <P : RProps, T : Component<P, *>> KClass<T>.rClass
-    get() =
-        js.unsafeCast<RClass<P>>()
+val <P : RProps, T : Component<P, *>> KClass<T>.rClass: RClass<P>
+    get() = js.unsafeCast<RClass<P>>()
 
 // 16.6+
-fun <P : RProps> rLazy(loadComponent: suspend () -> RClass<P>): RClass<P> {
-    return lazy {
+fun <P : RProps> rLazy(loadComponent: suspend () -> RClass<P>): RClass<P> =
+    lazy {
         Promise<RClass<P>> { resolve, reject ->
             GlobalScope.launch {
                 try {
@@ -55,7 +54,6 @@ fun <P : RProps> rLazy(loadComponent: suspend () -> RClass<P>): RClass<P> {
             }
         }
     }
-}
 
 // 16.6+
 fun SuspenseProps.fallback(handler: RBuilder.() -> Unit) {

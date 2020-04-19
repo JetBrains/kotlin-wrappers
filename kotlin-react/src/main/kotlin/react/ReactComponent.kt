@@ -6,7 +6,8 @@ import kotlin.reflect.KClass
 // Props
 external interface RProps
 
-val RProps.children: Any get() = asDynamic().children
+val RProps.children: Any
+    get() = asDynamic().children
 
 var RProps.key: String
     @Deprecated(message = "Write-only property", level = DeprecationLevel.HIDDEN)
@@ -34,7 +35,8 @@ class BoxedState<T>(var state: T) : RState
 // Error info
 external interface RErrorInfo
 
-val RErrorInfo.componentStack: Any get() = asDynamic().componentStack
+val RErrorInfo.componentStack: Any
+    get() = asDynamic().componentStack
 
 // TODO: Should extend RComponentClassStatics, but has problems with generic params
 external interface RClass<in P : RProps> : RComponentClassStatics<RProps, RState, RContext<Any>?>
