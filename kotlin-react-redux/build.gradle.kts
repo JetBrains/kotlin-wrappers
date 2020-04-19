@@ -8,5 +8,5 @@ dependencies {
     implementation(project(":kotlin-react"))
     implementation(project(":kotlin-redux"))
 
-    implementation(npm("react-redux", "^5.0.7"))
+    implementation(npm("react-redux", npmVersion("react-redux")))
 }
