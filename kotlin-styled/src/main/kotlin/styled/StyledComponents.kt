@@ -24,21 +24,15 @@ external interface CustomStyledProps : RProps {
 }
 
 inline fun CustomStyledProps.forwardCss(builder: CSSBuilder) {
-    if (css != null) {
-        for (c in css!!) {
-            c.invoke(builder)
-        }
-    }
+    css?.forEach { it(builder) }
 }
 
 inline fun CustomStyledProps.forwardCss(props: CustomStyledProps) {
-    if (css != null) {
-        for (c in css!!) {
-            if (props.css == null) {
-                props.css = ArrayList()
-            }
-            props.css!!.add(c)
+    css?.forEach { c ->
+        if (props.css == null) {
+            props.css = ArrayList()
         }
+        props.css!!.add(c)
     }
 }
 
