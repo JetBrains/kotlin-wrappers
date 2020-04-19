@@ -19,13 +19,12 @@ external class Object internal constructor() {
     fun propertyIsEnumerable(v: String): Boolean
 
     companion object {
-        fun <P, T : P> getPrototypeOf(o: T): P?
+        fun <P : Any, T : P> getPrototypeOf(o: T): P
         fun <T> getOwnPropertyDescriptor(o: Any, p: String): PropertyDescriptor<T>
         fun getOwnPropertyNames(o: Any): Array<String>
-        fun create(o: Nothing?, properties: dynamic = definedExternally): Any
-        fun <T> create(o: T, properties: dynamic = definedExternally): T
-        fun <T, P> defineProperty(o: T, p: String, attributes: PropertyDescriptor<P>): T
-        fun <T> defineProperties(o: T, properties: dynamic): T
+        fun <T : Any> create(o: T?, properties: dynamic = definedExternally): T
+        fun <T : Any, P> defineProperty(o: T, p: String, attributes: PropertyDescriptor<P>): T
+        fun <T : Any> defineProperties(o: T, properties: dynamic): T
         fun <T> seal(o: T): T
         fun <R, T : R> freeze(o: T): R
         fun <T> preventExtensions(o: T): T
@@ -33,15 +32,9 @@ external class Object internal constructor() {
         fun isFrozen(o: Any): Boolean
         fun isExtensible(o: Any): Boolean
         fun keys(o: Any): Array<String>
-        fun <T, R : T> assign(dest: R, vararg src: T): R
+        fun <T : Any, R : T> assign(dest: R, vararg src: T?): R
     }
 }
 
 fun Any.getOwnPropertyNames(): Array<String> =
     Object.getOwnPropertyNames(this)
-
-@Deprecated(
-    message = "Use Object.assign instead",
-    replaceWith = ReplaceWith("Object.assign(dest, *src)", "kotlinext.js")
-)
-fun <T, R : T> objectAssign(dest: R, vararg src: T): R = Object.assign(dest, *src)
