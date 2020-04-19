@@ -10,7 +10,7 @@ kotlinDslPluginOptions {
     experimentalWarning.set(false)
 }
 
-fun version(target:String):String =
+fun version(target: String): String =
     property("${target}.version") as String
 
 dependencies {

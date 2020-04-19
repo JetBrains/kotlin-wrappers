@@ -30,7 +30,7 @@ external class LinkComponent : Component<LinkProps, RState> {
 }
 
 @JsName("NavLink")
-external class NavLinkComponent<T: RProps> : Component<NavLinkProps<T>, RState> {
+external class NavLinkComponent<T : RProps> : Component<NavLinkProps<T>, RState> {
     override fun render(): ReactElement?
 }
 
@@ -53,7 +53,7 @@ external interface LinkProps : RProps {
     var className: String?
 }
 
-external interface NavLinkProps<T: RProps> : LinkProps {
+external interface NavLinkProps<T : RProps> : LinkProps {
     var activeClassName: String
     var exact: Boolean
     var strict: Boolean
