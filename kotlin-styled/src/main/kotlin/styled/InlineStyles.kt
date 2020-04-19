@@ -13,12 +13,10 @@ fun RDOMBuilder<*>.inlineStyles(prefix: Boolean = true, builder: StyledElement.(
 
 fun StyledElement.toStyle(prefix: Boolean = true): Any {
     val res = js { }
-    declarations.forEach {
-        if ((it.value !is String) && (it.value !is Number)) {
-            val conv = it.value.toString()
-            res[it.key] = conv
-        } else {
-            res[it.key] = it.value
+    declarations.forEach { (key, value) ->
+        res[key] = when (value) {
+            is String, is Number -> value
+            else -> value.toString()
         }
     }
 
