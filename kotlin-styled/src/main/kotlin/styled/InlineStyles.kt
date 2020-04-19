@@ -4,25 +4,6 @@ import kotlinext.js.*
 import kotlinx.css.*
 import react.dom.*
 
-@JsModule("inline-style-prefixer")
-external object InlineStylePrefixer {
-    /**
-     * https://github.com/rofrischmann/inline-style-prefixer/blob/master/docs/api/prefix.md
-     *
-     * data: an object containing a valid prefixMap and a plugins list
-     * Returns: custom prefix function
-     */
-    fun createPrefixer(data: dynamic): dynamic
-
-    /**
-     * https://github.com/rofrischmann/inline-style-prefixer/blob/master/docs/api/createPrefixer.md
-     *
-     * style: an object containing valid style declarations
-     * Returns: an object containing all style declarations with vendor prefixes
-     */
-    fun prefix(style: dynamic): dynamic
-}
-
 // Inserts vendor prefixes (using inline-style-prefixer) and sets the style attribute
 fun RDOMBuilder<*>.inlineStyles(prefix: Boolean = true, builder: StyledElement.() -> Unit) {
     val styles = StyledElement()
@@ -45,7 +26,7 @@ fun StyledElement.toStyle(prefix: Boolean = true): Any {
         return res
     }
 
-    val prefixed = InlineStylePrefixer.prefix(res) as Object
+    val prefixed = prefix(res) as Object
 
     // https://inline-style-prefixer.js.org/docs/guides/ResolvingArrays.html
     Object.keys(prefixed).forEach {
