@@ -26,6 +26,9 @@ internal fun Project.nmpDependencies(): List<NpmDependency> {
 internal fun Project.version(target: String): String =
     prop("${target}.version")
 
+fun Project.npmVersion(target: String): String =
+    "^${version(target)}"
+
 internal val Project.npmName: String
     get() = "@jetbrains/$name"
 
