@@ -12,10 +12,18 @@ external fun cloneElement(element: dynamic, props: dynamic, vararg child: Any?):
 external fun isValidElement(element: Any): Boolean
 
 external object Children {
-    fun <T> map(children: Any?, handler: (Child) -> T): Array<out T>?
-    fun <T> map(children: Any?, handler: (Child) -> T, context: Any?): Array<out T>?
-    fun forEach(children: Any?, handler: (Child) -> Unit)
-    fun forEach(children: Any?, handler: (Child) -> Unit, context: Any?)
+    fun <T> map(
+        children: Any?,
+        handler: (Child) -> T,
+        context: Any? = definedExternally
+    ): Array<out T>?
+
+    fun forEach(
+        children: Any?,
+        handler: (Child) -> Unit,
+        context: Any? = definedExternally
+    )
+
     fun count(children: Any?): Int
     fun only(children: Any?): ReactElement
     fun toArray(children: Any?): Array<out Child>
@@ -102,24 +110,25 @@ external fun <T> rawUseState(initValue: T): RDependenciesArray
 
 // Reducer Hook (16.8+)
 @JsName("useReducer")
-external fun <S, A> rawUseReducer(reducer: RReducer<S, A>, initialState: S): RDependenciesArray
-
-@JsName("useReducer")
-external fun <S, A> rawUseReducer(reducer: RReducer<S, A>, initialState: S, initialAction: A): RDependenciesArray
+external fun <S, A> rawUseReducer(
+    reducer: RReducer<S, A>,
+    initialState: S,
+    initialAction: A = definedExternally
+): RDependenciesArray
 
 // Effect Hook (16.8+)
 @JsName("useEffect")
-external fun rawUseEffect(effect: () -> dynamic, dependencies: RDependenciesArray)
-
-@JsName("useEffect")
-external fun rawUseEffect(effect: () -> dynamic)
+external fun rawUseEffect(
+    effect: () -> dynamic,
+    dependencies: RDependenciesArray = definedExternally
+)
 
 // Layout Effect Hook (16.8+)
 @JsName("useLayoutEffect")
-external fun rawUseLayoutEffect(effect: () -> dynamic, dependencies: RDependenciesArray)
-
-@JsName("useLayoutEffect")
-external fun rawUseLayoutEffect(effect: () -> dynamic)
+external fun rawUseLayoutEffect(
+    effect: () -> dynamic,
+    dependencies: RDependenciesArray = definedExternally
+)
 
 // Context Hook (16.8+)
 external fun <T> useContext(context: RContext<T>): T
