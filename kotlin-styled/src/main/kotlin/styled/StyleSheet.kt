@@ -37,7 +37,7 @@ open class StyleSheet(var name: String, val isStatic: Boolean = false) {
                 }
             }
 
-            StyledComponents.injectGlobal(builder.toString())
+            injectGlobal(builder.toString())
         }
     }
 }

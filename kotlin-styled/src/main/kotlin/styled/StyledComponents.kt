@@ -19,17 +19,6 @@ typealias DIVBuilder = StyledDOMBuilder<DIV>.() -> Unit
 typealias SPANBuilder = StyledDOMBuilder<SPAN>.() -> Unit
 typealias INPUTBuilder = StyledDOMBuilder<INPUT>.() -> Unit
 
-external interface StyledProps : WithClassName {
-    @JsName("_css")
-    var css: String
-
-    @JsName("_forwardRef")
-    var forwardRef: ((Any?) -> Unit)?
-
-    @JsName("_styleDisplayName")
-    var styleDisplayName: String?
-}
-
 external interface CustomStyledProps : RProps {
     var css: ArrayList<RuleSet>?
 }
@@ -95,45 +84,11 @@ inline fun CustomStyledProps.css(noinline handler: RuleSet) {
 @Suppress("NOTHING_TO_INLINE")
 inline fun <P : CustomStyledProps> RElementBuilder<P>.css(noinline handler: RuleSet) = attrs.css(handler)
 
-external interface StylerConfig {
-    var displayName: String
-    var componentId: String
-}
-
-external interface Styler : TemplateTag<(StyledProps) -> String, dynamic> {
-    fun withConfig(config: StylerConfig): Styler
-}
-
-external interface Keyframes {
-    fun getName(): String
-}
-
-@JsModule("styled-components")
-external object StyledComponents {
-    fun default(target: dynamic): Styler
-
-    // A helper method to create keyframes for animations.
-    val keyframes: TemplateTag<Nothing, Keyframes>
-
-    // A helper function to generate CSS from a template literal with interpolations.
-    // You need to use this if you return a template literal with functions inside an
-    // interpolation due to how tagged template literals work in JavaScript.
-    val css: TemplateTag<dynamic, String>
-
-    // A helper function to generate a special StyledComponent that handles global styles.
-    // Normally, styled components are automatically scoped to a local CSS class and therefore
-    // isolated from other components. In the case of createGlobalStyle, this limitation is removed
-    // and things like CSS resets or base stylesheets can be applied.
-    val createGlobalStyle: TemplateTag<Nothing, Component<RProps, RState>>
-
-    // A utility to help identify styled components.
-    val isStyledComponent: Boolean
-}
-
 /**
- * @deprecated Use [StyledComponents.keyframes] and [StyledComponents.css] instead
+ * @deprecated Use [keyframes] and [css] instead
  */
-inline fun StyledComponents.keyframesName(string: String): String {
+@Suppress("NOTHING_TO_INLINE")
+inline fun keyframesName(string: String): String {
     val keyframe = keyframes(string)
     injectGlobal(css(keyframe))
 
@@ -143,9 +98,9 @@ inline fun StyledComponents.keyframesName(string: String): String {
 private var globalStylesCounter = 0
 
 /**
- * @deprecated Use [StyledComponents.createGlobalStyle] instead
+ * @deprecated Use [createGlobalStyle] instead
  */
-fun StyledComponents.injectGlobal(string: String) {
+fun injectGlobal(string: String) {
     val globalStyleComponent = createGlobalStyle(string)
     val element = window.document.body!!.appendChild(window.document.createElement("div")) as Element
     element.setAttribute("id", "sc-global-style-${globalStylesCounter++}")
@@ -155,8 +110,8 @@ fun StyledComponents.injectGlobal(string: String) {
     }
 }
 
-fun StyledComponents.injectGlobal(handler: CSSBuilder.() -> Unit) {
-    StyledComponents.injectGlobal(CSSBuilder().apply { handler() }.toString())
+fun injectGlobal(handler: CSSBuilder.() -> Unit) {
+    injectGlobal(CSSBuilder().apply { handler() }.toString())
 }
 
 object Styled {
@@ -164,7 +119,7 @@ object Styled {
 
     private fun wrap(type: dynamic) =
         cache.getOrPut(type) {
-            (StyledComponents.default(type))({ it.css })
+            (default(type))({ it.css })
         }
 
     fun createElement(type: Any, css: CSSBuilder, props: WithClassName, children: List<Any>): ReactElement {
