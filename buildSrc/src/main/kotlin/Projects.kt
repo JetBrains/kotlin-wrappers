@@ -24,7 +24,7 @@ internal fun Project.nmpDependencies(): List<NpmDependency> {
 }
 
 internal fun Project.version(target: String): String =
-    property("${target}.version") as String
+    prop("${target}.version")
 
 internal val Project.npmName: String
     get() = "@jetbrains/$name"
@@ -34,7 +34,11 @@ internal val Project.npmVersion: String
         name.removePrefix("kotlin-")
             .takeIf { it != "extensions" }
             ?: "kotlinext"
-    )
+    ) + npmVersionBuild
+
+private val Project.npmVersionBuild: String
+    get() = prop("version.build")
+        .let { if (it.isNotEmpty()) "-$it" else "" }
 
 internal val Project.kotlinVersion: String
     get() = version("kotlin")
