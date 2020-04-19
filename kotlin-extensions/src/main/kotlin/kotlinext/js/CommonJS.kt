@@ -18,5 +18,3 @@ external object require {
 }
 
 external fun require(module: String): dynamic
-
-inline operator fun require.invoke(module: String) = asDynamic()(module)
