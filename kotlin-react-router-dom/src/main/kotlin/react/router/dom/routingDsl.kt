@@ -11,7 +11,7 @@ fun RBuilder.switch(handler: RHandler<RProps>) = child(SwitchComponent::class, h
 
 fun RBuilder.route(
     path: String,
-    component: KClass<out Component<*, *>>,
+    component: KClass<out Component<RProps, *>>,
     exact: Boolean = false,
     strict: Boolean = false
 ): ReactElement {
@@ -20,7 +20,7 @@ fun RBuilder.route(
             this.path = path
             this.exact = exact
             this.strict = strict
-            this.component = component.js.unsafeCast<RClass<RProps>>()
+            this.component = component.rClass
         }
     }
 }
