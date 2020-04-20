@@ -58,14 +58,14 @@ open class RBuilder {
         child(C::class, handler)
 
     fun <T, P : RProps, C : Component<P, *>> childFunction(
-            klazz: KClass<C>,
-            handler: RHandler<P>,
-            children: RBuilder.(T) -> Unit
+        klazz: KClass<C>,
+        handler: RHandler<P>,
+        children: RBuilder.(T) -> Unit
     ) = child(klazz.rClass, RElementBuilder(jsObject<P>()).apply(handler).attrs, listOf { value: T -> buildElement { children(value) } })
 
     inline fun <T, P : RProps, reified C : Component<P, *>> childFunction(
-            noinline handler: RHandler<P>,
-            noinline children: RBuilder.(T) -> Unit
+        noinline handler: RHandler<P>,
+        noinline children: RBuilder.(T) -> Unit
     ) = childFunction(C::class, handler, children)
 
     fun <P : RProps, C : Component<P, *>> node(
@@ -165,7 +165,7 @@ fun <P : RProps> RBuilder.child(
     return child(functionalComponent, props, handler)
 }
 
-fun <T, P: RProps> RBuilder.childFunction(
+fun <T, P : RProps> RBuilder.childFunction(
     functionalComponent: FunctionalComponent<P>,
     handler: RHandler<P> = {},
     children: RBuilder.(T) -> Unit
@@ -173,7 +173,7 @@ fun <T, P: RProps> RBuilder.childFunction(
     return childFunction(functionalComponent, jsObject<P>(), handler, children)
 }
 
-fun <T, P: RProps> RBuilder.childFunction(
+fun <T, P : RProps> RBuilder.childFunction(
     functionalComponent: FunctionalComponent<P>,
     props: P,
     handler: RHandler<P> = {},
