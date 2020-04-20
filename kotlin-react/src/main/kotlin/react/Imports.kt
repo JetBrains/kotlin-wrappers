@@ -32,26 +32,26 @@ abstract external class Component<P : RProps, S : RState>(
 
     fun forceUpdate(callback: () -> Unit = definedExternally)
 
-    open fun componentWillMount(): Unit
-    open fun UNSAFE_componentWillMount(): Unit
+    open fun componentWillMount()
+    open fun UNSAFE_componentWillMount()
 
-    open fun componentDidMount(): Unit
+    open fun componentDidMount()
 
-    open fun componentWillReceiveProps(nextProps: P): Unit
-    open fun UNSAFE_componentWillReceiveProps(nextProps: P): Unit
+    open fun componentWillReceiveProps(nextProps: P)
+    open fun UNSAFE_componentWillReceiveProps(nextProps: P)
 
     open fun shouldComponentUpdate(nextProps: P, nextState: S): Boolean
 
     open fun getSnapshotBeforeUpdate(prevProps: P, prevState: S): Any
 
-    open fun componentWillUpdate(nextProps: P, nextState: S): Unit
-    open fun UNSAFE_componentWillUpdate(nextProps: P, nextState: S): Unit
+    open fun componentWillUpdate(nextProps: P, nextState: S)
+    open fun UNSAFE_componentWillUpdate(nextProps: P, nextState: S)
 
-    open fun componentDidUpdate(prevProps: P, prevState: S, snapshot: Any): Unit
+    open fun componentDidUpdate(prevProps: P, prevState: S, snapshot: Any)
 
-    open fun componentWillUnmount(): Unit
+    open fun componentWillUnmount()
 
-    open fun componentDidCatch(error: Throwable, info: RErrorInfo): Unit
+    open fun componentDidCatch(error: Throwable, info: RErrorInfo)
 
     abstract fun render(): dynamic
 }
@@ -138,7 +138,7 @@ external interface RMutableRef<T> : RRef {
 external fun <T> useRef(initialValue: T): RMutableRef<T>
 
 // Imperative Methods Hook (16.8+)
-external fun useImperativeHandle(ref: RRef, createInstance: () -> dynamic, inputs: RDependenciesArray): Unit
+external fun useImperativeHandle(ref: RRef, createInstance: () -> dynamic, inputs: RDependenciesArray)
 
 // Debug Value Hook (16.8+)
 external fun useDebugValue(value: Any)
