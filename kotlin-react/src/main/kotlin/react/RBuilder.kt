@@ -57,6 +57,17 @@ open class RBuilder {
     inline fun <P : RProps, reified C : Component<P, *>> child(noinline handler: RHandler<P>) =
         child(C::class, handler)
 
+    fun <T, P : RProps, C : Component<P, *>> childFunction(
+            klazz: KClass<C>,
+            handler: RHandler<P>,
+            children: RBuilder.(T) -> Unit
+    ) = child(klazz.rClass, RElementBuilder(jsObject<P>()).apply(handler).attrs, listOf { value: T -> buildElement { children(value) } })
+
+    inline fun <T, P : RProps, reified C : Component<P, *>> childFunction(
+            noinline handler: RHandler<P>,
+            noinline children: RBuilder.(T) -> Unit
+    ) = childFunction(C::class, handler, children)
+
     fun <P : RProps, C : Component<P, *>> node(
         klazz: KClass<C>,
         props: P,
@@ -69,6 +80,11 @@ open class RBuilder {
 
     fun RProps.children() {
         childList.addAll(Children.toArray(children))
+    }
+
+    @Suppress("UNCHECKED_CAST")
+    fun <T> RProps.children(value: T) {
+        childList.add((children as (T) -> Any).invoke(value))
     }
 }
 
@@ -147,4 +163,21 @@ fun <P : RProps> RBuilder.child(
     handler: RHandler<P> = {}
 ): ReactElement {
     return child(functionalComponent, props, handler)
+}
+
+fun <T, P: RProps> RBuilder.childFunction(
+    functionalComponent: FunctionalComponent<P>,
+    handler: RHandler<P> = {},
+    children: RBuilder.(T) -> Unit
+): ReactElement {
+    return childFunction(functionalComponent, jsObject<P>(), handler, children)
+}
+
+fun <T, P: RProps> RBuilder.childFunction(
+    functionalComponent: FunctionalComponent<P>,
+    props: P,
+    handler: RHandler<P> = {},
+    children: RBuilder.(T) -> Unit
+): ReactElement {
+    return child(functionalComponent, RElementBuilder(props).apply(handler).attrs, listOf { value: T -> buildElement { children(value) } })
 }
