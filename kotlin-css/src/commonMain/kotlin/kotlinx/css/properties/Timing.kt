@@ -26,7 +26,10 @@ class Timing(override val value: String) : CssValue(value) {
     }
 }
 
-fun cubicBezier(x1: Double, y1: Double, x2: Double, y2: Double) = Timing("cubic-bezier($x1, $y1, $x2, $y2)")
+fun cubicBezier(
+    x1: Double, y1: Double,
+    x2: Double, y2: Double
+): Timing = Timing("cubic-bezier($x1, $y1, $x2, $y2)")
 
 @Suppress("EnumEntryName")
 enum class TransitionDirection {
@@ -37,8 +40,5 @@ enum class TransitionDirection {
     override fun toString() = name
 }
 
-fun StyledElement.steps(number: Int, direction: TransitionDirection = TransitionDirection.end) =
-    Timing("steps($number, $direction)")
-
-fun StyledElement.cubicBezier(x1: Double, y1: Double, x2: Double, y2: Double) =
-    Timing("cubic-bezier($x1, $y1, $x2, $y2)")
+fun steps(count: Int, direction: TransitionDirection = TransitionDirection.end): Timing =
+    Timing("steps($count, $direction)")
