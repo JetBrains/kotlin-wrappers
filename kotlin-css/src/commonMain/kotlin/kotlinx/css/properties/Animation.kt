@@ -1,3 +1,5 @@
+@file:Suppress("EnumEntryName")
+
 package kotlinx.css.properties
 
 import kotlinx.css.*
@@ -10,7 +12,6 @@ class IterationCount(override val value: String) : CssValue(value) {
 
 val Int.times get() = IterationCount("$this")
 
-@Suppress("EnumEntryName")
 enum class AnimationDirection {
     initial, inherit, unset,
 
@@ -19,7 +20,6 @@ enum class AnimationDirection {
     override fun toString() = name.hyphenize()
 }
 
-@Suppress("EnumEntryName")
 enum class FillMode {
     initial, inherit, unset,
 
@@ -28,7 +28,6 @@ enum class FillMode {
     override fun toString() = name
 }
 
-@Suppress("EnumEntryName")
 enum class PlayState {
     initial, inherit, unset,
 

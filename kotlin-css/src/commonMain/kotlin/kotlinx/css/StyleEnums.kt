@@ -1,4 +1,4 @@
-@file:Suppress("unused")
+@file:Suppress("EnumEntryName")
 
 package kotlinx.css
 
@@ -8,7 +8,6 @@ abstract class CssValue(open val value: String) {
     override fun toString() = value
 }
 
-@Suppress("EnumEntryName")
 enum class Align {
     initial, inherit, unset,
 
@@ -17,7 +16,6 @@ enum class Align {
     override fun toString() = name.hyphenize()
 }
 
-@Suppress("EnumEntryName")
 enum class JustifyContent {
     initial, inherit, unset,
 
@@ -41,7 +39,6 @@ enum class JustifyContent {
     override fun toString() = name.hyphenize()
 }
 
-@Suppress("EnumEntryName")
 enum class BackgroundRepeat {
     initial, inherit, unset,
 
@@ -50,7 +47,6 @@ enum class BackgroundRepeat {
     override fun toString() = name.hyphenize()
 }
 
-@Suppress("EnumEntryName")
 enum class BackgroundAttachment {
     initial, inherit, unset,
 
@@ -59,7 +55,6 @@ enum class BackgroundAttachment {
     override fun toString(): String = name
 }
 
-@Suppress("EnumEntryName")
 enum class BackgroundClip {
     initial, inherit, unset,
 
@@ -68,7 +63,6 @@ enum class BackgroundClip {
     override fun toString(): String = name.hyphenize()
 }
 
-@Suppress("EnumEntryName")
 enum class BackgroundOrigin {
     initial, inherit, unset,
 
@@ -77,7 +71,6 @@ enum class BackgroundOrigin {
     override fun toString(): String = name.hyphenize()
 }
 
-@Suppress("EnumEntryName")
 enum class BorderCollapse {
     initial, inherit, unset,
 
@@ -86,7 +79,6 @@ enum class BorderCollapse {
     override fun toString() = name
 }
 
-@Suppress("EnumEntryName")
 enum class BorderStyle {
     initial, inherit, unset,
 
@@ -95,7 +87,6 @@ enum class BorderStyle {
     override fun toString(): String = name
 }
 
-@Suppress("EnumEntryName")
 enum class BoxSizing {
     initial, inherit, unset,
 
@@ -104,7 +95,6 @@ enum class BoxSizing {
     override fun toString() = name.hyphenize()
 }
 
-@Suppress("EnumEntryName")
 enum class Clear {
     initial, inherit, unset,
 
@@ -564,7 +554,6 @@ class ColumnGap(override val value: String) : CssValue(value) {
     }
 }
 
-@Suppress("EnumEntryName")
 enum class Contain {
     initial, inherit, unset,
 
@@ -573,7 +562,6 @@ enum class Contain {
     override fun toString(): String = name
 }
 
-@Suppress("EnumEntryName")
 enum class Cursor {
     initial, inherit, unset,
 
@@ -596,7 +584,6 @@ class QuotedString(override val value: String) : CssValue(value) {
 
 val String.quoted get() = QuotedString(this)
 
-@Suppress("EnumEntryName")
 enum class Direction {
     initial, inherit, unset,
 
@@ -605,7 +592,6 @@ enum class Direction {
     override fun toString(): String = name
 }
 
-@Suppress("EnumEntryName")
 enum class Display {
     initial, inherit, unset,
 
@@ -642,7 +628,6 @@ class FlexBasis(override val value: String) : CssValue(value) {
 
 val LinearDimension.basis get() = FlexBasis(toString())
 
-@Suppress("EnumEntryName")
 enum class FlexWrap {
     initial, inherit, unset,
 
@@ -651,7 +636,6 @@ enum class FlexWrap {
     override fun toString() = name.hyphenize()
 }
 
-@Suppress("EnumEntryName")
 enum class Float {
     initial, inherit, unset,
 
@@ -693,7 +677,6 @@ class FontStyle(override val value: String) : CssValue(value) {
     }
 }
 
-@Suppress("EnumEntryName")
 enum class FlexDirection {
     initial, inherit, unset,
 
@@ -871,7 +854,6 @@ enum class Grow {
     NONE, GROW, SHRINK, GROW_SHRINK
 }
 
-@Suppress("EnumEntryName")
 enum class Hyphens {
     initial, inherit, unset,
 
@@ -880,7 +862,6 @@ enum class Hyphens {
     override fun toString() = name
 }
 
-@Suppress("EnumEntryName")
 enum class ListStyleType {
     initial, inherit, unset,
 
@@ -889,7 +870,6 @@ enum class ListStyleType {
     override fun toString(): String = name.hyphenize()
 }
 
-@Suppress("EnumEntryName")
 enum class ObjectFit {
     initial, inherit, unset,
 
@@ -898,7 +878,6 @@ enum class ObjectFit {
     override fun toString(): String = name.hyphenize()
 }
 
-@Suppress("EnumEntryName")
 enum class Outline {
     initial, inherit, unset,
 
@@ -907,7 +886,6 @@ enum class Outline {
     override fun toString(): String = name
 }
 
-@Suppress("EnumEntryName")
 enum class Overflow {
     initial, inherit, unset,
 
@@ -916,7 +894,6 @@ enum class Overflow {
     override fun toString(): String = name
 }
 
-@Suppress("EnumEntryName")
 enum class OverflowWrap {
     initial, inherit, unset,
 
@@ -925,7 +902,6 @@ enum class OverflowWrap {
     override fun toString(): String = name.hyphenize()
 }
 
-@Suppress("EnumEntryName")
 enum class OverscrollBehavior {
     initial, inherit, unset,
 
@@ -934,7 +910,6 @@ enum class OverscrollBehavior {
     override fun toString(): String = name
 }
 
-@Suppress("EnumEntryName")
 enum class PointerEvents {
     initial, inherit, unset,
 
@@ -943,7 +918,6 @@ enum class PointerEvents {
     override fun toString(): String = name
 }
 
-@Suppress("EnumEntryName")
 enum class Position {
     initial, inherit, unset,
 
@@ -961,7 +935,6 @@ class RowGap(override val value: String) : CssValue(value) {
     }
 }
 
-@Suppress("EnumEntryName")
 enum class ScrollBehavior {
     initial, inherit, unset,
 
@@ -970,7 +943,6 @@ enum class ScrollBehavior {
     override fun toString() = name
 }
 
-@Suppress("EnumEntryName")
 enum class TextAlign {
     initial, inherit, unset,
 
@@ -979,7 +951,6 @@ enum class TextAlign {
     override fun toString() = name.hyphenize()
 }
 
-@Suppress("EnumEntryName")
 enum class TableLayout {
     initial, inherit, unset,
 
@@ -988,7 +959,6 @@ enum class TableLayout {
     override fun toString() = name
 }
 
-@Suppress("EnumEntryName")
 enum class TextOverflow {
     initial, inherit, unset,
 
@@ -997,7 +967,6 @@ enum class TextOverflow {
     override fun toString() = name
 }
 
-@Suppress("EnumEntryName")
 enum class TextTransform {
     initial, inherit, unset,
 
@@ -1006,7 +975,6 @@ enum class TextTransform {
     override fun toString() = name.hyphenize()
 }
 
-@Suppress("EnumEntryName")
 enum class UserSelect {
     initial, inherit, unset,
 
@@ -1035,7 +1003,6 @@ class VerticalAlign(override val value: String) : CssValue(value) {
 val LinearDimension.up get() = VerticalAlign(toString())
 val LinearDimension.down get() = VerticalAlign((-this).toString())
 
-@Suppress("EnumEntryName")
 enum class Visibility {
     initial, inherit, unset,
 
@@ -1044,7 +1011,6 @@ enum class Visibility {
     override fun toString() = name
 }
 
-@Suppress("EnumEntryName")
 enum class WhiteSpace {
     initial, inherit, unset,
 
@@ -1053,7 +1019,6 @@ enum class WhiteSpace {
     override fun toString() = name.hyphenize()
 }
 
-@Suppress("EnumEntryName")
 enum class WordBreak {
     initial, inherit, unset,
 
@@ -1062,7 +1027,6 @@ enum class WordBreak {
     override fun toString() = name.hyphenize()
 }
 
-@Suppress("EnumEntryName")
 enum class WordWrap {
     initial, inherit, unset,
 
