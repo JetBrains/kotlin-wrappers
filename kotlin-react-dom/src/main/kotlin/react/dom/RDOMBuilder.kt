@@ -32,11 +32,11 @@ open class RDOMBuilder<out T : Tag>(factory: (TagConsumer<Unit>) -> T) : RBuilde
             throw IllegalStateException("Comments are not supported")
         }
 
-        override fun onTagContent(content: CharSequence): Unit {
+        override fun onTagContent(content: CharSequence) {
             childList.add(content)
         }
 
-        override fun onTagContentEntity(entity: Entities): Unit {
+        override fun onTagContentEntity(entity: Entities) {
             childList.add(entity.text)
         }
 
