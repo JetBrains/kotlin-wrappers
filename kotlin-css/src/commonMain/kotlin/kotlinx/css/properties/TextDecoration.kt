@@ -1,8 +1,9 @@
+@file:Suppress("EnumEntryName")
+
 package kotlinx.css.properties
 
 import kotlinx.css.*
 
-@Suppress("EnumEntryName")
 enum class TextDecorationLine {
     initial, inherit, unset,
 
@@ -31,7 +32,6 @@ class TextDecoration(
     }
 }
 
-@Suppress("EnumEntryName")
 enum class TextDecorationStyle {
     initial, inherit, unset,
 
