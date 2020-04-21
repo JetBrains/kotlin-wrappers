@@ -62,41 +62,17 @@ fun <S, A> useReducer(reducer: RReducer<S?, A>): Pair<S?, RDispatch<A>> {
 typealias RCleanup = () -> Unit
 
 fun useEffectWithCleanup(dependencies: RDependenciesList? = null, effect: () -> RCleanup) {
-    if (dependencies != null) {
-        rawUseEffect(effect, dependencies.toTypedArray())
-    } else {
-        rawUseEffect(effect)
-    }
+    rawUseEffect(effect, dependencies?.toTypedArray())
 }
 
 fun useEffect(dependencies: RDependenciesList? = null, effect: () -> Unit) {
-    val rawEffect = {
-        effect()
-        undefined
-    }
-    if (dependencies != null) {
-        rawUseEffect(rawEffect, dependencies.toTypedArray())
-    } else {
-        rawUseEffect(rawEffect)
-    }
+    rawUseEffect(effect, dependencies?.toTypedArray())
 }
 
 fun useLayoutEffectWithCleanup(dependencies: RDependenciesList? = null, effect: () -> RCleanup) {
-    if (dependencies != null) {
-        rawUseLayoutEffect(effect, dependencies.toTypedArray())
-    } else {
-        rawUseLayoutEffect(effect)
-    }
+    rawUseLayoutEffect(effect, dependencies?.toTypedArray())
 }
 
 fun useLayoutEffect(dependencies: RDependenciesList? = null, effect: () -> Unit) {
-    val rawEffect = {
-        effect()
-        undefined
-    }
-    if (dependencies != null) {
-        rawUseLayoutEffect(rawEffect, dependencies.toTypedArray())
-    } else {
-        rawUseLayoutEffect(rawEffect)
-    }
+    rawUseLayoutEffect(effect, dependencies?.toTypedArray())
 }
