@@ -8,24 +8,17 @@ typealias RDependenciesList = List<dynamic>
 
 typealias RSetState<T> = (value: T) -> Unit
 
-fun <T> useState(initValue: T): Pair<T, RSetState<T>> {
-    val jsTuple = rawUseState(initValue)
-    val currentValue = jsTuple[0] as T
-    val setState = jsTuple[1] as RSetState<T>
-    return currentValue to setState
-}
+fun <T> useState(initValue: T): ReadWriteProperty<Any?, T> =
+    ReactStateDelegate(rawUseState(initValue))
 
-fun <T> useState(valueInitializer: () -> T): Pair<T, RSetState<T>> {
-    val jsTuple = rawUseState(valueInitializer)
-    val currentValue = jsTuple[0] as T
-    val setState = jsTuple[1] as RSetState<T>
-    return currentValue to setState
-}
+fun <T> useState(valueInitializer: () -> T): ReadWriteProperty<Any?, T> =
+    ReactStateDelegate(rawUseState(valueInitializer))
 
-private class ReactStateDelegate<T>(useState: Pair<T, RSetState<T>>) : ReadWriteProperty<Any?, T> {
-    private val state = useState.first
-
-    private val setState = useState.second
+private class ReactStateDelegate<T>(
+    stateTuple: RDependenciesArray
+) : ReadWriteProperty<Any?, T> {
+    private val state = stateTuple[0] as T
+    private val setState = stateTuple[1] as RSetState<T>
 
     override operator fun getValue(thisRef: Any?, property: KProperty<*>): T =
         state
@@ -34,12 +27,6 @@ private class ReactStateDelegate<T>(useState: Pair<T, RSetState<T>>) : ReadWrite
         setState(value)
     }
 }
-
-fun <T> state(initValue: T): ReadWriteProperty<Any?, T> =
-    ReactStateDelegate(useState(initValue))
-
-fun <T> state(valueInitializer: () -> T): ReadWriteProperty<Any?, T> =
-    ReactStateDelegate(useState(valueInitializer))
 
 typealias RReducer<S, A> = (state: S, action: A) -> S
 typealias RDispatch<A> = (action: A) -> Unit
