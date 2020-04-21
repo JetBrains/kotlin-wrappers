@@ -110,14 +110,14 @@ external fun <S, A> rawUseReducer(
 @JsName("useEffect")
 external fun rawUseEffect(
     effect: () -> dynamic,
-    dependencies: RDependenciesArray? = definedExternally
+    dependencies: RDependenciesArray = definedExternally
 )
 
 // Layout Effect Hook (16.8+)
 @JsName("useLayoutEffect")
 external fun rawUseLayoutEffect(
     effect: () -> dynamic,
-    dependencies: RDependenciesArray? = definedExternally
+    dependencies: RDependenciesArray = definedExternally
 )
 
 // Context Hook (16.8+)
