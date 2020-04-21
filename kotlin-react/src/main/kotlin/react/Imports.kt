@@ -102,24 +102,25 @@ external fun <T> rawUseState(initValue: T): RDependenciesArray
 
 // Reducer Hook (16.8+)
 @JsName("useReducer")
-external fun <S, A> rawUseReducer(reducer: RReducer<S, A>, initialState: S): RDependenciesArray
-
-@JsName("useReducer")
-external fun <S, A> rawUseReducer(reducer: RReducer<S, A>, initialState: S, initialAction: A): RDependenciesArray
+external fun <S, A> rawUseReducer(
+    reducer: RReducer<S, A>,
+    initialState: S,
+    initialAction: A = definedExternally
+): RDependenciesArray
 
 // Effect Hook (16.8+)
 @JsName("useEffect")
-external fun rawUseEffect(effect: () -> dynamic, dependencies: RDependenciesArray)
-
-@JsName("useEffect")
-external fun rawUseEffect(effect: () -> dynamic)
+external fun rawUseEffect(
+    effect: () -> dynamic,
+    dependencies: RDependenciesArray = definedExternally
+)
 
 // Layout Effect Hook (16.8+)
 @JsName("useLayoutEffect")
-external fun rawUseLayoutEffect(effect: () -> dynamic, dependencies: RDependenciesArray)
-
-@JsName("useLayoutEffect")
-external fun rawUseLayoutEffect(effect: () -> dynamic)
+external fun rawUseLayoutEffect(
+    effect: () -> dynamic,
+    dependencies: RDependenciesArray = definedExternally
+)
 
 // Context Hook (16.8+)
 external fun <T> useContext(context: RContext<T>): T
@@ -141,6 +142,7 @@ external fun <T> useRef(initialValue: T): RMutableRef<T>
 external fun useImperativeHandle(ref: RRef, createInstance: () -> dynamic, inputs: RDependenciesArray)
 
 // Debug Value Hook (16.8+)
-external fun useDebugValue(value: Any)
-
-external fun <T> useDebugValue(value: T, format: (value: T) -> Any)
+external fun <T : Any> useDebugValue(
+    value: T,
+    format: (value: T) -> Any = definedExternally
+)
