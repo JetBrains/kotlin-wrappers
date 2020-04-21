@@ -20,7 +20,7 @@ external object Children {
 }
 
 abstract external class Component<P : RProps, S : RState>(
-    props: RProps = definedExternally
+    props: P = definedExternally
 ) {
     open val props: P
     var state: S
@@ -55,7 +55,7 @@ abstract external class Component<P : RProps, S : RState>(
 }
 
 abstract external class PureComponent<P : RProps, S : RState>(
-    props: RProps = definedExternally
+    props: P = definedExternally
 ) : Component<P, S> {
     final override fun shouldComponentUpdate(nextProps: P, nextState: S): Boolean
 }
