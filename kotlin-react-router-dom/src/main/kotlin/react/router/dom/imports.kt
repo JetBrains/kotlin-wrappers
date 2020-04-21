@@ -5,10 +5,8 @@ package react.router.dom
 import react.RClass
 import react.RProps
 
-@JsName("useHistory")
 external fun useHistory(): RouteResultHistory
 
-@JsName("useLocation")
 external fun useLocation(): RouteResultLocation
 
 @JsName("useParams")
