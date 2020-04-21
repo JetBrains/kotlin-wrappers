@@ -64,8 +64,8 @@ open class RBuilder {
     ): ReactElement =
         child(this, clone(props), children)
 
-    fun <P : RProps, C : Component<P, *>> child(
-        klazz: KClass<C>,
+    fun <P : RProps> child(
+        klazz: KClass<out Component<P, *>>,
         handler: RHandler<P>
     ): ReactElement =
         klazz.rClass.invoke(handler)
@@ -75,8 +75,8 @@ open class RBuilder {
     ): ReactElement =
         child(C::class, handler)
 
-    fun <T, P : RProps, C : Component<P, *>> childFunction(
-        klazz: KClass<C>,
+    fun <T, P : RProps> childFunction(
+        klazz: KClass<out Component<P, *>>,
         handler: RHandler<P>,
         children: RBuilder.(T) -> Unit
     ): ReactElement =
@@ -92,8 +92,8 @@ open class RBuilder {
     ): ReactElement =
         childFunction(C::class, handler, children)
 
-    fun <P : RProps, C : Component<P, *>> node(
-        klazz: KClass<C>,
+    fun <P : RProps> node(
+        klazz: KClass<out Component<P, *>>,
         props: P,
         children: List<Any> = emptyList()
     ): ReactElement =
