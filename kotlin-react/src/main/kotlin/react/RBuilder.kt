@@ -19,10 +19,18 @@ open class RBuilder {
         childList.add(this)
     }
 
-    fun <P : RProps> child(type: Any, props: P, children: List<Any>) =
+    fun <P : RProps> child(
+        type: Any,
+        props: P,
+        children: List<Any>
+    ): ReactElement =
         child(createElement(type, props, *children.toTypedArray()))
 
-    fun <P : RProps> child(type: Any, props: P, handler: RHandler<P>): ReactElement {
+    fun <P : RProps> child(
+        type: Any,
+        props: P,
+        handler: RHandler<P>
+    ): ReactElement {
         val children = with(RElementBuilder(props)) {
             handler()
             childList
@@ -30,13 +38,20 @@ open class RBuilder {
         return child(type, props, children)
     }
 
-    operator fun <P : RProps> RClass<P>.invoke(handler: RHandler<P>) =
+    operator fun <P : RProps> RClass<P>.invoke(
+        handler: RHandler<P>
+    ): ReactElement =
         child(this, jsObject(), handler)
 
-    operator fun <T> RProvider<T>.invoke(value: T, handler: RHandler<RProviderProps<T>>) =
+    operator fun <T> RProvider<T>.invoke(
+        value: T,
+        handler: RHandler<RProviderProps<T>>
+    ): ReactElement =
         child(this, jsObject { this.value = value }, handler)
 
-    operator fun <T> RConsumer<T>.invoke(handler: RBuilder.(T) -> Unit) =
+    operator fun <T> RConsumer<T>.invoke(
+        handler: RBuilder.(T) -> Unit
+    ): ReactElement =
         child(this, jsObject<RConsumerProps<T>> {
             this.children = { value ->
                 buildElements { handler(value) }
@@ -46,7 +61,8 @@ open class RBuilder {
     fun <P : RProps> RClass<P>.node(
         props: P,
         children: List<Any> = emptyList()
-    ) = child(this, clone(props), children)
+    ): ReactElement =
+        child(this, clone(props), children)
 
     fun <P : RProps, C : Component<P, *>> child(
         klazz: KClass<C>,
@@ -54,19 +70,27 @@ open class RBuilder {
     ): ReactElement =
         klazz.rClass.invoke(handler)
 
-    inline fun <P : RProps, reified C : Component<P, *>> child(noinline handler: RHandler<P>) =
+    inline fun <P : RProps, reified C : Component<P, *>> child(
+        noinline handler: RHandler<P>
+    ): ReactElement =
         child(C::class, handler)
 
     fun <T, P : RProps, C : Component<P, *>> childFunction(
         klazz: KClass<C>,
         handler: RHandler<P>,
         children: RBuilder.(T) -> Unit
-    ) = child(klazz.rClass, RElementBuilder(jsObject<P>()).apply(handler).attrs, listOf { value: T -> buildElement { children(value) } })
+    ): ReactElement =
+        child(
+            type = klazz.rClass,
+            props = RElementBuilder(jsObject<P>()).apply(handler).attrs,
+            children = listOf { value: T -> buildElement { children(value) } }
+        )
 
     inline fun <T, P : RProps, reified C : Component<P, *>> childFunction(
         noinline handler: RHandler<P>,
         noinline children: RBuilder.(T) -> Unit
-    ) = childFunction(C::class, handler, children)
+    ): ReactElement =
+        childFunction(C::class, handler, children)
 
     fun <P : RProps, C : Component<P, *>> node(
         klazz: KClass<C>,
@@ -75,7 +99,10 @@ open class RBuilder {
     ): ReactElement =
         klazz.rClass.node(props, children)
 
-    inline fun <P : RProps, reified C : Component<P, *>> node(props: P, children: List<Any> = emptyList()) =
+    inline fun <P : RProps, reified C : Component<P, *>> node(
+        props: P,
+        children: List<Any> = emptyList()
+    ): ReactElement =
         node(C::class, props, children)
 
     fun RProps.children() {
@@ -161,23 +188,24 @@ fun <P : RProps> RBuilder.child(
     functionalComponent: FunctionalComponent<P>,
     props: P = jsObject(),
     handler: RHandler<P> = {}
-): ReactElement {
-    return child(functionalComponent, props, handler)
-}
+): ReactElement =
+    child(functionalComponent, props, handler)
 
 fun <T, P : RProps> RBuilder.childFunction(
     functionalComponent: FunctionalComponent<P>,
     handler: RHandler<P> = {},
     children: RBuilder.(T) -> Unit
-): ReactElement {
-    return childFunction(functionalComponent, jsObject<P>(), handler, children)
-}
+): ReactElement =
+    childFunction(functionalComponent, jsObject<P>(), handler, children)
 
 fun <T, P : RProps> RBuilder.childFunction(
     functionalComponent: FunctionalComponent<P>,
     props: P,
     handler: RHandler<P> = {},
     children: RBuilder.(T) -> Unit
-): ReactElement {
-    return child(functionalComponent, RElementBuilder(props).apply(handler).attrs, listOf { value: T -> buildElement { children(value) } })
-}
+): ReactElement =
+    child(
+        type = functionalComponent,
+        props = RElementBuilder(props).apply(handler).attrs,
+        children = listOf { value: T -> buildElement { children(value) } }
+    )
