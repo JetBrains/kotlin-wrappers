@@ -159,11 +159,10 @@ open class RElementBuilder<out P : RProps>(open val attrs: P) : RBuilder() {
 
 typealias RHandler<P> = RElementBuilder<P>.() -> Unit
 
-fun <P : RProps> forwardRef(handler: RBuilder.(RProps, RRef) -> Unit): RClass<P> {
-    return rawForwardRef { props, ref ->
+fun <P : RProps> forwardRef(handler: RBuilder.(RProps, RRef) -> Unit): RClass<P> =
+    rawForwardRef { props, ref ->
         buildElements { handler(props, ref) }
     }
-}
 
 typealias FunctionalComponent<P> = (props: P) -> dynamic
 
@@ -172,40 +171,39 @@ typealias FunctionalComponent<P> = (props: P) -> dynamic
  */
 fun <P : RProps> functionalComponent(
     func: RBuilder.(props: P) -> Unit
-): FunctionalComponent<P> {
-    return { props: P ->
+): FunctionalComponent<P> =
+    { props: P ->
         buildElements {
             func(props)
         }
     }
-}
 
 /**
- * Append functional component [functionalComponent] as child of current builder
+ * Append functional component [component] as child of current builder
  */
 @Suppress("EXTENSION_SHADOWED_BY_MEMBER")
 fun <P : RProps> RBuilder.child(
-    functionalComponent: FunctionalComponent<P>,
+    component: FunctionalComponent<P>,
     props: P = jsObject(),
     handler: RHandler<P> = {}
 ): ReactElement =
-    child(functionalComponent, props, handler)
+    child(component, props, handler)
 
 fun <T, P : RProps> RBuilder.childFunction(
-    functionalComponent: FunctionalComponent<P>,
+    component: FunctionalComponent<P>,
     handler: RHandler<P> = {},
     children: RBuilder.(T) -> Unit
 ): ReactElement =
-    childFunction(functionalComponent, jsObject<P>(), handler, children)
+    childFunction(component, jsObject<P>(), handler, children)
 
 fun <T, P : RProps> RBuilder.childFunction(
-    functionalComponent: FunctionalComponent<P>,
+    component: FunctionalComponent<P>,
     props: P,
     handler: RHandler<P> = {},
     children: RBuilder.(T) -> Unit
 ): ReactElement =
     child(
-        type = functionalComponent,
+        type = component,
         props = RElementBuilder(props).apply(handler).attrs,
         children = listOf { value: T -> buildElement { children(value) } }
     )
