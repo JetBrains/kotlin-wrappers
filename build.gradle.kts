@@ -26,7 +26,6 @@ subprojects {
 
         dependencies {
             "implementation"(kotlin("stdlib-js"))
-            "implementation"(kotlinxHtml("js"))
         }
 
         tasks.withType<KotlinJsCompile>().configureEach {

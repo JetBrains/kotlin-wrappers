@@ -9,6 +9,8 @@ dependencies {
     implementation(project(":kotlin-react"))
     implementation(project(":kotlin-react-dom"))
 
+    implementation(kotlinxHtml("js"))
+
     implementation(npm("css-in-js-utils", "^3.0.4"))
     implementation(npm("inline-style-prefixer", "^5.1.2"))
     implementation(npm("styled-components", "^5.0.1"))
