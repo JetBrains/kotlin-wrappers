@@ -45,11 +45,11 @@ private class ReactStateDelegate<T>(useState: Pair<T, RSetState<T>>) : ReadWrite
 
 @Deprecated("Use useState delegate", ReplaceWith("useState(initValue)"))
 fun <T> state(initValue: T): ReadWriteProperty<Any?, T> =
-    ReactStateDelegate(useState(initValue))
+        ReactStateDelegate(useState(initValue))
 
 @Deprecated("Use useState delegate", ReplaceWith("useState(valueInitializer)"))
 fun <T> state(valueInitializer: () -> T): ReadWriteProperty<Any?, T> =
-    ReactStateDelegate(useState(valueInitializer))
+        ReactStateDelegate(useState(valueInitializer))
 
 typealias RReducer<S, A> = (state: S, action: A) -> S
 typealias RDispatch<A> = (action: A) -> Unit
