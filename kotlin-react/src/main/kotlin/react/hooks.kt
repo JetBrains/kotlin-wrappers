@@ -22,24 +22,34 @@ fun <T> useState(valueInitializer: () -> T): Pair<T, RSetState<T>> {
     return currentValue to setState
 }
 
+operator fun <T> Pair<T, RSetState<T>>.getValue(thisRef: Any?, property: KProperty<*>): T {
+    return first
+}
+
+operator fun <T> Pair<T, RSetState<T>>.setValue(thisRef: Any?, property: KProperty<*>, value: T) {
+    second(value)
+}
+
 private class ReactStateDelegate<T>(useState: Pair<T, RSetState<T>>) : ReadWriteProperty<Any?, T> {
     private val state = useState.first
 
     private val setState = useState.second
 
     override operator fun getValue(thisRef: Any?, property: KProperty<*>): T =
-        state
+            state
 
     override operator fun setValue(thisRef: Any?, property: KProperty<*>, value: T) {
         setState(value)
     }
 }
 
+@Deprecated("Use useState delegate", ReplaceWith("useState(initValue)"))
 fun <T> state(initValue: T): ReadWriteProperty<Any?, T> =
-    ReactStateDelegate(useState(initValue))
+        ReactStateDelegate(useState(initValue))
 
+@Deprecated("Use useState delegate", ReplaceWith("useState(valueInitializer)"))
 fun <T> state(valueInitializer: () -> T): ReadWriteProperty<Any?, T> =
-    ReactStateDelegate(useState(valueInitializer))
+        ReactStateDelegate(useState(valueInitializer))
 
 typealias RReducer<S, A> = (state: S, action: A) -> S
 typealias RDispatch<A> = (action: A) -> Unit
