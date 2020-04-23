@@ -1,4 +1,6 @@
 [![JetBrains team project](https://jb.gg/badges/team.svg)](https://confluence.jetbrains.com/display/ALL/JetBrains+on+GitHub)
+[![CI](https://github.com/JetBrains/kotlin-wrappers/workflows/CI/badge.svg)](https://github.com/JetBrains/kotlin-wrappers/actions)
+[![Kotlin](https://img.shields.io/badge/kotlin-1.3.72-blue.svg?logo=kotlin)](http://kotlinlang.org)
 
 # Kotlin Wrappers
 
