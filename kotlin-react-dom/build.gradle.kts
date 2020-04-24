@@ -4,10 +4,10 @@ plugins {
 }
 
 dependencies {
-    implementation(project(":kotlin-extensions"))
-    implementation(project(":kotlin-react"))
+    api(project(":kotlin-extensions"))
+    api(project(":kotlin-react"))
 
-    implementation(kotlinxHtml("js"))
+    api(kotlinxHtml("js"))
 
-    implementation(npm("react-dom", npmVersion("react-dom")))
+    api(npm("react-dom", npmVersion("react-dom")))
 }

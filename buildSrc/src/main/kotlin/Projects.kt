@@ -2,10 +2,10 @@ import org.gradle.api.Project
 import org.gradle.api.internal.artifacts.dependencies.DefaultProjectDependency
 import org.jetbrains.kotlin.gradle.targets.js.npm.NpmDependency
 
-private val IMPLEMENTATION = "implementation"
+private val API = "api"
 
 internal fun Project.relatedProjects(): List<Project> {
-    val configuration = configurations.findByName(IMPLEMENTATION)
+    val configuration = configurations.findByName(API)
         ?: return emptyList()
 
     return configuration
@@ -15,7 +15,7 @@ internal fun Project.relatedProjects(): List<Project> {
 }
 
 internal fun Project.nmpDependencies(): List<NpmDependency> {
-    val configuration = configurations.findByName(IMPLEMENTATION)
+    val configuration = configurations.findByName(API)
         ?: return emptyList()
 
     return configuration
