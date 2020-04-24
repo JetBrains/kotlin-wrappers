@@ -4,8 +4,8 @@ plugins {
 }
 
 dependencies {
-    implementation(project(":kotlin-extensions"))
-    implementation(project(":kotlin-react"))
+    api(project(":kotlin-extensions"))
+    api(project(":kotlin-react"))
 
-    implementation(npm("react-router-dom", npmVersion("react-router-dom")))
+    api(npm("react-router-dom", npmVersion("react-router-dom")))
 }

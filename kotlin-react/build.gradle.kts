@@ -4,11 +4,11 @@ plugins {
 }
 
 dependencies {
-    implementation(project(":kotlin-extensions"))
+    api(project(":kotlin-extensions"))
 
-    implementation(kotlinxCoroutines("core"))
-    implementation(kotlinxCoroutines("core-common"))
-    implementation(kotlinxCoroutines("core-js"))
+    api(kotlinxCoroutines("core"))
+    api(kotlinxCoroutines("core-common"))
+    api(kotlinxCoroutines("core-js"))
 
-    implementation(npm("react", npmVersion("react")))
+    api(npm("react", npmVersion("react")))
 }
