@@ -5,6 +5,19 @@ import org.jetbrains.kotlin.gradle.targets.js.npm.NpmDependency
 private const val REPO_URL = "https://github.com/JetBrains/kotlin-wrappers"
 private const val LICENSE = "Apache-2.0"
 
+internal fun Task.generateDependencyJson(): String =
+    JSONObject().apply {
+        put("name", project.npmName)
+        put("version", "0.0.0")
+        put("dependencies", dependencies)
+    }.toString(2)
+
+private val Task.dependencies: JSONObject
+    get() = JSONObject().apply {
+        project.nmpDependencies()
+            .forEach { put(it.name, it.version) }
+    }
+
 internal fun Task.generatePackageJson(): String =
     JSONObject().apply {
         put("name", project.npmName)
