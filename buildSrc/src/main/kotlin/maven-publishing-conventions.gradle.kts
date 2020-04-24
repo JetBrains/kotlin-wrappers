@@ -4,6 +4,17 @@ plugins {
     `maven-publish`
 }
 
+if (isKotlinJsProject) {
+    tasks.named<Zip>("JsJar") {
+        val dependencyJson = temporaryDir.resolve("package.json")
+        from(dependencyJson)
+
+        doFirst {
+            dependencyJson.writeText(generateDependencyJson())
+        }
+    }
+}
+
 val publishVersion = publishVersion()
 
 bintray {
