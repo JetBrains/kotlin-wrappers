@@ -193,10 +193,8 @@ var StyledElement.borderCollapse: BorderCollapse by CSSProperty()
 
 var StyledElement.zIndex: Int by CSSProperty()
 
-fun StyledElement.flex(flexGrow: Double = 0.0, flexShrink: Double = 1.0, flexBasis: FlexBasis? = null) {
-    this.flexGrow = flexGrow
-    this.flexShrink = flexShrink
-    flexBasis?.let { this.flexBasis = it }
+fun StyledElement.flex(flexGrow: Double = 0.0, flexShrink: Double = 1.0, flexBasis: FlexBasis = FlexBasis.auto) {
+    put("flex", "$flexGrow $flexShrink $flexBasis")
 }
 
 fun StyledElement.flex(flexGrow: Double = 0.0, flexShrink: Double = 1.0, flexBasis: LinearDimension) =
