@@ -20,7 +20,7 @@ To learn more please refer to the READMEs of individual modules:
 
 All wrappers are available on npm: `npm install @jetbrains/<wrapper name>`
 
-Artifacts installable using Maven and Gradle are published to [Bintray](https://bintray.com/kotlin/kotlin-js-wrappers).
+Artifacts installable using Maven and Gradle are published to [Bintray](https://bintray.com/kotlin/kotlin-js-wrappers) and JCenter.
 
 **All packages require JDK 8 to be installed.**
 
