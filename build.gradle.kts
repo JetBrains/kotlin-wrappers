@@ -11,14 +11,14 @@ plugins {
 subprojects {
     repositories {
         jcenter()
-        maven("https://dl.bintray.com/kotlin/kotlin-eap")
-        maven("https://dl.bintray.com/kotlin/kotlin-dev")
         maven("https://kotlin.bintray.com/kotlinx")
-        maven("https://dl.bintray.com/kotlin/kotlin-js-wrappers")
+        maven("https://kotlin.bintray.com/kotlin-js-wrappers")
+        maven("https://kotlin.bintray.com/kotlin-eap")
+        maven("https://kotlin.bintray.com/kotlin-dev")
     }
 
     plugins.withType<KotlinJsPluginWrapper> {
-        extensions.getByType<KotlinJsProjectExtension>().apply {
+        extensions.configure<KotlinJsProjectExtension> {
             target {
                 browser()
             }
