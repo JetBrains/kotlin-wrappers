@@ -1035,6 +1035,18 @@ enum class WordWrap {
     override fun toString() = name.hyphenize()
 }
 
+enum class Resize {
+    none, both,
+
+    horizontal, vertical,
+
+    block, inline,
+
+    inherit, initial, unset;
+
+    override fun toString() = name
+}
+
 class Image(override val value: String) : CssValue(value) {
     companion object {
         val none = Image("none")
