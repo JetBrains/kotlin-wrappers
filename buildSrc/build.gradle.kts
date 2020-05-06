@@ -6,6 +6,7 @@ plugins {
 
 repositories {
     gradlePluginPortal()
+    maven("https://kotlin.bintray.com/kotlin-eap")
 }
 
 kotlinDslPluginOptions {
