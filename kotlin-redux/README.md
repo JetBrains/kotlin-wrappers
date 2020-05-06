@@ -1,5 +1,7 @@
 ## kotlin-redux
 
+![](https://img.shields.io/bintray/v/kotlin/kotlin-js-wrappers/kotlin-redux)
+
 Kotlin wrapper for Redux library. Major version number of this wrapper matches that of Redux itself.
 
 ## Creating and using a store in Kotlin

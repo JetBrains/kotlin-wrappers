@@ -1,5 +1,7 @@
 ## kotlin-react-redux
 
+![](https://img.shields.io/bintray/v/kotlin/kotlin-js-wrappers/kotlin-react-redux)
+
 Kotlin wrapper for React Redux library. Major version number of this wrapper matches that of React Redux itself.
 
 ### Installation

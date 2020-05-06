@@ -1,5 +1,7 @@
 ## kotlin-react-dom
 
+![](https://img.shields.io/bintray/v/kotlin/kotlin-js-wrappers/kotlin-react-router-dom)
+
 Kotlin wrapper for [React Router DOM library](https://reacttraining.com/react-router/). 
 Major version number of this wrapper matches that of React Router DOM itself.
 

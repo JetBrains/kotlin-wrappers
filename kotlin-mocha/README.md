@@ -1,5 +1,7 @@
 ## kotlin-mocha
 
+![](https://img.shields.io/bintray/v/kotlin/kotlin-js-wrappers/kotlin-mocha)
+
 Kotlin wrapper for Mocha test framework. Major version number of this wrapper matches that of Mocha itself.
 
 ### Installation

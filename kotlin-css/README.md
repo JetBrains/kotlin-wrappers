@@ -1,5 +1,7 @@
 ## kotlin-css
 
+![](https://img.shields.io/bintray/v/kotlin/kotlin-js-wrappers/kotlin-css)
+
 Platform-agnostic CSS primitives.
 
 ### Installation
