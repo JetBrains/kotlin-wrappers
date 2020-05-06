@@ -20,12 +20,12 @@ repositories {
 
 To start using `kotlin-react` in your Kotlin/JS project, add the following four dependencies to the `dependencies` block for your JavaScript target inside your `build.gradle.kts` or `build.gradle` file:
 
-````kotlin
+```kotlin
 implementation("org.jetbrains:kotlin-react:16.13.1-pre.104-kotlin-1.3.72")
 implementation("org.jetbrains:kotlin-react-dom:16.13.1-pre.104-kotlin-1.3.72")
 implementation(npm("react", "16.13.1"))
 implementation(npm("react-dom", "16.13.1"))
-````
+```
 
 React follows [semantic versioning (semver)](https://semver.org/) principles, meaning you should be able to specify other API-compatible versions of the `npm` dependencies without issue.
 
@@ -69,7 +69,7 @@ Here's what the equivalent Kotlin code looks like:
 import react.*
 import react.dom.*
 
-external interface WelcomeProps: RProps {
+external interface WelcomeProps : RProps {
     var name: String
 }
 
@@ -120,7 +120,7 @@ Here's an example of a component defined using a class with a `name` property of
 import react.*
 import react.dom.*
 
-external interface WelcomeProps: RProps {
+external interface WelcomeProps : RProps {
     var name: String
 }
 
