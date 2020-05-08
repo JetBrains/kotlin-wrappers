@@ -1,6 +1,6 @@
-## kotlin-css
+[![Bintray](https://img.shields.io/bintray/v/kotlin/kotlin-js-wrappers/kotlin-css)](https://bintray.com/kotlin/kotlin-js-wrappers/kotlin-css)
 
-![](https://img.shields.io/bintray/v/kotlin/kotlin-js-wrappers/kotlin-css)
+## kotlin-css
 
 Platform-agnostic CSS primitives.
 

@@ -1,6 +1,6 @@
-## kotlin-react-dom
+[![Bintray](https://img.shields.io/bintray/v/kotlin/kotlin-js-wrappers/kotlin-react-dom)](https://bintray.com/kotlin/kotlin-js-wrappers/kotlin-react-dom)
 
-![](https://img.shields.io/bintray/v/kotlin/kotlin-js-wrappers/kotlin-react-dom)
+## kotlin-react-dom
 
 Kotlin wrapper for React DOM library. Major version number of this wrapper matches that of React DOM itself.
 

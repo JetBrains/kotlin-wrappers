@@ -1,6 +1,6 @@
-## kotlin-extensions
+[![Bintray](https://img.shields.io/bintray/v/kotlin/kotlin-js-wrappers/kotlin-extensions)](https://bintray.com/kotlin/kotlin-js-wrappers/kotlin-extensions)
 
-![](https://img.shields.io/bintray/v/kotlin/kotlin-js-wrappers/kotlin-extensions)
+## kotlin-extensions
 
 Kotlin wrappers for standard JS objects as well as some helpers required for 
 [kotlin-react](https://github.com/JetBrains/kotlin-wrappers/tree/master/kotlin-react).
