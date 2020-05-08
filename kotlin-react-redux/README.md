@@ -1,6 +1,6 @@
-## kotlin-react-redux
+[![Bintray](https://img.shields.io/bintray/v/kotlin/kotlin-js-wrappers/kotlin-react-redux)](https://bintray.com/kotlin/kotlin-js-wrappers/kotlin-react-redux)
 
-![](https://img.shields.io/bintray/v/kotlin/kotlin-js-wrappers/kotlin-react-redux)
+## kotlin-react-redux
 
 Kotlin wrapper for React Redux library. Major version number of this wrapper matches that of React Redux itself.
 

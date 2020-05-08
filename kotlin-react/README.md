@@ -1,6 +1,6 @@
-## kotlin-react
+[![Bintray](https://img.shields.io/bintray/v/kotlin/kotlin-js-wrappers/kotlin-react)](https://bintray.com/kotlin/kotlin-js-wrappers/kotlin-react)
 
-![](https://img.shields.io/bintray/v/kotlin/kotlin-js-wrappers/kotlin-react)
+## kotlin-react
 
 Kotlin wrapper for React library. Major version number of this wrapper matches that of React itself.
 

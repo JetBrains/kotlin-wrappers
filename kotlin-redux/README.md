@@ -1,6 +1,6 @@
-## kotlin-redux
+[![Bintray](https://img.shields.io/bintray/v/kotlin/kotlin-js-wrappers/kotlin-redux)](https://bintray.com/kotlin/kotlin-js-wrappers/kotlin-redux)
 
-![](https://img.shields.io/bintray/v/kotlin/kotlin-js-wrappers/kotlin-redux)
+## kotlin-redux
 
 Kotlin wrapper for Redux library. Major version number of this wrapper matches that of Redux itself.
 

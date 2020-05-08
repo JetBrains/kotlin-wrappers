@@ -1,6 +1,6 @@
-## kotlin-mocha
+[![Bintray](https://img.shields.io/bintray/v/kotlin/kotlin-js-wrappers/kotlin-mocha)](https://bintray.com/kotlin/kotlin-js-wrappers/kotlin-mocha)
 
-![](https://img.shields.io/bintray/v/kotlin/kotlin-js-wrappers/kotlin-mocha)
+## kotlin-mocha
 
 Kotlin wrapper for Mocha test framework. Major version number of this wrapper matches that of Mocha itself.
 
