@@ -157,6 +157,8 @@ inline fun RBuilder.li(classes: String? = null, block: RDOMBuilder<LI>.() -> Uni
 inline fun RBuilder.link(href: String? = null, rel: String? = null, type: String? = null, block: RDOMBuilder<LINK>.() -> Unit): ReactElement =
     tag(block) { LINK(attributesMapOf("href", href, "rel", rel, "type", type), it) }
 
+inline fun RBuilder.main(classes: String? = null, block: RDOMBuilder<MAIN>.() -> Unit): ReactElement = tag(block) { MAIN(attributesMapOf("class", classes), it) }
+
 inline fun RBuilder.map(name: String? = null, classes: String? = null, block: RDOMBuilder<MAP>.() -> Unit): ReactElement = tag(block) { MAP(attributesMapOf("name", name, "class", classes), it) }
 
 inline fun RBuilder.mark(classes: String? = null, block: RDOMBuilder<MARK>.() -> Unit): ReactElement = tag(block) { MARK(attributesMapOf("class", classes), it) }
