@@ -10,9 +10,13 @@ annotation class ReactDsl
 open class RBuilder {
     val childList = mutableListOf<Any>()
 
-    fun child(element: ReactElement): ReactElement {
+    fun <T : Child> child(element: T): T {
         childList.add(element)
         return element
+    }
+
+    operator fun Child.unaryPlus() {
+        childList.add(this)
     }
 
     operator fun String.unaryPlus() {
