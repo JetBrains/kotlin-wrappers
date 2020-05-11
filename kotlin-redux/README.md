@@ -10,23 +10,23 @@ In Redux, the store is an object that contains state, which could be anything. I
 no different. Just note that you must specify the preloaded state. Also, it is encouraged that you
 use the `rEnhancer` function to adapt Redux to Kotlin.
 
-```
+```kotlin
 val myStore = createStore(::myReducer, someState, rEnhancer())
 ```
 Access the state via the store's `state` field.
 
-```
+```kotlin
 myStore.state
 ```
 If you are using `rEnhancer`, `Actions` can be implemented as classes. Just implement the `RAction` interface.
 
-```
+```kotlin
 class MyAction : RAction
 ```
 
 Writing reducers is easy, too:
 
-```
+```kotlin
 fun myReducer(state: TypeOfState, action: RAction) = when (action) {
     is MyAction -> someNewState
     else -> state
@@ -35,13 +35,13 @@ fun myReducer(state: TypeOfState, action: RAction) = when (action) {
 
 You can now dispatch the action as usual.
 
-```
+```kotlin
 myStore.dispatch(MyAction())
 ```
 
 Subscribing to your store works as usual.
 
-```
+```kotlin
 val unsubscribe = myStore.subscribe { println(myStore.state) }
 ```
 
@@ -52,7 +52,7 @@ order in which you compose `rEnhancer` and `applyMiddleware`. If you specify `rE
 middleware will be passed actions that `rEnhancer` has already processed. If you specify `rEnhancer` 
 last, it will be passed your unprocessed `RActions`.
 
-```
+```kotlin
 compose(rEnhancer(), applyMiddleware(someMiddleware)) // Middleware works with standard actions
 
 compose(applyMiddleware(someMiddleware), rEnhancer()) // Middleware works with RActions
@@ -65,7 +65,7 @@ If you need to serialize `RActions` to JSON, you can do so using
 want to serialize with `@Serializable`, and you can serialize and deserialize them in a type-safe 
 manner using `serializeAction()` and `deserializeAction()`:
 
-```
+```kotlin
 val jsonAction = serializeAction(MyAction())
 
 val action = when (Json.parse((StringSerializer to StringSerializer).map, jsonAction)["type"]) {

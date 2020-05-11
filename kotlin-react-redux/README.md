@@ -50,7 +50,7 @@ class ParentComponent : RComponent {
 
 ### rConnect Type Parameters
 
-```
+```kotlin
 interface WrappedComponentProps : RProps {
     var prop1: Int?
     var eventHandler1: (someValue: Int?) -> Unit
