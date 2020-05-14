@@ -43,9 +43,9 @@ interface RuleContainer {
     val rules: MutableList<Rule>
     val multiRules: MutableList<Rule>
 
-    fun rule(selector: String, block: RuleSet) = rule(selector, false, block)
+    fun rule(selector: String, block: RuleSet) = rule(selector, false, block = block)
 
-    fun rule(selector: String, passStaticClassesToParent: Boolean, block: RuleSet, repeatable: Boolean = false) =
+    fun rule(selector: String, passStaticClassesToParent: Boolean, repeatable: Boolean = false, block: RuleSet) =
         Rule(selector, passStaticClassesToParent, block).apply {
             (if (repeatable) multiRules else rules).add(this)
         }
@@ -72,7 +72,7 @@ class CSSBuilder(
     override val multiRules = mutableListOf<Rule>()
 
     operator fun String.invoke(block: RuleSet) =
-        rule(this, false, block)
+        rule(this, false, block = block)
 
     operator fun TagSelector.invoke(block: RuleSet) = tagName(block)
 
@@ -177,7 +177,7 @@ class CSSBuilder(
 
     fun supports(query: String, block: RuleSet) = "@supports $query"(block)
 
-    fun fontFace(block: RuleSet) = rule("@font-face", false, block, true)
+    fun fontFace(block: RuleSet) = rule("@font-face", false, true, block)
 
     fun retina(block: RuleSet) {
         media("(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)") {
