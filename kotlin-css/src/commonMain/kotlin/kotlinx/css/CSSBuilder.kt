@@ -32,7 +32,7 @@ interface RuleContainer {
                     "$indent  ",
                     allowClasses = false,
                     parent = if (passStaticClassesToParent) this@RuleContainer else null
-            ).block()
+            ).apply(block)
 
             append("$selector {\n")
             append(blockBuilder)

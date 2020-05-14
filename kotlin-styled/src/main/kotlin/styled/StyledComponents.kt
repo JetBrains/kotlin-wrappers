@@ -117,7 +117,7 @@ object Styled {
         }
 
     fun createElement(type: Any, css: CSSBuilder, props: WithClassName, children: List<Any>): ReactElement {
-        if (css.rules.isNotEmpty() || css.declarations.isNotEmpty()) {
+        if (css.rules.isNotEmpty() || css.multiRules.isNotEmpty() || css.declarations.isNotEmpty()) {
             val wrappedType = wrap(type)
             val styledProps = props.unsafeCast<StyledProps>()
             styledProps.css = css.toString()
