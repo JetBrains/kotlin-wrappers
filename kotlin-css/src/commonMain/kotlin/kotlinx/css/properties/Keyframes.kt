@@ -9,6 +9,7 @@ class KeyframesBuilder(private val indent: String = "") : RuleContainer {
         }
 
     override val rules = mutableListOf<Rule>()
+    override val multiRules = mutableListOf<Rule>()
 
     fun from(block: RuleSet) = rule("from", block)
     fun to(block: RuleSet) = rule("to", block)

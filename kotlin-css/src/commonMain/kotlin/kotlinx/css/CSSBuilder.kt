@@ -26,15 +26,28 @@ interface RuleContainer {
             append(it.value)
             append("}\n")
         }
+
+        multiRules.forEach { (selector, passStaticClassesToParent, block) ->
+            val blockBuilder = CSSBuilder(
+                    "$indent  ",
+                    allowClasses = false,
+                    parent = if (passStaticClassesToParent) this@RuleContainer else null
+            ).apply(block)
+
+            append("$selector {\n")
+            append(blockBuilder)
+            append("}\n")
+        }
     }
 
     val rules: MutableList<Rule>
+    val multiRules: MutableList<Rule>
 
-    fun rule(selector: String, block: RuleSet) = rule(selector, false, block)
+    fun rule(selector: String, block: RuleSet) = rule(selector, false, block = block)
 
-    fun rule(selector: String, passStaticClassesToParent: Boolean, block: RuleSet) =
+    fun rule(selector: String, passStaticClassesToParent: Boolean, repeatable: Boolean = false, block: RuleSet) =
         Rule(selector, passStaticClassesToParent, block).apply {
-            rules.add(this)
+            (if (repeatable) multiRules else rules).add(this)
         }
 }
 
@@ -56,9 +69,10 @@ class CSSBuilder(
     }
 
     override val rules = mutableListOf<Rule>()
+    override val multiRules = mutableListOf<Rule>()
 
     operator fun String.invoke(block: RuleSet) =
-        rule(this, false, block)
+        rule(this, false, block = block)
 
     operator fun TagSelector.invoke(block: RuleSet) = tagName(block)
 
@@ -163,7 +177,7 @@ class CSSBuilder(
 
     fun supports(query: String, block: RuleSet) = "@supports $query"(block)
 
-    fun fontFace(query: String, block: RuleSet) = "@font-face $query"(block)
+    fun fontFace(block: RuleSet) = rule("@font-face", false, true, block)
 
     fun retina(block: RuleSet) {
         media("(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)") {
