@@ -21,8 +21,8 @@ repositories {
 To start using `kotlin-react` in your Kotlin/JS project, add the following four dependencies to the `dependencies` block for your JavaScript target inside your `build.gradle.kts` or `build.gradle` file:
 
 ```kotlin
-implementation("org.jetbrains:kotlin-react:16.13.1-pre.104-kotlin-1.3.72")
-implementation("org.jetbrains:kotlin-react-dom:16.13.1-pre.104-kotlin-1.3.72")
+implementation("org.jetbrains:kotlin-react:16.13.1-pre.105-kotlin-1.3.72")
+implementation("org.jetbrains:kotlin-react-dom:16.13.1-pre.105-kotlin-1.3.72")
 implementation(npm("react", "16.13.1"))
 implementation(npm("react-dom", "16.13.1"))
 ```
@@ -208,6 +208,20 @@ val counter = functionalComponent<RProps> {
 Calling `useState` returns a pair (that is directly destructured): a reference to your state (here, `count` of type `Int`), and a function that can be used to set the state (here, `setCount` of type `RSetState<Int>`).
 
 Note that unlike properties in a React class component, the `setCount` function can be called without having to use a `setState` lambda.
+
+It is also possible to use the State Hook via Kotlin's [delegation syntax](https://kotlinlang.org/docs/reference/delegated-properties.html), which can simplify the code even more:
+
+```kotlin
+val counter = functionalComponent<RProps> {
+    var count by useState(0)
+    button {
+        attrs.onClickFunction = { count += 1 }
+        +count.toString()
+    }
+}
+```
+
+In this example, assignments to the `count` variable are automatically wrapped with the appopriate hook calls under the hood.
 
 To learn more about the State Hook, check out the [official React documentation](https://reactjs.org/docs/hooks-state.html).
 
