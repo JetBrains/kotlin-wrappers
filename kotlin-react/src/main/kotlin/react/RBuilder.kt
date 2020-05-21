@@ -163,7 +163,7 @@ open class RElementBuilder<out P : RProps>(open val attrs: P) : RBuilder() {
 
 typealias RHandler<P> = RElementBuilder<P>.() -> Unit
 
-fun <P : RProps> forwardRef(handler: RBuilder.(RProps, RRef) -> Unit): RClass<P> =
+fun <P : RProps> forwardRef(handler: RBuilder.(P, RRef) -> Unit): RClass<P> =
     rawForwardRef { props, ref ->
         buildElements { handler(props, ref) }
     }
