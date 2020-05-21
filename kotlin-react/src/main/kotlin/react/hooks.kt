@@ -29,7 +29,10 @@ internal constructor(
     private val state: T,
     private val setState: RSetState<T>
 ) : ReadWriteProperty<Any?, T> {
+    @Deprecated("Use delegate instead. Example: `var count by useState(13)`")
     operator fun component1(): T = state
+
+    @Deprecated("Use delegate instead. Example: `var count by useState(42)`")
     operator fun component2(): RSetState<T> = setState
 
     override operator fun getValue(thisRef: Any?, property: KProperty<*>): T =
