@@ -9,18 +9,18 @@ typealias RDependenciesList = List<dynamic>
 typealias RSetState<T> = (value: T) -> Unit
 
 fun <T> useState(initValue: T): RStateDelegate<T> {
-    val jsTuple = rawUseState(initValue)
+    val (state, setState) = rawUseState(initValue)
     return RStateDelegate(
-        jsTuple[0] as T,
-        jsTuple[1] as RSetState<T>
+        state.unsafeCast<T>(),
+        setState.unsafeCast<RSetState<T>>()
     )
 }
 
 fun <T> useState(valueInitializer: () -> T): RStateDelegate<T> {
-    val jsTuple = rawUseState(valueInitializer)
+    val (state, setState) = rawUseState(valueInitializer)
     return RStateDelegate(
-        jsTuple[0] as T,
-        jsTuple[1] as RSetState<T>
+        state.unsafeCast<T>(),
+        setState.unsafeCast<RSetState<T>>()
     )
 }
 
@@ -44,14 +44,12 @@ typealias RReducer<S, A> = (state: S, action: A) -> S
 typealias RDispatch<A> = (action: A) -> Unit
 
 fun <S, A> useReducer(reducer: RReducer<S, A>, initState: S, initialAction: A? = null): Pair<S, RDispatch<A>> {
-    val jsTuple = if (initialAction != null) {
+    val (currentState, dispatch) = if (initialAction != null) {
         rawUseReducer(reducer, initState, initialAction)
     } else {
         rawUseReducer(reducer, initState)
     }
-    val currentState = jsTuple[0] as S
-    val dispatch = jsTuple[1] as RDispatch<A>
-    return currentState to dispatch
+    return currentState.unsafeCast<S>() to dispatch.unsafeCast<RDispatch<A>>()
 }
 
 fun <S, A> useReducer(reducer: RReducer<S?, A>): Pair<S?, RDispatch<A>> {
