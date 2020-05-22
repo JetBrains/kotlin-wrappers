@@ -139,7 +139,7 @@ Just like functional components, you can use the `child` function to use a React
 
 ```kotlin
 child(Welcome::class) {
-    attrs.name ="Kotlin"
+    attrs.name = "Kotlin"
 }
 ```
 
