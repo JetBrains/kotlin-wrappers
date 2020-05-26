@@ -1,3 +1,5 @@
+@file:Suppress("NOTHING_TO_INLINE")
+
 package react
 
 import kotlin.properties.ReadWriteProperty
@@ -8,31 +10,22 @@ typealias RDependenciesList = List<dynamic>
 
 typealias RSetState<T> = (value: T) -> Unit
 
-fun <T> useState(initValue: T): Pair<T, RSetState<T>> {
-    val jsTuple = rawUseState(initValue)
-    val currentValue = jsTuple[0] as T
-    val setState = jsTuple[1] as RSetState<T>
-    return currentValue to setState
+inline fun <T> useState(initValue: T): RStateDelegate<T> {
+    val (state, setState) = rawUseState(initValue)
+    return RStateDelegate(state as T, setState as RSetState<T>)
 }
 
-fun <T> useState(valueInitializer: () -> T): Pair<T, RSetState<T>> {
-    val jsTuple = rawUseState(valueInitializer)
-    val currentValue = jsTuple[0] as T
-    val setState = jsTuple[1] as RSetState<T>
-    return currentValue to setState
+inline fun <T> useState(noinline valueInitializer: () -> T): RStateDelegate<T> {
+    val (state, setState) = rawUseState(valueInitializer)
+    return RStateDelegate(state as T, setState as RSetState<T>)
 }
 
-operator fun <T> Pair<T, RSetState<T>>.getValue(thisRef: Any?, property: KProperty<*>): T {
-    return first
-}
-
-operator fun <T> Pair<T, RSetState<T>>.setValue(thisRef: Any?, property: KProperty<*>, value: T) {
-    second(value)
-}
-
-private class ReactStateDelegate<T>(useState: Pair<T, RSetState<T>>) : ReadWriteProperty<Any?, T> {
-    private val state = useState.first
-    private val setState = useState.second
+class RStateDelegate<T>(
+    private val state: T,
+    private val setState: RSetState<T>
+) : ReadWriteProperty<Any?, T> {
+    operator fun component1(): T = state
+    operator fun component2(): RSetState<T> = setState
 
     override operator fun getValue(thisRef: Any?, property: KProperty<*>): T =
         state
@@ -41,14 +34,6 @@ private class ReactStateDelegate<T>(useState: Pair<T, RSetState<T>>) : ReadWrite
         setState(value)
     }
 }
-
-@Deprecated("Use useState delegate", ReplaceWith("useState(initValue)"))
-fun <T> state(initValue: T): ReadWriteProperty<Any?, T> =
-    ReactStateDelegate(useState(initValue))
-
-@Deprecated("Use useState delegate", ReplaceWith("useState(valueInitializer)"))
-fun <T> state(valueInitializer: () -> T): ReadWriteProperty<Any?, T> =
-    ReactStateDelegate(useState(valueInitializer))
 
 typealias RReducer<S, A> = (state: S, action: A) -> S
 typealias RDispatch<A> = (action: A) -> Unit
