@@ -5,13 +5,20 @@ plugins {
 }
 
 if (isKotlinJsProject) {
-    tasks.named<Zip>("JsJar") {
+    val configure: Zip.() -> Unit = {
         val dependencyJson = temporaryDir.resolve("package.json")
         from(dependencyJson)
 
         doFirst {
             dependencyJson.writeText(generateDependencyJson())
         }
+    }
+
+    tasks.named<Zip>("jsLegacyJar") {
+        configure()
+    }
+    tasks.named<Zip>("jsIrJar") {
+        configure()
     }
 }
 
@@ -60,7 +67,7 @@ publishing.publications {
                 artifactId = project.name
                 version = publishVersion
 
-                artifact(tasks.getByName<Zip>("JsSourcesJar"))
+                artifact(tasks.getByName<Zip>("jsLegacySourcesJar"))
             }
     }
 }
