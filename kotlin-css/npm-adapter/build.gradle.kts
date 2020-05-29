@@ -9,11 +9,3 @@ plugins {
 kotlin.sourceSets.main {
     kotlin.srcDir("../src/commonMain/kotlin")
 }
-
-tasks.withType<KotlinJsCompile>().configureEach {
-    kotlinOptions {
-        outputFile = project.rootProject.buildDir
-            .resolve("js/packages/kotlin-css/kotlin/kotlin-css.js")
-            .absolutePath
-    }
-}
