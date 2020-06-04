@@ -38,14 +38,6 @@ fun <T : RProps> useRouteMatch(
 }
 
 fun <T : RProps> useRouteMatch(
-    module: ReactRouterDom,
-    vararg path: String,
-    exact: Boolean = false,
-    strict: Boolean = false,
-    sensitive: Boolean = false
-) = useRouteMatch<T>(module, path, exact, strict, sensitive)
-
-fun <T : RProps> useRouteMatch(
     vararg path: String,
     exact: Boolean = false,
     strict: Boolean = false,
