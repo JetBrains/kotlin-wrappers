@@ -12,13 +12,12 @@ fun RBuilder.browserRouter(handler: RHandler<RProps>) = ReactRouterDomModule.Bro
 fun RBuilder.switch(handler: RHandler<RProps>) = ReactRouterDomModule.Switch(handler)
 
 fun RBuilder.route(
-    routeComponent: RClass<RouteProps<RProps>>,
     path: String,
     component: KClass<out Component<RProps, *>>,
     exact: Boolean = false,
     strict: Boolean = false
 ): ReactElement {
-    return routeComponent {
+    return (ReactRouterDomModule.Route as RClass<RouteProps<RProps>>) {
         attrs {
             this.path = path
             this.exact = exact
@@ -29,13 +28,12 @@ fun RBuilder.route(
 }
 
 fun <T : RProps> RBuilder.route(
-    routeComponent: RClass<RouteProps<T>>,
     path: String,
     exact: Boolean = false,
     strict: Boolean = false,
     render: (props: RouteResultProps<T>) -> ReactElement?
 ): ReactElement {
-    return routeComponent {
+    return (ReactRouterDomModule.Route as RClass<RouteProps<T>>) {
         attrs {
             this.path = path
             this.exact = exact
@@ -46,13 +44,12 @@ fun <T : RProps> RBuilder.route(
 }
 
 fun RBuilder.route(
-    routeComponent: RClass<RouteProps<RProps>>,
     path: String,
     exact: Boolean = false,
     strict: Boolean = false,
     render: () -> ReactElement?
 ): ReactElement {
-    return routeComponent {
+    return (ReactRouterDomModule.Route as RClass<RouteProps<RProps>>) {
         attrs {
             this.path = path
             this.exact = exact
@@ -62,34 +59,12 @@ fun RBuilder.route(
     }
 }
 
-fun RBuilder.route(
-    path: String,
-    component: KClass<out Component<RProps, *>>,
-    exact: Boolean = false,
-    strict: Boolean = false
-) = route(ReactRouterDomModule.Route as RClass<RouteProps<RProps>>, path, component, exact, strict)
-
-fun <T : RProps> RBuilder.route(
-    path: String,
-    exact: Boolean = false,
-    strict: Boolean = false,
-    render: (props: RouteResultProps<T>) -> ReactElement?
-) = route(ReactRouterDomModule.Route as RClass<RouteProps<T>>, path, exact, strict, render)
-
-fun RBuilder.route(
-    path: String,
-    exact: Boolean = false,
-    strict: Boolean = false,
-    render: () -> ReactElement?
-) = route(ReactRouterDomModule.Route as RClass<RouteProps<RProps>>, path, exact, strict, render)
-
 fun RBuilder.routeLink(
-    routeLinkComponent: RClass<LinkProps>,
     to: String,
     replace: Boolean = false,
     className: String? = null,
     handler: RHandler<RProps>?
-) = routeLinkComponent {
+) = ReactRouterDomModule.Link {
     attrs {
         this.to = to
         this.replace = replace
@@ -98,15 +73,7 @@ fun RBuilder.routeLink(
     handler?.invoke(this)
 }
 
-fun RBuilder.routeLink(
-    to: String,
-    replace: Boolean = false,
-    className: String? = null,
-    handler: RHandler<RProps>?
-) = routeLink(ReactRouterDomModule.Link, to, replace, className, handler)
-
 fun <T : RProps> RBuilder.navLink(
-    navLinkComponent: RClass<NavLinkProps<T>>,
     to: String,
     replace: Boolean = false,
     className: String? = null,
@@ -115,7 +82,7 @@ fun <T : RProps> RBuilder.navLink(
     strict: Boolean = false,
     isActive: ((match: RouteResultMatch<T>?, location: RouteResultLocation) -> Boolean)? = null,
     handler: RHandler<NavLinkProps<T>>?
-) = navLinkComponent {
+) = (ReactRouterDomModule.NavLink as RClass<NavLinkProps<T>>) {
     attrs {
         this.to = to
         this.replace = replace
@@ -128,25 +95,13 @@ fun <T : RProps> RBuilder.navLink(
     handler?.invoke(this)
 }
 
-fun <T : RProps> RBuilder.navLink(
-    to: String,
-    replace: Boolean = false,
-    className: String? = null,
-    activeClassName: String = "active",
-    exact: Boolean = false,
-    strict: Boolean = false,
-    isActive: ((match: RouteResultMatch<T>?, location: RouteResultLocation) -> Boolean)? = null,
-    handler: RHandler<NavLinkProps<T>>?
-) = navLink(ReactRouterDomModule.NavLink as RClass<NavLinkProps<T>>, to, replace, className, activeClassName, exact, strict, isActive, handler)
-
 fun RBuilder.redirect(
-    redirectComponent: RClass<RedirectProps>,
     from: String? = null,
     to: String,
     push: Boolean = false,
     exact: Boolean = false,
     strict: Boolean = false
-) = redirectComponent {
+) = ReactRouterDomModule.Redirect {
     attrs {
         this.from = from
         this.to = to
@@ -155,11 +110,3 @@ fun RBuilder.redirect(
         this.strict = strict
     }
 }
-
-fun RBuilder.redirect(
-    from: String? = null,
-    to: String,
-    push: Boolean = false,
-    exact: Boolean = false,
-    strict: Boolean = false
-) = redirect(ReactRouterDomModule.Redirect, from, to, push, exact, strict)

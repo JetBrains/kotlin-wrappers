@@ -8,23 +8,20 @@ fun useHistory() = ReactRouterDomModule.useHistory()
 
 fun useLocation() = ReactRouterDomModule.useLocation()
 
-fun <T : RProps> useParams(module: ReactRouterDom): T? {
-    val rawParams = module.useParams()
+fun <T : RProps> useParams(): T? {
+    val rawParams = ReactRouterDomModule.useParams()
 
     return if (Object.keys(rawParams as Any).isEmpty()) null else rawParams as T
 }
 
-fun <T : RProps> useParams() = useParams<T>(ReactRouterDomModule)
-
 fun <T : RProps> useRouteMatch(
-    module: ReactRouterDom,
     path: Array<out String>,
     exact: Boolean = false,
     strict: Boolean = false,
     sensitive: Boolean = false
 ): RouteResultMatch<T>? {
     if (path.isEmpty()) {
-        return module.useRouteMatch(null)
+        return ReactRouterDomModule.useRouteMatch(null)
     }
 
     val options: RouteMatchOptions = jsObject {
@@ -34,15 +31,8 @@ fun <T : RProps> useRouteMatch(
         this.sensitive = sensitive
     }
 
-    return module.useRouteMatch(options)
+    return ReactRouterDomModule.useRouteMatch(options)
 }
-
-fun <T : RProps> useRouteMatch(
-    vararg path: String,
-    exact: Boolean = false,
-    strict: Boolean = false,
-    sensitive: Boolean = false
-) = useRouteMatch<T>(ReactRouterDomModule, path, exact, strict, sensitive)
 
 external interface RouteMatchOptions {
     var path: Array<out String>
