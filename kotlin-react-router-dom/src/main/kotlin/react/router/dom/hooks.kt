@@ -4,9 +4,9 @@ import kotlinext.js.Object
 import kotlinext.js.jsObject
 import react.RProps
 
-fun useHistory() = ReactRouterDomModule.useHistory()
+fun useHistory() = ReactRouterDom.useHistory()
 
-fun useLocation() = ReactRouterDomModule.useLocation()
+fun useLocation() = ReactRouterDom.useLocation()
 
 fun <T : RProps> useParams(module: ReactRouterDom): T? {
     val rawParams = module.useParams()
@@ -14,7 +14,7 @@ fun <T : RProps> useParams(module: ReactRouterDom): T? {
     return if (Object.keys(rawParams as Any).isEmpty()) null else rawParams as T
 }
 
-fun <T : RProps> useParams() = useParams<T>(ReactRouterDomModule)
+fun <T : RProps> useParams() = useParams<T>(ReactRouterDom)
 
 fun <T : RProps> useRouteMatch(
     module: ReactRouterDom,
@@ -42,7 +42,7 @@ fun <T : RProps> useRouteMatch(
     exact: Boolean = false,
     strict: Boolean = false,
     sensitive: Boolean = false
-) = useRouteMatch<T>(ReactRouterDomModule, path, exact, strict, sensitive)
+) = useRouteMatch<T>(ReactRouterDom, path = path, exact = exact, strict = strict, sensitive  = sensitive)
 
 external interface RouteMatchOptions {
     var path: Array<out String>
