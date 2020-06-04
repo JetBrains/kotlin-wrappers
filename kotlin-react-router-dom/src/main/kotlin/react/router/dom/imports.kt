@@ -5,8 +5,7 @@ package react.router.dom
 import react.RClass
 import react.RProps
 
-@JsModule("react-router-dom")
-external object ReactRouterDom {
+external interface ReactRouterDom {
     fun useHistory(): RouteResultHistory
     fun useLocation(): RouteResultLocation
     fun useParams(): dynamic
@@ -20,3 +19,6 @@ external object ReactRouterDom {
     val NavLink: RClass<dynamic>
     val Redirect : RClass<RedirectProps>
 }
+
+@JsModule("react-router-dom")
+external val ReactRouterDomModule: ReactRouterDom

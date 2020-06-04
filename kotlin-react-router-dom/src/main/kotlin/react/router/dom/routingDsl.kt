@@ -5,11 +5,11 @@ package react.router.dom
 import react.*
 import kotlin.reflect.*
 
-fun RBuilder.hashRouter(handler: RHandler<RProps>) = ReactRouterDom.HashRouter(handler)
+fun RBuilder.hashRouter(handler: RHandler<RProps>) = ReactRouterDomModule.HashRouter(handler)
 
-fun RBuilder.browserRouter(handler: RHandler<RProps>) = ReactRouterDom.BrowserRouter(handler)
+fun RBuilder.browserRouter(handler: RHandler<RProps>) = ReactRouterDomModule.BrowserRouter(handler)
 
-fun RBuilder.switch(handler: RHandler<RProps>) = ReactRouterDom.Switch(handler)
+fun RBuilder.switch(handler: RHandler<RProps>) = ReactRouterDomModule.Switch(handler)
 
 fun RBuilder.route(
     routeComponent: RClass<RouteProps<RProps>>,
@@ -67,21 +67,21 @@ fun RBuilder.route(
     component: KClass<out Component<RProps, *>>,
     exact: Boolean = false,
     strict: Boolean = false
-) = route(ReactRouterDom.Route as RClass<RouteProps<RProps>>, path, component, exact, strict)
+) = route(ReactRouterDomModule.Route as RClass<RouteProps<RProps>>, path, component, exact, strict)
 
 fun <T : RProps> RBuilder.route(
     path: String,
     exact: Boolean = false,
     strict: Boolean = false,
     render: (props: RouteResultProps<T>) -> ReactElement?
-) = route(ReactRouterDom.Route as RClass<RouteProps<T>>, path, exact, strict, render)
+) = route(ReactRouterDomModule.Route as RClass<RouteProps<T>>, path, exact, strict, render)
 
 fun RBuilder.route(
     path: String,
     exact: Boolean = false,
     strict: Boolean = false,
     render: () -> ReactElement?
-) = route(ReactRouterDom.Route as RClass<RouteProps<RProps>>, path, exact, strict, render)
+) = route(ReactRouterDomModule.Route as RClass<RouteProps<RProps>>, path, exact, strict, render)
 
 fun RBuilder.routeLink(
     routeLinkComponent: RClass<LinkProps>,
@@ -103,7 +103,7 @@ fun RBuilder.routeLink(
     replace: Boolean = false,
     className: String? = null,
     handler: RHandler<RProps>?
-) = routeLink(ReactRouterDom.Link, to, replace, className, handler)
+) = routeLink(ReactRouterDomModule.Link, to, replace, className, handler)
 
 fun <T : RProps> RBuilder.navLink(
     navLinkComponent: RClass<NavLinkProps<T>>,
@@ -137,7 +137,7 @@ fun <T : RProps> RBuilder.navLink(
     strict: Boolean = false,
     isActive: ((match: RouteResultMatch<T>?, location: RouteResultLocation) -> Boolean)? = null,
     handler: RHandler<NavLinkProps<T>>?
-) = navLink(ReactRouterDom.NavLink as RClass<NavLinkProps<T>>, to, replace, className, activeClassName, exact, strict, isActive, handler)
+) = navLink(ReactRouterDomModule.NavLink as RClass<NavLinkProps<T>>, to, replace, className, activeClassName, exact, strict, isActive, handler)
 
 fun RBuilder.redirect(
     redirectComponent: RClass<RedirectProps>,
@@ -162,4 +162,4 @@ fun RBuilder.redirect(
     push: Boolean = false,
     exact: Boolean = false,
     strict: Boolean = false
-) = redirect(ReactRouterDom.Redirect, from, to, push, exact, strict)
+) = redirect(ReactRouterDomModule.Redirect, from, to, push, exact, strict)
