@@ -5,12 +5,12 @@ package react.router.dom
 import react.*
 
 @JsName("HashRouter")
-external class HashRouterComponent : Component<RProps, RState> {
+external class HashRouterComponent : Component<HashRouterProps, RState> {
     override fun render(): ReactElement?
 }
 
 @JsName("BrowserRouter")
-external class BrowserRouterComponent : Component<RProps, RState> {
+external class BrowserRouterComponent : Component<BrowserRouterProps, RState> {
     override fun render(): ReactElement?
 }
 
@@ -37,6 +37,24 @@ external class NavLinkComponent<T : RProps> : Component<NavLinkProps<T>, RState>
 @JsName("Redirect")
 external class RedirectComponent : Component<RedirectProps, RState> {
     override fun render(): ReactElement?
+}
+
+external interface BrowserRouterProps : RProps {
+    var basename: String
+    var forceRefresh: Boolean
+    var getUserConfirmation: GetUserConfirmation?
+    var keyLength: Int
+}
+
+@Suppress("EnumEntryName")
+external enum class HashType {
+    slash, noslash, hashbang
+}
+
+external interface HashRouterProps : RProps {
+    var basename: String
+    var getUserConfirmation: GetUserConfirmation?
+    var hashType: String
 }
 
 external interface RouteProps<T : RProps> : RProps {

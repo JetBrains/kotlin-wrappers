@@ -3,9 +3,37 @@ package react.router.dom
 import react.*
 import kotlin.reflect.*
 
-fun RBuilder.hashRouter(handler: RHandler<RProps>) = child(HashRouterComponent::class, handler)
+fun RBuilder.hashRouter(
+    basename: String = "",
+    hashType: HashType = HashType.slash,
+    getUserConfirmation: GetUserConfirmation? = null,
+    handler: RHandler<RProps>
+) = child(HashRouterComponent::class) {
+    attrs {
+        this.basename = basename
+        this.hashType = hashType.name
+        this.getUserConfirmation = getUserConfirmation
+    }
 
-fun RBuilder.browserRouter(handler: RHandler<RProps>) = child(BrowserRouterComponent::class, handler)
+    handler.invoke(this)
+}
+
+fun RBuilder.browserRouter(
+    basename: String = "",
+    getUserConfirmation: GetUserConfirmation? = null,
+    forceRefresh: Boolean = false,
+    keyLength: Int = 6,
+    handler: RHandler<RProps>
+) = child(BrowserRouterComponent::class) {
+    attrs {
+        this.basename = basename
+        this.getUserConfirmation = getUserConfirmation
+        this.forceRefresh = forceRefresh
+        this.keyLength = keyLength
+    }
+
+    handler.invoke(this)
+}
 
 fun RBuilder.switch(handler: RHandler<RProps>) = child(SwitchComponent::class, handler)
 
