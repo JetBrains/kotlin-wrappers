@@ -197,17 +197,14 @@ class CSSBuilder(
     }
 
     // Functions
-    fun min(v1: LinearDimension, v2: LinearDimension): LinearDimension {
-        return LinearDimension("min(${v1.value}, ${v2.value})")
-    }
+    fun min(v1: LinearDimension, v2: LinearDimension): LinearDimension =
+        LinearDimension("min($v1, $v2})")
 
-    fun max(v1: LinearDimension, v2: LinearDimension): LinearDimension {
-        return LinearDimension("max(${v1.value}, ${v2.value})")
-    }
+    fun max(v1: LinearDimension, v2: LinearDimension): LinearDimension =
+        LinearDimension("max($v1, $v2)")
 
-    fun clamp(min: LinearDimension, max: LinearDimension, preferred: LinearDimension): LinearDimension {
-        return LinearDimension("clamp(${min.value}, ${max.value}, ${preferred.value})")
-    }
+    fun clamp(min: LinearDimension, max: LinearDimension, preferred: LinearDimension): LinearDimension =
+        LinearDimension("clamp($min, $max, $preferred)")
 
     // Operator overrides
     operator fun RuleSet.unaryPlus() = this()
