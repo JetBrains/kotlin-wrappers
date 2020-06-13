@@ -113,7 +113,7 @@ object Styled {
 
     private fun wrap(type: dynamic) =
         cache.getOrPut(type) {
-            (default(type))({ it.css })
+            rawStyled(type)({ it.css })
         }
 
     fun createElement(type: Any, css: CSSBuilder, props: WithClassName, children: List<Any>): ReactElement {

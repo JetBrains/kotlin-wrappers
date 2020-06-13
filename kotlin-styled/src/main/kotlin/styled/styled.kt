@@ -1,4 +1,4 @@
 package styled
 
 @JsModule("styled-components")
-external fun styled(target: dynamic): Styler
+external fun rawStyled(target: dynamic): Styler
