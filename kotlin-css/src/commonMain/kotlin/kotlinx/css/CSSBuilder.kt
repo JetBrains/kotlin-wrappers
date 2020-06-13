@@ -198,15 +198,15 @@ class CSSBuilder(
 
     // Functions
     fun min(v1: LinearDimension, v2: LinearDimension): LinearDimension {
-        return LinearDimension("min(${v1.value}, ${v2.value})")
+        return LinearDimension("min($v1, $v2})")
     }
 
     fun max(v1: LinearDimension, v2: LinearDimension): LinearDimension {
-        return LinearDimension("max(${v1.value}, ${v2.value})")
+        return LinearDimension("max($v1, $v2)")
     }
 
     fun clamp(min: LinearDimension, max: LinearDimension, preferred: LinearDimension): LinearDimension {
-        return LinearDimension("clamp(${min.value}, ${max.value}, ${preferred.value})")
+        return LinearDimension("clamp($min, $max, $preferred)")
     }
 
     // Operator overrides
