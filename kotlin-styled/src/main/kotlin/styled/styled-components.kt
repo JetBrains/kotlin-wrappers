@@ -33,8 +33,6 @@ external interface Keyframes {
     fun getName(): String
 }
 
-external fun default(target: dynamic): Styler
-
 /**
  * A helper method to create keyframes for animations.
  */
