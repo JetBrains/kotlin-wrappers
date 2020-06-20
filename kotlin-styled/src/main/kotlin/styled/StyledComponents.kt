@@ -61,7 +61,7 @@ class StyledDOMBuilder<out T : Tag>(factory: (TagConsumer<Unit>) -> T) : RDOMBui
 
 typealias StyledHandler<P> = StyledElementBuilder<P>.() -> Unit
 
-fun <P : WithClassName> styled(type: RClass<P>): RBuilder.(StyledHandler<P>) -> ReactElement = { handler ->
+fun <P : WithClassName> styled(type: Any): RBuilder.(StyledHandler<P>) -> ReactElement = { handler ->
     child(with(StyledElementBuilder<P>(type)) {
         handler()
         create()
