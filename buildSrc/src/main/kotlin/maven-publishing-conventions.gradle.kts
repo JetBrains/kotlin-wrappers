@@ -39,7 +39,7 @@ bintray {
 
     when {
         isKotlinMultiplatformProject ->
-            setPublications("kotlinMultiplatform", "metadata", "jsLegacy", "jvm")
+            setPublications("kotlinMultiplatform", "metadata", "js", "jvm")
 
         isKotlinJsProject ->
             setPublications("kotlin")
