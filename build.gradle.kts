@@ -45,7 +45,7 @@ subprojects {
 
     tasks.withType<KotlinCompile<*>>().configureEach {
         if (!name.endsWith("JsIr")) {
-            kotlinOptions.allWarningsAsErrors = true
+//            kotlinOptions.allWarningsAsErrors = true
         }
     }
 }
