@@ -45,7 +45,7 @@ fun RBuilder.app(props: RProps) {
             attrs["my-attribute"] = 100
             attrs["class"] = "class"
 
-            Object.assign(attrs, jsObject { tabIndex = "0" })
+//            Object.assign(attrs, jsObject { tabIndex = "0" })
 
             // Appending children from props
             props.children()
