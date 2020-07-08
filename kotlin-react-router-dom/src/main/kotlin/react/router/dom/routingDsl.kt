@@ -4,7 +4,7 @@ import react.*
 import kotlin.reflect.*
 
 @Suppress("EnumEntryName")
-external enum class HashType {
+enum class HashType {
     slash, noslash, hashbang
 }
 
