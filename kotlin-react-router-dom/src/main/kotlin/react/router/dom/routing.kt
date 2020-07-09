@@ -46,11 +46,6 @@ external interface BrowserRouterProps : RProps {
     var keyLength: Int
 }
 
-@Suppress("EnumEntryName")
-external enum class HashType {
-    slash, noslash, hashbang
-}
-
 external interface HashRouterProps : RProps {
     var basename: String
     var getUserConfirmation: GetUserConfirmation?
