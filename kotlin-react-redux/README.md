@@ -68,11 +68,11 @@ class WrappedComponent(props: WrappedComponentProps) : RComponent<WrappedCompone
     // ...
 }
 
-private val mapStateToProps: StateProps.(AppState, WrappedComponentProps) -> Unit = { state, props ->
+private val mapStateToProps: StateProps.(AppState, ConnectedComponentProps) -> Unit = { state, props ->
     prop1 = state.prop1
 }
 
-private val mapDispatchToProps: DispatchProps.((RAction) -> WrapperAction, WrappedComponentProps) -> Unit = { dispatch, props ->
+private val mapDispatchToProps: DispatchProps.((RAction) -> WrapperAction, ConnectedComponentProps) -> Unit = { dispatch, props ->
     eventHandler1 = { dispatch(SomeAction()) }
 }
 ```
