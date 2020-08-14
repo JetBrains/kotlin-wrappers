@@ -5,7 +5,6 @@ import org.jetbrains.kotlin.gradle.dsl.KotlinCompile
 
 plugins {
     kotlin("js") apply false
-    id("kotlin-1.3-compat")
 }
 
 subprojects {
@@ -19,7 +18,7 @@ subprojects {
 
     plugins.withType<KotlinJsPluginWrapper> {
         extensions.configure<KotlinJsProjectExtension> {
-            target {
+            js {
                 browser()
             }
         }
@@ -45,7 +44,7 @@ subprojects {
 
     tasks.withType<KotlinCompile<*>>().configureEach {
         if (!name.endsWith("JsIr")) {
-//            kotlinOptions.allWarningsAsErrors = true
+            kotlinOptions.allWarningsAsErrors = true
         }
     }
 }

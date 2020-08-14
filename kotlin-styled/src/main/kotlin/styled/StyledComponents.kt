@@ -1,12 +1,12 @@
 package styled
 
 import kotlinext.js.*
+import kotlinx.browser.window
 import kotlinx.css.*
 import kotlinx.html.*
 import org.w3c.dom.*
 import react.*
 import react.dom.*
-import kotlin.browser.*
 import kotlin.js.*
 
 typealias AnyTagStyledBuilder = StyledDOMBuilder<CommonAttributeGroupFacade>
