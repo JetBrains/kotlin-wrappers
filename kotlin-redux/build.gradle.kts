@@ -6,7 +6,7 @@ plugins {
 
 dependencies {
     api(project(":kotlin-extensions"))
-    api(kotlinxSerialization("runtime-js"))
+    api(kotlinxSerialization("core-js"))
 
     api(npm("redux", npmVersion("redux")))
 }
