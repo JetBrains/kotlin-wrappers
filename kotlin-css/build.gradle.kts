@@ -49,8 +49,3 @@ kotlin {
         }
     }
 }
-
-// TODO: remove after migration on 1.4-M2
-tasks.named("build") {
-    dependsOn(project(":kotlin-css:npm-adapter").tasks.named("build"))
-}
