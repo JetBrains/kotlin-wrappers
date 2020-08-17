@@ -23,10 +23,6 @@ subprojects {
             }
         }
 
-        dependencies {
-            "implementation"(kotlin("stdlib-js"))
-        }
-
         tasks.withType<KotlinJsCompile>().configureEach {
             kotlinOptions {
                 moduleKind = "commonjs"
