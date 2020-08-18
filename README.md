@@ -1,6 +1,7 @@
 [![JetBrains team project](https://jb.gg/badges/team.svg)](https://confluence.jetbrains.com/display/ALL/JetBrains+on+GitHub)
 [![CI](https://github.com/JetBrains/kotlin-wrappers/workflows/CI/badge.svg)](https://github.com/JetBrains/kotlin-wrappers/actions)
 [![Kotlin](https://img.shields.io/badge/kotlin-1.4.0-blue.svg?logo=kotlin)](http://kotlinlang.org)
+[![Slack channel](https://img.shields.io/badge/chat-slack-green.svg?logo=slack)](https://kotlinlang.slack.com/messages/react/)
 
 # Kotlin Wrappers
 
@@ -49,5 +50,5 @@ You also can clone [my-kotlin-react-sample](https://github.com/ScottHuangZL/my-k
 ## Contributing
 
 Contributions to this project are welcome! Please see the open 
-[issues](https://github.com/JetBrains/kotlin-wrappers/issues) or chat with us on the **#react** channel in our 
+[issues](https://github.com/JetBrains/kotlin-wrappers/issues) or chat with us on the [#react](https://kotlinlang.slack.com/messages/react/) channel in our 
 [Slack](https://slack.kotlinlang.org/). 
