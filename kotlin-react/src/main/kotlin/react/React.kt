@@ -7,15 +7,11 @@ import kotlin.reflect.*
 
 external interface Child
 
-fun Child.isString(): Boolean = asDynamic() is String
-
-fun Child.asStringOrNull(): String? = when {
-    isString() -> asDynamic()
-    else -> null
-}
+fun Child.asStringOrNull(): String? =
+    asDynamic() as? String
 
 fun Child.asElementOrNull(): ReactElement? = when {
-    asJsObject().hasOwnProperty("\$\$typeof") -> asDynamic()
+    asJsObject().hasOwnProperty("\$\$typeof") -> unsafeCast<ReactElement>()
     else -> null
 }
 
@@ -63,12 +59,14 @@ fun SuspenseProps.fallback(handler: RBuilder.() -> Unit) {
 /**
  * Usage:
  *
+ * ```
  * companion object : RStatics<RProps, RState, RComponent, Nothing>(RComponent::class) {
  *     init {
  *         defaultProps = ...
  *         ...
  *     }
  * }
+ * ```
  *
  * in your class components
  */
