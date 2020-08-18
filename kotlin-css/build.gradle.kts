@@ -11,12 +11,6 @@ kotlin {
     }
 
     sourceSets {
-        val commonMain by getting {
-            dependencies {
-                implementation(kotlin("stdlib-common"))
-            }
-        }
-
         val commonTest by getting {
             dependencies {
                 implementation(kotlin("test-common"))
@@ -24,21 +18,9 @@ kotlin {
             }
         }
 
-        val jvmMain by getting {
-            dependencies {
-                implementation(kotlin("stdlib-jdk8"))
-            }
-        }
-
         val jvmTest by getting {
             dependencies {
                 implementation(kotlin("test-junit"))
-            }
-        }
-
-        val jsMain by getting {
-            dependencies {
-                implementation(kotlin("stdlib-js"))
             }
         }
 
