@@ -4,24 +4,6 @@ plugins {
     `maven-publish`
 }
 
-if (isKotlinJsProject) {
-    val configure: Zip.() -> Unit = {
-        val dependencyJson = temporaryDir.resolve("package.json")
-        from(dependencyJson)
-
-        doFirst {
-            dependencyJson.writeText(generateDependencyJson())
-        }
-    }
-
-    tasks.named<Zip>("jsLegacyJar") {
-        configure()
-    }
-    tasks.named<Zip>("jsIrJar") {
-        configure()
-    }
-}
-
 val publishVersion = publishVersion()
 
 bintray {
