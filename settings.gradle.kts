@@ -20,7 +20,6 @@ pluginManagement {
 
 // Platform-agnostic CSS support
 include("kotlin-css")
-include("kotlin-css:npm-adapter")
 
 // Kotlin/JS: various helpers
 include("kotlin-extensions")
