@@ -24,7 +24,7 @@ private val Task.peerDependencies: JSONObject
         project.relatedProjects()
             .forEach { put(it.npmName, "^${it.npmVersion}") }
 
-        project.nmpDependencies()
+        project.npmDependencies()
             .forEach { put(it.name, it.peerVersion) }
     }
 

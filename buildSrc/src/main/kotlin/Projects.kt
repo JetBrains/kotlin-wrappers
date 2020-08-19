@@ -14,7 +14,7 @@ internal fun Project.relatedProjects(): List<Project> {
         .map { it.dependencyProject }
 }
 
-internal fun Project.nmpDependencies(): List<NpmDependency> {
+internal fun Project.npmDependencies(): List<NpmDependency> {
     val configuration = configurations.findByName(API)
         ?: return emptyList()
 
