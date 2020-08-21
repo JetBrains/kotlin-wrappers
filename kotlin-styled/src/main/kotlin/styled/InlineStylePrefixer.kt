@@ -1,4 +1,5 @@
 @file:JsModule("inline-style-prefixer")
+@file:JsNonModule
 
 package styled
 

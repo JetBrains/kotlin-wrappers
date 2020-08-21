@@ -1,4 +1,5 @@
 @file:JsModule("css-in-js-utils")
+@file:JsNonModule
 
 package styled
 

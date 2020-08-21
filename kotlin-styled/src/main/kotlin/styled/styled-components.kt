@@ -1,4 +1,5 @@
 @file:JsModule("styled-components")
+@file:JsNonModule
 
 package styled
 
