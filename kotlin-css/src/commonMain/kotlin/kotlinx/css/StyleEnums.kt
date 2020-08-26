@@ -533,6 +533,8 @@ class Color(override val value: String) : CssValue(value) {
     }
 }
 
+private fun String.withZeros() = this + "0".repeat(max(0, 3 - this.length))
+fun hex(value: Int) = Color("#${value.toString(16).withZeros()}")
 fun rgb(red: Int, green: Int, blue: Int) = Color("rgb($red, $green, $blue)")
 fun rgba(red: Int, green: Int, blue: Int, alpha: Double) = Color("rgba($red, $green, $blue, ${formatAlpha(alpha)})")
 fun hsl(hue: Int, saturation: Int, lightness: Int) = Color("hsl($hue, $saturation%, $lightness%)")
