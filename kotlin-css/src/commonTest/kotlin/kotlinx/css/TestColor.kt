@@ -204,6 +204,17 @@ class TestColor {
     }
 
     @Test
+    fun testHex() {
+        val black = hex(0x000)
+        val white = hex(0xfff)
+        val color = hex(0x812dd3)
+
+        assertEquals("#000", black.toString())
+        assertEquals("#fff", white.toString())
+        assertEquals("#812dd3", color.toString())
+    }
+
+    @Test
     fun testBlend() {
         val source = whiteAlpha(0.1)
         val mix = source.blend(Color("#1a3b66"))
