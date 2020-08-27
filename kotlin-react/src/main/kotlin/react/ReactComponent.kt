@@ -81,9 +81,9 @@ external interface RReadableRef<out T> : RRef {
 fun <S : RState> Component<*, S>.setState(buildState: S.() -> Unit) =
     setState({ assign(it, buildState) })
 
-inline fun <P : RProps> rFunction(
+fun <P : RProps> rFunction(
     displayName: String,
-    crossinline render: RBuilder.(P) -> Unit
+    render: RBuilder.(P) -> Unit
 ): RClass<P> {
     val fn = { props: P -> buildElements { render(props) } }
     return fn.unsafeCast<RClass<P>>()
