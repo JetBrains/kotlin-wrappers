@@ -29,10 +29,15 @@ open class StyleSheet(var name: String, val isStatic: Boolean = false) {
         if (!isLoaded && isStatic) {
             isLoaded = true
 
+            val keys = holders
+                .flatMap { cssHolder ->
+                    cssHolder.properties.map { it to cssHolder }
+                }
+
             val builder = CSSBuilder(allowClasses = false).apply {
-                holders.forEach {
-                    ".${getClassName(it.property)}" {
-                        for (r in it.ruleSets) {
+                keys.forEach {
+                    ".${getClassName(it.first)}" {
+                        for (r in it.second.ruleSets) {
                             r()
                         }
                     }
@@ -45,10 +50,13 @@ open class StyleSheet(var name: String, val isStatic: Boolean = false) {
 }
 
 class CssHolder(private val sheet: StyleSheet, internal vararg val ruleSets: RuleSet) {
-    lateinit var property: KProperty<*>
+    private val _properties: MutableList<KProperty<*>> = mutableListOf()
+
+    val properties: List<KProperty<*>>
+        get() = _properties
 
     operator fun provideDelegate(thisRef: Any?, providingProperty: KProperty<*>): ReadOnlyProperty<Any?, RuleSet> {
-        this.property = providingProperty
+        _properties.add(providingProperty)
         return ReadOnlyProperty { _, property ->
             {
                 if (sheet.isStatic) {
