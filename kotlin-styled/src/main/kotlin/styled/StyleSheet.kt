@@ -1,12 +1,15 @@
 package styled
 
-import kotlinext.js.*
-import kotlinx.css.*
-import react.*
-import kotlin.reflect.*
+import kotlinx.css.CSSBuilder
+import kotlinx.css.RuleSet
+import kotlin.properties.ReadOnlyProperty
+import kotlin.reflect.KProperty
+import kotlin.reflect.KProperty0
 
 open class StyleSheet(var name: String, val isStatic: Boolean = false) {
     private var isLoaded = false
+
+    private val holders: MutableList<CssHolder> = mutableListOf()
 
     constructor(name: String, parent: StyleSheet, isStatic: Boolean = false) : this(parent.name + "-" + name, isStatic)
 
@@ -14,24 +17,22 @@ open class StyleSheet(var name: String, val isStatic: Boolean = false) {
         handler().inject()
     }
 
-    fun css(vararg parents: RuleSet, builder: RuleSet) = CssHolder(this, *parents, builder)
+    fun css(vararg parents: RuleSet, builder: RuleSet) =
+        CssHolder(this, *parents, builder)
+            .also { addCssHolder(it) }
+
+    internal fun addCssHolder(holder: CssHolder) {
+        holders.add(holder)
+    }
 
     fun inject() {
         if (!isLoaded && isStatic) {
             isLoaded = true
 
-            // Unmangle the keys, e.g. "wrapper_r2j0kd$_0" -> "wrapper"
-            val keys = this.getOwnPropertyNames()
-                .filter { it.endsWith("\$_0") }
-                .filter { this.asDynamic()[it] is CssHolder }
-                .map { it to this.asDynamic()[it] as CssHolder }
-                .map { it.first.removeSuffix("\$_0") to it.second }
-                .map { it.first.substring(0, it.first.lastIndexOf('_')) to it.second }
-
             val builder = CSSBuilder(allowClasses = false).apply {
-                keys.forEach {
-                    ".$name-${it.first}" {
-                        for (r in it.second.ruleSets) {
+                holders.forEach {
+                    ".${getClassName(it.property)}" {
+                        for (r in it.ruleSets) {
                             r()
                         }
                     }
@@ -44,15 +45,22 @@ open class StyleSheet(var name: String, val isStatic: Boolean = false) {
 }
 
 class CssHolder(private val sheet: StyleSheet, internal vararg val ruleSets: RuleSet) {
-    operator fun getValue(thisRef: Any?, property: KProperty<*>): RuleSet = {
-        if (sheet.isStatic) {
-            +(sheet.getClassName(property))
-            sheet.inject()
-        }
+    lateinit var property: KProperty<*>
 
-        if (!sheet.isStatic || !allowClasses) {
-            styleName.add(sheet.getClassName(property))
-            ruleSets.forEach { it() }
+    operator fun provideDelegate(thisRef: Any?, providingProperty: KProperty<*>): ReadOnlyProperty<Any?, RuleSet> {
+        this.property = providingProperty
+        return ReadOnlyProperty { _, property ->
+            {
+                if (sheet.isStatic) {
+                    +(sheet.getClassName(property))
+                    sheet.inject()
+                }
+
+                if (!sheet.isStatic || !allowClasses) {
+                    styleName.add(sheet.getClassName(property))
+                    ruleSets.forEach { it() }
+                }
+            }
         }
     }
 }
@@ -72,4 +80,6 @@ fun <T : StyleSheet> T.getClassSelector(getClass: (T) -> KProperty0<RuleSet>): S
 /**
  * Use this function to assign a CSS class without any properties to an element
  */
-fun StyleSheet.cssMarker() = CssHolder(this, {})
+fun StyleSheet.cssMarker() =
+    CssHolder(this, {})
+        .also { addCssHolder(it) }
