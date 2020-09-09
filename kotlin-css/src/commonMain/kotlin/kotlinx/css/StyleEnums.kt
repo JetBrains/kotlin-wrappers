@@ -11,7 +11,7 @@ abstract class CssValue(open val value: String) {
 enum class Align {
     initial, inherit, unset,
 
-    auto, stretch, center, flexStart, flexEnd, baseline;
+    auto, stretch, center, start, end, selfStart, selfEnd, flexStart, flexEnd, baseline;
 
     override fun toString() = name.hyphenize()
 }
