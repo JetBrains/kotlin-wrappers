@@ -21,7 +21,7 @@ bintray {
 
     when {
         isKotlinMultiplatformProject ->
-            setPublications("kotlinMultiplatform", "metadata", "js", "jvm")
+            setPublications("kotlinMultiplatform", "metadata", "js", "jvm", "iosArm32", "iosArm64", "iosX64")
 
         isKotlinJsProject ->
             setPublications("kotlin")
