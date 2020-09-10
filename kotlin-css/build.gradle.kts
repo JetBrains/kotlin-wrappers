@@ -9,6 +9,9 @@ kotlin {
         moduleName = project.name
         browser()
     }
+    iosArm32("iosArm32")
+    iosX64("iosX64")
+    iosArm64("iosArm64")
 
     sourceSets {
         val commonTest by getting {
