@@ -169,7 +169,7 @@ class CSSBuilder(
     }
 
     fun prefix(selector: String, block: RuleSet) {
-        "$selector &"(block)
+        "$selector &&"(block)
     }
 
     // https://developer.mozilla.org/en-US/docs/Web/CSS/At-rule

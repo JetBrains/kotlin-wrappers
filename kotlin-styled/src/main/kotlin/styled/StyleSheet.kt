@@ -2,6 +2,7 @@ package styled
 
 import kotlinext.js.*
 import kotlinx.css.*
+import react.*
 import kotlin.reflect.*
 
 open class StyleSheet(var name: String, val isStatic: Boolean = false) {
@@ -38,6 +39,14 @@ open class StyleSheet(var name: String, val isStatic: Boolean = false) {
             }
 
             injectGlobal(builder.toString())
+        } else {
+            // for styled-components v5
+            // inject global uses useRef() to check if it's created dynamically,
+            // but using hooks should be without any condition in render flow
+            // so it should be placed in else too
+            try {
+                useRef(undefined)
+            } catch (e: Throwable) {}
         }
     }
 }

@@ -31,6 +31,7 @@ external interface Styler : TemplateTag<(StyledProps) -> String, dynamic> {
 }
 
 external interface Keyframes {
+    val rules: Array<out dynamic>
     fun getName(): String
 }
 
