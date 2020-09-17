@@ -2,8 +2,9 @@
 
 ## kotlin-styled
 
-Kotlin wrappers for [styled-components](https://www.styled-components.com/) and 
-[inline-style-prefixer](https://github.com/rofrischmann/inline-style-prefixer).
+Kotlin wrappers for [styled-components](https://www.styled-components.com/) and [inline-style-prefixer](https://github.com/rofrischmann/inline-style-prefixer). 
+
+Major version number of this wrapper matches that of styled-components itself.
 
 ### Installation
 

@@ -104,7 +104,7 @@ private fun injectGlobals(strings: Array<String>) {
     }
 }
 
-private external interface GlobalStylesComponentProps: RProps {
+private external interface GlobalStylesComponentProps : RProps {
     var globalStyles: List<Any>
 }
 
