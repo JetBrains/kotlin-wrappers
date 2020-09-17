@@ -169,6 +169,7 @@ class CSSBuilder(
     }
 
     fun prefix(selector: String, block: RuleSet) {
+        // Temporarily using && here because of a bug introduced in version 5.2: https://github.com/styled-components/styled-components/issues/3244#issuecomment-687676703
         "$selector &&"(block)
     }
 
