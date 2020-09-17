@@ -13,5 +13,5 @@ dependencies {
 
     api(npm("css-in-js-utils", "^3.1.0"))
     api(npm("inline-style-prefixer", "^6.0.0"))
-    api(npm("styled-components", "^4.4.1"))
+    api(npm("styled-components", "^5.2.0"))
 }

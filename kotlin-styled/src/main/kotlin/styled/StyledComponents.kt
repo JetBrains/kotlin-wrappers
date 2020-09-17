@@ -81,29 +81,70 @@ inline fun <P : CustomStyledProps> RElementBuilder<P>.css(noinline handler: Rule
 /**
  * @deprecated Use [keyframes] and [css] instead
  */
-@Suppress("NOTHING_TO_INLINE")
-inline fun keyframesName(string: String): String {
-    val keyframe = keyframes(string)
-    injectGlobal(css(keyframe))
+fun keyframesName(string: String): String {
+    val keyframes = keyframes(string)
+    val keyframesInternal = css(keyframes.rules).asDynamic()
+    val name = keyframes.getName()
+    if (keyframesInternal is String) {
+        injectGlobals(arrayOf(
+            "@-webkit-keyframes $name {$keyframesInternal}",
+            "@keyframes $name {$keyframesInternal}"
+        ))
+    } else {
+        injectGlobals(keyframesInternal)
+    }
 
-    return keyframe.getName()
+    return keyframes.getName()
 }
 
-private var globalStylesCounter = 0
+private fun injectGlobals(strings: Array<String>) {
+    val globalStyle = createGlobalStyle(strings)
+    Promise.resolve(Unit).then {
+        GlobalStyles.add(globalStyle)
+    }
+}
+
+private external interface GlobalStylesComponentProps: RProps {
+    var globalStyles: List<Any>
+}
+
+private object GlobalStyles {
+    private val component = functionalComponent<GlobalStylesComponentProps> { props ->
+        props.globalStyles.forEach {
+            child(it, jsObject {}, emptyList())
+        }
+    }
+
+    private val root by kotlin.lazy {
+        val element = window.document.body!!.appendChild(window.document.createElement("div")) as Element
+        element.setAttribute("id", "sc-global-styles")
+        element
+    }
+
+    private val styles = mutableListOf<Component<RProps, RState>>()
+
+    fun add(globalStyle: Component<RProps, RState>) {
+        styles.add(globalStyle)
+        val reactElement = createElement<GlobalStylesComponentProps>(GlobalStyles.component, jsObject {
+            this.globalStyles = styles
+        })
+        render(reactElement, root)
+    }
+}
 
 /**
  * @deprecated Use [createGlobalStyle] instead
  */
 fun injectGlobal(string: String) {
-    val globalStyleComponent = createGlobalStyle(string)
-    val element = window.document.body!!.appendChild(window.document.createElement("div")) as Element
-    element.setAttribute("id", "sc-global-style-${globalStylesCounter++}")
-    val reactElement = createElement(globalStyleComponent, js {})
+    val globalStyle = createGlobalStyle(string)
     Promise.resolve(Unit).then {
-        render(reactElement, element)
+        GlobalStyles.add(globalStyle)
     }
 }
 
+/**
+ * @deprecated Use [createGlobalStyle] instead
+ */
 fun injectGlobal(handler: CSSBuilder.() -> Unit) {
     injectGlobal(CSSBuilder().apply { handler() }.toString())
 }

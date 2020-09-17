@@ -174,13 +174,19 @@ typealias FunctionalComponent<P> = (props: P) -> dynamic
  * Get functional component from [func]
  */
 fun <P : RProps> functionalComponent(
+    displayName: String? = null,
     func: RBuilder.(props: P) -> Unit
-): FunctionalComponent<P> =
-    { props: P ->
+): FunctionalComponent<P> {
+    val fc = { props: P ->
         buildElements {
             func(props)
         }
     }
+    if (displayName != null) {
+        fc.asDynamic().displayName = displayName
+    }
+    return fc
+}
 
 /**
  * Append functional component [component] as child of current builder
