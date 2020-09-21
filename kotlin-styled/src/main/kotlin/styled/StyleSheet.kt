@@ -39,11 +39,9 @@ open class StyleSheet(var name: String, val isStatic: Boolean = false) {
             }
 
             injectGlobal(builder.toString())
-        } else {
-            // for styled-components v5
-            // inject global uses useRef() to check if it's created dynamically,
-            // but using hooks should be without any condition in render flow
-            // so it should be placed in else too
+        } else if (js("process.env.NODE_ENV !== 'production'")) {
+            // styled-components 5.x uses useRef() in development mode to check if a component has been created
+            // dynamically, so we include a corresponding call here to have a matching count of hook invocations
             try {
                 useRef(undefined)
             } catch (e: Throwable) {}
