@@ -156,8 +156,9 @@ fun injectGlobal(string: String) {
 external object ReactModule
 
 private fun devCreateGlobalStyle(string: String): Component<RProps, RState> {
-    // dirty hack: it's a way to disable `useRef` in `createGlobalStyle`,
-    // it prevents breaking rendering with conditional hooks used only for checking if it's rendering phase
+    // (Very) dirty hack: styled-components calls useRef() in development mode to check if a component
+    // has been created dynamically. We can't allow this call to happen because it breaks rendering, so
+    // we temporarily redefine useRef.
     val useRef = ReactModule.asDynamic().useRef
     ReactModule.asDynamic().useRef = {}
     val globalStyle = createGlobalStyle(string)
