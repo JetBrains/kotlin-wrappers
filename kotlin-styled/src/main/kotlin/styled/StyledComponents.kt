@@ -143,10 +143,26 @@ private object GlobalStyles {
  * @deprecated Use [createGlobalStyle] instead
  */
 fun injectGlobal(string: String) {
-    val globalStyle = createGlobalStyle(string)
+    val globalStyle = if (js("process.env.NODE_ENV !== 'production'")) {
+        devCreateGlobalStyle(string)
+    } else createGlobalStyle(string)
     Promise.resolve(Unit).then {
         GlobalStyles.add(globalStyle)
     }
+}
+
+@JsModule("react")
+@JsNonModule
+external object ReactModule
+
+private fun devCreateGlobalStyle(string: String): Component<RProps, RState> {
+    // dirty hack: it's a way to disable `useRef` in `createGlobalStyle`,
+    // it prevents breaking rendering with conditional hooks used only for checking if it's rendering phase
+    val useRef = ReactModule.asDynamic().useRef
+    ReactModule.asDynamic().useRef = {}
+    val globalStyle = createGlobalStyle(string)
+    ReactModule.asDynamic().useRef = useRef
+    return globalStyle
 }
 
 /**
