@@ -85,16 +85,23 @@ fun keyframesName(string: String): String {
     val keyframes = keyframes(string)
     val keyframesInternal = css(keyframes.rules).asDynamic()
     val name = keyframes.getName()
-    if (keyframesInternal is String) {
-        injectGlobals(arrayOf(
-            "@-webkit-keyframes $name {$keyframesInternal}",
-            "@keyframes $name {$keyframesInternal}"
-        ))
-    } else {
-        injectGlobals(keyframesInternal)
+    when {
+        keyframesInternal is String -> injectGlobalKeyframeStyle(name, keyframesInternal)
+        keyframesInternal is Array<String> -> injectGlobalKeyframeStyle(name, keyframesInternal[0])
+        else -> injectGlobals(keyframesInternal)
     }
-
     return keyframes.getName()
+}
+
+private fun injectGlobalKeyframeStyle(name: String, style: String) {
+    if (style.startsWith("@-webkit-keyframes") || style.startsWith("@keyframes")) {
+        injectGlobal(style)
+    } else {
+        injectGlobals(arrayOf(
+                "@-webkit-keyframes $name {$style}",
+                "@keyframes $name {$style}"
+        ))
+    }
 }
 
 private fun injectGlobals(strings: Array<String>) {
