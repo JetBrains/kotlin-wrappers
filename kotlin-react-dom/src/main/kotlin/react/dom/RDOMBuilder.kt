@@ -80,18 +80,15 @@ open class RDOMBuilder<out T : Tag>(factory: (TagConsumer<Unit>) -> T) : RBuilde
         }
 
     var SELECT.values: Set<String>
-        get() {
-            val valuesArr: Array<String> = this["value"] ?: arrayOf()
-            return valuesArr.toSet()
-        }
+        get() = (this["value"] ?: arrayOf<String>()).toSet()
         set(value) {
             this["value"] = value.toTypedArray()
         }
 
     var SELECT.value: String
-        get() = ""
+        get() = get("value")
         set(value) {
-            values = setOf(value)
+            set("value", value)
         }
 
     protected val props: DOMProps = jsObject()
