@@ -116,7 +116,8 @@ class CSSBuilder(
 
     fun descendants(selector: String? = null, block: RuleSet) = "& ${selector ?: "*"}"(block)
 
-    fun ancestorHover(selector: String, block: RuleSet) = "$selector:hover &"(block)
+    // Temporarily using && here because of a bug introduced in version 5.2: https://github.com/styled-components/styled-components/issues/3244#issuecomment-687676703
+    fun ancestorHover(selector: String, block: RuleSet) = "$selector:hover &&"(block)
 
     // https://developer.mozilla.org/en/docs/Web/CSS/Pseudo-elements
     fun after(block: RuleSet) = "&::after" {
