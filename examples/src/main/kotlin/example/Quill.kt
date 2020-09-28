@@ -11,6 +11,7 @@ import react.*
 import react.dom.*
 
 @JsModule("react-quill")
+@JsNonModule
 external val reactQuill: RClass<ReactQuillProps>
 
 external interface ReactQuillProps : RProps {
