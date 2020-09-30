@@ -160,7 +160,9 @@ private fun devCreateGlobalStyle(string: String): Component<RProps, RState> {
     // has been created dynamically. We can't allow this call to happen because it breaks rendering, so
     // we temporarily redefine useRef.
     val useRef = ReactModule.asDynamic().useRef
-    ReactModule.asDynamic().useRef = {}
+    ReactModule.asDynamic().useRef = {
+        throw Error("invalid hook call")
+    }
     val globalStyle = createGlobalStyle(string)
     ReactModule.asDynamic().useRef = useRef
     return globalStyle
