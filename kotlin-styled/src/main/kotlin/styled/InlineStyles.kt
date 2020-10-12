@@ -11,6 +11,9 @@ fun RDOMBuilder<*>.inlineStyles(prefix: Boolean = true, builder: StyledElement.(
     setProp("style", styles.toStyle(prefix))
 }
 
+@JsName("Array")
+private external class JsArray
+
 fun StyledElement.toStyle(prefix: Boolean = true): Any {
     val res = js { }
     declarations.forEach { (key, value) ->
@@ -33,12 +36,12 @@ fun StyledElement.toStyle(prefix: Boolean = true): Any {
             val value = prefixed.asDynamic()[it]
 
             @Suppress("UnsafeCastFromDynamic")
-            if (js("(value instanceof Array)")) {
+            if (value is JsArray) {
                 // TODO make this work
                 // val displayValue = CssInJsUtils.resolveArrayValue(it, prefixed.asDynamic()[it])
 
                 // Find the unprefixed value in the array and use it: multiple values don't work for some reason
-                val displayValue = js("(value.find(function(element) { return !element.startsWith('-') }))")
+                val displayValue = value.find(js("function(element) { return !element.startsWith('-') }"))
 
                 prefixed.asDynamic()[it] = displayValue
             }
