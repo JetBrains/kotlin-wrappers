@@ -3,13 +3,7 @@
 
 package react.redux
 
-import react.Component
-import react.FunctionalComponent
-import react.HOC
-import react.RContext
-import react.RProps
-import react.RState
-import react.ReactElement
+import react.*
 import redux.Store
 
 external class Provider : Component<ProviderProps, RState> {
@@ -35,9 +29,9 @@ external fun <S, A, R, OP : RProps, P : RProps> connectAdvanced(
 
 external fun batch(action: () -> Unit)
 
-external fun <S, R> useSelector(selector: (S) -> R) : R
+external fun <S, R> useSelector(selector: (S) -> R): R
 
-external fun <S, R> useSelector(selector: (S) -> R, equalityFn: (R, R) -> Boolean) : R
+external fun <S, R> useSelector(selector: (S) -> R, equalityFn: (R, R) -> Boolean): R
 
 external fun <A, R> useDispatch(): ((A) -> R)
 
