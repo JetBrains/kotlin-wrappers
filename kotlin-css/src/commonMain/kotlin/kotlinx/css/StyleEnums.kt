@@ -281,7 +281,7 @@ class Color(override val value: String) : CssValue(value) {
         val white = Color("white", "#ffffff")
         val whiteSmoke = Color("whitesmoke", "#f5f5f5")
         val yellow = Color("yellow", "#ffff00")
-        val yellowGreen = Color("yellowgreen", "#9acd3")
+        val yellowGreen = Color("yellowgreen", "#9acd32")
 
         fun normalizeFractionalPercent(value: Double): Double =
             value.coerceIn(minimumValue = 0.0, maximumValue = 1.0)
