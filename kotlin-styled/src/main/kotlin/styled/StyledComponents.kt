@@ -105,7 +105,7 @@ private fun injectGlobalKeyframeStyle(name: String, style: String) {
 }
 
 private fun injectGlobals(strings: Array<String>) {
-    val globalStyle = createGlobalStyle(strings)
+    val globalStyle = devOverrideUseRef { createGlobalStyle(strings) }
     Promise.resolve(Unit).then {
         GlobalStyles.add(globalStyle)
     }
@@ -143,9 +143,7 @@ private object GlobalStyles {
  * @deprecated Use [createGlobalStyle] instead
  */
 fun injectGlobal(string: String) {
-    val globalStyle = if (js("process.env.NODE_ENV !== 'production'")) {
-        devCreateGlobalStyle(string)
-    } else createGlobalStyle(string)
+    val globalStyle = devOverrideUseRef { createGlobalStyle(string) }
     Promise.resolve(Unit).then {
         GlobalStyles.add(globalStyle)
     }
@@ -155,17 +153,19 @@ fun injectGlobal(string: String) {
 @JsNonModule
 external object ReactModule
 
-private fun devCreateGlobalStyle(string: String): Component<RProps, RState> {
-    // (Very) dirty hack: styled-components calls useRef() in development mode to check if a component
-    // has been created dynamically. We can't allow this call to happen because it breaks rendering, so
-    // we temporarily redefine useRef.
-    val useRef = ReactModule.asDynamic().useRef
-    ReactModule.asDynamic().useRef = {
-        throw Error("invalid hook call")
-    }
-    val globalStyle = createGlobalStyle(string)
-    ReactModule.asDynamic().useRef = useRef
-    return globalStyle
+private fun <T> devOverrideUseRef(action: () -> T): T {
+    return if (js("process.env.NODE_ENV !== 'production'")) {
+        // (Very) dirty hack: styled-components calls useRef() in development mode to check if a component
+        // has been created dynamically. We can't allow this call to happen because it breaks rendering, so
+        // we temporarily redefine useRef.
+        val useRef = ReactModule.asDynamic().useRef
+        ReactModule.asDynamic().useRef = {
+            throw Error("invalid hook call")
+        }
+        val result = action()
+        ReactModule.asDynamic().useRef = useRef
+        result
+    } else action()
 }
 
 /**
