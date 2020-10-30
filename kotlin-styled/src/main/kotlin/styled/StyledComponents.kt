@@ -180,7 +180,7 @@ object Styled {
 
     private fun wrap(type: dynamic) =
         cache.getOrPut(type) {
-            rawStyled(type)({ it.css })
+            devOverrideUseRef { rawStyled(type)({ it.css }) }
         }
 
     fun createElement(type: Any, css: CSSBuilder, props: WithClassName, children: List<Any>): ReactElement {
