@@ -4,5 +4,5 @@ plugins {
 }
 
 dependencies {
-    api(npm("mocha", npmVersion("mocha")))
+    api(npmv("mocha"))
 }

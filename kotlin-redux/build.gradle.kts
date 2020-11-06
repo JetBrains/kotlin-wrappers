@@ -8,5 +8,5 @@ dependencies {
     api(project(":kotlin-extensions"))
     api(kotlinxSerialization("json"))
 
-    api(npm("redux", npmVersion("redux")))
+    api(npmv("redux"))
 }

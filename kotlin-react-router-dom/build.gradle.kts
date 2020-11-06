@@ -7,5 +7,5 @@ dependencies {
     api(project(":kotlin-extensions"))
     api(project(":kotlin-react"))
 
-    api(npm("react-router-dom", npmVersion("react-router-dom")))
+    api(npmv("react-router-dom"))
 }
