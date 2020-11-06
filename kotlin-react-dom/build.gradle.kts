@@ -9,5 +9,5 @@ dependencies {
 
     api(kotlinxHtml("js"))
 
-    api(npm("react-dom", npmVersion("react-dom")))
+    api(npmv("react-dom"))
 }

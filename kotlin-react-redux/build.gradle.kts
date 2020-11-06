@@ -8,5 +8,5 @@ dependencies {
     api(project(":kotlin-react"))
     api(project(":kotlin-redux"))
 
-    api(npm("react-redux", npmVersion("react-redux")))
+    api(npmv("react-redux"))
 }

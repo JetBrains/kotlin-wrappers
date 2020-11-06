@@ -8,5 +8,5 @@ dependencies {
 
     api(kotlinxCoroutines("core"))
 
-    api(npm("react", npmVersion("react")))
+    api(npmv("react"))
 }
