@@ -47,6 +47,17 @@ demonstrates how to add typings for an external library.
 Follow these examples to learn how to start developing your React apps with Kotlin. Good luck and have fun! 
 You also can clone [my-kotlin-react-sample](https://github.com/ScottHuangZL/my-kotlin-app) to see the result directly.
 
+## Experimental IR Backend
+
+Please note that especially the react wrappers heavily relied on specific characteristics of the default backend, which might make your current code incompatible with the new IR backend.
+
+### React error: "X not a function" in production mode:
+- Every interface implementing RProps or RState should be marked as external interface. Otherwise, you will get a Uncaught ClassCastException.
+If you’re implementing these interfaces via a class, you can mark it as @JsExport – however, we suggest evaluating if you could use an external interface instead.
+- Every component extending `RComponent` must be marked with @JSExport. Otherwise, you might run into issues such as TypeError: `l.render is not a function (react-dom.production.min.js:182)
+- https://youtrack.jetbrains.com/issue/KT-42427, https://youtrack.jetbrains.com/issue/KT-39506
+
+
 ## Contributing
 
 Contributions to this project are welcome! Please see the open 
