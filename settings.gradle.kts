@@ -25,7 +25,8 @@ include("kotlin-css")
 include("kotlin-extensions")
 
 // Kotlin/JS: Mocha wrappers
-include("kotlin-mocha")
+// TODO update to latest version and re-enable
+// include("kotlin-mocha")
 
 // Kotlin/JS: React wrappers
 include("kotlin-react")
