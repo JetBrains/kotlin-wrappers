@@ -82,9 +82,12 @@ external interface RouteResultProps<T : RProps> : RProps {
 }
 
 external interface RouteResultHistory {
+    val length: Int
+    val action: String
     var location: RouteResultLocation
 
-    fun push(path: String)
+    fun push(path: String, state: dynamic = definedExternally)
+    fun replace(path: String, state: dynamic = definedExternally) 
     fun go(n: Int)
     fun goBack()
     fun goForward()
