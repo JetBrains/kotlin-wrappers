@@ -42,9 +42,9 @@ fun <S> rEnhancer(): Enhancer<S, Action, Action, RAction, WrapperAction> = { nex
     }
 }
 
-interface WrapperAction : Action {
+external interface WrapperAction : Action {
     override val type: String
     val action: RAction
 }
 
-interface RAction
+external interface RAction
