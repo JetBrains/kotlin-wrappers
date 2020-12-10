@@ -52,6 +52,7 @@ class StyledElementBuilder<P : WithClassName>(
     fun create() = Styled.createElement(type, css, attrs, childList)
 }
 
+@ReactDsl
 class StyledDOMBuilder<out T : Tag>(factory: (TagConsumer<Unit>) -> T) : RDOMBuilder<T>(factory), StyledBuilder<DOMProps> {
     override val type: Any = attrs.tagName
     override val css = CSSBuilder()
