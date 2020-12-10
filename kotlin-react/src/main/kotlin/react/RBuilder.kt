@@ -217,3 +217,42 @@ fun <T, P : RProps> RBuilder.childFunction(
         props = RElementBuilder(props).apply(handler).attrs,
         children = listOf { value: T -> buildElement { children(value) } }
     )
+
+/**
+ * This forEach implementation ensures that element children are appended in a React-friendly way,
+ * as an array. This in turn allows React to understand whether a collection of elements has keys or not:
+ *
+ * https://reactjs.org/docs/lists-and-keys.html
+ *
+ * When you use regular forEach, React doesn't understand that those elements belong to a collection and
+ * doesn't give you a warning when attrs.key is not set:
+ *
+ * ```
+ * fun RBuilder.someItems() {
+ *     items.forEach {
+ *         div {
+ *             +it
+ *         }
+ *     }
+ * }
+ * ```
+ *
+ * However, if you do this:
+ *
+ * ```
+ * fun RBuilder.someItems() {
+ *     items.forEach(this) {
+ *         div {
+ *             +it
+ *         }
+ *     }
+ * }
+ * ```
+ *
+ * there will be a proper warning.
+ * */
+fun <T> Collection<T>.forEach(ctx: RBuilder, fn: RBuilder.(T) -> Unit) {
+    ctx.childList.add(map {
+        buildElement { fn(it) }
+    }.toTypedArray())
+}
