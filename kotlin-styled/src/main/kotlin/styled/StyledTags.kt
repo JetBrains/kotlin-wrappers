@@ -137,6 +137,8 @@ inline fun RBuilder.styledLi(block: StyledDOMBuilder<LI>.() -> Unit) = styledTag
 inline fun RBuilder.styledLink(href: String? = null, rel: String? = null, type: String? = null, block: StyledDOMBuilder<LINK>.() -> Unit) =
     styledTag(block) { LINK(attributesMapOf("href", href, "rel", rel, "type", type), it) }
 
+inline fun RBuilder.styledMain(block: StyledDOMBuilder<MAIN>.() -> Unit) = styledTag(block) { MAIN(kotlinx.html.emptyMap, it) }
+
 inline fun RBuilder.styledMap(name: String? = null, block: StyledDOMBuilder<MAP>.() -> Unit) = styledTag(block) { MAP(attributesMapOf("name", name), it) }
 
 inline fun RBuilder.styledMark(block: StyledDOMBuilder<MARK>.() -> Unit) = styledTag(block) { MARK(emptyMap, it) }
