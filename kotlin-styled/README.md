@@ -22,7 +22,7 @@ authoring stylesheets, but it also takes care of adding vendor prefixes for your
 and injecting them into the DOM.
 
 If you are not familiar with [styled-components](https://www.styled-components.com/) or CSS-in-JS in general, now would 
-be a good time to [inform yourself about the concept](https://hackernoon.com/all-you-need-to-know-about-css-in-js-984a72d48ebc), 
+be a good time to [inform yourself about the concept](https://blog.codecarrot.net/all-you-need-to-know-about-css-in-js/), 
 because `kotlin-styled` implements this exact idea... in Kotlin.
 
 When using just `kotlin-react` you would create a regular CSS file and then you would reference CSS classes from Kotlin 
