@@ -75,6 +75,7 @@ val keygen by TagSelectorFactory
 
 val label by TagSelectorFactory
 val link by TagSelectorFactory
+val li by TagSelectorFactory
 
 val map by TagSelectorFactory
 val mark by TagSelectorFactory
