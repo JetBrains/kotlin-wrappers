@@ -10,6 +10,7 @@ bintray {
     user = System.getenv("BINTRAY_USER")
     key = System.getenv("BINTRAY_KEY")
     publish = true
+    override = true
     pkg.run {
         repo = "kotlin-js-wrappers"
         name = project.name
