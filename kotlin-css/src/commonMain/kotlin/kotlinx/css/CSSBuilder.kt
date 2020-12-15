@@ -96,11 +96,11 @@ class CSSBuilder(
     fun lastChild(block: RuleSet) = "&:last-child"(block)
     fun lastOfType(block: RuleSet) = "&:last-of-type"(block)
     fun link(block: RuleSet) = "&:link"(block)
-    fun not(selector: String, block: RuleSet) = "&:not($selector)"(block)
-    fun nthChild(selector: String, block: RuleSet) = "&:nth-child($selector)"(block)
-    fun nthLastChild(selector: String, block: RuleSet) = "&:nth-last-child($selector)"(block)
-    fun nthLastOfType(selector: String, block: RuleSet) = "&:nth-last-of-type($selector)"(block)
-    fun nthOfType(selector: String, block: RuleSet) = "&:nth-of-type($selector)"(block)
+    fun not(@Suppress("UNUSED_PARAMETER") selector: String, block: RuleSet) = "&:not($selector)"(block)
+    fun nthChild(@Suppress("UNUSED_PARAMETER") selector: String, block: RuleSet) = "&:nth-child($selector)"(block)
+    fun nthLastChild(@Suppress("UNUSED_PARAMETER") selector: String, block: RuleSet) = "&:nth-last-child($selector)"(block)
+    fun nthLastOfType(@Suppress("UNUSED_PARAMETER") selector: String, block: RuleSet) = "&:nth-last-of-type($selector)"(block)
+    fun nthOfType(@Suppress("UNUSED_PARAMETER") selector: String, block: RuleSet) = "&:nth-of-type($selector)"(block)
     fun onlyChild(block: RuleSet) = "&:only-child"(block)
     fun onlyOfType(block: RuleSet) = "&:only-of-type"(block)
     fun optional(block: RuleSet) = "&:optional"(block)
@@ -112,12 +112,12 @@ class CSSBuilder(
     fun visited(block: RuleSet) = "&:visited"(block)
 
     // Children & descendants
-    fun children(selector: String? = null, block: RuleSet) = "& > ${selector ?: "*"}"(block)
+    fun children(@Suppress("UNUSED_PARAMETER") selector: String? = null, block: RuleSet) = "& > ${selector ?: "*"}"(block)
 
-    fun descendants(selector: String? = null, block: RuleSet) = "& ${selector ?: "*"}"(block)
+    fun descendants(@Suppress("UNUSED_PARAMETER") selector: String? = null, block: RuleSet) = "& ${selector ?: "*"}"(block)
 
     // Temporarily using && here because of a bug introduced in version 5.2: https://github.com/styled-components/styled-components/issues/3244#issuecomment-687676703
-    fun ancestorHover(selector: String, block: RuleSet) = "$selector:hover &&"(block)
+    fun ancestorHover(@Suppress("UNUSED_PARAMETER") selector: String, block: RuleSet) = "$selector:hover &&"(block)
 
     // https://developer.mozilla.org/en/docs/Web/CSS/Pseudo-elements
     fun after(block: RuleSet) = "&::after" {
@@ -139,11 +139,11 @@ class CSSBuilder(
     }
 
     // Combinators
-    fun child(selector: String, block: RuleSet) = "> $selector"(block)
+    fun child(@Suppress("UNUSED_PARAMETER") selector: String, block: RuleSet) = "> $selector"(block)
 
-    fun sibling(selector: String, block: RuleSet) = "~ $selector"(block)
+    fun sibling(@Suppress("UNUSED_PARAMETER") selector: String, block: RuleSet) = "~ $selector"(block)
 
-    fun adjacentSibling(selector: String, block: RuleSet) = "+ $selector"(block)
+    fun adjacentSibling(@Suppress("UNUSED_PARAMETER") selector: String, block: RuleSet) = "+ $selector"(block)
 
     // Universal selector
     fun universal(block: RuleSet) = "*"(block)
@@ -157,7 +157,7 @@ class CSSBuilder(
 
     operator fun Rule.not() {
         rules.removeAt(rules.lastIndex)
-        selector.replace(Regex("^(&?)(.*)$"), "$1:not($2)")(block)
+        selector.replace(NOT_REGEX, "$1:not($2)")(block)
     }
 
     operator fun Rule.unaryPlus() {
@@ -169,15 +169,15 @@ class CSSBuilder(
         return rule("&".repeat(specificity), passStaticClassesToParent = true, block = block)
     }
 
-    fun prefix(selector: String, block: RuleSet) {
+    fun prefix(@Suppress("UNUSED_PARAMETER") selector: String, block: RuleSet) {
         // Temporarily using && here because of a bug introduced in version 5.2: https://github.com/styled-components/styled-components/issues/3244#issuecomment-687676703
         "$selector &&"(block)
     }
 
     // https://developer.mozilla.org/en-US/docs/Web/CSS/At-rule
-    fun media(query: String, block: RuleSet) = "@media $query"(block)
+    fun media(@Suppress("UNUSED_PARAMETER") query: String, block: RuleSet) = "@media $query"(block)
 
-    fun supports(query: String, block: RuleSet) = "@supports $query"(block)
+    fun supports(@Suppress("UNUSED_PARAMETER") query: String, block: RuleSet) = "@supports $query"(block)
 
     fun fontFace(block: RuleSet) = rule("@font-face", passStaticClassesToParent = false, repeatable = true, block = block)
 
@@ -223,6 +223,10 @@ class CSSBuilder(
         } else {
             (parent as? CSSBuilder)?.addClass(className)
         }
+    }
+
+    companion object {
+        private val NOT_REGEX by lazy { Regex("^(&?)(.*)$") }
     }
 }
 

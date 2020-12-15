@@ -298,6 +298,22 @@ class Color(override val value: String) : CssValue(value) {
 
         fun normalizeAlpha(value: Double): Double =
             normalizeFractionalPercent(value)
+
+        // Match for hsl(int, int%, int%) | hsla(int, int%, int%, 0.5) | etc.
+        private val HSLA_REGEX by lazy {
+            Regex(
+                "^hsla?\\((-?[0-9]+\\.?[0-9]*(?:deg|grad|rad|turn)?)\\s*[, ]?\\s*(\\d{1,3})%\\s*[, ]\\s*(\\d{1,3})%\\s*[, ]?\\s*(\\d|(?:\\d?\\.\\d+))?\\)\$",
+                RegexOption.IGNORE_CASE
+            )
+        }
+
+        // Match for rgb(255, 255, 255) | rgba(255, 255, 255, 0.5) | rgb(100% 100% 100%) | etc.
+        private val RGBA_REGEX by lazy {
+            Regex(
+                "^rgba?\\((\\d{1,3}%?)\\s*[, ]\\s*(\\d{1,3}%?)\\s*[, ]\\s*(\\d{1,3}%?)[, ]?\\s*(\\d|(?:\\d?\\.\\d+))?\\)\$",
+                RegexOption.IGNORE_CASE
+            )
+        }
     }
 
     fun withAlpha(alpha: Double) =
@@ -462,9 +478,7 @@ class Color(override val value: String) : CssValue(value) {
     }
 
     internal fun fromHSLANotation(): HSLA {
-        // Match for hsl(int, int%, int%) | hsla(int, int%, int%, 0.5) | etc.
-        val pattern = "^hsla?\\((-?[0-9]+\\.?[0-9]*(?:deg|grad|rad|turn)?)\\s*[, ]?\\s*(\\d{1,3})%\\s*[, ]\\s*(\\d{1,3})%\\s*[, ]?\\s*(\\d|(?:\\d?\\.\\d+))?\\)\$"
-        val match = Regex(pattern, RegexOption.IGNORE_CASE).find(value)
+        val match = HSLA_REGEX.find(value)
 
         fun getHSLParameter(index: Int) =
             match?.groups?.get(index)?.value
@@ -488,9 +502,7 @@ class Color(override val value: String) : CssValue(value) {
     }
 
     internal fun fromRGBANotation(): RGBA {
-        // Match for rgb(255, 255, 255) | rgba(255, 255, 255, 0.5) | rgb(100% 100% 100%) | etc.
-        val pattern = "^rgba?\\((\\d{1,3}%?)\\s*[, ]\\s*(\\d{1,3}%?)\\s*[, ]\\s*(\\d{1,3}%?)[, ]?\\s*(\\d|(?:\\d?\\.\\d+))?\\)\$"
-        val match = Regex(pattern, RegexOption.IGNORE_CASE).find(value)
+        val match = RGBA_REGEX.find(value)
 
         fun getRGBParameter(index: Int): Int {
             val group = match?.groups?.get(index)?.value
