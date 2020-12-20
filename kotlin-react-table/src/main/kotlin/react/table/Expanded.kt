@@ -5,6 +5,8 @@
 
 package react.table
 
+import kotlinext.js.Record
+
 @JsName("useExpanded")
 external val useExpandedRaw: PluginHook<*>
 

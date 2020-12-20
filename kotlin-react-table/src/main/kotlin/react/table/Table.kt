@@ -5,6 +5,7 @@
 
 package react.table
 
+import kotlinext.js.Record
 import kotlinext.js.jsObject
 import react.Child
 import react.RProps

@@ -1,6 +1,4 @@
-package react.table
-
-import kotlinext.js.jsObject
+package kotlinext.js
 
 external interface Record<in K : Any, out V : Any>
 
