@@ -16,6 +16,7 @@ To learn more please refer to the READMEs of individual modules:
 * [kotlin-react-dom](kotlin-react-dom/README.md),
 * [kotlin-react-redux](kotlin-react-redux/README.md),
 * [kotlin-react-router-dom](kotlin-react-router-dom/README.md),
+* [kotlin-react-table](kotlin-react-table/README.md),
 * [kotlin-redux](kotlin-redux/README.md),
 * [kotlin-styled](kotlin-styled/README.md).
 

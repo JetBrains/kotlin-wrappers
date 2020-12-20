@@ -39,6 +39,9 @@ include("kotlin-redux")
 // Kotlin/JS: React Router wrappers
 include("kotlin-react-router-dom")
 
+// Kotlin/JS: React Table wrappers
+include("kotlin-react-table")
+
 // Kotlin/JS: styled-components wrappers
 include("kotlin-styled")
 
