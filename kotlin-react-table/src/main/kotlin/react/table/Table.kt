@@ -187,12 +187,12 @@ external interface UseTableColumnOptions<D, V> {
      */
     @JsName(Header)
     var header: String
-        @Deprecated(level = DeprecationLevel.HIDDEN, message = "configuration only property")
+        @Deprecated(message = "Write-only property", level = DeprecationLevel.HIDDEN)
         get
 
     @JsName(Header)
     var headerFunction: (HeaderProps<D, V>) -> Child
-        @Deprecated(level = DeprecationLevel.HIDDEN, message = "configuration only property")
+        @Deprecated(message = "Write-only property", level = DeprecationLevel.HIDDEN)
         get
 }
 
@@ -227,7 +227,7 @@ external interface ColumnInstance<D, V> : ColumnInterface<D, V>,
 external interface ColumnInterfaceBasedOnValue<D, V> {
     @JsName(Cell)
     var cellFunction: (CellProps<D, V>) -> Child
-        @Deprecated(level = DeprecationLevel.HIDDEN, message = "configuration only property")
+        @Deprecated(message = "Write-only property", level = DeprecationLevel.HIDDEN)
         get
 }
 
