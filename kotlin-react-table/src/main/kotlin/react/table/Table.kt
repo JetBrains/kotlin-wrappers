@@ -29,6 +29,9 @@ external interface PluginHook<D> {
 
 external interface TableInstance<D> :
     UseTableInstanceProps<D>,
+    UseColumnOrderInstanceProps<D>,
+    UseGroupByInstanceProps<D>,
+    UseExpandedInstanceProps<D>,
     UsePaginationInstanceProps<D>
 
 external interface UseTableInstanceProps<D> {
@@ -294,6 +297,7 @@ external interface UseTableHooks<D> {
 }
 
 external interface TableState<D> :
+    UseColumnOrderState<D>,
     UseGroupByState<D>,
     UseExpandedState<D>,
     UsePaginationState {
