@@ -5,6 +5,7 @@
 
 package react.table
 
+import kotlinext.js.Record
 import react.FunctionalComponent
 
 @JsName("useGroupBy")
