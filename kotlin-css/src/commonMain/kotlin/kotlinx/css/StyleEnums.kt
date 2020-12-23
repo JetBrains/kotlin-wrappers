@@ -911,7 +911,7 @@ enum class Overflow {
 enum class OverflowWrap {
     initial, inherit, unset,
 
-    normal, breakWord;
+    normal, anywhere, breakWord;
 
     override fun toString(): String = name.hyphenize()
 }
