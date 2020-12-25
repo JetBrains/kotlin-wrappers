@@ -163,6 +163,17 @@ open class RBuilder {
             buildElement { fn(index, it) }
         }.toTypedArray())
     }
+
+    fun ReactElement.withKey(newKey: String) {
+        val index = childList.indexOf(this)
+        if (index >= 0) {
+            childList.removeAt(index)
+            val elementWithKey = cloneElement(this, jsObject { key = newKey })
+            childList.add(index, elementWithKey)
+        }
+    }
+
+    fun ReactElement.withKey(newKey: Number) = withKey(newKey.toString())
 }
 
 open class RBuilderMultiple : RBuilder()
