@@ -39,6 +39,26 @@ enum class JustifyContent {
     override fun toString() = name.hyphenize()
 }
 
+enum class JustifyItems {
+    initial, inherit, unset,
+
+    auto,
+    normal,
+    stretch,
+    center,
+    start,
+    end,
+    flexStart,
+    flexEnd,
+    selfStart,
+    selfEnd,
+    left,
+    right,
+    baseline;
+
+    override fun toString() = name.hyphenize()
+}
+
 enum class BackgroundRepeat {
     initial, inherit, unset,
 

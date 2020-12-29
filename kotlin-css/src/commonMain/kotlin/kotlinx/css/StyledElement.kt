@@ -131,6 +131,7 @@ var StyledElement.height: LinearDimension by CSSProperty()
 var StyledElement.hyphens: Hyphens by CSSProperty()
 
 var StyledElement.justifyContent: JustifyContent by CSSProperty()
+var StyledElement.justifyItems: JustifyItems by CSSProperty()
 
 var StyledElement.left: LinearDimension by CSSProperty()
 var StyledElement.letterSpacing: LinearDimension by CSSProperty()
