@@ -200,7 +200,7 @@ class CSSBuilder(
 
     // Functions
     fun min(v1: LinearDimension, v2: LinearDimension): LinearDimension =
-        LinearDimension("min($v1, $v2})")
+        LinearDimension("min($v1, $v2)")
 
     fun max(v1: LinearDimension, v2: LinearDimension): LinearDimension =
         LinearDimension("max($v1, $v2)")
