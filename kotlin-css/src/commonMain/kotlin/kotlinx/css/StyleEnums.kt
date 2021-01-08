@@ -588,6 +588,9 @@ class ColumnGap(override val value: String) : CssValue(value) {
     }
 }
 
+val LinearDimension.cg: ColumnGap
+    get() = ColumnGap(value)
+
 enum class Contain {
     initial, inherit, unset,
 
@@ -968,6 +971,9 @@ class RowGap(override val value: String) : CssValue(value) {
         val unset = RowGap("unset")
     }
 }
+
+val LinearDimension.rg: RowGap
+    get() = RowGap(value)
 
 enum class ScrollBehavior {
     initial, inherit, unset,
