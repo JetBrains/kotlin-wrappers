@@ -789,26 +789,9 @@ class GridColumnEnd(override val value: String) : CssValue(value) {
     }
 }
 
-class GridColumnGap(override val value: String) : CssValue(value) {
-    companion object {
-        val initial = GridColumnGap("initial")
-        val inherit = GridColumnGap("inherit")
-        val normal = GridColumnGap("normal")
-        val unset = GridColumnGap("unset")
-    }
-}
-
 class GridColumnStart(override val value: String) : CssValue(value) {
     companion object {
         val auto = GridColumnStart("auto")
-    }
-}
-
-class GridGap(override val value: String) : CssValue(value) {
-    companion object {
-        val initial = GridGap("initial")
-        val inherit = GridGap("inherit")
-        val unset = GridGap("unset")
     }
 }
 
@@ -821,15 +804,6 @@ class GridRow(override val value: String) : CssValue(value) {
 class GridRowEnd(override val value: String) : CssValue(value) {
     companion object {
         val auto = GridRowEnd("auto")
-    }
-}
-
-class GridRowGap(override val value: String) : CssValue(value) {
-    companion object {
-        val initial = GridRowGap("initial")
-        val inherit = GridRowGap("inherit")
-        val normal = GridRowGap("normal")
-        val unset = GridRowGap("unset")
     }
 }
 
