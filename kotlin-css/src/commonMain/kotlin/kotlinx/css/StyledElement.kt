@@ -108,18 +108,9 @@ var StyledElement.gridAutoFlow: GridAutoFlow by CSSProperty()
 var StyledElement.gridAutoRows: GridAutoRows by CSSProperty()
 var StyledElement.gridColumn: GridColumn by CSSProperty()
 var StyledElement.gridColumnEnd: GridColumnEnd by CSSProperty()
-
-@Deprecated("The gridColumnGap property is deprecated.", ReplaceWith("Use columnGap instead"))
-var StyledElement.gridColumnGap: GridColumnGap by CSSProperty()
 var StyledElement.gridColumnStart: GridColumnStart by CSSProperty()
-
-@Deprecated("The gridGap property is deprecated.", ReplaceWith("Use gap instead"))
-var StyledElement.gridGap: GridGap by CSSProperty()
 var StyledElement.gridRow: GridRow by CSSProperty()
 var StyledElement.gridRowEnd: GridRowEnd by CSSProperty()
-
-@Deprecated("The gridRowGap property is deprecated.", ReplaceWith("Use rowGap instead"))
-var StyledElement.gridRowGap: GridRowGap by CSSProperty()
 var StyledElement.gridRowStart: GridRowStart by CSSProperty()
 var StyledElement.gridTemplate: GridTemplate by CSSProperty()
 var StyledElement.gridTemplateAreas: GridTemplateAreas by CSSProperty()
