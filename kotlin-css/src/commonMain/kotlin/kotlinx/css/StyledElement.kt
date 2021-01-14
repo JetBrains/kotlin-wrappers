@@ -82,7 +82,7 @@ var StyledElement.boxShadow by CSSProperty { BoxShadows() }
 
 var StyledElement.clear: Clear by CSSProperty()
 var StyledElement.color: Color by CSSProperty()
-var StyledElement.columnGap: ColumnGap by CSSProperty()
+var StyledElement.columnGap: Gap by CSSProperty()
 var StyledElement.contain: Contain by CSSProperty()
 var StyledElement.content: QuotedString by CSSProperty()
 var StyledElement.cursor: Cursor by CSSProperty()
@@ -158,7 +158,7 @@ var StyledElement.pointerEvents: PointerEvents by CSSProperty()
 var StyledElement.position: Position by CSSProperty()
 
 var StyledElement.right: LinearDimension by CSSProperty()
-var StyledElement.rowGap: RowGap by CSSProperty()
+var StyledElement.rowGap: Gap by CSSProperty()
 
 var StyledElement.scrollBehavior: ScrollBehavior by CSSProperty()
 

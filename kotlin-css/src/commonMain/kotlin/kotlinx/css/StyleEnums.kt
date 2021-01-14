@@ -579,18 +579,6 @@ private fun formatAlpha(alpha: Double): String =
         if ("." in it) it else "$it.0"
     }
 
-class ColumnGap(override val value: String) : CssValue(value) {
-    companion object {
-        val initial = ColumnGap("initial")
-        val inherit = ColumnGap("inherit")
-        val normal = ColumnGap("normal")
-        val unset = ColumnGap("unset")
-    }
-}
-
-val LinearDimension.cg: ColumnGap
-    get() = ColumnGap(value)
-
 enum class Contain {
     initial, inherit, unset,
 
@@ -730,6 +718,9 @@ class Gap(override val value: String) : CssValue(value) {
         val unset = Gap("unset")
     }
 }
+
+val LinearDimension.gap: Gap
+    get() = Gap(value)
 
 class GridAutoColumns(override val value: String) : CssValue(value) {
     constructor(vararg dims: LinearDimension) : this(dims.joinToString(" "))
@@ -936,18 +927,6 @@ enum class Position {
 
     override fun toString() = name
 }
-
-class RowGap(override val value: String) : CssValue(value) {
-    companion object {
-        val initial = RowGap("initial")
-        val inherit = RowGap("inherit")
-        val normal = RowGap("normal")
-        val unset = RowGap("unset")
-    }
-}
-
-val LinearDimension.rg: RowGap
-    get() = RowGap(value)
 
 enum class ScrollBehavior {
     initial, inherit, unset,
