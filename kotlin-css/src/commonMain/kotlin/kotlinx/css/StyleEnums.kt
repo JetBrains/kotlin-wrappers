@@ -16,6 +16,28 @@ enum class Align {
     override fun toString() = name.hyphenize()
 }
 
+enum class Appearance {
+    none,
+    auto,
+    menulistButton,
+    textfield,
+
+    button,
+    searchfield,
+    textarea,
+    pushButton,
+    sliderHorizontal,
+    checkbox,
+    radio,
+    squareButton,
+    menulist,
+    listbox,
+    meter,
+    progressBar;
+
+    override fun toString() = name.hyphenize()
+}
+
 enum class JustifyContent {
     initial, inherit, unset,
 
