@@ -185,22 +185,17 @@ object Styled {
         }
 
     fun createElement(type: Any, css: CSSBuilder, props: WithClassName, children: List<Any>): ReactElement {
+        val wrappedType = wrap(type)
+        val styledProps = props.unsafeCast<StyledProps>()
         if (css.rules.isNotEmpty() || css.multiRules.isNotEmpty() || css.declarations.isNotEmpty()) {
-            val wrappedType = wrap(type)
-            val styledProps = props.unsafeCast<StyledProps>()
             styledProps.css = css.toString()
-            if (css.classes.isNotEmpty()) {
-                styledProps.className = css.classes.joinToString(separator = " ")
-            }
-            if (css.styleName.isNotEmpty()) {
-                styledProps.asDynamic()["data-style"] = css.styleName.joinToString(separator = " ")
-            }
-            return createElement(wrappedType, styledProps, *children.toTypedArray())
-        } else {
-            if (css.classes.isNotEmpty()) {
-                props.className = css.classes.joinToString(separator = " ")
-            }
-            return createElement(type, props, *children.toTypedArray())
         }
+        if (css.classes.isNotEmpty()) {
+            styledProps.className = css.classes.joinToString(separator = " ")
+        }
+        if (css.styleName.isNotEmpty()) {
+            styledProps.asDynamic()["data-style"] = css.styleName.joinToString(separator = " ")
+        }
+        return createElement(wrappedType, styledProps, *children.toTypedArray())
     }
 }
