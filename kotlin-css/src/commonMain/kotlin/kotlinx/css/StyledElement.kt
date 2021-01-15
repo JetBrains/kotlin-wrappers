@@ -34,6 +34,7 @@ var StyledElement.alignContent: Align by CSSProperty()
 var StyledElement.alignItems: Align by CSSProperty()
 var StyledElement.alignSelf: Align by CSSProperty()
 var StyledElement.animation by CSSProperty { Animations() }
+var StyledElement.appearance: Appearance by CSSProperty()
 
 var StyledElement.background: String by CSSProperty()
 var StyledElement.backgroundAttachment: BackgroundAttachment by CSSProperty()
