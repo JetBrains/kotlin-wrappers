@@ -33,7 +33,8 @@ external interface TableInstance<D> :
     UseColumnOrderInstanceProps<D>,
     UseGroupByInstanceProps<D>,
     UseExpandedInstanceProps<D>,
-    UsePaginationInstanceProps<D>
+    UsePaginationInstanceProps<D>,
+    UseRowSelectInstanceProps<D>
 
 external interface UseTableInstanceProps<D> {
     val state: TableState<D>
@@ -105,15 +106,29 @@ external interface TableFooterProps : TableKeyedProps
 external interface TableRowProps : TableKeyedProps
 external interface TableCellProps : TableKeyedProps
 
+external interface TableToggleCommonProps : TableCommonProps {
+    var onChange: () -> Unit
+    var checked: Boolean
+    var title: String
+    var indeterminate: Boolean
+}
+
 external interface Column<D, V> : ColumnInterface<D, V>
-external interface Row<D> : UseTableRowProps<D>, UseGroupByRowProps<D>, UseExpandedRowProps<D>
+
+external interface Row<D> :
+    UseTableRowProps<D>,
+    UseGroupByRowProps<D>,
+    UseExpandedRowProps<D>,
+    UseRowSelectRowProps<D>
+
 external interface TableCell<D, V> : UseTableCellProps<D, V>
 
 external interface TableOptions<D> :
     UseTableOptions<D>,
     UseGroupByOptions<D>,
     UseExpandedOptions<D>,
-    UsePaginationOptions<D>
+    UsePaginationOptions<D>,
+    UseRowSelectOptions<D>
 
 external interface UseTableOptions<D> {
     var data: Array<out D>
@@ -301,7 +316,8 @@ external interface TableState<D> :
     UseColumnOrderState<D>,
     UseGroupByState<D>,
     UseExpandedState<D>,
-    UsePaginationState {
+    UsePaginationState,
+    UseRowSelectState<D> {
     var hiddenColumns: Array<out IdType<D>>
 }
 
