@@ -95,6 +95,12 @@ fun useLayoutEffect(dependencies: RDependenciesList? = null, effect: () -> Unit)
     }
 }
 
+inline fun <T : Function<*>> useCallback(
+    vararg dependencies: dynamic,
+    callback: T,
+): T =
+    useCallback(callback, dependencies)
+
 inline fun <T> useMemo(
     vararg dependencies: dynamic,
     noinline callback: () -> T,
