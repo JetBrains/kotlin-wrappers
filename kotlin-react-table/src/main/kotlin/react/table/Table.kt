@@ -29,7 +29,7 @@ external interface PluginHook<D> {
 }
 
 inline fun <D> PluginHook(
-    block: (Hooks<D>) -> Unit,
+    block: Hooks<D>.() -> Unit,
 ): PluginHook<D> =
     block.unsafeCast<PluginHook<D>>()
 
