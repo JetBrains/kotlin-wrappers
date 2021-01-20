@@ -243,7 +243,8 @@ external interface UseTableCellProps<D, V> {
     fun render(type: String, userProps: dynamic = definedExternally): Child
 }
 
-external interface ColumnInstance<D, V> : ColumnInterface<D, V>,
+external interface ColumnInstance<D, V> : Column<D, V>,
+    ColumnInterface<D, V>,
     ColumnInterfaceBasedOnValue<D, V>,
     UseTableColumnProps<D>,
     UseSortByColumnProps<D>
