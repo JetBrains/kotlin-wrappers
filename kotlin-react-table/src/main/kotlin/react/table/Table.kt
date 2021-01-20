@@ -28,6 +28,11 @@ external interface PluginHook<D> {
     val pluginName: String?
 }
 
+inline fun <D> PluginHook(
+    block: (Hooks<D>) -> Unit,
+): PluginHook<D> =
+    block.unsafeCast<PluginHook<D>>()
+
 external interface TableInstance<D> :
     UseTableInstanceProps<D>,
     UseColumnOrderInstanceProps<D>,
@@ -238,7 +243,8 @@ external interface UseTableCellProps<D, V> {
     fun render(type: String, userProps: dynamic = definedExternally): Child
 }
 
-external interface ColumnInstance<D, V> : ColumnInterface<D, V>,
+external interface ColumnInstance<D, V> : Column<D, V>,
+    ColumnInterface<D, V>,
     ColumnInterfaceBasedOnValue<D, V>,
     UseTableColumnProps<D>,
     UseSortByColumnProps<D>
@@ -281,35 +287,35 @@ external interface UseTableRowProps<D> {
 external interface Hooks<D> : UseTableHooks<D>
 
 external interface UseTableHooks<D> {
-    val useOptions: Array<out (options: TableOptions<D>, args: TableOptions<D>) -> TableOptions<D>>
-    val stateReducers: Array<out (
+    var useOptions: Array<out (options: TableOptions<D>, args: TableOptions<D>) -> TableOptions<D>>
+    var stateReducers: Array<out (
         newState: TableState<D>,
         action: ActionType,
         previousState: TableState<D>,
         instance: TableInstance<D>,
     ) -> ReducerTableState<D>>
-    val columns: Array<out (columns: Array<out Column<D, *>>, meta: Meta<D>) -> Array<out Column<D, *>>>
-    val columnsDeps: Array<out (deps: Array<out dynamic>, meta: Meta<D>) -> Array<out dynamic>>
-    val allColumns: Array<out (allColumns: Array<out ColumnInstance<D, *>>, meta: Meta<D>) -> Array<out Column<D, *>>>
-    val allColumnsDeps: Array<out (deps: Array<out dynamic>, meta: Meta<D>) -> Array<out dynamic>>
-    val visibleColumns: Array<out (allColumns: Array<out ColumnInstance<D, *>>, meta: Meta<D>) -> Array<out Column<D, *>>>
-    val visibleColumnsDeps: Array<out (deps: Array<out dynamic>, meta: Meta<D>) -> Array<out dynamic>>
-    val headerGroups: Array<out (allColumns: Array<out HeaderGroup<D>>, meta: Meta<D>) -> Array<out HeaderGroup<D>>>
-    val headerGroupsDeps: Array<out (deps: Array<out dynamic>, meta: Meta<D>) -> Array<out dynamic>>
-    val useInstanceBeforeDimensions: Array<out (instance: TableInstance<D>) -> Unit>
-    val useInstance: Array<out (instance: TableInstance<D>) -> Unit>
-    val prepareRow: Array<out (row: Row<D>, meta: Meta<D>) -> Unit>
-    val useControlledState: Array<out (state: TableState<D>, meta: Meta<D>) -> TableState<D>>
+    var columns: Array<out (columns: Array<out Column<D, *>>, meta: Meta<D>) -> Array<out Column<D, *>>>
+    var columnsDeps: Array<out (deps: Array<out dynamic>, meta: Meta<D>) -> Array<out dynamic>>
+    var allColumns: Array<out (allColumns: Array<out ColumnInstance<D, *>>, meta: Meta<D>) -> Array<out Column<D, *>>>
+    var allColumnsDeps: Array<out (deps: Array<out dynamic>, meta: Meta<D>) -> Array<out dynamic>>
+    var visibleColumns: Array<out (allColumns: Array<out ColumnInstance<D, *>>, meta: Meta<D>) -> Array<out Column<D, *>>>
+    var visibleColumnsDeps: Array<out (deps: Array<out dynamic>, meta: Meta<D>) -> Array<out dynamic>>
+    var headerGroups: Array<out (allColumns: Array<out HeaderGroup<D>>, meta: Meta<D>) -> Array<out HeaderGroup<D>>>
+    var headerGroupsDeps: Array<out (deps: Array<out dynamic>, meta: Meta<D>) -> Array<out dynamic>>
+    var useInstanceBeforeDimensions: Array<out (instance: TableInstance<D>) -> Unit>
+    var useInstance: Array<out (instance: TableInstance<D>) -> Unit>
+    var prepareRow: Array<out (row: Row<D>, meta: Meta<D>) -> Unit>
+    var useControlledState: Array<out (state: TableState<D>, meta: Meta<D>) -> TableState<D>>
 
-    val tableProps: Array<out TablePropGetter<D>>
-    val tableBodyProps: Array<out TableBodyPropGetter<D>>
-    val headerGroupProps: Array<out HeaderGroupPropGetter<D>>
-    val footerGroupProps: Array<out FooterGroupPropGetter<D>>
-    val headerProps: Array<out HeaderPropGetter<D>>
-    val footerProps: Array<out FooterPropGetter<D>>
-    val rowProps: Array<out RowPropGetter<D>>
-    val cellProps: Array<out CellPropGetter<D, *>>
-    val useFinalInstance: Array<out (instance: TableInstance<D>) -> Unit>
+    var tableProps: Array<out TablePropGetter<D>>
+    var tableBodyProps: Array<out TableBodyPropGetter<D>>
+    var headerGroupProps: Array<out HeaderGroupPropGetter<D>>
+    var footerGroupProps: Array<out FooterGroupPropGetter<D>>
+    var headerProps: Array<out HeaderPropGetter<D>>
+    var footerProps: Array<out FooterPropGetter<D>>
+    var rowProps: Array<out RowPropGetter<D>>
+    var cellProps: Array<out CellPropGetter<D, *>>
+    var useFinalInstance: Array<out (instance: TableInstance<D>) -> Unit>
 }
 
 external interface TableState<D> :
