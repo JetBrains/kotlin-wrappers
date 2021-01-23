@@ -7,6 +7,7 @@ package react.table
 
 import kotlinext.js.Record
 import kotlinext.js.jsObject
+import org.w3c.dom.events.Event
 import react.Child
 import react.RProps
 import react.table.RenderType.Cell
@@ -112,7 +113,7 @@ external interface TableRowProps : TableKeyedProps
 external interface TableCellProps : TableKeyedProps
 
 external interface TableToggleCommonProps : TableCommonProps {
-    var onChange: () -> Unit
+    var onChange: (Event) -> Unit
     var checked: Boolean
     var title: String
     var indeterminate: Boolean
