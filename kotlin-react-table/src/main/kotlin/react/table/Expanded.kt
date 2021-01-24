@@ -8,10 +8,7 @@ package react.table
 import kotlinext.js.Record
 
 @JsName("useExpanded")
-external val useExpandedRaw: PluginHook<*>
-
-fun <D> useExpanded(): PluginHook<D> =
-    useExpandedRaw.unsafeCast<PluginHook<D>>()
+external val useExpanded: PluginHook<Any>
 
 external interface TableExpandedToggleProps : TableKeyedProps
 

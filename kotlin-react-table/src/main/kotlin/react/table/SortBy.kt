@@ -6,10 +6,7 @@
 package react.table
 
 @JsName("useSortBy")
-external val useSortByRaw: PluginHook<*>
-
-fun <D> useSortBy(): PluginHook<D> =
-    useSortByRaw.unsafeCast<PluginHook<D>>()
+external val useSortBy: PluginHook<Any>
 
 external interface UseSortByColumnProps<D> {
     val canSort: Boolean

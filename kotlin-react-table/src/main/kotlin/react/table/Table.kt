@@ -25,7 +25,7 @@ fun <D> useTable(
 ): TableInstance<D> =
     useTableRaw(jsObject(options), *plugins)
 
-external interface PluginHook<D> {
+external interface PluginHook<in D> {
     val pluginName: String?
 }
 

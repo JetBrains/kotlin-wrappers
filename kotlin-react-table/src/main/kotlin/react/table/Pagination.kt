@@ -6,10 +6,7 @@
 package react.table
 
 @JsName("usePagination")
-external val usePaginationRaw: PluginHook<*>
-
-fun <D> usePagination(): PluginHook<D> =
-    usePaginationRaw.unsafeCast<PluginHook<D>>()
+external val usePagination: PluginHook<Any>
 
 external interface UsePaginationOptions<D> {
     var pageCount: Int

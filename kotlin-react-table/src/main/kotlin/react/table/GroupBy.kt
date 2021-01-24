@@ -9,10 +9,7 @@ import kotlinext.js.Record
 import react.FunctionalComponent
 
 @JsName("useGroupBy")
-external val useGroupByRaw: PluginHook<*>
-
-fun <D> useGroupBy(): PluginHook<D> =
-    useGroupByRaw.unsafeCast<PluginHook<D>>()
+external val useGroupBy: PluginHook<Any>
 
 external interface TableGroupByToggleProps
 
