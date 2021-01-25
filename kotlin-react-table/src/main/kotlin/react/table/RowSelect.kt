@@ -14,7 +14,7 @@ external interface TableToggleAllRowsSelectedProps : TableToggleCommonProps
 
 external interface TableToggleRowsSelectedProps : TableToggleCommonProps
 
-external interface UseRowSelectOptions<D> {
+external interface UseRowSelectOptions<D: Any> {
     var manualRowSelectedKey: IdType<D>
         @Deprecated(message = "Write-only property", level = DeprecationLevel.HIDDEN)
         get
@@ -28,17 +28,17 @@ external interface UseRowSelectOptions<D> {
         get
 }
 
-external interface UseRowSelectHooks<D> {
+external interface UseRowSelectHooks<D: Any> {
     val getToggleRowSelectedProps: Array<out PropGetter<D, TableToggleRowsSelectedProps>>
     val getToggleAllRowsSelectedProps: Array<out PropGetter<D, TableToggleAllRowsSelectedProps>>
     val getToggleAllPageRowsSelectedProps: Array<out PropGetter<D, TableToggleAllRowsSelectedProps>>
 }
 
-external interface UseRowSelectState<D> {
+external interface UseRowSelectState<D: Any> {
     var selectedRowIds: Record<IdType<D>, Boolean>
 }
 
-external interface UseRowSelectInstanceProps<D> {
+external interface UseRowSelectInstanceProps<D: Any> {
     fun toggleRowSelected(rowId: IdType<D>, set: Boolean = definedExternally)
     fun toggleAllRowsSelected(value: Boolean = definedExternally)
     fun getToggleAllRowsSelectedProps(
@@ -53,7 +53,7 @@ external interface UseRowSelectInstanceProps<D> {
     val selectedFlatRows: Array<out Row<D>>
 }
 
-external interface UseRowSelectRowProps<D> {
+external interface UseRowSelectRowProps<D: Any> {
     val isSelected: Boolean
     val isSomeSelected: Boolean
     fun toggleRowSelected(set: Boolean = definedExternally)

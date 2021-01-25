@@ -4,12 +4,12 @@ import kotlinext.js.jsObject
 import react.Child
 import react.ReactElement
 
-fun <D> columns(
+fun <D: Any> columns(
     block: ColumnBuilder<D>.() -> Unit,
 ): Array<out Column<D, *>> =
     ColumnBuilder<D>().apply(block).build()
 
-class ColumnBuilder<D> {
+class ColumnBuilder<D: Any> {
     private val columns = mutableListOf<Column<D, *>>()
 
     fun <V> column(block: SimpleColumn<D, V>.() -> Unit) {

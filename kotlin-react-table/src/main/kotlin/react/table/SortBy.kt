@@ -8,7 +8,7 @@ package react.table
 @JsName("useSortBy")
 external val useSortBy: PluginHook<Any>
 
-external interface UseSortByColumnProps<D> {
+external interface UseSortByColumnProps<D: Any> {
     val canSort: Boolean
     fun toggleSortBy(descending: Boolean, multi: Boolean)
     fun getSortByToggleProps(propGetter: HeaderPropGetter<D> = definedExternally): TableSortByToggleProps
