@@ -138,16 +138,8 @@ external interface TableOptions<D: Any> :
 
 external interface UseTableOptions<D: Any> {
     var data: Array<out D>
-        @Deprecated(message = "Write-only property", level = DeprecationLevel.HIDDEN)
-        get
-
     var columns: Array<out Column<D, *>>
-        @Deprecated(message = "Write-only property", level = DeprecationLevel.HIDDEN)
-        get
-
     var initialState: TableState<D>
-        @Deprecated(message = "Write-only property", level = DeprecationLevel.HIDDEN)
-        get
 
     var stateReducer: (
         newState: TableState<D>,
