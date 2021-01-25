@@ -280,7 +280,11 @@ external interface UseTableRowProps<D: Any> {
     fun getRowProps(props: TableRowProps): TableRowProps
 }
 
-external interface Hooks<D: Any> : UseTableHooks<D>
+external interface Hooks<D: Any> :
+    UseTableHooks<D>,
+    UseGroupByHooks<D>,
+    UseExpandedHooks<D>,
+    UseRowSelectHooks<D>
 
 external interface UseTableHooks<D: Any> {
     var useOptions: Array<out (options: TableOptions<D>, args: TableOptions<D>) -> TableOptions<D>>
