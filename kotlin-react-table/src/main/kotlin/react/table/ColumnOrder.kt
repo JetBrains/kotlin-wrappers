@@ -5,17 +5,13 @@
 
 package react.table
 
-@JsName("useColumnOrder")
-external val useColumnOrderRaw: PluginHook<*>
+external val useColumnOrder: PluginHook<Any>
 
-fun <D> useColumnOrder(): PluginHook<D> =
-    useColumnOrderRaw.unsafeCast<PluginHook<D>>()
-
-external interface UseColumnOrderState<D> {
+external interface UseColumnOrderState<D: Any> {
     var columnOrder: Array<out IdType<D>>
 }
 
-external interface UseColumnOrderInstanceProps<D> {
+external interface UseColumnOrderInstanceProps<D: Any> {
     fun setColumnOrder(ids: Array<out IdType<D>>)
     fun setColumnOrder(updater: (Array<out IdType<D>>) -> Array<out IdType<D>>)
 }

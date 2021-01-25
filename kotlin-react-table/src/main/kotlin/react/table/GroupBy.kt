@@ -8,15 +8,11 @@ package react.table
 import kotlinext.js.Record
 import react.FunctionalComponent
 
-@JsName("useGroupBy")
-external val useGroupByRaw: PluginHook<*>
-
-fun <D> useGroupBy(): PluginHook<D> =
-    useGroupByRaw.unsafeCast<PluginHook<D>>()
+external val useGroupBy: PluginHook<Any>
 
 external interface TableGroupByToggleProps
 
-external interface UseGroupByOptions<D> {
+external interface UseGroupByOptions<D: Any> {
     var manualGroupBy: Boolean
         @Deprecated(message = "Write-only property", level = DeprecationLevel.HIDDEN)
         get
@@ -42,22 +38,22 @@ external interface UseGroupByOptions<D> {
         get
 }
 
-external interface UseGroupByHooks<D> {
+external interface UseGroupByHooks<D: Any> {
     val getGroupByToggleProps: Array<out HeaderGroupPropGetter<D>>
 }
 
-external interface UseGroupByState<D> {
+external interface UseGroupByState<D: Any> {
     var groupBy: Array<out IdType<D>>
 }
 
-external interface UseGroupByColumnOptions<D> {
+external interface UseGroupByColumnOptions<D: Any> {
     val aggregate: Aggregator
     val Aggregated: FunctionalComponent<CellProps<D, *>>
     val disableGroupBy: Boolean
     val defaultCanGroupBy: Boolean
 }
 
-external interface UseGroupByInstanceProps<D> {
+external interface UseGroupByInstanceProps<D: Any> {
     val preGroupedRows: Array<out Row<D>>
     val preGroupedFlatRows: Array<out Row<D>>
     val preGroupedRowsById: Record<String, Row<D>>
@@ -74,7 +70,7 @@ external interface UseGroupByInstanceProps<D> {
     fun toggleGroupBy(columnId: IdType<D>, value: Boolean = definedExternally)
 }
 
-external interface UseGroupByColumnProps<D> {
+external interface UseGroupByColumnProps<D: Any> {
     val canGroupBy: Boolean
     val isGrouped: Boolean
     val groupedIndex: Int
@@ -82,7 +78,7 @@ external interface UseGroupByColumnProps<D> {
     fun getGroupByToggleProps(props: TableGroupByToggleProps = definedExternally): TableGroupByToggleProps
 }
 
-external interface UseGroupByRowProps<D> {
+external interface UseGroupByRowProps<D: Any> {
     val isGrouped: Boolean
     val groupByID: IdType<D>
     val groupByVal: String
@@ -94,7 +90,7 @@ external interface UseGroupByRowProps<D> {
     val index: Int
 }
 
-external interface UseGroupByCellProps<D> {
+external interface UseGroupByCellProps<D: Any> {
     val isGrouped: Boolean
     val isPlaceholder: Boolean
     val isAggregated: Boolean

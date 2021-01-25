@@ -7,15 +7,11 @@ package react.table
 
 import kotlinext.js.Record
 
-@JsName("useExpanded")
-external val useExpandedRaw: PluginHook<*>
-
-fun <D> useExpanded(): PluginHook<D> =
-    useExpandedRaw.unsafeCast<PluginHook<D>>()
+external val useExpanded: PluginHook<Any>
 
 external interface TableExpandedToggleProps : TableKeyedProps
 
-external interface UseExpandedOptions<D> {
+external interface UseExpandedOptions<D: Any> {
     var manualExpandedKey: IdType<D>
         @Deprecated(message = "Write-only property", level = DeprecationLevel.HIDDEN)
         get
@@ -33,16 +29,16 @@ external interface UseExpandedOptions<D> {
         get
 }
 
-external interface UseExpandedHooks<D> {
+external interface UseExpandedHooks<D: Any> {
     val getToggleRowsExpandedProps: Array<out PropGetter<D, TableCommonProps>>
     val getToggleAllRowsExpandedProps: Array<out PropGetter<D, TableCommonProps>>
 }
 
-external interface UseExpandedState<D> {
+external interface UseExpandedState<D: Any> {
     var expanded: Record<IdType<D>, Boolean>
 }
 
-external interface UseExpandedInstanceProps<D> {
+external interface UseExpandedInstanceProps<D: Any> {
     val preExpandedRows: Array<out Row<D>>
     val expandedRows: Array<out Row<D>>
     val rows: Array<out Row<D>>
@@ -52,7 +48,7 @@ external interface UseExpandedInstanceProps<D> {
     fun toggleAllRowsExpanded(value: Boolean = definedExternally)
 }
 
-external interface UseExpandedRowProps<D> {
+external interface UseExpandedRowProps<D: Any> {
     val isExpanded: Boolean
     val canExpand: Boolean
     val subRows: Array<out Row<D>>

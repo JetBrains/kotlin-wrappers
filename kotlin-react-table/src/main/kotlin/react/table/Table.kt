@@ -14,27 +14,27 @@ import react.table.RenderType.Cell
 import react.table.RenderType.Header
 
 @JsName("useTable")
-external fun <D> useTableRaw(
+external fun <D: Any> useTableRaw(
     options: TableOptions<D>,
     vararg plugins: PluginHook<D>,
 ): TableInstance<D>
 
-fun <D> useTable(
+fun <D: Any> useTable(
     vararg plugins: PluginHook<D>,
     options: TableOptions<D>.() -> Unit,
 ): TableInstance<D> =
     useTableRaw(jsObject(options), *plugins)
 
-external interface PluginHook<D> {
+external interface PluginHook<in D: Any> {
     val pluginName: String?
 }
 
-inline fun <D> PluginHook(
+inline fun <D: Any> PluginHook(
     block: Hooks<D>.() -> Unit,
 ): PluginHook<D> =
     block.unsafeCast<PluginHook<D>>()
 
-external interface TableInstance<D> :
+external interface TableInstance<D: Any> :
     UseTableInstanceProps<D>,
     UseColumnOrderInstanceProps<D>,
     UseGroupByInstanceProps<D>,
@@ -42,7 +42,7 @@ external interface TableInstance<D> :
     UsePaginationInstanceProps<D>,
     UseRowSelectInstanceProps<D>
 
-external interface UseTableInstanceProps<D> {
+external interface UseTableInstanceProps<D: Any> {
     val state: TableState<D>
     val plugins: Array<out PluginHook<D>>
     val columns: Array<out ColumnInstance<D, *>>
@@ -66,29 +66,29 @@ external interface UseTableInstanceProps<D> {
     val getHooks: () -> Hooks<D>
 }
 
-external interface HeaderGroup<D> : /*ColumnInstance<D, Any>,*/ UseTableHeaderGroupProps<D>
+external interface HeaderGroup<D: Any> : /*ColumnInstance<D, Any>,*/ UseTableHeaderGroupProps<D>
 
-external interface UseTableHeaderGroupProps<D> {
+external interface UseTableHeaderGroupProps<D: Any> {
     val headers: Array<out ColumnInstance<D, *>>
     fun getHeaderGroupProps(propGetter: HeaderGroupPropGetter<D> = definedExternally): TableHeaderProps
     fun getFooterGroupProps(propGetter: FooterGroupPropGetter<D> = definedExternally): TableFooterProps
     val totalHeaderCount: Int
 }
 
-external interface Meta<D> {
+external interface Meta<D: Any> {
     val instance: TableInstance<D>
     val userProps: dynamic
 }
 
-external interface ColumnMeta<D> : Meta<D> {
+external interface ColumnMeta<D: Any> : Meta<D> {
     val column: HeaderGroup<D>
 }
 
-external interface RowMeta<D> : Meta<D> {
+external interface RowMeta<D: Any> : Meta<D> {
     val row: Row<D>
 }
 
-external interface CellMeta<D, V> : Meta<D> {
+external interface CellMeta<D: Any, V> : Meta<D> {
     val cell: TableCell<D, V>
 }
 
@@ -119,24 +119,24 @@ external interface TableToggleCommonProps : TableCommonProps {
     var indeterminate: Boolean
 }
 
-external interface Column<D, V> : ColumnInterface<D, V>
+external interface Column<D: Any, V> : ColumnInterface<D, V>
 
-external interface Row<D> :
+external interface Row<D: Any> :
     UseTableRowProps<D>,
     UseGroupByRowProps<D>,
     UseExpandedRowProps<D>,
     UseRowSelectRowProps<D>
 
-external interface TableCell<D, V> : UseTableCellProps<D, V>
+external interface TableCell<D: Any, V> : UseTableCellProps<D, V>
 
-external interface TableOptions<D> :
+external interface TableOptions<D: Any> :
     UseTableOptions<D>,
     UseGroupByOptions<D>,
     UseExpandedOptions<D>,
     UsePaginationOptions<D>,
     UseRowSelectOptions<D>
 
-external interface UseTableOptions<D> {
+external interface UseTableOptions<D: Any> {
     var data: Array<out D>
         @Deprecated(message = "Write-only property", level = DeprecationLevel.HIDDEN)
         get
@@ -175,13 +175,13 @@ external interface UseTableOptions<D> {
         get
 }
 
-external interface ColumnGroup<D> : Column<D, Any>, ColumnGroupInterface<D> {
+external interface ColumnGroup<D: Any> : Column<D, Any>, ColumnGroupInterface<D> {
     val headerProps: RProps
     fun render(type: String): Child
 }
 
 // ColumnWithLooseAccessor | ColumnWithStrictAccessor
-external interface SimpleColumn<D, V> : Column<D, V>, ColumnInterfaceBasedOnValue<D, V> {
+external interface SimpleColumn<D: Any, V> : Column<D, V>, ColumnInterfaceBasedOnValue<D, V> {
     var headerProps: RProps
         @Deprecated(message = "Write-only property", level = DeprecationLevel.HIDDEN)
         get
@@ -198,13 +198,13 @@ external interface SimpleColumn<D, V> : Column<D, V>, ColumnInterfaceBasedOnValu
     fun render(type: String): Child
 }
 
-external interface ColumnInterface<D, V> : UseTableColumnOptions<D, V>
+external interface ColumnInterface<D: Any, V> : UseTableColumnOptions<D, V>
 
-external interface ColumnGroupInterface<D> {
+external interface ColumnGroupInterface<D: Any> {
     var columns: Array<out Column<D, *>>
 }
 
-external interface UseTableColumnOptions<D, V> {
+external interface UseTableColumnOptions<D: Any, V> {
     var id: IdType<D>
 
     /**
@@ -221,20 +221,20 @@ external interface UseTableColumnOptions<D, V> {
         get
 }
 
-external interface HeaderProps<D, V> : TableInstance<D> {
+external interface HeaderProps<D: Any, V> : TableInstance<D> {
     val column: ColumnInstance<D, *>
 }
 
-external interface CellProps<D, V> : TableInstance<D> {
+external interface CellProps<D: Any, V> : TableInstance<D> {
     val column: ColumnInstance<D, V>
     val row: Row<D>
     val cell: Cell<D, V>
     val value: V
 }
 
-external interface Cell<D, V> : UseTableCellProps<D, V>
+external interface Cell<D: Any, V> : UseTableCellProps<D, V>
 
-external interface UseTableCellProps<D, V> {
+external interface UseTableCellProps<D: Any, V> {
     val column: ColumnInstance<D, *>
     val row: Row<D>
     val value: V
@@ -244,20 +244,20 @@ external interface UseTableCellProps<D, V> {
     fun render(type: String, userProps: dynamic = definedExternally): Child
 }
 
-external interface ColumnInstance<D, V> : Column<D, V>,
+external interface ColumnInstance<D: Any, V> : Column<D, V>,
     ColumnInterface<D, V>,
     ColumnInterfaceBasedOnValue<D, V>,
     UseTableColumnProps<D>,
     UseSortByColumnProps<D>
 
-external interface ColumnInterfaceBasedOnValue<D, V> {
+external interface ColumnInterfaceBasedOnValue<D: Any, V> {
     @JsName(Cell)
     var cellFunction: (CellProps<D, V>) -> Child
         @Deprecated(message = "Write-only property", level = DeprecationLevel.HIDDEN)
         get
 }
 
-external interface UseTableColumnProps<D> {
+external interface UseTableColumnProps<D: Any> {
     val id: IdType<D>
     val columns: Array<out ColumnInstance<D, *>>?
     val isVisible: Boolean
@@ -273,7 +273,7 @@ external interface UseTableColumnProps<D> {
     val placeholderOf: ColumnInstance<D, *>?
 }
 
-external interface UseTableRowProps<D> {
+external interface UseTableRowProps<D: Any> {
     val cells: Array<out TableCell<D, *>>
 
     val values: Record<IdType<D>, CellValue>
@@ -285,9 +285,9 @@ external interface UseTableRowProps<D> {
     fun getRowProps(props: TableRowProps): TableRowProps
 }
 
-external interface Hooks<D> : UseTableHooks<D>
+external interface Hooks<D: Any> : UseTableHooks<D>
 
-external interface UseTableHooks<D> {
+external interface UseTableHooks<D: Any> {
     var useOptions: Array<out (options: TableOptions<D>, args: TableOptions<D>) -> TableOptions<D>>
     var stateReducers: Array<out (
         newState: TableState<D>,
@@ -319,7 +319,7 @@ external interface UseTableHooks<D> {
     var useFinalInstance: Array<out (instance: TableInstance<D>) -> Unit>
 }
 
-external interface TableState<D> :
+external interface TableState<D: Any> :
     UseColumnOrderState<D>,
     UseGroupByState<D>,
     UseExpandedState<D>,
@@ -328,7 +328,7 @@ external interface TableState<D> :
     var hiddenColumns: Array<out IdType<D>>
 }
 
-external interface ReducerTableState<D> : TableState<D>
+external interface ReducerTableState<D: Any> : TableState<D>
 
 external interface ActionType {
     val type: String
