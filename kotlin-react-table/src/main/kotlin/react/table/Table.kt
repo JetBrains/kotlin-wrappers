@@ -227,7 +227,10 @@ external interface CellProps<D: Any, V> : TableInstance<D> {
     val value: V
 }
 
-external interface Cell<D: Any, V> : UseTableCellProps<D, V>
+external interface Cell<D: Any, V> :
+    UseTableCellProps<D, V>,
+    UseGroupByCellProps<D>,
+    UseRowStateCellProps<D>
 
 external interface UseTableCellProps<D: Any, V> {
     val column: ColumnInstance<D, *>
@@ -239,7 +242,8 @@ external interface UseTableCellProps<D: Any, V> {
     fun render(type: String, userProps: dynamic = definedExternally): Child
 }
 
-external interface ColumnInstance<D: Any, V> : Column<D, V>,
+external interface ColumnInstance<D: Any, V> :
+    Column<D, V>,
     ColumnInterface<D, V>,
     ColumnInterfaceBasedOnValue<D, V>,
     UseTableColumnProps<D>,
