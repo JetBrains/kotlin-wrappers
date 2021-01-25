@@ -40,7 +40,8 @@ external interface TableInstance<D: Any> :
     UseGroupByInstanceProps<D>,
     UseExpandedInstanceProps<D>,
     UsePaginationInstanceProps<D>,
-    UseRowSelectInstanceProps<D>
+    UseRowSelectInstanceProps<D>,
+    UseRowStateInstanceProps<D>
 
 external interface UseTableInstanceProps<D: Any> {
     val state: TableState<D>
@@ -125,7 +126,8 @@ external interface Row<D: Any> :
     UseTableRowProps<D>,
     UseGroupByRowProps<D>,
     UseExpandedRowProps<D>,
-    UseRowSelectRowProps<D>
+    UseRowSelectRowProps<D>,
+    UseRowStateRowProps<D>
 
 external interface TableCell<D: Any, V> : UseTableCellProps<D, V>
 
@@ -134,7 +136,8 @@ external interface TableOptions<D: Any> :
     UseGroupByOptions<D>,
     UseExpandedOptions<D>,
     UsePaginationOptions<D>,
-    UseRowSelectOptions<D>
+    UseRowSelectOptions<D>,
+    UseRowStateOptions<D>
 
 external interface UseTableOptions<D: Any> {
     var data: Array<out D>
@@ -316,7 +319,8 @@ external interface TableState<D: Any> :
     UseGroupByState<D>,
     UseExpandedState<D>,
     UsePaginationState,
-    UseRowSelectState<D> {
+    UseRowSelectState<D>,
+    UseRowStateState<D> {
     var hiddenColumns: Array<out IdType<D>>
 }
 
