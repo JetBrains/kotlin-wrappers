@@ -8,7 +8,6 @@ package react.table
 import kotlinext.js.Record
 import react.FunctionalComponent
 
-@JsName("useGroupBy")
 external val useGroupBy: PluginHook<Any>
 
 external interface TableGroupByToggleProps

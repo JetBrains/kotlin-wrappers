@@ -5,7 +5,6 @@
 
 package react.table
 
-@JsName("usePagination")
 external val usePagination: PluginHook<Any>
 
 external interface UsePaginationOptions<D: Any> {

@@ -7,7 +7,6 @@ package react.table
 
 import kotlinext.js.Record
 
-@JsName("useRowSelect")
 external val useRowSelect: PluginHook<Any>
 
 external interface TableToggleAllRowsSelectedProps : TableToggleCommonProps

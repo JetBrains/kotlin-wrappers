@@ -5,7 +5,6 @@
 
 package react.table
 
-@JsName("useSortBy")
 external val useSortBy: PluginHook<Any>
 
 external interface UseSortByColumnProps<D: Any> {

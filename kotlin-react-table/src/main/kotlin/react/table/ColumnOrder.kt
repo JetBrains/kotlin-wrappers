@@ -5,7 +5,6 @@
 
 package react.table
 
-@JsName("useColumnOrder")
 external val useColumnOrder: PluginHook<Any>
 
 external interface UseColumnOrderState<D: Any> {
