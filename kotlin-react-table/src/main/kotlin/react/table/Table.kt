@@ -40,7 +40,8 @@ external interface TableInstance<D: Any> :
     UseGroupByInstanceProps<D>,
     UseExpandedInstanceProps<D>,
     UsePaginationInstanceProps<D>,
-    UseRowSelectInstanceProps<D>
+    UseRowSelectInstanceProps<D>,
+    UseRowStateInstanceProps<D>
 
 external interface UseTableInstanceProps<D: Any> {
     val state: TableState<D>
@@ -125,7 +126,8 @@ external interface Row<D: Any> :
     UseTableRowProps<D>,
     UseGroupByRowProps<D>,
     UseExpandedRowProps<D>,
-    UseRowSelectRowProps<D>
+    UseRowSelectRowProps<D>,
+    UseRowStateRowProps<D>
 
 external interface TableCell<D: Any, V> : UseTableCellProps<D, V>
 
@@ -134,7 +136,8 @@ external interface TableOptions<D: Any> :
     UseGroupByOptions<D>,
     UseExpandedOptions<D>,
     UsePaginationOptions<D>,
-    UseRowSelectOptions<D>
+    UseRowSelectOptions<D>,
+    UseRowStateOptions<D>
 
 external interface UseTableOptions<D: Any> {
     var data: Array<out D>
@@ -224,7 +227,10 @@ external interface CellProps<D: Any, V> : TableInstance<D> {
     val value: V
 }
 
-external interface Cell<D: Any, V> : UseTableCellProps<D, V>
+external interface Cell<D: Any, V> :
+    UseTableCellProps<D, V>,
+    UseGroupByCellProps<D>,
+    UseRowStateCellProps<D>
 
 external interface UseTableCellProps<D: Any, V> {
     val column: ColumnInstance<D, *>
@@ -236,7 +242,8 @@ external interface UseTableCellProps<D: Any, V> {
     fun render(type: String, userProps: dynamic = definedExternally): Child
 }
 
-external interface ColumnInstance<D: Any, V> : Column<D, V>,
+external interface ColumnInstance<D: Any, V> :
+    Column<D, V>,
     ColumnInterface<D, V>,
     ColumnInterfaceBasedOnValue<D, V>,
     UseTableColumnProps<D>,
@@ -277,7 +284,11 @@ external interface UseTableRowProps<D: Any> {
     fun getRowProps(props: TableRowProps): TableRowProps
 }
 
-external interface Hooks<D: Any> : UseTableHooks<D>
+external interface Hooks<D: Any> :
+    UseTableHooks<D>,
+    UseGroupByHooks<D>,
+    UseExpandedHooks<D>,
+    UseRowSelectHooks<D>
 
 external interface UseTableHooks<D: Any> {
     var useOptions: Array<out (options: TableOptions<D>, args: TableOptions<D>) -> TableOptions<D>>
@@ -316,7 +327,8 @@ external interface TableState<D: Any> :
     UseGroupByState<D>,
     UseExpandedState<D>,
     UsePaginationState,
-    UseRowSelectState<D> {
+    UseRowSelectState<D>,
+    UseRowStateState<D> {
     var hiddenColumns: Array<out IdType<D>>
 }
 
