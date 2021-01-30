@@ -13,8 +13,7 @@ import react.RProps
 import react.table.RenderType.Cell
 import react.table.RenderType.Header
 
-@JsName("useTable")
-external fun <D: Any> useTableRaw(
+external fun <D: Any> useTable(
     options: TableOptions<D>,
     vararg plugins: PluginHook<D>,
 ): TableInstance<D>
@@ -23,7 +22,7 @@ fun <D: Any> useTable(
     vararg plugins: PluginHook<D>,
     options: TableOptions<D>.() -> Unit,
 ): TableInstance<D> =
-    useTableRaw(jsObject(options), *plugins)
+    useTable(jsObject(options), *plugins)
 
 external interface PluginHook<in D: Any> {
     val pluginName: String?
