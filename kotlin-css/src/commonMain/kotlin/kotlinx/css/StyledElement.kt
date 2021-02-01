@@ -202,9 +202,6 @@ fun StyledElement.grow(grow: Grow) {
         Grow.NONE -> flex(0.0, 0.0)
         Grow.GROW_SHRINK -> flex(1.0, 1.0)
     }
-    fun put(key: String, value: String) {
-        declarations[key] = value
-    }
 }
 
 private fun getShorthandValue(
