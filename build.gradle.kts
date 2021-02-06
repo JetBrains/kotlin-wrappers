@@ -9,11 +9,8 @@ plugins {
 
 subprojects {
     repositories {
-        jcenter()
+        mavenCentral()
         maven("https://kotlin.bintray.com/kotlinx")
-        maven("https://kotlin.bintray.com/kotlin-js-wrappers")
-        maven("https://kotlin.bintray.com/kotlin-eap")
-        maven("https://kotlin.bintray.com/kotlin-dev")
     }
 
     plugins.withType<KotlinJsPluginWrapper> {

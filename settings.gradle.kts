@@ -10,12 +10,6 @@ pluginManagement {
             kotlin("plugin.serialization") version kotlinVersion
         }
     }
-
-    repositories {
-        gradlePluginPortal()
-        maven("https://kotlin.bintray.com/kotlin-eap")
-        maven("https://kotlin.bintray.com/kotlin-dev")
-    }
 }
 
 // Platform-agnostic CSS support
