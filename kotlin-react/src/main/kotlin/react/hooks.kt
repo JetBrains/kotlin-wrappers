@@ -23,14 +23,21 @@ inline fun <T> useState(noinline valueInitializer: () -> T): RStateDelegate<T> {
 class RStateDelegate<T>(
     private val state: T,
     private val setState: RSetState<T>
-) : ReadWriteProperty<Any?, T> {
+) : ReadWriteProperty<Nothing?, T> {
     operator fun component1(): T = state
     operator fun component2(): RSetState<T> = setState
 
-    override operator fun getValue(thisRef: Any?, property: KProperty<*>): T =
+    override operator fun getValue(
+        thisRef: Nothing?,
+        property: KProperty<*>
+    ): T =
         state
 
-    override operator fun setValue(thisRef: Any?, property: KProperty<*>, value: T) {
+    override operator fun setValue(
+        thisRef: Nothing?,
+        property: KProperty<*>,
+        value: T
+    ) {
         setState(value)
     }
 }
