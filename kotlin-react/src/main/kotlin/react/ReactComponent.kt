@@ -74,7 +74,7 @@ external interface RContext<T> {
 // Refs (16.3+)
 external interface RRef
 
-external interface RReadableRef<out T> : RRef {
+external interface RReadableRef<out T: Any> : RRef {
     val current: T?
 }
 
