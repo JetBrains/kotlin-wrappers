@@ -143,7 +143,7 @@ external interface RMutableRef<T : Any> : RReadableRef<T> {
     override var current: T?
 }
 
-external fun <T : Any> useRef(initialValue: T): RMutableRef<T>
+external fun <T : Any> useRef(initialValue: T? = definedExternally): RMutableRef<T>
 
 // Imperative Methods Hook (16.8+)
 external fun useImperativeHandle(ref: RRef, createInstance: () -> dynamic, inputs: RDependenciesArray)
