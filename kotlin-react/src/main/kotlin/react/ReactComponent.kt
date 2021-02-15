@@ -74,8 +74,8 @@ external interface RContext<T> {
 // Refs (16.3+)
 external interface RRef
 
-external interface RReadableRef<out T : Any> : RRef {
-    val current: T?
+external interface RReadableRef<out T> : RRef {
+    val current: T
 }
 
 fun <S : RState> Component<*, S>.setState(buildState: S.() -> Unit) =
