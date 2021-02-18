@@ -5,9 +5,9 @@ import kotlinx.html.*
 import org.w3c.dom.events.*
 import react.*
 
-class InnerHTML(
+external interface InnerHTML {
     val __html: String
-)
+}
 
 external interface WithClassName : RProps {
     var className: String?
@@ -48,7 +48,9 @@ open class RDOMBuilder<out T : Tag>(factory: (TagConsumer<Unit>) -> T) : RBuilde
                     sb.append(this)
                 }
             }.block()
-            props.dangerouslySetInnerHTML = InnerHTML(sb.toString())
+            props.dangerouslySetInnerHTML = object: InnerHTML {
+                override val __html = sb.toString()
+            }
         }
 
         override fun onTagStart(tag: Tag) {
