@@ -364,6 +364,12 @@ class Color(override val value: String) : CssValue(value) {
             else -> with(toRGBA()) { rgba(red, green, blue, normalizeAlpha(alpha) * this.alpha) }
         }
 
+    fun changeAlpha(alpha: Double) =
+        when {
+            value.startsWith("hsl", true) -> with(fromHSLANotation()) { hsla(hue, saturation, lightness, normalizeAlpha(alpha)) }
+            else -> with(toRGBA()) { rgba(red, green, blue, normalizeAlpha(alpha)) }
+        }
+
     // https://stackoverflow.com/questions/2049230/convert-rgba-color-to-rgb
     fun blend(backgroundColor: Color): Color {
         val source = this.toRGBA()
