@@ -6,7 +6,7 @@ import org.w3c.dom.events.*
 import react.*
 
 external interface InnerHTML {
-    val __html: String
+    var __html: String
 }
 
 external interface WithClassName : RProps {
@@ -48,8 +48,8 @@ open class RDOMBuilder<out T : Tag>(factory: (TagConsumer<Unit>) -> T) : RBuilde
                     sb.append(this)
                 }
             }.block()
-            props.dangerouslySetInnerHTML = object: InnerHTML {
-                override val __html = sb.toString()
+            props.dangerouslySetInnerHTML = jsObject {
+                __html = sb.toString()
             }
         }
 
