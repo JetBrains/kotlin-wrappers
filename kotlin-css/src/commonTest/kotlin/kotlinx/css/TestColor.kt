@@ -204,6 +204,21 @@ class TestColor {
     }
 
     @Test
+    fun testChangeAlpha() {
+        val rgb = rgb(0, 0, 0).changeAlpha(0.1)
+        val rgba = rgba(0, 0, 0, 0.5).changeAlpha(0.1)
+        val hex = Color("#000").changeAlpha(0.1)
+        val hexa = Color("#00000000").changeAlpha(0.1)
+        val hexa2 = Color("#00000022").changeAlpha(0.1)
+
+        assertEquals("rgba(0, 0, 0, 0.1)", rgb.toString(), "Alpha conversion is incorrect")
+        assertEquals("rgba(0, 0, 0, 0.1)", rgba.toString(), "Alpha conversion is incorrect")
+        assertEquals("rgba(0, 0, 0, 0.1)", hex.toString(), "Alpha conversion is incorrect")
+        assertEquals("rgba(0, 0, 0, 0.1)", hexa.toString(), "Alpha conversion is incorrect")
+        assertEquals("rgba(0, 0, 0, 0.1)", hexa2.toString(), "Alpha conversion is incorrect")
+    }
+
+    @Test
     fun testHex() {
         val black = hex(0x000)
         val white = hex(0xfff)
