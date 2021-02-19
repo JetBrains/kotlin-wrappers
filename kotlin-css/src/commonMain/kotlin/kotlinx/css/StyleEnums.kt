@@ -358,12 +358,18 @@ class Color(override val value: String) : CssValue(value) {
         }
     }
 
+    /**
+     * withAlpha preserves existing alpha value: rgba(0, 0, 0, 0.5).withAlpha(0.1) = rgba(0, 0, 0, 0.05)
+     */
     fun withAlpha(alpha: Double) =
         when {
             value.startsWith("hsl", true) -> with(fromHSLANotation()) { hsla(hue, saturation, lightness, normalizeAlpha(alpha) * this.alpha) }
             else -> with(toRGBA()) { rgba(red, green, blue, normalizeAlpha(alpha) * this.alpha) }
         }
 
+    /**
+     * changeAlpha rewrites existing alpha value: rgba(0, 0, 0, 0.5).withAlpha(0.1) = rgba(0, 0, 0, 0.1)
+     */
     fun changeAlpha(alpha: Double) =
         when {
             value.startsWith("hsl", true) -> with(fromHSLANotation()) { hsla(hue, saturation, lightness, normalizeAlpha(alpha)) }
