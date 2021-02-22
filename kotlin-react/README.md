@@ -114,7 +114,8 @@ fun RBuilder.welcome(handler: WelcomeProps.() -> Unit) = child(welcome) {
 
 #### Creating a React class component with Kotlin
 
-Here's an example of a component defined using a class with a `name` property of type `String`:
+Here's an example of a component defined using a class with a `name` property of type `String` and 
+a matching component state to hold the `name` property:
 
 ```kotlin
 import react.*
@@ -124,10 +125,20 @@ external interface WelcomeProps : RProps {
     var name: String
 }
 
-class Welcome: RComponent<WelcomeProps, RState>() {
-     override fun RBuilder.render() {
+external interface WelcomeState: RState {
+    var name: String
+}
+
+@JsExport
+class Welcome(props: WelcomeProps): RComponent<WelcomeProps, WelcomeState>(props) {
+
+    override fun WelcomeState.init(props: WelcomeProps) {
+        name = props.name
+    }
+
+    override fun RBuilder.render() {
         div {
-            +"Hello, ${props.name}"
+            +"Hello, ${state.name}"
         }
     }
 }
