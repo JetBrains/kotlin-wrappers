@@ -68,7 +68,7 @@ external val Fragment: RClass<RProps>
 external fun <T> createContext(defaultValue: T = definedExternally): RContext<T>
 
 // Refs (16.3+)
-external fun <T> createRef(): RReadableRef<T>
+external fun <T: Any> createRef(): RReadableRef<T>
 
 @JsName("forwardRef")
 external fun <P : RProps> rawForwardRef(forward: (props: P, ref: RRef) -> Any): RClass<P>
@@ -141,11 +141,11 @@ external fun <T : Function<*>> useCallback(callback: T, dependencies: RDependenc
 external fun <T> useMemo(callback: () -> T, dependencies: RDependenciesArray): T
 
 // Ref Hook (16.8+)
-external interface RMutableRef<T> : RReadableRef<T> {
-    override var current: T
+external interface RMutableRef<T: Any> : RReadableRef<T> {
+    override var current: T?
 }
 
-external fun <T> useRef(initialValue: T): RMutableRef<T>
+external fun <T: Any> useRef(initialValue: T? = definedExternally): RMutableRef<T>
 
 // Imperative Methods Hook (16.8+)
 external fun useImperativeHandle(ref: RRef, createInstance: () -> dynamic, inputs: RDependenciesArray)
