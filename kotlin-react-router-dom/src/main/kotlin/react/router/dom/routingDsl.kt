@@ -1,5 +1,6 @@
 package react.router.dom
 
+import kotlinext.js.jsObject
 import react.*
 import kotlin.reflect.*
 
@@ -140,4 +141,22 @@ fun RBuilder.redirect(
         this.exact = exact
         this.strict = strict
     }
+}
+
+fun <T : RProps> matchPath(
+    patName: String,
+    vararg path: String,
+    exact: Boolean = false,
+    strict: Boolean = false,
+    sensitive: Boolean = false
+): RouteResultMatch<T>? {
+
+    val options: RouteMatchOptions = jsObject {
+        this.path = path
+        this.exact = exact
+        this.strict = strict
+        this.sensitive = sensitive
+    }
+
+    return rawMatchPath(patName,options)
 }
