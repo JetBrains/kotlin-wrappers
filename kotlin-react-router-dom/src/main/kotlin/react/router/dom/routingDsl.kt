@@ -1,5 +1,6 @@
 package react.router.dom
 
+import kotlinext.js.jsObject
 import react.*
 import kotlin.reflect.*
 
@@ -43,7 +44,7 @@ fun RBuilder.browserRouter(
 fun RBuilder.switch(handler: RHandler<RProps>) = child(SwitchComponent::class, handler)
 
 fun RBuilder.route(
-    path: String,
+    vararg path: String,
     component: KClass<out Component<RProps, *>>,
     exact: Boolean = false,
     strict: Boolean = false
@@ -59,7 +60,7 @@ fun RBuilder.route(
 }
 
 fun <T : RProps> RBuilder.route(
-    path: String,
+    vararg path: String,
     exact: Boolean = false,
     strict: Boolean = false,
     render: (props: RouteResultProps<T>) -> ReactElement?
@@ -75,7 +76,7 @@ fun <T : RProps> RBuilder.route(
 }
 
 fun RBuilder.route(
-    path: String,
+    vararg path: String,
     exact: Boolean = false,
     strict: Boolean = false,
     render: () -> ReactElement?
@@ -140,4 +141,22 @@ fun RBuilder.redirect(
         this.exact = exact
         this.strict = strict
     }
+}
+
+fun <T : RProps> matchPath(
+    patName: String,
+    vararg path: String,
+    exact: Boolean = false,
+    strict: Boolean = false,
+    sensitive: Boolean = false
+): RouteResultMatch<T>? {
+
+    val options: RouteMatchOptions = jsObject {
+        this.path = path
+        this.exact = exact
+        this.strict = strict
+        this.sensitive = sensitive
+    }
+
+    return rawMatchPath(patName,options)
 }
