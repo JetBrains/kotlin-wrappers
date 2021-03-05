@@ -54,7 +54,7 @@ external interface HashRouterProps : RProps {
 }
 
 external interface RouteProps<T : RProps> : RProps {
-    var path: String
+    var path: Array<out String>
     var exact: Boolean
     var strict: Boolean
     var component: RClass<RProps>

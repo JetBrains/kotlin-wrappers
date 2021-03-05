@@ -43,7 +43,7 @@ fun RBuilder.browserRouter(
 fun RBuilder.switch(handler: RHandler<RProps>) = child(SwitchComponent::class, handler)
 
 fun RBuilder.route(
-    path: String,
+    vararg path: String,
     component: KClass<out Component<RProps, *>>,
     exact: Boolean = false,
     strict: Boolean = false
@@ -59,7 +59,7 @@ fun RBuilder.route(
 }
 
 fun <T : RProps> RBuilder.route(
-    path: String,
+    vararg path: String,
     exact: Boolean = false,
     strict: Boolean = false,
     render: (props: RouteResultProps<T>) -> ReactElement?
@@ -75,7 +75,7 @@ fun <T : RProps> RBuilder.route(
 }
 
 fun RBuilder.route(
-    path: String,
+    vararg path: String,
     exact: Boolean = false,
     strict: Boolean = false,
     render: () -> ReactElement?
