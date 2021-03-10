@@ -1,5 +1,3 @@
-[![Bintray](https://img.shields.io/bintray/v/kotlin/kotlin-js-wrappers/kotlin-react-router-dom)](https://bintray.com/kotlin/kotlin-js-wrappers/kotlin-react-router-dom)
-
 ## kotlin-react-router-dom
 
 Kotlin wrapper for [React Router DOM library](https://reacttraining.com/react-router/). 
@@ -7,14 +5,36 @@ Major version number of this wrapper matches that of React Router DOM itself.
 
 Both BrowserRouter and HashRouter are supported.
 
-### Installation
+### Maven
 
-1. `npm i @jetbrains/kotlin-react-router-dom`
+```xml
+<project>
+    <repositories>
+        <repository>
+            <id>space-kotlin-js-wrappers</id>
+            <url>https://maven.pkg.jetbrains.space/kotlin/p/kotlin/kotlin-js-wrappers</url>
+        </repository>
+    </repositories>
+    
+    <dependency>
+        <groupId>org.jetbrains</groupId>
+        <artifactId>kotlin-react-router-dom</artifactId>
+        <version>VERSION</version>
+    </dependency>
+</project>
+```
 
-2. `npm run gen-idea-libs`
+### Gradle
 
-See the [Bintray page](https://bintray.com/kotlin/kotlin-js-wrappers/kotlin-react-router-dom) for Maven and Gradle 
-installation instructions.
+```kotlin
+repositories {
+    maven {
+        url = uri("https://maven.pkg.jetbrains.space/kotlin/p/kotlin/kotlin-js-wrappers")
+    }
+}
+
+implementation("org.jetbrains:kotlin-react-router-dom:VERSION")
+```
 
 ### Examples
 

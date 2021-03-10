@@ -1,17 +1,37 @@
-[![Bintray](https://img.shields.io/bintray/v/kotlin/kotlin-js-wrappers/kotlin-react-dom)](https://bintray.com/kotlin/kotlin-js-wrappers/kotlin-react-dom)
-
 ## kotlin-react-dom
 
 Kotlin wrapper for React DOM library. Major version number of this wrapper matches that of React DOM itself.
 
-### Installation
+### Maven
 
-1. `npm i @jetbrains/kotlin-react-dom`
+```xml
+<project>
+    <repositories>
+        <repository>
+            <id>space-kotlin-js-wrappers</id>
+            <url>https://maven.pkg.jetbrains.space/kotlin/p/kotlin/kotlin-js-wrappers</url>
+        </repository>
+    </repositories>
+    
+    <dependency>
+        <groupId>org.jetbrains</groupId>
+        <artifactId>kotlin-react-dom</artifactId>
+        <version>VERSION</version>
+    </dependency>
+</project>
+```
 
-2. `npm run gen-idea-libs`
+### Gradle
 
-See the [Bintray page](https://bintray.com/kotlin/kotlin-js-wrappers/kotlin-react-dom) for Maven and Gradle 
-installation instructions.
+```kotlin
+repositories {
+    maven {
+        url = uri("https://maven.pkg.jetbrains.space/kotlin/p/kotlin/kotlin-js-wrappers")
+    }
+}
+
+implementation("org.jetbrains:kotlin-react-dom:VERSION")
+```
 
 ### Internals
 [Imports.kt](src/main/kotlin/react/dom/Imports.kt) contains type definitions for ReactDOM. The remaining classes 

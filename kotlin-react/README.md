@@ -1,39 +1,37 @@
-[![Bintray](https://img.shields.io/bintray/v/kotlin/kotlin-js-wrappers/kotlin-react)](https://bintray.com/kotlin/kotlin-js-wrappers/kotlin-react)
-
 ## kotlin-react
 
 Kotlin wrapper for React library. Major version number of this wrapper matches that of React itself.
 
-### Setup
+### Maven
 
-#### Using Gradle
+```xml
+<project>
+    <repositories>
+        <repository>
+            <id>space-kotlin-js-wrappers</id>
+            <url>https://maven.pkg.jetbrains.space/kotlin/p/kotlin/kotlin-js-wrappers</url>
+        </repository>
+    </repositories>
+    
+    <dependency>
+        <groupId>org.jetbrains</groupId>
+        <artifactId>kotlin-react</artifactId>
+        <version>VERSION</version>
+    </dependency>
+</project>
+```
 
-As for all wrappers, make sure that you have the Bintray repository added to your build file:
+### Gradle
 
 ```kotlin
 repositories {
-    // . . .
-    jcenter() // or maven("https://kotlin.bintray.com/kotlin-js-wrappers/")
-    // . . .
+    maven {
+        url = uri("https://maven.pkg.jetbrains.space/kotlin/p/kotlin/kotlin-js-wrappers")
+    }
 }
+
+implementation("org.jetbrains:kotlin-react:VERSION")
 ```
-
-To start using `kotlin-react` in your Kotlin/JS project, add the following four dependencies to the `dependencies` block for your JavaScript target inside your `build.gradle.kts` or `build.gradle` file:
-
-```kotlin
-implementation("org.jetbrains:kotlin-react:16.13.1-pre.105-kotlin-1.3.72")
-implementation("org.jetbrains:kotlin-react-dom:16.13.1-pre.105-kotlin-1.3.72")
-implementation(npm("react", "16.13.1"))
-implementation(npm("react-dom", "16.13.1"))
-```
-
-React follows [semantic versioning (semver)](https://semver.org/) principles, meaning you should be able to specify other API-compatible versions of the `npm` dependencies without issue.
-
-#### Other installation methods
-
-For Maven, please see the [Bintray page](https://bintray.com/kotlin/kotlin-js-wrappers/kotlin-react).
-
-For NPM, first run `npm i @jetbrains/kotlin-react`, then run `npm run gen-idea-libs`.
 
 ### Getting started
 

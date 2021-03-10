@@ -1,15 +1,35 @@
-[![Bintray](https://img.shields.io/bintray/v/kotlin/kotlin-js-wrappers/kotlin-extensions)](https://bintray.com/kotlin/kotlin-js-wrappers/kotlin-extensions)
-
 ## kotlin-extensions
 
 Kotlin wrappers for standard JS objects as well as some helpers required for 
 [kotlin-react](https://github.com/JetBrains/kotlin-wrappers/tree/master/kotlin-react).
 
-### Installation
+### Maven
 
-1. `npm i @jetbrains/kotlin-extensions`
+```xml
+<project>
+    <repositories>
+        <repository>
+            <id>space-kotlin-js-wrappers</id>
+            <url>https://maven.pkg.jetbrains.space/kotlin/p/kotlin/kotlin-js-wrappers</url>
+        </repository>
+    </repositories>
+    
+    <dependency>
+        <groupId>org.jetbrains</groupId>
+        <artifactId>kotlin-extensions</artifactId>
+        <version>VERSION</version>
+    </dependency>
+</project>
+```
 
-2. `npm run gen-idea-libs` 
+### Gradle
 
-See the [Bintray page](https://bintray.com/kotlin/kotlin-js-wrappers/kotlin-extensions) for Maven and Gradle 
-installation instructions.
+```kotlin
+repositories {
+    maven {
+        url = uri("https://maven.pkg.jetbrains.space/kotlin/p/kotlin/kotlin-js-wrappers")
+    }
+}
+
+implementation("org.jetbrains:kotlin-extensions:VERSION")
+```

@@ -1,10 +1,39 @@
-[![Bintray](https://img.shields.io/bintray/v/kotlin/kotlin-js-wrappers/kotlin-redux)](https://bintray.com/kotlin/kotlin-js-wrappers/kotlin-redux)
-
 ## kotlin-redux
 
 Kotlin wrapper for Redux library. Major version number of this wrapper matches that of Redux itself.
 
-## Creating and using a store in Kotlin
+### Maven
+
+```xml
+<project>
+    <repositories>
+        <repository>
+            <id>space-kotlin-js-wrappers</id>
+            <url>https://maven.pkg.jetbrains.space/kotlin/p/kotlin/kotlin-js-wrappers</url>
+        </repository>
+    </repositories>
+
+    <dependency>
+        <groupId>org.jetbrains</groupId>
+        <artifactId>kotlin-redux</artifactId>
+        <version>VERSION</version>
+    </dependency>
+</project>
+```
+
+### Gradle
+
+```kotlin
+repositories {
+    maven {
+        url = uri("https://maven.pkg.jetbrains.space/kotlin/p/kotlin/kotlin-js-wrappers")
+    }
+}
+
+implementation("org.jetbrains:kotlin-redux:VERSION")
+```
+
+### Creating and using a store in Kotlin
 
 In Redux, the store is an object that contains state, which could be anything. In Kotlin, this is 
 no different. Just note that you must specify the preloaded state. Also, it is encouraged that you
