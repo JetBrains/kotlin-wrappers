@@ -1,4 +1,4 @@
-import com.moowork.gradle.node.npm.NpmTask
+import com.github.gradle.node.npm.task.NpmTask
 
 plugins {
     id("com.github.node-gradle.node")
@@ -30,8 +30,8 @@ tasks {
     }
 
     named<NpmTask>("npm_publish") {
-        setArgs(listOf("--access", "public"))
-        setWorkingDir(npmBuildDir)
+        args.set(listOf("--access", "public"))
+        workingDir.set(npmBuildDir)
 
         dependsOn(prepareNpmPublish)
     }
