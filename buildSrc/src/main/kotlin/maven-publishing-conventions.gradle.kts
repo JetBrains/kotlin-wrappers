@@ -1,5 +1,10 @@
 plugins {
     `maven-publish`
+    signing
+}
+
+signing {
+    sign(configurations.archives.get())
 }
 
 val publishVersion = publishVersion()

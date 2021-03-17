@@ -32,12 +32,12 @@ subprojects {
             }
         }
     }
+
     afterEvaluate {
         tasks.withType<KotlinCompile<*>>().configureEach {
             if (!name.endsWith("JsIr")) {
                 kotlinOptions.allWarningsAsErrors = true
             }
-
         }
     }
 }
