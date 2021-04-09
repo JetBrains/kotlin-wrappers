@@ -35,7 +35,7 @@ inline fun RBuilder.bdi(classes: String? = null, block: RDOMBuilder<BDI>.() -> U
 
 inline fun RBuilder.bdo(classes: String? = null, block: RDOMBuilder<BDO>.() -> Unit): ReactElement = tag(block) { BDO(attributesMapOf("class", classes), it) }
 
-inline fun RBuilder.blockQuote(classes: String? = null, block: RDOMBuilder<BLOCKQUOTE>.() -> Unit): ReactElement = tag(block) { BLOCKQUOTE(attributesMapOf("class", classes), it) }
+inline fun RBuilder.blockquote(classes: String? = null, block: RDOMBuilder<BLOCKQUOTE>.() -> Unit): ReactElement = tag(block) { BLOCKQUOTE(attributesMapOf("class", classes), it) }
 
 inline fun RBuilder.body(classes: String? = null, block: RDOMBuilder<BODY>.() -> Unit): ReactElement = tag(block) { BODY(attributesMapOf("class", classes), it) }
 
@@ -60,12 +60,9 @@ inline fun RBuilder.code(classes: String? = null, block: RDOMBuilder<CODE>.() ->
 
 inline fun RBuilder.col(classes: String? = null, block: RDOMBuilder<COL>.() -> Unit): ReactElement = tag(block) { COL(attributesMapOf("class", classes), it) }
 
-inline fun RBuilder.colGroup(classes: String? = null, block: RDOMBuilder<COLGROUP>.() -> Unit): ReactElement = tag(block) { COLGROUP(attributesMapOf("class", classes), it) }
+inline fun RBuilder.colgroup(classes: String? = null, block: RDOMBuilder<COLGROUP>.() -> Unit): ReactElement = tag(block) { COLGROUP(attributesMapOf("class", classes), it) }
 
-inline fun RBuilder.command(type: CommandType? = null, classes: String? = null, block: RDOMBuilder<COMMAND>.() -> Unit): ReactElement =
-    tag(block) { COMMAND(attributesMapOf("type", type?.enumEncode(), "class", classes), it) }
-
-inline fun RBuilder.dataList(classes: String? = null, block: RDOMBuilder<DATALIST>.() -> Unit): ReactElement = tag(block) { DATALIST(attributesMapOf("class", classes), it) }
+inline fun RBuilder.datalist(classes: String? = null, block: RDOMBuilder<DATALIST>.() -> Unit): ReactElement = tag(block) { DATALIST(attributesMapOf("class", classes), it) }
 
 inline fun RBuilder.dd(classes: String? = null, block: RDOMBuilder<DD>.() -> Unit): ReactElement = tag(block) { DD(attributesMapOf("class", classes), it) }
 
@@ -87,7 +84,7 @@ inline fun RBuilder.em(classes: String? = null, block: RDOMBuilder<EM>.() -> Uni
 
 inline fun RBuilder.embed(classes: String? = null, block: RDOMBuilder<EMBED>.() -> Unit): ReactElement = tag(block) { EMBED(attributesMapOf("class", classes), it) }
 
-inline fun RBuilder.fieldSet(classes: String? = null, block: RDOMBuilder<FIELDSET>.() -> Unit): ReactElement = tag(block) { FIELDSET(attributesMapOf("class", classes), it) }
+inline fun RBuilder.fieldset(classes: String? = null, block: RDOMBuilder<FIELDSET>.() -> Unit): ReactElement = tag(block) { FIELDSET(attributesMapOf("class", classes), it) }
 
 inline fun RBuilder.figcaption(classes: String? = null, block: RDOMBuilder<FIGCAPTION>.() -> Unit): ReactElement = tag(block) { FIGCAPTION(attributesMapOf("class", classes), it) }
 
@@ -113,8 +110,6 @@ inline fun RBuilder.h6(classes: String? = null, block: RDOMBuilder<H6>.() -> Uni
 inline fun RBuilder.head(block: RDOMBuilder<HEAD>.() -> Unit): ReactElement = tag(block) { HEAD(emptyMap, it) }
 
 inline fun RBuilder.header(classes: String? = null, block: RDOMBuilder<HEADER>.() -> Unit): ReactElement = tag(block) { HEADER(attributesMapOf("class", classes), it) }
-
-inline fun RBuilder.hGroup(classes: String? = null, block: RDOMBuilder<HGROUP>.() -> Unit): ReactElement = tag(block) { HGROUP(attributesMapOf("class", classes), it) }
 
 inline fun RBuilder.hr(classes: String? = null, block: RDOMBuilder<HR>.() -> Unit): ReactElement = tag(block) { HR(attributesMapOf("class", classes), it) }
 
@@ -145,9 +140,6 @@ inline fun RBuilder.ins(classes: String? = null, block: RDOMBuilder<INS>.() -> U
 
 inline fun RBuilder.kbd(classes: String? = null, block: RDOMBuilder<KBD>.() -> Unit): ReactElement = tag(block) { KBD(attributesMapOf("class", classes), it) }
 
-inline fun RBuilder.keyGen(keyType: KeyGenKeyType? = null, classes: String? = null, block: RDOMBuilder<KEYGEN>.() -> Unit): ReactElement =
-    tag(block) { KEYGEN(attributesMapOf("keytype", keyType?.enumEncode(), "class", classes), it) }
-
 inline fun RBuilder.label(classes: String? = null, block: RDOMBuilder<LABEL>.() -> Unit): ReactElement = tag(block) { LABEL(attributesMapOf("class", classes), it) }
 
 inline fun RBuilder.legend(classes: String? = null, block: RDOMBuilder<LEGEND>.() -> Unit): ReactElement = tag(block) { LEGEND(attributesMapOf("class", classes), it) }
@@ -165,22 +157,19 @@ inline fun RBuilder.mark(classes: String? = null, block: RDOMBuilder<MARK>.() ->
 
 inline fun RBuilder.math(classes: String? = null, block: RDOMBuilder<MATH>.() -> Unit): ReactElement = tag(block) { MATH(attributesMapOf("class", classes), it) }
 
-inline fun RBuilder.mathml(classes: String? = null, content: String = ""): ReactElement = tag({ +content }) { MATHML(attributesMapOf("class", classes), it) }
-inline fun RBuilder.mathml(classes: String? = null, block: RDOMBuilder<MATHML>.() -> Unit): ReactElement = tag(block) { MATHML(attributesMapOf("class", classes), it) }
-
 inline fun RBuilder.meta(name: String? = null, content: String? = null, block: RDOMBuilder<META>.() -> Unit): ReactElement = tag(block) { META(attributesMapOf("name", name, "content", content), it) }
 
 inline fun RBuilder.meter(classes: String? = null, block: RDOMBuilder<METER>.() -> Unit): ReactElement = tag(block) { METER(attributesMapOf("class", classes), it) }
 
 inline fun RBuilder.nav(classes: String? = null, block: RDOMBuilder<NAV>.() -> Unit): ReactElement = tag(block) { NAV(attributesMapOf("class", classes), it) }
 
-inline fun RBuilder.noScript(classes: String? = null, block: RDOMBuilder<NOSCRIPT>.() -> Unit): ReactElement = tag(block) { NOSCRIPT(attributesMapOf("class", classes), it) }
+inline fun RBuilder.noscript(classes: String? = null, block: RDOMBuilder<NOSCRIPT>.() -> Unit): ReactElement = tag(block) { NOSCRIPT(attributesMapOf("class", classes), it) }
 
-inline fun RBuilder.object_(classes: String? = null, block: RDOMBuilder<OBJECT>.() -> Unit): ReactElement = tag(block) { OBJECT(attributesMapOf("class", classes), it) }
+inline fun RBuilder.objectTag(classes: String? = null, block: RDOMBuilder<OBJECT>.() -> Unit): ReactElement = tag(block) { OBJECT(attributesMapOf("class", classes), it) }
 
 inline fun RBuilder.ol(classes: String? = null, block: RDOMBuilder<OL>.() -> Unit): ReactElement = tag(block) { OL(attributesMapOf("class", classes), it) }
 
-inline fun RBuilder.optGroup(label: String? = null, classes: String? = null, block: RDOMBuilder<OPTGROUP>.() -> Unit): ReactElement =
+inline fun RBuilder.optgroup(label: String? = null, classes: String? = null, block: RDOMBuilder<OPTGROUP>.() -> Unit): ReactElement =
     tag(block) { OPTGROUP(attributesMapOf("label", label, "class", classes), it) }
 
 inline fun RBuilder.option(classes: String? = null, content: String = ""): ReactElement = tag({ +content }) { OPTION(attributesMapOf("class", classes), it) }
@@ -191,6 +180,8 @@ inline fun RBuilder.output(classes: String? = null, block: RDOMBuilder<OUTPUT>.(
 inline fun RBuilder.p(classes: String? = null, block: RDOMBuilder<P>.() -> Unit): ReactElement = tag(block) { P(attributesMapOf("class", classes), it) }
 
 inline fun RBuilder.param(name: String? = null, value: String? = null, block: RDOMBuilder<PARAM>.() -> Unit): ReactElement = tag(block) { PARAM(attributesMapOf("name", name, "value", value), it) }
+
+inline fun RBuilder.picture(classes: String? = null, block: RDOMBuilder<PICTURE>.() -> Unit): ReactElement = tag(block) { PICTURE(attributesMapOf("class", classes), it)}
 
 inline fun RBuilder.pre(classes: String? = null, block: RDOMBuilder<PRE>.() -> Unit): ReactElement = tag(block) { PRE(attributesMapOf("class", classes), it) }
 
@@ -236,10 +227,10 @@ inline fun RBuilder.tbody(classes: String? = null, block: RDOMBuilder<TBODY>.() 
 
 inline fun RBuilder.td(classes: String? = null, block: RDOMBuilder<TD>.() -> Unit): ReactElement = tag(block) { TD(attributesMapOf("class", classes), it) }
 
-inline fun RBuilder.textArea(rows: String? = null, cols: String? = null, wrap: TextAreaWrap? = null, classes: String? = null, content: String = ""): ReactElement =
+inline fun RBuilder.textarea(rows: String? = null, cols: String? = null, wrap: TextAreaWrap? = null, classes: String? = null, content: String = ""): ReactElement =
     tag({ +content }) { TEXTAREA(attributesMapOf("rows", rows, "cols", cols, "wrap", wrap?.enumEncode(), "class", classes), it) }
 
-inline fun RBuilder.textArea(rows: String? = null, cols: String? = null, wrap: TextAreaWrap? = null, classes: String? = null, block: RDOMBuilder<TEXTAREA>.() -> Unit): ReactElement =
+inline fun RBuilder.textarea(rows: String? = null, cols: String? = null, wrap: TextAreaWrap? = null, classes: String? = null, block: RDOMBuilder<TEXTAREA>.() -> Unit): ReactElement =
     tag(block) { TEXTAREA(attributesMapOf("rows", rows, "cols", cols, "wrap", wrap?.enumEncode(), "class", classes), it) }
 
 inline fun RBuilder.tfoot(classes: String? = null, block: RDOMBuilder<TFOOT>.() -> Unit): ReactElement = tag(block) { TFOOT(attributesMapOf("class", classes), it) }
@@ -258,6 +249,6 @@ inline fun RBuilder.tr(classes: String? = null, block: RDOMBuilder<TR>.() -> Uni
 
 inline fun RBuilder.ul(classes: String? = null, block: RDOMBuilder<UL>.() -> Unit): ReactElement = tag(block) { UL(attributesMapOf("class", classes), it) }
 
-inline fun RBuilder.var_(classes: String? = null, block: RDOMBuilder<VAR>.() -> Unit): ReactElement = tag(block) { VAR(attributesMapOf("class", classes), it) }
+inline fun RBuilder.varTag(classes: String? = null, block: RDOMBuilder<VAR>.() -> Unit): ReactElement = tag(block) { VAR(attributesMapOf("class", classes), it) }
 
 inline fun RBuilder.video(classes: String? = null, block: RDOMBuilder<VIDEO>.() -> Unit): ReactElement = tag(block) { VIDEO(attributesMapOf("class", classes), it) }

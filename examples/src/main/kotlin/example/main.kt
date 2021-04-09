@@ -67,7 +67,7 @@ fun RBuilder.app(props: RProps) {
                 }
             }
 
-            textArea {
+            textarea {
                 attrs {
                     value = "bar"
                     defaultValue = "foobar"
