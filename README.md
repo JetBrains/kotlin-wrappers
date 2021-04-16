@@ -26,6 +26,14 @@ Maven and Gradle artifacts are published to [kotlin.jetbrains.space](https://kot
 
 `kotlinx.html` is a dependency of some of the wrappers. It is published to https://maven.pkg.jetbrains.space/public/p/kotlinx-html/maven
 
+```kotlin
+// build.gradle.kts
+repositories {
+    maven(url = "https://maven.pkg.jetbrains.space/kotlin/p/kotlin/kotlin-js-wrappers")
+    maven(url = "https://maven.pkg.jetbrains.space/public/p/kotlinx-html/maven")
+}
+```
+
 **All packages require JDK 8 to be installed.**
 
 ## Examples
