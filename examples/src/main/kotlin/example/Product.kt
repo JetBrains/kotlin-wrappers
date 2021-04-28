@@ -56,7 +56,7 @@ fun RBuilder.productTable(products: Array<Product>, filterText: String, inStockO
                 lastCategory = it.category
 
                 //show the product per filter text and inStock flag
-                if (!((filterText.isNotEmpty() and !it.name.toUpperCase().contains(filterText.toUpperCase())) or (inStockOnly and !it.isStocked))) {
+                if (!((filterText.isNotEmpty() and !it.name.uppercase().contains(filterText.uppercase())) or (inStockOnly and !it.isStocked))) {
                     productRow(it.name, it.price, it.isStocked)
                 }
             }

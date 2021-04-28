@@ -201,7 +201,7 @@ private val events = listOf(
     "wrap"
 )
 
-private val attrsMap = events.map { it.toLowerCase() to it }.toMap().toMutableMap().apply {
+private val attrsMap = events.map { it.lowercase() to it }.toMap().toMutableMap().apply {
     put("class", "className")
     put("ondblclick", "onDoubleClick")
 }
