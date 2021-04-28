@@ -24,13 +24,11 @@ All wrappers are available on npm: `npm install @jetbrains/<wrapper name>`
 
 Maven and Gradle artifacts are published to [kotlin.jetbrains.space](https://kotlin.jetbrains.space), see the corresponding README files for package coordinates.
 
-`kotlinx.html` is a dependency of some of the wrappers. It is published to https://maven.pkg.jetbrains.space/public/p/kotlinx-html/maven
-
 ```kotlin
 // build.gradle.kts
 repositories {
-    maven(url = "https://maven.pkg.jetbrains.space/kotlin/p/kotlin/kotlin-js-wrappers")
-    maven(url = "https://maven.pkg.jetbrains.space/public/p/kotlinx-html/maven")
+    mavenCentral()
+    maven("https://maven.pkg.jetbrains.space/kotlin/p/kotlin/kotlin-js-wrappers")
 }
 ```
 
