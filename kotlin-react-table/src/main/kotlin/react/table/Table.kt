@@ -6,7 +6,6 @@
 package react.table
 
 import kotlinext.js.Record
-import kotlinext.js.jsObject
 import org.w3c.dom.events.Event
 import react.Child
 import react.RProps
@@ -17,21 +16,6 @@ external fun <D: Any> useTable(
     options: TableOptions<D>,
     vararg plugins: PluginHook<D>,
 ): TableInstance<D>
-
-fun <D: Any> useTable(
-    vararg plugins: PluginHook<D>,
-    options: TableOptions<D>.() -> Unit,
-): TableInstance<D> =
-    useTable(jsObject(options), *plugins)
-
-external interface PluginHook<in D: Any> {
-    val pluginName: String?
-}
-
-inline fun <D: Any> PluginHook(
-    block: Hooks<D>.() -> Unit,
-): PluginHook<D> =
-    block.unsafeCast<PluginHook<D>>()
 
 external interface TableInstance<D: Any> :
     UseTableInstanceProps<D>,
