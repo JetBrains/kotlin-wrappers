@@ -180,6 +180,8 @@ class CSSBuilder(
 
     fun supports(@Suppress("UNUSED_PARAMETER") query: String, block: RuleSet) = "@supports $query"(block)
 
+    fun container(@Suppress("UNUSED_PARAMETER") query: String, block: RuleSet) = "@container $query"(block)
+
     fun fontFace(block: RuleSet) = rule("@font-face", passStaticClassesToParent = false, repeatable = true, block = block)
 
     fun retina(block: RuleSet) {
