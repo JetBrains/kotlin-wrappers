@@ -9,3 +9,11 @@ dependencies {
 
     api(npmv("react-router-dom"))
 }
+
+signing {
+    setRequired({
+        gradle.taskGraph.hasTask("publish")
+    })
+
+    sign(configurations.archives.get())
+}

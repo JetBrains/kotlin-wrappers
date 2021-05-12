@@ -11,3 +11,11 @@ dependencies {
 
     api(npmv("react-dom"))
 }
+
+signing {
+    setRequired({
+        gradle.taskGraph.hasTask("publish")
+    })
+
+    sign(configurations.archives.get())
+}

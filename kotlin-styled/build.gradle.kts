@@ -15,3 +15,11 @@ dependencies {
     api(npm("inline-style-prefixer", "^6.0.0"))
     api(npm("styled-components", "^5.2.0"))
 }
+
+signing {
+    setRequired({
+        gradle.taskGraph.hasTask("publish")
+    })
+
+    sign(configurations.archives.get())
+}

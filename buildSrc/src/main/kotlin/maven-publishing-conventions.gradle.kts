@@ -3,14 +3,6 @@ plugins {
     signing
 }
 
-signing {
-    setRequired({
-       gradle.taskGraph.hasTask("publish")
-    })
-
-    sign(configurations.archives.get())
-}
-
 val publishVersion = publishVersion()
 
 configure<PublishingExtension> {
