@@ -57,7 +57,7 @@ As you might know, the simplest way to define a React component in JavaScript is
 import React from 'react';
 
 export function Welcome(props) {
-  return <h1>Hello, {props.name}</h1>;
+    return <h1>Hello, {props.name}</h1>;
 }
 ```
 
@@ -123,12 +123,12 @@ external interface WelcomeProps : RProps {
     var name: String
 }
 
-external interface WelcomeState: RState {
+external interface WelcomeState : RState {
     var name: String
 }
 
 @JsExport
-class Welcome(props: WelcomeProps): RComponent<WelcomeProps, WelcomeState>(props) {
+class Welcome(props: WelcomeProps) : RComponent<WelcomeProps, WelcomeState>(props) {
 
     override fun WelcomeState.init(props: WelcomeProps) {
         name = props.name
@@ -169,6 +169,7 @@ fun RBuilder.welcome(handler: WelcomeProps.() -> Unit) = child(Welcome::class) {
     }
 }
 ```
+
 #### Using `RBuilder` extensions to structure complex components
 
 If a single component contains a lot of code, you can use `RBuilder` extension functions to group and structure code that belongs together. 
@@ -284,7 +285,7 @@ There is currently no easy way to declare static members from Kotlin/JS (see [KT
 so please do the following instead:
 
 ```kotlin
-class MyComponent: RComponent<MyComponentProps, MyComponentState>() {
+class MyComponent : RComponent<MyComponentProps, MyComponentState>() {
     companion object : RStatics<MyComponentProps, MyComponentState, MyComponent, Nothing>(MyComponent::class) {
         init {
             getDerivedStateFromProps = { props, state ->
