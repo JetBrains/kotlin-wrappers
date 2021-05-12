@@ -1,7 +1,6 @@
 package react
 
 import kotlinext.js.*
-import kotlin.reflect.KClass
 
 // Props
 external interface RProps
@@ -74,7 +73,7 @@ external interface RContext<T> {
 // Refs (16.3+)
 external interface RRef
 
-external interface RReadableRef<out T: Any> : RRef {
+external interface RReadableRef<out T : Any> : RRef {
     val current: T?
 }
 
