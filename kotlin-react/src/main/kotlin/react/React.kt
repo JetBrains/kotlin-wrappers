@@ -38,6 +38,7 @@ val <P : RProps> KClass<out Component<P, *>>.rClass: RClass<P>
     get() = js.unsafeCast<RClass<P>>()
 
 // 16.6+
+@DelicateCoroutinesApi
 fun <P : RProps> rLazy(loadComponent: suspend () -> RClass<P>): RClass<P> =
     lazy {
         Promise<RClass<P>> { resolve, reject ->
