@@ -5,6 +5,12 @@ plugins {
 
 val publishVersion = publishVersion()
 
+val javadocJar = if (isKotlinMultiplatformProject) {
+    tasks.register("emptyJavadocJar", Jar::class) {
+        archiveClassifier.set("javadoc")
+    }
+} else null
+
 configure<PublishingExtension> {
     publications {
         when {
@@ -18,6 +24,9 @@ configure<PublishingExtension> {
                     groupId = project.group.toString()
                     artifactId = "${project.name}$artifactName"
                     version = publishVersion
+
+                    if (name == "jvm")
+                        artifact(javadocJar!!.get())
 
                     metadata()
                 }
