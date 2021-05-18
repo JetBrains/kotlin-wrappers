@@ -10,6 +10,3 @@ internal val Task.jsOutputFileName: String
 
 val Task.jsOutputFile: String
     get() = jsOutputDir.resolve(jsOutputFileName).absolutePath
-
-internal val Task.npmBuildDir: File
-    get() = project.buildDir.resolve("npm")
