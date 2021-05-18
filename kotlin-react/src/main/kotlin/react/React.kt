@@ -1,7 +1,6 @@
 package react
 
 import kotlinext.js.*
-import kotlinx.coroutines.*
 import kotlin.js.*
 import kotlin.reflect.*
 
@@ -36,21 +35,6 @@ fun clone(element: dynamic, props: dynamic, child: Any? = null): ReactElement =
 
 val <P : RProps> KClass<out Component<P, *>>.rClass: RClass<P>
     get() = js.unsafeCast<RClass<P>>()
-
-// 16.6+
-@DelicateCoroutinesApi
-fun <P : RProps> rLazy(loadComponent: suspend () -> RClass<P>): RClass<P> =
-    lazy {
-        Promise<RClass<P>> { resolve, reject ->
-            GlobalScope.launch {
-                try {
-                    resolve(loadComponent())
-                } catch (e: Throwable) {
-                    reject(e)
-                }
-            }
-        }
-    }
 
 // 16.6+
 fun SuspenseProps.fallback(handler: RBuilder.() -> Unit) {
