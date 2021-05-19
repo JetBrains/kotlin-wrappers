@@ -17,5 +17,5 @@ signing {
         gradle.taskGraph.hasTask("publish")
     })
 
-    sign(configurations.archives.get())
+    sign(publishing.publications)
 }
