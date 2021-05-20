@@ -82,7 +82,9 @@ external fun <P : RProps> memo(fc: FunctionalComponent<P>): FunctionalComponent<
 external fun <P : RProps> memo(fc: FunctionalComponent<P>, areEqual: (P, P) -> Boolean): FunctionalComponent<P>
 
 // Lazy (16.6+)
-external fun <P : RProps> lazy(loadComponent: () -> Promise<RClass<P>>): RClass<P>
+external fun <P : RProps> lazy(
+    factory: () -> Promise<RClassModule<P>>
+): RClass<P>
 
 // Suspense (16.6+)
 external interface SuspenseProps : RProps

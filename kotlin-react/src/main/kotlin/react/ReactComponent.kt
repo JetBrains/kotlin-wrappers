@@ -40,6 +40,10 @@ val RErrorInfo.componentStack: Any
 // TODO: Should extend RComponentClassStatics, but has problems with generic params
 external interface RClass<in P : RProps> : RComponentClassStatics<RProps, RState, RContext<Any>?>
 
+external interface RClassModule<in P : RProps> {
+    val default: RClass<P>
+}
+
 external interface RComponentClassStatics<P : RProps, S : RState, C : RContext<Any>?> {
     var displayName: String?
 
