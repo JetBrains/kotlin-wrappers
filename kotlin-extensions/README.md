@@ -7,15 +7,8 @@ Kotlin wrappers for standard JS objects as well as some helpers required for
 
 ```xml
 <project>
-    <repositories>
-        <repository>
-            <id>space-kotlin-js-wrappers</id>
-            <url>https://maven.pkg.jetbrains.space/kotlin/p/kotlin/kotlin-js-wrappers</url>
-        </repository>
-    </repositories>
-    
     <dependency>
-        <groupId>org.jetbrains</groupId>
+        <groupId>org.jetbrains.kotlin-wrappers</groupId>
         <artifactId>kotlin-extensions</artifactId>
         <version>VERSION</version>
     </dependency>
@@ -26,10 +19,8 @@ Kotlin wrappers for standard JS objects as well as some helpers required for
 
 ```kotlin
 repositories {
-    maven {
-        url = uri("https://maven.pkg.jetbrains.space/kotlin/p/kotlin/kotlin-js-wrappers")
-    }
+    mavenCentral()
 }
 
-implementation("org.jetbrains:kotlin-extensions:VERSION")
+implementation("org.jetbrains.kotlin-wrappers:kotlin-extensions:VERSION")
 ```

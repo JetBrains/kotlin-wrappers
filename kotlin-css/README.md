@@ -6,15 +6,8 @@ Platform-agnostic CSS primitives.
 
 ```xml
 <project>
-    <repositories>
-        <repository>
-            <id>space-kotlin-js-wrappers</id>
-            <url>https://maven.pkg.jetbrains.space/kotlin/p/kotlin/kotlin-js-wrappers</url>
-        </repository>
-    </repositories>
-    
     <dependency>
-        <groupId>org.jetbrains</groupId>
+        <groupId>org.jetbrains.kotlin-wrappers</groupId>
         <artifactId>kotlin-css</artifactId>
         <version>VERSION</version>
     </dependency>
@@ -25,12 +18,10 @@ Platform-agnostic CSS primitives.
 
 ```kotlin
 repositories {
-    maven {
-        url = uri("https://maven.pkg.jetbrains.space/kotlin/p/kotlin/kotlin-js-wrappers")
-    }
+    mavenCentral()
 }
 
-implementation("org.jetbrains:kotlin-css:VERSION")
+implementation("org.jetbrains.kotlin-wrappers:kotlin-css:VERSION")
 ```
 
 ### Getting Started

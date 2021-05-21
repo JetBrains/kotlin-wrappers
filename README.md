@@ -20,17 +20,9 @@ To learn more please refer to the READMEs of individual modules:
 * [kotlin-redux](kotlin-redux/README.md),
 * [kotlin-styled](kotlin-styled/README.md).
 
-All wrappers are available on npm: `npm install @jetbrains/<wrapper name>`
+Artifacts are published to Maven Central, see the corresponding README files for package coordinates.
 
-Maven and Gradle artifacts are published to [kotlin.jetbrains.space](https://kotlin.jetbrains.space), see the corresponding README files for package coordinates.
-
-```kotlin
-// build.gradle.kts
-repositories {
-    mavenCentral()
-    maven("https://maven.pkg.jetbrains.space/kotlin/p/kotlin/kotlin-js-wrappers")
-}
-```
+**Important:** versions up to pre.156 were published under `org.jetbrains` group ID to kotlin.jetbrains.space, newer versions are being published to Maven Central and the new group ID is `org.jetbrains.kotlin-wrappers`. Upon changing the group ID the version number was bumped to pre.200 to signal the breaking change. 
 
 **All packages require JDK 8 to be installed.**
 

@@ -6,15 +6,8 @@ Kotlin wrapper for React Redux library. Major version number of this wrapper mat
 
 ```xml
 <project>
-    <repositories>
-        <repository>
-            <id>space-kotlin-js-wrappers</id>
-            <url>https://maven.pkg.jetbrains.space/kotlin/p/kotlin/kotlin-js-wrappers</url>
-        </repository>
-    </repositories>
-    
     <dependency>
-        <groupId>org.jetbrains</groupId>
+        <groupId>org.jetbrains.kotlin-wrappers</groupId>
         <artifactId>kotlin-react-redux</artifactId>
         <version>VERSION</version>
     </dependency>
@@ -25,12 +18,10 @@ Kotlin wrapper for React Redux library. Major version number of this wrapper mat
 
 ```kotlin
 repositories {
-    maven {
-        url = uri("https://maven.pkg.jetbrains.space/kotlin/p/kotlin/kotlin-js-wrappers")
-    }
+    mavenCentral()
 }
 
-implementation("org.jetbrains:kotlin-react-redux:VERSION")
+implementation("org.jetbrains.kotlin-wrappers:kotlin-react-redux:VERSION")
 ```
 
 ### Usage

@@ -6,15 +6,8 @@ Kotlin wrapper for React DOM library. Major version number of this wrapper match
 
 ```xml
 <project>
-    <repositories>
-        <repository>
-            <id>space-kotlin-js-wrappers</id>
-            <url>https://maven.pkg.jetbrains.space/kotlin/p/kotlin/kotlin-js-wrappers</url>
-        </repository>
-    </repositories>
-    
     <dependency>
-        <groupId>org.jetbrains</groupId>
+        <groupId>org.jetbrains.kotlin-wrappers</groupId>
         <artifactId>kotlin-react-dom</artifactId>
         <version>VERSION</version>
     </dependency>
@@ -25,12 +18,10 @@ Kotlin wrapper for React DOM library. Major version number of this wrapper match
 
 ```kotlin
 repositories {
-    maven {
-        url = uri("https://maven.pkg.jetbrains.space/kotlin/p/kotlin/kotlin-js-wrappers")
-    }
+    mavenCentral()
 }
 
-implementation("org.jetbrains:kotlin-react-dom:VERSION")
+implementation("org.jetbrains.kotlin-wrappers:kotlin-react-dom:VERSION")
 ```
 
 ### Internals

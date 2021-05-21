@@ -8,15 +8,8 @@ Major version number of this wrapper matches that of styled-components itself.
 
 ```xml
 <project>
-    <repositories>
-        <repository>
-            <id>space-kotlin-js-wrappers</id>
-            <url>https://maven.pkg.jetbrains.space/kotlin/p/kotlin/kotlin-js-wrappers</url>
-        </repository>
-    </repositories>
-
     <dependency>
-        <groupId>org.jetbrains</groupId>
+        <groupId>org.jetbrains.kotlin-wrappers</groupId>
         <artifactId>kotlin-styled</artifactId>
         <version>VERSION</version>
     </dependency>
@@ -27,12 +20,10 @@ Major version number of this wrapper matches that of styled-components itself.
 
 ```kotlin
 repositories {
-    maven {
-        url = uri("https://maven.pkg.jetbrains.space/kotlin/p/kotlin/kotlin-js-wrappers")
-    }
+    mavenCentral()
 }
 
-implementation("org.jetbrains:kotlin-styled:VERSION")
+implementation("org.jetbrains.kotlin-wrappers:kotlin-styled:VERSION")
 ```
 
 ### Getting Started

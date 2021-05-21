@@ -9,15 +9,8 @@ Both BrowserRouter and HashRouter are supported.
 
 ```xml
 <project>
-    <repositories>
-        <repository>
-            <id>space-kotlin-js-wrappers</id>
-            <url>https://maven.pkg.jetbrains.space/kotlin/p/kotlin/kotlin-js-wrappers</url>
-        </repository>
-    </repositories>
-    
     <dependency>
-        <groupId>org.jetbrains</groupId>
+        <groupId>org.jetbrains.kotlin-wrappers</groupId>
         <artifactId>kotlin-react-router-dom</artifactId>
         <version>VERSION</version>
     </dependency>
@@ -28,12 +21,10 @@ Both BrowserRouter and HashRouter are supported.
 
 ```kotlin
 repositories {
-    maven {
-        url = uri("https://maven.pkg.jetbrains.space/kotlin/p/kotlin/kotlin-js-wrappers")
-    }
+    mavenCentral()
 }
 
-implementation("org.jetbrains:kotlin-react-router-dom:VERSION")
+implementation("org.jetbrains.kotlin-wrappers:kotlin-react-router-dom:VERSION")
 ```
 
 ### Examples

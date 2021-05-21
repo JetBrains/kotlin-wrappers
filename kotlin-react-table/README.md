@@ -6,15 +6,8 @@ Kotlin wrappers for [React Table](https://github.com/tannerlinsley/react-table) 
 
 ```xml
 <project>
-    <repositories>
-        <repository>
-            <id>space-kotlin-js-wrappers</id>
-            <url>https://maven.pkg.jetbrains.space/kotlin/p/kotlin/kotlin-js-wrappers</url>
-        </repository>
-    </repositories>
-    
     <dependency>
-        <groupId>org.jetbrains</groupId>
+        <groupId>org.jetbrains.kotlin-wrappers</groupId>
         <artifactId>kotlin-react-table</artifactId>
         <version>VERSION</version>
     </dependency>
@@ -25,12 +18,10 @@ Kotlin wrappers for [React Table](https://github.com/tannerlinsley/react-table) 
 
 ```kotlin
 repositories {
-    maven {
-        url = uri("https://maven.pkg.jetbrains.space/kotlin/p/kotlin/kotlin-js-wrappers")
-    }
+    mavenCentral()
 }
 
-implementation("org.jetbrains:kotlin-react-table:VERSION")
+implementation("org.jetbrains.kotlin-wrappers:kotlin-react-table:VERSION")
 ```
 
 ### Supported hooks
