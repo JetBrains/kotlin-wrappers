@@ -1,5 +1,6 @@
 package react.redux
 
+import react.child
 import react.RBuilder
 import react.RContext
 import react.RHandler
