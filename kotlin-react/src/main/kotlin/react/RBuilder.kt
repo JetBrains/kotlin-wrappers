@@ -180,13 +180,13 @@ inline fun <P : RProps, reified C : Component<P, *>> RBuilder.node(
 ): ReactElement =
     node(C::class, props, children)
 
-open class RBuilderImpl: RBuilder {
+open class RBuilderImpl : RBuilder {
     override val childList = mutableListOf<Any>()
 }
 
 open class RBuilderMultiple : RBuilderImpl()
 
-fun <T: RBuilder> buildElements(builder: T, handler: T.() -> Unit): dynamic {
+fun <T : RBuilder> buildElements(builder: T, handler: T.() -> Unit): dynamic {
     val nodes = builder.apply(handler).childList
     return when (nodes.size) {
         0 -> null
@@ -199,7 +199,7 @@ fun buildElements(handler: RBuilder.() -> Unit): dynamic = buildElements(RBuilde
 
 open class RBuilderSingle : RBuilderImpl()
 
-inline fun <T: RBuilder> buildElement(rBuilder: T, handler: T.() -> Unit): ReactElement =
+inline fun <T : RBuilder> buildElement(rBuilder: T, handler: T.() -> Unit): ReactElement =
     rBuilder.apply(handler)
         .childList.first()
         .unsafeCast<ReactElement>()

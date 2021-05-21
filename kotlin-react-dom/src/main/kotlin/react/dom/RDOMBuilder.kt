@@ -18,7 +18,7 @@ external interface DOMProps : WithClassName {
 }
 
 @ReactDsl
-interface RDOMBuilder<out T : Tag>: RBuilder {
+interface RDOMBuilder<out T : Tag> : RBuilder {
     fun setProp(attribute: String, value: Any?) {
         val key = fixAttributeName(attribute)
         domProps.asDynamic()[key] = value

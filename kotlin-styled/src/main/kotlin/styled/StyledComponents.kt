@@ -1,13 +1,13 @@
 package styled
 
 import kotlinext.js.*
-import kotlinx.browser.window
+import kotlinx.browser.*
 import kotlinx.css.*
 import kotlinx.html.*
 import org.w3c.dom.*
 import react.*
 import react.dom.*
-import kotlin.js.*
+import kotlin.js.Promise
 
 typealias AnyTagStyledBuilder = StyledDOMBuilder<CommonAttributeGroupFacade>
 typealias AnyBuilder = AnyTagStyledBuilder.() -> Unit
@@ -43,7 +43,7 @@ interface StyledBuilder<P : WithClassName> {
 
 inline fun StyledBuilder<*>.css(handler: RuleSet) = css.handler()
 
-interface StyledElementBuilder<P : WithClassName>: RElementBuilder<P>, StyledBuilder<P> {
+interface StyledElementBuilder<P : WithClassName> : RElementBuilder<P>, StyledBuilder<P> {
     fun create(): ReactElement
 
     companion object {

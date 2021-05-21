@@ -1,10 +1,7 @@
 package react.redux
 
-import react.child
-import react.RBuilder
-import react.RContext
-import react.RHandler
-import redux.Store
+import react.*
+import redux.*
 
 fun RBuilder.provider(store: Store<*, *, *>, context: RContext<*>? = null, handler: RHandler<ProviderProps>) =
     child<ProviderProps, Provider> {
