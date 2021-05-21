@@ -53,10 +53,6 @@ interface RDOMBuilder<out T : Tag>: RBuilder {
 
     val domProps: DOMProps
 
-//    init {
-//        attrs.attributesEntries.forEach { setProp(it.key, it.value) }
-//    }
-
     var key: String
         @Deprecated(message = "Write-only property", level = DeprecationLevel.HIDDEN)
         get() = error("")
