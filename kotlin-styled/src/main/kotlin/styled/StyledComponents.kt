@@ -43,21 +43,39 @@ interface StyledBuilder<P : WithClassName> {
 
 inline fun StyledBuilder<*>.css(handler: RuleSet) = css.handler()
 
-class StyledElementBuilder<P : WithClassName>(
+interface StyledElementBuilder<P : WithClassName>: RElementBuilder<P>, StyledBuilder<P> {
+    fun create(): ReactElement
+
+    companion object {
+        operator fun <P : WithClassName> invoke(
+            type: Any,
+            attrs: P = jsObject()
+        ): StyledElementBuilder<P> = StyledElementBuilderImpl(type, attrs)
+    }
+}
+
+class StyledElementBuilderImpl<P : WithClassName>(
     override val type: Any,
     attrs: P = jsObject()
-) : RElementBuilder<P>(attrs), StyledBuilder<P> {
+) : StyledElementBuilder<P>, RElementBuilderImpl<P>(attrs) {
     override val css = CSSBuilder()
 
-    fun create() = Styled.createElement(type, css, attrs, childList)
+    override fun create() = Styled.createElement(type, css, attrs, childList)
 }
 
 @ReactDsl
-class StyledDOMBuilder<out T : Tag>(factory: (TagConsumer<Unit>) -> T) : RDOMBuilder<T>(factory), StyledBuilder<DOMProps> {
-    override val type: Any = attrs.tagName
-    override val css = CSSBuilder()
+interface StyledDOMBuilder<out T : Tag> : RDOMBuilder<T>, StyledBuilder<DOMProps> {
+    override val type: Any get() = attrs.tagName
 
-    override fun create() = Styled.createElement(type, css, props, childList)
+    override fun create() = Styled.createElement(type, css, domProps, childList)
+
+    companion object {
+        operator fun <T : Tag> invoke(factory: (TagConsumer<Unit>) -> T): StyledDOMBuilder<T> = StyledDOMBuilderImpl(factory)
+    }
+}
+
+class StyledDOMBuilderImpl<out T : Tag>(factory: (TagConsumer<Unit>) -> T) : StyledDOMBuilder<T>, RDOMBuilderImpl<T>(factory) {
+    override val css = CSSBuilder()
 }
 
 typealias StyledHandler<P> = StyledElementBuilder<P>.() -> Unit

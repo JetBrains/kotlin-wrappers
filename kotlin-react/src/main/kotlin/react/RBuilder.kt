@@ -7,8 +7,8 @@ import kotlin.reflect.*
 annotation class ReactDsl
 
 @ReactDsl
-open class RBuilder {
-    val childList = mutableListOf<Any>()
+interface RBuilder {
+    val childList: MutableList<Any>
 
     fun <T : Child> child(element: T): T {
         childList.add(element)
@@ -74,11 +74,6 @@ open class RBuilder {
     ): ReactElement =
         klazz.rClass.invoke(handler)
 
-    inline fun <P : RProps, reified C : Component<P, *>> child(
-        noinline handler: RHandler<P>
-    ): ReactElement =
-        child(C::class, handler)
-
     fun <T, P : RProps> childFunction(
         klazz: KClass<out Component<P, *>>,
         handler: RHandler<P>,
@@ -90,24 +85,12 @@ open class RBuilder {
             children = listOf { value: T -> buildElement { children(value) } }
         )
 
-    inline fun <T, P : RProps, reified C : Component<P, *>> childFunction(
-        noinline handler: RHandler<P>,
-        noinline children: RBuilder.(T) -> Unit
-    ): ReactElement =
-        childFunction(C::class, handler, children)
-
     fun <P : RProps> node(
         klazz: KClass<out Component<P, *>>,
         props: P,
         children: List<Any> = emptyList()
     ): ReactElement =
         klazz.rClass.node(props, children)
-
-    inline fun <P : RProps, reified C : Component<P, *>> node(
-        props: P,
-        children: List<Any> = emptyList()
-    ): ReactElement =
-        node(C::class, props, children)
 
     fun RProps.children() {
         childList.addAll(Children.toArray(children))
@@ -151,14 +134,14 @@ open class RBuilder {
      *
      * there will be a proper warning.
      * */
-    fun <T> Collection<T>.renderEach(fn: RBuilder.(T) -> Unit) {
+    fun <T> Iterable<T>.renderEach(fn: RBuilder.(T) -> Unit) {
         childList.add(map {
             buildElement { fn(it) }
         }.toTypedArray())
     }
 
 
-    fun <T> Collection<T>.renderEachIndexed(fn: RBuilder.(Int, T) -> Unit) {
+    fun <T> Iterable<T>.renderEachIndexed(fn: RBuilder.(Int, T) -> Unit) {
         childList.add(mapIndexed { index, it ->
             buildElement { fn(index, it) }
         }.toTypedArray())
@@ -174,12 +157,37 @@ open class RBuilder {
     }
 
     fun ReactElement.withKey(newKey: Number) = withKey(newKey.toString())
+
+    companion object {
+        operator fun invoke(): RBuilder = RBuilderImpl()
+    }
 }
 
-open class RBuilderMultiple : RBuilder()
+inline fun <P : RProps, reified C : Component<P, *>> RBuilder.child(
+    noinline handler: RHandler<P>
+): ReactElement =
+    child(C::class, handler)
 
-fun buildElements(handler: RBuilder.() -> Unit): dynamic {
-    val nodes = RBuilder().apply(handler).childList
+inline fun <T, P : RProps, reified C : Component<P, *>> RBuilder.childFunction(
+    noinline handler: RHandler<P>,
+    noinline children: RBuilder.(T) -> Unit
+): ReactElement =
+    childFunction(C::class, handler, children)
+
+inline fun <P : RProps, reified C : Component<P, *>> RBuilder.node(
+    props: P,
+    children: List<Any> = emptyList()
+): ReactElement =
+    node(C::class, props, children)
+
+open class RBuilderImpl: RBuilder {
+    override val childList = mutableListOf<Any>()
+}
+
+open class RBuilderMultiple : RBuilderImpl()
+
+fun <T: RBuilder> buildElements(builder: T, handler: T.() -> Unit): dynamic {
+    val nodes = builder.apply(handler).childList
     return when (nodes.size) {
         0 -> null
         1 -> nodes.first()
@@ -187,14 +195,21 @@ fun buildElements(handler: RBuilder.() -> Unit): dynamic {
     }
 }
 
-open class RBuilderSingle : RBuilder()
+fun buildElements(handler: RBuilder.() -> Unit): dynamic = buildElements(RBuilder(), handler)
 
-inline fun buildElement(handler: RBuilder.() -> Unit): ReactElement =
-    RBuilder().apply(handler)
+open class RBuilderSingle : RBuilderImpl()
+
+inline fun <T: RBuilder> buildElement(rBuilder: T, handler: T.() -> Unit): ReactElement =
+    rBuilder.apply(handler)
         .childList.first()
         .unsafeCast<ReactElement>()
 
-open class RElementBuilder<out P : RProps>(open val attrs: P) : RBuilder() {
+inline fun buildElement(handler: RBuilder.() -> Unit): ReactElement =
+    buildElement(RBuilder(), handler)
+
+interface RElementBuilder<out P : RProps> : RBuilder {
+    val attrs: P
+
     fun attrs(handler: P.() -> Unit) {
         attrs.handler()
     }
@@ -216,7 +231,13 @@ open class RElementBuilder<out P : RProps>(open val attrs: P) : RBuilder() {
     fun ref(handler: (dynamic) -> Unit) {
         attrs.ref(handler)
     }
+
+    companion object {
+        operator fun <P : RProps> invoke(attrs: P): RElementBuilder<P> = RElementBuilderImpl(attrs)
+    }
 }
+
+open class RElementBuilderImpl<out P : RProps>(override val attrs: P) : RElementBuilder<P>, RBuilderImpl()
 
 typealias RHandler<P> = RElementBuilder<P>.() -> Unit
 
