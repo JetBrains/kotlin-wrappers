@@ -8,17 +8,20 @@
 This repository hosts a number of [Kotlin](https://kotlinlang.org) wrappers for popular JavaScript libraries, such as
 [React](https://reactjs.org/), [Mocha](https://mochajs.org/), and [styled-components](https://www.styled-components.com/).
 
-To learn more please refer to the READMEs of individual modules:
-* [kotlin-css](kotlin-css/README.md), 
-* [kotlin-extensions](kotlin-extensions/README.md), 
-* [kotlin-mocha](kotlin-mocha/README.md), 
-* [kotlin-react](kotlin-react/README.md), 
-* [kotlin-react-dom](kotlin-react-dom/README.md),
-* [kotlin-react-redux](kotlin-react-redux/README.md),
-* [kotlin-react-router-dom](kotlin-react-router-dom/README.md),
-* [kotlin-react-table](kotlin-react-table/README.md),
-* [kotlin-redux](kotlin-redux/README.md),
-* [kotlin-styled](kotlin-styled/README.md).
+To learn more please refer to the READMEs of individual modules.
+
+| README | Version |
+| :--- | :--- |
+| [kotlin-css](kotlin-css/README.md) | [![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-css)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-css) | 
+| [kotlin-extensions](kotlin-extensions/README.md) | [![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-extensions)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-extensions) | 
+| [kotlin-mocha](kotlin-mocha/README.md) | — | 
+| [kotlin-react](kotlin-react/README.md) | [![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-react)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-react) | 
+| [kotlin-react-dom](kotlin-react-dom/README.md) | [![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-react-dom)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-react-dom) |
+| [kotlin-react-redux](kotlin-react-redux/README.md) | [![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-react-redux)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-react-redux) |
+| [kotlin-react-router-dom](kotlin-react-router-dom/README.md) | [![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-react-router-dom)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-react-router-dom) |
+| [kotlin-react-table](kotlin-react-table/README.md) | [![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-react-table)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-react-table) |
+| [kotlin-redux](kotlin-redux/README.md) | [![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-redux)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-redux) |
+| [kotlin-styled](kotlin-styled/README.md) | [![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-styled)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-styled) |
 
 Artifacts are published to Maven Central, see the corresponding README files for package coordinates.
 
