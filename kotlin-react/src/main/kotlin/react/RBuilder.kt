@@ -157,11 +157,11 @@ interface RBuilder {
     }
 
     fun ReactElement.withKey(newKey: Number) = withKey(newKey.toString())
-
-    companion object {
-        operator fun invoke(): RBuilder = RBuilderImpl()
-    }
 }
+
+@JsName("createBuilder")
+fun RBuilder(): RBuilder =
+    RBuilderImpl()
 
 inline fun <P : RProps, reified C : Component<P, *>> RBuilder.child(
     noinline handler: RHandler<P>
@@ -231,11 +231,10 @@ interface RElementBuilder<out P : RProps> : RBuilder {
     fun ref(handler: (dynamic) -> Unit) {
         attrs.ref(handler)
     }
-
-    companion object {
-        operator fun <P : RProps> invoke(attrs: P): RElementBuilder<P> = RElementBuilderImpl(attrs)
-    }
 }
+
+fun <P : RProps> RElementBuilder(attrs: P): RElementBuilder<P> =
+    RElementBuilderImpl(attrs)
 
 open class RElementBuilderImpl<out P : RProps>(override val attrs: P) : RElementBuilder<P>, RBuilderImpl()
 
