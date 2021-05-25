@@ -14,7 +14,7 @@ To learn more please refer to the READMEs of individual modules.
 | :--- | :--- |
 | [kotlin-css](kotlin-css/README.md) | [![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-css)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-css) | 
 | [kotlin-extensions](kotlin-extensions/README.md) | [![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-extensions)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-extensions) | 
-| [kotlin-mocha](kotlin-mocha/README.md) | — | 
+| [kotlin-mocha](kotlin-mocha/README.md) | Outdated, maintainer wanted! | 
 | [kotlin-react](kotlin-react/README.md) | [![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-react)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-react) | 
 | [kotlin-react-dom](kotlin-react-dom/README.md) | [![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-react-dom)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-react-dom) |
 | [kotlin-react-redux](kotlin-react-redux/README.md) | [![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-react-redux)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-react-redux) |
@@ -25,7 +25,7 @@ To learn more please refer to the READMEs of individual modules.
 
 Artifacts are published to Maven Central, see the corresponding README files for package coordinates.
 
-**Important:** versions up to pre.156 were published under `org.jetbrains` group ID to kotlin.jetbrains.space, newer versions are being published to Maven Central and the new group ID is `org.jetbrains.kotlin-wrappers`. Upon changing the group ID the version number was bumped to pre.200 to signal the breaking change. 
+**Important:** versions up to pre.156 were published under `org.jetbrains` group ID to [kotlin.jetbrains.space](kotlin.jetbrains.space), newer versions are being published to Maven Central and the new group ID is `org.jetbrains.kotlin-wrappers`. Upon changing the group ID the version number was bumped to pre.200 to signal the breaking change. 
 
 **All packages require JDK 8 to be installed.**
 
