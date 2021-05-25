@@ -25,7 +25,7 @@ To learn more please refer to the READMEs of individual modules.
 
 Artifacts are published to Maven Central, see the corresponding README files for package coordinates.
 
-**Important:** versions up to pre.156 were published under `org.jetbrains` group ID to [kotlin.jetbrains.space](https://kotlin.jetbrains.space), newer versions are being published to Maven Central and the new group ID is `org.jetbrains.kotlin-wrappers`. Upon changing the group ID the version number was bumped to pre.200 to signal the breaking change. 
+**Important:** versions up to `pre.156` were published under `org.jetbrains` group ID to [kotlin.jetbrains.space](https://kotlin.jetbrains.space), newer versions are being published to Maven Central and the new group ID is `org.jetbrains.kotlin-wrappers`. Upon changing the group ID the version number was bumped to `pre.200` to signal the breaking change. 
 
 **All packages require JDK 8 to be installed.**
 
