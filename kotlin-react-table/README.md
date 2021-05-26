@@ -1,3 +1,5 @@
+[![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-react-table)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-react-table)
+
 ## kotlin-react-table
 
 Kotlin wrappers for [React Table](https://github.com/tannerlinsley/react-table) library.
