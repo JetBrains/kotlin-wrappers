@@ -45,6 +45,7 @@ open class StyleSheet(var name: String, val isStatic: Boolean = false) {
             }
 
             injectGlobal(builder.toString())
+            holders.clear()
         }
     }
 }
