@@ -10,16 +10,28 @@ typealias RDependenciesList = List<dynamic>
 
 typealias RSetState<T> = (value: T) -> Unit
 
+/**
+ * Only works inside [functionalComponent]
+ * @see https://reactjs.org/docs/hooks-state.html
+ */
 inline fun <T> useState(initValue: T): RStateDelegate<T> {
     val (state, setState) = rawUseState(initValue)
     return RStateDelegate(state as T, setState as RSetState<T>)
 }
 
+/**
+ * Only works inside [functionalComponent]
+ * @see https://reactjs.org/docs/hooks-state.html
+ */
 inline fun <T> useState(noinline valueInitializer: () -> T): RStateDelegate<T> {
     val (state, setState) = rawUseState(valueInitializer)
     return RStateDelegate(state as T, setState as RSetState<T>)
 }
 
+/**
+ * Only works inside [functionalComponent]
+ * @see https://reactjs.org/docs/hooks-state.html
+ */
 class RStateDelegate<T>(
     private val state: T,
     private val setState: RSetState<T>
