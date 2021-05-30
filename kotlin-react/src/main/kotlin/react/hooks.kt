@@ -2,7 +2,6 @@
 
 package react
 
-import kotlin.properties.ReadWriteProperty
 import kotlin.reflect.KProperty
 
 typealias RDependenciesArray = Array<dynamic>
@@ -14,43 +13,24 @@ typealias RSetState<T> = (value: T) -> Unit
  * Only works inside [functionalComponent]
  * @see https://reactjs.org/docs/hooks-state.html
  */
-inline fun <T> useState(initValue: T): RStateDelegate<T> {
-    val (state, setState) = rawUseState(initValue)
-    return RStateDelegate(state as T, setState as RSetState<T>)
-}
+// TODO: make external in IR
+class RStateDelegate<T>
+private constructor() {
+    inline operator fun component1(): T = asDynamic()[0]
+    inline operator fun component2(): RSetState<T> = asDynamic()[1]
 
-/**
- * Only works inside [functionalComponent]
- * @see https://reactjs.org/docs/hooks-state.html
- */
-inline fun <T> useState(noinline valueInitializer: () -> T): RStateDelegate<T> {
-    val (state, setState) = rawUseState(valueInitializer)
-    return RStateDelegate(state as T, setState as RSetState<T>)
-}
-
-/**
- * Only works inside [functionalComponent]
- * @see https://reactjs.org/docs/hooks-state.html
- */
-class RStateDelegate<T>(
-    private val state: T,
-    private val setState: RSetState<T>
-) : ReadWriteProperty<Nothing?, T> {
-    operator fun component1(): T = state
-    operator fun component2(): RSetState<T> = setState
-
-    override operator fun getValue(
+    inline operator fun getValue(
         thisRef: Nothing?,
         property: KProperty<*>
     ): T =
-        state
+        asDynamic()[0]
 
-    override operator fun setValue(
+    inline operator fun setValue(
         thisRef: Nothing?,
         property: KProperty<*>,
         value: T
     ) {
-        setState(value)
+        asDynamic()[1](value)
     }
 }
 
