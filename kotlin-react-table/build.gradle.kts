@@ -9,11 +9,3 @@ dependencies {
 
     api(npmv("react-table"))
 }
-
-signing {
-    setRequired({
-        gradle.taskGraph.hasTask("publish")
-    })
-
-    sign(publishing.publications)
-}

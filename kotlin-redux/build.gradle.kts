@@ -10,11 +10,3 @@ dependencies {
 
     api(npmv("redux"))
 }
-
-signing {
-    setRequired({
-        gradle.taskGraph.hasTask("publish")
-    })
-
-    sign(publishing.publications)
-}
