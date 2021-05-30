@@ -1,6 +1,6 @@
 plugins {
     kotlin("js")
-    `publishing-conventions`
+    `publish-conventions`
 }
 
 signing {
