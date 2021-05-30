@@ -744,18 +744,6 @@ enum class FlexDirection {
     override fun toString() = name.hyphenize()
 }
 
-class Gap(override val value: String) : CssValue(value) {
-    companion object {
-        val initial = Gap("initial")
-        val inherit = Gap("inherit")
-        val normal = Gap("normal")
-        val unset = Gap("unset")
-    }
-}
-
-val LinearDimension.gap: Gap
-    get() = Gap(value)
-
 class GridAutoColumns(override val value: String) : CssValue(value) {
     constructor(vararg dims: LinearDimension) : this(dims.joinToString(" "))
 
