@@ -84,15 +84,6 @@ external interface RReadableRef<out T : Any> : RRef {
 fun <S : RState> Component<*, S>.setState(buildState: S.() -> Unit) =
     setState({ assign(it, buildState) })
 
-fun <P : RProps> rFunction(
-    displayName: String,
-    render: RBuilder.(P) -> Unit
-): RClass<P> {
-    val fn = { props: P -> buildElements { render(props) } }
-    return fn.unsafeCast<RClass<P>>()
-        .also { it.displayName = displayName }
-}
-
 abstract class RComponent<P : RProps, S : RState> : Component<P, S> {
     constructor() : super() {
         state = jsObject { init() }
