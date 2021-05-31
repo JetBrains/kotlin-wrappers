@@ -1,6 +1,6 @@
 plugins {
     kotlin("multiplatform")
-    `publishing-conventions`
+    `publish-conventions`
 }
 
 kotlin {
@@ -34,12 +34,4 @@ kotlin {
             }
         }
     }
-}
-
-signing {
-    setRequired({
-        gradle.taskGraph.hasTask("publish")
-    })
-
-    sign(publishing.publications)
 }

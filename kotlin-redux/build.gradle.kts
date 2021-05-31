@@ -1,7 +1,7 @@
 plugins {
     kotlin("js")
     kotlin("plugin.serialization")
-    `publishing-conventions`
+    `publish-conventions`
 }
 
 dependencies {
@@ -9,12 +9,4 @@ dependencies {
     api(kotlinxSerialization("json"))
 
     api(npmv("redux"))
-}
-
-signing {
-    setRequired({
-        gradle.taskGraph.hasTask("publish")
-    })
-
-    sign(publishing.publications)
 }

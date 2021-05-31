@@ -1,6 +1,6 @@
 plugins {
     kotlin("js")
-    `publishing-conventions`
+    `publish-conventions`
 }
 
 dependencies {
@@ -8,12 +8,4 @@ dependencies {
     api(project(":kotlin-react"))
 
     api(npmv("react-table"))
-}
-
-signing {
-    setRequired({
-        gradle.taskGraph.hasTask("publish")
-    })
-
-    sign(publishing.publications)
 }

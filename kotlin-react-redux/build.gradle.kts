@@ -1,6 +1,6 @@
 plugins {
     kotlin("js")
-    `publishing-conventions`
+    `publish-conventions`
 }
 
 dependencies {
@@ -9,12 +9,4 @@ dependencies {
     api(project(":kotlin-redux"))
 
     api(npmv("react-redux"))
-}
-
-signing {
-    setRequired({
-        gradle.taskGraph.hasTask("publish")
-    })
-
-    sign(publishing.publications)
 }
