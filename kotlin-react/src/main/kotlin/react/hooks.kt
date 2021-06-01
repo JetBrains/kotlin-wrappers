@@ -2,37 +2,8 @@
 
 package react
 
-import kotlin.reflect.KProperty
-
 typealias RDependenciesArray = Array<dynamic>
 typealias RDependenciesList = List<dynamic>
-
-typealias RSetState<T> = (value: T) -> Unit
-
-/**
- * Only works inside [functionalComponent]
- * @see <a href="https://reactjs.org/docs/hooks-state.html#hooks-and-function-components">Hooks and Function Components</a>
- */
-// TODO: make external in IR
-class RStateDelegate<T>
-private constructor() {
-    inline operator fun component1(): T = asDynamic()[0]
-    inline operator fun component2(): RSetState<T> = asDynamic()[1]
-
-    inline operator fun getValue(
-        thisRef: Nothing?,
-        property: KProperty<*>
-    ): T =
-        asDynamic()[0]
-
-    inline operator fun setValue(
-        thisRef: Nothing?,
-        property: KProperty<*>,
-        value: T
-    ) {
-        asDynamic()[1](value)
-    }
-}
 
 typealias RReducer<S, A> = (state: S, action: A) -> S
 typealias RDispatch<A> = (action: A) -> Unit
