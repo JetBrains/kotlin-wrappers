@@ -11,7 +11,7 @@ typealias RSetState<T> = (value: T) -> Unit
 
 /**
  * Only works inside [functionalComponent]
- * @see https://reactjs.org/docs/hooks-state.html
+ * @see <a href="https://reactjs.org/docs/hooks-state.html#hooks-and-function-components">Hooks and Function Components</a>
  */
 // TODO: make external in IR
 class RStateDelegate<T>
@@ -39,7 +39,7 @@ typealias RDispatch<A> = (action: A) -> Unit
 
 /**
  * Only works inside [functionalComponent]
- * @see https://reactjs.org/docs/hooks-state.html
+ * @see <a href="https://reactjs.org/docs/hooks-state.html#hooks-and-function-components">Hooks and Function Components</a>
  */
 fun <S, A> useReducer(reducer: RReducer<S, A>, initState: S, initialAction: A? = null): Pair<S, RDispatch<A>> {
     val jsTuple = if (initialAction != null) {
@@ -54,7 +54,7 @@ fun <S, A> useReducer(reducer: RReducer<S, A>, initState: S, initialAction: A? =
 
 /**
  * Only works inside [functionalComponent]
- * @see https://reactjs.org/docs/hooks-state.html
+ * @see <a href="https://reactjs.org/docs/hooks-state.html#hooks-and-function-components">Hooks and Function Components</a>
  */
 fun <S, A> useReducer(reducer: RReducer<S?, A>): Pair<S?, RDispatch<A>> {
     return useReducer(reducer, null)
@@ -64,7 +64,7 @@ typealias RCleanup = () -> Unit
 
 /**
  * Only works inside [functionalComponent]
- * @see https://reactjs.org/docs/hooks-state.html
+ * @see <a href="https://reactjs.org/docs/hooks-state.html#hooks-and-function-components">Hooks and Function Components</a>
  */
 fun useEffectWithCleanup(dependencies: RDependenciesList? = null, effect: () -> RCleanup) {
     if (dependencies != null) {
@@ -76,7 +76,7 @@ fun useEffectWithCleanup(dependencies: RDependenciesList? = null, effect: () -> 
 
 /**
  * Only works inside [functionalComponent]
- * @see https://reactjs.org/docs/hooks-state.html
+ * @see <a href="https://reactjs.org/docs/hooks-state.html#hooks-and-function-components">Hooks and Function Components</a>
  */
 fun useEffect(dependencies: RDependenciesList? = null, effect: () -> Unit) {
     val rawEffect = {
@@ -92,7 +92,7 @@ fun useEffect(dependencies: RDependenciesList? = null, effect: () -> Unit) {
 
 /**
  * Only works inside [functionalComponent]
- * @see https://reactjs.org/docs/hooks-state.html
+ * @see <a href="https://reactjs.org/docs/hooks-state.html#hooks-and-function-components">Hooks and Function Components</a>
  */
 fun useLayoutEffectWithCleanup(dependencies: RDependenciesList? = null, effect: () -> RCleanup) {
     if (dependencies != null) {
@@ -104,7 +104,7 @@ fun useLayoutEffectWithCleanup(dependencies: RDependenciesList? = null, effect: 
 
 /**
  * Only works inside [functionalComponent]
- * @see https://reactjs.org/docs/hooks-state.html
+ * @see <a href="https://reactjs.org/docs/hooks-state.html#hooks-and-function-components">Hooks and Function Components</a>
  */
 fun useLayoutEffect(dependencies: RDependenciesList? = null, effect: () -> Unit) {
     val rawEffect = {
@@ -120,7 +120,7 @@ fun useLayoutEffect(dependencies: RDependenciesList? = null, effect: () -> Unit)
 
 /**
  * Only works inside [functionalComponent]
- * @see https://reactjs.org/docs/hooks-state.html
+ * @see <a href="https://reactjs.org/docs/hooks-state.html#hooks-and-function-components">Hooks and Function Components</a>
  */
 inline fun <T : Function<*>> useCallback(
     vararg dependencies: dynamic,
@@ -130,7 +130,7 @@ inline fun <T : Function<*>> useCallback(
 
 /**
  * Only works inside [functionalComponent]
- * @see https://reactjs.org/docs/hooks-state.html
+ * @see <a href="https://reactjs.org/docs/hooks-state.html#hooks-and-function-components">Hooks and Function Components</a>
  */
 inline fun <T> useMemo(
     vararg dependencies: dynamic,
