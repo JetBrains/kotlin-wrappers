@@ -247,6 +247,8 @@ fun <P : RProps> forwardRef(handler: RBuilder.(P, RRef) -> Unit): RClass<P> =
 
 typealias FunctionalComponent<P> = (props: P) -> dynamic
 
+typealias FC<P> = FunctionalComponent<P>
+
 /**
  * Get functional component from [func]
  */
