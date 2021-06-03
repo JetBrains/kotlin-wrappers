@@ -23,7 +23,7 @@ external object Children {
 abstract external class Component<P : RProps, S : RState>(
     props: P = definedExternally
 ) {
-    open val props: P
+    val props: P
     var state: S
 
     fun setState(partialState: S, callback: () -> Unit = definedExternally)
