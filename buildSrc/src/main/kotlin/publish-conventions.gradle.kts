@@ -4,6 +4,7 @@ plugins {
 }
 
 val publishVersion = publishVersion()
+project.version = publishVersion
 
 val javadocJar = if (isKotlinMultiplatformProject) {
     tasks.register("emptyJavadocJar", Jar::class) {
@@ -25,8 +26,9 @@ configure<PublishingExtension> {
                     artifactId = "${project.name}$artifactName"
                     version = publishVersion
 
-                    if (name == "jvm")
+                    if (name == "jvm") {
                         artifact(javadocJar!!.get())
+                    }
 
                     configurePom(project)
                 }

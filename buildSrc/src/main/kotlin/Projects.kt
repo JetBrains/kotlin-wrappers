@@ -7,11 +7,7 @@ internal fun Project.publishVersion(): String {
     val build = prop("version.build")
         .let { if (it.isNotEmpty()) "-$it" else "" }
 
-    val version = version(
-        name.removePrefix("kotlin-")
-            .takeIf { it != "extensions" }
-            ?: "kotlinext"
-    ) + build
+    val version = version(name.removePrefix("kotlin-")) + build
 
     val kotlinVersion: String = version("kotlin")
 
