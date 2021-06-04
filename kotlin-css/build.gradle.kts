@@ -10,10 +10,6 @@ kotlin {
         browser()
     }
 
-    iosArm32("iosArm32")
-    iosArm64("iosArm64")
-    iosX64("iosX64")
-
     sourceSets {
         val commonTest by getting {
             dependencies {
