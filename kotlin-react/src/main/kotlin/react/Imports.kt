@@ -144,10 +144,12 @@ external fun rawUseLayoutEffect(
 external fun <T> useContext(context: RContext<T>): T
 
 // Callback Hook (16.8+)
-external fun <T : Function<*>> useCallback(callback: T, dependencies: RDependenciesArray): T
+@JsName("useCallback")
+external fun <T : Function<*>> rawUseCallback(callback: T, dependencies: RDependenciesArray): T
 
 // Memo Hook (16.8+)
-external fun <T> useMemo(callback: () -> T, dependencies: RDependenciesArray): T
+@JsName("useMemo")
+external fun <T> rawUseMemo(callback: () -> T, dependencies: RDependenciesArray): T
 
 // Ref Hook (16.8+)
 external interface RMutableRef<T : Any> : RReadableRef<T> {

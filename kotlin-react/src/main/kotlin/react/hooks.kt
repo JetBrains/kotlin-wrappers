@@ -3,6 +3,10 @@
 package react
 
 typealias RDependenciesArray = Array<dynamic>
+
+/**
+ * @deprecated
+ */
 typealias RDependenciesList = List<dynamic>
 
 typealias RReducer<S, A> = (state: S, action: A) -> S
@@ -37,11 +41,59 @@ typealias RCleanup = () -> Unit
  * Only works inside [functionalComponent]
  * @see <a href="https://reactjs.org/docs/hooks-state.html#hooks-and-function-components">Hooks and Function Components</a>
  */
-fun useEffectWithCleanup(dependencies: RDependenciesList? = null, effect: () -> RCleanup) {
-    if (dependencies != null) {
-        rawUseEffect(effect, dependencies.toTypedArray())
-    } else {
-        rawUseEffect(effect)
+@Deprecated(
+    message = "Inconsistent hooks API (use cleanup method in your effect and arrayOf or emptyArray for dependencies)",
+)
+fun useEffectWithCleanup(dependencies: RDependenciesList, effect: () -> RCleanup) {
+    rawUseEffect(effect, dependencies.toTypedArray())
+}
+
+/**
+ * Only works inside [functionalComponent]
+ * @see <a href="https://reactjs.org/docs/hooks-state.html#hooks-and-function-components">Hooks and Function Components</a>
+ */
+@Deprecated(
+    message = "Inconsistent hooks API (use arrayOf or emptyArray for dependencies)",
+)
+fun useEffect(dependencies: RDependenciesList, effect: () -> Unit) {
+    val rawEffect = {
+        effect()
+        undefined
+    }
+    rawUseEffect(rawEffect, dependencies.toTypedArray())
+}
+
+/**
+ * Only works inside [functionalComponent]
+ * @see <a href="https://reactjs.org/docs/hooks-state.html#hooks-and-function-components">Hooks and Function Components</a>
+ */
+@Deprecated(
+    message = "Inconsistent hooks API (use cleanup method in your effect and arrayOf or emptyArray for dependencies)",
+)
+fun useLayoutEffectWithCleanup(dependencies: RDependenciesList, effect: () -> RCleanup) {
+    rawUseLayoutEffect(effect, dependencies.toTypedArray())
+}
+
+/**
+ * Only works inside [functionalComponent]
+ * @see <a href="https://reactjs.org/docs/hooks-state.html#hooks-and-function-components">Hooks and Function Components</a>
+ */
+@Deprecated(
+    message = "Inconsistent hooks API (use arrayOf or emptyArray for dependencies)",
+)
+fun useLayoutEffect(dependencies: RDependenciesList, effect: () -> Unit) {
+    val rawEffect = {
+        effect()
+        undefined
+    }
+    rawUseLayoutEffect(rawEffect, dependencies.toTypedArray())
+}
+
+class EffectBuilder {
+    var cleanupCallback: RCleanup? = undefined
+
+    fun cleanup(callback: RCleanup) {
+        cleanupCallback = callback
     }
 }
 
@@ -49,13 +101,16 @@ fun useEffectWithCleanup(dependencies: RDependenciesList? = null, effect: () -> 
  * Only works inside [functionalComponent]
  * @see <a href="https://reactjs.org/docs/hooks-state.html#hooks-and-function-components">Hooks and Function Components</a>
  */
-fun useEffect(dependencies: RDependenciesList? = null, effect: () -> Unit) {
+fun useEffect(dependencies: RDependenciesArray? = null, effect: EffectBuilder.() -> Unit) {
     val rawEffect = {
-        effect()
-        undefined
+        with(EffectBuilder()) {
+            effect()
+            cleanupCallback
+        }
     }
+
     if (dependencies != null) {
-        rawUseEffect(rawEffect, dependencies.toTypedArray())
+        rawUseEffect(rawEffect, dependencies)
     } else {
         rawUseEffect(rawEffect)
     }
@@ -65,25 +120,16 @@ fun useEffect(dependencies: RDependenciesList? = null, effect: () -> Unit) {
  * Only works inside [functionalComponent]
  * @see <a href="https://reactjs.org/docs/hooks-state.html#hooks-and-function-components">Hooks and Function Components</a>
  */
-fun useLayoutEffectWithCleanup(dependencies: RDependenciesList? = null, effect: () -> RCleanup) {
-    if (dependencies != null) {
-        rawUseLayoutEffect(effect, dependencies.toTypedArray())
-    } else {
-        rawUseLayoutEffect(effect)
-    }
-}
-
-/**
- * Only works inside [functionalComponent]
- * @see <a href="https://reactjs.org/docs/hooks-state.html#hooks-and-function-components">Hooks and Function Components</a>
- */
-fun useLayoutEffect(dependencies: RDependenciesList? = null, effect: () -> Unit) {
+fun useLayoutEffect(dependencies: RDependenciesArray? = null, effect: EffectBuilder.() -> Unit) {
     val rawEffect = {
-        effect()
-        undefined
+        with(EffectBuilder()) {
+            effect()
+            cleanupCallback
+        }
     }
+
     if (dependencies != null) {
-        rawUseLayoutEffect(rawEffect, dependencies.toTypedArray())
+        rawUseLayoutEffect(rawEffect, dependencies)
     } else {
         rawUseLayoutEffect(rawEffect)
     }
@@ -93,18 +139,74 @@ fun useLayoutEffect(dependencies: RDependenciesList? = null, effect: () -> Unit)
  * Only works inside [functionalComponent]
  * @see <a href="https://reactjs.org/docs/hooks-state.html#hooks-and-function-components">Hooks and Function Components</a>
  */
+@Deprecated(
+    message = "Inconsistent hooks API",
+    replaceWith = ReplaceWith("useCallback(dependencies, callback)")
+)
+inline fun <T : Function<*>> useCallback(
+    callback: T,
+    dependencies: RDependenciesArray
+): T =
+    rawUseCallback(callback, dependencies)
+
+/**
+ * Only works inside [functionalComponent]
+ * @see <a href="https://reactjs.org/docs/hooks-state.html#hooks-and-function-components">Hooks and Function Components</a>
+ */
+@Deprecated(
+    message = "Inconsistent hooks API",
+    replaceWith = ReplaceWith("useCallback(arrayOf(*dependencies), callback)")
+)
 inline fun <T : Function<*>> useCallback(
     vararg dependencies: dynamic,
     callback: T,
 ): T =
-    useCallback(callback, dependencies)
+    rawUseCallback(callback, dependencies)
+
+/**
+ * Only works inside [functionalComponent]
+ * @see <a href="https://reactjs.org/docs/hooks-state.html#hooks-and-function-components">Hooks and Function Components</a>
+ */
+inline fun <T : Function<*>> useCallback(
+    dependencies: RDependenciesArray,
+    callback: T,
+): T =
+    rawUseCallback(callback, dependencies)
+
+/**
+ * Only works inside [functionalComponent]
+ * @see <a href="https://reactjs.org/docs/hooks-state.html#hooks-and-function-components">Hooks and Function Components</a>
+ */
+@Deprecated(
+    message = "Inconsistent hooks API",
+    replaceWith = ReplaceWith("useMemo(dependencies, callback)")
+)
+inline fun <T> useMemo(
+    noinline callback: () -> T,
+    dependencies: RDependenciesArray
+): T =
+    rawUseMemo(callback, dependencies)
+
+/**
+ * Only works inside [functionalComponent]
+ * @see <a href="https://reactjs.org/docs/hooks-state.html#hooks-and-function-components">Hooks and Function Components</a>
+ */
+@Deprecated(
+    message = "Inconsistent hooks API",
+    replaceWith = ReplaceWith("useMemo(arrayOf(*dependencies), callback)")
+)
+inline fun <T> useMemo(
+    vararg dependencies: dynamic,
+    noinline callback: () -> T,
+): T =
+    rawUseMemo(callback, dependencies)
 
 /**
  * Only works inside [functionalComponent]
  * @see <a href="https://reactjs.org/docs/hooks-state.html#hooks-and-function-components">Hooks and Function Components</a>
  */
 inline fun <T> useMemo(
-    vararg dependencies: dynamic,
+    dependencies: RDependenciesArray,
     noinline callback: () -> T,
 ): T =
-    useMemo(callback, dependencies)
+    rawUseMemo(callback, dependencies)
