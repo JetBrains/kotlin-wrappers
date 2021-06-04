@@ -5,7 +5,7 @@ package react
 typealias RDependenciesArray = Array<dynamic>
 
 /**
- * @deprecated
+ * @deprecated use RDependenciesArray
  */
 typealias RDependenciesList = List<dynamic>
 
@@ -98,6 +98,17 @@ class EffectBuilder {
 }
 
 /**
+ * Example:
+ * ```
+ * useEffect(arrayOf(/* dependencies */)) {
+ *     // effect logic
+ *
+ *     cleanup {
+ *         // cleanup logic
+ *     }
+ * }
+ * ```
+ *
  * Only works inside [functionalComponent]
  * @see <a href="https://reactjs.org/docs/hooks-state.html#hooks-and-function-components">Hooks and Function Components</a>
  */
@@ -117,6 +128,17 @@ fun useEffect(dependencies: RDependenciesArray? = null, effect: EffectBuilder.()
 }
 
 /**
+ * Example:
+ * ```
+ * useLayoutEffect(arrayOf(/* dependencies */)) {
+ *     // effect logic
+ *
+ *     cleanup {
+ *         // cleanup logic
+ *     }
+ * }
+ * ```
+ *
  * Only works inside [functionalComponent]
  * @see <a href="https://reactjs.org/docs/hooks-state.html#hooks-and-function-components">Hooks and Function Components</a>
  */
