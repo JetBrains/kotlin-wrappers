@@ -15,6 +15,7 @@ subprojects {
     plugins.withType<KotlinJsPluginWrapper> {
         extensions.configure<KotlinJsProjectExtension> {
             js {
+                moduleName = project.name
                 browser()
             }
         }
