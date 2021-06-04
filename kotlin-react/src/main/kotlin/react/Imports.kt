@@ -1,5 +1,4 @@
 @file:JsModule("react")
-@file:JsNonModule
 
 package react
 

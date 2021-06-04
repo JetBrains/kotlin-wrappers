@@ -1,5 +1,4 @@
 @file:JsModule("redux")
-@file:JsNonModule
 
 package redux
 
