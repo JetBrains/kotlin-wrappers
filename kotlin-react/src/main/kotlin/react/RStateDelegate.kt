@@ -4,7 +4,17 @@ package react
 
 import kotlin.reflect.KProperty
 
-typealias RSetState<T> = (value: T) -> Unit
+// TODO: make external in IR
+class RSetState<T>
+private constructor() {
+    inline operator fun invoke(value: T) {
+        asDynamic()(value)
+    }
+
+    inline operator fun invoke(noinline transform: (T) -> T) {
+        asDynamic()(transform)
+    }
+}
 
 /**
  * Only works inside [functionalComponent]
