@@ -3,7 +3,7 @@
 package react
 
 // TODO: make external in IR
-class REffectBuilder
+class EffectBuilder
 private constructor() {
     inline fun cleanup(
         noinline block: RCleanup,
@@ -13,11 +13,11 @@ private constructor() {
 }
 
 internal fun useEffectCallback(
-    effect: REffectBuilder.() -> Unit,
+    effect: EffectBuilder.() -> Unit,
 ): () -> RCleanup? =
     useCallback(effect) {
         val cleanups = arrayOf<RCleanup>()
-        effect(cleanups.unsafeCast<REffectBuilder>())
+        effect(cleanups.unsafeCast<EffectBuilder>())
         buildCleanup(cleanups)
     }
 
