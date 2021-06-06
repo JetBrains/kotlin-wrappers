@@ -1,7 +1,7 @@
+import org.jetbrains.kotlin.gradle.dsl.KotlinCompile
 import org.jetbrains.kotlin.gradle.dsl.KotlinJsCompile
 import org.jetbrains.kotlin.gradle.dsl.KotlinJsProjectExtension
 import org.jetbrains.kotlin.gradle.plugin.KotlinJsPluginWrapper
-import org.jetbrains.kotlin.gradle.dsl.KotlinCompile
 
 plugins {
     kotlin("js") apply false
@@ -45,5 +45,5 @@ subprojects {
 }
 
 tasks.wrapper {
-    distributionType = Wrapper.DistributionType.ALL
+    gradleVersion = "6.9"
 }
