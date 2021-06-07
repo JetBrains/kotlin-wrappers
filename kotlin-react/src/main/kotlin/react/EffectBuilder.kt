@@ -14,12 +14,11 @@ private constructor() {
 
 internal fun createEffectCallback(
     effect: EffectBuilder.() -> Unit,
-): () -> RCleanup? =
-    {
-        val cleanups = arrayOf<RCleanup>()
-        effect(cleanups.unsafeCast<EffectBuilder>())
-        buildCleanup(cleanups)
-    }
+): () -> RCleanup? = {
+    val cleanups = arrayOf<RCleanup>()
+    effect(cleanups.unsafeCast<EffectBuilder>())
+    buildCleanup(cleanups)
+}
 
 private fun buildCleanup(
     cleanups: Array<out RCleanup>,
