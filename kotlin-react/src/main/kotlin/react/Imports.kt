@@ -107,15 +107,15 @@ external interface ProfilerProps : RProps {
 external val Profiler: RClass<ProfilerProps>
 
 // State Hook (16.8+)
-external fun <T : Any> useState(): RStateDelegate<T?>
+external fun <T : Any> useState(): StateInstance<T?>
 
 external fun <T> useState(
     initValue: T,
-): RStateDelegate<T>
+): StateInstance<T>
 
 external fun <T> useState(
     valueInitializer: () -> T,
-): RStateDelegate<T>
+): StateInstance<T>
 
 // Reducer Hook (16.8+)
 @JsName("useReducer")
