@@ -7,8 +7,8 @@ package react
 fun useLayoutEffect(
     effect: EffectBuilder.() -> Unit,
 ) {
-    val effectCallback = useEffectCallback(effect)
-    rawUseLayoutEffect(effectCallback)
+    val callback = useEffectCallback(effect)
+    rawUseLayoutEffect(callback)
 }
 
 /**
@@ -19,8 +19,8 @@ fun useLayoutEffect(
     vararg dependencies: dynamic,
     effect: EffectBuilder.() -> Unit,
 ) {
-    val effectCallback = useEffectCallback(effect)
-    rawUseLayoutEffect(effectCallback, dependencies)
+    val callback = useEffectCallback(effect)
+    rawUseLayoutEffect(callback, dependencies)
 }
 
 /**
@@ -30,8 +30,8 @@ fun useLayoutEffect(
 fun useLayoutEffectOnce(
     effect: EffectBuilder.() -> Unit,
 ) {
-    val effectCallback = useEffectCallback(effect)
-    rawUseLayoutEffect(effectCallback, emptyArray())
+    val callback = useEffectCallback(effect)
+    rawUseLayoutEffect(callback, emptyArray())
 }
 
 /**
@@ -63,10 +63,10 @@ fun useLayoutEffect(
     dependencies: RDependenciesList? = null,
     effect: EffectBuilder.() -> Unit,
 ) {
-    val effectCallback = useEffectCallback(effect)
+    val callback = useEffectCallback(effect)
     if (dependencies != null) {
-        rawUseLayoutEffect(effectCallback, dependencies.toTypedArray())
+        rawUseLayoutEffect(callback, dependencies.toTypedArray())
     } else {
-        rawUseLayoutEffect(effectCallback)
+        rawUseLayoutEffect(callback)
     }
 }

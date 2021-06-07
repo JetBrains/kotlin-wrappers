@@ -12,8 +12,8 @@ typealias RCleanup = () -> Unit
 fun useEffect(
     effect: EffectBuilder.() -> Unit,
 ) {
-    val effectCallback = useEffectCallback(effect)
-    rawUseEffect(effectCallback)
+    val callback = useEffectCallback(effect)
+    rawUseEffect(callback)
 }
 
 /**
@@ -24,8 +24,8 @@ fun useEffect(
     vararg dependencies: dynamic,
     effect: EffectBuilder.() -> Unit,
 ) {
-    val effectCallback = useEffectCallback(effect)
-    rawUseEffect(effectCallback, dependencies)
+    val callback = useEffectCallback(effect)
+    rawUseEffect(callback, dependencies)
 }
 
 /**
@@ -35,8 +35,8 @@ fun useEffect(
 fun useEffectOnce(
     effect: EffectBuilder.() -> Unit,
 ) {
-    val effectCallback = useEffectCallback(effect)
-    rawUseEffect(effectCallback, emptyArray())
+    val callback = useEffectCallback(effect)
+    rawUseEffect(callback, emptyArray())
 }
 
 /**
@@ -68,10 +68,10 @@ fun useEffect(
     dependencies: RDependenciesList? = null,
     effect: EffectBuilder.() -> Unit,
 ) {
-    val effectCallback = useEffectCallback(effect)
+    val callback = useEffectCallback(effect)
     if (dependencies != null) {
-        rawUseEffect(effectCallback, dependencies.toTypedArray())
+        rawUseEffect(callback, dependencies.toTypedArray())
     } else {
-        rawUseEffect(effectCallback)
+        rawUseEffect(callback)
     }
 }
