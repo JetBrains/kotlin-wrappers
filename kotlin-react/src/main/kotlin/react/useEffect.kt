@@ -1,6 +1,6 @@
 package react
 
-typealias RDependenciesArray = Array<dynamic>
+typealias RDependenciesArray = Array<out dynamic>
 typealias RDependenciesList = List<dynamic>
 
 typealias RCleanup = () -> Unit
