@@ -110,20 +110,28 @@ external val Profiler: RClass<ProfilerProps>
 external fun <T : Any> useState(): StateInstance<T?>
 
 external fun <T> useState(
-    initValue: T,
+    initialValue: T,
 ): StateInstance<T>
 
 external fun <T> useState(
-    valueInitializer: () -> T,
+    initializer: () -> T,
 ): StateInstance<T>
 
 // Reducer Hook (16.8+)
-@JsName("useReducer")
-external fun <S, A> rawUseReducer(
+external fun <S, A, I> useReducer(
+    reducer: RReducer<S, A>,
+    initializerArg: I,
+    initializer: (I) -> S,
+): ReducerInstance<S, A>
+
+external fun <S, A> useReducer(
     reducer: RReducer<S, A>,
     initialState: S,
-    initialAction: A = definedExternally
-): RDependenciesArray
+): ReducerInstance<S, A>
+
+external fun <S : Any, A> useReducer(
+    reducer: RReducer<S?, A>,
+): ReducerInstance<S?, A>
 
 // Effect Hook (16.8+)
 @JsName("useEffect")
