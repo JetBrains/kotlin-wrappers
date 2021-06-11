@@ -293,14 +293,14 @@ external interface UseTableHooks<D: Any> {
     var prepareRow: Array<out (row: Row<D>, meta: Meta<D>) -> Unit>
     var useControlledState: Array<out (state: TableState<D>, meta: Meta<D>) -> TableState<D>>
 
-    var tableProps: Array<out TablePropGetter<D>>
-    var tableBodyProps: Array<out TableBodyPropGetter<D>>
-    var headerGroupProps: Array<out HeaderGroupPropGetter<D>>
-    var footerGroupProps: Array<out FooterGroupPropGetter<D>>
-    var headerProps: Array<out HeaderPropGetter<D>>
-    var footerProps: Array<out FooterPropGetter<D>>
-    var rowProps: Array<out RowPropGetter<D>>
-    var cellProps: Array<out CellPropGetter<D, *>>
+    var getTableProps: Array<out TablePropGetter<D>>
+    var getTableBodyProps: Array<out TableBodyPropGetter<D>>
+    var getHeaderGroupProps: Array<out HeaderGroupPropGetter<D>>
+    var getFooterGroupProps: Array<out FooterGroupPropGetter<D>>
+    var getHeaderProps: Array<out HeaderPropGetter<D>>
+    var getFooterProps: Array<out FooterPropGetter<D>>
+    var getRowProps: Array<out RowPropGetter<D>>
+    var getCellProps: Array<out CellPropGetter<D, *>>
     var useFinalInstance: Array<out (instance: TableInstance<D>) -> Unit>
 }
 
