@@ -77,9 +77,9 @@ external interface CellMeta<D: Any, V> : Meta<D> {
 
 external interface TableCommonProps : RProps {
     // CSSProperties
-    val style: dynamic
-    val className: String
-    val role: String
+    var style: dynamic
+    var className: String?
+    var role: String?
 }
 
 external interface TableKeyedProps : TableCommonProps {
