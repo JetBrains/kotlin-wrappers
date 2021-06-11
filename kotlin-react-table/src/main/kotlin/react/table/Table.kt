@@ -325,7 +325,7 @@ typealias IdType<D> = String
 typealias CellValue = Any
 typealias ReactKey = String
 
-typealias PropGetter<Props, Meta> = (Props, Meta) -> Array<out Props>
+typealias PropGetter<Props, Meta> = (Props, Meta) -> Props
 
 typealias HeaderGroupPropGetter<D> = PropGetter<TableHeaderGroupProps, ColumnMeta<D>>
 typealias FooterGroupPropGetter<D> = PropGetter<TableFooterGroupProps, ColumnMeta<D>>
