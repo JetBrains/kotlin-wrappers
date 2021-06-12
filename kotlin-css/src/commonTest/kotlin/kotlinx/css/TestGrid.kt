@@ -67,7 +67,7 @@ class TestGrid {
 
         assertEquals(
             """
-                grid-auto-columns: min-max(auto, max(auto, min-max(10px, 20px)));
+                grid-auto-columns: minmax(auto, max(auto, minmax(10px, 20px)));
     
             """.trimIndent(),
             cssBuilder.toString(),
@@ -121,7 +121,7 @@ class TestGrid {
 
         assertEquals(
             """
-                grid-auto-columns: min-max(10fr, 20fr);
+                grid-auto-columns: minmax(10fr, 20fr);
     
             """.trimIndent(),
             cssBuilder.toString(),
@@ -139,7 +139,7 @@ class TestGrid {
 
         assertEquals(
             """
-                grid-auto-columns: min-max(auto, 10fr);
+                grid-auto-columns: minmax(auto, 10fr);
     
             """.trimIndent(),
             cssBuilder.toString(),
@@ -355,7 +355,7 @@ class TestGrid {
 
         assertEquals(
             """
-                grid-auto-rows: min-max(auto, max(auto, min-max(10px, 20px)));
+                grid-auto-rows: minmax(auto, max(auto, minmax(10px, 20px)));
     
             """.trimIndent(),
             cssBuilder.toString(),
@@ -409,7 +409,7 @@ class TestGrid {
 
         assertEquals(
             """
-                grid-auto-rows: min-max(10fr, 20fr);
+                grid-auto-rows: minmax(10fr, 20fr);
     
             """.trimIndent(),
             cssBuilder.toString(),
@@ -427,7 +427,7 @@ class TestGrid {
 
         assertEquals(
             """
-                grid-auto-rows: min-max(auto, 10fr);
+                grid-auto-rows: minmax(auto, 10fr);
     
             """.trimIndent(),
             cssBuilder.toString(),
