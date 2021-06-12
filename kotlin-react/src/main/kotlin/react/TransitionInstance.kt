@@ -5,7 +5,7 @@ package react
 class TransitionInstance
 private constructor() {
     inline operator fun component1(): Boolean = asDynamic()[0] // isPending
-    inline operator fun component2(): () -> Unit = asDynamic()[1] // startTransition
+    inline operator fun component2(): (callback: () -> Unit) -> Unit = asDynamic()[1] // startTransition
 }
 
 external interface TransitionOptions {
