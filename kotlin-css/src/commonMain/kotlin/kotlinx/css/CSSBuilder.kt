@@ -20,7 +20,7 @@ interface RuleContainer {
                 append(builder)
                 append("}\n")
             } else {
-                append("${rule.selector}\n")
+                append("${rule.selector};\n")
             }
         }
         rules.distinctBy(Rule::selector).forEach(::appendRule)

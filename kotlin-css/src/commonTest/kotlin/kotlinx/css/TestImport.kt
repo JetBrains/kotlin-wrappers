@@ -7,7 +7,7 @@ class TestImport {
     @Test
     fun testImport() {
         val builder = CSSBuilder().apply {
-            import("url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');")
+            import("url('https://fonts.googleapis.com/css2?family=Roboto&display=swap')")
             p {
                 fontFamily = "'Roboto', sans-serif"
             }
