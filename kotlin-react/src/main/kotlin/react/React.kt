@@ -37,7 +37,7 @@ val <P : RProps> KClass<out Component<P, *>>.rClass: RClass<P>
     get() = js.unsafeCast<RClass<P>>()
 
 // 16.6+
-fun SuspenseProps.fallback(handler: RBuilder.() -> Unit) {
+fun SuspenseProps.fallback(handler: RRender) {
     asDynamic().fallback = buildElements(handler)
 }
 

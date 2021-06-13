@@ -1,7 +1,7 @@
 package react.dom.server
 
-import react.RBuilder
+import react.*
 
-fun renderToString(handler: RBuilder.() -> Unit) = rawRenderToString(react.buildElements(handler))
+fun renderToString(handler: RRender) = rawRenderToString(buildElements(handler))
 
-fun renderToStaticMarkup(handler: RBuilder.() -> Unit) = rawRenderToStaticMarkup(react.buildElements(handler))
+fun renderToStaticMarkup(handler: RRender) = rawRenderToStaticMarkup(buildElements(handler))
