@@ -173,6 +173,6 @@ external fun <T : Any> useDebugValue(
 )
 
 // Transitions (18.0+)
-external fun startTransition(callback: () -> Unit)
+external fun startTransition(scope: TransitionFunction)
 
 external fun useTransition(options: TransitionOptions = definedExternally) : TransitionInstance

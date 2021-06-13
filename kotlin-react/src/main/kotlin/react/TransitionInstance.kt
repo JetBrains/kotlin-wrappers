@@ -2,10 +2,16 @@
 
 package react
 
+typealias TransitionFunction = () -> Unit
+typealias TransitionStartFunction = (callback: TransitionFunction) -> Unit
+
 class TransitionInstance
 private constructor() {
-    inline operator fun component1(): Boolean = asDynamic()[0] // isPending
-    inline operator fun component2(): (callback: () -> Unit) -> Unit = asDynamic()[1] // startTransition
+    // isPending
+    inline operator fun component1(): Boolean = asDynamic()[0]
+
+    // startTransition
+    inline operator fun component2(): TransitionStartFunction = asDynamic()[1]
 }
 
 external interface TransitionOptions {
