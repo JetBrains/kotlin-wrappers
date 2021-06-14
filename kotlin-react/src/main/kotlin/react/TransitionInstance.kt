@@ -13,7 +13,3 @@ private constructor() {
     // startTransition
     inline operator fun component2(): TransitionStartFunction = asDynamic()[1]
 }
-
-external interface TransitionOptions {
-    var timeoutMs: Int
-}
