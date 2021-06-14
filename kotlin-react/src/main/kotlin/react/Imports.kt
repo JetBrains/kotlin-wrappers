@@ -100,7 +100,7 @@ external interface ProfilerProps : RProps {
         baseDuration: Number,
         startTime: Number,
         commitTime: Number,
-        interactions: dynamic
+        interactions: dynamic,
     ) -> Unit
 }
 
@@ -137,14 +137,14 @@ external fun <S : Any, A> useReducer(
 @JsName("useEffect")
 external fun rawUseEffect(
     effect: () -> dynamic,
-    dependencies: RDependenciesArray = definedExternally
+    dependencies: RDependenciesArray = definedExternally,
 )
 
 // Layout Effect Hook (16.8+)
 @JsName("useLayoutEffect")
 external fun rawUseLayoutEffect(
     effect: () -> dynamic,
-    dependencies: RDependenciesArray = definedExternally
+    dependencies: RDependenciesArray = definedExternally,
 )
 
 // Context Hook (16.8+)
@@ -154,14 +154,14 @@ external fun <T> useContext(context: RContext<T>): T
 @JsName("useCallback")
 external fun <T : Function<*>> rawUseCallback(
     callback: T,
-    dependencies: RDependenciesArray
+    dependencies: RDependenciesArray,
 ): T
 
 // Memo Hook (16.8+)
 @JsName("useMemo")
 external fun <T> rawUseMemo(
     callback: () -> T,
-    dependencies: RDependenciesArray
+    dependencies: RDependenciesArray,
 ): T
 
 // Ref Hook (16.8+)
@@ -177,10 +177,12 @@ external fun useImperativeHandle(ref: RRef, createInstance: () -> dynamic, input
 // Debug Value Hook (16.8+)
 external fun <T : Any> useDebugValue(
     value: T,
-    format: (value: T) -> Any = definedExternally
+    format: (value: T) -> Any = definedExternally,
 )
 
 // Transitions (18.0+)
 external fun startTransition(scope: TransitionFunction)
 
-external fun useTransition(options: TransitionOptions = definedExternally): TransitionInstance
+external fun useTransition(
+    config: SuspenseConfig = definedExternally,
+): TransitionInstance
