@@ -169,6 +169,7 @@ fun injectGlobal(string: String) {
 }
 
 @JsModule("react")
+@JsNonModule
 external object ReactModule
 
 private fun <T> devOverrideUseRef(action: () -> T): T {

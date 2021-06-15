@@ -15,6 +15,7 @@ import react.dom.*
 import kotlin.js.*
 
 @JsModule("axios")
+@JsNonModule
 external fun <T> axios(config: AxiosConfigSettings): Promise<AxiosResponse<T>>
 
 // Type definition

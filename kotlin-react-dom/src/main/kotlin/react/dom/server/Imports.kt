@@ -1,4 +1,5 @@
 @file:JsModule("react-dom/server")
+@file:JsNonModule
 
 package react.dom.server
 

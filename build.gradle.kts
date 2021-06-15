@@ -22,8 +22,6 @@ subprojects {
 
         tasks.withType<KotlinJsCompile>().configureEach {
             kotlinOptions {
-                moduleKind = "commonjs"
-
                 if (name == "compileKotlinJs") {
                     outputFile = jsOutputFile
                     sourceMapEmbedSources = "always"
