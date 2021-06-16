@@ -5,9 +5,11 @@ import kotlinext.js.jsObject
 import react.RProps
 
 fun <T : RProps> useParams(): T? {
-    val rawParams = rawUseParams()
+    val params = rawUseParams()
 
-    return if (Object.keys(rawParams as Any).isEmpty()) null else rawParams as T
+    return if (Object.keys(params).isNotEmpty()) {
+        params.unsafeCast<T>()
+    } else null
 }
 
 fun <T : RProps> useRouteMatch(
