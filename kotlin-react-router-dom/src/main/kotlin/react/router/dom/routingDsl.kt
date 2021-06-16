@@ -2,7 +2,7 @@ package react.router.dom
 
 import kotlinext.js.jsObject
 import react.*
-import kotlin.reflect.*
+import kotlin.reflect.KClass
 
 @Suppress("EnumEntryName")
 enum class HashType {
@@ -14,7 +14,7 @@ fun RBuilder.hashRouter(
     hashType: HashType = HashType.slash,
     getUserConfirmation: GetUserConfirmation? = null,
     handler: RHandler<RProps>
-) = child(HashRouterComponent::class) {
+) = HashRouterComponent {
     attrs {
         this.basename = basename
         this.hashType = hashType.name
@@ -30,7 +30,7 @@ fun RBuilder.browserRouter(
     forceRefresh: Boolean = false,
     keyLength: Int = 6,
     handler: RHandler<RProps>
-) = child(BrowserRouterComponent::class) {
+) = BrowserRouterComponent {
     attrs {
         this.basename = basename
         this.getUserConfirmation = getUserConfirmation
@@ -41,7 +41,9 @@ fun RBuilder.browserRouter(
     handler.invoke(this)
 }
 
-fun RBuilder.switch(handler: RHandler<RProps>) = child(SwitchComponent::class, handler)
+fun RBuilder.switch(
+    handler: RHandler<RProps>,
+) = SwitchComponent(handler)
 
 fun RBuilder.route(
     vararg path: String,
@@ -96,7 +98,7 @@ fun RBuilder.routeLink(
     replace: Boolean = false,
     className: String? = null,
     handler: RHandler<RProps>?
-) = child(LinkComponent::class) {
+) = LinkComponent {
     attrs {
         this.to = to
         this.replace = replace
@@ -133,7 +135,7 @@ fun RBuilder.redirect(
     push: Boolean = false,
     exact: Boolean = false,
     strict: Boolean = false
-) = child(RedirectComponent::class) {
+) = RedirectComponent {
     attrs {
         this.from = from
         this.to = to
@@ -158,5 +160,5 @@ fun <T : RProps> matchPath(
         this.sensitive = sensitive
     }
 
-    return rawMatchPath(patName,options)
+    return rawMatchPath(patName, options)
 }
