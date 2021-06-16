@@ -6,19 +6,13 @@ package react.router.dom
 import react.*
 
 @JsName("HashRouter")
-external class HashRouterComponent : Component<HashRouterProps, RState> {
-    override fun render(): ReactElement?
-}
+external val HashRouterComponent: RClass<HashRouterProps>
 
 @JsName("BrowserRouter")
-external class BrowserRouterComponent : Component<BrowserRouterProps, RState> {
-    override fun render(): ReactElement?
-}
+external val BrowserRouterComponent: RClass<BrowserRouterProps>
 
 @JsName("Switch")
-external class SwitchComponent : Component<RProps, RState> {
-    override fun render(): ReactElement?
-}
+external val SwitchComponent: RClass<RProps>
 
 @JsName("Route")
 external class RouteComponent<T : RProps> : Component<RouteProps<T>, RState> {
@@ -26,9 +20,7 @@ external class RouteComponent<T : RProps> : Component<RouteProps<T>, RState> {
 }
 
 @JsName("Link")
-external class LinkComponent : Component<LinkProps, RState> {
-    override fun render(): ReactElement?
-}
+external val LinkComponent: RClass<LinkProps>
 
 @JsName("NavLink")
 external class NavLinkComponent<T : RProps> : Component<NavLinkProps<T>, RState> {
@@ -36,9 +28,7 @@ external class NavLinkComponent<T : RProps> : Component<NavLinkProps<T>, RState>
 }
 
 @JsName("Redirect")
-external class RedirectComponent : Component<RedirectProps, RState> {
-    override fun render(): ReactElement?
-}
+external val RedirectComponent: RClass<RedirectProps>
 
 external interface BrowserRouterProps : RProps {
     var basename: String
@@ -87,7 +77,7 @@ external interface RouteResultHistory {
     var location: RouteResultLocation
 
     fun push(path: String, state: dynamic = definedExternally)
-    fun replace(path: String, state: dynamic = definedExternally) 
+    fun replace(path: String, state: dynamic = definedExternally)
     fun go(n: Int)
     fun goBack()
     fun goForward()
