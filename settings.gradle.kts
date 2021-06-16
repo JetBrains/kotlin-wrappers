@@ -39,6 +39,8 @@ include("kotlin-react-table")
 // Kotlin/JS: styled-components wrappers
 include("kotlin-styled")
 
+include("kotlin-wrappers-bom")
+
 // Examples
 include("examples")
 

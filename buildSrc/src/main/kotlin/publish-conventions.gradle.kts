@@ -45,6 +45,15 @@ configure<PublishingExtension> {
 
                     configurePom(project)
                 }
+
+            else ->
+                create<MavenPublication>("bom") {
+                    from(components["javaPlatform"])
+
+                    groupId = project.group.toString()
+                    artifactId = project.name
+                    version = publishVersion
+                }
         }
     }
 
