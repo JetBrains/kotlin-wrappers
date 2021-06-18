@@ -53,6 +53,8 @@ configure<PublishingExtension> {
                     groupId = project.group.toString()
                     artifactId = project.name
                     version = publishVersion
+
+                    configurePom(project)
                 }
         }
     }
