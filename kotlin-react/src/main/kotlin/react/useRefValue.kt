@@ -6,18 +6,18 @@ package react
 
 import kotlin.reflect.KProperty
 
-inline fun <T : Any> useRefValue(): RefDelegate<T?> =
+inline fun <T : Any> useRefValue(): RefValueInstance<T?> =
     useRef<T>()
-        .unsafeCast<RefDelegate<T?>>()
+        .unsafeCast<RefValueInstance<T?>>()
 
 inline fun <T : Any> useRefValue(
     initialValue: T,
-): RefDelegate<T> =
+): RefValueInstance<T> =
     useRef(initialValue)
-        .unsafeCast<RefDelegate<T>>()
+        .unsafeCast<RefValueInstance<T>>()
 
 // TODO: make external in IR
-class RefDelegate<T>
+class RefValueInstance<T>
 private constructor() {
     inline operator fun getValue(
         thisRef: Nothing?,
