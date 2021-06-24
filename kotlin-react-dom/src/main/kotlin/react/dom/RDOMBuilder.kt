@@ -1,8 +1,8 @@
 package react.dom
 
-import kotlinext.js.*
+import kotlinext.js.jsObject
 import kotlinx.html.*
-import org.w3c.dom.events.*
+import org.w3c.dom.events.Event
 import react.*
 
 external interface InnerHTML {
@@ -19,11 +19,6 @@ external interface DOMProps : WithClassName {
 
 @ReactDsl
 interface RDOMBuilder<out T : Tag> : RBuilder {
-    fun setProp(attribute: String, value: Any?) {
-        val key = fixAttributeName(attribute)
-        domProps.asDynamic()[key] = value
-    }
-
     val consumer: TagConsumer<Unit>
     val attrs: T
 
@@ -85,7 +80,11 @@ inline fun <T : Tag> RDOMBuilder<T>.attrs(handler: T.() -> Unit) {
 open class RDOMBuilderImpl<out T : Tag>(factory: (TagConsumer<Unit>) -> T) : RDOMBuilder<T>, RBuilderImpl() {
     final override val consumer = object : TagConsumer<Unit> {
         override fun onTagAttributeChange(tag: Tag, attribute: String, value: String?) {
-            setProp(attribute, value)
+            if (attribute == jsStyleMarker) {
+                setProp("style", attrs.jsStyle)
+            } else {
+                setProp(attribute, value)
+            }
         }
 
         override fun onTagComment(content: CharSequence) {
@@ -131,6 +130,18 @@ open class RDOMBuilderImpl<out T : Tag>(factory: (TagConsumer<Unit>) -> T) : RDO
     final override val domProps: DOMProps = jsObject()
 
     init {
-        attrs.attributesEntries.forEach { setProp(it.key, it.value) }
+        attrs.attributesEntries
+            .filter { it.key != jsStyleMarker }
+            .forEach { setProp(it.key, it.value) }
+
+        val jsStyle = attrs.jsStyle
+        if (jsStyle != undefined) {
+            setProp("style", jsStyle)
+        }
     }
+}
+
+fun <T : Tag> RDOMBuilder<T>.setProp(attribute: String, value: Any?) {
+    val key = fixAttributeName(attribute)
+    domProps.asDynamic()[key] = value
 }

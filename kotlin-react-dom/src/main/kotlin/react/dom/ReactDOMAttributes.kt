@@ -2,6 +2,7 @@ package react.dom
 
 import kotlinext.js.*
 import kotlinx.html.*
+import kotlinx.html.attributes.booleanEncode
 import kotlin.reflect.*
 
 private val events = listOf(
@@ -228,13 +229,16 @@ var TEXTAREA.value by StringAttr
 
 var Tag.jsStyle: dynamic
     get() {
-        val value = attributes["style"] ?: js {}
+        val value = asDynamic()[jsStyleMarker] ?: js {}
         jsStyle = value
         return value
     }
     set(value) {
-        attributes["style"] = value
+        asDynamic()[jsStyleMarker] = value
+        attributes[jsStyleMarker] = value.hashCode().toString()
     }
+
+const val jsStyleMarker = "${"$"}style${"$"}"
 
 inline fun Tag.jsStyle(handler: dynamic.() -> Unit) =
     handler(jsStyle)
