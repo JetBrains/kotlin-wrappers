@@ -36,6 +36,9 @@ include("kotlin-react-router-dom")
 // Kotlin/JS: React Table wrappers
 include("kotlin-react-table")
 
+// Kotlin/JS: Ring UI wrappers
+include("kotlin-ring-ui")
+
 // Kotlin/JS: styled-components wrappers
 include("kotlin-styled")
 

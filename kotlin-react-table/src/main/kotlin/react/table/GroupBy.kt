@@ -48,7 +48,7 @@ external interface UseGroupByState<D: Any> {
 
 external interface UseGroupByColumnOptions<D: Any> {
     val aggregate: Aggregator
-    val Aggregated: FunctionalComponent<CellProps<D, *>>
+    val Aggregated: FC<CellProps<D, *>>
     val disableGroupBy: Boolean
     val defaultCanGroupBy: Boolean
 }

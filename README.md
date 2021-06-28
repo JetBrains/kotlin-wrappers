@@ -21,6 +21,7 @@ To learn more please refer to the READMEs of individual modules.
 | [kotlin-react-router-dom](kotlin-react-router-dom/README.md) | [![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-react-router-dom)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-react-router-dom) |
 | [kotlin-react-table](kotlin-react-table/README.md) | [![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-react-table)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-react-table) |
 | [kotlin-redux](kotlin-redux/README.md) | [![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-redux)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-redux) |
+| [kotlin-ring-ui](kotlin-ring-ui/README.md) | [![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-ring-ui)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-ring-ui) |
 | [kotlin-styled](kotlin-styled/README.md) | [![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-styled)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-styled) |
 | kotlin-wrappers-bom | [![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-wrappers-bom)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-wrappers-bom) |
 
