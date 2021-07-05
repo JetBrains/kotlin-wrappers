@@ -12,6 +12,9 @@ pluginManagement {
     }
 }
 
+// Examples
+include("examples")
+
 // Platform-agnostic CSS support
 include("kotlin-css")
 
@@ -24,17 +27,21 @@ include("kotlin-extensions")
 
 // Kotlin/JS: React wrappers
 include("kotlin-react")
+
+// Kotlin/JS: React DOM wrappers
 include("kotlin-react-dom")
 
-// Kotlin/JS: Redux wrappers
+// Kotlin/JS: React Redux wrappers
 include("kotlin-react-redux")
-include("kotlin-redux")
 
 // Kotlin/JS: React Router wrappers
 include("kotlin-react-router-dom")
 
 // Kotlin/JS: React Table wrappers
 include("kotlin-react-table")
+
+// Kotlin/JS: Redux wrappers
+include("kotlin-redux")
 
 // Kotlin/JS: Ring UI wrappers
 include("kotlin-ring-ui")
@@ -43,8 +50,3 @@ include("kotlin-ring-ui")
 include("kotlin-styled")
 
 include("kotlin-wrappers-bom")
-
-// Examples
-include("examples")
-
-
