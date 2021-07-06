@@ -35,7 +35,7 @@ external interface InfiniteData<TData> {
 external interface QueryOptions<TQueryFnData, TError, TData, TQueryKey : QueryKey> {
     var retry: RetryValue<TError>
     var retryDelay: RetryDelayValue<TError>
-    var cacheTime: Number
+    var cacheTime: JsDuration
     var isDataEqual: (oldData: TData?, newData: TData) -> Boolean
     var queryFn: QueryFunction<TQueryFnData, TQueryKey>
     var queryHash: String
@@ -53,7 +53,7 @@ external interface QueryOptions<TQueryFnData, TError, TData, TQueryKey : QueryKe
 external interface QueryObserverOptions<TQueryFnData, TError, TData, TQueryData, TQueryKey : QueryKey>
     : QueryOptions<TQueryFnData, TError, TQueryData, TQueryKey> {
     var enabled: Boolean
-    var staleTime: Number
+    var staleTime: JsDuration
     var refetchInterval: dynamic
     var refetchIntervalInBackground: Boolean
     var refetchOnWindowFocus: dynamic
@@ -78,7 +78,7 @@ external interface InfiniteQueryObserverOptions<TQueryFnData, TError, TData, TQu
 
 external interface FetchQueryOptions<TQueryFnData, TError, TData, TQueryKey : QueryKey>
     : QueryOptions<TQueryFnData, TError, TData, TQueryKey> {
-    var staleTime: Number
+    var staleTime: JsDuration
 }
 
 external interface FetchInfiniteQueryOptions<TQueryFnData, TError, TData, TQueryKey : QueryKey>
@@ -117,10 +117,10 @@ typealias QueryStatus = Status /* 'idle' | 'loading' | 'error' | 'success' */
 
 external interface QueryObserverBaseResult<TData, TError> {
     val data: TData?
-    val dataUpdatedAt: Number
+    val dataUpdatedAt: JsTimestamp
     val error: TError?
-    val errorUpdatedAt: Number
-    val failureCount: Number
+    val errorUpdatedAt: JsTimestamp
+    val failureCount: Int
     val isError: Boolean
     val isFetched: Boolean
     val isFetchedAfterMount: Boolean

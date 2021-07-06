@@ -11,7 +11,7 @@
 package react.query
 
 external interface MutationConfig<TData, TError, TVariables, TContext> {
-    var mutationId: Number
+    var mutationId: Int
     var mutationCache: MutationCache
     var options: MutationOptions<TData, TError, TVariables, TContext>
     var defaultOptions: MutationOptions<TData, TError, TVariables, TContext>
@@ -22,7 +22,7 @@ external interface MutationState<TData, TError, TVariables, TContext> {
     var context: TContext?
     var data: TData?
     var error: TError?
-    var failureCount: Number
+    var failureCount: Int
     var isPaused: Boolean
     var status: MutationStatus
     var variables: TVariables?
@@ -66,7 +66,7 @@ typealias MutationAction<TData, TError, TVariables, TContext> = Union /* Continu
 open external class Mutation<TData, TError, TVariables, TContext>(config: MutationConfig<TData, TError, TVariables, TContext>) {
     open var state: MutationState<TData, TError, TVariables, TContext>
     open var options: MutationOptions<TData, TError, TVariables, TContext>
-    open var mutationId: Number
+    open var mutationId: Int
     open fun setState(state: MutationState<TData, TError, TVariables, TContext>)
     open fun addObserver(observer: MutationObserver<*, *, *, *>)
     open fun removeObserver(observer: MutationObserver<*, *, *, *>)

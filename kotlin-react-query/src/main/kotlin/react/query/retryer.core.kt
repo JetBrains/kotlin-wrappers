@@ -14,20 +14,20 @@ external interface RetryerConfig<TData, TError> {
     var fn: () -> dynamic
     var onError: (error: TError) -> Unit
     var onSuccess: (data: TData) -> Unit
-    var onFail: (failureCount: Number, error: TError) -> Unit
+    var onFail: (failureCount: Int, error: TError) -> Unit
     var onPause: () -> Unit
     var onContinue: () -> Unit
     var retry: RetryValue<TError>
     var retryDelay: RetryDelayValue<TError>
 }
 
-typealias RetryValue<TError> = Union /* boolean | number | ShouldRetryFunction<TError> */
+typealias RetryValue<TError> = ShouldRetryFunction<TError>
 
-typealias ShouldRetryFunction<TError> = (failureCount: Number, error: TError) -> Boolean
+typealias ShouldRetryFunction<TError> = (failureCount: Int, error: TError) -> Boolean
 
-typealias RetryDelayValue<TError> = Union /* number | RetryDelayFunction<TError> */
+typealias RetryDelayValue<TError> = RetryDelayFunction<TError>
 
-typealias RetryDelayFunction<TError> = (failureCount: Number, error: TError) -> Number
+typealias RetryDelayFunction<TError> = (failureCount: Int, error: TError) -> Int
 
 external interface Cancelable {
     fun cancel()
@@ -51,7 +51,7 @@ open external class Retryer<TData, TError>(config: RetryerConfig<TData, TError>)
     open var cancel: (options: CancelOptions?) -> Unit
     open var cancelRetry: () -> Unit
     open var `continue`: () -> Unit
-    open var failureCount: Number
+    open var failureCount: Int
     open var isPaused: Boolean
     open var isResolved: Boolean
     open var isTransportCancelable: Boolean

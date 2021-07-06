@@ -14,13 +14,13 @@ external interface QueryClientConfig {
 open external class QueryClient(config: QueryClientConfig = definedExternally) {
     open fun mount()
     open fun unmount()
-    open fun isFetching(filters: QueryFilters = definedExternally): Number
+    open fun isFetching(filters: QueryFilters = definedExternally): Int
     open fun isFetching(
         queryKey: QueryKey = definedExternally,
         filters: QueryFilters = definedExternally,
-    ): Number
+    ): Int
 
-    open fun isMutating(filters: MutationFilters = definedExternally): Number
+    open fun isMutating(filters: MutationFilters = definedExternally): Int
     open fun <TData> getQueryData(
         queryKey: QueryKey,
         filters: QueryFilters = definedExternally,

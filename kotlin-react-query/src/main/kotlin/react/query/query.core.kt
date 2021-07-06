@@ -21,12 +21,12 @@ external interface QueryConfig<TQueryFnData, TError, TData, TQueryKey : QueryKey
 
 external interface QueryState<TData, TError> {
     var data: TData?
-    var dataUpdateCount: Number
-    var dataUpdatedAt: Number
+    var dataUpdateCount: Int
+    var dataUpdatedAt: JsTimestamp
     var error: TError?
-    var errorUpdateCount: Number
-    var errorUpdatedAt: Number
-    var fetchFailureCount: Number
+    var errorUpdateCount: Int
+    var errorUpdatedAt: JsTimestamp
+    var fetchFailureCount: Int
     var fetchMeta: Any
     var isFetching: Boolean
     var isInvalidated: Boolean
@@ -52,7 +52,7 @@ external interface FetchOptions {
 }
 
 external interface SetDataOptions {
-    var updatedAt: Number
+    var updatedAt: JsTimestamp
 }
 
 external interface FailedAction {
@@ -67,7 +67,7 @@ external interface FetchAction {
 external interface SuccessAction<TData> {
     var data: TData?
     var type: Type /* 'success' */
-    var dataUpdatedAt: Number
+    var dataUpdatedAt: JsTimestamp
 }
 
 external interface ErrorAction<TError> {
@@ -106,7 +106,7 @@ open external class Query<TQueryFnData, TError, TData, TQueryKey : QueryKey>(con
     open var initialState: QueryState<TData, TError>
     open var revertState: QueryState<TData, TError>
     open var state: QueryState<TData, TError>
-    open var cacheTime: Number
+    open var cacheTime: JsDuration
     open fun setDefaultOptions(options: QueryOptions<TQueryFnData, TError, TData, TQueryKey>)
     open fun setData(
         updater: Updater<TData?, TData>,
@@ -124,12 +124,12 @@ open external class Query<TQueryFnData, TError, TData, TQueryKey : QueryKey>(con
     open fun isActive(): Boolean
     open fun isFetching(): Boolean
     open fun isStale(): Boolean
-    open fun isStaleByTime(staleTime: Number = definedExternally): Boolean
+    open fun isStaleByTime(staleTime: JsDuration = definedExternally): Boolean
     open fun onFocus()
     open fun onOnline()
     open fun addObserver(observer: QueryObserver<*, *, *, *, *>)
     open fun removeObserver(observer: QueryObserver<*, *, *, *, *>)
-    open fun getObserversCount(): Number
+    open fun getObserversCount(): Int
     open fun invalidate()
     open fun fetch(
         options: QueryOptions<TQueryFnData, TError, TData, TQueryKey> = definedExternally,

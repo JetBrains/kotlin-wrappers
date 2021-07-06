@@ -29,7 +29,7 @@ external interface MutationFilters {
 
 typealias DataUpdateFunction<TInput, TOutput> = (input: TInput) -> TOutput
 
-typealias Updater<TInput, TOutput> = Union /* TOutput | DataUpdateFunction<TInput, TOutput> */
+typealias Updater<TInput, TOutput> = DataUpdateFunction<TInput, TOutput>
 
 typealias QueryStatusFilter = Union /* 'all' | 'active' | 'inactive' | 'none' */
 
@@ -53,14 +53,14 @@ external fun <T> difference(
 
 external fun <T> replaceAt(
     array: Array<out T>,
-    index: Number,
+    index: Int,
     value: T,
 ): Array<out T>
 
 external fun timeUntilStale(
-    updatedAt: Number,
-    staleTime: Number = definedExternally,
-): Number
+    updatedAt: JsTimestamp,
+    staleTime: JsDuration = definedExternally,
+): Int
 
 external fun <TOptions : QueryOptions<*, *, *, TQueryKey>, TQueryKey : QueryKey> parseQueryArgs(
     arg1: dynamic,
@@ -130,6 +130,6 @@ external fun isQueryKey(value: Any): Boolean /* value is QueryKey */
 
 external fun isError(value: Any): Boolean /* value is Error */
 
-external fun sleep(timeout: Number): kotlin.js.Promise<Unit>
+external fun sleep(timeout: JsDuration): kotlin.js.Promise<Unit>
 
 external fun scheduleMicrotask(callback: () -> Unit)

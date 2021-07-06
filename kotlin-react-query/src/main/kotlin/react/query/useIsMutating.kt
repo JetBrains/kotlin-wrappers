@@ -5,4 +5,4 @@
 
 package react.query
 
-external fun useIsMutating(filters: MutationFilters = definedExternally): Number
+external fun useIsMutating(filters: MutationFilters = definedExternally): Int

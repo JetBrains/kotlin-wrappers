@@ -41,7 +41,7 @@ external interface UseMutationResult<TData, TError, TVariables, TContext> {
     val context: TContext?
     val data: TData?
     val error: TError?
-    val failureCount: Number
+    val failureCount: Int
     val isError: Boolean
     val isIdle: Boolean
     val isLoading: Boolean
