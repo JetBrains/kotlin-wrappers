@@ -113,8 +113,6 @@ external interface FetchPreviousPageOptions : ResultOptions {
     var pageParam: PageParam
 }
 
-typealias QueryStatus = Status /* 'idle' | 'loading' | 'error' | 'success' */
-
 external interface QueryObserverBaseResult<TData, TError> {
     val data: TData?
     val dataUpdatedAt: JsTimestamp
@@ -148,7 +146,7 @@ external interface QueryObserverIdleResult<TData, TError>
     override val isLoadingError: False
     override val isRefetchError: False
     override val isSuccess: False
-    override val status: Status /* 'idle' */
+    override val status: QueryStatus /* 'idle' */
 }
 
 external interface QueryObserverLoadingResult<TData, TError>
@@ -161,7 +159,7 @@ external interface QueryObserverLoadingResult<TData, TError>
     override val isLoadingError: False
     override val isRefetchError: False
     override val isSuccess: False
-    override val status: Status /* 'loading' */
+    override val status: QueryStatus /* 'loading' */
 }
 
 external interface QueryObserverLoadingErrorResult<TData, TError>
@@ -174,7 +172,7 @@ external interface QueryObserverLoadingErrorResult<TData, TError>
     override val isLoadingError: True
     override val isRefetchError: False
     override val isSuccess: False
-    override val status: Status /* 'error' */
+    override val status: QueryStatus /* 'error' */
 }
 
 external interface QueryObserverRefetchErrorResult<TData, TError>
@@ -187,7 +185,7 @@ external interface QueryObserverRefetchErrorResult<TData, TError>
     override val isLoadingError: False
     override val isRefetchError: True
     override val isSuccess: False
-    override val status: Status /* 'error' */
+    override val status: QueryStatus /* 'error' */
 }
 
 external interface QueryObserverSuccessResult<TData, TError>
@@ -200,7 +198,7 @@ external interface QueryObserverSuccessResult<TData, TError>
     override val isLoadingError: False
     override val isRefetchError: False
     override val isSuccess: True
-    override val status: Status /* 'success' */
+    override val status: QueryStatus /* 'success' */
 }
 
 typealias QueryObserverResult<TData, TError> = Union /* QueryObserverIdleResult<TData, TError> | QueryObserverLoadingErrorResult<TData, TError> | QueryObserverLoadingResult<TData, TError> | QueryObserverRefetchErrorResult<TData, TError> | QueryObserverSuccessResult<TData, TError> */
@@ -225,7 +223,7 @@ external interface InfiniteQueryObserverIdleResult<TData, TError>
     override val isLoadingError: False
     override val isRefetchError: False
     override val isSuccess: False
-    override val status: Status /* 'idle' */
+    override val status: QueryStatus /* 'idle' */
 }
 
 external interface InfiniteQueryObserverLoadingResult<TData, TError>
@@ -238,7 +236,7 @@ external interface InfiniteQueryObserverLoadingResult<TData, TError>
     override val isLoadingError: False
     override val isRefetchError: False
     override val isSuccess: False
-    override val status: Status /* 'loading' */
+    override val status: QueryStatus /* 'loading' */
 }
 
 external interface InfiniteQueryObserverLoadingErrorResult<TData, TError>
@@ -251,7 +249,7 @@ external interface InfiniteQueryObserverLoadingErrorResult<TData, TError>
     override val isLoadingError: True
     override val isRefetchError: False
     override val isSuccess: False
-    override val status: Status /* 'error' */
+    override val status: QueryStatus /* 'error' */
 }
 
 external interface InfiniteQueryObserverRefetchErrorResult<TData, TError>
@@ -264,7 +262,7 @@ external interface InfiniteQueryObserverRefetchErrorResult<TData, TError>
     override val isLoadingError: False
     override val isRefetchError: True
     override val isSuccess: False
-    override val status: Status /* 'error' */
+    override val status: QueryStatus /* 'error' */
 }
 
 external interface InfiniteQueryObserverSuccessResult<TData, TError>
@@ -277,14 +275,12 @@ external interface InfiniteQueryObserverSuccessResult<TData, TError>
     override val isLoadingError: False
     override val isRefetchError: False
     override val isSuccess: True
-    override val status: Status /* 'success' */
+    override val status: QueryStatus /* 'success' */
 }
 
 typealias InfiniteQueryObserverResult<TData, TError> = Union /* InfiniteQueryObserverIdleResult<TData, TError> | InfiniteQueryObserverLoadingErrorResult<TData, TError> | InfiniteQueryObserverLoadingResult<TData, TError> | InfiniteQueryObserverRefetchErrorResult<TData, TError> | InfiniteQueryObserverSuccessResult<TData, TError> */
 
 typealias MutationKey = Union /* string | readonly unknown[] */
-
-typealias MutationStatus = Status /* 'idle' | 'loading' | 'success' | 'error' */
 
 typealias MutationFunction<TData, TVariables> = (variables: TVariables) -> kotlin.js.Promise<TData>
 
