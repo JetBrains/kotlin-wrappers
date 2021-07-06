@@ -31,6 +31,9 @@ include("kotlin-react")
 // Kotlin/JS: React DOM wrappers
 include("kotlin-react-dom")
 
+// Kotlin/JS: React Query wrappers
+include("kotlin-react-query")
+
 // Kotlin/JS: React Redux wrappers
 include("kotlin-react-redux")
 
