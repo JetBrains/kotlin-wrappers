@@ -6,5 +6,5 @@ plugins {
 dependencies {
     api(project(":kotlin-react"))
 
-    implementation(npm("react-query", version("react-query")))
+    implementation(npmv("react-query"))
 }
