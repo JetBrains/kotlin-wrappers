@@ -9,6 +9,7 @@ dependencies {
         api(project(":kotlin-extensions"))
         api(project(":kotlin-react"))
         api(project(":kotlin-react-dom"))
+        api(project(":kotlin-react-query"))
         api(project(":kotlin-react-redux"))
         api(project(":kotlin-react-router-dom"))
         api(project(":kotlin-react-table"))
