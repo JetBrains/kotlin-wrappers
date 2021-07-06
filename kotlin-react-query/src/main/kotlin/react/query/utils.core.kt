@@ -31,8 +31,6 @@ typealias DataUpdateFunction<TInput, TOutput> = (input: TInput) -> TOutput
 
 typealias Updater<TInput, TOutput> = DataUpdateFunction<TInput, TOutput>
 
-typealias QueryStatusFilter = Union /* 'all' | 'active' | 'inactive' | 'none' */
-
 external val isServer: Boolean
 
 external fun noop(): Nothing?
