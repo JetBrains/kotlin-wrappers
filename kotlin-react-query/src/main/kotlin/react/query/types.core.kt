@@ -10,7 +10,7 @@ typealias QueryKey = Union /* string | readonly unknown[] */
 
 typealias EnsuredQueryKey<T> = Any
 
-typealias QueryFunction<T, TQueryKey> = Union /* (context: QueryFunctionContext<TQueryKey>) => T | Promise<T> */
+typealias QueryFunction<T, TQueryKey> = (context: QueryFunctionContext<TQueryKey, *>) -> kotlin.js.Promise<T>
 
 external interface QueryFunctionContext<TQueryKey : QueryKey, TPageParam> {
     var queryKey: EnsuredQueryKey<TQueryKey>
@@ -137,7 +137,7 @@ external interface QueryObserverBaseResult<TData, TError> {
 }
 
 external interface QueryObserverIdleResult<TData, TError>
-    : QueryObserverBaseResult<TData, TError> {
+    : QueryObserverResult<TData, TError> {
     override val data: Nothing?
     override val error: Nothing?
     override val isError: False
@@ -150,7 +150,7 @@ external interface QueryObserverIdleResult<TData, TError>
 }
 
 external interface QueryObserverLoadingResult<TData, TError>
-    : QueryObserverBaseResult<TData, TError> {
+    : QueryObserverResult<TData, TError> {
     override val data: Nothing?
     override val error: Nothing?
     override val isError: False
@@ -163,7 +163,7 @@ external interface QueryObserverLoadingResult<TData, TError>
 }
 
 external interface QueryObserverLoadingErrorResult<TData, TError>
-    : QueryObserverBaseResult<TData, TError> {
+    : QueryObserverResult<TData, TError> {
     override val data: Nothing?
     override val error: TError
     override val isError: True
@@ -176,7 +176,7 @@ external interface QueryObserverLoadingErrorResult<TData, TError>
 }
 
 external interface QueryObserverRefetchErrorResult<TData, TError>
-    : QueryObserverBaseResult<TData, TError> {
+    : QueryObserverResult<TData, TError> {
     override val data: TData
     override val error: TError
     override val isError: True
@@ -189,7 +189,7 @@ external interface QueryObserverRefetchErrorResult<TData, TError>
 }
 
 external interface QueryObserverSuccessResult<TData, TError>
-    : QueryObserverBaseResult<TData, TError> {
+    : QueryObserverResult<TData, TError> {
     override val data: TData
     override val error: Nothing?
     override val isError: False
@@ -201,10 +201,11 @@ external interface QueryObserverSuccessResult<TData, TError>
     override val status: QueryStatus /* 'success' */
 }
 
-typealias QueryObserverResult<TData, TError> = Union /* QueryObserverIdleResult<TData, TError> | QueryObserverLoadingErrorResult<TData, TError> | QueryObserverLoadingResult<TData, TError> | QueryObserverRefetchErrorResult<TData, TError> | QueryObserverSuccessResult<TData, TError> */
+sealed external interface QueryObserverResult<TData, TError>
+    : QueryObserverBaseResult<TData, TError>
 
 external interface InfiniteQueryObserverBaseResult<TData, TError>
-    : QueryObserverBaseResult<InfiniteData<TData>, TError> {
+    : QueryObserverResult<InfiniteData<TData>, TError> {
     val fetchNextPage: (options: FetchNextPageOptions?) -> kotlin.js.Promise<InfiniteQueryObserverResult<TData, TError>>
     val fetchPreviousPage: (options: FetchPreviousPageOptions?) -> kotlin.js.Promise<InfiniteQueryObserverResult<TData, TError>>
     val hasNextPage: Boolean
@@ -214,7 +215,7 @@ external interface InfiniteQueryObserverBaseResult<TData, TError>
 }
 
 external interface InfiniteQueryObserverIdleResult<TData, TError>
-    : InfiniteQueryObserverBaseResult<TData, TError> {
+    : InfiniteQueryObserverResult<TData, TError> {
     override val data: Nothing?
     override val error: Nothing?
     override val isError: False
@@ -227,7 +228,7 @@ external interface InfiniteQueryObserverIdleResult<TData, TError>
 }
 
 external interface InfiniteQueryObserverLoadingResult<TData, TError>
-    : InfiniteQueryObserverBaseResult<TData, TError> {
+    : InfiniteQueryObserverResult<TData, TError> {
     override val data: Nothing?
     override val error: Nothing?
     override val isError: False
@@ -240,7 +241,7 @@ external interface InfiniteQueryObserverLoadingResult<TData, TError>
 }
 
 external interface InfiniteQueryObserverLoadingErrorResult<TData, TError>
-    : InfiniteQueryObserverBaseResult<TData, TError> {
+    : InfiniteQueryObserverResult<TData, TError> {
     override val data: Nothing?
     override val error: TError
     override val isError: True
@@ -253,7 +254,7 @@ external interface InfiniteQueryObserverLoadingErrorResult<TData, TError>
 }
 
 external interface InfiniteQueryObserverRefetchErrorResult<TData, TError>
-    : InfiniteQueryObserverBaseResult<TData, TError> {
+    : InfiniteQueryObserverResult<TData, TError> {
     override val data: InfiniteData<TData>
     override val error: TError
     override val isError: True
@@ -266,7 +267,7 @@ external interface InfiniteQueryObserverRefetchErrorResult<TData, TError>
 }
 
 external interface InfiniteQueryObserverSuccessResult<TData, TError>
-    : InfiniteQueryObserverBaseResult<TData, TError> {
+    : InfiniteQueryObserverResult<TData, TError> {
     override val data: InfiniteData<TData>
     override val error: Nothing?
     override val isError: False
@@ -278,7 +279,8 @@ external interface InfiniteQueryObserverSuccessResult<TData, TError>
     override val status: QueryStatus /* 'success' */
 }
 
-typealias InfiniteQueryObserverResult<TData, TError> = Union /* InfiniteQueryObserverIdleResult<TData, TError> | InfiniteQueryObserverLoadingErrorResult<TData, TError> | InfiniteQueryObserverLoadingResult<TData, TError> | InfiniteQueryObserverRefetchErrorResult<TData, TError> | InfiniteQueryObserverSuccessResult<TData, TError> */
+sealed external interface InfiniteQueryObserverResult<TData, TError>
+    : InfiniteQueryObserverBaseResult<TData, TError>
 
 typealias MutationKey = Union /* string | readonly unknown[] */
 
