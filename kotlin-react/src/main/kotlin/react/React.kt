@@ -55,6 +55,6 @@ fun SuspenseProps.fallback(handler: RRender) {
  *
  * in your class components
  */
-open class RStatics<P : RProps, S : RState, C : Component<P, S>, CTX : RContext<Any>?>(
+open class RStatics<P : RProps, S : RState, C : Component<P, S>, CTX : RContext<*>?>(
     klazz: KClass<C>
 ) : RComponentClassStatics<P, S, CTX> by klazz.js.unsafeCast<RComponentClassStatics<P, S, CTX>>()

@@ -247,9 +247,9 @@ fun <P : RProps> forwardRef(handler: RBuilder.(P, RRef) -> Unit): RClass<P> =
         buildElements { handler(props, ref) }
     }
 
-typealias FunctionalComponent<P> = (props: P) -> dynamic
+typealias FunctionalComponent<P> = FunctionComponent<P>
 
-typealias FC<P> = FunctionalComponent<P>
+typealias FC<P> = FunctionComponent<P>
 
 /**
  * Get functional component from [func]
@@ -258,15 +258,15 @@ fun <P : RProps> functionalComponent(
     displayName: String? = null,
     func: RBuilder.(props: P) -> Unit
 ): FunctionalComponent<P> {
-    val fc = { props: P ->
+    val fc: dynamic = { props: P ->
         buildElements {
             func(props)
         }
     }
     if (displayName != null) {
-        fc.asDynamic().displayName = displayName
+        fc.displayName = displayName
     }
-    return fc
+    return fc.unsafeCast<FunctionComponent<P>>()
 }
 
 /**
