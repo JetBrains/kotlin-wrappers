@@ -203,7 +203,7 @@ external interface HeaderProps<D: Any, V> : TableInstance<D> {
     val column: ColumnInstance<D, *>
 }
 
-external interface CellProps<D: Any, V> : TableInstance<D> {
+external interface CellProps<D: Any, V> : TableInstance<D>, RProps {
     val column: ColumnInstance<D, V>
     val row: Row<D>
     val cell: Cell<D, V>

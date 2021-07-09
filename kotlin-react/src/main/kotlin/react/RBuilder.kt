@@ -247,6 +247,10 @@ fun <P : RProps> forwardRef(handler: RBuilder.(P, RRef) -> Unit): RClass<P> =
         buildElements { handler(props, ref) }
     }
 
+@Deprecated(
+    message = "Legacy type alias",
+    ReplaceWith("FunctionComponent", "react.FunctionComponent")
+)
 typealias FunctionalComponent<P> = FunctionComponent<P>
 
 typealias FC<P> = FunctionComponent<P>
@@ -257,7 +261,7 @@ typealias FC<P> = FunctionComponent<P>
 fun <P : RProps> functionalComponent(
     displayName: String? = null,
     func: RBuilder.(props: P) -> Unit
-): FunctionalComponent<P> {
+): FC<P> {
     val fc: dynamic = { props: P ->
         buildElements {
             func(props)
@@ -274,21 +278,21 @@ fun <P : RProps> functionalComponent(
  */
 @Suppress("EXTENSION_SHADOWED_BY_MEMBER")
 fun <P : RProps> RBuilder.child(
-    component: FunctionalComponent<P>,
+    component: FC<P>,
     props: P = jsObject(),
     handler: RHandler<P> = {}
 ): ReactElement =
     child(component, props, handler)
 
 fun <T, P : RProps> RBuilder.childFunction(
-    component: FunctionalComponent<P>,
+    component: FC<P>,
     handler: RHandler<P> = {},
     children: RBuilder.(T) -> Unit
 ): ReactElement =
     childFunction(component, jsObject<P>(), handler, children)
 
 fun <T, P : RProps> RBuilder.childFunction(
-    component: FunctionalComponent<P>,
+    component: FC<P>,
     props: P,
     handler: RHandler<P> = {},
     children: RBuilder.(T) -> Unit
