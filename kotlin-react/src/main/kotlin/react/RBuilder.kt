@@ -247,9 +247,13 @@ fun <P : RProps> forwardRef(handler: RBuilder.(P, RRef) -> Unit): RClass<P> =
         buildElements { handler(props, ref) }
     }
 
-typealias FunctionalComponent<P> = (props: P) -> dynamic
+@Deprecated(
+    message = "Legacy type alias",
+    ReplaceWith("FunctionComponent", "react.FunctionComponent")
+)
+typealias FunctionalComponent<P> = FunctionComponent<P>
 
-typealias FC<P> = FunctionalComponent<P>
+typealias FC<P> = FunctionComponent<P>
 
 /**
  * Get functional component from [func]
@@ -257,16 +261,16 @@ typealias FC<P> = FunctionalComponent<P>
 fun <P : RProps> functionalComponent(
     displayName: String? = null,
     func: RBuilder.(props: P) -> Unit
-): FunctionalComponent<P> {
-    val fc = { props: P ->
+): FC<P> {
+    val fc: dynamic = { props: P ->
         buildElements {
             func(props)
         }
     }
     if (displayName != null) {
-        fc.asDynamic().displayName = displayName
+        fc.displayName = displayName
     }
-    return fc
+    return fc.unsafeCast<FunctionComponent<P>>()
 }
 
 /**
@@ -274,21 +278,21 @@ fun <P : RProps> functionalComponent(
  */
 @Suppress("EXTENSION_SHADOWED_BY_MEMBER")
 fun <P : RProps> RBuilder.child(
-    component: FunctionalComponent<P>,
+    component: FC<P>,
     props: P = jsObject(),
     handler: RHandler<P> = {}
 ): ReactElement =
     child(component, props, handler)
 
 fun <T, P : RProps> RBuilder.childFunction(
-    component: FunctionalComponent<P>,
+    component: FC<P>,
     handler: RHandler<P> = {},
     children: RBuilder.(T) -> Unit
 ): ReactElement =
     childFunction(component, jsObject<P>(), handler, children)
 
 fun <T, P : RProps> RBuilder.childFunction(
-    component: FunctionalComponent<P>,
+    component: FC<P>,
     props: P,
     handler: RHandler<P> = {},
     children: RBuilder.(T) -> Unit
