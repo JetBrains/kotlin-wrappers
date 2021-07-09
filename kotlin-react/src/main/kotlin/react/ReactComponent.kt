@@ -37,23 +37,21 @@ external interface RErrorInfo
 val RErrorInfo.componentStack: Any
     get() = asDynamic().componentStack
 
-external interface RClass<in P : RProps> : RComponentClassStatics<P, RState, RContext<*>?>
+// TODO: Should extend RComponentClassStatics, but has problems with generic params
+external interface RClass<in P : RProps> : RComponentClassStatics<RProps, RState, RContext<Any>?>
 
 external interface RClassModule<in P : RProps> {
     val default: RClass<P>
 }
 
-external interface RComponentClassStatics<in P : RProps, S : RState, C : RContext<*>?> {
+external interface RComponentClassStatics<P : RProps, S : RState, C : RContext<Any>?> {
     var displayName: String?
 
-    var defaultProps: @UnsafeVariance P?
-        @Deprecated(message = "Write-only property", level = DeprecationLevel.HIDDEN)
-        get() = definedExternally
-        set(value) = definedExternally
+    var defaultProps: P?
 
     var contextType: C
 
-    var getDerivedStateFromProps: ((@UnsafeVariance P, S) -> S?)?
+    var getDerivedStateFromProps: ((P, S) -> S?)?
 
     var getDerivedStateFromError: ((Throwable) -> S?)?
 }
