@@ -4,10 +4,7 @@
 package styled
 
 import kotlinext.js.TemplateTag
-import react.Component
-import react.RClass
-import react.RProps
-import react.RState
+import react.*
 import react.dom.WithClassName
 
 external interface StyledProps : WithClassName {
@@ -53,7 +50,7 @@ external val css: TemplateTag<dynamic, String>
  * isolated from other components. In the case of createGlobalStyle, this limitation is removed
  * and things like CSS resets or base stylesheets can be applied.
  */
-external val createGlobalStyle: TemplateTag<Nothing, Component<RProps, RState>>
+external val createGlobalStyle: TemplateTag<Nothing, ComponentType<RProps>>
 
 /**
  * A utility to help identify styled components.

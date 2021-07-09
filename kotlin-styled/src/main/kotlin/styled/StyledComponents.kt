@@ -48,14 +48,14 @@ interface StyledElementBuilder<P : WithClassName> : RElementBuilder<P>, StyledBu
 
     companion object {
         operator fun <P : WithClassName> invoke(
-            type: Any,
+            type: ComponentType<P>,
             attrs: P = jsObject()
         ): StyledElementBuilder<P> = StyledElementBuilderImpl(type, attrs)
     }
 }
 
 class StyledElementBuilderImpl<P : WithClassName>(
-    override val type: Any,
+    override val type: ComponentType<P>,
     attrs: P = jsObject()
 ) : StyledElementBuilder<P>, RElementBuilderImpl<P>(attrs) {
     override val css = CSSBuilder()
@@ -65,7 +65,7 @@ class StyledElementBuilderImpl<P : WithClassName>(
 
 @ReactDsl
 interface StyledDOMBuilder<out T : Tag> : RDOMBuilder<T>, StyledBuilder<DOMProps> {
-    override val type: Any get() = attrs.tagName
+    override val type get() = attrs.tagName
 
     override fun create() = Styled.createElement(type, css, domProps, childList)
 
@@ -81,7 +81,7 @@ class StyledDOMBuilderImpl<out T : Tag>(factory: (TagConsumer<Unit>) -> T) : Sty
 typealias StyledHandler<P> = StyledElementBuilder<P>.() -> Unit
 
 fun <P : WithClassName> styled(type: RClass<P>): RBuilder.(StyledHandler<P>) -> ReactElement = { handler ->
-    child(with(StyledElementBuilder<P>(type)) {
+    child(with(StyledElementBuilder(type)) {
         handler()
         create()
     })
@@ -131,7 +131,7 @@ private fun injectGlobals(strings: Array<String>) {
 }
 
 private external interface GlobalStylesComponentProps : RProps {
-    var globalStyles: List<Any>
+    var globalStyles: List<ComponentType<RProps>>
 }
 
 private object GlobalStyles {
@@ -147,11 +147,11 @@ private object GlobalStyles {
         element
     }
 
-    private val styles = mutableListOf<Component<RProps, RState>>()
+    private val styles = mutableListOf<ComponentType<RProps>>()
 
-    fun add(globalStyle: Component<RProps, RState>) {
+    fun add(globalStyle: ComponentType<RProps>) {
         styles.add(globalStyle)
-        val reactElement = createElement<GlobalStylesComponentProps>(GlobalStyles.component, jsObject {
+        val reactElement = createElement(component, jsObject {
             this.globalStyles = styles
         })
         render(reactElement, root)
@@ -197,13 +197,12 @@ fun injectGlobal(handler: CSSBuilder.() -> Unit) {
 object Styled {
     private val cache = mutableMapOf<dynamic, dynamic>()
 
-    private fun wrap(type: dynamic) =
+    private fun <T> wrap(type: T): T =
         cache.getOrPut(type) {
             devOverrideUseRef { rawStyled(type)({ it.css }) }
         }
 
-    fun createElement(type: Any, css: CSSBuilder, props: WithClassName, children: List<Any>): ReactElement {
-        val wrappedType = wrap(type)
+    private fun <P: WithClassName> buildStyledProps(css: CSSBuilder, props: P): P {
         val styledProps = props.unsafeCast<StyledProps>()
         if (css.rules.isNotEmpty() || css.multiRules.isNotEmpty() || css.declarations.isNotEmpty()) {
             styledProps.css = css.toString()
@@ -214,6 +213,18 @@ object Styled {
         if (css.styleName.isNotEmpty()) {
             styledProps.asDynamic()["data-style"] = css.styleName.joinToString(separator = " ")
         }
+        return styledProps.unsafeCast<P>()
+    }
+
+    fun createElement(type: String, css: CSSBuilder, props: WithClassName, children: List<Any>): ReactElement {
+        val wrappedType = wrap(type)
+        val styledProps = buildStyledProps(css, props)
+        return createElement(wrappedType, styledProps, *children.toTypedArray())
+    }
+
+    fun <P: WithClassName> createElement(type: ComponentType<P>, css: CSSBuilder, props: P, children: List<Any>): ReactElement {
+        val wrappedType = wrap(type)
+        val styledProps = buildStyledProps(css, props)
         return createElement(wrappedType, styledProps, *children.toTypedArray())
     }
 }
