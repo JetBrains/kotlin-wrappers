@@ -26,14 +26,14 @@ interface RBuilder {
     }
 
     fun <P : RProps> child(
-        type: Any,
+        type: ComponentType<P>,
         props: P,
         children: List<Any>
     ): ReactElement =
         child(createElement(type, props, *children.toTypedArray()))
 
     fun <P : RProps> child(
-        type: Any,
+        type: ComponentType<P>,
         props: P,
         handler: RHandler<P>
     ): ReactElement {
@@ -44,7 +44,7 @@ interface RBuilder {
         return child(type, props, children)
     }
 
-    operator fun <P : RProps> RClass<P>.invoke(
+    operator fun <P : RProps> ComponentType<P>.invoke(
         handler: RHandler<P>
     ): ReactElement =
         child(this, jsObject(), handler)
