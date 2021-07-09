@@ -131,13 +131,13 @@ private fun injectGlobals(strings: Array<String>) {
 }
 
 private external interface GlobalStylesComponentProps : RProps {
-    var globalStyles: List<Any>
+    var globalStyles: List<ComponentType<RProps>>
 }
 
 private object GlobalStyles {
     private val component = functionalComponent<GlobalStylesComponentProps> { props ->
         props.globalStyles.forEach {
-            child(it.unsafeCast<ComponentType<RProps>>(), jsObject {}, emptyList())
+            child(it, jsObject {}, emptyList())
         }
     }
 
@@ -147,9 +147,9 @@ private object GlobalStyles {
         element
     }
 
-    private val styles = mutableListOf<Component<RProps, RState>>()
+    private val styles = mutableListOf<ComponentType<RProps>>()
 
-    fun add(globalStyle: Component<RProps, RState>) {
+    fun add(globalStyle: ComponentType<RProps>) {
         styles.add(globalStyle)
         val reactElement = createElement(component, jsObject {
             this.globalStyles = styles
