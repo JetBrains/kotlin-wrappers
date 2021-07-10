@@ -2,7 +2,10 @@
 
 package kotlinx.css
 
-import kotlin.math.*
+import kotlin.math.PI
+import kotlin.math.abs
+import kotlin.math.max
+import kotlin.math.roundToInt
 
 abstract class CssValue(open val value: String) {
     override fun toString() = value
@@ -34,6 +37,16 @@ enum class Appearance {
     listbox,
     meter,
     progressBar;
+
+    override fun toString() = name.hyphenize()
+}
+
+enum class Isolation {
+    initial, inherit, revert, unset,
+
+    auto, isolate,
+
+    ;
 
     override fun toString() = name.hyphenize()
 }

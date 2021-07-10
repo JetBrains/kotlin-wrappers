@@ -3,7 +3,7 @@
 package kotlinx.css
 
 import kotlinx.css.properties.*
-import kotlin.reflect.*
+import kotlin.reflect.KProperty
 
 open class StyledElement {
     val declarations = LinkedHashMap<String, Any>()
@@ -90,6 +90,8 @@ var StyledElement.cursor: Cursor by CSSProperty()
 
 var StyledElement.direction: Direction by CSSProperty()
 var StyledElement.display: Display by CSSProperty()
+
+var StyledElement.isolation: Isolation by CSSProperty()
 
 var StyledElement.filter: String by CSSProperty()
 var StyledElement.flexDirection: FlexDirection by CSSProperty()
