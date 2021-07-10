@@ -5,16 +5,14 @@
 
 # Kotlin Wrappers
 
-This repository hosts a number of [Kotlin](https://kotlinlang.org) wrappers for popular JavaScript libraries, such as
-[React](https://reactjs.org/), [Mocha](https://mochajs.org/), and [styled-components](https://www.styled-components.com/).
+This repository hosts a number of [Kotlin](https://kotlinlang.org) wrappers for popular JavaScript libraries.
 
-To learn more please refer to the READMEs of individual modules.
+To learn more please refer to the `README`s of individual modules.
 
 | README | Version |
 | :--- | :--- |
 | [kotlin-css](kotlin-css/README.md) | [![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-css)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-css) | 
 | [kotlin-extensions](kotlin-extensions/README.md) | [![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-extensions)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-extensions) | 
-| [kotlin-mocha](kotlin-mocha/README.md) | Outdated, maintainer wanted! | 
 | [kotlin-react](kotlin-react/README.md) | [![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-react)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-react) | 
 | [kotlin-react-dom](kotlin-react-dom/README.md) | [![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-react-dom)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-react-dom) |
 | [kotlin-react-redux](kotlin-react-redux/README.md) | [![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-react-redux)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-react-redux) |
