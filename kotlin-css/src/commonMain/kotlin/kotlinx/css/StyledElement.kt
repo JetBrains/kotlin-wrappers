@@ -91,8 +91,6 @@ var StyledElement.cursor: Cursor by CSSProperty()
 var StyledElement.direction: Direction by CSSProperty()
 var StyledElement.display: Display by CSSProperty()
 
-var StyledElement.isolation: Isolation by CSSProperty()
-
 var StyledElement.filter: String by CSSProperty()
 var StyledElement.flexDirection: FlexDirection by CSSProperty()
 var StyledElement.flexGrow: Double by CSSProperty()
@@ -123,6 +121,8 @@ var StyledElement.gridTemplateRows: GridTemplateRows by CSSProperty()
 var StyledElement.height: LinearDimension by CSSProperty()
 
 var StyledElement.hyphens: Hyphens by CSSProperty()
+
+var StyledElement.isolation: Isolation by CSSProperty()
 
 var StyledElement.justifyContent: JustifyContent by CSSProperty()
 var StyledElement.justifyItems: JustifyItems by CSSProperty()
