@@ -37,24 +37,6 @@ external interface RErrorInfo
 val RErrorInfo.componentStack: Any
     get() = asDynamic().componentStack
 
-external interface RProviderProps<T> : RProps {
-    var value: T
-}
-
-external interface RProvider<T> : RClass<RProviderProps<T>>
-
-external interface RConsumerProps<T> : RProps {
-    var children: (T) -> Any
-}
-
-external interface RConsumer<T> : RClass<RConsumerProps<T>>
-
-// Context (16.3+)
-external interface RContext<T> {
-    val Provider: RProvider<T>
-    val Consumer: RConsumer<T>
-}
-
 // Refs (16.3+)
 external interface RRef
 

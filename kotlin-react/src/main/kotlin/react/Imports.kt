@@ -13,9 +13,6 @@ external fun cloneElement(element: dynamic, props: dynamic, vararg child: Any?):
 
 external fun isValidElement(element: Any): Boolean
 
-// Context (16.3+)
-external fun <T> createContext(defaultValue: T = definedExternally): RContext<T>
-
 // Refs (16.3+)
 external fun <T : Any> createRef(): RReadableRef<T>
 
@@ -35,9 +32,6 @@ external fun rawUseLayoutEffect(
     effect: () -> dynamic,
     dependencies: RDependenciesArray = definedExternally,
 )
-
-// Context Hook (16.8+)
-external fun <T> useContext(context: RContext<T>): T
 
 // Callback Hook (16.8+)
 @JsName("useCallback")
