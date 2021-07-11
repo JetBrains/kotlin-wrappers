@@ -3,8 +3,6 @@
 
 package react
 
-import kotlin.js.Promise
-
 // See https://reactjs.org/docs/react-component.html
 
 external fun <P : RProps> createElement(type: String, props: P, vararg child: Any?): ReactElement
@@ -15,9 +13,6 @@ external fun cloneElement(element: dynamic, props: dynamic, vararg child: Any?):
 
 external fun isValidElement(element: Any): Boolean
 
-// Fragment (16+)
-external val Fragment: RClass<RProps>
-
 // Context (16.3+)
 external fun <T> createContext(defaultValue: T = definedExternally): RContext<T>
 
@@ -26,17 +21,6 @@ external fun <T : Any> createRef(): RReadableRef<T>
 
 @JsName("forwardRef")
 external fun <P : RProps> rawForwardRef(forward: (props: P, ref: RRef) -> Any): RClass<P>
-
-// StrictMode (16.3+)
-external val StrictMode: RClass<RProps>
-
-// Memo (16.6+)
-external fun <P : RProps> memo(fc: FC<P>, areEqual: (P, P) -> Boolean = definedExternally): FC<P>
-
-// Lazy (16.6+)
-external fun <P : RProps> lazy(
-    factory: () -> Promise<RClassModule<P>>
-): RClass<P>
 
 // Effect Hook (16.8+)
 @JsName("useEffect")
@@ -75,19 +59,3 @@ external interface RMutableRef<T : Any> : RReadableRef<T> {
 }
 
 external fun <T : Any> useRef(initialValue: T? = definedExternally): RMutableRef<T>
-
-// Imperative Methods Hook (16.8+)
-external fun useImperativeHandle(ref: RRef, createInstance: () -> dynamic, inputs: RDependenciesArray)
-
-// Debug Value Hook (16.8+)
-external fun <T : Any> useDebugValue(
-    value: T,
-    format: (value: T) -> Any = definedExternally,
-)
-
-// Transitions (18.0+)
-external fun startTransition(scope: TransitionFunction)
-
-external fun useTransition(
-    config: SuspenseConfig = definedExternally,
-): TransitionInstance
