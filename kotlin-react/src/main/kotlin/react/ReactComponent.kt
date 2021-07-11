@@ -1,6 +1,7 @@
 package react
 
-import kotlinext.js.*
+import kotlinext.js.assign
+import kotlinext.js.jsObject
 
 // Props
 external interface RProps
@@ -38,10 +39,6 @@ val RErrorInfo.componentStack: Any
     get() = asDynamic().componentStack
 
 typealias RClass<P> = ComponentClass<P>
-
-external interface RClassModule<in P : RProps> {
-    val default: RClass<P>
-}
 
 external interface RComponentClassStatics<P : RProps, S : RState, C : RContext<*>?> {
     var displayName: String?
