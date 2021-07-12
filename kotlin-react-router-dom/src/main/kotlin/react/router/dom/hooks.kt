@@ -16,7 +16,7 @@ fun <T : RProps> useRouteMatch(
     vararg path: String,
     exact: Boolean = false,
     strict: Boolean = false,
-    sensitive: Boolean = false
+    sensitive: Boolean = false,
 ): RouteResultMatch<T>? {
     if (path.isEmpty()) {
         return rawUseRouteMatch(null)

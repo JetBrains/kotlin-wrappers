@@ -13,7 +13,7 @@ fun RBuilder.hashRouter(
     basename: String = "",
     hashType: HashType = HashType.slash,
     getUserConfirmation: GetUserConfirmation? = null,
-    handler: RHandler<RProps>
+    handler: RHandler<RProps>,
 ) = HashRouterComponent {
     attrs {
         this.basename = basename
@@ -29,7 +29,7 @@ fun RBuilder.browserRouter(
     getUserConfirmation: GetUserConfirmation? = null,
     forceRefresh: Boolean = false,
     keyLength: Int = 6,
-    handler: RHandler<RProps>
+    handler: RHandler<RProps>,
 ) = BrowserRouterComponent {
     attrs {
         this.basename = basename
@@ -49,7 +49,7 @@ fun RBuilder.route(
     vararg path: String,
     component: KClass<out Component<RProps, *>>,
     exact: Boolean = false,
-    strict: Boolean = false
+    strict: Boolean = false,
 ): ReactElement {
     return child<RouteProps<RProps>, RouteComponent<RProps>> {
         attrs {
@@ -65,7 +65,7 @@ fun <T : RProps> RBuilder.route(
     vararg path: String,
     exact: Boolean = false,
     strict: Boolean = false,
-    render: (props: RouteResultProps<T>) -> ReactElement?
+    render: (props: RouteResultProps<T>) -> ReactElement?,
 ): ReactElement {
     return child<RouteProps<T>, RouteComponent<T>> {
         attrs {
@@ -81,7 +81,7 @@ fun RBuilder.route(
     vararg path: String,
     exact: Boolean = false,
     strict: Boolean = false,
-    render: () -> ReactElement?
+    render: () -> ReactElement?,
 ): ReactElement {
     return child<RouteProps<RProps>, RouteComponent<RProps>> {
         attrs {
@@ -97,7 +97,7 @@ fun RBuilder.routeLink(
     to: String,
     replace: Boolean = false,
     className: String? = null,
-    handler: RHandler<RProps>?
+    handler: RHandler<RProps>?,
 ) = LinkComponent {
     attrs {
         this.to = to
@@ -115,7 +115,7 @@ fun <T : RProps> RBuilder.navLink(
     exact: Boolean = false,
     strict: Boolean = false,
     isActive: ((match: RouteResultMatch<T>?, location: RouteResultLocation) -> Boolean)? = null,
-    handler: RHandler<NavLinkProps<T>>?
+    handler: RHandler<NavLinkProps<T>>?,
 ) = child<NavLinkProps<T>, NavLinkComponent<T>> {
     attrs {
         this.to = to
@@ -134,7 +134,7 @@ fun RBuilder.redirect(
     to: String,
     push: Boolean = false,
     exact: Boolean = false,
-    strict: Boolean = false
+    strict: Boolean = false,
 ) = RedirectComponent {
     attrs {
         this.from = from
@@ -150,7 +150,7 @@ fun <T : RProps> matchPath(
     vararg path: String,
     exact: Boolean = false,
     strict: Boolean = false,
-    sensitive: Boolean = false
+    sensitive: Boolean = false,
 ): RouteResultMatch<T>? {
 
     val options: RouteMatchOptions = jsObject {

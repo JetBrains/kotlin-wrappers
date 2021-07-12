@@ -1,6 +1,7 @@
 package react.redux
 
-import react.*
+import react.RClass
+import react.RProps
 
 external interface ConnectOptions<P : RProps> : FactoryOptions<P> {
     var getDisplayName: ((String) -> String)?

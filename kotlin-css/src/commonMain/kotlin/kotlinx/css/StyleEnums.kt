@@ -481,7 +481,7 @@ class Color(override val value: String) : CssValue(value) {
         val red: Int,
         val green: Int,
         val blue: Int,
-        val alpha: Double = 1.0
+        val alpha: Double = 1.0,
     ) {
 
         // Algorithm adapted from http://www.niwa.nu/2013/05/math-behind-colorspace-conversions-rgb-hsl/
@@ -513,7 +513,7 @@ class Color(override val value: String) : CssValue(value) {
         val hue: Int,
         val saturation: Int,
         val lightness: Int,
-        val alpha: Double = 1.0
+        val alpha: Double = 1.0,
     ) {
 
         // Algorithm from W3C link referenced in class comment (section 4.2.4. HSL color values)

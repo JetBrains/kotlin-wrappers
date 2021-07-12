@@ -11,7 +11,7 @@ external val useExpanded: PluginHook<Any>
 
 external interface TableExpandedToggleProps : TableKeyedProps
 
-external interface UseExpandedOptions<D: Any> {
+external interface UseExpandedOptions<D : Any> {
     var manualExpandedKey: IdType<D>
         @Deprecated(message = "Write-only property", level = DeprecationLevel.HIDDEN)
         get
@@ -29,16 +29,16 @@ external interface UseExpandedOptions<D: Any> {
         get
 }
 
-external interface UseExpandedHooks<D: Any> {
+external interface UseExpandedHooks<D : Any> {
     val getToggleRowsExpandedProps: Array<out PropGetter<D, TableCommonProps>>
     val getToggleAllRowsExpandedProps: Array<out PropGetter<D, TableCommonProps>>
 }
 
-external interface UseExpandedState<D: Any> {
+external interface UseExpandedState<D : Any> {
     var expanded: Record<IdType<D>, Boolean>
 }
 
-external interface UseExpandedInstanceProps<D: Any> {
+external interface UseExpandedInstanceProps<D : Any> {
     val preExpandedRows: Array<out Row<D>>
     val expandedRows: Array<out Row<D>>
     val rows: Array<out Row<D>>
@@ -48,7 +48,7 @@ external interface UseExpandedInstanceProps<D: Any> {
     fun toggleAllRowsExpanded(value: Boolean = definedExternally)
 }
 
-external interface UseExpandedRowProps<D: Any> {
+external interface UseExpandedRowProps<D : Any> {
     val isExpanded: Boolean
     val canExpand: Boolean
     val subRows: Array<out Row<D>>

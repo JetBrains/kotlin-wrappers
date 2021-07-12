@@ -213,7 +213,7 @@ private fun getShorthandValue(
     top: LinearDimension?,
     right: LinearDimension?,
     bottom: LinearDimension?,
-    left: LinearDimension?
+    left: LinearDimension?,
 ): String {
     return if (top == bottom && right == left) {
         if (top == right) {
@@ -234,7 +234,7 @@ fun StyledElement.margin(
     top: LinearDimension? = null,
     right: LinearDimension? = null,
     bottom: LinearDimension? = null,
-    left: LinearDimension? = null
+    left: LinearDimension? = null,
 ) {
     if (top != null && right != null && bottom != null && left != null) {
         margin = getShorthandValue(top, right, bottom, left)
@@ -258,7 +258,7 @@ fun StyledElement.padding(
     top: LinearDimension? = null,
     right: LinearDimension? = null,
     bottom: LinearDimension? = null,
-    left: LinearDimension? = null
+    left: LinearDimension? = null,
 ) {
     if (top != null && right != null && bottom != null && left != null) {
         padding = getShorthandValue(top, right, bottom, left)

@@ -3,8 +3,8 @@
 
 package react.dom
 
-import org.w3c.dom.*
-import react.*
+import org.w3c.dom.Element
+import react.ReactElement
 
 // See https://reactjs.org/docs/react-dom.html
 

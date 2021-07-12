@@ -21,6 +21,6 @@ inline fun <T : Function<*>> useCallback(
 )
 inline fun <T : Function<*>> useCallback(
     callback: T,
-    dependencies: RDependenciesArray
+    dependencies: RDependenciesArray,
 ): T =
     rawUseCallback(callback, dependencies)

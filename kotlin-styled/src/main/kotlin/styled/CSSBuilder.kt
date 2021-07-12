@@ -1,6 +1,6 @@
 package styled
 
-import kotlinx.css.*
+import kotlinx.css.CSSBuilder
 import kotlinx.css.properties.*
 
 fun CSSBuilder.animation(
@@ -11,7 +11,7 @@ fun CSSBuilder.animation(
     direction: AnimationDirection = AnimationDirection.normal,
     fillMode: FillMode = FillMode.none,
     playState: PlayState = PlayState.running,
-    handler: KeyframesBuilder.() -> Unit
+    handler: KeyframesBuilder.() -> Unit,
 ) = animation(keyframes(indent, handler), duration, timing, delay, iterationCount, direction, fillMode, playState)
 
 inline fun keyframes(indent: String = "", handler: KeyframesBuilder.() -> Unit): String {

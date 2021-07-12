@@ -30,14 +30,14 @@ interface RBuilder {
     fun <P : RProps> child(
         type: ComponentType<P>,
         props: P,
-        children: List<Any>
+        children: List<Any>,
     ): ReactElement =
         child(createElement(type, props, *children.toTypedArray()))
 
     fun <P : RProps> child(
         type: ComponentType<P>,
         props: P,
-        handler: RHandler<P>
+        handler: RHandler<P>,
     ): ReactElement {
         val children = with(RElementBuilder(props)) {
             handler()
@@ -47,7 +47,7 @@ interface RBuilder {
     }
 
     operator fun <P : RProps> ComponentType<P>.invoke(
-        handler: RHandler<P>
+        handler: RHandler<P>,
     ): ReactElement =
         child(this, jsObject(), handler)
 
@@ -68,20 +68,20 @@ interface RBuilder {
 
     fun <P : RProps> RClass<P>.node(
         props: P,
-        children: List<Any> = emptyList()
+        children: List<Any> = emptyList(),
     ): ReactElement =
         child(this, clone(props), children)
 
     fun <P : RProps> child(
         klazz: KClass<out Component<P, *>>,
-        handler: RHandler<P>
+        handler: RHandler<P>,
     ): ReactElement =
         klazz.rClass.invoke(handler)
 
     fun <T, P : RProps> childFunction(
         klazz: KClass<out Component<P, *>>,
         handler: RHandler<P>,
-        children: RBuilder.(T) -> Unit
+        children: RBuilder.(T) -> Unit,
     ): ReactElement =
         child(
             type = klazz.rClass,
@@ -92,7 +92,7 @@ interface RBuilder {
     fun <P : RProps> node(
         klazz: KClass<out Component<P, *>>,
         props: P,
-        children: List<Any> = emptyList()
+        children: List<Any> = emptyList(),
     ): ReactElement =
         klazz.rClass.node(props, children)
 
@@ -139,16 +139,16 @@ interface RBuilder {
      * there will be a proper warning.
      * */
     fun <T> Iterable<T>.renderEach(fn: RBuilder.(T) -> Unit) {
-        childList.add(map {
+        mapTo(childList) {
             buildElement { fn(it) }
-        }.toTypedArray())
+        }
     }
 
 
     fun <T> Iterable<T>.renderEachIndexed(fn: RBuilder.(Int, T) -> Unit) {
-        childList.add(mapIndexed { index, it ->
+        mapIndexedTo(childList) { index, it ->
             buildElement { fn(index, it) }
-        }.toTypedArray())
+        }
     }
 
     fun ReactElement.withKey(newKey: String) {
@@ -168,19 +168,19 @@ fun RBuilder(): RBuilder =
     RBuilderImpl()
 
 inline fun <P : RProps, reified C : Component<P, *>> RBuilder.child(
-    noinline handler: RHandler<P>
+    noinline handler: RHandler<P>,
 ): ReactElement =
     child(C::class, handler)
 
 inline fun <T, P : RProps, reified C : Component<P, *>> RBuilder.childFunction(
     noinline handler: RHandler<P>,
-    noinline children: RBuilder.(T) -> Unit
+    noinline children: RBuilder.(T) -> Unit,
 ): ReactElement =
     childFunction(C::class, handler, children)
 
 inline fun <P : RProps, reified C : Component<P, *>> RBuilder.node(
     props: P,
-    children: List<Any> = emptyList()
+    children: List<Any> = emptyList(),
 ): ReactElement =
     node(C::class, props, children)
 
@@ -254,7 +254,7 @@ fun <P : RProps> forwardRef(handler: RBuilder.(P, RRef) -> Unit): RClass<P> =
  */
 fun <P : RProps> functionalComponent(
     displayName: String? = null,
-    func: RBuilder.(props: P) -> Unit
+    func: RBuilder.(props: P) -> Unit,
 ): FC<P> {
     val fc: dynamic = { props: P ->
         buildElements {
@@ -274,14 +274,14 @@ fun <P : RProps> functionalComponent(
 fun <P : RProps> RBuilder.child(
     component: FC<P>,
     props: P = jsObject(),
-    handler: RHandler<P> = {}
+    handler: RHandler<P> = {},
 ): ReactElement =
     child(component, props, handler)
 
 fun <T, P : RProps> RBuilder.childFunction(
     component: FC<P>,
     handler: RHandler<P> = {},
-    children: RBuilder.(T) -> Unit
+    children: RBuilder.(T) -> Unit,
 ): ReactElement =
     childFunction(component, jsObject<P>(), handler, children)
 
@@ -289,7 +289,7 @@ fun <T, P : RProps> RBuilder.childFunction(
     component: FC<P>,
     props: P,
     handler: RHandler<P> = {},
-    children: RBuilder.(T) -> Unit
+    children: RBuilder.(T) -> Unit,
 ): ReactElement =
     child(
         type = component,
