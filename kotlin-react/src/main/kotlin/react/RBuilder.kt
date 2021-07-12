@@ -51,16 +51,16 @@ interface RBuilder {
     ): ReactElement =
         child(this, jsObject(), handler)
 
-    operator fun <T> RProvider<T>.invoke(
+    operator fun <T> Provider<T>.invoke(
         value: T,
-        handler: RHandler<RProviderProps<T>>,
+        handler: RHandler<ProviderProps<T>>,
     ): ReactElement =
         child(this, jsObject { this.value = value }, handler)
 
-    operator fun <T> RConsumer<T>.invoke(
+    operator fun <T> Consumer<T>.invoke(
         handler: RBuilder.(T) -> Unit,
     ): ReactElement =
-        child(this, jsObject<RConsumerProps<T>> {
+        child(this, jsObject<ConsumerProps<T>> {
             this.children = { value ->
                 buildElements { handler(value) }
             }

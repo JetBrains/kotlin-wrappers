@@ -12,7 +12,7 @@ external class Provider : Component<ProviderProps, RState> {
 
 external interface ProviderProps : RProps {
     var store: Store<*, *, *>
-    var context: RContext<*>
+    var context: Context<*>
 }
 
 external fun <S, A, R, OP : RProps, SP : RProps, DP : RProps, P : RProps> connect(
@@ -37,11 +37,11 @@ external fun <A, R> useDispatch(): ((A) -> R)
 
 external fun <S, A, R> useStore(): Store<S, A, R>
 
-external fun <S, R> createSelectorHook(context: RContext<*>): (selector: (S) -> R, equalityFn: ((R, R) -> Boolean)) -> R
+external fun <S, R> createSelectorHook(context: Context<*>): (selector: (S) -> R, equalityFn: ((R, R) -> Boolean)) -> R
 
-external fun <A, R> createDispatchHook(context: RContext<*>): () -> ((A) -> R)
+external fun <A, R> createDispatchHook(context: Context<*>): () -> ((A) -> R)
 
-external fun <S, A, R> createStoreHook(context: RContext<*>): () -> Store<S, A, R>
+external fun <S, A, R> createStoreHook(context: Context<*>): () -> Store<S, A, R>
 
 
 
