@@ -1,9 +1,13 @@
 package react.redux
 
 import react.*
-import redux.*
+import redux.Store
 
-fun RBuilder.provider(store: Store<*, *, *>, context: RContext<*>? = null, handler: RHandler<ProviderProps>) =
+fun RBuilder.provider(
+    store: Store<*, *, *>,
+    context: Context<*>? = null,
+    handler: RHandler<ProviderProps>,
+): ReactElement =
     child<ProviderProps, Provider> {
         attrs.store = store
         if (context != null) attrs.context = context
