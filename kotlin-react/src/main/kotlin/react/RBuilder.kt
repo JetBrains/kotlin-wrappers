@@ -139,16 +139,16 @@ interface RBuilder {
      * there will be a proper warning.
      * */
     fun <T> Iterable<T>.renderEach(fn: RBuilder.(T) -> Unit) {
-        childList.add(map {
+        mapTo(childList) {
             buildElement { fn(it) }
-        }.toTypedArray())
+        }
     }
 
 
     fun <T> Iterable<T>.renderEachIndexed(fn: RBuilder.(Int, T) -> Unit) {
-        childList.add(mapIndexed { index, it ->
+        mapIndexedTo(childList) { index, it ->
             buildElement { fn(index, it) }
-        }.toTypedArray())
+        }
     }
 
     fun ReactElement.withKey(newKey: String) {
