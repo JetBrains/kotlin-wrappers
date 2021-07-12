@@ -2,6 +2,11 @@ package react
 
 import kotlin.reflect.KClass
 
+// TODO: Should extend RComponentClassStatics, but has problems with generic params
+external interface ComponentClass<in P : RProps> :
+    ComponentType<P>,
+    RComponentClassStatics<RProps, RState, RContext<*>?>
+
 typealias RClass<P> = ComponentClass<P>
 
 val <P : RProps> KClass<out Component<P, *>>.rClass: ComponentClass<P>
