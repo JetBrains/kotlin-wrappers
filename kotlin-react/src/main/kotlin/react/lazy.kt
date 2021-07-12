@@ -12,4 +12,4 @@ external interface ComponentModule<in P : RProps> {
 // Lazy (16.6+)
 external fun <P : RProps> lazy(
     factory: () -> Promise<ComponentModule<P>>
-): RClass<P>
+): ComponentType<P>
