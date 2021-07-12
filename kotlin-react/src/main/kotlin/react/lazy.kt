@@ -5,11 +5,11 @@ package react
 
 import kotlin.js.Promise
 
-external interface RClassModule<in P : RProps> {
-    val default: RClass<P>
+external interface ComponentModule<in P : RProps> {
+    val default: ComponentType<P>
 }
 
 // Lazy (16.6+)
 external fun <P : RProps> lazy(
-    factory: () -> Promise<RClassModule<P>>,
-): RClass<P>
+    factory: () -> Promise<ComponentModule<P>>,
+): ComponentType<P>
