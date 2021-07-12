@@ -37,13 +37,6 @@ external interface RErrorInfo
 val RErrorInfo.componentStack: Any
     get() = asDynamic().componentStack
 
-// Refs (16.3+)
-external interface RRef
-
-external interface RReadableRef<out T : Any> : RRef {
-    val current: T?
-}
-
 fun <S : RState> Component<*, S>.setState(buildState: S.() -> Unit) =
     setState({ assign(it, buildState) })
 
