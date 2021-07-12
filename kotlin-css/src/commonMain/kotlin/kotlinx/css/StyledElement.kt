@@ -3,7 +3,7 @@
 package kotlinx.css
 
 import kotlinx.css.properties.*
-import kotlin.reflect.*
+import kotlin.reflect.KProperty
 
 open class StyledElement {
     val declarations = LinkedHashMap<String, Any>()
@@ -121,6 +121,8 @@ var StyledElement.gridTemplateRows: GridTemplateRows by CSSProperty()
 var StyledElement.height: LinearDimension by CSSProperty()
 
 var StyledElement.hyphens: Hyphens by CSSProperty()
+
+var StyledElement.isolation: Isolation by CSSProperty()
 
 var StyledElement.justifyContent: JustifyContent by CSSProperty()
 var StyledElement.justifyItems: JustifyItems by CSSProperty()
