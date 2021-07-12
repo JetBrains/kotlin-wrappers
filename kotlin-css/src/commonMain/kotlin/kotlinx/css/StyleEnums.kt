@@ -48,7 +48,7 @@ enum class Isolation {
 
     ;
 
-    override fun toString() = name.hyphenize()
+    override fun toString() = name
 }
 
 enum class JustifyContent {
