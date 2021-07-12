@@ -1,7 +1,9 @@
 package react
 
-import kotlinext.js.*
-import kotlin.reflect.*
+import kotlinext.js.clone
+import kotlinext.js.js
+import kotlinext.js.jsObject
+import kotlin.reflect.KClass
 
 typealias RRender = RBuilder.() -> Unit
 
@@ -246,14 +248,6 @@ fun <P : RProps> forwardRef(handler: RBuilder.(P, RRef) -> Unit): RClass<P> =
     rawForwardRef { props, ref ->
         buildElements { handler(props, ref) }
     }
-
-@Deprecated(
-    message = "Legacy type alias",
-    ReplaceWith("FunctionComponent", "react.FunctionComponent")
-)
-typealias FunctionalComponent<P> = FunctionComponent<P>
-
-typealias FC<P> = FunctionComponent<P>
 
 /**
  * Get functional component from [func]
