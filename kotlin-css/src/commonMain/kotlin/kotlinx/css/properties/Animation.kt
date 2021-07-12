@@ -45,7 +45,7 @@ class Animation(
     private val direction: AnimationDirection,
     private val fillMode: FillMode,
     private val playState: PlayState,
-    val name: String
+    val name: String,
 ) {
     override fun toString() = "$duration $timing $delay $iterationCount $direction $fillMode $playState $name"
 }
@@ -64,7 +64,7 @@ fun StyledElement.animation(
     iterationCount: IterationCount = 1.times,
     direction: AnimationDirection = AnimationDirection.normal,
     fillMode: FillMode = FillMode.none,
-    playState: PlayState = PlayState.running
+    playState: PlayState = PlayState.running,
 ) {
     animation += Animation(duration, timing, delay, iterationCount, direction, fillMode, playState, name)
 }

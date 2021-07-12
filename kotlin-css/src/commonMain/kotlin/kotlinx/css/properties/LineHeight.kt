@@ -1,6 +1,7 @@
 package kotlinx.css.properties
 
-import kotlinx.css.*
+import kotlinx.css.CssValue
+import kotlinx.css.LinearDimension
 
 class LineHeight(override val value: String) : CssValue(value) {
     companion object {

@@ -21,7 +21,7 @@ inline fun <T> useMemo(
 )
 inline fun <T> useMemo(
     noinline callback: () -> T,
-    dependencies: RDependenciesArray
+    dependencies: RDependenciesArray,
 ): T =
     rawUseMemo(callback, dependencies)
 

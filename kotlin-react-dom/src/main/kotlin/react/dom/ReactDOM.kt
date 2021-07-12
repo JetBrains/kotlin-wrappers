@@ -1,7 +1,9 @@
 package react.dom
 
-import org.w3c.dom.*
-import react.*
+import org.w3c.dom.Element
+import react.RRender
+import react.ReactElement
+import react.buildElements
 
 fun render(container: Element?, callback: () -> Unit = {}, handler: RRender) =
     render(buildElements(handler), container, callback)

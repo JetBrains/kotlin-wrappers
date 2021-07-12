@@ -34,14 +34,14 @@ private constructor() {
 
     inline operator fun getValue(
         thisRef: Nothing?,
-        property: KProperty<*>
+        property: KProperty<*>,
     ): T =
         asDynamic()[0]
 
     inline operator fun setValue(
         thisRef: Nothing?,
         property: KProperty<*>,
-        value: T
+        value: T,
     ) {
         asDynamic()[1](value)
     }

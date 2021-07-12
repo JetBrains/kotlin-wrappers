@@ -1,10 +1,12 @@
 package styled
 
-import kotlinext.js.*
-import kotlinx.browser.*
-import kotlinx.css.*
+import kotlinext.js.invoke
+import kotlinext.js.jsObject
+import kotlinx.browser.window
+import kotlinx.css.CSSBuilder
+import kotlinx.css.RuleSet
 import kotlinx.html.*
-import org.w3c.dom.*
+import org.w3c.dom.Element
 import react.*
 import react.dom.*
 import kotlin.js.Promise
@@ -49,14 +51,14 @@ interface StyledElementBuilder<P : WithClassName> : RElementBuilder<P>, StyledBu
     companion object {
         operator fun <P : WithClassName> invoke(
             type: ComponentType<P>,
-            attrs: P = jsObject()
+            attrs: P = jsObject(),
         ): StyledElementBuilder<P> = StyledElementBuilderImpl(type, attrs)
     }
 }
 
 class StyledElementBuilderImpl<P : WithClassName>(
     override val type: ComponentType<P>,
-    attrs: P = jsObject()
+    attrs: P = jsObject(),
 ) : StyledElementBuilder<P>, RElementBuilderImpl<P>(attrs) {
     override val css = CSSBuilder()
 
@@ -117,8 +119,8 @@ private fun injectGlobalKeyframeStyle(name: String, style: String) {
         injectGlobal(style)
     } else {
         injectGlobals(arrayOf(
-                "@-webkit-keyframes $name {$style}",
-                "@keyframes $name {$style}"
+            "@-webkit-keyframes $name {$style}",
+            "@keyframes $name {$style}"
         ))
     }
 }
@@ -202,7 +204,7 @@ object Styled {
             devOverrideUseRef { rawStyled(type)({ it.css }) }
         }
 
-    private fun <P: WithClassName> buildStyledProps(css: CSSBuilder, props: P): P {
+    private fun <P : WithClassName> buildStyledProps(css: CSSBuilder, props: P): P {
         val styledProps = props.unsafeCast<StyledProps>()
         if (css.rules.isNotEmpty() || css.multiRules.isNotEmpty() || css.declarations.isNotEmpty()) {
             styledProps.css = css.toString()
@@ -222,7 +224,7 @@ object Styled {
         return createElement(wrappedType, styledProps, *children.toTypedArray())
     }
 
-    fun <P: WithClassName> createElement(type: ComponentType<P>, css: CSSBuilder, props: P, children: List<Any>): ReactElement {
+    fun <P : WithClassName> createElement(type: ComponentType<P>, css: CSSBuilder, props: P, children: List<Any>): ReactElement {
         val wrappedType = wrap(type)
         val styledProps = buildStyledProps(css, props)
         return createElement(wrappedType, styledProps, *children.toTypedArray())

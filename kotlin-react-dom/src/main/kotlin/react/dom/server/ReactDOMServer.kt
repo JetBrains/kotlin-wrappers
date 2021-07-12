@@ -1,6 +1,7 @@
 package react.dom.server
 
-import react.*
+import react.RRender
+import react.buildElements
 
 fun renderToString(handler: RRender) = rawRenderToString(buildElements(handler))
 

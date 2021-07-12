@@ -1,10 +1,11 @@
 package react.redux
 
-import kotlinext.js.*
-import react.*
+import kotlinext.js.js
+import react.HOC
+import react.RProps
 
 fun <A, R> rConnect(
-    options: (Options<Any, RProps, RProps, DispatchProps<A, R>>.() -> Unit) = {}
+    options: (Options<Any, RProps, RProps, DispatchProps<A, R>>.() -> Unit) = {},
 ): HOC<DispatchProps<A, R>, RProps> {
     return connect<Any, A, R, RProps, RProps, RProps, DispatchProps<A, R>>(
         undefined,
@@ -20,7 +21,7 @@ fun <A, R> rConnect(
 
 fun <S, OP : RProps, P : RProps> rConnect(
     mapStateToProps: P.(S, OP) -> Unit,
-    options: (Options<S, OP, P, P>.() -> Unit) = {}
+    options: (Options<S, OP, P, P>.() -> Unit) = {},
 ): HOC<P, OP> {
     return connect<S, Any, Any, OP, P, RProps, P>(
         { state: S, ownProps: OP ->
@@ -40,7 +41,7 @@ fun <S, OP : RProps, P : RProps> rConnect(
 
 fun <A, R, OP : RProps, P : RProps> rConnect(
     mapDispatchToProps: P.((A) -> R, OP) -> Unit,
-    options: (Options<Any, OP, RProps, P>.() -> Unit) = {}
+    options: (Options<Any, OP, RProps, P>.() -> Unit) = {},
 ): HOC<P, OP> {
     return connect<Any, A, R, OP, RProps, P, P>(
         undefined,
@@ -61,7 +62,7 @@ fun <A, R, OP : RProps, P : RProps> rConnect(
 fun <S, A, R, OP : RProps, SP : RProps, DP : RProps, P : RProps> rConnect(
     mapStateToProps: SP.(S, OP) -> Unit,
     mapDispatchToProps: DP.((A) -> R, OP) -> Unit,
-    options: (Options<S, OP, SP, P>.() -> Unit) = {}
+    options: (Options<S, OP, SP, P>.() -> Unit) = {},
 ): HOC<P, OP> {
     return connect<S, A, R, OP, SP, DP, P>(
         { state, ownProps ->
@@ -87,7 +88,7 @@ fun <S, A, R, OP : RProps, SP : RProps, DP : RProps, P : RProps> rConnect(
     mapStateToProps: SP.(S, OP) -> Unit,
     mapDispatchToProps: DP.((A) -> R, OP) -> Unit,
     mergeProps: P.(SP, DP, OP) -> Unit,
-    options: (Options<S, OP, SP, P>.() -> Unit) = {}
+    options: (Options<S, OP, SP, P>.() -> Unit) = {},
 ): HOC<P, OP> {
     return connect<S, A, R, OP, SP, DP, P>(
         { state, ownProps ->

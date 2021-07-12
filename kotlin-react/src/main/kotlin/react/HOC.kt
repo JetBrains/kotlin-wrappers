@@ -1,6 +1,6 @@
 package react
 
-import kotlinext.js.*
+import kotlinext.js.JsFunction
 
 external interface HOC<out P : RProps, in R : RProps> : JsFunction<Nothing?, RClass<R>>
 

@@ -35,5 +35,5 @@ external interface RComponentClassStatics<P : RProps, S : RState, C : RContext<*
  * in your class components
  */
 open class RStatics<P : RProps, S : RState, C : Component<P, S>, CTX : RContext<*>?>(
-    klazz: KClass<C>
+    klazz: KClass<C>,
 ) : RComponentClassStatics<P, S, CTX> by klazz.js.unsafeCast<RComponentClassStatics<P, S, CTX>>()

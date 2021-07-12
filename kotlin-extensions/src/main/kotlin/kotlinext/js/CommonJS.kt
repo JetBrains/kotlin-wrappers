@@ -1,6 +1,6 @@
 package kotlinext.js
 
-import kotlin.js.*
+import kotlin.js.RegExp
 
 external interface Context : JsFunction1<String, dynamic> {
     fun resolve(module: String): String
