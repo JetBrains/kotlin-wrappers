@@ -13,9 +13,6 @@ external fun cloneElement(element: dynamic, props: dynamic, vararg child: Any?):
 
 external fun isValidElement(element: Any): Boolean
 
-// Refs (16.3+)
-external fun <T : Any> createRef(): RReadableRef<T>
-
 @JsName("forwardRef")
 external fun <P : RProps> rawForwardRef(forward: (props: P, ref: RRef) -> Any): RClass<P>
 
@@ -46,10 +43,3 @@ external fun <T> rawUseMemo(
     callback: () -> T,
     dependencies: RDependenciesArray,
 ): T
-
-// Ref Hook (16.8+)
-external interface RMutableRef<T : Any> : RReadableRef<T> {
-    override var current: T?
-}
-
-external fun <T : Any> useRef(initialValue: T? = definedExternally): RMutableRef<T>
