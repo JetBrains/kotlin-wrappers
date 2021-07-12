@@ -30,15 +30,14 @@ fun Transforms.matrix(
     a: Number, b: Number,
     c: Number, d: Number,
 
-    tx: Number, ty: Number
+    tx: Number, ty: Number,
 ) = add("matrix", a, b, c, d, tx, ty)
 
 fun Transforms.matrix3d(
     a1: Number, b1: Number, c1: Number, d1: Number,
     a2: Number, b2: Number, c2: Number, d2: Number,
     a3: Number, b3: Number, c3: Number, d3: Number,
-    a4: Number, b4: Number, c4: Number, d4: Number
-
+    a4: Number, b4: Number, c4: Number, d4: Number,
 ) = add("matrix3d", a1, b1, c1, d1, a2, b2, c2, d2, a3, b3, c3, d3, a4, b4, c4, d4)
 
 

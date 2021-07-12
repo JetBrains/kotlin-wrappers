@@ -9,7 +9,7 @@ class TagSelector(val tagName: String)
 private object TagSelectorFactory {
     operator fun getValue(
         thisRef: Nothing?,
-        property: KProperty<*>
+        property: KProperty<*>,
     ): TagSelector =
         TagSelector(property.name)
 }

@@ -3,8 +3,9 @@
 package react.dom
 
 import kotlinx.html.*
-import kotlinx.html.attributes.*
-import react.*
+import kotlinx.html.attributes.enumEncode
+import react.RBuilder
+import react.ReactElement
 
 inline fun <T : Tag> RBuilder.tag(block: RDOMBuilder<T>.() -> Unit, noinline factory: (TagConsumer<Unit>) -> T): ReactElement =
     child(RDOMBuilder(factory).apply {
@@ -46,7 +47,7 @@ inline fun RBuilder.button(
     formMethod: ButtonFormMethod? = null,
     type: ButtonType? = null,
     classes: String? = null,
-    block: RDOMBuilder<BUTTON>.() -> Unit
+    block: RDOMBuilder<BUTTON>.() -> Unit,
 ): ReactElement = tag(block) { BUTTON(attributesMapOf("formenctype", formEncType?.enumEncode(), "formmethod", formMethod?.enumEncode(), "type", type?.enumEncode(), "class", classes), it) }
 
 inline fun RBuilder.canvas(classes: String? = null, content: String = ""): ReactElement = tag({ +content }) { CANVAS(attributesMapOf("class", classes), it) }
@@ -132,7 +133,7 @@ inline fun RBuilder.input(
     formMethod: InputFormMethod? = null,
     name: String? = null,
     classes: String? = null,
-    block: RDOMBuilder<INPUT>.() -> Unit
+    block: RDOMBuilder<INPUT>.() -> Unit,
 ): ReactElement =
     tag(block) { INPUT(attributesMapOf("type", type?.enumEncode(), "formenctype", formEncType?.enumEncode(), "formmethod", formMethod?.enumEncode(), "name", name, "class", classes), it) }
 
@@ -181,7 +182,7 @@ inline fun RBuilder.p(classes: String? = null, block: RDOMBuilder<P>.() -> Unit)
 
 inline fun RBuilder.param(name: String? = null, value: String? = null, block: RDOMBuilder<PARAM>.() -> Unit): ReactElement = tag(block) { PARAM(attributesMapOf("name", name, "value", value), it) }
 
-inline fun RBuilder.picture(classes: String? = null, block: RDOMBuilder<PICTURE>.() -> Unit): ReactElement = tag(block) { PICTURE(attributesMapOf("class", classes), it)}
+inline fun RBuilder.picture(classes: String? = null, block: RDOMBuilder<PICTURE>.() -> Unit): ReactElement = tag(block) { PICTURE(attributesMapOf("class", classes), it) }
 
 inline fun RBuilder.pre(classes: String? = null, block: RDOMBuilder<PRE>.() -> Unit): ReactElement = tag(block) { PRE(attributesMapOf("class", classes), it) }
 

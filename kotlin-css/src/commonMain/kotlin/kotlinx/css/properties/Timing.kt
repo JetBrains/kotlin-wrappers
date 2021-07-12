@@ -1,6 +1,6 @@
 package kotlinx.css.properties
 
-import kotlinx.css.*
+import kotlinx.css.CssValue
 
 class Time(override val value: String) : CssValue(value)
 
@@ -28,7 +28,7 @@ class Timing(override val value: String) : CssValue(value) {
 
 fun cubicBezier(
     x1: Double, y1: Double,
-    x2: Double, y2: Double
+    x2: Double, y2: Double,
 ): Timing = Timing("cubic-bezier($x1, $y1, $x2, $y2)")
 
 @Suppress("EnumEntryName")

@@ -26,7 +26,7 @@ fun Children.forEachElement(children: Any?, handler: (ReactElement) -> Unit) =
 inline fun <P : RProps> cloneElement(
     element: ReactElement,
     vararg child: Any?,
-    props: P.() -> Unit
+    props: P.() -> Unit,
 ): ReactElement = cloneElement(element, jsObject(props), *child)
 
 fun clone(element: dynamic, props: dynamic, child: Any? = null): ReactElement =

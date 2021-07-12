@@ -19,12 +19,12 @@ external fun <S, A, R, OP : RProps, SP : RProps, DP : RProps, P : RProps> connec
     mapStateToProps: ((S, OP) -> SP)? = definedExternally,
     mapDispatchToProps: (((A) -> R, OP) -> DP)? = definedExternally,
     mergeProps: ((SP, DP, OP) -> P)? = definedExternally,
-    options: Options<S, OP, SP, P>? = definedExternally
+    options: Options<S, OP, SP, P>? = definedExternally,
 ): HOC<P, OP>
 
 external fun <S, A, R, OP : RProps, P : RProps> connectAdvanced(
     selectorFactory: SelectorFactory<S, A, R, OP, P>,
-    options: ConnectOptions<P> = definedExternally
+    options: ConnectOptions<P> = definedExternally,
 ): HOC<P, OP>
 
 external fun batch(action: () -> Unit)

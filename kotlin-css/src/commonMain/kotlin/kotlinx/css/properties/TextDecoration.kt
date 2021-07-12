@@ -2,7 +2,10 @@
 
 package kotlinx.css.properties
 
-import kotlinx.css.*
+import kotlinx.css.Color
+import kotlinx.css.StyledElement
+import kotlinx.css.hyphenize
+import kotlinx.css.textDecoration
 
 enum class TextDecorationLine {
     initial, inherit, unset,
@@ -16,7 +19,7 @@ enum class TextDecorationLine {
 class TextDecoration(
     private val lines: Set<TextDecorationLine>,
     val style: TextDecorationStyle? = null,
-    val color: Color? = null
+    val color: Color? = null,
 ) {
     companion object {
         val none = TextDecoration(setOf())
@@ -43,7 +46,7 @@ enum class TextDecorationStyle {
 fun StyledElement.textDecoration(
     vararg lines: TextDecorationLine,
     style: TextDecorationStyle? = null,
-    color: Color? = null
+    color: Color? = null,
 ) {
     textDecoration = TextDecoration(lines.toSet(), style, color)
 }

@@ -7,7 +7,7 @@ package react.table
 
 external val usePagination: PluginHook<Any>
 
-external interface UsePaginationOptions<D: Any> {
+external interface UsePaginationOptions<D : Any> {
     var pageCount: Int
         @Deprecated(message = "Write-only property", level = DeprecationLevel.HIDDEN)
         get
@@ -30,7 +30,7 @@ external interface UsePaginationState {
     var pageIndex: Int
 }
 
-external interface UsePaginationInstanceProps<D: Any> {
+external interface UsePaginationInstanceProps<D : Any> {
     val page: Array<out Row<D>>
     val pageCount: Int
     val pageOptions: Array<out Int>

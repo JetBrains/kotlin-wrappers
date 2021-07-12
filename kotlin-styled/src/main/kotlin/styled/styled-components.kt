@@ -4,7 +4,9 @@
 package styled
 
 import kotlinext.js.TemplateTag
-import react.*
+import react.ComponentType
+import react.RClass
+import react.RProps
 import react.dom.WithClassName
 
 external interface StyledProps : WithClassName {

@@ -5,13 +5,13 @@ package redux
 
 external fun <S> createStore(
     reducer: Reducer<S, Action>,
-    preloadedState: S
+    preloadedState: S,
 ): Store<S, Action, Action>
 
 external fun <S, A, R> createStore(
     reducer: Reducer<S, A>,
     preloadedState: S,
-    enhancer: Enhancer<S, Action, Action, A, R>
+    enhancer: Enhancer<S, Action, Action, A, R>,
 ): Store<S, A, R>
 
 external fun <S, A> combineReducers(reducers: ReducerContainer<*, A>): Reducer<S, A>

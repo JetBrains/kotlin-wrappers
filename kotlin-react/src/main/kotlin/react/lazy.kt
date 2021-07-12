@@ -11,5 +11,5 @@ external interface RClassModule<in P : RProps> {
 
 // Lazy (16.6+)
 external fun <P : RProps> lazy(
-    factory: () -> Promise<RClassModule<P>>
+    factory: () -> Promise<RClassModule<P>>,
 ): RClass<P>

@@ -29,9 +29,9 @@ interface RuleContainer {
 
         multiRules.forEach { (selector, passStaticClassesToParent, block) ->
             val blockBuilder = CSSBuilder(
-                    "$indent  ",
-                    allowClasses = false,
-                    parent = if (passStaticClassesToParent) this@RuleContainer else null
+                "$indent  ",
+                allowClasses = false,
+                parent = if (passStaticClassesToParent) this@RuleContainer else null
             ).apply(block)
 
             append("$selector {\n")
@@ -54,7 +54,7 @@ interface RuleContainer {
 class CSSBuilder(
     val indent: String = "",
     val allowClasses: Boolean = true,
-    val parent: RuleContainer? = null
+    val parent: RuleContainer? = null,
 ) : StyledElement(), RuleContainer {
     var classes = mutableListOf<String>()
 

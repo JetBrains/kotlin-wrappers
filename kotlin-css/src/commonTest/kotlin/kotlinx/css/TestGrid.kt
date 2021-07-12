@@ -1,6 +1,7 @@
 package kotlinx.css
 
-import kotlin.test.*
+import kotlin.test.Test
+import kotlin.test.assertEquals
 
 class TestGrid {
     @Test
