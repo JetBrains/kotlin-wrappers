@@ -14,7 +14,7 @@ external fun cloneElement(element: dynamic, props: dynamic, vararg child: Any?):
 external fun isValidElement(element: Any): Boolean
 
 @JsName("forwardRef")
-external fun <P : RProps> rawForwardRef(forward: (props: P, ref: RRef) -> Any): RClass<P>
+external fun <P : RProps> rawForwardRef(forward: (props: P, ref: RRef) -> dynamic): ComponentType<P>
 
 // Effect Hook (16.8+)
 @JsName("useEffect")
