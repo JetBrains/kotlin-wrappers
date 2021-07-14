@@ -262,7 +262,7 @@ fun <P : RProps> forwardRef(handler: RBuilder.(P, RRef) -> Unit): RClass<P> =
     }
 
 /**
- * Append functional component [component] as child of current builder
+ * Append function component [component] as child of current builder
  */
 @Suppress("EXTENSION_SHADOWED_BY_MEMBER")
 fun <P : RProps> RBuilder.child(

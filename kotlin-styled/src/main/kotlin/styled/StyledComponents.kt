@@ -137,7 +137,7 @@ private external interface GlobalStylesComponentProps : RProps {
 }
 
 private object GlobalStyles {
-    private val component = functionalComponent<GlobalStylesComponentProps> { props ->
+    private val component = functionComponent<GlobalStylesComponentProps> { props ->
         props.globalStyles.forEach {
             child(it, jsObject {}, emptyList())
         }

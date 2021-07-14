@@ -37,7 +37,7 @@ fun main() {
     render(document.getElementById("root")) {
         // app child components go here!
         child(MyClassComponent::class) {}
-        child(myFunctionalComponent) {}
+        child(myFunctionComponent) {}
     }
 }
 ```
@@ -64,7 +64,7 @@ external interface WelcomeProps : RProps {
     var name: String
 }
 
-private val welcome = functionalComponent<WelcomeProps> { props -> 
+private val welcome = functionComponent<WelcomeProps> { props -> 
     h1 {
         +"Hello, ${props.name}"
     }
@@ -137,7 +137,7 @@ class Welcome(props: WelcomeProps) : RComponent<WelcomeProps, WelcomeState>(prop
 
 ##### Using a React class component
 
-Just like functional components, you can use the `child` function to use a React class component:
+Just like function components, you can use the `child` function to use a React class component:
 
 ```kotlin
 child(Welcome::class) {
@@ -168,7 +168,7 @@ fun RBuilder.welcome(handler: WelcomeProps.() -> Unit) = child(Welcome::class) {
 If a single component contains a lot of code, you can use `RBuilder` extension functions to group and structure code that belongs together. 
 
 ```kotlin
-val myComplexComponent = functionalComponent<RProps> {
+val myComplexComponent = functionComponent<RProps> {
     myHeader("complex")
     myFooter("!")
 }
@@ -196,10 +196,10 @@ React 16.8 introduced Hooks as a novel way of using state and other React featur
 
 ##### The `useState` Hook
 
-You can use the `useState` Hook when you want to keep track of state without the need for a class component. Consider the following implementation of a counter inside a `functionalComponent`:
+You can use the `useState` Hook when you want to keep track of state without the need for a class component. Consider the following implementation of a counter inside a `functionComponent`:
 
 ```kotlin
-val counter = functionalComponent<RProps> {
+val counter = functionComponent<RProps> {
     val (count, setCount) = useState(0)
     button {
         attrs.onClickFunction = { setCount(count + 1) }
@@ -215,7 +215,7 @@ Note that unlike properties in a React class component, the `setCount` function 
 It is also possible to use the State Hook via Kotlin's [delegation syntax](https://kotlinlang.org/docs/reference/delegated-properties.html), which can simplify the code even more:
 
 ```kotlin
-val counter = functionalComponent<RProps> {
+val counter = functionComponent<RProps> {
     var count by useState(0)
     button {
         attrs.onClickFunction = { count += 1 }
@@ -230,10 +230,10 @@ To learn more about the State Hook, check out the [official React documentation]
 
 ##### The `useEffect` Hook
 
-The Effect Hook can be used to perform side effects without the need for a class component, such as querying an API or establishing a connection. Consider the following implementation of a `functionalComponent` which `fetch`es a random fact and displays it in a `h3` tag:
+The Effect Hook can be used to perform side effects without the need for a class component, such as querying an API or establishing a connection. Consider the following implementation of a `functionComponent` which `fetch`es a random fact and displays it in a `h3` tag:
 
 ```kotlin
-val randomFact = functionalComponent<RProps> {
+val randomFact = functionComponent<RProps> {
     val (randomFact, setRandomFact) = useState<String?>(null)
     useEffect(listOf()) {
         window.fetch("http://numbersapi.com/42").then { 

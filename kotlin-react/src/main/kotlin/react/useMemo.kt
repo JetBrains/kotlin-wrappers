@@ -3,7 +3,7 @@
 package react
 
 /**
- * Only works inside [functionalComponent]
+ * Only works inside [functionComponent]
  * @see <a href="https://reactjs.org/docs/hooks-state.html#hooks-and-function-components">Hooks and Function Components</a>
  */
 inline fun <T> useMemo(
@@ -13,7 +13,7 @@ inline fun <T> useMemo(
     rawUseMemo(callback, dependencies)
 
 /**
- * Only works inside [functionalComponent]
+ * Only works inside [functionComponent]
  * @see <a href="https://reactjs.org/docs/hooks-state.html#hooks-and-function-components">Hooks and Function Components</a>
  */
 @Deprecated(

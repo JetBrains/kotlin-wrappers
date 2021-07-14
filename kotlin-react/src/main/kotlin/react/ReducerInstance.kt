@@ -6,7 +6,7 @@ typealias RReducer<S, A> = (state: S, action: A) -> S
 typealias RDispatch<A> = (action: A) -> Unit
 
 /**
- * Only works inside [functionalComponent]
+ * Only works inside [functionComponent]
  * @see <a href="https://reactjs.org/docs/hooks-state.html#hooks-and-function-components">Hooks and Function Components</a>
  */
 // TODO: make external in IR
