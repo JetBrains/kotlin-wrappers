@@ -66,6 +66,10 @@ interface RBuilder {
             }
         }) {}
 
+    @Deprecated(
+        message = "Ambiguous API",
+        ReplaceWith("child(this, props, children)"),
+    )
     fun <P : RProps> RClass<P>.node(
         props: P,
         children: List<Any> = emptyList(),
@@ -89,12 +93,16 @@ interface RBuilder {
             children = listOf { value: T -> buildElement { children(value) } }
         )
 
+    @Deprecated(
+        message = "Ambiguous API",
+        ReplaceWith("child(klazz.rClass, props, children)"),
+    )
     fun <P : RProps> node(
         klazz: KClass<out Component<P, *>>,
         props: P,
         children: List<Any> = emptyList(),
     ): ReactElement =
-        klazz.rClass.node(props, children)
+        child(klazz.rClass, props, children)
 
     fun RProps.children() {
         childList.addAll(Children.toArray(children))
@@ -178,11 +186,15 @@ inline fun <T, P : RProps, reified C : Component<P, *>> RBuilder.childFunction(
 ): ReactElement =
     childFunction(C::class, handler, children)
 
+@Deprecated(
+    message = "Ambiguous API",
+    ReplaceWith("child(C::class.rClass, props, children)"),
+)
 inline fun <P : RProps, reified C : Component<P, *>> RBuilder.node(
     props: P,
     children: List<Any> = emptyList(),
 ): ReactElement =
-    node(C::class, props, children)
+    child(C::class.rClass, props, children)
 
 open class RBuilderImpl : RBuilder {
     override val childList = mutableListOf<Any>()
