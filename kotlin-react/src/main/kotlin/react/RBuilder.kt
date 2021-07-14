@@ -262,24 +262,6 @@ fun <P : RProps> forwardRef(handler: RBuilder.(P, RRef) -> Unit): RClass<P> =
     }
 
 /**
- * Get functional component from [func]
- */
-fun <P : RProps> functionalComponent(
-    displayName: String? = null,
-    func: RBuilder.(props: P) -> Unit,
-): FC<P> {
-    val fc: dynamic = { props: P ->
-        buildElements {
-            func(props)
-        }
-    }
-    if (displayName != null) {
-        fc.displayName = displayName
-    }
-    return fc.unsafeCast<FunctionComponent<P>>()
-}
-
-/**
  * Append functional component [component] as child of current builder
  */
 @Suppress("EXTENSION_SHADOWED_BY_MEMBER")
