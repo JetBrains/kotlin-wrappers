@@ -4,14 +4,14 @@ import react.RBuilder
 import react.RProps
 import react.child
 import react.dom.*
-import react.functionalComponent
+import react.functionComponent
 import react.router.dom.*
 
-val Home = functionalComponent<RProps> { h2 { +"Home" } }
-val About = functionalComponent<RProps> { h2 { +"About" } }
+val Home = functionComponent<RProps> { h2 { +"Home" } }
+val About = functionComponent<RProps> { h2 { +"About" } }
 
-val Topics = functionalComponent<RProps> {
-    val match = useRouteMatch<RProps>() ?: return@functionalComponent
+val Topics = functionComponent<RProps> {
+    val match = useRouteMatch<RProps>() ?: return@functionComponent
 
     div {
         h2 { +"Topics" }
@@ -38,8 +38,8 @@ external interface TopicProps : RProps {
     val topicId: String
 }
 
-val Topic = functionalComponent<RProps> {
-    val topicId = useParams<TopicProps>()?.topicId ?: return@functionalComponent
+val Topic = functionComponent<RProps> {
+    val topicId = useParams<TopicProps>()?.topicId ?: return@functionComponent
 
     h3 { +"Requested topic ID: $topicId" }
 }
