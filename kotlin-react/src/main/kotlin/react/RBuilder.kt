@@ -256,11 +256,6 @@ open class RElementBuilderImpl<out P : RProps>(override val attrs: P) : RElement
 
 typealias RHandler<P> = RElementBuilder<P>.() -> Unit
 
-fun <P : RProps> forwardRef(handler: RBuilder.(P, RRef) -> Unit): RClass<P> =
-    rawForwardRef { props, ref ->
-        buildElements { handler(props, ref) }
-    }
-
 /**
  * Get functional component from [func]
  */
