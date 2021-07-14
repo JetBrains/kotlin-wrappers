@@ -33,7 +33,11 @@ abstract external class Component<P : RProps, S : RState>(
 
     open fun componentWillUnmount()
 
-    open fun componentDidCatch(error: Throwable, info: RErrorInfo)
+    open fun componentDidCatch(error: Throwable, info: ErrorInfo)
 
     abstract fun render(): dynamic
+}
+
+external interface ErrorInfo {
+    val componentStack: String
 }
