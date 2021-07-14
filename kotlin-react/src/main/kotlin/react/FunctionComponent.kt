@@ -22,7 +22,7 @@ fun <P : RProps> functionComponent(
     if (displayName != null) {
         fc.displayName = displayName
     }
-    return fc.unsafeCast<FunctionComponent<P>>()
+    return fc.unsafeCast<FC<P>>()
 }
 
 /**
