@@ -190,7 +190,14 @@ val styles = CSSBuilder().apply {
         margin(0.px)
         padding(0.px)
     }
+    //you can simply apply any css roles or prefixes in there
+    "[draggable=\"true\"]" {
+        userSelect = UserSelect.none
+    }
 }
 
 StyledComponents.injectGlobal(styles.toString())
+/// or: 
+/// import styled.injectGlobal
+/// injectGlobal(styles.toString())
 ```
