@@ -54,7 +54,7 @@ export function Welcome(props) {
 }
 ```
 
-Here's what the equivalent Kotlin code looks like: 
+Here's what the equivalent Kotlin code looks like:
 
 ```kotlin
 import react.*
@@ -64,7 +64,7 @@ external interface WelcomeProps : RProps {
     var name: String
 }
 
-private val welcome = functionComponent<WelcomeProps> { props -> 
+private val welcome = functionComponent<WelcomeProps> { props ->
     h1 {
         +"Hello, ${props.name}"
     }
@@ -235,8 +235,8 @@ The Effect Hook can be used to perform side effects without the need for a class
 ```kotlin
 val randomFact = functionComponent<RProps> {
     val (randomFact, setRandomFact) = useState<String?>(null)
-    useEffect(*emptyArray()) {
-        window.fetch("http://numbersapi.com/42").then { 
+    useEffect(*emptyArray()) { // or useEffectOnce
+        window.fetch("http://numbersapi.com/42").then {
             it.text().then { fact -> setRandomFact(fact) }
         }
     }
@@ -249,9 +249,10 @@ Note that in this example, `useEffect` gets passed a list of (empty) dependencie
 We might want to set up a subscription to some external data source. In that case, it is important to clean up so that we don't introduce a memory leak. The following example illustrates how to write effects with cleanup:
 
 ```kotlin
-//js, react original version: https://codesandbox.io/s/jvvkoo8pq3?file=/src/index.js
+// Same example in JavaScript: https://codesandbox.io/s/jvvkoo8pq3?file=/src/index.js
 data class Hit(val objectID: String, val url: String, val title: String)
-data class Data(val hit:List<Hit>)
+data class Data(val hit: List<Hit>)
+
 val searchResults = functionComponent<RProps> {
     var data by useState(Data(emptyList()))
     var query by useState("react")
@@ -266,7 +267,7 @@ val searchResults = functionComponent<RProps> {
             }
         }
 
-        cleanup { 
+        cleanup {
             job.cancel()
             ignore = true
         }
@@ -282,10 +283,10 @@ val searchResults = functionComponent<RProps> {
     }
     ul {
         for (item in data.hit) {
-            li { 
+            li {
                 key = item.objectID
-                a { 
-                    attrs { 
+                a {
+                    attrs {
                         href = item.url
                     }
                     +item.title
@@ -299,32 +300,33 @@ val searchResults = functionComponent<RProps> {
 To learn more about the Effect Hook, check out the [official React documentation](https://reactjs.org/docs/hooks-effect.html).
 
 ##### The "Custom" Hook
+
 Building your own Hooks lets you extract component logic into reusable functions.
 
 A custom Hook is a Kotlin function whose name starts with "use" and that may call other Hooks:
 
 ```kotlin
 fun useCards(): List<String> {
-   val (cardsInDeck, setCardsInDeck) = useState(emptyList<String>())
+    val (cardsInDeck, setCardsInDeck) = useState(emptyList<String>())
 
-   useEffect(*emptyArray()) {
+    useEffectOnce {
         val job = MainScope().launch {
             val results = List(52) { i -> i.toString() }
             setCardsInDeck(results)
         }
-        
-        cleanup { 
-            job.cancel() 
-        }
-   }
 
-   return cardsInDeck
+        cleanup {
+            job.cancel()
+        }
+    }
+
+    return cardsInDeck
 }
-//now we can use this hook in any component!
+// now we can use this hook in any component!
 val randomFact = functionComponent<RProps> {
     val cardsInDeck = useCards()
     h3 {
-        for(card in cardsInDeck) {
+        for (card in cardsInDeck) {
             p {
                 +card
             }
@@ -351,7 +353,7 @@ var Tag.style: RuleSet
             }
         }
     }
-    
+
 fun Tag.style(handler: RuleSet) {
     style = handler
 }
