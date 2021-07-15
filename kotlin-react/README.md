@@ -246,7 +246,88 @@ val randomFact = functionComponent<RProps> {
 
 Note that in this example, `useEffect` gets passed a list of (empty) dependencies. If `listOf()` is omitted, `useEffect` will be called after each invocation of `setRandomFact`, resulting in an endless loop.
 
+We might want to set up a subscription to some external data source. In that case, it is important to clean up so that we don't introduce a memory leak. So we must cleanup. The following example illustrates how to write effects with cleanup:
+
+```kotlin
+//js, react original version: https://codesandbox.io/s/jvvkoo8pq3?file=/src/index.js
+data class Hit(val objectID: String, val url: String, val title: String)
+data class Data(val hit:List<Hit>)
+val SearchResults = functionComponent<RProps> {
+    var data by useState(Data(emptyList()))
+    var query by useState("react")
+
+    useEffectWithCleanup(listOf(query)) {
+        var ignore = false;
+
+        val job = MainScope().launch {
+            window.fetch("https://hn.algolia.com/api/v1/search?query=${query}").then {
+                if (!ignore)
+                    it.text().then { fetched -> data = JSON.parse(fetched) }
+            }
+        };
+
+        { job.cancel(); ignore = true; }
+    }
+
+    input {
+        attrs {
+            value = query
+            onChangeFunction = {
+                query = (it.target as HTMLInputElement).value
+            }
+        }
+    }
+    ul {
+        for (item in data.hit) {
+            li { 
+                key = item.objectID
+                a { 
+                    attrs { 
+                        href = item.url
+                    }
+                    +item.title
+                }
+            }
+        }
+    }
+}
+```
+
 To learn more about the Effect Hook, check out the [official React documentation](https://reactjs.org/docs/hooks-effect.html).
+
+##### The "Custom" Hook
+Building your own Hooks lets you extract component logic into reusable functions.
+
+A custom Hook is a Kotlin function whose name starts with "use" and that may call other Hooks:
+
+```kotlin
+//relatived issue: https://github.com/JetBrains/kotlin-wrappers/issues/530
+fun useCards(): List<Card> {
+   var cardsInDeck by useState(emptyList<String>())
+
+   useEffectWithCleanup(emptyList()) {
+        val job = MainScope().launch {
+            deckCards = List(52) { i -> i * 2 }
+        };
+        { job.cancel() }
+   }
+
+   return cardsInDeck
+}
+//now we can use this hook in any-component!
+val randomFact = functionComponent<RProps> {
+    val cardsInDeck = useCards()
+    h3 {
+        for(card in cardsInDeck) {
+            p {
+                +card
+            }
+        }
+    }
+}
+```
+
+To learn more about the Custom Hook, check out the [official React documentation](https://reactjs.org/docs/hooks-custom.html).
 
 ### Type-safe inline styles
 
