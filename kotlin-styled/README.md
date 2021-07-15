@@ -185,19 +185,16 @@ fun RBuilder.div() {
 To create a global stylesheet use the `CSSBuilder` class and the `StyledComponents.injectGlobal()` function:
 
 ```kotlin
-val styles = CSSBuilder().apply {
+val styles = CSSBuilder(allowClasses = false).apply {
     body {
         margin(0.px)
         padding(0.px)
     }
-    //you can simply apply any css roles or prefixes in there
+    
     "[draggable=\"true\"]" {
-        userSelect = UserSelect.none
+        put("user-select", "none")
     }
 }
 
 StyledComponents.injectGlobal(styles.toString())
-/// or: 
-/// import styled.injectGlobal
-/// injectGlobal(styles.toString())
 ```

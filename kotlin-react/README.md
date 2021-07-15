@@ -235,7 +235,7 @@ The Effect Hook can be used to perform side effects without the need for a class
 ```kotlin
 val randomFact = functionComponent<RProps> {
     val (randomFact, setRandomFact) = useState<String?>(null)
-    useEffect(listOf()) {
+    useEffect(*emptyArray()) {
         window.fetch("http://numbersapi.com/42").then { 
             it.text().then { fact -> setRandomFact(fact) }
         }
@@ -244,29 +244,32 @@ val randomFact = functionComponent<RProps> {
 }
 ```
 
-Note that in this example, `useEffect` gets passed a list of (empty) dependencies. If `listOf()` is omitted, `useEffect` will be called after each invocation of `setRandomFact`, resulting in an endless loop.
+Note that in this example, `useEffect` gets passed a list of (empty) dependencies. If `*emptyArray()` is omitted, `useEffect` will be called after each invocation of `setRandomFact`, resulting in an endless loop.
 
-We might want to set up a subscription to some external data source. In that case, it is important to clean up so that we don't introduce a memory leak. So we must cleanup. The following example illustrates how to write effects with cleanup:
+We might want to set up a subscription to some external data source. In that case, it is important to clean up so that we don't introduce a memory leak. The following example illustrates how to write effects with cleanup:
 
 ```kotlin
 //js, react original version: https://codesandbox.io/s/jvvkoo8pq3?file=/src/index.js
 data class Hit(val objectID: String, val url: String, val title: String)
 data class Data(val hit:List<Hit>)
-val SearchResults = functionComponent<RProps> {
+val searchResults = functionComponent<RProps> {
     var data by useState(Data(emptyList()))
     var query by useState("react")
 
-    useEffectWithCleanup(listOf(query)) {
-        var ignore = false;
+    useEffect(listOf(query)) {
+        var ignore = false
 
         val job = MainScope().launch {
             window.fetch("https://hn.algolia.com/api/v1/search?query=${query}").then {
                 if (!ignore)
                     it.text().then { fetched -> data = JSON.parse(fetched) }
             }
-        };
+        }
 
-        { job.cancel(); ignore = true; }
+        cleanup { 
+            job.cancel()
+            ignore = true
+        }
     }
 
     input {
@@ -301,21 +304,23 @@ Building your own Hooks lets you extract component logic into reusable functions
 A custom Hook is a Kotlin function whose name starts with "use" and that may call other Hooks:
 
 ```kotlin
-//relatived issue: https://github.com/JetBrains/kotlin-wrappers/issues/530
 fun useCards(): List<String> {
    val (cardsInDeck, setCardsInDeck) = useState(emptyList<String>())
 
-   useEffectWithCleanup(emptyList()) {
+   useEffect(*emptyArray()) {
         val job = MainScope().launch {
             val results = List(52) { i -> i.toString() }
             setCardsInDeck(results)
-        };
-        { job.cancel() }
+        }
+        
+        cleanup { 
+            job.cancel() 
+        }
    }
 
    return cardsInDeck
 }
-//now we can use this hook in any-component!
+//now we can use this hook in any component!
 val randomFact = functionComponent<RProps> {
     val cardsInDeck = useCards()
     h3 {
