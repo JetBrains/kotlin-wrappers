@@ -64,7 +64,7 @@ external interface WelcomeProps : RProps {
     var name: String
 }
 
-private val welcome = functionComponent<WelcomeProps> { props ->
+private val welcome = fc<WelcomeProps> { props ->
     h1 {
         +"Hello, ${props.name}"
     }
@@ -168,7 +168,7 @@ fun RBuilder.welcome(handler: WelcomeProps.() -> Unit) = child(Welcome::class) {
 If a single component contains a lot of code, you can use `RBuilder` extension functions to group and structure code that belongs together. 
 
 ```kotlin
-val myComplexComponent = functionComponent<RProps> {
+val myComplexComponent = fc<RProps> {
     myHeader("complex")
     myFooter("!")
 }
@@ -196,10 +196,10 @@ React 16.8 introduced Hooks as a novel way of using state and other React featur
 
 ##### The `useState` Hook
 
-You can use the `useState` Hook when you want to keep track of state without the need for a class component. Consider the following implementation of a counter inside a `functionComponent`:
+You can use the `useState` Hook when you want to keep track of state without the need for a class component. Consider the following implementation of a counter inside a `fc`:
 
 ```kotlin
-val counter = functionComponent<RProps> {
+val counter = fc<RProps> {
     val (count, setCount) = useState(0)
     button {
         attrs.onClickFunction = { setCount(count + 1) }
@@ -215,7 +215,7 @@ Note that unlike properties in a React class component, the `setCount` function 
 It is also possible to use the State Hook via Kotlin's [delegation syntax](https://kotlinlang.org/docs/reference/delegated-properties.html), which can simplify the code even more:
 
 ```kotlin
-val counter = functionComponent<RProps> {
+val counter = fc<RProps> {
     var count by useState(0)
     button {
         attrs.onClickFunction = { count += 1 }
@@ -230,10 +230,11 @@ To learn more about the State Hook, check out the [official React documentation]
 
 ##### The `useEffect` Hook
 
-The Effect Hook can be used to perform side effects without the need for a class component, such as querying an API or establishing a connection. Consider the following implementation of a `functionComponent` which `fetch`es a random fact and displays it in a `h3` tag:
+The Effect Hook can be used to perform side effects without the need for a class component, such as querying an API or establishing a connection. Consider the following implementation of a `fc`
+which `fetch`es a random fact and displays it in a `h3` tag:
 
 ```kotlin
-val randomFact = functionComponent<RProps> {
+val randomFact = fc<RProps> {
     val (randomFact, setRandomFact) = useState<String?>(null)
     useEffect(*emptyArray()) { // or useEffectOnce
         window.fetch("http://numbersapi.com/42").then {
@@ -253,7 +254,7 @@ We might want to set up a subscription to some external data source. In that cas
 data class Hit(val objectID: String, val url: String, val title: String)
 data class Data(val hit: List<Hit>)
 
-val searchResults = functionComponent<RProps> {
+val searchResults = fc<RProps> {
     var data by useState(Data(emptyList()))
     var query by useState("react")
 
@@ -323,7 +324,7 @@ fun useCards(): List<String> {
     return cardsInDeck
 }
 // now we can use this hook in any component!
-val randomFact = functionComponent<RProps> {
+val randomFact = fc<RProps> {
     val cardsInDeck = useCards()
     h3 {
         for (card in cardsInDeck) {

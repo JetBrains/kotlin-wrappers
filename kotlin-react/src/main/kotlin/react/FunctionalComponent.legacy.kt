@@ -10,10 +10,10 @@ typealias FunctionalComponent<P> = FunctionComponent<P>
 
 @Deprecated(
     message = "Legacy type alias",
-    ReplaceWith("functionComponent(displayName, func)", "react.functionComponent")
+    ReplaceWith("fc(displayName, func)", "react.fc")
 )
 inline fun <P : RProps> functionalComponent(
     displayName: String? = null,
     noinline func: RBuilder.(props: P) -> Unit,
 ) =
-    functionComponent(displayName, func)
+    fc(displayName, func)
