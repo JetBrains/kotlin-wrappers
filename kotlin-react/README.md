@@ -302,12 +302,13 @@ A custom Hook is a Kotlin function whose name starts with "use" and that may cal
 
 ```kotlin
 //relatived issue: https://github.com/JetBrains/kotlin-wrappers/issues/530
-fun useCards(): List<Card> {
-   var cardsInDeck by useState(emptyList<String>())
+fun useCards(): List<String> {
+   val (cardsInDeck, setCardsInDeck) = useState(emptyList<String>())
 
    useEffectWithCleanup(emptyList()) {
         val job = MainScope().launch {
-            deckCards = List(52) { i -> i * 2 }
+            val results = List(52) { i -> i.toString() }
+            setCardsInDeck(results)
         };
         { job.cancel() }
    }
