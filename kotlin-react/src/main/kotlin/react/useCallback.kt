@@ -16,9 +16,7 @@ inline fun <T : Function<*>> useCallback(
  * Only works inside [fc]
  * @see <a href="https://reactjs.org/docs/hooks-state.html#hooks-and-function-components">Hooks and Function Components</a>
  */
-@Deprecated(
-    message = "Inconsistent hooks API",
-)
+@Deprecated("Inconsistent hooks API")
 inline fun <T : Function<*>> useCallback(
     callback: T,
     dependencies: RDependenciesArray,

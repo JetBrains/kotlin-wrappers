@@ -3,7 +3,12 @@
 
 package react
 
-// Imperative Methods Hook (16.8+)
+/**
+ * Available from 16.8
+ *
+ * Only works inside [fc]
+ * @see <a href="https://reactjs.org/docs/hooks-state.html#hooks-and-function-components">Hooks and Function Components</a>
+ */
 external fun useImperativeHandle(
     ref: RRef,
     createInstance: () -> dynamic,
