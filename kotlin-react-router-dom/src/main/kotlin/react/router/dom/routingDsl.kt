@@ -14,14 +14,16 @@ fun RBuilder.hashRouter(
     hashType: HashType = HashType.slash,
     getUserConfirmation: GetUserConfirmation? = null,
     handler: RHandler<RProps>,
-) = HashRouterComponent {
-    attrs {
-        this.basename = basename
-        this.hashType = hashType.name
-        this.getUserConfirmation = getUserConfirmation
-    }
+) {
+    HashRouterComponent {
+        attrs {
+            this.basename = basename
+            this.hashType = hashType.name
+            this.getUserConfirmation = getUserConfirmation
+        }
 
-    handler.invoke(this)
+        handler.invoke(this)
+    }
 }
 
 fun RBuilder.browserRouter(
@@ -30,28 +32,32 @@ fun RBuilder.browserRouter(
     forceRefresh: Boolean = false,
     keyLength: Int = 6,
     handler: RHandler<RProps>,
-) = BrowserRouterComponent {
-    attrs {
-        this.basename = basename
-        this.getUserConfirmation = getUserConfirmation
-        this.forceRefresh = forceRefresh
-        this.keyLength = keyLength
-    }
+) {
+    BrowserRouterComponent {
+        attrs {
+            this.basename = basename
+            this.getUserConfirmation = getUserConfirmation
+            this.forceRefresh = forceRefresh
+            this.keyLength = keyLength
+        }
 
-    handler.invoke(this)
+        handler.invoke(this)
+    }
 }
 
 fun RBuilder.switch(
     handler: RHandler<RProps>,
-) = SwitchComponent(handler)
+) {
+    SwitchComponent(handler)
+}
 
 fun RBuilder.route(
     vararg path: String,
     component: KClass<out Component<RProps, *>>,
     exact: Boolean = false,
     strict: Boolean = false,
-): ReactElement {
-    return child<RouteProps<RProps>, RouteComponent<RProps>> {
+) {
+    child<RouteProps<RProps>, RouteComponent<RProps>> {
         attrs {
             this.path = path
             this.exact = exact
@@ -66,8 +72,8 @@ fun <T : RProps> RBuilder.route(
     exact: Boolean = false,
     strict: Boolean = false,
     render: (props: RouteResultProps<T>) -> ReactElement?,
-): ReactElement {
-    return child<RouteProps<T>, RouteComponent<T>> {
+) {
+    child<RouteProps<T>, RouteComponent<T>> {
         attrs {
             this.path = path
             this.exact = exact
@@ -82,8 +88,8 @@ fun RBuilder.route(
     exact: Boolean = false,
     strict: Boolean = false,
     render: () -> ReactElement?,
-): ReactElement {
-    return child<RouteProps<RProps>, RouteComponent<RProps>> {
+) {
+    child<RouteProps<RProps>, RouteComponent<RProps>> {
         attrs {
             this.path = path
             this.exact = exact
@@ -98,13 +104,15 @@ fun RBuilder.routeLink(
     replace: Boolean = false,
     className: String? = null,
     handler: RHandler<RProps>?,
-) = LinkComponent {
-    attrs {
-        this.to = to
-        this.replace = replace
-        this.className = className
+) {
+    LinkComponent {
+        attrs {
+            this.to = to
+            this.replace = replace
+            this.className = className
+        }
+        handler?.invoke(this)
     }
-    handler?.invoke(this)
 }
 
 fun <T : RProps> RBuilder.navLink(
@@ -116,17 +124,19 @@ fun <T : RProps> RBuilder.navLink(
     strict: Boolean = false,
     isActive: ((match: RouteResultMatch<T>?, location: RouteResultLocation) -> Boolean)? = null,
     handler: RHandler<NavLinkProps<T>>?,
-) = child<NavLinkProps<T>, NavLinkComponent<T>> {
-    attrs {
-        this.to = to
-        this.replace = replace
-        this.className = className
-        this.activeClassName = activeClassName
-        this.exact = exact
-        this.strict = strict
-        this.isActive = isActive
+) {
+    child<NavLinkProps<T>, NavLinkComponent<T>> {
+        attrs {
+            this.to = to
+            this.replace = replace
+            this.className = className
+            this.activeClassName = activeClassName
+            this.exact = exact
+            this.strict = strict
+            this.isActive = isActive
+        }
+        handler?.invoke(this)
     }
-    handler?.invoke(this)
 }
 
 fun RBuilder.redirect(
@@ -135,13 +145,15 @@ fun RBuilder.redirect(
     push: Boolean = false,
     exact: Boolean = false,
     strict: Boolean = false,
-) = RedirectComponent {
-    attrs {
-        this.from = from
-        this.to = to
-        this.push = push
-        this.exact = exact
-        this.strict = strict
+) {
+    RedirectComponent {
+        attrs {
+            this.from = from
+            this.to = to
+            this.push = push
+            this.exact = exact
+            this.strict = strict
+        }
     }
 }
 
@@ -152,7 +164,6 @@ fun <T : RProps> matchPath(
     strict: Boolean = false,
     sensitive: Boolean = false,
 ): RouteResultMatch<T>? {
-
     val options: RouteMatchOptions = jsObject {
         this.path = path
         this.exact = exact
