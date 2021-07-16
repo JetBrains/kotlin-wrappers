@@ -50,8 +50,8 @@ fun RBuilder.route(
     component: KClass<out Component<RProps, *>>,
     exact: Boolean = false,
     strict: Boolean = false,
-): ReactElement {
-    return child<RouteProps<RProps>, RouteComponent<RProps>> {
+) {
+    child<RouteProps<RProps>, RouteComponent<RProps>> {
         attrs {
             this.path = path
             this.exact = exact
@@ -66,8 +66,8 @@ fun <T : RProps> RBuilder.route(
     exact: Boolean = false,
     strict: Boolean = false,
     render: (props: RouteResultProps<T>) -> ReactElement?,
-): ReactElement {
-    return child<RouteProps<T>, RouteComponent<T>> {
+) {
+    child<RouteProps<T>, RouteComponent<T>> {
         attrs {
             this.path = path
             this.exact = exact
@@ -82,8 +82,8 @@ fun RBuilder.route(
     exact: Boolean = false,
     strict: Boolean = false,
     render: () -> ReactElement?,
-): ReactElement {
-    return child<RouteProps<RProps>, RouteComponent<RProps>> {
+) {
+    child<RouteProps<RProps>, RouteComponent<RProps>> {
         attrs {
             this.path = path
             this.exact = exact
