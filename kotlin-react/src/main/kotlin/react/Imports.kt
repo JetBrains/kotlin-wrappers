@@ -3,16 +3,6 @@
 
 package react
 
-// See https://reactjs.org/docs/react-component.html
-
-external fun <P : RProps> createElement(type: String, props: P, vararg child: Any?): ReactElement
-external fun <P : RProps> createElement(type: ComponentType<P>, props: P, vararg child: Any?): ReactElement
-
-external fun <P : RProps> cloneElement(element: ReactElement, props: P, vararg child: Any?): ReactElement
-external fun cloneElement(element: dynamic, props: dynamic, vararg child: Any?): ReactElement
-
-external fun isValidElement(element: Any): Boolean
-
 @JsName("forwardRef")
 external fun <P : RProps> rawForwardRef(forward: (props: P, ref: RRef) -> dynamic): ComponentType<P>
 

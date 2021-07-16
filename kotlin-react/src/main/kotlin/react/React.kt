@@ -2,10 +2,6 @@ package react
 
 import kotlinext.js.jsObject
 
-external interface ReactElement : Child {
-    val props: RProps
-}
-
 fun Children.forEachElement(children: Any?, handler: (ReactElement) -> Unit) =
     forEach(children) {
         val element = it.asElementOrNull()
