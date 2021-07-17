@@ -47,7 +47,7 @@ external interface RouteProps<T : RProps> : RProps {
     var path: Array<out String>
     var exact: Boolean
     var strict: Boolean
-    var component: RClass<RProps>
+    var component: ComponentType<RProps>
     var render: (props: RouteResultProps<T>) -> ReactElement?
 }
 

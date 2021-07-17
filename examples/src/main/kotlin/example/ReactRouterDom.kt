@@ -2,7 +2,6 @@ package example
 
 import react.RBuilder
 import react.RProps
-import react.child
 import react.dom.*
 import react.fc
 import react.router.dom.*
@@ -26,7 +25,7 @@ val Topics = fc<RProps> {
         }
 
         switch {
-            route("${match.path}/:topicId") { child(Topic) }
+            route("${match.path}/:topicId", component = Topic)
             route(match.path) {
                 h3 { +"Please select a topic." }
             }
@@ -60,9 +59,9 @@ fun RBuilder.appWithRouter() {
             }
 
             switch {
-                route("/about") { child(About) }
-                route("/topics") { child(Topics) }
-                route("/") { child(Home) }
+                route("/about", component = About)
+                route("/topics", component = Topics)
+                route("/", component = Home)
             }
         }
     }

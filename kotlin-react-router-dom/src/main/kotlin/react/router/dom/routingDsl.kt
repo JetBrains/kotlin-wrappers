@@ -53,7 +53,7 @@ fun RBuilder.switch(
 
 fun RBuilder.route(
     vararg path: String,
-    component: KClass<out Component<RProps, *>>,
+    component: ComponentType<RProps>,
     exact: Boolean = false,
     strict: Boolean = false,
 ) {
@@ -62,9 +62,23 @@ fun RBuilder.route(
             this.path = path
             this.exact = exact
             this.strict = strict
-            this.component = component.rClass
+            this.component = component
         }
     }
+}
+
+fun RBuilder.route(
+    vararg path: String,
+    component: KClass<out Component<RProps, *>>,
+    exact: Boolean = false,
+    strict: Boolean = false,
+) {
+    route(
+        path = path,
+        component = component.rClass,
+        exact = exact,
+        strict = strict,
+    )
 }
 
 fun <T : RProps> RBuilder.route(
