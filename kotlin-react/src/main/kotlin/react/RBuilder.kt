@@ -14,12 +14,12 @@ annotation class ReactDsl
 interface RBuilder {
     val childList: MutableList<Any>
 
-    fun <T : Child> child(element: T): T {
+    fun <T : ReactNode> child(element: T): T {
         childList.add(element)
         return element
     }
 
-    operator fun Child.unaryPlus() {
+    operator fun ReactNode.unaryPlus() {
         childList.add(this)
     }
 

@@ -3,7 +3,7 @@
 
 package react
 
-external interface ReactElement : Child {
+external interface ReactElement : ReactNode {
     val props: RProps
 }
 
