@@ -3,7 +3,7 @@
 
 package ringui
 
-import react.RClass
+import react.ComponentClass
 import react.dom.WithClassName
 
 // https://github.com/JetBrains/ring-ui/blob/master/components/alert/alert.js
@@ -20,4 +20,4 @@ external interface AlertProps : WithClassName {
 }
 
 @JsName("default")
-external val Alert: RClass<AlertProps>
+external val Alert: ComponentClass<AlertProps>

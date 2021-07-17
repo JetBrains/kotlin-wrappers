@@ -4,7 +4,7 @@
 package ringui
 
 import org.w3c.dom.events.MouseEvent
-import react.RClass
+import react.ComponentClass
 import react.dom.WithClassName
 
 // https://github.com/JetBrains/ring-ui/blob/master/components/button/button.js
@@ -31,4 +31,4 @@ external interface ButtonProps : WithClassName {
 }
 
 @JsName("default")
-external val Button: RClass<ButtonProps>
+external val Button: ComponentClass<ButtonProps>

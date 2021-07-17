@@ -3,10 +3,10 @@
 
 package ringui
 
-import react.RClass
+import react.ComponentClass
 import react.RProps
 
-external val UserCard: RClass<UserCardProps>
+external val UserCard: ComponentClass<UserCardProps>
 
 // https://github.com/JetBrains/ring-ui/blob/master/components/user-card/card.js
 external interface UserCardProps : RProps {

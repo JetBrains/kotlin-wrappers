@@ -3,7 +3,7 @@
 
 package ringui
 
-import react.RClass
+import react.ComponentClass
 import react.dom.WithClassName
 
 //https://github.com/JetBrains/ring-ui/blob/master/components/tabs/tabs.js
@@ -15,21 +15,21 @@ external interface TabsProps : WithClassName {
     var autoCollapse: Boolean
 }
 
-external val Tabs: RClass<TabsProps>
+external val Tabs: ComponentClass<TabsProps>
 
 external interface TabProps : WithClassName {
     var title: dynamic // PropTypes.oneOfType([PropTypes.node, PropTypes.func]).isRequired,
     var id: String
 }
 
-external val Tab: RClass<TabProps>
+external val Tab: ComponentClass<TabProps>
 
 external interface SmartTabsProps : WithClassName {
     var initSelected: String
 }
 
-external val SmartTabs: RClass<SmartTabsProps>
+external val SmartTabs: ComponentClass<SmartTabsProps>
 
 external interface CustomItemProps : WithClassName
 
-external val CustomItem: RClass<CustomItemProps>
+external val CustomItem: ComponentClass<CustomItemProps>

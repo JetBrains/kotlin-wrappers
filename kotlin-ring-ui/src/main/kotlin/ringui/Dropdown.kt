@@ -4,12 +4,12 @@
 package ringui
 
 import org.w3c.dom.events.Event
-import react.RClass
+import react.ComponentClass
 import react.dom.WithClassName
 
 external interface AnchorProps : WithClassName
 
-external val Anchor: RClass<AnchorProps>
+external val Anchor: ComponentClass<AnchorProps>
 
 external interface DropdownProps : WithClassName {
     /**
@@ -31,4 +31,4 @@ external interface DropdownProps : WithClassName {
 }
 
 @JsName("default")
-external val Dropdown: RClass<DropdownProps>
+external val Dropdown: ComponentClass<DropdownProps>
