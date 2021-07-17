@@ -9,21 +9,18 @@ to have version mismatches.
 Usage:
 
 ```kotlin
-fun kotlinw(target: String): String =
-    "org.jetbrains.kotlin-wrappers:kotlin-$target"
-
-val kotlinWrappersBomVersion = "0.0.1-pre.217-kotlin-1.5.21"
+val kotlinWrappersVersion = "0.0.1-pre.217-kotlin-1.5.21"
 
 dependencies {
-    implementation(enforcedPlatform(kotlinw("wrappers-bom:${kotlinWrappersBomVersion}")))
-    implementation(kotlinw("react"))
-    implementation(kotlinw("react-dom"))
-    implementation(kotlinw("react-query"))
-    implementation(kotlinw("react-redux"))
-    implementation(kotlinw("react-router-dom"))
-    implementation(kotlinw("react-table"))
-    implementation(kotlinw("ring-ui"))
-    implementation(kotlinw("styled"))
+    implementation(enforcedPlatform("org.jetbrains.kotlin-wrappers:kotlin-wrappers-bom:${kotlinWrappersVersion}"))
+    implementation("org.jetbrains.kotlin-wrappers:kotlin-react")
+    implementation("org.jetbrains.kotlin-wrappers:kotlin-react-dom")
+    implementation("org.jetbrains.kotlin-wrappers:kotlin-react-query")
+    implementation("org.jetbrains.kotlin-wrappers:kotlin-react-redux")
+    implementation("org.jetbrains.kotlin-wrappers:kotlin-react-router-dom")
+    implementation("org.jetbrains.kotlin-wrappers:kotlin-react-table")
+    implementation("org.jetbrains.kotlin-wrappers:kotlin-ring-ui")
+    implementation("org.jetbrains.kotlin-wrappers:kotlin-styled")
 }
 ```
 
