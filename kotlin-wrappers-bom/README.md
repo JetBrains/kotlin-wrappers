@@ -27,5 +27,9 @@ dependencies {
 }
 ```
 
-Using the Kotlin Wrappers BOM is a good way the ensure consistency between the dependencies versions and a safer way in
-multi-module projects management.
+See also
+an [example of using kotlin-wrappers-bom](https://github.com/aerialist7/kotlin-react-table-sample/blob/main/build.gradle.kts)
+in real project.
+
+P.S. Using the Kotlin Wrappers BOM is a good way the ensure consistency between the dependencies versions and a safer
+way in multi-module projects management.
