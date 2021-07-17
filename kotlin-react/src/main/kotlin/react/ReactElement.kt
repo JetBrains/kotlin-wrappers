@@ -9,25 +9,25 @@ external interface ReactElement : Child {
 
 external fun <P : RProps> createElement(
     type: String,
-    props: P,
+    props: P = definedExternally,
     vararg child: Any?,
 ): ReactElement
 
 external fun <P : RProps> createElement(
     type: ComponentType<P>,
-    props: P,
+    props: P = definedExternally,
     vararg child: Any?,
 ): ReactElement
 
 external fun <P : RProps> cloneElement(
     element: ReactElement,
-    props: P,
+    props: P = definedExternally,
     vararg child: Any?,
 ): ReactElement
 
 external fun cloneElement(
     element: dynamic,
-    props: dynamic,
+    props: dynamic = definedExternally,
     vararg child: Any?,
 ): ReactElement
 
