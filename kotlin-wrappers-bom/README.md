@@ -1,9 +1,9 @@
 ## kotlin-wrappers-bom
 
-Kotlin Wrappers Bill Of Material is a special artifact that groups dependency versions that are known to be valid and
+Kotlin Wrappers Bill of Materials is a special artifact that groups dependency versions that are known to be valid and
 tested to work together.
 
-This will reduce the developers’ pain of having to test the compatibility of different versions and reduce the chances
+This will reduce the developers' pain of having to test the compatibility of different versions and reduce the chances
 to have version mismatches.
 
 Usage:
@@ -26,7 +26,4 @@ dependencies {
 
 See also
 an [example of using kotlin-wrappers-bom](https://github.com/aerialist7/kotlin-react-table-sample/blob/main/build.gradle.kts)
-in real project.
-
-P.S. Using the Kotlin Wrappers BOM is a good way the ensure consistency between the dependencies versions and a safer
-way in multi-module projects management.
+in a real project.
