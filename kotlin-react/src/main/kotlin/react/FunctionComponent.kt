@@ -3,7 +3,10 @@
 package react
 
 external interface FunctionComponent<in P : RProps> :
-    ComponentType<P>
+    ComponentType<P> {
+    var displayName: String?
+}
+
 
 typealias FC<P> = FunctionComponent<P>
 
@@ -11,25 +14,38 @@ typealias FC<P> = FunctionComponent<P>
  * Get function component from [func]
  */
 fun <P : RProps> fc(
-    displayName: String? = null,
     func: RBuilder.(props: P) -> Unit,
 ): FC<P> {
-    val fc: dynamic = { props: P ->
+    val component = { props: P ->
         buildElements {
             func(props)
         }
     }
-    if (displayName != null) {
-        fc.displayName = displayName
-    }
-    return fc.unsafeCast<FC<P>>()
+    return component.unsafeCast<FC<P>>()
 }
+
+/**
+ * Get function component from [func] with [displayName]
+ */
+fun <P : RProps> fc(
+    displayName: String,
+    func: RBuilder.(props: P) -> Unit,
+): FC<P> =
+    fc(func).also { it.displayName = displayName }
 
 /**
  * Get function component from [func]
  */
 inline fun <P : RProps> functionComponent(
-    displayName: String? = null,
     noinline func: RBuilder.(props: P) -> Unit,
-) =
+): FC<P> =
+    fc(func)
+
+/**
+ * Get function component from [func] with [displayName]
+ */
+inline fun <P : RProps> functionComponent(
+    displayName: String,
+    noinline func: RBuilder.(props: P) -> Unit,
+): FC<P> =
     fc(displayName, func)

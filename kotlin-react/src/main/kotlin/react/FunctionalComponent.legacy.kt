@@ -15,5 +15,9 @@ typealias FunctionalComponent<P> = FunctionComponent<P>
 inline fun <P : RProps> functionalComponent(
     displayName: String? = null,
     noinline func: RBuilder.(props: P) -> Unit,
-) =
-    fc(displayName, func)
+): FC<P> =
+    if (displayName == null) {
+        fc(func)
+    } else {
+        fc(displayName, func)
+    }
