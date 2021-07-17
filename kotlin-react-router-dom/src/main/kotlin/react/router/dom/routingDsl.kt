@@ -85,14 +85,14 @@ fun <T : RProps> RBuilder.route(
     vararg path: String,
     exact: Boolean = false,
     strict: Boolean = false,
-    render: (props: RouteResultProps<T>) -> ReactElement?,
+    render: RBuilder.(RouteResultProps<T>) -> Unit,
 ) {
     child<RouteProps<T>, RouteComponent<T>> {
         attrs {
             this.path = path
             this.exact = exact
             this.strict = strict
-            this.render = render
+            this.render = { props -> buildElements({ render(props) }) }
         }
     }
 }
@@ -101,14 +101,14 @@ fun RBuilder.route(
     vararg path: String,
     exact: Boolean = false,
     strict: Boolean = false,
-    render: () -> ReactElement?,
+    render: RRender,
 ) {
     child<RouteProps<RProps>, RouteComponent<RProps>> {
         attrs {
             this.path = path
             this.exact = exact
             this.strict = strict
-            this.render = { render() }
+            this.render = { buildElements(render) }
         }
     }
 }
