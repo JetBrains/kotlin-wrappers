@@ -7,8 +7,8 @@ package react.table
 
 import kotlinext.js.Record
 import org.w3c.dom.events.Event
-import react.Child
 import react.RProps
+import react.ReactNode
 import react.table.RenderType.Cell
 import react.table.RenderType.Header
 
@@ -155,7 +155,7 @@ external interface UseTableOptions<D : Any> {
 
 external interface ColumnGroup<D : Any> : Column<D, Any>, ColumnGroupInterface<D> {
     val headerProps: RProps
-    fun render(type: String): Child
+    fun render(type: String): ReactNode
 }
 
 // ColumnWithLooseAccessor | ColumnWithStrictAccessor
@@ -173,7 +173,7 @@ external interface SimpleColumn<D : Any, V> : Column<D, V>, ColumnInterfaceBased
         @Deprecated(message = "Write-only property", level = DeprecationLevel.HIDDEN)
         get
 
-    fun render(type: String): Child
+    fun render(type: String): ReactNode
 }
 
 external interface ColumnInterface<D : Any, V> : UseTableColumnOptions<D, V>
@@ -194,7 +194,7 @@ external interface UseTableColumnOptions<D : Any, V> {
         get
 
     @JsName(Header)
-    var headerFunction: (HeaderProps<D, V>) -> Child
+    var headerFunction: (HeaderProps<D, V>) -> ReactNode
         @Deprecated(message = "Write-only property", level = DeprecationLevel.HIDDEN)
         get
 }
@@ -222,7 +222,7 @@ external interface UseTableCellProps<D : Any, V> {
     fun getCellProps(propGetter: CellPropGetter<D, V> = definedExternally): TableCellProps
     fun getCellProps(props: TableCellProps): TableCellProps
 
-    fun render(type: String, userProps: dynamic = definedExternally): Child
+    fun render(type: String, userProps: dynamic = definedExternally): ReactNode
 }
 
 external interface ColumnInstance<D : Any, V> :
@@ -234,7 +234,7 @@ external interface ColumnInstance<D : Any, V> :
 
 external interface ColumnInterfaceBasedOnValue<D : Any, V> {
     @JsName(Cell)
-    var cellFunction: (CellProps<D, V>) -> Child
+    var cellFunction: (CellProps<D, V>) -> ReactNode
         @Deprecated(message = "Write-only property", level = DeprecationLevel.HIDDEN)
         get
 }
@@ -243,7 +243,7 @@ external interface UseTableColumnProps<D : Any> {
     val id: IdType<D>
     val columns: Array<out ColumnInstance<D, *>>?
     val isVisible: Boolean
-    fun render(type: String, props: RProps = definedExternally): Child
+    fun render(type: String, props: RProps = definedExternally): ReactNode
     val totalLeft: Int
     val totalWidth: Int
     fun toggleHidden(value: Boolean = definedExternally)

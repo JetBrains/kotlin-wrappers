@@ -1,8 +1,8 @@
 package react.table
 
 import kotlinext.js.jsObject
-import react.Child
 import react.ReactElement
+import react.ReactNode
 
 fun <D : Any> columns(
     block: ColumnBuilder<D>.() -> Unit,
@@ -15,7 +15,7 @@ class ColumnBuilder<D : Any> {
     fun <V> column(block: SimpleColumn<D, V>.() -> Unit) {
         val column = jsObject<SimpleColumn<D, V>> {
             // Convert Kotlin objects to String otherwise react-table thinks they are React Components
-            cellFunction = { props -> props.value.toString().unsafeCast<Child>() }
+            cellFunction = { props -> props.value.toString().unsafeCast<ReactNode>() }
             block()
         }
         columns.add(column)
