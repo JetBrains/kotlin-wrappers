@@ -30,6 +30,40 @@ Artifacts are published to Maven Central, see the corresponding README files for
 
 **All packages require JDK 8 to be installed.**
 
+## Using in your projects
+
+### Gradle Kotlin DSL
+
+Standard way to add dependencies (you can also add other modules that you need):
+
+```kotlin
+val kotlinWrappersVersion = "pre.217-kotlin-1.5.21"
+
+dependencies {
+    implementation("org.jetbrains.kotlin-wrappers:kotlin-react:17.0.2-$kotlinWrappersVersion")
+    implementation("org.jetbrains.kotlin-wrappers:kotlin-react-dom:17.0.2-$kotlinWrappersVersion")
+    implementation("org.jetbrains.kotlin-wrappers:kotlin-react-table:7.7.0-$kotlinWrappersVersion")
+    implementation("org.jetbrains.kotlin-wrappers:kotlin-styled:5.3.0-$kotlinWrappersVersion")
+}
+```
+
+Another way is to use the "Kotlin Wrappers BOM" which helps to ensure consistency between the wrappers modules and
+allows not to think about wrappers modules versions compatibility.
+
+```kotlin
+val kotlinWrappersVersion = "0.0.1-pre.217-kotlin-1.5.21"
+
+dependencies {
+    implementation(enforcedPlatform("org.jetbrains.kotlin-wrappers:kotlin-wrappers-bom:${kotlinWrappersVersion}"))
+    implementation("org.jetbrains.kotlin-wrappers:kotlin-react")
+    implementation("org.jetbrains.kotlin-wrappers:kotlin-react-dom")
+    implementation("org.jetbrains.kotlin-wrappers:kotlin-react-table")
+    implementation("org.jetbrains.kotlin-wrappers:kotlin-styled")
+}
+```
+
+Make sure that you have `mavenCentral()` in the list of repositories.
+
 ## Examples
 
 1. [To-do list example](examples/src/main/kotlin/example/Todo.kt) 
