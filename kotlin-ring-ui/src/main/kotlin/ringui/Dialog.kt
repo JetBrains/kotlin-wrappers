@@ -3,7 +3,7 @@
 
 package ringui
 
-import react.RClass
+import react.ComponentClass
 import react.dom.WithClassName
 
 // https://github.com/JetBrains/ring-ui/blob/master/components/dialog/dialog.js
@@ -25,4 +25,4 @@ external interface DialogProps : WithClassName {
 }
 
 @JsName("default")
-external val Dialog: RClass<DialogProps>
+external val Dialog: ComponentClass<DialogProps>

@@ -3,7 +3,7 @@
 
 package ringui
 
-import react.RClass
+import react.ComponentClass
 import react.dom.WithClassName
 
 // https://github.com/JetBrains/ring-ui/blob/master/components/icon/icon.js
@@ -17,4 +17,4 @@ external interface IconProps : WithClassName {
 }
 
 @JsName("default")
-external val Icon: RClass<IconProps>
+external val Icon: ComponentClass<IconProps>

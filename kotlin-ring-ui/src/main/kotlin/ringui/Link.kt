@@ -4,7 +4,7 @@
 package ringui
 
 import org.w3c.dom.events.MouseEvent
-import react.RClass
+import react.ComponentClass
 import react.dom.WithClassName
 
 // https://github.com/JetBrains/ring-ui/blob/master/components/link/link.js
@@ -20,4 +20,4 @@ external interface LinkProps : WithClassName {
 }
 
 @JsName("default")
-external val Link: RClass<LinkProps>
+external val Link: ComponentClass<LinkProps>

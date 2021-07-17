@@ -3,7 +3,7 @@
 
 package ringui
 
-import react.RClass
+import react.ComponentClass
 import react.dom.WithClassName
 
 // https://github.com/JetBrains/ring-ui/blob/master/components/island/island.js
@@ -13,9 +13,9 @@ external interface IslandProps : WithClassName {
 }
 
 @JsName("default")
-external val Island: RClass<IslandProps>
+external val Island: ComponentClass<IslandProps>
 
-external val AdaptiveIsland: RClass<IslandProps>
+external val AdaptiveIsland: ComponentClass<IslandProps>
 
 // https://github.com/JetBrains/ring-ui/blob/master/components/island/header.js
 external interface IslandHeaderProps : WithClassName {
@@ -25,7 +25,7 @@ external interface IslandHeaderProps : WithClassName {
 }
 
 @JsName("Header")
-external val IslandHeader: RClass<IslandHeaderProps>
+external val IslandHeader: ComponentClass<IslandHeaderProps>
 
 // https://github.com/JetBrains/ring-ui/blob/master/components/island/content.js
 external interface IslandContentProps : WithClassName {
@@ -37,4 +37,4 @@ external interface IslandContentProps : WithClassName {
 }
 
 @JsName("Content")
-external val IslandContent: RClass<IslandContentProps>
+external val IslandContent: ComponentClass<IslandContentProps>

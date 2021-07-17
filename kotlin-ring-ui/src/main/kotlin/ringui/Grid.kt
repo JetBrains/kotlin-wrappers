@@ -3,13 +3,13 @@
 
 package ringui
 
-import react.RClass
+import react.ComponentClass
 import react.RProps
 import react.dom.WithClassName
 
 external interface GridProps : RProps
 
-external val Grid: RClass<GridProps>
+external val Grid: ComponentClass<GridProps>
 
 external interface RowProps : GridProps, WithClassName {
     var reverse: Boolean
@@ -26,7 +26,7 @@ external interface RowProps : GridProps, WithClassName {
     var last: RowPosition
 }
 
-external val Row: RClass<RowProps>
+external val Row: ComponentClass<RowProps>
 
 external interface ColProps : GridProps, WithClassName {
     var xs: Int // number or boolean
@@ -40,4 +40,4 @@ external interface ColProps : GridProps, WithClassName {
     var reverse: Boolean
 }
 
-external val Col: RClass<ColProps>
+external val Col: ComponentClass<ColProps>

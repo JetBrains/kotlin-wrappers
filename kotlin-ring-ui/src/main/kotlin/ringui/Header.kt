@@ -3,7 +3,7 @@
 
 package ringui
 
-import react.RClass
+import react.ComponentClass
 import react.dom.WithClassName
 
 // https://github.com/JetBrains/ring-ui/blob/master/components/header/header.js
@@ -13,19 +13,19 @@ external interface HeaderProps : WithClassName {
 }
 
 @JsName("default")
-external val Header: RClass<HeaderProps>
-external val RerenderableHeader: RClass<HeaderProps>
+external val Header: ComponentClass<HeaderProps>
+external val RerenderableHeader: ComponentClass<HeaderProps>
 
 // Logo
 external interface HeaderLogoProps : IconProps
 
-external val Logo: RClass<HeaderLogoProps>
+external val Logo: ComponentClass<HeaderLogoProps>
 
 // Tray
 // https://github.com/JetBrains/ring-ui/blob/master/components/header/tray.js
 external interface TrayProps : WithClassName
 
-external val Tray: RClass<TrayProps>
+external val Tray: ComponentClass<TrayProps>
 
 // TrayIcon
 // https://github.com/JetBrains/ring-ui/blob/master/components/header/tray-icon.js
@@ -33,9 +33,9 @@ external interface TrayIconProps : ButtonProps {
     var rotatable: Boolean
 }
 
-external val TrayIcon: RClass<TrayIconProps>
+external val TrayIcon: ComponentClass<TrayIconProps>
 
-external val Profile: RClass<WithClassName>
-external val SmartProfile: RClass<WithClassName>
-external val Services: RClass<WithClassName>
-external val SmartServices: RClass<WithClassName>
+external val Profile: ComponentClass<WithClassName>
+external val SmartProfile: ComponentClass<WithClassName>
+external val Services: ComponentClass<WithClassName>
+external val SmartServices: ComponentClass<WithClassName>
