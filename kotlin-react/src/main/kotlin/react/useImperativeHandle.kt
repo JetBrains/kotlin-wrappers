@@ -10,7 +10,7 @@ package react
  * @see <a href="https://reactjs.org/docs/hooks-state.html#hooks-and-function-components">Hooks and Function Components</a>
  */
 external fun useImperativeHandle(
-    ref: RRef,
+    ref: Ref,
     createInstance: () -> dynamic,
     inputs: RDependenciesArray,
 )
