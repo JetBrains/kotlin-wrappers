@@ -11,6 +11,7 @@ package react.query
 
 external interface MutationCacheConfig {
     var onError: (error: Any, variables: Any, context: Any, mutation: Mutation<Any, Any, Any, Any>) -> Unit
+    var onSuccess: (data: Any, variables: Any, context: Any, mutation: Mutation<Any, Any, Any, Any>) -> Unit
 }
 
 typealias MutationCacheListener = (mutation: Mutation<*, *, *, *>?) -> Unit
