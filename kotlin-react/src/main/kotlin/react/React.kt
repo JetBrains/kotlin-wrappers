@@ -18,6 +18,6 @@ fun clone(element: dynamic, props: dynamic, child: Any? = null): ReactElement =
     cloneElement(element, props, *Children.toArray(child))
 
 // 16.6+
-fun SuspenseProps.fallback(handler: RRender) {
+fun SuspenseProps.fallback(handler: Render) {
     asDynamic().fallback = buildElements(handler)
 }

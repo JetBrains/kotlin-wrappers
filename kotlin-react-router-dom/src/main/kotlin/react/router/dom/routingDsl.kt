@@ -101,7 +101,7 @@ fun RBuilder.route(
     vararg path: String,
     exact: Boolean = false,
     strict: Boolean = false,
-    render: RRender,
+    render: Render,
 ) {
     child<RouteProps<RProps>, RouteComponent<RProps>> {
         attrs {
