@@ -30,12 +30,12 @@ Artifacts are published to Maven Central, see the corresponding README files for
 
 **All packages require JDK 8 to be installed.**
 
-## Using in your projects
+## Using In Your Projects
 
-Use the "Kotlin Wrappers BOM" which helps to ensure consistency between the wrappers modules and allows not to think
-about wrappers modules versions compatibility.
+Use the "Kotlin Wrappers BOM" which helps to ensure consistency between the modules and allows you not to think
+about version compatibility.
 
-Just declare `kotlin-wrappers-bom` and specify wrappers modules that you need:
+Just declare `kotlin-wrappers-bom` and specify the modules you need:
 
 ```kotlin
 val kotlinWrappersVersion = "0.0.1-pre.217-kotlin-1.5.21"
@@ -50,7 +50,7 @@ dependencies {
 }
 ```
 
-Or use helper function:
+Or use a helper function:
 
 ```kotlin
 fun kotlinw(target: String): String =
