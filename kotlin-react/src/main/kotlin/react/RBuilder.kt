@@ -7,12 +7,6 @@ import kotlin.reflect.KClass
 
 typealias Render = RBuilder.() -> Unit
 
-@Deprecated(
-    message = "Will be removed soon",
-    replaceWith = ReplaceWith("Render", "react.Render"),
-)
-typealias RRender = Render
-
 @DslMarker
 annotation class ReactDsl
 
