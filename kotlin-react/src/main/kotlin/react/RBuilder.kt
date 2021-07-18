@@ -5,7 +5,7 @@ import kotlinext.js.js
 import kotlinext.js.jsObject
 import kotlin.reflect.KClass
 
-typealias RRender = RBuilder.() -> Unit
+typealias Render = RBuilder.() -> Unit
 
 @DslMarker
 annotation class ReactDsl
@@ -211,7 +211,7 @@ fun <T : RBuilder> buildElements(builder: T, handler: T.() -> Unit): dynamic {
     }
 }
 
-fun buildElements(handler: RRender): dynamic = buildElements(RBuilder(), handler)
+fun buildElements(handler: Render): dynamic = buildElements(RBuilder(), handler)
 
 open class RBuilderSingle : RBuilderImpl()
 
@@ -220,7 +220,7 @@ inline fun <T : RBuilder> buildElement(rBuilder: T, handler: T.() -> Unit): Reac
         .childList.first()
         .unsafeCast<ReactElement>()
 
-inline fun buildElement(handler: RRender): ReactElement =
+inline fun buildElement(handler: Render): ReactElement =
     buildElement(RBuilder(), handler)
 
 interface RElementBuilder<out P : RProps> : RBuilder {
