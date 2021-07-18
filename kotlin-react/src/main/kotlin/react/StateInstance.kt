@@ -17,8 +17,8 @@ private constructor() {
 }
 
 @Deprecated(
-    message = "Legacy name for `StateSetter`",
-    replaceWith = ReplaceWith("StateSetter<T>"),
+    message = "Legacy type alias",
+    replaceWith = ReplaceWith("StateSetter<T>", "react.StateSetter"),
 )
 typealias RSetState<T> = StateSetter<T>
 
@@ -48,7 +48,7 @@ private constructor() {
 }
 
 @Deprecated(
-    message = "Legacy name for `StateInstance`",
-    replaceWith = ReplaceWith("StateInstance<T>"),
+    message = "Legacy type alias",
+    replaceWith = ReplaceWith("StateInstance<T>", "react.StateInstance"),
 )
 typealias RStateDelegate<T> = StateInstance<T>

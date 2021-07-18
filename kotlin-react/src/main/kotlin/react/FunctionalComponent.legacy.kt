@@ -4,13 +4,13 @@ package react
 
 @Deprecated(
     message = "Legacy type alias",
-    ReplaceWith("FunctionComponent", "react.FunctionComponent")
+    replaceWith = ReplaceWith("FunctionComponent", "react.FunctionComponent")
 )
 typealias FunctionalComponent<P> = FunctionComponent<P>
 
 @Deprecated(
     message = "Legacy type alias",
-    ReplaceWith("fc(displayName, func)", "react.fc")
+    replaceWith = ReplaceWith("fc(displayName, func)", "react.fc")
 )
 inline fun <P : RProps> functionalComponent(
     displayName: String? = null,
