@@ -12,7 +12,7 @@ var RProps.key: String
         asDynamic().key = value
     }
 
-var RProps.ref: RRef
+var RProps.ref: Ref
     @Deprecated(message = "Write-only property", level = DeprecationLevel.HIDDEN)
     get() = error("")
     set(value) {

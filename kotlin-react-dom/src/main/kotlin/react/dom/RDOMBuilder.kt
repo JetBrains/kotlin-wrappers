@@ -55,7 +55,7 @@ interface RDOMBuilder<out T : Tag> : RBuilder {
             domProps.key = value
         }
 
-    var ref: RRef
+    var ref: Ref
         @Deprecated(message = "Write-only property", level = DeprecationLevel.HIDDEN)
         get() = error("")
         set(value) {

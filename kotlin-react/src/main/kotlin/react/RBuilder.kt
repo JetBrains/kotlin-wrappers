@@ -237,7 +237,7 @@ interface RElementBuilder<out P : RProps> : RBuilder {
             attrs.key = value
         }
 
-    var ref: RRef
+    var ref: Ref
         @Deprecated(message = "Write-only property", level = DeprecationLevel.HIDDEN)
         get() = error("")
         set(value) {
