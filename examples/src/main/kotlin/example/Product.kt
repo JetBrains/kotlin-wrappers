@@ -104,11 +104,13 @@ fun RBuilder.searchBar(
     initialFilterText: String,
     handleFilterInputChange: (String) -> () -> Unit,
     handleInStockInputClick: () -> () -> Unit
-) = child(SearchBar::class) {
-    attrs.onClick = handleInStockInputClick()
-    attrs.onChange = handleFilterInputChange
-    attrs.inStockOnly = initialInStockOnly
-    attrs.filterText = initialFilterText
+) {
+    child(SearchBar::class) {
+        attrs.onClick = handleInStockInputClick()
+        attrs.onChange = handleFilterInputChange
+        attrs.inStockOnly = initialInStockOnly
+        attrs.filterText = initialFilterText
+    }
 }
 
 
@@ -158,6 +160,6 @@ class ProductComponent(props: ProductProps) : RComponent<ProductProps, ProductSt
     }
 }
 
-fun RBuilder.product() = child(ProductComponent::class) {
-
+fun RBuilder.product() {
+    child(ProductComponent::class) {}
 }

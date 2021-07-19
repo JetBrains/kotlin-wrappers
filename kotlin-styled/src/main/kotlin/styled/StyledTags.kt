@@ -11,7 +11,9 @@ import react.RBuilder
 inline fun <T : Tag> RBuilder.styledTag(
     block: StyledDOMBuilder<T>.() -> Unit,
     noinline factory: (TagConsumer<Unit>) -> T,
-) = child(StyledDOMBuilder(factory).apply(block).create())
+) {
+    child(StyledDOMBuilder(factory).apply(block).create())
+}
 
 /* Main root */
 

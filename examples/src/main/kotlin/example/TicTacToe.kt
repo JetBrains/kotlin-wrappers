@@ -53,9 +53,11 @@ class Board(props: BoardProps) : RComponent<BoardProps, RState>(props) {
     }
 }
 
-fun RBuilder.board(initialSquares: Array<String?>, onClick: (Int) -> () -> Unit) = child(Board::class) {
-    attrs.squares = initialSquares
-    attrs.onClick = onClick
+fun RBuilder.board(initialSquares: Array<String?>, onClick: (Int) -> () -> Unit) {
+    child(Board::class) {
+        attrs.squares = initialSquares
+        attrs.onClick = onClick
+    }
 }
 
 interface TicTacToeProps : RProps
@@ -180,6 +182,6 @@ class TicTacToe(props: TicTacToeProps) : RComponent<TicTacToeProps, TicTacToeSta
     }
 }
 
-fun RBuilder.ticTacToe() = child(TicTacToe::class) {
-
+fun RBuilder.ticTacToe() {
+    child(TicTacToe::class) {}
 }

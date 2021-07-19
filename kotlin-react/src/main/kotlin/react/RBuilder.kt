@@ -14,9 +14,8 @@ annotation class ReactDsl
 interface RBuilder {
     val childList: MutableList<Any>
 
-    fun <T : ReactNode> child(element: T): T {
+    fun <T : ReactNode> child(element: T) {
         childList.add(element)
-        return element
     }
 
     operator fun ReactNode.unaryPlus() {
@@ -31,40 +30,44 @@ interface RBuilder {
         type: ComponentType<P>,
         props: P,
         children: List<Any>,
-    ): ReactElement =
+    ) {
         child(createElement(type, props, *children.toTypedArray()))
+    }
 
     fun <P : RProps> child(
         type: ComponentType<P>,
         props: P,
         handler: RHandler<P>,
-    ): ReactElement {
+    ) {
         val children = with(RElementBuilder(props)) {
             handler()
             childList
         }
-        return child(type, props, children)
+        child(type, props, children)
     }
 
     operator fun <P : RProps> ComponentType<P>.invoke(
         handler: RHandler<P>,
-    ): ReactElement =
+    ) {
         child(this, jsObject(), handler)
+    }
 
     operator fun <T> Provider<T>.invoke(
         value: T,
         handler: RHandler<ProviderProps<T>>,
-    ): ReactElement =
+    ) {
         child(this, jsObject { this.value = value }, handler)
+    }
 
     operator fun <T> Consumer<T>.invoke(
         handler: RBuilder.(T) -> Unit,
-    ): ReactElement =
+    ) {
         child(this, jsObject<ConsumerProps<T>> {
             this.children = { value ->
                 buildElements { handler(value) }
             }
         }) {}
+    }
 
     @Deprecated(
         message = "Ambiguous API",
@@ -73,25 +76,28 @@ interface RBuilder {
     fun <P : RProps> RClass<P>.node(
         props: P,
         children: List<Any> = emptyList(),
-    ): ReactElement =
+    ) {
         child(this, clone(props), children)
+    }
 
     fun <P : RProps> child(
         klazz: KClass<out Component<P, *>>,
         handler: RHandler<P>,
-    ): ReactElement =
+    ) {
         klazz.rClass.invoke(handler)
+    }
 
     fun <T, P : RProps> childFunction(
         klazz: KClass<out Component<P, *>>,
         handler: RHandler<P>,
         children: RBuilder.(T) -> Unit,
-    ): ReactElement =
+    ) {
         child(
             type = klazz.rClass,
             props = RElementBuilder(jsObject<P>()).apply(handler).attrs,
             children = listOf { value: T -> buildElement { children(value) } }
         )
+    }
 
     @Deprecated(
         message = "Ambiguous API",
@@ -101,8 +107,9 @@ interface RBuilder {
         klazz: KClass<out Component<P, *>>,
         props: P,
         children: List<Any> = emptyList(),
-    ): ReactElement =
+    ) {
         child(klazz.rClass, props, children)
+    }
 
     fun RProps.children() {
         childList.addAll(Children.toArray(children))
@@ -177,14 +184,16 @@ fun RBuilder(): RBuilder =
 
 inline fun <P : RProps, reified C : Component<P, *>> RBuilder.child(
     noinline handler: RHandler<P>,
-): ReactElement =
+) {
     child(C::class, handler)
+}
 
 inline fun <T, P : RProps, reified C : Component<P, *>> RBuilder.childFunction(
     noinline handler: RHandler<P>,
     noinline children: RBuilder.(T) -> Unit,
-): ReactElement =
+) {
     childFunction(C::class, handler, children)
+}
 
 @Deprecated(
     message = "Ambiguous API",
@@ -193,8 +202,9 @@ inline fun <T, P : RProps, reified C : Component<P, *>> RBuilder.childFunction(
 inline fun <P : RProps, reified C : Component<P, *>> RBuilder.node(
     props: P,
     children: List<Any> = emptyList(),
-): ReactElement =
+) {
     child(C::class.rClass, props, children)
+}
 
 open class RBuilderImpl : RBuilder {
     override val childList = mutableListOf<Any>()
@@ -264,24 +274,27 @@ fun <P : RProps> RBuilder.child(
     component: FC<P>,
     props: P = jsObject(),
     handler: RHandler<P> = {},
-): ReactElement =
+) {
     child(component, props, handler)
+}
 
 fun <T, P : RProps> RBuilder.childFunction(
     component: FC<P>,
     handler: RHandler<P> = {},
     children: RBuilder.(T) -> Unit,
-): ReactElement =
-    childFunction(component, jsObject<P>(), handler, children)
+) {
+    childFunction(component, jsObject(), handler, children)
+}
 
 fun <T, P : RProps> RBuilder.childFunction(
     component: FC<P>,
     props: P,
     handler: RHandler<P> = {},
     children: RBuilder.(T) -> Unit,
-): ReactElement =
+) {
     child(
         type = component,
         props = RElementBuilder(props).apply(handler).attrs,
         children = listOf { value: T -> buildElement { children(value) } }
     )
+}

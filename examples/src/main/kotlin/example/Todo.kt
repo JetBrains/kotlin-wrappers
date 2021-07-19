@@ -80,6 +80,8 @@ class Todo(props: TodoProps) : RComponent<TodoProps, TodoState>(props) {
     }
 }
 
-fun RBuilder.todo(items: List<String?> = listOf("Hello", "World")) = child(Todo::class) {
-    attrs.initialItems = items
+fun RBuilder.todo(items: List<String?> = listOf("Hello", "World")) {
+    child(Todo::class) {
+        attrs.initialItems = items
+    }
 }
