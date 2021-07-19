@@ -141,5 +141,6 @@ class AxiosSearch(props: AxiosProps) : RComponent<AxiosProps, AxiosState>(props)
     }
 }
 
-fun RBuilder.axiosSearch() = child(AxiosSearch::class) {
+fun RBuilder.axiosSearch() {
+    child(AxiosSearch::class) {}
 }

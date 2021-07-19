@@ -52,6 +52,8 @@ class Quill(props: QuillProps) : RComponent<QuillProps, QuillState>(props) {
     }
 }
 
-fun RBuilder.quill(quillValue: String) = child(Quill::class) {
-    attrs.initialText = quillValue
+fun RBuilder.quill(quillValue: String) {
+    child(Quill::class) {
+        attrs.initialText = quillValue
+    }
 }
