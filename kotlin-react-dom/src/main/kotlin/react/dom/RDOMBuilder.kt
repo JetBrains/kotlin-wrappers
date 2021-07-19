@@ -55,15 +55,15 @@ interface RDOMBuilder<out T : Tag> : RBuilder {
             domProps.key = value
         }
 
-    var ref: Ref
+    var ref: Ref<*>
         @Deprecated(message = "Write-only property", level = DeprecationLevel.HIDDEN)
         get() = error("")
         set(value) {
             domProps.ref = value
         }
 
-    fun ref(handler: (dynamic) -> Unit) {
-        domProps.ref(handler)
+    fun ref(handler: RefCallback<*>) {
+        domProps.ref = handler
     }
 
     fun create(): ReactElement = createElement(attrs.tagName, domProps, *childList.toTypedArray())

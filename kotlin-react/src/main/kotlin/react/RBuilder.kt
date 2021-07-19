@@ -237,15 +237,15 @@ interface RElementBuilder<out P : RProps> : RBuilder {
             attrs.key = value
         }
 
-    var ref: Ref
+    var ref: Ref<*>
         @Deprecated(message = "Write-only property", level = DeprecationLevel.HIDDEN)
         get() = error("")
         set(value) {
             attrs.ref = value
         }
 
-    fun ref(handler: (dynamic) -> Unit) {
-        attrs.ref(handler)
+    fun ref(handler: RefCallback<*>) {
+        attrs.ref = handler
     }
 }
 
