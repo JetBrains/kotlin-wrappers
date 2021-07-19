@@ -20,5 +20,5 @@ var RProps.ref: Ref
     }
 
 fun <T> RProps.ref(refCallback: RefCallback<T>) {
-    asDynamic().ref = refCallback
+    asDynamic().ref = refCallback::create
 }

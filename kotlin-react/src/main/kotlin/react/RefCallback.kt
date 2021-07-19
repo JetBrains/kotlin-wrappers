@@ -1,5 +1,5 @@
 package react
 
-typealias RefCallback<T> = (T?) -> Unit
-
-
+external interface RefCallback<T> : Ref {
+    fun create(value: T?)
+}
