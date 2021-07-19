@@ -19,6 +19,6 @@ var RProps.ref: Ref
         asDynamic().ref = value
     }
 
-fun <T> RProps.ref(ref: (T?) -> Unit) {
-    asDynamic().ref = ref
+fun <T> RProps.ref(refCallback: RefCallback<T>) {
+    asDynamic().ref = refCallback
 }
