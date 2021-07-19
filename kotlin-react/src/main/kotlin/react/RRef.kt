@@ -6,7 +6,7 @@ import react.RefObject
     message = "Will be removed soon",
     replaceWith = ReplaceWith("Ref", "react.Ref"),
 )
-typealias RRef = Ref
+typealias RRef = Ref<*>
 
 @Deprecated(
     message = "Will be removed soon",
