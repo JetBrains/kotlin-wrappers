@@ -62,10 +62,6 @@ interface RDOMBuilder<out T : Tag> : RBuilder {
             domProps.ref = value
         }
 
-    fun ref(handler: RefCallback<*>) {
-        domProps.ref = handler
-    }
-
     fun create(): ReactElement = createElement(attrs.tagName, domProps, *childList.toTypedArray())
 
     companion object {

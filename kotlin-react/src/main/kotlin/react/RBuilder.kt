@@ -243,10 +243,6 @@ interface RElementBuilder<out P : RProps> : RBuilder {
         set(value) {
             attrs.ref = value
         }
-
-    fun ref(handler: RefCallback<*>) {
-        attrs.ref = handler
-    }
 }
 
 fun <P : RProps> RElementBuilder(attrs: P): RElementBuilder<P> =
