@@ -6,7 +6,7 @@ import react.RefObject
     message = "Legacy type alias",
     replaceWith = ReplaceWith("Ref", "react.Ref"),
 )
-typealias RRef = Ref
+typealias RRef = Ref<*>
 
 @Deprecated(
     message = "Legacy type alias",
