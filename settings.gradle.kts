@@ -48,4 +48,7 @@ include("kotlin-ring-ui")
 // Kotlin/JS: styled-components wrappers
 include("kotlin-styled")
 
+// Kotlin/JS: styled-components kotlin implementation
+include("kotlin-styled-next")
+
 include("kotlin-wrappers-bom")
