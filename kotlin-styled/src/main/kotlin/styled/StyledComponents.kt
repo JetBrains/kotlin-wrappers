@@ -160,6 +160,10 @@ private object GlobalStyles {
     }
 }
 
+fun injectGlobal(css: CSSBuilder) {
+    injectGlobal(css.toString())
+}
+
 /**
  * @deprecated Use [createGlobalStyle] instead
  */
