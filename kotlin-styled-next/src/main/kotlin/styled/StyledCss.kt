@@ -6,7 +6,11 @@ import kotlinx.css.properties.*
 internal typealias ClassName = String
 internal typealias Selector = String
 
-internal data class StyledRule(val selector: String, val passStaticClassesToParent: Boolean = false, val css: StyledCss) {
+internal data class StyledRule(
+    val selector: String,
+    val passStaticClassesToParent: Boolean = false,
+    val css: StyledCss
+) {
     private var memoizedHashCode: Int? = null
 
     override fun hashCode(): Int {
@@ -26,7 +30,7 @@ internal data class StyledRule(val selector: String, val passStaticClassesToPare
 }
 
 /**
- * StyledCss is used to efficiently build css rules from the DSL representation.
+ * StyledCss is used to efficiently build CSS rules from the DSL representation.
  */
 internal open class StyledCss(
     declarations: LinkedHashMap<String, Any>?,
@@ -40,9 +44,10 @@ internal open class StyledCss(
     }
 
     private fun buildRules(indent: String = ""): List<String> {
-        return rules.filter { (selector) -> !withAmpersand(selector) && !withMedia(selector) }.flatMap { (selector, _, css) ->
-            css.getCssRules(selector, "  $indent")
-        }
+        return rules.filter { (selector) -> !withAmpersand(selector) && !withMedia(selector) }
+            .flatMap { (selector, _, css) ->
+                css.getCssRules(selector, "  $indent")
+            }
     }
 
     private var memoizedHashCode: Int? = null
@@ -63,7 +68,7 @@ internal open class StyledCss(
 
     /**
      * @param outerSelector is the selector
-     * @param indent is indentation for the pretty resulting CSS string representation
+     * @param indent is indentation for pretty-printing the resulting CSS string
      * @return the list of built rules in string representation.
      * Each resulting rule can be injected to a CSS Object Model or plain stylesheet.
      */
@@ -123,12 +128,13 @@ private fun Rule.toStyledRule(parent: RuleContainer, block: RuleSet = this.block
     return StyledRule(
         selector,
         passStaticClassesToParent,
-        CSSBuilder(allowClasses = false, parent = if (passStaticClassesToParent) parent else null).apply { block() }.toStyledCss()
+        CSSBuilder(allowClasses = false, parent = if (passStaticClassesToParent) parent else null).apply { block() }
+            .toStyledCss()
     )
 }
 
 /**
- * @return all [multiRules], but only first occurrence of a regular rule from [rules]
+ * @return all [multiRules], but only the first occurrence of a regular rule from [rules]
  */
 private fun resolveRules(rules: List<Rule>, multiRules: List<Rule>, parent: RuleContainer): List<StyledRule> {
     val resolvedRules = LinkedHashMap<String, Rule>()

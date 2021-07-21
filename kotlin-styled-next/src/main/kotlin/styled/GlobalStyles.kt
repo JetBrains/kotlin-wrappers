@@ -8,7 +8,7 @@ import org.w3c.dom.css.CSSStyleSheet
 import kotlin.collections.*
 
 /**
- * Inject css code, defined in [css], to the DOM
+ * Inject CSS rules defined in [css] into the DOM
  */
 fun injectGlobal(css: CSSBuilder) {
     GlobalStyles.scheduleToInject(css.toStyledCss().getCssRules(null))
@@ -46,7 +46,7 @@ object GlobalStyles {
     }
 
     /**
-     * Inject all the scheduled rules to a DOM and clear the [scheduledRules]
+     * Inject all scheduled rules into the DOM and clear [scheduledRules].
      * If the rule cannot be parsed by the browser, it gets thrown away.
      */
     fun injectScheduled() {
@@ -63,16 +63,16 @@ object GlobalStyles {
     }
 
     /**
-     * Schedule [rules] for inject to DOM.
-     * They will be injected when the [injectScheduled] function will be called next time
+     * Schedule [rules] for injection into the DOM.
+     * They will be injected when the [injectScheduled] function is called the next time.
      */
     fun scheduleToInject(rules: List<String>) {
         scheduledRules.addAll(rules)
     }
 
     /**
-     * Schedule css from [builder] for inject to DOM with the corresponding [selector].
-     * They will be injected when the [injectScheduled] function will be called next time
+     * Schedule CSS from [builder] for injection into the DOM with the corresponding [selector].
+     * They will be injected when the [injectScheduled] function is called the next time.
      */
     fun scheduleToInject(selector: Selector, builder: CSSBuilder) {
         if (!injectedStyleSheetRules.contains(selector)) {
@@ -85,8 +85,8 @@ object GlobalStyles {
     private val injectedKeyframes = mutableMapOf<StyledKeyframes, ClassName>()
 
     /**
-     * Schedule keyframes css in [builder] for inject to DOM.
-     * They will be injected when the [injectScheduled] function will be called next time
+     * Schedule keyframes CSS in [builder] for injection into the DOM.
+     * They will be injected when the [injectScheduled] function is called the next time.
      */
     fun scheduleToInject(builder: KeyframesBuilder.() -> Unit): ClassName {
         val keyframes = KeyframesBuilder().apply(builder).toStyledKeyframes()
@@ -99,8 +99,8 @@ object GlobalStyles {
     }
 
     /**
-     * @return list of classnames for the css, declared in [css].
-     * If the CSS code for the [css] was not injected to DOM previously, it is injected after function call
+     * @return list of CSS class names, declared in [css].
+     * If the CSS code for the [css] was not injected into the DOM previously, it is injected after function call.
      */
 
     fun getInjectedClassNames(css: CSSBuilder): List<ClassName> {

@@ -16,5 +16,6 @@ dependencies {
         api(project(":kotlin-redux"))
         api(project(":kotlin-ring-ui"))
         api(project(":kotlin-styled"))
+        api(project(":kotlin-styled-next"))
     }
 }
