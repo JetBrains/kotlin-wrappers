@@ -6,7 +6,7 @@ package react
 class EffectBuilder
 private constructor() {
     inline fun cleanup(
-        noinline block: RCleanup,
+        noinline block: Cleanup,
     ) {
         asDynamic().push(block)
     }
@@ -14,15 +14,15 @@ private constructor() {
 
 internal fun createEffectCallback(
     effect: EffectBuilder.() -> Unit,
-): () -> RCleanup? = {
-    val cleanups = arrayOf<RCleanup>()
+): () -> Cleanup? = {
+    val cleanups = arrayOf<Cleanup>()
     effect(cleanups.unsafeCast<EffectBuilder>())
     buildCleanup(cleanups)
 }
 
 private fun buildCleanup(
-    cleanups: Array<out RCleanup>,
-): RCleanup? {
+    cleanups: Array<out Cleanup>,
+): Cleanup? {
     if (cleanups.isEmpty())
         return undefined
 
