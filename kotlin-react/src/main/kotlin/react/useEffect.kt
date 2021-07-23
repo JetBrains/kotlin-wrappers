@@ -2,7 +2,13 @@ package react
 
 typealias RDependenciesArray = Array<out dynamic>
 
-typealias RCleanup = () -> Unit
+typealias Cleanup = () -> Unit
+
+@Deprecated(
+    message = "Legacy type alias",
+    ReplaceWith("Cleanup", "react.Cleanup")
+)
+typealias RCleanup = Cleanup
 
 /**
  * Only works inside [fc]
