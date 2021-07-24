@@ -73,7 +73,7 @@ interface RBuilder {
         message = "Ambiguous API",
         ReplaceWith("child(this, props, children)"),
     )
-    fun <P : RProps> RClass<P>.node(
+    fun <P : RProps> ComponentClass<P>.node(
         props: P,
         children: List<Any> = emptyList(),
     ) {

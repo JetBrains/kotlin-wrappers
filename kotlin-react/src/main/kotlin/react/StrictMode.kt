@@ -4,4 +4,4 @@
 package react
 
 // StrictMode (16.3+)
-external val StrictMode: RClass<RProps>
+external val StrictMode: ComponentClass<RProps>

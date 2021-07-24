@@ -8,11 +8,11 @@ package example
  */
 
 import react.*
-import react.dom.*
+import react.dom.div
 
 @JsModule("react-quill")
 @JsNonModule
-external val reactQuill: RClass<ReactQuillProps>
+external val reactQuill: ComponentClass<ReactQuillProps>
 
 external interface ReactQuillProps : RProps {
     var value: String

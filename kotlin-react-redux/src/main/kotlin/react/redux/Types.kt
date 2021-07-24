@@ -1,6 +1,6 @@
 package react.redux
 
-import react.RClass
+import react.ComponentClass
 import react.RProps
 
 external interface ConnectOptions<P : RProps> : FactoryOptions<P> {
@@ -23,7 +23,7 @@ external interface Options<S, OP : RProps, SP : RProps, P : RProps> : ConnectOpt
 external interface FactoryOptions<P : RProps> {
     var displayName: String?
     var wrappedComponentName: String?
-    var wrappedComponent: RClass<P>?
+    var wrappedComponent: ComponentClass<P>?
 }
 
 typealias Selector<S, OP, P> = (S, OP) -> P

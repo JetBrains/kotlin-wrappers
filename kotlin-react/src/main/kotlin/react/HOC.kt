@@ -2,9 +2,9 @@ package react
 
 import kotlinext.js.JsFunction
 
-external interface HOC<out P : RProps, in R : RProps> : JsFunction<Nothing?, RClass<R>>
+external interface HOC<out P : RProps, in R : RProps> : JsFunction<Nothing?, ComponentClass<R>>
 
-operator fun <P : RProps, R : RProps> HOC<P, R>.invoke(component: RClass<P>) =
+operator fun <P : RProps, R : RProps> HOC<P, R>.invoke(component: ComponentClass<P>) =
     call(null, component)
 
 operator fun <P : RProps, R : RProps> HOC<P, R>.invoke(component: RBuilder.(P) -> Unit) =
@@ -21,5 +21,5 @@ operator fun <P : RProps, R : RProps> HOC<P, R>.invoke(config: Any, component: R
         }
     }, config)
 
-fun <P : RProps> allOf(vararg hocs: HOC<P, P>): (component: RClass<P>) -> RClass<P> =
+fun <P : RProps> allOf(vararg hocs: HOC<P, P>): (component: ComponentClass<P>) -> ComponentClass<P> =
     { hocs.fold(it) { acc, hoc -> hoc(acc) } }

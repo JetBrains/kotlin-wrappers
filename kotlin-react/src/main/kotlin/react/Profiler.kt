@@ -16,4 +16,4 @@ external interface ProfilerProps : RProps {
     ) -> Unit
 }
 
-external val Profiler: RClass<ProfilerProps>
+external val Profiler: ComponentClass<ProfilerProps>
