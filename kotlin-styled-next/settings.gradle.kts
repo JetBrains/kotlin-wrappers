@@ -16,9 +16,10 @@ pluginManagement {
         eachPlugin {
             if (requested.id.id == "org.jetbrains.kotlin.multiplatform") {
                 useModule("org.jetbrains.kotlin.multiplatform:org.jetbrains.kotlin.multiplatform.gradle.plugin:1.5.10")
-            }
-            if (requested.id.id == "kotlin2js") {
+            } else if (requested.id.id == "kotlin2js") {
                 useModule("org.jetbrains.kotlin:kotlin-gradle-plugin:${requested.version}")
+            } else if (requested.id.id == "org.jetbrains.compose") {
+                useModule("org.jetbrains.compose:org.jetbrains.compose.gradle.plugin:0.5.0-build262")
             }
         }
     }
@@ -29,4 +30,5 @@ fun module(name: String, path: String) {
     project(name).projectDir = file(path)
 }
 
-module(":benchmark-core", "$rootDir/benchmark-core")
+include(":benchmark-core", "$rootDir/benchmark-core")
+include("benchmark-core")

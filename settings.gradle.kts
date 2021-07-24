@@ -8,6 +8,7 @@ pluginManagement {
             kotlin("jvm") version kotlinVersion
             kotlin("js") version kotlinVersion
             kotlin("plugin.serialization") version kotlinVersion
+            kotlin("org.jetbrains.compose")
         }
     }
 }
@@ -50,5 +51,6 @@ include("kotlin-styled")
 
 // Kotlin/JS: a reimplementation of kotlin-styled in pure Kotlin, without styled-components
 include("kotlin-styled-next")
+include("kotlin-styled-next:benchmark-core")
 
 include("kotlin-wrappers-bom")

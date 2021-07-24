@@ -24,7 +24,7 @@ kotlin {
                 implementation("org.jetbrains.kotlin-wrappers:kotlin-react:17.0.2-pre.213-kotlin-1.5.10")
                 implementation("org.jetbrains.kotlin-wrappers:kotlin-react-dom:17.0.2-pre.213-kotlin-1.5.10")
                 implementation("org.jetbrains.kotlin-wrappers:kotlin-styled:5.3.0-pre.204-kotlin-1.5.0")
-                implementation("org.jetbrains.compose.web:web-core-js:0.5.0-build253")
+                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.1")
             }
         }
     }
@@ -64,6 +64,9 @@ val printBenchmarkResults by tasks.registering {
             println("##teamcity[buildStatisticValue key='benchmark_$testName' value='${it.value}']")
         }
     }
+}
+tasks.withType<org.jetbrains.kotlin.gradle.dsl.KotlinCompile<*>>().configureEach {
+    kotlinOptions.freeCompilerArgs += "-Xopt-in=kotlin.RequiresOptIn"
 }
 
 tasks.named("jsTest") { finalizedBy(printBenchmarkResults) }

@@ -31,4 +31,4 @@ jobs:
           java-version: 11
       - name: Benchmark
         run: |
-          ./gradlew jsTest
+          ./gradlew :kotlin-styled-next:benchmark-core:build
