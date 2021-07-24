@@ -1,6 +1,6 @@
 package example
 
-import kotlinx.html.js.*
+import kotlinx.html.js.onClickFunction
 import react.*
 import react.dom.*
 
@@ -27,7 +27,7 @@ interface BoardProps : RProps {
     var onClick: (Int) -> () -> Unit
 }
 
-class Board(props: BoardProps) : RComponent<BoardProps, RState>(props) {
+class Board(props: BoardProps) : RComponent<BoardProps, State>(props) {
     fun RBuilder.renderSquare(i: Int) {
         square(props.squares[i], props.onClick(i))
     }
@@ -62,7 +62,7 @@ fun RBuilder.board(initialSquares: Array<String?>, onClick: (Int) -> () -> Unit)
 
 interface TicTacToeProps : RProps
 
-interface TicTacToeState : RState {
+interface TicTacToeState : State {
     var history: Array<Array<String?>>
     var xIsNext: Boolean
     var stepNumber: Int

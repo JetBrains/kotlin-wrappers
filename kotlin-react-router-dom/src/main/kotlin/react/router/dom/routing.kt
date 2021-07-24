@@ -15,7 +15,7 @@ external val BrowserRouterComponent: ComponentClass<BrowserRouterProps>
 external val SwitchComponent: ComponentClass<RProps>
 
 @JsName("Route")
-external class RouteComponent<T : RProps> : Component<RouteProps<T>, RState> {
+external class RouteComponent<T : RProps> : Component<RouteProps<T>, State> {
     override fun render(): ReactElement?
 }
 
@@ -23,7 +23,7 @@ external class RouteComponent<T : RProps> : Component<RouteProps<T>, RState> {
 external val LinkComponent: ComponentClass<LinkProps>
 
 @JsName("NavLink")
-external class NavLinkComponent<T : RProps> : Component<NavLinkProps<T>, RState> {
+external class NavLinkComponent<T : RProps> : Component<NavLinkProps<T>, State> {
     override fun render(): ReactElement?
 }
 

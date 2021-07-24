@@ -1,8 +1,9 @@
 package example
 
-import kotlinx.html.*
-import kotlinx.html.js.*
-import org.w3c.dom.*
+import kotlinx.html.InputType
+import kotlinx.html.js.onChangeFunction
+import kotlinx.html.js.onClickFunction
+import org.w3c.dom.HTMLInputElement
 import react.*
 import react.dom.*
 
@@ -14,7 +15,7 @@ interface TodoProps : RProps {
     var initialItems: List<String?>
 }
 
-interface TodoState : RState {
+interface TodoState : State {
     var items: List<String?>
     var text: String
 }

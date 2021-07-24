@@ -23,7 +23,7 @@ interface QuillProps : RProps {
     var initialText: String
 }
 
-interface QuillState : RState {
+interface QuillState : State {
     var text: String
 }
 

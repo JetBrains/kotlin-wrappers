@@ -2,7 +2,7 @@ package react
 
 import kotlinext.js.jsObject
 
-abstract class RComponent<P : RProps, S : RState> : Component<P, S> {
+abstract class RComponent<P : RProps, S : State> : Component<P, S> {
     constructor() : super() {
         state = jsObject { init() }
     }

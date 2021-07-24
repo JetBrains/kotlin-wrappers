@@ -7,10 +7,11 @@ package example
  * Date: Nov 24, 2017
  */
 
-import kotlinext.js.*
-import kotlinx.html.*
-import kotlinx.html.js.*
-import org.w3c.dom.*
+import kotlinext.js.js
+import kotlinx.html.InputType
+import kotlinx.html.js.onChangeFunction
+import kotlinx.html.js.onClickFunction
+import org.w3c.dom.HTMLInputElement
 import react.*
 import react.dom.*
 
@@ -71,7 +72,7 @@ interface SearchBarProps : RProps {
     var filterText: String
 }
 
-class SearchBar(props: SearchBarProps) : RComponent<SearchBarProps, RState>(props) {
+class SearchBar(props: SearchBarProps) : RComponent<SearchBarProps, State>(props) {
     override fun RBuilder.render() {
         div {
             input(type = InputType.text, name = "filterText") {
@@ -116,7 +117,7 @@ fun RBuilder.searchBar(
 
 interface ProductProps : RProps
 
-interface ProductState : RState {
+interface ProductState : State {
     var filterText: String
     var inStockOnly: Boolean
 }
