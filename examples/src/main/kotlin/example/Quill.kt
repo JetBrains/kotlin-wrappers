@@ -8,7 +8,7 @@ package example
  */
 
 import react.*
-import react.dom.*
+import react.dom.div
 
 @JsModule("react-quill")
 @JsNonModule
@@ -23,7 +23,7 @@ interface QuillProps : RProps {
     var initialText: String
 }
 
-interface QuillState : RState {
+interface QuillState : State {
     var text: String
 }
 

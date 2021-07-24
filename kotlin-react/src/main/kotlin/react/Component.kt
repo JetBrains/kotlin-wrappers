@@ -3,7 +3,7 @@
 
 package react
 
-abstract external class Component<P : RProps, S : RState>(
+abstract external class Component<P : RProps, S : State>(
     props: P = definedExternally,
 ) {
     val props: P

@@ -6,7 +6,7 @@ package react.redux
 import react.*
 import redux.Store
 
-external class Provider : Component<ProviderProps, RState> {
+external class Provider : Component<ProviderProps, State> {
     override fun render(): ReactElement?
 }
 

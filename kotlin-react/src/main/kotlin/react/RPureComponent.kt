@@ -2,7 +2,7 @@ package react
 
 import kotlinext.js.jsObject
 
-abstract class RPureComponent<P : RProps, S : RState> : PureComponent<P, S> {
+abstract class RPureComponent<P : RProps, S : State> : PureComponent<P, S> {
     constructor() : super() {
         state = jsObject { init() }
     }

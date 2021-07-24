@@ -6,13 +6,15 @@ package example
  * This example queries the database of ZIP codes at http://ziptasticapi.com and displays the results.
  */
 
-import kotlinext.js.*
-import kotlinx.html.*
-import kotlinx.html.js.*
-import org.w3c.dom.*
+import kotlinext.js.js
+import kotlinext.js.jsObject
+import kotlinx.html.InputType
+import kotlinx.html.js.onChangeFunction
+import kotlinx.html.title
+import org.w3c.dom.HTMLInputElement
 import react.*
 import react.dom.*
-import kotlin.js.*
+import kotlin.js.Promise
 
 @JsModule("axios")
 @JsNonModule
@@ -58,7 +60,7 @@ data class ZipResult(val country: String, val state: String, val city: String)
 
 interface AxiosProps : RProps
 
-interface AxiosState : RState {
+interface AxiosState : State {
     var zipCode: String
     var zipResult: ZipResult
     var errorMessage: String
