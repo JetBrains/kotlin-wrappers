@@ -7,13 +7,13 @@ external interface ProviderProps<T> : RProps {
     var value: T
 }
 
-external interface Provider<T> : RClass<ProviderProps<T>>
+external interface Provider<T> : ComponentClass<ProviderProps<T>>
 
 external interface ConsumerProps<T> : RProps {
     var children: (T) -> Any
 }
 
-external interface Consumer<T> : RClass<ConsumerProps<T>>
+external interface Consumer<T> : ComponentClass<ConsumerProps<T>>
 
 // Context (16.3+)
 external interface Context<T> {

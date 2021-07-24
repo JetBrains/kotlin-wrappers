@@ -5,4 +5,4 @@ package react
 
 external interface SuspenseProps : RProps
 
-external val Suspense: RClass<SuspenseProps>
+external val Suspense: ComponentClass<SuspenseProps>

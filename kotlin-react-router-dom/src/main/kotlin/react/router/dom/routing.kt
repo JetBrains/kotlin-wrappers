@@ -6,13 +6,13 @@ package react.router.dom
 import react.*
 
 @JsName("HashRouter")
-external val HashRouterComponent: RClass<HashRouterProps>
+external val HashRouterComponent: ComponentClass<HashRouterProps>
 
 @JsName("BrowserRouter")
-external val BrowserRouterComponent: RClass<BrowserRouterProps>
+external val BrowserRouterComponent: ComponentClass<BrowserRouterProps>
 
 @JsName("Switch")
-external val SwitchComponent: RClass<RProps>
+external val SwitchComponent: ComponentClass<RProps>
 
 @JsName("Route")
 external class RouteComponent<T : RProps> : Component<RouteProps<T>, RState> {
@@ -20,7 +20,7 @@ external class RouteComponent<T : RProps> : Component<RouteProps<T>, RState> {
 }
 
 @JsName("Link")
-external val LinkComponent: RClass<LinkProps>
+external val LinkComponent: ComponentClass<LinkProps>
 
 @JsName("NavLink")
 external class NavLinkComponent<T : RProps> : Component<NavLinkProps<T>, RState> {
@@ -28,7 +28,7 @@ external class NavLinkComponent<T : RProps> : Component<NavLinkProps<T>, RState>
 }
 
 @JsName("Redirect")
-external val RedirectComponent: RClass<RedirectProps>
+external val RedirectComponent: ComponentClass<RedirectProps>
 
 external interface BrowserRouterProps : RProps {
     var basename: String

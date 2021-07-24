@@ -5,7 +5,6 @@ package styled
 
 import kotlinext.js.TemplateTag
 import react.ComponentType
-import react.RClass
 import react.RProps
 import react.dom.WithClassName
 

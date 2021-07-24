@@ -5,6 +5,8 @@
 
 package react.query
 
+import react.ComponentClass
+
 external interface QueryErrorResetBoundaryValue {
     var clearReset: () -> Unit
     var isReset: () -> Boolean
@@ -17,4 +19,4 @@ external interface QueryErrorResetBoundaryProps : react.RProps {
     var children: dynamic
 }
 
-external val QueryErrorResetBoundary: react.RClass<QueryErrorResetBoundaryProps>
+external val QueryErrorResetBoundary: ComponentClass<QueryErrorResetBoundaryProps>
