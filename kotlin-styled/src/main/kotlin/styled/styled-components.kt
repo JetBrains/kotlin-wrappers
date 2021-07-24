@@ -4,6 +4,7 @@
 package styled
 
 import kotlinext.js.TemplateTag
+import react.ComponentClass
 import react.ComponentType
 import react.RProps
 import react.dom.WithClassName
@@ -56,4 +57,4 @@ external val createGlobalStyle: TemplateTag<Nothing, ComponentType<RProps>>
 /**
  * A utility to help identify styled components.
  */
-external fun isStyledComponent(component: RClass<*>): Boolean
+external fun isStyledComponent(component: ComponentClass<*>): Boolean

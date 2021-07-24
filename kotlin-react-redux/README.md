@@ -41,7 +41,7 @@ type-safe builders instead of returning props objects. If you would like to just
 you can do that too:
 
 ```kotlin
-val connectedComponent: RClass<ConnectedComponentProps> =
+val connectedComponent: ComponentClass<ConnectedComponentProps> =
     rConnect<State, RAction, WrapperAction, ConnectedComponentProps, StateProps, DispatchProps, WrappedComponentProps>(
         { state, props ->
             prop1 = state.prop1
