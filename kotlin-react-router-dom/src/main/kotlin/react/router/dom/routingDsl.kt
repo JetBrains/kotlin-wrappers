@@ -75,7 +75,7 @@ fun RBuilder.route(
 ) {
     route(
         path = path,
-        component = component.rClass,
+        component = component.react,
         exact = exact,
         strict = strict,
     )

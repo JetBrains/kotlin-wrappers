@@ -84,7 +84,7 @@ interface RBuilder {
         klazz: KClass<out Component<P, *>>,
         handler: RHandler<P>,
     ) {
-        klazz.rClass.invoke(handler)
+        klazz.react.invoke(handler)
     }
 
     fun <T, P : RProps> childFunction(
@@ -93,7 +93,7 @@ interface RBuilder {
         children: RBuilder.(T) -> Unit,
     ) {
         child(
-            type = klazz.rClass,
+            type = klazz.react,
             props = RElementBuilder(jsObject<P>()).apply(handler).attrs,
             children = listOf { value: T -> buildElement { children(value) } }
         )
@@ -108,7 +108,7 @@ interface RBuilder {
         props: P,
         children: List<Any> = emptyList(),
     ) {
-        child(klazz.rClass, props, children)
+        child(klazz.react, props, children)
     }
 
     fun RProps.children() {
@@ -203,7 +203,7 @@ inline fun <P : RProps, reified C : Component<P, *>> RBuilder.node(
     props: P,
     children: List<Any> = emptyList(),
 ) {
-    child(C::class.rClass, props, children)
+    child(C::class.react, props, children)
 }
 
 open class RBuilderImpl : RBuilder {
