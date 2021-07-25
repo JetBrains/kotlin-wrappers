@@ -5,8 +5,6 @@
 
 package react.query
 
-import react.ComponentClass
-
 external val useQueryClient: () -> QueryClient
 
 external interface QueryClientProviderProps : react.RProps {
@@ -14,4 +12,4 @@ external interface QueryClientProviderProps : react.RProps {
     var contextSharing: Boolean
 }
 
-external val QueryClientProvider: ComponentClass<QueryClientProviderProps>
+external val QueryClientProvider: react.FC<QueryClientProviderProps>
