@@ -26,7 +26,6 @@ class BenchmarkTests {
     private fun assertCssNotEmpty() {
         val styles = document.getElementById("ksc-global-styles") as HTMLStyleElement
         assertTrue((styles.sheet as CSSStyleSheet).cssRules.length > 0)
-        // TODO maybe somehow checking that the css is correct
     }
 
     private fun TestScope.assertChildrenCount(n: Int) {
@@ -74,11 +73,10 @@ class BenchmarkTests {
         assertChildrenCount(0)
 
         val duration = measureTime {
-            renderComponent(getStyledComponent(n))
+            getCssBuilders(n).forEach { injectBuilder(it) }
             waitForAnimationFrame()
         }
 
-        assertChildrenCount(n)
         assertCssNotEmpty()
 
         clear()

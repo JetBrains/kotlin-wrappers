@@ -11,6 +11,7 @@ private fun StyledBuilder<*>.addCss(i: Int) {
                 1 -> paddingLeft = 12.px
                 2 -> paddingRight = 12.px
                 3 -> padding = "55px 16px"
+                // TODO
             }
         }
     }
@@ -33,9 +34,9 @@ private fun StyledBuilder<*>.addAnimation() {
     }
 }
 
-fun getStyledComponent(count: Int, withAnimation: Boolean = false): ComponentType<RProps> {
+fun getStyledComponent(position: Int, withAnimation: Boolean = false): ComponentType<RProps> {
     return fc {
-        (0 until count).map {
+        (0 until position).map {
             styledDiv {
                 addCss(it)
                 if (withAnimation) {
@@ -49,14 +50,15 @@ fun getStyledComponent(count: Int, withAnimation: Boolean = false): ComponentTyp
     }
 }
 
-fun getDeclaration(i: Int): Pair<String, Any> {
+fun getDeclaration(position: Int): Pair<String, Any> {
     val declarations: List<Pair<String, Any>> = listOf(
         "alignContent" to Align.center,
         "alignItems" to Align.baseline,
         "alignSelf" to Align.flexEnd,
         "appearance" to Appearance.auto,
+        // TODO
     )
-    return declarations[i % declarations.size]
+    return declarations[position % declarations.size]
 }
 
 fun getCssBuilders(count: Int): List<CSSBuilder> {

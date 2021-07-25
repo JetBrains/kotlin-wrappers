@@ -10,23 +10,6 @@ pluginManagement {
             url = uri("https://packages.jetbrains.team/maven/p/ui/dev")
         }
     }
-
-
-    resolutionStrategy {
-        eachPlugin {
-            when (requested.id.id) {
-                "org.jetbrains.kotlin.multiplatform" -> {
-                    useModule("org.jetbrains.kotlin.multiplatform:org.jetbrains.kotlin.multiplatform.gradle.plugin:1.5.21")
-                }
-                "kotlin2js" -> {
-                    useModule("org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.21")
-                }
-                "org.jetbrains.compose" -> {
-                    useModule("org.jetbrains.compose:org.jetbrains.compose.gradle.plugin:0.5.0-build262")
-                }
-            }
-        }
-    }
 }
 
 fun module(name: String, path: String) {

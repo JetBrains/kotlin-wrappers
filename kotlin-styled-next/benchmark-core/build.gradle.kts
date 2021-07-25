@@ -5,12 +5,11 @@ plugins {
 
 kotlin {
     js(IR) {
-        browser() {
+        browser {
             testTask {
                 testLogging.showStandardStreams = true
                 useKarma {
                     useChromeHeadless()
-                    //useFirefox()
                 }
             }
         }

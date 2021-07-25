@@ -12,20 +12,6 @@ subprojects {
         mavenCentral()
     }
 
-    configurations.all {
-        resolutionStrategy.dependencySubstitution {
-            substitute(module("org.jetbrains.kotlin-wrappers:kotlin-styled-next")).apply {
-                with(project(":kotlin-styled-next")){}
-            }
-            substitute(module("org.jetbrains.kotlin-wrappers:kotlin-react")).apply {
-                with(project(":kotlin-react")){}
-            }
-            substitute(module("org.jetbrains.kotlin-wrappers:kotlin-react-dom")).apply {
-                with(project(":kotlin-react-dom")){}
-            }
-        }
-    }
-
     plugins.withType<KotlinJsPluginWrapper> {
         extensions.configure<KotlinJsProjectExtension> {
             js {
