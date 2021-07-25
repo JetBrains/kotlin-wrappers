@@ -1,9 +1,13 @@
+import kotlinx.browser.document
 import kotlinx.browser.window
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.toList
+import org.w3c.dom.HTMLStyleElement
+import org.w3c.dom.css.CSSStyleSheet
 import kotlin.test.Test
 import kotlin.test.assertEquals
+import kotlin.test.assertTrue
 import kotlin.time.Duration
 import kotlin.time.DurationUnit
 import kotlin.time.ExperimentalTime
@@ -17,6 +21,16 @@ class BenchmarkTests {
                 emit(calculate())
             }
         }
+    }
+
+    private fun assertCssNotEmpty() {
+        val styles = document.getElementById("ksc-global-styles") as HTMLStyleElement
+        assertTrue((styles.sheet as CSSStyleSheet).cssRules.length > 0)
+        // TODO maybe somehow checking that the css is correct
+    }
+
+    private fun TestScope.assertChildrenCount(n: Int) {
+        assertEquals(n, root.childElementCount)
     }
 
     private fun runBenchmark(
@@ -42,18 +56,32 @@ class BenchmarkTests {
     }
 
     private suspend fun TestScope.addNItems(n: Int): Duration {
-        assertEquals(0, root.childElementCount)
+        assertChildrenCount(0)
 
         val duration = measureTime {
-            renderComponent(getItems(n))
+            renderComponent(getStyledComponent(n))
             waitForAnimationFrame()
         }
 
-//        TODO assertions that the resulting css is correct
-//        assertEquals(99, root.childElementCount)
-        assertEquals(n, root.childElementCount)
+        assertChildrenCount(n)
+        assertCssNotEmpty()
 
-        clearComponents()
+        clear()
+        return duration
+    }
+
+    private suspend fun TestScope.addCssBuilders(n: Int): Duration {
+        assertChildrenCount(0)
+
+        val duration = measureTime {
+            renderComponent(getStyledComponent(n))
+            waitForAnimationFrame()
+        }
+
+        assertChildrenCount(n)
+        assertCssNotEmpty()
+
+        clear()
         return duration
     }
 
@@ -81,5 +109,10 @@ class BenchmarkTests {
     @Test
     fun add500Items() = runBenchmark("add500Items") {
         addNItems(500)
+    }
+
+    @Test
+    fun add1kCSSBuilders() = runBenchmark(name = "add1kCSSBuilders", repeat = 3) {
+        addCssBuilders(1000)
     }
 }

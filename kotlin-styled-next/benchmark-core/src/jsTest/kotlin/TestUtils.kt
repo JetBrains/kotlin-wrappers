@@ -4,12 +4,14 @@ import kotlinx.browser.window
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.promise
+import kotlinx.css.CSSBuilder
 import kotlinx.dom.clear
 import org.w3c.dom.HTMLElement
 import react.*
 import react.dom.div
 import react.dom.render
 import react.dom.unmountComponentAtNode
+import styled.injectGlobal
 import kotlin.coroutines.resume
 import kotlin.coroutines.suspendCoroutine
 
@@ -24,13 +26,17 @@ private val testScope = MainScope()
 class TestScope : CoroutineScope by testScope {
     val root = "div".asHtmlElement()
 
-    fun renderComponent(component: Any) {
+    fun injectBuilder(builder: CSSBuilder) {
+        injectGlobal(builder)
+    }
+
+    fun renderComponent(component: ComponentType<RProps>) {
         root.clear()
         val reactElement = createElement(component, jsObject {})
         render(reactElement, root)
     }
 
-    fun clearComponents() {
+    fun clear() {
         unmountComponentAtNode(root)
     }
 }

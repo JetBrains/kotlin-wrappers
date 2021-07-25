@@ -1,8 +1,6 @@
 import kotlinx.css.*
 import kotlinx.css.properties.*
-import react.FunctionalComponent
-import react.RProps
-import react.functionalComponent
+import react.*
 import styled.*
 
 private fun StyledBuilder<*>.addCss(i: Int) {
@@ -35,11 +33,10 @@ private fun StyledBuilder<*>.addAnimation() {
     }
 }
 
-fun getItems(count: Int, withAnimation: Boolean = false): FunctionalComponent<RProps> {
-    return functionalComponent {
+fun getStyledComponent(count: Int, withAnimation: Boolean = false): ComponentType<RProps> {
+    return fc {
         (0 until count).map {
             styledDiv {
-                +"Hello, world"
                 addCss(it)
                 if (withAnimation) {
                     addAnimation()
@@ -52,15 +49,23 @@ fun getItems(count: Int, withAnimation: Boolean = false): FunctionalComponent<RP
     }
 }
 
-fun getItems(list: List<String>): FunctionalComponent<RProps> {
-    return functionalComponent {
-        list.map {
-            styledDiv {
-                +it
-                css {
+fun getDeclaration(i: Int): Pair<String, Any> {
+    val declarations: List<Pair<String, Any>> = listOf(
+        "alignContent" to Align.center,
+        "alignItems" to Align.baseline,
+        "alignSelf" to Align.flexEnd,
+        "appearance" to Appearance.auto,
+    )
+    return declarations[i % declarations.size]
+}
 
-                }
-            }
+fun getCssBuilders(count: Int): List<CSSBuilder> {
+    return (0 until count).map {
+        val css = CSSBuilder()
+        (0 until it).forEach {
+            val (key, value) = getDeclaration(it)
+            css.declarations[key] = value
         }
+        css
     }
 }
