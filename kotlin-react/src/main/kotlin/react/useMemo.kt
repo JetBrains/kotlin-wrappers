@@ -11,15 +11,3 @@ inline fun <T> useMemo(
     noinline callback: () -> T,
 ): T =
     rawUseMemo(callback, dependencies)
-
-/**
- * Only works inside [fc]
- * @see <a href="https://reactjs.org/docs/hooks-state.html#hooks-and-function-components">Hooks and Function Components</a>
- */
-@Deprecated("Inconsistent hooks API")
-inline fun <T> useMemo(
-    noinline callback: () -> T,
-    dependencies: RDependenciesArray,
-): T =
-    rawUseMemo(callback, dependencies)
-
