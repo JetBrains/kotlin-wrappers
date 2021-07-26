@@ -7,12 +7,27 @@ import org.w3c.dom.HTMLStyleElement
 import org.w3c.dom.css.CSSStyleSheet
 import kotlin.collections.*
 
+internal typealias InjectedCssHolder = LinkedHashMap<StyledCss, String>
+
 /**
  * Inject CSS rules defined in [css] into the DOM
  */
 fun injectGlobal(css: CSSBuilder) {
     GlobalStyles.scheduleToInject(css.toStyledCss().getCssRules(null))
     GlobalStyles.injectScheduled()
+}
+
+private object Wrapper {
+    private val wrapper: ((() -> Unit) -> Unit)? = null
+    fun <T> wrap(action: () -> T): T {
+        if (wrapper == null)
+            return action()
+        var ret: T? = null
+        wrapper.invoke {
+            ret = action()
+        }
+        return ret ?: action()
+    }
 }
 
 object GlobalStyles {
@@ -28,7 +43,7 @@ object GlobalStyles {
             return field
         }
 
-    private val styledClasses = LinkedHashMap<StyledCss, ClassName>()
+    internal var styledClasses = InjectedCssHolder()
     private val scheduledRules = mutableListOf<String>()
     private val injectedStyleSheetRules = mutableSetOf<Selector>()
 
@@ -50,16 +65,18 @@ object GlobalStyles {
      * If the rule cannot be parsed by the browser, it gets thrown away.
      */
     fun injectScheduled() {
-        var maxIdx = sheet.cssRules.length
-        for (rule in scheduledRules.filter { it.isNotEmpty() }) {
-            try {
-                sheet.insertRule(rule, maxIdx)
-                maxIdx++
-            } catch (e: Throwable) {
-                /* Browser does not support the rule */
+        Wrapper.wrap {
+            var maxIdx = sheet.cssRules.length
+            for (rule in scheduledRules.filter { it.isNotEmpty() }) {
+                try {
+                    sheet.insertRule(rule, maxIdx)
+                    maxIdx++
+                } catch (e: Throwable) {
+                    /* Browser does not support the rule */
+                }
             }
+            scheduledRules.clear()
         }
-        scheduledRules.clear()
     }
 
     /**

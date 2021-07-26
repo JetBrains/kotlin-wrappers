@@ -7,19 +7,15 @@ import kotlinx.coroutines.promise
 import kotlinx.css.CSSBuilder
 import kotlinx.dom.clear
 import org.w3c.dom.HTMLElement
-import react.*
-import react.dom.div
+import react.ComponentType
+import react.RProps
+import react.createElement
 import react.dom.render
 import react.dom.unmountComponentAtNode
 import styled.injectGlobal
 import kotlin.coroutines.resume
 import kotlin.coroutines.suspendCoroutine
-
-fun RBuilder.Welcome(name: String) {
-    div {
-        +"Hello, $name"
-    }
-}
+import kotlin.js.Promise
 
 private val testScope = MainScope()
 
@@ -57,6 +53,15 @@ uses window.requestAnimationFrame */
 internal suspend fun waitForAnimationFrame() {
     suspendCoroutine<Unit> { continuation ->
         window.requestAnimationFrame {
+            continuation.resume(Unit)
+        }
+    }
+}
+
+// Hack for Flow emit function not to crash in inner js code
+internal suspend fun waitFlowCoroutine() {
+    suspendCoroutine<Unit> { continuation ->
+        Promise.Companion.resolve(Unit).then {
             continuation.resume(Unit)
         }
     }
