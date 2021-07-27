@@ -20,10 +20,6 @@ abstract class RPureComponent<P : RProps, S : State> : PureComponent<P, S> {
         props.children()
     }
 
-    fun <T> RBuilder.children(value: T) {
-        props.children(value)
-    }
-
     abstract fun RBuilder.render()
 
     override fun render() = buildElements { render() }

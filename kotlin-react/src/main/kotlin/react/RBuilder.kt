@@ -87,18 +87,6 @@ interface RBuilder {
         klazz.react.invoke(handler)
     }
 
-    fun <T, P : RProps> childFunction(
-        klazz: KClass<out Component<P, *>>,
-        handler: RHandler<P>,
-        children: RBuilder.(T) -> Unit,
-    ) {
-        child(
-            type = klazz.react,
-            props = RElementBuilder(jsObject<P>()).apply(handler).attrs,
-            children = listOf { value: T -> buildElement { children(value) } }
-        )
-    }
-
     @Deprecated(
         message = "Ambiguous API",
         ReplaceWith("child(klazz.rClass, props, children)"),
@@ -113,11 +101,6 @@ interface RBuilder {
 
     fun RProps.children() {
         childList.addAll(Children.toArray(children))
-    }
-
-    @Suppress("UNCHECKED_CAST")
-    fun <T> RProps.children(value: T) {
-        childList.add((children as (T) -> Any).invoke(value))
     }
 
     /**
@@ -186,13 +169,6 @@ inline fun <P : RProps, reified C : Component<P, *>> RBuilder.child(
     noinline handler: RHandler<P>,
 ) {
     child(C::class, handler)
-}
-
-inline fun <T, P : RProps, reified C : Component<P, *>> RBuilder.childFunction(
-    noinline handler: RHandler<P>,
-    noinline children: RBuilder.(T) -> Unit,
-) {
-    childFunction(C::class, handler, children)
 }
 
 @Deprecated(
@@ -272,25 +248,4 @@ fun <P : RProps> RBuilder.child(
     handler: RHandler<P> = {},
 ) {
     child(component, props, handler)
-}
-
-fun <T, P : RProps> RBuilder.childFunction(
-    component: FC<P>,
-    handler: RHandler<P> = {},
-    children: RBuilder.(T) -> Unit,
-) {
-    childFunction(component, jsObject(), handler, children)
-}
-
-fun <T, P : RProps> RBuilder.childFunction(
-    component: FC<P>,
-    props: P,
-    handler: RHandler<P> = {},
-    children: RBuilder.(T) -> Unit,
-) {
-    child(
-        type = component,
-        props = RElementBuilder(props).apply(handler).attrs,
-        children = listOf { value: T -> buildElement { children(value) } }
-    )
 }
