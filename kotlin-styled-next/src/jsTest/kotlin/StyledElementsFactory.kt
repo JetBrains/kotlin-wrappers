@@ -5,16 +5,17 @@ import kotlinx.css.properties.rotate
 import kotlinx.css.properties.transform
 import react.fc
 import styled.*
+import kotlin.random.Random
 
-private fun StyledBuilder<*>.addCss() {
+private fun StyledBuilder<*>.addCss(n: Int) {
     css {
-        (1..random.nextInt(3, 20)).map {
-            val r = random.nextInt()
-            when (random.nextInt(29)) {
+        (1..n % 20).map {
+            val randomCount = Random(123456789)
+            when (randomCount.nextInt(29)) {
                 0 -> backgroundColor = randomColor()
-                1 -> paddingLeft = r.px
-                2 -> paddingRight = r.px
-                3 -> padding = "${r}px ${r}px"
+                1 -> paddingLeft = randomLinearDimension()
+                2 -> paddingRight = randomLinearDimension()
+                3 -> padding = randomLinearDimension().toString()
                 4 -> alignContent = randomAlign()
                 5 -> alignItems = randomAlign()
                 6 -> alignSelf = randomAlign()
@@ -71,7 +72,7 @@ object StyledElementsFactory {
         return fc {
             (1..count).map {
                 styledDiv {
-                    addCss()
+                    addCss(it)
                     if (withAnimation) {
                         addAnimation()
                     }
@@ -86,7 +87,7 @@ object StyledElementsFactory {
     fun getCssBuilders(count: Int): List<CSSBuilder> {
         return (1..count).map {
             val builder = StyledElementBuilder.invoke(fc {})
-            builder.addCss()
+            builder.addCss(it)
             builder.css
         }
     }

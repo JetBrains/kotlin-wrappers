@@ -8,13 +8,6 @@ import kotlin.random.Random
 const val seed = 46271372869541347
 val random = Random(seed)
 
-fun randomString(length: Int): String {
-    val allowedChars = ('A'..'Z') + ('a'..'z') + ('0'..'9')
-    return (1..length)
-        .map { allowedChars[random.nextInt(allowedChars.size)] }
-        .joinToString("")
-}
-
 fun randomAlign(): Align {
     return when (random.nextInt(0, 13)) {
         5 -> Align.flexStart
