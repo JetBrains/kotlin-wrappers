@@ -8,6 +8,7 @@ package react.table
 import kotlinext.js.Record
 import org.w3c.dom.events.Event
 import react.RProps
+import react.ReactKey
 import react.ReactNode
 import react.table.RenderType.Cell
 import react.table.RenderType.Header
@@ -324,7 +325,6 @@ external interface ActionType {
 @Suppress("UNUSED_TYPEALIAS_PARAMETER")
 typealias IdType<D> = String
 typealias CellValue = Any
-typealias ReactKey = String
 
 typealias PropGetter<Props, Meta> = (Props, Meta) -> Props
 

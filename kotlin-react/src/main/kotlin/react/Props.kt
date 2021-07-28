@@ -5,7 +5,7 @@ external interface RProps
 val RProps.children: Any
     get() = asDynamic().children
 
-var RProps.key: String
+var RProps.key: ReactKey
     @Deprecated(message = "Write-only property", level = DeprecationLevel.HIDDEN)
     get() = error("")
     set(value) {
