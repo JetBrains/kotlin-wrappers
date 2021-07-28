@@ -7,8 +7,8 @@ package react.table
 
 import kotlinext.js.Record
 import org.w3c.dom.events.Event
+import react.Key
 import react.RProps
-import react.ReactKey
 import react.ReactNode
 import react.table.RenderType.Cell
 import react.table.RenderType.Header
@@ -85,7 +85,7 @@ external interface TableCommonProps : RProps {
 }
 
 external interface TableKeyedProps : TableCommonProps {
-    val key: ReactKey
+    val key: Key
 }
 
 external interface TableProps : TableCommonProps

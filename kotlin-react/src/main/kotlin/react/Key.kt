@@ -1,3 +1,3 @@
 package react
 
-typealias ReactKey = String
+typealias Key = String
