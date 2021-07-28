@@ -48,7 +48,7 @@ interface RDOMBuilder<out T : Tag> : RBuilder {
 
     val domProps: DOMProps
 
-    var key: String
+    var key: Key
         @Deprecated(message = "Write-only property", level = DeprecationLevel.HIDDEN)
         get() = error("")
         set(value) {
