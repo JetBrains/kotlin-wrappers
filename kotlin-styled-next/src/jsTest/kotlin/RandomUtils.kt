@@ -8,14 +8,15 @@ import kotlin.random.Random
 const val seed = 46271372869541347
 val random = Random(seed)
 
+// Functions below are needed for hash to be different even on CSS with the same properties set
 fun randomAlign(): Align {
     return when (random.nextInt(0, 13)) {
-        5 -> Align.flexStart
         0 -> Align.flexEnd
         1 -> Align.baseline
         2 -> Align.center
         3 -> Align.auto
         4 -> Align.end
+        5 -> Align.flexStart
         6 -> Align.inherit
         7 -> Align.initial
         8 -> Align.selfStart
@@ -47,7 +48,6 @@ fun randomBorderStyle(): BorderStyle {
         0 -> BorderStyle.initial
         1 -> BorderStyle.inherit
         2 -> BorderStyle.unset
-
         3 -> BorderStyle.none
         4 -> BorderStyle.dotted
         5 -> BorderStyle.dashed

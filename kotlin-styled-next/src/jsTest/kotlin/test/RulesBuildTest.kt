@@ -58,9 +58,14 @@ class ElementTest {
         assertTrue(false, "Could not find rule for class")
     }
 
-    private suspend fun TestScope.injectComponent(styledComponent: Component): Element {
+    /**
+     * Inject [styledComponent] into the DOM and return corresponding [Element]
+     */
+    private suspend fun TestScope.clearAndInject(styledComponent: Component): Element {
+        clear()
         renderComponent(styledComponent)
         waitForAnimationFrame()
+        assertChildrenCount(1)
         val styledElement = root.children[0]
         assertNotNull(styledElement)
         return styledElement
@@ -81,7 +86,7 @@ class ElementTest {
                 }
             }
         }
-        val styledElement = injectComponent(styledComponent)
+        val styledElement = clearAndInject(styledComponent)
         assertCSS(
             styledElement.className, listOf(
                 "background-color" to Color.blue.toString(),
@@ -100,7 +105,7 @@ class ElementTest {
                 }
             }
         }
-        val styledElement = injectComponent(styledComponent)
+        val styledElement = clearAndInject(styledComponent)
         assertCSS(
             styledElement.className, listOf(
                 "min-height" to 66.px.toString(),
@@ -119,7 +124,7 @@ class ElementTest {
                 }
             }
         }
-        val className = injectComponent(styledComponent).className.split(" ").first { "ksc-" !in it }
+        val className = clearAndInject(styledComponent).className.split(" ").first { "ksc-" !in it }
         assertCSS(
             className, listOf(
                 "align-content" to "end",
@@ -137,7 +142,7 @@ class ElementTest {
                 }
             }
         }
-        val className = injectComponent(styledComponent).className
+        val className = clearAndInject(styledComponent).className
 
         assertCSS(
             ".$className.$className", listOf(
@@ -160,7 +165,7 @@ class ElementTest {
                 }
             }
         }
-        injectComponent(styledComponent).className
+        clearAndInject(styledComponent).className
         assertCSS(
             "@media $query", listOf(
                 "text-transform" to "capitalize",

@@ -32,8 +32,7 @@ class TestScope : CoroutineScope by testScope {
     }
 
     fun renderComponent(component: Component) {
-        root.clear()
-        val reactElement = createElement(component, jsObject {})
+        val reactElement = createElement(component, jsObject { })
         render(reactElement, root)
     }
 
@@ -42,9 +41,9 @@ class TestScope : CoroutineScope by testScope {
         return styles.sheet as CSSStyleSheet
     }
 
-
     fun clear() {
         unmountComponentAtNode(root)
+        root.clear()
     }
 }
 
@@ -55,12 +54,9 @@ internal fun runTest(block: suspend TestScope.() -> Unit): dynamic {
 
 internal fun String.asHtmlElement() = document.createElement(this) as HTMLElement
 
-/* Currently, the recompositionRunner relies on AnimationFrame to run the recomposition and
-applyChanges. Therefore we can use this method after updating the state and before making
-assertions.
-
-If tests get broken, then DefaultMonotonicFrameClock need to be checked if it still
-uses window.requestAnimationFrame */
+/** Wait for the next animation frame, in which react most probably rendered updated the DOM.
+ * This isn't certain that the DOM will be updated on the next frame,
+ * so the assertions of this are needed after function invocation */
 internal suspend fun waitForAnimationFrame() {
     suspendCoroutine<Unit> { continuation ->
         window.requestAnimationFrame {
@@ -69,7 +65,8 @@ internal suspend fun waitForAnimationFrame() {
     }
 }
 
-// Hack for Flow emit function not to crash in inner js code
+/** Hack for Flow emit function not to crash in inner js code */
+
 internal suspend fun waitFlowCoroutine() {
     suspendCoroutine<Unit> { continuation ->
         Promise.Companion.resolve(Unit).then {
