@@ -4,13 +4,7 @@ plugins {
 }
 
 repositories {
-    gradlePluginPortal()
-    mavenLocal()
     mavenCentral()
-    maven {
-        url = uri("https://packages.jetbrains.team/maven/p/ui/dev")
-    }
-    maven { url = uri("https://maven.pkg.jetbrains.space/kotlin/p/kotlin/kotlin-js-wrappers") }
 }
 
 kotlin {
@@ -51,14 +45,6 @@ kotlin {
             tasks.withType<org.jetbrains.kotlin.gradle.dsl.KotlinCompile<*>>().configureEach {
                 kotlinOptions.freeCompilerArgs += "-Xopt-in=kotlin.RequiresOptIn"
             }
-            val printBundleSize by tasks.registering {
-                dependsOn(tasks.named("jsBrowserDistribution"))
-                doLast {
-                    val jsFile = buildDir.resolve("distributions/web-benchmark-core.js")
-                    val size = jsFile.length()
-                    println("##teamcity[buildStatisticValue key='landingPageBundleSize' value='$size']")
-                }
-            }
 
             val printBenchmarkResults by tasks.registering {
                 doLast {
@@ -98,7 +84,6 @@ kotlin {
             }
 
             tasks.named("jsTest") { finalizedBy(printBenchmarkResults) }
-            tasks.named("build") { finalizedBy(printBundleSize) }
         }
     }
 }

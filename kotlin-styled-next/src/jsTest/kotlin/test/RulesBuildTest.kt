@@ -17,7 +17,7 @@ import styled.styledSpan
 import waitForAnimationFrame
 import kotlin.test.*
 
-private object SimpleStyleSheet : StyleSheet("testStyleSheet") {
+private object SimpleStyleSheet : StyleSheet("SimpleStyleSheet") {
     val simpleProperty by css {
         minHeight = 66.px
         padding(0.px)
@@ -31,8 +31,7 @@ private object SimpleStyleSheet : StyleSheet("testStyleSheet") {
     }
 }
 
-
-private object StaticStyleSheet : StyleSheet("testStyleSheet", isStatic = true) {
+private object StaticStyleSheet : StyleSheet("StaticStyleSheet", isStatic = true) {
     val property by css {
         alignContent = Align.end
     }
