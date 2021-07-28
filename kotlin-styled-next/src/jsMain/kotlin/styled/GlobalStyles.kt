@@ -7,6 +7,8 @@ import org.w3c.dom.HTMLStyleElement
 import org.w3c.dom.css.CSSStyleSheet
 import kotlin.collections.*
 
+internal typealias InjectedCssHolder = LinkedHashMap<StyledCss, String>
+
 /**
  * Inject CSS rules defined in [css] into the DOM
  */
@@ -16,9 +18,10 @@ fun injectGlobal(css: CSSBuilder) {
 }
 
 object GlobalStyles {
+    internal const val styleId = "ksc-global-styles"
     private val sheet by lazy {
         val style = window.document.head!!.appendChild(window.document.createElement("style")) as HTMLStyleElement
-        style.setAttribute("id", "ksc-global-styles")
+        style.setAttribute("id", styleId)
         style.sheet as CSSStyleSheet
     }
 
@@ -28,7 +31,7 @@ object GlobalStyles {
             return field
         }
 
-    private val styledClasses = LinkedHashMap<StyledCss, ClassName>()
+    internal var styledClasses = InjectedCssHolder()
     private val scheduledRules = mutableListOf<String>()
     private val injectedStyleSheetRules = mutableSetOf<Selector>()
 

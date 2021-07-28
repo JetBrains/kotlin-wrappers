@@ -1,7 +1,7 @@
 package styled
 
 import kotlinx.css.*
-import kotlinx.css.properties.*
+import kotlinx.css.properties.KeyframesBuilder
 
 internal typealias ClassName = String
 internal typealias Selector = String
