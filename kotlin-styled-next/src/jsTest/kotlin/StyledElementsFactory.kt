@@ -1,8 +1,4 @@
 import kotlinx.css.*
-import kotlinx.css.properties.IterationCount
-import kotlinx.css.properties.Timing
-import kotlinx.css.properties.rotate
-import kotlinx.css.properties.transform
 import react.fc
 import styled.*
 import kotlin.random.Random
@@ -47,35 +43,15 @@ private fun StyledBuilder<*>.addCss(n: Int) {
     }
 }
 
-private fun StyledBuilder<*>.addAnimation() {
-    css {
-        animation(randomTime(), Timing.linear, iterationCount = IterationCount.infinite) {
-            from {
-                transform {
-                    rotate(randomAngle())
-                }
-            }
-            to {
-                transform {
-                    rotate(randomAngle())
-                }
-            }
-        }
-    }
-}
-
 object StyledElementsFactory {
     /**
      * @return styled component with [count] styled children, each having random css
      */
-    fun getStyledComponent(count: Int, withAnimation: Boolean = false): Component {
+    fun getStyledComponent(count: Int): Component {
         return fc {
             (1..count).map {
                 styledDiv {
                     addCss(it)
-                    if (withAnimation) {
-                        addAnimation()
-                    }
                 }
             }
         }

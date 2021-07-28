@@ -8,7 +8,7 @@ import kotlin.random.Random
 const val seed = 46271372869541347
 val random = Random(seed)
 
-// Functions below are needed for hash to be different even on CSS with the same properties set
+// Functions below are needed for hash to be different even on CSS with the same properties
 fun randomAlign(): Align {
     return when (random.nextInt(0, 13)) {
         0 -> Align.flexEnd
@@ -29,14 +29,6 @@ fun randomAlign(): Align {
 
 fun randomColor(): Color {
     return Color("#${random.nextInt(0xffffff).toString(16)}")
-}
-
-fun randomAngle(): Angle {
-    return random.nextInt(360).deg
-}
-
-fun randomTime(): Time {
-    return random.nextInt(3600).s
 }
 
 fun randomLinearDimension(): LinearDimension {
