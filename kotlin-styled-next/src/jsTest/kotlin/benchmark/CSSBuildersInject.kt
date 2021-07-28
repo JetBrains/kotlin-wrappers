@@ -10,7 +10,7 @@ import kotlin.time.ExperimentalTime
 import kotlin.time.measureTime
 
 @OptIn(ExperimentalTime::class)
-class CSSBuildersInject: BenchmarkBase() {
+class CSSBuildersInject : BenchmarkBase() {
     /**
      * Measure time to inject [n] [CSSBuilder] CSS rules into DOM
      * @return duration of all injects

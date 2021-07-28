@@ -17,21 +17,8 @@ fun injectGlobal(css: CSSBuilder) {
     GlobalStyles.injectScheduled()
 }
 
-private object Wrapper {
-    private val wrapper: ((() -> Unit) -> Unit)? = null
-    fun <T> wrap(action: () -> T): T {
-        if (wrapper == null)
-            return action()
-        var ret: T? = null
-        wrapper.invoke {
-            ret = action()
-        }
-        return ret ?: action()
-    }
-}
-
 object GlobalStyles {
-    internal const val styleId = "ksc-global-styles";
+    internal const val styleId = "ksc-global-styles"
     private val sheet by lazy {
         val style = window.document.head!!.appendChild(window.document.createElement("style")) as HTMLStyleElement
         style.setAttribute("id", styleId)
@@ -66,18 +53,16 @@ object GlobalStyles {
      * If the rule cannot be parsed by the browser, it gets thrown away.
      */
     fun injectScheduled() {
-        Wrapper.wrap {
-            var maxIdx = sheet.cssRules.length
-            for (rule in scheduledRules.filter { it.isNotEmpty() }) {
-                try {
-                    sheet.insertRule(rule, maxIdx)
-                    maxIdx++
-                } catch (e: Throwable) {
-                    /* Browser does not support the rule */
-                }
+        var maxIdx = sheet.cssRules.length
+        for (rule in scheduledRules.filter { it.isNotEmpty() }) {
+            try {
+                sheet.insertRule(rule, maxIdx)
+                maxIdx++
+            } catch (e: Throwable) {
+                /* Browser does not support the rule */
             }
-            scheduledRules.clear()
         }
+        scheduledRules.clear()
     }
 
     /**

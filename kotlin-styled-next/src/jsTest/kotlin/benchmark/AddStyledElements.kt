@@ -2,7 +2,6 @@ package benchmark
 
 import StyledElementsFactory.getStyledComponent
 import TestScope
-import kotlinx.css.CSSBuilder
 import styled.GlobalStyles
 import styled.StyledCss
 import waitForAnimationFrame

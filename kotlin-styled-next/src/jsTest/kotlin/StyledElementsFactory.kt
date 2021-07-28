@@ -1,6 +1,9 @@
 import kotlinx.css.*
-import kotlinx.css.properties.*
-import react.*
+import kotlinx.css.properties.IterationCount
+import kotlinx.css.properties.Timing
+import kotlinx.css.properties.rotate
+import kotlinx.css.properties.transform
+import react.fc
 import styled.*
 
 private fun StyledBuilder<*>.addCss() {

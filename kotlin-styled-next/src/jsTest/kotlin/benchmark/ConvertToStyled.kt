@@ -10,7 +10,7 @@ import kotlin.time.ExperimentalTime
 import kotlin.time.measureTime
 
 @OptIn(ExperimentalTime::class)
-class ConvertToStyled: BenchmarkBase() {
+class ConvertToStyled : BenchmarkBase() {
     private suspend fun convertNCSSBuilders(n: Int): Duration {
         val builders = getCssBuilders(n)
         return measureTime {

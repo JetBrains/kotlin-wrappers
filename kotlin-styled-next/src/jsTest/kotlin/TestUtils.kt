@@ -8,7 +8,6 @@ import kotlinx.css.CSSBuilder
 import kotlinx.dom.clear
 import org.w3c.dom.HTMLElement
 import org.w3c.dom.HTMLStyleElement
-import org.w3c.dom.css.CSSRuleList
 import org.w3c.dom.css.CSSStyleSheet
 import react.ComponentType
 import react.RProps
