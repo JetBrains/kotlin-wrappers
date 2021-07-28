@@ -5,6 +5,8 @@
 
 package react.table
 
+import kotlinext.js.ReadonlyArray
+
 external val usePagination: PluginHook<Any>
 
 external interface UsePaginationOptions<D : Any> {
@@ -31,9 +33,9 @@ external interface UsePaginationState {
 }
 
 external interface UsePaginationInstanceProps<D : Any> {
-    val page: Array<out Row<D>>
+    val page: ReadonlyArray<Row<D>>
     val pageCount: Int
-    val pageOptions: Array<out Int>
+    val pageOptions: ReadonlyArray<Int>
     val canPreviousPage: Boolean
     val canNextPage: Boolean
     fun gotoPage(updater: (pageIndex: Int) -> Int)

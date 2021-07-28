@@ -1,12 +1,13 @@
 package react.table
 
+import kotlinext.js.ReadonlyArray
 import kotlinext.js.jsObject
 import react.ReactElement
 import react.ReactNode
 
 fun <D : Any> columns(
     block: ColumnBuilder<D>.() -> Unit,
-): Array<out Column<D, *>> =
+): ReadonlyArray<Column<D, *>> =
     ColumnBuilder<D>().apply(block).build()
 
 class ColumnBuilder<D : Any> {
@@ -76,6 +77,6 @@ class ColumnBuilder<D : Any> {
         }
     }
 
-    fun build(): Array<out Column<D, *>> =
+    fun build(): ReadonlyArray<Column<D, *>> =
         columns.toTypedArray()
 }

@@ -5,13 +5,15 @@
 
 package react.table
 
+import kotlinext.js.ReadonlyArray
+
 external val useColumnOrder: PluginHook<Any>
 
 external interface UseColumnOrderState<D : Any> {
-    var columnOrder: Array<out IdType<D>>
+    var columnOrder: ReadonlyArray<IdType<D>>
 }
 
 external interface UseColumnOrderInstanceProps<D : Any> {
-    fun setColumnOrder(ids: Array<out IdType<D>>)
-    fun setColumnOrder(updater: (Array<out IdType<D>>) -> Array<out IdType<D>>)
+    fun setColumnOrder(ids: ReadonlyArray<IdType<D>>)
+    fun setColumnOrder(updater: (ReadonlyArray<IdType<D>>) -> ReadonlyArray<IdType<D>>)
 }
