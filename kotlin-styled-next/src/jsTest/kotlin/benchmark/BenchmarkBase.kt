@@ -1,13 +1,10 @@
 package benchmark
 
 import TestScope
-import kotlinx.browser.document
 import kotlinx.browser.window
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.toList
-import org.w3c.dom.HTMLStyleElement
-import org.w3c.dom.css.CSSStyleSheet
 import runTest
 import kotlin.test.assertEquals
 import kotlin.test.assertTrue
@@ -26,9 +23,8 @@ open class BenchmarkBase {
         }
     }
 
-    protected fun assertCssNotEmpty() {
-        val styles = document.getElementById("ksc-global-styles") as HTMLStyleElement
-        assertTrue((styles.sheet as CSSStyleSheet).cssRules.length > 0)
+    protected fun TestScope.assertCssNotEmpty() {
+        assertTrue(getStylesheet().cssRules.length > 0)
     }
 
     protected fun TestScope.assertChildrenCount(n: Int) {

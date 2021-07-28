@@ -31,9 +31,10 @@ private object Wrapper {
 }
 
 object GlobalStyles {
+    internal const val styleId = "ksc-global-styles";
     private val sheet by lazy {
         val style = window.document.head!!.appendChild(window.document.createElement("style")) as HTMLStyleElement
-        style.setAttribute("id", "ksc-global-styles")
+        style.setAttribute("id", styleId)
         style.sheet as CSSStyleSheet
     }
 

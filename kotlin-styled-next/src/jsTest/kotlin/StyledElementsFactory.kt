@@ -64,7 +64,7 @@ object StyledElementsFactory {
     /**
      * @return styled component with [count] styled children, each having random css
      */
-    fun getStyledComponent(count: Int, withAnimation: Boolean = false): ComponentType<RProps> {
+    fun getStyledComponent(count: Int, withAnimation: Boolean = false): Component {
         return fc {
             (1..count).map {
                 styledDiv {
@@ -78,7 +78,8 @@ object StyledElementsFactory {
     }
 
     /** Create [StyledElementBuilder] with dummy element and get [StyledElementBuilder.css] property [count] times
-     *  @return list of [CSSBuilder] with random css code inside */
+     *  @return list of [CSSBuilder] with random css code inside
+     */
     fun getCssBuilders(count: Int): List<CSSBuilder> {
         return (1..count).map {
             val builder = StyledElementBuilder.invoke(fc {})

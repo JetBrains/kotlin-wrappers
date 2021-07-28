@@ -7,15 +7,21 @@ import kotlinx.coroutines.promise
 import kotlinx.css.CSSBuilder
 import kotlinx.dom.clear
 import org.w3c.dom.HTMLElement
+import org.w3c.dom.HTMLStyleElement
+import org.w3c.dom.css.CSSRuleList
+import org.w3c.dom.css.CSSStyleSheet
 import react.ComponentType
 import react.RProps
 import react.createElement
 import react.dom.render
 import react.dom.unmountComponentAtNode
+import styled.GlobalStyles
 import styled.injectGlobal
 import kotlin.coroutines.resume
 import kotlin.coroutines.suspendCoroutine
 import kotlin.js.Promise
+
+typealias Component = ComponentType<RProps>
 
 private val testScope = MainScope()
 
@@ -26,11 +32,17 @@ class TestScope : CoroutineScope by testScope {
         injectGlobal(builder)
     }
 
-    fun renderComponent(component: ComponentType<RProps>) {
+    fun renderComponent(component: Component) {
         root.clear()
         val reactElement = createElement(component, jsObject {})
         render(reactElement, root)
     }
+
+    fun getStylesheet(): CSSStyleSheet {
+        val styles = document.getElementById(GlobalStyles.styleId) as HTMLStyleElement
+        return styles.sheet as CSSStyleSheet
+    }
+
 
     fun clear() {
         unmountComponentAtNode(root)
