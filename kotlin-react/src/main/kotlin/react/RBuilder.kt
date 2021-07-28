@@ -149,7 +149,7 @@ interface RBuilder {
         }
     }
 
-    fun ReactElement.withKey(newKey: String) {
+    fun ReactElement.withKey(newKey: Key) {
         val index = childList.indexOf(this)
         if (index >= 0) {
             childList.removeAt(index)
@@ -216,7 +216,7 @@ interface RElementBuilder<out P : RProps> : RBuilder {
         attrs.handler()
     }
 
-    var key: String
+    var key: Key
         @Deprecated(message = "Write-only property", level = DeprecationLevel.HIDDEN)
         get() = error("")
         set(value) {

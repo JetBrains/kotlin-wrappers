@@ -7,6 +7,7 @@ package react.table
 
 import kotlinext.js.Record
 import org.w3c.dom.events.Event
+import react.Key
 import react.RProps
 import react.ReactNode
 import react.table.RenderType.Cell
@@ -84,7 +85,7 @@ external interface TableCommonProps : RProps {
 }
 
 external interface TableKeyedProps : TableCommonProps {
-    val key: ReactKey
+    val key: Key
 }
 
 external interface TableProps : TableCommonProps
@@ -324,7 +325,6 @@ external interface ActionType {
 @Suppress("UNUSED_TYPEALIAS_PARAMETER")
 typealias IdType<D> = String
 typealias CellValue = Any
-typealias ReactKey = String
 
 typealias PropGetter<Props, Meta> = (Props, Meta) -> Props
 
