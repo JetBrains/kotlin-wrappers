@@ -5,6 +5,7 @@
 
 package react.table
 
+import kotlinext.js.ReadonlyArray
 import kotlinext.js.Record
 
 external val useExpanded: PluginHook<Any>
@@ -30,8 +31,8 @@ external interface UseExpandedOptions<D : Any> {
 }
 
 external interface UseExpandedHooks<D : Any> {
-    val getToggleRowsExpandedProps: Array<out PropGetter<D, TableCommonProps>>
-    val getToggleAllRowsExpandedProps: Array<out PropGetter<D, TableCommonProps>>
+    val getToggleRowsExpandedProps: ReadonlyArray<PropGetter<D, TableCommonProps>>
+    val getToggleAllRowsExpandedProps: ReadonlyArray<PropGetter<D, TableCommonProps>>
 }
 
 external interface UseExpandedState<D : Any> {
@@ -39,19 +40,19 @@ external interface UseExpandedState<D : Any> {
 }
 
 external interface UseExpandedInstanceProps<D : Any> {
-    val preExpandedRows: Array<out Row<D>>
-    val expandedRows: Array<out Row<D>>
-    val rows: Array<out Row<D>>
+    val preExpandedRows: ReadonlyArray<Row<D>>
+    val expandedRows: ReadonlyArray<Row<D>>
+    val rows: ReadonlyArray<Row<D>>
     val expandedDepth: Int
     val isAllRowsExpanded: Boolean
-    fun toggleRowExpanded(id: Array<out IdType<D>>, value: Boolean = definedExternally)
+    fun toggleRowExpanded(id: ReadonlyArray<IdType<D>>, value: Boolean = definedExternally)
     fun toggleAllRowsExpanded(value: Boolean = definedExternally)
 }
 
 external interface UseExpandedRowProps<D : Any> {
     val isExpanded: Boolean
     val canExpand: Boolean
-    val subRows: Array<out Row<D>>
+    val subRows: ReadonlyArray<Row<D>>
     fun toggleRowExpanded(value: Boolean = definedExternally)
     fun getToggleRowExpandedProps(props: TableExpandedToggleProps = definedExternally): TableExpandedToggleProps
 }

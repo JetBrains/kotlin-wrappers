@@ -5,6 +5,7 @@
 
 package react.table
 
+import kotlinext.js.ReadonlyArray
 import kotlinext.js.Record
 import org.w3c.dom.events.Event
 import react.Key
@@ -29,24 +30,24 @@ external interface TableInstance<D : Any> :
 
 external interface UseTableInstanceProps<D : Any> {
     val state: TableState<D>
-    val plugins: Array<out PluginHook<D>>
-    val columns: Array<out ColumnInstance<D, *>>
-    val allColumns: Array<out ColumnInstance<D, *>>
-    val visibleColumns: Array<out ColumnInstance<D, *>>
-    val headerGroups: Array<out HeaderGroup<D>>
-    val footerGroups: Array<out HeaderGroup<D>>
-    val headers: Array<out ColumnInstance<D, *>>
-    val flatHeaders: Array<out ColumnInstance<D, *>>
-    val rows: Array<out Row<D>>
+    val plugins: ReadonlyArray<PluginHook<D>>
+    val columns: ReadonlyArray<ColumnInstance<D, *>>
+    val allColumns: ReadonlyArray<ColumnInstance<D, *>>
+    val visibleColumns: ReadonlyArray<ColumnInstance<D, *>>
+    val headerGroups: ReadonlyArray<HeaderGroup<D>>
+    val footerGroups: ReadonlyArray<HeaderGroup<D>>
+    val headers: ReadonlyArray<ColumnInstance<D, *>>
+    val flatHeaders: ReadonlyArray<ColumnInstance<D, *>>
+    val rows: ReadonlyArray<Row<D>>
     val rowsById: Record<String, Row<D>>
     fun getTableProps(propGetter: TablePropGetter<D> = definedExternally): TableProps
     fun getTableBodyProps(propGetter: TableBodyPropGetter<D> = definedExternally): TableBodyProps
     val prepareRow: (row: Row<D>) -> Unit
-    val flatRows: Array<out Row<D>>
+    val flatRows: ReadonlyArray<Row<D>>
     val totalColumnsWidth: Double
     val allColumnsHidden: Boolean
     val toggleHideColumn: (columnId: IdType<D>, value: Boolean?) -> Unit
-    val setHiddenColumns: (param: Array<out IdType<D>>) -> Unit
+    val setHiddenColumns: (param: ReadonlyArray<IdType<D>>) -> Unit
     val toggleHideAllColumns: (value: Boolean?) -> Unit
     val getHooks: () -> Hooks<D>
 }
@@ -54,7 +55,7 @@ external interface UseTableInstanceProps<D : Any> {
 external interface HeaderGroup<D : Any> : /*ColumnInstance<D, Any>,*/ UseTableHeaderGroupProps<D>
 
 external interface UseTableHeaderGroupProps<D : Any> {
-    val headers: Array<out ColumnInstance<D, *>>
+    val headers: ReadonlyArray<ColumnInstance<D, *>>
     fun getHeaderGroupProps(propGetter: HeaderGroupPropGetter<D> = definedExternally): TableHeaderProps
     fun getFooterGroupProps(propGetter: FooterGroupPropGetter<D> = definedExternally): TableFooterProps
     val totalHeaderCount: Int
@@ -124,8 +125,8 @@ external interface TableOptions<D : Any> :
     UseRowStateOptions<D>
 
 external interface UseTableOptions<D : Any> {
-    var data: Array<out D>
-    var columns: Array<out Column<D, *>>
+    var data: ReadonlyArray<D>
+    var columns: ReadonlyArray<Column<D, *>>
     var initialState: TableState<D>
 
     var stateReducer: (
@@ -145,7 +146,7 @@ external interface UseTableOptions<D : Any> {
         @Deprecated(message = "Write-only property", level = DeprecationLevel.HIDDEN)
         get
 
-    var getSubRows: (originalRow: D, relativeIndex: Int) -> Array<out D>
+    var getSubRows: (originalRow: D, relativeIndex: Int) -> ReadonlyArray<D>
         @Deprecated(message = "Write-only property", level = DeprecationLevel.HIDDEN)
         get
 
@@ -180,7 +181,7 @@ external interface SimpleColumn<D : Any, V> : Column<D, V>, ColumnInterfaceBased
 external interface ColumnInterface<D : Any, V> : UseTableColumnOptions<D, V>
 
 external interface ColumnGroupInterface<D : Any> {
-    var columns: Array<out Column<D, *>>
+    var columns: ReadonlyArray<Column<D, *>>
 }
 
 external interface UseTableColumnOptions<D : Any, V> {
@@ -242,7 +243,7 @@ external interface ColumnInterfaceBasedOnValue<D : Any, V> {
 
 external interface UseTableColumnProps<D : Any> {
     val id: IdType<D>
-    val columns: Array<out ColumnInstance<D, *>>?
+    val columns: ReadonlyArray<ColumnInstance<D, *>>?
     val isVisible: Boolean
     fun render(type: String, props: RProps = definedExternally): ReactNode
     val totalLeft: Int
@@ -257,13 +258,13 @@ external interface UseTableColumnProps<D : Any> {
 }
 
 external interface UseTableRowProps<D : Any> {
-    val cells: Array<out TableCell<D, *>>
+    val cells: ReadonlyArray<TableCell<D, *>>
 
     val values: Record<IdType<D>, CellValue>
     val index: Int
     val original: D
     val id: IdType<D>
-    val subRows: Array<out Row<D>>
+    val subRows: ReadonlyArray<Row<D>>
     fun getRowProps(propGetter: RowPropGetter<D> = definedExternally): TableRowProps
     fun getRowProps(props: TableRowProps): TableRowProps
 }
@@ -275,35 +276,35 @@ external interface Hooks<D : Any> :
     UseRowSelectHooks<D>
 
 external interface UseTableHooks<D : Any> {
-    var useOptions: Array<out (options: TableOptions<D>, args: TableOptions<D>) -> TableOptions<D>>
-    var stateReducers: Array<out (
+    var useOptions: ReadonlyArray<(options: TableOptions<D>, args: TableOptions<D>) -> TableOptions<D>>
+    var stateReducers: ReadonlyArray<(
         newState: TableState<D>,
         action: ActionType,
         previousState: TableState<D>,
         instance: TableInstance<D>,
     ) -> ReducerTableState<D>>
-    var columns: Array<out (columns: Array<out Column<D, *>>, meta: Meta<D>) -> Array<out Column<D, *>>>
-    var columnsDeps: Array<out (deps: Array<out dynamic>, meta: Meta<D>) -> Array<out dynamic>>
-    var allColumns: Array<out (allColumns: Array<out ColumnInstance<D, *>>, meta: Meta<D>) -> Array<out Column<D, *>>>
-    var allColumnsDeps: Array<out (deps: Array<out dynamic>, meta: Meta<D>) -> Array<out dynamic>>
-    var visibleColumns: Array<out (allColumns: Array<out ColumnInstance<D, *>>, meta: Meta<D>) -> Array<out Column<D, *>>>
-    var visibleColumnsDeps: Array<out (deps: Array<out dynamic>, meta: Meta<D>) -> Array<out dynamic>>
-    var headerGroups: Array<out (allColumns: Array<out HeaderGroup<D>>, meta: Meta<D>) -> Array<out HeaderGroup<D>>>
-    var headerGroupsDeps: Array<out (deps: Array<out dynamic>, meta: Meta<D>) -> Array<out dynamic>>
-    var useInstanceBeforeDimensions: Array<out (instance: TableInstance<D>) -> Unit>
-    var useInstance: Array<out (instance: TableInstance<D>) -> Unit>
-    var prepareRow: Array<out (row: Row<D>, meta: Meta<D>) -> Unit>
-    var useControlledState: Array<out (state: TableState<D>, meta: Meta<D>) -> TableState<D>>
+    var columns: ReadonlyArray<(columns: ReadonlyArray<Column<D, *>>, meta: Meta<D>) -> ReadonlyArray<Column<D, *>>>
+    var columnsDeps: ReadonlyArray<(deps: ReadonlyArray<dynamic>, meta: Meta<D>) -> ReadonlyArray<dynamic>>
+    var allColumns: ReadonlyArray<(allColumns: ReadonlyArray<ColumnInstance<D, *>>, meta: Meta<D>) -> ReadonlyArray<Column<D, *>>>
+    var allColumnsDeps: ReadonlyArray<(deps: ReadonlyArray<dynamic>, meta: Meta<D>) -> ReadonlyArray<dynamic>>
+    var visibleColumns: ReadonlyArray<(allColumns: ReadonlyArray<ColumnInstance<D, *>>, meta: Meta<D>) -> ReadonlyArray<Column<D, *>>>
+    var visibleColumnsDeps: ReadonlyArray<(deps: ReadonlyArray<dynamic>, meta: Meta<D>) -> ReadonlyArray<dynamic>>
+    var headerGroups: ReadonlyArray<(allColumns: ReadonlyArray<HeaderGroup<D>>, meta: Meta<D>) -> ReadonlyArray<HeaderGroup<D>>>
+    var headerGroupsDeps: ReadonlyArray<(deps: ReadonlyArray<dynamic>, meta: Meta<D>) -> ReadonlyArray<dynamic>>
+    var useInstanceBeforeDimensions: ReadonlyArray<(instance: TableInstance<D>) -> Unit>
+    var useInstance: ReadonlyArray<(instance: TableInstance<D>) -> Unit>
+    var prepareRow: ReadonlyArray<(row: Row<D>, meta: Meta<D>) -> Unit>
+    var useControlledState: ReadonlyArray<(state: TableState<D>, meta: Meta<D>) -> TableState<D>>
 
-    var getTableProps: Array<out TablePropGetter<D>>
-    var getTableBodyProps: Array<out TableBodyPropGetter<D>>
-    var getHeaderGroupProps: Array<out HeaderGroupPropGetter<D>>
-    var getFooterGroupProps: Array<out FooterGroupPropGetter<D>>
-    var getHeaderProps: Array<out HeaderPropGetter<D>>
-    var getFooterProps: Array<out FooterPropGetter<D>>
-    var getRowProps: Array<out RowPropGetter<D>>
-    var getCellProps: Array<out CellPropGetter<D, *>>
-    var useFinalInstance: Array<out (instance: TableInstance<D>) -> Unit>
+    var getTableProps: ReadonlyArray<TablePropGetter<D>>
+    var getTableBodyProps: ReadonlyArray<TableBodyPropGetter<D>>
+    var getHeaderGroupProps: ReadonlyArray<HeaderGroupPropGetter<D>>
+    var getFooterGroupProps: ReadonlyArray<FooterGroupPropGetter<D>>
+    var getHeaderProps: ReadonlyArray<HeaderPropGetter<D>>
+    var getFooterProps: ReadonlyArray<FooterPropGetter<D>>
+    var getRowProps: ReadonlyArray<RowPropGetter<D>>
+    var getCellProps: ReadonlyArray<CellPropGetter<D, *>>
+    var useFinalInstance: ReadonlyArray<(instance: TableInstance<D>) -> Unit>
 }
 
 external interface TableState<D : Any> :
@@ -313,7 +314,7 @@ external interface TableState<D : Any> :
     UsePaginationState,
     UseRowSelectState<D>,
     UseRowStateState<D> {
-    var hiddenColumns: Array<out IdType<D>>
+    var hiddenColumns: ReadonlyArray<IdType<D>>
 }
 
 external interface ReducerTableState<D : Any> : TableState<D>

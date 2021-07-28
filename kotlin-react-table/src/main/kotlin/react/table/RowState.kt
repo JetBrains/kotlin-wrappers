@@ -5,6 +5,7 @@
 
 package react.table
 
+import kotlinext.js.ReadonlyArray
 import kotlinext.js.Record
 
 external val useRowState: PluginHook<Any>
@@ -14,7 +15,7 @@ external interface UseRowStateOptions<D : Any> {
         @Deprecated(message = "Write-only property", level = DeprecationLevel.HIDDEN)
         get
 
-    var getResetRowStateDeps: (instance: TableInstance<D>) -> Array<out Any>
+    var getResetRowStateDeps: (instance: TableInstance<D>) -> ReadonlyArray<Any>
         @Deprecated(message = "Write-only property", level = DeprecationLevel.HIDDEN)
         get
 
@@ -34,12 +35,12 @@ external interface UseRowStateState<D : Any> {
 
 external interface UseRowStateInstanceProps<D : Any> {
     fun setRowState(
-        rowPath: Array<out String>,
+        rowPath: ReadonlyArray<String>,
         updater: UseRowUpdater<*>,
     )
 
     fun setCellState(
-        rowPath: Array<out String>,
+        rowPath: ReadonlyArray<String>,
         columnId: IdType<D>,
         updater: UseRowUpdater<*>,
     )

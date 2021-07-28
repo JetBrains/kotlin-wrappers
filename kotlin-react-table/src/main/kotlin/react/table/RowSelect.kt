@@ -5,6 +5,7 @@
 
 package react.table
 
+import kotlinext.js.ReadonlyArray
 import kotlinext.js.Record
 
 external val useRowSelect: PluginHook<Any>
@@ -28,9 +29,9 @@ external interface UseRowSelectOptions<D : Any> {
 }
 
 external interface UseRowSelectHooks<D : Any> {
-    val getToggleRowSelectedProps: Array<out PropGetter<D, TableToggleRowsSelectedProps>>
-    val getToggleAllRowsSelectedProps: Array<out PropGetter<D, TableToggleAllRowsSelectedProps>>
-    val getToggleAllPageRowsSelectedProps: Array<out PropGetter<D, TableToggleAllRowsSelectedProps>>
+    val getToggleRowSelectedProps: ReadonlyArray<PropGetter<D, TableToggleRowsSelectedProps>>
+    val getToggleAllRowsSelectedProps: ReadonlyArray<PropGetter<D, TableToggleAllRowsSelectedProps>>
+    val getToggleAllPageRowsSelectedProps: ReadonlyArray<PropGetter<D, TableToggleAllRowsSelectedProps>>
 }
 
 external interface UseRowSelectState<D : Any> {
@@ -49,7 +50,7 @@ external interface UseRowSelectInstanceProps<D : Any> {
     ): TableToggleAllRowsSelectedProps
 
     val isAllRowsSelected: Boolean
-    val selectedFlatRows: Array<out Row<D>>
+    val selectedFlatRows: ReadonlyArray<Row<D>>
 }
 
 external interface UseRowSelectRowProps<D : Any> {

@@ -5,6 +5,7 @@
 
 package react.table
 
+import kotlinext.js.ReadonlyArray
 import kotlinext.js.Record
 import react.FC
 
@@ -29,7 +30,7 @@ external interface UseGroupByOptions<D : Any> {
         @Deprecated(message = "Write-only property", level = DeprecationLevel.HIDDEN)
         get
 
-    var groupByFn: (rows: Array<out Row<D>>, columnId: IdType<D>) -> Record<String, Array<out Row<D>>>
+    var groupByFn: (rows: ReadonlyArray<Row<D>>, columnId: IdType<D>) -> Record<String, ReadonlyArray<Row<D>>>
         @Deprecated(message = "Write-only property", level = DeprecationLevel.HIDDEN)
         get
 
@@ -39,11 +40,11 @@ external interface UseGroupByOptions<D : Any> {
 }
 
 external interface UseGroupByHooks<D : Any> {
-    val getGroupByToggleProps: Array<out HeaderGroupPropGetter<D>>
+    val getGroupByToggleProps: ReadonlyArray<HeaderGroupPropGetter<D>>
 }
 
 external interface UseGroupByState<D : Any> {
-    var groupBy: Array<out IdType<D>>
+    var groupBy: ReadonlyArray<IdType<D>>
 }
 
 external interface UseGroupByColumnOptions<D : Any> {
@@ -54,18 +55,18 @@ external interface UseGroupByColumnOptions<D : Any> {
 }
 
 external interface UseGroupByInstanceProps<D : Any> {
-    val preGroupedRows: Array<out Row<D>>
-    val preGroupedFlatRows: Array<out Row<D>>
+    val preGroupedRows: ReadonlyArray<Row<D>>
+    val preGroupedFlatRows: ReadonlyArray<Row<D>>
     val preGroupedRowsById: Record<String, Row<D>>
-    val groupedRows: Array<out Row<D>>
-    val groupedFlatRows: Array<out Row<D>>
+    val groupedRows: ReadonlyArray<Row<D>>
+    val groupedFlatRows: ReadonlyArray<Row<D>>
     val groupedRowsById: Record<String, Row<D>>
-    val onlyGroupedFlatRows: Array<out Row<D>>
+    val onlyGroupedFlatRows: ReadonlyArray<Row<D>>
     val onlyGroupedRowsById: Record<String, Row<D>>
-    val nonGroupedFlatRows: Array<out Row<D>>
+    val nonGroupedFlatRows: ReadonlyArray<Row<D>>
     val nonGroupedRowsById: Record<String, Row<D>>
-    val rows: Array<out Row<D>>
-    val flatRows: Array<out Row<D>>
+    val rows: ReadonlyArray<Row<D>>
+    val flatRows: ReadonlyArray<Row<D>>
     val rowsById: Record<String, Row<D>>
     fun toggleGroupBy(columnId: IdType<D>, value: Boolean = definedExternally)
 }
@@ -83,8 +84,8 @@ external interface UseGroupByRowProps<D : Any> {
     val groupByID: IdType<D>
     val groupByVal: String
     val values: Record<IdType<D>, AggregatedValue>
-    val subRows: Array<out Row<D>>
-    val leafRows: Array<out Row<D>>
+    val subRows: ReadonlyArray<Row<D>>
+    val leafRows: ReadonlyArray<Row<D>>
     val depth: Int
     val id: String
     val index: Int
@@ -105,8 +106,8 @@ object DefaultAggregators {
 }
 
 typealias AggregatorFn<D> = (
-    columnValues: Array<out CellValue>,
-    rows: Array<out Row<D>>,
+    columnValues: ReadonlyArray<CellValue>,
+    rows: ReadonlyArray<Row<D>>,
     isAggregated: Boolean,
 ) -> AggregatedValue
 
