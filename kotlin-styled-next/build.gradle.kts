@@ -83,7 +83,13 @@ kotlin {
                 }
             }
 
-            tasks.named("jsTest") { finalizedBy(printBenchmarkResults) }
+            tasks.named("jsTest") {
+                enabled = project.hasProperty("test")
+                if (enabled) {
+                    finalizedBy(printBenchmarkResults)
+                }
+            }
         }
     }
 }
+
