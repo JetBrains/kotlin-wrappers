@@ -41,6 +41,8 @@ kotlin {
 
                 implementation(project(":kotlin-react"))
                 implementation(project(":kotlin-react-dom"))
+
+                implementation(npm("puppeteer", "10.1.0"))
             }
             tasks.withType<org.jetbrains.kotlin.gradle.dsl.KotlinCompile<*>>().configureEach {
                 kotlinOptions.freeCompilerArgs += "-Xopt-in=kotlin.RequiresOptIn"
