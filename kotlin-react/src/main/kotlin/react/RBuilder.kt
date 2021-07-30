@@ -7,9 +7,6 @@ import kotlin.reflect.KClass
 
 typealias Render = RBuilder.() -> Unit
 
-@DslMarker
-annotation class ReactDsl
-
 @ReactDsl
 interface RBuilder {
     val childList: MutableList<Any>
@@ -100,7 +97,8 @@ interface RBuilder {
     }
 
     fun RProps.children() {
-        childList.addAll(Children.toArray(children))
+        this@RBuilder.childList
+            .addAll(Children.toArray(children))
     }
 
     /**
