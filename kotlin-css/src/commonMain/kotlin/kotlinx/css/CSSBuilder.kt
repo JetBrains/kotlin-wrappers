@@ -6,6 +6,7 @@ fun ruleSet(set: RuleSet) = set
 
 data class Rule(val selector: String, val passStaticClassesToParent: Boolean = false, val block: RuleSet)
 
+@CssDsl
 interface RuleContainer {
     fun StringBuilder.buildRules(indent: String) {
         val resolvedRules = LinkedHashMap<String, CSSBuilder>()
