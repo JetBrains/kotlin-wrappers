@@ -189,3 +189,9 @@ fun ruleSet(set: RuleSet) = set
 fun String.toCustomProperty(): String {
     return "var(--$this)"
 }
+
+@Deprecated(
+    message = "Legacy type alias",
+    replaceWith = ReplaceWith("CssBuilder", "kotlinx.css"),
+)
+typealias CSSBuilder = CssBuilder
