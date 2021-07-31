@@ -1,10 +1,10 @@
 package kotlinx.css.properties
 
 import kotlinx.css.Rule
-import kotlinx.css.RuleContainer
+import kotlinx.css.RuleBuilder
 import kotlinx.css.RuleSet
 
-class KeyframesBuilder(private val indent: String = "") : RuleContainer {
+class KeyframesBuilder(private val indent: String = "") : RuleBuilder {
     override fun toString() =
         buildString {
             buildRules(indent)
