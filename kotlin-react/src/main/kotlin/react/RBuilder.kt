@@ -97,7 +97,8 @@ interface RBuilder {
     }
 
     fun RProps.children() {
-        childList.addAll(Children.toArray(children))
+        this@RBuilder.childList
+            .addAll(Children.toArray(children))
     }
 
     /**
