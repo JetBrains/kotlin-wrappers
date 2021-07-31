@@ -1,5 +1,9 @@
 package kotlinx.css
 
+typealias RuleSet = CSSBuilder.() -> Unit
+
+fun ruleSet(set: RuleSet) = set
+
 class CSSBuilder(
     val indent: String = "",
     val allowClasses: Boolean = true,

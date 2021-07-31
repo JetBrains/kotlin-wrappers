@@ -45,9 +45,3 @@ interface RuleContainer {
             (if (repeatable) multiRules else rules).add(this)
         }
 }
-
-typealias RuleSet = CSSBuilder.() -> Unit
-
-fun ruleSet(set: RuleSet) = set
-
-data class Rule(val selector: String, val passStaticClassesToParent: Boolean = false, val block: RuleSet)
