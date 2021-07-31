@@ -124,7 +124,7 @@ internal open class StyledCss(
     }
 }
 
-private fun Rule.toStyledRule(parent: RuleBuilder, block: RuleSet = this.block): StyledRule {
+private fun Rule.toStyledRule(parent: RuleContainer, block: RuleSet = this.block): StyledRule {
     return StyledRule(
         selector,
         passStaticClassesToParent,
@@ -136,7 +136,7 @@ private fun Rule.toStyledRule(parent: RuleBuilder, block: RuleSet = this.block):
 /**
  * @return all [multiRules], but only the first occurrence of a regular rule from [rules]
  */
-private fun resolveRules(rules: List<Rule>, multiRules: List<Rule>, parent: RuleBuilder): List<StyledRule> {
+private fun resolveRules(rules: List<Rule>, multiRules: List<Rule>, parent: RuleContainer): List<StyledRule> {
     val resolvedRules = LinkedHashMap<String, Rule>()
     val newRules = mutableListOf<StyledRule>()
     rules.forEach {

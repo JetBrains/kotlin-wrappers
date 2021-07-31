@@ -1,7 +1,7 @@
 package kotlinx.css
 
 @CssDsl
-interface RuleBuilder {
+interface RuleContainer {
     fun StringBuilder.buildRules(indent: String) {
         val resolvedRules = LinkedHashMap<String, CSSBuilder>()
         rules.forEach { (selector, passStaticClassesToParent, block) ->
@@ -9,7 +9,7 @@ interface RuleBuilder {
                 resolvedRules[selector] = CSSBuilder(
                     "$indent  ",
                     allowClasses = false,
-                    parent = if (passStaticClassesToParent) this@RuleBuilder else null
+                    parent = if (passStaticClassesToParent) this@RuleContainer else null
                 )
             }
             val rule = resolvedRules[selector]!!
@@ -26,7 +26,7 @@ interface RuleBuilder {
             val blockBuilder = CSSBuilder(
                 "$indent  ",
                 allowClasses = false,
-                parent = if (passStaticClassesToParent) this@RuleBuilder else null
+                parent = if (passStaticClassesToParent) this@RuleContainer else null
             ).apply(block)
 
             append("$selector {\n")
@@ -45,12 +45,6 @@ interface RuleBuilder {
             (if (repeatable) multiRules else rules).add(this)
         }
 }
-
-@Deprecated(
-    message = "Legacy type alias",
-    replaceWith = ReplaceWith("RuleBuilder", "kotlinx.css"),
-)
-typealias RuleContainer = RuleBuilder
 
 typealias RuleSet = CSSBuilder.() -> Unit
 

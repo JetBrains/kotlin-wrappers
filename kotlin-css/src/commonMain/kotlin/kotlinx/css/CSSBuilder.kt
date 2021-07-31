@@ -3,8 +3,8 @@ package kotlinx.css
 class CSSBuilder(
     val indent: String = "",
     val allowClasses: Boolean = true,
-    val parent: RuleBuilder? = null,
-) : StyledElement(), RuleBuilder {
+    val parent: RuleContainer? = null,
+) : StyledElement(), RuleContainer {
     var classes = mutableListOf<String>()
 
     var styleName = mutableListOf<String>()
