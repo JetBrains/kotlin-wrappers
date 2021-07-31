@@ -16,10 +16,7 @@ typealias RClass<P> = ComponentClass<P>
 val <P : RProps> KClass<out Component<P, *>>.react: ComponentClass<P>
     get() = js.unsafeCast<ComponentClass<P>>()
 
-@Deprecated(
-    message = "Legacy type alias",
-    replaceWith = ReplaceWith(".react"),
-)
+@Deprecated("Legacy type alias. Use `.react` instead")
 inline val <P : RProps> KClass<out Component<P, *>>.rClass: ComponentClass<P>
     get() = react
 
