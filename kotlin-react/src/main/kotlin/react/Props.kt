@@ -1,6 +1,5 @@
 package react
 
-@ReactDsl
 external interface RProps
 
 val RProps.children: Any
