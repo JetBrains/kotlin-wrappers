@@ -68,7 +68,7 @@ interface RBuilder {
 
     @Deprecated(
         message = "Ambiguous API",
-        ReplaceWith("child(this, props, children)"),
+        replaceWith = ReplaceWith("child(this, props, children)"),
     )
     fun <P : RProps> ComponentClass<P>.node(
         props: P,
@@ -86,7 +86,7 @@ interface RBuilder {
 
     @Deprecated(
         message = "Ambiguous API",
-        ReplaceWith("child(klazz.rClass, props, children)"),
+        replaceWith = ReplaceWith("child(klazz.react, props, children)"),
     )
     fun <P : RProps> node(
         klazz: KClass<out Component<P, *>>,
