@@ -30,14 +30,18 @@ external class NavLinkComponent<T : RProps> : Component<NavLinkProps<T>, State> 
 @JsName("Redirect")
 external val RedirectComponent: ComponentClass<RedirectProps>
 
-external interface BrowserRouterProps : RProps {
+external interface RouterProps : RProps {
+    var history: dynamic /*BrowserHistory*/
+}
+
+external interface BrowserRouterProps : RouterProps {
     var basename: String
     var forceRefresh: Boolean
     var getUserConfirmation: GetUserConfirmation?
     var keyLength: Int
 }
 
-external interface HashRouterProps : RProps {
+external interface HashRouterProps : RouterProps {
     var basename: String
     var getUserConfirmation: GetUserConfirmation?
     var hashType: String
