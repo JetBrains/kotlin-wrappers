@@ -192,6 +192,6 @@ fun String.toCustomProperty(): String {
 
 @Deprecated(
     message = "Legacy type alias",
-    replaceWith = ReplaceWith("CssBuilder", "kotlinx.css"),
+    replaceWith = ReplaceWith("CssBuilder", "kotlinx.css.CssBuilder"),
 )
 typealias CSSBuilder = CssBuilder
