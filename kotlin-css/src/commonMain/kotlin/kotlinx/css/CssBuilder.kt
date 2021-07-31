@@ -1,10 +1,6 @@
 package kotlinx.css
 
-typealias RuleSet = CSSBuilder.() -> Unit
-
-fun ruleSet(set: RuleSet) = set
-
-class CSSBuilder(
+class CssBuilder(
     val indent: String = "",
     val allowClasses: Boolean = true,
     val parent: RuleContainer? = null,
@@ -177,7 +173,7 @@ class CSSBuilder(
         if (allowClasses) {
             classes.add(className)
         } else {
-            (parent as? CSSBuilder)?.addClass(className)
+            (parent as? CssBuilder)?.addClass(className)
         }
     }
 
@@ -185,6 +181,10 @@ class CSSBuilder(
         private val NOT_REGEX by lazy { Regex("^(&?)(.*)$") }
     }
 }
+
+typealias RuleSet = CssBuilder.() -> Unit
+
+fun ruleSet(set: RuleSet) = set
 
 fun String.toCustomProperty(): String {
     return "var(--$this)"

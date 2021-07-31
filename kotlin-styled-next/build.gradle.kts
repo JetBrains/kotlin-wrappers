@@ -54,7 +54,7 @@ kotlin {
                     val fileNames = listOf(
                         "AddStyledElements",
                         "ConvertToStyled",
-                        "CSSBuildersInject",
+                        "CssBuildersInject",
                         "DataTypeOperations"
                     )
                     fileNames.forEach { test ->

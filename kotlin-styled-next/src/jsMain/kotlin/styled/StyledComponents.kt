@@ -2,7 +2,7 @@ package styled
 
 import kotlinext.js.clone
 import kotlinext.js.jsObject
-import kotlinx.css.CSSBuilder
+import kotlinx.css.CssBuilder
 import kotlinx.css.CssDsl
 import kotlinx.css.RuleSet
 import kotlinx.html.*
@@ -26,7 +26,7 @@ external interface CustomStyledProps : RProps {
     var css: ArrayList<RuleSet>?
 }
 
-inline fun CustomStyledProps.forwardCss(builder: CSSBuilder) {
+inline fun CustomStyledProps.forwardCss(builder: CssBuilder) {
     css?.forEach { it(builder) }
 }
 
@@ -41,7 +41,7 @@ inline fun CustomStyledProps.forwardCss(props: CustomStyledProps) {
 
 @CssDsl
 interface StyledBuilder<P : WithClassName> {
-    val css: CSSBuilder
+    val css: CssBuilder
     val type: Any
 }
 
@@ -62,7 +62,7 @@ class StyledElementBuilderImpl<P : WithClassName>(
     override val type: ComponentType<P>,
     attrs: P = jsObject(),
 ) : StyledElementBuilder<P>, RElementBuilderImpl<P>(attrs) {
-    override val css = CSSBuilder()
+    override val css = CssBuilder()
 
     override fun create() = Styled.createElement(type, css, attrs, childList)
 }
@@ -81,7 +81,7 @@ interface StyledDOMBuilder<out T : Tag> : RDOMBuilder<T>, StyledBuilder<DOMProps
 
 class StyledDOMBuilderImpl<out T : Tag>(factory: (TagConsumer<Unit>) -> T) : StyledDOMBuilder<T>,
     RDOMBuilderImpl<T>(factory) {
-    override val css = CSSBuilder()
+    override val css = CssBuilder()
 }
 
 typealias StyledHandler<P> = StyledElementBuilder<P>.() -> Unit
@@ -105,7 +105,7 @@ inline fun <P : CustomStyledProps> RElementBuilder<P>.css(noinline handler: Rule
 
 
 external interface StyledProps : WithClassName {
-    var css: CSSBuilder
+    var css: CssBuilder
 }
 
 fun customStyled(type: String): ComponentType<StyledProps> {
@@ -135,7 +135,7 @@ object Styled {
             customStyled(type)
         }
 
-    fun createElement(type: Any, css: CSSBuilder, props: WithClassName, children: List<Any>): ReactElement {
+    fun createElement(type: Any, css: CssBuilder, props: WithClassName, children: List<Any>): ReactElement {
         val wrappedType = wrap(type)
         val styledProps = props.unsafeCast<StyledProps>()
         styledProps.css = css

@@ -1,7 +1,7 @@
 package styled
 
 import kotlinx.browser.window
-import kotlinx.css.CSSBuilder
+import kotlinx.css.CssBuilder
 import kotlinx.css.properties.KeyframesBuilder
 import org.w3c.dom.HTMLStyleElement
 import org.w3c.dom.css.CSSStyleSheet
@@ -12,7 +12,7 @@ internal typealias InjectedCssHolder = LinkedHashMap<StyledCss, String>
 /**
  * Inject CSS rules defined in [css] into the DOM
  */
-fun injectGlobal(css: CSSBuilder) {
+fun injectGlobal(css: CssBuilder) {
     GlobalStyles.scheduleToInject(css.toStyledCss().getCssRules(null))
     GlobalStyles.injectScheduled()
 }
@@ -77,7 +77,7 @@ object GlobalStyles {
      * Schedule CSS from [builder] for injection into the DOM with the corresponding [selector].
      * They will be injected when the [injectScheduled] function is called the next time.
      */
-    fun scheduleToInject(selector: Selector, builder: CSSBuilder) {
+    fun scheduleToInject(selector: Selector, builder: CssBuilder) {
         if (!injectedStyleSheetRules.contains(selector)) {
             val styled = builder.toStyledCss()
             scheduleToInject(styled.getCssRules(selector))
@@ -106,7 +106,7 @@ object GlobalStyles {
      * If the CSS code for the [css] was not injected into the DOM previously, it is injected after function call.
      */
 
-    fun getInjectedClassNames(css: CSSBuilder): List<ClassName> {
+    fun getInjectedClassNames(css: CssBuilder): List<ClassName> {
         val styledCss = css.toStyledCss()
         val selfClassName = getInjectedClassName(styledCss)
         val externalClassNames = styledCss.classes

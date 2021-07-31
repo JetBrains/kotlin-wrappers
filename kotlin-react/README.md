@@ -347,7 +347,7 @@ dependency on [kotlin-css](https://github.com/JetBrains/kotlin-wrappers/tree/mas
 var Tag.style: RuleSet
     get() = error("style cannot be read from props")
     set(value) = jsStyle {
-        CSSBuilder().apply(value).declarations.forEach {
+        CssBuilder().apply(value).declarations.forEach {
             this[it.key] = when (it.value) {
                 !is String, !is Number -> it.value.toString()
                 else -> it.value
