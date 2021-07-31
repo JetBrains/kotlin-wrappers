@@ -5,30 +5,23 @@ package react.router.dom
 
 import react.*
 
-@JsName("HashRouter")
-external val HashRouterComponent: ComponentClass<HashRouterProps>
+external val HashRouter: ComponentClass<HashRouterProps>
 
-@JsName("BrowserRouter")
-external val BrowserRouterComponent: ComponentClass<BrowserRouterProps>
+external val BrowserRouter: ComponentClass<BrowserRouterProps>
 
-@JsName("Switch")
-external val SwitchComponent: ComponentClass<RProps>
+external val Switch: ComponentClass<RProps>
 
-@JsName("Route")
-external class RouteComponent<T : RProps> : Component<RouteProps<T>, State> {
+external class Route<T : RProps> : Component<RouteProps<T>, State> {
     override fun render(): ReactElement?
 }
 
-@JsName("Link")
-external val LinkComponent: ComponentClass<LinkProps>
+external val Link: ComponentClass<LinkProps>
 
-@JsName("NavLink")
-external class NavLinkComponent<T : RProps> : Component<NavLinkProps<T>, State> {
+external class NavLink<T : RProps> : Component<NavLinkProps<T>, State> {
     override fun render(): ReactElement?
 }
 
-@JsName("Redirect")
-external val RedirectComponent: ComponentClass<RedirectProps>
+external val Redirect: ComponentClass<RedirectProps>
 
 external interface BrowserRouterProps : RProps {
     var basename: String
