@@ -136,7 +136,7 @@ fun <T : RProps> RBuilder.navLink(
     activeClassName: String = "active",
     exact: Boolean = false,
     strict: Boolean = false,
-    isActive: ((match: RouteResultMatch<T>?, location: RouteResultLocation) -> Boolean)? = null,
+    isActive: ((match: Match<T>?, location: Location) -> Boolean)? = null,
     handler: RHandler<NavLinkProps<T>>?,
 ) {
     child<NavLinkProps<T>, NavLink<T>> {
@@ -177,7 +177,7 @@ fun <T : RProps> matchPath(
     exact: Boolean = false,
     strict: Boolean = false,
     sensitive: Boolean = false,
-): RouteResultMatch<T>? {
+): Match<T>? {
     val options: RouteMatchOptions = jsObject {
         this.path = path
         this.exact = exact
