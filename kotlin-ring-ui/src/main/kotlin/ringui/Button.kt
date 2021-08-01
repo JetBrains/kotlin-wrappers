@@ -15,6 +15,7 @@ external interface ButtonProps : WithClassName {
     var delayed: Boolean
     var loader: Boolean
     var primary: Boolean
+    var disabled: Boolean
 
     var short: Boolean
     var text: Boolean
