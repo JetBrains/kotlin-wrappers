@@ -15,7 +15,7 @@ fun RBuilder.hashRouter(
     getUserConfirmation: GetUserConfirmation? = null,
     handler: RHandler<RProps>,
 ) {
-    HashRouterComponent {
+    HashRouter {
         attrs {
             this.basename = basename
             this.hashType = hashType.name
@@ -33,7 +33,7 @@ fun RBuilder.browserRouter(
     keyLength: Int = 6,
     handler: RHandler<RProps>,
 ) {
-    BrowserRouterComponent {
+    BrowserRouter {
         attrs {
             this.basename = basename
             this.getUserConfirmation = getUserConfirmation
@@ -48,7 +48,7 @@ fun RBuilder.browserRouter(
 fun RBuilder.switch(
     handler: RHandler<RProps>,
 ) {
-    SwitchComponent(handler)
+    Switch(handler)
 }
 
 fun RBuilder.route(
@@ -57,7 +57,7 @@ fun RBuilder.route(
     exact: Boolean = false,
     strict: Boolean = false,
 ) {
-    child<RouteProps<RProps>, RouteComponent<RProps>> {
+    child<RouteProps<RProps>, Route<RProps>> {
         attrs {
             this.path = path
             this.exact = exact
@@ -87,7 +87,7 @@ fun <T : RProps> RBuilder.route(
     strict: Boolean = false,
     render: RBuilder.(RouteResultProps<T>) -> Unit,
 ) {
-    child<RouteProps<T>, RouteComponent<T>> {
+    child<RouteProps<T>, Route<T>> {
         attrs {
             this.path = path
             this.exact = exact
@@ -103,7 +103,7 @@ fun RBuilder.route(
     strict: Boolean = false,
     render: Render,
 ) {
-    child<RouteProps<RProps>, RouteComponent<RProps>> {
+    child<RouteProps<RProps>, Route<RProps>> {
         attrs {
             this.path = path
             this.exact = exact
@@ -119,7 +119,7 @@ fun RBuilder.routeLink(
     className: String? = null,
     handler: RHandler<RProps>?,
 ) {
-    LinkComponent {
+    Link {
         attrs {
             this.to = to
             this.replace = replace
@@ -139,7 +139,7 @@ fun <T : RProps> RBuilder.navLink(
     isActive: ((match: RouteResultMatch<T>?, location: RouteResultLocation) -> Boolean)? = null,
     handler: RHandler<NavLinkProps<T>>?,
 ) {
-    child<NavLinkProps<T>, NavLinkComponent<T>> {
+    child<NavLinkProps<T>, NavLink<T>> {
         attrs {
             this.to = to
             this.replace = replace
@@ -160,7 +160,7 @@ fun RBuilder.redirect(
     exact: Boolean = false,
     strict: Boolean = false,
 ) {
-    RedirectComponent {
+    Redirect {
         attrs {
             this.from = from
             this.to = to
