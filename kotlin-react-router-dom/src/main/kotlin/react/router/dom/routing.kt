@@ -31,7 +31,7 @@ external class NavLinkComponent<T : RProps> : Component<NavLinkProps<T>, State> 
 external val RedirectComponent: ComponentClass<RedirectProps>
 
 external interface RouterProps : RProps {
-    var history: dynamic /*BrowserHistory*/
+    var history: History
 }
 
 external interface BrowserRouterProps : RouterProps {
@@ -65,20 +65,20 @@ external interface NavLinkProps<T : RProps> : LinkProps {
     var activeClassName: String
     var exact: Boolean
     var strict: Boolean
-    var isActive: ((match: RouteResultMatch<T>?, location: RouteResultLocation) -> Boolean)?
-    var location: RouteResultLocation
+    var isActive: ((match: Match<T>?, location: Location) -> Boolean)?
+    var location: Location
 }
 
 external interface RouteResultProps<T : RProps> : RProps {
-    var history: RouteResultHistory
-    var location: RouteResultLocation
-    var match: RouteResultMatch<T>
+    var history: History
+    var location: Location
+    var match: Match<T>
 }
 
-external interface RouteResultHistory {
+external interface History {
     val length: Int
     val action: String
-    var location: RouteResultLocation
+    var location: Location
 
     fun push(path: String, state: dynamic = definedExternally)
     fun replace(path: String, state: dynamic = definedExternally)
@@ -87,13 +87,13 @@ external interface RouteResultHistory {
     fun goForward()
 }
 
-external interface RouteResultLocation {
+external interface Location {
     var hash: String
     var pathname: String
     var search: String
 }
 
-external interface RouteResultMatch<T : RProps> {
+external interface Match<T : RProps> {
     var isExact: Boolean
     var url: String
     var path: String

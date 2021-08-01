@@ -17,7 +17,7 @@ fun <T : RProps> useRouteMatch(
     exact: Boolean = false,
     strict: Boolean = false,
     sensitive: Boolean = false,
-): RouteResultMatch<T>? {
+): Match<T>? {
     if (path.isEmpty()) {
         return rawUseRouteMatch(null)
     }
