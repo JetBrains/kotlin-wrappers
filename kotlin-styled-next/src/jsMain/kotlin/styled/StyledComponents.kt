@@ -3,7 +3,6 @@ package styled
 import kotlinext.js.clone
 import kotlinext.js.jsObject
 import kotlinx.css.CssBuilder
-import kotlinx.css.CssDsl
 import kotlinx.css.RuleSet
 import kotlinx.html.*
 import react.*

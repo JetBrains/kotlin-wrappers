@@ -1,8 +1,4 @@
 import kotlinx.css.*
-import kotlinx.css.properties.Angle
-import kotlinx.css.properties.Time
-import kotlinx.css.properties.deg
-import kotlinx.css.properties.s
 import kotlin.random.Random
 
 const val seed = 46271372869541347

@@ -4,7 +4,6 @@ import kotlinext.js.invoke
 import kotlinext.js.jsObject
 import kotlinx.browser.window
 import kotlinx.css.CssBuilder
-import kotlinx.css.CssDsl
 import kotlinx.css.RuleSet
 import kotlinx.html.*
 import org.w3c.dom.Element
