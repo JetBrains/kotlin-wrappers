@@ -1,6 +1,6 @@
 package styled
 
-import kotlinx.css.CssBuilder
+import kotlinx.css.CssBuilderImpl
 import kotlinx.css.RuleSet
 import kotlin.properties.ReadOnlyProperty
 import kotlin.reflect.KProperty
@@ -35,7 +35,7 @@ class CssHolder(private val sheet: StyleSheet, internal vararg val ruleSets: Rul
     private val classNamesToInject = mutableMapOf<ClassName, Boolean>()
 
     val css by lazy {
-        CssBuilder(allowClasses = false).apply {
+        CssBuilderImpl(allowClasses = false).apply {
             this@CssHolder.ruleSets.map { it() }
         }
     }

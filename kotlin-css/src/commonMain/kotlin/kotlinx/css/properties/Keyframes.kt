@@ -4,7 +4,15 @@ import kotlinx.css.Rule
 import kotlinx.css.RuleContainer
 import kotlinx.css.RuleSet
 
-class KeyframesBuilder(private val indent: String = "") : RuleContainer {
+interface KeyframesBuilder : RuleContainer {
+    fun from(block: RuleSet) = rule("from", block)
+    fun to(block: RuleSet) = rule("to", block)
+
+    operator fun Int.invoke(block: RuleSet) = rule("$this%", block)
+    operator fun Double.invoke(block: RuleSet) = rule("$this%", block)
+}
+
+class KeyframesBuilderImpl(private val indent: String = "") : KeyframesBuilder {
     override fun toString() =
         buildString {
             buildRules(indent)
@@ -12,10 +20,4 @@ class KeyframesBuilder(private val indent: String = "") : RuleContainer {
 
     override val rules = mutableListOf<Rule>()
     override val multiRules = mutableListOf<Rule>()
-
-    fun from(block: RuleSet) = rule("from", block)
-    fun to(block: RuleSet) = rule("to", block)
-
-    operator fun Int.invoke(block: RuleSet) = rule("$this%", block)
-    operator fun Double.invoke(block: RuleSet) = rule("$this%", block)
 }

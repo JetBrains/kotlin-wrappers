@@ -5,12 +5,17 @@ package kotlinx.css
 import kotlinx.css.properties.*
 import kotlin.reflect.KProperty
 
-open class StyledElement {
-    val declarations = LinkedHashMap<String, Any>()
+typealias CssDeclarations = LinkedHashMap<String, Any>
+interface StyledElement {
+    val declarations: CssDeclarations
 
     fun put(key: String, value: String) {
         declarations[key] = value
     }
+}
+
+class StyledElementImpl: StyledElement {
+    override val declarations = CssDeclarations()
 }
 
 private class CSSProperty<T>(private val default: (() -> T)? = null) {

@@ -1,6 +1,6 @@
 package styled
 
-import kotlinx.css.CssBuilder
+import kotlinx.css.CssBuilderImpl
 import kotlinx.css.RuleSet
 import kotlin.properties.ReadOnlyProperty
 import kotlin.reflect.KProperty
@@ -34,7 +34,7 @@ open class StyleSheet(var name: String, val isStatic: Boolean = false) {
                     cssHolder.properties.map { it to cssHolder }
                 }
 
-            val builder = CssBuilder(allowClasses = false).apply {
+            val builder = CssBuilderImpl(allowClasses = false).apply {
                 keys.forEach {
                     ".${getClassName(it.first)}" {
                         for (r in it.second.ruleSets) {

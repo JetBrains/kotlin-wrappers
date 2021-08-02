@@ -3,6 +3,7 @@ package styled
 import kotlinext.js.clone
 import kotlinext.js.jsObject
 import kotlinx.css.CssBuilder
+import kotlinx.css.CssBuilderImpl
 import kotlinx.css.RuleSet
 import kotlinx.html.*
 import react.*
@@ -60,7 +61,7 @@ class StyledElementBuilderImpl<P : WithClassName>(
     override val type: ComponentType<P>,
     attrs: P = jsObject(),
 ) : StyledElementBuilder<P>, RElementBuilderImpl<P>(attrs) {
-    override val css = CssBuilder()
+    override val css = CssBuilderImpl()
 
     override fun create() = Styled.createElement(type, css, attrs, childList)
 }
@@ -79,7 +80,7 @@ interface StyledDOMBuilder<out T : Tag> : RDOMBuilder<T>, StyledBuilder<DOMProps
 
 class StyledDOMBuilderImpl<out T : Tag>(factory: (TagConsumer<Unit>) -> T) : StyledDOMBuilder<T>,
     RDOMBuilderImpl<T>(factory) {
-    override val css = CssBuilder()
+    override val css = CssBuilderImpl()
 }
 
 typealias StyledHandler<P> = StyledElementBuilder<P>.() -> Unit

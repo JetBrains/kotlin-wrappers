@@ -6,7 +6,7 @@ import kotlin.test.assertEquals
 class TestFontFace {
     @Test
     fun testTwoFontface() {
-        val cssBuilder = CssBuilder()
+        val cssBuilder = CssBuilderImpl()
 
         ruleSet {
             fontFace {

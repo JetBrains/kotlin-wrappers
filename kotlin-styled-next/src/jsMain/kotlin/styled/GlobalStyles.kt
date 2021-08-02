@@ -3,6 +3,7 @@ package styled
 import kotlinx.browser.window
 import kotlinx.css.CssBuilder
 import kotlinx.css.properties.KeyframesBuilder
+import kotlinx.css.properties.KeyframesBuilderImpl
 import org.w3c.dom.HTMLStyleElement
 import org.w3c.dom.css.CSSStyleSheet
 import kotlin.collections.*
@@ -92,7 +93,7 @@ object GlobalStyles {
      * They will be injected when the [injectScheduled] function is called the next time.
      */
     fun scheduleToInject(builder: KeyframesBuilder.() -> Unit): ClassName {
-        val keyframes = KeyframesBuilder().apply(builder).toStyledKeyframes()
+        val keyframes = KeyframesBuilderImpl().apply(builder).toStyledKeyframes()
         return injectedKeyframes[keyframes] ?: "ksc-keyframe-$incrementedClassName".also { keyframeName ->
             val css = keyframes.toString()
             injectedKeyframes[keyframes] = keyframeName

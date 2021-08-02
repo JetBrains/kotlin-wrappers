@@ -4,6 +4,7 @@ import kotlinext.js.invoke
 import kotlinext.js.jsObject
 import kotlinx.browser.window
 import kotlinx.css.CssBuilder
+import kotlinx.css.CssBuilderImpl
 import kotlinx.css.RuleSet
 import kotlinx.html.*
 import org.w3c.dom.Element
@@ -60,7 +61,7 @@ class StyledElementBuilderImpl<P : WithClassName>(
     override val type: ComponentType<P>,
     attrs: P = jsObject(),
 ) : StyledElementBuilder<P>, RElementBuilderImpl<P>(attrs) {
-    override val css = CssBuilder()
+    override val css = CssBuilderImpl()
 
     override fun create() = Styled.createElement(type, css, attrs, childList)
 }
@@ -72,12 +73,14 @@ interface StyledDOMBuilder<out T : Tag> : RDOMBuilder<T>, StyledBuilder<DOMProps
     override fun create() = Styled.createElement(type, css, domProps, childList)
 
     companion object {
-        operator fun <T : Tag> invoke(factory: (TagConsumer<Unit>) -> T): StyledDOMBuilder<T> = StyledDOMBuilderImpl(factory)
+        operator fun <T : Tag> invoke(factory: (TagConsumer<Unit>) -> T): StyledDOMBuilder<T> =
+            StyledDOMBuilderImpl(factory)
     }
 }
 
-class StyledDOMBuilderImpl<out T : Tag>(factory: (TagConsumer<Unit>) -> T) : StyledDOMBuilder<T>, RDOMBuilderImpl<T>(factory) {
-    override val css = CssBuilder()
+class StyledDOMBuilderImpl<out T : Tag>(factory: (TagConsumer<Unit>) -> T) : StyledDOMBuilder<T>,
+    RDOMBuilderImpl<T>(factory) {
+    override val css = CssBuilderImpl()
 }
 
 typealias StyledHandler<P> = StyledElementBuilder<P>.() -> Unit
@@ -118,10 +121,12 @@ private fun injectGlobalKeyframeStyle(name: String, style: String) {
     if (style.startsWith("@-webkit-keyframes") || style.startsWith("@keyframes")) {
         injectGlobal(style)
     } else {
-        injectGlobals(arrayOf(
-            "@-webkit-keyframes $name {$style}",
-            "@keyframes $name {$style}"
-        ))
+        injectGlobals(
+            arrayOf(
+                "@-webkit-keyframes $name {$style}",
+                "@keyframes $name {$style}"
+            )
+        )
     }
 }
 
@@ -197,7 +202,7 @@ private fun <T> devOverrideUseRef(action: () -> T): T {
  * @deprecated Use [createGlobalStyle] instead
  */
 fun injectGlobal(handler: CssBuilder.() -> Unit) {
-    injectGlobal(CssBuilder().apply { handler() }.toString())
+    injectGlobal(CssBuilderImpl().apply { handler() }.toString())
 }
 
 object Styled {

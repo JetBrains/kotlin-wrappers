@@ -6,7 +6,7 @@ import kotlin.test.assertEquals
 class TestGrid {
     @Test
     fun testGridAutoColumns() {
-        val cssBuilder = CssBuilder()
+        val cssBuilder = CssBuilderImpl()
 
         ruleSet {
             gridAutoColumns = GridAutoColumns("10fr 1fr 200px")
@@ -24,7 +24,7 @@ class TestGrid {
 
     @Test
     fun testGridAutoColumns_dims() {
-        val cssBuilder = CssBuilder()
+        val cssBuilder = CssBuilderImpl()
 
         ruleSet {
             gridAutoColumns = GridAutoColumns(10.fr, 1.fr, 200.px)
@@ -42,7 +42,7 @@ class TestGrid {
 
     @Test
     fun testGridAutoColumns_auto() {
-        val cssBuilder = CssBuilder()
+        val cssBuilder = CssBuilderImpl()
 
         ruleSet {
             gridAutoColumns = GridAutoColumns.auto
@@ -60,7 +60,7 @@ class TestGrid {
 
     @Test
     fun testGridAutoColumns_fitContent() {
-        val cssBuilder = CssBuilder()
+        val cssBuilder = CssBuilderImpl()
 
         ruleSet {
             gridAutoColumns = GridAutoColumns.fitContent(GridAutoColumns.minMax(10.px, 20.px))
@@ -78,7 +78,7 @@ class TestGrid {
 
     @Test
     fun testGridAutoColumns_maxContent() {
-        val cssBuilder = CssBuilder()
+        val cssBuilder = CssBuilderImpl()
 
         ruleSet {
             gridAutoColumns = GridAutoColumns.maxContent
@@ -96,7 +96,7 @@ class TestGrid {
 
     @Test
     fun testGridAutoColumns_minContent() {
-        val cssBuilder = CssBuilder()
+        val cssBuilder = CssBuilderImpl()
 
         ruleSet {
             gridAutoColumns = GridAutoColumns.minContent
@@ -114,7 +114,7 @@ class TestGrid {
 
     @Test
     fun testGridAutoColumns_minMax1() {
-        val cssBuilder = CssBuilder()
+        val cssBuilder = CssBuilderImpl()
 
         ruleSet {
             gridAutoColumns = GridAutoColumns.minMax(10.fr, 20.fr)
@@ -132,7 +132,7 @@ class TestGrid {
 
     @Test
     fun testGridAutoColumns_minMax2() {
-        val cssBuilder = CssBuilder()
+        val cssBuilder = CssBuilderImpl()
 
         ruleSet {
             gridAutoColumns = GridAutoColumns.minMax(GridAutoColumns.auto, GridAutoColumns(10.fr))
@@ -150,7 +150,7 @@ class TestGrid {
 
     @Test
     fun testAutoFlow_initial() {
-        val cssBuilder = CssBuilder()
+        val cssBuilder = CssBuilderImpl()
 
         ruleSet {
             gridAutoFlow = GridAutoFlow.initial
@@ -168,7 +168,7 @@ class TestGrid {
 
     @Test
     fun testAutoFlow_inherit() {
-        val cssBuilder = CssBuilder()
+        val cssBuilder = CssBuilderImpl()
 
         ruleSet {
             gridAutoFlow = GridAutoFlow.inherit
@@ -186,7 +186,7 @@ class TestGrid {
 
     @Test
     fun testAutoFlow_unset() {
-        val cssBuilder = CssBuilder()
+        val cssBuilder = CssBuilderImpl()
 
         ruleSet {
             gridAutoFlow = GridAutoFlow.unset
@@ -204,7 +204,7 @@ class TestGrid {
 
     @Test
     fun testAutoFlow_column() {
-        val cssBuilder = CssBuilder()
+        val cssBuilder = CssBuilderImpl()
 
         ruleSet {
             gridAutoFlow = GridAutoFlow.column
@@ -222,7 +222,7 @@ class TestGrid {
 
     @Test
     fun testAutoFlow_columnDense() {
-        val cssBuilder = CssBuilder()
+        val cssBuilder = CssBuilderImpl()
 
         ruleSet {
             gridAutoFlow = GridAutoFlow.columnDense
@@ -240,7 +240,7 @@ class TestGrid {
 
     @Test
     fun testAutoFlow_dense() {
-        val cssBuilder = CssBuilder()
+        val cssBuilder = CssBuilderImpl()
 
         ruleSet {
             gridAutoFlow = GridAutoFlow.dense
@@ -258,7 +258,7 @@ class TestGrid {
 
     @Test
     fun testAutoFlow_row() {
-        val cssBuilder = CssBuilder()
+        val cssBuilder = CssBuilderImpl()
 
         ruleSet {
             gridAutoFlow = GridAutoFlow.row
@@ -276,7 +276,7 @@ class TestGrid {
 
     @Test
     fun testAutoFlow_rowDense() {
-        val cssBuilder = CssBuilder()
+        val cssBuilder = CssBuilderImpl()
 
         ruleSet {
             gridAutoFlow = GridAutoFlow.rowDense
@@ -294,7 +294,7 @@ class TestGrid {
 
     @Test
     fun testGridAutoRows() {
-        val cssBuilder = CssBuilder()
+        val cssBuilder = CssBuilderImpl()
 
         ruleSet {
             gridAutoRows = GridAutoRows("10fr 1fr 200px")
@@ -312,7 +312,7 @@ class TestGrid {
 
     @Test
     fun testGridAutoRows_dims() {
-        val cssBuilder = CssBuilder()
+        val cssBuilder = CssBuilderImpl()
 
         ruleSet {
             gridAutoRows = GridAutoRows(10.fr, 1.fr, 200.px)
@@ -330,7 +330,7 @@ class TestGrid {
 
     @Test
     fun testGridAutoRows_auto() {
-        val cssBuilder = CssBuilder()
+        val cssBuilder = CssBuilderImpl()
 
         ruleSet {
             gridAutoRows = GridAutoRows.auto
@@ -348,7 +348,7 @@ class TestGrid {
 
     @Test
     fun testGridAutoRows_fitContent() {
-        val cssBuilder = CssBuilder()
+        val cssBuilder = CssBuilderImpl()
 
         ruleSet {
             gridAutoRows = GridAutoRows.fitContent(GridAutoRows.minMax(10.px, 20.px))
@@ -366,7 +366,7 @@ class TestGrid {
 
     @Test
     fun testGridAutoRows_maxContent() {
-        val cssBuilder = CssBuilder()
+        val cssBuilder = CssBuilderImpl()
 
         ruleSet {
             gridAutoRows = GridAutoRows.maxContent
@@ -384,7 +384,7 @@ class TestGrid {
 
     @Test
     fun testGridAutoRows_minContent() {
-        val cssBuilder = CssBuilder()
+        val cssBuilder = CssBuilderImpl()
 
         ruleSet {
             gridAutoRows = GridAutoRows.minContent
@@ -402,7 +402,7 @@ class TestGrid {
 
     @Test
     fun testGridAutoRows_minMax1() {
-        val cssBuilder = CssBuilder()
+        val cssBuilder = CssBuilderImpl()
 
         ruleSet {
             gridAutoRows = GridAutoRows.minMax(10.fr, 20.fr)
@@ -420,7 +420,7 @@ class TestGrid {
 
     @Test
     fun testGridAutoRows_minMax2() {
-        val cssBuilder = CssBuilder()
+        val cssBuilder = CssBuilderImpl()
 
         ruleSet {
             gridAutoRows = GridAutoRows.minMax(GridAutoRows.auto, GridAutoRows(10.fr))
@@ -438,7 +438,7 @@ class TestGrid {
 
     @Test
     fun testGridTemplateRows_repeat() {
-        val cssBuilder = CssBuilder()
+        val cssBuilder = CssBuilderImpl()
 
         ruleSet {
             gridTemplateRows = GridTemplateRows.repeat("auto-fill")
