@@ -128,7 +128,7 @@ private fun Rule.toStyledRule(parent: RuleContainer, block: RuleSet = this.block
     return StyledRule(
         selector,
         passStaticClassesToParent,
-        CSSBuilder(allowClasses = false, parent = if (passStaticClassesToParent) parent else null).apply { block() }
+        CssBuilder(allowClasses = false, parent = if (passStaticClassesToParent) parent else null).apply { block() }
             .toStyledCss()
     )
 }
@@ -149,7 +149,7 @@ private fun resolveRules(rules: List<Rule>, multiRules: List<Rule>, parent: Rule
     return newRules
 }
 
-internal fun CSSBuilder.toStyledCss(): StyledCss {
+internal fun CssBuilder.toStyledCss(): StyledCss {
     val resolvedRules = resolveRules(rules = rules, multiRules = multiRules, parent = this)
     return StyledCss(declarations, rules = resolvedRules, classes = classes)
 }

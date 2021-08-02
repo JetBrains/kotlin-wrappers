@@ -110,7 +110,7 @@ fun RBuilder.div() {
 ### CSS Selectors
 
 The DSL allows you to use most CSS selectors. See
-[CSSBuilder](https://github.com/JetBrains/kotlin-wrappers/blob/master/kotlin-css/src/main/kotlin/kotlinx/css/CSSBuilder.kt#L35)
+[CssBuilder](https://github.com/JetBrains/kotlin-wrappers/blob/master/kotlin-css/src/commonMain/kotlin/kotlinx/css/CssBuilder.kt)
 for more details. **Contributions are welcome**.
 
 After creating a `StyleSheet` just go ahead and start using it in a component, it will be injected automatically.
@@ -182,10 +182,10 @@ fun RBuilder.div() {
 
 ### Global Styles
 
-To create a global stylesheet use the `CSSBuilder` class and the `StyledComponents.injectGlobal()` function:
+To create a global stylesheet use the `CssBuilder` class and the `StyledComponents.injectGlobal()` function:
 
 ```kotlin
-val styles = CSSBuilder(allowClasses = false).apply {
+val styles = CssBuilder(allowClasses = false).apply {
     body {
         margin(0.px)
         padding(0.px)

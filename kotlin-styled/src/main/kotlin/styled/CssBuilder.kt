@@ -1,9 +1,9 @@
 package styled
 
-import kotlinx.css.CSSBuilder
+import kotlinx.css.CssBuilder
 import kotlinx.css.properties.*
 
-fun CSSBuilder.animation(
+fun CssBuilder.animation(
     duration: Time = 0.s,
     timing: Timing = Timing.ease,
     delay: Time = 0.s,

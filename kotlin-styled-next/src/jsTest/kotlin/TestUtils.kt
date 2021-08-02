@@ -4,7 +4,7 @@ import kotlinx.browser.window
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.promise
-import kotlinx.css.CSSBuilder
+import kotlinx.css.CssBuilder
 import kotlinx.dom.clear
 import org.w3c.dom.HTMLElement
 import org.w3c.dom.HTMLStyleElement
@@ -27,7 +27,7 @@ private val testScope = MainScope()
 class TestScope : CoroutineScope by testScope {
     val root = "div".asHtmlElement()
 
-    fun injectBuilder(builder: CSSBuilder) {
+    fun injectBuilder(builder: CssBuilder) {
         injectGlobal(builder)
     }
 

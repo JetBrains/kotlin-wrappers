@@ -3,10 +3,10 @@ package kotlinx.css
 @CssDsl
 interface RuleContainer {
     fun StringBuilder.buildRules(indent: String) {
-        val resolvedRules = LinkedHashMap<String, CSSBuilder>()
+        val resolvedRules = LinkedHashMap<String, CssBuilder>()
         rules.forEach { (selector, passStaticClassesToParent, block) ->
             if (!resolvedRules.containsKey(selector)) {
-                resolvedRules[selector] = CSSBuilder(
+                resolvedRules[selector] = CssBuilder(
                     "$indent  ",
                     allowClasses = false,
                     parent = if (passStaticClassesToParent) this@RuleContainer else null
@@ -23,7 +23,7 @@ interface RuleContainer {
         }
 
         multiRules.forEach { (selector, passStaticClassesToParent, block) ->
-            val blockBuilder = CSSBuilder(
+            val blockBuilder = CssBuilder(
                 "$indent  ",
                 allowClasses = false,
                 parent = if (passStaticClassesToParent) this@RuleContainer else null

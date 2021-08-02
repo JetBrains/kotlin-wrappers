@@ -29,7 +29,7 @@ fun StyledElement.transition(
     delay: Time = 0.s,
 ) = transition(property.name.hyphenize(), duration, timing, delay)
 
-fun CSSBuilder.delayUnhover(
+fun CssBuilder.delayUnhover(
     vararg properties: KProperty<*>,
     duration: Time = 300.ms,
     timing: Timing = Timing.materialDeceleration,

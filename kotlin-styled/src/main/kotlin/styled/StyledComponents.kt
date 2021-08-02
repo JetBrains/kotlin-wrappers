@@ -3,7 +3,7 @@ package styled
 import kotlinext.js.invoke
 import kotlinext.js.jsObject
 import kotlinx.browser.window
-import kotlinx.css.CSSBuilder
+import kotlinx.css.CssBuilder
 import kotlinx.css.CssDsl
 import kotlinx.css.RuleSet
 import kotlinx.html.*
@@ -26,7 +26,7 @@ external interface CustomStyledProps : RProps {
     var css: ArrayList<RuleSet>?
 }
 
-inline fun CustomStyledProps.forwardCss(builder: CSSBuilder) {
+inline fun CustomStyledProps.forwardCss(builder: CssBuilder) {
     css?.forEach { it(builder) }
 }
 
@@ -41,7 +41,7 @@ inline fun CustomStyledProps.forwardCss(props: CustomStyledProps) {
 
 @CssDsl
 interface StyledBuilder<P : WithClassName> {
-    val css: CSSBuilder
+    val css: CssBuilder
     val type: Any
 }
 
@@ -62,7 +62,7 @@ class StyledElementBuilderImpl<P : WithClassName>(
     override val type: ComponentType<P>,
     attrs: P = jsObject(),
 ) : StyledElementBuilder<P>, RElementBuilderImpl<P>(attrs) {
-    override val css = CSSBuilder()
+    override val css = CssBuilder()
 
     override fun create() = Styled.createElement(type, css, attrs, childList)
 }
@@ -79,7 +79,7 @@ interface StyledDOMBuilder<out T : Tag> : RDOMBuilder<T>, StyledBuilder<DOMProps
 }
 
 class StyledDOMBuilderImpl<out T : Tag>(factory: (TagConsumer<Unit>) -> T) : StyledDOMBuilder<T>, RDOMBuilderImpl<T>(factory) {
-    override val css = CSSBuilder()
+    override val css = CssBuilder()
 }
 
 typealias StyledHandler<P> = StyledElementBuilder<P>.() -> Unit
@@ -162,7 +162,7 @@ private object GlobalStyles {
     }
 }
 
-fun injectGlobal(css: CSSBuilder) {
+fun injectGlobal(css: CssBuilder) {
     injectGlobal(css.toString())
 }
 
@@ -198,8 +198,8 @@ private fun <T> devOverrideUseRef(action: () -> T): T {
 /**
  * @deprecated Use [createGlobalStyle] instead
  */
-fun injectGlobal(handler: CSSBuilder.() -> Unit) {
-    injectGlobal(CSSBuilder().apply { handler() }.toString())
+fun injectGlobal(handler: CssBuilder.() -> Unit) {
+    injectGlobal(CssBuilder().apply { handler() }.toString())
 }
 
 object Styled {
@@ -210,7 +210,7 @@ object Styled {
             devOverrideUseRef { rawStyled(type)({ it.css }) }
         }
 
-    private fun <P : WithClassName> buildStyledProps(css: CSSBuilder, props: P): P {
+    private fun <P : WithClassName> buildStyledProps(css: CssBuilder, props: P): P {
         val styledProps = props.unsafeCast<StyledProps>()
         if (css.rules.isNotEmpty() || css.multiRules.isNotEmpty() || css.declarations.isNotEmpty()) {
             styledProps.css = css.toString()
@@ -224,13 +224,18 @@ object Styled {
         return styledProps.unsafeCast<P>()
     }
 
-    fun createElement(type: String, css: CSSBuilder, props: WithClassName, children: List<Any>): ReactElement {
+    fun createElement(type: String, css: CssBuilder, props: WithClassName, children: List<Any>): ReactElement {
         val wrappedType = wrap(type)
         val styledProps = buildStyledProps(css, props)
         return createElement(wrappedType, styledProps, *children.toTypedArray())
     }
 
-    fun <P : WithClassName> createElement(type: ComponentType<P>, css: CSSBuilder, props: P, children: List<Any>): ReactElement {
+    fun <P : WithClassName> createElement(
+        type: ComponentType<P>,
+        css: CssBuilder,
+        props: P,
+        children: List<Any>,
+    ): ReactElement {
         val wrappedType = wrap(type)
         val styledProps = buildStyledProps(css, props)
         return createElement(wrappedType, styledProps, *children.toTypedArray())
