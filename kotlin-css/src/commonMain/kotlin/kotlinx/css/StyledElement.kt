@@ -3,9 +3,11 @@
 package kotlinx.css
 
 import kotlinx.css.properties.*
+import kotlin.js.JsName
 import kotlin.reflect.KProperty
 
 typealias CssDeclarations = LinkedHashMap<String, Any>
+
 interface StyledElement {
     val declarations: CssDeclarations
 
@@ -14,7 +16,12 @@ interface StyledElement {
     }
 }
 
-class StyledElementImpl: StyledElement {
+@JsName("StyledElement_create")
+fun StyledElement(): StyledElement {
+    return StyledElementImpl()
+}
+
+class StyledElementImpl : StyledElement {
     override val declarations = CssDeclarations()
 }
 

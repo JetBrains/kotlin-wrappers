@@ -177,13 +177,15 @@ fun String.toCustomProperty(): String {
     return "var(--$this)"
 }
 
-class CssBuilderImpl(
+fun CssBuilder(indent: String = "", allowClasses: Boolean = true, parent: RuleContainer? = null): CssBuilder = CssBuilderImpl(indent, allowClasses, parent)
+
+open class CssBuilderImpl(
     override val indent: String = "",
     override val allowClasses: Boolean = true,
     override val parent: RuleContainer? = null,
 ) : CssBuilder {
     override val classes = mutableListOf<String>()
-    override fun (RuleSet).unaryPlus() = this()
+    override fun RuleSet.unaryPlus() = this()
 
     override val declarations = CssDeclarations()
 

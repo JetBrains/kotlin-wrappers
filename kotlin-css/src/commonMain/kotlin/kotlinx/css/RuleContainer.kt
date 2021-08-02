@@ -5,7 +5,7 @@ interface RuleContainer {
         val resolvedRules = LinkedHashMap<String, CssBuilder>()
         rules.forEach { (selector, passStaticClassesToParent, block) ->
             if (!resolvedRules.containsKey(selector)) {
-                resolvedRules[selector] = CssBuilderImpl(
+                resolvedRules[selector] = CssBuilder(
                     "$indent  ",
                     allowClasses = false,
                     parent = if (passStaticClassesToParent) this@RuleContainer else null
@@ -22,7 +22,7 @@ interface RuleContainer {
         }
 
         multiRules.forEach { (selector, passStaticClassesToParent, block) ->
-            val blockBuilder = CssBuilderImpl(
+            val blockBuilder = CssBuilder(
                 "$indent  ",
                 allowClasses = false,
                 parent = if (passStaticClassesToParent) this@RuleContainer else null

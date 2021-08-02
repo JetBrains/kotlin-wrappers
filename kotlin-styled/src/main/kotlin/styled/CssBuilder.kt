@@ -15,7 +15,7 @@ fun CssBuilder.animation(
 ) = animation(keyframes(indent, handler), duration, timing, delay, iterationCount, direction, fillMode, playState)
 
 inline fun keyframes(indent: String = "", handler: KeyframesBuilder.() -> Unit): String {
-    val builder = KeyframesBuilderImpl(indent)
+    val builder = KeyframesBuilder(indent)
     builder.handler()
     return keyframesName(builder.toString())
 }

@@ -128,7 +128,7 @@ private fun Rule.toStyledRule(parent: RuleContainer, block: RuleSet = this.block
     return StyledRule(
         selector,
         passStaticClassesToParent,
-        CssBuilderImpl(allowClasses = false, parent = if (passStaticClassesToParent) parent else null).apply { block() }
+        CssBuilder(allowClasses = false, parent = if (passStaticClassesToParent) parent else null).apply { block() }
             .toStyledCss()
     )
 }

@@ -12,6 +12,10 @@ interface KeyframesBuilder : RuleContainer {
     operator fun Double.invoke(block: RuleSet) = rule("$this%", block)
 }
 
+fun KeyframesBuilder(indent: String = ""): KeyframesBuilder {
+    return KeyframesBuilderImpl(indent)
+}
+
 class KeyframesBuilderImpl(private val indent: String = "") : KeyframesBuilder {
     override fun toString() =
         buildString {
