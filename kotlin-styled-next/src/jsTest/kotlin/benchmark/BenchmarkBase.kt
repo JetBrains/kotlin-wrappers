@@ -27,10 +27,6 @@ open class BenchmarkBase {
         assertTrue(getStylesheet().cssRules.length > 0)
     }
 
-    protected fun TestScope.assertChildrenCount(n: Int) {
-        assertEquals(n, root.childElementCount)
-    }
-
     /**
      * Run [name] benchmark for [repeat] times and print average [Duration] of [run] runs
      */

@@ -16,8 +16,6 @@ class CssBuildersInject : BenchmarkBase() {
      * @return duration of all injects
      */
     private suspend fun TestScope.addCssBuilders(n: Int): Duration {
-        assertChildrenCount(0)
-
         val cssBuilders: List<CssBuilder> = getCssBuilders(n)
         val duration = measureTime {
             cssBuilders.forEach { injectBuilder(it) }
@@ -41,7 +39,7 @@ class CssBuildersInject : BenchmarkBase() {
     }
 
     @Test
-    fun add1kCssBuilders() = runBenchmark(name = "add1kCssBuilders", repeat = 3) {
+    fun add1kCssBuilders() = runBenchmark(name = "add1kCSSBuilders") {
         addCssBuilders(1000)
     }
 }

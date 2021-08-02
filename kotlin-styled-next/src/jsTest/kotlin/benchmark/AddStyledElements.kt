@@ -41,8 +41,6 @@ class AddStyledElements : BenchmarkBase() {
      * @return duration of all injects
      */
     private suspend fun TestScope.addNElements(n: Int): Duration {
-        assertChildrenCount(0)
-
         val component = getStyledComponent(n)
         val cssHolder = TimedLinkedHashMap<StyledCss, String>()
         GlobalStyles.styledClasses = cssHolder

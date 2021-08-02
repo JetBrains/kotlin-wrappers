@@ -6,8 +6,11 @@ import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.promise
 import kotlinx.css.CssBuilder
 import kotlinx.dom.clear
+import org.w3c.dom.Element
 import org.w3c.dom.HTMLElement
 import org.w3c.dom.HTMLStyleElement
+import org.w3c.dom.css.CSSRuleList
+import org.w3c.dom.css.CSSStyleDeclaration
 import org.w3c.dom.css.CSSStyleSheet
 import react.ComponentType
 import react.RProps
@@ -19,6 +22,7 @@ import styled.injectGlobal
 import kotlin.coroutines.resume
 import kotlin.coroutines.suspendCoroutine
 import kotlin.js.Promise
+import kotlin.test.assertEquals
 
 typealias Component = ComponentType<RProps>
 
@@ -41,6 +45,18 @@ class TestScope : CoroutineScope by testScope {
         return styles.sheet as CSSStyleSheet
     }
 
+    fun getRules(): CSSRuleList {
+        return getStylesheet().cssRules
+    }
+
+    fun Element.getStyle(): CSSStyleDeclaration {
+        return window.getComputedStyle(this)
+    }
+
+    fun assertChildrenCount(n: Int) {
+        assertEquals(n, root.childElementCount)
+    }
+
     fun clear() {
         unmountComponentAtNode(root)
         root.clear()
@@ -49,10 +65,15 @@ class TestScope : CoroutineScope by testScope {
 
 internal fun runTest(block: suspend TestScope.() -> Unit): dynamic {
     val scope = TestScope()
+    scope.assertChildrenCount(0)
     return scope.promise { block(scope) }
 }
 
-internal fun String.asHtmlElement() = document.createElement(this) as HTMLElement
+internal fun String.asHtmlElement(): HTMLElement {
+    return (document.createElement(this) as HTMLElement).also {
+        document.body?.appendChild(it)
+    }
+}
 
 /** Wait for the next animation frame, in which react most probably rendered updated the DOM.
  * This isn't certain that the DOM will be updated on the next frame,

@@ -1,6 +1,9 @@
 import kotlinx.css.*
 import react.fc
-import styled.*
+import styled.StyledBuilder
+import styled.StyledElementBuilder
+import styled.css
+import styled.styledDiv
 import kotlin.random.Random
 
 private fun StyledBuilder<*>.addCss(n: Int) {
