@@ -39,7 +39,6 @@ inline fun CustomStyledProps.forwardCss(props: CustomStyledProps) {
     }
 }
 
-@CssDsl
 interface StyledBuilder<P : WithClassName> {
     val css: CssBuilder
     val type: Any

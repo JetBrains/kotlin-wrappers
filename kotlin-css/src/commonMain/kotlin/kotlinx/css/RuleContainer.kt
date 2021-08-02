@@ -1,6 +1,5 @@
 package kotlinx.css
 
-@CssDsl
 interface RuleContainer {
     fun StringBuilder.buildRules(indent: String) {
         val resolvedRules = LinkedHashMap<String, CssBuilder>()
