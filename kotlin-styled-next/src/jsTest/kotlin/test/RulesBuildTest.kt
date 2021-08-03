@@ -41,7 +41,7 @@ class ElementTest {
     /**
      * Assert that injected css for [selector] contains all of the [declarations]
      */
-    private fun TestScope.assertCSS(selector: String, declarations: List<Pair<String, String>>) {
+    private fun TestScope.assertCss(selector: String, declarations: List<Pair<String, String>>) {
         val rules = getStylesheet().cssRules
         for (i in 0 until rules.length) {
             val css = rules.item(i)?.cssText
@@ -97,7 +97,7 @@ class ElementTest {
             }
         }
         val styledElement = clearAndInject(styledComponent)
-        assertCSS(
+        assertCss(
             styledElement.className, listOf(
                 "background-color" to Color.blue.toString(),
                 "height" to 15.px.toString()
@@ -116,7 +116,7 @@ class ElementTest {
             }
         }
         val styledElement = clearAndInject(styledComponent)
-        assertCSS(
+        assertCss(
             styledElement.className, listOf(
                 "min-height" to 66.px.toString(),
                 "padding" to 0.px.toString()
@@ -135,7 +135,7 @@ class ElementTest {
             }
         }
         val className = clearAndInject(styledComponent).className.split(" ").first { "ksc-" !in it }
-        assertCSS(
+        assertCss(
             className, listOf(
                 "align-content" to "end",
             )
@@ -154,7 +154,7 @@ class ElementTest {
         }
         val className = clearAndInject(styledComponent).className
 
-        assertCSS(
+        assertCss(
             ".$className.$className", listOf(
                 "padding" to 80.px.toString(),
                 "border" to "none"
@@ -176,7 +176,7 @@ class ElementTest {
             }
         }
         clearAndInject(styledComponent)
-        assertCSS(
+        assertCss(
             "@media $query", listOf(
                 "text-transform" to "capitalize",
             )
@@ -219,12 +219,12 @@ class ElementTest {
             rule != null && rule.cssText.contains("@keyframes")
         }
         val keyframeName = rules[keyframeIdx]!!.cssText.substringAfter("@keyframes ").substringBefore("{").trim()
-        assertCSS(
+        assertCss(
             classname, listOf(
                 "animation" to "5s linear 3s infinite reverse forwards running $keyframeName",
             )
         )
-        assertCSS(
+        assertCss(
             "@keyframes", listOf(
                 "transform" to "rotate(0deg)",
                 "transform" to "rotate(360deg)"

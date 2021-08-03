@@ -18,9 +18,9 @@ class DataTypeOperations : BenchmarkBase() {
      * @return duration of all [LinkedHashMap.put] operations
      */
     private suspend fun putNElements(n: Int): Duration {
-        val styledCSS = getCssBuilders(n).map { it.toStyledCss() }
+        val styledCss = getCssBuilders(n).map { it.toStyledCss() }
         return measureTime {
-            styledCSS.forEach { GlobalStyles.styledClasses[it] = "" }
+            styledCss.forEach { GlobalStyles.styledClasses[it] = "" }
             waitFlowCoroutine()
         }
     }
