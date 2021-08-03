@@ -1,24 +1,11 @@
 package kotlinx.css
 
-class CssBuilder(
-    val indent: String = "",
-    val allowClasses: Boolean = true,
-    val parent: RuleContainer? = null,
-) : StyledElement(), RuleContainer {
-    var classes = mutableListOf<String>()
-
-    var styleName = mutableListOf<String>()
-
-    override fun toString() = buildString {
-        declarations.forEach {
-            append("${it.key.hyphenize()}: ${it.value};\n")
-        }
-
-        buildRules(indent)
-    }
-
-    override val rules = mutableListOf<Rule>()
-    override val multiRules = mutableListOf<Rule>()
+interface CssBuilder : StyledElement, RuleContainer {
+    val indent: String
+    val allowClasses: Boolean
+    val parent: RuleContainer?
+    val classes: MutableList<String>
+    val styleName: MutableList<String>
 
     operator fun String.invoke(block: RuleSet) =
         rule(this, passStaticClassesToParent = false, block = block)
@@ -161,7 +148,7 @@ class CssBuilder(
         LinearDimension("clamp($min, $max, $preferred)")
 
     // Operator overrides
-    operator fun RuleSet.unaryPlus() = this()
+    operator fun RuleSet.unaryPlus()
 
     operator fun String.unaryPlus() = addClass(this)
 
@@ -188,6 +175,32 @@ fun ruleSet(set: RuleSet) = set
 
 fun String.toCustomProperty(): String {
     return "var(--$this)"
+}
+
+fun CssBuilder(indent: String = "", allowClasses: Boolean = true, parent: RuleContainer? = null): CssBuilder = CssBuilderImpl(indent, allowClasses, parent)
+
+open class CssBuilderImpl(
+    override val indent: String = "",
+    override val allowClasses: Boolean = true,
+    override val parent: RuleContainer? = null,
+) : CssBuilder {
+    override val classes = mutableListOf<String>()
+    override fun RuleSet.unaryPlus() = this()
+
+    override val declarations = CssDeclarations()
+
+    override val styleName = mutableListOf<String>()
+
+    override fun toString() = buildString {
+        declarations.forEach {
+            append("${it.key.hyphenize()}: ${it.value};\n")
+        }
+
+        buildRules(indent)
+    }
+
+    override val rules = mutableListOf<Rule>()
+    override val multiRules = mutableListOf<Rule>()
 }
 
 @Deprecated(
