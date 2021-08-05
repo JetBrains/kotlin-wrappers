@@ -5,38 +5,14 @@ import react.RProps
 import react.fc
 import runTest
 import styled.GlobalStyles
-import styled.StyleSheet
 import styled.css
 import styled.styledSpan
+import test.styleSheets.SimpleStyleSheet
+import test.styleSheets.StaticStyleSheet
 import kotlin.test.BeforeTest
 import kotlin.test.Test
 import kotlin.test.assertContains
 import kotlin.test.assertEquals
-
-private class SimpleStyleSheet : StyleSheet("SimpleStyleSheet") {
-    val simpleProperty by css {
-        minHeight = 66.px
-        padding(0.px)
-    }
-
-    val specificProperty by css {
-        specific {
-            padding(80.px)
-            border = "none"
-        }
-    }
-}
-
-private class StaticStyleSheet : StyleSheet("StaticStyleSheet", isStatic = true) {
-    val property1 by css {
-        alignContent = Align.end
-    }
-
-    val property2 by css {
-        padding(40.px)
-        minHeight = 50.px
-    }
-}
 
 class StyleSheetTest : TestBase() {
     private lateinit var simpleStyleSheet: SimpleStyleSheet

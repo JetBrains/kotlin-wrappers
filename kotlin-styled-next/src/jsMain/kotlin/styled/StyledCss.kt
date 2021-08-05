@@ -43,17 +43,13 @@ internal open class StyledCss(
         }
     }
 
-    private fun buildRules(outerSelector: String = ""): List<String> {
-        return rules.filter { (selector) -> !withAmpersand(selector) && !withMedia(selector) }
-            .flatMap { (selector, _, css) ->
-                val delimiter = if (isPseudoClass(selector)) "" else " "
-                css.getCssRules(selector.split(",").joinToString { "$outerSelector$delimiter${it.trim()}" })
-            }
-    }
-
-    private fun isPseudoClass(selector: Selector) = selector.trim().startsWith(":")
-    private fun withAmpersand(selector: Selector) = selector.contains("&")
     private fun withMedia(selector: Selector) = selector.trim().startsWith("@media")
+    private fun withContainer(selector: Selector) = selector.trim().startsWith("@container")
+    private fun withAmpersand(selector: Selector) = selector.contains("&")
+    private fun withFontFace(selector: Selector) = selector.trim().startsWith("@font-face")
+    private fun withSupports(selector: Selector) = selector.trim().startsWith("@supports")
+    private fun withCustomHandle(selector: Selector) =
+        withMedia(selector) || withContainer(selector) || withSupports(selector) || withAmpersand(selector) || withFontFace(selector)
 
     private var memoizedHashCode: Int? = null
     override fun hashCode(): Int {
@@ -79,45 +75,55 @@ internal open class StyledCss(
      */
     fun getCssRules(outerSelector: String?, indent: String = ""): List<String> {
         val result = mutableListOf<String>()
-        val (ampersandRules, rules) = rules.partition { withAmpersand(it.selector) }
-        if (rules.isNotEmpty() || declarations.isNotEmpty()) {
-            if (outerSelector != null) {
-                result.add(
-                    buildString {
-                        append("$indent$outerSelector {\n")
-                        append(declarations)
-                        append("$indent}\n")
-                        result.addAll(buildRules(outerSelector))
-                    }
-                )
-            } else {
-                result.addAll(buildRules())
-            }
-        }
-
-        rules.filter { withMedia(it.selector) }.forEach { (selector, _, css) ->
+        val (rules, handleRules) = rules.partition { !withCustomHandle(it.selector) }
+        if (declarations.isNotEmpty() && outerSelector != null) {
             result.add(
                 buildString {
-                    append("$indent$selector {\n")
-                    css.getCssRules(outerSelector, "  $indent").forEach { appendLine(it); }
+                    append("$indent$outerSelector {\n")
+                    append(declarations)
                     append("$indent}\n")
                 }
             )
         }
+        result.addAll(buildRules(rules, outerSelector ?: ""))
 
-        ampersandRules.forEach {
-            result.add(
-                buildString {
-                    val selector = resolveRelativeSelector(it.selector, outerSelector!!)
-                    result.addAll(it.css.getCssRules(selector, indent))
-                }
-            )
+        handleRules.forEach { (selector, _, css) ->
+            val resolvedSelector = resolveRelativeSelector(selector, outerSelector)
+            if (withMedia(resolvedSelector)) {
+                result.add(
+                    buildString {
+                        append("$indent$selector {\n")
+                        css.getCssRules(outerSelector, "  $indent").forEach { appendLine(it); }
+                        append("$indent}\n")
+                    }
+                )
+            } else if (withContainer(resolvedSelector) || withSupports(resolvedSelector)) {
+                result.add(
+                    buildString {
+                        append("$indent$selector {\n")
+                        css.getCssRules("  $indent").forEach { appendLine(it); }
+                        append("$indent}\n")
+                    }
+                )
+            } else {
+                result.addAll(css.getCssRules(resolvedSelector))
+            }
         }
         return result
     }
 
-    private fun resolveRelativeSelector(selector: Selector, selfClassName: ClassName) = selfClassName.split(",")
-        .joinToString { selector.replace("&", it.trim()) }
+    private fun resolveRelativeSelector(selector: Selector, selfClassName: ClassName?): Selector {
+        if (selfClassName == null) return selector
+        return selfClassName.split(",").joinToString { selector.replace("&", it.trim()) }
+    }
+}
+
+private fun isPseudoClass(selector: Selector) = selector.trim().startsWith(":")
+private fun buildRules(rules: List<StyledRule>, outerSelector: String): List<String> {
+    return rules.flatMap { (selector, _, css) ->
+        val delimiter = if (isPseudoClass(selector)) "" else " "
+        css.getCssRules(selector.split(",").joinToString { "$outerSelector$delimiter${it.trim()}" })
+    }
 }
 
 private fun Rule.toStyledRule(parent: RuleContainer, block: RuleSet = this.block): StyledRule {
