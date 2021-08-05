@@ -7,7 +7,7 @@ internal typealias ClassName = String
 internal typealias Selector = String
 
 internal data class StyledRule(
-    val selector: String,
+    val selector: Selector,
     val passStaticClassesToParent: Boolean = false,
     val css: StyledCss
 ) {
@@ -43,12 +43,17 @@ internal open class StyledCss(
         }
     }
 
-    private fun buildRules(indent: String = ""): List<String> {
+    private fun buildRules(outerSelector: String = ""): List<String> {
         return rules.filter { (selector) -> !withAmpersand(selector) && !withMedia(selector) }
             .flatMap { (selector, _, css) ->
-                css.getCssRules(selector, "  $indent")
+                val delimiter = if (isPseudoClass(selector)) "" else " "
+                css.getCssRules(selector.split(",").joinToString { "$outerSelector$delimiter${it.trim()}" })
             }
     }
+
+    private fun isPseudoClass(selector: Selector) = selector.trim().startsWith(":")
+    private fun withAmpersand(selector: Selector) = selector.contains("&")
+    private fun withMedia(selector: Selector) = selector.trim().startsWith("@media")
 
     private var memoizedHashCode: Int? = null
     override fun hashCode(): Int {
@@ -82,11 +87,11 @@ internal open class StyledCss(
                         append("$indent$outerSelector {\n")
                         append(declarations)
                         append("$indent}\n")
-                        buildRules(indent).forEach { result.add("$outerSelector $it\n") }
+                        result.addAll(buildRules(outerSelector))
                     }
                 )
             } else {
-                result.addAll(buildRules(indent))
+                result.addAll(buildRules())
             }
         }
 
@@ -111,24 +116,16 @@ internal open class StyledCss(
         return result
     }
 
-    private fun withAmpersand(selector: String): Boolean {
-        return selector.contains("&")
-    }
-
-    private fun withMedia(selector: String): Boolean {
-        return selector.trim().startsWith("@media")
-    }
-
-    private fun resolveRelativeSelector(selector: Selector, selfClassName: ClassName): String {
-        return selector.replace("&", selfClassName)
-    }
+    private fun resolveRelativeSelector(selector: Selector, selfClassName: ClassName) = selfClassName.split(",")
+        .joinToString { selector.replace("&", it.trim()) }
 }
 
 private fun Rule.toStyledRule(parent: RuleContainer, block: RuleSet = this.block): StyledRule {
     return StyledRule(
         selector,
         passStaticClassesToParent,
-        CssBuilder(allowClasses = false, parent = if (passStaticClassesToParent) parent else null).apply { block() }
+        CssBuilder(allowClasses = false, parent = if (passStaticClassesToParent) parent else null)
+            .apply { block() }
             .toStyledCss()
     )
 }

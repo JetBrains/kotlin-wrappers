@@ -32,8 +32,8 @@ object GlobalStyles {
         }
 
     internal var styledClasses = InjectedCssHolder()
-    private val scheduledRules = mutableListOf<String>()
-    private val injectedStyleSheetRules = mutableSetOf<Selector>()
+    internal val scheduledRules = mutableListOf<String>()
+    internal val injectedStyleSheetRules = mutableSetOf<Selector>()
 
     private fun getInjectedClassName(css: StyledCss): ClassName {
         val className = styledClasses[css]
@@ -85,7 +85,7 @@ object GlobalStyles {
         }
     }
 
-    private val injectedKeyframes = mutableMapOf<StyledKeyframes, ClassName>()
+    internal val injectedKeyframes = mutableMapOf<StyledKeyframes, ClassName>()
 
     /**
      * Schedule keyframes CSS in [builder] for injection into the DOM.
