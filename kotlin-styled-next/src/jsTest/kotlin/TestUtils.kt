@@ -75,9 +75,10 @@ internal fun String.asHtmlElement(): HTMLElement {
     }
 }
 
-/** Wait for the next animation frame, in which react most probably rendered updated the DOM.
- * This isn't certain that the DOM will be updated on the next frame,
- * so the assertions of this are needed after function invocation */
+/**
+ * Wait for the next animation frame, during which React has most probably rendered the updated DOM.
+ * It's not a certainty, so assertions are needed after function invocation.
+ */
 internal suspend fun waitForAnimationFrame() {
     suspendCoroutine<Unit> { continuation ->
         window.requestAnimationFrame {

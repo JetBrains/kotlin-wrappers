@@ -93,7 +93,7 @@ class ElementTest : TestBase() {
     }
 
     /**
-     *  Check that two different styled components with one css use one class
+     *  Check that two different styled components with the same CSS use the same class
      */
     @Test
     fun cssReuse() = runTest {
@@ -125,7 +125,7 @@ class ElementTest : TestBase() {
     }
 
     /**
-     * Add second css block to component and checking the right CSS is processed
+     * Add second CSS block to a component and check that it's processed correctly
      */
     @Test
     fun styledElementSecondCSS() = runTest {

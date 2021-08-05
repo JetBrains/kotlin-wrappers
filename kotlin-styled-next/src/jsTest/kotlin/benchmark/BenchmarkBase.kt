@@ -6,7 +6,6 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.toList
 import runTest
-import kotlin.test.assertEquals
 import kotlin.test.assertTrue
 import kotlin.time.Duration
 import kotlin.time.DurationUnit
@@ -28,7 +27,7 @@ open class BenchmarkBase {
     }
 
     /**
-     * Run [name] benchmark for [repeat] times and print average [Duration] of [run] runs
+     * Run the [name] benchmark [repeat] times and print average [Duration] of [run] runs
      */
     protected fun runBenchmark(
         name: String,

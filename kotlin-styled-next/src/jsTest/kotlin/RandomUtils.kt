@@ -4,7 +4,7 @@ import kotlin.random.Random
 const val seed = 46271372869541347
 val random = Random(seed)
 
-// Functions below are needed for hash to be different even on CSS with the same properties
+// Functions below are needed for the hash to be different even on CSS with the same properties
 fun randomAlign(): Align {
     return when (random.nextInt(0, 13)) {
         0 -> Align.flexEnd

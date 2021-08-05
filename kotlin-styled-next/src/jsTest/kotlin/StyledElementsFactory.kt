@@ -48,7 +48,7 @@ private fun StyledBuilder<*>.addCss(n: Int) {
 
 object StyledElementsFactory {
     /**
-     * @return styled component with [count] styled children, each having random css
+     * @return styled component with [count] styled children, each having random CSS
      */
     fun getStyledComponent(count: Int): Component {
         return fc {
@@ -61,7 +61,7 @@ object StyledElementsFactory {
     }
 
     /** Create [StyledElementBuilder] with dummy element and get [StyledElementBuilder.css] property [count] times
-     *  @return list of [CssBuilder] with random css code inside
+     *  @return list of [CssBuilder] with random CSS code inside
      */
     fun getCssBuilders(count: Int): List<CssBuilder> {
         return (1..count).map {

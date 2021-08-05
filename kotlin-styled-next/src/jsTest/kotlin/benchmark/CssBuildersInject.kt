@@ -12,7 +12,7 @@ import kotlin.time.measureTime
 @OptIn(ExperimentalTime::class)
 class CssBuildersInject : BenchmarkBase() {
     /**
-     * Measure time to inject [n] [CssBuilder] CSS rules into DOM
+     * Measure the time elapsed to inject [n] [CssBuilder] CSS rules into the DOM
      * @return duration of all injects
      */
     private suspend fun TestScope.addCssBuilders(n: Int): Duration {

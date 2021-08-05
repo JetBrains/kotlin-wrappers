@@ -37,7 +37,7 @@ private class TimedLinkedHashMap<K, V> : LinkedHashMap<K, V>() {
 @OptIn(ExperimentalTime::class)
 class AddStyledElements : BenchmarkBase() {
     /**
-     * Measure time to inject [n] styled components into the DOM
+     * Measure the time elapsed to inject [n] styled components into the DOM
      * @return duration of all injects
      */
     private suspend fun TestScope.addNElements(n: Int): Duration {

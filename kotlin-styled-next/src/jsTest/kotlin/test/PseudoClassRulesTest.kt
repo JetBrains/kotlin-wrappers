@@ -4,7 +4,6 @@ import kotlinx.css.CssBuilder
 import kotlinx.css.color
 import kotlinx.html.ButtonType
 import kotlinx.html.InputType
-import org.w3c.dom.css.get
 import react.RProps
 import react.dom.*
 import react.fc

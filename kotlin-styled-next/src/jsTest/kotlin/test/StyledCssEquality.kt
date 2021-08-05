@@ -10,7 +10,7 @@ import kotlin.test.assertEquals
 import kotlin.test.assertNotEquals
 
 /**
- * Check [StyledCss] and [StyledKeyframes] with the same content check are equal and have same HashCode
+ * Check that [StyledCss] and [StyledKeyframes] with the same content are equal and have the same hash code
  */
 class StyledCssEquality : TestBase() {
     @Test

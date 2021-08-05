@@ -23,7 +23,7 @@ open class TestBase {
     protected val thirdColor = rgb(3, 3, 3)
 
     /**
-     * Assert that injected css for [selector] contains all of the [declarations]
+     * Assert that injected CSS for [selector] contains all of the [declarations]
      */
     protected fun TestScope.assertCssInjected(selector: String, declarations: List<Pair<String, String>>) {
         val rules = getStylesheet().cssRules
