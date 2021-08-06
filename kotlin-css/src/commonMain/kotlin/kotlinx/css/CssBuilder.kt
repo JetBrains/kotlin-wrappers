@@ -133,6 +133,9 @@ interface CssBuilder : StyledElement, RuleContainer {
         }
     }
 
+    /**
+     * Add custom property to CSS [declarations]. If the variable name is in the camelCase, it turns it to snake-case
+     */
     fun setCustomProperty(name: String, value: CssValue) {
         put("--$name", value.value)
     }
@@ -144,8 +147,8 @@ interface CssBuilder : StyledElement, RuleContainer {
     fun max(v1: LinearDimension, v2: LinearDimension): LinearDimension =
         LinearDimension("max($v1, $v2)")
 
-    fun clamp(min: LinearDimension, max: LinearDimension, preferred: LinearDimension): LinearDimension =
-        LinearDimension("clamp($min, $max, $preferred)")
+    fun clamp(min: LinearDimension, preferred: LinearDimension, max: LinearDimension): LinearDimension =
+        LinearDimension("clamp($min, $preferred, $max)")
 
     // Operator overrides
     operator fun RuleSet.unaryPlus()

@@ -118,9 +118,10 @@ class ElementTest : TestBase() {
                 }
             }
         }
-        clearAndInject(first)
-        inject(second)
+        val firstElement = clearAndInject(first)
+        val secondElement = inject(second)
         val rules = getStylesheet().cssRules
+        assertEquals(firstElement.className, secondElement.className)
         assertEquals(1, rules.length)
     }
 
@@ -225,26 +226,6 @@ class ElementTest : TestBase() {
     }
 
     @Test
-    fun mediaRuleTest() = runTest {
-        val query = "only screen and (max-width: 600px)"
-        val styledComponent = fc<RProps> {
-            styledSpan {
-                css {
-                    media(query) {
-                        textTransform = TextTransform.capitalize
-                    }
-                }
-            }
-        }
-        clearAndInject(styledComponent)
-        assertCssInjected(
-            "@media $query", listOf(
-                "text-transform" to "capitalize",
-            )
-        )
-    }
-
-    @Test
     fun animationTest() = runTest {
         val styledComponent = fc<RProps> {
             styledSpan {
@@ -281,5 +262,102 @@ class ElementTest : TestBase() {
                 "transform" to "rotate(360deg)"
             )
         )
+    }
+
+
+    @Test
+    fun setCustomProperty() = runTest {
+        val styledComponent = fc<RProps> {
+            styledDiv {
+                css {
+                    setCustomProperty("first-color", firstColor)
+                }
+                styledSpan {
+                    css {
+                        color = Color("first-color".toCustomProperty())
+                    }
+                }
+            }
+        }
+        val element = clearAndInject(styledComponent)
+        assertEquals(firstColor.toString(), element.getStyle().getPropertyValue("--first-color").trim())
+        assertEquals(firstColor.toString(), element.childAt(0).color())
+    }
+
+    @Test
+    fun min() = runTest {
+        val styledComponent = fc<RProps> {
+            styledDiv {
+                css {
+                    paddingLeft = min(1.px, 2.px)
+                }
+            }
+        }
+        val element = clearAndInject(styledComponent)
+        assertEquals("1px", element.getStyle().paddingLeft)
+    }
+
+    @Test
+    fun max() = runTest {
+        val styledComponent = fc<RProps> {
+            styledDiv {
+                css {
+                    paddingLeft = max(1.px, 2.px)
+                }
+            }
+        }
+        val element = clearAndInject(styledComponent)
+        assertEquals("2px", element.getStyle().paddingLeft)
+    }
+
+    @Test
+    fun clamp() = runTest {
+        val styledComponent = fc<RProps> {
+            styledDiv {
+                css {
+                    paddingTop = clamp(2.px, 3.px, 4.px) // value inside bounds
+                    paddingLeft = clamp(2.px, 1.px, 4.px) // value lesser than lower bound
+                    paddingRight = clamp(2.px, 5.px, 4.px) // value greater than higher bound
+                }
+            }
+        }
+        val element = clearAndInject(styledComponent)
+        assertEquals("3px", element.getStyle().paddingTop)
+        assertEquals("2px", element.getStyle().paddingLeft)
+        assertEquals("4px", element.getStyle().paddingRight)
+    }
+
+    @Test
+    fun root() = runTest {
+        val css = CssBuilder().apply {
+            root {
+                color = firstColor
+            }
+        }
+        injectGlobal(css)
+        val styledComponent = fc<RProps> {
+            div {}
+        }
+        val element = clearAndInject(styledComponent)
+        assertEquals(firstColor.toString(), element.color())
+    }
+
+    @Test
+    fun compareTo() = runTest {
+        val styledComponent = fc<RProps> {
+            styledDiv {
+                css {
+                    color = firstColor
+                    this > "div" {
+                        color = secondColor
+                    }
+                }
+                div {}
+                span { div {} }
+            }
+        }
+        val element = clearAndInject(styledComponent)
+        assertEquals(firstColor.toString(), element.color())
+        assertEquals(secondColor.toString(), element.childAt(0).color())
     }
 }

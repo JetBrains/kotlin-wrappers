@@ -9,9 +9,7 @@ import kotlinx.dom.clear
 import org.w3c.dom.Element
 import org.w3c.dom.HTMLElement
 import org.w3c.dom.HTMLStyleElement
-import org.w3c.dom.css.CSSRuleList
-import org.w3c.dom.css.CSSStyleDeclaration
-import org.w3c.dom.css.CSSStyleSheet
+import org.w3c.dom.css.*
 import react.ComponentType
 import react.RProps
 import react.createElement
@@ -49,8 +47,18 @@ class TestScope : CoroutineScope by testScope {
         return getStylesheet().cssRules
     }
 
-    fun Element.getStyle(): CSSStyleDeclaration {
-        return window.getComputedStyle(this)
+    fun Element.getStyle(pseudoElt: String? = null): CSSStyleDeclaration {
+        return window.getComputedStyle(this, pseudoElt)
+    }
+
+    fun Element.color(pseudoElt: String? = null): String {
+        return getStyle(pseudoElt).color
+    }
+
+    fun CSSRuleList.forEach(block: (rule: CSSRule?) -> Unit) {
+        for (i in 0 until this.length) {
+            block(this[i])
+        }
     }
 
     fun assertChildrenCount(n: Int) {

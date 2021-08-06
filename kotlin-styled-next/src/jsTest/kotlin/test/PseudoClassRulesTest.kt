@@ -256,7 +256,7 @@ class PseudoClassRulesTest : TestBase() {
             }
         }
         val element = clearAndInject(styledComponent)
-        assertEquals(firstColor.toString(), element.getStyle().color)
+        assertEquals(firstColor.toString(), element.color())
 
         // We can't set :hover with plain js (https://stackoverflow.com/questions/4347116/trigger-css-hover-with-js)
         assertCssInjected("${element.className}:hover", listOf("color" to secondColor.toString()))

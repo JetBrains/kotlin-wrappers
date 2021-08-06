@@ -22,10 +22,17 @@ open class TestBase {
     protected val secondColor = rgb(2, 2, 2)
     protected val thirdColor = rgb(3, 3, 3)
 
+    protected val firstClassName = "firstClassName"
+    protected val secondClassName = "secondClassName"
+
     /**
      * Assert that injected CSS for [selector] contains all of the [declarations]
      */
     protected fun TestScope.assertCssInjected(selector: String, declarations: List<Pair<String, String>>) {
+        assertCssInjected(selector, declarations.map { (property, value) -> "$property: $value" })
+    }
+
+    protected fun TestScope.assertCssInjected(selector: String, strings: Iterable<String>) {
         val rules = getStylesheet().cssRules
         val checkedCss = StringBuilder()
         for (i in 0 until rules.length) {
@@ -34,10 +41,9 @@ open class TestBase {
             if (css == null || selector !in css)
                 continue
             css.let {
-                declarations.forEach { (property, value) ->
-                    val declaration = "$property: $value"
-                    assertTrue("Could not find declaration $declaration in $it") {
-                        declaration in css
+                strings.forEach {
+                    assertTrue("Could not find declaration $it in $css") {
+                        it in css
                     }
                 }
             }
@@ -55,6 +61,7 @@ open class TestBase {
         GlobalStyles.scheduledRules.clear()
         GlobalStyles.injectedStyleSheetRules.clear()
         GlobalStyles.injectedKeyframes.clear()
+        GlobalStyles.styledClasses.clear()
     }
 
     protected suspend fun TestScope.clearAndInject(styledComponent: Component): Element {
