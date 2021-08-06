@@ -3,13 +3,13 @@ package test
 import kotlinx.browser.window
 import kotlinx.css.CssBuilder
 import kotlinx.css.color
-import kotlinx.html.ButtonType
-import kotlinx.html.InputType
 import react.RProps
-import react.dom.*
+import react.dom.attrs
 import react.fc
 import runTest
-import styled.*
+import styled.css
+import styled.styledDiv
+import styled.styledInput
 import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertNotEquals

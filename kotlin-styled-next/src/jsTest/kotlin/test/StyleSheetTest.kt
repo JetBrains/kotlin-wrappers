@@ -1,6 +1,7 @@
 package test
 
-import kotlinx.css.*
+import kotlinx.css.CssBuilder
+import kotlinx.css.px
 import react.RProps
 import react.fc
 import runTest

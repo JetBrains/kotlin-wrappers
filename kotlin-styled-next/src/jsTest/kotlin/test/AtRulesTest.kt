@@ -63,7 +63,10 @@ class AtRulesTest : TestBase() {
             }
         }
         clearAndInject(styledComponent)
-        assertCssInjected("@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)", listOf("font-size" to "18px"))
+        assertCssInjected(
+            "@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)",
+            listOf("font-size" to "18px")
+        )
     }
 
     @Test
