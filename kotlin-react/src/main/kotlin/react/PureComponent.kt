@@ -3,7 +3,7 @@
 
 package react
 
-abstract external class PureComponent<P : RProps, S : State>(
+abstract external class PureComponent<P : Props, S : State>(
     props: P = definedExternally,
 ) : Component<P, S> {
 

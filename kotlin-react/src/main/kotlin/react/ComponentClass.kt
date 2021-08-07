@@ -3,9 +3,9 @@ package react
 import kotlin.reflect.KClass
 
 // TODO: Should extend RComponentClassStatics, but has problems with generic params
-external interface ComponentClass<in P : RProps> :
+external interface ComponentClass<in P : Props> :
     ComponentType<P>,
-    RComponentClassStatics<RProps, State, Context<*>?>
+    RComponentClassStatics<Props, State, Context<*>?>
 
 @Deprecated(
     message = "Legacy type alias",
@@ -13,14 +13,14 @@ external interface ComponentClass<in P : RProps> :
 )
 typealias RClass<P> = ComponentClass<P>
 
-val <P : RProps> KClass<out Component<P, *>>.react: ComponentClass<P>
+val <P : Props> KClass<out Component<P, *>>.react: ComponentClass<P>
     get() = js.unsafeCast<ComponentClass<P>>()
 
 @Deprecated("Legacy type alias. Use `.react` instead")
-inline val <P : RProps> KClass<out Component<P, *>>.rClass: ComponentClass<P>
+inline val <P : Props> KClass<out Component<P, *>>.rClass: ComponentClass<P>
     get() = react
 
-external interface RComponentClassStatics<P : RProps, S : State, C : Context<*>?> {
+external interface RComponentClassStatics<P : Props, S : State, C : Context<*>?> {
     var displayName: String?
     var defaultProps: P?
     var contextType: C
@@ -42,6 +42,6 @@ external interface RComponentClassStatics<P : RProps, S : State, C : Context<*>?
  *
  * in your class components
  */
-open class RStatics<P : RProps, S : State, C : Component<P, S>, CTX : Context<*>?>(
+open class RStatics<P : Props, S : State, C : Component<P, S>, CTX : Context<*>?>(
     klazz: KClass<C>,
 ) : RComponentClassStatics<P, S, CTX> by klazz.js.unsafeCast<RComponentClassStatics<P, S, CTX>>()

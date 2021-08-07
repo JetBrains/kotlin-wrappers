@@ -3,6 +3,6 @@
 
 package react
 
-external interface SuspenseProps : RProps
+external interface SuspenseProps : PropsWithChildren
 
 external val Suspense: ComponentClass<SuspenseProps>

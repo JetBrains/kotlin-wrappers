@@ -3,7 +3,6 @@
 
 package ringui
 
-import org.w3c.dom.Node
 import org.w3c.dom.events.InputEvent
 import react.ComponentClass
 import react.dom.WithClassName
@@ -21,7 +20,6 @@ external interface CheckboxProps : WithClassName {
     var indeterminate: Boolean
     var disabled: Boolean
     var onChange: (InputEvent) -> Unit
-    var children: Node
 }
 
 @JsName("default")

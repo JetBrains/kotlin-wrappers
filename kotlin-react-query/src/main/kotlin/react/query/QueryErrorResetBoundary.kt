@@ -13,8 +13,8 @@ external interface QueryErrorResetBoundaryValue {
 
 external val useQueryErrorResetBoundary: () -> QueryErrorResetBoundaryValue
 
-external interface QueryErrorResetBoundaryProps : react.RProps {
-    var children: dynamic
+external interface QueryErrorResetBoundaryProps : react.Props {
+    var  children: dynamic
 }
 
 external val QueryErrorResetBoundary: react.FC<QueryErrorResetBoundaryProps>

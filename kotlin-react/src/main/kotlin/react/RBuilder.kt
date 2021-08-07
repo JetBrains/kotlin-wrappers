@@ -23,7 +23,7 @@ interface RBuilder {
         childList.add(this)
     }
 
-    fun <P : RProps> child(
+    fun <P : Props> child(
         type: ElementType<P>,
         props: P,
         children: List<Any>,
@@ -31,7 +31,7 @@ interface RBuilder {
         child(createElement(type, props, *children.toTypedArray()))
     }
 
-    fun <P : RProps> child(
+    fun <P : Props> child(
         type: ElementType<P>,
         props: P,
         handler: RHandler<P>,
@@ -43,7 +43,7 @@ interface RBuilder {
         child(type, props, children)
     }
 
-    operator fun <P : RProps> ElementType<P>.invoke(
+    operator fun <P : Props> ElementType<P>.invoke(
         handler: RHandler<P>,
     ) {
         child(this, jsObject(), handler)
@@ -70,14 +70,14 @@ interface RBuilder {
         message = "Ambiguous API",
         replaceWith = ReplaceWith("child(this, props, children)"),
     )
-    fun <P : RProps> ComponentClass<P>.node(
+    fun <P : Props> ComponentClass<P>.node(
         props: P,
         children: List<Any> = emptyList(),
     ) {
         child(this, clone(props), children)
     }
 
-    fun <P : RProps> child(
+    fun <P : Props> child(
         klazz: KClass<out Component<P, *>>,
         handler: RHandler<P>,
     ) {
@@ -88,7 +88,7 @@ interface RBuilder {
         message = "Ambiguous API",
         replaceWith = ReplaceWith("child(klazz.react, props, children)"),
     )
-    fun <P : RProps> node(
+    fun <P : Props> node(
         klazz: KClass<out Component<P, *>>,
         props: P,
         children: List<Any> = emptyList(),
@@ -96,7 +96,7 @@ interface RBuilder {
         child(klazz.react, props, children)
     }
 
-    fun RProps.children() {
+    fun PropsWithChildren.children() {
         childList.addAll(Children.toArray(children))
     }
 
@@ -162,7 +162,7 @@ interface RBuilder {
 fun RBuilder(): RBuilder =
     RBuilderImpl()
 
-inline fun <P : RProps, reified C : Component<P, *>> RBuilder.child(
+inline fun <P : Props, reified C : Component<P, *>> RBuilder.child(
     noinline handler: RHandler<P>,
 ) {
     child(C::class, handler)
@@ -172,7 +172,7 @@ inline fun <P : RProps, reified C : Component<P, *>> RBuilder.child(
     message = "Ambiguous API",
     ReplaceWith("child(C::class.rClass, props, children)"),
 )
-inline fun <P : RProps, reified C : Component<P, *>> RBuilder.node(
+inline fun <P : Props, reified C : Component<P, *>> RBuilder.node(
     props: P,
     children: List<Any> = emptyList(),
 ) {
@@ -206,7 +206,7 @@ inline fun <T : RBuilder> buildElement(rBuilder: T, handler: T.() -> Unit): Reac
 inline fun buildElement(handler: Render): ReactElement =
     buildElement(RBuilder(), handler)
 
-interface RElementBuilder<out P : RProps> : RBuilder {
+interface RElementBuilder<out P : Props> : RBuilder {
     val attrs: P
 
     fun attrs(handler: P.() -> Unit) {
@@ -228,10 +228,10 @@ interface RElementBuilder<out P : RProps> : RBuilder {
         }
 }
 
-fun <P : RProps> RElementBuilder(attrs: P): RElementBuilder<P> =
+fun <P : Props> RElementBuilder(attrs: P): RElementBuilder<P> =
     RElementBuilderImpl(attrs)
 
-open class RElementBuilderImpl<out P : RProps>(override val attrs: P) : RElementBuilder<P>, RBuilderImpl()
+open class RElementBuilderImpl<out P : Props>(override val attrs: P) : RElementBuilder<P>, RBuilderImpl()
 
 typealias RHandler<P> = RElementBuilder<P>.() -> Unit
 
@@ -239,7 +239,7 @@ typealias RHandler<P> = RElementBuilder<P>.() -> Unit
  * Append function component [component] as child of current builder
  */
 @Suppress("EXTENSION_SHADOWED_BY_MEMBER")
-fun <P : RProps> RBuilder.child(
+fun <P : Props> RBuilder.child(
     component: FC<P>,
     props: P = jsObject(),
     handler: RHandler<P> = {},

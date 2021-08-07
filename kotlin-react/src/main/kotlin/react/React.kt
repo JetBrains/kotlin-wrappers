@@ -8,7 +8,7 @@ fun Children.forEachElement(children: Any?, handler: (ReactElement) -> Unit) =
         element?.let(handler)
     }
 
-inline fun <P : RProps> cloneElement(
+inline fun <P : Props> cloneElement(
     element: ReactElement,
     vararg child: Any?,
     props: P.() -> Unit,

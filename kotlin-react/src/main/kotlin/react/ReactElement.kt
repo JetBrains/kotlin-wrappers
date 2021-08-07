@@ -4,22 +4,22 @@
 package react
 
 external interface ReactElement : ReactNode {
-    val props: RProps
+    val props: Props
 }
 
-external fun <P : RProps> createElement(
+external fun <P : Props> createElement(
     type: String,
     props: P = definedExternally,
     vararg child: Any?,
 ): ReactElement
 
-external fun <P : RProps> createElement(
+external fun <P : Props> createElement(
     type: ElementType<P>,
     props: P = definedExternally,
     vararg child: Any?,
 ): ReactElement
 
-external fun <P : RProps> cloneElement(
+external fun <P : Props> cloneElement(
     element: ReactElement,
     props: P = definedExternally,
     vararg child: Any?,

@@ -5,11 +5,11 @@ package react
 
 import kotlin.js.Promise
 
-external interface ComponentModule<in P : RProps> {
+external interface ComponentModule<in P : Props> {
     val default: ComponentType<P>
 }
 
 // Lazy (16.6+)
-external fun <P : RProps> lazy(
+external fun <P : Props> lazy(
     factory: () -> Promise<ComponentModule<P>>,
 ): ComponentType<P>
