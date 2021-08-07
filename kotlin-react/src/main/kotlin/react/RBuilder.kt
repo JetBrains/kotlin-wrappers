@@ -24,7 +24,7 @@ interface RBuilder {
     }
 
     fun <P : RProps> child(
-        type: ComponentType<P>,
+        type: ElementType<P>,
         props: P,
         children: List<Any>,
     ) {
@@ -32,7 +32,7 @@ interface RBuilder {
     }
 
     fun <P : RProps> child(
-        type: ComponentType<P>,
+        type: ElementType<P>,
         props: P,
         handler: RHandler<P>,
     ) {
@@ -43,7 +43,7 @@ interface RBuilder {
         child(type, props, children)
     }
 
-    operator fun <P : RProps> ComponentType<P>.invoke(
+    operator fun <P : RProps> ElementType<P>.invoke(
         handler: RHandler<P>,
     ) {
         child(this, jsObject(), handler)
