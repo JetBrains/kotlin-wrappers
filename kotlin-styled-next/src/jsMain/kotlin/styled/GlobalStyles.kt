@@ -3,8 +3,10 @@ package styled
 import kotlinx.browser.window
 import kotlinx.css.CssBuilder
 import kotlinx.css.properties.KeyframesBuilder
+import kotlinx.dom.appendText
 import org.w3c.dom.HTMLStyleElement
 import org.w3c.dom.css.CSSStyleSheet
+import react.StateInstance
 import kotlin.collections.*
 
 internal typealias InjectedCssHolder = LinkedHashMap<StyledCss, String>
@@ -17,11 +19,19 @@ fun injectGlobal(css: CssBuilder) {
     GlobalStyles.injectScheduled()
 }
 
+internal val isDevelopment by lazy {
+    js("process.env.NODE_ENV !== 'production'") as Boolean
+}
+
 object GlobalStyles {
+    internal var isTest = false
     internal const val styleId = "ksc-global-styles"
-    private val sheet by lazy {
+    private val style by lazy {
         val style = window.document.head!!.appendChild(window.document.createElement("style")) as HTMLStyleElement
         style.setAttribute("id", styleId)
+        style
+    }
+    private val sheet by lazy {
         style.sheet as CSSStyleSheet
     }
 
@@ -54,6 +64,11 @@ object GlobalStyles {
      */
     fun injectScheduled() {
         var maxIdx = sheet.cssRules.length
+        if (isDevelopment && !isTest) {
+            style.appendText(scheduledRules.joinToString("\n"))
+            scheduledRules.clear()
+            return
+        }
         for (rule in scheduledRules.filter { it.isNotEmpty() }) {
             try {
                 sheet.insertRule(rule, maxIdx)
@@ -102,14 +117,44 @@ object GlobalStyles {
     }
 
     /**
-     * @return list of CSS class names, declared in [css].
+     * @return pair of generated classname and list of CSS class names, declared in [css].
      * If the CSS code for the [css] was not injected into the DOM previously, it is injected after function call.
      */
-
-    fun getInjectedClassNames(css: CssBuilder): List<ClassName> {
+    fun getInjectedClassNames(css: CssBuilder): Pair<ClassName, List<ClassName>> {
         val styledCss = css.toStyledCss()
         val selfClassName = getInjectedClassName(styledCss)
         val externalClassNames = styledCss.classes
-        return listOf(selfClassName) + externalClassNames
+        return Pair(selfClassName, externalClassNames)
+    }
+
+    /**
+     * Show message if user injects too many Css for one component
+     */
+    internal fun checkGeneratedCss(state: StateInstance<HashSet<String>?>, className: ClassName, type: String) {
+        val (classes, setClasses) = state
+        // Message was already shown
+        if (classes == null) return
+
+        val maxStylesForElement = 50
+        val size = classes.size
+        classes.add(className)
+        if (classes.size > maxStylesForElement) {
+            console.warn(
+                "Over $maxStylesForElement were generated for $type object.\n" +
+                        "Consider using inline styles for frequently changed styles." +
+                        "Example:" +
+                        "styledDiv {\n" +
+                        "  inlineStyles {\n" +
+                        "  width = 100.px\n" +
+                        "  backgroundColor = Color.blue\n" +
+                        "  }\n" +
+                        "}\n"
+            )
+            setClasses(null)
+        } else {
+            if (size != classes.size) {
+                setClasses(classes)
+            }
+        }
     }
 }
