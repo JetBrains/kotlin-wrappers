@@ -14,7 +14,7 @@ external fun <P : RProps> createElement(
 ): ReactElement
 
 external fun <P : RProps> createElement(
-    type: ComponentType<P>,
+    type: ElementType<P>,
     props: P = definedExternally,
     vararg child: Any?,
 ): ReactElement
