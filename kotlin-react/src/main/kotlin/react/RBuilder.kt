@@ -9,9 +9,9 @@ typealias Render = RBuilder.() -> Unit
 
 @ReactDsl
 interface RBuilder {
-    val childList: MutableList<Any>
+    val childList: MutableList<ReactNode>
 
-    fun <T : ReactNode> child(element: T) {
+    fun child(element: ReactNode) {
         childList.add(element)
     }
 
@@ -20,7 +20,7 @@ interface RBuilder {
     }
 
     operator fun String.unaryPlus() {
-        childList.add(this)
+        childList.add(ReactNode(this))
     }
 
     fun <P : Props> child(
@@ -180,7 +180,7 @@ inline fun <P : Props, reified C : Component<P, *>> RBuilder.node(
 }
 
 open class RBuilderImpl : RBuilder {
-    override val childList = mutableListOf<Any>()
+    override val childList = mutableListOf<ReactNode>()
 }
 
 open class RBuilderMultiple : RBuilderImpl()

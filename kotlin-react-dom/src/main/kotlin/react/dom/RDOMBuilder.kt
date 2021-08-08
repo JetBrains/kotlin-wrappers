@@ -88,11 +88,11 @@ open class RDOMBuilderImpl<out T : Tag>(factory: (TagConsumer<Unit>) -> T) : RDO
         }
 
         override fun onTagContent(content: CharSequence) {
-            childList.add(content)
+            childList.add(ReactNode(content.toString()))
         }
 
         override fun onTagContentEntity(entity: Entities) {
-            childList.add(entity.text)
+            childList.add(ReactNode(entity.text))
         }
 
         override fun onTagContentUnsafe(block: Unsafe.() -> Unit) {
