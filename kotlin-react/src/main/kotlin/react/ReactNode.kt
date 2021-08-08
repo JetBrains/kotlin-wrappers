@@ -12,6 +12,9 @@ fun ReactNode.asElementOrNull(): ReactElement? = when {
     else -> null
 }
 
+fun ReactNode(string: String): ReactNode =
+    string.unsafeCast<ReactNode>()
+
 @Deprecated(
     message = "Legacy type alias",
     replaceWith = ReplaceWith("ReactNode", "react.ReactNode"),
