@@ -1,3 +1,5 @@
+@file:Suppress("NOTHING_TO_INLINE")
+
 package react
 
 import kotlinext.js.asJsObject
