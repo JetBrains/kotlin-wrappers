@@ -222,7 +222,7 @@ object Styled {
         return styledProps.unsafeCast<P>()
     }
 
-    fun createElement(type: String, css: CssBuilder, props: WithClassName, children: List<Any>): ReactElement {
+    fun createElement(type: String, css: CssBuilder, props: WithClassName, children: List<ReactNode>): ReactElement {
         val wrappedType = wrap(type)
         val styledProps = buildStyledProps(css, props)
         return createElement(wrappedType, styledProps, *children.toTypedArray())
@@ -232,7 +232,7 @@ object Styled {
         type: ComponentType<P>,
         css: CssBuilder,
         props: P,
-        children: List<Any>,
+        children: List<ReactNode>,
     ): ReactElement {
         val wrappedType = wrap(type)
         val styledProps = buildStyledProps(css, props)

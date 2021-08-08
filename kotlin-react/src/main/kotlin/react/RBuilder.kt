@@ -26,7 +26,7 @@ interface RBuilder {
     fun <P : Props> child(
         type: ElementType<P>,
         props: P,
-        children: List<Any>,
+        children: List<ReactNode>,
     ) {
         child(createElement(type, props, *children.toTypedArray()))
     }
@@ -72,7 +72,7 @@ interface RBuilder {
     )
     fun <P : Props> ComponentClass<P>.node(
         props: P,
-        children: List<Any> = emptyList(),
+        children: List<ReactNode> = emptyList(),
     ) {
         child(this, clone(props), children)
     }
@@ -91,7 +91,7 @@ interface RBuilder {
     fun <P : Props> node(
         klazz: KClass<out Component<P, *>>,
         props: P,
-        children: List<Any> = emptyList(),
+        children: List<ReactNode> = emptyList(),
     ) {
         child(klazz.react, props, children)
     }
@@ -174,7 +174,7 @@ inline fun <P : Props, reified C : Component<P, *>> RBuilder.child(
 )
 inline fun <P : Props, reified C : Component<P, *>> RBuilder.node(
     props: P,
-    children: List<Any> = emptyList(),
+    children: List<ReactNode> = emptyList(),
 ) {
     child(C::class.react, props, children)
 }

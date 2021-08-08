@@ -139,7 +139,7 @@ object Styled {
             customStyled(type)
         }
 
-    fun createElement(type: Any, css: CssBuilder, props: WithClassName, children: List<Any>): ReactElement {
+    fun createElement(type: Any, css: CssBuilder, props: WithClassName, children: List<ReactNode>): ReactElement {
         val wrappedType = wrap(type)
         val styledProps = props.unsafeCast<StyledProps>()
         styledProps.css = css
