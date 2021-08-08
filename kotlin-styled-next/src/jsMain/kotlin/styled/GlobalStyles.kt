@@ -117,7 +117,7 @@ object GlobalStyles {
     }
 
     /**
-     * @return pair of generated classname and list of CSS class names, declared in [css].
+     * @return pair of generated class name and a list of CSS class names, declared in [css].
      * If the CSS code for the [css] was not injected into the DOM previously, it is injected after function call.
      */
     fun getInjectedClassNames(css: CssBuilder): Pair<ClassName, List<ClassName>> {
@@ -128,7 +128,7 @@ object GlobalStyles {
     }
 
     /**
-     * Show message if user injects too many Css for one component
+     * Show a warning when too many css blocks are created for one component
      */
     internal fun checkGeneratedCss(state: StateInstance<HashSet<String>?>, className: ClassName, type: String) {
         val (classes, setClasses) = state
