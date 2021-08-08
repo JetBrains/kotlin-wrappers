@@ -25,6 +25,7 @@ external fun <P : Props> cloneElement(
     vararg child: ReactNode?,
 ): ReactElement
 
+@Deprecated(message = "Unsafe API")
 external fun cloneElement(
     element: dynamic,
     props: dynamic = definedExternally,

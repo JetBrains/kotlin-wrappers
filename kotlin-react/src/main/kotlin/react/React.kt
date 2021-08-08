@@ -14,6 +14,10 @@ inline fun <P : Props> cloneElement(
     props: P.() -> Unit,
 ): ReactElement = cloneElement(element, jsObject(props), *child)
 
+@Deprecated(
+    message = "Unsafe API",
+    replaceWith = ReplaceWith("cloneElement(element, props, child)")
+)
 fun clone(element: dynamic, props: dynamic, child: Any? = null): ReactElement =
     cloneElement(element, props, *Children.toArray(child))
 
