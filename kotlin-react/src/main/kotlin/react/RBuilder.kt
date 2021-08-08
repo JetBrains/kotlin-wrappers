@@ -16,11 +16,11 @@ interface RBuilder {
     }
 
     operator fun ReactNode.unaryPlus() {
-        childList.add(this)
+        child(this)
     }
 
     operator fun String.unaryPlus() {
-        childList.add(ReactNode(this))
+        child(ReactNode(this))
     }
 
     fun <P : Props> child(
