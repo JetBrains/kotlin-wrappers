@@ -12,7 +12,7 @@ fun ReactNode.asElementOrNull(): ReactElement? = when {
     else -> null
 }
 
-fun ReactNode(string: String): ReactNode =
+inline fun ReactNode(string: String): ReactNode =
     string.unsafeCast<ReactNode>()
 
 @Deprecated(
