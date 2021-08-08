@@ -3,13 +3,13 @@
 
 package react
 
-external interface ProviderProps<T> : RProps {
+external interface ProviderProps<T> : PropsWithChildren {
     var value: T
 }
 
 external interface Provider<T> : ComponentClass<ProviderProps<T>>
 
-external interface ConsumerProps<T> : RProps {
+external interface ConsumerProps<T> : Props {
     var children: (T) -> Any
 }
 

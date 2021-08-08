@@ -12,7 +12,7 @@ typealias FunctionalComponent<P> = FunctionComponent<P>
     message = "Legacy type alias",
     replaceWith = ReplaceWith("fc(displayName, func)", "react.fc")
 )
-inline fun <P : RProps> functionalComponent(
+inline fun <P : Props> functionalComponent(
     displayName: String? = null,
     noinline func: RBuilder.(props: P) -> Unit,
 ): FC<P> =

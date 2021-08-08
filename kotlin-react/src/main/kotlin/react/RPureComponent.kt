@@ -2,7 +2,7 @@ package react
 
 import kotlinext.js.jsObject
 
-abstract class RPureComponent<P : RProps, S : State> : PureComponent<P, S> {
+abstract class RPureComponent<P : Props, S : State> : PureComponent<P, S> {
     constructor() : super() {
         state = jsObject { init() }
     }
@@ -15,10 +15,6 @@ abstract class RPureComponent<P : RProps, S : State> : PureComponent<P, S> {
 
     // if you use this method, don't forget to pass props to the constructor first
     open fun S.init(props: P) {}
-
-    fun RBuilder.children() {
-        props.children()
-    }
 
     abstract fun RBuilder.render()
 

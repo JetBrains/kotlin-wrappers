@@ -3,7 +3,7 @@
 
 package react
 
-external interface ProfilerProps : RProps {
+external interface ProfilerProps : PropsWithChildren {
     var id: String
     var onRender: (
         id: String,

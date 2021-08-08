@@ -2,7 +2,7 @@
 
 package react
 
-external interface FunctionComponent<in P : RProps> :
+external interface FunctionComponent<in P : Props> :
     ComponentType<P> {
     var displayName: String?
 }
@@ -13,7 +13,7 @@ typealias FC<P> = FunctionComponent<P>
 /**
  * Get function component from [func]
  */
-fun <P : RProps> fc(
+fun <P : Props> fc(
     func: RBuilder.(props: P) -> Unit,
 ): FC<P> {
     val component = { props: P ->
@@ -27,7 +27,7 @@ fun <P : RProps> fc(
 /**
  * Get function component from [func] with [displayName]
  */
-fun <P : RProps> fc(
+fun <P : Props> fc(
     displayName: String,
     func: RBuilder.(props: P) -> Unit,
 ): FC<P> =
@@ -36,7 +36,7 @@ fun <P : RProps> fc(
 /**
  * Get function component from [func]
  */
-inline fun <P : RProps> functionComponent(
+inline fun <P : Props> functionComponent(
     noinline func: RBuilder.(props: P) -> Unit,
 ): FC<P> =
     fc(func)
@@ -44,7 +44,7 @@ inline fun <P : RProps> functionComponent(
 /**
  * Get function component from [func] with [displayName]
  */
-inline fun <P : RProps> functionComponent(
+inline fun <P : Props> functionComponent(
     displayName: String,
     noinline func: RBuilder.(props: P) -> Unit,
 ): FC<P> =

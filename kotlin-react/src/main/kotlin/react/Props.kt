@@ -1,18 +1,26 @@
 package react
 
-external interface RProps
+external interface Props
 
-val RProps.children: Any
-    get() = asDynamic().children
+external interface PropsWithChildren : Props {
+    var children: Array<out ReactNode>?
+}
 
-var RProps.key: Key
+// TODO: deprecate it
+//@Deprecated(
+//    message = "Legacy type alias",
+//    replaceWith = ReplaceWith("PropsWithChildren", "react.PropsWithChildren"),
+//)
+typealias RProps = PropsWithChildren
+
+var Props.key: Key
     @Deprecated(message = "Write-only property", level = DeprecationLevel.HIDDEN)
     get() = error("")
     set(value) {
         asDynamic().key = value
     }
 
-var RProps.ref: Ref<*>
+var Props.ref: Ref<*>
     @Deprecated(message = "Write-only property", level = DeprecationLevel.HIDDEN)
     get() = error("")
     set(value) {

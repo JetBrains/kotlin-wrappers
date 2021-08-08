@@ -2,9 +2,9 @@
 
 package react
 
-external interface IntrinsicType<in P : RProps> : ElementType<P>
+external interface IntrinsicType<in P : Props> : ElementType<P>
 
-inline fun <P : RProps> IntrinsicType(
+inline fun <P : Props> IntrinsicType(
     tagName: String,
 ): IntrinsicType<P> =
     tagName.unsafeCast<IntrinsicType<P>>()
