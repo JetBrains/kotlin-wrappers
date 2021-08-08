@@ -109,8 +109,14 @@ external interface StyledProps : WithClassName {
 fun customStyled(type: String): ComponentType<StyledProps> {
     val fc = forwardRef<StyledProps> { props, rRef ->
         val css = props.css
+
+        val generatedClasses = if (isDevelopment) useState<HashSet<String>?>(hashSetOf()) else null
         val classNames = useMemo(css) {
-            GlobalStyles.getInjectedClassNames(css).joinToString(" ").also {
+            val (selfClassName, classes) = GlobalStyles.getInjectedClassNames(css)
+            if (generatedClasses != null) {
+                GlobalStyles.checkGeneratedCss(generatedClasses, selfClassName, type)
+            }
+            (classes + selfClassName).joinToString(" ").also {
                 GlobalStyles.injectScheduled()
             }
         }

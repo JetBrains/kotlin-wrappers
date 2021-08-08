@@ -29,6 +29,10 @@ private val testScope = MainScope()
 class TestScope : CoroutineScope by testScope {
     val root = "div".asHtmlElement()
 
+    init {
+        GlobalStyles.isTest = true
+    }
+
     fun injectBuilder(builder: CssBuilder) {
         injectGlobal(builder)
     }
