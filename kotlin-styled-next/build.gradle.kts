@@ -3,10 +3,6 @@ plugins {
     `publish-conventions`
 }
 
-repositories {
-    mavenCentral()
-}
-
 kotlin {
     js(IR) {
         browser {
