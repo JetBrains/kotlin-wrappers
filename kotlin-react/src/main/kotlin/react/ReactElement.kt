@@ -10,25 +10,26 @@ external interface ReactElement : ReactNode {
 external fun <P : Props> createElement(
     type: String,
     props: P = definedExternally,
-    vararg child: Any?,
+    vararg child: ReactNode?,
 ): ReactElement
 
 external fun <P : Props> createElement(
     type: ElementType<P>,
     props: P = definedExternally,
-    vararg child: Any?,
+    vararg child: ReactNode?,
 ): ReactElement
 
 external fun <P : Props> cloneElement(
     element: ReactElement,
     props: P = definedExternally,
-    vararg child: Any?,
+    vararg child: ReactNode?,
 ): ReactElement
 
+@Deprecated(message = "Unsafe API")
 external fun cloneElement(
     element: dynamic,
     props: dynamic = definedExternally,
-    vararg child: Any?,
+    vararg child: ReactNode?,
 ): ReactElement
 
 external fun isValidElement(
