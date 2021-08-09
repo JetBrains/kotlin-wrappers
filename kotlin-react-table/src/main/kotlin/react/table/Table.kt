@@ -9,7 +9,7 @@ import kotlinext.js.ReadonlyArray
 import kotlinext.js.Record
 import org.w3c.dom.events.Event
 import react.Key
-import react.RProps
+import react.Props
 import react.ReactNode
 import react.table.RenderType.Cell
 import react.table.RenderType.Header
@@ -78,7 +78,7 @@ external interface CellMeta<D : Any, V> : Meta<D> {
     val cell: TableCell<D, V>
 }
 
-external interface TableCommonProps : RProps {
+external interface TableCommonProps : Props {
     // CSS properties
     var style: dynamic
     var className: String?
@@ -156,13 +156,13 @@ external interface UseTableOptions<D : Any> {
 }
 
 external interface ColumnGroup<D : Any> : Column<D, Any>, ColumnGroupInterface<D> {
-    val headerProps: RProps
+    val headerProps: Props
     fun render(type: String): ReactNode
 }
 
 // ColumnWithLooseAccessor | ColumnWithStrictAccessor
 external interface SimpleColumn<D : Any, V> : Column<D, V>, ColumnInterfaceBasedOnValue<D, V> {
-    var headerProps: RProps
+    var headerProps: Props
         @Deprecated(message = "Write-only property", level = DeprecationLevel.HIDDEN)
         get
 
@@ -205,7 +205,7 @@ external interface HeaderProps<D : Any, V> : TableInstance<D> {
     val column: ColumnInstance<D, *>
 }
 
-external interface CellProps<D : Any, V> : TableInstance<D>, RProps {
+external interface CellProps<D : Any, V> : TableInstance<D>, Props {
     val column: ColumnInstance<D, V>
     val row: Row<D>
     val cell: Cell<D, V>
@@ -245,7 +245,7 @@ external interface UseTableColumnProps<D : Any> {
     val id: IdType<D>
     val columns: ReadonlyArray<ColumnInstance<D, *>>?
     val isVisible: Boolean
-    fun render(type: String, props: RProps = definedExternally): ReactNode
+    fun render(type: String, props: Props = definedExternally): ReactNode
     val totalLeft: Int
     val totalWidth: Int
     fun toggleHidden(value: Boolean = definedExternally)
