@@ -1,3 +1,5 @@
+@file:Suppress("NOTHING_TO_INLINE")
+
 package react
 
 import kotlinext.js.asJsObject
@@ -11,6 +13,9 @@ fun ReactNode.asElementOrNull(): ReactElement? = when {
     asJsObject().hasOwnProperty("\$\$typeof") -> unsafeCast<ReactElement>()
     else -> null
 }
+
+inline fun ReactNode(string: String): ReactNode =
+    string.unsafeCast<ReactNode>()
 
 @Deprecated(
     message = "Legacy type alias",
