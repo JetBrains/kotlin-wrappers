@@ -40,21 +40,21 @@ external interface HashRouterProps : RouterProps {
     var hashType: String
 }
 
-external interface RouteProps<T : RProps> : RProps {
+external interface RouteProps<T : Props> : Props {
     var path: Array<out String>
     var exact: Boolean
     var strict: Boolean
-    var component: ComponentType<RProps>
+    var component: ComponentType<*>
     var render: (props: RouteResultProps<T>) -> ReactElement?
 }
 
-external interface LinkProps : RProps {
+external interface LinkProps : PropsWithChildren {
     var to: String
     var replace: Boolean
     var className: String?
 }
 
-external interface NavLinkProps<T : RProps> : LinkProps {
+external interface NavLinkProps<T : Props> : LinkProps {
     var activeClassName: String
     var exact: Boolean
     var strict: Boolean
@@ -62,7 +62,7 @@ external interface NavLinkProps<T : RProps> : LinkProps {
     var location: Location
 }
 
-external interface RouteResultProps<T : RProps> : RProps {
+external interface RouteResultProps<T : Props> : Props {
     var history: History
     var location: Location
     var match: Match<T>
@@ -86,14 +86,14 @@ external interface Location {
     var search: String
 }
 
-external interface Match<T : RProps> {
+external interface Match<T : Props> {
     var isExact: Boolean
     var url: String
     var path: String
     var params: T
 }
 
-external interface RedirectProps : RProps {
+external interface RedirectProps : Props {
     var from: String?
     var to: String
     var push: Boolean
