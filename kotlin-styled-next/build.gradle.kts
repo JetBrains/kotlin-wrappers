@@ -44,11 +44,6 @@ kotlin {
     }
 }
 
-
-tasks.withType<org.jetbrains.kotlin.gradle.dsl.KotlinCompile<*>>().configureEach {
-    kotlinOptions.freeCompilerArgs += "-Xopt-in=kotlin.RequiresOptIn"
-}
-
 val printBenchmarkResults by tasks.registering {
     doLast {
         // implicit dependency to benchmark classes names
