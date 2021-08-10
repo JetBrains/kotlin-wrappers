@@ -3,6 +3,7 @@ package benchmark
 import StyledElementsFactory.getStyledComponent
 import TestScope
 import styled.GlobalStyles
+import styled.InjectedCssInformation
 import styled.StyledCss
 import waitForAnimationFrame
 import kotlin.test.Test
@@ -42,7 +43,7 @@ class AddStyledElements : BenchmarkBase() {
      */
     private suspend fun TestScope.addNElements(n: Int): Duration {
         val component = getStyledComponent(n)
-        val cssHolder = TimedLinkedHashMap<StyledCss, String>()
+        val cssHolder = TimedLinkedHashMap<StyledCss, InjectedCssInformation>()
         GlobalStyles.styledClasses = cssHolder
         val duration = measureTime {
             renderComponent(component)
@@ -60,6 +61,7 @@ class AddStyledElements : BenchmarkBase() {
         assertCssNotEmpty()
 
         clear()
+        waitForAnimationFrame()
         return duration
     }
 

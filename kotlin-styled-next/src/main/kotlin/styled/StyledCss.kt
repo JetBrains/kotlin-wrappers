@@ -44,12 +44,13 @@ internal open class StyledCss(
     }
 
     private fun withMedia(selector: Selector) = selector.trim().startsWith("@media")
+    private fun withImport(selector: Selector) = selector.trim().startsWith("@import")
     private fun withContainer(selector: Selector) = selector.trim().startsWith("@container")
     private fun withAmpersand(selector: Selector) = selector.contains("&")
     private fun withFontFace(selector: Selector) = selector.trim().startsWith("@font-face")
     private fun withSupports(selector: Selector) = selector.trim().startsWith("@supports")
     private fun withCustomHandle(selector: Selector) =
-        withMedia(selector) || withContainer(selector) || withSupports(selector) || withAmpersand(selector) || withFontFace(selector)
+        withMedia(selector) || withContainer(selector) || withSupports(selector) || withAmpersand(selector) || withFontFace(selector) || withImport(selector)
 
     private var memoizedHashCode: Int? = null
     override fun hashCode(): Int {
@@ -105,6 +106,8 @@ internal open class StyledCss(
                         append("$indent}\n")
                     }
                 )
+            } else if (withImport(resolvedSelector)) {
+                result.add("$selector;")
             } else {
                 result.addAll(css.getCssRules(resolvedSelector))
             }

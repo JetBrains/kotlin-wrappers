@@ -12,7 +12,7 @@ import styled.styledDiv
 import kotlin.test.Test
 import kotlin.test.assertEquals
 
-class ElementTest : TestBase() {
+class FunctionsTest : TestBase() {
     @Test
     fun min() = runTest {
         val styledComponent = fc<RProps> {

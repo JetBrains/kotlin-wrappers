@@ -2,6 +2,7 @@ package benchmark
 
 import StyledElementsFactory.getCssBuilders
 import styled.GlobalStyles
+import styled.InjectedCssInformation
 import styled.toStyledCss
 import waitFlowCoroutine
 import waitForAnimationFrame
@@ -20,7 +21,7 @@ class DataTypeOperations : BenchmarkBase() {
     private suspend fun putNElements(n: Int): Duration {
         val styledCss = getCssBuilders(n).map { it.toStyledCss() }
         return measureTime {
-            styledCss.forEach { GlobalStyles.styledClasses[it] = "" }
+            styledCss.forEach { GlobalStyles.styledClasses[it] = InjectedCssInformation("", 0) }
             waitFlowCoroutine()
         }
     }
@@ -35,7 +36,7 @@ class DataTypeOperations : BenchmarkBase() {
 
         val collisionsN = (n * collisionProb).toInt()
         val builders = getCssBuilders(collisionsN).map { it.toStyledCss() }.toMutableList()
-        builders.forEach { GlobalStyles.styledClasses[it] = "" }
+        builders.forEach { GlobalStyles.styledClasses[it] = InjectedCssInformation("", 0) }
 
         val nonCollisionsN = (n * (1 - collisionProb)).toInt()
         builders.addAll(getCssBuilders(nonCollisionsN).map { it.toStyledCss() })

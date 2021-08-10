@@ -6,7 +6,13 @@ import kotlin.properties.ReadOnlyProperty
 import kotlin.reflect.KProperty
 import kotlin.reflect.KProperty0
 
-open class StyleSheet(var name: String, val isStatic: Boolean = false) {
+class Import(private val url: String, private val types: List<String> = listOf()) {
+    fun build(): String {
+        return "@import $url" + types.joinToString(prefix = " ") + ";"
+    }
+}
+
+open class StyleSheet(var name: String, val isStatic: Boolean = false, private val imports: Iterable<Import> = emptyList()) {
     private val holders: MutableList<CssHolder> = mutableListOf()
 
     constructor(name: String, parent: StyleSheet, isStatic: Boolean = false) : this(parent.name + "-" + name, isStatic)
@@ -28,6 +34,7 @@ open class StyleSheet(var name: String, val isStatic: Boolean = false) {
         holders.forEach {
             it.scheduleToInject()
         }
+        GlobalStyles.scheduleImports(imports)
     }
 }
 

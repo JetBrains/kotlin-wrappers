@@ -1,6 +1,5 @@
 package test
 
-import Component
 import TestScope
 import kotlinx.css.*
 import kotlinx.css.properties.KeyframesBuilder
@@ -9,10 +8,10 @@ import kotlinx.css.properties.rotate
 import kotlinx.css.properties.transform
 import org.w3c.dom.Element
 import org.w3c.dom.HTMLInputElement
+import org.w3c.dom.css.CSSRuleList
 import org.w3c.dom.get
 import runTest
 import styled.GlobalStyles
-import waitForAnimationFrame
 import kotlin.test.BeforeTest
 import kotlin.test.assertNotNull
 import kotlin.test.assertTrue
@@ -24,6 +23,7 @@ open class TestBase {
 
     protected val firstClassName = "firstClassName"
     protected val secondClassName = "secondClassName"
+    internal val sheet = GlobalStyles.sheet
 
     /**
      * Assert that injected CSS for [selector] contains all of the [declarations]
@@ -32,8 +32,7 @@ open class TestBase {
         assertCssInjected(selector, declarations.map { (property, value) -> "$property: $value" })
     }
 
-    protected fun TestScope.assertCssInjected(selector: String, strings: Iterable<String>) {
-        val rules = getStylesheet().cssRules
+    protected fun TestScope.assertCssInjected(selector: String, strings: Iterable<String>, rules: CSSRuleList = getRules()) {
         val checkedCss = StringBuilder()
         for (i in 0 until rules.length) {
             val css = rules.item(i)?.cssText
@@ -58,26 +57,15 @@ open class TestBase {
         for (i in rules.length - 1 downTo 0) {
             getStylesheet().deleteRule(i)
         }
-        GlobalStyles.scheduledRules.clear()
+        clear()
+//        if (sheet is CSSOMSheet) {
+//            sheet.groups.clear()
+        sheet.scheduledRules.clear()
+        sheet.scheduledImportRules.clear()
+//        }
         GlobalStyles.injectedStyleSheetRules.clear()
         GlobalStyles.injectedKeyframes.clear()
         GlobalStyles.styledClasses.clear()
-    }
-
-    protected suspend fun TestScope.clearAndInject(styledComponent: Component): Element {
-        clear()
-        return inject(styledComponent)
-    }
-
-    /**
-     * Inject [styledComponent] into the DOM and return corresponding [Element]
-     */
-    protected suspend fun TestScope.inject(styledComponent: Component): Element {
-        renderComponent(styledComponent)
-        waitForAnimationFrame()
-        val styledElement = root.children[0]
-        assertNotNull(styledElement)
-        return styledElement
     }
 
     protected fun KeyframesBuilder.addRotation() {
