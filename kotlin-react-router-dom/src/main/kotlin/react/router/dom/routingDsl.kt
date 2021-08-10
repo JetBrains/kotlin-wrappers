@@ -53,7 +53,7 @@ fun RBuilder.switch(
 
 fun RBuilder.route(
     vararg path: String,
-    component: ComponentType<RProps>,
+    component: ComponentType<*>,
     exact: Boolean = false,
     strict: Boolean = false,
 ) {
