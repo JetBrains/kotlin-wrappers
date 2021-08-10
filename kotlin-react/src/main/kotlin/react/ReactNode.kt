@@ -6,6 +6,9 @@ import kotlinext.js.asJsObject
 
 external interface ReactNode
 
+inline fun ReactNode(string: String): ReactNode =
+    string.unsafeCast<ReactNode>()
+
 fun ReactNode.asStringOrNull(): String? =
     asDynamic() as? String
 
@@ -13,9 +16,6 @@ fun ReactNode.asElementOrNull(): ReactElement? = when {
     asJsObject().hasOwnProperty("\$\$typeof") -> unsafeCast<ReactElement>()
     else -> null
 }
-
-inline fun ReactNode(string: String): ReactNode =
-    string.unsafeCast<ReactNode>()
 
 @Deprecated(
     message = "Legacy type alias",
