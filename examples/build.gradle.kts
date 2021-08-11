@@ -1,5 +1,6 @@
 plugins {
     kotlin("js")
+    `kotlin-conventions`
 }
 
 dependencies {
