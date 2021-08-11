@@ -26,16 +26,15 @@ interface RBuilder {
     fun <P : Props> child(
         type: ElementType<P>,
         props: P,
-        children: List<ReactNode>,
     ) {
-        child(createElement(type, props, *children.toTypedArray()))
+        child(createElement(type, props))
     }
 
     fun <P : Props> child(
         type: ElementType<P>,
-        props: P,
         handler: RHandler<P>,
     ) {
+        val props = jsObject<P>()
         val children = with(RElementBuilder(props)) {
             handler()
             childList
@@ -43,27 +42,36 @@ interface RBuilder {
         child(type, props, children)
     }
 
+    private fun <P : Props> child(
+        type: ElementType<P>,
+        props: P,
+        children: List<ReactNode>,
+    ) {
+        child(createElement(type, props, *children.toTypedArray()))
+    }
+
     operator fun <P : Props> ElementType<P>.invoke(
         handler: RHandler<P>,
     ) {
-        child(this, jsObject(), handler)
+        child(this, handler)
     }
 
     operator fun <T> Provider<T>.invoke(
         value: T,
         handler: RHandler<ProviderProps<T>>,
     ) {
-        child(this, jsObject { this.value = value }, handler)
+        child(this, handler = {
+            attrs.value = value
+            handler()
+        })
     }
 
     operator fun <T> Consumer<T>.invoke(
         handler: RBuilder.(T) -> Unit,
     ) {
-        child(this, jsObject<ConsumerProps<T>> {
-            this.children = { value ->
-                buildElements { handler(value) }
-            }
-        }) {}
+        child(this, props = jsObject {
+            children = { value -> buildElements { handler(value) } }
+        })
     }
 
     @Deprecated(
@@ -176,7 +184,7 @@ inline fun <P : Props, reified C : Component<P, *>> RBuilder.node(
     props: P,
     children: List<ReactNode> = emptyList(),
 ) {
-    child(C::class.react, props, children)
+    child(createElement(C::class.react, props, *children.toTypedArray()))
 }
 
 open class RBuilderImpl : RBuilder {
@@ -234,15 +242,3 @@ fun <P : Props> RElementBuilder(attrs: P): RElementBuilder<P> =
 open class RElementBuilderImpl<out P : Props>(override val attrs: P) : RElementBuilder<P>, RBuilderImpl()
 
 typealias RHandler<P> = RElementBuilder<P>.() -> Unit
-
-/**
- * Append function component [component] as child of current builder
- */
-@Suppress("EXTENSION_SHADOWED_BY_MEMBER")
-fun <P : Props> RBuilder.child(
-    component: FC<P>,
-    props: P = jsObject(),
-    handler: RHandler<P> = {},
-) {
-    child(component, props, handler)
-}
