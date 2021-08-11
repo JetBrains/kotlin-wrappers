@@ -28,6 +28,9 @@ kotlin {
                 api(npm("css-in-js-utils", "^3.1.0"))
                 api(npm("inline-style-prefixer", "^6.0.0"))
             }
+
+            // TEMP (for migration)
+            kotlin.srcDir("src/main/kotlin")
         }
         val jsTest by getting {
             dependencies {
@@ -39,6 +42,9 @@ kotlin {
 
                 implementation(npm("puppeteer", "10.1.0"))
             }
+
+            // TEMP (for migration)
+            kotlin.srcDir("src/test/kotlin")
         }
     }
 }
