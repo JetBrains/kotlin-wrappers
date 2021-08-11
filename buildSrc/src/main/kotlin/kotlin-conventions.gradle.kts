@@ -8,6 +8,11 @@ plugins.withType<KotlinJsPluginWrapper> {
             moduleName = project.name
             browser()
         }
+
+        val generatedDir = projectDir.resolve("src/main/generated")
+        if (generatedDir.exists()) {
+            sourceSets["main"].kotlin.srcDir(generatedDir)
+        }
     }
 
     tasks.withType<KotlinJsCompile>().configureEach {
