@@ -196,5 +196,5 @@ val styles = CssBuilder(allowClasses = false).apply {
     }
 }
 
-StyledComponents.injectGlobal(styles.toString())
+StyledComponents.injectGlobal(styles)
 ```

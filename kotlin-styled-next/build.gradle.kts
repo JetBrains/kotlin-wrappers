@@ -1,10 +1,10 @@
 plugins {
-    kotlin("multiplatform")
+    kotlin("js")
     `publish-conventions`
 }
 
 kotlin {
-    js(IR) {
+    js {
         browser {
             testTask {
                 testLogging.showStandardStreams = true
@@ -16,7 +16,7 @@ kotlin {
     }
 
     sourceSets {
-        val jsMain by getting {
+        val main by getting {
             dependencies {
                 api(project(":kotlin-extensions"))
                 api(project(":kotlin-css"))
@@ -29,13 +29,10 @@ kotlin {
                 api(npm("inline-style-prefixer", "^6.0.0"))
             }
         }
-        val jsTest by getting {
+        val test by getting {
             dependencies {
                 implementation(kotlin("test-js"))
                 implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.1")
-
-                implementation(project(":kotlin-react"))
-                implementation(project(":kotlin-react-dom"))
 
                 implementation(npm("puppeteer", "10.1.0"))
             }
@@ -58,7 +55,7 @@ val printBenchmarkResults by tasks.registering {
             "DataTypeOperations"
         )
         fileNames.forEach { test ->
-            val report = buildDir.resolve("reports/tests/jsTest/classes/benchmark.$test.html").readText()
+            val report = buildDir.resolve("reports/tests/test/classes/benchmark.$test.html").readText()
             "#.*;".toRegex().findAll(report).map { it.value }.forEach { stdout ->
                 val benchmarks = stdout.split(";").mapNotNull {
                     if (it.isEmpty()) {
@@ -80,12 +77,11 @@ val printBenchmarkResults by tasks.registering {
                     println("##teamcity[buildStatisticValue key='benchmark_$testName' value='${it.value}']")
                 }
             }
-
         }
     }
 }
 
-tasks.named("jsTest") {
+tasks.named("test") {
     enabled = project.hasProperty("test")
     if (enabled) {
         finalizedBy(printBenchmarkResults)
