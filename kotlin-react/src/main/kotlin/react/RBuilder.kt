@@ -156,6 +156,20 @@ interface RBuilder {
     }
 
     fun ReactElement.withKey(newKey: Number) = withKey(newKey.toString())
+
+    /**
+     * Allow conditional rendering (the same way JSX does)
+     * If the [condition] is true a [Fragment] with the children present in the [handler] is added to the current
+     * [childList] else null is added to the current [childList].
+     * https://reactjs.org/docs/conditional-rendering.html
+     */
+    private inline fun conditional(condition: Boolean, handler: Render) {
+        val childFragment = if (condition) {
+            val childList = RBuilder().apply(handler).childList
+            createElement(Fragment, jsObject(), *childList.toTypedArray())
+        } else createElement(Fragment, jsObject(), null)
+        childList.add(childFragment)
+    }
 }
 
 @JsName("createBuilder")
