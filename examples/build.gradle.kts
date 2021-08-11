@@ -11,5 +11,5 @@ dependencies {
     implementation(kotlinxHtml("js"))
 
     implementation(npm("react-quill", "1.3.5"))
-    implementation(npm("axios", "0.19.2"))
+    implementation(npm("axios", "0.21.1"))
 }
