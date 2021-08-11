@@ -140,14 +140,12 @@ object GlobalStyles {
         classes.add(className)
         if (classes.size > maxStylesForElement) {
             console.warn(
-                "Over $maxStylesForElement were generated for $type object.\n" +
-                        "Consider using inline styles for frequently changed styles." +
-                        "Example:" +
+                "Over $maxStylesForElement were generated for $type. Consider using inline styles for frequently changed styles:\n\n" +
                         "styledDiv {\n" +
-                        "  inlineStyles {\n" +
-                        "  width = 100.px\n" +
-                        "  backgroundColor = Color.blue\n" +
-                        "  }\n" +
+                        "    inlineStyles {\n" +
+                        "        width = 100.px\n" +
+                        "        backgroundColor = Color.blue\n" +
+                        "    }\n" +
                         "}\n"
             )
             setClasses(null)
