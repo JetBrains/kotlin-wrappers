@@ -25,16 +25,14 @@ interface RBuilder {
 
     fun <P : Props> child(
         type: ElementType<P>,
-        props: P,
+        props: P = jsObject(),
+        handler: RHandler<P>? = null,
     ) {
-        child(createElement(type, props))
-    }
+        if (handler == null) {
+            child(createElement(type, props))
+            return
+        }
 
-    fun <P : Props> child(
-        type: ElementType<P>,
-        handler: RHandler<P>,
-    ) {
-        val props = jsObject<P>()
         val children = with(RElementBuilder(props)) {
             handler()
             childList
@@ -53,25 +51,25 @@ interface RBuilder {
     operator fun <P : Props> ElementType<P>.invoke(
         handler: RHandler<P>,
     ) {
-        child(this, handler)
+        child(this, handler = handler)
     }
 
     operator fun <T> Provider<T>.invoke(
         value: T,
         handler: RHandler<ProviderProps<T>>,
     ) {
-        child(this, handler = {
+        child(this) {
             attrs.value = value
             handler()
-        })
+        }
     }
 
     operator fun <T> Consumer<T>.invoke(
         handler: RBuilder.(T) -> Unit,
     ) {
-        child(this, props = jsObject {
-            children = { value -> buildElements { handler(value) } }
-        })
+        child(this) {
+            attrs.children = { value -> buildElements { handler(value) } }
+        }
     }
 
     @Deprecated(
@@ -89,7 +87,7 @@ interface RBuilder {
         klazz: KClass<out Component<P, *>>,
         handler: RHandler<P>,
     ) {
-        klazz.react.invoke(handler)
+        klazz.react(handler)
     }
 
     @Deprecated(
