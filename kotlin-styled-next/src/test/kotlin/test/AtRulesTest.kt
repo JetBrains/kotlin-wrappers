@@ -5,7 +5,9 @@ import react.RProps
 import react.dom.div
 import react.fc
 import runTest
-import styled.*
+import styled.css
+import styled.styledDiv
+import styled.styledSpan
 import kotlin.test.Test
 import kotlin.test.assertEquals
 

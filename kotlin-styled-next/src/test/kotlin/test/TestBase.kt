@@ -23,7 +23,6 @@ open class TestBase {
 
     protected val firstClassName = "firstClassName"
     protected val secondClassName = "secondClassName"
-    internal val sheet = GlobalStyles.sheet
 
     /**
      * Assert that injected CSS for [selector] contains all of the [declarations]
@@ -53,16 +52,10 @@ open class TestBase {
 
     @BeforeTest
     open fun before() = runTest {
-        val rules = getStylesheet().cssRules
-        for (i in rules.length - 1 downTo 0) {
-            getStylesheet().deleteRule(i)
-        }
-        clear()
-//        if (sheet is CSSOMSheet) {
-//            sheet.groups.clear()
+        sheet.sheet.clear()
+        sheet.importsSheet.clear()
         sheet.scheduledRules.clear()
         sheet.scheduledImportRules.clear()
-//        }
         GlobalStyles.injectedStyleSheetRules.clear()
         GlobalStyles.injectedKeyframes.clear()
         GlobalStyles.styledClasses.clear()

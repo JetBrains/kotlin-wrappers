@@ -1,12 +1,10 @@
 package test
 
-import kotlinx.css.paddingLeft
-import kotlinx.css.paddingRight
-import kotlinx.css.paddingTop
-import kotlinx.css.px
+import kotlinx.css.*
 import react.RProps
 import react.fc
 import runTest
+import styled.GlobalStyles
 import styled.css
 import styled.styledDiv
 import kotlin.test.Test
@@ -54,5 +52,16 @@ class ElementTest : TestBase() {
         assertEquals("3px", element.getStyle().paddingTop)
         assertEquals("2px", element.getStyle().paddingLeft)
         assertEquals("4px", element.getStyle().paddingRight)
+    }
+
+    @Test
+    fun addsValidRulesIfSomeInvalid() = runTest {
+        val firstRule = CssBuilder().apply { ".$firstClassName" { color = firstColor } }.toString()
+        val secondRule = "Some invalid css for browser"
+        val thirdRule = CssBuilder().apply { ".$secondClassName" { backgroundColor = secondColor } }.toString()
+        GlobalStyles.sheet.scheduleToInject(listOf(firstRule, secondRule, thirdRule))
+        GlobalStyles.sheet.injectScheduled()
+        assertCssInjected(firstClassName, listOf("color" to firstColor.toString()))
+        assertCssInjected(secondClassName, listOf("background-color" to secondColor.toString()))
     }
 }

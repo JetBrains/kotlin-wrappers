@@ -3,11 +3,12 @@ package styled
 import kotlinx.css.CssBuilder
 import kotlinx.css.properties.KeyframesBuilder
 import react.StateInstance
-import styled.sheets.*
+import styled.sheets.CSSOMPersistentSheet
+import styled.sheets.DevSheet
+import styled.sheets.RuleType
 import kotlin.collections.*
 
-internal data class InjectedCssInformation(val className: String, val groupId: Int)
-internal typealias InjectedCssHolder = LinkedHashMap<StyledCss, InjectedCssInformation>
+internal typealias InjectedCssHolder = LinkedHashMap<StyledCss, ClassName>
 
 /**
  * Inject CSS rules defined in [css] into the DOM
@@ -22,10 +23,7 @@ internal val isDevelopment by lazy {
 }
 
 object GlobalStyles {
-    internal var isTest = true
-    // The rules are not removed from DOM when components get unmounted if this flag set to true
-    var isPersistent = false
-    internal val sheet = CSSOMPersistentSheet()
+    internal var sheet = if (isDevelopment) DevSheet() else CSSOMPersistentSheet()
 
     private var incrementedClassName: Int = 0
         get() {
@@ -37,21 +35,17 @@ object GlobalStyles {
     internal val injectedStyleSheetRules = mutableSetOf<Selector>()
 
     private fun getInjectedClassName(css: StyledCss): ClassName {
-        val injected = styledClasses[css]
-        return if (injected == null) {
-            scheduleToInjectClassName(css)
-        } else {
-            sheet.useCss(injected.groupId)
-            injected.className
-        }
+        val className = styledClasses[css]
+        return className ?: scheduleToInjectClassName(css)
     }
 
     private fun scheduleToInjectClassName(css: StyledCss): ClassName {
         val className = "ksc-$incrementedClassName"
         val selector = ".$className"
         val rules = css.getCssRules(selector)
+        sheet.scheduleToInject(rules)
 
-        styledClasses[css] = InjectedCssInformation(className, sheet.scheduleToInject(rules))
+        styledClasses[css] = className
         return className
     }
 
@@ -103,17 +97,6 @@ object GlobalStyles {
         val selfClassName = getInjectedClassName(styledCss)
         val externalClassNames = styledCss.classes
         return Pair(selfClassName, externalClassNames)
-    }
-
-    internal fun removeCss(styledCss: StyledCss) {
-        val injectedInfo = styledClasses[styledCss] ?: throw IllegalStateException("Could not remove: ${styledCss.getCssRules("").joinToString("\n")}")
-        if (sheet.removeRules(injectedInfo.groupId)) {
-            styledClasses.remove(styledCss)
-        }
-    }
-
-    private operator fun IntRange.minus(value: Int): IntRange {
-        return (first - value)..(last - value)
     }
 
     /**

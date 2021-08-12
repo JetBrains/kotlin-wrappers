@@ -18,13 +18,12 @@ import kotlin.test.BeforeTest
 import kotlin.test.Test
 import kotlin.test.assertContains
 import kotlin.test.assertEquals
-@JsModule("static/styles.css")
-external val interStyles: dynamic
 
 class StyleSheetTest : TestBase() {
     private lateinit var simpleStyleSheet: SimpleStyleSheet
     private lateinit var staticStyleSheet: StaticStyleSheet
     private lateinit var importStyleSheet: ImportStyleSheet
+    private lateinit var importStyleSheetStatic: ImportStyleSheetStatic
     private lateinit var importUrlSheet: StyleSheet
     private lateinit var importFileSheet: StyleSheet
 
@@ -39,6 +38,7 @@ class StyleSheetTest : TestBase() {
         simpleStyleSheet = SimpleStyleSheet()
         staticStyleSheet = StaticStyleSheet()
         importStyleSheet = ImportStyleSheet()
+        importStyleSheetStatic = ImportStyleSheetStatic()
         importUrlSheet = StyleSheet("importUrlSheet", isStatic = true, imports = listOf(importUrl))
         importFileSheet = StyleSheet("importFileSheet", isStatic = true, imports = listOf(importFile))
     }
@@ -48,9 +48,8 @@ class StyleSheetTest : TestBase() {
         CssBuilder().apply {
             +staticStyleSheet.property1
         }
-        sheet.sheet // sheet is lazy inject
         val rules = getStylesheet().cssRules
-        assertEquals(sheet.scheduledRules.size, 1)
+        assertEquals(1, sheet.scheduledRules.size)
         assertEquals(0, rules.length)
     }
 
@@ -122,8 +121,7 @@ class StyleSheetTest : TestBase() {
 
     @Test
     fun multipleImportsOneStylesheet() = runTest {
-//        console.log(interStyles)
-        importStyleSheet.inject()
+        importStyleSheetStatic.inject()
         assertCssInjected("@import $url", listOf(), getImportRules())
         assertCssInjected("@import url($filename) screen, print;", listOf(), getImportRules())
     }
@@ -137,15 +135,17 @@ class StyleSheetTest : TestBase() {
     }
 
     @Test
-    fun importWithComponent() = runTest {
+    fun injectedOnce() = runTest {
         val styledComponent = fc<RProps> {
             styledSpan {
                 css {
                     +importStyleSheet.property1
+                    +importStyleSheetStatic.property1
                 }
             }
         }
         clearAndInject(styledComponent)
-        assertCssInjected("@import url($filename) screen, print;", listOf(), getImportRules())
+        inject(styledComponent)
+        assertEquals(4, getImportRules().length)
     }
 }

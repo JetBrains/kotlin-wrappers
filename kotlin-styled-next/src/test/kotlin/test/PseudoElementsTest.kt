@@ -1,6 +1,5 @@
 package test
 
-import kotlinx.browser.window
 import kotlinx.css.CssBuilder
 import kotlinx.css.color
 import react.RProps
@@ -68,9 +67,6 @@ class PseudoElementsTest : TestBase() {
         }
         val element = clearAndInject(styledComponent)
         // Checking computed css not working for placeholder pseudo element in chrome, https://bugs.chromium.org/p/chromium/issues/detail?id=850744
-        if (window.navigator.userAgent.lowercase().contains("firefox")) {
-            assertEquals(firstColor.toString(), element.getStyle("::placeholder").color)
-        }
         assertCssInjected("${element.className}::placeholder", listOf("color" to firstColor.toString()))
     }
 

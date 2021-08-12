@@ -1,6 +1,7 @@
 package test.styleSheets
 
-import kotlinx.css.*
+import kotlinx.css.Align
+import kotlinx.css.alignContent
 import styled.Import
 import styled.StyleSheet
 
@@ -10,8 +11,10 @@ internal val importUrl = Import(url)
 internal val importFile = Import(filename)
 internal val importWithTypes = Import(filename, listOf("screen", "print"))
 
-internal class ImportStyleSheet : StyleSheet("ImportStyleSheet", isStatic = true, imports = listOf(importUrl, importWithTypes)) {
-    val property1 by css {
-        alignContent = Align.end
-    }
+internal class ImportStyleSheetStatic : StyleSheet("ImportStyleSheetStatic", isStatic = true, imports = listOf(importUrl, importWithTypes)) {
+    val property1 by css { alignContent = Align.end }
+}
+
+internal class ImportStyleSheet : StyleSheet("ImportStyleSheet", imports = listOf(importFile, importUrl)) {
+    val property1 by css { alignContent = Align.end }
 }

@@ -16,7 +16,9 @@ import react.RProps
 import react.createElement
 import react.dom.render
 import react.dom.unmountComponentAtNode
+import styled.GlobalStyles
 import styled.injectGlobal
+import styled.sheets.CSSOMPersistentSheet
 import styled.sheets.styleId
 import kotlin.coroutines.resume
 import kotlin.coroutines.suspendCoroutine
@@ -29,8 +31,17 @@ typealias Component = ComponentType<RProps>
 private val testScope = MainScope()
 
 class TestScope : CoroutineScope by testScope {
+    internal val sheet: CSSOMPersistentSheet
+        get() = GlobalStyles.sheet as CSSOMPersistentSheet
+
+    init {
+        if (GlobalStyles.sheet !is CSSOMPersistentSheet) {
+            GlobalStyles.sheet = CSSOMPersistentSheet()
+        }
+    }
+
     private var root: HTMLElement? = null
-    fun getRoot(): HTMLElement {
+    private fun getRoot(): HTMLElement {
         return root ?: (document.createElement("div") as HTMLElement).also {
             document.body?.appendChild(it)
             root = it
@@ -44,6 +55,12 @@ class TestScope : CoroutineScope by testScope {
     fun renderComponent(component: Component) {
         val reactElement = createElement(component, jsObject { })
         render(reactElement, getRoot())
+    }
+
+    fun CSSStyleSheet.clear() {
+        for (i in 0 until cssRules.length) {
+            deleteRule(0)
+        }
     }
 
     fun getStylesheet(): CSSStyleSheet {
