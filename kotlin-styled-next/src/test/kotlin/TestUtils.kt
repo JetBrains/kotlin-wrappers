@@ -10,6 +10,7 @@ import org.w3c.dom.Element
 import org.w3c.dom.HTMLElement
 import org.w3c.dom.HTMLStyleElement
 import org.w3c.dom.css.*
+import org.w3c.dom.get
 import react.ComponentType
 import react.RProps
 import react.createElement
@@ -17,20 +18,34 @@ import react.dom.render
 import react.dom.unmountComponentAtNode
 import styled.GlobalStyles
 import styled.injectGlobal
+import styled.sheets.CSSOMPersistentSheet
+import styled.sheets.styleId
 import kotlin.coroutines.resume
 import kotlin.coroutines.suspendCoroutine
 import kotlin.js.Promise
 import kotlin.test.assertEquals
+import kotlin.test.assertNotNull
 
 typealias Component = ComponentType<RProps>
 
 private val testScope = MainScope()
 
 class TestScope : CoroutineScope by testScope {
-    val root = "div".asHtmlElement()
+    internal val sheet: CSSOMPersistentSheet
+        get() = GlobalStyles.sheet as CSSOMPersistentSheet
 
     init {
-        GlobalStyles.isTest = true
+        if (GlobalStyles.sheet !is CSSOMPersistentSheet) {
+            GlobalStyles.sheet = CSSOMPersistentSheet()
+        }
+    }
+
+    private var root: HTMLElement? = null
+    private fun getRoot(): HTMLElement {
+        return root ?: (document.createElement("div") as HTMLElement).also {
+            document.body?.appendChild(it)
+            root = it
+        }
     }
 
     fun injectBuilder(builder: CssBuilder) {
@@ -39,11 +54,17 @@ class TestScope : CoroutineScope by testScope {
 
     fun renderComponent(component: Component) {
         val reactElement = createElement(component, jsObject { })
-        render(reactElement, root)
+        render(reactElement, getRoot())
+    }
+
+    fun CSSStyleSheet.clear() {
+        for (i in 0 until cssRules.length) {
+            deleteRule(0)
+        }
     }
 
     fun getStylesheet(): CSSStyleSheet {
-        val styles = document.getElementById(GlobalStyles.styleId) as HTMLStyleElement
+        val styles = document.getElementById(styleId) as HTMLStyleElement
         return styles.sheet as CSSStyleSheet
     }
 
@@ -66,12 +87,29 @@ class TestScope : CoroutineScope by testScope {
     }
 
     fun assertChildrenCount(n: Int) {
-        assertEquals(n, root.childElementCount)
+        assertEquals(n, getRoot().childElementCount)
     }
 
     fun clear() {
-        unmountComponentAtNode(root)
-        root.clear()
+        unmountComponentAtNode(getRoot())
+        getRoot().clear()
+        root = null
+    }
+
+    suspend fun clearAndInject(styledComponent: Component): Element {
+        clear()
+        return inject(styledComponent)
+    }
+
+    /**
+     * Inject [styledComponent] into the DOM and return corresponding [Element]
+     */
+    suspend fun inject(styledComponent: Component): Element {
+        renderComponent(styledComponent)
+        waitForAnimationFrame()
+        val styledElement = getRoot().children[0]
+        assertNotNull(styledElement)
+        return styledElement
     }
 }
 
@@ -79,12 +117,6 @@ internal fun runTest(block: suspend TestScope.() -> Unit): dynamic {
     val scope = TestScope()
     scope.assertChildrenCount(0)
     return scope.promise { block(scope) }
-}
-
-internal fun String.asHtmlElement(): HTMLElement {
-    return (document.createElement(this) as HTMLElement).also {
-        document.body?.appendChild(it)
-    }
 }
 
 /**

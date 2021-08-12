@@ -1,15 +1,19 @@
 package test
 
+import kotlinx.browser.document
 import kotlinx.css.CssBuilder
 import kotlinx.css.px
+import org.w3c.dom.HTMLStyleElement
+import org.w3c.dom.css.CSSRuleList
+import org.w3c.dom.css.CSSStyleSheet
 import react.RProps
 import react.fc
 import runTest
-import styled.GlobalStyles
+import styled.StyleSheet
 import styled.css
+import styled.sheets.importStyleId
 import styled.styledSpan
-import test.styleSheets.SimpleStyleSheet
-import test.styleSheets.StaticStyleSheet
+import test.styleSheets.*
 import kotlin.test.BeforeTest
 import kotlin.test.Test
 import kotlin.test.assertContains
@@ -18,12 +22,25 @@ import kotlin.test.assertEquals
 class StyleSheetTest : TestBase() {
     private lateinit var simpleStyleSheet: SimpleStyleSheet
     private lateinit var staticStyleSheet: StaticStyleSheet
+    private lateinit var importStyleSheet: ImportStyleSheet
+    private lateinit var importStyleSheetStatic: ImportStyleSheetStatic
+    private lateinit var importUrlSheet: StyleSheet
+    private lateinit var importFileSheet: StyleSheet
+
+    private fun getImportRules(): CSSRuleList {
+        val styles = document.getElementById(importStyleId) as HTMLStyleElement
+        return (styles.sheet as CSSStyleSheet).cssRules
+    }
 
     @BeforeTest
     override fun before() {
         super.before()
         simpleStyleSheet = SimpleStyleSheet()
         staticStyleSheet = StaticStyleSheet()
+        importStyleSheet = ImportStyleSheet()
+        importStyleSheetStatic = ImportStyleSheetStatic()
+        importUrlSheet = StyleSheet("importUrlSheet", isStatic = true, imports = listOf(importUrl))
+        importFileSheet = StyleSheet("importFileSheet", isStatic = true, imports = listOf(importFile))
     }
 
     @Test
@@ -32,7 +49,7 @@ class StyleSheetTest : TestBase() {
             +staticStyleSheet.property1
         }
         val rules = getStylesheet().cssRules
-        assertEquals(GlobalStyles.scheduledRules.size, 1)
+        assertEquals(1, sheet.scheduledRules.size)
         assertEquals(0, rules.length)
     }
 
@@ -100,5 +117,35 @@ class StyleSheetTest : TestBase() {
         )
 
         assertEquals("80px", element.getStyle().padding)
+    }
+
+    @Test
+    fun multipleImportsOneStylesheet() = runTest {
+        importStyleSheetStatic.inject()
+        assertCssInjected("@import $url", listOf(), getImportRules())
+        assertCssInjected("@import url($filename) screen, print;", listOf(), getImportRules())
+    }
+
+    @Test
+    fun multipleImportsMultipleStylesheets() = runTest {
+        importUrlSheet.inject()
+        importFileSheet.inject()
+        assertCssInjected("@import $url", listOf(), getImportRules())
+        assertCssInjected("@import url($filename);", listOf(), getImportRules())
+    }
+
+    @Test
+    fun injectedOnce() = runTest {
+        val styledComponent = fc<RProps> {
+            styledSpan {
+                css {
+                    +importStyleSheet.property1
+                    +importStyleSheetStatic.property1
+                }
+            }
+        }
+        clearAndInject(styledComponent)
+        inject(styledComponent)
+        assertEquals(4, getImportRules().length)
     }
 }

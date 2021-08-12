@@ -23,7 +23,7 @@ open class BenchmarkBase {
     }
 
     protected fun TestScope.assertCssNotEmpty() {
-        assertTrue(getStylesheet().cssRules.length > 0)
+        assertTrue(getRules().length > 0)
     }
 
     /**

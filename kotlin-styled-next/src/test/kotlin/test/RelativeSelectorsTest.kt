@@ -309,4 +309,23 @@ class RelativeSelectorsTest : TestBase() {
         assertEquals(firstColor.toString(), element.color())
         assertNotEquals(secondColor.toString(), element.getStyle().backgroundColor)
     }
+
+    @Test
+    fun compareTo() = runTest {
+        val styledComponent = fc<RProps> {
+            styledDiv {
+                css {
+                    color = firstColor
+                    this > "div" {
+                        color = secondColor
+                    }
+                }
+                div {}
+                span { div {} }
+            }
+        }
+        val element = clearAndInject(styledComponent)
+        assertEquals(firstColor.toString(), element.color())
+        assertEquals(secondColor.toString(), element.childAt(0).color())
+    }
 }

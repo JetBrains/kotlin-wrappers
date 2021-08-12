@@ -6,7 +6,20 @@ import kotlin.properties.ReadOnlyProperty
 import kotlin.reflect.KProperty
 import kotlin.reflect.KProperty0
 
-open class StyleSheet(var name: String, val isStatic: Boolean = false) {
+class Import(private val url: String, private val types: List<String> = listOf()) {
+    fun build(): String {
+        return "@import $url" + types.joinToString(prefix = " ") + ";"
+    }
+}
+
+/**
+ * Represents reusable piece of CSS code
+ * [name] is the identifier of the stylesheet. From the stylesheet's [name] and property name combination CSS class is generated
+ * If [isStatic] property is set to true, the separate class rule will be created for every property.
+ * CSS will be added to each component's generated rule otherwise.
+ * [imports] are the names of urls or css files, which will be added to the DOM with the first [StyleSheet] usage
+ */
+open class StyleSheet(var name: String, val isStatic: Boolean = false, internal var imports: List<Import> = emptyList()) {
     private val holders: MutableList<CssHolder> = mutableListOf()
 
     constructor(name: String, parent: StyleSheet, isStatic: Boolean = false) : this(parent.name + "-" + name, isStatic)
@@ -24,7 +37,15 @@ open class StyleSheet(var name: String, val isStatic: Boolean = false) {
         GlobalStyles.injectScheduled()
     }
 
+    internal fun injectImports() {
+        if (imports.isNotEmpty()) {
+            GlobalStyles.scheduleImports(imports)
+            imports = emptyList()
+        }
+    }
+
     fun scheduleToInject() {
+        injectImports()
         holders.forEach {
             it.scheduleToInject()
         }
@@ -58,6 +79,7 @@ class CssHolder(private val sheet: StyleSheet, internal vararg val ruleSets: Rul
         classNamesToInject[className] = true
         return ReadOnlyProperty { _, property ->
             {
+                sheet.injectImports()
                 if (sheet.isStatic) {
                     scheduleToInject(className)
                     classes.add(className)

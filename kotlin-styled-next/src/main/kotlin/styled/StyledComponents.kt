@@ -112,13 +112,13 @@ fun customStyled(type: String): ComponentType<StyledProps> {
 
         val generatedClasses = if (isDevelopment) useState<HashSet<String>?>(hashSetOf()) else null
         val classNames = useMemo(css) {
-            val (selfClassName, classes) = GlobalStyles.getInjectedClassNames(css)
+            val styledCss = css.toStyledCss()
+            val (selfClassName, classes) = GlobalStyles.getInjectedClassNames(styledCss)
             if (generatedClasses != null) {
                 GlobalStyles.checkGeneratedCss(generatedClasses, selfClassName, type)
             }
-            (classes + selfClassName).joinToString(" ").also {
-                GlobalStyles.injectScheduled()
-            }
+            GlobalStyles.injectScheduled()
+            (classes + selfClassName).joinToString(" ")
         }
 
         val newProps = clone(props)

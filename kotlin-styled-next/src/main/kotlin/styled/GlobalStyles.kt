@@ -1,22 +1,21 @@
 package styled
 
-import kotlinx.browser.window
 import kotlinx.css.CssBuilder
 import kotlinx.css.properties.KeyframesBuilder
-import kotlinx.dom.appendText
-import org.w3c.dom.HTMLStyleElement
-import org.w3c.dom.css.CSSStyleSheet
 import react.StateInstance
+import styled.sheets.CSSOMPersistentSheet
+import styled.sheets.DevSheet
+import styled.sheets.RuleType
 import kotlin.collections.*
 
-internal typealias InjectedCssHolder = LinkedHashMap<StyledCss, String>
+internal typealias InjectedCssHolder = LinkedHashMap<StyledCss, ClassName>
 
 /**
  * Inject CSS rules defined in [css] into the DOM
  */
 fun injectGlobal(css: CssBuilder) {
-    GlobalStyles.scheduleToInject(css.toStyledCss().getCssRules(null))
-    GlobalStyles.injectScheduled()
+    GlobalStyles.sheet.scheduleToInject(css.toStyledCss().getCssRules(null))
+    GlobalStyles.sheet.injectScheduled()
 }
 
 internal val isDevelopment by lazy {
@@ -24,16 +23,7 @@ internal val isDevelopment by lazy {
 }
 
 object GlobalStyles {
-    internal var isTest = false
-    internal const val styleId = "ksc-global-styles"
-    private val style by lazy {
-        val style = window.document.head!!.appendChild(window.document.createElement("style")) as HTMLStyleElement
-        style.setAttribute("id", styleId)
-        style
-    }
-    private val sheet by lazy {
-        style.sheet as CSSStyleSheet
-    }
+    internal var sheet = if (isDevelopment) DevSheet() else CSSOMPersistentSheet()
 
     private var incrementedClassName: Int = 0
         get() {
@@ -42,7 +32,6 @@ object GlobalStyles {
         }
 
     internal var styledClasses = InjectedCssHolder()
-    internal val scheduledRules = mutableListOf<String>()
     internal val injectedStyleSheetRules = mutableSetOf<Selector>()
 
     private fun getInjectedClassName(css: StyledCss): ClassName {
@@ -52,40 +41,20 @@ object GlobalStyles {
 
     private fun scheduleToInjectClassName(css: StyledCss): ClassName {
         val className = "ksc-$incrementedClassName"
-        styledClasses[css] = className
         val selector = ".$className"
-        scheduledRules.addAll(css.getCssRules(selector))
+        val rules = css.getCssRules(selector)
+        sheet.scheduleToInject(rules)
+
+        styledClasses[css] = className
         return className
     }
 
     /**
-     * Inject all scheduled rules into the DOM and clear [scheduledRules].
+     * Inject all scheduled rules into the DOM and clear scheduled rules.
      * If the rule cannot be parsed by the browser, it gets thrown away.
      */
     fun injectScheduled() {
-        var maxIdx = sheet.cssRules.length
-        if (isDevelopment && !isTest) {
-            style.appendText(scheduledRules.joinToString("\n"))
-            scheduledRules.clear()
-            return
-        }
-        for (rule in scheduledRules.filter { it.isNotEmpty() }) {
-            try {
-                sheet.insertRule(rule, maxIdx)
-                maxIdx++
-            } catch (e: Throwable) {
-                /* Browser does not support the rule */
-            }
-        }
-        scheduledRules.clear()
-    }
-
-    /**
-     * Schedule [rules] for injection into the DOM.
-     * They will be injected when the [injectScheduled] function is called the next time.
-     */
-    fun scheduleToInject(rules: List<String>) {
-        scheduledRules.addAll(rules)
+        sheet.injectScheduled()
     }
 
     /**
@@ -95,9 +64,13 @@ object GlobalStyles {
     fun scheduleToInject(selector: Selector, builder: CssBuilder) {
         if (!injectedStyleSheetRules.contains(selector)) {
             val styled = builder.toStyledCss()
-            scheduleToInject(styled.getCssRules(selector))
+            sheet.scheduleToInject(styled.getCssRules(selector))
             injectedStyleSheetRules.add(selector)
         }
+    }
+
+    fun scheduleImports(imports: Iterable<Import>) {
+        sheet.scheduleToInject(imports.map { it.build() }, RuleType.IMPORT)
     }
 
     internal val injectedKeyframes = mutableMapOf<StyledKeyframes, ClassName>()
@@ -112,7 +85,7 @@ object GlobalStyles {
             val css = keyframes.toString()
             injectedKeyframes[keyframes] = keyframeName
             val prefixes = listOf("@-webkit-keyframes", "@keyframes")
-            scheduleToInject(prefixes.map { prefix -> "$prefix $keyframeName { $css }" })
+            sheet.scheduleToInject(prefixes.map { prefix -> "$prefix $keyframeName { $css }" })
         }
     }
 
@@ -120,8 +93,7 @@ object GlobalStyles {
      * @return pair of generated class name and a list of CSS class names, declared in [css].
      * If the CSS code for the [css] was not injected into the DOM previously, it is injected after function call.
      */
-    fun getInjectedClassNames(css: CssBuilder): Pair<ClassName, List<ClassName>> {
-        val styledCss = css.toStyledCss()
+    internal fun getInjectedClassNames(styledCss: StyledCss): Pair<ClassName, List<ClassName>> {
         val selfClassName = getInjectedClassName(styledCss)
         val externalClassNames = styledCss.classes
         return Pair(selfClassName, externalClassNames)
