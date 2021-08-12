@@ -2,6 +2,8 @@ package styled.sheets
 
 import kotlinx.dom.appendText
 
+// A stylesheet that is injected by setting the text of a <style> tag. Useful in development mode,
+// because the stylesheet can be easily viewed using devtools, but relatively slow.
 internal class DevSheet : AbstractSheet() {
     private val style by lazy { appendStyleElement(styleId) }
     private val importsStyle by lazy { appendStyleElement(importStyleId) }

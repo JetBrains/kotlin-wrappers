@@ -13,11 +13,14 @@ class Import(private val url: String, private val types: List<String> = listOf()
 }
 
 /**
- * Represents reusable piece of CSS code
- * [name] is the identifier of the stylesheet. From the stylesheet's [name] and property name combination CSS class is generated
- * If [isStatic] property is set to true, the separate class rule will be created for every property.
- * CSS will be added to each component's generated rule otherwise.
- * [imports] are the names of urls or css files, which will be added to the DOM with the first [StyleSheet] usage
+ * Represents a reusable piece of CSS code
+ *
+ * [name] is the stylesheet identifier. CSS class names are generated using a combination of [name] and property name.
+ *
+ * If [isStatic] property is set to true, a static, human-readable class selector will be created for every property,
+ * making referencing from other stylesheets possible. Generated class names will be used otherwise.
+ *
+ * [imports] are the URLs (relative or absolute) of CSS files that will be added to the DOM with the first use of [StyleSheet].
  */
 open class StyleSheet(var name: String, val isStatic: Boolean = false, internal var imports: List<Import> = emptyList()) {
     private val holders: MutableList<CssHolder> = mutableListOf()
