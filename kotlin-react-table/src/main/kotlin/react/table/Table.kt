@@ -7,10 +7,10 @@ package react.table
 
 import kotlinext.js.ReadonlyArray
 import kotlinext.js.Record
-import org.w3c.dom.events.Event
 import react.Key
 import react.Props
 import react.ReactNode
+import react.dom.ChangeEventHandler
 import react.table.RenderType.Cell
 import react.table.RenderType.Header
 
@@ -99,7 +99,7 @@ external interface TableRowProps : TableKeyedProps
 external interface TableCellProps : TableKeyedProps
 
 external interface TableToggleCommonProps : TableCommonProps {
-    var onChange: (Event) -> Unit
+    var onChange: ChangeEventHandler<*>
     var checked: Boolean
     var title: String
     var indeterminate: Boolean
