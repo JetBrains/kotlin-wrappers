@@ -28,7 +28,7 @@ sealed interface AriaAttributesLegacyAdapter {
      * Indicates whether inputting text could trigger display of one or more predictions of the user's intended value for an input and specifies how predictions would be
      * presented if they are made.
      */
-    inline var ariaAutoComplete: String // 'none' | 'inline' | 'list' | 'both'
+    inline var ariaAutoComplete: AriaAutoComplete
         get() = asDynamic()["aria-autocomplete"]
         set(value) {
             asDynamic()["aria-autocomplete"] = value
@@ -45,7 +45,7 @@ sealed interface AriaAttributesLegacyAdapter {
      * Indicates the current "checked" state of checkboxes, radio buttons, and other widgets.
      * @see aria-pressed @see aria-selected.
      */
-    inline var ariaChecked: String // boolean | 'false' | 'mixed' | 'true'
+    inline var ariaChecked: AriaChecked
         get() = asDynamic()["aria-checked"]
         set(value) {
             asDynamic()["aria-checked"] = value
@@ -92,7 +92,7 @@ sealed interface AriaAttributesLegacyAdapter {
         }
 
     /** Indicates the element that represents the current item within a container or set of related elements. */
-    inline var ariaCurrent: String // boolean | 'false' | 'true' | 'page' | 'step' | 'location' | 'date' | 'time'
+    inline var ariaCurrent: AriaCurrent
         get() = asDynamic()["aria-current"]
         set(value) {
             asDynamic()["aria-current"] = value
@@ -132,7 +132,7 @@ sealed interface AriaAttributesLegacyAdapter {
      * Indicates what functions can be performed when a dragged object is released on the drop target.
      * @deprecated in ARIA 1.1
      */
-    inline var ariaDropEffect: String // 'none' | 'copy' | 'execute' | 'link' | 'move' | 'popup'
+    inline var ariaDropEffect: AriaDropEffect
         get() = asDynamic()["aria-dropeffect"]
         set(value) {
             asDynamic()["aria-dropeffect"] = value
@@ -176,7 +176,7 @@ sealed interface AriaAttributesLegacyAdapter {
         }
 
     /** Indicates the availability and type of interactive popup element, such as menu or dialog, that can be triggered by an element. */
-    inline var ariaHasPopup: String // boolean | 'false' | 'true' | 'menu' | 'listbox' | 'tree' | 'grid' | 'dialog'
+    inline var ariaHasPopup: AriaHasPopup
         get() = asDynamic()["aria-haspopup"]
         set(value) {
             asDynamic()["aria-haspopup"] = value
@@ -196,7 +196,7 @@ sealed interface AriaAttributesLegacyAdapter {
      * Indicates the entered value does not conform to the format expected by the application.
      * @see aria-errormessage.
      */
-    inline var ariaInvalid: String // boolean | 'false' | 'true' | 'grammar' | 'spelling'
+    inline var ariaInvalid: AriaInvalid
         get() = asDynamic()["aria-invalid"]
         set(value) {
             asDynamic()["aria-invalid"] = value
@@ -237,7 +237,7 @@ sealed interface AriaAttributesLegacyAdapter {
         }
 
     /** Indicates that an element will be updated, and describes the types of updates the user agents, assistive technologies, and user can expect from the live region. */
-    inline var ariaLive: String // 'off' | 'assertive' | 'polite'
+    inline var ariaLive: AriaLive
         get() = asDynamic()["aria-live"]
         set(value) {
             asDynamic()["aria-live"] = value
@@ -265,7 +265,7 @@ sealed interface AriaAttributesLegacyAdapter {
         }
 
     /** Indicates whether the element's orientation is horizontal, vertical, or unknown/ambiguous. */
-    inline var ariaOrientation: String // 'horizontal' | 'vertical'
+    inline var ariaOrientation: AriaOrientation
         get() = asDynamic()["aria-orientation"]
         set(value) {
             asDynamic()["aria-orientation"] = value
@@ -306,7 +306,7 @@ sealed interface AriaAttributesLegacyAdapter {
      * Indicates the current "pressed" state of toggle buttons.
      * @see aria-checked @see aria-selected.
      */
-    inline var ariaPressed: String // boolean | 'false' | 'mixed' | 'true'
+    inline var ariaPressed: AriaPressed
         get() = asDynamic()["aria-pressed"]
         set(value) {
             asDynamic()["aria-pressed"] = value
@@ -326,7 +326,7 @@ sealed interface AriaAttributesLegacyAdapter {
      * Indicates what notifications the user agent will trigger when the accessibility tree within a live region is modified.
      * @see aria-atomic.
      */
-    inline var ariaRelevant: String // 'additions' | 'additions removals' | 'additions text' | 'all' | 'removals' | 'removals additions' | 'removals text' | 'text' | 'text additions' | 'text removals'
+    inline var ariaRelevant: AriaRelevant
         get() = asDynamic()["aria-relevant"]
         set(value) {
             asDynamic()["aria-relevant"] = value
@@ -397,7 +397,7 @@ sealed interface AriaAttributesLegacyAdapter {
         }
 
     /** Indicates if items in a table or grid are sorted in ascending or descending order. */
-    inline var ariaSort: String // 'none' | 'ascending' | 'descending' | 'other'
+    inline var ariaSort: AriaSort
         get() = asDynamic()["aria-sort"]
         set(value) {
             asDynamic()["aria-sort"] = value
