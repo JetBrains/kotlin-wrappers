@@ -7,7 +7,7 @@ package react.query
 
 external val useQueryClient: () -> QueryClient
 
-external interface QueryClientProviderProps : react.RProps {
+external interface QueryClientProviderProps : react.PropsWithChildren {
     var client: QueryClient
     var contextSharing: Boolean
 }

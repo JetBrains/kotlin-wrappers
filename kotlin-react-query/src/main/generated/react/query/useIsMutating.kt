@@ -6,3 +6,8 @@
 package react.query
 
 external fun useIsMutating(filters: MutationFilters = definedExternally): Int
+
+external fun useIsMutating(
+    queryKey: QueryKey = definedExternally,
+    filters: MutationFilters = definedExternally,
+): Int
