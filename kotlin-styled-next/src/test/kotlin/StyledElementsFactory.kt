@@ -1,4 +1,5 @@
 import kotlinx.css.*
+import react.RBuilder
 import react.fc
 import styled.StyledBuilder
 import styled.StyledElementBuilder
@@ -6,12 +7,12 @@ import styled.css
 import styled.styledDiv
 import kotlin.random.Random
 
-private fun StyledBuilder<*>.addCss(n: Int) {
+internal fun StyledBuilder<*>.addCss(n: Int, random: Random? = null) {
     css {
         root {
-            (1..n % 20).map {
+            (1..n % 20).forEach {
                 val randomCount = Random(123456789)
-                when (randomCount.nextInt(29)) {
+                when ((random ?: randomCount).nextInt(29)) {
                     0 -> backgroundColor = randomColor()
                     1 -> paddingLeft = randomLinearDimension()
                     2 -> paddingRight = randomLinearDimension()
@@ -52,11 +53,14 @@ object StyledElementsFactory {
     /**
      * @return styled component with [count] styled children, each having random CSS
      */
-    fun getStyledComponent(count: Int): Component {
+    fun getStyledComponent(count: Int, random: Random? = null, additional: (RBuilder.() -> Unit)? = null): Component {
         return fc {
-            (1..count).map {
+            (1..count).forEach {
                 styledDiv {
-                    addCss(it)
+                    addCss(it, random)
+                }
+                if (additional != null) {
+                    additional()
                 }
             }
         }

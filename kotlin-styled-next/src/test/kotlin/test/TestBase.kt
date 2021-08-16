@@ -11,7 +11,6 @@ import org.w3c.dom.HTMLInputElement
 import org.w3c.dom.css.CSSRuleList
 import org.w3c.dom.get
 import runTest
-import styled.GlobalStyles
 import kotlin.test.BeforeTest
 import kotlin.test.assertNotNull
 import kotlin.test.assertTrue
@@ -52,13 +51,7 @@ open class TestBase {
 
     @BeforeTest
     open fun before() = runTest {
-        sheet.sheet.clear()
-        sheet.importsSheet.clear()
-        sheet.scheduledRules.clear()
-        sheet.scheduledImportRules.clear()
-        GlobalStyles.injectedStyleSheetRules.clear()
-        GlobalStyles.injectedKeyframes.clear()
-        GlobalStyles.styledClasses.clear()
+        clearStyles()
     }
 
     protected fun KeyframesBuilder.addRotation() {
