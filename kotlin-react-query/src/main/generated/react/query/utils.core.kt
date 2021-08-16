@@ -76,7 +76,12 @@ external fun <TFilters : QueryFilters, TOptions> parseFilterArgs(
     arg1: dynamic = definedExternally,
     arg2: dynamic = definedExternally,
     arg3: TOptions = definedExternally,
-): dynamic
+): Tuple<TFilters, TOptions?>
+
+external fun parseMutationFilterArgs(
+    arg1: dynamic = definedExternally,
+    arg2: MutationFilters = definedExternally,
+): MutationFilters?
 
 external fun mapQueryStatusFilter(
     active: Boolean = definedExternally,

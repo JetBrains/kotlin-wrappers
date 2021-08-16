@@ -8,7 +8,6 @@ typealias JsDuration = Int
 typealias Union = Any
 
 typealias Type = String
-typealias Status = String
 
 typealias False = Boolean
 typealias True = Boolean
