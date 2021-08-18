@@ -6,7 +6,7 @@ import kotlinx.css.px
 import org.w3c.dom.HTMLStyleElement
 import org.w3c.dom.css.CSSRuleList
 import org.w3c.dom.css.CSSStyleSheet
-import react.RProps
+import react.Props
 import react.fc
 import runTest
 import styled.StyleSheet
@@ -55,7 +55,7 @@ class StyleSheetTest : TestBase() {
 
     @Test
     fun styleSheet() = runTest {
-        val styledComponent = fc<RProps> {
+        val styledComponent = fc<Props> {
             styledSpan {
                 css {
                     +simpleStyleSheet.simpleProperty
@@ -73,7 +73,7 @@ class StyleSheetTest : TestBase() {
 
     @Test
     fun styleSheetStaticTest() = runTest {
-        val styledComponent = fc<RProps> {
+        val styledComponent = fc<Props> {
             styledSpan {
                 css {
                     +staticStyleSheet.property1
@@ -99,7 +99,7 @@ class StyleSheetTest : TestBase() {
 
     @Test
     fun styleSheetSpecificTest() = runTest {
-        val styledComponent = fc<RProps> {
+        val styledComponent = fc<Props> {
             styledSpan {
                 css {
                     +simpleStyleSheet.simpleProperty
@@ -136,7 +136,7 @@ class StyleSheetTest : TestBase() {
 
     @Test
     fun injectedOnce() = runTest {
-        val styledComponent = fc<RProps> {
+        val styledComponent = fc<Props> {
             styledSpan {
                 css {
                     +importStyleSheet.property1

@@ -1,7 +1,7 @@
 package test
 
 import kotlinx.css.*
-import react.RProps
+import react.Props
 import react.dom.div
 import react.fc
 import runTest
@@ -18,7 +18,7 @@ class AtRulesTest : TestBase() {
     @Test
     fun supports() = runTest {
         val query = "(color: $firstColor)"
-        val styledComponent = fc<RProps> {
+        val styledComponent = fc<Props> {
             styledDiv {
                 css {
                     supports(query) {
@@ -37,7 +37,7 @@ class AtRulesTest : TestBase() {
 
     @Test
     fun fontFace() = runTest {
-        val styledComponent = fc<RProps> {
+        val styledComponent = fc<Props> {
             styledDiv {
                 css {
                     fontFace {
@@ -52,7 +52,7 @@ class AtRulesTest : TestBase() {
 
     @Test
     fun retina() = runTest {
-        val styledComponent = fc<RProps> {
+        val styledComponent = fc<Props> {
             styledDiv {
                 css {
                     fontSize = 15.px
@@ -72,7 +72,7 @@ class AtRulesTest : TestBase() {
     @Test
     fun media() = runTest {
         val query = "only screen and (max-width: 600px)"
-        val styledComponent = fc<RProps> {
+        val styledComponent = fc<Props> {
             styledSpan {
                 css {
                     media(query) {

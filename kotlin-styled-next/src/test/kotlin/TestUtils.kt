@@ -12,7 +12,7 @@ import org.w3c.dom.HTMLStyleElement
 import org.w3c.dom.css.*
 import org.w3c.dom.get
 import react.ComponentType
-import react.RProps
+import react.Props
 import react.createElement
 import react.dom.render
 import react.dom.unmountComponentAtNode
@@ -26,7 +26,7 @@ import kotlin.js.Promise
 import kotlin.test.assertEquals
 import kotlin.test.assertNotNull
 
-typealias Component = ComponentType<RProps>
+typealias Component = ComponentType<Props>
 
 private val testScope = MainScope()
 

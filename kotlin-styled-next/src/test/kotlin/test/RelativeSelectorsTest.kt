@@ -3,7 +3,7 @@ package test
 import kotlinx.css.CssBuilder
 import kotlinx.css.backgroundColor
 import kotlinx.css.color
-import react.RProps
+import react.Props
 import react.dom.div
 import react.dom.span
 import react.fc
@@ -21,7 +21,7 @@ import kotlin.test.assertNotEquals
 class RelativeSelectorsTest : TestBase() {
     @Test
     fun children() = runTest {
-        val styledComponent = fc<RProps> {
+        val styledComponent = fc<Props> {
             styledDiv {
                 css {
                     color = firstColor
@@ -43,7 +43,7 @@ class RelativeSelectorsTest : TestBase() {
 
     @Test
     fun descendantsSelector() = runTest {
-        val styledComponent = fc<RProps> {
+        val styledComponent = fc<Props> {
             styledDiv {
                 css {
                     color = firstColor
@@ -65,7 +65,7 @@ class RelativeSelectorsTest : TestBase() {
 
     @Test
     fun descendants() = runTest {
-        val styledComponent = fc<RProps> {
+        val styledComponent = fc<Props> {
             styledDiv {
                 css {
                     color = firstColor
@@ -86,7 +86,7 @@ class RelativeSelectorsTest : TestBase() {
 
     @Test
     fun ancestorHover() = runTest {
-        val styledComponent = fc<RProps> {
+        val styledComponent = fc<Props> {
             styledDiv {
                 +"ancestor"
                 styledSpan {
@@ -106,7 +106,7 @@ class RelativeSelectorsTest : TestBase() {
 
     @Test
     fun child() = runTest {
-        val styledComponent = fc<RProps> {
+        val styledComponent = fc<Props> {
             styledDiv {
                 css {
                     color = firstColor
@@ -128,7 +128,7 @@ class RelativeSelectorsTest : TestBase() {
 
     @Test
     fun sibling() = runTest {
-        val styledComponent = fc<RProps> {
+        val styledComponent = fc<Props> {
             div {
                 span {}
                 styledDiv {
@@ -152,7 +152,7 @@ class RelativeSelectorsTest : TestBase() {
 
     @Test
     fun adjacentSibling() = runTest {
-        val styledComponent = fc<RProps> {
+        val styledComponent = fc<Props> {
             div {
                 span {}
                 styledDiv {
@@ -177,7 +177,7 @@ class RelativeSelectorsTest : TestBase() {
 
     @Test
     fun universal() = runTest {
-        val styledComponent = fc<RProps> {
+        val styledComponent = fc<Props> {
             styledDiv {
                 css {
                     universal {
@@ -197,7 +197,7 @@ class RelativeSelectorsTest : TestBase() {
 
     @Test
     fun unaryPlus() = runTest {
-        val styledComponent = fc<RProps> {
+        val styledComponent = fc<Props> {
             styledDiv {
                 css {
                     ".$firstClassName" {
@@ -233,7 +233,7 @@ class RelativeSelectorsTest : TestBase() {
 
     @Test
     fun not() = runTest {
-        val styledComponent = fc<RProps> {
+        val styledComponent = fc<Props> {
             styledDiv {
                 css {
                     children {
@@ -253,7 +253,7 @@ class RelativeSelectorsTest : TestBase() {
 
     @Test
     fun classNameNot() = runTest {
-        val styledComponent = fc<RProps> {
+        val styledComponent = fc<Props> {
             styledDiv {
                 css {
                     "div" {
@@ -273,7 +273,7 @@ class RelativeSelectorsTest : TestBase() {
 
     @Test
     fun prefix() = runTest {
-        val styledComponent = fc<RProps> {
+        val styledComponent = fc<Props> {
             styledDiv {
                 css { +firstClassName }
                 styledDiv {
@@ -292,7 +292,7 @@ class RelativeSelectorsTest : TestBase() {
 
     @Test
     fun ruleUnaryPlus() = runTest {
-        val styledComponent = fc<RProps> {
+        val styledComponent = fc<Props> {
             styledDiv {
                 css {
                     +"someExternalClass1" {
@@ -312,7 +312,7 @@ class RelativeSelectorsTest : TestBase() {
 
     @Test
     fun compareTo() = runTest {
-        val styledComponent = fc<RProps> {
+        val styledComponent = fc<Props> {
             styledDiv {
                 css {
                     color = firstColor
