@@ -4,7 +4,7 @@ import kotlinx.css.paddingLeft
 import kotlinx.css.paddingRight
 import kotlinx.css.paddingTop
 import kotlinx.css.px
-import react.RProps
+import react.Props
 import react.fc
 import runTest
 import styled.css
@@ -15,7 +15,7 @@ import kotlin.test.assertEquals
 class FunctionsTest : TestBase() {
     @Test
     fun min() = runTest {
-        val styledComponent = fc<RProps> {
+        val styledComponent = fc<Props> {
             styledDiv {
                 css {
                     paddingLeft = min(1.px, 2.px)
@@ -28,7 +28,7 @@ class FunctionsTest : TestBase() {
 
     @Test
     fun max() = runTest {
-        val styledComponent = fc<RProps> {
+        val styledComponent = fc<Props> {
             styledDiv {
                 css {
                     paddingLeft = max(1.px, 2.px)
@@ -41,7 +41,7 @@ class FunctionsTest : TestBase() {
 
     @Test
     fun clamp() = runTest {
-        val styledComponent = fc<RProps> {
+        val styledComponent = fc<Props> {
             styledDiv {
                 css {
                     paddingTop = clamp(2.px, 3.px, 4.px) // value inside bounds

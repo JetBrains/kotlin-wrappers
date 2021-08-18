@@ -2,7 +2,7 @@ package test
 
 import kotlinx.css.CssBuilder
 import kotlinx.css.color
-import react.RProps
+import react.Props
 import react.dom.attrs
 import react.dom.div
 import react.fc
@@ -21,7 +21,7 @@ import kotlin.test.assertNotEquals
 class PseudoElementsTest : TestBase() {
     @Test
     fun afterPseudoElement() = runTest {
-        val styledComponent = fc<RProps> {
+        val styledComponent = fc<Props> {
             styledDiv {
                 css {
                     after {
@@ -37,7 +37,7 @@ class PseudoElementsTest : TestBase() {
 
     @Test
     fun beforePseudoElement() = runTest {
-        val styledComponent = fc<RProps> {
+        val styledComponent = fc<Props> {
             styledDiv {
                 css {
                     before {
@@ -53,7 +53,7 @@ class PseudoElementsTest : TestBase() {
 
     @Test
     fun placeholder() = runTest {
-        val styledComponent = fc<RProps> {
+        val styledComponent = fc<Props> {
             styledInput {
                 attrs {
                     placeholder = "sdf"
@@ -78,7 +78,7 @@ class PseudoElementsTest : TestBase() {
             }
         }
         injectGlobal(css)
-        val styledComponent = fc<RProps> {
+        val styledComponent = fc<Props> {
             div {}
         }
         val element = clearAndInject(styledComponent)

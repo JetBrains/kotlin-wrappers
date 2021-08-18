@@ -4,7 +4,7 @@ import kotlinx.css.CssBuilder
 import kotlinx.css.color
 import kotlinx.html.ButtonType
 import kotlinx.html.InputType
-import react.RProps
+import react.Props
 import react.dom.*
 import react.fc
 import runTest
@@ -18,7 +18,7 @@ import kotlin.test.assertEquals
 class PseudoClassRulesTest : TestBase() {
     @Test
     fun active() = runTest {
-        val styledComponent = fc<RProps> {
+        val styledComponent = fc<Props> {
             styledButton {
                 css {
                     color = firstColor
@@ -37,7 +37,7 @@ class PseudoClassRulesTest : TestBase() {
 
     @Test
     fun checked() = runTest {
-        val styledComponent = fc<RProps> {
+        val styledComponent = fc<Props> {
             styledInput(type = InputType.checkBox) {
                 css {
                     color = firstColor
@@ -57,7 +57,7 @@ class PseudoClassRulesTest : TestBase() {
 
     @Test
     fun default() = runTest {
-        val styledComponent = fc<RProps> {
+        val styledComponent = fc<Props> {
             styledForm {
                 css {
                     "button" {
@@ -80,7 +80,7 @@ class PseudoClassRulesTest : TestBase() {
 
     @Test
     fun disabled() = runTest {
-        val styledComponent = fc<RProps> {
+        val styledComponent = fc<Props> {
             styledForm {
                 css {
                     "button" {
@@ -103,7 +103,7 @@ class PseudoClassRulesTest : TestBase() {
 
     @Test
     fun empty() = runTest {
-        val styledComponent = fc<RProps> {
+        val styledComponent = fc<Props> {
             styledForm {
                 css {
                     "button" {
@@ -124,7 +124,7 @@ class PseudoClassRulesTest : TestBase() {
 
     @Test
     fun enabled() = runTest {
-        val styledComponent = fc<RProps> {
+        val styledComponent = fc<Props> {
             styledForm {
                 css {
                     "button" {
@@ -147,7 +147,7 @@ class PseudoClassRulesTest : TestBase() {
 
     @Test
     fun firstChild() = runTest {
-        val styledComponent = fc<RProps> {
+        val styledComponent = fc<Props> {
             styledDiv {
                 css {
                     "div" {
@@ -168,7 +168,7 @@ class PseudoClassRulesTest : TestBase() {
 
     @Test
     fun firstOfType() = runTest {
-        val styledComponent = fc<RProps> {
+        val styledComponent = fc<Props> {
             styledDiv {
                 css {
                     "span" {
@@ -190,7 +190,7 @@ class PseudoClassRulesTest : TestBase() {
 
     @Test
     fun focus() = runTest {
-        val styledComponent = fc<RProps> {
+        val styledComponent = fc<Props> {
             styledInput {
                 css {
                     color = firstColor
@@ -208,7 +208,7 @@ class PseudoClassRulesTest : TestBase() {
 
     @Test
     fun focusVisible() = runTest {
-        val styledComponent = fc<RProps> {
+        val styledComponent = fc<Props> {
             styledInput {
                 css {
                     color = firstColor
@@ -226,7 +226,7 @@ class PseudoClassRulesTest : TestBase() {
 
     @Test
     fun focusWithin() = runTest {
-        val styledComponent = fc<RProps> {
+        val styledComponent = fc<Props> {
             styledDiv {
                 css {
                     color = firstColor
@@ -245,7 +245,7 @@ class PseudoClassRulesTest : TestBase() {
 
     @Test
     fun hover() = runTest {
-        val styledComponent = fc<RProps> {
+        val styledComponent = fc<Props> {
             styledButton {
                 css {
                     color = firstColor
@@ -264,7 +264,7 @@ class PseudoClassRulesTest : TestBase() {
 
     @Test
     fun indeterminate() = runTest {
-        val styledComponent = fc<RProps> {
+        val styledComponent = fc<Props> {
             styledInput(type = InputType.checkBox) {
                 css {
                     color = firstColor
@@ -282,7 +282,7 @@ class PseudoClassRulesTest : TestBase() {
 
     @Test
     fun inRange() = runTest {
-        val styledComponent = fc<RProps> {
+        val styledComponent = fc<Props> {
             styledInput(type = InputType.number) {
                 attrs {
                     max = "10"
@@ -304,7 +304,7 @@ class PseudoClassRulesTest : TestBase() {
 
     @Test
     fun invalid() = runTest {
-        val styledComponent = fc<RProps> {
+        val styledComponent = fc<Props> {
             styledInput(type = InputType.number) {
                 attrs {
                     max = "10"
@@ -326,7 +326,7 @@ class PseudoClassRulesTest : TestBase() {
 
     @Test
     fun lastChild() = runTest {
-        val styledComponent = fc<RProps> {
+        val styledComponent = fc<Props> {
             styledDiv {
                 css {
                     "div" {
@@ -347,7 +347,7 @@ class PseudoClassRulesTest : TestBase() {
 
     @Test
     fun lastOfType() = runTest {
-        val styledComponent = fc<RProps> {
+        val styledComponent = fc<Props> {
             styledDiv {
                 css {
                     "div" {
@@ -368,7 +368,7 @@ class PseudoClassRulesTest : TestBase() {
 
     @Test
     fun link() = runTest {
-        val styledComponent = fc<RProps> {
+        val styledComponent = fc<Props> {
             styledDiv {
                 css {
                     "a" {
@@ -387,7 +387,7 @@ class PseudoClassRulesTest : TestBase() {
 
     @Test
     fun not() = runTest {
-        val styledComponent = fc<RProps> {
+        val styledComponent = fc<Props> {
             styledInput {
                 css {
                     color = secondColor
@@ -405,7 +405,7 @@ class PseudoClassRulesTest : TestBase() {
 
     @Test
     fun nthChild() = runTest {
-        val styledComponent = fc<RProps> {
+        val styledComponent = fc<Props> {
             styledDiv {
                 css {
                     "div" {
@@ -430,7 +430,7 @@ class PseudoClassRulesTest : TestBase() {
 
     @Test
     fun nthLastChild() = runTest {
-        val styledComponent = fc<RProps> {
+        val styledComponent = fc<Props> {
             styledDiv {
                 css {
                     "div" {
@@ -455,7 +455,7 @@ class PseudoClassRulesTest : TestBase() {
 
     @Test
     fun nthLastOfType() = runTest {
-        val styledComponent = fc<RProps> {
+        val styledComponent = fc<Props> {
             styledDiv {
                 css {
                     "div" {
@@ -482,7 +482,7 @@ class PseudoClassRulesTest : TestBase() {
 
     @Test
     fun nthOfType() = runTest {
-        val styledComponent = fc<RProps> {
+        val styledComponent = fc<Props> {
             styledDiv {
                 css {
                     "div" {
@@ -509,7 +509,7 @@ class PseudoClassRulesTest : TestBase() {
 
     @Test
     fun onlyChild() = runTest {
-        val styledComponent = fc<RProps> {
+        val styledComponent = fc<Props> {
             styledDiv {
                 css {
                     "div, span" {
@@ -533,7 +533,7 @@ class PseudoClassRulesTest : TestBase() {
 
     @Test
     fun onlyOfType() = runTest {
-        val styledComponent = fc<RProps> {
+        val styledComponent = fc<Props> {
             styledDiv {
                 css {
                     "div, span" {
@@ -556,7 +556,7 @@ class PseudoClassRulesTest : TestBase() {
 
     @Test
     fun optional() = runTest {
-        val styledComponent = fc<RProps> {
+        val styledComponent = fc<Props> {
             styledInput {
                 attrs {
                     required = true
@@ -577,7 +577,7 @@ class PseudoClassRulesTest : TestBase() {
 
     @Test
     fun outOfRange() = runTest {
-        val styledComponent = fc<RProps> {
+        val styledComponent = fc<Props> {
             styledInput(type = InputType.number) {
                 attrs {
                     max = "10"
@@ -599,7 +599,7 @@ class PseudoClassRulesTest : TestBase() {
 
     @Test
     fun readOnly() = runTest {
-        val styledComponent = fc<RProps> {
+        val styledComponent = fc<Props> {
             styledInput {
                 css {
                     color = firstColor
@@ -617,7 +617,7 @@ class PseudoClassRulesTest : TestBase() {
 
     @Test
     fun readWrite() = runTest {
-        val styledComponent = fc<RProps> {
+        val styledComponent = fc<Props> {
             styledInput {
                 attrs {
                     readonly = true
@@ -638,7 +638,7 @@ class PseudoClassRulesTest : TestBase() {
 
     @Test
     fun required() = runTest {
-        val styledComponent = fc<RProps> {
+        val styledComponent = fc<Props> {
             styledInput {
                 css {
                     color = firstColor
@@ -656,7 +656,7 @@ class PseudoClassRulesTest : TestBase() {
 
     @Test
     fun valid() = runTest {
-        val styledComponent = fc<RProps> {
+        val styledComponent = fc<Props> {
             styledInput(type = InputType.number) {
                 attrs {
                     max = "10"
@@ -678,7 +678,7 @@ class PseudoClassRulesTest : TestBase() {
 
     @Test
     fun visited() = runTest {
-        val styledComponent = fc<RProps> {
+        val styledComponent = fc<Props> {
             styledDiv {
                 css {
                     "a" {
