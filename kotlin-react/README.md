@@ -60,7 +60,7 @@ Here's what the equivalent Kotlin code looks like:
 import react.*
 import react.dom.*
 
-external interface WelcomeProps : RProps {
+external interface WelcomeProps : Props {
     var name: String
 }
 
@@ -112,7 +112,7 @@ a matching component state to hold the `name` property:
 import react.*
 import react.dom.*
 
-external interface WelcomeProps : RProps {
+external interface WelcomeProps : Props {
     var name: String
 }
 
@@ -168,7 +168,7 @@ fun RBuilder.welcome(handler: WelcomeProps.() -> Unit) = child(Welcome::class) {
 If a single component contains a lot of code, you can use `RBuilder` extension functions to group and structure code that belongs together. 
 
 ```kotlin
-val myComplexComponent = fc<RProps> {
+val myComplexComponent = fc<Props> {
     myHeader("complex")
     myFooter("!")
 }
@@ -199,7 +199,7 @@ React 16.8 introduced Hooks as a novel way of using state and other React featur
 You can use the `useState` Hook when you want to keep track of state without the need for a class component. Consider the following implementation of a counter inside a `fc`:
 
 ```kotlin
-val counter = fc<RProps> {
+val counter = fc<Props> {
     val (count, setCount) = useState(0)
     button {
         attrs.onClickFunction = { setCount(count + 1) }
@@ -215,7 +215,7 @@ Note that unlike properties in a React class component, the `setCount` function 
 It is also possible to use the State Hook via Kotlin's [delegation syntax](https://kotlinlang.org/docs/reference/delegated-properties.html), which can simplify the code even more:
 
 ```kotlin
-val counter = fc<RProps> {
+val counter = fc<Props> {
     var count by useState(0)
     button {
         attrs.onClickFunction = { count += 1 }
@@ -234,7 +234,7 @@ The Effect Hook can be used to perform side effects without the need for a class
 which `fetch`es a random fact and displays it in a `h3` tag:
 
 ```kotlin
-val randomFact = fc<RProps> {
+val randomFact = fc<Props> {
     val (randomFact, setRandomFact) = useState<String?>(null)
     useEffect(*emptyArray()) { // or useEffectOnce
         window.fetch("http://numbersapi.com/42").then {
@@ -254,7 +254,7 @@ We might want to set up a subscription to some external data source. In that cas
 data class Hit(val objectID: String, val url: String, val title: String)
 data class Data(val hit: List<Hit>)
 
-val searchResults = fc<RProps> {
+val searchResults = fc<Props> {
     var data by useState(Data(emptyList()))
     var query by useState("react")
 
@@ -324,7 +324,7 @@ fun useCards(): List<String> {
     return cardsInDeck
 }
 // now we can use this hook in any component!
-val randomFact = fc<RProps> {
+val randomFact = fc<Props> {
     val cardsInDeck = useCards()
     h3 {
         for (card in cardsInDeck) {
