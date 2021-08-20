@@ -3,6 +3,7 @@
 package react.dom
 
 import kotlinx.html.*
+import kotlinx.html.ButtonType
 import kotlinx.html.attributes.enumEncode
 import react.RBuilder
 
