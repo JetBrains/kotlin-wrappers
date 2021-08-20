@@ -11,22 +11,22 @@ import org.w3c.dom.events.Event
 var CommonAttributeGroupFacade.onCopy: ClipboardEventHandler<*>
     @Deprecated(message = "Write-only property", level = DeprecationLevel.HIDDEN)
     get() = error("")
-    set(newValue) {
-        onEvent("oncopy", newValue)
+    set(value) {
+        onEvent("oncopy", value)
     }
 
 var CommonAttributeGroupFacade.onCut: ClipboardEventHandler<*>
     @Deprecated(message = "Write-only property", level = DeprecationLevel.HIDDEN)
     get() = error("")
-    set(newValue) {
-        onEvent("oncut", newValue)
+    set(value) {
+        onEvent("oncut", value)
     }
 
 var CommonAttributeGroupFacade.onPaste: ClipboardEventHandler<*>
     @Deprecated(message = "Write-only property", level = DeprecationLevel.HIDDEN)
     get() = error("")
-    set(newValue) {
-        onEvent("onpaste", newValue)
+    set(value) {
+        onEvent("onpaste", value)
     }
 
 // Composition Events
@@ -34,22 +34,22 @@ var CommonAttributeGroupFacade.onPaste: ClipboardEventHandler<*>
 var CommonAttributeGroupFacade.onCompositionEnd: CompositionEventHandler<*>
     @Deprecated(message = "Write-only property", level = DeprecationLevel.HIDDEN)
     get() = error("")
-    set(newValue) {
-        onEvent("oncompositionend", newValue)
+    set(value) {
+        onEvent("oncompositionend", value)
     }
 
 var CommonAttributeGroupFacade.onCompositionStart: CompositionEventHandler<*>
     @Deprecated(message = "Write-only property", level = DeprecationLevel.HIDDEN)
     get() = error("")
-    set(newValue) {
-        onEvent("oncompositionstart", newValue)
+    set(value) {
+        onEvent("oncompositionstart", value)
     }
 
 var CommonAttributeGroupFacade.onCompositionUpdate: CompositionEventHandler<*>
     @Deprecated(message = "Write-only property", level = DeprecationLevel.HIDDEN)
     get() = error("")
-    set(newValue) {
-        onEvent("oncompositionupdate", newValue)
+    set(value) {
+        onEvent("oncompositionupdate", value)
     }
 
 // Focus Events
@@ -57,15 +57,15 @@ var CommonAttributeGroupFacade.onCompositionUpdate: CompositionEventHandler<*>
 var CommonAttributeGroupFacade.onFocus: FocusEventHandler<*>
     @Deprecated(message = "Write-only property", level = DeprecationLevel.HIDDEN)
     get() = error("")
-    set(newValue) {
-        onEvent("onfocus", newValue)
+    set(value) {
+        onEvent("onfocus", value)
     }
 
 var CommonAttributeGroupFacade.onBlur: FocusEventHandler<*>
     @Deprecated(message = "Write-only property", level = DeprecationLevel.HIDDEN)
     get() = error("")
-    set(newValue) {
-        onEvent("onblur", newValue)
+    set(value) {
+        onEvent("onblur", value)
     }
 
 // Form Events
@@ -73,43 +73,43 @@ var CommonAttributeGroupFacade.onBlur: FocusEventHandler<*>
 var CommonAttributeGroupFacade.onChange: ChangeEventHandler<*>
     @Deprecated(message = "Write-only property", level = DeprecationLevel.HIDDEN)
     get() = error("")
-    set(newValue) {
-        onEvent("onchange", newValue)
+    set(value) {
+        onEvent("onchange", value)
     }
 
 var CommonAttributeGroupFacade.onBeforeInput: FormEventHandler<*>
     @Deprecated(message = "Write-only property", level = DeprecationLevel.HIDDEN)
     get() = error("")
-    set(newValue) {
-        onEvent("onbeforeinput", newValue)
+    set(value) {
+        onEvent("onbeforeinput", value)
     }
 
 var CommonAttributeGroupFacade.onInput: FormEventHandler<*>
     @Deprecated(message = "Write-only property", level = DeprecationLevel.HIDDEN)
     get() = error("")
-    set(newValue) {
-        onEvent("oninput", newValue)
+    set(value) {
+        onEvent("oninput", value)
     }
 
 var CommonAttributeGroupFacade.onReset: FormEventHandler<*>
     @Deprecated(message = "Write-only property", level = DeprecationLevel.HIDDEN)
     get() = error("")
-    set(newValue) {
-        onEvent("onreset", newValue)
+    set(value) {
+        onEvent("onreset", value)
     }
 
 var CommonAttributeGroupFacade.onSubmit: FormEventHandler<*>
     @Deprecated(message = "Write-only property", level = DeprecationLevel.HIDDEN)
     get() = error("")
-    set(newValue) {
-        onEvent("onsubmit", newValue)
+    set(value) {
+        onEvent("onsubmit", value)
     }
 
 var CommonAttributeGroupFacade.onInvalid: FormEventHandler<*>
     @Deprecated(message = "Write-only property", level = DeprecationLevel.HIDDEN)
     get() = error("")
-    set(newValue) {
-        onEvent("oninvalid", newValue)
+    set(value) {
+        onEvent("oninvalid", value)
     }
 
 // Image Events
@@ -117,15 +117,15 @@ var CommonAttributeGroupFacade.onInvalid: FormEventHandler<*>
 var CommonAttributeGroupFacade.onLoad: ReactEventHandler<*>
     @Deprecated(message = "Write-only property", level = DeprecationLevel.HIDDEN)
     get() = error("")
-    set(newValue) {
-        onEvent("onload", newValue)
+    set(value) {
+        onEvent("onload", value)
     }
 
 var CommonAttributeGroupFacade.onError: ReactEventHandler<*>
     @Deprecated(message = "Write-only property", level = DeprecationLevel.HIDDEN)
     get() = error("")
-    set(newValue) {
-        onEvent("onerror", newValue)
+    set(value) {
+        onEvent("onerror", value)
     }
 
 // Keyboard Events
@@ -133,22 +133,22 @@ var CommonAttributeGroupFacade.onError: ReactEventHandler<*>
 var CommonAttributeGroupFacade.onKeyDown: KeyboardEventHandler<*>
     @Deprecated(message = "Write-only property", level = DeprecationLevel.HIDDEN)
     get() = error("")
-    set(newValue) {
-        onEvent("onkeydown", newValue)
+    set(value) {
+        onEvent("onkeydown", value)
     }
 
 var CommonAttributeGroupFacade.onKeyPress: KeyboardEventHandler<*>
     @Deprecated(message = "Write-only property", level = DeprecationLevel.HIDDEN)
     get() = error("")
-    set(newValue) {
-        onEvent("onkeypress", newValue)
+    set(value) {
+        onEvent("onkeypress", value)
     }
 
 var CommonAttributeGroupFacade.onKeyUp: KeyboardEventHandler<*>
     @Deprecated(message = "Write-only property", level = DeprecationLevel.HIDDEN)
     get() = error("")
-    set(newValue) {
-        onEvent("onkeyup", newValue)
+    set(value) {
+        onEvent("onkeyup", value)
     }
 
 // Media Events
@@ -156,155 +156,155 @@ var CommonAttributeGroupFacade.onKeyUp: KeyboardEventHandler<*>
 var CommonAttributeGroupFacade.onAbort: ReactEventHandler<*>
     @Deprecated(message = "Write-only property", level = DeprecationLevel.HIDDEN)
     get() = error("")
-    set(newValue) {
-        onEvent("onabort", newValue)
+    set(value) {
+        onEvent("onabort", value)
     }
 
 var CommonAttributeGroupFacade.onCanPlay: ReactEventHandler<*>
     @Deprecated(message = "Write-only property", level = DeprecationLevel.HIDDEN)
     get() = error("")
-    set(newValue) {
-        onEvent("oncanplay", newValue)
+    set(value) {
+        onEvent("oncanplay", value)
     }
 
 var CommonAttributeGroupFacade.onCanPlayThrough: ReactEventHandler<*>
     @Deprecated(message = "Write-only property", level = DeprecationLevel.HIDDEN)
     get() = error("")
-    set(newValue) {
-        onEvent("oncanplaythrough", newValue)
+    set(value) {
+        onEvent("oncanplaythrough", value)
     }
 
 var CommonAttributeGroupFacade.onDurationChange: ReactEventHandler<*>
     @Deprecated(message = "Write-only property", level = DeprecationLevel.HIDDEN)
     get() = error("")
-    set(newValue) {
-        onEvent("ondurationchange", newValue)
+    set(value) {
+        onEvent("ondurationchange", value)
     }
 
 var CommonAttributeGroupFacade.onEmptied: ReactEventHandler<*>
     @Deprecated(message = "Write-only property", level = DeprecationLevel.HIDDEN)
     get() = error("")
-    set(newValue) {
-        onEvent("onemptied", newValue)
+    set(value) {
+        onEvent("onemptied", value)
     }
 
 var CommonAttributeGroupFacade.onEncrypted: ReactEventHandler<*>
     @Deprecated(message = "Write-only property", level = DeprecationLevel.HIDDEN)
     get() = error("")
-    set(newValue) {
-        onEvent("onencrypted", newValue)
+    set(value) {
+        onEvent("onencrypted", value)
     }
 
 var CommonAttributeGroupFacade.onEnded: ReactEventHandler<*>
     @Deprecated(message = "Write-only property", level = DeprecationLevel.HIDDEN)
     get() = error("")
-    set(newValue) {
-        onEvent("onended", newValue)
+    set(value) {
+        onEvent("onended", value)
     }
 
 var CommonAttributeGroupFacade.onLoadedData: ReactEventHandler<*>
     @Deprecated(message = "Write-only property", level = DeprecationLevel.HIDDEN)
     get() = error("")
-    set(newValue) {
-        onEvent("onloadeddata", newValue)
+    set(value) {
+        onEvent("onloadeddata", value)
     }
 
 var CommonAttributeGroupFacade.onLoadedMetadata: ReactEventHandler<*>
     @Deprecated(message = "Write-only property", level = DeprecationLevel.HIDDEN)
     get() = error("")
-    set(newValue) {
-        onEvent("onloadedmetadata", newValue)
+    set(value) {
+        onEvent("onloadedmetadata", value)
     }
 
 var CommonAttributeGroupFacade.onLoadStart: ReactEventHandler<*>
     @Deprecated(message = "Write-only property", level = DeprecationLevel.HIDDEN)
     get() = error("")
-    set(newValue) {
-        onEvent("onloadstart", newValue)
+    set(value) {
+        onEvent("onloadstart", value)
     }
 
 var CommonAttributeGroupFacade.onPause: ReactEventHandler<*>
     @Deprecated(message = "Write-only property", level = DeprecationLevel.HIDDEN)
     get() = error("")
-    set(newValue) {
-        onEvent("onpause", newValue)
+    set(value) {
+        onEvent("onpause", value)
     }
 
 var CommonAttributeGroupFacade.onPlay: ReactEventHandler<*>
     @Deprecated(message = "Write-only property", level = DeprecationLevel.HIDDEN)
     get() = error("")
-    set(newValue) {
-        onEvent("onplay", newValue)
+    set(value) {
+        onEvent("onplay", value)
     }
 
 var CommonAttributeGroupFacade.onPlaying: ReactEventHandler<*>
     @Deprecated(message = "Write-only property", level = DeprecationLevel.HIDDEN)
     get() = error("")
-    set(newValue) {
-        onEvent("onplaying", newValue)
+    set(value) {
+        onEvent("onplaying", value)
     }
 
 var CommonAttributeGroupFacade.onProgress: ReactEventHandler<*>
     @Deprecated(message = "Write-only property", level = DeprecationLevel.HIDDEN)
     get() = error("")
-    set(newValue) {
-        onEvent("onprogress", newValue)
+    set(value) {
+        onEvent("onprogress", value)
     }
 
 var CommonAttributeGroupFacade.onRateChange: ReactEventHandler<*>
     @Deprecated(message = "Write-only property", level = DeprecationLevel.HIDDEN)
     get() = error("")
-    set(newValue) {
-        onEvent("onratechange", newValue)
+    set(value) {
+        onEvent("onratechange", value)
     }
 
 var CommonAttributeGroupFacade.onSeeked: ReactEventHandler<*>
     @Deprecated(message = "Write-only property", level = DeprecationLevel.HIDDEN)
     get() = error("")
-    set(newValue) {
-        onEvent("onseeked", newValue)
+    set(value) {
+        onEvent("onseeked", value)
     }
 
 var CommonAttributeGroupFacade.onSeeking: ReactEventHandler<*>
     @Deprecated(message = "Write-only property", level = DeprecationLevel.HIDDEN)
     get() = error("")
-    set(newValue) {
-        onEvent("onseeking", newValue)
+    set(value) {
+        onEvent("onseeking", value)
     }
 
 var CommonAttributeGroupFacade.onStalled: ReactEventHandler<*>
     @Deprecated(message = "Write-only property", level = DeprecationLevel.HIDDEN)
     get() = error("")
-    set(newValue) {
-        onEvent("onstalled", newValue)
+    set(value) {
+        onEvent("onstalled", value)
     }
 
 var CommonAttributeGroupFacade.onSuspend: ReactEventHandler<*>
     @Deprecated(message = "Write-only property", level = DeprecationLevel.HIDDEN)
     get() = error("")
-    set(newValue) {
-        onEvent("onsuspend", newValue)
+    set(value) {
+        onEvent("onsuspend", value)
     }
 
 var CommonAttributeGroupFacade.onTimeUpdate: ReactEventHandler<*>
     @Deprecated(message = "Write-only property", level = DeprecationLevel.HIDDEN)
     get() = error("")
-    set(newValue) {
-        onEvent("ontimeupdate", newValue)
+    set(value) {
+        onEvent("ontimeupdate", value)
     }
 
 var CommonAttributeGroupFacade.onVolumeChange: ReactEventHandler<*>
     @Deprecated(message = "Write-only property", level = DeprecationLevel.HIDDEN)
     get() = error("")
-    set(newValue) {
-        onEvent("onvolumechange", newValue)
+    set(value) {
+        onEvent("onvolumechange", value)
     }
 
 var CommonAttributeGroupFacade.onWaiting: ReactEventHandler<*>
     @Deprecated(message = "Write-only property", level = DeprecationLevel.HIDDEN)
     get() = error("")
-    set(newValue) {
-        onEvent("onwaiting", newValue)
+    set(value) {
+        onEvent("onwaiting", value)
     }
 
 // MouseEvents
@@ -312,134 +312,134 @@ var CommonAttributeGroupFacade.onWaiting: ReactEventHandler<*>
 var CommonAttributeGroupFacade.onAuxClick: MouseEventHandler<*>
     @Deprecated(message = "Write-only property", level = DeprecationLevel.HIDDEN)
     get() = error("")
-    set(newValue) {
-        onEvent("onauxclick", newValue)
+    set(value) {
+        onEvent("onauxclick", value)
     }
 
 var CommonAttributeGroupFacade.onClick: MouseEventHandler<*>
     @Deprecated(message = "Write-only property", level = DeprecationLevel.HIDDEN)
     get() = error("")
-    set(newValue) {
-        onEvent("onclick", newValue)
+    set(value) {
+        onEvent("onclick", value)
     }
 
 var CommonAttributeGroupFacade.onContextMenu: MouseEventHandler<*>
     @Deprecated(message = "Write-only property", level = DeprecationLevel.HIDDEN)
     get() = error("")
-    set(newValue) {
-        onEvent("oncontextmenu", newValue)
+    set(value) {
+        onEvent("oncontextmenu", value)
     }
 
 var CommonAttributeGroupFacade.onDoubleClick: MouseEventHandler<*>
     @Deprecated(message = "Write-only property", level = DeprecationLevel.HIDDEN)
     get() = error("")
-    set(newValue) {
-        onEvent("ondoubleclick", newValue)
+    set(value) {
+        onEvent("ondoubleclick", value)
     }
 
 var CommonAttributeGroupFacade.onDrag: DragEventHandler<*>
     @Deprecated(message = "Write-only property", level = DeprecationLevel.HIDDEN)
     get() = error("")
-    set(newValue) {
-        onEvent("ondrag", newValue)
+    set(value) {
+        onEvent("ondrag", value)
     }
 
 var CommonAttributeGroupFacade.onDragEnd: DragEventHandler<*>
     @Deprecated(message = "Write-only property", level = DeprecationLevel.HIDDEN)
     get() = error("")
-    set(newValue) {
-        onEvent("ondragend", newValue)
+    set(value) {
+        onEvent("ondragend", value)
     }
 
 var CommonAttributeGroupFacade.onDragEnter: DragEventHandler<*>
     @Deprecated(message = "Write-only property", level = DeprecationLevel.HIDDEN)
     get() = error("")
-    set(newValue) {
-        onEvent("ondragenter", newValue)
+    set(value) {
+        onEvent("ondragenter", value)
     }
 
 var CommonAttributeGroupFacade.onDragExit: DragEventHandler<*>
     @Deprecated(message = "Write-only property", level = DeprecationLevel.HIDDEN)
     get() = error("")
-    set(newValue) {
-        onEvent("ondragexit", newValue)
+    set(value) {
+        onEvent("ondragexit", value)
     }
 
 var CommonAttributeGroupFacade.onDragLeave: DragEventHandler<*>
     @Deprecated(message = "Write-only property", level = DeprecationLevel.HIDDEN)
     get() = error("")
-    set(newValue) {
-        onEvent("ondragleave", newValue)
+    set(value) {
+        onEvent("ondragleave", value)
     }
 
 var CommonAttributeGroupFacade.onDragOver: DragEventHandler<*>
     @Deprecated(message = "Write-only property", level = DeprecationLevel.HIDDEN)
     get() = error("")
-    set(newValue) {
-        onEvent("ondragover", newValue)
+    set(value) {
+        onEvent("ondragover", value)
     }
 
 var CommonAttributeGroupFacade.onDragStart: DragEventHandler<*>
     @Deprecated(message = "Write-only property", level = DeprecationLevel.HIDDEN)
     get() = error("")
-    set(newValue) {
-        onEvent("ondragstart", newValue)
+    set(value) {
+        onEvent("ondragstart", value)
     }
 
 var CommonAttributeGroupFacade.onDrop: DragEventHandler<*>
     @Deprecated(message = "Write-only property", level = DeprecationLevel.HIDDEN)
     get() = error("")
-    set(newValue) {
-        onEvent("ondrop", newValue)
+    set(value) {
+        onEvent("ondrop", value)
     }
 
 var CommonAttributeGroupFacade.onMouseDown: MouseEventHandler<*>
     @Deprecated(message = "Write-only property", level = DeprecationLevel.HIDDEN)
     get() = error("")
-    set(newValue) {
-        onEvent("onmousedown", newValue)
+    set(value) {
+        onEvent("onmousedown", value)
     }
 
 var CommonAttributeGroupFacade.onMouseEnter: MouseEventHandler<*>
     @Deprecated(message = "Write-only property", level = DeprecationLevel.HIDDEN)
     get() = error("")
-    set(newValue) {
-        onEvent("onmouseenter", newValue)
+    set(value) {
+        onEvent("onmouseenter", value)
     }
 
 var CommonAttributeGroupFacade.onMouseLeave: MouseEventHandler<*>
     @Deprecated(message = "Write-only property", level = DeprecationLevel.HIDDEN)
     get() = error("")
-    set(newValue) {
-        onEvent("onmouseleave", newValue)
+    set(value) {
+        onEvent("onmouseleave", value)
     }
 
 var CommonAttributeGroupFacade.onMouseMove: MouseEventHandler<*>
     @Deprecated(message = "Write-only property", level = DeprecationLevel.HIDDEN)
     get() = error("")
-    set(newValue) {
-        onEvent("onmousemove", newValue)
+    set(value) {
+        onEvent("onmousemove", value)
     }
 
 var CommonAttributeGroupFacade.onMouseOut: MouseEventHandler<*>
     @Deprecated(message = "Write-only property", level = DeprecationLevel.HIDDEN)
     get() = error("")
-    set(newValue) {
-        onEvent("onmouseout", newValue)
+    set(value) {
+        onEvent("onmouseout", value)
     }
 
 var CommonAttributeGroupFacade.onMouseOver: MouseEventHandler<*>
     @Deprecated(message = "Write-only property", level = DeprecationLevel.HIDDEN)
     get() = error("")
-    set(newValue) {
-        onEvent("onmouseover", newValue)
+    set(value) {
+        onEvent("onmouseover", value)
     }
 
 var CommonAttributeGroupFacade.onMouseUp: MouseEventHandler<*>
     @Deprecated(message = "Write-only property", level = DeprecationLevel.HIDDEN)
     get() = error("")
-    set(newValue) {
-        onEvent("onmouseup", newValue)
+    set(value) {
+        onEvent("onmouseup", value)
     }
 
 // Selection Events
@@ -447,8 +447,8 @@ var CommonAttributeGroupFacade.onMouseUp: MouseEventHandler<*>
 var CommonAttributeGroupFacade.onSelect: ReactEventHandler<*>
     @Deprecated(message = "Write-only property", level = DeprecationLevel.HIDDEN)
     get() = error("")
-    set(newValue) {
-        onEvent("onselect", newValue)
+    set(value) {
+        onEvent("onselect", value)
     }
 
 // Touch Events
@@ -456,29 +456,29 @@ var CommonAttributeGroupFacade.onSelect: ReactEventHandler<*>
 var CommonAttributeGroupFacade.onTouchCancel: TouchEventHandler<*>
     @Deprecated(message = "Write-only property", level = DeprecationLevel.HIDDEN)
     get() = error("")
-    set(newValue) {
-        onEvent("ontouchcancel", newValue)
+    set(value) {
+        onEvent("ontouchcancel", value)
     }
 
 var CommonAttributeGroupFacade.onTouchEnd: TouchEventHandler<*>
     @Deprecated(message = "Write-only property", level = DeprecationLevel.HIDDEN)
     get() = error("")
-    set(newValue) {
-        onEvent("ontouchend", newValue)
+    set(value) {
+        onEvent("ontouchend", value)
     }
 
 var CommonAttributeGroupFacade.onTouchMove: TouchEventHandler<*>
     @Deprecated(message = "Write-only property", level = DeprecationLevel.HIDDEN)
     get() = error("")
-    set(newValue) {
-        onEvent("ontouchmove", newValue)
+    set(value) {
+        onEvent("ontouchmove", value)
     }
 
 var CommonAttributeGroupFacade.onTouchStart: TouchEventHandler<*>
     @Deprecated(message = "Write-only property", level = DeprecationLevel.HIDDEN)
     get() = error("")
-    set(newValue) {
-        onEvent("ontouchstart", newValue)
+    set(value) {
+        onEvent("ontouchstart", value)
     }
 
 // Pointer Events
@@ -486,71 +486,71 @@ var CommonAttributeGroupFacade.onTouchStart: TouchEventHandler<*>
 var CommonAttributeGroupFacade.onPointerDown: PointerEventHandler<*>
     @Deprecated(message = "Write-only property", level = DeprecationLevel.HIDDEN)
     get() = error("")
-    set(newValue) {
-        onEvent("onpointerdown", newValue)
+    set(value) {
+        onEvent("onpointerdown", value)
     }
 
 var CommonAttributeGroupFacade.onPointerMove: PointerEventHandler<*>
     @Deprecated(message = "Write-only property", level = DeprecationLevel.HIDDEN)
     get() = error("")
-    set(newValue) {
-        onEvent("onpointermove", newValue)
+    set(value) {
+        onEvent("onpointermove", value)
     }
 
 var CommonAttributeGroupFacade.onPointerUp: PointerEventHandler<*>
     @Deprecated(message = "Write-only property", level = DeprecationLevel.HIDDEN)
     get() = error("")
-    set(newValue) {
-        onEvent("onpointerup", newValue)
+    set(value) {
+        onEvent("onpointerup", value)
     }
 
 var CommonAttributeGroupFacade.onPointerCancel: PointerEventHandler<*>
     @Deprecated(message = "Write-only property", level = DeprecationLevel.HIDDEN)
     get() = error("")
-    set(newValue) {
-        onEvent("onpointercancel", newValue)
+    set(value) {
+        onEvent("onpointercancel", value)
     }
 
 var CommonAttributeGroupFacade.onPointerEnter: PointerEventHandler<*>
     @Deprecated(message = "Write-only property", level = DeprecationLevel.HIDDEN)
     get() = error("")
-    set(newValue) {
-        onEvent("onpointerenter", newValue)
+    set(value) {
+        onEvent("onpointerenter", value)
     }
 
 var CommonAttributeGroupFacade.onPointerLeave: PointerEventHandler<*>
     @Deprecated(message = "Write-only property", level = DeprecationLevel.HIDDEN)
     get() = error("")
-    set(newValue) {
-        onEvent("onpointerleave", newValue)
+    set(value) {
+        onEvent("onpointerleave", value)
     }
 
 var CommonAttributeGroupFacade.onPointerOver: PointerEventHandler<*>
     @Deprecated(message = "Write-only property", level = DeprecationLevel.HIDDEN)
     get() = error("")
-    set(newValue) {
-        onEvent("onpointerover", newValue)
+    set(value) {
+        onEvent("onpointerover", value)
     }
 
 var CommonAttributeGroupFacade.onPointerOut: PointerEventHandler<*>
     @Deprecated(message = "Write-only property", level = DeprecationLevel.HIDDEN)
     get() = error("")
-    set(newValue) {
-        onEvent("onpointerout", newValue)
+    set(value) {
+        onEvent("onpointerout", value)
     }
 
 var CommonAttributeGroupFacade.onGotPointerCapture: PointerEventHandler<*>
     @Deprecated(message = "Write-only property", level = DeprecationLevel.HIDDEN)
     get() = error("")
-    set(newValue) {
-        onEvent("ongotpointercapture", newValue)
+    set(value) {
+        onEvent("ongotpointercapture", value)
     }
 
 var CommonAttributeGroupFacade.onLostPointerCapture: PointerEventHandler<*>
     @Deprecated(message = "Write-only property", level = DeprecationLevel.HIDDEN)
     get() = error("")
-    set(newValue) {
-        onEvent("onlostpointercapture", newValue)
+    set(value) {
+        onEvent("onlostpointercapture", value)
     }
 
 // UI Events
@@ -558,8 +558,8 @@ var CommonAttributeGroupFacade.onLostPointerCapture: PointerEventHandler<*>
 var CommonAttributeGroupFacade.onScroll: UIEventHandler<*>
     @Deprecated(message = "Write-only property", level = DeprecationLevel.HIDDEN)
     get() = error("")
-    set(newValue) {
-        onEvent("onscroll", newValue)
+    set(value) {
+        onEvent("onscroll", value)
     }
 
 // Wheel Events
@@ -567,8 +567,8 @@ var CommonAttributeGroupFacade.onScroll: UIEventHandler<*>
 var CommonAttributeGroupFacade.onWheel: WheelEventHandler<*>
     @Deprecated(message = "Write-only property", level = DeprecationLevel.HIDDEN)
     get() = error("")
-    set(newValue) {
-        onEvent("onwheel", newValue)
+    set(value) {
+        onEvent("onwheel", value)
     }
 
 // Animation Events
@@ -576,22 +576,22 @@ var CommonAttributeGroupFacade.onWheel: WheelEventHandler<*>
 var CommonAttributeGroupFacade.onAnimationStart: AnimationEventHandler<*>
     @Deprecated(message = "Write-only property", level = DeprecationLevel.HIDDEN)
     get() = error("")
-    set(newValue) {
-        onEvent("onanimationstart", newValue)
+    set(value) {
+        onEvent("onanimationstart", value)
     }
 
 var CommonAttributeGroupFacade.onAnimationEnd: AnimationEventHandler<*>
     @Deprecated(message = "Write-only property", level = DeprecationLevel.HIDDEN)
     get() = error("")
-    set(newValue) {
-        onEvent("onanimationend", newValue)
+    set(value) {
+        onEvent("onanimationend", value)
     }
 
 var CommonAttributeGroupFacade.onAnimationIteration: AnimationEventHandler<*>
     @Deprecated(message = "Write-only property", level = DeprecationLevel.HIDDEN)
     get() = error("")
-    set(newValue) {
-        onEvent("onanimationiteration", newValue)
+    set(value) {
+        onEvent("onanimationiteration", value)
     }
 
 // Transition Events
@@ -599,8 +599,8 @@ var CommonAttributeGroupFacade.onAnimationIteration: AnimationEventHandler<*>
 var CommonAttributeGroupFacade.onTransitionEnd: TransitionEventHandler<*>
     @Deprecated(message = "Write-only property", level = DeprecationLevel.HIDDEN)
     get() = error("")
-    set(newValue) {
-        onEvent("ontransitionend", newValue)
+    set(value) {
+        onEvent("ontransitionend", value)
     }
 
 private fun CommonAttributeGroupFacade.onEvent(
