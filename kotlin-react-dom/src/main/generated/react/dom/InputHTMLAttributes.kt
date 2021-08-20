@@ -13,7 +13,7 @@ external interface InputHTMLAttributes<T : Element> : HTMLAttributes<T> {
     var checked: Boolean
     var crossOrigin: String
     var disabled: Boolean
-    var enterKeyHint: String // 'enter' | 'done' | 'go' | 'next' | 'previous' | 'search' | 'send'
+    var enterKeyHint: EnterKeyHint
     var form: String
     var formAction: String
     var formEncType: String

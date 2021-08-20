@@ -6,10 +6,10 @@ import org.w3c.dom.Element
 
 external interface ImgHTMLAttributes<T : Element> : HTMLAttributes<T> {
     var alt: String
-    var crossOrigin: String // "anonymous" | "use-credentials" | ""
-    var decoding: String // "async" | "auto" | "sync"
+    var crossOrigin: ImgCrossOrigin
+    var decoding: ImgDecoding
     var height: Double
-    var loading: String // "eager" | "lazy"
+    var loading: ImgLoading
     var referrerPolicy: HTMLAttributeReferrerPolicy
     var sizes: String
     var src: String
