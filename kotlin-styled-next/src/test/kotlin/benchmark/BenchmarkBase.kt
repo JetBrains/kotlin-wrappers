@@ -6,6 +6,7 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.toList
 import runTest
+import kotlin.test.BeforeTest
 import kotlin.test.assertTrue
 import kotlin.time.Duration
 import kotlin.time.DurationUnit
@@ -20,6 +21,11 @@ open class BenchmarkBase {
                 emit(calculate())
             }
         }
+    }
+
+    @BeforeTest
+    open fun before() = runTest {
+        clearStyles()
     }
 
     protected fun TestScope.assertCssNotEmpty() {

@@ -4,17 +4,13 @@ import org.w3c.dom.css.CSSStyleSheet
 
 // A stylesheet that is injected using the CSSOM API. Useful in production mode because of better performance,
 // but can't be easily edited using devtools.
-internal class CSSOMPersistentSheet : AbstractSheet() {
-    internal val sheet by lazy { appendStyleElement(styleId).sheet as CSSStyleSheet }
-    internal val importsSheet by lazy { appendStyleElement(importStyleId).sheet as CSSStyleSheet }
+internal class CSSOMPersistentSheet(type: RuleType) : AbstractSheet(type) {
+    internal val sheet by lazy { appendStyleElement().sheet as CSSStyleSheet }
     internal val scheduledRules = mutableListOf<String>()
-    internal val scheduledImportRules = mutableListOf<String>()
 
-    override fun scheduleToInject(rules: Iterable<String>, type: RuleType) {
-        when (type) {
-            RuleType.REGULAR -> scheduledRules.addAll(rules)
-            RuleType.IMPORT -> scheduledImportRules.addAll(rules)
-        }
+    override fun scheduleToInject(rules: Iterable<String>): GroupId {
+        scheduledRules.addAll(rules)
+        return 0
     }
 
     private fun inject(sheet: CSSStyleSheet, rules: MutableList<String>) {
@@ -32,6 +28,9 @@ internal class CSSOMPersistentSheet : AbstractSheet() {
 
     override fun injectScheduled() {
         inject(sheet, scheduledRules)
-        inject(importsSheet, scheduledImportRules)
+    }
+
+    override fun clear() {
+        scheduledRules.clear()
     }
 }

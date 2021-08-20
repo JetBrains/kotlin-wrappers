@@ -10,7 +10,6 @@ import org.w3c.dom.Element
 import org.w3c.dom.HTMLElement
 import org.w3c.dom.HTMLStyleElement
 import org.w3c.dom.css.*
-import org.w3c.dom.get
 import react.ComponentType
 import react.Props
 import react.createElement
@@ -19,6 +18,7 @@ import react.dom.unmountComponentAtNode
 import styled.GlobalStyles
 import styled.injectGlobal
 import styled.sheets.CSSOMPersistentSheet
+import styled.sheets.RuleType
 import styled.sheets.styleId
 import kotlin.coroutines.resume
 import kotlin.coroutines.suspendCoroutine
@@ -36,7 +36,10 @@ class TestScope : CoroutineScope by testScope {
 
     init {
         if (GlobalStyles.sheet !is CSSOMPersistentSheet) {
-            GlobalStyles.sheet = CSSOMPersistentSheet()
+            GlobalStyles.sheet = CSSOMPersistentSheet(RuleType.REGULAR)
+        }
+        if (GlobalStyles.importSheet !is CSSOMPersistentSheet) {
+            GlobalStyles.importSheet = CSSOMPersistentSheet(RuleType.IMPORT)
         }
     }
 
@@ -52,9 +55,9 @@ class TestScope : CoroutineScope by testScope {
         injectGlobal(builder)
     }
 
-    fun renderComponent(component: Component) {
+    fun renderComponent(component: Component, root: Element = getRoot()) {
         val reactElement = createElement(component, jsObject { })
-        render(reactElement, getRoot())
+        render(reactElement, root)
     }
 
     fun CSSStyleSheet.clear() {
@@ -96,6 +99,18 @@ class TestScope : CoroutineScope by testScope {
         root = null
     }
 
+    fun clearStyles() {
+        sheet.sheet.clear()
+        (GlobalStyles.importSheet as CSSOMPersistentSheet).sheet.clear()
+
+        GlobalStyles.sheet.clear()
+        GlobalStyles.importSheet.clear()
+        GlobalStyles.injectedStyleSheetRules.clear()
+        GlobalStyles.injectedKeyframes.clear()
+        GlobalStyles.styledClasses.clear()
+        GlobalStyles.scheduledToDelete.clear()
+    }
+
     suspend fun clearAndInject(styledComponent: Component): Element {
         clear()
         return inject(styledComponent)
@@ -107,7 +122,7 @@ class TestScope : CoroutineScope by testScope {
     suspend fun inject(styledComponent: Component): Element {
         renderComponent(styledComponent)
         waitForAnimationFrame()
-        val styledElement = getRoot().children[0]
+        val styledElement = getRoot().firstElementChild
         assertNotNull(styledElement)
         return styledElement
     }
@@ -132,7 +147,6 @@ internal suspend fun waitForAnimationFrame() {
 }
 
 /** Hack for Flow emit function not to crash in inner js code */
-
 internal suspend fun waitFlowCoroutine() {
     suspendCoroutine<Unit> { continuation ->
         Promise.Companion.resolve(Unit).then {

@@ -4,21 +4,21 @@ import kotlinx.dom.appendText
 
 // A stylesheet that is injected by setting the text of a <style> tag. Useful in development mode,
 // because the stylesheet can be easily viewed using devtools, but relatively slow.
-internal class DevSheet : AbstractSheet() {
-    private val style by lazy { appendStyleElement(styleId) }
-    private val importsStyle by lazy { appendStyleElement(importStyleId) }
+internal class DevSheet(type: RuleType) : AbstractSheet(type) {
+    private val style by lazy { appendStyleElement() }
     private val scheduledRules = mutableListOf<String>()
-    private val scheduledImportRules = mutableListOf<String>()
 
-    override fun scheduleToInject(rules: Iterable<String>, type: RuleType) {
-        when (type) {
-            RuleType.REGULAR -> scheduledRules.addAll(rules)
-            RuleType.IMPORT -> scheduledImportRules.addAll(rules)
-        }
+    override fun scheduleToInject(rules: Iterable<String>): GroupId {
+        scheduledRules.addAll(rules)
+        return 0
     }
 
     override fun injectScheduled() {
         style.appendText(scheduledRules.joinToString("\n"))
-        importsStyle.appendText(scheduledImportRules.joinToString("\n"))
+        scheduledRules.clear()
+    }
+
+    override fun clear() {
+        scheduledRules.clear()
     }
 }
