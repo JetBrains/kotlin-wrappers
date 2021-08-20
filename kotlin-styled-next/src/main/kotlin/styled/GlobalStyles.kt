@@ -3,10 +3,7 @@ package styled
 import kotlinx.css.CssBuilder
 import kotlinx.css.properties.KeyframesBuilder
 import react.StateInstance
-import styled.sheets.AbstractSheet
-import styled.sheets.CSSOMPersistentSheet
-import styled.sheets.DevSheet
-import styled.sheets.RuleType
+import styled.sheets.*
 import kotlin.collections.*
 
 data class UsedCssInfo(val className: ClassName, var usedBy: Int, val groupId: Int)
@@ -33,7 +30,7 @@ object GlobalStyles {
             sheet = DevSheet(RuleType.REGULAR)
             importSheet = DevSheet(RuleType.IMPORT)
         } else {
-            sheet = CSSOMPersistentSheet(RuleType.REGULAR)
+            sheet = CSSOMSheet(RuleType.REGULAR)
             importSheet = CSSOMPersistentSheet(RuleType.IMPORT)
         }
     }
@@ -107,6 +104,30 @@ object GlobalStyles {
             val prefixes = listOf("@-webkit-keyframes", "@keyframes")
             sheet.scheduleToInject(prefixes.map { prefix -> "$prefix $keyframeName { $css }" })
         }
+    }
+
+    internal fun removeStyles(styledCss: StyledCss) {
+        if (sheet !is CSSOMSheet) return
+        val sheet = sheet as CSSOMSheet
+        val info = styledClasses[styledCss] ?: throw IllegalStateException("Trying to remove non-existent css")
+        info.usedBy--
+        if (info.usedBy == 0) {
+            scheduledToDelete.add(styledCss)
+        }
+        sheet.requestClean { clean(sheet) }
+    }
+
+    private fun clean(sheet: CSSOMSheet) {
+        val removalGroups = scheduledToDelete.mapNotNull { css ->
+            styledClasses[css]?.let {
+                if (it.usedBy == 0) {
+                    styledClasses.remove(css)
+                }
+                it
+            }
+        }.filter { it.usedBy == 0 }.map { it.groupId }
+        sheet.removeGroups(removalGroups)
+        scheduledToDelete.clear()
     }
 
     /**

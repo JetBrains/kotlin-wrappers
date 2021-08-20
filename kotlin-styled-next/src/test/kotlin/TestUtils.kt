@@ -17,9 +17,7 @@ import react.dom.render
 import react.dom.unmountComponentAtNode
 import styled.GlobalStyles
 import styled.injectGlobal
-import styled.sheets.CSSOMPersistentSheet
-import styled.sheets.RuleType
-import styled.sheets.styleId
+import styled.sheets.*
 import kotlin.coroutines.resume
 import kotlin.coroutines.suspendCoroutine
 import kotlin.js.Promise
@@ -31,12 +29,12 @@ typealias Component = ComponentType<Props>
 private val testScope = MainScope()
 
 class TestScope : CoroutineScope by testScope {
-    internal val sheet: CSSOMPersistentSheet
-        get() = GlobalStyles.sheet as CSSOMPersistentSheet
+    internal val sheet: CSSOMSheet
+        get() = GlobalStyles.sheet as CSSOMSheet
 
     init {
-        if (GlobalStyles.sheet !is CSSOMPersistentSheet) {
-            GlobalStyles.sheet = CSSOMPersistentSheet(RuleType.REGULAR)
+        if (GlobalStyles.sheet !is CSSOMSheet) {
+            GlobalStyles.sheet = CSSOMSheet(RuleType.REGULAR, RemoveMode.Instantly)
         }
         if (GlobalStyles.importSheet !is CSSOMPersistentSheet) {
             GlobalStyles.importSheet = CSSOMPersistentSheet(RuleType.IMPORT)
@@ -44,7 +42,7 @@ class TestScope : CoroutineScope by testScope {
     }
 
     private var root: HTMLElement? = null
-    private fun getRoot(): HTMLElement {
+    internal fun getRoot(): HTMLElement {
         return root ?: (document.createElement("div") as HTMLElement).also {
             document.body?.appendChild(it)
             root = it

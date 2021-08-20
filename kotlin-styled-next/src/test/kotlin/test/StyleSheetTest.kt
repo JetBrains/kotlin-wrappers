@@ -49,7 +49,7 @@ class StyleSheetTest : TestBase() {
             +staticStyleSheet.property1
         }
         val rules = getStylesheet().cssRules
-        assertEquals(1, sheet.scheduledRules.size)
+        assertEquals(1, sheet.scheduledGroups.size)
         assertEquals(0, rules.length)
     }
 

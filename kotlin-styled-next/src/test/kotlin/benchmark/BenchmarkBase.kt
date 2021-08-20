@@ -26,6 +26,7 @@ open class BenchmarkBase {
     @BeforeTest
     open fun before() = runTest {
         clearStyles()
+        sheet.cleanTimeout = Int.MAX_VALUE
     }
 
     protected fun TestScope.assertCssNotEmpty() {
