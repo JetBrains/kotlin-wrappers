@@ -9,7 +9,7 @@ external interface InnerHTML {
     var __html: String
 }
 
-external interface WithClassName : RProps {
+external interface WithClassName : PropsWithChildren {
     var className: String?
 }
 

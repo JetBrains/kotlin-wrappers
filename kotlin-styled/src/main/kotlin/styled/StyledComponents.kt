@@ -21,7 +21,7 @@ typealias DIVBuilder = StyledDOMBuilder<DIV>.() -> Unit
 typealias SPANBuilder = StyledDOMBuilder<SPAN>.() -> Unit
 typealias INPUTBuilder = StyledDOMBuilder<INPUT>.() -> Unit
 
-external interface CustomStyledProps : RProps {
+external interface CustomStyledProps : Props {
     var css: ArrayList<RuleSet>?
 }
 
@@ -132,8 +132,8 @@ private fun injectGlobals(strings: Array<String>) {
     }
 }
 
-private external interface GlobalStylesComponentProps : RProps {
-    var globalStyles: List<ComponentType<RProps>>
+private external interface GlobalStylesComponentProps : Props {
+    var globalStyles: List<ComponentType<*>>
 }
 
 private object GlobalStyles {
@@ -149,9 +149,9 @@ private object GlobalStyles {
         element
     }
 
-    private val styles = mutableListOf<ComponentType<RProps>>()
+    private val styles = mutableListOf<ComponentType<*>>()
 
-    fun add(globalStyle: ComponentType<RProps>) {
+    fun add(globalStyle: ComponentType<*>) {
         styles.add(globalStyle)
         val reactElement = createElement(component, jsObject {
             this.globalStyles = styles
