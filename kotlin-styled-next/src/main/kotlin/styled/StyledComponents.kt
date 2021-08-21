@@ -21,7 +21,7 @@ typealias DIVBuilder = StyledDOMBuilder<DIV>.() -> Unit
 typealias SPANBuilder = StyledDOMBuilder<SPAN>.() -> Unit
 typealias INPUTBuilder = StyledDOMBuilder<INPUT>.() -> Unit
 
-external interface CustomStyledProps : RProps {
+external interface CustomStyledProps : Props {
     var css: ArrayList<RuleSet>?
 }
 
