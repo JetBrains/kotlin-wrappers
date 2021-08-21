@@ -12,7 +12,7 @@ enum class Theme(val backgroundColor: String, val color: String) {
 
 val ThemeContext = createContext(Theme.LIGHT)
 
-fun RBuilder.app(props: RProps) {
+fun RBuilder.app(props: PropsWithChildren) {
     ThemeContext.Provider(Theme.DARK) {
         div {
             ThemeContext.Consumer { theme ->

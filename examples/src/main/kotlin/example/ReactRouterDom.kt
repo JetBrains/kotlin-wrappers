@@ -1,15 +1,16 @@
 package example
 
+import react.Props
 import react.RBuilder
 import react.RProps
 import react.dom.*
 import react.fc
 import react.router.dom.*
 
-val Home = fc<RProps> { h2 { +"Home" } }
-val About = fc<RProps> { h2 { +"About" } }
+val Home = fc<Props> { h2 { +"Home" } }
+val About = fc<Props> { h2 { +"About" } }
 
-val Topics = fc<RProps> {
+val Topics = fc<Props> {
     val match = useRouteMatch<RProps>() ?: return@fc
 
     div {
@@ -37,7 +38,7 @@ external interface TopicProps : RProps {
     val topicId: String
 }
 
-val Topic = fc<RProps> {
+val Topic = fc<Props> {
     val topicId = useParams<TopicProps>()?.topicId ?: return@fc
 
     h3 { +"Requested topic ID: $topicId" }

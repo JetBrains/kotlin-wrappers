@@ -11,7 +11,7 @@ import react.dom.*
  * A to-do list implementation by Scott_Huang@qq.com
  */
 
-interface TodoProps : RProps {
+interface TodoProps : Props {
     var initialItems: List<String?>
 }
 
