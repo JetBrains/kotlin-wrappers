@@ -4,10 +4,10 @@
 package ringui
 
 import react.ComponentClass
-import react.RProps
+import react.PropsWithChildren
 import react.dom.WithClassName
 
-external interface GridProps : RProps
+external interface GridProps : PropsWithChildren
 
 external val Grid: ComponentClass<GridProps>
 
