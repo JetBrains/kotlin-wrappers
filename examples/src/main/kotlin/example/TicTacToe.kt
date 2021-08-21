@@ -22,7 +22,7 @@ fun RBuilder.square(squareValue: String?, onClick: () -> Unit) {
     }
 }
 
-interface BoardProps : RProps {
+interface BoardProps : Props {
     var squares: Array<String?>
     var onClick: (Int) -> () -> Unit
 }
@@ -60,7 +60,7 @@ fun RBuilder.board(initialSquares: Array<String?>, onClick: (Int) -> () -> Unit)
     }
 }
 
-interface TicTacToeProps : RProps
+interface TicTacToeProps : Props
 
 interface TicTacToeState : State {
     var history: Array<Array<String?>>

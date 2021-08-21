@@ -65,7 +65,7 @@ fun RBuilder.productTable(products: Array<Product>, filterText: String, inStockO
     }
 }
 
-interface SearchBarProps : RProps {
+interface SearchBarProps : Props {
     var onClick: () -> Unit
     var onChange: (String) -> () -> Unit
     var inStockOnly: Boolean
@@ -115,7 +115,7 @@ fun RBuilder.searchBar(
 }
 
 
-interface ProductProps : RProps
+interface ProductProps : Props
 
 interface ProductState : State {
     var filterText: String

@@ -14,12 +14,12 @@ import react.dom.div
 @JsNonModule
 external val reactQuill: ComponentClass<ReactQuillProps>
 
-external interface ReactQuillProps : RProps {
+external interface ReactQuillProps : Props {
     var value: String
     var onChange: (String) -> Unit
 }
 
-interface QuillProps : RProps {
+interface QuillProps : Props {
     var initialText: String
 }
 
