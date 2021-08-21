@@ -12,7 +12,7 @@ external interface IframeHTMLAttributes<T : Element> : HTMLAttributes<T> {
     @Deprecated("Will be removed soon!")
     var frameBorder: Int
     var height: Double
-    var loading: String // "eager" | "lazy"
+    var loading: IframeLoading
 
     @Deprecated("Will be removed soon!")
     var marginHeight: Double
