@@ -10,19 +10,19 @@ external class Provider : Component<ProviderProps, State> {
     override fun render(): ReactElement?
 }
 
-external interface ProviderProps : RProps {
+external interface ProviderProps : PropsWithChildren {
     var store: Store<*, *, *>
     var context: Context<*>
 }
 
-external fun <S, A, R, OP : RProps, SP : RProps, DP : RProps, P : RProps> connect(
+external fun <S, A, R, OP : Props, SP : Props, DP : Props, P : Props> connect(
     mapStateToProps: ((S, OP) -> SP)? = definedExternally,
     mapDispatchToProps: (((A) -> R, OP) -> DP)? = definedExternally,
     mergeProps: ((SP, DP, OP) -> P)? = definedExternally,
     options: Options<S, OP, SP, P>? = definedExternally,
 ): HOC<P, OP>
 
-external fun <S, A, R, OP : RProps, P : RProps> connectAdvanced(
+external fun <S, A, R, OP : Props, P : Props> connectAdvanced(
     selectorFactory: SelectorFactory<S, A, R, OP, P>,
     options: ConnectOptions<P> = definedExternally,
 ): HOC<P, OP>

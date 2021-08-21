@@ -2,12 +2,12 @@ package react.redux
 
 import kotlinext.js.js
 import react.HOC
-import react.RProps
+import react.Props
 
 fun <A, R> rConnect(
-    options: (Options<Any, RProps, RProps, DispatchProps<A, R>>.() -> Unit) = {},
-): HOC<DispatchProps<A, R>, RProps> {
-    return connect<Any, A, R, RProps, RProps, RProps, DispatchProps<A, R>>(
+    options: (Options<Any, Props, Props, DispatchProps<A, R>>.() -> Unit) = {},
+): HOC<DispatchProps<A, R>, Props> {
+    return connect<Any, A, R, Props, Props, Props, DispatchProps<A, R>>(
         undefined,
         undefined,
         undefined,
@@ -15,15 +15,15 @@ fun <A, R> rConnect(
             getDisplayName = { name: String -> "RConnect($name)" }
             methodName = "rConnect"
             options(this)
-        }.unsafeCast<Options<Any, RProps, RProps, DispatchProps<A, R>>>()
+        }.unsafeCast<Options<Any, Props, Props, DispatchProps<A, R>>>()
     )
 }
 
-fun <S, OP : RProps, P : RProps> rConnect(
+fun <S, OP : Props, P : Props> rConnect(
     mapStateToProps: P.(S, OP) -> Unit,
     options: (Options<S, OP, P, P>.() -> Unit) = {},
 ): HOC<P, OP> {
-    return connect<S, Any, Any, OP, P, RProps, P>(
+    return connect<S, Any, Any, OP, P, Props, P>(
         { state: S, ownProps: OP ->
             js {
                 mapStateToProps(this, state, ownProps)
@@ -39,11 +39,11 @@ fun <S, OP : RProps, P : RProps> rConnect(
     )
 }
 
-fun <A, R, OP : RProps, P : RProps> rConnect(
+fun <A, R, OP : Props, P : Props> rConnect(
     mapDispatchToProps: P.((A) -> R, OP) -> Unit,
-    options: (Options<Any, OP, RProps, P>.() -> Unit) = {},
+    options: (Options<Any, OP, Props, P>.() -> Unit) = {},
 ): HOC<P, OP> {
-    return connect<Any, A, R, OP, RProps, P, P>(
+    return connect<Any, A, R, OP, Props, P, P>(
         undefined,
         { dispatch, ownProps ->
             js {
@@ -55,11 +55,11 @@ fun <A, R, OP : RProps, P : RProps> rConnect(
             getDisplayName = { name: String -> "RConnect($name)" }
             methodName = "rConnect"
             options(this)
-        }.unsafeCast<Options<Any, OP, RProps, P>>()
+        }.unsafeCast<Options<Any, OP, Props, P>>()
     )
 }
 
-fun <S, A, R, OP : RProps, SP : RProps, DP : RProps, P : RProps> rConnect(
+fun <S, A, R, OP : Props, SP : Props, DP : Props, P : Props> rConnect(
     mapStateToProps: SP.(S, OP) -> Unit,
     mapDispatchToProps: DP.((A) -> R, OP) -> Unit,
     options: (Options<S, OP, SP, P>.() -> Unit) = {},
@@ -84,7 +84,7 @@ fun <S, A, R, OP : RProps, SP : RProps, DP : RProps, P : RProps> rConnect(
     )
 }
 
-fun <S, A, R, OP : RProps, SP : RProps, DP : RProps, P : RProps> rConnect(
+fun <S, A, R, OP : Props, SP : Props, DP : Props, P : Props> rConnect(
     mapStateToProps: SP.(S, OP) -> Unit,
     mapDispatchToProps: DP.((A) -> R, OP) -> Unit,
     mergeProps: P.(SP, DP, OP) -> Unit,
