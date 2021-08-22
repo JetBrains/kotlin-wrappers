@@ -13,7 +13,7 @@ fun RBuilder.hashRouter(
     basename: String = "",
     hashType: HashType = HashType.slash,
     getUserConfirmation: GetUserConfirmation? = null,
-    handler: RHandler<RProps>,
+    handler: RHandler<*>,
 ) {
     HashRouter {
         attrs {
@@ -31,7 +31,7 @@ fun RBuilder.browserRouter(
     getUserConfirmation: GetUserConfirmation? = null,
     forceRefresh: Boolean = false,
     keyLength: Int = 6,
-    handler: RHandler<RProps>,
+    handler: RHandler<*>,
 ) {
     BrowserRouter {
         attrs {
@@ -46,7 +46,7 @@ fun RBuilder.browserRouter(
 }
 
 fun RBuilder.switch(
-    handler: RHandler<RProps>,
+    handler: RHandler<*>,
 ) {
     Switch(handler)
 }
@@ -117,7 +117,7 @@ fun RBuilder.routeLink(
     to: String,
     replace: Boolean = false,
     className: String? = null,
-    handler: RHandler<RProps>?,
+    handler: RHandler<*>?,
 ) {
     Link {
         attrs {
