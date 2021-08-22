@@ -64,20 +64,20 @@ class ParentComponent : RComponent {
 ### rConnect Type Parameters
 
 ```kotlin
-interface WrappedComponentProps : RProps {
+interface WrappedComponentProps : Props {
     var prop1: Int?
     var eventHandler1: (someValue: Int?) -> Unit
 }
 
-internal interface StateProps : RProps {
+internal interface StateProps : Props {
     var prop1: Int?
 }
 
-internal interface DispatchProps : RProps {
+internal interface DispatchProps : Props {
     var eventHandler1: (someValue: Int?) -> Unit
 }
 
-class WrappedComponent(props: WrappedComponentProps) : RComponent<WrappedComponentProps, RState>(props) {
+class WrappedComponent(props: WrappedComponentProps) : RComponent<WrappedComponentProps, State>(props) {
     // ...
 }
 
