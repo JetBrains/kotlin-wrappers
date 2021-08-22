@@ -13,7 +13,7 @@ fun RBuilder.hashRouter(
     basename: String = "",
     hashType: HashType = HashType.slash,
     getUserConfirmation: GetUserConfirmation? = null,
-    handler: RHandler<RProps>,
+    handler: RHandler<PropsWithChildren>,
 ) {
     HashRouter {
         attrs {
@@ -31,7 +31,7 @@ fun RBuilder.browserRouter(
     getUserConfirmation: GetUserConfirmation? = null,
     forceRefresh: Boolean = false,
     keyLength: Int = 6,
-    handler: RHandler<RProps>,
+    handler: RHandler<PropsWithChildren>,
 ) {
     BrowserRouter {
         attrs {
@@ -46,7 +46,7 @@ fun RBuilder.browserRouter(
 }
 
 fun RBuilder.switch(
-    handler: RHandler<RProps>,
+    handler: RHandler<PropsWithChildren>,
 ) {
     Switch(handler)
 }
@@ -57,7 +57,7 @@ fun RBuilder.route(
     exact: Boolean = false,
     strict: Boolean = false,
 ) {
-    child<RouteProps<RProps>, Route<RProps>> {
+    child<RouteProps<Props>, Route<Props>> {
         attrs {
             this.path = path
             this.exact = exact
@@ -69,7 +69,7 @@ fun RBuilder.route(
 
 fun RBuilder.route(
     vararg path: String,
-    component: KClass<out Component<RProps, *>>,
+    component: KClass<out Component<Props, *>>,
     exact: Boolean = false,
     strict: Boolean = false,
 ) {
@@ -81,7 +81,7 @@ fun RBuilder.route(
     )
 }
 
-fun <T : RProps> RBuilder.route(
+fun <T : Props> RBuilder.route(
     vararg path: String,
     exact: Boolean = false,
     strict: Boolean = false,
@@ -103,7 +103,7 @@ fun RBuilder.route(
     strict: Boolean = false,
     render: Render,
 ) {
-    child<RouteProps<RProps>, Route<RProps>> {
+    child<RouteProps<Props>, Route<Props>> {
         attrs {
             this.path = path
             this.exact = exact
@@ -117,7 +117,7 @@ fun RBuilder.routeLink(
     to: String,
     replace: Boolean = false,
     className: String? = null,
-    handler: RHandler<RProps>?,
+    handler: RHandler<PropsWithChildren>?,
 ) {
     Link {
         attrs {
@@ -129,7 +129,7 @@ fun RBuilder.routeLink(
     }
 }
 
-fun <T : RProps> RBuilder.navLink(
+fun <T : Props> RBuilder.navLink(
     to: String,
     replace: Boolean = false,
     className: String? = null,
@@ -171,7 +171,7 @@ fun RBuilder.redirect(
     }
 }
 
-fun <T : RProps> matchPath(
+fun <T : Props> matchPath(
     patName: String,
     vararg path: String,
     exact: Boolean = false,

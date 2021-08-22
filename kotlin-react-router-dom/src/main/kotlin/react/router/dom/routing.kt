@@ -9,21 +9,21 @@ external val HashRouter: ComponentClass<HashRouterProps>
 
 external val BrowserRouter: ComponentClass<BrowserRouterProps>
 
-external val Switch: ComponentClass<RProps>
+external val Switch: ComponentClass<PropsWithChildren>
 
-external class Route<T : RProps> : Component<RouteProps<T>, State> {
+external class Route<T : Props> : Component<RouteProps<T>, State> {
     override fun render(): ReactElement?
 }
 
 external val Link: ComponentClass<LinkProps>
 
-external class NavLink<T : RProps> : Component<NavLinkProps<T>, State> {
+external class NavLink<T : Props> : Component<NavLinkProps<T>, State> {
     override fun render(): ReactElement?
 }
 
 external val Redirect: ComponentClass<RedirectProps>
 
-external interface RouterProps : RProps {
+external interface RouterProps : PropsWithChildren {
     var history: History
 }
 
