@@ -2,9 +2,9 @@ package react.router.dom
 
 import kotlinext.js.Object
 import kotlinext.js.jsObject
-import react.RProps
+import react.Props
 
-fun <T : RProps> useParams(): T? {
+fun <T : Props> useParams(): T? {
     val params = rawUseParams()
 
     return if (Object.keys(params).isNotEmpty()) {
@@ -12,7 +12,7 @@ fun <T : RProps> useParams(): T? {
     } else null
 }
 
-fun <T : RProps> useRouteMatch(
+fun <T : Props> useRouteMatch(
     vararg path: String,
     exact: Boolean = false,
     strict: Boolean = false,

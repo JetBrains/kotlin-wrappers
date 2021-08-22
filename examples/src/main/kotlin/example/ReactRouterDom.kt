@@ -2,7 +2,6 @@ package example
 
 import react.Props
 import react.RBuilder
-import react.RProps
 import react.dom.*
 import react.fc
 import react.router.dom.*
@@ -11,7 +10,7 @@ val Home = fc<Props> { h2 { +"Home" } }
 val About = fc<Props> { h2 { +"About" } }
 
 val Topics = fc<Props> {
-    val match = useRouteMatch<RProps>() ?: return@fc
+    val match = useRouteMatch<Props>() ?: return@fc
 
     div {
         h2 { +"Topics" }
@@ -34,7 +33,7 @@ val Topics = fc<Props> {
     }
 }
 
-external interface TopicProps : RProps {
+external interface TopicProps : Props {
     val topicId: String
 }
 
