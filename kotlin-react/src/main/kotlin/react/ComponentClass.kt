@@ -32,7 +32,7 @@ external interface RComponentClassStatics<P : Props, S : State, C : Context<*>?>
  * Usage:
  *
  * ```
- * companion object : RStatics<RProps, RState, RComponent, Nothing>(RComponent::class) {
+ * companion object : RStatics<Props, State, RComponent, Nothing>(RComponent::class) {
  *     init {
  *         defaultProps = ...
  *         ...

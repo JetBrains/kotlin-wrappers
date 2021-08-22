@@ -32,11 +32,11 @@ implementation("org.jetbrains.kotlin-wrappers:kotlin-react-router-dom:VERSION")
 ### Examples
 
 ```kotlin
-interface IdProps : RProps {
+interface IdProps : Props {
     var id: Int
 }
 
-class RootComponent : RComponent<RProps, RState>() {
+class RootComponent : RComponent<Props, State>() {
     override fun RBuilder.render() {
         hashRouter { // or "browserRouter"
             switch {

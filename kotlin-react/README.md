@@ -116,7 +116,7 @@ external interface WelcomeProps : Props {
     var name: String
 }
 
-external interface WelcomeState : RState {
+external interface WelcomeState : State {
     var name: String
 }
 
