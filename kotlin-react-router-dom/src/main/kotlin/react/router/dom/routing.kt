@@ -62,7 +62,7 @@ external interface NavLinkProps<T : Props> : LinkProps {
     var location: Location
 }
 
-external interface RouteResultProps<T : Props> {
+external interface RouteResultProps<T : Props> : Props {
     var history: History
     var location: Location
     var match: Match<T>
