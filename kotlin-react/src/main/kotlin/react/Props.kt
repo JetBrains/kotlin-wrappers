@@ -6,11 +6,10 @@ external interface PropsWithChildren : Props {
     var children: Array<out ReactNode>?
 }
 
-// TODO: deprecate it
-//@Deprecated(
-//    message = "Legacy type alias",
-//    replaceWith = ReplaceWith("PropsWithChildren", "react.PropsWithChildren"),
-//)
+@Deprecated(
+    message = "Legacy type alias",
+    replaceWith = ReplaceWith("PropsWithChildren", "react.PropsWithChildren"),
+)
 typealias RProps = PropsWithChildren
 
 var Props.key: Key
