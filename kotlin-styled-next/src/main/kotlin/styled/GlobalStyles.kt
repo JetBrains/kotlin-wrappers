@@ -42,7 +42,7 @@ object GlobalStyles {
         }
 
     internal var styledClasses = InjectedCssHolder()
-    internal val scheduledToDelete = mutableListOf<StyledCss>()
+    internal val scheduledToDelete = LinkedHashSet<StyledCss>()
     internal val injectedStyleSheetRules = mutableSetOf<Selector>()
 
     private fun getInjectedClassName(css: StyledCss): ClassName {
@@ -118,12 +118,11 @@ object GlobalStyles {
     }
 
     private fun clean(sheet: CSSOMSheet) {
-        val removalGroups = scheduledToDelete.mapNotNull { css ->
-            styledClasses[css]?.let {
+        val removalGroups = scheduledToDelete.map { css ->
+            (styledClasses[css] ?: throw IllegalStateException("Non-existent css cleanup")).also {
                 if (it.usedBy == 0) {
                     styledClasses.remove(css)
                 }
-                it
             }
         }.filter { it.usedBy == 0 }.map { it.groupId }
         sheet.removeGroups(removalGroups)

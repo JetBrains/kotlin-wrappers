@@ -2,7 +2,7 @@ package test
 
 import Component
 import TestScope
-import kotlinx.browser.document
+import createDOMElement
 import kotlinx.css.color
 import kotlinx.css.paddingLeft
 import kotlinx.css.paddingRight
@@ -11,25 +11,20 @@ import kotlinx.dom.clear
 import org.w3c.dom.Element
 import org.w3c.dom.HTMLElement
 import react.Props
-import react.dom.unmountComponentAtNode
 import react.fc
 import runTest
 import styled.css
 import styled.styledDiv
 import styled.styledSpan
-import waitForAnimationFrame
+import unmount
 import kotlin.test.BeforeTest
 import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertNotNull
 
 class RemoveCssTest : TestBase() {
-    val secondRoot: HTMLElement by lazy {
-        (document.createElement("div") as HTMLElement).also {
-            document.body?.appendChild(it)
-        }
-    }
-    var thirdRoot: HTMLElement = (document.createElement("div") as HTMLElement).also { document.body?.appendChild(it) }
+    val secondRoot by lazy { createDOMElement() }
+    val thirdRoot by lazy { createDOMElement() }
 
     fun TestScope.injectAdditional(component: Component, root: HTMLElement = secondRoot): Element {
         renderComponent(component, root)
@@ -39,17 +34,16 @@ class RemoveCssTest : TestBase() {
     }
 
     @BeforeTest
-    override fun before() {
+    override fun before() = runTest {
         super.before()
-        unmountComponentAtNode(secondRoot)
+        unmount(secondRoot)
         secondRoot.clear()
-        unmountComponentAtNode(thirdRoot)
+        unmount(thirdRoot)
         thirdRoot.clear()
     }
 
     @Test
     fun removesSingleUnusedCss() = runTest {
-        sheet.cleanTimeout = 0
         val styledComponent = fc<Props> {
             styledDiv {
                 css {
@@ -60,14 +54,12 @@ class RemoveCssTest : TestBase() {
         clearAndInject(styledComponent)
         assertEquals(1, getRules().length)
         clear()
-        waitForAnimationFrame()
 
         assertEquals(0, getRules().length)
     }
 
     @Test
     fun removesMultipleUnusedCss() = runTest {
-        sheet.cleanTimeout = 0
         val styledComponent = fc<Props> {
             styledDiv { css { color = firstColor } }
             styledDiv { css { color = secondColor } }
@@ -76,14 +68,12 @@ class RemoveCssTest : TestBase() {
         clearAndInject(styledComponent)
         assertEquals(3, getRules().length)
         clear()
-        waitForAnimationFrame()
 
         assertEquals(0, getRules().length)
     }
 
     @Test
     fun leavesUsedCss() = runTest {
-        sheet.cleanTimeout = 0
 
         val styledComponent = fc<Props> {
             styledDiv {
@@ -97,15 +87,13 @@ class RemoveCssTest : TestBase() {
         assertEquals(firstColor.toString(), element.color())
         assertEquals(firstColor.toString(), element2.color())
         clear()
-        waitForAnimationFrame()
 
         assertEquals(1, getRules().length)
         assertEquals(firstColor.toString(), element2.color())
     }
 
     @Test
-    fun removesReinjectedMultipleCss() = runTest {
-        sheet.cleanTimeout = 0
+    fun removesReusableMultipleCss() = runTest {
         val styledComponent = fc<Props> {
             styledDiv { css { color = firstColor } }
             styledDiv { css { paddingLeft = 0.px } }
@@ -121,19 +109,42 @@ class RemoveCssTest : TestBase() {
         assertEquals(5, getRules().length)
         injectAdditional(styledComponent, thirdRoot)
         clear()
-        waitForAnimationFrame()
         assertEquals(5, getRules().length)
-        unmountComponentAtNode(thirdRoot)
-        waitForAnimationFrame()
+        unmount(thirdRoot)
         assertEquals(2, getRules().length)
-        unmountComponentAtNode(secondRoot)
-        waitForAnimationFrame()
+        unmount(secondRoot)
         assertEquals(0, getRules().length)
     }
 
     @Test
+    fun removesReinjectedMultipleCss() = runTest {
+        val styledComponent = fc<Props> {
+            styledDiv { css { color = firstColor } }
+            styledDiv { css { paddingLeft = 0.px } }
+            styledSpan { css { color = secondColor } }
+            styledSpan { css { paddingRight = 0.px } }
+        }
+        val styledComponent2 = fc<Props> {
+            styledDiv { css { color = firstColor } }
+            styledSpan { css { paddingRight = 1.px } }
+        }
+        clearAndInject(styledComponent)
+        injectAdditional(styledComponent2)
+
+        clear()
+        assertEquals(2, getRules().length)
+        clearAndInject(styledComponent)
+        assertEquals(5, getRules().length)
+        unmount(secondRoot)
+        assertEquals(4, getRules().length)
+        clear()
+        assertEquals(0, getRules().length)
+        injectAdditional(styledComponent2)
+        assertEquals(2, getRules().length)
+    }
+
+    @Test
     fun leavesIntersectedCss() = runTest {
-        sheet.cleanTimeout = 0
         val styledComponent = fc<Props> {
             styledDiv { css { color = firstColor } }
             styledDiv { css { paddingLeft = 0.px } }
@@ -149,7 +160,6 @@ class RemoveCssTest : TestBase() {
         assertEquals(5, getRules().length)
 
         clear()
-        waitForAnimationFrame()
 
         assertEquals(2, getRules().length)
         assertEquals(firstColor.toString(), secondRoot.childAt(0).color())

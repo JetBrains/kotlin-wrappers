@@ -43,10 +43,7 @@ class TestScope : CoroutineScope by testScope {
 
     private var root: HTMLElement? = null
     internal fun getRoot(): HTMLElement {
-        return root ?: (document.createElement("div") as HTMLElement).also {
-            document.body?.appendChild(it)
-            root = it
-        }
+        return root ?: createDOMElement().also { root = it }
     }
 
     fun injectBuilder(builder: CssBuilder) {
@@ -91,8 +88,8 @@ class TestScope : CoroutineScope by testScope {
         assertEquals(n, getRoot().childElementCount)
     }
 
-    fun clear() {
-        unmountComponentAtNode(getRoot())
+    suspend fun clear() {
+        unmount(getRoot())
         getRoot().clear()
         root = null
     }
@@ -123,6 +120,17 @@ class TestScope : CoroutineScope by testScope {
         val styledElement = getRoot().firstElementChild
         assertNotNull(styledElement)
         return styledElement
+    }
+}
+
+internal suspend fun unmount(domContainerNode: Element?) {
+    unmountComponentAtNode(domContainerNode)
+    waitForAnimationFrame()
+}
+
+internal fun createDOMElement(): HTMLElement {
+    return (document.createElement("div") as HTMLElement).also {
+        document.body?.appendChild(it)
     }
 }
 
