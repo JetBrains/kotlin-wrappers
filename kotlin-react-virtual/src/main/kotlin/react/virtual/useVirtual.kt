@@ -4,37 +4,35 @@
 package react.virtual
 
 import kotlinext.js.ReadonlyArray
-import org.w3c.dom.Element
+import org.w3c.dom.HTMLElement
 import org.w3c.dom.events.Event
 import react.Key
 import react.Ref
 
-external interface VirtualOptions {
+external interface VirtualOptions<T : Any> {
     var size: Int
-    var parentRef: Ref<Element>
+    var parentRef: Ref<T>
     var estimateSize: (index: Index) -> Int
     var overscan: Int
     var horizontal: Boolean
     var scrollToFn: (offset: Int, defaultScrollToFn: (offset: Int) -> Unit) -> Unit
-    var useObserver: (parentRef: Ref<Element>) -> Size
+    var useObserver: (parentRef: Ref<T>) -> Size
     var paddingStart: Int
     var paddingEnd: Int
-    var onScrollElement: Ref<Element>
+    var onScrollElement: Ref<HTMLElement>
     var scrollOffsetFn: (event: Event?) -> Int
     var keyExtractor: (index: Index) -> Key
-
-    // nondocumented
-    // var measureSize: ?
+    var measureSize: (el: HTMLElement, horizontal: Boolean) -> Int
     var rangeExtractor: (range: Range) -> ReadonlyArray<Index>
 }
 
 external interface VirtualInstance {
     val virtualItems: ReadonlyArray<VirtualItem>
     val totalSize: Int
-    val scrollToIndex: (index: Index, options: ScrollOptions) -> Unit
-    val scrollToOffset: (offset: Int, options: ScrollOptions) -> Unit
+    val scrollToIndex: (index: Index, options: ScrollToIndexOptions) -> Unit
+    val scrollToOffset: (offset: Int, options: ScrollToOffsetOptions) -> Unit
 }
 
-external fun useVirtual(
-    options: VirtualOptions,
+external fun <T : Any> useVirtual(
+    options: VirtualOptions<T>,
 ): VirtualInstance
