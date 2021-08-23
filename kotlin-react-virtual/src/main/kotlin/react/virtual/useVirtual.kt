@@ -23,7 +23,7 @@ external interface VirtualOptions<T : Any> {
     var scrollOffsetFn: (event: Event?) -> Int
     var keyExtractor: (index: Index) -> Key
     var measureSize: (el: HTMLElement, horizontal: Boolean) -> Int
-    var rangeExtractor: (range: Range) -> ReadonlyArray<Index>
+    var rangeExtractor: RangeExtractor
 }
 
 external interface VirtualInstance {
