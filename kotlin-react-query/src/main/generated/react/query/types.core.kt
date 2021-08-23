@@ -88,14 +88,25 @@ external interface ResultOptions {
     var throwOnError: Boolean
 }
 
+external interface RefetchPageFilters<TQueryFnData> {
+    var refetchPage: (lastPage: TQueryFnData, index: Int, allPages: Array<out TQueryFnData>) -> Boolean
+}
+
 external interface RefetchOptions : ResultOptions {
     var cancelRefetch: Boolean
 }
 
-external interface InvalidateQueryFilters : QueryFilters {
+external interface InvalidateQueryFilters<TQueryFnData>
+    : QueryFilters, RefetchPageFilters<TQueryFnData> {
     var refetchActive: Boolean
     var refetchInactive: Boolean
 }
+
+external interface RefetchQueryFilters<TQueryFnData>
+    : QueryFilters, RefetchPageFilters<TQueryFnData>
+
+external interface ResetQueryFilters<TQueryFnData>
+    : QueryFilters, RefetchPageFilters<TQueryFnData>
 
 external interface InvalidateOptions {
     var throwOnError: Boolean
@@ -131,7 +142,7 @@ external interface QueryObserverBaseResult<TData, TError> {
     val isRefetchError: Boolean
     val isStale: Boolean
     val isSuccess: Boolean
-    val refetch: (options: RefetchOptions?) -> kotlin.js.Promise<QueryObserverResult<TData, TError>>
+    val refetch: (options: RefetchOptions? /* & RefetchQueryFilters<TData> */) -> kotlin.js.Promise<QueryObserverResult<TData, TError>>
     val remove: () -> Unit
     val status: QueryStatus
 }

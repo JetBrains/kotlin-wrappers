@@ -58,13 +58,13 @@ open external class QueryClient(config: QueryClientConfig = definedExternally) {
     )
 
     open fun resetQueries(
-        filters: QueryFilters = definedExternally,
+        filters: ResetQueryFilters<*> = definedExternally,
         options: ResetOptions = definedExternally,
     ): kotlin.js.Promise<Unit>
 
     open fun resetQueries(
         queryKey: QueryKey = definedExternally,
-        filters: QueryFilters = definedExternally,
+        filters: ResetQueryFilters<*> = definedExternally,
         options: ResetOptions = definedExternally,
     ): kotlin.js.Promise<Unit>
 
@@ -80,24 +80,24 @@ open external class QueryClient(config: QueryClientConfig = definedExternally) {
     ): kotlin.js.Promise<Unit>
 
     open fun invalidateQueries(
-        filters: InvalidateQueryFilters = definedExternally,
+        filters: InvalidateQueryFilters<*> = definedExternally,
         options: InvalidateOptions = definedExternally,
     ): kotlin.js.Promise<Unit>
 
     open fun invalidateQueries(
         queryKey: QueryKey = definedExternally,
-        filters: InvalidateQueryFilters = definedExternally,
+        filters: InvalidateQueryFilters<*> = definedExternally,
         options: InvalidateOptions = definedExternally,
     ): kotlin.js.Promise<Unit>
 
     open fun refetchQueries(
-        filters: QueryFilters = definedExternally,
+        filters: RefetchQueryFilters<*> = definedExternally,
         options: RefetchOptions = definedExternally,
     ): kotlin.js.Promise<Unit>
 
     open fun refetchQueries(
         queryKey: QueryKey = definedExternally,
-        filters: QueryFilters = definedExternally,
+        filters: RefetchQueryFilters<*> = definedExternally,
         options: RefetchOptions = definedExternally,
     ): kotlin.js.Promise<Unit>
 
