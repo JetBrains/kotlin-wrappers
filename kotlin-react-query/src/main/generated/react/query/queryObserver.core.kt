@@ -45,7 +45,7 @@ open external class QueryObserver<TQueryFnData, TError, TData, TQueryData, TQuer
     open fun getNextResult(options: ResultOptions = definedExternally): kotlin.js.Promise<QueryObserverResult<TData, TError>>
     open fun getCurrentQuery(): Query<TQueryFnData, TError, TQueryData, TQueryKey>
     open fun remove()
-    open fun refetch(options: RefetchOptions = definedExternally): kotlin.js.Promise<QueryObserverResult<TData, TError>>
+    open fun refetch(options: RefetchOptions /* & RefetchQueryFilters<TData> */ = definedExternally): kotlin.js.Promise<QueryObserverResult<TData, TError>>
     open fun fetchOptimistic(options: QueryObserverOptions<TQueryFnData, TError, TData, TQueryData, TQueryKey>): kotlin.js.Promise<QueryObserverResult<TData, TError>>
     protected open fun fetch(fetchOptions: ObserverFetchOptions = definedExternally): kotlin.js.Promise<QueryObserverResult<TData, TError>>
     protected open fun createResult(
