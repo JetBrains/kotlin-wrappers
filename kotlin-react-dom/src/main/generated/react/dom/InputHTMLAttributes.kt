@@ -35,7 +35,7 @@ external interface InputHTMLAttributes<T : Element> : HTMLAttributes<T> {
     var size: Int
     var src: String
     var step: Double
-    var type: String
+    var type: InputType
     var value: String
     var width: Double
 
