@@ -2,7 +2,6 @@ package styled.sheets
 
 import kotlinx.browser.window
 import org.w3c.dom.HTMLStyleElement
-import styled.GlobalStyles.injectScheduled
 
 internal typealias GroupId = Int
 
