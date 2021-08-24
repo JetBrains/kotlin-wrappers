@@ -126,7 +126,7 @@ fun customStyled(type: String): ComponentType<StyledProps> {
         }
 
         val newProps = clone(props)
-        newProps.className = (if (props.className != undefined) props.className else "") + classNames
+        newProps.className = (if (props.className != undefined) props.className + " " else "") + classNames
         newProps.ref = rRef
         newProps.asDynamic().css = undefined
         child(createElement(type, newProps))

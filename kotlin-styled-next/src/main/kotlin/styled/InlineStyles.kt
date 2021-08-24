@@ -2,7 +2,9 @@ package styled
 
 import kotlinext.js.Object
 import kotlinext.js.js
+import kotlinx.css.CssDeclarations
 import kotlinx.css.StyledElement
+import kotlinx.css.hyphenize
 import react.dom.RDOMBuilder
 import react.dom.setProp
 
@@ -17,13 +19,7 @@ fun RDOMBuilder<*>.inlineStyles(prefix: Boolean = true, builder: StyledElement.(
 private external class JsArray
 
 fun StyledElement.toStyle(prefix: Boolean = true): Any {
-    val res = js { }
-    declarations.forEach { (key, value) ->
-        res[key] = when (value) {
-            is String, is Number -> value
-            else -> value.toString()
-        }
-    }
+    val res = declarations.mapToObj()
 
     if (!prefix) {
         return res
@@ -48,4 +44,33 @@ fun StyledElement.toStyle(prefix: Boolean = true): Any {
     }
 
     return prefixed
+}
+
+private fun CssDeclarations.mapToObj(): dynamic {
+    val res = js { }
+    forEach { (key, value) ->
+        res[key] = when (value) {
+            is String, is Number -> value
+            else -> value.toString()
+        }
+    }
+    return res
+}
+
+internal fun CssDeclarations.buildPrefixedString(): String {
+   val res = mapToObj()
+
+    val prefixed = prefix(res) as Object
+    return buildString {
+        Object.keys(prefixed).forEach {
+            val value = prefixed.asDynamic()[it]
+
+            if (value is JsArray) {
+                val displayValue = value.find(js("function(element) { return !element.startsWith('-') }"))
+                appendLine("${it.hyphenize()}: ${displayValue};")
+            } else {
+                appendLine("${it.hyphenize()}: ${value};")
+            }
+        }
+    }
 }
