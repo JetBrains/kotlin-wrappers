@@ -1,26 +1,18 @@
-package ringui
+package by.enrollie.eversity_web.components
 
-import kotlinext.js.ReadonlyArray
 import react.dom.HTMLAttributeAnchorTarget
-import react.dom.WithClassName
 
-external interface FooterItem {
-    //Empty, as Footer props accept only plain arrays of either Any (it will convert it into String), either FooterDataItem
+sealed external interface IFooterItem {
+    //Empty, as Footer props accept only plain arrays of either Any (it will convert it into String), either FooterItem
 }
 
-inline fun FooterItem(string: String): FooterItem = string.unsafeCast<FooterItem>()
+inline fun FooterItem(string: String): IFooterItem =
+    string.unsafeCast<IFooterItem>()
 
-external interface FooterDataItem : FooterItem {
+external interface FooterItem : IFooterItem {
     var copyright: String
     var url: String
     var label: String
     var title: String
     var target: HTMLAttributeAnchorTarget
-}
-
-external interface FooterProps : WithClassName {
-    var floating: Boolean
-    var left: ReadonlyArray<FooterItem>
-    var center: ReadonlyArray<FooterItem>
-    var right: ReadonlyArray<FooterItem>
 }
