@@ -1,7 +1,7 @@
 package styled
 
 import kotlinx.css.*
-import kotlinx.css.properties.Animation
+import kotlinx.css.properties.Animations
 import kotlinx.css.properties.KeyframesBuilder
 
 internal typealias ClassName = String
@@ -35,16 +35,17 @@ internal data class StyledRule(
  * StyledCss is used to efficiently build CSS rules from the DSL representation.
  */
 internal open class StyledCss(
-    declarations: LinkedHashMap<String, Any>?,
+    declarations: CssDeclarations?,
     private val rules: List<StyledRule>,
     val classes: List<String>,
 ) {
     internal val animationNames = mutableListOf<AnimationName>()
-    private val declarations = buildString {
-        declarations?.forEach { (key, value) ->
-            append("${key.hyphenize()}: ${value};\n")
-            if (value is Animation) {
-                animationNames.add(value.name)
+    private val declarations = declarations?.buildPrefixedString() ?: ""
+
+    init {
+        declarations?.forEach { (_, value) ->
+            if (value is Animations) {
+                animationNames.addAll(value.map { it.name })
             }
         }
     }
@@ -85,9 +86,9 @@ internal open class StyledCss(
         if (declarations.isNotEmpty() && outerSelector != null) {
             result.add(
                 buildString {
-                    append("$indent$outerSelector {\n")
+                    appendLine("$indent$outerSelector {")
                     append(declarations)
-                    append("$indent}\n")
+                    appendLine("$indent}")
                 }
             )
         }

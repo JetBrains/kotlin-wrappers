@@ -14,14 +14,5 @@ fun CssBuilder.animation(
     builder: KeyframesBuilder.() -> Unit,
 ) {
     val name = GlobalStyles.scheduleToInject(builder)
-    declarations["animation"] = Animation(
-        duration,
-        timing,
-        delay,
-        iterationCount,
-        direction,
-        fillMode,
-        playState,
-        name
-    )
+    animation(name, duration, timing, delay, iterationCount, direction, fillMode, playState)
 }
