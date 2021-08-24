@@ -78,10 +78,23 @@ class TestScope : CoroutineScope by testScope {
         return getStyle(pseudoElt).color
     }
 
-    fun CSSRuleList.forEach(block: (rule: CSSRule?) -> Unit) {
+    fun CSSRuleList.forEach(block: (rule: CSSRule) -> Unit) {
         for (i in 0 until this.length) {
-            block(this[i])
+            val value = this[i]
+            assertNotNull(value)
+            block(value)
         }
+    }
+
+    fun CSSRuleList.find(predicate: (rule: CSSRule) -> Boolean): CSSRule? {
+        for (i in 0 until this.length) {
+            val value = this[i]
+            assertNotNull(value)
+            if (predicate(value)) {
+                return value
+            }
+        }
+        return null
     }
 
     fun assertChildrenCount(n: Int) {

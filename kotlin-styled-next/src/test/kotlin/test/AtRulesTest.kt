@@ -32,7 +32,7 @@ class AtRulesTest : TestBase() {
         }
         val element = clearAndInject(styledComponent)
         assertEquals(firstColor.toString(), element.childAt(0).color())
-        assertCssInjected("@supports $query", listOf("color" to firstColor.toString()))
+        assertCssInjected("@supports $query", "color" to firstColor.toString())
     }
 
     @Test
@@ -47,7 +47,7 @@ class AtRulesTest : TestBase() {
             }
         }
         clearAndInject(styledComponent)
-        assertCssInjected("@font-face", listOf("font-family" to "Roboto"))
+        assertCssInjected("@font-face", "font-family" to "Roboto")
     }
 
     @Test
@@ -65,7 +65,7 @@ class AtRulesTest : TestBase() {
         clearAndInject(styledComponent)
         assertCssInjected(
             "@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)",
-            listOf("font-size" to "18px")
+            "font-size" to "18px"
         )
     }
 
@@ -83,9 +83,8 @@ class AtRulesTest : TestBase() {
         }
         clearAndInject(styledComponent)
         assertCssInjected(
-            "@media $query", listOf(
-                "text-transform" to "capitalize",
-            )
+            "@media $query",
+            "text-transform" to "capitalize",
         )
     }
 }

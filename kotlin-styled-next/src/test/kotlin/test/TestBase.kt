@@ -26,7 +26,7 @@ open class TestBase {
     /**
      * Assert that injected CSS for [selector] contains all of the [declarations]
      */
-    protected fun TestScope.assertCssInjected(selector: String, declarations: List<Pair<String, String>>) {
+    protected fun TestScope.assertCssInjected(selector: String, vararg declarations: Pair<String, String>) {
         assertCssInjected(selector, declarations.map { (property, value) -> "$property: $value" })
     }
 

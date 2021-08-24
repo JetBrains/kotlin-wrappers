@@ -1,5 +1,6 @@
 package test
 
+import TestScope
 import kotlinx.css.*
 import kotlinx.css.properties.*
 import kotlinx.html.classes
@@ -27,10 +28,9 @@ class ElementTest : TestBase() {
         }
         val styledElement = clearAndInject(styledComponent)
         assertCssInjected(
-            styledElement.className, listOf(
-                "background-color" to Color.blue.toString(),
-                "height" to 15.px.toString()
-            )
+            styledElement.className,
+            "background-color" to Color.blue.toString(),
+            "height" to 15.px.toString()
         )
     }
 
@@ -87,7 +87,8 @@ class ElementTest : TestBase() {
             }
         }
         val rules = getStylesheet().cssRules
-        assertEquals(2, sheet.scheduledGroups.size)
+        assertEquals(1, sheet.scheduledGroups.size)
+        assertEquals(2, sheet.scheduledGroups.values.first().toList().size)
         assertEquals(0, rules.length)
     }
 
@@ -169,7 +170,7 @@ class ElementTest : TestBase() {
     }
 
     @Test
-    fun specificTest() = runTest {
+    fun specific() = runTest {
         val styledComponent = fc<Props> {
             styledSpan {
                 css {
@@ -182,8 +183,8 @@ class ElementTest : TestBase() {
         }
         val element = clearAndInject(styledComponent)
         val className = element.className
-        assertCssInjected(".$className", listOf("color" to firstColor.toString()))
-        assertCssInjected(".$className.$className", listOf("color" to secondColor.toString()))
+        assertCssInjected(".$className", "color" to firstColor.toString())
+        assertCssInjected(".$className.$className", "color" to secondColor.toString())
 
         assertEquals(secondColor.toString(), element.getStyle().color)
     }
@@ -225,7 +226,7 @@ class ElementTest : TestBase() {
     }
 
     @Test
-    fun animationTest() = runTest {
+    fun animation() = runTest {
         val styledComponent = fc<Props> {
             styledSpan {
                 css {
@@ -251,15 +252,13 @@ class ElementTest : TestBase() {
         }
         val keyframeName = rules[keyframeIdx]!!.cssText.substringAfter("@keyframes ").substringBefore("{").trim()
         assertCssInjected(
-            classname, listOf(
-                "animation" to "5s linear 3s infinite reverse forwards running $keyframeName",
-            )
+            classname,
+            "animation" to "5s linear 3s infinite reverse forwards running $keyframeName",
         )
         assertCssInjected(
-            "@keyframes", listOf(
-                "transform" to "rotate(0deg)",
-                "transform" to "rotate(360deg)"
-            )
+            "@keyframes",
+            "transform" to "rotate(0deg)",
+            "transform" to "rotate(360deg)"
         )
     }
 
@@ -290,21 +289,20 @@ class ElementTest : TestBase() {
         val thirdRule = CssBuilder().apply { ".$secondClassName" { backgroundColor = secondColor } }.toString()
         GlobalStyles.sheet.scheduleToInject(listOf(firstRule, secondRule, thirdRule))
         GlobalStyles.sheet.injectScheduled()
-        assertCssInjected(firstClassName, listOf("color" to firstColor.toString()))
-        assertCssInjected(secondClassName, listOf("background-color" to secondColor.toString()))
+        assertCssInjected(firstClassName, "color" to firstColor.toString())
+        assertCssInjected(secondClassName, "background-color" to secondColor.toString())
     }
 
     @Test
     fun externalClassName() = runTest {
         val styledComponent = fc<Props> {
             styledSpan {
-                attrs {classes = setOf("classname")}
-                css {
-                }
+                attrs { classes = setOf("classname") }
+                css { color = firstColor }
             }
         }
         val element = clearAndInject(styledComponent)
-        assertContains("classname ksc-", element.className)
+        assertContains(element.className, "classname ksc-")
     }
 
     @Test
@@ -321,11 +319,37 @@ class ElementTest : TestBase() {
             }
         }
         clearAndInject(styledComponent)
-        val rule = getRules()[0]?.cssText
+        assertRulesContain("opacity: 0;")
+        assertRulesContain("opacity: 1;")
+        assertRulesContain("transform: rotate(0deg);")
+        assertRulesContain("transform: rotate(360deg);")
+    }
+
+    private fun TestScope.assertRulesContain(substring: String) {
+        val rule = getRules().find { it.cssText.contains(substring) }
         assertNotNull(rule)
-        assertContains("opacity: 0", rule)
-        assertContains("opacity: 1", rule)
-        assertContains("transform: rotate(0deg)", rule)
-        assertContains("transform: rotate(180deg)", rule)
+    }
+
+    @Test
+    fun declarationsPrefixed() {
+        val css = CssBuilder().apply {
+            transition("all", 200.ms, Timing.linear)
+        }
+        val rule = css.toStyledCss().getCssRules(".someClass").first()
+        assertContains(rule, "-moz-transition: all 200ms linear 0s")
+        assertContains(rule, "-webkit-transition: all 200ms linear 0s")
+    }
+
+    @Test
+    fun elementCssPrefixed() = runTest {
+        val styledComponent = fc<Props> {
+            styledSpan {
+                css {
+                    alignItems = Align.center
+                }
+            }
+        }
+        val element = clearAndInject(styledComponent)
+        assertCssInjected(element.className, "-webkit-box-align" to "center")
     }
 }

@@ -32,7 +32,7 @@ class PseudoClassRulesTest : TestBase() {
         assertEquals(firstColor.toString(), element.getStyle().color)
 
         // We can't set :active with plain js
-        assertCssInjected("${element.className}:active", listOf("color" to secondColor.toString()))
+        assertCssInjected("${element.className}:active", "color" to secondColor.toString())
     }
 
     @Test
@@ -259,7 +259,7 @@ class PseudoClassRulesTest : TestBase() {
         assertEquals(firstColor.toString(), element.color())
 
         // We can't set :hover with plain js (https://stackoverflow.com/questions/4347116/trigger-css-hover-with-js)
-        assertCssInjected("${element.className}:hover", listOf("color" to secondColor.toString()))
+        assertCssInjected("${element.className}:hover", "color" to secondColor.toString())
     }
 
     @Test
@@ -693,6 +693,6 @@ class PseudoClassRulesTest : TestBase() {
         }
         val element = clearAndInject(styledComponent)
         // We can't check that the user had visited the link, https://developer.mozilla.org/en-US/docs/Web/CSS/Privacy_and_the_:visited_selector
-        assertCssInjected("${element.className} a:visited", listOf("color" to secondColor.toString()))
+        assertCssInjected("${element.className} a:visited", "color" to secondColor.toString())
     }
 }

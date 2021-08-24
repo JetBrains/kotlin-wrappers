@@ -118,7 +118,7 @@ fun customStyled(type: String): ComponentType<StyledProps> {
                 GlobalStyles.checkGeneratedCss(generatedClasses, selfClassName, type)
             }
             GlobalStyles.injectScheduled()
-            Pair(styledCss, (classes + selfClassName).joinToString(" "))
+            styledCss to (classes + selfClassName).joinToString(" ")
         }
 
         useEffect(css) {

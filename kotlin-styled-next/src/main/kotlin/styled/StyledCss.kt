@@ -40,7 +40,7 @@ internal open class StyledCss(
     val classes: List<String>,
 ) {
     internal val animationNames = mutableListOf<AnimationName>()
-    private val declarations = declarations?.buildPrefixedString() ?: ""
+    private val declarationBlock = declarations?.buildPrefixedString("  ") ?: ""
 
     init {
         declarations?.forEach { (_, value) ->
@@ -60,7 +60,7 @@ internal open class StyledCss(
 
     private var memoizedHashCode: Int? = null
     override fun hashCode(): Int {
-        return memoizedHashCode ?: (rules.sumOf { it.hashCode() } + declarations.hashCode())
+        return memoizedHashCode ?: (rules.sumOf { it.hashCode() } + declarationBlock.hashCode())
             .also { hashCode -> memoizedHashCode = hashCode }
     }
 
@@ -71,7 +71,7 @@ internal open class StyledCss(
 
         return hashCode() == other.hashCode()
                 && rules == other.rules
-                && declarations == other.declarations
+                && declarationBlock == other.declarationBlock
     }
 
     /**
@@ -83,11 +83,11 @@ internal open class StyledCss(
     fun getCssRules(outerSelector: String?, indent: String = ""): List<String> {
         val result = mutableListOf<String>()
         val (rules, handleRules) = rules.partition { !withCustomHandle(it.selector) }
-        if (declarations.isNotEmpty() && outerSelector != null) {
+        if (declarationBlock.isNotEmpty() && outerSelector != null) {
             result.add(
                 buildString {
                     appendLine("$indent$outerSelector {")
-                    append(declarations)
+                    append(declarationBlock)
                     appendLine("$indent}")
                 }
             )

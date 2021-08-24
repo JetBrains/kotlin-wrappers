@@ -57,8 +57,8 @@ private fun CssDeclarations.mapToObj(): dynamic {
     return res
 }
 
-internal fun CssDeclarations.buildPrefixedString(): String {
-   val res = mapToObj()
+internal fun CssDeclarations.buildPrefixedString(indent: String = ""): String {
+    val res = mapToObj()
 
     val prefixed = prefix(res) as Object
     return buildString {
@@ -66,10 +66,11 @@ internal fun CssDeclarations.buildPrefixedString(): String {
             val value = prefixed.asDynamic()[it]
 
             if (value is JsArray) {
-                val displayValue = value.find(js("function(element) { return !element.startsWith('-') }"))
-                appendLine("${it.hyphenize()}: ${displayValue};")
+                for (i in 0 until value.length as Int) {
+                    appendLine("$indent${it.hyphenize()}: ${value[i]};")
+                }
             } else {
-                appendLine("${it.hyphenize()}: ${value};")
+                appendLine("$indent${it.hyphenize()}: ${value};")
             }
         }
     }

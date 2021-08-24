@@ -12,7 +12,7 @@ import kotlin.test.assertNotEquals
 /**
  * Check that [StyledCss] and [StyledKeyframes] with the same content are equal and have the same hash code
  */
-class StyledCssEquality : TestBase() {
+class StyledCssEqualityTest : TestBase() {
     @Test
     fun simpleCssBuilders() {
         val first = CssBuilder().apply {

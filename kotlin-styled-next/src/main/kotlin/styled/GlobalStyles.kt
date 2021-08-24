@@ -145,7 +145,7 @@ object GlobalStyles {
             val usedKeyframeInfo = injectedKeyframes[keyframes] ?: throw IllegalStateException("Trying to remove non-existent keyframe")
             usedKeyframeInfo.usedBy--
             if (usedKeyframeInfo.usedBy == 0) {
-                scheduledToDeleteKeyframes.add(Pair(animationName, keyframes))
+                scheduledToDeleteKeyframes.add(animationName to keyframes)
             }
         }
         sheet.requestClean { clean(sheet) }
@@ -178,7 +178,7 @@ object GlobalStyles {
     internal fun getInjectedClassNames(styledCss: StyledCss): Pair<ClassName, List<ClassName>> {
         val selfClassName = getInjectedClassName(styledCss)
         val externalClassNames = styledCss.classes
-        return Pair(selfClassName, externalClassNames)
+        return selfClassName to externalClassNames
     }
 
     /**

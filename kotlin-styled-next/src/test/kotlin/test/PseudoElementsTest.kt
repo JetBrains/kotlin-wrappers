@@ -67,7 +67,7 @@ class PseudoElementsTest : TestBase() {
         }
         val element = clearAndInject(styledComponent)
         // Checking computed css not working for placeholder pseudo element in chrome, https://bugs.chromium.org/p/chromium/issues/detail?id=850744
-        assertCssInjected("${element.className}::placeholder", listOf("color" to firstColor.toString()))
+        assertCssInjected("${element.className}::placeholder", "color" to firstColor.toString())
     }
 
     @Test
