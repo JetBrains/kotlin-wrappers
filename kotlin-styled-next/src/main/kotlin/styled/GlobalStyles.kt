@@ -90,7 +90,9 @@ object GlobalStyles {
         importSheet.scheduleToInject(imports.map { it.build() })
     }
 
-    internal val injectedKeyframes = mutableMapOf<StyledKeyframes, ClassName>()
+    internal val keyframeByName = mutableMapOf<AnimationName, StyledKeyframes>()
+    internal val injectedKeyframes = mutableMapOf<StyledKeyframes, UsedCssInfo>()
+    internal val scheduledToDeleteKeyframes = LinkedHashSet<Pair<AnimationName, StyledKeyframes>>()
 
     /**
      * Schedule keyframes CSS in [builder] for injection into the DOM.
@@ -98,11 +100,18 @@ object GlobalStyles {
      */
     fun scheduleToInject(builder: KeyframesBuilder.() -> Unit): ClassName {
         val keyframes = KeyframesBuilder().apply(builder).toStyledKeyframes()
-        return injectedKeyframes[keyframes] ?: "ksc-keyframe-$incrementedClassName".also { keyframeName ->
+        val keyframe = injectedKeyframes[keyframes]
+        return if (keyframe == null) {
+            val keyframeName = "ksc-keyframe-$incrementedClassName"
             val css = keyframes.toString()
-            injectedKeyframes[keyframes] = keyframeName
             val prefixes = listOf("@-webkit-keyframes", "@keyframes")
-            sheet.scheduleToInject(prefixes.map { prefix -> "$prefix $keyframeName { $css }" })
+            val groupId = sheet.scheduleToInject(prefixes.map { prefix -> "$prefix $keyframeName { $css }" })
+            injectedKeyframes[keyframes] = UsedCssInfo(keyframeName, 1, groupId)
+            keyframeByName[keyframeName] = keyframes
+            keyframeName
+        } else {
+            keyframe.usedBy++
+            keyframe.className
         }
     }
 
@@ -114,17 +123,34 @@ object GlobalStyles {
         if (info.usedBy == 0) {
             scheduledToDelete.add(styledCss)
         }
+        console.log(styledCss.animationNames.joinToString())
+        for (animationName in styledCss.animationNames) {
+            val keyframes = keyframeByName[animationName] ?: throw IllegalStateException("Trying to remove non-existent keyframe")
+            val usedKeyframeInfo = injectedKeyframes[keyframes] ?: throw IllegalStateException("Trying to remove non-existent keyframe")
+            usedKeyframeInfo.usedBy--
+            if (usedKeyframeInfo.usedBy == 0) {
+                scheduledToDeleteKeyframes.add(Pair(animationName, keyframes))
+            }
+        }
         sheet.requestClean { clean(sheet) }
     }
 
     private fun clean(sheet: CSSOMSheet) {
-        val removalGroups = scheduledToDelete.map { css ->
+        val toRemove = scheduledToDelete.map { css ->
             (styledClasses[css] ?: throw IllegalStateException("Non-existent css cleanup")).also {
                 if (it.usedBy == 0) {
                     styledClasses.remove(css)
                 }
             }
-        }.filter { it.usedBy == 0 }.map { it.groupId }
+        } + scheduledToDeleteKeyframes.map { (animationName, keyframes) ->
+            (injectedKeyframes[keyframes] ?: throw IllegalStateException("Non-existent css cleanup")).also {
+                if (it.usedBy == 0) {
+                    injectedKeyframes.remove(keyframes)
+                    keyframeByName.remove(animationName)
+                }
+            }
+        }
+        val removalGroups = toRemove.filter { it.usedBy == 0 }.map { it.groupId }
         sheet.removeGroups(removalGroups)
         scheduledToDelete.clear()
     }

@@ -25,15 +25,15 @@ internal class CSSOMSheet(
     private var groupId: Int = 0
         get() = field.also { field++ }
 
-    internal var cleanRequested: Boolean = false
+    internal var isCleanRequested: Boolean = false
 
     override fun scheduleToInject(rules: Rules): Int = groupId.also { scheduledGroups[it] = rules }
 
     fun requestClean(clean: () -> Unit) {
-        if (cleanRequested) return
-        cleanRequested = true
+        if (isCleanRequested) return
+        isCleanRequested = true
         if (removeMode == RemoveMode.Instantly) {
-            cleanRequested = false
+            isCleanRequested = false
             clean()
             return
         }
@@ -41,11 +41,11 @@ internal class CSSOMSheet(
             val idleCallback = window.asDynamic().requestIdleCallback
             if (idleCallback != undefined && removeMode == RemoveMode.OnBrowserIdle) {
                 idleCallback {
-                    cleanRequested = false
+                    isCleanRequested = false
                     clean()
                 }
             } else {
-                cleanRequested = false
+                isCleanRequested = false
                 clean()
             }
         }, cleanTimeout)

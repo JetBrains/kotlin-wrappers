@@ -13,6 +13,7 @@ import org.w3c.dom.HTMLElement
 import react.Props
 import react.fc
 import runTest
+import styled.animation
 import styled.css
 import styled.styledDiv
 import styled.styledSpan
@@ -164,5 +165,67 @@ class RemoveCssTest : TestBase() {
         assertEquals(2, getRules().length)
         assertEquals(firstColor.toString(), secondRoot.childAt(0).color())
         assertEquals(thirdColor.toString(), secondRoot.childAt(1).color())
+    }
+
+    @Test
+    fun removesNestedRules() = runTest {
+        val styledComponent = fc<Props> {
+            styledDiv {
+                css {
+                    paddingLeft = 0.px
+                    ":hover" {
+                        color = firstColor
+                    }
+                }
+            }
+        }
+        clearAndInject(styledComponent)
+        assertEquals(2, getRules().length)
+
+        clear()
+        assertEquals(0, getRules().length)
+    }
+
+    @Test
+    fun removesAnimation() = runTest {
+        val styledComponent = fc<Props> {
+            styledDiv {
+                css { animation { addRotation() } }
+            }
+        }
+        clearAndInject(styledComponent)
+        assertEquals(3, getRules().length)
+
+        clear()
+        assertEquals(0, getRules().length)
+    }
+
+    @Test
+    fun removesMultipleAnimations() = runTest {
+        val styledComponent = fc<Props> {
+            styledDiv {
+                css { animation { addRotation() } }
+                css { animation { addRotation() } }
+            }
+        }
+        clearAndInject(styledComponent)
+        assertEquals(3, getRules().length)
+
+        clear()
+        assertEquals(0, getRules().length)
+    }
+
+    @Test
+    fun reinjectsMultipleAnimations() = runTest {
+        val styledComponent = fc<Props> {
+            styledDiv {
+                css { animation { addRotation() } }
+                css { animation { addRotation() } }
+            }
+        }
+        clearAndInject(styledComponent)
+        clear()
+        clearAndInject(styledComponent)
+        assertEquals(3, getRules().length)
     }
 }
