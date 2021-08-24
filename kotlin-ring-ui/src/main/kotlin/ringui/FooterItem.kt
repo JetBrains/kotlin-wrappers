@@ -2,9 +2,7 @@ package ringui
 
 import react.dom.HTMLAttributeAnchorTarget
 
-sealed external interface IFooterItem {
-    
-}
+sealed external interface IFooterItem
 
 inline fun IFooterItem(string: String): IFooterItem =
     string.unsafeCast<IFooterItem>()
