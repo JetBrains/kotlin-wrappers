@@ -1,4 +1,4 @@
-package by.enrollie.eversity_web.components
+package ringui
 
 import react.dom.HTMLAttributeAnchorTarget
 
