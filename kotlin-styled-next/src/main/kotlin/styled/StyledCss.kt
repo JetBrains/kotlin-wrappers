@@ -43,10 +43,7 @@ internal open class StyledCss(
     private val declarations = buildString {
         declarations?.forEach { (key, value) ->
             append("${key.hyphenize()}: ${value};\n")
-            console.log(value)
-            console.log("\n")
             if (value is Animation) {
-                console.log("is animation\n")
                 animationNames.add(value.name)
             }
         }

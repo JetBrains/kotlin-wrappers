@@ -17,7 +17,9 @@ import styled.animation
 import styled.css
 import styled.styledDiv
 import styled.styledSpan
+import test.styleSheets.StaticStyleSheet
 import unmount
+import waitForAnimationFrame
 import kotlin.test.BeforeTest
 import kotlin.test.Test
 import kotlin.test.assertEquals
@@ -26,12 +28,18 @@ import kotlin.test.assertNotNull
 class RemoveCssTest : TestBase() {
     val secondRoot by lazy { createDOMElement() }
     val thirdRoot by lazy { createDOMElement() }
+    private var staticStyleSheet = StaticStyleSheet()
 
     fun TestScope.injectAdditional(component: Component, root: HTMLElement = secondRoot): Element {
         renderComponent(component, root)
         val element = root.firstElementChild
         assertNotNull(element)
         return element
+    }
+
+    private suspend fun uninject() {
+        staticStyleSheet.uninject()
+        waitForAnimationFrame()
     }
 
     @BeforeTest
@@ -41,6 +49,7 @@ class RemoveCssTest : TestBase() {
         secondRoot.clear()
         unmount(thirdRoot)
         thirdRoot.clear()
+        staticStyleSheet = StaticStyleSheet()
     }
 
     @Test
@@ -224,8 +233,43 @@ class RemoveCssTest : TestBase() {
             }
         }
         clearAndInject(styledComponent)
-        clear()
         clearAndInject(styledComponent)
         assertEquals(3, getRules().length)
+    }
+
+    @Test
+    fun removesStyleSheet() = runTest {
+        val styledComponent = fc<Props> {
+            styledDiv { css { +staticStyleSheet.property1 } }
+        }
+        clearAndInject(styledComponent)
+        assertEquals(1, getRules().length)
+        uninject()
+        assertEquals(0, getRules().length)
+    }
+
+    @Test
+    fun removesMultiComponentStyleSheet() = runTest {
+        val styledComponent = fc<Props> {
+            styledDiv { css { +staticStyleSheet.property1 } }
+        }
+        clearAndInject(styledComponent)
+        assertEquals(1, getRules().length)
+        uninject()
+        assertEquals(0, getRules().length)
+
+        val styledComponent2 = fc<Props> {
+            styledDiv {
+                css {
+                    +staticStyleSheet.property1
+                    +staticStyleSheet.property2
+                }
+            }
+        }
+        clearAndInject(styledComponent)
+        injectAdditional(styledComponent2)
+        assertEquals(2, getRules().length)
+        uninject()
+        assertEquals(0, getRules().length)
     }
 }
