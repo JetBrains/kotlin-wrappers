@@ -2,9 +2,11 @@ package test
 
 import kotlinx.css.*
 import kotlinx.css.properties.*
+import kotlinx.html.classes
 import org.w3c.dom.css.get
 import org.w3c.dom.get
 import react.Props
+import react.dom.attrs
 import react.dom.div
 import react.dom.span
 import react.fc
@@ -290,6 +292,19 @@ class ElementTest : TestBase() {
         GlobalStyles.sheet.injectScheduled()
         assertCssInjected(firstClassName, listOf("color" to firstColor.toString()))
         assertCssInjected(secondClassName, listOf("background-color" to secondColor.toString()))
+    }
+
+    @Test
+    fun externalClassName() = runTest {
+        val styledComponent = fc<Props> {
+            styledSpan {
+                attrs {classes = setOf("classname")}
+                css {
+                }
+            }
+        }
+        val element = clearAndInject(styledComponent)
+        assertContains("classname ksc-", element.className)
     }
 
     @Test
