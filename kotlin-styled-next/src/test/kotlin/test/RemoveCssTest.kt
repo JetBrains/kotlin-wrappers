@@ -37,8 +37,8 @@ class RemoveCssTest : TestBase() {
         return element
     }
 
-    private suspend fun uninject() {
-        staticStyleSheet.uninject()
+    private suspend fun removeInjectedStyleSheet() {
+        staticStyleSheet.removeInjected()
         waitForAnimationFrame()
     }
 
@@ -244,7 +244,7 @@ class RemoveCssTest : TestBase() {
         }
         clearAndInject(styledComponent)
         assertEquals(1, getRules().length)
-        uninject()
+        removeInjectedStyleSheet()
         assertEquals(0, getRules().length)
     }
 
@@ -255,7 +255,7 @@ class RemoveCssTest : TestBase() {
         }
         clearAndInject(styledComponent)
         assertEquals(1, getRules().length)
-        uninject()
+        removeInjectedStyleSheet()
         assertEquals(0, getRules().length)
 
         val styledComponent2 = fc<Props> {
@@ -269,7 +269,7 @@ class RemoveCssTest : TestBase() {
         clearAndInject(styledComponent)
         injectAdditional(styledComponent2)
         assertEquals(2, getRules().length)
-        uninject()
+        removeInjectedStyleSheet()
         assertEquals(0, getRules().length)
     }
 }
