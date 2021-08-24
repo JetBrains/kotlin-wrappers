@@ -1,10 +1,12 @@
 package styled
 
 import kotlinx.css.*
+import kotlinx.css.properties.Animation
 import kotlinx.css.properties.KeyframesBuilder
 
 internal typealias ClassName = String
 internal typealias Selector = String
+internal typealias AnimationName = String
 
 internal data class StyledRule(
     val selector: Selector,
@@ -37,9 +39,13 @@ internal open class StyledCss(
     private val rules: List<StyledRule>,
     val classes: List<String>,
 ) {
+    internal val animationNames = mutableListOf<AnimationName>()
     private val declarations = buildString {
-        declarations?.forEach { outer ->
-            append("${outer.key.hyphenize()}: ${outer.value};\n")
+        declarations?.forEach { (key, value) ->
+            append("${key.hyphenize()}: ${value};\n")
+            if (value is Animation) {
+                animationNames.add(value.name)
+            }
         }
     }
 

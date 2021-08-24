@@ -61,7 +61,6 @@ class AddStyledElements : BenchmarkBase() {
         assertCssNotEmpty()
 
         clear()
-        waitForAnimationFrame()
         return duration
     }
 

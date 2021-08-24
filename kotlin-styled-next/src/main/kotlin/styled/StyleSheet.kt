@@ -53,6 +53,10 @@ open class StyleSheet(var name: String, val isStatic: Boolean = false, internal 
             it.scheduleToInject()
         }
     }
+
+    fun removeInjected() {
+        holders.forEach { it.removeInjected() }
+    }
 }
 
 class CssHolder(private val sheet: StyleSheet, internal vararg val ruleSets: RuleSet) {
@@ -69,6 +73,10 @@ class CssHolder(private val sheet: StyleSheet, internal vararg val ruleSets: Rul
             classNamesToInject[className] = false
             GlobalStyles.scheduleToInject(".$className", css)
         }
+    }
+
+    fun removeInjected() {
+        GlobalStyles.removeInjectedStyleSheet(classNamesToInject.map { (className, _) -> ".$className" })
     }
 
     fun scheduleToInject() {

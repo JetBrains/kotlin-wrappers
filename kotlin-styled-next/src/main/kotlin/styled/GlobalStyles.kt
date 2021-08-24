@@ -3,10 +3,7 @@ package styled
 import kotlinx.css.CssBuilder
 import kotlinx.css.properties.KeyframesBuilder
 import react.StateInstance
-import styled.sheets.AbstractSheet
-import styled.sheets.CSSOMPersistentSheet
-import styled.sheets.DevSheet
-import styled.sheets.RuleType
+import styled.sheets.*
 import kotlin.collections.*
 
 data class UsedCssInfo(val className: ClassName, var usedBy: Int, val groupId: Int)
@@ -33,7 +30,7 @@ object GlobalStyles {
             sheet = DevSheet(RuleType.REGULAR)
             importSheet = DevSheet(RuleType.IMPORT)
         } else {
-            sheet = CSSOMPersistentSheet(RuleType.REGULAR)
+            sheet = CSSOMSheet(RuleType.REGULAR)
             importSheet = CSSOMPersistentSheet(RuleType.IMPORT)
         }
     }
@@ -45,8 +42,7 @@ object GlobalStyles {
         }
 
     internal var styledClasses = InjectedCssHolder()
-    internal val scheduledToDelete = mutableListOf<StyledCss>()
-    internal val injectedStyleSheetRules = mutableSetOf<Selector>()
+    internal val scheduledToDelete = LinkedHashSet<StyledCss>()
 
     private fun getInjectedClassName(css: StyledCss): ClassName {
         val info = styledClasses[css]
@@ -64,6 +60,12 @@ object GlobalStyles {
         val rules = css.getCssRules(selector)
         val groupId = sheet.scheduleToInject(rules)
 
+        for (animation in css.animationNames) {
+            val keyframe = keyframeByName[animation]
+            injectedKeyframes[keyframe]?.let {
+                it.usedBy++
+            }
+        }
         styledClasses[css] = UsedCssInfo(className, 1, groupId)
         return className
     }
@@ -77,6 +79,8 @@ object GlobalStyles {
         importSheet.injectScheduled()
     }
 
+    internal val injectedStyleSheetRules = mutableMapOf<Selector, GroupId>()
+
     /**
      * Schedule CSS from [builder] for injection into the DOM with the corresponding [selector].
      * They will be injected when the [injectScheduled] function is called the next time.
@@ -84,8 +88,21 @@ object GlobalStyles {
     fun scheduleToInject(selector: Selector, builder: CssBuilder) {
         if (!injectedStyleSheetRules.contains(selector)) {
             val styled = builder.toStyledCss()
-            sheet.scheduleToInject(styled.getCssRules(selector))
-            injectedStyleSheetRules.add(selector)
+            val groupId = sheet.scheduleToInject(styled.getCssRules(selector))
+            injectedStyleSheetRules[selector] = groupId
+        }
+    }
+
+    fun removeInjectedStyleSheet(selectors: List<Selector>) {
+        if (sheet is CSSOMSheet) {
+            val sheet = sheet as CSSOMSheet
+            val groups = selectors.mapNotNull { selector ->
+                injectedStyleSheetRules[selector].also {
+                    injectedStyleSheetRules.remove(selector)
+                }
+            }
+            sheet.removeGroups(groups)
+            sheet.requestClean { clean(sheet) }
         }
     }
 
@@ -93,7 +110,9 @@ object GlobalStyles {
         importSheet.scheduleToInject(imports.map { it.build() })
     }
 
-    internal val injectedKeyframes = mutableMapOf<StyledKeyframes, ClassName>()
+    internal val keyframeByName = mutableMapOf<AnimationName, StyledKeyframes>()
+    internal val injectedKeyframes = mutableMapOf<StyledKeyframes, UsedCssInfo>()
+    internal val scheduledToDeleteKeyframes = LinkedHashSet<Pair<AnimationName, StyledKeyframes>>()
 
     /**
      * Schedule keyframes CSS in [builder] for injection into the DOM.
@@ -101,12 +120,55 @@ object GlobalStyles {
      */
     fun scheduleToInject(builder: KeyframesBuilder.() -> Unit): ClassName {
         val keyframes = KeyframesBuilder().apply(builder).toStyledKeyframes()
-        return injectedKeyframes[keyframes] ?: "ksc-keyframe-$incrementedClassName".also { keyframeName ->
+        val keyframe = injectedKeyframes[keyframes]
+        return if (keyframe == null) {
+            val keyframeName = "ksc-keyframe-$incrementedClassName"
             val css = keyframes.toString()
-            injectedKeyframes[keyframes] = keyframeName
             val prefixes = listOf("@-webkit-keyframes", "@keyframes")
-            sheet.scheduleToInject(prefixes.map { prefix -> "$prefix $keyframeName { $css }" })
+            val groupId = sheet.scheduleToInject(prefixes.map { prefix -> "$prefix $keyframeName { $css }" })
+            injectedKeyframes[keyframes] = UsedCssInfo(keyframeName, 0, groupId)
+            keyframeByName[keyframeName] = keyframes
+            keyframeName
+        } else keyframe.className
+    }
+
+    internal fun removeStyles(styledCss: StyledCss) {
+        if (sheet !is CSSOMSheet) return
+        val sheet = sheet as CSSOMSheet
+        val info = styledClasses[styledCss] ?: throw IllegalStateException("Trying to remove non-existent css")
+        info.usedBy--
+        if (info.usedBy == 0) {
+            scheduledToDelete.add(styledCss)
         }
+        for (animationName in styledCss.animationNames) {
+            val keyframes = keyframeByName[animationName] ?: throw IllegalStateException("Trying to remove non-existent keyframe")
+            val usedKeyframeInfo = injectedKeyframes[keyframes] ?: throw IllegalStateException("Trying to remove non-existent keyframe")
+            usedKeyframeInfo.usedBy--
+            if (usedKeyframeInfo.usedBy == 0) {
+                scheduledToDeleteKeyframes.add(Pair(animationName, keyframes))
+            }
+        }
+        sheet.requestClean { clean(sheet) }
+    }
+
+    private fun clean(sheet: CSSOMSheet) {
+        val toRemove = scheduledToDelete.map { css ->
+            (styledClasses[css] ?: throw IllegalStateException("Non-existent css cleanup")).also {
+                if (it.usedBy == 0) {
+                    styledClasses.remove(css)
+                }
+            }
+        } + scheduledToDeleteKeyframes.map { (animationName, keyframes) ->
+            (injectedKeyframes[keyframes] ?: throw IllegalStateException("Non-existent css cleanup")).also {
+                if (it.usedBy == 0) {
+                    injectedKeyframes.remove(keyframes)
+                    keyframeByName.remove(animationName)
+                }
+            }
+        }
+        val removalGroups = toRemove.filter { it.usedBy == 0 }.map { it.groupId }
+        sheet.removeGroups(removalGroups)
+        scheduledToDelete.clear()
     }
 
     /**

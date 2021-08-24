@@ -17,9 +17,7 @@ import react.dom.render
 import react.dom.unmountComponentAtNode
 import styled.GlobalStyles
 import styled.injectGlobal
-import styled.sheets.CSSOMPersistentSheet
-import styled.sheets.RuleType
-import styled.sheets.styleId
+import styled.sheets.*
 import kotlin.coroutines.resume
 import kotlin.coroutines.suspendCoroutine
 import kotlin.js.Promise
@@ -31,12 +29,12 @@ typealias Component = ComponentType<Props>
 private val testScope = MainScope()
 
 class TestScope : CoroutineScope by testScope {
-    internal val sheet: CSSOMPersistentSheet
-        get() = GlobalStyles.sheet as CSSOMPersistentSheet
+    internal val sheet: CSSOMSheet
+        get() = GlobalStyles.sheet as CSSOMSheet
 
     init {
-        if (GlobalStyles.sheet !is CSSOMPersistentSheet) {
-            GlobalStyles.sheet = CSSOMPersistentSheet(RuleType.REGULAR)
+        if (GlobalStyles.sheet !is CSSOMSheet) {
+            GlobalStyles.sheet = CSSOMSheet(RuleType.REGULAR, RemoveMode.Instantly)
         }
         if (GlobalStyles.importSheet !is CSSOMPersistentSheet) {
             GlobalStyles.importSheet = CSSOMPersistentSheet(RuleType.IMPORT)
@@ -44,11 +42,8 @@ class TestScope : CoroutineScope by testScope {
     }
 
     private var root: HTMLElement? = null
-    private fun getRoot(): HTMLElement {
-        return root ?: (document.createElement("div") as HTMLElement).also {
-            document.body?.appendChild(it)
-            root = it
-        }
+    internal fun getRoot(): HTMLElement {
+        return root ?: createDOMElement().also { root = it }
     }
 
     fun injectBuilder(builder: CssBuilder) {
@@ -93,8 +88,8 @@ class TestScope : CoroutineScope by testScope {
         assertEquals(n, getRoot().childElementCount)
     }
 
-    fun clear() {
-        unmountComponentAtNode(getRoot())
+    suspend fun clear() {
+        unmount(getRoot())
         getRoot().clear()
         root = null
     }
@@ -105,8 +100,11 @@ class TestScope : CoroutineScope by testScope {
 
         GlobalStyles.sheet.clear()
         GlobalStyles.importSheet.clear()
+
         GlobalStyles.injectedStyleSheetRules.clear()
         GlobalStyles.injectedKeyframes.clear()
+        GlobalStyles.keyframeByName.clear()
+        GlobalStyles.scheduledToDeleteKeyframes.clear()
         GlobalStyles.styledClasses.clear()
         GlobalStyles.scheduledToDelete.clear()
     }
@@ -125,6 +123,17 @@ class TestScope : CoroutineScope by testScope {
         val styledElement = getRoot().firstElementChild
         assertNotNull(styledElement)
         return styledElement
+    }
+}
+
+internal suspend fun unmount(domContainerNode: Element?) {
+    unmountComponentAtNode(domContainerNode)
+    waitForAnimationFrame()
+}
+
+internal fun createDOMElement(): HTMLElement {
+    return (document.createElement("div") as HTMLElement).also {
+        document.body?.appendChild(it)
     }
 }
 
