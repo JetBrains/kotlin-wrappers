@@ -3,10 +3,10 @@ package ringui
 import react.dom.HTMLAttributeAnchorTarget
 
 sealed external interface IFooterItem {
-    //Empty, as Footer props accept only plain arrays of either Any (it will convert it into String), either FooterItem
+    
 }
 
-inline fun FooterItem(string: String): IFooterItem =
+inline fun IFooterItem(string: String): IFooterItem =
     string.unsafeCast<IFooterItem>()
 
 external interface FooterItem : IFooterItem {
