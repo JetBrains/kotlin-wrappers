@@ -117,7 +117,6 @@ class TestScope : CoroutineScope by testScope {
         GlobalStyles.injectedStyleSheetRules.clear()
         GlobalStyles.injectedKeyframes.clear()
         GlobalStyles.keyframeByName.clear()
-        GlobalStyles.scheduledToDeleteKeyframes.clear()
         GlobalStyles.styledClasses.clear()
         GlobalStyles.scheduledToDelete.clear()
     }

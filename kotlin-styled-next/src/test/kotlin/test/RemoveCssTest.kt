@@ -206,7 +206,8 @@ class RemoveCssTest : TestBase() {
         assertEquals(3, getRules().length)
 
         clear()
-        assertEquals(0, getRules().length)
+        // 2 rules remaining are keyframes, which we do not remove
+        assertEquals(2, getRules().length)
     }
 
     @Test
@@ -221,7 +222,8 @@ class RemoveCssTest : TestBase() {
         assertEquals(3, getRules().length)
 
         clear()
-        assertEquals(0, getRules().length)
+        // 2 rules remaining are keyframes, which we do not remove
+        assertEquals(2, getRules().length)
     }
 
     @Test

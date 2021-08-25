@@ -39,16 +39,7 @@ internal open class StyledCss(
     private val rules: List<StyledRule>,
     val classes: List<String>,
 ) {
-    internal val animationNames = mutableListOf<AnimationName>()
     private val declarationBlock = declarations?.buildPrefixedString("  ") ?: ""
-
-    init {
-        declarations?.forEach { (_, value) ->
-            if (value is Animations) {
-                animationNames.addAll(value.map { it.name })
-            }
-        }
-    }
 
     private fun withMedia(selector: Selector) = selector.trim().startsWith("@media")
     private fun withContainer(selector: Selector) = selector.trim().startsWith("@container")
