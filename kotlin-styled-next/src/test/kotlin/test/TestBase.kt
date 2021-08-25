@@ -30,7 +30,11 @@ open class TestBase {
         assertCssInjected(selector, declarations.map { (property, value) -> "$property: $value" })
     }
 
-    protected fun TestScope.assertCssInjected(selector: String, strings: Iterable<String>, rules: CSSRuleList = getRules()) {
+    protected fun TestScope.assertCssInjected(
+        selector: String,
+        strings: Iterable<String>,
+        rules: CSSRuleList = getRules()
+    ) {
         val checkedCss = StringBuilder()
         for (i in 0 until rules.length) {
             val css = rules.item(i)?.cssText

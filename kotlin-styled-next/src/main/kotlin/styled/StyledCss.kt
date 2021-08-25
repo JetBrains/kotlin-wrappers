@@ -1,7 +1,6 @@
 package styled
 
 import kotlinx.css.*
-import kotlinx.css.properties.Animations
 import kotlinx.css.properties.KeyframesBuilder
 
 internal typealias ClassName = String

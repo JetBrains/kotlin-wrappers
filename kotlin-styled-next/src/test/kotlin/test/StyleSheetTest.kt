@@ -1,9 +1,7 @@
 package test
 
 import kotlinx.browser.document
-import kotlinx.css.Align
 import kotlinx.css.CssBuilder
-import kotlinx.css.alignItems
 import kotlinx.css.px
 import org.w3c.dom.HTMLStyleElement
 import org.w3c.dom.css.CSSRuleList

@@ -22,7 +22,11 @@ class Import(private val url: String, private val types: List<String> = listOf()
  *
  * [imports] are the URLs (relative or absolute) of CSS files that will be added to the DOM with the first use of [StyleSheet].
  */
-open class StyleSheet(var name: String, val isStatic: Boolean = false, internal var imports: List<Import> = emptyList()) {
+open class StyleSheet(
+    var name: String,
+    val isStatic: Boolean = false,
+    internal var imports: List<Import> = emptyList()
+) {
     private val holders: MutableList<CssHolder> = mutableListOf()
 
     constructor(name: String, parent: StyleSheet, isStatic: Boolean = false) : this(parent.name + "-" + name, isStatic)
