@@ -1,7 +1,7 @@
 package styled
 
 import kotlinx.css.*
-import kotlinx.css.properties.Animation
+import kotlinx.css.properties.Animations
 import kotlinx.css.properties.KeyframesBuilder
 
 internal typealias ClassName = String
@@ -35,19 +35,11 @@ internal data class StyledRule(
  * StyledCss is used to efficiently build CSS rules from the DSL representation.
  */
 internal open class StyledCss(
-    declarations: LinkedHashMap<String, Any>?,
+    declarations: CssDeclarations?,
     private val rules: List<StyledRule>,
     val classes: List<String>,
 ) {
-    internal val animationNames = mutableListOf<AnimationName>()
-    private val declarations = buildString {
-        declarations?.forEach { (key, value) ->
-            append("${key.hyphenize()}: ${value};\n")
-            if (value is Animation) {
-                animationNames.add(value.name)
-            }
-        }
-    }
+    private val declarationBlock = declarations?.buildPrefixedString("  ") ?: ""
 
     private fun withMedia(selector: Selector) = selector.trim().startsWith("@media")
     private fun withContainer(selector: Selector) = selector.trim().startsWith("@container")
@@ -59,7 +51,7 @@ internal open class StyledCss(
 
     private var memoizedHashCode: Int? = null
     override fun hashCode(): Int {
-        return memoizedHashCode ?: (rules.sumOf { it.hashCode() } + declarations.hashCode())
+        return memoizedHashCode ?: (rules.sumOf { it.hashCode() } + declarationBlock.hashCode())
             .also { hashCode -> memoizedHashCode = hashCode }
     }
 
@@ -70,7 +62,7 @@ internal open class StyledCss(
 
         return hashCode() == other.hashCode()
                 && rules == other.rules
-                && declarations == other.declarations
+                && declarationBlock == other.declarationBlock
     }
 
     /**
@@ -82,12 +74,12 @@ internal open class StyledCss(
     fun getCssRules(outerSelector: String?, indent: String = ""): List<String> {
         val result = mutableListOf<String>()
         val (rules, handleRules) = rules.partition { !withCustomHandle(it.selector) }
-        if (declarations.isNotEmpty() && outerSelector != null) {
+        if (declarationBlock.isNotEmpty() && outerSelector != null) {
             result.add(
                 buildString {
-                    append("$indent$outerSelector {\n")
-                    append(declarations)
-                    append("$indent}\n")
+                    appendLine("$indent$outerSelector {")
+                    append(declarationBlock)
+                    appendLine("$indent}")
                 }
             )
         }

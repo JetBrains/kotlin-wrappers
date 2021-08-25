@@ -60,12 +60,6 @@ object GlobalStyles {
         val rules = css.getCssRules(selector)
         val groupId = sheet.scheduleToInject(rules)
 
-        for (animation in css.animationNames) {
-            val keyframe = keyframeByName[animation]
-            injectedKeyframes[keyframe]?.let {
-                it.usedBy++
-            }
-        }
         styledClasses[css] = UsedCssInfo(className, 1, groupId)
         return className
     }
@@ -112,7 +106,6 @@ object GlobalStyles {
 
     internal val keyframeByName = mutableMapOf<AnimationName, StyledKeyframes>()
     internal val injectedKeyframes = mutableMapOf<StyledKeyframes, UsedCssInfo>()
-    internal val scheduledToDeleteKeyframes = LinkedHashSet<Pair<AnimationName, StyledKeyframes>>()
 
     /**
      * Schedule keyframes CSS in [builder] for injection into the DOM.
@@ -140,14 +133,6 @@ object GlobalStyles {
         if (info.usedBy == 0) {
             scheduledToDelete.add(styledCss)
         }
-        for (animationName in styledCss.animationNames) {
-            val keyframes = keyframeByName[animationName] ?: throw IllegalStateException("Trying to remove non-existent keyframe")
-            val usedKeyframeInfo = injectedKeyframes[keyframes] ?: throw IllegalStateException("Trying to remove non-existent keyframe")
-            usedKeyframeInfo.usedBy--
-            if (usedKeyframeInfo.usedBy == 0) {
-                scheduledToDeleteKeyframes.add(Pair(animationName, keyframes))
-            }
-        }
         sheet.requestClean { clean(sheet) }
     }
 
@@ -156,13 +141,6 @@ object GlobalStyles {
             (styledClasses[css] ?: throw IllegalStateException("Non-existent css cleanup")).also {
                 if (it.usedBy == 0) {
                     styledClasses.remove(css)
-                }
-            }
-        } + scheduledToDeleteKeyframes.map { (animationName, keyframes) ->
-            (injectedKeyframes[keyframes] ?: throw IllegalStateException("Non-existent css cleanup")).also {
-                if (it.usedBy == 0) {
-                    injectedKeyframes.remove(keyframes)
-                    keyframeByName.remove(animationName)
                 }
             }
         }
@@ -178,7 +156,7 @@ object GlobalStyles {
     internal fun getInjectedClassNames(styledCss: StyledCss): Pair<ClassName, List<ClassName>> {
         val selfClassName = getInjectedClassName(styledCss)
         val externalClassNames = styledCss.classes
-        return Pair(selfClassName, externalClassNames)
+        return selfClassName to externalClassNames
     }
 
     /**

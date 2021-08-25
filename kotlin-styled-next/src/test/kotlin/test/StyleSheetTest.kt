@@ -1,7 +1,9 @@
 package test
 
 import kotlinx.browser.document
+import kotlinx.css.Align
 import kotlinx.css.CssBuilder
+import kotlinx.css.alignItems
 import kotlinx.css.px
 import org.w3c.dom.HTMLStyleElement
 import org.w3c.dom.css.CSSRuleList
@@ -64,15 +66,14 @@ class StyleSheetTest : TestBase() {
         }
         val styledElement = clearAndInject(styledComponent)
         assertCssInjected(
-            styledElement.className, listOf(
-                "min-height" to 66.px.toString(),
-                "padding" to 0.px.toString()
-            )
+            styledElement.className,
+            "min-height" to 66.px.toString(),
+            "padding" to 0.px.toString()
         )
     }
 
     @Test
-    fun styleSheetStaticTest() = runTest {
+    fun styleSheetStatic() = runTest {
         val styledComponent = fc<Props> {
             styledSpan {
                 css {
@@ -85,20 +86,18 @@ class StyleSheetTest : TestBase() {
         assertContains(classNames, "StaticStyleSheet-property1")
         assertContains(classNames, "StaticStyleSheet-property2")
         assertCssInjected(
-            "StaticStyleSheet-property1", listOf(
-                "align-content" to "end",
-            )
+            "StaticStyleSheet-property1",
+            "align-content" to "end",
         )
         assertCssInjected(
-            "StaticStyleSheet-property2", listOf(
-                "padding" to 40.px.toString(),
-                "min-height" to 50.px.toString(),
-            )
+            "StaticStyleSheet-property2",
+            "padding" to 40.px.toString(),
+            "min-height" to 50.px.toString(),
         )
     }
 
     @Test
-    fun styleSheetSpecificTest() = runTest {
+    fun styleSheetSpecific() = runTest {
         val styledComponent = fc<Props> {
             styledSpan {
                 css {
@@ -110,10 +109,9 @@ class StyleSheetTest : TestBase() {
         val element = clearAndInject(styledComponent)
         val className = element.className
         assertCssInjected(
-            ".$className.$className", listOf(
-                "padding" to 80.px.toString(),
-                "border" to "none"
-            )
+            ".$className.$className",
+            "padding" to 80.px.toString(),
+            "border" to "none"
         )
 
         assertEquals("80px", element.getStyle().padding)
@@ -147,5 +145,18 @@ class StyleSheetTest : TestBase() {
         clearAndInject(styledComponent)
         inject(styledComponent)
         assertEquals(4, getImportRules().length)
+    }
+
+    @Test
+    fun elementCssPrefixed() = runTest {
+        val styledComponent = fc<Props> {
+            styledSpan {
+                css {
+                    +staticStyleSheet.prefixedProperty
+                }
+            }
+        }
+        clearAndInject(styledComponent)
+        assertCssInjected("StaticStyleSheet-prefixedProperty", "-webkit-box-align" to "center")
     }
 }

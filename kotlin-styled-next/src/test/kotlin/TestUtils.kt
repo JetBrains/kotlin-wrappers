@@ -78,10 +78,23 @@ class TestScope : CoroutineScope by testScope {
         return getStyle(pseudoElt).color
     }
 
-    fun CSSRuleList.forEach(block: (rule: CSSRule?) -> Unit) {
+    fun CSSRuleList.forEach(block: (rule: CSSRule) -> Unit) {
         for (i in 0 until this.length) {
-            block(this[i])
+            val value = this[i]
+            assertNotNull(value)
+            block(value)
         }
+    }
+
+    fun CSSRuleList.find(predicate: (rule: CSSRule) -> Boolean): CSSRule? {
+        for (i in 0 until this.length) {
+            val value = this[i]
+            assertNotNull(value)
+            if (predicate(value)) {
+                return value
+            }
+        }
+        return null
     }
 
     fun assertChildrenCount(n: Int) {
@@ -104,7 +117,6 @@ class TestScope : CoroutineScope by testScope {
         GlobalStyles.injectedStyleSheetRules.clear()
         GlobalStyles.injectedKeyframes.clear()
         GlobalStyles.keyframeByName.clear()
-        GlobalStyles.scheduledToDeleteKeyframes.clear()
         GlobalStyles.styledClasses.clear()
         GlobalStyles.scheduledToDelete.clear()
     }

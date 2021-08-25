@@ -100,7 +100,7 @@ class RelativeSelectorsTest : TestBase() {
             }
         }
         val element = clearAndInject(styledComponent)
-        assertCssInjected(".ancestor:hover .${element.childAt(0).className}", listOf("color" to secondColor.toString()))
+        assertCssInjected(".ancestor:hover .${element.childAt(0).className}", "color" to secondColor.toString())
     }
 
 
