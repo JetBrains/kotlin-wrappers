@@ -16,12 +16,6 @@ private constructor() {
     }
 }
 
-@Deprecated(
-    message = "Legacy type alias",
-    replaceWith = ReplaceWith("StateSetter<T>", "react.StateSetter"),
-)
-typealias RSetState<T> = StateSetter<T>
-
 /**
  * Only works inside [fc]
  * @see <a href="https://reactjs.org/docs/hooks-state.html#hooks-and-function-components">Hooks and Function Components</a>
@@ -47,8 +41,3 @@ private constructor() {
     }
 }
 
-@Deprecated(
-    message = "Legacy type alias",
-    replaceWith = ReplaceWith("StateInstance<T>", "react.StateInstance"),
-)
-typealias RStateDelegate<T> = StateInstance<T>

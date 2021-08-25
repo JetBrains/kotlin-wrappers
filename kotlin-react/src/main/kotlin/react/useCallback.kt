@@ -12,13 +12,3 @@ inline fun <T : Function<*>> useCallback(
 ): T =
     rawUseCallback(callback, dependencies)
 
-/**
- * Only works inside [fc]
- * @see <a href="https://reactjs.org/docs/hooks-state.html#hooks-and-function-components">Hooks and Function Components</a>
- */
-@Deprecated("Inconsistent hooks API")
-inline fun <T : Function<*>> useCallback(
-    callback: T,
-    dependencies: RDependenciesArray,
-): T =
-    rawUseCallback(callback, dependencies)

@@ -17,8 +17,3 @@ fun ReactNode.asElementOrNull(): ReactElement? = when {
     else -> null
 }
 
-@Deprecated(
-    message = "Legacy type alias",
-    replaceWith = ReplaceWith("ReactNode", "react.ReactNode"),
-)
-typealias Child = ReactNode
