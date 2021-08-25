@@ -5,6 +5,8 @@
 
 package react.query
 
+import kotlinext.js.Tuple
+
 external interface QueryClientConfig {
     var queryCache: QueryCache
     var mutationCache: MutationCache
