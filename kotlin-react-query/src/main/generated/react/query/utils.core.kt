@@ -10,6 +10,8 @@
 
 package react.query
 
+import kotlinext.js.Tuple
+
 external interface QueryFilters {
     var active: Boolean
     var exact: Boolean

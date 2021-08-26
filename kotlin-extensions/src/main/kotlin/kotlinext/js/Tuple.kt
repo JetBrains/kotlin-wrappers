@@ -2,7 +2,7 @@
 
 @file:Suppress("NOTHING_TO_INLINE")
 
-package react.query
+package kotlinext.js
 
 class Tuple<out A, out B>
 private constructor() {
