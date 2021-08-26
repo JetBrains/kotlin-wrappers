@@ -2,14 +2,9 @@
 
 package react
 
+import kotlinext.js.Tuple
+
 typealias TransitionFunction = () -> Unit
 typealias TransitionStartFunction = (callback: TransitionFunction) -> Unit
 
-class TransitionInstance
-private constructor() {
-    // isPending
-    inline operator fun component1(): Boolean = asDynamic()[0]
-
-    // startTransition
-    inline operator fun component2(): TransitionStartFunction = asDynamic()[1]
-}
+typealias TransitionInstance = Tuple<Boolean, TransitionStartFunction>
