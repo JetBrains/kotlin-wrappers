@@ -7,18 +7,8 @@ external interface ComponentClass<in P : Props> :
     ComponentType<P>,
     RComponentClassStatics<Props, State, Context<*>?>
 
-@Deprecated(
-    message = "Legacy type alias",
-    replaceWith = ReplaceWith("ComponentClass", "react.ComponentClass"),
-)
-typealias RClass<P> = ComponentClass<P>
-
 val <P : Props> KClass<out Component<P, *>>.react: ComponentClass<P>
     get() = js.unsafeCast<ComponentClass<P>>()
-
-@Deprecated("Legacy type alias. Use `.react` instead")
-inline val <P : Props> KClass<out Component<P, *>>.rClass: ComponentClass<P>
-    get() = react
 
 external interface RComponentClassStatics<P : Props, S : State, C : Context<*>?> {
     var displayName: String?

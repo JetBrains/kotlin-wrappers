@@ -1,6 +1,5 @@
 package react
 
-import kotlinext.js.clone
 import kotlinext.js.js
 import kotlinext.js.jsObject
 import kotlin.reflect.KClass
@@ -72,34 +71,11 @@ interface RBuilder {
         }
     }
 
-    @Deprecated(
-        message = "Ambiguous API",
-        replaceWith = ReplaceWith("child(this, props, children)"),
-    )
-    fun <P : Props> ComponentClass<P>.node(
-        props: P,
-        children: List<ReactNode> = emptyList(),
-    ) {
-        child(this, clone(props), children)
-    }
-
     fun <P : Props> child(
         klazz: KClass<out Component<P, *>>,
         handler: RHandler<P>,
     ) {
         klazz.react(handler)
-    }
-
-    @Deprecated(
-        message = "Ambiguous API",
-        replaceWith = ReplaceWith("child(klazz.react, props, children)"),
-    )
-    fun <P : Props> node(
-        klazz: KClass<out Component<P, *>>,
-        props: P,
-        children: List<ReactNode> = emptyList(),
-    ) {
-        child(klazz.react, props, children)
     }
 
     fun PropsWithChildren.children() {
@@ -172,17 +148,6 @@ inline fun <P : Props, reified C : Component<P, *>> RBuilder.child(
     noinline handler: RHandler<P>,
 ) {
     child(C::class, handler)
-}
-
-@Deprecated(
-    message = "Ambiguous API",
-    ReplaceWith("child(C::class.rClass, props, children)"),
-)
-inline fun <P : Props, reified C : Component<P, *>> RBuilder.node(
-    props: P,
-    children: List<ReactNode> = emptyList(),
-) {
-    child(createElement(C::class.react, props, *children.toTypedArray()))
 }
 
 open class RBuilderImpl : RBuilder {

@@ -205,9 +205,3 @@ open class CssBuilderImpl(
     override val rules = mutableListOf<Rule>()
     override val multiRules = mutableListOf<Rule>()
 }
-
-@Deprecated(
-    message = "Legacy type alias",
-    replaceWith = ReplaceWith("CssBuilder", "kotlinx.css.CssBuilder"),
-)
-typealias CSSBuilder = CssBuilder

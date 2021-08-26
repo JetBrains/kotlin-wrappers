@@ -4,12 +4,6 @@ typealias RDependenciesArray = Array<out dynamic>
 
 typealias Cleanup = () -> Unit
 
-@Deprecated(
-    message = "Legacy type alias",
-    ReplaceWith("Cleanup", "react.Cleanup")
-)
-typealias RCleanup = Cleanup
-
 /**
  * Only works inside [fc]
  * @see <a href="https://reactjs.org/docs/hooks-state.html#hooks-and-function-components">Hooks and Function Components</a>
