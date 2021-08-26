@@ -1,9 +1,8 @@
-// Automatically generated - do not modify!
-
 @file:Suppress("NOTHING_TO_INLINE")
 
 package kotlinext.js
 
+// TODO: make external in IR
 class Tuple<out A, out B>
 private constructor() {
     inline operator fun component1(): A = asDynamic()[0]
