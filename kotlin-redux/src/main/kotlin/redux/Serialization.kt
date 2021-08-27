@@ -2,6 +2,7 @@
 
 package redux
 
+import kotlinx.serialization.ExperimentalSerializationApi
 import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.*
@@ -13,12 +14,14 @@ val defaultJson = Json {
     useArrayPolymorphism = true
 }
 
+@ExperimentalSerializationApi
 inline fun <reified A : RAction> serializeAction(action: A): String {
     var obj = defaultJson.encodeToJsonElement(action) as JsonObject
     obj = JsonObject(obj + ("type" to JsonPrimitive(A::class.simpleName)))
     return defaultJson.encodeToString(obj)
 }
 
+@ExperimentalSerializationApi
 inline fun <reified A : RAction> deserializeAction(action: String): A? {
     val obj = defaultJson.parseToJsonElement(action) as JsonObject
     val type: String? = obj["type"]?.jsonPrimitive?.contentOrNull
