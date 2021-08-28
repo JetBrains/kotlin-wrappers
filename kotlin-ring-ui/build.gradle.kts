@@ -7,5 +7,5 @@ plugins {
 dependencies {
     api(project(":kotlin-react-dom"))
 
-    implementation(npm("@jetbrains/ring-ui", version("ring-ui")))
+    implementation(npmv("@jetbrains/ring-ui"))
 }
