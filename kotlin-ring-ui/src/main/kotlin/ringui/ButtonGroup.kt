@@ -4,9 +4,9 @@
 package ringui
 
 import react.ComponentClass
-import react.dom.WithClassName
+import react.PropsWithClassName
 
-external interface ButtonGroupProps : WithClassName
+external interface ButtonGroupProps : PropsWithClassName
 
 @JsName("default")
 external val ButtonGroup: ComponentClass<ButtonGroupProps>

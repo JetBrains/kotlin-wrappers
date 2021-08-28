@@ -8,7 +8,10 @@ import kotlinx.css.RuleSet
 import kotlinx.html.*
 import org.w3c.dom.Element
 import react.*
-import react.dom.*
+import react.dom.DOMProps
+import react.dom.RDOMBuilder
+import react.dom.RDOMBuilderImpl
+import react.dom.render
 import kotlin.js.Promise
 
 typealias AnyTagStyledBuilder = StyledDOMBuilder<CommonAttributeGroupFacade>
@@ -38,25 +41,25 @@ inline fun CustomStyledProps.forwardCss(props: CustomStyledProps) {
     }
 }
 
-interface StyledBuilder<P : WithClassName> {
+interface StyledBuilder<P : PropsWithClassName> {
     val css: CssBuilder
     val type: Any
 }
 
 inline fun StyledBuilder<*>.css(handler: RuleSet) = css.handler()
 
-interface StyledElementBuilder<P : WithClassName> : RElementBuilder<P>, StyledBuilder<P> {
+interface StyledElementBuilder<P : PropsWithClassName> : RElementBuilder<P>, StyledBuilder<P> {
     fun create(): ReactElement
 
     companion object {
-        operator fun <P : WithClassName> invoke(
+        operator fun <P : PropsWithClassName> invoke(
             type: ComponentType<P>,
             attrs: P = jsObject(),
         ): StyledElementBuilder<P> = StyledElementBuilderImpl(type, attrs)
     }
 }
 
-class StyledElementBuilderImpl<P : WithClassName>(
+class StyledElementBuilderImpl<P : PropsWithClassName>(
     override val type: ComponentType<P>,
     attrs: P = jsObject(),
 ) : StyledElementBuilder<P>, RElementBuilderImpl<P>(attrs) {
@@ -82,7 +85,7 @@ class StyledDOMBuilderImpl<out T : Tag>(factory: (TagConsumer<Unit>) -> T) : Sty
 
 typealias StyledHandler<P> = StyledElementBuilder<P>.() -> Unit
 
-fun <P : WithClassName> styled(type: ComponentClass<P>): RBuilder.(StyledHandler<P>) -> Unit = { handler ->
+fun <P : PropsWithClassName> styled(type: ComponentClass<P>): RBuilder.(StyledHandler<P>) -> Unit = { handler ->
     child(with(StyledElementBuilder(type)) {
         handler()
         create()
@@ -208,7 +211,7 @@ object Styled {
             devOverrideUseRef { rawStyled(type)({ it.css }) }
         }
 
-    private fun <P : WithClassName> buildStyledProps(css: CssBuilder, props: P): P {
+    private fun <P : PropsWithClassName> buildStyledProps(css: CssBuilder, props: P): P {
         val styledProps = props.unsafeCast<StyledProps>()
         if (css.rules.isNotEmpty() || css.multiRules.isNotEmpty() || css.declarations.isNotEmpty()) {
             styledProps.css = css.toString()
@@ -222,13 +225,18 @@ object Styled {
         return styledProps.unsafeCast<P>()
     }
 
-    fun createElement(type: String, css: CssBuilder, props: WithClassName, children: List<ReactNode>): ReactElement {
+    fun createElement(
+        type: String,
+        css: CssBuilder,
+        props: PropsWithClassName,
+        children: List<ReactNode>,
+    ): ReactElement {
         val wrappedType = wrap(type)
         val styledProps = buildStyledProps(css, props)
         return createElement(wrappedType, styledProps, *children.toTypedArray())
     }
 
-    fun <P : WithClassName> createElement(
+    fun <P : PropsWithClassName> createElement(
         type: ComponentType<P>,
         css: CssBuilder,
         props: P,

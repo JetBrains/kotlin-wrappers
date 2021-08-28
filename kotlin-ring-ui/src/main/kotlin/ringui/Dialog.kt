@@ -4,10 +4,10 @@
 package ringui
 
 import react.ComponentClass
-import react.dom.WithClassName
+import react.PropsWithClassName
 
 // https://github.com/JetBrains/ring-ui/blob/master/components/dialog/dialog.js
-external interface DialogProps : WithClassName {
+external interface DialogProps : PropsWithClassName {
     var contentClassName: String
     var show: Boolean
     var showCloseButton: Boolean

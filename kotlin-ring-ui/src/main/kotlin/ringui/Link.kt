@@ -5,10 +5,10 @@ package ringui
 
 import org.w3c.dom.events.MouseEvent
 import react.ComponentClass
-import react.dom.WithClassName
+import react.PropsWithClassName
 
 // https://github.com/JetBrains/ring-ui/blob/master/components/link/link.js
-external interface LinkProps : WithClassName {
+external interface LinkProps : PropsWithClassName {
     var innerClassName: String
     var active: Boolean
     var inherit: Boolean

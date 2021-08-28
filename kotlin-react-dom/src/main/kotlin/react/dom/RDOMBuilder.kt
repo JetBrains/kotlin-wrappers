@@ -9,11 +9,13 @@ external interface InnerHTML {
     var __html: String
 }
 
-external interface WithClassName : PropsWithChildren {
-    var className: String?
-}
+@Deprecated(
+    message = "Legacy type alias",
+    replaceWith = ReplaceWith("PropsWithClassName", "react.PropsWithClassName")
+)
+external interface WithClassName : PropsWithClassName
 
-external interface DOMProps : WithClassName {
+external interface DOMProps : PropsWithClassName {
     var dangerouslySetInnerHTML: InnerHTML?
 }
 

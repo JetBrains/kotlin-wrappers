@@ -4,10 +4,10 @@
 package ringui
 
 import react.ComponentClass
-import react.dom.WithClassName
+import react.PropsWithClassName
 
 // https://github.com/JetBrains/ring-ui/blob/master/components/alert/alert.js
-external interface AlertProps : WithClassName {
+external interface AlertProps : PropsWithClassName {
     var timeout: Int
     var onCloseRequest: () -> Unit
     var onClose: () -> Unit
