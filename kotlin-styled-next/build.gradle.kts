@@ -26,7 +26,7 @@ kotlin {
 
                 api(kotlinxHtml("js"))
 
-                api(npm("inline-style-prefixer", "^6.0.0"))
+                api(npmv("inline-style-prefixer"))
             }
         }
         val test by getting {
@@ -34,7 +34,7 @@ kotlin {
                 implementation(kotlin("test-js"))
                 implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.1")
 
-                implementation(npm("puppeteer", "10.1.0"))
+                implementation(npmv("puppeteer"))
             }
         }
     }
