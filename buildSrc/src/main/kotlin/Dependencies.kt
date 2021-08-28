@@ -12,7 +12,7 @@ fun Project.kotlinxSerialization(name: String): String =
 private fun Project.kotlinx(projectName: String, name: String): String =
     "org.jetbrains.kotlinx:$projectName-$name:${version(projectName)}"
 
-fun Project.npmv(name: String): NpmDependency {
+fun Project.npmv(name: String, npmName: String = name): NpmDependency {
     val npm = dependencies.the<NpmDependencyExtension>()
-    return npm(name, "^${version(name)}")
+    return npm(npmName, "^${version(name)}")
 }
