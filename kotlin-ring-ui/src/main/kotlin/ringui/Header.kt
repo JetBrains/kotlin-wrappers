@@ -4,10 +4,10 @@
 package ringui
 
 import react.ComponentClass
-import react.PropsWithClassName
+import react.dom.WithClassName
 
 // https://github.com/JetBrains/ring-ui/blob/master/components/header/header.js
-external interface HeaderProps : PropsWithClassName {
+external interface HeaderProps : WithClassName {
     var spaced: Boolean
     var theme: String
 }
@@ -23,7 +23,7 @@ external val Logo: ComponentClass<HeaderLogoProps>
 
 // Tray
 // https://github.com/JetBrains/ring-ui/blob/master/components/header/tray.js
-external interface TrayProps : PropsWithClassName
+external interface TrayProps : WithClassName
 
 external val Tray: ComponentClass<TrayProps>
 
@@ -35,7 +35,7 @@ external interface TrayIconProps : ButtonProps {
 
 external val TrayIcon: ComponentClass<TrayIconProps>
 
-external val Profile: ComponentClass<PropsWithClassName>
-external val SmartProfile: ComponentClass<PropsWithClassName>
-external val Services: ComponentClass<PropsWithClassName>
-external val SmartServices: ComponentClass<PropsWithClassName>
+external val Profile: ComponentClass<WithClassName>
+external val SmartProfile: ComponentClass<WithClassName>
+external val Services: ComponentClass<WithClassName>
+external val SmartServices: ComponentClass<WithClassName>

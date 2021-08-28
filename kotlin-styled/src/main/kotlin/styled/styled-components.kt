@@ -7,9 +7,9 @@ import kotlinext.js.TemplateTag
 import react.ComponentClass
 import react.ComponentType
 import react.Props
-import react.PropsWithClassName
+import react.dom.WithClassName
 
-external interface StyledProps : PropsWithClassName {
+external interface StyledProps : WithClassName {
     @JsName("_css")
     var css: String
 

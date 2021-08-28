@@ -4,10 +4,10 @@
 package ringui
 
 import react.ComponentClass
-import react.PropsWithClassName
+import react.dom.WithClassName
 
 //https://github.com/JetBrains/ring-ui/blob/master/components/tabs/tabs.js
-external interface TabsProps : PropsWithClassName {
+external interface TabsProps : WithClassName {
     var theme: String
     var selected: String
     var onSelect: (String) -> Unit
@@ -17,19 +17,19 @@ external interface TabsProps : PropsWithClassName {
 
 external val Tabs: ComponentClass<TabsProps>
 
-external interface TabProps : PropsWithClassName {
+external interface TabProps : WithClassName {
     var title: dynamic // PropTypes.oneOfType([PropTypes.node, PropTypes.func]).isRequired,
     var id: String
 }
 
 external val Tab: ComponentClass<TabProps>
 
-external interface SmartTabsProps : PropsWithClassName {
+external interface SmartTabsProps : WithClassName {
     var initSelected: String
 }
 
 external val SmartTabs: ComponentClass<SmartTabsProps>
 
-external interface CustomItemProps : PropsWithClassName
+external interface CustomItemProps : WithClassName
 
 external val CustomItem: ComponentClass<CustomItemProps>

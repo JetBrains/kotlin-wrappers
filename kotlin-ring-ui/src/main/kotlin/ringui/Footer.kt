@@ -5,9 +5,9 @@ package ringui
 
 import kotlinext.js.ReadonlyArray
 import react.ComponentClass
-import react.PropsWithClassName
+import react.dom.WithClassName
 
-external interface FooterProps : PropsWithClassName {
+external interface FooterProps : WithClassName {
     var floating: Boolean
     var left: ReadonlyArray<IFooterItem>
     var center: ReadonlyArray<IFooterItem>

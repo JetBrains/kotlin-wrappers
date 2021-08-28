@@ -9,6 +9,7 @@ import react.*
 import react.dom.DOMProps
 import react.dom.RDOMBuilder
 import react.dom.RDOMBuilderImpl
+import react.dom.WithClassName
 
 typealias AnyTagStyledBuilder = StyledDOMBuilder<CommonAttributeGroupFacade>
 typealias AnyBuilder = AnyTagStyledBuilder.() -> Unit
@@ -37,25 +38,25 @@ inline fun CustomStyledProps.forwardCss(props: CustomStyledProps) {
     }
 }
 
-interface StyledBuilder<P : PropsWithClassName> {
+interface StyledBuilder<P : WithClassName> {
     val css: CssBuilder
     val type: Any
 }
 
 inline fun StyledBuilder<*>.css(handler: RuleSet) = css.handler()
 
-interface StyledElementBuilder<P : PropsWithClassName> : RElementBuilder<P>, StyledBuilder<P> {
+interface StyledElementBuilder<P : WithClassName> : RElementBuilder<P>, StyledBuilder<P> {
     fun create(): ReactElement
 
     companion object {
-        operator fun <P : PropsWithClassName> invoke(
+        operator fun <P : WithClassName> invoke(
             type: ComponentType<P>,
             attrs: P = jsObject(),
         ): StyledElementBuilder<P> = StyledElementBuilderImpl(type, attrs)
     }
 }
 
-class StyledElementBuilderImpl<P : PropsWithClassName>(
+class StyledElementBuilderImpl<P : WithClassName>(
     override val type: ComponentType<P>,
     attrs: P = jsObject(),
 ) : StyledElementBuilder<P>, RElementBuilderImpl<P>(attrs) {
@@ -83,7 +84,7 @@ class StyledDOMBuilderImpl<out T : Tag>(factory: (TagConsumer<Unit>) -> T) : Sty
 
 typealias StyledHandler<P> = StyledElementBuilder<P>.() -> Unit
 
-fun <P : PropsWithClassName> styled(type: ComponentClass<P>): RBuilder.(StyledHandler<P>) -> Unit = { handler ->
+fun <P : WithClassName> styled(type: ComponentClass<P>): RBuilder.(StyledHandler<P>) -> Unit = { handler ->
     child(with(StyledElementBuilder(type)) {
         handler()
         create()
@@ -101,7 +102,7 @@ inline fun CustomStyledProps.css(noinline handler: RuleSet) {
 inline fun <P : CustomStyledProps> RElementBuilder<P>.css(noinline handler: RuleSet) = attrs.css(handler)
 
 
-external interface StyledProps : PropsWithClassName {
+external interface StyledProps : WithClassName {
     var css: CssBuilder
 }
 
@@ -142,7 +143,7 @@ object Styled {
             customStyled(type)
         }
 
-    fun createElement(type: Any, css: CssBuilder, props: PropsWithClassName, children: List<ReactNode>): ReactElement {
+    fun createElement(type: Any, css: CssBuilder, props: WithClassName, children: List<ReactNode>): ReactElement {
         val wrappedType = wrap(type)
         val styledProps = props.unsafeCast<StyledProps>()
         styledProps.css = css
