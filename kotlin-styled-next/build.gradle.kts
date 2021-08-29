@@ -4,41 +4,31 @@ plugins {
     `publish-conventions`
 }
 
-kotlin {
-    js {
-        browser {
-            testTask {
-                testLogging.showStandardStreams = true
-                useKarma {
-                    useChromeHeadless()
-                }
+kotlin.js {
+    browser {
+        testTask {
+            testLogging.showStandardStreams = true
+            useKarma {
+                useChromeHeadless()
             }
         }
     }
+}
 
-    sourceSets {
-        val main by getting {
-            dependencies {
-                api(project(":kotlin-extensions"))
-                api(project(":kotlin-css"))
-                api(project(":kotlin-react"))
-                api(project(":kotlin-react-dom"))
+dependencies {
+    api(project(":kotlin-extensions"))
+    api(project(":kotlin-css"))
+    api(project(":kotlin-react"))
+    api(project(":kotlin-react-dom"))
 
-                api(kotlinxHtml("js"))
+    api(kotlinxHtml("js"))
 
-                api(npm("css-in-js-utils", "^3.1.0"))
-                api(npm("inline-style-prefixer", "^6.0.0"))
-            }
-        }
-        val test by getting {
-            dependencies {
-                implementation(kotlin("test-js"))
-                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.1")
+    api(npmv("inline-style-prefixer"))
 
-                implementation(npm("puppeteer", "10.1.0"))
-            }
-        }
-    }
+    testImplementation(kotlin("test-js"))
+    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.1")
+
+    testImplementation(npmv("puppeteer"))
 }
 
 

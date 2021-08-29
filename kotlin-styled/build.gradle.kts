@@ -12,7 +12,7 @@ dependencies {
 
     api(kotlinxHtml("js"))
 
-    api(npm("css-in-js-utils", "^3.1.0"))
-    api(npm("inline-style-prefixer", "^6.0.0"))
-    api(npm("styled-components", "^5.3.0"))
+    api(npmv("css-in-js-utils"))
+    api(npmv("inline-style-prefixer"))
+    api(npmv("styled-components"))
 }

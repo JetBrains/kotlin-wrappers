@@ -1,7 +1,16 @@
 import org.gradle.api.Project
 
-fun Project.version(target: String): String =
-    prop("${target}.version")
+private val TARGET_ALIASES = mapOf(
+    "react-dom" to "react",
+    "styled-components" to "styled",
+
+    "@jetbrains/ring-ui" to "ring-ui",
+)
+
+fun Project.version(target: String): String {
+    val finalTarget = TARGET_ALIASES[target] ?: target
+    return prop("$finalTarget.version")
+}
 
 internal fun Project.publishVersion(): String {
     val build = prop("version.build")

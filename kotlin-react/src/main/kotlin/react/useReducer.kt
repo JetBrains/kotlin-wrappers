@@ -8,7 +8,7 @@ package react
  * @see <a href="https://reactjs.org/docs/hooks-state.html#hooks-and-function-components">Hooks and Function Components</a>
  */
 external fun <S, A, I> useReducer(
-    reducer: RReducer<S, A>,
+    reducer: Reducer<S, A>,
     initializerArg: I,
     initializer: (I) -> S,
 ): ReducerInstance<S, A>
@@ -18,7 +18,7 @@ external fun <S, A, I> useReducer(
  * @see <a href="https://reactjs.org/docs/hooks-state.html#hooks-and-function-components">Hooks and Function Components</a>
  */
 external fun <S, A> useReducer(
-    reducer: RReducer<S, A>,
+    reducer: Reducer<S, A>,
     initialState: S,
 ): ReducerInstance<S, A>
 
@@ -27,5 +27,5 @@ external fun <S, A> useReducer(
  * @see <a href="https://reactjs.org/docs/hooks-state.html#hooks-and-function-components">Hooks and Function Components</a>
  */
 external fun <S : Any, A> useReducer(
-    reducer: RReducer<S?, A>,
+    reducer: Reducer<S?, A>,
 ): ReducerInstance<S?, A>
