@@ -3,6 +3,7 @@ package kotlinx.css.properties
 import kotlinx.css.Color
 import kotlinx.css.Image
 import kotlinx.css.LinearDimension
+import kotlinx.css.RelativePosition
 
 fun linearGradient(init: LinearGradientBuilder.() -> Unit): Image {
     return LinearGradientBuilder().apply(init).build(null)
@@ -73,4 +74,77 @@ fun Appendable.appendColorStop(colorStop: ColorStop) {
     colorStop.mid?.let { mid ->
         append(" ").append(mid.value)
     }
+}
+
+sealed class RadialGradientShape {
+    class Circle(val length: LinearDimension?) : RadialGradientShape()
+    class Shape() : RadialGradientShape()
+}
+
+enum class RadialGradientExtent(val value: String) {
+    closestCorner("closest-corner"),
+    closestSide("closest-side"),
+    farthestCorner("farthest-corner"),
+    farthestSide("farthest-side"),
+}
+
+class RadialGradientBuilder {
+    private var shape: String? = null
+    private var at: RelativePosition? = null
+    private val stops = mutableListOf<ColorStop>()
+
+    fun circle() {
+        shape = "circle"
+    }
+
+    fun circle(radius: LinearDimension) {
+        shape = "circle ${radius.value}"
+    }
+
+    fun circle(extent: RadialGradientExtent) {
+        shape = "circle ${extent.value}"
+    }
+
+    fun ellipse() {
+        shape = "ellipse"
+    }
+
+    fun ellipse(xAxis: LinearDimension, yAxis: LinearDimension) {
+        shape = "ellipse ${xAxis.value} ${yAxis.value}"
+    }
+
+    fun ellipse(extent: RadialGradientExtent) {
+        shape = "ellipse ${extent.value}"
+    }
+
+    fun at(position: RelativePosition) {
+        at = position
+    }
+
+    fun colorStop(color: Color) = stops.add(ColorStop(color, start = null, mid = null))
+    fun colorStop(color: Color, start: LinearDimension) = stops.add(ColorStop(color, start, mid = null))
+
+    fun build(): Image {
+        return Image(
+            buildString {
+                append("radial-gradient(")
+                when {
+                    shape != null && at != null -> append(shape).append(" at ").append(at)
+                    shape != null -> append(shape)
+                    at != null -> append("at ").append(at)
+                }
+                stops.forEachIndexed { index, stop ->
+                    if (index > 0 || shape != null || at != null) {
+                        append(", ")
+                    }
+                    appendColorStop(stop)
+                }
+                append(")")
+            }
+        )
+    }
+}
+
+fun radialGradient(init: RadialGradientBuilder.() -> Unit): Image {
+    return RadialGradientBuilder().apply(init).build()
 }

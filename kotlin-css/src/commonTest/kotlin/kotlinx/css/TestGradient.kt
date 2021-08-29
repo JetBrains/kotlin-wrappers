@@ -1,8 +1,6 @@
 package kotlinx.css
 
-import kotlinx.css.properties.GradientSideOrCorner
-import kotlinx.css.properties.deg
-import kotlinx.css.properties.linearGradient
+import kotlinx.css.properties.*
 import kotlin.test.Test
 import kotlin.test.assertEquals
 
@@ -48,4 +46,55 @@ class TestGradient {
         assertEquals("linear-gradient(to bottom, white, black)", gradient(GradientSideOrCorner.ToBottom), "Linear gradient with <side-or-corner> is built incorrectly")
     }
 
+    @Test
+    fun testRadialGradient() {
+        assertRadialGradient("radial-gradient(yellow, green)", radialGradient {
+            colorStop(Color.yellow)
+            colorStop(Color.green)
+        })
+        assertRadialGradient("radial-gradient(ellipse at center, yellow 2%, green 100%)", radialGradient {
+            ellipse()
+            at(RelativePosition.center)
+            colorStop(Color.yellow, 2.pct)
+            colorStop(Color.green, 100.pct)
+        })
+        assertRadialGradient("radial-gradient(circle farthest-corner at 50% 50%, yellow, green)", radialGradient {
+            circle(RadialGradientExtent.farthestCorner)
+            at(RelativePosition.offset(xOffset = 50.pct, yOffset = 50.pct))
+            colorStop(Color.yellow)
+            colorStop(Color.green)
+        })
+        assertRadialGradient("radial-gradient(circle, yellow, green)", radialGradient {
+            circle()
+            colorStop(Color.yellow)
+            colorStop(Color.green)
+        })
+
+        assertRadialGradient("radial-gradient(circle farthest-side at left bottom, red, yellow 50px, green)", radialGradient {
+            circle(RadialGradientExtent.farthestSide)
+            at(RelativePosition.leftBottom)
+            colorStop(Color.red)
+            colorStop(Color.yellow, 50.px)
+            colorStop(Color.green)
+        })
+
+        assertRadialGradient("radial-gradient(circle closest-side at 20px 30px, red, yellow, green)", radialGradient {
+            circle(RadialGradientExtent.closestSide)
+            at(RelativePosition.offset(20.px, 30.px))
+            colorStop(Color.red)
+            colorStop(Color.yellow)
+            colorStop(Color.green)
+        })
+        assertRadialGradient("radial-gradient(ellipse 20px 30px at 20px 30px, red, yellow, green)", radialGradient {
+            ellipse(20.px, 30.px)
+            at(RelativePosition.offset(20.px, 30.px))
+            colorStop(Color.red)
+            colorStop(Color.yellow)
+            colorStop(Color.green)
+        })
+    }
+
+    private fun assertRadialGradient(expected: String, gradient: Image) {
+        assertEquals(expected, gradient.value, "Radial gradient is built incorrectly")
+    }
 }
