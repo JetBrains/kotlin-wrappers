@@ -4,12 +4,9 @@
 package styled
 
 import kotlinext.js.TemplateTag
-import react.ComponentClass
-import react.ComponentType
-import react.Props
-import react.dom.WithClassName
+import react.*
 
-external interface StyledProps : WithClassName {
+external interface StyledProps : PropsWithChildren, PropsWithClassName {
     @JsName("_css")
     var css: String
 
