@@ -57,7 +57,7 @@ fun RBuilder.route(
     exact: Boolean = false,
     strict: Boolean = false,
 ) {
-    child<RouteProps<Props>, Route<Props>> {
+    Route {
         attrs {
             this.path = path
             this.exact = exact
@@ -81,34 +81,18 @@ fun RBuilder.route(
     )
 }
 
-fun <T : Props> RBuilder.route(
+fun RBuilder.route(
     vararg path: String,
     exact: Boolean = false,
     strict: Boolean = false,
-    render: RBuilder.(RouteResultProps<T>) -> Unit,
+    render: RBuilder.(RouteResultProps) -> Unit,
 ) {
-    child<RouteProps<T>, Route<T>> {
+    Route {
         attrs {
             this.path = path
             this.exact = exact
             this.strict = strict
             this.render = { props -> buildElements({ render(props) }) }
-        }
-    }
-}
-
-fun RBuilder.route(
-    vararg path: String,
-    exact: Boolean = false,
-    strict: Boolean = false,
-    render: Render,
-) {
-    child<RouteProps<Props>, Route<Props>> {
-        attrs {
-            this.path = path
-            this.exact = exact
-            this.strict = strict
-            this.render = { buildElements(render) }
         }
     }
 }
@@ -129,17 +113,17 @@ fun RBuilder.routeLink(
     }
 }
 
-fun <T : Props> RBuilder.navLink(
+fun RBuilder.navLink(
     to: String,
     replace: Boolean = false,
     className: String? = null,
     activeClassName: String = "active",
     exact: Boolean = false,
     strict: Boolean = false,
-    isActive: ((match: Match<T>?, location: Location) -> Boolean)? = null,
-    handler: RHandler<NavLinkProps<T>>?,
+    isActive: ((match: Match?, location: Location) -> Boolean)? = null,
+    handler: RHandler<NavLinkProps>?,
 ) {
-    child<NavLinkProps<T>, NavLink<T>> {
+    NavLink {
         attrs {
             this.to = to
             this.replace = replace
@@ -171,13 +155,13 @@ fun RBuilder.redirect(
     }
 }
 
-fun <T : Props> matchPath(
-    patName: String,
+fun matchPath(
+    pathName: String,
     vararg path: String,
     exact: Boolean = false,
     strict: Boolean = false,
     sensitive: Boolean = false,
-): Match<T>? {
+): Match? {
     val options: RouteMatchOptions = jsObject {
         this.path = path
         this.exact = exact
@@ -185,5 +169,5 @@ fun <T : Props> matchPath(
         this.sensitive = sensitive
     }
 
-    return rawMatchPath(patName, options)
+    return rawMatchPath(pathName, options)
 }
