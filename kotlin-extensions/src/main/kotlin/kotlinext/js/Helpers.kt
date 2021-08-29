@@ -1,24 +1,16 @@
+@file:Suppress("NOTHING_TO_INLINE")
+
 package kotlinext.js
 
-@Suppress("NOTHING_TO_INLINE")
 inline fun <T : Any> jso(): T =
     js("({})")
 
-@Deprecated(
-    message = "Legacy type alias",
-    replaceWith = ReplaceWith("jso", "kotlinext.js"),
-)
-@Suppress("NOTHING_TO_INLINE")
 inline fun <T : Any> jsObject(): T =
     jso()
 
 inline fun <T : Any> jso(builder: T.() -> Unit): T =
     jso<T>().apply(builder)
 
-@Deprecated(
-    message = "Legacy type alias",
-    replaceWith = ReplaceWith("jso", "kotlinext.js"),
-)
 inline fun <T : Any> jsObject(builder: T.() -> Unit): T =
     jso<T>().apply(builder)
 
