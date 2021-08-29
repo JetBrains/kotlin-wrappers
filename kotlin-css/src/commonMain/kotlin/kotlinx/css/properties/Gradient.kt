@@ -5,16 +5,20 @@ import kotlinx.css.Image
 import kotlinx.css.LinearDimension
 import kotlinx.css.RelativePosition
 
-fun linearGradient(init: LinearGradientBuilder.() -> Unit): Image {
-    return LinearGradientBuilder().apply(init).build(null)
+fun linearGradient(repeat: Boolean = false, init: LinearGradientBuilder.() -> Unit): Image {
+    return LinearGradientBuilder().apply(init).build(null, repeat)
 }
 
-fun linearGradient(angle: Angle, init: LinearGradientBuilder.() -> Unit): Image {
-    return LinearGradientBuilder().apply(init).build(angle.value)
+fun linearGradient(angle: Angle, repeat: Boolean = false, init: LinearGradientBuilder.() -> Unit): Image {
+    return LinearGradientBuilder().apply(init).build(angle.value, repeat)
 }
 
-fun linearGradient(sideOrCorner: GradientSideOrCorner, init: LinearGradientBuilder.() -> Unit): Image {
-    return LinearGradientBuilder().apply(init).build(sideOrCorner.value)
+fun linearGradient(sideOrCorner: GradientSideOrCorner, repeat: Boolean = false, init: LinearGradientBuilder.() -> Unit): Image {
+    return LinearGradientBuilder().apply(init).build(sideOrCorner.value, repeat)
+}
+
+fun radialGradient(repeat: Boolean = false, init: RadialGradientBuilder.() -> Unit): Image {
+    return RadialGradientBuilder().apply(init).build(repeat)
 }
 
 enum class GradientSideOrCorner(val value: String) {
@@ -35,10 +39,14 @@ class LinearGradientBuilder {
     fun colorStop(color: Color, start: LinearDimension) = stops.add(ColorStop(color, start, mid = null))
     fun colorStop(color: Color, start: LinearDimension, mid: LinearDimension) = stops.add(ColorStop(color, start, mid))
 
-    fun build(start: String?): Image {
+    fun build(start: String?, repeat: Boolean): Image {
         return Image(
             buildString {
-                append("linear-gradient(")
+                if (repeat) {
+                    append("repeating-linear-gradient(")
+                } else {
+                    append("linear-gradient(")
+                }
                 if (start != null) {
                     append(start).append(", ")
                 }
@@ -124,10 +132,14 @@ class RadialGradientBuilder {
     fun colorStop(color: Color) = stops.add(ColorStop(color, start = null, mid = null))
     fun colorStop(color: Color, start: LinearDimension) = stops.add(ColorStop(color, start, mid = null))
 
-    fun build(): Image {
+    fun build(repeat: Boolean): Image {
         return Image(
             buildString {
-                append("radial-gradient(")
+                if (repeat) {
+                    append("repeating-radial-gradient(")
+                } else {
+                    append("radial-gradient(")
+                }
                 when {
                     shape != null && at != null -> append(shape).append(" at ").append(at)
                     shape != null -> append(shape)
@@ -143,8 +155,4 @@ class RadialGradientBuilder {
             }
         )
     }
-}
-
-fun radialGradient(init: RadialGradientBuilder.() -> Unit): Image {
-    return RadialGradientBuilder().apply(init).build()
 }
