@@ -1,23 +1,13 @@
 package react.router.dom
 
-import kotlinext.js.Object
 import kotlinext.js.jsObject
-import react.Props
 
-fun <T : Props> useParams(): T? {
-    val params = rawUseParams()
-
-    return if (Object.keys(params).isNotEmpty()) {
-        params.unsafeCast<T>()
-    } else null
-}
-
-fun <T : Props> useRouteMatch(
+fun useRouteMatch(
     vararg path: String,
     exact: Boolean = false,
     strict: Boolean = false,
     sensitive: Boolean = false,
-): Match<T>? {
+): Match? {
     if (path.isEmpty()) {
         return rawUseRouteMatch(null)
     }

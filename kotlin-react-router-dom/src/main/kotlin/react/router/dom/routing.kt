@@ -11,15 +11,11 @@ external val BrowserRouter: ComponentClass<BrowserRouterProps>
 
 external val Switch: ComponentClass<PropsWithChildren>
 
-external class Route<T : Props> : Component<RouteProps<T>, State> {
-    override fun render(): ReactElement?
-}
+external val Route : ComponentClass<RouteProps>
 
 external val Link: ComponentClass<LinkProps>
 
-external class NavLink<T : Props> : Component<NavLinkProps<T>, State> {
-    override fun render(): ReactElement?
-}
+external val NavLink : ComponentClass<NavLinkProps>
 
 external val Redirect: ComponentClass<RedirectProps>
 
@@ -40,12 +36,12 @@ external interface HashRouterProps : RouterProps {
     var hashType: String
 }
 
-external interface RouteProps<T : Props> : Props {
+external interface RouteProps : Props {
     var path: Array<out String>
     var exact: Boolean
     var strict: Boolean
     var component: ComponentType<*>
-    var render: (props: RouteResultProps<T>) -> ReactElement?
+    var render: (props: RouteResultProps) -> ReactElement?
 }
 
 external interface LinkProps : PropsWithChildren {
@@ -54,18 +50,18 @@ external interface LinkProps : PropsWithChildren {
     var className: String?
 }
 
-external interface NavLinkProps<T : Props> : LinkProps {
+external interface NavLinkProps: LinkProps {
     var activeClassName: String
     var exact: Boolean
     var strict: Boolean
-    var isActive: ((match: Match<T>?, location: Location) -> Boolean)?
+    var isActive: ((match: Match?, location: Location) -> Boolean)?
     var location: Location
 }
 
-external interface RouteResultProps<T : Props> : Props {
+external interface RouteResultProps : Props {
     var history: History
     var location: Location
-    var match: Match<T>
+    var match: Match
 }
 
 external interface History {
@@ -86,11 +82,11 @@ external interface Location {
     var search: String
 }
 
-external interface Match<T : Props> {
+external interface Match {
     var isExact: Boolean
     var url: String
     var path: String
-    var params: T
+    var params: Params
 }
 
 external interface RedirectProps : Props {
