@@ -11,7 +11,7 @@ external interface GridProps : PropsWithChildren, PropsWithClassName
 
 external val Grid: ComponentClass<GridProps>
 
-external interface RowProps : GridProps, PropsWithClassName, PropsWithChildren {
+external interface RowProps : GridProps {
     var reverse: Boolean
     var start: RowPosition
     var center: RowPosition
@@ -28,7 +28,7 @@ external interface RowProps : GridProps, PropsWithClassName, PropsWithChildren {
 
 external val Row: ComponentClass<RowProps>
 
-external interface ColProps : GridProps, PropsWithClassName, PropsWithChildren {
+external interface ColProps : GridProps {
     var xs: Int // number or boolean
     var sm: Int // number or boolean
     var md: Int // number or boolean
