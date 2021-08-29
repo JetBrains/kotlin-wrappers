@@ -11,11 +11,11 @@ external val BrowserRouter: ComponentClass<BrowserRouterProps>
 
 external val Switch: ComponentClass<PropsWithChildren>
 
-external val Route : ComponentClass<RouteProps>
+external val Route: ComponentClass<RouteProps>
 
 external val Link: ComponentClass<LinkProps>
 
-external val NavLink : ComponentClass<NavLinkProps>
+external val NavLink: ComponentClass<NavLinkProps>
 
 external val Redirect: ComponentClass<RedirectProps>
 
@@ -50,7 +50,7 @@ external interface LinkProps : PropsWithChildren {
     var className: String?
 }
 
-external interface NavLinkProps: LinkProps {
+external interface NavLinkProps : LinkProps {
     var activeClassName: String
     var exact: Boolean
     var strict: Boolean
