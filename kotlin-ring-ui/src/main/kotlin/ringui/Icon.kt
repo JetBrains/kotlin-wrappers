@@ -4,10 +4,10 @@
 package ringui
 
 import react.ComponentClass
-import react.dom.WithClassName
+import react.PropsWithClassName
 
 // https://github.com/JetBrains/ring-ui/blob/master/components/icon/icon.js
-external interface IconProps : WithClassName {
+external interface IconProps : PropsWithClassName {
     var color: String
     var glyph: String /* string | func */
     var height: Double

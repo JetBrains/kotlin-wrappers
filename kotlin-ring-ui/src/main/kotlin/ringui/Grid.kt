@@ -5,13 +5,13 @@ package ringui
 
 import react.ComponentClass
 import react.PropsWithChildren
-import react.dom.WithClassName
+import react.PropsWithClassName
 
-external interface GridProps : PropsWithChildren
+external interface GridProps : PropsWithChildren, PropsWithClassName
 
 external val Grid: ComponentClass<GridProps>
 
-external interface RowProps : GridProps, WithClassName {
+external interface RowProps : GridProps, PropsWithClassName, PropsWithChildren {
     var reverse: Boolean
     var start: RowPosition
     var center: RowPosition
@@ -28,7 +28,7 @@ external interface RowProps : GridProps, WithClassName {
 
 external val Row: ComponentClass<RowProps>
 
-external interface ColProps : GridProps, WithClassName {
+external interface ColProps : GridProps, PropsWithClassName, PropsWithChildren {
     var xs: Int // number or boolean
     var sm: Int // number or boolean
     var md: Int // number or boolean

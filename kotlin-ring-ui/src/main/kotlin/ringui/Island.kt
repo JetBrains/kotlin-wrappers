@@ -4,10 +4,11 @@
 package ringui
 
 import react.ComponentClass
-import react.dom.WithClassName
+import react.PropsWithChildren
+import react.PropsWithClassName
 
 // https://github.com/JetBrains/ring-ui/blob/master/components/island/island.js
-external interface IslandProps : WithClassName {
+external interface IslandProps : PropsWithChildren, PropsWithClassName {
     val narrow: Boolean
     val withoutPaddings: Boolean
 }
@@ -18,7 +19,7 @@ external val Island: ComponentClass<IslandProps>
 external val AdaptiveIsland: ComponentClass<IslandProps>
 
 // https://github.com/JetBrains/ring-ui/blob/master/components/island/header.js
-external interface IslandHeaderProps : WithClassName {
+external interface IslandHeaderProps : PropsWithChildren, PropsWithClassName {
     var border: Boolean
     var wrapWithTitle: Boolean
     var phase: Number
@@ -28,7 +29,7 @@ external interface IslandHeaderProps : WithClassName {
 external val IslandHeader: ComponentClass<IslandHeaderProps>
 
 // https://github.com/JetBrains/ring-ui/blob/master/components/island/content.js
-external interface IslandContentProps : WithClassName {
+external interface IslandContentProps : PropsWithChildren, PropsWithClassName {
     var scrollableWrapperClassName: String
     var fade: Boolean
     var bottomBorder: Boolean
