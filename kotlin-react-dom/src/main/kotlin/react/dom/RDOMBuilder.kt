@@ -1,6 +1,6 @@
 package react.dom
 
-import kotlinext.js.jsObject
+import kotlinext.js.jso
 import kotlinx.html.*
 import org.w3c.dom.events.Event
 import react.*
@@ -102,7 +102,7 @@ open class RDOMBuilderImpl<out T : Tag>(factory: (TagConsumer<Unit>) -> T) : RDO
                     sb.append(this)
                 }
             }.block()
-            domProps.dangerouslySetInnerHTML = jsObject {
+            domProps.dangerouslySetInnerHTML = jso {
                 __html = sb.toString()
             }
         }
@@ -123,7 +123,7 @@ open class RDOMBuilderImpl<out T : Tag>(factory: (TagConsumer<Unit>) -> T) : RDO
     }
 
     final override val attrs: T = factory(consumer)
-    final override val domProps: DOMProps = jsObject()
+    final override val domProps: DOMProps = jso()
 
     init {
         attrs.attributesEntries

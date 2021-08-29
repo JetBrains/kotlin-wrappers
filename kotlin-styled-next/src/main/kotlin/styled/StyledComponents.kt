@@ -1,7 +1,7 @@
 package styled
 
 import kotlinext.js.clone
-import kotlinext.js.jsObject
+import kotlinext.js.jso
 import kotlinx.css.CssBuilder
 import kotlinx.css.RuleSet
 import kotlinx.html.*
@@ -51,14 +51,14 @@ interface StyledElementBuilder<P : WithClassName> : RElementBuilder<P>, StyledBu
     companion object {
         operator fun <P : WithClassName> invoke(
             type: ComponentType<P>,
-            attrs: P = jsObject(),
+            attrs: P = jso(),
         ): StyledElementBuilder<P> = StyledElementBuilderImpl(type, attrs)
     }
 }
 
 class StyledElementBuilderImpl<P : WithClassName>(
     override val type: ComponentType<P>,
-    attrs: P = jsObject(),
+    attrs: P = jso(),
 ) : StyledElementBuilder<P>, RElementBuilderImpl<P>(attrs) {
     override val css = CssBuilder()
 

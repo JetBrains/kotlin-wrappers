@@ -1,7 +1,7 @@
 package react.router.dom
 
 import kotlinext.js.Object
-import kotlinext.js.jsObject
+import kotlinext.js.jso
 import react.Props
 
 fun <T : Props> useParams(): T? {
@@ -22,7 +22,7 @@ fun <T : Props> useRouteMatch(
         return rawUseRouteMatch(null)
     }
 
-    val options: RouteMatchOptions = jsObject {
+    val options: RouteMatchOptions = jso {
         this.path = path
         this.exact = exact
         this.strict = strict

@@ -1,7 +1,7 @@
 package react
 
 import kotlinext.js.js
-import kotlinext.js.jsObject
+import kotlinext.js.jso
 import kotlin.reflect.KClass
 
 typealias Render = RBuilder.() -> Unit
@@ -24,7 +24,7 @@ interface RBuilder {
 
     fun <P : Props> child(
         type: ElementType<P>,
-        props: P = jsObject(),
+        props: P = jso(),
         handler: RHandler<P>? = null,
     ) {
         if (handler == null) {
@@ -132,7 +132,7 @@ interface RBuilder {
         val index = childList.indexOf(this)
         if (index >= 0) {
             childList.removeAt(index)
-            val elementWithKey = cloneElement(this, jsObject { key = newKey })
+            val elementWithKey = cloneElement(this, jso { key = newKey })
             childList.add(index, elementWithKey)
         }
     }

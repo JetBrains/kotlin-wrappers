@@ -1,10 +1,17 @@
 package example
 
-import kotlinext.js.*
-import kotlinx.html.*
+import kotlinext.js.Object
+import kotlinext.js.js
+import kotlinext.js.jso
+import kotlinx.html.DIV
 import kotlinx.html.InputType
-import react.*
+import kotlinx.html.tabIndex
+import kotlinx.html.unsafe
+import react.PropsWithChildren
+import react.RBuilder
+import react.createContext
 import react.dom.*
+import kotlin.collections.set
 
 enum class Theme(val backgroundColor: String, val color: String) {
     LIGHT("white", "black"),
@@ -46,7 +53,7 @@ fun RBuilder.app(props: PropsWithChildren) {
             attrs["my-attribute"] = 100
             attrs["class"] = "class"
 
-            Object.assign(attrs, jsObject<DIV> { tabIndex = "0" })
+            Object.assign(attrs, jso<DIV> { tabIndex = "0" })
 
             // Appending children from props
             props.children()

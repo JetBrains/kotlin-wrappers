@@ -1,6 +1,6 @@
 package react.router.dom
 
-import kotlinext.js.jsObject
+import kotlinext.js.jso
 import react.*
 import kotlin.reflect.KClass
 
@@ -178,7 +178,7 @@ fun <T : Props> matchPath(
     strict: Boolean = false,
     sensitive: Boolean = false,
 ): Match<T>? {
-    val options: RouteMatchOptions = jsObject {
+    val options: RouteMatchOptions = jso {
         this.path = path
         this.exact = exact
         this.strict = strict
