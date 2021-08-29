@@ -5,10 +5,11 @@ package ringui
 
 import org.w3c.dom.events.InputEvent
 import react.ComponentClass
-import react.dom.WithClassName
+import react.PropsWithChildren
+import react.PropsWithClassName
 
 // https://github.com/JetBrains/ring-ui/blob/master/components/checkbox/checkbox.js
-external interface CheckboxProps : WithClassName {
+external interface CheckboxProps : PropsWithChildren, PropsWithClassName {
     var name: String
     var label: String
     var containerClassName: String
