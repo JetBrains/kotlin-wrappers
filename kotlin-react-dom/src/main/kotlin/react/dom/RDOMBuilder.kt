@@ -12,7 +12,8 @@ external interface InnerHTML {
 external interface WithClassName : PropsWithChildren {
     var className: String?
 }
-external interface DOMProps : WithClassName {
+
+external interface DOMProps : PropsWithClassName, PropsWithChildren {
     var dangerouslySetInnerHTML: InnerHTML?
 }
 
