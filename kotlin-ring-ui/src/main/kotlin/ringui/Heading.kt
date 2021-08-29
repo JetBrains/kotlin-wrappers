@@ -4,10 +4,9 @@
 package ringui
 
 import react.ComponentClass
-import react.PropsWithChildren
-import react.PropsWithClassName
+import react.dom.WithClassName
 
-external interface HeadingProps : PropsWithChildren, PropsWithClassName {
+external interface HeadingProps : WithClassName {
     var level: Int
 }
 

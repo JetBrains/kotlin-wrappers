@@ -5,14 +5,13 @@ package ringui
 
 import org.w3c.dom.events.Event
 import react.ComponentClass
-import react.PropsWithChildren
-import react.PropsWithClassName
+import react.dom.WithClassName
 
-external interface AnchorProps : PropsWithClassName, PropsWithChildren
+external interface AnchorProps : WithClassName
 
 external val Anchor: ComponentClass<AnchorProps>
 
-external interface DropdownProps : PropsWithClassName {
+external interface DropdownProps : WithClassName {
     /**
      * Can be string, React element, or a function accepting an object with {active, pinned} properties and returning a React element
      * React element should render some interactive HTML element like `button` or `a`

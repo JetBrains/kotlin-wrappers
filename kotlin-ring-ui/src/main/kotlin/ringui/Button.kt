@@ -5,11 +5,10 @@ package ringui
 
 import org.w3c.dom.events.MouseEvent
 import react.ComponentClass
-import react.PropsWithChildren
-import react.PropsWithClassName
+import react.dom.WithClassName
 
 // https://github.com/JetBrains/ring-ui/blob/master/components/button/button.js
-external interface ButtonProps : PropsWithChildren, PropsWithClassName {
+external interface ButtonProps : WithClassName {
     var theme: String
     var active: Boolean
     var danger: Boolean

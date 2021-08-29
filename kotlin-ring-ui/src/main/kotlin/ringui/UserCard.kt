@@ -5,12 +5,11 @@ package ringui
 
 import react.ComponentClass
 import react.PropsWithChildren
-import react.PropsWithClassName
 
 external val UserCard: ComponentClass<UserCardProps>
 
 // https://github.com/JetBrains/ring-ui/blob/master/components/user-card/card.js
-external interface UserCardProps : PropsWithChildren, PropsWithClassName {
+external interface UserCardProps : PropsWithChildren {
     var user: UserCardModel
     var wording: UserCardWording
 }
