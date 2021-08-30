@@ -12,6 +12,3 @@ external fun useParams(): Params
 @JsName("useRouteMatch")
 external fun rawUseRouteMatch(options: dynamic): Match?
 
-@JsName("matchPath")
-external fun rawMatchPath(pathName: String, options: dynamic): Match?
-
