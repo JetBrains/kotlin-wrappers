@@ -1,6 +1,5 @@
 package example
 
-import kotlinext.js.get
 import react.Props
 import react.RBuilder
 import react.dom.*

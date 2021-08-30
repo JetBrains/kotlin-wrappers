@@ -1,12 +1,17 @@
+@file:Suppress(
+    "DECLARATION_CANT_BE_INLINED",
+    "NOTHING_TO_INLINE",
+)
+
 package kotlinext.js
 
-external interface Record<in K : Any, out V : Any>
+sealed interface Record<in K : Any, V : Any> {
+    inline operator fun get(key: K): V? =
+        asDynamic()[key]
 
-inline operator fun <K : Any, V : Any> Record<K, V>.get(key: K): V? =
-    asDynamic()[key]
-
-inline operator fun <K : Any, V : Any> Record<K, V>.set(key: K, value: V) {
-    asDynamic()[key] = value
+    inline operator fun set(key: K, value: V) {
+        asDynamic()[key] = value
+    }
 }
 
 fun <K : Any, V : Any> Record(
