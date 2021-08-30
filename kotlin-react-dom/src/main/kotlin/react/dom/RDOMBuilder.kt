@@ -9,7 +9,7 @@ external interface InnerHTML {
     var __html: String
 }
 
-external interface DOMProps : PropsWithClassName, PropsWithChildren {
+external interface DOMProps : PropsWithChildren, PropsWithClassName {
     var dangerouslySetInnerHTML: InnerHTML?
 }
 
