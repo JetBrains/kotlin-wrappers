@@ -54,6 +54,7 @@ var StyledElement.backgroundClip: BackgroundClip by CssProperty()
 var StyledElement.backgroundColor: Color by CssProperty()
 var StyledElement.backgroundImage: Image by CssProperty()
 var StyledElement.backgroundOrigin: BackgroundOrigin by CssProperty()
+@Deprecated("Use strictly-typed backgroundPosition() instead")
 var StyledElement.backgroundPosition: String by CssProperty()
 var StyledElement.backgroundRepeat: BackgroundRepeat by CssProperty()
 var StyledElement.backgroundSize: String by CssProperty()
@@ -289,3 +290,7 @@ fun StyledElement.padding(vertical: LinearDimension? = null, horizontal: LinearD
 
 fun StyledElement.padding(top: LinearDimension, horizontal: LinearDimension, bottom: LinearDimension) =
     padding(top, horizontal, bottom, horizontal)
+
+fun StyledElement.backgroundPosition(position: RelativePosition) {
+    backgroundPosition = position.value
+}

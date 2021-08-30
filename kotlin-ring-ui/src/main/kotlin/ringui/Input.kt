@@ -6,11 +6,11 @@ package ringui
 import org.w3c.dom.HTMLInputElement
 import org.w3c.dom.events.InputEvent
 import react.ComponentClass
+import react.PropsWithClassName
 import react.RefObject
-import react.dom.WithClassName
 
 // https://github.com/JetBrains/ring-ui/blob/master/components/input/input.js
-external interface InputProps : WithClassName {
+external interface InputProps : PropsWithClassName {
     var value: String
     var theme: String
     var inputClassName: String
@@ -34,4 +34,4 @@ external interface InputProps : WithClassName {
 }
 
 @JsName("default")
-external val Input : ComponentClass<InputProps>
+external val Input: ComponentClass<InputProps>

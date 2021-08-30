@@ -1080,3 +1080,69 @@ class Image(override val value: String) : CssValue(value) {
         val none = Image("none")
     }
 }
+
+class RelativePosition(override val value: String) : CssValue(value) {
+    companion object {
+        val inherit = RelativePosition("inherit")
+        val initial = RelativePosition("initial")
+        val unset = RelativePosition("unset")
+
+        val left = RelativePosition("left")
+        val center = RelativePosition("center")
+        val right = RelativePosition("right")
+        val top = RelativePosition("top")
+        val bottom = RelativePosition("bottom")
+
+        val leftTop = RelativePosition("left top")
+        val leftCenter = RelativePosition("left center")
+        val leftBottom = RelativePosition("left bottom")
+
+        val centerTop = RelativePosition("center top")
+        val centerCenter = RelativePosition("center center")
+        val centerBottom = RelativePosition("center bottom")
+
+        val rightTop = RelativePosition("right top")
+        val rightCenter = RelativePosition("right center")
+        val rightBottom = RelativePosition("right bottom")
+
+        fun offset(xOffset: LinearDimension, yOffset: LinearDimension? = null): RelativePosition {
+            return if (yOffset != null) {
+                RelativePosition("${xOffset.value} ${yOffset.value}")
+            } else {
+                RelativePosition(xOffset.value)
+            }
+        }
+
+        fun left(xOffset: LinearDimension): RelativePosition {
+            return RelativePosition("left ${xOffset.value}")
+        }
+
+        fun right(xOffset: LinearDimension): RelativePosition {
+            return RelativePosition("right ${xOffset.value}")
+        }
+
+        fun top(yOffset: LinearDimension): RelativePosition {
+            return RelativePosition("top ${yOffset.value}")
+        }
+
+        fun bottom(yOffset: LinearDimension): RelativePosition {
+            return RelativePosition("bottom ${yOffset.value}")
+        }
+
+        fun leftTop(xOffset: LinearDimension, yOffset: LinearDimension): RelativePosition {
+            return RelativePosition("left ${xOffset.value} top ${yOffset.value}")
+        }
+
+        fun leftBottom(xOffset: LinearDimension, yOffset: LinearDimension): RelativePosition {
+            return RelativePosition("left ${xOffset.value} bottom ${yOffset.value}")
+        }
+
+        fun rightTop(xOffset: LinearDimension, yOffset: LinearDimension): RelativePosition {
+            return RelativePosition("right ${xOffset.value} top ${yOffset.value}")
+        }
+
+        fun rightBottom(xOffset: LinearDimension, yOffset: LinearDimension): RelativePosition {
+            return RelativePosition("right ${xOffset.value} bottom ${yOffset.value}")
+        }
+    }
+}

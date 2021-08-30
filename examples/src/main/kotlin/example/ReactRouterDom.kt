@@ -1,5 +1,6 @@
 package example
 
+import kotlinext.js.get
 import react.Props
 import react.RBuilder
 import react.dom.*
@@ -10,7 +11,7 @@ val Home = fc<Props> { h2 { +"Home" } }
 val About = fc<Props> { h2 { +"About" } }
 
 val Topics = fc<Props> {
-    val match = useRouteMatch<Props>() ?: return@fc
+    val match = useRouteMatch() ?: return@fc
 
     div {
         h2 { +"Topics" }
@@ -33,12 +34,8 @@ val Topics = fc<Props> {
     }
 }
 
-external interface TopicProps : Props {
-    val topicId: String
-}
-
 val Topic = fc<Props> {
-    val topicId = useParams<TopicProps>()?.topicId ?: return@fc
+    val topicId = useParams()["topicId"] ?: return@fc
 
     h3 { +"Requested topic ID: $topicId" }
 }
