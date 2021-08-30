@@ -13,4 +13,3 @@ external interface LinkProps : PropsWithChildren {
 }
 
 external val Link: ComponentClass<LinkProps>
-

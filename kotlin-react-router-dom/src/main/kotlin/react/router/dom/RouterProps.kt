@@ -8,5 +8,3 @@ import react.PropsWithChildren
 external interface RouterProps : PropsWithChildren {
     var history: History
 }
-
-

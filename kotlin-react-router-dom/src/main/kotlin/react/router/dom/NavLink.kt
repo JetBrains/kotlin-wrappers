@@ -14,4 +14,3 @@ external interface NavLinkProps : LinkProps {
 }
 
 external val NavLink: ComponentClass<NavLinkProps>
-

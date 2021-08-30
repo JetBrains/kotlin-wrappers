@@ -23,4 +23,3 @@ external interface RouteResultProps : Props {
 }
 
 external val Route: ComponentClass<RouteProps>
-

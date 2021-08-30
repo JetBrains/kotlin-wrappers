@@ -13,4 +13,3 @@ external interface BrowserRouterProps : RouterProps {
 }
 
 external val BrowserRouter: ComponentClass<BrowserRouterProps>
-

@@ -14,4 +14,3 @@ external interface History {
     fun goBack()
     fun goForward()
 }
-

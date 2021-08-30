@@ -7,4 +7,3 @@ import react.ComponentClass
 import react.PropsWithChildren
 
 external val Switch: ComponentClass<PropsWithChildren>
-
