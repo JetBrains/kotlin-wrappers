@@ -1,6 +1,6 @@
 package react.virtual
 
-import kotlinext.js.jsObject
+import kotlinext.js.jso
 
 external interface Size {
     var width: Int
@@ -11,7 +11,7 @@ fun Size(
     width: Int,
     height: Int,
 ): Size =
-    jsObject {
+    jso {
         this.width = width
         this.height = height
     }

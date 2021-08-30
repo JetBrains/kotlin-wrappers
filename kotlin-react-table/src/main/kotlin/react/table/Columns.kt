@@ -1,7 +1,7 @@
 package react.table
 
 import kotlinext.js.ReadonlyArray
-import kotlinext.js.jsObject
+import kotlinext.js.jso
 import react.ReactElement
 import react.ReactNode
 
@@ -14,7 +14,7 @@ class ColumnBuilder<D : Any> {
     private val columns = mutableListOf<Column<D, *>>()
 
     fun <V> column(block: SimpleColumn<D, V>.() -> Unit) {
-        val column = jsObject<SimpleColumn<D, V>> {
+        val column = jso<SimpleColumn<D, V>> {
             // Convert Kotlin objects to String otherwise react-table thinks they are React Components
             cellFunction = { props -> props.value.toString().unsafeCast<ReactNode>() }
             block()
@@ -62,7 +62,7 @@ class ColumnBuilder<D : Any> {
     }
 
     fun group(handler: ColumnGroup<D>.() -> Unit) {
-        columns.add(jsObject(handler))
+        columns.add(jso(handler))
     }
 
     fun group(

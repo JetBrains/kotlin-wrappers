@@ -1,6 +1,8 @@
 package react.router.dom
 
-import kotlinext.js.jsObject
+import kotlinext.js.Object
+import kotlinext.js.jso
+import react.Props
 
 fun useRouteMatch(
     vararg path: String,
@@ -12,7 +14,7 @@ fun useRouteMatch(
         return rawUseRouteMatch(null)
     }
 
-    val options: RouteMatchOptions = jsObject {
+    val options: RouteMatchOptions = jso {
         this.path = path
         this.exact = exact
         this.strict = strict

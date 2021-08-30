@@ -1,6 +1,6 @@
 package react
 
-import kotlinext.js.jsObject
+import kotlinext.js.jso
 
 external interface SuspenseConfig {
     var timeoutMs: Int
@@ -9,6 +9,6 @@ external interface SuspenseConfig {
 fun SuspenseConfig(
     timeoutMs: Int,
 ): SuspenseConfig =
-    jsObject {
+    jso {
         this.timeoutMs = timeoutMs
     }

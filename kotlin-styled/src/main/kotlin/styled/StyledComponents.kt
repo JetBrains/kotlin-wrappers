@@ -1,7 +1,7 @@
 package styled
 
 import kotlinext.js.invoke
-import kotlinext.js.jsObject
+import kotlinext.js.jso
 import kotlinx.browser.window
 import kotlinx.css.CssBuilder
 import kotlinx.css.RuleSet
@@ -54,14 +54,14 @@ interface StyledElementBuilder<P : PropsWithClassName> : RElementBuilder<P>, Sty
     companion object {
         operator fun <P : PropsWithClassName> invoke(
             type: ComponentType<P>,
-            attrs: P = jsObject(),
+            attrs: P = jso(),
         ): StyledElementBuilder<P> = StyledElementBuilderImpl(type, attrs)
     }
 }
 
 class StyledElementBuilderImpl<P : PropsWithClassName>(
     override val type: ComponentType<P>,
-    attrs: P = jsObject(),
+    attrs: P = jso(),
 ) : StyledElementBuilder<P>, RElementBuilderImpl<P>(attrs) {
     override val css = CssBuilder()
 
@@ -158,7 +158,7 @@ private object GlobalStyles {
 
     fun add(globalStyle: ComponentType<*>) {
         styles.add(globalStyle)
-        val reactElement = createElement(component, jsObject {
+        val reactElement = createElement(component, jso {
             this.globalStyles = styles
         })
         render(reactElement, root)

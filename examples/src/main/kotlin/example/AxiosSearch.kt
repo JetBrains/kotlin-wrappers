@@ -7,7 +7,7 @@ package example
  */
 
 import kotlinext.js.js
-import kotlinext.js.jsObject
+import kotlinext.js.jso
 import kotlinx.html.InputType
 import kotlinx.html.js.onChangeFunction
 import kotlinx.html.title
@@ -80,7 +80,7 @@ class AxiosSearch(props: AxiosProps) : RComponent<AxiosProps, AxiosState>(props)
     }
 
     private fun remoteSearchZip(zipCode: String) {
-        val config: AxiosConfigSettings = jsObject {
+        val config: AxiosConfigSettings = jso {
             url = "https://ziptasticapi.com/$zipCode"
             timeout = 3000
         }

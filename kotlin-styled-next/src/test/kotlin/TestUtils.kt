@@ -1,4 +1,4 @@
-import kotlinext.js.jsObject
+import kotlinext.js.jso
 import kotlinx.browser.document
 import kotlinx.browser.window
 import kotlinx.coroutines.CoroutineScope
@@ -51,7 +51,7 @@ class TestScope : CoroutineScope by testScope {
     }
 
     fun renderComponent(component: Component, root: Element = getRoot()) {
-        val reactElement = createElement(component, jsObject { })
+        val reactElement = createElement(component, jso { })
         render(reactElement, root)
     }
 

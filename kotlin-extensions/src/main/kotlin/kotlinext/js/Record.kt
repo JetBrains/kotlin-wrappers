@@ -11,4 +11,4 @@ inline operator fun <K : Any, V : Any> Record<K, V>.set(key: K, value: V) {
 
 fun <K : Any, V : Any> Record(
     block: Record<K, V>.() -> Unit,
-): Record<K, V> = jsObject(block)
+): Record<K, V> = jso(block)

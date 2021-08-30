@@ -1,14 +1,14 @@
 package react
 
-import kotlinext.js.jsObject
+import kotlinext.js.jso
 
 abstract class RComponent<P : Props, S : State> : Component<P, S> {
     constructor() : super() {
-        state = jsObject { init() }
+        state = jso { init() }
     }
 
     constructor(props: P) : super(props) {
-        state = jsObject { init(props) }
+        state = jso { init(props) }
     }
 
     open fun S.init() {}

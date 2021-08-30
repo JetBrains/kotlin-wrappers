@@ -1,15 +1,22 @@
+@file:Suppress("NOTHING_TO_INLINE")
+
 package kotlinext.js
 
-@Suppress("NOTHING_TO_INLINE")
-inline fun <T : Any> jsObject(): T =
+inline fun <T : Any> jso(): T =
     js("({})")
 
+inline fun <T : Any> jsObject(): T =
+    jso()
+
+inline fun <T : Any> jso(builder: T.() -> Unit): T =
+    jso<T>().apply(builder)
+
 inline fun <T : Any> jsObject(builder: T.() -> Unit): T =
-    jsObject<T>().apply(builder)
+    jso<T>().apply(builder)
 
-inline fun js(builder: dynamic.() -> Unit): dynamic = jsObject(builder)
+inline fun js(builder: dynamic.() -> Unit): dynamic = jso(builder)
 
-fun <T : Any> clone(obj: T) = Object.assign(jsObject(), obj)
+fun <T : Any> clone(obj: T) = Object.assign(jso(), obj)
 
 inline fun <T : Any> assign(obj: T, builder: T.() -> Unit) = clone(obj).apply(builder)
 
