@@ -8,7 +8,3 @@ external fun useHistory(): History
 external fun useLocation(): Location
 
 external fun useParams(): Params
-
-@JsName("useRouteMatch")
-external fun rawUseRouteMatch(options: dynamic): Match?
-
