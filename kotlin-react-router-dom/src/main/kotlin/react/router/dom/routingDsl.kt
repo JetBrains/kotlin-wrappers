@@ -1,13 +1,7 @@
 package react.router.dom
 
-import kotlinext.js.jso
 import react.*
 import kotlin.reflect.KClass
-
-@Suppress("EnumEntryName")
-enum class HashType {
-    slash, noslash, hashbang
-}
 
 fun RBuilder.hashRouter(
     basename: String = "",
@@ -153,21 +147,4 @@ fun RBuilder.redirect(
             this.strict = strict
         }
     }
-}
-
-fun matchPath(
-    pathName: String,
-    vararg path: String,
-    exact: Boolean = false,
-    strict: Boolean = false,
-    sensitive: Boolean = false,
-): Match? {
-    val options: RouteMatchOptions = jso {
-        this.path = path
-        this.exact = exact
-        this.strict = strict
-        this.sensitive = sensitive
-    }
-
-    return rawMatchPath(pathName, options)
 }
