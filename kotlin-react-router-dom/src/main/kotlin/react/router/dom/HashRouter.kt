@@ -8,7 +8,7 @@ import react.ComponentClass
 external interface HashRouterProps : RouterProps {
     var basename: String
     var getUserConfirmation: GetUserConfirmation?
-    var hashType: String
+    var hashType: HashType
 }
 
 external val HashRouter: ComponentClass<HashRouterProps>
