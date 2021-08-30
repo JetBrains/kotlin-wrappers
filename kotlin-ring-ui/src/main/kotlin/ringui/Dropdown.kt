@@ -8,7 +8,7 @@ import react.ComponentClass
 import react.PropsWithChildren
 import react.PropsWithClassName
 
-external interface AnchorProps : PropsWithClassName, PropsWithChildren
+external interface AnchorProps : PropsWithChildren, PropsWithClassName
 
 external val Anchor: ComponentClass<AnchorProps>
 
