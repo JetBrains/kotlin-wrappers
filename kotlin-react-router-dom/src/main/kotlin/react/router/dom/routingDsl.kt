@@ -3,11 +3,6 @@ package react.router.dom
 import react.*
 import kotlin.reflect.KClass
 
-@Suppress("EnumEntryName")
-enum class HashType {
-    slash, noslash, hashbang
-}
-
 fun RBuilder.hashRouter(
     basename: String = "",
     hashType: HashType = HashType.slash,
