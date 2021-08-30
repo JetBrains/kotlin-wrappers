@@ -3,6 +3,7 @@
 
 package react.router.dom
 
+// TODO: Move to separate "history" module
 external interface History {
     val length: Int
     val action: String
