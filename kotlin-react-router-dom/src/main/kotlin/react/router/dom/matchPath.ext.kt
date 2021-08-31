@@ -16,5 +16,5 @@ fun matchPath(
         this.sensitive = sensitive
     }
 
-    return rawMatchPath(pathName, options)
+    return matchPath(pathName, options)
 }
