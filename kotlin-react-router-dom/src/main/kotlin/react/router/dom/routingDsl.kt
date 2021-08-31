@@ -12,7 +12,7 @@ fun RBuilder.hashRouter(
     HashRouter {
         attrs {
             this.basename = basename
-            this.hashType = hashType.name
+            this.hashType = hashType
             this.getUserConfirmation = getUserConfirmation
         }
 
