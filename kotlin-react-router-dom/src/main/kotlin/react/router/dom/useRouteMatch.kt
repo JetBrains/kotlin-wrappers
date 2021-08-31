@@ -4,5 +4,5 @@
 package react.router.dom
 
 external fun useRouteMatch(
-    options: MatchOptions?,
+    options: MatchOptions = definedExternally,
 ): Match?
