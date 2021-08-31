@@ -10,7 +10,11 @@ external interface Color {
     var b: Short
 }
 
-inline fun Color(r: Short, g: Short, b: Short): Color = jso {
+inline fun Color(
+    r: Short,
+    g: Short,
+    b: Short
+): Color = jso {
     this.r = r
     this.g = g
     this.b = b
