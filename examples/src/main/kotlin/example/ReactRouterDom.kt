@@ -10,7 +10,7 @@ val Home = fc<Props> { h2 { +"Home" } }
 val About = fc<Props> { h2 { +"About" } }
 
 val Topics = fc<Props> {
-    val match = useRouteMatch() ?: return@fc
+    val match = useRouteMatch()
 
     div {
         h2 { +"Topics" }
