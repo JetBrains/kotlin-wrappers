@@ -3,9 +3,12 @@
 
 package react.router.dom
 
-import react.*
+import react.ComponentClass
+import react.ComponentType
+import react.Props
+import react.ReactElement
 
-external interface RouteProps : PropsWithChildren {
+external interface RouteProps : Props {
     var component: ComponentType<*>
     var render: (props: RouteComponentProps) -> ReactElement?
     var path: Array<out String>
