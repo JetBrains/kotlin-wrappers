@@ -18,3 +18,17 @@ fun matchPath(
 
     return matchPath(pathName, options)
 }
+
+fun matchPath(
+    pathName: String,
+    vararg path: String,
+    block: ExtraMatchOptions.() -> Unit,
+): Match? {
+    val options: MatchOptions = jso {
+        this.path = path
+    }
+
+    options.block()
+
+    return rawMatchPath(pathName, options)
+}
