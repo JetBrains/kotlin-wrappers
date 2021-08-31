@@ -3,7 +3,8 @@
 
 package react.router.dom
 
-@JsName("useRouteMatch")
-external fun rawUseRouteMatch(
-    options: MatchOptions?,
+external fun useRouteMatch(): Match
+
+external fun useRouteMatch(
+    options: MatchOptions,
 ): Match?

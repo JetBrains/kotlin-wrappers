@@ -8,10 +8,6 @@ fun useRouteMatch(
     strict: Boolean = false,
     sensitive: Boolean = false,
 ): Match? {
-    if (path.isEmpty()) {
-        return rawUseRouteMatch(null)
-    }
-
     val options: MatchOptions = jso {
         this.path = path
         this.exact = exact
@@ -19,5 +15,5 @@ fun useRouteMatch(
         this.sensitive = sensitive
     }
 
-    return rawUseRouteMatch(options)
+    return useRouteMatch(options)
 }

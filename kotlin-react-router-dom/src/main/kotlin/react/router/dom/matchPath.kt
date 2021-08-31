@@ -3,8 +3,7 @@
 
 package react.router.dom
 
-@JsName("matchPath")
-external fun rawMatchPath(
+external fun matchPath(
     pathName: String,
     options: MatchOptions,
     parent: Match? = definedExternally,
