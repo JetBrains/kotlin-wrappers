@@ -6,5 +6,6 @@ package react.router.dom
 @JsName("matchPath")
 external fun rawMatchPath(
     pathName: String,
-    options: dynamic,
+    options: MatchOptions,
+    parent: Match? = definedExternally,
 ): Match?
