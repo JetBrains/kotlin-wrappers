@@ -12,6 +12,7 @@ external interface RedirectProps : Props {
     var push: Boolean
     var exact: Boolean
     var strict: Boolean
+    var sensitive: Boolean
 }
 
 external val Redirect: ComponentClass<RedirectProps>

@@ -3,23 +3,22 @@
 
 package react.router.dom
 
-import react.ComponentClass
-import react.ComponentType
-import react.Props
-import react.ReactElement
+import react.*
 
-external interface RouteProps : Props {
+external interface RouteProps : PropsWithChildren {
+    var component: ComponentType<*>
+    var render: (props: RouteComponentProps) -> ReactElement?
     var path: Array<out String>
     var exact: Boolean
+    var sensitive: Boolean
     var strict: Boolean
-    var component: ComponentType<*>
-    var render: (props: RouteResultProps) -> ReactElement?
 }
 
-external interface RouteResultProps : Props {
+external interface RouteComponentProps : Props {
     var history: History
     var location: Location
     var match: Match
+    var staticContext: StaticContext
 }
 
 external val Route: ComponentClass<RouteProps>
