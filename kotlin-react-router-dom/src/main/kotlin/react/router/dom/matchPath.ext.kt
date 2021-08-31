@@ -9,7 +9,7 @@ fun matchPath(
     strict: Boolean = false,
     sensitive: Boolean = false,
 ): Match? {
-    val options: RouteMatchOptions = jso {
+    val options: MatchOptions = jso {
         this.path = path
         this.exact = exact
         this.strict = strict

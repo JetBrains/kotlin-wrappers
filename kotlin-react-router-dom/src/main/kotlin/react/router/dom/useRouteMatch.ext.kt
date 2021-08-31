@@ -12,7 +12,7 @@ fun useRouteMatch(
         return rawUseRouteMatch(null)
     }
 
-    val options: RouteMatchOptions = jso {
+    val options: MatchOptions = jso {
         this.path = path
         this.exact = exact
         this.strict = strict
