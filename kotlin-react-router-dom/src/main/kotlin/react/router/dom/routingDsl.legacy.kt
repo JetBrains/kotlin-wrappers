@@ -3,6 +3,10 @@ package react.router.dom
 import react.*
 import kotlin.reflect.KClass
 
+@Deprecated(
+    message = "Legacy component extension",
+    replaceWith = ReplaceWith("HashRouter", "react.router.dom.HashRouter"),
+)
 fun RBuilder.hashRouter(
     basename: String = "",
     hashType: HashType = HashType.slash,
@@ -20,6 +24,10 @@ fun RBuilder.hashRouter(
     }
 }
 
+@Deprecated(
+    message = "Legacy component extension",
+    replaceWith = ReplaceWith("BrowserRouter", "react.router.dom.BrowserRouter"),
+)
 fun RBuilder.browserRouter(
     basename: String = "",
     getUserConfirmation: GetUserConfirmation? = null,
@@ -39,12 +47,20 @@ fun RBuilder.browserRouter(
     }
 }
 
+@Deprecated(
+    message = "Legacy component extension",
+    replaceWith = ReplaceWith("Switch", "react.router.dom.Switch"),
+)
 fun RBuilder.switch(
     handler: RHandler<PropsWithChildren>,
 ) {
     Switch(handler)
 }
 
+@Deprecated(
+    message = "Legacy component extension",
+    replaceWith = ReplaceWith("Route", "react.router.dom.Route"),
+)
 fun RBuilder.route(
     vararg path: String,
     component: ComponentType<*>,
@@ -61,20 +77,23 @@ fun RBuilder.route(
     }
 }
 
+@Deprecated(
+    message = "Legacy component extension",
+    replaceWith = ReplaceWith("Route", "react.router.dom.Route"),
+)
 fun RBuilder.route(
     vararg path: String,
     component: KClass<out Component<Props, *>>,
     exact: Boolean = false,
     strict: Boolean = false,
 ) {
-    route(
-        path = path,
-        component = component.react,
-        exact = exact,
-        strict = strict,
-    )
+    arrayOf<String>(path)
 }
 
+@Deprecated(
+    message = "Legacy component extension",
+    replaceWith = ReplaceWith("Route", "react.router.dom.Route"),
+)
 fun RBuilder.route(
     vararg path: String,
     exact: Boolean = false,
@@ -91,6 +110,10 @@ fun RBuilder.route(
     }
 }
 
+@Deprecated(
+    message = "Legacy component extension",
+    replaceWith = ReplaceWith("Link", "react.router.dom.Link"),
+)
 fun RBuilder.routeLink(
     to: String,
     replace: Boolean = false,
@@ -107,6 +130,10 @@ fun RBuilder.routeLink(
     }
 }
 
+@Deprecated(
+    message = "Legacy component extension",
+    replaceWith = ReplaceWith("NavLink", "react.router.dom.NavLink"),
+)
 fun RBuilder.navLink(
     to: String,
     replace: Boolean = false,
@@ -131,6 +158,10 @@ fun RBuilder.navLink(
     }
 }
 
+@Deprecated(
+    message = "Legacy component extension",
+    replaceWith = ReplaceWith("Redirect", "react.router.dom.Redirect"),
+)
 fun RBuilder.redirect(
     from: String? = null,
     to: String,
