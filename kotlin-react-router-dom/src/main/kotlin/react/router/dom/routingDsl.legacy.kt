@@ -105,7 +105,7 @@ fun RBuilder.route(
     vararg path: String,
     exact: Boolean = false,
     strict: Boolean = false,
-    render: RBuilder.() -> Unit,
+    render: Render,
 ) {
     Route {
         attrs {
