@@ -6,5 +6,9 @@ package react.router.dom
 external fun useRouteMatch(): Match
 
 external fun useRouteMatch(
+    path: String,
+): Match?
+
+external fun useRouteMatch(
     options: MatchOptions,
 ): Match?

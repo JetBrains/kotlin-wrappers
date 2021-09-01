@@ -19,13 +19,9 @@ fun useRouteMatch(
 }
 
 fun useRouteMatch(
-    vararg path: String,
-    block: ExtraMatchOptions.() -> Unit,
+    block: MatchOptions.() -> Unit,
 ): Match? {
-    val options: MatchOptions = jso {
-        this.path = path
-    }
-
+    val options: MatchOptions = jso { }
     options.block()
 
     return rawUseRouteMatch(options)

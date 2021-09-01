@@ -21,14 +21,11 @@ fun matchPath(
 
 fun matchPath(
     pathName: String,
-    vararg path: String,
-    block: ExtraMatchOptions.() -> Unit,
+    parent: Match? = null,
+    block: MatchOptions.() -> Unit,
 ): Match? {
-    val options: MatchOptions = jso {
-        this.path = path
-    }
-
+    val options: MatchOptions = jso { }
     options.block()
 
-    return rawMatchPath(pathName, options)
+    return rawMatchPath(pathName, options, parent)
 }
