@@ -87,12 +87,14 @@ fun RBuilder.route(
     exact: Boolean = false,
     strict: Boolean = false,
 ) {
-    route(
-        path = path,
-        component = component.react,
-        exact = exact,
-        strict = strict,
-    )
+    Route {
+        attrs {
+            this.path = path
+            this.exact = exact
+            this.strict = strict
+            this.component = component.react
+        }
+    }
 }
 
 @Deprecated(
