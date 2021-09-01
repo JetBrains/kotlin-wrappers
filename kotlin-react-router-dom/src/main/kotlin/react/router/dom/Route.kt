@@ -3,13 +3,13 @@
 
 package react.router.dom
 
-import react.ComponentClass
-import react.ComponentType
-import react.Props
-import react.ReactElement
+import react.*
 
-external interface RouteProps : Props, MatchOptions {
+external interface RouteProps : PropsWithChildren, MatchOptions {
     var component: ComponentType<*>
+    @Deprecated(
+        message = "Use component or children props with hooks",
+    )
     var render: (props: RouteComponentProps) -> ReactElement?
 }
 
