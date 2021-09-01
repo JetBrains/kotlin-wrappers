@@ -14,8 +14,9 @@ inline fun Color(
     r: Short,
     g: Short,
     b: Short
-): Color = jso {
-    this.r = r
-    this.g = g
-    this.b = b
-}
+): Color =
+    jso {
+        this.r = r
+        this.g = g
+        this.b = b
+    }
