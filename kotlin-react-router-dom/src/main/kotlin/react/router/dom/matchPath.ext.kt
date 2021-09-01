@@ -7,10 +7,7 @@ fun matchPath(
     parent: Match? = null,
     block: MatchOptions.() -> Unit,
 ): Match? {
-    val options: MatchOptions = jso { }
-    options.block()
-
-    return matchPath(pathName, options, parent)
+    return matchPath(pathName, jso<MatchOptions> { block() }, parent)
 }
 
 @Deprecated(

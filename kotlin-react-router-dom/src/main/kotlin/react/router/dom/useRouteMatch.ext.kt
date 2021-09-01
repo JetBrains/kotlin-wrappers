@@ -5,10 +5,7 @@ import kotlinext.js.jso
 fun useRouteMatch(
     block: MatchOptions.() -> Unit,
 ): Match? {
-    val options: MatchOptions = jso { }
-    options.block()
-
-    return useRouteMatch(options)
+    return useRouteMatch(jso<MatchOptions> { block() })
 }
 
 @Deprecated(
