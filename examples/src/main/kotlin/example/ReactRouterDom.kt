@@ -17,16 +17,26 @@ val Topics = fc<Props> {
 
         ul {
             li {
-                routeLink("${match.url}/components") { +"Components" }
+                Link {
+                    attrs.to = "${match.url}/components"
+                    +"Components"
+                }
             }
             li {
-                routeLink("${match.url}/props-v-state") { +"Props v. State" }
+                Link {
+                    attrs.to = "${match.url}/props-v-state"
+                    +"Props v. State"
+                }
             }
         }
 
-        switch {
-            route("${match.path}/:topicId", component = Topic)
-            route(match.path) {
+        Switch {
+            Route {
+                attrs.path = arrayOf("${match.path}/:topicId")
+                attrs.component = Topic
+            }
+            Route {
+                attrs.path = arrayOf(match.path)
                 h3 { +"Please select a topic." }
             }
         }
@@ -40,24 +50,42 @@ val Topic = fc<Props> {
 }
 
 fun RBuilder.appWithRouter() {
-    browserRouter {
+    BrowserRouter {
         div {
             ul {
                 li {
-                    routeLink("/") { +"Home" }
+                    Link {
+                        attrs.to = "/"
+                        +"Home"
+                    }
                 }
                 li {
-                    routeLink("/about") { +"About" }
+                    Link {
+                        attrs.to = "/about"
+                        +"About"
+                    }
                 }
                 li {
-                    routeLink("/topics") { +"Topics" }
+                    Link {
+                        attrs.to = "/topics"
+                        +"Topics"
+                    }
                 }
             }
 
-            switch {
-                route("/about", component = About)
-                route("/topics", component = Topics)
-                route("/", component = Home)
+            Switch {
+                Route {
+                    attrs.path = arrayOf("/about")
+                    attrs.component = About
+                }
+                Route {
+                    attrs.path = arrayOf("/topics")
+                    attrs.component = Topics
+                }
+                Route {
+                    attrs.path = arrayOf("/")
+                    attrs.component = Home
+                }
             }
         }
     }
