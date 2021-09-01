@@ -87,7 +87,12 @@ fun RBuilder.route(
     exact: Boolean = false,
     strict: Boolean = false,
 ) {
-    arrayOf<String>(path)
+    route(
+        path = path,
+        component = component.react,
+        exact = exact,
+        strict = strict,
+    )
 }
 
 @Deprecated(
