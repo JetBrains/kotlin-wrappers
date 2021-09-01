@@ -5,16 +5,12 @@ package react.router.dom
 
 import react.*
 
-external interface RouteProps : PropsWithChildren {
+external interface RouteProps : PropsWithChildren, MatchOptions {
     var component: ComponentType<*>
     @Deprecated(
         message = "Use component or children props with hooks",
     )
     var render: (props: RouteComponentProps) -> ReactElement?
-    var path: Array<out String>
-    var exact: Boolean
-    var sensitive: Boolean
-    var strict: Boolean
 }
 
 external interface RouteComponentProps : Props {
