@@ -105,15 +105,16 @@ fun RBuilder.route(
     vararg path: String,
     exact: Boolean = false,
     strict: Boolean = false,
-    render: RBuilder.(RouteComponentProps) -> Unit,
+    render: RBuilder.() -> Unit,
 ) {
     Route {
         attrs {
             this.path = path
             this.exact = exact
             this.strict = strict
-            this.render = { props -> buildElements({ render(props) }) }
         }
+
+        render()
     }
 }
 
