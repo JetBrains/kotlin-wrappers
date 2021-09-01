@@ -6,9 +6,8 @@ fun matchPath(
     pathName: String,
     parent: Match? = null,
     block: MatchOptions.() -> Unit,
-): Match? {
-    return matchPath(pathName, jso<MatchOptions> { block() }, parent)
-}
+): Match? =
+    matchPath(pathName, options = jso(block), parent)
 
 @Deprecated(
     message = "Legacy match API",

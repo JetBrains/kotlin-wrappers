@@ -4,9 +4,8 @@ import kotlinext.js.jso
 
 fun useRouteMatch(
     block: MatchOptions.() -> Unit,
-): Match? {
-    return useRouteMatch(jso<MatchOptions> { block() })
-}
+): Match? =
+    useRouteMatch(options = jso(block))
 
 @Deprecated(
     message = "Legacy match API",
