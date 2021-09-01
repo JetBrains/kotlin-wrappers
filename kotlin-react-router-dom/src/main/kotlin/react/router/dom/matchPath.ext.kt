@@ -4,6 +4,20 @@ import kotlinext.js.jso
 
 fun matchPath(
     pathName: String,
+    parent: Match? = null,
+    block: MatchOptions.() -> Unit,
+): Match? {
+    val options: MatchOptions = jso { }
+    options.block()
+
+    return matchPath(pathName, options, parent)
+}
+
+@Deprecated(
+    message = "Legacy match API",
+)
+fun matchPath(
+    pathName: String,
     vararg path: String,
     exact: Boolean = false,
     strict: Boolean = false,
@@ -17,15 +31,4 @@ fun matchPath(
     }
 
     return matchPath(pathName, options)
-}
-
-fun matchPath(
-    pathName: String,
-    parent: Match? = null,
-    block: MatchOptions.() -> Unit,
-): Match? {
-    val options: MatchOptions = jso { }
-    options.block()
-
-    return rawMatchPath(pathName, options, parent)
 }

@@ -10,7 +10,7 @@ import react.ReactElement
 
 external interface RouteProps : Props, MatchOptions {
     var component: ComponentType<*>
-    var render: (props: RouteResultProps) -> ReactElement?
+    var render: (props: RouteComponentProps) -> ReactElement?
 }
 
 external interface RouteComponentProps : Props {

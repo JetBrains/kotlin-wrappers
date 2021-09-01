@@ -3,6 +3,18 @@ package react.router.dom
 import kotlinext.js.jso
 
 fun useRouteMatch(
+    block: MatchOptions.() -> Unit,
+): Match? {
+    val options: MatchOptions = jso { }
+    options.block()
+
+    return useRouteMatch(options)
+}
+
+@Deprecated(
+    message = "Legacy match API",
+)
+fun useRouteMatch(
     vararg path: String,
     exact: Boolean = false,
     strict: Boolean = false,
@@ -16,13 +28,4 @@ fun useRouteMatch(
     }
 
     return useRouteMatch(options)
-}
-
-fun useRouteMatch(
-    block: MatchOptions.() -> Unit,
-): Match? {
-    val options: MatchOptions = jso { }
-    options.block()
-
-    return rawUseRouteMatch(options)
 }
