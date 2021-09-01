@@ -8,13 +8,9 @@ import react.ComponentType
 import react.Props
 import react.ReactElement
 
-external interface RouteProps : Props {
+external interface RouteProps : Props, MatchOptions {
     var component: ComponentType<*>
     var render: (props: RouteComponentProps) -> ReactElement?
-    var path: Array<out String>
-    var exact: Boolean
-    var sensitive: Boolean
-    var strict: Boolean
 }
 
 external interface RouteComponentProps : Props {
