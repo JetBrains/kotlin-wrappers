@@ -1,6 +1,8 @@
 package react.redux
 
-import react.*
+import react.Context
+import react.RBuilder
+import react.RHandler
 import redux.Store
 
 fun RBuilder.provider(
@@ -8,7 +10,7 @@ fun RBuilder.provider(
     context: Context<*>? = null,
     handler: RHandler<ProviderProps>,
 ) {
-    child<ProviderProps, Provider> {
+    Provider {
         attrs.store = store
         if (context != null) attrs.context = context
         handler()
