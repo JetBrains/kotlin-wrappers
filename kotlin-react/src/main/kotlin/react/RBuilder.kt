@@ -47,6 +47,10 @@ interface RBuilder {
         child(createElement(type, props, *children.toTypedArray()))
     }
 
+    operator fun ElementType<Props>.invoke() {
+        child(createElement(this))
+    }
+
     operator fun <P : Props> ElementType<P>.invoke(
         handler: RHandler<P>,
     ) {
