@@ -6,6 +6,7 @@ plugins {
 dependencies {
     constraints {
         api(project(":kotlin-css"))
+        api(project(":kotlin-csstype"))
         api(project(":kotlin-extensions"))
         api(project(":kotlin-react"))
         api(project(":kotlin-react-dom"))

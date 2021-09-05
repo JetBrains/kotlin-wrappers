@@ -24,6 +24,9 @@ include("examples")
 // Platform-agnostic CSS support
 include("kotlin-css")
 
+// Kotlin/JS: Zero-runtime CSS typings
+include("kotlin-csstype")
+
 // Kotlin/JS: various helpers
 include("kotlin-extensions")
 
