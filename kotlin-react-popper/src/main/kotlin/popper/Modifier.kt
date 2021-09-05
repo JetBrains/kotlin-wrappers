@@ -1,3 +1,3 @@
-package react.popper
+package popper
 
 external interface Modifier<Name>
