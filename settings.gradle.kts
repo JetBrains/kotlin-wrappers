@@ -33,6 +33,9 @@ include("kotlin-react")
 // Kotlin/JS: React DOM wrappers
 include("kotlin-react-dom")
 
+// Kotlin/JS: React Popper wrappers
+include("kotlin-react-popper")
+
 // Kotlin/JS: React Query wrappers
 include("kotlin-react-query")
 
