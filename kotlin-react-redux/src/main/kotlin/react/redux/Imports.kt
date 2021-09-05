@@ -6,7 +6,7 @@ package react.redux
 import react.*
 import redux.Store
 
-external val Provider: ComponentClass<ProviderProps>
+external val Provider: FC<ProviderProps>
 
 external interface ProviderProps : PropsWithChildren {
     var store: Store<*, *, *>
