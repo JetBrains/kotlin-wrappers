@@ -2,6 +2,8 @@ package test
 
 import kotlinx.browser.document
 import kotlinx.css.CssBuilder
+import kotlinx.css.backgroundColor
+import kotlinx.css.color
 import kotlinx.css.px
 import org.w3c.dom.HTMLStyleElement
 import org.w3c.dom.css.CSSRuleList
@@ -11,6 +13,7 @@ import react.fc
 import runTest
 import styled.StyleSheet
 import styled.css
+import styled.cssMarker
 import styled.sheets.importStyleId
 import styled.styledSpan
 import test.styleSheets.*
@@ -51,6 +54,44 @@ class StyleSheetTest : TestBase() {
         val rules = getStylesheet().cssRules
         assertEquals(1, sheet.scheduledGroups.size)
         assertEquals(0, rules.length)
+    }
+
+    object SheetWithMarker : StyleSheet("SheetWithMarker", isStatic = true) {
+        val marker by cssMarker()
+    }
+
+    @Test
+    fun cssMarker() = runTest {
+        val styledComponent = fc<Props> {
+            styledSpan {
+                css {
+                    +SheetWithMarker.marker
+                }
+            }
+        }
+        val styledElement = clearAndInject(styledComponent)
+        assertContains(styledElement.className, "SheetWithMarker-marker")
+    }
+
+    @Test
+    fun cssMarkerWithOtherCss() = runTest {
+        val styledComponent = fc<Props> {
+            styledSpan {
+                css {
+                    color = firstColor
+                }
+                css {
+                    +SheetWithMarker.marker
+                }
+                css {
+                    backgroundColor = secondColor
+                }
+            }
+        }
+        val styledElement = clearAndInject(styledComponent)
+        assertContains(styledElement.className, "SheetWithMarker-marker")
+        assertEquals(firstColor.toString(), styledElement.color())
+        assertEquals(secondColor.toString(), styledElement.getStyle().backgroundColor)
     }
 
     @Test
