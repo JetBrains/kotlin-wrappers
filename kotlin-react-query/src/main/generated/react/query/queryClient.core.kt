@@ -5,8 +5,6 @@
 
 package react.query
 
-import kotlinext.js.Tuple
-
 external interface QueryClientConfig {
     var queryCache: QueryCache
     var mutationCache: MutationCache
@@ -28,8 +26,8 @@ open external class QueryClient(config: QueryClientConfig = definedExternally) {
         filters: QueryFilters = definedExternally,
     ): TData?
 
-    open fun <TData> getQueriesData(queryKey: QueryKey): Array<out Tuple<QueryKey, TData>>
-    open fun <TData> getQueriesData(filters: QueryFilters): Array<out Tuple<QueryKey, TData>>
+    open fun <TData> getQueriesData(queryKey: QueryKey): Array<out kotlinext.js.Tuple<QueryKey, TData>>
+    open fun <TData> getQueriesData(filters: QueryFilters): Array<out kotlinext.js.Tuple<QueryKey, TData>>
     open fun <TData> setQueryData(
         queryKey: QueryKey,
         updater: Updater<TData?, TData>,
@@ -40,13 +38,13 @@ open external class QueryClient(config: QueryClientConfig = definedExternally) {
         queryKey: QueryKey,
         updater: Updater<TData?, TData>,
         options: SetDataOptions = definedExternally,
-    ): Array<out Tuple<QueryKey, TData>>
+    ): Array<out kotlinext.js.Tuple<QueryKey, TData>>
 
     open fun <TData> setQueriesData(
         filters: QueryFilters,
         updater: Updater<TData?, TData>,
         options: SetDataOptions = definedExternally,
-    ): Array<out Tuple<QueryKey, TData>>
+    ): Array<out kotlinext.js.Tuple<QueryKey, TData>>
 
     open fun <TData, TError> getQueryState(
         queryKey: QueryKey,
