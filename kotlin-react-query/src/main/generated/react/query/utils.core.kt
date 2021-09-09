@@ -10,8 +10,6 @@
 
 package react.query
 
-import kotlinext.js.Tuple
-
 external interface QueryFilters {
     var active: Boolean
     var exact: Boolean
@@ -78,7 +76,7 @@ external fun <TFilters : QueryFilters, TOptions> parseFilterArgs(
     arg1: dynamic = definedExternally,
     arg2: dynamic = definedExternally,
     arg3: TOptions = definedExternally,
-): Tuple<TFilters, TOptions?>
+): kotlinext.js.Tuple<TFilters, TOptions?>
 
 external fun parseMutationFilterArgs(
     arg1: dynamic = definedExternally,
