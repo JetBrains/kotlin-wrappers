@@ -7,6 +7,7 @@ package react.table
 
 import kotlinext.js.ReadonlyArray
 import kotlinext.js.Record
+import react.CSSProperties
 import react.Key
 import react.Props
 import react.ReactNode
@@ -79,8 +80,7 @@ external interface CellMeta<D : Any, V> : Meta<D> {
 }
 
 external interface TableCommonProps : Props {
-    // CSS properties
-    var style: dynamic
+    var style: CSSProperties
     var className: String?
     var role: String?
 }
