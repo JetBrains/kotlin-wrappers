@@ -24,7 +24,7 @@ external interface HTMLAttributes<T : Element> : AriaAttributes, DOMAttributes<T
     var placeholder: String
     var slot: String
     var spellCheck: Boolean
-    var style: dynamic // CSSProperties
+    var style: react.CSSProperties
     var tabIndex: Int
     var title: String
     var translate: Translate
