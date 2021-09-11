@@ -87,45 +87,21 @@ interface RBuilder {
     }
 
     /**
-     * This renderEach implementation ensures that element children are appended in a React-friendly way,
-     * as an array. This in turn allows React to understand whether a collection of elements has keys or not:
-     *
-     * https://reactjs.org/docs/lists-and-keys.html
-     *
-     * When you use regular forEach, React doesn't understand that those elements belong to a collection and
-     * doesn't give you a warning when attrs.key is not set:
-     *
-     * ```
-     * fun RBuilder.someItems() {
-     *     items.forEach {
-     *         div {
-     *             +it
-     *         }
-     *     }
-     * }
-     * ```
-     *
-     * However, if you do this:
-     *
-     * ```
-     * fun RBuilder.someItems() {
-     *     items.renderEach {
-     *         div {
-     *             +it
-     *         }
-     *     }
-     * }
-     * ```
-     *
-     * there will be a proper warning.
+     * Current implementation doesn't solve any problem,
+     * it works in much the same way as a simple `forEach`
      * */
+    @Deprecated(message = "Legacy API (use forEach)")
     fun <T> Iterable<T>.renderEach(fn: RBuilder.(T) -> Unit) {
         mapTo(childList) {
             buildElement { fn(it) }
         }
     }
 
-
+    /**
+     * Current implementation doesn't solve any problem,
+     * it works in much the same way as a simple `renderEachIndexed`
+     * */
+    @Deprecated(message = "Legacy API (use renderEachIndexed)")
     fun <T> Iterable<T>.renderEachIndexed(fn: RBuilder.(Int, T) -> Unit) {
         mapIndexedTo(childList) { index, it ->
             buildElement { fn(index, it) }
