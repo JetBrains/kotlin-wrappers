@@ -132,7 +132,7 @@ interface RBuilder {
         }
     }
 
-    fun ReactElement.withKey(newKey: Key) {
+    private fun ReactElement.deprecatedWithKey(newKey: Key) {
         val index = childList.indexOf(this)
         if (index >= 0) {
             childList.removeAt(index)
@@ -141,7 +141,11 @@ interface RBuilder {
         }
     }
 
-    fun ReactElement.withKey(newKey: Number) = withKey(newKey.toString())
+    @Deprecated("Legacy API (use cloneElement)")
+    fun ReactElement.withKey(newKey: Key) = deprecatedWithKey(newKey)
+
+    @Deprecated("Legacy API (use cloneElement)")
+    fun ReactElement.withKey(newKey: Number) = deprecatedWithKey(newKey.toString())
 }
 
 @JsName("createBuilder")
