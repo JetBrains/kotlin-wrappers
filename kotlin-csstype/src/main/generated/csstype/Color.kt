@@ -2,4 +2,5 @@
 
 package csstype
 
-external interface Properties : StandardProperties
+// Globals | DataType.Color
+sealed external interface Color

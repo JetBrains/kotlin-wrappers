@@ -2,4 +2,5 @@
 
 package csstype
 
-external interface Properties : StandardProperties
+// "fixed" | "zoom"
+sealed external interface UserZoom

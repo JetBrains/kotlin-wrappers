@@ -2,4 +2,5 @@
 
 package csstype
 
-external interface Properties : StandardProperties
+// "false" | "true"
+sealed external interface Inherits

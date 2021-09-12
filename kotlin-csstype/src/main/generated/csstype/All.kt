@@ -2,4 +2,5 @@
 
 package csstype
 
-external interface Properties : StandardProperties
+// Globals
+sealed external interface All
