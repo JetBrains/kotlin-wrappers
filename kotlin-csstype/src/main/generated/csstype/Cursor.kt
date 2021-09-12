@@ -4,8 +4,6 @@ package csstype
 
 /*
 | Globals
-| "-moz-grab"
-| "-webkit-grab"
 | "alias"
 | "all-scroll"
 | "auto"

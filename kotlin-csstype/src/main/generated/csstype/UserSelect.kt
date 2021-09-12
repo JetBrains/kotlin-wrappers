@@ -2,5 +2,5 @@
 
 package csstype
 
-// Globals | "-moz-none" | "all" | "auto" | "contain" | "element" | "none" | "text"
+// Globals | "all" | "auto" | "contain" | "element" | "none" | "text"
 sealed external interface UserSelect
