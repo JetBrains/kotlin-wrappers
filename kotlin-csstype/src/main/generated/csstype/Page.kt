@@ -2,4 +2,6 @@
 
 package csstype
 
-external interface Properties : StandardProperties
+external interface Page {
+    var size: Size
+}
