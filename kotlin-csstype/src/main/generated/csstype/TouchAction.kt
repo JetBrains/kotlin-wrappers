@@ -4,9 +4,6 @@ package csstype
 
 /*
 | Globals
-| "-ms-manipulation"
-| "-ms-none"
-| "-ms-pinch-zoom"
 | "auto"
 | "manipulation"
 | "none"

@@ -2,5 +2,5 @@
 
 package csstype
 
-// Globals | "-moz-hidden-unscrollable" | "auto" | "clip" | "hidden" | "scroll" | "visible"
+// Globals | "auto" | "clip" | "hidden" | "scroll" | "visible"
 sealed external interface OverflowX

@@ -2,5 +2,5 @@
 
 package csstype
 
-// "-moz-initial" | "inherit" | "initial" | "revert" | "unset"
+// "inherit" | "initial" | "revert" | "unset"
 sealed external interface Globals

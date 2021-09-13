@@ -2,5 +2,5 @@
 
 package csstype
 
-// Globals | "-ms-text-combine-horizontal" | "all" | "digits" | "none" | (string & {})
+// Globals | "all" | "digits" | "none" | (string & {})
 sealed external interface TextCombineUpright

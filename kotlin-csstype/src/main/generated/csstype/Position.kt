@@ -2,5 +2,5 @@
 
 package csstype
 
-// Globals | "-webkit-sticky" | "absolute" | "fixed" | "relative" | "static" | "sticky"
+// Globals | "absolute" | "fixed" | "relative" | "static" | "sticky"
 sealed external interface Position

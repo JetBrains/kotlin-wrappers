@@ -5,9 +5,6 @@ package csstype
 /*
 | Globals
 | TLength
-| "-moz-max-content"
-| "-moz-min-content"
-| "-webkit-fit-content"
 | "auto"
 | "fit-content"
 | "max-content"
