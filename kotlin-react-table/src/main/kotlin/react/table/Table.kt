@@ -80,7 +80,7 @@ external interface CellMeta<D : Any, V> : Meta<D> {
 }
 
 external interface TableCommonProps : Props {
-    var style: CSSProperties
+    var style: CSSProperties?
     var className: String?
     var role: String?
 }
