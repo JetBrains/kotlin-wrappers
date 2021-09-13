@@ -99,9 +99,9 @@ interface RBuilder {
 
     /**
      * Current implementation doesn't solve any problem,
-     * it works in much the same way as a simple `renderEachIndexed`
+     * it works in much the same way as a simple `forEachIndexed`
      * */
-    @Deprecated(message = "Legacy API (use renderEachIndexed)")
+    @Deprecated(message = "Legacy API (use forEachIndexed)")
     fun <T> Iterable<T>.renderEachIndexed(fn: RBuilder.(Int, T) -> Unit) {
         mapIndexedTo(childList) { index, it ->
             buildElement { fn(index, it) }
