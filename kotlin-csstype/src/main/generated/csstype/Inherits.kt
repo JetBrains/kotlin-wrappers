@@ -2,5 +2,4 @@
 
 package csstype
 
-// "false" | "true"
-sealed external interface Inherits
+typealias Inherits = Boolean
