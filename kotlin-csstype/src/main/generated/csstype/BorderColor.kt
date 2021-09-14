@@ -2,5 +2,4 @@
 
 package csstype
 
-// Globals | DataType.Color | (string & {})
-sealed external interface BorderColor
+typealias BorderColor = Color
