@@ -5,6 +5,6 @@ package react.dom
 import org.w3c.dom.Element
 
 external interface ColHTMLAttributes<T : Element> : HTMLAttributes<T> {
-    var span: Int
-    var width: Double
+    var span: Int?
+    var width: Double?
 }
