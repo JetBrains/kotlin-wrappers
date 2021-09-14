@@ -19,8 +19,10 @@ internal fun MavenPublication.configurePom(
         developers {
             developer {
                 id.set("JetBrains")
-                name.set("Leonid Khachaturov")
-                email.set("Leonid.Khachaturov@jetbrains.com")
+                name.set("JetBrains Team")
+                email.set("community-support@jetbrains.com")
+                organization.set("JetBrains")
+                organizationUrl.set("https://www.jetbrains.com/")
             }
         }
 
