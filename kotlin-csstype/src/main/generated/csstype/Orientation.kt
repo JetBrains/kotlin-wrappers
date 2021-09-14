@@ -2,5 +2,13 @@
 
 package csstype
 
-// "auto" | "landscape" | "portrait"
-sealed external interface Orientation
+@Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
+// language=JavaScript
+@JsName("""({auto: 'auto', landscape: 'landscape', portrait: 'portrait'})""")
+external enum class Orientation {
+    auto,
+    landscape,
+    portrait,
+
+    ;
+}

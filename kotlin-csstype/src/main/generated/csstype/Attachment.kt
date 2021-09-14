@@ -4,10 +4,11 @@ package csstype
 
 @Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
 // language=JavaScript
-@JsName("""({fixed: 'fixed', zoom: 'zoom'})""")
-external enum class UserZoom {
+@JsName("""({fixed: 'fixed', local: 'local', scroll: 'scroll'})""")
+external enum class Attachment {
     fixed,
-    zoom,
+    local,
+    scroll,
 
     ;
 }

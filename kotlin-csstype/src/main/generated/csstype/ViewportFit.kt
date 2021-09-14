@@ -2,5 +2,13 @@
 
 package csstype
 
-// "auto" | "contain" | "cover"
-sealed external interface ViewportFit
+@Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
+// language=JavaScript
+@JsName("""({auto: 'auto', contain: 'contain', cover: 'cover'})""")
+external enum class ViewportFit {
+    auto,
+    contain,
+    cover,
+
+    ;
+}
