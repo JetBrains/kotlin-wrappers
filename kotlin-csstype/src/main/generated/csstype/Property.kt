@@ -3,7 +3,7 @@
 package csstype
 
 external interface Property {
-    var inherits: Inherits
-    var initialValue: String
-    var syntax: String
+    var inherits: Inherits?
+    var initialValue: String?
+    var syntax: String?
 }
