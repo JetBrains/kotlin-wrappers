@@ -3,4 +3,4 @@
 package csstype
 
 // Globals | DataType.Color | "auto"
-sealed external interface ScrollbarColor
+sealed external interface AccentColor

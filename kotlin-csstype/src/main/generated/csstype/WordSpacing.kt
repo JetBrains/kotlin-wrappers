@@ -2,5 +2,5 @@
 
 package csstype
 
-// Globals | TLength | "normal" | (string & {})
+// Globals | TLength | "normal"
 sealed external interface WordSpacing

@@ -2,5 +2,5 @@
 
 package csstype
 
-// Globals | "always" | "auto" | "stable" | (string & {})
+// Globals | "auto" | "stable" | (string & {})
 sealed external interface ScrollbarGutter

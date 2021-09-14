@@ -2,5 +2,5 @@
 
 package csstype
 
-// Globals | "none" | (number & {})
+// Globals | "from-font" | "none" | (string & {}) | (number & {})
 sealed external interface FontSizeAdjust

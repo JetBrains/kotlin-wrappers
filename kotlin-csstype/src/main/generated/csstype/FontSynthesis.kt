@@ -2,5 +2,5 @@
 
 package csstype
 
-// Globals | "none" | "style" | "weight" | (string & {})
+// Globals | "none" | "small-caps" | "style" | "weight" | (string & {})
 sealed external interface FontSynthesis

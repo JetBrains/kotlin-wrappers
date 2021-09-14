@@ -78,9 +78,9 @@ external interface StandardShorthandProperties {
      *
      * **Syntax**: `<'border-top-width'> || <'border-top-style'> || <color>`
      *
-     *    | Chrome | Firefox | Safari | Edge | IE  |
-     *    | :----: | :-----: | :----: | :--: | :-: |
-     *    |   87   |   66    |   No   | n/a  | No  |
+     *    | Chrome | Firefox |  Safari  |  Edge  | IE  |
+     *    | :----: | :-----: | :------: | :----: | :-: |
+     *    |   87   |   66    |   14.1   |   87   | No  |
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/border-block">MDN</a>
      */
@@ -157,9 +157,9 @@ external interface StandardShorthandProperties {
      *
      * **Syntax**: `<'border-top-width'> || <'border-top-style'> || <color>`
      *
-     *    | Chrome | Firefox | Safari | Edge | IE  |
-     *    | :----: | :-----: | :----: | :--: | :-: |
-     *    |   87   |   66    |   No   | n/a  | No  |
+     *    | Chrome | Firefox |  Safari  |  Edge  | IE  |
+     *    | :----: | :-----: | :------: | :----: | :-: |
+     *    |   87   |   66    |   14.1   |   87   | No  |
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/border-inline">MDN</a>
      */
@@ -303,10 +303,10 @@ external interface StandardShorthandProperties {
      *
      * **Syntax**: `none | [ <'flex-grow'> <'flex-shrink'>? || <'flex-basis'> ]`
      *
-     *    |  Chrome  | Firefox |  Safari   |  Edge  |    IE    |
-     *    | :------: | :-----: | :-------: | :----: | :------: |
-     *    |    29    |   20    |     9     |   12   |    11    |
-     *    |    21′   |         |    6.1′   |        |    10′   |
+     *    |  Chrome  | Firefox | Safari  |  Edge  |    IE    |
+     *    | :------: | :-----: | :-----: | :----: | :------: |
+     *    |    29    |   20    |    9    |   12   |    11    |
+     *    |    21′   |         |    7′   |        |    10′   |
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/flex">MDN</a>
      */
@@ -317,10 +317,10 @@ external interface StandardShorthandProperties {
      *
      * **Syntax**: `<'flex-direction'> || <'flex-wrap'>`
      *
-     *    |  Chrome  | Firefox |  Safari   |  Edge  |   IE   |
-     *    | :------: | :-----: | :-------: | :----: | :----: |
-     *    |    29    |   28    |     9     |   12   |   11   |
-     *    |    21′   |         |    6.1′   |        |        |
+     *    |  Chrome  | Firefox | Safari  |  Edge  |   IE   |
+     *    | :------: | :-----: | :-----: | :----: | :----: |
+     *    |    29    |   28    |    9    |   12   |   11   |
+     *    |    21′   |         |    7′   |        |        |
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/flex-flow">MDN</a>
      */
@@ -348,9 +348,9 @@ external interface StandardShorthandProperties {
      *
      * _Supported in Flex Layout_
      *
-     *    | Chrome | Firefox | Safari |  Edge  | IE  |
-     *    | :----: | :-----: | :----: | :----: | :-: |
-     *    |   84   |   63    |   No   |   84   | No  |
+     *    | Chrome | Firefox |  Safari  |  Edge  | IE  |
+     *    | :----: | :-----: | :------: | :----: | :-: |
+     *    |   84   |   63    |   14.1   |   84   | No  |
      *
      * ---
      *
@@ -478,9 +478,9 @@ external interface StandardShorthandProperties {
      *
      * **Syntax**: `<mask-layer>#`
      *
-     *    | Chrome | Firefox | Safari  |  Edge  | IE  |
-     *    | :----: | :-----: | :-----: | :----: | :-: |
-     *    |   1    |    2    |   3.2   |   12   | No  |
+     *    | Chrome | Firefox | Safari  | Edge  | IE  |
+     *    | :----: | :-----: | :-----: | :---: | :-: |
+     *    |   1    |    2    |   3.1   | 12-79 | No  |
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/mask">MDN</a>
      */
@@ -588,23 +588,9 @@ external interface StandardShorthandProperties {
      *
      * **Syntax**: `<'align-items'> <'justify-items'>?`
      *
-     * ---
-     *
-     * _Supported in Flex Layout_
-     *
      *    | Chrome | Firefox | Safari |  Edge  | IE  |
      *    | :----: | :-----: | :----: | :----: | :-: |
      *    |   59   |   45    |   11   |   79   | No  |
-     *
-     * ---
-     *
-     * _Supported in Grid Layout_
-     *
-     *    | Chrome | Firefox | Safari |  Edge  | IE  |
-     *    | :----: | :-----: | :----: | :----: | :-: |
-     *    |   59   |   45    |   11   |   79   | No  |
-     *
-     * ---
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/place-items">MDN</a>
      */
@@ -615,23 +601,9 @@ external interface StandardShorthandProperties {
      *
      * **Syntax**: `<'align-self'> <'justify-self'>?`
      *
-     * ---
-     *
-     * _Supported in Flex Layout_
-     *
      *    | Chrome | Firefox | Safari |  Edge  | IE  |
      *    | :----: | :-----: | :----: | :----: | :-: |
      *    |   59   |   45    |   11   |   79   | No  |
-     *
-     * ---
-     *
-     * _Supported in Grid Layout_
-     *
-     *    | Chrome | Firefox | Safari |  Edge  | IE  |
-     *    | :----: | :-----: | :----: | :----: | :-: |
-     *    |   59   |   45    |   11   |   79   | No  |
-     *
-     * ---
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/place-self">MDN</a>
      */
@@ -655,9 +627,9 @@ external interface StandardShorthandProperties {
      *
      * **Syntax**: `<'text-emphasis-style'> || <'text-emphasis-color'>`
      *
-     *    |    Chrome    | Firefox | Safari  |     Edge     | IE  |
-     *    | :----------: | :-----: | :-----: | :----------: | :-: |
-     *    |       25′    |   46    |   6.1   |       79′    | No  |
+     *    |    Chrome    | Firefox | Safari |     Edge     | IE  |
+     *    | :----------: | :-----: | :----: | :----------: | :-: |
+     *    |       25′    |   46    |   7    |       79′    | No  |
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/text-emphasis">MDN</a>
      */
