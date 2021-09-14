@@ -5,6 +5,6 @@ package react.dom
 import org.w3c.dom.Element
 
 external interface CanvasHTMLAttributes<T : Element> : HTMLAttributes<T> {
-    var height: Double
-    var width: Double
+    var height: Double?
+    var width: Double?
 }

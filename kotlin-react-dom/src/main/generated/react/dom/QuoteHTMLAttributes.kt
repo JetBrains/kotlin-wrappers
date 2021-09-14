@@ -5,5 +5,5 @@ package react.dom
 import org.w3c.dom.Element
 
 external interface QuoteHTMLAttributes<T : Element> : HTMLAttributes<T> {
-    var cite: String
+    var cite: String?
 }

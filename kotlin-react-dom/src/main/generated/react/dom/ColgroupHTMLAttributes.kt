@@ -5,5 +5,5 @@ package react.dom
 import org.w3c.dom.Element
 
 external interface ColgroupHTMLAttributes<T : Element> : HTMLAttributes<T> {
-    var span: Int
+    var span: Int?
 }

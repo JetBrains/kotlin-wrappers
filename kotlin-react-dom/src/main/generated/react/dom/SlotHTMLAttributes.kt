@@ -5,5 +5,5 @@ package react.dom
 import org.w3c.dom.Element
 
 external interface SlotHTMLAttributes<T : Element> : HTMLAttributes<T> {
-    var name: String
+    var name: String?
 }
