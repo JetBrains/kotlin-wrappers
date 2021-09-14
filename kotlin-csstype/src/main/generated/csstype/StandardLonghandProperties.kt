@@ -31,7 +31,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/align-content">MDN</a>
      */
-    var alignContent: AlignContent
+    var alignContent: AlignContent?
 
     /**
      * The CSS **`align-items`** property sets the `align-self` value on all direct children as a group. In Flexbox, it controls the alignment of items on the Cross Axis. In Grid Layout, it controls the alignment of items on the Block Axis within their grid area.
@@ -61,7 +61,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/align-items">MDN</a>
      */
-    var alignItems: AlignItems
+    var alignItems: AlignItems?
 
     /**
      * The **`align-self`** CSS property overrides a grid or flex item's `align-items` value. In Grid, it aligns the item inside the grid area. In Flexbox, it aligns the item on the cross axis.
@@ -91,7 +91,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/align-self">MDN</a>
      */
-    var alignSelf: AlignSelf
+    var alignSelf: AlignSelf?
 
     /**
      * The **`align-tracks`** CSS property sets the alignment in the masonry axis for grid containers that have masonry in their block axis.
@@ -106,7 +106,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/align-tracks">MDN</a>
      */
-    var alignTracks: AlignTracks
+    var alignTracks: AlignTracks?
 
     /**
      * The **`animation-delay`** CSS property specifies the amount of time to wait from applying the animation to an element before beginning to perform the animation. The animation can start later, immediately from its beginning, or immediately and partway through the animation.
@@ -122,7 +122,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/animation-delay">MDN</a>
      */
-    var animationDelay: AnimationDelay
+    var animationDelay: AnimationDelay?
 
     /**
      * The **`animation-direction`** CSS property sets whether an animation should play forward, backward, or alternate back and forth between playing the sequence forward and backward.
@@ -138,7 +138,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/animation-direction">MDN</a>
      */
-    var animationDirection: AnimationDirection
+    var animationDirection: AnimationDirection?
 
     /**
      * The **`animation-duration`** CSS property sets the length of time that an animation takes to complete one cycle.
@@ -154,7 +154,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/animation-duration">MDN</a>
      */
-    var animationDuration: AnimationDuration
+    var animationDuration: AnimationDuration?
 
     /**
      * The **`animation-fill-mode`** CSS property sets how a CSS animation applies styles to its target before and after its execution.
@@ -170,7 +170,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/animation-fill-mode">MDN</a>
      */
-    var animationFillMode: AnimationFillMode
+    var animationFillMode: AnimationFillMode?
 
     /**
      * The **`animation-iteration-count`** CSS property sets the number of times an animation sequence should be played before stopping.
@@ -186,7 +186,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/animation-iteration-count">MDN</a>
      */
-    var animationIterationCount: AnimationIterationCount
+    var animationIterationCount: AnimationIterationCount?
 
     /**
      * The **`animation-name`** CSS property specifies the names of one or more `@keyframes` at-rules describing the animation or animations to apply to the element.
@@ -202,7 +202,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/animation-name">MDN</a>
      */
-    var animationName: AnimationName
+    var animationName: AnimationName?
 
     /**
      * The **`animation-play-state`** CSS property sets whether an animation is running or paused.
@@ -218,7 +218,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/animation-play-state">MDN</a>
      */
-    var animationPlayState: AnimationPlayState
+    var animationPlayState: AnimationPlayState?
 
     /**
      * The **`animation-timing-function`** CSS property sets how an animation progresses through the duration of each cycle.
@@ -234,7 +234,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/animation-timing-function">MDN</a>
      */
-    var animationTimingFunction: AnimationTimingFunction
+    var animationTimingFunction: AnimationTimingFunction?
 
     /**
      * The `**appearance**` CSS property is used to display an element using platform-native styling, based on the operating system's theme. The **`-moz-appearance`** and **`-webkit-appearance`** properties are non-standard versions of this property, used (respectively) by Gecko (Firefox) and by WebKit-based (e.g., Safari) and Blink-based (e.g., Chrome, Opera) browsers to achieve the same thing. Note that Firefox and Edge also support **`-webkit-appearance`**, for compatibility reasons.
@@ -250,7 +250,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/appearance">MDN</a>
      */
-    var appearance: Appearance
+    var appearance: Appearance?
 
     /**
      * The **`aspect-ratio`**  CSS property sets a **preferred aspect ratio** for the box, which will be used in the calculation of auto sizes and some other layout functions.
@@ -265,7 +265,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/aspect-ratio">MDN</a>
      */
-    var aspectRatio: AspectRatio
+    var aspectRatio: AspectRatio?
 
     /**
      * The **`backdrop-filter`** CSS property lets you apply graphical effects such as blurring or color shifting to the area behind an element. Because it applies to everything _behind_ the element, to see the effect you must make the element or its background at least partially transparent.
@@ -280,7 +280,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/backdrop-filter">MDN</a>
      */
-    var backdropFilter: BackdropFilter
+    var backdropFilter: BackdropFilter?
 
     /**
      * The **`backface-visibility`** CSS property sets whether the back face of an element is visible when turned towards the user.
@@ -296,7 +296,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/backface-visibility">MDN</a>
      */
-    var backfaceVisibility: BackfaceVisibility
+    var backfaceVisibility: BackfaceVisibility?
 
     /**
      * The **`background-attachment`** CSS property sets whether a background image's position is fixed within the viewport, or scrolls with its containing block.
@@ -311,7 +311,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/background-attachment">MDN</a>
      */
-    var backgroundAttachment: BackgroundAttachment
+    var backgroundAttachment: BackgroundAttachment?
 
     /**
      * The **`background-blend-mode`** CSS property sets how an element's background images should blend with each other and with the element's background color.
@@ -326,7 +326,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/background-blend-mode">MDN</a>
      */
-    var backgroundBlendMode: BackgroundBlendMode
+    var backgroundBlendMode: BackgroundBlendMode?
 
     /**
      * The **`background-clip`** CSS property sets whether an element's background extends underneath its border box, padding box, or content box.
@@ -341,7 +341,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/background-clip">MDN</a>
      */
-    var backgroundClip: BackgroundClip
+    var backgroundClip: BackgroundClip?
 
     /**
      * The **`background-color`** CSS property sets the background color of an element.
@@ -356,7 +356,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/background-color">MDN</a>
      */
-    var backgroundColor: BackgroundColor
+    var backgroundColor: BackgroundColor?
 
     /**
      * The **`background-image`** CSS property sets one or more background images on an element.
@@ -371,7 +371,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/background-image">MDN</a>
      */
-    var backgroundImage: BackgroundImage
+    var backgroundImage: BackgroundImage?
 
     /**
      * The **`background-origin`** CSS property sets the background's origin: from the border start, inside the border, or inside the padding.
@@ -386,7 +386,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/background-origin">MDN</a>
      */
-    var backgroundOrigin: BackgroundOrigin
+    var backgroundOrigin: BackgroundOrigin?
 
     /**
      * The **`background-position-x`** CSS property sets the initial horizontal position for each background image. The position is relative to the position layer set by `background-origin`.
@@ -401,7 +401,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/background-position-x">MDN</a>
      */
-    var backgroundPositionX: BackgroundPositionX
+    var backgroundPositionX: BackgroundPositionX?
 
     /**
      * The **`background-position-y`** CSS property sets the initial vertical position for each background image. The position is relative to the position layer set by `background-origin`.
@@ -416,7 +416,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/background-position-y">MDN</a>
      */
-    var backgroundPositionY: BackgroundPositionY
+    var backgroundPositionY: BackgroundPositionY?
 
     /**
      * The **`background-repeat`** CSS property sets how background images are repeated. A background image can be repeated along the horizontal and vertical axes, or not repeated at all.
@@ -431,7 +431,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/background-repeat">MDN</a>
      */
-    var backgroundRepeat: BackgroundRepeat
+    var backgroundRepeat: BackgroundRepeat?
 
     /**
      * The **`background-size`** CSS property sets the size of the element's background image. The image can be left to its natural size, stretched, or constrained to fit the available space.
@@ -447,14 +447,14 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/background-size">MDN</a>
      */
-    var backgroundSize: BackgroundSize
+    var backgroundSize: BackgroundSize?
 
     /**
      * **Syntax**: `clip | ellipsis | <string>`
      *
      * **Initial value**: `clip`
      */
-    var blockOverflow: BlockOverflow
+    var blockOverflow: BlockOverflow?
 
     /**
      * The **`block-size`** CSS property defines the horizontal or vertical size of an element's block, depending on its writing mode. It corresponds to either the `width` or the `height` property, depending on the value of `writing-mode`.
@@ -469,7 +469,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/block-size">MDN</a>
      */
-    var blockSize: BlockSize
+    var blockSize: BlockSize?
 
     /**
      * The **`border-block-color`** CSS property defines the color of the logical block borders of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color` and `border-bottom-color`, or `border-right-color` and `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
@@ -484,7 +484,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/border-block-color">MDN</a>
      */
-    var borderBlockColor: BorderBlockColor
+    var borderBlockColor: BorderBlockColor?
 
     /**
      * The **`border-block-end-color`** CSS property defines the color of the logical block-end border of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color`, `border-right-color`, `border-bottom-color`, or `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
@@ -499,7 +499,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/border-block-end-color">MDN</a>
      */
-    var borderBlockEndColor: BorderBlockEndColor
+    var borderBlockEndColor: BorderBlockEndColor?
 
     /**
      * The **`border-block-end-style`** CSS property defines the style of the logical block-end border of an element, which maps to a physical border style depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-style`, `border-right-style`, `border-bottom-style`, or `border-left-style` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
@@ -514,7 +514,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/border-block-end-style">MDN</a>
      */
-    var borderBlockEndStyle: BorderBlockEndStyle
+    var borderBlockEndStyle: BorderBlockEndStyle?
 
     /**
      * The **`border-block-end-width`** CSS property defines the width of the logical block-end border of an element, which maps to a physical border width depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-width`, `border-right-width`, `border-bottom-width`, or `border-left-width` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
@@ -529,7 +529,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/border-block-end-width">MDN</a>
      */
-    var borderBlockEndWidth: BorderBlockEndWidth
+    var borderBlockEndWidth: BorderBlockEndWidth?
 
     /**
      * The **`border-block-start-color`** CSS property defines the color of the logical block-start border of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color`, `border-right-color`, `border-bottom-color`, or `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
@@ -544,7 +544,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/border-block-start-color">MDN</a>
      */
-    var borderBlockStartColor: BorderBlockStartColor
+    var borderBlockStartColor: BorderBlockStartColor?
 
     /**
      * The **`border-block-start-style`** CSS property defines the style of the logical block start border of an element, which maps to a physical border style depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-style`, `border-right-style`, `border-bottom-style`, or `border-left-style` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
@@ -559,7 +559,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/border-block-start-style">MDN</a>
      */
-    var borderBlockStartStyle: BorderBlockStartStyle
+    var borderBlockStartStyle: BorderBlockStartStyle?
 
     /**
      * The **`border-block-start-width`** CSS property defines the width of the logical block-start border of an element, which maps to a physical border width depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-width`, `border-right-width`, `border-bottom-width`, or `border-left-width` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
@@ -574,7 +574,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/border-block-start-width">MDN</a>
      */
-    var borderBlockStartWidth: BorderBlockStartWidth
+    var borderBlockStartWidth: BorderBlockStartWidth?
 
     /**
      * The **`border-block-style`** CSS property defines the style of the logical block borders of an element, which maps to a physical border style depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-style` and `border-bottom-style`, or `border-left-style` and `border-right-style` properties depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
@@ -589,7 +589,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/border-block-style">MDN</a>
      */
-    var borderBlockStyle: BorderBlockStyle
+    var borderBlockStyle: BorderBlockStyle?
 
     /**
      * The **`border-block-width`** CSS property defines the width of the logical block borders of an element, which maps to a physical border width depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-width` and `border-bottom-width`, or `border-left-width`, and `border-right-width` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
@@ -604,7 +604,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/border-block-width">MDN</a>
      */
-    var borderBlockWidth: BorderBlockWidth
+    var borderBlockWidth: BorderBlockWidth?
 
     /**
      * The **`border-bottom-color`** CSS property sets the color of an element's bottom border. It can also be set with the shorthand CSS properties `border-color` or `border-bottom`.
@@ -619,7 +619,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/border-bottom-color">MDN</a>
      */
-    var borderBottomColor: BorderBottomColor
+    var borderBottomColor: BorderBottomColor?
 
     /**
      * The **`border-bottom-left-radius`** CSS property rounds the bottom-left corner of an element by specifying the radius (or the radius of the semi-major and semi-minor axes) of the ellipse defining the curvature of the corner.
@@ -635,7 +635,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/border-bottom-left-radius">MDN</a>
      */
-    var borderBottomLeftRadius: BorderBottomLeftRadius
+    var borderBottomLeftRadius: BorderBottomLeftRadius?
 
     /**
      * The **`border-bottom-right-radius`** CSS property rounds the bottom-right corner of an element by specifying the radius (or the radius of the semi-major and semi-minor axes) of the ellipse defining the curvature of the corner.
@@ -651,7 +651,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/border-bottom-right-radius">MDN</a>
      */
-    var borderBottomRightRadius: BorderBottomRightRadius
+    var borderBottomRightRadius: BorderBottomRightRadius?
 
     /**
      * The **`border-bottom-style`** CSS property sets the line style of an element's bottom `border`.
@@ -666,7 +666,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/border-bottom-style">MDN</a>
      */
-    var borderBottomStyle: BorderBottomStyle
+    var borderBottomStyle: BorderBottomStyle?
 
     /**
      * The **`border-bottom-width`** CSS property sets the width of the bottom border of an element.
@@ -681,7 +681,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/border-bottom-width">MDN</a>
      */
-    var borderBottomWidth: BorderBottomWidth
+    var borderBottomWidth: BorderBottomWidth?
 
     /**
      * The **`border-collapse`** CSS property sets whether cells inside a `<table>` have shared or separate borders.
@@ -696,7 +696,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/border-collapse">MDN</a>
      */
-    var borderCollapse: BorderCollapse
+    var borderCollapse: BorderCollapse?
 
     /**
      * The **`border-end-end-radius`** CSS property defines a logical border radius on an element, which maps to a physical border radius that depends on the element's `writing-mode`, `direction`, and `text-orientation`. This is useful when building styles to work regardless of the text orientation and writing mode.
@@ -711,7 +711,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/border-end-end-radius">MDN</a>
      */
-    var borderEndEndRadius: BorderEndEndRadius
+    var borderEndEndRadius: BorderEndEndRadius?
 
     /**
      * The **`border-end-start-radius`** CSS property defines a logical border radius on an element, which maps to a physical border radius depending on the element's `writing-mode`, `direction`, and `text-orientation`. This is useful when building styles to work regardless of the text orientation and writing mode.
@@ -726,7 +726,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/border-end-start-radius">MDN</a>
      */
-    var borderEndStartRadius: BorderEndStartRadius
+    var borderEndStartRadius: BorderEndStartRadius?
 
     /**
      * The **`border-image-outset`** CSS property sets the distance by which an element's border image is set out from its border box.
@@ -741,7 +741,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/border-image-outset">MDN</a>
      */
-    var borderImageOutset: BorderImageOutset
+    var borderImageOutset: BorderImageOutset?
 
     /**
      * The **`border-image-repeat`** CSS property defines how the edge regions of a source image are adjusted to fit the dimensions of an element's border image.
@@ -756,7 +756,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/border-image-repeat">MDN</a>
      */
-    var borderImageRepeat: BorderImageRepeat
+    var borderImageRepeat: BorderImageRepeat?
 
     /**
      * The **`border-image-slice`** CSS property divides the image specified by `border-image-source` into regions. These regions form the components of an element's border image.
@@ -771,7 +771,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/border-image-slice">MDN</a>
      */
-    var borderImageSlice: BorderImageSlice
+    var borderImageSlice: BorderImageSlice?
 
     /**
      * The **`border-image-source`** CSS property sets the source image used to create an element's border image.
@@ -786,7 +786,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/border-image-source">MDN</a>
      */
-    var borderImageSource: BorderImageSource
+    var borderImageSource: BorderImageSource?
 
     /**
      * The **`border-image-width`** CSS property sets the width of an element's border image.
@@ -801,7 +801,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/border-image-width">MDN</a>
      */
-    var borderImageWidth: BorderImageWidth
+    var borderImageWidth: BorderImageWidth?
 
     /**
      * The **`border-inline-color`** CSS property defines the color of the logical inline borders of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color` and `border-bottom-color`, or `border-right-color` and `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
@@ -816,7 +816,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/border-inline-color">MDN</a>
      */
-    var borderInlineColor: BorderInlineColor
+    var borderInlineColor: BorderInlineColor?
 
     /**
      * The **`border-inline-end-color`** CSS property defines the color of the logical inline-end border of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color`, `border-right-color`, `border-bottom-color`, or `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
@@ -832,7 +832,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/border-inline-end-color">MDN</a>
      */
-    var borderInlineEndColor: BorderInlineEndColor
+    var borderInlineEndColor: BorderInlineEndColor?
 
     /**
      * The **`border-inline-end-style`** CSS property defines the style of the logical inline end border of an element, which maps to a physical border style depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-style`, `border-right-style`, `border-bottom-style`, or `border-left-style` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
@@ -848,7 +848,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/border-inline-end-style">MDN</a>
      */
-    var borderInlineEndStyle: BorderInlineEndStyle
+    var borderInlineEndStyle: BorderInlineEndStyle?
 
     /**
      * The **`border-inline-end-width`** CSS property defines the width of the logical inline-end border of an element, which maps to a physical border width depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-width`, `border-right-width`, `border-bottom-width`, or `border-left-width` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
@@ -864,7 +864,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/border-inline-end-width">MDN</a>
      */
-    var borderInlineEndWidth: BorderInlineEndWidth
+    var borderInlineEndWidth: BorderInlineEndWidth?
 
     /**
      * The **`border-inline-start-color`** CSS property defines the color of the logical inline start border of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color`, `border-right-color`, `border-bottom-color`, or `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
@@ -880,7 +880,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/border-inline-start-color">MDN</a>
      */
-    var borderInlineStartColor: BorderInlineStartColor
+    var borderInlineStartColor: BorderInlineStartColor?
 
     /**
      * The **`border-inline-start-style`** CSS property defines the style of the logical inline start border of an element, which maps to a physical border style depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-style`, `border-right-style`, `border-bottom-style`, or `border-left-style` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
@@ -896,7 +896,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/border-inline-start-style">MDN</a>
      */
-    var borderInlineStartStyle: BorderInlineStartStyle
+    var borderInlineStartStyle: BorderInlineStartStyle?
 
     /**
      * The **`border-inline-start-width`** CSS property defines the width of the logical inline-start border of an element, which maps to a physical border width depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-width`, `border-right-width`, `border-bottom-width`, or `border-left-width` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
@@ -911,7 +911,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/border-inline-start-width">MDN</a>
      */
-    var borderInlineStartWidth: BorderInlineStartWidth
+    var borderInlineStartWidth: BorderInlineStartWidth?
 
     /**
      * The **`border-inline-style`** CSS property defines the style of the logical inline borders of an element, which maps to a physical border style depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-style` and `border-bottom-style`, or `border-left-style` and `border-right-style` properties depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
@@ -926,7 +926,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/border-inline-style">MDN</a>
      */
-    var borderInlineStyle: BorderInlineStyle
+    var borderInlineStyle: BorderInlineStyle?
 
     /**
      * The **`border-inline-width`** CSS property defines the width of the logical inline borders of an element, which maps to a physical border width depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-width` and `border-bottom-width`, or `border-left-width`, and `border-right-width` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
@@ -941,7 +941,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/border-inline-width">MDN</a>
      */
-    var borderInlineWidth: BorderInlineWidth
+    var borderInlineWidth: BorderInlineWidth?
 
     /**
      * The **`border-left-color`** CSS property sets the color of an element's left border. It can also be set with the shorthand CSS properties `border-color` or `border-left`.
@@ -956,7 +956,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/border-left-color">MDN</a>
      */
-    var borderLeftColor: BorderLeftColor
+    var borderLeftColor: BorderLeftColor?
 
     /**
      * The **`border-left-style`** CSS property sets the line style of an element's left `border`.
@@ -971,7 +971,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/border-left-style">MDN</a>
      */
-    var borderLeftStyle: BorderLeftStyle
+    var borderLeftStyle: BorderLeftStyle?
 
     /**
      * The **`border-left-width`** CSS property sets the width of the left border of an element.
@@ -986,7 +986,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/border-left-width">MDN</a>
      */
-    var borderLeftWidth: BorderLeftWidth
+    var borderLeftWidth: BorderLeftWidth?
 
     /**
      * The **`border-right-color`** CSS property sets the color of an element's right border. It can also be set with the shorthand CSS properties `border-color` or `border-right`.
@@ -1001,7 +1001,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/border-right-color">MDN</a>
      */
-    var borderRightColor: BorderRightColor
+    var borderRightColor: BorderRightColor?
 
     /**
      * The **`border-right-style`** CSS property sets the line style of an element's right `border`.
@@ -1016,7 +1016,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/border-right-style">MDN</a>
      */
-    var borderRightStyle: BorderRightStyle
+    var borderRightStyle: BorderRightStyle?
 
     /**
      * The **`border-right-width`** CSS property sets the width of the right border of an element.
@@ -1031,7 +1031,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/border-right-width">MDN</a>
      */
-    var borderRightWidth: BorderRightWidth
+    var borderRightWidth: BorderRightWidth?
 
     /**
      * The **`border-spacing`** CSS property sets the distance between the borders of adjacent `<table>` cells. This property applies only when `border-collapse` is `separate`.
@@ -1046,7 +1046,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/border-spacing">MDN</a>
      */
-    var borderSpacing: BorderSpacing
+    var borderSpacing: BorderSpacing?
 
     /**
      * The **`border-start-end-radius`** CSS property defines a logical border radius on an element, which maps to a physical border radius depending on the element's `writing-mode`, `direction`, and `text-orientation`. This is useful when building styles to work regardless of the text orientation and writing mode.
@@ -1061,7 +1061,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/border-start-end-radius">MDN</a>
      */
-    var borderStartEndRadius: BorderStartEndRadius
+    var borderStartEndRadius: BorderStartEndRadius?
 
     /**
      * The **`border-start-start-radius`** CSS property defines a logical border radius on an element, which maps to a physical border radius that depends on the element's `writing-mode`, `direction`, and `text-orientation`. This is useful when building styles to work regardless of the text orientation and writing mode.
@@ -1076,7 +1076,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/border-start-start-radius">MDN</a>
      */
-    var borderStartStartRadius: BorderStartStartRadius
+    var borderStartStartRadius: BorderStartStartRadius?
 
     /**
      * The **`border-top-color`** CSS property sets the color of an element's top border. It can also be set with the shorthand CSS properties `border-color` or `border-top`.
@@ -1091,7 +1091,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/border-top-color">MDN</a>
      */
-    var borderTopColor: BorderTopColor
+    var borderTopColor: BorderTopColor?
 
     /**
      * The **`border-top-left-radius`** CSS property rounds the top-left corner of an element by specifying the radius (or the radius of the semi-major and semi-minor axes) of the ellipse defining the curvature of the corner.
@@ -1107,7 +1107,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/border-top-left-radius">MDN</a>
      */
-    var borderTopLeftRadius: BorderTopLeftRadius
+    var borderTopLeftRadius: BorderTopLeftRadius?
 
     /**
      * The **`border-top-right-radius`** CSS property rounds the top-right corner of an element by specifying the radius (or the radius of the semi-major and semi-minor axes) of the ellipse defining the curvature of the corner.
@@ -1123,7 +1123,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/border-top-right-radius">MDN</a>
      */
-    var borderTopRightRadius: BorderTopRightRadius
+    var borderTopRightRadius: BorderTopRightRadius?
 
     /**
      * The **`border-top-style`** CSS property sets the line style of an element's top `border`.
@@ -1138,7 +1138,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/border-top-style">MDN</a>
      */
-    var borderTopStyle: BorderTopStyle
+    var borderTopStyle: BorderTopStyle?
 
     /**
      * The **`border-top-width`** CSS property sets the width of the top border of an element.
@@ -1153,7 +1153,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/border-top-width">MDN</a>
      */
-    var borderTopWidth: BorderTopWidth
+    var borderTopWidth: BorderTopWidth?
 
     /**
      * The **`bottom`** CSS property participates in setting the vertical position of a positioned element. It has no effect on non-positioned elements.
@@ -1168,7 +1168,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/bottom">MDN</a>
      */
-    var bottom: Bottom
+    var bottom: Bottom?
 
     /**
      * The **`box-decoration-break`** CSS property specifies how an element's fragments should be rendered when broken across multiple lines, columns, or pages.
@@ -1183,7 +1183,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/box-decoration-break">MDN</a>
      */
-    var boxDecorationBreak: BoxDecorationBreak
+    var boxDecorationBreak: BoxDecorationBreak?
 
     /**
      * The **`box-shadow`** CSS property adds shadow effects around an element's frame. You can set multiple effects separated by commas. A box shadow is described by X and Y offsets relative to the element, blur and spread radius, and color.
@@ -1199,7 +1199,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/box-shadow">MDN</a>
      */
-    var boxShadow: BoxShadow
+    var boxShadow: BoxShadow?
 
     /**
      * The **`box-sizing`** CSS property sets how the total width and height of an element is calculated.
@@ -1215,7 +1215,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/box-sizing">MDN</a>
      */
-    var boxSizing: BoxSizing
+    var boxSizing: BoxSizing?
 
     /**
      * The **`break-after`** CSS property sets how page, column, or region breaks should behave after a generated box. If there is no generated box, the property is ignored.
@@ -1244,7 +1244,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/break-after">MDN</a>
      */
-    var breakAfter: BreakAfter
+    var breakAfter: BreakAfter?
 
     /**
      * The **`break-before`** CSS property sets how page, column, or region breaks should behave before a generated box. If there is no generated box, the property is ignored.
@@ -1273,7 +1273,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/break-before">MDN</a>
      */
-    var breakBefore: BreakBefore
+    var breakBefore: BreakBefore?
 
     /**
      * The **`break-inside`** CSS property sets how page, column, or region breaks should behave inside a generated box. If there is no generated box, the property is ignored.
@@ -1302,7 +1302,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/break-inside">MDN</a>
      */
-    var breakInside: BreakInside
+    var breakInside: BreakInside?
 
     /**
      * The **`caption-side`** CSS property puts the content of a table's `<caption>` on the specified side. The values are relative to the `writing-mode` of the table.
@@ -1317,7 +1317,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/caption-side">MDN</a>
      */
-    var captionSide: CaptionSide
+    var captionSide: CaptionSide?
 
     /**
      * The **`caret-color`** CSS property sets the color of the **insertion caret**, the visible marker where the next character typed will be inserted. This is sometimes referred to as the **text input cursor**. The caret appears in elements such as `<input>` or those with the `contenteditable` attribute. The caret is typically a thin vertical line that flashes to help make it more noticeable. By default, it is black, but its color can be altered with this property.
@@ -1332,7 +1332,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/caret-color">MDN</a>
      */
-    var caretColor: CaretColor
+    var caretColor: CaretColor?
 
     /**
      * The **`clear`** CSS property sets whether an element must be moved below (cleared) floating elements that precede it. The `clear` property applies to floating and non-floating elements.
@@ -1347,7 +1347,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/clear">MDN</a>
      */
-    var clear: Clear
+    var clear: Clear?
 
     /**
      * The `**clip-path**` CSS property creates a clipping region that sets what part of an element should be shown. Parts that are inside the region are shown, while those outside are hidden.
@@ -1363,7 +1363,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/clip-path">MDN</a>
      */
-    var clipPath: ClipPath
+    var clipPath: ClipPath?
 
     /**
      * The **`color`** CSS property sets the foreground color value of an element's text and text decorations, and sets the `<currentcolor>` value. `currentcolor` may be used as an indirect value on _other_ properties and is the default for other color properties, such as `border-color`.
@@ -1378,7 +1378,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/color">MDN</a>
      */
-    var color: Color
+    var color: Color?
 
     /**
      * The **`color-adjust`** CSS property sets what, if anything, the user agent may do to optimize the appearance of the element on the output device. By default, the browser is allowed to make any adjustments to the element's appearance it determines to be necessary and prudent given the type and capabilities of the output device.
@@ -1393,7 +1393,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/color-adjust">MDN</a>
      */
-    var colorAdjust: ColorAdjust
+    var colorAdjust: ColorAdjust?
 
     /**
      * The **`color-scheme`** CSS property allows an element to indicate which color schemes it can comfortably be rendered in.
@@ -1408,7 +1408,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/color-scheme">MDN</a>
      */
-    var colorScheme: ColorScheme
+    var colorScheme: ColorScheme?
 
     /**
      * The **`column-count`** CSS property breaks an element's content into the specified number of columns.
@@ -1424,7 +1424,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/column-count">MDN</a>
      */
-    var columnCount: ColumnCount
+    var columnCount: ColumnCount?
 
     /**
      * The **`column-fill`** CSS property controls how an element's contents are balanced when broken into columns.
@@ -1440,7 +1440,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/column-fill">MDN</a>
      */
-    var columnFill: ColumnFill
+    var columnFill: ColumnFill?
 
     /**
      * The **`column-gap`** CSS property sets the size of the gap (gutter) between an element's columns.
@@ -1479,7 +1479,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/column-gap">MDN</a>
      */
-    var columnGap: ColumnGap
+    var columnGap: ColumnGap?
 
     /**
      * The **`column-rule-color`** CSS property sets the color of the line drawn between columns in a multi-column layout.
@@ -1495,7 +1495,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/column-rule-color">MDN</a>
      */
-    var columnRuleColor: ColumnRuleColor
+    var columnRuleColor: ColumnRuleColor?
 
     /**
      * The **`column-rule-style`** CSS property sets the style of the line drawn between columns in a multi-column layout.
@@ -1511,7 +1511,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/column-rule-style">MDN</a>
      */
-    var columnRuleStyle: ColumnRuleStyle
+    var columnRuleStyle: ColumnRuleStyle?
 
     /**
      * The **`column-rule-width`** CSS property sets the width of the line drawn between columns in a multi-column layout.
@@ -1527,7 +1527,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/column-rule-width">MDN</a>
      */
-    var columnRuleWidth: ColumnRuleWidth
+    var columnRuleWidth: ColumnRuleWidth?
 
     /**
      * The **`column-span`** CSS property makes it possible for an element to span across all columns when its value is set to `all`.
@@ -1543,7 +1543,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/column-span">MDN</a>
      */
-    var columnSpan: ColumnSpan
+    var columnSpan: ColumnSpan?
 
     /**
      * The **`column-width`** CSS property sets the ideal column width in a multi-column layout. The container will have as many columns as can fit without any of them having a width less than the `column-width` value. If the width of the container is narrower than the specified value, the single column's width will be smaller than the declared column width.
@@ -1559,7 +1559,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/column-width">MDN</a>
      */
-    var columnWidth: ColumnWidth
+    var columnWidth: ColumnWidth?
 
     /**
      * The **`contain`** CSS property allows an author to indicate that an element and its contents are, as much as possible, _independent_ of the rest of the document tree. This allows the browser to recalculate layout, style, paint, size, or any combination of them for a limited area of the DOM and not the entire page, leading to obvious performance benefits.
@@ -1574,7 +1574,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/contain">MDN</a>
      */
-    var contain: Contain
+    var contain: Contain?
 
     /**
      * The **`content`** CSS property replaces an element with a generated value. Objects inserted using the `content` property are **anonymous replaced elements**_._
@@ -1589,7 +1589,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/content">MDN</a>
      */
-    var content: Content
+    var content: Content?
 
     /**
      * The **`content-visibility`** CSS property controls whether or not an element renders its contents at all, along with forcing a strong set of containments, allowing user agents to potentially omit large swathes of layout and rendering work until it becomes needed. Basically it enables the user agent to skip an element's rendering work, including layout and painting, until it is needed, makes the initial page load much faster.
@@ -1604,7 +1604,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/content-visibility">MDN</a>
      */
-    var contentVisibility: ContentVisibility
+    var contentVisibility: ContentVisibility?
 
     /**
      * The **`counter-increment`** CSS property increases or decreases the value of a CSS counter by a given value.
@@ -1619,7 +1619,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/counter-increment">MDN</a>
      */
-    var counterIncrement: CounterIncrement
+    var counterIncrement: CounterIncrement?
 
     /**
      * The **`counter-reset`** CSS property resets a CSS counter to a given value.
@@ -1634,7 +1634,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/counter-reset">MDN</a>
      */
-    var counterReset: CounterReset
+    var counterReset: CounterReset?
 
     /**
      * The **`counter-set`** CSS property sets a CSS counter to a given value. It manipulates the value of existing counters, and will only create new counters if there isn't already a counter of the given name on the element.
@@ -1649,7 +1649,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/counter-set">MDN</a>
      */
-    var counterSet: CounterSet
+    var counterSet: CounterSet?
 
     /**
      * The **`cursor`** CSS property sets the type of mouse cursor, if any, to show when the mouse pointer is over an element.
@@ -1664,7 +1664,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/cursor">MDN</a>
      */
-    var cursor: Cursor
+    var cursor: Cursor?
 
     /**
      * The **`direction`** CSS property sets the direction of text, table columns, and horizontal overflow. Use `rtl` for languages written from right to left (like Hebrew or Arabic), and `ltr` for those written from left to right (like English and most other languages).
@@ -1679,7 +1679,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/direction">MDN</a>
      */
-    var direction: Direction
+    var direction: Direction?
 
     /**
      * The **`display`** CSS property sets whether an element is treated as a block or inline element and the layout used for its children, such as flow layout, grid or flex.
@@ -1694,7 +1694,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/display">MDN</a>
      */
-    var display: Display
+    var display: Display?
 
     /**
      * The **`empty-cells`** CSS property sets whether borders and backgrounds appear around `<table>` cells that have no visible content.
@@ -1709,7 +1709,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/empty-cells">MDN</a>
      */
-    var emptyCells: EmptyCells
+    var emptyCells: EmptyCells?
 
     /**
      * The **`filter`** CSS property applies graphical effects like blur or color shift to an element. Filters are commonly used to adjust the rendering of images, backgrounds, and borders.
@@ -1725,7 +1725,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/filter">MDN</a>
      */
-    var filter: Filter
+    var filter: Filter?
 
     /**
      * The **`flex-basis`** CSS property sets the initial main size of a flex item. It sets the size of the content box unless otherwise set with `box-sizing`.
@@ -1741,7 +1741,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/flex-basis">MDN</a>
      */
-    var flexBasis: FlexBasis
+    var flexBasis: FlexBasis?
 
     /**
      * The **`flex-direction`** CSS property sets how flex items are placed in the flex container defining the main axis and the direction (normal or reversed).
@@ -1757,7 +1757,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/flex-direction">MDN</a>
      */
-    var flexDirection: FlexDirection
+    var flexDirection: FlexDirection?
 
     /**
      * The **`flex-grow`** CSS property sets the flex grow factor of a flex item main size.
@@ -1773,7 +1773,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/flex-grow">MDN</a>
      */
-    var flexGrow: FlexGrow
+    var flexGrow: FlexGrow?
 
     /**
      * The **`flex-shrink`** CSS property sets the flex shrink factor of a flex item. If the size of all flex items is larger than the flex container, items shrink to fit according to `flex-shrink`.
@@ -1789,7 +1789,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/flex-shrink">MDN</a>
      */
-    var flexShrink: FlexShrink
+    var flexShrink: FlexShrink?
 
     /**
      * The **`flex-wrap`** CSS property sets whether flex items are forced onto one line or can wrap onto multiple lines. If wrapping is allowed, it sets the direction that lines are stacked.
@@ -1805,7 +1805,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/flex-wrap">MDN</a>
      */
-    var flexWrap: FlexWrap
+    var flexWrap: FlexWrap?
 
     /**
      * The **`float`** CSS property places an element on the left or right side of its container, allowing text and inline elements to wrap around it. The element is removed from the normal flow of the page, though still remaining a part of the flow (in contrast to absolute positioning).
@@ -1820,7 +1820,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/float">MDN</a>
      */
-    var float: Float
+    var float: Float?
 
     /**
      * The **`font-family`** CSS property specifies a prioritized list of one or more font family names and/or generic family names for the selected element.
@@ -1835,7 +1835,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/font-family">MDN</a>
      */
-    var fontFamily: FontFamily
+    var fontFamily: FontFamily?
 
     /**
      * The **`font-feature-settings`** CSS property controls advanced typographic features in OpenType fonts.
@@ -1851,7 +1851,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/font-feature-settings">MDN</a>
      */
-    var fontFeatureSettings: FontFeatureSettings
+    var fontFeatureSettings: FontFeatureSettings?
 
     /**
      * The **`font-kerning`** CSS property sets the use of the kerning information stored in a font.
@@ -1867,7 +1867,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/font-kerning">MDN</a>
      */
-    var fontKerning: FontKerning
+    var fontKerning: FontKerning?
 
     /**
      * The **`font-language-override`** CSS property controls the use of language-specific glyphs in a typeface.
@@ -1883,7 +1883,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/font-language-override">MDN</a>
      */
-    var fontLanguageOverride: FontLanguageOverride
+    var fontLanguageOverride: FontLanguageOverride?
 
     /**
      * The **`font-optical-sizing`** CSS property sets whether text rendering is optimized for viewing at different sizes.
@@ -1898,7 +1898,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/font-optical-sizing">MDN</a>
      */
-    var fontOpticalSizing: FontOpticalSizing
+    var fontOpticalSizing: FontOpticalSizing?
 
     /**
      * The **`font-size`** CSS property sets the size of the font. Changing the font size also updates the sizes of the font size-relative `<length>` units, such as `em`, `ex`, and so forth.
@@ -1913,7 +1913,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/font-size">MDN</a>
      */
-    var fontSize: FontSize
+    var fontSize: FontSize?
 
     /**
      * The **`font-size-adjust`** CSS property sets the size of lower-case letters relative to the current font size (which defines the size of upper-case letters).
@@ -1928,7 +1928,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/font-size-adjust">MDN</a>
      */
-    var fontSizeAdjust: FontSizeAdjust
+    var fontSizeAdjust: FontSizeAdjust?
 
     /**
      * The **`font-smooth`** CSS property controls the application of anti-aliasing when fonts are rendered.
@@ -1943,7 +1943,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/font-smooth">MDN</a>
      */
-    var fontSmooth: FontSmooth
+    var fontSmooth: FontSmooth?
 
     /**
      * The **`font-stretch`** CSS property selects a normal, condensed, or expanded face from a font.
@@ -1958,7 +1958,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/font-stretch">MDN</a>
      */
-    var fontStretch: FontStretch
+    var fontStretch: FontStretch?
 
     /**
      * The **`font-style`** CSS property sets whether a font should be styled with a normal, italic, or oblique face from its `font-family`.
@@ -1973,7 +1973,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/font-style">MDN</a>
      */
-    var fontStyle: FontStyle
+    var fontStyle: FontStyle?
 
     /**
      * The **`font-synthesis`** CSS property controls which missing typefaces, bold or italic, may be synthesized by the browser.
@@ -1988,7 +1988,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/font-synthesis">MDN</a>
      */
-    var fontSynthesis: FontSynthesis
+    var fontSynthesis: FontSynthesis?
 
     /**
      * The **`font-variant`** CSS shorthand property allows you to set all the font variants for a font.
@@ -2003,7 +2003,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/font-variant">MDN</a>
      */
-    var fontVariant: FontVariant
+    var fontVariant: FontVariant?
 
     /**
      * The **`font-variant-caps`** CSS property controls the use of alternate glyphs for capital letters.
@@ -2018,7 +2018,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/font-variant-caps">MDN</a>
      */
-    var fontVariantCaps: FontVariantCaps
+    var fontVariantCaps: FontVariantCaps?
 
     /**
      * The **`font-variant-east-asian`** CSS property controls the use of alternate glyphs for East Asian scripts, like Japanese and Chinese.
@@ -2033,7 +2033,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/font-variant-east-asian">MDN</a>
      */
-    var fontVariantEastAsian: FontVariantEastAsian
+    var fontVariantEastAsian: FontVariantEastAsian?
 
     /**
      * The **`font-variant-ligatures`** CSS property controls which ligatures and contextual forms are used in textual content of the elements it applies to. This leads to more harmonized forms in the resulting text.
@@ -2049,7 +2049,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/font-variant-ligatures">MDN</a>
      */
-    var fontVariantLigatures: FontVariantLigatures
+    var fontVariantLigatures: FontVariantLigatures?
 
     /**
      * The **`font-variant-numeric`** CSS property controls the usage of alternate glyphs for numbers, fractions, and ordinal markers.
@@ -2064,7 +2064,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/font-variant-numeric">MDN</a>
      */
-    var fontVariantNumeric: FontVariantNumeric
+    var fontVariantNumeric: FontVariantNumeric?
 
     /**
      * The **`font-variant-position`** CSS property controls the use of alternate, smaller glyphs that are positioned as superscript or subscript.
@@ -2079,7 +2079,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/font-variant-position">MDN</a>
      */
-    var fontVariantPosition: FontVariantPosition
+    var fontVariantPosition: FontVariantPosition?
 
     /**
      * The **`font-variation-settings`** CSS property provides low-level control over variable font characteristics, by specifying the four letter axis names of the characteristics you want to vary, along with their values.
@@ -2094,7 +2094,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/font-variation-settings">MDN</a>
      */
-    var fontVariationSettings: FontVariationSettings
+    var fontVariationSettings: FontVariationSettings?
 
     /**
      * The **`font-weight`** CSS property sets the weight (or boldness) of the font. The weights available depend on the `font-family` that is currently set.
@@ -2109,7 +2109,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/font-weight">MDN</a>
      */
-    var fontWeight: FontWeight
+    var fontWeight: FontWeight?
 
     /**
      * The **`forced-color-adjust`** CSS property allows authors to opt certain elements out of forced colors mode. This then restores the control of those values to CSS.
@@ -2125,7 +2125,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/forced-color-adjust">MDN</a>
      */
-    var forcedColorAdjust: ForcedColorAdjust
+    var forcedColorAdjust: ForcedColorAdjust?
 
     /**
      * The **`grid-auto-columns`** CSS property specifies the size of an implicitly-created grid column track or pattern of tracks.
@@ -2140,7 +2140,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/grid-auto-columns">MDN</a>
      */
-    var gridAutoColumns: GridAutoColumns
+    var gridAutoColumns: GridAutoColumns?
 
     /**
      * The **`grid-auto-flow`** CSS property controls how the auto-placement algorithm works, specifying exactly how auto-placed items get flowed into the grid.
@@ -2155,7 +2155,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/grid-auto-flow">MDN</a>
      */
-    var gridAutoFlow: GridAutoFlow
+    var gridAutoFlow: GridAutoFlow?
 
     /**
      * The **`grid-auto-rows`** CSS property specifies the size of an implicitly-created grid row track or pattern of tracks.
@@ -2170,7 +2170,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/grid-auto-rows">MDN</a>
      */
-    var gridAutoRows: GridAutoRows
+    var gridAutoRows: GridAutoRows?
 
     /**
      * The **`grid-column-end`** CSS property specifies a grid item’s end position within the grid column by contributing a line, a span, or nothing (automatic) to its grid placement, thereby specifying the block-end edge of its grid area.
@@ -2185,7 +2185,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/grid-column-end">MDN</a>
      */
-    var gridColumnEnd: GridColumnEnd
+    var gridColumnEnd: GridColumnEnd?
 
     /**
      * The **`grid-column-start`** CSS property specifies a grid item’s start position within the grid column by contributing a line, a span, or nothing (automatic) to its grid placement. This start position defines the block-start edge of the grid area.
@@ -2200,7 +2200,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/grid-column-start">MDN</a>
      */
-    var gridColumnStart: GridColumnStart
+    var gridColumnStart: GridColumnStart?
 
     /**
      * The **`grid-row-end`** CSS property specifies a grid item’s end position within the grid row by contributing a line, a span, or nothing (automatic) to its grid placement, thereby specifying the inline-end edge of its grid area.
@@ -2215,7 +2215,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/grid-row-end">MDN</a>
      */
-    var gridRowEnd: GridRowEnd
+    var gridRowEnd: GridRowEnd?
 
     /**
      * The **`grid-row-start`** CSS property specifies a grid item’s start position within the grid row by contributing a line, a span, or nothing (automatic) to its grid placement, thereby specifying the inline-start edge of its grid area.
@@ -2230,7 +2230,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/grid-row-start">MDN</a>
      */
-    var gridRowStart: GridRowStart
+    var gridRowStart: GridRowStart?
 
     /**
      * The **`grid-template-areas`** CSS property specifies named grid areas, establishing the cells in the grid and assigning them names.
@@ -2245,7 +2245,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/grid-template-areas">MDN</a>
      */
-    var gridTemplateAreas: GridTemplateAreas
+    var gridTemplateAreas: GridTemplateAreas?
 
     /**
      * The **`grid-template-columns`** CSS property defines the line names and track sizing functions of the grid columns.
@@ -2260,7 +2260,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/grid-template-columns">MDN</a>
      */
-    var gridTemplateColumns: GridTemplateColumns
+    var gridTemplateColumns: GridTemplateColumns?
 
     /**
      * The **`grid-template-rows`** CSS property defines the line names and track sizing functions of the grid rows.
@@ -2275,7 +2275,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/grid-template-rows">MDN</a>
      */
-    var gridTemplateRows: GridTemplateRows
+    var gridTemplateRows: GridTemplateRows?
 
     /**
      * The **`hanging-punctuation`** CSS property specifies whether a punctuation mark should hang at the start or end of a line of text. Hanging punctuation may be placed outside the line box.
@@ -2290,7 +2290,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/hanging-punctuation">MDN</a>
      */
-    var hangingPunctuation: HangingPunctuation
+    var hangingPunctuation: HangingPunctuation?
 
     /**
      * The **`height`** CSS property specifies the height of an element. By default, the property defines the height of the content area. If `box-sizing` is set to `border-box`, however, it instead determines the height of the border area.
@@ -2305,7 +2305,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/height">MDN</a>
      */
-    var height: Height
+    var height: Height?
 
     /**
      * The **`hyphens`** CSS property specifies how words should be hyphenated when text wraps across multiple lines. It can prevent hyphenation entirely, hyphenate at manually-specified points within the text, or let the browser automatically insert hyphens where appropriate.
@@ -2321,7 +2321,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/hyphens">MDN</a>
      */
-    var hyphens: Hyphens
+    var hyphens: Hyphens?
 
     /**
      * The **`image-orientation`** CSS property specifies a layout-independent correction to the orientation of an image. It should _not_ be used for any other orientation adjustments; instead, the `transform` property should be used with the `rotate` `<transform-function>`.
@@ -2336,7 +2336,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/image-orientation">MDN</a>
      */
-    var imageOrientation: ImageOrientation
+    var imageOrientation: ImageOrientation?
 
     /**
      * The **`image-rendering`** CSS property sets an image scaling algorithm. The property applies to an element itself, to any images set in its other properties, and to its descendants.
@@ -2351,14 +2351,14 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/image-rendering">MDN</a>
      */
-    var imageRendering: ImageRendering
+    var imageRendering: ImageRendering?
 
     /**
      * **Syntax**: `[ from-image || <resolution> ] && snap?`
      *
      * **Initial value**: `1dppx`
      */
-    var imageResolution: ImageResolution
+    var imageResolution: ImageResolution?
 
     /**
      * The `initial-letter` CSS property sets styling for dropped, raised, and sunken initial letters.
@@ -2373,7 +2373,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/initial-letter">MDN</a>
      */
-    var initialLetter: InitialLetter
+    var initialLetter: InitialLetter?
 
     /**
      * The **`inline-size`** CSS property defines the horizontal or vertical size of an element's block, depending on its writing mode. It corresponds to either the `width` or the `height` property, depending on the value of `writing-mode`.
@@ -2388,7 +2388,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/inline-size">MDN</a>
      */
-    var inlineSize: InlineSize
+    var inlineSize: InlineSize?
 
     /**
      * The **`inset`** CSS property is a shorthand that corresponds to the `top`, `right`, `bottom`, and/or `left` properties. It has the same multi-value syntax of the `margin` shorthand.
@@ -2403,7 +2403,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/inset">MDN</a>
      */
-    var inset: Inset
+    var inset: Inset?
 
     /**
      * The **`inset-inline`** CSS property defines the logical start and end offsets of an element in the inline direction, which maps to physical offsets depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top` and `bottom`, or `right` and `left` properties depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
@@ -2418,7 +2418,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/inset-block">MDN</a>
      */
-    var insetBlock: InsetBlock
+    var insetBlock: InsetBlock?
 
     /**
      * The **`inset-block-end`** CSS property defines the logical block end offset of an element, which maps to a physical inset depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top`, `right`, `bottom`, or `left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
@@ -2433,7 +2433,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/inset-block-end">MDN</a>
      */
-    var insetBlockEnd: InsetBlockEnd
+    var insetBlockEnd: InsetBlockEnd?
 
     /**
      * The **`inset-block-start`** CSS property defines the logical block start offset of an element, which maps to a physical inset depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top`, `right`, `bottom`, or `left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
@@ -2448,7 +2448,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/inset-block-start">MDN</a>
      */
-    var insetBlockStart: InsetBlockStart
+    var insetBlockStart: InsetBlockStart?
 
     /**
      * The **`inset-inline`** CSS property defines the logical start and end offsets of an element in the inline direction, which maps to physical offsets depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top` and `bottom`, or `right` and `left` properties depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
@@ -2463,7 +2463,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/inset-inline">MDN</a>
      */
-    var insetInline: InsetInline
+    var insetInline: InsetInline?
 
     /**
      * The **`inset-inline-end`** CSS property defines the logical inline end inset of an element, which maps to a physical offset depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top`, `right`, `bottom`, or `left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
@@ -2478,7 +2478,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/inset-inline-end">MDN</a>
      */
-    var insetInlineEnd: InsetInlineEnd
+    var insetInlineEnd: InsetInlineEnd?
 
     /**
      * The **`inset-inline-start`** CSS property defines the logical inline start inset of an element, which maps to a physical offset depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top`, `right`, `bottom`, or `left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
@@ -2493,7 +2493,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/inset-inline-start">MDN</a>
      */
-    var insetInlineStart: InsetInlineStart
+    var insetInlineStart: InsetInlineStart?
 
     /**
      * The **`isolation`** CSS property determines whether an element must create a new stacking context.
@@ -2508,7 +2508,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/isolation">MDN</a>
      */
-    var isolation: Isolation
+    var isolation: Isolation?
 
     /**
      * The CSS **`justify-content`** property defines how the browser distributes space between and around content items along the main-axis of a flex container, and the inline axis of a grid container.
@@ -2538,7 +2538,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/justify-content">MDN</a>
      */
-    var justifyContent: JustifyContent
+    var justifyContent: JustifyContent?
 
     /**
      * The CSS **`justify-items`** property defines the default `justify-self` for all items of the box, giving them all a default way of justifying each box along the appropriate axis.
@@ -2567,7 +2567,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/justify-items">MDN</a>
      */
-    var justifyItems: JustifyItems
+    var justifyItems: JustifyItems?
 
     /**
      * The CSS **`justify-self`** property sets the way a box is justified inside its alignment container along the appropriate axis.
@@ -2596,7 +2596,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/justify-self">MDN</a>
      */
-    var justifySelf: JustifySelf
+    var justifySelf: JustifySelf?
 
     /**
      * The **`justify-tracks`** CSS property sets the alignment in the masonry axis for grid containers that have masonry in their inline axis.
@@ -2611,7 +2611,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/justify-tracks">MDN</a>
      */
-    var justifyTracks: JustifyTracks
+    var justifyTracks: JustifyTracks?
 
     /**
      * The **`left`** CSS property participates in specifying the horizontal position of a positioned element. It has no effect on non-positioned elements.
@@ -2626,7 +2626,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/left">MDN</a>
      */
-    var left: Left
+    var left: Left?
 
     /**
      * The **`letter-spacing`** CSS property sets the horizontal spacing behavior between text characters. This value is added to the natural spacing between characters while rendering the text. Positive values of `letter-spacing` causes characters to spread farther apart, while negative values of `letter-spacing` bring characters closer together.
@@ -2641,7 +2641,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/letter-spacing">MDN</a>
      */
-    var letterSpacing: LetterSpacing
+    var letterSpacing: LetterSpacing?
 
     /**
      * The **`line-break`** CSS property sets how to break lines of Chinese, Japanese, or Korean (CJK) text when working with punctuation and symbols.
@@ -2657,7 +2657,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/line-break">MDN</a>
      */
-    var lineBreak: LineBreak
+    var lineBreak: LineBreak?
 
     /**
      * The **`line-height`** CSS property sets the height of a line box. It's commonly used to set the distance between lines of text. On block-level elements, it specifies the minimum height of line boxes within the element. On non-replaced inline elements, it specifies the height that is used to calculate line box height.
@@ -2672,7 +2672,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/line-height">MDN</a>
      */
-    var lineHeight: LineHeight
+    var lineHeight: LineHeight?
 
     /**
      * The **`line-height-step`** CSS property sets the step unit for line box heights. When the property is set, line box heights are rounded up to the closest multiple of the unit.
@@ -2687,7 +2687,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/line-height-step">MDN</a>
      */
-    var lineHeightStep: LineHeightStep
+    var lineHeightStep: LineHeightStep?
 
     /**
      * The **`list-style-image`** CSS property sets an image to be used as the list item marker.
@@ -2702,7 +2702,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/list-style-image">MDN</a>
      */
-    var listStyleImage: ListStyleImage
+    var listStyleImage: ListStyleImage?
 
     /**
      * The **`list-style-position`** CSS property sets the position of the `::marker` relative to a list item.
@@ -2717,7 +2717,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/list-style-position">MDN</a>
      */
-    var listStylePosition: ListStylePosition
+    var listStylePosition: ListStylePosition?
 
     /**
      * The **`list-style-type`** CSS property sets the marker (such as a disc, character, or custom counter style) of a list item element.
@@ -2732,7 +2732,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/list-style-type">MDN</a>
      */
-    var listStyleType: ListStyleType
+    var listStyleType: ListStyleType?
 
     /**
      * The **`margin-block`** CSS shorthand property defines the logical block start and end margins of an element, which maps to physical margins depending on the element's writing mode, directionality, and text orientation.
@@ -2747,7 +2747,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/margin-block">MDN</a>
      */
-    var marginBlock: MarginBlock
+    var marginBlock: MarginBlock?
 
     /**
      * The **`margin-block-end`** CSS property defines the logical block end margin of an element, which maps to a physical margin depending on the element's writing mode, directionality, and text orientation.
@@ -2762,7 +2762,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/margin-block-end">MDN</a>
      */
-    var marginBlockEnd: MarginBlockEnd
+    var marginBlockEnd: MarginBlockEnd?
 
     /**
      * The **`margin-block-start`** CSS property defines the logical block start margin of an element, which maps to a physical margin depending on the element's writing mode, directionality, and text orientation.
@@ -2777,7 +2777,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/margin-block-start">MDN</a>
      */
-    var marginBlockStart: MarginBlockStart
+    var marginBlockStart: MarginBlockStart?
 
     /**
      * The **`margin-bottom`** CSS property sets the margin area on the bottom of an element. A positive value places it farther from its neighbors, while a negative value places it closer.
@@ -2792,7 +2792,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/margin-bottom">MDN</a>
      */
-    var marginBottom: MarginBottom
+    var marginBottom: MarginBottom?
 
     /**
      * The **`margin-inline`** CSS shorthand property is a shorthand property that defines both the logical inline start and end margins of an element, which maps to physical margins depending on the element's writing mode, directionality, and text orientation.
@@ -2807,7 +2807,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/margin-inline">MDN</a>
      */
-    var marginInline: MarginInline
+    var marginInline: MarginInline?
 
     /**
      * The **`margin-inline-end`** CSS property defines the logical inline end margin of an element, which maps to a physical margin depending on the element's writing mode, directionality, and text orientation. In other words, it corresponds to the `margin-top`, `margin-right`, `margin-bottom` or `margin-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
@@ -2823,7 +2823,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/margin-inline-end">MDN</a>
      */
-    var marginInlineEnd: MarginInlineEnd
+    var marginInlineEnd: MarginInlineEnd?
 
     /**
      * The **`margin-inline-start`** CSS property defines the logical inline start margin of an element, which maps to a physical margin depending on the element's writing mode, directionality, and text orientation. It corresponds to the `margin-top`, `margin-right`, `margin-bottom`, or `margin-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
@@ -2839,7 +2839,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/margin-inline-start">MDN</a>
      */
-    var marginInlineStart: MarginInlineStart
+    var marginInlineStart: MarginInlineStart?
 
     /**
      * The **`margin-left`** CSS property sets the margin area on the left side of an element. A positive value places it farther from its neighbors, while a negative value places it closer.
@@ -2854,7 +2854,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/margin-left">MDN</a>
      */
-    var marginLeft: MarginLeft
+    var marginLeft: MarginLeft?
 
     /**
      * The **`margin-right`** CSS property sets the margin area on the right side of an element. A positive value places it farther from its neighbors, while a negative value places it closer.
@@ -2869,7 +2869,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/margin-right">MDN</a>
      */
-    var marginRight: MarginRight
+    var marginRight: MarginRight?
 
     /**
      * The **`margin-top`** CSS property sets the margin area on the top of an element. A positive value places it farther from its neighbors, while a negative value places it closer.
@@ -2884,7 +2884,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/margin-top">MDN</a>
      */
-    var marginTop: MarginTop
+    var marginTop: MarginTop?
 
     /**
      * The **`mask-border-mode`** CSS property specifies the blending mode used in a mask border.
@@ -2893,7 +2893,7 @@ external interface StandardLonghandProperties {
      *
      * **Initial value**: `alpha`
      */
-    var maskBorderMode: MaskBorderMode
+    var maskBorderMode: MaskBorderMode?
 
     /**
      * The **`mask-border-outset`** CSS property specifies the distance by which an element's mask border is set out from its border box.
@@ -2908,7 +2908,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/mask-border-outset">MDN</a>
      */
-    var maskBorderOutset: MaskBorderOutset
+    var maskBorderOutset: MaskBorderOutset?
 
     /**
      * The **`mask-border-repeat`** CSS property sets how the edge regions of a source image are adjusted to fit the dimensions of an element's mask border.
@@ -2923,7 +2923,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/mask-border-repeat">MDN</a>
      */
-    var maskBorderRepeat: MaskBorderRepeat
+    var maskBorderRepeat: MaskBorderRepeat?
 
     /**
      * The **`mask-border-slice`** CSS property divides the image set by `mask-border-source` into regions. These regions are used to form the components of an element's mask border.
@@ -2938,7 +2938,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/mask-border-slice">MDN</a>
      */
-    var maskBorderSlice: MaskBorderSlice
+    var maskBorderSlice: MaskBorderSlice?
 
     /**
      * The **`mask-border-source`** CSS property sets the source image used to create an element's mask border.
@@ -2953,7 +2953,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/mask-border-source">MDN</a>
      */
-    var maskBorderSource: MaskBorderSource
+    var maskBorderSource: MaskBorderSource?
 
     /**
      * The **`mask-border-width`** CSS property sets the width of an element's mask border.
@@ -2968,7 +2968,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/mask-border-width">MDN</a>
      */
-    var maskBorderWidth: MaskBorderWidth
+    var maskBorderWidth: MaskBorderWidth?
 
     /**
      * The **`mask-clip`** CSS property determines the area which is affected by a mask. The painted content of an element must be restricted to this area.
@@ -2983,7 +2983,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/mask-clip">MDN</a>
      */
-    var maskClip: MaskClip
+    var maskClip: MaskClip?
 
     /**
      * The **`mask-composite`** CSS property represents a compositing operation used on the current mask layer with the mask layers below it.
@@ -2998,7 +2998,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/mask-composite">MDN</a>
      */
-    var maskComposite: MaskComposite
+    var maskComposite: MaskComposite?
 
     /**
      * The **`mask-image`** CSS property sets the image that is used as mask layer for an element.
@@ -3013,7 +3013,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/mask-image">MDN</a>
      */
-    var maskImage: MaskImage
+    var maskImage: MaskImage?
 
     /**
      * The **`mask-mode`** CSS property sets whether the mask reference defined by `mask-image` is treated as a luminance or alpha mask.
@@ -3028,7 +3028,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/mask-mode">MDN</a>
      */
-    var maskMode: MaskMode
+    var maskMode: MaskMode?
 
     /**
      * The **`mask-origin`** CSS property sets the origin of a mask.
@@ -3043,7 +3043,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/mask-origin">MDN</a>
      */
-    var maskOrigin: MaskOrigin
+    var maskOrigin: MaskOrigin?
 
     /**
      * The **`mask-position`** CSS property sets the initial position, relative to the mask position layer set by `mask-origin`, for each defined mask image.
@@ -3058,7 +3058,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/mask-position">MDN</a>
      */
-    var maskPosition: MaskPosition
+    var maskPosition: MaskPosition?
 
     /**
      * The **`mask-repeat`** CSS property sets how mask images are repeated. A mask image can be repeated along the horizontal axis, the vertical axis, both axes, or not repeated at all.
@@ -3073,7 +3073,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/mask-repeat">MDN</a>
      */
-    var maskRepeat: MaskRepeat
+    var maskRepeat: MaskRepeat?
 
     /**
      * The **`mask-size`** CSS property specifies the sizes of the mask images. The size of the image can be fully or partially constrained in order to preserve its intrinsic ratio.
@@ -3088,7 +3088,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/mask-size">MDN</a>
      */
-    var maskSize: MaskSize
+    var maskSize: MaskSize?
 
     /**
      * The **`mask-type`** CSS property sets whether an SVG `<mask>` element is used as a _luminance_ or an _alpha_ mask. It applies to the `<mask>` element itself.
@@ -3103,7 +3103,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/mask-type">MDN</a>
      */
-    var maskType: MaskType
+    var maskType: MaskType?
 
     /**
      * The `math-style` property indicates whether MathML equations should render with normal or compact height.
@@ -3118,7 +3118,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/math-style">MDN</a>
      */
-    var mathStyle: MathStyle
+    var mathStyle: MathStyle?
 
     /**
      * The `**max-block-size**` CSS property specifies the maximum size of an element in the direction opposite that of the writing direction as specified by `writing-mode`. That is, if the writing direction is horizontal, then `max-block-size` is equivalent to `max-height`; if the writing direction is vertical, `max-block-size` is the same as `max-width`.
@@ -3133,7 +3133,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/max-block-size">MDN</a>
      */
-    var maxBlockSize: MaxBlockSize
+    var maxBlockSize: MaxBlockSize?
 
     /**
      * The **`max-height`** CSS property sets the maximum height of an element. It prevents the used value of the `height` property from becoming larger than the value specified for `max-height`.
@@ -3148,7 +3148,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/max-height">MDN</a>
      */
-    var maxHeight: MaxHeight
+    var maxHeight: MaxHeight?
 
     /**
      * The **`max-inline-size`** CSS property defines the horizontal or vertical maximum size of an element's block, depending on its writing mode. It corresponds to either the `max-width` or the `max-height` property, depending on the value of `writing-mode`.
@@ -3164,14 +3164,14 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/max-inline-size">MDN</a>
      */
-    var maxInlineSize: MaxInlineSize
+    var maxInlineSize: MaxInlineSize?
 
     /**
      * **Syntax**: `none | <integer>`
      *
      * **Initial value**: `none`
      */
-    var maxLines: MaxLines
+    var maxLines: MaxLines?
 
     /**
      * The **`max-width`** CSS property sets the maximum width of an element. It prevents the used value of the `width` property from becoming larger than the value specified by `max-width`.
@@ -3186,7 +3186,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/max-width">MDN</a>
      */
-    var maxWidth: MaxWidth
+    var maxWidth: MaxWidth?
 
     /**
      * The **`min-block-size`** CSS property defines the minimum horizontal or vertical size of an element's block, depending on its writing mode. It corresponds to either the `min-width` or the `min-height` property, depending on the value of `writing-mode`.
@@ -3201,7 +3201,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/min-block-size">MDN</a>
      */
-    var minBlockSize: MinBlockSize
+    var minBlockSize: MinBlockSize?
 
     /**
      * The **`min-height`** CSS property sets the minimum height of an element. It prevents the used value of the `height` property from becoming smaller than the value specified for `min-height`.
@@ -3216,7 +3216,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/min-height">MDN</a>
      */
-    var minHeight: MinHeight
+    var minHeight: MinHeight?
 
     /**
      * The **`min-inline-size`** CSS property defines the horizontal or vertical minimal size of an element's block, depending on its writing mode. It corresponds to either the `min-width` or the `min-height` property, depending on the value of `writing-mode`.
@@ -3231,7 +3231,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/min-inline-size">MDN</a>
      */
-    var minInlineSize: MinInlineSize
+    var minInlineSize: MinInlineSize?
 
     /**
      * The **`min-width`** CSS property sets the minimum width of an element. It prevents the used value of the `width` property from becoming smaller than the value specified for `min-width`.
@@ -3246,7 +3246,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/min-width">MDN</a>
      */
-    var minWidth: MinWidth
+    var minWidth: MinWidth?
 
     /**
      * The **`mix-blend-mode`** CSS property sets how an element's content should blend with the content of the element's parent and the element's background.
@@ -3261,7 +3261,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/mix-blend-mode">MDN</a>
      */
-    var mixBlendMode: MixBlendMode
+    var mixBlendMode: MixBlendMode?
 
     /**
      * The **`offset-distance`** CSS property specifies a position along an `offset-path` for an element to be placed.
@@ -3277,7 +3277,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/offset-distance">MDN</a>
      */
-    var motionDistance: OffsetDistance
+    var motionDistance: OffsetDistance?
 
     /**
      * The **`offset-path`** CSS property specifies a motion path for an element to follow and defines the element's positioning within the parent container or SVG coordinate system.
@@ -3293,7 +3293,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/offset-path">MDN</a>
      */
-    var motionPath: OffsetPath
+    var motionPath: OffsetPath?
 
     /**
      * The **`offset-rotate`** CSS property defines the orientation/direction of the element as it is positioned along the `offset-path`.
@@ -3309,7 +3309,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/offset-rotate">MDN</a>
      */
-    var motionRotation: OffsetRotate
+    var motionRotation: OffsetRotate?
 
     /**
      * The **`object-fit`** CSS property sets how the content of a replaced element, such as an `<img>` or `<video>`, should be resized to fit its container.
@@ -3324,7 +3324,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/object-fit">MDN</a>
      */
-    var objectFit: ObjectFit
+    var objectFit: ObjectFit?
 
     /**
      * The **`object-position`** CSS property specifies the alignment of the selected replaced element's contents within the element's box. Areas of the box which aren't covered by the replaced element's object will show the element's background.
@@ -3339,7 +3339,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/object-position">MDN</a>
      */
-    var objectPosition: ObjectPosition
+    var objectPosition: ObjectPosition?
 
     /**
      * **Syntax**: `auto | <position>`
@@ -3352,7 +3352,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/offset-anchor">MDN</a>
      */
-    var offsetAnchor: OffsetAnchor
+    var offsetAnchor: OffsetAnchor?
 
     /**
      * The **`offset-distance`** CSS property specifies a position along an `offset-path` for an element to be placed.
@@ -3368,7 +3368,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/offset-distance">MDN</a>
      */
-    var offsetDistance: OffsetDistance
+    var offsetDistance: OffsetDistance?
 
     /**
      * The **`offset-path`** CSS property specifies a motion path for an element to follow and defines the element's positioning within the parent container or SVG coordinate system.
@@ -3384,7 +3384,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/offset-path">MDN</a>
      */
-    var offsetPath: OffsetPath
+    var offsetPath: OffsetPath?
 
     /**
      * The **`offset-rotate`** CSS property defines the orientation/direction of the element as it is positioned along the `offset-path`.
@@ -3400,7 +3400,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/offset-rotate">MDN</a>
      */
-    var offsetRotate: OffsetRotate
+    var offsetRotate: OffsetRotate?
 
     /**
      * The **`offset-rotate`** CSS property defines the orientation/direction of the element as it is positioned along the `offset-path`.
@@ -3416,7 +3416,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/offset-rotate">MDN</a>
      */
-    var offsetRotation: OffsetRotate
+    var offsetRotation: OffsetRotate?
 
     /**
      * The **`opacity`** CSS property sets the opacity of an element. Opacity is the degree to which content behind an element is hidden, and is the opposite of transparency.
@@ -3431,7 +3431,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/opacity">MDN</a>
      */
-    var opacity: Opacity
+    var opacity: Opacity?
 
     /**
      * The **`order`** CSS property sets the order to lay out an item in a flex or grid container. Items in a container are sorted by ascending `order` value and then by their source code order.
@@ -3447,7 +3447,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/order">MDN</a>
      */
-    var order: Order
+    var order: Order?
 
     /**
      * The **`orphans`** CSS property sets the minimum number of lines in a block container that must be shown at the _bottom_ of a page, region, or column.
@@ -3462,7 +3462,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/orphans">MDN</a>
      */
-    var orphans: Orphans
+    var orphans: Orphans?
 
     /**
      * The **`outline-color`** CSS property sets the color of an element's outline.
@@ -3477,7 +3477,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/outline-color">MDN</a>
      */
-    var outlineColor: OutlineColor
+    var outlineColor: OutlineColor?
 
     /**
      * The **`outline-offset`** CSS property sets the amount of space between an outline and the edge or border of an element.
@@ -3492,7 +3492,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/outline-offset">MDN</a>
      */
-    var outlineOffset: OutlineOffset
+    var outlineOffset: OutlineOffset?
 
     /**
      * The **`outline-style`** CSS property sets the style of an element's outline. An outline is a line that is drawn around an element, outside the `border`.
@@ -3507,7 +3507,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/outline-style">MDN</a>
      */
-    var outlineStyle: OutlineStyle
+    var outlineStyle: OutlineStyle?
 
     /**
      * The CSS **`outline-width`** property sets the thickness of an element's outline. An outline is a line that is drawn around an element, outside the `border`.
@@ -3522,7 +3522,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/outline-width">MDN</a>
      */
-    var outlineWidth: OutlineWidth
+    var outlineWidth: OutlineWidth?
 
     /**
      * **Syntax**: `auto | none`
@@ -3535,7 +3535,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/overflow-anchor">MDN</a>
      */
-    var overflowAnchor: OverflowAnchor
+    var overflowAnchor: OverflowAnchor?
 
     /**
      * **Syntax**: `visible | hidden | clip | scroll | auto`
@@ -3548,7 +3548,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/overflow-block">MDN</a>
      */
-    var overflowBlock: OverflowBlock
+    var overflowBlock: OverflowBlock?
 
     /**
      * The **`overflow-clip-box`** CSS property specifies relative to which box the clipping happens when there is an overflow. It is short hand for the `overflow-clip-box-inline` and `overflow-clip-box-block` properties.
@@ -3563,7 +3563,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Mozilla/Gecko/Chrome/CSS/overflow-clip-box">MDN</a>
      */
-    var overflowClipBox: OverflowClipBox
+    var overflowClipBox: OverflowClipBox?
 
     /**
      * **Syntax**: `<visual-box> || <length [0,∞]>`
@@ -3576,7 +3576,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/overflow-clip-margin">MDN</a>
      */
-    var overflowClipMargin: OverflowClipMargin
+    var overflowClipMargin: OverflowClipMargin?
 
     /**
      * **Syntax**: `visible | hidden | clip | scroll | auto`
@@ -3589,7 +3589,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/overflow-inline">MDN</a>
      */
-    var overflowInline: OverflowInline
+    var overflowInline: OverflowInline?
 
     /**
      * The `**overflow-wrap**` CSS property applies to inline elements, setting whether the browser should insert line breaks within an otherwise unbreakable string to prevent text from overflowing its line box.
@@ -3605,7 +3605,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/overflow-wrap">MDN</a>
      */
-    var overflowWrap: OverflowWrap
+    var overflowWrap: OverflowWrap?
 
     /**
      * The **`overflow-x`** CSS property sets what shows when content overflows a block-level element's left and right edges. This may be nothing, a scroll bar, or the overflow content.
@@ -3620,7 +3620,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/overflow-x">MDN</a>
      */
-    var overflowX: OverflowX
+    var overflowX: OverflowX?
 
     /**
      * The **`overflow-y`** CSS property sets what shows when content overflows a block-level element's top and bottom edges. This may be nothing, a scroll bar, or the overflow content.
@@ -3635,7 +3635,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/overflow-y">MDN</a>
      */
-    var overflowY: OverflowY
+    var overflowY: OverflowY?
 
     /**
      * The **`overscroll-behavior-block`** CSS property sets the browser's behavior when the block direction boundary of a scrolling area is reached.
@@ -3650,7 +3650,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/overscroll-behavior-block">MDN</a>
      */
-    var overscrollBehaviorBlock: OverscrollBehaviorBlock
+    var overscrollBehaviorBlock: OverscrollBehaviorBlock?
 
     /**
      * The **`overscroll-behavior-inline`** CSS property sets the browser's behavior when the inline direction boundary of a scrolling area is reached.
@@ -3665,7 +3665,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/overscroll-behavior-inline">MDN</a>
      */
-    var overscrollBehaviorInline: OverscrollBehaviorInline
+    var overscrollBehaviorInline: OverscrollBehaviorInline?
 
     /**
      * The **`overscroll-behavior-x`** CSS property sets the browser's behavior when the horizontal boundary of a scrolling area is reached.
@@ -3680,7 +3680,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/overscroll-behavior-x">MDN</a>
      */
-    var overscrollBehaviorX: OverscrollBehaviorX
+    var overscrollBehaviorX: OverscrollBehaviorX?
 
     /**
      * The **`overscroll-behavior-y`** CSS property sets the browser's behavior when the vertical boundary of a scrolling area is reached.
@@ -3695,7 +3695,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/overscroll-behavior-y">MDN</a>
      */
-    var overscrollBehaviorY: OverscrollBehaviorY
+    var overscrollBehaviorY: OverscrollBehaviorY?
 
     /**
      * The **`padding-block`** CSS shorthand property defines the logical block start and end padding of an element, which maps to physical padding properties depending on the element's writing mode, directionality, and text orientation.
@@ -3710,7 +3710,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/padding-block">MDN</a>
      */
-    var paddingBlock: PaddingBlock
+    var paddingBlock: PaddingBlock?
 
     /**
      * The **`padding-block-end`** CSS property defines the logical block end padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation.
@@ -3725,7 +3725,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/padding-block-end">MDN</a>
      */
-    var paddingBlockEnd: PaddingBlockEnd
+    var paddingBlockEnd: PaddingBlockEnd?
 
     /**
      * The **`padding-block-start`** CSS property defines the logical block start padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation.
@@ -3740,7 +3740,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/padding-block-start">MDN</a>
      */
-    var paddingBlockStart: PaddingBlockStart
+    var paddingBlockStart: PaddingBlockStart?
 
     /**
      * The **`padding-bottom`** CSS property sets the height of the padding area on the bottom of an element.
@@ -3755,7 +3755,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/padding-bottom">MDN</a>
      */
-    var paddingBottom: PaddingBottom
+    var paddingBottom: PaddingBottom?
 
     /**
      * The **`padding-inline`** CSS shorthand property defines the logical inline start and end padding of an element, which maps to physical padding properties depending on the element's writing mode, directionality, and text orientation.
@@ -3770,7 +3770,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/padding-inline">MDN</a>
      */
-    var paddingInline: PaddingInline
+    var paddingInline: PaddingInline?
 
     /**
      * The **`padding-inline-end`** CSS property defines the logical inline end padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation.
@@ -3786,7 +3786,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/padding-inline-end">MDN</a>
      */
-    var paddingInlineEnd: PaddingInlineEnd
+    var paddingInlineEnd: PaddingInlineEnd?
 
     /**
      * The **`padding-inline-start`** CSS property defines the logical inline start padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation.
@@ -3802,7 +3802,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/padding-inline-start">MDN</a>
      */
-    var paddingInlineStart: PaddingInlineStart
+    var paddingInlineStart: PaddingInlineStart?
 
     /**
      * The **`padding-left`** CSS property sets the width of the padding area to the left of an element.
@@ -3817,7 +3817,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/padding-left">MDN</a>
      */
-    var paddingLeft: PaddingLeft
+    var paddingLeft: PaddingLeft?
 
     /**
      * The **`padding-right`** CSS property sets the width of the padding area on the right of an element.
@@ -3832,7 +3832,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/padding-right">MDN</a>
      */
-    var paddingRight: PaddingRight
+    var paddingRight: PaddingRight?
 
     /**
      * The **`padding-top`** CSS property sets the height of the padding area on the top of an element.
@@ -3847,7 +3847,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/padding-top">MDN</a>
      */
-    var paddingTop: PaddingTop
+    var paddingTop: PaddingTop?
 
     /**
      * The **`page-break-after`** CSS property adjusts page breaks _after_ the current element.
@@ -3862,7 +3862,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/page-break-after">MDN</a>
      */
-    var pageBreakAfter: PageBreakAfter
+    var pageBreakAfter: PageBreakAfter?
 
     /**
      * The **`page-break-before`** CSS property adjusts page breaks _before_ the current element.
@@ -3877,7 +3877,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/page-break-before">MDN</a>
      */
-    var pageBreakBefore: PageBreakBefore
+    var pageBreakBefore: PageBreakBefore?
 
     /**
      * The **`page-break-inside`** CSS property adjusts page breaks _inside_ the current element.
@@ -3892,7 +3892,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/page-break-inside">MDN</a>
      */
-    var pageBreakInside: PageBreakInside
+    var pageBreakInside: PageBreakInside?
 
     /**
      * The **`paint-order`** CSS property lets you control the order in which the fill and stroke (and painting markers) of text content and shapes are drawn.
@@ -3907,7 +3907,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/paint-order">MDN</a>
      */
-    var paintOrder: PaintOrder
+    var paintOrder: PaintOrder?
 
     /**
      * The **`perspective`** CSS property determines the distance between the z=0 plane and the user in order to give a 3D-positioned element some perspective.
@@ -3923,7 +3923,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/perspective">MDN</a>
      */
-    var perspective: Perspective
+    var perspective: Perspective?
 
     /**
      * The **`perspective-origin`** CSS property determines the position at which the viewer is looking. It is used as the _vanishing point_ by the `perspective` property.
@@ -3939,7 +3939,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/perspective-origin">MDN</a>
      */
-    var perspectiveOrigin: PerspectiveOrigin
+    var perspectiveOrigin: PerspectiveOrigin?
 
     /**
      * The `**place-content**` CSS shorthand property allows you to align content along both the block and inline directions at once (i.e. the `align-content` and `justify-content` properties) in a relevant layout system such as Grid or Flexbox.
@@ -3968,7 +3968,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/place-content">MDN</a>
      */
-    var placeContent: PlaceContent
+    var placeContent: PlaceContent?
 
     /**
      * The **`pointer-events`** CSS property sets under what circumstances (if any) a particular graphic element can become the target of pointer events.
@@ -3983,7 +3983,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/pointer-events">MDN</a>
      */
-    var pointerEvents: PointerEvents
+    var pointerEvents: PointerEvents?
 
     /**
      * The **`position`** CSS property sets how an element is positioned in a document. The `top`, `right`, `bottom`, and `left` properties determine the final location of positioned elements.
@@ -3998,7 +3998,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/position">MDN</a>
      */
-    var position: Position
+    var position: Position?
 
     /**
      * The **`quotes`** CSS property sets how the browser should render quotation marks that are added using the `open-quotes` or `close-quotes` values of the CSS `content` property.
@@ -4013,7 +4013,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/quotes">MDN</a>
      */
-    var quotes: Quotes
+    var quotes: Quotes?
 
     /**
      * The **`resize`** CSS property sets whether an element is resizable, and if so, in which directions.
@@ -4028,7 +4028,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/resize">MDN</a>
      */
-    var resize: Resize
+    var resize: Resize?
 
     /**
      * The **`right`** CSS property participates in specifying the horizontal position of a positioned element. It has no effect on non-positioned elements.
@@ -4043,7 +4043,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/right">MDN</a>
      */
-    var right: Right
+    var right: Right?
 
     /**
      * The **`rotate`** CSS property allows you to specify rotation transforms individually and independently of the `transform` property. This maps better to typical user interface usage, and saves having to remember the exact order of transform functions to specify in the `transform` property.
@@ -4058,7 +4058,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/rotate">MDN</a>
      */
-    var rotate: Rotate
+    var rotate: Rotate?
 
     /**
      * The **`row-gap`** CSS property sets the size of the gap (gutter) between an element's grid rows.
@@ -4088,7 +4088,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/row-gap">MDN</a>
      */
-    var rowGap: RowGap
+    var rowGap: RowGap?
 
     /**
      * The `**ruby-align**` CSS property defines the distribution of the different ruby elements over the base.
@@ -4103,14 +4103,14 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/ruby-align">MDN</a>
      */
-    var rubyAlign: RubyAlign
+    var rubyAlign: RubyAlign?
 
     /**
      * **Syntax**: `separate | collapse | auto`
      *
      * **Initial value**: `separate`
      */
-    var rubyMerge: RubyMerge
+    var rubyMerge: RubyMerge?
 
     /**
      * The `**ruby-position**` CSS property defines the position of a ruby element relatives to its base element. It can be position over the element (`over`), under it (`under`), or between the characters, on their right side (`inter-character`).
@@ -4126,7 +4126,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/ruby-position">MDN</a>
      */
-    var rubyPosition: RubyPosition
+    var rubyPosition: RubyPosition?
 
     /**
      * The **`scale`** CSS property allows you to specify scale transforms individually and independently of the `transform` property. This maps better to typical user interface usage, and saves having to remember the exact order of transform functions to specify in the `transform` value.
@@ -4141,7 +4141,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/scale">MDN</a>
      */
-    var scale: Scale
+    var scale: Scale?
 
     /**
      * The **`scroll-behavior`** CSS property sets the behavior for a scrolling box when scrolling is triggered by the navigation or CSSOM scrolling APIs.
@@ -4156,7 +4156,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/scroll-behavior">MDN</a>
      */
-    var scrollBehavior: ScrollBehavior
+    var scrollBehavior: ScrollBehavior?
 
     /**
      * The **`scroll-margin`** shorthand property sets all of the scroll margins of an element at once, assigning values much like the `margin` property does for margins of an element.
@@ -4171,7 +4171,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/scroll-margin">MDN</a>
      */
-    var scrollMargin: ScrollMargin
+    var scrollMargin: ScrollMargin?
 
     /**
      * The `scroll-margin-block` shorthand property sets the scroll margins of an element in the block dimension.
@@ -4186,7 +4186,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/scroll-margin-block">MDN</a>
      */
-    var scrollMarginBlock: ScrollMarginBlock
+    var scrollMarginBlock: ScrollMarginBlock?
 
     /**
      * The `scroll-margin-block-end` property defines the margin of the scroll snap area at the end of the block dimension that is used for snapping this box to the snapport. The scroll snap area is determined by taking the transformed border box, finding its rectangular bounding box (axis-aligned in the scroll container’s coordinate space), then adding the specified outsets.
@@ -4201,7 +4201,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/scroll-margin-block-end">MDN</a>
      */
-    var scrollMarginBlockEnd: ScrollMarginBlockEnd
+    var scrollMarginBlockEnd: ScrollMarginBlockEnd?
 
     /**
      * The `scroll-margin-block-start` property defines the margin of the scroll snap area at the start of the block dimension that is used for snapping this box to the snapport. The scroll snap area is determined by taking the transformed border box, finding its rectangular bounding box (axis-aligned in the scroll container’s coordinate space), then adding the specified outsets.
@@ -4216,7 +4216,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/scroll-margin-block-start">MDN</a>
      */
-    var scrollMarginBlockStart: ScrollMarginBlockStart
+    var scrollMarginBlockStart: ScrollMarginBlockStart?
 
     /**
      * The `scroll-margin-bottom` property defines the bottom margin of the scroll snap area that is used for snapping this box to the snapport. The scroll snap area is determined by taking the transformed border box, finding its rectangular bounding box (axis-aligned in the scroll container’s coordinate space), then adding the specified outsets.
@@ -4231,7 +4231,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/scroll-margin-bottom">MDN</a>
      */
-    var scrollMarginBottom: ScrollMarginBottom
+    var scrollMarginBottom: ScrollMarginBottom?
 
     /**
      * The `scroll-margin-inline` shorthand property sets the scroll margins of an element in the inline dimension.
@@ -4246,7 +4246,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/scroll-margin-inline">MDN</a>
      */
-    var scrollMarginInline: ScrollMarginInline
+    var scrollMarginInline: ScrollMarginInline?
 
     /**
      * The `scroll-margin-inline-end` property defines the margin of the scroll snap area at the end of the inline dimension that is used for snapping this box to the snapport. The scroll snap area is determined by taking the transformed border box, finding its rectangular bounding box (axis-aligned in the scroll container’s coordinate space), then adding the specified outsets.
@@ -4261,7 +4261,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/scroll-margin-inline-end">MDN</a>
      */
-    var scrollMarginInlineEnd: ScrollMarginInlineEnd
+    var scrollMarginInlineEnd: ScrollMarginInlineEnd?
 
     /**
      * The `scroll-margin-inline-start` property defines the margin of the scroll snap area at the start of the inline dimension that is used for snapping this box to the snapport. The scroll snap area is determined by taking the transformed border box, finding its rectangular bounding box (axis-aligned in the scroll container’s coordinate space), then adding the specified outsets.
@@ -4276,7 +4276,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/scroll-margin-inline-start">MDN</a>
      */
-    var scrollMarginInlineStart: ScrollMarginInlineStart
+    var scrollMarginInlineStart: ScrollMarginInlineStart?
 
     /**
      * The `scroll-margin-left` property defines the left margin of the scroll snap area that is used for snapping this box to the snapport. The scroll snap area is determined by taking the transformed border box, finding its rectangular bounding box (axis-aligned in the scroll container’s coordinate space), then adding the specified outsets.
@@ -4291,7 +4291,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/scroll-margin-left">MDN</a>
      */
-    var scrollMarginLeft: ScrollMarginLeft
+    var scrollMarginLeft: ScrollMarginLeft?
 
     /**
      * The `scroll-margin-right` property defines the right margin of the scroll snap area that is used for snapping this box to the snapport. The scroll snap area is determined by taking the transformed border box, finding its rectangular bounding box (axis-aligned in the scroll container’s coordinate space), then adding the specified outsets.
@@ -4306,7 +4306,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/scroll-margin-right">MDN</a>
      */
-    var scrollMarginRight: ScrollMarginRight
+    var scrollMarginRight: ScrollMarginRight?
 
     /**
      * The `scroll-margin-top` property defines the top margin of the scroll snap area that is used for snapping this box to the snapport. The scroll snap area is determined by taking the transformed border box, finding its rectangular bounding box (axis-aligned in the scroll container’s coordinate space), then adding the specified outsets.
@@ -4321,7 +4321,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/scroll-margin-top">MDN</a>
      */
-    var scrollMarginTop: ScrollMarginTop
+    var scrollMarginTop: ScrollMarginTop?
 
     /**
      * The **`scroll-padding`** shorthand property sets scroll padding on all sides of an element at once, much like the `padding` property does for padding on an element.
@@ -4336,7 +4336,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/scroll-padding">MDN</a>
      */
-    var scrollPadding: ScrollPadding
+    var scrollPadding: ScrollPadding?
 
     /**
      * The `scroll-padding-block` shorthand property sets the scroll padding of an element in the block dimension.
@@ -4351,7 +4351,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/scroll-padding-block">MDN</a>
      */
-    var scrollPaddingBlock: ScrollPaddingBlock
+    var scrollPaddingBlock: ScrollPaddingBlock?
 
     /**
      * The `scroll-padding-block-end` property defines offsets for the end edge in the block dimension of the optimal viewing region of the scrollport: the region used as the target region for placing things in view of the user. This allows the author to exclude regions of the scrollport that are obscured by other content (such as fixed-positioned toolbars or sidebars) or simply to put more breathing room between a targetted element and the edges of the scrollport.
@@ -4366,7 +4366,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/scroll-padding-block-end">MDN</a>
      */
-    var scrollPaddingBlockEnd: ScrollPaddingBlockEnd
+    var scrollPaddingBlockEnd: ScrollPaddingBlockEnd?
 
     /**
      * The `scroll-padding-block-start` property defines offsets for the start edge in the block dimension of the optimal viewing region of the scrollport: the region used as the target region for placing things in view of the user. This allows the author to exclude regions of the scrollport that are obscured by other content (such as fixed-positioned toolbars or sidebars) or simply to put more breathing room between a targetted element and the edges of the scrollport.
@@ -4381,7 +4381,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/scroll-padding-block-start">MDN</a>
      */
-    var scrollPaddingBlockStart: ScrollPaddingBlockStart
+    var scrollPaddingBlockStart: ScrollPaddingBlockStart?
 
     /**
      * The `scroll-padding-bottom` property defines offsets for the bottom of the optimal viewing region of the scrollport: the region used as the target region for placing things in view of the user. This allows the author to exclude regions of the scrollport that are obscured by other content (such as fixed-positioned toolbars or sidebars) or simply to put more breathing room between a targetted element and the edges of the scrollport.
@@ -4396,7 +4396,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/scroll-padding-bottom">MDN</a>
      */
-    var scrollPaddingBottom: ScrollPaddingBottom
+    var scrollPaddingBottom: ScrollPaddingBottom?
 
     /**
      * The `scroll-padding-inline` shorthand property sets the scroll padding of an element in the inline dimension.
@@ -4411,7 +4411,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/scroll-padding-inline">MDN</a>
      */
-    var scrollPaddingInline: ScrollPaddingInline
+    var scrollPaddingInline: ScrollPaddingInline?
 
     /**
      * The `scroll-padding-inline-end` property defines offsets for the end edge in the inline dimension of the optimal viewing region of the scrollport: the region used as the target region for placing things in view of the user. This allows the author to exclude regions of the scrollport that are obscured by other content (such as fixed-positioned toolbars or sidebars) or simply to put more breathing room between a targetted element and the edges of the scrollport.
@@ -4426,7 +4426,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/scroll-padding-inline-end">MDN</a>
      */
-    var scrollPaddingInlineEnd: ScrollPaddingInlineEnd
+    var scrollPaddingInlineEnd: ScrollPaddingInlineEnd?
 
     /**
      * The `scroll-padding-inline-start` property defines offsets for the start edge in the inline dimension of the optimal viewing region of the scrollport: the region used as the target region for placing things in view of the user. This allows the author to exclude regions of the scrollport that are obscured by other content (such as fixed-positioned toolbars or sidebars) or simply to put more breathing room between a targetted element and the edges of the scrollport.
@@ -4441,7 +4441,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/scroll-padding-inline-start">MDN</a>
      */
-    var scrollPaddingInlineStart: ScrollPaddingInlineStart
+    var scrollPaddingInlineStart: ScrollPaddingInlineStart?
 
     /**
      * The `scroll-padding-left` property defines offsets for the left of the optimal viewing region of the scrollport: the region used as the target region for placing things in view of the user. This allows the author to exclude regions of the scrollport that are obscured by other content (such as fixed-positioned toolbars or sidebars) or simply to put more breathing room between a targetted element and the edges of the scrollport.
@@ -4456,7 +4456,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/scroll-padding-left">MDN</a>
      */
-    var scrollPaddingLeft: ScrollPaddingLeft
+    var scrollPaddingLeft: ScrollPaddingLeft?
 
     /**
      * The `scroll-padding-right` property defines offsets for the right of the optimal viewing region of the scrollport: the region used as the target region for placing things in view of the user. This allows the author to exclude regions of the scrollport that are obscured by other content (such as fixed-positioned toolbars or sidebars) or simply to put more breathing room between a targetted element and the edges of the scrollport.
@@ -4471,7 +4471,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/scroll-padding-right">MDN</a>
      */
-    var scrollPaddingRight: ScrollPaddingRight
+    var scrollPaddingRight: ScrollPaddingRight?
 
     /**
      * The **`scroll-padding-top`** property defines offsets for the top of the optimal viewing region of the scrollport: the region used as the target region for placing things in view of the user. This allows the author to exclude regions of the scrollport that are obscured by other content (such as fixed-positioned toolbars or sidebars) or simply to put more breathing room between a targetted element and the edges of the scrollport.
@@ -4486,7 +4486,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/scroll-padding-top">MDN</a>
      */
-    var scrollPaddingTop: ScrollPaddingTop
+    var scrollPaddingTop: ScrollPaddingTop?
 
     /**
      * The `scroll-snap-align` property specifies the box’s snap position as an alignment of its snap area (as the alignment subject) within its snap container’s snapport (as the alignment container). The two values specify the snapping alignment in the block axis and inline axis, respectively. If only one value is specified, the second value defaults to the same value.
@@ -4501,7 +4501,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/scroll-snap-align">MDN</a>
      */
-    var scrollSnapAlign: ScrollSnapAlign
+    var scrollSnapAlign: ScrollSnapAlign?
 
     /**
      * The **`scroll-margin`** shorthand property sets all of the scroll margins of an element at once, assigning values much like the `margin` property does for margins of an element.
@@ -4516,7 +4516,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/scroll-margin">MDN</a>
      */
-    var scrollSnapMargin: ScrollMargin
+    var scrollSnapMargin: ScrollMargin?
 
     /**
      * The `scroll-margin-bottom` property defines the bottom margin of the scroll snap area that is used for snapping this box to the snapport. The scroll snap area is determined by taking the transformed border box, finding its rectangular bounding box (axis-aligned in the scroll container’s coordinate space), then adding the specified outsets.
@@ -4531,7 +4531,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/scroll-margin-bottom">MDN</a>
      */
-    var scrollSnapMarginBottom: ScrollMarginBottom
+    var scrollSnapMarginBottom: ScrollMarginBottom?
 
     /**
      * The `scroll-margin-left` property defines the left margin of the scroll snap area that is used for snapping this box to the snapport. The scroll snap area is determined by taking the transformed border box, finding its rectangular bounding box (axis-aligned in the scroll container’s coordinate space), then adding the specified outsets.
@@ -4546,7 +4546,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/scroll-margin-left">MDN</a>
      */
-    var scrollSnapMarginLeft: ScrollMarginLeft
+    var scrollSnapMarginLeft: ScrollMarginLeft?
 
     /**
      * The `scroll-margin-right` property defines the right margin of the scroll snap area that is used for snapping this box to the snapport. The scroll snap area is determined by taking the transformed border box, finding its rectangular bounding box (axis-aligned in the scroll container’s coordinate space), then adding the specified outsets.
@@ -4561,7 +4561,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/scroll-margin-right">MDN</a>
      */
-    var scrollSnapMarginRight: ScrollMarginRight
+    var scrollSnapMarginRight: ScrollMarginRight?
 
     /**
      * The `scroll-margin-top` property defines the top margin of the scroll snap area that is used for snapping this box to the snapport. The scroll snap area is determined by taking the transformed border box, finding its rectangular bounding box (axis-aligned in the scroll container’s coordinate space), then adding the specified outsets.
@@ -4576,7 +4576,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/scroll-margin-top">MDN</a>
      */
-    var scrollSnapMarginTop: ScrollMarginTop
+    var scrollSnapMarginTop: ScrollMarginTop?
 
     /**
      * The **`scroll-snap-stop`** CSS property defines whether the scroll container is allowed to "pass over" possible snap positions.
@@ -4591,7 +4591,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/scroll-snap-stop">MDN</a>
      */
-    var scrollSnapStop: ScrollSnapStop
+    var scrollSnapStop: ScrollSnapStop?
 
     /**
      * The **`scroll-snap-type`** CSS property sets how strictly snap points are enforced on the scroll container in case there is one.
@@ -4607,7 +4607,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/scroll-snap-type">MDN</a>
      */
-    var scrollSnapType: ScrollSnapType
+    var scrollSnapType: ScrollSnapType?
 
     /**
      * The **`scrollbar-color`** CSS property sets the color of the scrollbar track and thumb.
@@ -4622,7 +4622,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/scrollbar-color">MDN</a>
      */
-    var scrollbarColor: ScrollbarColor
+    var scrollbarColor: ScrollbarColor?
 
     /**
      * The **`scrollbar-gutter`** CSS property allows authors to reserve space for the scrollbar, preventing unwanted layout changes as the content grows while also avoiding unnecessary visuals when scrolling isn't needed.
@@ -4637,7 +4637,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/scrollbar-gutter">MDN</a>
      */
-    var scrollbarGutter: ScrollbarGutter
+    var scrollbarGutter: ScrollbarGutter?
 
     /**
      * The **`scrollbar-width`** property allows the author to set the maximum thickness of an element’s scrollbars when they are shown.
@@ -4652,7 +4652,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/scrollbar-width">MDN</a>
      */
-    var scrollbarWidth: ScrollbarWidth
+    var scrollbarWidth: ScrollbarWidth?
 
     /**
      * The **`shape-image-threshold`** CSS property sets the alpha channel threshold used to extract the shape using an image as the value for `shape-outside`.
@@ -4667,7 +4667,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/shape-image-threshold">MDN</a>
      */
-    var shapeImageThreshold: ShapeImageThreshold
+    var shapeImageThreshold: ShapeImageThreshold?
 
     /**
      * The **`shape-margin`** CSS property sets a margin for a CSS shape created using `shape-outside`.
@@ -4682,7 +4682,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/shape-margin">MDN</a>
      */
-    var shapeMargin: ShapeMargin
+    var shapeMargin: ShapeMargin?
 
     /**
      * The **`shape-outside`** CSS property defines a shape—which may be non-rectangular—around which adjacent inline content should wrap. By default, inline content wraps around its margin box; `shape-outside` provides a way to customize this wrapping, making it possible to wrap text around complex objects rather than simple boxes.
@@ -4697,7 +4697,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/shape-outside">MDN</a>
      */
-    var shapeOutside: ShapeOutside
+    var shapeOutside: ShapeOutside?
 
     /**
      * The **`tab-size`** CSS property is used to customize the width of tab characters (U+0009).
@@ -4712,7 +4712,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/tab-size">MDN</a>
      */
-    var tabSize: TabSize
+    var tabSize: TabSize?
 
     /**
      * The **`table-layout`** CSS property sets the algorithm used to lay out `<table>` cells, rows, and columns.
@@ -4727,7 +4727,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/table-layout">MDN</a>
      */
-    var tableLayout: TableLayout
+    var tableLayout: TableLayout?
 
     /**
      * The **`text-align`** CSS property sets the horizontal alignment of a block element or table-cell box. This means it works like `vertical-align` but in the horizontal direction.
@@ -4742,7 +4742,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/text-align">MDN</a>
      */
-    var textAlign: TextAlign
+    var textAlign: TextAlign?
 
     /**
      * The **`text-align-last`** CSS property sets how the last line of a block or a line, right before a forced line break, is aligned.
@@ -4757,7 +4757,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/text-align-last">MDN</a>
      */
-    var textAlignLast: TextAlignLast
+    var textAlignLast: TextAlignLast?
 
     /**
      * The **`text-combine-upright`** CSS property sets the combination of characters into the space of a single character. If the combined text is wider than 1em, the user agent must fit the contents within 1em. The resulting composition is treated as a single upright glyph for layout and decoration. This property only has an effect in vertical writing modes.
@@ -4773,7 +4773,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/text-combine-upright">MDN</a>
      */
-    var textCombineUpright: TextCombineUpright
+    var textCombineUpright: TextCombineUpright?
 
     /**
      * The **`text-decoration-color`** CSS property sets the color of decorations added to text by `text-decoration-line`.
@@ -4789,7 +4789,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/text-decoration-color">MDN</a>
      */
-    var textDecorationColor: TextDecorationColor
+    var textDecorationColor: TextDecorationColor?
 
     /**
      * The **`text-decoration-line`** CSS property sets the kind of decoration that is used on text in an element, such as an underline or overline.
@@ -4805,7 +4805,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/text-decoration-line">MDN</a>
      */
-    var textDecorationLine: TextDecorationLine
+    var textDecorationLine: TextDecorationLine?
 
     /**
      * The **`text-decoration-skip`** CSS property sets what parts of an element’s content any text decoration affecting the element must skip over. It controls all text decoration lines drawn by the element and also any text decoration lines drawn by its ancestors.
@@ -4821,7 +4821,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/text-decoration-skip">MDN</a>
      */
-    var textDecorationSkip: TextDecorationSkip
+    var textDecorationSkip: TextDecorationSkip?
 
     /**
      * The **`text-decoration-skip-ink`** CSS property specifies how overlines and underlines are drawn when they pass over glyph ascenders and descenders.
@@ -4836,7 +4836,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/text-decoration-skip-ink">MDN</a>
      */
-    var textDecorationSkipInk: TextDecorationSkipInk
+    var textDecorationSkipInk: TextDecorationSkipInk?
 
     /**
      * The **`text-decoration-style`** CSS property sets the style of the lines specified by `text-decoration-line`. The style applies to all lines that are set with `text-decoration-line`.
@@ -4852,7 +4852,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/text-decoration-style">MDN</a>
      */
-    var textDecorationStyle: TextDecorationStyle
+    var textDecorationStyle: TextDecorationStyle?
 
     /**
      * The **`text-decoration-thickness`** CSS property sets the stroke thickness of the decoration line that is used on text in an element, such as a line-through, underline, or overline.
@@ -4867,7 +4867,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/text-decoration-thickness">MDN</a>
      */
-    var textDecorationThickness: TextDecorationThickness
+    var textDecorationThickness: TextDecorationThickness?
 
     /**
      * The **`text-decoration-thickness`** CSS property sets the stroke thickness of the decoration line that is used on text in an element, such as a line-through, underline, or overline.
@@ -4882,7 +4882,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/text-decoration-thickness">MDN</a>
      */
-    var textDecorationWidth: TextDecorationThickness
+    var textDecorationWidth: TextDecorationThickness?
 
     /**
      * The **`text-emphasis-color`** CSS property sets the color of emphasis marks. This value can also be set using the `text-emphasis` shorthand.
@@ -4897,7 +4897,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/text-emphasis-color">MDN</a>
      */
-    var textEmphasisColor: TextEmphasisColor
+    var textEmphasisColor: TextEmphasisColor?
 
     /**
      * The **`text-emphasis-position`** CSS property sets where emphasis marks are drawn. Like ruby text, if there isn't enough room for emphasis marks, the line height is increased.
@@ -4912,7 +4912,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/text-emphasis-position">MDN</a>
      */
-    var textEmphasisPosition: TextEmphasisPosition
+    var textEmphasisPosition: TextEmphasisPosition?
 
     /**
      * The **`text-emphasis-style`** CSS property sets the appearance of emphasis marks. It can also be set, and reset, using the `text-emphasis` shorthand.
@@ -4927,7 +4927,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/text-emphasis-style">MDN</a>
      */
-    var textEmphasisStyle: TextEmphasisStyle
+    var textEmphasisStyle: TextEmphasisStyle?
 
     /**
      * The **`text-indent`** CSS property sets the length of empty space (indentation) that is put before lines of text in a block.
@@ -4942,7 +4942,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/text-indent">MDN</a>
      */
-    var textIndent: TextIndent
+    var textIndent: TextIndent?
 
     /**
      * The **`text-justify`** CSS property sets what type of justification should be applied to text when `text-align``: justify;` is set on an element.
@@ -4957,7 +4957,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/text-justify">MDN</a>
      */
-    var textJustify: TextJustify
+    var textJustify: TextJustify?
 
     /**
      * The **`text-orientation`** CSS property sets the orientation of the text characters in a line. It only affects text in vertical mode (when `writing-mode` is not `horizontal-tb`). It is useful for controlling the display of languages that use vertical script, and also for making vertical table headers.
@@ -4973,7 +4973,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/text-orientation">MDN</a>
      */
-    var textOrientation: TextOrientation
+    var textOrientation: TextOrientation?
 
     /**
      * The **`text-overflow`** CSS property sets how hidden overflow content is signaled to users. It can be clipped, display an ellipsis ('`…`'), or display a custom string.
@@ -4988,7 +4988,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/text-overflow">MDN</a>
      */
-    var textOverflow: TextOverflow
+    var textOverflow: TextOverflow?
 
     /**
      * The **`text-rendering`** CSS property provides information to the rendering engine about what to optimize for when rendering text.
@@ -5003,7 +5003,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/text-rendering">MDN</a>
      */
-    var textRendering: TextRendering
+    var textRendering: TextRendering?
 
     /**
      * The **`text-shadow`** CSS property adds shadows to text. It accepts a comma-separated list of shadows to be applied to the text and any of its `decorations`. Each shadow is described by some combination of X and Y offsets from the element, blur radius, and color.
@@ -5018,7 +5018,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/text-shadow">MDN</a>
      */
-    var textShadow: TextShadow
+    var textShadow: TextShadow?
 
     /**
      * The **`text-size-adjust`** CSS property controls the text inflation algorithm used on some smartphones and tablets. Other browsers will ignore this property.
@@ -5033,7 +5033,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/text-size-adjust">MDN</a>
      */
-    var textSizeAdjust: TextSizeAdjust
+    var textSizeAdjust: TextSizeAdjust?
 
     /**
      * The **`text-transform`** CSS property specifies how to capitalize an element's text. It can be used to make text appear in all-uppercase or all-lowercase, or with each word capitalized. It also can help improve legibility for ruby.
@@ -5048,7 +5048,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/text-transform">MDN</a>
      */
-    var textTransform: TextTransform
+    var textTransform: TextTransform?
 
     /**
      * The **`text-underline-offset`** CSS property sets the offset distance of an underline text decoration line (applied using `text-decoration`) from its original position.
@@ -5063,7 +5063,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/text-underline-offset">MDN</a>
      */
-    var textUnderlineOffset: TextUnderlineOffset
+    var textUnderlineOffset: TextUnderlineOffset?
 
     /**
      * The **`text-underline-position`** CSS property specifies the position of the underline which is set using the `text-decoration` property's `underline` value.
@@ -5079,7 +5079,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/text-underline-position">MDN</a>
      */
-    var textUnderlinePosition: TextUnderlinePosition
+    var textUnderlinePosition: TextUnderlinePosition?
 
     /**
      * The **`top`** CSS property participates in specifying the vertical position of a positioned element. It has no effect on non-positioned elements.
@@ -5094,7 +5094,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/top">MDN</a>
      */
-    var top: Top
+    var top: Top?
 
     /**
      * The **`touch-action`** CSS property sets how an element's region can be manipulated by a touchscreen user (for example, by zooming features built into the browser).
@@ -5110,7 +5110,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/touch-action">MDN</a>
      */
-    var touchAction: TouchAction
+    var touchAction: TouchAction?
 
     /**
      * The **`transform`** CSS property lets you rotate, scale, skew, or translate an element. It modifies the coordinate space of the CSS visual formatting model.
@@ -5126,7 +5126,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/transform">MDN</a>
      */
-    var transform: Transform
+    var transform: Transform?
 
     /**
      * The **`transform-box`** CSS property defines the layout box to which the `transform` and `transform-origin` properties relate.
@@ -5141,7 +5141,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/transform-box">MDN</a>
      */
-    var transformBox: TransformBox
+    var transformBox: TransformBox?
 
     /**
      * The **`transform-origin`** CSS property sets the origin for an element's transformations.
@@ -5157,7 +5157,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/transform-origin">MDN</a>
      */
-    var transformOrigin: TransformOrigin
+    var transformOrigin: TransformOrigin?
 
     /**
      * The **`transform-style`** CSS property sets whether children of an element are positioned in the 3D space or are flattened in the plane of the element.
@@ -5173,7 +5173,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/transform-style">MDN</a>
      */
-    var transformStyle: TransformStyle
+    var transformStyle: TransformStyle?
 
     /**
      * The **`transition-delay`** CSS property specifies the duration to wait before starting a property's transition effect when its value changes.
@@ -5189,7 +5189,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/transition-delay">MDN</a>
      */
-    var transitionDelay: TransitionDelay
+    var transitionDelay: TransitionDelay?
 
     /**
      * The **`transition-duration`** CSS property sets the length of time a transition animation should take to complete. By default, the value is `0s`, meaning that no animation will occur.
@@ -5205,7 +5205,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/transition-duration">MDN</a>
      */
-    var transitionDuration: TransitionDuration
+    var transitionDuration: TransitionDuration?
 
     /**
      * The **`transition-property`** CSS property sets the CSS properties to which a transition effect should be applied.
@@ -5221,7 +5221,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/transition-property">MDN</a>
      */
-    var transitionProperty: TransitionProperty
+    var transitionProperty: TransitionProperty?
 
     /**
      * The **`transition-timing-function`** CSS property sets how intermediate values are calculated for CSS properties being affected by a transition effect.
@@ -5237,7 +5237,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/transition-timing-function">MDN</a>
      */
-    var transitionTimingFunction: TransitionTimingFunction
+    var transitionTimingFunction: TransitionTimingFunction?
 
     /**
      * The **`translate`** CSS property allows you to specify translation transforms individually and independently of the `transform` property. This maps better to typical user interface usage, and saves having to remember the exact order of transform functions to specify in the `transform` value.
@@ -5252,7 +5252,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/translate">MDN</a>
      */
-    var translate: Translate
+    var translate: Translate?
 
     /**
      * The **`unicode-bidi`** CSS property, together with the `direction` property, determines how bidirectional text in a document is handled. For example, if a block of content contains both left-to-right and right-to-left text, the user-agent uses a complex Unicode algorithm to decide how to display the text. The `unicode-bidi` property overrides this algorithm and allows the developer to control the text embedding.
@@ -5267,7 +5267,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/unicode-bidi">MDN</a>
      */
-    var unicodeBidi: UnicodeBidi
+    var unicodeBidi: UnicodeBidi?
 
     /**
      * The `**user-select**` CSS property controls whether the user can select text. This doesn't have any effect on content loaded as chrome, except in textboxes.
@@ -5283,7 +5283,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/user-select">MDN</a>
      */
-    var userSelect: UserSelect
+    var userSelect: UserSelect?
 
     /**
      * The **`vertical-align`** CSS property sets vertical alignment of an inline, inline-block or table-cell box.
@@ -5298,7 +5298,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/vertical-align">MDN</a>
      */
-    var verticalAlign: VerticalAlign
+    var verticalAlign: VerticalAlign?
 
     /**
      * The **`visibility`** CSS property shows or hides an element without changing the layout of a document. The property can also hide rows or columns in a `<table>`.
@@ -5313,7 +5313,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/visibility">MDN</a>
      */
-    var visibility: Visibility
+    var visibility: Visibility?
 
     /**
      * The **`white-space`** CSS property sets how white space inside an element is handled.
@@ -5328,7 +5328,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/white-space">MDN</a>
      */
-    var whiteSpace: WhiteSpace
+    var whiteSpace: WhiteSpace?
 
     /**
      * The **`widows`** CSS property sets the minimum number of lines in a block container that must be shown at the _top_ of a page, region, or column.
@@ -5343,7 +5343,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/widows">MDN</a>
      */
-    var widows: Widows
+    var widows: Widows?
 
     /**
      * The **`width`** CSS property sets an element's width. By default, it sets the width of the content area, but if `box-sizing` is set to `border-box`, it sets the width of the border area.
@@ -5358,7 +5358,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/width">MDN</a>
      */
-    var width: Width
+    var width: Width?
 
     /**
      * The **`will-change`** CSS property hints to browsers how an element is expected to change. Browsers may set up optimizations before an element is actually changed. These kinds of optimizations can increase the responsiveness of a page by doing potentially expensive work before they are actually required.
@@ -5373,7 +5373,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/will-change">MDN</a>
      */
-    var willChange: WillChange
+    var willChange: WillChange?
 
     /**
      * The **`word-break`** CSS property sets whether line breaks appear wherever the text would otherwise overflow its content box.
@@ -5388,7 +5388,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/word-break">MDN</a>
      */
-    var wordBreak: WordBreak
+    var wordBreak: WordBreak?
 
     /**
      * The **`word-spacing`** CSS property sets the length of space between words and between tags.
@@ -5403,7 +5403,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/word-spacing">MDN</a>
      */
-    var wordSpacing: WordSpacing
+    var wordSpacing: WordSpacing?
 
     /**
      * The `**overflow-wrap**` CSS property applies to inline elements, setting whether the browser should insert line breaks within an otherwise unbreakable string to prevent text from overflowing its line box.
@@ -5412,7 +5412,7 @@ external interface StandardLonghandProperties {
      *
      * **Initial value**: `normal`
      */
-    var wordWrap: WordWrap
+    var wordWrap: WordWrap?
 
     /**
      * The **`writing-mode`** CSS property sets whether lines of text are laid out horizontally or vertically, as well as the direction in which blocks progress. When set for an entire document, it should be set on the root element (`html` element for HTML documents).
@@ -5428,7 +5428,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/writing-mode">MDN</a>
      */
-    var writingMode: WritingMode
+    var writingMode: WritingMode?
 
     /**
      * The **`z-index`** CSS property sets the z-order of a positioned element and its descendants or flex items. Overlapping elements with a larger z-index cover those with a smaller one.
@@ -5443,7 +5443,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/z-index">MDN</a>
      */
-    var zIndex: ZIndex
+    var zIndex: ZIndex?
 
     /**
      * The non-standard **`zoom`** CSS property can be used to control the magnification level of an element. `transform: scale()` should be used instead of this property, if possible. However, unlike CSS Transforms, `zoom` affects the layout size of the element.
@@ -5458,5 +5458,5 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/zoom">MDN</a>
      */
-    var zoom: Zoom
+    var zoom: Zoom?
 }

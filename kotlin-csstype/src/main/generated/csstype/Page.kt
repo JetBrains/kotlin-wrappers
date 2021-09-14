@@ -3,5 +3,5 @@
 package csstype
 
 external interface Page {
-    var size: Size
+    var size: Size?
 }

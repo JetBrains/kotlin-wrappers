@@ -16,7 +16,7 @@ external interface StandardShorthandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/all">MDN</a>
      */
-    var all: All
+    var all: All?
 
     /**
      * The **`animation`** shorthand CSS property applies an animation between styles. It is a shorthand for `animation-name`, `animation-duration`, `animation-timing-function`, `animation-delay`, `animation-iteration-count`, `animation-direction`, `animation-fill-mode`, and `animation-play-state`.
@@ -30,7 +30,7 @@ external interface StandardShorthandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/animation">MDN</a>
      */
-    var animation: Animation
+    var animation: Animation?
 
     /**
      * The **`background`** shorthand CSS property sets all background style properties at once, such as color, image, origin and size, or repeat method.
@@ -43,7 +43,7 @@ external interface StandardShorthandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/background">MDN</a>
      */
-    var background: Background
+    var background: Background?
 
     /**
      * The **`background-position`** CSS property sets the initial position for each background image. The position is relative to the position layer set by `background-origin`.
@@ -58,7 +58,7 @@ external interface StandardShorthandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/background-position">MDN</a>
      */
-    var backgroundPosition: BackgroundPosition
+    var backgroundPosition: BackgroundPosition?
 
     /**
      * The **`border`** shorthand CSS property sets an element's border. It sets the values of `border-width`, `border-style`, and `border-color`.
@@ -71,7 +71,7 @@ external interface StandardShorthandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/border">MDN</a>
      */
-    var border: Border
+    var border: Border?
 
     /**
      * The **`border-block`** CSS property is a shorthand property for setting the individual logical block border property values in a single place in the style sheet.
@@ -84,7 +84,7 @@ external interface StandardShorthandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/border-block">MDN</a>
      */
-    var borderBlock: BorderBlock
+    var borderBlock: BorderBlock?
 
     /**
      * The **`border-block-end`** CSS property is a shorthand property for setting the individual logical block-end border property values in a single place in the style sheet.
@@ -97,7 +97,7 @@ external interface StandardShorthandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/border-block-end">MDN</a>
      */
-    var borderBlockEnd: BorderBlockEnd
+    var borderBlockEnd: BorderBlockEnd?
 
     /**
      * The **`border-block-start`** CSS property is a shorthand property for setting the individual logical block-start border property values in a single place in the style sheet.
@@ -110,7 +110,7 @@ external interface StandardShorthandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/border-block-start">MDN</a>
      */
-    var borderBlockStart: BorderBlockStart
+    var borderBlockStart: BorderBlockStart?
 
     /**
      * The **`border-bottom`** shorthand CSS property sets an element's bottom border. It sets the values of `border-bottom-width`, `border-bottom-style` and `border-bottom-color`.
@@ -123,7 +123,7 @@ external interface StandardShorthandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/border-bottom">MDN</a>
      */
-    var borderBottom: BorderBottom
+    var borderBottom: BorderBottom?
 
     /**
      * The **`border-color`** shorthand CSS property sets the color of an element's border.
@@ -136,7 +136,7 @@ external interface StandardShorthandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/border-color">MDN</a>
      */
-    var borderColor: BorderColor
+    var borderColor: BorderColor?
 
     /**
      * The **`border-image`** CSS property draws an image around a given element. It replaces the element's regular border.
@@ -150,7 +150,7 @@ external interface StandardShorthandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/border-image">MDN</a>
      */
-    var borderImage: BorderImage
+    var borderImage: BorderImage?
 
     /**
      * The **`border-inline`** CSS property is a shorthand property for setting the individual logical inline border property values in a single place in the style sheet.
@@ -163,7 +163,7 @@ external interface StandardShorthandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/border-inline">MDN</a>
      */
-    var borderInline: BorderInline
+    var borderInline: BorderInline?
 
     /**
      * The **`border-inline-end`** CSS property is a shorthand property for setting the individual logical inline-end border property values in a single place in the style sheet.
@@ -176,7 +176,7 @@ external interface StandardShorthandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/border-inline-end">MDN</a>
      */
-    var borderInlineEnd: BorderInlineEnd
+    var borderInlineEnd: BorderInlineEnd?
 
     /**
      * The **`border-inline-start`** CSS property is a shorthand property for setting the individual logical inline-start border property values in a single place in the style sheet.
@@ -189,7 +189,7 @@ external interface StandardShorthandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/border-inline-start">MDN</a>
      */
-    var borderInlineStart: BorderInlineStart
+    var borderInlineStart: BorderInlineStart?
 
     /**
      * The **`border-left`** shorthand CSS property sets all the properties of an element's left border.
@@ -202,7 +202,7 @@ external interface StandardShorthandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/border-left">MDN</a>
      */
-    var borderLeft: BorderLeft
+    var borderLeft: BorderLeft?
 
     /**
      * The **`border-radius`** CSS property rounds the corners of an element's outer border edge. You can set a single radius to make circular corners, or two radii to make elliptical corners.
@@ -216,7 +216,7 @@ external interface StandardShorthandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/border-radius">MDN</a>
      */
-    var borderRadius: BorderRadius
+    var borderRadius: BorderRadius?
 
     /**
      * The **`border-right`** shorthand CSS property sets all the properties of an element's right border.
@@ -229,7 +229,7 @@ external interface StandardShorthandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/border-right">MDN</a>
      */
-    var borderRight: BorderRight
+    var borderRight: BorderRight?
 
     /**
      * The **`border-style`** shorthand CSS property sets the line style for all four sides of an element's border.
@@ -242,7 +242,7 @@ external interface StandardShorthandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/border-style">MDN</a>
      */
-    var borderStyle: BorderStyle
+    var borderStyle: BorderStyle?
 
     /**
      * The **`border-top`** shorthand CSS property sets all the properties of an element's top border.
@@ -255,7 +255,7 @@ external interface StandardShorthandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/border-top">MDN</a>
      */
-    var borderTop: BorderTop
+    var borderTop: BorderTop?
 
     /**
      * The **`border-width`** shorthand CSS property sets the width of an element's border.
@@ -268,7 +268,7 @@ external interface StandardShorthandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/border-width">MDN</a>
      */
-    var borderWidth: BorderWidth
+    var borderWidth: BorderWidth?
 
     /**
      * The **`column-rule`** shorthand CSS property sets the width, style, and color of the line drawn between columns in a multi-column layout.
@@ -282,7 +282,7 @@ external interface StandardShorthandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/column-rule">MDN</a>
      */
-    var columnRule: ColumnRule
+    var columnRule: ColumnRule?
 
     /**
      * The **`columns`** CSS shorthand property sets the number of columns to use when drawing an element's contents, as well as those columns' widths.
@@ -296,7 +296,7 @@ external interface StandardShorthandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/columns">MDN</a>
      */
-    var columns: Columns
+    var columns: Columns?
 
     /**
      * The **`flex`** CSS shorthand property sets how a flex _item_ will grow or shrink to fit the space available in its flex container.
@@ -310,7 +310,7 @@ external interface StandardShorthandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/flex">MDN</a>
      */
-    var flex: Flex
+    var flex: Flex?
 
     /**
      * The **`flex-flow`** CSS shorthand property specifies the direction of a flex container, as well as its wrapping behavior.
@@ -324,7 +324,7 @@ external interface StandardShorthandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/flex-flow">MDN</a>
      */
-    var flexFlow: FlexFlow
+    var flexFlow: FlexFlow?
 
     /**
      * The **`font`** CSS shorthand property sets all the different properties of an element's font. Alternatively, it sets an element's font to a system font.
@@ -337,7 +337,7 @@ external interface StandardShorthandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/font">MDN</a>
      */
-    var font: Font
+    var font: Font?
 
     /**
      * The **`gap`** CSS property sets the gaps (gutters) between rows and columns. It is a shorthand for `row-gap` and `column-gap`.
@@ -373,7 +373,7 @@ external interface StandardShorthandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/gap">MDN</a>
      */
-    var gap: Gap
+    var gap: Gap?
 
     /**
      * The **`grid`** CSS property is a shorthand property that sets all of the explicit and implicit grid properties in a single declaration.
@@ -386,7 +386,7 @@ external interface StandardShorthandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/grid">MDN</a>
      */
-    var grid: Grid
+    var grid: Grid?
 
     /**
      * The **`grid-area`** CSS shorthand property specifies a grid item’s size and location within a grid by contributing a line, a span, or nothing (automatic) to its grid placement, thereby specifying the edges of its grid area.
@@ -399,7 +399,7 @@ external interface StandardShorthandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/grid-area">MDN</a>
      */
-    var gridArea: GridArea
+    var gridArea: GridArea?
 
     /**
      * The **`grid-column`** CSS shorthand property specifies a grid item's size and location within a grid column by contributing a line, a span, or nothing (automatic) to its grid placement, thereby specifying the inline-start and inline-end edge of its grid area.
@@ -412,7 +412,7 @@ external interface StandardShorthandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/grid-column">MDN</a>
      */
-    var gridColumn: GridColumn
+    var gridColumn: GridColumn?
 
     /**
      * The **`grid-row`** CSS shorthand property specifies a grid item’s size and location within the grid row by contributing a line, a span, or nothing (automatic) to its grid placement, thereby specifying the inline-start and inline-end edge of its grid area.
@@ -425,7 +425,7 @@ external interface StandardShorthandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/grid-row">MDN</a>
      */
-    var gridRow: GridRow
+    var gridRow: GridRow?
 
     /**
      * The **`grid-template`** CSS property is a shorthand property for defining grid columns, rows, and areas.
@@ -438,14 +438,14 @@ external interface StandardShorthandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/grid-template">MDN</a>
      */
-    var gridTemplate: GridTemplate
+    var gridTemplate: GridTemplate?
 
     /**
      * **Syntax**: `none | <integer>`
      *
      * **Initial value**: `none`
      */
-    var lineClamp: LineClamp
+    var lineClamp: LineClamp?
 
     /**
      * The **`list-style`** CSS shorthand property allows you set all the list style properties at once.
@@ -458,7 +458,7 @@ external interface StandardShorthandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/list-style">MDN</a>
      */
-    var listStyle: ListStyle
+    var listStyle: ListStyle?
 
     /**
      * The **`margin`** CSS property sets the margin area on all four sides of an element. It is a shorthand for `margin-top`, `margin-right`, `margin-bottom`, and `margin-left`.
@@ -471,7 +471,7 @@ external interface StandardShorthandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/margin">MDN</a>
      */
-    var margin: Margin
+    var margin: Margin?
 
     /**
      * The **`mask`** CSS shorthand property hides an element (partially or fully) by masking or clipping the image at specific points.
@@ -484,7 +484,7 @@ external interface StandardShorthandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/mask">MDN</a>
      */
-    var mask: Mask
+    var mask: Mask?
 
     /**
      * The **`mask-border`** CSS shorthand property lets you create a mask along the edge of an element's border.
@@ -497,7 +497,7 @@ external interface StandardShorthandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/mask-border">MDN</a>
      */
-    var maskBorder: MaskBorder
+    var maskBorder: MaskBorder?
 
     /**
      * The **`offset`** CSS shorthand property sets all the properties required for animating an element along a defined path.
@@ -511,7 +511,7 @@ external interface StandardShorthandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/offset">MDN</a>
      */
-    var motion: Offset
+    var motion: Offset?
 
     /**
      * The **`offset`** CSS shorthand property sets all the properties required for animating an element along a defined path.
@@ -525,7 +525,7 @@ external interface StandardShorthandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/offset">MDN</a>
      */
-    var offset: Offset
+    var offset: Offset?
 
     /**
      * The **`outline`** CSS shorthand property set all the outline properties in a single declaration.
@@ -538,7 +538,7 @@ external interface StandardShorthandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/outline">MDN</a>
      */
-    var outline: Outline
+    var outline: Outline?
 
     /**
      * The **`overflow`** CSS shorthand property sets the desired behavior for an element's overflow — i.e. when an element's content is too big to fit in its block formatting context — in both directions.
@@ -553,7 +553,7 @@ external interface StandardShorthandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/overflow">MDN</a>
      */
-    var overflow: Overflow
+    var overflow: Overflow?
 
     /**
      * The **`overscroll-behavior`** CSS property sets what a browser does when reaching the boundary of a scrolling area. It's a shorthand for `overscroll-behavior-x` and `overscroll-behavior-y`.
@@ -568,7 +568,7 @@ external interface StandardShorthandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/overscroll-behavior">MDN</a>
      */
-    var overscrollBehavior: OverscrollBehavior
+    var overscrollBehavior: OverscrollBehavior?
 
     /**
      * The **`padding`** CSS shorthand property sets the padding area on all four sides of an element at once.
@@ -581,7 +581,7 @@ external interface StandardShorthandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/padding">MDN</a>
      */
-    var padding: Padding
+    var padding: Padding?
 
     /**
      * The CSS **`place-items`** shorthand property allows you to align items along both the block and inline directions at once (i.e. the `align-items` and `justify-items` properties) in a relevant layout system such as Grid or Flexbox. If the second value is not set, the first value is also used for it.
@@ -608,7 +608,7 @@ external interface StandardShorthandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/place-items">MDN</a>
      */
-    var placeItems: PlaceItems
+    var placeItems: PlaceItems?
 
     /**
      * The **`place-self`** CSS shorthand property allows you to align an individual item in both the block and inline directions at once (i.e. the `align-self` and `justify-self` properties) in a relevant layout system such as Grid or Flexbox. If the second value is not present, the first value is also used for it.
@@ -635,7 +635,7 @@ external interface StandardShorthandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/place-self">MDN</a>
      */
-    var placeSelf: PlaceSelf
+    var placeSelf: PlaceSelf?
 
     /**
      * The **`text-decoration`** shorthand CSS property sets the appearance of decorative lines on text. It is a shorthand for `text-decoration-line`, `text-decoration-color`, `text-decoration-style`, and the newer `text-decoration-thickness` property.
@@ -648,7 +648,7 @@ external interface StandardShorthandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/text-decoration">MDN</a>
      */
-    var textDecoration: TextDecoration
+    var textDecoration: TextDecoration?
 
     /**
      * The **`text-emphasis`** CSS property applies emphasis marks to text (except spaces and control characters). It is a shorthand for `text-emphasis-style` and `text-emphasis-color`.
@@ -661,7 +661,7 @@ external interface StandardShorthandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/text-emphasis">MDN</a>
      */
-    var textEmphasis: TextEmphasis
+    var textEmphasis: TextEmphasis?
 
     /**
      * The **`transition`** CSS property is a shorthand property for `transition-property`, `transition-duration`, `transition-timing-function`, and `transition-delay`.
@@ -675,5 +675,5 @@ external interface StandardShorthandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/transition">MDN</a>
      */
-    var transition: Transition
+    var transition: Transition?
 }
