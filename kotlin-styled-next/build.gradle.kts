@@ -26,7 +26,7 @@ dependencies {
     api(npmv("inline-style-prefixer"))
 
     testImplementation(kotlin("test-js"))
-    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.1")
+    testImplementation(kotlinxCoroutines("core"))
 
     testImplementation(npmv("puppeteer"))
 }

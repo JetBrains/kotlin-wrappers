@@ -9,6 +9,9 @@ fun Project.kotlinxHtml(name: String): String =
 fun Project.kotlinxSerialization(name: String): String =
     kotlinx("kotlinx-serialization", name)
 
+fun Project.kotlinxCoroutines(name: String): String =
+    kotlinx("kotlinx-coroutines", name)
+
 private fun Project.kotlinx(projectName: String, name: String): String =
     "org.jetbrains.kotlinx:$projectName-$name:${version(projectName)}"
 
