@@ -2,5 +2,4 @@
 
 package csstype
 
-// Globals | DataType.LineWidth
-sealed external interface BorderBlockStartWidth
+typealias BorderBlockStartWidth = LineWidthProperty
