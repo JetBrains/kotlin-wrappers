@@ -1393,7 +1393,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/color">MDN</a>
      */
-    var color: Color?
+    var color: ColorProperty?
 
     /**
      * The **`color-adjust`** CSS property sets what, if anything, the user agent may do to optimize the appearance of the element on the output device. By default, the browser is allowed to make any adjustments to the element's appearance it determines to be necessary and prudent given the type and capabilities of the output device.

@@ -3,4 +3,4 @@
 package csstype
 
 // Globals | DataType.Color
-sealed external interface Color
+sealed external interface ColorProperty

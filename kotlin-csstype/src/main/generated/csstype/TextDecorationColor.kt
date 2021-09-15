@@ -2,4 +2,4 @@
 
 package csstype
 
-typealias TextDecorationColor = Color
+typealias TextDecorationColor = ColorProperty

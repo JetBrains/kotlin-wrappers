@@ -2,4 +2,4 @@
 
 package csstype
 
-typealias BorderBottomColor = Color
+typealias BorderBottomColor = ColorProperty

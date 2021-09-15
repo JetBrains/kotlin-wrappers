@@ -2,4 +2,4 @@
 
 package csstype
 
-typealias TextEmphasisColor = Color
+typealias TextEmphasisColor = ColorProperty

@@ -2,4 +2,4 @@
 
 package csstype
 
-typealias ColumnRuleColor = Color
+typealias ColumnRuleColor = ColorProperty

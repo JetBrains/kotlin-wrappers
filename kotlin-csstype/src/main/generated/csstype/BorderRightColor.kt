@@ -2,4 +2,4 @@
 
 package csstype
 
-typealias BorderRightColor = Color
+typealias BorderRightColor = ColorProperty
