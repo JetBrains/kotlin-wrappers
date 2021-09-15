@@ -2,5 +2,4 @@
 
 package csstype
 
-// Globals | DataType.GridLine | (string & {})
-sealed external interface GridRow
+typealias GridRow = GridLineProperty
