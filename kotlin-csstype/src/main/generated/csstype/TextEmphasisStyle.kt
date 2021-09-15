@@ -1,6 +1,24 @@
 // Automatically generated - do not modify!
 
+@file:Suppress(
+    "NAME_CONTAINS_ILLEGAL_CHARS",
+    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
+)
+
 package csstype
 
-// Globals | "circle" | "dot" | "double-circle" | "filled" | "none" | "open" | "sesame" | "triangle" | (string & {})
-sealed external interface TextEmphasisStyle
+// Globals
+// language=JavaScript
+@JsName("""({circle: 'circle', dot: 'dot', doubleCircle: 'double-circle', filled: 'filled', none: 'none', open: 'open', sesame: 'sesame', triangle: 'triangle'})""")
+external interface TextEmphasisStyle {
+    companion object {
+        val circle: TextEmphasisStyle
+        val dot: TextEmphasisStyle
+        val doubleCircle: TextEmphasisStyle
+        val filled: TextEmphasisStyle
+        val none: TextEmphasisStyle
+        val open: TextEmphasisStyle
+        val sesame: TextEmphasisStyle
+        val triangle: TextEmphasisStyle
+    }
+}
