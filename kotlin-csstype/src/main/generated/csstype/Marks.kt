@@ -1,8 +1,11 @@
 // Automatically generated - do not modify!
 
+@file:Suppress(
+    "NAME_CONTAINS_ILLEGAL_CHARS",
+)
+
 package csstype
 
-@Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
 // language=JavaScript
 @JsName("""({crop: 'crop', cross: 'cross', none: 'none'})""")
 external enum class Marks {

@@ -1,6 +1,19 @@
 // Automatically generated - do not modify!
 
+@file:Suppress(
+    "NAME_CONTAINS_ILLEGAL_CHARS",
+    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
+)
+
 package csstype
 
-// Globals | "auto" | "contain" | "none"
-sealed external interface OverscrollBehaviorY
+// Globals
+// language=JavaScript
+@JsName("""({auto: 'auto', contain: 'contain', none: 'none'})""")
+external interface OverscrollBehaviorY {
+    companion object {
+        val auto: OverscrollBehaviorY
+        val contain: OverscrollBehaviorY
+        val none: OverscrollBehaviorY
+    }
+}
