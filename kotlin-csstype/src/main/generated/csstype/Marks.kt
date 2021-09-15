@@ -2,5 +2,13 @@
 
 package csstype
 
-// "crop" | "cross" | "none" | (string & {})
-sealed external interface Marks
+@Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
+// language=JavaScript
+@JsName("""({crop: 'crop', cross: 'cross', none: 'none'})""")
+external enum class Marks {
+    crop,
+    cross,
+    none,
+
+    ;
+}
