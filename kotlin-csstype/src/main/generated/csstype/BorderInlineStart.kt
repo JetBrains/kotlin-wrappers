@@ -2,5 +2,4 @@
 
 package csstype
 
-// Globals | DataType.LineWidth | DataType.LineStyle | DataType.Color | (string & {})
-sealed external interface BorderInlineStart
+typealias BorderInlineStart = Border
