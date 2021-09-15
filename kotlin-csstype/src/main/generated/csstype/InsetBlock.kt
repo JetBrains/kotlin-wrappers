@@ -2,5 +2,4 @@
 
 package csstype
 
-// Globals | TLength | "auto" | (string & {})
-sealed external interface InsetBlock
+typealias InsetBlock = AutoLengthProperty
