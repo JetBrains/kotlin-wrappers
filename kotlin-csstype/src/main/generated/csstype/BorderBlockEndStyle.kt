@@ -2,5 +2,4 @@
 
 package csstype
 
-// Globals | DataType.LineStyle
-sealed external interface BorderBlockEndStyle
+typealias BorderBlockEndStyle = LineStyleProperty
