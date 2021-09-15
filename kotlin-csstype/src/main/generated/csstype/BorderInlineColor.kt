@@ -2,4 +2,4 @@
 
 package csstype
 
-typealias BorderInlineColor = Color
+typealias BorderInlineColor = ColorProperty

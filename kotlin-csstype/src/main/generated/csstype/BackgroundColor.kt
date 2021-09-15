@@ -2,4 +2,4 @@
 
 package csstype
 
-typealias BackgroundColor = Color
+typealias BackgroundColor = ColorProperty
