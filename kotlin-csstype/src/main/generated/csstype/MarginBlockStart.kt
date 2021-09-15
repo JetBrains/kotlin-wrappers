@@ -2,5 +2,4 @@
 
 package csstype
 
-// Globals | TLength | "auto" | (string & {})
-sealed external interface MarginBlockStart
+typealias MarginBlockStart = AutoLengthProperty
