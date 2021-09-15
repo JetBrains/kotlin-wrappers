@@ -2,5 +2,4 @@
 
 package csstype
 
-// Globals | TLength | (string & {})
-sealed external interface BorderEndEndRadius
+typealias BorderEndEndRadius = LengthProperty

@@ -2,5 +2,4 @@
 
 package csstype
 
-// Globals | TLength | (string & {})
-sealed external interface BorderSpacing
+typealias BorderSpacing = LengthProperty
