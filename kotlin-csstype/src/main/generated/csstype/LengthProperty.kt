@@ -2,4 +2,5 @@
 
 package csstype
 
-typealias BorderRadius = LengthProperty
+// Globals | TLength
+sealed external interface LengthProperty

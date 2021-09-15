@@ -2,5 +2,4 @@
 
 package csstype
 
-// Globals | TLength | (string & {})
-sealed external interface PaddingInlineEnd
+typealias PaddingInlineEnd = LengthProperty

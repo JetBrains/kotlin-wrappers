@@ -2,5 +2,4 @@
 
 package csstype
 
-// Globals | TLength
-sealed external interface LineHeightStep
+typealias LineHeightStep = LengthProperty
