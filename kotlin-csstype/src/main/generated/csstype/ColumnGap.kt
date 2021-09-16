@@ -2,5 +2,4 @@
 
 package csstype
 
-// Globals | TLength | "normal" | (string & {})
-sealed external interface ColumnGap
+typealias ColumnGap = Gap
