@@ -35,11 +35,13 @@ use the `rEnhancer` function to adapt Redux to Kotlin.
 ```kotlin
 val myStore = createStore(::myReducer, someState, rEnhancer())
 ```
+
 Access the state via the store's `state` field.
 
 ```kotlin
 myStore.state
 ```
+
 If you are using `rEnhancer`, `Actions` can be implemented as classes. Just implement the `RAction` interface.
 
 ```kotlin

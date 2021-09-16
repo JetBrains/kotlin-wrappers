@@ -27,6 +27,7 @@ implementation("org.jetbrains.kotlin-wrappers:kotlin-react-table:VERSION")
 ```
 
 ### Supported hooks
+
 * [`useTable`](https://react-table.tanstack.com/docs/api/useTable)
 * [`useGroupBy`](https://react-table.tanstack.com/docs/api/useGroupBy)
 * [`useExpanded`](https://react-table.tanstack.com/docs/api/useExpanded)
