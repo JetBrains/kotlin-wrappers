@@ -1,14 +1,22 @@
 // Automatically generated - do not modify!
 
+@file:Suppress(
+    "NAME_CONTAINS_ILLEGAL_CHARS",
+    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
+)
+
 package csstype
 
-/*
-| Globals
-| "bidi-override"
-| "embed"
-| "isolate"
-| "isolate-override"
-| "normal"
-| "plaintext"
-*/
-sealed external interface UnicodeBidi
+// Globals
+// language=JavaScript
+@JsName("""({bidiOverride: 'bidi-override', embed: 'embed', isolate: 'isolate', isolateOverride: 'isolate-override', normal: 'normal', plaintext: 'plaintext'})""")
+external interface UnicodeBidi {
+    companion object {
+        val bidiOverride: UnicodeBidi
+        val embed: UnicodeBidi
+        val isolate: UnicodeBidi
+        val isolateOverride: UnicodeBidi
+        val normal: UnicodeBidi
+        val plaintext: UnicodeBidi
+    }
+}

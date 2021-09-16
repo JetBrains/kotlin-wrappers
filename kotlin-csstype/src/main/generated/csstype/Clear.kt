@@ -1,6 +1,22 @@
 // Automatically generated - do not modify!
 
+@file:Suppress(
+    "NAME_CONTAINS_ILLEGAL_CHARS",
+    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
+)
+
 package csstype
 
-// Globals | "both" | "inline-end" | "inline-start" | "left" | "none" | "right"
-sealed external interface Clear
+// Globals
+// language=JavaScript
+@JsName("""({both: 'both', inlineEnd: 'inline-end', inlineStart: 'inline-start', left: 'left', none: 'none', right: 'right'})""")
+external interface Clear {
+    companion object {
+        val both: Clear
+        val inlineEnd: Clear
+        val inlineStart: Clear
+        val left: Clear
+        val none: Clear
+        val right: Clear
+    }
+}

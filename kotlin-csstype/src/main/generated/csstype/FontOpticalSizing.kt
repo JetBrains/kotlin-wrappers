@@ -1,6 +1,18 @@
 // Automatically generated - do not modify!
 
+@file:Suppress(
+    "NAME_CONTAINS_ILLEGAL_CHARS",
+    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
+)
+
 package csstype
 
-// Globals | "auto" | "none"
-sealed external interface FontOpticalSizing
+// Globals
+// language=JavaScript
+@JsName("""({auto: 'auto', none: 'none'})""")
+external interface FontOpticalSizing {
+    companion object {
+        val auto: FontOpticalSizing
+        val none: FontOpticalSizing
+    }
+}

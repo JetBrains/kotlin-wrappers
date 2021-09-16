@@ -1,8 +1,11 @@
 // Automatically generated - do not modify!
 
+@file:Suppress(
+    "NAME_CONTAINS_ILLEGAL_CHARS",
+)
+
 package csstype
 
-@Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
 // language=JavaScript
 @JsName("""({button: 'button', checkbox: 'checkbox', listbox: 'listbox', menulist: 'menulist', meter: 'meter', progressBar: 'progress-bar', pushButton: 'push-button', radio: 'radio', searchfield: 'searchfield', sliderHorizontal: 'slider-horizontal', squareButton: 'square-button', textarea: 'textarea'})""")
 external enum class CompatAuto {

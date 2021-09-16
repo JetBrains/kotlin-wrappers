@@ -1,8 +1,11 @@
 // Automatically generated - do not modify!
 
+@file:Suppress(
+    "NAME_CONTAINS_ILLEGAL_CHARS",
+)
+
 package csstype
 
-@Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
 // language=JavaScript
 @JsName("""({A3: 'A3', A4: 'A4', A5: 'A5', B4: 'B4', B5: 'B5', JISB4: 'JIS-B4', JISB5: 'JIS-B5', ledger: 'ledger', legal: 'legal', letter: 'letter'})""")
 external enum class PageSize {

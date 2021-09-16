@@ -1,6 +1,21 @@
 // Automatically generated - do not modify!
 
+@file:Suppress(
+    "NAME_CONTAINS_ILLEGAL_CHARS",
+    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
+)
+
 package csstype
 
-// Globals | "inline-end" | "inline-start" | "left" | "none" | "right"
-sealed external interface Float
+// Globals
+// language=JavaScript
+@JsName("""({inlineEnd: 'inline-end', inlineStart: 'inline-start', left: 'left', none: 'none', right: 'right'})""")
+external interface Float {
+    companion object {
+        val inlineEnd: Float
+        val inlineStart: Float
+        val left: Float
+        val none: Float
+        val right: Float
+    }
+}

@@ -1,6 +1,18 @@
 // Automatically generated - do not modify!
 
+@file:Suppress(
+    "NAME_CONTAINS_ILLEGAL_CHARS",
+    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
+)
+
 package csstype
 
-// Globals | "clone" | "slice"
-sealed external interface BoxDecorationBreak
+// Globals
+// language=JavaScript
+@JsName("""({clone: 'clone', slice: 'slice'})""")
+external interface BoxDecorationBreak {
+    companion object {
+        val clone: BoxDecorationBreak
+        val slice: BoxDecorationBreak
+    }
+}
