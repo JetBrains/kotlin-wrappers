@@ -10,7 +10,7 @@ package csstype
 // Globals
 // language=JavaScript
 @JsName("""({all: 'all', auto: 'auto', fill: 'fill', inherit: 'inherit', none: 'none', painted: 'painted', stroke: 'stroke', visible: 'visible', visibleFill: 'visibleFill', visiblePainted: 'visiblePainted', visibleStroke: 'visibleStroke'})""")
-external interface PointerEvents {
+sealed external interface PointerEvents {
     companion object {
         val all: PointerEvents
         val auto: PointerEvents

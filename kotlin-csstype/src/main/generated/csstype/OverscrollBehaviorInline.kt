@@ -10,7 +10,7 @@ package csstype
 // Globals
 // language=JavaScript
 @JsName("""({auto: 'auto', contain: 'contain', none: 'none'})""")
-external interface OverscrollBehaviorInline {
+sealed external interface OverscrollBehaviorInline {
     companion object {
         val auto: OverscrollBehaviorInline
         val contain: OverscrollBehaviorInline

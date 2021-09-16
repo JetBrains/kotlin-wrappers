@@ -10,7 +10,7 @@ package csstype
 // Globals
 // language=JavaScript
 @JsName("""({clip: 'clip', ellipsis: 'ellipsis'})""")
-external interface TextOverflow {
+sealed external interface TextOverflow {
     companion object {
         val clip: TextOverflow
         val ellipsis: TextOverflow

@@ -10,7 +10,7 @@ package csstype
 // Globals
 // language=JavaScript
 @JsName("""({auto: 'auto', collapse: 'collapse', separate: 'separate'})""")
-external interface RubyMerge {
+sealed external interface RubyMerge {
     companion object {
         val auto: RubyMerge
         val collapse: RubyMerge

@@ -10,7 +10,7 @@ package csstype
 // Globals
 // language=JavaScript
 @JsName("""({capitalize: 'capitalize', fullSizeKana: 'full-size-kana', fullWidth: 'full-width', lowercase: 'lowercase', none: 'none', uppercase: 'uppercase'})""")
-external interface TextTransform {
+sealed external interface TextTransform {
     companion object {
         val capitalize: TextTransform
         val fullSizeKana: TextTransform

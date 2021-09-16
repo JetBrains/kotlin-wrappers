@@ -10,7 +10,7 @@ package csstype
 // Globals
 // language=JavaScript
 @JsName("""({auto: 'auto', geometricPrecision: 'geometricPrecision', optimizeLegibility: 'optimizeLegibility', optimizeSpeed: 'optimizeSpeed'})""")
-external interface TextRendering {
+sealed external interface TextRendering {
     companion object {
         val auto: TextRendering
         val geometricPrecision: TextRendering

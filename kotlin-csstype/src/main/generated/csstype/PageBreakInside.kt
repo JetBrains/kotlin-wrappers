@@ -10,7 +10,7 @@ package csstype
 // Globals
 // language=JavaScript
 @JsName("""({auto: 'auto', avoid: 'avoid'})""")
-external interface PageBreakInside {
+sealed external interface PageBreakInside {
     companion object {
         val auto: PageBreakInside
         val avoid: PageBreakInside

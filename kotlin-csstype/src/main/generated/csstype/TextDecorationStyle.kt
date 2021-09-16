@@ -10,7 +10,7 @@ package csstype
 // Globals
 // language=JavaScript
 @JsName("""({dashed: 'dashed', dotted: 'dotted', double: 'double', solid: 'solid', wavy: 'wavy'})""")
-external interface TextDecorationStyle {
+sealed external interface TextDecorationStyle {
     companion object {
         val dashed: TextDecorationStyle
         val dotted: TextDecorationStyle

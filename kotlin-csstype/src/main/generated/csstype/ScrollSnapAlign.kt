@@ -10,7 +10,7 @@ package csstype
 // Globals
 // language=JavaScript
 @JsName("""({center: 'center', end: 'end', none: 'none', start: 'start'})""")
-external interface ScrollSnapAlign {
+sealed external interface ScrollSnapAlign {
     companion object {
         val center: ScrollSnapAlign
         val end: ScrollSnapAlign

@@ -10,7 +10,7 @@ package csstype
 // Globals
 // language=JavaScript
 @JsName("""({fill: 'fill', markers: 'markers', normal: 'normal', stroke: 'stroke'})""")
-external interface PaintOrder {
+sealed external interface PaintOrder {
     companion object {
         val fill: PaintOrder
         val markers: PaintOrder

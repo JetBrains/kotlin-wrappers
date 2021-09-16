@@ -10,7 +10,7 @@ package csstype
 // Globals
 // language=JavaScript
 @JsName("""({circle: 'circle', dot: 'dot', doubleCircle: 'double-circle', filled: 'filled', none: 'none', open: 'open', sesame: 'sesame', triangle: 'triangle'})""")
-external interface TextEmphasisStyle {
+sealed external interface TextEmphasisStyle {
     companion object {
         val circle: TextEmphasisStyle
         val dot: TextEmphasisStyle

@@ -10,7 +10,7 @@ package csstype
 // Globals
 // language=JavaScript
 @JsName("""({inside: 'inside', none: 'none', outside: 'outside'})""")
-external interface ListStyle {
+sealed external interface ListStyle {
     companion object {
         val inside: ListStyle
         val none: ListStyle

@@ -10,7 +10,7 @@ package csstype
 // Globals
 // language=JavaScript
 @JsName("""({hide: 'hide', show: 'show'})""")
-external interface EmptyCells {
+sealed external interface EmptyCells {
     companion object {
         val hide: EmptyCells
         val show: EmptyCells

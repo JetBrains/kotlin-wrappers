@@ -10,7 +10,7 @@ package csstype
 // Globals
 // language=JavaScript
 @JsName("""({block: 'block', both: 'both', horizontal: 'horizontal', inline: 'inline', none: 'none', vertical: 'vertical'})""")
-external interface Resize {
+sealed external interface Resize {
     companion object {
         val block: Resize
         val both: Resize

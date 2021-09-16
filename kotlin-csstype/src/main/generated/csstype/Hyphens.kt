@@ -10,7 +10,7 @@ package csstype
 // Globals
 // language=JavaScript
 @JsName("""({auto: 'auto', manual: 'manual', none: 'none'})""")
-external interface Hyphens {
+sealed external interface Hyphens {
     companion object {
         val auto: Hyphens
         val manual: Hyphens

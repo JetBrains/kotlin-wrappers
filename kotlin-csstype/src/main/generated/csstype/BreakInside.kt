@@ -10,7 +10,7 @@ package csstype
 // Globals
 // language=JavaScript
 @JsName("""({auto: 'auto', avoid: 'avoid', avoidColumn: 'avoid-column', avoidPage: 'avoid-page', avoidRegion: 'avoid-region'})""")
-external interface BreakInside {
+sealed external interface BreakInside {
     companion object {
         val auto: BreakInside
         val avoid: BreakInside

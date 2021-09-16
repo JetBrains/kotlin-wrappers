@@ -10,7 +10,7 @@ package csstype
 // Globals
 // language=JavaScript
 @JsName("""({compact: 'compact', normal: 'normal'})""")
-external interface MathStyle {
+sealed external interface MathStyle {
     companion object {
         val compact: MathStyle
         val normal: MathStyle

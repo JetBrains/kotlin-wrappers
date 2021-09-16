@@ -10,7 +10,7 @@ package csstype
 // Globals
 // language=JavaScript
 @JsName("""({breakAll: 'break-all', breakWord: 'break-word', keepAll: 'keep-all', normal: 'normal'})""")
-external interface WordBreak {
+sealed external interface WordBreak {
     companion object {
         val breakAll: WordBreak
         val breakWord: WordBreak

@@ -10,7 +10,7 @@ package csstype
 // Globals
 // language=JavaScript
 @JsName("""({ltr: 'ltr', rtl: 'rtl'})""")
-external interface Direction {
+sealed external interface Direction {
     companion object {
         val ltr: Direction
         val rtl: Direction

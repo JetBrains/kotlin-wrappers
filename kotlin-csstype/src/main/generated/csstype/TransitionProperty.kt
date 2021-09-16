@@ -10,7 +10,7 @@ package csstype
 // Globals
 // language=JavaScript
 @JsName("""({all: 'all', none: 'none'})""")
-external interface TransitionProperty {
+sealed external interface TransitionProperty {
     companion object {
         val all: TransitionProperty
         val none: TransitionProperty

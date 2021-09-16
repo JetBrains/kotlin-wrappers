@@ -10,7 +10,7 @@ package csstype
 // Globals
 // language=JavaScript
 @JsName("""({mixed: 'mixed', sideways: 'sideways', upright: 'upright'})""")
-external interface TextOrientation {
+sealed external interface TextOrientation {
     companion object {
         val mixed: TextOrientation
         val sideways: TextOrientation

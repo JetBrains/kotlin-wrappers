@@ -10,7 +10,7 @@ package csstype
 // Globals
 // language=JavaScript
 @JsName("""({auto: 'auto', clip: 'clip', hidden: 'hidden', scroll: 'scroll', visible: 'visible'})""")
-external interface OverflowInline {
+sealed external interface OverflowInline {
     companion object {
         val auto: OverflowInline
         val clip: OverflowInline

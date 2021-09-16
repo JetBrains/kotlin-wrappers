@@ -10,7 +10,7 @@ package csstype
 // Globals
 // language=JavaScript
 @JsName("""({collapse: 'collapse', separate: 'separate'})""")
-external interface BorderCollapse {
+sealed external interface BorderCollapse {
     companion object {
         val collapse: BorderCollapse
         val separate: BorderCollapse

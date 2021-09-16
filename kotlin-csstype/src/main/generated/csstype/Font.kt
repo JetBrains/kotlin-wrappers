@@ -10,7 +10,7 @@ package csstype
 // Globals
 // language=JavaScript
 @JsName("""({caption: 'caption', icon: 'icon', menu: 'menu', messageBox: 'message-box', smallCaption: 'small-caption', statusBar: 'status-bar'})""")
-external interface Font {
+sealed external interface Font {
     companion object {
         val caption: Font
         val icon: Font

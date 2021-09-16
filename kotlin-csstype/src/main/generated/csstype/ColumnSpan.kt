@@ -10,7 +10,7 @@ package csstype
 // Globals
 // language=JavaScript
 @JsName("""({all: 'all', none: 'none'})""")
-external interface ColumnSpan {
+sealed external interface ColumnSpan {
     companion object {
         val all: ColumnSpan
         val none: ColumnSpan

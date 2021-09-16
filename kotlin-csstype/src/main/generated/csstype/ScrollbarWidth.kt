@@ -10,7 +10,7 @@ package csstype
 // Globals
 // language=JavaScript
 @JsName("""({auto: 'auto', none: 'none', thin: 'thin'})""")
-external interface ScrollbarWidth {
+sealed external interface ScrollbarWidth {
     companion object {
         val auto: ScrollbarWidth
         val none: ScrollbarWidth

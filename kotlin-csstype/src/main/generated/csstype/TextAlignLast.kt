@@ -10,7 +10,7 @@ package csstype
 // Globals
 // language=JavaScript
 @JsName("""({auto: 'auto', center: 'center', end: 'end', justify: 'justify', left: 'left', right: 'right', start: 'start'})""")
-external interface TextAlignLast {
+sealed external interface TextAlignLast {
     companion object {
         val auto: TextAlignLast
         val center: TextAlignLast

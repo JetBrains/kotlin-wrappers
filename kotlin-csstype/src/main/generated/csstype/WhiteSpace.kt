@@ -10,7 +10,7 @@ package csstype
 // Globals
 // language=JavaScript
 @JsName("""({breakSpaces: 'break-spaces', normal: 'normal', nowrap: 'nowrap', pre: 'pre', preLine: 'pre-line', preWrap: 'pre-wrap'})""")
-external interface WhiteSpace {
+sealed external interface WhiteSpace {
     companion object {
         val breakSpaces: WhiteSpace
         val normal: WhiteSpace

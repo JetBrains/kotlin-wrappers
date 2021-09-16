@@ -10,7 +10,7 @@ package csstype
 // Globals
 // language=JavaScript
 @JsName("""({auto: 'auto', balance: 'balance'})""")
-external interface ColumnFill {
+sealed external interface ColumnFill {
     companion object {
         val auto: ColumnFill
         val balance: ColumnFill

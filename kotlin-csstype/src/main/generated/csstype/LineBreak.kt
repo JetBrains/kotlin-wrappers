@@ -10,7 +10,7 @@ package csstype
 // Globals
 // language=JavaScript
 @JsName("""({anywhere: 'anywhere', auto: 'auto', loose: 'loose', normal: 'normal', strict: 'strict'})""")
-external interface LineBreak {
+sealed external interface LineBreak {
     companion object {
         val anywhere: LineBreak
         val auto: LineBreak

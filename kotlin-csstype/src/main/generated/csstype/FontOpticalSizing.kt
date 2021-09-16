@@ -10,7 +10,7 @@ package csstype
 // Globals
 // language=JavaScript
 @JsName("""({auto: 'auto', none: 'none'})""")
-external interface FontOpticalSizing {
+sealed external interface FontOpticalSizing {
     companion object {
         val auto: FontOpticalSizing
         val none: FontOpticalSizing

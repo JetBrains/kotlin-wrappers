@@ -10,7 +10,7 @@ package csstype
 // Globals
 // language=JavaScript
 @JsName("""({always: 'always', normal: 'normal'})""")
-external interface ScrollSnapStop {
+sealed external interface ScrollSnapStop {
     companion object {
         val always: ScrollSnapStop
         val normal: ScrollSnapStop

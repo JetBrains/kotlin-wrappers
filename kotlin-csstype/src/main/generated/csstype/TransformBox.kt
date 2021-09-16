@@ -10,7 +10,7 @@ package csstype
 // Globals
 // language=JavaScript
 @JsName("""({borderBox: 'border-box', contentBox: 'content-box', fillBox: 'fill-box', strokeBox: 'stroke-box', viewBox: 'view-box'})""")
-external interface TransformBox {
+sealed external interface TransformBox {
     companion object {
         val borderBox: TransformBox
         val contentBox: TransformBox

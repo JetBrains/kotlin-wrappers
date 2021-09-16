@@ -10,7 +10,7 @@ package csstype
 // Globals
 // language=JavaScript
 @JsName("""({flip: 'flip', fromImage: 'from-image'})""")
-external interface ImageOrientation {
+sealed external interface ImageOrientation {
     companion object {
         val flip: ImageOrientation
         val fromImage: ImageOrientation

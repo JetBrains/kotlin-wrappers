@@ -10,7 +10,7 @@ package csstype
 // Globals
 // language=JavaScript
 @JsName("""({auto: 'auto', fixed: 'fixed'})""")
-external interface TableLayout {
+sealed external interface TableLayout {
     companion object {
         val auto: TableLayout
         val fixed: TableLayout

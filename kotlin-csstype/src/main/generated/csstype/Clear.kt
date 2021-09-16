@@ -10,7 +10,7 @@ package csstype
 // Globals
 // language=JavaScript
 @JsName("""({both: 'both', inlineEnd: 'inline-end', inlineStart: 'inline-start', left: 'left', none: 'none', right: 'right'})""")
-external interface Clear {
+sealed external interface Clear {
     companion object {
         val both: Clear
         val inlineEnd: Clear

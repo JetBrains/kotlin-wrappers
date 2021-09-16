@@ -10,7 +10,7 @@ package csstype
 // Globals
 // language=JavaScript
 @JsName("""({contentBox: 'content-box', paddingBox: 'padding-box'})""")
-external interface OverflowClipBox {
+sealed external interface OverflowClipBox {
     companion object {
         val contentBox: OverflowClipBox
         val paddingBox: OverflowClipBox

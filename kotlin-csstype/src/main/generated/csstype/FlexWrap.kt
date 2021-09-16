@@ -10,7 +10,7 @@ package csstype
 // Globals
 // language=JavaScript
 @JsName("""({nowrap: 'nowrap', wrap: 'wrap', wrapReverse: 'wrap-reverse'})""")
-external interface FlexWrap {
+sealed external interface FlexWrap {
     companion object {
         val nowrap: FlexWrap
         val wrap: FlexWrap

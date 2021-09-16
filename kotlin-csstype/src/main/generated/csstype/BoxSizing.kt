@@ -10,7 +10,7 @@ package csstype
 // Globals
 // language=JavaScript
 @JsName("""({borderBox: 'border-box', contentBox: 'content-box'})""")
-external interface BoxSizing {
+sealed external interface BoxSizing {
     companion object {
         val borderBox: BoxSizing
         val contentBox: BoxSizing

@@ -10,7 +10,7 @@ package csstype
 // Globals
 // language=JavaScript
 @JsName("""({inlineEnd: 'inline-end', inlineStart: 'inline-start', left: 'left', none: 'none', right: 'right'})""")
-external interface Float {
+sealed external interface Float {
     companion object {
         val inlineEnd: Float
         val inlineStart: Float

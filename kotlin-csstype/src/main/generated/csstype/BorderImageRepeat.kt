@@ -10,7 +10,7 @@ package csstype
 // Globals
 // language=JavaScript
 @JsName("""({repeat: 'repeat', round: 'round', space: 'space', stretch: 'stretch'})""")
-external interface BorderImageRepeat {
+sealed external interface BorderImageRepeat {
     companion object {
         val repeat: BorderImageRepeat
         val round: BorderImageRepeat

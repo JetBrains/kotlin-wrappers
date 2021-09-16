@@ -10,7 +10,7 @@ package csstype
 // Globals
 // language=JavaScript
 @JsName("""({allPetiteCaps: 'all-petite-caps', allSmallCaps: 'all-small-caps', normal: 'normal', petiteCaps: 'petite-caps', smallCaps: 'small-caps', titlingCaps: 'titling-caps', unicase: 'unicase'})""")
-external interface FontVariantCaps {
+sealed external interface FontVariantCaps {
     companion object {
         val allPetiteCaps: FontVariantCaps
         val allSmallCaps: FontVariantCaps

@@ -10,7 +10,7 @@ package csstype
 // Globals
 // language=JavaScript
 @JsName("""({auto: 'auto', isolate: 'isolate'})""")
-external interface Isolation {
+sealed external interface Isolation {
     companion object {
         val auto: Isolation
         val isolate: Isolation

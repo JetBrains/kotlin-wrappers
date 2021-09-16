@@ -10,7 +10,7 @@ package csstype
 // Globals
 // language=JavaScript
 @JsName("""({column: 'column', dense: 'dense', row: 'row'})""")
-external interface GridAutoFlow {
+sealed external interface GridAutoFlow {
     companion object {
         val column: GridAutoFlow
         val dense: GridAutoFlow

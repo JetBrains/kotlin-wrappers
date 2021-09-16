@@ -10,7 +10,7 @@ package csstype
 // Globals
 // language=JavaScript
 @JsName("""({economy: 'economy', exact: 'exact'})""")
-external interface ColorAdjust {
+sealed external interface ColorAdjust {
     companion object {
         val economy: ColorAdjust
         val exact: ColorAdjust

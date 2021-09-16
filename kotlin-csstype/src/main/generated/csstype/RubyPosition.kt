@@ -10,7 +10,7 @@ package csstype
 // Globals
 // language=JavaScript
 @JsName("""({alternate: 'alternate', over: 'over', under: 'under'})""")
-external interface RubyPosition {
+sealed external interface RubyPosition {
     companion object {
         val alternate: RubyPosition
         val over: RubyPosition
