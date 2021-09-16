@@ -2,4 +2,4 @@
 
 package csstype
 
-typealias AnimationDelay = TimeProperty
+sealed external interface Time
