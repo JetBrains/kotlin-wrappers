@@ -10,7 +10,7 @@ package csstype
 // Globals
 // language=JavaScript
 @JsName("""({allowEnd: 'allow-end', first: 'first', forceEnd: 'force-end', last: 'last', none: 'none'})""")
-external interface HangingPunctuation {
+sealed external interface HangingPunctuation {
     companion object {
         val allowEnd: HangingPunctuation
         val first: HangingPunctuation

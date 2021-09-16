@@ -10,7 +10,7 @@ package csstype
 // Globals
 // language=JavaScript
 @JsName("""({diagonalFractions: 'diagonal-fractions', liningNums: 'lining-nums', normal: 'normal', oldstyleNums: 'oldstyle-nums', ordinal: 'ordinal', proportionalNums: 'proportional-nums', slashedZero: 'slashed-zero', stackedFractions: 'stacked-fractions', tabularNums: 'tabular-nums'})""")
-external interface FontVariantNumeric {
+sealed external interface FontVariantNumeric {
     companion object {
         val diagonalFractions: FontVariantNumeric
         val liningNums: FontVariantNumeric

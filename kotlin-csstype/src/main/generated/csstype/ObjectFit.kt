@@ -10,7 +10,7 @@ package csstype
 // Globals
 // language=JavaScript
 @JsName("""({contain: 'contain', cover: 'cover', fill: 'fill', none: 'none', scaleDown: 'scale-down'})""")
-external interface ObjectFit {
+sealed external interface ObjectFit {
     companion object {
         val contain: ObjectFit
         val cover: ObjectFit

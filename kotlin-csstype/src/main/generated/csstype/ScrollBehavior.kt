@@ -10,7 +10,7 @@ package csstype
 // Globals
 // language=JavaScript
 @JsName("""({auto: 'auto', smooth: 'smooth'})""")
-external interface ScrollBehavior {
+sealed external interface ScrollBehavior {
     companion object {
         val auto: ScrollBehavior
         val smooth: ScrollBehavior

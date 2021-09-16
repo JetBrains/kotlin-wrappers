@@ -10,7 +10,7 @@ package csstype
 // Globals
 // language=JavaScript
 @JsName("""({paused: 'paused', running: 'running'})""")
-external interface AnimationPlayState {
+sealed external interface AnimationPlayState {
     companion object {
         val paused: AnimationPlayState
         val running: AnimationPlayState

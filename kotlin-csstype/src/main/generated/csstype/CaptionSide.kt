@@ -10,7 +10,7 @@ package csstype
 // Globals
 // language=JavaScript
 @JsName("""({blockEnd: 'block-end', blockStart: 'block-start', bottom: 'bottom', inlineEnd: 'inline-end', inlineStart: 'inline-start', top: 'top'})""")
-external interface CaptionSide {
+sealed external interface CaptionSide {
     companion object {
         val blockEnd: CaptionSide
         val blockStart: CaptionSide

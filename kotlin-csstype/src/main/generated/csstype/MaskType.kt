@@ -10,7 +10,7 @@ package csstype
 // Globals
 // language=JavaScript
 @JsName("""({alpha: 'alpha', luminance: 'luminance'})""")
-external interface MaskType {
+sealed external interface MaskType {
     companion object {
         val alpha: MaskType
         val luminance: MaskType

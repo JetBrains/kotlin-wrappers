@@ -10,7 +10,7 @@ package csstype
 // Globals
 // language=JavaScript
 @JsName("""({italic: 'italic', normal: 'normal', oblique: 'oblique'})""")
-external interface FontStyle {
+sealed external interface FontStyle {
     companion object {
         val italic: FontStyle
         val normal: FontStyle

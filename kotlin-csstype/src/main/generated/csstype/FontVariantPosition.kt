@@ -10,7 +10,7 @@ package csstype
 // Globals
 // language=JavaScript
 @JsName("""({normal: 'normal', sub: 'sub', sup: 'super'})""")
-external interface FontVariantPosition {
+sealed external interface FontVariantPosition {
     companion object {
         val normal: FontVariantPosition
         val sub: FontVariantPosition

@@ -10,7 +10,7 @@ package csstype
 // Globals
 // language=JavaScript
 @JsName("""({always: 'always', auto: 'auto', avoid: 'avoid', left: 'left', recto: 'recto', right: 'right', verso: 'verso'})""")
-external interface PageBreakBefore {
+sealed external interface PageBreakBefore {
     companion object {
         val always: PageBreakBefore
         val auto: PageBreakBefore

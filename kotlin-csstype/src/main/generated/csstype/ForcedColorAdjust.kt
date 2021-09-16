@@ -10,7 +10,7 @@ package csstype
 // Globals
 // language=JavaScript
 @JsName("""({auto: 'auto', none: 'none'})""")
-external interface ForcedColorAdjust {
+sealed external interface ForcedColorAdjust {
     companion object {
         val auto: ForcedColorAdjust
         val none: ForcedColorAdjust

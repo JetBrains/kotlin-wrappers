@@ -10,7 +10,7 @@ package csstype
 // Globals
 // language=JavaScript
 @JsName("""({dark: 'dark', light: 'light', normal: 'normal'})""")
-external interface ColorScheme {
+sealed external interface ColorScheme {
     companion object {
         val dark: ColorScheme
         val light: ColorScheme

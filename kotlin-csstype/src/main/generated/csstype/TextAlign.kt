@@ -10,7 +10,7 @@ package csstype
 // Globals
 // language=JavaScript
 @JsName("""({center: 'center', end: 'end', justify: 'justify', left: 'left', matchParent: 'match-parent', right: 'right', start: 'start'})""")
-external interface TextAlign {
+sealed external interface TextAlign {
     companion object {
         val center: TextAlign
         val end: TextAlign

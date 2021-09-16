@@ -10,7 +10,7 @@ package csstype
 // Globals
 // language=JavaScript
 @JsName("""({auto: 'auto', stable: 'stable'})""")
-external interface ScrollbarGutter {
+sealed external interface ScrollbarGutter {
     companion object {
         val auto: ScrollbarGutter
         val stable: ScrollbarGutter

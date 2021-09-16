@@ -10,7 +10,7 @@ package csstype
 // Globals
 // language=JavaScript
 @JsName("""({horizontalTb: 'horizontal-tb', sidewaysLr: 'sideways-lr', sidewaysRl: 'sideways-rl', verticalLr: 'vertical-lr', verticalRl: 'vertical-rl'})""")
-external interface WritingMode {
+sealed external interface WritingMode {
     companion object {
         val horizontalTb: WritingMode
         val sidewaysLr: WritingMode

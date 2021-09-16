@@ -10,7 +10,7 @@ package csstype
 // Globals
 // language=JavaScript
 @JsName("""({repeat: 'repeat', round: 'round', space: 'space', stretch: 'stretch'})""")
-external interface MaskBorderRepeat {
+sealed external interface MaskBorderRepeat {
     companion object {
         val repeat: MaskBorderRepeat
         val round: MaskBorderRepeat

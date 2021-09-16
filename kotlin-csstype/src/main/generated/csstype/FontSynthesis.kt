@@ -10,7 +10,7 @@ package csstype
 // Globals
 // language=JavaScript
 @JsName("""({none: 'none', smallCaps: 'small-caps', style: 'style', weight: 'weight'})""")
-external interface FontSynthesis {
+sealed external interface FontSynthesis {
     companion object {
         val none: FontSynthesis
         val smallCaps: FontSynthesis

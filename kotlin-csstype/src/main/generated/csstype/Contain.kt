@@ -10,7 +10,7 @@ package csstype
 // Globals
 // language=JavaScript
 @JsName("""({content: 'content', layout: 'layout', none: 'none', paint: 'paint', size: 'size', strict: 'strict', style: 'style'})""")
-external interface Contain {
+sealed external interface Contain {
     companion object {
         val content: Contain
         val layout: Contain

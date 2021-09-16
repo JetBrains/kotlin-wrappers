@@ -10,7 +10,7 @@ package csstype
 // Globals
 // language=JavaScript
 @JsName("""({auto: 'auto', none: 'none'})""")
-external interface Quotes {
+sealed external interface Quotes {
     companion object {
         val auto: Quotes
         val none: Quotes

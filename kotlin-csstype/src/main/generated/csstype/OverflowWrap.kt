@@ -10,7 +10,7 @@ package csstype
 // Globals
 // language=JavaScript
 @JsName("""({anywhere: 'anywhere', breakWord: 'break-word', normal: 'normal'})""")
-external interface OverflowWrap {
+sealed external interface OverflowWrap {
     companion object {
         val anywhere: OverflowWrap
         val breakWord: OverflowWrap

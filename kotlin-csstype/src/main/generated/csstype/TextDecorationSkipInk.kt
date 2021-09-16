@@ -10,7 +10,7 @@ package csstype
 // Globals
 // language=JavaScript
 @JsName("""({all: 'all', auto: 'auto', none: 'none'})""")
-external interface TextDecorationSkipInk {
+sealed external interface TextDecorationSkipInk {
     companion object {
         val all: TextDecorationSkipInk
         val auto: TextDecorationSkipInk

@@ -10,7 +10,7 @@ package csstype
 // Globals
 // language=JavaScript
 @JsName("""({flat: 'flat', preserve3d: 'preserve-3d'})""")
-external interface TransformStyle {
+sealed external interface TransformStyle {
     companion object {
         val flat: TransformStyle
         val preserve3d: TransformStyle

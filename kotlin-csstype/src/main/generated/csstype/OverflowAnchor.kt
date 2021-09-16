@@ -10,7 +10,7 @@ package csstype
 // Globals
 // language=JavaScript
 @JsName("""({auto: 'auto', none: 'none'})""")
-external interface OverflowAnchor {
+sealed external interface OverflowAnchor {
     companion object {
         val auto: OverflowAnchor
         val none: OverflowAnchor

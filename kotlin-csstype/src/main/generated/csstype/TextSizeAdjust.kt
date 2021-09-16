@@ -10,7 +10,7 @@ package csstype
 // Globals
 // language=JavaScript
 @JsName("""({auto: 'auto', none: 'none'})""")
-external interface TextSizeAdjust {
+sealed external interface TextSizeAdjust {
     companion object {
         val auto: TextSizeAdjust
         val none: TextSizeAdjust

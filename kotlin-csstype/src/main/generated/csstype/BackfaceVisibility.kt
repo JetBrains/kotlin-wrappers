@@ -10,7 +10,7 @@ package csstype
 // Globals
 // language=JavaScript
 @JsName("""({hidden: 'hidden', visible: 'visible'})""")
-external interface BackfaceVisibility {
+sealed external interface BackfaceVisibility {
     companion object {
         val hidden: BackfaceVisibility
         val visible: BackfaceVisibility

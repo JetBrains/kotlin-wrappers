@@ -10,7 +10,7 @@ package csstype
 // Globals
 // language=JavaScript
 @JsName("""({all: 'all', digits: 'digits', none: 'none'})""")
-external interface TextCombineUpright {
+sealed external interface TextCombineUpright {
     companion object {
         val all: TextCombineUpright
         val digits: TextCombineUpright

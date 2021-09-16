@@ -10,7 +10,7 @@ package csstype
 // Globals
 // language=JavaScript
 @JsName("""({block: 'block', both: 'both', inline: 'inline', none: 'none', x: 'x', y: 'y'})""")
-external interface ScrollSnapType {
+sealed external interface ScrollSnapType {
     companion object {
         val block: ScrollSnapType
         val both: ScrollSnapType

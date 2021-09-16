@@ -10,7 +10,7 @@ package csstype
 // Globals
 // language=JavaScript
 @JsName("""({auto: 'auto', interCharacter: 'inter-character', interWord: 'inter-word', none: 'none'})""")
-external interface TextJustify {
+sealed external interface TextJustify {
     companion object {
         val auto: TextJustify
         val interCharacter: TextJustify

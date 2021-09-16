@@ -10,7 +10,7 @@ package csstype
 // Globals
 // language=JavaScript
 @JsName("""({commonLigatures: 'common-ligatures', contextual: 'contextual', discretionaryLigatures: 'discretionary-ligatures', historicalLigatures: 'historical-ligatures', noCommonLigatures: 'no-common-ligatures', noContextual: 'no-contextual', noDiscretionaryLigatures: 'no-discretionary-ligatures', noHistoricalLigatures: 'no-historical-ligatures', none: 'none', normal: 'normal'})""")
-external interface FontVariantLigatures {
+sealed external interface FontVariantLigatures {
     companion object {
         val commonLigatures: FontVariantLigatures
         val contextual: FontVariantLigatures

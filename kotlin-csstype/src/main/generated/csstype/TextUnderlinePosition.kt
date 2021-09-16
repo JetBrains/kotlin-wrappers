@@ -10,7 +10,7 @@ package csstype
 // Globals
 // language=JavaScript
 @JsName("""({auto: 'auto', fromFont: 'from-font', left: 'left', right: 'right', under: 'under'})""")
-external interface TextUnderlinePosition {
+sealed external interface TextUnderlinePosition {
     companion object {
         val auto: TextUnderlinePosition
         val fromFont: TextUnderlinePosition

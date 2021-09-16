@@ -10,7 +10,7 @@ package csstype
 // Globals
 // language=JavaScript
 @JsName("""({absolute: 'absolute', fixed: 'fixed', relative: 'relative', static: 'static', sticky: 'sticky'})""")
-external interface Position {
+sealed external interface Position {
     companion object {
         val absolute: Position
         val fixed: Position

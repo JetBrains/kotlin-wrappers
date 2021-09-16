@@ -10,7 +10,7 @@ package csstype
 // Globals
 // language=JavaScript
 @JsName("""({clone: 'clone', slice: 'slice'})""")
-external interface BoxDecorationBreak {
+sealed external interface BoxDecorationBreak {
     companion object {
         val clone: BoxDecorationBreak
         val slice: BoxDecorationBreak

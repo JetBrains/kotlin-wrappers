@@ -10,7 +10,7 @@ package csstype
 // Globals
 // language=JavaScript
 @JsName("""({bidiOverride: 'bidi-override', embed: 'embed', isolate: 'isolate', isolateOverride: 'isolate-override', normal: 'normal', plaintext: 'plaintext'})""")
-external interface UnicodeBidi {
+sealed external interface UnicodeBidi {
     companion object {
         val bidiOverride: UnicodeBidi
         val embed: UnicodeBidi

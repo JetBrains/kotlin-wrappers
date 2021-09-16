@@ -10,7 +10,7 @@ package csstype
 // Globals
 // language=JavaScript
 @JsName("""({center: 'center', spaceAround: 'space-around', spaceBetween: 'space-between', start: 'start'})""")
-external interface RubyAlign {
+sealed external interface RubyAlign {
     companion object {
         val center: RubyAlign
         val spaceAround: RubyAlign

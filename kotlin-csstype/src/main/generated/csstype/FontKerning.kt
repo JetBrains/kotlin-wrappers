@@ -10,7 +10,7 @@ package csstype
 // Globals
 // language=JavaScript
 @JsName("""({auto: 'auto', none: 'none', normal: 'normal'})""")
-external interface FontKerning {
+sealed external interface FontKerning {
     companion object {
         val auto: FontKerning
         val none: FontKerning

@@ -10,7 +10,7 @@ package csstype
 // Globals
 // language=JavaScript
 @JsName("""({column: 'column', columnReverse: 'column-reverse', row: 'row', rowReverse: 'row-reverse'})""")
-external interface FlexDirection {
+sealed external interface FlexDirection {
     companion object {
         val column: FlexDirection
         val columnReverse: FlexDirection

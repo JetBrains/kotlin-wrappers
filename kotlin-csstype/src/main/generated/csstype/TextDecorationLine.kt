@@ -10,7 +10,7 @@ package csstype
 // Globals
 // language=JavaScript
 @JsName("""({blink: 'blink', grammarError: 'grammar-error', lineThrough: 'line-through', none: 'none', overline: 'overline', spellingError: 'spelling-error', underline: 'underline'})""")
-external interface TextDecorationLine {
+sealed external interface TextDecorationLine {
     companion object {
         val blink: TextDecorationLine
         val grammarError: TextDecorationLine

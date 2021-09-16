@@ -10,7 +10,7 @@ package csstype
 // Globals
 // language=JavaScript
 @JsName("""({auto: 'auto', reverse: 'reverse'})""")
-external interface OffsetRotate {
+sealed external interface OffsetRotate {
     companion object {
         val auto: OffsetRotate
         val reverse: OffsetRotate

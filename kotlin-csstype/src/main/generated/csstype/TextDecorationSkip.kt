@@ -10,7 +10,7 @@ package csstype
 // Globals
 // language=JavaScript
 @JsName("""({boxDecoration: 'box-decoration', edges: 'edges', leadingSpaces: 'leading-spaces', none: 'none', objects: 'objects', spaces: 'spaces', trailingSpaces: 'trailing-spaces'})""")
-external interface TextDecorationSkip {
+sealed external interface TextDecorationSkip {
     companion object {
         val boxDecoration: TextDecorationSkip
         val edges: TextDecorationSkip

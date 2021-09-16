@@ -10,7 +10,7 @@ package csstype
 // Globals
 // language=JavaScript
 @JsName("""({all: 'all', auto: 'auto', contain: 'contain', element: 'element', none: 'none', text: 'text'})""")
-external interface UserSelect {
+sealed external interface UserSelect {
     companion object {
         val all: UserSelect
         val auto: UserSelect
