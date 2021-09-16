@@ -33,6 +33,9 @@ include("kotlin-extensions")
 // Kotlin/JS: React wrappers
 include("kotlin-react")
 
+// Kotlin/JS: React CSS injection
+include("kotlin-react-css")
+
 // Kotlin/JS: React DOM wrappers
 include("kotlin-react-dom")
 
