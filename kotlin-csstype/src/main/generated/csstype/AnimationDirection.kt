@@ -1,6 +1,20 @@
 // Automatically generated - do not modify!
 
+@file:Suppress(
+    "NAME_CONTAINS_ILLEGAL_CHARS",
+    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
+)
+
 package csstype
 
-// Globals | DataType.SingleAnimationDirection | (string & {})
-sealed external interface AnimationDirection
+// Globals
+// language=JavaScript
+@JsName("""({alternate: 'alternate', alternateReverse: 'alternate-reverse', normal: 'normal', reverse: 'reverse'})""")
+sealed external interface AnimationDirection {
+    companion object {
+        val alternate: AnimationDirection
+        val alternateReverse: AnimationDirection
+        val normal: AnimationDirection
+        val reverse: AnimationDirection
+    }
+}
