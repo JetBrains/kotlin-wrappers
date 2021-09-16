@@ -1,6 +1,17 @@
 // Automatically generated - do not modify!
 
+@file:Suppress(
+    "NAME_CONTAINS_ILLEGAL_CHARS",
+    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
+)
+
 package csstype
 
-// Globals | "normal" | (string & {})
-sealed external interface FontVariationSettings
+// Globals
+// language=JavaScript
+@JsName("""({normal: 'normal'})""")
+sealed external interface FontVariationSettings {
+    companion object {
+        val normal: FontVariationSettings
+    }
+}
