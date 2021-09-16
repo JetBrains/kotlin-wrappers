@@ -10,3 +10,7 @@ const ringConfig = require('@jetbrains/ring-ui/webpack.config').config;
 
 config.module.rules.push(...ringConfig.module.rules)
 ```
+## Known problems
+Incompatible with [default Kotlin/JS CSS support](https://youtrack.jetbrains.com/issue/KT-47343).
+
+Solution - remove default CSS support configuration.
