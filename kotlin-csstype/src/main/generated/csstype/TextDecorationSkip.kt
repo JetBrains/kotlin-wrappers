@@ -1,6 +1,23 @@
 // Automatically generated - do not modify!
 
+@file:Suppress(
+    "NAME_CONTAINS_ILLEGAL_CHARS",
+    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
+)
+
 package csstype
 
-// Globals | "box-decoration" | "edges" | "leading-spaces" | "none" | "objects" | "spaces" | "trailing-spaces" | (string & {})
-sealed external interface TextDecorationSkip
+// Globals
+// language=JavaScript
+@JsName("""({boxDecoration: 'box-decoration', edges: 'edges', leadingSpaces: 'leading-spaces', none: 'none', objects: 'objects', spaces: 'spaces', trailingSpaces: 'trailing-spaces'})""")
+external interface TextDecorationSkip {
+    companion object {
+        val boxDecoration: TextDecorationSkip
+        val edges: TextDecorationSkip
+        val leadingSpaces: TextDecorationSkip
+        val none: TextDecorationSkip
+        val objects: TextDecorationSkip
+        val spaces: TextDecorationSkip
+        val trailingSpaces: TextDecorationSkip
+    }
+}

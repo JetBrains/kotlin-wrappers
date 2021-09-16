@@ -1,45 +1,52 @@
 // Automatically generated - do not modify!
 
+@file:Suppress(
+    "NAME_CONTAINS_ILLEGAL_CHARS",
+    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
+)
+
 package csstype
 
-/*
-| Globals
-| "alias"
-| "all-scroll"
-| "auto"
-| "cell"
-| "col-resize"
-| "context-menu"
-| "copy"
-| "crosshair"
-| "default"
-| "e-resize"
-| "ew-resize"
-| "grab"
-| "grabbing"
-| "help"
-| "move"
-| "n-resize"
-| "ne-resize"
-| "nesw-resize"
-| "no-drop"
-| "none"
-| "not-allowed"
-| "ns-resize"
-| "nw-resize"
-| "nwse-resize"
-| "pointer"
-| "progress"
-| "row-resize"
-| "s-resize"
-| "se-resize"
-| "sw-resize"
-| "text"
-| "vertical-text"
-| "w-resize"
-| "wait"
-| "zoom-in"
-| "zoom-out"
-| (string & {})
-*/
-sealed external interface Cursor
+// Globals
+// language=JavaScript
+@JsName("""({alias: 'alias', allScroll: 'all-scroll', auto: 'auto', cell: 'cell', colResize: 'col-resize', contextMenu: 'context-menu', copy: 'copy', crosshair: 'crosshair', default: 'default', eResize: 'e-resize', ewResize: 'ew-resize', grab: 'grab', grabbing: 'grabbing', help: 'help', move: 'move', nResize: 'n-resize', neResize: 'ne-resize', neswResize: 'nesw-resize', noDrop: 'no-drop', none: 'none', notAllowed: 'not-allowed', nsResize: 'ns-resize', nwResize: 'nw-resize', nwseResize: 'nwse-resize', pointer: 'pointer', progress: 'progress', rowResize: 'row-resize', sResize: 's-resize', seResize: 'se-resize', swResize: 'sw-resize', text: 'text', verticalText: 'vertical-text', wResize: 'w-resize', wait: 'wait', zoomIn: 'zoom-in', zoomOut: 'zoom-out'})""")
+external interface Cursor {
+    companion object {
+        val alias: Cursor
+        val allScroll: Cursor
+        val auto: Cursor
+        val cell: Cursor
+        val colResize: Cursor
+        val contextMenu: Cursor
+        val copy: Cursor
+        val crosshair: Cursor
+        val default: Cursor
+        val eResize: Cursor
+        val ewResize: Cursor
+        val grab: Cursor
+        val grabbing: Cursor
+        val help: Cursor
+        val move: Cursor
+        val nResize: Cursor
+        val neResize: Cursor
+        val neswResize: Cursor
+        val noDrop: Cursor
+        val none: Cursor
+        val notAllowed: Cursor
+        val nsResize: Cursor
+        val nwResize: Cursor
+        val nwseResize: Cursor
+        val pointer: Cursor
+        val progress: Cursor
+        val rowResize: Cursor
+        val sResize: Cursor
+        val seResize: Cursor
+        val swResize: Cursor
+        val text: Cursor
+        val verticalText: Cursor
+        val wResize: Cursor
+        val wait: Cursor
+        val zoomIn: Cursor
+        val zoomOut: Cursor
+    }
+}
