@@ -3,4 +3,4 @@
 package csstype
 
 // EasingFunction | TTime | "all" | "none" | (string & {})
-sealed external interface SingleTransition<TTime>
+sealed external interface SingleTransition

@@ -14,4 +14,4 @@ package csstype
 | (string & {})
 | (number & {})
 */
-sealed external interface SingleAnimation<TTime>
+sealed external interface SingleAnimation
