@@ -2,5 +2,4 @@
 
 package csstype
 
-// Globals | TTime | (string & {})
-sealed external interface TransitionDelay
+typealias TransitionDelay = TimeProperty
