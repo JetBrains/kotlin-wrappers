@@ -7,7 +7,6 @@
 
 package csstype
 
-// Globals
 // language=JavaScript
 @JsName("""({alpha: 'alpha', luminance: 'luminance'})""")
 sealed external interface MaskBorderMode {

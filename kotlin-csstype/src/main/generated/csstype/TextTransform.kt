@@ -7,7 +7,6 @@
 
 package csstype
 
-// Globals
 // language=JavaScript
 @JsName("""({capitalize: 'capitalize', fullSizeKana: 'full-size-kana', fullWidth: 'full-width', lowercase: 'lowercase', none: 'none', uppercase: 'uppercase'})""")
 sealed external interface TextTransform {

@@ -7,7 +7,6 @@
 
 package csstype
 
-// Globals
 // language=JavaScript
 @JsName("""({jis04: 'jis04', jis78: 'jis78', jis83: 'jis83', jis90: 'jis90', simplified: 'simplified', traditional: 'traditional', fullWidth: 'full-width', normal: 'normal', proportionalWidth: 'proportional-width', ruby: 'ruby'})""")
 sealed external interface FontVariantEastAsian {

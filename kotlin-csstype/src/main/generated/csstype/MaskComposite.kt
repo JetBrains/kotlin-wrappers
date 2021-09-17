@@ -7,7 +7,6 @@
 
 package csstype
 
-// Globals
 // language=JavaScript
 @JsName("""({add: 'add', exclude: 'exclude', intersect: 'intersect', subtract: 'subtract'})""")
 sealed external interface MaskComposite {

@@ -7,7 +7,6 @@
 
 package csstype
 
-// Globals
 // language=JavaScript
 @JsName("""({center: 'center', spaceAround: 'space-around', spaceBetween: 'space-between', start: 'start'})""")
 sealed external interface RubyAlign {

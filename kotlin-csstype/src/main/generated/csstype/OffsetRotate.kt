@@ -7,7 +7,6 @@
 
 package csstype
 
-// Globals
 // language=JavaScript
 @JsName("""({auto: 'auto', reverse: 'reverse'})""")
 sealed external interface OffsetRotate {

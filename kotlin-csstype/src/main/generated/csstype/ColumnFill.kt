@@ -7,7 +7,6 @@
 
 package csstype
 
-// Globals
 // language=JavaScript
 @JsName("""({auto: 'auto', balance: 'balance'})""")
 sealed external interface ColumnFill {

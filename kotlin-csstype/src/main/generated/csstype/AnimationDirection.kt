@@ -7,7 +7,6 @@
 
 package csstype
 
-// Globals
 // language=JavaScript
 @JsName("""({alternate: 'alternate', alternateReverse: 'alternate-reverse', normal: 'normal', reverse: 'reverse'})""")
 sealed external interface AnimationDirection {

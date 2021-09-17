@@ -7,7 +7,6 @@
 
 package csstype
 
-// Globals
 // language=JavaScript
 @JsName("""({compact: 'compact', normal: 'normal'})""")
 sealed external interface MathStyle {

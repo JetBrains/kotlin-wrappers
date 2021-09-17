@@ -7,7 +7,6 @@
 
 package csstype
 
-// Globals
 // language=JavaScript
 @JsName("""({mixed: 'mixed', sideways: 'sideways', upright: 'upright'})""")
 sealed external interface TextOrientation {

@@ -7,7 +7,6 @@
 
 package csstype
 
-// Globals
 // language=JavaScript
 @JsName("""({auto: 'auto', center: 'center', end: 'end', justify: 'justify', left: 'left', right: 'right', start: 'start'})""")
 sealed external interface TextAlignLast {

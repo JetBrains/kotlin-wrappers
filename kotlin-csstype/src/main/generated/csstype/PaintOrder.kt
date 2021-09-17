@@ -7,7 +7,6 @@
 
 package csstype
 
-// Globals
 // language=JavaScript
 @JsName("""({fill: 'fill', markers: 'markers', normal: 'normal', stroke: 'stroke'})""")
 sealed external interface PaintOrder {

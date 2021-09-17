@@ -7,7 +7,6 @@
 
 package csstype
 
-// Globals
 // language=JavaScript
 @JsName("""({flip: 'flip', fromImage: 'from-image'})""")
 sealed external interface ImageOrientation {

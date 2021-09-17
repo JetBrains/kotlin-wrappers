@@ -7,7 +7,6 @@
 
 package csstype
 
-// Globals
 // language=JavaScript
 @JsName("""({borderBox: 'border-box', contentBox: 'content-box', paddingBox: 'padding-box'})""")
 sealed external interface BackgroundOrigin {

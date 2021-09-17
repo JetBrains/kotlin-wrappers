@@ -7,7 +7,6 @@
 
 package csstype
 
-// Globals
 // language=JavaScript
 @JsName("""({auto: 'auto', crispEdges: 'crisp-edges', pixelated: 'pixelated'})""")
 sealed external interface ImageRendering {

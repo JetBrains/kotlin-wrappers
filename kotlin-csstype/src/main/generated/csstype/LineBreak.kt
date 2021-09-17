@@ -7,7 +7,6 @@
 
 package csstype
 
-// Globals
 // language=JavaScript
 @JsName("""({anywhere: 'anywhere', auto: 'auto', loose: 'loose', normal: 'normal', strict: 'strict'})""")
 sealed external interface LineBreak {

@@ -7,7 +7,6 @@
 
 package csstype
 
-// Globals
 // language=JavaScript
 @JsName("""({column: 'column', columnReverse: 'column-reverse', row: 'row', rowReverse: 'row-reverse'})""")
 sealed external interface FlexDirection {

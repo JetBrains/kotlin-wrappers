@@ -7,7 +7,6 @@
 
 package csstype
 
-// Globals
 // language=JavaScript
 @JsName("""({nowrap: 'nowrap', wrap: 'wrap', wrapReverse: 'wrap-reverse'})""")
 sealed external interface FlexWrap {

@@ -7,7 +7,6 @@
 
 package csstype
 
-// Globals
 // language=JavaScript
 @JsName("""({none: 'none'})""")
 sealed external interface Transform {

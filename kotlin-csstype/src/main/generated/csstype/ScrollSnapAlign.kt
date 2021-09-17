@@ -7,7 +7,6 @@
 
 package csstype
 
-// Globals
 // language=JavaScript
 @JsName("""({center: 'center', end: 'end', none: 'none', start: 'start'})""")
 sealed external interface ScrollSnapAlign {

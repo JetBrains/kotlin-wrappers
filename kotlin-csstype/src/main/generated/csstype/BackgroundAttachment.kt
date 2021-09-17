@@ -7,7 +7,6 @@
 
 package csstype
 
-// Globals
 // language=JavaScript
 @JsName("""({fixed: 'fixed', local: 'local', scroll: 'scroll'})""")
 sealed external interface BackgroundAttachment {

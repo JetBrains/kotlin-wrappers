@@ -7,7 +7,6 @@
 
 package csstype
 
-// Globals
 // language=JavaScript
 @JsName("""({borderBox: 'border-box', contentBox: 'content-box', paddingBox: 'padding-box', fillBox: 'fill-box', marginBox: 'margin-box', strokeBox: 'stroke-box', viewBox: 'view-box', none: 'none'})""")
 sealed external interface OffsetPath {

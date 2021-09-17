@@ -7,7 +7,6 @@
 
 package csstype
 
-// Globals
 // language=JavaScript
 @JsName("""({auto: 'auto', smooth: 'smooth'})""")
 sealed external interface ScrollBehavior {

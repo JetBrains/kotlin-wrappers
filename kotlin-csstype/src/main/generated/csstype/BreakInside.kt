@@ -7,7 +7,6 @@
 
 package csstype
 
-// Globals
 // language=JavaScript
 @JsName("""({auto: 'auto', avoid: 'avoid', avoidColumn: 'avoid-column', avoidPage: 'avoid-page', avoidRegion: 'avoid-region'})""")
 sealed external interface BreakInside {

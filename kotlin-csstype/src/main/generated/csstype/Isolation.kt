@@ -7,7 +7,6 @@
 
 package csstype
 
-// Globals
 // language=JavaScript
 @JsName("""({auto: 'auto', isolate: 'isolate'})""")
 sealed external interface Isolation {

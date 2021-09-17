@@ -7,7 +7,6 @@
 
 package csstype
 
-// Globals
 // language=JavaScript
 @JsName("""({all: 'all', always: 'always', auto: 'auto', avoid: 'avoid', avoidColumn: 'avoid-column', avoidPage: 'avoid-page', avoidRegion: 'avoid-region', column: 'column', left: 'left', page: 'page', recto: 'recto', region: 'region', right: 'right', verso: 'verso'})""")
 sealed external interface BreakAfter {

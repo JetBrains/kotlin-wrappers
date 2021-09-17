@@ -7,7 +7,6 @@
 
 package csstype
 
-// Globals
 // language=JavaScript
 @JsName("""({alternate: 'alternate', over: 'over', under: 'under'})""")
 sealed external interface RubyPosition {

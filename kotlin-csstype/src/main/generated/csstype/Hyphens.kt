@@ -7,7 +7,6 @@
 
 package csstype
 
-// Globals
 // language=JavaScript
 @JsName("""({auto: 'auto', manual: 'manual', none: 'none'})""")
 sealed external interface Hyphens {

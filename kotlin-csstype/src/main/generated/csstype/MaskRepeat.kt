@@ -7,7 +7,6 @@
 
 package csstype
 
-// Globals
 // language=JavaScript
 @JsName("""({noRepeat: 'no-repeat', repeat: 'repeat', repeatX: 'repeat-x', repeatY: 'repeat-y', round: 'round', space: 'space'})""")
 sealed external interface MaskRepeat {

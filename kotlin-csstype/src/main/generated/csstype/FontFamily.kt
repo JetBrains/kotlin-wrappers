@@ -7,7 +7,6 @@
 
 package csstype
 
-// Globals
 // language=JavaScript
 @JsName("""({cursive: 'cursive', fantasy: 'fantasy', monospace: 'monospace', sansSerif: 'sans-serif', serif: 'serif'})""")
 sealed external interface FontFamily {

@@ -7,7 +7,6 @@
 
 package csstype
 
-// Globals
 // language=JavaScript
 @JsName("""({borderBox: 'border-box', contentBox: 'content-box', fillBox: 'fill-box', strokeBox: 'stroke-box', viewBox: 'view-box'})""")
 sealed external interface TransformBox {

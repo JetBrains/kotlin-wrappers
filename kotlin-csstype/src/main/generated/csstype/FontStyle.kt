@@ -7,7 +7,6 @@
 
 package csstype
 
-// Globals
 // language=JavaScript
 @JsName("""({italic: 'italic', normal: 'normal', oblique: 'oblique'})""")
 sealed external interface FontStyle {

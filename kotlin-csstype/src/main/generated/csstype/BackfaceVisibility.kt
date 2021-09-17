@@ -7,7 +7,6 @@
 
 package csstype
 
-// Globals
 // language=JavaScript
 @JsName("""({hidden: 'hidden', visible: 'visible'})""")
 sealed external interface BackfaceVisibility {

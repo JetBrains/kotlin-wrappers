@@ -7,7 +7,6 @@
 
 package csstype
 
-// Globals
 // language=JavaScript
 @JsName("""({normal: 'normal'})""")
 sealed external interface FontLanguageOverride {

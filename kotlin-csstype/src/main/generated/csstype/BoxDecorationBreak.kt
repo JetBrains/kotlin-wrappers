@@ -7,7 +7,6 @@
 
 package csstype
 
-// Globals
 // language=JavaScript
 @JsName("""({clone: 'clone', slice: 'slice'})""")
 sealed external interface BoxDecorationBreak {

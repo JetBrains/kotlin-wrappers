@@ -7,7 +7,6 @@
 
 package csstype
 
-// Globals
 // language=JavaScript
 @JsName("""({paused: 'paused', running: 'running'})""")
 sealed external interface AnimationPlayState {

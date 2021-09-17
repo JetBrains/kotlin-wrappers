@@ -7,7 +7,6 @@
 
 package csstype
 
-// Globals
 // language=JavaScript
 @JsName("""({borderBox: 'border-box', contentBox: 'content-box', paddingBox: 'padding-box', marginBox: 'margin-box', none: 'none'})""")
 sealed external interface ShapeOutside {

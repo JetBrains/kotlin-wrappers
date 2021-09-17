@@ -7,7 +7,6 @@
 
 package csstype
 
-// Globals
 // language=JavaScript
 @JsName("""({auto: 'auto', stable: 'stable'})""")
 sealed external interface ScrollbarGutter {
