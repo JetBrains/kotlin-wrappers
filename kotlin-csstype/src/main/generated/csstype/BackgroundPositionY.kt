@@ -1,6 +1,21 @@
 // Automatically generated - do not modify!
 
+@file:Suppress(
+    "NAME_CONTAINS_ILLEGAL_CHARS",
+    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
+)
+
 package csstype
 
-// Globals | TLength | "bottom" | "center" | "top" | "y-end" | "y-start" | (string & {})
-sealed external interface BackgroundPositionY
+// LengthProperty
+// language=JavaScript
+@JsName("""({bottom: 'bottom', center: 'center', top: 'top', yEnd: 'y-end', yStart: 'y-start'})""")
+sealed external interface BackgroundPositionY {
+    companion object {
+        val bottom: BackgroundPositionY
+        val center: BackgroundPositionY
+        val top: BackgroundPositionY
+        val yEnd: BackgroundPositionY
+        val yStart: BackgroundPositionY
+    }
+}
