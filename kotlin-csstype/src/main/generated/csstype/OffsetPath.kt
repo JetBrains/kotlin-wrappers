@@ -1,6 +1,24 @@
 // Automatically generated - do not modify!
 
+@file:Suppress(
+    "NAME_CONTAINS_ILLEGAL_CHARS",
+    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
+)
+
 package csstype
 
-// Globals | DataType.GeometryBox | "none" | (string & {})
-sealed external interface OffsetPath
+// Globals
+// language=JavaScript
+@JsName("""({borderBox: 'border-box', contentBox: 'content-box', paddingBox: 'padding-box', fillBox: 'fill-box', marginBox: 'margin-box', strokeBox: 'stroke-box', viewBox: 'view-box', none: 'none'})""")
+sealed external interface OffsetPath {
+    companion object {
+        val borderBox: OffsetPath
+        val contentBox: OffsetPath
+        val paddingBox: OffsetPath
+        val fillBox: OffsetPath
+        val marginBox: OffsetPath
+        val strokeBox: OffsetPath
+        val viewBox: OffsetPath
+        val none: OffsetPath
+    }
+}
