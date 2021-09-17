@@ -7,7 +7,6 @@
 
 package csstype
 
-// Globals
 // language=JavaScript
 @JsName("""({column: 'column', columnReverse: 'column-reverse', nowrap: 'nowrap', row: 'row', rowReverse: 'row-reverse', wrap: 'wrap', wrapReverse: 'wrap-reverse'})""")
 sealed external interface FlexFlow {

@@ -7,7 +7,6 @@
 
 package csstype
 
-// Globals
 // language=JavaScript
 @JsName("""({clip: 'clip', ellipsis: 'ellipsis'})""")
 sealed external interface BlockOverflow {

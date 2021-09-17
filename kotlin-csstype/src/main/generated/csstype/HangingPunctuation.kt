@@ -7,7 +7,6 @@
 
 package csstype
 
-// Globals
 // language=JavaScript
 @JsName("""({allowEnd: 'allow-end', first: 'first', forceEnd: 'force-end', last: 'last', none: 'none'})""")
 sealed external interface HangingPunctuation {

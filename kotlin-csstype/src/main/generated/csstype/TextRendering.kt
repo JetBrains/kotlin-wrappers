@@ -7,7 +7,6 @@
 
 package csstype
 
-// Globals
 // language=JavaScript
 @JsName("""({auto: 'auto', geometricPrecision: 'geometricPrecision', optimizeLegibility: 'optimizeLegibility', optimizeSpeed: 'optimizeSpeed'})""")
 sealed external interface TextRendering {

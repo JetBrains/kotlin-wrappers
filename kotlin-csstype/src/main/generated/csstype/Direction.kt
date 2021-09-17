@@ -7,7 +7,6 @@
 
 package csstype
 
-// Globals
 // language=JavaScript
 @JsName("""({ltr: 'ltr', rtl: 'rtl'})""")
 sealed external interface Direction {

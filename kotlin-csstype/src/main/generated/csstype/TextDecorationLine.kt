@@ -7,7 +7,6 @@
 
 package csstype
 
-// Globals
 // language=JavaScript
 @JsName("""({blink: 'blink', grammarError: 'grammar-error', lineThrough: 'line-through', none: 'none', overline: 'overline', spellingError: 'spelling-error', underline: 'underline'})""")
 sealed external interface TextDecorationLine {

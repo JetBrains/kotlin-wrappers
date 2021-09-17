@@ -7,7 +7,6 @@
 
 package csstype
 
-// Globals
 // language=JavaScript
 @JsName("""({allPetiteCaps: 'all-petite-caps', allSmallCaps: 'all-small-caps', normal: 'normal', petiteCaps: 'petite-caps', smallCaps: 'small-caps', titlingCaps: 'titling-caps', unicase: 'unicase'})""")
 sealed external interface FontVariantCaps {

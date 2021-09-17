@@ -7,7 +7,6 @@
 
 package csstype
 
-// Globals
 // language=JavaScript
 @JsName("""({all: 'all', digits: 'digits', none: 'none'})""")
 sealed external interface TextCombineUpright {

@@ -7,7 +7,6 @@
 
 package csstype
 
-// Globals
 // language=JavaScript
 @JsName("""({flat: 'flat', preserve3d: 'preserve-3d'})""")
 sealed external interface TransformStyle {

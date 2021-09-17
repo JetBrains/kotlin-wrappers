@@ -7,7 +7,6 @@
 
 package csstype
 
-// Globals
 // language=JavaScript
 @JsName("""({auto: 'auto', hidden: 'hidden', visible: 'visible'})""")
 sealed external interface ContentVisibility {

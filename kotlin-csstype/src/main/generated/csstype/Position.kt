@@ -7,7 +7,6 @@
 
 package csstype
 
-// Globals
 // language=JavaScript
 @JsName("""({absolute: 'absolute', fixed: 'fixed', relative: 'relative', static: 'static', sticky: 'sticky'})""")
 sealed external interface Position {

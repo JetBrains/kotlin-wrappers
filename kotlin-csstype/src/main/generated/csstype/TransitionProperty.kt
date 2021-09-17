@@ -7,7 +7,6 @@
 
 package csstype
 
-// Globals
 // language=JavaScript
 @JsName("""({all: 'all', none: 'none'})""")
 sealed external interface TransitionProperty {

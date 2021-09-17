@@ -7,7 +7,6 @@
 
 package csstype
 
-// Globals
 // language=JavaScript
 @JsName("""({all: 'all', auto: 'auto', none: 'none'})""")
 sealed external interface TextDecorationSkipInk {

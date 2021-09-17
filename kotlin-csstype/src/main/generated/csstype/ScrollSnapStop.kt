@@ -7,7 +7,6 @@
 
 package csstype
 
-// Globals
 // language=JavaScript
 @JsName("""({always: 'always', normal: 'normal'})""")
 sealed external interface ScrollSnapStop {

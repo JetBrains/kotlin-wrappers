@@ -7,7 +7,6 @@
 
 package csstype
 
-// Globals
 // language=JavaScript
 @JsName("""({auto: 'auto', interCharacter: 'inter-character', interWord: 'inter-word', none: 'none'})""")
 sealed external interface TextJustify {

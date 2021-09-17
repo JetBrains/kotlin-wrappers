@@ -7,7 +7,6 @@
 
 package csstype
 
-// Globals
 // language=JavaScript
 @JsName("""({economy: 'economy', exact: 'exact'})""")
 sealed external interface ColorAdjust {

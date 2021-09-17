@@ -7,7 +7,6 @@
 
 package csstype
 
-// Globals
 // language=JavaScript
 @JsName("""({contents: 'contents', scrollPosition: 'scroll-position', auto: 'auto'})""")
 sealed external interface WillChange {

@@ -7,7 +7,6 @@
 
 package csstype
 
-// Globals
 // language=JavaScript
 @JsName("""({column: 'column', dense: 'dense', row: 'row'})""")
 sealed external interface GridAutoFlow {

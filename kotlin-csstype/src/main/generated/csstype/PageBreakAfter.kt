@@ -7,7 +7,6 @@
 
 package csstype
 
-// Globals
 // language=JavaScript
 @JsName("""({always: 'always', auto: 'auto', avoid: 'avoid', left: 'left', recto: 'recto', right: 'right', verso: 'verso'})""")
 sealed external interface PageBreakAfter {

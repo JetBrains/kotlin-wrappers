@@ -7,7 +7,6 @@
 
 package csstype
 
-// Globals
 // language=JavaScript
 @JsName("""({auto: 'auto', fromFont: 'from-font', left: 'left', right: 'right', under: 'under'})""")
 sealed external interface TextUnderlinePosition {

@@ -7,7 +7,6 @@
 
 package csstype
 
-// Globals
 // language=JavaScript
 @JsName("""({blockEnd: 'block-end', blockStart: 'block-start', bottom: 'bottom', inlineEnd: 'inline-end', inlineStart: 'inline-start', top: 'top'})""")
 sealed external interface CaptionSide {

@@ -7,7 +7,6 @@
 
 package csstype
 
-// Globals
 // language=JavaScript
 @JsName("""({normal: 'normal', sub: 'sub', sup: 'super'})""")
 sealed external interface FontVariantPosition {

@@ -7,7 +7,6 @@
 
 package csstype
 
-// Globals
 // language=JavaScript
 @JsName("""({collapse: 'collapse', separate: 'separate'})""")
 sealed external interface BorderCollapse {

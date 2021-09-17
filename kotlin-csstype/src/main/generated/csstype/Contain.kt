@@ -7,7 +7,6 @@
 
 package csstype
 
-// Globals
 // language=JavaScript
 @JsName("""({content: 'content', layout: 'layout', none: 'none', paint: 'paint', size: 'size', strict: 'strict', style: 'style'})""")
 sealed external interface Contain {

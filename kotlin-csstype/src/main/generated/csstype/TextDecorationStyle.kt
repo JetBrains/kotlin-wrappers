@@ -7,7 +7,6 @@
 
 package csstype
 
-// Globals
 // language=JavaScript
 @JsName("""({dashed: 'dashed', dotted: 'dotted', double: 'double', solid: 'solid', wavy: 'wavy'})""")
 sealed external interface TextDecorationStyle {

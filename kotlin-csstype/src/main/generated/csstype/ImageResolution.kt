@@ -7,7 +7,6 @@
 
 package csstype
 
-// Globals
 // language=JavaScript
 @JsName("""({fromImage: 'from-image'})""")
 sealed external interface ImageResolution {

@@ -7,7 +7,6 @@
 
 package csstype
 
-// Globals
 // language=JavaScript
 @JsName("""({auto: 'auto', none: 'none'})""")
 sealed external interface ForcedColorAdjust {

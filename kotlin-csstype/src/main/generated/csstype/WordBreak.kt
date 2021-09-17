@@ -7,7 +7,6 @@
 
 package csstype
 
-// Globals
 // language=JavaScript
 @JsName("""({breakAll: 'break-all', breakWord: 'break-word', keepAll: 'keep-all', normal: 'normal'})""")
 sealed external interface WordBreak {

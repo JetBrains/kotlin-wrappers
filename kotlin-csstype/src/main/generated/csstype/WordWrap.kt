@@ -7,7 +7,6 @@
 
 package csstype
 
-// Globals
 // language=JavaScript
 @JsName("""({breakWord: 'break-word', normal: 'normal'})""")
 sealed external interface WordWrap {

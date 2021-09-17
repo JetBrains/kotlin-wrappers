@@ -7,7 +7,6 @@
 
 package csstype
 
-// Globals
 // language=JavaScript
 @JsName("""({contain: 'contain', cover: 'cover', fill: 'fill', none: 'none', scaleDown: 'scale-down'})""")
 sealed external interface ObjectFit {

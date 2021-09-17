@@ -7,7 +7,6 @@
 
 package csstype
 
-// Globals
 // language=JavaScript
 @JsName("""({all: 'all', auto: 'auto', contain: 'contain', element: 'element', none: 'none', text: 'text'})""")
 sealed external interface UserSelect {

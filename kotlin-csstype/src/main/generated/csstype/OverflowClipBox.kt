@@ -7,7 +7,6 @@
 
 package csstype
 
-// Globals
 // language=JavaScript
 @JsName("""({contentBox: 'content-box', paddingBox: 'padding-box'})""")
 sealed external interface OverflowClipBox {

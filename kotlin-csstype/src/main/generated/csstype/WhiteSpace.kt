@@ -7,7 +7,6 @@
 
 package csstype
 
-// Globals
 // language=JavaScript
 @JsName("""({breakSpaces: 'break-spaces', normal: 'normal', nowrap: 'nowrap', pre: 'pre', preLine: 'pre-line', preWrap: 'pre-wrap'})""")
 sealed external interface WhiteSpace {

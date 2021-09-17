@@ -7,7 +7,6 @@
 
 package csstype
 
-// Globals
 // language=JavaScript
 @JsName("""({bidiOverride: 'bidi-override', embed: 'embed', isolate: 'isolate', isolateOverride: 'isolate-override', normal: 'normal', plaintext: 'plaintext'})""")
 sealed external interface UnicodeBidi {

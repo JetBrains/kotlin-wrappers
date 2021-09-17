@@ -7,7 +7,6 @@
 
 package csstype
 
-// Globals
 // language=JavaScript
 @JsName("""({none: 'none', smallCaps: 'small-caps', style: 'style', weight: 'weight'})""")
 sealed external interface FontSynthesis {

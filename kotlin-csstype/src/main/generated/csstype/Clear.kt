@@ -7,7 +7,6 @@
 
 package csstype
 
-// Globals
 // language=JavaScript
 @JsName("""({both: 'both', inlineEnd: 'inline-end', inlineStart: 'inline-start', left: 'left', none: 'none', right: 'right'})""")
 sealed external interface Clear {

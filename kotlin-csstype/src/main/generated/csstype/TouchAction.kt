@@ -7,7 +7,6 @@
 
 package csstype
 
-// Globals
 // language=JavaScript
 @JsName("""({auto: 'auto', manipulation: 'manipulation', none: 'none', panDown: 'pan-down', panLeft: 'pan-left', panRight: 'pan-right', panUp: 'pan-up', panX: 'pan-x', panY: 'pan-y', pinchZoom: 'pinch-zoom'})""")
 sealed external interface TouchAction {

@@ -7,7 +7,6 @@
 
 package csstype
 
-// Globals
 // language=JavaScript
 @JsName("""({closeQuote: 'close-quote', noCloseQuote: 'no-close-quote', noOpenQuote: 'no-open-quote', openQuote: 'open-quote', contents: 'contents', none: 'none', normal: 'normal'})""")
 sealed external interface Content {

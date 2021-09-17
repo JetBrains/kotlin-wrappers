@@ -7,7 +7,6 @@
 
 package csstype
 
-// Globals
 // language=JavaScript
 @JsName("""({repeat: 'repeat', round: 'round', space: 'space', stretch: 'stretch'})""")
 sealed external interface BorderImageRepeat {

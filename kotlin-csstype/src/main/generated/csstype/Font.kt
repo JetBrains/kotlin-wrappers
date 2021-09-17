@@ -7,7 +7,6 @@
 
 package csstype
 
-// Globals
 // language=JavaScript
 @JsName("""({caption: 'caption', icon: 'icon', menu: 'menu', messageBox: 'message-box', smallCaption: 'small-caption', statusBar: 'status-bar'})""")
 sealed external interface Font {

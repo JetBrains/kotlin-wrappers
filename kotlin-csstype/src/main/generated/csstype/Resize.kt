@@ -7,7 +7,6 @@
 
 package csstype
 
-// Globals
 // language=JavaScript
 @JsName("""({block: 'block', both: 'both', horizontal: 'horizontal', inline: 'inline', none: 'none', vertical: 'vertical'})""")
 sealed external interface Resize {

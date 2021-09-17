@@ -7,7 +7,6 @@
 
 package csstype
 
-// Globals
 // language=JavaScript
 @JsName("""({auto: 'auto', fixed: 'fixed'})""")
 sealed external interface TableLayout {

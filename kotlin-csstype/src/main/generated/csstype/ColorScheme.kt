@@ -7,7 +7,6 @@
 
 package csstype
 
-// Globals
 // language=JavaScript
 @JsName("""({dark: 'dark', light: 'light', normal: 'normal'})""")
 sealed external interface ColorScheme {

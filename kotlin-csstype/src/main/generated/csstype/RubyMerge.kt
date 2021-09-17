@@ -7,7 +7,6 @@
 
 package csstype
 
-// Globals
 // language=JavaScript
 @JsName("""({auto: 'auto', collapse: 'collapse', separate: 'separate'})""")
 sealed external interface RubyMerge {

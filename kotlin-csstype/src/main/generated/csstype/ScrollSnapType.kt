@@ -7,7 +7,6 @@
 
 package csstype
 
-// Globals
 // language=JavaScript
 @JsName("""({block: 'block', both: 'both', inline: 'inline', none: 'none', x: 'x', y: 'y'})""")
 sealed external interface ScrollSnapType {

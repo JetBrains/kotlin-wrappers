@@ -7,7 +7,6 @@
 
 package csstype
 
-// Globals
 // language=JavaScript
 @JsName("""({anywhere: 'anywhere', breakWord: 'break-word', normal: 'normal'})""")
 sealed external interface OverflowWrap {

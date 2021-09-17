@@ -7,7 +7,6 @@
 
 package csstype
 
-// Globals
 // language=JavaScript
 @JsName("""({backwards: 'backwards', both: 'both', forwards: 'forwards', none: 'none'})""")
 sealed external interface AnimationFillMode {

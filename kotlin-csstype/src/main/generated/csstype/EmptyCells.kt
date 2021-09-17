@@ -7,7 +7,6 @@
 
 package csstype
 
-// Globals
 // language=JavaScript
 @JsName("""({hide: 'hide', show: 'show'})""")
 sealed external interface EmptyCells {

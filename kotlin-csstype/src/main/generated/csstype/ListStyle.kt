@@ -7,7 +7,6 @@
 
 package csstype
 
-// Globals
 // language=JavaScript
 @JsName("""({inside: 'inside', none: 'none', outside: 'outside'})""")
 sealed external interface ListStyle {

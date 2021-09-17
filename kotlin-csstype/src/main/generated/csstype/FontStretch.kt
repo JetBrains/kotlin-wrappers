@@ -7,7 +7,6 @@
 
 package csstype
 
-// Globals
 // language=JavaScript
 @JsName("""({condensed: 'condensed', expanded: 'expanded', extraCondensed: 'extra-condensed', extraExpanded: 'extra-expanded', normal: 'normal', semiCondensed: 'semi-condensed', semiExpanded: 'semi-expanded', ultraCondensed: 'ultra-condensed', ultraExpanded: 'ultra-expanded'})""")
 sealed external interface FontStretch {

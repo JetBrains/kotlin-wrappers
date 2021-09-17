@@ -7,7 +7,6 @@
 
 package csstype
 
-// Globals
 // language=JavaScript
 @JsName("""({horizontalTb: 'horizontal-tb', sidewaysLr: 'sideways-lr', sidewaysRl: 'sideways-rl', verticalLr: 'vertical-lr', verticalRl: 'vertical-rl'})""")
 sealed external interface WritingMode {
