@@ -1,6 +1,24 @@
 // Automatically generated - do not modify!
 
+@file:Suppress(
+    "NAME_CONTAINS_ILLEGAL_CHARS",
+    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
+)
+
 package csstype
 
-// Globals | DataType.Color | "circle" | "dot" | "double-circle" | "filled" | "none" | "open" | "sesame" | "triangle" | (string & {})
-sealed external interface TextEmphasis
+// ColorProperty
+// language=JavaScript
+@JsName("""({circle: 'circle', dot: 'dot', doubleCircle: 'double-circle', filled: 'filled', none: 'none', open: 'open', sesame: 'sesame', triangle: 'triangle'})""")
+sealed external interface TextEmphasis {
+    companion object {
+        val circle: TextEmphasis
+        val dot: TextEmphasis
+        val doubleCircle: TextEmphasis
+        val filled: TextEmphasis
+        val none: TextEmphasis
+        val open: TextEmphasis
+        val sesame: TextEmphasis
+        val triangle: TextEmphasis
+    }
+}

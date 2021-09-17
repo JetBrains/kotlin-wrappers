@@ -1,6 +1,17 @@
 // Automatically generated - do not modify!
 
+@file:Suppress(
+    "NAME_CONTAINS_ILLEGAL_CHARS",
+    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
+)
+
 package csstype
 
-// Globals | DataType.Color | "auto"
-sealed external interface ScrollbarColor
+// ColorProperty
+// language=JavaScript
+@JsName("""({auto: 'auto'})""")
+sealed external interface ScrollbarColor {
+    companion object {
+        val auto: ScrollbarColor
+    }
+}
