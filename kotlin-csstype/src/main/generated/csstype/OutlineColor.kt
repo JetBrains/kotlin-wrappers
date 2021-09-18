@@ -7,7 +7,6 @@
 
 package csstype
 
-// ColorProperty
 // language=JavaScript
 @JsName("""({invert: 'invert'})""")
 sealed external interface OutlineColor {
