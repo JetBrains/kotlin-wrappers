@@ -7,7 +7,6 @@
 
 package csstype
 
-// ColorProperty
 // language=JavaScript
 @JsName("""({circle: 'circle', dot: 'dot', doubleCircle: 'double-circle', filled: 'filled', none: 'none', open: 'open', sesame: 'sesame', triangle: 'triangle'})""")
 sealed external interface TextEmphasis {

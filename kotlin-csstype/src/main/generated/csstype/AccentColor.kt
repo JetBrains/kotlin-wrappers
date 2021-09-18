@@ -7,7 +7,6 @@
 
 package csstype
 
-// ColorProperty
 // language=JavaScript
 @JsName("""({auto: 'auto'})""")
 sealed external interface AccentColor {

@@ -7,7 +7,6 @@
 
 package csstype
 
-// ColorProperty
 // language=JavaScript
 @JsName("""({auto: 'auto', blink: 'blink', dashed: 'dashed', dotted: 'dotted', double: 'double', fromFont: 'from-font', grammarError: 'grammar-error', lineThrough: 'line-through', none: 'none', overline: 'overline', solid: 'solid', spellingError: 'spelling-error', underline: 'underline', wavy: 'wavy'})""")
 sealed external interface TextDecoration {
