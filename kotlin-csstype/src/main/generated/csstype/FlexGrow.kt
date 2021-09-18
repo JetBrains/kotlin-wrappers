@@ -1,6 +1,12 @@
 // Automatically generated - do not modify!
 
+@file:Suppress(
+    "NOTHING_TO_INLINE",
+)
+
 package csstype
 
-// Globals | (number & {})
 sealed external interface FlexGrow
+
+inline fun FlexGrow(value: Double): FlexGrow =
+    value.unsafeCast<FlexGrow>()
