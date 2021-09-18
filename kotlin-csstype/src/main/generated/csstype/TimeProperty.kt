@@ -3,4 +3,5 @@
 package csstype
 
 // Globals | TTime
-sealed external interface TimeProperty
+sealed external interface TimeProperty :
+    Transition

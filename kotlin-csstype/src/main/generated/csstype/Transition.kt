@@ -7,7 +7,6 @@
 
 package csstype
 
-// TimeProperty
 // language=JavaScript
 @JsName("""({ease: 'ease', easeIn: 'ease-in', easeInOut: 'ease-in-out', easeOut: 'ease-out', stepEnd: 'step-end', stepStart: 'step-start', linear: 'linear', all: 'all', none: 'none'})""")
 sealed external interface Transition {
