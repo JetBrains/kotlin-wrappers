@@ -1,6 +1,17 @@
 // Automatically generated - do not modify!
 
+@file:Suppress(
+    "NAME_CONTAINS_ILLEGAL_CHARS",
+    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
+)
+
 package csstype
 
-// NamedColor | "currentcolor" | (string & {})
-sealed external interface Color
+// NamedColor
+// language=JavaScript
+@JsName("""({currentcolor: 'currentcolor'})""")
+sealed external interface Color {
+    companion object {
+        val currentcolor: Color
+    }
+}
