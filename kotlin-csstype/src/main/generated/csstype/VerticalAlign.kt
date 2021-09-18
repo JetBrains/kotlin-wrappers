@@ -7,7 +7,6 @@
 
 package csstype
 
-// LengthProperty
 // language=JavaScript
 @JsName("""({baseline: 'baseline', bottom: 'bottom', middle: 'middle', sub: 'sub', sup: 'super', textBottom: 'text-bottom', textTop: 'text-top', top: 'top'})""")
 sealed external interface VerticalAlign {

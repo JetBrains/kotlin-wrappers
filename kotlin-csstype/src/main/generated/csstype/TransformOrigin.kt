@@ -7,7 +7,6 @@
 
 package csstype
 
-// LengthProperty
 // language=JavaScript
 @JsName("""({bottom: 'bottom', center: 'center', left: 'left', right: 'right', top: 'top'})""")
 sealed external interface TransformOrigin {

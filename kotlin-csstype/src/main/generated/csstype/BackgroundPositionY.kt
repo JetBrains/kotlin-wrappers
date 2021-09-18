@@ -7,7 +7,6 @@
 
 package csstype
 
-// LengthProperty
 // language=JavaScript
 @JsName("""({bottom: 'bottom', center: 'center', top: 'top', yEnd: 'y-end', yStart: 'y-start'})""")
 sealed external interface BackgroundPositionY {
