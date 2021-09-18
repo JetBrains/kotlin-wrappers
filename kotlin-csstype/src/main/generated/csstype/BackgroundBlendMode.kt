@@ -2,5 +2,4 @@
 
 package csstype
 
-// Globals | DataType.BlendMode | (string & {})
-sealed external interface BackgroundBlendMode
+typealias BackgroundBlendMode = BlendModeProperty
