@@ -7,7 +7,6 @@
 
 package csstype
 
-// LengthProperty
 // language=JavaScript
 @JsName("""({auto: 'auto', fromFont: 'from-font'})""")
 sealed external interface TextDecorationThickness {
