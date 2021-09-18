@@ -2,16 +2,5 @@
 
 package csstype
 
-/*
-| EasingFunction
-| SingleAnimationDirection
-| SingleAnimationFillMode
-| TTime
-| "infinite"
-| "none"
-| "paused"
-| "running"
-| (string & {})
-| (number & {})
-*/
+// EasingFunction | SingleAnimationDirection | SingleAnimationFillMode | TTime | "infinite" | "none" | "paused" | "running" | (string & {}) | (number & {})
 sealed external interface SingleAnimation
