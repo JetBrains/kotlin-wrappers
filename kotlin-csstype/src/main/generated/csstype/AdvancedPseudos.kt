@@ -1,27 +1,31 @@
 // Automatically generated - do not modify!
 
+@file:Suppress(
+    "NAME_CONTAINS_ILLEGAL_CHARS",
+)
+
 package csstype
 
-/*
-| ":-moz-any()"
-| ":-moz-dir"
-| ":-webkit-any()"
-| "::cue"
-| "::cue-region"
-| "::part"
-| "::slotted"
-| ":dir"
-| ":has"
-| ":host"
-| ":host-context"
-| ":is"
-| ":lang"
-| ":matches()"
-| ":not"
-| ":nth-child"
-| ":nth-last-child"
-| ":nth-last-of-type"
-| ":nth-of-type"
-| ":where"
-*/
-sealed external interface AdvancedPseudos
+// language=JavaScript
+@JsName("""({cue: '::cue', cueRegion: '::cue-region', part: '::part', slotted: '::slotted', dir: ':dir', has: ':has', host: ':host', hostContext: ':host-context', __is__: ':is', lang: ':lang', matches: ':matches()', not: ':not', nthChild: ':nth-child', nthLastChild: ':nth-last-child', nthLastOfType: ':nth-last-of-type', nthOfType: ':nth-of-type', where: ':where'})""")
+external enum class AdvancedPseudos {
+    cue,
+    cueRegion,
+    part,
+    slotted,
+    dir,
+    has,
+    host,
+    hostContext,
+    __is__,
+    lang,
+    matches,
+    not,
+    nthChild,
+    nthLastChild,
+    nthLastOfType,
+    nthOfType,
+    where,
+
+    ;
+}
