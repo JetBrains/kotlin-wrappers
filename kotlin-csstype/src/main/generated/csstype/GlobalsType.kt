@@ -37,6 +37,7 @@ sealed external interface GlobalsType :
     ClipPath,
     ColorAdjust,
     ColorScheme,
+    ColumnCount,
     ColumnFill,
     ColumnSpan,
     Contain,
@@ -88,6 +89,7 @@ sealed external interface GlobalsType :
     JustifySelf,
     JustifyTracks,
     LineBreak,
+    LineClamp,
     ListStyle,
     ListStyleImage,
     ListStylePosition,
@@ -104,6 +106,7 @@ sealed external interface GlobalsType :
     MaskRepeat,
     MaskType,
     MathStyle,
+    MaxLines,
     ObjectFit,
     OffsetPath,
     OffsetRotate,
@@ -175,4 +178,5 @@ sealed external interface GlobalsType :
     WillChange,
     WordBreak,
     WordWrap,
-    WritingMode
+    WritingMode,
+    ZIndex
