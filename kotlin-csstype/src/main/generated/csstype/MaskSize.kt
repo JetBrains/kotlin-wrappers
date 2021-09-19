@@ -1,6 +1,18 @@
 // Automatically generated - do not modify!
 
+@file:Suppress(
+    "NAME_CONTAINS_ILLEGAL_CHARS",
+    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
+)
+
 package csstype
 
-// Globals | DataType.BgSize | (string & {})
-sealed external interface MaskSize
+// language=JavaScript
+@JsName("""({auto: 'auto', contain: 'contain', cover: 'cover'})""")
+sealed external interface MaskSize {
+    companion object {
+        val auto: MaskSize
+        val contain: MaskSize
+        val cover: MaskSize
+    }
+}
