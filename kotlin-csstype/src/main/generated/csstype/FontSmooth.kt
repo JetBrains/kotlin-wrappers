@@ -1,6 +1,26 @@
 // Automatically generated - do not modify!
 
+@file:Suppress(
+    "NAME_CONTAINS_ILLEGAL_CHARS",
+    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
+)
+
 package csstype
 
-// Globals | DataType.AbsoluteSize | TLength | "always" | "auto" | "never"
-sealed external interface FontSmooth
+// language=JavaScript
+@JsName("""({large: 'large', medium: 'medium', small: 'small', xLarge: 'x-large', xSmall: 'x-small', xxLarge: 'xx-large', xxSmall: 'xx-small', xxxLarge: 'xxx-large', always: 'always', auto: 'auto', never: 'never'})""")
+sealed external interface FontSmooth {
+    companion object {
+        val large: FontSmooth
+        val medium: FontSmooth
+        val small: FontSmooth
+        val xLarge: FontSmooth
+        val xSmall: FontSmooth
+        val xxLarge: FontSmooth
+        val xxSmall: FontSmooth
+        val xxxLarge: FontSmooth
+        val always: FontSmooth
+        val auto: FontSmooth
+        val never: FontSmooth
+    }
+}
