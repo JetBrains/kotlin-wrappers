@@ -2,5 +2,4 @@
 
 package csstype
 
-// Globals | TLength | "fit-content" | "max-content" | "min-content" | "none" | (string & {})
 sealed external interface MaxInlineSize
