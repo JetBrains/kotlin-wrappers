@@ -6,11 +6,18 @@ package csstype
 sealed external interface LengthProperty :
     BackgroundPositionX,
     BackgroundPositionY,
+    Flex,
+    FlexBasis,
+    Gap,
+    LetterSpacing,
     MaskPosition,
     ObjectPosition,
     Offset,
     OffsetAnchor,
+    Perspective,
     PerspectiveOrigin,
     TextDecorationThickness,
     TransformOrigin,
-    VerticalAlign
+    Translate,
+    VerticalAlign,
+    WordSpacing

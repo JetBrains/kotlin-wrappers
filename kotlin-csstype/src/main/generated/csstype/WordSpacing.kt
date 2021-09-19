@@ -1,6 +1,16 @@
 // Automatically generated - do not modify!
 
+@file:Suppress(
+    "NAME_CONTAINS_ILLEGAL_CHARS",
+    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
+)
+
 package csstype
 
-// Globals | TLength | "normal"
-sealed external interface WordSpacing
+// language=JavaScript
+@JsName("""({normal: 'normal'})""")
+sealed external interface WordSpacing {
+    companion object {
+        val normal: WordSpacing
+    }
+}
