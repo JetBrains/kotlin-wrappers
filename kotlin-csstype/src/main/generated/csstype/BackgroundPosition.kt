@@ -1,6 +1,20 @@
 // Automatically generated - do not modify!
 
+@file:Suppress(
+    "NAME_CONTAINS_ILLEGAL_CHARS",
+    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
+)
+
 package csstype
 
-// Globals | DataType.BgPosition | (string & {})
-sealed external interface BackgroundPosition
+// language=JavaScript
+@JsName("""({bottom: 'bottom', center: 'center', left: 'left', right: 'right', top: 'top'})""")
+sealed external interface BackgroundPosition {
+    companion object {
+        val bottom: BackgroundPosition
+        val center: BackgroundPosition
+        val left: BackgroundPosition
+        val right: BackgroundPosition
+        val top: BackgroundPosition
+    }
+}
