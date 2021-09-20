@@ -9,6 +9,10 @@ sealed external interface LengthType :
         BlockSize,
         BorderImageWidth,
         Columns,
+        GridAutoColumns,
+        GridAutoRows,
+        GridTemplateColumns,
+        GridTemplateRows,
         Height,
         InlineSize,
         MaskBorderWidth,
@@ -32,8 +36,19 @@ sealed external interface LengthType :
         MinWidth,
         Width
 
+    sealed interface Intrinsic :
+        MaxHeight,
+        MaxWidth,
+        MinHeight,
+        MinWidth,
+        Width
+
     sealed interface MaxContent :
         BlockSize,
+        GridAutoColumns,
+        GridAutoRows,
+        GridTemplateColumns,
+        GridTemplateRows,
         Height,
         InlineSize,
         MaxBlockSize,
@@ -48,6 +63,10 @@ sealed external interface LengthType :
 
     sealed interface MinContent :
         BlockSize,
+        GridAutoColumns,
+        GridAutoRows,
+        GridTemplateColumns,
+        GridTemplateRows,
         Height,
         InlineSize,
         MaxBlockSize,
@@ -60,23 +79,18 @@ sealed external interface LengthType :
         MinWidth,
         Width
 
-    sealed interface Normal :
-        LineHeight
+    sealed interface MinIntrinsic :
+        MinWidth,
+        Width
 
     sealed interface None :
+        GridTemplateColumns,
+        GridTemplateRows,
         MaxBlockSize,
         MaxHeight,
         MaxInlineSize,
         MaxWidth
 
-    sealed interface Intrinsic :
-        MaxHeight,
-        MaxWidth,
-        MinHeight,
-        MinWidth,
-        Width
-
-    sealed interface MinIntrinsic :
-        MinWidth,
-        Width
+    sealed interface Normal :
+        LineHeight
 }

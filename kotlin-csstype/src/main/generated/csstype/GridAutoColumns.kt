@@ -2,5 +2,4 @@
 
 package csstype
 
-// Globals | DataType.TrackBreadth | (string & {})
 sealed external interface GridAutoColumns

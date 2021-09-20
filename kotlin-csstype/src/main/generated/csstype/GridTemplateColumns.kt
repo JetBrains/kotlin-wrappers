@@ -2,5 +2,4 @@
 
 package csstype
 
-// Globals | DataType.TrackBreadth | "none" | "subgrid" | (string & {})
 sealed external interface GridTemplateColumns
