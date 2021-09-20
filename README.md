@@ -14,6 +14,7 @@ To learn more please refer to the `README`s of individual modules.
 | :--- | :--- |
 | [kotlin-css](kotlin-css/README.md) | [![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-css)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-css) | 
 | [kotlin-csstype](kotlin-csstype/README.md) | [![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-csstype)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-csstype) | 
+| [kotlin-emotion](kotlin-emotion/README.md) | [![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-emotion)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-emotion) | 
 | [kotlin-extensions](kotlin-extensions/README.md) | [![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-extensions)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-extensions) | 
 | [kotlin-react](kotlin-react/README.md) | [![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-react)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-react) | 
 | [kotlin-react-css](kotlin-react-css/README.md) | [![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-react-css)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-react-css) |

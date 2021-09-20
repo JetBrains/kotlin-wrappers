@@ -27,6 +27,9 @@ include("kotlin-css")
 // Kotlin/JS: Zero-runtime CSS typings
 include("kotlin-csstype")
 
+// Kotlin/JS: Emotion wrappers
+include("kotlin-emotion")
+
 // Kotlin/JS: various helpers
 include("kotlin-extensions")
 

@@ -4,6 +4,7 @@ private val TARGET_ALIASES = mapOf(
     "react-css" to "react",
     "react-dom" to "react",
     "styled-components" to "styled",
+    "@emotion/css" to "emotion-css",
 
     "@jetbrains/ring-ui" to "ring-ui",
 )
