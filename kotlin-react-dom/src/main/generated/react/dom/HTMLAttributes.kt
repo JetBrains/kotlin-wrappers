@@ -13,7 +13,6 @@ external interface HTMLAttributes<T : Element> : AriaAttributes, DOMAttributes<T
 
     // Standard HTML Attributes
     var accessKey: String?
-    var className: String?
     var contentEditable: dynamic // Booleanish | "inherit"
     var contextMenu: String?
     var dir: String?
