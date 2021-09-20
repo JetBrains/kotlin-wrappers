@@ -4,7 +4,7 @@ package react.dom
 
 import org.w3c.dom.Element
 
-external interface DOMAttributes<T : Element> : react.PropsWithChildren {
+external interface DOMAttributes<T : Element> : react.PropsWithChildren, react.PropsWithClassName {
     var dangerouslySetInnerHTML: DangerouslySetInnerHTML?
 
     // Clipboard Events
