@@ -40,6 +40,7 @@ sealed external interface LengthProperty :
     ObjectPosition,
     Offset,
     OffsetAnchor,
+    OverflowClipMargin,
     Perspective,
     PerspectiveOrigin,
     TabSize,
