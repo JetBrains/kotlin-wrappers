@@ -3,4 +3,6 @@
 
 package emotion.css
 
-external fun css(properties: CssBuilder): String
+import csstype.PropertiesBuilder
+
+external fun css(properties: PropertiesBuilder): String
