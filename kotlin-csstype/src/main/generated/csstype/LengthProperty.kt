@@ -2,8 +2,8 @@
 
 package csstype
 
-// Globals | TLength
 sealed external interface LengthProperty :
+    AutoLengthProperty,
     BackgroundPosition,
     BackgroundPositionX,
     BackgroundPositionY,

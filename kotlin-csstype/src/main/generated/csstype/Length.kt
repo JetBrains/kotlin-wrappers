@@ -6,7 +6,7 @@
 
 package csstype
 
-sealed external interface Length
+sealed external interface Length : LengthType
 
 inline fun Length(value: String): Length =
     value.unsafeCast<Length>()
