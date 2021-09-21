@@ -7,6 +7,7 @@ import react.RElementBuilder
 
 inline fun RElementBuilder<PropsWithClassName>.css(
     crossinline block: PropertiesBuilder.() -> Unit,
-) =
+) {
     css(block)
+}
 
