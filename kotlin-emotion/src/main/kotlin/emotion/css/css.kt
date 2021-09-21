@@ -3,4 +3,4 @@
 
 package emotion.css
 
-external fun css(properties: CSSBuilder): String
+external fun css(properties: CssBuilder): String
