@@ -8,7 +8,7 @@ package csstype
 
 // language=JavaScript
 @JsName("""({dashed: 'dashed', dotted: 'dotted', double: 'double', groove: 'groove', hidden: 'hidden', inset: 'inset', none: 'none', outset: 'outset', ridge: 'ridge', solid: 'solid'})""")
-external enum class LineStyle {
+external enum class LineStyle : LineStyleProperty {
     dashed,
     dotted,
     double,

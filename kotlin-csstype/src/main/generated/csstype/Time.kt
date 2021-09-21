@@ -2,4 +2,4 @@
 
 package csstype
 
-sealed external interface Time
+sealed external interface Time : TimeProperty

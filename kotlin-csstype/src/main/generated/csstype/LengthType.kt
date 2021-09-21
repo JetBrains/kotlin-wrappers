@@ -6,6 +6,7 @@ sealed external interface LengthType :
     LengthProperty {
 
     sealed interface Auto :
+        AutoLengthProperty,
         BlockSize,
         BorderImageWidth,
         Columns,

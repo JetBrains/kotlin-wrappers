@@ -3,4 +3,4 @@
 package csstype
 
 // TLength | "medium" | "thick" | "thin"
-sealed external interface LineWidth
+sealed external interface LineWidth : LineWidthProperty

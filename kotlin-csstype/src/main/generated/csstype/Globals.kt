@@ -8,7 +8,7 @@ package csstype
 
 // language=JavaScript
 @JsName("""({inherit: 'inherit', initial: 'initial', revert: 'revert', unset: 'unset'})""")
-external enum class Globals {
+external enum class Globals : GlobalsType {
     inherit,
     initial,
     revert,
