@@ -3,6 +3,6 @@
 
 package emotion.css
 
-import csstype.PropertiesBuilder
+import csstype.Properties
 
-external fun css(properties: PropertiesBuilder): String
+external fun css(properties: Properties): String
