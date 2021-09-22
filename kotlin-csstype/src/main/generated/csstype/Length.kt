@@ -1,12 +1,27 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
+    "NAME_CONTAINS_ILLEGAL_CHARS",
+    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
     "NOTHING_TO_INLINE",
 )
 
 package csstype
 
-sealed external interface Length : LengthType
+// language=JavaScript
+@JsName("""({auto: 'auto', fitContent: 'fit-content', intrinsic: 'intrinsic', maxContent: 'max-content', minContent: 'min-content', minIntrinsic: 'min-intrinsic', none: 'none', normal: 'normal'})""")
+sealed external interface Length : LengthType {
+    companion object {
+        val auto: LengthType.Auto
+        val fitContent: LengthType.FitContent
+        val intrinsic: LengthType.Intrinsic
+        val maxContent: LengthType.MaxContent
+        val minContent: LengthType.MinContent
+        val minIntrinsic: LengthType.MinIntrinsic
+        val none: LengthType.None
+        val normal: LengthType.Normal
+    }
+}
 
 inline fun Length(value: String): Length =
     value.unsafeCast<Length>()
