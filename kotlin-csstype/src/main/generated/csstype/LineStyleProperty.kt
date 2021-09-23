@@ -2,4 +2,5 @@
 
 package csstype
 
-sealed external interface LineStyleProperty
+sealed external interface LineStyleProperty :
+    Border

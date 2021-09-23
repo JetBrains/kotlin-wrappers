@@ -2,9 +2,9 @@
 
 package csstype
 
-// Globals | DataType.Color
 sealed external interface ColorProperty :
     AccentColor,
+    Border,
     CaretColor,
     OutlineColor,
     ScrollbarColor,
