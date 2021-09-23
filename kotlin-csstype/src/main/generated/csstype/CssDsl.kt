@@ -1,3 +1,5 @@
+// Automatically generated - do not modify!
+
 package csstype
 
 @DslMarker
