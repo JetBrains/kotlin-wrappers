@@ -78,6 +78,7 @@ sealed external interface GlobalsType :
     ForcedColorAdjust,
     Grid,
     GridAutoFlow,
+    GridLengthProperty,
     GridLineProperty,
     GridTemplate,
     GridTemplateAreas,
