@@ -2,4 +2,5 @@
 
 package csstype
 
-sealed external interface LineWidthProperty
+sealed external interface LineWidthProperty :
+    Border
