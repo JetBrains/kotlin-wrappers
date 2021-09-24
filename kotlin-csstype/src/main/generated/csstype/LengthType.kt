@@ -3,6 +3,7 @@
 package csstype
 
 sealed external interface LengthType :
+    GridLength,
     LengthProperty {
 
     sealed interface Auto :
