@@ -9,7 +9,7 @@ external interface InputHTMLAttributes<T : Element> : HTMLAttributes<T> {
     var alt: String?
     var autoComplete: String?
     var autoFocus: Boolean?
-    var capture: Boolean? // https://www.w3.org/TR/html-media-capture/#the-capture-attribute
+    var capture: Capture?
     var checked: Boolean?
     var crossOrigin: String?
     var disabled: Boolean?
