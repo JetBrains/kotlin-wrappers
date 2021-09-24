@@ -2,4 +2,5 @@
 
 package csstype
 
+@CssDsl
 external interface Properties : StandardProperties
