@@ -1,6 +1,5 @@
 package react.css
 
-import csstype.PropertiesBuilder
 import kotlinext.js.jso
 import react.PropsWithClassName
 import react.RElementBuilder
