@@ -5,7 +5,5 @@ plugins {
 }
 
 dependencies {
-    api(project(":kotlin-extensions"))
-
     api(npmv("csstype"))
 }
