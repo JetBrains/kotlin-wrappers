@@ -4,6 +4,7 @@ package csstype
 
 sealed external interface LengthProperty :
     AutoLengthProperty,
+    Background,
     BackgroundPosition,
     BackgroundPositionX,
     BackgroundPositionY,
@@ -21,6 +22,7 @@ sealed external interface LengthProperty :
     InlineSize,
     LetterSpacing,
     LineHeight,
+    Mask,
     MaskBorderOutset,
     MaskBorderWidth,
     MaskPosition,
