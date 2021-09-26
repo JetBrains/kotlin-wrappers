@@ -75,6 +75,7 @@ sealed external interface GlobalsType :
     FontVariantNumeric,
     FontVariantPosition,
     FontVariationSettings,
+    FontWeight,
     ForcedColorAdjust,
     Grid,
     GridAutoFlow,
