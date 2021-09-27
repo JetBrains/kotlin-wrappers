@@ -7,6 +7,7 @@ sealed external interface ColorProperty :
     Background,
     Border,
     CaretColor,
+    Outline,
     OutlineColor,
     ScrollbarColor,
     TextDecoration,

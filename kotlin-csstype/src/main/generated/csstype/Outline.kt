@@ -1,6 +1,17 @@
 // Automatically generated - do not modify!
 
+@file:Suppress(
+    "NAME_CONTAINS_ILLEGAL_CHARS",
+    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
+)
+
 package csstype
 
-// Globals | DataType.Color | DataType.LineStyle | DataType.LineWidth | "auto" | "invert" | (string & {})
-sealed external interface Outline
+// language=JavaScript
+@JsName("""({auto: 'auto', invert: 'invert'})""")
+sealed external interface Outline {
+    companion object {
+        val auto: Outline
+        val invert: Outline
+    }
+}
