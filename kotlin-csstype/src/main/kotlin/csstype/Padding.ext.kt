@@ -8,25 +8,25 @@ inline fun Padding(value: String): Padding =
     value.unsafeCast<Padding>()
 
 inline fun Properties.padding(
-    vertical: Length,
-    horizontal: Length,
+    vertical: AutoLengthProperty,
+    horizontal: AutoLengthProperty,
 ) {
     padding = Padding("$vertical $horizontal")
 }
 
 inline fun Properties.padding(
-    top: Length,
-    horizontal: Length,
-    bottom: Length,
+    top: AutoLengthProperty,
+    horizontal: AutoLengthProperty,
+    bottom: AutoLengthProperty,
 ) {
     padding = Padding("$top $horizontal $bottom")
 }
 
 inline fun Properties.padding(
-    top: Length,
-    right: Length,
-    bottom: Length,
-    left: Length,
+    top: AutoLengthProperty,
+    right: AutoLengthProperty,
+    bottom: AutoLengthProperty,
+    left: AutoLengthProperty,
 ) {
     padding = Padding("$top $right $bottom $left")
 }
