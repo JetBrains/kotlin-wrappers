@@ -7,7 +7,6 @@
 
 package csstype
 
-// NamedColor
 // language=JavaScript
 @JsName("""({currentcolor: 'currentcolor'})""")
 sealed external interface Color : ColorProperty {
