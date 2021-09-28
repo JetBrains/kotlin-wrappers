@@ -10,6 +10,6 @@ interface RuleBuilder<T : Any> {
     inline operator fun String.invoke(
         block: T.() -> Unit,
     ) {
-        this@RuleBuilder.asDynamic()[this] = block(js("({})"))
+        this@RuleBuilder.asDynamic()[this] = js("({})").unsafeCast<T>().apply(block)
     }
 }
