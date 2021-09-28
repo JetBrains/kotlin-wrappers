@@ -121,6 +121,7 @@ sealed external interface GlobalsType :
     Opacity,
     Order,
     Orphans,
+    Outline,
     Overflow,
     OverflowAnchor,
     OverflowBlock,
