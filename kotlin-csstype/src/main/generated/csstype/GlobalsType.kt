@@ -118,6 +118,7 @@ sealed external interface GlobalsType :
     ObjectFit,
     OffsetPath,
     OffsetRotate,
+    Opacity,
     Order,
     Orphans,
     Overflow,
@@ -148,6 +149,7 @@ sealed external interface GlobalsType :
     RubyAlign,
     RubyMerge,
     RubyPosition,
+    Scale,
     ScrollBehavior,
     ScrollSnapAlign,
     ScrollSnapStop,
@@ -188,4 +190,5 @@ sealed external interface GlobalsType :
     WordBreak,
     WordWrap,
     WritingMode,
-    ZIndex
+    ZIndex,
+    Zoom
