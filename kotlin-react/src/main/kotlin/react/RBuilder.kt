@@ -83,7 +83,8 @@ interface RBuilder {
     }
 
     fun PropsWithChildren.children() {
-        childList.addAll(Children.toArray(children))
+        this@RBuilder.childList
+            .addAll(Children.toArray(children))
     }
 
     /**
