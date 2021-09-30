@@ -4,6 +4,7 @@ import kotlinext.js.invoke
 import kotlinext.js.jso
 import kotlinx.browser.window
 import kotlinx.css.CssBuilder
+import kotlinx.css.CssDsl
 import kotlinx.css.RuleSet
 import kotlinx.html.*
 import org.w3c.dom.Element
@@ -41,6 +42,7 @@ inline fun CustomStyledProps.forwardCss(props: CustomStyledProps) {
     }
 }
 
+@CssDsl
 interface StyledBuilder<P : PropsWithClassName> {
     val css: CssBuilder
     val type: Any

@@ -3,6 +3,7 @@ package styled
 import kotlinext.js.clone
 import kotlinext.js.jso
 import kotlinx.css.CssBuilder
+import kotlinx.css.CssDsl
 import kotlinx.css.RuleSet
 import kotlinx.html.*
 import react.*
@@ -37,6 +38,7 @@ inline fun CustomStyledProps.forwardCss(props: CustomStyledProps) {
     }
 }
 
+@CssDsl
 interface StyledBuilder<P : PropsWithClassName> {
     val css: CssBuilder
     val type: Any
