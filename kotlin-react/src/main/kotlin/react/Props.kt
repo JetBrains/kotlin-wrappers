@@ -1,5 +1,6 @@
 package react
 
+@ReactDsl
 external interface Props
 
 inline var Props.key: Key
