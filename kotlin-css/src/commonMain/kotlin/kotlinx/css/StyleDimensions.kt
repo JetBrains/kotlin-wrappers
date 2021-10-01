@@ -33,6 +33,19 @@ class LinearDimension(override val value: String) : CssValue(value) {
     operator fun minus(other: LinearDimension) = LinearDimension("calc($valueCalcSafe - ${other.valueCalcSafe})")
     operator fun times(times: Number) = LinearDimension("calc($valueCalcSafe * $times)")
     operator fun div(times: Number) = LinearDimension("calc($valueCalcSafe / $times)")
+
+    override fun equals(other: Any?): Boolean {
+        if (this === other) return true
+        if (other == null || this::class != other::class) return false
+
+        other as LinearDimension
+
+        return value == other.value
+    }
+
+    override fun hashCode(): Int {
+        return value.hashCode()
+    }
 }
 
 private fun value(number: Number, unit: String): String {
