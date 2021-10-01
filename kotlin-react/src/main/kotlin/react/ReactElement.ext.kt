@@ -2,7 +2,7 @@ package react
 
 import kotlinext.js.jso
 
-inline fun createElement(block: Render): ReactElement? {
+fun createElement(block: Render): ReactElement? {
     val nodes = RBuilder().apply(block).childList
 
     return when {
