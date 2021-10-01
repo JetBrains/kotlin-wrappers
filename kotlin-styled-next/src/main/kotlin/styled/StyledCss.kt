@@ -40,7 +40,7 @@ internal fun CssBuilder.getCssRules(outerSelector: String?, indent: String = "")
     result.addAll(buildRules(rules, outerSelector ?: ""))
 
     handleRules.forEach { (selector, _, _, css) ->
-        val resolvedSelector = resolveRelativeSelector(selector, outerSelector)
+        val resolvedSelector = resolveRelative(selector, outerSelector)
         if (withMedia(resolvedSelector)) {
             result.add(
                 buildString {
@@ -64,9 +64,25 @@ internal fun CssBuilder.getCssRules(outerSelector: String?, indent: String = "")
     return result
 }
 
-private fun resolveRelativeSelector(selector: Selector, selfClassName: ClassName?): Selector {
-    if (selfClassName == null) return selector
-    return selfClassName.split(",").joinToString { selector.replace("&", it.trim()) }
+/** Prevents exponential classname growth for [CssBuilder.specific] hierarchy */
+private fun Selector.resolveExponential(parentSelector: String): Selector {
+    if (contains("&&")) {
+        val classes = parentSelector.split(".").filter(String::isNotEmpty)
+        if (classes.size > 1 && classes.toSet().size == 1) {
+            val repeated = ".${classes.first()}".repeat(classes.size + 1)
+            return replace("&&", repeated)
+        }
+    }
+    return this
+}
+
+/** Replace all ampersands in [selector] with [parentSelector] */
+private fun resolveRelative(selector: String, parentSelector: Selector?): Selector {
+    if (parentSelector == null) return selector
+    return parentSelector.split(",").joinToString {
+        val part = it.trim()
+        selector.resolveExponential(part).replace("&", part)
+    }
 }
 
 private fun isPseudoClass(selector: Selector) = selector.trim().startsWith(":")
