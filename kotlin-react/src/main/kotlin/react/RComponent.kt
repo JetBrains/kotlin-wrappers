@@ -18,5 +18,5 @@ abstract class RComponent<P : Props, S : State> : Component<P, S> {
 
     abstract fun RBuilder.render()
 
-    override fun render() = buildElements { render() }
+    override fun render() = createElement { render() }
 }

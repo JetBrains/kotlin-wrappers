@@ -71,7 +71,7 @@ interface RBuilder {
         handler: RBuilder.(T) -> Unit,
     ) {
         child(this) {
-            attrs.children = { value -> buildElements { handler(value) } }
+            attrs.children = { value -> createElement { handler(value) } }
         }
     }
 
@@ -140,6 +140,7 @@ open class RBuilderImpl : RBuilder {
 
 open class RBuilderMultiple : RBuilderImpl()
 
+@Deprecated(message = "Unsafe API, use createElement")
 fun <T : RBuilder> buildElements(builder: T, handler: T.() -> Unit): dynamic {
     val nodes = builder.apply(handler).childList
     return when (nodes.size) {
@@ -149,15 +150,21 @@ fun <T : RBuilder> buildElements(builder: T, handler: T.() -> Unit): dynamic {
     }
 }
 
-fun buildElements(handler: Render): dynamic = buildElements(RBuilder(), handler)
+@Deprecated(
+    message = "Unsafe API",
+    replaceWith = ReplaceWith("createElement(handler)", "react.createElement")
+)
+fun buildElements(handler: Render): dynamic = createElement(handler)
 
 open class RBuilderSingle : RBuilderImpl()
 
+// TODO: deprecate after renderEach(Indexed) removing
 inline fun <T : RBuilder> buildElement(rBuilder: T, handler: T.() -> Unit): ReactElement =
     rBuilder.apply(handler)
         .childList.first()
         .unsafeCast<ReactElement>()
 
+// TODO: deprecate after renderEach(Indexed) removing
 inline fun buildElement(handler: Render): ReactElement =
     buildElement(RBuilder(), handler)
 

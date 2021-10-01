@@ -10,7 +10,7 @@ external interface ProviderProps<T> : PropsWithChildren {
 external interface Provider<T> : ComponentClass<ProviderProps<T>>
 
 external interface ConsumerProps<T> : Props {
-    var children: (T) -> Any
+    var children: (T) -> ReactNode?
 }
 
 external interface Consumer<T> : ComponentClass<ConsumerProps<T>>
