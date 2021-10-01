@@ -8,7 +8,7 @@ inline fun createElement(block: Render): ReactElement? {
     return when {
         nodes.size == 0 -> null
         nodes.size == 1 && isValidElement(nodes.first()) -> nodes.first().unsafeCast<ReactElement>()
-        else -> createElement(Fragment, kotlinext.js.js {}, *nodes.toTypedArray())
+        else -> createElement(Fragment, jso(), *nodes.toTypedArray())
     }
 }
 
