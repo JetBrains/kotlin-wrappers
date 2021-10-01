@@ -9,14 +9,14 @@ operator fun <P : Props, R : Props> HOC<P, R>.invoke(component: ComponentClass<P
 
 operator fun <P : Props, R : Props> HOC<P, R>.invoke(component: RBuilder.(P) -> Unit) =
     call(null, { props: P ->
-        buildElements {
+        createElement {
             component(props)
         }
     })
 
 operator fun <P : Props, R : Props> HOC<P, R>.invoke(config: Any, component: RBuilder.(P) -> Unit) =
     call(null, { props: P ->
-        buildElements {
+        createElement {
             component(props)
         }
     }, config)

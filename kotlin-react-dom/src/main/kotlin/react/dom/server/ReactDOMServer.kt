@@ -1,8 +1,8 @@
 package react.dom.server
 
 import react.Render
-import react.buildElements
+import react.createElement
 
-fun renderToString(handler: Render) = rawRenderToString(buildElements(handler))
+fun renderToString(handler: Render) = rawRenderToString(createElement(handler))
 
-fun renderToStaticMarkup(handler: Render) = rawRenderToStaticMarkup(buildElements(handler))
+fun renderToStaticMarkup(handler: Render) = rawRenderToStaticMarkup(createElement(handler))

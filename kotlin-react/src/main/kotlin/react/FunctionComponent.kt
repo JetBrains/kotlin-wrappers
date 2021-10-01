@@ -17,7 +17,7 @@ fun <P : Props> fc(
     func: RBuilder.(props: P) -> Unit,
 ): FC<P> {
     val component = { props: P ->
-        buildElements {
+        createElement {
             func(props)
         }
     }
