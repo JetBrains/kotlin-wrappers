@@ -3,8 +3,10 @@
 package csstype
 
 sealed external interface LengthType :
+    Bleed,
     GridLength,
-    LengthProperty {
+    LengthProperty,
+    LineWidth {
 
     sealed interface Auto :
         AutoLengthProperty,
