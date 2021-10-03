@@ -4,23 +4,23 @@ package mui.material
 
 @Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
 // language=JavaScript
-@JsName("""({ROW: 'row', ROW_REVERSE: 'row-reverse', COLUMN: 'column', COLUMN_REVERSE: 'column-reverse'})""")
+@JsName("""({row: 'row', rowReverse: 'row-reverse', column: 'column', columnReverse: 'column-reverse'})""")
 external enum class GridDirection {
-    ROW,
-    ROW_REVERSE,
-    COLUMN,
-    COLUMN_REVERSE,
+    row,
+    rowReverse,
+    column,
+    columnReverse,
 
     ;
 }
 
 @Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
 // language=JavaScript
-@JsName("""({NOWRAP: 'nowrap', WRAP: 'wrap', WRAP_REVERSE: 'wrap-reverse'})""")
+@JsName("""({nowrap: 'nowrap', wrap: 'wrap', wrapReverse: 'wrap-reverse'})""")
 external enum class GridWrap {
-    NOWRAP,
-    WRAP,
-    WRAP_REVERSE,
+    nowrap,
+    wrap,
+    wrapReverse,
 
     ;
 }
