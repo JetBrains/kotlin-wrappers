@@ -12,26 +12,26 @@ external fun <P : Props> rawForwardRef(
 @JsName("useEffect")
 external fun rawUseEffect(
     effect: () -> Cleanup?,
-    dependencies: RDependenciesArray = definedExternally,
+    dependencies: Dependencies = definedExternally,
 )
 
 // Layout Effect Hook (16.8+)
 @JsName("useLayoutEffect")
 external fun rawUseLayoutEffect(
     effect: () -> Cleanup?,
-    dependencies: RDependenciesArray = definedExternally,
+    dependencies: Dependencies = definedExternally,
 )
 
 // Callback Hook (16.8+)
 @JsName("useCallback")
 external fun <T : Function<*>> rawUseCallback(
     callback: T,
-    dependencies: RDependenciesArray,
+    dependencies: Dependencies,
 ): T
 
 // Memo Hook (16.8+)
 @JsName("useMemo")
 external fun <T> rawUseMemo(
     callback: () -> T,
-    dependencies: RDependenciesArray,
+    dependencies: Dependencies,
 ): T

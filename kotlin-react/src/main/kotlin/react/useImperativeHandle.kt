@@ -12,5 +12,5 @@ package react
 external fun useImperativeHandle(
     ref: Ref<*>,
     createInstance: () -> dynamic,
-    inputs: RDependenciesArray,
+    dependencies: Dependencies,
 )
