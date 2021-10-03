@@ -4,7 +4,7 @@ package mui.material
 
 @Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
 // language=JavaScript
-@JsName("""({toggle: 'toggle', blur: 'blur', mouseLeave: 'mouseLeave', escapeKeyDown: 'escapeKeyDown'})""")
+@JsName("""(/*union*/{toggle: 'toggle', blur: 'blur', mouseLeave: 'mouseLeave', escapeKeyDown: 'escapeKeyDown'}/*union*/)""")
 external enum class CloseReason {
     toggle,
     blur,
@@ -16,7 +16,7 @@ external enum class CloseReason {
 
 @Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
 // language=JavaScript
-@JsName("""({toggle: 'toggle', focus: 'focus', mouseEnter: 'mouseEnter'})""")
+@JsName("""(/*union*/{toggle: 'toggle', focus: 'focus', mouseEnter: 'mouseEnter'}/*union*/)""")
 external enum class OpenReason {
     toggle,
     focus,

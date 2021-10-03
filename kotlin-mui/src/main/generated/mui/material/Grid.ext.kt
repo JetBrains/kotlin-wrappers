@@ -4,7 +4,7 @@ package mui.material
 
 @Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
 // language=JavaScript
-@JsName("""({row: 'row', rowReverse: 'row-reverse', column: 'column', columnReverse: 'column-reverse'})""")
+@JsName("""(/*union*/{row: 'row', rowReverse: 'row-reverse', column: 'column', columnReverse: 'column-reverse'}/*union*/)""")
 external enum class GridDirection {
     row,
     rowReverse,
@@ -16,7 +16,7 @@ external enum class GridDirection {
 
 @Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
 // language=JavaScript
-@JsName("""({nowrap: 'nowrap', wrap: 'wrap', wrapReverse: 'wrap-reverse'})""")
+@JsName("""(/*union*/{nowrap: 'nowrap', wrap: 'wrap', wrapReverse: 'wrap-reverse'}/*union*/)""")
 external enum class GridWrap {
     nowrap,
     wrap,
@@ -27,7 +27,7 @@ external enum class GridWrap {
 
 @Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
 // language=JavaScript
-@JsName("""({auto: 'auto', s1: 1, s2: 2, s3: 3, s4: 4, s5: 5, s6: 6, s7: 7, s8: 8, s9: 9, s10: 10, s11: 11, s12: 12})""")
+@JsName("""(/*union*/{auto: 'auto', s1: 1, s2: 2, s3: 3, s4: 4, s5: 5, s6: 6, s7: 7, s8: 8, s9: 9, s10: 10, s11: 11, s12: 12}/*union*/)""")
 external enum class GridSize {
     auto,
     s1,
