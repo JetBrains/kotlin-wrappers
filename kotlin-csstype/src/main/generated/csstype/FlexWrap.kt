@@ -8,7 +8,7 @@
 package csstype
 
 // language=JavaScript
-@JsName("""({nowrap: 'nowrap', wrap: 'wrap', wrapReverse: 'wrap-reverse'})""")
+@JsName("""(/*union*/{nowrap: 'nowrap', wrap: 'wrap', wrapReverse: 'wrap-reverse'}/*union*/)""")
 sealed external interface FlexWrap {
     companion object {
         val nowrap: FlexWrap

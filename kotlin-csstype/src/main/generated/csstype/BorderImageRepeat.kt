@@ -8,7 +8,7 @@
 package csstype
 
 // language=JavaScript
-@JsName("""({repeat: 'repeat', round: 'round', space: 'space', stretch: 'stretch'})""")
+@JsName("""(/*union*/{repeat: 'repeat', round: 'round', space: 'space', stretch: 'stretch'}/*union*/)""")
 sealed external interface BorderImageRepeat {
     companion object {
         val repeat: BorderImageRepeat

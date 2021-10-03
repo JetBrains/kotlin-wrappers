@@ -8,7 +8,7 @@
 package csstype
 
 // language=JavaScript
-@JsName("""({auto: 'auto', geometricPrecision: 'geometricPrecision', optimizeLegibility: 'optimizeLegibility', optimizeSpeed: 'optimizeSpeed'})""")
+@JsName("""(/*union*/{auto: 'auto', geometricPrecision: 'geometricPrecision', optimizeLegibility: 'optimizeLegibility', optimizeSpeed: 'optimizeSpeed'}/*union*/)""")
 sealed external interface TextRendering {
     companion object {
         val auto: TextRendering

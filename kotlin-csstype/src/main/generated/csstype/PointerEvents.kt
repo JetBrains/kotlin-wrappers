@@ -8,7 +8,7 @@
 package csstype
 
 // language=JavaScript
-@JsName("""({all: 'all', auto: 'auto', fill: 'fill', inherit: 'inherit', none: 'none', painted: 'painted', stroke: 'stroke', visible: 'visible', visibleFill: 'visibleFill', visiblePainted: 'visiblePainted', visibleStroke: 'visibleStroke'})""")
+@JsName("""(/*union*/{all: 'all', auto: 'auto', fill: 'fill', inherit: 'inherit', none: 'none', painted: 'painted', stroke: 'stroke', visible: 'visible', visibleFill: 'visibleFill', visiblePainted: 'visiblePainted', visibleStroke: 'visibleStroke'}/*union*/)""")
 sealed external interface PointerEvents {
     companion object {
         val all: PointerEvents

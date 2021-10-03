@@ -8,7 +8,7 @@
 package csstype
 
 // language=JavaScript
-@JsName("""({flat: 'flat', preserve3d: 'preserve-3d'})""")
+@JsName("""(/*union*/{flat: 'flat', preserve3d: 'preserve-3d'}/*union*/)""")
 sealed external interface TransformStyle {
     companion object {
         val flat: TransformStyle

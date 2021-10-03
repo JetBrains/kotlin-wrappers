@@ -9,7 +9,7 @@
 package csstype
 
 // language=JavaScript
-@JsName("""({auto: 'auto'})""")
+@JsName("""(/*union*/{auto: 'auto'}/*union*/)""")
 sealed external interface ZIndex {
     companion object {
         val auto: ZIndex

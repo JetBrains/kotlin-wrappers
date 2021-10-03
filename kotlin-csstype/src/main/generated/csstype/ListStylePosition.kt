@@ -8,7 +8,7 @@
 package csstype
 
 // language=JavaScript
-@JsName("""({inside: 'inside', outside: 'outside'})""")
+@JsName("""(/*union*/{inside: 'inside', outside: 'outside'}/*union*/)""")
 sealed external interface ListStylePosition {
     companion object {
         val inside: ListStylePosition

@@ -9,7 +9,7 @@
 package csstype
 
 // language=JavaScript
-@JsName("""({auto: 'auto', fitContent: 'fit-content', intrinsic: 'intrinsic', maxContent: 'max-content', minContent: 'min-content', minIntrinsic: 'min-intrinsic', none: 'none', normal: 'normal'})""")
+@JsName("""(/*union*/{auto: 'auto', fitContent: 'fit-content', intrinsic: 'intrinsic', maxContent: 'max-content', minContent: 'min-content', minIntrinsic: 'min-intrinsic', none: 'none', normal: 'normal'}/*union*/)""")
 sealed external interface Length : LengthType {
     companion object {
         val auto: LengthType.Auto

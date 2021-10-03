@@ -8,7 +8,7 @@
 package csstype
 
 // language=JavaScript
-@JsName("""({bottom: 'bottom', center: 'center', left: 'left', right: 'right', top: 'top', noRepeat: 'no-repeat', repeat: 'repeat', repeatX: 'repeat-x', repeatY: 'repeat-y', round: 'round', space: 'space', borderBox: 'border-box', contentBox: 'content-box', paddingBox: 'padding-box', fillBox: 'fill-box', marginBox: 'margin-box', strokeBox: 'stroke-box', viewBox: 'view-box', add: 'add', exclude: 'exclude', intersect: 'intersect', subtract: 'subtract', alpha: 'alpha', luminance: 'luminance', matchSource: 'match-source', noClip: 'no-clip', none: 'none'})""")
+@JsName("""(/*union*/{bottom: 'bottom', center: 'center', left: 'left', right: 'right', top: 'top', noRepeat: 'no-repeat', repeat: 'repeat', repeatX: 'repeat-x', repeatY: 'repeat-y', round: 'round', space: 'space', borderBox: 'border-box', contentBox: 'content-box', paddingBox: 'padding-box', fillBox: 'fill-box', marginBox: 'margin-box', strokeBox: 'stroke-box', viewBox: 'view-box', add: 'add', exclude: 'exclude', intersect: 'intersect', subtract: 'subtract', alpha: 'alpha', luminance: 'luminance', matchSource: 'match-source', noClip: 'no-clip', none: 'none'}/*union*/)""")
 sealed external interface Mask {
     companion object {
         val bottom: Mask

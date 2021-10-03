@@ -8,7 +8,7 @@
 package csstype
 
 // language=JavaScript
-@JsName("""({flip: 'flip', fromImage: 'from-image'})""")
+@JsName("""(/*union*/{flip: 'flip', fromImage: 'from-image'}/*union*/)""")
 sealed external interface ImageOrientation {
     companion object {
         val flip: ImageOrientation

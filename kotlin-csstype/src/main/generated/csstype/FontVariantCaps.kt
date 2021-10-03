@@ -8,7 +8,7 @@
 package csstype
 
 // language=JavaScript
-@JsName("""({allPetiteCaps: 'all-petite-caps', allSmallCaps: 'all-small-caps', normal: 'normal', petiteCaps: 'petite-caps', smallCaps: 'small-caps', titlingCaps: 'titling-caps', unicase: 'unicase'})""")
+@JsName("""(/*union*/{allPetiteCaps: 'all-petite-caps', allSmallCaps: 'all-small-caps', normal: 'normal', petiteCaps: 'petite-caps', smallCaps: 'small-caps', titlingCaps: 'titling-caps', unicase: 'unicase'}/*union*/)""")
 sealed external interface FontVariantCaps {
     companion object {
         val allPetiteCaps: FontVariantCaps

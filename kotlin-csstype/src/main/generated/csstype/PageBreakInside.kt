@@ -8,7 +8,7 @@
 package csstype
 
 // language=JavaScript
-@JsName("""({auto: 'auto', avoid: 'avoid'})""")
+@JsName("""(/*union*/{auto: 'auto', avoid: 'avoid'}/*union*/)""")
 sealed external interface PageBreakInside {
     companion object {
         val auto: PageBreakInside

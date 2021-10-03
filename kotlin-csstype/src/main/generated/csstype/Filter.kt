@@ -8,7 +8,7 @@
 package csstype
 
 // language=JavaScript
-@JsName("""({none: 'none'})""")
+@JsName("""(/*union*/{none: 'none'}/*union*/)""")
 sealed external interface Filter {
     companion object {
         val none: Filter

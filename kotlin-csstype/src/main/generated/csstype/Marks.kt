@@ -7,7 +7,7 @@
 package csstype
 
 // language=JavaScript
-@JsName("""({crop: 'crop', cross: 'cross', none: 'none'})""")
+@JsName("""(/*union*/{crop: 'crop', cross: 'cross', none: 'none'}/*union*/)""")
 external enum class Marks {
     crop,
     cross,

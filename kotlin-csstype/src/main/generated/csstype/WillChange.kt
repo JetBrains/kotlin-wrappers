@@ -8,7 +8,7 @@
 package csstype
 
 // language=JavaScript
-@JsName("""({contents: 'contents', scrollPosition: 'scroll-position', auto: 'auto'})""")
+@JsName("""(/*union*/{contents: 'contents', scrollPosition: 'scroll-position', auto: 'auto'}/*union*/)""")
 sealed external interface WillChange {
     companion object {
         val contents: WillChange

@@ -8,7 +8,7 @@
 package csstype
 
 // language=JavaScript
-@JsName("""({block: 'block', both: 'both', inline: 'inline', none: 'none', x: 'x', y: 'y'})""")
+@JsName("""(/*union*/{block: 'block', both: 'both', inline: 'inline', none: 'none', x: 'x', y: 'y'}/*union*/)""")
 sealed external interface ScrollSnapType {
     companion object {
         val block: ScrollSnapType

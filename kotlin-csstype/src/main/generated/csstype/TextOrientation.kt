@@ -8,7 +8,7 @@
 package csstype
 
 // language=JavaScript
-@JsName("""({mixed: 'mixed', sideways: 'sideways', upright: 'upright'})""")
+@JsName("""(/*union*/{mixed: 'mixed', sideways: 'sideways', upright: 'upright'}/*union*/)""")
 sealed external interface TextOrientation {
     companion object {
         val mixed: TextOrientation

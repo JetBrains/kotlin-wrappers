@@ -8,7 +8,7 @@
 package csstype
 
 // language=JavaScript
-@JsName("""({anywhere: 'anywhere', breakWord: 'break-word', normal: 'normal'})""")
+@JsName("""(/*union*/{anywhere: 'anywhere', breakWord: 'break-word', normal: 'normal'}/*union*/)""")
 sealed external interface OverflowWrap {
     companion object {
         val anywhere: OverflowWrap

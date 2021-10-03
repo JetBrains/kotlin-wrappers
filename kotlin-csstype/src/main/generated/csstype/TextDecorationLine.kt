@@ -8,7 +8,7 @@
 package csstype
 
 // language=JavaScript
-@JsName("""({blink: 'blink', grammarError: 'grammar-error', lineThrough: 'line-through', none: 'none', overline: 'overline', spellingError: 'spelling-error', underline: 'underline'})""")
+@JsName("""(/*union*/{blink: 'blink', grammarError: 'grammar-error', lineThrough: 'line-through', none: 'none', overline: 'overline', spellingError: 'spelling-error', underline: 'underline'}/*union*/)""")
 sealed external interface TextDecorationLine {
     companion object {
         val blink: TextDecorationLine

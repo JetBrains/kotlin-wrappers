@@ -8,7 +8,7 @@
 package csstype
 
 // language=JavaScript
-@JsName("""({center: 'center', end: 'end', flexEnd: 'flex-end', flexStart: 'flex-start', selfEnd: 'self-end', selfStart: 'self-start', start: 'start', baseline: 'baseline', left: 'left', legacy: 'legacy', normal: 'normal', right: 'right', stretch: 'stretch'})""")
+@JsName("""(/*union*/{center: 'center', end: 'end', flexEnd: 'flex-end', flexStart: 'flex-start', selfEnd: 'self-end', selfStart: 'self-start', start: 'start', baseline: 'baseline', left: 'left', legacy: 'legacy', normal: 'normal', right: 'right', stretch: 'stretch'}/*union*/)""")
 sealed external interface JustifyItems {
     companion object {
         val center: JustifyItems

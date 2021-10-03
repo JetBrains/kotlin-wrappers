@@ -8,7 +8,7 @@
 package csstype
 
 // language=JavaScript
-@JsName("""({always: 'always', auto: 'auto', avoid: 'avoid', left: 'left', recto: 'recto', right: 'right', verso: 'verso'})""")
+@JsName("""(/*union*/{always: 'always', auto: 'auto', avoid: 'avoid', left: 'left', recto: 'recto', right: 'right', verso: 'verso'}/*union*/)""")
 sealed external interface PageBreakBefore {
     companion object {
         val always: PageBreakBefore

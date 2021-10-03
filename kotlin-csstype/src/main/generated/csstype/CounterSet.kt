@@ -8,7 +8,7 @@
 package csstype
 
 // language=JavaScript
-@JsName("""({none: 'none'})""")
+@JsName("""(/*union*/{none: 'none'}/*union*/)""")
 sealed external interface CounterSet {
     companion object {
         val none: CounterSet

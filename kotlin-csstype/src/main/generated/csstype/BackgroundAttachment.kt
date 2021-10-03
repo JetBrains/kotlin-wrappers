@@ -8,7 +8,7 @@
 package csstype
 
 // language=JavaScript
-@JsName("""({fixed: 'fixed', local: 'local', scroll: 'scroll'})""")
+@JsName("""(/*union*/{fixed: 'fixed', local: 'local', scroll: 'scroll'}/*union*/)""")
 sealed external interface BackgroundAttachment {
     companion object {
         val fixed: BackgroundAttachment

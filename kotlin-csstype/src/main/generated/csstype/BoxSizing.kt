@@ -8,7 +8,7 @@
 package csstype
 
 // language=JavaScript
-@JsName("""({borderBox: 'border-box', contentBox: 'content-box'})""")
+@JsName("""(/*union*/{borderBox: 'border-box', contentBox: 'content-box'}/*union*/)""")
 sealed external interface BoxSizing {
     companion object {
         val borderBox: BoxSizing

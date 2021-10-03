@@ -8,7 +8,7 @@
 package csstype
 
 // language=JavaScript
-@JsName("""({allowEnd: 'allow-end', first: 'first', forceEnd: 'force-end', last: 'last', none: 'none'})""")
+@JsName("""(/*union*/{allowEnd: 'allow-end', first: 'first', forceEnd: 'force-end', last: 'last', none: 'none'}/*union*/)""")
 sealed external interface HangingPunctuation {
     companion object {
         val allowEnd: HangingPunctuation

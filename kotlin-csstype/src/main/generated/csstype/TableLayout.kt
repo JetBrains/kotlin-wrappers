@@ -8,7 +8,7 @@
 package csstype
 
 // language=JavaScript
-@JsName("""({auto: 'auto', fixed: 'fixed'})""")
+@JsName("""(/*union*/{auto: 'auto', fixed: 'fixed'}/*union*/)""")
 sealed external interface TableLayout {
     companion object {
         val auto: TableLayout

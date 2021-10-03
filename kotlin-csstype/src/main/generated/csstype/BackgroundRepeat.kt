@@ -8,7 +8,7 @@
 package csstype
 
 // language=JavaScript
-@JsName("""({noRepeat: 'no-repeat', repeat: 'repeat', repeatX: 'repeat-x', repeatY: 'repeat-y', round: 'round', space: 'space'})""")
+@JsName("""(/*union*/{noRepeat: 'no-repeat', repeat: 'repeat', repeatX: 'repeat-x', repeatY: 'repeat-y', round: 'round', space: 'space'}/*union*/)""")
 sealed external interface BackgroundRepeat {
     companion object {
         val noRepeat: BackgroundRepeat

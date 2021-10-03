@@ -8,7 +8,7 @@
 package csstype
 
 // language=JavaScript
-@JsName("""({normal: 'normal'})""")
+@JsName("""(/*union*/{normal: 'normal'}/*union*/)""")
 sealed external interface Gap {
     companion object {
         val normal: Gap

@@ -8,7 +8,7 @@
 package csstype
 
 // language=JavaScript
-@JsName("""({fill: 'fill', markers: 'markers', normal: 'normal', stroke: 'stroke'})""")
+@JsName("""(/*union*/{fill: 'fill', markers: 'markers', normal: 'normal', stroke: 'stroke'}/*union*/)""")
 sealed external interface PaintOrder {
     companion object {
         val fill: PaintOrder

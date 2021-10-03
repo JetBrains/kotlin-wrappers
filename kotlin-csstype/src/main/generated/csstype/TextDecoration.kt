@@ -8,7 +8,7 @@
 package csstype
 
 // language=JavaScript
-@JsName("""({auto: 'auto', blink: 'blink', dashed: 'dashed', dotted: 'dotted', double: 'double', fromFont: 'from-font', grammarError: 'grammar-error', lineThrough: 'line-through', none: 'none', overline: 'overline', solid: 'solid', spellingError: 'spelling-error', underline: 'underline', wavy: 'wavy'})""")
+@JsName("""(/*union*/{auto: 'auto', blink: 'blink', dashed: 'dashed', dotted: 'dotted', double: 'double', fromFont: 'from-font', grammarError: 'grammar-error', lineThrough: 'line-through', none: 'none', overline: 'overline', solid: 'solid', spellingError: 'spelling-error', underline: 'underline', wavy: 'wavy'}/*union*/)""")
 sealed external interface TextDecoration {
     companion object {
         val auto: TextDecoration

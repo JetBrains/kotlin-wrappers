@@ -8,7 +8,7 @@
 package csstype
 
 // language=JavaScript
-@JsName("""({block: 'block', both: 'both', horizontal: 'horizontal', inline: 'inline', none: 'none', vertical: 'vertical'})""")
+@JsName("""(/*union*/{block: 'block', both: 'both', horizontal: 'horizontal', inline: 'inline', none: 'none', vertical: 'vertical'}/*union*/)""")
 sealed external interface Resize {
     companion object {
         val block: Resize

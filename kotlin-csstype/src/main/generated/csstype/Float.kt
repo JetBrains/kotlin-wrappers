@@ -8,7 +8,7 @@
 package csstype
 
 // language=JavaScript
-@JsName("""({inlineEnd: 'inline-end', inlineStart: 'inline-start', left: 'left', none: 'none', right: 'right'})""")
+@JsName("""(/*union*/{inlineEnd: 'inline-end', inlineStart: 'inline-start', left: 'left', none: 'none', right: 'right'}/*union*/)""")
 sealed external interface Float {
     companion object {
         val inlineEnd: Float

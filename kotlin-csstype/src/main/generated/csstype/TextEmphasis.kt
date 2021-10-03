@@ -8,7 +8,7 @@
 package csstype
 
 // language=JavaScript
-@JsName("""({circle: 'circle', dot: 'dot', doubleCircle: 'double-circle', filled: 'filled', none: 'none', open: 'open', sesame: 'sesame', triangle: 'triangle'})""")
+@JsName("""(/*union*/{circle: 'circle', dot: 'dot', doubleCircle: 'double-circle', filled: 'filled', none: 'none', open: 'open', sesame: 'sesame', triangle: 'triangle'}/*union*/)""")
 sealed external interface TextEmphasis {
     companion object {
         val circle: TextEmphasis

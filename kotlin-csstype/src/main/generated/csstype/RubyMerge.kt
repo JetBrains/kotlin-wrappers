@@ -8,7 +8,7 @@
 package csstype
 
 // language=JavaScript
-@JsName("""({auto: 'auto', collapse: 'collapse', separate: 'separate'})""")
+@JsName("""(/*union*/{auto: 'auto', collapse: 'collapse', separate: 'separate'}/*union*/)""")
 sealed external interface RubyMerge {
     companion object {
         val auto: RubyMerge

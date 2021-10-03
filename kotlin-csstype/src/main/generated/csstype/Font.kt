@@ -8,7 +8,7 @@
 package csstype
 
 // language=JavaScript
-@JsName("""({caption: 'caption', icon: 'icon', menu: 'menu', messageBox: 'message-box', smallCaption: 'small-caption', statusBar: 'status-bar'})""")
+@JsName("""(/*union*/{caption: 'caption', icon: 'icon', menu: 'menu', messageBox: 'message-box', smallCaption: 'small-caption', statusBar: 'status-bar'}/*union*/)""")
 sealed external interface Font {
     companion object {
         val caption: Font

@@ -8,7 +8,7 @@
 package csstype
 
 // language=JavaScript
-@JsName("""({fromImage: 'from-image'})""")
+@JsName("""(/*union*/{fromImage: 'from-image'}/*union*/)""")
 sealed external interface ImageResolution {
     companion object {
         val fromImage: ImageResolution

@@ -8,7 +8,7 @@
 package csstype
 
 // language=JavaScript
-@JsName("""({both: 'both', inlineEnd: 'inline-end', inlineStart: 'inline-start', left: 'left', none: 'none', right: 'right'})""")
+@JsName("""(/*union*/{both: 'both', inlineEnd: 'inline-end', inlineStart: 'inline-start', left: 'left', none: 'none', right: 'right'}/*union*/)""")
 sealed external interface Clear {
     companion object {
         val both: Clear

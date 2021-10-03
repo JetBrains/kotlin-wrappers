@@ -8,7 +8,7 @@
 package csstype
 
 // language=JavaScript
-@JsName("""({borderBox: 'border-box', contentBox: 'content-box', fillBox: 'fill-box', strokeBox: 'stroke-box', viewBox: 'view-box'})""")
+@JsName("""(/*union*/{borderBox: 'border-box', contentBox: 'content-box', fillBox: 'fill-box', strokeBox: 'stroke-box', viewBox: 'view-box'}/*union*/)""")
 sealed external interface TransformBox {
     companion object {
         val borderBox: TransformBox

@@ -8,7 +8,7 @@
 package csstype
 
 // language=JavaScript
-@JsName("""({boxDecoration: 'box-decoration', edges: 'edges', leadingSpaces: 'leading-spaces', none: 'none', objects: 'objects', spaces: 'spaces', trailingSpaces: 'trailing-spaces'})""")
+@JsName("""(/*union*/{boxDecoration: 'box-decoration', edges: 'edges', leadingSpaces: 'leading-spaces', none: 'none', objects: 'objects', spaces: 'spaces', trailingSpaces: 'trailing-spaces'}/*union*/)""")
 sealed external interface TextDecorationSkip {
     companion object {
         val boxDecoration: TextDecorationSkip

@@ -8,7 +8,7 @@
 package csstype
 
 // language=JavaScript
-@JsName("""({economy: 'economy', exact: 'exact'})""")
+@JsName("""(/*union*/{economy: 'economy', exact: 'exact'}/*union*/)""")
 sealed external interface ColorAdjust {
     companion object {
         val economy: ColorAdjust

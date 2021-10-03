@@ -8,7 +8,7 @@
 package csstype
 
 // language=JavaScript
-@JsName("""({normal: 'normal', sub: 'sub', sup: 'super'})""")
+@JsName("""(/*union*/{normal: 'normal', sub: 'sub', sup: 'super'}/*union*/)""")
 sealed external interface FontVariantPosition {
     companion object {
         val normal: FontVariantPosition

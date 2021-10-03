@@ -8,7 +8,7 @@
 package csstype
 
 // language=JavaScript
-@JsName("""({center: 'center', spaceAround: 'space-around', spaceBetween: 'space-between', start: 'start'})""")
+@JsName("""(/*union*/{center: 'center', spaceAround: 'space-around', spaceBetween: 'space-between', start: 'start'}/*union*/)""")
 sealed external interface RubyAlign {
     companion object {
         val center: RubyAlign

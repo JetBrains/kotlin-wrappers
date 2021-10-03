@@ -8,7 +8,7 @@
 package csstype
 
 // language=JavaScript
-@JsName("""({center: 'center', end: 'end', none: 'none', start: 'start'})""")
+@JsName("""(/*union*/{center: 'center', end: 'end', none: 'none', start: 'start'}/*union*/)""")
 sealed external interface ScrollSnapAlign {
     companion object {
         val center: ScrollSnapAlign

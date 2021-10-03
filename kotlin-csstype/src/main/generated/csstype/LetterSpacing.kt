@@ -8,7 +8,7 @@
 package csstype
 
 // language=JavaScript
-@JsName("""({normal: 'normal'})""")
+@JsName("""(/*union*/{normal: 'normal'}/*union*/)""")
 sealed external interface LetterSpacing {
     companion object {
         val normal: LetterSpacing

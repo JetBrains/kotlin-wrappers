@@ -8,7 +8,7 @@
 package csstype
 
 // language=JavaScript
-@JsName("""({auto: 'auto', crispEdges: 'crisp-edges', pixelated: 'pixelated'})""")
+@JsName("""(/*union*/{auto: 'auto', crispEdges: 'crisp-edges', pixelated: 'pixelated'}/*union*/)""")
 sealed external interface ImageRendering {
     companion object {
         val auto: ImageRendering

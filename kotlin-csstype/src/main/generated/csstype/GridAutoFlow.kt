@@ -8,7 +8,7 @@
 package csstype
 
 // language=JavaScript
-@JsName("""({column: 'column', dense: 'dense', row: 'row'})""")
+@JsName("""(/*union*/{column: 'column', dense: 'dense', row: 'row'}/*union*/)""")
 sealed external interface GridAutoFlow {
     companion object {
         val column: GridAutoFlow
