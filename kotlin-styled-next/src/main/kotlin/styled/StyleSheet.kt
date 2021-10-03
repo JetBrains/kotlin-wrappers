@@ -92,6 +92,7 @@ class CssHolder(private val sheet: StyleSheet, internal vararg val ruleSets: Rul
     operator fun provideDelegate(thisRef: Any?, providingProperty: KProperty<*>): ReadOnlyProperty<Any?, RuleSet> {
         val className = sheet.getClassName(providingProperty)
         classNamesToInject[className] = true
+        sheet.inject()
         return ReadOnlyProperty { _, property ->
             {
                 sheet.injectImports()
