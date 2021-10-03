@@ -8,7 +8,7 @@ fun createElement(block: Render): ReactElement? {
     return when {
         nodes.size == 0 -> null
         nodes.size == 1 && isValidElement(nodes.first()) -> nodes.first().unsafeCast<ReactElement>()
-        else -> createElement(Fragment, props = jso(), *nodes.toTypedArray())
+        else -> createElement(Fragment, child = nodes.toTypedArray())
     }
 }
 
