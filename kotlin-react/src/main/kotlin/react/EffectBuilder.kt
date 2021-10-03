@@ -2,6 +2,8 @@
 
 package react
 
+import kotlinext.js.ReadonlyArray
+
 // TODO: make external in IR
 class EffectBuilder
 private constructor() {
@@ -21,7 +23,7 @@ internal fun createEffectCallback(
 }
 
 private fun buildCleanup(
-    cleanups: Array<out Cleanup>,
+    cleanups: ReadonlyArray<Cleanup>,
 ): Cleanup? {
     if (cleanups.isEmpty())
         return undefined

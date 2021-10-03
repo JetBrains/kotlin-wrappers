@@ -1,5 +1,7 @@
 package react
 
+import kotlinext.js.ReadonlyArray
+
 external interface PropsWithChildren : Props {
-    var children: Array<out ReactNode>?
+    var children: ReadonlyArray<ReactNode>?
 }
