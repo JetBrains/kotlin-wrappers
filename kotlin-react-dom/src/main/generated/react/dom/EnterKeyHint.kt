@@ -4,7 +4,7 @@ package react.dom
 
 @Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
 // language=JavaScript
-@JsName("""({enter: 'enter', done: 'done', go: 'go', next: 'next', previous: 'previous', search: 'search', send: 'send'})""")
+@JsName("""(/*union*/{enter: 'enter', done: 'done', go: 'go', next: 'next', previous: 'previous', search: 'search', send: 'send'}/*union*/)""")
 external enum class EnterKeyHint {
     enter,
     done,

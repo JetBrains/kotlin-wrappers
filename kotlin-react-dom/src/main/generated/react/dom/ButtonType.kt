@@ -4,7 +4,7 @@ package react.dom
 
 @Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
 // language=JavaScript
-@JsName("""({submit: 'submit', reset: 'reset', button: 'button'})""")
+@JsName("""(/*union*/{submit: 'submit', reset: 'reset', button: 'button'}/*union*/)""")
 external enum class ButtonType {
     submit,
     reset,

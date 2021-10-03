@@ -4,7 +4,7 @@ package react.dom
 
 @Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
 // language=JavaScript
-@JsName("""({__false__: 'false', __true__: 'true', user: 'user', environment: 'environment'})""")
+@JsName("""(/*union*/{__false__: 'false', __true__: 'true', user: 'user', environment: 'environment'}/*union*/)""")
 external enum class Capture {
     __false__,
     __true__,

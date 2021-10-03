@@ -4,7 +4,7 @@ package react.dom
 
 @Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
 // language=JavaScript
-@JsName("""({none: 'none', copy: 'copy', execute: 'execute', link: 'link', move: 'move', popup: 'popup'})""")
+@JsName("""(/*union*/{none: 'none', copy: 'copy', execute: 'execute', link: 'link', move: 'move', popup: 'popup'}/*union*/)""")
 external enum class AriaDropEffect {
     none,
     copy,

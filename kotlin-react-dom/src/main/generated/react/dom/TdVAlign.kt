@@ -4,7 +4,7 @@ package react.dom
 
 @Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
 // language=JavaScript
-@JsName("""({top: 'top', middle: 'middle', bottom: 'bottom', baseline: 'baseline'})""")
+@JsName("""(/*union*/{top: 'top', middle: 'middle', bottom: 'bottom', baseline: 'baseline'}/*union*/)""")
 external enum class TdVAlign {
     top,
     middle,
