@@ -9,6 +9,7 @@ dependencies {
         api(project(":kotlin-csstype"))
         api(project(":kotlin-emotion"))
         api(project(":kotlin-extensions"))
+        api(project(":kotlin-mui"))
         api(project(":kotlin-react"))
         api(project(":kotlin-react-css"))
         api(project(":kotlin-react-dom"))

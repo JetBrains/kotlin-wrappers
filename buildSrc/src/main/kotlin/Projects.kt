@@ -6,6 +6,7 @@ private val TARGET_ALIASES = mapOf(
     "styled-components" to "styled",
     "@emotion/css" to "emotion-css",
 
+    "@mui/material" to "mui",
     "@jetbrains/ring-ui" to "ring-ui",
 )
 
