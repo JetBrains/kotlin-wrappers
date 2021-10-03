@@ -4,7 +4,7 @@ package react.dom
 
 @Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
 // language=JavaScript
-@JsName("""({__false__: 'false', __true__: 'true', grammar: 'grammar', spelling: 'spelling'})""")
+@JsName("""(/*union*/{__false__: 'false', __true__: 'true', grammar: 'grammar', spelling: 'spelling'}/*union*/)""")
 external enum class AriaInvalid {
     __false__,
     __true__,

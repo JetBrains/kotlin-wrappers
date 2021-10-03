@@ -4,7 +4,7 @@ package react.dom
 
 @Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
 // language=JavaScript
-@JsName("""({none: 'none', ascending: 'ascending', descending: 'descending', other: 'other'})""")
+@JsName("""(/*union*/{none: 'none', ascending: 'ascending', descending: 'descending', other: 'other'}/*union*/)""")
 external enum class AriaSort {
     none,
     ascending,

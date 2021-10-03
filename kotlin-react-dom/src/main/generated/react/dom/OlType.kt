@@ -4,7 +4,7 @@ package react.dom
 
 @Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
 // language=JavaScript
-@JsName("""({D: '1', a: 'a', A: 'A', i: 'i', I: 'I'})""")
+@JsName("""(/*union*/{D: '1', a: 'a', A: 'A', i: 'i', I: 'I'}/*union*/)""")
 external enum class OlType {
     D,
     a,

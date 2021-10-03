@@ -4,7 +4,7 @@ package react.dom
 
 @Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
 // language=JavaScript
-@JsName("""({none: 'none', text: 'text', tel: 'tel', url: 'url', email: 'email', numeric: 'numeric', decimal: 'decimal', search: 'search'})""")
+@JsName("""(/*union*/{none: 'none', text: 'text', tel: 'tel', url: 'url', email: 'email', numeric: 'numeric', decimal: 'decimal', search: 'search'}/*union*/)""")
 external enum class InputMode {
     none,
     text,
