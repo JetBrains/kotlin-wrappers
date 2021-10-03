@@ -4,7 +4,7 @@ package mui.material
 
 @Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
 // language=JavaScript
-@JsName("""({anchorEl: 'anchorEl', anchorPosition: 'anchorPosition', none: 'none'})""")
+@JsName("""(/*union*/{anchorEl: 'anchorEl', anchorPosition: 'anchorPosition', none: 'none'}/*union*/)""")
 external enum class PopoverReference {
     anchorEl,
     anchorPosition,

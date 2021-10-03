@@ -4,7 +4,7 @@ package mui.material
 
 @Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
 // language=JavaScript
-@JsName("""({horizontal: 'horizontal', vertical: 'vertical'})""")
+@JsName("""(/*union*/{horizontal: 'horizontal', vertical: 'vertical'}/*union*/)""")
 external enum class Orientation {
     horizontal,
     vertical,
