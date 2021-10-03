@@ -97,6 +97,7 @@ class CssHolder(private val sheet: StyleSheet, internal vararg val ruleSets: Rul
                 sheet.injectImports()
                 if (sheet.isStatic) {
                     scheduleToInject(className)
+                    sheet.inject()
                     +className
                 }
                 if (!sheet.isStatic || !allowClasses) {
