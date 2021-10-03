@@ -8,7 +8,7 @@
 package csstype
 
 // language=JavaScript
-@JsName("""({auto: 'auto', hidden: 'hidden', visible: 'visible'})""")
+@JsName("""(/*union*/{auto: 'auto', hidden: 'hidden', visible: 'visible'}/*union*/)""")
 sealed external interface ContentVisibility {
     companion object {
         val auto: ContentVisibility

@@ -8,7 +8,7 @@
 package csstype
 
 // language=JavaScript
-@JsName("""({contentBox: 'content-box', paddingBox: 'padding-box'})""")
+@JsName("""(/*union*/{contentBox: 'content-box', paddingBox: 'padding-box'}/*union*/)""")
 sealed external interface OverflowClipBox {
     companion object {
         val contentBox: OverflowClipBox

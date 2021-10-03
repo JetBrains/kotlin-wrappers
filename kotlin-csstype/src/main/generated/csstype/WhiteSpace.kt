@@ -8,7 +8,7 @@
 package csstype
 
 // language=JavaScript
-@JsName("""({breakSpaces: 'break-spaces', normal: 'normal', nowrap: 'nowrap', pre: 'pre', preLine: 'pre-line', preWrap: 'pre-wrap'})""")
+@JsName("""(/*union*/{breakSpaces: 'break-spaces', normal: 'normal', nowrap: 'nowrap', pre: 'pre', preLine: 'pre-line', preWrap: 'pre-wrap'}/*union*/)""")
 sealed external interface WhiteSpace {
     companion object {
         val breakSpaces: WhiteSpace

@@ -8,7 +8,7 @@
 package csstype
 
 // language=JavaScript
-@JsName("""({diagonalFractions: 'diagonal-fractions', liningNums: 'lining-nums', normal: 'normal', oldstyleNums: 'oldstyle-nums', ordinal: 'ordinal', proportionalNums: 'proportional-nums', slashedZero: 'slashed-zero', stackedFractions: 'stacked-fractions', tabularNums: 'tabular-nums'})""")
+@JsName("""(/*union*/{diagonalFractions: 'diagonal-fractions', liningNums: 'lining-nums', normal: 'normal', oldstyleNums: 'oldstyle-nums', ordinal: 'ordinal', proportionalNums: 'proportional-nums', slashedZero: 'slashed-zero', stackedFractions: 'stacked-fractions', tabularNums: 'tabular-nums'}/*union*/)""")
 sealed external interface FontVariantNumeric {
     companion object {
         val diagonalFractions: FontVariantNumeric

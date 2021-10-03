@@ -8,7 +8,7 @@
 package csstype
 
 // language=JavaScript
-@JsName("""({condensed: 'condensed', expanded: 'expanded', extraCondensed: 'extra-condensed', extraExpanded: 'extra-expanded', normal: 'normal', semiCondensed: 'semi-condensed', semiExpanded: 'semi-expanded', ultraCondensed: 'ultra-condensed', ultraExpanded: 'ultra-expanded'})""")
+@JsName("""(/*union*/{condensed: 'condensed', expanded: 'expanded', extraCondensed: 'extra-condensed', extraExpanded: 'extra-expanded', normal: 'normal', semiCondensed: 'semi-condensed', semiExpanded: 'semi-expanded', ultraCondensed: 'ultra-condensed', ultraExpanded: 'ultra-expanded'}/*union*/)""")
 sealed external interface FontStretch {
     companion object {
         val condensed: FontStretch

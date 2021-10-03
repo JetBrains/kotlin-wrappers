@@ -9,7 +9,7 @@
 package csstype
 
 // language=JavaScript
-@JsName("""({bold: 'bold', normal: 'normal', bolder: 'bolder', lighter: 'lighter'})""")
+@JsName("""(/*union*/{bold: 'bold', normal: 'normal', bolder: 'bolder', lighter: 'lighter'}/*union*/)""")
 sealed external interface FontWeight {
     companion object {
         val bold: FontWeight

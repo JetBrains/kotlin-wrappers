@@ -8,7 +8,7 @@
 package csstype
 
 // language=JavaScript
-@JsName("""({dark: 'dark', light: 'light', normal: 'normal'})""")
+@JsName("""(/*union*/{dark: 'dark', light: 'light', normal: 'normal'}/*union*/)""")
 sealed external interface ColorScheme {
     companion object {
         val dark: ColorScheme

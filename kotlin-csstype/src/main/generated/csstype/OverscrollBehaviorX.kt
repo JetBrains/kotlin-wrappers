@@ -8,7 +8,7 @@
 package csstype
 
 // language=JavaScript
-@JsName("""({auto: 'auto', contain: 'contain', none: 'none'})""")
+@JsName("""(/*union*/{auto: 'auto', contain: 'contain', none: 'none'}/*union*/)""")
 sealed external interface OverscrollBehaviorX {
     companion object {
         val auto: OverscrollBehaviorX

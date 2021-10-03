@@ -8,7 +8,7 @@
 package csstype
 
 // language=JavaScript
-@JsName("""({dashed: 'dashed', dotted: 'dotted', double: 'double', solid: 'solid', wavy: 'wavy'})""")
+@JsName("""(/*union*/{dashed: 'dashed', dotted: 'dotted', double: 'double', solid: 'solid', wavy: 'wavy'}/*union*/)""")
 sealed external interface TextDecorationStyle {
     companion object {
         val dashed: TextDecorationStyle

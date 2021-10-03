@@ -8,7 +8,7 @@
 package csstype
 
 // language=JavaScript
-@JsName("""({absolute: 'absolute', fixed: 'fixed', relative: 'relative', static: 'static', sticky: 'sticky'})""")
+@JsName("""(/*union*/{absolute: 'absolute', fixed: 'fixed', relative: 'relative', static: 'static', sticky: 'sticky'}/*union*/)""")
 sealed external interface Position {
     companion object {
         val absolute: Position

@@ -8,7 +8,7 @@
 package csstype
 
 // language=JavaScript
-@JsName("""({borderBox: 'border-box', contentBox: 'content-box', paddingBox: 'padding-box'})""")
+@JsName("""(/*union*/{borderBox: 'border-box', contentBox: 'content-box', paddingBox: 'padding-box'}/*union*/)""")
 sealed external interface BackgroundOrigin {
     companion object {
         val borderBox: BackgroundOrigin

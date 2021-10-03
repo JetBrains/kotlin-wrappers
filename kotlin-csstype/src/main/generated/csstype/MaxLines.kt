@@ -9,7 +9,7 @@
 package csstype
 
 // language=JavaScript
-@JsName("""({none: 'none'})""")
+@JsName("""(/*union*/{none: 'none'}/*union*/)""")
 sealed external interface MaxLines {
     companion object {
         val none: MaxLines

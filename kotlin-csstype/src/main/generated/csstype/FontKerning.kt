@@ -8,7 +8,7 @@
 package csstype
 
 // language=JavaScript
-@JsName("""({auto: 'auto', none: 'none', normal: 'normal'})""")
+@JsName("""(/*union*/{auto: 'auto', none: 'none', normal: 'normal'}/*union*/)""")
 sealed external interface FontKerning {
     companion object {
         val auto: FontKerning

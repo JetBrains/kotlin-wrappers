@@ -8,7 +8,7 @@
 package csstype
 
 // language=JavaScript
-@JsName("""({collapse: 'collapse', separate: 'separate'})""")
+@JsName("""(/*union*/{collapse: 'collapse', separate: 'separate'}/*union*/)""")
 sealed external interface BorderCollapse {
     companion object {
         val collapse: BorderCollapse

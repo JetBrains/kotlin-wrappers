@@ -9,7 +9,7 @@
 package csstype
 
 // language=JavaScript
-@JsName("""({auto: 'auto'})""")
+@JsName("""(/*union*/{auto: 'auto'}/*union*/)""")
 sealed external interface ColumnCount {
     companion object {
         val auto: ColumnCount

@@ -7,7 +7,7 @@
 package csstype
 
 // language=JavaScript
-@JsName("""({color: 'color', colorBurn: 'color-burn', colorDodge: 'color-dodge', darken: 'darken', difference: 'difference', exclusion: 'exclusion', hardLight: 'hard-light', hue: 'hue', lighten: 'lighten', luminosity: 'luminosity', multiply: 'multiply', normal: 'normal', overlay: 'overlay', saturation: 'saturation', screen: 'screen', softLight: 'soft-light'})""")
+@JsName("""(/*union*/{color: 'color', colorBurn: 'color-burn', colorDodge: 'color-dodge', darken: 'darken', difference: 'difference', exclusion: 'exclusion', hardLight: 'hard-light', hue: 'hue', lighten: 'lighten', luminosity: 'luminosity', multiply: 'multiply', normal: 'normal', overlay: 'overlay', saturation: 'saturation', screen: 'screen', softLight: 'soft-light'}/*union*/)""")
 external enum class BlendMode : BlendModeProperty {
     color,
     colorBurn,

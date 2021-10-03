@@ -7,7 +7,7 @@
 package csstype
 
 // language=JavaScript
-@JsName("""({clear: 'clear', copy: 'copy', destinationAtop: 'destination-atop', destinationIn: 'destination-in', destinationOut: 'destination-out', destinationOver: 'destination-over', sourceAtop: 'source-atop', sourceIn: 'source-in', sourceOut: 'source-out', sourceOver: 'source-over', xor: 'xor'})""")
+@JsName("""(/*union*/{clear: 'clear', copy: 'copy', destinationAtop: 'destination-atop', destinationIn: 'destination-in', destinationOut: 'destination-out', destinationOver: 'destination-over', sourceAtop: 'source-atop', sourceIn: 'source-in', sourceOut: 'source-out', sourceOver: 'source-over', xor: 'xor'}/*union*/)""")
 external enum class CompositeStyle {
     clear,
     copy,

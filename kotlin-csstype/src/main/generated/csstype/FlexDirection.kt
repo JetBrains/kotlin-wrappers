@@ -8,7 +8,7 @@
 package csstype
 
 // language=JavaScript
-@JsName("""({column: 'column', columnReverse: 'column-reverse', row: 'row', rowReverse: 'row-reverse'})""")
+@JsName("""(/*union*/{column: 'column', columnReverse: 'column-reverse', row: 'row', rowReverse: 'row-reverse'}/*union*/)""")
 sealed external interface FlexDirection {
     companion object {
         val column: FlexDirection

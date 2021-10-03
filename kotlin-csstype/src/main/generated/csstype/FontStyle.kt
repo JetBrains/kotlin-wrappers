@@ -8,7 +8,7 @@
 package csstype
 
 // language=JavaScript
-@JsName("""({italic: 'italic', normal: 'normal', oblique: 'oblique'})""")
+@JsName("""(/*union*/{italic: 'italic', normal: 'normal', oblique: 'oblique'}/*union*/)""")
 sealed external interface FontStyle {
     companion object {
         val italic: FontStyle

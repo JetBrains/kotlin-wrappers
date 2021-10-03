@@ -8,7 +8,7 @@
 package csstype
 
 // language=JavaScript
-@JsName("""({auto: 'auto', none: 'none'})""")
+@JsName("""(/*union*/{auto: 'auto', none: 'none'}/*union*/)""")
 sealed external interface ForcedColorAdjust {
     companion object {
         val auto: ForcedColorAdjust

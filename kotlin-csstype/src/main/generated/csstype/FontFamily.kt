@@ -8,7 +8,7 @@
 package csstype
 
 // language=JavaScript
-@JsName("""({cursive: 'cursive', fantasy: 'fantasy', monospace: 'monospace', sansSerif: 'sans-serif', serif: 'serif'})""")
+@JsName("""(/*union*/{cursive: 'cursive', fantasy: 'fantasy', monospace: 'monospace', sansSerif: 'sans-serif', serif: 'serif'}/*union*/)""")
 sealed external interface FontFamily {
     companion object {
         val cursive: FontFamily

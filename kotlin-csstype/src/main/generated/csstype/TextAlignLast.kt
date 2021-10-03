@@ -8,7 +8,7 @@
 package csstype
 
 // language=JavaScript
-@JsName("""({auto: 'auto', center: 'center', end: 'end', justify: 'justify', left: 'left', right: 'right', start: 'start'})""")
+@JsName("""(/*union*/{auto: 'auto', center: 'center', end: 'end', justify: 'justify', left: 'left', right: 'right', start: 'start'}/*union*/)""")
 sealed external interface TextAlignLast {
     companion object {
         val auto: TextAlignLast

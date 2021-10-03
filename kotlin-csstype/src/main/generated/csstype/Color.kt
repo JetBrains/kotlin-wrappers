@@ -8,7 +8,7 @@
 package csstype
 
 // language=JavaScript
-@JsName("""({currentcolor: 'currentcolor'})""")
+@JsName("""(/*union*/{currentcolor: 'currentcolor'}/*union*/)""")
 sealed external interface Color : ColorProperty {
     companion object {
         val currentcolor: Color

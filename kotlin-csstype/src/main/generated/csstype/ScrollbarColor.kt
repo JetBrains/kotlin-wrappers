@@ -8,7 +8,7 @@
 package csstype
 
 // language=JavaScript
-@JsName("""({auto: 'auto'})""")
+@JsName("""(/*union*/{auto: 'auto'}/*union*/)""")
 sealed external interface ScrollbarColor {
     companion object {
         val auto: ScrollbarColor

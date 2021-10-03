@@ -8,7 +8,7 @@
 package csstype
 
 // language=JavaScript
-@JsName("""({auto: 'auto', smooth: 'smooth'})""")
+@JsName("""(/*union*/{auto: 'auto', smooth: 'smooth'}/*union*/)""")
 sealed external interface ScrollBehavior {
     companion object {
         val auto: ScrollBehavior

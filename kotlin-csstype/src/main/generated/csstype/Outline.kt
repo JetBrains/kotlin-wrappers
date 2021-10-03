@@ -8,7 +8,7 @@
 package csstype
 
 // language=JavaScript
-@JsName("""({auto: 'auto', invert: 'invert'})""")
+@JsName("""(/*union*/{auto: 'auto', invert: 'invert'}/*union*/)""")
 sealed external interface Outline {
     companion object {
         val auto: Outline

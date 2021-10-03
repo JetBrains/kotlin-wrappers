@@ -9,7 +9,7 @@
 package csstype
 
 // language=JavaScript
-@JsName("""({normal: 'normal', reset: 'reset'})""")
+@JsName("""(/*union*/{normal: 'normal', reset: 'reset'}/*union*/)""")
 sealed external interface Zoom {
     companion object {
         val normal: Zoom

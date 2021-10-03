@@ -7,7 +7,7 @@
 package csstype
 
 // language=JavaScript
-@JsName("""({auto: 'auto', bullets: 'bullets', numbers: 'numbers', spellOut: 'spell-out', words: 'words'})""")
+@JsName("""(/*union*/{auto: 'auto', bullets: 'bullets', numbers: 'numbers', spellOut: 'spell-out', words: 'words'}/*union*/)""")
 external enum class SpeakAs {
     auto,
     bullets,

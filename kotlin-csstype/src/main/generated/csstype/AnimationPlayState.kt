@@ -8,7 +8,7 @@
 package csstype
 
 // language=JavaScript
-@JsName("""({paused: 'paused', running: 'running'})""")
+@JsName("""(/*union*/{paused: 'paused', running: 'running'}/*union*/)""")
 sealed external interface AnimationPlayState {
     companion object {
         val paused: AnimationPlayState

@@ -8,7 +8,7 @@
 package csstype
 
 // language=JavaScript
-@JsName("""({medium: 'medium', thick: 'thick', thin: 'thin'})""")
+@JsName("""(/*union*/{medium: 'medium', thick: 'thick', thin: 'thin'}/*union*/)""")
 sealed external interface LineWidth : LineWidthProperty {
     companion object {
         val medium: LineWidth

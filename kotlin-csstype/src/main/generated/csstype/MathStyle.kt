@@ -8,7 +8,7 @@
 package csstype
 
 // language=JavaScript
-@JsName("""({compact: 'compact', normal: 'normal'})""")
+@JsName("""(/*union*/{compact: 'compact', normal: 'normal'}/*union*/)""")
 sealed external interface MathStyle {
     companion object {
         val compact: MathStyle

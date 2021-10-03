@@ -8,7 +8,7 @@
 package csstype
 
 // language=JavaScript
-@JsName("""({ltr: 'ltr', rtl: 'rtl'})""")
+@JsName("""(/*union*/{ltr: 'ltr', rtl: 'rtl'}/*union*/)""")
 sealed external interface Direction {
     companion object {
         val ltr: Direction

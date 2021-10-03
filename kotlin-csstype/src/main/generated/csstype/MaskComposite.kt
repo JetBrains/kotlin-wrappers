@@ -8,7 +8,7 @@
 package csstype
 
 // language=JavaScript
-@JsName("""({add: 'add', exclude: 'exclude', intersect: 'intersect', subtract: 'subtract'})""")
+@JsName("""(/*union*/{add: 'add', exclude: 'exclude', intersect: 'intersect', subtract: 'subtract'}/*union*/)""")
 sealed external interface MaskComposite {
     companion object {
         val add: MaskComposite

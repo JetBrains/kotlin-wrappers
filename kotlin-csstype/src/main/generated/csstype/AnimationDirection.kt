@@ -8,7 +8,7 @@
 package csstype
 
 // language=JavaScript
-@JsName("""({alternate: 'alternate', alternateReverse: 'alternate-reverse', normal: 'normal', reverse: 'reverse'})""")
+@JsName("""(/*union*/{alternate: 'alternate', alternateReverse: 'alternate-reverse', normal: 'normal', reverse: 'reverse'}/*union*/)""")
 sealed external interface AnimationDirection {
     companion object {
         val alternate: AnimationDirection

@@ -8,7 +8,7 @@
 package csstype
 
 // language=JavaScript
-@JsName("""({bottom: 'bottom', center: 'center', left: 'left', right: 'right', top: 'top'})""")
+@JsName("""(/*union*/{bottom: 'bottom', center: 'center', left: 'left', right: 'right', top: 'top'}/*union*/)""")
 sealed external interface ObjectPosition {
     companion object {
         val bottom: ObjectPosition

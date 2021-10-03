@@ -7,7 +7,7 @@
 package csstype
 
 // language=JavaScript
-@JsName("""({auto: 'auto', block: 'block', fallback: 'fallback', optional: 'optional', swap: 'swap'})""")
+@JsName("""(/*union*/{auto: 'auto', block: 'block', fallback: 'fallback', optional: 'optional', swap: 'swap'}/*union*/)""")
 external enum class FontDisplay {
     auto,
     block,

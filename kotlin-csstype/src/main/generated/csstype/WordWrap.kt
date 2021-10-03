@@ -8,7 +8,7 @@
 package csstype
 
 // language=JavaScript
-@JsName("""({breakWord: 'break-word', normal: 'normal'})""")
+@JsName("""(/*union*/{breakWord: 'break-word', normal: 'normal'}/*union*/)""")
 sealed external interface WordWrap {
     companion object {
         val breakWord: WordWrap

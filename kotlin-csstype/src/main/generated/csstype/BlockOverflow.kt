@@ -8,7 +8,7 @@
 package csstype
 
 // language=JavaScript
-@JsName("""({clip: 'clip', ellipsis: 'ellipsis'})""")
+@JsName("""(/*union*/{clip: 'clip', ellipsis: 'ellipsis'}/*union*/)""")
 sealed external interface BlockOverflow {
     companion object {
         val clip: BlockOverflow

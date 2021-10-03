@@ -8,7 +8,7 @@
 package csstype
 
 // language=JavaScript
-@JsName("""({capitalize: 'capitalize', fullSizeKana: 'full-size-kana', fullWidth: 'full-width', lowercase: 'lowercase', none: 'none', uppercase: 'uppercase'})""")
+@JsName("""(/*union*/{capitalize: 'capitalize', fullSizeKana: 'full-size-kana', fullWidth: 'full-width', lowercase: 'lowercase', none: 'none', uppercase: 'uppercase'}/*union*/)""")
 sealed external interface TextTransform {
     companion object {
         val capitalize: TextTransform

@@ -8,7 +8,7 @@
 package csstype
 
 // language=JavaScript
-@JsName("""({hide: 'hide', show: 'show'})""")
+@JsName("""(/*union*/{hide: 'hide', show: 'show'}/*union*/)""")
 sealed external interface EmptyCells {
     companion object {
         val hide: EmptyCells

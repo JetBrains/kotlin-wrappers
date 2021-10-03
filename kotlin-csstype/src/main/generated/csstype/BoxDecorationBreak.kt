@@ -8,7 +8,7 @@
 package csstype
 
 // language=JavaScript
-@JsName("""({clone: 'clone', slice: 'slice'})""")
+@JsName("""(/*union*/{clone: 'clone', slice: 'slice'}/*union*/)""")
 sealed external interface BoxDecorationBreak {
     companion object {
         val clone: BoxDecorationBreak

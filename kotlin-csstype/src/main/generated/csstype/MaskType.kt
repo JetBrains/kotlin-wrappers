@@ -8,7 +8,7 @@
 package csstype
 
 // language=JavaScript
-@JsName("""({alpha: 'alpha', luminance: 'luminance'})""")
+@JsName("""(/*union*/{alpha: 'alpha', luminance: 'luminance'}/*union*/)""")
 sealed external interface MaskType {
     companion object {
         val alpha: MaskType

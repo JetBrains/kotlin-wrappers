@@ -8,7 +8,7 @@
 package csstype
 
 // language=JavaScript
-@JsName("""({all: 'all', digits: 'digits', none: 'none'})""")
+@JsName("""(/*union*/{all: 'all', digits: 'digits', none: 'none'}/*union*/)""")
 sealed external interface TextCombineUpright {
     companion object {
         val all: TextCombineUpright

@@ -8,7 +8,7 @@
 package csstype
 
 // language=JavaScript
-@JsName("""({blockEnd: 'block-end', blockStart: 'block-start', bottom: 'bottom', inlineEnd: 'inline-end', inlineStart: 'inline-start', top: 'top'})""")
+@JsName("""(/*union*/{blockEnd: 'block-end', blockStart: 'block-start', bottom: 'bottom', inlineEnd: 'inline-end', inlineStart: 'inline-start', top: 'top'}/*union*/)""")
 sealed external interface CaptionSide {
     companion object {
         val blockEnd: CaptionSide

@@ -8,7 +8,7 @@
 package csstype
 
 // language=JavaScript
-@JsName("""({bidiOverride: 'bidi-override', embed: 'embed', isolate: 'isolate', isolateOverride: 'isolate-override', normal: 'normal', plaintext: 'plaintext'})""")
+@JsName("""(/*union*/{bidiOverride: 'bidi-override', embed: 'embed', isolate: 'isolate', isolateOverride: 'isolate-override', normal: 'normal', plaintext: 'plaintext'}/*union*/)""")
 sealed external interface UnicodeBidi {
     companion object {
         val bidiOverride: UnicodeBidi

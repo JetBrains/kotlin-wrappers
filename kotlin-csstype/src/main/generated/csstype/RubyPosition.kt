@@ -8,7 +8,7 @@
 package csstype
 
 // language=JavaScript
-@JsName("""({alternate: 'alternate', over: 'over', under: 'under'})""")
+@JsName("""(/*union*/{alternate: 'alternate', over: 'over', under: 'under'}/*union*/)""")
 sealed external interface RubyPosition {
     companion object {
         val alternate: RubyPosition

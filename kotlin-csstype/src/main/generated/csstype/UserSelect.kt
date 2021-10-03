@@ -8,7 +8,7 @@
 package csstype
 
 // language=JavaScript
-@JsName("""({all: 'all', auto: 'auto', contain: 'contain', element: 'element', none: 'none', text: 'text'})""")
+@JsName("""(/*union*/{all: 'all', auto: 'auto', contain: 'contain', element: 'element', none: 'none', text: 'text'}/*union*/)""")
 sealed external interface UserSelect {
     companion object {
         val all: UserSelect

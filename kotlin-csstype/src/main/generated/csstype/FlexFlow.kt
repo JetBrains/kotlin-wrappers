@@ -8,7 +8,7 @@
 package csstype
 
 // language=JavaScript
-@JsName("""({column: 'column', columnReverse: 'column-reverse', nowrap: 'nowrap', row: 'row', rowReverse: 'row-reverse', wrap: 'wrap', wrapReverse: 'wrap-reverse'})""")
+@JsName("""(/*union*/{column: 'column', columnReverse: 'column-reverse', nowrap: 'nowrap', row: 'row', rowReverse: 'row-reverse', wrap: 'wrap', wrapReverse: 'wrap-reverse'}/*union*/)""")
 sealed external interface FlexFlow {
     companion object {
         val column: FlexFlow

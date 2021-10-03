@@ -8,7 +8,7 @@
 package csstype
 
 // language=JavaScript
-@JsName("""({auto: 'auto', reverse: 'reverse'})""")
+@JsName("""(/*union*/{auto: 'auto', reverse: 'reverse'}/*union*/)""")
 sealed external interface OffsetRotate {
     companion object {
         val auto: OffsetRotate

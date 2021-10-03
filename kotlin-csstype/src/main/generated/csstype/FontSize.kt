@@ -8,7 +8,7 @@
 package csstype
 
 // language=JavaScript
-@JsName("""({large: 'large', medium: 'medium', small: 'small', xLarge: 'x-large', xSmall: 'x-small', xxLarge: 'xx-large', xxSmall: 'xx-small', xxxLarge: 'xxx-large', larger: 'larger', smaller: 'smaller'})""")
+@JsName("""(/*union*/{large: 'large', medium: 'medium', small: 'small', xLarge: 'x-large', xSmall: 'x-small', xxLarge: 'xx-large', xxSmall: 'xx-small', xxxLarge: 'xxx-large', larger: 'larger', smaller: 'smaller'}/*union*/)""")
 sealed external interface FontSize {
     companion object {
         val large: FontSize

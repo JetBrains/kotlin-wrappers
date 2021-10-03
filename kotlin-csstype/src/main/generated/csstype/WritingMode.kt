@@ -8,7 +8,7 @@
 package csstype
 
 // language=JavaScript
-@JsName("""({horizontalTb: 'horizontal-tb', sidewaysLr: 'sideways-lr', sidewaysRl: 'sideways-rl', verticalLr: 'vertical-lr', verticalRl: 'vertical-rl'})""")
+@JsName("""(/*union*/{horizontalTb: 'horizontal-tb', sidewaysLr: 'sideways-lr', sidewaysRl: 'sideways-rl', verticalLr: 'vertical-lr', verticalRl: 'vertical-rl'}/*union*/)""")
 sealed external interface WritingMode {
     companion object {
         val horizontalTb: WritingMode

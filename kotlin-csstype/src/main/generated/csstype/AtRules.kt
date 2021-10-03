@@ -7,7 +7,7 @@
 package csstype
 
 // language=JavaScript
-@JsName("""({charset: '@charset', counterStyle: '@counter-style', document: '@document', fontFace: '@font-face', fontFeatureValues: '@font-feature-values', import: '@import', keyframes: '@keyframes', media: '@media', namespace: '@namespace', page: '@page', property: '@property', supports: '@supports', viewport: '@viewport'})""")
+@JsName("""(/*union*/{charset: '@charset', counterStyle: '@counter-style', document: '@document', fontFace: '@font-face', fontFeatureValues: '@font-feature-values', import: '@import', keyframes: '@keyframes', media: '@media', namespace: '@namespace', page: '@page', property: '@property', supports: '@supports', viewport: '@viewport'}/*union*/)""")
 external enum class AtRules {
     charset,
     counterStyle,

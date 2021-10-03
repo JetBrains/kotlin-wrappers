@@ -8,7 +8,7 @@
 package csstype
 
 // language=JavaScript
-@JsName("""({invert: 'invert'})""")
+@JsName("""(/*union*/{invert: 'invert'}/*union*/)""")
 sealed external interface OutlineColor {
     companion object {
         val invert: OutlineColor

@@ -8,7 +8,7 @@
 package csstype
 
 // language=JavaScript
-@JsName("""({always: 'always', normal: 'normal'})""")
+@JsName("""(/*union*/{always: 'always', normal: 'normal'}/*union*/)""")
 sealed external interface ScrollSnapStop {
     companion object {
         val always: ScrollSnapStop
