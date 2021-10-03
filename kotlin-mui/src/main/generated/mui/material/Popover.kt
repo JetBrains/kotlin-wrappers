@@ -5,6 +5,8 @@
 
 package mui.material
 
+import kotlinext.js.ReadonlyArray
+
 external interface PopoverProps : react.PropsWithChildren {
     /**
      * A ref for imperative actions.
@@ -49,7 +51,7 @@ external interface PopoverProps : react.PropsWithChildren {
     /**
      * The content of the component.
      */
-    override var children: Array<out react.ReactNode>?
+    override var children: ReadonlyArray<react.ReactNode>?
 
     /**
      * Override or extend the styles applied to the component.

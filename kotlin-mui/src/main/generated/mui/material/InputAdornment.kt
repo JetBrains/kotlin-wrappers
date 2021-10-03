@@ -5,6 +5,8 @@
 
 package mui.material
 
+import kotlinext.js.ReadonlyArray
+
 external interface InputAdornmentProps : react.PropsWithChildren {
     /**
      * Override or extend the styles applied to the component.
@@ -14,7 +16,7 @@ external interface InputAdornmentProps : react.PropsWithChildren {
     /**
      * The content of the component, normally an `IconButton` or string.
      */
-    override var children: Array<out react.ReactNode>?
+    override var children: ReadonlyArray<react.ReactNode>?
 
     /**
      * Disable pointer events on the root.

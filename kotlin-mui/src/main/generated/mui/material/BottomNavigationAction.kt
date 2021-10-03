@@ -5,12 +5,14 @@
 
 package mui.material
 
+import kotlinext.js.ReadonlyArray
+
 external interface BottomNavigationActionProps : react.PropsWithChildren {
     /**
      * This prop isn't supported.
      * Use the `component` prop if you need to change the children structure.
      */
-    override var children: Array<out react.ReactNode>?
+    override var children: ReadonlyArray<react.ReactNode>?
 
     /**
      * Override or extend the styles applied to the component.

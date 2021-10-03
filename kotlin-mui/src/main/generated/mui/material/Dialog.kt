@@ -5,6 +5,8 @@
 
 package mui.material
 
+import kotlinext.js.ReadonlyArray
+
 external interface DialogProps : react.PropsWithChildren {
     /**
      * The id(s) of the element(s) that describe the dialog.
@@ -19,7 +21,7 @@ external interface DialogProps : react.PropsWithChildren {
     /**
      * Dialog children, usually the included sub-components.
      */
-    override var children: Array<out react.ReactNode>?
+    override var children: ReadonlyArray<react.ReactNode>?
 
     /**
      * Override or extend the styles applied to the component.

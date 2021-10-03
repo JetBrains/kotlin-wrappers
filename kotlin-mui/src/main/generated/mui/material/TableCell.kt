@@ -5,6 +5,8 @@
 
 package mui.material
 
+import kotlinext.js.ReadonlyArray
+
 external interface TableCellProps : react.PropsWithChildren {
     /**
      * Set the text-align on the table cell content.
@@ -18,7 +20,7 @@ external interface TableCellProps : react.PropsWithChildren {
     /**
      * The content of the component.
      */
-    override var children: Array<out react.ReactNode>?
+    override var children: ReadonlyArray<react.ReactNode>?
 
     /**
      * Override or extend the styles applied to the component.

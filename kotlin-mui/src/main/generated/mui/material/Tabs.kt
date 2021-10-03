@@ -5,6 +5,8 @@
 
 package mui.material
 
+import kotlinext.js.ReadonlyArray
+
 external interface TabsProps : react.PropsWithChildren {
     /**
      * Callback fired when the component mounts.
@@ -43,7 +45,7 @@ external interface TabsProps : react.PropsWithChildren {
     /**
      * The content of the component.
      */
-    override var children: Array<out react.ReactNode>?
+    override var children: ReadonlyArray<react.ReactNode>?
 
     /**
      * Override or extend the styles applied to the component.

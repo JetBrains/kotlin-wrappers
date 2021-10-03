@@ -5,6 +5,8 @@
 
 package mui.material
 
+import kotlinext.js.ReadonlyArray
+
 external interface TableSortLabelProps : react.PropsWithChildren {
     /**
      * If `true`, the label will have the active styling (should be true for the sorted column).
@@ -15,7 +17,7 @@ external interface TableSortLabelProps : react.PropsWithChildren {
     /**
      * Label contents, the arrow will be appended automatically.
      */
-    override var children: Array<out react.ReactNode>?
+    override var children: ReadonlyArray<react.ReactNode>?
 
     /**
      * Override or extend the styles applied to the component.
