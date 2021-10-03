@@ -5,11 +5,13 @@
 
 package mui.material
 
+import kotlinext.js.ReadonlyArray
+
 external interface ImageListProps : react.PropsWithChildren {
     /**
      * The content of the component, normally `ImageListItem`s.
      */
-    override var children: Array<out react.ReactNode>?
+    override var children: ReadonlyArray<react.ReactNode>?
 
     /**
      * Override or extend the styles applied to the component.

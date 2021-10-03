@@ -5,6 +5,8 @@
 
 package mui.material
 
+import kotlinext.js.ReadonlyArray
+
 external interface MenuListProps : react.PropsWithChildren {
     /**
      * If `true`, will focus the `[role="menu"]` container and move into tab order.
@@ -22,7 +24,7 @@ external interface MenuListProps : react.PropsWithChildren {
     /**
      * MenuList contents, normally `MenuItem`s.
      */
-    override var children: Array<out react.ReactNode>?
+    override var children: ReadonlyArray<react.ReactNode>?
 
     /**
      * If `true`, will allow focus on disabled items.

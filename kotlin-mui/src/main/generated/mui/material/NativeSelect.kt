@@ -5,12 +5,14 @@
 
 package mui.material
 
+import kotlinext.js.ReadonlyArray
+
 external interface NativeSelectProps : react.PropsWithChildren {
     /**
      * The option elements to populate the select with.
      * Can be some `<option>` elements.
      */
-    override var children: Array<out react.ReactNode>?
+    override var children: ReadonlyArray<react.ReactNode>?
 
     /**
      * Override or extend the styles applied to the component.

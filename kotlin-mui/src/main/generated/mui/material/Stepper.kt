@@ -5,6 +5,8 @@
 
 package mui.material
 
+import kotlinext.js.ReadonlyArray
+
 external interface StepperProps : react.PropsWithChildren {
     /**
      * Set the active step (zero based index).
@@ -23,7 +25,7 @@ external interface StepperProps : react.PropsWithChildren {
     /**
      * Two or more `<Step />` components.
      */
-    override var children: Array<out react.ReactNode>?
+    override var children: ReadonlyArray<react.ReactNode>?
 
     /**
      * Override or extend the styles applied to the component.

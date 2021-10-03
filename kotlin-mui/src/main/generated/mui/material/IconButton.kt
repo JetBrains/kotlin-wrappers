@@ -5,11 +5,13 @@
 
 package mui.material
 
+import kotlinext.js.ReadonlyArray
+
 external interface IconButtonProps : react.PropsWithChildren {
     /**
      * The icon to display.
      */
-    override var children: Array<out react.ReactNode>?
+    override var children: ReadonlyArray<react.ReactNode>?
 
     /**
      * Override or extend the styles applied to the component.

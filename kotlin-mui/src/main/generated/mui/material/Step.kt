@@ -5,6 +5,8 @@
 
 package mui.material
 
+import kotlinext.js.ReadonlyArray
+
 external interface StepProps : react.PropsWithChildren {
     /**
      * Sets the step as active. Is passed to child components.
@@ -14,7 +16,7 @@ external interface StepProps : react.PropsWithChildren {
     /**
      * Should be `Step` sub-components such as `StepLabel`, `StepContent`.
      */
-    override var children: Array<out react.ReactNode>?
+    override var children: ReadonlyArray<react.ReactNode>?
 
     /**
      * Override or extend the styles applied to the component.

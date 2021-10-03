@@ -5,6 +5,8 @@
 
 package mui.material
 
+import kotlinext.js.ReadonlyArray
+
 external interface AvatarProps : react.PropsWithChildren {
     /**
      * Used in combination with `src` or `srcSet` to
@@ -16,7 +18,7 @@ external interface AvatarProps : react.PropsWithChildren {
      * Used to render icon or text elements inside the Avatar if `src` is not set.
      * This can be an element, or just a string.
      */
-    override var children: Array<out react.ReactNode>?
+    override var children: ReadonlyArray<react.ReactNode>?
 
     /**
      * Override or extend the styles applied to the component.

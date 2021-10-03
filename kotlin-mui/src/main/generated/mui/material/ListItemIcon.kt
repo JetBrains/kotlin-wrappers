@@ -5,12 +5,14 @@
 
 package mui.material
 
+import kotlinext.js.ReadonlyArray
+
 external interface ListItemIconProps : react.PropsWithChildren {
     /**
      * The content of the component, normally `Icon`, `SvgIcon`,
      * or a `@mui/icons-material` SVG icon element.
      */
-    override var children: Array<out react.ReactNode>?
+    override var children: ReadonlyArray<react.ReactNode>?
 
     /**
      * Override or extend the styles applied to the component.

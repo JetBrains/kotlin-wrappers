@@ -5,11 +5,13 @@
 
 package mui.material
 
+import kotlinext.js.ReadonlyArray
+
 external interface SpeedDialProps : react.PropsWithChildren {
     /**
      * SpeedDialActions to display when the SpeedDial is `open`.
      */
-    override var children: Array<out react.ReactNode>?
+    override var children: ReadonlyArray<react.ReactNode>?
 
     /**
      * Override or extend the styles applied to the component.

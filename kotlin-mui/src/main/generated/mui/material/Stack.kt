@@ -5,13 +5,15 @@
 
 package mui.material
 
+import kotlinext.js.ReadonlyArray
+
 external interface StackProps : react.PropsWithChildren {
     var ref: react.Ref<*>
 
     /**
      * The content of the component.
      */
-    override var children: Array<out react.ReactNode>?
+    override var children: ReadonlyArray<react.ReactNode>?
 
     /**
      * Defines the `flex-direction` style property.

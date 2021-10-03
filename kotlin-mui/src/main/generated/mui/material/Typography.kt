@@ -5,6 +5,8 @@
 
 package mui.material
 
+import kotlinext.js.ReadonlyArray
+
 external interface TypographyProps : react.PropsWithChildren {
     /**
      * Set the text-align on the component.
@@ -15,7 +17,7 @@ external interface TypographyProps : react.PropsWithChildren {
     /**
      * The content of the component.
      */
-    override var children: Array<out react.ReactNode>?
+    override var children: ReadonlyArray<react.ReactNode>?
 
     /**
      * Override or extend the styles applied to the component.

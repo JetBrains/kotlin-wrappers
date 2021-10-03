@@ -5,11 +5,13 @@
 
 package mui.material
 
+import kotlinext.js.ReadonlyArray
+
 external interface StepButtonProps : react.PropsWithChildren {
     /**
      * Can be a `StepLabel` or a node to place inside `StepLabel` as children.
      */
-    override var children: Array<out react.ReactNode>?
+    override var children: ReadonlyArray<react.ReactNode>?
 
     /**
      * Override or extend the styles applied to the component.

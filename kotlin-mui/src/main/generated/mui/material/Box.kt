@@ -5,8 +5,10 @@
 
 package mui.material
 
+import kotlinext.js.ReadonlyArray
+
 external interface BoxProps : react.PropsWithChildren {
-    override var children: Array<out react.ReactNode>?
+    override var children: ReadonlyArray<react.ReactNode>?
 
     var component: react.ElementType<*>
 

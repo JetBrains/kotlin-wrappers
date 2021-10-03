@@ -5,6 +5,8 @@
 
 package mui.material
 
+import kotlinext.js.ReadonlyArray
+
 external interface SelectProps : react.PropsWithChildren {
     /**
      * If `true`, the width of the popover will automatically be set according to the items inside the
@@ -19,7 +21,7 @@ external interface SelectProps : react.PropsWithChildren {
      *
      * ⚠️The `MenuItem` elements **must** be direct descendants when `native` is false.
      */
-    override var children: Array<out react.ReactNode>?
+    override var children: ReadonlyArray<react.ReactNode>?
 
     /**
      * Override or extend the styles applied to the component.
