@@ -1,9 +1,5 @@
 package react
 
-import kotlinext.js.ReadonlyArray
-
-typealias RDependenciesArray = ReadonlyArray<dynamic>
-
 typealias Cleanup = () -> Unit
 
 /**
