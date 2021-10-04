@@ -41,13 +41,13 @@ class StyleSheetTest : TestBase() {
     }
 
     @Test
-    fun styleSheetNotInjectedWithoutComponent() = runTest {
+    fun styleSheetInjectedWithoutComponent() = runTest {
         CssBuilder().apply {
             +staticStyleSheet.property1
         }
         val rules = getStylesheet().cssRules
-        assertEquals(1, sheet.scheduledGroups.size)
-        assertEquals(0, rules.length)
+        assertEquals(0, sheet.scheduledGroups.size)
+        assertEquals(3, rules.length)
     }
 
     object SheetWithMarker : StyleSheet("SheetWithMarker", isStatic = true) {
@@ -214,7 +214,6 @@ class StyleSheetTest : TestBase() {
             }
         }
         val element = clearAndInject(styledComponent)
-        getRules().forEach { println(it.cssText) }
         assertContains(element.className, "StaticStyleSheetObject-property")
         assertEquals(expectedColor, element.color())
         assertCssInjected("StaticStyleSheetObject-property", "color" to expectedColor)
