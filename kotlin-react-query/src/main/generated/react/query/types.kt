@@ -30,26 +30,13 @@ external interface UseMutationOptions<TData, TError, TVariables, TContext> {
     var onSettled: (data: TData?, error: TError?, variables: TVariables, context: TContext?) -> kotlin.js.Promise<Any>?
     var retry: RetryValue<TError>
     var retryDelay: RetryDelayValue<TError>
-    var useErrorBoundary: Boolean
+    var useErrorBoundary: (error: TError) -> Boolean
 }
 
 typealias UseMutateFunction<TData, TError, TVariables, TContext> = (variables: TVariables, options: MutateOptions<TData, TError, TVariables, TContext>?) -> Unit
 
 typealias UseMutateAsyncFunction<TData, TError, TVariables, TContext> = (variables: TVariables, options: MutateOptions<TData, TError, TVariables, TContext>?) -> kotlin.js.Promise<TData>
 
-external interface UseMutationResult<TData, TError, TVariables, TContext> {
-    val context: TContext?
-    val data: TData?
-    val error: TError?
-    val failureCount: Int
-    val isError: Boolean
-    val isIdle: Boolean
-    val isLoading: Boolean
-    val isPaused: Boolean
-    val isSuccess: Boolean
-    val mutate: UseMutateFunction<TData, TError, TVariables, TContext>
-    val mutateAsync: UseMutateAsyncFunction<TData, TError, TVariables, TContext>
-    val reset: () -> Unit
-    val status: MutationStatus
-    val variables: TVariables?
-}
+typealias UseBaseMutationResult<TData, TError, TVariables, TContext> = MutationObserverResult<TData, TError, TVariables, TContext>
+
+typealias UseMutationResult<TData, TError, TVariables, TContext> = UseBaseMutationResult<TData, TError, TVariables, TContext>

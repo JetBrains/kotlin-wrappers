@@ -65,7 +65,7 @@ external interface QueryObserverOptions<TQueryFnData, TError, TData, TQueryData,
     var onSuccess: (data: TData) -> Unit
     var onError: (err: TError) -> Unit
     var onSettled: (data: TData?, error: TError?) -> Unit
-    var useErrorBoundary: Boolean
+    var useErrorBoundary: (error: TError) -> Boolean
     var select: (data: TQueryData) -> TData
     var suspense: Boolean
     var keepPreviousData: Boolean
@@ -312,7 +312,7 @@ external interface MutationOptions<TData, TError, TVariables, TContext> {
 
 external interface MutationObserverOptions<TData, TError, TVariables, TContext>
     : MutationOptions<TData, TError, TVariables, TContext> {
-    var useErrorBoundary: Boolean
+    var useErrorBoundary: (error: TError) -> Boolean
 }
 
 external interface MutateOptions<TData, TError, TVariables, TContext> {
@@ -323,7 +323,7 @@ external interface MutateOptions<TData, TError, TVariables, TContext> {
 
 typealias MutateFunction<TData, TError, TVariables, TContext> = (variables: TVariables, options: MutateOptions<TData, TError, TVariables, TContext>?) -> kotlin.js.Promise<TData>
 
-external interface MutationObserverResult<TData, TError, TVariables, TContext>
+external interface MutationObserverBaseResult<TData, TError, TVariables, TContext>
     : MutationState<TData, TError, TVariables, TContext> {
     val isError: Boolean
     val isIdle: Boolean
@@ -332,6 +332,53 @@ external interface MutationObserverResult<TData, TError, TVariables, TContext>
     val mutate: MutateFunction<TData, TError, TVariables, TContext>
     val reset: () -> Unit
 }
+
+external interface MutationObserverIdleResult<TData, TError, TVariables, TContext>
+    : MutationObserverResult<TData, TError, TVariables, TContext> {
+    override val data: Nothing?
+    override val error: Nothing?
+    override val isError: False
+    override val isIdle: True
+    override val isLoading: False
+    override val isSuccess: False
+    override val status: MutationStatus /* 'idle' */
+}
+
+external interface MutationObserverLoadingResult<TData, TError, TVariables, TContext>
+    : MutationObserverResult<TData, TError, TVariables, TContext> {
+    override val data: Nothing?
+    override val error: Nothing?
+    override val isError: False
+    override val isIdle: False
+    override val isLoading: True
+    override val isSuccess: False
+    override val status: MutationStatus /* 'loading' */
+}
+
+external interface MutationObserverErrorResult<TData, TError, TVariables, TContext>
+    : MutationObserverResult<TData, TError, TVariables, TContext> {
+    override val data: Nothing?
+    override val error: TError
+    override val isError: True
+    override val isIdle: False
+    override val isLoading: False
+    override val isSuccess: False
+    override val status: MutationStatus /* 'error' */
+}
+
+external interface MutationObserverSuccessResult<TData, TError, TVariables, TContext>
+    : MutationObserverResult<TData, TError, TVariables, TContext> {
+    override val data: TData
+    override val error: Nothing?
+    override val isError: False
+    override val isIdle: False
+    override val isLoading: False
+    override val isSuccess: True
+    override val status: MutationStatus /* 'success' */
+}
+
+sealed external interface MutationObserverResult<TData, TError, TVariables, TContext>
+    : MutationObserverBaseResult<TData, TError, TVariables, TContext>
 
 external interface DefaultOptions<TError> {
     var queries: QueryObserverOptions<*, TError, *, *, *>
