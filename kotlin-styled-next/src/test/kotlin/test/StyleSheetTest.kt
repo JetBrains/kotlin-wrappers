@@ -1,21 +1,15 @@
 package test
 
 import kotlinx.browser.document
-import kotlinx.css.CssBuilder
-import kotlinx.css.backgroundColor
-import kotlinx.css.color
-import kotlinx.css.px
+import kotlinx.css.*
 import org.w3c.dom.HTMLStyleElement
 import org.w3c.dom.css.CSSRuleList
 import org.w3c.dom.css.CSSStyleSheet
 import react.Props
 import react.fc
 import runTest
-import styled.StyleSheet
-import styled.css
-import styled.cssMarker
+import styled.*
 import styled.sheets.importStyleId
-import styled.styledSpan
 import test.styleSheets.*
 import kotlin.test.BeforeTest
 import kotlin.test.Test
@@ -47,13 +41,13 @@ class StyleSheetTest : TestBase() {
     }
 
     @Test
-    fun styleSheetNotInjectedWithoutComponent() = runTest {
+    fun styleSheetInjectedWithoutComponent() = runTest {
         CssBuilder().apply {
             +staticStyleSheet.property1
         }
         val rules = getStylesheet().cssRules
-        assertEquals(1, sheet.scheduledGroups.size)
-        assertEquals(0, rules.length)
+        assertEquals(0, sheet.scheduledGroups.size)
+        assertEquals(3, rules.length)
     }
 
     object SheetWithMarker : StyleSheet("SheetWithMarker", isStatic = true) {
@@ -197,5 +191,31 @@ class StyleSheetTest : TestBase() {
         }
         clearAndInject(styledComponent)
         assertCssInjected("StaticStyleSheet-prefixedProperty", "-webkit-box-align" to "center")
+    }
+
+
+    object StaticStyleSheetObject : StyleSheet("StaticStyleSheetObject", isStatic = true) {
+        val property1 by css {
+            color = rgb(3, 4, 5)
+        }
+        val property2 by css {
+        }
+    }
+
+    @Test
+    fun styleSheetGetClassname() = runTest {
+        val expectedColor = rgb(3, 4, 5).toString()
+        val styledComponent = fc<Props> {
+            styledSpan {
+                css {
+                    +StaticStyleSheetObject.getClassName { it::property1 }
+                    +StaticStyleSheetObject.property2
+                }
+            }
+        }
+        val element = clearAndInject(styledComponent)
+        assertContains(element.className, "StaticStyleSheetObject-property")
+        assertEquals(expectedColor, element.color())
+        assertCssInjected("StaticStyleSheetObject-property", "color" to expectedColor)
     }
 }
