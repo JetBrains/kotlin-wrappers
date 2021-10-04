@@ -19,13 +19,13 @@ external interface MutationConfig<TData, TError, TVariables, TContext> {
 }
 
 external interface MutationState<TData, TError, TVariables, TContext> {
-    var context: TContext?
-    var data: TData?
-    var error: TError?
-    var failureCount: Int
-    var isPaused: Boolean
-    var status: MutationStatus
-    var variables: TVariables?
+    val context: TContext?
+    val data: TData?
+    val error: TError?
+    val failureCount: Int
+    val isPaused: Boolean
+    val status: MutationStatus
+    val variables: TVariables?
 }
 
 external interface MutationFailedAction {
