@@ -2,10 +2,10 @@
 
 package mui.material
 
-
 external interface Theme
 
-external interface SxProps<T : Any>
+@Suppress("UNUSED_TYPEALIAS_PARAMETER")
+typealias SxProps<T> = react.CSSProperties
 
 external interface ResponsiveStyleValue<T : Any>
 
