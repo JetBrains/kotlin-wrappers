@@ -2,4 +2,4 @@
 
 # kotlin-react-popper
 
-[React Popper](https://github.com/popperjs/react-popper) - official React library to use [Popper](https://popper.js.org/), the positioning library.
+[React Popper](https://github.com/popperjs/react-popper) — React wrapper around [Popper](https://popper.js.org/), a tooltip & popover positioning engine.

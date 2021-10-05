@@ -2,4 +2,4 @@
 
 # kotlin-react-virtual
 
-[React Virtual](https://github.com/tannerlinsley/react-virtual) - hooks for virtualizing scrollable elements in React
+[React Virtual](https://github.com/tannerlinsley/react-virtual) — hooks for virtualizing scrollable elements in React
