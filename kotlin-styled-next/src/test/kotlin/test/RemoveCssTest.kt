@@ -245,8 +245,7 @@ class RemoveCssTest : TestBase() {
             styledDiv { css { +staticStyleSheet.property1 } }
         }
         clearAndInject(styledComponent)
-        // All stylesheet properties are injected when injecting one because stylesheet is an initialized local variable
-        assertEquals(3, getRules().length)
+        assertEquals(1, getRules().length)
         removeInjectedStyleSheet()
         assertEquals(0, getRules().length)
     }
@@ -257,8 +256,7 @@ class RemoveCssTest : TestBase() {
             styledDiv { css { +staticStyleSheet.property1 } }
         }
         clearAndInject(styledComponent)
-        // All stylesheet properties are injected when injecting one because  stylesheet is an initialized local variable
-        assertEquals(3, getRules().length)
+        assertEquals(1, getRules().length)
         removeInjectedStyleSheet()
         assertEquals(0, getRules().length)
 
@@ -272,7 +270,7 @@ class RemoveCssTest : TestBase() {
         }
         clearAndInject(styledComponent)
         injectAdditional(styledComponent2)
-        assertEquals(3, getRules().length)
+        assertEquals(2, getRules().length)
         removeInjectedStyleSheet()
         assertEquals(0, getRules().length)
     }

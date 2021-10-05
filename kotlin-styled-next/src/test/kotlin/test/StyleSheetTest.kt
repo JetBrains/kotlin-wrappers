@@ -46,8 +46,8 @@ class StyleSheetTest : TestBase() {
             +staticStyleSheet.property1
         }
         val rules = getStylesheet().cssRules
-        assertEquals(0, sheet.scheduledGroups.size)
-        assertEquals(3, rules.length)
+        assertEquals(1, sheet.scheduledGroups.size)
+        assertEquals(0, rules.length)
     }
 
     object SheetWithMarker : StyleSheet("SheetWithMarker", isStatic = true) {
@@ -198,8 +198,6 @@ class StyleSheetTest : TestBase() {
         val property1 by css {
             color = rgb(3, 4, 5)
         }
-        val property2 by css {
-        }
     }
 
     @Test
@@ -209,7 +207,6 @@ class StyleSheetTest : TestBase() {
             styledSpan {
                 css {
                     +StaticStyleSheetObject.getClassName { it::property1 }
-                    +StaticStyleSheetObject.property2
                 }
             }
         }
