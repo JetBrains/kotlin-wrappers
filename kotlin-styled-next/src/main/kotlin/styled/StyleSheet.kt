@@ -44,7 +44,7 @@ open class StyleSheet(
         GlobalStyles.injectScheduled()
     }
 
-    internal fun injectImports() {
+    internal fun scheduleImports() {
         if (imports.isNotEmpty()) {
             GlobalStyles.scheduleImports(imports)
             imports = emptyList()
@@ -52,9 +52,15 @@ open class StyleSheet(
     }
 
     fun scheduleToInject() {
-        injectImports()
+        scheduleImports()
         holders.forEach {
             it.scheduleToInject()
+        }
+    }
+
+    fun scheduleToInject(className: String) {
+        holders.forEach {
+            it.scheduleToInject(className)
         }
     }
 
@@ -72,7 +78,7 @@ class CssHolder(private val sheet: StyleSheet, internal vararg val ruleSets: Rul
         }
     }
 
-    private fun scheduleToInject(className: String) {
+    fun scheduleToInject(className: String) {
         if (classNamesToInject[className] == true) {
             classNamesToInject[className] = false
             GlobalStyles.scheduleToInject(".$className", css)
@@ -94,10 +100,9 @@ class CssHolder(private val sheet: StyleSheet, internal vararg val ruleSets: Rul
         classNamesToInject[className] = true
         return ReadOnlyProperty { _, property ->
             {
-                sheet.injectImports()
+                sheet.scheduleImports()
                 if (sheet.isStatic) {
                     scheduleToInject(className)
-                    sheet.inject()
                     +className
                 }
                 if (!sheet.isStatic || !allowClasses) {
@@ -110,7 +115,10 @@ class CssHolder(private val sheet: StyleSheet, internal vararg val ruleSets: Rul
 }
 
 fun <T : StyleSheet> T.getClassName(getClass: (T) -> KProperty0<RuleSet>): String {
-    return getClassName(getClass(this))
+    return getClassName(getClass(this)).also {
+        scheduleToInject(it)
+        GlobalStyles.injectScheduled()
+    }
 }
 
 private fun StyleSheet.getClassName(property: KProperty<*>): String {
