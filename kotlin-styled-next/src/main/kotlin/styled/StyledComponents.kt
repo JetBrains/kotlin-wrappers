@@ -118,7 +118,6 @@ fun customStyled(type: String): ComponentType<StyledProps> {
             if (generatedClasses != null) {
                 GlobalStyles.checkGeneratedCss(generatedClasses, selfClassName, type)
             }
-            GlobalStyles.injectScheduled()
             styledCss to (classes + selfClassName).joinToString(" ")
         }
 

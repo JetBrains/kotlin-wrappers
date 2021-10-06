@@ -6,8 +6,16 @@ import react.StateInstance
 import styled.sheets.*
 import kotlin.collections.*
 
-data class UsedCssInfo(val className: ClassName, var usedBy: Int, val groupId: Int)
+data class UsedCssInfo(
+    val className: ClassName,
+    var usedBy: Int,
+    val groupId: Int,
+    var associatedClasses: MutableSet<String> = mutableSetOf()
+)
 internal typealias InjectedCssHolder = LinkedHashMap<StyledCss, UsedCssInfo>
+internal fun List<String>.toClassName(): String {
+    return this.joinToString(" ")
+}
 
 /**
  * Inject CSS rules defined in [css] into the DOM
@@ -47,10 +55,18 @@ object GlobalStyles {
     private fun getInjectedClassName(css: StyledCss): ClassName {
         val info = styledClasses[css]
         return if (info != null) {
+            // If we have the same CSS but with other static stylesheets we need to inject them
+            val className = css.classes.toClassName()
+            if (!info.associatedClasses.contains(className)) {
+                info.associatedClasses.add(className)
+                injectScheduled()
+            }
             info.usedBy++
             info.className
         } else {
-            scheduleToInjectClassName(css)
+            scheduleToInjectClassName(css).also {
+                injectScheduled()
+            }
         }
     }
 
@@ -60,7 +76,8 @@ object GlobalStyles {
         val rules = css.getCssRules(selector)
         val groupId = sheet.scheduleToInject(rules)
 
-        styledClasses[css] = UsedCssInfo(className, 1, groupId)
+        // TODO we can store classnames as single string in StyledCss
+        styledClasses[css] = UsedCssInfo(className, 1, groupId, mutableSetOf(css.classes.toClassName()))
         return className
     }
 
