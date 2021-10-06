@@ -6,7 +6,7 @@ import react.StateInstance
 import styled.sheets.*
 import kotlin.collections.*
 
-data class UsedCssInfo(val className: ClassName, var usedBy: Int, val groupId: Int)
+data class UsedCssInfo(val className: ClassName, var usedBy: Int, val groupId: Int, var styleSheetClasses: List<String> = listOf())
 internal typealias InjectedCssHolder = LinkedHashMap<StyledCss, UsedCssInfo>
 
 /**
@@ -47,10 +47,17 @@ object GlobalStyles {
     private fun getInjectedClassName(css: StyledCss): ClassName {
         val info = styledClasses[css]
         return if (info != null) {
+            // If we have the same CSS but with other static stylesheets we need to inject them
+            if (info.styleSheetClasses != css.classes) {
+                info.styleSheetClasses = css.classes
+                injectScheduled()
+            }
             info.usedBy++
             info.className
         } else {
-            scheduleToInjectClassName(css)
+            scheduleToInjectClassName(css).also {
+                injectScheduled()
+            }
         }
     }
 
@@ -60,7 +67,7 @@ object GlobalStyles {
         val rules = css.getCssRules(selector)
         val groupId = sheet.scheduleToInject(rules)
 
-        styledClasses[css] = UsedCssInfo(className, 1, groupId)
+        styledClasses[css] = UsedCssInfo(className, 1, groupId, css.classes)
         return className
     }
 
