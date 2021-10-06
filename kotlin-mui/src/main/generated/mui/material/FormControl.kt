@@ -22,7 +22,7 @@ external interface FormControlProps : react.PropsWithChildren {
      * The color of the component. It supports those theme colors that make sense for this component.
      * @default 'primary'
      */
-    var color: Union /* 'primary' | 'secondary' | 'error' | 'info' | 'success' | 'warning', FormControlPropsColorOverrides */
+    var color: mui.system.Union /* 'primary' | 'secondary' | 'error' | 'info' | 'success' | 'warning', FormControlPropsColorOverrides */
 
     /**
      * If `true`, the label, input and helper text should be displayed in a disabled state.
@@ -59,7 +59,7 @@ external interface FormControlProps : react.PropsWithChildren {
      * If `dense` or `normal`, will adjust vertical spacing of this and contained components.
      * @default 'none'
      */
-    var margin: Union /* 'dense' | 'normal' | 'none' */
+    var margin: mui.system.Union /* 'dense' | 'normal' | 'none' */
 
     /**
      * If `true`, the label will indicate that the `input` is required.
@@ -71,18 +71,18 @@ external interface FormControlProps : react.PropsWithChildren {
      * The size of the component.
      * @default 'medium'
      */
-    var size: Union /* 'small' | 'medium', FormControlPropsSizeOverrides */
+    var size: mui.system.Union /* 'small' | 'medium', FormControlPropsSizeOverrides */
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: SxProps<Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>
 
     /**
      * The variant to use.
      * @default 'outlined'
      */
-    var variant: Union /* 'standard' | 'outlined' | 'filled' */
+    var variant: mui.system.Union /* 'standard' | 'outlined' | 'filled' */
 }
 
 /**

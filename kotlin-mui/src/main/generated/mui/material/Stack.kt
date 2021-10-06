@@ -20,13 +20,13 @@ external interface StackProps : react.PropsWithChildren {
      * It is applied for all screen sizes.
      * @default 'column'
      */
-    var direction: ResponsiveStyleValue<Union /* 'row' | 'row-reverse' | 'column' | 'column-reverse' */>
+    var direction: mui.system.ResponsiveStyleValue<mui.system.Union /* 'row' | 'row-reverse' | 'column' | 'column-reverse' */>
 
     /**
      * Defines the space between immediate children.
      * @default 0
      */
-    var spacing: ResponsiveStyleValue<dynamic>
+    var spacing: mui.system.ResponsiveStyleValue<dynamic>
 
     /**
      * Add an element between each child.
@@ -36,7 +36,7 @@ external interface StackProps : react.PropsWithChildren {
     /**
      * The system prop, which allows defining system overrides as well as additional CSS styles.
      */
-    var sx: SxProps<Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>
 }
 
 /**

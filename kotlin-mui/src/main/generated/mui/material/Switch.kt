@@ -20,7 +20,7 @@ external interface SwitchProps : react.Props {
      * The color of the component. It supports those theme colors that make sense for this component.
      * @default 'primary'
      */
-    var color: Union /* 'primary' | 'secondary' | 'error' | 'info' | 'success' | 'warning' | 'default', SwitchPropsColorOverrides */
+    var color: mui.system.Union /* 'primary' | 'secondary' | 'error' | 'info' | 'success' | 'warning' | 'default', SwitchPropsColorOverrides */
 
     /**
      * If `true`, the component is disabled.
@@ -37,12 +37,12 @@ external interface SwitchProps : react.Props {
      * `small` is equivalent to the dense switch styling.
      * @default 'medium'
      */
-    var size: Union /* 'small' | 'medium', SwitchPropsSizeOverrides */
+    var size: mui.system.Union /* 'small' | 'medium', SwitchPropsSizeOverrides */
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: SxProps<Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>
 
     /**
      * The value of the component. The DOM API casts this to a string.

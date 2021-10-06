@@ -95,7 +95,7 @@ external interface PopoverProps : react.PropsWithChildren {
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: SxProps<Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>
 
     /**
      * This is the point on the popover which
@@ -129,13 +129,13 @@ external interface PopoverProps : react.PropsWithChildren {
      * By default, the element is based on this [`Transition`](https://reactcommunity.org/react-transition-group/transition) component.
      * @default {}
      */
-    var TransitionProps: TransitionProps
+    var TransitionProps: mui.material.transitions.TransitionProps
 }
 
 external interface PopoverOrigin {
-    var vertical: Union /* 'top' | 'center' | 'bottom' | number */
+    var vertical: mui.system.Union /* 'top' | 'center' | 'bottom' | number */
 
-    var horizontal: Union /* 'left' | 'center' | 'right' | number */
+    var horizontal: mui.system.Union /* 'left' | 'center' | 'right' | number */
 }
 
 external interface PopoverPosition {

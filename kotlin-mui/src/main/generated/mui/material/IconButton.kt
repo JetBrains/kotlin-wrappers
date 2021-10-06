@@ -22,7 +22,7 @@ external interface IconButtonProps : react.PropsWithChildren {
      * The color of the component. It supports those theme colors that make sense for this component.
      * @default 'default'
      */
-    var color: Union /* 'inherit' | 'default' | 'primary' | 'secondary' | 'error' | 'info' | 'success' | 'warning', IconButtonPropsColorOverrides */
+    var color: mui.system.Union /* 'inherit' | 'default' | 'primary' | 'secondary' | 'error' | 'info' | 'success' | 'warning', IconButtonPropsColorOverrides */
 
     /**
      * If `true`, the component is disabled.
@@ -43,19 +43,19 @@ external interface IconButtonProps : react.PropsWithChildren {
      * size and shape).
      * @default false
      */
-    var edge: Union /* 'start' | 'end' | false */
+    var edge: mui.system.Union /* 'start' | 'end' | false */
 
     /**
      * The size of the component.
      * `small` is equivalent to the dense button styling.
      * @default 'medium'
      */
-    var size: Union /* 'small' | 'medium' | 'large', IconButtonPropsSizeOverrides */
+    var size: mui.system.Union /* 'small' | 'medium' | 'large', IconButtonPropsSizeOverrides */
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: SxProps<Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>
 }
 
 /**

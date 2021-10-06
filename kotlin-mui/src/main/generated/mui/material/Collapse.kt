@@ -30,7 +30,7 @@ external interface CollapseProps : react.PropsWithChildren {
      * The component used for the root node.
      * Either a string to use a HTML element or a component.
      */
-    var component: react.ElementType<TransitionProps>
+    var component: react.ElementType<mui.material.transitions.TransitionProps>
 
     /**
      * The transition timing function.
@@ -47,7 +47,7 @@ external interface CollapseProps : react.PropsWithChildren {
      * The transition orientation.
      * @default 'vertical'
      */
-    var orientation: Union /* 'horizontal' | 'vertical' */
+    var orientation: mui.system.Union /* 'horizontal' | 'vertical' */
 
     /**
      * The duration for the transition, in milliseconds.
@@ -61,7 +61,7 @@ external interface CollapseProps : react.PropsWithChildren {
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: SxProps<Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>
 }
 
 /**

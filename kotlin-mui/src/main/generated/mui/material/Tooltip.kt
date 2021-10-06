@@ -121,7 +121,7 @@ external interface TooltipProps : react.Props {
      * Tooltip placement.
      * @default 'bottom'
      */
-    var placement: Union /* 'bottom-end' | 'bottom-start' | 'bottom' | 'left-end' | 'left-start' | 'left' | 'right-end' | 'right-start' | 'right' | 'top-end' | 'top-start' | 'top' */
+    var placement: mui.system.Union /* 'bottom-end' | 'bottom-start' | 'bottom' | 'left-end' | 'left-start' | 'left' | 'right-end' | 'right-start' | 'right' | 'top-end' | 'top-start' | 'top' */
 
     /**
      * The component used for the popper.
@@ -138,7 +138,7 @@ external interface TooltipProps : react.Props {
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: SxProps<Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>
 
     /**
      * Tooltip title. Zero-length titles string are never displayed.
@@ -156,7 +156,7 @@ external interface TooltipProps : react.Props {
      * Props applied to the transition element.
      * By default, the element is based on this [`Transition`](https://reactcommunity.org/react-transition-group/transition) component.
      */
-    var TransitionProps: TransitionProps
+    var TransitionProps: mui.material.transitions.TransitionProps
 }
 
 /**

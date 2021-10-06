@@ -15,7 +15,7 @@ external interface PaginationProps : react.Props {
      * The active color.
      * @default 'standard'
      */
-    var color: Union /* 'primary' | 'secondary' | 'standard', PaginationPropsColorOverrides */
+    var color: mui.system.Union /* 'primary' | 'secondary' | 'standard', PaginationPropsColorOverrides */
 
     /**
      * Accepts a function which returns a string value that provides a user-friendly name for the current page.
@@ -41,24 +41,24 @@ external interface PaginationProps : react.Props {
      * The shape of the pagination items.
      * @default 'circular'
      */
-    var shape: Union /* 'circular' | 'rounded' */
+    var shape: mui.system.Union /* 'circular' | 'rounded' */
 
     /**
      * The size of the component.
      * @default 'medium'
      */
-    var size: Union /* 'small' | 'medium' | 'large', PaginationPropsSizeOverrides */
+    var size: mui.system.Union /* 'small' | 'medium' | 'large', PaginationPropsSizeOverrides */
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: SxProps<Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>
 
     /**
      * The variant to use.
      * @default 'text'
      */
-    var variant: Union /* 'text' | 'outlined', PaginationPropsVariantOverrides */
+    var variant: mui.system.Union /* 'text' | 'outlined', PaginationPropsVariantOverrides */
 }
 
 /**

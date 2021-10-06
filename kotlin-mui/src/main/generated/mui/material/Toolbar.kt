@@ -29,12 +29,12 @@ external interface ToolbarProps : react.PropsWithChildren {
      * The variant to use.
      * @default 'regular'
      */
-    var variant: Union /* 'regular' | 'dense', ToolbarPropsVariantOverrides */
+    var variant: mui.system.Union /* 'regular' | 'dense', ToolbarPropsVariantOverrides */
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: SxProps<Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>
 }
 
 /**

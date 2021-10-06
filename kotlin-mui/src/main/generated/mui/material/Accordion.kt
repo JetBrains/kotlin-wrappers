@@ -53,7 +53,7 @@ external interface AccordionProps : react.PropsWithChildren {
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: SxProps<Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>
 
     /**
      * The component used for the transition.
@@ -66,7 +66,7 @@ external interface AccordionProps : react.PropsWithChildren {
      * Props applied to the transition element.
      * By default, the element is based on this [`Transition`](https://reactcommunity.org/react-transition-group/transition) component.
      */
-    var TransitionProps: TransitionProps
+    var TransitionProps: mui.material.transitions.TransitionProps
 }
 
 /**

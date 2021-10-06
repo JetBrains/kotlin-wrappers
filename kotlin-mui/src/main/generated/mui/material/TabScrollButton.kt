@@ -21,7 +21,7 @@ external interface TabScrollButtonProps : react.PropsWithChildren {
     /**
      * The direction the button should indicate.
      */
-    var direction: Union /* 'left' | 'right' */
+    var direction: mui.system.Union /* 'left' | 'right' */
 
     /**
      * If `true`, the component is disabled.
@@ -31,12 +31,12 @@ external interface TabScrollButtonProps : react.PropsWithChildren {
     /**
      * The component orientation (layout flow direction).
      */
-    var orientation: Union /* 'horizontal' | 'vertical' */
+    var orientation: mui.system.Union /* 'horizontal' | 'vertical' */
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: SxProps<Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>
 }
 
 /**

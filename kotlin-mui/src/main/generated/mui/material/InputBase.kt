@@ -29,7 +29,7 @@ external interface InputBaseProps : react.Props {
      * The color of the component. It supports those theme colors that make sense for this component.
      * The prop defaults to the value (`'primary'`) inherited from the parent FormControl component.
      */
-    var color: Union /* 'primary' | 'secondary' | 'error' | 'info' | 'success' | 'warning', InputBasePropsColorOverrides */
+    var color: mui.system.Union /* 'primary' | 'secondary' | 'error' | 'info' | 'success' | 'warning', InputBasePropsColorOverrides */
 
     /**
      * The components used for each slot inside the InputBase.
@@ -100,7 +100,7 @@ external interface InputBaseProps : react.Props {
      * FormControl.
      * The prop defaults to the value (`'none'`) inherited from the parent FormControl component.
      */
-    var margin: Union /* 'dense' | 'none' */
+    var margin: mui.system.Union /* 'dense' | 'none' */
 
     /**
      * If `true`, a `textarea` element is rendered.
@@ -171,7 +171,7 @@ external interface InputBaseProps : react.Props {
     /**
      * The size of the component.
      */
-    var size: Union /* 'small' | 'medium', InputBasePropsSizeOverrides */
+    var size: mui.system.Union /* 'small' | 'medium', InputBasePropsSizeOverrides */
 
     /**
      * Start `InputAdornment` for this component.
@@ -181,7 +181,7 @@ external interface InputBaseProps : react.Props {
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: SxProps<Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>
 
     /**
      * Type of the `input` element. It should be [a valid HTML5 input type](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#Form_%3Cinput%3E_types).

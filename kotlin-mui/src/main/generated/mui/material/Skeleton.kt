@@ -13,7 +13,7 @@ external interface SkeletonProps : react.PropsWithChildren {
      * If `false` the animation effect is disabled.
      * @default 'pulse'
      */
-    var animation: Union /* 'pulse' | 'wave' | false */
+    var animation: mui.system.Union /* 'pulse' | 'wave' | false */
 
     /**
      * Optional children to infer width and height from.
@@ -34,13 +34,13 @@ external interface SkeletonProps : react.PropsWithChildren {
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: SxProps<Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>
 
     /**
      * The type of content that will be rendered.
      * @default 'text'
      */
-    var variant: Union /* 'text' | 'rectangular' | 'circular', SkeletonPropsVariantOverrides */
+    var variant: mui.system.Union /* 'text' | 'rectangular' | 'circular', SkeletonPropsVariantOverrides */
 
     /**
      * Width of the skeleton.

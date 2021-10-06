@@ -22,7 +22,7 @@ external interface ButtonGroupProps : react.PropsWithChildren {
      * The color of the component. It supports those theme colors that make sense for this component.
      * @default 'primary'
      */
-    var color: Union /* 'inherit' | 'primary' | 'secondary' | 'error' | 'info' | 'success' | 'warning', ButtonGroupPropsColorOverrides */
+    var color: mui.system.Union /* 'inherit' | 'primary' | 'secondary' | 'error' | 'info' | 'success' | 'warning', ButtonGroupPropsColorOverrides */
 
     /**
      * If `true`, the component is disabled.
@@ -58,25 +58,25 @@ external interface ButtonGroupProps : react.PropsWithChildren {
      * The component orientation (layout flow direction).
      * @default 'horizontal'
      */
-    var orientation: Union /* 'vertical' | 'horizontal' */
+    var orientation: mui.system.Union /* 'vertical' | 'horizontal' */
 
     /**
      * The size of the component.
      * `small` is equivalent to the dense button styling.
      * @default 'medium'
      */
-    var size: Union /* 'small' | 'medium' | 'large', ButtonGroupPropsSizeOverrides */
+    var size: mui.system.Union /* 'small' | 'medium' | 'large', ButtonGroupPropsSizeOverrides */
 
     /**
      * The variant to use.
      * @default 'outlined'
      */
-    var variant: Union /* 'text' | 'outlined' | 'contained', ButtonGroupPropsVariantOverrides */
+    var variant: mui.system.Union /* 'text' | 'outlined' | 'contained', ButtonGroupPropsVariantOverrides */
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: SxProps<Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>
 }
 
 /**

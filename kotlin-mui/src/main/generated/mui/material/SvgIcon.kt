@@ -23,13 +23,13 @@ external interface SvgIconProps : react.PropsWithChildren {
      * You can use the `htmlColor` prop to apply a color attribute to the SVG element.
      * @default 'inherit'
      */
-    var color: Union /* | 'inherit' | 'action' | 'disabled' | 'primary' | 'secondary' | 'error' | 'info' | 'success' | 'warning', SvgIconPropsColorOverrides */
+    var color: mui.system.Union /* | 'inherit' | 'action' | 'disabled' | 'primary' | 'secondary' | 'error' | 'info' | 'success' | 'warning', SvgIconPropsColorOverrides */
 
     /**
      * The fontSize applied to the icon. Defaults to 24px, but can be configure to inherit font size.
      * @default 'medium'
      */
-    var fontSize: Union /* 'inherit' | 'large' | 'medium' | 'small', SvgIconPropsSizeOverrides */
+    var fontSize: mui.system.Union /* 'inherit' | 'large' | 'medium' | 'small', SvgIconPropsSizeOverrides */
 
     /**
      * Applies a color attribute to the SVG element.
@@ -46,7 +46,7 @@ external interface SvgIconProps : react.PropsWithChildren {
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: SxProps<Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>
 
     /**
      * Provides a human-readable title for the element that contains it.

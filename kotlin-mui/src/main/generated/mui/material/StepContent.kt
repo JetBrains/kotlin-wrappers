@@ -21,14 +21,14 @@ external interface StepContentProps : react.PropsWithChildren {
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: SxProps<Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>
 
     /**
      * The component used for the transition.
      * [Follow this guide](/components/transitions/#transitioncomponent-prop) to learn more about the requirements for this component.
      * @default Collapse
      */
-    var TransitionComponent: react.ComponentType<TransitionProps>
+    var TransitionComponent: react.ComponentType<mui.material.transitions.TransitionProps>
 
     /**
      * Adjust the duration of the content expand transition.
@@ -43,7 +43,7 @@ external interface StepContentProps : react.PropsWithChildren {
      * Props applied to the transition element.
      * By default, the element is based on this [`Transition`](https://reactcommunity.org/react-transition-group/transition) component.
      */
-    var TransitionProps: TransitionProps
+    var TransitionProps: mui.material.transitions.TransitionProps
 }
 
 /**

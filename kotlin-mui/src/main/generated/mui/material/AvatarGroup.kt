@@ -28,18 +28,18 @@ external interface AvatarGroupProps : react.PropsWithChildren {
      * Spacing between avatars.
      * @default 'medium'
      */
-    var spacing: Union /* 'small' | 'medium' | number */
+    var spacing: mui.system.Union /* 'small' | 'medium' | number */
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: SxProps<Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>
 
     /**
      * The variant to use.
      * @default 'circular'
      */
-    var variant: Union /* 'circular' | 'rounded' | 'square', AvatarGroupPropsVariantOverrides */
+    var variant: mui.system.Union /* 'circular' | 'rounded' | 'square', AvatarGroupPropsVariantOverrides */
 }
 
 /**

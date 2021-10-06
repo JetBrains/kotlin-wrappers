@@ -27,7 +27,7 @@ external interface AlertProps : react.Props {
     /**
      * The main color for the alert. Unless provided, the value is taken from the `severity` prop.
      */
-    var color: Union /* AlertColor, AlertPropsColorOverrides */
+    var color: mui.system.Union /* AlertColor, AlertPropsColorOverrides */
 
     /**
      * The severity of the alert. This defines the color and icon used.
@@ -67,12 +67,12 @@ external interface AlertProps : react.Props {
      * The variant to use.
      * @default 'standard'
      */
-    var variant: Union /* 'standard' | 'filled' | 'outlined', AlertPropsVariantOverrides */
+    var variant: mui.system.Union /* 'standard' | 'filled' | 'outlined', AlertPropsVariantOverrides */
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: SxProps<Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>
 }
 
 /**

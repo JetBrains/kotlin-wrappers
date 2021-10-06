@@ -15,7 +15,7 @@ external interface TableCellProps : react.PropsWithChildren {
      * you to add them up quickly in your head without having to worry about decimals.
      * @default 'inherit'
      */
-    var align: Union /* 'inherit' | 'left' | 'center' | 'right' | 'justify' */
+    var align: mui.system.Union /* 'inherit' | 'left' | 'center' | 'right' | 'justify' */
 
     /**
      * The content of the component.
@@ -37,7 +37,7 @@ external interface TableCellProps : react.PropsWithChildren {
      * Sets the padding applied to the cell.
      * The prop defaults to the value (`'default'`) inherited from the parent Table component.
      */
-    var padding: Union /* 'normal' | 'checkbox' | 'none' */
+    var padding: mui.system.Union /* 'normal' | 'checkbox' | 'none' */
 
     /**
      * Set scope attribute.
@@ -48,7 +48,7 @@ external interface TableCellProps : react.PropsWithChildren {
      * Specify the size of the cell.
      * The prop defaults to the value (`'medium'`) inherited from the parent Table component.
      */
-    var size: Union /* 'small' | 'medium' */
+    var size: mui.system.Union /* 'small' | 'medium' */
 
     /**
      * Set aria-sort direction.
@@ -58,13 +58,13 @@ external interface TableCellProps : react.PropsWithChildren {
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: SxProps<Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>
 
     /**
      * Specify the cell type.
      * The prop defaults to the value inherited from the parent TableHead, TableBody, or TableFooter components.
      */
-    var variant: Union /* 'head' | 'body' | 'footer' */
+    var variant: mui.system.Union /* 'head' | 'body' | 'footer' */
 }
 
 /**

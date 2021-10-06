@@ -41,7 +41,7 @@ external interface BottomNavigationActionProps : react.PropsWithChildren {
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: SxProps<Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>
 
     /**
      * You can provide your own value. Otherwise, we fallback to the child position index.

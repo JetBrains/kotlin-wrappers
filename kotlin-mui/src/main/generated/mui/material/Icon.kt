@@ -29,18 +29,18 @@ external interface IconProps : react.PropsWithChildren {
      * The color of the component. It supports those theme colors that make sense for this component.
      * @default 'inherit'
      */
-    var color: Union /* | 'inherit' | 'action' | 'disabled' | 'primary' | 'secondary' | 'error' | 'info' | 'success' | 'warning', IconPropsColorOverrides */
+    var color: mui.system.Union /* | 'inherit' | 'action' | 'disabled' | 'primary' | 'secondary' | 'error' | 'info' | 'success' | 'warning', IconPropsColorOverrides */
 
     /**
      * The fontSize applied to the icon. Defaults to 24px, but can be configure to inherit font size.
      * @default 'medium'
      */
-    var fontSize: Union /* 'inherit' | 'large' | 'medium' | 'small', IconPropsSizeOverrides */
+    var fontSize: mui.system.Union /* 'inherit' | 'large' | 'medium' | 'small', IconPropsSizeOverrides */
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: SxProps<Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>
 }
 
 /**

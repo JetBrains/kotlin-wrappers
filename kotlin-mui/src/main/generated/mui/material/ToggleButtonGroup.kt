@@ -22,7 +22,7 @@ external interface ToggleButtonGroupProps : react.PropsWithChildren {
      * The color of a button when it is selected.
      * @default 'standard'
      */
-    var color: Union /* 'standard' | 'primary' | 'secondary' | 'error' | 'info' | 'success' | 'warning', ToggleButtonGroupPropsColorOverrides */
+    var color: mui.system.Union /* 'standard' | 'primary' | 'secondary' | 'error' | 'info' | 'success' | 'warning', ToggleButtonGroupPropsColorOverrides */
 
     /**
      * If `true`, only allow one of the child ToggleButton values to be selected.
@@ -56,18 +56,18 @@ external interface ToggleButtonGroupProps : react.PropsWithChildren {
      * The component orientation (layout flow direction).
      * @default 'horizontal'
      */
-    var orientation: Union /* 'horizontal' | 'vertical' */
+    var orientation: mui.system.Union /* 'horizontal' | 'vertical' */
 
     /**
      * The size of the component.
      * @default 'medium'
      */
-    var size: Union /* 'small' | 'medium' | 'large', ToggleButtonGroupPropsSizeOverrides */
+    var size: mui.system.Union /* 'small' | 'medium' | 'large', ToggleButtonGroupPropsSizeOverrides */
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: SxProps<Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>
 
     /**
      * The currently selected value within the group or an array of selected

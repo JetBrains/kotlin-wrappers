@@ -26,7 +26,7 @@ external interface CheckboxProps : react.Props {
      * The color of the component. It supports those theme colors that make sense for this component.
      * @default 'primary'
      */
-    var color: Union /* 'primary' | 'secondary' | 'error' | 'info' | 'success' | 'warning' | 'default', CheckboxPropsColorOverrides */
+    var color: mui.system.Union /* 'primary' | 'secondary' | 'error' | 'info' | 'success' | 'warning' | 'default', CheckboxPropsColorOverrides */
 
     /**
      * If `true`, the component is disabled.
@@ -92,12 +92,12 @@ external interface CheckboxProps : react.Props {
      * `small` is equivalent to the dense checkbox styling.
      * @default 'medium'
      */
-    var size: Union /* 'small' | 'medium', CheckboxPropsSizeOverrides */
+    var size: mui.system.Union /* 'small' | 'medium', CheckboxPropsSizeOverrides */
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: SxProps<Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>
 
     /**
      * The value of the component. The DOM API casts this to a string.

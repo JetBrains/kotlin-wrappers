@@ -28,7 +28,7 @@ external interface TableSortLabelProps : react.PropsWithChildren {
      * The current sort direction.
      * @default 'asc'
      */
-    var direction: Union /* 'asc' | 'desc' */
+    var direction: mui.system.Union /* 'asc' | 'desc' */
 
     /**
      * Hide sort icon when active is false.
@@ -45,7 +45,7 @@ external interface TableSortLabelProps : react.PropsWithChildren {
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: SxProps<Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>
 }
 
 /**

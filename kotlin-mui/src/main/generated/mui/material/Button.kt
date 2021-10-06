@@ -22,7 +22,7 @@ external interface ButtonProps : react.PropsWithChildren {
      * The color of the component. It supports those theme colors that make sense for this component.
      * @default 'primary'
      */
-    var color: Union /* 'inherit' | 'primary' | 'secondary' | 'success' | 'error' | 'info' | 'warning', ButtonPropsColorOverrides */
+    var color: mui.system.Union /* 'inherit' | 'primary' | 'secondary' | 'success' | 'error' | 'info' | 'warning', ButtonPropsColorOverrides */
 
     /**
      * If `true`, the component is disabled.
@@ -64,7 +64,7 @@ external interface ButtonProps : react.PropsWithChildren {
      * `small` is equivalent to the dense button styling.
      * @default 'medium'
      */
-    var size: Union /* 'small' | 'medium' | 'large', ButtonPropsSizeOverrides */
+    var size: mui.system.Union /* 'small' | 'medium' | 'large', ButtonPropsSizeOverrides */
 
     /**
      * Element placed before the children.
@@ -74,13 +74,13 @@ external interface ButtonProps : react.PropsWithChildren {
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: SxProps<Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>
 
     /**
      * The variant to use.
      * @default 'text'
      */
-    var variant: Union /* 'text' | 'outlined' | 'contained', ButtonPropsVariantOverrides */
+    var variant: mui.system.Union /* 'text' | 'outlined' | 'contained', ButtonPropsVariantOverrides */
 }
 
 /**

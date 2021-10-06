@@ -12,7 +12,7 @@ external interface TypographyProps : react.PropsWithChildren {
      * Set the text-align on the component.
      * @default 'inherit'
      */
-    var align: Union /* 'inherit' | 'left' | 'center' | 'right' | 'justify' */
+    var align: mui.system.Union /* 'inherit' | 'left' | 'center' | 'right' | 'justify' */
 
     /**
      * The content of the component.
@@ -48,13 +48,13 @@ external interface TypographyProps : react.PropsWithChildren {
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: SxProps<Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>
 
     /**
      * Applies the theme typography styles.
      * @default 'body1'
      */
-    var variant: Union /* Variant | 'inherit', TypographyPropsVariantOverrides */
+    var variant: mui.system.Union /* Variant | 'inherit', TypographyPropsVariantOverrides */
 
     /**
      * The component maps the variant prop to a range of different HTML element types.
