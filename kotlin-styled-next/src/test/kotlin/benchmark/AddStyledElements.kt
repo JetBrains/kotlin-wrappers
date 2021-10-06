@@ -11,32 +11,33 @@ import kotlin.time.Duration
 import kotlin.time.ExperimentalTime
 import kotlin.time.measureTime
 
-/**
- * [LinkedHashMap] implementation which holds total duration of all [get] and [put] operations
- */
-@OptIn(ExperimentalTime::class)
-private class TimedLinkedHashMap<K, V> : LinkedHashMap<K, V>() {
-    var getOperationsDuration: Duration = Duration.ZERO
-    var putOperationsDuration: Duration = Duration.ZERO
-    override operator fun get(key: K): V? {
-        var ret: V?
-        getOperationsDuration += measureTime {
-            ret = super.get(key)
-        }
-        return ret
-    }
-
-    override fun put(key: K, value: V): V? {
-        var ret: V?
-        putOperationsDuration += measureTime {
-            ret = super.put(key, value)
-        }
-        return ret
-    }
-}
 
 @OptIn(ExperimentalTime::class)
 class AddStyledElements : BenchmarkBase() {
+    /**
+     * [LinkedHashMap] implementation which holds total duration of all [get] and [put] operations
+     */
+    @OptIn(ExperimentalTime::class)
+    private class TimedLinkedHashMap<K, V> : LinkedHashMap<K, V>() {
+        var getOperationsDuration: Duration = Duration.ZERO
+        var putOperationsDuration: Duration = Duration.ZERO
+        override operator fun get(key: K): V? {
+            var ret: V?
+            getOperationsDuration += measureTime {
+                ret = super.get(key)
+            }
+            return ret
+        }
+
+        override fun put(key: K, value: V): V? {
+            var ret: V?
+            putOperationsDuration += measureTime {
+                ret = super.put(key, value)
+            }
+            return ret
+        }
+    }
+
     /**
      * Measure the time elapsed to inject [n] styled components into the DOM
      * @return duration of all injects

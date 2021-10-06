@@ -1,4 +1,4 @@
-package test.styleSheets
+package styleSheets
 
 import kotlinx.css.Align
 import kotlinx.css.alignContent

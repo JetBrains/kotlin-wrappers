@@ -43,6 +43,7 @@ val printBenchmarkResults by tasks.registering {
             "AddStyledElements",
             "ConvertToStyled",
             "CssBuildersInject",
+            "AddDuplicateCss",
             "DataTypeOperations"
         )
         fileNames.forEach { test ->
