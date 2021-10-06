@@ -52,7 +52,7 @@ external interface FormControlLabelProps : react.Props {
      * The position of the label.
      * @default 'end'
      */
-    var labelPlacement: Union /* 'end' | 'start' | 'top' | 'bottom' */
+    var labelPlacement: mui.system.Union /* 'end' | 'start' | 'top' | 'bottom' */
 
     var name: String
 
@@ -67,7 +67,7 @@ external interface FormControlLabelProps : react.Props {
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: SxProps<Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>
 
     /**
      * The value of the component.

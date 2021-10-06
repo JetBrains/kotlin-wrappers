@@ -34,19 +34,19 @@ external interface InputAdornmentProps : react.PropsWithChildren {
     /**
      * The position this adornment should appear relative to the `Input`.
      */
-    var position: Union /* 'start' | 'end' */
+    var position: mui.system.Union /* 'start' | 'end' */
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: SxProps<Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>
 
     /**
      * The variant to use.
      * Note: If you are using the `TextField` component or the `FormControl` component
      * you do not have to set this manually.
      */
-    var variant: Union /* 'standard' | 'outlined' | 'filled' */
+    var variant: mui.system.Union /* 'standard' | 'outlined' | 'filled' */
 }
 
 /**

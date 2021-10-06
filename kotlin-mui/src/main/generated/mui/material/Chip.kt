@@ -36,7 +36,7 @@ external interface ChipProps : react.Props {
      * The color of the component. It supports those theme colors that make sense for this component.
      * @default 'default'
      */
-    var color: Union /* 'default' | 'primary' | 'secondary' | 'error' | 'info' | 'success' | 'warning', ChipPropsColorOverrides */
+    var color: mui.system.Union /* 'default' | 'primary' | 'secondary' | 'error' | 'info' | 'success' | 'warning', ChipPropsColorOverrides */
 
     /**
      * Override the default delete icon element. Shown only if `onDelete` is set.
@@ -69,18 +69,18 @@ external interface ChipProps : react.Props {
      * The size of the component.
      * @default 'medium'
      */
-    var size: Union /* 'small' | 'medium', ChipPropsSizeOverrides */
+    var size: mui.system.Union /* 'small' | 'medium', ChipPropsSizeOverrides */
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: SxProps<Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>
 
     /**
      * The variant to use.
      * @default 'filled'
      */
-    var variant: Union /* 'filled' | 'outlined', ChipPropsVariantOverrides */
+    var variant: mui.system.Union /* 'filled' | 'outlined', ChipPropsVariantOverrides */
 }
 
 /**

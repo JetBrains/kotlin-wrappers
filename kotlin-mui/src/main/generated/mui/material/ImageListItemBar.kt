@@ -16,7 +16,7 @@ external interface ImageListItemBarProps : react.Props {
      * Position of secondary action IconButton.
      * @default 'right'
      */
-    var actionPosition: Union /* 'left' | 'right' */
+    var actionPosition: mui.system.Union /* 'left' | 'right' */
 
     /**
      * Override or extend the styles applied to the component.
@@ -27,7 +27,7 @@ external interface ImageListItemBarProps : react.Props {
      * Position of the title bar.
      * @default 'bottom'
      */
-    var position: Union /* 'below' | 'top' | 'bottom' */
+    var position: mui.system.Union /* 'below' | 'top' | 'bottom' */
 
     /**
      * String or element serving as subtitle (support text).
@@ -37,7 +37,7 @@ external interface ImageListItemBarProps : react.Props {
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: SxProps<Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>
 
     /**
      * Title to be displayed.

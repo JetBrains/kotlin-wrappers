@@ -22,7 +22,7 @@ external interface ToggleButtonProps : react.PropsWithChildren {
      * The color of the button when it is in an active state.
      * @default 'standard'
      */
-    var color: Union /* 'standard' | 'primary' | 'secondary' | 'error' | 'info' | 'success' | 'warning', ToggleButtonPropsColorOverrides */
+    var color: mui.system.Union /* 'standard' | 'primary' | 'secondary' | 'error' | 'info' | 'success' | 'warning', ToggleButtonPropsColorOverrides */
 
     /**
      * If `true`, the component is disabled.
@@ -52,12 +52,12 @@ external interface ToggleButtonProps : react.PropsWithChildren {
      * The prop defaults to the value inherited from the parent ToggleButtonGroup component.
      * @default 'medium'
      */
-    var size: Union /* 'small' | 'medium' | 'large', ToggleButtonPropsSizeOverrides */
+    var size: mui.system.Union /* 'small' | 'medium' | 'large', ToggleButtonPropsSizeOverrides */
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: SxProps<Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>
 
     /**
      * The value to associate with the button when selected in a

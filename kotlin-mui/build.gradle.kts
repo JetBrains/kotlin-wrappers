@@ -8,4 +8,5 @@ dependencies {
     api(project(":kotlin-react-dom"))
 
     api(npmv("@mui/material"))
+    api(npmv("@mui/lab"))
 }

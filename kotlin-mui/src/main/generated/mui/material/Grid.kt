@@ -22,13 +22,13 @@ external interface GridProps : react.PropsWithChildren {
      * The number of columns.
      * @default 12
      */
-    var columns: ResponsiveStyleValue<Number>
+    var columns: mui.system.ResponsiveStyleValue<Number>
 
     /**
      * Defines the horizontal space between the type `item` components.
      * It overrides the value of the `spacing` prop.
      */
-    var columnSpacing: ResponsiveStyleValue<dynamic>
+    var columnSpacing: mui.system.ResponsiveStyleValue<dynamic>
 
     /**
      * If `true`, the component will have the flex *container* behavior.
@@ -42,7 +42,7 @@ external interface GridProps : react.PropsWithChildren {
      * It is applied for all screen sizes.
      * @default 'row'
      */
-    var direction: ResponsiveStyleValue<GridDirection>
+    var direction: mui.system.ResponsiveStyleValue<GridDirection>
 
     /**
      * If `true`, the component will have the flex *item* behavior.
@@ -69,7 +69,7 @@ external interface GridProps : react.PropsWithChildren {
      * Defines the vertical space between the type `item` components.
      * It overrides the value of the `spacing` prop.
      */
-    var rowSpacing: ResponsiveStyleValue<dynamic>
+    var rowSpacing: mui.system.ResponsiveStyleValue<dynamic>
 
     /**
      * Defines the number of grids the component is going to use.
@@ -83,12 +83,12 @@ external interface GridProps : react.PropsWithChildren {
      * It can only be used on a type `container` component.
      * @default 0
      */
-    var spacing: ResponsiveStyleValue<dynamic>
+    var spacing: mui.system.ResponsiveStyleValue<dynamic>
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: SxProps<Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>
 
     /**
      * Defines the `flex-wrap` style property.

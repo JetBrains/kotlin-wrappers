@@ -10,7 +10,7 @@ external interface SliderProps : react.Props {
      * The color of the component. It supports those theme colors that make sense for this component.
      * @default 'primary'
      */
-    var color: Union /* 'primary' | 'secondary', SliderPropsColorOverrides */
+    var color: mui.system.Union /* 'primary' | 'secondary', SliderPropsColorOverrides */
 
     /**
      * Override or extend the styles applied to the component.
@@ -27,12 +27,12 @@ external interface SliderProps : react.Props {
      * The size of the slider.
      * @default 'medium'
      */
-    var size: Union /* 'small' | 'medium', SliderPropsSizeOverrides */
+    var size: mui.system.Union /* 'small' | 'medium', SliderPropsSizeOverrides */
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: SxProps<Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>
 }
 
 /**

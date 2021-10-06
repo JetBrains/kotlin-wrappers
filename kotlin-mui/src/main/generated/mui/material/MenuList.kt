@@ -43,7 +43,7 @@ external interface MenuListProps : react.PropsWithChildren {
      * and the vertical alignment relative to the anchor element.
      * @default 'selectedMenu'
      */
-    var variant: Union /* 'menu' | 'selectedMenu' */
+    var variant: mui.system.Union /* 'menu' | 'selectedMenu' */
 }
 
 /**

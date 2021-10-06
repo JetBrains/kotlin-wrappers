@@ -1,6 +1,5 @@
 // Automatically generated - do not modify!
 
-package mui.material
-
+package mui.system
 
 typealias Union = String

@@ -22,7 +22,7 @@ external interface ListSubheaderProps : react.PropsWithChildren {
      * The color of the component. It supports those theme colors that make sense for this component.
      * @default 'default'
      */
-    var color: Union /* 'default' | 'primary' | 'inherit' */
+    var color: mui.system.Union /* 'default' | 'primary' | 'inherit' */
 
     /**
      * If `true`, the List Subheader will not have gutters.
@@ -45,7 +45,7 @@ external interface ListSubheaderProps : react.PropsWithChildren {
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: SxProps<Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>
 }
 
 /**

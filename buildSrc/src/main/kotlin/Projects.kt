@@ -7,6 +7,8 @@ private val TARGET_ALIASES = mapOf(
     "@emotion/css" to "emotion-css",
 
     "@mui/material" to "mui",
+    "@mui/lab" to "mui-lab",
+
     "@jetbrains/ring-ui" to "ring-ui",
 )
 

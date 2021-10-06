@@ -15,12 +15,12 @@ external interface LinearProgressProps : react.Props {
      * The color of the component. It supports those theme colors that make sense for this component.
      * @default 'primary'
      */
-    var color: Union /* 'primary' | 'secondary' | 'error' | 'info' | 'success' | 'warning' | 'inherit', LinearProgressPropsColorOverrides */
+    var color: mui.system.Union /* 'primary' | 'secondary' | 'error' | 'info' | 'success' | 'warning' | 'inherit', LinearProgressPropsColorOverrides */
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: SxProps<Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>
 
     /**
      * The value of the progress indicator for the determinate and buffer variants.
@@ -39,7 +39,7 @@ external interface LinearProgressProps : react.Props {
      * Use indeterminate or query when there is no progress value.
      * @default 'indeterminate'
      */
-    var variant: Union /* 'determinate' | 'indeterminate' | 'buffer' | 'query' */
+    var variant: mui.system.Union /* 'determinate' | 'indeterminate' | 'buffer' | 'query' */
 }
 
 /**

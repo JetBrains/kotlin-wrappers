@@ -41,24 +41,24 @@ external interface DividerProps : react.PropsWithChildren {
      * The component orientation.
      * @default 'horizontal'
      */
-    var orientation: Union /* 'horizontal' | 'vertical' */
+    var orientation: mui.system.Union /* 'horizontal' | 'vertical' */
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: SxProps<Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>
 
     /**
      * The text alignment.
      * @default 'center'
      */
-    var textAlign: Union /* 'center' | 'right' | 'left' */
+    var textAlign: mui.system.Union /* 'center' | 'right' | 'left' */
 
     /**
      * The variant to use.
      * @default 'fullWidth'
      */
-    var variant: Union /* 'fullWidth' | 'inset' | 'middle', DividerPropsVariantOverrides */
+    var variant: mui.system.Union /* 'fullWidth' | 'inset' | 'middle', DividerPropsVariantOverrides */
 }
 
 /**

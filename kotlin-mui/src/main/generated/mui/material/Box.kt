@@ -14,7 +14,7 @@ external interface BoxProps : react.PropsWithChildren {
 
     var ref: react.Ref<*>
 
-    var sx: SxProps<Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>
 }
 
 /**

@@ -22,13 +22,13 @@ external interface TableProps : react.PropsWithChildren {
      * Allows TableCells to inherit padding of the Table.
      * @default 'normal'
      */
-    var padding: Union /* 'normal' | 'checkbox' | 'none' */
+    var padding: mui.system.Union /* 'normal' | 'checkbox' | 'none' */
 
     /**
      * Allows TableCells to inherit size of the Table.
      * @default 'medium'
      */
-    var size: Union /* 'small' | 'medium', TablePropsSizeOverrides */
+    var size: mui.system.Union /* 'small' | 'medium', TablePropsSizeOverrides */
 
     /**
      * Set the header sticky.
@@ -41,7 +41,7 @@ external interface TableProps : react.PropsWithChildren {
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: SxProps<Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>
 }
 
 /**

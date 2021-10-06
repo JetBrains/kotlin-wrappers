@@ -12,7 +12,7 @@ external interface DrawerProps : react.PropsWithChildren {
      * Side from which the drawer will appear.
      * @default 'left'
      */
-    var anchor: Union /* 'left' | 'top' | 'right' | 'bottom' */
+    var anchor: mui.system.Union /* 'left' | 'top' | 'right' | 'bottom' */
 
     /**
      * The content of the component.
@@ -63,7 +63,7 @@ external interface DrawerProps : react.PropsWithChildren {
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: SxProps<Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>
 
     /**
      * The duration for the transition, in milliseconds.
@@ -76,7 +76,7 @@ external interface DrawerProps : react.PropsWithChildren {
      * The variant to use.
      * @default 'temporary'
      */
-    var variant: Union /* 'permanent' | 'persistent' | 'temporary' */
+    var variant: mui.system.Union /* 'permanent' | 'persistent' | 'temporary' */
 }
 
 /**

@@ -28,7 +28,7 @@ external interface SlideProps : react.Props {
      * Direction the child node will enter from.
      * @default 'down'
      */
-    var direction: Union /* 'left' | 'right' | 'up' | 'down' */
+    var direction: mui.system.Union /* 'left' | 'right' | 'up' | 'down' */
 
     /**
      * The transition timing function.

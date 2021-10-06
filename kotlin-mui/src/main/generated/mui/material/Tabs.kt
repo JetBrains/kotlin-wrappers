@@ -56,7 +56,7 @@ external interface TabsProps : react.PropsWithChildren {
      * Determines the color of the indicator.
      * @default 'primary'
      */
-    var indicatorColor: Union /* 'secondary' | 'primary' */
+    var indicatorColor: mui.system.Union /* 'secondary' | 'primary' */
 
     /**
      * Callback fired when the value changes.
@@ -70,7 +70,7 @@ external interface TabsProps : react.PropsWithChildren {
      * The component orientation (layout flow direction).
      * @default 'horizontal'
      */
-    var orientation: Union /* 'horizontal' | 'vertical' */
+    var orientation: mui.system.Union /* 'horizontal' | 'vertical' */
 
     /**
      * The component used to render the scroll buttons.
@@ -89,7 +89,7 @@ external interface TabsProps : react.PropsWithChildren {
      * This behavior can be disabled with `allowScrollButtonsMobile`.
      * @default 'auto'
      */
-    var scrollButtons: Union /* 'auto' | true | false */
+    var scrollButtons: mui.system.Union /* 'auto' | true | false */
 
     /**
      * If `true` the selected tab changes on focus. Otherwise it only
@@ -113,7 +113,7 @@ external interface TabsProps : react.PropsWithChildren {
      * Determines the color of the `Tab`.
      * @default 'primary'
      */
-    var textColor: Union /* 'secondary' | 'primary' | 'inherit' */
+    var textColor: mui.system.Union /* 'secondary' | 'primary' | 'inherit' */
 
     /**
      * The value of the currently selected `Tab`.
@@ -131,7 +131,7 @@ external interface TabsProps : react.PropsWithChildren {
      *  - `standard` will render the default state.
      * @default 'standard'
      */
-    var variant: Union /* 'standard' | 'scrollable' | 'fullWidth' */
+    var variant: mui.system.Union /* 'standard' | 'scrollable' | 'fullWidth' */
 
     /**
      * If `true`, the scrollbar is visible. It can be useful when displaying
@@ -143,7 +143,7 @@ external interface TabsProps : react.PropsWithChildren {
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: SxProps<Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>
 }
 
 /**

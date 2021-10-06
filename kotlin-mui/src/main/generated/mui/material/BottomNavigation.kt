@@ -36,7 +36,7 @@ external interface BottomNavigationProps : react.PropsWithChildren {
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: SxProps<Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>
 
     /**
      * The value of the currently selected `BottomNavigationAction`.

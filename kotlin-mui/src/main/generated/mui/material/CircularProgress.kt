@@ -15,7 +15,7 @@ external interface CircularProgressProps : react.Props {
      * The color of the component. It supports those theme colors that make sense for this component.
      * @default 'primary'
      */
-    var color: Union /* 'primary' | 'secondary' | 'error' | 'info' | 'success' | 'warning' | 'inherit', CircularProgressPropsColorOverrides */
+    var color: mui.system.Union /* 'primary' | 'secondary' | 'error' | 'info' | 'success' | 'warning' | 'inherit', CircularProgressPropsColorOverrides */
 
     /**
      * If `true`, the shrink animation is disabled.
@@ -35,7 +35,7 @@ external interface CircularProgressProps : react.Props {
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: SxProps<Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>
 
     /**
      * The thickness of the circle.
@@ -55,7 +55,7 @@ external interface CircularProgressProps : react.Props {
      * Use indeterminate when there is no progress value.
      * @default 'indeterminate'
      */
-    var variant: Union /* 'determinate' | 'indeterminate' */
+    var variant: mui.system.Union /* 'determinate' | 'indeterminate' */
 }
 
 /**

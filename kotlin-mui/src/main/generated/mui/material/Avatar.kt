@@ -50,13 +50,13 @@ external interface AvatarProps : react.PropsWithChildren {
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: SxProps<Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>
 
     /**
      * The shape of the avatar.
      * @default 'circular'
      */
-    var variant: Union /* 'circular' | 'rounded' | 'square', AvatarPropsVariantOverrides */
+    var variant: mui.system.Union /* 'circular' | 'rounded' | 'square', AvatarPropsVariantOverrides */
 }
 
 /**

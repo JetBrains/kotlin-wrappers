@@ -21,7 +21,7 @@ external interface RadioProps : react.Props {
      * The color of the component. It supports those theme colors that make sense for this component.
      * @default 'primary'
      */
-    var color: Union /* 'primary' | 'secondary' | 'error' | 'info' | 'success' | 'warning' | 'default', RadioPropsColorOverrides */
+    var color: mui.system.Union /* 'primary' | 'secondary' | 'error' | 'info' | 'success' | 'warning' | 'default', RadioPropsColorOverrides */
 
     /**
      * If `true`, the component is disabled.
@@ -39,12 +39,12 @@ external interface RadioProps : react.Props {
      * `small` is equivalent to the dense radio styling.
      * @default 'medium'
      */
-    var size: Union /* 'small' | 'medium', RadioPropsSizeOverrides */
+    var size: mui.system.Union /* 'small' | 'medium', RadioPropsSizeOverrides */
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: SxProps<Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>
 }
 
 /**

@@ -15,7 +15,7 @@ external interface AppBarProps : react.Props {
      * The color of the component. It supports those theme colors that make sense for this component.
      * @default 'primary'
      */
-    var color: Union /* PropTypes.Color | 'transparent', AppBarPropsColorOverrides */
+    var color: mui.system.Union /* PropTypes.Color | 'transparent', AppBarPropsColorOverrides */
 
     /**
      * If true, the `color` prop is applied in dark mode.
@@ -29,12 +29,12 @@ external interface AppBarProps : react.Props {
      * Note: `sticky` is not universally supported and will fall back to `static` when unavailable.
      * @default 'fixed'
      */
-    var position: Union /* 'fixed' | 'absolute' | 'sticky' | 'static' | 'relative' */
+    var position: mui.system.Union /* 'fixed' | 'absolute' | 'sticky' | 'static' | 'relative' */
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: SxProps<Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>
 }
 
 /**

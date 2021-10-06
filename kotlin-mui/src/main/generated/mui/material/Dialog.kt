@@ -90,12 +90,12 @@ external interface DialogProps : react.PropsWithChildren {
      * Determine the container for scrolling the dialog.
      * @default 'paper'
      */
-    var scroll: Union /* 'body' | 'paper' */
+    var scroll: mui.system.Union /* 'body' | 'paper' */
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: SxProps<Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>
 
     /**
      * The component used for the transition.
@@ -115,7 +115,7 @@ external interface DialogProps : react.PropsWithChildren {
      * Props applied to the transition element.
      * By default, the element is based on this [`Transition`](https://reactcommunity.org/react-transition-group/transition) component.
      */
-    var TransitionProps: TransitionProps
+    var TransitionProps: mui.material.transitions.TransitionProps
 }
 
 /**

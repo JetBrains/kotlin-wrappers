@@ -34,13 +34,13 @@ external interface PaperProps : react.PropsWithChildren {
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: SxProps<Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>
 
     /**
      * The variant to use.
      * @default 'elevation'
      */
-    var variant: Union /* 'elevation' | 'outlined', PaperPropsVariantOverrides */
+    var variant: mui.system.Union /* 'elevation' | 'outlined', PaperPropsVariantOverrides */
 }
 
 /**

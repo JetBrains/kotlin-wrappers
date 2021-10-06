@@ -22,7 +22,7 @@ external interface FabProps : react.PropsWithChildren {
      * The color of the component. It supports those theme colors that make sense for this component.
      * @default 'default'
      */
-    var color: Union /* PropTypes.Color, FabPropsColorOverrides */
+    var color: mui.system.Union /* PropTypes.Color, FabPropsColorOverrides */
 
     /**
      * If `true`, the component is disabled.
@@ -52,18 +52,18 @@ external interface FabProps : react.PropsWithChildren {
      * `small` is equivalent to the dense button styling.
      * @default 'large'
      */
-    var size: Union /* 'small' | 'medium' | 'large', FabPropsSizeOverrides */
+    var size: mui.system.Union /* 'small' | 'medium' | 'large', FabPropsSizeOverrides */
 
     /**
      * The variant to use.
      * @default 'circular'
      */
-    var variant: Union /* 'circular' | 'extended', FabPropsVariantOverrides */
+    var variant: mui.system.Union /* 'circular' | 'extended', FabPropsVariantOverrides */
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: SxProps<Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>
 }
 
 /**

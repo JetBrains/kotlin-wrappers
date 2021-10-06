@@ -21,18 +21,18 @@ external interface BadgeProps : react.Props {
      * The color of the component. It supports those theme colors that make sense for this component.
      * @default 'default'
      */
-    var color: Union /* 'primary' | 'secondary' | 'default' | 'error' | 'info' | 'success' | 'warning', BadgePropsColorOverrides */
+    var color: mui.system.Union /* 'primary' | 'secondary' | 'default' | 'error' | 'info' | 'success' | 'warning', BadgePropsColorOverrides */
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: SxProps<Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>
 
     /**
      * The variant to use.
      * @default 'standard'
      */
-    var variant: Union /* 'standard' | 'dot', BadgePropsVariantOverrides */
+    var variant: mui.system.Union /* 'standard' | 'dot', BadgePropsVariantOverrides */
 }
 
 /**

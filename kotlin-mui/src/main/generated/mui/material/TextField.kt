@@ -37,7 +37,7 @@ external interface BaseTextFieldProps : react.PropsWithChildren {
      * The color of the component. It supports those theme colors that make sense for this component.
      * @default 'primary'
      */
-    var color: Union /* 'primary' | 'secondary' | 'error' | 'info' | 'success' | 'warning', TextFieldPropsColorOverrides */
+    var color: mui.system.Union /* 'primary' | 'secondary' | 'error' | 'info' | 'success' | 'warning', TextFieldPropsColorOverrides */
 
     /**
      * The default value. Use when the component is not controlled.
@@ -154,12 +154,12 @@ external interface BaseTextFieldProps : react.PropsWithChildren {
     /**
      * The size of the component.
      */
-    var size: Union /* 'small' | 'medium', TextFieldPropsSizeOverrides */
+    var size: mui.system.Union /* 'small' | 'medium', TextFieldPropsSizeOverrides */
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: SxProps<Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>
 
     /**
      * Type of the `input` element. It should be [a valid HTML5 input type](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#Form_%3Cinput%3E_types).
@@ -185,7 +185,7 @@ external interface StandardTextFieldProps : react.Props {
      * The variant to use.
      * @default 'outlined'
      */
-    var variant: Union /* 'standard' */
+    var variant: mui.system.Union /* 'standard' */
 
     /**
      * Props applied to the Input element.
@@ -209,7 +209,7 @@ external interface FilledTextFieldProps : react.Props {
      * The variant to use.
      * @default 'outlined'
      */
-    var variant: Union /* 'filled' */
+    var variant: mui.system.Union /* 'filled' */
 
     /**
      * Props applied to the Input element.
@@ -233,7 +233,7 @@ external interface OutlinedTextFieldProps : react.Props {
      * The variant to use.
      * @default 'outlined'
      */
-    var variant: Union /* 'outlined' */
+    var variant: mui.system.Union /* 'outlined' */
 
     /**
      * Props applied to the Input element.
