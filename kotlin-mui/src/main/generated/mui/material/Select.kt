@@ -112,7 +112,7 @@ external interface SelectProps : react.PropsWithChildren {
      *
      * @param {object} event The event source of the callback.
      */
-    var onClose: (event: react.dom.SyntheticEvent<*, *>) -> Unit
+    var onClose: (event: react.dom.html.SyntheticEvent<*, *>) -> Unit
 
     /**
      * Callback fired when the component requests to be opened.
@@ -120,7 +120,7 @@ external interface SelectProps : react.PropsWithChildren {
      *
      * @param {object} event The event source of the callback.
      */
-    var onOpen: (event: react.dom.SyntheticEvent<*, *>) -> Unit
+    var onOpen: (event: react.dom.html.SyntheticEvent<*, *>) -> Unit
 
     /**
      * If `true`, the component is shown.
