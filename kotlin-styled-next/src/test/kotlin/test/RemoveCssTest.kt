@@ -17,7 +17,7 @@ import styled.animation
 import styled.css
 import styled.styledDiv
 import styled.styledSpan
-import test.styleSheets.StaticStyleSheet
+import styleSheets.StaticStyleSheet
 import unmount
 import waitForAnimationFrame
 import kotlin.test.BeforeTest

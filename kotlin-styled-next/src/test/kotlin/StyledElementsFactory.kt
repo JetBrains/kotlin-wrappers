@@ -1,13 +1,18 @@
 import kotlinx.css.*
 import react.RBuilder
 import react.fc
+import styleSheets.SimpleStyleSheet
+import styleSheets.StaticStyleSheet
 import styled.StyledBuilder
 import styled.StyledElementBuilder
 import styled.css
 import styled.styledDiv
 import kotlin.random.Random
 
-internal fun StyledBuilder<*>.addCss(n: Int, random: Random? = null) {
+private val staticStyleSheet = StaticStyleSheet()
+private val styleSheet = SimpleStyleSheet()
+
+internal fun StyledBuilder<*>.addCss(n: Int, random: Random? = null, randomStylesheets: Boolean = false) {
     css {
         root {
             (1..n % 20).forEach {
@@ -44,6 +49,23 @@ internal fun StyledBuilder<*>.addCss(n: Int, random: Random? = null) {
                     29 -> height = 15.px
                     else -> borderBottomRightRadius = randomLinearDimension()
                 }
+            }
+        }
+        if (randomStylesheets) {
+            if (n % 2 == 0) {
+                +staticStyleSheet.property1
+            }
+            if (n % 3 == 0) {
+                +staticStyleSheet.property2
+            }
+            if (n % 5 == 0) {
+                +staticStyleSheet.prefixedProperty
+            }
+            if (n % 7 == 0) {
+                +styleSheet.simpleProperty
+            }
+            if (n % 11 == 0) {
+                +styleSheet.specificProperty
             }
         }
     }

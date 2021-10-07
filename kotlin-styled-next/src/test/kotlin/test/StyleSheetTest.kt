@@ -10,7 +10,7 @@ import react.fc
 import runTest
 import styled.*
 import styled.sheets.importStyleId
-import test.styleSheets.*
+import styleSheets.*
 import kotlin.test.BeforeTest
 import kotlin.test.Test
 import kotlin.test.assertContains

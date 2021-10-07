@@ -1,4 +1,4 @@
-package test.styleSheets
+package styleSheets
 
 import kotlinx.css.*
 import styled.StyleSheet
