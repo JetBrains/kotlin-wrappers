@@ -103,25 +103,26 @@ inline fun CustomStyledProps.css(noinline handler: RuleSet) {
 inline fun <P : CustomStyledProps> RElementBuilder<P>.css(noinline handler: RuleSet) = attrs.css(handler)
 
 
-external interface StyledProps : PropsWithClassName {
-    var css: CssBuilder
+internal external interface StyledProps : PropsWithClassName {
+    var styledCss: StyledCss
+    var classes: List<String>
 }
 
-fun customStyled(type: String): ComponentType<StyledProps> {
+internal fun customStyled(type: String): ComponentType<StyledProps> {
     val fc = forwardRef<StyledProps> { props, rRef ->
-        val css = props.css
+        val styledCss = props.styledCss
+        val classes = props.classes
 
         val generatedClasses = if (isDevelopment) useState<HashSet<String>?>(hashSetOf()) else null
-        val (styledCss, classNames) = useMemo(css) {
-            val styledCss = css.toStyledCss()
-            val (selfClassName, classes) = GlobalStyles.getInjectedClassNames(styledCss)
+        val classNames = useMemo(styledCss, classes) {
+            val selfClassName = GlobalStyles.getInjectedClassNames(styledCss, classes)
             if (generatedClasses != null) {
                 GlobalStyles.checkGeneratedCss(generatedClasses, selfClassName, type)
             }
-            styledCss to (classes + selfClassName).joinToString(" ")
+            (classes + selfClassName).joinToString(" ")
         }
 
-        useEffect(css) {
+        useEffect(styledCss) {
             cleanup { GlobalStyles.removeStyles(styledCss) }
         }
 
@@ -146,7 +147,8 @@ object Styled {
     fun createElement(type: Any, css: CssBuilder, props: PropsWithClassName, children: List<ReactNode>): ReactElement {
         val wrappedType = wrap(type)
         val styledProps = props.unsafeCast<StyledProps>()
-        styledProps.css = css
+        styledProps.styledCss = css.toStyledCss()
+        styledProps.classes = css.classes
         return createElement(wrappedType, styledProps, *children.toTypedArray())
     }
 }

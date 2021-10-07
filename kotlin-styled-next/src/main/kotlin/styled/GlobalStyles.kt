@@ -52,11 +52,11 @@ object GlobalStyles {
     internal var styledClasses = InjectedCssHolder()
     internal val scheduledToDelete = LinkedHashSet<StyledCss>()
 
-    private fun getInjectedClassName(css: StyledCss): ClassName {
+    private fun getInjectedClassName(css: StyledCss, classes: List<String>): ClassName {
         val info = styledClasses[css]
         return if (info != null) {
             // If we have the same CSS but with other static stylesheets we need to inject them
-            val className = css.classes.toClassName()
+            val className = classes.toClassName()
             if (!info.associatedClasses.contains(className)) {
                 info.associatedClasses.add(className)
                 injectScheduled()
@@ -64,20 +64,20 @@ object GlobalStyles {
             info.usedBy++
             info.className
         } else {
-            scheduleToInjectClassName(css).also {
+            scheduleToInjectClassName(css, classes).also {
                 injectScheduled()
             }
         }
     }
 
-    private fun scheduleToInjectClassName(css: StyledCss): ClassName {
+    private fun scheduleToInjectClassName(css: StyledCss, classes: List<String>): ClassName {
         val className = "ksc-$incrementedClassName"
         val selector = ".$className"
         val rules = css.getCssRules(selector)
         val groupId = sheet.scheduleToInject(rules)
 
         // TODO we can store classnames as single string in StyledCss
-        styledClasses[css] = UsedCssInfo(className, 1, groupId, mutableSetOf(css.classes.toClassName()))
+        styledClasses[css] = UsedCssInfo(className, 1, groupId, mutableSetOf(classes.toClassName()))
         return className
     }
 
@@ -170,10 +170,8 @@ object GlobalStyles {
      * @return pair of generated class name and a list of CSS class names, declared in [css].
      * If the CSS code for the [css] was not injected into the DOM previously, it is injected after function call.
      */
-    internal fun getInjectedClassNames(styledCss: StyledCss): Pair<ClassName, List<ClassName>> {
-        val selfClassName = getInjectedClassName(styledCss)
-        val externalClassNames = styledCss.classes
-        return selfClassName to externalClassNames
+    internal fun getInjectedClassNames(styledCss: StyledCss, classes: List<String>): ClassName {
+        return getInjectedClassName(styledCss, classes)
     }
 
     /**
