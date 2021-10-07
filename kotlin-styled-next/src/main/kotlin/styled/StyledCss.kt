@@ -35,8 +35,7 @@ internal data class StyledRule(
  */
 internal open class StyledCss(
     declarations: CssDeclarations?,
-    private val rules: List<StyledRule>,
-    val classes: List<String>,
+    private val rules: List<StyledRule>
 ) {
     private val declarationBlock = declarations?.buildPrefixedString("  ") ?: ""
 
@@ -151,7 +150,7 @@ private fun resolveRules(rules: List<Rule>, multiRules: List<Rule>, parent: Rule
 
 internal fun CssBuilder.toStyledCss(): StyledCss {
     val resolvedRules = resolveRules(rules = rules, multiRules = multiRules, parent = this)
-    return StyledCss(declarations, rules = resolvedRules, classes = classes)
+    return StyledCss(declarations, rules = resolvedRules)
 }
 
 internal class StyledKeyframes(private val rules: List<StyledRule>) {
