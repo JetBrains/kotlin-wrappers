@@ -12,7 +12,9 @@ data class UsedCssInfo(
     val groupId: Int,
     var associatedClasses: MutableSet<String> = mutableSetOf()
 )
+
 internal typealias InjectedCssHolder = LinkedHashMap<StyledCss, UsedCssInfo>
+
 internal fun List<String>.toClassName(): String {
     return this.joinToString(" ")
 }
