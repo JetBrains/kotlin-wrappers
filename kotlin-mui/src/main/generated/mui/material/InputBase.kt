@@ -118,7 +118,7 @@ external interface InputBaseProps : react.Props {
      *
      * Notice that the first argument (event) might be undefined.
      */
-    var onBlur: react.dom.FocusEventHandler<org.w3c.dom.HTMLElement>
+    var onBlur: react.dom.html.FocusEventHandler<org.w3c.dom.HTMLElement>
 
     /**
      * Callback fired when the value is changed.
@@ -126,13 +126,13 @@ external interface InputBaseProps : react.Props {
      * @param {React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>} event The event source of the callback.
      * You can pull out the new value by accessing `event.target.value` (string).
      */
-    var onChange: react.dom.ChangeEventHandler<org.w3c.dom.HTMLElement>
+    var onChange: react.dom.html.ChangeEventHandler<org.w3c.dom.HTMLElement>
 
-    var onFocus: react.dom.FocusEventHandler<org.w3c.dom.HTMLElement>
+    var onFocus: react.dom.html.FocusEventHandler<org.w3c.dom.HTMLElement>
 
-    var onKeyDown: react.dom.KeyboardEventHandler<org.w3c.dom.HTMLElement>
+    var onKeyDown: react.dom.html.KeyboardEventHandler<org.w3c.dom.HTMLElement>
 
-    var onKeyUp: react.dom.KeyboardEventHandler<org.w3c.dom.HTMLElement>
+    var onKeyUp: react.dom.html.KeyboardEventHandler<org.w3c.dom.HTMLElement>
 
     /**
      * The short hint displayed in the `input` before the user enters a value.

@@ -2,7 +2,7 @@
 
 package ringui
 
-import react.dom.HTMLAttributeAnchorTarget
+import react.dom.html.HTMLAttributeAnchorTarget
 
 sealed external interface IFooterItem
 

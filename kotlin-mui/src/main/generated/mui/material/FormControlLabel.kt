@@ -62,7 +62,7 @@ external interface FormControlLabelProps : react.Props {
      * @param {React.SyntheticEvent} event The event source of the callback.
      * You can pull out the new checked state by accessing `event.target.checked` (boolean).
      */
-    var onChange: (event: react.dom.SyntheticEvent<*, *>, checked: Boolean) -> Unit
+    var onChange: (event: react.dom.html.SyntheticEvent<*, *>, checked: Boolean) -> Unit
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.

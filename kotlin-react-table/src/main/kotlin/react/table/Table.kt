@@ -11,7 +11,7 @@ import react.CSSProperties
 import react.Key
 import react.Props
 import react.ReactNode
-import react.dom.ChangeEventHandler
+import react.dom.html.ChangeEventHandler
 import react.table.RenderType.Cell
 import react.table.RenderType.Header
 

@@ -61,7 +61,7 @@ external interface AlertProps : react.Props {
      * When provided and no `action` prop is set, a close icon button is displayed that triggers the callback when clicked.
      * @param {React.SyntheticEvent} event The event source of the callback.
      */
-    var onClose: (event: react.dom.SyntheticEvent<*, *>) -> Unit
+    var onClose: (event: react.dom.html.SyntheticEvent<*, *>) -> Unit
 
     /**
      * The variant to use.
