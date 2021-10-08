@@ -1,8 +1,9 @@
 // Automatically generated - do not modify!
 
-package react.dom.html
+package react.dom.events
 
 import org.w3c.dom.Element
+import react.dom.html.AbstractView
 
 external interface UIEvent<T : Element, E : NativeUIEvent> : SyntheticEvent<T, E> {
     val detail: Int

@@ -78,7 +78,7 @@ external interface ButtonBaseProps : react.PropsWithChildren {
      * Callback fired when the component is focused with a keyboard.
      * We trigger a `onFocus` callback too.
      */
-    var onFocusVisible: react.dom.html.FocusEventHandler<*>
+    var onFocusVisible: react.dom.events.FocusEventHandler<*>
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.

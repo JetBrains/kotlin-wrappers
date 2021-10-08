@@ -3,6 +3,7 @@
 package react.dom.html
 
 import org.w3c.dom.Element
+import react.dom.events.*
 
 external interface DOMAttributes<T : Element> : react.PropsWithChildren, react.PropsWithClassName {
     var dangerouslySetInnerHTML: DangerouslySetInnerHTML?

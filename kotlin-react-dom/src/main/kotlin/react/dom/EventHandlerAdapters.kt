@@ -4,7 +4,7 @@ package react.dom
 
 import kotlinx.html.CommonAttributeGroupFacade
 import org.w3c.dom.events.Event
-import react.dom.html.*
+import react.dom.events.*
 
 
 // Clipboard Events

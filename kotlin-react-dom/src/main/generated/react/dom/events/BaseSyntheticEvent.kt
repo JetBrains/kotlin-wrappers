@@ -1,6 +1,6 @@
 // Automatically generated - do not modify!
 
-package react.dom.html
+package react.dom.events
 
 external interface BaseSyntheticEvent<E : Any, C : Any, T : Any> {
     val nativeEvent: E
