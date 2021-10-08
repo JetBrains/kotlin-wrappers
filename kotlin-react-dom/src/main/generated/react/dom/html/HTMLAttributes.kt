@@ -3,6 +3,8 @@
 package react.dom.html
 
 import org.w3c.dom.Element
+import react.dom.aria.AriaAttributes
+import react.dom.aria.AriaRole
 import react.dom.events.*
 
 external interface HTMLAttributes<T : Element> : AriaAttributes, DOMAttributes<T> {
