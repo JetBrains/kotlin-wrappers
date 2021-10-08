@@ -129,7 +129,8 @@ internal fun customStyled(type: String): ComponentType<StyledProps> {
         val newProps = clone(props)
         newProps.className = (if (props.className != undefined) props.className + " " else "") + classNames
         newProps.ref = rRef
-        newProps.asDynamic().css = undefined
+        newProps.asDynamic().styledCss = undefined
+        newProps.asDynamic().classes = undefined
         child(createElement(type, newProps))
     }
     fc.asDynamic().displayName = "styled${type.replaceFirstChar { it.titlecase() }}"
