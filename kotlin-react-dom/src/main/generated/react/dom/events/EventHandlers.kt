@@ -1,6 +1,6 @@
 // Automatically generated - do not modify!
 
-package react.dom.html
+package react.dom.events
 
 typealias EventHandler<E> = (event: E) -> Unit
 

@@ -3,6 +3,7 @@
 package react.dom.html
 
 import org.w3c.dom.Element
+import react.dom.events.*
 
 external interface HTMLAttributes<T : Element> : AriaAttributes, DOMAttributes<T> {
     // React-specific Attributes

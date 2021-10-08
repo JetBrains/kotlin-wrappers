@@ -3,6 +3,7 @@
 package react.dom.html
 
 import org.w3c.dom.Element
+import react.dom.events.ChangeEventHandler
 
 external interface SelectHTMLAttributes<T : Element> : HTMLAttributes<T> {
     var autoComplete: String?

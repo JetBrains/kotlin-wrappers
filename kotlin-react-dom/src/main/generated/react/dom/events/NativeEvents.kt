@@ -1,6 +1,6 @@
 // Automatically generated - do not modify!
 
-package react.dom.html
+package react.dom.events
 
 typealias NativeAnimationEvent = org.w3c.dom.events.Event
 

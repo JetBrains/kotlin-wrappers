@@ -3,6 +3,7 @@
 package react.dom.html
 
 import org.w3c.dom.Element
+import react.dom.events.ChangeEventHandler
 
 external interface InputHTMLAttributes<T : Element> : HTMLAttributes<T> {
     var accept: String?
