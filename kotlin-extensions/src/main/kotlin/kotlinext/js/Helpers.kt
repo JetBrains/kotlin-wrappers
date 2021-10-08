@@ -26,3 +26,6 @@ fun toPlainObjectStripNull(obj: Any) = js {
         if (value != null) this[key] = value
     }
 }
+
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/delete
+external fun delete(p: dynamic): Boolean = definedExternally

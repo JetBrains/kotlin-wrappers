@@ -1,6 +1,7 @@
 package styled
 
 import kotlinext.js.clone
+import kotlinext.js.delete
 import kotlinext.js.jso
 import kotlinx.css.CssBuilder
 import kotlinx.css.CssDsl
@@ -129,8 +130,8 @@ internal fun customStyled(type: String): ComponentType<StyledProps> {
         val newProps = clone(props)
         newProps.className = (if (props.className != undefined) props.className + " " else "") + classNames
         newProps.ref = rRef
-        newProps.asDynamic().styledCss = undefined
-        newProps.asDynamic().classes = undefined
+        delete(newProps.styledCss)
+        delete(newProps.classes)
         child(createElement(type, newProps))
     }
     fc.asDynamic().displayName = "styled${type.replaceFirstChar { it.titlecase() }}"
