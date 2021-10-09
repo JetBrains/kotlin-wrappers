@@ -5,7 +5,7 @@
     "DECLARATION_CANT_BE_INLINED",
 )
 
-package react.dom.html
+package react.dom.aria
 
 external interface AriaAttributes
 
