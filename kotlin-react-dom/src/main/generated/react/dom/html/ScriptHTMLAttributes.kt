@@ -14,7 +14,7 @@ external interface ScriptHTMLAttributes<T : Element> : HTMLAttributes<T> {
     var integrity: String?
     var noModule: Boolean?
     var nonce: String?
-    var referrerPolicy: HTMLAttributeReferrerPolicy?
+    var referrerPolicy: ReferrerPolicy?
     var src: String?
     var type: String?
 }

@@ -11,7 +11,7 @@ external interface AnchorHTMLAttributes<T : Element> : HTMLAttributes<T> {
     var media: String?
     var ping: String?
     var rel: String?
-    var target: HTMLAttributeAnchorTarget?
+    var target: AnchorTarget?
     var type: String?
-    var referrerPolicy: HTMLAttributeReferrerPolicy?
+    var referrerPolicy: ReferrerPolicy?
 }
