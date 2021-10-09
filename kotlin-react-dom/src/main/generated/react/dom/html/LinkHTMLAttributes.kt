@@ -11,7 +11,7 @@ external interface LinkHTMLAttributes<T : Element> : HTMLAttributes<T> {
     var hrefLang: String?
     var integrity: String?
     var media: String?
-    var referrerPolicy: HTMLAttributeReferrerPolicy?
+    var referrerPolicy: ReferrerPolicy?
     var rel: String?
     var sizes: String?
     var type: String?

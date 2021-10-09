@@ -11,7 +11,7 @@ external interface AreaHTMLAttributes<T : Element> : HTMLAttributes<T> {
     var href: String?
     var hrefLang: String?
     var media: String?
-    var referrerPolicy: HTMLAttributeReferrerPolicy?
+    var referrerPolicy: ReferrerPolicy?
     var rel: String?
     var shape: String?
     var target: String?

@@ -10,7 +10,7 @@ external interface ImgHTMLAttributes<T : Element> : HTMLAttributes<T> {
     var decoding: ImgDecoding?
     var height: Double?
     var loading: ImgLoading?
-    var referrerPolicy: HTMLAttributeReferrerPolicy?
+    var referrerPolicy: ReferrerPolicy?
     var sizes: String?
     var src: String?
     var srcSet: String?

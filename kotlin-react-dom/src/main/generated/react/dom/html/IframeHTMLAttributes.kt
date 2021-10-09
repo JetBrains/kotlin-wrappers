@@ -20,7 +20,7 @@ external interface IframeHTMLAttributes<T : Element> : HTMLAttributes<T> {
     @Deprecated("Will be removed soon!")
     var marginWidth: Double?
     var name: String?
-    var referrerPolicy: HTMLAttributeReferrerPolicy?
+    var referrerPolicy: ReferrerPolicy?
     var sandbox: String?
 
     @Deprecated("Will be removed soon!")
