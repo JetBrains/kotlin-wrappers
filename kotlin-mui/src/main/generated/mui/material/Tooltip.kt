@@ -23,6 +23,19 @@ external interface TooltipProps : react.Props {
     var classes: TooltipClasses
 
     /**
+     * The components used for each slot inside the Tooltip.
+     * Either a string to use a HTML element or a component.
+     * @default {}
+     */
+    var components: dynamic
+
+    /**
+     * The props used for each slot inside the Tooltip.
+     * @default {}
+     */
+    var componentsProps: dynamic
+
+    /**
      * Set to `true` if the `title` acts as an accessible description.
      * By default the `title` acts as an accessible label for the child.
      * @default false
