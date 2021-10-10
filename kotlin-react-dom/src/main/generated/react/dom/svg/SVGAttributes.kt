@@ -3,9 +3,9 @@
 package react.dom.svg
 
 import org.w3c.dom.Element
+import react.dom.DOMAttributes
 import react.dom.aria.AriaAttributes
 import react.dom.aria.AriaRole
-import react.dom.html.DOMAttributes
 
 external interface SVGAttributes<T : Element> : AriaAttributes, DOMAttributes<T> {
     var color: String?

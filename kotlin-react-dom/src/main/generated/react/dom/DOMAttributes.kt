@@ -1,6 +1,6 @@
 // Automatically generated - do not modify!
 
-package react.dom.html
+package react.dom
 
 import org.w3c.dom.Element
 import react.dom.events.*
