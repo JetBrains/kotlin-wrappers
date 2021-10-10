@@ -1,6 +1,6 @@
 // Automatically generated - do not modify!
 
-package react.dom.html
+package react.dom
 
 external interface AbstractView {
     val styleMedia: StyleMedia
