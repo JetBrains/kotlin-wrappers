@@ -63,7 +63,7 @@ interface AdvancedPseudosRuleBuilder<T : Any> : RuleBuilder<T> {
         ":host-context($selector)"(block)
     }
 
-    inline fun __is__(
+    inline fun `is`(
         selector: String,
         block: T.() -> Unit,
     ) {

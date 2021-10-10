@@ -8,11 +8,11 @@
 package csstype
 
 // language=JavaScript
-@JsName("""(/*union*/{normal: 'normal', sub: 'sub', sup: 'super'}/*union*/)""")
+@JsName("""(/*union*/{normal: 'normal', sub: 'sub', super: 'super'}/*union*/)""")
 sealed external interface FontVariantPosition {
     companion object {
         val normal: FontVariantPosition
         val sub: FontVariantPosition
-        val sup: FontVariantPosition
+        val `super`: FontVariantPosition
     }
 }

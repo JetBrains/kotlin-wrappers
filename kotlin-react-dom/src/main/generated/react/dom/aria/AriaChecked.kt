@@ -4,11 +4,11 @@ package react.dom.aria
 
 @Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
 // language=JavaScript
-@JsName("""(/*union*/{__false__: 'false', mixed: 'mixed', __true__: 'true'}/*union*/)""")
+@JsName("""(/*union*/{false: 'false', mixed: 'mixed', true: 'true'}/*union*/)""")
 external enum class AriaChecked {
-    __false__,
+    `false`,
     mixed,
-    __true__,
+    `true`,
 
     ;
 }
