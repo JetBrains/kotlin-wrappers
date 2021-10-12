@@ -33,11 +33,8 @@ class TestScope : CoroutineScope by testScope {
         get() = GlobalStyles.sheet as CSSOMSheet
 
     init {
-        if (GlobalStyles.sheet !is CSSOMSheet) {
+        if (sheet.removeMode != RemoveMode.Instantly) {
             GlobalStyles.sheet = CSSOMSheet(RuleType.REGULAR, RemoveMode.Instantly)
-        }
-        if (GlobalStyles.importSheet !is CSSOMPersistentSheet) {
-            GlobalStyles.importSheet = CSSOMPersistentSheet(RuleType.IMPORT)
         }
     }
 

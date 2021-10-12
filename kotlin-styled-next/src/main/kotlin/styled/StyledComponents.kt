@@ -105,13 +105,13 @@ inline fun <P : CustomStyledProps> RElementBuilder<P>.css(noinline handler: Rule
 
 
 internal external interface StyledProps : PropsWithClassName {
-    var styledCss: StyledCss
+    var styled_css: StyledCss
     var classes: List<String>
 }
 
 internal fun customStyled(type: String): ComponentType<StyledProps> {
     val fc = forwardRef<StyledProps> { props, rRef ->
-        val styledCss = props.styledCss
+        val styledCss = props.styled_css
         val classes = props.classes
 
         val generatedClasses = if (isDevelopment) useState<HashSet<String>?>(hashSetOf()) else null
@@ -130,7 +130,7 @@ internal fun customStyled(type: String): ComponentType<StyledProps> {
         val newProps = clone(props)
         newProps.className = (if (props.className != undefined) props.className + " " else "") + classNames
         newProps.ref = rRef
-        delete(newProps.styledCss)
+        delete(newProps.styled_css)
         delete(newProps.classes)
         child(createElement(type, newProps))
     }
@@ -149,7 +149,7 @@ object Styled {
     fun createElement(type: Any, css: CssBuilder, props: PropsWithClassName, children: List<ReactNode>): ReactElement {
         val wrappedType = wrap(type)
         val styledProps = props.unsafeCast<StyledProps>()
-        styledProps.styledCss = css.toStyledCss()
+        styledProps.styled_css = css.toStyledCss()
         styledProps.classes = css.classes
         return createElement(wrappedType, styledProps, *children.toTypedArray())
     }

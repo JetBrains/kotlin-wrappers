@@ -20,15 +20,19 @@ internal interface Sheet {
 }
 
 internal abstract class AbstractSheet(private val ruleType: RuleType) : Sheet {
-    fun appendStyleElement(): HTMLStyleElement {
-        val style = window.document.head!!.appendChild(window.document.createElement("style")) as HTMLStyleElement
-        val id = when (ruleType) {
+    private val id: String
+        get() = when (ruleType) {
             RuleType.REGULAR -> styleId
             RuleType.IMPORT -> importStyleId
         }
+
+    fun appendStyleElement(): HTMLStyleElement {
+        val style = window.document.head!!.appendChild(window.document.createElement("style")) as HTMLStyleElement
         style.setAttribute("id", id)
         return style
     }
+
+    fun removeStyleElement() = window.document.getElementById(id)?.remove()
 
     internal abstract fun clear()
 }

@@ -37,12 +37,32 @@ object GlobalStyles {
 
     init {
         if (isDevelopment) {
-            sheet = DevSheet(RuleType.REGULAR)
-            importSheet = DevSheet(RuleType.IMPORT)
-        } else {
-            sheet = CSSOMSheet(RuleType.REGULAR)
-            importSheet = CSSOMPersistentSheet(RuleType.IMPORT)
+            setupCssHelperFunctions()
         }
+        sheet = CSSOMSheet(RuleType.REGULAR)
+        importSheet = CSSOMPersistentSheet(RuleType.IMPORT)
+    }
+
+    /**
+     * Use sheet that makes the css text available to read in DOM, used for CSS debugging.
+     * Degrades performance, so consider using [getCss], [downloadCss] and [mapNotNullRules] functions from the browser console
+     * Clears all the CSS added previously
+     */
+    fun useDevSheet() {
+        clear()
+        sheet = DevSheet(RuleType.REGULAR)
+        importSheet = DevSheet(RuleType.IMPORT)
+    }
+
+    private fun clear() {
+        sheet.clear()
+        sheet.removeStyleElement()
+        importSheet.clear()
+        importSheet.removeStyleElement()
+        styledClasses.clear()
+        scheduledToDelete.clear()
+        injectedStyleSheetRules.clear()
+        injectedKeyframes.clear()
     }
 
     private var incrementedClassName: Int = 0
