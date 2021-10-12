@@ -97,6 +97,7 @@ external interface SVGAttributes<T : Element> : AriaAttributes, DOMAttributes<T>
     var fontVariant: String?
     var fontWeight: String?
     var format: String?
+    var fr: String?
     var from: String?
     var fx: Double?
     var fy: Double?
