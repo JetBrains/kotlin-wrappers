@@ -6,7 +6,7 @@ import org.w3c.dom.Element
 import react.dom.events.ChangeEventHandler
 
 external interface TextareaHTMLAttributes<T : Element> : HTMLAttributes<T> {
-    var autoComplete: String?
+    var autoComplete: AutoComplete?
     var autoFocus: Boolean?
     var cols: Int?
     var dirName: String?

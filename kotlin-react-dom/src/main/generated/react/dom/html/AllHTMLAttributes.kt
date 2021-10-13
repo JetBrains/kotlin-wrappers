@@ -14,7 +14,7 @@ external interface AllHTMLAttributes<T : Element> : HTMLAttributes<T> {
     var alt: String?
     var `as`: String?
     var async: Boolean?
-    var autoComplete: String?
+    var autoComplete: AutoComplete?
     var autoFocus: Boolean?
     var autoPlay: Boolean?
     var capture: Capture?
