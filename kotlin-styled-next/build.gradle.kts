@@ -28,7 +28,7 @@ dependencies {
     testImplementation(kotlin("test-js"))
     testImplementation(kotlinxCoroutines("core"))
 
-    testImplementation(npmv("puppeteer"))
+    testImplementation(devNpmv("puppeteer"))
 }
 
 

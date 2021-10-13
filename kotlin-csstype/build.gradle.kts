@@ -5,5 +5,5 @@ plugins {
 }
 
 dependencies {
-    api(npmv("csstype"))
+    api(devNpmv("csstype"))
 }
