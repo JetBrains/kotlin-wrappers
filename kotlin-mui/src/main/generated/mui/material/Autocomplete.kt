@@ -147,7 +147,7 @@ external interface AutocompleteProps : react.Props {
     /**
      * Render the group.
      *
-     * @param {any} option The group to render.
+     * @param {AutocompleteRenderGroupParams} params The group to render.
      * @returns {ReactNode}
      */
     var renderGroup: dynamic

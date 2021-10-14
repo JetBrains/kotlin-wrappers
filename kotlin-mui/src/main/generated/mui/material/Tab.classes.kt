@@ -29,4 +29,7 @@ external interface TabClasses {
 
     /** Styles applied to the root element if `wrapped={true}`. */
     var wrapped: String
+
+    /** Styles applied to the wrapper element of `icon` if `icon` is provided. */
+    var iconWrapper: String
 }
