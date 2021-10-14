@@ -3,9 +3,15 @@
 @file:JsModule("@mui/material/Alert")
 @file:JsNonModule
 
+@file:Suppress(
+    "VIRTUAL_MEMBER_HIDDEN",
+)
+
 package mui.material
 
-external interface AlertProps : react.Props {
+external interface AlertProps :
+    mui.system.StandardProps,
+    PaperProps {
     /**
      * The action to display. It renders after the message, at the end of the alert.
      */

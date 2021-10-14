@@ -3,11 +3,18 @@
 @file:JsModule("@mui/material/Popover")
 @file:JsNonModule
 
+@file:Suppress(
+    "VIRTUAL_MEMBER_HIDDEN",
+)
+
 package mui.material
 
 import kotlinext.js.ReadonlyArray
 
-external interface PopoverProps : react.PropsWithChildren {
+external interface PopoverProps :
+    mui.system.StandardProps,
+    ModalProps,
+    react.PropsWithChildren {
     /**
      * A ref for imperative actions.
      * It currently only supports updatePosition() action.

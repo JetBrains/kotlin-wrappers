@@ -3,9 +3,15 @@
 @file:JsModule("@mui/material/Checkbox")
 @file:JsNonModule
 
+@file:Suppress(
+    "VIRTUAL_MEMBER_HIDDEN",
+)
+
 package mui.material
 
-external interface CheckboxProps : react.Props {
+external interface CheckboxProps :
+    mui.system.StandardProps,
+    SwitchBaseProps {
     /**
      * If `true`, the component is checked.
      */

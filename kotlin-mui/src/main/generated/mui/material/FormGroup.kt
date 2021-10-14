@@ -3,11 +3,18 @@
 @file:JsModule("@mui/material/FormGroup")
 @file:JsNonModule
 
+@file:Suppress(
+    "VIRTUAL_MEMBER_HIDDEN",
+)
+
 package mui.material
 
 import kotlinext.js.ReadonlyArray
 
-external interface FormGroupProps : react.PropsWithChildren {
+external interface FormGroupProps :
+    mui.system.StandardProps,
+    react.dom.html.HTMLAttributes<org.w3c.dom.HTMLDivElement>,
+    react.PropsWithChildren {
     /**
      * The content of the component.
      */

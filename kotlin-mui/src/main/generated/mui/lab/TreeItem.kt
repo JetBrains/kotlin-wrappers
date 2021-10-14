@@ -3,11 +3,18 @@
 @file:JsModule("@mui/lab/TreeItem")
 @file:JsNonModule
 
+@file:Suppress(
+    "VIRTUAL_MEMBER_HIDDEN",
+)
+
 package mui.lab
 
 import kotlinext.js.ReadonlyArray
 
-external interface TreeItemProps : react.PropsWithChildren {
+external interface TreeItemProps :
+    mui.system.StandardProps,
+    react.dom.html.HTMLAttributes<org.w3c.dom.HTMLLIElement>,
+    react.PropsWithChildren {
     /**
      * The content of the component.
      */

@@ -3,9 +3,16 @@
 @file:JsModule("@mui/material/InputBase")
 @file:JsNonModule
 
+@file:Suppress(
+    "VIRTUAL_MEMBER_HIDDEN",
+)
+
 package mui.material
 
-external interface InputBaseProps : react.Props {
+external interface InputBaseProps :
+    mui.system.StandardProps,
+
+    react.dom.html.HTMLAttributes<org.w3c.dom.HTMLDivElement> {
     // var `aria-describedby`: String
 
     /**

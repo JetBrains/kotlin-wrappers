@@ -3,11 +3,18 @@
 @file:JsModule("@mui/material/Step")
 @file:JsNonModule
 
+@file:Suppress(
+    "VIRTUAL_MEMBER_HIDDEN",
+)
+
 package mui.material
 
 import kotlinext.js.ReadonlyArray
 
-external interface StepProps : react.PropsWithChildren {
+external interface StepProps :
+    mui.system.StandardProps,
+    react.dom.html.HTMLAttributes<org.w3c.dom.HTMLDivElement>,
+    react.PropsWithChildren {
     /**
      * Sets the step as active. Is passed to child components.
      */

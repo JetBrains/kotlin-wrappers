@@ -3,11 +3,18 @@
 @file:JsModule("@mui/material/StepContent")
 @file:JsNonModule
 
+@file:Suppress(
+    "VIRTUAL_MEMBER_HIDDEN",
+)
+
 package mui.material
 
 import kotlinext.js.ReadonlyArray
 
-external interface StepContentProps : react.PropsWithChildren {
+external interface StepContentProps :
+    mui.system.StandardProps,
+    react.dom.html.HTMLAttributes<org.w3c.dom.HTMLDivElement>,
+    react.PropsWithChildren {
     /**
      * The content of the component.
      */

@@ -3,11 +3,18 @@
 @file:JsModule("@mui/material/StepLabel")
 @file:JsNonModule
 
+@file:Suppress(
+    "VIRTUAL_MEMBER_HIDDEN",
+)
+
 package mui.material
 
 import kotlinext.js.ReadonlyArray
 
-external interface StepLabelProps : react.PropsWithChildren {
+external interface StepLabelProps :
+    mui.system.StandardProps,
+    react.dom.html.HTMLAttributes<org.w3c.dom.HTMLDivElement>,
+    react.PropsWithChildren {
     /**
      * In most cases will simply be a string containing a title for the label.
      */

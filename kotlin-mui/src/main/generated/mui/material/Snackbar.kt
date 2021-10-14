@@ -3,9 +3,15 @@
 @file:JsModule("@mui/material/Snackbar")
 @file:JsNonModule
 
+@file:Suppress(
+    "VIRTUAL_MEMBER_HIDDEN",
+)
+
 package mui.material
 
-external interface SnackbarProps : react.Props {
+external interface SnackbarProps :
+    mui.system.StandardProps,
+    react.dom.html.HTMLAttributes<org.w3c.dom.HTMLDivElement> {
     /**
      * The action to display. It renders after the message, at the end of the snackbar.
      */

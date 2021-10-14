@@ -3,11 +3,18 @@
 @file:JsModule("@mui/material/Dialog")
 @file:JsNonModule
 
+@file:Suppress(
+    "VIRTUAL_MEMBER_HIDDEN",
+)
+
 package mui.material
 
 import kotlinext.js.ReadonlyArray
 
-external interface DialogProps : react.PropsWithChildren {
+external interface DialogProps :
+    mui.system.StandardProps,
+    ModalProps,
+    react.PropsWithChildren {
     /**
      * The id(s) of the element(s) that describe the dialog.
      */

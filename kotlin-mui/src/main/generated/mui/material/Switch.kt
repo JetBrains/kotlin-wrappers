@@ -3,9 +3,15 @@
 @file:JsModule("@mui/material/Switch")
 @file:JsNonModule
 
+@file:Suppress(
+    "VIRTUAL_MEMBER_HIDDEN",
+)
+
 package mui.material
 
-external interface SwitchProps : react.Props {
+external interface SwitchProps :
+    mui.system.StandardProps,
+    SwitchBaseProps {
     /**
      * The icon to display when the component is checked.
      */

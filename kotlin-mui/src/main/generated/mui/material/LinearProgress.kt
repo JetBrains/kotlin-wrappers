@@ -3,9 +3,15 @@
 @file:JsModule("@mui/material/LinearProgress")
 @file:JsNonModule
 
+@file:Suppress(
+    "VIRTUAL_MEMBER_HIDDEN",
+)
+
 package mui.material
 
-external interface LinearProgressProps : react.Props {
+external interface LinearProgressProps :
+    mui.system.StandardProps,
+    react.dom.html.HTMLAttributes<org.w3c.dom.HTMLSpanElement> {
     /**
      * Override or extend the styles applied to the component.
      */

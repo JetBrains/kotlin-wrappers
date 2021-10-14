@@ -3,9 +3,15 @@
 @file:JsModule("@mui/material/SpeedDialAction")
 @file:JsNonModule
 
+@file:Suppress(
+    "VIRTUAL_MEMBER_HIDDEN",
+)
+
 package mui.material
 
-external interface SpeedDialActionProps : react.Props {
+external interface SpeedDialActionProps :
+    mui.system.StandardProps,
+    TooltipProps {
     /**
      * Override or extend the styles applied to the component.
      */
