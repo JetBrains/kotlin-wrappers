@@ -3,11 +3,18 @@
 @file:JsModule("@mui/material/DialogTitle")
 @file:JsNonModule
 
+@file:Suppress(
+    "VIRTUAL_MEMBER_HIDDEN",
+)
+
 package mui.material
 
 import kotlinext.js.ReadonlyArray
 
-external interface DialogTitleProps : react.PropsWithChildren {
+external interface DialogTitleProps :
+    mui.system.StandardProps,
+    react.dom.html.HTMLAttributes<org.w3c.dom.HTMLHeadingElement>,
+    react.PropsWithChildren {
     /**
      * The content of the component.
      */

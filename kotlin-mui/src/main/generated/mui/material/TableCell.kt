@@ -3,11 +3,18 @@
 @file:JsModule("@mui/material/TableCell")
 @file:JsNonModule
 
+@file:Suppress(
+    "VIRTUAL_MEMBER_HIDDEN",
+)
+
 package mui.material
 
 import kotlinext.js.ReadonlyArray
 
-external interface TableCellProps : react.PropsWithChildren {
+external interface TableCellProps :
+    mui.system.StandardProps,
+    TableCellBaseProps,
+    react.PropsWithChildren {
     /**
      * Set the text-align on the table cell content.
      *

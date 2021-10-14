@@ -3,11 +3,18 @@
 @file:JsModule("@mui/material/ListItemAvatar")
 @file:JsNonModule
 
+@file:Suppress(
+    "VIRTUAL_MEMBER_HIDDEN",
+)
+
 package mui.material
 
 import kotlinext.js.ReadonlyArray
 
-external interface ListItemAvatarProps : react.PropsWithChildren {
+external interface ListItemAvatarProps :
+    mui.system.StandardProps,
+    react.dom.html.HTMLAttributes<org.w3c.dom.HTMLDivElement>,
+    react.PropsWithChildren {
     /**
      * The content of the component, normally an `Avatar`.
      */

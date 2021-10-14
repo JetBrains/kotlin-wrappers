@@ -3,9 +3,15 @@
 @file:JsModule("@mui/material/Input")
 @file:JsNonModule
 
+@file:Suppress(
+    "VIRTUAL_MEMBER_HIDDEN",
+)
+
 package mui.material
 
-external interface InputProps : react.Props {
+external interface InputProps :
+    mui.system.StandardProps,
+    InputBaseProps {
     /**
      * Override or extend the styles applied to the component.
      */

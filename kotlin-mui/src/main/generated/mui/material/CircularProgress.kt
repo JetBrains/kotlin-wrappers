@@ -3,9 +3,15 @@
 @file:JsModule("@mui/material/CircularProgress")
 @file:JsNonModule
 
+@file:Suppress(
+    "VIRTUAL_MEMBER_HIDDEN",
+)
+
 package mui.material
 
-external interface CircularProgressProps : react.Props {
+external interface CircularProgressProps :
+    mui.system.StandardProps,
+    react.dom.html.HTMLAttributes<org.w3c.dom.HTMLSpanElement> {
     /**
      * Override or extend the styles applied to the component.
      */

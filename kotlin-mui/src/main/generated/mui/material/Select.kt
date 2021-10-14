@@ -3,11 +3,18 @@
 @file:JsModule("@mui/material/Select")
 @file:JsNonModule
 
+@file:Suppress(
+    "VIRTUAL_MEMBER_HIDDEN",
+)
+
 package mui.material
 
 import kotlinext.js.ReadonlyArray
 
-external interface SelectProps : react.PropsWithChildren {
+external interface SelectProps :
+    mui.system.StandardProps,
+    InputProps,
+    react.PropsWithChildren {
     /**
      * If `true`, the width of the popover will automatically be set according to the items inside the
      * menu, otherwise it will be at least the width of the select input.

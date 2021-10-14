@@ -3,9 +3,15 @@
 @file:JsModule("@mui/material/Radio")
 @file:JsNonModule
 
+@file:Suppress(
+    "VIRTUAL_MEMBER_HIDDEN",
+)
+
 package mui.material
 
-external interface RadioProps : react.Props {
+external interface RadioProps :
+    mui.system.StandardProps,
+    SwitchBaseProps {
     /**
      * The icon to display when the component is checked.
      * @default <RadioButtonIcon checked />

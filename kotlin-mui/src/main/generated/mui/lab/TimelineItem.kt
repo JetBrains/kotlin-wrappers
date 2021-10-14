@@ -3,11 +3,18 @@
 @file:JsModule("@mui/lab/TimelineItem")
 @file:JsNonModule
 
+@file:Suppress(
+    "VIRTUAL_MEMBER_HIDDEN",
+)
+
 package mui.lab
 
 import kotlinext.js.ReadonlyArray
 
-external interface TimelineItemProps : react.PropsWithChildren {
+external interface TimelineItemProps :
+    mui.system.StandardProps,
+    react.dom.html.HTMLAttributes<org.w3c.dom.HTMLDivElement>,
+    react.PropsWithChildren {
     /**
      * The position where the timeline's item should appear.
      */

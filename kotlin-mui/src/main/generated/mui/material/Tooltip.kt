@@ -3,9 +3,15 @@
 @file:JsModule("@mui/material/Tooltip")
 @file:JsNonModule
 
+@file:Suppress(
+    "VIRTUAL_MEMBER_HIDDEN",
+)
+
 package mui.material
 
-external interface TooltipProps : react.Props {
+external interface TooltipProps :
+    mui.system.StandardProps,
+    react.dom.html.HTMLAttributes<org.w3c.dom.HTMLDivElement> {
     /**
      * If `true`, adds an arrow to the tooltip.
      * @default false

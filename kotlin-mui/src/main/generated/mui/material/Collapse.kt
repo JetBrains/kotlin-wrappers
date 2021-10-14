@@ -3,11 +3,18 @@
 @file:JsModule("@mui/material/Collapse")
 @file:JsNonModule
 
+@file:Suppress(
+    "VIRTUAL_MEMBER_HIDDEN",
+)
+
 package mui.material
 
 import kotlinext.js.ReadonlyArray
 
-external interface CollapseProps : react.PropsWithChildren {
+external interface CollapseProps :
+    mui.system.StandardProps,
+    mui.material.transitions.TransitionProps,
+    react.PropsWithChildren {
     /**
      * The content node to be collapsed.
      */

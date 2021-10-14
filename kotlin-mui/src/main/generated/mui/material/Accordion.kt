@@ -3,11 +3,18 @@
 @file:JsModule("@mui/material/Accordion")
 @file:JsNonModule
 
+@file:Suppress(
+    "VIRTUAL_MEMBER_HIDDEN",
+)
+
 package mui.material
 
 import kotlinext.js.ReadonlyArray
 
-external interface AccordionProps : react.PropsWithChildren {
+external interface AccordionProps :
+    mui.system.StandardProps,
+    PaperProps,
+    react.PropsWithChildren {
     /**
      * The content of the component.
      */

@@ -3,11 +3,18 @@
 @file:JsModule("@mui/lab/TimelineOppositeContent")
 @file:JsNonModule
 
+@file:Suppress(
+    "VIRTUAL_MEMBER_HIDDEN",
+)
+
 package mui.lab
 
 import kotlinext.js.ReadonlyArray
 
-external interface TimelineOppositeContentProps : react.PropsWithChildren {
+external interface TimelineOppositeContentProps :
+    mui.system.StandardProps,
+    mui.material.TypographyProps,
+    react.PropsWithChildren {
     /**
      * The content of the component.
      */

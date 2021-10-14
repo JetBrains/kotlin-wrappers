@@ -3,9 +3,15 @@
 @file:JsModule("@mui/material/ImageListItemBar")
 @file:JsNonModule
 
+@file:Suppress(
+    "VIRTUAL_MEMBER_HIDDEN",
+)
+
 package mui.material
 
-external interface ImageListItemBarProps : react.Props {
+external interface ImageListItemBarProps :
+    mui.system.StandardProps,
+    react.dom.html.HTMLAttributes<org.w3c.dom.HTMLDivElement> {
     /**
      * An IconButton element to be used as secondary action target
      * (primary action target is the item itself).
