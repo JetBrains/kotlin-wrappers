@@ -3,9 +3,13 @@
 @file:JsModule("@mui/material/Rating")
 @file:JsNonModule
 
+@file:Suppress(
+    "VIRTUAL_MEMBER_HIDDEN",
+)
+
 package mui.material
 
-external interface RatingProps : react.Props {
+external interface RatingProps : react.dom.html.HTMLAttributes<org.w3c.dom.HTMLSpanElement> {
     /**
      * Override or extend the styles applied to the component.
      */

@@ -7,7 +7,8 @@ package mui.material
 
 import kotlinext.js.ReadonlyArray
 
-external interface MenuListProps : react.PropsWithChildren {
+external interface MenuListProps : ListProps,
+    react.PropsWithChildren {
     /**
      * If `true`, will focus the `[role="menu"]` container and move into tab order.
      * @default false
