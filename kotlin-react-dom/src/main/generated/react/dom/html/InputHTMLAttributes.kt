@@ -8,7 +8,7 @@ import react.dom.events.ChangeEventHandler
 external interface InputHTMLAttributes<T : Element> : HTMLAttributes<T> {
     var accept: String?
     var alt: String?
-    var autoComplete: String?
+    var autoComplete: AutoComplete?
     var autoFocus: Boolean?
     var capture: Capture?
     var checked: Boolean?
