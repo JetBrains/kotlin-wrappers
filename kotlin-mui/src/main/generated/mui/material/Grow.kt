@@ -5,7 +5,7 @@
 
 package mui.material
 
-external interface GrowProps : react.Props {
+external interface GrowProps : mui.material.transitions.TransitionProps {
     /**
      * Perform the enter transition when it first mounts if `in` is also `true`.
      * Set this to `false` to disable this behavior.

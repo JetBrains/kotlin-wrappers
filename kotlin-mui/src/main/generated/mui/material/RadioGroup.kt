@@ -3,9 +3,13 @@
 @file:JsModule("@mui/material/RadioGroup")
 @file:JsNonModule
 
+@file:Suppress(
+    "VIRTUAL_MEMBER_HIDDEN",
+)
+
 package mui.material
 
-external interface RadioGroupProps : react.Props {
+external interface RadioGroupProps : FormGroupProps {
     /**
      * The default value. Use when the component is not controlled.
      */
