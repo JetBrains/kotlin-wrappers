@@ -27,17 +27,16 @@ fun injectGlobal(css: CssBuilder) {
     GlobalStyles.injectScheduled()
 }
 
-internal val isDevelopment by lazy {
-    js("process.env.NODE_ENV !== 'production'") as Boolean
-}
+@Suppress("NOTHING_TO_INLINE")
+internal inline fun isDevelopment() = js("process.env.NODE_ENV !== 'production'") as Boolean
 
 object GlobalStyles {
     internal var sheet: AbstractSheet
     internal var importSheet: AbstractSheet
 
     init {
-        if (isDevelopment) {
-            setupCssHelperFunctions()
+        if (isDevelopment()) {
+            GlobalCssAccess.setupCssHelperFunctions()
         }
         sheet = CSSOMSheet(RuleType.REGULAR)
         importSheet = CSSOMPersistentSheet(RuleType.IMPORT)
