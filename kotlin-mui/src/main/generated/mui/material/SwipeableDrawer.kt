@@ -3,9 +3,13 @@
 @file:JsModule("@mui/material/SwipeableDrawer")
 @file:JsNonModule
 
+@file:Suppress(
+    "VIRTUAL_MEMBER_HIDDEN",
+)
+
 package mui.material
 
-external interface SwipeableDrawerProps : react.Props {
+external interface SwipeableDrawerProps : DrawerProps {
     /**
      * Disable the backdrop transition.
      * This can improve the FPS on low-end devices.

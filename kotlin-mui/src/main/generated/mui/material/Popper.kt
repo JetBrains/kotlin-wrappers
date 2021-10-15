@@ -3,9 +3,13 @@
 @file:JsModule("@mui/material/Popper")
 @file:JsNonModule
 
+@file:Suppress(
+    "VIRTUAL_MEMBER_HIDDEN",
+)
+
 package mui.material
 
-external interface PopperProps : react.Props {
+external interface PopperProps : react.dom.html.HTMLAttributes<org.w3c.dom.HTMLDivElement> {
     var ref: react.Ref<org.w3c.dom.HTMLDivElement>
 
     /**

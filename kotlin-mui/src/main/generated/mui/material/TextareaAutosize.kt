@@ -5,7 +5,7 @@
 
 package mui.material
 
-external interface TextareaAutosizeProps : react.Props {
+external interface TextareaAutosizeProps : react.dom.html.TextareaHTMLAttributes<org.w3c.dom.HTMLTextAreaElement> {
     var ref: react.Ref<org.w3c.dom.HTMLTextAreaElement>
 
     /**

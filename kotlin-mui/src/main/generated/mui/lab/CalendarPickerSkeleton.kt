@@ -5,7 +5,7 @@
 
 package mui.lab
 
-external interface CalendarPickerSkeletonProps : react.Props {
+external interface CalendarPickerSkeletonProps : react.dom.html.HTMLAttributes<org.w3c.dom.HTMLDivElement> {
     /**
      * Override or extend the styles applied to the component.
      */

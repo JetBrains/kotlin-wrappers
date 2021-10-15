@@ -5,7 +5,7 @@
 
 package mui.material
 
-external interface FadeProps : react.Props {
+external interface FadeProps : mui.material.transitions.TransitionProps {
     /**
      * Perform the enter transition when it first mounts if `in` is also `true`.
      * Set this to `false` to disable this behavior.
