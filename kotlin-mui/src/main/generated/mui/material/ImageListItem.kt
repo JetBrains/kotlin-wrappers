@@ -7,7 +7,9 @@ package mui.material
 
 import kotlinext.js.ReadonlyArray
 
-external interface ImageListItemProps : react.PropsWithChildren {
+external interface ImageListItemProps :
+    react.dom.html.LiHTMLAttributes<org.w3c.dom.HTMLLIElement>,
+    react.PropsWithChildren {
     /**
      * The content of the component, normally an `<img>`.
      */

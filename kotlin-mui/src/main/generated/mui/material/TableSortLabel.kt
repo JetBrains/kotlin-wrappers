@@ -7,7 +7,9 @@ package mui.material
 
 import kotlinext.js.ReadonlyArray
 
-external interface TableSortLabelProps : react.PropsWithChildren {
+external interface TableSortLabelProps :
+    react.dom.html.HTMLAttributes<org.w3c.dom.HTMLSpanElement>,
+    react.PropsWithChildren {
     /**
      * If `true`, the label will have the active styling (should be true for the sorted column).
      * @default false

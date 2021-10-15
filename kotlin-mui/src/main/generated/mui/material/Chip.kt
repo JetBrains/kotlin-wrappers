@@ -3,9 +3,14 @@
 @file:JsModule("@mui/material/Chip")
 @file:JsNonModule
 
+@file:Suppress(
+    "VIRTUAL_MEMBER_HIDDEN",
+)
+
 package mui.material
 
-external interface ChipProps : react.Props {
+external interface ChipProps :
+    react.dom.html.HTMLAttributes<org.w3c.dom.HTMLDivElement> {
     /**
      * The Avatar element to display.
      */

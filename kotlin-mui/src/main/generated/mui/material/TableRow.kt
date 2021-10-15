@@ -7,7 +7,9 @@ package mui.material
 
 import kotlinext.js.ReadonlyArray
 
-external interface TableRowProps : react.PropsWithChildren {
+external interface TableRowProps :
+    react.dom.html.HTMLAttributes<org.w3c.dom.HTMLTableRowElement>,
+    react.PropsWithChildren {
     /**
      * Should be valid <tr> children such as `TableCell`.
      */

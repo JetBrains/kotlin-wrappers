@@ -5,7 +5,8 @@
 
 package mui.material
 
-external interface MenuItemProps : react.Props {
+external interface MenuItemProps :
+    react.dom.html.LiHTMLAttributes<org.w3c.dom.HTMLLIElement> {
     /**
      * If `true`, the list item is focused during the first mount.
      * Focus will also be triggered if the value changes from false to true.

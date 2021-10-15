@@ -5,7 +5,8 @@
 
 package mui.material
 
-external interface CardProps : react.Props {
+external interface CardProps :
+    react.dom.html.HTMLAttributes<org.w3c.dom.HTMLDivElement> {
     /**
      * Override or extend the styles applied to the component.
      */

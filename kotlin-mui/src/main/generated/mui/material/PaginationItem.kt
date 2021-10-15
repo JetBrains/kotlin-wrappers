@@ -3,9 +3,14 @@
 @file:JsModule("@mui/material/PaginationItem")
 @file:JsNonModule
 
+@file:Suppress(
+    "VIRTUAL_MEMBER_HIDDEN",
+)
+
 package mui.material
 
-external interface PaginationItemProps : react.Props {
+external interface PaginationItemProps :
+    react.dom.html.HTMLAttributes<org.w3c.dom.HTMLDivElement> {
     /**
      * Override or extend the styles applied to the component.
      */

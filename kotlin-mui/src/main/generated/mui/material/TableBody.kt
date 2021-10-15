@@ -7,7 +7,9 @@ package mui.material
 
 import kotlinext.js.ReadonlyArray
 
-external interface TableBodyProps : react.PropsWithChildren {
+external interface TableBodyProps :
+    react.dom.html.HTMLAttributes<org.w3c.dom.HTMLTableSectionElement>,
+    react.PropsWithChildren {
     /**
      * The content of the component, normally `TableRow`.
      */

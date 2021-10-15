@@ -7,7 +7,9 @@ package mui.material
 
 import kotlinext.js.ReadonlyArray
 
-external interface TypographyProps : react.PropsWithChildren {
+external interface TypographyProps :
+    react.dom.html.HTMLAttributes<org.w3c.dom.HTMLSpanElement>,
+    react.PropsWithChildren {
     /**
      * Set the text-align on the component.
      * @default 'inherit'

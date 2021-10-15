@@ -3,11 +3,17 @@
 @file:JsModule("@mui/material/IconButton")
 @file:JsNonModule
 
+@file:Suppress(
+    "VIRTUAL_MEMBER_HIDDEN",
+)
+
 package mui.material
 
 import kotlinext.js.ReadonlyArray
 
-external interface IconButtonProps : react.PropsWithChildren {
+external interface IconButtonProps :
+    react.dom.html.ButtonHTMLAttributes<org.w3c.dom.HTMLButtonElement>,
+    react.PropsWithChildren {
     /**
      * The icon to display.
      */

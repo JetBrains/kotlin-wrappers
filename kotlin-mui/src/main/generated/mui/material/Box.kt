@@ -7,7 +7,9 @@ package mui.material
 
 import kotlinext.js.ReadonlyArray
 
-external interface BoxProps : react.PropsWithChildren {
+external interface BoxProps :
+    react.dom.html.HTMLAttributes<org.w3c.dom.HTMLDivElement>,
+    react.PropsWithChildren {
     override var children: ReadonlyArray<react.ReactNode>?
 
     var component: react.ElementType<*>
