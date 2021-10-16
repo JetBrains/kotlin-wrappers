@@ -7,7 +7,9 @@ package mui.material
 
 import kotlinext.js.ReadonlyArray
 
-external interface FormHelperTextProps : react.PropsWithChildren {
+external interface FormHelperTextProps :
+    react.dom.html.HTMLAttributes<org.w3c.dom.HTMLParagraphElement>,
+    react.PropsWithChildren {
     /**
      * The content of the component.
      *

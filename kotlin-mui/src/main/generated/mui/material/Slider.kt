@@ -3,9 +3,14 @@
 @file:JsModule("@mui/material/Slider")
 @file:JsNonModule
 
+@file:Suppress(
+    "VIRTUAL_MEMBER_HIDDEN",
+)
+
 package mui.material
 
-external interface SliderProps : react.Props {
+external interface SliderProps :
+    react.dom.html.HTMLAttributes<org.w3c.dom.HTMLSpanElement> {
     /**
      * The color of the component. It supports those theme colors that make sense for this component.
      * @default 'primary'

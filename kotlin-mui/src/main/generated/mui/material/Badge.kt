@@ -3,9 +3,14 @@
 @file:JsModule("@mui/material/Badge")
 @file:JsNonModule
 
+@file:Suppress(
+    "VIRTUAL_MEMBER_HIDDEN",
+)
+
 package mui.material
 
-external interface BadgeProps : react.Props {
+external interface BadgeProps :
+    react.dom.html.HTMLAttributes<org.w3c.dom.HTMLSpanElement> {
     /**
      * Override or extend the styles applied to the component.
      */

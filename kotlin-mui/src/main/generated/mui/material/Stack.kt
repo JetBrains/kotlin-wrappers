@@ -7,7 +7,9 @@ package mui.material
 
 import kotlinext.js.ReadonlyArray
 
-external interface StackProps : react.PropsWithChildren {
+external interface StackProps :
+    react.dom.html.HTMLAttributes<org.w3c.dom.HTMLDivElement>,
+    react.PropsWithChildren {
     var ref: react.Ref<*>
 
     /**

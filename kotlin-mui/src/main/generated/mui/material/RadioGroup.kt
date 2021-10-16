@@ -9,7 +9,8 @@
 
 package mui.material
 
-external interface RadioGroupProps : FormGroupProps {
+external interface RadioGroupProps :
+    FormGroupProps {
     /**
      * The default value. Use when the component is not controlled.
      */

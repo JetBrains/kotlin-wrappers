@@ -5,7 +5,8 @@
 
 package mui.lab
 
-external interface LoadingButtonProps : react.Props {
+external interface LoadingButtonProps :
+    react.dom.html.ButtonHTMLAttributes<org.w3c.dom.HTMLButtonElement> {
     /**
      * Override or extend the styles applied to the component.
      */

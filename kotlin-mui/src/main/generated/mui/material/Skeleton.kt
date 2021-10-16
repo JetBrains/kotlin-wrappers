@@ -7,7 +7,9 @@ package mui.material
 
 import kotlinext.js.ReadonlyArray
 
-external interface SkeletonProps : react.PropsWithChildren {
+external interface SkeletonProps :
+    react.dom.html.HTMLAttributes<org.w3c.dom.HTMLSpanElement>,
+    react.PropsWithChildren {
     /**
      * The animation.
      * If `false` the animation effect is disabled.

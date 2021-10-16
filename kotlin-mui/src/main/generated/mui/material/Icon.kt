@@ -3,11 +3,17 @@
 @file:JsModule("@mui/material/Icon")
 @file:JsNonModule
 
+@file:Suppress(
+    "VIRTUAL_MEMBER_HIDDEN",
+)
+
 package mui.material
 
 import kotlinext.js.ReadonlyArray
 
-external interface IconProps : react.PropsWithChildren {
+external interface IconProps :
+    react.dom.html.HTMLAttributes<org.w3c.dom.HTMLSpanElement>,
+    react.PropsWithChildren {
     /**
      * The base class applied to the icon. Defaults to 'material-icons', but can be changed to any
      * other base class that suits the icon font you're using (e.g. material-icons-rounded, fas, etc).

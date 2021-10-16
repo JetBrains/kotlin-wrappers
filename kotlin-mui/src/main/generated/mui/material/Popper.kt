@@ -9,7 +9,8 @@
 
 package mui.material
 
-external interface PopperProps : react.dom.html.HTMLAttributes<org.w3c.dom.HTMLDivElement> {
+external interface PopperProps :
+    react.dom.html.HTMLAttributes<org.w3c.dom.HTMLDivElement> {
     var ref: react.Ref<org.w3c.dom.HTMLDivElement>
 
     /**

@@ -3,11 +3,17 @@
 @file:JsModule("@mui/material/ButtonGroup")
 @file:JsNonModule
 
+@file:Suppress(
+    "VIRTUAL_MEMBER_HIDDEN",
+)
+
 package mui.material
 
 import kotlinext.js.ReadonlyArray
 
-external interface ButtonGroupProps : react.PropsWithChildren {
+external interface ButtonGroupProps :
+    react.dom.html.HTMLAttributes<org.w3c.dom.HTMLDivElement>,
+    react.PropsWithChildren {
     /**
      * The content of the component.
      */

@@ -7,7 +7,9 @@ package mui.lab
 
 import kotlinext.js.ReadonlyArray
 
-external interface MasonryProps : react.PropsWithChildren {
+external interface MasonryProps :
+    react.dom.html.HTMLAttributes<org.w3c.dom.HTMLDivElement>,
+    react.PropsWithChildren {
     /**
      * The content of the component. It's recommended to be `<MasonryItem />`s.
      */

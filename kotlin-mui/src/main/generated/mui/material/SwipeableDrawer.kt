@@ -9,7 +9,8 @@
 
 package mui.material
 
-external interface SwipeableDrawerProps : DrawerProps {
+external interface SwipeableDrawerProps :
+    DrawerProps {
     /**
      * Disable the backdrop transition.
      * This can improve the FPS on low-end devices.

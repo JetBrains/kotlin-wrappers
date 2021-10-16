@@ -5,7 +5,8 @@
 
 package mui.material
 
-external interface BackdropProps : react.Props {
+external interface BackdropProps :
+    react.dom.html.HTMLAttributes<org.w3c.dom.HTMLSpanElement> {
     /**
      * Override or extend the styles applied to the component.
      */
