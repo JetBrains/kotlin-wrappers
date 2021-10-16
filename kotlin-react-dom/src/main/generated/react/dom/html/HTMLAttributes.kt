@@ -52,7 +52,6 @@ external interface HTMLAttributes<T : Element> : AriaAttributes, DOMAttributes<T
     var autoCapitalize: String?
     var autoCorrect: String?
     var autoSave: String?
-    var color: String?
     var itemProp: String?
     var itemScope: Boolean?
     var itemType: String?
