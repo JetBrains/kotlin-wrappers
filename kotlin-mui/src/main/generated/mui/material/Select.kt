@@ -147,7 +147,7 @@ external interface SelectProps :
     /**
      * Props applied to the clickable div element.
      */
-    var SelectDisplayProps: dynamic
+    var SelectDisplayProps: react.dom.html.HTMLAttributes<org.w3c.dom.HTMLDivElement>
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.

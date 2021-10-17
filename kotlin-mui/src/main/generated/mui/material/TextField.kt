@@ -132,12 +132,12 @@ external interface BaseTextFieldProps : react.PropsWithChildren {
     /**
      * Maximum number of rows to display when multiline option is set to true.
      */
-    var maxRows: dynamic
+    var maxRows: Int
 
     /**
      * Minimum number of rows to display when multiline option is set to true.
      */
-    var minRows: dynamic
+    var minRows: Int
 
     /**
      * Render a [`Select`](/api/select/) element while passing the Input element to `Select` as `input` parameter.
@@ -164,7 +164,7 @@ external interface BaseTextFieldProps : react.PropsWithChildren {
     /**
      * Type of the `input` element. It should be [a valid HTML5 input type](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#Form_%3Cinput%3E_types).
      */
-    var type: dynamic /* React.InputHTMLAttributes<unknown>['type'] */
+    var type: react.dom.html.InputType
 
     /**
      * The value of the `input` element, required for a controlled component.

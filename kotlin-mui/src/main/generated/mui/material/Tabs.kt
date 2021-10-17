@@ -101,7 +101,7 @@ external interface TabsProps : react.PropsWithChildren {
      * Props applied to the tab indicator element.
      * @default  {}
      */
-    var TabIndicatorProps: dynamic
+    var TabIndicatorProps: react.dom.html.HTMLAttributes<org.w3c.dom.HTMLDivElement>
 
     /**
      * Props applied to the [`TabScrollButton`](/api/tab-scroll-button/) element.

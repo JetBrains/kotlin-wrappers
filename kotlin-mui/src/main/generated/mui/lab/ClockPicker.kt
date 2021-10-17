@@ -36,19 +36,19 @@ external interface ClockPickerProps : react.Props {
      * Get clock number aria-text for hours.
      * @default (hours: string) => `${hours} hours`
      */
-    var getHoursClockNumberText: dynamic
+    var getHoursClockNumberText: (hours: String) -> String
 
     /**
      * Get clock number aria-text for minutes.
      * @default (minutes: string) => `${minutes} minutes`
      */
-    var getMinutesClockNumberText: dynamic
+    var getMinutesClockNumberText: (minutes: String) -> String
 
     /**
      * Get clock number aria-text for seconds.
      * @default (seconds: string) => `${seconds} seconds`
      */
-    var getSecondsClockNumberText: dynamic
+    var getSecondsClockNumberText: (seconds: String) -> String
 
     /**
      * Left arrow icon aria-label text.
@@ -65,9 +65,9 @@ external interface ClockPickerProps : react.Props {
      */
     var onChange: dynamic
 
-    var openNextView: dynamic
+    var openNextView: () -> Unit
 
-    var openPreviousView: dynamic
+    var openPreviousView: () -> Unit
 
     /**
      * Right arrow icon aria-label text.

@@ -5,6 +5,8 @@
 
 package mui.lab
 
+import kotlinext.js.ReadonlyArray
+
 external interface TreeViewProps : react.Props
 
 external interface MultiSelectTreeViewProps : react.Props {
@@ -13,13 +15,13 @@ external interface MultiSelectTreeViewProps : react.Props {
      * When `multiSelect` is true this takes an array of strings; when false (default) a string.
      * @default []
      */
-    var defaultSelected: dynamic
+    var defaultSelected: ReadonlyArray<String>
 
     /**
      * Selected node ids. (Controlled)
      * When `multiSelect` is true this takes an array of strings; when false (default) a string.
      */
-    var selected: dynamic
+    var selected: ReadonlyArray<String>
 
     /**
      * If true `ctrl` and `shift` will trigger multiselect.

@@ -14,7 +14,7 @@ external interface MasonryItemProps :
     /**
      * The content of the component, normally an `<img />` or a `<div />`. It should be only one element.
      */
-    var children: dynamic
+    var children: react.ReactElement
 
     /**
      * Override or extend the styles applied to the component.
