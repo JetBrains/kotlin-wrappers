@@ -93,7 +93,7 @@ external interface SwitchBaseProps :
 
     var tabIndex: Number
 
-    var type: dynamic /* React.InputHTMLAttributes<HTMLInputElement>['type'] */
+    var type: react.dom.html.InputType
 
     /**
      * The value of the component. The DOM API casts this to a string.

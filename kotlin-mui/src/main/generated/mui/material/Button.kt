@@ -3,10 +3,6 @@
 @file:JsModule("@mui/material/Button")
 @file:JsNonModule
 
-@file:Suppress(
-    "VIRTUAL_MEMBER_HIDDEN",
-)
-
 package mui.material
 
 import kotlinext.js.ReadonlyArray
@@ -34,7 +30,7 @@ external interface ButtonProps :
      * If `true`, the component is disabled.
      * @default false
      */
-    var disabled: Boolean
+    override var disabled: Boolean?
 
     /**
      * If `true`, no elevation is used.

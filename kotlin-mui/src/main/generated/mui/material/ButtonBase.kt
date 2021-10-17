@@ -3,10 +3,6 @@
 @file:JsModule("@mui/material/ButtonBase")
 @file:JsNonModule
 
-@file:Suppress(
-    "VIRTUAL_MEMBER_HIDDEN",
-)
-
 package mui.material
 
 import kotlinext.js.ReadonlyArray
@@ -41,7 +37,7 @@ external interface ButtonBaseProps :
      * If `true`, the component is disabled.
      * @default false
      */
-    var disabled: Boolean
+    override var disabled: Boolean?
 
     /**
      * If `true`, the ripple effect is disabled.
@@ -94,7 +90,7 @@ external interface ButtonBaseProps :
     /**
      * @default 0
      */
-    var tabIndex: dynamic
+    override var tabIndex: Int?
 
     /**
      * Props applied to the `TouchRipple` element.

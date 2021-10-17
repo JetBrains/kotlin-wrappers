@@ -3,10 +3,6 @@
 @file:JsModule("@mui/material/Badge")
 @file:JsNonModule
 
-@file:Suppress(
-    "VIRTUAL_MEMBER_HIDDEN",
-)
-
 package mui.material
 
 external interface BadgeProps :
