@@ -2,8 +2,11 @@ package styled.sheets
 
 import kotlinx.dom.appendText
 
-// A stylesheet that is injected by setting the text of a <style> tag. Useful in development mode,
-// because the stylesheet can be easily viewed using devtools, but relatively slow.
+/**
+* A stylesheet that is injected by setting the text of a <style> tag. Useful in development mode,
+* because the stylesheet can be easily viewed using devtools, but relatively slow.
+* Consider using [StyledNext.getCss], [StyledNext.downloadCss] instead.
+*/
 internal class DevSheet(type: RuleType) : AbstractSheet(type) {
     private val style by lazy { appendStyleElement() }
     private val scheduledRules = mutableListOf<String>()

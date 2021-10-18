@@ -42,11 +42,6 @@ object GlobalStyles {
         importSheet = CSSOMPersistentSheet(RuleType.IMPORT)
     }
 
-    /**
-     * Use sheet that makes the css text available to read in DOM, used for CSS debugging.
-     * Degrades performance, so consider using [getCss], [downloadCss] and [mapNotNullRules] functions from the browser console
-     * Clears all the CSS added previously
-     */
     fun useDevSheet() {
         clear()
         sheet = DevSheet(RuleType.REGULAR)

@@ -20,7 +20,7 @@ internal object GlobalCssAccess {
     }
 
     /**
-     * download file with CSS rules which contains [partialCss]
+     * download a file with CSS rules that contain [partialCss]
      */
     private fun downloadCss(partialCss: String? = null, filename: String = "index.css") {
         downloadFile(getCss(partialCss).join("\n"), filename)
@@ -55,7 +55,7 @@ internal object GlobalCssAccess {
     }
 
     /**
-     * @return array of all CSS rules, which contains [partialCss].
+     * @return array of all CSS rules that contain [partialCss]
      */
     @Suppress("UNUSED_PARAMETER")
     internal fun getCss(partialCss: String? = null): dynamic {
