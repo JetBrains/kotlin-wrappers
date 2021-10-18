@@ -19,24 +19,24 @@ external interface ToolbarProps :
     /**
      * Override or extend the styles applied to the component.
      */
-    var classes: ToolbarClasses
+    var classes: ToolbarClasses?
 
     /**
      * If `true`, disables gutter padding.
      * @default false
      */
-    var disableGutters: Boolean
+    var disableGutters: Boolean?
 
     /**
      * The variant to use.
      * @default 'regular'
      */
-    var variant: mui.system.Union /* 'regular' | 'dense', ToolbarPropsVariantOverrides */
+    var variant: mui.system.Union? /* 'regular' | 'dense', ToolbarPropsVariantOverrides */
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: mui.system.SxProps<mui.system.Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>?
 }
 
 /**

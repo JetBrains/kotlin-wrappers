@@ -18,31 +18,31 @@ external interface PaperProps :
     /**
      * Override or extend the styles applied to the component.
      */
-    var classes: PaperClasses
+    var classes: PaperClasses?
 
     /**
      * Shadow depth, corresponds to `dp` in the spec.
      * It accepts values between 0 and 24 inclusive.
      * @default 1
      */
-    var elevation: Number
+    var elevation: Number?
 
     /**
      * If `true`, rounded corners are disabled.
      * @default false
      */
-    var square: Boolean
+    var square: Boolean?
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: mui.system.SxProps<mui.system.Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>?
 
     /**
      * The variant to use.
      * @default 'elevation'
      */
-    var variant: mui.system.Union /* 'elevation' | 'outlined', PaperPropsVariantOverrides */
+    var variant: mui.system.Union? /* 'elevation' | 'outlined', PaperPropsVariantOverrides */
 }
 
 /**

@@ -18,13 +18,13 @@ external interface ButtonProps :
     /**
      * Override or extend the styles applied to the component.
      */
-    var classes: ButtonClasses
+    var classes: ButtonClasses?
 
     /**
      * The color of the component. It supports those theme colors that make sense for this component.
      * @default 'primary'
      */
-    var color: mui.system.Union /* 'inherit' | 'primary' | 'secondary' | 'success' | 'error' | 'info' | 'warning', ButtonPropsColorOverrides */
+    var color: mui.system.Union? /* 'inherit' | 'primary' | 'secondary' | 'success' | 'error' | 'info' | 'warning', ButtonPropsColorOverrides */
 
     /**
      * If `true`, the component is disabled.
@@ -36,53 +36,53 @@ external interface ButtonProps :
      * If `true`, no elevation is used.
      * @default false
      */
-    var disableElevation: Boolean
+    var disableElevation: Boolean?
 
     /**
      * If `true`, the  keyboard focus ripple is disabled.
      * @default false
      */
-    var disableFocusRipple: Boolean
+    var disableFocusRipple: Boolean?
 
     /**
      * Element placed after the children.
      */
-    var endIcon: react.ReactNode
+    var endIcon: react.ReactNode?
 
     /**
      * If `true`, the button will take up the full width of its container.
      * @default false
      */
-    var fullWidth: Boolean
+    var fullWidth: Boolean?
 
     /**
      * The URL to link to when the button is clicked.
      * If defined, an `a` element will be used as the root node.
      */
-    var href: String
+    var href: String?
 
     /**
      * The size of the component.
      * `small` is equivalent to the dense button styling.
      * @default 'medium'
      */
-    var size: mui.system.Union /* 'small' | 'medium' | 'large', ButtonPropsSizeOverrides */
+    var size: mui.system.Union? /* 'small' | 'medium' | 'large', ButtonPropsSizeOverrides */
 
     /**
      * Element placed before the children.
      */
-    var startIcon: react.ReactNode
+    var startIcon: react.ReactNode?
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: mui.system.SxProps<mui.system.Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>?
 
     /**
      * The variant to use.
      * @default 'text'
      */
-    var variant: mui.system.Union /* 'text' | 'outlined' | 'contained', ButtonPropsVariantOverrides */
+    var variant: mui.system.Union? /* 'text' | 'outlined' | 'contained', ButtonPropsVariantOverrides */
 }
 
 /**

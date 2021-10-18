@@ -23,7 +23,7 @@ external interface TabScrollButtonProps :
     /**
      * Override or extend the styles applied to the component.
      */
-    var classes: TabScrollButtonClasses
+    var classes: TabScrollButtonClasses?
 
     /**
      * The direction the button should indicate.
@@ -33,7 +33,7 @@ external interface TabScrollButtonProps :
     /**
      * If `true`, the component is disabled.
      */
-    var disabled: Boolean
+    var disabled: Boolean?
 
     /**
      * The component orientation (layout flow direction).
@@ -43,7 +43,7 @@ external interface TabScrollButtonProps :
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: mui.system.SxProps<mui.system.Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>?
 }
 
 /**

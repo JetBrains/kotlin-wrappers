@@ -9,12 +9,12 @@ external interface ClockPickerProps : react.Props {
     /**
      * Set to `true` if focus should be moved to clock picker.
      */
-    var autoFocus: Boolean
+    var autoFocus: Boolean?
 
     /**
      * Override or extend the styles applied to the component.
      */
-    var classes: ClockPickerClasses
+    var classes: ClockPickerClasses?
 
     /**
      * The components used for each slot.
@@ -36,25 +36,25 @@ external interface ClockPickerProps : react.Props {
      * Get clock number aria-text for hours.
      * @default (hours: string) => `${hours} hours`
      */
-    var getHoursClockNumberText: (hours: String) -> String
+    var getHoursClockNumberText: ((hours: String) -> String)?
 
     /**
      * Get clock number aria-text for minutes.
      * @default (minutes: string) => `${minutes} minutes`
      */
-    var getMinutesClockNumberText: (minutes: String) -> String
+    var getMinutesClockNumberText: ((minutes: String) -> String)?
 
     /**
      * Get clock number aria-text for seconds.
      * @default (seconds: string) => `${seconds} seconds`
      */
-    var getSecondsClockNumberText: (seconds: String) -> String
+    var getSecondsClockNumberText: ((seconds: String) -> String)?
 
     /**
      * Left arrow icon aria-label text.
      * @default 'open previous view'
      */
-    var leftArrowButtonText: String
+    var leftArrowButtonText: String?
 
     var previousViewAvailable: Boolean
 
@@ -73,9 +73,9 @@ external interface ClockPickerProps : react.Props {
      * Right arrow icon aria-label text.
      * @default 'open next view'
      */
-    var rightArrowButtonText: String
+    var rightArrowButtonText: String?
 
-    var showViewSwitcher: Boolean
+    var showViewSwitcher: Boolean?
 
     var view: dynamic
 }
@@ -90,19 +90,19 @@ external interface ExportedClockPickerProps : react.Props {
      * 12h/24h view for hour selection clock.
      * @default false
      */
-    var ampm: Boolean
+    var ampm: Boolean?
 
     /**
      * Step over minutes.
      * @default 1
      */
-    var minutesStep: Number
+    var minutesStep: Number?
 
     /**
      * Display ampm controls under the clock (instead of in the toolbar).
      * @default false
      */
-    var ampmInClock: Boolean
+    var ampmInClock: Boolean?
 
     /**
      * Accessible text that helps user to understand which time and view is selected.

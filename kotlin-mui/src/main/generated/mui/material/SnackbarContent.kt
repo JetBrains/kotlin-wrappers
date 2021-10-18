@@ -15,17 +15,17 @@ external interface SnackbarContentProps :
     /**
      * The action to display. It renders after the message, at the end of the snackbar.
      */
-    var action: react.ReactNode
+    var action: react.ReactNode?
 
     /**
      * Override or extend the styles applied to the component.
      */
-    var classes: SnackbarContentClasses
+    var classes: SnackbarContentClasses?
 
     /**
      * The message to display.
      */
-    var message: react.ReactNode
+    var message: react.ReactNode?
 
     /**
      * The ARIA role attribute of the element.
@@ -36,7 +36,7 @@ external interface SnackbarContentProps :
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: mui.system.SxProps<mui.system.Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>?
 }
 
 /**

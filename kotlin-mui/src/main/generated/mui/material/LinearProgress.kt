@@ -15,37 +15,37 @@ external interface LinearProgressProps :
     /**
      * Override or extend the styles applied to the component.
      */
-    var classes: LinearProgressClasses
+    var classes: LinearProgressClasses?
 
     /**
      * The color of the component. It supports those theme colors that make sense for this component.
      * @default 'primary'
      */
-    var color: mui.system.Union /* 'primary' | 'secondary' | 'error' | 'info' | 'success' | 'warning' | 'inherit', LinearProgressPropsColorOverrides */
+    var color: mui.system.Union? /* 'primary' | 'secondary' | 'error' | 'info' | 'success' | 'warning' | 'inherit', LinearProgressPropsColorOverrides */
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: mui.system.SxProps<mui.system.Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>?
 
     /**
      * The value of the progress indicator for the determinate and buffer variants.
      * Value between 0 and 100.
      */
-    var value: Number
+    var value: Number?
 
     /**
      * The value for the buffer variant.
      * Value between 0 and 100.
      */
-    var valueBuffer: Number
+    var valueBuffer: Number?
 
     /**
      * The variant to use.
      * Use indeterminate or query when there is no progress value.
      * @default 'indeterminate'
      */
-    var variant: mui.system.Union /* 'determinate' | 'indeterminate' | 'buffer' | 'query' */
+    var variant: mui.system.Union? /* 'determinate' | 'indeterminate' | 'buffer' | 'query' */
 }
 
 /**

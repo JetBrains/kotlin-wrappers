@@ -16,24 +16,24 @@ external interface LoadingButtonProps :
      * If `true`, the loading indicator is shown.
      * @default false
      */
-    var loading: Boolean
+    var loading: Boolean?
 
     /**
      * Element placed before the children if the button is in loading state.
      * @default <CircularProgress color="inherit" size={16} />
      */
-    var loadingIndicator: react.ReactNode
+    var loadingIndicator: react.ReactNode?
 
     /**
      * The loading indicator can be positioned on the start, end, or the center of the button.
      * @default 'center'
      */
-    var loadingPosition: mui.system.Union /* 'start' | 'end' | 'center' */
+    var loadingPosition: mui.system.Union? /* 'start' | 'end' | 'center' */
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: mui.system.SxProps<mui.system.Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>?
 }
 
 /**

@@ -16,26 +16,26 @@ external interface CardMediaProps : react.PropsWithChildren {
     /**
      * Override or extend the styles applied to the component.
      */
-    var classes: CardMediaClasses
+    var classes: CardMediaClasses?
 
     /**
      * Image to be displayed as a background image.
      * Either `image` or `src` prop must be specified.
      * Note that caller must specify height otherwise the image will not be visible.
      */
-    var image: String
+    var image: String?
 
     /**
      * An alias for `image` property.
      * Available only with media components.
      * Media components: `video`, `audio`, `picture`, `iframe`, `img`.
      */
-    var src: String
+    var src: String?
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: mui.system.SxProps<mui.system.Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>?
 }
 
 /**

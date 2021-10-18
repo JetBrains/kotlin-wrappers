@@ -12,37 +12,37 @@ package mui.material
 external interface SwitchBaseProps :
     mui.system.StandardProps,
     ButtonBaseProps {
-    var autoFocus: Boolean
+    var autoFocus: Boolean?
 
     /**
      * If `true`, the component is checked.
      */
-    var checked: Boolean
+    var checked: Boolean?
 
     var checkedIcon: react.ReactNode
 
     /**
      * Override or extend the styles applied to the component.
      */
-    var classes: SwitchBaseClasses
+    var classes: SwitchBaseClasses?
 
     /**
      * The default checked state. Use when the component is not controlled.
      */
-    var defaultChecked: Boolean
+    var defaultChecked: Boolean?
 
-    var disabled: Boolean
+    var disabled: Boolean?
 
     /**
      * If `true`, the ripple effect is disabled.
      */
-    var disableRipple: Boolean
+    var disableRipple: Boolean?
 
     /**
      * If `true`, the  keyboard focus ripple is disabled.
      * @default false
      */
-    var disableFocusRipple: Boolean
+    var disableFocusRipple: Boolean?
 
     /**
      * If given, uses a negative margin to counteract the padding on one
@@ -51,29 +51,29 @@ external interface SwitchBaseProps :
      * size and shape).
      * @default false
      */
-    var edge: mui.system.Union /* 'start' | 'end' | false */
+    var edge: mui.system.Union? /* 'start' | 'end' | false */
 
     var icon: react.ReactNode
 
     /**
      * The id of the `input` element.
      */
-    var id: String
+    var id: String?
 
     /**
      * [Attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#Attributes) applied to the `input` element.
      */
-    var inputProps: react.dom.html.InputHTMLAttributes<org.w3c.dom.HTMLInputElement>
+    var inputProps: react.dom.html.InputHTMLAttributes<org.w3c.dom.HTMLInputElement>?
 
     /**
      * Pass a ref to the `input` element.
      */
-    var inputRef: react.Ref<*>
+    var inputRef: react.Ref<*>?
 
     /**
      * Name attribute of the `input` element.
      */
-    var name: String
+    var name: String?
 
     /**
      * Callback fired when the state is changed.
@@ -84,16 +84,16 @@ external interface SwitchBaseProps :
      */
     var onChange: dynamic
 
-    var readOnly: Boolean
+    var readOnly: Boolean?
 
     /**
      * If `true`, the `input` element is required.
      */
-    var required: Boolean
+    var required: Boolean?
 
-    var tabIndex: Number
+    var tabIndex: Number?
 
-    var type: react.dom.html.InputType
+    var type: react.dom.html.InputType?
 
     /**
      * The value of the component. The DOM API casts this to a string.

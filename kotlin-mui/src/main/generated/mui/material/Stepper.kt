@@ -20,14 +20,14 @@ external interface StepperProps :
      * Set to -1 to disable all the steps.
      * @default 0
      */
-    var activeStep: Number
+    var activeStep: Number?
 
     /**
      * If set to 'true' and orientation is horizontal,
      * then the step label will be positioned under the icon.
      * @default false
      */
-    var alternativeLabel: Boolean
+    var alternativeLabel: Boolean?
 
     /**
      * Two or more `<Step />` components.
@@ -37,7 +37,7 @@ external interface StepperProps :
     /**
      * Override or extend the styles applied to the component.
      */
-    var classes: StepperClasses
+    var classes: StepperClasses?
 
     /**
      * An element to be placed between each step.
@@ -49,18 +49,18 @@ external interface StepperProps :
      * If set the `Stepper` will not assist in controlling steps for linear flow.
      * @default false
      */
-    var nonLinear: Boolean
+    var nonLinear: Boolean?
 
     /**
      * The component orientation (layout flow direction).
      * @default 'horizontal'
      */
-    var orientation: Orientation
+    var orientation: Orientation?
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: mui.system.SxProps<mui.system.Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>?
 }
 
 /**

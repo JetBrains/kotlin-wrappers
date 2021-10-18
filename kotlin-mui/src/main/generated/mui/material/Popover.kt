@@ -19,13 +19,13 @@ external interface PopoverProps :
      * A ref for imperative actions.
      * It currently only supports updatePosition() action.
      */
-    var action: react.Ref<dynamic>
+    var action: react.Ref<dynamic>?
 
     /**
      * An HTML element, or a function that returns one.
      * It's used to set the position of the popover.
      */
-    var anchorEl: (element: org.w3c.dom.Element) -> org.w3c.dom.Element
+    var anchorEl: ((element: org.w3c.dom.Element) -> org.w3c.dom.Element)?
 
     /**
      * This is the point on the anchor where the popover's
@@ -40,20 +40,20 @@ external interface PopoverProps :
      *   horizontal: 'left',
      * }
      */
-    var anchorOrigin: PopoverOrigin
+    var anchorOrigin: PopoverOrigin?
 
     /**
      * This is the position that may be used to set the position of the popover.
      * The coordinates are relative to the application's client area.
      */
-    var anchorPosition: PopoverPosition
+    var anchorPosition: PopoverPosition?
 
     /**
      * This determines which anchor prop to refer to when setting
      * the position of the popover.
      * @default 'anchorEl'
      */
-    var anchorReference: PopoverReference
+    var anchorReference: PopoverReference?
 
     /**
      * The content of the component.
@@ -63,7 +63,7 @@ external interface PopoverProps :
     /**
      * Override or extend the styles applied to the component.
      */
-    var classes: PopoverClasses
+    var classes: PopoverClasses?
 
     /**
      * An HTML element, component instance, or function that returns either.
@@ -78,13 +78,13 @@ external interface PopoverProps :
      * The elevation of the popover.
      * @default 8
      */
-    var elevation: Number
+    var elevation: Number?
 
     /**
      * Specifies how close to the edge of the window the popover can appear.
      * @default 16
      */
-    var marginThreshold: Number
+    var marginThreshold: Number?
 
     var onClose: dynamic /* ModalProps['onClose'] */
 
@@ -97,12 +97,12 @@ external interface PopoverProps :
      * Props applied to the [`Paper`](/api/paper/) element.
      * @default {}
      */
-    var PaperProps: PaperProps
+    var PaperProps: PaperProps?
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: mui.system.SxProps<mui.system.Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>?
 
     /**
      * This is the point on the popover which
@@ -116,14 +116,14 @@ external interface PopoverProps :
      *   horizontal: 'left',
      * }
      */
-    var transformOrigin: PopoverOrigin
+    var transformOrigin: PopoverOrigin?
 
     /**
      * The component used for the transition.
      * [Follow this guide](/components/transitions/#transitioncomponent-prop) to learn more about the requirements for this component.
      * @default Grow
      */
-    var TransitionComponent: react.ComponentType<*>
+    var TransitionComponent: react.ComponentType<*>?
 
     /**
      * Set to 'auto' to automatically calculate transition time based on height.
@@ -136,7 +136,7 @@ external interface PopoverProps :
      * By default, the element is based on this [`Transition`](https://reactcommunity.org/react-transition-group/transition) component.
      * @default {}
      */
-    var TransitionProps: mui.material.transitions.TransitionProps
+    var TransitionProps: mui.material.transitions.TransitionProps?
 }
 
 external interface PopoverOrigin {

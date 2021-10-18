@@ -11,17 +11,17 @@ external interface TablePaginationProps : react.Props {
      * Either a string to use a HTML element or a component.
      * @default TablePaginationActions
      */
-    var ActionsComponent: react.ElementType<TablePaginationActionsProps>
+    var ActionsComponent: react.ElementType<TablePaginationActionsProps>?
 
     /**
      * Props applied to the back arrow [`IconButton`](/api/icon-button/) component.
      */
-    var backIconButtonProps: IconButtonProps
+    var backIconButtonProps: IconButtonProps?
 
     /**
      * Override or extend the styles applied to the component.
      */
-    var classes: TablePaginationClasses
+    var classes: TablePaginationClasses?
 
     /**
      * The total number of rows.
@@ -60,12 +60,12 @@ external interface TablePaginationProps : react.Props {
      * For localization purposes, you can use the provided [translations](/guides/localization/).
      * @default 'Rows per page:'
      */
-    var labelRowsPerPage: react.ReactNode
+    var labelRowsPerPage: react.ReactNode?
 
     /**
      * Props applied to the next arrow [`IconButton`](/api/icon-button/) element.
      */
-    var nextIconButtonProps: IconButtonProps
+    var nextIconButtonProps: IconButtonProps?
 
     /**
      * Callback fired when the page is changed.
@@ -80,7 +80,7 @@ external interface TablePaginationProps : react.Props {
      *
      * @param {React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>} event The event source of the callback.
      */
-    var onRowsPerPageChange: react.dom.events.ChangeEventHandler<org.w3c.dom.HTMLElement>
+    var onRowsPerPageChange: react.dom.events.ChangeEventHandler<org.w3c.dom.HTMLElement>?
 
     /**
      * The zero-based index of the current page.
@@ -106,24 +106,24 @@ external interface TablePaginationProps : react.Props {
      * Props applied to the rows per page [`Select`](/api/select/) element.
      * @default {}
      */
-    var SelectProps: SelectProps
+    var SelectProps: SelectProps?
 
     /**
      * If `true`, show the first-page button.
      * @default false
      */
-    var showFirstButton: Boolean
+    var showFirstButton: Boolean?
 
     /**
      * If `true`, show the last-page button.
      * @default false
      */
-    var showLastButton: Boolean
+    var showLastButton: Boolean?
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: mui.system.SxProps<mui.system.Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>?
 }
 
 /**

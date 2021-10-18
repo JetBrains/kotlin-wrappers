@@ -15,12 +15,12 @@ external interface FormControlLabelProps :
     /**
      * If `true`, the component appears selected.
      */
-    var checked: Boolean
+    var checked: Boolean?
 
     /**
      * Override or extend the styles applied to the component.
      */
-    var classes: FormControlLabelClasses
+    var classes: FormControlLabelClasses?
 
     /**
      * The props used for each slot inside.
@@ -37,17 +37,17 @@ external interface FormControlLabelProps :
     /**
      * If `true`, the control is disabled.
      */
-    var disabled: Boolean
+    var disabled: Boolean?
 
     /**
      * If `true`, the label is rendered as it is passed without an additional typography node.
      */
-    var disableTypography: Boolean
+    var disableTypography: Boolean?
 
     /**
      * Pass a ref to the `input` element.
      */
-    var inputRef: react.Ref<*>
+    var inputRef: react.Ref<*>?
 
     /**
      * The text to be used in an enclosing label element.
@@ -58,9 +58,9 @@ external interface FormControlLabelProps :
      * The position of the label.
      * @default 'end'
      */
-    var labelPlacement: mui.system.Union /* 'end' | 'start' | 'top' | 'bottom' */
+    var labelPlacement: mui.system.Union? /* 'end' | 'start' | 'top' | 'bottom' */
 
-    var name: String
+    var name: String?
 
     /**
      * Callback fired when the state is changed.
@@ -68,12 +68,12 @@ external interface FormControlLabelProps :
      * @param {React.SyntheticEvent} event The event source of the callback.
      * You can pull out the new checked state by accessing `event.target.checked` (boolean).
      */
-    var onChange: (event: react.dom.events.SyntheticEvent<*, *>, checked: Boolean) -> Unit
+    var onChange: ((event: react.dom.events.SyntheticEvent<*, *>, checked: Boolean) -> Unit)?
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: mui.system.SxProps<mui.system.Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>?
 
     /**
      * The value of the component.

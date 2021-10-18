@@ -15,29 +15,29 @@ external interface SpeedDialActionProps :
     /**
      * Override or extend the styles applied to the component.
      */
-    var classes: SpeedDialActionClasses
+    var classes: SpeedDialActionClasses?
 
     /**
      * Props applied to the [`Fab`](/api/fab/) component.
      * @default {}
      */
-    var FabProps: FabProps
+    var FabProps: FabProps?
 
     /**
      * Adds a transition delay, to allow a series of SpeedDialActions to be animated.
      * @default 0
      */
-    var delay: Number
+    var delay: Number?
 
     /**
      * The icon to display in the SpeedDial Fab.
      */
-    var icon: react.ReactNode
+    var icon: react.ReactNode?
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: mui.system.SxProps<mui.system.Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>?
 
     /**
      * `classes` prop applied to the [`Tooltip`](/api/tooltip/) element.
@@ -53,13 +53,13 @@ external interface SpeedDialActionProps :
     /**
      * Label to display in the tooltip.
      */
-    var tooltipTitle: react.ReactNode
+    var tooltipTitle: react.ReactNode?
 
     /**
      * Make the tooltip always visible when the SpeedDial is open.
      * @default false
      */
-    var tooltipOpen: Boolean
+    var tooltipOpen: Boolean?
 }
 
 /**

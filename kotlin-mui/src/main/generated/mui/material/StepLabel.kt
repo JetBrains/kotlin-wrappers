@@ -23,7 +23,7 @@ external interface StepLabelProps :
     /**
      * Override or extend the styles applied to the component.
      */
-    var classes: StepLabelClasses
+    var classes: StepLabelClasses?
 
     /**
      * The props used for each slot inside.
@@ -36,32 +36,32 @@ external interface StepLabelProps :
      * If `true`, the step is marked as failed.
      * @default false
      */
-    var error: Boolean
+    var error: Boolean?
 
     /**
      * Override the default label of the step icon.
      */
-    var icon: react.ReactNode
+    var icon: react.ReactNode?
 
     /**
      * The optional node to display.
      */
-    var optional: react.ReactNode
+    var optional: react.ReactNode?
 
     /**
      * The component to render in place of the [`StepIcon`](/api/step-icon/).
      */
-    var StepIconComponent: react.ElementType<*>
+    var StepIconComponent: react.ElementType<*>?
 
     /**
      * Props applied to the [`StepIcon`](/api/step-icon/) element.
      */
-    var StepIconProps: StepIconProps
+    var StepIconProps: StepIconProps?
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: mui.system.SxProps<mui.system.Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>?
 }
 
 /**

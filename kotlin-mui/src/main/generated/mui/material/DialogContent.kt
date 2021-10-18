@@ -23,18 +23,18 @@ external interface DialogContentProps :
     /**
      * Override or extend the styles applied to the component.
      */
-    var classes: DialogContentClasses
+    var classes: DialogContentClasses?
 
     /**
      * Display the top and bottom dividers.
      * @default false
      */
-    var dividers: Boolean
+    var dividers: Boolean?
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: mui.system.SxProps<mui.system.Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>?
 }
 
 /**

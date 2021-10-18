@@ -18,40 +18,40 @@ external interface GridProps :
     /**
      * Override or extend the styles applied to the component.
      */
-    var classes: GridClasses
+    var classes: GridClasses?
 
     /**
      * The number of columns.
      * @default 12
      */
-    var columns: mui.system.ResponsiveStyleValue<Number>
+    var columns: mui.system.ResponsiveStyleValue<Number>?
 
     /**
      * Defines the horizontal space between the type `item` components.
      * It overrides the value of the `spacing` prop.
      */
-    var columnSpacing: mui.system.ResponsiveStyleValue<dynamic>
+    var columnSpacing: mui.system.ResponsiveStyleValue<dynamic>?
 
     /**
      * If `true`, the component will have the flex *container* behavior.
      * You should be wrapping *items* with a *container*.
      * @default false
      */
-    var container: Boolean
+    var container: Boolean?
 
     /**
      * Defines the `flex-direction` style property.
      * It is applied for all screen sizes.
      * @default 'row'
      */
-    var direction: mui.system.ResponsiveStyleValue<GridDirection>
+    var direction: mui.system.ResponsiveStyleValue<GridDirection>?
 
     /**
      * If `true`, the component will have the flex *item* behavior.
      * You should be wrapping *items* with a *container*.
      * @default false
      */
-    var item: Boolean
+    var item: Boolean?
 
     /**
      * Defines the number of grids the component is going to use.
@@ -71,7 +71,7 @@ external interface GridProps :
      * Defines the vertical space between the type `item` components.
      * It overrides the value of the `spacing` prop.
      */
-    var rowSpacing: mui.system.ResponsiveStyleValue<dynamic>
+    var rowSpacing: mui.system.ResponsiveStyleValue<dynamic>?
 
     /**
      * Defines the number of grids the component is going to use.
@@ -85,19 +85,19 @@ external interface GridProps :
      * It can only be used on a type `container` component.
      * @default 0
      */
-    var spacing: mui.system.ResponsiveStyleValue<dynamic>
+    var spacing: mui.system.ResponsiveStyleValue<dynamic>?
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: mui.system.SxProps<mui.system.Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>?
 
     /**
      * Defines the `flex-wrap` style property.
      * It's applied for all screen sizes.
      * @default 'wrap'
      */
-    var wrap: GridWrap
+    var wrap: GridWrap?
 
     /**
      * Defines the number of grids the component is going to use.
@@ -118,7 +118,7 @@ external interface GridProps :
      * Refer to the limitations section of the documentation to better understand the use case.
      * @default false
      */
-    var zeroMinWidth: Boolean
+    var zeroMinWidth: Boolean?
 }
 
 /**

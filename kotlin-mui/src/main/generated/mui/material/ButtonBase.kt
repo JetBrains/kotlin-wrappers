@@ -14,14 +14,14 @@ external interface ButtonBaseProps :
      * A ref for imperative actions.
      * It currently only supports `focusVisible()` action.
      */
-    var action: react.Ref<dynamic>
+    var action: react.Ref<dynamic>?
 
     /**
      * If `true`, the ripples are centered.
      * They won't start at the cursor interaction position.
      * @default false
      */
-    var centerRipple: Boolean
+    var centerRipple: Boolean?
 
     /**
      * The content of the component.
@@ -31,7 +31,7 @@ external interface ButtonBaseProps :
     /**
      * Override or extend the styles applied to the component.
      */
-    var classes: ButtonBaseClasses
+    var classes: ButtonBaseClasses?
 
     /**
      * If `true`, the component is disabled.
@@ -46,19 +46,19 @@ external interface ButtonBaseProps :
      * to highlight the element by applying separate styles with the `.Mui-focusVisible` class.
      * @default false
      */
-    var disableRipple: Boolean
+    var disableRipple: Boolean?
 
     /**
      * If `true`, the touch ripple effect is disabled.
      * @default false
      */
-    var disableTouchRipple: Boolean
+    var disableTouchRipple: Boolean?
 
     /**
      * If `true`, the base button will have a keyboard focus ripple.
      * @default false
      */
-    var focusRipple: Boolean
+    var focusRipple: Boolean?
 
     /**
      * This prop can help identify which element has keyboard focus.
@@ -68,24 +68,24 @@ external interface ButtonBaseProps :
      * A [polyfill can be used](https://github.com/WICG/focus-visible) to apply a `focus-visible` class to other components
      * if needed.
      */
-    var focusVisibleClassName: String
+    var focusVisibleClassName: String?
 
     /**
      * The component used to render a link when the `href` prop is provided.
      * @default 'a'
      */
-    var LinkComponent: react.ElementType<*>
+    var LinkComponent: react.ElementType<*>?
 
     /**
      * Callback fired when the component is focused with a keyboard.
      * We trigger a `onFocus` callback too.
      */
-    var onFocusVisible: react.dom.events.FocusEventHandler<*>
+    var onFocusVisible: react.dom.events.FocusEventHandler<*>?
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: mui.system.SxProps<mui.system.Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>?
 
     /**
      * @default 0

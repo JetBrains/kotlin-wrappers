@@ -14,7 +14,7 @@ external interface ChipProps :
     /**
      * The Avatar element to display.
      */
-    var avatar: react.ReactElement
+    var avatar: react.ReactElement?
 
     /**
      * This prop isn't supported.
@@ -25,7 +25,7 @@ external interface ChipProps :
     /**
      * Override or extend the styles applied to the component.
      */
-    var classes: ChipClasses
+    var classes: ChipClasses?
 
     /**
      * If `true`, the chip will appear clickable, and will raise when pressed,
@@ -35,57 +35,57 @@ external interface ChipProps :
      * along with the component prop to indicate an anchor Chip is clickable.
      * Note: this controls the UI and does not affect the onClick event.
      */
-    var clickable: Boolean
+    var clickable: Boolean?
 
     /**
      * The color of the component. It supports those theme colors that make sense for this component.
      * @default 'default'
      */
-    var color: mui.system.Union /* 'default' | 'primary' | 'secondary' | 'error' | 'info' | 'success' | 'warning', ChipPropsColorOverrides */
+    var color: mui.system.Union? /* 'default' | 'primary' | 'secondary' | 'error' | 'info' | 'success' | 'warning', ChipPropsColorOverrides */
 
     /**
      * Override the default delete icon element. Shown only if `onDelete` is set.
      */
-    var deleteIcon: react.ReactElement
+    var deleteIcon: react.ReactElement?
 
     /**
      * If `true`, the component is disabled.
      * @default false
      */
-    var disabled: Boolean
+    var disabled: Boolean?
 
     /**
      * Icon element.
      */
-    var icon: react.ReactElement
+    var icon: react.ReactElement?
 
     /**
      * The content of the component.
      */
-    var label: react.ReactNode
+    var label: react.ReactNode?
 
     /**
      * Callback fired when the delete icon is clicked.
      * If set, the delete icon will be shown.
      */
-    var onDelete: react.dom.events.EventHandler<*>
+    var onDelete: react.dom.events.EventHandler<*>?
 
     /**
      * The size of the component.
      * @default 'medium'
      */
-    var size: mui.system.Union /* 'small' | 'medium', ChipPropsSizeOverrides */
+    var size: mui.system.Union? /* 'small' | 'medium', ChipPropsSizeOverrides */
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: mui.system.SxProps<mui.system.Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>?
 
     /**
      * The variant to use.
      * @default 'filled'
      */
-    var variant: mui.system.Union /* 'filled' | 'outlined', ChipPropsVariantOverrides */
+    var variant: mui.system.Union? /* 'filled' | 'outlined', ChipPropsVariantOverrides */
 }
 
 /**

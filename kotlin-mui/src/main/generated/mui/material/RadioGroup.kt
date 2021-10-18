@@ -14,13 +14,13 @@ external interface RadioGroupProps :
     /**
      * The default value. Use when the component is not controlled.
      */
-    var defaultValue: Any
+    var defaultValue: Any?
 
     /**
      * The name used to reference the value of the control.
      * If you don't provide this prop, it falls back to a randomly generated name.
      */
-    var name: String
+    var name: String?
 
     /**
      * Callback fired when a radio button is selected.
@@ -34,7 +34,7 @@ external interface RadioGroupProps :
     /**
      * Value of the selected radio button. The DOM API casts this to a string.
      */
-    var value: Any
+    var value: Any?
 }
 
 /**

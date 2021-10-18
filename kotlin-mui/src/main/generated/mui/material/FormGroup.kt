@@ -23,18 +23,18 @@ external interface FormGroupProps :
     /**
      * Override or extend the styles applied to the component.
      */
-    var classes: FormGroupClasses
+    var classes: FormGroupClasses?
 
     /**
      * Display group of elements in a compact row.
      * @default false
      */
-    var row: Boolean
+    var row: Boolean?
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: mui.system.SxProps<mui.system.Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>?
 }
 
 /**

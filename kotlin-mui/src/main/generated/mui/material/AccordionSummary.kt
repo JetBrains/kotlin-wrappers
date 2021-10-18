@@ -18,17 +18,17 @@ external interface AccordionSummaryProps :
     /**
      * Override or extend the styles applied to the component.
      */
-    var classes: AccordionSummaryClasses
+    var classes: AccordionSummaryClasses?
 
     /**
      * The icon to display as the expand indicator.
      */
-    var expandIcon: react.ReactNode
+    var expandIcon: react.ReactNode?
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: mui.system.SxProps<mui.system.Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>?
 }
 
 /**

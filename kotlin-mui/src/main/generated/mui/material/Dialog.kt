@@ -18,12 +18,12 @@ external interface DialogProps :
     /**
      * The id(s) of the element(s) that describe the dialog.
      */
-    // var `aria-describedby`: String
+    // var `aria-describedby`: String?
 
     /**
      * The id(s) of the element(s) that label the dialog.
      */
-    // var `aria-labelledby`: String
+    // var `aria-labelledby`: String?
 
     /**
      * Dialog children, usually the included sub-components.
@@ -33,19 +33,19 @@ external interface DialogProps :
     /**
      * Override or extend the styles applied to the component.
      */
-    var classes: DialogClasses
+    var classes: DialogClasses?
 
     /**
      * If `true`, hitting escape will not fire the `onClose` callback.
      * @default false
      */
-    var disableEscapeKeyDown: Boolean
+    var disableEscapeKeyDown: Boolean?
 
     /**
      * If `true`, the dialog is full-screen.
      * @default false
      */
-    var fullScreen: Boolean
+    var fullScreen: Boolean?
 
     /**
      * If `true`, the dialog stretches to `maxWidth`.
@@ -53,7 +53,7 @@ external interface DialogProps :
      * Notice that the dialog width grow is limited by the default margin.
      * @default false
      */
-    var fullWidth: Boolean
+    var fullWidth: Boolean?
 
     /**
      * Determine the max-width of the dialog.
@@ -85,31 +85,31 @@ external interface DialogProps :
      * The component used to render the body of the dialog.
      * @default Paper
      */
-    var PaperComponent: react.ComponentType<PaperProps>
+    var PaperComponent: react.ComponentType<PaperProps>?
 
     /**
      * Props applied to the [`Paper`](/api/paper/) element.
      * @default {}
      */
-    var PaperProps: PaperProps
+    var PaperProps: PaperProps?
 
     /**
      * Determine the container for scrolling the dialog.
      * @default 'paper'
      */
-    var scroll: mui.system.Union /* 'body' | 'paper' */
+    var scroll: mui.system.Union? /* 'body' | 'paper' */
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: mui.system.SxProps<mui.system.Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>?
 
     /**
      * The component used for the transition.
      * [Follow this guide](/components/transitions/#transitioncomponent-prop) to learn more about the requirements for this component.
      * @default Fade
      */
-    var TransitionComponent: react.ComponentType<*>
+    var TransitionComponent: react.ComponentType<*>?
 
     /**
      * The duration for the transition, in milliseconds.
@@ -122,7 +122,7 @@ external interface DialogProps :
      * Props applied to the transition element.
      * By default, the element is based on this [`Transition`](https://reactcommunity.org/react-transition-group/transition) component.
      */
-    var TransitionProps: mui.material.transitions.TransitionProps
+    var TransitionProps: mui.material.transitions.TransitionProps?
 }
 
 /**

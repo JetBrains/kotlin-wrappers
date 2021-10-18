@@ -20,48 +20,48 @@ external interface FormHelperTextProps :
     /**
      * Override or extend the styles applied to the component.
      */
-    var classes: FormHelperTextClasses
+    var classes: FormHelperTextClasses?
 
     /**
      * If `true`, the helper text should be displayed in a disabled state.
      */
-    var disabled: Boolean
+    var disabled: Boolean?
 
     /**
      * If `true`, helper text should be displayed in an error state.
      */
-    var error: Boolean
+    var error: Boolean?
 
     /**
      * If `true`, the helper text should use filled classes key.
      */
-    var filled: Boolean
+    var filled: Boolean?
 
     /**
      * If `true`, the helper text should use focused classes key.
      */
-    var focused: Boolean
+    var focused: Boolean?
 
     /**
      * If `dense`, will adjust vertical spacing. This is normally obtained via context from
      * FormControl.
      */
-    var margin: mui.system.Union /* 'dense' */
+    var margin: mui.system.Union? /* 'dense' */
 
     /**
      * If `true`, the helper text should use required classes key.
      */
-    var required: Boolean
+    var required: Boolean?
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: mui.system.SxProps<mui.system.Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>?
 
     /**
      * The variant to use.
      */
-    var variant: mui.system.Union /* 'standard' | 'outlined' | 'filled' */
+    var variant: mui.system.Union? /* 'standard' | 'outlined' | 'filled' */
 }
 
 /**

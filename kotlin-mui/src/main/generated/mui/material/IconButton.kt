@@ -18,13 +18,13 @@ external interface IconButtonProps :
     /**
      * Override or extend the styles applied to the component.
      */
-    var classes: IconButtonClasses
+    var classes: IconButtonClasses?
 
     /**
      * The color of the component. It supports those theme colors that make sense for this component.
      * @default 'default'
      */
-    var color: mui.system.Union /* 'inherit' | 'default' | 'primary' | 'secondary' | 'error' | 'info' | 'success' | 'warning', IconButtonPropsColorOverrides */
+    var color: mui.system.Union? /* 'inherit' | 'default' | 'primary' | 'secondary' | 'error' | 'info' | 'success' | 'warning', IconButtonPropsColorOverrides */
 
     /**
      * If `true`, the component is disabled.
@@ -36,7 +36,7 @@ external interface IconButtonProps :
      * If `true`, the  keyboard focus ripple is disabled.
      * @default false
      */
-    var disableFocusRipple: Boolean
+    var disableFocusRipple: Boolean?
 
     /**
      * If given, uses a negative margin to counteract the padding on one
@@ -45,19 +45,19 @@ external interface IconButtonProps :
      * size and shape).
      * @default false
      */
-    var edge: mui.system.Union /* 'start' | 'end' | false */
+    var edge: mui.system.Union? /* 'start' | 'end' | false */
 
     /**
      * The size of the component.
      * `small` is equivalent to the dense button styling.
      * @default 'medium'
      */
-    var size: mui.system.Union /* 'small' | 'medium' | 'large', IconButtonPropsSizeOverrides */
+    var size: mui.system.Union? /* 'small' | 'medium' | 'large', IconButtonPropsSizeOverrides */
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: mui.system.SxProps<mui.system.Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>?
 }
 
 /**

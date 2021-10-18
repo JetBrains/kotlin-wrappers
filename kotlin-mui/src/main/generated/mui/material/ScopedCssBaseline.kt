@@ -18,7 +18,7 @@ external interface ScopedCssBaselineProps :
     /**
      * Override or extend the styles applied to the component.
      */
-    var classes: ScopedCssBaselineClasses
+    var classes: ScopedCssBaselineClasses?
 }
 
 /**

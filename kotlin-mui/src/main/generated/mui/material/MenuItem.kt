@@ -12,48 +12,48 @@ external interface MenuItemProps :
      * Focus will also be triggered if the value changes from false to true.
      * @default false
      */
-    var autoFocus: Boolean
+    var autoFocus: Boolean?
 
     /**
      * Override or extend the styles applied to the component.
      */
-    var classes: MenuItemClasses
+    var classes: MenuItemClasses?
 
     /**
      * If `true`, compact vertical padding designed for keyboard and mouse input is used.
      * The prop defaults to the value inherited from the parent Menu component.
      * @default false
      */
-    var dense: Boolean
+    var dense: Boolean?
 
     /**
      * If `true`, the component is disabled.
      * @default false
      */
-    var disabled: Boolean
+    var disabled: Boolean?
 
     /**
      * If `true`, the left and right padding is removed.
      * @default false
      */
-    var disableGutters: Boolean
+    var disableGutters: Boolean?
 
     /**
      * If `true`, a 1px light border is added to the bottom of the menu item.
      * @default false
      */
-    var divider: Boolean
+    var divider: Boolean?
 
     /**
      * Use to apply selected styling.
      * @default false
      */
-    var selected: Boolean
+    var selected: Boolean?
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: mui.system.SxProps<mui.system.Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>?
 }
 
 /**

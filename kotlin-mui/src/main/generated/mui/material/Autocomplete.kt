@@ -14,13 +14,13 @@ external interface AutocompleteProps : react.Props {
     /**
      * Override or extend the styles applied to the component.
      */
-    var classes: AutocompleteClasses
+    var classes: AutocompleteClasses?
 
     /**
      * The icon to display in place of the default clear icon.
      * @default <ClearIcon fontSize="small" />
      */
-    var clearIcon: react.ReactNode
+    var clearIcon: react.ReactNode?
 
     /**
      * Override the default text for the *clear* icon button.
@@ -28,7 +28,7 @@ external interface AutocompleteProps : react.Props {
      * For localization purposes, you can use the provided [translations](/guides/localization/).
      * @default 'Clear'
      */
-    var clearText: String
+    var clearText: String?
 
     /**
      * Override the default text for the *close popup* icon button.
@@ -36,7 +36,7 @@ external interface AutocompleteProps : react.Props {
      * For localization purposes, you can use the provided [translations](/guides/localization/).
      * @default 'Close'
      */
-    var closeText: String
+    var closeText: String?
 
     /**
      * The props used for each slot inside.
@@ -48,13 +48,13 @@ external interface AutocompleteProps : react.Props {
      * If `true`, the component is disabled.
      * @default false
      */
-    var disabled: Boolean
+    var disabled: Boolean?
 
     /**
      * If `true`, the `Popper` content will be under the DOM hierarchy of the parent component.
      * @default false
      */
-    var disablePortal: Boolean
+    var disablePortal: Boolean?
 
     /**
      * Force the visibility display of the popup icon.
@@ -66,7 +66,7 @@ external interface AutocompleteProps : react.Props {
      * If `true`, the input will take up the full width of its container.
      * @default false
      */
-    var fullWidth: Boolean
+    var fullWidth: Boolean?
 
     /**
      * The label to display when the tags are truncated (`limitTags`).
@@ -81,7 +81,7 @@ external interface AutocompleteProps : react.Props {
      * The component used to render the listbox.
      * @default 'ul'
      */
-    var ListboxComponent: react.ComponentType<*>
+    var ListboxComponent: react.ComponentType<*>?
 
     /**
      * Props applied to the Listbox element.
@@ -93,7 +93,7 @@ external interface AutocompleteProps : react.Props {
      * This shows the `loadingText` in place of suggestions (only if there are no suggestions to show, e.g. `options` are empty).
      * @default false
      */
-    var loading: Boolean
+    var loading: Boolean?
 
     /**
      * Text to display when in a loading state.
@@ -101,14 +101,14 @@ external interface AutocompleteProps : react.Props {
      * For localization purposes, you can use the provided [translations](/guides/localization/).
      * @default 'Loading…'
      */
-    var loadingText: react.ReactNode
+    var loadingText: react.ReactNode?
 
     /**
      * The maximum number of tags that will be visible when not focused.
      * Set `-1` to disable the limit.
      * @default -1
      */
-    var limitTags: Number
+    var limitTags: Number?
 
     /**
      * Text to display when there are no options.
@@ -116,7 +116,7 @@ external interface AutocompleteProps : react.Props {
      * For localization purposes, you can use the provided [translations](/guides/localization/).
      * @default 'No options'
      */
-    var noOptionsText: react.ReactNode
+    var noOptionsText: react.ReactNode?
 
     /**
      * Override the default text for the *open popup* icon button.
@@ -124,25 +124,25 @@ external interface AutocompleteProps : react.Props {
      * For localization purposes, you can use the provided [translations](/guides/localization/).
      * @default 'Open'
      */
-    var openText: String
+    var openText: String?
 
     /**
      * The component used to render the body of the popup.
      * @default Paper
      */
-    var PaperComponent: react.ComponentType<*>
+    var PaperComponent: react.ComponentType<*>?
 
     /**
      * The component used to position the popup.
      * @default Popper
      */
-    var PopperComponent: react.ComponentType<PopperProps>
+    var PopperComponent: react.ComponentType<PopperProps>?
 
     /**
      * The icon to display in place of the default popup icon.
      * @default <ArrowDropDownIcon />
      */
-    var popupIcon: react.ReactNode
+    var popupIcon: react.ReactNode?
 
     /**
      * Render the group.
@@ -183,10 +183,10 @@ external interface AutocompleteProps : react.Props {
      * The size of the component.
      * @default 'medium'
      */
-    var size: mui.system.Union /* 'small' | 'medium', AutocompletePropsSizeOverrides */
+    var size: mui.system.Union? /* 'small' | 'medium', AutocompletePropsSizeOverrides */
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: mui.system.SxProps<mui.system.Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>?
 }

@@ -19,7 +19,7 @@ external interface DrawerProps :
      * Side from which the drawer will appear.
      * @default 'left'
      */
-    var anchor: mui.system.Union /* 'left' | 'top' | 'right' | 'bottom' */
+    var anchor: mui.system.Union? /* 'left' | 'top' | 'right' | 'bottom' */
 
     /**
      * The content of the component.
@@ -29,19 +29,19 @@ external interface DrawerProps :
     /**
      * Override or extend the styles applied to the component.
      */
-    var classes: DrawerClasses
+    var classes: DrawerClasses?
 
     /**
      * The elevation of the drawer.
      * @default 16
      */
-    var elevation: Number
+    var elevation: Number?
 
     /**
      * Props applied to the [`Modal`](/api/modal/) element.
      * @default {}
      */
-    var ModalProps: ModalProps
+    var ModalProps: ModalProps?
 
     /**
      * Callback fired when the component requests to be closed.
@@ -54,23 +54,23 @@ external interface DrawerProps :
      * If `true`, the component is shown.
      * @default false
      */
-    var open: Boolean
+    var open: Boolean?
 
     /**
      * Props applied to the [`Paper`](/api/paper/) element.
      * @default {}
      */
-    var PaperProps: PaperProps
+    var PaperProps: PaperProps?
 
     /**
      * Props applied to the [`Slide`](/api/slide/) element.
      */
-    var SlideProps: SlideProps
+    var SlideProps: SlideProps?
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: mui.system.SxProps<mui.system.Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>?
 
     /**
      * The duration for the transition, in milliseconds.
@@ -83,7 +83,7 @@ external interface DrawerProps :
      * The variant to use.
      * @default 'temporary'
      */
-    var variant: mui.system.Union /* 'permanent' | 'persistent' | 'temporary' */
+    var variant: mui.system.Union? /* 'permanent' | 'persistent' | 'temporary' */
 }
 
 /**

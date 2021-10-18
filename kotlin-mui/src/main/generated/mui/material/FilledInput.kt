@@ -15,7 +15,7 @@ external interface FilledInputProps :
     /**
      * Override or extend the styles applied to the component.
      */
-    var classes: FilledInputClasses
+    var classes: FilledInputClasses?
 
     /**
      * If `true`, the label is hidden.
@@ -23,17 +23,17 @@ external interface FilledInputProps :
      * Be sure to add `aria-label` to the `input` element.
      * @default false
      */
-    var hiddenLabel: Boolean
+    var hiddenLabel: Boolean?
 
     /**
      * If `true`, the input will not have an underline.
      */
-    var disableUnderline: Boolean
+    var disableUnderline: Boolean?
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: mui.system.SxProps<mui.system.Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>?
 }
 
 /**

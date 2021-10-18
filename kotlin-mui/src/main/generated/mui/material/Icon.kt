@@ -15,7 +15,7 @@ external interface IconProps :
      * other base class that suits the icon font you're using (e.g. material-icons-rounded, fas, etc).
      * @default 'material-icons'
      */
-    var baseClassName: String
+    var baseClassName: String?
 
     /**
      * The name of the icon font ligature.
@@ -25,24 +25,24 @@ external interface IconProps :
     /**
      * Override or extend the styles applied to the component.
      */
-    var classes: IconClasses
+    var classes: IconClasses?
 
     /**
      * The color of the component. It supports those theme colors that make sense for this component.
      * @default 'inherit'
      */
-    var color: mui.system.Union /* | 'inherit' | 'action' | 'disabled' | 'primary' | 'secondary' | 'error' | 'info' | 'success' | 'warning', IconPropsColorOverrides */
+    var color: mui.system.Union? /* | 'inherit' | 'action' | 'disabled' | 'primary' | 'secondary' | 'error' | 'info' | 'success' | 'warning', IconPropsColorOverrides */
 
     /**
      * The fontSize applied to the icon. Defaults to 24px, but can be configure to inherit font size.
      * @default 'medium'
      */
-    var fontSize: mui.system.Union /* 'inherit' | 'large' | 'medium' | 'small', IconPropsSizeOverrides */
+    var fontSize: mui.system.Union? /* 'inherit' | 'large' | 'medium' | 'small', IconPropsSizeOverrides */
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: mui.system.SxProps<mui.system.Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>?
 }
 
 /**

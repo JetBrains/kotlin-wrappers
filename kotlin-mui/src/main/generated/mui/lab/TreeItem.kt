@@ -23,43 +23,43 @@ external interface TreeItemProps :
     /**
      * Override or extend the styles applied to the component.
      */
-    var classes: TreeItemClasses
+    var classes: TreeItemClasses?
 
     /**
      * The icon used to collapse the node.
      */
-    var collapseIcon: react.ReactNode
+    var collapseIcon: react.ReactNode?
 
     /**
      * The component used for the content node.
      * @default TreeItemContent
      */
-    var ContentComponent: react.ComponentType<TreeItemContentProps>
+    var ContentComponent: react.ComponentType<TreeItemContentProps>?
 
     /**
      * Props applied to ContentComponent
      */
-    var ContentProps: react.dom.html.HTMLAttributes<org.w3c.dom.HTMLElement>
+    var ContentProps: react.dom.html.HTMLAttributes<org.w3c.dom.HTMLElement>?
 
     /**
      * If `true`, the node is disabled.
      */
-    var disabled: Boolean
+    var disabled: Boolean?
 
     /**
      * The icon displayed next to a end node.
      */
-    var endIcon: react.ReactNode
+    var endIcon: react.ReactNode?
 
     /**
      * The icon used to expand the node.
      */
-    var expandIcon: react.ReactNode
+    var expandIcon: react.ReactNode?
 
     /**
      * The icon to display next to the tree node's label.
      */
-    var icon: react.ReactNode
+    var icon: react.ReactNode?
 
     /**
      * This prop isn't supported.
@@ -70,7 +70,7 @@ external interface TreeItemProps :
     /**
      * The tree node label.
      */
-    var label: react.ReactNode
+    var label: react.ReactNode?
 
     /**
      * The id of the node.
@@ -82,18 +82,18 @@ external interface TreeItemProps :
      * [Follow this guide](/components/transitions/#transitioncomponent-prop) to learn more about the requirements for this component.
      * @default Collapse
      */
-    var TransitionComponent: react.ComponentType<mui.material.transitions.TransitionProps>
+    var TransitionComponent: react.ComponentType<mui.material.transitions.TransitionProps>?
 
     /**
      * Props applied to the transition element.
      * By default, the element is based on this [`Transition`](https://reactcommunity.org/react-transition-group/transition) component.
      */
-    var TransitionProps: mui.material.transitions.TransitionProps
+    var TransitionProps: mui.material.transitions.TransitionProps?
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: mui.system.SxProps<mui.system.Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>?
 }
 
 /**

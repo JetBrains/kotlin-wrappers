@@ -16,7 +16,7 @@ external interface ListItemTextProps : react.PropsWithChildren {
     /**
      * Override or extend the styles applied to the component.
      */
-    var classes: ListItemTextClasses
+    var classes: ListItemTextClasses?
 
     /**
      * If `true`, the children won't be wrapped by a Typography component.
@@ -25,39 +25,39 @@ external interface ListItemTextProps : react.PropsWithChildren {
      * with the Typography component.
      * @default false
      */
-    var disableTypography: Boolean
+    var disableTypography: Boolean?
 
     /**
      * If `true`, the children are indented.
      * This should be used if there is no left avatar or left icon.
      * @default false
      */
-    var inset: Boolean
+    var inset: Boolean?
 
     /**
      * The main content element.
      */
-    var primary: react.ReactNode
+    var primary: react.ReactNode?
 
     /**
      * These props will be forwarded to the primary typography component
      * (as long as disableTypography is not `true`).
      */
-    var primaryTypographyProps: TypographyProps
+    var primaryTypographyProps: TypographyProps?
 
     /**
      * The secondary content element.
      */
-    var secondary: react.ReactNode
+    var secondary: react.ReactNode?
 
     /**
      * These props will be forwarded to the secondary typography component
      * (as long as disableTypography is not `true`).
      */
-    var secondaryTypographyProps: TypographyProps
+    var secondaryTypographyProps: TypographyProps?
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: mui.system.SxProps<mui.system.Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>?
 }

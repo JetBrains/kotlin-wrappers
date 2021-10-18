@@ -16,7 +16,7 @@ external interface ClickAwayListenerProps : react.Props {
      * This prop changes how portaled elements are handled.
      * @default false
      */
-    var disableReactTree: Boolean
+    var disableReactTree: Boolean?
 
     /**
      * The mouse event to listen to. You can disable the listener by providing `false`.

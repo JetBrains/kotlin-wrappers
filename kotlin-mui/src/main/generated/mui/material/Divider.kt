@@ -12,7 +12,7 @@ external interface DividerProps : react.PropsWithChildren {
      * Absolutely position the element.
      * @default false
      */
-    var absolute: Boolean
+    var absolute: Boolean?
 
     /**
      * The content of the component.
@@ -22,43 +22,43 @@ external interface DividerProps : react.PropsWithChildren {
     /**
      * Override or extend the styles applied to the component.
      */
-    var classes: DividerClasses
+    var classes: DividerClasses?
 
     /**
      * If `true`, a vertical divider will have the correct height when used in flex container.
      * (By default, a vertical divider will have a calculated height of `0px` if it is the child of a flex container.)
      * @default false
      */
-    var flexItem: Boolean
+    var flexItem: Boolean?
 
     /**
      * If `true`, the divider will have a lighter color.
      * @default false
      */
-    var light: Boolean
+    var light: Boolean?
 
     /**
      * The component orientation.
      * @default 'horizontal'
      */
-    var orientation: mui.system.Union /* 'horizontal' | 'vertical' */
+    var orientation: mui.system.Union? /* 'horizontal' | 'vertical' */
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: mui.system.SxProps<mui.system.Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>?
 
     /**
      * The text alignment.
      * @default 'center'
      */
-    var textAlign: mui.system.Union /* 'center' | 'right' | 'left' */
+    var textAlign: mui.system.Union? /* 'center' | 'right' | 'left' */
 
     /**
      * The variant to use.
      * @default 'fullWidth'
      */
-    var variant: mui.system.Union /* 'fullWidth' | 'inset' | 'middle', DividerPropsVariantOverrides */
+    var variant: mui.system.Union? /* 'fullWidth' | 'inset' | 'middle', DividerPropsVariantOverrides */
 }
 
 /**

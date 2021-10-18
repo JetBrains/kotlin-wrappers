@@ -13,7 +13,7 @@ external interface InputAdornmentProps :
     /**
      * Override or extend the styles applied to the component.
      */
-    var classes: InputAdornmentClasses
+    var classes: InputAdornmentClasses?
 
     /**
      * The content of the component, normally an `IconButton` or string.
@@ -25,13 +25,13 @@ external interface InputAdornmentProps :
      * This allows for the content of the adornment to focus the `input` on click.
      * @default false
      */
-    var disablePointerEvents: Boolean
+    var disablePointerEvents: Boolean?
 
     /**
      * If children is a string then disable wrapping in a Typography component.
      * @default false
      */
-    var disableTypography: Boolean
+    var disableTypography: Boolean?
 
     /**
      * The position this adornment should appear relative to the `Input`.
@@ -41,14 +41,14 @@ external interface InputAdornmentProps :
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: mui.system.SxProps<mui.system.Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>?
 
     /**
      * The variant to use.
      * Note: If you are using the `TextField` component or the `FormControl` component
      * you do not have to set this manually.
      */
-    var variant: mui.system.Union /* 'standard' | 'outlined' | 'filled' */
+    var variant: mui.system.Union? /* 'standard' | 'outlined' | 'filled' */
 }
 
 /**

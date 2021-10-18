@@ -18,7 +18,7 @@ external interface TimelineItemProps :
     /**
      * The position where the timeline's item should appear.
      */
-    var position: mui.system.Union /* 'left' | 'right' */
+    var position: mui.system.Union? /* 'left' | 'right' */
 
     /**
      * The content of the component.
@@ -28,12 +28,12 @@ external interface TimelineItemProps :
     /**
      * Override or extend the styles applied to the component.
      */
-    var classes: TimelineItemClasses
+    var classes: TimelineItemClasses?
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: mui.system.SxProps<mui.system.Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>?
 }
 
 /**

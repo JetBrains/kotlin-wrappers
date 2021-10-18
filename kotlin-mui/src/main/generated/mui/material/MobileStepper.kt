@@ -17,7 +17,7 @@ external interface MobileStepperProps :
      * Defines which dot is highlighted when the variant is 'dots'.
      * @default 0
      */
-    var activeStep: Number
+    var activeStep: Number?
 
     /**
      * A back button element. For instance, it can be a `Button` or an `IconButton`.
@@ -27,12 +27,12 @@ external interface MobileStepperProps :
     /**
      * Override or extend the styles applied to the component.
      */
-    var classes: MobileStepperClasses
+    var classes: MobileStepperClasses?
 
     /**
      * Props applied to the `LinearProgress` element.
      */
-    var LinearProgressProps: LinearProgressProps
+    var LinearProgressProps: LinearProgressProps?
 
     /**
      * A next button element. For instance, it can be a `Button` or an `IconButton`.
@@ -43,7 +43,7 @@ external interface MobileStepperProps :
      * Set the positioning type.
      * @default 'bottom'
      */
-    var position: mui.system.Union /* 'bottom' | 'top' | 'static' */
+    var position: mui.system.Union? /* 'bottom' | 'top' | 'static' */
 
     /**
      * The total steps.
@@ -53,13 +53,13 @@ external interface MobileStepperProps :
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: mui.system.SxProps<mui.system.Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>?
 
     /**
      * The variant to use.
      * @default 'dots'
      */
-    var variant: mui.system.Union /* 'text' | 'dots' | 'progress' */
+    var variant: mui.system.Union? /* 'text' | 'dots' | 'progress' */
 }
 
 /**

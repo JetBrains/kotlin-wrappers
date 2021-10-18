@@ -26,7 +26,7 @@ external interface PortalProps : react.PropsWithChildren {
      * The `children` will be under the DOM hierarchy of the parent component.
      * @default false
      */
-    var disablePortal: Boolean
+    var disablePortal: Boolean?
 }
 
 /**

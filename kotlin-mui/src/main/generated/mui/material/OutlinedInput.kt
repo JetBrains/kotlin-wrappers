@@ -15,23 +15,23 @@ external interface OutlinedInputProps :
     /**
      * Override or extend the styles applied to the component.
      */
-    var classes: OutlinedInputClasses
+    var classes: OutlinedInputClasses?
 
     /**
      * The label of the `input`. It is only used for layout. The actual labelling
      * is handled by `InputLabel`.
      */
-    var label: react.ReactNode
+    var label: react.ReactNode?
 
     /**
      * If `true`, the outline is notched to accommodate the label.
      */
-    var notched: Boolean
+    var notched: Boolean?
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: mui.system.SxProps<mui.system.Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>?
 }
 
 /**

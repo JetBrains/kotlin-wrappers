@@ -12,7 +12,7 @@ external interface GrowProps :
      * Set this to `false` to disable this behavior.
      * @default true
      */
-    var appear: Boolean
+    var appear: Boolean?
 
     /**
      * A single child content element.
@@ -28,9 +28,9 @@ external interface GrowProps :
     /**
      * If `true`, the component will transition in.
      */
-    var `in`: Boolean
+    var `in`: Boolean?
 
-    var ref: react.Ref<*>
+    var ref: react.Ref<*>?
 
     /**
      * The duration for the transition, in milliseconds.

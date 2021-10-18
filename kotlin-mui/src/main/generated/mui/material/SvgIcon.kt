@@ -22,43 +22,43 @@ external interface SvgIconProps :
     /**
      * Override or extend the styles applied to the component.
      */
-    var classes: SvgIconClasses
+    var classes: SvgIconClasses?
 
     /**
      * The color of the component. It supports those theme colors that make sense for this component.
      * You can use the `htmlColor` prop to apply a color attribute to the SVG element.
      * @default 'inherit'
      */
-    var color: mui.system.Union /* | 'inherit' | 'action' | 'disabled' | 'primary' | 'secondary' | 'error' | 'info' | 'success' | 'warning', SvgIconPropsColorOverrides */
+    var color: mui.system.Union? /* | 'inherit' | 'action' | 'disabled' | 'primary' | 'secondary' | 'error' | 'info' | 'success' | 'warning', SvgIconPropsColorOverrides */
 
     /**
      * The fontSize applied to the icon. Defaults to 24px, but can be configure to inherit font size.
      * @default 'medium'
      */
-    var fontSize: mui.system.Union /* 'inherit' | 'large' | 'medium' | 'small', SvgIconPropsSizeOverrides */
+    var fontSize: mui.system.Union? /* 'inherit' | 'large' | 'medium' | 'small', SvgIconPropsSizeOverrides */
 
     /**
      * Applies a color attribute to the SVG element.
      */
-    var htmlColor: String
+    var htmlColor: String?
 
     /**
      * The shape-rendering attribute. The behavior of the different options is described on the
      * [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/shape-rendering).
      * If you are having issues with blurry icons you should investigate this prop.
      */
-    var shapeRendering: String
+    var shapeRendering: String?
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: mui.system.SxProps<mui.system.Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>?
 
     /**
      * Provides a human-readable title for the element that contains it.
      * https://www.w3.org/TR/SVG-access/#Equivalent
      */
-    var titleAccess: String
+    var titleAccess: String?
 
     /**
      * Allows you to redefine what the coordinates without units mean inside an SVG element.
@@ -68,7 +68,7 @@ external interface SvgIconProps :
      * to bottom right (50,20) and each unit will be worth 10px.
      * @default '0 0 24 24'
      */
-    var viewBox: String
+    var viewBox: String?
 }
 
 /**

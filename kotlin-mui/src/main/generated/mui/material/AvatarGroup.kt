@@ -23,30 +23,30 @@ external interface AvatarGroupProps :
     /**
      * Override or extend the styles applied to the component.
      */
-    var classes: AvatarGroupClasses
+    var classes: AvatarGroupClasses?
 
     /**
      * Max avatars to show before +x.
      * @default 5
      */
-    var max: Number
+    var max: Number?
 
     /**
      * Spacing between avatars.
      * @default 'medium'
      */
-    var spacing: mui.system.Union /* 'small' | 'medium' | number */
+    var spacing: mui.system.Union? /* 'small' | 'medium' | number */
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: mui.system.SxProps<mui.system.Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>?
 
     /**
      * The variant to use.
      * @default 'circular'
      */
-    var variant: mui.system.Union /* 'circular' | 'rounded' | 'square', AvatarGroupPropsVariantOverrides */
+    var variant: mui.system.Union? /* 'circular' | 'rounded' | 'square', AvatarGroupPropsVariantOverrides */
 }
 
 /**

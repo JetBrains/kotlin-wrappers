@@ -9,14 +9,14 @@ external interface CardActionAreaProps : react.Props {
     /**
      * Override or extend the styles applied to the component.
      */
-    var classes: CardActionAreaClasses
+    var classes: CardActionAreaClasses?
 
-    var focusVisibleClassName: String
+    var focusVisibleClassName: String?
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: mui.system.SxProps<mui.system.Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>?
 }
 
 /**

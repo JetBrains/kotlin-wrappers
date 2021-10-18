@@ -28,7 +28,7 @@ external interface MenuProps :
      * and should only be considered if you manage focus otherwise.
      * @default true
      */
-    var autoFocus: Boolean
+    var autoFocus: Boolean?
 
     /**
      * Menu contents, normally `MenuItem`s.
@@ -38,7 +38,7 @@ external interface MenuProps :
     /**
      * Override or extend the styles applied to the component.
      */
-    var classes: MenuClasses
+    var classes: MenuClasses?
 
     /**
      * When opening the menu will not focus the active item but the `[role="menu"]`
@@ -47,13 +47,13 @@ external interface MenuProps :
      * accessibility implications.
      * @default false
      */
-    var disableAutoFocusItem: Boolean
+    var disableAutoFocusItem: Boolean?
 
     /**
      * Props applied to the [`MenuList`](/api/menu-list/) element.
      * @default {}
      */
-    var MenuListProps: MenuListProps
+    var MenuListProps: MenuListProps?
 
     /**
      * Callback fired when the component requests to be closed.
@@ -76,7 +76,7 @@ external interface MenuProps :
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: mui.system.SxProps<mui.system.Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>?
 
     /**
      * The length of the transition in `ms`, or 'auto'
@@ -89,13 +89,13 @@ external interface MenuProps :
      * By default, the element is based on this [`Transition`](https://reactcommunity.org/react-transition-group/transition) component.
      * @default {}
      */
-    var TransitionProps: mui.material.transitions.TransitionProps
+    var TransitionProps: mui.material.transitions.TransitionProps?
 
     /**
      * The variant to use. Use `menu` to prevent selected items from impacting the initial focus.
      * @default 'selectedMenu'
      */
-    var variant: mui.system.Union /* 'menu' | 'selectedMenu' */
+    var variant: mui.system.Union? /* 'menu' | 'selectedMenu' */
 }
 
 /**

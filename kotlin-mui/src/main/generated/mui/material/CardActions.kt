@@ -23,18 +23,18 @@ external interface CardActionsProps :
     /**
      * Override or extend the styles applied to the component.
      */
-    var classes: CardActionsClasses
+    var classes: CardActionsClasses?
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: mui.system.SxProps<mui.system.Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>?
 
     /**
      * If `true`, the actions do not have additional margin.
      * @default false
      */
-    var disableSpacing: Boolean
+    var disableSpacing: Boolean?
 }
 
 /**

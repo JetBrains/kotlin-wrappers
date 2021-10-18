@@ -18,7 +18,7 @@ external interface LinkProps :
     /**
      * Override or extend the styles applied to the component.
      */
-    var classes: LinkClasses
+    var classes: LinkClasses?
 
     /**
      * The color of the link.
@@ -29,7 +29,7 @@ external interface LinkProps :
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: mui.system.SxProps<mui.system.Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>?
 
     /**
      * `classes` prop applied to the [`Typography`](/api/typography/) element.
@@ -40,7 +40,7 @@ external interface LinkProps :
      * Controls when the link should have an underline.
      * @default 'always'
      */
-    var underline: mui.system.Union /* 'none' | 'hover' | 'always' */
+    var underline: mui.system.Union? /* 'none' | 'hover' | 'always' */
 
     /**
      * Applies the theme typography styles.

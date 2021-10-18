@@ -16,39 +16,39 @@ external interface ImageListItemBarProps :
      * An IconButton element to be used as secondary action target
      * (primary action target is the item itself).
      */
-    var actionIcon: react.ReactNode
+    var actionIcon: react.ReactNode?
 
     /**
      * Position of secondary action IconButton.
      * @default 'right'
      */
-    var actionPosition: mui.system.Union /* 'left' | 'right' */
+    var actionPosition: mui.system.Union? /* 'left' | 'right' */
 
     /**
      * Override or extend the styles applied to the component.
      */
-    var classes: ImageListItemBarClasses
+    var classes: ImageListItemBarClasses?
 
     /**
      * Position of the title bar.
      * @default 'bottom'
      */
-    var position: mui.system.Union /* 'below' | 'top' | 'bottom' */
+    var position: mui.system.Union? /* 'below' | 'top' | 'bottom' */
 
     /**
      * String or element serving as subtitle (support text).
      */
-    var subtitle: react.ReactNode
+    var subtitle: react.ReactNode?
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: mui.system.SxProps<mui.system.Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>?
 
     /**
      * Title to be displayed.
      */
-    var title: react.ReactNode
+    var title: react.ReactNode?
 }
 
 /**

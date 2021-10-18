@@ -18,7 +18,7 @@ external interface HiddenProps : react.PropsWithChildren {
      * server-side rendering.
      * @default 'js'
      */
-    var implementation: mui.system.Union /* 'js' | 'css' */
+    var implementation: mui.system.Union? /* 'js' | 'css' */
 
     /**
      * You can use this prop when choosing the `js` implementation with server-side rendering.
@@ -37,25 +37,25 @@ external interface HiddenProps : react.PropsWithChildren {
      * If `true`, screens this size and down are hidden.
      * @default false
      */
-    var lgDown: Boolean
+    var lgDown: Boolean?
 
     /**
      * If `true`, screens this size and up are hidden.
      * @default false
      */
-    var lgUp: Boolean
+    var lgUp: Boolean?
 
     /**
      * If `true`, screens this size and down are hidden.
      * @default false
      */
-    var mdDown: Boolean
+    var mdDown: Boolean?
 
     /**
      * If `true`, screens this size and up are hidden.
      * @default false
      */
-    var mdUp: Boolean
+    var mdUp: Boolean?
 
     /**
      * Hide the given breakpoint(s).
@@ -66,37 +66,37 @@ external interface HiddenProps : react.PropsWithChildren {
      * If `true`, screens this size and down are hidden.
      * @default false
      */
-    var smDown: Boolean
+    var smDown: Boolean?
 
     /**
      * If `true`, screens this size and up are hidden.
      * @default false
      */
-    var smUp: Boolean
+    var smUp: Boolean?
 
     /**
      * If `true`, screens this size and down are hidden.
      * @default false
      */
-    var xlDown: Boolean
+    var xlDown: Boolean?
 
     /**
      * If `true`, screens this size and up are hidden.
      * @default false
      */
-    var xlUp: Boolean
+    var xlUp: Boolean?
 
     /**
      * If `true`, screens this size and down are hidden.
      * @default false
      */
-    var xsDown: Boolean
+    var xsDown: Boolean?
 
     /**
      * If `true`, screens this size and up are hidden.
      * @default false
      */
-    var xsUp: Boolean
+    var xsUp: Boolean?
 }
 
 /**

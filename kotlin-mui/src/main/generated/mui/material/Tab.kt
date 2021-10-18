@@ -20,46 +20,46 @@ external interface TabProps :
     /**
      * Override or extend the styles applied to the component.
      */
-    var classes: TabClasses
+    var classes: TabClasses?
 
     /**
      * If `true`, the component is disabled.
      * @default false
      */
-    var disabled: Boolean
+    var disabled: Boolean?
 
     /**
      * If `true`, the  keyboard focus ripple is disabled.
      * @default false
      */
-    var disableFocusRipple: Boolean
+    var disableFocusRipple: Boolean?
 
     /**
      * The icon to display.
      */
-    var icon: react.ReactNode
+    var icon: react.ReactNode?
 
     /**
      * The label element.
      */
-    var label: react.ReactNode
+    var label: react.ReactNode?
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: mui.system.SxProps<mui.system.Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>?
 
     /**
      * You can provide your own value. Otherwise, we fallback to the child position index.
      */
-    var value: Any
+    var value: Any?
 
     /**
      * Tab labels appear in a single row.
      * They can use a second line if needed.
      * @default false
      */
-    var wrapped: Boolean
+    var wrapped: Boolean?
 }
 
 /**

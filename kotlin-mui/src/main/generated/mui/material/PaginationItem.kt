@@ -10,47 +10,47 @@ external interface PaginationItemProps :
     /**
      * Override or extend the styles applied to the component.
      */
-    var classes: PaginationItemClasses
+    var classes: PaginationItemClasses?
 
     /**
      * The active color.
      * @default 'standard'
      */
-    var color: mui.system.Union /* 'standard' | 'primary' | 'secondary', PaginationItemPropsColorOverrides */
+    var color: mui.system.Union? /* 'standard' | 'primary' | 'secondary', PaginationItemPropsColorOverrides */
 
     /**
      * If `true`, the component is disabled.
      * @default false
      */
-    var disabled: Boolean
+    var disabled: Boolean?
 
     /**
      * The current page number.
      */
-    var page: react.ReactNode
+    var page: react.ReactNode?
 
     /**
      * If `true` the pagination item is selected.
      * @default false
      */
-    var selected: Boolean
+    var selected: Boolean?
 
     /**
      * The shape of the pagination item.
      * @default 'circular'
      */
-    var shape: mui.system.Union /* 'circular' | 'rounded' */
+    var shape: mui.system.Union? /* 'circular' | 'rounded' */
 
     /**
      * The size of the component.
      * @default 'medium'
      */
-    var size: mui.system.Union /* 'small' | 'medium' | 'large', PaginationItemPropsSizeOverrides */
+    var size: mui.system.Union? /* 'small' | 'medium' | 'large', PaginationItemPropsSizeOverrides */
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: mui.system.SxProps<mui.system.Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>?
 
     /**
      * The type of pagination item.
@@ -62,7 +62,7 @@ external interface PaginationItemProps :
      * The variant to use.
      * @default 'text'
      */
-    var variant: mui.system.Union /* 'text' | 'outlined', PaginationItemPropsVariantOverrides */
+    var variant: mui.system.Union? /* 'text' | 'outlined', PaginationItemPropsVariantOverrides */
 }
 
 /**
