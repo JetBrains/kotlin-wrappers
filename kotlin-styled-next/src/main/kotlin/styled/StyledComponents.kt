@@ -114,7 +114,7 @@ internal fun customStyled(type: String): ComponentType<StyledProps> {
         val styledCss = props.styledCss
         val classes = props.classes
 
-        val generatedClasses = if (isDevelopment) useState<HashSet<String>?>(hashSetOf()) else null
+        val generatedClasses = if (isDevelopment()) useState<HashSet<String>?>(hashSetOf()) else null
         val classNames = useMemo(styledCss, classes) {
             val selfClassName = GlobalStyles.getInjectedClassNames(styledCss, classes)
             if (generatedClasses != null) {
