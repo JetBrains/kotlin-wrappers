@@ -195,7 +195,7 @@ StyledNext.getCss("some-classname") // get list of CSS rules that contain some-c
 ```
 
 Alternatively, you can disable the CSSOM API in development mode altogether by calling `GlobalStyles.useDevSheet()` in
-your application code before using any CSS.
+your application code or `StyledNext.useDevSheet(isDev: Boolean = true)` in the browser console.
 
 ### Global Styles
 

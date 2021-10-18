@@ -35,28 +35,20 @@ object GlobalStyles {
     internal var importSheet: AbstractSheet
 
     init {
+        if (isDevelopment() && GlobalCssAccess.isDevSheet()) {
+            sheet = DevSheet(RuleType.REGULAR)
+            importSheet = DevSheet(RuleType.IMPORT)
+        } else {
+            sheet = CSSOMSheet(RuleType.REGULAR)
+            importSheet = CSSOMPersistentSheet(RuleType.IMPORT)
+        }
         if (isDevelopment()) {
             GlobalCssAccess.setupCssHelperFunctions()
         }
-        sheet = CSSOMSheet(RuleType.REGULAR)
-        importSheet = CSSOMPersistentSheet(RuleType.IMPORT)
     }
 
-    fun useDevSheet() {
-        clear()
-        sheet = DevSheet(RuleType.REGULAR)
-        importSheet = DevSheet(RuleType.IMPORT)
-    }
-
-    private fun clear() {
-        sheet.clear()
-        sheet.removeStyleElement()
-        importSheet.clear()
-        importSheet.removeStyleElement()
-        styledClasses.clear()
-        scheduledToDelete.clear()
-        injectedStyleSheetRules.clear()
-        injectedKeyframes.clear()
+    fun useDevSheet(isDev: Boolean = true) {
+        GlobalCssAccess.useDevSheet(isDev)
     }
 
     private var incrementedClassName: Int = 0

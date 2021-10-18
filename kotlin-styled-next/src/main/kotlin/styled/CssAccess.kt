@@ -4,6 +4,13 @@ import kotlinext.js.jso
 import kotlinx.browser.window
 
 internal object GlobalCssAccess {
+    private enum class SheetType {
+        Dev,
+        CSSOM
+    }
+
+    private const val sheetTypeKey: String = "sheetType"
+
     @Suppress("UNUSED_PARAMETER")
     private fun downloadFile(blob: dynamic, name: String) {
         js(
@@ -66,19 +73,33 @@ internal object GlobalCssAccess {
         )
     }
 
+    internal fun useDevSheet(isDev: Boolean = true) {
+        window.localStorage.setItem(sheetTypeKey, if (isDev) SheetType.Dev.name else SheetType.CSSOM.name)
+        window.location.reload()
+    }
+
+    fun isDevSheet(): Boolean {
+        return window.localStorage.getItem(sheetTypeKey) == SheetType.Dev.name
+    }
+
     internal fun setupCssHelperFunctions() {
         window.asDynamic().StyledNext = jso {
-            getCss = { str: String? ->
-                getCss(str)
+            if (!isDevSheet()) {
+                getCss = { str: String? ->
+                    getCss(str)
+                }
+                getStylesheet = {
+                    getStylesheet()
+                }
+                mapNotNullRules = { block: dynamic ->
+                    mapNotNullRules(block)
+                }
+                downloadCss = { str: String? ->
+                    downloadCss(str)
+                }
             }
-            getStylesheet = {
-                getStylesheet()
-            }
-            mapNotNullRules = { block: dynamic ->
-                mapNotNullRules(block)
-            }
-            downloadCss = { str: String? ->
-                downloadCss(str)
+            useDevSheet = { isDev: Boolean ->
+                useDevSheet(isDev)
             }
         }
     }
