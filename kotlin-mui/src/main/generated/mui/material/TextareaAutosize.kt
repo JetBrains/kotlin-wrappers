@@ -12,13 +12,13 @@ external interface TextareaAutosizeProps :
     /**
      * Maximum number of rows to display.
      */
-    var maxRows: dynamic
+    var maxRows: Int
 
     /**
      * Minimum number of rows to display.
      * @default 1
      */
-    var minRows: dynamic
+    var minRows: Int
 }
 
 /**

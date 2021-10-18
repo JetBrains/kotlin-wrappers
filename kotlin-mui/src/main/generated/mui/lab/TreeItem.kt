@@ -39,7 +39,7 @@ external interface TreeItemProps :
     /**
      * Props applied to ContentComponent
      */
-    var ContentProps: dynamic
+    var ContentProps: react.dom.html.HTMLAttributes<org.w3c.dom.HTMLElement>
 
     /**
      * If `true`, the node is disabled.

@@ -66,7 +66,7 @@ external interface CalendarPickerProps : react.Props {
      * Component displaying when passed `loading` true.
      * @default () => <span data-mui-test="loading-progress">...</span>
      */
-    var renderLoading: dynamic
+    var renderLoading: () -> react.ReactNode
 
     /**
      * Disable specific date. @DateIOType

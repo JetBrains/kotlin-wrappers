@@ -63,7 +63,7 @@ external interface SwitchBaseProps :
     /**
      * [Attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#Attributes) applied to the `input` element.
      */
-    var inputProps: dynamic
+    var inputProps: react.dom.html.InputHTMLAttributes<org.w3c.dom.HTMLInputElement>
 
     /**
      * Pass a ref to the `input` element.

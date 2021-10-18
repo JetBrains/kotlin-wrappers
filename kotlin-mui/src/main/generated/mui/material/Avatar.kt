@@ -31,7 +31,7 @@ external interface AvatarProps :
      * [Attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#attributes) applied to the `img` element if the component is used to display an image.
      * It can be used to listen for the loading error event.
      */
-    var imgProps: dynamic
+    var imgProps: react.dom.html.ImgHTMLAttributes<org.w3c.dom.HTMLImageElement>
 
     /**
      * The `sizes` attribute for the `img` element.

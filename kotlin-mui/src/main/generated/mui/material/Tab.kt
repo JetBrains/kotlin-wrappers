@@ -37,7 +37,7 @@ external interface TabProps :
     /**
      * The icon to display.
      */
-    var icon: dynamic
+    var icon: react.ReactNode
 
     /**
      * The label element.
