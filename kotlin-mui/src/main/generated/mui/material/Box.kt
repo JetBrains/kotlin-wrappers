@@ -12,11 +12,11 @@ external interface BoxProps :
     react.PropsWithChildren {
     override var children: ReadonlyArray<react.ReactNode>?
 
-    var component: react.ElementType<*>
+    var component: react.ElementType<*>?
 
-    var ref: react.Ref<*>
+    var ref: react.Ref<*>?
 
-    var sx: mui.system.SxProps<mui.system.Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>?
 }
 
 /**

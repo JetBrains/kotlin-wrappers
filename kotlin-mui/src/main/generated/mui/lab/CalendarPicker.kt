@@ -6,7 +6,7 @@
 package mui.lab
 
 external interface CalendarPickerProps : react.Props {
-    var className: String
+    var className: String?
 
     var date: dynamic
 
@@ -18,12 +18,12 @@ external interface CalendarPickerProps : react.Props {
     /**
      * @default false
      */
-    var disableFuture: Boolean
+    var disableFuture: Boolean?
 
     /**
      * @default false
      */
-    var disablePast: Boolean
+    var disablePast: Boolean?
 
     /**
      * Max selectable date. @DateIOType
@@ -60,13 +60,13 @@ external interface CalendarPickerProps : react.Props {
      * Disable heavy animations.
      * @default typeof navigator !== 'undefined' && /(android)/i.test(navigator.userAgent)
      */
-    var reduceAnimations: Boolean
+    var reduceAnimations: Boolean?
 
     /**
      * Component displaying when passed `loading` true.
      * @default () => <span data-mui-test="loading-progress">...</span>
      */
-    var renderLoading: () -> react.ReactNode
+    var renderLoading: (() -> react.ReactNode)?
 
     /**
      * Disable specific date. @DateIOType

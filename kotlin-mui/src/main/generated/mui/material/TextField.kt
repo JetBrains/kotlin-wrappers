@@ -15,13 +15,13 @@ external interface BaseTextFieldProps : react.PropsWithChildren {
      * The name can be confusing, as it's more like an autofill.
      * You can learn more about it [following the specification](https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#autofill).
      */
-    var autoComplete: String
+    var autoComplete: String?
 
     /**
      * If `true`, the `input` element is focused during the first mount.
      * @default false
      */
-    var autoFocus: Boolean
+    var autoFocus: Boolean?
 
     /**
      * @ignore
@@ -31,13 +31,13 @@ external interface BaseTextFieldProps : react.PropsWithChildren {
     /**
      * Override or extend the styles applied to the component.
      */
-    var classes: TextFieldClasses
+    var classes: TextFieldClasses?
 
     /**
      * The color of the component. It supports those theme colors that make sense for this component.
      * @default 'primary'
      */
-    var color: mui.system.Union /* 'primary' | 'secondary' | 'error' | 'info' | 'success' | 'warning', TextFieldPropsColorOverrides */
+    var color: mui.system.Union? /* 'primary' | 'secondary' | 'error' | 'info' | 'success' | 'warning', TextFieldPropsColorOverrides */
 
     /**
      * The default value. Use when the component is not controlled.
@@ -48,40 +48,40 @@ external interface BaseTextFieldProps : react.PropsWithChildren {
      * If `true`, the component is disabled.
      * @default false
      */
-    var disabled: Boolean
+    var disabled: Boolean?
 
     /**
      * If `true`, the label is displayed in an error state.
      * @default false
      */
-    var error: Boolean
+    var error: Boolean?
 
     /**
      * Props applied to the [`FormHelperText`](/api/form-helper-text/) element.
      */
-    var FormHelperTextProps: FormHelperTextProps
+    var FormHelperTextProps: FormHelperTextProps?
 
     /**
      * If `true`, the input will take up the full width of its container.
      * @default false
      */
-    var fullWidth: Boolean
+    var fullWidth: Boolean?
 
     /**
      * The helper text content.
      */
-    var helperText: react.ReactNode
+    var helperText: react.ReactNode?
 
     /**
      * The id of the `input` element.
      * Use this prop to make `label` and `helperText` accessible for screen readers.
      */
-    var id: String
+    var id: String?
 
     /**
      * Props applied to the [`InputLabel`](/api/input-label/) element.
      */
-    var InputLabelProps: InputLabelProps
+    var InputLabelProps: InputLabelProps?
 
     /**
      * [Attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#Attributes) applied to the `input` element.
@@ -91,23 +91,23 @@ external interface BaseTextFieldProps : react.PropsWithChildren {
     /**
      * Pass a ref to the `input` element.
      */
-    var inputRef: react.Ref<*>
+    var inputRef: react.Ref<*>?
 
     /**
      * The label content.
      */
-    var label: react.ReactNode
+    var label: react.ReactNode?
 
     /**
      * If `true`, a `textarea` element is rendered instead of an input.
      * @default false
      */
-    var multiline: Boolean
+    var multiline: Boolean?
 
     /**
      * Name attribute of the `input` element.
      */
-    var name: String
+    var name: String?
 
     var onBlur: dynamic /* InputBaseProps['onBlur'] */
 
@@ -116,13 +116,13 @@ external interface BaseTextFieldProps : react.PropsWithChildren {
     /**
      * The short hint displayed in the `input` before the user enters a value.
      */
-    var placeholder: String
+    var placeholder: String?
 
     /**
      * If `true`, the label is displayed as required and the `input` element is required.
      * @default false
      */
-    var required: Boolean
+    var required: Boolean?
 
     /**
      * Number of rows to display when multiline option is set to true.
@@ -132,39 +132,39 @@ external interface BaseTextFieldProps : react.PropsWithChildren {
     /**
      * Maximum number of rows to display when multiline option is set to true.
      */
-    var maxRows: Int
+    var maxRows: Int?
 
     /**
      * Minimum number of rows to display when multiline option is set to true.
      */
-    var minRows: Int
+    var minRows: Int?
 
     /**
      * Render a [`Select`](/api/select/) element while passing the Input element to `Select` as `input` parameter.
      * If this option is set you must pass the options of the select as children.
      * @default false
      */
-    var select: Boolean
+    var select: Boolean?
 
     /**
      * Props applied to the [`Select`](/api/select/) element.
      */
-    var SelectProps: SelectProps
+    var SelectProps: SelectProps?
 
     /**
      * The size of the component.
      */
-    var size: mui.system.Union /* 'small' | 'medium', TextFieldPropsSizeOverrides */
+    var size: mui.system.Union? /* 'small' | 'medium', TextFieldPropsSizeOverrides */
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: mui.system.SxProps<mui.system.Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>?
 
     /**
      * Type of the `input` element. It should be [a valid HTML5 input type](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#Form_%3Cinput%3E_types).
      */
-    var type: react.dom.html.InputType
+    var type: react.dom.html.InputType?
 
     /**
      * The value of the `input` element, required for a controlled component.
@@ -185,7 +185,7 @@ external interface StandardTextFieldProps : react.Props {
      * The variant to use.
      * @default 'outlined'
      */
-    var variant: mui.system.Union /* 'standard' */
+    var variant: mui.system.Union? /* 'standard' */
 
     /**
      * Props applied to the Input element.
@@ -193,7 +193,7 @@ external interface StandardTextFieldProps : react.Props {
      * [`OutlinedInput`](/api/outlined-input/) or [`Input`](/api/input/)
      * component depending on the `variant` prop value.
      */
-    var InputProps: InputProps
+    var InputProps: InputProps?
 }
 
 external interface FilledTextFieldProps : react.Props {
@@ -217,7 +217,7 @@ external interface FilledTextFieldProps : react.Props {
      * [`OutlinedInput`](/api/outlined-input/) or [`Input`](/api/input/)
      * component depending on the `variant` prop value.
      */
-    var InputProps: FilledInputProps
+    var InputProps: FilledInputProps?
 }
 
 external interface OutlinedTextFieldProps : react.Props {
@@ -241,7 +241,7 @@ external interface OutlinedTextFieldProps : react.Props {
      * [`OutlinedInput`](/api/outlined-input/) or [`Input`](/api/input/)
      * component depending on the `variant` prop value.
      */
-    var InputProps: OutlinedInputProps
+    var InputProps: OutlinedInputProps?
 }
 
 /**

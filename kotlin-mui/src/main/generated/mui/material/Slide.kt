@@ -12,7 +12,7 @@ external interface SlideProps :
      * Set this to `false` to disable this behavior.
      * @default true
      */
-    var appear: Boolean
+    var appear: Boolean?
 
     /**
      * A single child content element.
@@ -23,13 +23,13 @@ external interface SlideProps :
      * An HTML element, or a function that returns one.
      * It's used to set the container the Slide is transitioning from.
      */
-    var container: (element: org.w3c.dom.Element) -> org.w3c.dom.Element
+    var container: ((element: org.w3c.dom.Element) -> org.w3c.dom.Element)?
 
     /**
      * Direction the child node will enter from.
      * @default 'down'
      */
-    var direction: mui.system.Union /* 'left' | 'right' | 'up' | 'down' */
+    var direction: mui.system.Union? /* 'left' | 'right' | 'up' | 'down' */
 
     /**
      * The transition timing function.
@@ -46,7 +46,7 @@ external interface SlideProps :
      */
     var `in`: dynamic /* TransitionProps['in'] */
 
-    var ref: react.Ref<*>
+    var ref: react.Ref<*>?
 
     /**
      * The duration for the transition, in milliseconds.

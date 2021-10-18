@@ -18,17 +18,17 @@ external interface ModalProps : react.Props {
      *   zIndex: -1,
      * })
      */
-    var BackdropComponent: react.ElementType<BackdropProps>
+    var BackdropComponent: react.ElementType<BackdropProps>?
 
     /**
      * Props applied to the [`Backdrop`](/api/backdrop/) element.
      */
-    var BackdropProps: BackdropProps
+    var BackdropProps: BackdropProps?
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: mui.system.SxProps<mui.system.Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>?
 }
 
 /**

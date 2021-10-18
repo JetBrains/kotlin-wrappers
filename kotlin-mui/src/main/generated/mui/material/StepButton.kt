@@ -16,22 +16,22 @@ external interface StepButtonProps : react.PropsWithChildren {
     /**
      * Override or extend the styles applied to the component.
      */
-    var classes: StepButtonClasses
+    var classes: StepButtonClasses?
 
     /**
      * The icon displayed by the step label.
      */
-    var icon: react.ReactNode
+    var icon: react.ReactNode?
 
     /**
      * The optional node to display.
      */
-    var optional: react.ReactNode
+    var optional: react.ReactNode?
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: mui.system.SxProps<mui.system.Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>?
 }
 
 /**

@@ -15,7 +15,7 @@ external interface TreeItemContentProps :
     /**
      * className applied to the root element.
      */
-    var className: String
+    var className: String?
 
     /**
      * Override or extend the styles applied to the component.
@@ -25,7 +25,7 @@ external interface TreeItemContentProps :
     /**
      * The tree node label.
      */
-    var label: react.ReactNode
+    var label: react.ReactNode?
 
     /**
      * The id of the node.
@@ -35,15 +35,15 @@ external interface TreeItemContentProps :
     /**
      * The icon to display next to the tree node's label.
      */
-    var icon: react.ReactNode
+    var icon: react.ReactNode?
 
     /**
      * The icon to display next to the tree node's label. Either an expansion or collapse icon.
      */
-    var expansionIcon: react.ReactNode
+    var expansionIcon: react.ReactNode?
 
     /**
      * The icon to display next to the tree node's label. Either a parent or end icon.
      */
-    var displayIcon: react.ReactNode
+    var displayIcon: react.ReactNode?
 }

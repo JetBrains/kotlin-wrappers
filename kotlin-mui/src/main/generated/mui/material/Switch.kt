@@ -15,40 +15,40 @@ external interface SwitchProps :
     /**
      * The icon to display when the component is checked.
      */
-    var checkedIcon: react.ReactNode
+    var checkedIcon: react.ReactNode?
 
     /**
      * Override or extend the styles applied to the component.
      */
-    var classes: SwitchClasses
+    var classes: SwitchClasses?
 
     /**
      * The color of the component. It supports those theme colors that make sense for this component.
      * @default 'primary'
      */
-    var color: mui.system.Union /* 'primary' | 'secondary' | 'error' | 'info' | 'success' | 'warning' | 'default', SwitchPropsColorOverrides */
+    var color: mui.system.Union? /* 'primary' | 'secondary' | 'error' | 'info' | 'success' | 'warning' | 'default', SwitchPropsColorOverrides */
 
     /**
      * If `true`, the component is disabled.
      */
-    var disabled: Boolean
+    var disabled: Boolean?
 
     /**
      * The icon to display when the component is unchecked.
      */
-    var icon: react.ReactNode
+    var icon: react.ReactNode?
 
     /**
      * The size of the component.
      * `small` is equivalent to the dense switch styling.
      * @default 'medium'
      */
-    var size: mui.system.Union /* 'small' | 'medium', SwitchPropsSizeOverrides */
+    var size: mui.system.Union? /* 'small' | 'medium', SwitchPropsSizeOverrides */
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: mui.system.SxProps<mui.system.Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>?
 
     /**
      * The value of the component. The DOM API casts this to a string.

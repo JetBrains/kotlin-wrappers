@@ -11,7 +11,7 @@ package mui.material
 
 external interface PopperProps :
     react.dom.html.HTMLAttributes<org.w3c.dom.HTMLDivElement> {
-    var ref: react.Ref<org.w3c.dom.HTMLDivElement>
+    var ref: react.Ref<org.w3c.dom.HTMLDivElement>?
 
     /**
      * An HTML element, [virtualElement](https://popper.js.org/docs/v2/virtual-elements/),
@@ -47,7 +47,7 @@ external interface PopperProps :
      * when you want to maximize the responsiveness of the Popper.
      * @default false
      */
-    var keepMounted: Boolean
+    var keepMounted: Boolean?
 
     /**
      * Popper.js is based on a "plugin-like" architecture,
@@ -80,13 +80,13 @@ external interface PopperProps :
     /**
      * A ref that points to the used popper instance.
      */
-    var popperRef: react.Ref<dynamic>
+    var popperRef: react.Ref<dynamic>?
 
     /**
      * Help supporting a react-transition-group/Transition component.
      * @default false
      */
-    var transition: Boolean
+    var transition: Boolean?
 }
 
 /**

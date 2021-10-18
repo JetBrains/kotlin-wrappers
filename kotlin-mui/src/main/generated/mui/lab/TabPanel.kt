@@ -23,12 +23,12 @@ external interface TabPanelProps :
     /**
      * Override or extend the styles applied to the component.
      */
-    var classes: TabPanelClasses
+    var classes: TabPanelClasses?
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: mui.system.SxProps<mui.system.Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>?
 
     /**
      * The `value` of the corresponding `Tab`. Must use the index of the `Tab` when

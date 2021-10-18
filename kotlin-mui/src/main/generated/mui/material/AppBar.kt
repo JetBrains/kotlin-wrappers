@@ -10,19 +10,19 @@ external interface AppBarProps :
     /**
      * Override or extend the styles applied to the component.
      */
-    var classes: AppBarClasses
+    var classes: AppBarClasses?
 
     /**
      * The color of the component. It supports those theme colors that make sense for this component.
      * @default 'primary'
      */
-    var color: mui.system.Union /* PropTypes.Color | 'transparent', AppBarPropsColorOverrides */
+    var color: mui.system.Union? /* PropTypes.Color | 'transparent', AppBarPropsColorOverrides */
 
     /**
      * If true, the `color` prop is applied in dark mode.
      * @default false
      */
-    var enableColorOnDark: Boolean
+    var enableColorOnDark: Boolean?
 
     /**
      * The positioning type. The behavior of the different options is described
@@ -30,12 +30,12 @@ external interface AppBarProps :
      * Note: `sticky` is not universally supported and will fall back to `static` when unavailable.
      * @default 'fixed'
      */
-    var position: mui.system.Union /* 'fixed' | 'absolute' | 'sticky' | 'static' | 'relative' */
+    var position: mui.system.Union? /* 'fixed' | 'absolute' | 'sticky' | 'static' | 'relative' */
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: mui.system.SxProps<mui.system.Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>?
 }
 
 /**

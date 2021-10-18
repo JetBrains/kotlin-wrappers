@@ -14,31 +14,31 @@ external interface RatingProps :
     /**
      * Override or extend the styles applied to the component.
      */
-    var classes: RatingClasses
+    var classes: RatingClasses?
 
     /**
      * The default value. Use when the component is not controlled.
      * @default null
      */
-    var defaultValue: Number
+    var defaultValue: Number?
 
     /**
      * If `true`, the component is disabled.
      * @default false
      */
-    var disabled: Boolean
+    var disabled: Boolean?
 
     /**
      * The icon to display when empty.
      * @default <StarBorder fontSize="inherit" />
      */
-    var emptyIcon: react.ReactNode
+    var emptyIcon: react.ReactNode?
 
     /**
      * The label read when the rating input is empty.
      * @default 'Empty'
      */
-    var emptyLabelText: react.ReactNode
+    var emptyLabelText: react.ReactNode?
 
     /**
      * Accepts a function which returns a string value that provides a user-friendly name for the current value of the rating.
@@ -57,13 +57,13 @@ external interface RatingProps :
      * If `true`, only the selected icon will be highlighted.
      * @default false
      */
-    var highlightSelectedOnly: Boolean
+    var highlightSelectedOnly: Boolean?
 
     /**
      * The icon to display.
      * @default <Star fontSize="inherit" />
      */
-    var icon: react.ReactNode
+    var icon: react.ReactNode?
 
     /**
      * The component containing the icon.
@@ -72,20 +72,20 @@ external interface RatingProps :
      *   return <span {...other} />;
      * }
      */
-    var IconContainerComponent: react.ElementType<IconContainerProps>
+    var IconContainerComponent: react.ElementType<IconContainerProps>?
 
     /**
      * Maximum rating.
      * @default 5
      */
-    var max: Number
+    var max: Number?
 
     /**
      * The name attribute of the radio `input` elements.
      * This input `name` should be unique within the page.
      * Being unique within a form is insufficient since the `name` is used to generated IDs.
      */
-    var name: String
+    var name: String?
 
     /**
      * Callback fired when the value changes.
@@ -105,24 +105,24 @@ external interface RatingProps :
      * The minimum increment value change allowed.
      * @default 1
      */
-    var precision: Number
+    var precision: Number?
 
     /**
      * Removes all hover effects and pointer events.
      * @default false
      */
-    var readOnly: Boolean
+    var readOnly: Boolean?
 
     /**
      * The size of the component.
      * @default 'medium'
      */
-    var size: mui.system.Union /* 'small' | 'medium' | 'large', RatingPropsSizeOverrides */
+    var size: mui.system.Union? /* 'small' | 'medium' | 'large', RatingPropsSizeOverrides */
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: mui.system.SxProps<mui.system.Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>?
 
     /**
      * The rating value.

@@ -22,7 +22,7 @@ external interface BottomNavigationProps :
     /**
      * Override or extend the styles applied to the component.
      */
-    var classes: BottomNavigationClasses
+    var classes: BottomNavigationClasses?
 
     /**
      * Callback fired when the value changes.
@@ -30,24 +30,24 @@ external interface BottomNavigationProps :
      * @param {React.SyntheticEvent} event The event source of the callback. **Warning**: This is a generic event not a change event.
      * @param {any} value We default to the index of the child.
      */
-    var onChange: (event: react.dom.events.SyntheticEvent<*, *>, value: dynamic) -> Unit
+    var onChange: ((event: react.dom.events.SyntheticEvent<*, *>, value: dynamic) -> Unit)?
 
     /**
      * If `true`, all `BottomNavigationAction`s will show their labels.
      * By default, only the selected `BottomNavigationAction` will show its label.
      * @default false
      */
-    var showLabels: Boolean
+    var showLabels: Boolean?
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: mui.system.SxProps<mui.system.Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>?
 
     /**
      * The value of the currently selected `BottomNavigationAction`.
      */
-    var value: Any
+    var value: Any?
 }
 
 /**

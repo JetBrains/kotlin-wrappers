@@ -18,7 +18,7 @@ external interface ListProps :
     /**
      * Override or extend the styles applied to the component.
      */
-    var classes: ListClasses
+    var classes: ListClasses?
 
     /**
      * If `true`, compact vertical padding designed for keyboard and mouse input is used for
@@ -26,23 +26,23 @@ external interface ListProps :
      * The prop is available to descendant components as the `dense` context.
      * @default false
      */
-    var dense: Boolean
+    var dense: Boolean?
 
     /**
      * If `true`, vertical padding is removed from the list.
      * @default false
      */
-    var disablePadding: Boolean
+    var disablePadding: Boolean?
 
     /**
      * The content of the subheader, normally `ListSubheader`.
      */
-    var subheader: react.ReactNode
+    var subheader: react.ReactNode?
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: mui.system.SxProps<mui.system.Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>?
 }
 
 /**

@@ -16,31 +16,31 @@ external interface TabsProps : react.PropsWithChildren {
      * @param {object} actions This object contains all possible actions
      * that can be triggered programmatically.
      */
-    var action: react.Ref<dynamic>
+    var action: react.Ref<dynamic>?
 
     /**
      * If `true`, the scroll buttons aren't forced hidden on mobile.
      * By default the scroll buttons are hidden on mobile and takes precedence over `scrollButtons`.
      * @default false
      */
-    var allowScrollButtonsMobile: Boolean
+    var allowScrollButtonsMobile: Boolean?
 
     /**
      * The label for the Tabs as a string.
      */
-    // var `aria-label`: String
+    // var `aria-label`: String?
 
     /**
      * An id or list of ids separated by a space that label the Tabs.
      */
-    // var `aria-labelledby`: String
+    // var `aria-labelledby`: String?
 
     /**
      * If `true`, the tabs are centered.
      * This prop is intended for large views.
      * @default false
      */
-    var centered: Boolean
+    var centered: Boolean?
 
     /**
      * The content of the component.
@@ -50,13 +50,13 @@ external interface TabsProps : react.PropsWithChildren {
     /**
      * Override or extend the styles applied to the component.
      */
-    var classes: TabsClasses
+    var classes: TabsClasses?
 
     /**
      * Determines the color of the indicator.
      * @default 'primary'
      */
-    var indicatorColor: mui.system.Union /* 'secondary' | 'primary' */
+    var indicatorColor: mui.system.Union? /* 'secondary' | 'primary' */
 
     /**
      * Callback fired when the value changes.
@@ -64,19 +64,19 @@ external interface TabsProps : react.PropsWithChildren {
      * @param {React.SyntheticEvent} event The event source of the callback. **Warning**: This is a generic event not a change event.
      * @param {any} value We default to the index of the child (number)
      */
-    var onChange: (event: react.dom.events.SyntheticEvent<*, *>, value: dynamic) -> Unit
+    var onChange: ((event: react.dom.events.SyntheticEvent<*, *>, value: dynamic) -> Unit)?
 
     /**
      * The component orientation (layout flow direction).
      * @default 'horizontal'
      */
-    var orientation: mui.system.Union /* 'horizontal' | 'vertical' */
+    var orientation: mui.system.Union? /* 'horizontal' | 'vertical' */
 
     /**
      * The component used to render the scroll buttons.
      * @default TabScrollButton
      */
-    var ScrollButtonComponent: react.ElementType<*>
+    var ScrollButtonComponent: react.ElementType<*>?
 
     /**
      * Determine behavior of scroll buttons when tabs are set to scroll:
@@ -89,37 +89,37 @@ external interface TabsProps : react.PropsWithChildren {
      * This behavior can be disabled with `allowScrollButtonsMobile`.
      * @default 'auto'
      */
-    var scrollButtons: mui.system.Union /* 'auto' | true | false */
+    var scrollButtons: mui.system.Union? /* 'auto' | true | false */
 
     /**
      * If `true` the selected tab changes on focus. Otherwise it only
      * changes on activation.
      */
-    var selectionFollowsFocus: Boolean
+    var selectionFollowsFocus: Boolean?
 
     /**
      * Props applied to the tab indicator element.
      * @default  {}
      */
-    var TabIndicatorProps: react.dom.html.HTMLAttributes<org.w3c.dom.HTMLDivElement>
+    var TabIndicatorProps: react.dom.html.HTMLAttributes<org.w3c.dom.HTMLDivElement>?
 
     /**
      * Props applied to the [`TabScrollButton`](/api/tab-scroll-button/) element.
      * @default {}
      */
-    var TabScrollButtonProps: TabScrollButtonProps
+    var TabScrollButtonProps: TabScrollButtonProps?
 
     /**
      * Determines the color of the `Tab`.
      * @default 'primary'
      */
-    var textColor: mui.system.Union /* 'secondary' | 'primary' | 'inherit' */
+    var textColor: mui.system.Union? /* 'secondary' | 'primary' | 'inherit' */
 
     /**
      * The value of the currently selected `Tab`.
      * If you don't want any selected `Tab`, you can set this prop to `false`.
      */
-    var value: Any
+    var value: Any?
 
     /**
      *  Determines additional display behavior of the tabs:
@@ -131,19 +131,19 @@ external interface TabsProps : react.PropsWithChildren {
      *  - `standard` will render the default state.
      * @default 'standard'
      */
-    var variant: mui.system.Union /* 'standard' | 'scrollable' | 'fullWidth' */
+    var variant: mui.system.Union? /* 'standard' | 'scrollable' | 'fullWidth' */
 
     /**
      * If `true`, the scrollbar is visible. It can be useful when displaying
      * a long vertical list of tabs.
      * @default false
      */
-    var visibleScrollbar: Boolean
+    var visibleScrollbar: Boolean?
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: mui.system.SxProps<mui.system.Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>?
 }
 
 /**

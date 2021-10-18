@@ -11,7 +11,7 @@ external interface DateTimePickerProps : react.Props {
      * @default '@media (pointer: fine)'
      * @example '@media (min-width: 720px)' or theme.breakpoints.up("sm")
      */
-    var desktopModeMediaQuery: String
+    var desktopModeMediaQuery: String?
 }
 
 /**

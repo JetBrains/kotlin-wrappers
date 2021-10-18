@@ -18,24 +18,24 @@ external interface TableRowProps :
     /**
      * Override or extend the styles applied to the component.
      */
-    var classes: TableRowClasses
+    var classes: TableRowClasses?
 
     /**
      * If `true`, the table row will shade on hover.
      * @default false
      */
-    var hover: Boolean
+    var hover: Boolean?
 
     /**
      * If `true`, the table row will have the selected shading.
      * @default false
      */
-    var selected: Boolean
+    var selected: Boolean?
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: mui.system.SxProps<mui.system.Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>?
 }
 
 /**

@@ -18,13 +18,13 @@ external interface FabProps :
     /**
      * Override or extend the styles applied to the component.
      */
-    var classes: FabClasses
+    var classes: FabClasses?
 
     /**
      * The color of the component. It supports those theme colors that make sense for this component.
      * @default 'default'
      */
-    var color: mui.system.Union /* PropTypes.Color, FabPropsColorOverrides */
+    var color: mui.system.Union? /* PropTypes.Color, FabPropsColorOverrides */
 
     /**
      * If `true`, the component is disabled.
@@ -36,36 +36,36 @@ external interface FabProps :
      * If `true`, the  keyboard focus ripple is disabled.
      * @default false
      */
-    var disableFocusRipple: Boolean
+    var disableFocusRipple: Boolean?
 
     /**
      * If `true`, the ripple effect is disabled.
      */
-    var disableRipple: Boolean
+    var disableRipple: Boolean?
 
     /**
      * The URL to link to when the button is clicked.
      * If defined, an `a` element will be used as the root node.
      */
-    var href: String
+    var href: String?
 
     /**
      * The size of the component.
      * `small` is equivalent to the dense button styling.
      * @default 'large'
      */
-    var size: mui.system.Union /* 'small' | 'medium' | 'large', FabPropsSizeOverrides */
+    var size: mui.system.Union? /* 'small' | 'medium' | 'large', FabPropsSizeOverrides */
 
     /**
      * The variant to use.
      * @default 'circular'
      */
-    var variant: mui.system.Union /* 'circular' | 'extended', FabPropsVariantOverrides */
+    var variant: mui.system.Union? /* 'circular' | 'extended', FabPropsVariantOverrides */
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: mui.system.SxProps<mui.system.Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>?
 }
 
 /**

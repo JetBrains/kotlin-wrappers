@@ -23,7 +23,7 @@ external interface SpeedDialProps :
     /**
      * Override or extend the styles applied to the component.
      */
-    var classes: SpeedDialClasses
+    var classes: SpeedDialClasses?
 
     /**
      * The aria-label of the button element.
@@ -35,25 +35,25 @@ external interface SpeedDialProps :
      * The direction the actions open relative to the floating action button.
      * @default 'up'
      */
-    var direction: mui.system.Union /* 'up' | 'down' | 'left' | 'right' */
+    var direction: mui.system.Union? /* 'up' | 'down' | 'left' | 'right' */
 
     /**
      * If `true`, the SpeedDial is hidden.
      * @default false
      */
-    var hidden: Boolean
+    var hidden: Boolean?
 
     /**
      * Props applied to the [`Fab`](/api/fab/) element.
      * @default {}
      */
-    var FabProps: FabProps
+    var FabProps: FabProps?
 
     /**
      * The icon to display in the SpeedDial Fab. The `SpeedDialIcon` component
      * provides a default Icon with animation.
      */
-    var icon: react.ReactNode
+    var icon: react.ReactNode?
 
     /**
      * Callback fired when the component requests to be closed.
@@ -61,7 +61,7 @@ external interface SpeedDialProps :
      * @param {object} event The event source of the callback.
      * @param {string} reason Can be: `"toggle"`, `"blur"`, `"mouseLeave"`, `"escapeKeyDown"`.
      */
-    var onClose: (event: react.dom.events.SyntheticEvent<*, *>, reason: CloseReason) -> Unit
+    var onClose: ((event: react.dom.events.SyntheticEvent<*, *>, reason: CloseReason) -> Unit)?
 
     /**
      * Callback fired when the component requests to be open.
@@ -69,29 +69,29 @@ external interface SpeedDialProps :
      * @param {object} event The event source of the callback.
      * @param {string} reason Can be: `"toggle"`, `"focus"`, `"mouseEnter"`.
      */
-    var onOpen: (event: react.dom.events.SyntheticEvent<*, *>, reason: OpenReason) -> Unit
+    var onOpen: ((event: react.dom.events.SyntheticEvent<*, *>, reason: OpenReason) -> Unit)?
 
     /**
      * If `true`, the component is shown.
      */
-    var open: Boolean
+    var open: Boolean?
 
     /**
      * The icon to display in the SpeedDial Fab when the SpeedDial is open.
      */
-    var openIcon: react.ReactNode
+    var openIcon: react.ReactNode?
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: mui.system.SxProps<mui.system.Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>?
 
     /**
      * The component used for the transition.
      * [Follow this guide](/components/transitions/#transitioncomponent-prop) to learn more about the requirements for this component.
      * @default Zoom
      */
-    var TransitionComponent: react.ComponentType<mui.material.transitions.TransitionProps>
+    var TransitionComponent: react.ComponentType<mui.material.transitions.TransitionProps>?
 
     /**
      * The duration for the transition, in milliseconds.
@@ -107,7 +107,7 @@ external interface SpeedDialProps :
      * Props applied to the transition element.
      * By default, the element is based on this [`Transition`](https://reactcommunity.org/react-transition-group/transition) component.
      */
-    var TransitionProps: mui.material.transitions.TransitionProps
+    var TransitionProps: mui.material.transitions.TransitionProps?
 }
 
 /**

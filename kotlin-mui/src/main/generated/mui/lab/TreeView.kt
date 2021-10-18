@@ -15,13 +15,13 @@ external interface MultiSelectTreeViewProps : react.Props {
      * When `multiSelect` is true this takes an array of strings; when false (default) a string.
      * @default []
      */
-    var defaultSelected: ReadonlyArray<String>
+    var defaultSelected: ReadonlyArray<String>?
 
     /**
      * Selected node ids. (Controlled)
      * When `multiSelect` is true this takes an array of strings; when false (default) a string.
      */
-    var selected: ReadonlyArray<String>
+    var selected: ReadonlyArray<String>?
 
     /**
      * If true `ctrl` and `shift` will trigger multiselect.
@@ -45,13 +45,13 @@ external interface SingleSelectTreeViewProps : react.Props {
      * When `multiSelect` is true this takes an array of strings; when false (default) a string.
      * @default []
      */
-    var defaultSelected: String
+    var defaultSelected: String?
 
     /**
      * Selected node ids. (Controlled)
      * When `multiSelect` is true this takes an array of strings; when false (default) a string.
      */
-    var selected: String
+    var selected: String?
 
     /**
      * If true `ctrl` and `shift` will trigger multiselect.

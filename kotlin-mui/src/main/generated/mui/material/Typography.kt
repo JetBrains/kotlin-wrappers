@@ -14,7 +14,7 @@ external interface TypographyProps :
      * Set the text-align on the component.
      * @default 'inherit'
      */
-    var align: mui.system.Union /* 'inherit' | 'left' | 'center' | 'right' | 'justify' */
+    var align: mui.system.Union? /* 'inherit' | 'left' | 'center' | 'right' | 'justify' */
 
     /**
      * The content of the component.
@@ -24,13 +24,13 @@ external interface TypographyProps :
     /**
      * Override or extend the styles applied to the component.
      */
-    var classes: TypographyClasses
+    var classes: TypographyClasses?
 
     /**
      * If `true`, the text will have a bottom margin.
      * @default false
      */
-    var gutterBottom: Boolean
+    var gutterBottom: Boolean?
 
     /**
      * If `true`, the text will not wrap, but instead will truncate with a text overflow ellipsis.
@@ -39,24 +39,24 @@ external interface TypographyProps :
      * (the element needs to have a width in order to overflow).
      * @default false
      */
-    var noWrap: Boolean
+    var noWrap: Boolean?
 
     /**
      * If `true`, the element will be a paragraph element.
      * @default false
      */
-    var paragraph: Boolean
+    var paragraph: Boolean?
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: mui.system.SxProps<mui.system.Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>?
 
     /**
      * Applies the theme typography styles.
      * @default 'body1'
      */
-    var variant: mui.system.Union /* Variant | 'inherit', TypographyPropsVariantOverrides */
+    var variant: mui.system.Union? /* Variant | 'inherit', TypographyPropsVariantOverrides */
 
     /**
      * The component maps the variant prop to a range of different HTML element types.

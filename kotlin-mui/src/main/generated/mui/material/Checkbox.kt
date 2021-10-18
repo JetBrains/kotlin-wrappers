@@ -21,18 +21,18 @@ external interface CheckboxProps :
      * The icon to display when the component is checked.
      * @default <CheckBoxIcon />
      */
-    var checkedIcon: react.ReactNode
+    var checkedIcon: react.ReactNode?
 
     /**
      * Override or extend the styles applied to the component.
      */
-    var classes: CheckboxClasses
+    var classes: CheckboxClasses?
 
     /**
      * The color of the component. It supports those theme colors that make sense for this component.
      * @default 'primary'
      */
-    var color: mui.system.Union /* 'primary' | 'secondary' | 'error' | 'info' | 'success' | 'warning' | 'default', CheckboxPropsColorOverrides */
+    var color: mui.system.Union? /* 'primary' | 'secondary' | 'error' | 'info' | 'success' | 'warning' | 'default', CheckboxPropsColorOverrides */
 
     /**
      * If `true`, the component is disabled.
@@ -48,7 +48,7 @@ external interface CheckboxProps :
      * The icon to display when the component is unchecked.
      * @default <CheckBoxOutlineBlankIcon />
      */
-    var icon: react.ReactNode
+    var icon: react.ReactNode?
 
     /**
      * The id of the `input` element.
@@ -62,13 +62,13 @@ external interface CheckboxProps :
      * However, we set a `data-indeterminate` attribute on the `input`.
      * @default false
      */
-    var indeterminate: Boolean
+    var indeterminate: Boolean?
 
     /**
      * The icon to display when the component is indeterminate.
      * @default <IndeterminateCheckBoxIcon />
      */
-    var indeterminateIcon: react.ReactNode
+    var indeterminateIcon: react.ReactNode?
 
     /**
      * [Attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#Attributes) applied to the `input` element.
@@ -78,7 +78,7 @@ external interface CheckboxProps :
     /**
      * Pass a ref to the `input` element.
      */
-    var inputRef: react.Ref<org.w3c.dom.HTMLInputElement>
+    var inputRef: react.Ref<org.w3c.dom.HTMLInputElement>?
 
     /**
      * Callback fired when the state is changed.
@@ -98,12 +98,12 @@ external interface CheckboxProps :
      * `small` is equivalent to the dense checkbox styling.
      * @default 'medium'
      */
-    var size: mui.system.Union /* 'small' | 'medium', CheckboxPropsSizeOverrides */
+    var size: mui.system.Union? /* 'small' | 'medium', CheckboxPropsSizeOverrides */
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: mui.system.SxProps<mui.system.Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>?
 
     /**
      * The value of the component. The DOM API casts this to a string.

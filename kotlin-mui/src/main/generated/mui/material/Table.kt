@@ -18,19 +18,19 @@ external interface TableProps :
     /**
      * Override or extend the styles applied to the component.
      */
-    var classes: TableClasses
+    var classes: TableClasses?
 
     /**
      * Allows TableCells to inherit padding of the Table.
      * @default 'normal'
      */
-    var padding: mui.system.Union /* 'normal' | 'checkbox' | 'none' */
+    var padding: mui.system.Union? /* 'normal' | 'checkbox' | 'none' */
 
     /**
      * Allows TableCells to inherit size of the Table.
      * @default 'medium'
      */
-    var size: mui.system.Union /* 'small' | 'medium', TablePropsSizeOverrides */
+    var size: mui.system.Union? /* 'small' | 'medium', TablePropsSizeOverrides */
 
     /**
      * Set the header sticky.
@@ -38,12 +38,12 @@ external interface TableProps :
      * ⚠️ It doesn't work with IE11.
      * @default false
      */
-    var stickyHeader: Boolean
+    var stickyHeader: Boolean?
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: mui.system.SxProps<mui.system.Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>?
 }
 
 /**

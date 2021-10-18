@@ -14,7 +14,7 @@ external interface TableSortLabelProps :
      * If `true`, the label will have the active styling (should be true for the sorted column).
      * @default false
      */
-    var active: Boolean
+    var active: Boolean?
 
     /**
      * Label contents, the arrow will be appended automatically.
@@ -24,30 +24,30 @@ external interface TableSortLabelProps :
     /**
      * Override or extend the styles applied to the component.
      */
-    var classes: TableSortLabelClasses
+    var classes: TableSortLabelClasses?
 
     /**
      * The current sort direction.
      * @default 'asc'
      */
-    var direction: mui.system.Union /* 'asc' | 'desc' */
+    var direction: mui.system.Union? /* 'asc' | 'desc' */
 
     /**
      * Hide sort icon when active is false.
      * @default false
      */
-    var hideSortIcon: Boolean
+    var hideSortIcon: Boolean?
 
     /**
      * Sort icon to use.
      * @default ArrowDownwardIcon
      */
-    var IconComponent: react.ComponentType<*>
+    var IconComponent: react.ComponentType<*>?
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: mui.system.SxProps<mui.system.Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>?
 }
 
 /**

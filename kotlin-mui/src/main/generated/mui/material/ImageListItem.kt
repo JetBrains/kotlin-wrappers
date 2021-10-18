@@ -18,24 +18,24 @@ external interface ImageListItemProps :
     /**
      * Override or extend the styles applied to the component.
      */
-    var classes: ImageListItemClasses
+    var classes: ImageListItemClasses?
 
     /**
      * Width of the item in number of grid columns.
      * @default 1
      */
-    var cols: Number
+    var cols: Number?
 
     /**
      * Height of the item in number of grid rows.
      * @default 1
      */
-    var rows: Number
+    var rows: Number?
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: mui.system.SxProps<mui.system.Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>?
 }
 
 /**

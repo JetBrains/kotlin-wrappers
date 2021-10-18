@@ -18,24 +18,24 @@ external interface MasonryProps :
     /**
      * Override or extend the styles applied to the component.
      */
-    var classes: MasonryClasses
+    var classes: MasonryClasses?
 
     /**
      * Number of columns.
      * @default 4
      */
-    var columns: mui.system.ResponsiveStyleValue<dynamic>
+    var columns: mui.system.ResponsiveStyleValue<dynamic>?
 
     /**
      * Defines the space between children. It is a factor of the theme's spacing.
      * @default 1
      */
-    var spacing: mui.system.ResponsiveStyleValue<dynamic>
+    var spacing: mui.system.ResponsiveStyleValue<dynamic>?
 
     /**
      * Allows defining system overrides as well as additional CSS styles.
      */
-    var sx: mui.system.SxProps<mui.system.Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>?
 }
 
 /**

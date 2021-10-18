@@ -24,12 +24,12 @@ external interface ListItemIconProps :
     /**
      * Override or extend the styles applied to the component.
      */
-    var classes: ListItemIconClasses
+    var classes: ListItemIconClasses?
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: mui.system.SxProps<mui.system.Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>?
 }
 
 /**

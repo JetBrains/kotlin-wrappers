@@ -23,24 +23,24 @@ external interface TimelineDotProps :
     /**
      * Override or extend the styles applied to the component.
      */
-    var classes: TimelineDotClasses
+    var classes: TimelineDotClasses?
 
     /**
      * The dot can have a different colors.
      * @default 'grey'
      */
-    var color: mui.system.Union /* 'inherit' | 'grey' | 'primary' | 'secondary' | 'error' | 'info' | 'success' | 'warning' */
+    var color: mui.system.Union? /* 'inherit' | 'grey' | 'primary' | 'secondary' | 'error' | 'info' | 'success' | 'warning' */
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: mui.system.SxProps<mui.system.Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>?
 
     /**
      * The dot can appear filled or outlined.
      * @default 'filled'
      */
-    var variant: mui.system.Union /* 'filled' | 'outlined', TimelineDotPropsVariantOverrides */
+    var variant: mui.system.Union? /* 'filled' | 'outlined', TimelineDotPropsVariantOverrides */
 }
 
 /**

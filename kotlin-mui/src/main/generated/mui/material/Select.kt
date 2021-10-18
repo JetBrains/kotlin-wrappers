@@ -20,7 +20,7 @@ external interface SelectProps :
      * menu, otherwise it will be at least the width of the select input.
      * @default false
      */
-    var autoWidth: Boolean
+    var autoWidth: Boolean?
 
     /**
      * The option elements to populate the select with.
@@ -34,7 +34,7 @@ external interface SelectProps :
      * Override or extend the styles applied to the component.
      * @default {}
      */
-    var classes: SelectClasses
+    var classes: SelectClasses?
 
     /**
      * The default value. Use when the component is not controlled.
@@ -51,23 +51,23 @@ external interface SelectProps :
      * The label should either be hidden or forced to a shrunk state.
      * @default false
      */
-    var displayEmpty: Boolean
+    var displayEmpty: Boolean?
 
     /**
      * The icon that displays the arrow.
      * @default ArrowDropDownIcon
      */
-    var IconComponent: react.ElementType<*>
+    var IconComponent: react.ElementType<*>?
 
     /**
      * The `id` of the wrapper element or the `select` element when `native`.
      */
-    var id: String
+    var id: String?
 
     /**
      * An `Input` element; does not have to be a material-ui specific `Input`.
      */
-    var input: react.ReactElement
+    var input: react.ReactElement?
 
     /**
      * [Attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#Attributes) applied to the `input` element.
@@ -78,30 +78,30 @@ external interface SelectProps :
     /**
      * See [OutlinedInput#label](/api/outlined-input/#props)
      */
-    var label: react.ReactNode
+    var label: react.ReactNode?
 
     /**
      * The ID of an element that acts as an additional label. The Select will
      * be labelled by the additional label and the selected value.
      */
-    var labelId: String
+    var labelId: String?
 
     /**
      * Props applied to the [`Menu`](/api/menu/) element.
      */
-    var MenuProps: MenuProps
+    var MenuProps: MenuProps?
 
     /**
      * If `true`, `value` must be an array and the menu will support multiple selections.
      * @default false
      */
-    var multiple: Boolean
+    var multiple: Boolean?
 
     /**
      * If `true`, the component uses a native `select` element.
      * @default false
      */
-    var native: Boolean
+    var native: Boolean?
 
     /**
      * Callback fired when a menu item is selected.
@@ -119,7 +119,7 @@ external interface SelectProps :
      *
      * @param {object} event The event source of the callback.
      */
-    var onClose: (event: react.dom.events.SyntheticEvent<*, *>) -> Unit
+    var onClose: ((event: react.dom.events.SyntheticEvent<*, *>) -> Unit)?
 
     /**
      * Callback fired when the component requests to be opened.
@@ -127,13 +127,13 @@ external interface SelectProps :
      *
      * @param {object} event The event source of the callback.
      */
-    var onOpen: (event: react.dom.events.SyntheticEvent<*, *>) -> Unit
+    var onOpen: ((event: react.dom.events.SyntheticEvent<*, *>) -> Unit)?
 
     /**
      * If `true`, the component is shown.
      * You can only use it when the `native` prop is `false` (default).
      */
-    var open: Boolean
+    var open: Boolean?
 
     /**
      * Render the selected value.
@@ -147,12 +147,12 @@ external interface SelectProps :
     /**
      * Props applied to the clickable div element.
      */
-    var SelectDisplayProps: react.dom.html.HTMLAttributes<org.w3c.dom.HTMLDivElement>
+    var SelectDisplayProps: react.dom.html.HTMLAttributes<org.w3c.dom.HTMLDivElement>?
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: mui.system.SxProps<mui.system.Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>?
 
     /**
      * The `input` value. Providing an empty string will select no options.
@@ -167,7 +167,7 @@ external interface SelectProps :
      * The variant to use.
      * @default 'outlined'
      */
-    var variant: mui.system.Union /* 'standard' | 'outlined' | 'filled' */
+    var variant: mui.system.Union? /* 'standard' | 'outlined' | 'filled' */
 }
 
 /**

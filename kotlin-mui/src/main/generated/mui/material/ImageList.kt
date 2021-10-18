@@ -18,19 +18,19 @@ external interface ImageListProps :
     /**
      * Override or extend the styles applied to the component.
      */
-    var classes: ImageListClasses
+    var classes: ImageListClasses?
 
     /**
      * Number of columns.
      * @default 2
      */
-    var cols: Number
+    var cols: Number?
 
     /**
      * The gap between items in px.
      * @default 4
      */
-    var gap: Number
+    var gap: Number?
 
     /**
      * The height of one row in px.
@@ -41,13 +41,13 @@ external interface ImageListProps :
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: mui.system.SxProps<mui.system.Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>?
 
     /**
      * The variant to use.
      * @default 'standard'
      */
-    var variant: mui.system.Union /* 'masonry' | 'quilted' | 'standard' | 'woven', ImageListPropsVariantOverrides */
+    var variant: mui.system.Union? /* 'masonry' | 'quilted' | 'standard' | 'woven', ImageListPropsVariantOverrides */
 }
 
 /**

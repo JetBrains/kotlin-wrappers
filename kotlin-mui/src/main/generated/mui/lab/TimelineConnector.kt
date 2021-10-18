@@ -23,12 +23,12 @@ external interface TimelineConnectorProps :
     /**
      * Override or extend the styles applied to the component.
      */
-    var classes: TimelineConnectorClasses
+    var classes: TimelineConnectorClasses?
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: mui.system.SxProps<mui.system.Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>?
 }
 
 /**

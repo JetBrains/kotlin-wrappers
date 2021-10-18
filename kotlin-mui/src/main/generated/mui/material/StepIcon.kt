@@ -16,24 +16,24 @@ external interface StepIconProps :
      * Whether this step is active.
      * @default false
      */
-    var active: Boolean
+    var active: Boolean?
 
     /**
      * Override or extend the styles applied to the component.
      */
-    var classes: StepIconClasses
+    var classes: StepIconClasses?
 
     /**
      * Mark the step as completed. Is passed to child components.
      * @default false
      */
-    var completed: Boolean
+    var completed: Boolean?
 
     /**
      * If `true`, the step is marked as failed.
      * @default false
      */
-    var error: Boolean
+    var error: Boolean?
 
     /**
      * The label displayed in the step icon.
@@ -43,7 +43,7 @@ external interface StepIconProps :
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: mui.system.SxProps<mui.system.Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>?
 }
 
 /**

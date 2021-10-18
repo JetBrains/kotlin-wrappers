@@ -19,23 +19,23 @@ external interface MasonryItemProps :
     /**
      * Override or extend the styles applied to the component.
      */
-    var classes: MasonryItemClasses
+    var classes: MasonryItemClasses?
 
     /**
      * The initial height of the component in px. This is provided for server-side rendering.
      */
-    var defaultHeight: Number
+    var defaultHeight: Number?
 
     /**
      * The number of columns taken up by the component
      * @default 1
      */
-    var columnSpan: Number
+    var columnSpan: Number?
 
     /**
      * Allows defining system overrides as well as additional CSS styles.
      */
-    var sx: mui.system.SxProps<mui.system.Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>?
 }
 
 /**

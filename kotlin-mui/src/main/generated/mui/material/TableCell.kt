@@ -22,7 +22,7 @@ external interface TableCellProps :
      * you to add them up quickly in your head without having to worry about decimals.
      * @default 'inherit'
      */
-    var align: mui.system.Union /* 'inherit' | 'left' | 'center' | 'right' | 'justify' */
+    var align: mui.system.Union? /* 'inherit' | 'left' | 'center' | 'right' | 'justify' */
 
     /**
      * The content of the component.
@@ -32,19 +32,19 @@ external interface TableCellProps :
     /**
      * Override or extend the styles applied to the component.
      */
-    var classes: TableCellClasses
+    var classes: TableCellClasses?
 
     /**
      * The component used for the root node.
      * Either a string to use a HTML element or a component.
      */
-    var component: react.ElementType<TableCellBaseProps>
+    var component: react.ElementType<TableCellBaseProps>?
 
     /**
      * Sets the padding applied to the cell.
      * The prop defaults to the value (`'default'`) inherited from the parent Table component.
      */
-    var padding: mui.system.Union /* 'normal' | 'checkbox' | 'none' */
+    var padding: mui.system.Union? /* 'normal' | 'checkbox' | 'none' */
 
     /**
      * Set scope attribute.
@@ -55,7 +55,7 @@ external interface TableCellProps :
      * Specify the size of the cell.
      * The prop defaults to the value (`'medium'`) inherited from the parent Table component.
      */
-    var size: mui.system.Union /* 'small' | 'medium' */
+    var size: mui.system.Union? /* 'small' | 'medium' */
 
     /**
      * Set aria-sort direction.
@@ -65,13 +65,13 @@ external interface TableCellProps :
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: mui.system.SxProps<mui.system.Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>?
 
     /**
      * Specify the cell type.
      * The prop defaults to the value inherited from the parent TableHead, TableBody, or TableFooter components.
      */
-    var variant: mui.system.Union /* 'head' | 'body' | 'footer' */
+    var variant: mui.system.Union? /* 'head' | 'body' | 'footer' */
 }
 
 /**

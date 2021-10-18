@@ -25,19 +25,19 @@ external interface NativeSelectProps :
      * Override or extend the styles applied to the component.
      * @default {}
      */
-    var classes: NativeSelectClasses
+    var classes: NativeSelectClasses?
 
     /**
      * The icon that displays the arrow.
      * @default ArrowDropDownIcon
      */
-    var IconComponent: react.ElementType<*>
+    var IconComponent: react.ElementType<*>?
 
     /**
      * An `Input` element; does not have to be a material-ui specific `Input`.
      * @default <Input />
      */
-    var input: react.ReactElement
+    var input: react.ReactElement?
 
     /**
      * [Attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select#attributes) applied to the `select` element.
@@ -55,7 +55,7 @@ external interface NativeSelectProps :
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: mui.system.SxProps<mui.system.Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>?
 
     /**
      * The `input` value. The DOM API casts this to a string.
@@ -65,7 +65,7 @@ external interface NativeSelectProps :
     /**
      * The variant to use.
      */
-    var variant: mui.system.Union /* 'standard' | 'outlined' | 'filled' */
+    var variant: mui.system.Union? /* 'standard' | 'outlined' | 'filled' */
 }
 
 /**

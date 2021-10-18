@@ -23,31 +23,31 @@ external interface AccordionProps :
     /**
      * Override or extend the styles applied to the component.
      */
-    var classes: AccordionClasses
+    var classes: AccordionClasses?
 
     /**
      * If `true`, expands the accordion by default.
      * @default false
      */
-    var defaultExpanded: Boolean
+    var defaultExpanded: Boolean?
 
     /**
      * If `true`, the component is disabled.
      * @default false
      */
-    var disabled: Boolean
+    var disabled: Boolean?
 
     /**
      * If `true`, it removes the margin between two expanded accordion items and the increase of height.
      * @default false
      */
-    var disableGutters: Boolean
+    var disableGutters: Boolean?
 
     /**
      * If `true`, expands the accordion, otherwise collapse it.
      * Setting this prop enables control over the accordion.
      */
-    var expanded: Boolean
+    var expanded: Boolean?
 
     /**
      * Callback fired when the expand/collapse state is changed.
@@ -60,20 +60,20 @@ external interface AccordionProps :
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: mui.system.SxProps<mui.system.Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>?
 
     /**
      * The component used for the transition.
      * [Follow this guide](/components/transitions/#transitioncomponent-prop) to learn more about the requirements for this component.
      * @default Collapse
      */
-    var TransitionComponent: react.ComponentType<*>
+    var TransitionComponent: react.ComponentType<*>?
 
     /**
      * Props applied to the transition element.
      * By default, the element is based on this [`Transition`](https://reactcommunity.org/react-transition-group/transition) component.
      */
-    var TransitionProps: mui.material.transitions.TransitionProps
+    var TransitionProps: mui.material.transitions.TransitionProps?
 }
 
 /**

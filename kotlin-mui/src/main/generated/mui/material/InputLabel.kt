@@ -23,7 +23,7 @@ external interface InputLabelProps :
     /**
      * Override or extend the styles applied to the component.
      */
-    var classes: InputLabelClasses
+    var classes: InputLabelClasses?
 
     var color: dynamic /* FormLabelProps['color'] */
 
@@ -31,48 +31,48 @@ external interface InputLabelProps :
      * If `true`, the transition animation is disabled.
      * @default false
      */
-    var disableAnimation: Boolean
+    var disableAnimation: Boolean?
 
     /**
      * If `true`, the component is disabled.
      */
-    var disabled: Boolean
+    var disabled: Boolean?
 
     /**
      * If `true`, the label is displayed in an error state.
      */
-    var error: Boolean
+    var error: Boolean?
 
     /**
      * If `true`, the `input` of this label is focused.
      */
-    var focused: Boolean
+    var focused: Boolean?
 
     /**
      * If `dense`, will adjust vertical spacing. This is normally obtained via context from
      * FormControl.
      */
-    var margin: mui.system.Union /* 'dense' */
+    var margin: mui.system.Union? /* 'dense' */
 
     /**
      * if `true`, the label will indicate that the `input` is required.
      */
-    var required: Boolean
+    var required: Boolean?
 
     /**
      * If `true`, the label is shrunk.
      */
-    var shrink: Boolean
+    var shrink: Boolean?
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: mui.system.SxProps<mui.system.Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>?
 
     /**
      * The variant to use.
      */
-    var variant: mui.system.Union /* 'standard' | 'outlined' | 'filled' */
+    var variant: mui.system.Union? /* 'standard' | 'outlined' | 'filled' */
 }
 
 /**

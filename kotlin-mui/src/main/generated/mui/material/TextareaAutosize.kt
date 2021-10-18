@@ -7,18 +7,18 @@ package mui.material
 
 external interface TextareaAutosizeProps :
     react.dom.html.TextareaHTMLAttributes<org.w3c.dom.HTMLTextAreaElement> {
-    var ref: react.Ref<org.w3c.dom.HTMLTextAreaElement>
+    var ref: react.Ref<org.w3c.dom.HTMLTextAreaElement>?
 
     /**
      * Maximum number of rows to display.
      */
-    var maxRows: Int
+    var maxRows: Int?
 
     /**
      * Minimum number of rows to display.
      * @default 1
      */
-    var minRows: Int
+    var minRows: Int?
 }
 
 /**

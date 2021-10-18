@@ -12,28 +12,28 @@ external interface SwipeableDrawerProps :
      * This can improve the FPS on low-end devices.
      * @default false
      */
-    var disableBackdropTransition: Boolean
+    var disableBackdropTransition: Boolean?
 
     /**
      * If `true`, touching the screen near the edge of the drawer will not slide in the drawer a bit
      * to promote accidental discovery of the swipe gesture.
      * @default false
      */
-    var disableDiscovery: Boolean
+    var disableDiscovery: Boolean?
 
     /**
      * If `true`, swipe to open is disabled. This is useful in browsers where swiping triggers
      * navigation actions. Swipe to open is disabled on iOS browsers by default.
      * @default typeof navigator !== 'undefined' && /iPad|iPhone|iPod/.test(navigator.userAgent)
      */
-    var disableSwipeToOpen: Boolean
+    var disableSwipeToOpen: Boolean?
 
     /**
      * Affects how far the drawer must be opened/closed to change its state.
      * Specified as percent (0-1) of the width of the drawer
      * @default 0.52
      */
-    var hysteresis: Number
+    var hysteresis: Number?
 
     /**
      * Defines, from which (average) velocity on, the swipe is
@@ -41,7 +41,7 @@ external interface SwipeableDrawerProps :
      * Good threshold is between 250 - 1000 px/s
      * @default 450
      */
-    var minFlingVelocity: Number
+    var minFlingVelocity: Number?
 
     /**
      * Callback fired when the component requests to be closed.
@@ -60,19 +60,19 @@ external interface SwipeableDrawerProps :
     /**
      * If `true`, the component is shown.
      */
-    override var open: Boolean
+    override var open: Boolean?
 
     /**
      * The element is used to intercept the touch events on the edge.
      */
-    var SwipeAreaProps: Any
+    var SwipeAreaProps: Any?
 
     /**
      * The width of the left most (or right most) area in `px` that
      * the drawer can be swiped open from.
      * @default 20
      */
-    var swipeAreaWidth: Number
+    var swipeAreaWidth: Number?
 }
 
 /**

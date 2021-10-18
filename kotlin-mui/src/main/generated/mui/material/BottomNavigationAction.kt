@@ -17,17 +17,17 @@ external interface BottomNavigationActionProps : react.PropsWithChildren {
     /**
      * Override or extend the styles applied to the component.
      */
-    var classes: BottomNavigationActionClasses
+    var classes: BottomNavigationActionClasses?
 
     /**
      * The icon to display.
      */
-    var icon: react.ReactNode
+    var icon: react.ReactNode?
 
     /**
      * The label element.
      */
-    var label: react.ReactNode
+    var label: react.ReactNode?
 
     /**
      * If `true`, the `BottomNavigationAction` will show its label.
@@ -36,17 +36,17 @@ external interface BottomNavigationActionProps : react.PropsWithChildren {
      *
      * The prop defaults to the value (`false`) inherited from the parent BottomNavigation component.
      */
-    var showLabel: Boolean
+    var showLabel: Boolean?
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: mui.system.SxProps<mui.system.Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>?
 
     /**
      * You can provide your own value. Otherwise, we fallback to the child position index.
      */
-    var value: Any
+    var value: Any?
 }
 
 /**

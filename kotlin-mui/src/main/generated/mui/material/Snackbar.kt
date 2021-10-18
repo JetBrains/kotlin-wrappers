@@ -23,7 +23,7 @@ external interface SnackbarProps :
      * the horizontal alignment is ignored.
      * @default { vertical: 'bottom', horizontal: 'left' }
      */
-    var anchorOrigin: SnackbarOrigin
+    var anchorOrigin: SnackbarOrigin?
 
     /**
      * The number of milliseconds to wait before automatically calling the
@@ -37,28 +37,28 @@ external interface SnackbarProps :
     /**
      * Replace the `SnackbarContent` component.
      */
-    var children: react.ReactElement
+    var children: react.ReactElement?
 
     /**
      * Override or extend the styles applied to the component.
      */
-    var classes: SnackbarClasses
+    var classes: SnackbarClasses?
 
     /**
      * Props applied to the `ClickAwayListener` element.
      */
-    var ClickAwayListenerProps: ClickAwayListenerProps
+    var ClickAwayListenerProps: ClickAwayListenerProps?
 
     /**
      * Props applied to the [`SnackbarContent`](/api/snackbar-content/) element.
      */
-    var ContentProps: SnackbarContentProps
+    var ContentProps: SnackbarContentProps?
 
     /**
      * If `true`, the `autoHideDuration` timer will expire even if the window is not focused.
      * @default false
      */
-    var disableWindowBlurListener: Boolean
+    var disableWindowBlurListener: Boolean?
 
     /**
      * When displaying multiple consecutive Snackbars from a parent rendering a single
@@ -66,7 +66,7 @@ external interface SnackbarProps :
      * e.g. <Snackbar key={message} />, otherwise, the message may update-in-place and
      * features such as autoHideDuration may be canceled.
      */
-    var key: Any
+    var key: Any?
 
     /**
      * The message to display.
@@ -88,7 +88,7 @@ external interface SnackbarProps :
     /**
      * If `true`, the component is shown.
      */
-    var open: Boolean
+    var open: Boolean?
 
     /**
      * The number of milliseconds to wait before dismissing after user interaction.
@@ -96,19 +96,19 @@ external interface SnackbarProps :
      * If `autoHideDuration` prop is specified but `resumeHideDuration` isn't,
      * we default to `autoHideDuration / 2` ms.
      */
-    var resumeHideDuration: Number
+    var resumeHideDuration: Number?
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: mui.system.SxProps<mui.system.Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>?
 
     /**
      * The component used for the transition.
      * [Follow this guide](/components/transitions/#transitioncomponent-prop) to learn more about the requirements for this component.
      * @default Grow
      */
-    var TransitionComponent: react.ComponentType<*>
+    var TransitionComponent: react.ComponentType<*>?
 
     /**
      * The duration for the transition, in milliseconds.
@@ -125,7 +125,7 @@ external interface SnackbarProps :
      * By default, the element is based on this [`Transition`](https://reactcommunity.org/react-transition-group/transition) component.
      * @default {}
      */
-    var TransitionProps: mui.material.transitions.TransitionProps
+    var TransitionProps: mui.material.transitions.TransitionProps?
 }
 
 external interface SnackbarOrigin {

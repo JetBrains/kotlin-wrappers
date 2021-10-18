@@ -15,20 +15,20 @@ external interface CircularProgressProps :
     /**
      * Override or extend the styles applied to the component.
      */
-    var classes: CircularProgressClasses
+    var classes: CircularProgressClasses?
 
     /**
      * The color of the component. It supports those theme colors that make sense for this component.
      * @default 'primary'
      */
-    var color: mui.system.Union /* 'primary' | 'secondary' | 'error' | 'info' | 'success' | 'warning' | 'inherit', CircularProgressPropsColorOverrides */
+    var color: mui.system.Union? /* 'primary' | 'secondary' | 'error' | 'info' | 'success' | 'warning' | 'inherit', CircularProgressPropsColorOverrides */
 
     /**
      * If `true`, the shrink animation is disabled.
      * This only works if variant is `indeterminate`.
      * @default false
      */
-    var disableShrink: Boolean
+    var disableShrink: Boolean?
 
     /**
      * The size of the component.
@@ -41,27 +41,27 @@ external interface CircularProgressProps :
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: mui.system.SxProps<mui.system.Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>?
 
     /**
      * The thickness of the circle.
      * @default 3.6
      */
-    var thickness: Number
+    var thickness: Number?
 
     /**
      * The value of the progress indicator for the determinate variant.
      * Value between 0 and 100.
      * @default 0
      */
-    var value: Number
+    var value: Number?
 
     /**
      * The variant to use.
      * Use indeterminate when there is no progress value.
      * @default 'indeterminate'
      */
-    var variant: mui.system.Union /* 'determinate' | 'indeterminate' */
+    var variant: mui.system.Union? /* 'determinate' | 'indeterminate' */
 }
 
 /**

@@ -18,13 +18,13 @@ external interface NoSsrProps : react.PropsWithChildren {
      * It will also defer the rendering of the children into a different screen frame.
      * @default false
      */
-    var defer: Boolean
+    var defer: Boolean?
 
     /**
      * The fallback content to display.
      * @default null
      */
-    var fallback: react.ReactNode
+    var fallback: react.ReactNode?
 }
 
 /**

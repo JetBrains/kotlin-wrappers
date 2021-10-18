@@ -22,7 +22,7 @@ external interface LocalizationProviderProps : react.PropsWithChildren {
      * dateLibInstance={momentTimeZone}
      * ```
      */
-    var dateLibInstance: Any
+    var dateLibInstance: Any?
 
     /** Locale for the date library you are using */
     var locale: dynamic

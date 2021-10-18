@@ -18,13 +18,13 @@ external interface ToggleButtonProps :
     /**
      * Override or extend the styles applied to the component.
      */
-    var classes: ToggleButtonClasses
+    var classes: ToggleButtonClasses?
 
     /**
      * The color of the button when it is in an active state.
      * @default 'standard'
      */
-    var color: mui.system.Union /* 'standard' | 'primary' | 'secondary' | 'error' | 'info' | 'success' | 'warning', ToggleButtonPropsColorOverrides */
+    var color: mui.system.Union? /* 'standard' | 'primary' | 'secondary' | 'error' | 'info' | 'success' | 'warning', ToggleButtonPropsColorOverrides */
 
     /**
      * If `true`, the component is disabled.
@@ -36,30 +36,30 @@ external interface ToggleButtonProps :
      * If `true`, the  keyboard focus ripple is disabled.
      * @default false
      */
-    var disableFocusRipple: Boolean
+    var disableFocusRipple: Boolean?
 
     /**
      * If `true`, the button will take up the full width of its container.
      * @default false
      */
-    var fullWidth: Boolean
+    var fullWidth: Boolean?
 
     /**
      * If `true`, the button is rendered in an active state.
      */
-    var selected: Boolean
+    var selected: Boolean?
 
     /**
      * The size of the component.
      * The prop defaults to the value inherited from the parent ToggleButtonGroup component.
      * @default 'medium'
      */
-    var size: mui.system.Union /* 'small' | 'medium' | 'large', ToggleButtonPropsSizeOverrides */
+    var size: mui.system.Union? /* 'small' | 'medium' | 'large', ToggleButtonPropsSizeOverrides */
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: mui.system.SxProps<mui.system.Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>?
 
     /**
      * The value to associate with the button when selected in a

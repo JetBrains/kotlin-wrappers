@@ -18,7 +18,7 @@ external interface BreadcrumbsProps :
     /**
      * Override or extend the styles applied to the component.
      */
-    var classes: BreadcrumbsClasses
+    var classes: BreadcrumbsClasses?
 
     /**
      * Override the default label for the expand button.
@@ -26,19 +26,19 @@ external interface BreadcrumbsProps :
      * For localization purposes, you can use the provided [translations](/guides/localization/).
      * @default 'Show path'
      */
-    var expandText: String
+    var expandText: String?
 
     /**
      * If max items is exceeded, the number of items to show after the ellipsis.
      * @default 1
      */
-    var itemsAfterCollapse: Number
+    var itemsAfterCollapse: Number?
 
     /**
      * If max items is exceeded, the number of items to show before the ellipsis.
      * @default 1
      */
-    var itemsBeforeCollapse: Number
+    var itemsBeforeCollapse: Number?
 
     /**
      * Specifies the maximum number of breadcrumbs to display. When there are more
@@ -46,18 +46,18 @@ external interface BreadcrumbsProps :
      * will be shown, with an ellipsis in between.
      * @default 8
      */
-    var maxItems: Number
+    var maxItems: Number?
 
     /**
      * Custom separator node.
      * @default '/'
      */
-    var separator: react.ReactNode
+    var separator: react.ReactNode?
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: mui.system.SxProps<mui.system.Theme>
+    var sx: mui.system.SxProps<mui.system.Theme>?
 }
 
 /**
