@@ -3,4 +3,4 @@
 
 package emotion.css
 
-external fun cx(vararg classNames: String): String
+external fun cx(vararg classNames: String?): String

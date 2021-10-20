@@ -20,7 +20,7 @@ inline fun PropsWithClassName.css(
 }
 
 inline fun PropsWithClassName.css(
-    vararg classNames: String,
+    vararg classNames: String?,
     crossinline block: PropertiesBuilder.() -> Unit,
 ) {
     className = cx(classNames = classNames + className(block))
@@ -35,7 +35,7 @@ inline fun RElementBuilder<PropsWithClassName>.css(
 }
 
 inline fun RElementBuilder<PropsWithClassName>.css(
-    vararg classNames: String,
+    vararg classNames: String?,
     crossinline block: PropertiesBuilder.() -> Unit,
 ) {
     attrs.css(classNames = classNames, block = block)
