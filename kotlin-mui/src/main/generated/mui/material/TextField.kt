@@ -180,7 +180,8 @@ external interface BaseTextFieldProps :
 }
 
 external interface StandardTextFieldProps :
-    BaseTextFieldProps {
+    BaseTextFieldProps,
+    TextFieldProps {
     /**
      * Callback fired when the value is changed.
      *
@@ -205,7 +206,8 @@ external interface StandardTextFieldProps :
 }
 
 external interface FilledTextFieldProps :
-    BaseTextFieldProps {
+    BaseTextFieldProps,
+    TextFieldProps {
     /**
      * Callback fired when the value is changed.
      *
@@ -230,7 +232,8 @@ external interface FilledTextFieldProps :
 }
 
 external interface OutlinedTextFieldProps :
-    BaseTextFieldProps {
+    BaseTextFieldProps,
+    TextFieldProps {
     /**
      * Callback fired when the value is changed.
      *
