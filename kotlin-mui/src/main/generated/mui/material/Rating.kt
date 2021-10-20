@@ -130,7 +130,8 @@ external interface RatingProps :
     var value: Number?
 }
 
-external interface IconContainerProps : react.Props {
+external interface IconContainerProps :
+    react.dom.html.HTMLAttributes<org.w3c.dom.HTMLSpanElement> {
     var value: Number
 }
 

@@ -3,13 +3,20 @@
 @file:JsModule("@mui/material/TextField")
 @file:JsNonModule
 
+@file:Suppress(
+    "VIRTUAL_MEMBER_HIDDEN",
+)
+
 package mui.material
 
 import kotlinext.js.ReadonlyArray
 
 external interface TextFieldProps : react.Props
 
-external interface BaseTextFieldProps : react.PropsWithChildren {
+external interface BaseTextFieldProps :
+    mui.system.StandardProps,
+    FormControlProps,
+    react.PropsWithChildren {
     /**
      * This prop helps users to fill forms faster, especially on mobile devices.
      * The name can be confusing, as it's more like an autofill.
@@ -172,7 +179,8 @@ external interface BaseTextFieldProps : react.PropsWithChildren {
     var value: dynamic
 }
 
-external interface StandardTextFieldProps : react.Props {
+external interface StandardTextFieldProps :
+    BaseTextFieldProps {
     /**
      * Callback fired when the value is changed.
      *
@@ -196,7 +204,8 @@ external interface StandardTextFieldProps : react.Props {
     var InputProps: InputProps?
 }
 
-external interface FilledTextFieldProps : react.Props {
+external interface FilledTextFieldProps :
+    BaseTextFieldProps {
     /**
      * Callback fired when the value is changed.
      *
@@ -220,7 +229,8 @@ external interface FilledTextFieldProps : react.Props {
     var InputProps: FilledInputProps?
 }
 
-external interface OutlinedTextFieldProps : react.Props {
+external interface OutlinedTextFieldProps :
+    BaseTextFieldProps {
     /**
      * Callback fired when the value is changed.
      *

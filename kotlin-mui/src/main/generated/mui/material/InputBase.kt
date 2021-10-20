@@ -11,7 +11,6 @@ package mui.material
 
 external interface InputBaseProps :
     mui.system.StandardProps,
-
     react.dom.html.HTMLAttributes<org.w3c.dom.HTMLDivElement> {
     // var `aria-describedby`: String?
 
@@ -202,7 +201,8 @@ external interface InputBaseProps :
     var value: dynamic
 }
 
-external interface InputBaseComponentProps : react.Props
+external interface InputBaseComponentProps :
+    react.dom.html.HTMLAttributes<org.w3c.dom.HTMLElement>
 
 /**
  * `InputBase` contains as few styles as possible.
