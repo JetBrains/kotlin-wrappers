@@ -190,3 +190,16 @@ external interface AutocompleteProps : react.Props {
      */
     var sx: mui.system.SxProps<mui.system.Theme>?
 }
+
+/**
+ *
+ * Demos:
+ *
+ * - [Autocomplete](https://mui.com/components/autocomplete/)
+ *
+ * API:
+ *
+ * - [Autocomplete API](https://mui.com/api/autocomplete/)
+ */
+@JsName("default")
+external val Autocomplete: react.FC<AutocompleteProps>

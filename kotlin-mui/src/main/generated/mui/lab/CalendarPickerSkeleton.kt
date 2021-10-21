@@ -28,3 +28,16 @@ external interface CalendarPickerSkeletonClasses {
     /** Styles applied to the day element. */
     var daySkeleton: String
 }
+
+/**
+ *
+ * Demos:
+ *
+ * - [Date Picker](https://mui.com/components/date-picker/)
+ *
+ * API:
+ *
+ * - [CalendarPickerSkeleton API](https://mui.com/api/calendar-picker-skeleton/)
+ */
+@JsName("default")
+external val CalendarPickerSkeleton: react.FC<CalendarPickerSkeletonProps>

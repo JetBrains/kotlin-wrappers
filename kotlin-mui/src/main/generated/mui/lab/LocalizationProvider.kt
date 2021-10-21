@@ -27,3 +27,9 @@ external interface LocalizationProviderProps : react.PropsWithChildren {
     /** Locale for the date library you are using */
     var locale: dynamic
 }
+
+/**
+ * @ignore - do not document.
+ */
+@JsName("default")
+external val LocalizationProvider: react.FC<LocalizationProviderProps>

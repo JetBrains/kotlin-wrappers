@@ -61,3 +61,16 @@ external interface ListItemTextProps : react.PropsWithChildren {
      */
     var sx: mui.system.SxProps<mui.system.Theme>?
 }
+
+/**
+ *
+ * Demos:
+ *
+ * - [Lists](https://mui.com/components/lists/)
+ *
+ * API:
+ *
+ * - [ListItemText API](https://mui.com/api/list-item-text/)
+ */
+@JsName("default")
+external val ListItemText: react.FC<ListItemTextProps>
