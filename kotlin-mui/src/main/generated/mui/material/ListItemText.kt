@@ -3,11 +3,18 @@
 @file:JsModule("@mui/material/ListItemText")
 @file:JsNonModule
 
+@file:Suppress(
+    "VIRTUAL_MEMBER_HIDDEN",
+)
+
 package mui.material
 
 import kotlinext.js.ReadonlyArray
 
-external interface ListItemTextProps : react.PropsWithChildren {
+external interface ListItemTextProps :
+    mui.system.StandardProps,
+    react.dom.html.HTMLAttributes<org.w3c.dom.HTMLDivElement>,
+    react.PropsWithChildren {
     /**
      * Alias for the `primary` prop.
      */
