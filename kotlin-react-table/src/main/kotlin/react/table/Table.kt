@@ -7,10 +7,7 @@ package react.table
 
 import kotlinext.js.ReadonlyArray
 import kotlinext.js.Record
-import react.CSSProperties
-import react.Key
-import react.Props
-import react.ReactNode
+import react.*
 import react.dom.events.ChangeEventHandler
 import react.table.RenderType.Cell
 import react.table.RenderType.Header
@@ -79,9 +76,8 @@ external interface CellMeta<D : Any, V> : Meta<D> {
     val cell: TableCell<D, V>
 }
 
-external interface TableCommonProps : Props {
+external interface TableCommonProps : PropsWithClassName {
     var style: CSSProperties?
-    var className: String?
     var role: String?
 }
 
