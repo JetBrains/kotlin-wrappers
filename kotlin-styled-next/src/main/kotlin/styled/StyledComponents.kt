@@ -52,14 +52,14 @@ interface StyledElementBuilder<P : PropsWithClassName> : RElementBuilder<P>, Sty
 
     companion object {
         operator fun <P : PropsWithClassName> invoke(
-            type: ComponentType<P>,
+            type: ElementType<P>,
             attrs: P = jso(),
         ): StyledElementBuilder<P> = StyledElementBuilderImpl(type, attrs)
     }
 }
 
 class StyledElementBuilderImpl<P : PropsWithClassName>(
-    override val type: ComponentType<P>,
+    override val type: ElementType<P>,
     attrs: P = jso(),
 ) : StyledElementBuilder<P>, RElementBuilderImpl<P>(attrs) {
     override val css = CssBuilder()
@@ -86,7 +86,7 @@ class StyledDOMBuilderImpl<out T : Tag>(factory: (TagConsumer<Unit>) -> T) : Sty
 
 typealias StyledHandler<P> = StyledElementBuilder<P>.() -> Unit
 
-fun <P : PropsWithClassName> styled(type: ComponentClass<P>): RBuilder.(StyledHandler<P>) -> Unit = { handler ->
+fun <P : PropsWithClassName> styled(type: ElementType<P>): RBuilder.(StyledHandler<P>) -> Unit = { handler ->
     child(with(StyledElementBuilder(type)) {
         handler()
         create()
@@ -109,7 +109,7 @@ internal external interface StyledProps : PropsWithClassName {
     var classes: List<String>
 }
 
-internal fun customStyled(type: String): ComponentType<StyledProps> {
+internal fun customStyled(type: dynamic): ElementType<StyledProps> {
     val fc = forwardRef<StyledProps> { props, rRef ->
         val styledCss = props.styledCss
         val classes = props.classes
@@ -118,7 +118,7 @@ internal fun customStyled(type: String): ComponentType<StyledProps> {
         val classNames = useMemo(styledCss, classes) {
             val selfClassName = GlobalStyles.getInjectedClassNames(styledCss, classes)
             if (generatedClasses != null) {
-                GlobalStyles.checkGeneratedCss(generatedClasses, selfClassName, type)
+                GlobalStyles.checkGeneratedCss(generatedClasses, selfClassName, type.toString())
             }
             (classes + selfClassName).joinToString(" ")
         }
@@ -132,9 +132,9 @@ internal fun customStyled(type: String): ComponentType<StyledProps> {
         newProps.ref = rRef
         delete(newProps.styledCss)
         delete(newProps.classes)
-        child(createElement(type, newProps))
+        child(createElement(type.unsafeCast<ElementType<StyledProps>>(), newProps))
     }
-    fc.asDynamic().displayName = "styled${type.replaceFirstChar { it.titlecase() }}"
+    fc.asDynamic().displayName = "styled${type.toString().replaceFirstChar { it.titlecase() }}"
     return fc
 }
 
@@ -142,7 +142,7 @@ object Styled {
     private val cache = mutableMapOf<dynamic, dynamic>()
 
     private fun wrap(type: dynamic) =
-        cache.getOrPut<dynamic, ComponentType<StyledProps>>(type) {
+        cache.getOrPut<dynamic, ElementType<StyledProps>>(type) {
             customStyled(type)
         }
 

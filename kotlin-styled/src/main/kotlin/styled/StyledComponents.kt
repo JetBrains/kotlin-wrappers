@@ -55,14 +55,14 @@ interface StyledElementBuilder<P : PropsWithClassName> : RElementBuilder<P>, Sty
 
     companion object {
         operator fun <P : PropsWithClassName> invoke(
-            type: ComponentType<P>,
+            type: ElementType<P>,
             attrs: P = jso(),
         ): StyledElementBuilder<P> = StyledElementBuilderImpl(type, attrs)
     }
 }
 
 class StyledElementBuilderImpl<P : PropsWithClassName>(
-    override val type: ComponentType<P>,
+    override val type: ElementType<P>,
     attrs: P = jso(),
 ) : StyledElementBuilder<P>, RElementBuilderImpl<P>(attrs) {
     override val css = CssBuilder()
@@ -89,7 +89,7 @@ class StyledDOMBuilderImpl<out T : Tag>(factory: (TagConsumer<Unit>) -> T) : Sty
 
 typealias StyledHandler<P> = StyledElementBuilder<P>.() -> Unit
 
-fun <P : PropsWithClassName> styled(type: ComponentClass<P>): RBuilder.(StyledHandler<P>) -> Unit = { handler ->
+fun <P : PropsWithClassName> styled(type: ElementType<P>): RBuilder.(StyledHandler<P>) -> Unit = { handler ->
     child(with(StyledElementBuilder(type)) {
         handler()
         create()
@@ -241,7 +241,7 @@ object Styled {
     }
 
     fun <P : PropsWithClassName> createElement(
-        type: ComponentType<P>,
+        type: ElementType<P>,
         css: CssBuilder,
         props: P,
         children: List<ReactNode>,
