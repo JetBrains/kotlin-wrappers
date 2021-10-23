@@ -156,7 +156,7 @@ external interface BaseTextFieldProps :
     /**
      * Props applied to the [`Select`](/api/select/) element.
      */
-    var SelectProps: SelectProps?
+    var SelectProps: SelectProps<*>?
 
     /**
      * The size of the component.

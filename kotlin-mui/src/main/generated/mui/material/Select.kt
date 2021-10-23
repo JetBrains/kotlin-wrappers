@@ -11,7 +11,7 @@ package mui.material
 
 import kotlinext.js.ReadonlyArray
 
-external interface SelectProps :
+external interface SelectProps<T> :
     mui.system.StandardProps,
     InputProps,
     react.PropsWithChildren {
@@ -39,7 +39,7 @@ external interface SelectProps :
     /**
      * The default value. Use when the component is not controlled.
      */
-    var defaultValue: dynamic
+    var defaultValue: T?
 
     /**
      * If `true`, a value is displayed even if no items are selected.
@@ -142,7 +142,7 @@ external interface SelectProps :
      * @param {any} value The `value` provided to the component.
      * @returns {ReactNode}
      */
-    var renderValue: dynamic
+    var renderValue: ((value: T) -> react.ReactNode)?
 
     /**
      * Props applied to the clickable div element.
@@ -161,7 +161,7 @@ external interface SelectProps :
      * If the value is an object it must have reference equality with the option in order to be selected.
      * If the value is not an object, the string representation must match with the string representation of the option in order to be selected.
      */
-    var value: dynamic
+    var value: T?
 
     /**
      * The variant to use.
@@ -182,4 +182,4 @@ external interface SelectProps :
  * - inherits [OutlinedInput API](https://mui.com/api/outlined-input/)
  */
 @JsName("default")
-external val Select: react.FC<SelectProps>
+external val Select: react.FC<SelectProps<*>>
