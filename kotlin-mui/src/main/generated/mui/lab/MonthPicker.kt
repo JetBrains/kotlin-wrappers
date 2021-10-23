@@ -32,7 +32,7 @@ external interface MonthPickerProps<TDate> : react.Props {
     var maxDate: TDate
 
     /** Callback fired on date change. */
-    var onChange: dynamic
+    var onChange: PickerOnChangeFn<TDate>
 
     var onMonthChange: ((date: TDate) -> kotlin.js.Promise<Nothing?>?)?
 
