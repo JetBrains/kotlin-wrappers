@@ -5,7 +5,7 @@
 
 package mui.lab
 
-external interface DateRangePickerDayProps : react.Props {
+external interface DateRangePickerDayProps<TDate> : react.Props {
     /**
      * Set to `true` if the `day` is in a highlighted date range.
      */

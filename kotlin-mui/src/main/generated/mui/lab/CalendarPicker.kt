@@ -5,15 +5,15 @@
 
 package mui.lab
 
-external interface CalendarPickerProps : react.Props {
+external interface CalendarPickerProps<TDate> : react.Props {
     var className: String?
 
-    var date: dynamic
+    var date: TDate?
 
     /**
      * Default calendar month displayed when `value={null}`.
      */
-    var defaultCalendarMonth: dynamic
+    var defaultCalendarMonth: TDate?
 
     /**
      * @default false
@@ -28,12 +28,12 @@ external interface CalendarPickerProps : react.Props {
     /**
      * Max selectable date. @DateIOType
      */
-    var maxDate: dynamic
+    var maxDate: TDate?
 
     /**
      * Min selectable date. @DateIOType
      */
-    var minDate: dynamic
+    var minDate: TDate?
 
     /**
      * Callback fired on view change.

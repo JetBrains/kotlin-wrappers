@@ -5,7 +5,7 @@
 
 package mui.lab
 
-external interface PickersDayProps : react.Props {
+external interface PickersDayProps<TDate> : react.Props {
     /**
      * If `true`, `onChange` is fired on click even if the same date is selected.
      * @default false
@@ -20,7 +20,7 @@ external interface PickersDayProps : react.Props {
     /**
      * The date to show.
      */
-    var day: dynamic
+    var day: TDate
 
     /**
      * If `true`, renders as disabled.
