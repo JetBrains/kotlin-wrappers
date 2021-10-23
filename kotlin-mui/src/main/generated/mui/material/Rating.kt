@@ -51,7 +51,7 @@ external interface RatingProps :
      *   return `${value} Star${value !== 1 ? 's' : ''}`;
      * }
      */
-    var getLabelText: dynamic
+    var getLabelText: ((value: Number) -> String)?
 
     /**
      * If `true`, only the selected icon will be highlighted.
@@ -92,14 +92,14 @@ external interface RatingProps :
      * @param {React.SyntheticEvent} event The event source of the callback.
      * @param {number|null} value The new value.
      */
-    var onChange: dynamic
+    var onChange: ((event: react.dom.events.SyntheticEvent<*, *>, value: Number?) -> Unit)?
 
     /**
      * Callback function that is fired when the hover state changes.
      * @param {React.SyntheticEvent} event The event source of the callback.
      * @param {number} value The new value.
      */
-    var onChangeActive: dynamic
+    var onChangeActive: ((event: react.dom.events.SyntheticEvent<*, *>, value: Number) -> Unit)?
 
     /**
      * The minimum increment value change allowed.

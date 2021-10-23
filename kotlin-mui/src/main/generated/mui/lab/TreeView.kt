@@ -36,7 +36,7 @@ external interface MultiSelectTreeViewProps : react.Props {
      * @param {string[] | string} nodeIds Ids of the selected nodes. When `multiSelect` is true
      * this is an array of strings; when false (default) a string.
      */
-    var onNodeSelect: dynamic
+    var onNodeSelect: ((event: react.dom.events.SyntheticEvent<*, *>, nodeIds: ReadonlyArray<String>) -> Unit)?
 }
 
 external interface SingleSelectTreeViewProps : react.Props {
@@ -66,7 +66,7 @@ external interface SingleSelectTreeViewProps : react.Props {
      * @param {string[] | string} nodeIds Ids of the selected nodes. When `multiSelect` is true
      * this is an array of strings; when false (default) a string.
      */
-    var onNodeSelect: dynamic
+    var onNodeSelect: ((event: react.dom.events.SyntheticEvent<*, *>, nodeIds: String) -> Unit)?
 }
 
 /**

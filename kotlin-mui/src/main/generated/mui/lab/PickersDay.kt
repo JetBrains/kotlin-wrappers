@@ -42,9 +42,9 @@ external interface PickersDayProps<TDate> : react.Props {
 
     var isAnimating: Boolean?
 
-    var onDayFocus: dynamic
+    var onDayFocus: ((day: TDate) -> Unit)?
 
-    var onDaySelect: dynamic
+    var onDaySelect: (day: TDate, isFinish: PickerSelectionState) -> Unit
 
     /**
      * If `true`, day is outside of month and will be hidden.

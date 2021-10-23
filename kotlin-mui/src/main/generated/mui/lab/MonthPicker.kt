@@ -34,7 +34,7 @@ external interface MonthPickerProps<TDate> : react.Props {
     /** Callback fired on date change. */
     var onChange: dynamic
 
-    var onMonthChange: dynamic
+    var onMonthChange: ((date: TDate) -> kotlin.js.Promise<Nothing?>?)?
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.

@@ -75,7 +75,7 @@ external interface AutocompleteProps : react.Props {
      * @returns {ReactNode}
      * @default (more) => `+${more}`
      */
-    var getLimitTagsText: dynamic
+    var getLimitTagsText: ((more: Number) -> react.ReactNode)?
 
     /**
      * The component used to render the listbox.

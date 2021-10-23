@@ -122,7 +122,7 @@ external interface TooltipProps :
      *
      * @param {React.SyntheticEvent} event The event source of the callback.
      */
-    var onClose: dynamic
+    var onClose: ((event: react.dom.events.SyntheticEvent<*, *>) -> Unit)?
 
     /**
      * Callback fired when the component requests to be open.

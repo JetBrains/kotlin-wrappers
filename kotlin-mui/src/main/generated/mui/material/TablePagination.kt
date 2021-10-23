@@ -73,7 +73,7 @@ external interface TablePaginationProps : react.Props {
      * @param {React.MouseEvent<HTMLButtonElement> | null} event The event source of the callback.
      * @param {number} page The page selected.
      */
-    var onPageChange: dynamic
+    var onPageChange: (event: react.dom.events.MouseEvent<org.w3c.dom.HTMLButtonElement, *>?, page: Number) -> Unit
 
     /**
      * Callback fired when the number of rows per page is changed.
