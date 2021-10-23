@@ -32,13 +32,7 @@ interface RuleContainer {
         return newRules
     }
 
-
     fun rule(selector: String, block: RuleSet) = rule(selector, passStaticClassesToParent = false, block = block)
-    fun rule(selector: String, passStaticClassesToParent: Boolean, repeatable: Boolean = false, css: CssBuilder) =
-        Rule(selector, css).also {
-            css.parent = if (passStaticClassesToParent) this else null
-            (if (repeatable) multiRules else rules).add(it)
-        }
 
     fun rule(selector: String, passStaticClassesToParent: Boolean, repeatable: Boolean = false, block: RuleSet): Rule {
         val css = CssBuilder(
@@ -48,4 +42,10 @@ interface RuleContainer {
         ).apply(block)
         return rule(selector, passStaticClassesToParent, repeatable, css)
     }
+
+    fun rule(selector: String, passStaticClassesToParent: Boolean, repeatable: Boolean = false, css: CssBuilder) =
+        Rule(selector, css).also {
+            css.parent = if (passStaticClassesToParent) this else null
+            (if (repeatable) multiRules else rules).add(it)
+        }
 }

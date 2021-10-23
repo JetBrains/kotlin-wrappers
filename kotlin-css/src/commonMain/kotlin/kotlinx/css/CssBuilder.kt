@@ -99,18 +99,18 @@ interface CssBuilder : StyledElement, RuleContainer {
 
     operator fun compareTo(rule: Rule): Int {
         // remove current rule
-        rules.removeAt(rules.lastIndex) // TODO fuuuck, how to undo the lambda? Also add tests, of course
+        rules.removeAt(rules.lastIndex)
         child(rule.selector, rule.css)
         return 0
     }
 
     operator fun Rule.not() {
-        rules.removeAt(rules.lastIndex) // TODO fuuuck
+        rules.removeAt(rules.lastIndex)
         selector.replace(NOT_REGEX, "$1:not($2)")(css)
     }
 
     operator fun Rule.unaryPlus() {
-        rules.removeAt(rules.lastIndex)  // TODO fuuuck
+        rules.removeAt(rules.lastIndex)
         "&.$selector"(css)
     }
 

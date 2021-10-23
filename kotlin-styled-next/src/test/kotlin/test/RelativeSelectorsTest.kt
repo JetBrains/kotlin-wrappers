@@ -325,7 +325,30 @@ class RelativeSelectorsTest : TestBase() {
             }
         }
         val element = clearAndInject(styledComponent)
-        assertEquals(firstColor.toString(), element.color())
         assertEquals(secondColor.toString(), element.childAt(0).color())
+        assertNotEquals(secondColor.toString(), element.color())
+    }
+
+    @Test
+    fun compareToNotSettingsRedundant() = runTest {
+        val styledComponent = fc<Props> {
+            styledDiv {
+                css {
+                    color = firstColor
+                    this > "div" {
+                        color = secondColor
+                    }
+                }
+                div {}
+                span { div {} }
+                div {}
+            }
+        }
+        val element = clearAndInject(styledComponent)
+        assertEquals(secondColor.toString(), element.childAt(0).color())
+        assertNotEquals(secondColor.toString(), element.color())
+        assertNotEquals(secondColor.toString(), element.childAt(1).color())
+        assertNotEquals(secondColor.toString(), element.childAt(1).childAt(0).color())
+        assertEquals(secondColor.toString(), element.childAt(2).color())
     }
 }
