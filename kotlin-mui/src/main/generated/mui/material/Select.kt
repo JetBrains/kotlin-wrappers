@@ -73,7 +73,7 @@ external interface SelectProps :
      * [Attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#Attributes) applied to the `input` element.
      * When `native` is `true`, the attributes are applied on the `select` element.
      */
-    var inputProps: dynamic /* InputProps['inputProps'] */
+    var inputProps: InputBaseComponentProps?
 
     /**
      * See [OutlinedInput#label](/api/outlined-input/#props)

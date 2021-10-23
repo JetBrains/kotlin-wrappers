@@ -93,7 +93,7 @@ external interface BaseTextFieldProps :
     /**
      * [Attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#Attributes) applied to the `input` element.
      */
-    var inputProps: dynamic /* InputBaseProps['inputProps'] */
+    var inputProps: InputBaseComponentProps?
 
     /**
      * Pass a ref to the `input` element.
@@ -116,7 +116,7 @@ external interface BaseTextFieldProps :
      */
     var name: String?
 
-    var onBlur: dynamic /* InputBaseProps['onBlur'] */
+    var onBlur: react.dom.events.FocusEventHandler<org.w3c.dom.HTMLElement>?
 
     var onFocus: dynamic /* StandardInputProps['onFocus'] */
 
@@ -214,7 +214,7 @@ external interface FilledTextFieldProps :
      * @param {object} event The event source of the callback.
      * You can pull out the new value by accessing `event.target.value` (string).
      */
-    var onChange: dynamic /* FilledInputProps['onChange'] */
+    var onChange: react.dom.events.ChangeEventHandler<org.w3c.dom.HTMLElement>?
 
     /**
      * The variant to use.
@@ -240,7 +240,7 @@ external interface OutlinedTextFieldProps :
      * @param {object} event The event source of the callback.
      * You can pull out the new value by accessing `event.target.value` (string).
      */
-    var onChange: dynamic /* OutlinedInputProps['onChange'] */
+    var onChange: react.dom.events.ChangeEventHandler<org.w3c.dom.HTMLElement>?
 
     /**
      * The variant to use.

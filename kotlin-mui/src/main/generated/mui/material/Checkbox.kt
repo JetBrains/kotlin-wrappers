@@ -15,7 +15,7 @@ external interface CheckboxProps :
     /**
      * If `true`, the component is checked.
      */
-    var checked: dynamic /* SwitchBaseProps['checked'] */
+    var checked: Boolean?
 
     /**
      * The icon to display when the component is checked.
@@ -37,12 +37,12 @@ external interface CheckboxProps :
     /**
      * If `true`, the component is disabled.
      */
-    var disabled: dynamic /* SwitchBaseProps['disabled'] */
+    var disabled: Boolean?
 
     /**
      * If `true`, the ripple effect is disabled.
      */
-    var disableRipple: dynamic /* SwitchBaseProps['disableRipple'] */
+    var disableRipple: Boolean?
 
     /**
      * The icon to display when the component is unchecked.
@@ -53,7 +53,7 @@ external interface CheckboxProps :
     /**
      * The id of the `input` element.
      */
-    var id: dynamic /* SwitchBaseProps['id'] */
+    var id: String?
 
     /**
      * If `true`, the component appears indeterminate.
@@ -73,7 +73,7 @@ external interface CheckboxProps :
     /**
      * [Attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#Attributes) applied to the `input` element.
      */
-    var inputProps: dynamic /* SwitchBaseProps['inputProps'] */
+    var inputProps: react.dom.html.InputHTMLAttributes<org.w3c.dom.HTMLInputElement>?
 
     /**
      * Pass a ref to the `input` element.
@@ -86,12 +86,12 @@ external interface CheckboxProps :
      * @param {React.ChangeEvent<HTMLInputElement>} event The event source of the callback.
      * You can pull out the new checked state by accessing `event.target.checked` (boolean).
      */
-    var onChange: dynamic /* SwitchBaseProps['onChange'] */
+    var onChange: ((event: react.dom.events.ChangeEvent<org.w3c.dom.HTMLInputElement>, checked: Boolean) -> Unit)?
 
     /**
      * If `true`, the `input` element is required.
      */
-    var required: dynamic /* SwitchBaseProps['required'] */
+    var required: Boolean?
 
     /**
      * The size of the component.

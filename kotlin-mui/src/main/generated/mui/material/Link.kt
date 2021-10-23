@@ -34,7 +34,7 @@ external interface LinkProps :
     /**
      * `classes` prop applied to the [`Typography`](/api/typography/) element.
      */
-    var TypographyClasses: dynamic /* TypographyProps['classes'] */
+    var TypographyClasses: TypographyClasses?
 
     /**
      * Controls when the link should have an underline.
