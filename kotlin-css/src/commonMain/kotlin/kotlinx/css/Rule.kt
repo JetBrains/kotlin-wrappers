@@ -5,7 +5,6 @@ internal typealias Selector = String
 data class Rule(
     val selector: Selector,
     val css: CssBuilder,
-    val block: RuleSet
 ) {
     private var memoizedHashCode: Int? = null
 

@@ -1,7 +1,6 @@
 package benchmark
 
 import StyledElementsFactory.getCssBuilders
-import styled.toStyledCss
 import waitFlowCoroutine
 import kotlin.test.Test
 import kotlin.test.assertFalse
@@ -14,7 +13,7 @@ class ConvertToStyled : BenchmarkBase() {
     private suspend fun convertNCssBuilders(n: Int): Duration {
         val builders = getCssBuilders(n)
         return measureTime {
-            val x = builders.map { it.toStyledCss() }
+            val x = builders.map { it }
             assertFalse(x.isEmpty())
             waitFlowCoroutine()
         }

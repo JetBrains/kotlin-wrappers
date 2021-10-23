@@ -3,7 +3,6 @@ package benchmark
 import StyledElementsFactory.getCssBuilders
 import styled.GlobalStyles
 import styled.UsedCssInfo
-import styled.toStyledCss
 import waitFlowCoroutine
 import waitForAnimationFrame
 import kotlin.test.Test
@@ -19,7 +18,7 @@ class DataTypeOperations : BenchmarkBase() {
      * @return duration of all [LinkedHashMap.put] operations
      */
     private suspend fun putNElements(n: Int): Duration {
-        val styledCss = getCssBuilders(n).map { it.toStyledCss() }
+        val styledCss = getCssBuilders(n).map { it }
         return measureTime {
             styledCss.forEach { GlobalStyles.styledClasses[it] = UsedCssInfo("", 1, 1) }
             waitFlowCoroutine()
@@ -35,11 +34,11 @@ class DataTypeOperations : BenchmarkBase() {
         assertTrue(collisionProb in 0.0..1.0)
 
         val collisionsN = (n * collisionProb).toInt()
-        val builders = getCssBuilders(collisionsN).map { it.toStyledCss() }.toMutableList()
+        val builders = getCssBuilders(collisionsN).map { it }.toMutableList()
         builders.forEach { GlobalStyles.styledClasses[it] = UsedCssInfo("", 1, 1) }
 
         val nonCollisionsN = (n * (1 - collisionProb)).toInt()
-        builders.addAll(getCssBuilders(nonCollisionsN).map { it.toStyledCss() })
+        builders.addAll(getCssBuilders(nonCollisionsN).map { it })
         return measureTime {
             builders.map { GlobalStyles.styledClasses[it] }
             waitForAnimationFrame()

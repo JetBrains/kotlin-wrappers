@@ -1,15 +1,19 @@
 package kotlinx.css
 
-fun CssBuilder(indent: String = "", allowClasses: Boolean = true, parent: RuleContainer? = null): CssBuilder = CssBuilderImpl(indent, allowClasses, parent)
+fun CssBuilder(indent: String = "", allowClasses: Boolean = true, parent: RuleContainer? = null): CssBuilder =
+    CssBuilderImpl(indent, allowClasses, parent)
 
 interface CssBuilder : StyledElement, RuleContainer {
     val allowClasses: Boolean
-    val parent: RuleContainer?
+    var parent: RuleContainer?
     val classes: MutableList<String>
     val styleName: MutableList<String>
 
     operator fun String.invoke(block: RuleSet) =
         rule(this, passStaticClassesToParent = false, block = block)
+
+    operator fun String.invoke(css: CssBuilder) =
+        rule(this, passStaticClassesToParent = false, css = css)
 
     operator fun TagSelector.invoke(block: RuleSet) = tagName(block)
 
@@ -84,6 +88,7 @@ interface CssBuilder : StyledElement, RuleContainer {
 
     // Combinators
     fun child(@Suppress("UNUSED_PARAMETER") selector: String, block: RuleSet) = "> $selector"(block)
+    fun child(@Suppress("UNUSED_PARAMETER") selector: String, css: CssBuilder) = "> $selector"(css)
 
     fun sibling(@Suppress("UNUSED_PARAMETER") selector: String, block: RuleSet) = "~ $selector"(block)
 
@@ -94,19 +99,19 @@ interface CssBuilder : StyledElement, RuleContainer {
 
     operator fun compareTo(rule: Rule): Int {
         // remove current rule
-        rules.removeAt(rules.lastIndex)
-        child(rule.selector, rule.block)
+        rules.removeAt(rules.lastIndex) // TODO fuuuck, how to undo the lambda? Also add tests, of course
+        child(rule.selector, rule.css)
         return 0
     }
 
     operator fun Rule.not() {
-        rules.removeAt(rules.lastIndex)
-        selector.replace(NOT_REGEX, "$1:not($2)")(block)
+        rules.removeAt(rules.lastIndex) // TODO fuuuck
+        selector.replace(NOT_REGEX, "$1:not($2)")(css)
     }
 
     operator fun Rule.unaryPlus() {
-        rules.removeAt(rules.lastIndex)
-        "&.$selector"(block)
+        rules.removeAt(rules.lastIndex)  // TODO fuuuck
+        "&.$selector"(css)
     }
 
     fun specific(specificity: Int = 2, block: RuleSet): Rule {
@@ -191,21 +196,42 @@ fun String.toCustomProperty(): String {
 open class CssBuilderImpl(
     override val indent: String = "",
     override val allowClasses: Boolean = true,
-    override val parent: RuleContainer? = null,
+    override var parent: RuleContainer? = null,
 ) : CssBuilder {
     override val classes = mutableListOf<String>()
     override fun RuleSet.unaryPlus() = this()
 
     override val declarations = CssDeclarations()
+    private val declarationBlock by lazy {
+        buildString {
+            declarations.forEach {
+                append("${it.key.hyphenize()}: ${it.value};\n")
+            }
+        }
+    }
 
     override val styleName = mutableListOf<String>()
 
     override fun toString() = buildString {
-        declarations.forEach {
-            append("${it.key.hyphenize()}: ${it.value};\n")
-        }
-
+        append(declarationBlock)
         buildRules(indent)
+    }
+
+    private var memoizedHashCode: Int? = null
+    override fun hashCode(): Int {
+        return memoizedHashCode ?: (rules.sumOf { it.hashCode() } + multiRules.sumOf { it.hashCode() } + declarationBlock.hashCode())
+            .also { hashCode -> memoizedHashCode = hashCode }
+    }
+
+    override fun equals(other: Any?): Boolean {
+        if (this === other) return true
+        if (other == null || this::class != other::class) return false
+        other as CssBuilderImpl
+
+        return hashCode() == other.hashCode()
+                && rules == other.rules
+                && multiRules == other.multiRules
+                && declarationBlock == other.declarationBlock
     }
 
     override val rules = mutableListOf<Rule>()

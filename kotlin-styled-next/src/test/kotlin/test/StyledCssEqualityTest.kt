@@ -17,11 +17,11 @@ class StyledCssEqualityTest : TestBase() {
     fun simpleCssBuilders() {
         val first = CssBuilder().apply {
             addSomeCss()
-        }.toStyledCss()
+        }
 
         val second = CssBuilder().apply {
             addSomeCss()
-        }.toStyledCss()
+        }
 
         assertEquals(first.hashCode(), second.hashCode())
         assertEquals(first, second)
@@ -32,12 +32,12 @@ class StyledCssEqualityTest : TestBase() {
         val first = CssBuilder().apply {
             backgroundColor = Color.blue
             height = 18.px
-        }.toStyledCss()
+        }
 
         val second = CssBuilder().apply {
             height = 18.px
             backgroundColor = Color.blue
-        }.toStyledCss()
+        }
 
         assertNotEquals(first, second)
     }
@@ -46,10 +46,10 @@ class StyledCssEqualityTest : TestBase() {
     fun assertKeyframesEquals() {
         val first = KeyframesBuilder().apply {
             addRotation()
-        }.toStyledKeyframes()
+        }
         val second = KeyframesBuilder().apply {
             addRotation()
-        }.toStyledKeyframes()
+        }
         assertEquals(first.hashCode(), second.hashCode())
         assertEquals(first, second)
     }
@@ -62,7 +62,7 @@ class StyledCssEqualityTest : TestBase() {
                 addRotation()
             }
             padding = "1px 2px 3px 4px"
-        }.toStyledCss()
+        }
 
         val second = CssBuilder().apply {
             backgroundColor = Color.blue
@@ -70,7 +70,7 @@ class StyledCssEqualityTest : TestBase() {
                 addRotation()
             }
             padding = "1px 2px 3px 4px"
-        }.toStyledCss()
+        }
 
         assertEquals(first.hashCode(), second.hashCode())
         assertEquals(first, second)

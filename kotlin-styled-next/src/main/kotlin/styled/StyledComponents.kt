@@ -105,32 +105,32 @@ inline fun <P : CustomStyledProps> RElementBuilder<P>.css(noinline handler: Rule
 
 
 internal external interface StyledProps : PropsWithClassName {
-    var styledCss: StyledCss
+    var css: CssBuilder
     var classes: List<String>
 }
 
 internal fun customStyled(type: dynamic): ElementType<StyledProps> {
     val fc = forwardRef<StyledProps> { props, rRef ->
-        val styledCss = props.styledCss
+        val css = props.css
         val classes = props.classes
 
         val generatedClasses = if (isDevelopment()) useState<HashSet<String>?>(hashSetOf()) else null
-        val classNames = useMemo(styledCss, classes) {
-            val selfClassName = GlobalStyles.getInjectedClassNames(styledCss, classes)
+        val classNames = useMemo(css, classes) {
+            val selfClassName = GlobalStyles.getInjectedClassNames(css, classes)
             if (generatedClasses != null) {
                 GlobalStyles.checkGeneratedCss(generatedClasses, selfClassName, type.toString())
             }
             (classes + selfClassName).joinToString(" ")
         }
 
-        useEffect(styledCss) {
-            cleanup { GlobalStyles.removeStyles(styledCss) }
+        useEffect(css) {
+            cleanup { GlobalStyles.removeStyles(css) }
         }
 
         val newProps = clone(props)
         newProps.className = (if (props.className != undefined) props.className + " " else "") + classNames
         newProps.ref = rRef
-        delete(newProps.styledCss)
+        delete(newProps.css)
         delete(newProps.classes)
         child(createElement(type.unsafeCast<ElementType<StyledProps>>(), newProps))
     }
@@ -149,7 +149,7 @@ object Styled {
     fun createElement(type: Any, css: CssBuilder, props: PropsWithClassName, children: List<ReactNode>): ReactElement {
         val wrappedType = wrap(type)
         val styledProps = props.unsafeCast<StyledProps>()
-        styledProps.styledCss = css.toStyledCss()
+        styledProps.css = css
         styledProps.classes = css.classes
         return createElement(wrappedType, styledProps, *children.toTypedArray())
     }
