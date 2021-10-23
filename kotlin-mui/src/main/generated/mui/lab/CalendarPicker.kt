@@ -40,7 +40,7 @@ external interface CalendarPickerProps<TDate> : react.Props {
     /**
      * Callback fired on view change.
      */
-    var onViewChange: dynamic
+    var onViewChange: ((view: CalendarPickerView) -> Unit)?
 
     /**
      * Callback fired on date change
@@ -50,7 +50,7 @@ external interface CalendarPickerProps<TDate> : react.Props {
     /**
      * Callback firing on month change. @DateIOType
      */
-    var onMonthChange: dynamic
+    var onMonthChange: ((date: TDate) -> Unit)?
 
     /**
      * Initially open view.
@@ -73,7 +73,7 @@ external interface CalendarPickerProps<TDate> : react.Props {
     /**
      * Disable specific date. @DateIOType
      */
-    var shouldDisableDate: dynamic
+    var shouldDisableDate: ((day: TDate) -> Boolean)?
 
     /**
      * Controlled open view.

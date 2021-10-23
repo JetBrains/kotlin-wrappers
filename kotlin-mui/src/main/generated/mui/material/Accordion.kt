@@ -55,7 +55,7 @@ external interface AccordionProps :
      * @param {React.SyntheticEvent} event The event source of the callback. **Warning**: This is a generic event not a change event.
      * @param {boolean} expanded The `expanded` state of the accordion.
      */
-    var onChange: dynamic
+    var onChange: ((event: react.dom.events.SyntheticEvent<*, *>, expanded: Boolean) -> Unit)?
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.

@@ -57,7 +57,7 @@ external interface ToggleButtonGroupProps :
      * this is a single value; when false an array of selected values. If no value
      * is selected and `exclusive` is true the value is null; when false an empty array.
      */
-    var onChange: dynamic
+    var onChange: ((event: react.dom.events.MouseEvent<org.w3c.dom.HTMLElement, *>, value: dynamic) -> Unit)?
 
     /**
      * The component orientation (layout flow direction).
