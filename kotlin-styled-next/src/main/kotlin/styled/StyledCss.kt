@@ -9,7 +9,6 @@ internal typealias AnimationName = String
 
 internal data class StyledRule(
     val selector: Selector,
-    val passStaticClassesToParent: Boolean = false,
     val css: StyledCss
 ) {
     private var memoizedHashCode: Int? = null
@@ -83,7 +82,7 @@ internal open class StyledCss(
         }
         result.addAll(buildRules(rules, outerSelector ?: ""))
 
-        handleRules.forEach { (selector, _, css) ->
+        handleRules.forEach { (selector, css) ->
             val resolvedSelector = resolveRelativeSelector(selector, outerSelector)
             if (withMedia(resolvedSelector)) {
                 result.add(
@@ -116,40 +115,37 @@ internal open class StyledCss(
 
 private fun isPseudoClass(selector: Selector) = selector.trim().startsWith(":")
 private fun buildRules(rules: List<StyledRule>, outerSelector: String): List<String> {
-    return rules.flatMap { (selector, _, css) ->
+    return rules.flatMap { (selector, css) ->
         val delimiter = if (isPseudoClass(selector)) "" else " "
         css.getCssRules(selector.split(",").joinToString { "$outerSelector$delimiter${it.trim()}" })
     }
 }
 
-private fun Rule.toStyledRule(parent: RuleContainer, block: RuleSet = this.block): StyledRule {
+private fun Rule.toStyledRule(): StyledRule {
     return StyledRule(
         selector,
-        passStaticClassesToParent,
-        CssBuilder(allowClasses = false, parent = if (passStaticClassesToParent) parent else null)
-            .apply { block() }
-            .toStyledCss()
+        css.toStyledCss()
     )
 }
 
 /**
  * @return all [multiRules], but only the first occurrence of a regular rule from [rules]
  */
-private fun resolveRules(rules: List<Rule>, multiRules: List<Rule>, parent: RuleContainer): List<StyledRule> {
+private fun resolveRules(rules: List<Rule>, multiRules: List<Rule>): List<StyledRule> {
     val resolvedRules = LinkedHashMap<String, Rule>()
     val newRules = mutableListOf<StyledRule>()
     rules.forEach {
         if (!resolvedRules.containsKey(it.selector)) {
             resolvedRules[it.selector] = it
         }
-        newRules.add(resolvedRules[it.selector]!!.toStyledRule(parent, it.block))
+        newRules.add(resolvedRules[it.selector]!!.toStyledRule())
     }
-    newRules.addAll(multiRules.map { it.toStyledRule(parent) })
+    newRules.addAll(multiRules.map { it.toStyledRule() })
     return newRules
 }
 
 internal fun CssBuilder.toStyledCss(): StyledCss {
-    val resolvedRules = resolveRules(rules = rules, multiRules = multiRules, parent = this)
+    val resolvedRules = resolveRules(rules = rules, multiRules = multiRules)
     return StyledCss(declarations, rules = resolvedRules)
 }
 
@@ -160,7 +156,7 @@ internal class StyledKeyframes(private val rules: List<StyledRule>) {
 
     override fun toString(): String {
         return buildString {
-            rules.forEach { (selector, _, css) ->
+            rules.forEach { (selector, css) ->
                 append(css.getCssRules(selector).joinToString("\n"))
             }
         }
@@ -175,6 +171,6 @@ internal class StyledKeyframes(private val rules: List<StyledRule>) {
 }
 
 internal fun KeyframesBuilder.toStyledKeyframes(): StyledKeyframes {
-    val resolvedRules = resolveRules(rules = rules, multiRules = multiRules, parent = this)
+    val resolvedRules = resolveRules(rules = rules, multiRules = multiRules)
     return StyledKeyframes(rules = resolvedRules)
 }

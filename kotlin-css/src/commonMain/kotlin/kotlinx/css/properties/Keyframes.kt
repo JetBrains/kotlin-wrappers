@@ -16,7 +16,7 @@ fun KeyframesBuilder(indent: String = ""): KeyframesBuilder {
     return KeyframesBuilderImpl(indent)
 }
 
-class KeyframesBuilderImpl(private val indent: String = "") : KeyframesBuilder {
+class KeyframesBuilderImpl(override val indent: String = "") : KeyframesBuilder {
     override fun toString() =
         buildString {
             buildRules(indent)

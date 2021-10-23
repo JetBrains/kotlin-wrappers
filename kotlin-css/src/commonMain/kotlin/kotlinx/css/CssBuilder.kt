@@ -1,7 +1,8 @@
 package kotlinx.css
 
+fun CssBuilder(indent: String = "", allowClasses: Boolean = true, parent: RuleContainer? = null): CssBuilder = CssBuilderImpl(indent, allowClasses, parent)
+
 interface CssBuilder : StyledElement, RuleContainer {
-    val indent: String
     val allowClasses: Boolean
     val parent: RuleContainer?
     val classes: MutableList<String>
@@ -35,8 +36,12 @@ interface CssBuilder : StyledElement, RuleContainer {
     fun link(block: RuleSet) = "&:link"(block)
     fun not(@Suppress("UNUSED_PARAMETER") selector: String, block: RuleSet) = "&:not($selector)"(block)
     fun nthChild(@Suppress("UNUSED_PARAMETER") selector: String, block: RuleSet) = "&:nth-child($selector)"(block)
-    fun nthLastChild(@Suppress("UNUSED_PARAMETER") selector: String, block: RuleSet) = "&:nth-last-child($selector)"(block)
-    fun nthLastOfType(@Suppress("UNUSED_PARAMETER") selector: String, block: RuleSet) = "&:nth-last-of-type($selector)"(block)
+    fun nthLastChild(@Suppress("UNUSED_PARAMETER") selector: String, block: RuleSet) =
+        "&:nth-last-child($selector)"(block)
+
+    fun nthLastOfType(@Suppress("UNUSED_PARAMETER") selector: String, block: RuleSet) =
+        "&:nth-last-of-type($selector)"(block)
+
     fun nthOfType(@Suppress("UNUSED_PARAMETER") selector: String, block: RuleSet) = "&:nth-of-type($selector)"(block)
     fun onlyChild(block: RuleSet) = "&:only-child"(block)
     fun onlyOfType(block: RuleSet) = "&:only-of-type"(block)
@@ -49,9 +54,11 @@ interface CssBuilder : StyledElement, RuleContainer {
     fun visited(block: RuleSet) = "&:visited"(block)
 
     // Children & descendants
-    fun children(@Suppress("UNUSED_PARAMETER") selector: String? = null, block: RuleSet) = "& > ${selector ?: "*"}"(block)
+    fun children(@Suppress("UNUSED_PARAMETER") selector: String? = null, block: RuleSet) =
+        "& > ${selector ?: "*"}"(block)
 
-    fun descendants(@Suppress("UNUSED_PARAMETER") selector: String? = null, block: RuleSet) = "& ${selector ?: "*"}"(block)
+    fun descendants(@Suppress("UNUSED_PARAMETER") selector: String? = null, block: RuleSet) =
+        "& ${selector ?: "*"}"(block)
 
     // Temporarily using && here because of a bug introduced in version 5.2: https://github.com/styled-components/styled-components/issues/3244#issuecomment-687676703
     fun ancestorHover(@Suppress("UNUSED_PARAMETER") selector: String, block: RuleSet) = "$selector:hover &&"(block)
@@ -118,7 +125,8 @@ interface CssBuilder : StyledElement, RuleContainer {
 
     fun container(@Suppress("UNUSED_PARAMETER") query: String, block: RuleSet) = "@container $query"(block)
 
-    fun fontFace(block: RuleSet) = rule("@font-face", passStaticClassesToParent = false, repeatable = true, block = block)
+    fun fontFace(block: RuleSet) =
+        rule("@font-face", passStaticClassesToParent = false, repeatable = true, block = block)
 
     fun retina(block: RuleSet) {
         media("(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)") {
@@ -179,8 +187,6 @@ fun ruleSet(set: RuleSet) = set
 fun String.toCustomProperty(): String {
     return "var(--$this)"
 }
-
-fun CssBuilder(indent: String = "", allowClasses: Boolean = true, parent: RuleContainer? = null): CssBuilder = CssBuilderImpl(indent, allowClasses, parent)
 
 open class CssBuilderImpl(
     override val indent: String = "",
