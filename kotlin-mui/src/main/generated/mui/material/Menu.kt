@@ -19,7 +19,7 @@ external interface MenuProps :
      * An HTML element, or a function that returns one.
      * It's used to set the position of the menu.
      */
-    var anchorEl: dynamic /* PopoverProps['anchorEl'] */
+    var anchorEl: ((element: org.w3c.dom.Element) -> org.w3c.dom.Element)?
 
     /**
      * If `true` (Default) will focus the `[role="menu"]` if no focusable child is found. Disabled
@@ -71,7 +71,7 @@ external interface MenuProps :
     /**
      * `classes` prop applied to the [`Popover`](/api/popover/) element.
      */
-    var PopoverClasses: dynamic /* PopoverProps['classes'] */
+    var PopoverClasses: PopoverClasses?
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.

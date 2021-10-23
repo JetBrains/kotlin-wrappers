@@ -15,7 +15,7 @@ external interface SnackbarProps :
     /**
      * The action to display. It renders after the message, at the end of the snackbar.
      */
-    var action: dynamic /* SnackbarContentProps['action'] */
+    var action: react.ReactNode?
 
     /**
      * The anchor of the `Snackbar`.
@@ -71,7 +71,7 @@ external interface SnackbarProps :
     /**
      * The message to display.
      */
-    var message: dynamic /* SnackbarContentProps['message'] */
+    var message: react.ReactNode?
 
     /**
      * Callback fired when the component requests to be closed.

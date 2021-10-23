@@ -42,7 +42,7 @@ external interface SpeedDialActionProps :
     /**
      * `classes` prop applied to the [`Tooltip`](/api/tooltip/) element.
      */
-    var TooltipClasses: dynamic /* TooltipProps['classes'] */
+    var TooltipClasses: TooltipClasses?
 
     /**
      * Placement of the tooltip.
