@@ -8,9 +8,9 @@ import org.w3c.dom.css.CSSStyleSheet
 import react.Props
 import react.fc
 import runTest
+import styleSheets.*
 import styled.*
 import styled.sheets.importStyleId
-import styleSheets.*
 import kotlin.test.BeforeTest
 import kotlin.test.Test
 import kotlin.test.assertContains

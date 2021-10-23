@@ -6,7 +6,37 @@ import kotlinx.css.properties.*
 import kotlin.js.JsName
 import kotlin.reflect.KProperty
 
-typealias CssDeclarations = LinkedHashMap<String, Any>
+class CssDeclarations : MutableMap<String, Any> by LinkedHashMap() {
+    private var stringDecl: String? = null
+        get() = field ?: buildString {
+            this@CssDeclarations.forEach { (k, v) ->
+                append("${k.hyphenize()}: ${v};\n")
+            }
+        }.also { field = it }
+
+    override fun equals(other: Any?): Boolean {
+        if (this === other) return true
+        if (other == null || this::class != other::class) return false
+        other as CssDeclarations
+
+        return hashCode() == other.hashCode()
+                && stringDecl == other.stringDecl
+    }
+
+    override fun hashCode(): Int {
+        return stringDecl.hashCode()
+    }
+
+    override fun toString(): String {
+        return stringDecl!!
+    }
+
+    operator fun set(name: String, value: Any) {
+        put(name, value)
+        stringDecl = null
+    }
+}
+
 
 interface StyledElement {
     val declarations: CssDeclarations

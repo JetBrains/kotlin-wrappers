@@ -2,7 +2,6 @@ package styled
 
 import kotlinx.css.CssBuilder
 import kotlinx.css.properties.KeyframesBuilder
-import react.StateInstance
 import styled.sheets.*
 import kotlin.collections.*
 
@@ -10,20 +9,15 @@ data class UsedCssInfo(
     val className: ClassName,
     var usedBy: Int,
     val groupId: Int,
-    var associatedClasses: MutableSet<String> = mutableSetOf()
 )
 
-internal typealias InjectedCssHolder = LinkedHashMap<StyledCss, UsedCssInfo>
-
-internal fun List<String>.toClassName(): String {
-    return this.joinToString(" ")
-}
+internal typealias InjectedCssHolder = LinkedHashMap<CssBuilder, UsedCssInfo>
 
 /**
  * Inject CSS rules defined in [css] into the DOM
  */
 fun injectGlobal(css: CssBuilder) {
-    GlobalStyles.sheet.scheduleToInject(css.toStyledCss().getCssRules(null))
+    GlobalStyles.sheet.scheduleToInject(css.getCssRules(null))
     GlobalStyles.injectScheduled()
 }
 
@@ -52,42 +46,10 @@ object GlobalStyles {
     }
 
     private var incrementedClassName: Int = 0
-        get() {
-            field++
-            return field
-        }
+        get() = field++
 
     internal var styledClasses = InjectedCssHolder()
-    internal val scheduledToDelete = LinkedHashSet<StyledCss>()
-
-    private fun getInjectedClassName(css: StyledCss, classes: List<String>): ClassName {
-        val info = styledClasses[css]
-        return if (info != null) {
-            // If we have the same CSS but with other static stylesheets we need to inject them
-            val className = classes.toClassName()
-            if (!info.associatedClasses.contains(className)) {
-                info.associatedClasses.add(className)
-                injectScheduled()
-            }
-            info.usedBy++
-            info.className
-        } else {
-            scheduleToInjectClassName(css, classes).also {
-                injectScheduled()
-            }
-        }
-    }
-
-    private fun scheduleToInjectClassName(css: StyledCss, classes: List<String>): ClassName {
-        val className = "ksc-$incrementedClassName"
-        val selector = ".$className"
-        val rules = css.getCssRules(selector)
-        val groupId = sheet.scheduleToInject(rules)
-
-        // TODO we can store classnames as single string in StyledCss
-        styledClasses[css] = UsedCssInfo(className, 1, groupId, mutableSetOf(classes.toClassName()))
-        return className
-    }
+    internal val scheduledToDelete = LinkedHashSet<CssBuilder>()
 
     /**
      * Inject all scheduled rules into the DOM and clear scheduled rules.
@@ -101,13 +63,12 @@ object GlobalStyles {
     internal val injectedStyleSheetRules = mutableMapOf<Selector, GroupId>()
 
     /**
-     * Schedule CSS from [builder] for injection into the DOM with the corresponding [selector].
+     * Schedule CSS from [css] for injection into the DOM with the corresponding [selector].
      * They will be injected when the [injectScheduled] function is called the next time.
      */
-    fun scheduleToInject(selector: Selector, builder: CssBuilder) {
+    fun scheduleToInject(selector: Selector, css: CssBuilder) {
         if (!injectedStyleSheetRules.contains(selector)) {
-            val styled = builder.toStyledCss()
-            val groupId = sheet.scheduleToInject(styled.getCssRules(selector))
+            val groupId = sheet.scheduleToInject(css.getCssRules(selector))
             injectedStyleSheetRules[selector] = groupId
         }
     }
@@ -121,7 +82,6 @@ object GlobalStyles {
                 }
             }
             sheet.removeGroups(groups)
-            sheet.requestClean { clean(sheet) }
         }
     }
 
@@ -129,15 +89,15 @@ object GlobalStyles {
         importSheet.scheduleToInject(imports.map { it.build() })
     }
 
-    internal val keyframeByName = mutableMapOf<AnimationName, StyledKeyframes>()
-    internal val injectedKeyframes = mutableMapOf<StyledKeyframes, UsedCssInfo>()
+    internal val keyframeByName = mutableMapOf<AnimationName, KeyframesBuilder>()
+    internal val injectedKeyframes = mutableMapOf<KeyframesBuilder, UsedCssInfo>()
 
     /**
      * Schedule keyframes CSS in [builder] for injection into the DOM.
      * They will be injected when the [injectScheduled] function is called the next time.
      */
     fun scheduleToInject(builder: KeyframesBuilder.() -> Unit): ClassName {
-        val keyframes = KeyframesBuilder().apply(builder).toStyledKeyframes()
+        val keyframes = KeyframesBuilder().apply(builder)
         val keyframe = injectedKeyframes[keyframes]
         return if (keyframe == null) {
             val keyframeName = "ksc-keyframe-$incrementedClassName"
@@ -150,15 +110,15 @@ object GlobalStyles {
         } else keyframe.className
     }
 
-    internal fun removeStyles(styledCss: StyledCss) {
-        if (sheet !is CSSOMSheet) return
-        val sheet = sheet as CSSOMSheet
-        val info = styledClasses[styledCss] ?: throw IllegalStateException("Trying to remove non-existent css")
+    internal fun removeStyles(css: CssBuilder) {
+        val cssomSheet = sheet
+        if (cssomSheet !is CSSOMSheet) return
+        val info = styledClasses[css] ?: throw IllegalStateException("Trying to remove non-existent css")
         info.usedBy--
         if (info.usedBy == 0) {
-            scheduledToDelete.add(styledCss)
+            scheduledToDelete.add(css)
         }
-        sheet.requestClean { clean(sheet) }
+        cssomSheet.requestClean { clean(cssomSheet) }
     }
 
     private fun clean(sheet: CSSOMSheet) {
@@ -178,36 +138,19 @@ object GlobalStyles {
      * @return pair of generated class name and a list of CSS class names, declared in [css].
      * If the CSS code for the [css] was not injected into the DOM previously, it is injected after function call.
      */
-    internal fun getInjectedClassNames(styledCss: StyledCss, classes: List<String>): ClassName {
-        return getInjectedClassName(styledCss, classes)
-    }
-
-    /**
-     * Show a warning when too many css blocks are created for one component
-     */
-    internal fun checkGeneratedCss(state: StateInstance<HashSet<String>?>, className: ClassName, type: String) {
-        val (classes, setClasses) = state
-        // Message was already shown
-        if (classes == null) return
-
-        val maxStylesForElement = 50
-        val size = classes.size
-        classes.add(className)
-        if (classes.size > maxStylesForElement) {
-            console.warn(
-                "Over $maxStylesForElement were generated for $type. Consider using inline styles for frequently changed styles:\n\n" +
-                        "styledDiv {\n" +
-                        "    inlineStyles {\n" +
-                        "        width = 100.px\n" +
-                        "        backgroundColor = Color.blue\n" +
-                        "    }\n" +
-                        "}\n"
-            )
-            setClasses(null)
+    internal fun getInjectedClassNames(css: CssBuilder): ClassName {
+        val info = styledClasses[css]
+        return if (info != null) {
+            info.usedBy++
+            info.className
         } else {
-            if (size != classes.size) {
-                setClasses(classes)
-            }
+            val className = "ksc-$incrementedClassName"
+            val selector = ".$className"
+            val rules = css.getCssRules(selector)
+            val groupId = sheet.scheduleToInject(rules)
+            styledClasses[css] = UsedCssInfo(className, 1, groupId)
+            injectScheduled()
+            className
         }
     }
 }

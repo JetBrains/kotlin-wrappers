@@ -335,7 +335,7 @@ class ElementTest : TestBase() {
         val css = CssBuilder().apply {
             transition("all", 200.ms, Timing.linear)
         }
-        val rule = css.toStyledCss().getCssRules(".someClass").first()
+        val rule = css.getCssRules(".someClass").first()
         assertContains(rule, "-moz-transition: all 200ms linear 0s")
         assertContains(rule, "-webkit-transition: all 200ms linear 0s")
     }
