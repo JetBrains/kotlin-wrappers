@@ -3,10 +3,6 @@
 @file:JsModule("@mui/material/CardActions")
 @file:JsNonModule
 
-@file:Suppress(
-    "VIRTUAL_MEMBER_HIDDEN",
-)
-
 package mui.material
 
 import kotlinext.js.ReadonlyArray

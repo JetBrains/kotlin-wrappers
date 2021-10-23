@@ -3,10 +3,6 @@
 @file:JsModule("@mui/material/StepLabel")
 @file:JsNonModule
 
-@file:Suppress(
-    "VIRTUAL_MEMBER_HIDDEN",
-)
-
 package mui.material
 
 import kotlinext.js.ReadonlyArray
