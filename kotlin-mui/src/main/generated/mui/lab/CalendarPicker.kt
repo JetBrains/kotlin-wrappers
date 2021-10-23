@@ -5,6 +5,8 @@
 
 package mui.lab
 
+import kotlinext.js.ReadonlyArray
+
 external interface CalendarPickerProps<TDate> : react.Props {
     var className: String?
 
@@ -54,7 +56,7 @@ external interface CalendarPickerProps<TDate> : react.Props {
      * Initially open view.
      * @default 'day'
      */
-    var openTo: dynamic
+    var openTo: CalendarPickerView?
 
     /**
      * Disable heavy animations.
@@ -76,13 +78,13 @@ external interface CalendarPickerProps<TDate> : react.Props {
     /**
      * Controlled open view.
      */
-    var view: dynamic
+    var view: CalendarPickerView?
 
     /**
      * Views for calendar picker.
      * @default ['year', 'day']
      */
-    var views: dynamic
+    var views: ReadonlyArray<CalendarPickerView>?
 }
 
 external interface CalendarPickerClasses {
