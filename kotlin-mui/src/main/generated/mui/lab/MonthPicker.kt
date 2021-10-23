@@ -5,7 +5,7 @@
 
 package mui.lab
 
-external interface MonthPickerProps : react.Props {
+external interface MonthPickerProps<TDate> : react.Props {
     /**
      * className applied to the root element.
      */
@@ -17,7 +17,7 @@ external interface MonthPickerProps : react.Props {
     var classes: dynamic
 
     /** Date value for the MonthPicker */
-    var date: dynamic
+    var date: TDate?
 
     /** If `true` past days are disabled. */
     var disablePast: Boolean?
@@ -26,10 +26,10 @@ external interface MonthPickerProps : react.Props {
     var disableFuture: Boolean?
 
     /** Minimal selectable date. */
-    var minDate: dynamic
+    var minDate: TDate
 
     /** Maximal selectable date. */
-    var maxDate: dynamic
+    var maxDate: TDate
 
     /** Callback fired on date change. */
     var onChange: dynamic

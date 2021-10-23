@@ -5,7 +5,7 @@
 
 package mui.lab
 
-external interface ClockPickerProps : react.Props {
+external interface ClockPickerProps<TDate> : react.Props {
     /**
      * Set to `true` if focus should be moved to clock picker.
      */
@@ -30,7 +30,7 @@ external interface ClockPickerProps : react.Props {
     /**
      * Selected date @DateIOType.
      */
-    var date: dynamic
+    var date: TDate?
 
     /**
      * Get clock number aria-text for hours.
