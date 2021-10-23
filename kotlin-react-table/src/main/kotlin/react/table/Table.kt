@@ -76,8 +76,9 @@ external interface CellMeta<D : Any, V> : Meta<D> {
     val cell: TableCell<D, V>
 }
 
-external interface TableCommonProps : PropsWithClassName {
-    var style: CSSProperties?
+external interface TableCommonProps :
+    PropsWithStyle,
+    PropsWithClassName {
     var role: String?
 }
 
