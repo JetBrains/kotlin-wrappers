@@ -106,7 +106,7 @@ external interface TablePaginationProps : react.Props {
      * Props applied to the rows per page [`Select`](/api/select/) element.
      * @default {}
      */
-    var SelectProps: SelectProps?
+    var SelectProps: SelectProps<*>?
 
     /**
      * If `true`, show the first-page button.
