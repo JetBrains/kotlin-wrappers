@@ -35,7 +35,7 @@ external interface PaginationProps : react.Props {
      * @returns {ReactNode}
      * @default (item) => <PaginationItem {...item} />
      */
-    var renderItem: dynamic
+    var renderItem: ((params: PaginationRenderItemParams) -> react.ReactNode)?
 
     /**
      * The shape of the pagination items.
@@ -59,6 +59,16 @@ external interface PaginationProps : react.Props {
      * @default 'text'
      */
     var variant: mui.system.Union? /* 'text' | 'outlined', PaginationPropsVariantOverrides */
+}
+
+external interface PaginationRenderItemParams {
+    var color: dynamic /* PaginationProps['color'] */
+
+    var shape: dynamic /* PaginationProps['shape'] */
+
+    var size: dynamic /* PaginationProps['size'] */
+
+    var variant: dynamic /* PaginationProps['variant'] */
 }
 
 /**

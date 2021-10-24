@@ -126,6 +126,16 @@ external interface TablePaginationProps : react.Props {
     var sx: mui.system.SxProps<mui.system.Theme>?
 }
 
+external interface LabelDisplayedRowsArgs {
+    var from: Number
+
+    var to: Number
+
+    var count: Number
+
+    var page: Number
+}
+
 /**
  * A `TableCell` based component for placing inside `TableFooter` for pagination.
  *

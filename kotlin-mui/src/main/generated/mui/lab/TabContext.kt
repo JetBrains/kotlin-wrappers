@@ -19,6 +19,12 @@ external interface TabContextProps : react.PropsWithChildren {
     var value: String
 }
 
+external interface TabContextValue {
+    var idPrefix: String
+
+    var value: String
+}
+
 /**
  *
  * Demos:

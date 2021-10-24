@@ -28,6 +28,12 @@ external interface LocalizationProviderProps : react.PropsWithChildren {
     var locale: dynamic
 }
 
+external interface MuiPickersAdapterContextValue {
+    var defaultDates: dynamic
+
+    var utils: dynamic
+}
+
 /**
  * @ignore - do not document.
  */
