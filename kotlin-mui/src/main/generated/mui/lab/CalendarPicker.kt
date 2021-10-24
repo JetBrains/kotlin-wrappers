@@ -45,7 +45,7 @@ external interface CalendarPickerProps<TDate> : react.Props {
     /**
      * Callback fired on date change
      */
-    var onChange: dynamic
+    var onChange: PickerOnChangeFn<TDate>
 
     /**
      * Callback firing on month change. @DateIOType

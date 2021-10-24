@@ -63,7 +63,7 @@ external interface ClockPickerProps<TDate> : react.Props {
     /**
      * On change callback @DateIOType.
      */
-    var onChange: dynamic
+    var onChange: PickerOnChangeFn<TDate>
 
     var openNextView: () -> Unit
 
