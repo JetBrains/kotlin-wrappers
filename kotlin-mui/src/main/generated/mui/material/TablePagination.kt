@@ -52,7 +52,7 @@ external interface TablePaginationProps : react.Props {
      *   return `${from}-${to} of ${count !== -1 ? count : `more than ${to}`}`;
      * }
      */
-    var labelDisplayedRows: dynamic
+    var labelDisplayedRows: ((paginationInfo: LabelDisplayedRowsArgs) -> react.ReactNode)?
 
     /**
      * Customize the rows per page label.

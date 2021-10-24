@@ -7,7 +7,7 @@ package mui.material
 
 import kotlinext.js.ReadonlyArray
 
-external interface AutocompleteProps : react.Props {
+external interface AutocompleteProps<T> : react.Props {
     /**
      * Props applied to the [`Chip`](/api/chip/) element.
      */
@@ -160,7 +160,7 @@ external interface AutocompleteProps : react.Props {
      * @param {object} params
      * @returns {ReactNode}
      */
-    var renderInput: dynamic
+    var renderInput: (params: AutocompleteRenderInputParams) -> react.ReactNode
 
     /**
      * Render the option, use `getOptionLabel` by default.
@@ -170,7 +170,11 @@ external interface AutocompleteProps : react.Props {
      * @param {object} state The state of the component.
      * @returns {ReactNode}
      */
-    var renderOption: dynamic
+    var renderOption: ((
+        props: react.dom.html.HTMLAttributes<org.w3c.dom.HTMLLIElement>,
+        option: T,
+        state: AutocompleteRenderOptionState,
+    ) -> react.ReactNode)?
 
     /**
      * Render the selected value.
@@ -234,4 +238,4 @@ external interface AutocompleteRenderInputParams {
  * - [Autocomplete API](https://mui.com/api/autocomplete/)
  */
 @JsName("default")
-external val Autocomplete: react.FC<AutocompleteProps>
+external val Autocomplete: react.FC<AutocompleteProps<*>>
