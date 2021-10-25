@@ -1,6 +1,6 @@
 // Automatically generated - do not modify!
 
-@file:JsModule("@mui/material/SwitchBase")
+@file:JsModule("@mui/material/internal/SwitchBase")
 @file:JsNonModule
 
 @file:Suppress(
