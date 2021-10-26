@@ -11,7 +11,7 @@ external interface MasonryProps :
     react.dom.html.HTMLAttributes<org.w3c.dom.HTMLDivElement>,
     react.PropsWithChildren {
     /**
-     * The content of the component. It's recommended to be `<MasonryItem />`s.
+     * The content of the component.
      */
     override var children: ReadonlyArray<react.ReactNode>?
 
@@ -25,6 +25,21 @@ external interface MasonryProps :
      * @default 4
      */
     var columns: mui.system.ResponsiveStyleValue<dynamic>?
+
+    /**
+     * The default number of columns of the component. This is provided for server-side rendering.
+     */
+    var defaultColumns: Number?
+
+    /**
+     * The default height of the component in px. This is provided for server-side rendering.
+     */
+    var defaultHeight: Number?
+
+    /**
+     * The default spacing of the component. Like `spacing`, it is a factor of the theme's spacing. This is provided for server-side rendering.
+     */
+    var defaultSpacing: Number?
 
     /**
      * Defines the space between children. It is a factor of the theme's spacing.

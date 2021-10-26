@@ -1,13 +1,13 @@
 // Automatically generated - do not modify!
 
-@file:JsModule("@mui/material/Popper")
+@file:JsModule("@mui/core/Popper")
 @file:JsNonModule
 
 @file:Suppress(
     "VIRTUAL_MEMBER_HIDDEN",
 )
 
-package mui.material
+package mui.core
 
 external interface PopperProps :
     react.dom.html.HTMLAttributes<org.w3c.dom.HTMLDivElement> {

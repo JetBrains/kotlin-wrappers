@@ -146,13 +146,13 @@ external interface TooltipProps :
      * The component used for the popper.
      * @default Popper
      */
-    var PopperComponent: react.ComponentType<PopperProps>?
+    var PopperComponent: react.ComponentType<mui.core.PopperProps>?
 
     /**
      * Props applied to the [`Popper`](/api/popper/) element.
      * @default {}
      */
-    var PopperProps: PopperProps?
+    var PopperProps: mui.core.PopperProps?
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.

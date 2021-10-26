@@ -40,6 +40,12 @@ external interface TabProps :
     var icon: react.ReactNode?
 
     /**
+     * The position of the icon relative to the label.
+     * @default 'top'
+     */
+    var iconPosition: mui.system.Union? /* 'top' | 'bottom' | 'start' | 'end' */
+
+    /**
      * The label element.
      */
     var label: react.ReactNode?

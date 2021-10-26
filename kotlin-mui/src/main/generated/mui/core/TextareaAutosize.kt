@@ -1,9 +1,9 @@
 // Automatically generated - do not modify!
 
-@file:JsModule("@mui/material/TextareaAutosize")
+@file:JsModule("@mui/core/TextareaAutosize")
 @file:JsNonModule
 
-package mui.material
+package mui.core
 
 external interface TextareaAutosizeProps :
     react.dom.html.TextareaHTMLAttributes<org.w3c.dom.HTMLTextAreaElement> {
