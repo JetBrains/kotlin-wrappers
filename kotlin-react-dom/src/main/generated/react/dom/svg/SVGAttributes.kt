@@ -7,7 +7,10 @@ import react.dom.DOMAttributes
 import react.dom.aria.AriaAttributes
 import react.dom.aria.AriaRole
 
-external interface SVGAttributes<T : Element> : AriaAttributes, DOMAttributes<T> {
+external interface SVGAttributes<T : Element> :
+    AriaAttributes,
+    DOMAttributes<T>,
+    react.PropsWithStyle {
     var color: String?
     var height: Double?
     var id: String?
@@ -17,7 +20,7 @@ external interface SVGAttributes<T : Element> : AriaAttributes, DOMAttributes<T>
     var method: String?
     var min: Double?
     var name: String?
-    var style: react.CSSProperties?
+    override var style: react.CSSProperties?
     var target: String?
     var type: String?
     var width: Double?

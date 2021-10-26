@@ -8,7 +8,10 @@ import react.dom.aria.AriaAttributes
 import react.dom.aria.AriaRole
 import react.dom.events.*
 
-external interface HTMLAttributes<T : Element> : AriaAttributes, DOMAttributes<T> {
+external interface HTMLAttributes<T : Element> :
+    AriaAttributes,
+    DOMAttributes<T>,
+    react.PropsWithStyle {
     // React-specific Attributes
     var defaultChecked: Boolean?
     var defaultValue: String?
@@ -27,7 +30,7 @@ external interface HTMLAttributes<T : Element> : AriaAttributes, DOMAttributes<T
     var placeholder: String?
     var slot: String?
     var spellCheck: Boolean?
-    var style: react.CSSProperties?
+    override var style: react.CSSProperties?
     var tabIndex: Int?
     var title: String?
     var translate: Translate?
