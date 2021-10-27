@@ -31,11 +31,27 @@ interface CssBuilder : StyledElement, RuleContainer {
     fun lastChild(block: RuleSet) = "&:last-child"(block)
     fun lastOfType(block: RuleSet) = "&:last-of-type"(block)
     fun link(block: RuleSet) = "&:link"(block)
-    fun not(selector: String, block: RuleSet) = "&:not($selector)"(block)
-    fun nthChild(selector: String, block: RuleSet) = "&:nth-child($selector)"(block)
-    fun nthLastChild(selector: String, block: RuleSet) = "&:nth-last-child($selector)"(block)
-    fun nthLastOfType(selector: String, block: RuleSet) = "&:nth-last-of-type($selector)"(block)
-    fun nthOfType(selector: String, block: RuleSet) = "&:nth-of-type($selector)"(block)
+    fun not(vararg selector: String, block: RuleSet): Rule {
+        // The verbosity is necessitated by an IR bug, do not inline!
+        val selectorString = selector.joinToString { "&:not($it)" }
+        return selectorString(block)
+    }
+    fun nthChild(vararg selector: String, block: RuleSet): Rule {
+        val selectorString = selector.joinToString { "&:nth-child($it)" }
+        return selectorString(block)
+    }
+    fun nthLastChild(vararg selector: String, block: RuleSet): Rule {
+        val selectorString = selector.joinToString { "&:nth-last-child($it)" }
+        return selectorString(block)
+    }
+    fun nthLastOfType(vararg selector: String, block: RuleSet): Rule {
+        val selectorString = selector.joinToString { "&:nth-last-of-type($it)" }
+        return selectorString(block)
+    }
+    fun nthOfType(vararg selector: String, block: RuleSet): Rule {
+        val selectorString = selector.joinToString { "&:nth-of-type($it)" }
+        return selectorString(block)
+    }
     fun onlyChild(block: RuleSet) = "&:only-child"(block)
     fun onlyOfType(block: RuleSet) = "&:only-of-type"(block)
     fun optional(block: RuleSet) = "&:optional"(block)
@@ -47,12 +63,21 @@ interface CssBuilder : StyledElement, RuleContainer {
     fun visited(block: RuleSet) = "&:visited"(block)
 
     // Children & descendants
-    fun children(selector: String? = null, block: RuleSet) = "& > ${selector ?: "*"}"(block)
+    fun children(vararg selector: String = arrayOf("*"), block: RuleSet): Rule {
+        val selectorString = selector.joinToString { "& > $it" }
+        return selectorString(block)
+    }
 
-    fun descendants(selector: String? = null, block: RuleSet) = "& ${selector ?: "*"}"(block)
+    fun descendants(vararg selector: String = arrayOf("*"), block: RuleSet): Rule {
+        val selectorString = selector.joinToString { "& $it" }
+        return selectorString(block)
+    }
 
     // Temporarily using && here because of a bug introduced in version 5.2: https://github.com/styled-components/styled-components/issues/3244#issuecomment-687676703
-    fun ancestorHover(selector: String, block: RuleSet) = "$selector:hover &&"(block)
+    fun ancestorHover(vararg selector: String, block: RuleSet): Rule {
+        val selectorString = selector.joinToString { "$it:hover &&" }
+        return selectorString(block)
+    }
 
     // https://developer.mozilla.org/en/docs/Web/CSS/Pseudo-elements
     fun after(block: RuleSet) = "&::after" {
@@ -74,11 +99,20 @@ interface CssBuilder : StyledElement, RuleContainer {
     }
 
     // Combinators
-    fun child(selector: String, block: RuleSet) = "> $selector"(block)
+    fun child(vararg selector: String, block: RuleSet): Rule {
+        val selectorString = selector.joinToString { "> $it" }
+        return selectorString(block)
+    }
 
-    fun sibling(selector: String, block: RuleSet) = "~ $selector"(block)
+    fun sibling(vararg selector: String, block: RuleSet): Rule {
+        val selectorString = selector.joinToString { "~ $it" }
+        return selectorString(block)
+    }
 
-    fun adjacentSibling(selector: String, block: RuleSet) = "+ $selector"(block)
+    fun adjacentSibling(vararg selector: String, block: RuleSet): Rule {
+        val selectorString = selector.joinToString { "+ $it" }
+        return selectorString(block)
+    }
 
     // Universal selector
     fun universal(block: RuleSet) = "*"(block)
@@ -86,7 +120,7 @@ interface CssBuilder : StyledElement, RuleContainer {
     operator fun compareTo(rule: Rule): Int {
         // remove current rule
         rules.removeAt(rules.lastIndex)
-        child(rule.selector, rule.block)
+        child(rule.selector, block = rule.block)
         return 0
     }
 
@@ -100,10 +134,13 @@ interface CssBuilder : StyledElement, RuleContainer {
         "&.$selector"(block)
     }
 
-    fun specific(specificity: Int = 2, block: RuleSet): Rule = rule("&".repeat(specificity), passStaticClassesToParent = true, block = block)
+    fun specific(specificity: Int = 2, block: RuleSet) = rule("&".repeat(specificity), passStaticClassesToParent = true, block = block)
 
     // Temporarily using && here because of a bug introduced in version 5.2: https://github.com/styled-components/styled-components/issues/3244#issuecomment-687676703
-    fun prefix(selector: String, block: RuleSet) = "$selector &&"(block)
+    fun prefix(vararg selector: String, block: RuleSet): Rule {
+        val selectorString = selector.joinToString { "$it &&" }
+        return selectorString(block)
+    }
 
     // https://developer.mozilla.org/en-US/docs/Web/CSS/At-rule
     fun media(query: String, block: RuleSet) = "@media $query"(block)
