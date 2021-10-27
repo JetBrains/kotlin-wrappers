@@ -1,9 +1,9 @@
 // Automatically generated - do not modify!
 
-@file:JsModule("@mui/material/ClickAwayListener")
+@file:JsModule("@mui/core/ClickAwayListener")
 @file:JsNonModule
 
-package mui.material
+package mui.core
 
 external interface ClickAwayListenerProps : react.Props {
     /**
