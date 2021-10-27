@@ -7,15 +7,13 @@ interface CssBuilder : StyledElement, RuleContainer {
     val classes: MutableList<String>
     val styleName: MutableList<String>
 
-    operator fun String.invoke(block: RuleSet) =
-        rule(this, passStaticClassesToParent = false, block = block)
+    operator fun String.invoke(block: RuleSet) = rule(this, passStaticClassesToParent = false, block = block)
 
     operator fun TagSelector.invoke(block: RuleSet) = tagName(block)
 
     // https://developer.mozilla.org/en/docs/Web/CSS/Pseudo-classes
     // The experimental ones were omitted
     fun active(block: RuleSet) = "&:active"(block)
-
     fun checked(block: RuleSet) = "&:checked"(block)
     fun default(block: RuleSet) = "&:default"(block)
     fun disabled(block: RuleSet) = "&:disabled"(block)
@@ -33,11 +31,11 @@ interface CssBuilder : StyledElement, RuleContainer {
     fun lastChild(block: RuleSet) = "&:last-child"(block)
     fun lastOfType(block: RuleSet) = "&:last-of-type"(block)
     fun link(block: RuleSet) = "&:link"(block)
-    fun not(@Suppress("UNUSED_PARAMETER") selector: String, block: RuleSet) = "&:not($selector)"(block)
-    fun nthChild(@Suppress("UNUSED_PARAMETER") selector: String, block: RuleSet) = "&:nth-child($selector)"(block)
-    fun nthLastChild(@Suppress("UNUSED_PARAMETER") selector: String, block: RuleSet) = "&:nth-last-child($selector)"(block)
-    fun nthLastOfType(@Suppress("UNUSED_PARAMETER") selector: String, block: RuleSet) = "&:nth-last-of-type($selector)"(block)
-    fun nthOfType(@Suppress("UNUSED_PARAMETER") selector: String, block: RuleSet) = "&:nth-of-type($selector)"(block)
+    fun not(selector: String, block: RuleSet) = "&:not($selector)"(block)
+    fun nthChild(selector: String, block: RuleSet) = "&:nth-child($selector)"(block)
+    fun nthLastChild(selector: String, block: RuleSet) = "&:nth-last-child($selector)"(block)
+    fun nthLastOfType(selector: String, block: RuleSet) = "&:nth-last-of-type($selector)"(block)
+    fun nthOfType(selector: String, block: RuleSet) = "&:nth-of-type($selector)"(block)
     fun onlyChild(block: RuleSet) = "&:only-child"(block)
     fun onlyOfType(block: RuleSet) = "&:only-of-type"(block)
     fun optional(block: RuleSet) = "&:optional"(block)
@@ -49,12 +47,12 @@ interface CssBuilder : StyledElement, RuleContainer {
     fun visited(block: RuleSet) = "&:visited"(block)
 
     // Children & descendants
-    fun children(@Suppress("UNUSED_PARAMETER") selector: String? = null, block: RuleSet) = "& > ${selector ?: "*"}"(block)
+    fun children(selector: String? = null, block: RuleSet) = "& > ${selector ?: "*"}"(block)
 
-    fun descendants(@Suppress("UNUSED_PARAMETER") selector: String? = null, block: RuleSet) = "& ${selector ?: "*"}"(block)
+    fun descendants(selector: String? = null, block: RuleSet) = "& ${selector ?: "*"}"(block)
 
     // Temporarily using && here because of a bug introduced in version 5.2: https://github.com/styled-components/styled-components/issues/3244#issuecomment-687676703
-    fun ancestorHover(@Suppress("UNUSED_PARAMETER") selector: String, block: RuleSet) = "$selector:hover &&"(block)
+    fun ancestorHover(selector: String, block: RuleSet) = "$selector:hover &&"(block)
 
     // https://developer.mozilla.org/en/docs/Web/CSS/Pseudo-elements
     fun after(block: RuleSet) = "&::after" {
@@ -76,11 +74,11 @@ interface CssBuilder : StyledElement, RuleContainer {
     }
 
     // Combinators
-    fun child(@Suppress("UNUSED_PARAMETER") selector: String, block: RuleSet) = "> $selector"(block)
+    fun child(selector: String, block: RuleSet) = "> $selector"(block)
 
-    fun sibling(@Suppress("UNUSED_PARAMETER") selector: String, block: RuleSet) = "~ $selector"(block)
+    fun sibling(selector: String, block: RuleSet) = "~ $selector"(block)
 
-    fun adjacentSibling(@Suppress("UNUSED_PARAMETER") selector: String, block: RuleSet) = "+ $selector"(block)
+    fun adjacentSibling(selector: String, block: RuleSet) = "+ $selector"(block)
 
     // Universal selector
     fun universal(block: RuleSet) = "*"(block)
@@ -102,21 +100,17 @@ interface CssBuilder : StyledElement, RuleContainer {
         "&.$selector"(block)
     }
 
-    fun specific(specificity: Int = 2, block: RuleSet): Rule {
-        return rule("&".repeat(specificity), passStaticClassesToParent = true, block = block)
-    }
+    fun specific(specificity: Int = 2, block: RuleSet): Rule = rule("&".repeat(specificity), passStaticClassesToParent = true, block = block)
 
-    fun prefix(@Suppress("UNUSED_PARAMETER") selector: String, block: RuleSet) {
-        // Temporarily using && here because of a bug introduced in version 5.2: https://github.com/styled-components/styled-components/issues/3244#issuecomment-687676703
-        "$selector &&"(block)
-    }
+    // Temporarily using && here because of a bug introduced in version 5.2: https://github.com/styled-components/styled-components/issues/3244#issuecomment-687676703
+    fun prefix(selector: String, block: RuleSet) = "$selector &&"(block)
 
     // https://developer.mozilla.org/en-US/docs/Web/CSS/At-rule
-    fun media(@Suppress("UNUSED_PARAMETER") query: String, block: RuleSet) = "@media $query"(block)
+    fun media(query: String, block: RuleSet) = "@media $query"(block)
 
-    fun supports(@Suppress("UNUSED_PARAMETER") query: String, block: RuleSet) = "@supports $query"(block)
+    fun supports(query: String, block: RuleSet) = "@supports $query"(block)
 
-    fun container(@Suppress("UNUSED_PARAMETER") query: String, block: RuleSet) = "@container $query"(block)
+    fun container(query: String, block: RuleSet) = "@container $query"(block)
 
     fun fontFace(block: RuleSet) = rule("@font-face", passStaticClassesToParent = false, repeatable = true, block = block)
 
