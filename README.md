@@ -94,10 +94,12 @@ demonstrates how to add typings for an external library.
 6. An [example of using react-router-dom](examples/src/main/kotlin/example/ReactRouterDom.kt) that shows how to use react-route-dom with hooks API.
 
 7. [Building Web Applications with React and Kotlin/JS](https://play.kotlinlang.org/hands-on/Building%20Web%20Applications%20with%20React%20and%20Kotlin%20JS/01_Introduction), a tutorial by JetBrains.
- 
+
 8. [A full-stack demo application](https://github.com/mkraynov/kfsad) written in Kotlin for JetBrains Night Moscow 2019.
 
 9. An [example of using react-table](https://github.com/garagum/kotlin-react-table-sample) that shows how to use react-table with hooks API.
+
+10. An [example of using Material UI](https://github.com/garagum/kotlin-mui-showcase).
 
 Follow these examples to learn how to start developing your React apps with Kotlin. Good luck and have fun! 
 You also can clone [my-kotlin-react-sample](https://github.com/ScottHuangZL/my-kotlin-app) to see the result directly.
