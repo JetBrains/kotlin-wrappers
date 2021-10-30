@@ -8,6 +8,7 @@ package react.table
 import kotlinext.js.ReadonlyArray
 import kotlinext.js.Record
 import react.*
+import react.dom.aria.AriaRole
 import react.dom.events.ChangeEventHandler
 import react.table.RenderType.Cell
 import react.table.RenderType.Header
@@ -79,7 +80,7 @@ external interface CellMeta<D : Any, V> : Meta<D> {
 external interface TableCommonProps :
     PropsWithStyle,
     PropsWithClassName {
-    var role: String?
+    var role: AriaRole?
 }
 
 external interface TableKeyedProps : TableCommonProps {
