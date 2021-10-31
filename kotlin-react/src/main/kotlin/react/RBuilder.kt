@@ -32,19 +32,12 @@ interface RBuilder {
             return
         }
 
-        val children = with(RElementBuilder(props)) {
-            handler()
-            childList
-        }
-        child(type, props, children)
-    }
+        val children = RElementBuilder(props)
+            .apply(handler)
+            .childList
+            .toTypedArray()
 
-    private fun <P : Props> child(
-        type: ElementType<P>,
-        props: P,
-        children: List<ReactNode>,
-    ) {
-        child(createElement(type, props, *children.toTypedArray()))
+        child(createElement(type, props, *children))
     }
 
     operator fun <P : Props> ElementType<P>.invoke() {
