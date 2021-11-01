@@ -93,6 +93,9 @@ interface CssBuilder : StyledElement, RuleContainer {
         block()
     }
 
+    fun firstLetter(block: RuleSet) = "&::first-letter"(block)
+    fun firstLine(block: RuleSet) = "&::first-line"(block)
+
     fun placeholder(block: RuleSet) {
         "&::placeholder"(block)
         "&::-webkit-input-placeholder"(block) // Chrome, Opera, Safari
@@ -100,6 +103,8 @@ interface CssBuilder : StyledElement, RuleContainer {
         "&::-ms-input-placeholder"(block) // IE 10+
         "&:-moz-placeholder"(block) // Firefox 18-
     }
+
+    fun selection(block: RuleSet) = "&::selection"(block)
 
     // Combinators
     fun child(vararg selector: String, block: RuleSet): Rule {
