@@ -40,7 +40,7 @@ external fun <TInput, TOutput> functionalUpdate(
     input: TInput,
 ): TOutput
 
-external fun isValidTimeout(value: Any): Boolean /* value is number */
+external fun isValidTimeout(value: dynamic): Boolean /* value is number */
 
 external fun <T : QueryKey> ensureQueryKeyArray(value: T): EnsuredQueryKey<T>
 
@@ -136,3 +136,5 @@ external fun isError(value: Any): Boolean /* value is Error */
 external fun sleep(timeout: JsDuration): kotlin.js.Promise<Unit>
 
 external fun scheduleMicrotask(callback: () -> Unit)
+
+external fun getAbortController(): AbortController?

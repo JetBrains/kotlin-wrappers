@@ -17,6 +17,7 @@ external interface QueryConfig<TQueryFnData, TError, TData, TQueryKey : QueryKey
     var options: QueryOptions<TQueryFnData, TError, TData, TQueryKey>
     var defaultOptions: QueryOptions<TQueryFnData, TError, TData, TQueryKey>
     var state: QueryState<TData, TError>
+    var meta: QueryMeta?
 }
 
 external interface QueryState<TData, TError> {
@@ -40,6 +41,7 @@ external interface FetchContext<TQueryFnData, TError, TData, TQueryKey : QueryKe
     var options: QueryOptions<TQueryFnData, TError, TData, *>
     var queryKey: EnsuredQueryKey<TQueryKey>
     var state: QueryState<TData, TError>
+    var meta: QueryMeta?
 }
 
 external interface QueryBehavior<TQueryFnData, TError, TData, TQueryKey : QueryKey> {
@@ -49,10 +51,6 @@ external interface QueryBehavior<TQueryFnData, TError, TData, TQueryKey : QueryK
 external interface FetchOptions {
     var cancelRefetch: Boolean
     var meta: Any
-}
-
-external interface SetDataOptions {
-    var updatedAt: JsTimestamp
 }
 
 external interface FailedAction {
@@ -107,6 +105,7 @@ open external class Query<TQueryFnData, TError, TData, TQueryKey : QueryKey>(con
     open var revertState: QueryState<TData, TError>
     open var state: QueryState<TData, TError>
     open var cacheTime: JsDuration
+    open var meta: QueryMeta?
     open fun setDefaultOptions(options: QueryOptions<TQueryFnData, TError, TData, TQueryKey>)
     open fun setData(
         updater: Updater<TData?, TData>,
