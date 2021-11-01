@@ -12,6 +12,7 @@ package react.query
 
 external interface RetryerConfig<TData, TError> {
     var fn: () -> dynamic
+    var abort: () -> Unit
     var onError: (error: TError) -> Unit
     var onSuccess: (data: TData) -> Unit
     var onFail: (failureCount: Int, error: TError) -> Unit
@@ -34,11 +35,6 @@ external interface Cancelable {
 }
 
 external fun isCancelable(value: Any): Boolean /* value is Cancelable */
-
-external interface CancelOptions {
-    var revert: Boolean
-    var silent: Boolean
-}
 
 open external class CancelledError(options: CancelOptions = definedExternally) {
     open var revert: Boolean

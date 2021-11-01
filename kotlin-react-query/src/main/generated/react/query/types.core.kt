@@ -14,7 +14,9 @@ typealias QueryFunction<T, TQueryKey> = (context: QueryFunctionContext<TQueryKey
 
 external interface QueryFunctionContext<TQueryKey : QueryKey, TPageParam> {
     var queryKey: EnsuredQueryKey<TQueryKey>
+    var signal: AbortSignal
     var pageParam: TPageParam
+    var meta: QueryMeta?
 }
 
 typealias InitialDataFunction<T> = () -> T?
@@ -32,6 +34,8 @@ external interface InfiniteData<TData> {
     var pageParams: Array<out PageParam>
 }
 
+typealias QueryMeta = Any
+
 external interface QueryOptions<TQueryFnData, TError, TData, TQueryKey : QueryKey> {
     var retry: RetryValue<TError>
     var retryDelay: RetryDelayValue<TError>
@@ -48,6 +52,7 @@ external interface QueryOptions<TQueryFnData, TError, TData, TQueryKey : QueryKe
     var getPreviousPageParam: GetPreviousPageParamFunction<TQueryFnData>
     var getNextPageParam: GetNextPageParamFunction<TQueryFnData>
     var _defaulted: Boolean
+    var meta: QueryMeta
 }
 
 external interface QueryObserverOptions<TQueryFnData, TError, TData, TQueryData, TQueryKey : QueryKey>
@@ -88,39 +93,37 @@ external interface ResultOptions {
     var throwOnError: Boolean
 }
 
-external interface RefetchPageFilters<TQueryFnData> {
-    var refetchPage: (lastPage: TQueryFnData, index: Int, allPages: Array<out TQueryFnData>) -> Boolean
+external interface RefetchPageFilters<TPageData> {
+    var refetchPage: (lastPage: TPageData, index: Int, allPages: Array<out TPageData>) -> Boolean
 }
 
 external interface RefetchOptions : ResultOptions {
     var cancelRefetch: Boolean
 }
 
-external interface InvalidateQueryFilters<TQueryFnData>
-    : QueryFilters, RefetchPageFilters<TQueryFnData> {
+external interface InvalidateQueryFilters<TPageData>
+    : QueryFilters, RefetchPageFilters<TPageData> {
     var refetchActive: Boolean
     var refetchInactive: Boolean
 }
 
-external interface RefetchQueryFilters<TQueryFnData>
-    : QueryFilters, RefetchPageFilters<TQueryFnData>
+external interface RefetchQueryFilters<TPageData>
+    : QueryFilters, RefetchPageFilters<TPageData>
 
-external interface ResetQueryFilters<TQueryFnData>
-    : QueryFilters, RefetchPageFilters<TQueryFnData>
+external interface ResetQueryFilters<TPageData>
+    : QueryFilters, RefetchPageFilters<TPageData>
 
-external interface InvalidateOptions {
-    var throwOnError: Boolean
-}
+external interface InvalidateOptions : RefetchOptions
 
-external interface ResetOptions {
-    var throwOnError: Boolean
-}
+external interface ResetOptions : RefetchOptions
 
 external interface FetchNextPageOptions : ResultOptions {
+    var cancelRefetch: Boolean
     var pageParam: PageParam
 }
 
 external interface FetchPreviousPageOptions : ResultOptions {
+    var cancelRefetch: Boolean
     var pageParam: PageParam
 }
 
@@ -140,9 +143,10 @@ external interface QueryObserverBaseResult<TData, TError> {
     val isPlaceholderData: Boolean
     val isPreviousData: Boolean
     val isRefetchError: Boolean
+    val isRefetching: Boolean
     val isStale: Boolean
     val isSuccess: Boolean
-    val refetch: (options: RefetchOptions? /* & RefetchQueryFilters<TData> */) -> kotlin.js.Promise<QueryObserverResult<TData, TError>>
+    val refetch: (options: RefetchOptions? /* & RefetchQueryFilters<TPageData> */) -> kotlin.js.Promise<QueryObserverResult<TData, TError>>
     val remove: () -> Unit
     val status: QueryStatus
 }
@@ -383,4 +387,13 @@ sealed external interface MutationObserverResult<TData, TError, TVariables, TCon
 external interface DefaultOptions<TError> {
     var queries: QueryObserverOptions<*, TError, *, *, *>
     var mutations: MutationObserverOptions<*, TError, *, *>
+}
+
+external interface CancelOptions {
+    var revert: Boolean
+    var silent: Boolean
+}
+
+external interface SetDataOptions {
+    var updatedAt: JsTimestamp
 }

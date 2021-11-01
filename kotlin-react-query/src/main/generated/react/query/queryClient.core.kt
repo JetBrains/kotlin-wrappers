@@ -57,14 +57,14 @@ open external class QueryClient(config: QueryClientConfig = definedExternally) {
         filters: QueryFilters = definedExternally,
     )
 
-    open fun resetQueries(
-        filters: ResetQueryFilters<*> = definedExternally,
+    open fun <TPageData> resetQueries(
+        filters: ResetQueryFilters<TPageData> = definedExternally,
         options: ResetOptions = definedExternally,
     ): kotlin.js.Promise<Unit>
 
-    open fun resetQueries(
+    open fun <TPageData> resetQueries(
         queryKey: QueryKey = definedExternally,
-        filters: ResetQueryFilters<*> = definedExternally,
+        filters: ResetQueryFilters<TPageData> = definedExternally,
         options: ResetOptions = definedExternally,
     ): kotlin.js.Promise<Unit>
 
@@ -79,25 +79,25 @@ open external class QueryClient(config: QueryClientConfig = definedExternally) {
         options: CancelOptions = definedExternally,
     ): kotlin.js.Promise<Unit>
 
-    open fun invalidateQueries(
-        filters: InvalidateQueryFilters<*> = definedExternally,
+    open fun <TPageData> invalidateQueries(
+        filters: InvalidateQueryFilters<TPageData> = definedExternally,
         options: InvalidateOptions = definedExternally,
     ): kotlin.js.Promise<Unit>
 
-    open fun invalidateQueries(
+    open fun <TPageData> invalidateQueries(
         queryKey: QueryKey = definedExternally,
-        filters: InvalidateQueryFilters<*> = definedExternally,
+        filters: InvalidateQueryFilters<TPageData> = definedExternally,
         options: InvalidateOptions = definedExternally,
     ): kotlin.js.Promise<Unit>
 
-    open fun refetchQueries(
-        filters: RefetchQueryFilters<*> = definedExternally,
+    open fun <TPageData> refetchQueries(
+        filters: RefetchQueryFilters<TPageData> = definedExternally,
         options: RefetchOptions = definedExternally,
     ): kotlin.js.Promise<Unit>
 
-    open fun refetchQueries(
+    open fun <TPageData> refetchQueries(
         queryKey: QueryKey = definedExternally,
-        filters: RefetchQueryFilters<*> = definedExternally,
+        filters: RefetchQueryFilters<TPageData> = definedExternally,
         options: RefetchOptions = definedExternally,
     ): kotlin.js.Promise<Unit>
 
