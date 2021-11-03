@@ -77,6 +77,17 @@ interface RBuilder {
     fun PropsWithChildren.children() {
         childList.addAll(Children.toArray(children))
     }
+
+    /**
+     * Current implementation doesn't solve any problem,
+     * it works in much the same way as a simple `forEach`
+     * */
+    @Deprecated(message = "Legacy API (use forEach)")
+    fun <T> Iterable<T>.renderEach(fn: RBuilder.(T) -> Unit) {
+        mapTo(childList) {
+            buildElement { fn(it) }
+        }
+    }
 }
 
 @JsName("createBuilder")
