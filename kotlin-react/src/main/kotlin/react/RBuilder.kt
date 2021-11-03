@@ -78,43 +78,6 @@ interface RBuilder {
     fun PropsWithChildren.children() {
         childList.addAll(Children.toArray(children))
     }
-
-    /**
-     * Current implementation doesn't solve any problem,
-     * it works in much the same way as a simple `forEach`
-     * */
-    @Deprecated(message = "Legacy API (use forEach)")
-    fun <T> Iterable<T>.renderEach(fn: RBuilder.(T) -> Unit) {
-        mapTo(childList) {
-            buildElement { fn(it) }
-        }
-    }
-
-    /**
-     * Current implementation doesn't solve any problem,
-     * it works in much the same way as a simple `forEachIndexed`
-     * */
-    @Deprecated(message = "Legacy API (use forEachIndexed)")
-    fun <T> Iterable<T>.renderEachIndexed(fn: RBuilder.(Int, T) -> Unit) {
-        mapIndexedTo(childList) { index, it ->
-            buildElement { fn(index, it) }
-        }
-    }
-
-    private fun ReactElement.deprecatedWithKey(newKey: Key) {
-        val index = childList.indexOf(this)
-        if (index >= 0) {
-            childList.removeAt(index)
-            val elementWithKey = cloneElement(this, jso { key = newKey })
-            childList.add(index, elementWithKey)
-        }
-    }
-
-    @Deprecated("Legacy API (use cloneElement)")
-    fun ReactElement.withKey(newKey: Key) = deprecatedWithKey(newKey)
-
-    @Deprecated("Legacy API (use cloneElement)")
-    fun ReactElement.withKey(newKey: Number) = deprecatedWithKey(newKey.toString())
 }
 
 @JsName("createBuilder")
@@ -142,12 +105,6 @@ fun <T : RBuilder> buildElements(builder: T, handler: T.() -> Unit): dynamic {
         else -> createElement(Fragment, js {}, *nodes.toTypedArray())
     }
 }
-
-@Deprecated(
-    message = "Unsafe API",
-    replaceWith = ReplaceWith("createElement(handler)", "react.createElement")
-)
-fun buildElements(handler: Render): dynamic = createElement(handler)
 
 open class RBuilderSingle : RBuilderImpl()
 
