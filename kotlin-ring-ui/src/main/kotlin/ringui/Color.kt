@@ -13,7 +13,7 @@ external interface Color {
 inline fun Color(
     r: Short,
     g: Short,
-    b: Short
+    b: Short,
 ): Color =
     jso {
         this.r = r

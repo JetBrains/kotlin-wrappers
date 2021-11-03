@@ -7,6 +7,7 @@ import react.*
 
 external interface RouteProps : PropsWithChildren, MatchOptions {
     var component: ComponentType<*>
+
     @Deprecated(
         message = "Use component or children props with hooks",
     )

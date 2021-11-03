@@ -104,7 +104,7 @@ fun RBuilder.searchBar(
     initialInStockOnly: Boolean,
     initialFilterText: String,
     handleFilterInputChange: (String) -> () -> Unit,
-    handleInStockInputClick: () -> () -> Unit
+    handleInStockInputClick: () -> () -> Unit,
 ) {
     child(SearchBar::class) {
         attrs.onClick = handleInStockInputClick()
