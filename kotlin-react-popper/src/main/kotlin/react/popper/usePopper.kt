@@ -12,5 +12,5 @@ external interface UsePopperOptions<Modifiers> : PopperOptions<Modifiers>
 external fun <Modifiers> usePopper(
     referenceElement: Element?, // or PopperJS.VirtualElement
     popperElement: HTMLElement?,
-    options: UsePopperOptions<Modifiers>
+    options: UsePopperOptions<Modifiers>,
 ): PopperInstance

@@ -2,7 +2,7 @@ import org.gradle.api.Project
 import org.gradle.api.publish.maven.MavenPublication
 
 internal fun MavenPublication.configurePom(
-    project: Project
+    project: Project,
 ) {
     pom {
         name.set(project.name)

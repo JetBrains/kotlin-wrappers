@@ -38,22 +38,27 @@ interface CssBuilder : StyledElement, RuleContainer {
         val selectorString = selector.joinToString { "&:not($it)" }
         return selectorString(block)
     }
+
     fun nthChild(vararg selector: String, block: RuleSet): Rule {
         val selectorString = selector.joinToString { "&:nth-child($it)" }
         return selectorString(block)
     }
+
     fun nthLastChild(vararg selector: String, block: RuleSet): Rule {
         val selectorString = selector.joinToString { "&:nth-last-child($it)" }
         return selectorString(block)
     }
+
     fun nthLastOfType(vararg selector: String, block: RuleSet): Rule {
         val selectorString = selector.joinToString { "&:nth-last-of-type($it)" }
         return selectorString(block)
     }
+
     fun nthOfType(vararg selector: String, block: RuleSet): Rule {
         val selectorString = selector.joinToString { "&:nth-of-type($it)" }
         return selectorString(block)
     }
+
     fun onlyChild(block: RuleSet) = "&:only-child"(block)
     fun onlyOfType(block: RuleSet) = "&:only-of-type"(block)
     fun optional(block: RuleSet) = "&:optional"(block)
