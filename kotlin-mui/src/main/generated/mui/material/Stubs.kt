@@ -2,5 +2,7 @@
 
 package mui.material
 
-external interface TableCellBaseProps : react.PropsWithChildren
-external interface TablePaginationActionsProps : react.Props
+import org.w3c.dom.HTMLTableCellElement
+import react.dom.html.HTMLAttributes
+
+typealias TableCellBaseProps = HTMLAttributes<HTMLTableCellElement>
