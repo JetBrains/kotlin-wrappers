@@ -10,19 +10,19 @@ external interface ReactElement : ReactNode {
 external fun <P : Props> createElement(
     type: String,
     props: P = definedExternally,
-    vararg child: ReactNode?,
+    vararg children: ReactNode?,
 ): ReactElement
 
 external fun <P : Props> createElement(
     type: ElementType<P>,
     props: P = definedExternally,
-    vararg child: ReactNode?,
+    vararg children: ReactNode?,
 ): ReactElement
 
 external fun <P : Props> cloneElement(
     element: ReactElement,
     props: P = definedExternally,
-    vararg child: ReactNode?,
+    vararg children: ReactNode?,
 ): ReactElement
 
 external fun isValidElement(
