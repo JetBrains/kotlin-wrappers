@@ -4,29 +4,28 @@
 
 package csstype
 
-inline fun Margin(value: String): Margin =
+inline fun Margin(
+    value: String,
+): Margin =
     value.unsafeCast<Margin>()
 
-inline fun Properties.margin(
+inline fun Margin(
     vertical: AutoLengthProperty,
     horizontal: AutoLengthProperty,
-) {
-    margin = Margin("$vertical $horizontal")
-}
+): Margin =
+    Margin("$vertical $horizontal")
 
-inline fun Properties.margin(
+inline fun Margin(
     top: AutoLengthProperty,
     horizontal: AutoLengthProperty,
     bottom: AutoLengthProperty,
-) {
-    margin = Margin("$top $horizontal $bottom")
-}
+): Margin =
+    Margin("$top $horizontal $bottom")
 
-inline fun Properties.margin(
+inline fun Margin(
     top: AutoLengthProperty,
     right: AutoLengthProperty,
     bottom: AutoLengthProperty,
     left: AutoLengthProperty,
-) {
-    margin = Margin("$top $right $bottom $left")
-}
+): Margin =
+    Margin("$top $right $bottom $left")
