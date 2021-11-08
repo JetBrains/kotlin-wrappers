@@ -19,6 +19,17 @@ external interface PaginationItemProps :
     var color: mui.system.Union? /* 'standard' | 'primary' | 'secondary', PaginationItemPropsColorOverrides */
 
     /**
+     * The components used for first, last, next & previous item type
+     * @default {
+     *   first: FirstPageIcon,
+     *   last: LastPageIcon,
+     *   next: NavigateNextIcon,
+     *   previous: NavigateBeforeIcon,
+     * }
+     */
+    var components: dynamic
+
+    /**
      * If `true`, the component is disabled.
      * @default false
      */

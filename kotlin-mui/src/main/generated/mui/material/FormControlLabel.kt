@@ -50,7 +50,7 @@ external interface FormControlLabelProps :
     var inputRef: react.Ref<*>?
 
     /**
-     * The text to be used in an enclosing label element.
+     * A text or an element to be used in an enclosing label element.
      */
     var label: react.ReactNode
 
