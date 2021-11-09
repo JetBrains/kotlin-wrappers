@@ -18,6 +18,12 @@ external interface CalendarPickerProps<TDate> : react.Props {
     var defaultCalendarMonth: TDate?
 
     /**
+     * If `true`, the picker and text field are disabled.
+     * @default false
+     */
+    var disabled: Boolean?
+
+    /**
      * @default false
      */
     var disableFuture: Boolean?
@@ -57,6 +63,12 @@ external interface CalendarPickerProps<TDate> : react.Props {
      * @default 'day'
      */
     var openTo: CalendarPickerView?
+
+    /**
+     * Make picker read only.
+     * @default false
+     */
+    var readOnly: Boolean?
 
     /**
      * Disable heavy animations.

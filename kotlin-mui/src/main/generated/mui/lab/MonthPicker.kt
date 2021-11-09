@@ -19,6 +19,9 @@ external interface MonthPickerProps<TDate> : react.Props {
     /** Date value for the MonthPicker */
     var date: TDate?
 
+    /** If `true` picker is disabled */
+    var disabled: Boolean?
+
     /** If `true` past days are disabled. */
     var disablePast: Boolean?
 
@@ -35,6 +38,9 @@ external interface MonthPickerProps<TDate> : react.Props {
     var onChange: PickerOnChangeFn<TDate>
 
     var onMonthChange: ((date: TDate) -> kotlin.js.Promise<Nothing?>?)?
+
+    /** If `true` picker is readonly */
+    var readOnly: Boolean?
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.

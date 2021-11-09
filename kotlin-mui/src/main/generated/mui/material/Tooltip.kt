@@ -37,6 +37,8 @@ external interface TooltipProps :
 
     /**
      * The props used for each slot inside the Tooltip.
+     * Note that `componentsProps.popper` prop values win over `PopperProps`
+     * and `componentsProps.transition` prop values win over `TransitionProps` if both are applied.
      * @default {}
      */
     var componentsProps: dynamic

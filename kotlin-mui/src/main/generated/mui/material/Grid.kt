@@ -54,15 +54,23 @@ external interface GridProps :
     var item: Boolean?
 
     /**
-     * Defines the number of grids the component is going to use.
-     * It's applied for the `lg` breakpoint and wider screens if not overridden.
+     * If a number, it sets the number of columns the grid item uses.
+     * It can't be greater than the total number of columns of the container (12 by default).
+     * If 'auto', the grid item's width matches its content.
+     * If false, the prop is ignored.
+     * If true, the grid item's width grows to use the space available in the grid container.
+     * The value is applied for the `lg` breakpoint and wider screens if not overridden.
      * @default false
      */
     var lg: dynamic
 
     /**
-     * Defines the number of grids the component is going to use.
-     * It's applied for the `md` breakpoint and wider screens if not overridden.
+     * If a number, it sets the number of columns the grid item uses.
+     * It can't be greater than the total number of columns of the container (12 by default).
+     * If 'auto', the grid item's width matches its content.
+     * If false, the prop is ignored.
+     * If true, the grid item's width grows to use the space available in the grid container.
+     * The value is applied for the `md` breakpoint and wider screens if not overridden.
      * @default false
      */
     var md: dynamic
@@ -74,8 +82,12 @@ external interface GridProps :
     var rowSpacing: mui.system.ResponsiveStyleValue<dynamic>?
 
     /**
-     * Defines the number of grids the component is going to use.
-     * It's applied for the `sm` breakpoint and wider screens if not overridden.
+     * If a number, it sets the number of columns the grid item uses.
+     * It can't be greater than the total number of columns of the container (12 by default).
+     * If 'auto', the grid item's width matches its content.
+     * If false, the prop is ignored.
+     * If true, the grid item's width grows to use the space available in the grid container.
+     * The value is applied for the `sm` breakpoint and wider screens if not overridden.
      * @default false
      */
     var sm: dynamic
@@ -100,15 +112,23 @@ external interface GridProps :
     var wrap: GridWrap?
 
     /**
-     * Defines the number of grids the component is going to use.
-     * It's applied for the `xl` breakpoint and wider screens.
+     * If a number, it sets the number of columns the grid item uses.
+     * It can't be greater than the total number of columns of the container (12 by default).
+     * If 'auto', the grid item's width matches its content.
+     * If false, the prop is ignored.
+     * If true, the grid item's width grows to use the space available in the grid container.
+     * The value is applied for the `xl` breakpoint and wider screens if not overridden.
      * @default false
      */
     var xl: dynamic
 
     /**
-     * Defines the number of grids the component is going to use.
-     * It's applied for all the screen sizes with the lowest priority.
+     * If a number, it sets the number of columns the grid item uses.
+     * It can't be greater than the total number of columns of the container (12 by default).
+     * If 'auto', the grid item's width matches its content.
+     * If false, the prop is ignored.
+     * If true, the grid item's width grows to use the space available in the grid container.
+     * The value is applied for all the screen sizes with the lowest priority.
      * @default false
      */
     var xs: dynamic

@@ -19,6 +19,13 @@ external interface ScopedCssBaselineProps :
      * Override or extend the styles applied to the component.
      */
     var classes: ScopedCssBaselineClasses?
+
+    /**
+     * Enable `color-scheme` css property to use `theme.palette.mode`.
+     * For more details, check out https://developer.mozilla.org/en-US/docs/Web/CSS/color-scheme
+     * For browser support, check out https://caniuse.com/?search=color-scheme
+     */
+    var enableColorScheme: Boolean?
 }
 
 /**
