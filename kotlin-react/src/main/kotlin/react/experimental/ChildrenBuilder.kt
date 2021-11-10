@@ -4,7 +4,7 @@ import kotlinext.js.Object
 import kotlinext.js.ReadonlyArray
 import react.*
 
-private inline var ChildrenBuilder.children: ReadonlyArray<ReactNode>?
+internal inline var ChildrenBuilder.children: ReadonlyArray<ReactNode>?
     get() = asDynamic().children
     set(value) {
         asDynamic().children = value

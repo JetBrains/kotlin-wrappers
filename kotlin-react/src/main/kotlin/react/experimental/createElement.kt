@@ -8,13 +8,12 @@ fun createElement(
 ): ReactElement? {
     val children: ReadonlyArray<ReactNode>? = ChildrenBuilder()
         .apply(block)
-        .asDynamic()
         .children
 
     return when {
         children == null -> null
         children.size == 0 -> null
         children.size == 1 && isValidElement(children.first()) -> children.first().unsafeCast<ReactElement>()
-        else -> createElement(Fragment, child = children)
+        else -> createElement(Fragment, children = children)
     }
 }
