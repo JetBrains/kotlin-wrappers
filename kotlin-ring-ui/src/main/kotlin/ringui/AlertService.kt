@@ -3,36 +3,36 @@
 
 package ringui
 
+import kotlinext.js.ReadonlyArray
+import react.Key
 import react.ReactNode
 
-external interface AlertServiceInterface {
-    fun remove(key: String)
-    fun removeWithoutAnimation(key: String)
+@JsName("default")
+external object AlertService {
+    fun remove(key: Key)
+    fun removeWithoutAnimation(key: Key)
     fun addAlert(
         message: String,
         type: AlertType,
         timeout: Int = definedExternally,
         options: AlertProps = definedExternally
-    ): String
+    ): Key
 
     fun addAlert(
-        message: Array<out ReactNode>,
+        message: ReadonlyArray<ReactNode>,
         type: AlertType,
         timeout: Int = definedExternally,
         options: AlertProps = definedExternally
-    ): String
+    ): Key
 
-    fun error(message: String, timeout: Int): String
-    fun error(message: Array<out ReactNode>, timeout: Int): String
-    fun message(message: String, timeout: Int): String
-    fun message(message: Array<out ReactNode>, timeout: Int): String
-    fun warning(message: String, timeout: Int): String
-    fun warning(message: Array<out ReactNode>, timeout: Int): String
-    fun successMessage(message: String, timeout: Int): String
-    fun successMessage(message: Array<out ReactNode>, timeout: Int): String
-    fun loadingMessage(message: String, timeout: Int): String
-    fun loadingMessage(message: Array<out ReactNode>, timeout: Int): String
+    fun error(message: String, timeout: Int): Key
+    fun error(message: ReadonlyArray<ReactNode>, timeout: Int): Key
+    fun message(message: String, timeout: Int): Key
+    fun message(message: ReadonlyArray<ReactNode>, timeout: Int): Key
+    fun warning(message: String, timeout: Int): Key
+    fun warning(message: ReadonlyArray<ReactNode>, timeout: Int): Key
+    fun successMessage(message: String, timeout: Int): Key
+    fun successMessage(message: ReadonlyArray<ReactNode>, timeout: Int): Key
+    fun loadingMessage(message: String, timeout: Int): Key
+    fun loadingMessage(message: ReadonlyArray<ReactNode>, timeout: Int): Key
 }
-
-@JsName("default")
-external val AlertService: AlertServiceInterface = definedExternally
