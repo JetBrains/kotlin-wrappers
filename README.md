@@ -1,7 +1,7 @@
 [![JetBrains team project](https://jb.gg/badges/team.svg)](https://confluence.jetbrains.com/display/ALL/JetBrains+on+GitHub)
 [![CI](https://github.com/JetBrains/kotlin-wrappers/workflows/CI/badge.svg)](https://github.com/JetBrains/kotlin-wrappers/actions)
 [![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-wrappers-bom)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-wrappers-bom)
-[![Kotlin](https://img.shields.io/badge/kotlin-1.5.31-blue.svg?logo=kotlin)](http://kotlinlang.org)
+[![Kotlin](https://img.shields.io/badge/kotlin-1.6.0-blue.svg?logo=kotlin)](http://kotlinlang.org)
 [![Slack channel](https://img.shields.io/badge/chat-slack-green.svg?logo=slack)](https://kotlinlang.slack.com/messages/react/)
 
 # Kotlin Wrappers
@@ -46,7 +46,7 @@ about version compatibility.
 Just declare `kotlin-wrappers-bom` and specify the modules you need:
 
 ```kotlin
-val kotlinWrappersVersion = "0.0.1-pre.264-kotlin-1.5.31"
+val kotlinWrappersVersion = "0.0.1-pre.265-kotlin-1.5.31"
 
 dependencies {
     implementation(enforcedPlatform("org.jetbrains.kotlin-wrappers:kotlin-wrappers-bom:${kotlinWrappersVersion}"))
@@ -64,7 +64,7 @@ Or use a helper function:
 fun kotlinw(target: String): String =
     "org.jetbrains.kotlin-wrappers:kotlin-$target"
 
-val kotlinWrappersVersion = "0.0.1-pre.264-kotlin-1.5.31"
+val kotlinWrappersVersion = "0.0.1-pre.265-kotlin-1.5.31"
 
 dependencies {
     implementation(enforcedPlatform(kotlinw("wrappers-bom:${kotlinWrappersVersion}")))
