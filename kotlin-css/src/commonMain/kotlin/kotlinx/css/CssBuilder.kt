@@ -264,15 +264,8 @@ open class CssBuilderImpl(
                 .also { hashCode -> memoizedHashCode = hashCode }
     }
 
-    override fun equals(other: Any?): Boolean {
-        if (this === other) return true
-        if (other == null || this::class != other::class) return false
-        other as CssBuilderImpl
-
-        return hashCode() == other.hashCode()
-                && rules == other.rules
-                && multiRules == other.multiRules
-                && declarations == other.declarations
+    override fun equals(other: Any?) = this.calculateEquals(other) { otherCss ->
+        rules == otherCss.rules && multiRules == otherCss.multiRules && declarations == otherCss.declarations
     }
 
     override val rules = mutableListOf<Rule>()

@@ -14,13 +14,8 @@ class CssDeclarations : MutableMap<String, Any> by LinkedHashMap() {
             }
         }.also { field = it }
 
-    override fun equals(other: Any?): Boolean {
-        if (this === other) return true
-        if (other == null || this::class != other::class) return false
-        other as CssDeclarations
-
-        return hashCode() == other.hashCode()
-                && stringDecl == other.stringDecl
+    override fun equals(other: Any?) = this.calculateEquals(other) { otherDecls ->
+        stringDecl == otherDecls.stringDecl
     }
 
     override fun hashCode(): Int {

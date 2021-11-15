@@ -12,14 +12,6 @@ import styled.styledDiv
 import kotlin.test.Test
 import kotlin.test.assertEquals
 
-interface SearchBarProps : Props {
-    var onClick: () -> Unit
-    var onChange: (String) -> () -> Unit
-    var inStockOnly: Boolean
-    var filterText: String
-}
-
-
 open class ForwardCssTest : TestBase() {
     inner class AComponent(props: CustomStyledProps) : RComponent<CustomStyledProps, State>(props) {
         override fun RBuilder.render() {

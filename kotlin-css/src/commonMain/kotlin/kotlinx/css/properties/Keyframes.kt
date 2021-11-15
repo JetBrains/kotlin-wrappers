@@ -3,6 +3,7 @@ package kotlinx.css.properties
 import kotlinx.css.Rule
 import kotlinx.css.RuleContainer
 import kotlinx.css.RuleSet
+import kotlinx.css.calculateEquals
 
 interface KeyframesBuilder : RuleContainer {
     fun from(block: RuleSet) = rule("from", block)
@@ -31,10 +32,5 @@ class KeyframesBuilderImpl(override val indent: String = "") : KeyframesBuilder 
             .also { hashCode -> memoizedHashCode = hashCode }
     }
 
-    override fun equals(other: Any?): Boolean {
-        if (this === other) return true
-        if (other == null || this::class != other::class) return false
-        other as KeyframesBuilderImpl
-        return rules == other.rules && multiRules == other.multiRules
-    }
+    override fun equals(other: Any?) = calculateEquals(other) { t2 -> rules == t2.rules && multiRules == t2.multiRules }
 }

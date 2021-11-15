@@ -4,6 +4,12 @@ internal typealias Selector = String
 
 data class Rule(
     val selector: Selector,
+    @Deprecated("Left for compatibility with old api")
+    val passStaticClassesToParent: Boolean = false,
+    @Deprecated("Left for compatibility with old api")
+    val block: CssBuilder.() -> Unit = {
+        append(css)
+    },
     val css: CssBuilder,
 ) {
     private var memoizedHashCode: Int? = null
@@ -12,14 +18,15 @@ data class Rule(
         return memoizedHashCode ?: (selector.hashCode() + css.hashCode()).also { hash -> memoizedHashCode = hash }
     }
 
-    override fun equals(other: Any?): Boolean {
-        if (this === other) return true
-        if (other == null || this::class != other::class) return false
-
-        other as Rule
-
-        return hashCode() == other.hashCode()
-                && selector == other.selector
-                && css == other.css
+    override fun equals(other: Any?) = this.calculateEquals(other) { otherRule ->
+        selector == otherRule.selector && css == otherRule.css
     }
+}
+
+internal inline fun <reified T : Any> T.calculateEquals(other: Any?, componentEquals: T.(T) -> Boolean): Boolean {
+    if (this === other) return true
+    if (other == null || this::class != other::class) return false
+
+    other as T
+    return this.hashCode() == other.hashCode() && componentEquals(this, other)
 }
