@@ -2,6 +2,7 @@ package styled
 
 import kotlinx.css.CssBuilder
 import kotlinx.css.RuleSet
+import kotlin.js.Promise
 import kotlin.properties.ReadOnlyProperty
 import kotlin.reflect.KProperty
 import kotlin.reflect.KProperty0
@@ -115,9 +116,8 @@ class CssHolder(private val sheet: StyleSheet, internal vararg val ruleSets: Rul
 }
 
 fun <T : StyleSheet> T.getClassName(getClass: (T) -> KProperty0<RuleSet>): String {
-    return getClassName(getClass(this)).also {
-        scheduleToInject(it)
-        GlobalStyles.injectScheduled()
+    return getClassName(getClass(this)).also { className ->
+        Promise.resolve(Unit).then { scheduleToInject(className); GlobalStyles.injectScheduled() }
     }
 }
 
