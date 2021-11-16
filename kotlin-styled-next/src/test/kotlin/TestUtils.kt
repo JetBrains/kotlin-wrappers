@@ -75,6 +75,10 @@ class TestScope : CoroutineScope by testScope {
         return getStyle(pseudoElt).color
     }
 
+    fun Element.alignContent(pseudoElt: String? = null): String {
+        return getStyle(pseudoElt).alignContent
+    }
+
     fun CSSRuleList.forEach(block: (rule: CSSRule) -> Unit) {
         for (i in 0 until this.length) {
             val value = this[i]

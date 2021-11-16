@@ -11,9 +11,7 @@ import org.w3c.dom.HTMLInputElement
 import org.w3c.dom.css.CSSRuleList
 import org.w3c.dom.get
 import runTest
-import kotlin.test.BeforeTest
-import kotlin.test.assertNotNull
-import kotlin.test.assertTrue
+import kotlin.test.*
 
 open class TestBase {
     protected val firstColor = rgb(1, 1, 1)
@@ -79,5 +77,13 @@ open class TestBase {
 
     protected fun Element.asInput(): HTMLInputElement {
         return this as HTMLInputElement
+    }
+
+    protected fun assertAllNotEquals(expected: Any, vararg actual: Any) {
+        actual.forEach { assertNotEquals(expected, it) }
+    }
+
+    protected fun assertAllEquals(expected: Any, vararg actual: Any) {
+        actual.forEach { assertEquals(expected, it) }
     }
 }

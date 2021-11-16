@@ -1,5 +1,6 @@
 package test
 
+import kotlinx.css.Align
 import kotlinx.css.CssBuilder
 import kotlinx.css.backgroundColor
 import kotlinx.css.color
@@ -8,6 +9,7 @@ import react.dom.div
 import react.dom.span
 import react.fc
 import runTest
+import styleSheets.StaticStyleSheet
 import styled.css
 import styled.styledDiv
 import styled.styledSpan
@@ -19,6 +21,8 @@ import kotlin.test.assertNotEquals
  * Check every public interface function in [CssBuilder]
  */
 class RelativeSelectorsTest : TestBase() {
+    private val staticStyleSheet = StaticStyleSheet()
+
     @Test
     fun children() = runTest {
         val styledComponent = fc<Props> {
@@ -325,7 +329,41 @@ class RelativeSelectorsTest : TestBase() {
             }
         }
         val element = clearAndInject(styledComponent)
-        assertEquals(firstColor.toString(), element.color())
         assertEquals(secondColor.toString(), element.childAt(0).color())
+        assertNotEquals(secondColor.toString(), element.color())
+    }
+
+    @Test
+    fun compareToNotSettingsRedundant() = runTest {
+        val styledComponent = fc<Props> {
+            styledDiv {
+                css {
+                    color = firstColor
+                    this > "div" {
+                        +staticStyleSheet.property1
+                        color = secondColor
+                    }
+                }
+                div {}
+                span { div {} }
+                div {}
+            }
+        }
+        val element = clearAndInject(styledComponent)
+        assertAllEquals(secondColor.toString(), element.childAt(0).color(), element.childAt(2).color())
+        assertAllNotEquals(
+            secondColor.toString(),
+            element.color(),
+            element.childAt(1).color(),
+            element.childAt(1).childAt(0).color()
+        )
+
+        assertAllEquals(Align.end.toString(), element.childAt(0).alignContent(), element.childAt(2).alignContent())
+        assertAllNotEquals(
+            Align.end.toString(),
+            element.alignContent(),
+            element.childAt(1).alignContent(),
+            element.childAt(1).childAt(0).alignContent()
+        )
     }
 }
