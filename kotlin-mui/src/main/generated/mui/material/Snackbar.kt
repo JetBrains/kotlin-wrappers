@@ -47,7 +47,7 @@ external interface SnackbarProps :
     /**
      * Props applied to the `ClickAwayListener` element.
      */
-    var ClickAwayListenerProps: mui.core.ClickAwayListenerProps?
+    var ClickAwayListenerProps: mui.base.ClickAwayListenerProps?
 
     /**
      * Props applied to the [`SnackbarContent`](/api/snackbar-content/) element.

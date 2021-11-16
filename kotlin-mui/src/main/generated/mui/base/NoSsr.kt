@@ -1,9 +1,9 @@
 // Automatically generated - do not modify!
 
-@file:JsModule("@mui/core/NoSsr")
+@file:JsModule("@mui/base/NoSsr")
 @file:JsNonModule
 
-package mui.core
+package mui.base
 
 import kotlinext.js.ReadonlyArray
 
