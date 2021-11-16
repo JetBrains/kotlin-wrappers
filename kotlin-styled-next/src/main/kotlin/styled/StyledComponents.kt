@@ -32,7 +32,7 @@ inline fun CustomStyledProps.forwardCss(builder: CssBuilder) {
 
 inline fun CustomStyledProps.forwardCss(props: CustomStyledProps) {
     css?.let { c ->
-        props.css = (props.css ?: CssBuilder(allowClasses = false)).apply {
+        props.css = (props.css ?: CssBuilder(isHolder = true)).apply {
             append(c)
         }
     }
@@ -93,7 +93,7 @@ fun <P : PropsWithClassName> styled(type: ElementType<P>): RBuilder.(StyledHandl
 }
 
 inline fun CustomStyledProps.css(noinline handler: RuleSet) {
-    css = (css ?: CssBuilder(allowClasses = false)).apply(handler)
+    css = (css ?: CssBuilder(isHolder = true)).apply(handler)
 }
 
 @Suppress("NOTHING_TO_INLINE")
