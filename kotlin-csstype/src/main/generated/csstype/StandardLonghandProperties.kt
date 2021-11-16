@@ -2382,9 +2382,9 @@ external interface StandardLonghandProperties {
      *
      * **Initial value**: `normal`
      *
-     *    | Chrome | Firefox | Safari | Edge | IE  |
-     *    | :----: | :-----: | :----: | :--: | :-: |
-     *    |   No   |   No    |   9    |  No  | No  |
+     *    | Chrome | Firefox |   Safari    | Edge | IE  |
+     *    | :----: | :-----: | :---------: | :--: | :-: |
+     *    |   No   |   No    |       9′    |  No  | No  |
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/initial-letter">MDN</a>
      */
@@ -4243,9 +4243,9 @@ external interface StandardLonghandProperties {
      *
      * **Initial value**: `0`
      *
-     *    | Chrome | Firefox |  Safari  | Edge | IE  |
-     *    | :----: | :-----: | :------: | :--: | :-: |
-     *    |   No   |   68    |   14.1   |  No  | No  |
+     *    | Chrome | Firefox |  Safari  |  Edge  | IE  |
+     *    | :----: | :-----: | :------: | :----: | :-: |
+     *    |   69   |   68    |   14.1   |   79   | No  |
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/scroll-margin-inline">MDN</a>
      */
@@ -4336,9 +4336,9 @@ external interface StandardLonghandProperties {
      *
      * **Initial value**: `auto`
      *
-     *    | Chrome | Firefox | Safari |  Edge  | IE  |
-     *    | :----: | :-----: | :----: | :----: | :-: |
-     *    |   69   |   68    |   11   |   79   | No  |
+     *    | Chrome | Firefox |  Safari  |  Edge  | IE  |
+     *    | :----: | :-----: | :------: | :----: | :-: |
+     *    |   69   |   68    |   14.1   |   79   | No  |
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/scroll-padding">MDN</a>
      */
@@ -4396,9 +4396,9 @@ external interface StandardLonghandProperties {
      *
      * **Initial value**: `auto`
      *
-     *    | Chrome | Firefox | Safari |  Edge  | IE  |
-     *    | :----: | :-----: | :----: | :----: | :-: |
-     *    |   69   |   68    |   11   |   79   | No  |
+     *    | Chrome | Firefox |  Safari  |  Edge  | IE  |
+     *    | :----: | :-----: | :------: | :----: | :-: |
+     *    |   69   |   68    |   14.1   |   79   | No  |
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/scroll-padding-bottom">MDN</a>
      */
@@ -4456,9 +4456,9 @@ external interface StandardLonghandProperties {
      *
      * **Initial value**: `auto`
      *
-     *    | Chrome | Firefox | Safari |  Edge  | IE  |
-     *    | :----: | :-----: | :----: | :----: | :-: |
-     *    |   69   |   68    |   11   |   79   | No  |
+     *    | Chrome | Firefox |  Safari  |  Edge  | IE  |
+     *    | :----: | :-----: | :------: | :----: | :-: |
+     *    |   69   |   68    |   14.1   |   79   | No  |
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/scroll-padding-left">MDN</a>
      */
@@ -4471,9 +4471,9 @@ external interface StandardLonghandProperties {
      *
      * **Initial value**: `auto`
      *
-     *    | Chrome | Firefox | Safari |  Edge  | IE  |
-     *    | :----: | :-----: | :----: | :----: | :-: |
-     *    |   69   |   68    |   11   |   79   | No  |
+     *    | Chrome | Firefox |  Safari  |  Edge  | IE  |
+     *    | :----: | :-----: | :------: | :----: | :-: |
+     *    |   69   |   68    |   14.1   |   79   | No  |
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/scroll-padding-right">MDN</a>
      */
@@ -4486,9 +4486,9 @@ external interface StandardLonghandProperties {
      *
      * **Initial value**: `auto`
      *
-     *    | Chrome | Firefox | Safari |  Edge  | IE  |
-     *    | :----: | :-----: | :----: | :----: | :-: |
-     *    |   69   |   68    |   11   |   79   | No  |
+     *    | Chrome | Firefox |  Safari  |  Edge  | IE  |
+     *    | :----: | :-----: | :------: | :----: | :-: |
+     *    |   69   |   68    |   14.1   |   79   | No  |
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/scroll-padding-top">MDN</a>
      */
@@ -4642,9 +4642,9 @@ external interface StandardLonghandProperties {
      *
      * **Initial value**: `auto`
      *
-     *    | Chrome | Firefox | Safari | Edge | IE  |
-     *    | :----: | :-----: | :----: | :--: | :-: |
-     *    |  n/a   |   No    |   No   |  No  | No  |
+     *    | Chrome | Firefox | Safari |  Edge  | IE  |
+     *    | :----: | :-----: | :----: | :----: | :-: |
+     *    |   94   |   No    |   No   |   94   | No  |
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/scrollbar-gutter">MDN</a>
      */

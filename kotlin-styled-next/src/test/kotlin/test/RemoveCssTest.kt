@@ -13,11 +13,11 @@ import org.w3c.dom.HTMLElement
 import react.Props
 import react.fc
 import runTest
+import styleSheets.StaticStyleSheet
 import styled.animation
 import styled.css
 import styled.styledDiv
 import styled.styledSpan
-import styleSheets.StaticStyleSheet
 import unmount
 import waitForAnimationFrame
 import kotlin.test.BeforeTest
@@ -30,10 +30,11 @@ class RemoveCssTest : TestBase() {
     private val thirdRoot by lazy { createDOMElement() }
     private var staticStyleSheet = StaticStyleSheet()
 
-    private fun TestScope.injectAdditional(component: Component, root: HTMLElement = secondRoot): Element {
+    private suspend fun TestScope.injectAdditional(component: Component, root: HTMLElement = secondRoot): Element {
         renderComponent(component, root)
         val element = root.firstElementChild
         assertNotNull(element)
+        waitForAnimationFrame()
         return element
     }
 

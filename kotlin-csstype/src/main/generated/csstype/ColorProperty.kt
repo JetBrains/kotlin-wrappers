@@ -9,6 +9,5 @@ sealed external interface ColorProperty :
     CaretColor,
     Outline,
     OutlineColor,
-    ScrollbarColor,
     TextDecoration,
     TextEmphasis

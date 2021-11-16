@@ -8,9 +8,9 @@ import org.w3c.dom.css.CSSStyleSheet
 import react.Props
 import react.fc
 import runTest
+import styleSheets.*
 import styled.*
 import styled.sheets.importStyleId
-import styleSheets.*
 import kotlin.test.BeforeTest
 import kotlin.test.Test
 import kotlin.test.assertContains
@@ -41,7 +41,7 @@ class StyleSheetTest : TestBase() {
     }
 
     @Test
-    fun styleSheetInjectedWithoutComponent() = runTest {
+    fun injectedWithoutComponent() = runTest {
         CssBuilder().apply {
             +staticStyleSheet.property1
         }
@@ -106,7 +106,7 @@ class StyleSheetTest : TestBase() {
     }
 
     @Test
-    fun styleSheetStatic() = runTest {
+    fun static() = runTest {
         val styledComponent = fc<Props> {
             styledSpan {
                 css {
@@ -130,7 +130,7 @@ class StyleSheetTest : TestBase() {
     }
 
     @Test
-    fun styleSheetSpecific() = runTest {
+    fun specific() = runTest {
         val styledComponent = fc<Props> {
             styledSpan {
                 css {
@@ -201,7 +201,7 @@ class StyleSheetTest : TestBase() {
     }
 
     @Test
-    fun styleSheetGetClassname() = runTest {
+    fun getClassnameInjects() = runTest {
         val expectedColor = rgb(3, 4, 5).toString()
         val styledComponent = fc<Props> {
             styledSpan {
