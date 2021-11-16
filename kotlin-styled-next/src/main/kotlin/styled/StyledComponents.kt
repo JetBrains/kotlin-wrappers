@@ -23,19 +23,18 @@ typealias SPANBuilder = StyledDOMBuilder<SPAN>.() -> Unit
 typealias INPUTBuilder = StyledDOMBuilder<INPUT>.() -> Unit
 
 external interface CustomStyledProps : Props {
-    var css: ArrayList<RuleSet>?
+    var css: CssBuilder?
 }
 
 inline fun CustomStyledProps.forwardCss(builder: CssBuilder) {
-    css?.forEach { it(builder) }
+    css?.let { builder.append(it) }
 }
 
 inline fun CustomStyledProps.forwardCss(props: CustomStyledProps) {
-    css?.forEach { c ->
-        if (props.css == null) {
-            props.css = ArrayList()
+    css?.let { c ->
+        props.css = (props.css ?: CssBuilder(allowClasses = false)).apply {
+            append(c)
         }
-        props.css!!.add(c)
     }
 }
 
@@ -94,48 +93,90 @@ fun <P : PropsWithClassName> styled(type: ElementType<P>): RBuilder.(StyledHandl
 }
 
 inline fun CustomStyledProps.css(noinline handler: RuleSet) {
-    if (css == null) {
-        css = ArrayList()
-    }
-    css!!.add(handler)
+    css = (css ?: CssBuilder(allowClasses = false)).apply(handler)
 }
 
 @Suppress("NOTHING_TO_INLINE")
 inline fun <P : CustomStyledProps> RElementBuilder<P>.css(noinline handler: RuleSet) = attrs.css(handler)
 
-
 internal external interface StyledProps : PropsWithClassName {
-    var styledCss: StyledCss
-    var classes: List<String>
+    var css: CssBuilder
+
+    // keep track of used stylesheets
+    var classes: String
 }
+
+typealias ClassNameState = HashSet<ClassName>
 
 internal fun customStyled(type: dynamic): ElementType<StyledProps> {
     val fc = forwardRef<StyledProps> { props, rRef ->
-        val styledCss = props.styledCss
+        val css = props.css
         val classes = props.classes
 
-        val generatedClasses = if (isDevelopment()) useState<HashSet<String>?>(hashSetOf()) else null
-        val classNames = useMemo(styledCss, classes) {
-            val selfClassName = GlobalStyles.getInjectedClassNames(styledCss, classes)
-            if (generatedClasses != null) {
-                GlobalStyles.checkGeneratedCss(generatedClasses, selfClassName, type.toString())
+        val generatedClasses = if (isDevelopment()) useState<ClassNameState?>(hashSetOf()) else null
+        var className = useStructMemo(css) {
+            cleanup {
+                GlobalStyles.removeStyles(css)
             }
-            (classes + selfClassName).joinToString(" ")
+            GlobalStyles.getInjectedClassNames(css).also { selfClassName ->
+                generatedClasses?.checkGeneratedCss(selfClassName, type.toString())
+            }
         }
 
-        useEffect(styledCss) {
-            cleanup { GlobalStyles.removeStyles(styledCss) }
+        useEffect(classes) {
+            // Heuristics for tracking when new stylesheet was used
+            // If element's stylesheets has changed - inject all the pending stylesheets
+            GlobalStyles.injectScheduled()
         }
 
         val newProps = clone(props)
-        newProps.className = (if (props.className != undefined) props.className + " " else "") + classNames
+        if (classes.isNotEmpty()) {
+            className = "$className $classes"
+        }
+        if (props.className != undefined) {
+            className = "${props.className} $className"
+        }
+        newProps.className = className
         newProps.ref = rRef
-        delete(newProps.styledCss)
+        delete(newProps.css)
         delete(newProps.classes)
         child(createElement(type.unsafeCast<ElementType<StyledProps>>(), newProps))
     }
     fc.asDynamic().displayName = "styled${type.toString().replaceFirstChar { it.titlecase() }}"
     return fc
+}
+
+/**
+ * Show a warning when too many css blocks are created for one component
+ */
+internal fun StateInstance<ClassNameState?>.checkGeneratedCss(className: ClassName, type: String) {
+    val (classes, setClasses) = this
+    // Message was already shown
+    if (classes == null) return
+
+    val maxStylesForElement = 50
+    val size = classes.size
+    classes.add(className)
+    if (classes.size > maxStylesForElement) {
+        console.warn(
+            "Over $maxStylesForElement were generated for $type. Consider using inline styles for frequently changed styles:\n\n" +
+                    "styledDiv {\n" +
+                    "    inlineStyles {\n" +
+                    "        width = 100.px\n" +
+                    "        backgroundColor = Color.blue\n" +
+                    "    }\n" +
+                    "}\n"
+        )
+        setClasses(null)
+    } else {
+        if (size != classes.size) {
+            setClasses(classes)
+        }
+    }
+}
+
+internal fun List<String>.toClassName(): String {
+    return this.joinToString(" ")
 }
 
 object Styled {
@@ -149,8 +190,8 @@ object Styled {
     fun createElement(type: Any, css: CssBuilder, props: PropsWithClassName, children: List<ReactNode>): ReactElement {
         val wrappedType = wrap(type)
         val styledProps = props.unsafeCast<StyledProps>()
-        styledProps.styledCss = css.toStyledCss()
-        styledProps.classes = css.classes
+        styledProps.css = css
+        styledProps.classes = css.classes.toClassName()
         return createElement(wrappedType, styledProps, *children.toTypedArray())
     }
 }
