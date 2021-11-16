@@ -22,6 +22,13 @@ external fun rawUseLayoutEffect(
     dependencies: Dependencies = definedExternally,
 )
 
+// Insertion Effect Hook (18.0+)
+@JsName("useInsertionEffect")
+external fun rawUseInsertionEffect(
+    effect: () -> Cleanup?,
+    dependencies: Dependencies = definedExternally,
+)
+
 // Callback Hook (16.8+)
 @JsName("useCallback")
 external fun <T : Function<*>> rawUseCallback(
