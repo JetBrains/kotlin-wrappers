@@ -155,6 +155,7 @@ sealed external interface GlobalsType :
     ScrollSnapAlign,
     ScrollSnapStop,
     ScrollSnapType,
+    ScrollbarColor,
     ScrollbarGutter,
     ScrollbarWidth,
     ShapeOutside,

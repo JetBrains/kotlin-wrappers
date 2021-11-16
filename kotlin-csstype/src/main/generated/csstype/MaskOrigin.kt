@@ -8,12 +8,15 @@
 package csstype
 
 // language=JavaScript
-@JsName("""(/*union*/{borderBox: 'border-box', contentBox: 'content-box', paddingBox: 'padding-box', marginBox: 'margin-box'}/*union*/)""")
+@JsName("""(/*union*/{borderBox: 'border-box', contentBox: 'content-box', paddingBox: 'padding-box', fillBox: 'fill-box', marginBox: 'margin-box', strokeBox: 'stroke-box', viewBox: 'view-box'}/*union*/)""")
 sealed external interface MaskOrigin {
     companion object {
         val borderBox: MaskOrigin
         val contentBox: MaskOrigin
         val paddingBox: MaskOrigin
+        val fillBox: MaskOrigin
         val marginBox: MaskOrigin
+        val strokeBox: MaskOrigin
+        val viewBox: MaskOrigin
     }
 }
