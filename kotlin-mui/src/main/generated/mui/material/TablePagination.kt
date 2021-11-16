@@ -49,7 +49,7 @@ external interface TablePaginationProps : react.Props {
      *
      * For localization purposes, you can use the provided [translations](/guides/localization/).
      * @default function defaultLabelDisplayedRows({ from, to, count }) {
-     *   return `${from}-${to} of ${count !== -1 ? count : `more than ${to}`}`;
+     *   return `${from}–${to} of ${count !== -1 ? count : `more than ${to}`}`;
      * }
      */
     var labelDisplayedRows: ((paginationInfo: LabelDisplayedRowsArgs) -> react.ReactNode)?

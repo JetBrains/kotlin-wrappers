@@ -3,11 +3,11 @@
 package mui.material
 
 external interface SelectClasses {
-    /** Styles applied to the root element. */
-    var root: String
-
     /** Styles applied to the select component `select` class. */
     var select: String
+
+    /** Styles applied to the select component if `multiple={true}`. */
+    var multiple: String
 
     /** Styles applied to the select component if `variant="filled"`. */
     var filled: String
