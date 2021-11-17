@@ -352,4 +352,36 @@ class ElementTest : TestBase() {
         val element = clearAndInject(styledComponent)
         assertCssInjected(element.className, "-webkit-box-align" to "center")
     }
+
+    @Test
+    fun specificLinearClassnameGrowth() = runTest {
+        val styledComponent = fc<Props> {
+            styledSpan {
+                css {
+                    backgroundColor = firstColor
+                    color = firstColor
+
+                    specific { // ".ksc-x.ksc-x"
+                        backgroundColor = secondColor
+                        color = secondColor
+                        specific { // ".ksc-x.ksc-x.ksc-x"
+                            color = thirdColor
+                        }
+                    }
+                }
+            }
+        }
+        val element = clearAndInject(styledComponent)
+        val linearClassName = ".${element.className}".repeat(3)
+        val linearCss = getRules().find { it.cssText.contains(linearClassName) }
+        assertNotNull(linearCss)
+
+        val exponentialClassName = ".${element.className}".repeat(4)
+        val exponentialCss = getRules().find { it.cssText.contains(exponentialClassName) }
+        assertNull(exponentialCss)
+
+        assertCssInjected(linearClassName, "color" to thirdColor.toString())
+        assertEquals(secondColor.toString(), element.getStyle().backgroundColor)
+        assertEquals(thirdColor.toString(), element.color())
+    }
 }
