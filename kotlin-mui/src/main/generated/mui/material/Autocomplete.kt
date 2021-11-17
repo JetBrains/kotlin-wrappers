@@ -138,7 +138,7 @@ external interface AutocompleteProps<T> : react.Props {
      * The component used to position the popup.
      * @default Popper
      */
-    var PopperComponent: react.ComponentType<mui.core.PopperProps>?
+    var PopperComponent: react.ComponentType<PopperProps>?
 
     /**
      * The icon to display in place of the default popup icon.
