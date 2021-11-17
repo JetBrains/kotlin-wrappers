@@ -2,15 +2,21 @@ package example
 
 import react.Props
 import react.RBuilder
+import react.createElement
 import react.dom.*
 import react.fc
-import react.router.dom.*
+import react.router.Route
+import react.router.Routes
+import react.router.dom.BrowserRouter
+import react.router.dom.Link
+import react.router.useLocation
+import react.router.useParams
 
 val Home = fc<Props> { h2 { +"Home" } }
 val About = fc<Props> { h2 { +"About" } }
 
 val Topics = fc<Props> {
-    val match = useRouteMatch()
+    val location = useLocation()
 
     div {
         h2 { +"Topics" }
@@ -18,26 +24,28 @@ val Topics = fc<Props> {
         ul {
             li {
                 Link {
-                    attrs.to = "${match.url}/components"
+                    attrs.to = "/components"
                     +"Components"
                 }
             }
             li {
                 Link {
-                    attrs.to = "${match.url}/props-v-state"
+                    attrs.to = "/props-v-state"
                     +"Props v. State"
                 }
             }
         }
 
-        Switch {
+        Routes {
             Route {
-                attrs.path = arrayOf("${match.path}/:topicId")
-                attrs.component = Topic
+                attrs.path = "${location.pathname}/:topicId"
+                attrs.element = createElement(Topic)
             }
             Route {
-                attrs.path = arrayOf(match.path)
-                h3 { +"Please select a topic." }
+                attrs.path = location.pathname
+                attrs.element = createElement {
+                    h3 { +"Please select a topic." }
+                }
             }
         }
     }
@@ -73,18 +81,18 @@ fun RBuilder.appWithRouter() {
                 }
             }
 
-            Switch {
+            Routes {
                 Route {
-                    attrs.path = arrayOf("/about")
-                    attrs.component = About
+                    attrs.path = "/about"
+                    attrs.element = createElement(About)
                 }
                 Route {
-                    attrs.path = arrayOf("/topics")
-                    attrs.component = Topics
+                    attrs.path = "/topics"
+                    attrs.element = createElement(Topics)
                 }
                 Route {
-                    attrs.path = arrayOf("/")
-                    attrs.component = Home
+                    attrs.path = "/"
+                    attrs.element = createElement(Home)
                 }
             }
         }
