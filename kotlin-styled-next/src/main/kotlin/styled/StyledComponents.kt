@@ -124,8 +124,8 @@ internal fun customStyled(type: dynamic): ElementType<StyledProps> {
         }
 
         useEffect(classes) {
-            // Heuristics for tracking when new stylesheet was used
-            // If element's stylesheets has changed - inject all the pending stylesheets
+            // A heuristic for tracking the usage of a new stylesheet
+            // If the element's stylesheets have changed, inject all pending stylesheets
             GlobalStyles.injectScheduled()
         }
 

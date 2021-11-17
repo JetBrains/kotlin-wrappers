@@ -26,7 +26,7 @@ interface RuleContainer {
             if (foundRule == null) {
                 resolvedRules[it.selector] = Rule(it.selector, css = CssBuilder().apply { append(it.css) })
             } else {
-                // if css with the selector already exists - append new css to the old one
+                // if CSS with the selector already exists, append new CSS to the old one
                 foundRule.css.append(it.css)
             }
         }

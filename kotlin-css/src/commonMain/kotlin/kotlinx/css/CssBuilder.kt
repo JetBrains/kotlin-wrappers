@@ -1,13 +1,19 @@
 package kotlinx.css
 
-fun CssBuilder(indent: String = "", allowClasses: Boolean = true, parent: RuleContainer? = null, isHolder: Boolean = false): CssBuilder = CssBuilderImpl(indent, allowClasses, parent, isHolder)
+fun CssBuilder(
+    indent: String = "",
+    allowClasses: Boolean = true,
+    parent: RuleContainer? = null,
+    isHolder: Boolean = false
+): CssBuilder = CssBuilderImpl(indent, allowClasses, parent, isHolder)
 
 interface CssBuilder : StyledElement, RuleContainer {
     val allowClasses: Boolean
     var parent: RuleContainer?
     val classes: MutableList<String>
     val styleName: MutableList<String>
-    // Indicates that the builder holds CSS for the further use (forwarding, etc.)
+
+    // Indicates that the builder holds CSS for further use (forwarding, etc.)
     val isHolder: Boolean
 
     operator fun String.invoke(block: RuleSet) = rule(this, passStaticClassesToParent = false, block = block)
