@@ -10,5 +10,5 @@ package react.router.dom
  * URLSearchParams interface.
  */
 external fun useSearchParams(
-    defaultInit: URLSearchParamsInit = definedExternally,
-): kotlinext.js.Tuple<org.w3c.dom.url.URLSearchParams, (nextInit: URLSearchParamsInit, navigateOptions: react.router.NavigateOptions?) -> Unit>
+    defaultInit: org.w3c.dom.url.URLSearchParams = definedExternally,
+): SearchParamsInstance
