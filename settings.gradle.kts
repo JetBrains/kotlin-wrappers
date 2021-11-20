@@ -39,6 +39,9 @@ include("kotlin-history")
 // Kotlin/JS: Material UI wrappers
 include("kotlin-mui")
 
+// Kotlin/JS: Popper wrappers
+include("kotlin-popper")
+
 // Kotlin/JS: React wrappers
 include("kotlin-react")
 
