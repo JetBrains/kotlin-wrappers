@@ -99,9 +99,9 @@ demonstrates how to add typings for an external library.
 
 8. [A full-stack demo application](https://github.com/mkraynov/kfsad) written in Kotlin for JetBrains Night Moscow 2019.
 
-9. An [example of using react-table](https://github.com/garagum/kotlin-react-table-sample) that shows how to use react-table with hooks API.
+9. An [example of using react-table](https://github.com/karakum-team/kotlin-react-table-sample) that shows how to use react-table with hooks API.
 
-10. An [example of using Material UI](https://github.com/garagum/kotlin-mui-showcase).
+10. An [example of using Material UI](https://github.com/karakum-team/kotlin-mui-showcase).
 
 Follow these examples to learn how to start developing your React apps with Kotlin. Good luck and have fun! 
 You also can clone [my-kotlin-react-sample](https://github.com/ScottHuangZL/my-kotlin-app) to see the result directly.
