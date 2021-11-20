@@ -24,7 +24,7 @@ external interface History {
      *
      * @see https://github.com/ReactTraining/history/tree/master/docs/api-reference.md#history.location
      */
-    val location: history.Location
+    val location: Location
 
     /**
      * Returns a valid href for the given `to` value that may be used as

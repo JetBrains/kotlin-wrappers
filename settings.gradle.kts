@@ -33,6 +33,9 @@ include("kotlin-emotion")
 // Kotlin/JS: various helpers
 include("kotlin-extensions")
 
+// Kotlin/JS: History wrappers
+include("kotlin-history")
+
 // Kotlin/JS: Material UI wrappers
 include("kotlin-mui")
 
