@@ -48,15 +48,15 @@ val Application = fc<Props> {
                 attrs.path = "/issues"
                 attrs.element = createElement(IssuesPage)
             }
-
-            Route {
-                attrs.path = "/issues"
-                attrs.element = createElement(IssuesPage)
-            }
-
+            
             Route {
                 attrs.path = "/pulls"
                 attrs.element = createElement(PullRequestsPage)
+            }
+
+            Route {
+                attrs.path = "/settings"
+                attrs.element = createElement(SettingsPage)
             }
         }
     }
