@@ -5,7 +5,7 @@ package react.popper
 
 import org.w3c.dom.Element
 import org.w3c.dom.HTMLElement
-import popper.PopperOptions
+import popper.core.PopperOptions
 
 external interface UsePopperOptions<Modifiers> : PopperOptions<Modifiers>
 

@@ -1,3 +1,3 @@
-package popper
+package popper.core
 
 external interface State

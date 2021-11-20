@@ -1,4 +1,4 @@
-package popper
+package popper.core
 
 import kotlin.js.Promise
 
