@@ -9,6 +9,8 @@ private val TARGET_ALIASES = mapOf(
     "@mui/material" to "mui",
     "@mui/lab" to "mui-lab",
 
+    "@popperjs/core" to "popper",
+
     "@jetbrains/ring-ui" to "ring-ui",
 )
 
