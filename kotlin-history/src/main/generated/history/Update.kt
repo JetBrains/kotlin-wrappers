@@ -14,5 +14,5 @@ external interface Update {
     /**
      * The new location.
      */
-    var location: history.Location
+    var location: Location
 }
