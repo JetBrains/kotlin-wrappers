@@ -29,14 +29,14 @@ external interface PopperChildrenProps : Props {
     var arrowProps: PopperArrowProps
 }
 
-external interface PopperProps<Modifiers> : Props {
+external interface PopperProps : Props {
     var children: FC<PopperChildrenProps>
     var innerRef: Ref<*>
-    var modifiers: ReadonlyArray<Modifier<Modifiers>>
+    var modifiers: ReadonlyArray<Modifier<*>>
     var placement: Placement
     var strategy: PositioningStrategy
     var referenceElement: HTMLElement // or PopperJS.VirtualElement
     var onFirstUpdate: (state: State) -> Unit
 }
 
-external val Popper: ComponentClass<PopperProps<*>>
+external val Popper: ComponentClass<PopperProps>
