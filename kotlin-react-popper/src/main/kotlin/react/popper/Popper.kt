@@ -5,9 +5,9 @@ package react.popper
 
 import kotlinext.js.ReadonlyArray
 import org.w3c.dom.HTMLElement
-import popper.Modifier
-import popper.Placement
-import popper.PositioningStrategy
+import popper.core.Modifier
+import popper.core.Placement
+import popper.core.PositioningStrategy
 import react.*
 import kotlin.js.Promise
 

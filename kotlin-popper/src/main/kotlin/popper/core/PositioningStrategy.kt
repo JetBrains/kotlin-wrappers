@@ -1,4 +1,4 @@
-package popper
+package popper.core
 
 @Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
 // language=JavaScript

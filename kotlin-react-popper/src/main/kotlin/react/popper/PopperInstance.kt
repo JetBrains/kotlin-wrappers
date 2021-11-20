@@ -1,9 +1,9 @@
 package react.popper
 
 import kotlinext.js.Record
-import popper.ForceUpdate
-import popper.State
-import popper.Update
+import popper.core.ForceUpdate
+import popper.core.State
+import popper.core.Update
 import react.CSSProperties
 import react.Props
 
