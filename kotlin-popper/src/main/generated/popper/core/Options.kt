@@ -6,5 +6,5 @@ external interface Options {
     var placement: Placement
     var modifiers: kotlinext.js.ReadonlyArray<Modifier<*>>
     var strategy: PositioningStrategy
-    var onFirstUpdate: ((State) -> Unit)?
+    var onFirstUpdate: UpdateCallback?
 }
