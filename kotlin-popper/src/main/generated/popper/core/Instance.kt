@@ -7,5 +7,5 @@ external interface Instance {
     var destroy: () -> Unit
     var forceUpdate: () -> Unit
     var update: () -> kotlin.js.Promise<State>
-    var setOptions: (OptionsGeneric<*>) -> kotlin.js.Promise<State>
+    var setOptions: (SetAction<OptionsGeneric<*>>) -> kotlin.js.Promise<State>
 }
