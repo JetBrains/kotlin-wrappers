@@ -42,3 +42,11 @@ external fun <T> rawUseMemo(
     callback: () -> T,
     dependencies: Dependencies,
 ): T
+
+// Imperative Handle Hook (16.8+)
+@JsName("useImperativeHandle")
+external fun <T : Any> rawUseImperativeHandle(
+    ref: Ref<T>?,
+    init: () -> T?,
+    dependencies: Dependencies,
+)
