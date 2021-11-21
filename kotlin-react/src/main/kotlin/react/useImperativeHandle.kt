@@ -1,5 +1,4 @@
-@file:JsModule("react")
-@file:JsNonModule
+@file:Suppress("NOTHING_TO_INLINE")
 
 package react
 
@@ -9,8 +8,9 @@ package react
  * Only works inside [fc]
  * @see <a href="https://reactjs.org/docs/hooks-state.html#hooks-and-function-components">Hooks and Function Components</a>
  */
-external fun useImperativeHandle(
-    ref: Ref<*>,
-    createInstance: () -> dynamic,
-    dependencies: Dependencies,
-)
+inline fun  <T : Any> useImperativeHandle(
+    ref: Ref<T>?,
+    vararg dependencies: dynamic,
+    noinline init: () -> T?,
+) =
+    rawUseImperativeHandle(ref, init, dependencies)
