@@ -2,4 +2,4 @@
 
 package popper.core
 
-external interface ModifierName<Options> : Name
+external interface Name
