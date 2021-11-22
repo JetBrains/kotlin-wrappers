@@ -7,16 +7,16 @@ external interface ProviderProps<T> : PropsWithChildren {
     var value: T
 }
 
-external interface Provider<T> : ComponentType<ProviderProps<T>>
+sealed external interface Provider<T> : ComponentType<ProviderProps<T>>
 
 external interface ConsumerProps<T> : Props {
     var children: (T) -> ReactNode?
 }
 
-external interface Consumer<T> : ComponentType<ConsumerProps<T>>
+sealed external interface Consumer<T> : ComponentType<ConsumerProps<T>>
 
 // Context (16.3+)
-external interface Context<T> {
+sealed external interface Context<T> {
     val Provider: Provider<T>
     val Consumer: Consumer<T>
 }

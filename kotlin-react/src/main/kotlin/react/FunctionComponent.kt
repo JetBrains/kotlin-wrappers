@@ -2,7 +2,7 @@
 
 package react
 
-external interface FunctionComponent<in P : Props> :
+sealed external interface FunctionComponent<in P : Props> :
     ComponentType<P> {
     var displayName: String?
 }

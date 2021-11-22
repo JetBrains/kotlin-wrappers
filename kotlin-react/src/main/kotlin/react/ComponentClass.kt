@@ -3,7 +3,7 @@ package react
 import kotlin.reflect.KClass
 
 // TODO: Should extend RComponentClassStatics, but has problems with generic params
-external interface ComponentClass<in P : Props> :
+sealed external interface ComponentClass<in P : Props> :
     ComponentType<P>,
     RComponentClassStatics<Props, State, Context<*>?>
 

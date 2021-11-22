@@ -2,7 +2,7 @@
 
 package react
 
-external interface IntrinsicType<in P : Props> : ElementType<P>
+sealed external interface IntrinsicType<in P : Props> : ElementType<P>
 
 inline fun <P : Props> IntrinsicType(
     tagName: String,
