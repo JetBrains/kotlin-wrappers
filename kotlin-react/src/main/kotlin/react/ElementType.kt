@@ -1,3 +1,3 @@
 package react
 
-external interface ElementType<in P : Props>
+sealed external interface ElementType<in P : Props>
