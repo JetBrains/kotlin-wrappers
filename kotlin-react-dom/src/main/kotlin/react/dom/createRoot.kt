@@ -4,20 +4,19 @@
 package react.dom
 
 import org.w3c.dom.Element
-import react.ReactElement
 
 // See https://reactjs.org/docs/react-dom.html
 
 // 18.0+
 external fun createRoot(
-    container: Element?,
-    options: ReactRootOptions? = definedExternally,
-): ReactRoot
+    container: Element,
+    options: RootOptions? = definedExternally,
+): Root
 
-external interface ReactRoot {
-    fun render(element: dynamic): ReactElement
+external interface Root {
+    fun render(element: dynamic)
 }
 
-external interface ReactRootOptions {
+external interface RootOptions {
     var hydrate: Boolean
 }
