@@ -4,7 +4,9 @@
 package react
 
 external interface ReactElement : ReactNode {
+    val type: ElementType<*>
     val props: Props
+    val key: Key?
 }
 
 external fun <P : Props> createElement(
