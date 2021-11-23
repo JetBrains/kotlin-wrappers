@@ -1,11 +1,21 @@
 package react.dom
 
 import org.w3c.dom.Element
+import react.ReactElement
 import react.Render
 import react.createElement
 
-fun render(container: Element?, callback: () -> Unit = {}, handler: Render) =
-    render(createElement(handler), container, callback)
+fun render(
+    container: Element,
+    callback: () -> Unit = {},
+    handler: Render,
+) {
+    render(
+        element = createElement(handler),
+        container = container,
+        callback = callback,
+    )
+}
 
 // 18.0+
 // TODO rename to render() after React 18 is released
@@ -18,8 +28,23 @@ fun renderIntoRoot(
         .render(createElement(handler))
 }
 
-fun hydrate(container: Element?, callback: () -> Unit = {}, handler: Render) =
-    hydrate(createElement(handler), container, callback)
+fun hydrate(
+    container: Element,
+    callback: () -> Unit = {},
+    handler: Render,
+) {
+    hydrate(
+        element = createElement(handler),
+        container = container,
+        callback = callback,
+    )
+}
 
-fun createPortal(container: Element?, handler: Render) =
-    createPortal(createElement(handler), container)
+fun createPortal(
+    container: Element,
+    handler: Render,
+): ReactElement =
+    createPortal(
+        element = createElement(handler),
+        container = container,
+    )

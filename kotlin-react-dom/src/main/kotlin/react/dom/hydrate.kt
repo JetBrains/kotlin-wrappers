@@ -9,6 +9,6 @@ import org.w3c.dom.Element
 
 external fun hydrate(
     element: dynamic,
-    container: Element?,
+    container: Element,
     callback: () -> Unit = definedExternally,
 )

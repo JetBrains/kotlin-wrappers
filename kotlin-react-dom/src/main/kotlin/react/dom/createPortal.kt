@@ -10,5 +10,5 @@ import react.ReactElement
 
 external fun createPortal(
     element: dynamic,
-    container: Element?,
+    container: Element,
 ): ReactElement
