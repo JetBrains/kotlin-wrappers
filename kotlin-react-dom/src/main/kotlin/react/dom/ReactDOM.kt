@@ -21,10 +21,9 @@ fun render(
 // TODO rename to render() after React 18 is released
 fun renderIntoRoot(
     container: Element,
-    options: RootOptions? = null,
     handler: Render,
 ) {
-    createRoot(container, options)
+    createRoot(container)
         .render(createElement(handler))
 }
 
