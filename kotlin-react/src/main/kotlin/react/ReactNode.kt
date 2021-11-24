@@ -2,8 +2,6 @@
 
 package react
 
-import kotlinext.js.asJsObject
-
 sealed external interface ReactNode
 
 inline fun ReactNode(string: String): ReactNode =
@@ -12,8 +10,7 @@ inline fun ReactNode(string: String): ReactNode =
 fun ReactNode.asStringOrNull(): String? =
     asDynamic() as? String
 
-fun ReactNode.asElementOrNull(): ReactElement? = when {
-    asJsObject().hasOwnProperty("\$\$typeof") -> unsafeCast<ReactElement>()
-    else -> null
-}
-
+fun ReactNode.asElementOrNull(): ReactElement? =
+    if (isValidElement(this)) {
+        unsafeCast<ReactElement>()
+    } else null
