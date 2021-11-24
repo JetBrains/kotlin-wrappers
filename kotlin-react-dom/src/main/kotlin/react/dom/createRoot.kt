@@ -11,7 +11,3 @@ import org.w3c.dom.Element
 external fun createRoot(
     container: Element,
 ): Root
-
-external interface Root {
-    fun render(element: dynamic)
-}
