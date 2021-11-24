@@ -4,7 +4,7 @@ package react
 
 import kotlinext.js.asJsObject
 
-external interface ReactNode
+sealed external interface ReactNode
 
 inline fun ReactNode(string: String): ReactNode =
     string.unsafeCast<ReactNode>()
