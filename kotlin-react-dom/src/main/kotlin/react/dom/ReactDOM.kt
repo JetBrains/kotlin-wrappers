@@ -21,10 +21,13 @@ fun render(
 // TODO rename to render() after React 18 is released
 fun renderIntoRoot(
     container: Element,
-    handler: Render,
+    block: Render,
 ) {
+    val children = createElement(block)
+        ?: return
+
     createRoot(container)
-        .render(createElement(handler))
+        .render(children)
 }
 
 fun hydrate(
