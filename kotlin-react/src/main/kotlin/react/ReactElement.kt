@@ -3,7 +3,7 @@
 
 package react
 
-external interface ReactElement : ReactNode {
+sealed external interface ReactElement : ReactNode {
     val type: ElementType<*>
     val props: Props
     val key: Key?
