@@ -10,13 +10,8 @@ import org.w3c.dom.Element
 // 18.0+
 external fun createRoot(
     container: Element,
-    options: RootOptions? = definedExternally,
 ): Root
 
 external interface Root {
     fun render(element: dynamic)
-}
-
-external interface RootOptions {
-    var hydrate: Boolean
 }
