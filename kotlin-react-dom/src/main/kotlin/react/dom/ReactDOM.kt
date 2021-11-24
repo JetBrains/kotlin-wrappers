@@ -1,7 +1,7 @@
 package react.dom
 
 import org.w3c.dom.Element
-import react.ReactElement
+import react.ReactPortal
 import react.Render
 import react.createElement
 
@@ -43,7 +43,7 @@ fun hydrate(
 fun createPortal(
     container: Element,
     handler: Render,
-): ReactElement =
+): ReactPortal =
     createPortal(
         element = createElement(handler),
         container = container,
