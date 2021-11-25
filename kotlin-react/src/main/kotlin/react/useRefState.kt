@@ -3,9 +3,9 @@
 
 package react
 
-import kotlinext.js.Tuple
+import kotlinext.js.JsPair
 
 // [Example](https://popper.js.org/react-popper/v2/#example)
 
 @JsName("useState")
-external fun <T : Any> useRefState(): Tuple<T?, RefCallback<T>>
+external fun <T : Any> useRefState(): JsPair<T?, RefCallback<T>>
