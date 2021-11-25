@@ -11,6 +11,11 @@ data class UsedCssInfo(
     val groupId: Int,
 )
 
+data class CssInfo(
+    val isFresh: Boolean,
+    val className: ClassName,
+)
+
 internal typealias InjectedCssHolder = LinkedHashMap<CssBuilder, UsedCssInfo>
 
 /**
@@ -135,22 +140,20 @@ object GlobalStyles {
     }
 
     /**
-     * @return pair of generated class name and a list of CSS class names, declared in [css].
-     * If the CSS code for the [css] was not injected into the DOM previously, it is injected after function call.
+     * @return css info - flag showing if [css] has not been injected and generated class name.
      */
-    internal fun getInjectedClassNames(css: CssBuilder): ClassName {
+    internal fun getInjectedClassNames(css: CssBuilder): CssInfo {
         val info = styledClasses[css]
         return if (info != null) {
             info.usedBy++
-            info.className
+            CssInfo(isFresh = false, info.className)
         } else {
             val className = "ksc-$incrementedClassName"
             val selector = ".$className"
             val rules = css.getCssRules(selector)
             val groupId = sheet.scheduleToInject(rules)
             styledClasses[css] = UsedCssInfo(className, 1, groupId)
-            injectScheduled()
-            className
+            CssInfo(isFresh = true, className)
         }
     }
 }

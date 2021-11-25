@@ -1,16 +1,10 @@
 package styled
 
-import kotlinext.js.clone
-import kotlinext.js.delete
-import kotlinext.js.jso
-import kotlinx.css.CssBuilder
-import kotlinx.css.CssDsl
-import kotlinx.css.RuleSet
+import kotlinext.js.*
+import kotlinx.css.*
 import kotlinx.html.*
 import react.*
-import react.dom.DOMProps
-import react.dom.RDOMBuilder
-import react.dom.RDOMBuilderImpl
+import react.dom.*
 
 typealias AnyTagStyledBuilder = StyledDOMBuilder<CommonAttributeGroupFacade>
 typealias AnyBuilder = AnyTagStyledBuilder.() -> Unit
@@ -114,16 +108,24 @@ internal fun customStyled(type: dynamic): ElementType<StyledProps> {
         val classes = props.classes
 
         val generatedClasses = if (isDevelopment()) useState<ClassNameState?>(hashSetOf()) else null
-        var className = useStructMemo(css) {
-            cleanup {
-                GlobalStyles.removeStyles(css)
-            }
-            GlobalStyles.getInjectedClassNames(css).also { selfClassName ->
+        var (isFresh, className) = useStructMemo(css) {
+            GlobalStyles.getInjectedClassNames(css).also { (_, selfClassName) ->
                 generatedClasses?.checkGeneratedCss(selfClassName, type.toString())
             }
         }
 
-        useEffect(classes) {
+        // className and isFresh are used as dependencies because they have primitive types and easily comparable in js
+        // This hook works because className changes every time when [css] is changed, so every [css] is captured exactly once
+        useCustomInsertionEffect(isFresh, className) {
+            if (isFresh) {
+                GlobalStyles.injectScheduled()
+            }
+            cleanup {
+                GlobalStyles.removeStyles(css)
+            }
+        }
+
+        useCustomInsertionEffect(classes) {
             // A heuristic for tracking the usage of a new stylesheet
             // If the element's stylesheets have changed, inject all pending stylesheets
             GlobalStyles.injectScheduled()
