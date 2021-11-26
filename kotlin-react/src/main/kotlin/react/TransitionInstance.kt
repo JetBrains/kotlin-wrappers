@@ -2,9 +2,9 @@
 
 package react
 
-import kotlinext.js.Tuple
+import kotlinext.js.JsPair
 
 typealias TransitionFunction = () -> Unit
 typealias TransitionStartFunction = (callback: TransitionFunction) -> Unit
 
-typealias TransitionInstance = Tuple<Boolean, TransitionStartFunction>
+typealias TransitionInstance = JsPair<Boolean, TransitionStartFunction>
