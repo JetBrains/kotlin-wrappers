@@ -7,6 +7,7 @@ private val TARGET_ALIASES = mapOf(
     "@emotion/css" to "emotion-css",
 
     "@mui/material" to "mui",
+    "@mui/icons-material" to "mui-icons",
     "@mui/lab" to "mui-lab",
 
     "@popperjs/core" to "popper",
