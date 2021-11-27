@@ -2,6 +2,22 @@ package styled
 
 import react.*
 
+internal fun <T> useStructMemo(vararg dependencies: dynamic, callback: () -> T): T {
+    return rawUseMemo(getMemoizedCallback(dependencies, callback), dependencies)
+}
+
+@JsModule("react")
+@JsNonModule
+external object ReactModule
+
+internal fun useCustomInsertionEffect(vararg dependencies: dynamic, effect: EffectBuilder.() -> Unit) {
+    if (ReactModule.asDynamic().useInsertionEffect != undefined) {
+        useInsertionEffect(*dependencies, effect = effect)
+    } else {
+        useLayoutEffect(*dependencies, effect = effect)
+    }
+}
+
 private data class MemoizedResult<T>(
     val args: Array<out dynamic>,
     val value: T,
@@ -12,30 +28,27 @@ private data class MemoizedResult<T>(
     }
 }
 
-internal fun <T> useStructMemo(vararg dependencies: dynamic, callback: EffectBuilder.() -> T): T {
-    return rawUseMemo(getMemoizedCallback(dependencies, callback), dependencies)!!
+private fun <T> MutableRefObject<MemoizedResult<T>>.runCallback(
+    callback: () -> T,
+    args: Array<out dynamic>
+): T {
+    current?.apply {
+        if (argsEqual(args)) return value
+    }
+    val cleanups = arrayOf<Cleanup>()
+    return callback().also { result ->
+        current = MemoizedResult(args, result, cleanups)
+    }
 }
 
-internal fun <T> getMemoizedCallback(
+
+private fun <T> getMemoizedCallback(
     args: Array<out dynamic>,
-    callback: EffectBuilder.() -> T,
+    callback: () -> T,
 ): () -> T {
     val prevResultRef = useRef<MemoizedResult<T>>(null)
-    useEffect(prevResultRef) {
-        cleanup {
-            prevResultRef.current?.cleanup()
-        }
-    }
     return {
-        val prevResult = prevResultRef.current
-        val equal = prevResult.argsEqual(args)
-        if (prevResult != null && equal) prevResult.value else {
-            prevResult?.cleanup()
-            val cleanups = arrayOf<Cleanup>()
-            callback(cleanups.unsafeCast<EffectBuilder>()).also { result ->
-                prevResultRef.current = MemoizedResult(args, result, cleanups)
-            }
-        }
+        prevResultRef.runCallback(callback, args)
     }
 }
 
