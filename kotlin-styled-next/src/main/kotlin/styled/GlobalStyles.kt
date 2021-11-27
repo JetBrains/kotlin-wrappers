@@ -140,7 +140,7 @@ object GlobalStyles {
     }
 
     /**
-     * @return css info - flag showing if [css] has not been injected and generated class name.
+     * @return CssInfo, consisting of a flag showing whether [css] has been injected, and a generated a class name
      */
     internal fun getInjectedClassNames(css: CssBuilder): CssInfo {
         val info = styledClasses[css]
