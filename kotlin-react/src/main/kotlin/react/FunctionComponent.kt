@@ -2,40 +2,19 @@
 
 package react
 
-external interface FunctionComponent<in P : Props> :
-    ComponentType<P> {
-    var displayName: String?
-}
-
-
-typealias FC<P> = FunctionComponent<P>
+@Deprecated(
+    message = "Legacy alias for FC",
+    replaceWith = ReplaceWith("react.FC"),
+)
+typealias FunctionComponent<P> = FC<P>
 
 /**
  * Get function component from [func]
  */
-fun <P : Props> fc(
-    func: RBuilder.(props: P) -> Unit,
-): FC<P> {
-    val component = { props: P ->
-        createElement {
-            func(props)
-        }
-    }
-    return component.unsafeCast<FC<P>>()
-}
-
-/**
- * Get function component from [func] with [displayName]
- */
-fun <P : Props> fc(
-    displayName: String,
-    func: RBuilder.(props: P) -> Unit,
-): FC<P> =
-    fc(func).also { it.displayName = displayName }
-
-/**
- * Get function component from [func]
- */
+@Deprecated(
+    message = "Legacy alias for fc",
+    replaceWith = ReplaceWith("react.fc"),
+)
 inline fun <P : Props> functionComponent(
     noinline func: RBuilder.(props: P) -> Unit,
 ): FC<P> =
@@ -44,6 +23,10 @@ inline fun <P : Props> functionComponent(
 /**
  * Get function component from [func] with [displayName]
  */
+@Deprecated(
+    message = "Legacy alias for fc",
+    replaceWith = ReplaceWith("react.fc"),
+)
 inline fun <P : Props> functionComponent(
     displayName: String,
     noinline func: RBuilder.(props: P) -> Unit,
