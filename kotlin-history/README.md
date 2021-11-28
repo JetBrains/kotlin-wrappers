@@ -2,7 +2,7 @@
 
 ## kotlin-history
 
-Kotlin wrappers for [History library](https://github.com/remix-run/history).
+Kotlin wrapper for [History library](https://github.com/remix-run/history).
 
 ### Internals
 

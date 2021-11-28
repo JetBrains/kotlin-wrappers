@@ -2,7 +2,7 @@
 
 ## kotlin-react-table
 
-Kotlin wrappers for [React Table](https://github.com/tannerlinsley/react-table) library.
+Kotlin wrapper for [React Table](https://github.com/tannerlinsley/react-table) library.
 
 ### Maven
 

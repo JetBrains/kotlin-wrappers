@@ -2,7 +2,7 @@
 
 # kotlin-mui
 
-Kotlin wrappers for [Material UI](https://mui.com/).
+Kotlin wrapper for [Material UI](https://mui.com/).
 
 ## Example
 

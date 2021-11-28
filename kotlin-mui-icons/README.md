@@ -2,7 +2,7 @@
 
 # kotlin-mui-icons
 
-Kotlin wrappers for [Material UI Icons](https://mui.com/components/icons/).
+Kotlin wrapper for [Material UI Icons](https://mui.com/components/icons/).
 
 ## Example
 
