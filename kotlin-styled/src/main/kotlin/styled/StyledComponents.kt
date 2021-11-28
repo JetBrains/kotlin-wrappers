@@ -65,7 +65,7 @@ class StyledElementBuilderImpl<P : PropsWithClassName>(
     override val type: ElementType<P>,
     attrs: P = jso(),
 ) : StyledElementBuilder<P>, RElementBuilderImpl<P>(attrs) {
-    override val css = CssBuilder()
+    override val css = CssBuilder(isStyledComponent = true)
 
     override fun create() = Styled.createElement(type, css, attrs, childList)
 }
@@ -84,7 +84,7 @@ interface StyledDOMBuilder<out T : Tag> : RDOMBuilder<T>, StyledBuilder<DOMProps
 
 class StyledDOMBuilderImpl<out T : Tag>(factory: (TagConsumer<Unit>) -> T) : StyledDOMBuilder<T>,
     RDOMBuilderImpl<T>(factory) {
-    override val css = CssBuilder()
+    override val css = CssBuilder(isStyledComponent = true)
 }
 
 typealias StyledHandler<P> = StyledElementBuilder<P>.() -> Unit
@@ -204,7 +204,7 @@ private fun <T> devOverrideUseRef(action: () -> T): T {
  * @deprecated Use [createGlobalStyle] instead
  */
 fun injectGlobal(handler: CssBuilder.() -> Unit) {
-    injectGlobal(CssBuilder().apply { handler() }.toString())
+    injectGlobal(CssBuilder(isStyledComponent = true).apply { handler() }.toString())
 }
 
 object Styled {

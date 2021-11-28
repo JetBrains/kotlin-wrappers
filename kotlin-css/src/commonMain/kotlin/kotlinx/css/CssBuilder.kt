@@ -4,8 +4,9 @@ fun CssBuilder(
     indent: String = "",
     allowClasses: Boolean = true,
     parent: RuleContainer? = null,
-    isHolder: Boolean = false
-): CssBuilder = CssBuilderImpl(indent, allowClasses, parent, isHolder)
+    isHolder: Boolean = false,
+    isStyledComponent: Boolean = false
+): CssBuilder = CssBuilderImpl(indent, allowClasses, parent, isHolder, isStyledComponent)
 
 interface CssBuilder : StyledElement, RuleContainer {
     val allowClasses: Boolean
@@ -15,6 +16,9 @@ interface CssBuilder : StyledElement, RuleContainer {
 
     // Indicates that the builder holds CSS for further use (forwarding, etc.)
     val isHolder: Boolean
+
+    // Indicates that the builder was created by kotlin-styled (legacy)
+    val isStyledComponent: Boolean
 
     operator fun String.invoke(block: RuleSet) = rule(this, passStaticClassesToParent = false, block = block)
 
@@ -92,9 +96,10 @@ interface CssBuilder : StyledElement, RuleContainer {
         return selectorString(block)
     }
 
-    // Temporarily using && here because of a bug introduced in version 5.2: https://github.com/styled-components/styled-components/issues/3244#issuecomment-687676703
     fun ancestorHover(vararg selector: String, block: RuleSet): Rule {
-        val selectorString = selector.joinToString { "$it:hover &&" }
+        // https://github.com/styled-components/styled-components/issues/3244#issuecomment-687676703
+        val selectorRef = if (isStyledComponent) "&&" else "&"
+        val selectorString = selector.joinToString { "$it:hover $selectorRef" }
         return selectorString(block)
     }
 
@@ -165,9 +170,10 @@ interface CssBuilder : StyledElement, RuleContainer {
 
     fun specific(specificity: Int = 2, block: RuleSet) = rule("&".repeat(specificity), passStaticClassesToParent = true, block = block)
 
-    // Temporarily using && here because of a bug introduced in version 5.2: https://github.com/styled-components/styled-components/issues/3244#issuecomment-687676703
     fun prefix(vararg selector: String, block: RuleSet): Rule {
-        val selectorString = selector.joinToString { "$it &&" }
+        // https://github.com/styled-components/styled-components/issues/3244#issuecomment-687676703
+        val selectorRef = if (isStyledComponent) "&&" else "&"
+        val selectorString = selector.joinToString { "$it $selectorRef" }
         return selectorString(block)
     }
 
@@ -253,6 +259,7 @@ open class CssBuilderImpl(
     override val allowClasses: Boolean = true,
     override var parent: RuleContainer? = null,
     override val isHolder: Boolean = false,
+    override val isStyledComponent: Boolean = false
 ) : CssBuilder {
     override val classes = mutableListOf<String>()
     override fun RuleSet.unaryPlus() = this()

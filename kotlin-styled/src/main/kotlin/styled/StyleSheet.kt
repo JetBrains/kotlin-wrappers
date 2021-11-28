@@ -34,7 +34,7 @@ open class StyleSheet(var name: String, val isStatic: Boolean = false) {
                     cssHolder.properties.map { it to cssHolder }
                 }
 
-            val builder = CssBuilder(allowClasses = false).apply {
+            val builder = CssBuilder(allowClasses = false, isStyledComponent = true).apply {
                 keys.forEach {
                     ".${getClassName(it.first)}" {
                         for (r in it.second.ruleSets) {
