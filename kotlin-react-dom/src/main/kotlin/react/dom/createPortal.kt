@@ -4,6 +4,7 @@
 package react.dom
 
 import org.w3c.dom.Element
+import react.Key
 import react.ReactPortal
 
 // See https://reactjs.org/docs/react-dom.html
@@ -11,4 +12,5 @@ import react.ReactPortal
 external fun createPortal(
     element: dynamic,
     container: Element,
+    key: Key? = definedExternally,
 ): ReactPortal
