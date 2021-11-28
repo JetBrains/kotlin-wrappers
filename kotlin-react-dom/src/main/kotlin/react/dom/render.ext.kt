@@ -1,7 +1,6 @@
 package react.dom
 
 import org.w3c.dom.Element
-import react.ReactPortal
 import react.Render
 import react.createElement
 
@@ -29,24 +28,3 @@ fun renderIntoRoot(
     createRoot(container)
         .render(children)
 }
-
-fun hydrate(
-    container: Element,
-    callback: () -> Unit = {},
-    handler: Render,
-) {
-    hydrate(
-        element = createElement(handler),
-        container = container,
-        callback = callback,
-    )
-}
-
-fun createPortal(
-    container: Element,
-    handler: Render,
-): ReactPortal =
-    createPortal(
-        element = createElement(handler),
-        container = container,
-    )
