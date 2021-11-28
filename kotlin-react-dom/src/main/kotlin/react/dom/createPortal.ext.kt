@@ -10,6 +10,6 @@ fun createPortal(
     handler: Render,
 ): ReactPortal =
     createPortal(
-        element = createElement(handler),
+        children = createElement(handler)!!,
         container = container,
     )
