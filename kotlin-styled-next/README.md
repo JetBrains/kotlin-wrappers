@@ -4,7 +4,14 @@
 
 This is a reimplementation of `kotlin-styled` in pure Kotlin that doesn't use styled-components. It is designed to be a
 drop-in replacement for `kotlin-styled`. It's currently feature-complete and its performance characteristics are very
-similar to `kotlin-styled`, but we are still testing and fine-tuning it.
+similar to `kotlin-styled`.
+
+In development mode it is superior to `kotlin-styled` because CSSOM API is used by default with an ability to fall back
+to `<style>` insertion during run time (see **Debugging** below).
+
+React 18 (`useInsertionEffect`) is already supported by `kotlin-styled-next`.
+
+To sum it up, if you're using `kotlin-styled`, we recommend switching to `kotlin-styled-next`.
 
 ### Maven
 
