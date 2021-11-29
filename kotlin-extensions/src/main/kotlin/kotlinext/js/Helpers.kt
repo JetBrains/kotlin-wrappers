@@ -5,13 +5,7 @@ package kotlinext.js
 inline fun <T : Any> jso(): T =
     js("({})")
 
-inline fun <T : Any> jsObject(): T =
-    jso()
-
 inline fun <T : Any> jso(builder: T.() -> Unit): T =
-    jso<T>().apply(builder)
-
-inline fun <T : Any> jsObject(builder: T.() -> Unit): T =
     jso<T>().apply(builder)
 
 inline fun js(builder: dynamic.() -> Unit): dynamic = jso(builder)
