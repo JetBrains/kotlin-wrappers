@@ -80,10 +80,10 @@ external interface SnackbarProps :
      * The `reason` parameter can optionally be used to control the response to `onClose`,
      * for example ignoring `clickaway`.
      *
-     * @param {React.SyntheticEvent<any>} event The event source of the callback.
-     * @param {string} reason Can be: `"timeout"` (`autoHideDuration` expired), `"clickaway"`.
+     * @param {React.SyntheticEvent<any> | Event} event The event source of the callback.
+     * @param {string} reason Can be: `"timeout"` (`autoHideDuration` expired), `"clickaway"`, or `"escapeKeyDown"`.
      */
-    var onClose: ((event: react.dom.events.SyntheticEvent<*, *>, reason: SnackbarCloseReason) -> Unit)?
+    var onClose: dynamic
 
     /**
      * If `true`, the component is shown.
