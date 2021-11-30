@@ -16,7 +16,8 @@ external interface VirtualOptions<T : Any> {
     var overscan: Int
     var horizontal: Boolean
     var scrollToFn: (offset: Int, defaultScrollToFn: (offset: Int) -> Unit) -> Unit
-    var useObserver: (parentRef: Ref<T>) -> Size
+    var useObserver: (parentRef: Ref<T>, initialRect: Size?) -> Size
+    var initialRect: Size
     var paddingStart: Int
     var paddingEnd: Int
     var onScrollElement: Ref<HTMLElement>
