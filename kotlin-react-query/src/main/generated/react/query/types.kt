@@ -31,6 +31,7 @@ external interface UseMutationOptions<TData, TError, TVariables, TContext> {
     var retry: RetryValue<TError>
     var retryDelay: RetryDelayValue<TError>
     var useErrorBoundary: (error: TError) -> Boolean
+    var meta: MutationMeta
 }
 
 typealias UseMutateFunction<TData, TError, TVariables, TContext> = (variables: TVariables, options: MutateOptions<TData, TError, TVariables, TContext>?) -> Unit

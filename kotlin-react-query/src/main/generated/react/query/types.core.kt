@@ -299,6 +299,8 @@ sealed external interface InfiniteQueryObserverResult<TData, TError>
 
 typealias MutationKey = Union /* string | readonly unknown[] */
 
+typealias MutationMeta = Any
+
 typealias MutationFunction<TData, TVariables> = (variables: TVariables) -> kotlin.js.Promise<TData>
 
 external interface MutationOptions<TData, TError, TVariables, TContext> {
@@ -312,6 +314,7 @@ external interface MutationOptions<TData, TError, TVariables, TContext> {
     var retry: RetryValue<TError>
     var retryDelay: RetryDelayValue<TError>
     var _defaulted: Boolean
+    var meta: MutationMeta
 }
 
 external interface MutationObserverOptions<TData, TError, TVariables, TContext>

@@ -16,6 +16,7 @@ external interface MutationConfig<TData, TError, TVariables, TContext> {
     var options: MutationOptions<TData, TError, TVariables, TContext>
     var defaultOptions: MutationOptions<TData, TError, TVariables, TContext>
     var state: MutationState<TData, TError, TVariables, TContext>
+    var meta: MutationMeta
 }
 
 external interface MutationState<TData, TError, TVariables, TContext> {
@@ -67,6 +68,7 @@ open external class Mutation<TData, TError, TVariables, TContext>(config: Mutati
     open var state: MutationState<TData, TError, TVariables, TContext>
     open var options: MutationOptions<TData, TError, TVariables, TContext>
     open var mutationId: Int
+    open var meta: MutationMeta?
     open fun setState(state: MutationState<TData, TError, TVariables, TContext>)
     open fun addObserver(observer: MutationObserver<*, *, *, *>)
     open fun removeObserver(observer: MutationObserver<*, *, *, *>)
