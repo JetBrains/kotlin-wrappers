@@ -41,7 +41,11 @@ open external class QueryObserver<TQueryFnData, TError, TData, TQueryData, TQuer
 
     open fun getOptimisticResult(options: QueryObserverOptions<TQueryFnData, TError, TData, TQueryData, TQueryKey>): QueryObserverResult<TData, TError>
     open fun getCurrentResult(): QueryObserverResult<TData, TError>
-    open fun trackResult(result: QueryObserverResult<TData, TError>): QueryObserverResult<TData, TError>
+    open fun trackResult(
+        result: QueryObserverResult<TData, TError>,
+        defaultedOptions: QueryObserverOptions<TQueryFnData, TError, TData, TQueryData, TQueryKey>,
+    ): QueryObserverResult<TData, TError>
+
     open fun getNextResult(options: ResultOptions = definedExternally): kotlin.js.Promise<QueryObserverResult<TData, TError>>
     open fun getCurrentQuery(): Query<TQueryFnData, TError, TQueryData, TQueryKey>
     open fun remove()

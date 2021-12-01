@@ -46,6 +46,7 @@ external fun isCancelledError(value: Any): Boolean /* value is CancelledError */
 open external class Retryer<TData, TError>(config: RetryerConfig<TData, TError>) {
     open var cancel: (options: CancelOptions?) -> Unit
     open var cancelRetry: () -> Unit
+    open var continueRetry: () -> Unit
     open var `continue`: () -> Unit
     open var failureCount: Int
     open var isPaused: Boolean
