@@ -93,7 +93,7 @@ inline fun CustomStyledProps.css(noinline handler: RuleSet) {
 @Suppress("NOTHING_TO_INLINE")
 inline fun <P : CustomStyledProps> RElementBuilder<P>.css(noinline handler: RuleSet) = attrs.css(handler)
 
-internal external interface StyledProps : PropsWithClassName {
+internal external interface StyledProps : PropsWithClassName, PropsWithRef<Any> {
     var css: CssBuilder
 
     // keep track of used stylesheets
@@ -103,7 +103,7 @@ internal external interface StyledProps : PropsWithClassName {
 typealias ClassNameState = HashSet<ClassName>
 
 internal fun customStyled(type: dynamic): ElementType<StyledProps> {
-    val fc = forwardRef<StyledProps> { props, rRef ->
+    val fc = forwardRef<Any, StyledProps> { props, rRef ->
         val css = props.css
         val classes = props.classes
 
