@@ -3,5 +3,5 @@ plugins {
 }
 
 tasks.wrapper {
-    gradleVersion = "7.3"
+    gradleVersion = "7.3.1"
 }
