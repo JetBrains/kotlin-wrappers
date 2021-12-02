@@ -14,8 +14,6 @@ external interface BoxProps :
 
     var component: react.ElementType<*>?
 
-    var ref: react.Ref<*>?
-
     var sx: mui.system.SxProps<mui.system.Theme>?
 }
 
