@@ -4,7 +4,7 @@
 package react
 
 // Refs (16.3+)
-external interface Ref<out T : Any>
+external interface Ref<T : Any>
 
 external interface RefObject<out T : Any> : Ref<T> {
     val current: T?
