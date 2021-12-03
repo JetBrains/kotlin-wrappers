@@ -1,22 +1,10 @@
-@file:JsModule("react")
-@file:JsNonModule
-
 package react
 
 // Refs (16.3+)
-external interface Ref<in T : Any>
+sealed external interface Ref<in T : Any>
 
-external interface RefObject<T : Any> : Ref<T> {
-    val current: T?
+typealias RefObject<T> = MutableRefObject<out T>
+
+sealed external interface MutableRefObject<T : Any> : Ref<T> {
+    var current: T?
 }
-
-external interface MutableRefObject<T : Any> : RefObject<T> {
-    override var current: T?
-}
-
-external fun <T : Any> createRef(): RefObject<T>
-
-// Ref Hook (16.8+)
-external fun <T : Any> useRef(
-    initialValue: T? = definedExternally,
-): MutableRefObject<T>
