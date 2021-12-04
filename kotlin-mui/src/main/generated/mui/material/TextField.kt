@@ -5,13 +5,14 @@
 
 @file:Suppress(
     "VIRTUAL_MEMBER_HIDDEN",
+    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
 )
 
 package mui.material
 
 import kotlinext.js.ReadonlyArray
 
-external interface TextFieldProps : react.Props
+typealias TextFieldProps = BaseTextFieldProps
 
 external interface BaseTextFieldProps :
     mui.system.StandardProps,
@@ -180,8 +181,7 @@ external interface BaseTextFieldProps :
 }
 
 external interface StandardTextFieldProps :
-    BaseTextFieldProps,
-    TextFieldProps {
+    BaseTextFieldProps {
     /**
      * Callback fired when the value is changed.
      *
@@ -206,8 +206,7 @@ external interface StandardTextFieldProps :
 }
 
 external interface FilledTextFieldProps :
-    BaseTextFieldProps,
-    TextFieldProps {
+    BaseTextFieldProps {
     /**
      * Callback fired when the value is changed.
      *
@@ -232,8 +231,7 @@ external interface FilledTextFieldProps :
 }
 
 external interface OutlinedTextFieldProps :
-    BaseTextFieldProps,
-    TextFieldProps {
+    BaseTextFieldProps {
     /**
      * Callback fired when the value is changed.
      *
