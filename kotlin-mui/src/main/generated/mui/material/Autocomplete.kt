@@ -183,7 +183,7 @@ external interface AutocompleteProps<T> : react.Props {
      * @param {function} getTagProps A tag props getter.
      * @returns {ReactNode}
      */
-    var renderTags: dynamic
+    var renderTags: ((value: ReadonlyArray<T>, getTagProps: Function<*> /* AutocompleteRenderGetTagProps */) -> react.ReactNode)?
 
     /**
      * The size of the component.

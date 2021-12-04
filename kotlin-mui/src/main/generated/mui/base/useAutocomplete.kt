@@ -205,7 +205,7 @@ external interface UseAutocompleteProps<T> : react.Props {
      * @param {React.SyntheticEvent} event The event source of the callback.
      * @param {string} reason Can be: `"toggleInput"`, `"escape"`, `"selectOption"`, `"removeOption"`, `"blur"`.
      */
-    var onClose: dynamic
+    var onClose: ((event: react.dom.events.SyntheticEvent<*, *>, reason: AutocompleteCloseReason) -> Unit)?
 
     /**
      * Callback fired when the input value changes.
@@ -214,7 +214,11 @@ external interface UseAutocompleteProps<T> : react.Props {
      * @param {string} value The new value of the text input.
      * @param {string} reason Can be: `"input"` (user input), `"reset"` (programmatic change), `"clear"`.
      */
-    var onInputChange: dynamic
+    var onInputChange: ((
+        event: react.dom.events.SyntheticEvent<*, *>,
+        value: String,
+        reason: AutocompleteInputChangeReason,
+    ) -> Unit)?
 
     /**
      * Callback fired when the popup requests to be opened.
@@ -231,7 +235,11 @@ external interface UseAutocompleteProps<T> : react.Props {
      * @param {T} option The highlighted option.
      * @param {string} reason Can be: `"keyboard"`, `"auto"`, `"mouse"`.
      */
-    var onHighlightChange: dynamic
+    var onHighlightChange: ((
+        event: react.dom.events.SyntheticEvent<*, *>,
+        option: T?,
+        reason: AutocompleteHighlightChangeReason,
+    ) -> Unit)?
 
     /**
      * If `true`, the component is shown.
@@ -284,7 +292,12 @@ external interface UseAutocompleteProps<T> : react.Props {
      * @param {string} reason One of "createOption", "selectOption", "removeOption", "blur" or "clear".
      * @param {string} [details]
      */
-    var onChange: dynamic
+    var onChange: ((
+        event: react.dom.events.SyntheticEvent<*, *>,
+        value: dynamic,
+        reason: AutocompleteChangeReason,
+        details: AutocompleteChangeDetails<T>?,
+    ) -> Unit)?
 }
 
 external interface AutocompleteChangeDetails<T> {

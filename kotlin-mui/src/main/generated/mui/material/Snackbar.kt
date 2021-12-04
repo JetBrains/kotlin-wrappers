@@ -83,7 +83,7 @@ external interface SnackbarProps :
      * @param {React.SyntheticEvent<any> | Event} event The event source of the callback.
      * @param {string} reason Can be: `"timeout"` (`autoHideDuration` expired), `"clickaway"`, or `"escapeKeyDown"`.
      */
-    var onClose: dynamic
+    var onClose: ((event: react.dom.events.SyntheticEvent<*, *>, reason: SnackbarCloseReason) -> Unit)?
 
     /**
      * If `true`, the component is shown.
