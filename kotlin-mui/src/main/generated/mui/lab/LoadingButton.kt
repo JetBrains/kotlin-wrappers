@@ -6,11 +6,11 @@
 package mui.lab
 
 external interface LoadingButtonProps :
-    react.dom.html.ButtonHTMLAttributes<org.w3c.dom.HTMLButtonElement> {
+    mui.material.ButtonProps {
     /**
      * Override or extend the styles applied to the component.
      */
-    var classes: dynamic
+    override var classes: dynamic
 
     /**
      * If `true`, the loading indicator is shown.
@@ -33,7 +33,7 @@ external interface LoadingButtonProps :
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: mui.system.SxProps<mui.system.Theme>?
+    override var sx: mui.system.SxProps<mui.system.Theme>?
 }
 
 /**
