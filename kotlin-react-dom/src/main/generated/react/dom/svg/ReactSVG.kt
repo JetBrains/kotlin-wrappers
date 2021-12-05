@@ -14,8 +14,14 @@ object ReactSVG {
     inline val animate: IntrinsicType<SVGAttributes<SVGElement>>
         get() = "animate".unsafeCast<IntrinsicType<SVGAttributes<SVGElement>>>()
 
+    inline val animateMotion: IntrinsicType<SVGAttributes<SVGElement>>
+        get() = "animateMotion".unsafeCast<IntrinsicType<SVGAttributes<SVGElement>>>()
+
     inline val animateTransform: IntrinsicType<SVGAttributes<SVGElement>>
         get() = "animateTransform".unsafeCast<IntrinsicType<SVGAttributes<SVGElement>>>()
+
+    inline val circle: IntrinsicType<SVGAttributes<SVGCircleElement>>
+        get() = "circle".unsafeCast<IntrinsicType<SVGAttributes<SVGCircleElement>>>()
 
     inline val clipPath: IntrinsicType<SVGAttributes<SVGClipPathElement>>
         get() = "clipPath".unsafeCast<IntrinsicType<SVGAttributes<SVGClipPathElement>>>()
