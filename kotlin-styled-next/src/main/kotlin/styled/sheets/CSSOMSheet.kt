@@ -15,7 +15,7 @@ internal enum class RemoveMode { OnBrowserIdle, AfterTimeout, Instantly }
 internal class CSSOMSheet(
     val type: RuleType,
     val removeMode: RemoveMode = RemoveMode.OnBrowserIdle,
-    var cleanTimeout: Int = 30000
+    var cleanTimeout: Int = 30000,
 ) : AbstractSheet(type) {
     internal val sheet by lazy { appendStyleElement().sheet as CSSStyleSheet }
 

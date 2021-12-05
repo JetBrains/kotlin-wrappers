@@ -8,7 +8,7 @@ package react
  * Only works inside [fc]
  * @see <a href="https://reactjs.org/docs/hooks-state.html#hooks-and-function-components">Hooks and Function Components</a>
  */
-inline fun  <T : Any> useImperativeHandle(
+inline fun <T : Any> useImperativeHandle(
     ref: Ref<T>?,
     vararg dependencies: dynamic,
     noinline init: () -> T?,

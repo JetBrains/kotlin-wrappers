@@ -10,7 +10,7 @@ import react.RBuilder
 
 inline fun <T : Tag> RBuilder.styledTag(
     block: StyledDOMBuilder<T>.() -> Unit,
-    noinline factory: (TagConsumer<Unit>) -> T
+    noinline factory: (TagConsumer<Unit>) -> T,
 ) = child(StyledDOMBuilder(factory).apply(block).create())
 
 /* Main root */
@@ -27,13 +27,13 @@ inline fun RBuilder.styledLink(
     href: String? = null,
     rel: String? = null,
     type: String? = null,
-    block: StyledDOMBuilder<LINK>.() -> Unit
+    block: StyledDOMBuilder<LINK>.() -> Unit,
 ) = styledTag(block) { LINK(attributesMapOf("href", href, "rel", rel, "type", type), it) }
 
 inline fun RBuilder.styledMeta(
     name: String? = null,
     content: String? = null,
-    block: StyledDOMBuilder<META>.() -> Unit
+    block: StyledDOMBuilder<META>.() -> Unit,
 ) = styledTag(block) { META(attributesMapOf("name", name, "content", content), it) }
 
 inline fun RBuilder.styledStyle(type: String? = null, content: String = "") =
@@ -182,7 +182,7 @@ inline fun RBuilder.styledVar(block: StyledDOMBuilder<VAR>.() -> Unit) = styledT
 inline fun RBuilder.styledArea(
     shape: AreaShape? = null,
     alt: String? = null,
-    block: StyledDOMBuilder<AREA>.() -> Unit
+    block: StyledDOMBuilder<AREA>.() -> Unit,
 ) = styledTag(block) { AREA(attributesMapOf("Shape", shape?.enumEncode(), "alt", alt), it) }
 
 inline fun RBuilder.styledAudio(block: StyledDOMBuilder<AUDIO>.() -> Unit) = styledTag(block) { AUDIO(emptyMap, it) }
@@ -212,7 +212,7 @@ inline fun RBuilder.styledObject(block: StyledDOMBuilder<OBJECT>.() -> Unit) = s
 inline fun RBuilder.styledParam(
     name: String? = null,
     value: String? = null,
-    block: StyledDOMBuilder<PARAM>.() -> Unit
+    block: StyledDOMBuilder<PARAM>.() -> Unit,
 ) = styledTag(block) { PARAM(attributesMapOf("name", name, "value", value), it) }
 
 inline fun RBuilder.styledPicture(block: StyledDOMBuilder<PICTURE>.() -> Unit) =
@@ -240,7 +240,7 @@ inline fun RBuilder.styledNoscript(block: StyledDOMBuilder<NOSCRIPT>.() -> Unit)
 inline fun RBuilder.styledScript(
     type: String? = null,
     src: String? = null,
-    block: StyledDOMBuilder<SCRIPT>.() -> Unit
+    block: StyledDOMBuilder<SCRIPT>.() -> Unit,
 ) = styledTag(block) { SCRIPT(attributesMapOf("type", type, "src", src), it) }
 
 /* Demarcating edits */
@@ -280,7 +280,7 @@ inline fun RBuilder.styledButton(
     formEncType: ButtonFormEncType? = null,
     formMethod: ButtonFormMethod? = null,
     type: ButtonType? = null,
-    block: StyledDOMBuilder<BUTTON>.() -> Unit
+    block: StyledDOMBuilder<BUTTON>.() -> Unit,
 ) = styledTag(block) {
     BUTTON(
         attributesMapOf(
@@ -304,7 +304,7 @@ inline fun RBuilder.styledForm(
     action: String? = null,
     encType: FormEncType? = null,
     method: FormMethod? = null,
-    block: StyledDOMBuilder<FORM>.() -> Unit
+    block: StyledDOMBuilder<FORM>.() -> Unit,
 ) = styledTag(block) {
     FORM(
         attributesMapOf(
@@ -323,7 +323,7 @@ inline fun RBuilder.styledInput(
     formEncType: InputFormEncType? = null,
     formMethod: InputFormMethod? = null,
     name: String? = null,
-    block: StyledDOMBuilder<INPUT>.() -> Unit
+    block: StyledDOMBuilder<INPUT>.() -> Unit,
 ) = styledTag(block) {
     INPUT(
         attributesMapOf(
@@ -362,14 +362,14 @@ inline fun RBuilder.styledTextarea(
     rows: String? = null,
     cols: String? = null,
     wrap: TextAreaWrap? = null,
-    content: String = ""
+    content: String = "",
 ) = styledTag({ +content }) { TEXTAREA(attributesMapOf("rows", rows, "cols", cols, "wrap", wrap?.enumEncode()), it) }
 
 inline fun RBuilder.styledTextarea(
     rows: String? = null,
     cols: String? = null,
     wrap: TextAreaWrap? = null,
-    block: StyledDOMBuilder<TEXTAREA>.() -> Unit
+    block: StyledDOMBuilder<TEXTAREA>.() -> Unit,
 ) = styledTag(block) { TEXTAREA(attributesMapOf("rows", rows, "cols", cols, "wrap", wrap?.enumEncode()), it) }
 
 /* Interactive elements */

@@ -8,7 +8,7 @@ external interface Focusable {
     fun focus()
 }
 
-external interface FancyInputProps: PropsWithRef<Focusable>
+external interface FancyInputProps : PropsWithRef<Focusable>
 
 val FancyInput = forwardRef<Focusable, FancyInputProps> { _, forwardedRef ->
     val inputRef = useRef<HTMLInputElement>()

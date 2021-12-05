@@ -38,7 +38,7 @@ open class BenchmarkBase {
     protected fun runBenchmark(
         name: String,
         repeat: Int = 5,
-        run: suspend TestScope.() -> Duration
+        run: suspend TestScope.() -> Duration,
     ) = runTest {
         val durations = flowRepeat(count = repeat) { run() }.toList()
 
