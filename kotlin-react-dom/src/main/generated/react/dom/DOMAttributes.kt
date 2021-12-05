@@ -34,7 +34,7 @@ external interface DOMAttributes<T : Element> :
     var onBlurCapture: FocusEventHandler<T>?
 
     // Form Events
-    var onChange: FormEventHandler<T>?
+    // var onChange: FormEventHandler<T>?
     var onChangeCapture: FormEventHandler<T>?
     var onBeforeInput: FormEventHandler<T>?
     var onBeforeInputCapture: FormEventHandler<T>?
@@ -201,3 +201,9 @@ external interface DOMAttributes<T : Element> :
     var onTransitionEnd: TransitionEventHandler<T>?
     var onTransitionEndCapture: TransitionEventHandler<T>?
 }
+
+inline var <T : Element> DOMAttributes<T>.onChange: FormEventHandler<T>?
+    get() = asDynamic().onChange
+    set(value) {
+        asDynamic().onChange = value
+    }
