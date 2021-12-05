@@ -15,7 +15,5 @@ external interface SelectHTMLAttributes<T : Element> : HTMLAttributes<T> {
     var required: Boolean?
     var size: Int?
     var value: String?
-
-    @Suppress("VAR_TYPE_MISMATCH_ON_OVERRIDE")
-    override var onChange: ChangeEventHandler<T>?
+    var onChange: ChangeEventHandler<T>?
 }
