@@ -3,10 +3,6 @@
 @file:JsModule("@mui/material/SpeedDial")
 @file:JsNonModule
 
-@file:Suppress(
-    "VIRTUAL_MEMBER_HIDDEN",
-)
-
 package mui.material
 
 import kotlinext.js.ReadonlyArray
@@ -41,7 +37,7 @@ external interface SpeedDialProps :
      * If `true`, the SpeedDial is hidden.
      * @default false
      */
-    var hidden: Boolean?
+    override var hidden: Boolean?
 
     /**
      * Props applied to the [`Fab`](/api/fab/) element.

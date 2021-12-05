@@ -3,10 +3,6 @@
 @file:JsModule("@mui/material/Popover")
 @file:JsNonModule
 
-@file:Suppress(
-    "VIRTUAL_MEMBER_HIDDEN",
-)
-
 package mui.material
 
 import kotlinext.js.ReadonlyArray
@@ -102,7 +98,7 @@ external interface PopoverProps :
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: mui.system.SxProps<mui.system.Theme>?
+    override var sx: mui.system.SxProps<mui.system.Theme>?
 
     /**
      * This is the point on the popover which
