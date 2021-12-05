@@ -31,7 +31,7 @@ open class TestBase {
     protected fun TestScope.assertCssInjected(
         selector: String,
         strings: Iterable<String>,
-        rules: CSSRuleList = getRules()
+        rules: CSSRuleList = getRules(),
     ) {
         val checkedCss = StringBuilder()
         for (i in 0 until rules.length) {

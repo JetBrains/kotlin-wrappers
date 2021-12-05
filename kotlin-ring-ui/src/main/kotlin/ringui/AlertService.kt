@@ -15,14 +15,14 @@ external object AlertService {
         message: String,
         type: AlertType,
         timeout: Int = definedExternally,
-        options: AlertProps = definedExternally
+        options: AlertProps = definedExternally,
     ): Key
 
     fun addAlert(
         message: ReadonlyArray<ReactNode>,
         type: AlertType,
         timeout: Int = definedExternally,
-        options: AlertProps = definedExternally
+        options: AlertProps = definedExternally,
     ): Key
 
     fun error(message: String, timeout: Int): Key

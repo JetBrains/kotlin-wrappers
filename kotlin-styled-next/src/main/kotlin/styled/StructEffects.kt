@@ -21,7 +21,7 @@ internal fun useCustomInsertionEffect(vararg dependencies: dynamic, effect: Effe
 private data class MemoizedResult<T>(
     val args: Array<out dynamic>,
     val value: T,
-    val cleanups: Array<Cleanup>
+    val cleanups: Array<Cleanup>,
 ) {
     fun cleanup() {
         cleanups.forEach { it() }
@@ -30,7 +30,7 @@ private data class MemoizedResult<T>(
 
 private fun <T> MutableRefObject<MemoizedResult<T>>.runCallback(
     callback: () -> T,
-    args: Array<out dynamic>
+    args: Array<out dynamic>,
 ): T {
     current?.apply {
         if (argsEqual(args)) return value

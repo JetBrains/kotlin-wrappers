@@ -1,10 +1,16 @@
 package styled
 
-import kotlinext.js.*
-import kotlinx.css.*
+import kotlinext.js.clone
+import kotlinext.js.delete
+import kotlinext.js.jso
+import kotlinx.css.CssBuilder
+import kotlinx.css.CssDsl
+import kotlinx.css.RuleSet
 import kotlinx.html.*
 import react.*
-import react.dom.*
+import react.dom.DOMProps
+import react.dom.RDOMBuilder
+import react.dom.RDOMBuilderImpl
 
 typealias AnyTagStyledBuilder = StyledDOMBuilder<CommonAttributeGroupFacade>
 typealias AnyBuilder = AnyTagStyledBuilder.() -> Unit

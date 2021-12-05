@@ -26,7 +26,7 @@ class Import(private val url: String, private val types: List<String> = listOf()
 open class StyleSheet(
     var name: String,
     val isStatic: Boolean = false,
-    internal var imports: List<Import> = emptyList()
+    internal var imports: List<Import> = emptyList(),
 ) {
     private val holders: MutableList<CssHolder> = mutableListOf()
 

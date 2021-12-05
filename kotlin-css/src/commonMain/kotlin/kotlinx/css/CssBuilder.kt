@@ -5,7 +5,7 @@ fun CssBuilder(
     allowClasses: Boolean = true,
     parent: RuleContainer? = null,
     isHolder: Boolean = false,
-    isStyledComponent: Boolean = false
+    isStyledComponent: Boolean = false,
 ): CssBuilder = CssBuilderImpl(indent, allowClasses, parent, isHolder, isStyledComponent)
 
 interface CssBuilder : StyledElement, RuleContainer {
@@ -259,7 +259,7 @@ open class CssBuilderImpl(
     override val allowClasses: Boolean = true,
     override var parent: RuleContainer? = null,
     override val isHolder: Boolean = false,
-    override val isStyledComponent: Boolean = false
+    override val isStyledComponent: Boolean = false,
 ) : CssBuilder {
     override val classes = mutableListOf<String>()
     override fun RuleSet.unaryPlus() = this()
