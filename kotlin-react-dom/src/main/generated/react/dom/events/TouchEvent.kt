@@ -4,7 +4,7 @@ package react.dom.events
 
 import org.w3c.dom.Element
 
-external interface TouchEvent<T : Element> : UIEvent<T, NativeTouchEvent> {
+external interface TouchEvent<out T : Element> : UIEvent<T, NativeTouchEvent> {
     val altKey: Boolean
     val changedTouches: org.w3c.dom.TouchList
     val ctrlKey: Boolean

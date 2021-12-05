@@ -4,7 +4,7 @@ package react.dom.events
 
 import org.w3c.dom.Element
 
-external interface PointerEvent<T : Element> : MouseEvent<T, NativePointerEvent> {
+external interface PointerEvent<out T : Element> : MouseEvent<T, NativePointerEvent> {
     val pointerId: Int
     val pressure: Double
     val tangentialPressure: Double
