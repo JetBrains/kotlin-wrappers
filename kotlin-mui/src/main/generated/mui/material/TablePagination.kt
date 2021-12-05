@@ -41,7 +41,7 @@ external interface TablePaginationProps : react.Props {
      *   return `Go to ${type} page`;
      * }
      */
-    var getItemAriaLabel: dynamic
+    var getItemAriaLabel: ((type: mui.system.Union /* 'first' | 'last' | 'next' | 'previous' */) -> String)?
 
     /**
      * Customize the displayed rows label. Invoked with a `{ from, to, count, page }`

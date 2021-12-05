@@ -85,7 +85,7 @@ external interface ClockPickerClasses {
     var arrowSwitcher: String
 }
 
-external interface ExportedClockPickerProps : react.Props {
+external interface ExportedClockPickerProps<TDate> : react.Props {
     /**
      * 12h/24h view for hour selection clock.
      * @default false
@@ -115,5 +115,5 @@ external interface ExportedClockPickerProps : react.Props {
      *     time === null ? 'No time selected' : `Selected time is ${adapter.format(time, 'fullTime')}`
      *   }`
      */
-    var getClockLabelText: dynamic
+    var getClockLabelText: ((view: mui.system.Union /* ClockView */, time: TDate?, adapter: dynamic /* MuiPickersAdapter<TDate> */) -> String)?
 }

@@ -27,7 +27,11 @@ external interface PaginationProps : react.Props {
      * @param {bool} selected If true, the current page is selected.
      * @returns {string}
      */
-    var getItemAriaLabel: dynamic
+    var getItemAriaLabel: ((
+        type: mui.system.Union, /* 'page' | 'first' | 'last' | 'next' | 'previous' */
+        page: Number,
+        selected: Boolean,
+    ) -> String)?
 
     /**
      * Render the item.

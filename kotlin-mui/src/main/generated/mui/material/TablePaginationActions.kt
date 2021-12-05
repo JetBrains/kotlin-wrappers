@@ -23,7 +23,7 @@ external interface TablePaginationActionsProps : react.Props {
      * @param {string} type The link or button type to format ('first' | 'last' | 'next' | 'previous').
      * @returns {string}
      */
-    var getItemAriaLabel: dynamic
+    var getItemAriaLabel: (type: mui.system.Union /* 'first' | 'last' | 'next' | 'previous' */) -> String
 
     var nextIconButtonProps: IconButtonProps?
 
