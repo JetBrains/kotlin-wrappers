@@ -7,7 +7,10 @@ package mui.material
 
 import kotlinext.js.ReadonlyArray
 
-external interface AutocompleteProps<T> : react.Props {
+external interface AutocompleteProps<T> :
+    mui.base.UseAutocompleteProps<T>,
+    mui.system.StandardProps,
+    react.dom.html.HTMLAttributes<org.w3c.dom.HTMLDivElement> {
     /**
      * Props applied to the [`Chip`](/api/chip/) element.
      */
