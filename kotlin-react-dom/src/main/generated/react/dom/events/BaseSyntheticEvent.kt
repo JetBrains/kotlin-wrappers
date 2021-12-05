@@ -2,7 +2,7 @@
 
 package react.dom.events
 
-external interface BaseSyntheticEvent<E : Any, C : Any, T : Any> {
+external interface BaseSyntheticEvent<out E : Any, out C : Any, out T : Any> {
     val nativeEvent: E
     val currentTarget: C
     val target: T

@@ -4,7 +4,7 @@ package react.dom.events
 
 import org.w3c.dom.Element
 
-external interface KeyboardEvent<T : Element> : UIEvent<T, NativeKeyboardEvent> {
+external interface KeyboardEvent<out T : Element> : UIEvent<T, NativeKeyboardEvent> {
     val altKey: Boolean
 
     @Deprecated("Will be removed soon!")
