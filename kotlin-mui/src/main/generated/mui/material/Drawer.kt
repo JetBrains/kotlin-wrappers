@@ -3,10 +3,6 @@
 @file:JsModule("@mui/material/Drawer")
 @file:JsNonModule
 
-@file:Suppress(
-    "VIRTUAL_MEMBER_HIDDEN",
-)
-
 package mui.material
 
 import kotlinext.js.ReadonlyArray
@@ -70,7 +66,7 @@ external interface DrawerProps :
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: mui.system.SxProps<mui.system.Theme>?
+    override var sx: mui.system.SxProps<mui.system.Theme>?
 
     /**
      * The duration for the transition, in milliseconds.

@@ -3,10 +3,6 @@
 @file:JsModule("@mui/material/Collapse")
 @file:JsNonModule
 
-@file:Suppress(
-    "VIRTUAL_MEMBER_HIDDEN",
-)
-
 package mui.material
 
 import kotlinext.js.ReadonlyArray
@@ -20,7 +16,7 @@ external interface CollapseProps :
      */
     override var children: ReadonlyArray<react.ReactNode>?
 
-    var className: String?
+    override var className: String?
 
     /**
      * Override or extend the styles applied to the component.
