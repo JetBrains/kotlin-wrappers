@@ -5,7 +5,7 @@ package react
 sealed external interface RefCallback<in T : Any> : Ref<T>
 
 inline fun <T : Any> RefCallback(
-    callback: (T?) -> Unit,
+    noinline callback: (T?) -> Unit,
 ): RefCallback<T> =
     callback.unsafeCast<RefCallback<T>>()
 
