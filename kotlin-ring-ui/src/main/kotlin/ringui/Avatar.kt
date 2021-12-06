@@ -5,11 +5,12 @@ package ringui
 
 import react.ComponentClass
 import react.PropsWithClassName
+import react.PropsWithStyle
 
 external interface AvatarProps : PropsWithClassName {
     var dpr: Double
     var size: Double
-    var style: dynamic
+    var style: PropsWithStyle
     var url: String
     var round: Boolean?
     var subavatar: String
