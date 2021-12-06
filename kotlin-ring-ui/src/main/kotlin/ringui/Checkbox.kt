@@ -4,16 +4,16 @@
 package ringui
 
 import org.w3c.dom.events.InputEvent
+import react.CSSProperties
 import react.ComponentClass
 import react.PropsWithChildren
 import react.PropsWithClassName
-import react.PropsWithStyle
 
 external interface CheckboxProps : PropsWithChildren, PropsWithClassName {
     var name: String
     var label: String
     var containerClassName: String
-    var containerStyle: PropsWithStyle
+    var containerStyle: CSSProperties
     var cellClassName: String
     var labelClassName: String
     var defaultChecked: Boolean

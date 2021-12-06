@@ -7,7 +7,7 @@ import react.ComponentClass
 import react.PropsWithChildren
 import react.PropsWithClassName
 
-external interface ErrorBubbleProps : PropsWithClassName, PropsWithChildren {
+external interface ErrorBubbleProps : PropsWithChildren, PropsWithClassName {
     var error: String?
 }
 

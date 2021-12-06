@@ -7,10 +7,9 @@ import react.ComponentClass
 import react.PropsWithClassName
 import react.PropsWithStyle
 
-external interface AvatarProps : PropsWithClassName {
+external interface AvatarProps : PropsWithStyle, PropsWithClassName {
     var dpr: Double
     var size: Double
-    var style: PropsWithStyle
     var url: String
     var round: Boolean?
     var subavatar: String
