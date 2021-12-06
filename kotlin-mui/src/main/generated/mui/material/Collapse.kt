@@ -81,7 +81,7 @@ external interface CollapseProps :
  * API:
  *
  * - [Collapse API](https://mui.com/api/collapse/)
- * - inherits [Transition API](https://reactcommunity.org/react-transition-group/transition#Transition-props)
+ * - inherits [Transition API](http://reactcommunity.org/react-transition-group/transition/#Transition-props)
  */
 
 @JsName("default")

@@ -69,7 +69,7 @@ external interface SlideProps :
  * API:
  *
  * - [Slide API](https://mui.com/api/slide/)
- * - inherits [Transition API](https://reactcommunity.org/react-transition-group/transition#Transition-props)
+ * - inherits [Transition API](http://reactcommunity.org/react-transition-group/transition/#Transition-props)
  */
 @JsName("default")
 external val Slide: react.FC<SlideProps>

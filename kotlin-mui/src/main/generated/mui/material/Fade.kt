@@ -52,7 +52,7 @@ external interface FadeProps :
  * API:
  *
  * - [Fade API](https://mui.com/api/fade/)
- * - inherits [Transition API](https://reactcommunity.org/react-transition-group/transition#Transition-props)
+ * - inherits [Transition API](http://reactcommunity.org/react-transition-group/transition/#Transition-props)
  */
 @JsName("default")
 external val Fade: react.FC<FadeProps>
