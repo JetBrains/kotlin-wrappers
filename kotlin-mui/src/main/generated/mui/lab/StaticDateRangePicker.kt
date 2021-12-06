@@ -10,7 +10,7 @@ external interface StaticDateRangePickerProps : react.Props {
      * Force static wrapper inner components to be rendered in mobile or desktop mode.
      * @default 'mobile'
      */
-    var displayStaticWrapperAs: dynamic /* StaticWrapperProps['displayStaticWrapperAs'] */
+    var displayStaticWrapperAs: dynamic /* PickerStaticWrapperProps['displayStaticWrapperAs'] */
 }
 
 /**

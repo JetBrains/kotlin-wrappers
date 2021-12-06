@@ -39,6 +39,12 @@ external interface AvatarGroupProps :
     var sx: mui.system.SxProps<mui.system.Theme>?
 
     /**
+     * The total number of avatars. Used for calculating the number of extra avatars.
+     * @default children.length
+     */
+    var total: Number?
+
+    /**
      * The variant to use.
      * @default 'circular'
      */
