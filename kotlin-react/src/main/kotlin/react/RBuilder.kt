@@ -108,15 +108,17 @@ fun <T : RBuilder> buildElements(builder: T, handler: T.() -> Unit): dynamic {
 
 open class RBuilderSingle : RBuilderImpl()
 
-// TODO: deprecate after renderEach(Indexed) removing
+@Deprecated(message = "Unsafe API, use createElement")
 inline fun <T : RBuilder> buildElement(rBuilder: T, handler: T.() -> Unit): ReactElement =
     rBuilder.apply(handler)
         .childList.first()
         .unsafeCast<ReactElement>()
 
-// TODO: deprecate after renderEach(Indexed) removing
+@Deprecated(message = "Unsafe API, use createElement")
 inline fun buildElement(handler: Render): ReactElement =
-    buildElement(RBuilder(), handler)
+    RBuilder().apply(handler)
+        .childList.first()
+        .unsafeCast<ReactElement>()
 
 interface RElementBuilder<out P : Props> : RBuilder {
     val attrs: P
