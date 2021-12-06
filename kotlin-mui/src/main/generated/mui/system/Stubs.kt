@@ -2,8 +2,6 @@
 
 package mui.system
 
-external interface Theme
-
 @Suppress("UNUSED_TYPEALIAS_PARAMETER")
 typealias SxProps<T> = react.CSSProperties
 
