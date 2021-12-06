@@ -35,7 +35,7 @@ abstract external class Component<P : Props, S : State>(
 
     open fun componentDidCatch(error: Throwable, info: ErrorInfo)
 
-    abstract fun render(): dynamic
+    abstract fun render(): ReactNode?
 }
 
 external interface ErrorInfo {
