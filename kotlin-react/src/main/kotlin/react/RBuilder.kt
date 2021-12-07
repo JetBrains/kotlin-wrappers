@@ -96,7 +96,6 @@ open class RBuilderImpl : RBuilder {
 
 open class RBuilderMultiple : RBuilderImpl()
 
-@Deprecated(message = "Unsafe API, use createElement")
 fun <T : RBuilder> buildElements(builder: T, handler: T.() -> Unit): dynamic {
     val nodes = builder.apply(handler).childList
     return when (nodes.size) {
@@ -108,13 +107,11 @@ fun <T : RBuilder> buildElements(builder: T, handler: T.() -> Unit): dynamic {
 
 open class RBuilderSingle : RBuilderImpl()
 
-@Deprecated(message = "Unsafe API, use createElement")
 inline fun <T : RBuilder> buildElement(rBuilder: T, handler: T.() -> Unit): ReactElement =
     rBuilder.apply(handler)
         .childList.first()
         .unsafeCast<ReactElement>()
 
-@Deprecated(message = "Unsafe API, use createElement")
 inline fun buildElement(handler: Render): ReactElement =
     RBuilder().apply(handler)
         .childList.first()
