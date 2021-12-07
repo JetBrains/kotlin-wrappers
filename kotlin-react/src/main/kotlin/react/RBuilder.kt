@@ -113,9 +113,7 @@ inline fun <T : RBuilder> buildElement(rBuilder: T, handler: T.() -> Unit): Reac
         .unsafeCast<ReactElement>()
 
 inline fun buildElement(handler: Render): ReactElement =
-    RBuilder().apply(handler)
-        .childList.first()
-        .unsafeCast<ReactElement>()
+    buildElement(RBuilder(), handler)
 
 interface RElementBuilder<out P : Props> : RBuilder {
     val attrs: P
