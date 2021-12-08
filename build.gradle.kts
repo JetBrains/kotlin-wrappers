@@ -9,6 +9,6 @@ tasks.wrapper {
     gradleVersion = "7.3.1"
 }
 
-rootProject.the<NodeJsRootExtension>().nodeVersion = "16.13.1"
-
 YarnPlugin.apply(rootProject).version = "1.22.17"
+
+rootProject.the<NodeJsRootExtension>().nodeVersion = "16.13.1"
