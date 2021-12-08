@@ -214,7 +214,7 @@ external interface AutocompleteRenderGroupParams : react.PropsWithChildren {
     override var children: ReadonlyArray<react.ReactNode>?
 }
 
-external interface AutocompleteRenderInputParams {
+external interface AutocompleteRenderInputParams : react.Props {
     var id: String
 
     var disabled: Boolean
