@@ -48,6 +48,9 @@ include("kotlin-popper")
 // Kotlin/JS: React wrappers
 include("kotlin-react")
 
+// Kotlin/JS: React wrappers
+include("kotlin-react-core")
+
 // Kotlin/JS: React CSS injection
 include("kotlin-react-css")
 

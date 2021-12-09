@@ -14,6 +14,7 @@ dependencies {
         api(project(":kotlin-mui-icons"))
         api(project(":kotlin-popper"))
         api(project(":kotlin-react"))
+        api(project(":kotlin-react-core"))
         api(project(":kotlin-react-css"))
         api(project(":kotlin-react-dom"))
         api(project(":kotlin-react-popper"))
