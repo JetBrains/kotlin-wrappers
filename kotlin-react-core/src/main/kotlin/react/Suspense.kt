@@ -3,6 +3,8 @@
 
 package react
 
-external interface SuspenseProps : PropsWithChildren
+external interface SuspenseProps : PropsWithChildren {
+    var fallback: ReactNode?
+}
 
 external val Suspense: ComponentType<SuspenseProps>

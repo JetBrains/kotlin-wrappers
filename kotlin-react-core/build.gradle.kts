@@ -6,5 +6,7 @@ plugins {
 
 dependencies {
     api(project(":kotlin-extensions"))
-    api(project(":kotlin-react-core"))
+    api(project(":kotlin-csstype"))
+
+    api(npmv("react"))
 }

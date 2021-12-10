@@ -21,6 +21,7 @@ To learn more please refer to the `README`s of individual modules.
 | [kotlin-mui-icons](kotlin-mui-icons/README.md) | [![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-mui-icons)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-mui-icons) | 
 | [kotlin-popper](kotlin-popper/README.md) | [![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-popper)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-popper) | 
 | [kotlin-react](kotlin-react/README.md) | [![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-react)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-react) | 
+| [kotlin-react-core](kotlin-react-core/README.md) | [![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-react-core)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-react-core) |
 | [kotlin-react-css](kotlin-react-css/README.md) | [![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-react-css)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-react-css) |
 | [kotlin-react-dom](kotlin-react-dom/README.md) | [![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-react-dom)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-react-dom) |
 | [kotlin-react-redux](kotlin-react-redux/README.md) | [![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-react-redux)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-react-redux) |
@@ -49,7 +50,7 @@ about version compatibility.
 Just declare `kotlin-wrappers-bom` and specify the modules you need:
 
 ```kotlin
-val kotlinWrappersVersion = "0.0.1-pre.278-kotlin-1.6.0"
+val kotlinWrappersVersion = "0.0.1-pre.279-kotlin-1.6.0"
 
 dependencies {
     implementation(enforcedPlatform("org.jetbrains.kotlin-wrappers:kotlin-wrappers-bom:${kotlinWrappersVersion}"))
@@ -67,7 +68,7 @@ Or use a helper function:
 fun kotlinw(target: String): String =
     "org.jetbrains.kotlin-wrappers:kotlin-$target"
 
-val kotlinWrappersVersion = "0.0.1-pre.278-kotlin-1.6.0"
+val kotlinWrappersVersion = "0.0.1-pre.279-kotlin-1.6.0"
 
 dependencies {
     implementation(enforcedPlatform(kotlinw("wrappers-bom:${kotlinWrappersVersion}")))

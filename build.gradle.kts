@@ -1,5 +1,6 @@
 plugins {
     kotlin("js") apply false
+    `node-conventions`
 }
 
 tasks.wrapper {
