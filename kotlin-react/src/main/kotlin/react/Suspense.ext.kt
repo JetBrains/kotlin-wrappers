@@ -1,6 +1,4 @@
-import react.Render
-import react.SuspenseProps
-import react.createElement
+package react
 
 // 16.6+
 fun SuspenseProps.fallback(handler: Render) {
