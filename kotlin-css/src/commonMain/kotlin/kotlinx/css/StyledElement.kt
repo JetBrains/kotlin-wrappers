@@ -71,8 +71,17 @@ var StyledElement.alignContent: Align by CssProperty()
 var StyledElement.alignItems: Align by CssProperty()
 var StyledElement.alignSelf: Align by CssProperty()
 var StyledElement.animation by CssProperty { Animations() }
+var StyledElement.animationDelay: Time by CssProperty()
+var StyledElement.animationDirection: AnimationDirection by CssProperty()
+var StyledElement.animationDuration: Time by CssProperty()
+var StyledElement.animationFillMode: FillMode by CssProperty()
+var StyledElement.animationIterationCount: Number by CssProperty()
+var StyledElement.animationName: String by CssProperty()
+var StyledElement.animationPlayState: PlayState by CssProperty()
+var StyledElement.animationTimingFunction: Timing by CssProperty()
 var StyledElement.appearance: Appearance by CssProperty()
 
+var StyledElement.backfaceVisibility: Visibility by CssProperty()
 var StyledElement.background: String by CssProperty()
 var StyledElement.backgroundAttachment: BackgroundAttachment by CssProperty()
 var StyledElement.backgroundClip: BackgroundClip by CssProperty()
@@ -88,6 +97,8 @@ var StyledElement.borderTop: String by CssProperty()
 var StyledElement.borderRight: String by CssProperty()
 var StyledElement.borderBottom: String by CssProperty()
 var StyledElement.borderLeft: String by CssProperty()
+
+var StyledElement.borderCollapse: BorderCollapse by CssProperty()
 var StyledElement.borderSpacing: LinearDimension by CssProperty()
 
 var StyledElement.borderRadius: LinearDimension by CssProperty()
@@ -115,8 +126,8 @@ var StyledElement.borderBottomColor: Color by CssProperty()
 var StyledElement.borderLeftColor: Color by CssProperty()
 
 var StyledElement.bottom: LinearDimension by CssProperty()
-var StyledElement.boxSizing: BoxSizing by CssProperty()
 var StyledElement.boxShadow by CssProperty { BoxShadows() }
+var StyledElement.boxSizing: BoxSizing by CssProperty()
 
 var StyledElement.clear: Clear by CssProperty()
 var StyledElement.color: Color by CssProperty()
@@ -129,16 +140,19 @@ var StyledElement.direction: Direction by CssProperty()
 var StyledElement.display: Display by CssProperty()
 
 var StyledElement.filter: String by CssProperty()
+var StyledElement.flexBasis: FlexBasis by CssProperty()
 var StyledElement.flexDirection: FlexDirection by CssProperty()
 var StyledElement.flexGrow: Double by CssProperty()
 var StyledElement.flexShrink: Double by CssProperty()
-var StyledElement.flexBasis: FlexBasis by CssProperty()
 var StyledElement.flexWrap: FlexWrap by CssProperty()
 var StyledElement.float: Float by CssProperty()
 var StyledElement.fontFamily: String by CssProperty()
 var StyledElement.fontSize: LinearDimension by CssProperty()
-var StyledElement.fontWeight: FontWeight by CssProperty()
+var StyledElement.fontSizeAdjust: Number by CssProperty()
+//var StyledElement.fontStretch: FontStretch by CssProperty() // TODO
 var StyledElement.fontStyle: FontStyle by CssProperty()
+//var StyledElement.fontVariant: FontVariant by CssProperty() // TODO
+var StyledElement.fontWeight: FontWeight by CssProperty()
 
 var StyledElement.gap: LinearDimension by CssProperty()
 var StyledElement.gridAutoColumns: GridAutoColumns by CssProperty()
@@ -156,7 +170,6 @@ var StyledElement.gridTemplateColumns: GridTemplateColumns by CssProperty()
 var StyledElement.gridTemplateRows: GridTemplateRows by CssProperty()
 
 var StyledElement.height: LinearDimension by CssProperty()
-
 var StyledElement.hyphens: Hyphens by CssProperty()
 
 var StyledElement.isolation: Isolation by CssProperty()
@@ -200,11 +213,14 @@ var StyledElement.paddingLeft: LinearDimension by CssProperty()
 var StyledElement.pointerEvents: PointerEvents by CssProperty()
 var StyledElement.position: Position by CssProperty()
 
+var StyledElement.resize: Resize by CssProperty()
 var StyledElement.right: LinearDimension by CssProperty()
 var StyledElement.rowGap: LinearDimension by CssProperty()
 
 var StyledElement.scrollBehavior: ScrollBehavior by CssProperty()
+var StyledElement.src: String by CssProperty()
 
+var StyledElement.tableLayout: TableLayout by CssProperty()
 var StyledElement.textAlign: TextAlign by CssProperty()
 var StyledElement.textDecoration: TextDecoration by CssProperty()
 var StyledElement.textOverflow: TextOverflow by CssProperty()
@@ -212,6 +228,12 @@ var StyledElement.textTransform: TextTransform by CssProperty()
 var StyledElement.top: LinearDimension by CssProperty()
 var StyledElement.transform by CssProperty { Transforms() }
 var StyledElement.transition by CssProperty { Transitions() }
+var StyledElement.transitionDelay: Time by CssProperty()
+var StyledElement.transitionDuration: Time by CssProperty()
+var StyledElement.transitionProperty: String by CssProperty()
+var StyledElement.transitionTimingFunction: Timing by CssProperty()
+
+var StyledElement.userSelect: UserSelect by CssProperty()
 
 var StyledElement.verticalAlign: VerticalAlign by CssProperty()
 var StyledElement.visibility: Visibility by CssProperty()
@@ -219,16 +241,10 @@ var StyledElement.visibility: Visibility by CssProperty()
 var StyledElement.whiteSpace: WhiteSpace by CssProperty()
 var StyledElement.width: LinearDimension by CssProperty()
 var StyledElement.wordBreak: WordBreak by CssProperty()
+var StyledElement.wordSpacing: LinearDimension by CssProperty()
 var StyledElement.wordWrap: WordWrap by CssProperty()
 
-var StyledElement.userSelect: UserSelect by CssProperty()
-
-var StyledElement.tableLayout: TableLayout by CssProperty()
-var StyledElement.borderCollapse: BorderCollapse by CssProperty()
-
 var StyledElement.zIndex: Int by CssProperty()
-
-var StyledElement.resize: Resize by CssProperty()
 
 fun StyledElement.flex(flexGrow: Double = 0.0, flexShrink: Double = 1.0, flexBasis: FlexBasis = FlexBasis.auto) {
     put("flex", "$flexGrow $flexShrink $flexBasis")
