@@ -12,6 +12,6 @@ package react.router
  * @see https://reactrouter.com/docs/en/v6/api#matchpath
  */
 external fun matchPath(
-    pattern: String, /* PathPattern | string */
+    pattern: String,
     pathname: String,
 ): PathMatch

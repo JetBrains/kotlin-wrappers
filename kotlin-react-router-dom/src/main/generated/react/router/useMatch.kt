@@ -13,5 +13,5 @@ package react.router
  * @see https://reactrouter.com/docs/en/v6/api#usematch
  */
 external fun useMatch(
-    pattern: String, /* PathPattern | string */
+    pattern: String,
 ): PathMatch
