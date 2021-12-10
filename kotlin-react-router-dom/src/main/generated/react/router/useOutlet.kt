@@ -11,4 +11,6 @@ package react.router
  *
  * @see https://reactrouter.com/docs/en/v6/api#useoutlet
  */
-external fun useOutlet(): react.ReactElement
+external fun useOutlet(
+    context: Any = definedExternally,
+): react.ReactElement
