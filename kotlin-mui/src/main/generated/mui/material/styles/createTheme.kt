@@ -6,15 +6,15 @@
 package mui.material.styles
 
 external interface ThemeOptions {
-    var mixins: dynamic
+    var mixins: MixinsOptions?
 
     var components: dynamic
 
-    var palette: dynamic
+    var palette: PaletteOptions?
 
     var shadows: dynamic
 
-    var transitions: dynamic
+    var transitions: TransitionsOptions?
 
     var typography: dynamic
 
@@ -24,19 +24,19 @@ external interface ThemeOptions {
 }
 
 external interface Theme {
-    var mixins: dynamic
+    var mixins: Mixins
 
     var components: dynamic
 
-    var palette: dynamic
+    var palette: Palette
 
     var shadows: dynamic
 
-    var transitions: dynamic
+    var transitions: Transitions
 
     var typography: dynamic
 
-    var zIndex: dynamic
+    var zIndex: ZIndex
 
     var unstable_strictMode: Boolean?
 }
