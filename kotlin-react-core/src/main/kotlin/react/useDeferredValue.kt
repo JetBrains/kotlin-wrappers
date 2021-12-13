@@ -4,7 +4,7 @@
 package react
 
 /**
- * Available from 18.0
+ * Available since 18.0
  *
  * @see <a href="https://reactjs.org/docs/concurrent-mode-reference.html#usedeferredvalue">Online Documentation</a>
  */

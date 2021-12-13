@@ -4,7 +4,7 @@
 package react
 
 /**
- * Available from 18.0
+ * Available since 18.0
  *
  * @see <a href="https://github.com/reactwg/react-18/discussions/86">Discussion</a>
  */
