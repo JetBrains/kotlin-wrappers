@@ -9,4 +9,4 @@ build/
 *.ipr
 *.iws
 
-ts/
+yarn.lock
