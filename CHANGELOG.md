@@ -1,5 +1,5 @@
 ## pre.280
-* New DSL for react elements is provided. `attr` block is unnecessary anymore.
+* New DSL for React elements was implemented. `attr` block is no longer required.
 
 Before:
 ```kotlin
@@ -30,16 +30,16 @@ val App = FC<Props> {
 }
 ```
 
-## pre.200 - pre.279
-* Maven Central group ID is changed to `org.jetbrains.kotlin-wrappers`
-* Interfaces are renamed:
+## pre.200 — pre.279
+* Maven Central group ID was changed to `org.jetbrains.kotlin-wrappers`
+* Interfaces were renamed:
   * `RProps` -> `Props`
   * `RState` -> `State`
-* `ElementType` and `ComponentType` interfaces are provided to describe type hierarchy in React
-* [React Hooks](https://reactjs.org/docs/hooks-intro.html) are provided
-* Intrinsic in `kotlin-react-dom` are implemented without `kotlinx-html`
-* New DSL for CSS is introduced in `kotlin-csstype`
-* React Router v6 is supported in `kotlin-react-router-dom`
+* `ElementType` and `ComponentType` interfaces were introduced to describe the type hierarchy in React
+* [React Hooks](https://reactjs.org/docs/hooks-intro.html) were added
+* Intrinsic types in `kotlin-react-dom` were implemented without `kotlinx-html`
+* New DSL for CSS was introduced in `kotlin-csstype`
+* React Router v6 was supported in `kotlin-react-router-dom`
 * New wrappers:
   * `kotlin-react-table`
   * `kotlin-react-query`
@@ -50,4 +50,4 @@ val App = FC<Props> {
   * `kotlin-ring-ui`
 
 ## Before pre.156
-* Initial implementation is published under `org.jetbrains` group ID to [kotlin.jetbrains.space](https://kotlin.jetbrains.space) group ID to kotlin.jetbrains.space.
+* Initial implementation is published under `org.jetbrains` group ID to [kotlin.jetbrains.space](https://kotlin.jetbrains.space).
