@@ -1,4 +1,4 @@
-## pre.281
+## pre.280
 * New DSL for react elements is provided. `attr` block is unnecessary anymore.
 
 Before:
@@ -18,7 +18,7 @@ val App = fc<Props> {
 ```
 After:
 ```kotlin
-val App = fc<Props> {
+val App = FC<Props> {
   Button {
     title = "Submit form"
     disabled = true
@@ -30,7 +30,7 @@ val App = fc<Props> {
 }
 ```
 
-## pre.200 - pre.280
+## pre.200 - pre.279
 * Maven Central group ID is changed to `org.jetbrains.kotlin-wrappers`
 * Interfaces are renamed:
   * `RProps` -> `Props`
