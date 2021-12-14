@@ -62,6 +62,13 @@ external interface InputBaseProps :
     var disabled: Boolean?
 
     /**
+     * If `true`, GlobalStyles for the auto-fill keyframes will not be injected/removed on mount/unmount. Make sure to inject them at the top of your application.
+     * This option is intended to help with boosting the initial rendering performance if you are loading a big amount of Input components at once.
+     * @default false
+     */
+    var disableInjectingGlobalStyles: Boolean?
+
+    /**
      * End `InputAdornment` for this component.
      */
     var endAdornment: react.ReactNode?
