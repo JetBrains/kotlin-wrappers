@@ -1,5 +1,6 @@
 ## pre.281
 * New DSL for react elements is provided. `attr` block is unnecessary anymore.
+
 Before:
 ```kotlin
 val App = fc<Props> {
@@ -15,7 +16,7 @@ val App = fc<Props> {
   }
 }
 ```
-After
+After:
 ```kotlin
 val App = fc<Props> {
   Button {
@@ -34,6 +35,7 @@ val App = fc<Props> {
 * Interfaces are renamed:
   * `RProps` -> `Props`
   * `RState` -> `State`
+* `ElementType` and `ComponentType` interfaces are provided to describe type hierarchy in React
 * [React Hooks](https://reactjs.org/docs/hooks-intro.html) are provided
 * Intrinsic in `kotlin-react-dom` are implemented without `kotlinx-html`
 * New DSL for CSS is introduced in `kotlin-csstype`
