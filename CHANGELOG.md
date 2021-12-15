@@ -1,5 +1,5 @@
 ## pre.280
-* New DSL for React elements was implemented. `attr` block is no longer required.
+* New DSL for React elements was implemented. `attrs` block is no longer required.
 
 Before:
 ```kotlin
