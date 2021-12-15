@@ -6,7 +6,7 @@ plugins {
 dependencies {
     implementation(project(":kotlin-extensions"))
     implementation(project(":kotlin-react-dom-legacy"))
-    implementation(project(":kotlin-react-router-dom-legacy"))
+    implementation(project(":kotlin-react-router-dom"))
 
     implementation(kotlinxHtml("js"))
 
