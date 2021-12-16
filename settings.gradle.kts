@@ -57,6 +57,12 @@ include("kotlin-react-css")
 // Kotlin/JS: React DOM wrappers
 include("kotlin-react-dom")
 
+// Kotlin/JS: React DOM legacy wrappers
+include("kotlin-react-dom-legacy")
+
+// Kotlin/JS: React legacy wrappers
+include("kotlin-react-legacy")
+
 // Kotlin/JS: React Popper wrappers
 include("kotlin-react-popper")
 

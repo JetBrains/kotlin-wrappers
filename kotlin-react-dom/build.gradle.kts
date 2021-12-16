@@ -6,9 +6,7 @@ plugins {
 
 dependencies {
     api(project(":kotlin-extensions"))
-    api(project(":kotlin-react"))
-
-    api(kotlinxHtml("js"))
+    api(project(":kotlin-react-core"))
 
     api(npmv("react-dom"))
 }

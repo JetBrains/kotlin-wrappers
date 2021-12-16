@@ -3,10 +3,6 @@
 package react.dom
 
 import kotlinx.html.*
-import kotlinx.html.ButtonType
-import kotlinx.html.FormMethod
-import kotlinx.html.FormEncType
-import kotlinx.html.InputType
 import kotlinx.html.attributes.enumEncode
 import react.RBuilder
 

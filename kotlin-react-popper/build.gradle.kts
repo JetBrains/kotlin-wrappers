@@ -6,7 +6,7 @@ plugins {
 
 dependencies {
     api(project(":kotlin-popper"))
-    api(project(":kotlin-react"))
+    api(project(":kotlin-react-core"))
 
     api(npmv("react-popper"))
 }

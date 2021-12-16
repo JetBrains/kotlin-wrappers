@@ -7,7 +7,7 @@ plugins {
 dependencies {
     api(project(":kotlin-extensions"))
     api(project(":kotlin-react-legacy"))
-    api(project(":kotlin-redux"))
+    api(project(":kotlin-react-dom"))
 
-    api(npmv("react-redux"))
+    api(kotlinxHtml("js"))
 }
