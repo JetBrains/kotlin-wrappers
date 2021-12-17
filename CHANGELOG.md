@@ -2,7 +2,7 @@
 
 * `kotlin-react` was split into two parts: `kotlin-react` and `kotlin-react-legacy`.
 
-`kotlin-react` only supports the new DSL for React elements (`ChildrenBuilder`, aka "no attrs"), while `kotlin-react`
+`kotlin-react` only supports the new DSL for React elements (`ChildrenBuilder`, aka "no attrs"), while `kotlin-react-legacy`
 provides the familiar `RBuilder` DSL.
 
 If you are migrating from an earlier version and are not interested in migrating to the new API, you should **replace**
