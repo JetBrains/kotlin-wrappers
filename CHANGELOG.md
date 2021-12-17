@@ -1,6 +1,6 @@
 ## pre.282
 
-* `kotlin-react` was split into two parts: `kotlin-react` and `kotlin-react-legacy`.
+### `kotlin-react` was split into two parts: `kotlin-react` and `kotlin-react-legacy`
 
 `kotlin-react` only supports the new DSL for React elements (`ChildrenBuilder`, aka "no attrs"), while `kotlin-react-legacy`
 provides the familiar `RBuilder` DSL.
@@ -16,8 +16,10 @@ compilation errors you encounter. Good luck :)
 
 If you are a new user of `kotlin-react`, just start using the new API and don't worry about the old one.
 
-* `kotlin-react-dom` was also split into two parts – you guessed it right — `kotlin-react-dom`
-  and `kotlin-react-dom-legacy`.
+Technically, there is a third component called `kotlin-react-core` which contains most of the React API, but you don't
+need to add it as a direct dependency.
+
+### `kotlin-react-dom` was also split into two parts – you guessed it right — `kotlin-react-dom` and `kotlin-react-dom-legacy`
 
 `kotlin-react-dom` does not depend on `kotlinx.html`, the HTML typings it provides are generated from TypeScript types
 directly. They are therefore more complete and up-to-date.
