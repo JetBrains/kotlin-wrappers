@@ -11,6 +11,6 @@ package history
  * shared hosting environments that do not provide fine-grained controls over
  * which pages are served at which URLs.
  *
- * @see https://github.com/ReactTraining/history/tree/master/docs/api-reference.md#hashhistory
+ * @see https://github.com/remix-run/history/tree/main/docs/api-reference.md#hashhistory
  */
 external interface HashHistory : History

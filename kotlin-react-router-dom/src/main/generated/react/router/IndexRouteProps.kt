@@ -3,6 +3,6 @@
 package react.router
 
 external interface IndexRouteProps : react.Props {
-    var element: react.ReactElement?
+    var element: react.ReactNode?
     var index: Boolean /* true */
 }

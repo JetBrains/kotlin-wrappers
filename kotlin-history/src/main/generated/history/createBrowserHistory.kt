@@ -10,7 +10,7 @@ package history
  * most web apps, but it requires some configuration on the server to ensure you
  * serve the same app at multiple URLs.
  *
- * @see https://github.com/ReactTraining/history/tree/master/docs/api-reference.md#createbrowserhistory
+ * @see https://github.com/remix-run/history/tree/main/docs/api-reference.md#createbrowserhistory
  */
 external fun createBrowserHistory(
     options: BrowserHistoryOptions = definedExternally,
