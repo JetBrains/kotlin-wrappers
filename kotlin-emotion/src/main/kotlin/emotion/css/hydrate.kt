@@ -3,4 +3,6 @@
 
 package emotion.css
 
-external fun hydrate(ids: Array<String>)
+import kotlinext.js.ReadonlyArray
+
+external fun hydrate(ids: ReadonlyArray<String>)
