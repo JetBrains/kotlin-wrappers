@@ -15,16 +15,16 @@ external interface History {
      * The last action that modified the current location. This will always be
      * Action.Pop when a history instance is first created. This value is mutable.
      *
-     * @see https://github.com/ReactTraining/history/tree/master/docs/api-reference.md#history.action
+     * @see https://github.com/remix-run/history/tree/main/docs/api-reference.md#history.action
      */
     val action: Action
 
     /**
      * The current location. This value is mutable.
      *
-     * @see https://github.com/ReactTraining/history/tree/master/docs/api-reference.md#history.location
+     * @see https://github.com/remix-run/history/tree/main/docs/api-reference.md#history.location
      */
-    val location: Location
+    val location: history.Location
 
     /**
      * Returns a valid href for the given `to` value that may be used as
@@ -32,7 +32,7 @@ external interface History {
      *
      * @param to - The destination URL
      *
-     * @see https://github.com/ReactTraining/history/tree/master/docs/api-reference.md#history.createHref
+     * @see https://github.com/remix-run/history/tree/main/docs/api-reference.md#history.createHref
      */
     fun createHref(to: To): String
 
@@ -44,7 +44,7 @@ external interface History {
      * @param to - The new URL
      * @param state - Data to associate with the new location
      *
-     * @see https://github.com/ReactTraining/history/tree/master/docs/api-reference.md#history.push
+     * @see https://github.com/remix-run/history/tree/main/docs/api-reference.md#history.push
      */
     fun push(to: To, state: Any = definedExternally)
 
@@ -55,7 +55,7 @@ external interface History {
      * @param to - The new URL
      * @param state - Data to associate with the new location
      *
-     * @see https://github.com/ReactTraining/history/tree/master/docs/api-reference.md#history.replace
+     * @see https://github.com/remix-run/history/tree/main/docs/api-reference.md#history.replace
      */
     fun replace(to: To, state: Any = definedExternally)
 
@@ -65,7 +65,7 @@ external interface History {
      *
      * @param delta - The delta in the stack index
      *
-     * @see https://github.com/ReactTraining/history/tree/master/docs/api-reference.md#history.go
+     * @see https://github.com/remix-run/history/tree/main/docs/api-reference.md#history.go
      */
     fun go(delta: Int)
 
@@ -75,14 +75,14 @@ external interface History {
      * Warning: if the current location is the first location in the stack, this
      * will unload the current document.
      *
-     * @see https://github.com/ReactTraining/history/tree/master/docs/api-reference.md#history.back
+     * @see https://github.com/remix-run/history/tree/main/docs/api-reference.md#history.back
      */
     fun back()
 
     /**
      * Navigates to the next entry in the stack. Identical to go(1).
      *
-     * @see https://github.com/ReactTraining/history/tree/master/docs/api-reference.md#history.forward
+     * @see https://github.com/remix-run/history/tree/main/docs/api-reference.md#history.forward
      */
     fun forward()
 
@@ -93,7 +93,7 @@ external interface History {
      * @param listener - A function that will be called when the location changes
      * @returns unlisten - A function that may be used to stop listening
      *
-     * @see https://github.com/ReactTraining/history/tree/master/docs/api-reference.md#history.listen
+     * @see https://github.com/remix-run/history/tree/main/docs/api-reference.md#history.listen
      */
     fun listen(listener: Listener): () -> Unit
 
@@ -104,7 +104,7 @@ external interface History {
      * @param blocker - A function that will be called when a transition is blocked
      * @returns unblock - A function that may be used to stop blocking
      *
-     * @see https://github.com/ReactTraining/history/tree/master/docs/api-reference.md#history.block
+     * @see https://github.com/remix-run/history/tree/main/docs/api-reference.md#history.block
      */
     fun block(blocker: Blocker): () -> Unit
 }

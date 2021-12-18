@@ -9,7 +9,7 @@ package history
 /**
  * Actions represent the type of change to a location value.
  *
- * @see https://github.com/ReactTraining/history/tree/master/docs/api-reference.md#action
+ * @see https://github.com/remix-run/history/tree/main/docs/api-reference.md#action
  */
 // language=JavaScript
 @JsName("""(/*union*/{Pop: 'POP', Push: 'PUSH', Replace: 'REPLACE'}/*union*/)""")

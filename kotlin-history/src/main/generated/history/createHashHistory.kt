@@ -11,7 +11,7 @@ package history
  * some reason, either because you do cannot configure it or the URL space is
  * reserved for something else.
  *
- * @see https://github.com/ReactTraining/history/tree/master/docs/api-reference.md#createhashhistory
+ * @see https://github.com/remix-run/history/tree/main/docs/api-reference.md#createhashhistory
  */
 external fun createHashHistory(
     options: HashHistoryOptions = definedExternally,

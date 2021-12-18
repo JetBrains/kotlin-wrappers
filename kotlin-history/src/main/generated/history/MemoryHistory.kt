@@ -7,8 +7,8 @@ package history
  * environments where there is no web browser, such as node tests or React
  * Native.
  *
- * @see https://github.com/ReactTraining/history/tree/master/docs/api-reference.md#memoryhistory
+ * @see https://github.com/remix-run/history/tree/main/docs/api-reference.md#memoryhistory
  */
 external interface MemoryHistory : History {
-    var index: Int
+    val index: Int
 }

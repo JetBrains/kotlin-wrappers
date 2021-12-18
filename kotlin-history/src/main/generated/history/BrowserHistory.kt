@@ -7,6 +7,6 @@ package history
  * browser environment. This is the standard for most web apps and provides the
  * cleanest URLs the browser's address bar.
  *
- * @see https://github.com/ReactTraining/history/tree/master/docs/api-reference.md#browserhistory
+ * @see https://github.com/remix-run/history/tree/main/docs/api-reference.md#browserhistory
  */
 external interface BrowserHistory : History

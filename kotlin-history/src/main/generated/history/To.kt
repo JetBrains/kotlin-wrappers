@@ -7,4 +7,4 @@ package history
  * `history.push` or `history.replace`. May be either a URL or the pieces of a
  * URL path.
  */
-typealias To = String // string | PartialPath
+typealias To = String // string | Partial<Path>
