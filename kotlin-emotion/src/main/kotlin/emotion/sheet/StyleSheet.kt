@@ -1,4 +1,4 @@
-package emotion.css
+package emotion.sheet
 
 import kotlinext.js.ReadonlyArray
 import org.w3c.dom.HTMLElement
