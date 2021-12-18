@@ -8,6 +8,8 @@ private val TARGET_ALIASES = mapOf(
     "react-legacy" to "react",
 
     "styled-components" to "styled",
+
+    "emotion" to "emotion-css",
     "@emotion/css" to "emotion-css",
 
     "@mui/material" to "mui",
