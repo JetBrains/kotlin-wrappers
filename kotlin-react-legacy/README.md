@@ -4,6 +4,14 @@
 
 Kotlin wrapper for React library. Major version number of this wrapper matches that of React itself.
 
+## kotlin-react vs kotlin-react-legacy
+
+`kotlin-react` only supports the new DSL for React elements (`ChildrenBuilder`, aka "no attrs"),
+while `kotlin-react-legacy`
+provides the familiar `RBuilder` DSL.
+
+See [CHANGELOG.md](../CHANGELOG.md#pre282) for more details.
+
 ### Maven
 
 ```xml
@@ -30,7 +38,8 @@ implementation("org.jetbrains.kotlin-wrappers:kotlin-react-legacy:VERSION")
 
 #### Defining an entry point
 
-React needs a root node to render to, in this case a `div` named `root`. Make sure the corresponding `<div id="root">` is present in the HTML file you are using.
+React needs a root node to render to, in this case a `div` named `root`. Make sure the corresponding `<div id="root">`
+is present in the HTML file you are using.
 
 ```kotlin
 fun main() {
@@ -44,7 +53,8 @@ fun main() {
 
 #### Creating a React function component with Kotlin
 
-As you might know, the simplest way to define a React component in JavaScript is to write a function. Like this `Welcome` component:
+As you might know, the simplest way to define a React component in JavaScript is to write a function. Like
+this `Welcome` component:
 
 ```jsx
 import React from 'react';
@@ -71,11 +81,13 @@ private val welcome = fc<WelcomeProps> { props ->
 }
 ```
 
-As you can see, you can use a _DSL_ inside the body of a component: `RBuilder` lets you construct your component's markup
-using [type-safe builders](https://kotlinlang.org/docs/reference/type-safe-builders.html) on the basis of [kotlinx.html](https://github.com/Kotlin/kotlinx.html). This means that similar to JSX in
-JavaScript, you can intertwine HTML-like tags with Kotlin logic, string interpolation, loops, etc.
+As you can see, you can use a _DSL_ inside the body of a component: `RBuilder` lets you construct your component's
+markup using [type-safe builders](https://kotlinlang.org/docs/reference/type-safe-builders.html) on the basis
+of [kotlinx.html](https://github.com/Kotlin/kotlinx.html). This means that similar to JSX in JavaScript, you can
+intertwine HTML-like tags with Kotlin logic, string interpolation, loops, etc.
 
-Note that when writing React code in JavaScript the type annotations for props (via `PropTypes`) are optional, but in Kotlin they are not.
+Note that when writing React code in JavaScript the type annotations for props (via `PropTypes`) are optional, but in
+Kotlin they are not.
 
 ##### Using a React function component
 
@@ -87,7 +99,8 @@ child(welcome) {
 }
 ```
 
-Because this can be quite cumbersome to write, you can define an `RBuilder` extension function to make the call site a bit cleaner, allowing you to write `welcome("Kotlin")` instead:
+Because this can be quite cumbersome to write, you can define an `RBuilder` extension function to make the call site a
+bit cleaner, allowing you to write `welcome("Kotlin")` instead:
 
 ```kotlin
 fun RBuilder.welcome(name: String) = child(welcome) {
@@ -95,7 +108,8 @@ fun RBuilder.welcome(name: String) = child(welcome) {
 }
 ```
 
-Alternatively, you can specify an `RBuilder` extension function which passes a handler function, allowing you to write `welcome { name = "Kotlin" }` instead:
+Alternatively, you can specify an `RBuilder` extension function which passes a handler function, allowing you to
+write `welcome { name = "Kotlin" }` instead:
 
 ```kotlin
 fun RBuilder.welcome(handler: WelcomeProps.() -> Unit) = child(welcome) {
@@ -107,7 +121,8 @@ fun RBuilder.welcome(handler: WelcomeProps.() -> Unit) = child(welcome) {
 
 #### Creating a React class component with Kotlin
 
-Here's an example of a component defined using a class with a `name` property of type `String` and a matching component state to hold the `name` property:
+Here's an example of a component defined using a class with a `name` property of type `String` and a matching component
+state to hold the `name` property:
 
 ```kotlin
 import react.*
@@ -154,7 +169,8 @@ fun RBuilder.welcome(name: String) = child(Welcome::class) {
 }
 ```
 
-Alternatively, specify an `RBuilder` extension which passes a `handler` to write `welcome { name = "Kotlin" }` at the call site instead:
+Alternatively, specify an `RBuilder` extension which passes a `handler` to write `welcome { name = "Kotlin" }` at the
+call site instead:
 
 ```kotlin
 fun RBuilder.welcome(handler: WelcomeProps.() -> Unit) = child(Welcome::class) {
@@ -166,7 +182,8 @@ fun RBuilder.welcome(handler: WelcomeProps.() -> Unit) = child(Welcome::class) {
 
 #### Using `RBuilder` extensions to structure complex components
 
-If a single component contains a lot of code, you can use `RBuilder` extension functions to group and structure code that belongs together.
+If a single component contains a lot of code, you can use `RBuilder` extension functions to group and structure code
+that belongs together.
 
 ```kotlin
 val myComplexComponent = fc<Props> {
@@ -189,15 +206,18 @@ fun RBuilder.myFooter(punctuation: String) {
 }
 ```
 
-Note that this is not the same as creating new React components – for the React renderer and reconciler, this is a single component.
+Note that this is not the same as creating new React components – for the React renderer and reconciler, this is a
+single component.
 
 #### Using Hooks
 
-React 16.8 introduced Hooks as a novel way of using state and other React features without writing a class. `kotlin-react-legacy` also supports working with Hooks.
+React 16.8 introduced Hooks as a novel way of using state and other React features without writing a
+class. `kotlin-react-legacy` also supports working with Hooks.
 
 ##### The `useState` Hook
 
-You can use the `useState` Hook when you want to keep track of state without the need for a class component. Consider the following implementation of a counter inside a `fc`:
+You can use the `useState` Hook when you want to keep track of state without the need for a class component. Consider
+the following implementation of a counter inside a `fc`:
 
 ```kotlin
 val counter = fc<Props> {
@@ -209,12 +229,15 @@ val counter = fc<Props> {
 }
 ```
 
-Calling `useState` returns a pair (that is directly destructured): a reference to your state (here, `count` of type `Int`), and a function that can be used to set the state (here, `setCount` of
-type `RSetState<Int>`).
+Calling `useState` returns a pair (that is directly destructured): a reference to your state (here, `count` of
+type `Int`), and a function that can be used to set the state (here, `setCount` of type `RSetState<Int>`).
 
-Note that unlike properties in a React class component, the `setCount` function can be called without having to use a `setState` lambda.
+Note that unlike properties in a React class component, the `setCount` function can be called without having to use
+a `setState` lambda.
 
-It is also possible to use the State Hook via Kotlin's [delegation syntax](https://kotlinlang.org/docs/reference/delegated-properties.html), which can simplify the code even more:
+It is also possible to use the State Hook via
+Kotlin's [delegation syntax](https://kotlinlang.org/docs/reference/delegated-properties.html), which can simplify the
+code even more:
 
 ```kotlin
 val counter = fc<Props> {
@@ -226,13 +249,16 @@ val counter = fc<Props> {
 }
 ```
 
-In this example, assignments to the `count` variable are automatically wrapped with the appopriate hook calls under the hood.
+In this example, assignments to the `count` variable are automatically wrapped with the appopriate hook calls under the
+hood.
 
-To learn more about the State Hook, check out the [official React documentation](https://reactjs.org/docs/hooks-state.html).
+To learn more about the State Hook, check out
+the [official React documentation](https://reactjs.org/docs/hooks-state.html).
 
 ##### The `useEffect` Hook
 
-The Effect Hook can be used to perform side effects without the need for a class component, such as querying an API or establishing a connection. Consider the following implementation of a `fc`
+The Effect Hook can be used to perform side effects without the need for a class component, such as querying an API or
+establishing a connection. Consider the following implementation of a `fc`
 which `fetch`es a random fact and displays it in a `h3` tag:
 
 ```kotlin
@@ -247,11 +273,11 @@ val randomFact = fc<Props> {
 }
 ```
 
-Note that in this example, `useEffect` gets passed a list of (empty) dependencies. If `*emptyArray()` is omitted, `useEffect` will be called after each invocation of `setRandomFact`, resulting in an
-endless loop.
+Note that in this example, `useEffect` gets passed a list of (empty) dependencies. If `*emptyArray()` is
+omitted, `useEffect` will be called after each invocation of `setRandomFact`, resulting in an endless loop.
 
-We might want to set up a subscription to some external data source. In that case, it is important to clean up so that we don't introduce a memory leak. The following example illustrates how to write
-effects with cleanup:
+We might want to set up a subscription to some external data source. In that case, it is important to clean up so that
+we don't introduce a memory leak. The following example illustrates how to write effects with cleanup:
 
 ```kotlin
 // Same example in JavaScript: https://codesandbox.io/s/jvvkoo8pq3?file=/src/index.js
@@ -302,7 +328,8 @@ val searchResults = fc<Props> {
 }
 ```
 
-To learn more about the Effect Hook, check out the [official React documentation](https://reactjs.org/docs/hooks-effect.html).
+To learn more about the Effect Hook, check out
+the [official React documentation](https://reactjs.org/docs/hooks-effect.html).
 
 ##### The "Custom" Hook
 
@@ -340,12 +367,14 @@ val randomFact = fc<Props> {
 }
 ```
 
-To learn more about the Custom Hook, check out the [official React documentation](https://reactjs.org/docs/hooks-custom.html).
+To learn more about the Custom Hook, check out
+the [official React documentation](https://reactjs.org/docs/hooks-custom.html).
 
 ### Type-safe inline styles
 
-There is no built-in capability for writing inline styles in a type-safe manner. However, it can be done by adding a dependency
-on [kotlin-css](https://github.com/JetBrains/kotlin-wrappers/tree/master/kotlin-css) and a simple utility function.
+There is no built-in capability for writing inline styles in a type-safe manner. However, it can be done by adding a
+dependency on [kotlin-css](https://github.com/JetBrains/kotlin-wrappers/tree/master/kotlin-css) and a simple utility
+function.
 
 ```kotlin
 var Tag.style: RuleSet
@@ -364,11 +393,13 @@ fun Tag.style(handler: RuleSet) {
 }
 ```
 
-You might also be interested in giving the Kotlin wrappers for `styled-components` a try, which you can find under `kotlin-styled`.
+You might also be interested in giving the Kotlin wrappers for `styled-components` a try, which you can find
+under `kotlin-styled`.
 
 ### Declaring static fields and lifecycle methods (contextType, getDerivedStateFromProps(), etc.)
 
-There is currently no easy way to declare static members from Kotlin/JS (see [KT-18891](https://youtrack.jetbrains.com/issue/KT-18891)), so please do the following instead:
+There is currently no easy way to declare static members from Kotlin/JS (
+see [KT-18891](https://youtrack.jetbrains.com/issue/KT-18891)), so please do the following instead:
 
 ```kotlin
 class MyComponent : RComponent<MyComponentProps, MyComponentState>() {

@@ -2,4 +2,4 @@
 
 ## kotlin-react-core
 
-Kotlin wrapper for React library
+Kotlin wrapper for React library (core bindings). `kotlin-react` and `kotlin-react-legacy` are built upon this.
