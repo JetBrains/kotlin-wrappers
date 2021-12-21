@@ -2,8 +2,9 @@ package react
 
 import kotlinext.js.Object
 import kotlinext.js.ReadonlyArray
+import kotlinext.js.Symbol
 
-private val CHILDREN = js("(Symbol('@@children'))")
+private val CHILDREN = Symbol("@@children")
 
 internal inline var ChildrenBuilder.children: ReadonlyArray<ReactNode>?
     get() = asDynamic()[CHILDREN]
