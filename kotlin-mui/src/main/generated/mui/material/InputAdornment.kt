@@ -5,8 +5,6 @@
 
 package mui.material
 
-import kotlinext.js.ReadonlyArray
-
 external interface InputAdornmentProps :
     react.dom.html.HTMLAttributes<org.w3c.dom.HTMLDivElement>,
     react.PropsWithChildren {
@@ -18,7 +16,7 @@ external interface InputAdornmentProps :
     /**
      * The content of the component, normally an `IconButton` or string.
      */
-    override var children: ReadonlyArray<react.ReactNode>?
+    override var children: react.ReactNode?
 
     /**
      * Disable pointer events on the root.

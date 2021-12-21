@@ -5,15 +5,13 @@
 
 package mui.material
 
-import kotlinext.js.ReadonlyArray
-
 external interface ListSubheaderProps :
     react.dom.html.LiHTMLAttributes<org.w3c.dom.HTMLLIElement>,
     react.PropsWithChildren {
     /**
      * The content of the component.
      */
-    override var children: ReadonlyArray<react.ReactNode>?
+    override var children: react.ReactNode?
 
     /**
      * Override or extend the styles applied to the component.

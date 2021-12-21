@@ -4,6 +4,6 @@ package react.router.dom
 
 external interface HistoryRouterProps : react.PropsWithChildren {
     var basename: String?
-    override var children: kotlinext.js.ReadonlyArray<react.ReactNode>?
+    override var children: react.ReactNode?
     var history: history.History
 }

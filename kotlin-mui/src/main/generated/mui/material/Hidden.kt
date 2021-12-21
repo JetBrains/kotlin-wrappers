@@ -5,13 +5,11 @@
 
 package mui.material
 
-import kotlinext.js.ReadonlyArray
-
 external interface HiddenProps : react.PropsWithChildren {
     /**
      * The content of the component.
      */
-    override var children: ReadonlyArray<react.ReactNode>?
+    override var children: react.ReactNode?
 
     /**
      * Specify which implementation to use.  'js' is the default, 'css' works better for

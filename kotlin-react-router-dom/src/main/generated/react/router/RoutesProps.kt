@@ -3,6 +3,6 @@
 package react.router
 
 external interface RoutesProps : react.PropsWithChildren {
-    override var children: kotlinext.js.ReadonlyArray<react.ReactNode>?
+    override var children: react.ReactNode?
     var location: history.Location?
 }

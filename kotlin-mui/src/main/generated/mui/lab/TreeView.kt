@@ -16,7 +16,7 @@ external interface TreeViewPropsBase :
     /**
      * The content of the component.
      */
-    override var children: ReadonlyArray<react.ReactNode>?
+    override var children: react.ReactNode?
 
     /**
      * Override or extend the styles applied to the component.

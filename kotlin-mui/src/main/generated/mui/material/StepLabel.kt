@@ -5,8 +5,6 @@
 
 package mui.material
 
-import kotlinext.js.ReadonlyArray
-
 external interface StepLabelProps :
     mui.system.StandardProps,
     react.dom.html.HTMLAttributes<org.w3c.dom.HTMLDivElement>,
@@ -14,7 +12,7 @@ external interface StepLabelProps :
     /**
      * In most cases will simply be a string containing a title for the label.
      */
-    override var children: ReadonlyArray<react.ReactNode>?
+    override var children: react.ReactNode?
 
     /**
      * Override or extend the styles applied to the component.

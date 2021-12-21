@@ -4,7 +4,7 @@ package react.router
 
 external interface RouterProps : react.PropsWithChildren {
     var basename: String?
-    override var children: kotlinext.js.ReadonlyArray<react.ReactNode>?
+    override var children: react.ReactNode?
     var location: history.Location
     var navigationType: NavigationType?
     var navigator: Navigator

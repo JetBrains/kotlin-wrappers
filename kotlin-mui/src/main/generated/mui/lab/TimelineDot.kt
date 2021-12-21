@@ -5,8 +5,6 @@
 
 package mui.lab
 
-import kotlinext.js.ReadonlyArray
-
 external interface TimelineDotProps :
     mui.system.StandardProps,
     react.dom.html.HTMLAttributes<org.w3c.dom.HTMLSpanElement>,
@@ -14,7 +12,7 @@ external interface TimelineDotProps :
     /**
      * The content of the component.
      */
-    override var children: ReadonlyArray<react.ReactNode>?
+    override var children: react.ReactNode?
 
     /**
      * Override or extend the styles applied to the component.

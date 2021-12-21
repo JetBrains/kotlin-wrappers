@@ -5,8 +5,6 @@
 
 package mui.material
 
-import kotlinext.js.ReadonlyArray
-
 external interface ListItemProps : react.Props {
     /**
      * The components used for each slot inside the InputBase.
@@ -41,7 +39,7 @@ external interface ListItemBaseProps : react.PropsWithChildren {
      * The content of the component if a `ListItemSecondaryAction` is used it must
      * be the last child.
      */
-    override var children: ReadonlyArray<react.ReactNode>?
+    override var children: react.ReactNode?
 
     /**
      * Override or extend the styles applied to the component.

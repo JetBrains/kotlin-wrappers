@@ -5,8 +5,6 @@
 
 package mui.material
 
-import kotlinext.js.ReadonlyArray
-
 external interface ToolbarProps :
     react.dom.html.HTMLAttributes<org.w3c.dom.HTMLDivElement>,
     react.PropsWithChildren {
@@ -14,7 +12,7 @@ external interface ToolbarProps :
      * The Toolbar children, usually a mixture of `IconButton`, `Button` and `Typography`.
      * The Toolbar is a flex container, allowing flex item properites to be used to lay out the children.
      */
-    override var children: ReadonlyArray<react.ReactNode>?
+    override var children: react.ReactNode?
 
     /**
      * Override or extend the styles applied to the component.

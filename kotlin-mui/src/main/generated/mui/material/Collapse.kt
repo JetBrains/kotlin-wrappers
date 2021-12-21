@@ -5,8 +5,6 @@
 
 package mui.material
 
-import kotlinext.js.ReadonlyArray
-
 external interface CollapseProps :
     mui.system.StandardProps,
     mui.material.transitions.TransitionProps,
@@ -14,7 +12,7 @@ external interface CollapseProps :
     /**
      * The content node to be collapsed.
      */
-    override var children: ReadonlyArray<react.ReactNode>?
+    override var children: react.ReactNode?
 
     override var className: String?
 

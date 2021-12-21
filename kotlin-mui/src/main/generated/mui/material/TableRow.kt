@@ -5,15 +5,13 @@
 
 package mui.material
 
-import kotlinext.js.ReadonlyArray
-
 external interface TableRowProps :
     react.dom.html.HTMLAttributes<org.w3c.dom.HTMLTableRowElement>,
     react.PropsWithChildren {
     /**
      * Should be valid <tr> children such as `TableCell`.
      */
-    override var children: ReadonlyArray<react.ReactNode>?
+    override var children: react.ReactNode?
 
     /**
      * Override or extend the styles applied to the component.

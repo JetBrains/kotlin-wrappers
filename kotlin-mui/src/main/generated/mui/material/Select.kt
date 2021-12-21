@@ -9,8 +9,6 @@
 
 package mui.material
 
-import kotlinext.js.ReadonlyArray
-
 external interface SelectProps<T> :
     mui.system.StandardProps,
     InputProps,
@@ -28,7 +26,7 @@ external interface SelectProps<T> :
      *
      * ⚠️The `MenuItem` elements **must** be direct descendants when `native` is false.
      */
-    override var children: ReadonlyArray<react.ReactNode>?
+    override var children: react.ReactNode?
 
     /**
      * Override or extend the styles applied to the component.
