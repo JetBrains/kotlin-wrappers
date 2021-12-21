@@ -10,8 +10,6 @@
 
 package mui.material
 
-import kotlinext.js.ReadonlyArray
-
 typealias TextFieldProps = BaseTextFieldProps
 
 external interface BaseTextFieldProps :
@@ -34,7 +32,7 @@ external interface BaseTextFieldProps :
     /**
      * @ignore
      */
-    override var children: ReadonlyArray<react.ReactNode>?
+    override var children: react.ReactNode?
 
     /**
      * Override or extend the styles applied to the component.

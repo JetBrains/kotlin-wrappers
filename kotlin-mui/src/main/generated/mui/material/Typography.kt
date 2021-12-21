@@ -5,8 +5,6 @@
 
 package mui.material
 
-import kotlinext.js.ReadonlyArray
-
 external interface TypographyProps :
     react.dom.html.HTMLAttributes<org.w3c.dom.HTMLSpanElement>,
     react.PropsWithChildren {
@@ -19,7 +17,7 @@ external interface TypographyProps :
     /**
      * The content of the component.
      */
-    override var children: ReadonlyArray<react.ReactNode>?
+    override var children: react.ReactNode?
 
     /**
      * Override or extend the styles applied to the component.

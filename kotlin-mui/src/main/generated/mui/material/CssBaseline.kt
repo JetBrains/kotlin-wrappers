@@ -5,13 +5,11 @@
 
 package mui.material
 
-import kotlinext.js.ReadonlyArray
-
 external interface CssBaselineProps : react.PropsWithChildren {
     /**
      * You can wrap a node.
      */
-    override var children: ReadonlyArray<react.ReactNode>?
+    override var children: react.ReactNode?
 
     /**
      * Enable `color-scheme` CSS property to use `theme.palette.mode`.

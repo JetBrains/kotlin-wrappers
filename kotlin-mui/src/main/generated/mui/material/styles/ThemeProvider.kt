@@ -5,10 +5,8 @@
 
 package mui.material.styles
 
-import kotlinext.js.ReadonlyArray
-
 external interface ThemeProviderProps : react.PropsWithChildren {
-    override var children: ReadonlyArray<react.ReactNode>?
+    override var children: react.ReactNode?
 
     var theme: dynamic
 }

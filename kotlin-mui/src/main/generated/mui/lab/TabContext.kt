@@ -5,13 +5,11 @@
 
 package mui.lab
 
-import kotlinext.js.ReadonlyArray
-
 external interface TabContextProps : react.PropsWithChildren {
     /**
      * The content of the component.
      */
-    override var children: ReadonlyArray<react.ReactNode>?
+    override var children: react.ReactNode?
 
     /**
      * The value of the currently selected `Tab`.

@@ -5,8 +5,6 @@
 
 package mui.material
 
-import kotlinext.js.ReadonlyArray
-
 external interface IconProps :
     react.dom.html.HTMLAttributes<org.w3c.dom.HTMLSpanElement>,
     react.PropsWithChildren {
@@ -20,7 +18,7 @@ external interface IconProps :
     /**
      * The name of the icon font ligature.
      */
-    override var children: ReadonlyArray<react.ReactNode>?
+    override var children: react.ReactNode?
 
     /**
      * Override or extend the styles applied to the component.

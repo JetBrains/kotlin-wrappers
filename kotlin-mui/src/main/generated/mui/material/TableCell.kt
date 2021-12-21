@@ -5,8 +5,6 @@
 
 package mui.material
 
-import kotlinext.js.ReadonlyArray
-
 external interface TableCellProps :
     mui.system.StandardProps,
     TableCellBaseProps,
@@ -23,7 +21,7 @@ external interface TableCellProps :
     /**
      * The content of the component.
      */
-    override var children: ReadonlyArray<react.ReactNode>?
+    override var children: react.ReactNode?
 
     /**
      * Override or extend the styles applied to the component.

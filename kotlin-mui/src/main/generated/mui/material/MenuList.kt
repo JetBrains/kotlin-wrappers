@@ -5,8 +5,6 @@
 
 package mui.material
 
-import kotlinext.js.ReadonlyArray
-
 external interface MenuListProps :
     react.dom.html.HTMLAttributes<org.w3c.dom.HTMLUListElement>,
     react.PropsWithChildren {
@@ -26,7 +24,7 @@ external interface MenuListProps :
     /**
      * MenuList contents, normally `MenuItem`s.
      */
-    override var children: ReadonlyArray<react.ReactNode>?
+    override var children: react.ReactNode?
 
     /**
      * If `true`, will allow focus on disabled items.

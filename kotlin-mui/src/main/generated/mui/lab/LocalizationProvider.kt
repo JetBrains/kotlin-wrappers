@@ -5,10 +5,8 @@
 
 package mui.lab
 
-import kotlinext.js.ReadonlyArray
-
 external interface LocalizationProviderProps : react.PropsWithChildren {
-    override var children: ReadonlyArray<react.ReactNode>?
+    override var children: react.ReactNode?
 
     /** DateIO adapter class function */
     var dateAdapter: dynamic
