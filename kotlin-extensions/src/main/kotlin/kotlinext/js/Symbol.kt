@@ -1,7 +1,17 @@
+@file:Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+
 package kotlinext.js
 
-external interface Symbol
+external interface Symbol {
+    val description: String?
+
+    companion object {
+        fun `for`(key: String): Symbol
+
+        fun keyFor(symbol: Symbol): String?
+    }
+}
 
 external fun Symbol(
-    key: String,
+    description: String = definedExternally,
 ): Symbol
