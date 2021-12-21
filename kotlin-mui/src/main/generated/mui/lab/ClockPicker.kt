@@ -81,7 +81,7 @@ external interface ClockPickerProps<TDate> : react.Props {
 }
 
 external interface ClockPickerClasses {
-    /** Styles applied to the arrowSwticher element. */
+    /** Styles applied to the arrowSwitcher element. */
     var arrowSwitcher: String
 }
 

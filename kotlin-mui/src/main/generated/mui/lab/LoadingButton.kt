@@ -20,6 +20,8 @@ external interface LoadingButtonProps :
 
     /**
      * Element placed before the children if the button is in loading state.
+     * The node should contain an element with `role="progressbar"` with an accessible name.
+     * By default we render a `CircularProgress` that is labelled by the button itself.
      * @default <CircularProgress color="inherit" size={16} />
      */
     var loadingIndicator: react.ReactNode?
