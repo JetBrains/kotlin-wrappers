@@ -16,6 +16,6 @@ external interface EmotionCache {
         selector: String,
         serialized: SerializedStyles,
         sheet: StyleSheet,
-        shouldCache: Boolean
+        shouldCache: Boolean,
     ): String?
 }
