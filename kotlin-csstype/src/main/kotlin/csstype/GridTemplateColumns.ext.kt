@@ -1,9 +1,7 @@
 package csstype
 
-fun Properties.gridTemplateColumns(
+fun GridTemplateColumns(
     vararg values: GridTemplateColumns,
-) {
-    gridTemplateColumns = values
-        .joinToString(" ")
+): GridTemplateColumns =
+    values.joinToString(" ")
         .unsafeCast<GridTemplateColumns>()
-}
