@@ -9,7 +9,7 @@ import react.ReactElement
 // See https://reactjs.org/docs/react-dom.html
 
 external fun hydrate(
-    element: ReactElement,
+    element: ReactElement?,
     container: Element,
     callback: () -> Unit = definedExternally,
 )

@@ -10,7 +10,7 @@ fun render(
     handler: Render,
 ) {
     render(
-        element = createElement(handler)!!,
+        element = createElement(handler),
         container = container,
         callback = callback,
     )
