@@ -10,7 +10,7 @@ fun hydrate(
     handler: Render,
 ) {
     hydrate(
-        element = createElement(handler),
+        element = createElement(handler)!!,
         container = container,
         callback = callback,
     )
