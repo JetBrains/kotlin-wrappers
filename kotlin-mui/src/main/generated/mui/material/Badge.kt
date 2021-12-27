@@ -11,18 +11,18 @@ external interface BadgeProps :
      * Override or extend the styles applied to the component.
      */
     var classes: dynamic
-    var colorPrimary: dynamic
-    var colorSecondary: dynamic
-    var colorError: dynamic
-    var colorInfo: dynamic
-    var colorSuccess: dynamic
-    var colorWarning: dynamic
 
     /**
      * The color of the component. It supports those theme colors that make sense for this component.
      * @default 'default'
      */
     var color: mui.system.Union? /* 'primary' | 'secondary' | 'default' | 'error' | 'info' | 'success' | 'warning', BadgePropsColorOverrides */
+
+    /**
+     * Wrapped shape the badge should overlap.
+     * @default 'rectangular'
+     */
+    var overlap: mui.system.Union? /* 'rectangular' | 'circular' */
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
