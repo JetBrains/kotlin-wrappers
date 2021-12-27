@@ -17,12 +17,6 @@ external interface SliderProps :
      * Override or extend the styles applied to the component.
      */
     var classes: dynamic
-    var colorPrimary: dynamic
-    var colorSecondary: dynamic
-    var sizeSmall: dynamic
-    var thumbColorPrimary: dynamic
-    var thumbColorSecondary: dynamic
-    var thumbSizeSmall: dynamic
 
     /**
      * The size of the slider.
