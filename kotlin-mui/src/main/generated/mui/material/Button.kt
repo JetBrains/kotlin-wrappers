@@ -64,7 +64,7 @@ external interface ButtonProps :
      * `small` is equivalent to the dense button styling.
      * @default 'medium'
      */
-    var size: mui.system.Union? /* 'small' | 'medium' | 'large', ButtonPropsSizeOverrides */
+    var size: Size?
 
     /**
      * Element placed before the children.

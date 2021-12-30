@@ -52,7 +52,7 @@ external interface FabProps :
      * `small` is equivalent to the dense button styling.
      * @default 'large'
      */
-    var size: mui.system.Union? /* 'small' | 'medium' | 'large', FabPropsSizeOverrides */
+    var size: Size?
 
     /**
      * The variant to use.

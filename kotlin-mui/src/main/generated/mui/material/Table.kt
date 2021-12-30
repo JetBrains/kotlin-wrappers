@@ -28,7 +28,7 @@ external interface TableProps :
      * Allows TableCells to inherit size of the Table.
      * @default 'medium'
      */
-    var size: mui.system.Union? /* 'small' | 'medium', TablePropsSizeOverrides */
+    var size: BaseSize?
 
     /**
      * Set the header sticky.

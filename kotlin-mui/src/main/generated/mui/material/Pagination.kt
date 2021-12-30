@@ -51,7 +51,7 @@ external interface PaginationProps : react.Props {
      * The size of the component.
      * @default 'medium'
      */
-    var size: mui.system.Union? /* 'small' | 'medium' | 'large', PaginationPropsSizeOverrides */
+    var size: Size?
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.

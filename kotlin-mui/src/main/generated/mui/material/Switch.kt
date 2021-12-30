@@ -43,7 +43,7 @@ external interface SwitchProps :
      * `small` is equivalent to the dense switch styling.
      * @default 'medium'
      */
-    var size: mui.system.Union? /* 'small' | 'medium', SwitchPropsSizeOverrides */
+    var size: BaseSize?
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.

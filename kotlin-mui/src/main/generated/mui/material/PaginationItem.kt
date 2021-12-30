@@ -56,7 +56,7 @@ external interface PaginationItemProps :
      * The size of the component.
      * @default 'medium'
      */
-    var size: mui.system.Union? /* 'small' | 'medium' | 'large', PaginationItemPropsSizeOverrides */
+    var size: Size?
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.

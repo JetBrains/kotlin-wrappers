@@ -22,7 +22,7 @@ external interface SliderProps :
      * The size of the slider.
      * @default 'medium'
      */
-    var size: mui.system.Union? /* 'small' | 'medium', SliderPropsSizeOverrides */
+    var size: BaseSize?
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
