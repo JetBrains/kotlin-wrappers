@@ -16,7 +16,7 @@ external interface PaginationItemProps :
      * The active color.
      * @default 'standard'
      */
-    var color: mui.system.Union? /* 'standard' | 'primary' | 'secondary', PaginationItemPropsColorOverrides */
+    var color: PaginationItemColor?
 
     /**
      * The components used for first, last, next & previous item type

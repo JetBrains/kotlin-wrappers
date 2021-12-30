@@ -23,7 +23,7 @@ external interface ToggleButtonGroupProps :
      * The color of a button when it is selected.
      * @default 'standard'
      */
-    var color: mui.system.Union? /* 'standard' | 'primary' | 'secondary' | 'error' | 'info' | 'success' | 'warning', ToggleButtonGroupPropsColorOverrides */
+    var color: ToggleButtonGroupColor?
 
     /**
      * If `true`, only allow one of the child ToggleButton values to be selected.

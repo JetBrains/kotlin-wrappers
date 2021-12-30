@@ -23,7 +23,7 @@ external interface TimelineDotProps :
      * The dot can have a different colors.
      * @default 'grey'
      */
-    var color: mui.system.Union? /* 'inherit' | 'grey' | 'primary' | 'secondary' | 'error' | 'info' | 'success' | 'warning' */
+    var color: TimelineDotColor?
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.

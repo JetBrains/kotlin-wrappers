@@ -22,7 +22,7 @@ external interface FormControlProps :
      * The color of the component. It supports those theme colors that make sense for this component.
      * @default 'primary'
      */
-    var color: mui.system.Union? /* 'primary' | 'secondary' | 'error' | 'info' | 'success' | 'warning', FormControlPropsColorOverrides */
+    var color: FormControlColor?
 
     /**
      * If `true`, the label, input and helper text should be displayed in a disabled state.

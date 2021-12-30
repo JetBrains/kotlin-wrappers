@@ -4,6 +4,21 @@ package mui.material
 
 @Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
 // language=JavaScript
+@JsName("""(/*union*/{primary: 'primary', secondary: 'secondary', default: 'default', error: 'error', info: 'info', success: 'success', warning: 'warning'}/*union*/)""")
+external enum class BadgeColor {
+    primary,
+    secondary,
+    default,
+    error,
+    info,
+    success,
+    warning,
+
+    ;
+}
+
+@Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
+// language=JavaScript
 @JsName("""(/*union*/{standard: 'standard', dot: 'dot'}/*union*/)""")
 external enum class BadgeVariant {
     standard,

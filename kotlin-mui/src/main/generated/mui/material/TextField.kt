@@ -43,7 +43,7 @@ external interface BaseTextFieldProps :
      * The color of the component. It supports those theme colors that make sense for this component.
      * @default 'primary'
      */
-    var color: mui.system.Union? /* 'primary' | 'secondary' | 'error' | 'info' | 'success' | 'warning', TextFieldPropsColorOverrides */
+    var color: TextFieldColor?
 
     /**
      * The default value. Use when the component is not controlled.

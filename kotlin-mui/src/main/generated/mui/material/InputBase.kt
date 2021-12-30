@@ -35,7 +35,7 @@ external interface InputBaseProps :
      * The color of the component. It supports those theme colors that make sense for this component.
      * The prop defaults to the value (`'primary'`) inherited from the parent FormControl component.
      */
-    var color: mui.system.Union? /* 'primary' | 'secondary' | 'error' | 'info' | 'success' | 'warning', InputBasePropsColorOverrides */
+    var color: InputBaseColor?
 
     /**
      * The components used for each slot inside the InputBase.

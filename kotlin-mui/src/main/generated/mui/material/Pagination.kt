@@ -15,7 +15,7 @@ external interface PaginationProps : react.Props {
      * The active color.
      * @default 'standard'
      */
-    var color: mui.system.Union? /* 'primary' | 'secondary' | 'standard', PaginationPropsColorOverrides */
+    var color: PaginationColor?
 
     /**
      * Accepts a function which returns a string value that provides a user-friendly name for the current page.
