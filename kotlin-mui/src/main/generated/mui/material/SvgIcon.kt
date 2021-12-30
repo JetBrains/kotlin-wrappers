@@ -27,7 +27,7 @@ external interface SvgIconProps :
      * You can use the `htmlColor` prop to apply a color attribute to the SVG element.
      * @default 'inherit'
      */
-    var color: mui.system.Union? /* | 'inherit' | 'action' | 'disabled' | 'primary' | 'secondary' | 'error' | 'info' | 'success' | 'warning', SvgIconPropsColorOverrides */
+    var color: SvgIconColor?
 
     /**
      * The fontSize applied to the icon. Defaults to 24px, but can be configure to inherit font size.

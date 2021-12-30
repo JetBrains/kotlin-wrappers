@@ -66,13 +66,13 @@ external interface PaginationProps : react.Props {
 }
 
 external interface PaginationRenderItemParams : react.Props {
-    var color: dynamic /* PaginationProps['color'] */
+    var color: PaginationColor
 
     var shape: dynamic /* PaginationProps['shape'] */
 
-    var size: dynamic /* PaginationProps['size'] */
+    var size: Size
 
-    var variant: dynamic /* PaginationProps['variant'] */
+    var variant: PaginationVariant
 }
 
 /**

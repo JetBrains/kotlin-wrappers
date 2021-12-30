@@ -23,7 +23,7 @@ external interface InputLabelProps :
      */
     var classes: InputLabelClasses?
 
-    var color: dynamic /* FormLabelProps['color'] */
+    var color: FormLabelColor?
 
     /**
      * If `true`, the transition animation is disabled.
