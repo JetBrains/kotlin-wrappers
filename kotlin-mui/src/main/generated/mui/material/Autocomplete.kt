@@ -192,7 +192,7 @@ external interface AutocompleteProps<T> :
      * The size of the component.
      * @default 'medium'
      */
-    var size: mui.system.Union? /* 'small' | 'medium', AutocompletePropsSizeOverrides */
+    var size: BaseSize?
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.

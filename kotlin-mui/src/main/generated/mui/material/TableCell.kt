@@ -49,7 +49,7 @@ external interface TableCellProps :
      * Specify the size of the cell.
      * The prop defaults to the value (`'medium'`) inherited from the parent Table component.
      */
-    var size: mui.system.Union? /* 'small' | 'medium' */
+    var size: BaseSize?
 
     /**
      * Set aria-sort direction.

@@ -184,7 +184,7 @@ external interface InputBaseProps :
     /**
      * The size of the component.
      */
-    var size: mui.system.Union? /* 'small' | 'medium', InputBasePropsSizeOverrides */
+    var size: BaseSize?
 
     /**
      * Start `InputAdornment` for this component.

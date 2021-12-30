@@ -98,7 +98,7 @@ external interface CheckboxProps :
      * `small` is equivalent to the dense checkbox styling.
      * @default 'medium'
      */
-    var size: mui.system.Union? /* 'small' | 'medium', CheckboxPropsSizeOverrides */
+    var size: BaseSize?
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.

@@ -52,7 +52,7 @@ external interface ToggleButtonProps :
      * The prop defaults to the value inherited from the parent ToggleButtonGroup component.
      * @default 'medium'
      */
-    var size: mui.system.Union? /* 'small' | 'medium' | 'large', ToggleButtonPropsSizeOverrides */
+    var size: Size?
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.

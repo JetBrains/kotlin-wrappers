@@ -71,7 +71,7 @@ external interface FormControlProps :
      * The size of the component.
      * @default 'medium'
      */
-    var size: mui.system.Union? /* 'small' | 'medium', FormControlPropsSizeOverrides */
+    var size: BaseSize?
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.

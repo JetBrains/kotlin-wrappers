@@ -65,7 +65,7 @@ external interface ButtonGroupProps :
      * `small` is equivalent to the dense button styling.
      * @default 'medium'
      */
-    var size: mui.system.Union? /* 'small' | 'medium' | 'large', ButtonGroupPropsSizeOverrides */
+    var size: Size?
 
     /**
      * The variant to use.

@@ -45,7 +45,7 @@ external interface RadioProps :
      * `small` is equivalent to the dense radio styling.
      * @default 'medium'
      */
-    var size: mui.system.Union? /* 'small' | 'medium', RadioPropsSizeOverrides */
+    var size: BaseSize?
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.

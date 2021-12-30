@@ -50,7 +50,7 @@ external interface IconButtonProps :
      * `small` is equivalent to the dense button styling.
      * @default 'medium'
      */
-    var size: mui.system.Union? /* 'small' | 'medium' | 'large', IconButtonPropsSizeOverrides */
+    var size: Size?
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.

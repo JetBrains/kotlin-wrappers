@@ -160,7 +160,7 @@ external interface BaseTextFieldProps :
     /**
      * The size of the component.
      */
-    var size: mui.system.Union? /* 'small' | 'medium', TextFieldPropsSizeOverrides */
+    var size: BaseSize?
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
