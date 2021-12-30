@@ -58,7 +58,7 @@ external interface ButtonGroupProps :
      * The component orientation (layout flow direction).
      * @default 'horizontal'
      */
-    var orientation: mui.system.Union? /* 'vertical' | 'horizontal' */
+    var orientation: Orientation?
 
     /**
      * The size of the component.
