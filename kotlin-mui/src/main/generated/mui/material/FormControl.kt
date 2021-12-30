@@ -82,7 +82,7 @@ external interface FormControlProps :
      * The variant to use.
      * @default 'outlined'
      */
-    var variant: mui.system.Union? /* 'standard' | 'outlined' | 'filled' */
+    var variant: FormControlVariant?
 }
 
 /**

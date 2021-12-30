@@ -73,7 +73,7 @@ external interface PaginationItemProps :
      * The variant to use.
      * @default 'text'
      */
-    var variant: mui.system.Union? /* 'text' | 'outlined', PaginationItemPropsVariantOverrides */
+    var variant: PaginationItemVariant?
 }
 
 /**

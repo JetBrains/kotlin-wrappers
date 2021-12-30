@@ -70,7 +70,7 @@ external interface InputLabelProps :
     /**
      * The variant to use.
      */
-    var variant: mui.system.Union? /* 'standard' | 'outlined' | 'filled' */
+    var variant: InputLabelVariant?
 }
 
 /**

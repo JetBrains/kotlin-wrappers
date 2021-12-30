@@ -85,7 +85,7 @@ external interface ChipProps :
      * The variant to use.
      * @default 'filled'
      */
-    var variant: mui.system.Union? /* 'filled' | 'outlined', ChipPropsVariantOverrides */
+    var variant: ChipVariant?
 }
 
 /**

@@ -56,7 +56,7 @@ external interface AvatarProps :
      * The shape of the avatar.
      * @default 'circular'
      */
-    var variant: mui.system.Union? /* 'circular' | 'rounded' | 'square', AvatarPropsVariantOverrides */
+    var variant: AvatarVariant?
 }
 
 /**

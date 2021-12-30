@@ -40,7 +40,7 @@ external interface PaperProps :
      * The variant to use.
      * @default 'elevation'
      */
-    var variant: mui.system.Union? /* 'elevation' | 'outlined', PaperPropsVariantOverrides */
+    var variant: PaperVariant?
 }
 
 /**

@@ -33,7 +33,7 @@ external interface BadgeProps :
      * The variant to use.
      * @default 'standard'
      */
-    var variant: mui.system.Union? /* 'standard' | 'dot', BadgePropsVariantOverrides */
+    var variant: BadgeVariant?
 }
 
 /**

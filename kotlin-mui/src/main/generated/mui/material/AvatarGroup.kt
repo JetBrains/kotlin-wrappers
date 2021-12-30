@@ -46,7 +46,7 @@ external interface AvatarGroupProps :
      * The variant to use.
      * @default 'circular'
      */
-    var variant: mui.system.Union? /* 'circular' | 'rounded' | 'square', AvatarGroupPropsVariantOverrides */
+    var variant: AvatarGroupVariant?
 }
 
 /**

@@ -129,7 +129,7 @@ external interface TabsProps : react.PropsWithChildren {
      *  - `standard` will render the default state.
      * @default 'standard'
      */
-    var variant: mui.system.Union? /* 'standard' | 'scrollable' | 'fullWidth' */
+    var variant: TabsVariant?
 
     /**
      * If `true`, the scrollbar is visible. It can be useful when displaying

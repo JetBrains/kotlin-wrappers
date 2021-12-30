@@ -40,7 +40,7 @@ external interface SkeletonProps :
      * The type of content that will be rendered.
      * @default 'text'
      */
-    var variant: mui.system.Union? /* 'text' | 'rectangular' | 'circular', SkeletonPropsVariantOverrides */
+    var variant: SkeletonVariant?
 
     /**
      * Width of the skeleton.

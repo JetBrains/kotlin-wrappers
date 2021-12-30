@@ -71,7 +71,7 @@ external interface ButtonGroupProps :
      * The variant to use.
      * @default 'outlined'
      */
-    var variant: mui.system.Union? /* 'text' | 'outlined' | 'contained', ButtonGroupPropsVariantOverrides */
+    var variant: ButtonGroupVariant?
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.

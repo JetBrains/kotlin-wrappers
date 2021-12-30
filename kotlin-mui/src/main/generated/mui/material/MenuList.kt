@@ -43,7 +43,7 @@ external interface MenuListProps :
      * and the vertical alignment relative to the anchor element.
      * @default 'selectedMenu'
      */
-    var variant: mui.system.Union? /* 'menu' | 'selectedMenu' */
+    var variant: MenuListVariant?
 }
 
 /**
