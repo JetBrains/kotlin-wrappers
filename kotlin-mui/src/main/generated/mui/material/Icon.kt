@@ -29,7 +29,7 @@ external interface IconProps :
      * The color of the component. It supports those theme colors that make sense for this component.
      * @default 'inherit'
      */
-    var color: mui.system.Union? /* | 'inherit' | 'action' | 'disabled' | 'primary' | 'secondary' | 'error' | 'info' | 'success' | 'warning', IconPropsColorOverrides */
+    var color: IconColor?
 
     /**
      * The fontSize applied to the icon. Defaults to 24px, but can be configure to inherit font size.
