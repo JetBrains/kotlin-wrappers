@@ -41,7 +41,7 @@ external interface LinearProgressProps :
      * Use indeterminate or query when there is no progress value.
      * @default 'indeterminate'
      */
-    var variant: mui.system.Union? /* 'determinate' | 'indeterminate' | 'buffer' | 'query' */
+    var variant: LinearProgressVariant?
 }
 
 /**

@@ -56,7 +56,7 @@ external interface DividerProps : react.PropsWithChildren {
      * The variant to use.
      * @default 'fullWidth'
      */
-    var variant: mui.system.Union? /* 'fullWidth' | 'inset' | 'middle', DividerPropsVariantOverrides */
+    var variant: DividerVariant?
 }
 
 /**

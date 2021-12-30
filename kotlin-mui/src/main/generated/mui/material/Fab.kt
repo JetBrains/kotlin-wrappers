@@ -58,7 +58,7 @@ external interface FabProps :
      * The variant to use.
      * @default 'circular'
      */
-    var variant: mui.system.Union? /* 'circular' | 'extended', FabPropsVariantOverrides */
+    var variant: FabVariant?
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.

@@ -65,7 +65,7 @@ external interface TableCellProps :
      * Specify the cell type.
      * The prop defaults to the value inherited from the parent TableHead, TableBody, or TableFooter components.
      */
-    var variant: mui.system.Union? /* 'head' | 'body' | 'footer' */
+    var variant: TableCellVariant?
 }
 
 /**

@@ -77,7 +77,7 @@ external interface DrawerProps :
      * The variant to use.
      * @default 'temporary'
      */
-    var variant: mui.system.Union? /* 'permanent' | 'persistent' | 'temporary' */
+    var variant: DrawerVariant?
 }
 
 /**

@@ -73,7 +73,7 @@ external interface AlertProps :
      * The variant to use.
      * @default 'standard'
      */
-    var variant: mui.system.Union? /* 'standard' | 'filled' | 'outlined', AlertPropsVariantOverrides */
+    var variant: AlertVariant?
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.

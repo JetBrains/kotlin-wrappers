@@ -59,7 +59,7 @@ external interface MobileStepperProps :
      * The variant to use.
      * @default 'dots'
      */
-    var variant: mui.system.Union? /* 'text' | 'dots' | 'progress' */
+    var variant: MobileStepperVariant?
 }
 
 /**

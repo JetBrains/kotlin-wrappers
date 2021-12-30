@@ -45,7 +45,7 @@ external interface ImageListProps :
      * The variant to use.
      * @default 'standard'
      */
-    var variant: mui.system.Union? /* 'masonry' | 'quilted' | 'standard' | 'woven', ImageListPropsVariantOverrides */
+    var variant: ImageListVariant?
 }
 
 /**

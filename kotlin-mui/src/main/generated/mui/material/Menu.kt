@@ -93,7 +93,7 @@ external interface MenuProps :
      * The variant to use. Use `menu` to prevent selected items from impacting the initial focus.
      * @default 'selectedMenu'
      */
-    var variant: mui.system.Union? /* 'menu' | 'selectedMenu' */
+    var variant: MenuVariant?
 }
 
 /**

@@ -80,7 +80,7 @@ external interface ButtonProps :
      * The variant to use.
      * @default 'text'
      */
-    var variant: mui.system.Union? /* 'text' | 'outlined' | 'contained', ButtonPropsVariantOverrides */
+    var variant: ButtonVariant?
 }
 
 /**

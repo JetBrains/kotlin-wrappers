@@ -62,7 +62,7 @@ external interface PaginationProps : react.Props {
      * The variant to use.
      * @default 'text'
      */
-    var variant: mui.system.Union? /* 'text' | 'outlined', PaginationPropsVariantOverrides */
+    var variant: PaginationVariant?
 }
 
 external interface PaginationRenderItemParams : react.Props {

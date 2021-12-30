@@ -29,7 +29,7 @@ external interface ToolbarProps :
      * The variant to use.
      * @default 'regular'
      */
-    var variant: mui.system.Union? /* 'regular' | 'dense', ToolbarPropsVariantOverrides */
+    var variant: ToolbarVariant?
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.

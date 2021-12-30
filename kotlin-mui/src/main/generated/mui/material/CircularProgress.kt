@@ -57,7 +57,7 @@ external interface CircularProgressProps :
      * Use indeterminate when there is no progress value.
      * @default 'indeterminate'
      */
-    var variant: mui.system.Union? /* 'determinate' | 'indeterminate' */
+    var variant: CircularProgressVariant?
 }
 
 /**

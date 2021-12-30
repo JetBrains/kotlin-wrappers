@@ -34,7 +34,7 @@ external interface TimelineDotProps :
      * The dot can appear filled or outlined.
      * @default 'filled'
      */
-    var variant: mui.system.Union? /* 'filled' | 'outlined', TimelineDotPropsVariantOverrides */
+    var variant: TimelineDotVariant?
 }
 
 /**

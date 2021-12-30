@@ -46,7 +46,7 @@ external interface InputAdornmentProps :
      * Note: If you are using the `TextField` component or the `FormControl` component
      * you do not have to set this manually.
      */
-    var variant: mui.system.Union? /* 'standard' | 'outlined' | 'filled' */
+    var variant: InputAdornmentVariant?
 }
 
 /**
