@@ -100,17 +100,17 @@ external interface Palette {
 
     var tonalOffset: dynamic
 
-    var primary: dynamic
+    var primary: PaletteColor
 
-    var secondary: dynamic
+    var secondary: PaletteColor
 
-    var error: dynamic
+    var error: PaletteColor
 
-    var warning: dynamic
+    var warning: PaletteColor
 
-    var info: dynamic
+    var info: PaletteColor
 
-    var success: dynamic
+    var success: PaletteColor
 
     var grey: dynamic
 

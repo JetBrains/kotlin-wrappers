@@ -17,7 +17,7 @@ external interface CircularProgressProps :
      * The color of the component. It supports those theme colors that make sense for this component.
      * @default 'primary'
      */
-    var color: mui.system.Union? /* 'primary' | 'secondary' | 'error' | 'info' | 'success' | 'warning' | 'inherit', CircularProgressPropsColorOverrides */
+    var color: CircularProgressColor?
 
     /**
      * If `true`, the shrink animation is disabled.

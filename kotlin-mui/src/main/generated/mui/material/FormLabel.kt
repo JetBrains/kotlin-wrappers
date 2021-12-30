@@ -21,7 +21,7 @@ external interface FormLabelProps :
     /**
      * The color of the component. It supports those theme colors that make sense for this component.
      */
-    var color: mui.system.Union? /* 'primary' | 'secondary' | 'error' | 'info' | 'success' | 'warning', FormLabelPropsColorOverrides */
+    var color: FormLabelColor?
 
     /**
      * If `true`, the label should be displayed in a disabled state.

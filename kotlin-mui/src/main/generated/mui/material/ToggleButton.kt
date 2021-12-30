@@ -22,7 +22,7 @@ external interface ToggleButtonProps :
      * The color of the button when it is in an active state.
      * @default 'standard'
      */
-    var color: mui.system.Union? /* 'standard' | 'primary' | 'secondary' | 'error' | 'info' | 'success' | 'warning', ToggleButtonPropsColorOverrides */
+    var color: ToggleButtonColor?
 
     /**
      * If `true`, the component is disabled.

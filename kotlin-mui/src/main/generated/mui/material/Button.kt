@@ -22,7 +22,7 @@ external interface ButtonProps :
      * The color of the component. It supports those theme colors that make sense for this component.
      * @default 'primary'
      */
-    var color: mui.system.Union? /* 'inherit' | 'primary' | 'secondary' | 'success' | 'error' | 'info' | 'warning', ButtonPropsColorOverrides */
+    var color: ButtonColor?
 
     /**
      * If `true`, the component is disabled.

@@ -16,7 +16,7 @@ external interface BadgeProps :
      * The color of the component. It supports those theme colors that make sense for this component.
      * @default 'default'
      */
-    var color: mui.system.Union? /* 'primary' | 'secondary' | 'default' | 'error' | 'info' | 'success' | 'warning', BadgePropsColorOverrides */
+    var color: BadgeColor?
 
     /**
      * Wrapped shape the badge should overlap.
