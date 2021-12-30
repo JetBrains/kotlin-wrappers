@@ -32,7 +32,7 @@ external interface TabScrollButtonProps :
     /**
      * The component orientation (layout flow direction).
      */
-    var orientation: mui.system.Union /* 'horizontal' | 'vertical' */
+    var orientation: Orientation
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.

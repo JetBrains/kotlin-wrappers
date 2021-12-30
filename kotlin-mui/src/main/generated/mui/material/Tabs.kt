@@ -68,7 +68,7 @@ external interface TabsProps : react.PropsWithChildren {
      * The component orientation (layout flow direction).
      * @default 'horizontal'
      */
-    var orientation: mui.system.Union? /* 'horizontal' | 'vertical' */
+    var orientation: Orientation?
 
     /**
      * The component used to render the scroll buttons.
