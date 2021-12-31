@@ -29,7 +29,7 @@ external interface SlideProps :
      * Direction the child node will enter from.
      * @default 'down'
      */
-    var direction: mui.system.Union? /* 'left' | 'right' | 'up' | 'down' */
+    var direction: SlideDirection?
 
     /**
      * The transition timing function.

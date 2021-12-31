@@ -16,7 +16,7 @@ external interface TableCellProps :
      * you to add them up quickly in your head without having to worry about decimals.
      * @default 'inherit'
      */
-    var align: mui.system.Union? /* 'inherit' | 'left' | 'center' | 'right' | 'justify' */
+    var align: TableCellAlign?
 
     /**
      * The content of the component.

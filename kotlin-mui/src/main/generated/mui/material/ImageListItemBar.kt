@@ -33,7 +33,7 @@ external interface ImageListItemBarProps :
      * Position of the title bar.
      * @default 'bottom'
      */
-    var position: mui.system.Union? /* 'below' | 'top' | 'bottom' */
+    var position: ImageListItemBarPosition?
 
     /**
      * String or element serving as subtitle (support text).

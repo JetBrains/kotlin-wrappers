@@ -12,3 +12,15 @@ external enum class DrawerVariant {
 
     ;
 }
+
+@Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
+// language=JavaScript
+@JsName("""(/*union*/{left: 'left', top: 'top', right: 'right', bottom: 'bottom'}/*union*/)""")
+external enum class DrawerAnchor {
+    left,
+    top,
+    right,
+    bottom,
+
+    ;
+}

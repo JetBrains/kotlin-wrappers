@@ -12,7 +12,7 @@ external interface TypographyProps :
      * Set the text-align on the component.
      * @default 'inherit'
      */
-    var align: mui.system.Union? /* 'inherit' | 'left' | 'center' | 'right' | 'justify' */
+    var align: TypographyAlign?
 
     /**
      * The content of the component.

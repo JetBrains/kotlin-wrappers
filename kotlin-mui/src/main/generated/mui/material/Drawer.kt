@@ -13,7 +13,7 @@ external interface DrawerProps :
      * Side from which the drawer will appear.
      * @default 'left'
      */
-    var anchor: mui.system.Union? /* 'left' | 'top' | 'right' | 'bottom' */
+    var anchor: DrawerAnchor?
 
     /**
      * The content of the component.

@@ -38,7 +38,7 @@ external interface LinkProps :
      * Controls when the link should have an underline.
      * @default 'always'
      */
-    var underline: mui.system.Union? /* 'none' | 'hover' | 'always' */
+    var underline: LinkUnderline?
 
     /**
      * Applies the theme typography styles.

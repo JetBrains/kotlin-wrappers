@@ -12,7 +12,7 @@ external interface TimelineItemProps :
     /**
      * The position where the timeline's item should appear.
      */
-    var position: mui.system.Union? /* 'left' | 'right' */
+    var position: TimelineItemPosition?
 
     /**
      * The content of the component.

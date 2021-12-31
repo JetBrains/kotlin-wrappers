@@ -12,3 +12,24 @@ external enum class TabsVariant {
 
     ;
 }
+
+@Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
+// language=JavaScript
+@JsName("""(/*union*/{secondary: 'secondary', primary: 'primary'}/*union*/)""")
+external enum class TabsIndicatorColor {
+    secondary,
+    primary,
+
+    ;
+}
+
+@Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
+// language=JavaScript
+@JsName("""(/*union*/{secondary: 'secondary', primary: 'primary', inherit: 'inherit'}/*union*/)""")
+external enum class TabsTextColor {
+    secondary,
+    primary,
+    inherit,
+
+    ;
+}

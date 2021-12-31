@@ -54,7 +54,7 @@ external interface FormControlLabelProps :
      * The position of the label.
      * @default 'end'
      */
-    var labelPlacement: mui.system.Union? /* 'end' | 'start' | 'top' | 'bottom' */
+    var labelPlacement: LabelPlacement?
 
     var name: String?
 

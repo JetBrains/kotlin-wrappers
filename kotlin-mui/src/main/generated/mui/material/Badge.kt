@@ -22,7 +22,7 @@ external interface BadgeProps :
      * Wrapped shape the badge should overlap.
      * @default 'rectangular'
      */
-    var overlap: mui.system.Union? /* 'rectangular' | 'circular' */
+    var overlap: BadgeOverlap?
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
