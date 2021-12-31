@@ -12,3 +12,13 @@ external enum class InputAdornmentVariant {
 
     ;
 }
+
+@Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
+// language=JavaScript
+@JsName("""(/*union*/{start: 'start', end: 'end'}/*union*/)""")
+external enum class InputAdornmentPosition {
+    start,
+    end,
+
+    ;
+}

@@ -22,7 +22,7 @@ external interface ImageListItemBarProps :
      * Position of secondary action IconButton.
      * @default 'right'
      */
-    var actionPosition: mui.system.Union? /* 'left' | 'right' */
+    var actionPosition: ActionPosition?
 
     /**
      * Override or extend the styles applied to the component.
