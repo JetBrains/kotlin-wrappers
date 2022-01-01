@@ -18,3 +18,15 @@ external enum class SvgIconColor {
 
     ;
 }
+
+@Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
+// language=JavaScript
+@JsName("""(/*union*/{inherit: 'inherit', large: 'large', medium: 'medium', small: 'small'}/*union*/)""")
+external enum class SvgIconSize {
+    inherit,
+    large,
+    medium,
+    small,
+
+    ;
+}

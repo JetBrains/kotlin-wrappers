@@ -35,7 +35,7 @@ external interface IconProps :
      * The fontSize applied to the icon. Defaults to 24px, but can be configure to inherit font size.
      * @default 'medium'
      */
-    var fontSize: mui.system.Union? /* 'inherit' | 'large' | 'medium' | 'small', IconPropsSizeOverrides */
+    var fontSize: IconSize?
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
