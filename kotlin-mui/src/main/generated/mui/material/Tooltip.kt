@@ -142,7 +142,7 @@ external interface TooltipProps :
      * Tooltip placement.
      * @default 'bottom'
      */
-    var placement: mui.system.Union? /* 'bottom-end' | 'bottom-start' | 'bottom' | 'left-end' | 'left-start' | 'left' | 'right-end' | 'right-start' | 'right' | 'top-end' | 'top-start' | 'top' */
+    var placement: TooltipPlacement?
 
     /**
      * The component used for the popper.
