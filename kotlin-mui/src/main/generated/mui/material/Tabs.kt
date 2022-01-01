@@ -54,7 +54,7 @@ external interface TabsProps : react.PropsWithChildren {
      * Determines the color of the indicator.
      * @default 'primary'
      */
-    var indicatorColor: mui.system.Union? /* 'secondary' | 'primary' */
+    var indicatorColor: TabsIndicatorColor?
 
     /**
      * Callback fired when the value changes.
@@ -111,7 +111,7 @@ external interface TabsProps : react.PropsWithChildren {
      * Determines the color of the `Tab`.
      * @default 'primary'
      */
-    var textColor: mui.system.Union? /* 'secondary' | 'primary' | 'inherit' */
+    var textColor: TabsTextColor?
 
     /**
      * The value of the currently selected `Tab`.

@@ -30,7 +30,7 @@ external interface AppBarProps :
      * Note: `sticky` is not universally supported and will fall back to `static` when unavailable.
      * @default 'fixed'
      */
-    var position: mui.system.Union? /* 'fixed' | 'absolute' | 'sticky' | 'static' | 'relative' */
+    var position: AppBarPosition?
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.

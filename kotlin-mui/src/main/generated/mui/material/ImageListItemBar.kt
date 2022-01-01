@@ -22,7 +22,7 @@ external interface ImageListItemBarProps :
      * Position of secondary action IconButton.
      * @default 'right'
      */
-    var actionPosition: mui.system.Union? /* 'left' | 'right' */
+    var actionPosition: ActionPosition?
 
     /**
      * Override or extend the styles applied to the component.
@@ -33,7 +33,7 @@ external interface ImageListItemBarProps :
      * Position of the title bar.
      * @default 'bottom'
      */
-    var position: mui.system.Union? /* 'below' | 'top' | 'bottom' */
+    var position: ImageListItemBarPosition?
 
     /**
      * String or element serving as subtitle (support text).

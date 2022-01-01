@@ -24,3 +24,15 @@ external enum class OpenReason {
 
     ;
 }
+
+@Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
+// language=JavaScript
+@JsName("""(/*union*/{up: 'up', down: 'down', left: 'left', right: 'right'}/*union*/)""")
+external enum class SpeedDialDirection {
+    up,
+    down,
+    left,
+    right,
+
+    ;
+}

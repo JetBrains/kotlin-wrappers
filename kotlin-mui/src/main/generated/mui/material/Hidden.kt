@@ -16,7 +16,7 @@ external interface HiddenProps : react.PropsWithChildren {
      * server-side rendering.
      * @default 'js'
      */
-    var implementation: mui.system.Union? /* 'js' | 'css' */
+    var implementation: HiddenImplementation?
 
     /**
      * You can use this prop when choosing the `js` implementation with server-side rendering.

@@ -29,7 +29,7 @@ external interface SpeedDialProps :
      * The direction the actions open relative to the floating action button.
      * @default 'up'
      */
-    var direction: mui.system.Union? /* 'up' | 'down' | 'left' | 'right' */
+    var direction: SpeedDialDirection?
 
     /**
      * If `true`, the SpeedDial is hidden.

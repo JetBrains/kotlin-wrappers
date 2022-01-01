@@ -30,7 +30,7 @@ external interface LoadingButtonProps :
      * The loading indicator can be positioned on the start, end, or the center of the button.
      * @default 'center'
      */
-    var loadingPosition: mui.system.Union? /* 'start' | 'end' | 'center' */
+    var loadingPosition: LoadingPosition?
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.

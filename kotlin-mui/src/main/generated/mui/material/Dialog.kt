@@ -91,7 +91,7 @@ external interface DialogProps :
      * Determine the container for scrolling the dialog.
      * @default 'paper'
      */
-    var scroll: mui.system.Union? /* 'body' | 'paper' */
+    var scroll: DialogScroll?
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.

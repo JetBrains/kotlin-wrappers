@@ -43,7 +43,7 @@ external interface MobileStepperProps :
      * Set the positioning type.
      * @default 'bottom'
      */
-    var position: mui.system.Union? /* 'bottom' | 'top' | 'static' */
+    var position: MobileStepperPosition?
 
     /**
      * The total steps.

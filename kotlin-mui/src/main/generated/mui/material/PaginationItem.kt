@@ -50,7 +50,7 @@ external interface PaginationItemProps :
      * The shape of the pagination item.
      * @default 'circular'
      */
-    var shape: mui.system.Union? /* 'circular' | 'rounded' */
+    var shape: PaginationItemShape?
 
     /**
      * The size of the component.

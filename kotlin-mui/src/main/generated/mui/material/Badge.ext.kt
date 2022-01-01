@@ -26,3 +26,13 @@ external enum class BadgeVariant {
 
     ;
 }
+
+@Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
+// language=JavaScript
+@JsName("""(/*union*/{rectangular: 'rectangular', circular: 'circular'}/*union*/)""")
+external enum class BadgeOverlap {
+    rectangular,
+    circular,
+
+    ;
+}

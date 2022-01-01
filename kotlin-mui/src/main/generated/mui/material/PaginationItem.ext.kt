@@ -22,3 +22,13 @@ external enum class PaginationItemVariant {
 
     ;
 }
+
+@Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
+// language=JavaScript
+@JsName("""(/*union*/{circular: 'circular', rounded: 'rounded'}/*union*/)""")
+external enum class PaginationItemShape {
+    circular,
+    rounded,
+
+    ;
+}

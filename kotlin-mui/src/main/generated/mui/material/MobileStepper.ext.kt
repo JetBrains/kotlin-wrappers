@@ -12,3 +12,14 @@ external enum class MobileStepperVariant {
 
     ;
 }
+
+@Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
+// language=JavaScript
+@JsName("""(/*union*/{bottom: 'bottom', top: 'top', static: 'static'}/*union*/)""")
+external enum class MobileStepperPosition {
+    bottom,
+    top,
+    static,
+
+    ;
+}

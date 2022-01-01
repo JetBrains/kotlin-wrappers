@@ -28,7 +28,7 @@ external interface TableSortLabelProps :
      * The current sort direction.
      * @default 'asc'
      */
-    var direction: mui.system.Union? /* 'asc' | 'desc' */
+    var direction: TableSortLabelDirection?
 
     /**
      * Hide sort icon when active is false.

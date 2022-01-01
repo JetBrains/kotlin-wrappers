@@ -22,7 +22,7 @@ external interface TabScrollButtonProps :
     /**
      * The direction the button should indicate.
      */
-    var direction: mui.system.Union /* 'left' | 'right' */
+    var direction: TabScrollButtonDirection
 
     /**
      * If `true`, the component is disabled.
