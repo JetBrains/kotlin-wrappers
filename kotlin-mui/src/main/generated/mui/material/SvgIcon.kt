@@ -33,7 +33,7 @@ external interface SvgIconProps :
      * The fontSize applied to the icon. Defaults to 24px, but can be configure to inherit font size.
      * @default 'medium'
      */
-    var fontSize: mui.system.Union? /* 'inherit' | 'large' | 'medium' | 'small', SvgIconPropsSizeOverrides */
+    var fontSize: SvgIconSize?
 
     /**
      * Applies a color attribute to the SVG element.
