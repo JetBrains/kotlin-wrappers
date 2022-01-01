@@ -50,7 +50,7 @@ external interface InputLabelProps :
      * If `dense`, will adjust vertical spacing. This is normally obtained via context from
      * FormControl.
      */
-    var margin: mui.system.Union? /* 'dense' */
+    var margin: InputLabelMargin?
 
     /**
      * if `true`, the label will indicate that the `input` is required.

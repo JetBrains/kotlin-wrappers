@@ -12,3 +12,14 @@ external enum class DividerVariant {
 
     ;
 }
+
+@Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
+// language=JavaScript
+@JsName("""(/*union*/{center: 'center', right: 'right', left: 'left'}/*union*/)""")
+external enum class DividerTextAlign {
+    center,
+    right,
+    left,
+
+    ;
+}

@@ -59,7 +59,7 @@ external interface FormControlProps :
      * If `dense` or `normal`, will adjust vertical spacing of this and contained components.
      * @default 'none'
      */
-    var margin: mui.system.Union? /* 'dense' | 'normal' | 'none' */
+    var margin: FormControlMargin?
 
     /**
      * If `true`, the label will indicate that the `input` is required.

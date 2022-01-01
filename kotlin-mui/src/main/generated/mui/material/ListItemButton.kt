@@ -13,7 +13,7 @@ external interface ListItemButtonBaseProps : react.PropsWithChildren {
      * Defines the `align-items` style property.
      * @default 'center'
      */
-    var alignItems: mui.system.Union? /* 'flex-start' | 'center' */
+    var alignItems: ListItemButtonAlignItems?
 
     /**
      * If `true`, the list item is focused during the first mount.

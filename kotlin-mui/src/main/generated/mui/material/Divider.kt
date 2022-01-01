@@ -50,7 +50,7 @@ external interface DividerProps : react.PropsWithChildren {
      * The text alignment.
      * @default 'center'
      */
-    var textAlign: mui.system.Union? /* 'center' | 'right' | 'left' */
+    var textAlign: DividerTextAlign?
 
     /**
      * The variant to use.
