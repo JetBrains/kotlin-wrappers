@@ -38,7 +38,7 @@ external interface TableCellProps :
      * Sets the padding applied to the cell.
      * The prop defaults to the value (`'default'`) inherited from the parent Table component.
      */
-    var padding: mui.system.Union? /* 'normal' | 'checkbox' | 'none' */
+    var padding: TableCellPadding?
 
     /**
      * Set scope attribute.

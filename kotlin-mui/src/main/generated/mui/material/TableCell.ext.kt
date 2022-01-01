@@ -25,3 +25,14 @@ external enum class TableCellAlign {
 
     ;
 }
+
+@Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
+// language=JavaScript
+@JsName("""(/*union*/{normal: 'normal', checkbox: 'checkbox', none: 'none'}/*union*/)""")
+external enum class TableCellPadding {
+    normal,
+    checkbox,
+    none,
+
+    ;
+}

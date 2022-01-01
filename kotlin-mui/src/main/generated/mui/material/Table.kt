@@ -22,7 +22,7 @@ external interface TableProps :
      * Allows TableCells to inherit padding of the Table.
      * @default 'normal'
      */
-    var padding: mui.system.Union? /* 'normal' | 'checkbox' | 'none' */
+    var padding: TablePadding?
 
     /**
      * Allows TableCells to inherit size of the Table.

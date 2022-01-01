@@ -12,3 +12,12 @@ external enum class InputLabelVariant {
 
     ;
 }
+
+@Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
+// language=JavaScript
+@JsName("""(/*union*/{dense: 'dense'}/*union*/)""")
+external enum class InputLabelMargin {
+    dense,
+
+    ;
+}

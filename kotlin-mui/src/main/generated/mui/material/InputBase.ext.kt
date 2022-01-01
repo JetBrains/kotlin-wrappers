@@ -15,3 +15,13 @@ external enum class InputBaseColor {
 
     ;
 }
+
+@Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
+// language=JavaScript
+@JsName("""(/*union*/{dense: 'dense', none: 'none'}/*union*/)""")
+external enum class InputBaseMargin {
+    dense,
+    none,
+
+    ;
+}

@@ -113,7 +113,7 @@ external interface InputBaseProps :
      * FormControl.
      * The prop defaults to the value (`'none'`) inherited from the parent FormControl component.
      */
-    var margin: mui.system.Union? /* 'dense' | 'none' */
+    var margin: InputBaseMargin?
 
     /**
      * If `true`, a `textarea` element is rendered.

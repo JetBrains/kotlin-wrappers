@@ -26,3 +26,14 @@ external enum class FormControlVariant {
 
     ;
 }
+
+@Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
+// language=JavaScript
+@JsName("""(/*union*/{dense: 'dense', normal: 'normal', none: 'none'}/*union*/)""")
+external enum class FormControlMargin {
+    dense,
+    normal,
+    none,
+
+    ;
+}
