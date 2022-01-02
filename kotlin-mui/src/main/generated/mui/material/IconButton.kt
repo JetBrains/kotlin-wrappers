@@ -43,7 +43,7 @@ external interface IconButtonProps :
      * size and shape).
      * @default false
      */
-    var edge: mui.system.Union? /* 'start' | 'end' | false */
+    var edge: IconButtonEdge?
 
     /**
      * The size of the component.

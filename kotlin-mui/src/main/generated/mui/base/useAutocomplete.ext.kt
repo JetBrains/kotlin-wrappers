@@ -50,3 +50,25 @@ external enum class AutocompleteInputChangeReason {
 
     ;
 }
+
+@Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
+// language=JavaScript
+@JsName("""(/*union*/{any: 'any', start: 'start'}/*union*/)""")
+external enum class MatchFrom {
+    any,
+    start,
+
+    ;
+}
+
+@Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
+// language=JavaScript
+@JsName("""(/*union*/{touch: 'touch', mouse: 'mouse', true: 'true', false: 'false'}/*union*/)""")
+external enum class BlurOnSelect {
+    touch,
+    mouse,
+    `true`,
+    `false`,
+
+    ;
+}

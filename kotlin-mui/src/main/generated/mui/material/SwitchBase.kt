@@ -51,7 +51,7 @@ external interface SwitchBaseProps :
      * size and shape).
      * @default false
      */
-    var edge: mui.system.Union? /* 'start' | 'end' | false */
+    var edge: SwitchBaseEdge?
 
     var icon: react.ReactNode
 

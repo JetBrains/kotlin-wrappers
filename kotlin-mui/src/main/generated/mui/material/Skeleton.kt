@@ -13,7 +13,7 @@ external interface SkeletonProps :
      * If `false` the animation effect is disabled.
      * @default 'pulse'
      */
-    var animation: mui.system.Union? /* 'pulse' | 'wave' | false */
+    var animation: SkeletonAnimation?
 
     /**
      * Optional children to infer width and height from.

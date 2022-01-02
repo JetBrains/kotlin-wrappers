@@ -33,3 +33,14 @@ external enum class TabsTextColor {
 
     ;
 }
+
+@Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
+// language=JavaScript
+@JsName("""(/*union*/{auto: 'auto', true: 'true', false: 'false'}/*union*/)""")
+external enum class TabsScrollButtons {
+    auto,
+    `true`,
+    `false`,
+
+    ;
+}

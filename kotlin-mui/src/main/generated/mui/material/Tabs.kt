@@ -87,7 +87,7 @@ external interface TabsProps : react.PropsWithChildren {
      * This behavior can be disabled with `allowScrollButtonsMobile`.
      * @default 'auto'
      */
-    var scrollButtons: mui.system.Union? /* 'auto' | true | false */
+    var scrollButtons: TabsScrollButtons?
 
     /**
      * If `true` the selected tab changes on focus. Otherwise it only

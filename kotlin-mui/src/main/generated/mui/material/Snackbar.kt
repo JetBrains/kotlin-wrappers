@@ -129,9 +129,9 @@ external interface SnackbarProps :
 }
 
 external interface SnackbarOrigin {
-    var vertical: mui.system.Union /* 'top' | 'bottom' */
+    var vertical: SnackbarOriginVertical
 
-    var horizontal: mui.system.Union /* 'left' | 'center' | 'right' */
+    var horizontal: SnackbarOriginHorizontal
 }
 
 /**
