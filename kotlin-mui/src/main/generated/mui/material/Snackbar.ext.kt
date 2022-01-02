@@ -12,3 +12,24 @@ external enum class SnackbarCloseReason {
 
     ;
 }
+
+@Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
+// language=JavaScript
+@JsName("""(/*union*/{top: 'top', bottom: 'bottom'}/*union*/)""")
+external enum class SnackbarOriginVertical {
+    top,
+    bottom,
+
+    ;
+}
+
+@Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
+// language=JavaScript
+@JsName("""(/*union*/{left: 'left', center: 'center', right: 'right'}/*union*/)""")
+external enum class SnackbarOriginHorizontal {
+    left,
+    center,
+    right,
+
+    ;
+}

@@ -14,7 +14,7 @@ external interface CreateFilterOptionsConfig<T> {
 
     var limit: Number?
 
-    var matchFrom: mui.system.Union? /* 'any' | 'start' */
+    var matchFrom: MatchFrom?
 
     var stringify: ((option: T) -> String)?
 
@@ -69,7 +69,7 @@ external interface UseAutocompleteProps<T> : react.Props {
      * - `mouse` the input is blurred after a mouse event.
      * @default false
      */
-    var blurOnSelect: mui.system.Union? /* 'touch' | 'mouse' | true | false */
+    var blurOnSelect: BlurOnSelect?
 
     /**
      * If `true`, the input's text is cleared on blur if no value is selected.
