@@ -4,6 +4,17 @@ package mui.material
 
 @Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
 // language=JavaScript
+@JsName("""(/*union*/{asc: 'asc', desc: 'desc', false: 'false'}/*union*/)""")
+external enum class SortDirection {
+    asc,
+    desc,
+    `false`,
+
+    ;
+}
+
+@Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
+// language=JavaScript
 @JsName("""(/*union*/{head: 'head', body: 'body', footer: 'footer'}/*union*/)""")
 external enum class TableCellVariant {
     head,
