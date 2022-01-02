@@ -54,7 +54,7 @@ external interface TableCellProps :
     /**
      * Set aria-sort direction.
      */
-    var sortDirection: dynamic
+    var sortDirection: SortDirection?
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
