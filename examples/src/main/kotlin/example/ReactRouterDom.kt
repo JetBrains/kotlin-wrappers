@@ -1,10 +1,13 @@
 package example
 
+import react.FC
 import react.Props
-import react.RBuilder
-import react.createElement
-import react.dom.*
-import react.fc
+import react.create
+import react.dom.html.ReactHTML.div
+import react.dom.html.ReactHTML.h2
+import react.dom.html.ReactHTML.h3
+import react.dom.html.ReactHTML.li
+import react.dom.html.ReactHTML.ul
 import react.router.Route
 import react.router.Routes
 import react.router.dom.BrowserRouter
@@ -12,25 +15,38 @@ import react.router.dom.Link
 import react.router.useLocation
 import react.router.useParams
 
-val Home = fc<Props> { h2 { +"Home" } }
-val About = fc<Props> { h2 { +"About" } }
+val Home = FC<Props> {
+    h2 {
+        +"Home"
+    }
+}
 
-val Topics = fc<Props> {
+val About = FC<Props> {
+    h2 {
+        +"About"
+    }
+}
+
+val Topics = FC<Props> {
     val location = useLocation()
 
     div {
-        h2 { +"Topics" }
+        h2 {
+            +"Topics"
+        }
 
         ul {
             li {
                 Link {
-                    attrs.to = "/components"
+                    to = "/components"
+
                     +"Components"
                 }
             }
             li {
                 Link {
-                    attrs.to = "/props-v-state"
+                    to = "/props-v-state"
+
                     +"Props v. State"
                 }
             }
@@ -38,44 +54,48 @@ val Topics = fc<Props> {
 
         Routes {
             Route {
-                attrs.path = "${location.pathname}/:topicId"
-                attrs.element = createElement(Topic)
+                path = "${location.pathname}/:topicId"
+                element = Topic.create()
             }
             Route {
-                attrs.path = location.pathname
-                attrs.element = createElement {
-                    h3 { +"Please select a topic." }
-                }
+                path = location.pathname
+                element = h3.create { +"Please select a topic." }
             }
         }
     }
 }
 
-val Topic = fc<Props> {
-    val topicId = useParams()["topicId"] ?: return@fc
+val Topic = FC<Props> {
+    val topicId = useParams()["topicId"]
+        ?: return@FC
 
-    h3 { +"Requested topic ID: $topicId" }
+    h3 {
+        +"Requested topic ID: $topicId"
+    }
 }
 
-fun RBuilder.appWithRouter() {
+val ReactRouterDomApp = FC<Props> {
     BrowserRouter {
         div {
             ul {
                 li {
                     Link {
-                        attrs.to = "/"
+                        to = "/"
+
                         +"Home"
                     }
                 }
                 li {
                     Link {
-                        attrs.to = "/about"
+                        to = "/about"
+
                         +"About"
                     }
                 }
                 li {
                     Link {
-                        attrs.to = "/topics"
+                        to = "/topics"
+
                         +"Topics"
                     }
                 }
@@ -83,16 +103,16 @@ fun RBuilder.appWithRouter() {
 
             Routes {
                 Route {
-                    attrs.path = "/about"
-                    attrs.element = createElement(About)
+                    path = "/about"
+                    element = About.create()
                 }
                 Route {
-                    attrs.path = "/topics"
-                    attrs.element = createElement(Topics)
+                    path = "/topics"
+                    element = Topics.create()
                 }
                 Route {
-                    attrs.path = "/"
-                    attrs.element = createElement(Home)
+                    path = "/"
+                    element = Home.create()
                 }
             }
         }
