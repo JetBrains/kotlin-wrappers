@@ -119,7 +119,7 @@ private fun calculateWinner(squares: Array<String?>): String? {
 
 // Make sure to include the CSS in your index.kt, e.g.
 // require("TicTacToe.css")
-val TicTacToe = FC<TicTacToeProps> {
+val TicTacToeApp = FC<TicTacToeProps> {
     var history by useState(arrayOf(arrayOfNulls<String?>(9)))
     var xIsNext by useState(true)
     var stepNumber by useState(0)
@@ -194,8 +194,4 @@ val TicTacToe = FC<TicTacToeProps> {
             }
         }
     }
-}
-
-val TicTacToeApp = FC<Props> {
-    TicTacToe()
 }

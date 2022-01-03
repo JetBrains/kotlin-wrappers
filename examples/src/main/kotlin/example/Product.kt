@@ -152,22 +152,14 @@ val PRODUCTS = arrayOf(
     Product("Electronics", 199.9, true, "Nexus"),
 )
 
-val ProductComponent = FC<ProductProps> {
+val ProductApp = FC<ProductProps> {
     var filterText by useState("")
     var inStockOnly by useState(false)
 
-    fun handleFilterInputChange(targetValue: String) {
-        filterText = targetValue
-    }
-
-    fun handleInStockInputClick() {
-        inStockOnly = !inStockOnly
-    }
-
     div {
         SearchBar {
-            this.onClick = { handleInStockInputClick() }
-            this.onChange = { filterText: String -> handleFilterInputChange(filterText) }
+            this.onClick = { inStockOnly = !inStockOnly }
+            this.onChange = { filterText = it }
             this.inStockOnly = inStockOnly
             this.filterText = filterText
         }
@@ -178,8 +170,4 @@ val ProductComponent = FC<ProductProps> {
             this.inStockOnly = inStockOnly
         }
     }
-}
-
-val ProductApp = FC<Props> {
-    ProductComponent()
 }
