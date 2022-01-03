@@ -162,4 +162,6 @@ external interface PaletteOptions {
 }
 
 @JsName("default")
-external fun createPalette(palette: PaletteOptions): Palette
+external fun createPalette(
+    palette: PaletteOptions,
+): Palette
