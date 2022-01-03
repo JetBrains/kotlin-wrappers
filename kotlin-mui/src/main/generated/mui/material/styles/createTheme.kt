@@ -40,3 +40,6 @@ external interface Theme {
 
     var unstable_strictMode: Boolean?
 }
+
+@JsName("default")
+external fun createTheme(options: ThemeOptions?, vararg args: dynamic): Theme

@@ -52,3 +52,6 @@ external interface Theme {
 
     var zIndex: dynamic
 }
+
+@JsName("default")
+external fun createTheme(options: ThemeOptions?, vararg args: dynamic): Theme

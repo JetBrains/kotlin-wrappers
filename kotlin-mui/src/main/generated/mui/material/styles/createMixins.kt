@@ -28,3 +28,10 @@ external interface Mixins {
 external interface MixinsOptions {
 // ... use interface declaration merging to add custom mixin options
 }
+
+@JsName("default")
+external fun createMixins(
+    breakpoints: mui.system.Breakpoints,
+    spacing: mui.system.Spacing,
+    mixins: MixinsOptions,
+): Mixins
