@@ -4,3 +4,8 @@
 @file:JsNonModule
 
 package mui.material.styles
+
+@JsName("default")
+external fun createStyles(
+    styles: Any,
+)

@@ -160,3 +160,8 @@ external interface PaletteOptions {
 
     var getContrastText: ((background: String) -> String)?
 }
+
+@JsName("default")
+external fun createPalette(
+    palette: PaletteOptions,
+): Palette
