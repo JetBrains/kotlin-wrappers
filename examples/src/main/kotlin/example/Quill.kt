@@ -1,5 +1,11 @@
 package example
 
+import react.ComponentClass
+import react.FC
+import react.Props
+import react.dom.html.ReactHTML.div
+import react.useState
+
 /**
  * An example of using an external React component by Scott_Huang@qq.com (Zhiliang.Huang@gmail.com)
  *
@@ -7,53 +13,37 @@ package example
  * Add `require ("react-quill/dist/quill.snow.css")` to index.kt to include the CSS
  */
 
-import react.*
-import react.dom.div
-
-@JsModule("react-quill")
-@JsNonModule
-external val reactQuill: ComponentClass<ReactQuillProps>
-
 external interface ReactQuillProps : Props {
     var value: String
     var onChange: (String) -> Unit
 }
 
-interface QuillProps : Props {
+@JsModule("react-quill")
+@JsNonModule
+external val ReactQuill: ComponentClass<ReactQuillProps>
+
+external interface QuillProps : Props {
     var initialText: String
 }
 
-interface QuillState : State {
-    var text: String
-}
+val Quill = FC<QuillProps> { props ->
+    var text by useState(props.initialText)
 
-
-class Quill(props: QuillProps) : RComponent<QuillProps, QuillState>(props) {
-    override fun QuillState.init(props: QuillProps) {
-        text = props.initialText
-    }
-
-    private fun handleChange(value: String) {
-        setState {
-            text = value
-        }
+    fun handleChange(value: String) {
+        text = value
         console.log(value)
     }
 
-    override fun RBuilder.render() {
-        div {
-            reactQuill {
-                attrs {
-                    value = state.text
-                    onChange = { handleChange(it) }
-                }
-            }
+    div {
+        ReactQuill {
+            value = text
+            onChange = { handleChange(it) }
         }
     }
 }
 
-fun RBuilder.quill(quillValue: String) {
-    child(Quill::class) {
-        attrs.initialText = quillValue
+val QuillApp = FC<Props> {
+    Quill {
+        initialText = "Hello, World"
     }
 }

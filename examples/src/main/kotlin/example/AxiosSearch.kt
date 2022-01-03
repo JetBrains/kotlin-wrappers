@@ -1,20 +1,25 @@
 package example
 
+import csstype.Color
+import kotlinext.js.jso
+import react.FC
+import react.Props
+import react.css.css
+import react.dom.html.InputType
+import react.dom.html.ReactHTML.br
+import react.dom.html.ReactHTML.div
+import react.dom.html.ReactHTML.h1
+import react.dom.html.ReactHTML.input
+import react.dom.html.ReactHTML.p
+import react.key
+import react.useState
+import kotlin.js.Promise
+
 /**
  * An example of using axios to fetch remote data by Scott_Huang@qq.com (Zhiliang.Huang@gmail.com)
  *
  * This example queries the database of ZIP codes at http://ziptasticapi.com and displays the results.
  */
-
-import kotlinext.js.js
-import kotlinext.js.jso
-import kotlinx.html.InputType
-import kotlinx.html.js.onChangeFunction
-import kotlinx.html.title
-import org.w3c.dom.HTMLInputElement
-import react.*
-import react.dom.*
-import kotlin.js.Promise
 
 @JsModule("axios")
 @JsNonModule
@@ -58,13 +63,7 @@ external interface AxiosResponse<T> {
 
 data class ZipResult(val country: String, val state: String, val city: String)
 
-interface AxiosProps : Props
-
-interface AxiosState : State {
-    var zipCode: String
-    var zipResult: ZipResult
-    var errorMessage: String
-}
+external interface AxiosProps : Props
 
 external interface ZipData {
     val country: String
@@ -72,77 +71,75 @@ external interface ZipData {
     val city: String
 }
 
-class AxiosSearch(props: AxiosProps) : RComponent<AxiosProps, AxiosState>(props) {
-    override fun AxiosState.init(props: AxiosProps) {
-        zipCode = ""
-        zipResult = ZipResult("", "", "")
-        errorMessage = ""
-    }
+val AxiosSearch = FC<AxiosProps> { props ->
+    var zipCode by useState("")
+    var zipResult by useState(ZipResult("", "", ""))
+    var errorMessage by useState("")
 
-    private fun remoteSearchZip(zipCode: String) {
+    fun remoteSearchZip(zipCode: String) {
         val config: AxiosConfigSettings = jso {
             url = "https://ziptasticapi.com/$zipCode"
             timeout = 3000
         }
 
-        axios<ZipData>(config).then { response ->
-            setState {
+        axios<ZipData>(config)
+            .then { response ->
                 zipResult = ZipResult(response.data.country, response.data.state, response.data.city)
                 errorMessage = ""
+                console.log(response)
             }
-            console.log(response)
-        }.catch { error ->
-            setState {
+            .catch { error ->
                 zipResult = ZipResult("", "", "")
                 errorMessage = error.message ?: ""
+                console.log(error)
             }
-            console.log(error)
-        }
     }
 
-    private fun handleChange(targetValue: String) {
-        setState {
-            zipCode = targetValue
-            zipResult = ZipResult("", "", "")
-            errorMessage = ""
-        }
+    fun handleChange(targetValue: String) {
+        zipCode = targetValue
+        zipResult = ZipResult("", "", "")
+        errorMessage = ""
         if (targetValue.length == 5) {
             remoteSearchZip(targetValue)
         }
     }
 
-    override fun RBuilder.render() {
-        val infoText = "Enter a valid US ZIP code below"
-        div {
-            p { +infoText }
-            input(type = InputType.text, name = "zipCode") {
-                key = "zipCode"
-                attrs {
-                    value = state.zipCode
-                    placeholder = "Enter ZIP code"
-                    title = infoText
-                    onChangeFunction = {
-                        val target = it.target as HTMLInputElement
-                        handleChange(target.value)
-                    }
-                }
+    val infoText = "Enter a valid US ZIP code below"
+    div {
+        p {
+            +infoText
+        }
+        input {
+            key = "zipCode"
+
+            type = InputType.text
+            name = "zipCode"
+            value = zipCode
+            placeholder = "Enter ZIP code"
+            title = infoText
+            onChange = {
+                handleChange(it.target.value)
             }
-            br {}
-            h1 {
-                +"${state.zipCode} ZIP code belongs to: "
-                +"${state.zipResult.country} ${state.zipResult.state} ${state.zipResult.city} "
-                if (!state.errorMessage.isEmpty()) div {
-                    attrs.jsStyle = js {
-                        color = "red"
+        }
+        br()
+        h1 {
+            +"$zipCode ZIP code belongs to:"
+            +"${zipResult.country} ${zipResult.state} ${zipResult.city}"
+
+            if (errorMessage.isNotEmpty()) {
+                div {
+                    css {
+                        color = Color("red")
                     }
+
                     +"Error while searching for ZIP code: "
-                    +state.errorMessage
+                    +errorMessage
                 }
             }
         }
     }
 }
 
-fun RBuilder.axiosSearch() {
-    child(AxiosSearch::class) {}
+val AxiosSearchApp = FC<Props> {
+    AxiosSearch()
 }
