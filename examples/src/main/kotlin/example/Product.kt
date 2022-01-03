@@ -152,7 +152,7 @@ val PRODUCTS = arrayOf(
     Product("Electronics", 199.9, true, "Nexus"),
 )
 
-val ProductComponent = FC<ProductProps> {
+val ProductApp = FC<ProductProps> {
     var filterText by useState("")
     var inStockOnly by useState(false)
 
@@ -178,8 +178,4 @@ val ProductComponent = FC<ProductProps> {
             this.inStockOnly = inStockOnly
         }
     }
-}
-
-val ProductApp = FC<Props> {
-    ProductComponent()
 }

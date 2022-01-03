@@ -61,7 +61,11 @@ external interface AxiosResponse<T> {
     val config: AxiosConfigSettings
 }
 
-data class ZipResult(val country: String, val state: String, val city: String)
+data class ZipResult(
+    val country: String,
+    val state: String,
+    val city: String,
+)
 
 external interface AxiosProps : Props
 
@@ -71,7 +75,7 @@ external interface ZipData {
     val city: String
 }
 
-val AxiosSearch = FC<AxiosProps> {
+val AxiosSearchApp = FC<AxiosProps> {
     var zipCode by useState("")
     var zipResult by useState(ZipResult("", "", ""))
     var errorMessage by useState("")
@@ -138,8 +142,4 @@ val AxiosSearch = FC<AxiosProps> {
             }
         }
     }
-}
-
-val AxiosSearchApp = FC<Props> {
-    AxiosSearch()
 }
