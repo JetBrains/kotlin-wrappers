@@ -71,7 +71,7 @@ external interface ZipData {
     val city: String
 }
 
-val AxiosSearch = FC<AxiosProps> { props ->
+val AxiosSearch = FC<AxiosProps> {
     var zipCode by useState("")
     var zipResult by useState(ZipResult("", "", ""))
     var errorMessage by useState("")
