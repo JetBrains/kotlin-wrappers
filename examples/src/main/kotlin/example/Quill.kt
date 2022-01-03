@@ -22,28 +22,13 @@ external interface ReactQuillProps : Props {
 @JsNonModule
 external val ReactQuill: ComponentClass<ReactQuillProps>
 
-external interface QuillProps : Props {
-    var initialText: String
-}
-
-val Quill = FC<QuillProps> { props ->
-    var text by useState(props.initialText)
-
-    fun handleChange(value: String) {
-        text = value
-        console.log(value)
-    }
+val QuillApp = FC<Props> {
+    var text by useState("Hello, World")
 
     div {
         ReactQuill {
             value = text
-            onChange = { handleChange(it) }
+            onChange = { text = it }
         }
-    }
-}
-
-val QuillApp = FC<Props> {
-    Quill {
-        initialText = "Hello, World"
     }
 }
