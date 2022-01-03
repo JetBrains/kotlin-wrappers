@@ -1,5 +1,3 @@
-@file:Suppress("NonNullableBooleanPropertyInExternalInterface")
-
 package example
 
 import csstype.Color
