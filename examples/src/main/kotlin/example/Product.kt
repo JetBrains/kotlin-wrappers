@@ -1,3 +1,5 @@
+@file:Suppress("NonNullableBooleanPropertyInExternalInterface")
+
 package example
 
 import csstype.Color
@@ -38,13 +40,13 @@ val RawProductCategory = FC<PropsWithChildren> {
 external interface RawProductProps : Props {
     var name: String
     var price: Double
-    var isStocked: Boolean?
+    var isStocked: Boolean
 }
 
 val RawProduct = FC<RawProductProps> { props ->
     tr {
         td {
-            if (props.isStocked!!) {
+            if (props.isStocked) {
                 +props.name
             } else {
                 span {
@@ -64,7 +66,7 @@ val RawProduct = FC<RawProductProps> { props ->
 external interface ProductTableProps : Props {
     var products: Array<Product>
     var filterText: String
-    var inStockOnly: Boolean?
+    var inStockOnly: Boolean
 }
 
 val ProductTable = FC<ProductTableProps> { props ->
@@ -92,7 +94,7 @@ val ProductTable = FC<ProductTableProps> { props ->
                 lastCategory = it.category
 
                 //show the product per filter text and inStock flag
-                if (!((props.filterText.isNotEmpty() && !it.name.uppercase().contains(props.filterText.uppercase())) || (props.inStockOnly!! && !it.isStocked))) {
+                if (!((props.filterText.isNotEmpty() && !it.name.uppercase().contains(props.filterText.uppercase())) || (props.inStockOnly && !it.isStocked))) {
                     RawProduct {
                         name = it.name
                         price = it.price
@@ -107,7 +109,7 @@ val ProductTable = FC<ProductTableProps> { props ->
 external interface SearchBarProps : Props {
     var onClick: () -> Unit
     var onChange: (String) -> Unit
-    var inStockOnly: Boolean?
+    var inStockOnly: Boolean
     var filterText: String
 }
 
@@ -124,7 +126,7 @@ val SearchBar = FC<SearchBarProps> { props ->
             input {
                 type = InputType.checkbox
                 name = "showInstockOnly"
-                value = if (props.inStockOnly!!) "1" else "0"
+                value = if (props.inStockOnly) "1" else "0"
                 onClick = { props.onClick() }
             }
             +"Show in-stock products only"
