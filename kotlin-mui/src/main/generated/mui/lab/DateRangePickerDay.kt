@@ -1,8 +1,5 @@
 // Automatically generated - do not modify!
 
-@file:JsModule("@mui/lab/DateRangePickerDay")
-@file:JsNonModule
-
 package mui.lab
 
 external interface DateRangePickerDayProps<TDate> : react.Props {

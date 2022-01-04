@@ -1,8 +1,5 @@
 // Automatically generated - do not modify!
 
-@file:JsModule("@mui/material/styles/createTransitions")
-@file:JsNonModule
-
 package mui.material.styles
 
 import kotlinext.js.ReadonlyArray
