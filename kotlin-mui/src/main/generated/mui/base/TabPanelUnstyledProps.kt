@@ -1,8 +1,5 @@
 // Automatically generated - do not modify!
 
-@file:JsModule("@mui/base/TabPanelUnstyledProps")
-@file:JsNonModule
-
 package mui.base
 
 external interface TabPanelUnstyledProps :

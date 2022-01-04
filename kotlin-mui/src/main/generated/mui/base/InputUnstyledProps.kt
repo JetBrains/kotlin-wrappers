@@ -1,8 +1,5 @@
 // Automatically generated - do not modify!
 
-@file:JsModule("@mui/base/InputUnstyledProps")
-@file:JsNonModule
-
 package mui.base
 
 external interface InputUnstyledProps :

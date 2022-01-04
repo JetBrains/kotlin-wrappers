@@ -1,8 +1,5 @@
 // Automatically generated - do not modify!
 
-@file:JsModule("@mui/base/TablePaginationUnstyledProps")
-@file:JsNonModule
-
 package mui.base
 
 external interface TablePaginationUnstyledProps : react.Props {
