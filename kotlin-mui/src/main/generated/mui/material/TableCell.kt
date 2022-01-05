@@ -16,7 +16,7 @@ external interface TableCellProps :
      * you to add them up quickly in your head without having to worry about decimals.
      * @default 'inherit'
      */
-    var align: TableCellAlign?
+    override var align: TableCellAlign?
 
     /**
      * The content of the component.
@@ -43,7 +43,7 @@ external interface TableCellProps :
     /**
      * Set scope attribute.
      */
-    var scope: dynamic /* TableCellBaseProps['scope'] */
+    override var scope: String?
 
     /**
      * Specify the size of the cell.

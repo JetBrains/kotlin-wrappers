@@ -2,6 +2,8 @@
 
 package mui.material
 
+typealias TableCellBaseProps = react.dom.html.TdHTMLAttributes<org.w3c.dom.HTMLTableCellElement>
+
 @Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
 // language=JavaScript
 @JsName("""(/*union*/{asc: 'asc', desc: 'desc', false: 'false'}/*union*/)""")
@@ -24,18 +26,7 @@ external enum class TableCellVariant {
     ;
 }
 
-@Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
-// language=JavaScript
-@JsName("""(/*union*/{inherit: 'inherit', left: 'left', center: 'center', right: 'right', justify: 'justify'}/*union*/)""")
-external enum class TableCellAlign {
-    inherit,
-    left,
-    center,
-    right,
-    justify,
-
-    ;
-}
+typealias TableCellAlign = react.dom.html.TdAlign /* 'inherit' | 'left' | 'center' | 'right' | 'justify' */
 
 @Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
 // language=JavaScript
