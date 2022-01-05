@@ -1,8 +1,5 @@
 // Automatically generated - do not modify!
 
-@file:JsModule("@mui/base/AutocompleteUnstyled/useAutocomplete")
-@file:JsNonModule
-
 package mui.base
 
 import kotlinext.js.ReadonlyArray

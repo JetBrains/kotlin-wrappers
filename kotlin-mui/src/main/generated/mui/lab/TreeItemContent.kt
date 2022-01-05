@@ -1,8 +1,5 @@
 // Automatically generated - do not modify!
 
-@file:JsModule("@mui/lab/TreeItemContent")
-@file:JsNonModule
-
 package mui.lab
 
 external interface TreeItemContentProps :

@@ -1,8 +1,5 @@
 // Automatically generated - do not modify!
 
-@file:JsModule("@mui/material/styles/zIndex")
-@file:JsNonModule
-
 package mui.material.styles
 
 external interface ZIndex {

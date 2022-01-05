@@ -1,8 +1,5 @@
 // Automatically generated - do not modify!
 
-@file:JsModule("@mui/lab/MonthPicker")
-@file:JsNonModule
-
 package mui.lab
 
 external interface MonthPickerProps<TDate> : react.Props {

@@ -1,8 +1,5 @@
 // Automatically generated - do not modify!
 
-@file:JsModule("@mui/lab/CalendarPicker")
-@file:JsNonModule
-
 package mui.lab
 
 import kotlinext.js.ReadonlyArray

@@ -1,8 +1,5 @@
 // Automatically generated - do not modify!
 
-@file:JsModule("@mui/lab/PickersDay")
-@file:JsNonModule
-
 package mui.lab
 
 external interface PickersDayProps<TDate> : react.Props {
