@@ -91,7 +91,7 @@ external interface SwitchBaseProps :
      */
     var required: Boolean?
 
-    var tabIndex: Number?
+    var tabIndex: Int?
 
     var type: react.dom.html.InputType?
 
