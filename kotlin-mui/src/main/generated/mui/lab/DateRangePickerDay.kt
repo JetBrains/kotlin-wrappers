@@ -1,5 +1,8 @@
 // Automatically generated - do not modify!
 
+@file:JsModule("@mui/lab/DateRangePickerDay")
+@file:JsNonModule
+
 package mui.lab
 
 external interface DateRangePickerDayProps<TDate> : react.Props {
@@ -81,3 +84,16 @@ external interface DateRangePickerDayClasses {
     /** Styles applied to the day element if `selected=false`. */
     var notSelectedDate: String
 }
+
+/**
+ *
+ * Demos:
+ *
+ * - [Date Range Picker](https://mui.com/components/date-range-picker/)
+ *
+ * API:
+ *
+ * - [DateRangePickerDay API](https://mui.com/api/date-range-picker-day/)
+ */
+@JsName("default")
+external val DateRangePickerDay: react.FC<DateRangePickerDayProps<*>>
