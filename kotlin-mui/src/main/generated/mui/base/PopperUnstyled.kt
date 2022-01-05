@@ -27,7 +27,7 @@ external interface PopperUnstyledProps :
      * By default, it uses the body of the top-level document object,
      * so it's simply `document.body` most of the time.
      */
-    var container: dynamic /* PortalProps['container'] */
+    var container: org.w3c.dom.Element?
 
     /**
      * Direction of the text.
@@ -39,7 +39,7 @@ external interface PopperUnstyledProps :
      * The `children` will be under the DOM hierarchy of the parent component.
      * @default false
      */
-    var disablePortal: dynamic /* PortalProps['disablePortal'] */
+    var disablePortal: Boolean?
 
     /**
      * Always keep the children in the DOM.
