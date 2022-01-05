@@ -39,7 +39,7 @@ external interface DividerProps : react.PropsWithChildren {
      * The component orientation.
      * @default 'horizontal'
      */
-    var orientation: Orientation?
+    var orientation: mui.material.Orientation?
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
