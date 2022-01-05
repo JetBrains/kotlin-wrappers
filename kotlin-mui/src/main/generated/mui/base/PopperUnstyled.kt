@@ -5,6 +5,8 @@
 
 package mui.base
 
+import kotlinext.js.ReadonlyArray
+
 external interface PopperUnstyledProps :
     react.dom.html.HTMLAttributes<org.w3c.dom.HTMLDivElement> {
     /**
@@ -58,7 +60,7 @@ external interface PopperUnstyledProps :
      * For this reason, modifiers should be very performant to avoid bottlenecks.
      * To learn how to create a modifier, [read the modifiers documentation](https://popper.js.org/docs/v2/modifiers/).
      */
-    var modifiers: dynamic /* Options['modifiers'] */
+    var modifiers: ReadonlyArray<popper.core.Modifier<*>>?
 
     /**
      * If `true`, the component is shown.
@@ -75,12 +77,12 @@ external interface PopperUnstyledProps :
      * Options provided to the [`Popper.js`](https://popper.js.org/docs/v2/constructors/#options) instance.
      * @default {}
      */
-    var popperOptions: dynamic
+    var popperOptions: popper.core.Options?
 
     /**
      * A ref that points to the used popper instance.
      */
-    var popperRef: react.Ref<dynamic>?
+    var popperRef: react.Ref<popper.core.Instance>?
 
     /**
      * Help supporting a react-transition-group/Transition component.
