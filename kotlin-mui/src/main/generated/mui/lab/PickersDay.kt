@@ -1,5 +1,8 @@
 // Automatically generated - do not modify!
 
+@file:JsModule("@mui/lab/PickersDay")
+@file:JsNonModule
+
 package mui.lab
 
 external interface PickersDayProps<TDate> : react.Props {
@@ -71,3 +74,16 @@ external interface PickersDayProps<TDate> : react.Props {
      */
     var sx: mui.system.SxProps<mui.system.Theme>?
 }
+
+/**
+ *
+ * Demos:
+ *
+ * - [Date Picker](https://mui.com/components/date-picker/)
+ *
+ * API:
+ *
+ * - [PickersDay API](https://mui.com/api/pickers-day/)
+ */
+@JsName("default")
+external val PickersDay: react.FC<PickersDayProps<*>>

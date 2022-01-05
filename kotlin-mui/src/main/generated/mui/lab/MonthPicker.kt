@@ -1,5 +1,8 @@
 // Automatically generated - do not modify!
 
+@file:JsModule("@mui/lab/MonthPicker")
+@file:JsNonModule
+
 package mui.lab
 
 external interface MonthPickerProps<TDate> : react.Props {
@@ -44,3 +47,16 @@ external interface MonthPickerProps<TDate> : react.Props {
      */
     var sx: mui.system.SxProps<mui.system.Theme>?
 }
+
+/**
+ *
+ * Demos:
+ *
+ * - [Date Picker](https://mui.com/components/date-picker/)
+ *
+ * API:
+ *
+ * - [MonthPicker API](https://mui.com/api/month-picker/)
+ */
+@JsName("default")
+external val MonthPicker: react.FC<MonthPickerProps<*>>

@@ -1,5 +1,8 @@
 // Automatically generated - do not modify!
 
+@file:JsModule("@mui/lab/CalendarPicker")
+@file:JsNonModule
+
 package mui.lab
 
 import kotlinext.js.ReadonlyArray
@@ -103,3 +106,16 @@ external interface CalendarPickerClasses {
     /** Styles applied to the transition group element. */
     var viewTransitionContainer: String
 }
+
+/**
+ *
+ * Demos:
+ *
+ * - [Date Picker](https://mui.com/components/date-picker/)
+ *
+ * API:
+ *
+ * - [CalendarPicker API](https://mui.com/api/calendar-picker/)
+ */
+@JsName("default")
+external val CalendarPicker: react.FC<CalendarPickerProps<*>>

@@ -1,5 +1,8 @@
 // Automatically generated - do not modify!
 
+@file:JsModule("@mui/lab/ClockPicker")
+@file:JsNonModule
+
 package mui.lab
 
 external interface ClockPickerProps<TDate> : react.Props {
@@ -114,3 +117,16 @@ external interface ExportedClockPickerProps<TDate> : react.Props {
      */
     var getClockLabelText: ((view: mui.system.Union /* ClockView */, time: TDate?, adapter: dynamic /* MuiPickersAdapter<TDate> */) -> String)?
 }
+
+/**
+ *
+ * Demos:
+ *
+ * - [Time Picker](https://mui.com/components/time-picker/)
+ *
+ * API:
+ *
+ * - [ClockPicker API](https://mui.com/api/clock-picker/)
+ */
+@JsName("default")
+external val ClockPicker: react.FC<ClockPickerProps<*>>
