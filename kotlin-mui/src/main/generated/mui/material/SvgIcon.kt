@@ -11,7 +11,8 @@ package mui.material
 
 external interface SvgIconProps :
     react.dom.svg.SVGAttributes<org.w3c.dom.svg.SVGSVGElement>,
-    react.PropsWithChildren {
+    react.PropsWithChildren,
+    mui.types.PropsWithComponent {
     /**
      * Node passed into the SVG element.
      */

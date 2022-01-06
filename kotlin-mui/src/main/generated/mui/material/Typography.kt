@@ -7,7 +7,8 @@ package mui.material
 
 external interface TypographyProps :
     react.dom.html.HTMLAttributes<org.w3c.dom.HTMLSpanElement>,
-    react.PropsWithChildren {
+    react.PropsWithChildren,
+    mui.types.PropsWithComponent {
     /**
      * Set the text-align on the component.
      * @default 'inherit'

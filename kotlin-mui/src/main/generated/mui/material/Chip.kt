@@ -10,7 +10,8 @@
 package mui.material
 
 external interface ChipProps :
-    react.dom.html.HTMLAttributes<org.w3c.dom.HTMLDivElement> {
+    react.dom.html.HTMLAttributes<org.w3c.dom.HTMLDivElement>,
+    mui.types.PropsWithComponent {
     /**
      * The Avatar element to display.
      */

@@ -6,7 +6,8 @@
 package mui.base
 
 external interface SliderUnstyledProps :
-    react.dom.html.HTMLAttributes<org.w3c.dom.HTMLSpanElement> {
+    react.dom.html.HTMLAttributes<org.w3c.dom.HTMLSpanElement>,
+    mui.types.PropsWithComponent {
     /**
      * The label of the slider.
      */

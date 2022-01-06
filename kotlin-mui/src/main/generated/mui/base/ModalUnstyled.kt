@@ -10,7 +10,8 @@
 package mui.base
 
 external interface ModalUnstyledProps :
-    react.dom.html.HTMLAttributes<org.w3c.dom.HTMLDivElement> {
+    react.dom.html.HTMLAttributes<org.w3c.dom.HTMLDivElement>,
+    mui.types.PropsWithComponent {
     /**
      * A backdrop component. This prop enables custom backdrop rendering.
      */

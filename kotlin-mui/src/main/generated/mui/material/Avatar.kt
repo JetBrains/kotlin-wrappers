@@ -7,7 +7,8 @@ package mui.material
 
 external interface AvatarProps :
     react.dom.html.HTMLAttributes<org.w3c.dom.HTMLDivElement>,
-    react.PropsWithChildren {
+    react.PropsWithChildren,
+    mui.types.PropsWithComponent {
     /**
      * Used in combination with `src` or `srcSet` to
      * provide an alt attribute for the rendered `img` element.

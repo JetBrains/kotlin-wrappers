@@ -5,7 +5,9 @@
 
 package mui.material
 
-external interface TabsProps : react.PropsWithChildren {
+external interface TabsProps :
+    react.PropsWithChildren,
+    mui.types.PropsWithComponent {
     /**
      * Callback fired when the component mounts.
      * This is useful when you want to trigger an action programmatically.

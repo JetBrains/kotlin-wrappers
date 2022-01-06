@@ -7,7 +7,8 @@ package mui.material
 
 external interface InputAdornmentProps :
     react.dom.html.HTMLAttributes<org.w3c.dom.HTMLDivElement>,
-    react.PropsWithChildren {
+    react.PropsWithChildren,
+    mui.types.PropsWithComponent {
     /**
      * Override or extend the styles applied to the component.
      */

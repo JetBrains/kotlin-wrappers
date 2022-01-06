@@ -7,7 +7,8 @@ package mui.material
 
 external interface LinkProps :
     react.dom.html.AnchorHTMLAttributes<org.w3c.dom.HTMLAnchorElement>,
-    react.PropsWithChildren {
+    react.PropsWithChildren,
+    mui.types.PropsWithComponent {
     /**
      * The content of the component.
      */

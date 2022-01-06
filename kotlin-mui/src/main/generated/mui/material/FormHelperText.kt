@@ -7,7 +7,8 @@ package mui.material
 
 external interface FormHelperTextProps :
     react.dom.html.HTMLAttributes<org.w3c.dom.HTMLParagraphElement>,
-    react.PropsWithChildren {
+    react.PropsWithChildren,
+    mui.types.PropsWithComponent {
     /**
      * The content of the component.
      *

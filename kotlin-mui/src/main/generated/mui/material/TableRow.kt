@@ -7,7 +7,8 @@ package mui.material
 
 external interface TableRowProps :
     react.dom.html.HTMLAttributes<org.w3c.dom.HTMLTableRowElement>,
-    react.PropsWithChildren {
+    react.PropsWithChildren,
+    mui.types.PropsWithComponent {
     /**
      * Should be valid <tr> children such as `TableCell`.
      */
