@@ -50,7 +50,7 @@ about version compatibility.
 Just declare `kotlin-wrappers-bom` and specify the modules you need:
 
 ```kotlin
-val kotlinWrappersVersion = "0.0.1-pre.287-kotlin-1.6.10"
+val kotlinWrappersVersion = "0.0.1-pre.288-kotlin-1.6.10"
 
 dependencies {
     implementation(enforcedPlatform("org.jetbrains.kotlin-wrappers:kotlin-wrappers-bom:${kotlinWrappersVersion}"))
@@ -68,7 +68,7 @@ Or use a helper function:
 fun kotlinw(target: String): String =
     "org.jetbrains.kotlin-wrappers:kotlin-$target"
 
-val kotlinWrappersVersion = "0.0.1-pre.287-kotlin-1.6.10"
+val kotlinWrappersVersion = "0.0.1-pre.288-kotlin-1.6.10"
 
 dependencies {
     implementation(enforcedPlatform(kotlinw("wrappers-bom:${kotlinWrappersVersion}")))
@@ -105,7 +105,7 @@ demonstrates how to add typings for an external library.
 
 10. An [example of using Material UI](https://github.com/karakum-team/kotlin-mui-showcase).
 
-11. [ByteLegend](https://bytelegend.com/): [a real-world HTML5 MMORPG game of using Canvas/WebSocket/React/Bootstrap and Kotlin/JS](https://github.com/ByteLegend/ByteLegend).
+11. [ByteLegend](https://bytelegend.com/): [an open-source, real-world HTML5 MMORPG game](https://github.com/ByteLegend/ByteLegend).
 
 Follow these examples to learn how to start developing your React apps with Kotlin. Good luck and have fun! 
 You also can clone [my-kotlin-react-sample](https://github.com/ScottHuangZL/my-kotlin-app) to see the result directly.
