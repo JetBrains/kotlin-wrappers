@@ -5,8 +5,6 @@
 
 package mui.material
 
-external interface PopperProps : react.Props
-
 /**
  *
  * Demos:
