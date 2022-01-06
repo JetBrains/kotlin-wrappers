@@ -3,6 +3,10 @@
 @file:JsModule("@mui/material/Drawer")
 @file:JsNonModule
 
+@file:Suppress(
+    "VIRTUAL_MEMBER_HIDDEN",
+)
+
 package mui.material
 
 external interface DrawerProps :
@@ -18,7 +22,7 @@ external interface DrawerProps :
     /**
      * The content of the component.
      */
-    override var children: react.ReactNode?
+    /* override */ var children: react.ReactNode?
 
     /**
      * Override or extend the styles applied to the component.
@@ -42,7 +46,7 @@ external interface DrawerProps :
      *
      * @param {object} event The event source of the callback.
      */
-    var onClose: dynamic /* ModalProps['onClose'] */
+    override var onClose: ((event: dynamic, reason: String) -> Unit)?
 
     /**
      * If `true`, the component is shown.

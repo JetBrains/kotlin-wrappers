@@ -6,12 +6,12 @@
 package mui.material
 
 external interface BackdropProps :
-    react.dom.html.HTMLAttributes<org.w3c.dom.HTMLSpanElement>,
+    mui.base.BackdropUnstyledProps,
     mui.types.PropsWithComponent {
     /**
      * Override or extend the styles applied to the component.
      */
-    var classes: dynamic /* BackdropUnstyledTypeMap['props']['classes'] */
+    override var classes: mui.base.BackdropUnstyledClasses?
 
     /**
      * If `true`, the component is shown.

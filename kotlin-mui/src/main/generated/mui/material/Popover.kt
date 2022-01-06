@@ -3,6 +3,10 @@
 @file:JsModule("@mui/material/Popover")
 @file:JsNonModule
 
+@file:Suppress(
+    "VIRTUAL_MEMBER_HIDDEN",
+)
+
 package mui.material
 
 external interface PopoverProps :
@@ -52,7 +56,7 @@ external interface PopoverProps :
     /**
      * The content of the component.
      */
-    override var children: react.ReactNode?
+    /* override */ var children: react.ReactNode?
 
     /**
      * Override or extend the styles applied to the component.
@@ -66,7 +70,7 @@ external interface PopoverProps :
      * By default, it uses the body of the anchorEl's top-level document object,
      * so it's simply `document.body` most of the time.
      */
-    var container: dynamic /* ModalProps['container'] */
+    override var container: org.w3c.dom.Element?
 
     /**
      * The elevation of the popover.
@@ -80,12 +84,12 @@ external interface PopoverProps :
      */
     var marginThreshold: Number?
 
-    var onClose: dynamic /* ModalProps['onClose'] */
+    override var onClose: ((event: dynamic, reason: String) -> Unit)?
 
     /**
      * If `true`, the component is shown.
      */
-    var open: Boolean
+    override var open: Boolean
 
     /**
      * Props applied to the [`Paper`](/api/paper/) element.
