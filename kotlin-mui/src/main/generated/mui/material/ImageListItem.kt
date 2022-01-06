@@ -7,7 +7,8 @@ package mui.material
 
 external interface ImageListItemProps :
     react.dom.html.LiHTMLAttributes<org.w3c.dom.HTMLLIElement>,
-    react.PropsWithChildren {
+    react.PropsWithChildren,
+    mui.types.PropsWithComponent {
     /**
      * The content of the component, normally an `<img>`.
      */

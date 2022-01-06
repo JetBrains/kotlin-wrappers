@@ -7,7 +7,8 @@ package mui.material
 
 external interface TableProps :
     react.dom.html.TableHTMLAttributes<org.w3c.dom.HTMLTableElement>,
-    react.PropsWithChildren {
+    react.PropsWithChildren,
+    mui.types.PropsWithComponent {
     /**
      * The content of the table, normally `TableHead` and `TableBody`.
      */

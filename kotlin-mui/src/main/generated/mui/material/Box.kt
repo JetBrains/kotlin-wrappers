@@ -7,10 +7,11 @@ package mui.material
 
 external interface BoxProps :
     react.dom.html.HTMLAttributes<org.w3c.dom.HTMLDivElement>,
-    react.PropsWithChildren {
+    react.PropsWithChildren,
+    mui.types.PropsWithComponent {
     override var children: react.ReactNode?
 
-    var component: react.ElementType<*>?
+    override var component: react.ElementType<*>?
 
     var sx: mui.system.SxProps<mui.system.Theme>?
 }

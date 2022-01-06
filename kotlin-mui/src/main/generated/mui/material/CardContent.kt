@@ -7,7 +7,8 @@ package mui.material
 
 external interface CardContentProps :
     react.dom.html.HTMLAttributes<org.w3c.dom.HTMLDivElement>,
-    react.PropsWithChildren {
+    react.PropsWithChildren,
+    mui.types.PropsWithComponent {
     /**
      * The content of the component.
      */

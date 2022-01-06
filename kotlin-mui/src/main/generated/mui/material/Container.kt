@@ -7,7 +7,8 @@ package mui.material
 
 external interface ContainerProps :
     react.dom.html.HTMLAttributes<org.w3c.dom.HTMLDivElement>,
-    react.PropsWithChildren {
+    react.PropsWithChildren,
+    mui.types.PropsWithComponent {
     override var children: react.ReactNode?
 
     /**

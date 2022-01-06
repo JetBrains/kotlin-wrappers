@@ -6,7 +6,8 @@
 package mui.material
 
 external interface BadgeProps :
-    react.dom.html.HTMLAttributes<org.w3c.dom.HTMLSpanElement> {
+    react.dom.html.HTMLAttributes<org.w3c.dom.HTMLSpanElement>,
+    mui.types.PropsWithComponent {
     /**
      * Override or extend the styles applied to the component.
      */

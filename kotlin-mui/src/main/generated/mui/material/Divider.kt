@@ -5,7 +5,9 @@
 
 package mui.material
 
-external interface DividerProps : react.PropsWithChildren {
+external interface DividerProps :
+    react.PropsWithChildren,
+    mui.types.PropsWithComponent {
     /**
      * Absolutely position the element.
      * @default false

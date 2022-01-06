@@ -7,7 +7,8 @@ package mui.material
 
 external interface SkeletonProps :
     react.dom.html.HTMLAttributes<org.w3c.dom.HTMLSpanElement>,
-    react.PropsWithChildren {
+    react.PropsWithChildren,
+    mui.types.PropsWithComponent {
     /**
      * The animation.
      * If `false` the animation effect is disabled.

@@ -6,7 +6,8 @@
 package mui.material
 
 external interface PaginationItemProps :
-    react.dom.html.HTMLAttributes<org.w3c.dom.HTMLDivElement> {
+    react.dom.html.HTMLAttributes<org.w3c.dom.HTMLDivElement>,
+    mui.types.PropsWithComponent {
     /**
      * Override or extend the styles applied to the component.
      */

@@ -5,7 +5,9 @@
 
 package mui.material
 
-external interface CardMediaProps : react.PropsWithChildren {
+external interface CardMediaProps :
+    react.PropsWithChildren,
+    mui.types.PropsWithComponent {
     /**
      * The content of the component.
      */

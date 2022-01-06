@@ -7,7 +7,8 @@ package mui.material
 
 external interface IconProps :
     react.dom.html.HTMLAttributes<org.w3c.dom.HTMLSpanElement>,
-    react.PropsWithChildren {
+    react.PropsWithChildren,
+    mui.types.PropsWithComponent {
     /**
      * The base class applied to the icon. Defaults to 'material-icons', but can be changed to any
      * other base class that suits the icon font you're using (e.g. material-icons-rounded, fas, etc).
