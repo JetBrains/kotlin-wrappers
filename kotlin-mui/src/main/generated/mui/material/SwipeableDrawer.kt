@@ -3,6 +3,10 @@
 @file:JsModule("@mui/material/SwipeableDrawer")
 @file:JsNonModule
 
+@file:Suppress(
+    "VIRTUAL_MEMBER_HIDDEN",
+)
+
 package mui.material
 
 external interface SwipeableDrawerProps :
@@ -48,7 +52,7 @@ external interface SwipeableDrawerProps :
      *
      * @param {React.SyntheticEvent<{}>} event The event source of the callback.
      */
-    override var onClose: react.dom.events.ReactEventHandler<*>
+    var onClose: react.dom.events.ReactEventHandler<*>
 
     /**
      * Callback fired when the component requests to be opened.

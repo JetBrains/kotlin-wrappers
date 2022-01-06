@@ -3,15 +3,19 @@
 @file:JsModule("@mui/material/Badge")
 @file:JsNonModule
 
+@file:Suppress(
+    "VIRTUAL_MEMBER_HIDDEN",
+)
+
 package mui.material
 
 external interface BadgeProps :
-    react.dom.html.HTMLAttributes<org.w3c.dom.HTMLSpanElement>,
+    mui.base.BadgeUnstyledProps,
     mui.types.PropsWithComponent {
     /**
      * Override or extend the styles applied to the component.
      */
-    var classes: dynamic
+    override var classes: dynamic
 
     /**
      * The color of the component. It supports those theme colors that make sense for this component.

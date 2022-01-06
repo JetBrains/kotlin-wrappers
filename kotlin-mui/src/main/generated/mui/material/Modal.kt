@@ -3,9 +3,14 @@
 @file:JsModule("@mui/material/Modal")
 @file:JsNonModule
 
+@file:Suppress(
+    "VIRTUAL_MEMBER_HIDDEN",
+)
+
 package mui.material
 
-external interface ModalProps : react.Props {
+external interface ModalProps :
+    mui.base.ModalUnstyledProps {
     /**
      * A backdrop component. This prop enables custom backdrop rendering.
      * @default styled(Backdrop, {

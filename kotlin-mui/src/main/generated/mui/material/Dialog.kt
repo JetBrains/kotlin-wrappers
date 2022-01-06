@@ -3,6 +3,10 @@
 @file:JsModule("@mui/material/Dialog")
 @file:JsNonModule
 
+@file:Suppress(
+    "VIRTUAL_MEMBER_HIDDEN",
+)
+
 package mui.material
 
 external interface DialogProps :
@@ -22,7 +26,7 @@ external interface DialogProps :
     /**
      * Dialog children, usually the included sub-components.
      */
-    override var children: react.ReactNode?
+    /* override */ var children: react.ReactNode?
 
     /**
      * Override or extend the styles applied to the component.
@@ -33,7 +37,7 @@ external interface DialogProps :
      * If `true`, hitting escape will not fire the `onClose` callback.
      * @default false
      */
-    var disableEscapeKeyDown: Boolean?
+    override var disableEscapeKeyDown: Boolean?
 
     /**
      * If `true`, the dialog is full-screen.
@@ -60,7 +64,7 @@ external interface DialogProps :
     /**
      * Callback fired when the backdrop is clicked.
      */
-    var onBackdropClick: dynamic /* ModalProps['onBackdropClick'] */
+    override var onBackdropClick: react.dom.events.ReactEventHandler<*>?
 
     /**
      * Callback fired when the component requests to be closed.
@@ -68,12 +72,12 @@ external interface DialogProps :
      * @param {object} event The event source of the callback.
      * @param {string} reason Can be: `"escapeKeyDown"`, `"backdropClick"`.
      */
-    var onClose: dynamic /* ModalProps['onClose'] */
+    override var onClose: ((event: dynamic, reason: String) -> Unit)?
 
     /**
      * If `true`, the component is shown.
      */
-    var open: dynamic /* ModalProps['open'] */
+    override var open: Boolean
 
     /**
      * The component used to render the body of the dialog.
