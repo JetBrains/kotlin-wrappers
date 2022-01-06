@@ -105,6 +105,8 @@ demonstrates how to add typings for an external library.
 
 10. An [example of using Material UI](https://github.com/karakum-team/kotlin-mui-showcase).
 
+11. [ByteLegend](https://bytelegend.com/): [a real-world HTML5 MMORPG game of using Canvas/WebSocket/React/Bootstrap and Kotlin/JS](https://github.com/ByteLegend/ByteLegend).
+
 Follow these examples to learn how to start developing your React apps with Kotlin. Good luck and have fun! 
 You also can clone [my-kotlin-react-sample](https://github.com/ScottHuangZL/my-kotlin-app) to see the result directly.
 
