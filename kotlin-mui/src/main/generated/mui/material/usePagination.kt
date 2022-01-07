@@ -81,7 +81,7 @@ external interface UsePaginationProps : react.Props {
     var siblingCount: Number?
 }
 
-external interface UsePaginationItem {
+external interface UsePaginationItem : react.Props {
     var onClick: react.dom.events.ReactEventHandler<*>
 
     var type: UsePaginationItemType

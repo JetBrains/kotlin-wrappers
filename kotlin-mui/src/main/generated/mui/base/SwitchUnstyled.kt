@@ -5,7 +5,8 @@
 
 package mui.base
 
-external interface SwitchUnstyledProps : react.Props {
+external interface SwitchUnstyledProps :
+    UseSwitchProps {
     /**
      * Class name applied to the root element.
      */
