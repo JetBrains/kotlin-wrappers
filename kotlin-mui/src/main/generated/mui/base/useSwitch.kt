@@ -6,13 +6,13 @@
 package mui.base
 
 external interface SwitchState {
-    var checked: dynamic
+    val checked: Boolean
 
-    var disabled: dynamic
+    val disabled: Boolean
 
-    var readOnly: dynamic
+    val readOnly: Boolean
 
-    var focusVisible: dynamic
+    val focusVisible: Boolean
 }
 
 external interface UseSwitchResult {
