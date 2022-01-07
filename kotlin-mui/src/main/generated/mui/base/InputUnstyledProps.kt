@@ -46,7 +46,8 @@ external interface UseInputProps : react.Props {
     var value: dynamic
 }
 
-external interface InputUnstyledOwnProps : react.Props {
+external interface InputUnstyledOwnProps :
+    UseInputProps {
     // var `aria-describedby`: String?
 
     // var `aria-label`: String?
@@ -148,5 +149,5 @@ external interface InputUnstyledOwnProps : react.Props {
     /**
      * The value of the `input` element, required for a controlled component.
      */
-    var value: dynamic
+    override var value: dynamic
 }

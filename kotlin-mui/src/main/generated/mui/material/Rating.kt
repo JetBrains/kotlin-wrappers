@@ -10,6 +10,7 @@
 package mui.material
 
 external interface RatingProps :
+    mui.system.StandardProps,
     react.dom.html.HTMLAttributes<org.w3c.dom.HTMLSpanElement> {
     /**
      * Override or extend the styles applied to the component.

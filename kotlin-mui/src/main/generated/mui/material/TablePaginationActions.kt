@@ -5,7 +5,8 @@
 
 package mui.material
 
-external interface TablePaginationActionsProps : react.Props {
+external interface TablePaginationActionsProps :
+    react.dom.html.HTMLAttributes<org.w3c.dom.HTMLDivElement> {
     var backIconButtonProps: IconButtonProps?
 
     /**
