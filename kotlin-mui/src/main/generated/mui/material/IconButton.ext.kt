@@ -20,7 +20,7 @@ external enum class IconButtonColor {
 
 @Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
 // language=JavaScript
-@JsName("""(/*union*/{start: 'start', end: 'end', false: 'false'}/*union*/)""")
+@JsName("""(/*union*/{start: 'start', end: 'end', false: false}/*union*/)""")
 external enum class IconButtonEdge {
     start,
     end,

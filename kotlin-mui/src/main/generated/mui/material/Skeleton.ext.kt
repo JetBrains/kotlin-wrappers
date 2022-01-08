@@ -4,7 +4,7 @@ package mui.material
 
 @Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
 // language=JavaScript
-@JsName("""(/*union*/{pulse: 'pulse', wave: 'wave', false: 'false'}/*union*/)""")
+@JsName("""(/*union*/{pulse: 'pulse', wave: 'wave', false: false}/*union*/)""")
 external enum class SkeletonAnimation {
     pulse,
     wave,

@@ -63,7 +63,7 @@ external enum class MatchFrom {
 
 @Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
 // language=JavaScript
-@JsName("""(/*union*/{touch: 'touch', mouse: 'mouse', true: 'true', false: 'false'}/*union*/)""")
+@JsName("""(/*union*/{touch: 'touch', mouse: 'mouse', true: true, false: false}/*union*/)""")
 external enum class BlurOnSelect {
     touch,
     mouse,

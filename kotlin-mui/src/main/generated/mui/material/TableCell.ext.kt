@@ -6,7 +6,7 @@ typealias TableCellBaseProps = react.dom.html.TdHTMLAttributes<org.w3c.dom.HTMLT
 
 @Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
 // language=JavaScript
-@JsName("""(/*union*/{asc: 'asc', desc: 'desc', false: 'false'}/*union*/)""")
+@JsName("""(/*union*/{asc: 'asc', desc: 'desc', false: false}/*union*/)""")
 external enum class SortDirection {
     asc,
     desc,
