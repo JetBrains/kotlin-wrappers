@@ -19,7 +19,7 @@ external interface StackProps :
      * It is applied for all screen sizes.
      * @default 'column'
      */
-    var direction: mui.system.ResponsiveStyleValue<mui.system.Union /* 'row' | 'row-reverse' | 'column' | 'column-reverse' */>?
+    var direction: mui.system.ResponsiveStyleValue<StackDirection>?
 
     /**
      * Defines the space between immediate children.
