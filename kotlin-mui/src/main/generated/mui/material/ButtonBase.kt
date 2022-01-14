@@ -12,7 +12,7 @@ external interface ButtonBaseProps :
      * A ref for imperative actions.
      * It currently only supports `focusVisible()` action.
      */
-    var action: react.Ref<dynamic>?
+    var action: react.Ref<ButtonBaseActions>?
 
     /**
      * If `true`, the ripples are centered.
@@ -94,6 +94,10 @@ external interface ButtonBaseProps :
      * Props applied to the `TouchRipple` element.
      */
     var TouchRippleProps: dynamic
+}
+
+external interface ButtonBaseActions {
+    fun focusVisible()
 }
 
 /**

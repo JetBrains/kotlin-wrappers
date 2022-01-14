@@ -16,7 +16,7 @@ external interface TabsProps :
      * @param {object} actions This object contains all possible actions
      * that can be triggered programmatically.
      */
-    var action: react.Ref<dynamic>?
+    var action: react.Ref<TabsActions>?
 
     /**
      * If `true`, the scroll buttons aren't forced hidden on mobile.
@@ -144,6 +144,11 @@ external interface TabsProps :
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
     var sx: mui.system.SxProps<mui.system.Theme>?
+}
+
+external interface TabsActions {
+    fun updateIndicator()
+    fun updateScrollButtons()
 }
 
 /**
