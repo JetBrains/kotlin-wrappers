@@ -17,7 +17,7 @@ external interface PopoverProps :
      * A ref for imperative actions.
      * It currently only supports updatePosition() action.
      */
-    var action: react.Ref<dynamic>?
+    var action: react.Ref<PopoverActions>?
 
     /**
      * An HTML element, or a function that returns one.
@@ -147,6 +147,10 @@ external interface PopoverPosition {
     var top: Number
 
     var left: Number
+}
+
+external interface PopoverActions {
+    fun updatePosition()
 }
 
 /**
