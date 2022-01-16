@@ -53,7 +53,7 @@ Just declare `kotlin-wrappers-bom` and specify the modules you need:
 val kotlinWrappersVersion = "0.0.1-pre.290-kotlin-1.6.10"
 
 dependencies {
-    implementation(enforcedPlatform("org.jetbrains.kotlin-wrappers:kotlin-wrappers-bom:${kotlinWrappersVersion}"))
+    implementation(enforcedPlatform("org.jetbrains.kotlin-wrappers:kotlin-wrappers-bom:$kotlinWrappersVersion"))
     implementation("org.jetbrains.kotlin-wrappers:kotlin-react")
     implementation("org.jetbrains.kotlin-wrappers:kotlin-react-dom")
     implementation("org.jetbrains.kotlin-wrappers:kotlin-react-table")
@@ -71,7 +71,7 @@ fun kotlinw(target: String): String =
 val kotlinWrappersVersion = "0.0.1-pre.290-kotlin-1.6.10"
 
 dependencies {
-    implementation(enforcedPlatform(kotlinw("wrappers-bom:${kotlinWrappersVersion}")))
+    implementation(enforcedPlatform(kotlinw("wrappers-bom:$kotlinWrappersVersion")))
     implementation(kotlinw("react"))
     implementation(kotlinw("react-dom"))
     implementation(kotlinw("react-table"))
