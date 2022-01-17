@@ -36,6 +36,7 @@ To learn more please refer to the `README`s of individual modules.
 | [kotlin-ring-ui](kotlin-ring-ui/README.md)                   | [![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-ring-ui)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-ring-ui)                   |
 | [kotlin-styled](kotlin-styled/README.md)                     | [![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-styled)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-styled)                     |
 | [kotlin-styled-next](kotlin-styled-next/README.md)           | [![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-styled-next)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-styled-next)           |
+| [kotlin-typescript](kotlin-typescript/README.md)             | [![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-typescript)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-typescript)             |
 | [kotlin-wrappers-bom](kotlin-wrappers-bom/README.md)         | [![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-wrappers-bom)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-wrappers-bom)         |
 
 Artifacts are published to Maven Central, see the corresponding README files for package coordinates.

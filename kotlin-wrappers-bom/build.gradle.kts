@@ -29,5 +29,6 @@ dependencies {
         api(project(":kotlin-ring-ui"))
         api(project(":kotlin-styled"))
         api(project(":kotlin-styled-next"))
+        api(project(":kotlin-typescript"))
     }
 }
