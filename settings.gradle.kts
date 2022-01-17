@@ -93,4 +93,7 @@ include("kotlin-styled")
 // Kotlin/JS: a reimplementation of kotlin-styled in pure Kotlin, without styled-components
 include("kotlin-styled-next")
 
+// Kotlin/JS: TypeScript wrappers
+include("kotlin-typescript")
+
 include("kotlin-wrappers-bom")
