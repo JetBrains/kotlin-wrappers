@@ -12,7 +12,7 @@ Usage:
 val kotlinWrappersVersion = "0.0.1-pre.290-kotlin-1.6.10"
 
 dependencies {
-    implementation(enforcedPlatform("org.jetbrains.kotlin-wrappers:kotlin-wrappers-bom:${kotlinWrappersVersion}"))
+    implementation(enforcedPlatform("org.jetbrains.kotlin-wrappers:kotlin-wrappers-bom:$kotlinWrappersVersion"))
     implementation("org.jetbrains.kotlin-wrappers:kotlin-emotion")
     implementation("org.jetbrains.kotlin-wrappers:kotlin-react")
     implementation("org.jetbrains.kotlin-wrappers:kotlin-react-dom")
