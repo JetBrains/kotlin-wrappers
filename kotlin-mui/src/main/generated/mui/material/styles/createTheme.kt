@@ -24,21 +24,7 @@ external interface ThemeOptions {
 }
 
 external interface Theme {
-    var mixins: Mixins
-
     var components: dynamic
-
-    var palette: Palette
-
-    var shadows: dynamic
-
-    var transitions: Transitions
-
-    var typography: dynamic
-
-    var zIndex: ZIndex
-
-    var unstable_strictMode: Boolean?
 }
 
 @JsName("default")
