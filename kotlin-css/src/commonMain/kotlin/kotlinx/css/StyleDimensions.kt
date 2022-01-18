@@ -55,6 +55,7 @@ private fun value(number: Number, unit: String): String {
         number.toString() + unit
 }
 
+val Number.ch: LinearDimension get() = LinearDimension(value(this, "ch"))       // Width of "0" glyph
 val Number.cm: LinearDimension get() = LinearDimension(value(this, "cm"))       // Centimeter
 val Number.em: LinearDimension get() = LinearDimension(value(this, "em"))
 val Number.ex: LinearDimension get() = LinearDimension(value(this, "ex"))
