@@ -35,6 +35,13 @@ external interface SelectProps<T> :
     var classes: SelectClasses?
 
     /**
+     * If `true`, the component is initially open. Use when the component open state is not controlled (i.e. the `open` prop is not defined).
+     * You can only use it when the `native` prop is `false` (default).
+     * @default false
+     */
+    var defaultOpen: Boolean?
+
+    /**
      * The default value. Use when the component is not controlled.
      */
     var defaultValue: T?
