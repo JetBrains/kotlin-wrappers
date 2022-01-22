@@ -2,4 +2,4 @@
 
 package typescript
 
-typealias DirectoryWatcherCallback = Any /* (fileName: string) => void */
+typealias DirectoryWatcherCallback = (fileName: String) -> Unit

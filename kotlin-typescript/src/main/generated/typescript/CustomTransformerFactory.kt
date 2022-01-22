@@ -2,4 +2,4 @@
 
 package typescript
 
-typealias CustomTransformerFactory = Any /* (context: TransformationContext) => CustomTransformer */
+typealias CustomTransformerFactory = (context: TransformationContext) -> CustomTransformer

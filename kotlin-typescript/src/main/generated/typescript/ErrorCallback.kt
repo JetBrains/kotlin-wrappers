@@ -2,4 +2,7 @@
 
 package typescript
 
-typealias ErrorCallback = Any /* (message: DiagnosticMessage, length: number) => void */
+typealias ErrorCallback = (
+    message: DiagnosticMessage,
+    length: Int,
+) -> Unit

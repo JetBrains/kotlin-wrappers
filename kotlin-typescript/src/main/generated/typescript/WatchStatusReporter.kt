@@ -2,4 +2,9 @@
 
 package typescript
 
-typealias WatchStatusReporter = Any /* (diagnostic: Diagnostic, newLine: string, options: CompilerOptions, errorCount?: number) => void */
+typealias WatchStatusReporter = (
+    diagnostic: Diagnostic,
+    newLine: String,
+    options: CompilerOptions,
+    errorCount: Int?,
+) -> Unit

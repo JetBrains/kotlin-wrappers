@@ -2,4 +2,10 @@
 
 package typescript
 
-typealias WriteFileCallback = Any /* (fileName: string, data: string, writeByteOrderMark: boolean, onError?: (message: string) => void, sourceFiles?: readonly SourceFile[]) => void */
+typealias WriteFileCallback = (
+    fileName: String,
+    data: String,
+    writeByteOrderMark: Boolean,
+    onError: ((message: String) -> Unit)?,
+    sourceFiles: ReadonlyArray<SourceFile>?,
+) -> Unit

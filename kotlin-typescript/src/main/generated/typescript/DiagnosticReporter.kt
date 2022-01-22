@@ -2,4 +2,4 @@
 
 package typescript
 
-typealias DiagnosticReporter = Any /* (diagnostic: Diagnostic) => void */
+typealias DiagnosticReporter = (diagnostic: Diagnostic) -> Unit

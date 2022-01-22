@@ -2,4 +2,7 @@
 
 package typescript
 
-typealias FileWatcherCallback = Any /* (fileName: string, eventKind: FileWatcherEventKind) => void */
+typealias FileWatcherCallback = (
+    fileName: String,
+    eventKind: FileWatcherEventKind,
+) -> Unit

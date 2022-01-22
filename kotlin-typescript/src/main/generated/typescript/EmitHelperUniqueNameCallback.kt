@@ -2,4 +2,4 @@
 
 package typescript
 
-typealias EmitHelperUniqueNameCallback = Any /* (name: string) => string */
+typealias EmitHelperUniqueNameCallback = (name: String) -> String

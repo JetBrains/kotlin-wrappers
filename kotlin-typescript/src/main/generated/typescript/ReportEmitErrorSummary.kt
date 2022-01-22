@@ -2,4 +2,4 @@
 
 package typescript
 
-typealias ReportEmitErrorSummary = Any /* (errorCount: number) => void */
+typealias ReportEmitErrorSummary = (errorCount: Int) -> Unit
