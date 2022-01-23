@@ -5,9 +5,8 @@
 
 package typescript
 
-/*
-external fun convertCompilerOptionsFromJson(jsonOptions: any, basePath: string, configFileName?: string): {
-    options: CompilerOptions;
-    errors: Diagnostic[];
-}
-*/
+external fun convertCompilerOptionsFromJson(
+    jsonOptions: Any,
+    basePath: String,
+    configFileName: String = definedExternally,
+): OptionsProvider<CompilerOptions>
