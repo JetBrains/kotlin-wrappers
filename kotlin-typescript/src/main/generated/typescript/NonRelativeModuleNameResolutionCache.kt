@@ -9,7 +9,7 @@ package typescript
 external interface NonRelativeModuleNameResolutionCache : PackageJsonInfoCache {
     fun getOrCreateCacheForModuleName(
         nonRelativeModuleName: String,
-        mode: dynamic, /* ModuleKind.CommonJS | ModuleKind.ESNext | undefined */
+        mode: ResolutionMode?,
         redirectedReference: ResolvedProjectReference = definedExternally,
     ): PerModuleNameCache
 }

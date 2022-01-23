@@ -9,5 +9,5 @@ external fun resolveModuleNameFromCache(
     moduleName: String,
     containingFile: String,
     cache: ModuleResolutionCache,
-    mode: dynamic /* ModuleKind.CommonJS | ModuleKind.ESNext */ = definedExternally,
+    mode: ResolutionMode = definedExternally,
 ): ResolvedModuleWithFailedLookupLocations?

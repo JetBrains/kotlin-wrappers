@@ -20,4 +20,4 @@ external fun getImpliedNodeFormatForFile(
     packageJsonInfoCache: PackageJsonInfoCache?,
     host: ModuleResolutionHost,
     options: CompilerOptions,
-): dynamic /* ModuleKind.ESNext | ModuleKind.CommonJS */
+): NodeFormat?

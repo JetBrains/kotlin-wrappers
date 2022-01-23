@@ -44,7 +44,7 @@ external interface LanguageServiceHost : GetEffectiveTypeRootsHost {
     val getResolvedModuleWithFailedLookupLocationsFromCache: ((
         modulename: String,
         containingFile: String,
-        resolutionMode: dynamic, /* ModuleKind.CommonJS | ModuleKind.ESNext */
+        resolutionMode: ResolutionMode?,
     ) -> ResolvedModuleWithFailedLookupLocations?)?
     val resolveTypeReferenceDirectives: ((
         typeDirectiveNames: ReadonlyArray<String>,

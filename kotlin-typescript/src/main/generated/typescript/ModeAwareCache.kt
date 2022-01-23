@@ -5,25 +5,25 @@ package typescript
 external interface ModeAwareCache<T> {
     fun get(
         key: String,
-        mode: dynamic, /* ModuleKind.CommonJS | ModuleKind.ESNext | undefined */
+        mode: ResolutionMode?,
     ): T?
 
     fun set(
         key: String,
-        mode: dynamic, /* ModuleKind.CommonJS | ModuleKind.ESNext | undefined */
+        mode: ResolutionMode?,
         value: T,
     ): ModeAwareCache<T>
 
     fun delete(
         key: String,
-        mode: dynamic, /* ModuleKind.CommonJS | ModuleKind.ESNext | undefined */
+        mode: ResolutionMode?,
     ): ModeAwareCache<T>
 
     fun has(
         key: String,
-        mode: dynamic, /* ModuleKind.CommonJS | ModuleKind.ESNext | undefined */
+        mode: ResolutionMode?,
     ): Boolean
 
-    fun forEach(cb: (elem: T, key: String, mode: ModuleKind? /* ModuleKind.CommonJS | ModuleKind.ESNext | undefined */) -> Unit)
+    fun forEach(cb: (elem: T, key: String, mode: ResolutionMode?) -> Unit)
     fun size(): Int
 }
