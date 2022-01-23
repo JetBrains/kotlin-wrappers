@@ -2,4 +2,4 @@
 
 package typescript
 
-typealias BinaryOperator = Any /* AssignmentOperatorOrHigher | SyntaxKind.CommaToken */
+typealias BinaryOperator = SyntaxKind /* AssignmentOperatorOrHigher | SyntaxKind.CommaToken */

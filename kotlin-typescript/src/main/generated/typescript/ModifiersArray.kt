@@ -2,4 +2,4 @@
 
 package typescript
 
-typealias ModifiersArray = Any /* NodeArray<Modifier> */
+typealias ModifiersArray = NodeArray<Modifier>
