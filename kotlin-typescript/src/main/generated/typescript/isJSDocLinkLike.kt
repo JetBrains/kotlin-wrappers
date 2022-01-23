@@ -5,4 +5,4 @@
 
 package typescript
 
-external fun isJSDocLinkLike(node: Node): dynamic /* node is JSDocLink | JSDocLinkCode | JSDocLinkPlain */
+external fun isJSDocLinkLike(node: Node): Boolean /* node is JSDocLink | JSDocLinkCode | JSDocLinkPlain */
