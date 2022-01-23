@@ -5,9 +5,8 @@
 
 package typescript
 
-/*
-external fun convertTypeAcquisitionFromJson(jsonOptions: any, basePath: string, configFileName?: string): {
-    options: TypeAcquisition;
-    errors: Diagnostic[];
-};
-*/
+external fun convertTypeAcquisitionFromJson(
+    jsonOptions: Any,
+    basePath: String,
+    configFileName: String = definedExternally,
+): OptionsProvider<TypeAcquisition>

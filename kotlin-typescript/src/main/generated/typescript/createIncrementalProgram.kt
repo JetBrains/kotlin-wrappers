@@ -5,6 +5,4 @@
 
 package typescript
 
-/*
-external fun createIncrementalProgram<T extends BuilderProgram = EmitAndSemanticDiagnosticsBuilderProgram>({ rootNames, options, configFileParsingDiagnostics, projectReferences, host, createProgram }: IncrementalProgramOptions<T>): T
-*/
+external fun <T : BuilderProgram /* = EmitAndSemanticDiagnosticsBuilderProgram */> createIncrementalProgram(options: IncrementalProgramOptions<T>): T
