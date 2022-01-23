@@ -2,4 +2,4 @@
 
 package typescript
 
-typealias BinaryOperatorToken = Any /* Token<BinaryOperator> */
+typealias BinaryOperatorToken = Token<BinaryOperator>
