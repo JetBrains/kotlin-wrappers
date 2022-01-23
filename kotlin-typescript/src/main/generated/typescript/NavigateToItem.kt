@@ -6,7 +6,7 @@ external interface NavigateToItem {
     var name: String
     var kind: ScriptElementKind
     var kindModifiers: String
-    var matchKind: dynamic /* "exact" | "prefix" | "substring" | "camelCase" */
+    var matchKind: MatchKind
     var isCaseSensitive: Boolean
     var fileName: String
     var textSpan: TextSpan

@@ -3,7 +3,7 @@
 package typescript
 
 external interface InlayHintsOptions : UserPreferences {
-    val includeInlayParameterNameHints: dynamic /* "none" | "literals" | "all" */
+    val includeInlayParameterNameHints: IncludeInlayParameterNameHints?
     val includeInlayParameterNameHintsWhenArgumentMatchesName: Boolean?
     val includeInlayFunctionParameterTypeHints: Boolean?
     val includeInlayVariableTypeHints: Boolean?
