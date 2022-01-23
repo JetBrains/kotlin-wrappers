@@ -12,5 +12,5 @@ external fun resolveModuleName(
     host: ModuleResolutionHost,
     cache: ModuleResolutionCache = definedExternally,
     redirectedReference: ResolvedProjectReference = definedExternally,
-    resolutionMode: dynamic /* ModuleKind.CommonJS | ModuleKind.ESNext */ = definedExternally,
+    resolutionMode: ResolutionMode = definedExternally,
 ): ResolvedModuleWithFailedLookupLocations

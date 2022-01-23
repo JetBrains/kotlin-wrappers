@@ -38,5 +38,5 @@ external interface SourceFile : Declaration {
      * since it switches the builtin `node` module transform. Generally speaking, if unset,
      * the field is treated as though it is `ModuleKind.CommonJS`.
      */
-    var impliedNodeFormat: dynamic /* ModuleKind.ESNext | ModuleKind.CommonJS */
+    var impliedNodeFormat: NodeFormat?
 }
