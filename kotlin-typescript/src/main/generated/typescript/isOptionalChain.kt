@@ -5,4 +5,4 @@
 
 package typescript
 
-external fun isOptionalChain(node: Node): dynamic /* node is PropertyAccessChain | ElementAccessChain | CallChain | NonNullChain */
+external fun isOptionalChain(node: Node): Boolean /* node is PropertyAccessChain | ElementAccessChain | CallChain | NonNullChain */

@@ -5,4 +5,4 @@
 
 package typescript
 
-external fun isClassOrTypeElement(node: Node): dynamic /* node is ClassElement | TypeElement */
+external fun isClassOrTypeElement(node: Node): Boolean /* node is ClassElement | TypeElement */

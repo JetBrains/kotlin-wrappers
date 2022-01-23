@@ -5,4 +5,4 @@
 
 package typescript
 
-external fun isImportOrExportSpecifier(node: Node): dynamic /* node is ImportSpecifier | ExportSpecifier */
+external fun isImportOrExportSpecifier(node: Node): Boolean /* node is ImportSpecifier | ExportSpecifier */
