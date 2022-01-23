@@ -9,7 +9,7 @@ external fun createUnparsedSourceFile(text: String): UnparsedSource
 
 external fun createUnparsedSourceFile(
     inputFile: InputFiles,
-    type: dynamic, /* "js" | "dts" */
+    type: SourceFileType,
     stripInternal: Boolean = definedExternally,
 ): UnparsedSource
 
