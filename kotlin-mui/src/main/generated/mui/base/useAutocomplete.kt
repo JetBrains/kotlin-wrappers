@@ -72,7 +72,7 @@ external interface UseAutocompleteProps<T> : react.Props {
      * If `true`, the input's text is cleared on blur if no value is selected.
      *
      * Set to `true` if you want to help the user enter a new value.
-     * Set to `false` if you want to help the user resume his search.
+     * Set to `false` if you want to help the user resume their search.
      * @default !props.freeSolo
      */
     var clearOnBlur: Boolean?
