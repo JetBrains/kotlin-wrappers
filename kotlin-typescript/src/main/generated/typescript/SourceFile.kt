@@ -39,4 +39,16 @@ external interface SourceFile : Declaration {
      * the field is treated as though it is `ModuleKind.CommonJS`.
      */
     var impliedNodeFormat: NodeFormat?
+    fun getLineAndCharacterOfPosition(pos: Int): LineAndCharacter
+    fun getLineEndOfPosition(pos: Int): Int
+    fun getLineStarts(): ReadonlyArray<Int>
+    fun getPositionOfLineAndCharacter(
+        line: Int,
+        character: Int,
+    ): Int
+
+    fun update(
+        newText: String,
+        textChangeRange: TextChangeRange,
+    ): SourceFile
 }

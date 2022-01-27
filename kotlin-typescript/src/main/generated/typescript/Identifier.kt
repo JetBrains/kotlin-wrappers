@@ -12,4 +12,5 @@ external interface Identifier : PrimaryExpression, Declaration {
     val escapedText: __String
     val originalKeywordKind: SyntaxKind?
     var isInJSDocNamespace: Boolean?
+    val text: String
 }
