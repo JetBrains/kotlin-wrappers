@@ -15,4 +15,5 @@ package typescript
 external interface TypeReference : ObjectType {
     var target: GenericType
     var node: dynamic /* TypeReferenceNode | ArrayTypeNode | TupleTypeNode */
+    var typeArguments: ReadonlyArray<Type>?
 }
