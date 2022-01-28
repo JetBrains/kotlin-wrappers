@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface MethodDeclaration : FunctionLikeDeclarationBase, ClassElement, ObjectLiteralElement, JSDocContainer {
+sealed external interface MethodDeclaration : FunctionLikeDeclarationBase, ClassElement, ObjectLiteralElement, JSDocContainer {
     override val kind: SyntaxKind.MethodDeclaration
     override val parent: dynamic /* ClassLikeDeclaration | ObjectLiteralExpression */
     override val name: PropertyName

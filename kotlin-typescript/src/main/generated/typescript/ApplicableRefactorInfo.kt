@@ -5,7 +5,7 @@ package typescript
 /**
  * A set of one or more available refactoring actions, grouped under a parent refactoring.
  */
-external interface ApplicableRefactorInfo {
+sealed external interface ApplicableRefactorInfo {
     /**
      * The programmatic name of the refactoring
      */

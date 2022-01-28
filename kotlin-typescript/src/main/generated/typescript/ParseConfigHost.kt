@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface ParseConfigHost {
+sealed external interface ParseConfigHost {
     var useCaseSensitiveFileNames: Boolean
     fun readDirectory(
         rootDir: String,

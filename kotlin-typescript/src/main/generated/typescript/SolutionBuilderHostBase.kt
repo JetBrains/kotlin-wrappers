@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface SolutionBuilderHostBase<T : BuilderProgram> : ProgramHost<T> {
+sealed external interface SolutionBuilderHostBase<T : BuilderProgram> : ProgramHost<T> {
     val createDirectory: ((path: String) -> Unit)?
 
     /**

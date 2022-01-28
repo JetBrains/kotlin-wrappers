@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface UnparsedSource : Node {
+sealed external interface UnparsedSource : Node {
     override val kind: SyntaxKind.UnparsedSource
     var fileName: String
     var text: String

@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface SwitchStatement : Statement {
+sealed external interface SwitchStatement : Statement {
     override val kind: SyntaxKind.SwitchStatement
     val expression: Expression
     val caseBlock: CaseBlock

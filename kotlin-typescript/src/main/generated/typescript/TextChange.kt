@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface TextChange {
+sealed external interface TextChange {
     var span: TextSpan
     var newText: String
 }

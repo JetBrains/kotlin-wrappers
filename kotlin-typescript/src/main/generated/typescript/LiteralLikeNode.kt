@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface LiteralLikeNode : Node {
+sealed external interface LiteralLikeNode : Node {
     var text: String
     var isUnterminated: Boolean?
     var hasExtendedUnicodeEscape: Boolean?

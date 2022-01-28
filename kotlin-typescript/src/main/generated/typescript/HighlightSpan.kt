@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface HighlightSpan {
+sealed external interface HighlightSpan {
     var fileName: String?
     var isInString: Boolean? /* true */
     var textSpan: TextSpan

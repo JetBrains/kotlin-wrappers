@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface TemplateMiddle : TemplateLiteralLikeNode {
+sealed external interface TemplateMiddle : TemplateLiteralLikeNode {
     override val kind: SyntaxKind.TemplateMiddle
     override val parent: dynamic /* TemplateSpan | TemplateLiteralTypeSpan */
 }

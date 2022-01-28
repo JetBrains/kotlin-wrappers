@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface DoStatement : IterationStatement {
+sealed external interface DoStatement : IterationStatement {
     override val kind: SyntaxKind.DoStatement
     val expression: Expression
 }

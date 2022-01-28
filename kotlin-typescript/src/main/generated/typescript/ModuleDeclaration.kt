@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface ModuleDeclaration : DeclarationStatement, JSDocContainer {
+sealed external interface ModuleDeclaration : DeclarationStatement, JSDocContainer {
     override val kind: SyntaxKind.ModuleDeclaration
     override val parent: dynamic /* ModuleBody | SourceFile */
     override val name: ModuleName

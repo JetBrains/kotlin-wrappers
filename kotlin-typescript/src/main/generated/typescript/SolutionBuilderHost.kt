@@ -2,6 +2,6 @@
 
 package typescript
 
-external interface SolutionBuilderHost<T : BuilderProgram> : SolutionBuilderHostBase<T> {
+sealed external interface SolutionBuilderHost<T : BuilderProgram> : SolutionBuilderHostBase<T> {
     var reportErrorSummary: ReportEmitErrorSummary?
 }

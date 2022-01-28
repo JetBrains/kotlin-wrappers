@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface PreProcessedFileInfo {
+sealed external interface PreProcessedFileInfo {
     var referencedFiles: ReadonlyArray<FileReference>
     var typeReferenceDirectives: ReadonlyArray<FileReference>
     var libReferenceDirectives: ReadonlyArray<FileReference>

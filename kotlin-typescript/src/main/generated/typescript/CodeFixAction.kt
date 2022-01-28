@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface CodeFixAction : CodeAction {
+sealed external interface CodeFixAction : CodeAction {
     /** Short name to identify the fix, for use by telemetry. */
     var fixName: String
 

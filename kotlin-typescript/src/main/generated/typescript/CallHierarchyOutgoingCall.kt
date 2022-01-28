@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface CallHierarchyOutgoingCall {
+sealed external interface CallHierarchyOutgoingCall {
     var to: CallHierarchyItem
     var fromSpans: ReadonlyArray<TextSpan>
 }

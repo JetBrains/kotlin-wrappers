@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface FlowCall : FlowNodeBase {
+sealed external interface FlowCall : FlowNodeBase {
     var node: CallExpression
     var antecedent: FlowNode
 }

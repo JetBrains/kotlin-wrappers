@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface ArrayBindingPattern : Node {
+sealed external interface ArrayBindingPattern : Node {
     override val kind: SyntaxKind.ArrayBindingPattern
     override val parent: dynamic /* VariableDeclaration | ParameterDeclaration | BindingElement */
     val elements: NodeArray<ArrayBindingElement>

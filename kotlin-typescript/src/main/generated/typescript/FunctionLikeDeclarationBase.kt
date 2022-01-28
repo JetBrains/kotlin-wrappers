@@ -10,7 +10,7 @@ package typescript
  * - MethodDeclaration
  * - AccessorDeclaration
  */
-external interface FunctionLikeDeclarationBase : SignatureDeclarationBase {
+sealed external interface FunctionLikeDeclarationBase : SignatureDeclarationBase {
     var _functionLikeDeclarationBrand: Any
     val asteriskToken: AsteriskToken?
     val questionToken: QuestionToken?

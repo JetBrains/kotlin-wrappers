@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface DiagnosticRelatedInformation {
+sealed external interface DiagnosticRelatedInformation {
     var category: DiagnosticCategory
     var code: Int
     var file: SourceFile?

@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface ShorthandPropertyAssignment : ObjectLiteralElement, JSDocContainer {
+sealed external interface ShorthandPropertyAssignment : ObjectLiteralElement, JSDocContainer {
     override val kind: SyntaxKind.ShorthandPropertyAssignment
     override val parent: ObjectLiteralExpression
     override val name: Identifier

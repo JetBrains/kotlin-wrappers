@@ -2,6 +2,6 @@
 
 package typescript
 
-external interface JSDocUnknownType : JSDocType {
+sealed external interface JSDocUnknownType : JSDocType {
     override val kind: SyntaxKind.JSDocUnknownType
 }

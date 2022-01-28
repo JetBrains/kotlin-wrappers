@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface InferTypeNode : TypeNode {
+sealed external interface InferTypeNode : TypeNode {
     override val kind: SyntaxKind.InferType
     val typeParameter: TypeParameterDeclaration
 }

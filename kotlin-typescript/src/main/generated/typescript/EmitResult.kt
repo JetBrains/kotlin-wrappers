@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface EmitResult {
+sealed external interface EmitResult {
     var emitSkipped: Boolean
 
     /** Contains declaration emit diagnostics */

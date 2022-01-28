@@ -2,6 +2,6 @@
 
 package typescript
 
-external interface MemberExpression : LeftHandSideExpression {
+sealed external interface MemberExpression : LeftHandSideExpression {
     var _memberExpressionBrand: Any
 }

@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface DiagnosticMessage {
+sealed external interface DiagnosticMessage {
     var key: String
     var category: DiagnosticCategory
     var code: Int

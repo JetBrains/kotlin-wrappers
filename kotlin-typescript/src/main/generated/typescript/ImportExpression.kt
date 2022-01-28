@@ -2,6 +2,6 @@
 
 package typescript
 
-external interface ImportExpression : PrimaryExpression {
+sealed external interface ImportExpression : PrimaryExpression {
     override val kind: SyntaxKind.ImportKeyword
 }

@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface FunctionExpression : PrimaryExpression, FunctionLikeDeclarationBase, JSDocContainer {
+sealed external interface FunctionExpression : PrimaryExpression, FunctionLikeDeclarationBase, JSDocContainer {
     override val kind: SyntaxKind.FunctionExpression
     override val name: Identifier?
     override val body: FunctionBody

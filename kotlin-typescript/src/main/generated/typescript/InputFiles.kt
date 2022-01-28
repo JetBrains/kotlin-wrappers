@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface InputFiles : Node {
+sealed external interface InputFiles : Node {
     override val kind: SyntaxKind.InputFiles
     var javascriptPath: String?
     var javascriptText: String

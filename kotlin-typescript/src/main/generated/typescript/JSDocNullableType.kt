@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface JSDocNullableType : JSDocType {
+sealed external interface JSDocNullableType : JSDocType {
     override val kind: SyntaxKind.JSDocNullableType
     val type: TypeNode
 }

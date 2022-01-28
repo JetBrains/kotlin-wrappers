@@ -2,4 +2,4 @@
 
 package typescript
 
-external interface InstallPackageAction
+sealed external interface InstallPackageAction

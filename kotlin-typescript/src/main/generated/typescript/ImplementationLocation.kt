@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface ImplementationLocation : DocumentSpan {
+sealed external interface ImplementationLocation : DocumentSpan {
     var kind: ScriptElementKind
     var displayParts: ReadonlyArray<SymbolDisplayPart>
 }

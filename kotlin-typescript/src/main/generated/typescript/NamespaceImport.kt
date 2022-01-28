@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface NamespaceImport : NamedDeclaration {
+sealed external interface NamespaceImport : NamedDeclaration {
     override val kind: SyntaxKind.NamespaceImport
     override val parent: ImportClause
     override val name: Identifier

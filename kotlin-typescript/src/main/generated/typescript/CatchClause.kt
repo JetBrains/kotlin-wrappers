@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface CatchClause : Node {
+sealed external interface CatchClause : Node {
     override val kind: SyntaxKind.CatchClause
     override val parent: TryStatement
     val variableDeclaration: VariableDeclaration?

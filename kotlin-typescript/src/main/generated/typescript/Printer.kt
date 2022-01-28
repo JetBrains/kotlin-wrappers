@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface Printer {
+sealed external interface Printer {
     /**
      * Print a node and its subtree as-is, without any emit transformations.
      * @param hint A value indicating the purpose of a node. This is primarily used to

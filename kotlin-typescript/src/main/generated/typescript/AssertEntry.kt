@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface AssertEntry : Node {
+sealed external interface AssertEntry : Node {
     override val kind: SyntaxKind.AssertEntry
     override val parent: AssertClause
     val name: AssertionKey

@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface TypePredicateBase {
+sealed external interface TypePredicateBase {
     var kind: TypePredicateKind
     var type: Type?
 }

@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface InterfaceTypeWithDeclaredMembers : InterfaceType {
+sealed external interface InterfaceTypeWithDeclaredMembers : InterfaceType {
     var declaredProperties: ReadonlyArray<Symbol>
     var declaredCallSignatures: ReadonlyArray<Signature>
     var declaredConstructSignatures: ReadonlyArray<Signature>

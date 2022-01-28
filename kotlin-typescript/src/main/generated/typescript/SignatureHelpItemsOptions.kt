@@ -2,6 +2,6 @@
 
 package typescript
 
-external interface SignatureHelpItemsOptions {
+sealed external interface SignatureHelpItemsOptions {
     var triggerReason: SignatureHelpTriggerReason?
 }

@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface DefinitionInfoAndBoundSpan {
+sealed external interface DefinitionInfoAndBoundSpan {
     var definitions: ReadonlyArray<DefinitionInfo>?
     var textSpan: TextSpan
 }

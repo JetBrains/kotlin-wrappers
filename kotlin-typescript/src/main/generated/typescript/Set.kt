@@ -8,7 +8,7 @@
 package typescript
 
 /** ES6 Set interface. */
-external interface Set<T> : ReadonlySet<T>, Collection<T> {
+sealed external interface Set<T> : ReadonlySet<T>, Collection<T> {
     fun add(value: T): Set<T>
     override fun delete(value: T): Boolean
 }

@@ -9,7 +9,7 @@ package typescript
  *
  * Prefer to return a `ResolvedModuleFull` so that the file type does not have to be inferred.
  */
-external interface ResolvedModule {
+sealed external interface ResolvedModule {
     /** Path of the file the module was resolved to. */
     var resolvedFileName: String
 

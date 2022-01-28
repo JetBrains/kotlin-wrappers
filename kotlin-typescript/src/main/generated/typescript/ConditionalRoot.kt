@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface ConditionalRoot {
+sealed external interface ConditionalRoot {
     var node: ConditionalTypeNode
     var checkType: Type
     var extendsType: Type

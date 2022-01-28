@@ -2,6 +2,6 @@
 
 package typescript
 
-external interface JsonObjectExpressionStatement : ExpressionStatement {
+sealed external interface JsonObjectExpressionStatement : ExpressionStatement {
     override val expression: JsonObjectExpression
 }

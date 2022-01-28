@@ -2,6 +2,6 @@
 
 package typescript
 
-external interface FlowStart : FlowNodeBase {
+sealed external interface FlowStart : FlowNodeBase {
     var node: dynamic /* FunctionExpression | ArrowFunction | MethodDeclaration | GetAccessorDeclaration | SetAccessorDeclaration */
 }

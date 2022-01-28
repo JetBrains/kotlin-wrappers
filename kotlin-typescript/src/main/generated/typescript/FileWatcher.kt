@@ -2,6 +2,6 @@
 
 package typescript
 
-external interface FileWatcher {
+sealed external interface FileWatcher {
     fun close()
 }

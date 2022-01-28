@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface SourceMapSpan {
+sealed external interface SourceMapSpan {
     /** Line number in the .js file. */
     var emittedLine: Int
 

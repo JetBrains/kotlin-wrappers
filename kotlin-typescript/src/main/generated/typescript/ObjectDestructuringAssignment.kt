@@ -2,6 +2,6 @@
 
 package typescript
 
-external interface ObjectDestructuringAssignment : AssignmentExpression<EqualsToken> {
+sealed external interface ObjectDestructuringAssignment : AssignmentExpression<EqualsToken> {
     override val left: ObjectLiteralExpression
 }

@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface JSDocTypeLiteral : JSDocType {
+sealed external interface JSDocTypeLiteral : JSDocType {
     override val kind: SyntaxKind.JSDocTypeLiteral
     val jsDocPropertyTags: ReadonlyArray<JSDocPropertyLikeTag>?
 

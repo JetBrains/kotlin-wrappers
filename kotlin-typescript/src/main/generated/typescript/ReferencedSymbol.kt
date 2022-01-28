@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface ReferencedSymbol {
+sealed external interface ReferencedSymbol {
     var definition: ReferencedSymbolDefinitionInfo
     var references: ReadonlyArray<ReferenceEntry>
 }

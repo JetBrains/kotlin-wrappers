@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface BreakStatement : Statement {
+sealed external interface BreakStatement : Statement {
     override val kind: SyntaxKind.BreakStatement
     val label: Identifier?
 }

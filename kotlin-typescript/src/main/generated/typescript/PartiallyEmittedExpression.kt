@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface PartiallyEmittedExpression : LeftHandSideExpression {
+sealed external interface PartiallyEmittedExpression : LeftHandSideExpression {
     override val kind: SyntaxKind.PartiallyEmittedExpression
     val expression: Expression
 }

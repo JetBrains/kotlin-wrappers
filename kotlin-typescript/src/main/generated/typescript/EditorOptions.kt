@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface EditorOptions {
+sealed external interface EditorOptions {
     var BaseIndentSize: Int?
     var IndentSize: Int
     var TabSize: Int

@@ -2,6 +2,6 @@
 
 package typescript
 
-external interface FunctionTypeNode : FunctionOrConstructorTypeNodeBase {
+sealed external interface FunctionTypeNode : FunctionOrConstructorTypeNodeBase {
     override val kind: SyntaxKind.FunctionType
 }

@@ -8,7 +8,7 @@
 package typescript
 
 /** ES6 Set interface, only read methods included. */
-external interface ReadonlySet<T> : ReadonlyCollection<T> {
+sealed external interface ReadonlySet<T> : ReadonlyCollection<T> {
     override fun has(value: T): Boolean
     fun values(): Iterator<T>
     fun entries(): Iterator<dynamic /* [T, T] */>

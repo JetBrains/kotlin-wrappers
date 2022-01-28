@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface VariableStatement : Statement {
+sealed external interface VariableStatement : Statement {
     override val kind: SyntaxKind.VariableStatement
     val declarationList: VariableDeclarationList
 }

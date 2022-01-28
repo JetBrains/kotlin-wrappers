@@ -2,6 +2,6 @@
 
 package typescript
 
-external interface TransientIdentifier : Identifier {
+sealed external interface TransientIdentifier : Identifier {
     var resolvedSymbol: Symbol
 }

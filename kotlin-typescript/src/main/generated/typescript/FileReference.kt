@@ -2,6 +2,6 @@
 
 package typescript
 
-external interface FileReference : TextRange {
+sealed external interface FileReference : TextRange {
     var fileName: String
 }

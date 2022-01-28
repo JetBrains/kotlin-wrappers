@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface TextRange {
+sealed external interface TextRange {
     var pos: Int
     var end: Int
 }

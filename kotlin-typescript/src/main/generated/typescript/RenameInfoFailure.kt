@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface RenameInfoFailure {
+sealed external interface RenameInfoFailure {
     var canRename: Boolean /* false */
     var localizedErrorMessage: String
 }

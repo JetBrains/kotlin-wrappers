@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface CombinedCodeActions {
+sealed external interface CombinedCodeActions {
     var changes: ReadonlyArray<FileTextChanges>
     var commands: ReadonlyArray<CodeActionCommand>?
 }

@@ -2,6 +2,6 @@
 
 package typescript
 
-external interface JsxClosingTagInfo {
+sealed external interface JsxClosingTagInfo {
     val newText: String
 }

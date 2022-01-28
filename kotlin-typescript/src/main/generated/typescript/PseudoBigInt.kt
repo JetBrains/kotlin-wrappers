@@ -3,7 +3,7 @@
 package typescript
 
 /** Represents a bigint literal value without requiring bigint support */
-external interface PseudoBigInt {
+sealed external interface PseudoBigInt {
     var negative: Boolean
     var base10Value: String
 }

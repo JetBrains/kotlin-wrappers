@@ -2,6 +2,6 @@
 
 package typescript
 
-external interface EmptyStatement : Statement {
+sealed external interface EmptyStatement : Statement {
     override val kind: SyntaxKind.EmptyStatement
 }

@@ -2,6 +2,6 @@
 
 package typescript
 
-external interface NumberLiteralType : LiteralType {
+sealed external interface NumberLiteralType : LiteralType {
     override var value: Int
 }

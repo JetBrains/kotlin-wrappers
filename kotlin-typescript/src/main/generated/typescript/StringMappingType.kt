@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface StringMappingType : InstantiableType {
+sealed external interface StringMappingType : InstantiableType {
     override var symbol: Symbol
     var type: Type
 }

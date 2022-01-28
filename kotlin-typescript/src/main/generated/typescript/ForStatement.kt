@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface ForStatement : IterationStatement {
+sealed external interface ForStatement : IterationStatement {
     override val kind: SyntaxKind.ForStatement
     val initializer: ForInitializer?
     val condition: Expression?

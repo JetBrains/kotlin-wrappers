@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface Classifier {
+sealed external interface Classifier {
     /**
      * Gives lexical classifications of tokens on a line without any syntactic context.
      * For instance, a token consisting of the text 'string' can be either an identifier

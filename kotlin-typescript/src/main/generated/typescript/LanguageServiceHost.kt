@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface LanguageServiceHost : GetEffectiveTypeRootsHost {
+sealed external interface LanguageServiceHost : GetEffectiveTypeRootsHost {
     fun getCompilationSettings(): CompilerOptions
     val getNewLine: (() -> String)?
     val getProjectVersion: (() -> String)?

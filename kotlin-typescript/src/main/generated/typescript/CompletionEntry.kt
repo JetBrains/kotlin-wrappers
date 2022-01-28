@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface CompletionEntry {
+sealed external interface CompletionEntry {
     var name: String
     var kind: ScriptElementKind
     var kindModifiers: String?

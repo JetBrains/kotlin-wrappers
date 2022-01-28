@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface PrintHandlers {
+sealed external interface PrintHandlers {
     /**
      * A hook used by the Printer when generating unique names to avoid collisions with
      * globally defined names that exist outside of the current source file.

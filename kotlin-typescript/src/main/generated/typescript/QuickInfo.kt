@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface QuickInfo {
+sealed external interface QuickInfo {
     var kind: ScriptElementKind
     var kindModifiers: String
     var textSpan: TextSpan

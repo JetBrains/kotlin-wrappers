@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface JsxSelfClosingElement : PrimaryExpression {
+sealed external interface JsxSelfClosingElement : PrimaryExpression {
     override val kind: SyntaxKind.JsxSelfClosingElement
     val tagName: JsxTagNameExpression
     val typeArguments: NodeArray<TypeNode>?

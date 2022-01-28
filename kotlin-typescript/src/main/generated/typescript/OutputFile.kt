@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface OutputFile {
+sealed external interface OutputFile {
     var name: String
     var writeByteOrderMark: Boolean
     var text: String

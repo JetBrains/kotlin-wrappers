@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface WhileStatement : IterationStatement {
+sealed external interface WhileStatement : IterationStatement {
     override val kind: SyntaxKind.WhileStatement
     val expression: Expression
 }

@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface CancellationToken {
+sealed external interface CancellationToken {
     fun isCancellationRequested(): Boolean
 
     /** @throws OperationCanceledException if isCancellationRequested is true */

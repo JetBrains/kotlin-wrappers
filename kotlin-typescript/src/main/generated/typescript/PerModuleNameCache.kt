@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface PerModuleNameCache {
+sealed external interface PerModuleNameCache {
     operator fun get(directory: String): ResolvedModuleWithFailedLookupLocations?
     operator fun set(
         directory: String,

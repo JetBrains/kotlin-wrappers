@@ -2,6 +2,6 @@
 
 package typescript
 
-external interface IndexType : InstantiableType {
+sealed external interface IndexType : InstantiableType {
     var type: dynamic /* InstantiableType | UnionOrIntersectionType */
 }

@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface Signature {
+sealed external interface Signature {
     var declaration: dynamic /* SignatureDeclaration | JSDocSignature */
     var typeParameters: ReadonlyArray<TypeParameter>?
     var parameters: ReadonlyArray<Symbol>

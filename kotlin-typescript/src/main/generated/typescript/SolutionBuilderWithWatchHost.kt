@@ -2,4 +2,4 @@
 
 package typescript
 
-external interface SolutionBuilderWithWatchHost<T : BuilderProgram> : SolutionBuilderHostBase<T>, WatchHost
+sealed external interface SolutionBuilderWithWatchHost<T : BuilderProgram> : SolutionBuilderHostBase<T>, WatchHost

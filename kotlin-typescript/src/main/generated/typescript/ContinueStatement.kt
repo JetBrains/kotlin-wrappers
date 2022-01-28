@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface ContinueStatement : Statement {
+sealed external interface ContinueStatement : Statement {
     override val kind: SyntaxKind.ContinueStatement
     val label: Identifier?
 }

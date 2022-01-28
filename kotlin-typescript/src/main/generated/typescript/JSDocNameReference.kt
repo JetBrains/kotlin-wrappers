@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface JSDocNameReference : Node {
+sealed external interface JSDocNameReference : Node {
     override val kind: SyntaxKind.JSDocNameReference
     val name: dynamic /* EntityName | JSDocMemberName */
 }

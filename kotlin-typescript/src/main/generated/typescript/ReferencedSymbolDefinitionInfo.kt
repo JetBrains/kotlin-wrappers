@@ -2,6 +2,6 @@
 
 package typescript
 
-external interface ReferencedSymbolDefinitionInfo : DefinitionInfo {
+sealed external interface ReferencedSymbolDefinitionInfo : DefinitionInfo {
     var displayParts: ReadonlyArray<SymbolDisplayPart>
 }

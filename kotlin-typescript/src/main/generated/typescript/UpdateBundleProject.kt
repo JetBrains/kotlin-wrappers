@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface UpdateBundleProject<T : BuilderProgram> : InvalidatedProjectBase {
+sealed external interface UpdateBundleProject<T : BuilderProgram> : InvalidatedProjectBase {
     override val kind: InvalidatedProjectKind.UpdateBundle
     fun emit(
         writeFile: WriteFileCallback = definedExternally,

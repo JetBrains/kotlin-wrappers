@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface SelectionRange {
+sealed external interface SelectionRange {
     var textSpan: TextSpan
     var parent: SelectionRange?
 }

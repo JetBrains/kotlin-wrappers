@@ -2,6 +2,6 @@
 
 package typescript
 
-external interface TrueLiteral : PrimaryExpression {
+sealed external interface TrueLiteral : PrimaryExpression {
     override val kind: SyntaxKind.TrueKeyword
 }

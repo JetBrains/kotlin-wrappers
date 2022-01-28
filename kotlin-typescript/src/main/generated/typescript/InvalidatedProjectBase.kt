@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface InvalidatedProjectBase {
+sealed external interface InvalidatedProjectBase {
     val kind: InvalidatedProjectKind
     val project: ResolvedConfigFileName
 

@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface SetAccessorDeclaration : FunctionLikeDeclarationBase, ClassElement, TypeElement, ObjectLiteralElement, JSDocContainer {
+sealed external interface SetAccessorDeclaration : FunctionLikeDeclarationBase, ClassElement, TypeElement, ObjectLiteralElement, JSDocContainer {
     override val kind: SyntaxKind.SetAccessor
     override val parent: dynamic /* ClassLikeDeclaration | ObjectLiteralExpression | TypeLiteralNode | InterfaceDeclaration */
     override val name: PropertyName

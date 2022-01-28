@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface OutliningSpan {
+sealed external interface OutliningSpan {
     /** The span of the document to actually collapse. */
     var textSpan: TextSpan
 

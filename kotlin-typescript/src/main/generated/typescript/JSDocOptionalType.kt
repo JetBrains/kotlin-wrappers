@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface JSDocOptionalType : JSDocType {
+sealed external interface JSDocOptionalType : JSDocType {
     override val kind: SyntaxKind.JSDocOptionalType
     val type: TypeNode
 }

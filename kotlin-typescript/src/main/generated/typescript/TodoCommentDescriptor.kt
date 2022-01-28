@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface TodoCommentDescriptor {
+sealed external interface TodoCommentDescriptor {
     var text: String
     var priority: Int
 }

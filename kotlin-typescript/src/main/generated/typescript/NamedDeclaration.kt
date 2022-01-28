@@ -2,6 +2,6 @@
 
 package typescript
 
-external interface NamedDeclaration : Declaration {
+sealed external interface NamedDeclaration : Declaration {
     val name: DeclarationName?
 }

@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface ModuleResolutionHost {
+sealed external interface ModuleResolutionHost {
     fun fileExists(fileName: String): Boolean
     fun readFile(fileName: String): String?
     val trace: ((s: String) -> Unit)?

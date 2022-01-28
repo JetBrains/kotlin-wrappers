@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface ImportDeclaration : Statement {
+sealed external interface ImportDeclaration : Statement {
     override val kind: SyntaxKind.ImportDeclaration
     override val parent: dynamic /* SourceFile | ModuleBlock */
     val importClause: ImportClause?

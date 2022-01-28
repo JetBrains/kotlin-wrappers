@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface CustomTransformers {
+sealed external interface CustomTransformers {
     /** Custom transformers to evaluate before built-in .js transformations. */
     var before: dynamic /* (TransformerFactory<SourceFile> | CustomTransformerFactory)[] */
 

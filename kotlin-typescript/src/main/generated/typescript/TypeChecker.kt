@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface TypeChecker {
+sealed external interface TypeChecker {
     fun getTypeOfSymbolAtLocation(
         symbol: Symbol,
         node: Node,

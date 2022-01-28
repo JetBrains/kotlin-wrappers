@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface TypeAcquisition {
+sealed external interface TypeAcquisition {
     /**
      * @deprecated typingOptions.enableAutoDiscovery
      * Use typeAcquisition.enable instead.

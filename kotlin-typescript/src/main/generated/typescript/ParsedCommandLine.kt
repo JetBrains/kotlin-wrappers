@@ -3,7 +3,7 @@
 package typescript
 
 /** Either a parsed command line or a parsed tsconfig.json */
-external interface ParsedCommandLine {
+sealed external interface ParsedCommandLine {
     var options: CompilerOptions
     var typeAcquisition: TypeAcquisition?
     var fileNames: ReadonlyArray<String>

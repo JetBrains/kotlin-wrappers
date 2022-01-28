@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface IndexInfo {
+sealed external interface IndexInfo {
     var keyType: Type
     var type: Type
     var isReadonly: Boolean

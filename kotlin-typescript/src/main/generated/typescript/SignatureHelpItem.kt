@@ -9,7 +9,7 @@ package typescript
  * an edit has happened, while signature help is still active, the host can ask important
  * questions like 'what parameter is the user currently contained within?'.
  */
-external interface SignatureHelpItem {
+sealed external interface SignatureHelpItem {
     var isVariadic: Boolean
     var prefixDisplayParts: ReadonlyArray<SymbolDisplayPart>
     var suffixDisplayParts: ReadonlyArray<SymbolDisplayPart>

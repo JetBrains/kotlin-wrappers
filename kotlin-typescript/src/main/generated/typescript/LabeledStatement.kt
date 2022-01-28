@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface LabeledStatement : Statement {
+sealed external interface LabeledStatement : Statement {
     override val kind: SyntaxKind.LabeledStatement
     val label: Identifier
     val statement: Statement

@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface PrinterOptions {
+sealed external interface PrinterOptions {
     var removeComments: Boolean?
     var newLine: NewLineKind?
     var omitTrailingSemicolon: Boolean?
