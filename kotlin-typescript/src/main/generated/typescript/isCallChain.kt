@@ -1,8 +1,17 @@
 // Automatically generated - do not modify!
 
-@file:JsModule("typescript")
-@file:JsNonModule
+@file:Suppress(
+    "CANNOT_CHECK_FOR_EXTERNAL_INTERFACE",
+)
 
 package typescript
 
-external fun isCallChain(node: Node): Boolean /* node is CallChain */
+import kotlin.contracts.contract
+
+fun isCallChain(node: Node): Boolean {
+    contract {
+        returns(true) implies (node is CallChain)
+    }
+
+    return typescript.raw.isCallChain(node)
+}

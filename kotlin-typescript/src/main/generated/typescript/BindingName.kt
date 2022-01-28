@@ -2,4 +2,4 @@
 
 package typescript
 
-typealias BindingName = Any /* Identifier | BindingPattern */
+typealias BindingName = Node /* Identifier | BindingPattern */

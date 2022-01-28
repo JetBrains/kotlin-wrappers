@@ -1,8 +1,17 @@
 // Automatically generated - do not modify!
 
-@file:JsModule("typescript")
-@file:JsNonModule
+@file:Suppress(
+    "CANNOT_CHECK_FOR_EXTERNAL_INTERFACE",
+)
 
 package typescript
 
-external fun isSyntheticExpression(node: Node): Boolean /* node is SyntheticExpression */
+import kotlin.contracts.contract
+
+fun isSyntheticExpression(node: Node): Boolean {
+    contract {
+        returns(true) implies (node is SyntheticExpression)
+    }
+
+    return typescript.raw.isSyntheticExpression(node)
+}

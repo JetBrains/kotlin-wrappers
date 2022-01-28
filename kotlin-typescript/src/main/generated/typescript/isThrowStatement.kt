@@ -1,8 +1,17 @@
 // Automatically generated - do not modify!
 
-@file:JsModule("typescript")
-@file:JsNonModule
+@file:Suppress(
+    "CANNOT_CHECK_FOR_EXTERNAL_INTERFACE",
+)
 
 package typescript
 
-external fun isThrowStatement(node: Node): Boolean /* node is ThrowStatement */
+import kotlin.contracts.contract
+
+fun isThrowStatement(node: Node): Boolean {
+    contract {
+        returns(true) implies (node is ThrowStatement)
+    }
+
+    return typescript.raw.isThrowStatement(node)
+}

@@ -1,8 +1,17 @@
 // Automatically generated - do not modify!
 
-@file:JsModule("typescript")
-@file:JsNonModule
+@file:Suppress(
+    "CANNOT_CHECK_FOR_EXTERNAL_INTERFACE",
+)
 
 package typescript
 
-external fun isHeritageClause(node: Node): Boolean /* node is HeritageClause */
+import kotlin.contracts.contract
+
+fun isHeritageClause(node: Node): Boolean {
+    contract {
+        returns(true) implies (node is HeritageClause)
+    }
+
+    return typescript.raw.isHeritageClause(node)
+}

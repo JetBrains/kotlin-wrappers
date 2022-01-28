@@ -1,8 +1,17 @@
 // Automatically generated - do not modify!
 
-@file:JsModule("typescript")
-@file:JsNonModule
+@file:Suppress(
+    "CANNOT_CHECK_FOR_EXTERNAL_INTERFACE",
+)
 
 package typescript
 
-external fun isPartiallyEmittedExpression(node: Node): Boolean /* node is PartiallyEmittedExpression */
+import kotlin.contracts.contract
+
+fun isPartiallyEmittedExpression(node: Node): Boolean {
+    contract {
+        returns(true) implies (node is PartiallyEmittedExpression)
+    }
+
+    return typescript.raw.isPartiallyEmittedExpression(node)
+}

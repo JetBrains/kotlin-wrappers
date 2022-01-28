@@ -1,8 +1,17 @@
 // Automatically generated - do not modify!
 
-@file:JsModule("typescript")
-@file:JsNonModule
+@file:Suppress(
+    "CANNOT_CHECK_FOR_EXTERNAL_INTERFACE",
+)
 
 package typescript
 
-external fun isSetAccessorDeclaration(node: Node): Boolean /* node is SetAccessorDeclaration */
+import kotlin.contracts.contract
+
+fun isSetAccessorDeclaration(node: Node): Boolean {
+    contract {
+        returns(true) implies (node is SetAccessorDeclaration)
+    }
+
+    return typescript.raw.isSetAccessorDeclaration(node)
+}

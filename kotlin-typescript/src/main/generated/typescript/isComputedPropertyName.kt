@@ -1,8 +1,17 @@
 // Automatically generated - do not modify!
 
-@file:JsModule("typescript")
-@file:JsNonModule
+@file:Suppress(
+    "CANNOT_CHECK_FOR_EXTERNAL_INTERFACE",
+)
 
 package typescript
 
-external fun isComputedPropertyName(node: Node): Boolean /* node is ComputedPropertyName */
+import kotlin.contracts.contract
+
+fun isComputedPropertyName(node: Node): Boolean {
+    contract {
+        returns(true) implies (node is ComputedPropertyName)
+    }
+
+    return typescript.raw.isComputedPropertyName(node)
+}

@@ -1,8 +1,17 @@
 // Automatically generated - do not modify!
 
-@file:JsModule("typescript")
-@file:JsNonModule
+@file:Suppress(
+    "CANNOT_CHECK_FOR_EXTERNAL_INTERFACE",
+)
 
 package typescript
 
-external fun isBindingElement(node: Node): Boolean /* node is BindingElement */
+import kotlin.contracts.contract
+
+fun isBindingElement(node: Node): Boolean {
+    contract {
+        returns(true) implies (node is BindingElement)
+    }
+
+    return typescript.raw.isBindingElement(node)
+}

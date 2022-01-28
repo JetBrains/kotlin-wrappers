@@ -1,8 +1,17 @@
 // Automatically generated - do not modify!
 
-@file:JsModule("typescript")
-@file:JsNonModule
+@file:Suppress(
+    "CANNOT_CHECK_FOR_EXTERNAL_INTERFACE",
+)
 
 package typescript
 
-external fun isParenthesizedTypeNode(node: Node): Boolean /* node is ParenthesizedTypeNode */
+import kotlin.contracts.contract
+
+fun isParenthesizedTypeNode(node: Node): Boolean {
+    contract {
+        returns(true) implies (node is ParenthesizedTypeNode)
+    }
+
+    return typescript.raw.isParenthesizedTypeNode(node)
+}

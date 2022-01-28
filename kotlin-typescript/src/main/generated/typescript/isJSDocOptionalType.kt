@@ -1,8 +1,17 @@
 // Automatically generated - do not modify!
 
-@file:JsModule("typescript")
-@file:JsNonModule
+@file:Suppress(
+    "CANNOT_CHECK_FOR_EXTERNAL_INTERFACE",
+)
 
 package typescript
 
-external fun isJSDocOptionalType(node: Node): Boolean /* node is JSDocOptionalType */
+import kotlin.contracts.contract
+
+fun isJSDocOptionalType(node: Node): Boolean {
+    contract {
+        returns(true) implies (node is JSDocOptionalType)
+    }
+
+    return typescript.raw.isJSDocOptionalType(node)
+}

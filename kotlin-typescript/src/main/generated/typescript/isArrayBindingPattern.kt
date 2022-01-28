@@ -1,8 +1,17 @@
 // Automatically generated - do not modify!
 
-@file:JsModule("typescript")
-@file:JsNonModule
+@file:Suppress(
+    "CANNOT_CHECK_FOR_EXTERNAL_INTERFACE",
+)
 
 package typescript
 
-external fun isArrayBindingPattern(node: Node): Boolean /* node is ArrayBindingPattern */
+import kotlin.contracts.contract
+
+fun isArrayBindingPattern(node: Node): Boolean {
+    contract {
+        returns(true) implies (node is ArrayBindingPattern)
+    }
+
+    return typescript.raw.isArrayBindingPattern(node)
+}

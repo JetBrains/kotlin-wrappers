@@ -1,8 +1,17 @@
 // Automatically generated - do not modify!
 
-@file:JsModule("typescript")
-@file:JsNonModule
+@file:Suppress(
+    "CANNOT_CHECK_FOR_EXTERNAL_INTERFACE",
+)
 
 package typescript
 
-external fun isNamedTupleMember(node: Node): Boolean /* node is NamedTupleMember */
+import kotlin.contracts.contract
+
+fun isNamedTupleMember(node: Node): Boolean {
+    contract {
+        returns(true) implies (node is NamedTupleMember)
+    }
+
+    return typescript.raw.isNamedTupleMember(node)
+}

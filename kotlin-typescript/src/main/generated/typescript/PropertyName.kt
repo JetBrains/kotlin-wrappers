@@ -2,4 +2,4 @@
 
 package typescript
 
-typealias PropertyName = Any /* Identifier | StringLiteral | NumericLiteral | ComputedPropertyName | PrivateIdentifier */
+typealias PropertyName = Node /* Identifier | StringLiteral | NumericLiteral | ComputedPropertyName | PrivateIdentifier */

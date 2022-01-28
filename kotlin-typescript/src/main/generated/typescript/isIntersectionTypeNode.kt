@@ -1,8 +1,17 @@
 // Automatically generated - do not modify!
 
-@file:JsModule("typescript")
-@file:JsNonModule
+@file:Suppress(
+    "CANNOT_CHECK_FOR_EXTERNAL_INTERFACE",
+)
 
 package typescript
 
-external fun isIntersectionTypeNode(node: Node): Boolean /* node is IntersectionTypeNode */
+import kotlin.contracts.contract
+
+fun isIntersectionTypeNode(node: Node): Boolean {
+    contract {
+        returns(true) implies (node is IntersectionTypeNode)
+    }
+
+    return typescript.raw.isIntersectionTypeNode(node)
+}

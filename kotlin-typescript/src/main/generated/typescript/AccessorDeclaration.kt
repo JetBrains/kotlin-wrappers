@@ -2,4 +2,4 @@
 
 package typescript
 
-typealias AccessorDeclaration = Any /* GetAccessorDeclaration | SetAccessorDeclaration */
+typealias AccessorDeclaration = Declaration /* GetAccessorDeclaration | SetAccessorDeclaration */

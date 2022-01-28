@@ -1,8 +1,17 @@
 // Automatically generated - do not modify!
 
-@file:JsModule("typescript")
-@file:JsNonModule
+@file:Suppress(
+    "CANNOT_CHECK_FOR_EXTERNAL_INTERFACE",
+)
 
 package typescript
 
-external fun isBlock(node: Node): Boolean /* node is Block */
+import kotlin.contracts.contract
+
+fun isBlock(node: Node): Boolean {
+    contract {
+        returns(true) implies (node is Block)
+    }
+
+    return typescript.raw.isBlock(node)
+}

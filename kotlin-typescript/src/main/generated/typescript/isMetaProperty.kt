@@ -1,8 +1,17 @@
 // Automatically generated - do not modify!
 
-@file:JsModule("typescript")
-@file:JsNonModule
+@file:Suppress(
+    "CANNOT_CHECK_FOR_EXTERNAL_INTERFACE",
+)
 
 package typescript
 
-external fun isMetaProperty(node: Node): Boolean /* node is MetaProperty */
+import kotlin.contracts.contract
+
+fun isMetaProperty(node: Node): Boolean {
+    contract {
+        returns(true) implies (node is MetaProperty)
+    }
+
+    return typescript.raw.isMetaProperty(node)
+}

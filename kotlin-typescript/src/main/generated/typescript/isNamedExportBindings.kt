@@ -1,8 +1,18 @@
 // Automatically generated - do not modify!
 
-@file:JsModule("typescript")
-@file:JsNonModule
+@file:Suppress(
+    "CANNOT_CHECK_FOR_EXTERNAL_INTERFACE",
+    "USELESS_IS_CHECK",
+)
 
 package typescript
 
-external fun isNamedExportBindings(node: Node): Boolean /* node is NamedExportBindings */
+import kotlin.contracts.contract
+
+fun isNamedExportBindings(node: Node): Boolean {
+    contract {
+        returns(true) implies (node is NamedExportBindings)
+    }
+
+    return typescript.raw.isNamedExportBindings(node)
+}

@@ -1,8 +1,17 @@
 // Automatically generated - do not modify!
 
-@file:JsModule("typescript")
-@file:JsNonModule
+@file:Suppress(
+    "CANNOT_CHECK_FOR_EXTERNAL_INTERFACE",
+)
 
 package typescript
 
-external fun isSemicolonClassElement(node: Node): Boolean /* node is SemicolonClassElement */
+import kotlin.contracts.contract
+
+fun isSemicolonClassElement(node: Node): Boolean {
+    contract {
+        returns(true) implies (node is SemicolonClassElement)
+    }
+
+    return typescript.raw.isSemicolonClassElement(node)
+}

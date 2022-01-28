@@ -1,8 +1,17 @@
 // Automatically generated - do not modify!
 
-@file:JsModule("typescript")
-@file:JsNonModule
+@file:Suppress(
+    "CANNOT_CHECK_FOR_EXTERNAL_INTERFACE",
+)
 
 package typescript
 
-external fun isMissingDeclaration(node: Node): Boolean /* node is MissingDeclaration */
+import kotlin.contracts.contract
+
+fun isMissingDeclaration(node: Node): Boolean {
+    contract {
+        returns(true) implies (node is MissingDeclaration)
+    }
+
+    return typescript.raw.isMissingDeclaration(node)
+}

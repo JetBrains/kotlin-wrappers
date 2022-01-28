@@ -1,8 +1,17 @@
 // Automatically generated - do not modify!
 
-@file:JsModule("typescript")
-@file:JsNonModule
+@file:Suppress(
+    "CANNOT_CHECK_FOR_EXTERNAL_INTERFACE",
+)
 
 package typescript
 
-external fun isJSDocReadonlyTag(node: Node): Boolean /* node is JSDocReadonlyTag */
+import kotlin.contracts.contract
+
+fun isJSDocReadonlyTag(node: Node): Boolean {
+    contract {
+        returns(true) implies (node is JSDocReadonlyTag)
+    }
+
+    return typescript.raw.isJSDocReadonlyTag(node)
+}

@@ -1,8 +1,17 @@
 // Automatically generated - do not modify!
 
-@file:JsModule("typescript")
-@file:JsNonModule
+@file:Suppress(
+    "CANNOT_CHECK_FOR_EXTERNAL_INTERFACE",
+)
 
 package typescript
 
-external fun isElementAccessChain(node: Node): Boolean /* node is ElementAccessChain */
+import kotlin.contracts.contract
+
+fun isElementAccessChain(node: Node): Boolean {
+    contract {
+        returns(true) implies (node is ElementAccessChain)
+    }
+
+    return typescript.raw.isElementAccessChain(node)
+}

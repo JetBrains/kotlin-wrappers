@@ -1,8 +1,17 @@
 // Automatically generated - do not modify!
 
-@file:JsModule("typescript")
-@file:JsNonModule
+@file:Suppress(
+    "CANNOT_CHECK_FOR_EXTERNAL_INTERFACE",
+)
 
 package typescript
 
-external fun isJSDoc(node: Node): Boolean /* node is JSDoc */
+import kotlin.contracts.contract
+
+fun isJSDoc(node: Node): Boolean {
+    contract {
+        returns(true) implies (node is JSDoc)
+    }
+
+    return typescript.raw.isJSDoc(node)
+}

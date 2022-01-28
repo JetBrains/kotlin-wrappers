@@ -1,8 +1,17 @@
 // Automatically generated - do not modify!
 
-@file:JsModule("typescript")
-@file:JsNonModule
+@file:Suppress(
+    "CANNOT_CHECK_FOR_EXTERNAL_INTERFACE",
+)
 
 package typescript
 
-external fun isTemplateLiteralTypeSpan(node: Node): Boolean /* node is TemplateLiteralTypeSpan */
+import kotlin.contracts.contract
+
+fun isTemplateLiteralTypeSpan(node: Node): Boolean {
+    contract {
+        returns(true) implies (node is TemplateLiteralTypeSpan)
+    }
+
+    return typescript.raw.isTemplateLiteralTypeSpan(node)
+}

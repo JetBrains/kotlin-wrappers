@@ -2,7 +2,7 @@
 
 package typescript
 
-typealias ParameterPropertyDeclaration = Any /* ParameterDeclaration & {
+typealias ParameterPropertyDeclaration = ParameterDeclaration /* ParameterDeclaration & {
     parent: ConstructorDeclaration;
     name: Identifier;
 } */

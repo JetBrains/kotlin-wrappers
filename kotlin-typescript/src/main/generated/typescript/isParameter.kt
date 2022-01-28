@@ -1,8 +1,17 @@
 // Automatically generated - do not modify!
 
-@file:JsModule("typescript")
-@file:JsNonModule
+@file:Suppress(
+    "CANNOT_CHECK_FOR_EXTERNAL_INTERFACE",
+)
 
 package typescript
 
-external fun isParameter(node: Node): Boolean /* node is ParameterDeclaration */
+import kotlin.contracts.contract
+
+fun isParameter(node: Node): Boolean {
+    contract {
+        returns(true) implies (node is ParameterDeclaration)
+    }
+
+    return typescript.raw.isParameter(node)
+}

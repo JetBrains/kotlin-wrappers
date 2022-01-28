@@ -2,4 +2,4 @@
 
 package typescript
 
-typealias EntityName = Any /* Identifier | QualifiedName */
+typealias EntityName = Node /* Identifier | QualifiedName */

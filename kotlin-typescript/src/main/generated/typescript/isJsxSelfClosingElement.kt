@@ -1,8 +1,17 @@
 // Automatically generated - do not modify!
 
-@file:JsModule("typescript")
-@file:JsNonModule
+@file:Suppress(
+    "CANNOT_CHECK_FOR_EXTERNAL_INTERFACE",
+)
 
 package typescript
 
-external fun isJsxSelfClosingElement(node: Node): Boolean /* node is JsxSelfClosingElement */
+import kotlin.contracts.contract
+
+fun isJsxSelfClosingElement(node: Node): Boolean {
+    contract {
+        returns(true) implies (node is JsxSelfClosingElement)
+    }
+
+    return typescript.raw.isJsxSelfClosingElement(node)
+}

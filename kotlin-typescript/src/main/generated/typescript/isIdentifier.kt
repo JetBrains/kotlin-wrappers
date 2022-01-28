@@ -1,8 +1,17 @@
 // Automatically generated - do not modify!
 
-@file:JsModule("typescript")
-@file:JsNonModule
+@file:Suppress(
+    "CANNOT_CHECK_FOR_EXTERNAL_INTERFACE",
+)
 
 package typescript
 
-external fun isIdentifier(node: Node): Boolean /* node is Identifier */
+import kotlin.contracts.contract
+
+fun isIdentifier(node: Node): Boolean {
+    contract {
+        returns(true) implies (node is Identifier)
+    }
+
+    return typescript.raw.isIdentifier(node)
+}

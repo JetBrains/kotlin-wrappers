@@ -1,8 +1,17 @@
 // Automatically generated - do not modify!
 
-@file:JsModule("typescript")
-@file:JsNonModule
+@file:Suppress(
+    "CANNOT_CHECK_FOR_EXTERNAL_INTERFACE",
+)
 
 package typescript
 
-external fun isMethodSignature(node: Node): Boolean /* node is MethodSignature */
+import kotlin.contracts.contract
+
+fun isMethodSignature(node: Node): Boolean {
+    contract {
+        returns(true) implies (node is MethodSignature)
+    }
+
+    return typescript.raw.isMethodSignature(node)
+}

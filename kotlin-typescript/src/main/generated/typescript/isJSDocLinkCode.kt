@@ -1,8 +1,17 @@
 // Automatically generated - do not modify!
 
-@file:JsModule("typescript")
-@file:JsNonModule
+@file:Suppress(
+    "CANNOT_CHECK_FOR_EXTERNAL_INTERFACE",
+)
 
 package typescript
 
-external fun isJSDocLinkCode(node: Node): Boolean /* node is JSDocLinkCode */
+import kotlin.contracts.contract
+
+fun isJSDocLinkCode(node: Node): Boolean {
+    contract {
+        returns(true) implies (node is JSDocLinkCode)
+    }
+
+    return typescript.raw.isJSDocLinkCode(node)
+}

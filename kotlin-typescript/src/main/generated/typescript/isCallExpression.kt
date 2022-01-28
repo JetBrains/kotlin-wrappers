@@ -1,8 +1,17 @@
 // Automatically generated - do not modify!
 
-@file:JsModule("typescript")
-@file:JsNonModule
+@file:Suppress(
+    "CANNOT_CHECK_FOR_EXTERNAL_INTERFACE",
+)
 
 package typescript
 
-external fun isCallExpression(node: Node): Boolean /* node is CallExpression */
+import kotlin.contracts.contract
+
+fun isCallExpression(node: Node): Boolean {
+    contract {
+        returns(true) implies (node is CallExpression)
+    }
+
+    return typescript.raw.isCallExpression(node)
+}

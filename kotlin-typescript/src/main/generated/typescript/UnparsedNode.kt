@@ -2,4 +2,4 @@
 
 package typescript
 
-typealias UnparsedNode = Any /* UnparsedPrologue | UnparsedSourceText | UnparsedSyntheticReference */
+typealias UnparsedNode = UnparsedSection /* UnparsedPrologue | UnparsedSourceText | UnparsedSyntheticReference */

@@ -1,8 +1,17 @@
 // Automatically generated - do not modify!
 
-@file:JsModule("typescript")
-@file:JsNonModule
+@file:Suppress(
+    "CANNOT_CHECK_FOR_EXTERNAL_INTERFACE",
+)
 
 package typescript
 
-external fun isBreakOrContinueStatement(node: Node): Boolean /* node is BreakOrContinueStatement */
+import kotlin.contracts.contract
+
+fun isBreakOrContinueStatement(node: Node): Boolean {
+    contract {
+        returns(true) implies (node is BreakOrContinueStatement)
+    }
+
+    return typescript.raw.isBreakOrContinueStatement(node)
+}
