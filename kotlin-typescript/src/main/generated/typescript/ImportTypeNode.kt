@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface ImportTypeNode : NodeWithTypeArguments {
+sealed external interface ImportTypeNode : NodeWithTypeArguments {
     override val kind: SyntaxKind.ImportType
     val isTypeOf: Boolean
     val argument: TypeNode

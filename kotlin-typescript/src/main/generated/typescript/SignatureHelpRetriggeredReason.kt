@@ -8,7 +8,7 @@ package typescript
  * The language service will unconditionally attempt to provide a result.
  * `triggerCharacter` can be `undefined` for a retrigger caused by a cursor move.
  */
-external interface SignatureHelpRetriggeredReason {
+sealed external interface SignatureHelpRetriggeredReason {
     var kind: String /* "retrigger" */
 
     /**

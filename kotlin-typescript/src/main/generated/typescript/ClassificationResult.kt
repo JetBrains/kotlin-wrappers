@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface ClassificationResult {
+sealed external interface ClassificationResult {
     var finalLexState: EndOfLineState
     var entries: ReadonlyArray<ClassificationInfo>
 }

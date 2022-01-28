@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface TextSpan {
+sealed external interface TextSpan {
     var start: Int
     var length: Int
 }

@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface ProgramHost<T : BuilderProgram> {
+sealed external interface ProgramHost<T : BuilderProgram> {
     /**
      * Used to create the program when need for program creation or recreation detected
      */

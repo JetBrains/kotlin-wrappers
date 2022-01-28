@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface CallHierarchyItem {
+sealed external interface CallHierarchyItem {
     var name: String
     var kind: ScriptElementKind
     var kindModifiers: String?

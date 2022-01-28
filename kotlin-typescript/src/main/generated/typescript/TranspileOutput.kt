@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface TranspileOutput {
+sealed external interface TranspileOutput {
     var outputText: String
     var diagnostics: ReadonlyArray<Diagnostic>?
     var sourceMapText: String?

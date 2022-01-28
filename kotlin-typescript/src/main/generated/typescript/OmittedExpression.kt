@@ -2,6 +2,6 @@
 
 package typescript
 
-external interface OmittedExpression : Expression {
+sealed external interface OmittedExpression : Expression {
     override val kind: SyntaxKind.OmittedExpression
 }

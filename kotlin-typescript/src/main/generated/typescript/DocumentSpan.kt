@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface DocumentSpan {
+sealed external interface DocumentSpan {
     var textSpan: TextSpan
     var fileName: String
 

@@ -2,6 +2,6 @@
 
 package typescript
 
-external interface DeclarationStatement : NamedDeclaration, Statement {
+sealed external interface DeclarationStatement : NamedDeclaration, Statement {
     override val name: dynamic /* Identifier | StringLiteral | NumericLiteral */
 }

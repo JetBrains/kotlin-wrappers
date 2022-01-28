@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface OptionsProvider<T : Any> {
+sealed external interface OptionsProvider<T : Any> {
     val options: T
     val errors: ReadonlyArray<Diagnostic>
 }

@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface JSDocCallbackTag : JSDocTag, NamedDeclaration {
+sealed external interface JSDocCallbackTag : JSDocTag, NamedDeclaration {
     override val kind: SyntaxKind.JSDocCallbackTag
     override val parent: JSDoc
     val fullName: dynamic /* JSDocNamespaceDeclaration | Identifier */

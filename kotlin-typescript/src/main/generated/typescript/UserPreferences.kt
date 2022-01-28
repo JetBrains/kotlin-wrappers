@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface UserPreferences {
+sealed external interface UserPreferences {
     val disableSuggestions: Boolean?
     val quotePreference: QuotePreference?
     val includeCompletionsForModuleExports: Boolean?

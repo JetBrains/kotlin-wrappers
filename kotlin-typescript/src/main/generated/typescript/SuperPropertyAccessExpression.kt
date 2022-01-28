@@ -2,6 +2,6 @@
 
 package typescript
 
-external interface SuperPropertyAccessExpression : PropertyAccessExpression {
+sealed external interface SuperPropertyAccessExpression : PropertyAccessExpression {
     override val expression: SuperExpression
 }

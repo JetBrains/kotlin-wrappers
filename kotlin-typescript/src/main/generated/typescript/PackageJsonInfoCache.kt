@@ -2,6 +2,6 @@
 
 package typescript
 
-external interface PackageJsonInfoCache {
+sealed external interface PackageJsonInfoCache {
     fun clear()
 }

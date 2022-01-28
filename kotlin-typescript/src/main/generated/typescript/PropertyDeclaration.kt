@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface PropertyDeclaration : ClassElement, JSDocContainer {
+sealed external interface PropertyDeclaration : ClassElement, JSDocContainer {
     override val kind: SyntaxKind.PropertyDeclaration
     override val parent: ClassLikeDeclaration
     override val name: PropertyName

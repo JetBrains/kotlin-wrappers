@@ -2,6 +2,6 @@
 
 package typescript
 
-external interface ScopedEmitHelper : EmitHelperBase {
+sealed external interface ScopedEmitHelper : EmitHelperBase {
     override val scoped: Boolean /* true */
 }

@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface JSDocReturnTag : JSDocTag {
+sealed external interface JSDocReturnTag : JSDocTag {
     override val kind: SyntaxKind.JSDocReturnTag
     val typeExpression: JSDocTypeExpression?
 }

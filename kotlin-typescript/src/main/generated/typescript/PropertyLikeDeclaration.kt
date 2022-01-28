@@ -2,6 +2,6 @@
 
 package typescript
 
-external interface PropertyLikeDeclaration : NamedDeclaration {
+sealed external interface PropertyLikeDeclaration : NamedDeclaration {
     override val name: PropertyName
 }

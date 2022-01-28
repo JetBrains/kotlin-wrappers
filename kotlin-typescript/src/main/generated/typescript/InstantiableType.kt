@@ -2,4 +2,4 @@
 
 package typescript
 
-external interface InstantiableType : Type
+sealed external interface InstantiableType : Type

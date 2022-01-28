@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface IncompleteType {
+sealed external interface IncompleteType {
     var flags: TypeFlags
     var type: Type
 }

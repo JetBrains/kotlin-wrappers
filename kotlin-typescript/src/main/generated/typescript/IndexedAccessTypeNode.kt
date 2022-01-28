@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface IndexedAccessTypeNode : TypeNode {
+sealed external interface IndexedAccessTypeNode : TypeNode {
     override val kind: SyntaxKind.IndexedAccessType
     val objectType: TypeNode
     val indexType: TypeNode

@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface VariableDeclaration : NamedDeclaration, JSDocContainer {
+sealed external interface VariableDeclaration : NamedDeclaration, JSDocContainer {
     override val kind: SyntaxKind.VariableDeclaration
     override val parent: dynamic /* VariableDeclarationList | CatchClause */
     override val name: BindingName

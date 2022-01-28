@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface TypeQueryNode : TypeNode {
+sealed external interface TypeQueryNode : TypeNode {
     override val kind: SyntaxKind.TypeQuery
     val exprName: EntityName
 }

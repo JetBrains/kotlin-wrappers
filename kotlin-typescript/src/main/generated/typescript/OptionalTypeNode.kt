@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface OptionalTypeNode : TypeNode {
+sealed external interface OptionalTypeNode : TypeNode {
     override val kind: SyntaxKind.OptionalType
     val type: TypeNode
 }

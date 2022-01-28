@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface ConditionalTypeNode : TypeNode {
+sealed external interface ConditionalTypeNode : TypeNode {
     override val kind: SyntaxKind.ConditionalType
     val checkType: TypeNode
     val extendsType: TypeNode

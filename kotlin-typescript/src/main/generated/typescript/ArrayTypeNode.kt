@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface ArrayTypeNode : TypeNode {
+sealed external interface ArrayTypeNode : TypeNode {
     override val kind: SyntaxKind.ArrayType
     val elementType: TypeNode
 }

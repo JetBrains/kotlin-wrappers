@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface CompilerOptions {
+sealed external interface CompilerOptions {
     var allowJs: Boolean?
     var allowSyntheticDefaultImports: Boolean?
     var allowUmdGlobalAccess: Boolean?

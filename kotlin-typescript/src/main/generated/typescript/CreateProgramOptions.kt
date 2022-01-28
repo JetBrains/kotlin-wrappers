@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface CreateProgramOptions {
+sealed external interface CreateProgramOptions {
     var rootNames: ReadonlyArray<String>
     var options: CompilerOptions
     var projectReferences: ReadonlyArray<ProjectReference>?

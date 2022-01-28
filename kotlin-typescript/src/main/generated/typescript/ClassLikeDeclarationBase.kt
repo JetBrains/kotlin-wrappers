@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface ClassLikeDeclarationBase : NamedDeclaration, JSDocContainer {
+sealed external interface ClassLikeDeclarationBase : NamedDeclaration, JSDocContainer {
     override val kind: dynamic /* SyntaxKind.ClassDeclaration | SyntaxKind.ClassExpression */
     override val name: Identifier?
     val typeParameters: NodeArray<TypeParameterDeclaration>?

@@ -6,6 +6,6 @@
 
 package typescript
 
-external interface TupleTypeReference : TypeReference {
+sealed external interface TupleTypeReference : TypeReference {
     override var target: TupleType
 }

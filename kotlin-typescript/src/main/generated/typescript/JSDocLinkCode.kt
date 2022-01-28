@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface JSDocLinkCode : Node {
+sealed external interface JSDocLinkCode : Node {
     override val kind: SyntaxKind.JSDocLinkCode
     val name: dynamic /* EntityName | JSDocMemberName */
     var text: String

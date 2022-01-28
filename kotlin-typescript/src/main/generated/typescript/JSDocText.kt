@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface JSDocText : Node {
+sealed external interface JSDocText : Node {
     override val kind: SyntaxKind.JSDocText
     var text: String
 }

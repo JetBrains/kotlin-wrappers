@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface TemplateLiteralType : InstantiableType {
+sealed external interface TemplateLiteralType : InstantiableType {
     var texts: ReadonlyArray<String>
     var types: ReadonlyArray<Type>
 }

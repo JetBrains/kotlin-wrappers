@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface Scanner {
+sealed external interface Scanner {
     fun getStartPos(): Int
     fun getToken(): SyntaxKind
     fun getTextPos(): Int

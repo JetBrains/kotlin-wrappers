@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface SourceFile : Declaration {
+sealed external interface SourceFile : Declaration {
     override val kind: SyntaxKind.SourceFile
     val statements: NodeArray<Statement>
     val endOfFileToken: Token<SyntaxKind.EndOfFileToken>

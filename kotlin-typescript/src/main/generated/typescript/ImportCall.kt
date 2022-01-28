@@ -2,6 +2,6 @@
 
 package typescript
 
-external interface ImportCall : CallExpression {
+sealed external interface ImportCall : CallExpression {
     override val expression: ImportExpression
 }

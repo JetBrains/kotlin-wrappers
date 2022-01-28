@@ -3,7 +3,7 @@
 package typescript
 
 /** ES6 Iterator type. */
-external interface Iterator<T> {
+sealed external interface Iterator<T> {
     /*
     next(): {
         value: T;

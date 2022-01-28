@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface TranspileOptions {
+sealed external interface TranspileOptions {
     var compilerOptions: CompilerOptions?
     var fileName: String?
     var reportDiagnostics: Boolean?

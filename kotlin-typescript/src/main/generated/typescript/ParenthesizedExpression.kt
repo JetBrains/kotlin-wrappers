@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface ParenthesizedExpression : PrimaryExpression, JSDocContainer {
+sealed external interface ParenthesizedExpression : PrimaryExpression, JSDocContainer {
     override val kind: SyntaxKind.ParenthesizedExpression
     val expression: Expression
 }

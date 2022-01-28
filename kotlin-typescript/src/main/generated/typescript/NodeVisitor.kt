@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface NodeVisitor {
+sealed external interface NodeVisitor {
     fun <T : Node> /* native */ invoke(
         nodes: T,
         visitor: Visitor?,

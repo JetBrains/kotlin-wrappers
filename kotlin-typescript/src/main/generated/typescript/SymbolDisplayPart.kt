@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface SymbolDisplayPart {
+sealed external interface SymbolDisplayPart {
     var text: String
     var kind: String
 }

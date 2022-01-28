@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface JsxClosingFragment : Expression {
+sealed external interface JsxClosingFragment : Expression {
     override val kind: SyntaxKind.JsxClosingFragment
     override val parent: JsxFragment
 }

@@ -2,6 +2,6 @@
 
 package typescript
 
-external interface JSDocLinkDisplayPart : SymbolDisplayPart {
+sealed external interface JSDocLinkDisplayPart : SymbolDisplayPart {
     var target: DocumentSpan
 }

@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface DocumentHighlights {
+sealed external interface DocumentHighlights {
     var fileName: String
     var highlightSpans: ReadonlyArray<HighlightSpan>
 }

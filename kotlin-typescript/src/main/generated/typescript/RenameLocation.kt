@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface RenameLocation : DocumentSpan {
+sealed external interface RenameLocation : DocumentSpan {
     val prefixText: String?
     val suffixText: String?
 }

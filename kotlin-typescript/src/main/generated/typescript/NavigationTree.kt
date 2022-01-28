@@ -6,7 +6,7 @@ package typescript
  * Node in a tree of nested declarations in a file.
  * The top node is always a script or module node.
  */
-external interface NavigationTree {
+sealed external interface NavigationTree {
     /** Name of the declaration, or a short description, e.g. "<class>". */
     var text: String
     var kind: ScriptElementKind

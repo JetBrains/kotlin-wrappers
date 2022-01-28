@@ -8,6 +8,6 @@
 
 package typescript
 
-external interface SortedArray<T> : Array<T> {
+sealed external interface SortedArray<T> : Array<T> {
     // " __sortedArrayBrand": any
 }

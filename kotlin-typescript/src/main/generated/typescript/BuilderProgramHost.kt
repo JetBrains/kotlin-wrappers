@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface BuilderProgramHost {
+sealed external interface BuilderProgramHost {
     /**
      * return true if file names are treated with case sensitivity
      */

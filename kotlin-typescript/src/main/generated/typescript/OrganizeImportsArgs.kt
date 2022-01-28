@@ -2,6 +2,6 @@
 
 package typescript
 
-external interface OrganizeImportsArgs : CombinedCodeFixScope {
+sealed external interface OrganizeImportsArgs : CombinedCodeFixScope {
     var skipDestructiveCodeActions: Boolean?
 }

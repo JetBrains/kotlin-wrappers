@@ -2,4 +2,4 @@
 
 package typescript
 
-external interface EnumType : Type
+sealed external interface EnumType : Type

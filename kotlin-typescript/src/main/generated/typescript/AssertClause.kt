@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface AssertClause : Node {
+sealed external interface AssertClause : Node {
     override val kind: SyntaxKind.AssertClause
     override val parent: dynamic /* ImportDeclaration | ExportDeclaration */
     val elements: NodeArray<AssertEntry>

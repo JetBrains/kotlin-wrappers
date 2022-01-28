@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface NamespaceExportDeclaration : DeclarationStatement, JSDocContainer {
+sealed external interface NamespaceExportDeclaration : DeclarationStatement, JSDocContainer {
     override val kind: SyntaxKind.NamespaceExportDeclaration
     override val name: Identifier
 }

@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface InlayHintsContext {
+sealed external interface InlayHintsContext {
     var file: SourceFile
     var program: Program
     var cancellationToken: CancellationToken

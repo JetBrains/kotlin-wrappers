@@ -2,6 +2,6 @@
 
 package typescript
 
-external interface NumericLiteral : LiteralExpression, Declaration {
+sealed external interface NumericLiteral : LiteralExpression, Declaration {
     override val kind: SyntaxKind.NumericLiteral
 }

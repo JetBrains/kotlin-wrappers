@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface InlayHintsOptions : UserPreferences {
+sealed external interface InlayHintsOptions : UserPreferences {
     val includeInlayParameterNameHints: IncludeInlayParameterNameHints?
     val includeInlayParameterNameHintsWhenArgumentMatchesName: Boolean?
     val includeInlayFunctionParameterTypeHints: Boolean?

@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface Block : Statement {
+sealed external interface Block : Statement {
     override val kind: SyntaxKind.Block
     val statements: NodeArray<Statement>
 }

@@ -2,6 +2,6 @@
 
 package typescript
 
-external interface PrimaryExpression : MemberExpression {
+sealed external interface PrimaryExpression : MemberExpression {
     var _primaryExpressionBrand: Any
 }

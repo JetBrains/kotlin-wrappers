@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface ForOfStatement : IterationStatement {
+sealed external interface ForOfStatement : IterationStatement {
     override val kind: SyntaxKind.ForOfStatement
     val awaitModifier: AwaitKeyword?
     val initializer: ForInitializer

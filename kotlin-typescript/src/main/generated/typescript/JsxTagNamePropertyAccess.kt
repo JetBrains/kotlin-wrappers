@@ -2,6 +2,6 @@
 
 package typescript
 
-external interface JsxTagNamePropertyAccess : PropertyAccessExpression {
+sealed external interface JsxTagNamePropertyAccess : PropertyAccessExpression {
     override val expression: JsxTagNameExpression
 }

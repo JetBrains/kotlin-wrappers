@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface JSDocSeeTag : JSDocTag {
+sealed external interface JSDocSeeTag : JSDocTag {
     override val kind: SyntaxKind.JSDocSeeTag
     val name: JSDocNameReference?
 }

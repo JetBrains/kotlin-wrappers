@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface JsxElement : PrimaryExpression {
+sealed external interface JsxElement : PrimaryExpression {
     override val kind: SyntaxKind.JsxElement
     val openingElement: JsxOpeningElement
     val children: NodeArray<JsxChild>

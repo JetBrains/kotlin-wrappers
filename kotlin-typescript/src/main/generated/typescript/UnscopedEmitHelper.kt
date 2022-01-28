@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface UnscopedEmitHelper : EmitHelperBase {
+sealed external interface UnscopedEmitHelper : EmitHelperBase {
     override val scoped: Boolean /* false */
     override val text: String
 }

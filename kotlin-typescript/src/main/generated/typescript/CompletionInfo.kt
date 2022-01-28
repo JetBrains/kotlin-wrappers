@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface CompletionInfo {
+sealed external interface CompletionInfo {
     /** Not true for all global completions. This will be true if the enclosing scope matches a few syntax kinds. See `isSnippetScope`. */
     var isGlobalCompletion: Boolean
     var isMemberCompletion: Boolean

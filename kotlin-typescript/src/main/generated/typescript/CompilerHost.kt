@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface CompilerHost : ModuleResolutionHost {
+sealed external interface CompilerHost : ModuleResolutionHost {
     fun getSourceFile(
         fileName: String,
         languageVersion: ScriptTarget,

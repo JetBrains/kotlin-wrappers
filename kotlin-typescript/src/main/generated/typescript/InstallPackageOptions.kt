@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface InstallPackageOptions {
+sealed external interface InstallPackageOptions {
     var fileName: Path
     var packageName: String
 }

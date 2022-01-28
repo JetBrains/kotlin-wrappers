@@ -2,6 +2,6 @@
 
 package typescript
 
-external interface DocCommentTemplateOptions {
+sealed external interface DocCommentTemplateOptions {
     val generateReturnInDocTemplate: Boolean?
 }

@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface SyntaxList : Node {
+sealed external interface SyntaxList : Node {
     override var kind: SyntaxKind.SyntaxList
     var _children: ReadonlyArray<Node>
 }

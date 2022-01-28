@@ -2,6 +2,6 @@
 
 package typescript
 
-external interface SourceFileLike {
+sealed external interface SourceFileLike {
     fun getLineAndCharacterOfPosition(pos: Int): LineAndCharacter
 }

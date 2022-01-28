@@ -6,7 +6,7 @@
 
 package typescript
 
-external interface DiagnosticWithLocation : Diagnostic {
+sealed external interface DiagnosticWithLocation : Diagnostic {
     override var file: SourceFile
     override var start: Int
     override var length: Int

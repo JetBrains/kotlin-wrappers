@@ -2,6 +2,6 @@
 
 package typescript
 
-external interface RenameInfoOptions {
+sealed external interface RenameInfoOptions {
     val allowRenameOfImportPath: Boolean?
 }

@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface Identifier : PrimaryExpression, Declaration {
+sealed external interface Identifier : PrimaryExpression, Declaration {
     override val kind: SyntaxKind.Identifier
 
     /**

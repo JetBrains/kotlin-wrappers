@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface CommentRange : TextRange {
+sealed external interface CommentRange : TextRange {
     var hasTrailingNewLine: Boolean?
     var kind: CommentKind
 }

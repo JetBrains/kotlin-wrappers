@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface NonNullExpression : LeftHandSideExpression {
+sealed external interface NonNullExpression : LeftHandSideExpression {
     override val kind: SyntaxKind.NonNullExpression
     val expression: Expression
 }

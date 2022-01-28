@@ -2,6 +2,6 @@
 
 package typescript
 
-external interface Token<out TKind : SyntaxKind> : Node {
+sealed external interface Token<out TKind : SyntaxKind> : Node {
     override val kind: TKind
 }

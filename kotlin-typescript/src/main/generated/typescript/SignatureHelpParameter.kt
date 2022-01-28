@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface SignatureHelpParameter {
+sealed external interface SignatureHelpParameter {
     var name: String
     var documentation: ReadonlyArray<SymbolDisplayPart>
     var displayParts: ReadonlyArray<SymbolDisplayPart>

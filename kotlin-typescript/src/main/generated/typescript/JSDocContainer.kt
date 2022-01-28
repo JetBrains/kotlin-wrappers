@@ -2,4 +2,4 @@
 
 package typescript
 
-external interface JSDocContainer
+sealed external interface JSDocContainer

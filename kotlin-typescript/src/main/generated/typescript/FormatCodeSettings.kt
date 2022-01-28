@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface FormatCodeSettings : EditorSettings {
+sealed external interface FormatCodeSettings : EditorSettings {
     val insertSpaceAfterCommaDelimiter: Boolean?
     val insertSpaceAfterSemicolonInForStatements: Boolean?
     val insertSpaceBeforeAndAfterBinaryOperators: Boolean?

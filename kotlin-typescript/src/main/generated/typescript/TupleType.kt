@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface TupleType : GenericType {
+sealed external interface TupleType : GenericType {
     var elementFlags: ReadonlyArray<ElementFlags>
     var minLength: Int
     var fixedLength: Int

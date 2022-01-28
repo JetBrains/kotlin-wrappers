@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface FlowSwitchClause : FlowNodeBase {
+sealed external interface FlowSwitchClause : FlowNodeBase {
     var switchStatement: SwitchStatement
     var clauseStart: Int
     var clauseEnd: Int

@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface ProjectReference {
+sealed external interface ProjectReference {
     /** A normalized path on disk */
     var path: String
 

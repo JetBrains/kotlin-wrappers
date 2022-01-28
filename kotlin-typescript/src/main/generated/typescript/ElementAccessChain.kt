@@ -2,6 +2,6 @@
 
 package typescript
 
-external interface ElementAccessChain : ElementAccessExpression {
+sealed external interface ElementAccessChain : ElementAccessExpression {
     var _optionalChainBrand: Any
 }

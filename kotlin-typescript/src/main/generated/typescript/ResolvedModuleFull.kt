@@ -7,7 +7,7 @@ package typescript
  * Prefer this over `ResolvedModule`.
  * If changing this, remember to change `moduleResolutionIsEqualTo`.
  */
-external interface ResolvedModuleFull : ResolvedModule {
+sealed external interface ResolvedModuleFull : ResolvedModule {
     /**
      * Extension of resolvedFileName. This must match what's at the end of resolvedFileName.
      * This is optional for backwards-compatibility, but will be added if not provided.

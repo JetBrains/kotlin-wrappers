@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface TypeParameterDeclaration : NamedDeclaration {
+sealed external interface TypeParameterDeclaration : NamedDeclaration {
     override val kind: SyntaxKind.TypeParameter
     override val parent: dynamic /* DeclarationWithTypeParameterChildren | InferTypeNode */
     override val name: Identifier

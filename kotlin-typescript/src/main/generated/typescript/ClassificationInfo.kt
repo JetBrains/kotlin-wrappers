@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface ClassificationInfo {
+sealed external interface ClassificationInfo {
     var length: Int
     var classification: TokenClass
 }

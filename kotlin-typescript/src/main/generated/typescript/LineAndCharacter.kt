@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface LineAndCharacter {
+sealed external interface LineAndCharacter {
     /** 0-based. */
     var line: Int
     var character: Int

@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface NewExpression : PrimaryExpression, Declaration {
+sealed external interface NewExpression : PrimaryExpression, Declaration {
     override val kind: SyntaxKind.NewExpression
     val expression: LeftHandSideExpression
     val typeArguments: NodeArray<TypeNode>?

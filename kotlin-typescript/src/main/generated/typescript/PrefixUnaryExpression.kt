@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface PrefixUnaryExpression : UpdateExpression {
+sealed external interface PrefixUnaryExpression : UpdateExpression {
     override val kind: SyntaxKind.PrefixUnaryExpression
     val operator: PrefixUnaryOperator
     val operand: UnaryExpression

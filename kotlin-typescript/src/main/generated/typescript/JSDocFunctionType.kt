@@ -2,6 +2,6 @@
 
 package typescript
 
-external interface JSDocFunctionType : JSDocType, SignatureDeclarationBase {
+sealed external interface JSDocFunctionType : JSDocType, SignatureDeclarationBase {
     override val kind: SyntaxKind.JSDocFunctionType
 }

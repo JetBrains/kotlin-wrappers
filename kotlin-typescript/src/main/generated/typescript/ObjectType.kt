@@ -2,6 +2,6 @@
 
 package typescript
 
-external interface ObjectType : Type {
+sealed external interface ObjectType : Type {
     var objectFlags: ObjectFlags
 }

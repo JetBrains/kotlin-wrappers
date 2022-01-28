@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface ParsedTsconfig {
+sealed external interface ParsedTsconfig {
     var raw: Any
     var options: CompilerOptions?
     var watchOptions: WatchOptions?

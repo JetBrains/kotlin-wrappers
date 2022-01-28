@@ -2,6 +2,6 @@
 
 package typescript
 
-external interface RegularExpressionLiteral : LiteralExpression {
+sealed external interface RegularExpressionLiteral : LiteralExpression {
     override val kind: SyntaxKind.RegularExpressionLiteral
 }

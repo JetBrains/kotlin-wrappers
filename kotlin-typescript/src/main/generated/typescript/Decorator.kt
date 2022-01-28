@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface Decorator : Node {
+sealed external interface Decorator : Node {
     override val kind: SyntaxKind.Decorator
     override val parent: NamedDeclaration
     val expression: LeftHandSideExpression

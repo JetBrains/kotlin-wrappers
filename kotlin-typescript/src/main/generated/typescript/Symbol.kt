@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface Symbol {
+sealed external interface Symbol {
     var flags: SymbolFlags
     var escapedName: __String
     var declarations: ReadonlyArray<Declaration>?

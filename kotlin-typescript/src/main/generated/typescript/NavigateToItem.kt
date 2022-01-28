@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface NavigateToItem {
+sealed external interface NavigateToItem {
     var name: String
     var kind: ScriptElementKind
     var kindModifiers: String

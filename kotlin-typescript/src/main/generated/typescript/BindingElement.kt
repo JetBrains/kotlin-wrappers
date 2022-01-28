@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface BindingElement : NamedDeclaration {
+sealed external interface BindingElement : NamedDeclaration {
     override val kind: SyntaxKind.BindingElement
     override val parent: BindingPattern
     val propertyName: PropertyName?

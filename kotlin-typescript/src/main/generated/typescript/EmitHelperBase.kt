@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface EmitHelperBase {
+sealed external interface EmitHelperBase {
     val name: String
     val scoped: Boolean
     val text: dynamic /* string | ((node: EmitHelperUniqueNameCallback) => string) */

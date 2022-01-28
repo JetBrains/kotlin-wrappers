@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface NamedExports : Node {
+sealed external interface NamedExports : Node {
     override val kind: SyntaxKind.NamedExports
     override val parent: ExportDeclaration
     val elements: NodeArray<ExportSpecifier>

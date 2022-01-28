@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface ConditionalExpression : Expression {
+sealed external interface ConditionalExpression : Expression {
     override val kind: SyntaxKind.ConditionalExpression
     val condition: Expression
     val questionToken: QuestionToken

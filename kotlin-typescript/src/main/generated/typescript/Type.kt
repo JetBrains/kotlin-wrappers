@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface Type {
+sealed external interface Type {
     var flags: TypeFlags
     var symbol: Symbol
     var pattern: DestructuringPattern?

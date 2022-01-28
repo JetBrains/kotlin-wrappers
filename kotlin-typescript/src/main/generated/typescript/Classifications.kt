@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface Classifications {
+sealed external interface Classifications {
     var spans: ReadonlyArray<Int>
     var endOfLineState: EndOfLineState
 }

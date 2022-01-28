@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface InlayHint {
+sealed external interface InlayHint {
     var text: String
     var position: Int
     var kind: InlayHintKind

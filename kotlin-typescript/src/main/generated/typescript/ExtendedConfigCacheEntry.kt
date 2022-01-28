@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface ExtendedConfigCacheEntry {
+sealed external interface ExtendedConfigCacheEntry {
     var extendedResult: TsConfigSourceFile
     var extendedConfig: ParsedTsconfig?
 }

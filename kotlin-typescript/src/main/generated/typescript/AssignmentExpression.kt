@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface AssignmentExpression<TOperator : AssignmentOperatorToken> : BinaryExpression {
+sealed external interface AssignmentExpression<TOperator : AssignmentOperatorToken> : BinaryExpression {
     override val left: LeftHandSideExpression
     override val operatorToken: TOperator
 }

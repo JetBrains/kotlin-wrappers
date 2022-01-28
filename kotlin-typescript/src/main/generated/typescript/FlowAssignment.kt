@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface FlowAssignment : FlowNodeBase {
+sealed external interface FlowAssignment : FlowNodeBase {
     var node: dynamic /* Expression | VariableDeclaration | BindingElement */
     var antecedent: FlowNode
 }

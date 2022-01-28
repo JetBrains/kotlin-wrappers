@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface IncrementalProgramOptions<T : BuilderProgram> {
+sealed external interface IncrementalProgramOptions<T : BuilderProgram> {
     var rootNames: ReadonlyArray<String>
     var options: CompilerOptions
     var configFileParsingDiagnostics: ReadonlyArray<Diagnostic>?

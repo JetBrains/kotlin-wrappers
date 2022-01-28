@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface FlowNodeBase {
+sealed external interface FlowNodeBase {
     var flags: FlowFlags
     var id: Int?
 }

@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface ResolvedTypeReferenceDirectiveWithFailedLookupLocations {
+sealed external interface ResolvedTypeReferenceDirectiveWithFailedLookupLocations {
     val resolvedTypeReferenceDirective: ResolvedTypeReferenceDirective?
     val failedLookupLocations: ReadonlyArray<String>
 }

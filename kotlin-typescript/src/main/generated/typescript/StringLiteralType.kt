@@ -2,6 +2,6 @@
 
 package typescript
 
-external interface StringLiteralType : LiteralType {
+sealed external interface StringLiteralType : LiteralType {
     override var value: String
 }

@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface DefinitionInfo : DocumentSpan {
+sealed external interface DefinitionInfo : DocumentSpan {
     var kind: ScriptElementKind
     var name: String
     var containerKind: ScriptElementKind

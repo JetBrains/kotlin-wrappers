@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface ElementAccessExpression : MemberExpression {
+sealed external interface ElementAccessExpression : MemberExpression {
     override val kind: SyntaxKind.ElementAccessExpression
     val expression: LeftHandSideExpression
     val questionDotToken: QuestionDotToken?

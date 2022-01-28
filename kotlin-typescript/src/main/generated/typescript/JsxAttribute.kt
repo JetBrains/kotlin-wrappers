@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface JsxAttribute : ObjectLiteralElement {
+sealed external interface JsxAttribute : ObjectLiteralElement {
     override val kind: SyntaxKind.JsxAttribute
     override val parent: JsxAttributes
     override val name: Identifier

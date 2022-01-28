@@ -17,7 +17,7 @@ package typescript
  * To create a default DocumentRegistry, use createDocumentRegistry to create one, and pass it
  * to all subsequent createLanguageService calls.
  */
-external interface DocumentRegistry {
+sealed external interface DocumentRegistry {
     /**
      * Request a stored SourceFile with a given fileName and compilationSettings.
      * The first call to acquire will call createLanguageServiceSourceFile to generate

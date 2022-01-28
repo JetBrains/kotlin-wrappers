@@ -2,6 +2,6 @@
 
 package typescript
 
-external interface ThisTypeNode : TypeNode {
+sealed external interface ThisTypeNode : TypeNode {
     override val kind: SyntaxKind.ThisType
 }

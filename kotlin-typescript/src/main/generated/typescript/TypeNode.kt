@@ -2,6 +2,6 @@
 
 package typescript
 
-external interface TypeNode : Node {
+sealed external interface TypeNode : Node {
     var _typeNodeBrand: Any
 }

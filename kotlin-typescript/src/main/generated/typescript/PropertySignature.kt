@@ -2,7 +2,7 @@
 
 package typescript
 
-external interface PropertySignature : TypeElement, JSDocContainer {
+sealed external interface PropertySignature : TypeElement, JSDocContainer {
     override val kind: SyntaxKind.PropertySignature
     override val name: PropertyName
     override val questionToken: QuestionToken?
