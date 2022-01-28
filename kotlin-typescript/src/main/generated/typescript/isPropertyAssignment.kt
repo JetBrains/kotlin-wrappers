@@ -1,8 +1,17 @@
 // Automatically generated - do not modify!
 
-@file:JsModule("typescript")
-@file:JsNonModule
+@file:Suppress(
+    "CANNOT_CHECK_FOR_EXTERNAL_INTERFACE",
+)
 
 package typescript
 
-external fun isPropertyAssignment(node: Node): Boolean /* node is PropertyAssignment */
+import kotlin.contracts.contract
+
+fun isPropertyAssignment(node: Node): Boolean {
+    contract {
+        returns(true) implies (node is PropertyAssignment)
+    }
+
+    return typescript.raw.isPropertyAssignment(node)
+}

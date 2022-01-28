@@ -2,4 +2,4 @@
 
 package typescript
 
-typealias StringLiteralLike = Any /* StringLiteral | NoSubstitutionTemplateLiteral */
+typealias StringLiteralLike = Declaration /* StringLiteral | NoSubstitutionTemplateLiteral */

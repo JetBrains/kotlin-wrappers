@@ -1,8 +1,17 @@
 // Automatically generated - do not modify!
 
-@file:JsModule("typescript")
-@file:JsNonModule
+@file:Suppress(
+    "CANNOT_CHECK_FOR_EXTERNAL_INTERFACE",
+)
 
 package typescript
 
-external fun isUnparsedSource(node: Node): Boolean /* node is UnparsedSource */
+import kotlin.contracts.contract
+
+fun isUnparsedSource(node: Node): Boolean {
+    contract {
+        returns(true) implies (node is UnparsedSource)
+    }
+
+    return typescript.raw.isUnparsedSource(node)
+}

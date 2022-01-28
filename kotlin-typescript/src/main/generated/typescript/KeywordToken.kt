@@ -2,4 +2,4 @@
 
 package typescript
 
-external interface KeywordToken<out TKind : KeywordSyntaxKind> /* : Token<TKind> */
+external interface KeywordToken<out TKind : KeywordSyntaxKind> : Token<TKind>

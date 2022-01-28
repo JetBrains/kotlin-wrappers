@@ -2,4 +2,4 @@
 
 package typescript
 
-typealias TemplateLiteral = Any /* TemplateExpression | NoSubstitutionTemplateLiteral */
+typealias TemplateLiteral = Expression /* TemplateExpression | NoSubstitutionTemplateLiteral */

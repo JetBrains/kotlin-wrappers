@@ -1,8 +1,17 @@
 // Automatically generated - do not modify!
 
-@file:JsModule("typescript")
-@file:JsNonModule
+@file:Suppress(
+    "CANNOT_CHECK_FOR_EXTERNAL_INTERFACE",
+)
 
 package typescript
 
-external fun isTypeAliasDeclaration(node: Node): Boolean /* node is TypeAliasDeclaration */
+import kotlin.contracts.contract
+
+fun isTypeAliasDeclaration(node: Node): Boolean {
+    contract {
+        returns(true) implies (node is TypeAliasDeclaration)
+    }
+
+    return typescript.raw.isTypeAliasDeclaration(node)
+}

@@ -4,6 +4,12 @@ plugins {
     `publish-conventions`
 }
 
+kotlin {
+    sourceSets.configureEach {
+        languageSettings.optIn("kotlin.contracts.ExperimentalContracts")
+    }
+}
+
 dependencies {
     api(npmv("typescript"))
 }

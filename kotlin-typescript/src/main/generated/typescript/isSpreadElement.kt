@@ -1,8 +1,17 @@
 // Automatically generated - do not modify!
 
-@file:JsModule("typescript")
-@file:JsNonModule
+@file:Suppress(
+    "CANNOT_CHECK_FOR_EXTERNAL_INTERFACE",
+)
 
 package typescript
 
-external fun isSpreadElement(node: Node): Boolean /* node is SpreadElement */
+import kotlin.contracts.contract
+
+fun isSpreadElement(node: Node): Boolean {
+    contract {
+        returns(true) implies (node is SpreadElement)
+    }
+
+    return typescript.raw.isSpreadElement(node)
+}

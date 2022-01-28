@@ -2,4 +2,4 @@
 
 package typescript
 
-typealias MemberName = Any /* Identifier | PrivateIdentifier */
+typealias MemberName = PrimaryExpression /* Identifier | PrivateIdentifier */

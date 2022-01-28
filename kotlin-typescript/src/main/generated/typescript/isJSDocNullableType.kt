@@ -1,8 +1,17 @@
 // Automatically generated - do not modify!
 
-@file:JsModule("typescript")
-@file:JsNonModule
+@file:Suppress(
+    "CANNOT_CHECK_FOR_EXTERNAL_INTERFACE",
+)
 
 package typescript
 
-external fun isJSDocNullableType(node: Node): Boolean /* node is JSDocNullableType */
+import kotlin.contracts.contract
+
+fun isJSDocNullableType(node: Node): Boolean {
+    contract {
+        returns(true) implies (node is JSDocNullableType)
+    }
+
+    return typescript.raw.isJSDocNullableType(node)
+}

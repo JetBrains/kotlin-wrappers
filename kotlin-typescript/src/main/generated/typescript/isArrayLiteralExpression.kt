@@ -1,8 +1,17 @@
 // Automatically generated - do not modify!
 
-@file:JsModule("typescript")
-@file:JsNonModule
+@file:Suppress(
+    "CANNOT_CHECK_FOR_EXTERNAL_INTERFACE",
+)
 
 package typescript
 
-external fun isArrayLiteralExpression(node: Node): Boolean /* node is ArrayLiteralExpression */
+import kotlin.contracts.contract
+
+fun isArrayLiteralExpression(node: Node): Boolean {
+    contract {
+        returns(true) implies (node is ArrayLiteralExpression)
+    }
+
+    return typescript.raw.isArrayLiteralExpression(node)
+}

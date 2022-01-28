@@ -1,8 +1,17 @@
 // Automatically generated - do not modify!
 
-@file:JsModule("typescript")
-@file:JsNonModule
+@file:Suppress(
+    "CANNOT_CHECK_FOR_EXTERNAL_INTERFACE",
+)
 
 package typescript
 
-external fun isDeleteExpression(node: Node): Boolean /* node is DeleteExpression */
+import kotlin.contracts.contract
+
+fun isDeleteExpression(node: Node): Boolean {
+    contract {
+        returns(true) implies (node is DeleteExpression)
+    }
+
+    return typescript.raw.isDeleteExpression(node)
+}

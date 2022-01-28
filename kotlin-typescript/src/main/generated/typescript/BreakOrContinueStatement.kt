@@ -2,4 +2,4 @@
 
 package typescript
 
-typealias BreakOrContinueStatement = Any /* BreakStatement | ContinueStatement */
+typealias BreakOrContinueStatement = Statement /* BreakStatement | ContinueStatement */

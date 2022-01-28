@@ -2,4 +2,4 @@
 
 package typescript
 
-typealias JsxOpeningLikeElement = Node /* JsxSelfClosingElement | JsxOpeningElement */
+typealias JsxOpeningLikeElement = Expression /* JsxSelfClosingElement | JsxOpeningElement */

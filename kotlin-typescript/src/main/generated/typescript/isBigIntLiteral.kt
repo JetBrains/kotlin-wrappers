@@ -1,8 +1,17 @@
 // Automatically generated - do not modify!
 
-@file:JsModule("typescript")
-@file:JsNonModule
+@file:Suppress(
+    "CANNOT_CHECK_FOR_EXTERNAL_INTERFACE",
+)
 
 package typescript
 
-external fun isBigIntLiteral(node: Node): Boolean /* node is BigIntLiteral */
+import kotlin.contracts.contract
+
+fun isBigIntLiteral(node: Node): Boolean {
+    contract {
+        returns(true) implies (node is BigIntLiteral)
+    }
+
+    return typescript.raw.isBigIntLiteral(node)
+}

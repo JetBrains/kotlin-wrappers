@@ -1,8 +1,17 @@
 // Automatically generated - do not modify!
 
-@file:JsModule("typescript")
-@file:JsNonModule
+@file:Suppress(
+    "CANNOT_CHECK_FOR_EXTERNAL_INTERFACE",
+)
 
 package typescript
 
-external fun isJSDocVariadicType(node: Node): Boolean /* node is JSDocVariadicType */
+import kotlin.contracts.contract
+
+fun isJSDocVariadicType(node: Node): Boolean {
+    contract {
+        returns(true) implies (node is JSDocVariadicType)
+    }
+
+    return typescript.raw.isJSDocVariadicType(node)
+}

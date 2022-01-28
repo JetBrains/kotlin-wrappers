@@ -1,8 +1,17 @@
 // Automatically generated - do not modify!
 
-@file:JsModule("typescript")
-@file:JsNonModule
+@file:Suppress(
+    "CANNOT_CHECK_FOR_EXTERNAL_INTERFACE",
+)
 
 package typescript
 
-external fun isRegularExpressionLiteral(node: Node): Boolean /* node is RegularExpressionLiteral */
+import kotlin.contracts.contract
+
+fun isRegularExpressionLiteral(node: Node): Boolean {
+    contract {
+        returns(true) implies (node is RegularExpressionLiteral)
+    }
+
+    return typescript.raw.isRegularExpressionLiteral(node)
+}

@@ -2,4 +2,4 @@
 
 package typescript
 
-typealias CallLikeExpression = Any /* CallExpression | NewExpression | TaggedTemplateExpression | Decorator | JsxOpeningLikeElement */
+typealias CallLikeExpression = Node /* CallExpression | NewExpression | TaggedTemplateExpression | Decorator | JsxOpeningLikeElement */

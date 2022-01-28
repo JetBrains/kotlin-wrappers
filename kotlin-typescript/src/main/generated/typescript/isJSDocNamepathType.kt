@@ -1,8 +1,17 @@
 // Automatically generated - do not modify!
 
-@file:JsModule("typescript")
-@file:JsNonModule
+@file:Suppress(
+    "CANNOT_CHECK_FOR_EXTERNAL_INTERFACE",
+)
 
 package typescript
 
-external fun isJSDocNamepathType(node: Node): Boolean /* node is JSDocNamepathType */
+import kotlin.contracts.contract
+
+fun isJSDocNamepathType(node: Node): Boolean {
+    contract {
+        returns(true) implies (node is JSDocNamepathType)
+    }
+
+    return typescript.raw.isJSDocNamepathType(node)
+}

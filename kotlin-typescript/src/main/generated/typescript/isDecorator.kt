@@ -1,8 +1,17 @@
 // Automatically generated - do not modify!
 
-@file:JsModule("typescript")
-@file:JsNonModule
+@file:Suppress(
+    "CANNOT_CHECK_FOR_EXTERNAL_INTERFACE",
+)
 
 package typescript
 
-external fun isDecorator(node: Node): Boolean /* node is Decorator */
+import kotlin.contracts.contract
+
+fun isDecorator(node: Node): Boolean {
+    contract {
+        returns(true) implies (node is Decorator)
+    }
+
+    return typescript.raw.isDecorator(node)
+}

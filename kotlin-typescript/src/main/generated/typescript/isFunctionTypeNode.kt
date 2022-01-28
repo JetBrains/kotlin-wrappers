@@ -1,8 +1,17 @@
 // Automatically generated - do not modify!
 
-@file:JsModule("typescript")
-@file:JsNonModule
+@file:Suppress(
+    "CANNOT_CHECK_FOR_EXTERNAL_INTERFACE",
+)
 
 package typescript
 
-external fun isFunctionTypeNode(node: Node): Boolean /* node is FunctionTypeNode */
+import kotlin.contracts.contract
+
+fun isFunctionTypeNode(node: Node): Boolean {
+    contract {
+        returns(true) implies (node is FunctionTypeNode)
+    }
+
+    return typescript.raw.isFunctionTypeNode(node)
+}

@@ -1,9 +1,18 @@
 // Automatically generated - do not modify!
 
-@file:JsModule("typescript")
-@file:JsNonModule
+@file:Suppress(
+    "CANNOT_CHECK_FOR_EXTERNAL_INTERFACE",
+)
 
 package typescript
 
+import kotlin.contracts.contract
+
 /** True if has initializer node attached to it. */
-external fun hasOnlyExpressionInitializer(node: Node): Boolean /* node is HasExpressionInitializer */
+fun hasOnlyExpressionInitializer(node: Node): Boolean {
+    contract {
+        returns(true) implies (node is HasExpressionInitializer)
+    }
+
+    return typescript.raw.hasOnlyExpressionInitializer(node)
+}

@@ -2,4 +2,4 @@
 
 package typescript
 
-typealias TemplateLiteralToken = Any /* NoSubstitutionTemplateLiteral | PseudoLiteralToken */
+typealias TemplateLiteralToken = LiteralLikeNode /* NoSubstitutionTemplateLiteral | PseudoLiteralToken */

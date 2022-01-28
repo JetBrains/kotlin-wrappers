@@ -1,8 +1,17 @@
 // Automatically generated - do not modify!
 
-@file:JsModule("typescript")
-@file:JsNonModule
+@file:Suppress(
+    "CANNOT_CHECK_FOR_EXTERNAL_INTERFACE",
+)
 
 package typescript
 
-external fun isTypeOnlyImportOrExportDeclaration(node: Node): Boolean /* node is TypeOnlyAliasDeclaration */
+import kotlin.contracts.contract
+
+fun isTypeOnlyImportOrExportDeclaration(node: Node): Boolean {
+    contract {
+        returns(true) implies (node is TypeOnlyAliasDeclaration)
+    }
+
+    return typescript.raw.isTypeOnlyImportOrExportDeclaration(node)
+}

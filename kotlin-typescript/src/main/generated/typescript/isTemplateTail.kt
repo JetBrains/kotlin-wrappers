@@ -1,8 +1,17 @@
 // Automatically generated - do not modify!
 
-@file:JsModule("typescript")
-@file:JsNonModule
+@file:Suppress(
+    "CANNOT_CHECK_FOR_EXTERNAL_INTERFACE",
+)
 
 package typescript
 
-external fun isTemplateTail(node: Node): Boolean /* node is TemplateTail */
+import kotlin.contracts.contract
+
+fun isTemplateTail(node: Node): Boolean {
+    contract {
+        returns(true) implies (node is TemplateTail)
+    }
+
+    return typescript.raw.isTemplateTail(node)
+}

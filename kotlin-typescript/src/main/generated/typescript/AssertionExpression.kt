@@ -2,4 +2,4 @@
 
 package typescript
 
-typealias AssertionExpression = Any /* TypeAssertion | AsExpression */
+typealias AssertionExpression = Expression /* TypeAssertion | AsExpression */

@@ -1,8 +1,17 @@
 // Automatically generated - do not modify!
 
-@file:JsModule("typescript")
-@file:JsNonModule
+@file:Suppress(
+    "CANNOT_CHECK_FOR_EXTERNAL_INTERFACE",
+)
 
 package typescript
 
-external fun isBinaryExpression(node: Node): Boolean /* node is BinaryExpression */
+import kotlin.contracts.contract
+
+fun isBinaryExpression(node: Node): Boolean {
+    contract {
+        returns(true) implies (node is BinaryExpression)
+    }
+
+    return typescript.raw.isBinaryExpression(node)
+}
