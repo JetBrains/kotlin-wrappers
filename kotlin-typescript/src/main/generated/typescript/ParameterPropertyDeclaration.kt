@@ -2,7 +2,7 @@
 
 package typescript
 
-typealias ParameterPropertyDeclaration = ParameterDeclaration /* ParameterDeclaration & {
+sealed interface ParameterPropertyDeclaration : ParameterDeclaration /* ParameterDeclaration & {
     parent: ConstructorDeclaration;
     name: Identifier;
 } */

@@ -2,4 +2,4 @@
 
 package typescript
 
-typealias CompletionsTriggerCharacter = Any /* "." | '"' | "'" | "`" | "/" | "@" | "<" | "#" | " " */
+sealed interface CompletionsTriggerCharacter /* "." | '"' | "'" | "`" | "/" | "@" | "<" | "#" | " " */

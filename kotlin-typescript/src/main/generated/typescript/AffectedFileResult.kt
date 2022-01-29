@@ -3,7 +3,7 @@
 package typescript
 
 @Suppress("UNUSED_TYPEALIAS_PARAMETER")
-typealias AffectedFileResult<T> = Any /* {
+sealed interface AffectedFileResult<T> /* {
     result: T;
     affected: SourceFile | Program;
 } | undefined */

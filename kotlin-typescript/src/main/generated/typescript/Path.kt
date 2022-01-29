@@ -2,6 +2,6 @@
 
 package typescript
 
-typealias Path = Any /* string & {
+sealed interface Path /* string & {
     __pathBrand: any;
 } */

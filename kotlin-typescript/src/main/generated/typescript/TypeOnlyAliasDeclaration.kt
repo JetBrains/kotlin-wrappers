@@ -2,7 +2,7 @@
 
 package typescript
 
-typealias TypeOnlyAliasDeclaration = ImportClause /* ImportClause & {
+sealed interface TypeOnlyAliasDeclaration : ImportClause /* ImportClause & {
     readonly isTypeOnly: true;
     readonly name: Identifier;
 } | ImportEqualsDeclaration & {

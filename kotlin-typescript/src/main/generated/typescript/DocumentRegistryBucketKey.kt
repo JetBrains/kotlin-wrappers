@@ -2,6 +2,6 @@
 
 package typescript
 
-typealias DocumentRegistryBucketKey = Any /* string & {
+sealed interface DocumentRegistryBucketKey /* string & {
     __bucketKey: any;
 } */
