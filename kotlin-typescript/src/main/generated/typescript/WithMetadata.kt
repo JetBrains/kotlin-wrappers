@@ -3,6 +3,6 @@
 package typescript
 
 @Suppress("UNUSED_TYPEALIAS_PARAMETER")
-typealias WithMetadata<T> = Any /* T & {
+sealed interface WithMetadata<T> /* T & {
     metadata?: unknown;
 } */

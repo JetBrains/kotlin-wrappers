@@ -2,4 +2,4 @@
 
 package typescript
 
-typealias SignatureHelpTriggerCharacter = Any /* "," | "(" | "<" */
+sealed interface SignatureHelpTriggerCharacter /* "," | "(" | "<" */

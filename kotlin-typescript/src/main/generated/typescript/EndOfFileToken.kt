@@ -2,4 +2,4 @@
 
 package typescript
 
-typealias EndOfFileToken = Any /* Token<SyntaxKind.EndOfFileToken> & JSDocContainer */
+sealed interface EndOfFileToken /* Token<SyntaxKind.EndOfFileToken> & JSDocContainer */
