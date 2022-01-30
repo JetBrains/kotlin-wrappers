@@ -6,5 +6,5 @@ package typescript
 sealed external interface ReadonlyCollection<K> {
     val size: Int
     fun has(key: K): Boolean
-    fun keys(): Iterator<K>
+    fun keys(): JsIterator<K>
 }
