@@ -2,4 +2,4 @@
 
 package typescript
 
-typealias EmitHelper = Any /* ScopedEmitHelper | UnscopedEmitHelper */
+sealed external interface EmitHelper /* ScopedEmitHelper | UnscopedEmitHelper */

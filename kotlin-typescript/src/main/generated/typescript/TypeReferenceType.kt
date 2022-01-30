@@ -2,4 +2,4 @@
 
 package typescript
 
-typealias TypeReferenceType = Any /* TypeReferenceNode | ExpressionWithTypeArguments */
+sealed external interface TypeReferenceType /* TypeReferenceNode | ExpressionWithTypeArguments */

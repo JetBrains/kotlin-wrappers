@@ -2,10 +2,10 @@
 
 package typescript
 
-sealed external interface JSDocTypedefTag : JSDocTag, NamedDeclaration {
+sealed external interface JSDocTypedefTag : JSDocTag, NamedDeclaration, Union.JSDocTypedefTag_ {
     override val kind: SyntaxKind.JSDocTypedefTag
     override val parent: JSDoc
-    val fullName: dynamic /* JSDocNamespaceDeclaration | Identifier */
+    val fullName: Union.JSDocTypedefTag_fullName?
     override val name: Identifier?
-    val typeExpression: dynamic /* JSDocTypeExpression | JSDocTypeLiteral */
+    val typeExpression: Union.JSDocTypedefTag_typeExpression?
 }

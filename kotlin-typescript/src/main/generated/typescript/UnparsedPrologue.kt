@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface UnparsedPrologue : UnparsedSection {
+sealed external interface UnparsedPrologue : UnparsedSection, Union.UnparsedPrologue_ {
     override val kind: SyntaxKind.UnparsedPrologue
     override val parent: UnparsedSource
     override val data: String

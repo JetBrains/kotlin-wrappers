@@ -2,8 +2,8 @@
 
 package typescript
 
-sealed external interface SpreadElement : Expression {
+sealed external interface SpreadElement : Expression, Union.SpreadElement_ {
     override val kind: SyntaxKind.SpreadElement
-    override val parent: dynamic /* ArrayLiteralExpression | CallExpression | NewExpression */
+    override val parent: Union.SpreadElement_parent
     val expression: Expression
 }

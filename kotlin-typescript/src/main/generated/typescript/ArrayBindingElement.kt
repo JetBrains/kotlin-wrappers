@@ -2,4 +2,4 @@
 
 package typescript
 
-typealias ArrayBindingElement = Node /* BindingElement | OmittedExpression */
+sealed external interface ArrayBindingElement : Node /* BindingElement | OmittedExpression */

@@ -2,4 +2,4 @@
 
 package typescript
 
-typealias AssignmentPattern = Any /* ObjectLiteralExpression | ArrayLiteralExpression */
+sealed external interface AssignmentPattern /* ObjectLiteralExpression | ArrayLiteralExpression */

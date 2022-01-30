@@ -2,4 +2,5 @@
 
 package typescript
 
-typealias JsonObjectExpression = Expression /* ObjectLiteralExpression | ArrayLiteralExpression | JsonMinusNumericLiteral | NumericLiteral | StringLiteral | BooleanLiteral | NullLiteral */
+sealed external interface JsonObjectExpression :
+    Expression /* ObjectLiteralExpression | ArrayLiteralExpression | JsonMinusNumericLiteral | NumericLiteral | StringLiteral | BooleanLiteral | NullLiteral */

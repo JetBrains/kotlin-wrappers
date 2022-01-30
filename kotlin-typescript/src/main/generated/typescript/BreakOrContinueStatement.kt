@@ -2,4 +2,4 @@
 
 package typescript
 
-typealias BreakOrContinueStatement = Statement /* BreakStatement | ContinueStatement */
+sealed external interface BreakOrContinueStatement : Statement /* BreakStatement | ContinueStatement */

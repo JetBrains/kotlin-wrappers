@@ -2,4 +2,4 @@
 
 package typescript
 
-typealias StructuredType = Any /* ObjectType | UnionType | IntersectionType */
+sealed external interface StructuredType /* ObjectType | UnionType | IntersectionType */

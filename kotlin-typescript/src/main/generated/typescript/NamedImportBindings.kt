@@ -2,4 +2,4 @@
 
 package typescript
 
-typealias NamedImportBindings = Any /* NamespaceImport | NamedImports */
+sealed external interface NamedImportBindings /* NamespaceImport | NamedImports */

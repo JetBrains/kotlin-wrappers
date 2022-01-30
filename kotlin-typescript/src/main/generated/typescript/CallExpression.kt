@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface CallExpression : LeftHandSideExpression, Declaration {
+sealed external interface CallExpression : LeftHandSideExpression, Declaration, Union.CallExpression_ {
     override val kind: SyntaxKind.CallExpression
     val expression: LeftHandSideExpression
     val questionDotToken: QuestionDotToken?

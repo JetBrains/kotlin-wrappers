@@ -2,6 +2,6 @@
 
 package typescript
 
-sealed external interface NullLiteral : PrimaryExpression {
+sealed external interface NullLiteral : PrimaryExpression, Union.NullLiteral_ {
     override val kind: SyntaxKind.NullKeyword
 }

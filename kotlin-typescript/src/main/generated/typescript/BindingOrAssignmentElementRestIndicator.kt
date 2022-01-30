@@ -2,4 +2,4 @@
 
 package typescript
 
-typealias BindingOrAssignmentElementRestIndicator = Any /* DotDotDotToken | SpreadElement | SpreadAssignment */
+sealed external interface BindingOrAssignmentElementRestIndicator /* DotDotDotToken | SpreadElement | SpreadAssignment */

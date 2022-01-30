@@ -2,4 +2,4 @@
 
 package typescript
 
-typealias TypePredicate = Any /* ThisTypePredicate | IdentifierTypePredicate | AssertsThisTypePredicate | AssertsIdentifierTypePredicate */
+sealed external interface TypePredicate /* ThisTypePredicate | IdentifierTypePredicate | AssertsThisTypePredicate | AssertsIdentifierTypePredicate */

@@ -2,6 +2,6 @@
 
 package typescript
 
-sealed interface DocumentRegistryBucketKey /* string & {
+sealed external interface DocumentRegistryBucketKey /* string & {
     __bucketKey: any;
 } */

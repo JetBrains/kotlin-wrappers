@@ -3,6 +3,6 @@
 package typescript
 
 sealed external interface FunctionOrConstructorTypeNodeBase : TypeNode, SignatureDeclarationBase {
-    override val kind: dynamic /* SyntaxKind.FunctionType | SyntaxKind.ConstructorType */
+    override val kind: Union.FunctionOrConstructorTypeNodeBase_kind
     override val type: TypeNode
 }

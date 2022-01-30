@@ -2,4 +2,4 @@
 
 package typescript
 
-typealias UnparsedNode = UnparsedSection /* UnparsedPrologue | UnparsedSourceText | UnparsedSyntheticReference */
+sealed external interface UnparsedNode : UnparsedSection /* UnparsedPrologue | UnparsedSourceText | UnparsedSyntheticReference */

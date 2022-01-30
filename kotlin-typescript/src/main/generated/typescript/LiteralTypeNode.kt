@@ -4,5 +4,5 @@ package typescript
 
 sealed external interface LiteralTypeNode : TypeNode {
     override val kind: SyntaxKind.LiteralType
-    val literal: dynamic /* NullLiteral | BooleanLiteral | LiteralExpression | PrefixUnaryExpression */
+    val literal: Union.LiteralTypeNode_literal
 }

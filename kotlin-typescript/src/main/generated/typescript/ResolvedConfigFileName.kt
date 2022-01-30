@@ -7,6 +7,6 @@ package typescript
  * specified like "./blah" to an absolute path to an actual
  * tsconfig file, e.g. "/root/blah/tsconfig.json"
  */
-sealed interface ResolvedConfigFileName /* string & {
+sealed external interface ResolvedConfigFileName /* string & {
     _isResolvedConfigFileName: never;
 } */

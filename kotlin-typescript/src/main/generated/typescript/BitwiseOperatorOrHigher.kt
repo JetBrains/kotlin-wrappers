@@ -2,4 +2,4 @@
 
 package typescript
 
-typealias BitwiseOperatorOrHigher = Any /* EqualityOperatorOrHigher | BitwiseOperator */
+sealed external interface BitwiseOperatorOrHigher : Union.BitwiseOperatorOrHigher_ /* EqualityOperatorOrHigher | BitwiseOperator */

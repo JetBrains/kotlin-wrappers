@@ -2,4 +2,4 @@
 
 package typescript
 
-typealias TypeVariable = Any /* TypeParameter | IndexedAccessType */
+sealed external interface TypeVariable : Union.TypeVariable_ /* TypeParameter | IndexedAccessType */

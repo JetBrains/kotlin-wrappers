@@ -2,6 +2,6 @@
 
 package typescript
 
-sealed interface Path /* string & {
+sealed external interface Path /* string & {
     __pathBrand: any;
 } */

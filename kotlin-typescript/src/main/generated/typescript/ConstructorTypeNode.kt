@@ -2,6 +2,6 @@
 
 package typescript
 
-sealed external interface ConstructorTypeNode : FunctionOrConstructorTypeNodeBase {
+sealed external interface ConstructorTypeNode : FunctionOrConstructorTypeNodeBase, Union.ConstructorTypeNode_ {
     override val kind: SyntaxKind.ConstructorType
 }

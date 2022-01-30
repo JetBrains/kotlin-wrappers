@@ -2,4 +2,4 @@
 
 package typescript
 
-typealias ObjectBindingOrAssignmentElement = Any /* BindingElement | PropertyAssignment | ShorthandPropertyAssignment | SpreadAssignment */
+sealed external interface ObjectBindingOrAssignmentElement : Union.ObjectBindingOrAssignmentElement_ /* BindingElement | PropertyAssignment | ShorthandPropertyAssignment | SpreadAssignment */

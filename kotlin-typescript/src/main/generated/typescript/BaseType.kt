@@ -2,4 +2,4 @@
 
 package typescript
 
-typealias BaseType = Any /* ObjectType | IntersectionType | TypeVariable */
+sealed external interface BaseType /* ObjectType | IntersectionType | TypeVariable */

@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface FlowArrayMutation : FlowNodeBase {
-    var node: dynamic /* CallExpression | BinaryExpression */
+sealed external interface FlowArrayMutation : FlowNodeBase, Union.FlowArrayMutation_ {
+    var node: Union.FlowArrayMutation_node
     var antecedent: FlowNode
 }

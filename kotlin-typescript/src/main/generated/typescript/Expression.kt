@@ -2,6 +2,6 @@
 
 package typescript
 
-sealed external interface Expression : Node {
+sealed external interface Expression : Node, Union.Expression_ {
     var _expressionBrand: Any
 }

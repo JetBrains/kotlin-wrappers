@@ -2,4 +2,4 @@
 
 package typescript
 
-typealias AssertionKey = Any /* Identifier | StringLiteral */
+sealed external interface AssertionKey /* Identifier | StringLiteral */

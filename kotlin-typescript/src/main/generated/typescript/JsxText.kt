@@ -2,8 +2,8 @@
 
 package typescript
 
-sealed external interface JsxText : LiteralLikeNode {
+sealed external interface JsxText : LiteralLikeNode, Union.JsxText_ {
     override val kind: SyntaxKind.JsxText
-    override val parent: dynamic /* JsxElement | JsxFragment */
+    override val parent: Union.JsxText_parent
     val containsOnlyTriviaWhiteSpaces: Boolean
 }

@@ -2,4 +2,4 @@
 
 package typescript
 
-typealias StringLiteralLike = Declaration /* StringLiteral | NoSubstitutionTemplateLiteral */
+sealed external interface StringLiteralLike : Declaration, Union.StringLiteralLike_ /* StringLiteral | NoSubstitutionTemplateLiteral */

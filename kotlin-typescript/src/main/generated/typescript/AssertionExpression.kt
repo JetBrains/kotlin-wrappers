@@ -2,4 +2,4 @@
 
 package typescript
 
-typealias AssertionExpression = Expression /* TypeAssertion | AsExpression */
+sealed external interface AssertionExpression : Expression, Union.AssertionExpression_ /* TypeAssertion | AsExpression */

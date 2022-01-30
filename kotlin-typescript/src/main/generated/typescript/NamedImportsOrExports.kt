@@ -2,4 +2,4 @@
 
 package typescript
 
-typealias NamedImportsOrExports = Any /* NamedImports | NamedExports */
+sealed external interface NamedImportsOrExports /* NamedImports | NamedExports */

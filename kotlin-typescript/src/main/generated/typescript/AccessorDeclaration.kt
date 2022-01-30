@@ -2,4 +2,4 @@
 
 package typescript
 
-typealias AccessorDeclaration = Declaration /* GetAccessorDeclaration | SetAccessorDeclaration */
+sealed external interface AccessorDeclaration : Declaration, Union.AccessorDeclaration_ /* GetAccessorDeclaration | SetAccessorDeclaration */

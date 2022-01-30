@@ -2,4 +2,4 @@
 
 package typescript
 
-typealias DeclarationName = Any /* Identifier | PrivateIdentifier | StringLiteralLike | NumericLiteral | ComputedPropertyName | ElementAccessExpression | BindingPattern | EntityNameExpression */
+sealed external interface DeclarationName /* Identifier | PrivateIdentifier | StringLiteralLike | NumericLiteral | ComputedPropertyName | ElementAccessExpression | BindingPattern | EntityNameExpression */

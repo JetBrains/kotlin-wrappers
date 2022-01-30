@@ -14,6 +14,6 @@ package typescript
  */
 sealed external interface TypeReference : ObjectType {
     var target: GenericType
-    var node: dynamic /* TypeReferenceNode | ArrayTypeNode | TupleTypeNode */
+    var node: Union.TypeReference_node?
     var typeArguments: ReadonlyArray<Type>?
 }

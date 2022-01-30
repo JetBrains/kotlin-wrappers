@@ -2,4 +2,4 @@
 
 package typescript
 
-typealias ForInOrOfStatement = Any /* ForInStatement | ForOfStatement */
+sealed external interface ForInOrOfStatement /* ForInStatement | ForOfStatement */

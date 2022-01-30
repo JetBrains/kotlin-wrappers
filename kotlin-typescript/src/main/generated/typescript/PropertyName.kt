@@ -2,4 +2,4 @@
 
 package typescript
 
-typealias PropertyName = Node /* Identifier | StringLiteral | NumericLiteral | ComputedPropertyName | PrivateIdentifier */
+sealed external interface PropertyName : DeclarationName /* Identifier | StringLiteral | NumericLiteral | ComputedPropertyName | PrivateIdentifier */

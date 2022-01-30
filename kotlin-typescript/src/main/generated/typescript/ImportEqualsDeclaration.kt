@@ -7,9 +7,9 @@ package typescript
  * - import x = require("mod");
  * - import x = M.x;
  */
-sealed external interface ImportEqualsDeclaration : DeclarationStatement, JSDocContainer {
+sealed external interface ImportEqualsDeclaration : DeclarationStatement, JSDocContainer, Union.ImportEqualsDeclaration_ {
     override val kind: SyntaxKind.ImportEqualsDeclaration
-    override val parent: dynamic /* SourceFile | ModuleBlock */
+    override val parent: Union.ImportEqualsDeclaration_parent
     override val name: Identifier
     val isTypeOnly: Boolean
     val moduleReference: ModuleReference

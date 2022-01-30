@@ -2,4 +2,4 @@
 
 package typescript
 
-typealias AccessibilityModifier = Any /* PublicKeyword | PrivateKeyword | ProtectedKeyword */
+sealed external interface AccessibilityModifier : Union.AccessibilityModifier_ /* PublicKeyword | PrivateKeyword | ProtectedKeyword */

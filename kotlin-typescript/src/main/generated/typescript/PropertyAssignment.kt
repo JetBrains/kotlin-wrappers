@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface PropertyAssignment : ObjectLiteralElement, JSDocContainer {
+sealed external interface PropertyAssignment : ObjectLiteralElement, JSDocContainer, Union.PropertyAssignment_ {
     override val kind: SyntaxKind.PropertyAssignment
     override val parent: ObjectLiteralExpression
     override val name: PropertyName

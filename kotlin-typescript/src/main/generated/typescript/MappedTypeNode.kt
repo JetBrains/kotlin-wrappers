@@ -2,12 +2,12 @@
 
 package typescript
 
-sealed external interface MappedTypeNode : TypeNode, Declaration {
+sealed external interface MappedTypeNode : TypeNode, Declaration, Union.MappedTypeNode_ {
     override val kind: SyntaxKind.MappedType
-    val readonlyToken: dynamic /* ReadonlyToken | PlusToken | MinusToken */
+    val readonlyToken: Union.MappedTypeNode_readonlyToken?
     val typeParameter: TypeParameterDeclaration
     val nameType: TypeNode?
-    val questionToken: dynamic /* QuestionToken | PlusToken | MinusToken */
+    val questionToken: Union.MappedTypeNode_questionToken?
     val type: TypeNode?
 
     /** Used only to produce grammar errors */

@@ -2,8 +2,8 @@
 
 package typescript
 
-sealed external interface VariableDeclarationList : Node {
+sealed external interface VariableDeclarationList : Node, Union.VariableDeclarationList_ {
     override val kind: SyntaxKind.VariableDeclarationList
-    override val parent: dynamic /* VariableStatement | ForStatement | ForOfStatement | ForInStatement */
+    override val parent: Union.VariableDeclarationList_parent
     val declarations: NodeArray<VariableDeclaration>
 }

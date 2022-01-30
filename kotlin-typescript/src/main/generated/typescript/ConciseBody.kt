@@ -2,4 +2,4 @@
 
 package typescript
 
-typealias ConciseBody = Any /* FunctionBody | Expression */
+sealed external interface ConciseBody : Union.FunctionLikeDeclarationBase_body /* FunctionBody | Expression */

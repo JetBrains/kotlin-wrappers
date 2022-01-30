@@ -2,4 +2,4 @@
 
 package typescript
 
-typealias MemberName = PrimaryExpression /* Identifier | PrivateIdentifier */
+sealed external interface MemberName : PrimaryExpression, DeclarationName /* Identifier | PrivateIdentifier */

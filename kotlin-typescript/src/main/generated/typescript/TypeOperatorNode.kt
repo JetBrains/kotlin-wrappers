@@ -2,8 +2,8 @@
 
 package typescript
 
-sealed external interface TypeOperatorNode : TypeNode {
+sealed external interface TypeOperatorNode : TypeNode, Union.TypeOperatorNode_ {
     override val kind: SyntaxKind.TypeOperator
-    val operator: dynamic /* SyntaxKind.KeyOfKeyword | SyntaxKind.UniqueKeyword | SyntaxKind.ReadonlyKeyword */
+    val operator: Union.TypeOperatorNode_operator
     val type: TypeNode
 }

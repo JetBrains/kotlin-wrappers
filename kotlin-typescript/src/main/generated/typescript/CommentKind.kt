@@ -2,4 +2,4 @@
 
 package typescript
 
-typealias CommentKind = SyntaxKind /* SyntaxKind.SingleLineCommentTrivia | SyntaxKind.MultiLineCommentTrivia */
+sealed external interface CommentKind : SyntaxKind /* SyntaxKind.SingleLineCommentTrivia | SyntaxKind.MultiLineCommentTrivia */

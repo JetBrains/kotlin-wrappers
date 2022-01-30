@@ -2,4 +2,4 @@
 
 package typescript
 
-typealias SuperProperty = Any /* SuperPropertyAccessExpression | SuperElementAccessExpression */
+sealed external interface SuperProperty /* SuperPropertyAccessExpression | SuperElementAccessExpression */

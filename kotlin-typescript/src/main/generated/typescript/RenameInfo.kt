@@ -2,4 +2,4 @@
 
 package typescript
 
-typealias RenameInfo = Any /* RenameInfoSuccess | RenameInfoFailure */
+sealed external interface RenameInfo /* RenameInfoSuccess | RenameInfoFailure */

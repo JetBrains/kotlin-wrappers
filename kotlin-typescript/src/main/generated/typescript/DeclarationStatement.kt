@@ -3,5 +3,5 @@
 package typescript
 
 sealed external interface DeclarationStatement : NamedDeclaration, Statement {
-    override val name: dynamic /* Identifier | StringLiteral | NumericLiteral */
+    override val name: Union.DeclarationStatement_name?
 }

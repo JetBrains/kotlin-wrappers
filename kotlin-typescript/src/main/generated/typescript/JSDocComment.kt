@@ -2,4 +2,4 @@
 
 package typescript
 
-typealias JSDocComment = Any /* JSDocText | JSDocLink | JSDocLinkCode | JSDocLinkPlain */
+sealed external interface JSDocComment /* JSDocText | JSDocLink | JSDocLinkCode | JSDocLinkPlain */

@@ -2,4 +2,4 @@
 
 package typescript
 
-typealias RelationalOperatorOrHigher = Any /* ShiftOperatorOrHigher | RelationalOperator */
+sealed external interface RelationalOperatorOrHigher : Union.RelationalOperatorOrHigher_ /* ShiftOperatorOrHigher | RelationalOperator */

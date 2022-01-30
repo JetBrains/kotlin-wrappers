@@ -2,6 +2,6 @@
 
 package typescript
 
-sealed external interface FalseLiteral : PrimaryExpression {
+sealed external interface FalseLiteral : PrimaryExpression, Union.FalseLiteral_ {
     override val kind: SyntaxKind.FalseKeyword
 }

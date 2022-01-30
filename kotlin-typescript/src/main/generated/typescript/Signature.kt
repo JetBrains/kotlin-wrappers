@@ -3,7 +3,7 @@
 package typescript
 
 sealed external interface Signature {
-    var declaration: dynamic /* SignatureDeclaration | JSDocSignature */
+    var declaration: Union.Signature_declaration?
     var typeParameters: ReadonlyArray<TypeParameter>?
     var parameters: ReadonlyArray<Symbol>
     fun getDeclaration(): SignatureDeclaration

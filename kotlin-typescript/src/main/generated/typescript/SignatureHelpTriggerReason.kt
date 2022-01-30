@@ -2,4 +2,4 @@
 
 package typescript
 
-typealias SignatureHelpTriggerReason = Any /* SignatureHelpInvokedReason | SignatureHelpCharacterTypedReason | SignatureHelpRetriggeredReason */
+sealed external interface SignatureHelpTriggerReason /* SignatureHelpInvokedReason | SignatureHelpCharacterTypedReason | SignatureHelpRetriggeredReason */

@@ -2,4 +2,4 @@
 
 package typescript
 
-typealias JSDocTypeReferencingNode = Any /* JSDocVariadicType | JSDocOptionalType | JSDocNullableType | JSDocNonNullableType */
+sealed external interface JSDocTypeReferencingNode /* JSDocVariadicType | JSDocOptionalType | JSDocNullableType | JSDocNonNullableType */

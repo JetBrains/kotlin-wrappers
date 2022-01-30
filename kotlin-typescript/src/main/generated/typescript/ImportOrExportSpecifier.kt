@@ -2,4 +2,4 @@
 
 package typescript
 
-typealias ImportOrExportSpecifier = Any /* ImportSpecifier | ExportSpecifier */
+sealed external interface ImportOrExportSpecifier : Union.ImportOrExportSpecifier_ /* ImportSpecifier | ExportSpecifier */

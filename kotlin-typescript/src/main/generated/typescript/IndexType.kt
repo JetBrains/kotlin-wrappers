@@ -3,5 +3,5 @@
 package typescript
 
 sealed external interface IndexType : InstantiableType {
-    var type: dynamic /* InstantiableType | UnionOrIntersectionType */
+    var type: Union.IndexType_type
 }

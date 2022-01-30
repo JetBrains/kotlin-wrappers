@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface TryStatement : Statement {
+sealed external interface TryStatement : Statement, Union.TryStatement_ {
     override val kind: SyntaxKind.TryStatement
     val tryBlock: Block
     val catchClause: CatchClause?

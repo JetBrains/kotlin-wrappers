@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface InterfaceDeclaration : DeclarationStatement, JSDocContainer {
+sealed external interface InterfaceDeclaration : DeclarationStatement, JSDocContainer, Union.InterfaceDeclaration_ {
     override val kind: SyntaxKind.InterfaceDeclaration
     override val name: Identifier
     val typeParameters: NodeArray<TypeParameterDeclaration>?
