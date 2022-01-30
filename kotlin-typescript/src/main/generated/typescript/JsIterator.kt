@@ -2,13 +2,13 @@
 
 package typescript
 
-external interface JsIteratorResult<out T> {
+sealed external interface JsIteratorResult<out T> {
     val value: T
     val done: Boolean
 }
 
 /** ES6 Iterator type. */
-external interface JsIterator<out T> {
+sealed external interface JsIterator<out T> {
     fun next(): JsIteratorResult<T>
 }
 
