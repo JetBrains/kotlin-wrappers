@@ -2,4 +2,4 @@
 
 package typescript
 
-typealias LogicalOperatorOrHigher = Any /* BitwiseOperatorOrHigher | LogicalOperator */
+sealed external interface LogicalOperatorOrHigher : Union.LogicalOperatorOrHigher_ /* BitwiseOperatorOrHigher | LogicalOperator */

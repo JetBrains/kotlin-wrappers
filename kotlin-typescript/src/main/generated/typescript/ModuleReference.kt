@@ -2,4 +2,4 @@
 
 package typescript
 
-typealias ModuleReference = Any /* EntityName | ExternalModuleReference */
+sealed external interface ModuleReference /* EntityName | ExternalModuleReference */

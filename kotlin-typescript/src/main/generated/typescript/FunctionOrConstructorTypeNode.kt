@@ -2,4 +2,4 @@
 
 package typescript
 
-typealias FunctionOrConstructorTypeNode = Any /* FunctionTypeNode | ConstructorTypeNode */
+sealed external interface FunctionOrConstructorTypeNode /* FunctionTypeNode | ConstructorTypeNode */

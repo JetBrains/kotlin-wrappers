@@ -3,4 +3,4 @@
 package typescript
 
 @Suppress("UNUSED_TYPEALIAS_PARAMETER")
-sealed interface InvalidatedProject<T /* : BuilderProgram */> /* UpdateOutputFileStampsProject | BuildInvalidedProject<T> | UpdateBundleProject<T> */
+sealed external interface InvalidatedProject<T /* : BuilderProgram */> /* UpdateOutputFileStampsProject | BuildInvalidedProject<T> | UpdateBundleProject<T> */

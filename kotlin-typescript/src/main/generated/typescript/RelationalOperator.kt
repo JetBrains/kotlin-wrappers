@@ -2,4 +2,5 @@
 
 package typescript
 
-typealias RelationalOperator = SyntaxKind /* SyntaxKind.LessThanToken | SyntaxKind.LessThanEqualsToken | SyntaxKind.GreaterThanToken | SyntaxKind.GreaterThanEqualsToken | SyntaxKind.InstanceOfKeyword | SyntaxKind.InKeyword */
+sealed external interface RelationalOperator : SyntaxKind,
+    Union.RelationalOperator_ /* SyntaxKind.LessThanToken | SyntaxKind.LessThanEqualsToken | SyntaxKind.GreaterThanToken | SyntaxKind.GreaterThanEqualsToken | SyntaxKind.InstanceOfKeyword | SyntaxKind.InKeyword */

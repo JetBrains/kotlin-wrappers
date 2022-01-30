@@ -2,4 +2,4 @@
 
 package typescript
 
-typealias ClassMemberModifier = Any /* AccessibilityModifier | ReadonlyKeyword | StaticKeyword */
+sealed external interface ClassMemberModifier /* AccessibilityModifier | ReadonlyKeyword | StaticKeyword */

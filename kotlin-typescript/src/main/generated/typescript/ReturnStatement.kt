@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface ReturnStatement : Statement {
+sealed external interface ReturnStatement : Statement, Union.ReturnStatement_ {
     override val kind: SyntaxKind.ReturnStatement
     val expression: Expression?
 }

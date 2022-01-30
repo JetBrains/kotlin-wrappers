@@ -2,4 +2,4 @@
 
 package typescript
 
-typealias CompletionEntryData = Any /* CompletionEntryDataUnresolved | CompletionEntryDataResolved */
+sealed external interface CompletionEntryData /* CompletionEntryDataUnresolved | CompletionEntryDataResolved */

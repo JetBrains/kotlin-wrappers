@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed interface TypeOnlyAliasDeclaration : ImportClause /* ImportClause & {
+sealed external interface TypeOnlyAliasDeclaration : ImportClause /* ImportClause & {
     readonly isTypeOnly: true;
     readonly name: Identifier;
 } | ImportEqualsDeclaration & {

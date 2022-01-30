@@ -4,7 +4,7 @@ package typescript
 
 sealed external interface TypeParameterDeclaration : NamedDeclaration {
     override val kind: SyntaxKind.TypeParameter
-    override val parent: dynamic /* DeclarationWithTypeParameterChildren | InferTypeNode */
+    override val parent: Union.TypeParameterDeclaration_parent
     override val name: Identifier
 
     /** Note: Consider calling `getEffectiveConstraintOfTypeParameter` */

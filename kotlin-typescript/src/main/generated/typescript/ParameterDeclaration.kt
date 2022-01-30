@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface ParameterDeclaration : NamedDeclaration, JSDocContainer {
+sealed external interface ParameterDeclaration : NamedDeclaration, JSDocContainer, Union.ParameterDeclaration_ {
     override val kind: SyntaxKind.Parameter
     override val parent: SignatureDeclaration
     val dotDotDotToken: DotDotDotToken?

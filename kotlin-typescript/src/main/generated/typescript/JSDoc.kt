@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface JSDoc : Node {
+sealed external interface JSDoc : Node, Union.JSDoc_ {
     override val kind: SyntaxKind.JSDocComment
     override val parent: HasJSDoc
     val tags: NodeArray<JSDocTag>?

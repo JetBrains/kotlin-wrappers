@@ -2,4 +2,4 @@
 
 package typescript
 
-typealias EntityNameOrEntityNameExpression = Any /* EntityName | EntityNameExpression */
+sealed external interface EntityNameOrEntityNameExpression /* EntityName | EntityNameExpression */

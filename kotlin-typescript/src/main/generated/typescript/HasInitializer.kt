@@ -2,4 +2,4 @@
 
 package typescript
 
-typealias HasInitializer = Any /* HasExpressionInitializer | ForStatement | ForInStatement | ForOfStatement | JsxAttribute */
+sealed external interface HasInitializer /* HasExpressionInitializer | ForStatement | ForInStatement | ForOfStatement | JsxAttribute */

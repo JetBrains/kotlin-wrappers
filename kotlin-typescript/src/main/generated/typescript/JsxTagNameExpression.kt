@@ -2,4 +2,4 @@
 
 package typescript
 
-typealias JsxTagNameExpression = LeftHandSideExpression /* Identifier | ThisExpression | JsxTagNamePropertyAccess */
+sealed external interface JsxTagNameExpression : LeftHandSideExpression /* Identifier | ThisExpression | JsxTagNamePropertyAccess */

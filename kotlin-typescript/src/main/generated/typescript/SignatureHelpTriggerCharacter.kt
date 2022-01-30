@@ -2,4 +2,4 @@
 
 package typescript
 
-sealed interface SignatureHelpTriggerCharacter /* "," | "(" | "<" */
+sealed external interface SignatureHelpTriggerCharacter /* "," | "(" | "<" */

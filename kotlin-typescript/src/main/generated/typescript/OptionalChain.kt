@@ -2,4 +2,4 @@
 
 package typescript
 
-typealias OptionalChain = Any /* PropertyAccessChain | ElementAccessChain | CallChain | NonNullChain */
+sealed external interface OptionalChain /* PropertyAccessChain | ElementAccessChain | CallChain | NonNullChain */

@@ -2,6 +2,6 @@
 
 package typescript
 
-sealed external interface BigIntLiteral : LiteralExpression {
+sealed external interface BigIntLiteral : LiteralExpression, Union.BigIntLiteral_ {
     override val kind: SyntaxKind.BigIntLiteral
 }

@@ -2,4 +2,4 @@
 
 package typescript
 
-typealias ForInitializer = Any /* VariableDeclarationList | Expression */
+sealed external interface ForInitializer /* VariableDeclarationList | Expression */

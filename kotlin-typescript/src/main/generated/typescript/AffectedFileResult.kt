@@ -3,7 +3,7 @@
 package typescript
 
 @Suppress("UNUSED_TYPEALIAS_PARAMETER")
-sealed interface AffectedFileResult<T> /* {
+sealed external interface AffectedFileResult<T> /* {
     result: T;
     affected: SourceFile | Program;
 } | undefined */

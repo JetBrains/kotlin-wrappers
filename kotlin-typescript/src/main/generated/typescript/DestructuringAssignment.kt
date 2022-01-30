@@ -2,4 +2,4 @@
 
 package typescript
 
-typealias DestructuringAssignment = Any /* ObjectDestructuringAssignment | ArrayDestructuringAssignment */
+sealed external interface DestructuringAssignment /* ObjectDestructuringAssignment | ArrayDestructuringAssignment */

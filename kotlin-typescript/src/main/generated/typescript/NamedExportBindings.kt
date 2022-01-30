@@ -2,4 +2,4 @@
 
 package typescript
 
-typealias NamedExportBindings = Node /* NamespaceExport | NamedExports */
+sealed external interface NamedExportBindings : Node /* NamespaceExport | NamedExports */

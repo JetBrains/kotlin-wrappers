@@ -6,7 +6,7 @@
 
 package typescript
 
-sealed external interface ThisTypePredicate : TypePredicateBase {
+sealed external interface ThisTypePredicate : TypePredicateBase, Union.ThisTypePredicate_ {
     override var kind: TypePredicateKind.This
     var parameterName: Nothing?
     var parameterIndex: Nothing?

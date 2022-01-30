@@ -2,4 +2,4 @@
 
 package typescript
 
-sealed interface CompletionsTriggerCharacter /* "." | '"' | "'" | "`" | "/" | "@" | "<" | "#" | " " */
+sealed external interface CompletionsTriggerCharacter /* "." | '"' | "'" | "`" | "/" | "@" | "<" | "#" | " " */

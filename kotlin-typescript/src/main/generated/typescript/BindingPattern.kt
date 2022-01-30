@@ -2,4 +2,4 @@
 
 package typescript
 
-typealias BindingPattern = Node /* ObjectBindingPattern | ArrayBindingPattern */
+sealed external interface BindingPattern : Node, Union.BindingPattern_ /* ObjectBindingPattern | ArrayBindingPattern */

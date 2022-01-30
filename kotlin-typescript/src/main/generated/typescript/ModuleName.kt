@@ -2,4 +2,4 @@
 
 package typescript
 
-typealias ModuleName = Any /* Identifier | StringLiteral */
+sealed external interface ModuleName : Union.DeclarationStatement_name /* Identifier | StringLiteral */

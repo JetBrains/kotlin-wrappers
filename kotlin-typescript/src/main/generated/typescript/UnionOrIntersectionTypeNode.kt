@@ -2,4 +2,4 @@
 
 package typescript
 
-typealias UnionOrIntersectionTypeNode = Any /* UnionTypeNode | IntersectionTypeNode */
+sealed external interface UnionOrIntersectionTypeNode /* UnionTypeNode | IntersectionTypeNode */

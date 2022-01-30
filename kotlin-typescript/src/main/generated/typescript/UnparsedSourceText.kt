@@ -2,4 +2,4 @@
 
 package typescript
 
-typealias UnparsedSourceText = Any /* UnparsedPrepend | UnparsedTextLike */
+sealed external interface UnparsedSourceText : Union.UnparsedSourceText_ /* UnparsedPrepend | UnparsedTextLike */

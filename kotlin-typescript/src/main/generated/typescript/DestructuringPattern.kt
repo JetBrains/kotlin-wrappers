@@ -2,4 +2,4 @@
 
 package typescript
 
-typealias DestructuringPattern = Any /* BindingPattern | ObjectLiteralExpression | ArrayLiteralExpression */
+sealed external interface DestructuringPattern /* BindingPattern | ObjectLiteralExpression | ArrayLiteralExpression */

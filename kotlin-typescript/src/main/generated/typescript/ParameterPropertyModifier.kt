@@ -2,4 +2,4 @@
 
 package typescript
 
-typealias ParameterPropertyModifier = Any /* AccessibilityModifier | ReadonlyKeyword */
+sealed external interface ParameterPropertyModifier /* AccessibilityModifier | ReadonlyKeyword */

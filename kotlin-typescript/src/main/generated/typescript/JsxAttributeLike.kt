@@ -2,4 +2,4 @@
 
 package typescript
 
-typealias JsxAttributeLike = ObjectLiteralElement /* JsxAttribute | JsxSpreadAttribute */
+sealed external interface JsxAttributeLike : ObjectLiteralElement, Union.JsxAttributeLike_ /* JsxAttribute | JsxSpreadAttribute */

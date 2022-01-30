@@ -2,4 +2,4 @@
 
 package typescript
 
-typealias AccessExpression = Any /* PropertyAccessExpression | ElementAccessExpression */
+sealed external interface AccessExpression /* PropertyAccessExpression | ElementAccessExpression */

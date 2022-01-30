@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface NamedTupleMember : TypeNode, JSDocContainer, Declaration {
+sealed external interface NamedTupleMember : TypeNode, JSDocContainer, Declaration, Union.NamedTupleMember_ {
     override val kind: SyntaxKind.NamedTupleMember
     val dotDotDotToken: Token<SyntaxKind.DotDotDotToken>?
     val name: Identifier

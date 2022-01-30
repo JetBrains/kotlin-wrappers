@@ -15,5 +15,5 @@ sealed external interface FunctionLikeDeclarationBase : SignatureDeclarationBase
     val asteriskToken: AsteriskToken?
     val questionToken: QuestionToken?
     val exclamationToken: ExclamationToken?
-    val body: dynamic /* Block | Expression */
+    val body: Union.FunctionLikeDeclarationBase_body?
 }

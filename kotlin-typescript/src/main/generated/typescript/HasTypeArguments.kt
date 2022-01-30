@@ -2,4 +2,4 @@
 
 package typescript
 
-typealias HasTypeArguments = Any /* CallExpression | NewExpression | TaggedTemplateExpression | JsxOpeningElement | JsxSelfClosingElement */
+sealed external interface HasTypeArguments /* CallExpression | NewExpression | TaggedTemplateExpression | JsxOpeningElement | JsxSelfClosingElement */

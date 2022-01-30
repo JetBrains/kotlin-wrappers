@@ -10,7 +10,7 @@ package typescript
  * with a normal string (which is good, it cannot be misused on assignment or on usage),
  * while still being comparable with a normal string via === (also good) and castable from a string.
  */
-sealed interface __String /* (string & {
+sealed external interface __String /* (string & {
     __escapedIdentifier: void;
 }) | (void & {
     __escapedIdentifier: void;

@@ -3,4 +3,4 @@
 package typescript
 
 @Suppress("UNUSED_TYPEALIAS_PARAMETER")
-typealias VisitResult<T /* : Node */> = Any /* T | T[] | undefined */
+sealed external interface VisitResult<T /* : Node */> /* T | T[] | undefined */

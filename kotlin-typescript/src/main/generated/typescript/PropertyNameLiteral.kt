@@ -2,4 +2,4 @@
 
 package typescript
 
-typealias PropertyNameLiteral = Any /* Identifier | StringLiteralLike | NumericLiteral */
+sealed external interface PropertyNameLiteral /* Identifier | StringLiteralLike | NumericLiteral */

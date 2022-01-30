@@ -2,9 +2,9 @@
 
 package typescript
 
-sealed external interface JsxAttribute : ObjectLiteralElement {
+sealed external interface JsxAttribute : ObjectLiteralElement, Union.JsxAttribute_ {
     override val kind: SyntaxKind.JsxAttribute
     override val parent: JsxAttributes
     override val name: Identifier
-    val initializer: dynamic /* StringLiteral | JsxExpression */
+    val initializer: Union.JsxAttribute_initializer?
 }

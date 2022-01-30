@@ -2,4 +2,4 @@
 
 package typescript
 
-typealias FlowType = Any /* Type | IncompleteType */
+sealed external interface FlowType /* Type | IncompleteType */

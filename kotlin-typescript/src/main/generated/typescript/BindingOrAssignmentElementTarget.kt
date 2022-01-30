@@ -2,4 +2,4 @@
 
 package typescript
 
-typealias BindingOrAssignmentElementTarget = Any /* BindingOrAssignmentPattern | Identifier | PropertyAccessExpression | ElementAccessExpression | OmittedExpression */
+sealed external interface BindingOrAssignmentElementTarget /* BindingOrAssignmentPattern | Identifier | PropertyAccessExpression | ElementAccessExpression | OmittedExpression */

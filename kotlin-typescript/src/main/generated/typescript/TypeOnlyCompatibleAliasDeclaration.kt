@@ -2,4 +2,4 @@
 
 package typescript
 
-typealias TypeOnlyCompatibleAliasDeclaration = Any /* ImportClause | ImportEqualsDeclaration | NamespaceImport | ImportOrExportSpecifier */
+sealed external interface TypeOnlyCompatibleAliasDeclaration /* ImportClause | ImportEqualsDeclaration | NamespaceImport | ImportOrExportSpecifier */

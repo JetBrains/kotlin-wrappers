@@ -2,4 +2,4 @@
 
 package typescript
 
-typealias CaseOrDefaultClause = Node /* CaseClause | DefaultClause */
+sealed external interface CaseOrDefaultClause : Node, Union.CaseOrDefaultClause_ /* CaseClause | DefaultClause */

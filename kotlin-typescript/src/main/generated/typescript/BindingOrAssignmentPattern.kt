@@ -2,4 +2,4 @@
 
 package typescript
 
-typealias BindingOrAssignmentPattern = Any /* ObjectBindingOrAssignmentPattern | ArrayBindingOrAssignmentPattern */
+sealed external interface BindingOrAssignmentPattern : Union.BindingOrAssignmentPattern_ /* ObjectBindingOrAssignmentPattern | ArrayBindingOrAssignmentPattern */

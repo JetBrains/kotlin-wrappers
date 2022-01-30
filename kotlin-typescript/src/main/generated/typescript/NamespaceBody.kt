@@ -2,4 +2,4 @@
 
 package typescript
 
-typealias NamespaceBody = Any /* ModuleBlock | NamespaceDeclaration */
+sealed external interface NamespaceBody : Union.NamespaceBody_ /* ModuleBlock | NamespaceDeclaration */
