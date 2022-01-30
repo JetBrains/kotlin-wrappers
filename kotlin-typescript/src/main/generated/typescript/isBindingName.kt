@@ -2,7 +2,6 @@
 
 @file:Suppress(
     "CANNOT_CHECK_FOR_EXTERNAL_INTERFACE",
-    "USELESS_IS_CHECK",
 )
 
 package typescript
