@@ -23,7 +23,23 @@ external interface ThemeOptions {
     var unstable_strictMode: Boolean?
 }
 
-external interface Theme {
+external interface BaseTheme {
+    var mixins: Mixins
+
+    var palette: Palette
+
+    var shadows: dynamic
+
+    var transitions: Transitions
+
+    var typography: dynamic
+
+    var zIndex: ZIndex
+
+    var unstable_strictMode: Boolean?
+}
+
+external interface Theme : BaseTheme {
     var components: dynamic
 }
 
