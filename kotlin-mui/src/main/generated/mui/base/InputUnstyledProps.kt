@@ -5,7 +5,7 @@ package mui.base
 external interface InputUnstyledProps :
     react.dom.html.HTMLAttributes<org.w3c.dom.HTMLDivElement>
 
-external interface InputOwnerState {
+external interface InputOwnerState : InputUnstyledProps {
     var formControl: dynamic
 
     var focused: Boolean

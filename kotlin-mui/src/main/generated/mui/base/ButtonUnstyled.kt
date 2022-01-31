@@ -5,7 +5,7 @@
 
 package mui.base
 
-external interface ButtonUnstyledOwnerState {
+external interface ButtonUnstyledOwnerState : mui.base.ButtonUnstyledOwnProps {
     var focusVisible: Boolean
 
     var active: Boolean
