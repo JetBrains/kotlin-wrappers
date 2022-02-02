@@ -10,6 +10,10 @@ external interface UseMediaQueryOptions {
 
     var matchMedia: ((query: String) -> org.w3c.dom.MediaQueryList)?
 
+    /**
+     * This option is kept for backwards compatibility and has no longer any effect.
+     * It's previous behavior is now handled automatically.
+     */
     var noSsr: Boolean?
 
     var ssrMatchMedia: ((query: String) -> dynamic)?
