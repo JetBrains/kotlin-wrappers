@@ -150,6 +150,12 @@ external interface AutocompleteProps<T> :
     var popupIcon: react.ReactNode?
 
     /**
+     * If `true`, the component becomes readonly. It is also supported for multiple tags where the tag cannot be deleted.
+     * @default false
+     */
+    var readOnly: Boolean?
+
+    /**
      * Render the group.
      *
      * @param {AutocompleteRenderGroupParams} params The group to render.

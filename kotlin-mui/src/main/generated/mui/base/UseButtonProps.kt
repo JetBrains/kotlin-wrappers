@@ -26,8 +26,6 @@ external interface UseButtonProps : react.Props {
 
     var href: String?
 
-    var onClick: react.dom.events.MouseEventHandler<*>?
-
     var onFocusVisible: react.dom.events.FocusEventHandler<*>?
 
     var tabIndex: Int?

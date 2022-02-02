@@ -115,7 +115,7 @@ external interface MultiSelectTreeViewProps :
      * If true `ctrl` and `shift` will trigger multiselect.
      * @default false
      */
-    var multiSelect: dynamic
+    var multiSelect: Boolean? /* true */
 
     /**
      * Callback fired when tree items are selected/unselected.
@@ -146,7 +146,7 @@ external interface SingleSelectTreeViewProps :
      * If true `ctrl` and `shift` will trigger multiselect.
      * @default false
      */
-    var multiSelect: dynamic
+    var multiSelect: Boolean? /* false */
 
     /**
      * Callback fired when tree items are selected/unselected.

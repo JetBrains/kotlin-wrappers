@@ -20,4 +20,7 @@ external interface FormControlLabelClasses {
 
     /** Styles applied to the label's Typography component. */
     var label: String
+
+    /** State class applied to the root element if `error={true}`. */
+    var error: String
 }
