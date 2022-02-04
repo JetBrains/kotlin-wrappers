@@ -14,6 +14,7 @@ kotlin {
     iosArm32("iosArm32")
     iosArm64("iosArm64")
     iosX64("iosX64")
+    iosSimulatorArm64()
 
     sourceSets {
         val commonTest by getting {
