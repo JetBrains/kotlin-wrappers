@@ -5,5 +5,7 @@ plugins {
 }
 
 dependencies {
+    api(project(":kotlin-extensions"))
+
     api(devNpmv("@types/webrtc"))
 }
