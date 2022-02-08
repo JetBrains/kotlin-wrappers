@@ -12,6 +12,7 @@ dependencies {
         api(project(":kotlin-history"))
         api(project(":kotlin-mui"))
         api(project(":kotlin-mui-icons"))
+        api(project(":kotlin-node"))
         api(project(":kotlin-popper"))
         api(project(":kotlin-react"))
         api(project(":kotlin-react-core"))

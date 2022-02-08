@@ -20,6 +20,7 @@ private val TARGET_ALIASES = mapOf(
 
     "@jetbrains/ring-ui" to "ring-ui",
 
+    "@types/node" to "node",
     "@types/webrtc" to "webrtc",
 )
 
