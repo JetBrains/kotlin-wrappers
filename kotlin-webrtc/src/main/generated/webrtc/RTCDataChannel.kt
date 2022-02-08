@@ -3,26 +3,27 @@
 package webrtc
 
 external class RTCDataChannel : org.w3c.dom.events.EventTarget {
-/*
-    readonly label: string;
-    readonly ordered: boolean;
-    readonly maxPacketLifeTime: number | null;
-    readonly maxRetransmits: number | null;
-    readonly protocol: string;
-    readonly negotiated: boolean;
-    readonly id: number | null;
-    readonly readyState: RTCDataChannelState;
-    readonly bufferedAmount: number;
-    bufferedAmountLowThreshold: number;
+    val label: String
+    val ordered: Boolean
+    val maxPacketLifeTime: Number?
+    val maxRetransmits: Number?
+    val protocol: String
+    val negotiated: Boolean
+    val id: Number?
+    val readyState: RTCDataChannelState
+    val bufferedAmount: Number
+    var bufferedAmountLowThreshold: Number
+
     // binaryType: string;
+    fun close()
+    fun send(data: String)
+    fun send(data: org.w3c.files.Blob)
+    fun send(data: org.khronos.webgl.ArrayBuffer)
+    fun send(data: org.khronos.webgl.ArrayBufferView)
+    var onopen: DataChannelEventHandler<org.w3c.dom.events.Event>
+    var onmessage: DataChannelEventHandler<org.w3c.dom.MessageEvent>
+    var onbufferedamountlow: DataChannelEventHandler<org.w3c.dom.events.Event>
 
-    close(): void;
-    send(data: string | Blob | ArrayBuffer | ArrayBufferView): void;
-
-    onopen: DataChannelEventHandler<Event>;
-    onmessage: DataChannelEventHandler<MessageEvent>;
-    onbufferedamountlow: DataChannelEventHandler<Event>;
     // onerror: DataChannelEventHandler<RTCErrorEvent>;
-    onclose: DataChannelEventHandler<Event>;
-*/
+    var onclose: DataChannelEventHandler<org.w3c.dom.events.Event>
 }
