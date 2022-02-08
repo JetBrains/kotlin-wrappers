@@ -42,6 +42,9 @@ include("kotlin-mui")
 // Kotlin/JS: Material UI Icons wrappers
 include("kotlin-mui-icons")
 
+// Kotlin/JS: Node.js wrappers
+include("kotlin-node")
+
 // Kotlin/JS: Popper wrappers
 include("kotlin-popper")
 
