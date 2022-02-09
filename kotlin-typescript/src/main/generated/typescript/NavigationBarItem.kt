@@ -2,6 +2,8 @@
 
 package typescript
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * Navigation bar interface designed for visual studio's dual-column layout.
  * This does not form a proper tree.

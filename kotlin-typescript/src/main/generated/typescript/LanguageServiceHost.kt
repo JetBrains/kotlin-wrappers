@@ -2,6 +2,8 @@
 
 package typescript
 
+import kotlinx.js.ReadonlyArray
+
 sealed external interface LanguageServiceHost : GetEffectiveTypeRootsHost {
     fun getCompilationSettings(): CompilerOptions
     val getNewLine: (() -> String)?

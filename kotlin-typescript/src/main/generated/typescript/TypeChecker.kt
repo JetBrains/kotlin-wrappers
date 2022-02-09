@@ -2,6 +2,8 @@
 
 package typescript
 
+import kotlinx.js.ReadonlyArray
+
 sealed external interface TypeChecker {
     fun getTypeOfSymbolAtLocation(
         symbol: Symbol,

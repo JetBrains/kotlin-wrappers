@@ -2,6 +2,8 @@
 
 package typescript
 
+import kotlinx.js.ReadonlyArray
+
 sealed external interface TransformationContext : CoreTransformationContext {
     /** Records a request for a non-scoped emit helper in the current context. */
     fun requestEmitHelper(helper: EmitHelper)

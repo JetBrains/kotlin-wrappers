@@ -2,6 +2,8 @@
 
 package typescript
 
+import kotlinx.js.ReadonlyArray
+
 sealed external interface ProgramHost<T : BuilderProgram> {
     /**
      * Used to create the program when need for program creation or recreation detected

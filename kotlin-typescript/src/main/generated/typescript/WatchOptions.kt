@@ -2,6 +2,8 @@
 
 package typescript
 
+import kotlinx.js.ReadonlyArray
+
 sealed external interface WatchOptions {
     var watchFile: WatchFileKind?
     var watchDirectory: WatchDirectoryKind?

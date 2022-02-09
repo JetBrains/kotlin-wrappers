@@ -2,6 +2,8 @@
 
 package typescript
 
+import kotlinx.js.ReadonlyArray
+
 sealed external interface NodeVisitor {
     fun <T : Node> /* native */ invoke(
         nodes: T,

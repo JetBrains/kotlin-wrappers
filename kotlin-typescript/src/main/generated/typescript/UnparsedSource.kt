@@ -2,6 +2,8 @@
 
 package typescript
 
+import kotlinx.js.ReadonlyArray
+
 sealed external interface UnparsedSource : Node {
     override val kind: SyntaxKind.UnparsedSource
     var fileName: String

@@ -2,6 +2,8 @@
 
 package typescript
 
+import kotlinx.js.ReadonlyArray
+
 sealed external interface NodeFactory {
     fun <T : Node> createNodeArray(
         elements: ReadonlyArray<T> = definedExternally,

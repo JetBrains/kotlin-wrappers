@@ -2,6 +2,8 @@
 
 package typescript
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * Represents a single signature to show in signature help.
  * The id is used for subsequent calls into the language service to ask questions about the

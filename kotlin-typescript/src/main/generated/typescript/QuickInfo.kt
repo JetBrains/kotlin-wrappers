@@ -2,6 +2,8 @@
 
 package typescript
 
+import kotlinx.js.ReadonlyArray
+
 sealed external interface QuickInfo {
     var kind: ScriptElementKind
     var kindModifiers: String

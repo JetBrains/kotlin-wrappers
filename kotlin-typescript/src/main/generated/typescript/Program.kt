@@ -2,6 +2,8 @@
 
 package typescript
 
+import kotlinx.js.ReadonlyArray
+
 sealed external interface Program : ScriptReferenceHost {
     override fun getCurrentDirectory(): String
 

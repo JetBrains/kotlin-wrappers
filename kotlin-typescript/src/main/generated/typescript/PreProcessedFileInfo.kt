@@ -2,6 +2,8 @@
 
 package typescript
 
+import kotlinx.js.ReadonlyArray
+
 sealed external interface PreProcessedFileInfo {
     var referencedFiles: ReadonlyArray<FileReference>
     var typeReferenceDirectives: ReadonlyArray<FileReference>

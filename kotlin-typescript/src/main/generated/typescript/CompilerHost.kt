@@ -2,6 +2,8 @@
 
 package typescript
 
+import kotlinx.js.ReadonlyArray
+
 sealed external interface CompilerHost : ModuleResolutionHost {
     fun getSourceFile(
         fileName: String,

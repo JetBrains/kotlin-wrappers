@@ -2,6 +2,8 @@
 
 package typescript
 
+import kotlinx.js.ReadonlyArray
+
 sealed external interface Type : Union.Type_ {
     var flags: TypeFlags
     var symbol: Symbol

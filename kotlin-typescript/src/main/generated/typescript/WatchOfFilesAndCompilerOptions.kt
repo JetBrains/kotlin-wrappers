@@ -2,6 +2,8 @@
 
 package typescript
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * Creates the watch that generates program using the root files and compiler options
  */

@@ -2,6 +2,8 @@
 
 package typescript
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * Type references (ObjectFlags.Reference). When a class or interface has type parameters or
  * a "this" type, references to the class or interface are made using type references. The

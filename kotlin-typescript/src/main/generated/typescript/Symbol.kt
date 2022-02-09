@@ -2,6 +2,8 @@
 
 package typescript
 
+import kotlinx.js.ReadonlyArray
+
 sealed external interface Symbol {
     var flags: SymbolFlags
     var escapedName: __String

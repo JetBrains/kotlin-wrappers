@@ -2,6 +2,8 @@
 
 package typescript
 
+import kotlinx.js.ReadonlyArray
+
 sealed external interface ModuleResolutionHost {
     fun fileExists(fileName: String): Boolean
     fun readFile(fileName: String): String?

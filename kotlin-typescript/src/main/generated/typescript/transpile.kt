@@ -5,6 +5,8 @@
 
 package typescript
 
+import kotlinx.js.ReadonlyArray
+
 external fun transpile(
     input: String,
     compilerOptions: CompilerOptions = definedExternally,

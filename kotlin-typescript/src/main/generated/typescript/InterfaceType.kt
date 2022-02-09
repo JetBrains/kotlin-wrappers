@@ -2,6 +2,8 @@
 
 package typescript
 
+import kotlinx.js.ReadonlyArray
+
 /** Class and interface types (ObjectFlags.Class and ObjectFlags.Interface). */
 sealed external interface InterfaceType : ObjectType {
     var typeParameters: ReadonlyArray<TypeParameter>?

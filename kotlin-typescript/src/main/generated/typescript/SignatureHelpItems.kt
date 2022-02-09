@@ -2,6 +2,8 @@
 
 package typescript
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * Represents a set of signature help items, and the preferred item that should be selected.
  */

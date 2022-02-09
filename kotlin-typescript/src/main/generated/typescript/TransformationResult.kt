@@ -2,6 +2,8 @@
 
 package typescript
 
+import kotlinx.js.ReadonlyArray
+
 sealed external interface TransformationResult<T : Node> {
     /** Gets the transformed source files. */
     var transformed: ReadonlyArray<T>

@@ -11,5 +11,7 @@ kotlin {
 }
 
 dependencies {
+    api(project(":kotlin-extensions"))
+
     api(npmv("typescript"))
 }

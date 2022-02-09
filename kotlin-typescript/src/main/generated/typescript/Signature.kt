@@ -2,6 +2,8 @@
 
 package typescript
 
+import kotlinx.js.ReadonlyArray
+
 sealed external interface Signature {
     var declaration: Union.Signature_declaration?
     var typeParameters: ReadonlyArray<TypeParameter>?
