@@ -5,6 +5,8 @@
 
 package typescript
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * Transform one or more nodes using the supplied transformers.
  * @param source A single `Node` or an array of `Node` objects.

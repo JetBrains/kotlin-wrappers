@@ -5,6 +5,8 @@
 
 package typescript
 
+import kotlinx.js.ReadonlyArray
+
 external fun getLeadingCommentRanges(
     text: String,
     pos: Int,

@@ -5,6 +5,8 @@
 
 package typescript
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * Gets the JSDoc parameter tags for the node if present.
  *

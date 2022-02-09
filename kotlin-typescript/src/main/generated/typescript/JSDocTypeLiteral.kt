@@ -2,6 +2,8 @@
 
 package typescript
 
+import kotlinx.js.ReadonlyArray
+
 sealed external interface JSDocTypeLiteral : JSDocType, Union.JSDocTypeLiteral_ {
     override val kind: SyntaxKind.JSDocTypeLiteral
     val jsDocPropertyTags: ReadonlyArray<JSDocPropertyLikeTag>?

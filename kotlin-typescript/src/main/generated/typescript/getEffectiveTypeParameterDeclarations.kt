@@ -5,6 +5,8 @@
 
 package typescript
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * Gets the effective type parameters. If the node was parsed in a
  * JavaScript file, gets the type parameters from the `@template` tag from JSDoc.

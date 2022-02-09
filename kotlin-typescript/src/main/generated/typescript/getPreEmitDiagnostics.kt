@@ -5,6 +5,8 @@
 
 package typescript
 
+import kotlinx.js.ReadonlyArray
+
 external fun getPreEmitDiagnostics(
     program: Program,
     sourceFile: SourceFile = definedExternally,

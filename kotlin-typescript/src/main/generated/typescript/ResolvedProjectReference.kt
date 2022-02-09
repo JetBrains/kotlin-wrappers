@@ -2,6 +2,8 @@
 
 package typescript
 
+import kotlinx.js.ReadonlyArray
+
 sealed external interface ResolvedProjectReference {
     var commandLine: ParsedCommandLine
     var sourceFile: SourceFile

@@ -2,6 +2,8 @@
 
 package typescript
 
+import kotlinx.js.ReadonlyArray
+
 sealed external interface System {
     var args: ReadonlyArray<String>
     var newLine: String

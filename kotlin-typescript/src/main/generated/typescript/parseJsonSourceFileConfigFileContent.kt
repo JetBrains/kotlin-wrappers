@@ -5,6 +5,8 @@
 
 package typescript
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * Parse the contents of a config file (tsconfig.json).
  * @param jsonNode The contents of the config file to parse

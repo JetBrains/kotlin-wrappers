@@ -5,6 +5,8 @@
 
 package typescript
 
+import kotlinx.js.ReadonlyArray
+
 external fun getEffectiveTypeRoots(
     options: CompilerOptions,
     host: GetEffectiveTypeRootsHost,

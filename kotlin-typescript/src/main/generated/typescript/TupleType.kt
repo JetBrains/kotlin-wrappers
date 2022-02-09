@@ -2,6 +2,8 @@
 
 package typescript
 
+import kotlinx.js.ReadonlyArray
+
 sealed external interface TupleType : GenericType {
     var elementFlags: ReadonlyArray<ElementFlags>
     var minLength: Int

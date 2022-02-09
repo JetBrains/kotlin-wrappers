@@ -2,6 +2,8 @@
 
 package typescript
 
+import kotlinx.js.ReadonlyArray
+
 sealed external interface SourceFile : Declaration, Union.SourceFile_ {
     override val kind: SyntaxKind.SourceFile
     val statements: NodeArray<Statement>

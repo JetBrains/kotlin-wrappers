@@ -5,6 +5,8 @@
 
 package typescript
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * Add EmitHelpers to a node.
  */

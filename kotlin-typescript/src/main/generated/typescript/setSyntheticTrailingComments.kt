@@ -5,6 +5,8 @@
 
 package typescript
 
+import kotlinx.js.ReadonlyArray
+
 external fun <T : Node> setSyntheticTrailingComments(
     node: T,
     comments: ReadonlyArray<SynthesizedComment>?,

@@ -2,6 +2,8 @@
 
 package typescript
 
+import kotlinx.js.ReadonlyArray
+
 sealed external interface EmitHelperBase {
     val name: String
     val scoped: Boolean

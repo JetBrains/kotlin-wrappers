@@ -2,6 +2,8 @@
 
 package typescript
 
+import kotlinx.js.ReadonlyArray
+
 sealed external interface BuildInvalidedProject<T : BuilderProgram> : InvalidatedProjectBase {
     override val kind: InvalidatedProjectKind.Build
     fun getBuilderProgram(): T?

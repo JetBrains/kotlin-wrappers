@@ -2,6 +2,8 @@
 
 package typescript
 
+import kotlinx.js.ReadonlyArray
+
 sealed external interface CreateProgramOptions {
     var rootNames: ReadonlyArray<String>
     var options: CompilerOptions

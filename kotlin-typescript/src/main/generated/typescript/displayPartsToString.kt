@@ -5,4 +5,6 @@
 
 package typescript
 
+import kotlinx.js.ReadonlyArray
+
 external fun displayPartsToString(displayParts: ReadonlyArray<SymbolDisplayPart>?): String

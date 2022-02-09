@@ -2,6 +2,8 @@
 
 package typescript
 
+import kotlinx.js.ReadonlyArray
+
 sealed external interface Node : ReadonlyTextRange {
     val kind: SyntaxKind
     val flags: NodeFlags

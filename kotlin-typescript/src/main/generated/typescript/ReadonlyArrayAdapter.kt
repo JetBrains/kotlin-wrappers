@@ -2,6 +2,8 @@
 
 package typescript
 
+import kotlinx.js.ReadonlyArray
+
 sealed external interface ReadonlyArrayAdapter<out T>
 
 inline fun <T> ReadonlyArrayAdapter<T>.asArray(): ReadonlyArray<T> =

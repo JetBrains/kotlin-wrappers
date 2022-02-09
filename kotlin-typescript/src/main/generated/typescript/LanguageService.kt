@@ -2,6 +2,8 @@
 
 package typescript
 
+import kotlinx.js.ReadonlyArray
+
 sealed external interface LanguageService {
     /** This is used as a part of restarting the language service. */
     fun cleanupSemanticCache()

@@ -5,6 +5,8 @@
 
 package typescript
 
+import kotlinx.js.ReadonlyArray
+
 external fun parseCommandLine(
     commandLine: ReadonlyArray<String>,
     readFile: (path: String) -> String? = definedExternally,

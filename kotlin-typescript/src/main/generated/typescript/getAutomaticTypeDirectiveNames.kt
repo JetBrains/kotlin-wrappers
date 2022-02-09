@@ -5,6 +5,8 @@
 
 package typescript
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * Given a set of options, returns the set of type directive names
  *   that should be included for this program automatically.

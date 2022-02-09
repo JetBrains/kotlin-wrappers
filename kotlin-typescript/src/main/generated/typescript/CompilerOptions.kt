@@ -2,6 +2,8 @@
 
 package typescript
 
+import kotlinx.js.ReadonlyArray
+
 sealed external interface CompilerOptions {
     var allowJs: Boolean?
     var allowSyntheticDefaultImports: Boolean?

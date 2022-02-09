@@ -5,6 +5,8 @@
 
 package typescript
 
+import kotlinx.js.ReadonlyArray
+
 external fun <T : BuilderProgram> createSolutionBuilder(
     host: SolutionBuilderHost<T>,
     rootNames: ReadonlyArray<String>,

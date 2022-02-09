@@ -2,6 +2,8 @@
 
 package typescript
 
+import kotlinx.js.ReadonlyArray
+
 typealias WriteFileCallback = (
     fileName: String,
     data: String,
