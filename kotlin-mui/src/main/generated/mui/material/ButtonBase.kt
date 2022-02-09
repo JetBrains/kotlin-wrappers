@@ -94,6 +94,11 @@ external interface ButtonBaseProps :
      * Props applied to the `TouchRipple` element.
      */
     var TouchRippleProps: dynamic
+
+    /**
+     * A ref that points to the `TouchRippple` element.
+     */
+    var touchRippleRef: react.Ref<TouchRippleActions>?
 }
 
 external interface ButtonBaseActions {

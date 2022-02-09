@@ -44,6 +44,7 @@ external interface BadgeUnstyledProps :
 
     /**
      * If `true`, the badge is invisible.
+     * @default false
      */
     var invisible: Boolean?
 

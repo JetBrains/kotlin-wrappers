@@ -20,6 +20,12 @@ external interface AvatarGroupProps :
     var classes: AvatarGroupClasses?
 
     /**
+     * The props used for each slot inside the AvatarGroup.
+     * @default {}
+     */
+    var componentsProps: dynamic
+
+    /**
      * Max avatars to show before +x.
      * @default 5
      */
