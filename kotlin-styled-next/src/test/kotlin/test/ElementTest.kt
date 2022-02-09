@@ -4,7 +4,6 @@ import TestScope
 import kotlinx.css.*
 import kotlinx.css.properties.*
 import kotlinx.html.classes
-import org.w3c.dom.css.get
 import org.w3c.dom.get
 import react.Props
 import react.dom.attrs
@@ -76,7 +75,7 @@ class ElementTest : TestBase() {
         assertEquals(firstColor.toString(), element.getStyle().backgroundColor)
         val rule = getRules()[0]
         assertNotNull(rule)
-        assertTrue(rule.cssText.contains("${element.className}:first-child:first-child"))
+        assertTrue(rule.contains("${element.className}:first-child:first-child"))
     }
 
     @Test
@@ -86,10 +85,10 @@ class ElementTest : TestBase() {
                 addRotation()
             }
         }
-        val rules = getStylesheet().cssRules
+        val rules = getRules()
         assertEquals(1, sheet.scheduledGroups.size)
         assertEquals(2, sheet.scheduledGroups.values.first().toList().size)
-        assertEquals(0, rules.length)
+        assertEquals(0, rules.size)
     }
 
     /**
@@ -120,9 +119,9 @@ class ElementTest : TestBase() {
         }
         val firstElement = clearAndInject(first)
         val secondElement = inject(second)
-        val rules = getStylesheet().cssRules
+        val rules = getRules()
         assertEquals(firstElement.className, secondElement.className)
-        assertEquals(1, rules.length)
+        assertEquals(1, rules.size)
     }
 
     /**
@@ -245,12 +244,11 @@ class ElementTest : TestBase() {
             }
         }
         val classname = clearAndInject(styledComponent).className
-        val rules = getStylesheet().cssRules
-        val keyframeIdx = (0 until rules.length).first { i ->
-            val rule = rules[i]
-            rule != null && rule.cssText.contains("@keyframes")
+        val rules = getRules()
+        val keyframeIdx = rules.indexOfFirst {
+            it.contains("@keyframes")
         }
-        val keyframeName = rules[keyframeIdx]!!.cssText.substringAfter("@keyframes ").substringBefore("{").trim()
+        val keyframeName = rules[keyframeIdx].substringAfter("@keyframes ").substringBefore("{").trim()
         assertCssInjected(
             classname,
             "animation" to "5s linear 3s infinite reverse forwards running $keyframeName",
@@ -326,7 +324,7 @@ class ElementTest : TestBase() {
     }
 
     private fun TestScope.assertRulesContain(substring: String) {
-        val rule = getRules().find { it.cssText.contains(substring) }
+        val rule = getRules().find { it.contains(substring) }
         assertNotNull(rule)
     }
 
@@ -373,11 +371,11 @@ class ElementTest : TestBase() {
         }
         val element = clearAndInject(styledComponent)
         val linearClassName = ".${element.className}".repeat(3)
-        val linearCss = getRules().find { it.cssText.contains(linearClassName) }
+        val linearCss = getRules().find { it.contains(linearClassName) }
         assertNotNull(linearCss)
 
         val exponentialClassName = ".${element.className}".repeat(4)
-        val exponentialCss = getRules().find { it.cssText.contains(exponentialClassName) }
+        val exponentialCss = getRules().find { it.contains(exponentialClassName) }
         assertNull(exponentialCss)
 
         assertCssInjected(linearClassName, "color" to thirdColor.toString())

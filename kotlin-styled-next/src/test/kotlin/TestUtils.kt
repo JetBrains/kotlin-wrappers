@@ -6,9 +6,7 @@ import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.promise
 import kotlinx.css.CssBuilder
 import kotlinx.dom.clear
-import org.w3c.dom.Element
-import org.w3c.dom.HTMLElement
-import org.w3c.dom.HTMLStyleElement
+import org.w3c.dom.*
 import org.w3c.dom.css.*
 import react.ComponentType
 import react.Props
@@ -58,13 +56,15 @@ class TestScope : CoroutineScope by testScope {
         }
     }
 
-    fun getStylesheet(): CSSStyleSheet {
-        val styles = document.getElementById(styleId) as HTMLStyleElement
-        return styles.sheet as CSSStyleSheet
+    fun getStylesheets(): List<CSSStyleSheet> {
+        val elements = document.querySelectorAll(styleElementsSelector(styleId)).asList()
+        return elements.map { it.unsafeCast<HTMLStyleElement>().sheet.unsafeCast<CSSStyleSheet>() }
     }
 
-    fun getRules(): CSSRuleList {
-        return getStylesheet().cssRules
+    fun getRules(): List<String> {
+        return getStylesheets().flatMap { sheet ->
+            sheet.cssRules.asList().map { it.cssText }
+        }
     }
 
     fun Element.getStyle(pseudoElt: String? = null): CSSStyleDeclaration {
@@ -79,24 +79,7 @@ class TestScope : CoroutineScope by testScope {
         return getStyle(pseudoElt).alignContent
     }
 
-    fun CSSRuleList.forEach(block: (rule: CSSRule) -> Unit) {
-        for (i in 0 until this.length) {
-            val value = this[i]
-            assertNotNull(value)
-            block(value)
-        }
-    }
-
-    fun CSSRuleList.find(predicate: (rule: CSSRule) -> Boolean): CSSRule? {
-        for (i in 0 until this.length) {
-            val value = this[i]
-            assertNotNull(value)
-            if (predicate(value)) {
-                return value
-            }
-        }
-        return null
-    }
+    fun CSSRuleList.forEach(block: (rule: CSSRule) -> Unit) = asList().forEach(block)
 
     fun assertChildrenCount(n: Int) {
         assertEquals(n, getRoot().childElementCount)
@@ -109,9 +92,6 @@ class TestScope : CoroutineScope by testScope {
     }
 
     fun clearStyles() {
-        sheet.sheet.clear()
-        (GlobalStyles.importSheet as CSSOMPersistentSheet).sheet.clear()
-
         GlobalStyles.sheet.clear()
         GlobalStyles.importSheet.clear()
 

@@ -8,7 +8,6 @@ import kotlinx.css.properties.rotate
 import kotlinx.css.properties.transform
 import org.w3c.dom.Element
 import org.w3c.dom.HTMLInputElement
-import org.w3c.dom.css.CSSRuleList
 import org.w3c.dom.get
 import runTest
 import kotlin.test.*
@@ -31,13 +30,12 @@ open class TestBase {
     protected fun TestScope.assertCssInjected(
         selector: String,
         strings: Iterable<String>,
-        rules: CSSRuleList = getRules(),
+        rules: List<String> = getRules(),
     ) {
         val checkedCss = StringBuilder()
-        for (i in 0 until rules.length) {
-            val css = rules.item(i)?.cssText
+        for (css in rules) {
             checkedCss.appendLine(css)
-            if (css == null || selector !in css)
+            if (selector !in css)
                 continue
             css.let {
                 strings.forEach {

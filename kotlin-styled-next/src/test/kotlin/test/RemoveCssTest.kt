@@ -63,10 +63,10 @@ class RemoveCssTest : TestBase() {
             }
         }
         clearAndInject(styledComponent)
-        assertEquals(1, getRules().length)
+        assertEquals(1, getRules().size)
         clear()
 
-        assertEquals(0, getRules().length)
+        assertEquals(0, getRules().size)
     }
 
     @Test
@@ -77,10 +77,10 @@ class RemoveCssTest : TestBase() {
             styledSpan { css { paddingLeft = 0.px } }
         }
         clearAndInject(styledComponent)
-        assertEquals(3, getRules().length)
+        assertEquals(3, getRules().size)
         clear()
 
-        assertEquals(0, getRules().length)
+        assertEquals(0, getRules().size)
     }
 
     @Test
@@ -99,7 +99,7 @@ class RemoveCssTest : TestBase() {
         assertEquals(firstColor.toString(), element2.color())
         clear()
 
-        assertEquals(1, getRules().length)
+        assertEquals(1, getRules().size)
         assertEquals(firstColor.toString(), element2.color())
     }
 
@@ -117,14 +117,14 @@ class RemoveCssTest : TestBase() {
         }
         clearAndInject(styledComponent)
         injectAdditional(styledComponent2)
-        assertEquals(5, getRules().length)
+        assertEquals(5, getRules().size)
         injectAdditional(styledComponent, thirdRoot)
         clear()
-        assertEquals(5, getRules().length)
+        assertEquals(5, getRules().size)
         unmount(thirdRoot)
-        assertEquals(2, getRules().length)
+        assertEquals(2, getRules().size)
         unmount(secondRoot)
-        assertEquals(0, getRules().length)
+        assertEquals(0, getRules().size)
     }
 
     @Test
@@ -143,15 +143,15 @@ class RemoveCssTest : TestBase() {
         injectAdditional(styledComponent2)
 
         clear()
-        assertEquals(2, getRules().length)
+        assertEquals(2, getRules().size)
         clearAndInject(styledComponent)
-        assertEquals(5, getRules().length)
+        assertEquals(5, getRules().size)
         unmount(secondRoot)
-        assertEquals(4, getRules().length)
+        assertEquals(4, getRules().size)
         clear()
-        assertEquals(0, getRules().length)
+        assertEquals(0, getRules().size)
         injectAdditional(styledComponent2)
-        assertEquals(2, getRules().length)
+        assertEquals(2, getRules().size)
     }
 
     @Test
@@ -168,11 +168,11 @@ class RemoveCssTest : TestBase() {
         }
         clearAndInject(styledComponent)
         injectAdditional(styledComponent2)
-        assertEquals(5, getRules().length)
+        assertEquals(5, getRules().size)
 
         clear()
 
-        assertEquals(2, getRules().length)
+        assertEquals(2, getRules().size)
         assertEquals(firstColor.toString(), secondRoot.childAt(0).color())
         assertEquals(thirdColor.toString(), secondRoot.childAt(1).color())
     }
@@ -190,10 +190,10 @@ class RemoveCssTest : TestBase() {
             }
         }
         clearAndInject(styledComponent)
-        assertEquals(2, getRules().length)
+        assertEquals(2, getRules().size)
 
         clear()
-        assertEquals(0, getRules().length)
+        assertEquals(0, getRules().size)
     }
 
     @Test
@@ -204,11 +204,11 @@ class RemoveCssTest : TestBase() {
             }
         }
         clearAndInject(styledComponent)
-        assertEquals(3, getRules().length)
+        assertEquals(3, getRules().size)
 
         clear()
         // 2 rules remaining are keyframes, which we do not remove
-        assertEquals(2, getRules().length)
+        assertEquals(2, getRules().size)
     }
 
     @Test
@@ -220,11 +220,11 @@ class RemoveCssTest : TestBase() {
             }
         }
         clearAndInject(styledComponent)
-        assertEquals(3, getRules().length)
+        assertEquals(3, getRules().size)
 
         clear()
         // 2 rules remaining are keyframes, which we do not remove
-        assertEquals(2, getRules().length)
+        assertEquals(2, getRules().size)
     }
 
     @Test
@@ -237,7 +237,7 @@ class RemoveCssTest : TestBase() {
         }
         clearAndInject(styledComponent)
         clearAndInject(styledComponent)
-        assertEquals(3, getRules().length)
+        assertEquals(3, getRules().size)
     }
 
     @Test
@@ -246,9 +246,9 @@ class RemoveCssTest : TestBase() {
             styledDiv { css { +staticStyleSheet.property1 } }
         }
         clearAndInject(styledComponent)
-        assertEquals(1, getRules().length)
+        assertEquals(1, getRules().size)
         removeInjectedStyleSheet()
-        assertEquals(0, getRules().length)
+        assertEquals(0, getRules().size)
     }
 
     @Test
@@ -257,9 +257,11 @@ class RemoveCssTest : TestBase() {
             styledDiv { css { +staticStyleSheet.property1 } }
         }
         clearAndInject(styledComponent)
-        assertEquals(1, getRules().length)
+        assertEquals(1, getRules().size)
+        println("hi1")
         removeInjectedStyleSheet()
-        assertEquals(0, getRules().length)
+        println("hi2")
+        assertEquals(0, getRules().size)
 
         val styledComponent2 = fc<Props> {
             styledDiv {
@@ -269,10 +271,13 @@ class RemoveCssTest : TestBase() {
                 }
             }
         }
+        println("hi3")
         clearAndInject(styledComponent)
+        println("hi4")
         injectAdditional(styledComponent2)
-        assertEquals(2, getRules().length)
+        println("hi5")
+        assertEquals(2, getRules().size)
         removeInjectedStyleSheet()
-        assertEquals(0, getRules().length)
+        assertEquals(0, getRules().size)
     }
 }
