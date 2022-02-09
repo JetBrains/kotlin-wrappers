@@ -44,7 +44,8 @@ val printBenchmarkResults by tasks.registering {
             "ConvertToStyled",
             "CssBuildersInject",
             "AddDuplicateCss",
-            "DataTypeOperations"
+            "DataTypeOperations",
+            "InjectCssNPlusOne"
         )
         fileNames.forEach { test ->
             val report = buildDir.resolve("reports/tests/test/classes/benchmark.$test.html").readText()

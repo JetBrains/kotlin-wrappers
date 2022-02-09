@@ -3,7 +3,7 @@ package test
 import kotlinx.browser.document
 import kotlinx.css.*
 import org.w3c.dom.HTMLStyleElement
-import org.w3c.dom.css.CSSRuleList
+import org.w3c.dom.asList
 import org.w3c.dom.css.CSSStyleSheet
 import react.Props
 import react.fc
@@ -11,6 +11,7 @@ import runTest
 import styleSheets.*
 import styled.*
 import styled.sheets.importStyleId
+import styled.sheets.styleElementsSelector
 import kotlin.test.BeforeTest
 import kotlin.test.Test
 import kotlin.test.assertContains
@@ -24,9 +25,12 @@ class StyleSheetTest : TestBase() {
     private lateinit var importUrlSheet: StyleSheet
     private lateinit var importFileSheet: StyleSheet
 
-    private fun getImportRules(): CSSRuleList {
-        val styles = document.getElementById(importStyleId) as HTMLStyleElement
-        return (styles.sheet as CSSStyleSheet).cssRules
+    private fun getImportRules(): List<String> {
+        return document.querySelectorAll(styleElementsSelector(importStyleId)).asList().flatMap { node ->
+            node.unsafeCast<HTMLStyleElement>().sheet.unsafeCast<CSSStyleSheet>().cssRules.asList().map {
+                it.cssText
+            }
+        }
     }
 
     @BeforeTest
@@ -45,9 +49,9 @@ class StyleSheetTest : TestBase() {
         CssBuilder().apply {
             +staticStyleSheet.property1
         }
-        val rules = getStylesheet().cssRules
+        val rules = getRules()
         assertEquals(1, sheet.scheduledGroups.size)
-        assertEquals(0, rules.length)
+        assertEquals(0, rules.size)
     }
 
     object SheetWithMarker : StyleSheet("SheetWithMarker", isStatic = true) {
@@ -177,7 +181,7 @@ class StyleSheetTest : TestBase() {
         }
         clearAndInject(styledComponent)
         inject(styledComponent)
-        assertEquals(4, getImportRules().length)
+        assertEquals(4, getImportRules().size)
     }
 
     @Test
