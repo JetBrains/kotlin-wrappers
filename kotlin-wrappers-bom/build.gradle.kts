@@ -5,6 +5,7 @@ plugins {
 
 dependencies {
     constraints {
+        api(project(":kotlin-browser"))
         api(project(":kotlin-css"))
         api(project(":kotlin-csstype"))
         api(project(":kotlin-emotion"))
