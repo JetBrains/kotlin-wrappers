@@ -2,4 +2,4 @@
 
 package react.router.dom
 
-typealias ParamKeyValuePair = kotlinext.js.JsPair<String, String>
+typealias ParamKeyValuePair = kotlinx.js.JsPair<String, String>

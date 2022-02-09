@@ -2,7 +2,7 @@
 
 package react
 
-import kotlinext.js.JsPair
+import kotlinx.js.JsPair
 
 typealias TransitionFunction = () -> Unit
 typealias TransitionStartFunction = (callback: TransitionFunction) -> Unit

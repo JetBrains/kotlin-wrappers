@@ -5,8 +5,8 @@
 
 package react.table
 
-import kotlinext.js.Record
 import kotlinx.js.ReadonlyArray
+import kotlinx.js.Record
 import react.FC
 
 external val useGroupBy: PluginHook<Any>

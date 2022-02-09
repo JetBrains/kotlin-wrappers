@@ -26,8 +26,8 @@ open external class QueryClient(config: QueryClientConfig = definedExternally) {
         filters: QueryFilters = definedExternally,
     ): TData?
 
-    open fun <TData> getQueriesData(queryKey: QueryKey): Array<out kotlinext.js.JsPair<QueryKey, TData>>
-    open fun <TData> getQueriesData(filters: QueryFilters): Array<out kotlinext.js.JsPair<QueryKey, TData>>
+    open fun <TData> getQueriesData(queryKey: QueryKey): Array<out kotlinx.js.JsPair<QueryKey, TData>>
+    open fun <TData> getQueriesData(filters: QueryFilters): Array<out kotlinx.js.JsPair<QueryKey, TData>>
     open fun <TData> setQueryData(
         queryKey: QueryKey,
         updater: Updater<TData?, TData>,
@@ -38,13 +38,13 @@ open external class QueryClient(config: QueryClientConfig = definedExternally) {
         queryKey: QueryKey,
         updater: Updater<TData?, TData>,
         options: SetDataOptions = definedExternally,
-    ): Array<out kotlinext.js.JsPair<QueryKey, TData>>
+    ): Array<out kotlinx.js.JsPair<QueryKey, TData>>
 
     open fun <TData> setQueriesData(
         filters: QueryFilters,
         updater: Updater<TData?, TData>,
         options: SetDataOptions = definedExternally,
-    ): Array<out kotlinext.js.JsPair<QueryKey, TData>>
+    ): Array<out kotlinx.js.JsPair<QueryKey, TData>>
 
     open fun <TData, TError> getQueryState(
         queryKey: QueryKey,

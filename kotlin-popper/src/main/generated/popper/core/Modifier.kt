@@ -11,5 +11,5 @@ external interface Modifier<Options> {
     var fn: (ModifierArguments<Options>) -> State?
     var effect: (ModifierArguments<Options>) -> (() -> Unit)?
     var options: Options?
-    var data: kotlinext.js.Record<String, *>?
+    var data: kotlinx.js.Record<String, *>?
 }

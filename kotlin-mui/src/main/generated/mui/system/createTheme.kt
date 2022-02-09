@@ -14,7 +14,7 @@ external interface ThemeOptions {
 
     var mixins: dynamic
 
-    var palette: kotlinext.js.Record<String, *>?
+    var palette: kotlinx.js.Record<String, *>?
 
     var shadows: dynamic
 
@@ -22,7 +22,7 @@ external interface ThemeOptions {
 
     var transitions: dynamic
 
-    var components: kotlinext.js.Record<String, *>?
+    var components: kotlinx.js.Record<String, *>?
 
     var typography: dynamic
 
@@ -36,7 +36,7 @@ external interface Theme {
 
     var direction: Direction
 
-    var palette: kotlinext.js.Record<String, *>
+    var palette: kotlinx.js.Record<String, *>
 
     var shadows: dynamic
 
@@ -44,7 +44,7 @@ external interface Theme {
 
     var transitions: dynamic
 
-    var components: kotlinext.js.Record<String, *>?
+    var components: kotlinx.js.Record<String, *>?
 
     var mixins: dynamic
 

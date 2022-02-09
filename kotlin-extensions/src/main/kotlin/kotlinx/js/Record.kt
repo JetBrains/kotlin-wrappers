@@ -3,7 +3,9 @@
     "NOTHING_TO_INLINE",
 )
 
-package kotlinext.js
+package kotlinx.js
+
+import kotlinext.js.jso
 
 sealed interface Record<in K : Any, V : Any> {
     inline operator fun get(key: K): V? =
