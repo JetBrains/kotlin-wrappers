@@ -5,7 +5,7 @@
 
 package mui.system
 
-import kotlinext.js.ReadonlyArray
+import kotlinx.js.ReadonlyArray
 
 external interface Breakpoints {
     var keys: ReadonlyArray<Breakpoint>

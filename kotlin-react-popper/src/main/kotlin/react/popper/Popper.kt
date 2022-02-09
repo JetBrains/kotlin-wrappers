@@ -3,7 +3,7 @@
 
 package react.popper
 
-import kotlinext.js.ReadonlyArray
+import kotlinx.js.ReadonlyArray
 import org.w3c.dom.HTMLElement
 import popper.core.Modifier
 import popper.core.Placement

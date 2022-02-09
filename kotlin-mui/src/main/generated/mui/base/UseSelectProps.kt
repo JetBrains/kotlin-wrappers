@@ -2,7 +2,7 @@
 
 package mui.base
 
-import kotlinext.js.ReadonlyArray
+import kotlinx.js.ReadonlyArray
 
 external interface SelectOption<TValue> {
     var value: TValue

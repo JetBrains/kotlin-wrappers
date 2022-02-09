@@ -2,7 +2,7 @@
 
 package webrtc
 
-import kotlinext.js.ReadonlyArray
+import kotlinx.js.ReadonlyArray
 
 external class RTCIceTransport : org.w3c.dom.events.EventTarget {
     val role: RTCIceRole

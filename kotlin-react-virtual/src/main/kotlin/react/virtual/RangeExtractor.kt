@@ -1,5 +1,5 @@
 package react.virtual
 
-import kotlinext.js.ReadonlyArray
+import kotlinx.js.ReadonlyArray
 
 typealias RangeExtractor = (range: Range) -> ReadonlyArray<Index>

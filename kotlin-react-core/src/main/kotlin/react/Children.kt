@@ -3,7 +3,7 @@
 
 package react
 
-import kotlinext.js.ReadonlyArray
+import kotlinx.js.ReadonlyArray
 
 external object Children {
     fun <T> map(children: Any?, handler: (ReactNode) -> T): ReadonlyArray<T>?

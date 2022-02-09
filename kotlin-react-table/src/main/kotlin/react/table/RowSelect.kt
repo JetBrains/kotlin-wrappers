@@ -5,8 +5,8 @@
 
 package react.table
 
-import kotlinext.js.ReadonlyArray
 import kotlinext.js.Record
+import kotlinx.js.ReadonlyArray
 
 external val useRowSelect: PluginHook<Any>
 

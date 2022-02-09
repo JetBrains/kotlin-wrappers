@@ -4,7 +4,7 @@ package popper.core
 
 external interface Options {
     var placement: Placement
-    var modifiers: kotlinext.js.ReadonlyArray<Modifier<*>>
+    var modifiers: kotlinx.js.ReadonlyArray<Modifier<*>>
     var strategy: PositioningStrategy
     var onFirstUpdate: UpdateCallback?
 }
