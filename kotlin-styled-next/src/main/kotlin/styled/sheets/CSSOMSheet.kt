@@ -3,18 +3,13 @@ package styled.sheets
 import kotlinx.browser.window
 import org.w3c.dom.HTMLStyleElement
 import org.w3c.dom.asList
-import kotlin.collections.Iterable
-import kotlin.collections.LinkedHashMap
-import kotlin.collections.List
 import kotlin.collections.component1
 import kotlin.collections.component2
-import kotlin.collections.contains
-import kotlin.collections.iterator
 import kotlin.collections.set
 
 private typealias Rules = Iterable<String>
 
-internal enum class RemoveMode { OnBrowserIdle, AfterTimeout, Instantly }
+internal enum class RemoveMode { OnBrowserIdle, Instantly }
 
 /**
  * A stylesheet that is injected using the CSSOM API.
@@ -24,7 +19,7 @@ internal enum class RemoveMode { OnBrowserIdle, AfterTimeout, Instantly }
 internal class CSSOMSheet(
     val type: RuleType,
     val removeMode: RemoveMode = RemoveMode.OnBrowserIdle,
-    var cleanTimeout: Int = 30000,
+    private var cleanTimeout: Int = 30000,
     maxRulesPerSheet: Int? = DEFAULT_MAX_RULES_PER_SHEET
 ) : AbstractSheet(type, maxRulesPerSheet) {
     private val groups = LinkedHashMap<GroupId, RulesGroup>()
@@ -33,7 +28,7 @@ internal class CSSOMSheet(
     private var groupId: Int = 0
         get() = field.also { field++ }
 
-    internal var isCleanRequested: Boolean = false
+    private var isCleanRequested: Boolean = false
 
     override fun scheduleToInject(rules: Rules): Int = groupId.also { scheduledGroups[it] = rules }
 
@@ -115,7 +110,7 @@ internal class CSSOMSheet(
     }
 
     /**
-     * Combine successive style sheets with less than [maxRulesPerSheet] rules in total into one style sheet.
+     * Combines successive style sheets with less than [maxRulesPerSheet] rules in total into one style sheet.
      * It preserves rules order and updates group mapping.
      */
     private fun compressSheets() {
@@ -143,7 +138,7 @@ internal class CSSOMSheet(
 
         class RulesGroupUpdate(val element: HTMLStyleElement, val shift: Int)
 
-        // Move all rules in group to first style element and delete other elements.
+        // Move all rules in a group to the first style element and delete other elements.
         val groupUpdates = mutableMapOf<HTMLStyleElement, RulesGroupUpdate>()
         elementGroups.forEach { elements ->
             val reused = elements.first()

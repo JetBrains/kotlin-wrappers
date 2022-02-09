@@ -6,8 +6,14 @@ import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.promise
 import kotlinx.css.CssBuilder
 import kotlinx.dom.clear
-import org.w3c.dom.*
-import org.w3c.dom.css.*
+import org.w3c.dom.Element
+import org.w3c.dom.HTMLElement
+import org.w3c.dom.HTMLStyleElement
+import org.w3c.dom.asList
+import org.w3c.dom.css.CSSRule
+import org.w3c.dom.css.CSSRuleList
+import org.w3c.dom.css.CSSStyleDeclaration
+import org.w3c.dom.css.CSSStyleSheet
 import react.ComponentType
 import react.Props
 import react.createElement

@@ -52,7 +52,7 @@ open class StyleSheet(
         }
     }
 
-    fun scheduleToInject() {
+    private fun scheduleToInject() {
         scheduleImports()
         holders.forEach {
             it.scheduleToInject()
@@ -70,7 +70,7 @@ open class StyleSheet(
     }
 }
 
-class CssHolder(private val sheet: StyleSheet, internal vararg val ruleSets: RuleSet) {
+class CssHolder(private val sheet: StyleSheet, private vararg val ruleSets: RuleSet) {
     private val classNamesToInject = mutableMapOf<ClassName, Boolean>()
 
     val css by lazy {

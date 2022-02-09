@@ -24,9 +24,9 @@ internal interface Sheet {
 internal const val DEFAULT_MAX_RULES_PER_SHEET = 50
 
 /**
- * @param maxRulesPerSheet If style sheet contains more than [maxRulesPerSheet] rules, then new styles
- * are inserted to new style sheet to avoid possibly slow style recalculation. If [maxRulesPerSheet] is null,
- * then all styles are inserted to the single style sheet.
+ * @param maxRulesPerSheet Having too many rules in a stylesheet may result in slow style recalculation, particularly
+ * when the DOM is complex. This parameter controls how many rules could be inserted into a stylesheet before a new
+ * stylesheet is created. If [maxRulesPerSheet] is null, all rules will be inserted into a single stylesheet.
  */
 internal abstract class AbstractSheet(
     private val ruleType: RuleType,
