@@ -1,3 +1,4 @@
 package kotlinext.js
 
-typealias ReadonlyArray<T> = Array<out T>
+@Deprecated(message = "Will be removed soon!")
+typealias ReadonlyArray<T> = kotlinx.js.ReadonlyArray<T>

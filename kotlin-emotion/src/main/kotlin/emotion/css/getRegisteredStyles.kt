@@ -3,7 +3,7 @@
 
 package emotion.css
 
-import kotlinext.js.ReadonlyArray
+import kotlinx.js.ReadonlyArray
 
 external fun getRegisteredStyles(
     registeredStyles: ReadonlyArray<String>,

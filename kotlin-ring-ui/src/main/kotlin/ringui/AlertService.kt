@@ -3,7 +3,7 @@
 
 package ringui
 
-import kotlinext.js.ReadonlyArray
+import kotlinx.js.ReadonlyArray
 import react.Key
 import react.ReactNode
 

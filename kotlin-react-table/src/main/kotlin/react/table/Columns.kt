@@ -1,7 +1,7 @@
 package react.table
 
-import kotlinext.js.ReadonlyArray
 import kotlinext.js.jso
+import kotlinx.js.ReadonlyArray
 import react.ReactElement
 import react.ReactNode
 

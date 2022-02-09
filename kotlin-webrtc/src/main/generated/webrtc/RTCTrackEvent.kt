@@ -2,7 +2,7 @@
 
 package webrtc
 
-import kotlinext.js.ReadonlyArray
+import kotlinx.js.ReadonlyArray
 
 external class RTCTrackEvent : org.w3c.dom.events.Event {
     val receiver: RTCRtpReceiver

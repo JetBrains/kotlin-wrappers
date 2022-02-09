@@ -1,6 +1,6 @@
 package react.dom
 
-import kotlinext.js.ReadonlyArray
+import kotlinx.js.ReadonlyArray
 import react.ReactNode
 
 external interface Root {

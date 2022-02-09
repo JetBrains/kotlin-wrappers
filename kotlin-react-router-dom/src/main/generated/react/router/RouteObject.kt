@@ -8,7 +8,7 @@ package react.router
  */
 external interface RouteObject {
     var caseSensitive: Boolean?
-    var children: kotlinext.js.ReadonlyArray<RouteObject>?
+    var children: kotlinx.js.ReadonlyArray<RouteObject>?
     var element: react.ReactNode?
     var index: Boolean?
     var path: String?

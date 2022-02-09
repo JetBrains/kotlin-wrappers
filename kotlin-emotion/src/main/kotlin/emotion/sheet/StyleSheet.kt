@@ -1,6 +1,6 @@
 package emotion.sheet
 
-import kotlinext.js.ReadonlyArray
+import kotlinx.js.ReadonlyArray
 import org.w3c.dom.HTMLElement
 import org.w3c.dom.HTMLStyleElement
 

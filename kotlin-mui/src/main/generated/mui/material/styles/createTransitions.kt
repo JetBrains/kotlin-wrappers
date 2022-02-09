@@ -2,7 +2,7 @@
 
 package mui.material.styles
 
-import kotlinext.js.ReadonlyArray
+import kotlinx.js.ReadonlyArray
 
 external interface Easing {
     var easeInOut: String
