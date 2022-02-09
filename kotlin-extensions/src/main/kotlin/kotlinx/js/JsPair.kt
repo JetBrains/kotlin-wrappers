@@ -1,6 +1,6 @@
 @file:Suppress("NOTHING_TO_INLINE")
 
-package kotlinext.js
+package kotlinx.js
 
 /**
  * Details - https://youtrack.jetbrains.com/issue/KT-45481

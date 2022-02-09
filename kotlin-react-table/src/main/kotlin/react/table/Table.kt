@@ -5,8 +5,8 @@
 
 package react.table
 
-import kotlinext.js.Record
 import kotlinx.js.ReadonlyArray
+import kotlinx.js.Record
 import react.*
 import react.dom.aria.AriaRole
 import react.dom.events.ChangeEventHandler

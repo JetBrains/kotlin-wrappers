@@ -2,7 +2,7 @@
 
 package react
 
-import kotlinext.js.JsPair
+import kotlinx.js.JsPair
 
 typealias Reducer<S, A> = (state: S, action: A) -> S
 typealias Dispatch<A> = (action: A) -> Unit

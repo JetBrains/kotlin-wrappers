@@ -76,7 +76,7 @@ external fun <TFilters : QueryFilters, TOptions> parseFilterArgs(
     arg1: dynamic = definedExternally,
     arg2: dynamic = definedExternally,
     arg3: TOptions = definedExternally,
-): kotlinext.js.JsPair<TFilters, TOptions?>
+): kotlinx.js.JsPair<TFilters, TOptions?>
 
 external fun parseMutationFilterArgs(
     arg1: dynamic = definedExternally,
