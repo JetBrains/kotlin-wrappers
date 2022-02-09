@@ -1,6 +1,6 @@
 @file:Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 
-package kotlinext.js
+package kotlinx.js
 
 external interface Symbol {
     val description: String?
