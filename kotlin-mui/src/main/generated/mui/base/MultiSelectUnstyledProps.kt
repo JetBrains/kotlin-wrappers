@@ -2,7 +2,7 @@
 
 package mui.base
 
-import kotlinext.js.ReadonlyArray
+import kotlinx.js.ReadonlyArray
 
 external interface MultiSelectUnstyledProps<TValue> : react.Props {
     /**

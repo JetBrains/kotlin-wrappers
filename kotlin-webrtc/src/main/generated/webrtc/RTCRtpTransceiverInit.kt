@@ -2,7 +2,7 @@
 
 package webrtc
 
-import kotlinext.js.ReadonlyArray
+import kotlinx.js.ReadonlyArray
 
 sealed external interface RTCRtpTransceiverInit {
     var direction: RTCRtpTransceiverDirection? // default = 'sendrecv'

@@ -5,7 +5,7 @@
 
 package mui.lab
 
-import kotlinext.js.ReadonlyArray
+import kotlinx.js.ReadonlyArray
 
 external interface CalendarPickerProps<TDate> : react.Props {
     var className: String?

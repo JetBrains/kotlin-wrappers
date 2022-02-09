@@ -5,7 +5,7 @@
 
 package react.table
 
-import kotlinext.js.ReadonlyArray
+import kotlinx.js.ReadonlyArray
 
 external val usePagination: PluginHook<Any>
 

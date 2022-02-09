@@ -3,7 +3,7 @@
 
 package react.virtual
 
-import kotlinext.js.ReadonlyArray
+import kotlinx.js.ReadonlyArray
 import react.Key
 
 external interface VirtualOptions<T : Any> : ScrollOptions<T> {

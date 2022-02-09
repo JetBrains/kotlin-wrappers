@@ -1,8 +1,8 @@
 package react
 
 import kotlinext.js.Object
-import kotlinext.js.ReadonlyArray
 import kotlinext.js.Symbol
+import kotlinx.js.ReadonlyArray
 
 private val CHILDREN = Symbol("@@children")
 

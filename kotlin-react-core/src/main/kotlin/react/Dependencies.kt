@@ -1,6 +1,6 @@
 package react
 
-import kotlinext.js.ReadonlyArray
+import kotlinx.js.ReadonlyArray
 
 typealias Dependencies = ReadonlyArray<dynamic>
 

@@ -2,7 +2,7 @@
 
 package react
 
-import kotlinext.js.ReadonlyArray
+import kotlinx.js.ReadonlyArray
 
 // TODO: make external in IR
 class EffectBuilder

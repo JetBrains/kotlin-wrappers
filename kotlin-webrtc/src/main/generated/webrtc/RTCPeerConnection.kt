@@ -2,7 +2,7 @@
 
 package webrtc
 
-import kotlinext.js.ReadonlyArray
+import kotlinx.js.ReadonlyArray
 
 external class RTCPeerConnection(
     configuration: RTCConfiguration = definedExternally,

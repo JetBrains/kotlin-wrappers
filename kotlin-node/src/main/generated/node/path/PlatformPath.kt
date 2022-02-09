@@ -2,7 +2,7 @@
 
 package node.path
 
-import kotlinext.js.ReadonlyArray
+import kotlinx.js.ReadonlyArray
 
 sealed external interface PlatformPath {
     /**

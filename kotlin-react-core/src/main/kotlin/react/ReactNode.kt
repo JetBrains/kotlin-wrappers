@@ -2,7 +2,7 @@
 
 package react
 
-import kotlinext.js.ReadonlyArray
+import kotlinx.js.ReadonlyArray
 
 sealed external interface ReactNode
 

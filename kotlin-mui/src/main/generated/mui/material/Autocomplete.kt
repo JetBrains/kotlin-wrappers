@@ -5,7 +5,7 @@
 
 package mui.material
 
-import kotlinext.js.ReadonlyArray
+import kotlinx.js.ReadonlyArray
 
 external interface AutocompleteProps<T> :
     mui.base.UseAutocompleteProps<T>,
