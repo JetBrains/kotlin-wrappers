@@ -94,7 +94,7 @@ external interface ModalUnstyledProps :
 
     /**
      * If `true`, the modal will not restore focus to previously focused element once
-     * modal is hidden.
+     * modal is hidden or unmounted.
      * @default false
      */
     var disableRestoreFocus: Boolean?
