@@ -13,6 +13,7 @@ external fun <T : Node> getOriginalNode(
 ): T
 
 external fun getOriginalNode(node: Node?): Node?
+
 external fun <T : Node> getOriginalNode(
     node: Node?,
     nodeTest: dynamic, /* (node: Node | undefined) => node is T */

@@ -7,10 +7,12 @@
 
 package typescript
 
+import kotlinx.js.JsPair
+
 /** ES6 Set interface, only read methods included. */
 sealed external interface ReadonlySet<T> : ReadonlyCollection<T> {
     override fun has(value: T): Boolean
     fun values(): JsIterator<T>
-    fun entries(): JsIterator<dynamic /* [T, T] */>
+    fun entries(): JsIterator<JsPair<T, T>>
     fun forEach(action: (value: T, key: T) -> Unit)
 }
