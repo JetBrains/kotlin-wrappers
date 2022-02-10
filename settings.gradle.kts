@@ -21,7 +21,7 @@ dependencyResolutionManagement {
 // Examples
 include("examples")
 
-// Kotlin/JS: Missed browser wrappers
+// Kotlin/JS: Browser APIs missing from the standard library
 include("kotlin-browser")
 
 // Platform-agnostic CSS support

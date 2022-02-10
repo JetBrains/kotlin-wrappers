@@ -2,7 +2,7 @@
 
 # kotlin-browser
 
-Missed browser declarations
+Browser APIs missing from the standard library
 
 ### Internals
 
