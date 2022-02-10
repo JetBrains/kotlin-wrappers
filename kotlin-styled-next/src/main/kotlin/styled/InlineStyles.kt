@@ -15,9 +15,6 @@ fun RDOMBuilder<*>.inlineStyles(prefix: Boolean = true, builder: StyledElement.(
     setProp("style", styles.toStyle(prefix))
 }
 
-@JsName("Array")
-private external class JsArray
-
 fun StyledElement.toStyle(prefix: Boolean = true): Any {
     val res = declarations.mapToObj()
 
@@ -30,13 +27,10 @@ fun StyledElement.toStyle(prefix: Boolean = true): Any {
     // https://inline-style-prefixer.js.org/docs/guides/ResolvingArrays.html
     Object.keys(prefixed).forEach {
         if (prefixed.hasOwnProperty(it)) {
-            @Suppress("UNUSED_VARIABLE")
-            val value = prefixed.asDynamic()[it]
-
-            @Suppress("UnsafeCastFromDynamic")
-            if (value is JsArray) {
+            val value = prefixed.asDynamic()[it] as? Array<String>
+            if (value != null) {
                 // Find the unprefixed value in the array and use it: multiple values don't work for some reason
-                val displayValue = value.find(js("function(element) { return !element.startsWith('-') }"))
+                val displayValue = value.find { s -> !s.startsWith('-') }
 
                 prefixed.asDynamic()[it] = displayValue
             }
@@ -63,11 +57,10 @@ internal fun CssDeclarations.buildPrefixedString(indent: String = ""): String {
     val prefixed = prefix(res) as Object
     return buildString {
         Object.keys(prefixed).forEach {
-            val value = prefixed.asDynamic()[it]
-
-            if (value is JsArray) {
-                for (i in 0 until value.length as Int) {
-                    appendLine("$indent${it.hyphenize()}: ${value[i]};")
+            val value = prefixed.asDynamic()[it] as? Array<*>
+            if (value != null) {
+                for (element in value) {
+                    appendLine("$indent${it.hyphenize()}: $element;")
                 }
             } else {
                 appendLine("$indent${it.hyphenize()}: ${value};")
