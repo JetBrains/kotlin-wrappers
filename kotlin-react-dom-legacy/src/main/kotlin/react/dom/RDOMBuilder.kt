@@ -1,6 +1,6 @@
 package react.dom
 
-import kotlinext.js.jso
+import kotlinx.js.jso
 import kotlinx.html.*
 import org.w3c.dom.events.Event
 import react.*

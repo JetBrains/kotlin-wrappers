@@ -5,7 +5,7 @@ import csstype.Color
 import csstype.ColorProperty
 import csstype.px
 import kotlinext.js.Object
-import kotlinext.js.jso
+import kotlinx.js.jso
 import org.w3c.dom.HTMLDivElement
 import react.*
 import react.css.css

@@ -1,7 +1,7 @@
 package example
 
 import csstype.Color
-import kotlinext.js.jso
+import kotlinx.js.jso
 import react.FC
 import react.Props
 import react.css.css

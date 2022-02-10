@@ -2,15 +2,24 @@
 
 package kotlinext.js
 
+@Deprecated(
+    message = "Will be removed soon!",
+    replaceWith = ReplaceWith("kotlinx.js.jso")
+)
 inline fun <T : Any> jso(): T =
-    js("({})")
+    kotlinx.js.jso()
 
+@Deprecated(
+    message = "Will be removed soon!",
+    replaceWith = ReplaceWith("kotlinx.js.jso")
+)
 inline fun <T : Any> jso(builder: T.() -> Unit): T =
-    jso<T>().apply(builder)
+    kotlinx.js.jso(builder)
 
-inline fun js(builder: dynamic.() -> Unit): dynamic = jso(builder)
+inline fun js(builder: dynamic.() -> Unit): dynamic =
+    kotlinx.js.jso(builder)
 
-fun <T : Any> clone(obj: T) = Object.assign(jso(), obj)
+fun <T : Any> clone(obj: T) = Object.assign(kotlinx.js.jso(), obj)
 
 inline fun <T : Any> assign(obj: T, builder: T.() -> Unit) = clone(obj).apply(builder)
 

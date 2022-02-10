@@ -5,8 +5,6 @@
 
 package kotlinx.js
 
-import kotlinext.js.jso
-
 sealed interface Record<in K : Any, V : Any> {
     inline operator fun get(key: K): V? =
         asDynamic()[key]

@@ -1,6 +1,6 @@
 package react
 
-import kotlinext.js.jso
+import kotlinx.js.jso
 
 fun createElement(
     block: Render,

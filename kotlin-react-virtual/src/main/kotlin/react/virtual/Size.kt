@@ -1,6 +1,6 @@
 package react.virtual
 
-import kotlinext.js.jso
+import kotlinx.js.jso
 
 external interface Size {
     var width: Int

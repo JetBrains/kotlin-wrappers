@@ -2,7 +2,7 @@ package styled
 
 import kotlinext.js.clone
 import kotlinext.js.delete
-import kotlinext.js.jso
+import kotlinx.js.jso
 import kotlinx.css.CssBuilder
 import kotlinx.css.CssDsl
 import kotlinx.css.RuleSet
