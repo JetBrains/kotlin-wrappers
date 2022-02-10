@@ -1,6 +1,4 @@
-// Automatically generated - do not modify!
-
-package typescript
+package kotlinx.js
 
 sealed external interface JsIteratorResult<out T> {
     val value: T
