@@ -105,8 +105,14 @@ inline fun sepia(
 ): FilterFunction =
     "sepia($value)".unsafeCast<FilterFunction>()
 
-fun FilterFunction(
+fun Filter(
     vararg values: FilterFunction,
-): FilterFunction =
+): Filter =
     values.joinToString(" ")
-        .unsafeCast<FilterFunction>()
+        .unsafeCast<Filter>()
+
+fun BackdropFilter(
+    vararg values: FilterFunction,
+): BackdropFilter =
+    values.joinToString(" ")
+        .unsafeCast<BackdropFilter>()
