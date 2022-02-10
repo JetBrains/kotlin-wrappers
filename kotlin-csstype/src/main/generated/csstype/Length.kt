@@ -67,6 +67,3 @@ inline val Number.pc: Length
 
 inline val Number.pt: Length
     get() = "${this}pt".unsafeCast<Length>()
-
-inline val Number.pct: Length
-    get() = "${this}%".unsafeCast<Length>()
