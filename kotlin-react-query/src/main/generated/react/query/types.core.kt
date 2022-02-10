@@ -6,6 +6,8 @@
 
 package react.query
 
+import org.w3c.fetch.AbortSignal
+
 typealias QueryKey = Union /* string | readonly unknown[] */
 
 typealias EnsuredQueryKey<T> = Any

@@ -10,6 +10,8 @@
 
 package react.query
 
+import org.w3c.fetch.AbortController
+
 external interface QueryFilters {
     var active: Boolean
     var exact: Boolean
