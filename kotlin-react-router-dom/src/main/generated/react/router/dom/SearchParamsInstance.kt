@@ -6,7 +6,7 @@
 
 package react.router.dom
 
-import kotlinext.js.jso
+import kotlinx.js.jso
 import org.w3c.dom.url.URLSearchParams
 import react.router.NavigateOptions
 import kotlin.reflect.KProperty

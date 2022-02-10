@@ -1,6 +1,6 @@
 package styled
 
-import kotlinext.js.jso
+import kotlinx.js.jso
 import kotlinx.browser.window
 
 internal object GlobalCssAccess {

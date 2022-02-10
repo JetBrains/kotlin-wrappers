@@ -1,6 +1,6 @@
 package react
 
-import kotlinext.js.jso
+import kotlinx.js.jso
 
 abstract class RPureComponent<P : Props, S : State> : PureComponent<P, S> {
     constructor() : super() {

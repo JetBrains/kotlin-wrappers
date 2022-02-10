@@ -2,7 +2,7 @@
 
 package ringui
 
-import kotlinext.js.jso
+import kotlinx.js.jso
 
 external interface Color {
     var r: Short

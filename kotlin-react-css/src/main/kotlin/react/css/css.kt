@@ -1,7 +1,7 @@
 package react.css
 
 import emotion.css.cx
-import kotlinext.js.jso
+import kotlinx.js.jso
 import react.PropsWithClassName
 
 @PublishedApi

@@ -1,7 +1,7 @@
 package styled
 
 import kotlinext.js.invoke
-import kotlinext.js.jso
+import kotlinx.js.jso
 import kotlinx.browser.window
 import kotlinx.css.CssBuilder
 import kotlinx.css.CssDsl
