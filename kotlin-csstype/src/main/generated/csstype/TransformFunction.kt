@@ -163,9 +163,3 @@ inline fun translatez(
     tz: Length,
 ): TransformFunction =
     "translatez($tz)".unsafeCast<TransformFunction>()
-
-fun Transform(
-    vararg values: TransformFunction,
-): Transform =
-    values.joinToString(" ")
-        .unsafeCast<Transform>()

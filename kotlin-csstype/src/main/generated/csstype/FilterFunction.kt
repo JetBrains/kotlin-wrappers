@@ -104,15 +104,3 @@ inline fun sepia(
     value: Percent,
 ): FilterFunction =
     "sepia($value)".unsafeCast<FilterFunction>()
-
-fun Filter(
-    vararg values: FilterFunction,
-): Filter =
-    values.joinToString(" ")
-        .unsafeCast<Filter>()
-
-fun BackdropFilter(
-    vararg values: FilterFunction,
-): BackdropFilter =
-    values.joinToString(" ")
-        .unsafeCast<BackdropFilter>()
