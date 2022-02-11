@@ -41,9 +41,25 @@ inline fun contrast(
     "contrast($value)".unsafeCast<FilterFunction>()
 
 inline fun dropShadow(
-    value: String,
+    offsetX: Length,
+    offsetY: Length,
 ): FilterFunction =
-    "drop-shadow($value)".unsafeCast<FilterFunction>()
+    "drop-shadow($offsetX $offsetY)".unsafeCast<FilterFunction>()
+
+inline fun dropShadow(
+    offsetX: Length,
+    offsetY: Length,
+    blurRadius: Length,
+): FilterFunction =
+    "drop-shadow($offsetX $offsetY $blurRadius)".unsafeCast<FilterFunction>()
+
+inline fun dropShadow(
+    offsetX: Length,
+    offsetY: Length,
+    blurRadius: Length,
+    color: Color,
+): FilterFunction =
+    "drop-shadow($offsetX $offsetY $blurRadius $color)".unsafeCast<FilterFunction>()
 
 inline fun grayscale(
     value: Number,
