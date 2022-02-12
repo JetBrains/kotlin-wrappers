@@ -2,4 +2,4 @@
 
 package csstype
 
-sealed external interface GridTemplateRows
+typealias GridTemplateRows = GridTemplateStripes

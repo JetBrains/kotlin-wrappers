@@ -3,7 +3,5 @@
 package csstype
 
 sealed external interface GridLengthProperty :
-    GridAutoColumns,
-    GridAutoRows,
-    GridTemplateColumns,
-    GridTemplateRows
+    GridAutoStripes,
+    GridTemplateStripes

@@ -2,4 +2,4 @@
 
 package csstype
 
-sealed external interface GridAutoColumns
+typealias GridAutoColumns = GridAutoStripes
