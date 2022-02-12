@@ -7,7 +7,6 @@
 
 package typescript
 
-import kotlinx.js.JsIterator
 import kotlinx.js.JsPair
 
 /** ES6 Set interface, only read methods included. */
