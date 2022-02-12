@@ -10,8 +10,6 @@
 
 package react.query
 
-import org.w3c.fetch.AbortController
-
 external interface QueryFilters {
     var active: Boolean
     var exact: Boolean
@@ -139,4 +137,4 @@ external fun sleep(timeout: JsDuration): kotlin.js.Promise<Unit>
 
 external fun scheduleMicrotask(callback: () -> Unit)
 
-external fun getAbortController(): AbortController?
+external fun getAbortController(): org.w3c.fetch.AbortController?
