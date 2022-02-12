@@ -3,6 +3,7 @@
 @file:Suppress(
     "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
+    "NOTHING_TO_INLINE",
 )
 
 package csstype
@@ -19,3 +20,22 @@ sealed external interface Flex {
         val none: Flex
     }
 }
+
+inline fun Flex(
+    grow: FlexGrow,
+    basis: FlexBasis,
+): Flex =
+    "$grow $basis".unsafeCast<Flex>()
+
+inline fun Flex(
+    grow: FlexGrow,
+    shrink: FlexShrink,
+): Flex =
+    "$grow $shrink".unsafeCast<Flex>()
+
+inline fun Flex(
+    grow: FlexGrow,
+    shrink: FlexShrink,
+    basis: FlexBasis,
+): Flex =
+    "$grow $shrink $basis".unsafeCast<Flex>()
