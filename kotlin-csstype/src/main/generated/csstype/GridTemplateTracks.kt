@@ -2,4 +2,4 @@
 
 package csstype
 
-sealed external interface GridAutoStripes
+sealed external interface GridTemplateTracks

@@ -3,5 +3,5 @@
 package csstype
 
 sealed external interface GridLengthProperty :
-    GridAutoStripes,
-    GridTemplateStripes
+    GridAutoTracks,
+    GridTemplateTracks

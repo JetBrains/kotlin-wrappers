@@ -8,12 +8,12 @@ package csstype
 
 inline fun repeat(
     times: Int,
-    value: GridTemplateStripes,
-): GridTemplateStripes =
-    "repeat($times, $value)".unsafeCast<GridTemplateStripes>()
+    value: GridTemplateTracks,
+): GridTemplateTracks =
+    "repeat($times, $value)".unsafeCast<GridTemplateTracks>()
 
 inline fun repeat(
     repeat: AutoRepeat,
-    value: GridTemplateStripes,
-): GridTemplateStripes =
-    "repeat($repeat, $value)".unsafeCast<GridTemplateStripes>()
+    value: GridTemplateTracks,
+): GridTemplateTracks =
+    "repeat($repeat, $value)".unsafeCast<GridTemplateTracks>()
