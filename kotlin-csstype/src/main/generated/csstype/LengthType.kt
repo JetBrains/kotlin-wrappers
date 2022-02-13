@@ -13,8 +13,8 @@ sealed external interface LengthType :
         BlockSize,
         BorderImageWidth,
         Columns,
-        GridAutoStripes,
-        GridTemplateStripes,
+        GridAutoTracks,
+        GridTemplateTracks,
         Height,
         InlineSize,
         MaskBorderWidth,
@@ -47,8 +47,8 @@ sealed external interface LengthType :
 
     sealed interface MaxContent :
         BlockSize,
-        GridAutoStripes,
-        GridTemplateStripes,
+        GridAutoTracks,
+        GridTemplateTracks,
         Height,
         InlineSize,
         MaxBlockSize,
@@ -63,8 +63,8 @@ sealed external interface LengthType :
 
     sealed interface MinContent :
         BlockSize,
-        GridAutoStripes,
-        GridTemplateStripes,
+        GridAutoTracks,
+        GridTemplateTracks,
         Height,
         InlineSize,
         MaxBlockSize,
@@ -82,7 +82,7 @@ sealed external interface LengthType :
         Width
 
     sealed interface None :
-        GridTemplateStripes,
+        GridTemplateTracks,
         MaxBlockSize,
         MaxHeight,
         MaxInlineSize,

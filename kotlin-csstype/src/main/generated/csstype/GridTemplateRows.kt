@@ -2,4 +2,4 @@
 
 package csstype
 
-typealias GridTemplateRows = GridTemplateStripes
+typealias GridTemplateRows = GridTemplateTracks

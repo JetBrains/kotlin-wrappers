@@ -2,4 +2,4 @@
 
 package csstype
 
-typealias GridAutoRows = GridAutoStripes
+typealias GridAutoRows = GridAutoTracks

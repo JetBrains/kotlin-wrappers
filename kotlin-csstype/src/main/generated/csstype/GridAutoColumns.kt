@@ -2,4 +2,4 @@
 
 package csstype
 
-typealias GridAutoColumns = GridAutoStripes
+typealias GridAutoColumns = GridAutoTracks
