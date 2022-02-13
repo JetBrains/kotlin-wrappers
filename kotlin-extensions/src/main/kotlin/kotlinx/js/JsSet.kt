@@ -3,7 +3,7 @@ package kotlinx.js
 @JsName("Set")
 external class JsSet<T> {
     constructor()
-    constructor(iterable: JsIterator<T>?)
+    constructor(values: JsIterator<T>?)
     constructor(values: ReadonlyArray<T>?)
 
     val size: Int
