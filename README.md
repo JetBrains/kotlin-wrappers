@@ -54,7 +54,7 @@ about version compatibility.
 Just declare `kotlin-wrappers-bom` and specify the modules you need:
 
 ```kotlin
-val kotlinWrappersVersion = "0.0.1-pre.298-kotlin-1.6.10"
+val kotlinWrappersVersion = "0.0.1-pre.299-kotlin-1.6.10"
 
 dependencies {
     implementation(enforcedPlatform("org.jetbrains.kotlin-wrappers:kotlin-wrappers-bom:$kotlinWrappersVersion"))
@@ -72,7 +72,7 @@ Or use a helper function:
 fun kotlinw(target: String): String =
     "org.jetbrains.kotlin-wrappers:kotlin-$target"
 
-val kotlinWrappersVersion = "0.0.1-pre.298-kotlin-1.6.10"
+val kotlinWrappersVersion = "0.0.1-pre.299-kotlin-1.6.10"
 
 dependencies {
     implementation(enforcedPlatform(kotlinw("wrappers-bom:$kotlinWrappersVersion")))
