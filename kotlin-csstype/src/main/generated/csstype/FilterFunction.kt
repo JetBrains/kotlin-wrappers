@@ -26,7 +26,7 @@ inline fun brightness(
     "brightness($value)".unsafeCast<FilterFunction>()
 
 inline fun brightness(
-    value: Percent,
+    value: Percentage,
 ): FilterFunction =
     "brightness($value)".unsafeCast<FilterFunction>()
 
@@ -36,7 +36,7 @@ inline fun contrast(
     "contrast($value)".unsafeCast<FilterFunction>()
 
 inline fun contrast(
-    value: Percent,
+    value: Percentage,
 ): FilterFunction =
     "contrast($value)".unsafeCast<FilterFunction>()
 
@@ -67,7 +67,7 @@ inline fun grayscale(
     "grayscale($value)".unsafeCast<FilterFunction>()
 
 inline fun grayscale(
-    value: Percent,
+    value: Percentage,
 ): FilterFunction =
     "grayscale($value)".unsafeCast<FilterFunction>()
 
@@ -87,7 +87,7 @@ inline fun invert(
     "invert($value)".unsafeCast<FilterFunction>()
 
 inline fun invert(
-    value: Percent,
+    value: Percentage,
 ): FilterFunction =
     "invert($value)".unsafeCast<FilterFunction>()
 
@@ -97,7 +97,7 @@ inline fun opacity(
     "opacity($value)".unsafeCast<FilterFunction>()
 
 inline fun opacity(
-    value: Percent,
+    value: Percentage,
 ): FilterFunction =
     "opacity($value)".unsafeCast<FilterFunction>()
 
@@ -107,7 +107,7 @@ inline fun saturate(
     "saturate($value)".unsafeCast<FilterFunction>()
 
 inline fun saturate(
-    value: Percent,
+    value: Percentage,
 ): FilterFunction =
     "saturate($value)".unsafeCast<FilterFunction>()
 
@@ -117,6 +117,6 @@ inline fun sepia(
     "sepia($value)".unsafeCast<FilterFunction>()
 
 inline fun sepia(
-    value: Percent,
+    value: Percentage,
 ): FilterFunction =
     "sepia($value)".unsafeCast<FilterFunction>()
