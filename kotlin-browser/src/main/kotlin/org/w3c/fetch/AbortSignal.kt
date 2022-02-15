@@ -9,5 +9,5 @@ external class AbortSignal : EventTarget {
      * Returns true if this AbortSignal's AbortController has signaled to abort, and false otherwise.
      */
     val aborted: Boolean
-    val onabort: ((event: Event) -> Unit)?
+    var onabort: ((event: Event) -> Unit)?
 }
