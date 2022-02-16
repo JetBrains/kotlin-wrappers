@@ -3,3 +3,7 @@ plugins {
     `kotlin-conventions`
     `publish-conventions`
 }
+
+dependencies {
+    testImplementation(kotlin("test-js"))
+}
