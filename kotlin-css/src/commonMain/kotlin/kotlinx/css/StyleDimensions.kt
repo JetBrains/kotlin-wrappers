@@ -2,7 +2,7 @@ package kotlinx.css
 
 private const val ZERO = "0"
 
-class LinearDimension(override val value: String) : CssValue(value) {
+open class LinearDimension(override val value: String) : CssValue(value) {
     companion object {
         val none = LinearDimension("none")
         val auto = LinearDimension("auto")
@@ -48,26 +48,22 @@ class LinearDimension(override val value: String) : CssValue(value) {
     }
 }
 
-private fun value(number: Number, unit: String): String {
-    return if (number == 0)
-        ZERO
-    else
-        number.toString() + unit
-}
+class NumericLinearDimension(val number: Number, val unit: String) :
+    LinearDimension(if (number == 0) ZERO else number.toString() + unit)
 
-val Number.ch: LinearDimension get() = LinearDimension(value(this, "ch"))       // Width of "0" glyph
-val Number.cm: LinearDimension get() = LinearDimension(value(this, "cm"))       // Centimeter
-val Number.em: LinearDimension get() = LinearDimension(value(this, "em"))
-val Number.ex: LinearDimension get() = LinearDimension(value(this, "ex"))
-val Number.fr: LinearDimension get() = LinearDimension(value(this, "fr"))       // Fraction
-val Number.mm: LinearDimension get() = LinearDimension(value(this, "mm"))       // Millimeter
-val Number.pc: LinearDimension get() = LinearDimension(value(this, "pc"))       // Pica
-val Number.pct: LinearDimension get() = LinearDimension(value(this, "%"))
-val Number.pt: LinearDimension get() = LinearDimension(value(this, "pt"))       // Point
-val Number.px: LinearDimension get() = LinearDimension(value(this, "px"))       // Pixel
-val Number.rem: LinearDimension get() = LinearDimension(value(this, "rem"))     // Root em
-val Number.vmin: LinearDimension get() = LinearDimension(value(this, "vmin"))   // 1/100th of the smallest side
-val Number.vmax: LinearDimension get() = LinearDimension(value(this, "vmax"))   // 1/100th of the largest side
-val Number.vh: LinearDimension get() = LinearDimension(value(this, "vh"))       // 1/100th of the viewport height
-val Number.vw: LinearDimension get() = LinearDimension(value(this, "vw"))       // 1/100th of the viewport width
-val Number.`in`: LinearDimension get() = LinearDimension(value(this, "in"))     // Inch
+val Number.ch: LinearDimension get() = NumericLinearDimension(this, "ch")       // Width of "0" glyph
+val Number.cm: LinearDimension get() = NumericLinearDimension(this, "cm")       // Centimeter
+val Number.em: LinearDimension get() = NumericLinearDimension(this, "em")
+val Number.ex: LinearDimension get() = NumericLinearDimension(this, "ex")
+val Number.fr: LinearDimension get() = NumericLinearDimension(this, "fr")       // Fraction
+val Number.mm: LinearDimension get() = NumericLinearDimension(this, "mm")       // Millimeter
+val Number.pc: LinearDimension get() = NumericLinearDimension(this, "pc")       // Pica
+val Number.pct: LinearDimension get() = NumericLinearDimension(this, "%")
+val Number.pt: LinearDimension get() = NumericLinearDimension(this, "pt")       // Point
+val Number.px: LinearDimension get() = NumericLinearDimension(this, "px")       // Pixel
+val Number.rem: LinearDimension get() = NumericLinearDimension(this, "rem")     // Root em
+val Number.vmin: LinearDimension get() = NumericLinearDimension(this, "vmin")   // 1/100th of the smallest side
+val Number.vmax: LinearDimension get() = NumericLinearDimension(this, "vmax")   // 1/100th of the largest side
+val Number.vh: LinearDimension get() = NumericLinearDimension(this, "vh")       // 1/100th of the viewport height
+val Number.vw: LinearDimension get() = NumericLinearDimension(this, "vw")       // 1/100th of the viewport width
+val Number.`in`: LinearDimension get() = NumericLinearDimension(this, "in")     // Inch
