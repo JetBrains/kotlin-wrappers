@@ -5,22 +5,17 @@
 package csstype
 
 inline fun Margin(
-    value: String,
-): Margin =
-    value.unsafeCast<Margin>()
-
-inline fun Margin(
     vertical: AutoLengthProperty,
     horizontal: AutoLengthProperty,
 ): Margin =
-    Margin("$vertical $horizontal")
+    "$vertical $horizontal".unsafeCast<Margin>()
 
 inline fun Margin(
     top: AutoLengthProperty,
     horizontal: AutoLengthProperty,
     bottom: AutoLengthProperty,
 ): Margin =
-    Margin("$top $horizontal $bottom")
+    "$top $horizontal $bottom".unsafeCast<Margin>()
 
 inline fun Margin(
     top: AutoLengthProperty,
@@ -28,4 +23,4 @@ inline fun Margin(
     bottom: AutoLengthProperty,
     left: AutoLengthProperty,
 ): Margin =
-    Margin("$top $right $bottom $left")
+    "$top $right $bottom $left".unsafeCast<Margin>()
