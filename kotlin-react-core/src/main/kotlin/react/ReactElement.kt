@@ -10,12 +10,6 @@ sealed external interface ReactElement : ReactNode {
 }
 
 external fun <P : Props> createElement(
-    type: String,
-    props: P = definedExternally,
-    vararg children: ReactNode?,
-): ReactElement
-
-external fun <P : Props> createElement(
     type: ElementType<P>,
     props: P = definedExternally,
     vararg children: ReactNode?,

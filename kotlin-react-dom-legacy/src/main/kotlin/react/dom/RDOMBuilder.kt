@@ -1,7 +1,7 @@
 package react.dom
 
-import kotlinx.js.jso
 import kotlinx.html.*
+import kotlinx.js.jso
 import org.w3c.dom.events.Event
 import react.*
 
@@ -58,7 +58,12 @@ interface RDOMBuilder<out T : Tag> : RBuilder {
             domProps.ref = value
         }
 
-    fun create(): ReactElement = createElement(attrs.tagName, domProps, *childList.toTypedArray())
+    fun create(): ReactElement =
+        createElement(
+            type = IntrinsicType(attrs.tagName),
+            props = domProps,
+            children = childList.toTypedArray(),
+        )
 
     companion object {
         operator fun <T : Tag> invoke(factory: (TagConsumer<Unit>) -> T): RDOMBuilder<T> = RDOMBuilderImpl(factory)
