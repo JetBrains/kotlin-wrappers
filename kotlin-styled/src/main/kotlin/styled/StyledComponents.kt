@@ -1,12 +1,12 @@
 package styled
 
 import kotlinext.js.invoke
-import kotlinx.js.jso
 import kotlinx.browser.window
 import kotlinx.css.CssBuilder
 import kotlinx.css.CssDsl
 import kotlinx.css.RuleSet
 import kotlinx.html.*
+import kotlinx.js.jso
 import org.w3c.dom.Element
 import react.*
 import react.dom.DOMProps
@@ -237,7 +237,11 @@ object Styled {
     ): ReactElement {
         val wrappedType = wrap(type)
         val styledProps = buildStyledProps(css, props)
-        return createElement(wrappedType, styledProps, *children.toTypedArray())
+        return createElement(
+            type = IntrinsicType(wrappedType),
+            props = styledProps,
+            children = children.toTypedArray(),
+        )
     }
 
     fun <P : PropsWithClassName> createElement(
