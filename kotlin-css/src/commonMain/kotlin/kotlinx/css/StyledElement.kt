@@ -172,6 +172,7 @@ var StyledElement.gridTemplateRows: GridTemplateRows by CssProperty()
 var StyledElement.height: LinearDimension by CssProperty()
 var StyledElement.hyphens: Hyphens by CssProperty()
 
+var StyledElement.inset: String by CssProperty()
 var StyledElement.isolation: Isolation by CssProperty()
 
 var StyledElement.justifyContent: JustifyContent by CssProperty()
@@ -283,6 +284,24 @@ private fun getShorthandValue(
     }
 }
 
+fun StyledElement.inset(
+    top: LinearDimension,
+    right: LinearDimension,
+    bottom: LinearDimension,
+    left: LinearDimension,
+) {
+    inset = getShorthandValue(top, right, bottom, left)
+}
+
+fun StyledElement.inset(all: LinearDimension) = inset(all, all, all, all)
+
+fun StyledElement.inset(vertical: LinearDimension, horizontal: LinearDimension) =
+    inset(vertical, horizontal, vertical, horizontal)
+
+fun StyledElement.inset(top: LinearDimension, horizontal: LinearDimension, bottom: LinearDimension) =
+    inset(top, horizontal, bottom, horizontal)
+
+@Suppress("DuplicatedCode")
 fun StyledElement.margin(
     top: LinearDimension? = null,
     right: LinearDimension? = null,
@@ -307,6 +326,7 @@ fun StyledElement.margin(vertical: LinearDimension? = null, horizontal: LinearDi
 fun StyledElement.margin(top: LinearDimension, horizontal: LinearDimension, bottom: LinearDimension) =
     margin(top, horizontal, bottom, horizontal)
 
+@Suppress("DuplicatedCode")
 fun StyledElement.padding(
     top: LinearDimension? = null,
     right: LinearDimension? = null,
