@@ -3,6 +3,7 @@
 package csstype
 
 sealed external interface NoneType :
+    LengthType.None,
     AnimationFillMode,
     AnimationName,
     Appearance,

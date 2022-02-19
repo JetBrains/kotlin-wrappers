@@ -3,6 +3,7 @@
 package csstype
 
 sealed external interface AutoType :
+    LengthType.Auto,
     AnimationFillMode,
     AnimationName,
     Appearance,
