@@ -17,7 +17,7 @@ inline fun matrix(
     tx: Number,
     ty: Number,
 ): TransformFunction =
-    "matrix($a, $b, $c, $d, $tx, $ty)".unsafeCast<TransformFunction>()
+    "matrix($a,$b,$c,$d,$tx,$ty)".unsafeCast<TransformFunction>()
 
 inline fun matrix3d(
     a1: Number,
@@ -37,7 +37,7 @@ inline fun matrix3d(
     c4: Number,
     d4: Number,
 ): TransformFunction =
-    "matrix3d($a1, $b1, $c1, $d1, $a2, $b2, $c2, $d2, $a3, $b3, $c3, $d3, $a4, $b4, $c4, $d4)".unsafeCast<TransformFunction>()
+    "matrix3d($a1,$b1,$c1,$d1,$a2,$b2,$c2,$d2,$a3,$b3,$c3,$d3,$a4,$b4,$c4,$d4)".unsafeCast<TransformFunction>()
 
 inline fun perspective(
     d: Length,
@@ -60,7 +60,7 @@ inline fun rotate3d(
     z: Number,
     a: Angle,
 ): TransformFunction =
-    "rotate3d($x, $y, $z, $a)".unsafeCast<TransformFunction>()
+    "rotate3d($x,$y,$z,$a)".unsafeCast<TransformFunction>()
 
 inline fun rotatex(
     a: Angle,
@@ -86,14 +86,14 @@ inline fun scale(
     sx: Number,
     sy: Number,
 ): TransformFunction =
-    "scale($sx, $sy)".unsafeCast<TransformFunction>()
+    "scale($sx,$sy)".unsafeCast<TransformFunction>()
 
 inline fun scale3d(
     sx: Number,
     sy: Number,
     sz: Number,
 ): TransformFunction =
-    "scale3d($sx, $sy, $sz)".unsafeCast<TransformFunction>()
+    "scale3d($sx,$sy,$sz)".unsafeCast<TransformFunction>()
 
 inline fun scalex(
     sx: Number,
@@ -119,7 +119,7 @@ inline fun skew(
     ax: Angle,
     ay: Angle,
 ): TransformFunction =
-    "skew($ax, $ay)".unsafeCast<TransformFunction>()
+    "skew($ax,$ay)".unsafeCast<TransformFunction>()
 
 inline fun skewx(
     a: Angle,
@@ -140,14 +140,14 @@ inline fun translate(
     tx: Length,
     ty: Length,
 ): TransformFunction =
-    "translate($tx, $ty)".unsafeCast<TransformFunction>()
+    "translate($tx,$ty)".unsafeCast<TransformFunction>()
 
 inline fun translate3d(
     tx: Length,
     ty: Length,
     tz: Length,
 ): TransformFunction =
-    "translate3d($tx, $ty, $tz)".unsafeCast<TransformFunction>()
+    "translate3d($tx,$ty,$tz)".unsafeCast<TransformFunction>()
 
 inline fun translatex(
     tx: Length,
