@@ -2,18 +2,18 @@
 
 @file:Suppress(
     "NAME_CONTAINS_ILLEGAL_CHARS",
+    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package csstype
 
 // language=JavaScript
-@JsName("""(/*union*/{auto: 'auto', block: 'block', fallback: 'fallback', optional: 'optional', swap: 'swap'}/*union*/)""")
-external enum class FontDisplay {
-    auto,
-    block,
-    fallback,
-    optional,
-    swap,
-
-    ;
+@JsName("""(/*union*/{block: 'block', fallback: 'fallback', optional: 'optional', swap: 'swap'}/*union*/)""")
+sealed external interface FontDisplay {
+    companion object {
+        val block: FontDisplay
+        val fallback: FontDisplay
+        val optional: FontDisplay
+        val swap: FontDisplay
+    }
 }
