@@ -1,20 +1,12 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
     "NOTHING_TO_INLINE",
 )
 
 package csstype
 
-// language=JavaScript
-@JsName("""(/*union*/{auto: 'auto'}/*union*/)""")
-sealed external interface ColumnCount {
-    companion object {
-        val auto: ColumnCount
-    }
-}
+sealed external interface ColumnCount
 
 inline fun ColumnCount(value: Int): ColumnCount =
     value.unsafeCast<ColumnCount>()

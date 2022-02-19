@@ -8,7 +8,7 @@
 package csstype
 
 // language=JavaScript
-@JsName("""(/*union*/{bottom: 'bottom', center: 'center', left: 'left', right: 'right', top: 'top', auto: 'auto'}/*union*/)""")
+@JsName("""(/*union*/{bottom: 'bottom', center: 'center', left: 'left', right: 'right', top: 'top'}/*union*/)""")
 sealed external interface OffsetAnchor {
     companion object {
         val bottom: OffsetAnchor
@@ -16,6 +16,5 @@ sealed external interface OffsetAnchor {
         val left: OffsetAnchor
         val right: OffsetAnchor
         val top: OffsetAnchor
-        val auto: OffsetAnchor
     }
 }

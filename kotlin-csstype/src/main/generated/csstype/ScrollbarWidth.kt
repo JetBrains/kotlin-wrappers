@@ -8,10 +8,9 @@
 package csstype
 
 // language=JavaScript
-@JsName("""(/*union*/{auto: 'auto', thin: 'thin'}/*union*/)""")
+@JsName("""(/*union*/{thin: 'thin'}/*union*/)""")
 sealed external interface ScrollbarWidth {
     companion object {
-        val auto: ScrollbarWidth
         val thin: ScrollbarWidth
     }
 }

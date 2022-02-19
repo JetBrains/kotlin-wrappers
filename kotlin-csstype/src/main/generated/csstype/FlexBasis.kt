@@ -8,10 +8,9 @@
 package csstype
 
 // language=JavaScript
-@JsName("""(/*union*/{auto: 'auto', content: 'content', fitContent: 'fit-content', maxContent: 'max-content', minContent: 'min-content'}/*union*/)""")
+@JsName("""(/*union*/{content: 'content', fitContent: 'fit-content', maxContent: 'max-content', minContent: 'min-content'}/*union*/)""")
 sealed external interface FlexBasis {
     companion object {
-        val auto: FlexBasis
         val content: FlexBasis
         val fitContent: FlexBasis
         val maxContent: FlexBasis

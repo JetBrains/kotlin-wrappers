@@ -8,10 +8,9 @@
 package csstype
 
 // language=JavaScript
-@JsName("""(/*union*/{auto: 'auto', fromFont: 'from-font'}/*union*/)""")
+@JsName("""(/*union*/{fromFont: 'from-font'}/*union*/)""")
 sealed external interface TextDecorationThickness {
     companion object {
-        val auto: TextDecorationThickness
         val fromFont: TextDecorationThickness
     }
 }

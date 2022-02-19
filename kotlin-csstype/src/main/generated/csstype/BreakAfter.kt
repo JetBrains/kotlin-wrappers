@@ -8,12 +8,11 @@
 package csstype
 
 // language=JavaScript
-@JsName("""(/*union*/{all: 'all', always: 'always', auto: 'auto', avoid: 'avoid', avoidColumn: 'avoid-column', avoidPage: 'avoid-page', avoidRegion: 'avoid-region', column: 'column', left: 'left', page: 'page', recto: 'recto', region: 'region', right: 'right', verso: 'verso'}/*union*/)""")
+@JsName("""(/*union*/{all: 'all', always: 'always', avoid: 'avoid', avoidColumn: 'avoid-column', avoidPage: 'avoid-page', avoidRegion: 'avoid-region', column: 'column', left: 'left', page: 'page', recto: 'recto', region: 'region', right: 'right', verso: 'verso'}/*union*/)""")
 sealed external interface BreakAfter {
     companion object {
         val all: BreakAfter
         val always: BreakAfter
-        val auto: BreakAfter
         val avoid: BreakAfter
         val avoidColumn: BreakAfter
         val avoidPage: BreakAfter

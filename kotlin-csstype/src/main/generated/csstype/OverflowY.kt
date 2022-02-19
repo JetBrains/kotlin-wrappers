@@ -8,10 +8,9 @@
 package csstype
 
 // language=JavaScript
-@JsName("""(/*union*/{auto: 'auto', clip: 'clip', hidden: 'hidden', scroll: 'scroll', visible: 'visible'}/*union*/)""")
+@JsName("""(/*union*/{clip: 'clip', hidden: 'hidden', scroll: 'scroll', visible: 'visible'}/*union*/)""")
 sealed external interface OverflowY {
     companion object {
-        val auto: OverflowY
         val clip: OverflowY
         val hidden: OverflowY
         val scroll: OverflowY

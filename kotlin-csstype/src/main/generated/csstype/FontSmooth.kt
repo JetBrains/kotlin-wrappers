@@ -8,7 +8,7 @@
 package csstype
 
 // language=JavaScript
-@JsName("""(/*union*/{large: 'large', medium: 'medium', small: 'small', xLarge: 'x-large', xSmall: 'x-small', xxLarge: 'xx-large', xxSmall: 'xx-small', xxxLarge: 'xxx-large', always: 'always', auto: 'auto', never: 'never'}/*union*/)""")
+@JsName("""(/*union*/{large: 'large', medium: 'medium', small: 'small', xLarge: 'x-large', xSmall: 'x-small', xxLarge: 'xx-large', xxSmall: 'xx-small', xxxLarge: 'xxx-large', always: 'always', never: 'never'}/*union*/)""")
 sealed external interface FontSmooth {
     companion object {
         val large: FontSmooth
@@ -20,7 +20,6 @@ sealed external interface FontSmooth {
         val xxSmall: FontSmooth
         val xxxLarge: FontSmooth
         val always: FontSmooth
-        val auto: FontSmooth
         val never: FontSmooth
     }
 }

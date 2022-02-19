@@ -8,10 +8,9 @@
 package csstype
 
 // language=JavaScript
-@JsName("""(/*union*/{auto: 'auto', contain: 'contain', cover: 'cover'}/*union*/)""")
+@JsName("""(/*union*/{contain: 'contain', cover: 'cover'}/*union*/)""")
 sealed external interface MaskSize {
     companion object {
-        val auto: MaskSize
         val contain: MaskSize
         val cover: MaskSize
     }

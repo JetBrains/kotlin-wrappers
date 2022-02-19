@@ -8,10 +8,9 @@
 package csstype
 
 // language=JavaScript
-@JsName("""(/*union*/{auto: 'auto', fromFont: 'from-font', left: 'left', right: 'right', under: 'under'}/*union*/)""")
+@JsName("""(/*union*/{fromFont: 'from-font', left: 'left', right: 'right', under: 'under'}/*union*/)""")
 sealed external interface TextUnderlinePosition {
     companion object {
-        val auto: TextUnderlinePosition
         val fromFont: TextUnderlinePosition
         val left: TextUnderlinePosition
         val right: TextUnderlinePosition

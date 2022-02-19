@@ -8,10 +8,9 @@
 package csstype
 
 // language=JavaScript
-@JsName("""(/*union*/{auto: 'auto', isolate: 'isolate'}/*union*/)""")
+@JsName("""(/*union*/{isolate: 'isolate'}/*union*/)""")
 sealed external interface Isolation {
     companion object {
-        val auto: Isolation
         val isolate: Isolation
     }
 }

@@ -8,11 +8,10 @@
 package csstype
 
 // language=JavaScript
-@JsName("""(/*union*/{anywhere: 'anywhere', auto: 'auto', loose: 'loose', normal: 'normal', strict: 'strict'}/*union*/)""")
+@JsName("""(/*union*/{anywhere: 'anywhere', loose: 'loose', normal: 'normal', strict: 'strict'}/*union*/)""")
 sealed external interface LineBreak {
     companion object {
         val anywhere: LineBreak
-        val auto: LineBreak
         val loose: LineBreak
         val normal: LineBreak
         val strict: LineBreak
