@@ -8,10 +8,9 @@
 package csstype
 
 // language=JavaScript
-@JsName("""(/*union*/{auto: 'auto', manual: 'manual'}/*union*/)""")
+@JsName("""(/*union*/{manual: 'manual'}/*union*/)""")
 sealed external interface Hyphens {
     companion object {
-        val auto: Hyphens
         val manual: Hyphens
     }
 }

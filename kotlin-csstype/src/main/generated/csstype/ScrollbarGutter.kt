@@ -8,10 +8,9 @@
 package csstype
 
 // language=JavaScript
-@JsName("""(/*union*/{auto: 'auto', stable: 'stable'}/*union*/)""")
+@JsName("""(/*union*/{stable: 'stable'}/*union*/)""")
 sealed external interface ScrollbarGutter {
     companion object {
-        val auto: ScrollbarGutter
         val stable: ScrollbarGutter
     }
 }

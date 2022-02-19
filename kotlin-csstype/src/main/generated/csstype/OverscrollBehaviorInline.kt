@@ -8,10 +8,9 @@
 package csstype
 
 // language=JavaScript
-@JsName("""(/*union*/{auto: 'auto', contain: 'contain'}/*union*/)""")
+@JsName("""(/*union*/{contain: 'contain'}/*union*/)""")
 sealed external interface OverscrollBehaviorInline {
     companion object {
-        val auto: OverscrollBehaviorInline
         val contain: OverscrollBehaviorInline
     }
 }

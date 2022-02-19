@@ -8,10 +8,9 @@
 package csstype
 
 // language=JavaScript
-@JsName("""(/*union*/{auto: 'auto', interCharacter: 'inter-character', interWord: 'inter-word'}/*union*/)""")
+@JsName("""(/*union*/{interCharacter: 'inter-character', interWord: 'inter-word'}/*union*/)""")
 sealed external interface TextJustify {
     companion object {
-        val auto: TextJustify
         val interCharacter: TextJustify
         val interWord: TextJustify
     }

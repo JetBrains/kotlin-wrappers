@@ -8,7 +8,7 @@
 package csstype
 
 // language=JavaScript
-@JsName("""(/*union*/{center: 'center', end: 'end', flexEnd: 'flex-end', flexStart: 'flex-start', selfEnd: 'self-end', selfStart: 'self-start', start: 'start', auto: 'auto', baseline: 'baseline', normal: 'normal', stretch: 'stretch'}/*union*/)""")
+@JsName("""(/*union*/{center: 'center', end: 'end', flexEnd: 'flex-end', flexStart: 'flex-start', selfEnd: 'self-end', selfStart: 'self-start', start: 'start', baseline: 'baseline', normal: 'normal', stretch: 'stretch'}/*union*/)""")
 sealed external interface PlaceSelf {
     companion object {
         val center: PlaceSelf
@@ -18,7 +18,6 @@ sealed external interface PlaceSelf {
         val selfEnd: PlaceSelf
         val selfStart: PlaceSelf
         val start: PlaceSelf
-        val auto: PlaceSelf
         val baseline: PlaceSelf
         val normal: PlaceSelf
         val stretch: PlaceSelf

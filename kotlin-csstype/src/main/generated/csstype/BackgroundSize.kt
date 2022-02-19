@@ -8,10 +8,9 @@
 package csstype
 
 // language=JavaScript
-@JsName("""(/*union*/{auto: 'auto', contain: 'contain', cover: 'cover'}/*union*/)""")
+@JsName("""(/*union*/{contain: 'contain', cover: 'cover'}/*union*/)""")
 sealed external interface BackgroundSize {
     companion object {
-        val auto: BackgroundSize
         val contain: BackgroundSize
         val cover: BackgroundSize
     }

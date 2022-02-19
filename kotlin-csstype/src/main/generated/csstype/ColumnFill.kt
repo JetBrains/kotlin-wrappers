@@ -8,10 +8,9 @@
 package csstype
 
 // language=JavaScript
-@JsName("""(/*union*/{auto: 'auto', balance: 'balance', balanceAll: 'balance-all'}/*union*/)""")
+@JsName("""(/*union*/{balance: 'balance', balanceAll: 'balance-all'}/*union*/)""")
 sealed external interface ColumnFill {
     companion object {
-        val auto: ColumnFill
         val balance: ColumnFill
         val balanceAll: ColumnFill
     }
