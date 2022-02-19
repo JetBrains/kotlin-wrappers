@@ -8,7 +8,7 @@
 package csstype
 
 // language=JavaScript
-@JsName("""(/*union*/{ease: 'ease', easeIn: 'ease-in', easeInOut: 'ease-in-out', easeOut: 'ease-out', stepEnd: 'step-end', stepStart: 'step-start', linear: 'linear', all: 'all', none: 'none'}/*union*/)""")
+@JsName("""(/*union*/{ease: 'ease', easeIn: 'ease-in', easeInOut: 'ease-in-out', easeOut: 'ease-out', stepEnd: 'step-end', stepStart: 'step-start', linear: 'linear', all: 'all'}/*union*/)""")
 sealed external interface Transition {
     companion object {
         val ease: Transition
@@ -19,6 +19,5 @@ sealed external interface Transition {
         val stepStart: Transition
         val linear: Transition
         val all: Transition
-        val none: Transition
     }
 }

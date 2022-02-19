@@ -8,13 +8,12 @@
 package csstype
 
 // language=JavaScript
-@JsName("""(/*union*/{contain: 'contain', cover: 'cover', fill: 'fill', none: 'none', scaleDown: 'scale-down'}/*union*/)""")
+@JsName("""(/*union*/{contain: 'contain', cover: 'cover', fill: 'fill', scaleDown: 'scale-down'}/*union*/)""")
 sealed external interface ObjectFit {
     companion object {
         val contain: ObjectFit
         val cover: ObjectFit
         val fill: ObjectFit
-        val none: ObjectFit
         val scaleDown: ObjectFit
     }
 }

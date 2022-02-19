@@ -8,11 +8,10 @@
 package csstype
 
 // language=JavaScript
-@JsName("""(/*union*/{all: 'all', auto: 'auto', none: 'none'}/*union*/)""")
+@JsName("""(/*union*/{all: 'all', auto: 'auto'}/*union*/)""")
 sealed external interface TextDecorationSkipInk {
     companion object {
         val all: TextDecorationSkipInk
         val auto: TextDecorationSkipInk
-        val none: TextDecorationSkipInk
     }
 }

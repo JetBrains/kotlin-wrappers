@@ -8,7 +8,7 @@
 package csstype
 
 // language=JavaScript
-@JsName("""(/*union*/{borderBox: 'border-box', contentBox: 'content-box', paddingBox: 'padding-box', fillBox: 'fill-box', marginBox: 'margin-box', strokeBox: 'stroke-box', viewBox: 'view-box', none: 'none'}/*union*/)""")
+@JsName("""(/*union*/{borderBox: 'border-box', contentBox: 'content-box', paddingBox: 'padding-box', fillBox: 'fill-box', marginBox: 'margin-box', strokeBox: 'stroke-box', viewBox: 'view-box'}/*union*/)""")
 sealed external interface OffsetPath {
     companion object {
         val borderBox: OffsetPath
@@ -18,6 +18,5 @@ sealed external interface OffsetPath {
         val marginBox: OffsetPath
         val strokeBox: OffsetPath
         val viewBox: OffsetPath
-        val none: OffsetPath
     }
 }

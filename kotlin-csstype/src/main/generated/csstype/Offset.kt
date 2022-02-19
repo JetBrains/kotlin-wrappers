@@ -8,7 +8,7 @@
 package csstype
 
 // language=JavaScript
-@JsName("""(/*union*/{bottom: 'bottom', center: 'center', left: 'left', right: 'right', top: 'top', borderBox: 'border-box', contentBox: 'content-box', paddingBox: 'padding-box', fillBox: 'fill-box', marginBox: 'margin-box', strokeBox: 'stroke-box', viewBox: 'view-box', auto: 'auto', none: 'none'}/*union*/)""")
+@JsName("""(/*union*/{bottom: 'bottom', center: 'center', left: 'left', right: 'right', top: 'top', borderBox: 'border-box', contentBox: 'content-box', paddingBox: 'padding-box', fillBox: 'fill-box', marginBox: 'margin-box', strokeBox: 'stroke-box', viewBox: 'view-box', auto: 'auto'}/*union*/)""")
 sealed external interface Offset {
     companion object {
         val bottom: Offset
@@ -24,6 +24,5 @@ sealed external interface Offset {
         val strokeBox: Offset
         val viewBox: Offset
         val auto: Offset
-        val none: Offset
     }
 }

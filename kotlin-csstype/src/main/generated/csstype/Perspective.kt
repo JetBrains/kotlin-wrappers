@@ -1,16 +1,5 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package csstype
 
-// language=JavaScript
-@JsName("""(/*union*/{none: 'none'}/*union*/)""")
-sealed external interface Perspective {
-    companion object {
-        val none: Perspective
-    }
-}
+sealed external interface Perspective

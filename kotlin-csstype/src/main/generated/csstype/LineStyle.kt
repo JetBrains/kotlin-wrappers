@@ -2,23 +2,23 @@
 
 @file:Suppress(
     "NAME_CONTAINS_ILLEGAL_CHARS",
+    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package csstype
 
 // language=JavaScript
-@JsName("""(/*union*/{dashed: 'dashed', dotted: 'dotted', double: 'double', groove: 'groove', hidden: 'hidden', inset: 'inset', none: 'none', outset: 'outset', ridge: 'ridge', solid: 'solid'}/*union*/)""")
-external enum class LineStyle : LineStyleProperty {
-    dashed,
-    dotted,
-    double,
-    groove,
-    hidden,
-    inset,
-    none,
-    outset,
-    ridge,
-    solid,
-
-    ;
+@JsName("""(/*union*/{dashed: 'dashed', dotted: 'dotted', double: 'double', groove: 'groove', hidden: 'hidden', inset: 'inset', outset: 'outset', ridge: 'ridge', solid: 'solid'}/*union*/)""")
+sealed external interface LineStyle : LineStyleProperty {
+    companion object {
+        val dashed: LineStyle
+        val dotted: LineStyle
+        val double: LineStyle
+        val groove: LineStyle
+        val hidden: LineStyle
+        val inset: LineStyle
+        val outset: LineStyle
+        val ridge: LineStyle
+        val solid: LineStyle
+    }
 }

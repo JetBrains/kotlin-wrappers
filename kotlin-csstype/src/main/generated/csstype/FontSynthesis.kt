@@ -8,10 +8,9 @@
 package csstype
 
 // language=JavaScript
-@JsName("""(/*union*/{none: 'none', smallCaps: 'small-caps', style: 'style', weight: 'weight'}/*union*/)""")
+@JsName("""(/*union*/{smallCaps: 'small-caps', style: 'style', weight: 'weight'}/*union*/)""")
 sealed external interface FontSynthesis {
     companion object {
-        val none: FontSynthesis
         val smallCaps: FontSynthesis
         val style: FontSynthesis
         val weight: FontSynthesis

@@ -8,7 +8,7 @@
 package csstype
 
 // language=JavaScript
-@JsName("""(/*union*/{button: 'button', checkbox: 'checkbox', listbox: 'listbox', menulist: 'menulist', meter: 'meter', progressBar: 'progress-bar', pushButton: 'push-button', radio: 'radio', searchfield: 'searchfield', sliderHorizontal: 'slider-horizontal', squareButton: 'square-button', textarea: 'textarea', auto: 'auto', menulistButton: 'menulist-button', none: 'none', textfield: 'textfield'}/*union*/)""")
+@JsName("""(/*union*/{button: 'button', checkbox: 'checkbox', listbox: 'listbox', menulist: 'menulist', meter: 'meter', progressBar: 'progress-bar', pushButton: 'push-button', radio: 'radio', searchfield: 'searchfield', sliderHorizontal: 'slider-horizontal', squareButton: 'square-button', textarea: 'textarea', auto: 'auto', menulistButton: 'menulist-button', textfield: 'textfield'}/*union*/)""")
 sealed external interface Appearance {
     companion object {
         val button: Appearance
@@ -25,7 +25,6 @@ sealed external interface Appearance {
         val textarea: Appearance
         val auto: Appearance
         val menulistButton: Appearance
-        val none: Appearance
         val textfield: Appearance
     }
 }

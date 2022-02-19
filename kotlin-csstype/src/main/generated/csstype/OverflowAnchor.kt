@@ -8,10 +8,9 @@
 package csstype
 
 // language=JavaScript
-@JsName("""(/*union*/{auto: 'auto', none: 'none'}/*union*/)""")
+@JsName("""(/*union*/{auto: 'auto'}/*union*/)""")
 sealed external interface OverflowAnchor {
     companion object {
         val auto: OverflowAnchor
-        val none: OverflowAnchor
     }
 }

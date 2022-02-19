@@ -8,10 +8,9 @@
 package csstype
 
 // language=JavaScript
-@JsName("""(/*union*/{all: 'all', none: 'none'}/*union*/)""")
+@JsName("""(/*union*/{all: 'all'}/*union*/)""")
 sealed external interface TransitionProperty {
     companion object {
         val all: TransitionProperty
-        val none: TransitionProperty
     }
 }

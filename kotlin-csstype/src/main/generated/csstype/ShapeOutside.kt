@@ -8,13 +8,12 @@
 package csstype
 
 // language=JavaScript
-@JsName("""(/*union*/{borderBox: 'border-box', contentBox: 'content-box', paddingBox: 'padding-box', marginBox: 'margin-box', none: 'none'}/*union*/)""")
+@JsName("""(/*union*/{borderBox: 'border-box', contentBox: 'content-box', paddingBox: 'padding-box', marginBox: 'margin-box'}/*union*/)""")
 sealed external interface ShapeOutside {
     companion object {
         val borderBox: ShapeOutside
         val contentBox: ShapeOutside
         val paddingBox: ShapeOutside
         val marginBox: ShapeOutside
-        val none: ShapeOutside
     }
 }

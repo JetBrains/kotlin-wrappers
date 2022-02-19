@@ -8,10 +8,9 @@
 package csstype
 
 // language=JavaScript
-@JsName("""(/*union*/{all: 'all', none: 'none'}/*union*/)""")
+@JsName("""(/*union*/{all: 'all'}/*union*/)""")
 sealed external interface ColumnSpan {
     companion object {
         val all: ColumnSpan
-        val none: ColumnSpan
     }
 }

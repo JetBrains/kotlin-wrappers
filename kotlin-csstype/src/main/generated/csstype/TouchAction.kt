@@ -8,12 +8,11 @@
 package csstype
 
 // language=JavaScript
-@JsName("""(/*union*/{auto: 'auto', manipulation: 'manipulation', none: 'none', panDown: 'pan-down', panLeft: 'pan-left', panRight: 'pan-right', panUp: 'pan-up', panX: 'pan-x', panY: 'pan-y', pinchZoom: 'pinch-zoom'}/*union*/)""")
+@JsName("""(/*union*/{auto: 'auto', manipulation: 'manipulation', panDown: 'pan-down', panLeft: 'pan-left', panRight: 'pan-right', panUp: 'pan-up', panX: 'pan-x', panY: 'pan-y', pinchZoom: 'pinch-zoom'}/*union*/)""")
 sealed external interface TouchAction {
     companion object {
         val auto: TouchAction
         val manipulation: TouchAction
-        val none: TouchAction
         val panDown: TouchAction
         val panLeft: TouchAction
         val panRight: TouchAction

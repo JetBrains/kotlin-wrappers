@@ -8,10 +8,9 @@
 package csstype
 
 // language=JavaScript
-@JsName("""(/*union*/{auto: 'auto', none: 'none'}/*union*/)""")
+@JsName("""(/*union*/{auto: 'auto'}/*union*/)""")
 sealed external interface TextSizeAdjust {
     companion object {
         val auto: TextSizeAdjust
-        val none: TextSizeAdjust
     }
 }
