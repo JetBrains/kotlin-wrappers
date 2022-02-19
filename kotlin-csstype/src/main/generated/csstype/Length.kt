@@ -9,16 +9,14 @@
 package csstype
 
 // language=JavaScript
-@JsName("""(/*union*/{auto: 'auto', fitContent: 'fit-content', intrinsic: 'intrinsic', maxContent: 'max-content', minContent: 'min-content', minIntrinsic: 'min-intrinsic', none: 'none', normal: 'normal'}/*union*/)""")
+@JsName("""(/*union*/{fitContent: 'fit-content', intrinsic: 'intrinsic', maxContent: 'max-content', minContent: 'min-content', minIntrinsic: 'min-intrinsic', normal: 'normal'}/*union*/)""")
 sealed external interface Length : LengthType {
     companion object {
-        val auto: LengthType.Auto
         val fitContent: LengthType.FitContent
         val intrinsic: LengthType.Intrinsic
         val maxContent: LengthType.MaxContent
         val minContent: LengthType.MinContent
         val minIntrinsic: LengthType.MinIntrinsic
-        val none: LengthType.None
         val normal: LengthType.Normal
     }
 }
