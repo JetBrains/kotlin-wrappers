@@ -8,7 +8,7 @@
 package csstype
 
 // language=JavaScript
-@JsName("""(/*union*/{closeQuote: 'close-quote', noCloseQuote: 'no-close-quote', noOpenQuote: 'no-open-quote', openQuote: 'open-quote', contents: 'contents', none: 'none', normal: 'normal'}/*union*/)""")
+@JsName("""(/*union*/{closeQuote: 'close-quote', noCloseQuote: 'no-close-quote', noOpenQuote: 'no-open-quote', openQuote: 'open-quote', contents: 'contents', normal: 'normal'}/*union*/)""")
 sealed external interface Content {
     companion object {
         val closeQuote: Content
@@ -16,7 +16,6 @@ sealed external interface Content {
         val noOpenQuote: Content
         val openQuote: Content
         val contents: Content
-        val none: Content
         val normal: Content
     }
 }

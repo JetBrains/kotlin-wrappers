@@ -2,16 +2,16 @@
 
 @file:Suppress(
     "NAME_CONTAINS_ILLEGAL_CHARS",
+    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package csstype
 
 // language=JavaScript
-@JsName("""(/*union*/{crop: 'crop', cross: 'cross', none: 'none'}/*union*/)""")
-external enum class Marks {
-    crop,
-    cross,
-    none,
-
-    ;
+@JsName("""(/*union*/{crop: 'crop', cross: 'cross'}/*union*/)""")
+sealed external interface Marks {
+    companion object {
+        val crop: Marks
+        val cross: Marks
+    }
 }

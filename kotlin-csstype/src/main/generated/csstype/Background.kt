@@ -8,7 +8,7 @@
 package csstype
 
 // language=JavaScript
-@JsName("""(/*union*/{bottom: 'bottom', center: 'center', left: 'left', right: 'right', top: 'top', noRepeat: 'no-repeat', repeat: 'repeat', repeatX: 'repeat-x', repeatY: 'repeat-y', round: 'round', space: 'space', fixed: 'fixed', local: 'local', scroll: 'scroll', borderBox: 'border-box', contentBox: 'content-box', paddingBox: 'padding-box', none: 'none'}/*union*/)""")
+@JsName("""(/*union*/{bottom: 'bottom', center: 'center', left: 'left', right: 'right', top: 'top', noRepeat: 'no-repeat', repeat: 'repeat', repeatX: 'repeat-x', repeatY: 'repeat-y', round: 'round', space: 'space', fixed: 'fixed', local: 'local', scroll: 'scroll', borderBox: 'border-box', contentBox: 'content-box', paddingBox: 'padding-box'}/*union*/)""")
 sealed external interface Background {
     companion object {
         val bottom: Background
@@ -28,6 +28,5 @@ sealed external interface Background {
         val borderBox: Background
         val contentBox: Background
         val paddingBox: Background
-        val none: Background
     }
 }

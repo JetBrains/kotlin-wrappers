@@ -8,7 +8,7 @@
 package csstype
 
 // language=JavaScript
-@JsName("""(/*union*/{borderBox: 'border-box', contentBox: 'content-box', paddingBox: 'padding-box', fillBox: 'fill-box', marginBox: 'margin-box', strokeBox: 'stroke-box', viewBox: 'view-box', none: 'none'}/*union*/)""")
+@JsName("""(/*union*/{borderBox: 'border-box', contentBox: 'content-box', paddingBox: 'padding-box', fillBox: 'fill-box', marginBox: 'margin-box', strokeBox: 'stroke-box', viewBox: 'view-box'}/*union*/)""")
 sealed external interface ClipPath {
     companion object {
         val borderBox: ClipPath
@@ -18,6 +18,5 @@ sealed external interface ClipPath {
         val marginBox: ClipPath
         val strokeBox: ClipPath
         val viewBox: ClipPath
-        val none: ClipPath
     }
 }

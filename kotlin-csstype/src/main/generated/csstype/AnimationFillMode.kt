@@ -8,12 +8,11 @@
 package csstype
 
 // language=JavaScript
-@JsName("""(/*union*/{backwards: 'backwards', both: 'both', forwards: 'forwards', none: 'none'}/*union*/)""")
+@JsName("""(/*union*/{backwards: 'backwards', both: 'both', forwards: 'forwards'}/*union*/)""")
 sealed external interface AnimationFillMode {
     companion object {
         val backwards: AnimationFillMode
         val both: AnimationFillMode
         val forwards: AnimationFillMode
-        val none: AnimationFillMode
     }
 }
