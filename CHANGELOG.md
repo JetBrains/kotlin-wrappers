@@ -1,3 +1,46 @@
+## pre.298 — pre.302
+Some factory functions are supported in `kotlin-csstype`.
+Declarations in `kotlin-csstype` are updated.  
+**\[breaking change\]** `auto` and `none` values are generalized for whole DSL,
+other duplicates of these declarations are removed. 
+
+`BigInt` declaration is added to `kotlin-extensions`.
+
+## pre.297
+`kotlin-browser` declarations are introduced. There will be placed common APIs that are supported in modern browser environment. 
+
+## pre.296
+Refactoring of `kotlin-extensions` is started. The main target is migration from `kotlinext` to  `kotlinx` package.
+
+## pre.295
+`kotlin-node` declarations are introduced.
+
+## pre.294
+`kotlin-webrtc` declarations are introduced. 
+
+## pre.292 — pre.293
+`kotlin-typescript` declarations are updated.
+
+## pre.291
+`kotlin-typescript` declarations are introduced. It is compiler API declarations that can be used for code transformations or infrastructural tasks.
+
+## pre.287 — pre.290
+`kotlin-mui` declarations are updated.
+
+## pre.286
+`kotlin-mui` declarations are updated, some utility hooks are supported.
+
+Examples are updated.
+
+## pre.285
+`kotlin-mui` declarations are updated.
+
+## pre.284
+`Symbol` declaration is added to `kotlin-extensions`.
+
+## pre.283
+Low level API is added to `emotion-css`.
+
 ## pre.282
 
 ### `kotlin-react` was split into two parts: `kotlin-react` and `kotlin-react-legacy`
