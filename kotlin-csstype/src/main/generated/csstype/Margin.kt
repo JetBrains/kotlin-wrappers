@@ -9,22 +9,22 @@ package csstype
 typealias Margin = AutoLengthProperty
 
 inline fun Margin(
-    vertical: AutoLengthProperty,
-    horizontal: AutoLengthProperty,
+    vertical: AutoLength,
+    horizontal: AutoLength,
 ): Margin =
     "$vertical $horizontal".unsafeCast<Margin>()
 
 inline fun Margin(
-    top: AutoLengthProperty,
-    horizontal: AutoLengthProperty,
-    bottom: AutoLengthProperty,
+    top: AutoLength,
+    horizontal: AutoLength,
+    bottom: AutoLength,
 ): Margin =
     "$top $horizontal $bottom".unsafeCast<Margin>()
 
 inline fun Margin(
-    top: AutoLengthProperty,
-    right: AutoLengthProperty,
-    bottom: AutoLengthProperty,
-    left: AutoLengthProperty,
+    top: AutoLength,
+    right: AutoLength,
+    bottom: AutoLength,
+    left: AutoLength,
 ): Margin =
     "$top $right $bottom $left".unsafeCast<Margin>()
