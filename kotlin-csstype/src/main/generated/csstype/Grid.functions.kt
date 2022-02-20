@@ -6,6 +6,11 @@
 
 package csstype
 
+inline fun fitContent(
+    value: Length,
+): GridTemplateTracks =
+    "fit-content($value)".unsafeCast<GridTemplateTracks>()
+
 inline fun repeat(
     times: Int,
     value: GridTemplateTracks,
