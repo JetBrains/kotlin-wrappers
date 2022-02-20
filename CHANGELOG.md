@@ -1,63 +1,65 @@
 ## pre.298 — pre.302
 
-Some factory functions are supported in `kotlin-csstype`.
-Declarations in `kotlin-csstype` are updated.  
-**\[breaking change\]** `auto` and `none` values are generalized for whole DSL,
-other duplicates of these declarations are removed. 
+Some factory functions were supported in `kotlin-csstype`. Declarations in `kotlin-csstype` were updated.
 
-`BigInt` declaration is added to `kotlin-extensions`.
+**\[breaking change\]** `auto` and `none` values were generalized for the whole DSL, duplicates of these declarations
+were removed.
+
+`BigInt` declaration was added to `kotlin-extensions`.
 
 ## pre.297
 
-`kotlin-browser` declarations are introduced. There will be placed common APIs that are supported in modern browser environment. 
+`kotlin-browser` declarations were introduced. These are browser APIs missing from the standard library.
 
 ## pre.296
 
-Refactoring of `kotlin-extensions` is started. The main target is migration from `kotlinext` to  `kotlinx` package.
+Refactoring of `kotlin-extensions` has begun. Migration from `kotlinext` to `kotlinx` package is the main goal.
 
 ## pre.295
 
-`kotlin-node` declarations are introduced.
+`kotlin-node` declarations were introduced.
 
 ## pre.294
 
-`kotlin-webrtc` declarations are introduced. 
+`kotlin-webrtc` declarations were introduced.
 
 ## pre.292 — pre.293
 
-`kotlin-typescript` declarations are updated.
+`kotlin-typescript` declarations were updated.
 
 ## pre.291
 
-`kotlin-typescript` declarations are introduced. It is compiler API declarations that can be used for code transformations or infrastructural tasks.
+`kotlin-typescript` declarations were introduced. They are compiler API declarations that can be used for code
+transformation or infrastructural tasks.
 
 ## pre.287 — pre.290
 
-`kotlin-mui` declarations are updated.
+`kotlin-mui` declarations were updated.
 
 ## pre.286
 
-`kotlin-mui` declarations are updated, some utility hooks are supported.
+`kotlin-mui` declarations were updated, some utility hooks were supported.
 
-Examples are updated.
+Examples were updated.
 
 ## pre.285
 
-`kotlin-mui` declarations are updated.
+`kotlin-mui` declarations were updated.
 
 ## pre.284
 
-`Symbol` declaration is added to `kotlin-extensions`.
+`Symbol` declaration was added to `kotlin-extensions`.
 
 ## pre.283
 
-Low level API is added to `emotion-css`.
+Low-level API was added to `emotion-css`.
 
 ## pre.282
 
 ### `kotlin-react` was split into two parts: `kotlin-react` and `kotlin-react-legacy`
 
-`kotlin-react` only supports the new DSL for React elements (`ChildrenBuilder`, aka "no attrs"), while `kotlin-react-legacy`
+`kotlin-react` only supports the new DSL for React elements (`ChildrenBuilder`, aka "no attrs"),
+while `kotlin-react-legacy`
 provides the familiar `RBuilder` DSL.
 
 If you are migrating from an earlier version and are not interested in migrating to the new API, you should **replace**
