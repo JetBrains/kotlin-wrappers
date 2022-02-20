@@ -3,13 +3,14 @@
 package csstype
 
 sealed external interface LengthType :
+    AutoLength,
     Bleed,
     GridLength,
     LengthProperty,
     LineWidth {
 
     sealed interface Auto :
-        AutoLengthProperty,
+        AutoLength,
         BlockSize,
         BorderImageWidth,
         Columns,

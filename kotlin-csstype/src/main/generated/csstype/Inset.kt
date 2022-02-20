@@ -9,22 +9,22 @@ package csstype
 typealias Inset = AutoLengthProperty
 
 inline fun Inset(
-    vertical: AutoLengthProperty,
-    horizontal: AutoLengthProperty,
+    vertical: AutoLength,
+    horizontal: AutoLength,
 ): Inset =
     "$vertical $horizontal".unsafeCast<Inset>()
 
 inline fun Inset(
-    top: AutoLengthProperty,
-    horizontal: AutoLengthProperty,
-    bottom: AutoLengthProperty,
+    top: AutoLength,
+    horizontal: AutoLength,
+    bottom: AutoLength,
 ): Inset =
     "$top $horizontal $bottom".unsafeCast<Inset>()
 
 inline fun Inset(
-    top: AutoLengthProperty,
-    right: AutoLengthProperty,
-    bottom: AutoLengthProperty,
-    left: AutoLengthProperty,
+    top: AutoLength,
+    right: AutoLength,
+    bottom: AutoLength,
+    left: AutoLength,
 ): Inset =
     "$top $right $bottom $left".unsafeCast<Inset>()
