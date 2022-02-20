@@ -1,8 +1,8 @@
 package styled
 
-import kotlinext.js.Object
 import kotlinext.js.js
 import kotlinx.css.StyledElement
+import kotlinx.js.Object
 import react.dom.RDOMBuilder
 import react.dom.setProp
 

@@ -1,6 +1,6 @@
 package react
 
-import kotlinext.js.Object
+import kotlinx.js.Object
 import kotlinx.js.ReadonlyArray
 import kotlinx.js.Symbol
 
