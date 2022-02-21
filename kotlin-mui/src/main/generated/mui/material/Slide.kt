@@ -35,8 +35,8 @@ external interface SlideProps :
      * The transition timing function.
      * You may specify a single easing or a object containing enter and exit values.
      * @default {
-     *   enter: easing.easeOut,
-     *   exit: easing.sharp,
+     *   enter: theme.transitions.easing.easeOut,
+     *   exit: theme.transitions.easing.sharp,
      * }
      */
     var easing: dynamic /* TransitionProps['easing'] */
@@ -50,8 +50,8 @@ external interface SlideProps :
      * The duration for the transition, in milliseconds.
      * You may specify a single timeout for all transitions, or individually with an object.
      * @default {
-     *   enter: duration.enteringScreen,
-     *   exit: duration.leavingScreen,
+     *   enter: theme.transitions.duration.enteringScreen,
+     *   exit: theme.transitions.duration.leavingScreen,
      * }
      */
     var timeout: dynamic /* TransitionProps['timeout'] */
