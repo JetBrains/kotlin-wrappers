@@ -206,7 +206,7 @@ external class Buffer : Uint8Array {
         targetEnd: Number = definedExternally,
         sourceStart: Number = definedExternally,
         sourceEnd: Number = definedExternally,
-    ): Number
+    ): Int /* -1 | 0 | 1 */
 
     /**
      * Copies data from a region of `buf` to a region in `target`, even if the `target`memory region overlaps with `buf`.
