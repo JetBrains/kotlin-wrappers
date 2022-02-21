@@ -96,7 +96,7 @@ external interface ButtonBaseProps :
     var TouchRippleProps: dynamic
 
     /**
-     * A ref that points to the `TouchRippple` element.
+     * A ref that points to the `TouchRipple` element.
      */
     var touchRippleRef: react.Ref<TouchRippleActions>?
 }
