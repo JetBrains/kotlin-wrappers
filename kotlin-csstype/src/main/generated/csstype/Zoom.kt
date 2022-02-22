@@ -3,7 +3,6 @@
 @file:Suppress(
     "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-    "NOTHING_TO_INLINE",
 )
 
 package csstype
@@ -16,6 +15,3 @@ sealed external interface Zoom {
         val reset: Zoom
     }
 }
-
-inline fun Zoom(value: Double): Zoom =
-    value.unsafeCast<Zoom>()
