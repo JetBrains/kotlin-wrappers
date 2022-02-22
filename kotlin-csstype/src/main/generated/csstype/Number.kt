@@ -9,6 +9,7 @@ package csstype
 sealed external interface NumberType :
     FlexGrow,
     FlexShrink,
+    LineHeight,
     Opacity,
     Scale,
     Zoom

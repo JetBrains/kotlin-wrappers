@@ -9,6 +9,7 @@ package csstype
 sealed external interface IntegerType :
     ColumnCount,
     FontWeight,
+    GridLine,
     LineClamp,
     MaxLines,
     Order,
