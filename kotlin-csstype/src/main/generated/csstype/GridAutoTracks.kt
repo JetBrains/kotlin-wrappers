@@ -2,4 +2,5 @@
 
 package csstype
 
-sealed external interface GridAutoTracks
+sealed external interface GridAutoTracks :
+    GridTemplateTracks

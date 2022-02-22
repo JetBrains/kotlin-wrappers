@@ -11,6 +11,12 @@ inline fun fitContent(
 ): GridTemplateTracks =
     "fit-content($value)".unsafeCast<GridTemplateTracks>()
 
+inline fun minmax(
+    min: GridAutoTracks,
+    max: GridAutoTracks,
+): GridAutoTracks =
+    "minmax($min,$max)".unsafeCast<GridAutoTracks>()
+
 inline fun repeat(
     times: Int,
     value: GridTemplateTracks,
