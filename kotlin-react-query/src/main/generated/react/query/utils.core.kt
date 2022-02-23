@@ -12,6 +12,7 @@ package react.query
 
 import kotlinx.js.JsPair
 import kotlinx.js.ReadonlyArray
+import kotlinx.js.Void
 import kotlin.js.Promise
 
 external interface QueryFilters {
@@ -37,7 +38,7 @@ typealias Updater<TInput, TOutput> = DataUpdateFunction<TInput, TOutput>
 
 external val isServer: Boolean
 
-external fun noop(): Nothing?
+external fun noop(): Void
 
 external fun <TInput, TOutput> functionalUpdate(
     updater: Updater<TInput, TOutput>,

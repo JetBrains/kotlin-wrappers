@@ -7,6 +7,7 @@
 package react.query
 
 import kotlinx.js.ReadonlyArray
+import kotlinx.js.Void
 import kotlin.js.Promise
 
 typealias QueryKey = Union /* string | readonly unknown[] */
@@ -156,8 +157,8 @@ external interface QueryObserverBaseResult<TData, TError> {
 
 external interface QueryObserverIdleResult<TData, TError>
     : QueryObserverResult<TData, TError> {
-    override val data: Nothing?
-    override val error: Nothing?
+    override val data: Void
+    override val error: Void
     override val isError: False
     override val isIdle: True
     override val isLoading: False
@@ -169,8 +170,8 @@ external interface QueryObserverIdleResult<TData, TError>
 
 external interface QueryObserverLoadingResult<TData, TError>
     : QueryObserverResult<TData, TError> {
-    override val data: Nothing?
-    override val error: Nothing?
+    override val data: Void
+    override val error: Void
     override val isError: False
     override val isIdle: False
     override val isLoading: True
@@ -182,7 +183,7 @@ external interface QueryObserverLoadingResult<TData, TError>
 
 external interface QueryObserverLoadingErrorResult<TData, TError>
     : QueryObserverResult<TData, TError> {
-    override val data: Nothing?
+    override val data: Void
     override val error: TError
     override val isError: True
     override val isIdle: False
@@ -209,7 +210,7 @@ external interface QueryObserverRefetchErrorResult<TData, TError>
 external interface QueryObserverSuccessResult<TData, TError>
     : QueryObserverResult<TData, TError> {
     override val data: TData
-    override val error: Nothing?
+    override val error: Void
     override val isError: False
     override val isIdle: False
     override val isLoading: False
@@ -234,8 +235,8 @@ external interface InfiniteQueryObserverBaseResult<TData, TError>
 
 external interface InfiniteQueryObserverIdleResult<TData, TError>
     : InfiniteQueryObserverResult<TData, TError> {
-    override val data: Nothing?
-    override val error: Nothing?
+    override val data: Void
+    override val error: Void
     override val isError: False
     override val isIdle: True
     override val isLoading: False
@@ -247,8 +248,8 @@ external interface InfiniteQueryObserverIdleResult<TData, TError>
 
 external interface InfiniteQueryObserverLoadingResult<TData, TError>
     : InfiniteQueryObserverResult<TData, TError> {
-    override val data: Nothing?
-    override val error: Nothing?
+    override val data: Void
+    override val error: Void
     override val isError: False
     override val isIdle: False
     override val isLoading: True
@@ -260,7 +261,7 @@ external interface InfiniteQueryObserverLoadingResult<TData, TError>
 
 external interface InfiniteQueryObserverLoadingErrorResult<TData, TError>
     : InfiniteQueryObserverResult<TData, TError> {
-    override val data: Nothing?
+    override val data: Void
     override val error: TError
     override val isError: True
     override val isIdle: False
@@ -287,7 +288,7 @@ external interface InfiniteQueryObserverRefetchErrorResult<TData, TError>
 external interface InfiniteQueryObserverSuccessResult<TData, TError>
     : InfiniteQueryObserverResult<TData, TError> {
     override val data: InfiniteData<TData>
-    override val error: Nothing?
+    override val error: Void
     override val isError: False
     override val isIdle: False
     override val isLoading: False
@@ -345,8 +346,8 @@ external interface MutationObserverBaseResult<TData, TError, TVariables, TContex
 
 external interface MutationObserverIdleResult<TData, TError, TVariables, TContext>
     : MutationObserverResult<TData, TError, TVariables, TContext> {
-    override val data: Nothing?
-    override val error: Nothing?
+    override val data: Void
+    override val error: Void
     override val isError: False
     override val isIdle: True
     override val isLoading: False
@@ -356,8 +357,8 @@ external interface MutationObserverIdleResult<TData, TError, TVariables, TContex
 
 external interface MutationObserverLoadingResult<TData, TError, TVariables, TContext>
     : MutationObserverResult<TData, TError, TVariables, TContext> {
-    override val data: Nothing?
-    override val error: Nothing?
+    override val data: Void
+    override val error: Void
     override val isError: False
     override val isIdle: False
     override val isLoading: True
@@ -367,7 +368,7 @@ external interface MutationObserverLoadingResult<TData, TError, TVariables, TCon
 
 external interface MutationObserverErrorResult<TData, TError, TVariables, TContext>
     : MutationObserverResult<TData, TError, TVariables, TContext> {
-    override val data: Nothing?
+    override val data: Void
     override val error: TError
     override val isError: True
     override val isIdle: False
@@ -379,7 +380,7 @@ external interface MutationObserverErrorResult<TData, TError, TVariables, TConte
 external interface MutationObserverSuccessResult<TData, TError, TVariables, TContext>
     : MutationObserverResult<TData, TError, TVariables, TContext> {
     override val data: TData
-    override val error: Nothing?
+    override val error: Void
     override val isError: False
     override val isIdle: False
     override val isLoading: False
