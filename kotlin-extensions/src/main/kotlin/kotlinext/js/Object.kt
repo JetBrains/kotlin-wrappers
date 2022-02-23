@@ -1,5 +1,7 @@
 package kotlinext.js
 
+import kotlinx.js.ReadonlyArray
+
 @Deprecated(
     message = "Will be removed soon!",
     replaceWith = ReplaceWith("kotlinx.js.PropertyDescriptor")
@@ -14,5 +16,5 @@ fun Any.asJsObject(): kotlinx.js.Object = unsafeCast<kotlinx.js.Object>()
 )
 typealias Object = kotlinx.js.Object
 
-fun Any.getOwnPropertyNames(): Array<String> =
+fun Any.getOwnPropertyNames(): ReadonlyArray<String> =
     kotlinx.js.Object.getOwnPropertyNames(this)
