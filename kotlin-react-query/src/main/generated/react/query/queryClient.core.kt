@@ -9,12 +9,6 @@ import kotlinx.js.JsPair
 import kotlinx.js.ReadonlyArray
 import kotlin.js.Promise
 
-external interface QueryClientConfig {
-    var queryCache: QueryCache
-    var mutationCache: MutationCache
-    var defaultOptions: DefaultOptions<*>
-}
-
 open external class QueryClient(config: QueryClientConfig = definedExternally) {
     open fun mount()
     open fun unmount()

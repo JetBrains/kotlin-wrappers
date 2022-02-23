@@ -7,6 +7,7 @@
 package react.query
 
 import kotlinx.js.ReadonlyArray
+import kotlinx.js.Record
 import kotlinx.js.Void
 import kotlin.js.Promise
 
@@ -38,7 +39,7 @@ external interface InfiniteData<TData> {
     var pageParams: ReadonlyArray<PageParam>
 }
 
-typealias QueryMeta = Any
+typealias QueryMeta = Record<String, *>
 
 external interface QueryOptions<TQueryFnData, TError, TData, TQueryKey : QueryKey> {
     var retry: RetryValue<TError>
@@ -303,7 +304,7 @@ sealed external interface InfiniteQueryObserverResult<TData, TError>
 
 typealias MutationKey = Union /* string | readonly unknown[] */
 
-typealias MutationMeta = Any
+typealias MutationMeta = Record<String, *>
 
 typealias MutationFunction<TData, TVariables> = (variables: TVariables) -> Promise<TData>
 
@@ -390,6 +391,12 @@ external interface MutationObserverSuccessResult<TData, TError, TVariables, TCon
 
 sealed external interface MutationObserverResult<TData, TError, TVariables, TContext>
     : MutationObserverBaseResult<TData, TError, TVariables, TContext>
+
+external interface QueryClientConfig {
+    var queryCache: QueryCache
+    var mutationCache: MutationCache
+    var defaultOptions: DefaultOptions<*>
+}
 
 external interface DefaultOptions<TError> {
     var queries: QueryObserverOptions<*, TError, *, *, *>
