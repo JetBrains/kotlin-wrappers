@@ -5,6 +5,9 @@
 
 package mui.lab
 
+import kotlinx.js.Void
+import kotlin.js.Promise
+
 external interface MonthPickerProps<TDate> : react.Props {
     /**
      * className applied to the root element.
@@ -37,7 +40,7 @@ external interface MonthPickerProps<TDate> : react.Props {
     /** Callback fired on date change. */
     var onChange: PickerOnChangeFn<TDate>
 
-    var onMonthChange: ((date: TDate) -> kotlin.js.Promise<Nothing?>?)?
+    var onMonthChange: ((date: TDate) -> Promise<Void>?)?
 
     /** If `true` picker is readonly */
     var readOnly: Boolean?

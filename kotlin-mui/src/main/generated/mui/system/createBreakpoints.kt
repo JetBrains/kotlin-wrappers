@@ -6,6 +6,7 @@
 package mui.system
 
 import kotlinx.js.ReadonlyArray
+import kotlinx.js.Record
 
 external interface Breakpoints {
     var keys: ReadonlyArray<Breakpoint>
@@ -25,7 +26,7 @@ external interface Breakpoints {
      *    xl: 1536,
      * }
      */
-    var values: kotlinx.js.Record<Breakpoint, Number>
+    var values: Record<Breakpoint, Number>
 
     /**
      * @param key - A breakpoint key (`xs`, `sm`, etc.) or a screen width number in px.
