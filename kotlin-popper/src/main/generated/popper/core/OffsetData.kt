@@ -2,4 +2,6 @@
 
 package popper.core
 
-typealias OffsetData = kotlinx.js.Record<Placement, Offsets>
+import kotlinx.js.Record
+
+typealias OffsetData = Record<Placement, Offsets>
