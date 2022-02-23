@@ -11,6 +11,17 @@ inline fun attr(
 ): Content =
     "attr($name)".unsafeCast<Content>()
 
+inline fun <T : Any> env(
+    id: Ident,
+): T =
+    "env($id)".unsafeCast<T>()
+
+inline fun <T : Any> env(
+    id: Ident,
+    fallback: T,
+): T =
+    "env($id,$fallback)".unsafeCast<T>()
+
 inline fun url(
     value: String,
 ): Url =
