@@ -16,12 +16,12 @@ external class Object internal constructor() {
         fun entries(o: Any): ReadonlyArray<JsPair<String, Any?>>
         fun <R, T : R> freeze(o: T): R
         fun <T> getOwnPropertyDescriptor(o: Any, p: String): PropertyDescriptor<T>
-        fun getOwnPropertyNames(o: Any): Array<String>
+        fun getOwnPropertyNames(o: Any): ReadonlyArray<String>
         fun <P : Any, T : P> getPrototypeOf(o: T): P
         fun isExtensible(o: Any): Boolean
         fun isFrozen(o: Any): Boolean
         fun isSealed(o: Any): Boolean
-        fun keys(o: Any): Array<String>
+        fun keys(o: Any): ReadonlyArray<String>
         fun <T> preventExtensions(o: T): T
         fun <T> seal(o: T): T
         fun <T : Any> values(o: Record<*, T>): ReadonlyArray<T>
