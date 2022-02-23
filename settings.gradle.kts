@@ -24,6 +24,9 @@ include("examples")
 // Kotlin/JS: Browser APIs missing from the standard library
 include("kotlin-browser")
 
+// Kotlin/JS: CesiumJS wrappers
+include("kotlin-cesium")
+
 // Platform-agnostic CSS support
 include("kotlin-css")
 
