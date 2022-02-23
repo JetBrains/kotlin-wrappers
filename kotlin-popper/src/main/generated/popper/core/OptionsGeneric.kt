@@ -2,9 +2,11 @@
 
 package popper.core
 
+import kotlinx.js.ReadonlyArray
+
 external interface OptionsGeneric<TModifier> {
     var placement: Placement
-    var modifiers: kotlinx.js.ReadonlyArray<TModifier>
+    var modifiers: ReadonlyArray<TModifier>
     var strategy: PositioningStrategy
     var onFirstUpdate: UpdateCallback?
 }

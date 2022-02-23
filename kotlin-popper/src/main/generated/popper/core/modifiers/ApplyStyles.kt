@@ -6,5 +6,7 @@
 
 package popper.core.modifiers
 
+import kotlinx.js.Void
+
 @JsName("'applyStyles'")
-external val ApplyStyles: popper.core.ModifierName<Nothing?>
+external val ApplyStyles: popper.core.ModifierName<Void>
