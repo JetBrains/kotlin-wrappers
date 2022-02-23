@@ -10,6 +10,8 @@
 
 package react.query
 
+import kotlin.js.Promise
+
 typealias InfiniteQueryObserverListener<TData, TError> = (result: InfiniteQueryObserverResult<TData, TError>) -> Unit
 
 open external class InfiniteQueryObserver<TQueryFnData, TError, TData, TQueryData>(
@@ -18,7 +20,7 @@ open external class InfiniteQueryObserver<TQueryFnData, TError, TData, TQueryDat
 ) : QueryObserver<TQueryFnData, TError, InfiniteData<TData>, InfiniteData<TQueryData>, QueryKey> {
     open var subscribe: (listener: InfiniteQueryObserverListener<TData, TError>?) -> () -> Unit
     open var getCurrentResult: () -> InfiniteQueryObserverResult<TData, TError>
-    protected open var fetch: (fetchOptions: ObserverFetchOptions?) -> kotlin.js.Promise<InfiniteQueryObserverResult<TData, TError>>
+    protected open var fetch: (fetchOptions: ObserverFetchOptions?) -> Promise<InfiniteQueryObserverResult<TData, TError>>
     override fun bindMethods()
     open fun setOptions(
         options: InfiniteQueryObserverOptions<TQueryFnData, TError, TData, TQueryData, *> = definedExternally,
@@ -26,8 +28,8 @@ open external class InfiniteQueryObserver<TQueryFnData, TError, TData, TQueryDat
     )
 
     open fun getOptimisticResult(options: InfiniteQueryObserverOptions<TQueryFnData, TError, TData, TQueryData, *>): InfiniteQueryObserverResult<TData, TError>
-    open fun fetchNextPage(options: FetchNextPageOptions = definedExternally): kotlin.js.Promise<InfiniteQueryObserverResult<TData, TError>>
-    open fun fetchPreviousPage(options: FetchPreviousPageOptions = definedExternally): kotlin.js.Promise<InfiniteQueryObserverResult<TData, TError>>
+    open fun fetchNextPage(options: FetchNextPageOptions = definedExternally): Promise<InfiniteQueryObserverResult<TData, TError>>
+    open fun fetchPreviousPage(options: FetchPreviousPageOptions = definedExternally): Promise<InfiniteQueryObserverResult<TData, TError>>
     protected open fun createResult(
         query: Query<TQueryFnData, TError, InfiniteData<TQueryData>, *>,
         options: InfiniteQueryObserverOptions<TQueryFnData, TError, TData, TQueryData, *>,

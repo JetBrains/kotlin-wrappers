@@ -9,10 +9,12 @@
 
 package react.query
 
+import kotlinx.js.ReadonlyArray
+
 typealias Listener = () -> Unit
 
 open external class Subscribable<TListener : Function<*>> {
-    protected open var listeners: Array<out TListener>
+    protected open var listeners: ReadonlyArray<TListener>
     open fun subscribe(listener: TListener = definedExternally): () -> Unit
     open fun hasListeners(): Boolean
     protected open fun onSubscribe()

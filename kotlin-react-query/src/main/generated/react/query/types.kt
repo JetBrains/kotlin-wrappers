@@ -6,6 +6,8 @@
 
 package react.query
 
+import kotlin.js.Promise
+
 external interface UseBaseQueryOptions<TQueryFnData, TError, TData, TQueryData, TQueryKey : QueryKey>
     : QueryObserverOptions<TQueryFnData, TError, TData, TQueryData, TQueryKey>
 
@@ -24,10 +26,10 @@ typealias UseInfiniteQueryResult<TData, TError> = InfiniteQueryObserverResult<TD
 external interface UseMutationOptions<TData, TError, TVariables, TContext> {
     var mutationFn: MutationFunction<TData, TVariables>
     var mutationKey: MutationKey
-    var onMutate: (variables: TVariables) -> kotlin.js.Promise<TContext?>?
-    var onSuccess: (data: TData, variables: TVariables, context: TContext?) -> kotlin.js.Promise<Any>?
-    var onError: (error: TError, variables: TVariables, context: TContext?) -> kotlin.js.Promise<Any>?
-    var onSettled: (data: TData?, error: TError?, variables: TVariables, context: TContext?) -> kotlin.js.Promise<Any>?
+    var onMutate: (variables: TVariables) -> Promise<TContext?>?
+    var onSuccess: (data: TData, variables: TVariables, context: TContext?) -> Promise<Any>?
+    var onError: (error: TError, variables: TVariables, context: TContext?) -> Promise<Any>?
+    var onSettled: (data: TData?, error: TError?, variables: TVariables, context: TContext?) -> Promise<Any>?
     var retry: RetryValue<TError>
     var retryDelay: RetryDelayValue<TError>
     var useErrorBoundary: (error: TError) -> Boolean
@@ -36,7 +38,7 @@ external interface UseMutationOptions<TData, TError, TVariables, TContext> {
 
 typealias UseMutateFunction<TData, TError, TVariables, TContext> = (variables: TVariables, options: MutateOptions<TData, TError, TVariables, TContext>?) -> Unit
 
-typealias UseMutateAsyncFunction<TData, TError, TVariables, TContext> = (variables: TVariables, options: MutateOptions<TData, TError, TVariables, TContext>?) -> kotlin.js.Promise<TData>
+typealias UseMutateAsyncFunction<TData, TError, TVariables, TContext> = (variables: TVariables, options: MutateOptions<TData, TError, TVariables, TContext>?) -> Promise<TData>
 
 typealias UseBaseMutationResult<TData, TError, TVariables, TContext> = MutationObserverResult<TData, TError, TVariables, TContext>
 

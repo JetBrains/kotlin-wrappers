@@ -6,11 +6,15 @@
 
 package react.query
 
+import kotlinx.js.ReadonlyArray
+import kotlinx.js.Void
+import kotlin.js.Promise
+
 typealias QueryKey = Union /* string | readonly unknown[] */
 
 typealias EnsuredQueryKey<T> = Any
 
-typealias QueryFunction<T, TQueryKey> = (context: QueryFunctionContext<TQueryKey, *>) -> kotlin.js.Promise<T>
+typealias QueryFunction<T, TQueryKey> = (context: QueryFunctionContext<TQueryKey, *>) -> Promise<T>
 
 external interface QueryFunctionContext<TQueryKey : QueryKey, TPageParam> {
     var queryKey: EnsuredQueryKey<TQueryKey>
@@ -25,13 +29,13 @@ typealias PlaceholderDataFunction<TResult> = () -> TResult?
 
 typealias QueryKeyHashFunction<TQueryKey> = (queryKey: TQueryKey) -> String
 
-typealias GetPreviousPageParamFunction<TQueryFnData> = (firstPage: TQueryFnData, allPages: Array<out TQueryFnData>) -> Any
+typealias GetPreviousPageParamFunction<TQueryFnData> = (firstPage: TQueryFnData, allPages: ReadonlyArray<TQueryFnData>) -> Any
 
-typealias GetNextPageParamFunction<TQueryFnData> = (lastPage: TQueryFnData, allPages: Array<out TQueryFnData>) -> Any
+typealias GetNextPageParamFunction<TQueryFnData> = (lastPage: TQueryFnData, allPages: ReadonlyArray<TQueryFnData>) -> Any
 
 external interface InfiniteData<TData> {
-    var pages: Array<out TData>
-    var pageParams: Array<out PageParam>
+    var pages: ReadonlyArray<TData>
+    var pageParams: ReadonlyArray<PageParam>
 }
 
 typealias QueryMeta = Any
@@ -94,7 +98,7 @@ external interface ResultOptions {
 }
 
 external interface RefetchPageFilters<TPageData> {
-    var refetchPage: (lastPage: TPageData, index: Int, allPages: Array<out TPageData>) -> Boolean
+    var refetchPage: (lastPage: TPageData, index: Int, allPages: ReadonlyArray<TPageData>) -> Boolean
 }
 
 external interface RefetchOptions : ResultOptions {
@@ -146,15 +150,15 @@ external interface QueryObserverBaseResult<TData, TError> {
     val isRefetching: Boolean
     val isStale: Boolean
     val isSuccess: Boolean
-    val refetch: (options: RefetchOptions? /* & RefetchQueryFilters<TPageData> */) -> kotlin.js.Promise<QueryObserverResult<TData, TError>>
+    val refetch: (options: RefetchOptions? /* & RefetchQueryFilters<TPageData> */) -> Promise<QueryObserverResult<TData, TError>>
     val remove: () -> Unit
     val status: QueryStatus
 }
 
 external interface QueryObserverIdleResult<TData, TError>
     : QueryObserverResult<TData, TError> {
-    override val data: Nothing?
-    override val error: Nothing?
+    override val data: Void
+    override val error: Void
     override val isError: False
     override val isIdle: True
     override val isLoading: False
@@ -166,8 +170,8 @@ external interface QueryObserverIdleResult<TData, TError>
 
 external interface QueryObserverLoadingResult<TData, TError>
     : QueryObserverResult<TData, TError> {
-    override val data: Nothing?
-    override val error: Nothing?
+    override val data: Void
+    override val error: Void
     override val isError: False
     override val isIdle: False
     override val isLoading: True
@@ -179,7 +183,7 @@ external interface QueryObserverLoadingResult<TData, TError>
 
 external interface QueryObserverLoadingErrorResult<TData, TError>
     : QueryObserverResult<TData, TError> {
-    override val data: Nothing?
+    override val data: Void
     override val error: TError
     override val isError: True
     override val isIdle: False
@@ -206,7 +210,7 @@ external interface QueryObserverRefetchErrorResult<TData, TError>
 external interface QueryObserverSuccessResult<TData, TError>
     : QueryObserverResult<TData, TError> {
     override val data: TData
-    override val error: Nothing?
+    override val error: Void
     override val isError: False
     override val isIdle: False
     override val isLoading: False
@@ -221,8 +225,8 @@ sealed external interface QueryObserverResult<TData, TError>
 
 external interface InfiniteQueryObserverBaseResult<TData, TError>
     : QueryObserverResult<InfiniteData<TData>, TError> {
-    val fetchNextPage: (options: FetchNextPageOptions?) -> kotlin.js.Promise<InfiniteQueryObserverResult<TData, TError>>
-    val fetchPreviousPage: (options: FetchPreviousPageOptions?) -> kotlin.js.Promise<InfiniteQueryObserverResult<TData, TError>>
+    val fetchNextPage: (options: FetchNextPageOptions?) -> Promise<InfiniteQueryObserverResult<TData, TError>>
+    val fetchPreviousPage: (options: FetchPreviousPageOptions?) -> Promise<InfiniteQueryObserverResult<TData, TError>>
     val hasNextPage: Boolean
     val hasPreviousPage: Boolean
     val isFetchingNextPage: Boolean
@@ -231,8 +235,8 @@ external interface InfiniteQueryObserverBaseResult<TData, TError>
 
 external interface InfiniteQueryObserverIdleResult<TData, TError>
     : InfiniteQueryObserverResult<TData, TError> {
-    override val data: Nothing?
-    override val error: Nothing?
+    override val data: Void
+    override val error: Void
     override val isError: False
     override val isIdle: True
     override val isLoading: False
@@ -244,8 +248,8 @@ external interface InfiniteQueryObserverIdleResult<TData, TError>
 
 external interface InfiniteQueryObserverLoadingResult<TData, TError>
     : InfiniteQueryObserverResult<TData, TError> {
-    override val data: Nothing?
-    override val error: Nothing?
+    override val data: Void
+    override val error: Void
     override val isError: False
     override val isIdle: False
     override val isLoading: True
@@ -257,7 +261,7 @@ external interface InfiniteQueryObserverLoadingResult<TData, TError>
 
 external interface InfiniteQueryObserverLoadingErrorResult<TData, TError>
     : InfiniteQueryObserverResult<TData, TError> {
-    override val data: Nothing?
+    override val data: Void
     override val error: TError
     override val isError: True
     override val isIdle: False
@@ -284,7 +288,7 @@ external interface InfiniteQueryObserverRefetchErrorResult<TData, TError>
 external interface InfiniteQueryObserverSuccessResult<TData, TError>
     : InfiniteQueryObserverResult<TData, TError> {
     override val data: InfiniteData<TData>
-    override val error: Nothing?
+    override val error: Void
     override val isError: False
     override val isIdle: False
     override val isLoading: False
@@ -301,16 +305,16 @@ typealias MutationKey = Union /* string | readonly unknown[] */
 
 typealias MutationMeta = Any
 
-typealias MutationFunction<TData, TVariables> = (variables: TVariables) -> kotlin.js.Promise<TData>
+typealias MutationFunction<TData, TVariables> = (variables: TVariables) -> Promise<TData>
 
 external interface MutationOptions<TData, TError, TVariables, TContext> {
     var mutationFn: MutationFunction<TData, TVariables>
     var mutationKey: MutationKey
     var variables: TVariables
-    var onMutate: (variables: TVariables) -> kotlin.js.Promise<TContext?>?
-    var onSuccess: (data: TData, variables: TVariables, context: TContext) -> kotlin.js.Promise<Any>?
-    var onError: (error: TError, variables: TVariables, context: TContext?) -> kotlin.js.Promise<Any>?
-    var onSettled: (data: TData?, error: TError?, variables: TVariables, context: TContext?) -> kotlin.js.Promise<Any>?
+    var onMutate: (variables: TVariables) -> Promise<TContext?>?
+    var onSuccess: (data: TData, variables: TVariables, context: TContext) -> Promise<Any>?
+    var onError: (error: TError, variables: TVariables, context: TContext?) -> Promise<Any>?
+    var onSettled: (data: TData?, error: TError?, variables: TVariables, context: TContext?) -> Promise<Any>?
     var retry: RetryValue<TError>
     var retryDelay: RetryDelayValue<TError>
     var _defaulted: Boolean
@@ -323,12 +327,12 @@ external interface MutationObserverOptions<TData, TError, TVariables, TContext>
 }
 
 external interface MutateOptions<TData, TError, TVariables, TContext> {
-    var onSuccess: (data: TData, variables: TVariables, context: TContext) -> kotlin.js.Promise<Any>?
-    var onError: (error: TError, variables: TVariables, context: TContext?) -> kotlin.js.Promise<Any>?
-    var onSettled: (data: TData?, error: TError?, variables: TVariables, context: TContext?) -> kotlin.js.Promise<Any>?
+    var onSuccess: (data: TData, variables: TVariables, context: TContext) -> Promise<Any>?
+    var onError: (error: TError, variables: TVariables, context: TContext?) -> Promise<Any>?
+    var onSettled: (data: TData?, error: TError?, variables: TVariables, context: TContext?) -> Promise<Any>?
 }
 
-typealias MutateFunction<TData, TError, TVariables, TContext> = (variables: TVariables, options: MutateOptions<TData, TError, TVariables, TContext>?) -> kotlin.js.Promise<TData>
+typealias MutateFunction<TData, TError, TVariables, TContext> = (variables: TVariables, options: MutateOptions<TData, TError, TVariables, TContext>?) -> Promise<TData>
 
 external interface MutationObserverBaseResult<TData, TError, TVariables, TContext>
     : MutationState<TData, TError, TVariables, TContext> {
@@ -342,8 +346,8 @@ external interface MutationObserverBaseResult<TData, TError, TVariables, TContex
 
 external interface MutationObserverIdleResult<TData, TError, TVariables, TContext>
     : MutationObserverResult<TData, TError, TVariables, TContext> {
-    override val data: Nothing?
-    override val error: Nothing?
+    override val data: Void
+    override val error: Void
     override val isError: False
     override val isIdle: True
     override val isLoading: False
@@ -353,8 +357,8 @@ external interface MutationObserverIdleResult<TData, TError, TVariables, TContex
 
 external interface MutationObserverLoadingResult<TData, TError, TVariables, TContext>
     : MutationObserverResult<TData, TError, TVariables, TContext> {
-    override val data: Nothing?
-    override val error: Nothing?
+    override val data: Void
+    override val error: Void
     override val isError: False
     override val isIdle: False
     override val isLoading: True
@@ -364,7 +368,7 @@ external interface MutationObserverLoadingResult<TData, TError, TVariables, TCon
 
 external interface MutationObserverErrorResult<TData, TError, TVariables, TContext>
     : MutationObserverResult<TData, TError, TVariables, TContext> {
-    override val data: Nothing?
+    override val data: Void
     override val error: TError
     override val isError: True
     override val isIdle: False
@@ -376,7 +380,7 @@ external interface MutationObserverErrorResult<TData, TError, TVariables, TConte
 external interface MutationObserverSuccessResult<TData, TError, TVariables, TContext>
     : MutationObserverResult<TData, TError, TVariables, TContext> {
     override val data: TData
-    override val error: Nothing?
+    override val error: Void
     override val isError: False
     override val isIdle: False
     override val isLoading: False

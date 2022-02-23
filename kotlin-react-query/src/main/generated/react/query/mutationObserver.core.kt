@@ -10,6 +10,8 @@
 
 package react.query
 
+import kotlin.js.Promise
+
 typealias MutationObserverListener<TData, TError, TVariables, TContext> = (result: MutationObserverResult<TData, TError, TVariables, TContext>) -> Unit
 
 open external class MutationObserver<TData, TError, TVariables, TContext>(
@@ -26,5 +28,5 @@ open external class MutationObserver<TData, TError, TVariables, TContext>(
     open fun mutate(
         variables: TVariables = definedExternally,
         options: MutateOptions<TData, TError, TVariables, TContext> = definedExternally,
-    ): kotlin.js.Promise<TData>
+    ): Promise<TData>
 }

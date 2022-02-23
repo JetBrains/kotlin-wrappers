@@ -9,20 +9,22 @@
 
 package react.query
 
-typealias QueriesObserverListener = (result: Array<out QueryObserverResult<*, *>>) -> Unit
+import kotlinx.js.ReadonlyArray
+
+typealias QueriesObserverListener = (result: ReadonlyArray<QueryObserverResult<*, *>>) -> Unit
 
 open external class QueriesObserver(
     client: QueryClient,
-    queries: Array<out QueryObserverOptions<*, *, *, *, *>> = definedExternally,
+    queries: ReadonlyArray<QueryObserverOptions<*, *, *, *, *>> = definedExternally,
 ) : Subscribable<QueriesObserverListener> {
     override fun onSubscribe()
     override fun onUnsubscribe()
     open fun destroy()
     open fun setQueries(
-        queries: Array<out QueryObserverOptions<*, *, *, *, *>>,
+        queries: ReadonlyArray<QueryObserverOptions<*, *, *, *, *>>,
         notifyOptions: NotifyOptions = definedExternally,
     )
 
-    open fun getCurrentResult(): Array<out QueryObserverResult<*, *>>
-    open fun getOptimisticResult(queries: Array<out QueryObserverOptions<*, *, *, *, *>>): Array<out QueryObserverResult<*, *>>
+    open fun getCurrentResult(): ReadonlyArray<QueryObserverResult<*, *>>
+    open fun getOptimisticResult(queries: ReadonlyArray<QueryObserverOptions<*, *, *, *, *>>): ReadonlyArray<QueryObserverResult<*, *>>
 }

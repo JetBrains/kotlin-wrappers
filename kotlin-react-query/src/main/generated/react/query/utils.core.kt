@@ -10,6 +10,11 @@
 
 package react.query
 
+import kotlinx.js.JsPair
+import kotlinx.js.ReadonlyArray
+import kotlinx.js.Void
+import kotlin.js.Promise
+
 external interface QueryFilters {
     var active: Boolean
     var exact: Boolean
@@ -33,7 +38,7 @@ typealias Updater<TInput, TOutput> = DataUpdateFunction<TInput, TOutput>
 
 external val isServer: Boolean
 
-external fun noop(): Nothing?
+external fun noop(): Void
 
 external fun <TInput, TOutput> functionalUpdate(
     updater: Updater<TInput, TOutput>,
@@ -45,15 +50,15 @@ external fun isValidTimeout(value: dynamic): Boolean /* value is number */
 external fun <T : QueryKey> ensureQueryKeyArray(value: T): EnsuredQueryKey<T>
 
 external fun <T> difference(
-    array1: Array<out T>,
-    array2: Array<out T>,
-): Array<out T>
+    array1: ReadonlyArray<T>,
+    array2: ReadonlyArray<T>,
+): ReadonlyArray<T>
 
 external fun <T> replaceAt(
-    array: Array<out T>,
+    array: ReadonlyArray<T>,
     index: Int,
     value: T,
-): Array<out T>
+): ReadonlyArray<T>
 
 external fun timeUntilStale(
     updatedAt: JsTimestamp,
@@ -76,7 +81,7 @@ external fun <TFilters : QueryFilters, TOptions> parseFilterArgs(
     arg1: dynamic = definedExternally,
     arg2: dynamic = definedExternally,
     arg3: TOptions = definedExternally,
-): kotlinx.js.JsPair<TFilters, TOptions?>
+): JsPair<TFilters, TOptions?>
 
 external fun parseMutationFilterArgs(
     arg1: dynamic = definedExternally,
@@ -133,7 +138,7 @@ external fun isQueryKey(value: Any): Boolean /* value is QueryKey */
 
 external fun isError(value: Any): Boolean /* value is Error */
 
-external fun sleep(timeout: JsDuration): kotlin.js.Promise<Unit>
+external fun sleep(timeout: JsDuration): Promise<Unit>
 
 external fun scheduleMicrotask(callback: () -> Unit)
 

@@ -10,6 +10,8 @@
 
 package react.query
 
+import kotlinx.js.ReadonlyArray
+
 typealias MAXIMUM_DEPTH = Any
 
 typealias GetOptions<T> = Any
@@ -20,4 +22,4 @@ typealias QueriesOptions<T, Result, Depth> = Any
 
 typealias QueriesResults<T, Result, Depth> = Any
 
-external fun <T : Array<*>> useQueries(queries: dynamic): QueriesResults<T, *, *>
+external fun <T : ReadonlyArray<*>> useQueries(queries: dynamic): QueriesResults<T, *, *>
