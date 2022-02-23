@@ -9,6 +9,8 @@
 
 package react.query
 
+import kotlinx.js.ReadonlyArray
+
 external interface QueryCacheConfig {
     var onError: (error: Any, query: Query<*, *, *, *>) -> Unit
     var onSuccess: (data: Any, query: Query<*, *, *, *>) -> Unit
@@ -63,7 +65,7 @@ open external class QueryCache(config: QueryCacheConfig = definedExternally) : S
     open fun remove(query: Query<*, *, *, *>)
     open fun clear()
     open fun <TQueryFnData, TError, TData, TQueyKey : QueryKey> get(queryHash: String): Query<TQueryFnData, TError, TData, TQueyKey>?
-    open fun getAll(): Array<out Query<*, *, *, *>>
+    open fun getAll(): ReadonlyArray<Query<*, *, *, *>>
     open fun <TQueryFnData, TError, TData> find(
         arg1: QueryKey,
         arg2: QueryFilters = definedExternally,
@@ -72,13 +74,13 @@ open external class QueryCache(config: QueryCacheConfig = definedExternally) : S
     open fun findAll(
         queryKey: QueryKey = definedExternally,
         filters: QueryFilters = definedExternally,
-    ): Array<out Query<*, *, *, *>>
+    ): ReadonlyArray<Query<*, *, *, *>>
 
-    open fun findAll(filters: QueryFilters = definedExternally): Array<out Query<*, *, *, *>>
+    open fun findAll(filters: QueryFilters = definedExternally): ReadonlyArray<Query<*, *, *, *>>
     open fun findAll(
         arg1: dynamic = definedExternally,
         arg2: QueryFilters = definedExternally,
-    ): Array<out Query<*, *, *, *>>
+    ): ReadonlyArray<Query<*, *, *, *>>
 
     open fun notify(event: QueryCacheNotifyEvent)
     open fun onFocus()

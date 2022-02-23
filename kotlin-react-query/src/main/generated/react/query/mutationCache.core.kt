@@ -9,6 +9,9 @@
 
 package react.query
 
+import kotlinx.js.ReadonlyArray
+import kotlin.js.Promise
+
 external interface MutationCacheConfig {
     var onError: (error: Any, variables: Any, context: Any, mutation: Mutation<Any, Any, Any, Any>) -> Unit
     var onSuccess: (data: Any, variables: Any, context: Any, mutation: Mutation<Any, Any, Any, Any>) -> Unit
@@ -28,11 +31,11 @@ open external class MutationCache(config: MutationCacheConfig = definedExternall
     open fun add(mutation: Mutation<*, *, *, *>)
     open fun remove(mutation: Mutation<*, *, *, *>)
     open fun clear()
-    open fun getAll(): Array<out Mutation<*, *, *, *>>
+    open fun getAll(): ReadonlyArray<Mutation<*, *, *, *>>
     open fun <TData, TError, TVariables, TContext> find(filters: MutationFilters): Mutation<TData, TError, TVariables, TContext>?
-    open fun findAll(filters: MutationFilters): Array<out Mutation<*, *, *, *>>
+    open fun findAll(filters: MutationFilters): ReadonlyArray<Mutation<*, *, *, *>>
     open fun notify(mutation: Mutation<*, *, *, *> = definedExternally)
     open fun onFocus()
     open fun onOnline()
-    open fun resumePausedMutations(): kotlin.js.Promise<Unit>
+    open fun resumePausedMutations(): Promise<Unit>
 }

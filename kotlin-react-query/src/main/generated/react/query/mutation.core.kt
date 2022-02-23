@@ -10,6 +10,8 @@
 
 package react.query
 
+import kotlin.js.Promise
+
 external interface MutationConfig<TData, TError, TVariables, TContext> {
     var mutationId: Int
     var mutationCache: MutationCache
@@ -72,9 +74,9 @@ open external class Mutation<TData, TError, TVariables, TContext>(config: Mutati
     open fun setState(state: MutationState<TData, TError, TVariables, TContext>)
     open fun addObserver(observer: MutationObserver<*, *, *, *>)
     open fun removeObserver(observer: MutationObserver<*, *, *, *>)
-    open fun cancel(): kotlin.js.Promise<Unit>
-    open fun `continue`(): kotlin.js.Promise<TData>
-    open fun execute(): kotlin.js.Promise<TData>
+    open fun cancel(): Promise<Unit>
+    open fun `continue`(): Promise<TData>
+    open fun execute(): Promise<TData>
 }
 
 external fun <TData, TError, TVariables, TContext> getDefaultState(): MutationState<TData, TError, TVariables, TContext>

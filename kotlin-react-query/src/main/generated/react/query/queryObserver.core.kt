@@ -10,6 +10,8 @@
 
 package react.query
 
+import kotlin.js.Promise
+
 typealias QueryObserverListener<TData, TError> = (result: QueryObserverResult<TData, TError>) -> Unit
 
 external interface NotifyOptions {
@@ -46,12 +48,12 @@ open external class QueryObserver<TQueryFnData, TError, TData, TQueryData, TQuer
         defaultedOptions: QueryObserverOptions<TQueryFnData, TError, TData, TQueryData, TQueryKey>,
     ): QueryObserverResult<TData, TError>
 
-    open fun getNextResult(options: ResultOptions = definedExternally): kotlin.js.Promise<QueryObserverResult<TData, TError>>
+    open fun getNextResult(options: ResultOptions = definedExternally): Promise<QueryObserverResult<TData, TError>>
     open fun getCurrentQuery(): Query<TQueryFnData, TError, TQueryData, TQueryKey>
     open fun remove()
-    open fun <TPageData> refetch(options: RefetchOptions /* & RefetchQueryFilters<TPageData> */ = definedExternally): kotlin.js.Promise<QueryObserverResult<TData, TError>>
-    open fun fetchOptimistic(options: QueryObserverOptions<TQueryFnData, TError, TData, TQueryData, TQueryKey>): kotlin.js.Promise<QueryObserverResult<TData, TError>>
-    protected open fun fetch(fetchOptions: ObserverFetchOptions = definedExternally): kotlin.js.Promise<QueryObserverResult<TData, TError>>
+    open fun <TPageData> refetch(options: RefetchOptions /* & RefetchQueryFilters<TPageData> */ = definedExternally): Promise<QueryObserverResult<TData, TError>>
+    open fun fetchOptimistic(options: QueryObserverOptions<TQueryFnData, TError, TData, TQueryData, TQueryKey>): Promise<QueryObserverResult<TData, TError>>
+    protected open fun fetch(fetchOptions: ObserverFetchOptions = definedExternally): Promise<QueryObserverResult<TData, TError>>
     protected open fun createResult(
         query: Query<TQueryFnData, TError, TQueryData, TQueryKey>,
         options: QueryObserverOptions<TQueryFnData, TError, TData, TQueryData, TQueryKey>,

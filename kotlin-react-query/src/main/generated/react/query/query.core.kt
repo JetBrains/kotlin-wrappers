@@ -10,6 +10,8 @@
 
 package react.query
 
+import kotlin.js.Promise
+
 external interface QueryConfig<TQueryFnData, TError, TData, TQueryKey : QueryKey> {
     var cache: QueryCache
     var queryKey: TQueryKey
@@ -117,7 +119,7 @@ open external class Query<TQueryFnData, TError, TData, TQueryKey : QueryKey>(con
         setStateOptions: SetStateOptions = definedExternally,
     )
 
-    open fun cancel(options: CancelOptions = definedExternally): kotlin.js.Promise<Unit>
+    open fun cancel(options: CancelOptions = definedExternally): Promise<Unit>
     open fun destroy()
     open fun reset()
     open fun isActive(): Boolean
@@ -133,7 +135,7 @@ open external class Query<TQueryFnData, TError, TData, TQueryKey : QueryKey>(con
     open fun fetch(
         options: QueryOptions<TQueryFnData, TError, TData, TQueryKey> = definedExternally,
         fetchOptions: FetchOptions = definedExternally,
-    ): kotlin.js.Promise<TData>
+    ): Promise<TData>
 
     protected open fun getDefaultState(options: QueryOptions<TQueryFnData, TError, TData, TQueryKey>): QueryState<TData, TError>
     protected open fun reducer(

@@ -10,6 +10,8 @@
 
 package react.query
 
+import kotlin.js.Promise
+
 external interface RetryerConfig<TData, TError> {
     var fn: () -> dynamic
     var abort: () -> Unit
@@ -52,5 +54,5 @@ open external class Retryer<TData, TError>(config: RetryerConfig<TData, TError>)
     open var isPaused: Boolean
     open var isResolved: Boolean
     open var isTransportCancelable: Boolean
-    open var promise: kotlin.js.Promise<TData>
+    open var promise: Promise<TData>
 }

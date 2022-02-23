@@ -9,6 +9,8 @@
 
 package react.query
 
+import kotlinx.js.ReadonlyArray
+
 external interface DehydrateOptions {
     var dehydrateMutations: Boolean
     var dehydrateQueries: Boolean
@@ -37,8 +39,8 @@ external interface DehydratedQuery {
 }
 
 external interface DehydratedState {
-    var mutations: Array<out DehydratedMutation>
-    var queries: Array<out DehydratedQuery>
+    var mutations: ReadonlyArray<DehydratedMutation>
+    var queries: ReadonlyArray<DehydratedQuery>
 }
 
 typealias ShouldDehydrateQueryFunction = (query: Query<*, *, *, *>) -> Boolean

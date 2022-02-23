@@ -5,16 +5,18 @@
 
 package react.query
 
+import kotlinx.js.ReadonlyArray
+
 external fun <TQueryFnData, TError, TData> infiniteQueryBehavior(): QueryBehavior<TQueryFnData, TError, InfiniteData<TData>, *>
 
 external fun getNextPageParam(
     options: QueryOptions<*, *, *, *>,
-    pages: Array<out Page>,
+    pages: ReadonlyArray<Page>,
 ): Any?
 
 external fun getPreviousPageParam(
     options: QueryOptions<*, *, *, *>,
-    pages: Array<out Page>,
+    pages: ReadonlyArray<Page>,
 ): Any?
 
 external fun hasNextPage(
