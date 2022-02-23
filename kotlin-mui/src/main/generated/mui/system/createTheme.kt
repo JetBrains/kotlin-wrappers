@@ -5,6 +5,8 @@
 
 package mui.system
 
+import kotlinx.js.Record
+
 external interface ThemeOptions {
     var shape: ShapeOptions?
 
@@ -14,7 +16,7 @@ external interface ThemeOptions {
 
     var mixins: dynamic
 
-    var palette: kotlinx.js.Record<String, *>?
+    var palette: Record<String, *>?
 
     var shadows: dynamic
 
@@ -22,7 +24,7 @@ external interface ThemeOptions {
 
     var transitions: dynamic
 
-    var components: kotlinx.js.Record<String, *>?
+    var components: Record<String, *>?
 
     var typography: dynamic
 
@@ -36,7 +38,7 @@ external interface Theme {
 
     var direction: Direction
 
-    var palette: kotlinx.js.Record<String, *>
+    var palette: Record<String, *>
 
     var shadows: dynamic
 
@@ -44,7 +46,7 @@ external interface Theme {
 
     var transitions: dynamic
 
-    var components: kotlinx.js.Record<String, *>?
+    var components: Record<String, *>?
 
     var mixins: dynamic
 
