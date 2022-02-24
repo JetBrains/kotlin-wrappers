@@ -6,10 +6,8 @@ import kotlinx.css.CssBuilder
 import waitForAnimationFrame
 import kotlin.test.Test
 import kotlin.time.Duration
-import kotlin.time.ExperimentalTime
 import kotlin.time.measureTime
 
-@OptIn(ExperimentalTime::class)
 class CssBuildersInject : BenchmarkBase() {
     /**
      * Measure the time elapsed to inject [n] [CssBuilder] CSS rules into the DOM

@@ -15,6 +15,10 @@ kotlin.js {
     }
 }
 
+kotlin.sourceSets.test {
+    languageSettings.optIn("kotlin.time.ExperimentalTime")
+}
+
 dependencies {
     api(project(":kotlin-extensions"))
     api(project(":kotlin-css"))

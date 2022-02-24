@@ -8,10 +8,8 @@ import waitForAnimationFrame
 import kotlin.test.Test
 import kotlin.test.assertTrue
 import kotlin.time.Duration
-import kotlin.time.ExperimentalTime
 import kotlin.time.measureTime
 
-@OptIn(ExperimentalTime::class)
 class DataTypeOperations : BenchmarkBase() {
     /**
      * Measures [LinkedHashMap.put] operation for [GlobalStyles.styledClasses] data structure [n] times

@@ -9,10 +9,8 @@ import waitForAnimationFrame
 import kotlin.random.Random
 import kotlin.test.Test
 import kotlin.time.Duration
-import kotlin.time.ExperimentalTime
 import kotlin.time.measureTime
 
-@OptIn(ExperimentalTime::class)
 class AddDuplicateCss : BenchmarkBase() {
     /**
      * Measure the time elapsed to inject [repeatCount] styled components with the same CSS [n] times into the DOM

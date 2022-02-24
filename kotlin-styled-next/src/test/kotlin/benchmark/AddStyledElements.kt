@@ -8,16 +8,12 @@ import styled.UsedCssInfo
 import waitForAnimationFrame
 import kotlin.test.Test
 import kotlin.time.Duration
-import kotlin.time.ExperimentalTime
 import kotlin.time.measureTime
 
-
-@OptIn(ExperimentalTime::class)
 class AddStyledElements : BenchmarkBase() {
     /**
      * [LinkedHashMap] implementation which holds total duration of all [get] and [put] operations
      */
-    @OptIn(ExperimentalTime::class)
     private class TimedLinkedHashMap<K, V> : LinkedHashMap<K, V>() {
         var getOperationsDuration: Duration = Duration.ZERO
         var putOperationsDuration: Duration = Duration.ZERO
