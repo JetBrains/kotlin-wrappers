@@ -3,11 +3,18 @@
 @file:JsModule("react-query")
 @file:JsNonModule
 
+@file:Suppress(
+    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
+)
+
 package react.query
+
+typealias FocusManagerSetupFn = (setFocused: (focused: Boolean?) -> Unit) -> (() -> Unit)?
 
 open external class FocusManager : Subscribable<Listener> {
     override fun onSubscribe()
-    open fun setEventListener(setup: (setFocused: (focused: Boolean?) -> Unit) -> () -> Unit)
+    override fun onUnsubscribe()
+    open fun setEventListener(setup: FocusManagerSetupFn)
     open fun setFocused(focused: Boolean = definedExternally)
     open fun onFocus()
     open fun isFocused(): Boolean

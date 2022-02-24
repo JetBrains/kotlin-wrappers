@@ -12,7 +12,7 @@ package react.query
 
 import kotlinx.js.ReadonlyArray
 
-typealias MAXIMUM_DEPTH = Any
+const val MAXIMUM_DEPTH = 20
 
 typealias GetOptions<T> = Any
 
