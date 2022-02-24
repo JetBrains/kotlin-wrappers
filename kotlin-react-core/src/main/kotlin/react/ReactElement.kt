@@ -22,5 +22,5 @@ external fun <P : Props> cloneElement(
 ): ReactElement
 
 external fun isValidElement(
-    element: Any,
+    element: Any?,
 ): Boolean
