@@ -26,7 +26,7 @@ class Import(private val url: String, private val types: List<String> = listOf()
  */
 open class StyleSheet(
     name: String? = null,
-    val isStatic: Boolean = false,
+    val isStatic: Boolean = true,
     internal var imports: List<Import> = emptyList(),
 ) {
     val name: String = name
@@ -36,7 +36,7 @@ open class StyleSheet(
         }
     private val holders: MutableList<CssHolder> = mutableListOf()
 
-    constructor(name: String, parent: StyleSheet, isStatic: Boolean = false) : this(parent.name + "-" + name, isStatic)
+    constructor(name: String, parent: StyleSheet, isStatic: Boolean = true) : this(parent.name + "-" + name, isStatic)
 
     fun css(vararg parents: RuleSet, builder: RuleSet) =
         CssHolder(this, *parents, builder)

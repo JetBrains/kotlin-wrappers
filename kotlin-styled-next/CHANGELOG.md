@@ -1,3 +1,20 @@
+## 1.2.0
+
+The `name` parameter is now optional when creating a `StyleSheet`, the name is obtained via reflection when not
+specified. Additionally, the `isStatic` parameter is now `true` by default because it's more sensible.
+
+Before:
+
+```kotlin
+object MyStyleSheet : StyleSheet("MyStyleSheet", isStatic = true)
+```
+
+After:
+
+```kotlin
+object MyStyleSheet : StyleSheet()
+```
+
 ## 1.1.0
 
 We have noticed that using a single stylesheet is detrimental to performance. Specifically, we were witnessing that

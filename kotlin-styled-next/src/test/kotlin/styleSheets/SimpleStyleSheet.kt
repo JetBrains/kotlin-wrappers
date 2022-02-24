@@ -6,7 +6,7 @@ import kotlinx.css.padding
 import kotlinx.css.px
 import styled.StyleSheet
 
-internal class SimpleStyleSheet : StyleSheet("SimpleStyleSheet") {
+internal class SimpleStyleSheet : StyleSheet(isStatic = false) {
     val simpleProperty by css {
         minHeight = 66.px
         padding(0.px)

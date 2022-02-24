@@ -40,8 +40,8 @@ class StyleSheetTest : TestBase() {
         staticStyleSheet = StaticStyleSheet()
         importStyleSheet = ImportStyleSheet()
         importStyleSheetStatic = ImportStyleSheetStatic()
-        importUrlSheet = StyleSheet("importUrlSheet", isStatic = true, imports = listOf(importUrl))
-        importFileSheet = StyleSheet("importFileSheet", isStatic = true, imports = listOf(importFile))
+        importUrlSheet = StyleSheet("importUrlSheet", imports = listOf(importUrl))
+        importFileSheet = StyleSheet("importFileSheet", imports = listOf(importFile))
     }
 
     @Test
@@ -54,7 +54,7 @@ class StyleSheetTest : TestBase() {
         assertEquals(0, rules.size)
     }
 
-    object SheetWithMarker : StyleSheet("SheetWithMarker", isStatic = true) {
+    object SheetWithMarker : StyleSheet() {
         val marker by cssMarker()
     }
 
@@ -97,7 +97,7 @@ class StyleSheetTest : TestBase() {
         val styledComponent = fc<Props> {
             styledSpan {
                 css {
-                    +(object : StyleSheet(isStatic = true) {
+                    +(object : StyleSheet() {
                         val xxx by css { color = firstColor }
                     }.xxx)
                 }
@@ -108,11 +108,11 @@ class StyleSheetTest : TestBase() {
     }
 
     object AnonymousStyleSheetInherited : StaticStyleSheet()
-    object AnonymousStyleSheet : StyleSheet() {
+    object AnonymousStyleSheet : StyleSheet(isStatic = false) {
         val property1 by css { alignContent = Align.end }
     }
 
-    object AnonymousStaticStyleSheet : StyleSheet(isStatic = true) {
+    object AnonymousStaticStyleSheet : StyleSheet() {
         val property1 by css { alignContent = Align.end }
     }
 
@@ -238,7 +238,7 @@ class StyleSheetTest : TestBase() {
     }
 
 
-    object StaticStyleSheetObject : StyleSheet("StaticStyleSheetObject", isStatic = true) {
+    object StaticStyleSheetObject : StyleSheet() {
         val property1 by css {
             color = rgb(3, 4, 5)
         }
