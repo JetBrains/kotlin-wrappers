@@ -12,11 +12,7 @@ import styleSheets.*
 import styled.*
 import styled.sheets.importStyleId
 import styled.sheets.styleElementsSelector
-import kotlin.test.BeforeTest
-import kotlin.test.Test
-import kotlin.test.assertContains
-import kotlin.test.assertEquals
-
+import kotlin.test.*
 class StyleSheetTest : TestBase() {
     private lateinit var simpleStyleSheet: SimpleStyleSheet
     private lateinit var staticStyleSheet: StaticStyleSheet
@@ -90,6 +86,46 @@ class StyleSheetTest : TestBase() {
         assertContains(styledElement.className, "SheetWithMarker-marker")
         assertEquals(firstColor.toString(), styledElement.color())
         assertEquals(secondColor.toString(), styledElement.getStyle().backgroundColor)
+    }
+
+    @Test
+    fun styleSheetWithoutNameGenerates() = runTest {
+        val styledComponent = fc<Props> {
+            styledSpan {
+                css {
+                    +(object : StyleSheet(isStatic = true) {
+                        val xxx by css { color = firstColor }
+                    }.xxx)
+                }
+            }
+        }
+        clearAndInject(styledComponent)
+        assertCssInjected("-xxx", "color" to firstColor.toString())
+    }
+
+    object AnonymousStyleSheetInherited : StaticStyleSheet()
+    object AnonymousStyleSheet : StyleSheet() {
+        val property1 by css { alignContent = Align.end }
+    }
+
+    object AnonymousStaticStyleSheet : StyleSheet(isStatic = true) {
+        val property1 by css { alignContent = Align.end }
+    }
+
+    @Test
+    fun anonymousStyleSheet() = runTest {
+        val styledComponent = fc<Props> {
+            styledSpan {
+                css {
+                    +AnonymousStyleSheet.property1
+                    +AnonymousStaticStyleSheet.property1
+                    +AnonymousStyleSheetInherited.property1
+                }
+            }
+        }
+        clearAndInject(styledComponent)
+        assertCssInjected(".AnonymousStaticStyleSheet-property1")
+        assertCssInjected(".StaticStyleSheet-property1")
     }
 
     @Test
