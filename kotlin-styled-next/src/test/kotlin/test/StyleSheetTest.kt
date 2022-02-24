@@ -12,7 +12,11 @@ import styleSheets.*
 import styled.*
 import styled.sheets.importStyleId
 import styled.sheets.styleElementsSelector
-import kotlin.test.*
+import kotlin.test.BeforeTest
+import kotlin.test.Test
+import kotlin.test.assertContains
+import kotlin.test.assertEquals
+
 class StyleSheetTest : TestBase() {
     private lateinit var simpleStyleSheet: SimpleStyleSheet
     private lateinit var staticStyleSheet: StaticStyleSheet
