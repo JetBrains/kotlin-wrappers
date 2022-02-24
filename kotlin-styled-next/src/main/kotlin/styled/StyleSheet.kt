@@ -17,6 +17,7 @@ class Import(private val url: String, private val types: List<String> = listOf()
  * Represents a reusable piece of CSS code
  *
  * [name] is the stylesheet identifier. CSS class names are generated using a combination of [name] and property name.
+ * Default value is the object name.
  *
  * If [isStatic] property is set to true, a static, human-readable class selector will be created for every property,
  * making referencing from other stylesheets possible. Generated class names will be used otherwise.
@@ -24,10 +25,15 @@ class Import(private val url: String, private val types: List<String> = listOf()
  * [imports] are the URLs (relative or absolute) of CSS files that will be added to the DOM with the first use of [StyleSheet].
  */
 open class StyleSheet(
-    var name: String,
+    name: String? = null,
     val isStatic: Boolean = false,
     internal var imports: List<Import> = emptyList(),
 ) {
+    var name: String = name
+        ?: this::class.simpleName
+        ?: this::class.js.name.replace("$", "").replace(".", "").also {
+            console.warn("Anonymous stylesheet without classname: $it")
+        }
     private val holders: MutableList<CssHolder> = mutableListOf()
 
     constructor(name: String, parent: StyleSheet, isStatic: Boolean = false) : this(parent.name + "-" + name, isStatic)

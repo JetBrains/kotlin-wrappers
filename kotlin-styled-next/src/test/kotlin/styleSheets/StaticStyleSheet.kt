@@ -3,7 +3,7 @@ package styleSheets
 import kotlinx.css.*
 import styled.StyleSheet
 
-internal class StaticStyleSheet : StyleSheet("StaticStyleSheet", isStatic = true) {
+open class StaticStyleSheet : StyleSheet("StaticStyleSheet", isStatic = true) {
     val property1 by css {
         alignContent = Align.end
     }
