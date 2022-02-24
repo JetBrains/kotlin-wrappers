@@ -5,10 +5,8 @@ import waitFlowCoroutine
 import kotlin.test.Test
 import kotlin.test.assertFalse
 import kotlin.time.Duration
-import kotlin.time.ExperimentalTime
 import kotlin.time.measureTime
 
-@OptIn(ExperimentalTime::class)
 class ConvertToStyled : BenchmarkBase() {
     private suspend fun convertNCssBuilders(n: Int): Duration {
         val builders = getCssBuilders(n)

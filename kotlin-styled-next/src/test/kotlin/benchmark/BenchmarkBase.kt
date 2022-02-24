@@ -10,9 +10,7 @@ import kotlin.test.BeforeTest
 import kotlin.test.assertTrue
 import kotlin.time.Duration
 import kotlin.time.DurationUnit
-import kotlin.time.ExperimentalTime
 
-@OptIn(ExperimentalTime::class)
 open class BenchmarkBase {
     protected val additionalMeasurements = mutableMapOf<String, MutableList<Duration>>()
     private fun flowRepeat(count: Int, calculate: suspend () -> Duration): Flow<Duration> {

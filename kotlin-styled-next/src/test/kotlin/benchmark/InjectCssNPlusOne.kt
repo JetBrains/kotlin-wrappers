@@ -19,10 +19,8 @@ import waitForAnimationFrame
 import kotlin.random.Random
 import kotlin.test.Test
 import kotlin.time.Duration
-import kotlin.time.ExperimentalTime
 import kotlin.time.measureTime
 
-@OptIn(ExperimentalTime::class)
 class InjectCssNPlusOne : BenchmarkBase() {
 
     private suspend fun TestScope.preloadElements(n: Int) {
