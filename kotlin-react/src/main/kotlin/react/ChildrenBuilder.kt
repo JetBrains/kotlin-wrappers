@@ -6,7 +6,7 @@ import kotlinx.js.Symbol
 
 private val CHILDREN = Symbol("@@children")
 
-internal inline var ChildrenBuilder.children: ReadonlyArray<ReactNode>?
+internal inline var ChildrenBuilder.children: ReadonlyArray<ReactNode?>?
     get() = asDynamic()[CHILDREN]
     private set(value) {
         asDynamic()[CHILDREN] = value
@@ -19,7 +19,7 @@ sealed interface ChildrenBuilder {
     }
 
     fun child(
-        element: ReactNode,
+        element: ReactNode?,
     ) {
         if (children != null) {
             children.asDynamic().push(element)
@@ -28,7 +28,7 @@ sealed interface ChildrenBuilder {
         }
     }
 
-    operator fun ReactNode.unaryPlus() {
+    operator fun ReactNode?.unaryPlus() {
         child(this)
     }
 

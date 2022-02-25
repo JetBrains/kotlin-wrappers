@@ -5,14 +5,21 @@ import kotlinx.js.ReadonlyArray
 internal fun createElementOrNull(
     block: ChildrenBuilder.() -> Unit,
 ): ReactElement? {
-    val children: ReadonlyArray<ReactNode>? = ChildrenBuilder()
+    val children: ReadonlyArray<ReactNode?> = ChildrenBuilder()
         .apply(block)
         .children
+        ?: return null
 
-    return when {
-        children == null -> null
-        children.size == 0 -> null
-        children.size == 1 && isValidElement(children.first()) -> children.first().unsafeCast<ReactElement>()
-        else -> createElement(Fragment, children = children)
+    if (children.isEmpty())
+        return null
+
+    if (children.size == 1) {
+        val child = children.single()
+            ?: return null
+
+        if (isValidElement(child))
+            return child.unsafeCast<ReactElement>()
     }
+
+    return createElement(Fragment, children = children)
 }
