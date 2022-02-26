@@ -3,7 +3,6 @@
 @file:Suppress(
     "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-    "NOTHING_TO_INLINE",
 )
 
 package csstype
@@ -20,9 +19,6 @@ sealed external interface Length : LengthType {
         val normal: LengthType.Normal
     }
 }
-
-inline fun Length(value: String): Length =
-    value.unsafeCast<Length>()
 
 inline val Number.ch: Length
     get() = "${this}ch".unsafeCast<Length>()
