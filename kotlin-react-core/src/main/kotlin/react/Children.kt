@@ -6,9 +6,9 @@ package react
 import kotlinx.js.ReadonlyArray
 
 external object Children {
-    fun <T> map(children: Any?, handler: (ReactNode) -> T): ReadonlyArray<T>?
-    fun forEach(children: Any?, handler: (ReactNode) -> Unit)
-    fun count(children: Any?): Int
-    fun only(children: Any?): ReactElement
-    fun toArray(children: Any?): ReadonlyArray<ReactNode>
+    fun <T> map(children: ReactNode?, handler: (ReactNode) -> T): ReadonlyArray<T>?
+    fun forEach(children: ReactNode?, handler: (ReactNode) -> Unit)
+    fun count(children: ReactNode?): Int
+    fun only(children: ReactNode?): ReactElement
+    fun toArray(children: ReactNode?): ReadonlyArray<ReactNode>
 }
