@@ -51,7 +51,7 @@ interface StyledBuilder<P : PropsWithClassName> {
 inline fun StyledBuilder<*>.css(handler: RuleSet) = css.handler()
 
 interface StyledElementBuilder<P : PropsWithClassName> : RElementBuilder<P>, StyledBuilder<P> {
-    fun create(): ReactElement
+    fun create(): ReactElement<*>
 
     companion object {
         operator fun <P : PropsWithClassName> invoke(
@@ -234,7 +234,7 @@ object Styled {
         css: CssBuilder,
         props: PropsWithClassName,
         children: List<ReactNode>,
-    ): ReactElement {
+    ): ReactElement<*> {
         val wrappedType = wrap(type)
         val styledProps = buildStyledProps(css, props)
         return createElement(
@@ -249,7 +249,7 @@ object Styled {
         css: CssBuilder,
         props: P,
         children: List<ReactNode>,
-    ): ReactElement {
+    ): ReactElement<P> {
         val wrappedType = wrap(type)
         val styledProps = buildStyledProps(css, props)
         return createElement(wrappedType, styledProps, *children.toTypedArray())

@@ -2,11 +2,11 @@ package styled
 
 import kotlinext.js.clone
 import kotlinext.js.delete
-import kotlinx.js.jso
 import kotlinx.css.CssBuilder
 import kotlinx.css.CssDsl
 import kotlinx.css.RuleSet
 import kotlinx.html.*
+import kotlinx.js.jso
 import react.*
 import react.dom.DOMProps
 import react.dom.RDOMBuilder
@@ -47,7 +47,7 @@ interface StyledBuilder<P : PropsWithClassName> {
 inline fun StyledBuilder<*>.css(handler: RuleSet) = css.handler()
 
 interface StyledElementBuilder<P : PropsWithClassName> : RElementBuilder<P>, StyledBuilder<P> {
-    fun create(): ReactElement
+    fun create(): ReactElement<*>
 
     companion object {
         operator fun <P : PropsWithClassName> invoke(
@@ -195,7 +195,7 @@ object Styled {
             customStyled(type)
         }
 
-    fun createElement(type: Any, css: CssBuilder, props: PropsWithClassName, children: List<ReactNode>): ReactElement {
+    fun createElement(type: Any, css: CssBuilder, props: PropsWithClassName, children: List<ReactNode>): ReactElement<*> {
         val wrappedType = wrap(type)
         val styledProps = props.unsafeCast<StyledProps>()
         styledProps.css = css

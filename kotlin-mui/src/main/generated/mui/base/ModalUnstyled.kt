@@ -25,7 +25,7 @@ external interface ModalUnstyledProps :
     /**
      * A single child content element.
      */
-    var children: react.ReactElement
+    var children: react.ReactElement<*>
 
     /**
      * Override or extend the styles applied to the component.

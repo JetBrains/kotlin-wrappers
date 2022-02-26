@@ -1,6 +1,7 @@
 package react.dom
 
 import org.w3c.dom.Element
+import react.Props
 import react.Render
 import react.createElement
 
@@ -10,7 +11,7 @@ fun render(
     handler: Render,
 ) {
     render(
-        element = createElement(handler),
+        element = createElement<Props>(handler),
         container = container,
         callback = callback,
     )
@@ -22,7 +23,7 @@ fun renderIntoRoot(
     container: Element,
     block: Render,
 ) {
-    val children = createElement(block)
+    val children = createElement<Props>(block)
         ?: return
 
     createRoot(container)

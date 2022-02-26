@@ -37,7 +37,7 @@ external interface SnackbarProps :
     /**
      * Replace the `SnackbarContent` component.
      */
-    var children: react.ReactElement?
+    var children: react.ReactElement<*>?
 
     /**
      * Override or extend the styles applied to the component.

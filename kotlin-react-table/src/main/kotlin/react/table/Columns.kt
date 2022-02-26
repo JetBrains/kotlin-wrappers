@@ -1,7 +1,7 @@
 package react.table
 
-import kotlinx.js.jso
 import kotlinx.js.ReadonlyArray
+import kotlinx.js.jso
 import react.ReactElement
 import react.ReactNode
 
@@ -37,7 +37,7 @@ class ColumnBuilder<D : Any> {
     fun column(
         id: IdType<D>,
         header: String,
-        cell: (CellProps<D, D>) -> ReactElement,
+        cell: (CellProps<D, D>) -> ReactElement<*>,
     ) {
         column<D> {
             this.id = id
@@ -51,7 +51,7 @@ class ColumnBuilder<D : Any> {
         id: IdType<D>,
         header: String,
         accessor: D.() -> V,
-        cell: (CellProps<D, V>) -> ReactElement,
+        cell: (CellProps<D, V>) -> ReactElement<*>,
     ) {
         column<V> {
             this.id = id

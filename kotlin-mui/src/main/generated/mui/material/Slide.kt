@@ -17,7 +17,7 @@ external interface SlideProps :
     /**
      * A single child content element.
      */
-    var children: react.ReactElement
+    var children: react.ReactElement<*>
 
     /**
      * An HTML element, or a function that returns one.

@@ -4,7 +4,7 @@ import kotlinx.js.ReadonlyArray
 
 internal fun createElementOrNull(
     block: ChildrenBuilder.() -> Unit,
-): ReactElement? {
+): ReactElement<*>? {
     val children: ReadonlyArray<ReactNode?> = ChildrenBuilder()
         .apply(block)
         .children
@@ -18,7 +18,7 @@ internal fun createElementOrNull(
             ?: return null
 
         if (isValidElement(child))
-            return child.unsafeCast<ReactElement>()
+            return child.unsafeCast<ReactElement<*>>()
     }
 
     return createElement(Fragment, children = children)

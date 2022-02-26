@@ -28,7 +28,7 @@ external interface FormControlLabelProps :
     /**
      * A control element. For instance, it can be a `Radio`, a `Switch` or a `Checkbox`.
      */
-    var control: react.ReactElement
+    var control: react.ReactElement<*>
 
     /**
      * If `true`, the control is disabled.

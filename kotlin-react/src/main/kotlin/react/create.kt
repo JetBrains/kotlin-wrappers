@@ -1,11 +1,11 @@
 package react
 
-fun ElementType<*>.create(): ReactElement =
+fun <P : Props> ElementType<P>.create(): ReactElement<P> =
     createElement(this)
 
 fun <P> ElementType<P>.create(
     block: @ReactDsl P.() -> Unit,
-): ReactElement
+): ReactElement<P>
         where P : Props,
               P : ChildrenBuilder {
     val builder = ChildrenBuilder()
