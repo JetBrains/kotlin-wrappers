@@ -29,7 +29,7 @@ enum class Theme(
 
 val ThemeContext = createContext(Theme.LIGHT)
 
-val MainApp = FC<PropsWithChildren> {
+val MainApp = FC<PropsWithChildren> { props ->
     ThemeContext.Provider(Theme.DARK) {
         div {
             ThemeContext.Consumer {
@@ -61,7 +61,7 @@ val MainApp = FC<PropsWithChildren> {
             Object.assign(this, jso<HTMLAttributes<HTMLDivElement>> { tabIndex = 0 })
 
             // Appending children from props
-            children()
+            +props.children
 
             // Form elements https://facebook.github.io/react/docs/forms.html
 

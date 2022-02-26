@@ -65,6 +65,7 @@ sealed interface ChildrenBuilder {
         }
     }
 
+    @Deprecated("Use +props.children instead.")
     fun PropsWithChildren.children() {
         Children.toArray(children)
             .forEach(::child)

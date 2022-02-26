@@ -25,12 +25,12 @@ import react.useState
  * Date: Nov 24, 2017
  */
 
-val RawProductCategory = FC<PropsWithChildren> {
+val RawProductCategory = FC<PropsWithChildren> { props ->
     tr {
         th {
             colSpan = 2
 
-            children()
+            +props.children
         }
     }
 }
