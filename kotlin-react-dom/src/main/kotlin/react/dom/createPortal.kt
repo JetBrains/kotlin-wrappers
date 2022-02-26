@@ -11,7 +11,7 @@ import react.ReactPortal
 // See https://reactjs.org/docs/react-dom.html
 
 external fun createPortal(
-    children: ReactNode,
+    children: ReactNode?,
     container: Element,
     key: Key? = definedExternally,
 ): ReactPortal
