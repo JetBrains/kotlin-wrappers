@@ -11,6 +11,6 @@ fun createPortal(
     handler: Render,
 ): ReactPortal =
     createPortal(
-        children = createElement<Props>(handler)!!,
+        children = createElement<Props>(handler),
         container = container,
     )
