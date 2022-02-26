@@ -41,7 +41,7 @@ external interface StepperProps :
      * An element to be placed between each step.
      * @default <StepConnector />
      */
-    var connector: react.ReactElement?
+    var connector: react.ReactElement<*>?
 
     /**
      * If set the `Stepper` will not assist in controlling steps for linear flow.

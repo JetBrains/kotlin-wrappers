@@ -2,21 +2,21 @@ package react
 
 import kotlinx.js.jso
 
-fun createElement(
+fun <P : Props> createElement(
     block: Render,
-): ReactElement? {
+): ReactElement<P>? {
     val nodes = RBuilder().apply(block).childList
 
     return when {
         nodes.size == 0 -> null
-        nodes.size == 1 && isValidElement(nodes.first()) -> nodes.first().unsafeCast<ReactElement>()
-        else -> createElement(Fragment, children = nodes.toTypedArray())
+        nodes.size == 1 && isValidElement(nodes.first()) -> nodes.first().unsafeCast<ReactElement<P>>()
+        else -> createElement(Fragment, children = nodes.toTypedArray()).unsafeCast<ReactElement<P>>()
     }
 }
 
 inline fun <P : Props> cloneElement(
-    element: ReactElement,
+    element: ReactElement<P>,
     vararg children: ReactNode?,
     props: P.() -> Unit,
-): ReactElement =
+): ReactElement<P> =
     cloneElement(element, jso(props), *children)

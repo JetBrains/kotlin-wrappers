@@ -2,7 +2,7 @@ package react
 
 fun Children.forEachElement(
     children: ReactNode?,
-    handler: (ReactElement) -> Unit,
+    handler: (ReactElement<*>) -> Unit,
 ) {
     forEach(children) {
         val element = it.asElementOrNull()

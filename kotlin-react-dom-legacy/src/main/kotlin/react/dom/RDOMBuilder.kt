@@ -58,7 +58,7 @@ interface RDOMBuilder<out T : Tag> : RBuilder {
             domProps.ref = value
         }
 
-    fun create(): ReactElement =
+    fun create(): ReactElement<*> =
         createElement(
             type = IntrinsicType(attrs.tagName),
             props = domProps,

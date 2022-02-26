@@ -15,7 +15,7 @@ external interface ChipProps :
     /**
      * The Avatar element to display.
      */
-    var avatar: react.ReactElement?
+    var avatar: react.ReactElement<*>?
 
     /**
      * This prop isn't supported.
@@ -47,7 +47,7 @@ external interface ChipProps :
     /**
      * Override the default delete icon element. Shown only if `onDelete` is set.
      */
-    var deleteIcon: react.ReactElement?
+    var deleteIcon: react.ReactElement<*>?
 
     /**
      * If `true`, the component is disabled.
@@ -58,7 +58,7 @@ external interface ChipProps :
     /**
      * Icon element.
      */
-    var icon: react.ReactElement?
+    var icon: react.ReactElement<*>?
 
     /**
      * The content of the component.

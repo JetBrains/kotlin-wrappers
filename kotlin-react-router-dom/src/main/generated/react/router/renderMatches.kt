@@ -10,4 +10,4 @@ package react.router
  */
 external fun renderMatches(
     matches: kotlinx.js.ReadonlyArray<RouteMatch>,
-): react.ReactElement
+): react.ReactElement<*>

@@ -19,7 +19,7 @@ inline fun ReactNode(
 fun ReactNode.asStringOrNull(): String? =
     asDynamic() as? String
 
-fun ReactNode.asElementOrNull(): ReactElement? =
+fun ReactNode.asElementOrNull(): ReactElement<*>? =
     if (isValidElement(this)) {
-        unsafeCast<ReactElement>()
+        unsafeCast<ReactElement<*>>()
     } else null

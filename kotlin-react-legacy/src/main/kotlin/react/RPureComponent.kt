@@ -18,5 +18,5 @@ abstract class RPureComponent<P : Props, S : State> : PureComponent<P, S> {
 
     abstract fun RBuilder.render()
 
-    override fun render() = createElement { render() }
+    override fun render() = createElement<Props> { render() }
 }

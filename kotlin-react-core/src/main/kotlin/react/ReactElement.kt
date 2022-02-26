@@ -3,9 +3,9 @@
 
 package react
 
-sealed external interface ReactElement : ReactNode {
-    val type: ElementType<*>
-    val props: Props
+sealed external interface ReactElement<P : Props> : ReactNode {
+    val type: ElementType<P>
+    val props: P
     val key: Key?
 }
 
@@ -13,13 +13,13 @@ external fun <P : Props> createElement(
     type: ElementType<P>,
     props: P = definedExternally,
     vararg children: ReactNode?,
-): ReactElement
+): ReactElement<P>
 
 external fun <P : Props> cloneElement(
-    element: ReactElement,
+    element: ReactElement<P>,
     props: P = definedExternally,
     vararg children: ReactNode?,
-): ReactElement
+): ReactElement<P>
 
 external fun isValidElement(
     element: Any?,

@@ -64,7 +64,7 @@ interface RBuilder {
         handler: RBuilder.(T) -> Unit,
     ) {
         child(this) {
-            attrs.children = { value -> createElement { handler(value) } }
+            attrs.children = { value -> createElement<Props> { handler(value) } }
         }
     }
 
@@ -107,12 +107,12 @@ fun <T : RBuilder> buildElements(builder: T, handler: T.() -> Unit): dynamic {
 
 open class RBuilderSingle : RBuilderImpl()
 
-inline fun <T : RBuilder> buildElement(rBuilder: T, handler: T.() -> Unit): ReactElement =
+inline fun <T : RBuilder> buildElement(rBuilder: T, handler: T.() -> Unit): ReactElement<*> =
     rBuilder.apply(handler)
         .childList.first()
-        .unsafeCast<ReactElement>()
+        .unsafeCast<ReactElement<*>>()
 
-inline fun buildElement(handler: Render): ReactElement =
+inline fun buildElement(handler: Render): ReactElement<*> =
     buildElement(RBuilder(), handler)
 
 interface RElementBuilder<out P : Props> : RBuilder {
