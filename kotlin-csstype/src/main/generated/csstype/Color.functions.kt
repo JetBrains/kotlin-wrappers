@@ -1,10 +1,14 @@
+// Automatically generated - do not modify!
+
 @file:Suppress(
     "NOTHING_TO_INLINE",
 )
 
 package csstype
 
-inline fun Color(value: String): Color =
+inline fun Color(
+    value: String,
+): Color =
     value.unsafeCast<Color>()
 
 inline fun rgb(
@@ -12,7 +16,7 @@ inline fun rgb(
     green: Int,
     blue: Int,
 ): Color =
-    Color("rgb($red,$green,$blue)")
+    "rgb($red,$green,$blue)".unsafeCast<Color>()
 
 inline fun rgba(
     red: Int,
@@ -20,4 +24,4 @@ inline fun rgba(
     blue: Int,
     alpha: Double,
 ): Color =
-    Color("rgba($red,$green,$blue,$alpha)")
+    "rgba($red,$green,$blue,$alpha)".unsafeCast<Color>()
