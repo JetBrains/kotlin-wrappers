@@ -3563,7 +3563,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/overflow-block">MDN</a>
      */
-    var overflowBlock: OverflowBlock?
+    var overflowBlock: Overflow?
 
     /**
      * The **`overflow-clip-box`** CSS property specifies relative to which box the clipping happens when there is an overflow. It is short hand for the `overflow-clip-box-inline` and `overflow-clip-box-block` properties.
@@ -3604,7 +3604,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/overflow-inline">MDN</a>
      */
-    var overflowInline: OverflowInline?
+    var overflowInline: Overflow?
 
     /**
      * The `**overflow-wrap**` CSS property applies to inline elements, setting whether the browser should insert line breaks within an otherwise unbreakable string to prevent text from overflowing its line box.
@@ -3635,7 +3635,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/overflow-x">MDN</a>
      */
-    var overflowX: OverflowX?
+    var overflowX: Overflow?
 
     /**
      * The **`overflow-y`** CSS property sets what shows when content overflows a block-level element's top and bottom edges. This may be nothing, a scroll bar, or the overflow content.
@@ -3650,7 +3650,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/overflow-y">MDN</a>
      */
-    var overflowY: OverflowY?
+    var overflowY: Overflow?
 
     /**
      * The **`overscroll-behavior-block`** CSS property sets the browser's behavior when the block direction boundary of a scrolling area is reached.
@@ -3665,7 +3665,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/overscroll-behavior-block">MDN</a>
      */
-    var overscrollBehaviorBlock: OverscrollBehaviorBlock?
+    var overscrollBehaviorBlock: OverscrollBehavior?
 
     /**
      * The **`overscroll-behavior-inline`** CSS property sets the browser's behavior when the inline direction boundary of a scrolling area is reached.
@@ -3680,7 +3680,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/overscroll-behavior-inline">MDN</a>
      */
-    var overscrollBehaviorInline: OverscrollBehaviorInline?
+    var overscrollBehaviorInline: OverscrollBehavior?
 
     /**
      * The **`overscroll-behavior-x`** CSS property sets the browser's behavior when the horizontal boundary of a scrolling area is reached.
@@ -3695,7 +3695,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/overscroll-behavior-x">MDN</a>
      */
-    var overscrollBehaviorX: OverscrollBehaviorX?
+    var overscrollBehaviorX: OverscrollBehavior?
 
     /**
      * The **`overscroll-behavior-y`** CSS property sets the browser's behavior when the vertical boundary of a scrolling area is reached.
@@ -3710,7 +3710,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/overscroll-behavior-y">MDN</a>
      */
-    var overscrollBehaviorY: OverscrollBehaviorY?
+    var overscrollBehaviorY: OverscrollBehavior?
 
     /**
      * The **`padding-block`** CSS shorthand property defines the logical block start and end padding of an element, which maps to physical padding properties depending on the element's writing mode, directionality, and text orientation.
