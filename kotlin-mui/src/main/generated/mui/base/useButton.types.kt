@@ -2,21 +2,13 @@
 
 package mui.base
 
-external interface UseButtonProps : react.Props {
+external interface UseButtonParameters {
     /**
      * The component used for the Root slot.
      * Either a string to use a HTML element or a component.
-     * This is equivalent to `components.Root`. If both are provided, the `component` is used.
      * @default 'button'
      */
     var component: react.ElementType<*>?
-
-    /**
-     * The components used for each slot inside the Button.
-     * Either a string to use a HTML element or a component.
-     * @default {}
-     */
-    var components: dynamic
 
     /**
      * If `true`, the component is disabled.

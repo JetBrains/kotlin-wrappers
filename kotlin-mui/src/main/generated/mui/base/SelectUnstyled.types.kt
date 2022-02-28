@@ -4,6 +4,19 @@ package mui.base
 
 external interface SelectUnstyledProps<TValue> : react.Props {
     /**
+     * The components used for each slot inside the Select.
+     * Either a string to use a HTML element or a component.
+     * @default {}
+     */
+    var components: dynamic
+
+    /**
+     * The props used for each slot inside the Input.
+     * @default {}
+     */
+    var componentsProps: dynamic
+
+    /**
      * The default selected value. Use when the component is not controlled.
      */
     var defaultValue: TValue?
@@ -39,19 +52,6 @@ external interface SelectUnstyledCommonProps : react.PropsWithChildren {
     var component: react.ElementType<*>?
 
     /**
-     * The components used for each slot inside the Select.
-     * Either a string to use a HTML element or a component.
-     * @default {}
-     */
-    var components: dynamic
-
-    /**
-     * The props used for each slot inside the Input.
-     * @default {}
-     */
-    var componentsProps: dynamic
-
-    /**
      * If `true`, the select is disabled.
      * @default false
      */
@@ -81,7 +81,7 @@ external interface SelectUnstyledOwnerState {
 
     var disabled: Boolean
 
-    var open: Boolean
-
     var focusVisible: Boolean
+
+    var open: Boolean
 }
