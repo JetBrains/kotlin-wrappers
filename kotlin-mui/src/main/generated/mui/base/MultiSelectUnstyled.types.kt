@@ -6,6 +6,19 @@ import kotlinx.js.ReadonlyArray
 
 external interface MultiSelectUnstyledProps<TValue> : react.Props {
     /**
+     * The components used for each slot inside the Select.
+     * Either a string to use a HTML element or a component.
+     * @default {}
+     */
+    var components: dynamic
+
+    /**
+     * The props used for each slot inside the Input.
+     * @default {}
+     */
+    var componentsProps: dynamic
+
+    /**
      * The default selected values. Use when the component is not controlled.
      * @default []
      */
