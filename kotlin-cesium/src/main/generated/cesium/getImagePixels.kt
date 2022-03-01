@@ -15,7 +15,7 @@ package cesium
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/getImagePixels.html">Online Documentation</a>
  */
 external fun getImagePixels(
-    image: org.w3c.dom.HTMLImageElement,
+    image: dynamic,
     width: Double,
     height: Double,
 ): org.w3c.dom.ImageData

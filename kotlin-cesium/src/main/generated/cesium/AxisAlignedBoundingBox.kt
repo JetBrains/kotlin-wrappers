@@ -47,6 +47,24 @@ external class AxisAlignedBoundingBox(
 
     companion object {
         /**
+         * Creates an instance of an AxisAlignedBoundingBox from its corners.
+         * ```
+         * // Compute an axis aligned bounding box from the two corners.
+         * const box = AxisAlignedBoundingBox.fromCorners(new Cartesian3(-1, -1, -1), new Cartesian3(1, 1, 1));
+         * ```
+         * @param [minimum] The minimum point along the x, y, and z axes.
+         * @param [maximum] The maximum point along the x, y, and z axes.
+         * @param [result] The object onto which to store the result.
+         * @return The modified result parameter or a new AxisAlignedBoundingBox instance if one was not provided.
+         * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/AxisAlignedBoundingBox.html#.fromCorners">Online Documentation</a>
+         */
+        fun fromCorners(
+            minimum: Cartesian3,
+            maximum: Cartesian3,
+            result: AxisAlignedBoundingBox? = definedExternally,
+        ): AxisAlignedBoundingBox
+
+        /**
          * Computes an instance of an AxisAlignedBoundingBox. The box is determined by
          * finding the points spaced the farthest apart on the x, y, and z axes.
          * ```

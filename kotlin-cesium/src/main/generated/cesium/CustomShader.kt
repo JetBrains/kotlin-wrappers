@@ -23,6 +23,8 @@ package cesium
  *   is responsible for calling this method.
  *
  * To enable the use of [ModelExperimental] in [Cesium3DTileset], set [ExperimentalFeatures.enableModelExperimental] to `true` or tileset.enableModelExperimental to `true`.
+ *
+ * See the [Custom Shader Guide](https://github.com/CesiumGS/cesium/tree/main/Documentation/CustomShaderGuide) for more detailed documentation.
  * ```
  * const customShader = new CustomShader({
  *   uniforms: {

@@ -98,6 +98,8 @@ external class Model(options: ConstructorOptions? = definedExternally) {
      * @property [sphericalHarmonicCoefficients] The third order spherical harmonic coefficients used for the diffuse color of image-based lighting.
      * @property [specularEnvironmentMaps] A URL to a KTX2 file that contains a cube map of the specular lighting and the convoluted specular mipmaps.
      * @property [credit] A credit for the data source, which is displayed on the canvas.
+     * @property [showCreditsOnScreen] Whether to display the credits of this model on screen.
+     *   Default value - `false`
      * @property [backFaceCulling] Whether to cull back-facing geometry. When true, back face culling is determined by the material's doubleSided property; when false, back face culling is disabled. Back faces are not culled if [Model.color] is translucent or [Model.silhouetteSize] is greater than 0.0.
      *   Default value - `true`
      * @property [showOutline] Whether to display the outline for models using the [CESIUM_primitive_outline](https://github.com/KhronosGroup/glTF/tree/master/extensions/2.0/Vendor/CESIUM_primitive_outline) extension. When true, outlines are displayed. When false, outlines are not displayed.
@@ -135,6 +137,7 @@ external class Model(options: ConstructorOptions? = definedExternally) {
         var sphericalHarmonicCoefficients: Array<out Cartesian3>?
         var specularEnvironmentMaps: String?
         var credit: Credit?
+        var showCreditsOnScreen: Boolean?
         var backFaceCulling: Boolean?
         var showOutline: Boolean?
     }
@@ -420,6 +423,12 @@ external class Model(options: ConstructorOptions? = definedExternally) {
     var credit: Credit
 
     /**
+     * Gets or sets whether the credits of the model will be displayed on the screen
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Model.html#showCreditsOnScreen">Online Documentation</a>
+     */
+    var showCreditsOnScreen: Boolean
+
+    /**
      * Returns the glTF node with the given `name` property.  This is used to
      * modify a node's transform for animation outside of glTF animations.
      * ```
@@ -611,6 +620,8 @@ external class Model(options: ConstructorOptions? = definedExternally) {
          * @property [dequantizeInShader] Determines if a [Draco](https://github.com/google/draco) encoded model is dequantized on the GPU. This decreases total memory usage for encoded models.
          *   Default value - `true`
          * @property [credit] A credit for the model, which is displayed on the canvas.
+         * @property [showCreditsOnScreen] Whether to display the credits of this model on screen.
+         *   Default value - `false`
          * @property [backFaceCulling] Whether to cull back-facing geometry. When true, back face culling is determined by the material's doubleSided property; when false, back face culling is disabled. Back faces are not culled if [Model.color] is translucent or [Model.silhouetteSize] is greater than 0.0.
          *   Default value - `true`
          * @property [showOutline] Whether to display the outline for models using the [CESIUM_primitive_outline](https://github.com/KhronosGroup/glTF/tree/master/extensions/2.0/Vendor/CESIUM_primitive_outline) extension. When true, outlines are displayed. When false, outlines are not displayed.
@@ -643,6 +654,7 @@ external class Model(options: ConstructorOptions? = definedExternally) {
             var clippingPlanes: ClippingPlaneCollection?
             var dequantizeInShader: Boolean?
             var credit: Credit?
+            var showCreditsOnScreen: Boolean?
             var backFaceCulling: Boolean?
             var showOutline: Boolean?
         }

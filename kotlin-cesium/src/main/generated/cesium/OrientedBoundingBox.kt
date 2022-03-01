@@ -77,6 +77,22 @@ external class OrientedBoundingBox(
     ): Interval
 
     /**
+     * Computes the eight corners of an oriented bounding box. The corners are ordered by (-X, -Y, -Z), (-X, -Y, +Z), (-X, +Y, -Z), (-X, +Y, +Z), (+X, -Y, -Z), (+X, -Y, +Z), (+X, +Y, -Z), (+X, +Y, +Z).
+     * @param [result] An array of eight [Cartesian3] instances onto which to store the corners.
+     * @return The modified result parameter or a new array if none was provided.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/OrientedBoundingBox.html#computeCorners">Online Documentation</a>
+     */
+    fun computeCorners(result: Array<out Cartesian3>? = definedExternally): Array<out Cartesian3>
+
+    /**
+     * Computes a transformation matrix from an oriented bounding box.
+     * @param [result] The object onto which to store the result.
+     * @return The modified result parameter or a new [Matrix4] instance if none was provided.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/OrientedBoundingBox.html#computeTransformation">Online Documentation</a>
+     */
+    fun computeTransformation(result: Matrix4): Matrix4
+
+    /**
      * Determines whether or not a bounding box is hidden from view by the occluder.
      * @param [occluder] The occluder.
      * @return `true` if the sphere is not visible; otherwise `false`.
@@ -170,6 +186,18 @@ external class OrientedBoundingBox(
         ): OrientedBoundingBox
 
         /**
+         * Computes an OrientedBoundingBox that bounds an affine transformation.
+         * @param [transformation] The affine transformation.
+         * @param [result] The object onto which to store the result.
+         * @return The modified result parameter or a new OrientedBoundingBox instance if none was provided.
+         * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/OrientedBoundingBox.html#.fromTransformation">Online Documentation</a>
+         */
+        fun fromTransformation(
+            transformation: Matrix4,
+            result: OrientedBoundingBox? = definedExternally,
+        ): OrientedBoundingBox
+
+        /**
          * Duplicates a OrientedBoundingBox instance.
          * @param [box] The bounding box to duplicate.
          * @param [result] The object onto which to store the result.
@@ -232,6 +260,30 @@ external class OrientedBoundingBox(
             direction: Cartesian3,
             result: Interval? = definedExternally,
         ): Interval
+
+        /**
+         * Computes the eight corners of an oriented bounding box. The corners are ordered by (-X, -Y, -Z), (-X, -Y, +Z), (-X, +Y, -Z), (-X, +Y, +Z), (+X, -Y, -Z), (+X, -Y, +Z), (+X, +Y, -Z), (+X, +Y, +Z).
+         * @param [box] The oriented bounding box.
+         * @param [result] An array of eight [Cartesian3] instances onto which to store the corners.
+         * @return The modified result parameter or a new array if none was provided.
+         * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/OrientedBoundingBox.html#.computeCorners">Online Documentation</a>
+         */
+        fun computeCorners(
+            box: OrientedBoundingBox,
+            result: Array<out Cartesian3>? = definedExternally,
+        ): Array<out Cartesian3>
+
+        /**
+         * Computes a transformation matrix from an oriented bounding box.
+         * @param [box] The oriented bounding box.
+         * @param [result] The object onto which to store the result.
+         * @return The modified result parameter or a new [Matrix4] instance if none was provided.
+         * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/OrientedBoundingBox.html#.computeTransformation">Online Documentation</a>
+         */
+        fun computeTransformation(
+            box: OrientedBoundingBox,
+            result: Matrix4,
+        ): Matrix4
 
         /**
          * Determines whether or not a bounding box is hidden from view by the occluder.

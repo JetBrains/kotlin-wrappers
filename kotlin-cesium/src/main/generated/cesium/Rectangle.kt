@@ -400,6 +400,26 @@ external class Rectangle(
         ): Array<out Cartesian3>
 
         /**
+         * Computes a subsection of a rectangle from normalized coordinates in the range [0.0, 1.0].
+         * @param [rectangle] The rectangle to subsection.
+         * @param [westLerp] The west interpolation factor in the range [0.0, 1.0]. Must be less than or equal to eastLerp.
+         * @param [southLerp] The south interpolation factor in the range [0.0, 1.0]. Must be less than or equal to northLerp.
+         * @param [eastLerp] The east interpolation factor in the range [0.0, 1.0]. Must be greater than or equal to westLerp.
+         * @param [northLerp] The north interpolation factor in the range [0.0, 1.0]. Must be greater than or equal to southLerp.
+         * @param [result] The object onto which to store the result.
+         * @return The modified result parameter or a new Rectangle instance if none was provided.
+         * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Rectangle.html#.subsection">Online Documentation</a>
+         */
+        fun subsection(
+            rectangle: Rectangle,
+            westLerp: Double,
+            southLerp: Double,
+            eastLerp: Double,
+            northLerp: Double,
+            result: Rectangle? = definedExternally,
+        ): Rectangle
+
+        /**
          * The largest possible rectangle.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Rectangle.html#.MAX_VALUE">Online Documentation</a>
          */

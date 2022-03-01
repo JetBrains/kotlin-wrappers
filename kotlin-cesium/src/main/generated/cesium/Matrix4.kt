@@ -130,6 +130,31 @@ external class Matrix4(
         ): Matrix4
 
         /**
+         * Flattens an array of Matrix4s into an array of components. The components
+         * are stored in column-major order.
+         * @param [array] The array of matrices to pack.
+         * @param [result] The array onto which to store the result. If this is a typed array, it must have array.length * 16 components, else a [DeveloperError] will be thrown. If it is a regular array, it will be resized to have (array.length * 16) elements.
+         * @return The packed array.
+         * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Matrix4.html#.packArray">Online Documentation</a>
+         */
+        fun packArray(
+            array: Array<out Matrix4>,
+            result: Array<out Double>? = definedExternally,
+        ): Array<out Double>
+
+        /**
+         * Unpacks an array of column-major matrix components into an array of Matrix4s.
+         * @param [array] The array of components to unpack.
+         * @param [result] The array onto which to store the result.
+         * @return The unpacked array.
+         * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Matrix4.html#.unpackArray">Online Documentation</a>
+         */
+        fun unpackArray(
+            array: Array<out Double>,
+            result: Array<out Matrix4>? = definedExternally,
+        ): Array<out Matrix4>
+
+        /**
          * Duplicates a Matrix4 instance.
          * @param [matrix] The matrix to duplicate.
          * @param [result] The object onto which to store the result.
@@ -296,6 +321,18 @@ external class Matrix4(
          */
         fun fromUniformScale(
             scale: Double,
+            result: Matrix4? = definedExternally,
+        ): Matrix4
+
+        /**
+         * Creates a rotation matrix.
+         * @param [rotation] The rotation matrix.
+         * @param [result] The object in which the result will be stored, if undefined a new instance will be created.
+         * @return The modified result parameter, or a new Matrix4 instance if one was not provided.
+         * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Matrix4.html#.fromRotation">Online Documentation</a>
+         */
+        fun fromRotation(
+            rotation: Matrix3,
             result: Matrix4? = definedExternally,
         ): Matrix4
 
@@ -544,36 +581,6 @@ external class Matrix4(
         ): Matrix4
 
         /**
-         * Computes a new matrix that replaces the translation in the rightmost column of the provided
-         * matrix with the provided translation. This assumes the matrix is an affine transformation.
-         * @param [matrix] The matrix to use.
-         * @param [translation] The translation that replaces the translation of the provided matrix.
-         * @param [result] The object onto which to store the result.
-         * @return The modified result parameter.
-         * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Matrix4.html#.setTranslation">Online Documentation</a>
-         */
-        fun setTranslation(
-            matrix: Matrix4,
-            translation: Cartesian3,
-            result: Matrix4,
-        ): Matrix4
-
-        /**
-         * Computes a new matrix that replaces the scale with the provided scale.
-         * This assumes the matrix is an affine transformation.
-         * @param [matrix] The matrix to use.
-         * @param [scale] The scale that replaces the scale of the provided matrix.
-         * @param [result] The object onto which to store the result.
-         * @return The modified result parameter.
-         * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Matrix4.html#.setScale">Online Documentation</a>
-         */
-        fun setScale(
-            matrix: Matrix4,
-            scale: Cartesian3,
-            result: Matrix4,
-        ): Matrix4
-
-        /**
          * Retrieves a copy of the matrix row at the provided index as a Cartesian4 instance.
          * ```
          * //returns a Cartesian4 instance with values from the specified column
@@ -636,6 +643,51 @@ external class Matrix4(
         ): Matrix4
 
         /**
+         * Computes a new matrix that replaces the translation in the rightmost column of the provided
+         * matrix with the provided translation. This assumes the matrix is an affine transformation.
+         * @param [matrix] The matrix to use.
+         * @param [translation] The translation that replaces the translation of the provided matrix.
+         * @param [result] The object onto which to store the result.
+         * @return The modified result parameter.
+         * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Matrix4.html#.setTranslation">Online Documentation</a>
+         */
+        fun setTranslation(
+            matrix: Matrix4,
+            translation: Cartesian3,
+            result: Matrix4,
+        ): Matrix4
+
+        /**
+         * Computes a new matrix that replaces the scale with the provided scale.
+         * This assumes the matrix is an affine transformation.
+         * @param [matrix] The matrix to use.
+         * @param [scale] The scale that replaces the scale of the provided matrix.
+         * @param [result] The object onto which to store the result.
+         * @return The modified result parameter.
+         * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Matrix4.html#.setScale">Online Documentation</a>
+         */
+        fun setScale(
+            matrix: Matrix4,
+            scale: Cartesian3,
+            result: Matrix4,
+        ): Matrix4
+
+        /**
+         * Computes a new matrix that replaces the scale with the provided uniform scale.
+         * This assumes the matrix is an affine transformation.
+         * @param [matrix] The matrix to use.
+         * @param [scale] The uniform scale that replaces the scale of the provided matrix.
+         * @param [result] The object onto which to store the result.
+         * @return The modified result parameter.
+         * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Matrix4.html#.setUniformScale">Online Documentation</a>
+         */
+        fun setUniformScale(
+            matrix: Matrix4,
+            scale: Double,
+            result: Matrix4,
+        ): Matrix4
+
+        /**
          * Extracts the non-uniform scale assuming the matrix is an affine transformation.
          * @param [matrix] The matrix.
          * @param [result] The object onto which to store the result.
@@ -656,6 +708,30 @@ external class Matrix4(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Matrix4.html#.getMaximumScale">Online Documentation</a>
          */
         fun getMaximumScale(matrix: Matrix4): Double
+
+        /**
+         * Sets the rotation assuming the matrix is an affine transformation.
+         * @param [matrix] The matrix.
+         * @param [rotation] The rotation matrix.
+         * @return The modified result parameter.
+         * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Matrix4.html#.setRotation">Online Documentation</a>
+         */
+        fun setRotation(
+            matrix: Matrix4,
+            rotation: Matrix4,
+        ): Matrix4
+
+        /**
+         * Extracts the rotation matrix assuming the matrix is an affine transformation.
+         * @param [matrix] The matrix.
+         * @param [result] The object onto which to store the result.
+         * @return The modified result parameter.
+         * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Matrix4.html#.getRotation">Online Documentation</a>
+         */
+        fun getRotation(
+            matrix: Matrix4,
+            result: Matrix4,
+        ): Matrix4
 
         /**
          * Computes the product of two matrices.
@@ -766,28 +842,6 @@ external class Matrix4(
 
         /**
          * Multiplies an affine transformation matrix (with a bottom row of `[0.0, 0.0, 0.0, 1.0]`)
-         * by an implicit uniform scale matrix.  This is an optimization
-         * for `Matrix4.multiply(m, Matrix4.fromUniformScale(scale), m);`, where
-         * `m` must be an affine matrix.
-         * This function performs fewer allocations and arithmetic operations.
-         * ```
-         * // Instead of Matrix4.multiply(m, Matrix4.fromUniformScale(scale), m);
-         * Matrix4.multiplyByUniformScale(m, scale, m);
-         * ```
-         * @param [matrix] The affine matrix on the left-hand side.
-         * @param [scale] The uniform scale on the right-hand side.
-         * @param [result] The object onto which to store the result.
-         * @return The modified result parameter.
-         * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Matrix4.html#.multiplyByUniformScale">Online Documentation</a>
-         */
-        fun multiplyByUniformScale(
-            matrix: Matrix4,
-            scale: Double,
-            result: Matrix4,
-        ): Matrix4
-
-        /**
-         * Multiplies an affine transformation matrix (with a bottom row of `[0.0, 0.0, 0.0, 1.0]`)
          * by an implicit non-uniform scale matrix. This is an optimization
          * for `Matrix4.multiply(m, Matrix4.fromUniformScale(scale), m);`, where
          * `m` must be an affine matrix.
@@ -805,6 +859,24 @@ external class Matrix4(
         fun multiplyByScale(
             matrix: Matrix4,
             scale: Cartesian3,
+            result: Matrix4,
+        ): Matrix4
+
+        /**
+         * Computes the product of a matrix times a uniform scale, as if the scale were a scale matrix.
+         * ```
+         * // Instead of Matrix4.multiply(m, Matrix4.fromUniformScale(scale), m);
+         * Matrix4.multiplyByUniformScale(m, scale, m);
+         * ```
+         * @param [matrix] The matrix on the left-hand side.
+         * @param [scale] The uniform scale on the right-hand side.
+         * @param [result] The object onto which to store the result.
+         * @return The modified result parameter.
+         * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Matrix4.html#.multiplyByUniformScale">Online Documentation</a>
+         */
+        fun multiplyByUniformScale(
+            matrix: Matrix4,
+            scale: Double,
             result: Matrix4,
         ): Matrix4
 

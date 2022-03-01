@@ -140,7 +140,7 @@ external class Cartesian2(
         ): Cartesian2
 
         /**
-         * Flattens an array of Cartesian2s into and array of components.
+         * Flattens an array of Cartesian2s into an array of components.
          * @param [array] The array of cartesians to pack.
          * @param [result] The array onto which to store the result. If this is a typed array, it must have array.length * 2 components, else a [DeveloperError] will be thrown. If it is a regular array, it will be resized to have (array.length * 2) elements.
          * @return The packed array.
@@ -152,7 +152,7 @@ external class Cartesian2(
         ): Array<out Double>
 
         /**
-         * Unpacks an array of cartesian components into and array of Cartesian2s.
+         * Unpacks an array of cartesian components into an array of Cartesian2s.
          * @param [array] The array of components to unpack.
          * @param [result] The array onto which to store the result.
          * @return The unpacked array.

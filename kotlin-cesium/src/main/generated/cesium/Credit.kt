@@ -25,7 +25,7 @@ package cesium
  */
 external class Credit(
     val html: String,
-    val showOnScreen: Boolean = definedExternally,
+    var showOnScreen: Boolean = definedExternally,
 ) {
     /**
      * Gets the credit element

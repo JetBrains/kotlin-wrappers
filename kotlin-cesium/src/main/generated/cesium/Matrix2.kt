@@ -94,6 +94,31 @@ external class Matrix2(
         ): Matrix2
 
         /**
+         * Flattens an array of Matrix2s into an array of components. The components
+         * are stored in column-major order.
+         * @param [array] The array of matrices to pack.
+         * @param [result] The array onto which to store the result. If this is a typed array, it must have array.length * 4 components, else a [DeveloperError] will be thrown. If it is a regular array, it will be resized to have (array.length * 4) elements.
+         * @return The packed array.
+         * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Matrix2.html#.packArray">Online Documentation</a>
+         */
+        fun packArray(
+            array: Array<out Matrix2>,
+            result: Array<out Double>? = definedExternally,
+        ): Array<out Double>
+
+        /**
+         * Unpacks an array of column-major matrix components into an array of Matrix2s.
+         * @param [array] The array of components to unpack.
+         * @param [result] The array onto which to store the result.
+         * @return The unpacked array.
+         * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Matrix2.html#.unpackArray">Online Documentation</a>
+         */
+        fun unpackArray(
+            array: Array<out Double>,
+            result: Array<out Matrix2>? = definedExternally,
+        ): Array<out Matrix2>
+
+        /**
          * Duplicates a Matrix2 instance.
          * @param [matrix] The matrix to duplicate.
          * @param [result] The object onto which to store the result.
@@ -119,18 +144,9 @@ external class Matrix2(
          * const v2 = [0.0, 0.0, 1.0, 1.0, 2.0, 2.0];
          * const m2 = Matrix2.fromArray(v2, 2);
          * ```
-         * @param [array] The array whose 4 consecutive elements correspond to the positions of the matrix.  Assumes column-major order.
-         * @param [startingIndex] The offset into the array of the first element, which corresponds to first column first row position in the matrix.
-         *   Default value - `0`
-         * @param [result] The object onto which to store the result.
-         * @return The modified result parameter or a new Matrix2 instance if one was not provided.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Matrix2.html#.fromArray">Online Documentation</a>
          */
-        fun fromArray(
-            array: Array<out Double>,
-            startingIndex: Int? = definedExternally,
-            result: Matrix2? = definedExternally,
-        ): Matrix2
+        var fromArray: Any
 
         /**
          * Creates a Matrix2 instance from a column-major order array.
@@ -303,6 +319,36 @@ external class Matrix2(
         ): Matrix2
 
         /**
+         * Computes a new matrix that replaces the scale with the provided scale.
+         * This assumes the matrix is an affine transformation.
+         * @param [matrix] The matrix to use.
+         * @param [scale] The scale that replaces the scale of the provided matrix.
+         * @param [result] The object onto which to store the result.
+         * @return The modified result parameter.
+         * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Matrix2.html#.setScale">Online Documentation</a>
+         */
+        fun setScale(
+            matrix: Matrix2,
+            scale: Cartesian2,
+            result: Matrix2,
+        ): Matrix2
+
+        /**
+         * Computes a new matrix that replaces the scale with the provided uniform scale.
+         * This assumes the matrix is an affine transformation.
+         * @param [matrix] The matrix to use.
+         * @param [scale] The uniform scale that replaces the scale of the provided matrix.
+         * @param [result] The object onto which to store the result.
+         * @return The modified result parameter.
+         * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Matrix2.html#.setUniformScale">Online Documentation</a>
+         */
+        fun setUniformScale(
+            matrix: Matrix2,
+            scale: Double,
+            result: Matrix2,
+        ): Matrix2
+
+        /**
          * Extracts the non-uniform scale assuming the matrix is an affine transformation.
          * @param [matrix] The matrix.
          * @param [result] The object onto which to store the result.
@@ -322,6 +368,30 @@ external class Matrix2(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Matrix2.html#.getMaximumScale">Online Documentation</a>
          */
         fun getMaximumScale(matrix: Matrix2): Double
+
+        /**
+         * Sets the rotation assuming the matrix is an affine transformation.
+         * @param [matrix] The matrix.
+         * @param [rotation] The rotation matrix.
+         * @return The modified result parameter.
+         * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Matrix2.html#.setRotation">Online Documentation</a>
+         */
+        fun setRotation(
+            matrix: Matrix2,
+            rotation: Matrix2,
+        ): Matrix2
+
+        /**
+         * Extracts the rotation matrix assuming the matrix is an affine transformation.
+         * @param [matrix] The matrix.
+         * @param [result] The object onto which to store the result.
+         * @return The modified result parameter.
+         * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Matrix2.html#.getRotation">Online Documentation</a>
+         */
+        fun getRotation(
+            matrix: Matrix2,
+            result: Matrix2,
+        ): Matrix2
 
         /**
          * Computes the product of two matrices.
@@ -407,7 +477,25 @@ external class Matrix2(
          */
         fun multiplyByScale(
             matrix: Matrix2,
-            scale: Cartesian2,
+            scale: Double,
+            result: Matrix2,
+        ): Matrix2
+
+        /**
+         * Computes the product of a matrix times a uniform scale, as if the scale were a scale matrix.
+         * ```
+         * // Instead of Matrix2.multiply(m, Matrix2.fromUniformScale(scale), m);
+         * Matrix2.multiplyByUniformScale(m, scale, m);
+         * ```
+         * @param [matrix] The matrix on the left-hand side.
+         * @param [scale] The uniform scale on the right-hand side.
+         * @param [result] The object onto which to store the result.
+         * @return The modified result parameter.
+         * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Matrix2.html#.multiplyByUniformScale">Online Documentation</a>
+         */
+        fun multiplyByUniformScale(
+            matrix: Matrix2,
+            scale: Double,
             result: Matrix2,
         ): Matrix2
 
