@@ -278,6 +278,18 @@ external class BoundingSphere(
         ): BoundingSphere
 
         /**
+         * Computes a tight-fitting bounding sphere enclosing the provided affine transformation.
+         * @param [transformation] The affine transformation.
+         * @param [result] The object onto which to store the result.
+         * @return The modified result parameter or a new BoundingSphere instance if none was provided.
+         * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BoundingSphere.html#.fromTransformation">Online Documentation</a>
+         */
+        fun fromTransformation(
+            transformation: Matrix4,
+            result: BoundingSphere? = definedExternally,
+        ): BoundingSphere
+
+        /**
          * Duplicates a BoundingSphere instance.
          * @param [sphere] The bounding sphere to duplicate.
          * @param [result] The object onto which to store the result.

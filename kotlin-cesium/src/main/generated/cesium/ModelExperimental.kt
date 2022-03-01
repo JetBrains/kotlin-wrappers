@@ -43,6 +43,12 @@ external class ModelExperimental(options: ConstructorOptions) {
      * @property [instanceFeatureIdIndex] The index into the list of instance feature IDs used for picking and styling. If both per-primitive and per-instance feature IDs are present, the instance feature IDs take priority.
      *   Default value - `0`
      * @property [pointCloudShading] Options for constructing a [PointCloudShading] object to control point attenuation based on geometric error and lighting.
+     * @property [backFaceCulling] Whether to cull back-facing geometry. When true, back face culling is determined by the material's doubleSided property; when false, back face culling is disabled. Back faces are not culled if the model's color is translucent.
+     *   Default value - `true`
+     * @property [shadows] Determines whether the model casts or receives shadows from light sources.
+     *   Default value - [ShadowMode.ENABLED]
+     * @property [showCreditsOnScreen] Whether to display the credits of this model on screen.
+     *   Default value - `false`
      */
     interface ConstructorOptions {
         var resource: Resource
@@ -60,6 +66,9 @@ external class ModelExperimental(options: ConstructorOptions) {
         var featureIdIndex: Int?
         var instanceFeatureIdIndex: Int?
         var pointCloudShading: Any?
+        var backFaceCulling: Boolean?
+        var shadows: ShadowMode?
+        var showCreditsOnScreen: Boolean?
     }
 
     /**
@@ -150,6 +159,12 @@ external class ModelExperimental(options: ConstructorOptions) {
     var instanceFeatureIdIndex: Int
 
     /**
+     * Gets or sets whether the credits of the model will be displayed on the screen
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ModelExperimental.html#showCreditsOnScreen">Online Documentation</a>
+     */
+    var showCreditsOnScreen: Boolean
+
+    /**
      * Called when [Viewer] or [CesiumWidget] render the scene to
      * get the draw commands needed to render this primitive.
      *
@@ -230,6 +245,12 @@ external class ModelExperimental(options: ConstructorOptions) {
          * @property [instanceFeatureIdIndex] The index into the list of instance feature IDs used for picking and styling. If both per-primitive and per-instance feature IDs are present, the instance feature IDs take priority.
          *   Default value - `0`
          * @property [pointCloudShading] Options for constructing a [PointCloudShading] object to control point attenuation and lighting.
+         * @property [backFaceCulling] Whether to cull back-facing geometry. When true, back face culling is determined by the material's doubleSided property; when false, back face culling is disabled. Back faces are not culled if the model's color is translucent.
+         *   Default value - `true`
+         * @property [shadows] Determines whether the model casts or receives shadows from light sources.
+         *   Default value - [ShadowMode.ENABLED]
+         * @property [showCreditsOnScreen] Whether to display the credits of this model on screen.
+         *   Default value - `false`
          */
         interface FromGltfOptions {
             var gltf: dynamic
@@ -252,6 +273,9 @@ external class ModelExperimental(options: ConstructorOptions) {
             var featureIdIndex: Int?
             var instanceFeatureIdIndex: Int?
             var pointCloudShading: Any?
+            var backFaceCulling: Boolean?
+            var shadows: ShadowMode?
+            var showCreditsOnScreen: Boolean?
         }
     }
 }

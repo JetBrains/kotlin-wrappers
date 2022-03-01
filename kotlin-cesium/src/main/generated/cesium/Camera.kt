@@ -640,13 +640,13 @@ external class Camera(scene: Scene) {
      * in world coordinates.
      * @param [windowPosition] The x and y coordinates of a pixel.
      * @param [result] The object onto which to store the result.
-     * @return Returns the [Cartesian3] position and direction of the ray.
+     * @return Returns the [Cartesian3] position and direction of the ray, or undefined if the pick ray cannot be determined.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Camera.html#getPickRay">Online Documentation</a>
      */
     fun getPickRay(
         windowPosition: Cartesian2,
         result: Ray? = definedExternally,
-    ): Ray
+    ): Ray?
 
     /**
      * Return the distance from the camera to the front of the bounding sphere.

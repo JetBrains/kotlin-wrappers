@@ -137,7 +137,7 @@ external class Cartesian4(
         ): Cartesian4
 
         /**
-         * Flattens an array of Cartesian4s into and array of components.
+         * Flattens an array of Cartesian4s into an array of components.
          * @param [array] The array of cartesians to pack.
          * @param [result] The array onto which to store the result. If this is a typed array, it must have array.length * 4 components, else a [DeveloperError] will be thrown. If it is a regular array, it will be resized to have (array.length * 4) elements.
          * @return The packed array.
@@ -149,7 +149,7 @@ external class Cartesian4(
         ): Array<out Double>
 
         /**
-         * Unpacks an array of cartesian components into and array of Cartesian4s.
+         * Unpacks an array of cartesian components into an array of Cartesian4s.
          * @param [array] The array of components to unpack.
          * @param [result] The array onto which to store the result.
          * @return The unpacked array.

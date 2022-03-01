@@ -123,6 +123,8 @@ external class Cesium3DTileset(options: ConstructorOptions) {
      *   Default value - `0`
      * @property [instanceFeatureIdIndex] The index into the list of instance feature IDs used for picking and styling. If both per-primitive and per-instance feature IDs are present, the instance feature IDs take priority.
      *   Default value - `0`
+     * @property [showCreditsOnScreen] Whether to display the credits of this tileset on screen.
+     *   Default value - `false`
      * @property [debugHeatmapTilePropertyName] The tile variable to colorize as a heatmap. All rendered tiles will be colorized relative to each other's specified variable value.
      * @property [debugFreezeFrame] For debugging only. Determines if only the tiles from last frame should be used for rendering.
      *   Default value - `false`
@@ -189,6 +191,7 @@ external class Cesium3DTileset(options: ConstructorOptions) {
         var vectorKeepDecodedPositions: Boolean?
         var featureIdIndex: Int?
         var instanceFeatureIdIndex: Int?
+        var showCreditsOnScreen: Boolean?
         var debugHeatmapTilePropertyName: String?
         var debugFreezeFrame: Boolean?
         var debugColorizeTiles: Boolean?
@@ -981,6 +984,12 @@ external class Cesium3DTileset(options: ConstructorOptions) {
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileset.html#vectorKeepDecodedPositions">Online Documentation</a>
      */
     var vectorKeepDecodedPositions: Boolean
+
+    /**
+     * Determines whether the credits of the tileset will be displayed on the screen
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileset.html#showCreditsOnScreen">Online Documentation</a>
+     */
+    var showCreditsOnScreen: Boolean
 
     /**
      * Marks the tileset's [Cesium3DTileset.style] as dirty, which forces all

@@ -641,6 +641,10 @@ external class Viewer(
      *   Default value - `false`
      * @property [maximumRenderTimeChange] If requestRenderMode is true, this value defines the maximum change in simulation time allowed before a render is requested. See [Improving Performance with Explicit Rendering](https://cesium.com/blog/2018/01/24/cesium-scene-rendering-performance/).
      *   Default value - `0.0`
+     * @property [depthPlaneEllipsoidOffset] Adjust the DepthPlane to address rendering artefacts below ellipsoid zero elevation.
+     *   Default value - `0.0`
+     * @property [msaaSamples] If provided, this value controls the rate of multisample antialiasing. Typical multisampling rates are 2, 4, and sometimes 8 samples per pixel. Higher sampling rates of MSAA may impact performance in exchange for improved visual quality. This value only applies to WebGL2 contexts that support multisample render targets.
+     *   Default value - `1`
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Viewer.html#.ConstructorOptions">Online Documentation</a>
      */
     interface ConstructorOptions {
@@ -687,6 +691,8 @@ external class Viewer(
         var projectionPicker: Boolean?
         var requestRenderMode: Boolean?
         var maximumRenderTimeChange: Double?
+        var depthPlaneEllipsoidOffset: Double?
+        var msaaSamples: Double?
     }
 }
 
