@@ -11,16 +11,20 @@ sealed external interface TypeOnlyAliasDeclaration : ImportClause /* ImportClaus
     readonly parent: ImportClause & {
         readonly isTypeOnly: true;
     };
-} | ImportSpecifier & {
+} | ImportSpecifier & ({
+    readonly isTypeOnly: true;
+} | {
     readonly parent: NamedImports & {
         readonly parent: ImportClause & {
             readonly isTypeOnly: true;
         };
     };
-} | ExportSpecifier & {
+}) | ExportSpecifier & ({
+    readonly isTypeOnly: true;
+} | {
     readonly parent: NamedExports & {
         readonly parent: ExportDeclaration & {
             readonly isTypeOnly: true;
         };
     };
-} */
+}) */

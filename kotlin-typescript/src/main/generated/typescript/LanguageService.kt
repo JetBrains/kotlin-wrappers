@@ -110,11 +110,13 @@ sealed external interface LanguageService {
      * @param position A zero-based index of the character where you want the entries
      * @param options An object describing how the request was triggered and what kinds
      * of code actions can be returned with the completions.
+     * @param formattingSettings settings needed for calling formatting functions.
      */
     fun getCompletionsAtPosition(
         fileName: String,
         position: Int,
         options: GetCompletionsAtPositionOptions?,
+        formattingSettings: FormatCodeSettings = definedExternally,
     ): WithMetadata<CompletionInfo>?
 
     /**

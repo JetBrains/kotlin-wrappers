@@ -7,7 +7,7 @@
 package typescript
 
 // language=JavaScript
-@JsName("""(/*union*/{ES3: 0, ES5: 1, ES2015: 2, ES2016: 3, ES2017: 4, ES2018: 5, ES2019: 6, ES2020: 7, ES2021: 8, ESNext: 99, JSON: 100, Latest: 99}/*union*/)""")
+@JsName("""(/*union*/{ES3: 0, ES5: 1, ES2015: 2, ES2016: 3, ES2017: 4, ES2018: 5, ES2019: 6, ES2020: 7, ES2021: 8, ES2022: 9, ESNext: 99, JSON: 100, Latest: 99}/*union*/)""")
 external enum class ScriptTarget {
     ES3,
     ES5,
@@ -18,6 +18,7 @@ external enum class ScriptTarget {
     ES2019,
     ES2020,
     ES2021,
+    ES2022,
     ESNext,
     JSON,
     Latest,

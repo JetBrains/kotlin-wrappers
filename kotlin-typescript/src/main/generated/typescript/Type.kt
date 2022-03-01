@@ -32,4 +32,5 @@ sealed external interface Type : Union.Type_ {
     fun isTypeParameter(): Boolean /* this is TypeParameter */
     fun isClassOrInterface(): Boolean /* this is InterfaceType */
     fun isClass(): Boolean /* this is InterfaceType */
+    fun isIndexType(): Boolean /* this is IndexType */
 }
