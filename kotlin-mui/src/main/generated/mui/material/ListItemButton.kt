@@ -6,7 +6,8 @@
 package mui.material
 
 external interface ListItemButtonProps :
-    ListItemButtonBaseProps
+    ListItemButtonBaseProps,
+    react.dom.html.HTMLAttributes<org.w3c.dom.HTMLElement>
 
 external interface ListItemButtonBaseProps : react.PropsWithChildren {
     /**

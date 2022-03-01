@@ -6,7 +6,8 @@
 package mui.material
 
 external interface ListItemProps :
-    ListItemBaseProps {
+    ListItemBaseProps,
+    react.dom.html.HTMLAttributes<org.w3c.dom.HTMLElement> {
     /**
      * The components used for each slot inside the InputBase.
      * Either a string to use a HTML element or a component.
