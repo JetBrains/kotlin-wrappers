@@ -86,7 +86,7 @@ sealed external interface NodeFactory {
     fun createTrue(): TrueLiteral
     fun createFalse(): FalseLiteral
     fun <T : ModifierSyntaxKind> createModifier(kind: T): ModifierToken<T>
-    fun createModifiersFromModifierFlags(flags: ModifierFlags): ReadonlyArray<Modifier>
+    fun createModifiersFromModifierFlags(flags: ModifierFlags): ReadonlyArray<Modifier>?
     fun createQualifiedName(
         left: EntityName,
         right: dynamic, /* string | Identifier */
@@ -1393,13 +1393,13 @@ sealed external interface NodeFactory {
 
     fun createAssertEntry(
         name: AssertionKey,
-        value: StringLiteral,
+        value: Expression,
     ): AssertEntry
 
     fun updateAssertEntry(
         node: AssertEntry,
         name: AssertionKey,
-        value: StringLiteral,
+        value: Expression,
     ): AssertEntry
 
     fun createNamespaceImport(name: Identifier): NamespaceImport

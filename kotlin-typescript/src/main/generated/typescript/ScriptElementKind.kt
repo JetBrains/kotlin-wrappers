@@ -96,6 +96,7 @@ external enum class ScriptElementKind {
 
     /**
      * <JsxTagName attribute1 attribute2={0} />
+     * @deprecated
      */
     jsxAttribute,
 

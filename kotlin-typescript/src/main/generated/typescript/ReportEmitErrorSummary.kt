@@ -2,4 +2,9 @@
 
 package typescript
 
-typealias ReportEmitErrorSummary = (errorCount: Int) -> Unit
+import kotlinx.js.ReadonlyArray
+
+typealias ReportEmitErrorSummary = (
+    errorCount: Int,
+    filesInError: ReadonlyArray<ReportFileInError?>,
+) -> Unit

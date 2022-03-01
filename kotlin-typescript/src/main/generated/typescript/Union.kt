@@ -51,7 +51,8 @@ sealed external interface Union {
     sealed interface BinaryExpression_ : FlowArrayMutation_node
 
     sealed interface BindingElement_ : HasExpressionInitializer, VariableLikeDeclaration, ArrayBindingElement, ObjectBindingOrAssignmentElement, ObjectBindingPattern_parent,
-        ArrayBindingPattern_parent, FlowAssignment_node
+        ArrayBindingPattern_parent,
+        FlowAssignment_node
 
     sealed interface BindingOrAssignmentPattern_ : BindingOrAssignmentElementTarget
 
@@ -225,7 +226,8 @@ sealed external interface Union {
     sealed interface HeritageClause_token
 
     sealed interface Identifier_ : EntityName, PropertyName, MemberName, DeclarationName, BindingName, PropertyNameLiteral, BindingOrAssignmentElementTarget, EntityNameExpression,
-        JsxTagNameExpression, ModuleName, JSDocNamespaceBody, AssertionKey, DeclarationStatement_name, TypePredicateNode_parameterName, JSDocTypedefTag_fullName, JSDocCallbackTag_fullName
+        JsxTagNameExpression,
+        ModuleName, JSDocNamespaceBody, AssertionKey, DeclarationStatement_name, TypePredicateNode_parameterName, JSDocTypedefTag_fullName, JSDocCallbackTag_fullName
 
     sealed interface IdentifierTypePredicate_ : TypePredicate
 
@@ -438,7 +440,8 @@ sealed external interface Union {
     sealed interface ObjectDestructuringAssignment_ : DestructuringAssignment
 
     sealed interface ObjectLiteralExpression_ : ObjectBindingOrAssignmentPattern, AssignmentPattern, JsonObjectExpression, DestructuringPattern, MethodDeclaration_parent,
-        GetAccessorDeclaration_parent, SetAccessorDeclaration_parent
+        GetAccessorDeclaration_parent,
+        SetAccessorDeclaration_parent
 
     sealed interface ObjectType_ : BaseType, StructuredType
 
