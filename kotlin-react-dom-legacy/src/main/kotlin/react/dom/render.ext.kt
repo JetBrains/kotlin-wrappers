@@ -4,6 +4,7 @@ import org.w3c.dom.Element
 import react.Props
 import react.Render
 import react.createElement
+import react.dom.client.createRoot
 
 fun render(
     container: Element,
