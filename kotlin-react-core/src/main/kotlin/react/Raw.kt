@@ -6,7 +6,7 @@ package react
 @JsName("forwardRef")
 external fun <T : Any, P : PropsWithRef<T>> rawForwardRef(
     forward: (props: P, ref: Ref<T>) -> ReactElement<*>?,
-): ComponentType<P>
+): ForwardRefExoticComponent<P>
 
 // Effect Hook (16.8+)
 @JsName("useEffect")

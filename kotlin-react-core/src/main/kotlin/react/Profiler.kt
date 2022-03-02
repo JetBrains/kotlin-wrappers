@@ -16,4 +16,4 @@ external interface ProfilerProps : PropsWithChildren {
     ) -> Unit
 }
 
-external val Profiler: ComponentType<ProfilerProps>
+external val Profiler: ExoticComponent<ProfilerProps>
