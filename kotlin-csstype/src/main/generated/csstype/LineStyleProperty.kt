@@ -4,4 +4,5 @@ package csstype
 
 sealed external interface LineStyleProperty :
     Border,
-    Outline
+    Outline,
+    OutlineStyle
