@@ -30,5 +30,9 @@ fun toPlainObjectStripNull(obj: Any) = js {
     }
 }
 
+@Deprecated(
+    message = "Will be removed soon!",
+    replaceWith = ReplaceWith("kotlinx.js.delete"),
+)
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/delete
 external fun delete(p: dynamic): Boolean = definedExternally

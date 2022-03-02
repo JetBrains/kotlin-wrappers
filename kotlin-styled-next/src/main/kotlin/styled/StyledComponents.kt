@@ -1,11 +1,11 @@
 package styled
 
 import kotlinext.js.clone
-import kotlinext.js.delete
 import kotlinx.css.CssBuilder
 import kotlinx.css.CssDsl
 import kotlinx.css.RuleSet
 import kotlinx.html.*
+import kotlinx.js.delete
 import kotlinx.js.jso
 import react.*
 import react.dom.DOMProps
