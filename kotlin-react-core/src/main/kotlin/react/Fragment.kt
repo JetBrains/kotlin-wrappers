@@ -4,4 +4,4 @@
 package react
 
 // Fragment (16+)
-external val Fragment: ComponentType<PropsWithChildren>
+external val Fragment: ExoticComponent<PropsWithChildren>

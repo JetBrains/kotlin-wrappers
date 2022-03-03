@@ -12,4 +12,4 @@ external interface ComponentModule<in P : Props> {
 // Lazy (16.6+)
 external fun <P : Props> lazy(
     factory: () -> Promise<ComponentModule<P>>,
-): ComponentType<P>
+): ExoticComponent<P>

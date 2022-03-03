@@ -150,7 +150,7 @@ internal fun customStyled(type: dynamic): ElementType<StyledProps> {
         delete(newProps.classes)
         child(createElement(type.unsafeCast<ElementType<StyledProps>>(), newProps))
     }
-    fc.asDynamic().displayName = "styled${type.toString().replaceFirstChar { it.titlecase() }}"
+    fc.displayName = "styled${type.toString().replaceFirstChar { it.titlecase() }}"
     return fc
 }
 

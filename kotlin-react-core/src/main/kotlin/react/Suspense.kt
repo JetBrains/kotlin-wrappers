@@ -7,4 +7,4 @@ external interface SuspenseProps : PropsWithChildren {
     var fallback: ReactNode?
 }
 
-external val Suspense: ComponentType<SuspenseProps>
+external val Suspense: ExoticComponent<SuspenseProps>
