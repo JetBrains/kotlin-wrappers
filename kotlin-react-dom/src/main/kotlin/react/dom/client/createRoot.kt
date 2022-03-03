@@ -1,7 +1,7 @@
-@file:JsModule("react-dom")
+@file:JsModule("react-dom/client")
 @file:JsNonModule
 
-package react.dom
+package react.dom.client
 
 import org.w3c.dom.Element
 

@@ -1,4 +1,4 @@
-package react.dom
+package react.dom.client
 
 import kotlinx.js.ReadonlyArray
 import react.ReactNode

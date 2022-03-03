@@ -16,16 +16,3 @@ fun render(
         callback = callback,
     )
 }
-
-// 18.0+
-// TODO rename to render() after React 18 is released
-fun renderIntoRoot(
-    container: Element,
-    block: Render,
-) {
-    val children = createElement<Props>(block)
-        ?: return
-
-    createRoot(container)
-        .render(children)
-}
