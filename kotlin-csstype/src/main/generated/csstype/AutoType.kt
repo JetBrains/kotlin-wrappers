@@ -35,6 +35,7 @@ sealed external interface AutoType :
     OffsetAnchor,
     OffsetRotate,
     Outline,
+    OutlineStyle,
     Overflow,
     OverflowAnchor,
     OverscrollBehavior,
