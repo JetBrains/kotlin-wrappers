@@ -10,4 +10,5 @@ import org.w3c.dom.Element
 // 18.0+
 external fun createRoot(
     container: Element,
+    options: RootOptions = definedExternally,
 ): Root
