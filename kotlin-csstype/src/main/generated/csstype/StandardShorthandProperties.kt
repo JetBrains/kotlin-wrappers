@@ -4,7 +4,7 @@ package csstype
 
 external interface StandardShorthandProperties {
     /**
-     * The `**all**` shorthand CSS property resets all of an element's properties except `unicode-bidi`, `direction`, and CSS Custom Properties. It can set properties to their initial or inherited values, or to the values specified in another stylesheet origin.
+     * The **`all`** shorthand CSS property resets all of an element's properties except `unicode-bidi`, `direction`, and CSS Custom Properties. It can set properties to their initial or inherited values, or to the values specified in another stylesheet origin.
      *
      * **Syntax**: `initial | inherit | unset | revert`
      *
@@ -389,7 +389,7 @@ external interface StandardShorthandProperties {
     var grid: Grid?
 
     /**
-     * The **`grid-area`** CSS shorthand property specifies a grid item’s size and location within a grid by contributing a line, a span, or nothing (automatic) to its grid placement, thereby specifying the edges of its grid area.
+     * The **`grid-area`** CSS shorthand property specifies a grid item's size and location within a grid by contributing a line, a span, or nothing (automatic) to its grid placement, thereby specifying the edges of its grid area.
      *
      * **Syntax**: `<grid-line> [ / <grid-line> ]{0,3}`
      *
@@ -415,7 +415,7 @@ external interface StandardShorthandProperties {
     var gridColumn: GridColumn?
 
     /**
-     * The **`grid-row`** CSS shorthand property specifies a grid item’s size and location within the grid row by contributing a line, a span, or nothing (automatic) to its grid placement, thereby specifying the inline-start and inline-end edge of its grid area.
+     * The **`grid-row`** CSS shorthand property specifies a grid item's size and location within the grid row by contributing a line, a span, or nothing (automatic) to its grid placement, thereby specifying the inline-start and inline-end edge of its grid area.
      *
      * **Syntax**: `<grid-line> [ / <grid-line> ]?`
      *
@@ -448,7 +448,7 @@ external interface StandardShorthandProperties {
     var lineClamp: LineClamp?
 
     /**
-     * The **`list-style`** CSS shorthand property allows you set all the list style properties at once.
+     * The **`list-style`** CSS shorthand property allows you to set all the list style properties at once.
      *
      * **Syntax**: `<'list-style-type'> || <'list-style-position'> || <'list-style-image'>`
      *
@@ -461,7 +461,7 @@ external interface StandardShorthandProperties {
     var listStyle: ListStyle?
 
     /**
-     * The **`margin`** CSS property sets the margin area on all four sides of an element. It is a shorthand for `margin-top`, `margin-right`, `margin-bottom`, and `margin-left`.
+     * The **`margin`** CSS shorthand property sets the margin area on all four sides of an element.
      *
      * **Syntax**: `[ <length> | <percentage> | auto ]{1,4}`
      *
