@@ -2,7 +2,7 @@ package kotlinx.js.timers
 
 external fun setInterval(
     callback: () -> Unit,
-    ms: Double = definedExternally,
+    ms: Int = definedExternally,
 ): Timeout
 
 external fun clearInterval(

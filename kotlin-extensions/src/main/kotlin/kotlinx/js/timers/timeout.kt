@@ -4,7 +4,7 @@ sealed external interface Timeout
 
 external fun setTimeout(
     callback: () -> Unit,
-    ms: Double = definedExternally,
+    ms: Int = definedExternally,
 ): Timeout
 
 external fun clearTimeout(
