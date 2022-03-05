@@ -6,11 +6,12 @@
 package mui.base
 
 external interface SwitchUnstyledProps :
-    UseSwitchProps {
+    UseSwitchProps,
+    react.PropsWithClassName {
     /**
      * Class name applied to the root element.
      */
-    var className: String?
+    override var className: String?
 
     /**
      * The component used for the Root slot.

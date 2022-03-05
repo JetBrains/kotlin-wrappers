@@ -38,7 +38,9 @@ external interface SelectUnstyledProps<TValue> : react.Props {
     var value: TValue?
 }
 
-external interface SelectUnstyledCommonProps : react.PropsWithChildren {
+external interface SelectUnstyledCommonProps :
+    react.PropsWithChildren,
+    react.PropsWithClassName {
     /**
      * If `true`, the select element is focused during the first mount
      * @default false
@@ -47,7 +49,7 @@ external interface SelectUnstyledCommonProps : react.PropsWithChildren {
 
     override var children: react.ReactNode?
 
-    var className: String?
+    override var className: String?
 
     var component: react.ElementType<*>?
 

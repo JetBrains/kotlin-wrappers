@@ -5,7 +5,9 @@ package mui.base
 external interface TabsUnstyledProps :
     react.dom.html.HTMLAttributes<org.w3c.dom.HTMLDivElement>
 
-external interface TabsUnstyledOwnProps : react.PropsWithChildren {
+external interface TabsUnstyledOwnProps :
+    react.PropsWithChildren,
+    react.PropsWithClassName {
     /**
      * The content of the component.
      */
@@ -34,7 +36,7 @@ external interface TabsUnstyledOwnProps : react.PropsWithChildren {
      */
     var direction: TabsUnstyledDirection?
 
-    var className: String?
+    override var className: String?
 
     /**
      * The components used for each slot inside the Tabs.

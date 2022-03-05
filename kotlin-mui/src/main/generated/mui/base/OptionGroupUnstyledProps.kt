@@ -2,13 +2,15 @@
 
 package mui.base
 
-external interface OptionGroupUnstyledProps : react.PropsWithChildren {
+external interface OptionGroupUnstyledProps :
+    react.PropsWithChildren,
+    react.PropsWithClassName {
     /**
      * The human-readable description of the group.
      */
     var label: react.ReactNode?
 
-    var className: String?
+    override var className: String?
 
     override var children: react.ReactNode?
 

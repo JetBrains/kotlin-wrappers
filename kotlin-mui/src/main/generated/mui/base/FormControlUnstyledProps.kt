@@ -5,7 +5,9 @@ package mui.base
 external interface FormControlUnstyledProps :
     react.dom.html.HTMLAttributes<org.w3c.dom.HTMLDivElement>
 
-external interface FormControlUnstyledOwnProps : react.PropsWithChildren {
+external interface FormControlUnstyledOwnProps :
+    react.PropsWithChildren,
+    react.PropsWithClassName {
     /**
      * The content of the component.
      */
@@ -14,7 +16,7 @@ external interface FormControlUnstyledOwnProps : react.PropsWithChildren {
     /**
      * Class name applied to the root element.
      */
-    var className: String?
+    override var className: String?
 
     /**
      * The components used for each slot inside the FormControl.

@@ -7,8 +7,8 @@ package mui.lab
 
 import kotlinx.js.ReadonlyArray
 
-external interface CalendarPickerProps<TDate> : react.Props {
-    var className: String?
+external interface CalendarPickerProps<TDate> : react.PropsWithClassName {
+    override var className: String?
 
     var date: TDate?
 

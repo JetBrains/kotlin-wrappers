@@ -8,7 +8,8 @@ package mui.material
 external interface CollapseProps :
     mui.system.StandardProps,
     mui.material.transitions.TransitionProps,
-    react.PropsWithChildren {
+    react.PropsWithChildren,
+    react.PropsWithClassName {
     /**
      * The content node to be collapsed.
      */

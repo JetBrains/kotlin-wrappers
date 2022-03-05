@@ -11,7 +11,8 @@ external interface ButtonUnstyledActions {
 
 external interface ButtonUnstyledOwnProps :
     UseButtonParameters,
-    react.PropsWithChildren {
+    react.PropsWithChildren,
+    react.PropsWithClassName {
     /**
      * A ref for imperative actions. It currently only supports `focusVisible()` action.
      */
@@ -19,7 +20,7 @@ external interface ButtonUnstyledOwnProps :
 
     override var children: react.ReactNode?
 
-    var className: String?
+    override var className: String?
 
     /**
      * The components used for each slot inside the Button.
