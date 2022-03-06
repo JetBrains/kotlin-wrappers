@@ -2,7 +2,11 @@
 
 package react
 
-sealed external interface IntrinsicType<in P : Props> : ElementType<P>
+import csstype.Selector
+
+sealed external interface IntrinsicType<in P : Props> :
+    ElementType<P>,
+    Selector
 
 inline fun <P : Props> IntrinsicType(
     tagName: String,
