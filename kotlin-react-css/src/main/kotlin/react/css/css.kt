@@ -1,27 +1,18 @@
 package react.css
 
 import csstype.PropertiesBuilder
-import emotion.css.cx
-import kotlinx.js.jso
 import react.PropsWithClassName
-
-@PublishedApi
-internal inline fun className(
-    crossinline block: PropertiesBuilder.() -> Unit,
-): String =
-    emotion.css.css(jso(block))
-
-// Props
+import emotion.react.css
 
 inline fun PropsWithClassName.css(
     crossinline block: PropertiesBuilder.() -> Unit,
 ) {
-    className = className(block)
+    css(block)
 }
 
 inline fun PropsWithClassName.css(
     vararg classNames: String?,
     crossinline block: PropertiesBuilder.() -> Unit,
 ) {
-    className = cx(classNames = classNames + className(block))
+    css(classNames = classNames, block)
 }
