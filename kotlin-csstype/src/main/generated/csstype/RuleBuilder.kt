@@ -7,9 +7,15 @@
 package csstype
 
 interface RuleBuilder<T : Any> {
-    inline operator fun String.invoke(
+    inline operator fun Selector.invoke(
         block: T.() -> Unit,
     ) {
         this@RuleBuilder.asDynamic()[this] = js("({})").unsafeCast<T>().apply(block)
+    }
+
+    inline operator fun String.invoke(
+        block: T.() -> Unit,
+    ) {
+        Selector(this)(block)
     }
 }

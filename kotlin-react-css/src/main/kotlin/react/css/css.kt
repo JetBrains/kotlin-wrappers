@@ -1,5 +1,6 @@
 package react.css
 
+import csstype.PropertiesBuilder
 import emotion.css.cx
 import kotlinx.js.jso
 import react.PropsWithClassName
