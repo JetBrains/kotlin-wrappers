@@ -10,7 +10,9 @@ import kotlinx.js.jso
 
 @CssDsl
 interface KeyframesBuilder {
-    inline operator fun Percentage.invoke(block: Properties.() -> Unit) {
+    inline operator fun Percentage.invoke(
+        block: Properties.() -> Unit
+    ) {
         unsafeCast<Record<Percentage, Properties>>()[this] = jso(block)
     }
 }

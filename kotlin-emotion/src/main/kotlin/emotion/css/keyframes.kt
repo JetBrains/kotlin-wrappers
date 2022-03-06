@@ -9,4 +9,6 @@ import csstype.Properties
 import kotlinx.js.Record
 
 @JsName("keyframes")
-external fun rawKeyframes(blocks: Record<Percentage, Properties>): AnimationName
+external fun rawKeyframes(
+    blocks: Record<Percentage, Properties>,
+): AnimationName
