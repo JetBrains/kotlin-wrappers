@@ -8,11 +8,11 @@ package mui.lab
 import kotlinx.js.Void
 import kotlin.js.Promise
 
-external interface MonthPickerProps<TDate> : react.Props {
+external interface MonthPickerProps<TDate> : react.PropsWithClassName {
     /**
      * className applied to the root element.
      */
-    var className: String?
+    override var className: String?
 
     /**
      * Override or extend the styles applied to the component.

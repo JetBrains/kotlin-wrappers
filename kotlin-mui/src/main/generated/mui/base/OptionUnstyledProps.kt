@@ -2,7 +2,9 @@
 
 package mui.base
 
-external interface OptionUnstyledProps<TValue> : react.PropsWithChildren {
+external interface OptionUnstyledProps<TValue> :
+    react.PropsWithChildren,
+    react.PropsWithClassName {
     /**
      * The value of the option.
      */
@@ -16,7 +18,7 @@ external interface OptionUnstyledProps<TValue> : react.PropsWithChildren {
      */
     var disabled: Boolean?
 
-    var className: String?
+    override var className: String?
 
     /**
      * The component used for the Root slot.

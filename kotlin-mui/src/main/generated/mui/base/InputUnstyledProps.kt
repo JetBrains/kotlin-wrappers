@@ -47,7 +47,8 @@ external interface UseInputProps : react.Props {
 }
 
 external interface InputUnstyledOwnProps :
-    UseInputProps {
+    UseInputProps,
+    react.PropsWithClassName {
     // var `aria-describedby`: String?
 
     // var `aria-label`: String?
@@ -69,7 +70,7 @@ external interface InputUnstyledOwnProps :
     /**
      * Class name applied to the root element.
      */
-    var className: String?
+    override var className: String?
 
     /**
      * The components used for each slot inside the InputBase.

@@ -5,13 +5,15 @@ package mui.base
 external interface TabPanelUnstyledProps :
     react.dom.html.HTMLAttributes<org.w3c.dom.HTMLDivElement>
 
-external interface TabPanelUnstyledOwnProps : react.PropsWithChildren {
+external interface TabPanelUnstyledOwnProps :
+    react.PropsWithChildren,
+    react.PropsWithClassName {
     /**
      * The content of the component.
      */
     override var children: react.ReactNode?
 
-    var className: String?
+    override var className: String?
 
     /**
      * The value of the TabPanel. It will be shown when the Tab with the corresponding value is selected.
