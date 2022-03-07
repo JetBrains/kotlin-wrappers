@@ -5,7 +5,6 @@ package emotion.css
 
 import csstype.AnimationName
 
-@JsName("keyframes")
-external fun rawKeyframes(
+external fun keyframes(
     blocks: Keyframes,
 ): AnimationName

@@ -34,4 +34,4 @@ interface KeyframesBuilder {
 inline fun keyframes(
     blocks: KeyframesBuilder.() -> Unit,
 ): AnimationName =
-    rawKeyframes(jso(blocks).unsafeCast<Keyframes>())
+    keyframes(jso(blocks).unsafeCast<Keyframes>())
