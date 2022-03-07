@@ -5,6 +5,9 @@
 
 package mui.material
 
+import mui.material.styles.Theme
+import mui.system.SxProps
+
 external interface TableRowProps :
     react.dom.html.HTMLAttributes<org.w3c.dom.HTMLTableRowElement>,
     react.PropsWithChildren,
@@ -34,7 +37,7 @@ external interface TableRowProps :
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: mui.system.SxProps<mui.system.Theme>?
+    var sx: SxProps<Theme>?
 }
 
 /**

@@ -9,6 +9,9 @@
 
 package mui.material
 
+import mui.material.styles.Theme
+import mui.system.SxProps
+
 external interface DrawerProps :
     mui.system.StandardProps,
     ModalProps,
@@ -68,7 +71,7 @@ external interface DrawerProps :
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    override var sx: mui.system.SxProps<mui.system.Theme>?
+    override var sx: SxProps<Theme>?
 
     /**
      * The duration for the transition, in milliseconds.

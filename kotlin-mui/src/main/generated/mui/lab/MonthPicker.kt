@@ -6,6 +6,8 @@
 package mui.lab
 
 import kotlinx.js.Void
+import mui.material.styles.Theme
+import mui.system.SxProps
 import kotlin.js.Promise
 
 external interface MonthPickerProps<TDate> : react.PropsWithClassName {
@@ -48,7 +50,7 @@ external interface MonthPickerProps<TDate> : react.PropsWithClassName {
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: mui.system.SxProps<mui.system.Theme>?
+    var sx: SxProps<Theme>?
 }
 
 /**

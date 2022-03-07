@@ -5,6 +5,9 @@
 
 package mui.material
 
+import mui.material.styles.Theme
+import mui.system.SxProps
+
 external interface BottomNavigationActionProps : react.PropsWithChildren {
     /**
      * This prop isn't supported.
@@ -39,7 +42,7 @@ external interface BottomNavigationActionProps : react.PropsWithChildren {
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: mui.system.SxProps<mui.system.Theme>?
+    var sx: SxProps<Theme>?
 
     /**
      * You can provide your own value. Otherwise, we fallback to the child position index.

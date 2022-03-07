@@ -5,6 +5,9 @@
 
 package mui.lab
 
+import mui.material.styles.Theme
+import mui.system.SxProps
+
 external interface PickersDayProps<TDate> : react.Props {
     /**
      * If `true`, `onChange` is fired on click even if the same date is selected.
@@ -72,7 +75,7 @@ external interface PickersDayProps<TDate> : react.Props {
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: mui.system.SxProps<mui.system.Theme>?
+    var sx: SxProps<Theme>?
 }
 
 /**

@@ -5,6 +5,9 @@
 
 package mui.material
 
+import mui.material.styles.Theme
+import mui.system.SxProps
+
 external interface ListItemButtonProps :
     ListItemButtonBaseProps,
     react.dom.html.HTMLAttributes<org.w3c.dom.HTMLElement>
@@ -68,7 +71,7 @@ external interface ListItemButtonBaseProps : react.PropsWithChildren {
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: mui.system.SxProps<mui.system.Theme>?
+    var sx: SxProps<Theme>?
 }
 
 /**

@@ -6,6 +6,8 @@
 package mui.material
 
 import kotlinx.js.ReadonlyArray
+import mui.material.styles.Theme
+import mui.system.SxProps
 
 external interface AutocompleteProps<T> :
     mui.base.UseAutocompleteProps<T>,
@@ -203,7 +205,7 @@ external interface AutocompleteProps<T> :
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: mui.system.SxProps<mui.system.Theme>?
+    var sx: SxProps<Theme>?
 }
 
 external interface AutocompleteRenderOptionState {

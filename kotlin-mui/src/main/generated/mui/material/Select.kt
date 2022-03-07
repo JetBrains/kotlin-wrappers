@@ -9,6 +9,9 @@
 
 package mui.material
 
+import mui.material.styles.Theme
+import mui.system.SxProps
+
 external interface SelectProps<T> :
     mui.system.StandardProps,
     InputProps,
@@ -157,7 +160,7 @@ external interface SelectProps<T> :
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: mui.system.SxProps<mui.system.Theme>?
+    var sx: SxProps<Theme>?
 
     /**
      * The `input` value. Providing an empty string will select no options.

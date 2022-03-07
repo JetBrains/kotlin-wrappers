@@ -5,6 +5,9 @@
 
 package mui.lab
 
+import mui.material.styles.Theme
+import mui.system.SxProps
+
 external interface LoadingButtonProps :
     mui.material.ButtonProps {
     /**
@@ -35,7 +38,7 @@ external interface LoadingButtonProps :
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    override var sx: mui.system.SxProps<mui.system.Theme>?
+    override var sx: SxProps<Theme>?
 }
 
 /**

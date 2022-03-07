@@ -5,6 +5,9 @@
 
 package mui.lab
 
+import mui.material.styles.Theme
+import mui.system.SxProps
+
 external interface MasonryProps :
     react.dom.html.HTMLAttributes<org.w3c.dom.HTMLDivElement>,
     react.PropsWithChildren,
@@ -49,7 +52,7 @@ external interface MasonryProps :
     /**
      * Allows defining system overrides as well as additional CSS styles.
      */
-    var sx: mui.system.SxProps<mui.system.Theme>?
+    var sx: SxProps<Theme>?
 }
 
 /**
