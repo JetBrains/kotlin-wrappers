@@ -12,7 +12,8 @@ external interface CollapseProps :
     mui.system.StandardProps,
     mui.material.transitions.TransitionProps,
     react.PropsWithChildren,
-    react.PropsWithClassName {
+    react.PropsWithClassName,
+    mui.system.PropsWithSx {
     /**
      * The content node to be collapsed.
      */
@@ -66,7 +67,7 @@ external interface CollapseProps :
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: SxProps<Theme>?
+    override var sx: SxProps<Theme>?
 }
 
 /**

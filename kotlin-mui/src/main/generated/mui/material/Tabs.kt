@@ -10,6 +10,7 @@ import mui.system.SxProps
 
 external interface TabsProps :
     react.PropsWithChildren,
+    mui.system.PropsWithSx,
     mui.types.PropsWithComponent {
     /**
      * Callback fired when the component mounts.
@@ -146,7 +147,7 @@ external interface TabsProps :
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: SxProps<Theme>?
+    override var sx: SxProps<Theme>?
 }
 
 external interface TabsActions {

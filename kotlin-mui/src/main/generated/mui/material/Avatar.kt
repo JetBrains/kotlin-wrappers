@@ -11,6 +11,7 @@ import mui.system.SxProps
 external interface AvatarProps :
     react.dom.html.HTMLAttributes<org.w3c.dom.HTMLDivElement>,
     react.PropsWithChildren,
+    mui.system.PropsWithSx,
     mui.types.PropsWithComponent {
     /**
      * Used in combination with `src` or `srcSet` to
@@ -54,7 +55,7 @@ external interface AvatarProps :
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: SxProps<Theme>?
+    override var sx: SxProps<Theme>?
 
     /**
      * The shape of the avatar.

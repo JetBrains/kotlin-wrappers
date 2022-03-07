@@ -12,7 +12,8 @@ import mui.system.SxProps
 external interface AutocompleteProps<T> :
     mui.base.UseAutocompleteProps<T>,
     mui.system.StandardProps,
-    react.dom.html.HTMLAttributes<org.w3c.dom.HTMLDivElement> {
+    react.dom.html.HTMLAttributes<org.w3c.dom.HTMLDivElement>,
+    mui.system.PropsWithSx {
     /**
      * Props applied to the [`Chip`](/api/chip/) element.
      */
@@ -205,7 +206,7 @@ external interface AutocompleteProps<T> :
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: SxProps<Theme>?
+    override var sx: SxProps<Theme>?
 }
 
 external interface AutocompleteRenderOptionState {

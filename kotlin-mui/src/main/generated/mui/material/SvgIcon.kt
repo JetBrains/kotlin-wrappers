@@ -15,6 +15,7 @@ import mui.system.SxProps
 external interface SvgIconProps :
     react.dom.svg.SVGAttributes<org.w3c.dom.svg.SVGSVGElement>,
     react.PropsWithChildren,
+    mui.system.PropsWithSx,
     mui.types.PropsWithComponent {
     /**
      * Node passed into the SVG element.
@@ -63,7 +64,7 @@ external interface SvgIconProps :
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: SxProps<Theme>?
+    override var sx: SxProps<Theme>?
 
     /**
      * Provides a human-readable title for the element that contains it.

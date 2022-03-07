@@ -15,7 +15,8 @@ import mui.system.SxProps
 external interface DrawerProps :
     mui.system.StandardProps,
     ModalProps,
-    react.PropsWithChildren {
+    react.PropsWithChildren,
+    mui.system.PropsWithSx {
     /**
      * Side from which the drawer will appear.
      * @default 'left'

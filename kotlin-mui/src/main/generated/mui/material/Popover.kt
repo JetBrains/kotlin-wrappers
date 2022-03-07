@@ -15,7 +15,8 @@ import mui.system.SxProps
 external interface PopoverProps :
     mui.system.StandardProps,
     ModalProps,
-    react.PropsWithChildren {
+    react.PropsWithChildren,
+    mui.system.PropsWithSx {
     /**
      * A ref for imperative actions.
      * It currently only supports updatePosition() action.

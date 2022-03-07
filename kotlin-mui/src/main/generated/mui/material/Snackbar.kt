@@ -14,7 +14,8 @@ import mui.system.SxProps
 
 external interface SnackbarProps :
     mui.system.StandardProps,
-    react.dom.html.HTMLAttributes<org.w3c.dom.HTMLDivElement> {
+    react.dom.html.HTMLAttributes<org.w3c.dom.HTMLDivElement>,
+    mui.system.PropsWithSx {
     /**
      * The action to display. It renders after the message, at the end of the snackbar.
      */
@@ -104,7 +105,7 @@ external interface SnackbarProps :
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: SxProps<Theme>?
+    override var sx: SxProps<Theme>?
 
     /**
      * The component used for the transition.

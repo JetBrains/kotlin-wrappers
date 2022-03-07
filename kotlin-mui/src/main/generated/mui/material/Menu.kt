@@ -15,7 +15,8 @@ import mui.system.SxProps
 external interface MenuProps :
     mui.system.StandardProps,
     PopoverProps,
-    react.PropsWithChildren {
+    react.PropsWithChildren,
+    mui.system.PropsWithSx {
     /**
      * An HTML element, or a function that returns one.
      * It's used to set the position of the menu.
@@ -77,7 +78,7 @@ external interface MenuProps :
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: SxProps<Theme>?
+    override var sx: SxProps<Theme>?
 
     /**
      * The length of the transition in `ms`, or 'auto'

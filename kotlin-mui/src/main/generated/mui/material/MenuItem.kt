@@ -9,7 +9,8 @@ import mui.material.styles.Theme
 import mui.system.SxProps
 
 external interface MenuItemProps :
-    react.dom.html.LiHTMLAttributes<org.w3c.dom.HTMLLIElement> {
+    react.dom.html.LiHTMLAttributes<org.w3c.dom.HTMLLIElement>,
+    mui.system.PropsWithSx {
     /**
      * If `true`, the list item is focused during the first mount.
      * Focus will also be triggered if the value changes from false to true.
@@ -56,7 +57,7 @@ external interface MenuItemProps :
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: SxProps<Theme>?
+    override var sx: SxProps<Theme>?
 }
 
 /**

@@ -15,7 +15,8 @@ import mui.system.SxProps
 external interface NativeSelectProps :
     mui.system.StandardProps,
     InputProps,
-    react.PropsWithChildren {
+    react.PropsWithChildren,
+    mui.system.PropsWithSx {
     /**
      * The option elements to populate the select with.
      * Can be some `<option>` elements.
@@ -56,7 +57,7 @@ external interface NativeSelectProps :
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: SxProps<Theme>?
+    override var sx: SxProps<Theme>?
 
     /**
      * The `input` value. The DOM API casts this to a string.

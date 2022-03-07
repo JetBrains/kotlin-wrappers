@@ -10,6 +10,7 @@ import mui.system.SxProps
 
 external interface AppBarProps :
     react.dom.html.HTMLAttributes<org.w3c.dom.HTMLElement>,
+    mui.system.PropsWithSx,
     mui.types.PropsWithComponent {
     /**
      * Override or extend the styles applied to the component.
@@ -39,7 +40,7 @@ external interface AppBarProps :
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: SxProps<Theme>?
+    override var sx: SxProps<Theme>?
 }
 
 /**

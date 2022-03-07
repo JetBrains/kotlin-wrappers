@@ -14,7 +14,8 @@ import mui.system.SxProps
 
 external interface SnackbarContentProps :
     mui.system.StandardProps,
-    PaperProps {
+    PaperProps,
+    mui.system.PropsWithSx {
     /**
      * The action to display. It renders after the message, at the end of the snackbar.
      */
@@ -39,7 +40,7 @@ external interface SnackbarContentProps :
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: SxProps<Theme>?
+    override var sx: SxProps<Theme>?
 }
 
 /**

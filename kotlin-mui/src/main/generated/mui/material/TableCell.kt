@@ -11,7 +11,8 @@ import mui.system.SxProps
 external interface TableCellProps :
     mui.system.StandardProps,
     TableCellBaseProps,
-    react.PropsWithChildren {
+    react.PropsWithChildren,
+    mui.system.PropsWithSx {
     /**
      * Set the text-align on the table cell content.
      *
@@ -62,7 +63,7 @@ external interface TableCellProps :
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: SxProps<Theme>?
+    override var sx: SxProps<Theme>?
 
     /**
      * Specify the cell type.

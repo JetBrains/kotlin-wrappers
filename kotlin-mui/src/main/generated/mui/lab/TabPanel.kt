@@ -11,7 +11,8 @@ import mui.system.SxProps
 external interface TabPanelProps :
     mui.system.StandardProps,
     react.dom.html.HTMLAttributes<org.w3c.dom.HTMLDivElement>,
-    react.PropsWithChildren {
+    react.PropsWithChildren,
+    mui.system.PropsWithSx {
     /**
      * The content of the component.
      */
@@ -25,7 +26,7 @@ external interface TabPanelProps :
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: SxProps<Theme>?
+    override var sx: SxProps<Theme>?
 
     /**
      * The `value` of the corresponding `Tab`. Must use the index of the `Tab` when

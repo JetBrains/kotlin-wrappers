@@ -11,6 +11,7 @@ import mui.system.SxProps
 external interface ToolbarProps :
     react.dom.html.HTMLAttributes<org.w3c.dom.HTMLDivElement>,
     react.PropsWithChildren,
+    mui.system.PropsWithSx,
     mui.types.PropsWithComponent {
     /**
      * The Toolbar children, usually a mixture of `IconButton`, `Button` and `Typography`.
@@ -38,7 +39,7 @@ external interface ToolbarProps :
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: SxProps<Theme>?
+    override var sx: SxProps<Theme>?
 }
 
 /**

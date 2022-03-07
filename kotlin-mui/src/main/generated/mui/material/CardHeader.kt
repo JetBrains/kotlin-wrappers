@@ -8,7 +8,7 @@ package mui.material
 import mui.material.styles.Theme
 import mui.system.SxProps
 
-external interface CardHeaderProps : react.Props {
+external interface CardHeaderProps : mui.system.PropsWithSx {
     /**
      * The action to display in the card header.
      */
@@ -47,7 +47,7 @@ external interface CardHeaderProps : react.Props {
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: SxProps<Theme>?
+    override var sx: SxProps<Theme>?
 
     /**
      * The content of the component.

@@ -15,7 +15,8 @@ import mui.system.SxProps
 external interface TimelineContentProps :
     mui.system.StandardProps,
     mui.material.TypographyProps,
-    react.PropsWithChildren {
+    react.PropsWithChildren,
+    mui.system.PropsWithSx {
     /**
      * The content of the component.
      */
@@ -29,7 +30,7 @@ external interface TimelineContentProps :
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: SxProps<Theme>?
+    override var sx: SxProps<Theme>?
 }
 
 /**

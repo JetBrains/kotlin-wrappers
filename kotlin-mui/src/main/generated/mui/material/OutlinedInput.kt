@@ -14,7 +14,8 @@ import mui.system.SxProps
 
 external interface OutlinedInputProps :
     mui.system.StandardProps,
-    InputBaseProps {
+    InputBaseProps,
+    mui.system.PropsWithSx {
     /**
      * Override or extend the styles applied to the component.
      */
@@ -34,7 +35,7 @@ external interface OutlinedInputProps :
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: SxProps<Theme>?
+    override var sx: SxProps<Theme>?
 }
 
 /**

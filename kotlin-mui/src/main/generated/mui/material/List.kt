@@ -10,7 +10,8 @@ import mui.system.SxProps
 
 external interface ListProps :
     react.dom.html.HTMLAttributes<org.w3c.dom.HTMLUListElement>,
-    react.PropsWithChildren {
+    react.PropsWithChildren,
+    mui.system.PropsWithSx {
     /**
      * The content of the component.
      */
@@ -43,7 +44,7 @@ external interface ListProps :
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: SxProps<Theme>?
+    override var sx: SxProps<Theme>?
 }
 
 /**

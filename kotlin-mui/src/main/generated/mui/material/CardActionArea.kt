@@ -8,7 +8,7 @@ package mui.material
 import mui.material.styles.Theme
 import mui.system.SxProps
 
-external interface CardActionAreaProps : react.Props {
+external interface CardActionAreaProps : mui.system.PropsWithSx {
     /**
      * Override or extend the styles applied to the component.
      */
@@ -19,7 +19,7 @@ external interface CardActionAreaProps : react.Props {
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: SxProps<Theme>?
+    override var sx: SxProps<Theme>?
 }
 
 /**

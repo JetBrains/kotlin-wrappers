@@ -8,7 +8,7 @@ package mui.lab
 import mui.material.styles.Theme
 import mui.system.SxProps
 
-external interface DateRangePickerDayProps<TDate> : react.Props {
+external interface DateRangePickerDayProps<TDate> : mui.system.PropsWithSx {
     /**
      * Set to `true` if the `day` is in a highlighted date range.
      */
@@ -47,7 +47,7 @@ external interface DateRangePickerDayProps<TDate> : react.Props {
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: SxProps<Theme>?
+    override var sx: SxProps<Theme>?
 }
 
 external interface DateRangePickerDayClasses {

@@ -10,6 +10,7 @@ import mui.system.SxProps
 
 external interface CardProps :
     react.dom.html.HTMLAttributes<org.w3c.dom.HTMLDivElement>,
+    mui.system.PropsWithSx,
     mui.types.PropsWithComponent {
     /**
      * Override or extend the styles applied to the component.
@@ -25,7 +26,7 @@ external interface CardProps :
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: SxProps<Theme>?
+    override var sx: SxProps<Theme>?
 }
 
 /**

@@ -15,7 +15,8 @@ import mui.system.SxProps
 external interface DialogProps :
     mui.system.StandardProps,
     ModalProps,
-    react.PropsWithChildren {
+    react.PropsWithChildren,
+    mui.system.PropsWithSx {
     /**
      * The id(s) of the element(s) that describe the dialog.
      */

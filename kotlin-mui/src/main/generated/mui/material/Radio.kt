@@ -14,7 +14,8 @@ import mui.system.SxProps
 
 external interface RadioProps :
     mui.system.StandardProps,
-    SwitchBaseProps {
+    SwitchBaseProps,
+    mui.system.PropsWithSx {
     /**
      * The icon to display when the component is checked.
      * @default <RadioButtonIcon checked />
@@ -53,7 +54,7 @@ external interface RadioProps :
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: SxProps<Theme>?
+    override var sx: SxProps<Theme>?
 }
 
 /**

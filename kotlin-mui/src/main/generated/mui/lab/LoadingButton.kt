@@ -9,7 +9,8 @@ import mui.material.styles.Theme
 import mui.system.SxProps
 
 external interface LoadingButtonProps :
-    mui.material.ButtonProps {
+    mui.material.ButtonProps,
+    mui.system.PropsWithSx {
     /**
      * Override or extend the styles applied to the component.
      */

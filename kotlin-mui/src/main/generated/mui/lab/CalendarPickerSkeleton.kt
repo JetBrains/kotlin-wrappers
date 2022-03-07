@@ -9,7 +9,8 @@ import mui.material.styles.Theme
 import mui.system.SxProps
 
 external interface CalendarPickerSkeletonProps :
-    react.dom.html.HTMLAttributes<org.w3c.dom.HTMLDivElement> {
+    react.dom.html.HTMLAttributes<org.w3c.dom.HTMLDivElement>,
+    mui.system.PropsWithSx {
     /**
      * Override or extend the styles applied to the component.
      */
@@ -18,7 +19,7 @@ external interface CalendarPickerSkeletonProps :
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: SxProps<Theme>?
+    override var sx: SxProps<Theme>?
 }
 
 external interface CalendarPickerSkeletonClasses {

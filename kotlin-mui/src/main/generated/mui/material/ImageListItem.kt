@@ -11,6 +11,7 @@ import mui.system.SxProps
 external interface ImageListItemProps :
     react.dom.html.LiHTMLAttributes<org.w3c.dom.HTMLLIElement>,
     react.PropsWithChildren,
+    mui.system.PropsWithSx,
     mui.types.PropsWithComponent {
     /**
      * The content of the component, normally an `<img>`.
@@ -37,7 +38,7 @@ external interface ImageListItemProps :
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: SxProps<Theme>?
+    override var sx: SxProps<Theme>?
 }
 
 /**

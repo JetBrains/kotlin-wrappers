@@ -14,7 +14,8 @@ import mui.system.SxProps
 
 external interface ImageListItemBarProps :
     mui.system.StandardProps,
-    react.dom.html.HTMLAttributes<org.w3c.dom.HTMLDivElement> {
+    react.dom.html.HTMLAttributes<org.w3c.dom.HTMLDivElement>,
+    mui.system.PropsWithSx {
     /**
      * An IconButton element to be used as secondary action target
      * (primary action target is the item itself).
@@ -46,7 +47,7 @@ external interface ImageListItemBarProps :
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: SxProps<Theme>?
+    override var sx: SxProps<Theme>?
 
     /**
      * Title to be displayed.

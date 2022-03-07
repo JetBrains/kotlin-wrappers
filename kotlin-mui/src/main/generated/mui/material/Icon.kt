@@ -11,6 +11,7 @@ import mui.system.SxProps
 external interface IconProps :
     react.dom.html.HTMLAttributes<org.w3c.dom.HTMLSpanElement>,
     react.PropsWithChildren,
+    mui.system.PropsWithSx,
     mui.types.PropsWithComponent {
     /**
      * The base class applied to the icon. Defaults to 'material-icons', but can be changed to any
@@ -44,7 +45,7 @@ external interface IconProps :
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: SxProps<Theme>?
+    override var sx: SxProps<Theme>?
 }
 
 /**

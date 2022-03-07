@@ -10,7 +10,9 @@ import mui.material.styles.Theme
 import mui.system.SxProps
 import kotlin.js.Promise
 
-external interface MonthPickerProps<TDate> : react.PropsWithClassName {
+external interface MonthPickerProps<TDate> :
+    react.PropsWithClassName,
+    mui.system.PropsWithSx {
     /**
      * className applied to the root element.
      */
@@ -50,7 +52,7 @@ external interface MonthPickerProps<TDate> : react.PropsWithClassName {
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: SxProps<Theme>?
+    override var sx: SxProps<Theme>?
 }
 
 /**

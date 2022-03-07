@@ -10,6 +10,7 @@ import mui.system.SxProps
 
 external interface BackdropProps :
     mui.base.BackdropUnstyledProps,
+    mui.system.PropsWithSx,
     mui.types.PropsWithComponent {
     /**
      * Override or extend the styles applied to the component.
@@ -24,7 +25,7 @@ external interface BackdropProps :
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: SxProps<Theme>?
+    override var sx: SxProps<Theme>?
 
     /**
      * The duration for the transition, in milliseconds.

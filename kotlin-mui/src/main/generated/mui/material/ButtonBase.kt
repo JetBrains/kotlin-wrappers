@@ -10,7 +10,8 @@ import mui.system.SxProps
 
 external interface ButtonBaseProps :
     react.dom.html.ButtonHTMLAttributes<org.w3c.dom.HTMLButtonElement>,
-    react.PropsWithChildren {
+    react.PropsWithChildren,
+    mui.system.PropsWithSx {
     /**
      * A ref for imperative actions.
      * It currently only supports `focusVisible()` action.
@@ -86,7 +87,7 @@ external interface ButtonBaseProps :
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: SxProps<Theme>?
+    override var sx: SxProps<Theme>?
 
     /**
      * @default 0

@@ -11,6 +11,7 @@ import mui.system.SxProps
 external interface TableRowProps :
     react.dom.html.HTMLAttributes<org.w3c.dom.HTMLTableRowElement>,
     react.PropsWithChildren,
+    mui.system.PropsWithSx,
     mui.types.PropsWithComponent {
     /**
      * Should be valid <tr> children such as `TableCell`.
@@ -37,7 +38,7 @@ external interface TableRowProps :
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: SxProps<Theme>?
+    override var sx: SxProps<Theme>?
 }
 
 /**

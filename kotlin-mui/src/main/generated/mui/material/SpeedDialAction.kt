@@ -14,7 +14,8 @@ import mui.system.SxProps
 
 external interface SpeedDialActionProps :
     mui.system.StandardProps,
-    TooltipProps {
+    TooltipProps,
+    mui.system.PropsWithSx {
     /**
      * Override or extend the styles applied to the component.
      */
@@ -40,7 +41,7 @@ external interface SpeedDialActionProps :
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: SxProps<Theme>?
+    override var sx: SxProps<Theme>?
 
     /**
      * `classes` prop applied to the [`Tooltip`](/api/tooltip/) element.

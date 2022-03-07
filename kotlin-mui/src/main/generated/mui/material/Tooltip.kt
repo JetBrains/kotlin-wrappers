@@ -14,7 +14,8 @@ import mui.system.SxProps
 
 external interface TooltipProps :
     mui.system.StandardProps,
-    react.dom.html.HTMLAttributes<org.w3c.dom.HTMLDivElement> {
+    react.dom.html.HTMLAttributes<org.w3c.dom.HTMLDivElement>,
+    mui.system.PropsWithSx {
     /**
      * If `true`, adds an arrow to the tooltip.
      * @default false
@@ -162,7 +163,7 @@ external interface TooltipProps :
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: SxProps<Theme>?
+    override var sx: SxProps<Theme>?
 
     /**
      * Tooltip title. Zero-length titles string are never displayed.
