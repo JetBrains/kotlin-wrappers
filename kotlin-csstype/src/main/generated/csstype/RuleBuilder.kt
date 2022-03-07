@@ -6,11 +6,13 @@
 
 package csstype
 
+import kotlinx.js.jso
+
 interface RuleBuilder<T : Any> {
     inline operator fun Selector.invoke(
         block: T.() -> Unit,
     ) {
-        this@RuleBuilder.asDynamic()[this] = js("({})").unsafeCast<T>().apply(block)
+        this@RuleBuilder.unsafeCast<Rules>()[this] = jso(block)
     }
 
     inline operator fun String.invoke(
