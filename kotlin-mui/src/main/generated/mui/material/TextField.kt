@@ -18,7 +18,8 @@ typealias TextFieldProps = BaseTextFieldProps
 external interface BaseTextFieldProps :
     mui.system.StandardProps,
     FormControlProps,
-    react.PropsWithChildren {
+    react.PropsWithChildren,
+    mui.system.PropsWithSx {
     /**
      * This prop helps users to fill forms faster, especially on mobile devices.
      * The name can be confusing, as it's more like an autofill.
@@ -169,7 +170,7 @@ external interface BaseTextFieldProps :
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: SxProps<Theme>?
+    override var sx: SxProps<Theme>?
 
     /**
      * Type of the `input` element. It should be [a valid HTML5 input type](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#Form_%3Cinput%3E_types).

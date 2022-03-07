@@ -15,7 +15,8 @@ import mui.system.SxProps
 external interface SelectProps<T> :
     mui.system.StandardProps,
     InputProps,
-    react.PropsWithChildren {
+    react.PropsWithChildren,
+    mui.system.PropsWithSx {
     /**
      * If `true`, the width of the popover will automatically be set according to the items inside the
      * menu, otherwise it will be at least the width of the select input.
@@ -160,7 +161,7 @@ external interface SelectProps<T> :
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: SxProps<Theme>?
+    override var sx: SxProps<Theme>?
 
     /**
      * The `input` value. Providing an empty string will select no options.

@@ -10,7 +10,8 @@ import mui.system.SxProps
 
 external interface IconButtonProps :
     react.dom.html.ButtonHTMLAttributes<org.w3c.dom.HTMLButtonElement>,
-    react.PropsWithChildren {
+    react.PropsWithChildren,
+    mui.system.PropsWithSx {
     /**
      * The icon to display.
      */
@@ -58,7 +59,7 @@ external interface IconButtonProps :
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: SxProps<Theme>?
+    override var sx: SxProps<Theme>?
 }
 
 /**

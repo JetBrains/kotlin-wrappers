@@ -11,6 +11,7 @@ import mui.system.SxProps
 external interface FormHelperTextProps :
     react.dom.html.HTMLAttributes<org.w3c.dom.HTMLParagraphElement>,
     react.PropsWithChildren,
+    mui.system.PropsWithSx,
     mui.types.PropsWithComponent {
     /**
      * The content of the component.
@@ -58,7 +59,7 @@ external interface FormHelperTextProps :
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: SxProps<Theme>?
+    override var sx: SxProps<Theme>?
 
     /**
      * The variant to use.

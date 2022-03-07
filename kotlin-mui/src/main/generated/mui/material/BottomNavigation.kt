@@ -11,6 +11,7 @@ import mui.system.SxProps
 external interface BottomNavigationProps :
     react.dom.html.HTMLAttributes<org.w3c.dom.HTMLDivElement>,
     react.PropsWithChildren,
+    mui.system.PropsWithSx,
     mui.types.PropsWithComponent {
     /**
      * The content of the component.
@@ -40,7 +41,7 @@ external interface BottomNavigationProps :
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: SxProps<Theme>?
+    override var sx: SxProps<Theme>?
 
     /**
      * The value of the currently selected `BottomNavigationAction`.

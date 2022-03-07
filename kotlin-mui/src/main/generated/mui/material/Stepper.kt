@@ -15,7 +15,8 @@ import mui.system.SxProps
 external interface StepperProps :
     mui.system.StandardProps,
     PaperProps,
-    react.PropsWithChildren {
+    react.PropsWithChildren,
+    mui.system.PropsWithSx {
     /**
      * Set the active step (zero based index).
      * Set to -1 to disable all the steps.
@@ -61,7 +62,7 @@ external interface StepperProps :
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: SxProps<Theme>?
+    override var sx: SxProps<Theme>?
 }
 
 /**

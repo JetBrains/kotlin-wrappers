@@ -10,6 +10,7 @@ import mui.system.SxProps
 
 external interface DividerProps :
     react.PropsWithChildren,
+    mui.system.PropsWithSx,
     mui.types.PropsWithComponent {
     /**
      * Absolutely position the element.
@@ -49,7 +50,7 @@ external interface DividerProps :
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: SxProps<Theme>?
+    override var sx: SxProps<Theme>?
 
     /**
      * The text alignment.

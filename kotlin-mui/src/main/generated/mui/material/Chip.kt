@@ -14,6 +14,7 @@ import mui.system.SxProps
 
 external interface ChipProps :
     react.dom.html.HTMLAttributes<org.w3c.dom.HTMLDivElement>,
+    mui.system.PropsWithSx,
     mui.types.PropsWithComponent {
     /**
      * The Avatar element to display.
@@ -83,7 +84,7 @@ external interface ChipProps :
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: SxProps<Theme>?
+    override var sx: SxProps<Theme>?
 
     /**
      * The variant to use.

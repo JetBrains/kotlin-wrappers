@@ -9,7 +9,8 @@ import mui.material.styles.Theme
 import mui.system.SxProps
 
 external interface SliderProps :
-    mui.base.SliderUnstyledProps {
+    mui.base.SliderUnstyledProps,
+    mui.system.PropsWithSx {
     /**
      * The color of the component. It supports those theme colors that make sense for this component.
      * @default 'primary'
@@ -30,7 +31,7 @@ external interface SliderProps :
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: SxProps<Theme>?
+    override var sx: SxProps<Theme>?
 }
 
 /**

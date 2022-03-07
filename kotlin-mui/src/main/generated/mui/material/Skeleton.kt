@@ -11,6 +11,7 @@ import mui.system.SxProps
 external interface SkeletonProps :
     react.dom.html.HTMLAttributes<org.w3c.dom.HTMLSpanElement>,
     react.PropsWithChildren,
+    mui.system.PropsWithSx,
     mui.types.PropsWithComponent {
     /**
      * The animation.
@@ -38,7 +39,7 @@ external interface SkeletonProps :
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: SxProps<Theme>?
+    override var sx: SxProps<Theme>?
 
     /**
      * The type of content that will be rendered.

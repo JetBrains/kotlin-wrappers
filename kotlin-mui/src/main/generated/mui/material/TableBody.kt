@@ -11,6 +11,7 @@ import mui.system.SxProps
 external interface TableBodyProps :
     react.dom.html.HTMLAttributes<org.w3c.dom.HTMLTableSectionElement>,
     react.PropsWithChildren,
+    mui.system.PropsWithSx,
     mui.types.PropsWithComponent {
     /**
      * The content of the component, normally `TableRow`.
@@ -25,7 +26,7 @@ external interface TableBodyProps :
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: SxProps<Theme>?
+    override var sx: SxProps<Theme>?
 }
 
 /**

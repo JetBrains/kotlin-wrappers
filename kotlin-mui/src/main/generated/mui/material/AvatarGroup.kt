@@ -11,7 +11,8 @@ import mui.system.SxProps
 external interface AvatarGroupProps :
     mui.system.StandardProps,
     react.dom.html.HTMLAttributes<org.w3c.dom.HTMLDivElement>,
-    react.PropsWithChildren {
+    react.PropsWithChildren,
+    mui.system.PropsWithSx {
     /**
      * The avatars to stack.
      */
@@ -43,7 +44,7 @@ external interface AvatarGroupProps :
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: SxProps<Theme>?
+    override var sx: SxProps<Theme>?
 
     /**
      * The total number of avatars. Used for calculating the number of extra avatars.

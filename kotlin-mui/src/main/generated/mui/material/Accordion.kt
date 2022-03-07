@@ -15,7 +15,8 @@ import mui.system.SxProps
 external interface AccordionProps :
     mui.system.StandardProps,
     PaperProps,
-    react.PropsWithChildren {
+    react.PropsWithChildren,
+    mui.system.PropsWithSx {
     /**
      * The content of the component.
      */
@@ -61,7 +62,7 @@ external interface AccordionProps :
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: SxProps<Theme>?
+    override var sx: SxProps<Theme>?
 
     /**
      * The component used for the transition.

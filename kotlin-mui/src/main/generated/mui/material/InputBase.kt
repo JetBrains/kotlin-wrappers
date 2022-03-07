@@ -14,7 +14,8 @@ import mui.system.SxProps
 
 external interface InputBaseProps :
     mui.system.StandardProps,
-    react.dom.html.HTMLAttributes<org.w3c.dom.HTMLDivElement> {
+    react.dom.html.HTMLAttributes<org.w3c.dom.HTMLDivElement>,
+    mui.system.PropsWithSx {
     // var `aria-describedby`: String?
 
     /**
@@ -197,7 +198,7 @@ external interface InputBaseProps :
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: SxProps<Theme>?
+    override var sx: SxProps<Theme>?
 
     /**
      * Type of the `input` element. It should be [a valid HTML5 input type](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#Form_%3Cinput%3E_types).

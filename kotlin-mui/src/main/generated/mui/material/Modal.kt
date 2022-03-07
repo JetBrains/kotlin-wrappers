@@ -13,7 +13,8 @@ import mui.material.styles.Theme
 import mui.system.SxProps
 
 external interface ModalProps :
-    mui.base.ModalUnstyledProps {
+    mui.base.ModalUnstyledProps,
+    mui.system.PropsWithSx {
     /**
      * A backdrop component. This prop enables custom backdrop rendering.
      * @default styled(Backdrop, {
@@ -36,7 +37,7 @@ external interface ModalProps :
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: SxProps<Theme>?
+    override var sx: SxProps<Theme>?
 }
 
 /**

@@ -11,6 +11,7 @@ import mui.system.SxProps
 external interface TypographyProps :
     react.dom.html.HTMLAttributes<org.w3c.dom.HTMLSpanElement>,
     react.PropsWithChildren,
+    mui.system.PropsWithSx,
     mui.types.PropsWithComponent {
     /**
      * Set the text-align on the component.
@@ -52,7 +53,7 @@ external interface TypographyProps :
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: SxProps<Theme>?
+    override var sx: SxProps<Theme>?
 
     /**
      * Applies the theme typography styles.

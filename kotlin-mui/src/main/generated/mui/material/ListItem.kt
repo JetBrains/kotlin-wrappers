@@ -25,7 +25,9 @@ external interface ListItemProps :
     var componentsProps: dynamic
 }
 
-external interface ListItemBaseProps : react.PropsWithChildren {
+external interface ListItemBaseProps :
+    react.PropsWithChildren,
+    mui.system.PropsWithSx {
     /**
      * Defines the `align-items` style property.
      * @default 'center'
@@ -112,7 +114,7 @@ external interface ListItemBaseProps : react.PropsWithChildren {
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: SxProps<Theme>?
+    override var sx: SxProps<Theme>?
 }
 
 /**

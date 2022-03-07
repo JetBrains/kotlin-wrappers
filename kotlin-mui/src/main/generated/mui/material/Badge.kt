@@ -14,6 +14,7 @@ import mui.system.SxProps
 
 external interface BadgeProps :
     mui.base.BadgeUnstyledProps,
+    mui.system.PropsWithSx,
     mui.types.PropsWithComponent {
     /**
      * Override or extend the styles applied to the component.
@@ -35,7 +36,7 @@ external interface BadgeProps :
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: SxProps<Theme>?
+    override var sx: SxProps<Theme>?
 
     /**
      * The variant to use.

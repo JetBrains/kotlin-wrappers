@@ -10,7 +10,8 @@ import mui.system.SxProps
 
 external interface CircularProgressProps :
     mui.system.StandardProps,
-    react.dom.html.HTMLAttributes<org.w3c.dom.HTMLSpanElement> {
+    react.dom.html.HTMLAttributes<org.w3c.dom.HTMLSpanElement>,
+    mui.system.PropsWithSx {
     /**
      * Override or extend the styles applied to the component.
      */
@@ -40,7 +41,7 @@ external interface CircularProgressProps :
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: SxProps<Theme>?
+    override var sx: SxProps<Theme>?
 
     /**
      * The thickness of the circle.

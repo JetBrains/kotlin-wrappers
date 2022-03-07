@@ -10,7 +10,8 @@ import mui.system.SxProps
 
 external interface FabProps :
     react.dom.html.ButtonHTMLAttributes<org.w3c.dom.HTMLButtonElement>,
-    react.PropsWithChildren {
+    react.PropsWithChildren,
+    mui.system.PropsWithSx {
     /**
      * The content of the component.
      */
@@ -66,7 +67,7 @@ external interface FabProps :
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: SxProps<Theme>?
+    override var sx: SxProps<Theme>?
 }
 
 /**

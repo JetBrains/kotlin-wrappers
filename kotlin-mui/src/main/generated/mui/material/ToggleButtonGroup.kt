@@ -11,7 +11,8 @@ import mui.system.SxProps
 external interface ToggleButtonGroupProps :
     mui.system.StandardProps,
     react.dom.html.HTMLAttributes<org.w3c.dom.HTMLDivElement>,
-    react.PropsWithChildren {
+    react.PropsWithChildren,
+    mui.system.PropsWithSx {
     /**
      * The content of the component.
      */
@@ -71,7 +72,7 @@ external interface ToggleButtonGroupProps :
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: SxProps<Theme>?
+    override var sx: SxProps<Theme>?
 
     /**
      * The currently selected value within the group or an array of selected

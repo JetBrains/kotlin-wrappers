@@ -13,7 +13,8 @@ import mui.material.styles.Theme
 import mui.system.SxProps
 
 external interface TabProps :
-    react.dom.html.HTMLAttributes<org.w3c.dom.HTMLDivElement> {
+    react.dom.html.HTMLAttributes<org.w3c.dom.HTMLDivElement>,
+    mui.system.PropsWithSx {
     /**
      * This prop isn't supported.
      * Use the `component` prop if you need to change the children structure.
@@ -56,7 +57,7 @@ external interface TabProps :
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: SxProps<Theme>?
+    override var sx: SxProps<Theme>?
 
     /**
      * You can provide your own value. Otherwise, we fallback to the child position index.
