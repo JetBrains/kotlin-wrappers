@@ -9,6 +9,9 @@
 
 package mui.material
 
+import mui.material.styles.Theme
+import mui.system.SxProps
+
 external interface SvgIconProps :
     react.dom.svg.SVGAttributes<org.w3c.dom.svg.SVGSVGElement>,
     react.PropsWithChildren,
@@ -60,7 +63,7 @@ external interface SvgIconProps :
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: mui.system.SxProps<mui.system.Theme>?
+    var sx: SxProps<Theme>?
 
     /**
      * Provides a human-readable title for the element that contains it.

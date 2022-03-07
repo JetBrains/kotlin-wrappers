@@ -9,6 +9,9 @@
 
 package mui.material
 
+import mui.material.styles.Theme
+import mui.system.SxProps
+
 external interface SwitchProps :
     mui.system.StandardProps,
     SwitchBaseProps {
@@ -48,7 +51,7 @@ external interface SwitchProps :
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: mui.system.SxProps<mui.system.Theme>?
+    var sx: SxProps<Theme>?
 
     /**
      * The value of the component. The DOM API casts this to a string.

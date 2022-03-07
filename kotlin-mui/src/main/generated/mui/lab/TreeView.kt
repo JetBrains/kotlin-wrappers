@@ -6,6 +6,8 @@
 package mui.lab
 
 import kotlinx.js.ReadonlyArray
+import mui.material.styles.Theme
+import mui.system.SxProps
 
 external interface TreeViewProps : react.Props
 
@@ -93,7 +95,7 @@ external interface TreeViewPropsBase :
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: mui.system.SxProps<mui.system.Theme>?
+    var sx: SxProps<Theme>?
 }
 
 external interface MultiSelectTreeViewProps :

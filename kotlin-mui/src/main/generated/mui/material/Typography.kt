@@ -5,6 +5,9 @@
 
 package mui.material
 
+import mui.material.styles.Theme
+import mui.system.SxProps
+
 external interface TypographyProps :
     react.dom.html.HTMLAttributes<org.w3c.dom.HTMLSpanElement>,
     react.PropsWithChildren,
@@ -49,7 +52,7 @@ external interface TypographyProps :
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: mui.system.SxProps<mui.system.Theme>?
+    var sx: SxProps<Theme>?
 
     /**
      * Applies the theme typography styles.

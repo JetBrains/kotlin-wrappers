@@ -5,6 +5,9 @@
 
 package mui.material
 
+import mui.material.styles.Theme
+import mui.system.SxProps
+
 external interface ListItemProps :
     ListItemBaseProps,
     react.dom.html.HTMLAttributes<org.w3c.dom.HTMLElement> {
@@ -109,7 +112,7 @@ external interface ListItemBaseProps : react.PropsWithChildren {
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: mui.system.SxProps<mui.system.Theme>?
+    var sx: SxProps<Theme>?
 }
 
 /**

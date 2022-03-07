@@ -5,6 +5,9 @@
 
 package mui.material
 
+import mui.material.styles.Theme
+import mui.system.SxProps
+
 external interface FormControlLabelProps :
     mui.system.StandardProps,
     react.dom.html.LabelHTMLAttributes<org.w3c.dom.HTMLLabelElement> {
@@ -69,7 +72,7 @@ external interface FormControlLabelProps :
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: mui.system.SxProps<mui.system.Theme>?
+    var sx: SxProps<Theme>?
 
     /**
      * The value of the component.

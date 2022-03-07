@@ -13,7 +13,7 @@ external interface BoxProps :
 
     override var component: react.ElementType<*>?
 
-    var sx: mui.system.SxProps<mui.system.Theme>?
+    var sx: SxProps<Theme>?
 }
 
 external interface CustomSystemProps : react.Props

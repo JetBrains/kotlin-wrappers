@@ -9,6 +9,9 @@
 
 package mui.material
 
+import mui.material.styles.Theme
+import mui.system.SxProps
+
 external interface MenuProps :
     mui.system.StandardProps,
     PopoverProps,
@@ -74,7 +77,7 @@ external interface MenuProps :
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: mui.system.SxProps<mui.system.Theme>?
+    var sx: SxProps<Theme>?
 
     /**
      * The length of the transition in `ms`, or 'auto'

@@ -5,6 +5,9 @@
 
 package mui.lab
 
+import mui.material.styles.Theme
+import mui.system.SxProps
+
 external interface TimelineConnectorProps :
     mui.system.StandardProps,
     react.dom.html.HTMLAttributes<org.w3c.dom.HTMLSpanElement>,
@@ -22,7 +25,7 @@ external interface TimelineConnectorProps :
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: mui.system.SxProps<mui.system.Theme>?
+    var sx: SxProps<Theme>?
 }
 
 /**

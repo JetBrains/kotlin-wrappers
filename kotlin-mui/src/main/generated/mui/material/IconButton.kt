@@ -5,6 +5,9 @@
 
 package mui.material
 
+import mui.material.styles.Theme
+import mui.system.SxProps
+
 external interface IconButtonProps :
     react.dom.html.ButtonHTMLAttributes<org.w3c.dom.HTMLButtonElement>,
     react.PropsWithChildren {
@@ -55,7 +58,7 @@ external interface IconButtonProps :
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: mui.system.SxProps<mui.system.Theme>?
+    var sx: SxProps<Theme>?
 }
 
 /**

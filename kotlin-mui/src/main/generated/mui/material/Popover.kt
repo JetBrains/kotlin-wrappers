@@ -9,6 +9,9 @@
 
 package mui.material
 
+import mui.material.styles.Theme
+import mui.system.SxProps
+
 external interface PopoverProps :
     mui.system.StandardProps,
     ModalProps,
@@ -100,7 +103,7 @@ external interface PopoverProps :
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    override var sx: mui.system.SxProps<mui.system.Theme>?
+    override var sx: SxProps<Theme>?
 
     /**
      * This is the point on the popover which

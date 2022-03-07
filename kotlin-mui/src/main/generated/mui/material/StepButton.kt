@@ -5,6 +5,9 @@
 
 package mui.material
 
+import mui.material.styles.Theme
+import mui.system.SxProps
+
 external interface StepButtonProps : react.PropsWithChildren {
     /**
      * Can be a `StepLabel` or a node to place inside `StepLabel` as children.
@@ -29,7 +32,7 @@ external interface StepButtonProps : react.PropsWithChildren {
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
-    var sx: mui.system.SxProps<mui.system.Theme>?
+    var sx: SxProps<Theme>?
 }
 
 /**
