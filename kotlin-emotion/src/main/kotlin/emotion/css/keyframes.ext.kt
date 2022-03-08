@@ -10,28 +10,39 @@ import kotlinx.js.jso
 
 typealias Keyframes = Record<Percentage, Properties>
 
+private val FROM_PERCENTAGE = 0.pct
+private val TO_PERCENTAGE = 100.pct
+
 @CssDsl
-interface KeyframesBuilder {
-    inline operator fun Percentage.invoke(
+class KeyframesBuilder {
+    private val keyframes: Keyframes = Record({})
+
+    operator fun Percentage.invoke(
         block: Properties.() -> Unit
     ) {
-        this@KeyframesBuilder.unsafeCast<Keyframes>()[this] = jso(block)
+        keyframes[this] = jso(block)
     }
 
-    inline fun from(
+    fun from(
         block: Properties.() -> Unit
     ) {
-        0.pct(block)
+        FROM_PERCENTAGE(block)
     }
 
-    inline fun to(
+    fun to(
         block: Properties.() -> Unit
     ) {
-        100.pct(block)
+        TO_PERCENTAGE(block)
     }
+
+    fun build(): Keyframes = keyframes
 }
 
 inline fun keyframes(
     block: KeyframesBuilder.() -> Unit,
 ): AnimationName =
-    keyframes(jso(block).unsafeCast<Keyframes>())
+    keyframes(
+        KeyframesBuilder()
+            .apply { block() }
+            .build()
+    )
