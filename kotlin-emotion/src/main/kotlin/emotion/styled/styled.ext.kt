@@ -12,7 +12,6 @@ external interface PropsWithTheme : Props {
 }
 
 fun <P : Props> ElementType<P>.styled(
-    options: StyledOptions? = null,
     block: PropertiesBuilder.(P, Theme) -> Unit,
 ): FC<P> {
     val style = { props: P ->
@@ -21,5 +20,5 @@ fun <P : Props> ElementType<P>.styled(
         }
     }
 
-    return styled(this, options ?: undefined)(style)
+    return styled(this)(style)
 }
