@@ -15,7 +15,7 @@ interface KeyframesBuilder {
     inline operator fun Percentage.invoke(
         block: Properties.() -> Unit
     ) {
-        unsafeCast<Keyframes>()[this] = jso(block)
+        this@KeyframesBuilder.unsafeCast<Keyframes>()[this] = jso(block)
     }
 
     inline fun from(
