@@ -5,11 +5,10 @@ package emotion.styled
 
 import csstype.Properties
 import react.ElementType
-import react.FC
 import react.Props
 
 @JsName("default")
-external fun <P: Props> styled(
+external fun <P : Props> styled(
     type: ElementType<P>,
-    options: StyledOptions? = definedExternally
-): ((P) -> Properties) -> FC<P>
+    options: StyledOptions? = definedExternally,
+): ((P) -> Properties) -> StyledComponent<P>
