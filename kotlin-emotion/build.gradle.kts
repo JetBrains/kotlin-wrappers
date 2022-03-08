@@ -9,4 +9,5 @@ dependencies {
     api(project(":kotlin-react-core"))
 
     api(npmv("@emotion/css"))
+    api(npmv("@emotion/react"))
 }
