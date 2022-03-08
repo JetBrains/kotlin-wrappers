@@ -15,7 +15,7 @@ private val TO_PERCENTAGE = 100.pct
 
 @CssDsl
 class KeyframesBuilder {
-    private val keyframes: Keyframes = Record({})
+    private val keyframes: Keyframes = Record()
 
     operator fun Percentage.invoke(
         block: Properties.() -> Unit
