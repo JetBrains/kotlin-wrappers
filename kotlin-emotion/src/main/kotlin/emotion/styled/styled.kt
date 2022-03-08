@@ -10,5 +10,6 @@ import react.Props
 
 @JsName("default")
 external fun <P: Props> styled(
-    type: ElementType<P>
+    type: ElementType<P>,
+    options: StyledOptions? = definedExternally
 ): ((P) -> Properties) -> FC<P>
