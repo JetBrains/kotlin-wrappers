@@ -12,6 +12,7 @@ private val TARGET_ALIASES = mapOf(
     "emotion" to "emotion-react",
     "@emotion/css" to "emotion-css",
     "@emotion/react" to "emotion-react",
+    "@emotion/styled" to "emotion-styled",
 
     "@mui/material" to "mui",
     "@mui/icons-material" to "mui-icons",

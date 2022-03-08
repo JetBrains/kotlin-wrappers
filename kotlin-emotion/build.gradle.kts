@@ -10,4 +10,5 @@ dependencies {
 
     api(npmv("@emotion/css"))
     api(npmv("@emotion/react"))
+    api(npmv("@emotion/styled"))
 }
