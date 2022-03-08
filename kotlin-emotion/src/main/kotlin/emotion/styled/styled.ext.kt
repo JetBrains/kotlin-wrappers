@@ -1,6 +1,5 @@
 package emotion.styled
 
-import csstype.Properties
 import csstype.PropertiesBuilder
 import emotion.react.Theme
 import kotlinx.js.jso
@@ -9,19 +8,16 @@ import react.FC
 import react.Props
 import react.PropsWithClassName
 
-external interface PropsWithTheme : Props {
-    val theme: Theme
-}
+private inline val Props.theme: Theme
+    get() = asDynamic().theme
 
 fun <P : PropsWithClassName> ElementType<P>.styled(
     block: PropertiesBuilder.(P, Theme) -> Unit,
 ): FC<P> {
     val style = { props: P ->
-        block(
-            jso(),
-            props,
-            props.unsafeCast<PropsWithTheme>().theme
-        ).unsafeCast<Properties>()
+        val builder: PropertiesBuilder = jso()
+        block(builder, props, props.theme)
+        builder
     }
 
     return styled(this)(style)
