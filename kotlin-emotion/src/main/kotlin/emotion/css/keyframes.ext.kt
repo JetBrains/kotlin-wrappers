@@ -43,6 +43,6 @@ inline fun keyframes(
 ): AnimationName =
     keyframes(
         KeyframesBuilder()
-            .apply { block() }
+            .apply(block)
             .build()
     )
