@@ -4,11 +4,11 @@ package react
 
 import csstype.Selector
 
-sealed external interface IntrinsicType<in P : Props> :
+sealed external interface IntrinsicType<in P : PropsWithClassName> :
     ElementType<P>,
     Selector
 
-inline fun <P : Props> IntrinsicType(
+inline fun <P : PropsWithClassName> IntrinsicType(
     tagName: String,
 ): IntrinsicType<P> =
     tagName.unsafeCast<IntrinsicType<P>>()
