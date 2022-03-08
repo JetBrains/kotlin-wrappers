@@ -1,4 +1,4 @@
-@file:JsModule("@emotion/css")
+@file:JsModule("@emotion/hash")
 @file:JsNonModule
 
 package emotion.hash
