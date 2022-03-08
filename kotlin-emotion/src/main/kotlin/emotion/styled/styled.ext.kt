@@ -12,6 +12,7 @@ private inline val Props.theme: Theme
     get() = asDynamic().theme
 
 fun <P : PropsWithClassName> ElementType<P>.styled(
+    options: (StyledOptions.() -> Unit)? = null,
     block: PropertiesBuilder.(P, Theme) -> Unit,
 ): FC<P> {
     val style = { props: P ->
@@ -20,5 +21,5 @@ fun <P : PropsWithClassName> ElementType<P>.styled(
         builder
     }
 
-    return styled(this)(style)
+    return styled(this, options?.let(::jso) ?: undefined)(style)
 }
