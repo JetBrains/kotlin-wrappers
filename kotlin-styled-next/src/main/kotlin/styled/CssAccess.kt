@@ -33,12 +33,15 @@ internal object GlobalCssAccess {
         downloadFile(getCss(partialCss).join("\n"), filename)
     }
 
-    private fun getStylesheet(): dynamic {
+    private fun getStylesheets(): dynamic {
         return js(
-            """for (var i = 0; i < document.styleSheets.length; i++) {
-               var node = document.styleSheets[i];
-               if (node.ownerNode.id === 'ksc-global-style') return node;
-           }"""
+            """
+                var nodes = [];
+                for (var i = 0; i < document.styleSheets.length; i++) {
+                    var node = document.styleSheets[i];
+                    if (node.ownerNode.id.startsWith('ksc-global-style')) nodes.push(node);
+                }
+                return nodes;"""
         )
     }
 
@@ -49,12 +52,15 @@ internal object GlobalCssAccess {
     @Suppress("UNUSED_PARAMETER")
     private fun mapNotNullRules(block: dynamic): dynamic {
         return js(
-            """var rules = StyledNext.getStylesheet().rules;
-           var result = [];
-           for (var i = 0; i < rules.length; i++) {
-               var value = block(rules[i].cssText);
-               if (value != null) {
-                   result.push(value);
+            """var result = [];
+           var stylesheets = StyledNext.getStylesheets();
+           for (var i = 0; i < stylesheets.length; i++) {
+               var rules = stylesheets[i].rules;
+               for (var j = 0; j < rules.length; j++) {
+                   var value = block(rules[j].cssText);
+                   if (value != null) {
+                       result.push(value);
+                   }
                }
            }
            return result;"""
@@ -88,8 +94,8 @@ internal object GlobalCssAccess {
                 getCss = { str: String? ->
                     getCss(str)
                 }
-                getStylesheet = {
-                    getStylesheet()
+                getStylesheets = {
+                    getStylesheets()
                 }
                 mapNotNullRules = { block: dynamic ->
                     mapNotNullRules(block)

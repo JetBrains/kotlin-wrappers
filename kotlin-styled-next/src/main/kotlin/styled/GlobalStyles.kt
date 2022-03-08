@@ -50,7 +50,7 @@ object GlobalStyles {
         GlobalCssAccess.useDevSheet(isDev)
     }
 
-    private var incrementedClassName: Int = 0
+    internal var incrementedClassName: Int = 0
         get() = field++
 
     internal var styledClasses = InjectedCssHolder()
