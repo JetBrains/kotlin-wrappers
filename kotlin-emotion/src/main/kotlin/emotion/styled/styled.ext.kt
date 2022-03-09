@@ -12,7 +12,7 @@ private inline val Props.theme: Theme
     get() = asDynamic().theme
 
 fun <P : PropsWithClassName> ElementType<P>.styled(
-    options: (StyledOptions.() -> Unit)? = null,
+    options: StyledOptions?,
     block: PropertiesBuilder.(P, Theme) -> Unit,
 ): StyledComponent<P> {
     val style = { props: P ->
@@ -22,10 +22,15 @@ fun <P : PropsWithClassName> ElementType<P>.styled(
     }
 
     val defaultOptions: StyledOptions = jso {
-        target = generateId(this@styled)
+        target = generateId()
     }
 
-    val finalOptions = Object.assign(defaultOptions, options?.let(::jso))
+    val finalOptions = Object.assign(defaultOptions, options)
 
     return styled(this, finalOptions)(style)
 }
+
+fun <P : PropsWithClassName> ElementType<P>.styled(
+    block: PropertiesBuilder.(P, Theme) -> Unit,
+): StyledComponent<P> =
+    styled(null, block)
