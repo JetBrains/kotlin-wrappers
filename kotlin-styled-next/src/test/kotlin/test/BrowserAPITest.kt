@@ -11,7 +11,7 @@ import kotlin.test.Test
 import kotlin.test.assertContains
 
 /**
- * Check library APIs that are available in browser and are helping to fetch information about used CSS
+ * Checks that library APIs used for debugging purposes work
  */
 class BrowserAPITest : TestBase() {
     @Test

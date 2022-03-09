@@ -1,7 +1,7 @@
 package styled
 
-import kotlinx.js.jso
 import kotlinx.browser.window
+import kotlinx.js.jso
 
 internal object GlobalCssAccess {
     private enum class SheetType {
