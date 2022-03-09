@@ -8,7 +8,7 @@ import org.w3c.dom.css.CSSStyleSheet
 internal typealias GroupId = Int
 
 internal const val styleId = "ksc-global-style"
-internal const val importStyleId = "ksc-global-style-imports"
+internal const val importStyleId = "$styleId-imports"
 
 internal enum class RuleType { REGULAR, IMPORT }
 

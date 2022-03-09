@@ -258,9 +258,7 @@ class RemoveCssTest : TestBase() {
         }
         clearAndInject(styledComponent)
         assertEquals(1, getRules().size)
-        println("hi1")
         removeInjectedStyleSheet()
-        println("hi2")
         assertEquals(0, getRules().size)
 
         val styledComponent2 = fc<Props> {
@@ -271,11 +269,8 @@ class RemoveCssTest : TestBase() {
                 }
             }
         }
-        println("hi3")
         clearAndInject(styledComponent)
-        println("hi4")
         injectAdditional(styledComponent2)
-        println("hi5")
         assertEquals(2, getRules().size)
         removeInjectedStyleSheet()
         assertEquals(0, getRules().size)
