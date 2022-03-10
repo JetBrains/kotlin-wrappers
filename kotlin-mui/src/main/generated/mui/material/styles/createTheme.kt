@@ -5,42 +5,42 @@
 
 package mui.material.styles
 
-external interface ThemeOptions {
-    var mixins: MixinsOptions?
+external interface ThemeOptions : mui.system.ThemeOptions {
+    override var mixins: MixinsOptions?
 
-    var components: dynamic
+    override var components: dynamic
 
-    var palette: PaletteOptions?
+    override var palette: PaletteOptions?
 
-    var shadows: dynamic
+    override var shadows: dynamic
 
-    var transitions: TransitionsOptions?
+    override var transitions: TransitionsOptions?
 
-    var typography: dynamic
+    override var typography: dynamic
 
-    var zIndex: dynamic
+    override var zIndex: dynamic
 
     var unstable_strictMode: Boolean?
 }
 
-external interface BaseTheme {
-    var mixins: Mixins
+external interface BaseTheme : mui.system.Theme {
+    override var mixins: Mixins
 
-    var palette: Palette
+    override var palette: Palette
 
-    var shadows: dynamic
+    override var shadows: dynamic
 
-    var transitions: Transitions
+    override var transitions: Transitions
 
-    var typography: dynamic
+    override var typography: dynamic
 
-    var zIndex: ZIndex
+    override var zIndex: ZIndex
 
     var unstable_strictMode: Boolean?
 }
 
 external interface Theme : BaseTheme {
-    var components: dynamic
+    override var components: dynamic
 }
 
 @JsName("default")
