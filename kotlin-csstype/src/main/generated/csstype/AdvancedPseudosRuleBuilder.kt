@@ -2,7 +2,6 @@
 
 @file:Suppress(
     "DECLARATION_CANT_BE_INLINED",
-    "NOTHING_TO_INLINE",
 )
 
 package csstype
@@ -10,171 +9,239 @@ package csstype
 interface AdvancedPseudosRuleBuilder<T : Any> : RuleBuilder<T> {
     inline fun cue(
         selector: Selector,
-    ): Selector =
-        Selector("::cue($selector)")
+        block: T.() -> Unit,
+    ) {
+        "::cue($selector)"(block)
+    }
 
     inline fun cue(
         selector: String,
-    ): Selector =
-        Selector("::cue($selector)")
+        block: T.() -> Unit,
+    ) {
+        "::cue($selector)"(block)
+    }
 
     inline fun cueRegion(
         selector: Selector,
-    ): Selector =
-        Selector("::cue-region($selector)")
+        block: T.() -> Unit,
+    ) {
+        "::cue-region($selector)"(block)
+    }
 
     inline fun cueRegion(
         selector: String,
-    ): Selector =
-        Selector("::cue-region($selector)")
+        block: T.() -> Unit,
+    ) {
+        "::cue-region($selector)"(block)
+    }
 
     inline fun part(
         selector: Selector,
-    ): Selector =
-        Selector("::part($selector)")
+        block: T.() -> Unit,
+    ) {
+        "::part($selector)"(block)
+    }
 
     inline fun part(
         selector: String,
-    ): Selector =
-        Selector("::part($selector)")
+        block: T.() -> Unit,
+    ) {
+        "::part($selector)"(block)
+    }
 
     inline fun slotted(
         selector: Selector,
-    ): Selector =
-        Selector("::slotted($selector)")
+        block: T.() -> Unit,
+    ) {
+        "::slotted($selector)"(block)
+    }
 
     inline fun slotted(
         selector: String,
-    ): Selector =
-        Selector("::slotted($selector)")
+        block: T.() -> Unit,
+    ) {
+        "::slotted($selector)"(block)
+    }
 
     inline fun dir(
         selector: Selector,
-    ): Selector =
-        Selector(":dir($selector)")
+        block: T.() -> Unit,
+    ) {
+        ":dir($selector)"(block)
+    }
 
     inline fun dir(
         selector: String,
-    ): Selector =
-        Selector(":dir($selector)")
+        block: T.() -> Unit,
+    ) {
+        ":dir($selector)"(block)
+    }
 
     inline fun has(
         selector: Selector,
-    ): Selector =
-        Selector(":has($selector)")
+        block: T.() -> Unit,
+    ) {
+        ":has($selector)"(block)
+    }
 
     inline fun has(
         selector: String,
-    ): Selector =
-        Selector(":has($selector)")
+        block: T.() -> Unit,
+    ) {
+        ":has($selector)"(block)
+    }
 
     inline fun host(
         selector: Selector,
-    ): Selector =
-        Selector(":host($selector)")
+        block: T.() -> Unit,
+    ) {
+        ":host($selector)"(block)
+    }
 
     inline fun host(
         selector: String,
-    ): Selector =
-        Selector(":host($selector)")
+        block: T.() -> Unit,
+    ) {
+        ":host($selector)"(block)
+    }
 
     inline fun hostContext(
         selector: Selector,
-    ): Selector =
-        Selector(":host-context($selector)")
+        block: T.() -> Unit,
+    ) {
+        ":host-context($selector)"(block)
+    }
 
     inline fun hostContext(
         selector: String,
-    ): Selector =
-        Selector(":host-context($selector)")
+        block: T.() -> Unit,
+    ) {
+        ":host-context($selector)"(block)
+    }
 
     inline fun `is`(
         selector: Selector,
-    ): Selector =
-        Selector(":is($selector)")
+        block: T.() -> Unit,
+    ) {
+        ":is($selector)"(block)
+    }
 
     inline fun `is`(
         selector: String,
-    ): Selector =
-        Selector(":is($selector)")
+        block: T.() -> Unit,
+    ) {
+        ":is($selector)"(block)
+    }
 
     inline fun lang(
         selector: Selector,
-    ): Selector =
-        Selector(":lang($selector)")
+        block: T.() -> Unit,
+    ) {
+        ":lang($selector)"(block)
+    }
 
     inline fun lang(
         selector: String,
-    ): Selector =
-        Selector(":lang($selector)")
+        block: T.() -> Unit,
+    ) {
+        ":lang($selector)"(block)
+    }
 
     inline fun matches(
         selector: Selector,
-    ): Selector =
-        Selector(":matches()($selector)")
+        block: T.() -> Unit,
+    ) {
+        ":matches()($selector)"(block)
+    }
 
     inline fun matches(
         selector: String,
-    ): Selector =
-        Selector(":matches()($selector)")
+        block: T.() -> Unit,
+    ) {
+        ":matches()($selector)"(block)
+    }
 
     inline fun not(
         selector: Selector,
-    ): Selector =
-        Selector(":not($selector)")
+        block: T.() -> Unit,
+    ) {
+        ":not($selector)"(block)
+    }
 
     inline fun not(
         selector: String,
-    ): Selector =
-        Selector(":not($selector)")
+        block: T.() -> Unit,
+    ) {
+        ":not($selector)"(block)
+    }
 
     inline fun nthChild(
         selector: Selector,
-    ): Selector =
-        Selector(":nth-child($selector)")
+        block: T.() -> Unit,
+    ) {
+        ":nth-child($selector)"(block)
+    }
 
     inline fun nthChild(
         selector: String,
-    ): Selector =
-        Selector(":nth-child($selector)")
+        block: T.() -> Unit,
+    ) {
+        ":nth-child($selector)"(block)
+    }
 
     inline fun nthLastChild(
         selector: Selector,
-    ): Selector =
-        Selector(":nth-last-child($selector)")
+        block: T.() -> Unit,
+    ) {
+        ":nth-last-child($selector)"(block)
+    }
 
     inline fun nthLastChild(
         selector: String,
-    ): Selector =
-        Selector(":nth-last-child($selector)")
+        block: T.() -> Unit,
+    ) {
+        ":nth-last-child($selector)"(block)
+    }
 
     inline fun nthLastOfType(
         selector: Selector,
-    ): Selector =
-        Selector(":nth-last-of-type($selector)")
+        block: T.() -> Unit,
+    ) {
+        ":nth-last-of-type($selector)"(block)
+    }
 
     inline fun nthLastOfType(
         selector: String,
-    ): Selector =
-        Selector(":nth-last-of-type($selector)")
+        block: T.() -> Unit,
+    ) {
+        ":nth-last-of-type($selector)"(block)
+    }
 
     inline fun nthOfType(
         selector: Selector,
-    ): Selector =
-        Selector(":nth-of-type($selector)")
+        block: T.() -> Unit,
+    ) {
+        ":nth-of-type($selector)"(block)
+    }
 
     inline fun nthOfType(
         selector: String,
-    ): Selector =
-        Selector(":nth-of-type($selector)")
+        block: T.() -> Unit,
+    ) {
+        ":nth-of-type($selector)"(block)
+    }
 
     inline fun where(
         selector: Selector,
-    ): Selector =
-        Selector(":where($selector)")
+        block: T.() -> Unit,
+    ) {
+        ":where($selector)"(block)
+    }
 
     inline fun where(
         selector: String,
-    ): Selector =
-        Selector(":where($selector)")
+        block: T.() -> Unit,
+    ) {
+        ":where($selector)"(block)
+    }
 }
