@@ -147,20 +147,6 @@ interface AdvancedPseudosRuleBuilder<T : Any> : RuleBuilder<T> {
         ":lang($selector)"(block)
     }
 
-    inline fun matches(
-        selector: Selector,
-        block: T.() -> Unit,
-    ) {
-        ":matches()($selector)"(block)
-    }
-
-    inline fun matches(
-        selector: String,
-        block: T.() -> Unit,
-    ) {
-        ":matches()($selector)"(block)
-    }
-
     inline fun not(
         selector: Selector,
         block: T.() -> Unit,
