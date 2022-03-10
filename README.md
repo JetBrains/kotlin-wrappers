@@ -59,8 +59,8 @@ val kotlinWrappersVersion = "0.0.1-pre.317-kotlin-1.6.10"
 
 dependencies {
     implementation(enforcedPlatform("org.jetbrains.kotlin-wrappers:kotlin-wrappers-bom:$kotlinWrappersVersion"))
+    implementation("org.jetbrains.kotlin-wrappers:kotlin-emotion")
     implementation("org.jetbrains.kotlin-wrappers:kotlin-react")
-    implementation("org.jetbrains.kotlin-wrappers:kotlin-react-css")
     implementation("org.jetbrains.kotlin-wrappers:kotlin-react-dom")
     implementation("org.jetbrains.kotlin-wrappers:kotlin-react-table")
     // other wrappers
@@ -77,8 +77,8 @@ val kotlinWrappersVersion = "0.0.1-pre.317-kotlin-1.6.10"
 
 dependencies {
     implementation(enforcedPlatform(kotlinw("wrappers-bom:$kotlinWrappersVersion")))
+    implementation(kotlinw("emotion"))
     implementation(kotlinw("react"))
-    implementation(kotlinw("react-css"))
     implementation(kotlinw("react-dom"))
     implementation(kotlinw("react-table"))
     // other wrappers

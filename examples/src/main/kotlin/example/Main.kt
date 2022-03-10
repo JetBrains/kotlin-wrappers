@@ -4,11 +4,11 @@ import csstype.BackgroundColor
 import csstype.Color
 import csstype.ColorProperty
 import csstype.px
+import emotion.react.css
 import kotlinx.js.Object
 import kotlinx.js.jso
 import org.w3c.dom.HTMLDivElement
 import react.*
-import react.css.css
 import react.dom.html.HTMLAttributes
 import react.dom.html.InputType
 import react.dom.html.ReactHTML.div
