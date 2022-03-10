@@ -16,7 +16,7 @@ external interface ThemeOptions {
 
     var mixins: dynamic
 
-    var palette: Record<String, *>?
+    var palette: dynamic /* Record<String, *> */
 
     var shadows: dynamic
 
@@ -38,7 +38,7 @@ external interface Theme {
 
     var direction: Direction
 
-    var palette: Record<String, *>
+    var palette: dynamic /* Record<String, *> */
 
     var shadows: dynamic
 
