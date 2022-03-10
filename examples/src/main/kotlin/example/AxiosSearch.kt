@@ -1,10 +1,10 @@
 package example
 
 import csstype.Color
+import emotion.react.css
 import kotlinx.js.jso
 import react.FC
 import react.Props
-import react.css.css
 import react.dom.html.InputType
 import react.dom.html.ReactHTML.br
 import react.dom.html.ReactHTML.div

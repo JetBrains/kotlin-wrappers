@@ -8,5 +8,5 @@ dependencies {
     api(project(":kotlin-csstype"))
     api(project(":kotlin-react-core"))
 
-    implementation(project(":kotlin-emotion"))
+    api(project(":kotlin-emotion"))
 }
