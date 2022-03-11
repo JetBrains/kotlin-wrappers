@@ -49,7 +49,7 @@ external interface SelectUnstyledCommonProps :
 
     override var children: react.ReactNode?
 
-    override var className: String?
+    override var className: csstype.ClassName?
 
     var component: react.ElementType<*>?
 

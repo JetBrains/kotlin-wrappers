@@ -18,7 +18,7 @@ external interface OptionUnstyledProps<TValue> :
      */
     var disabled: Boolean?
 
-    override var className: String?
+    override var className: csstype.ClassName?
 
     /**
      * The component used for the Root slot.

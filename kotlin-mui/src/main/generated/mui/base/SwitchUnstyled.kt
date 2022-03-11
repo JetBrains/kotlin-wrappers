@@ -11,7 +11,7 @@ external interface SwitchUnstyledProps :
     /**
      * Class name applied to the root element.
      */
-    override var className: String?
+    override var className: csstype.ClassName?
 
     /**
      * The component used for the Root slot.

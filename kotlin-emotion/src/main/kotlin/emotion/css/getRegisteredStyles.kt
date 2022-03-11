@@ -3,9 +3,10 @@
 
 package emotion.css
 
+import csstype.ClassName
 import kotlinx.js.ReadonlyArray
 
 external fun getRegisteredStyles(
     registeredStyles: ReadonlyArray<String>,
-    className: String,
+    className: ClassName,
 ): String

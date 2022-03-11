@@ -19,7 +19,7 @@ external interface CollapseProps :
      */
     override var children: react.ReactNode?
 
-    override var className: String?
+    override var className: csstype.ClassName?
 
     /**
      * Override or extend the styles applied to the component.

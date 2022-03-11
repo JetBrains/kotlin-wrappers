@@ -1,5 +1,6 @@
 package emotion.react
 
+import csstype.ClassName
 import csstype.PropertiesBuilder
 import emotion.css.cx
 import kotlinx.js.jso
@@ -20,7 +21,7 @@ inline fun PropsWithClassName.css(
 }
 
 inline fun PropsWithClassName.css(
-    vararg classNames: String?,
+    vararg classNames: ClassName?,
     crossinline block: PropertiesBuilder.() -> Unit,
 ) {
     className = cx(classNames = classNames + className(block))

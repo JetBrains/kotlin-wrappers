@@ -3,4 +3,8 @@
 
 package emotion.css
 
-external fun cx(vararg classNames: String?): String
+import csstype.ClassName
+
+external fun cx(
+    vararg classNames: ClassName?,
+): ClassName

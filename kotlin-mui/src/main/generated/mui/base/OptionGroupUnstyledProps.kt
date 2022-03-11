@@ -10,7 +10,7 @@ external interface OptionGroupUnstyledProps :
      */
     var label: react.ReactNode?
 
-    override var className: String?
+    override var className: csstype.ClassName?
 
     override var children: react.ReactNode?
 

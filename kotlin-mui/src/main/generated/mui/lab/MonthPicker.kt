@@ -16,7 +16,7 @@ external interface MonthPickerProps<TDate> :
     /**
      * className applied to the root element.
      */
-    override var className: String?
+    override var className: csstype.ClassName?
 
     /**
      * Override or extend the styles applied to the component.
