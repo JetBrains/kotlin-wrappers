@@ -3,13 +3,17 @@
 @file:JsModule("@mui/material/AppBar")
 @file:JsNonModule
 
+@file:Suppress(
+    "VIRTUAL_MEMBER_HIDDEN",
+)
+
 package mui.material
 
 import mui.material.styles.Theme
 import mui.system.SxProps
 
 external interface AppBarProps :
-    react.dom.html.HTMLAttributes<org.w3c.dom.HTMLElement>,
+    PaperProps,
     mui.system.PropsWithSx,
     mui.types.PropsWithComponent {
     /**
