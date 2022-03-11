@@ -3,4 +3,8 @@
 
 package emotion.css
 
-external fun merge(className: String): String
+import csstype.ClassName
+
+external fun merge(
+    className: ClassName,
+): String

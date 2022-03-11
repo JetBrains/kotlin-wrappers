@@ -7,7 +7,7 @@ external interface MenuItemUnstyledProps :
     react.PropsWithClassName {
     override var children: react.ReactNode?
 
-    override var className: String?
+    override var className: csstype.ClassName?
 
     var onClick: react.dom.events.MouseEventHandler<org.w3c.dom.HTMLElement>?
 

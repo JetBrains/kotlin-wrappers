@@ -13,7 +13,7 @@ external interface TabPanelUnstyledOwnProps :
      */
     override var children: react.ReactNode?
 
-    override var className: String?
+    override var className: csstype.ClassName?
 
     /**
      * The value of the TabPanel. It will be shown when the Tab with the corresponding value is selected.

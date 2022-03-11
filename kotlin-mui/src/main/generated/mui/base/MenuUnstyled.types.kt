@@ -20,7 +20,7 @@ external interface MenuUnstyledProps :
 
     override var children: react.ReactNode?
 
-    override var className: String?
+    override var className: csstype.ClassName?
 
     var component: react.ElementType<*>?
 

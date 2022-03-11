@@ -70,7 +70,7 @@ external interface InputUnstyledOwnProps :
     /**
      * Class name applied to the root element.
      */
-    override var className: String?
+    override var className: csstype.ClassName?
 
     /**
      * The components used for each slot inside the InputBase.

@@ -20,7 +20,7 @@ external interface ButtonUnstyledOwnProps :
 
     override var children: react.ReactNode?
 
-    override var className: String?
+    override var className: csstype.ClassName?
 
     /**
      * The components used for each slot inside the Button.

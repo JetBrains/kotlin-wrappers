@@ -1,5 +1,6 @@
 package example
 
+import csstype.ClassName
 import react.FC
 import react.Props
 import react.dom.html.ReactHTML.button
@@ -22,7 +23,7 @@ external interface SquareProps : Props {
 // Renders a single square, the board has 3x3 squares
 val Square = FC<SquareProps> { props ->
     button {
-        className = "square"
+        className = ClassName("square")
         onClick = { props.onClick() }
 
         val displayText = props.squareValue ?: ""
@@ -38,7 +39,7 @@ external interface BoardProps : Props {
 val Board = FC<BoardProps> { props ->
     div {
         div {
-            className = "board-row"
+            className = ClassName("board-row")
 
             Square {
                 squareValue = props.squares[0]
@@ -54,7 +55,7 @@ val Board = FC<BoardProps> { props ->
             }
         }
         div {
-            className = "board-row"
+            className = ClassName("board-row")
 
             Square {
                 squareValue = props.squares[3]
@@ -70,7 +71,7 @@ val Board = FC<BoardProps> { props ->
             }
         }
         div {
-            className = "board-row"
+            className = ClassName("board-row")
 
             Square {
                 squareValue = props.squares[6]
@@ -163,10 +164,10 @@ val TicTacToeApp = FC<TicTacToeProps> {
     }
 
     div {
-        className = "game"
+        className = ClassName("game")
 
         div {
-            className = "game-board"
+            className = ClassName("game-board")
 
             Board {
                 squares = current
@@ -174,7 +175,7 @@ val TicTacToeApp = FC<TicTacToeProps> {
             }
         }
         div {
-            className = "game-info"
+            className = ClassName("game-info")
 
             div {
                 +status
