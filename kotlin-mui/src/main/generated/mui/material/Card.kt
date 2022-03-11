@@ -3,13 +3,17 @@
 @file:JsModule("@mui/material/Card")
 @file:JsNonModule
 
+@file:Suppress(
+    "VIRTUAL_MEMBER_HIDDEN",
+)
+
 package mui.material
 
 import mui.material.styles.Theme
 import mui.system.SxProps
 
 external interface CardProps :
-    react.dom.html.HTMLAttributes<org.w3c.dom.HTMLDivElement>,
+    PaperProps,
     mui.system.PropsWithSx,
     mui.types.PropsWithComponent {
     /**
