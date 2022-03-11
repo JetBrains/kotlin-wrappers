@@ -1,7 +1,3 @@
-@file:Suppress(
-    "DECLARATION_CANT_BE_INLINED",
-)
-
 package emotion.css
 
 import csstype.*
