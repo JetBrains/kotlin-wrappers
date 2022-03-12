@@ -9,7 +9,7 @@ import react.PropsWithClassName
 @PublishedApi
 internal inline fun className(
     crossinline block: PropertiesBuilder.() -> Unit,
-): String =
+): ClassName =
     emotion.css.css(jso(block))
 
 // Props

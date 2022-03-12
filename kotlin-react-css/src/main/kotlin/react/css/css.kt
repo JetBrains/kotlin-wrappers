@@ -1,5 +1,6 @@
 package react.css
 
+import csstype.ClassName
 import csstype.PropertiesBuilder
 import emotion.react.css
 import react.PropsWithClassName
@@ -17,7 +18,7 @@ inline fun PropsWithClassName.css(
     message = "Will be removed soon! Use `emotion.react.css` instead.",
 )
 inline fun PropsWithClassName.css(
-    vararg classNames: String?,
+    vararg classNames: ClassName?,
     crossinline block: PropertiesBuilder.() -> Unit,
 ) {
     css(classNames = classNames, block)

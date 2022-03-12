@@ -1,5 +1,6 @@
 package styled
 
+import csstype.ClassName
 import kotlinext.js.invoke
 import kotlinx.browser.window
 import kotlinx.css.CssBuilder
@@ -221,7 +222,7 @@ object Styled {
             styledProps.css = css.toString()
         }
         if (css.classes.isNotEmpty()) {
-            styledProps.className = css.classes.joinToString(separator = " ")
+            styledProps.className = ClassName(css.classes.joinToString(separator = " "))
         }
         if (css.styleName.isNotEmpty()) {
             styledProps.asDynamic()["data-style"] = css.styleName.joinToString(separator = " ")
