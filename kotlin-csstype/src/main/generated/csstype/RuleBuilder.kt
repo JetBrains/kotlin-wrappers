@@ -15,6 +15,12 @@ interface RuleBuilder<T : Any> {
         this@RuleBuilder.unsafeCast<Rules>()[this] = jso(block)
     }
 
+    inline operator fun ClassName.invoke(
+        block: T.() -> Unit,
+    ) {
+        Selector(".$this")(block)
+    }
+
     inline operator fun String.invoke(
         block: T.() -> Unit,
     ) {
