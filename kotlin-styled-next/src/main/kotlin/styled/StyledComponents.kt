@@ -144,7 +144,7 @@ internal fun customStyled(type: dynamic): ElementType<StyledProps> {
         if (props.className != undefined) {
             className = "${props.className} $className"
         }
-        newProps.className = className
+        newProps.className = csstype.ClassName(className)
         newProps.ref = rRef
         delete(newProps.css)
         delete(newProps.classes)
