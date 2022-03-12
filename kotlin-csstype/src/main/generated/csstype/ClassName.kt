@@ -6,9 +6,9 @@
 
 package csstype
 
-typealias ClassName = String
+external interface ClassName
 
 inline fun ClassName(
     value: String,
-): String =
-    value
+): ClassName =
+    value.unsafeCast<ClassName>()
