@@ -2,13 +2,15 @@
 
 package mui.material
 
+import csstype.ClassName
+
 external interface StepContentClasses {
     /** Styles applied to the root element. */
-    var root: String
+    var root: ClassName
 
     /** Styles applied to the root element if `last={true}` (controlled by `Step`). */
-    var last: String
+    var last: ClassName
 
     /** Styles applied to the Transition component. */
-    var transition: String
+    var transition: ClassName
 }

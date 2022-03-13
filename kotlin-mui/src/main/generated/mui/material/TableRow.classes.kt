@@ -2,19 +2,21 @@
 
 package mui.material
 
+import csstype.ClassName
+
 external interface TableRowClasses {
     /** Styles applied to the root element. */
-    var root: String
+    var root: ClassName
 
     /** State class applied to the root element if `selected={true}`. */
-    var selected: String
+    var selected: ClassName
 
     /** State class applied to the root element if `hover={true}`. */
-    var hover: String
+    var hover: ClassName
 
     /** Styles applied to the root element if table variant="head". */
-    var head: String
+    var head: ClassName
 
     /** Styles applied to the root element if table variant="footer". */
-    var footer: String
+    var footer: ClassName
 }

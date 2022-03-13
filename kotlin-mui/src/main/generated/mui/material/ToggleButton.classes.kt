@@ -2,31 +2,33 @@
 
 package mui.material
 
+import csstype.ClassName
+
 external interface ToggleButtonClasses {
     /** Styles applied to the root element. */
-    var root: String
+    var root: ClassName
 
     /** State class applied to the root element if `disabled={true}`. */
-    var disabled: String
+    var disabled: ClassName
 
     /** State class applied to the root element if `selected={true}`. */
-    var selected: String
+    var selected: ClassName
 
     /** State class applied to the root element if `color="standard"`. */
-    var standard: String
+    var standard: ClassName
 
     /** State class applied to the root element if `color="primary"`. */
-    var primary: String
+    var primary: ClassName
 
     /** State class applied to the root element if `color="secondary"`. */
-    var secondary: String
+    var secondary: ClassName
 
     /** Styles applied to the root element if `size="small"`. */
-    var sizeSmall: String
+    var sizeSmall: ClassName
 
     /** Styles applied to the root element if `size="medium"`. */
-    var sizeMedium: String
+    var sizeMedium: ClassName
 
     /** Styles applied to the root element if `size="large"`. */
-    var sizeLarge: String
+    var sizeLarge: ClassName
 }

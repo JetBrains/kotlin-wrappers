@@ -2,13 +2,15 @@
 
 package mui.material
 
+import csstype.ClassName
+
 external interface CardMediaClasses {
     /** Styles applied to the root element. */
-    var root: String
+    var root: ClassName
 
     /** Styles applied to the root element if `component="video, audio, picture, iframe, or img"`. */
-    var media: String
+    var media: ClassName
 
     /** Styles applied to the root element if `component="picture or img"`. */
-    var img: String
+    var img: ClassName
 }

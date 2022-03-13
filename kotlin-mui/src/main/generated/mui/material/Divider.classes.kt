@@ -2,46 +2,48 @@
 
 package mui.material
 
+import csstype.ClassName
+
 external interface DividerClasses {
     /** Styles applied to the root element. */
-    var root: String
+    var root: ClassName
 
     /** Styles applied to the root element if `absolute={true}`. */
-    var absolute: String
+    var absolute: ClassName
 
     /** Styles applied to the root element if `variant="inset"`. */
-    var inset: String
+    var inset: ClassName
 
     /** Styles applied to the root element if `variant="fullWidth"`. */
-    var fullWidth: String
+    var fullWidth: ClassName
 
     /** Styles applied to the root element if `light={true}`. */
-    var light: String
+    var light: ClassName
 
     /** Styles applied to the root element if `variant="middle"`. */
-    var middle: String
+    var middle: ClassName
 
     /** Styles applied to the root element if `orientation="vertical"`. */
-    var vertical: String
+    var vertical: ClassName
 
     /** Styles applied to the root element if `flexItem={true}`. */
-    var flexItem: String
+    var flexItem: ClassName
 
     /** Styles applied to the root element if divider have text. */
-    var withChildren: String
+    var withChildren: ClassName
 
     /** Styles applied to the root element if divider have text and `orientation="vertical"`. */
-    var withChildrenVertical: String
+    var withChildrenVertical: ClassName
 
     /** Styles applied to the root element if `textAlign="right" orientation="horizontal"`. */
-    var textAlignRight: String
+    var textAlignRight: ClassName
 
     /** Styles applied to the root element if `textAlign="left" orientation="horizontal"`. */
-    var textAlignLeft: String
+    var textAlignLeft: ClassName
 
     /** Styles applied to the span children element if `orientation="horizontal"`. */
-    var wrapper: String
+    var wrapper: ClassName
 
     /** Styles applied to the span children element if `orientation="vertical"`. */
-    var wrapperVertical: String
+    var wrapperVertical: ClassName
 }

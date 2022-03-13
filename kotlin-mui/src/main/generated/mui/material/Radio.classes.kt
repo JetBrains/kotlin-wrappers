@@ -2,19 +2,21 @@
 
 package mui.material
 
+import csstype.ClassName
+
 external interface RadioClasses {
     /** Styles applied to the root element. */
-    var root: String
+    var root: ClassName
 
     /** State class applied to the root element if `checked={true}`. */
-    var checked: String
+    var checked: ClassName
 
     /** State class applied to the root element if `disabled={true}`. */
-    var disabled: String
+    var disabled: ClassName
 
     /** Styles applied to the root element if `color="primary"`. */
-    var colorPrimary: String
+    var colorPrimary: ClassName
 
     /** Styles applied to the root element if `color="secondary"`. */
-    var colorSecondary: String
+    var colorSecondary: ClassName
 }

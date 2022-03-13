@@ -2,25 +2,27 @@
 
 package mui.material
 
+import csstype.ClassName
+
 external interface SpeedDialActionClasses {
     /** Styles applied to the Fab component. */
-    var fab: String
+    var fab: ClassName
 
     /** Styles applied to the Fab component if `open={false}`. */
-    var fabClosed: String
+    var fabClosed: ClassName
 
     /** Styles applied to the root element if `tooltipOpen={true}`. */
-    var staticTooltip: String
+    var staticTooltip: ClassName
 
     /** Styles applied to the root element if `tooltipOpen={true}` and `open={false}`. */
-    var staticTooltipClosed: String
+    var staticTooltipClosed: ClassName
 
     /** Styles applied to the static tooltip label if `tooltipOpen={true}`. */
-    var staticTooltipLabel: String
+    var staticTooltipLabel: ClassName
 
     /** Styles applied to the root element if `tooltipOpen={true}` and `tooltipPlacement="left"`` */
-    var tooltipPlacementLeft: String
+    var tooltipPlacementLeft: ClassName
 
     /** Styles applied to the root element if `tooltipOpen={true}` and `tooltipPlacement="right"`` */
-    var tooltipPlacementRight: String
+    var tooltipPlacementRight: ClassName
 }

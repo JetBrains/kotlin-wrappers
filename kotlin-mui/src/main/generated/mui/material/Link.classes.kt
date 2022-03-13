@@ -2,22 +2,24 @@
 
 package mui.material
 
+import csstype.ClassName
+
 external interface LinkClasses {
     /** Styles applied to the root element. */
-    var root: String
+    var root: ClassName
 
     /** Styles applied to the root element if `underline="none"`. */
-    var underlineNone: String
+    var underlineNone: ClassName
 
     /** Styles applied to the root element if `underline="hover"`. */
-    var underlineHover: String
+    var underlineHover: ClassName
 
     /** Styles applied to the root element if `underline="always"`. */
-    var underlineAlways: String
+    var underlineAlways: ClassName
 
     /** Styles applied to the root element if `component="button"`. */
-    var button: String
+    var button: ClassName
 
     /** State class applied to the root element if the link is keyboard focused. */
-    var focusVisible: String
+    var focusVisible: ClassName
 }

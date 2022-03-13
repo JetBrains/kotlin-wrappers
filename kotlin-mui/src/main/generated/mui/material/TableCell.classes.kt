@@ -2,43 +2,45 @@
 
 package mui.material
 
+import csstype.ClassName
+
 external interface TableCellClasses {
     /** Styles applied to the root element. */
-    var root: String
+    var root: ClassName
 
     /** Styles applied to the root element if `variant="head"` or `context.table.head`. */
-    var head: String
+    var head: ClassName
 
     /** Styles applied to the root element if `variant="body"` or `context.table.body`. */
-    var body: String
+    var body: ClassName
 
     /** Styles applied to the root element if `variant="footer"` or `context.table.footer`. */
-    var footer: String
+    var footer: ClassName
 
     /** Styles applied to the root element if `size="small"`. */
-    var sizeSmall: String
+    var sizeSmall: ClassName
 
     /** Styles applied to the root element if `size="medium"`. */
-    var sizeMedium: String
+    var sizeMedium: ClassName
 
     /** Styles applied to the root element if `padding="checkbox"`. */
-    var paddingCheckbox: String
+    var paddingCheckbox: ClassName
 
     /** Styles applied to the root element if `padding="none"`. */
-    var paddingNone: String
+    var paddingNone: ClassName
 
     /** Styles applied to the root element if `align="left"`. */
-    var alignLeft: String
+    var alignLeft: ClassName
 
     /** Styles applied to the root element if `align="center"`. */
-    var alignCenter: String
+    var alignCenter: ClassName
 
     /** Styles applied to the root element if `align="right"`. */
-    var alignRight: String
+    var alignRight: ClassName
 
     /** Styles applied to the root element if `align="justify"`. */
-    var alignJustify: String
+    var alignJustify: ClassName
 
     /** Styles applied to the root element if `context.table.stickyHeader={true}`. */
-    var stickyHeader: String
+    var stickyHeader: ClassName
 }

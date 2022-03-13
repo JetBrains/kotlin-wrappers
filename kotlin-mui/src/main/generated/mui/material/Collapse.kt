@@ -5,6 +5,7 @@
 
 package mui.material
 
+import csstype.ClassName
 import mui.material.styles.Theme
 import mui.system.SxProps
 
@@ -19,7 +20,7 @@ external interface CollapseProps :
      */
     override var children: react.ReactNode?
 
-    override var className: csstype.ClassName?
+    override var className: ClassName?
 
     /**
      * Override or extend the styles applied to the component.

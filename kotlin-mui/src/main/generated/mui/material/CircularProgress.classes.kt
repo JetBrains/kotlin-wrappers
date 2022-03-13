@@ -2,34 +2,36 @@
 
 package mui.material
 
+import csstype.ClassName
+
 external interface CircularProgressClasses {
     /** Styles applied to the root element. */
-    var root: String
+    var root: ClassName
 
     /** Styles applied to the root element if `variant="determinate"`. */
-    var determinate: String
+    var determinate: ClassName
 
     /** Styles applied to the root element if `variant="indeterminate"`. */
-    var indeterminate: String
+    var indeterminate: ClassName
 
     /** Styles applied to the root element if `color="primary"`. */
-    var colorPrimary: String
+    var colorPrimary: ClassName
 
     /** Styles applied to the root element if `color="secondary"`. */
-    var colorSecondary: String
+    var colorSecondary: ClassName
 
     /** Styles applied to the svg element. */
-    var svg: String
+    var svg: ClassName
 
     /** Styles applied to the `circle` svg path. */
-    var circle: String
+    var circle: ClassName
 
     /** Styles applied to the `circle` svg path if `variant="determinate"`. */
-    var circleDeterminate: String
+    var circleDeterminate: ClassName
 
     /** Styles applied to the `circle` svg path if `variant="indeterminate"`. */
-    var circleIndeterminate: String
+    var circleIndeterminate: ClassName
 
     /** Styles applied to the `circle` svg path if `disableShrink={true}`. */
-    var circleDisableShrink: String
+    var circleDisableShrink: ClassName
 }

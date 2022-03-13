@@ -5,6 +5,7 @@
 
 package mui.material
 
+import csstype.ClassName
 import mui.material.styles.Theme
 import mui.system.SxProps
 
@@ -14,7 +15,7 @@ external interface CardActionAreaProps : mui.system.PropsWithSx {
      */
     var classes: CardActionAreaClasses?
 
-    var focusVisibleClassName: String?
+    var focusVisibleClassName: ClassName?
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.

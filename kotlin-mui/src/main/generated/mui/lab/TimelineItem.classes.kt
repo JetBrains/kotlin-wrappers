@@ -2,19 +2,21 @@
 
 package mui.lab
 
+import csstype.ClassName
+
 external interface TimelineItemClasses {
     /** Styles applied to the root element. */
-    var root: String
+    var root: ClassName
 
     /** Styles applied to the root element if `position="left"`. */
-    var positionLeft: String
+    var positionLeft: ClassName
 
     /** Styles applied to the root element if `position="right"`. */
-    var positionRight: String
+    var positionRight: ClassName
 
     /** Styles applied to the root element if `position="alternate"`. */
-    var positionAlternate: String
+    var positionAlternate: ClassName
 
     /** Styles applied to the root element if TimelineOppositeContent isn't provided. */
-    var missingOppositeContent: String
+    var missingOppositeContent: ClassName
 }

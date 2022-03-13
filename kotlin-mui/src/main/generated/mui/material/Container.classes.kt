@@ -2,28 +2,30 @@
 
 package mui.material
 
+import csstype.ClassName
+
 external interface ContainerClasses {
     /** Styles applied to the root element. */
-    var root: String
+    var root: ClassName
 
     /** Styles applied to the root element if `disableGutters={true}`. */
-    var disableGutters: String
+    var disableGutters: ClassName
 
     /** Styles applied to the root element if `fixed={true}`. */
-    var fixed: String
+    var fixed: ClassName
 
     /** Styles applied to the root element if `maxWidth="xs"`. */
-    var maxWidthXs: String
+    var maxWidthXs: ClassName
 
     /** Styles applied to the root element if `maxWidth="sm"`. */
-    var maxWidthSm: String
+    var maxWidthSm: ClassName
 
     /** Styles applied to the root element if `maxWidth="md"`. */
-    var maxWidthMd: String
+    var maxWidthMd: ClassName
 
     /** Styles applied to the root element if `maxWidth="lg"`. */
-    var maxWidthLg: String
+    var maxWidthLg: ClassName
 
     /** Styles applied to the root element if `maxWidth="xl"`. */
-    var maxWidthXl: String
+    var maxWidthXl: ClassName
 }

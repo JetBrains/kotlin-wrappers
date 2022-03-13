@@ -2,55 +2,57 @@
 
 package mui.material
 
+import csstype.ClassName
+
 external interface RatingClasses {
     /** Styles applied to the root element. */
-    var root: String
+    var root: ClassName
 
     /** Styles applied to the root element if `size="small"`. */
-    var sizeSmall: String
+    var sizeSmall: ClassName
 
     /** Styles applied to the root element if `size="medium"`. */
-    var sizeMedium: String
+    var sizeMedium: ClassName
 
     /** Styles applied to the root element if `size="large"`. */
-    var sizeLarge: String
+    var sizeLarge: ClassName
 
     /** Styles applied to the root element if `readOnly={true}`. */
-    var readOnly: String
+    var readOnly: ClassName
 
     /** State class applied to the root element if `disabled={true}`. */
-    var disabled: String
+    var disabled: ClassName
 
     /** State class applied to the root element if keyboard focused. */
-    var focusVisible: String
+    var focusVisible: ClassName
 
     /** Visually hide an element. */
-    var visuallyHidden: String
+    var visuallyHidden: ClassName
 
     /** Styles applied to the label elements. */
-    var label: String
+    var label: ClassName
 
     /** Styles applied to the label of the "no value" input when it is active. */
-    var labelEmptyValueActive: String
+    var labelEmptyValueActive: ClassName
 
     /** Styles applied to the icon wrapping elements. */
-    var icon: String
+    var icon: ClassName
 
     /** Styles applied to the icon wrapping elements when empty. */
-    var iconEmpty: String
+    var iconEmpty: ClassName
 
     /** Styles applied to the icon wrapping elements when filled. */
-    var iconFilled: String
+    var iconFilled: ClassName
 
     /** Styles applied to the icon wrapping elements when hover. */
-    var iconHover: String
+    var iconHover: ClassName
 
     /** Styles applied to the icon wrapping elements when focus. */
-    var iconFocus: String
+    var iconFocus: ClassName
 
     /** Styles applied to the icon wrapping elements when active. */
-    var iconActive: String
+    var iconActive: ClassName
 
     /** Styles applied to the icon wrapping elements when decimals are necessary. */
-    var decimal: String
+    var decimal: ClassName
 }

@@ -2,7 +2,9 @@
 
 package mui.base
 
+import csstype.ClassName
+
 external interface TabPanelUnstyledClasses {
-    var root: String
-    var hidden: String
+    var root: ClassName
+    var hidden: ClassName
 }

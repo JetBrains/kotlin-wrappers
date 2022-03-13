@@ -2,19 +2,21 @@
 
 package mui.material
 
+import csstype.ClassName
+
 external interface StepIconClasses {
     /** Styles applied to the root element. */
-    var root: String
+    var root: ClassName
 
     /** Styles applied to the SVG text element. */
-    var text: String
+    var text: ClassName
 
     /** State class applied to the root element if `active={true}`. */
-    var active: String
+    var active: ClassName
 
     /** State class applied to the root element if `completed={true}`. */
-    var completed: String
+    var completed: ClassName
 
     /** State class applied to the root element if `error={true}`. */
-    var error: String
+    var error: ClassName
 }

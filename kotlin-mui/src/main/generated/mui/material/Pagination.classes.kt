@@ -2,16 +2,18 @@
 
 package mui.material
 
+import csstype.ClassName
+
 external interface PaginationClasses {
     /** Styles applied to the root element. */
-    var root: String
+    var root: ClassName
 
     /** Styles applied to the ul element. */
-    var ul: String
+    var ul: ClassName
 
     /** Styles applied to the root element if `variant="outlined"`. */
-    var outlined: String
+    var outlined: ClassName
 
     /** Styles applied to the root element if `variant="text"`. */
-    var text: String
+    var text: ClassName
 }

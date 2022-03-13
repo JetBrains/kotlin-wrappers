@@ -2,40 +2,42 @@
 
 package mui.material
 
+import csstype.ClassName
+
 external interface DrawerClasses {
     /** Styles applied to the root element. */
-    var root: String
+    var root: ClassName
 
     /** Styles applied to the root element if `variant="permanent or persistent"`. */
-    var docked: String
+    var docked: ClassName
 
     /** Styles applied to the Paper component. */
-    var paper: String
+    var paper: ClassName
 
     /** Styles applied to the Paper component if `anchor="left"`. */
-    var paperAnchorLeft: String
+    var paperAnchorLeft: ClassName
 
     /** Styles applied to the Paper component if `anchor="right"`. */
-    var paperAnchorRight: String
+    var paperAnchorRight: ClassName
 
     /** Styles applied to the Paper component if `anchor="top"`. */
-    var paperAnchorTop: String
+    var paperAnchorTop: ClassName
 
     /** Styles applied to the Paper component if `anchor="bottom"`. */
-    var paperAnchorBottom: String
+    var paperAnchorBottom: ClassName
 
     /** Styles applied to the Paper component if `anchor="left"` and `variant` is not "temporary". */
-    var paperAnchorDockedLeft: String
+    var paperAnchorDockedLeft: ClassName
 
     /** Styles applied to the Paper component if `anchor="top"` and `variant` is not "temporary". */
-    var paperAnchorDockedTop: String
+    var paperAnchorDockedTop: ClassName
 
     /** Styles applied to the Paper component if `anchor="right"` and `variant` is not "temporary". */
-    var paperAnchorDockedRight: String
+    var paperAnchorDockedRight: ClassName
 
     /** Styles applied to the Paper component if `anchor="bottom"` and `variant` is not "temporary". */
-    var paperAnchorDockedBottom: String
+    var paperAnchorDockedBottom: ClassName
 
     /** Styles applied to the Modal component. */
-    var modal: String
+    var modal: ClassName
 }

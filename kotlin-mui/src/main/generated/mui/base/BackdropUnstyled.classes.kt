@@ -2,10 +2,12 @@
 
 package mui.base
 
+import csstype.ClassName
+
 external interface BackdropUnstyledClasses {
     /** Styles applied to the root element. */
-    var root: String
+    var root: ClassName
 
     /** Styles applied to the root element if `invisible={true}`. */
-    var invisible: String
+    var invisible: ClassName
 }

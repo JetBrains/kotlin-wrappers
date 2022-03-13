@@ -2,10 +2,12 @@
 
 package mui.material
 
+import csstype.ClassName
+
 external interface ListItemSecondaryActionClasses {
     /** Styles applied to the root element. */
-    var root: String
+    var root: ClassName
 
     /** Styles applied to the root element when the parent `ListItem` has `disableGutters={true}`. */
-    var disableGutters: String
+    var disableGutters: ClassName
 }

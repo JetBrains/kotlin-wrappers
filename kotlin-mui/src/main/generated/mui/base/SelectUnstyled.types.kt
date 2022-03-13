@@ -2,6 +2,8 @@
 
 package mui.base
 
+import csstype.ClassName
+
 external interface SelectUnstyledProps<TValue> : react.Props {
     /**
      * The components used for each slot inside the Select.
@@ -49,7 +51,7 @@ external interface SelectUnstyledCommonProps :
 
     override var children: react.ReactNode?
 
-    override var className: csstype.ClassName?
+    override var className: ClassName?
 
     var component: react.ElementType<*>?
 

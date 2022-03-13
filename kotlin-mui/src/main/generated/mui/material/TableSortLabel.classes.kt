@@ -2,19 +2,21 @@
 
 package mui.material
 
+import csstype.ClassName
+
 external interface TableSortLabelClasses {
     /** Styles applied to the root element. */
-    var root: String
+    var root: ClassName
 
     /** State class applied to the root element if `active={true}`. */
-    var active: String
+    var active: ClassName
 
     /** Styles applied to the icon component. */
-    var icon: String
+    var icon: ClassName
 
     /** Styles applied to the icon component if `direction="desc"`. */
-    var iconDirectionDesc: String
+    var iconDirectionDesc: ClassName
 
     /** Styles applied to the icon component if `direction="asc"`. */
-    var iconDirectionAsc: String
+    var iconDirectionAsc: ClassName
 }

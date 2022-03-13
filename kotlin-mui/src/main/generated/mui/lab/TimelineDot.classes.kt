@@ -2,31 +2,33 @@
 
 package mui.lab
 
+import csstype.ClassName
+
 external interface TimelineDotClasses {
     /** Styles applied to the root element. */
-    var root: String
+    var root: ClassName
 
     /** Styles applied to the root element if `variant="filled"`. */
-    var filled: String
+    var filled: ClassName
 
     /** Styles applied to the root element if `variant="outlined"`. */
-    var outlined: String
+    var outlined: ClassName
 
     /** Styles applied to the root element if `color="grey"` and `variant="filled"`. */
-    var filledGrey: String
+    var filledGrey: ClassName
 
     /** Styles applied to the root element if `color="grey"` and `variant="outlined"`. */
-    var outlinedGrey: String
+    var outlinedGrey: ClassName
 
     /** Styles applied to the root element if `color="primary"` and `variant="filled"`. */
-    var filledPrimary: String
+    var filledPrimary: ClassName
 
     /** Styles applied to the root element if `color="primary"` and `variant="outlined"`. */
-    var outlinedPrimary: String
+    var outlinedPrimary: ClassName
 
     /** Styles applied to the root element if `color="secondary"` and `variant="filled"`. */
-    var filledSecondary: String
+    var filledSecondary: ClassName
 
     /** Styles applied to the root element if `color="secondary"` and `variant="outlined"`. */
-    var outlinedSecondary: String
+    var outlinedSecondary: ClassName
 }

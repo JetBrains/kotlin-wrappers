@@ -2,22 +2,24 @@
 
 package mui.material
 
+import csstype.ClassName
+
 external interface SpeedDialIconClasses {
     /** Styles applied to the root element. */
-    var root: String
+    var root: ClassName
 
     /** Styles applied to the icon component. */
-    var icon: String
+    var icon: ClassName
 
     /** Styles applied to the icon component if `open={true}`. */
-    var iconOpen: String
+    var iconOpen: ClassName
 
     /** Styles applied to the icon when an `openIcon` is provided and if `open={true}`. */
-    var iconWithOpenIconOpen: String
+    var iconWithOpenIconOpen: ClassName
 
     /** Styles applied to the `openIcon` if provided. */
-    var openIcon: String
+    var openIcon: ClassName
 
     /** Styles applied to the `openIcon` if provided and if `open={true}`. */
-    var openIconOpen: String
+    var openIconOpen: ClassName
 }

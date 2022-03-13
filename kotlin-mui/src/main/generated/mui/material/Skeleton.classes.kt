@@ -2,31 +2,33 @@
 
 package mui.material
 
+import csstype.ClassName
+
 external interface SkeletonClasses {
     /** Styles applied to the root element. */
-    var root: String
+    var root: ClassName
 
     /** Styles applied to the root element if `variant="text"`. */
-    var text: String
+    var text: ClassName
 
     /** Styles applied to the root element if `variant="rectangular"`. */
-    var rectangular: String
+    var rectangular: ClassName
 
     /** Styles applied to the root element if `variant="circular"`. */
-    var circular: String
+    var circular: ClassName
 
     /** Styles applied to the root element if `animation="pulse"`. */
-    var pulse: String
+    var pulse: ClassName
 
     /** Styles applied to the root element if `animation="wave"`. */
-    var wave: String
+    var wave: ClassName
 
     /** Styles applied when the component is passed children. */
-    var withChildren: String
+    var withChildren: ClassName
 
     /** Styles applied when the component is passed children and no width. */
-    var fitContent: String
+    var fitContent: ClassName
 
     /** Styles applied when the component is passed children and no height. */
-    var heightAuto: String
+    var heightAuto: ClassName
 }

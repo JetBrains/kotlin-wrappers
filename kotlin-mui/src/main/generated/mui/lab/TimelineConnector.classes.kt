@@ -2,7 +2,9 @@
 
 package mui.lab
 
+import csstype.ClassName
+
 external interface TimelineConnectorClasses {
     /** Styles applied to the root element. */
-    var root: String
+    var root: ClassName
 }

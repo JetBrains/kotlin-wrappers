@@ -2,16 +2,18 @@
 
 package mui.material
 
+import csstype.ClassName
+
 external interface BreadcrumbsClasses {
     /** Styles applied to the root element. */
-    var root: String
+    var root: ClassName
 
     /** Styles applied to the ol element. */
-    var ol: String
+    var ol: ClassName
 
     /** Styles applied to the li element. */
-    var li: String
+    var li: ClassName
 
     /** Styles applied to the separator element. */
-    var separator: String
+    var separator: ClassName
 }

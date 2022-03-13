@@ -2,34 +2,36 @@
 
 package mui.material
 
+import csstype.ClassName
+
 external interface StepConnectorClasses {
     /** Styles applied to the root element. */
-    var root: String
+    var root: ClassName
 
     /** Styles applied to the root element if `orientation="horizontal"`. */
-    var horizontal: String
+    var horizontal: ClassName
 
     /** Styles applied to the root element if `orientation="vertical"`. */
-    var vertical: String
+    var vertical: ClassName
 
     /** Styles applied to the root element if `alternativeLabel={true}`. */
-    var alternativeLabel: String
+    var alternativeLabel: ClassName
 
     /** State class applied to the root element if `active={true}`. */
-    var active: String
+    var active: ClassName
 
     /** State class applied to the root element if `completed={true}`. */
-    var completed: String
+    var completed: ClassName
 
     /** State class applied to the root element if `disabled={true}`. */
-    var disabled: String
+    var disabled: ClassName
 
     /** Styles applied to the line element. */
-    var line: String
+    var line: ClassName
 
     /** Styles applied to the root element if `orientation="horizontal"`. */
-    var lineHorizontal: String
+    var lineHorizontal: ClassName
 
     /** Styles applied to the root element if `orientation="vertical"`. */
-    var lineVertical: String
+    var lineVertical: ClassName
 }

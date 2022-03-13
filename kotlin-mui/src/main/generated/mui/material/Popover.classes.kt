@@ -2,10 +2,12 @@
 
 package mui.material
 
+import csstype.ClassName
+
 external interface PopoverClasses {
     /** Styles applied to the root element. */
-    var root: String
+    var root: ClassName
 
     /** Styles applied to the Paper component. */
-    var paper: String
+    var paper: ClassName
 }

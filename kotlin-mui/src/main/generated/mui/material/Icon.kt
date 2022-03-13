@@ -5,6 +5,7 @@
 
 package mui.material
 
+import csstype.ClassName
 import mui.material.styles.Theme
 import mui.system.SxProps
 
@@ -18,7 +19,7 @@ external interface IconProps :
      * other base class that suits the icon font you're using (e.g. material-icons-rounded, fas, etc).
      * @default 'material-icons'
      */
-    var baseClassName: String?
+    var baseClassName: ClassName?
 
     /**
      * The name of the icon font ligature.

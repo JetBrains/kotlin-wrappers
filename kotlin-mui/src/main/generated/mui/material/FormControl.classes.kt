@@ -2,16 +2,18 @@
 
 package mui.material
 
+import csstype.ClassName
+
 external interface FormControlClasses {
     /** Styles applied to the root element. */
-    var root: String
+    var root: ClassName
 
     /** Styles applied to the root element if `margin="normal"`. */
-    var marginNormal: String
+    var marginNormal: ClassName
 
     /** Styles applied to the root element if `margin="dense"`. */
-    var marginDense: String
+    var marginDense: ClassName
 
     /** Styles applied to the root element if `fullWidth={true}`. */
-    var fullWidth: String
+    var fullWidth: ClassName
 }

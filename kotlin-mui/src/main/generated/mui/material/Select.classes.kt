@@ -2,40 +2,42 @@
 
 package mui.material
 
+import csstype.ClassName
+
 external interface SelectClasses {
     /** Styles applied to the select component `select` class. */
-    var select: String
+    var select: ClassName
 
     /** Styles applied to the select component if `multiple={true}`. */
-    var multiple: String
+    var multiple: ClassName
 
     /** Styles applied to the select component if `variant="filled"`. */
-    var filled: String
+    var filled: ClassName
 
     /** Styles applied to the select component if `variant="outlined"`. */
-    var outlined: String
+    var outlined: ClassName
 
     /** Styles applied to the select component if `variant="standard"`. */
-    var standard: String
+    var standard: ClassName
 
     /** State class applied to the select component `disabled` class. */
-    var disabled: String
+    var disabled: ClassName
 
     /** Styles applied to the icon component. */
-    var icon: String
+    var icon: ClassName
 
     /** Styles applied to the icon component if the popup is open. */
-    var iconOpen: String
+    var iconOpen: ClassName
 
     /** Styles applied to the icon component if `variant="filled"`. */
-    var iconFilled: String
+    var iconFilled: ClassName
 
     /** Styles applied to the icon component if `variant="outlined"`. */
-    var iconOutlined: String
+    var iconOutlined: ClassName
 
     /** Styles applied to the icon component if `variant="standard"`. */
-    var iconStandard: String
+    var iconStandard: ClassName
 
     /** Styles applied to the underlying native input component. */
-    var nativeInput: String
+    var nativeInput: ClassName
 }

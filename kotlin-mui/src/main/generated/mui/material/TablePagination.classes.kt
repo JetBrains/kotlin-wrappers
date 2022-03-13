@@ -2,37 +2,39 @@
 
 package mui.material
 
+import csstype.ClassName
+
 external interface TablePaginationClasses {
     /** Styles applied to the root element. */
-    var root: String
+    var root: ClassName
 
     /** Styles applied to the Toolbar component. */
-    var toolbar: String
+    var toolbar: ClassName
 
     /** Styles applied to the spacer element. */
-    var spacer: String
+    var spacer: ClassName
 
     /** Styles applied to the select label Typography element. */
-    var selectLabel: String
+    var selectLabel: ClassName
 
     /** Styles applied to the Select component `root` element. */
-    var selectRoot: String
+    var selectRoot: ClassName
 
     /** Styles applied to the Select component `select` class. */
-    var select: String
+    var select: ClassName
 
     /** Styles applied to the Select component `icon` class. */
-    var selectIcon: String
+    var selectIcon: ClassName
 
     /** Styles applied to the Select component `root` element. */
-    var input: String
+    var input: ClassName
 
     /** Styles applied to the MenuItem component. */
-    var menuItem: String
+    var menuItem: ClassName
 
     /** Styles applied to the displayed rows Typography element. */
-    var displayedRows: String
+    var displayedRows: ClassName
 
     /** Styles applied to the internal `TablePaginationActions` component. */
-    var actions: String
+    var actions: ClassName
 }

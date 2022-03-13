@@ -2,40 +2,42 @@
 
 package mui.material
 
+import csstype.ClassName
+
 external interface TooltipClasses {
     /** Styles applied to the Popper component. */
-    var popper: String
+    var popper: ClassName
 
     /** Styles applied to the Popper component unless `disableInteractive={true}`. */
-    var popperInteractive: String
+    var popperInteractive: ClassName
 
     /** Styles applied to the Popper component if `arrow={true}`. */
-    var popperArrow: String
+    var popperArrow: ClassName
 
     /** Styles applied to the Popper component unless the tooltip is open. */
-    var popperClose: String
+    var popperClose: ClassName
 
     /** Styles applied to the tooltip (label wrapper) element. */
-    var tooltip: String
+    var tooltip: ClassName
 
     /** Styles applied to the tooltip (label wrapper) element if `arrow={true}`. */
-    var tooltipArrow: String
+    var tooltipArrow: ClassName
 
     /** Styles applied to the arrow element. */
-    var arrow: String
+    var arrow: ClassName
 
     /** Styles applied to the tooltip (label wrapper) element if the tooltip is opened by touch. */
-    var touch: String
+    var touch: ClassName
 
     /** Styles applied to the tooltip (label wrapper) element if `placement` contains "left". */
-    var tooltipPlacementLeft: String
+    var tooltipPlacementLeft: ClassName
 
     /** Styles applied to the tooltip (label wrapper) element if `placement` contains "right". */
-    var tooltipPlacementRight: String
+    var tooltipPlacementRight: ClassName
 
     /** Styles applied to the tooltip (label wrapper) element if `placement` contains "top". */
-    var tooltipPlacementTop: String
+    var tooltipPlacementTop: ClassName
 
     /** Styles applied to the tooltip (label wrapper) element if `placement` contains "bottom". */
-    var tooltipPlacementBottom: String
+    var tooltipPlacementBottom: ClassName
 }

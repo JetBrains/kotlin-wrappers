@@ -2,6 +2,8 @@
 
 package mui.base
 
+import csstype.ClassName
+
 external interface OptionUnstyledProps<TValue> :
     react.PropsWithChildren,
     react.PropsWithClassName {
@@ -18,7 +20,7 @@ external interface OptionUnstyledProps<TValue> :
      */
     var disabled: Boolean?
 
-    override var className: csstype.ClassName?
+    override var className: ClassName?
 
     /**
      * The component used for the Root slot.

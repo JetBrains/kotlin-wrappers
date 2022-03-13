@@ -2,34 +2,36 @@
 
 package mui.material
 
+import csstype.ClassName
+
 external interface IconButtonClasses {
     /** Styles applied to the root element. */
-    var root: String
+    var root: ClassName
 
     /** Styles applied to the root element if `edge="start"`. */
-    var edgeStart: String
+    var edgeStart: ClassName
 
     /** Styles applied to the root element if `edge="end"`. */
-    var edgeEnd: String
+    var edgeEnd: ClassName
 
     /** Styles applied to the root element if `color="inherit"`. */
-    var colorInherit: String
+    var colorInherit: ClassName
 
     /** Styles applied to the root element if `color="primary"`. */
-    var colorPrimary: String
+    var colorPrimary: ClassName
 
     /** Styles applied to the root element if `color="secondary"`. */
-    var colorSecondary: String
+    var colorSecondary: ClassName
 
     /** State class applied to the root element if `disabled={true}`. */
-    var disabled: String
+    var disabled: ClassName
 
     /** Styles applied to the root element if `size="small"`. */
-    var sizeSmall: String
+    var sizeSmall: ClassName
 
     /** Styles applied to the root element if `size="medium"`. */
-    var sizeMedium: String
+    var sizeMedium: ClassName
 
     /** Styles applied to the root element if `size="large"`. */
-    var sizeLarge: String
+    var sizeLarge: ClassName
 }

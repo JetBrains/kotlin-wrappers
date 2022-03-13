@@ -2,64 +2,66 @@
 
 package mui.base
 
+import csstype.ClassName
+
 external interface SliderUnstyledClasses {
     /** Class name applied to the root element. */
-    var root: String
+    var root: ClassName
 
     /** Class name applied to the root element if `marks` is provided with at least one label. */
-    var marked: String
+    var marked: ClassName
 
     /** Class name applied to the root element if `orientation="vertical"`. */
-    var vertical: String
+    var vertical: ClassName
 
     /** State class applied to the root and thumb element if `disabled={true}`. */
-    var disabled: String
+    var disabled: ClassName
 
     /** State class applied to the root if a thumb is being dragged. */
-    var dragging: String
+    var dragging: ClassName
 
     /** Class name applied to the rail element. */
-    var rail: String
+    var rail: ClassName
 
     /** Class name applied to the track element. */
-    var track: String
+    var track: ClassName
 
     /** Class name applied to the root element if `track={false}`. */
-    var trackFalse: String
+    var trackFalse: ClassName
 
     /** Class name applied to the root element if `track="inverted"`. */
-    var trackInverted: String
+    var trackInverted: ClassName
 
     /** Class name applied to the thumb element. */
-    var thumb: String
+    var thumb: ClassName
 
     /** State class applied to the thumb element if it's active. */
-    var active: String
+    var active: ClassName
 
     /** State class applied to the thumb element if keyboard focused. */
-    var focusVisible: String
+    var focusVisible: ClassName
 
     /** Class name applied to the thumb label element. */
-    var valueLabel: String
+    var valueLabel: ClassName
 
     /** Class name applied to the thumb label element if it's open. */
-    var valueLabelOpen: String
+    var valueLabelOpen: ClassName
 
     /** Class name applied to the thumb label's circle element. */
-    var valueLabelCircle: String
+    var valueLabelCircle: ClassName
 
     /** Class name applied to the thumb label's label element. */
-    var valueLabelLabel: String
+    var valueLabelLabel: ClassName
 
     /** Class name applied to the mark element. */
-    var mark: String
+    var mark: ClassName
 
     /** Class name applied to the mark element if active (depending on the value). */
-    var markActive: String
+    var markActive: ClassName
 
     /** Class name applied to the mark label element. */
-    var markLabel: String
+    var markLabel: ClassName
 
     /** Class name applied to the mark label element if active (depending on the value). */
-    var markLabelActive: String
+    var markLabelActive: ClassName
 }

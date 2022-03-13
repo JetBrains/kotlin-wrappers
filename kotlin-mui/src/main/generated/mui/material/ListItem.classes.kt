@@ -2,40 +2,42 @@
 
 package mui.material
 
+import csstype.ClassName
+
 external interface ListItemClasses {
     /** Styles applied to the (normally root) `component` element. May be wrapped by a `container`. */
-    var root: String
+    var root: ClassName
 
     /** Styles applied to the container element if `children` includes `ListItemSecondaryAction`. */
-    var container: String
+    var container: ClassName
 
     /** State class applied to the `component`'s `focusVisibleClassName` prop if `button={true}`. */
-    var focusVisible: String
+    var focusVisible: ClassName
 
     /** Styles applied to the component element if dense. */
-    var dense: String
+    var dense: ClassName
 
     /** Styles applied to the component element if `alignItems="flex-start"`. */
-    var alignItemsFlexStart: String
+    var alignItemsFlexStart: ClassName
 
     /** State class applied to the inner `component` element if `disabled={true}`. */
-    var disabled: String
+    var disabled: ClassName
 
     /** Styles applied to the inner `component` element if `divider={true}`. */
-    var divider: String
+    var divider: ClassName
 
     /** Styles applied to the inner `component` element unless `disableGutters={true}`. */
-    var gutters: String
+    var gutters: ClassName
 
     /** Styles applied to the root element unless `disablePadding={true}`. */
-    var padding: String
+    var padding: ClassName
 
     /** Styles applied to the inner `component` element if `button={true}`. */
-    var button: String
+    var button: ClassName
 
     /** Styles applied to the component element if `children` includes `ListItemSecondaryAction`. */
-    var secondaryAction: String
+    var secondaryAction: ClassName
 
     /** State class applied to the root element if `selected={true}`. */
-    var selected: String
+    var selected: ClassName
 }

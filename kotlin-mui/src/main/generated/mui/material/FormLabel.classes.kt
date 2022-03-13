@@ -2,28 +2,30 @@
 
 package mui.material
 
+import csstype.ClassName
+
 external interface FormLabelClasses {
     /** Styles applied to the root element. */
-    var root: String
+    var root: ClassName
 
     /** Styles applied to the root element if the color is secondary. */
-    var colorSecondary: String
+    var colorSecondary: ClassName
 
     /** State class applied to the root element if `focused={true}`. */
-    var focused: String
+    var focused: ClassName
 
     /** State class applied to the root element if `disabled={true}`. */
-    var disabled: String
+    var disabled: ClassName
 
     /** State class applied to the root element if `error={true}`. */
-    var error: String
+    var error: ClassName
 
     /** State class applied to the root element if `filled={true}`. */
-    var filled: String
+    var filled: ClassName
 
     /** State class applied to the root element if `required={true}`. */
-    var required: String
+    var required: ClassName
 
     /** Styles applied to the asterisk element. */
-    var asterisk: String
+    var asterisk: ClassName
 }

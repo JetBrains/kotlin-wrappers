@@ -2,16 +2,18 @@
 
 package mui.material
 
+import csstype.ClassName
+
 external interface ListClasses {
     /** Styles applied to the root element. */
-    var root: String
+    var root: ClassName
 
     /** Styles applied to the root element unless `disablePadding={true}`. */
-    var padding: String
+    var padding: ClassName
 
     /** Styles applied to the root element if dense. */
-    var dense: String
+    var dense: ClassName
 
     /** Styles applied to the root element if a `subheader` is provided. */
-    var subheader: String
+    var subheader: ClassName
 }

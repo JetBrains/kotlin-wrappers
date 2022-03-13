@@ -2,13 +2,15 @@
 
 package mui.base
 
+import csstype.ClassName
+
 external interface SelectUnstyledClasses {
-    var root: String
-    var button: String
-    var listbox: String
-    var popper: String
-    var active: String
-    var expanded: String
-    var disabled: String
-    var focusVisible: String
+    var root: ClassName
+    var button: ClassName
+    var listbox: ClassName
+    var popper: ClassName
+    var active: ClassName
+    var expanded: ClassName
+    var disabled: ClassName
+    var focusVisible: ClassName
 }

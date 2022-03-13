@@ -2,82 +2,84 @@
 
 package mui.material
 
+import csstype.ClassName
+
 external interface ButtonGroupClasses {
     /** Styles applied to the root element. */
-    var root: String
+    var root: ClassName
 
     /** Styles applied to the root element if `variant="contained"`. */
-    var contained: String
+    var contained: ClassName
 
     /** Styles applied to the root element if `variant="outlined"`. */
-    var outlined: String
+    var outlined: ClassName
 
     /** Styles applied to the root element if `variant="text"`. */
-    var text: String
+    var text: ClassName
 
     /** Styles applied to the root element if `disableElevation={true}`. */
-    var disableElevation: String
+    var disableElevation: ClassName
 
     /** State class applied to the child elements if `disabled={true}`. */
-    var disabled: String
+    var disabled: ClassName
 
     /** Styles applied to the root element if `fullWidth={true}`. */
-    var fullWidth: String
+    var fullWidth: ClassName
 
     /** Styles applied to the root element if `orientation="vertical"`. */
-    var vertical: String
+    var vertical: ClassName
 
     /** Styles applied to the children. */
-    var grouped: String
+    var grouped: ClassName
 
     /** Styles applied to the children if `orientation="horizontal"`. */
-    var groupedHorizontal: String
+    var groupedHorizontal: ClassName
 
     /** Styles applied to the children if `orientation="vertical"`. */
-    var groupedVertical: String
+    var groupedVertical: ClassName
 
     /** Styles applied to the children if `variant="text"`. */
-    var groupedText: String
+    var groupedText: ClassName
 
     /** Styles applied to the children if `variant="text"` and `orientation="horizontal"`. */
-    var groupedTextHorizontal: String
+    var groupedTextHorizontal: ClassName
 
     /** Styles applied to the children if `variant="text"` and `orientation="vertical"`. */
-    var groupedTextVertical: String
+    var groupedTextVertical: ClassName
 
     /** Styles applied to the children if `variant="text"` and `color="primary"`. */
-    var groupedTextPrimary: String
+    var groupedTextPrimary: ClassName
 
     /** Styles applied to the children if `variant="text"` and `color="secondary"`. */
-    var groupedTextSecondary: String
+    var groupedTextSecondary: ClassName
 
     /** Styles applied to the children if `variant="outlined"`. */
-    var groupedOutlined: String
+    var groupedOutlined: ClassName
 
     /** Styles applied to the children if `variant="outlined"` and `orientation="horizontal"`. */
-    var groupedOutlinedHorizontal: String
+    var groupedOutlinedHorizontal: ClassName
 
     /** Styles applied to the children if `variant="outlined"` and `orientation="vertical"`. */
-    var groupedOutlinedVertical: String
+    var groupedOutlinedVertical: ClassName
 
     /** Styles applied to the children if `variant="outlined"` and `color="primary"`. */
-    var groupedOutlinedPrimary: String
+    var groupedOutlinedPrimary: ClassName
 
     /** Styles applied to the children if `variant="outlined"` and `color="secondary"`. */
-    var groupedOutlinedSecondary: String
+    var groupedOutlinedSecondary: ClassName
 
     /** Styles applied to the children if `variant="contained"`. */
-    var groupedContained: String
+    var groupedContained: ClassName
 
     /** Styles applied to the children if `variant="contained"` and `orientation="horizontal"`. */
-    var groupedContainedHorizontal: String
+    var groupedContainedHorizontal: ClassName
 
     /** Styles applied to the children if `variant="contained"` and `orientation="vertical"`. */
-    var groupedContainedVertical: String
+    var groupedContainedVertical: ClassName
 
     /** Styles applied to the children if `variant="contained"` and `color="primary"`. */
-    var groupedContainedPrimary: String
+    var groupedContainedPrimary: ClassName
 
     /** Styles applied to the children if `variant="contained"` and `color="secondary"`. */
-    var groupedContainedSecondary: String
+    var groupedContainedSecondary: ClassName
 }

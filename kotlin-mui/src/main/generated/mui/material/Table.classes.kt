@@ -2,10 +2,12 @@
 
 package mui.material
 
+import csstype.ClassName
+
 external interface TableClasses {
     /** Styles applied to the root element. */
-    var root: String
+    var root: ClassName
 
     /** Styles applied to the root element if `stickyHeader={true}`. */
-    var stickyHeader: String
+    var stickyHeader: ClassName
 }

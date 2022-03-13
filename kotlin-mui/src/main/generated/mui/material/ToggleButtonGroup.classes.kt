@@ -2,22 +2,24 @@
 
 package mui.material
 
+import csstype.ClassName
+
 external interface ToggleButtonGroupClasses {
     /** Styles applied to the root element. */
-    var root: String
+    var root: ClassName
 
     /** Styles applied to the root element if `orientation="vertical"`. */
-    var vertical: String
+    var vertical: ClassName
 
     /** State class applied to the root element if `disabled={true}`. */
-    var disabled: String
+    var disabled: ClassName
 
     /** Styles applied to the children. */
-    var grouped: String
+    var grouped: ClassName
 
     /** Styles applied to the children if `orientation="horizontal"`. */
-    var groupedHorizontal: String
+    var groupedHorizontal: ClassName
 
     /** Styles applied to the children if `orientation="vertical"`. */
-    var groupedVertical: String
+    var groupedVertical: ClassName
 }

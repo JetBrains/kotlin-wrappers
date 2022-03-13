@@ -2,34 +2,36 @@
 
 package mui.material
 
+import csstype.ClassName
+
 external interface TabClasses {
     /** Styles applied to the root element. */
-    var root: String
+    var root: ClassName
 
     /** Styles applied to the root element if both `icon` and `label` are provided. */
-    var labelIcon: String
+    var labelIcon: ClassName
 
     /** Styles applied to the root element if the parent [`Tabs`](/api/tabs/) has `textColor="inherit"`. */
-    var textColorInherit: String
+    var textColorInherit: ClassName
 
     /** Styles applied to the root element if the parent [`Tabs`](/api/tabs/) has `textColor="primary"`. */
-    var textColorPrimary: String
+    var textColorPrimary: ClassName
 
     /** Styles applied to the root element if the parent [`Tabs`](/api/tabs/) has `textColor="secondary"`. */
-    var textColorSecondary: String
+    var textColorSecondary: ClassName
 
     /** State class applied to the root element if `selected={true}` (controlled by the Tabs component). */
-    var selected: String
+    var selected: ClassName
 
     /** State class applied to the root element if `disabled={true}` (controlled by the Tabs component). */
-    var disabled: String
+    var disabled: ClassName
 
     /** Styles applied to the root element if `fullWidth={true}` (controlled by the Tabs component). */
-    var fullWidth: String
+    var fullWidth: ClassName
 
     /** Styles applied to the root element if `wrapped={true}`. */
-    var wrapped: String
+    var wrapped: ClassName
 
     /** Styles applied to the wrapper element of `icon` if `icon` is provided. */
-    var iconWrapper: String
+    var iconWrapper: ClassName
 }

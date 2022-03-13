@@ -2,6 +2,8 @@
 
 package mui.base
 
+import csstype.ClassName
+
 external interface TabsUnstyledProps :
     react.dom.html.HTMLAttributes<org.w3c.dom.HTMLDivElement>
 
@@ -36,7 +38,7 @@ external interface TabsUnstyledOwnProps :
      */
     var direction: TabsUnstyledDirection?
 
-    override var className: csstype.ClassName?
+    override var className: ClassName?
 
     /**
      * The components used for each slot inside the Tabs.

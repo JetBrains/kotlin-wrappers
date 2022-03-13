@@ -2,13 +2,15 @@
 
 package mui.material
 
+import csstype.ClassName
+
 external interface FormGroupClasses {
     /** Styles applied to the root element. */
-    var root: String
+    var root: ClassName
 
     /** Styles applied to the root element if `row={true}`. */
-    var row: String
+    var row: ClassName
 
     /** State class applied to the root element if `error={true}`. */
-    var error: String
+    var error: ClassName
 }

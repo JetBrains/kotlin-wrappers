@@ -2,28 +2,30 @@
 
 package mui.material
 
+import csstype.ClassName
+
 external interface FormHelperTextClasses {
     /** Styles applied to the root element. */
-    var root: String
+    var root: ClassName
 
     /** State class applied to the root element if `error={true}`. */
-    var error: String
+    var error: ClassName
 
     /** State class applied to the root element if `disabled={true}`. */
-    var disabled: String
+    var disabled: ClassName
 
     /** Styles applied to the root element if `size="small"`. */
-    var sizeSmall: String
+    var sizeSmall: ClassName
 
     /** Styles applied to the root element if `variant="filled"` or `variant="outlined"`. */
-    var contained: String
+    var contained: ClassName
 
     /** State class applied to the root element if `focused={true}`. */
-    var focused: String
+    var focused: ClassName
 
     /** State class applied to the root element if `filled={true}`. */
-    var filled: String
+    var filled: ClassName
 
     /** State class applied to the root element if `required={true}`. */
-    var required: String
+    var required: ClassName
 }
