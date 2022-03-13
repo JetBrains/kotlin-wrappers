@@ -2,22 +2,24 @@
 
 package mui.material
 
+import csstype.ClassName
+
 external interface AccordionClasses {
     /** Styles applied to the root element. */
-    var root: String
+    var root: ClassName
 
     /** Styles applied to the root element unless `square={true}`. */
-    var rounded: String
+    var rounded: ClassName
 
     /** State class applied to the root element if `expanded={true}`. */
-    var expanded: String
+    var expanded: ClassName
 
     /** State class applied to the root element if `disabled={true}`. */
-    var disabled: String
+    var disabled: ClassName
 
     /** Styles applied to the root element unless `disableGutters={true}`. */
-    var gutters: String
+    var gutters: ClassName
 
     /** Styles applied to the region element, the container of the children. */
-    var region: String
+    var region: ClassName
 }

@@ -2,8 +2,10 @@
 
 package mui.base
 
+import csstype.ClassName
+
 external interface TabsUnstyledClasses {
-    var root: String
-    var horizontal: String
-    var vertical: String
+    var root: ClassName
+    var horizontal: ClassName
+    var vertical: ClassName
 }

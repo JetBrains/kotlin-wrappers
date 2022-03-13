@@ -2,6 +2,8 @@
 
 package mui.base
 
+import csstype.ClassName
+
 external interface ButtonUnstyledProps :
     react.dom.html.ButtonHTMLAttributes<org.w3c.dom.HTMLButtonElement>
 
@@ -20,7 +22,7 @@ external interface ButtonUnstyledOwnProps :
 
     override var children: react.ReactNode?
 
-    override var className: csstype.ClassName?
+    override var className: ClassName?
 
     /**
      * The components used for each slot inside the Button.

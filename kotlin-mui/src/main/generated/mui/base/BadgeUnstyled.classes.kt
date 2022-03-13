@@ -2,31 +2,33 @@
 
 package mui.base
 
+import csstype.ClassName
+
 external interface BadgeUnstyledClasses {
     /** Class name applied to the root element. */
-    var root: String
+    var root: ClassName
 
     /** Class name applied to the badge `span` element. */
-    var badge: String
+    var badge: ClassName
 
     /** Class name applied to the badge `span` element if `variant="dot"`. */
-    var dot: String
+    var dot: ClassName
 
     /** Class name applied to the badge `span` element if `variant="standard"`. */
-    var standard: String
+    var standard: ClassName
 
     /** Class name applied to the badge `span` element if `anchorOrigin={{ 'top', 'right' }}`. */
-    var anchorOriginTopRight: String
+    var anchorOriginTopRight: ClassName
 
     /** Class name applied to the badge `span` element if `anchorOrigin={{ 'bottom', 'right' }}`. */
-    var anchorOriginBottomRight: String
+    var anchorOriginBottomRight: ClassName
 
     /** Class name applied to the badge `span` element if `anchorOrigin={{ 'top', 'left' }}`. */
-    var anchorOriginTopLeft: String
+    var anchorOriginTopLeft: ClassName
 
     /** Class name applied to the badge `span` element if `anchorOrigin={{ 'bottom', 'left' }}`. */
-    var anchorOriginBottomLeft: String
+    var anchorOriginBottomLeft: ClassName
 
     /** State class applied to the badge `span` element if `invisible={true}`. */
-    var invisible: String
+    var invisible: ClassName
 }

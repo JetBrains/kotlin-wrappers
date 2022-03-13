@@ -5,6 +5,7 @@
 
 package mui.lab
 
+import csstype.ClassName
 import kotlinx.js.Void
 import mui.material.styles.Theme
 import mui.system.SxProps
@@ -16,7 +17,7 @@ external interface MonthPickerProps<TDate> :
     /**
      * className applied to the root element.
      */
-    override var className: csstype.ClassName?
+    override var className: ClassName?
 
     /**
      * Override or extend the styles applied to the component.

@@ -2,31 +2,33 @@
 
 package mui.material
 
+import csstype.ClassName
+
 external interface InputAdornmentClasses {
     /** Styles applied to the root element. */
-    var root: String
+    var root: ClassName
 
     /** Styles applied to the root element if `variant="filled"`. */
-    var filled: String
+    var filled: ClassName
 
     /** Styles applied to the root element if `variant="outlined"`. */
-    var outlined: String
+    var outlined: ClassName
 
     /** Styles applied to the root element if `variant="standard"`. */
-    var standard: String
+    var standard: ClassName
 
     /** Styles applied to the root element if `position="start"`. */
-    var positionStart: String
+    var positionStart: ClassName
 
     /** Styles applied to the root element if `position="end"`. */
-    var positionEnd: String
+    var positionEnd: ClassName
 
     /** Styles applied to the root element if `disablePointerEvents={true}`. */
-    var disablePointerEvents: String
+    var disablePointerEvents: ClassName
 
     /** Styles applied if the adornment is used inside <FormControl hiddenLabel />. */
-    var hiddenLabel: String
+    var hiddenLabel: ClassName
 
     /** Styles applied if the adornment is used inside <FormControl size="small" />. */
-    var sizeSmall: String
+    var sizeSmall: ClassName
 }

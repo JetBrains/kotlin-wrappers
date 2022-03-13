@@ -2,43 +2,45 @@
 
 package mui.material
 
+import csstype.ClassName
+
 external interface TabsClasses {
     /** Styles applied to the root element. */
-    var root: String
+    var root: ClassName
 
     /** Styles applied to the root element if `orientation="vertical"`. */
-    var vertical: String
+    var vertical: ClassName
 
     /** Styles applied to the flex container element. */
-    var flexContainer: String
+    var flexContainer: ClassName
 
     /** Styles applied to the flex container element if `orientation="vertical"`. */
-    var flexContainerVertical: String
+    var flexContainerVertical: ClassName
 
     /** Styles applied to the flex container element if `centered={true}` & `!variant="scrollable"`. */
-    var centered: String
+    var centered: ClassName
 
     /** Styles applied to the tablist element. */
-    var scroller: String
+    var scroller: ClassName
 
     /** Styles applied to the tablist element if `!variant="scrollable"`. */
-    var fixed: String
+    var fixed: ClassName
 
     /** Styles applied to the tablist element if `variant="scrollable"` and `orientation="horizontal"`. */
-    var scrollableX: String
+    var scrollableX: ClassName
 
     /** Styles applied to the tablist element if `variant="scrollable"` and `orientation="vertical"`. */
-    var scrollableY: String
+    var scrollableY: ClassName
 
     /** Styles applied to the tablist element if `variant="scrollable"` and `visibleScrollbar={false}`. */
-    var hideScrollbar: String
+    var hideScrollbar: ClassName
 
     /** Styles applied to the ScrollButtonComponent component. */
-    var scrollButtons: String
+    var scrollButtons: ClassName
 
     /** Styles applied to the ScrollButtonComponent component if `allowScrollButtonsMobile={true}`. */
-    var scrollButtonsHideMobile: String
+    var scrollButtonsHideMobile: ClassName
 
     /** Styles applied to the TabIndicator component. */
-    var indicator: String
+    var indicator: ClassName
 }

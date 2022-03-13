@@ -2,6 +2,8 @@
 
 package mui.base
 
+import csstype.ClassName
+
 external interface OptionGroupUnstyledProps :
     react.PropsWithChildren,
     react.PropsWithClassName {
@@ -10,7 +12,7 @@ external interface OptionGroupUnstyledProps :
      */
     var label: react.ReactNode?
 
-    override var className: csstype.ClassName?
+    override var className: ClassName?
 
     override var children: react.ReactNode?
 

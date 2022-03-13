@@ -2,25 +2,27 @@
 
 package mui.material
 
+import csstype.ClassName
+
 external interface SnackbarClasses {
     /** Styles applied to the root element. */
-    var root: String
+    var root: ClassName
 
     /** Styles applied to the root element if `anchorOrigin={{ 'top', 'center' }}`. */
-    var anchorOriginTopCenter: String
+    var anchorOriginTopCenter: ClassName
 
     /** Styles applied to the root element if `anchorOrigin={{ 'bottom', 'center' }}`. */
-    var anchorOriginBottomCenter: String
+    var anchorOriginBottomCenter: ClassName
 
     /** Styles applied to the root element if `anchorOrigin={{ 'top', 'right' }}`. */
-    var anchorOriginTopRight: String
+    var anchorOriginTopRight: ClassName
 
     /** Styles applied to the root element if `anchorOrigin={{ 'bottom', 'right' }}`. */
-    var anchorOriginBottomRight: String
+    var anchorOriginBottomRight: ClassName
 
     /** Styles applied to the root element if `anchorOrigin={{ 'top', 'left' }}`. */
-    var anchorOriginTopLeft: String
+    var anchorOriginTopLeft: ClassName
 
     /** Styles applied to the root element if `anchorOrigin={{ 'bottom', 'left' }}`. */
-    var anchorOriginBottomLeft: String
+    var anchorOriginBottomLeft: ClassName
 }

@@ -2,70 +2,72 @@
 
 package mui.material
 
+import csstype.ClassName
+
 external interface TypographyClasses {
     /** Styles applied to the root element. */
-    var root: String
+    var root: ClassName
 
     /** Styles applied to the root element if `variant="body2"`. */
-    var body2: String
+    var body2: ClassName
 
     /** Styles applied to the root element if `variant="body1"`. */
-    var body1: String
+    var body1: ClassName
 
     /** Styles applied to the root element if `variant="caption"`. */
-    var caption: String
+    var caption: ClassName
 
     /** Styles applied to the root element if `variant="button"`. */
-    var button: String
+    var button: ClassName
 
     /** Styles applied to the root element if `variant="h1"`. */
-    var h1: String
+    var h1: ClassName
 
     /** Styles applied to the root element if `variant="h2"`. */
-    var h2: String
+    var h2: ClassName
 
     /** Styles applied to the root element if `variant="h3"`. */
-    var h3: String
+    var h3: ClassName
 
     /** Styles applied to the root element if `variant="h4"`. */
-    var h4: String
+    var h4: ClassName
 
     /** Styles applied to the root element if `variant="h5"`. */
-    var h5: String
+    var h5: ClassName
 
     /** Styles applied to the root element if `variant="h6"`. */
-    var h6: String
+    var h6: ClassName
 
     /** Styles applied to the root element if `variant="subtitle1"`. */
-    var subtitle1: String
+    var subtitle1: ClassName
 
     /** Styles applied to the root element if `variant="subtitle2"`. */
-    var subtitle2: String
+    var subtitle2: ClassName
 
     /** Styles applied to the root element if `variant="overline"`. */
-    var overline: String
+    var overline: ClassName
 
     /** Styles applied to the root element if `variant="inherit"`. */
-    var inherit: String
+    var inherit: ClassName
 
     /** Styles applied to the root element if `align="left"`. */
-    var alignLeft: String
+    var alignLeft: ClassName
 
     /** Styles applied to the root element if `align="center"`. */
-    var alignCenter: String
+    var alignCenter: ClassName
 
     /** Styles applied to the root element if `align="right"`. */
-    var alignRight: String
+    var alignRight: ClassName
 
     /** Styles applied to the root element if `align="justify"`. */
-    var alignJustify: String
+    var alignJustify: ClassName
 
     /** Styles applied to the root element if `nowrap={true}`. */
-    var noWrap: String
+    var noWrap: ClassName
 
     /** Styles applied to the root element if `gutterBottom={true}`. */
-    var gutterBottom: String
+    var gutterBottom: ClassName
 
     /** Styles applied to the root element if `paragraph={true}`. */
-    var paragraph: String
+    var paragraph: ClassName
 }

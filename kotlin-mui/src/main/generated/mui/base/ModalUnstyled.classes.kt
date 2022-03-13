@@ -2,10 +2,12 @@
 
 package mui.base
 
+import csstype.ClassName
+
 external interface ModalUnstyledClasses {
     /** Styles applied to the root element. */
-    var root: String
+    var root: ClassName
 
     /** Styles applied to the root element if the `Modal` has exited. */
-    var hidden: String
+    var hidden: ClassName
 }

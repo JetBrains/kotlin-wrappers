@@ -5,10 +5,11 @@
 
 package mui.lab
 
+import csstype.ClassName
 import kotlinx.js.ReadonlyArray
 
 external interface CalendarPickerProps<TDate> : react.PropsWithClassName {
-    override var className: csstype.ClassName?
+    override var className: ClassName?
 
     var date: TDate?
 

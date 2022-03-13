@@ -2,28 +2,30 @@
 
 package mui.material
 
+import csstype.ClassName
+
 external interface AccordionSummaryClasses {
     /** Styles applied to the root element. */
-    var root: String
+    var root: ClassName
 
     /** State class applied to the root element, children wrapper element and `IconButton` component if `expanded={true}`. */
-    var expanded: String
+    var expanded: ClassName
 
     /** State class applied to the ButtonBase root element if the button is keyboard focused. */
-    var focusVisible: String
+    var focusVisible: ClassName
 
     /** State class applied to the root element if `disabled={true}`. */
-    var disabled: String
+    var disabled: ClassName
 
     /** Styles applied to the root element unless `disableGutters={true}`. */
-    var gutters: String
+    var gutters: ClassName
 
     /** Styles applied to the children wrapper element unless `disableGutters={true}`. */
-    var contentGutters: String
+    var contentGutters: ClassName
 
     /** Styles applied to the children wrapper element. */
-    var content: String
+    var content: ClassName
 
     /** Styles applied to the `expandIcon`'s wrapper element. */
-    var expandIconWrapper: String
+    var expandIconWrapper: ClassName
 }

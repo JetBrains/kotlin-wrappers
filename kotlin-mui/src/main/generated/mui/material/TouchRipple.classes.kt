@@ -2,25 +2,27 @@
 
 package mui.material
 
+import csstype.ClassName
+
 external interface TouchRippleClasses {
     /** Styles applied to the root element. */
-    var root: String
+    var root: ClassName
 
     /** Styles applied to the internal `Ripple` components `ripple` class. */
-    var ripple: String
+    var ripple: ClassName
 
     /** Styles applied to the internal `Ripple` components `rippleVisible` class. */
-    var rippleVisible: String
+    var rippleVisible: ClassName
 
     /** Styles applied to the internal `Ripple` components `ripplePulsate` class. */
-    var ripplePulsate: String
+    var ripplePulsate: ClassName
 
     /** Styles applied to the internal `Ripple` components `child` class. */
-    var child: String
+    var child: ClassName
 
     /** Styles applied to the internal `Ripple` components `childLeaving` class. */
-    var childLeaving: String
+    var childLeaving: ClassName
 
     /** Styles applied to the internal `Ripple` components `childPulsate` class. */
-    var childPulsate: String
+    var childPulsate: ClassName
 }

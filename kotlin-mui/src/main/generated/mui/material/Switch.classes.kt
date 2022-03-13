@@ -2,43 +2,45 @@
 
 package mui.material
 
+import csstype.ClassName
+
 external interface SwitchClasses {
     /** Styles applied to the root element. */
-    var root: String
+    var root: ClassName
 
     /** Styles applied to the root element if `edge="start"`. */
-    var edgeStart: String
+    var edgeStart: ClassName
 
     /** Styles applied to the root element if `edge="end"`. */
-    var edgeEnd: String
+    var edgeEnd: ClassName
 
     /** Styles applied to the internal `SwitchBase` component's `root` class. */
-    var switchBase: String
+    var switchBase: ClassName
 
     /** Styles applied to the internal SwitchBase component's root element if `color="primary"`. */
-    var colorPrimary: String
+    var colorPrimary: ClassName
 
     /** Styles applied to the internal SwitchBase component's root element if `color="secondary"`. */
-    var colorSecondary: String
+    var colorSecondary: ClassName
 
     /** Styles applied to the root element if `size="small"`. */
-    var sizeSmall: String
+    var sizeSmall: ClassName
 
     /** Styles applied to the root element if `size="medium"`. */
-    var sizeMedium: String
+    var sizeMedium: ClassName
 
     /** State class applied to the internal `SwitchBase` component's `checked` class. */
-    var checked: String
+    var checked: ClassName
 
     /** State class applied to the internal SwitchBase component's disabled class. */
-    var disabled: String
+    var disabled: ClassName
 
     /** Styles applied to the internal SwitchBase component's input element. */
-    var input: String
+    var input: ClassName
 
     /** Styles used to create the thumb passed to the internal `SwitchBase` component `icon` prop. */
-    var thumb: String
+    var thumb: ClassName
 
     /** Styles applied to the track element. */
-    var track: String
+    var track: ClassName
 }

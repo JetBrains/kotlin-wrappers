@@ -2,37 +2,39 @@
 
 package mui.base
 
+import csstype.ClassName
+
 external interface InputUnstyledClasses {
     /** Styles applied to the root element. */
-    var root: String
+    var root: ClassName
 
     /** Styles applied to the root element if the component is a descendant of `FormControl`. */
-    var formControl: String
+    var formControl: ClassName
 
     /** Styles applied to the root element if `startAdornment` is provided. */
-    var adornedStart: String
+    var adornedStart: ClassName
 
     /** Styles applied to the root element if `endAdornment` is provided. */
-    var adornedEnd: String
+    var adornedEnd: ClassName
 
     /** Styles applied to the root element if the component is focused. */
-    var focused: String
+    var focused: ClassName
 
     /** Styles applied to the root element if `disabled={true}`. */
-    var disabled: String
+    var disabled: ClassName
 
     /** State class applied to the root element if `error={true}`. */
-    var error: String
+    var error: ClassName
 
     /** Styles applied to the root element if `multiline={true}`. */
-    var multiline: String
+    var multiline: ClassName
 
     /** Styles applied to the input element. */
-    var input: String
+    var input: ClassName
 
     /** Styles applied to the input element if `multiline={true}`. */
-    var inputMultiline: String
+    var inputMultiline: ClassName
 
     /** Styles applied to the input element if `type="search"`. */
-    var inputTypeSearch: String
+    var inputTypeSearch: ClassName
 }

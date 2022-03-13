@@ -2,49 +2,51 @@
 
 package mui.material
 
+import csstype.ClassName
+
 external interface DialogClasses {
     /** Styles applied to the root element. */
-    var root: String
+    var root: ClassName
 
     /** Styles applied to the container element if `scroll="paper"`. */
-    var scrollPaper: String
+    var scrollPaper: ClassName
 
     /** Styles applied to the container element if `scroll="body"`. */
-    var scrollBody: String
+    var scrollBody: ClassName
 
     /** Styles applied to the container element. */
-    var container: String
+    var container: ClassName
 
     /** Styles applied to the Paper component. */
-    var paper: String
+    var paper: ClassName
 
     /** Styles applied to the Paper component if `scroll="paper"`. */
-    var paperScrollPaper: String
+    var paperScrollPaper: ClassName
 
     /** Styles applied to the Paper component if `scroll="body"`. */
-    var paperScrollBody: String
+    var paperScrollBody: ClassName
 
     /** Styles applied to the Paper component if `maxWidth=false`. */
-    var paperWidthFalse: String
+    var paperWidthFalse: ClassName
 
     /** Styles applied to the Paper component if `maxWidth="xs"`. */
-    var paperWidthXs: String
+    var paperWidthXs: ClassName
 
     /** Styles applied to the Paper component if `maxWidth="sm"`. */
-    var paperWidthSm: String
+    var paperWidthSm: ClassName
 
     /** Styles applied to the Paper component if `maxWidth="md"`. */
-    var paperWidthMd: String
+    var paperWidthMd: ClassName
 
     /** Styles applied to the Paper component if `maxWidth="lg"`. */
-    var paperWidthLg: String
+    var paperWidthLg: ClassName
 
     /** Styles applied to the Paper component if `maxWidth="xl"`. */
-    var paperWidthXl: String
+    var paperWidthXl: ClassName
 
     /** Styles applied to the Paper component if `fullWidth={true}`. */
-    var paperFullWidth: String
+    var paperFullWidth: ClassName
 
     /** Styles applied to the Paper component if `fullScreen={true}`. */
-    var paperFullScreen: String
+    var paperFullScreen: ClassName
 }

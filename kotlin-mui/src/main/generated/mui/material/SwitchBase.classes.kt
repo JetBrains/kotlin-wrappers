@@ -2,11 +2,13 @@
 
 package mui.material
 
+import csstype.ClassName
+
 external interface SwitchBaseClasses {
-    var root: String
-    var checked: String
-    var disabled: String
-    var input: String
-    var edgeStart: String
-    var edgeEnd: String
+    var root: ClassName
+    var checked: ClassName
+    var disabled: ClassName
+    var input: ClassName
+    var edgeStart: ClassName
+    var edgeEnd: ClassName
 }

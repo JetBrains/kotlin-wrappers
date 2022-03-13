@@ -5,6 +5,7 @@
 
 package mui.material
 
+import csstype.ClassName
 import mui.material.styles.Theme
 import mui.system.SxProps
 
@@ -70,7 +71,7 @@ external interface ButtonBaseProps :
      * A [polyfill can be used](https://github.com/WICG/focus-visible) to apply a `focus-visible` class to other components
      * if needed.
      */
-    var focusVisibleClassName: String?
+    var focusVisibleClassName: ClassName?
 
     /**
      * The component used to render a link when the `href` prop is provided.

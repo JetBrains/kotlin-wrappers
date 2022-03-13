@@ -2,28 +2,30 @@
 
 package mui.material
 
+import csstype.ClassName
+
 external interface SpeedDialClasses {
     /** Styles applied to the root element. */
-    var root: String
+    var root: ClassName
 
     /** Styles applied to the Fab component. */
-    var fab: String
+    var fab: ClassName
 
     /** Styles applied to the root element if direction="up" */
-    var directionUp: String
+    var directionUp: ClassName
 
     /** Styles applied to the root element if direction="down" */
-    var directionDown: String
+    var directionDown: ClassName
 
     /** Styles applied to the root element if direction="left" */
-    var directionLeft: String
+    var directionLeft: ClassName
 
     /** Styles applied to the root element if direction="right" */
-    var directionRight: String
+    var directionRight: ClassName
 
     /** Styles applied to the actions (`children` wrapper) element. */
-    var actions: String
+    var actions: ClassName
 
     /** Styles applied to the actions (`children` wrapper) element if `open={false}`. */
-    var actionsClosed: String
+    var actionsClosed: ClassName
 }

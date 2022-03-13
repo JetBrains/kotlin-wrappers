@@ -2,115 +2,117 @@
 
 package mui.material
 
+import csstype.ClassName
+
 external interface ChipClasses {
     /** Styles applied to the root element. */
-    var root: String
+    var root: ClassName
 
     /** Styles applied to the root element if `size="small"`. */
-    var sizeSmall: String
+    var sizeSmall: ClassName
 
     /** Styles applied to the root element if `size="medium"`. */
-    var sizeMedium: String
+    var sizeMedium: ClassName
 
     /** Styles applied to the root element if `color="primary"`. */
-    var colorPrimary: String
+    var colorPrimary: ClassName
 
     /** Styles applied to the root element if `color="secondary"`. */
-    var colorSecondary: String
+    var colorSecondary: ClassName
 
     /** State class applied to the root element if `disabled={true}`. */
-    var disabled: String
+    var disabled: ClassName
 
     /** Styles applied to the root element if `onClick` is defined or `clickable={true}`. */
-    var clickable: String
+    var clickable: ClassName
 
     /** Styles applied to the root element if `onClick` and `color="primary"` is defined or `clickable={true}`. */
-    var clickableColorPrimary: String
+    var clickableColorPrimary: ClassName
 
     /** Styles applied to the root element if `onClick` and `color="secondary"` is defined or `clickable={true}`. */
-    var clickableColorSecondary: String
+    var clickableColorSecondary: ClassName
 
     /** Styles applied to the root element if `onDelete` is defined. */
-    var deletable: String
+    var deletable: ClassName
 
     /** Styles applied to the root element if `onDelete` and `color="primary"` is defined. */
-    var deletableColorPrimary: String
+    var deletableColorPrimary: ClassName
 
     /** Styles applied to the root element if `onDelete` and `color="secondary"` is defined. */
-    var deletableColorSecondary: String
+    var deletableColorSecondary: ClassName
 
     /** Styles applied to the root element if `variant="outlined"`. */
-    var outlined: String
+    var outlined: ClassName
 
     /** Styles applied to the root element if `variant="filled"`. */
-    var filled: String
+    var filled: ClassName
 
     /** Styles applied to the root element if `variant="outlined"` and `color="primary"`. */
-    var outlinedPrimary: String
+    var outlinedPrimary: ClassName
 
     /** Styles applied to the root element if `variant="outlined"` and `color="secondary"`. */
-    var outlinedSecondary: String
+    var outlinedSecondary: ClassName
 
     /** Styles applied to the avatar element. */
-    var avatar: String
+    var avatar: ClassName
 
     /** Styles applied to the avatar element if `size="small"`. */
-    var avatarSmall: String
+    var avatarSmall: ClassName
 
     /** Styles applied to the avatar element if `size="medium"`. */
-    var avatarMedium: String
+    var avatarMedium: ClassName
 
     /** Styles applied to the avatar element if `color="primary"`. */
-    var avatarColorPrimary: String
+    var avatarColorPrimary: ClassName
 
     /** Styles applied to the avatar element if `color="secondary"`. */
-    var avatarColorSecondary: String
+    var avatarColorSecondary: ClassName
 
     /** Styles applied to the icon element. */
-    var icon: String
+    var icon: ClassName
 
     /** Styles applied to the icon element if `size="small"`. */
-    var iconSmall: String
+    var iconSmall: ClassName
 
     /** Styles applied to the icon element if `size="medium"`. */
-    var iconMedium: String
+    var iconMedium: ClassName
 
     /** Styles applied to the icon element if `color="primary"`. */
-    var iconColorPrimary: String
+    var iconColorPrimary: ClassName
 
     /** Styles applied to the icon element if `color="secondary"`. */
-    var iconColorSecondary: String
+    var iconColorSecondary: ClassName
 
     /** Styles applied to the label `span` element. */
-    var label: String
+    var label: ClassName
 
     /** Styles applied to the label `span` element if `size="small"`. */
-    var labelSmall: String
+    var labelSmall: ClassName
 
     /** Styles applied to the label `span` element if `size="medium"`. */
-    var labelMedium: String
+    var labelMedium: ClassName
 
     /** Styles applied to the deleteIcon element. */
-    var deleteIcon: String
+    var deleteIcon: ClassName
 
     /** Styles applied to the deleteIcon element if `size="small"`. */
-    var deleteIconSmall: String
+    var deleteIconSmall: ClassName
 
     /** Styles applied to the deleteIcon element if `size="medium"`. */
-    var deleteIconMedium: String
+    var deleteIconMedium: ClassName
 
     /** Styles applied to the deleteIcon element if `color="primary"` and `variant="filled"`. */
-    var deleteIconColorPrimary: String
+    var deleteIconColorPrimary: ClassName
 
     /** Styles applied to the deleteIcon element if `color="secondary"` and `variant="filled"`. */
-    var deleteIconColorSecondary: String
+    var deleteIconColorSecondary: ClassName
 
     /** Styles applied to the deleteIcon element if `color="primary"` and `variant="outlined"`. */
-    var deleteIconOutlinedColorPrimary: String
+    var deleteIconOutlinedColorPrimary: ClassName
 
     /** Styles applied to the deleteIcon element if `color="secondary"` and `variant="outlined"`. */
-    var deleteIconOutlinedColorSecondary: String
+    var deleteIconOutlinedColorSecondary: ClassName
 
     /** State class applied to the root element if keyboard focused. */
-    var focusVisible: String
+    var focusVisible: ClassName
 }

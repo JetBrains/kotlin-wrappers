@@ -2,9 +2,11 @@
 
 package mui.base
 
+import csstype.ClassName
+
 external interface ButtonUnstyledClasses {
-    var root: String
-    var active: String
-    var disabled: String
-    var focusVisible: String
+    var root: ClassName
+    var active: ClassName
+    var disabled: ClassName
+    var focusVisible: ClassName
 }

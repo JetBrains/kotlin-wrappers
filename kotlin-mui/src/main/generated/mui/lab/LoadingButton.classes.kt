@@ -2,28 +2,30 @@
 
 package mui.lab
 
+import csstype.ClassName
+
 external interface LoadingButtonClasses {
     /** Styles applied to the root element. */
-    var root: String
+    var root: ClassName
 
     /** Styles applied to the root element if `loading={true}`. */
-    var loading: String
+    var loading: ClassName
 
     /** Styles applied to the loadingIndicator element. */
-    var loadingIndicator: String
+    var loadingIndicator: ClassName
 
     /** Styles applied to the loadingIndicator element if `loadingPosition="center"`. */
-    var loadingIndicatorCenter: String
+    var loadingIndicatorCenter: ClassName
 
     /** Styles applied to the loadingIndicator element if `loadingPosition="start"`. */
-    var loadingIndicatorStart: String
+    var loadingIndicatorStart: ClassName
 
     /** Styles applied to the loadingIndicator element if `loadingPosition="end"`. */
-    var loadingIndicatorEnd: String
+    var loadingIndicatorEnd: ClassName
 
     /** Styles applied to the endIcon element if `loading={true}` and `loadingPosition="end"`. */
-    var endIconLoadingEnd: String
+    var endIconLoadingEnd: ClassName
 
     /** Styles applied to the startIcon element if `loading={true}` and `loadingPosition="start"`. */
-    var startIconLoadingStart: String
+    var startIconLoadingStart: ClassName
 }

@@ -2,6 +2,8 @@
 
 package mui.base
 
+import csstype.ClassName
+
 external interface TabsListUnstyledProps :
     react.dom.html.HTMLAttributes<org.w3c.dom.HTMLDivElement>
 
@@ -13,7 +15,7 @@ external interface TabsListUnstyledOwnProps :
      */
     override var children: react.ReactNode?
 
-    override var className: csstype.ClassName?
+    override var className: ClassName?
 
     /**
      * The components used for each slot inside the TabsList.

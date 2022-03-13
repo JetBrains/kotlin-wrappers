@@ -2,10 +2,12 @@
 
 package mui.material
 
+import csstype.ClassName
+
 external interface ListItemAvatarClasses {
     /** Styles applied to the root element. */
-    var root: String
+    var root: ClassName
 
     /** Styles applied to the root element when the parent `ListItem` uses `alignItems="flex-start"`. */
-    var alignItemsFlexStart: String
+    var alignItemsFlexStart: ClassName
 }

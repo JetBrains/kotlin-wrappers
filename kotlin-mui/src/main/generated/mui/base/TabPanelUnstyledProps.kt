@@ -2,6 +2,8 @@
 
 package mui.base
 
+import csstype.ClassName
+
 external interface TabPanelUnstyledProps :
     react.dom.html.HTMLAttributes<org.w3c.dom.HTMLDivElement>
 
@@ -13,7 +15,7 @@ external interface TabPanelUnstyledOwnProps :
      */
     override var children: react.ReactNode?
 
-    override var className: csstype.ClassName?
+    override var className: ClassName?
 
     /**
      * The value of the TabPanel. It will be shown when the Tab with the corresponding value is selected.

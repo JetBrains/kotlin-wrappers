@@ -2,19 +2,21 @@
 
 package mui.material
 
+import csstype.ClassName
+
 external interface ImageListClasses {
     /** Styles applied to the root element. */
-    var root: String
+    var root: ClassName
 
     /** Styles applied to the root element if `variant="masonry"`. */
-    var masonry: String
+    var masonry: ClassName
 
     /** Styles applied to the root element if `variant="quilted"`. */
-    var quilted: String
+    var quilted: ClassName
 
     /** Styles applied to the root element if `variant="standard"`. */
-    var standard: String
+    var standard: ClassName
 
     /** Styles applied to the root element if `variant="woven"`. */
-    var woven: String
+    var woven: ClassName
 }

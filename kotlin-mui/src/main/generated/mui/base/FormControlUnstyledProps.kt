@@ -2,6 +2,8 @@
 
 package mui.base
 
+import csstype.ClassName
+
 external interface FormControlUnstyledProps :
     react.dom.html.HTMLAttributes<org.w3c.dom.HTMLDivElement>
 
@@ -16,7 +18,7 @@ external interface FormControlUnstyledOwnProps :
     /**
      * Class name applied to the root element.
      */
-    override var className: csstype.ClassName?
+    override var className: ClassName?
 
     /**
      * The components used for each slot inside the FormControl.

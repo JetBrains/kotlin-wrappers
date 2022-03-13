@@ -2,22 +2,24 @@
 
 package mui.material
 
+import csstype.ClassName
+
 external interface ListItemTextClasses {
     /** Styles applied to the root element. */
-    var root: String
+    var root: ClassName
 
     /** Styles applied to the Typography component if primary and secondary are set. */
-    var multiline: String
+    var multiline: ClassName
 
     /** Styles applied to the Typography component if dense. */
-    var dense: String
+    var dense: ClassName
 
     /** Styles applied to the root element if `inset={true}`. */
-    var inset: String
+    var inset: ClassName
 
     /** Styles applied to the primary `Typography` component. */
-    var primary: String
+    var primary: ClassName
 
     /** Styles applied to the secondary `Typography` component. */
-    var secondary: String
+    var secondary: ClassName
 }

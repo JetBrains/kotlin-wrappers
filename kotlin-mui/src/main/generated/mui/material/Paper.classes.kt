@@ -2,41 +2,43 @@
 
 package mui.material
 
+import csstype.ClassName
+
 external interface PaperClasses {
     /** Styles applied to the root element. */
-    var root: String
+    var root: ClassName
 
     /** Styles applied to the root element unless `square={true}`. */
-    var rounded: String
+    var rounded: ClassName
 
     /** Styles applied to the root element if `variant="outlined"`. */
-    var outlined: String
+    var outlined: ClassName
 
     /** Styles applied to the root element if `variant="elevation"`. */
-    var elevation: String
-    var elevation0: String
-    var elevation1: String
-    var elevation2: String
-    var elevation3: String
-    var elevation4: String
-    var elevation5: String
-    var elevation6: String
-    var elevation7: String
-    var elevation8: String
-    var elevation9: String
-    var elevation10: String
-    var elevation11: String
-    var elevation12: String
-    var elevation13: String
-    var elevation14: String
-    var elevation15: String
-    var elevation16: String
-    var elevation17: String
-    var elevation18: String
-    var elevation19: String
-    var elevation20: String
-    var elevation21: String
-    var elevation22: String
-    var elevation23: String
-    var elevation24: String
+    var elevation: ClassName
+    var elevation0: ClassName
+    var elevation1: ClassName
+    var elevation2: ClassName
+    var elevation3: ClassName
+    var elevation4: ClassName
+    var elevation5: ClassName
+    var elevation6: ClassName
+    var elevation7: ClassName
+    var elevation8: ClassName
+    var elevation9: ClassName
+    var elevation10: ClassName
+    var elevation11: ClassName
+    var elevation12: ClassName
+    var elevation13: ClassName
+    var elevation14: ClassName
+    var elevation15: ClassName
+    var elevation16: ClassName
+    var elevation17: ClassName
+    var elevation18: ClassName
+    var elevation19: ClassName
+    var elevation20: ClassName
+    var elevation21: ClassName
+    var elevation22: ClassName
+    var elevation23: ClassName
+    var elevation24: ClassName
 }

@@ -2,22 +2,24 @@
 
 package mui.material
 
+import csstype.ClassName
+
 external interface CollapseClasses {
     /** Styles applied to the root element. */
-    var root: String
+    var root: ClassName
 
     /** State class applied to the root element if `orientation="horizontal"`. */
-    var horizontal: String
+    var horizontal: ClassName
 
     /** Styles applied to the root element when the transition has entered. */
-    var entered: String
+    var entered: ClassName
 
     /** Styles applied to the root element when the transition has exited and `collapsedSize` = 0px. */
-    var hidden: String
+    var hidden: ClassName
 
     /** Styles applied to the outer wrapper element. */
-    var wrapper: String
+    var wrapper: ClassName
 
     /** Styles applied to the inner wrapper element. */
-    var wrapperInner: String
+    var wrapperInner: ClassName
 }

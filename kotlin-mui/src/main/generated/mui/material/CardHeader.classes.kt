@@ -2,22 +2,24 @@
 
 package mui.material
 
+import csstype.ClassName
+
 external interface CardHeaderClasses {
     /** Styles applied to the root element. */
-    var root: String
+    var root: ClassName
 
     /** Styles applied to the avatar element. */
-    var avatar: String
+    var avatar: ClassName
 
     /** Styles applied to the action element. */
-    var action: String
+    var action: ClassName
 
     /** Styles applied to the content wrapper element. */
-    var content: String
+    var content: ClassName
 
     /** Styles applied to the title Typography element. */
-    var title: String
+    var title: ClassName
 
     /** Styles applied to the subheader Typography element. */
-    var subheader: String
+    var subheader: ClassName
 }

@@ -2,109 +2,111 @@
 
 package mui.material
 
+import csstype.ClassName
+
 external interface ButtonClasses {
     /** Styles applied to the root element. */
-    var root: String
+    var root: ClassName
 
     /** Styles applied to the root element if `variant="text"`. */
-    var text: String
+    var text: ClassName
 
     /** Styles applied to the root element if `variant="text"` and `color="inherit"`. */
-    var textInherit: String
+    var textInherit: ClassName
 
     /** Styles applied to the root element if `variant="text"` and `color="primary"`. */
-    var textPrimary: String
+    var textPrimary: ClassName
 
     /** Styles applied to the root element if `variant="text"` and `color="secondary"`. */
-    var textSecondary: String
+    var textSecondary: ClassName
 
     /** Styles applied to the root element if `variant="outlined"`. */
-    var outlined: String
+    var outlined: ClassName
 
     /** Styles applied to the root element if `variant="outlined"` and `color="inherit"`. */
-    var outlinedInherit: String
+    var outlinedInherit: ClassName
 
     /** Styles applied to the root element if `variant="outlined"` and `color="primary"`. */
-    var outlinedPrimary: String
+    var outlinedPrimary: ClassName
 
     /** Styles applied to the root element if `variant="outlined"` and `color="secondary"`. */
-    var outlinedSecondary: String
+    var outlinedSecondary: ClassName
 
     /** Styles applied to the root element if `variant="contained"`. */
-    var contained: String
+    var contained: ClassName
 
     /** Styles applied to the root element if `variant="contained"` and `color="inherit"`. */
-    var containedInherit: String
+    var containedInherit: ClassName
 
     /** Styles applied to the root element if `variant="contained"` and `color="primary"`. */
-    var containedPrimary: String
+    var containedPrimary: ClassName
 
     /** Styles applied to the root element if `variant="contained"` and `color="secondary"`. */
-    var containedSecondary: String
+    var containedSecondary: ClassName
 
     /** Styles applied to the root element if `disableElevation={true}`. */
-    var disableElevation: String
+    var disableElevation: ClassName
 
     /** State class applied to the ButtonBase root element if the button is keyboard focused. */
-    var focusVisible: String
+    var focusVisible: ClassName
 
     /** State class applied to the root element if `disabled={true}`. */
-    var disabled: String
+    var disabled: ClassName
 
     /** Styles applied to the root element if `color="inherit"`. */
-    var colorInherit: String
+    var colorInherit: ClassName
 
     /** Styles applied to the root element if `size="small"` and `variant="text"`. */
-    var textSizeSmall: String
+    var textSizeSmall: ClassName
 
     /** Styles applied to the root element if `size="medium"` and `variant="text"`. */
-    var textSizeMedium: String
+    var textSizeMedium: ClassName
 
     /** Styles applied to the root element if `size="large"` and `variant="text"`. */
-    var textSizeLarge: String
+    var textSizeLarge: ClassName
 
     /** Styles applied to the root element if `size="small"` and `variant="outlined"`. */
-    var outlinedSizeSmall: String
+    var outlinedSizeSmall: ClassName
 
     /** Styles applied to the root element if `size="medium"` and `variant="outlined"`. */
-    var outlinedSizeMedium: String
+    var outlinedSizeMedium: ClassName
 
     /** Styles applied to the root element if `size="large"` and `variant="outlined"`. */
-    var outlinedSizeLarge: String
+    var outlinedSizeLarge: ClassName
 
     /** Styles applied to the root element if `size="small"` and `variant="contained"`. */
-    var containedSizeSmall: String
+    var containedSizeSmall: ClassName
 
     /** Styles applied to the root element if `size="medium"` and `variant="contained"`. */
-    var containedSizeMedium: String
+    var containedSizeMedium: ClassName
 
     /** Styles applied to the root element if `size="large"` and `variant="contained"`. */
-    var containedSizeLarge: String
+    var containedSizeLarge: ClassName
 
     /** Styles applied to the root element if `size="small"`. */
-    var sizeSmall: String
+    var sizeSmall: ClassName
 
     /** Styles applied to the root element if `size="medium"`. */
-    var sizeMedium: String
+    var sizeMedium: ClassName
 
     /** Styles applied to the root element if `size="large"`. */
-    var sizeLarge: String
+    var sizeLarge: ClassName
 
     /** Styles applied to the root element if `fullWidth={true}`. */
-    var fullWidth: String
+    var fullWidth: ClassName
 
     /** Styles applied to the startIcon element if supplied. */
-    var startIcon: String
+    var startIcon: ClassName
 
     /** Styles applied to the endIcon element if supplied. */
-    var endIcon: String
+    var endIcon: ClassName
 
     /** Styles applied to the icon element if supplied and `size="small"`. */
-    var iconSizeSmall: String
+    var iconSizeSmall: ClassName
 
     /** Styles applied to the icon element if supplied and `size="medium"`. */
-    var iconSizeMedium: String
+    var iconSizeMedium: ClassName
 
     /** Styles applied to the icon element if supplied and `size="large"`. */
-    var iconSizeLarge: String
+    var iconSizeLarge: ClassName
 }

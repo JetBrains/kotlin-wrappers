@@ -2,13 +2,15 @@
 
 package mui.material
 
+import csstype.ClassName
+
 external interface MenuClasses {
     /** Styles applied to the root element. */
-    var root: String
+    var root: ClassName
 
     /** Styles applied to the Paper component. */
-    var paper: String
+    var paper: ClassName
 
     /** Styles applied to the List component via `MenuList`. */
-    var list: String
+    var list: ClassName
 }

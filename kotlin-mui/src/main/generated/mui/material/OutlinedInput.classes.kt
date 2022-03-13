@@ -2,49 +2,51 @@
 
 package mui.material
 
+import csstype.ClassName
+
 external interface OutlinedInputClasses {
     /** Styles applied to the root element. */
-    var root: String
+    var root: ClassName
 
     /** Styles applied to the root element if the color is secondary. */
-    var colorSecondary: String
+    var colorSecondary: ClassName
 
     /** Styles applied to the root element if the component is focused. */
-    var focused: String
+    var focused: ClassName
 
     /** Styles applied to the root element if `disabled={true}`. */
-    var disabled: String
+    var disabled: ClassName
 
     /** Styles applied to the root element if `startAdornment` is provided. */
-    var adornedStart: String
+    var adornedStart: ClassName
 
     /** Styles applied to the root element if `endAdornment` is provided. */
-    var adornedEnd: String
+    var adornedEnd: ClassName
 
     /** State class applied to the root element if `error={true}`. */
-    var error: String
+    var error: ClassName
 
     /** Styles applied to the input element if `size="small"`. */
-    var sizeSmall: String
+    var sizeSmall: ClassName
 
     /** Styles applied to the root element if `multiline={true}`. */
-    var multiline: String
+    var multiline: ClassName
 
     /** Styles applied to the NotchedOutline element. */
-    var notchedOutline: String
+    var notchedOutline: ClassName
 
     /** Styles applied to the input element. */
-    var input: String
+    var input: ClassName
 
     /** Styles applied to the input element if `size="small"`. */
-    var inputSizeSmall: String
+    var inputSizeSmall: ClassName
 
     /** Styles applied to the input element if `multiline={true}`. */
-    var inputMultiline: String
+    var inputMultiline: ClassName
 
     /** Styles applied to the input element if `startAdornment` is provided. */
-    var inputAdornedStart: String
+    var inputAdornedStart: ClassName
 
     /** Styles applied to the input element if `endAdornment` is provided. */
-    var inputAdornedEnd: String
+    var inputAdornedEnd: ClassName
 }

@@ -2,8 +2,10 @@
 
 package mui.base
 
+import csstype.ClassName
+
 external interface MenuUnstyledClasses {
-    var root: String
-    var listbox: String
-    var expanded: String
+    var root: ClassName
+    var listbox: ClassName
+    var expanded: ClassName
 }

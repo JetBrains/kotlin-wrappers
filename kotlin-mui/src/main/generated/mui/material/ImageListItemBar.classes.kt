@@ -2,40 +2,42 @@
 
 package mui.material
 
+import csstype.ClassName
+
 external interface ImageListItemBarClasses {
     /** Styles applied to the root element. */
-    var root: String
+    var root: ClassName
 
     /** Styles applied to the root element if `position="bottom"`. */
-    var positionBottom: String
+    var positionBottom: ClassName
 
     /** Styles applied to the root element if `position="top"`. */
-    var positionTop: String
+    var positionTop: ClassName
 
     /** Styles applied to the root element if `position="below"`. */
-    var positionBelow: String
+    var positionBelow: ClassName
 
     /** Styles applied to the title and subtitle container element. */
-    var titleWrap: String
+    var titleWrap: ClassName
 
     /** Styles applied to the title and subtitle container element if `position="below"`. */
-    var titleWrapBelow: String
+    var titleWrapBelow: ClassName
 
     /** Styles applied to the container element if `actionPosition="left"`. */
-    var titleWrapActionPosLeft: String
+    var titleWrapActionPosLeft: ClassName
 
     /** Styles applied to the container element if `actionPosition="right"`. */
-    var titleWrapActionPosRight: String
+    var titleWrapActionPosRight: ClassName
 
     /** Styles applied to the title container element. */
-    var title: String
+    var title: ClassName
 
     /** Styles applied to the subtitle container element. */
-    var subtitle: String
+    var subtitle: ClassName
 
     /** Styles applied to the actionIcon if supplied. */
-    var actionIcon: String
+    var actionIcon: ClassName
 
     /** Styles applied to the actionIcon if `actionPosition="left"`. */
-    var actionIconActionPosLeft: String
+    var actionIconActionPosLeft: ClassName
 }

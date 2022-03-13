@@ -2,16 +2,18 @@
 
 package mui.material
 
+import csstype.ClassName
+
 external interface ToolbarClasses {
     /** Styles applied to the root element. */
-    var root: String
+    var root: ClassName
 
     /** Styles applied to the root element unless `disableGutters={true}`. */
-    var gutters: String
+    var gutters: ClassName
 
     /** Styles applied to the root element if `variant="regular"`. */
-    var regular: String
+    var regular: ClassName
 
     /** Styles applied to the root element if `variant="dense"`. */
-    var dense: String
+    var dense: ClassName
 }

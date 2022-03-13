@@ -2,6 +2,8 @@
 
 package mui.lab
 
+import csstype.ClassName
+
 external interface TreeItemContentProps :
     mui.system.StandardProps,
     react.dom.html.HTMLAttributes<org.w3c.dom.HTMLElement>,
@@ -9,7 +11,7 @@ external interface TreeItemContentProps :
     /**
      * className applied to the root element.
      */
-    override var className: csstype.ClassName?
+    override var className: ClassName?
 
     /**
      * Override or extend the styles applied to the component.

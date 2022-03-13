@@ -2,10 +2,12 @@
 
 package mui.base
 
+import csstype.ClassName
+
 external interface FormControlUnstyledClasses {
     /** Class applied to the root element. */
-    var root: String
+    var root: ClassName
 
     /** Class applied to the root element if `disabled={true}`. */
-    var disabled: String
+    var disabled: ClassName
 }

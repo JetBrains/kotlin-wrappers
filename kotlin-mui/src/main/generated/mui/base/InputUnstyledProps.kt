@@ -2,6 +2,8 @@
 
 package mui.base
 
+import csstype.ClassName
+
 external interface InputUnstyledProps :
     react.dom.html.HTMLAttributes<org.w3c.dom.HTMLDivElement>
 
@@ -70,7 +72,7 @@ external interface InputUnstyledOwnProps :
     /**
      * Class name applied to the root element.
      */
-    override var className: csstype.ClassName?
+    override var className: ClassName?
 
     /**
      * The components used for each slot inside the InputBase.

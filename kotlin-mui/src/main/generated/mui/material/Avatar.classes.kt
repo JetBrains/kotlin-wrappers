@@ -2,25 +2,27 @@
 
 package mui.material
 
+import csstype.ClassName
+
 external interface AvatarClasses {
     /** Styles applied to the root element. */
-    var root: String
+    var root: ClassName
 
     /** Styles applied to the root element if not `src` or `srcSet`. */
-    var colorDefault: String
+    var colorDefault: ClassName
 
     /** Styles applied to the root element if `variant="circular"`. */
-    var circular: String
+    var circular: ClassName
 
     /** Styles applied to the root element if `variant="rounded"`. */
-    var rounded: String
+    var rounded: ClassName
 
     /** Styles applied to the root element if `variant="square"`. */
-    var square: String
+    var square: ClassName
 
     /** Styles applied to the img element if either `src` or `srcSet` is defined. */
-    var img: String
+    var img: ClassName
 
     /** Styles applied to the fallback icon */
-    var fallback: String
+    var fallback: ClassName
 }

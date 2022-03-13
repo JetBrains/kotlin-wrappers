@@ -2,8 +2,10 @@
 
 package mui.base
 
+import csstype.ClassName
+
 external interface OptionGroupUnstyledClasses {
-    var root: String
-    var label: String
-    var list: String
+    var root: ClassName
+    var label: ClassName
+    var list: ClassName
 }

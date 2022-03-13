@@ -2,58 +2,60 @@
 
 package mui.material
 
+import csstype.ClassName
+
 external interface PaginationItemClasses {
     /** Styles applied to the root element. */
-    var root: String
+    var root: ClassName
 
     /** Styles applied to the root element if `type="page"`. */
-    var page: String
+    var page: ClassName
 
     /** Styles applied to the root element if `size="small"`. */
-    var sizeSmall: String
+    var sizeSmall: ClassName
 
     /** Styles applied to the root element if `size="large"`. */
-    var sizeLarge: String
+    var sizeLarge: ClassName
 
     /** Styles applied to the root element if `variant="text"`. */
-    var text: String
+    var text: ClassName
 
     /** Styles applied to the root element if `variant="text"` and `color="primary"`. */
-    var textPrimary: String
+    var textPrimary: ClassName
 
     /** Styles applied to the root element if `variant="text"` and `color="secondary"`. */
-    var textSecondary: String
+    var textSecondary: ClassName
 
     /** Styles applied to the root element if `variant="outlined"`. */
-    var outlined: String
+    var outlined: ClassName
 
     /** Styles applied to the root element if `variant="outlined"` and `color="primary"`. */
-    var outlinedPrimary: String
+    var outlinedPrimary: ClassName
 
     /** Styles applied to the root element if `variant="outlined"` and `color="secondary"`. */
-    var outlinedSecondary: String
+    var outlinedSecondary: ClassName
 
     /** Styles applied to the root element if `rounded="true"`. */
-    var rounded: String
+    var rounded: ClassName
 
     /** Styles applied to the root element if `type="start-ellipsis"` or `type="end-ellipsis"`. */
-    var ellipsis: String
+    var ellipsis: ClassName
 
     /** Styles applyed to the root element if `type="first"` or type="last". */
-    var firstLast: String
+    var firstLast: ClassName
 
     /** Styles applyed to the root element if `type="previous"` or type="next". */
-    var previousNext: String
+    var previousNext: ClassName
 
     /** State class applied to the root element if keyboard focused. */
-    var focusVisible: String
+    var focusVisible: ClassName
 
     /** State class applied to the root element if `disabled={true}`. */
-    var disabled: String
+    var disabled: ClassName
 
     /** State class applied to the root element if `selected={true}`. */
-    var selected: String
+    var selected: ClassName
 
     /** Styles applied to the icon to display. */
-    var icon: String
+    var icon: ClassName
 }
