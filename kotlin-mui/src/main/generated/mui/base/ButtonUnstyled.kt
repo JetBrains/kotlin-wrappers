@@ -16,11 +16,11 @@ external interface ButtonUnstyledOwnerState : mui.base.ButtonUnstyledOwnProps {
  *
  * Demos:
  *
- * - [Buttons](https://mui.com/components/buttons/)
+ * - [Button](https://mui.com/base/react-button/)
  *
  * API:
  *
- * - [ButtonUnstyled API](https://mui.com/api/button-unstyled/)
+ * - [ButtonUnstyled API](https://mui.com/base/api/button-unstyled/)
  */
 @JsName("default")
 external val ButtonUnstyled: react.FC<ButtonUnstyledProps>

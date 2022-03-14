@@ -9,11 +9,11 @@ package mui.base
  *
  * Demos:
  *
- * - [Menus](https://mui.com/components/menus/)
+ * - [Menu](https://mui.com/base/react-menu/)
  *
  * API:
  *
- * - [MenuItemUnstyled API](https://mui.com/api/menu-item-unstyled/)
+ * - [MenuItemUnstyled API](https://mui.com/base/api/menu-item-unstyled/)
  */
 @JsName("default")
 external val MenuItemUnstyled: react.FC<MenuItemUnstyledProps>

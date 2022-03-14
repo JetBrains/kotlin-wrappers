@@ -120,7 +120,7 @@ external interface InputBaseProps :
     var margin: InputBaseMargin?
 
     /**
-     * If `true`, a `textarea` element is rendered.
+     * If `true`, a [TextareaAutosize](/components/textarea-autosize/) element is rendered.
      * @default false
      */
     var multiline: Boolean?
