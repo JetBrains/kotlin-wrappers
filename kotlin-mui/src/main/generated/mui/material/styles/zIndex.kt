@@ -16,4 +16,6 @@ external interface ZIndex {
     var snackbar: Number
 
     var tooltip: Number
+
+    var fab: Number
 }

@@ -86,7 +86,7 @@ external interface UsePaginationItem : react.Props {
 
     var type: UsePaginationItemType
 
-    var page: Number
+    var page: Number?
 
     var selected: Boolean
 
