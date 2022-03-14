@@ -281,6 +281,8 @@ external interface StandardLonghandProperties {
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/appearance">MDN</a>
      */
     var appearance: Appearance?
+    var WebkitAppearance: Appearance?
+    var MozAppearance: Appearance?
 
     /**
      * The **`aspect-ratio`** CSS property sets a **preferred aspect ratio** for the box, which will be used in the calculation of auto sizes and some other layout functions.
