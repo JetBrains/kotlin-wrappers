@@ -2,6 +2,6 @@
 
 package react.dom
 
-external interface DangerouslySetInnerHTML {
+sealed external interface DangerouslySetInnerHTML {
     var __html: String
 }
