@@ -5,8 +5,6 @@
 
 package mui.system
 
-external interface Spacing
-
 @JsName("default")
 external fun createSpacing(
     spacingInput: SpacingOptions? = definedExternally,
