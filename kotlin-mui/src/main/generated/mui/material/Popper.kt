@@ -5,6 +5,18 @@
 
 package mui.material
 
+import mui.material.styles.Theme
+import mui.system.SxProps
+
+external interface PopperProps :
+    mui.base.PopperUnstyledProps,
+    mui.system.PropsWithSx {
+    /**
+     * The system prop that allows defining system overrides as well as additional CSS styles.
+     */
+    override var sx: SxProps<Theme>?
+}
+
 /**
  *
  * Demos:

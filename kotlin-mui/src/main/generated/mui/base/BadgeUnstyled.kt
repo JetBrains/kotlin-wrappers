@@ -9,11 +9,12 @@ package mui.base
  *
  * Demos:
  *
- * - [Badges](https://mui.com/components/badges/)
+ * - [Badge](https://mui.com/base/react-badge/)
+ * - [Badges](https://mui.com/material-ui/react-badge/)
  *
  * API:
  *
- * - [BadgeUnstyled API](https://mui.com/api/badge-unstyled/)
+ * - [BadgeUnstyled API](https://mui.com/base/api/badge-unstyled/)
  */
 @JsName("default")
 external val BadgeUnstyled: react.FC<BadgeUnstyledProps>
