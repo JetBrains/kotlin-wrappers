@@ -5,7 +5,7 @@ import org.jetbrains.kotlin.gradle.targets.js.yarn.YarnRootExtension
 
 plugins.withType<YarnPlugin> {
     the<YarnRootExtension>().apply {
-        version = "1.22.17"
+        version = "1.22.18"
         lockFileDirectory = projectDir
         ignoreScripts = false
     }
@@ -13,6 +13,6 @@ plugins.withType<YarnPlugin> {
 
 plugins.withType<NodeJsRootPlugin> {
     the<NodeJsRootExtension>().apply {
-        nodeVersion = "16.14.0"
+        nodeVersion = "16.14.2"
     }
 }
