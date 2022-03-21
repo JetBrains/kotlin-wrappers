@@ -10,6 +10,7 @@ sealed external interface GlobalsType :
     All,
     AnimationDirection,
     AnimationFillMode,
+    AnimationIterationCount,
     AnimationName,
     AnimationPlayState,
     AnimationTimeline,
