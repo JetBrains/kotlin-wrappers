@@ -1,6 +1,10 @@
+@file:Suppress(
+    "NOTHING_TO_INLINE",
+)
+
 package csstype
 
-fun GridArea(
+inline fun GridArea(
     gridRowStart: Ident,
     gridColumnStart: Ident,
     gridRowEnd: Ident,
