@@ -2,5 +2,4 @@
 
 package csstype
 
-// "auto" | (string & {}) | (number & {})
 sealed external interface GridLine : GridLineProperty

@@ -26,6 +26,7 @@ sealed external interface AutoType :
     FontOpticalSizing,
     FontSmooth,
     ForcedColorAdjust,
+    GridLine,
     HyphenateCharacter,
     Hyphens,
     ImageRendering,
