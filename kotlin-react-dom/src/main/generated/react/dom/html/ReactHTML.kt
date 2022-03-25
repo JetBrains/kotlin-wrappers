@@ -42,8 +42,8 @@ object ReactHTML {
     inline val big: IntrinsicType<HTMLAttributes<HTMLElement>>
         get() = "big".unsafeCast<IntrinsicType<HTMLAttributes<HTMLElement>>>()
 
-    inline val blockquote: IntrinsicType<BlockquoteHTMLAttributes<HTMLElement>>
-        get() = "blockquote".unsafeCast<IntrinsicType<BlockquoteHTMLAttributes<HTMLElement>>>()
+    inline val blockquote: IntrinsicType<BlockquoteHTMLAttributes<HTMLQuoteElement>>
+        get() = "blockquote".unsafeCast<IntrinsicType<BlockquoteHTMLAttributes<HTMLQuoteElement>>>()
 
     inline val body: IntrinsicType<HTMLAttributes<HTMLBodyElement>>
         get() = "body".unsafeCast<IntrinsicType<HTMLAttributes<HTMLBodyElement>>>()
@@ -81,11 +81,11 @@ object ReactHTML {
     inline val dd: IntrinsicType<HTMLAttributes<HTMLElement>>
         get() = "dd".unsafeCast<IntrinsicType<HTMLAttributes<HTMLElement>>>()
 
-    inline val del: IntrinsicType<DelHTMLAttributes<HTMLElement>>
-        get() = "del".unsafeCast<IntrinsicType<DelHTMLAttributes<HTMLElement>>>()
+    inline val del: IntrinsicType<DelHTMLAttributes<HTMLModElement>>
+        get() = "del".unsafeCast<IntrinsicType<DelHTMLAttributes<HTMLModElement>>>()
 
-    inline val details: IntrinsicType<DetailsHTMLAttributes<HTMLElement>>
-        get() = "details".unsafeCast<IntrinsicType<DetailsHTMLAttributes<HTMLElement>>>()
+    inline val details: IntrinsicType<DetailsHTMLAttributes<HTMLDetailsElement>>
+        get() = "details".unsafeCast<IntrinsicType<DetailsHTMLAttributes<HTMLDetailsElement>>>()
 
     inline val dfn: IntrinsicType<HTMLAttributes<HTMLElement>>
         get() = "dfn".unsafeCast<IntrinsicType<HTMLAttributes<HTMLElement>>>()
@@ -207,8 +207,8 @@ object ReactHTML {
     inline val meta: IntrinsicType<MetaHTMLAttributes<HTMLMetaElement>>
         get() = "meta".unsafeCast<IntrinsicType<MetaHTMLAttributes<HTMLMetaElement>>>()
 
-    inline val meter: IntrinsicType<MeterHTMLAttributes<HTMLElement>>
-        get() = "meter".unsafeCast<IntrinsicType<MeterHTMLAttributes<HTMLElement>>>()
+    inline val meter: IntrinsicType<MeterHTMLAttributes<HTMLMeterElement>>
+        get() = "meter".unsafeCast<IntrinsicType<MeterHTMLAttributes<HTMLMeterElement>>>()
 
     inline val nav: IntrinsicType<HTMLAttributes<HTMLElement>>
         get() = "nav".unsafeCast<IntrinsicType<HTMLAttributes<HTMLElement>>>()
@@ -228,8 +228,8 @@ object ReactHTML {
     inline val option: IntrinsicType<OptionHTMLAttributes<HTMLOptionElement>>
         get() = "option".unsafeCast<IntrinsicType<OptionHTMLAttributes<HTMLOptionElement>>>()
 
-    inline val output: IntrinsicType<OutputHTMLAttributes<HTMLElement>>
-        get() = "output".unsafeCast<IntrinsicType<OutputHTMLAttributes<HTMLElement>>>()
+    inline val output: IntrinsicType<OutputHTMLAttributes<HTMLOutputElement>>
+        get() = "output".unsafeCast<IntrinsicType<OutputHTMLAttributes<HTMLOutputElement>>>()
 
     inline val p: IntrinsicType<HTMLAttributes<HTMLParagraphElement>>
         get() = "p".unsafeCast<IntrinsicType<HTMLAttributes<HTMLParagraphElement>>>()
@@ -324,8 +324,8 @@ object ReactHTML {
     inline val thead: IntrinsicType<HTMLAttributes<HTMLTableSectionElement>>
         get() = "thead".unsafeCast<IntrinsicType<HTMLAttributes<HTMLTableSectionElement>>>()
 
-    inline val time: IntrinsicType<TimeHTMLAttributes<HTMLElement>>
-        get() = "time".unsafeCast<IntrinsicType<TimeHTMLAttributes<HTMLElement>>>()
+    inline val time: IntrinsicType<TimeHTMLAttributes<HTMLTimeElement>>
+        get() = "time".unsafeCast<IntrinsicType<TimeHTMLAttributes<HTMLTimeElement>>>()
 
     inline val title: IntrinsicType<HTMLAttributes<HTMLTitleElement>>
         get() = "title".unsafeCast<IntrinsicType<HTMLAttributes<HTMLTitleElement>>>()
