@@ -6,9 +6,9 @@
 package mui.material.styles
 
 external interface CommonColors {
-    var black: String
+    var black: csstype.Color
 
-    var white: String
+    var white: csstype.Color
 }
 
 external interface TypeText {
@@ -60,13 +60,13 @@ external interface SimplePaletteColorOptions {
 }
 
 external interface PaletteColor {
-    var light: String
+    var light: csstype.Color
 
-    var main: String
+    var main: csstype.Color
 
-    var dark: String
+    var dark: csstype.Color
 
-    var contrastText: String
+    var contrastText: csstype.Color
 }
 
 external interface TypeObject {
