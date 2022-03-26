@@ -153,21 +153,21 @@ fun Palette.augmentColor(
     })
 
 external interface PaletteOptions {
-    var primary: dynamic
+    var primary: SimplePaletteColorOptions?
 
-    var secondary: dynamic
+    var secondary: SimplePaletteColorOptions?
 
-    var error: dynamic
+    var error: SimplePaletteColorOptions?
 
-    var warning: dynamic
+    var warning: SimplePaletteColorOptions?
 
-    var info: dynamic
+    var info: SimplePaletteColorOptions?
 
-    var success: dynamic
+    var success: SimplePaletteColorOptions?
 
     var mode: dynamic
 
-    var tonalOffset: dynamic
+    var tonalOffset: Number?
 
     var contrastThreshold: Number?
 
