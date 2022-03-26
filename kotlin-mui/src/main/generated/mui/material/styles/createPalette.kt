@@ -91,10 +91,15 @@ external interface PaletteAugmentColorOptions {
     var name: dynamic
 }
 
+enum class PaletteMode {
+    light,
+    dark
+}
+
 external interface Palette {
     var common: CommonColors
 
-    var mode: dynamic
+    // var mode: PaletteMode is declared as an extension var below.
 
     var contrastThreshold: Number
 
@@ -126,6 +131,10 @@ external interface Palette {
 
     var augmentColor: (options: PaletteAugmentColorOptions) -> PaletteColor
 }
+
+var Palette.mode: PaletteType
+    get() = PaletteType.valueOf(asDynamic()["mode"] as String)
+    set(value) { asDynamic()["mode"] = value.name }
 
 external interface PaletteOptions {
     var primary: dynamic
