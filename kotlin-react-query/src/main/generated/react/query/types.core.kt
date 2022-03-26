@@ -75,7 +75,7 @@ external interface QueryObserverOptions<TQueryFnData, TError, TData, TQueryData,
     var onSuccess: (data: TData) -> Unit
     var onError: (err: TError) -> Unit
     var onSettled: (data: TData?, error: TError?) -> Unit
-    var useErrorBoundary: (error: TError) -> Boolean
+    var useErrorBoundary: dynamic
     var select: (data: TQueryData) -> TData
     var suspense: Boolean
     var keepPreviousData: Boolean

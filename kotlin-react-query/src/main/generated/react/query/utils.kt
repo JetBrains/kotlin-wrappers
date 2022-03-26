@@ -5,8 +5,8 @@
 
 package react.query
 
-external fun <TError> shouldThrowError(
+external fun <T : Function<Boolean>> shouldThrowError(
     suspense: Boolean?,
-    _useErrorBoundary: ((err: TError) -> Boolean)?,
-    error: TError,
+    _useErrorBoundary: T?,
+    params: dynamic,
 ): Boolean
