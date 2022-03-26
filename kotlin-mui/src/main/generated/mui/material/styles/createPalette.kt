@@ -69,6 +69,7 @@ external interface PaletteColor {
     var contrastText: csstype.Color
 }
 
+// This is related to PaletteMode, unclear how you access one from the other, though.
 external interface TypeObject {
     var text: dynamic
 
