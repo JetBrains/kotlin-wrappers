@@ -137,6 +137,21 @@ var Palette.mode: PaletteType
     get() = PaletteType.valueOf(asDynamic()["mode"] as String)
     set(value) { asDynamic()["mode"] = value.name }
 
+fun Palette.augmentColor(
+    color: Color? = null,
+    name: String? = null,
+    mainShade: Number? = null,
+    lightShade: Number? = null,
+    darkShade: Number? = null
+): PaletteColor =
+    augmentColor(jso {
+        this.color = color
+        this.name = name
+        this.mainShade = mainShade
+        this.lightShade = lightShade
+        this.darkShade = darkShade
+    })
+
 external interface PaletteOptions {
     var primary: dynamic
 
