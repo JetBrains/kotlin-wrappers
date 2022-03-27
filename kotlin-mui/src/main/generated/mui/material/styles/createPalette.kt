@@ -133,8 +133,8 @@ external interface Palette {
     var augmentColor: (options: PaletteAugmentColorOptions) -> PaletteColor
 }
 
-var Palette.mode: PaletteType
-    get() = PaletteType.valueOf(asDynamic()["mode"] as String)
+var Palette.mode: PaletteMode
+    get() = PaletteMode.valueOf(asDynamic()["mode"] as String)
     set(value) { asDynamic()["mode"] = value.name }
 
 fun Palette.augmentColor(
@@ -152,6 +152,12 @@ fun Palette.augmentColor(
         this.darkShade = darkShade
     })
 
+external interface CommonColorsOptions {
+    var black: csstype.Color?
+
+    var white: csstype.Color?
+}
+
 external interface PaletteOptions {
     var primary: SimplePaletteColorOptions?
 
@@ -165,13 +171,13 @@ external interface PaletteOptions {
 
     var success: SimplePaletteColorOptions?
 
-    var mode: dynamic
+    var mode: PaletteMode?
 
     var tonalOffset: Number?
 
     var contrastThreshold: Number?
 
-    var common: dynamic
+    var common: CommonColorsOptions?
 
     var grey: dynamic
 
