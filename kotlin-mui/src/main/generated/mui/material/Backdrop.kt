@@ -9,13 +9,39 @@ import mui.material.styles.Theme
 import mui.system.SxProps
 
 external interface BackdropProps :
-    mui.base.BackdropUnstyledProps,
+    react.dom.html.HTMLAttributes<org.w3c.dom.HTMLDivElement>,
+    react.PropsWithChildren,
     mui.system.PropsWithSx,
     mui.types.PropsWithComponent {
     /**
+     * The content of the component.
+     */
+    override var children: react.ReactNode?
+
+    /**
+     * The components used for each slot inside the Backdrop.
+     * Either a string to use a HTML element or a component.
+     * @default {}
+     */
+    var components: dynamic
+
+    /**
+     * The props used for each slot inside the Backdrop.
+     * @default {}
+     */
+    var componentsProps: dynamic
+
+    /**
      * Override or extend the styles applied to the component.
      */
-    override var classes: mui.base.BackdropUnstyledClasses?
+    var classes: BackdropClasses?
+
+    /**
+     * If `true`, the backdrop is invisible.
+     * It can be used when rendering a popover or a custom select component.
+     * @default false
+     */
+    var invisible: Boolean?
 
     /**
      * If `true`, the component is shown.
@@ -45,6 +71,5 @@ external interface BackdropProps :
  * - [Backdrop API](https://mui.com/api/backdrop/)
  * - inherits [Fade API](https://mui.com/api/fade/)
  */
-
 @JsName("default")
 external val Backdrop: react.FC<BackdropProps>

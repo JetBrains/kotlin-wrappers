@@ -42,12 +42,13 @@ external interface ClickAwayListenerProps : react.Props {
  *
  * Demos:
  *
- * - [Click Away Listener](https://mui.com/components/click-away-listener/)
- * - [Menus](https://mui.com/components/menus/)
+ * - [Click Away Listener](https://mui.com/base/components/click-away-listener/)
+ * - [Click Away Listener](https://mui.com/material-ui/react-click-away-listener/)
+ * - [Menus](https://mui.com/material-ui/react-menu/)
  *
  * API:
  *
- * - [ClickAwayListener API](https://mui.com/api/click-away-listener/)
+ * - [ClickAwayListener API](https://mui.com/base/api/click-away-listener/)
  */
 @JsName("default")
 external val ClickAwayListener: react.FC<ClickAwayListenerProps>

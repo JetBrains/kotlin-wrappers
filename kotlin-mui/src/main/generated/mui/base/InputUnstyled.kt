@@ -9,11 +9,11 @@ package mui.base
  *
  * Demos:
  *
- * - [Text Fields](https://mui.com/components/text-fields/)
+ * - [Input](https://mui.com/base/react-input/)
  *
  * API:
  *
- * - [InputUnstyled API](https://mui.com/api/input-unstyled/)
+ * - [InputUnstyled API](https://mui.com/base/api/input-unstyled/)
  */
 @JsName("default")
 external val InputUnstyled: react.FC<InputUnstyledProps>
