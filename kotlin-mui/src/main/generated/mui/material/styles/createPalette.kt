@@ -12,31 +12,31 @@ external interface CommonColors {
 }
 
 external interface TypeText {
-    var primary: String
+    var primary: csstype.Color
 
-    var secondary: String
+    var secondary: csstype.Color
 
-    var disabled: String
+    var disabled: csstype.Color
 }
 
 external interface TypeAction {
-    var active: String
+    var active: csstype.Color
 
-    var hover: String
+    var hover: csstype.Color
 
     var hoverOpacity: Number
 
-    var selected: String
+    var selected: csstype.Color
 
     var selectedOpacity: Number
 
-    var disabled: String
+    var disabled: csstype.Color
 
     var disabledOpacity: Number
 
-    var disabledBackground: String
+    var disabledBackground: csstype.Color
 
-    var focus: String
+    var focus: csstype.Color
 
     var focusOpacity: Number
 
@@ -50,13 +50,13 @@ external interface TypeBackground {
 }
 
 external interface SimplePaletteColorOptions {
-    var light: String?
+    var light: csstype.Color?
 
-    var main: String
+    var main: csstype.Color
 
-    var dark: String?
+    var dark: csstype.Color?
 
-    var contrastText: String?
+    var contrastText: csstype.Color?
 }
 
 external interface PaletteColor {
@@ -70,13 +70,13 @@ external interface PaletteColor {
 }
 
 external interface TypeObject {
-    var text: dynamic
+    var text: TypeText
 
-    var action: dynamic
+    var action: TypeAction
 
     var divider: dynamic
 
-    var background: dynamic
+    var background: TypeBackground
 }
 
 external interface PaletteAugmentColorOptions {
@@ -92,9 +92,9 @@ external interface PaletteAugmentColorOptions {
 }
 
 external interface Palette {
-    var common: dynamic
+    var common: CommonColors
 
-    var mode: dynamic
+    var mode: mui.material.PaletteMode
 
     var contrastThreshold: Number
 
@@ -114,13 +114,13 @@ external interface Palette {
 
     var grey: dynamic
 
-    var text: dynamic
+    var text: TypeText
 
     var divider: dynamic
 
-    var action: dynamic
+    var action: TypeAction
 
-    var background: dynamic
+    var background: TypeBackground
 
     var getContrastText: (background: String) -> String
 
@@ -140,7 +140,7 @@ external interface PaletteOptions {
 
     var success: dynamic
 
-    var mode: dynamic
+    var mode: mui.material.PaletteMode?
 
     var tonalOffset: dynamic
 
