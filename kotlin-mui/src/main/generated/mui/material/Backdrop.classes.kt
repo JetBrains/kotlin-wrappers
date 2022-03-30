@@ -1,10 +1,10 @@
 // Automatically generated - do not modify!
 
-package mui.base
+package mui.material
 
 import csstype.ClassName
 
-external interface BackdropUnstyledClasses {
+external interface BackdropClasses {
     /** Styles applied to the root element. */
     var root: ClassName
 

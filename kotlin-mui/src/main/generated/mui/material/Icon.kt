@@ -32,7 +32,9 @@ external interface IconProps :
     var classes: IconClasses?
 
     /**
-     * The color of the component. It supports those theme colors that make sense for this component.
+     * The color of the component.
+     * It supports both default and custom theme colors, which can be added as shown in the
+     * [palette customization guide](https://mui.com/customization/palette/#adding-new-colors).
      * @default 'inherit'
      */
     var color: IconColor?

@@ -10,7 +10,6 @@ package mui.base
  * Demos:
  *
  * - [Badge](https://mui.com/base/react-badge/)
- * - [Badges](https://mui.com/material-ui/react-badge/)
  *
  * API:
  *

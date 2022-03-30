@@ -18,9 +18,9 @@ external interface ModalUnstyledProps :
     var BackdropComponent: react.ElementType<*>?
 
     /**
-     * Props applied to the [`BackdropUnstyled`](/api/backdrop-unstyled/) element.
+     * Props applied to the backdrop element.
      */
-    var BackdropProps: BackdropUnstyledProps?
+    var BackdropProps: dynamic
 
     /**
      * A single child content element.
@@ -154,11 +154,11 @@ external interface ModalUnstyledProps :
  *
  * Demos:
  *
- * - [Modal](https://mui.com/components/modal/)
+ * - [Modal](https://mui.com/base/react-modal/)
  *
  * API:
  *
- * - [ModalUnstyled API](https://mui.com/api/modal-unstyled/)
+ * - [ModalUnstyled API](https://mui.com/base/api/modal-unstyled/)
  */
 @JsName("default")
 external val ModalUnstyled: react.FC<ModalUnstyledProps>
