@@ -10,11 +10,10 @@ import csstype.ClassName
 
 @Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
 // language=JavaScript
-@JsName("""(/*union*/{root: 'MuiTabScrollButton-root', vertical: 'MuiTabScrollButton-vertical', disabled: 'MuiTabScrollButton-disabled'}/*union*/)""")
+@JsName("""(/*union*/{root: 'MuiTabScrollButton-root', vertical: 'MuiTabScrollButton-vertical'}/*union*/)""")
 sealed external interface MuiTabScrollButton {
     companion object {
         val root: ClassName
         val vertical: ClassName
-        val disabled: ClassName
     }
 }

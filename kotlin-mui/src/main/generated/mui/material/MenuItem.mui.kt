@@ -10,15 +10,12 @@ import csstype.ClassName
 
 @Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
 // language=JavaScript
-@JsName("""(/*union*/{root: 'MuiMenuItem-root', focusVisible: 'MuiMenuItem-focusVisible', dense: 'MuiMenuItem-dense', disabled: 'MuiMenuItem-disabled', divider: 'MuiMenuItem-divider', gutters: 'MuiMenuItem-gutters', selected: 'MuiMenuItem-selected'}/*union*/)""")
+@JsName("""(/*union*/{root: 'MuiMenuItem-root', dense: 'MuiMenuItem-dense', divider: 'MuiMenuItem-divider', gutters: 'MuiMenuItem-gutters'}/*union*/)""")
 sealed external interface MuiMenuItem {
     companion object {
         val root: ClassName
-        val focusVisible: ClassName
         val dense: ClassName
-        val disabled: ClassName
         val divider: ClassName
         val gutters: ClassName
-        val selected: ClassName
     }
 }

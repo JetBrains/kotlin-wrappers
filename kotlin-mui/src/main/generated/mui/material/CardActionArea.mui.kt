@@ -10,11 +10,10 @@ import csstype.ClassName
 
 @Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
 // language=JavaScript
-@JsName("""(/*union*/{root: 'MuiCardActionArea-root', focusVisible: 'MuiCardActionArea-focusVisible', focusHighlight: 'MuiCardActionArea-focusHighlight'}/*union*/)""")
+@JsName("""(/*union*/{root: 'MuiCardActionArea-root', focusHighlight: 'MuiCardActionArea-focusHighlight'}/*union*/)""")
 sealed external interface MuiCardActionArea {
     companion object {
         val root: ClassName
-        val focusVisible: ClassName
         val focusHighlight: ClassName
     }
 }

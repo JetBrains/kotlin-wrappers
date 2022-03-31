@@ -10,16 +10,12 @@ import csstype.ClassName
 
 @Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
 // language=JavaScript
-@JsName("""(/*union*/{root: 'MuiFormHelperText-root', error: 'MuiFormHelperText-error', disabled: 'MuiFormHelperText-disabled', sizeSmall: 'MuiFormHelperText-sizeSmall', contained: 'MuiFormHelperText-contained', focused: 'MuiFormHelperText-focused', filled: 'MuiFormHelperText-filled', required: 'MuiFormHelperText-required'}/*union*/)""")
+@JsName("""(/*union*/{root: 'MuiFormHelperText-root', sizeSmall: 'MuiFormHelperText-sizeSmall', contained: 'MuiFormHelperText-contained', filled: 'MuiFormHelperText-filled'}/*union*/)""")
 sealed external interface MuiFormHelperText {
     companion object {
         val root: ClassName
-        val error: ClassName
-        val disabled: ClassName
         val sizeSmall: ClassName
         val contained: ClassName
-        val focused: ClassName
         val filled: ClassName
-        val required: ClassName
     }
 }

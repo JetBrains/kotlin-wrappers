@@ -10,12 +10,10 @@ import csstype.ClassName
 
 @Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
 // language=JavaScript
-@JsName("""(/*union*/{root: 'MuiToggleButton-root', disabled: 'MuiToggleButton-disabled', selected: 'MuiToggleButton-selected', standard: 'MuiToggleButton-standard', primary: 'MuiToggleButton-primary', secondary: 'MuiToggleButton-secondary', sizeSmall: 'MuiToggleButton-sizeSmall', sizeMedium: 'MuiToggleButton-sizeMedium', sizeLarge: 'MuiToggleButton-sizeLarge'}/*union*/)""")
+@JsName("""(/*union*/{root: 'MuiToggleButton-root', standard: 'MuiToggleButton-standard', primary: 'MuiToggleButton-primary', secondary: 'MuiToggleButton-secondary', sizeSmall: 'MuiToggleButton-sizeSmall', sizeMedium: 'MuiToggleButton-sizeMedium', sizeLarge: 'MuiToggleButton-sizeLarge'}/*union*/)""")
 sealed external interface MuiToggleButton {
     companion object {
         val root: ClassName
-        val disabled: ClassName
-        val selected: ClassName
         val standard: ClassName
         val primary: ClassName
         val secondary: ClassName

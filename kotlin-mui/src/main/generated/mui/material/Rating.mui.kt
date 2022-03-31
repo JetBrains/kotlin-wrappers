@@ -10,7 +10,7 @@ import csstype.ClassName
 
 @Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
 // language=JavaScript
-@JsName("""(/*union*/{root: 'MuiRating-root', sizeSmall: 'MuiRating-sizeSmall', sizeMedium: 'MuiRating-sizeMedium', sizeLarge: 'MuiRating-sizeLarge', readOnly: 'MuiRating-readOnly', disabled: 'MuiRating-disabled', focusVisible: 'MuiRating-focusVisible', visuallyHidden: 'MuiRating-visuallyHidden', label: 'MuiRating-label', labelEmptyValueActive: 'MuiRating-labelEmptyValueActive', icon: 'MuiRating-icon', iconEmpty: 'MuiRating-iconEmpty', iconFilled: 'MuiRating-iconFilled', iconHover: 'MuiRating-iconHover', iconFocus: 'MuiRating-iconFocus', iconActive: 'MuiRating-iconActive', decimal: 'MuiRating-decimal'}/*union*/)""")
+@JsName("""(/*union*/{root: 'MuiRating-root', sizeSmall: 'MuiRating-sizeSmall', sizeMedium: 'MuiRating-sizeMedium', sizeLarge: 'MuiRating-sizeLarge', readOnly: 'MuiRating-readOnly', visuallyHidden: 'MuiRating-visuallyHidden', label: 'MuiRating-label', labelEmptyValueActive: 'MuiRating-labelEmptyValueActive', icon: 'MuiRating-icon', iconEmpty: 'MuiRating-iconEmpty', iconFilled: 'MuiRating-iconFilled', iconHover: 'MuiRating-iconHover', iconFocus: 'MuiRating-iconFocus', iconActive: 'MuiRating-iconActive', decimal: 'MuiRating-decimal'}/*union*/)""")
 sealed external interface MuiRating {
     companion object {
         val root: ClassName
@@ -18,8 +18,6 @@ sealed external interface MuiRating {
         val sizeMedium: ClassName
         val sizeLarge: ClassName
         val readOnly: ClassName
-        val disabled: ClassName
-        val focusVisible: ClassName
         val visuallyHidden: ClassName
         val label: ClassName
         val labelEmptyValueActive: ClassName

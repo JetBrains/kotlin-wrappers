@@ -10,11 +10,10 @@ import csstype.ClassName
 
 @Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
 // language=JavaScript
-@JsName("""(/*union*/{root: 'MuiFormGroup-root', row: 'MuiFormGroup-row', error: 'MuiFormGroup-error'}/*union*/)""")
+@JsName("""(/*union*/{root: 'MuiFormGroup-root', row: 'MuiFormGroup-row'}/*union*/)""")
 sealed external interface MuiFormGroup {
     companion object {
         val root: ClassName
         val row: ClassName
-        val error: ClassName
     }
 }

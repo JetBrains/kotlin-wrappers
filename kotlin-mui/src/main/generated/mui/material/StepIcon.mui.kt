@@ -10,13 +10,10 @@ import csstype.ClassName
 
 @Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
 // language=JavaScript
-@JsName("""(/*union*/{root: 'MuiStepIcon-root', text: 'MuiStepIcon-text', active: 'MuiStepIcon-active', completed: 'MuiStepIcon-completed', error: 'MuiStepIcon-error'}/*union*/)""")
+@JsName("""(/*union*/{root: 'MuiStepIcon-root', text: 'MuiStepIcon-text'}/*union*/)""")
 sealed external interface MuiStepIcon {
     companion object {
         val root: ClassName
         val text: ClassName
-        val active: ClassName
-        val completed: ClassName
-        val error: ClassName
     }
 }

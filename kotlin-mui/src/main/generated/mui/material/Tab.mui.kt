@@ -10,7 +10,7 @@ import csstype.ClassName
 
 @Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
 // language=JavaScript
-@JsName("""(/*union*/{root: 'MuiTab-root', labelIcon: 'MuiTab-labelIcon', textColorInherit: 'MuiTab-textColorInherit', textColorPrimary: 'MuiTab-textColorPrimary', textColorSecondary: 'MuiTab-textColorSecondary', selected: 'MuiTab-selected', disabled: 'MuiTab-disabled', fullWidth: 'MuiTab-fullWidth', wrapped: 'MuiTab-wrapped', iconWrapper: 'MuiTab-iconWrapper'}/*union*/)""")
+@JsName("""(/*union*/{root: 'MuiTab-root', labelIcon: 'MuiTab-labelIcon', textColorInherit: 'MuiTab-textColorInherit', textColorPrimary: 'MuiTab-textColorPrimary', textColorSecondary: 'MuiTab-textColorSecondary', fullWidth: 'MuiTab-fullWidth', wrapped: 'MuiTab-wrapped', iconWrapper: 'MuiTab-iconWrapper'}/*union*/)""")
 sealed external interface MuiTab {
     companion object {
         val root: ClassName
@@ -18,8 +18,6 @@ sealed external interface MuiTab {
         val textColorInherit: ClassName
         val textColorPrimary: ClassName
         val textColorSecondary: ClassName
-        val selected: ClassName
-        val disabled: ClassName
         val fullWidth: ClassName
         val wrapped: ClassName
         val iconWrapper: ClassName
