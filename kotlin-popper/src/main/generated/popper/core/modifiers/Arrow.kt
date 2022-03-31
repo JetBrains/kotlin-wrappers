@@ -6,9 +6,11 @@
 
 package popper.core.modifiers
 
+sealed external interface PaddingType
+
 external interface ArrowOptions {
     var element: org.w3c.dom.HTMLElement?
-    var padding: popper.core.Padding
+    var padding: PaddingType
 }
 
 @JsName("'arrow'")
