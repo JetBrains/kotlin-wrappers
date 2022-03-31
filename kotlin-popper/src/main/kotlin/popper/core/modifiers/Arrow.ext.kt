@@ -21,6 +21,6 @@ inline fun Padding(
     padding.unsafeCast<PaddingType>()
 
 inline fun Padding(
-    padding: Padding.()->Unit
+    block: Padding.()->Unit
 ): PaddingType =
-    jso(padding).unsafeCast<PaddingType>()
+    jso(block).unsafeCast<PaddingType>()
