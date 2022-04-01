@@ -6,8 +6,8 @@ package popper.core.modifiers
 
 inline fun TetherOffset(
     x: Double,
-): OffsetType =
-    x.unsafeCast<OffsetType>()
+): TetherOffsetType =
+    x.unsafeCast<TetherOffsetType>()
 
 inline fun TetherOffset(
     fn: TetherOffsetFunction,
