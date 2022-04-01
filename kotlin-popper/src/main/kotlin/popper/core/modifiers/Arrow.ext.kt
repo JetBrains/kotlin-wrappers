@@ -1,6 +1,7 @@
 @file:Suppress(
     "NOTHING_TO_INLINE",
 )
+
 package popper.core.modifiers
 
 import kotlinx.js.jso
@@ -12,15 +13,12 @@ typealias PaddingFunction = (
 
 inline fun Padding(
     fn: PaddingFunction,
-): PaddingType =
-    fn.unsafeCast<PaddingType>()
+): PaddingType = fn.unsafeCast<PaddingType>()
 
 inline fun Padding(
     padding: Double
-): PaddingType =
-    padding.unsafeCast<PaddingType>()
+): PaddingType = padding.unsafeCast<PaddingType>()
 
 inline fun Padding(
-    block: Padding.()->Unit
-): PaddingType =
-    jso(block).unsafeCast<PaddingType>()
+    block: Padding.() -> Unit
+): PaddingType = jso(block).unsafeCast<PaddingType>()

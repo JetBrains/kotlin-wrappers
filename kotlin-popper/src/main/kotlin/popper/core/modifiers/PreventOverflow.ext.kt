@@ -1,6 +1,7 @@
 @file:Suppress(
     "NOTHING_TO_INLINE",
 )
+
 package popper.core.modifiers
 
 inline fun TetherOffset(
