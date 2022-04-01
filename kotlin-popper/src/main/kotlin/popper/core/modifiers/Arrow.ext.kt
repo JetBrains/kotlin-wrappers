@@ -9,7 +9,7 @@ import popper.core.Padding
 
 typealias PaddingFunction = (
     options: OffsetsFunctionOptions,
-) -> PaddingType
+) -> Padding
 
 inline fun Padding(
     fn: PaddingFunction,
