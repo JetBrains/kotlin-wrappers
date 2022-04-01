@@ -10,16 +10,13 @@ import csstype.ClassName
 
 @Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
 // language=JavaScript
-@JsName("""(/*union*/{root: 'MuiInputBase-root', formControl: 'MuiInputBase-formControl', focused: 'MuiInputBase-focused', disabled: 'MuiInputBase-disabled', adornedStart: 'MuiInputBase-adornedStart', adornedEnd: 'MuiInputBase-adornedEnd', error: 'MuiInputBase-error', sizeSmall: 'MuiInputBase-sizeSmall', multiline: 'MuiInputBase-multiline', colorSecondary: 'MuiInputBase-colorSecondary', fullWidth: 'MuiInputBase-fullWidth', hiddenLabel: 'MuiInputBase-hiddenLabel', input: 'MuiInputBase-input', inputSizeSmall: 'MuiInputBase-inputSizeSmall', inputMultiline: 'MuiInputBase-inputMultiline', inputTypeSearch: 'MuiInputBase-inputTypeSearch', inputAdornedStart: 'MuiInputBase-inputAdornedStart', inputAdornedEnd: 'MuiInputBase-inputAdornedEnd', inputHiddenLabel: 'MuiInputBase-inputHiddenLabel'}/*union*/)""")
+@JsName("""(/*union*/{root: 'MuiInputBase-root', formControl: 'MuiInputBase-formControl', adornedStart: 'MuiInputBase-adornedStart', adornedEnd: 'MuiInputBase-adornedEnd', sizeSmall: 'MuiInputBase-sizeSmall', multiline: 'MuiInputBase-multiline', colorSecondary: 'MuiInputBase-colorSecondary', fullWidth: 'MuiInputBase-fullWidth', hiddenLabel: 'MuiInputBase-hiddenLabel', input: 'MuiInputBase-input', inputSizeSmall: 'MuiInputBase-inputSizeSmall', inputMultiline: 'MuiInputBase-inputMultiline', inputTypeSearch: 'MuiInputBase-inputTypeSearch', inputAdornedStart: 'MuiInputBase-inputAdornedStart', inputAdornedEnd: 'MuiInputBase-inputAdornedEnd', inputHiddenLabel: 'MuiInputBase-inputHiddenLabel'}/*union*/)""")
 sealed external interface MuiInputBase {
     companion object {
         val root: ClassName
         val formControl: ClassName
-        val focused: ClassName
-        val disabled: ClassName
         val adornedStart: ClassName
         val adornedEnd: ClassName
-        val error: ClassName
         val sizeSmall: ClassName
         val multiline: ClassName
         val colorSecondary: ClassName

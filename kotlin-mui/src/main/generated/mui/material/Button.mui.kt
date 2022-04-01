@@ -10,7 +10,7 @@ import csstype.ClassName
 
 @Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
 // language=JavaScript
-@JsName("""(/*union*/{root: 'MuiButton-root', text: 'MuiButton-text', textInherit: 'MuiButton-textInherit', textPrimary: 'MuiButton-textPrimary', textSecondary: 'MuiButton-textSecondary', outlined: 'MuiButton-outlined', outlinedInherit: 'MuiButton-outlinedInherit', outlinedPrimary: 'MuiButton-outlinedPrimary', outlinedSecondary: 'MuiButton-outlinedSecondary', contained: 'MuiButton-contained', containedInherit: 'MuiButton-containedInherit', containedPrimary: 'MuiButton-containedPrimary', containedSecondary: 'MuiButton-containedSecondary', disableElevation: 'MuiButton-disableElevation', focusVisible: 'MuiButton-focusVisible', disabled: 'MuiButton-disabled', colorInherit: 'MuiButton-colorInherit', textSizeSmall: 'MuiButton-textSizeSmall', textSizeMedium: 'MuiButton-textSizeMedium', textSizeLarge: 'MuiButton-textSizeLarge', outlinedSizeSmall: 'MuiButton-outlinedSizeSmall', outlinedSizeMedium: 'MuiButton-outlinedSizeMedium', outlinedSizeLarge: 'MuiButton-outlinedSizeLarge', containedSizeSmall: 'MuiButton-containedSizeSmall', containedSizeMedium: 'MuiButton-containedSizeMedium', containedSizeLarge: 'MuiButton-containedSizeLarge', sizeSmall: 'MuiButton-sizeSmall', sizeMedium: 'MuiButton-sizeMedium', sizeLarge: 'MuiButton-sizeLarge', fullWidth: 'MuiButton-fullWidth', startIcon: 'MuiButton-startIcon', endIcon: 'MuiButton-endIcon', iconSizeSmall: 'MuiButton-iconSizeSmall', iconSizeMedium: 'MuiButton-iconSizeMedium', iconSizeLarge: 'MuiButton-iconSizeLarge'}/*union*/)""")
+@JsName("""(/*union*/{root: 'MuiButton-root', text: 'MuiButton-text', textInherit: 'MuiButton-textInherit', textPrimary: 'MuiButton-textPrimary', textSecondary: 'MuiButton-textSecondary', outlined: 'MuiButton-outlined', outlinedInherit: 'MuiButton-outlinedInherit', outlinedPrimary: 'MuiButton-outlinedPrimary', outlinedSecondary: 'MuiButton-outlinedSecondary', contained: 'MuiButton-contained', containedInherit: 'MuiButton-containedInherit', containedPrimary: 'MuiButton-containedPrimary', containedSecondary: 'MuiButton-containedSecondary', disableElevation: 'MuiButton-disableElevation', colorInherit: 'MuiButton-colorInherit', textSizeSmall: 'MuiButton-textSizeSmall', textSizeMedium: 'MuiButton-textSizeMedium', textSizeLarge: 'MuiButton-textSizeLarge', outlinedSizeSmall: 'MuiButton-outlinedSizeSmall', outlinedSizeMedium: 'MuiButton-outlinedSizeMedium', outlinedSizeLarge: 'MuiButton-outlinedSizeLarge', containedSizeSmall: 'MuiButton-containedSizeSmall', containedSizeMedium: 'MuiButton-containedSizeMedium', containedSizeLarge: 'MuiButton-containedSizeLarge', sizeSmall: 'MuiButton-sizeSmall', sizeMedium: 'MuiButton-sizeMedium', sizeLarge: 'MuiButton-sizeLarge', fullWidth: 'MuiButton-fullWidth', startIcon: 'MuiButton-startIcon', endIcon: 'MuiButton-endIcon', iconSizeSmall: 'MuiButton-iconSizeSmall', iconSizeMedium: 'MuiButton-iconSizeMedium', iconSizeLarge: 'MuiButton-iconSizeLarge'}/*union*/)""")
 sealed external interface MuiButton {
     companion object {
         val root: ClassName
@@ -27,8 +27,6 @@ sealed external interface MuiButton {
         val containedPrimary: ClassName
         val containedSecondary: ClassName
         val disableElevation: ClassName
-        val focusVisible: ClassName
-        val disabled: ClassName
         val colorInherit: ClassName
         val textSizeSmall: ClassName
         val textSizeMedium: ClassName

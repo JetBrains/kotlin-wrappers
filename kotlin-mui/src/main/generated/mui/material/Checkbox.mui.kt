@@ -10,12 +10,10 @@ import csstype.ClassName
 
 @Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
 // language=JavaScript
-@JsName("""(/*union*/{root: 'MuiCheckbox-root', checked: 'MuiCheckbox-checked', disabled: 'MuiCheckbox-disabled', indeterminate: 'MuiCheckbox-indeterminate', colorPrimary: 'MuiCheckbox-colorPrimary', colorSecondary: 'MuiCheckbox-colorSecondary'}/*union*/)""")
+@JsName("""(/*union*/{root: 'MuiCheckbox-root', indeterminate: 'MuiCheckbox-indeterminate', colorPrimary: 'MuiCheckbox-colorPrimary', colorSecondary: 'MuiCheckbox-colorSecondary'}/*union*/)""")
 sealed external interface MuiCheckbox {
     companion object {
         val root: ClassName
-        val checked: ClassName
-        val disabled: ClassName
         val indeterminate: ClassName
         val colorPrimary: ClassName
         val colorSecondary: ClassName

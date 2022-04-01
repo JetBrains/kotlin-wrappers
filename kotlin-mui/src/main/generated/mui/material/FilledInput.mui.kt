@@ -10,17 +10,14 @@ import csstype.ClassName
 
 @Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
 // language=JavaScript
-@JsName("""(/*union*/{root: 'MuiFilledInput-root', colorSecondary: 'MuiFilledInput-colorSecondary', underline: 'MuiFilledInput-underline', focused: 'MuiFilledInput-focused', disabled: 'MuiFilledInput-disabled', adornedStart: 'MuiFilledInput-adornedStart', adornedEnd: 'MuiFilledInput-adornedEnd', error: 'MuiFilledInput-error', sizeSmall: 'MuiFilledInput-sizeSmall', multiline: 'MuiFilledInput-multiline', hiddenLabel: 'MuiFilledInput-hiddenLabel', input: 'MuiFilledInput-input', inputSizeSmall: 'MuiFilledInput-inputSizeSmall', inputHiddenLabel: 'MuiFilledInput-inputHiddenLabel', inputMultiline: 'MuiFilledInput-inputMultiline', inputAdornedStart: 'MuiFilledInput-inputAdornedStart', inputAdornedEnd: 'MuiFilledInput-inputAdornedEnd'}/*union*/)""")
+@JsName("""(/*union*/{root: 'MuiFilledInput-root', colorSecondary: 'MuiFilledInput-colorSecondary', underline: 'MuiFilledInput-underline', adornedStart: 'MuiFilledInput-adornedStart', adornedEnd: 'MuiFilledInput-adornedEnd', sizeSmall: 'MuiFilledInput-sizeSmall', multiline: 'MuiFilledInput-multiline', hiddenLabel: 'MuiFilledInput-hiddenLabel', input: 'MuiFilledInput-input', inputSizeSmall: 'MuiFilledInput-inputSizeSmall', inputHiddenLabel: 'MuiFilledInput-inputHiddenLabel', inputMultiline: 'MuiFilledInput-inputMultiline', inputAdornedStart: 'MuiFilledInput-inputAdornedStart', inputAdornedEnd: 'MuiFilledInput-inputAdornedEnd'}/*union*/)""")
 sealed external interface MuiFilledInput {
     companion object {
         val root: ClassName
         val colorSecondary: ClassName
         val underline: ClassName
-        val focused: ClassName
-        val disabled: ClassName
         val adornedStart: ClassName
         val adornedEnd: ClassName
-        val error: ClassName
         val sizeSmall: ClassName
         val multiline: ClassName
         val hiddenLabel: ClassName

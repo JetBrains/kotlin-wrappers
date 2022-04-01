@@ -10,11 +10,10 @@ import csstype.ClassName
 
 @Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
 // language=JavaScript
-@JsName("""(/*union*/{root: 'MuiTableRow-root', selected: 'MuiTableRow-selected', hover: 'MuiTableRow-hover', head: 'MuiTableRow-head', footer: 'MuiTableRow-footer'}/*union*/)""")
+@JsName("""(/*union*/{root: 'MuiTableRow-root', hover: 'MuiTableRow-hover', head: 'MuiTableRow-head', footer: 'MuiTableRow-footer'}/*union*/)""")
 sealed external interface MuiTableRow {
     companion object {
         val root: ClassName
-        val selected: ClassName
         val hover: ClassName
         val head: ClassName
         val footer: ClassName

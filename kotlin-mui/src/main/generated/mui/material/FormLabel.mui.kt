@@ -10,16 +10,12 @@ import csstype.ClassName
 
 @Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
 // language=JavaScript
-@JsName("""(/*union*/{root: 'MuiFormLabel-root', colorSecondary: 'MuiFormLabel-colorSecondary', focused: 'MuiFormLabel-focused', disabled: 'MuiFormLabel-disabled', error: 'MuiFormLabel-error', filled: 'MuiFormLabel-filled', required: 'MuiFormLabel-required', asterisk: 'MuiFormLabel-asterisk'}/*union*/)""")
+@JsName("""(/*union*/{root: 'MuiFormLabel-root', colorSecondary: 'MuiFormLabel-colorSecondary', filled: 'MuiFormLabel-filled', asterisk: 'MuiFormLabel-asterisk'}/*union*/)""")
 sealed external interface MuiFormLabel {
     companion object {
         val root: ClassName
         val colorSecondary: ClassName
-        val focused: ClassName
-        val disabled: ClassName
-        val error: ClassName
         val filled: ClassName
-        val required: ClassName
         val asterisk: ClassName
     }
 }
