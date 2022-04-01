@@ -1,13 +1,13 @@
+import org.jetbrains.kotlin.gradle.dsl.KotlinCompile
+
 plugins {
     kotlin("js")
     `kotlin-conventions`
     `publish-conventions`
 }
 
-kotlin {
-    sourceSets.configureEach {
-        languageSettings.optIn("kotlin.contracts.ExperimentalContracts")
-    }
+tasks.withType<KotlinCompile<*>>().configureEach {
+    kotlinOptions.freeCompilerArgs += "-opt-in=kotlin.contracts.ExperimentalContracts"
 }
 
 dependencies {
