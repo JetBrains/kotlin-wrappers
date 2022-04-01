@@ -41,12 +41,12 @@ external class IonResource(
      * // load a single image asynchronously
      * resource.fetchImage().then(function(image) {
      *     // use the loaded image
-     * }).otherwise(function(error) {
+     * }).catch(function(error) {
      *     // an error occurred
      * });
      *
      * // load several images in parallel
-     * when.all([resource1.fetchImage(), resource2.fetchImage()]).then(function(images) {
+     * Promise.all([resource1.fetchImage(), resource2.fetchImage()]).then(function(images) {
      *     // images is an array containing all the loaded images
      * });
      * ```

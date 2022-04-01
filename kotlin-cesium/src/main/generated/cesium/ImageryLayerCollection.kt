@@ -170,7 +170,7 @@ external class ImageryLayerCollection {
      * if (!Cesium.defined(featuresPromise)) {
      *     console.log('No features picked.');
      * } else {
-     *     when(featuresPromise, function(features) {
+     *     Promise.resolve(featuresPromise).then(function(features) {
      *         // This function is called asynchronously when the list if picked features is available.
      *         console.log('Number of features: ' + features.length);
      *         if (features.length > 0) {

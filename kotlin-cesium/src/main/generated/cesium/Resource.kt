@@ -20,7 +20,7 @@ package cesium
  *         resource.queryParameters.access_token = token;
  *         return true;
  *       })
- *       .otherwise(function() {
+ *       .catch(function() {
  *         return false;
  *       });
  *   }
@@ -262,7 +262,7 @@ external class Resource(options: ConstructorOptions) {
      * // load a single URL asynchronously
      * resource.fetchArrayBuffer().then(function(arrayBuffer) {
      *     // use the data
-     * }).otherwise(function(error) {
+     * }).catch(function(error) {
      *     // an error occurred
      * });
      * ```
@@ -280,7 +280,7 @@ external class Resource(options: ConstructorOptions) {
      * // load a single URL asynchronously
      * resource.fetchBlob().then(function(blob) {
      *     // use the data
-     * }).otherwise(function(error) {
+     * }).catch(function(error) {
      *     // an error occurred
      * });
      * ```
@@ -297,12 +297,12 @@ external class Resource(options: ConstructorOptions) {
      * // load a single image asynchronously
      * resource.fetchImage().then(function(image) {
      *     // use the loaded image
-     * }).otherwise(function(error) {
+     * }).catch(function(error) {
      *     // an error occurred
      * });
      *
      * // load several images in parallel
-     * when.all([resource1.fetchImage(), resource2.fetchImage()]).then(function(images) {
+     * Promise.all([resource1.fetchImage(), resource2.fetchImage()]).then(function(images) {
      *     // images is an array containing all the loaded images
      * });
      * ```
@@ -343,7 +343,7 @@ external class Resource(options: ConstructorOptions) {
      * });
      * resource.fetchText().then(function(text) {
      *     // Do something with the text
-     * }).otherwise(function(error) {
+     * }).catch(function(error) {
      *     // an error occurred
      * });
      * ```
@@ -362,7 +362,7 @@ external class Resource(options: ConstructorOptions) {
      * ```
      * resource.fetchJson().then(function(jsonData) {
      *     // Do something with the JSON object
-     * }).otherwise(function(error) {
+     * }).catch(function(error) {
      *     // an error occurred
      * });
      * ```
@@ -382,7 +382,7 @@ external class Resource(options: ConstructorOptions) {
      *   'X-Custom-Header' : 'some value'
      * }).then(function(document) {
      *     // Do something with the document
-     * }).otherwise(function(error) {
+     * }).catch(function(error) {
      *     // an error occurred
      * });
      * ```
@@ -397,7 +397,7 @@ external class Resource(options: ConstructorOptions) {
      * // load a data asynchronously
      * resource.fetchJsonp().then(function(data) {
      *     // use the loaded data
-     * }).otherwise(function(error) {
+     * }).catch(function(error) {
      *     // an error occurred
      * });
      * ```
@@ -418,7 +418,7 @@ external class Resource(options: ConstructorOptions) {
      * resource.fetch()
      *   .then(function(body) {
      *       // use the data
-     *   }).otherwise(function(error) {
+     *   }).catch(function(error) {
      *       // an error occurred
      *   });
      * ```
@@ -447,7 +447,7 @@ external class Resource(options: ConstructorOptions) {
      * resource.delete()
      *   .then(function(body) {
      *       // use the data
-     *   }).otherwise(function(error) {
+     *   }).catch(function(error) {
      *       // an error occurred
      *   });
      * ```
@@ -476,7 +476,7 @@ external class Resource(options: ConstructorOptions) {
      * resource.head()
      *   .then(function(headers) {
      *       // use the data
-     *   }).otherwise(function(error) {
+     *   }).catch(function(error) {
      *       // an error occurred
      *   });
      * ```
@@ -505,7 +505,7 @@ external class Resource(options: ConstructorOptions) {
      * resource.options()
      *   .then(function(headers) {
      *       // use the data
-     *   }).otherwise(function(error) {
+     *   }).catch(function(error) {
      *       // an error occurred
      *   });
      * ```
@@ -534,7 +534,7 @@ external class Resource(options: ConstructorOptions) {
      * resource.post(data)
      *   .then(function(result) {
      *       // use the result
-     *   }).otherwise(function(error) {
+     *   }).catch(function(error) {
      *       // an error occurred
      *   });
      * ```
@@ -569,7 +569,7 @@ external class Resource(options: ConstructorOptions) {
      * resource.put(data)
      *   .then(function(result) {
      *       // use the result
-     *   }).otherwise(function(error) {
+     *   }).catch(function(error) {
      *       // an error occurred
      *   });
      * ```
@@ -602,7 +602,7 @@ external class Resource(options: ConstructorOptions) {
      * resource.patch(data)
      *   .then(function(result) {
      *       // use the result
-     *   }).otherwise(function(error) {
+     *   }).catch(function(error) {
      *       // an error occurred
      *   });
      * ```

@@ -38,7 +38,7 @@ external class TaskProcessor(
      * if (!Cesium.defined(promise)) {
      *     // too many active tasks - try again later
      * } else {
-     *     when(promise, function(result) {
+     *     promise.then(function(result) {
      *         // use the result of the task
      *     });
      * }

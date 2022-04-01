@@ -18,6 +18,13 @@ external class Fog {
     var enabled: Boolean
 
     /**
+     * `true` if fog is renderable in shaders, `false` otherwise.
+     * This allows to benefits from optimized tile loading strategy based on fog density without the actual visual rendering.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Fog.html#renderable">Online Documentation</a>
+     */
+    var renderable: Boolean
+
+    /**
      * A scalar that determines the density of the fog. Terrain that is in full fog are culled.
      * The density of the fog increases as this number approaches 1.0 and becomes less dense as it approaches zero.
      * The more dense the fog is, the more aggressively the terrain is culled. For example, if the camera is a height of

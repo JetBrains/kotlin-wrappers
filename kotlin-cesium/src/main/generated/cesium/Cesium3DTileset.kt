@@ -104,13 +104,14 @@ external class Cesium3DTileset(options: ConstructorOptions) {
      * @property [ellipsoid] The ellipsoid determining the size and shape of the globe.
      *   Default value - [Ellipsoid.WGS84]
      * @property [pointCloudShading] Options for constructing a [PointCloudShading] object to control point attenuation based on geometric error and lighting.
-     * @property [imageBasedLightingFactor] Scales the diffuse and specular image-based lighting from the earth, sky, atmosphere and star skybox.
-     *   Default value - [Cartesian2(1.0, 1.0)][Cartesian2]
      * @property [lightColor] The light color when shading models. When `undefined` the scene's light color is used instead.
-     * @property [luminanceAtZenith] The sun's luminance at the zenith in kilo candela per meter squared to use for this model's procedural environment map.
+     * @property [imageBasedLighting] The properties for managing image-based lighting for this tileset.
+     * @property [imageBasedLightingFactor] Scales the diffuse and specular image-based lighting from the earth, sky, atmosphere and star skybox. Deprecated in Cesium 1.92, will be removed in Cesium 1.94.
+     *   Default value - [Cartesian2(1.0, 1.0)][Cartesian2]
+     * @property [luminanceAtZenith] The sun's luminance at the zenith in kilo candela per meter squared to use for this model's procedural environment map. Deprecated in Cesium 1.92, will be removed in Cesium 1.94.
      *   Default value - `0.2`
-     * @property [sphericalHarmonicCoefficients] The third order spherical harmonic coefficients used for the diffuse color of image-based lighting.
-     * @property [specularEnvironmentMaps] A URL to a KTX2 file that contains a cube map of the specular lighting and the convoluted specular mipmaps.
+     * @property [sphericalHarmonicCoefficients] The third order spherical harmonic coefficients used for the diffuse color of image-based lighting. Deprecated in Cesium 1.92, will be removed in Cesium 1.94.
+     * @property [specularEnvironmentMaps] A URL to a KTX2 file that contains a cube map of the specular lighting and the convoluted specular mipmaps. Deprecated in Cesium 1.92, will be removed in Cesium 1.94.
      * @property [backFaceCulling] Whether to cull back-facing geometry. When true, back face culling is determined by the glTF material's doubleSided property; when false, back face culling is disabled.
      *   Default value - `true`
      * @property [showOutline] Whether to display the outline for models using the [CESIUM_primitive_outline](https://github.com/KhronosGroup/glTF/tree/master/extensions/2.0/Vendor/CESIUM_primitive_outline) extension. When true, outlines are displayed. When false, outlines are not displayed.
@@ -119,12 +120,14 @@ external class Cesium3DTileset(options: ConstructorOptions) {
      *   Default value - `false`
      * @property [vectorKeepDecodedPositions] Whether vector tiles should keep decoded positions in memory. This is used with [Cesium3DTileFeature.getPolylinePositions].
      *   Default value - `false`
-     * @property [featureIdIndex] The index into the list of primitive feature IDs used for picking and styling. For EXT_feature_metadata, feature ID attributes are listed before feature ID textures. If both per-primitive and per-instance feature IDs are present, the instance feature IDs take priority.
-     *   Default value - `0`
-     * @property [instanceFeatureIdIndex] The index into the list of instance feature IDs used for picking and styling. If both per-primitive and per-instance feature IDs are present, the instance feature IDs take priority.
-     *   Default value - `0`
+     * @property [featureIdLabel] Label of the feature ID set to use for picking and styling. For EXT_mesh_features, this is the feature ID's label property, or "featureId_N" (where N is the index in the featureIds array) when not specified. EXT_feature_metadata did not have a label field, so such feature ID sets are always labeled "featureId_N" where N is the index in the list of all feature Ids, where feature ID attributes are listed before feature ID textures. If featureIdLabel is an integer N, it is converted to the string "featureId_N" automatically. If both per-primitive and per-instance feature IDs are present, the instance feature IDs take priority.
+     *   Default value - `"featureId_0"`
+     * @property [instanceFeatureIdLabel] Label of the instance feature ID set used for picking and styling. If instanceFeatureIdLabel is set to an integer N, it is converted to the string "instanceFeatureId_N" automatically. If both per-primitive and per-instance feature IDs are present, the instance feature IDs take priority.
+     *   Default value - `"instanceFeatureId_0"`
      * @property [showCreditsOnScreen] Whether to display the credits of this tileset on screen.
      *   Default value - `false`
+     * @property [splitDirection] The [SplitDirection] split to apply to this tileset.
+     *   Default value - [SplitDirection.NONE]
      * @property [debugHeatmapTilePropertyName] The tile variable to colorize as a heatmap. All rendered tiles will be colorized relative to each other's specified variable value.
      * @property [debugFreezeFrame] For debugging only. Determines if only the tiles from last frame should be used for rendering.
      *   Default value - `false`
@@ -180,8 +183,9 @@ external class Cesium3DTileset(options: ConstructorOptions) {
         var classificationType: ClassificationType?
         var ellipsoid: Ellipsoid?
         var pointCloudShading: Any?
-        var imageBasedLightingFactor: Cartesian2?
         var lightColor: Cartesian3?
+        var imageBasedLighting: ImageBasedLighting?
+        var imageBasedLightingFactor: Cartesian2?
         var luminanceAtZenith: Double?
         var sphericalHarmonicCoefficients: Array<out Cartesian3>?
         var specularEnvironmentMaps: String?
@@ -189,9 +193,10 @@ external class Cesium3DTileset(options: ConstructorOptions) {
         var showOutline: Boolean?
         var vectorClassificationOnly: Boolean?
         var vectorKeepDecodedPositions: Boolean?
-        var featureIdIndex: Int?
-        var instanceFeatureIdIndex: Int?
+        var featureIdLabel: dynamic
+        var instanceFeatureIdLabel: dynamic
         var showCreditsOnScreen: Boolean?
+        var splitDirection: SplitDirection?
         var debugHeatmapTilePropertyName: String?
         var debugFreezeFrame: Boolean?
         var debugColorizeTiles: Boolean?
@@ -432,7 +437,7 @@ external class Cesium3DTileset(options: ConstructorOptions) {
      * The error object passed to the listener contains two properties:
      * - `url`: the url of the failed tile.
      * - `message`: the error message.
-     * If the `3DTILES_multiple_contents` extension is used, this event is raised once per inner content with errors.
+     * If multiple contents are present, this event is raised once per inner content with errors.
      * ```
      * tileset.tileFailed.addEventListener(function(error) {
      *     console.log('An error occurred loading tile: ' + error.url);
@@ -535,38 +540,11 @@ external class Cesium3DTileset(options: ConstructorOptions) {
     /**
      * The light color when shading models. When `undefined` the scene's light color is used instead.
      *
-     * For example, disabling additional light sources by setting `model.imageBasedLightingFactor = new Cartesian2(0.0, 0.0)` will make the
+     * For example, disabling additional light sources by setting `model.imageBasedLighting.imageBasedLightingFactor = new Cartesian2(0.0, 0.0)` will make the
      * model much darker. Here, increasing the intensity of the light source will make the model brighter.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileset.html#lightColor">Online Documentation</a>
      */
     var lightColor: Cartesian3
-
-    /**
-     * The sun's luminance at the zenith in kilo candela per meter squared to use for this model's procedural environment map.
-     * This is used when [Cesium3DTileset.specularEnvironmentMaps] and [Cesium3DTileset.sphericalHarmonicCoefficients] are not defined.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileset.html#luminanceAtZenith">Online Documentation</a>
-     */
-    var luminanceAtZenith: Double
-
-    /**
-     * The third order spherical harmonic coefficients used for the diffuse color of image-based lighting. When `undefined`, a diffuse irradiance
-     * computed from the atmosphere color is used.
-     *
-     * There are nine `Cartesian3` coefficients.
-     * The order of the coefficients is: L<sub>00</sub>, L<sub>1-1</sub>, L<sub>10</sub>, L<sub>11</sub>, L<sub>2-2</sub>, L<sub>2-1</sub>, L<sub>20</sub>, L<sub>21</sub>, L<sub>22</sub>
-     *
-     * These values can be obtained by preprocessing the environment map using the `cmgen` tool of
-     * [Google's Filament project](https://github.com/google/filament/releases). This will also generate a KTX file that can be
-     * supplied to [Cesium3DTileset.specularEnvironmentMaps].
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileset.html#sphericalHarmonicCoefficients">Online Documentation</a>
-     */
-    var sphericalHarmonicCoefficients: Array<out Cartesian3>
-
-    /**
-     * A URL to a KTX file that contains a cube map of the specular lighting and the convoluted specular mipmaps.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileset.html#specularEnvironmentMaps">Online Documentation</a>
-     */
-    var specularEnvironmentMaps: String
 
     /**
      * Whether to cull back-facing geometry. When true, back face culling is determined
@@ -582,6 +560,12 @@ external class Cesium3DTileset(options: ConstructorOptions) {
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileset.html#showOutline">Online Documentation</a>
      */
     val showOutline: Boolean
+
+    /**
+     * The [SplitDirection] to apply to this tileset.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileset.html#splitDirection">Online Documentation</a>
+     */
+    var splitDirection: SplitDirection
 
     /**
      * This property is for debugging only; it is not optimized for production use.
@@ -675,32 +659,6 @@ external class Cesium3DTileset(options: ConstructorOptions) {
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileset.html#examineVectorLinesFunction">Online Documentation</a>
      */
     var examineVectorLinesFunction: Function<*>
-
-    /**
-     * If true, [ModelExperimental] will be used instead of [Model]
-     * for each tile with a glTF or 3D Tiles 1.0 content (where applicable).
-     *
-     * The value defaults to [ExperimentalFeatures.enableModelExperimental].
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileset.html#enableModelExperimental">Online Documentation</a>
-     */
-    var enableModelExperimental: Boolean
-
-    /**
-     * The index into the list of primitive feature IDs used for picking and
-     * styling. For EXT_feature_metadata, feature ID attributes are listed before
-     * feature ID textures. If both per-primitive and per-instance feature IDs are
-     * present, the instance feature IDs take priority.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileset.html#featureIdIndex">Online Documentation</a>
-     */
-    var featureIdIndex: Int
-
-    /**
-     * The index into the list of instance feature IDs used for picking and
-     * styling. If both per-primitive and per-instance feature IDs are present,
-     * the instance feature IDs take priority.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileset.html#instanceFeatureIdIndex">Online Documentation</a>
-     */
-    var instanceFeatureIdIndex: Int
 
     /**
      * Gets the tileset's asset object property, which contains metadata about the tileset.
@@ -966,11 +924,44 @@ external class Cesium3DTileset(options: ConstructorOptions) {
     val extras: Any
 
     /**
+     * The properties for managing image-based lighting on this tileset.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileset.html#imageBasedLighting">Online Documentation</a>
+     */
+    var imageBasedLighting: ImageBasedLighting
+
+    /**
      * Cesium adds lighting from the earth, sky, atmosphere, and star skybox. This cartesian is used to scale the final
      * diffuse and specular lighting contribution from those sources to the final color. A value of 0.0 will disable those light sources.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileset.html#imageBasedLightingFactor">Online Documentation</a>
      */
     var imageBasedLightingFactor: Cartesian2
+
+    /**
+     * The sun's luminance at the zenith in kilo candela per meter squared to use for this model's procedural environment map.
+     * This is used when [Cesium3DTileset.specularEnvironmentMaps] and [Cesium3DTileset.sphericalHarmonicCoefficients] are not defined.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileset.html#luminanceAtZenith">Online Documentation</a>
+     */
+    var luminanceAtZenith: Double
+
+    /**
+     * The third order spherical harmonic coefficients used for the diffuse color of image-based lighting. When `undefined`, a diffuse irradiance
+     * computed from the atmosphere color is used.
+     *
+     * There are nine `Cartesian3` coefficients.
+     * The order of the coefficients is: L<sub>0,0</sub>, L<sub>1,-1</sub>, L<sub>1,0</sub>, L<sub>1,1</sub>, L<sub>2,-2</sub>, L<sub>2,-1</sub>, L<sub>2,0</sub>, L<sub>2,1</sub>, L<sub>2,2</sub>
+     *
+     * These values can be obtained by preprocessing the environment map using the `cmgen` tool of
+     * [Google's Filament project](https://github.com/google/filament/releases). This will also generate a KTX file that can be
+     * supplied to [Cesium3DTileset.specularEnvironmentMaps].
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileset.html#sphericalHarmonicCoefficients">Online Documentation</a>
+     */
+    var sphericalHarmonicCoefficients: Array<out Cartesian3>
+
+    /**
+     * A URL to a KTX file that contains a cube map of the specular lighting and the convoluted specular mipmaps.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileset.html#specularEnvironmentMaps">Online Documentation</a>
+     */
+    var specularEnvironmentMaps: String
 
     /**
      * Indicates that only the tileset's vector tiles should be used for classification.
@@ -990,6 +981,35 @@ external class Cesium3DTileset(options: ConstructorOptions) {
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileset.html#showCreditsOnScreen">Online Documentation</a>
      */
     var showCreditsOnScreen: Boolean
+
+    /**
+     * Label of the feature ID set to use for picking and styling.
+     *
+     * For EXT_mesh_features, this is the feature ID's label property, or
+     * "featureId_N" (where N is the index in the featureIds array) when not
+     * specified. EXT_feature_metadata did not have a label field, so such
+     * feature ID sets are always labeled "featureId_N" where N is the index in
+     * the list of all feature Ids, where feature ID attributes are listed before
+     * feature ID textures.
+     *
+     * If featureIdLabel is set to an integer N, it is converted to
+     * the string "featureId_N" automatically. If both per-primitive and
+     * per-instance feature IDs are present, the instance feature IDs take
+     * priority.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileset.html#featureIdLabel">Online Documentation</a>
+     */
+    var featureIdLabel: String
+
+    /**
+     * Label of the instance feature ID set used for picking and styling.
+     *
+     * If instanceFeatureIdLabel is set to an integer N, it is converted to
+     * the string "instanceFeatureId_N" automatically.
+     * If both per-primitive and per-instance feature IDs are present, the
+     * instance feature IDs take priority.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileset.html#instanceFeatureIdLabel">Online Documentation</a>
+     */
+    var instanceFeatureIdLabel: String
 
     /**
      * Marks the tileset's [Cesium3DTileset.style] as dirty, which forces all

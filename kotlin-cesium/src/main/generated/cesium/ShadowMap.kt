@@ -50,7 +50,7 @@ external class ShadowMap(options: ConstructorOptions) {
         var lightCamera: Camera
         var enabled: Boolean?
         var isPointLight: Boolean?
-        var pointLightRadius: Boolean?
+        var pointLightRadius: Double?
         var cascadesEnabled: Boolean?
         var numberOfCascades: Int?
         var maximumDistance: Double?

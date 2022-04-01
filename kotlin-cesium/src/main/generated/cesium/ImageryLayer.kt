@@ -91,8 +91,8 @@ external class ImageryLayer(
      *   the gamma value to use for the tile.  The function is executed for every
      *   frame and for every tile, so it must be fast.
      *   Default value - `1.0`
-     * @property [splitDirection] The [ImagerySplitDirection] split to apply to this layer.
-     *   Default value - [ImagerySplitDirection.NONE]
+     * @property [splitDirection] The [SplitDirection] split to apply to this layer.
+     *   Default value - [SplitDirection.NONE]
      * @property [minificationFilter] The
      *   texture minification filter to apply to this layer. Possible values
      *   are `TextureMinificationFilter.LINEAR` and
@@ -196,10 +196,10 @@ external class ImageryLayer(
     var gamma: Double
 
     /**
-     * The [ImagerySplitDirection] to apply to this layer.
+     * The [SplitDirection] to apply to this layer.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ImageryLayer.html#splitDirection">Online Documentation</a>
      */
-    var splitDirection: ImagerySplitDirection
+    var splitDirection: SplitDirection
 
     /**
      * The [TextureMinificationFilter] to apply to this layer.
@@ -346,7 +346,7 @@ external class ImageryLayer(
          * or by the imagery provider.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ImageryLayer.html#.DEFAULT_SPLIT">Online Documentation</a>
          */
-        var DEFAULT_SPLIT: ImagerySplitDirection
+        var DEFAULT_SPLIT: SplitDirection
 
         /**
          * This value is used as the default texture minification filter for the imagery layer if one is not provided

@@ -247,7 +247,7 @@ external object Transforms {
      * indicates that the preload has completed.
      * ```
      * const interval = new TimeInterval(...);
-     * when(Transforms.preloadIcrfFixed(interval), function() {
+     * Promise.resolve(Transforms.preloadIcrfFixed(interval)).then(function() {
      *     // the data is now loaded
      * });
      * ```

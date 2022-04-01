@@ -26,7 +26,7 @@ package cesium
  *     Cartographic.fromDegrees(87.0, 28.0)
  * ];
  * const promise = sampleTerrain(terrainProvider, 11, positions);
- * when(promise, function(updatedPositions) {
+ * Promise.resolve(promise).then(function(updatedPositions) {
  *     // positions[0].height and positions[1].height have been updated.
  *     // updatedPositions is just a reference to positions.
  * });

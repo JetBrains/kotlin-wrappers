@@ -88,15 +88,15 @@ external class ModelFeature(options: ConstructorOptions) {
 
     /**
      * Returns a copy of the feature's property with the given name, examining all
-     * the metadata from the EXT_mesh_features and legacy EXT_feature_metadata glTF
+     * the metadata from the EXT_structural_metadata and legacy EXT_feature_metadata glTF
      * extensions. Metadata is checked against name from most specific to most
      * general and the first match is returned. Metadata is checked in this order:
      * <ol>
-     *   <li>Feature metadata property by semantic</li>
-     *   <li>Feature metadata property by property ID</li>
+     *   <li>structural metadata property by semantic</li>
+     *   <li>structural metadata property by property ID</li>
      * </ol>
      *
-     * See the [EXT_mesh_features Extension](https://github.com/CesiumGS/glTF/tree/3d-tiles-next/extensions/2.0/Vendor/EXT_mesh_features) as well as the
+     * See the [EXT_structural_metadata Extension](https://github.com/CesiumGS/glTF/tree/3d-tiles-next/extensions/2.0/Vendor/EXT_structural_metadata) as well as the
      * previous [EXT_feature_metadata Extension](https://github.com/CesiumGS/glTF/tree/3d-tiles-next/extensions/2.0/Vendor/EXT_feature_metadata) for glTF.
      * @param [name] The semantic or property ID of the feature. Semantics are checked before property IDs in each granularity of metadata.
      * @return The value of the property or `undefined` if the feature does not have this property.

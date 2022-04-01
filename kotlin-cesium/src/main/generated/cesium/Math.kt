@@ -547,10 +547,10 @@ external object Math {
 
     /**
      * Constraint a value to lie between two values.
-     * @param [value] The value to constrain.
+     * @param [value] The value to clamp.
      * @param [min] The minimum value.
      * @param [max] The maximum value.
-     * @return The value clamped so that min <= value <= max.
+     * @return The clamped value such that min <= result <= max.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Math.html#.clamp">Online Documentation</a>
      */
     fun clamp(
