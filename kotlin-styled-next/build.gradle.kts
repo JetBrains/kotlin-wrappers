@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.gradle.dsl.KotlinCompile
+
 plugins {
     kotlin("js")
     `kotlin-conventions`
@@ -15,8 +17,8 @@ kotlin.js {
     }
 }
 
-kotlin.sourceSets.test {
-    languageSettings.optIn("kotlin.time.ExperimentalTime")
+tasks.withType<KotlinCompile<*>>().configureEach {
+    kotlinOptions.freeCompilerArgs += "-opt-in=kotlin.time.ExperimentalTime"
 }
 
 dependencies {
@@ -33,11 +35,6 @@ dependencies {
     testImplementation(kotlinxCoroutines("core"))
 
     testImplementation(devNpmv("puppeteer"))
-}
-
-
-tasks.withType<org.jetbrains.kotlin.gradle.dsl.KotlinCompile<*>>().configureEach {
-    kotlinOptions.freeCompilerArgs += "-Xopt-in=kotlin.RequiresOptIn"
 }
 
 val printBenchmarkResults by tasks.registering {
