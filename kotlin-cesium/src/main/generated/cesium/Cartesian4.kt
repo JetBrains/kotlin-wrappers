@@ -229,6 +229,22 @@ external class Cartesian4(
         ): Cartesian4
 
         /**
+         * Constrain a value to lie between two values.
+         * @param [value] The value to clamp.
+         * @param [min] The minimum bound.
+         * @param [max] The maximum bound.
+         * @param [result] The object into which to store the result.
+         * @return The clamped value such that min <= result <= max.
+         * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cartesian4.html#.clamp">Online Documentation</a>
+         */
+        fun clamp(
+            value: Cartesian4,
+            min: Cartesian4,
+            max: Cartesian4,
+            result: Cartesian4,
+        ): Cartesian4
+
+        /**
          * Computes the provided Cartesian's squared magnitude.
          * @param [cartesian] The Cartesian instance whose squared magnitude is to be computed.
          * @return The squared magnitude.

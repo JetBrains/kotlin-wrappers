@@ -90,13 +90,14 @@ external class Model(options: ConstructorOptions? = definedExternally) {
      * @property [clippingPlanes] The [ClippingPlaneCollection] used to selectively disable rendering the model.
      * @property [dequantizeInShader] Determines if a [Draco](https://github.com/google/draco) encoded model is dequantized on the GPU. This decreases total memory usage for encoded models.
      *   Default value - `true`
-     * @property [imageBasedLightingFactor] Scales diffuse and specular image-based lighting from the earth, sky, atmosphere and star skybox.
-     *   Default value - [Cartesian2(1.0, 1.0)][Cartesian2]
      * @property [lightColor] The light color when shading the model. When `undefined` the scene's light color is used instead.
-     * @property [luminanceAtZenith] The sun's luminance at the zenith in kilo candela per meter squared to use for this model's procedural environment map.
+     * @property [imageBasedLighting] The properties for managing image-based lighting on this model.
+     * @property [imageBasedLightingFactor] Scales diffuse and specular image-based lighting from the earth, sky, atmosphere and star skybox. Deprecated in Cesium 1.92, will be removed in Cesium 1.94.
+     *   Default value - [Cartesian2(1.0, 1.0)][Cartesian2]
+     * @property [luminanceAtZenith] The sun's luminance at the zenith in kilo candela per meter squared to use for this model's procedural environment map. Deprecated in Cesium 1.92, will be removed in Cesium 1.94.
      *   Default value - `0.2`
-     * @property [sphericalHarmonicCoefficients] The third order spherical harmonic coefficients used for the diffuse color of image-based lighting.
-     * @property [specularEnvironmentMaps] A URL to a KTX2 file that contains a cube map of the specular lighting and the convoluted specular mipmaps.
+     * @property [sphericalHarmonicCoefficients] The third order spherical harmonic coefficients used for the diffuse color of image-based lighting. Deprecated in Cesium 1.92, will be removed in Cesium 1.94.
+     * @property [specularEnvironmentMaps] A URL to a KTX2 file that contains a cube map of the specular lighting and the convoluted specular mipmaps. Deprecated in Cesium 1.92, will be removed in Cesium 1.94.
      * @property [credit] A credit for the data source, which is displayed on the canvas.
      * @property [showCreditsOnScreen] Whether to display the credits of this model on screen.
      *   Default value - `false`
@@ -104,6 +105,8 @@ external class Model(options: ConstructorOptions? = definedExternally) {
      *   Default value - `true`
      * @property [showOutline] Whether to display the outline for models using the [CESIUM_primitive_outline](https://github.com/KhronosGroup/glTF/tree/master/extensions/2.0/Vendor/CESIUM_primitive_outline) extension. When true, outlines are displayed. When false, outlines are not displayed.
      *   Default value - `true`
+     * @property [splitDirection] The [SplitDirection] split to apply to this model.
+     *   Default value - [SplitDirection.NONE]
      */
     interface ConstructorOptions {
         var gltf: dynamic
@@ -131,8 +134,9 @@ external class Model(options: ConstructorOptions? = definedExternally) {
         var silhouetteSize: Double?
         var clippingPlanes: ClippingPlaneCollection?
         var dequantizeInShader: Boolean?
-        var imageBasedLightingFactor: Cartesian2?
         var lightColor: Cartesian3?
+        var imageBasedLighting: ImageBasedLighting?
+        var imageBasedLightingFactor: Cartesian2?
         var luminanceAtZenith: Double?
         var sphericalHarmonicCoefficients: Array<out Cartesian3>?
         var specularEnvironmentMaps: String?
@@ -140,6 +144,7 @@ external class Model(options: ConstructorOptions? = definedExternally) {
         var showCreditsOnScreen: Boolean?
         var backFaceCulling: Boolean?
         var showOutline: Boolean?
+        var splitDirection: SplitDirection?
     }
 
     /**
@@ -265,6 +270,12 @@ external class Model(options: ConstructorOptions? = definedExternally) {
     val showOutline: Boolean
 
     /**
+     * The [SplitDirection] to apply to this model.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Model.html#splitDirection">Online Documentation</a>
+     */
+    var splitDirection: SplitDirection
+
+    /**
      * This property is for debugging only; it is not for production use nor is it optimized.
      *
      * Draws the bounding sphere for each draw command in the model.  A glTF primitive corresponds
@@ -324,11 +335,11 @@ external class Model(options: ConstructorOptions? = definedExternally) {
      * This promise is resolved at the end of the frame before the first frame the model is rendered in.
      * ```
      * // Play all animations at half-speed when the model is ready to render
-     * when(model.readyPromise).then(function(model) {
+     * Promise.resolve(model.readyPromise).then(function(model) {
      *   model.activeAnimations.addAll({
      *     multiplier : 0.5
      *   });
-     * }).otherwise(function(error){
+     * }).catch(function(error){
      *   window.alert(error);
      * });
      * ```
@@ -374,13 +385,6 @@ external class Model(options: ConstructorOptions? = definedExternally) {
     var clippingPlanes: ClippingPlaneCollection
 
     /**
-     * Cesium adds lighting from the earth, sky, atmosphere, and star skybox. This cartesian is used to scale the final
-     * diffuse and specular lighting contribution from those sources to the final color. A value of 0.0 will disable those light sources.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Model.html#imageBasedLightingFactor">Online Documentation</a>
-     */
-    var imageBasedLightingFactor: Cartesian2
-
-    /**
      * The light color when shading the model. When `undefined` the scene's light color is used instead.
      *
      * For example, disabling additional light sources by setting `model.imageBasedLightingFactor = new Cartesian2(0.0, 0.0)` will make the
@@ -388,6 +392,19 @@ external class Model(options: ConstructorOptions? = definedExternally) {
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Model.html#lightColor">Online Documentation</a>
      */
     var lightColor: Cartesian3
+
+    /**
+     * The properties for managing image-based lighting on this model.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Model.html#imageBasedLighting">Online Documentation</a>
+     */
+    var imageBasedLighting: ImageBasedLighting
+
+    /**
+     * Cesium adds lighting from the earth, sky, atmosphere, and star skybox. This cartesian is used to scale the final
+     * diffuse and specular lighting contribution from those sources to the final color. A value of 0.0 will disable those light sources.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Model.html#imageBasedLightingFactor">Online Documentation</a>
+     */
+    var imageBasedLightingFactor: Cartesian2
 
     /**
      * The sun's luminance at the zenith in kilo candela per meter squared to use for this model's procedural environment map.
@@ -401,7 +418,7 @@ external class Model(options: ConstructorOptions? = definedExternally) {
      * computed from the atmosphere color is used.
      *
      * There are nine `Cartesian3` coefficients.
-     * The order of the coefficients is: L<sub>00</sub>, L<sub>1-1</sub>, L<sub>10</sub>, L<sub>11</sub>, L<sub>2-2</sub>, L<sub>2-1</sub>, L<sub>20</sub>, L<sub>21</sub>, L<sub>22</sub>
+     * The order of the coefficients is: L<sub>0,0</sub>, L<sub>1,-1</sub>, L<sub>1,0</sub>, L<sub>1,1</sub>, L<sub>2,-2</sub>, L<sub>2,-1</sub>, L<sub>2,0</sub>, L<sub>2,1</sub>, L<sub>2,2</sub>
      *
      * These values can be obtained by preprocessing the environment map using the `cmgen` tool of
      * [Google's Filament project](https://github.com/google/filament/releases). This will also generate a KTX file that can be
@@ -619,6 +636,14 @@ external class Model(options: ConstructorOptions? = definedExternally) {
          * @property [clippingPlanes] The [ClippingPlaneCollection] used to selectively disable rendering the model.
          * @property [dequantizeInShader] Determines if a [Draco](https://github.com/google/draco) encoded model is dequantized on the GPU. This decreases total memory usage for encoded models.
          *   Default value - `true`
+         * @property [lightColor] The light color when shading the model. When `undefined` the scene's light color is used instead.
+         * @property [imageBasedLighting] The properties for managing image-based lighting for this tileset.
+         * @property [imageBasedLightingFactor] Scales diffuse and specular image-based lighting from the earth, sky, atmosphere and star skybox. Deprecated in Cesium 1.92, will be removed in Cesium 1.94.
+         *   Default value - [Cartesian2(1.0, 1.0)][Cartesian2]
+         * @property [luminanceAtZenith] The sun's luminance at the zenith in kilo candela per meter squared to use for this model's procedural environment map. Deprecated in Cesium 1.92, will be removed in Cesium 1.94.
+         *   Default value - `0.2`
+         * @property [sphericalHarmonicCoefficients] The third order spherical harmonic coefficients used for the diffuse color of image-based lighting. Deprecated in Cesium 1.92, will be removed in Cesium 1.94.
+         * @property [specularEnvironmentMaps] A URL to a KTX2 file that contains a cube map of the specular lighting and the convoluted specular mipmaps. Deprecated in Cesium 1.92, will be removed in Cesium 1.94.
          * @property [credit] A credit for the model, which is displayed on the canvas.
          * @property [showCreditsOnScreen] Whether to display the credits of this model on screen.
          *   Default value - `false`
@@ -653,6 +678,12 @@ external class Model(options: ConstructorOptions? = definedExternally) {
             var silhouetteSize: Double?
             var clippingPlanes: ClippingPlaneCollection?
             var dequantizeInShader: Boolean?
+            var lightColor: Cartesian3?
+            var imageBasedLighting: ImageBasedLighting?
+            var imageBasedLightingFactor: Cartesian2?
+            var luminanceAtZenith: Double?
+            var sphericalHarmonicCoefficients: Array<out Cartesian3>?
+            var specularEnvironmentMaps: String?
             var credit: Credit?
             var showCreditsOnScreen: Boolean?
             var backFaceCulling: Boolean?

@@ -589,6 +589,12 @@ external class Scene(
     val mapMode2D: MapMode2D
 
     /**
+     * Gets or sets the position of the splitter within the viewport.  Valid values are between 0.0 and 1.0.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Scene.html#splitPosition">Online Documentation</a>
+     */
+    var splitPosition: Double
+
+    /**
      * Gets or sets the position of the Imagery splitter within the viewport.  Valid values are between 0.0 and 1.0.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Scene.html#imagerySplitPosition">Online Documentation</a>
      */
@@ -638,7 +644,7 @@ external class Scene(
      * The sample rate of multisample antialiasing (values greater than 1 enable MSAA).
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Scene.html#msaaSamples">Online Documentation</a>
      */
-    val msaaSamples: Double
+    var msaaSamples: Double
 
     /**
      * Returns `true` if the Scene's context supports MSAA.
