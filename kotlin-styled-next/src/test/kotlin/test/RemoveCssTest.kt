@@ -1,15 +1,12 @@
 package test
 
 import Component
-import TestScope
-import createDOMElement
+import RootInfo
 import kotlinx.css.color
 import kotlinx.css.paddingLeft
 import kotlinx.css.paddingRight
 import kotlinx.css.px
-import kotlinx.dom.clear
 import org.w3c.dom.Element
-import org.w3c.dom.HTMLElement
 import react.Props
 import react.fc
 import runTest
@@ -18,7 +15,6 @@ import styled.animation
 import styled.css
 import styled.styledDiv
 import styled.styledSpan
-import unmount
 import waitForAnimationFrame
 import kotlin.test.BeforeTest
 import kotlin.test.Test
@@ -26,13 +22,13 @@ import kotlin.test.assertEquals
 import kotlin.test.assertNotNull
 
 class RemoveCssTest : TestBase() {
-    private val secondRoot by lazy { createDOMElement() }
-    private val thirdRoot by lazy { createDOMElement() }
+    private val secondRootInfo by lazy { RootInfo.create() }
+    private val thirdRootInfo by lazy { RootInfo.create() }
     private var staticStyleSheet = StaticStyleSheet()
 
-    private suspend fun TestScope.injectAdditional(component: Component, root: HTMLElement = secondRoot): Element {
-        renderComponent(component, root)
-        val element = root.firstElementChild
+    private suspend fun injectAdditional(component: Component, root: RootInfo = secondRootInfo): Element {
+        root.renderComponent(component)
+        val element = root.element.firstElementChild
         assertNotNull(element)
         waitForAnimationFrame()
         return element
@@ -46,10 +42,8 @@ class RemoveCssTest : TestBase() {
     @BeforeTest
     override fun before() = runTest {
         super.before()
-        unmount(secondRoot)
-        secondRoot.clear()
-        unmount(thirdRoot)
-        thirdRoot.clear()
+        secondRootInfo.clear()
+        thirdRootInfo.clear()
         staticStyleSheet = StaticStyleSheet()
     }
 
@@ -118,12 +112,12 @@ class RemoveCssTest : TestBase() {
         clearAndInject(styledComponent)
         injectAdditional(styledComponent2)
         assertEquals(5, getRules().size)
-        injectAdditional(styledComponent, thirdRoot)
+        injectAdditional(styledComponent, thirdRootInfo)
         clear()
         assertEquals(5, getRules().size)
-        unmount(thirdRoot)
+        thirdRootInfo.unmount()
         assertEquals(2, getRules().size)
-        unmount(secondRoot)
+        secondRootInfo.unmount()
         assertEquals(0, getRules().size)
     }
 
@@ -146,7 +140,7 @@ class RemoveCssTest : TestBase() {
         assertEquals(2, getRules().size)
         clearAndInject(styledComponent)
         assertEquals(5, getRules().size)
-        unmount(secondRoot)
+        secondRootInfo.unmount()
         assertEquals(4, getRules().size)
         clear()
         assertEquals(0, getRules().size)
@@ -173,8 +167,8 @@ class RemoveCssTest : TestBase() {
         clear()
 
         assertEquals(2, getRules().size)
-        assertEquals(firstColor.toString(), secondRoot.childAt(0).color())
-        assertEquals(thirdColor.toString(), secondRoot.childAt(1).color())
+        assertEquals(firstColor.toString(), secondRootInfo.element.childAt(0).color())
+        assertEquals(thirdColor.toString(), secondRootInfo.element.childAt(1).color())
     }
 
     @Test

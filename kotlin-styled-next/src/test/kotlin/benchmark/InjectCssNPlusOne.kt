@@ -37,7 +37,7 @@ class InjectCssNPlusOne : BenchmarkBase() {
                 }
             }
         }
-        renderComponent(component)
+        getRootInfo().renderComponent(component)
         waitForAnimationFrame()
 
         assertChildrenCount(n)
@@ -48,7 +48,7 @@ class InjectCssNPlusOne : BenchmarkBase() {
      * Measure performance of style recalculation caused by CSS injection.
      * This metric becomes more important for pages with big and complex DOM and CSSOM.
      */
-    private suspend fun TestScope.injectRulesOneByOne(): Duration {
+    private fun TestScope.injectRulesOneByOne(): Duration {
         val duration = measureTime {
             repeat(100) {
                 GlobalStyles.scheduleToInject(".dummy_rule$it", CssBuilder().apply {

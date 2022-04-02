@@ -43,7 +43,7 @@ class AddStyledElements : BenchmarkBase() {
         val cssHolder = TimedLinkedHashMap<CssBuilder, UsedCssInfo>()
         GlobalStyles.styledClasses = cssHolder
         val duration = measureTime {
-            renderComponent(component)
+            getRootInfo().renderComponent(component)
             waitForAnimationFrame()
         }
 

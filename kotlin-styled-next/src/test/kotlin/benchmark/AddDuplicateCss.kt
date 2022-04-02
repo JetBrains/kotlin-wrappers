@@ -28,7 +28,7 @@ class AddDuplicateCss : BenchmarkBase() {
             }
         }
         val duration = measureTime {
-            renderComponent(component)
+            getRootInfo().renderComponent(component)
             waitForAnimationFrame()
         }
 
