@@ -1,5 +1,6 @@
 package org.w3c.dom
 
+import kotlinx.js.HighResTimeStamp
 import kotlinx.js.ReadonlyArray
 
 typealias IntersectionObserverCallback = (
@@ -34,5 +35,5 @@ external interface IntersectionObserverEntry {
     val isIntersecting: Boolean
     val rootBounds: DOMRectReadOnly?
     val target: Element
-    val time: Double
+    val time: HighResTimeStamp
 }

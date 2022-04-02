@@ -3,10 +3,10 @@ package kotlinx.js
 import org.w3c.dom.events.Event
 
 external interface PerformanceEntry {
-    val duration: Number
+    val duration: HighResTimeStamp
     val entryType: String
     val name: String
-    val startTime: Number
+    val startTime: HighResTimeStamp
     fun toJSON(): Any
 }
 
@@ -18,38 +18,38 @@ external class PerformanceMark(
 ) : PerformanceEntry {
     val detail: Any
 
-    override val duration: Number
+    override val duration: HighResTimeStamp
     override val entryType: String
     override val name: String
-    override val startTime: Number
+    override val startTime: HighResTimeStamp
     override fun toJSON(): Any
 }
 
 external interface PerformanceMarkOptions {
     var detail: Any?
-    var startTime: Number?
+    var startTime: HighResTimeStamp?
 }
 
 external class PerformanceMeasure : PerformanceEntry {
     val detail: Any
 
-    override val duration: Number
+    override val duration: HighResTimeStamp
     override val entryType: String
     override val name: String
-    override val startTime: Number
+    override val startTime: HighResTimeStamp
     override fun toJSON(): Any
 }
 
 interface PerformanceMeasureOptions {
     var detail: Any?
-    var duration: Number?
-    var end: Number?
-    var start: Number?
+    var duration: HighResTimeStamp?
+    var end: HighResTimeStamp?
+    var start: HighResTimeStamp?
 }
 
 external interface Performance {
     var onresourcetimingbufferfull: ((ev: Event) -> Any)?
-    val timeOrigin: Number
+    val timeOrigin: HighResTimeStamp
     fun clearMarks(markName: String = definedExternally)
     fun clearMeasures(measureName: String = definedExternally)
     fun clearResourceTimings()
@@ -59,7 +59,7 @@ external interface Performance {
     fun mark(markName: String, markOptions: PerformanceMarkOptions = definedExternally): PerformanceMark
     fun measure(measureName: String, startOrMeasureOptions: String = definedExternally, endMark: String = definedExternally): PerformanceMeasure
     fun measure(measureName: String, startOrMeasureOptions: PerformanceMeasureOptions = definedExternally, endMark: String = definedExternally): PerformanceMeasure
-    fun now(): Number
+    fun now(): HighResTimeStamp
     fun setResourceTimingBufferSize(maxSize: Number)
     fun toJSON(): Any
 }
