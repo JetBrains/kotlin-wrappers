@@ -146,17 +146,17 @@ external interface PaletteOptions {
 
     var contrastThreshold: Number?
 
-    var common: dynamic
+    var common: CommonColors?
 
     var grey: dynamic
 
-    var text: dynamic
+    var text: TypeText?
 
     var divider: String?
 
-    var action: dynamic
+    var action: TypeAction?
 
-    var background: dynamic
+    var background: TypeBackground?
 
     var getContrastText: ((background: String) -> String)?
 }
