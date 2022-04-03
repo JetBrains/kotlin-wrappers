@@ -74,7 +74,7 @@ external interface PaginationItemProps :
      * The type of pagination item.
      * @default 'page'
      */
-    var type: dynamic /* UsePaginationItem['type'] */
+    var type: UsePaginationItemType?
 
     /**
      * The variant to use.

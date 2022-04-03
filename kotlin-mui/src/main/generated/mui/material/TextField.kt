@@ -124,7 +124,7 @@ external interface BaseTextFieldProps :
 
     var onBlur: react.dom.events.FocusEventHandler<org.w3c.dom.HTMLElement>?
 
-    var onFocus: dynamic /* StandardInputProps['onFocus'] */
+    var onFocus: react.dom.events.FocusEventHandler<org.w3c.dom.HTMLElement>?
 
     /**
      * The short hint displayed in the `input` before the user enters a value.
@@ -193,7 +193,7 @@ external interface StandardTextFieldProps :
      * @param {object} event The event source of the callback.
      * You can pull out the new value by accessing `event.target.value` (string).
      */
-    var onChange: dynamic /* StandardInputProps['onChange'] */
+    var onChange: react.dom.events.ChangeEventHandler<org.w3c.dom.HTMLElement>?
 
     /**
      * The variant to use.

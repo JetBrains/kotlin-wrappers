@@ -52,7 +52,7 @@ external interface SpeedDialActionProps :
      * Placement of the tooltip.
      * @default 'left'
      */
-    var tooltipPlacement: dynamic /* TooltipProps['placement'] */
+    var tooltipPlacement: TooltipPlacement?
 
     /**
      * Label to display in the tooltip.

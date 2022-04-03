@@ -52,7 +52,7 @@ external interface NativeSelectProps :
      * @param {React.ChangeEvent<HTMLSelectElement>} event The event source of the callback.
      * You can pull out the new value by accessing `event.target.value` (string).
      */
-    var onChange: dynamic /* NativeSelectInputProps['onChange'] */
+    var onChange: react.dom.events.ChangeEventHandler<*>?
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
