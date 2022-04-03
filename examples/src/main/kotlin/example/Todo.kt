@@ -64,7 +64,7 @@ val Todo = FC<TodoProps> { props ->
     }
 }
 
-val TodoApp = FC<Props> {
+val TodoApp = VFC {
     val items = useMemo { listOf("Hello", "World") }
 
     Todo {

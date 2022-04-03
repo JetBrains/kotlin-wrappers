@@ -1,7 +1,6 @@
 package example
 
-import react.FC
-import react.Props
+import react.VFC
 import react.create
 import react.dom.html.ReactHTML.div
 import react.dom.html.ReactHTML.h2
@@ -15,19 +14,19 @@ import react.router.dom.Link
 import react.router.useLocation
 import react.router.useParams
 
-val Home = FC<Props> {
+val Home = VFC {
     h2 {
         +"Home"
     }
 }
 
-val About = FC<Props> {
+val About = VFC {
     h2 {
         +"About"
     }
 }
 
-val Topics = FC<Props> {
+val Topics = VFC {
     val location = useLocation()
 
     div {
@@ -65,16 +64,16 @@ val Topics = FC<Props> {
     }
 }
 
-val Topic = FC<Props> {
+val Topic = VFC {
     val topicId = useParams()["topicId"]
-        ?: return@FC
+        ?: return@VFC
 
     h3 {
         +"Requested topic ID: $topicId"
     }
 }
 
-val ReactRouterDomApp = FC<Props> {
+val ReactRouterDomApp = VFC {
     BrowserRouter {
         div {
             ul {
