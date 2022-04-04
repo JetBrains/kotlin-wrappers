@@ -8,6 +8,8 @@ import kotlinx.css.paddingRight
 import kotlinx.css.px
 import org.w3c.dom.Element
 import react.Props
+import react.dom.client.createRoot
+import react.dom.flushSync
 import react.fc
 import runTest
 import styleSheets.StaticStyleSheet
@@ -15,7 +17,6 @@ import styled.animation
 import styled.css
 import styled.styledDiv
 import styled.styledSpan
-import waitForAnimationFrame
 import kotlin.test.BeforeTest
 import kotlin.test.Test
 import kotlin.test.assertEquals
@@ -26,22 +27,22 @@ class RemoveCssTest : TestBase() {
     private val thirdRootInfo by lazy { RootInfo.create() }
     private var staticStyleSheet = StaticStyleSheet()
 
-    private suspend fun injectAdditional(component: Component, root: RootInfo = secondRootInfo): Element {
-        root.renderComponent(component)
+    private fun injectAdditional(component: Component, root: RootInfo = secondRootInfo): Element {
+        flushSync {
+            root.root = createRoot(root.element)
+            root.renderComponent(component)
+        }
         val element = root.element.firstElementChild
         assertNotNull(element)
-        waitForAnimationFrame()
         return element
     }
 
-    private suspend fun removeInjectedStyleSheet() {
+    private fun removeInjectedStyleSheet() {
         staticStyleSheet.removeInjected()
-        waitForAnimationFrame()
     }
 
     @BeforeTest
-    override fun before() = runTest {
-        super.before()
+    fun beforeRemoveCssTest() = runTest {
         secondRootInfo.clear()
         thirdRootInfo.clear()
         staticStyleSheet = StaticStyleSheet()
@@ -49,6 +50,7 @@ class RemoveCssTest : TestBase() {
 
     @Test
     fun removesSingleUnusedCss() = runTest {
+        assertEquals(0, getRules().size)
         val styledComponent = fc<Props> {
             styledDiv {
                 css {
@@ -79,7 +81,6 @@ class RemoveCssTest : TestBase() {
 
     @Test
     fun leavesUsedCss() = runTest {
-
         val styledComponent = fc<Props> {
             styledDiv {
                 css {
@@ -252,7 +253,9 @@ class RemoveCssTest : TestBase() {
         }
         clearAndInject(styledComponent)
         assertEquals(1, getRules().size)
-        removeInjectedStyleSheet()
+        flushSync {
+            removeInjectedStyleSheet()
+        }
         assertEquals(0, getRules().size)
 
         val styledComponent2 = fc<Props> {
@@ -266,6 +269,7 @@ class RemoveCssTest : TestBase() {
         clearAndInject(styledComponent)
         injectAdditional(styledComponent2)
         assertEquals(2, getRules().size)
+
         removeInjectedStyleSheet()
         assertEquals(0, getRules().size)
     }

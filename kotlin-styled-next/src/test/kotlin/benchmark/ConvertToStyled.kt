@@ -1,18 +1,16 @@
 package benchmark
 
 import StyledElementsFactory.getCssBuilders
-import waitFlowCoroutine
+import measureTimeJS
 import kotlin.test.Test
 import kotlin.test.assertFalse
 import kotlin.time.Duration
-import kotlin.time.measureTime
 
 class ConvertToStyled : BenchmarkBase() {
     private suspend fun convertNCssBuilders(n: Int): Duration {
-        val builders = getCssBuilders(n)
-        return measureTime {
+        return measureTimeJS {
+            val builders = getCssBuilders(n)
             assertFalse(builders.isEmpty())
-            waitFlowCoroutine()
         }
     }
 

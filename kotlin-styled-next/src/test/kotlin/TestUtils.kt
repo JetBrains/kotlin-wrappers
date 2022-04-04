@@ -20,7 +20,6 @@ import react.createElement
 import react.dom.client.Root
 import react.dom.client.createRoot
 import react.dom.flushSync
-import react.dom.unmountComponentAtNode
 import styled.GlobalStyles
 import styled.injectGlobal
 import styled.sheets.*
@@ -29,12 +28,14 @@ import kotlin.coroutines.suspendCoroutine
 import kotlin.js.Promise
 import kotlin.test.assertEquals
 import kotlin.test.assertNotNull
+import kotlin.time.Duration
+import kotlin.time.measureTime
 
 typealias Component = ComponentType<Props>
 
 private val testScope = MainScope()
 
-data class RootInfo(val element: Element, val root: Root) {
+data class RootInfo(val element: Element, var root: Root) {
     fun clear() {
         unmount()
         element.clear()
@@ -45,7 +46,7 @@ data class RootInfo(val element: Element, val root: Root) {
         root.render(reactElement)
     }
 
-    fun unmount() {
+    fun unmount() = flushSync {
         root.unmount()
     }
 
@@ -128,7 +129,7 @@ class TestScope : CoroutineScope by testScope {
         GlobalStyles.scheduledToDelete.clear()
     }
 
-    suspend fun clearAndInject(styledComponent: Component): Element {
+    fun clearAndInject(styledComponent: Component): Element {
         clear()
         return inject(styledComponent)
     }
@@ -136,18 +137,14 @@ class TestScope : CoroutineScope by testScope {
     /**
      * Inject [styledComponent] into the DOM and return corresponding [Element]
      */
-    suspend fun inject(styledComponent: Component): Element {
-        getRootInfo().renderComponent(styledComponent)
-        waitForAnimationFrame()
+    fun inject(styledComponent: Component): Element {
+        flushSync {
+            getRootInfo().renderComponent(styledComponent)
+        }
         val styledElement = getRootElement().firstElementChild
         assertNotNull(styledElement)
         return styledElement
     }
-}
-
-internal suspend fun unmount(domContainerNode: Element?) {
-    unmountComponentAtNode(domContainerNode)
-    waitForAnimationFrame()
 }
 
 internal fun createDOMElement(): HTMLElement {
@@ -160,6 +157,15 @@ internal fun runTest(block: suspend TestScope.() -> Unit): dynamic {
     val scope = TestScope()
     scope.assertChildrenCount(0)
     return scope.promise { block(scope) }
+}
+
+internal suspend fun measureTimeJSSync(block: () -> Unit): Duration = measureTimeJS {
+    flushSync(block)
+}
+
+internal suspend fun measureTimeJS(block: () -> Unit): Duration = measureTime {
+    block()
+    waitFlowCoroutine()
 }
 
 /**
@@ -175,7 +181,7 @@ internal suspend fun waitForAnimationFrame() {
 }
 
 /** Hack for Flow emit function not to crash in inner js code */
-internal suspend fun waitFlowCoroutine() {
+private suspend fun waitFlowCoroutine() {
     suspendCoroutine<Unit> { continuation ->
         Promise.Companion.resolve(Unit).then {
             continuation.resume(Unit)

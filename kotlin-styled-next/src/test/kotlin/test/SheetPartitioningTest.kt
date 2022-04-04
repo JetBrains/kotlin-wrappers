@@ -7,6 +7,7 @@ import kotlinx.css.px
 import org.w3c.dom.Element
 import react.FC
 import react.Props
+import react.dom.flushSync
 import react.fc
 import runTest
 import styled.GlobalStyles
@@ -15,7 +16,6 @@ import styled.sheets.CSSOMSheet
 import styled.sheets.RemoveMode
 import styled.sheets.RuleType
 import styled.styledDiv
-import waitForAnimationFrame
 import kotlin.test.BeforeTest
 import kotlin.test.Test
 import kotlin.test.assertEquals
@@ -25,11 +25,12 @@ class SheetPartitioningTest : TestBase() {
     private val secondRoot by lazy { RootInfo.create() }
     private val thirdRoot by lazy { RootInfo.create() }
 
-    private suspend fun injectAdditional(component: Component, root: RootInfo = secondRoot): Element {
-        root.renderComponent(component)
+    private fun injectAdditional(component: Component, root: RootInfo = secondRoot): Element {
+        flushSync {
+            root.renderComponent(component)
+        }
         val element = root.element.firstElementChild
         assertNotNull(element)
-        waitForAnimationFrame()
         return element
     }
 
@@ -120,6 +121,7 @@ class SheetPartitioningTest : TestBase() {
         assertEquals(listOf(50, 100, 100), getStylesheets().map { it.cssRules.length })
         val rules2 = rules1 - rules.slice(styleRanges[5]).toSet()
         assertEquals(rules2, getRules())
+        roots.forEach { it.unmount() }
     }
 
     private fun getFC(range: IntRange): FC<Props> {

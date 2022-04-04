@@ -3,10 +3,9 @@ package benchmark
 import StyledElementsFactory.getCssBuilders
 import TestScope
 import kotlinx.css.CssBuilder
-import waitForAnimationFrame
+import measureTimeJSSync
 import kotlin.test.Test
 import kotlin.time.Duration
-import kotlin.time.measureTime
 
 class CssBuildersInject : BenchmarkBase() {
     /**
@@ -15,9 +14,8 @@ class CssBuildersInject : BenchmarkBase() {
      */
     private suspend fun TestScope.addCssBuilders(n: Int): Duration {
         val cssBuilders: List<CssBuilder> = getCssBuilders(n)
-        val duration = measureTime {
+        val duration = measureTimeJSSync {
             cssBuilders.forEach { injectBuilder(it) }
-            waitForAnimationFrame()
         }
 
         assertCssNotEmpty()

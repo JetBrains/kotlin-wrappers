@@ -7,7 +7,9 @@ import kotlinx.css.CssBuilder
 import kotlinx.css.height
 import kotlinx.css.px
 import kotlinx.css.width
+import measureTimeJS
 import react.Props
+import react.dom.flushSync
 import react.fc
 import styled.GlobalStyles
 import styled.css
@@ -15,15 +17,13 @@ import styled.sheets.CSSOMSheet
 import styled.sheets.RemoveMode
 import styled.sheets.RuleType
 import styled.styledDiv
-import waitForAnimationFrame
 import kotlin.random.Random
 import kotlin.test.Test
 import kotlin.time.Duration
-import kotlin.time.measureTime
 
 class InjectCssNPlusOne : BenchmarkBase() {
 
-    private suspend fun TestScope.preloadElements(n: Int) {
+    private fun TestScope.preloadElements(n: Int) {
         val component = fc<Props> {
             val random = Random(152)
             (1..n).forEach {
@@ -37,8 +37,9 @@ class InjectCssNPlusOne : BenchmarkBase() {
                 }
             }
         }
-        getRootInfo().renderComponent(component)
-        waitForAnimationFrame()
+        flushSync {
+            getRootInfo().renderComponent(component)
+        }
 
         assertChildrenCount(n)
         assertCssNotEmpty()
@@ -48,8 +49,8 @@ class InjectCssNPlusOne : BenchmarkBase() {
      * Measure performance of style recalculation caused by CSS injection.
      * This metric becomes more important for pages with big and complex DOM and CSSOM.
      */
-    private fun TestScope.injectRulesOneByOne(): Duration {
-        val duration = measureTime {
+    private suspend fun TestScope.injectRulesOneByOne(): Duration {
+        val duration = measureTimeJS {
             repeat(100) {
                 GlobalStyles.scheduleToInject(".dummy_rule$it", CssBuilder().apply {
                     height = 0.px
@@ -88,29 +89,26 @@ class InjectCssNPlusOne : BenchmarkBase() {
     }
 
     @Test
-    fun injectRulesOneByOne500Elements_partitioningDisabled() =
-        runBenchmark("injectRulesOneByOne500Elements_partitioningDisabled") {
-            disableSheetPartitioning()
-            preloadElements(500)
+    fun injectRulesOneByOne500Elements_partitioningDisabled() = runBenchmark("injectRulesOneByOne500Elements_partitioningDisabled") {
+        disableSheetPartitioning()
+        preloadElements(500)
 
-            injectRulesOneByOne()
-        }
-
-    @Test
-    fun injectRulesOneByOne1000Elements_partitioningDisabled() =
-        runBenchmark("injectRulesOneByOne1000Elements_partitioningDisabled") {
-            disableSheetPartitioning()
-            preloadElements(1000)
-
-            injectRulesOneByOne()
-        }
+        injectRulesOneByOne()
+    }
 
     @Test
-    fun injectRulesOneByOne2000Elements_partitioningDisabled() =
-        runBenchmark("injectRulesOneByOne2000Elements_partitioningDisabled") {
-            disableSheetPartitioning()
-            preloadElements(2000)
+    fun injectRulesOneByOne1000Elements_partitioningDisabled() = runBenchmark("injectRulesOneByOne1000Elements_partitioningDisabled") {
+        disableSheetPartitioning()
+        preloadElements(1000)
 
-            injectRulesOneByOne()
-        }
+        injectRulesOneByOne()
+    }
+
+    @Test
+    fun injectRulesOneByOne2000Elements_partitioningDisabled() = runBenchmark("injectRulesOneByOne2000Elements_partitioningDisabled") {
+        disableSheetPartitioning()
+        preloadElements(2000)
+
+        injectRulesOneByOne()
+    }
 }

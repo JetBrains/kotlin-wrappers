@@ -12,6 +12,7 @@ import styleSheets.*
 import styled.*
 import styled.sheets.importStyleId
 import styled.sheets.styleElementsSelector
+import waitForAnimationFrame
 import kotlin.test.BeforeTest
 import kotlin.test.Test
 import kotlin.test.assertContains
@@ -255,7 +256,8 @@ class StyleSheetTest : TestBase() {
             }
         }
         val element = clearAndInject(styledComponent)
-        assertContains(element.className, "StaticStyleSheetObject-property")
+        assertContains(element.className, "StaticStyleSheetObject-property1")
+        waitForAnimationFrame()
         assertEquals(expectedColor, element.color())
         assertCssInjected("StaticStyleSheetObject-property", "color" to expectedColor)
     }
