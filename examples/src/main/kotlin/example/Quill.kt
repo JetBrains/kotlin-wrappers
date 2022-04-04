@@ -1,8 +1,8 @@
 package example
 
 import react.ComponentClass
-import react.FC
 import react.Props
+import react.VFC
 import react.dom.html.ReactHTML.div
 import react.useState
 
@@ -22,7 +22,7 @@ external interface ReactQuillProps : Props {
 @JsNonModule
 external val ReactQuill: ComponentClass<ReactQuillProps>
 
-val QuillApp = FC<Props> {
+val QuillApp = VFC {
     var text by useState("Hello, World")
 
     div {
