@@ -6,8 +6,10 @@
 
 package popper.core.modifiers
 
+sealed external interface OffsetType
+
 external interface OffsetOptions {
-    var offset: dynamic /* Offset */
+    var offset: OffsetType
 }
 
 @JsName("'offset'")

@@ -6,6 +6,8 @@
 
 package popper.core.modifiers
 
+sealed external interface TetherOffsetType
+
 external interface PreventOverflowOptions {
     var mainAxis: Boolean
     var altAxis: Boolean
@@ -18,7 +20,7 @@ external interface PreventOverflowOptions {
      * reference element
      */
     var tether: Boolean
-    var tetherOffset: dynamic /* TetherOffset */
+    var tetherOffset: TetherOffsetType
     var padding: popper.core.Padding
 }
 
