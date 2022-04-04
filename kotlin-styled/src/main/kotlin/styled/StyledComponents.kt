@@ -13,7 +13,7 @@ import react.*
 import react.dom.DOMProps
 import react.dom.RDOMBuilder
 import react.dom.RDOMBuilderImpl
-import react.dom.render
+import react.dom.client.createRoot
 import kotlin.js.Promise
 
 typealias AnyTagStyledBuilder = StyledDOMBuilder<CommonAttributeGroupFacade>
@@ -164,7 +164,9 @@ private object GlobalStyles {
         val reactElement = createElement(component, jso {
             this.globalStyles = styles
         })
-        render(reactElement, root)
+
+        createRoot(root)
+            .render(reactElement)
     }
 }
 

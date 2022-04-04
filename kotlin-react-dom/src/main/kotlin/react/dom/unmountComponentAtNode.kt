@@ -5,8 +5,10 @@ package react.dom
 
 import org.w3c.dom.Element
 
-// See https://reactjs.org/docs/react-dom.html
-
+/**
+ * [Deprecation details](https://reactjs.org/blog/2022/03/08/react-18-upgrade-guide.html#deprecations)
+ */
+@Deprecated("Will be removed soon!")
 external fun unmountComponentAtNode(
     domContainerNode: Element?,
 )
