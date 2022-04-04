@@ -2,14 +2,13 @@ package benchmark
 
 import TestScope
 import addCss
+import measureTimeJSSync
 import react.Props
 import react.fc
 import styled.styledDiv
-import waitForAnimationFrame
 import kotlin.random.Random
 import kotlin.test.Test
 import kotlin.time.Duration
-import kotlin.time.measureTime
 
 class AddDuplicateCss : BenchmarkBase() {
     /**
@@ -27,9 +26,8 @@ class AddDuplicateCss : BenchmarkBase() {
                 }
             }
         }
-        val duration = measureTime {
-            renderComponent(component)
-            waitForAnimationFrame()
+        val duration = measureTimeJSSync {
+            getRootInfo().renderComponent(component)
         }
 
         assertChildrenCount(n * repeatCount)

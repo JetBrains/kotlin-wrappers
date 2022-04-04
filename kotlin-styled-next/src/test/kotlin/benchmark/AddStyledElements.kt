@@ -3,9 +3,9 @@ package benchmark
 import StyledElementsFactory.getStyledComponent
 import TestScope
 import kotlinx.css.CssBuilder
+import measureTimeJSSync
 import styled.GlobalStyles
 import styled.UsedCssInfo
-import waitForAnimationFrame
 import kotlin.test.Test
 import kotlin.time.Duration
 import kotlin.time.measureTime
@@ -42,9 +42,8 @@ class AddStyledElements : BenchmarkBase() {
         val component = getStyledComponent(n)
         val cssHolder = TimedLinkedHashMap<CssBuilder, UsedCssInfo>()
         GlobalStyles.styledClasses = cssHolder
-        val duration = measureTime {
-            renderComponent(component)
-            waitForAnimationFrame()
+        val duration = measureTimeJSSync {
+            getRootInfo().renderComponent(component)
         }
 
         additionalMeasurements.getOrPut("putToDataStructure") {

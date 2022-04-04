@@ -1,14 +1,13 @@
 package test
 
 import Component
-import TestScope
-import createDOMElement
+import RootInfo
 import kotlinx.css.height
 import kotlinx.css.px
 import org.w3c.dom.Element
-import org.w3c.dom.HTMLElement
 import react.FC
 import react.Props
+import react.dom.flushSync
 import react.fc
 import runTest
 import styled.GlobalStyles
@@ -17,22 +16,21 @@ import styled.sheets.CSSOMSheet
 import styled.sheets.RemoveMode
 import styled.sheets.RuleType
 import styled.styledDiv
-import unmount
-import waitForAnimationFrame
 import kotlin.test.BeforeTest
 import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertNotNull
 
 class SheetPartitioningTest : TestBase() {
-    private val secondRoot by lazy { createDOMElement() }
-    private val thirdRoot by lazy { createDOMElement() }
+    private val secondRoot by lazy { RootInfo.create() }
+    private val thirdRoot by lazy { RootInfo.create() }
 
-    private suspend fun TestScope.injectAdditional(component: Component, root: HTMLElement = secondRoot): Element {
-        renderComponent(component, root)
-        val element = root.firstElementChild
+    private fun injectAdditional(component: Component, root: RootInfo = secondRoot): Element {
+        flushSync {
+            root.renderComponent(component)
+        }
+        val element = root.element.firstElementChild
         assertNotNull(element)
-        waitForAnimationFrame()
         return element
     }
 
@@ -97,7 +95,7 @@ class SheetPartitioningTest : TestBase() {
             400 until 450
         )
         val roots = styleRanges.map {
-            createDOMElement()
+            RootInfo.create()
         }
         val components = styleRanges.map {
             getFC(it)
@@ -109,20 +107,21 @@ class SheetPartitioningTest : TestBase() {
         assertEquals(listOf(100, 100, 100, 100, 50), getStylesheets().map { it.cssRules.length })
         val rules = getRules()
 
-        unmount(roots[1])
-        unmount(roots[3])
+        roots[1].unmount()
+        roots[3].unmount()
 
         assertEquals(300, getRules().size)
         assertEquals(listOf(50, 100, 100, 50), getStylesheets().map { it.cssRules.length })
         val rules1 = rules - rules.slice(styleRanges[1]).toSet() - rules.slice(styleRanges[3]).toSet()
         assertEquals(rules1, getRules())
 
-        unmount(roots[5])
+        roots[5].unmount()
 
         assertEquals(250, getRules().size)
         assertEquals(listOf(50, 100, 100), getStylesheets().map { it.cssRules.length })
         val rules2 = rules1 - rules.slice(styleRanges[5]).toSet()
         assertEquals(rules2, getRules())
+        roots.forEach { it.unmount() }
     }
 
     private fun getFC(range: IntRange): FC<Props> {

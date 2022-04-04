@@ -79,8 +79,7 @@ object GlobalStyles {
     }
 
     fun removeInjectedStyleSheet(selectors: List<Selector>) {
-        if (sheet is CSSOMSheet) {
-            val sheet = sheet as CSSOMSheet
+        (sheet as? CSSOMSheet)?.let { sheet ->
             val groups = selectors.mapNotNull { selector ->
                 injectedStyleSheetRules[selector].also {
                     injectedStyleSheetRules.remove(selector)

@@ -87,7 +87,6 @@ class CssHolder(private val sheet: StyleSheet, private vararg val ruleSets: Rule
 
     fun scheduleToInject(className: String) {
         if (classNamesToInject[className] == true) {
-            classNamesToInject[className] = false
             GlobalStyles.scheduleToInject(".$className", css)
         }
     }
@@ -123,7 +122,10 @@ class CssHolder(private val sheet: StyleSheet, private vararg val ruleSets: Rule
 
 fun <T : StyleSheet> T.getClassName(getClass: (T) -> KProperty0<RuleSet>): String {
     return getClassName(getClass(this)).also { className ->
-        Promise.resolve(Unit).then { scheduleToInject(className); GlobalStyles.injectScheduled() }
+        Promise.resolve(Unit).then {
+            scheduleToInject(className)
+            GlobalStyles.injectScheduled()
+        }
     }
 }
 
