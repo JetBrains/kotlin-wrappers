@@ -120,7 +120,7 @@ external interface SelectProps<T> :
      * **Warning**: This is a generic event not a change event unless the change event is caused by browser autofill.
      * @param {object} [child] The react element that was selected when `native` is `false` (default).
      */
-    var onChange: react.dom.events.ChangeEvent<org.w3c.dom.HTMLInputElement>?
+    var onChange: ((event: react.dom.events.ChangeEvent<org.w3c.dom.HTMLInputElement>, child: react.ReactNode) -> Unit)?
 
     /**
      * Callback fired when the component requests to be closed.
