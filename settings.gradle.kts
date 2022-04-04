@@ -57,6 +57,9 @@ include("kotlin-popper")
 // Kotlin/JS: React wrappers
 include("kotlin-react")
 
+// Kotlin/JS: react-beautiful-dnd wrappers
+include("kotlin-react-beautiful-dnd")
+
 // Kotlin/JS: React wrappers
 include("kotlin-react-core")
 
