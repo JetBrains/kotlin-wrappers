@@ -7,5 +7,5 @@ plugins {
 dependencies {
     api(project(":kotlin-react-core"))
 
-    api(npmv("react-beautiful-dnd "))
+    api(npmv("react-beautiful-dnd"))
 }
