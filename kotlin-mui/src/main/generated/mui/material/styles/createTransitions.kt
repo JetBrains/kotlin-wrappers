@@ -31,21 +31,27 @@ external interface Duration {
 }
 
 external interface TransitionsOptions {
-    var easing: dynamic
+    var easing: Easing?
 
-    var duration: dynamic
+    var duration: Duration?
 
-    var create: ((props: ReadonlyArray<String>?, options: dynamic) -> String)?
+    var create: ((props: ReadonlyArray<String>, options: TransitionCreateOptions?) -> String)?
 
     var getAutoHeightDuration: ((height: Number) -> Number)?
 }
 
 external interface Transitions {
-    var easing: dynamic
+    var easing: Easing
 
-    var duration: dynamic
+    var duration: Duration
 
-    var create: dynamic
+    var create: (props: ReadonlyArray<String>, options: TransitionCreateOptions?) -> String
 
-    var getAutoHeightDuration: dynamic
+    var getAutoHeightDuration: (height: Number) -> Number
+}
+
+external interface TransitionCreateOptions {
+    var duration: Number?
+    var easing: String?
+    var delay: Number?
 }
