@@ -14,10 +14,6 @@ inline fun Offset(
         .unsafeCast<OffsetType>()
 
 inline fun Offset(
-    fn: OffsetsFunction,
+    fn: Provider<JsPair<Int?, Int?>>,
 ): OffsetType =
     fn.unsafeCast<OffsetType>()
-
-typealias OffsetsFunction = (
-    options: OffsetsFunctionOptions,
-) -> JsPair<Int?, Int?>

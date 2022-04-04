@@ -10,10 +10,6 @@ inline fun TetherOffset(
     x.unsafeCast<TetherOffsetType>()
 
 inline fun TetherOffset(
-    fn: TetherOffsetFunction,
+    fn: Provider<Double>,
 ): TetherOffsetType =
     fn.unsafeCast<TetherOffsetType>()
-
-typealias TetherOffsetFunction = (
-    options: OffsetsFunctionOptions,
-) -> Double

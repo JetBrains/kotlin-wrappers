@@ -7,12 +7,8 @@ package popper.core.modifiers
 import kotlinx.js.jso
 import popper.core.Padding
 
-typealias PaddingFunction = (
-    options: OffsetsFunctionOptions,
-) -> Padding
-
 inline fun Padding(
-    fn: PaddingFunction,
+    fn: Provider<Padding>,
 ): PaddingType = fn.unsafeCast<PaddingType>()
 
 inline fun Padding(
