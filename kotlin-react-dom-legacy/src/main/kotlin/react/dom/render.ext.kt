@@ -14,6 +14,7 @@ fun render(
     callback: () -> Unit = {},
     handler: Render,
 ) {
+    @Suppress("DEPRECATION")
     render(
         element = createElement<Props>(handler),
         container = container,

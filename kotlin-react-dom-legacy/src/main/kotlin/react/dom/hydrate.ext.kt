@@ -14,6 +14,7 @@ fun hydrate(
     callback: () -> Unit = {},
     handler: Render,
 ) {
+    @Suppress("DEPRECATION")
     hydrate(
         element = createElement<Props>(handler),
         container = container,

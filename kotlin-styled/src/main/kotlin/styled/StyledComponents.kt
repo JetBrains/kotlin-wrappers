@@ -164,6 +164,7 @@ private object GlobalStyles {
         val reactElement = createElement(component, jso {
             this.globalStyles = styles
         })
+        @Suppress("DEPRECATION")
         render(reactElement, root)
     }
 }
