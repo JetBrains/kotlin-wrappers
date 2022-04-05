@@ -122,7 +122,7 @@ internal fun customStyled(type: dynamic): ElementType<StyledProps> {
 
         // className and isFresh are used as dependencies because they have primitive types and are easily comparable in JS.
         // This hook works because className changes every time when [css] is changed, so every [css] is captured exactly once.
-        useCustomInsertionEffect(isFresh, className) {
+        useInsertionEffect(isFresh, className) {
             if (isFresh) {
                 GlobalStyles.injectScheduled()
             }
@@ -131,7 +131,7 @@ internal fun customStyled(type: dynamic): ElementType<StyledProps> {
             }
         }
 
-        useCustomInsertionEffect(classes) {
+        useInsertionEffect(classes) {
             // A heuristic for tracking the usage of a new stylesheet.
             // If the element's stylesheets have changed, inject all pending stylesheets.
             GlobalStyles.injectScheduled()
