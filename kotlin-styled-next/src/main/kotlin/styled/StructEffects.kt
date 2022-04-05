@@ -1,15 +1,26 @@
 package styled
 
-import react.Cleanup
-import react.MutableRefObject
-import react.rawUseMemo
-import react.useRef
+import react.*
 
 internal fun <T> useStructMemo(
     vararg dependencies: dynamic,
     callback: () -> T,
 ): T {
     return rawUseMemo(getMemoizedCallback(dependencies, callback), dependencies)
+}
+
+@JsModule("react")
+@JsNonModule
+external object ReactModule
+
+private val supportsInsertionEffect by kotlin.lazy { ReactModule.asDynamic().useInsertionEffect != undefined }
+
+internal fun useCustomInsertionEffect(vararg dependencies: dynamic, effect: EffectBuilder.() -> Unit) {
+    if (supportsInsertionEffect) {
+        useInsertionEffect(*dependencies, effect = effect)
+    } else {
+        useLayoutEffect(*dependencies, effect = effect)
+    }
 }
 
 private data class MemoizedResult<T>(
