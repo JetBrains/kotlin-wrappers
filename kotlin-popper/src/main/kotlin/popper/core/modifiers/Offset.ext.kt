@@ -13,7 +13,7 @@ inline fun Offset(
     JsPair(x, y)
         .unsafeCast<OffsetType>()
 
-inline fun Offset(
+inline fun OffsetFunction(
     fn: Provider<JsPair<Int?, Int?>>,
 ): OffsetType =
     fn.unsafeCast<OffsetType>()
