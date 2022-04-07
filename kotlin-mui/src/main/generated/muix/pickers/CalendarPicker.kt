@@ -1,15 +1,17 @@
 // Automatically generated - do not modify!
 
-@file:JsModule("@mui/lab/CalendarPicker")
+@file:JsModule("@mui/x-date-pickers/CalendarPicker")
 @file:JsNonModule
 
-package mui.lab
+package muix.pickers
 
 import csstype.ClassName
 import kotlinx.js.ReadonlyArray
 
 external interface CalendarPickerProps<TDate> : react.PropsWithClassName {
     override var className: ClassName?
+
+    var classes: CalendarPickerClasses?
 
     var date: TDate?
 
@@ -46,6 +48,7 @@ external interface CalendarPickerProps<TDate> : react.PropsWithClassName {
 
     /**
      * Callback fired on view change.
+     * @param {CalendarPickerView} view The new view.
      */
     var onViewChange: ((view: CalendarPickerView) -> Unit)?
 
@@ -56,8 +59,9 @@ external interface CalendarPickerProps<TDate> : react.PropsWithClassName {
 
     /**
      * Callback firing on month change. @DateIOType
+     * @param {TDate} month The new month.
      */
-    var onMonthChange: ((date: TDate) -> Unit)?
+    var onMonthChange: ((month: TDate) -> Unit)?
 
     /**
      * Initially open view.
@@ -79,12 +83,15 @@ external interface CalendarPickerProps<TDate> : react.PropsWithClassName {
 
     /**
      * Component displaying when passed `loading` true.
+     * @returns {React.ReactNode} The node to render when loading.
      * @default () => <span data-mui-test="loading-progress">...</span>
      */
     var renderLoading: (() -> react.ReactNode)?
 
     /**
      * Disable specific date. @DateIOType
+     * @param {TDate} day The date to check.
+     * @returns {boolean} If `true` the day will be disabled.
      */
     var shouldDisableDate: ((day: TDate) -> Boolean)?
 
@@ -100,19 +107,11 @@ external interface CalendarPickerProps<TDate> : react.PropsWithClassName {
     var views: ReadonlyArray<CalendarPickerView>?
 }
 
-external interface CalendarPickerClasses {
-    /** Styles applied to the root element. */
-    var root: String
-
-    /** Styles applied to the transition group element. */
-    var viewTransitionContainer: String
-}
-
 /**
  *
  * Demos:
  *
- * - [Date Picker](https://mui.com/components/date-picker/)
+ * - [Date Picker](https://mui.com/components/x/react-date-pickers/date-picker/)
  *
  * API:
  *

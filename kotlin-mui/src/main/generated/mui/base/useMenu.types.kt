@@ -6,6 +6,8 @@ external interface MenuItemMetadata {
     var id: String
 
     var disabled: Boolean
+
+    var label: String?
 }
 
 external interface MenuItemState {

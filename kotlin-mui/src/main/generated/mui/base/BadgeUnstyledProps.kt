@@ -6,15 +6,6 @@ external interface BadgeUnstyledProps :
     react.dom.html.HTMLAttributes<org.w3c.dom.HTMLSpanElement>,
     react.PropsWithChildren {
     /**
-     * The anchor of the badge.
-     * @default {
-     *   vertical: 'top',
-     *   horizontal: 'right',
-     * }
-     */
-    var anchorOrigin: BadgeOrigin?
-
-    /**
      * The components used for each slot inside the Badge.
      * Either a string to use a HTML element or a component.
      * @default {}
@@ -38,11 +29,6 @@ external interface BadgeUnstyledProps :
     override var children: react.ReactNode?
 
     /**
-     * Override or extend the styles applied to the component.
-     */
-    var classes: BadgeUnstyledClasses?
-
-    /**
      * If `true`, the badge is invisible.
      * @default false
      */
@@ -59,16 +45,4 @@ external interface BadgeUnstyledProps :
      * @default false
      */
     var showZero: Boolean?
-
-    /**
-     * The variant to use.
-     * @default 'standard'
-     */
-    var variant: String?
-}
-
-external interface BadgeOrigin {
-    var vertical: BadgeUnstyledOriginVertical
-
-    var horizontal: BadgeUnstyledOriginHorizontal
 }

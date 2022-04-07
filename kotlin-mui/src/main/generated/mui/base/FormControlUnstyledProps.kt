@@ -44,12 +44,6 @@ external interface FormControlUnstyledOwnProps :
     var error: Boolean?
 
     /**
-     * Extra properties to be placed on the FormControlContext.
-     * @default {}
-     */
-    var extraContextProperties: Any?
-
-    /**
      * If `true`, the component is displayed in focused state.
      * @default false
      */

@@ -1,9 +1,9 @@
 // Automatically generated - do not modify!
 
-@file:JsModule("@mui/lab/LocalizationProvider")
+@file:JsModule("@mui/x-date-pickers/LocalizationProvider")
 @file:JsNonModule
 
-package mui.lab
+package muix.pickers
 
 external interface LocalizationProviderProps : react.PropsWithChildren {
     override var children: react.ReactNode?
@@ -32,8 +32,6 @@ external interface MuiPickersAdapterContextValue {
     var utils: dynamic
 }
 
-/**
- * @ignore - do not document.
- */
+
 @JsName("default")
 external val LocalizationProvider: react.FC<LocalizationProviderProps>

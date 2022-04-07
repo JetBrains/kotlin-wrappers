@@ -1,9 +1,9 @@
 // Automatically generated - do not modify!
 
-@file:JsModule("@mui/lab/PickersDay")
+@file:JsModule("@mui/x-date-pickers/PickersDay")
 @file:JsNonModule
 
-package mui.lab
+package muix.pickers
 
 import mui.material.styles.Theme
 import mui.system.SxProps
@@ -18,7 +18,7 @@ external interface PickersDayProps<TDate> : mui.system.PropsWithSx {
     /**
      * Override or extend the styles applied to the component.
      */
-    var classes: dynamic
+    var classes: PickersDayClasses?
 
     /**
      * The date to show.
@@ -78,15 +78,6 @@ external interface PickersDayProps<TDate> : mui.system.PropsWithSx {
     override var sx: SxProps<Theme>?
 }
 
-/**
- *
- * Demos:
- *
- * - [Date Picker](https://mui.com/components/date-picker/)
- *
- * API:
- *
- * - [PickersDay API](https://mui.com/api/pickers-day/)
- */
+
 @JsName("default")
 external val PickersDay: react.FC<PickersDayProps<*>>

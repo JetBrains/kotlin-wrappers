@@ -8,4 +8,6 @@ external interface UseMenuItemParameters {
     var disabled: Boolean?
 
     var onClick: react.dom.events.MouseEventHandler<*>?
+
+    var label: String?
 }

@@ -127,6 +127,50 @@ external interface Palette {
     var augmentColor: (options: PaletteAugmentColorOptions) -> PaletteColor
 }
 
+external interface Channels {
+    var mainChannel: String
+
+    var lightChannel: String
+
+    var darkChannel: String
+}
+
+external interface PaletteWithChannels {
+    var common: CommonColors
+
+    var mode: mui.material.PaletteMode
+
+    var contrastThreshold: Number
+
+    var tonalOffset: dynamic
+
+    var primary: dynamic
+
+    var secondary: dynamic
+
+    var error: dynamic
+
+    var warning: dynamic
+
+    var info: dynamic
+
+    var success: dynamic
+
+    var grey: dynamic
+
+    var text: dynamic
+
+    var divider: dynamic
+
+    var action: dynamic
+
+    var background: TypeBackground
+
+    var getContrastText: (background: String) -> String
+
+    var augmentColor: (options: PaletteAugmentColorOptions) -> PaletteColor
+}
+
 external interface PaletteOptions {
     var primary: dynamic
 

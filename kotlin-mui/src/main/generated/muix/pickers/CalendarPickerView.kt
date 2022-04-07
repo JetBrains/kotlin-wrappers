@@ -1,6 +1,6 @@
 // Automatically generated - do not modify!
 
-package mui.lab
+package muix.pickers
 
 @Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
 // language=JavaScript

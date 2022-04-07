@@ -24,6 +24,12 @@ external interface MenuItemUnstyledProps :
     var components: dynamic
 
     var componentsProps: dynamic
+
+    /**
+     * A text representation of the menu item's content.
+     * Used for keyboard text navigation matching.
+     */
+    var label: String?
 }
 
 external interface MenuItemOwnerState {

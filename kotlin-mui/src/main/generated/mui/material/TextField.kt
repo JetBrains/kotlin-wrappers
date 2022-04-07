@@ -295,7 +295,6 @@ external interface OutlinedTextFieldProps :
  * Demos:
  *
  * - [Autocomplete](https://mui.com/components/autocomplete/)
- * - [Pickers](https://mui.com/components/pickers/)
  * - [Text Fields](https://mui.com/components/text-fields/)
  *
  * API:

@@ -9,17 +9,33 @@
 
 package mui.material
 
+import csstype.ClassName
 import mui.material.styles.Theme
 import mui.system.SxProps
 
 external interface BadgeProps :
     mui.base.BadgeUnstyledProps,
+    react.PropsWithClassName,
     mui.system.PropsWithSx,
     mui.types.PropsWithComponent {
     /**
+     * The anchor of the badge.
+     * @default {
+     *   vertical: 'top',
+     *   horizontal: 'right',
+     * }
+     */
+    var anchorOrigin: BadgeOrigin?
+
+    /**
      * Override or extend the styles applied to the component.
      */
-    override var classes: dynamic
+    var classes: dynamic
+
+    /**
+     * @ignore
+     */
+    override var className: ClassName?
 
     /**
      * The color of the component.
@@ -45,6 +61,12 @@ external interface BadgeProps :
      * @default 'standard'
      */
     var variant: BadgeVariant?
+}
+
+external interface BadgeOrigin {
+    var vertical: BadgeOriginVertical
+
+    var horizontal: BadgeOriginHorizontal
 }
 
 /**

@@ -1,9 +1,9 @@
 // Automatically generated - do not modify!
 
-@file:JsModule("@mui/lab/TimePicker")
+@file:JsModule("@mui/x-date-pickers/TimePicker")
 @file:JsNonModule
 
-package mui.lab
+package muix.pickers
 
 external interface TimePickerProps : react.Props {
     /**
@@ -14,16 +14,6 @@ external interface TimePickerProps : react.Props {
     var desktopModeMediaQuery: String?
 }
 
-/**
- *
- * Demos:
- *
- * - [Pickers](https://mui.com/components/pickers/)
- * - [Time Picker](https://mui.com/components/time-picker/)
- *
- * API:
- *
- * - [TimePicker API](https://mui.com/api/time-picker/)
- */
+
 @JsName("default")
 external val TimePicker: react.FC<TimePickerProps>

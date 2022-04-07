@@ -10,11 +10,11 @@ package mui.base
  *
  * Demos:
  *
- * - [Selects](https://mui.com/components/selects/)
+ * - [Select](https://mui.com/base/react-select/)
  *
  * API:
  *
- * - [SelectUnstyled API](https://mui.com/api/select-unstyled/)
+ * - [SelectUnstyled API](https://mui.com/base/api/select-unstyled/)
  */
 @JsName("default")
 external val SelectUnstyled: react.FC<SelectUnstyledProps<*>>

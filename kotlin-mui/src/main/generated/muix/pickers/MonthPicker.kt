@@ -1,9 +1,9 @@
 // Automatically generated - do not modify!
 
-@file:JsModule("@mui/lab/MonthPicker")
+@file:JsModule("@mui/x-date-pickers/MonthPicker")
 @file:JsNonModule
 
-package mui.lab
+package muix.pickers
 
 import csstype.ClassName
 import kotlinx.js.Void
@@ -22,7 +22,7 @@ external interface MonthPickerProps<TDate> :
     /**
      * Override or extend the styles applied to the component.
      */
-    var classes: dynamic
+    var classes: MonthPickerClasses?
 
     /** Date value for the MonthPicker */
     var date: TDate?
@@ -56,15 +56,6 @@ external interface MonthPickerProps<TDate> :
     override var sx: SxProps<Theme>?
 }
 
-/**
- *
- * Demos:
- *
- * - [Date Picker](https://mui.com/components/date-picker/)
- *
- * API:
- *
- * - [MonthPicker API](https://mui.com/api/month-picker/)
- */
+
 @JsName("default")
 external val MonthPicker: react.FC<MonthPickerProps<*>>
