@@ -2,7 +2,7 @@
 
 package popper.core
 
-external interface SideObject {
+external interface SideObject : Padding {
     var top: Double
     var left: Double
     var right: Double
