@@ -2,7 +2,7 @@
     "NOTHING_TO_INLINE",
 )
 
-import react.query.QueryKey
+package react.query
 
 inline fun <T : QueryKey> QueryKey(
     key: String,
