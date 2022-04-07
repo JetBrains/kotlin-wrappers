@@ -1,5 +1,5 @@
 @file:Suppress(
-    "NOTHING_TO_INLINE"
+    "NOTHING_TO_INLINE",
 )
 
 import react.query.QueryKey
