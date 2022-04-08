@@ -69,7 +69,7 @@ external interface TrapFocusProps : react.Props {
  *
  * Demos:
  *
- * - [Trap Focus](https://mui.com/base/components/trap-focus/)
+ * - [Trap Focus](https://mui.com/base/react-trap-focus/)
  *
  * API:
  *

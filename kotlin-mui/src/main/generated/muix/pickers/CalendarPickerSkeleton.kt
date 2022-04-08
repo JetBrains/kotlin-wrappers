@@ -1,9 +1,9 @@
 // Automatically generated - do not modify!
 
-@file:JsModule("@mui/lab/CalendarPickerSkeleton")
+@file:JsModule("@mui/x-date-pickers/CalendarPickerSkeleton")
 @file:JsNonModule
 
-package mui.lab
+package muix.pickers
 
 import mui.material.styles.Theme
 import mui.system.SxProps
@@ -22,22 +22,11 @@ external interface CalendarPickerSkeletonProps :
     override var sx: SxProps<Theme>?
 }
 
-external interface CalendarPickerSkeletonClasses {
-    /** Styles applied to the root element. */
-    var root: String
-
-    /** Styles applied to the week element. */
-    var week: String
-
-    /** Styles applied to the day element. */
-    var daySkeleton: String
-}
-
 /**
  *
  * Demos:
  *
- * - [Date Picker](https://mui.com/components/date-picker/)
+ * - [Date Picker](https://mui.com/components/x/react-date-pickers/date-picker/)
  *
  * API:
  *

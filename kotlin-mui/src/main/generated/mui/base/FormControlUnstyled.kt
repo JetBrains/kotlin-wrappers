@@ -31,6 +31,7 @@ package mui.base
  *
  * Demos:
  *
+ * - [Form Control](https://mui.com/components/form-control/)
  * - [Text Fields](https://mui.com/components/text-fields/)
  *
  * API:

@@ -1,6 +1,6 @@
 // Automatically generated - do not modify!
 
-package mui.lab
+package muix.pickers
 
 typealias PickerSelectionState = String
 

@@ -42,4 +42,10 @@ external interface OptionUnstyledProps<TValue> :
      * @default {}
      */
     var componentsProps: dynamic
+
+    /**
+     * A text representation of the option's content.
+     * Used for keyboard text navigation matching.
+     */
+    var label: String?
 }

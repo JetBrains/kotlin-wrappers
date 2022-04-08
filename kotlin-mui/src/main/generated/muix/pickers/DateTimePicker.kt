@@ -1,9 +1,9 @@
 // Automatically generated - do not modify!
 
-@file:JsModule("@mui/lab/DateTimePicker")
+@file:JsModule("@mui/x-date-pickers/DateTimePicker")
 @file:JsNonModule
 
-package mui.lab
+package muix.pickers
 
 external interface DateTimePickerProps : react.Props {
     /**
@@ -18,8 +18,8 @@ external interface DateTimePickerProps : react.Props {
  *
  * Demos:
  *
- * - [Date Time Picker](https://mui.com/components/date-time-picker/)
- * - [Pickers](https://mui.com/components/pickers/)
+ * - [Date Time Picker](https://mui.com/components/x/react-date-pickers/date-time-picker/)
+ * - [Pickers](https://mui.com/x/react-date-pickers/)
  *
  * API:
  *

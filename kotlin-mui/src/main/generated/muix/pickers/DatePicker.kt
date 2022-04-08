@@ -1,9 +1,9 @@
 // Automatically generated - do not modify!
 
-@file:JsModule("@mui/lab/DatePicker")
+@file:JsModule("@mui/x-date-pickers/DatePicker")
 @file:JsNonModule
 
-package mui.lab
+package muix.pickers
 
 external interface DatePickerProps : react.Props {
     /**
@@ -14,16 +14,6 @@ external interface DatePickerProps : react.Props {
     var desktopModeMediaQuery: String?
 }
 
-/**
- *
- * Demos:
- *
- * - [Date Picker](https://mui.com/components/date-picker/)
- * - [Pickers](https://mui.com/components/pickers/)
- *
- * API:
- *
- * - [DatePicker API](https://mui.com/api/date-picker/)
- */
+
 @JsName("default")
 external val DatePicker: react.FC<DatePickerProps>

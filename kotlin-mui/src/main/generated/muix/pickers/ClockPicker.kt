@@ -1,11 +1,15 @@
 // Automatically generated - do not modify!
 
-@file:JsModule("@mui/lab/ClockPicker")
+@file:JsModule("@mui/x-date-pickers/ClockPicker")
 @file:JsNonModule
 
-package mui.lab
+package muix.pickers
 
-external interface ClockPickerProps<TDate> : react.Props {
+import csstype.ClassName
+
+external interface ClockPickerProps<TDate> : react.PropsWithClassName {
+    override var className: ClassName?
+
     /**
      * Set to `true` if focus should be moved to clock picker.
      */
@@ -34,18 +38,24 @@ external interface ClockPickerProps<TDate> : react.Props {
 
     /**
      * Get clock number aria-text for hours.
+     * @param {string} hours The hours to format.
+     * @returns {string} the formatted hours text.
      * @default (hours: string) => `${hours} hours`
      */
     var getHoursClockNumberText: ((hours: String) -> String)?
 
     /**
      * Get clock number aria-text for minutes.
+     * @param {string} minutes The minutes to format.
+     * @returns {string} the formatted minutes text.
      * @default (minutes: string) => `${minutes} minutes`
      */
     var getMinutesClockNumberText: ((minutes: String) -> String)?
 
     /**
      * Get clock number aria-text for seconds.
+     * @param {string} seconds The seconds to format.
+     * @returns {string} the formatted seconds text.
      * @default (seconds: string) => `${seconds} seconds`
      */
     var getSecondsClockNumberText: ((seconds: String) -> String)?
@@ -56,18 +66,10 @@ external interface ClockPickerProps<TDate> : react.Props {
      */
     var leftArrowButtonText: String?
 
-    var previousViewAvailable: Boolean
-
-    var nextViewAvailable: Boolean
-
     /**
      * On change callback @DateIOType.
      */
     var onChange: PickerOnChangeFn<TDate>
-
-    var openNextView: () -> Unit
-
-    var openPreviousView: () -> Unit
 
     /**
      * Right arrow icon aria-label text.
@@ -77,12 +79,28 @@ external interface ClockPickerProps<TDate> : react.Props {
 
     var showViewSwitcher: Boolean?
 
+    /**
+     * Controlled open view.
+     */
     var view: dynamic
-}
 
-external interface ClockPickerClasses {
-    /** Styles applied to the arrowSwitcher element. */
-    var arrowSwitcher: String
+    /**
+     * Views for calendar picker.
+     * @default ['hours', 'minutes']
+     */
+    var views: dynamic
+
+    /**
+     * Callback fired on view change.
+     * @param {ClockPickerView} view The new view.
+     */
+    var onViewChange: ((view: ClockPickerView) -> Unit)?
+
+    /**
+     * Initially open view.
+     * @default 'hours'
+     */
+    var openTo: dynamic
 }
 
 external interface ExportedClockPickerProps<TDate> : react.Props {
@@ -106,6 +124,10 @@ external interface ExportedClockPickerProps<TDate> : react.Props {
 
     /**
      * Accessible text that helps user to understand which time and view is selected.
+     * @param {ClockPickerView} view The current view rendered.
+     * @param {TDate | null} time The current time.
+     * @param {MuiPickersAdapter<TDate>} adapter The current date adapter.
+     * @returns {string} The clock label.
      * @default <TDate extends any>(
      *   view: ClockView,
      *   time: TDate | null,
@@ -115,18 +137,9 @@ external interface ExportedClockPickerProps<TDate> : react.Props {
      *     time === null ? 'No time selected' : `Selected time is ${adapter.format(time, 'fullTime')}`
      *   }`
      */
-    var getClockLabelText: ((view: mui.system.Union /* ClockView */, time: TDate?, adapter: dynamic /* MuiPickersAdapter<TDate> */) -> String)?
+    var getClockLabelText: ((view: ClockPickerView, time: TDate?, adapter: dynamic /* MuiPickersAdapter<TDate> */) -> String)?
 }
 
-/**
- *
- * Demos:
- *
- * - [Time Picker](https://mui.com/components/time-picker/)
- *
- * API:
- *
- * - [ClockPicker API](https://mui.com/api/clock-picker/)
- */
+
 @JsName("default")
 external val ClockPicker: react.FC<ClockPickerProps<*>>

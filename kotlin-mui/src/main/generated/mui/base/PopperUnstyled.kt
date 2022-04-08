@@ -96,11 +96,11 @@ external interface PopperUnstyledProps :
  *
  * Demos:
  *
- * - [Popper](https://mui.com/components/popper/)
+ * - [Popper](https://mui.com/base/react-popper/)
  *
  * API:
  *
- * - [PopperUnstyled API](https://mui.com/api/popper-unstyled/)
+ * - [PopperUnstyled API](https://mui.com/base/api/popper-unstyled/)
  */
 @JsName("default")
 external val PopperUnstyled: react.FC<PopperUnstyledProps>

@@ -1,9 +1,9 @@
 // Automatically generated - do not modify!
 
-@file:JsModule("@mui/lab/StaticDatePicker")
+@file:JsModule("@mui/x-date-pickers/StaticDatePicker")
 @file:JsNonModule
 
-package mui.lab
+package muix.pickers
 
 external interface StaticDatePickerProps : react.Props {
     /**
@@ -13,15 +13,6 @@ external interface StaticDatePickerProps : react.Props {
     var displayStaticWrapperAs: dynamic /* PickerStaticWrapperProps['displayStaticWrapperAs'] */
 }
 
-/**
- *
- * Demos:
- *
- * - [Date Picker](https://mui.com/components/date-picker/)
- *
- * API:
- *
- * - [StaticDatePicker API](https://mui.com/api/static-date-picker/)
- */
+
 @JsName("default")
 external val StaticDatePicker: react.FC<StaticDatePickerProps>

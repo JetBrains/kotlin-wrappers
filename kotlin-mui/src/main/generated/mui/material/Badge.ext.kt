@@ -36,3 +36,23 @@ external enum class BadgeOverlap {
 
     ;
 }
+
+@Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
+// language=JavaScript
+@JsName("""(/*union*/{top: 'top', bottom: 'bottom'}/*union*/)""")
+external enum class BadgeOriginVertical {
+    top,
+    bottom,
+
+    ;
+}
+
+@Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
+// language=JavaScript
+@JsName("""(/*union*/{left: 'left', right: 'right'}/*union*/)""")
+external enum class BadgeOriginHorizontal {
+    left,
+    right,
+
+    ;
+}
