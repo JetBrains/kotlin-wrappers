@@ -6,8 +6,8 @@ package react.query
 
 inline fun <T : QueryKey> QueryKey(
     key: String,
-): QueryKey = key
+): QueryKey = key.unsafeCast<T>()
 
 inline fun <T : QueryKey> QueryKey(
     vararg keys: Any,
-): QueryKey = keys
+): QueryKey = keys.unsafeCast<T>()

@@ -11,7 +11,8 @@ import kotlinx.js.Record
 import kotlinx.js.Void
 import kotlin.js.Promise
 
-typealias QueryKey = Union /* string | readonly unknown[] */
+// string | readonly unknown[]
+external interface QueryKey
 
 typealias EnsuredQueryKey<T> = Any
 
