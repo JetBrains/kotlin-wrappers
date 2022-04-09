@@ -48,6 +48,9 @@ include("kotlin-mui")
 // Kotlin/JS: Material UI Icons wrappers
 include("kotlin-mui-icons")
 
+// Kotlin/JS: Material UI Data Grid component wrappers
+include("kotlin-muix-grid")
+
 // Kotlin/JS: Node.js wrappers
 include("kotlin-node")
 
