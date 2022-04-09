@@ -1,6 +1,6 @@
-[![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-muix-grid)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-muix-grid)
+[![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-muix-data-grid)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-muix-data-grid)
 
-# kotlin-muix-grid
+# kotlin-muix-data-grid
 
 Kotlin wrapper for [Material UI Data Grid component](https://mui.com/components/data-grid/).
 
