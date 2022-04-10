@@ -4,7 +4,7 @@ package webrtc
 
 sealed external interface RTCDtlsTransportEventMap {
 /*
-"error": RTCErrorEvent;
+"error": Event;
 "statechange": Event;
 */
 }
