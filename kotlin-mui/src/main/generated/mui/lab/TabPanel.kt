@@ -39,11 +39,11 @@ external interface TabPanelProps :
  *
  * Demos:
  *
- * - [Tabs](https://mui.com/components/tabs/)
+ * - [Tabs](https://mui.com/material-ui/react-tabs/)
  *
  * API:
  *
- * - [TabPanel API](https://mui.com/api/tab-panel/)
+ * - [TabPanel API](https://mui.com/material-ui/api/tab-panel/)
  */
 @JsName("default")
 external val TabPanel: react.FC<TabPanelProps>
