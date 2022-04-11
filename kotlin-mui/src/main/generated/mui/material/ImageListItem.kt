@@ -45,11 +45,11 @@ external interface ImageListItemProps :
  *
  * Demos:
  *
- * - [Image List](https://mui.com/components/image-list/)
+ * - [Image List](https://mui.com/material-ui/react-image-list/)
  *
  * API:
  *
- * - [ImageListItem API](https://mui.com/api/image-list-item/)
+ * - [ImageListItem API](https://mui.com/material-ui/api/image-list-item/)
  */
 @JsName("default")
 external val ImageListItem: react.FC<ImageListItemProps>

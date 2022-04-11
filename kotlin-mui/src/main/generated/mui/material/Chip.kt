@@ -45,7 +45,7 @@ external interface ChipProps :
     /**
      * The color of the component.
      * It supports both default and custom theme colors, which can be added as shown in the
-     * [palette customization guide](https://mui.com/customization/palette/#adding-new-colors).
+     * [palette customization guide](https://mui.com/material-ui/customization/palette/#adding-new-colors).
      * @default 'default'
      */
     var color: ChipColor?
@@ -100,11 +100,11 @@ external interface ChipProps :
  *
  * Demos:
  *
- * - [Chips](https://mui.com/components/chips/)
+ * - [Chips](https://mui.com/material-ui/react-chip/)
  *
  * API:
  *
- * - [Chip API](https://mui.com/api/chip/)
+ * - [Chip API](https://mui.com/material-ui/api/chip/)
  */
 @JsName("default")
 external val Chip: react.FC<ChipProps>

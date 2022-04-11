@@ -16,6 +16,12 @@ external interface UseButtonParameters {
      */
     var disabled: Boolean?
 
+    /**
+     * If `true`, allows a disabled button to receive focus.
+     * @default false
+     */
+    var focusableWhenDisabled: Boolean?
+
     var href: String?
 
     var onFocusVisible: react.dom.events.FocusEventHandler<*>?

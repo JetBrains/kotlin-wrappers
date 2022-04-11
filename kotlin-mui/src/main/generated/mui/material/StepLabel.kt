@@ -47,12 +47,12 @@ external interface StepLabelProps :
     var optional: react.ReactNode?
 
     /**
-     * The component to render in place of the [`StepIcon`](/api/step-icon/).
+     * The component to render in place of the [`StepIcon`](/material-ui/api/step-icon/).
      */
     var StepIconComponent: react.ElementType<*>?
 
     /**
-     * Props applied to the [`StepIcon`](/api/step-icon/) element.
+     * Props applied to the [`StepIcon`](/material-ui/api/step-icon/) element.
      */
     var StepIconProps: StepIconProps?
 
@@ -66,11 +66,11 @@ external interface StepLabelProps :
  *
  * Demos:
  *
- * - [Steppers](https://mui.com/components/steppers/)
+ * - [Steppers](https://mui.com/material-ui/react-stepper/)
  *
  * API:
  *
- * - [StepLabel API](https://mui.com/api/step-label/)
+ * - [StepLabel API](https://mui.com/material-ui/api/step-label/)
  */
 @JsName("default")
 external val StepLabel: react.FC<StepLabelProps>

@@ -29,7 +29,7 @@ external interface SwitchProps :
     /**
      * The color of the component.
      * It supports both default and custom theme colors, which can be added as shown in the
-     * [palette customization guide](https://mui.com/customization/palette/#adding-new-colors).
+     * [palette customization guide](https://mui.com/material-ui/customization/palette/#adding-new-colors).
      * @default 'primary'
      */
     var color: SwitchColor?
@@ -67,13 +67,13 @@ external interface SwitchProps :
  *
  * Demos:
  *
- * - [Switches](https://mui.com/components/switches/)
- * - [Transfer List](https://mui.com/components/transfer-list/)
+ * - [Switches](https://mui.com/material-ui/react-switch/)
+ * - [Transfer List](https://mui.com/material-ui/react-transfer-list/)
  *
  * API:
  *
- * - [Switch API](https://mui.com/api/switch/)
- * - inherits [IconButton API](https://mui.com/api/icon-button/)
+ * - [Switch API](https://mui.com/material-ui/api/switch/)
+ * - inherits [IconButton API](https://mui.com/material-ui/api/icon-button/)
  */
 @JsName("default")
 external val Switch: react.FC<SwitchProps>

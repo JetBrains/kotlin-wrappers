@@ -25,7 +25,7 @@ external interface ButtonProps :
     /**
      * The color of the component.
      * It supports both default and custom theme colors, which can be added as shown in the
-     * [palette customization guide](https://mui.com/customization/palette/#adding-new-colors).
+     * [palette customization guide](https://mui.com/material-ui/customization/palette/#adding-new-colors).
      * @default 'primary'
      */
     var color: ButtonColor?
@@ -93,13 +93,13 @@ external interface ButtonProps :
  *
  * Demos:
  *
- * - [Button Group](https://mui.com/components/button-group/)
- * - [Buttons](https://mui.com/components/buttons/)
+ * - [Button Group](https://mui.com/material-ui/react-button-group/)
+ * - [Buttons](https://mui.com/material-ui/react-button/)
  *
  * API:
  *
- * - [Button API](https://mui.com/api/button/)
- * - inherits [ButtonBase API](https://mui.com/api/button-base/)
+ * - [Button API](https://mui.com/material-ui/api/button/)
+ * - inherits [ButtonBase API](https://mui.com/material-ui/api/button-base/)
  */
 @JsName("default")
 external val Button: react.FC<ButtonProps>

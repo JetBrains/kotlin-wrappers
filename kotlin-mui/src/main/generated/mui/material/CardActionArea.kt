@@ -27,12 +27,12 @@ external interface CardActionAreaProps : mui.system.PropsWithSx {
  *
  * Demos:
  *
- * - [Cards](https://mui.com/components/cards/)
+ * - [Cards](https://mui.com/material-ui/react-card/)
  *
  * API:
  *
- * - [CardActionArea API](https://mui.com/api/card-action-area/)
- * - inherits [ButtonBase API](https://mui.com/api/button-base/)
+ * - [CardActionArea API](https://mui.com/material-ui/api/card-action-area/)
+ * - inherits [ButtonBase API](https://mui.com/material-ui/api/button-base/)
  */
 @JsName("default")
 external val CardActionArea: react.FC<CardActionAreaProps>

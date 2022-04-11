@@ -15,7 +15,7 @@ external interface AutocompleteProps<T> :
     react.dom.html.HTMLAttributes<org.w3c.dom.HTMLDivElement>,
     mui.system.PropsWithSx {
     /**
-     * Props applied to the [`Chip`](/api/chip/) element.
+     * Props applied to the [`Chip`](/material-ui/api/chip/) element.
      */
     var ChipProps: dynamic
 
@@ -33,7 +33,7 @@ external interface AutocompleteProps<T> :
     /**
      * Override the default text for the *clear* icon button.
      *
-     * For localization purposes, you can use the provided [translations](/guides/localization/).
+     * For localization purposes, you can use the provided [translations](/material-ui/guides/localization/).
      * @default 'Clear'
      */
     var clearText: String?
@@ -41,7 +41,7 @@ external interface AutocompleteProps<T> :
     /**
      * Override the default text for the *close popup* icon button.
      *
-     * For localization purposes, you can use the provided [translations](/guides/localization/).
+     * For localization purposes, you can use the provided [translations](/material-ui/guides/localization/).
      * @default 'Close'
      */
     var closeText: String?
@@ -106,7 +106,7 @@ external interface AutocompleteProps<T> :
     /**
      * Text to display when in a loading state.
      *
-     * For localization purposes, you can use the provided [translations](/guides/localization/).
+     * For localization purposes, you can use the provided [translations](/material-ui/guides/localization/).
      * @default 'Loading…'
      */
     var loadingText: react.ReactNode?
@@ -121,7 +121,7 @@ external interface AutocompleteProps<T> :
     /**
      * Text to display when there are no options.
      *
-     * For localization purposes, you can use the provided [translations](/guides/localization/).
+     * For localization purposes, you can use the provided [translations](/material-ui/guides/localization/).
      * @default 'No options'
      */
     var noOptionsText: react.ReactNode?
@@ -129,7 +129,7 @@ external interface AutocompleteProps<T> :
     /**
      * Override the default text for the *open popup* icon button.
      *
-     * For localization purposes, you can use the provided [translations](/guides/localization/).
+     * For localization purposes, you can use the provided [translations](/material-ui/guides/localization/).
      * @default 'Open'
      */
     var openText: String?
@@ -243,11 +243,11 @@ external interface AutocompleteRenderInputParams : react.Props {
  *
  * Demos:
  *
- * - [Autocomplete](https://mui.com/components/autocomplete/)
+ * - [Autocomplete](https://mui.com/material-ui/react-autocomplete/)
  *
  * API:
  *
- * - [Autocomplete API](https://mui.com/api/autocomplete/)
+ * - [Autocomplete API](https://mui.com/material-ui/api/autocomplete/)
  */
 @JsName("default")
 external val Autocomplete: react.FC<AutocompleteProps<*>>

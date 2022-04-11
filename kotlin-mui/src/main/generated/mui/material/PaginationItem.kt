@@ -20,7 +20,7 @@ external interface PaginationItemProps :
     /**
      * The active color.
      * It supports both default and custom theme colors, which can be added as shown in the
-     * [palette customization guide](https://mui.com/customization/palette/#adding-new-colors).
+     * [palette customization guide](https://mui.com/material-ui/customization/palette/#adding-new-colors).
      * @default 'standard'
      */
     var color: PaginationItemColor?
@@ -87,11 +87,11 @@ external interface PaginationItemProps :
  *
  * Demos:
  *
- * - [Pagination](https://mui.com/components/pagination/)
+ * - [Pagination](https://mui.com/material-ui/react-pagination/)
  *
  * API:
  *
- * - [PaginationItem API](https://mui.com/api/pagination-item/)
+ * - [PaginationItem API](https://mui.com/material-ui/api/pagination-item/)
  */
 @JsName("default")
 external val PaginationItem: react.FC<PaginationItemProps>

@@ -87,13 +87,13 @@ external interface FormControlLabelProps :
  *
  * Demos:
  *
- * - [Checkboxes](https://mui.com/components/checkboxes/)
- * - [Radio Buttons](https://mui.com/components/radio-buttons/)
- * - [Switches](https://mui.com/components/switches/)
+ * - [Checkboxes](https://mui.com/material-ui/react-checkbox/)
+ * - [Radio Buttons](https://mui.com/material-ui/react-radio-button/)
+ * - [Switches](https://mui.com/material-ui/react-switch/)
  *
  * API:
  *
- * - [FormControlLabel API](https://mui.com/api/form-control-label/)
+ * - [FormControlLabel API](https://mui.com/material-ui/api/form-control-label/)
  */
 @JsName("default")
 external val FormControlLabel: react.FC<FormControlLabelProps>

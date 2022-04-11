@@ -57,11 +57,11 @@ external interface ListSubheaderProps :
  *
  * Demos:
  *
- * - [Lists](https://mui.com/components/lists/)
+ * - [Lists](https://mui.com/material-ui/react-list/)
  *
  * API:
  *
- * - [ListSubheader API](https://mui.com/api/list-subheader/)
+ * - [ListSubheader API](https://mui.com/material-ui/api/list-subheader/)
  */
 @JsName("default")
 external val ListSubheader: react.FC<ListSubheaderProps>

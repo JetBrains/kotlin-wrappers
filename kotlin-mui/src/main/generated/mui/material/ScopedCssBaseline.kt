@@ -31,11 +31,11 @@ external interface ScopedCssBaselineProps :
  *
  * Demos:
  *
- * - [Css Baseline](https://mui.com/components/css-baseline/)
+ * - [Css Baseline](https://mui.com/material-ui/react-css-baseline/)
  *
  * API:
  *
- * - [ScopedCssBaseline API](https://mui.com/api/scoped-css-baseline/)
+ * - [ScopedCssBaseline API](https://mui.com/material-ui/api/scoped-css-baseline/)
  */
 @JsName("default")
 external val ScopedCssBaseline: react.FC<ScopedCssBaselineProps>

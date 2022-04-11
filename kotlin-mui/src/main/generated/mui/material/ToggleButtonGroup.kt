@@ -26,7 +26,7 @@ external interface ToggleButtonGroupProps :
     /**
      * The color of the button when it is selected.
      * It supports both default and custom theme colors, which can be added as shown in the
-     * [palette customization guide](https://mui.com/customization/palette/#adding-new-colors).
+     * [palette customization guide](https://mui.com/material-ui/customization/palette/#adding-new-colors).
      * @default 'standard'
      */
     var color: ToggleButtonGroupColor?
@@ -89,11 +89,11 @@ external interface ToggleButtonGroupProps :
  *
  * Demos:
  *
- * - [Toggle Button](https://mui.com/components/toggle-button/)
+ * - [Toggle Button](https://mui.com/material-ui/react-toggle-button/)
  *
  * API:
  *
- * - [ToggleButtonGroup API](https://mui.com/api/toggle-button-group/)
+ * - [ToggleButtonGroup API](https://mui.com/material-ui/api/toggle-button-group/)
  */
 @JsName("default")
 external val ToggleButtonGroup: react.FC<ToggleButtonGroupProps>

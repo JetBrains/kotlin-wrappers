@@ -58,11 +58,11 @@ external interface InputAdornmentProps :
  *
  * Demos:
  *
- * - [Text Fields](https://mui.com/components/text-fields/)
+ * - [Text Fields](https://mui.com/material-ui/react-text-field/)
  *
  * API:
  *
- * - [InputAdornment API](https://mui.com/api/input-adornment/)
+ * - [InputAdornment API](https://mui.com/material-ui/api/input-adornment/)
  */
 @JsName("default")
 external val InputAdornment: react.FC<InputAdornmentProps>

@@ -33,11 +33,11 @@ external interface DialogTitleProps :
  *
  * Demos:
  *
- * - [Dialogs](https://mui.com/components/dialogs/)
+ * - [Dialogs](https://mui.com/material-ui/react-dialog/)
  *
  * API:
  *
- * - [DialogTitle API](https://mui.com/api/dialog-title/)
+ * - [DialogTitle API](https://mui.com/material-ui/api/dialog-title/)
  */
 @JsName("default")
 external val DialogTitle: react.FC<DialogTitleProps>

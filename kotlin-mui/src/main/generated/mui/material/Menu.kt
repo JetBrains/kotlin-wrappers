@@ -52,7 +52,7 @@ external interface MenuProps :
     var disableAutoFocusItem: Boolean?
 
     /**
-     * Props applied to the [`MenuList`](/api/menu-list/) element.
+     * Props applied to the [`MenuList`](/material-ui/api/menu-list/) element.
      * @default {}
      */
     var MenuListProps: MenuListProps?
@@ -71,7 +71,7 @@ external interface MenuProps :
     var open: Boolean
 
     /**
-     * `classes` prop applied to the [`Popover`](/api/popover/) element.
+     * `classes` prop applied to the [`Popover`](/material-ui/api/popover/) element.
      */
     var PopoverClasses: PopoverClasses?
 
@@ -104,13 +104,13 @@ external interface MenuProps :
  *
  * Demos:
  *
- * - [App Bar](https://mui.com/components/app-bar/)
- * - [Menus](https://mui.com/components/menus/)
+ * - [App Bar](https://mui.com/material-ui/react-app-bar/)
+ * - [Menus](https://mui.com/material-ui/react-menu/)
  *
  * API:
  *
- * - [Menu API](https://mui.com/api/menu/)
- * - inherits [Popover API](https://mui.com/api/popover/)
+ * - [Menu API](https://mui.com/material-ui/api/menu/)
+ * - inherits [Popover API](https://mui.com/material-ui/api/popover/)
  */
 @JsName("default")
 external val Menu: react.FC<MenuProps>

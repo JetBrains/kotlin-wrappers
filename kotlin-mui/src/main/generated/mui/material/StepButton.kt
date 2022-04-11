@@ -41,12 +41,12 @@ external interface StepButtonProps :
  *
  * Demos:
  *
- * - [Steppers](https://mui.com/components/steppers/)
+ * - [Steppers](https://mui.com/material-ui/react-stepper/)
  *
  * API:
  *
- * - [StepButton API](https://mui.com/api/step-button/)
- * - inherits [ButtonBase API](https://mui.com/api/button-base/)
+ * - [StepButton API](https://mui.com/material-ui/api/step-button/)
+ * - inherits [ButtonBase API](https://mui.com/material-ui/api/button-base/)
  */
 @JsName("default")
 external val StepButton: react.FC<StepButtonProps>

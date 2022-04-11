@@ -96,7 +96,7 @@ external interface PopoverProps :
     override var open: Boolean
 
     /**
-     * Props applied to the [`Paper`](/api/paper/) element.
+     * Props applied to the [`Paper`](/material-ui/api/paper/) element.
      * @default {}
      */
     var PaperProps: PaperProps?
@@ -122,7 +122,7 @@ external interface PopoverProps :
 
     /**
      * The component used for the transition.
-     * [Follow this guide](/components/transitions/#transitioncomponent-prop) to learn more about the requirements for this component.
+     * [Follow this guide](/material-ui/transitions/#transitioncomponent-prop) to learn more about the requirements for this component.
      * @default Grow
      */
     var TransitionComponent: react.ComponentType<*>?
@@ -161,13 +161,13 @@ external interface PopoverActions {
  *
  * Demos:
  *
- * - [Menus](https://mui.com/components/menus/)
- * - [Popover](https://mui.com/components/popover/)
+ * - [Menus](https://mui.com/material-ui/react-menu/)
+ * - [Popover](https://mui.com/material-ui/react-popover/)
  *
  * API:
  *
- * - [Popover API](https://mui.com/api/popover/)
- * - inherits [Modal API](https://mui.com/api/modal/)
+ * - [Popover API](https://mui.com/material-ui/api/popover/)
+ * - inherits [Modal API](https://mui.com/material-ui/api/modal/)
  */
 @JsName("default")
 external val Popover: react.FC<PopoverProps>

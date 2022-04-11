@@ -52,12 +52,12 @@ external interface PaperProps :
  *
  * Demos:
  *
- * - [Cards](https://mui.com/components/cards/)
- * - [Paper](https://mui.com/components/paper/)
+ * - [Cards](https://mui.com/material-ui/react-card/)
+ * - [Paper](https://mui.com/material-ui/react-paper/)
  *
  * API:
  *
- * - [Paper API](https://mui.com/api/paper/)
+ * - [Paper API](https://mui.com/material-ui/api/paper/)
  */
 @JsName("default")
 external val Paper: react.FC<PaperProps>

@@ -30,7 +30,7 @@ external interface SvgIconProps :
     /**
      * The color of the component.
      * It supports both default and custom theme colors, which can be added as shown in the
-     * [palette customization guide](https://mui.com/customization/palette/#adding-new-colors).
+     * [palette customization guide](https://mui.com/material-ui/customization/palette/#adding-new-colors).
      * You can use the `htmlColor` prop to apply a color attribute to the SVG element.
      * @default 'inherit'
      */
@@ -89,12 +89,12 @@ external interface SvgIconProps :
  *
  * Demos:
  *
- * - [Icons](https://mui.com/components/icons/)
- * - [Material Icons](https://mui.com/components/material-icons/)
+ * - [Icons](https://mui.com/material-ui/icons/)
+ * - [Material Icons](https://mui.com/material-ui/material-icons/)
  *
  * API:
  *
- * - [SvgIcon API](https://mui.com/api/svg-icon/)
+ * - [SvgIcon API](https://mui.com/material-ui/api/svg-icon/)
  */
 @JsName("default")
 external val SvgIcon: react.FC<SvgIconProps>

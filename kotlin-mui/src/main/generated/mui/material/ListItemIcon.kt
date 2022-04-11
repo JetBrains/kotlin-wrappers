@@ -35,11 +35,11 @@ external interface ListItemIconProps :
  *
  * Demos:
  *
- * - [Lists](https://mui.com/components/lists/)
+ * - [Lists](https://mui.com/material-ui/react-list/)
  *
  * API:
  *
- * - [ListItemIcon API](https://mui.com/api/list-item-icon/)
+ * - [ListItemIcon API](https://mui.com/material-ui/api/list-item-icon/)
  */
 @JsName("default")
 external val ListItemIcon: react.FC<ListItemIconProps>

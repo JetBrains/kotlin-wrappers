@@ -90,7 +90,7 @@ external interface DialogProps :
     var PaperComponent: react.ComponentType<PaperProps>?
 
     /**
-     * Props applied to the [`Paper`](/api/paper/) element.
+     * Props applied to the [`Paper`](/material-ui/api/paper/) element.
      * @default {}
      */
     var PaperProps: PaperProps?
@@ -108,7 +108,7 @@ external interface DialogProps :
 
     /**
      * The component used for the transition.
-     * [Follow this guide](/components/transitions/#transitioncomponent-prop) to learn more about the requirements for this component.
+     * [Follow this guide](/material-ui/transitions/#transitioncomponent-prop) to learn more about the requirements for this component.
      * @default Fade
      */
     var TransitionComponent: react.ComponentType<*>?
@@ -135,12 +135,12 @@ external interface DialogProps :
  *
  * Demos:
  *
- * - [Dialogs](https://mui.com/components/dialogs/)
+ * - [Dialogs](https://mui.com/material-ui/react-dialog/)
  *
  * API:
  *
- * - [Dialog API](https://mui.com/api/dialog/)
- * - inherits [Modal API](https://mui.com/api/modal/)
+ * - [Dialog API](https://mui.com/material-ui/api/dialog/)
+ * - inherits [Modal API](https://mui.com/material-ui/api/modal/)
  */
 @JsName("default")
 external val Dialog: react.FC<DialogProps>

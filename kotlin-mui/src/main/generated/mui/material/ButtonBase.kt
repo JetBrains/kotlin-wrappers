@@ -117,11 +117,11 @@ external interface ButtonBaseActions {
  *
  * Demos:
  *
- * - [Buttons](https://mui.com/components/buttons/)
+ * - [Buttons](https://mui.com/material-ui/react-button/)
  *
  * API:
  *
- * - [ButtonBase API](https://mui.com/api/button-base/)
+ * - [ButtonBase API](https://mui.com/material-ui/api/button-base/)
  */
 @JsName("default")
 external val ButtonBase: react.FC<ButtonBaseProps>

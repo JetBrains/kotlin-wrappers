@@ -53,11 +53,11 @@ external interface ContainerProps :
  *
  * Demos:
  *
- * - [Container](https://mui.com/components/container/)
+ * - [Container](https://mui.com/material-ui/react-container/)
  *
  * API:
  *
- * - [Container API](https://mui.com/api/container/)
+ * - [Container API](https://mui.com/material-ui/api/container/)
  */
 @JsName("default")
 external val Container: react.FC<ContainerProps>

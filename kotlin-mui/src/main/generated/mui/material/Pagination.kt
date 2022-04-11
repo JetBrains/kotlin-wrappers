@@ -21,7 +21,7 @@ external interface PaginationProps :
     /**
      * The active color.
      * It supports both default and custom theme colors, which can be added as shown in the
-     * [palette customization guide](https://mui.com/customization/palette/#adding-new-colors).
+     * [palette customization guide](https://mui.com/material-ui/customization/palette/#adding-new-colors).
      * @default 'standard'
      */
     var color: PaginationColor?
@@ -30,7 +30,7 @@ external interface PaginationProps :
      * Accepts a function which returns a string value that provides a user-friendly name for the current page.
      * This is important for screen reader users.
      *
-     * For localization purposes, you can use the provided [translations](/guides/localization/).
+     * For localization purposes, you can use the provided [translations](/material-ui/guides/localization/).
      * @param {string} type The link or button type to format ('page' | 'first' | 'last' | 'next' | 'previous'). Defaults to 'page'.
      * @param {number} page The page number to format.
      * @param {bool} selected If true, the current page is selected.
@@ -89,11 +89,11 @@ external interface PaginationRenderItemParams :
  *
  * Demos:
  *
- * - [Pagination](https://mui.com/components/pagination/)
+ * - [Pagination](https://mui.com/material-ui/react-pagination/)
  *
  * API:
  *
- * - [Pagination API](https://mui.com/api/pagination/)
+ * - [Pagination API](https://mui.com/material-ui/api/pagination/)
  */
 @JsName("default")
 external val Pagination: react.FC<PaginationProps>

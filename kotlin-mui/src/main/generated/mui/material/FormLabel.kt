@@ -26,7 +26,7 @@ external interface FormLabelProps :
     /**
      * The color of the component.
      * It supports both default and custom theme colors, which can be added as shown in the
-     * [palette customization guide](https://mui.com/customization/palette/#adding-new-colors).
+     * [palette customization guide](https://mui.com/material-ui/customization/palette/#adding-new-colors).
      */
     var color: FormLabelColor?
 
@@ -65,13 +65,13 @@ external interface FormLabelProps :
  *
  * Demos:
  *
- * - [Checkboxes](https://mui.com/components/checkboxes/)
- * - [Radio Buttons](https://mui.com/components/radio-buttons/)
- * - [Switches](https://mui.com/components/switches/)
+ * - [Checkboxes](https://mui.com/material-ui/react-checkbox/)
+ * - [Radio Buttons](https://mui.com/material-ui/react-radio-button/)
+ * - [Switches](https://mui.com/material-ui/react-switch/)
  *
  * API:
  *
- * - [FormLabel API](https://mui.com/api/form-label/)
+ * - [FormLabel API](https://mui.com/material-ui/api/form-label/)
  */
 @JsName("default")
 external val FormLabel: react.FC<FormLabelProps>

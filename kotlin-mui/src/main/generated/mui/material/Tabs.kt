@@ -108,7 +108,7 @@ external interface TabsProps :
     var TabIndicatorProps: react.dom.html.HTMLAttributes<org.w3c.dom.HTMLDivElement>?
 
     /**
-     * Props applied to the [`TabScrollButton`](/api/tab-scroll-button/) element.
+     * Props applied to the [`TabScrollButton`](/material-ui/api/tab-scroll-button/) element.
      * @default {}
      */
     var TabScrollButtonProps: TabScrollButtonProps?
@@ -159,11 +159,11 @@ external interface TabsActions {
  *
  * Demos:
  *
- * - [Tabs](https://mui.com/components/tabs/)
+ * - [Tabs](https://mui.com/material-ui/react-tabs/)
  *
  * API:
  *
- * - [Tabs API](https://mui.com/api/tabs/)
+ * - [Tabs API](https://mui.com/material-ui/api/tabs/)
  */
 @JsName("default")
 external val Tabs: react.FC<TabsProps>

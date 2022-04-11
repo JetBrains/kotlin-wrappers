@@ -66,7 +66,7 @@ external interface AccordionProps :
 
     /**
      * The component used for the transition.
-     * [Follow this guide](/components/transitions/#transitioncomponent-prop) to learn more about the requirements for this component.
+     * [Follow this guide](/material-ui/transitions/#transitioncomponent-prop) to learn more about the requirements for this component.
      * @default Collapse
      */
     var TransitionComponent: react.ComponentType<*>?
@@ -82,12 +82,12 @@ external interface AccordionProps :
  *
  * Demos:
  *
- * - [Accordion](https://mui.com/components/accordion/)
+ * - [Accordion](https://mui.com/material-ui/react-accordion/)
  *
  * API:
  *
- * - [Accordion API](https://mui.com/api/accordion/)
- * - inherits [Paper API](https://mui.com/api/paper/)
+ * - [Accordion API](https://mui.com/material-ui/api/accordion/)
+ * - inherits [Paper API](https://mui.com/material-ui/api/paper/)
  */
 @JsName("default")
 external val Accordion: react.FC<AccordionProps>

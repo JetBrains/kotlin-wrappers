@@ -38,7 +38,7 @@ external interface ListItemBaseProps :
      * If `true`, the list item is focused during the first mount.
      * Focus will also be triggered if the value changes from false to true.
      * @default false
-     * @deprecated checkout [ListItemButton](/api/list-item-button/) instead
+     * @deprecated checkout [ListItemButton](/material-ui/api/list-item-button/) instead
      */
     var autoFocus: Boolean?
 
@@ -77,7 +77,7 @@ external interface ListItemBaseProps :
     /**
      * If `true`, the component is disabled.
      * @default false
-     * @deprecated checkout [ListItemButton](/api/list-item-button/) instead
+     * @deprecated checkout [ListItemButton](/material-ui/api/list-item-button/) instead
      */
     var disabled: Boolean?
 
@@ -107,7 +107,7 @@ external interface ListItemBaseProps :
     /**
      * Use to apply selected styling.
      * @default false
-     * @deprecated checkout [ListItemButton](/api/list-item-button/) instead
+     * @deprecated checkout [ListItemButton](/material-ui/api/list-item-button/) instead
      */
     var selected: Boolean?
 
@@ -122,12 +122,12 @@ external interface ListItemBaseProps :
  *
  * Demos:
  *
- * - [Lists](https://mui.com/components/lists/)
- * - [Transfer List](https://mui.com/components/transfer-list/)
+ * - [Lists](https://mui.com/material-ui/react-list/)
+ * - [Transfer List](https://mui.com/material-ui/react-transfer-list/)
  *
  * API:
  *
- * - [ListItem API](https://mui.com/api/list-item/)
+ * - [ListItem API](https://mui.com/material-ui/api/list-item/)
  */
 @JsName("default")
 external val ListItem: react.FC<ListItemProps>

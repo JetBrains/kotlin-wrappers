@@ -40,7 +40,7 @@ external interface DrawerProps :
     var elevation: Number?
 
     /**
-     * Props applied to the [`Modal`](/api/modal/) element.
+     * Props applied to the [`Modal`](/material-ui/api/modal/) element.
      * @default {}
      */
     var ModalProps: ModalProps?
@@ -59,13 +59,13 @@ external interface DrawerProps :
     var open: Boolean?
 
     /**
-     * Props applied to the [`Paper`](/api/paper/) element.
+     * Props applied to the [`Paper`](/material-ui/api/paper/) element.
      * @default {}
      */
     var PaperProps: PaperProps?
 
     /**
-     * Props applied to the [`Slide`](/api/slide/) element.
+     * Props applied to the [`Slide`](/material-ui/api/slide/) element.
      */
     var SlideProps: SlideProps?
 
@@ -92,16 +92,16 @@ external interface DrawerProps :
 }
 
 /**
- * The props of the [Modal](https://mui.com/api/modal/) component are available
+ * The props of the [Modal](https://mui.com/material-ui/api/modal/) component are available
  * when `variant="temporary"` is set.
  *
  * Demos:
  *
- * - [Drawers](https://mui.com/components/drawers/)
+ * - [Drawers](https://mui.com/material-ui/react-drawer/)
  *
  * API:
  *
- * - [Drawer API](https://mui.com/api/drawer/)
+ * - [Drawer API](https://mui.com/material-ui/api/drawer/)
  */
 @JsName("default")
 external val Drawer: react.FC<DrawerProps>

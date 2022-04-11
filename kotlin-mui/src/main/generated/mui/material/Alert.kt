@@ -29,7 +29,7 @@ external interface AlertProps :
     /**
      * Override the default label for the *close popup* icon button.
      *
-     * For localization purposes, you can use the provided [translations](/guides/localization/).
+     * For localization purposes, you can use the provided [translations](/material-ui/guides/localization/).
      * @default 'Close'
      */
     var closeText: String?
@@ -37,7 +37,7 @@ external interface AlertProps :
     /**
      * The color of the component. Unless provided, the value is taken from the `severity` prop.
      * It supports both default and custom theme colors, which can be added as shown in the
-     * [palette customization guide](https://mui.com/customization/palette/#adding-new-colors).
+     * [palette customization guide](https://mui.com/material-ui/customization/palette/#adding-new-colors).
      */
     var color: AlertColor?
 
@@ -91,12 +91,12 @@ external interface AlertProps :
  *
  * Demos:
  *
- * - [Alert](https://mui.com/components/alert/)
+ * - [Alert](https://mui.com/material-ui/react-alert/)
  *
  * API:
  *
- * - [Alert API](https://mui.com/api/alert/)
- * - inherits [Paper API](https://mui.com/api/paper/)
+ * - [Alert API](https://mui.com/material-ui/api/alert/)
+ * - inherits [Paper API](https://mui.com/material-ui/api/paper/)
  */
 @JsName("default")
 external val Alert: react.FC<AlertProps>

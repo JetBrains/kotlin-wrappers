@@ -20,7 +20,7 @@ external interface LinearProgressProps :
     /**
      * The color of the component.
      * It supports both default and custom theme colors, which can be added as shown in the
-     * [palette customization guide](https://mui.com/customization/palette/#adding-new-colors).
+     * [palette customization guide](https://mui.com/material-ui/customization/palette/#adding-new-colors).
      * @default 'primary'
      */
     var color: LinearProgressColor?
@@ -59,11 +59,11 @@ external interface LinearProgressProps :
  *
  * Demos:
  *
- * - [Progress](https://mui.com/components/progress/)
+ * - [Progress](https://mui.com/material-ui/react-progress/)
  *
  * API:
  *
- * - [LinearProgress API](https://mui.com/api/linear-progress/)
+ * - [LinearProgress API](https://mui.com/material-ui/api/linear-progress/)
  */
 @JsName("default")
 external val LinearProgress: react.FC<LinearProgressProps>

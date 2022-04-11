@@ -76,12 +76,12 @@ external interface TabProps :
  *
  * Demos:
  *
- * - [Tabs](https://mui.com/components/tabs/)
+ * - [Tabs](https://mui.com/material-ui/react-tabs/)
  *
  * API:
  *
- * - [Tab API](https://mui.com/api/tab/)
- * - inherits [ButtonBase API](https://mui.com/api/button-base/)
+ * - [Tab API](https://mui.com/material-ui/api/tab/)
+ * - inherits [ButtonBase API](https://mui.com/material-ui/api/button-base/)
  */
 @JsName("default")
 external val Tab: react.FC<TabProps>

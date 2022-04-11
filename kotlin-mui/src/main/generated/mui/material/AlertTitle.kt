@@ -33,11 +33,11 @@ external interface AlertTitleProps :
  *
  * Demos:
  *
- * - [Alert](https://mui.com/components/alert/)
+ * - [Alert](https://mui.com/material-ui/react-alert/)
  *
  * API:
  *
- * - [AlertTitle API](https://mui.com/api/alert-title/)
+ * - [AlertTitle API](https://mui.com/material-ui/api/alert-title/)
  */
 @JsName("default")
 external val AlertTitle: react.FC<AlertTitleProps>
