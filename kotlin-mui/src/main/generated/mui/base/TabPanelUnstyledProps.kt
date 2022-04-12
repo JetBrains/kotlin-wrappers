@@ -27,11 +27,19 @@ external interface TabPanelUnstyledOwnProps :
      * Either a string to use a HTML element or a component.
      * @default {}
      */
-    var components: dynamic
+    var components: Components?
+
+    interface Components {
+        var Root: react.ElementType<*>?
+    }
 
     /**
      * The props used for each slot inside the TabPanel.
      * @default {}
      */
-    var componentsProps: dynamic
+    var componentsProps: ComponentsProps?
+
+    interface ComponentsProps {
+        var root: react.Props? /* React.ComponentPropsWithRef<'div'> & TabPanelUnstyledComponentsPropsOverrides */
+    }
 }

@@ -10,13 +10,25 @@ external interface MultiSelectUnstyledProps<TValue> : react.Props {
      * Either a string to use a HTML element or a component.
      * @default {}
      */
-    var components: dynamic
+    var components: Components?
+
+    interface Components {
+        var Root: react.ElementType<*>?
+        var Listbox: react.ElementType<*>?
+        var Popper: react.ElementType<*>? /* React.ComponentType<MultiSelectUnstyledPopperSlotProps<TValue>> */
+    }
 
     /**
      * The props used for each slot inside the Input.
      * @default {}
      */
-    var componentsProps: dynamic
+    var componentsProps: ComponentsProps?
+
+    interface ComponentsProps {
+        var root: react.Props? /* React.ComponentPropsWithRef<'button'> & MultiSelectUnstyledComponentsPropsOverrides */
+        var listbox: react.Props? /* React.ComponentPropsWithRef<'ul'> & MultiSelectUnstyledComponentsPropsOverrides */
+        var popper: react.Props? /* Partial<React.ComponentPropsWithRef<typeof PopperUnstyled>> & MultiSelectUnstyledComponentsPropsOverrides */
+    }
 
     /**
      * The default selected values. Use when the component is not controlled.

@@ -34,7 +34,14 @@ external interface PaginationItemProps :
      *   previous: NavigateBeforeIcon,
      * }
      */
-    var components: dynamic
+    var components: Components?
+
+    interface Components {
+        var first: react.ElementType<*>?
+        var last: react.ElementType<*>?
+        var next: react.ElementType<*>?
+        var previous: react.ElementType<*>?
+    }
 
     /**
      * If `true`, the component is disabled.

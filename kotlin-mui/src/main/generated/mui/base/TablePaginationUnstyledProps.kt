@@ -18,13 +18,35 @@ external interface TablePaginationUnstyledProps : react.Props {
      * Either a string to use a HTML element or a component.
      * @default {}
      */
-    var components: dynamic
+    var components: Components?
+
+    interface Components {
+        var Root: react.ElementType<*>?
+        var Actions: react.ElementType<*>?
+        var Select: react.ElementType<*>?
+        var SelectLabel: react.ElementType<*>?
+        var MenuItem: react.ElementType<*>?
+        var DisplayedRows: react.ElementType<*>?
+        var Toolbar: react.ElementType<*>?
+        var Spacer: react.ElementType<*>?
+    }
 
     /**
      * The props used for each slot inside the TablePagination.
      * @default {}
      */
-    var componentsProps: dynamic
+    var componentsProps: ComponentsProps?
+
+    interface ComponentsProps {
+        var root: react.Props? /* React.ComponentPropsWithRef<'div'> & TablePaginationUnstyledComponentsPropsOverrides */
+        var actions: react.Props? /* React.ComponentPropsWithRef<'div'> & TablePaginationUnstyledComponentsPropsOverrides */
+        var select: react.Props? /* React.ComponentPropsWithRef<'select'> & TablePaginationUnstyledComponentsPropsOverrides */
+        var selectLabel: react.Props? /* React.ComponentPropsWithRef<'p'> & TablePaginationUnstyledComponentsPropsOverrides */
+        var menuItem: react.Props? /* React.ComponentPropsWithRef<'option'> & TablePaginationUnstyledComponentsPropsOverrides */
+        var displayedRows: react.Props? /* React.ComponentPropsWithRef<'p'> & TablePaginationUnstyledComponentsPropsOverrides */
+        var toolbar: react.Props? /* React.ComponentPropsWithRef<'div'> & TablePaginationUnstyledComponentsPropsOverrides */
+        var spacer: react.Props? /* React.ComponentPropsWithRef<'div'> & TablePaginationUnstyledComponentsPropsOverrides */
+    }
 
     /**
      * The total number of rows.

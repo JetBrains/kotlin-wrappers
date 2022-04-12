@@ -29,13 +29,35 @@ external interface SliderUnstyledProps :
      * Either a string to use a HTML element or a component.
      * @default {}
      */
-    var components: dynamic
+    var components: Components?
+
+    interface Components {
+        var Root: react.ElementType<*>?
+        var Track: react.ElementType<*>?
+        var Rail: react.ElementType<*>?
+        var Thumb: react.ElementType<*>?
+        var Mark: react.ElementType<*>?
+        var MarkLabel: react.ElementType<*>?
+        var ValueLabel: react.ElementType<*>?
+        var Input: react.ElementType<*>?
+    }
 
     /**
      * The props used for each slot inside the Slider.
      * @default {}
      */
-    var componentsProps: dynamic
+    var componentsProps: ComponentsProps?
+
+    interface ComponentsProps {
+        var root: react.Props? /* React.ComponentPropsWithRef<'span'> & SliderUnstyledComponentsPropsOverrides */
+        var track: react.Props? /* React.ComponentPropsWithRef<'span'> & SliderUnstyledComponentsPropsOverrides */
+        var rail: react.Props? /* React.ComponentPropsWithRef<'span'> & SliderUnstyledComponentsPropsOverrides */
+        var thumb: react.Props? /* React.ComponentPropsWithRef<'span'> & SliderUnstyledComponentsPropsOverrides */
+        var mark: react.Props? /* React.ComponentPropsWithRef<'span'> & SliderUnstyledComponentsPropsOverrides */
+        var markLabel: react.Props? /* React.ComponentPropsWithRef<'span'> & SliderUnstyledComponentsPropsOverrides */
+        var valueLabel: react.Props? /* React.ComponentPropsWithRef<typeof SliderValueLabelUnstyled> & SliderUnstyledComponentsPropsOverrides */
+        var input: react.Props? /* React.ComponentPropsWithRef<'input'> & SliderUnstyledComponentsPropsOverrides */
+    }
 
     /**
      * The default value. Use when the component is not controlled.
