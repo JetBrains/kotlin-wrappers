@@ -65,11 +65,11 @@ external interface CardHeaderProps : mui.system.PropsWithSx {
  *
  * Demos:
  *
- * - [Cards](https://mui.com/components/cards/)
+ * - [Cards](https://mui.com/material-ui/react-card/)
  *
  * API:
  *
- * - [CardHeader API](https://mui.com/api/card-header/)
+ * - [CardHeader API](https://mui.com/material-ui/api/card-header/)
  */
 @JsName("default")
 external val CardHeader: react.FC<CardHeaderProps>

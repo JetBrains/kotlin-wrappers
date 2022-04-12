@@ -42,7 +42,7 @@ external interface SpeedDialProps :
     override var hidden: Boolean?
 
     /**
-     * Props applied to the [`Fab`](/api/fab/) element.
+     * Props applied to the [`Fab`](/material-ui/api/fab/) element.
      * @default {}
      */
     var FabProps: FabProps?
@@ -86,7 +86,7 @@ external interface SpeedDialProps :
 
     /**
      * The component used for the transition.
-     * [Follow this guide](/components/transitions/#transitioncomponent-prop) to learn more about the requirements for this component.
+     * [Follow this guide](/material-ui/transitions/#transitioncomponent-prop) to learn more about the requirements for this component.
      * @default Zoom
      */
     var TransitionComponent: react.ComponentType<mui.material.transitions.TransitionProps>?
@@ -112,11 +112,11 @@ external interface SpeedDialProps :
  *
  * Demos:
  *
- * - [Speed Dial](https://mui.com/components/speed-dial/)
+ * - [Speed Dial](https://mui.com/material-ui/react-speed-dial/)
  *
  * API:
  *
- * - [SpeedDial API](https://mui.com/api/speed-dial/)
+ * - [SpeedDial API](https://mui.com/material-ui/api/speed-dial/)
  */
 @JsName("default")
 external val SpeedDial: react.FC<SpeedDialProps>

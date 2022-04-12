@@ -50,11 +50,11 @@ external interface StepIconProps :
  *
  * Demos:
  *
- * - [Steppers](https://mui.com/components/steppers/)
+ * - [Steppers](https://mui.com/material-ui/react-stepper/)
  *
  * API:
  *
- * - [StepIcon API](https://mui.com/api/step-icon/)
+ * - [StepIcon API](https://mui.com/material-ui/api/step-icon/)
  */
 @JsName("default")
 external val StepIcon: react.FC<StepIconProps>

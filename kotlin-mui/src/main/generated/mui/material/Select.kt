@@ -85,7 +85,7 @@ external interface SelectProps<T> :
     var inputProps: InputBaseComponentProps?
 
     /**
-     * See [OutlinedInput#label](/api/outlined-input/#props)
+     * See [OutlinedInput#label](/material-ui/api/outlined-input/#props)
      */
     var label: react.ReactNode?
 
@@ -96,7 +96,7 @@ external interface SelectProps<T> :
     var labelId: String?
 
     /**
-     * Props applied to the [`Menu`](/api/menu/) element.
+     * Props applied to the [`Menu`](/material-ui/api/menu/) element.
      */
     var MenuProps: MenuProps?
 
@@ -183,12 +183,12 @@ external interface SelectProps<T> :
  *
  * Demos:
  *
- * - [Selects](https://mui.com/components/selects/)
+ * - [Selects](https://mui.com/material-ui/react-select/)
  *
  * API:
  *
- * - [Select API](https://mui.com/api/select/)
- * - inherits [OutlinedInput API](https://mui.com/api/outlined-input/)
+ * - [Select API](https://mui.com/material-ui/api/select/)
+ * - inherits [OutlinedInput API](https://mui.com/material-ui/api/outlined-input/)
  */
 @JsName("default")
 external val Select: react.FC<SelectProps<*>>

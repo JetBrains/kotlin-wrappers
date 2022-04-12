@@ -155,7 +155,7 @@ external interface TooltipProps :
     var PopperComponent: react.ComponentType<PopperProps>?
 
     /**
-     * Props applied to the [`Popper`](/api/popper/) element.
+     * Props applied to the [`Popper`](/material-ui/api/popper/) element.
      * @default {}
      */
     var PopperProps: PopperProps?
@@ -172,7 +172,7 @@ external interface TooltipProps :
 
     /**
      * The component used for the transition.
-     * [Follow this guide](/components/transitions/#transitioncomponent-prop) to learn more about the requirements for this component.
+     * [Follow this guide](/material-ui/transitions/#transitioncomponent-prop) to learn more about the requirements for this component.
      * @default Grow
      */
     var TransitionComponent: react.ComponentType<*>?
@@ -188,11 +188,11 @@ external interface TooltipProps :
  *
  * Demos:
  *
- * - [Tooltips](https://mui.com/components/tooltips/)
+ * - [Tooltips](https://mui.com/material-ui/react-tooltip/)
  *
  * API:
  *
- * - [Tooltip API](https://mui.com/api/tooltip/)
+ * - [Tooltip API](https://mui.com/material-ui/api/tooltip/)
  */
 @JsName("default")
 external val Tooltip: react.FC<TooltipProps>

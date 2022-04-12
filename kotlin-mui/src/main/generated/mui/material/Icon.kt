@@ -34,7 +34,7 @@ external interface IconProps :
     /**
      * The color of the component.
      * It supports both default and custom theme colors, which can be added as shown in the
-     * [palette customization guide](https://mui.com/customization/palette/#adding-new-colors).
+     * [palette customization guide](https://mui.com/material-ui/customization/palette/#adding-new-colors).
      * @default 'inherit'
      */
     var color: IconColor?
@@ -55,12 +55,12 @@ external interface IconProps :
  *
  * Demos:
  *
- * - [Icons](https://mui.com/components/icons/)
- * - [Material Icons](https://mui.com/components/material-icons/)
+ * - [Icons](https://mui.com/material-ui/icons/)
+ * - [Material Icons](https://mui.com/material-ui/material-icons/)
  *
  * API:
  *
- * - [Icon API](https://mui.com/api/icon/)
+ * - [Icon API](https://mui.com/material-ui/api/icon/)
  */
 @JsName("default")
 external val Icon: react.FC<IconProps>

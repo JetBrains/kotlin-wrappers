@@ -33,11 +33,11 @@ external interface TableContainerProps :
  *
  * Demos:
  *
- * - [Tables](https://mui.com/components/tables/)
+ * - [Tables](https://mui.com/material-ui/react-table/)
  *
  * API:
  *
- * - [TableContainer API](https://mui.com/api/table-container/)
+ * - [TableContainer API](https://mui.com/material-ui/api/table-container/)
  */
 @JsName("default")
 external val TableContainer: react.FC<TableContainerProps>

@@ -68,11 +68,11 @@ external interface AvatarProps :
  *
  * Demos:
  *
- * - [Avatars](https://mui.com/components/avatars/)
+ * - [Avatars](https://mui.com/material-ui/react-avatar/)
  *
  * API:
  *
- * - [Avatar API](https://mui.com/api/avatar/)
+ * - [Avatar API](https://mui.com/material-ui/api/avatar/)
  */
 @JsName("default")
 external val Avatar: react.FC<AvatarProps>

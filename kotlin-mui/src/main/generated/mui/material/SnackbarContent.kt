@@ -47,12 +47,12 @@ external interface SnackbarContentProps :
  *
  * Demos:
  *
- * - [Snackbars](https://mui.com/components/snackbars/)
+ * - [Snackbars](https://mui.com/material-ui/react-snackbar/)
  *
  * API:
  *
- * - [SnackbarContent API](https://mui.com/api/snackbar-content/)
- * - inherits [Paper API](https://mui.com/api/paper/)
+ * - [SnackbarContent API](https://mui.com/material-ui/api/snackbar-content/)
+ * - inherits [Paper API](https://mui.com/material-ui/api/paper/)
  */
 @JsName("default")
 external val SnackbarContent: react.FC<SnackbarContentProps>

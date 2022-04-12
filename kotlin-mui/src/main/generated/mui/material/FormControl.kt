@@ -26,7 +26,7 @@ external interface FormControlProps :
     /**
      * The color of the component.
      * It supports both default and custom theme colors, which can be added as shown in the
-     * [palette customization guide](https://mui.com/customization/palette/#adding-new-colors).
+     * [palette customization guide](https://mui.com/material-ui/customization/palette/#adding-new-colors).
      * @default 'primary'
      */
     var color: FormControlColor?
@@ -103,7 +103,7 @@ external interface FormControlProps :
  * *   Input
  * *   InputLabel
  *
- * You can find one composition example below and more going to [the demos](https://mui.com/components/text-fields/#components).
+ * You can find one composition example below and more going to [the demos](https://mui.com/material-ui/react-text-field/#components).
  *
  * ```jsx
  * <FormControl>
@@ -118,14 +118,14 @@ external interface FormControlProps :
  *
  * Demos:
  *
- * - [Checkboxes](https://mui.com/components/checkboxes/)
- * - [Radio Buttons](https://mui.com/components/radio-buttons/)
- * - [Switches](https://mui.com/components/switches/)
- * - [Text Fields](https://mui.com/components/text-fields/)
+ * - [Checkboxes](https://mui.com/material-ui/react-checkbox/)
+ * - [Radio Buttons](https://mui.com/material-ui/react-radio-button/)
+ * - [Switches](https://mui.com/material-ui/react-switch/)
+ * - [Text Fields](https://mui.com/material-ui/react-text-field/)
  *
  * API:
  *
- * - [FormControl API](https://mui.com/api/form-control/)
+ * - [FormControl API](https://mui.com/material-ui/api/form-control/)
  */
 @JsName("default")
 external val FormControl: react.FC<FormControlProps>

@@ -30,7 +30,7 @@ external interface StepContentProps :
 
     /**
      * The component used for the transition.
-     * [Follow this guide](/components/transitions/#transitioncomponent-prop) to learn more about the requirements for this component.
+     * [Follow this guide](/material-ui/transitions/#transitioncomponent-prop) to learn more about the requirements for this component.
      * @default Collapse
      */
     var TransitionComponent: react.ComponentType<mui.material.transitions.TransitionProps>?
@@ -55,11 +55,11 @@ external interface StepContentProps :
  *
  * Demos:
  *
- * - [Steppers](https://mui.com/components/steppers/)
+ * - [Steppers](https://mui.com/material-ui/react-stepper/)
  *
  * API:
  *
- * - [StepContent API](https://mui.com/api/step-content/)
+ * - [StepContent API](https://mui.com/material-ui/api/step-content/)
  */
 @JsName("default")
 external val StepContent: react.FC<StepContentProps>

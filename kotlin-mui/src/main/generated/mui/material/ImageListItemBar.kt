@@ -59,11 +59,11 @@ external interface ImageListItemBarProps :
  *
  * Demos:
  *
- * - [Image List](https://mui.com/components/image-list/)
+ * - [Image List](https://mui.com/material-ui/react-image-list/)
  *
  * API:
  *
- * - [ImageListItemBar API](https://mui.com/api/image-list-item-bar/)
+ * - [ImageListItemBar API](https://mui.com/material-ui/api/image-list-item-bar/)
  */
 @JsName("default")
 external val ImageListItemBar: react.FC<ImageListItemBarProps>

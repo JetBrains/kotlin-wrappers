@@ -22,7 +22,7 @@ external interface SpeedDialActionProps :
     var classes: SpeedDialActionClasses?
 
     /**
-     * Props applied to the [`Fab`](/api/fab/) component.
+     * Props applied to the [`Fab`](/material-ui/api/fab/) component.
      * @default {}
      */
     var FabProps: FabProps?
@@ -44,7 +44,7 @@ external interface SpeedDialActionProps :
     override var sx: SxProps<Theme>?
 
     /**
-     * `classes` prop applied to the [`Tooltip`](/api/tooltip/) element.
+     * `classes` prop applied to the [`Tooltip`](/material-ui/api/tooltip/) element.
      */
     var TooltipClasses: TooltipClasses?
 
@@ -70,12 +70,12 @@ external interface SpeedDialActionProps :
  *
  * Demos:
  *
- * - [Speed Dial](https://mui.com/components/speed-dial/)
+ * - [Speed Dial](https://mui.com/material-ui/react-speed-dial/)
  *
  * API:
  *
- * - [SpeedDialAction API](https://mui.com/api/speed-dial-action/)
- * - inherits [Tooltip API](https://mui.com/api/tooltip/)
+ * - [SpeedDialAction API](https://mui.com/material-ui/api/speed-dial-action/)
+ * - inherits [Tooltip API](https://mui.com/material-ui/api/tooltip/)
  */
 @JsName("default")
 external val SpeedDialAction: react.FC<SpeedDialActionProps>

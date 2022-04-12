@@ -42,12 +42,12 @@ external interface FormGroupProps :
  *
  * Demos:
  *
- * - [Checkboxes](https://mui.com/components/checkboxes/)
- * - [Switches](https://mui.com/components/switches/)
+ * - [Checkboxes](https://mui.com/material-ui/react-checkbox/)
+ * - [Switches](https://mui.com/material-ui/react-switch/)
  *
  * API:
  *
- * - [FormGroup API](https://mui.com/api/form-group/)
+ * - [FormGroup API](https://mui.com/material-ui/api/form-group/)
  */
 @JsName("default")
 external val FormGroup: react.FC<FormGroupProps>

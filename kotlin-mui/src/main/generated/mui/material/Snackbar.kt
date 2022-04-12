@@ -54,7 +54,7 @@ external interface SnackbarProps :
     var ClickAwayListenerProps: mui.base.ClickAwayListenerProps?
 
     /**
-     * Props applied to the [`SnackbarContent`](/api/snackbar-content/) element.
+     * Props applied to the [`SnackbarContent`](/material-ui/api/snackbar-content/) element.
      */
     var ContentProps: SnackbarContentProps?
 
@@ -109,7 +109,7 @@ external interface SnackbarProps :
 
     /**
      * The component used for the transition.
-     * [Follow this guide](/components/transitions/#transitioncomponent-prop) to learn more about the requirements for this component.
+     * [Follow this guide](/material-ui/transitions/#transitioncomponent-prop) to learn more about the requirements for this component.
      * @default Grow
      */
     var TransitionComponent: react.ComponentType<*>?
@@ -142,11 +142,11 @@ external interface SnackbarOrigin {
  *
  * Demos:
  *
- * - [Snackbars](https://mui.com/components/snackbars/)
+ * - [Snackbars](https://mui.com/material-ui/react-snackbar/)
  *
  * API:
  *
- * - [Snackbar API](https://mui.com/api/snackbar/)
+ * - [Snackbar API](https://mui.com/material-ui/api/snackbar/)
  */
 @JsName("default")
 external val Snackbar: react.FC<SnackbarProps>

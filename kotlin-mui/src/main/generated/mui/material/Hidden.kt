@@ -102,11 +102,11 @@ external interface HiddenProps : react.PropsWithChildren {
  *
  * Demos:
  *
- * - [Hidden](https://mui.com/components/hidden/)
+ * - [Hidden](https://mui.com/material-ui/react-hidden/)
  *
  * API:
  *
- * - [Hidden API](https://mui.com/api/hidden/)
+ * - [Hidden API](https://mui.com/material-ui/api/hidden/)
  */
 @JsName("default")
 external val Hidden: react.FC<HiddenProps>

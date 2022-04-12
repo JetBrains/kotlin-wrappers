@@ -20,7 +20,7 @@ external interface TablePaginationProps :
     var ActionsComponent: react.ElementType<TablePaginationActionsProps>?
 
     /**
-     * Props applied to the back arrow [`IconButton`](/api/icon-button/) component.
+     * Props applied to the back arrow [`IconButton`](/material-ui/api/icon-button/) component.
      */
     var backIconButtonProps: IconButtonProps?
 
@@ -40,7 +40,7 @@ external interface TablePaginationProps :
      * Accepts a function which returns a string value that provides a user-friendly name for the current page.
      * This is important for screen reader users.
      *
-     * For localization purposes, you can use the provided [translations](/guides/localization/).
+     * For localization purposes, you can use the provided [translations](/material-ui/guides/localization/).
      * @param {string} type The link or button type to format ('first' | 'last' | 'next' | 'previous').
      * @returns {string}
      * @default function defaultGetAriaLabel(type) {
@@ -53,7 +53,7 @@ external interface TablePaginationProps :
      * Customize the displayed rows label. Invoked with a `{ from, to, count, page }`
      * object.
      *
-     * For localization purposes, you can use the provided [translations](/guides/localization/).
+     * For localization purposes, you can use the provided [translations](/material-ui/guides/localization/).
      * @default function defaultLabelDisplayedRows({ from, to, count }) {
      *   return `${from}–${to} of ${count !== -1 ? count : `more than ${to}`}`;
      * }
@@ -63,13 +63,13 @@ external interface TablePaginationProps :
     /**
      * Customize the rows per page label.
      *
-     * For localization purposes, you can use the provided [translations](/guides/localization/).
+     * For localization purposes, you can use the provided [translations](/material-ui/guides/localization/).
      * @default 'Rows per page:'
      */
     var labelRowsPerPage: react.ReactNode?
 
     /**
-     * Props applied to the next arrow [`IconButton`](/api/icon-button/) element.
+     * Props applied to the next arrow [`IconButton`](/material-ui/api/icon-button/) element.
      */
     var nextIconButtonProps: IconButtonProps?
 
@@ -109,7 +109,7 @@ external interface TablePaginationProps :
     var rowsPerPageOptions: dynamic
 
     /**
-     * Props applied to the rows per page [`Select`](/api/select/) element.
+     * Props applied to the rows per page [`Select`](/material-ui/api/select/) element.
      * @default {}
      */
     var SelectProps: SelectProps<*>?
@@ -147,12 +147,12 @@ external interface LabelDisplayedRowsArgs {
  *
  * Demos:
  *
- * - [Tables](https://mui.com/components/tables/)
+ * - [Tables](https://mui.com/material-ui/react-table/)
  *
  * API:
  *
- * - [TablePagination API](https://mui.com/api/table-pagination/)
- * - inherits [TableCell API](https://mui.com/api/table-cell/)
+ * - [TablePagination API](https://mui.com/material-ui/api/table-pagination/)
+ * - inherits [TableCell API](https://mui.com/material-ui/api/table-cell/)
  */
 @JsName("default")
 external val TablePagination: react.FC<TablePaginationProps>

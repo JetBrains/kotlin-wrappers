@@ -81,7 +81,7 @@ external interface TreeItemProps :
 
     /**
      * The component used for the transition.
-     * [Follow this guide](/components/transitions/#transitioncomponent-prop) to learn more about the requirements for this component.
+     * [Follow this guide](/material-ui/transitions/#transitioncomponent-prop) to learn more about the requirements for this component.
      * @default Collapse
      */
     var TransitionComponent: react.ComponentType<mui.material.transitions.TransitionProps>?
@@ -102,11 +102,11 @@ external interface TreeItemProps :
  *
  * Demos:
  *
- * - [Tree View](https://mui.com/components/tree-view/)
+ * - [Tree View](https://mui.com/material-ui/react-tree-view/)
  *
  * API:
  *
- * - [TreeItem API](https://mui.com/api/tree-item/)
+ * - [TreeItem API](https://mui.com/material-ui/api/tree-item/)
  */
 @JsName("default")
 external val TreeItem: react.FC<TreeItemProps>

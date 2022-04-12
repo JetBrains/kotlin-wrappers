@@ -31,12 +31,11 @@ package mui.base
  *
  * Demos:
  *
- * - [Form Control](https://mui.com/components/form-control/)
- * - [Text Fields](https://mui.com/components/text-fields/)
+ * - [Form Control](https://mui.com/base/react-form-control/)
  *
  * API:
  *
- * - [FormControlUnstyled API](https://mui.com/api/form-control-unstyled/)
+ * - [FormControlUnstyled API](https://mui.com/base/api/form-control-unstyled/)
  */
 @JsName("default")
 external val FormControlUnstyled: react.FC<FormControlUnstyledProps>

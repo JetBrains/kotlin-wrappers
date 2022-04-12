@@ -148,11 +148,11 @@ external interface GridProps :
  *
  * Demos:
  *
- * - [Grid](https://mui.com/components/grid/)
+ * - [Grid](https://mui.com/material-ui/react-grid/)
  *
  * API:
  *
- * - [Grid API](https://mui.com/api/grid/)
+ * - [Grid API](https://mui.com/material-ui/api/grid/)
  */
 @JsName("default")
 external val Grid: react.FC<GridProps>

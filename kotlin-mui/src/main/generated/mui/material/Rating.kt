@@ -49,7 +49,7 @@ external interface RatingProps :
      * Accepts a function which returns a string value that provides a user-friendly name for the current value of the rating.
      * This is important for screen reader users.
      *
-     * For localization purposes, you can use the provided [translations](/guides/localization/).
+     * For localization purposes, you can use the provided [translations](/material-ui/guides/localization/).
      * @param {number} value The rating label's value to format.
      * @returns {string}
      * @default function defaultLabelText(value) {
@@ -144,11 +144,11 @@ external interface IconContainerProps :
  *
  * Demos:
  *
- * - [Rating](https://mui.com/components/rating/)
+ * - [Rating](https://mui.com/material-ui/react-rating/)
  *
  * API:
  *
- * - [Rating API](https://mui.com/api/rating/)
+ * - [Rating API](https://mui.com/material-ui/api/rating/)
  */
 @JsName("default")
 external val Rating: react.FC<RatingProps>
