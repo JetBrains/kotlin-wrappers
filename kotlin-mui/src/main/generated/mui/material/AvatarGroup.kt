@@ -27,7 +27,12 @@ external interface AvatarGroupProps :
      * The props used for each slot inside the AvatarGroup.
      * @default {}
      */
-    var componentsProps: dynamic
+    var componentsProps: ComponentsProps?
+
+    interface ComponentsProps {
+        var additionalAvatar: react.Props? /* React.ComponentPropsWithRef<typeof Avatar> &
+  AvatarGroupComponentsPropsOverrides */
+    }
 
     /**
      * Max avatars to show before +x.

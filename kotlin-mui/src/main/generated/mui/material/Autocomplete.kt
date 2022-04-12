@@ -50,7 +50,12 @@ external interface AutocompleteProps<T> :
      * The props used for each slot inside.
      * @default {}
      */
-    var componentsProps: dynamic
+    var componentsProps: ComponentsProps?
+
+    interface ComponentsProps {
+        var clearIndicator: react.Props? /* Partial<IconButtonProps> */
+        var paper: react.Props? /* PaperProps */
+    }
 
     /**
      * If `true`, the component is disabled.

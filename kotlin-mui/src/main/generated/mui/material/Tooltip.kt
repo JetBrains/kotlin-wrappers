@@ -37,7 +37,14 @@ external interface TooltipProps :
      * Either a string to use a HTML element or a component.
      * @default {}
      */
-    var components: dynamic
+    var components: Components?
+
+    interface Components {
+        var Popper: react.ElementType<*>?
+        var Transition: react.ElementType<*>?
+        var Tooltip: react.ElementType<*>?
+        var Arrow: react.ElementType<*>?
+    }
 
     /**
      * The props used for each slot inside the Tooltip.
@@ -45,7 +52,18 @@ external interface TooltipProps :
      * and `componentsProps.transition` prop values win over `TransitionProps` if both are applied.
      * @default {}
      */
-    var componentsProps: dynamic
+    var componentsProps: ComponentsProps?
+
+    interface ComponentsProps {
+        var popper: react.Props? /* Partial<PopperProps> & TooltipComponentsPropsOverrides */
+        var transition: react.Props? /* TransitionProps & TooltipComponentsPropsOverrides */
+        var tooltip: react.Props? /* React.HTMLProps<HTMLDivElement> &
+  MUIStyledCommonProps &
+  TooltipComponentsPropsOverrides */
+        var arrow: react.Props? /* React.HTMLProps<HTMLSpanElement> &
+  MUIStyledCommonProps &
+  TooltipComponentsPropsOverrides */
+    }
 
     /**
      * Set to `true` if the `title` acts as an accessible description.
