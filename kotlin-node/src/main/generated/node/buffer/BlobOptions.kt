@@ -6,7 +6,7 @@ sealed external interface BlobOptions {
     /**
      * @default 'utf8'
      */
-    var encoding: node.buffer.BufferEncoding?
+    var encoding: BufferEncoding?
 
     /**
      * The Blob content-type. The intent is for `type` to convey

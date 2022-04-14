@@ -37,20 +37,20 @@ external class Buffer : Uint8Array {
      */
     fun write(
         string: String,
-        encoding: node.buffer.BufferEncoding = definedExternally,
+        encoding: BufferEncoding = definedExternally,
     ): Number
 
     fun write(
         string: String,
         offset: Number,
-        encoding: node.buffer.BufferEncoding = definedExternally,
+        encoding: BufferEncoding = definedExternally,
     ): Number
 
     fun write(
         string: String,
         offset: Number,
         length: Number,
-        encoding: node.buffer.BufferEncoding = definedExternally,
+        encoding: BufferEncoding = definedExternally,
     ): Number
 
     /**
@@ -92,7 +92,7 @@ external class Buffer : Uint8Array {
      * @param [end=buf.length] The byte offset to stop decoding at (not inclusive).
      */
     fun toString(
-        encoding: node.buffer.BufferEncoding = definedExternally,
+        encoding: BufferEncoding = definedExternally,
         start: Number = definedExternally,
         end: Number = definedExternally,
     ): String
@@ -1645,7 +1645,7 @@ external class Buffer : Uint8Array {
         value: dynamic, /* string | Uint8Array | number */
         offset: Number = definedExternally,
         end: Number = definedExternally,
-        encoding: node.buffer.BufferEncoding = definedExternally,
+        encoding: BufferEncoding = definedExternally,
     ): Buffer
 
     /**
@@ -1719,7 +1719,7 @@ external class Buffer : Uint8Array {
     fun indexOf(
         value: dynamic, /* string | number | Uint8Array */
         byteOffset: Number = definedExternally,
-        encoding: node.buffer.BufferEncoding = definedExternally,
+        encoding: BufferEncoding = definedExternally,
     ): Number
 
     /**
@@ -1792,7 +1792,7 @@ external class Buffer : Uint8Array {
     fun lastIndexOf(
         value: dynamic, /* string | number | Uint8Array */
         byteOffset: Number = definedExternally,
-        encoding: node.buffer.BufferEncoding = definedExternally,
+        encoding: BufferEncoding = definedExternally,
     ): Number
 
     /**
@@ -1853,7 +1853,7 @@ external class Buffer : Uint8Array {
     fun includes(
         value: dynamic, /* string | number | Buffer */
         byteOffset: Number = definedExternally,
-        encoding: node.buffer.BufferEncoding = definedExternally,
+        encoding: BufferEncoding = definedExternally,
     ): Boolean
 
     /**
