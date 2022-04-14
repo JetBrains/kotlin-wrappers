@@ -11,7 +11,7 @@ inline val MouseEvent.Companion.CLICK: EventType<MouseEvent>
 inline val MouseEvent.Companion.CONTEXT_MENU: EventType<MouseEvent>
     get() = EventType("contextmenu")
 
-inline val MouseEvent.Companion.DB_LCLICK: EventType<MouseEvent>
+inline val MouseEvent.Companion.DBL_CLICK: EventType<MouseEvent>
     get() = EventType("dblclick")
 
 inline val MouseEvent.Companion.MOUSE_DOWN: EventType<MouseEvent>
