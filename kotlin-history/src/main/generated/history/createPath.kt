@@ -11,5 +11,5 @@ package history
  * @see https://github.com/remix-run/history/tree/main/docs/api-reference.md#createpath
  */
 external fun createPath(
-    path: history.Path,
+    path: Path,
 ): String
