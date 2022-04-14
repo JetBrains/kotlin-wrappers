@@ -12,4 +12,4 @@ package history
  */
 external fun parsePath(
     path: String,
-): history.Path
+): Path

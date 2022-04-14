@@ -3,6 +3,6 @@
 package history
 
 external interface MemoryHistoryOptions {
-    var initialEntries: kotlinx.js.ReadonlyArray<history.InitialEntry>?
+    var initialEntries: kotlinx.js.ReadonlyArray<InitialEntry>?
     var initialIndex: Int?
 }
