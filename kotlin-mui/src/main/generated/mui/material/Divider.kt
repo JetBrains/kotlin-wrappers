@@ -45,7 +45,7 @@ external interface DividerProps :
      * The component orientation.
      * @default 'horizontal'
      */
-    var orientation: mui.material.Orientation?
+    var orientation: Orientation?
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.

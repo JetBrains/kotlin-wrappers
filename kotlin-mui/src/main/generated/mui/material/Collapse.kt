@@ -54,7 +54,7 @@ external interface CollapseProps :
      * The transition orientation.
      * @default 'vertical'
      */
-    var orientation: mui.material.Orientation?
+    var orientation: Orientation?
 
     /**
      * The duration for the transition, in milliseconds.
