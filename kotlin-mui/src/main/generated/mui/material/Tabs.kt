@@ -74,7 +74,7 @@ external interface TabsProps :
      * The component orientation (layout flow direction).
      * @default 'horizontal'
      */
-    var orientation: mui.material.Orientation?
+    var orientation: Orientation?
 
     /**
      * The component used to render the scroll buttons.

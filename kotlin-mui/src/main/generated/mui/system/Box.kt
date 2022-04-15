@@ -8,7 +8,7 @@ package mui.system
 external interface BoxProps :
     react.dom.html.HTMLAttributes<org.w3c.dom.HTMLDivElement>,
     react.PropsWithChildren,
-    mui.system.PropsWithSx,
+    PropsWithSx,
     mui.types.PropsWithComponent {
     override var children: react.ReactNode?
 

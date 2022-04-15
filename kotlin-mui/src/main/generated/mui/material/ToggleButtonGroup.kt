@@ -63,7 +63,7 @@ external interface ToggleButtonGroupProps :
      * The component orientation (layout flow direction).
      * @default 'horizontal'
      */
-    var orientation: mui.material.Orientation?
+    var orientation: Orientation?
 
     /**
      * The size of the component.
