@@ -59,7 +59,7 @@ external interface TypographyProps :
      * Applies the theme typography styles.
      * @default 'body1'
      */
-    var variant: mui.system.Union? /* Variant | 'inherit', TypographyPropsVariantOverrides */
+    var variant: mui.material.styles.TypographyVariant?
 
     /**
      * The component maps the variant prop to a range of different HTML element types.
