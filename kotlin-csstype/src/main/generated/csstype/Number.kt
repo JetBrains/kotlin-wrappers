@@ -8,6 +8,7 @@ package csstype
 
 sealed external interface NumberType :
     AnimationIterationCount,
+    Flex,
     FlexGrow,
     FlexShrink,
     LineHeight,
