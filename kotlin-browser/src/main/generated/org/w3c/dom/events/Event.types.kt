@@ -295,3 +295,6 @@ inline val Event.Companion.ONLINE: EventType<Event>
 
 inline val Event.Companion.UNLOAD: EventType<Event>
     get() = EventType("unload")
+
+inline val Event.Companion.WEBKIT_FULLSCREEN_CHANGE: EventType<Event>
+    get() = EventType("webkitfullscreenchange")
