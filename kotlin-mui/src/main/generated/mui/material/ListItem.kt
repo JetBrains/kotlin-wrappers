@@ -131,7 +131,7 @@ external interface ListItemBaseProps :
  * Demos:
  *
  * - [Lists](https://mui.com/material-ui/react-list/)
- * - [Transfer List](https://mui.com/material-ui/react-transfer-list/)
+ * - [Transfer list](https://mui.com/material-ui/react-transfer-list/)
  *
  * API:
  *

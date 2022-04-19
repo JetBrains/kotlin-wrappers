@@ -67,6 +67,7 @@ external interface DialogProps :
 
     /**
      * Callback fired when the backdrop is clicked.
+     * @deprecated Use the `onClose` prop with the `reason` argument to handle the `backdropClick` events.
      */
     override var onBackdropClick: react.dom.events.ReactEventHandler<*>?
 

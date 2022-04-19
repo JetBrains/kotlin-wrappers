@@ -22,7 +22,7 @@ external interface ClockPickerProps<TDate> : react.PropsWithClassName {
 
     /**
      * The components used for each slot.
-     * Either a string to use a HTML element or a component.
+     * Either a string to use an HTML element or a component.
      */
     var components: Components?
 
@@ -136,6 +136,7 @@ external interface ExportedClockPickerProps<TDate> : react.Props {
 
     /**
      * Accessible text that helps user to understand which time and view is selected.
+     * @template TDate
      * @param {ClockPickerView} view The current view rendered.
      * @param {TDate | null} time The current time.
      * @param {MuiPickersAdapter<TDate>} adapter The current date adapter.

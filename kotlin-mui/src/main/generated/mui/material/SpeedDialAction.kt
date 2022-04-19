@@ -70,7 +70,7 @@ external interface SpeedDialActionProps :
  *
  * Demos:
  *
- * - [Speed Dial](https://mui.com/material-ui/react-speed-dial/)
+ * - [Speed dial](https://mui.com/material-ui/react-speed-dial/)
  *
  * API:
  *
