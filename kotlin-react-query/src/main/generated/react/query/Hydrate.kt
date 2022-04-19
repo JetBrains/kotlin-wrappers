@@ -10,9 +10,10 @@ external fun useHydrate(
     options: HydrateOptions = definedExternally,
 )
 
-external interface HydrateProps : react.Props {
+external interface HydrateProps : react.PropsWithChildren {
     var state: dynamic
     var options: HydrateOptions
+    override var children: react.ReactNode?
 }
 
 external val Hydrate: react.FC<HydrateProps>
