@@ -17,7 +17,7 @@ external interface AutocompleteProps<T> :
     /**
      * Props applied to the [`Chip`](/material-ui/api/chip/) element.
      */
-    var ChipProps: dynamic
+    var ChipProps: ChipProps?
 
     /**
      * Override or extend the styles applied to the component.
@@ -99,7 +99,7 @@ external interface AutocompleteProps<T> :
     /**
      * Props applied to the Listbox element.
      */
-    var ListboxProps: dynamic
+    var ListboxProps: react.Props? /* ReturnType<ReturnType<typeof useAutocomplete>['getListboxProps']> */
 
     /**
      * If `true`, the component is in a loading state.
@@ -237,11 +237,11 @@ external interface AutocompleteRenderInputParams : react.Props {
 
     var size: mui.system.Union /* 'small' | undefined */
 
-    var InputLabelProps: dynamic
+    var InputLabelProps: react.Props /* ReturnType<ReturnType<typeof useAutocomplete>['getInputLabelProps']> */
 
-    var InputProps: dynamic
+    var InputProps: react.Props /* { ref: React.Ref<any>; className: string; startAdornment: React.ReactNode; endAdornment: React.ReactNode; } */
 
-    var inputProps: dynamic
+    var inputProps: react.Props /* ReturnType<ReturnType<typeof useAutocomplete>['getInputProps']> */
 }
 
 /**

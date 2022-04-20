@@ -20,7 +20,7 @@ external interface ModalUnstyledProps :
     /**
      * Props applied to the backdrop element.
      */
-    var BackdropProps: dynamic
+    var BackdropProps: react.Props? /* React.ComponentPropsWithRef<'div'> */
 
     /**
      * A single child content element.
