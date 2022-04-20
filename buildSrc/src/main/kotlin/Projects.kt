@@ -2,7 +2,6 @@ import org.gradle.api.Project
 
 private val TARGET_ALIASES = mapOf(
     "react-core" to "react",
-    "react-css" to "react",
     "react-dom" to "react",
     "react-dom-legacy" to "react",
     "react-legacy" to "react",
