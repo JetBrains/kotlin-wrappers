@@ -295,7 +295,7 @@ external interface OutlinedTextFieldProps :
  * Demos:
  *
  * - [Autocomplete](https://mui.com/material-ui/react-autocomplete/)
- * - [Text Fields](https://mui.com/material-ui/react-text-field/)
+ * - [Text fields](https://mui.com/material-ui/react-text-field/)
  *
  * API:
  *

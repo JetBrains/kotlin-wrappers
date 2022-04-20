@@ -53,7 +53,7 @@ external interface AppBarProps :
  *
  * Demos:
  *
- * - [App Bar](https://mui.com/material-ui/react-app-bar/)
+ * - [App bar](https://mui.com/material-ui/react-app-bar/)
  *
  * API:
  *

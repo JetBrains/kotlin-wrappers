@@ -68,7 +68,7 @@ external interface SwitchProps :
  * Demos:
  *
  * - [Switches](https://mui.com/material-ui/react-switch/)
- * - [Transfer List](https://mui.com/material-ui/react-transfer-list/)
+ * - [Transfer list](https://mui.com/material-ui/react-transfer-list/)
  *
  * API:
  *

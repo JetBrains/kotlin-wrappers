@@ -90,7 +90,7 @@ external interface ButtonGroupProps :
  *
  * Demos:
  *
- * - [Button Group](https://mui.com/material-ui/react-button-group/)
+ * - [Button group](https://mui.com/material-ui/react-button-group/)
  *
  * API:
  *

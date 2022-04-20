@@ -96,7 +96,7 @@ external interface ToggleButtonProps :
  *
  * Demos:
  *
- * - [Toggle Button](https://mui.com/material-ui/react-toggle-button/)
+ * - [Toggle button](https://mui.com/material-ui/react-toggle-button/)
  *
  * API:
  *

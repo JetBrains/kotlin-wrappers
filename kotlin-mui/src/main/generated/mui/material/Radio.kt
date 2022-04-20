@@ -63,7 +63,7 @@ external interface RadioProps :
  *
  * Demos:
  *
- * - [Radio Buttons](https://mui.com/material-ui/react-radio-button/)
+ * - [Radio buttons](https://mui.com/material-ui/react-radio-button/)
  *
  * API:
  *

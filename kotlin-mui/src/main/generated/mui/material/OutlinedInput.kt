@@ -42,7 +42,7 @@ external interface OutlinedInputProps :
  *
  * Demos:
  *
- * - [Text Fields](https://mui.com/material-ui/react-text-field/)
+ * - [Text fields](https://mui.com/material-ui/react-text-field/)
  *
  * API:
  *

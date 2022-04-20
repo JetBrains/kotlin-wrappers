@@ -129,6 +129,7 @@ external interface ModalUnstyledProps :
 
     /**
      * Callback fired when the backdrop is clicked.
+     * @deprecated Use the `onClose` prop with the `reason` argument to handle the `backdropClick` events.
      */
     var onBackdropClick: react.dom.events.ReactEventHandler<*>?
 

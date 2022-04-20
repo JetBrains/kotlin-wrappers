@@ -123,7 +123,7 @@ external interface CheckboxProps :
  * Demos:
  *
  * - [Checkboxes](https://mui.com/material-ui/react-checkbox/)
- * - [Transfer List](https://mui.com/material-ui/react-transfer-list/)
+ * - [Transfer list](https://mui.com/material-ui/react-transfer-list/)
  *
  * API:
  *

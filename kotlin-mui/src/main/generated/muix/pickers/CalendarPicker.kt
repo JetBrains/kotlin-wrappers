@@ -59,6 +59,7 @@ external interface CalendarPickerProps<TDate> : react.PropsWithClassName {
 
     /**
      * Callback firing on month change. @DateIOType
+     * @template TDate
      * @param {TDate} month The new month.
      */
     var onMonthChange: ((month: TDate) -> Unit)?
@@ -90,6 +91,7 @@ external interface CalendarPickerProps<TDate> : react.PropsWithClassName {
 
     /**
      * Disable specific date. @DateIOType
+     * @template TDate
      * @param {TDate} day The date to check.
      * @returns {boolean} If `true` the day will be disabled.
      */
@@ -111,11 +113,11 @@ external interface CalendarPickerProps<TDate> : react.PropsWithClassName {
  *
  * Demos:
  *
- * - [Date Picker](https://mui.com/components/x/react-date-pickers/date-picker/)
+ * - [Date Picker](https://mui.com/x/react-date-pickers/date-picker/)
  *
  * API:
  *
- * - [CalendarPicker API](https://mui.com/api/calendar-picker/)
+ * - [CalendarPicker API](https://mui.com/x/api/date-pickers/calendar-picker/)
  */
 @JsName("default")
 external val CalendarPicker: react.FC<CalendarPickerProps<*>>

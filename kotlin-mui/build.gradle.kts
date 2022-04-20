@@ -10,4 +10,5 @@ dependencies {
 
     api(npmv("@mui/material"))
     api(npmv("@mui/lab"))
+    api(npmv("@mui/x-date-pickers"))
 }

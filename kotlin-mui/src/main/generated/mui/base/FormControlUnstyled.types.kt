@@ -7,13 +7,11 @@ import csstype.ClassName
 external interface FormControlUnstyledProps :
     react.dom.html.HTMLAttributes<org.w3c.dom.HTMLDivElement>
 
-external interface FormControlUnstyledOwnProps :
-    react.PropsWithChildren,
-    react.PropsWithClassName {
+external interface FormControlUnstyledOwnProps : react.PropsWithClassName {
     /**
      * The content of the component.
      */
-    override var children: react.ReactNode?
+    var children: dynamic
 
     /**
      * Class name applied to the root element.
@@ -50,12 +48,6 @@ external interface FormControlUnstyledOwnProps :
      * @default false
      */
     var error: Boolean?
-
-    /**
-     * If `true`, the component is displayed in focused state.
-     * @default false
-     */
-    var focused: Boolean?
 
     var onChange: react.dom.events.ChangeEventHandler<NativeFormControlElement>?
 

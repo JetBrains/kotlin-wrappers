@@ -38,6 +38,7 @@ external interface YearPickerProps<TDate> : react.PropsWithClassName {
 external interface ExportedYearPickerProps<TDate> : react.Props {
     /**
      * Callback firing on year change @DateIOType.
+     * @template TDate
      * @param {TDate} year The new year.
      */
     var onYearChange: ((year: TDate) -> Unit)?
@@ -45,6 +46,7 @@ external interface ExportedYearPickerProps<TDate> : react.Props {
     /**
      * Disable specific years dynamically.
      * Works like `shouldDisableDate` but for year selection view @DateIOType.
+     * @template TDate
      * @param {TDate} year The year to test.
      * @returns {boolean} Return `true` if the year should be disabled.
      */
