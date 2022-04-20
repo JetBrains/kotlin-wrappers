@@ -20,7 +20,6 @@ dependencies {
         api(project(":kotlin-react"))
         api(project(":kotlin-react-beautiful-dnd"))
         api(project(":kotlin-react-core"))
-        api(project(":kotlin-react-css"))
         api(project(":kotlin-react-dom"))
         api(project(":kotlin-react-dom-legacy"))
         api(project(":kotlin-react-legacy"))

@@ -66,9 +66,6 @@ include("kotlin-react-beautiful-dnd")
 // Kotlin/JS: React wrappers
 include("kotlin-react-core")
 
-// Kotlin/JS: React CSS injection
-include("kotlin-react-css")
-
 // Kotlin/JS: React DOM wrappers
 include("kotlin-react-dom")
 
