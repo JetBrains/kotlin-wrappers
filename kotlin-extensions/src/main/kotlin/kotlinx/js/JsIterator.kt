@@ -1,13 +1,20 @@
 package kotlinx.js
 
-sealed external interface JsIteratorResult<out T> {
-    val value: T
-    val done: Boolean
-}
-
 /** ES6 Iterator type. */
 sealed external interface JsIterator<out T> {
-    fun next(): JsIteratorResult<T>
+    fun next(): Result<T, Void>
+
+    sealed interface Result<out T, out TReturn> {
+        val done: Boolean
+    }
+
+    sealed interface YieldResult<TYield> : Result<TYield, Void> {
+        val value: TYield
+    }
+
+    sealed interface ReturnResult<TReturn> : Result<Void, TReturn> {
+        val value: TReturn
+    }
 }
 
 operator fun <T> JsIterator<T>.iterator(): Iterator<T> =
@@ -20,7 +27,9 @@ private class JsIteratorAdapter<T>(
 
     override fun next(): T {
         check(!lastResult.done)
-        val value = lastResult.value
+        val value = lastResult
+            .unsafeCast<JsIterator.ReturnResult<T>>()
+            .value
 
         lastResult = source.next()
         return value
