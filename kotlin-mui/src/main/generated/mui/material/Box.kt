@@ -15,8 +15,15 @@ external interface BoxProps :
     mui.types.PropsWithComponent {
     override var children: react.ReactNode?
 
+    /**
+     * The component used for the root node.
+     * Either a string to use a HTML element or a component.
+     */
     override var component: react.ElementType<*>?
 
+    /**
+     * The system prop that allows defining system overrides as well as additional CSS styles.
+     */
     override var sx: SxProps<Theme>?
 }
 
@@ -24,19 +31,11 @@ external interface BoxProps :
  *
  * Demos:
  *
- * - [Box](https://mui.com/components/box/)
+ * - [Box](https://mui.com/material-ui/react-box/)
  *
  * API:
  *
- * - [Box API](https://mui.com/components/box/#api)
- * NOTE - As a CSS utility component, Box also supports all system props.
- * You can use them as props directly on the component.
- * Props use same syntax as `sx`. Not all props are listed in the API section.
- *
- * Example:
- *
- * // For instance, a Box with margin-top:
- * <Box mt={2}>
+ * - [Box API](https://mui.com/material-ui/api/box/)
  */
 @JsName("default")
 external val Box: react.FC<BoxProps>

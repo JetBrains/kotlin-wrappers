@@ -6,8 +6,14 @@
 package mui.system
 
 external interface ThemeProviderProps : react.PropsWithChildren {
+    /**
+     * Your component tree.
+     */
     override var children: react.ReactNode?
 
+    /**
+     * A theme object. You can provide a function to extend the outer theme.
+     */
     var theme: dynamic
 }
 

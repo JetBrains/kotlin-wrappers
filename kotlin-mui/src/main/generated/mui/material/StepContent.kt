@@ -33,7 +33,7 @@ external interface StepContentProps :
      * [Follow this guide](/material-ui/transitions/#transitioncomponent-prop) to learn more about the requirements for this component.
      * @default Collapse
      */
-    var TransitionComponent: react.ComponentType<mui.material.transitions.TransitionProps>?
+    var TransitionComponent: react.ComponentType<*>?
 
     /**
      * Adjust the duration of the content expand transition.
