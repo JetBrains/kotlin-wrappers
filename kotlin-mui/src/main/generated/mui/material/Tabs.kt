@@ -105,7 +105,7 @@ external interface TabsProps :
      * Props applied to the tab indicator element.
      * @default  {}
      */
-    var TabIndicatorProps: react.dom.html.HTMLAttributes<org.w3c.dom.HTMLDivElement>?
+    var TabIndicatorProps: react.Props? /* React.HTMLAttributes<HTMLDivElement> & { sx?: SxProps<Theme> } */
 
     /**
      * Props applied to the [`TabScrollButton`](/material-ui/api/tab-scroll-button/) element.
