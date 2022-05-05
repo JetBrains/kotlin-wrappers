@@ -8,5 +8,4 @@ package muix.pickers
 external interface MobileTimePickerProps : react.Props
 
 
-@JsName("default")
 external val MobileTimePicker: react.FC<MobileTimePickerProps>

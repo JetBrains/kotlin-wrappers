@@ -119,5 +119,4 @@ external interface CalendarPickerProps<TDate> : react.PropsWithClassName {
  *
  * - [CalendarPicker API](https://mui.com/x/api/date-pickers/calendar-picker/)
  */
-@JsName("default")
 external val CalendarPicker: react.FC<CalendarPickerProps<*>>

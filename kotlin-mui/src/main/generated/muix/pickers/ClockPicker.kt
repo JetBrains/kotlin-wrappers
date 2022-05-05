@@ -154,5 +154,4 @@ external interface ExportedClockPickerProps<TDate> : react.Props {
 }
 
 
-@JsName("default")
 external val ClockPicker: react.FC<ClockPickerProps<*>>
