@@ -14,5 +14,4 @@ external interface StaticDatePickerProps : react.Props {
 }
 
 
-@JsName("default")
 external val StaticDatePicker: react.FC<StaticDatePickerProps>

@@ -79,5 +79,4 @@ external interface PickersDayProps<TDate> : mui.system.PropsWithSx {
 }
 
 
-@JsName("default")
 external val PickersDay: react.FC<PickersDayProps<*>>

@@ -25,5 +25,4 @@ external interface DateTimePickerProps : react.Props {
  *
  * - [DateTimePicker API](https://mui.com/x/api/date-pickers/date-time-picker/)
  */
-@JsName("default")
 external val DateTimePicker: react.FC<DateTimePickerProps>

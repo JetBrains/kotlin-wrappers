@@ -54,5 +54,4 @@ external interface ExportedYearPickerProps<TDate> : react.Props {
 }
 
 
-@JsName("default")
 external val YearPicker: react.FC<YearPickerProps<*>>

@@ -57,5 +57,4 @@ external interface MonthPickerProps<TDate> :
 }
 
 
-@JsName("default")
 external val MonthPicker: react.FC<MonthPickerProps<*>>

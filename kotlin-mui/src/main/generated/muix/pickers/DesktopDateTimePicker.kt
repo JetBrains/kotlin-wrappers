@@ -8,5 +8,4 @@ package muix.pickers
 external interface DesktopDateTimePickerProps : react.Props
 
 
-@JsName("default")
 external val DesktopDateTimePicker: react.FC<DesktopDateTimePickerProps>

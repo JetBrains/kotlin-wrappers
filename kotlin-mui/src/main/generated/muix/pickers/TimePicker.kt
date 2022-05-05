@@ -15,5 +15,4 @@ external interface TimePickerProps : react.Props {
 }
 
 
-@JsName("default")
 external val TimePicker: react.FC<TimePickerProps>
