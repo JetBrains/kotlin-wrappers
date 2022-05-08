@@ -44,33 +44,10 @@ package cesium
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Resource.html">Online Documentation</a>
  *
  * @constructor
- * @param [options] A url or an object with the following properties
+ * @param [options] A url or an object describing initialization options
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Resource.html">Online Documentation</a>
  */
-external class Resource(options: ConstructorOptions) {
-    /**
-     * @property [url] The url of the resource.
-     * @property [queryParameters] An object containing query parameters that will be sent when retrieving the resource.
-     * @property [templateValues] Key/Value pairs that are used to replace template values (eg. {x}).
-     * @property [headers] Additional HTTP headers that will be sent.
-     *   Default value - `{}`
-     * @property [proxy] A proxy to be used when loading the resource.
-     * @property [retryCallback] The Function to call when a request for this resource fails. If it returns true, the request will be retried.
-     * @property [retryAttempts] The number of times the retryCallback should be called before giving up.
-     *   Default value - `0`
-     * @property [request] A Request object that will be used. Intended for internal use only.
-     */
-    interface ConstructorOptions {
-        var url: String
-        var queryParameters: Any?
-        var templateValues: Any?
-        var headers: Any?
-        var proxy: Proxy?
-        var retryCallback: RetryCallback?
-        var retryAttempts: Int?
-        var request: Request?
-    }
-
+external class Resource(options: dynamic) {
     /**
      * Additional HTTP headers that will be sent with the request.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Resource.html#headers">Online Documentation</a>
@@ -626,6 +603,31 @@ external class Resource(options: ConstructorOptions) {
         var overrideMimeType: String?
     }
 
+    /**
+     * Initialization options for the Resource constructor
+     * @property [url] The url of the resource.
+     * @property [queryParameters] An object containing query parameters that will be sent when retrieving the resource.
+     * @property [templateValues] Key/Value pairs that are used to replace template values (eg. {x}).
+     * @property [headers] Additional HTTP headers that will be sent.
+     *   Default value - `{}`
+     * @property [proxy] A proxy to be used when loading the resource.
+     * @property [retryCallback] The Function to call when a request for this resource fails. If it returns true, the request will be retried.
+     * @property [retryAttempts] The number of times the retryCallback should be called before giving up.
+     *   Default value - `0`
+     * @property [request] A Request object that will be used. Intended for internal use only.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Resource.html#.ConstructorOptions">Online Documentation</a>
+     */
+    interface ConstructorOptions {
+        var url: String
+        var queryParameters: Any?
+        var templateValues: Any?
+        var headers: Any?
+        var proxy: Proxy?
+        var retryCallback: RetryCallback?
+        var retryAttempts: Int?
+        var request: Request?
+    }
+
     companion object {
         /**
          * Returns true if blobs are supported.
@@ -1133,11 +1135,3 @@ external class Resource(options: ConstructorOptions) {
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Resource.html#.RetryCallback">Online Documentation</a>
  */
 typealias RetryCallback = (resource: Resource?, error: Error?) -> dynamic
-
-inline fun Resource(
-    block: Resource.ConstructorOptions.() -> Unit,
-): Resource {
-    val options: Resource.ConstructorOptions = js("({})")
-    block(options)
-    return Resource(options)
-}

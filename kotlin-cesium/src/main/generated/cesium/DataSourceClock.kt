@@ -15,7 +15,7 @@ external class DataSourceClock {
      * Gets the event that is raised whenever a new property is assigned.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/DataSourceClock.html#definitionChanged">Online Documentation</a>
      */
-    val definitionChanged: Event
+    val definitionChanged: Event<*>
 
     /**
      * Gets or sets the desired start time of the clock.

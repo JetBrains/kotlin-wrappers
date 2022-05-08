@@ -49,9 +49,9 @@ external class HermiteSpline(options: ConstructorOptions) {
     /**
      * @property [times] An array of strictly increasing, unit-less, floating-point times at each point.
      *   The values are in no way connected to the clock time. They are the parameterization for the curve.
-     * @property [points] The array of [Cartesian3] control points.
-     * @property [inTangents] The array of [Cartesian3] incoming tangents at each control point.
-     * @property [outTangents] The array of [Cartesian3] outgoing tangents at each control point.
+     * @property [points] The array of control points.
+     * @property [inTangents] The array of incoming tangents at each control point.
+     * @property [outTangents] The array of outgoing tangents at each control point.
      */
     interface ConstructorOptions {
         var times: Array<out Double>
@@ -67,19 +67,19 @@ external class HermiteSpline(options: ConstructorOptions) {
     val times: Array<out Double>
 
     /**
-     * An array of [Cartesian3] control points.
+     * An array of control points.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/HermiteSpline.html#points">Online Documentation</a>
      */
     val points: Array<out Cartesian3>
 
     /**
-     * An array of [Cartesian3] incoming tangents at each control point.
+     * An array of incoming tangents at each control point.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/HermiteSpline.html#inTangents">Online Documentation</a>
      */
     val inTangents: Array<out Cartesian3>
 
     /**
-     * An array of [Cartesian3] outgoing tangents at each control point.
+     * An array of outgoing tangents at each control point.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/HermiteSpline.html#outTangents">Online Documentation</a>
      */
     val outTangents: Array<out Cartesian3>
@@ -181,7 +181,7 @@ external class HermiteSpline(options: ConstructorOptions) {
          *     ]
          * });
          * ```
-         * @return A hermite spline or a linear spline if less than 3 control points were given.
+         * @return A hermite spline, or a linear spline if less than 3 control points were given.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/HermiteSpline.html#.createNaturalCubic">Online Documentation</a>
          */
         fun createNaturalCubic(options: CreateNaturalCubicOptions): dynamic
@@ -213,7 +213,7 @@ external class HermiteSpline(options: ConstructorOptions) {
          *     lastTangent : new Cartesian3(1165345, 112641, 47281)
          * });
          * ```
-         * @return A hermite spline or a linear spline if less than 3 control points were given.
+         * @return A hermite spline, or a linear spline if less than 3 control points were given.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/HermiteSpline.html#.createClampedCubic">Online Documentation</a>
          */
         fun createClampedCubic(options: CreateClampedCubicOptions): dynamic
@@ -226,7 +226,7 @@ external class HermiteSpline(options: ConstructorOptions) {
          */
         interface CreateClampedCubicOptions {
             var times: Array<out Double>
-            var points: Array<out Cartesian3>
+            var points: Array<out Cartesian3 /* or number */>
             var firstTangent: Cartesian3
             var lastTangent: Cartesian3
         }

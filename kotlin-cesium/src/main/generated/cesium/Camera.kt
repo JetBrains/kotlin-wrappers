@@ -192,19 +192,19 @@ external class Camera(scene: Scene) {
      * Gets the event that will be raised at when the camera starts to move.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Camera.html#moveStart">Online Documentation</a>
      */
-    val moveStart: Event
+    val moveStart: Event<*>
 
     /**
      * Gets the event that will be raised when the camera has stopped moving.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Camera.html#moveEnd">Online Documentation</a>
      */
-    val moveEnd: Event
+    val moveEnd: Event<*>
 
     /**
      * Gets the event that will be raised when the camera has changed by `percentageChanged`.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Camera.html#changed">Online Documentation</a>
      */
-    val changed: Event
+    val changed: Event<*>
 
     /**
      * Sets the camera position, orientation and transform.
@@ -261,7 +261,7 @@ external class Camera(scene: Scene) {
      */
     interface SetViewOptions {
         var destination: dynamic
-        var orientation: CameraOrientation?
+        var orientation: Any /* HeadingPitchRollValues | DirectionUp */?
         var endTransform: Matrix4?
         var convert: Boolean?
     }
@@ -738,7 +738,7 @@ external class Camera(scene: Scene) {
      */
     interface FlyToOptions {
         var destination: dynamic
-        var orientation: CameraOrientation?
+        var orientation: Any?
         var duration: Double?
         var complete: FlightCompleteCallback?
         var cancel: FlightCancelledCallback?

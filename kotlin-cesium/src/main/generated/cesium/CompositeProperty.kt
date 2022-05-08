@@ -45,7 +45,7 @@ external class CompositeProperty {
      * than the current value.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CompositeProperty.html#definitionChanged">Online Documentation</a>
      */
-    val definitionChanged: Event
+    val definitionChanged: Event<*>
 
     /**
      * Gets the interval collection.

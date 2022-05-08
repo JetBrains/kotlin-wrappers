@@ -25,7 +25,7 @@ abstract external class PositionProperty {
      * a different result for the same time.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PositionProperty.html#definitionChanged">Online Documentation</a>
      */
-    abstract val definitionChanged: Event
+    abstract val definitionChanged: Event<*>
 
     /**
      * Gets the reference frame that the position is defined in.
@@ -43,7 +43,7 @@ abstract external class PositionProperty {
     abstract fun getValue(
         time: JulianDate,
         result: Cartesian3? = definedExternally,
-    ): Cartesian3
+    ): Cartesian3?
 
     /**
      * Gets the value of the property at the provided time and in the provided reference frame.
@@ -57,5 +57,5 @@ abstract external class PositionProperty {
         time: JulianDate,
         referenceFrame: ReferenceFrame,
         result: Cartesian3? = definedExternally,
-    ): Cartesian3
+    ): Cartesian3?
 }

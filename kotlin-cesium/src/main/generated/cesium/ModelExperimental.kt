@@ -26,7 +26,11 @@ external class ModelExperimental(options: ConstructorOptions) {
      * @property [minimumPixelSize] The approximate minimum pixel size of the model regardless of zoom.
      *   Default value - `0.0`
      * @property [maximumScale] The maximum scale size of a model. An upper limit for minimumPixelSize.
+     * @property [clampAnimations] Determines if the model's animations should hold a pose over frames where no keyframes are specified.
+     *   Default value - `true`
      * @property [debugShowBoundingVolume] For debugging only. Draws the bounding sphere for each draw command in the model.
+     *   Default value - `false`
+     * @property [debugWireframe] For debugging only. Draws the model in wireframe.
      *   Default value - `false`
      * @property [cull] Whether or not to cull the model using frustum/horizon culling. If the model is part of a 3D Tiles tileset, this property will always be false, since the 3D Tiles culling system is used.
      *   Default value - `true`
@@ -66,7 +70,9 @@ external class ModelExperimental(options: ConstructorOptions) {
         var scale: Double?
         var minimumPixelSize: Double?
         var maximumScale: Double?
+        var clampAnimations: Boolean?
         var debugShowBoundingVolume: Boolean?
+        var debugWireframe: Boolean?
         var cull: Boolean?
         var opaquePass: Boolean?
         var allowPicking: Boolean?
@@ -104,6 +110,18 @@ external class ModelExperimental(options: ConstructorOptions) {
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ModelExperimental.html#readyPromise">Online Documentation</a>
      */
     val readyPromise: kotlin.js.Promise<ModelExperimental>
+
+    /**
+     * The currently playing glTF animations.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ModelExperimental.html#activeAnimations">Online Documentation</a>
+     */
+    val activeAnimations: ModelExperimentalAnimationCollection
+
+    /**
+     * Determines if the model's animations should hold a pose over frames where no keyframes are specified.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ModelExperimental.html#clampAnimations">Online Documentation</a>
+     */
+    var clampAnimations: Boolean
 
     /**
      * Point cloud shading settings for controlling point cloud attenuation
@@ -151,6 +169,14 @@ external class ModelExperimental(options: ConstructorOptions) {
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ModelExperimental.html#debugShowBoundingVolume">Online Documentation</a>
      */
     var debugShowBoundingVolume: Boolean
+
+    /**
+     * This property is for debugging only; it is not for production use nor is it optimized.
+     *
+     * Draws the model in wireframe.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ModelExperimental.html#debugWireframe">Online Documentation</a>
+     */
+    var debugWireframe: Boolean
 
     /**
      * Whether or not to render the model.
@@ -321,6 +347,8 @@ external class ModelExperimental(options: ConstructorOptions) {
          *   Default value - `false`
          * @property [debugShowBoundingVolume] For debugging only. Draws the bounding sphere for each draw command in the model.
          *   Default value - `false`
+         * @property [debugWireframe] For debugging only. Draws the model in wireframe.
+         *   Default value - `false`
          * @property [cull] Whether or not to cull the model using frustum/horizon culling. If the model is part of a 3D Tiles tileset, this property will always be false, since the 3D Tiles culling system is used.
          *   Default value - `true`
          * @property [opaquePass] The pass to use in the [DrawCommand] for the opaque portions of the model.
@@ -367,6 +395,7 @@ external class ModelExperimental(options: ConstructorOptions) {
             var incrementallyLoadTextures: Boolean?
             var releaseGltfJson: Boolean?
             var debugShowBoundingVolume: Boolean?
+            var debugWireframe: Boolean?
             var cull: Boolean?
             var opaquePass: Boolean?
             var upAxis: Axis?

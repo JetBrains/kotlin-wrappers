@@ -160,9 +160,18 @@ external class Matrix3(
          * const v2 = [0.0, 0.0, 1.0, 1.0, 1.0, 2.0, 2.0, 2.0, 3.0, 3.0, 3.0];
          * const m2 = Matrix3.fromArray(v2, 2);
          * ```
+         * @param [array] The array whose 9 consecutive elements correspond to the positions of the matrix.  Assumes column-major order.
+         * @param [startingIndex] The offset into the array of the first element, which corresponds to first column first row position in the matrix.
+         *   Default value - `0`
+         * @param [result] The object onto which to store the result.
+         * @return The modified result parameter or a new Matrix3 instance if one was not provided.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Matrix3.html#.fromArray">Online Documentation</a>
          */
-        var fromArray: Any
+        fun fromArray(
+            array: Array<out Double>,
+            startingIndex: Int? = definedExternally,
+            result: Matrix3? = definedExternally,
+        ): Matrix3
 
         /**
          * Creates a Matrix3 instance from a column-major order array.

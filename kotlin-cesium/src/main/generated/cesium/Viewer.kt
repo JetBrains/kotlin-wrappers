@@ -309,13 +309,13 @@ external class Viewer(
      * Gets the event that is raised when the selected entity changes.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Viewer.html#selectedEntityChanged">Online Documentation</a>
      */
-    val selectedEntityChanged: Event
+    val selectedEntityChanged: Event<*>
 
     /**
      * Gets the event that is raised when the tracked entity changes.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Viewer.html#trackedEntityChanged">Online Documentation</a>
      */
-    val trackedEntityChanged: Event
+    val trackedEntityChanged: Event<*>
 
     /**
      * Gets or sets the data source to track with the viewer's clock.

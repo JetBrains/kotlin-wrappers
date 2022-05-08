@@ -65,7 +65,7 @@ external class FrameRateMonitor {
      * over the sampling window as its second parameter.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/FrameRateMonitor.html#lowFrameRate">Online Documentation</a>
      */
-    var lowFrameRate: Event
+    var lowFrameRate: Event<*>
 
     /**
      * Gets the event that is raised when the frame rate returns to a normal level after having been low.
@@ -73,7 +73,7 @@ external class FrameRateMonitor {
      * number of frames per second over the sampling window as its second parameter.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/FrameRateMonitor.html#nominalFrameRate">Online Documentation</a>
      */
-    var nominalFrameRate: Event
+    var nominalFrameRate: Event<*>
 
     /**
      * Gets the most recently computed average frames-per-second over the last `samplingWindow`.

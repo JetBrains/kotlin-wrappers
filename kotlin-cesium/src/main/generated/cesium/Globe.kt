@@ -117,6 +117,44 @@ external class Globe(var ellipsoid: Ellipsoid = definedExternally) {
     var showGroundAtmosphere: Boolean
 
     /**
+     * The intensity of the light that is used for computing the ground atmosphere color.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Globe.html#atmosphereLightIntensity">Online Documentation</a>
+     */
+    var atmosphereLightIntensity: Double
+
+    /**
+     * The Rayleigh scattering coefficient used in the atmospheric scattering equations for the ground atmosphere.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Globe.html#atmosphereRayleighCoefficient">Online Documentation</a>
+     */
+    var atmosphereRayleighCoefficient: Cartesian3
+
+    /**
+     * The Mie scattering coefficient used in the atmospheric scattering equations for the ground atmosphere.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Globe.html#atmosphereMieCoefficient">Online Documentation</a>
+     */
+    var atmosphereMieCoefficient: Cartesian3
+
+    /**
+     * The Rayleigh scale height used in the atmospheric scattering equations for the ground atmosphere, in meters.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Globe.html#atmosphereRayleighScaleHeight">Online Documentation</a>
+     */
+    var atmosphereRayleighScaleHeight: Double
+
+    /**
+     * The Mie scale height used in the atmospheric scattering equations for the ground atmosphere, in meters.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Globe.html#atmosphereMieScaleHeight">Online Documentation</a>
+     */
+    var atmosphereMieScaleHeight: Double
+
+    /**
+     * The anisotropy of the medium to consider for Mie scattering.
+     *
+     * Valid values are between -1.0 and 1.0.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Globe.html#atmosphereMieAnisotropy">Online Documentation</a>
+     */
+    var atmosphereMieAnisotropy: Double
+
+    /**
      * The distance where everything becomes lit. This only takes effect
      * when `enableLighting` or `showGroundAtmosphere` is `true`.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Globe.html#lightingFadeOutDistance">Online Documentation</a>
@@ -234,7 +272,7 @@ external class Globe(var ellipsoid: Ellipsoid = definedExternally) {
      * Gets an event that's raised when an imagery layer is added, shown, hidden, moved, or removed.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Globe.html#imageryLayersUpdatedEvent">Online Documentation</a>
      */
-    val imageryLayersUpdatedEvent: Event
+    val imageryLayersUpdatedEvent: Event<*>
 
     /**
      * Returns `true` when the tile load queue is empty, `false` otherwise.  When the load queue is empty,
@@ -279,21 +317,21 @@ external class Globe(var ellipsoid: Ellipsoid = definedExternally) {
      * Gets an event that's raised when the terrain provider is changed
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Globe.html#terrainProviderChanged">Online Documentation</a>
      */
-    val terrainProviderChanged: Event
+    val terrainProviderChanged: Event<*>
 
     /**
      * Gets an event that's raised when the length of the tile load queue has changed since the last render frame.  When the load queue is empty,
      * all terrain and imagery for the current view have been loaded.  The event passes the new length of the tile load queue.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Globe.html#tileLoadProgressEvent">Online Documentation</a>
      */
-    var tileLoadProgressEvent: Event
+    var tileLoadProgressEvent: Event<*>
 
     /**
      * Gets or sets the material appearance of the Globe.  This can be one of several built-in [Material] objects or a custom material, scripted with
      * [Fabric](https://github.com/CesiumGS/cesium/wiki/Fabric).
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Globe.html#material">Online Documentation</a>
      */
-    var material: Material
+    var material: Material?
 
     /**
      * The color to render the back side of the globe when the camera is underground or the globe is translucent,

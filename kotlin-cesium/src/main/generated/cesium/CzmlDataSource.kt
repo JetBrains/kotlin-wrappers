@@ -4,6 +4,7 @@
 @file:JsNonModule
 
 @file:Suppress(
+    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
     "EXTERNAL_CLASS_CONSTRUCTOR_PROPERTY_PARAMETER",
 )
 
@@ -42,19 +43,19 @@ external class CzmlDataSource(var name: String = definedExternally) {
      * Gets an event that will be raised when the underlying data changes.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CzmlDataSource.html#changedEvent">Online Documentation</a>
      */
-    var changedEvent: Event
+    var changedEvent: Event<*>
 
     /**
      * Gets an event that will be raised if an error is encountered during processing.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CzmlDataSource.html#errorEvent">Online Documentation</a>
      */
-    var errorEvent: Event
+    var errorEvent: Event<*>
 
     /**
      * Gets an event that will be raised when the data source either starts or stops loading.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CzmlDataSource.html#loadingEvent">Online Documentation</a>
      */
-    var loadingEvent: Event
+    var loadingEvent: Event<*>
 
     /**
      * Gets whether or not this data source should be displayed.
@@ -77,29 +78,23 @@ external class CzmlDataSource(var name: String = definedExternally) {
     /**
      * Processes the provided url or CZML object without clearing any existing data.
      * @param [czml] A url or CZML object to be processed.
+     * @param [options] An object specifying configuration options
      * @return A promise that resolves to this instances once the data is processed.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CzmlDataSource.html#process">Online Documentation</a>
      */
     fun process(
         czml: Resource,
-        options: ProcessOptions? = definedExternally,
+        options: LoadOptions? = definedExternally,
     ): kotlin.js.Promise<CzmlDataSource>
-
-    /**
-     * @property [sourceUri] Overrides the url to use for resolving relative links.
-     */
-    interface ProcessOptions {
-        var sourceUri: String?
-    }
 
     fun process(
         czml: String,
-        options: ProcessOptions? = definedExternally,
+        options: LoadOptions? = definedExternally,
     ): kotlin.js.Promise<CzmlDataSource>
 
     fun process(
         czml: Any,
-        options: ProcessOptions? = definedExternally,
+        options: LoadOptions? = definedExternally,
     ): kotlin.js.Promise<CzmlDataSource>
 
     /**
@@ -162,7 +157,7 @@ external class CzmlDataSource(var name: String = definedExternally) {
          * Gets the array of CZML processing functions.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CzmlDataSource.html#.updaters">Online Documentation</a>
          */
-        var updaters: Array<out Any>
+        var updaters: Array<out UpdaterFunction>
 
         /**
          * A helper function used by custom CZML updater functions
@@ -238,3 +233,9 @@ external class CzmlDataSource(var name: String = definedExternally) {
         }
     }
 }
+
+/**
+ * Function
+ * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CzmlDataSource.html#.UpdaterFunction">Online Documentation</a>
+ */
+typealias UpdaterFunction = (entity: Entity, packet: Any, entityCollection: EntityCollection, sourceUri: String) -> Unit

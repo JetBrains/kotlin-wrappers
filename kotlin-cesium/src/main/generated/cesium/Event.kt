@@ -27,7 +27,7 @@ package cesium
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Event.html">Online Documentation</a>
  */
-external class Event {
+external class Event<Listener : Function<*>> {
     /**
      * The number of listeners currently subscribed to the event.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Event.html#numberOfListeners">Online Documentation</a>
@@ -45,7 +45,7 @@ external class Event {
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Event.html#addEventListener">Online Documentation</a>
      */
     fun addEventListener(
-        listener: () -> Unit,
+        listener: Listener,
         scope: Any? = definedExternally,
     ): RemoveCallback
 
@@ -57,7 +57,7 @@ external class Event {
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Event.html#removeEventListener">Online Documentation</a>
      */
     fun removeEventListener(
-        listener: () -> Unit,
+        listener: Listener,
         scope: Any? = definedExternally,
     ): Boolean
 
@@ -66,7 +66,7 @@ external class Event {
      * @param [arguments] This method takes any number of parameters and passes them through to the listener functions.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Event.html#raiseEvent">Online Documentation</a>
      */
-    fun raiseEvent(vararg arguments: Any)
+    fun raiseEvent(vararg arguments: dynamic)
 }
 
 /**

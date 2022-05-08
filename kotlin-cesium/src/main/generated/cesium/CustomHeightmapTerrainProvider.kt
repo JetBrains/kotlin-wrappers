@@ -60,7 +60,7 @@ external class CustomHeightmapTerrainProvider(options: ConstructorOptions) : Ter
      * are passed an instance of [TileProviderError].
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CustomHeightmapTerrainProvider.html#errorEvent">Online Documentation</a>
      */
-    override val errorEvent: Event
+    override val errorEvent: Event<*>
 
     /**
      * Gets the credit to display when this terrain provider is active. Typically this is used to credit

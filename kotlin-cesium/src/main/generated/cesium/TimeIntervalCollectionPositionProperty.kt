@@ -18,7 +18,7 @@ package cesium
  *   Default value - [ReferenceFrame.FIXED]
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TimeIntervalCollectionPositionProperty.html">Online Documentation</a>
  */
-external class TimeIntervalCollectionPositionProperty(var referenceFrame: ReferenceFrame = definedExternally) {
+external class TimeIntervalCollectionPositionProperty(val referenceFrame: ReferenceFrame = definedExternally) {
     /**
      * Gets a value indicating if this property is constant.  A property is considered
      * constant if getValue always returns the same result for the current definition.
@@ -32,13 +32,13 @@ external class TimeIntervalCollectionPositionProperty(var referenceFrame: Refere
      * a different result for the same time.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TimeIntervalCollectionPositionProperty.html#definitionChanged">Online Documentation</a>
      */
-    val definitionChanged: Event
+    val definitionChanged: Event<*>
 
     /**
      * Gets the interval collection.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TimeIntervalCollectionPositionProperty.html#intervals">Online Documentation</a>
      */
-    var intervals: TimeIntervalCollection
+    val intervals: TimeIntervalCollection
 
     /**
      * Gets the value of the property at the provided time in the fixed frame.
@@ -50,7 +50,7 @@ external class TimeIntervalCollectionPositionProperty(var referenceFrame: Refere
     fun getValue(
         time: JulianDate,
         result: Any? = definedExternally,
-    ): Any
+    ): Cartesian3?
 
     /**
      * Gets the value of the property at the provided time and in the provided reference frame.
@@ -64,5 +64,5 @@ external class TimeIntervalCollectionPositionProperty(var referenceFrame: Refere
         time: JulianDate,
         referenceFrame: ReferenceFrame,
         result: Cartesian3? = definedExternally,
-    ): Cartesian3
+    ): Cartesian3?
 }

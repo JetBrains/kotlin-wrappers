@@ -18,7 +18,7 @@ external class BoxGraphics {
      * Gets the event that is raised whenever a property or sub-property is changed or modified.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BoxGraphics.html#definitionChanged">Online Documentation</a>
      */
-    val definitionChanged: Event
+    val definitionChanged: Event<*>
 
     /**
      * Gets or sets the boolean Property specifying the visibility of the box.

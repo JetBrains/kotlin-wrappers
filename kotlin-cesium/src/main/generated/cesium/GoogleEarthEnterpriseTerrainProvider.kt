@@ -60,7 +60,7 @@ external class GoogleEarthEnterpriseTerrainProvider(options: ConstructorOptions)
      * are passed an instance of [TileProviderError].
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GoogleEarthEnterpriseTerrainProvider.html#errorEvent">Online Documentation</a>
      */
-    override val errorEvent: Event
+    override val errorEvent: Event<*>
 
     /**
      * Gets a value indicating whether or not the provider is ready for use.
@@ -153,14 +153,13 @@ external class GoogleEarthEnterpriseTerrainProvider(options: ConstructorOptions)
      * @param [x] The X coordinate of the tile for which to request geometry.
      * @param [y] The Y coordinate of the tile for which to request geometry.
      * @param [level] The level of the tile for which to request geometry.
-     * @return Undefined if nothing need to be loaded or a Promise that resolves when all required tiles are loaded
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GoogleEarthEnterpriseTerrainProvider.html#loadTileDataAvailability">Online Documentation</a>
      */
     override fun loadTileDataAvailability(
         x: Double,
         y: Double,
         level: Int,
-    ): kotlin.js.Promise<Nothing?>?
+    ): Nothing?
 }
 
 inline fun GoogleEarthEnterpriseTerrainProvider(

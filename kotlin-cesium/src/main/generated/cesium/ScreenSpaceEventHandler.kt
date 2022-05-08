@@ -3,6 +3,10 @@
 @file:JsModule("cesium")
 @file:JsNonModule
 
+@file:Suppress(
+    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
+)
+
 package cesium
 
 /**
@@ -25,9 +29,9 @@ external class ScreenSpaceEventHandler(element: org.w3c.dom.HTMLCanvasElement? =
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ScreenSpaceEventHandler.html#setInputAction">Online Documentation</a>
      */
     fun setInputAction(
-        action: Function<*>,
-        type: Double,
-        modifier: Double? = definedExternally,
+        action: dynamic,
+        type: ScreenSpaceEventType,
+        modifier: KeyboardEventModifier? = definedExternally,
     )
 
     /**
@@ -39,9 +43,9 @@ external class ScreenSpaceEventHandler(element: org.w3c.dom.HTMLCanvasElement? =
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ScreenSpaceEventHandler.html#getInputAction">Online Documentation</a>
      */
     fun getInputAction(
-        type: Double,
-        modifier: Double? = definedExternally,
-    ): Function<*>
+        type: ScreenSpaceEventType,
+        modifier: KeyboardEventModifier? = definedExternally,
+    ): dynamic
 
     /**
      * Removes the function to be executed on an input event.
@@ -51,8 +55,8 @@ external class ScreenSpaceEventHandler(element: org.w3c.dom.HTMLCanvasElement? =
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ScreenSpaceEventHandler.html#removeInputAction">Online Documentation</a>
      */
     fun removeInputAction(
-        type: Double,
-        modifier: Double? = definedExternally,
+        type: ScreenSpaceEventType,
+        modifier: KeyboardEventModifier? = definedExternally,
     )
 
     /**
@@ -78,6 +82,43 @@ external class ScreenSpaceEventHandler(element: org.w3c.dom.HTMLCanvasElement? =
      */
     fun destroy()
 
+    /**
+     * An Event that occurs at a single position on screen.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ScreenSpaceEventHandler.html#.PositionedEvent">Online Documentation</a>
+     */
+    interface PositionedEvent {
+        var position: Cartesian2
+    }
+
+    /**
+     * An Event that starts at one position and ends at another.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ScreenSpaceEventHandler.html#.MotionEvent">Online Documentation</a>
+     */
+    interface MotionEvent {
+        var startPosition: Cartesian2
+        var endPosition: Cartesian2
+    }
+
+    /**
+     * An Event that occurs at a two positions on screen.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ScreenSpaceEventHandler.html#.TwoPointEvent">Online Documentation</a>
+     */
+    interface TwoPointEvent {
+        var position1: Cartesian2
+        var position2: Cartesian2
+    }
+
+    /**
+     * An Event that starts at a two positions on screen and moves to two other positions.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ScreenSpaceEventHandler.html#.TwoPointMotionEvent">Online Documentation</a>
+     */
+    interface TwoPointMotionEvent {
+        var position1: Cartesian2
+        var position2: Cartesian2
+        var previousPosition1: Cartesian2
+        var previousPosition2: Cartesian2
+    }
+
     companion object {
         /**
          * The amount of time, in milliseconds, that mouse events will be disabled after
@@ -94,3 +135,33 @@ external class ScreenSpaceEventHandler(element: org.w3c.dom.HTMLCanvasElement? =
         var touchHoldDelayMilliseconds: Double
     }
 }
+
+/**
+ * @param [event] The event which triggered the listener
+ * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ScreenSpaceEventHandler.html#.PositionedEventCallback">Online Documentation</a>
+ */
+typealias PositionedEventCallback = (event: ScreenSpaceEventHandler.PositionedEvent) -> Unit
+
+/**
+ * @param [event] The event which triggered the listener
+ * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ScreenSpaceEventHandler.html#.MotionEventCallback">Online Documentation</a>
+ */
+typealias MotionEventCallback = (event: ScreenSpaceEventHandler.MotionEvent) -> Unit
+
+/**
+ * @param [event] The event which triggered the listener
+ * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ScreenSpaceEventHandler.html#.TwoPointEventCallback">Online Documentation</a>
+ */
+typealias TwoPointEventCallback = (event: ScreenSpaceEventHandler.TwoPointEvent) -> Unit
+
+/**
+ * @param [event] The event which triggered the listener
+ * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ScreenSpaceEventHandler.html#.TwoPointMotionEventCallback">Online Documentation</a>
+ */
+typealias TwoPointMotionEventCallback = (event: ScreenSpaceEventHandler.TwoPointMotionEvent) -> Unit
+
+/**
+ * @param [delta] The amount that the mouse wheel moved
+ * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ScreenSpaceEventHandler.html#.WheelEventCallback">Online Documentation</a>
+ */
+typealias WheelEventCallback = (delta: Double) -> Unit
