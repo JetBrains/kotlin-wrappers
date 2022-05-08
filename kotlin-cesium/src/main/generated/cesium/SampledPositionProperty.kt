@@ -37,7 +37,7 @@ external class SampledPositionProperty(
      * a different result for the same time.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/SampledPositionProperty.html#definitionChanged">Online Documentation</a>
      */
-    val definitionChanged: Event
+    val definitionChanged: Event<*>
 
     /**
      * Gets the degree of interpolation to perform when retrieving a value. Call `setInterpolationOptions` to set this.
@@ -89,7 +89,7 @@ external class SampledPositionProperty(
     fun getValue(
         time: JulianDate,
         result: Cartesian3? = definedExternally,
-    ): Cartesian3
+    ): Cartesian3?
 
     /**
      * Gets the position at the provided time and in the provided reference frame.
@@ -103,7 +103,7 @@ external class SampledPositionProperty(
         time: JulianDate,
         referenceFrame: ReferenceFrame,
         result: Cartesian3? = definedExternally,
-    ): Cartesian3
+    ): Cartesian3?
 
     /**
      * Sets the algorithm and degree to use when interpolating a position.

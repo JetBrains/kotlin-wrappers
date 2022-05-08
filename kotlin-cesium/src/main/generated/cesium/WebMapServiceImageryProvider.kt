@@ -164,7 +164,7 @@ external class WebMapServiceImageryProvider(options: ConstructorOptions) {
      * are passed an instance of [TileProviderError].
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/WebMapServiceImageryProvider.html#errorEvent">Online Documentation</a>
      */
-    val errorEvent: Event
+    val errorEvent: Event<*>
 
     /**
      * Gets a value indicating whether or not the provider is ready for use.
@@ -247,9 +247,7 @@ external class WebMapServiceImageryProvider(options: ConstructorOptions) {
      * @param [level] The tile level.
      * @param [request] The request object. Intended for internal use only.
      * @return A promise for the image that will resolve when the image is available, or
-     *   undefined if there are too many active requests to the server, and the request
-     *   should be retried later.  The resolved image may be either an
-     *   Image or a Canvas DOM object.
+     *   undefined if there are too many active requests to the server, and the request should be retried later.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/WebMapServiceImageryProvider.html#requestImage">Online Documentation</a>
      */
     fun requestImage(
@@ -257,7 +255,7 @@ external class WebMapServiceImageryProvider(options: ConstructorOptions) {
         y: Double,
         level: Int,
         request: Request? = definedExternally,
-    ): kotlin.js.Promise<org.w3c.dom.HTMLElement>?
+    ): kotlin.js.Promise<ImageryTypes>?
 
     /**
      * Asynchronously determines what features, if any, are located at a given longitude and latitude within

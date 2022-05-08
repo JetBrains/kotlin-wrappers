@@ -150,7 +150,7 @@ abstract external class ImageryProvider {
      * are passed an instance of [TileProviderError].
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ImageryProvider.html#errorEvent">Online Documentation</a>
      */
-    abstract val errorEvent: Event
+    abstract val errorEvent: Event<*>
 
     /**
      * Gets the credit to display when this imagery provider is active.  Typically this is used to credit
@@ -197,10 +197,8 @@ abstract external class ImageryProvider {
      * @param [y] The tile Y coordinate.
      * @param [level] The tile level.
      * @param [request] The request object. Intended for internal use only.
-     * @return A promise for the image that will resolve when the image is available, or
-     *   undefined if there are too many active requests to the server, and the request
-     *   should be retried later.  The resolved image may be either an
-     *   Image or a Canvas DOM object.
+     * @return Returns a promise for the image that will resolve when the image is available, or
+     *   undefined if there are too many active requests to the server, and the request should be retried later.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ImageryProvider.html#requestImage">Online Documentation</a>
      */
     abstract fun requestImage(
@@ -208,7 +206,7 @@ abstract external class ImageryProvider {
         y: Double,
         level: Int,
         request: Request? = definedExternally,
-    ): kotlin.js.Promise<org.w3c.dom.HTMLElement>?
+    ): kotlin.js.Promise<ImageryTypes>?
 
     /**
      * Asynchronously determines what features, if any, are located at a given longitude and latitude within
@@ -241,19 +239,17 @@ abstract external class ImageryProvider {
          * @param [imageryProvider] The imagery provider for the URL.
          * @param [url] The URL of the image.
          * @return A promise for the image that will resolve when the image is available, or
-         *   undefined if there are too many active requests to the server, and the request
-         *   should be retried later.  The resolved image may be either an
-         *   Image or a Canvas DOM object.
+         *   undefined if there are too many active requests to the server, and the request should be retried later.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ImageryProvider.html#.loadImage">Online Documentation</a>
          */
         fun loadImage(
             imageryProvider: ImageryProvider,
             url: Resource,
-        ): kotlin.js.Promise<org.w3c.dom.HTMLElement>?
+        ): kotlin.js.Promise<Any /* ImageryTypes | CompressedTextureBuffer */>?
 
         fun loadImage(
             imageryProvider: ImageryProvider,
             url: String,
-        ): kotlin.js.Promise<org.w3c.dom.HTMLElement>?
+        ): kotlin.js.Promise<Any /* ImageryTypes | CompressedTextureBuffer */>?
     }
 }

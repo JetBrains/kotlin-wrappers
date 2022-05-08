@@ -6,21 +6,21 @@
 package cesium
 
 /**
- * An active glTF animation.  A glTF asset can contain animations.  An active animation
- * is an animation that is currently playing or scheduled to be played because it was
- * added to a model's [ModelAnimationCollection].  An active animation is an
- * instance of an animation; for example, there can be multiple active animations
- * for the same glTF animation, each with a different start time.
+ * An active animation derived from a glTF asset. An active animation is an
+ * animation that is either currently playing or scheduled to be played due to
+ * being added to a model's [ModelExperimentalAnimationCollection]. An active animation
+ * is an instance of an animation; for example, there can be multiple active
+ * animations for the same glTF animation, each with a different start time.
  *
- * Create this by calling [ModelAnimationCollection.add].
- * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ModelAnimation.html">Online Documentation</a>
+ * Create this by calling [ModelExperimentalAnimationCollection.add].
+ * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ModelExperimentalAnimation.html">Online Documentation</a>
  */
-external class ModelAnimation {
+external class ModelExperimentalAnimation {
     /**
      * When `true`, the animation is removed after it stops playing.
      * This is slightly more efficient that not removing it, but if, for example,
      * time is reversed, the animation is not played again.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ModelAnimation.html#removeOnStop">Online Documentation</a>
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ModelExperimentalAnimation.html#removeOnStop">Online Documentation</a>
      */
     var removeOnStop: Boolean
 
@@ -34,7 +34,7 @@ external class ModelAnimation {
      *   console.log('Animation started: ' + animation.name);
      * });
      * ```
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ModelAnimation.html#start">Online Documentation</a>
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ModelExperimentalAnimation.html#start">Online Documentation</a>
      */
     var start: Event<*>
 
@@ -50,7 +50,7 @@ external class ModelAnimation {
      *   console.log('Animation updated: ' + animation.name + '. glTF animation time: ' + time);
      * });
      * ```
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ModelAnimation.html#update">Online Documentation</a>
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ModelExperimentalAnimation.html#update">Online Documentation</a>
      */
     var update: Event<*>
 
@@ -64,34 +64,34 @@ external class ModelAnimation {
      *   console.log('Animation stopped: ' + animation.name);
      * });
      * ```
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ModelAnimation.html#stop">Online Documentation</a>
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ModelExperimentalAnimation.html#stop">Online Documentation</a>
      */
     var stop: Event<*>
 
     /**
-     * The glTF animation name that identifies this animation.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ModelAnimation.html#name">Online Documentation</a>
+     * The name that identifies this animation in the model, if it exists.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ModelExperimentalAnimation.html#name">Online Documentation</a>
      */
     val name: String
 
     /**
-     * The scene time to start playing this animation.  When this is `undefined`,
+     * The scene time to start playing this animation. When this is `undefined`,
      * the animation starts at the next frame.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ModelAnimation.html#startTime">Online Documentation</a>
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ModelExperimentalAnimation.html#startTime">Online Documentation</a>
      */
     val startTime: JulianDate
 
     /**
-     * The delay, in seconds, from [ModelAnimation.startTime] to start playing.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ModelAnimation.html#delay">Online Documentation</a>
+     * The delay, in seconds, from [ModelExperimentalAnimation.startTime] to start playing.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ModelExperimentalAnimation.html#delay">Online Documentation</a>
      */
     val delay: Double
 
     /**
-     * The scene time to stop playing this animation.  When this is `undefined`,
+     * The scene time to stop playing this animation. When this is `undefined`,
      * the animation is played for its full duration and perhaps repeated depending on
-     * [ModelAnimation.loop].
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ModelAnimation.html#stopTime">Online Documentation</a>
+     * [ModelExperimentalAnimation.loop].
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ModelExperimentalAnimation.html#stopTime">Online Documentation</a>
      */
     val stopTime: JulianDate
 
@@ -101,19 +101,19 @@ external class ModelAnimation {
      * `1.0` plays the animation at the speed in the glTF animation mapped to the scene
      * clock speed.  For example, if the scene is played at 2x real-time, a two-second glTF animation
      * will play in one second even if `multiplier` is `1.0`.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ModelAnimation.html#multiplier">Online Documentation</a>
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ModelExperimentalAnimation.html#multiplier">Online Documentation</a>
      */
     val multiplier: Double
 
     /**
      * When `true`, the animation is played in reverse.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ModelAnimation.html#reverse">Online Documentation</a>
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ModelExperimentalAnimation.html#reverse">Online Documentation</a>
      */
     val reverse: Boolean
 
     /**
      * Determines if and how the animation is looped.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ModelAnimation.html#loop">Online Documentation</a>
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ModelExperimentalAnimation.html#loop">Online Documentation</a>
      */
     val loop: ModelAnimationLoop
 }

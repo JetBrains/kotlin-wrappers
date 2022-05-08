@@ -32,20 +32,22 @@ package cesium
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/KmlDataSource.html">Online Documentation</a>
  */
-external class KmlDataSource(options: ConstructorOptions) {
+external class KmlDataSource(options: ConstructorOptions? = definedExternally) {
     /**
-     * @property [camera] The camera that is used for viewRefreshModes and sending camera properties to network links.
-     * @property [canvas] The canvas that is used for sending viewer properties to network links.
-     * @property [ellipsoid] The global ellipsoid used for geographical calculations.
-     *   Default value - [Ellipsoid.WGS84]
-     * @property [credit] A credit for the data source, which is displayed on the canvas.
+     * The current size of this Canvas will be used to populate the Link parameters
+     * for client height and width.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/KmlDataSource.html#canvas">Online Documentation</a>
      */
-    interface ConstructorOptions {
-        var camera: Camera
-        var canvas: org.w3c.dom.HTMLCanvasElement
-        var ellipsoid: Ellipsoid?
-        var credit: Credit?
-    }
+    var canvas: org.w3c.dom.HTMLCanvasElement?
+
+    /**
+     * The position and orientation of this [Camera] will be used to
+     * populate various camera parameters when making network requests.
+     * Camera movement will determine when to trigger NetworkLink refresh if
+     * `viewRefreshMode` is `onStop`.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/KmlDataSource.html#camera">Online Documentation</a>
+     */
+    var camera: Camera?
 
     /**
      * Gets or sets a human-readable name for this instance.
@@ -78,31 +80,31 @@ external class KmlDataSource(options: ConstructorOptions) {
      * Gets an event that will be raised when the underlying data changes.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/KmlDataSource.html#changedEvent">Online Documentation</a>
      */
-    var changedEvent: Event
+    var changedEvent: Event<*>
 
     /**
      * Gets an event that will be raised if an error is encountered during processing.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/KmlDataSource.html#errorEvent">Online Documentation</a>
      */
-    var errorEvent: Event
+    var errorEvent: Event<*>
 
     /**
      * Gets an event that will be raised when the data source either starts or stops loading.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/KmlDataSource.html#loadingEvent">Online Documentation</a>
      */
-    var loadingEvent: Event
+    var loadingEvent: Event<*>
 
     /**
      * Gets an event that will be raised when the data source refreshes a network link.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/KmlDataSource.html#refreshEvent">Online Documentation</a>
      */
-    var refreshEvent: Event
+    var refreshEvent: Event<*>
 
     /**
      * Gets an event that will be raised when the data source finds an unsupported node type.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/KmlDataSource.html#unsupportedNodeEvent">Online Documentation</a>
      */
-    var unsupportedNodeEvent: Event
+    var unsupportedNodeEvent: Event<*>
 
     /**
      * Gets whether or not this data source should be displayed.
@@ -131,6 +133,7 @@ external class KmlDataSource(options: ConstructorOptions) {
     /**
      * Asynchronously loads the provided KML data, replacing any existing data.
      * @param [data] A url, parsed KML document, or Blob containing binary KMZ data or a parsed KML document.
+     * @param [options] An object specifying configuration options
      * @return A promise that will resolve to this instances once the KML is loaded.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/KmlDataSource.html#load">Online Documentation</a>
      */
@@ -138,21 +141,6 @@ external class KmlDataSource(options: ConstructorOptions) {
         data: Resource,
         options: LoadOptions? = definedExternally,
     ): kotlin.js.Promise<KmlDataSource>
-
-    /**
-     * @property [sourceUri] Overrides the url to use for resolving relative links and other KML network features.
-     * @property [clampToGround] true if we want the geometry features (Polygons, LineStrings and LinearRings) clamped to the ground. If true, lines will use corridors so use Entity.corridor instead of Entity.polyline.
-     *   Default value - `false`
-     * @property [ellipsoid] The global ellipsoid used for geographical calculations.
-     *   Default value - [Ellipsoid.WGS84]
-     * @property [screenOverlayContainer] A container for ScreenOverlay images.
-     */
-    interface LoadOptions {
-        var sourceUri: Resource?
-        var clampToGround: Boolean?
-        var ellipsoid: Ellipsoid?
-        var screenOverlayContainer: org.w3c.dom.Element?
-    }
 
     fun load(
         data: String,
@@ -183,6 +171,29 @@ external class KmlDataSource(options: ConstructorOptions) {
      */
     fun update(time: JulianDate): Boolean
 
+    /**
+     * Options for constructing a new KmlDataSource, or calling the static `load` method.
+     * @property [camera] The camera that is used for viewRefreshModes and sending camera properties to network links.
+     * @property [canvas] The canvas that is used for sending viewer properties to network links.
+     * @property [credit] A credit for the data source, which is displayed on the canvas.
+     * @property [sourceUri] Overrides the url to use for resolving relative links and other KML network features.
+     * @property [clampToGround] true if we want the geometry features (Polygons, LineStrings and LinearRings) clamped to the ground.
+     *   Default value - `false`
+     * @property [ellipsoid] The global ellipsoid used for geographical calculations.
+     *   Default value - [Ellipsoid.WGS84]
+     * @property [screenOverlayContainer] A container for ScreenOverlay images.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/KmlDataSource.html#.ConstructorOptions">Online Documentation</a>
+     */
+    interface ConstructorOptions {
+        var camera: Camera?
+        var canvas: org.w3c.dom.HTMLCanvasElement?
+        var credit: Credit?
+        var sourceUri: String?
+        var clampToGround: Boolean?
+        var ellipsoid: Ellipsoid?
+        var screenOverlayContainer: org.w3c.dom.Element?
+    }
+
     companion object {
         /**
          * Creates a Promise to a new instance loaded with the provided KML data.
@@ -193,44 +204,38 @@ external class KmlDataSource(options: ConstructorOptions) {
          */
         fun load(
             data: Resource,
-            options: LoadOptions? = definedExternally,
+            options: ConstructorOptions? = definedExternally,
         ): kotlin.js.Promise<KmlDataSource>
 
         fun load(
             data: String,
-            options: LoadOptions? = definedExternally,
+            options: ConstructorOptions? = definedExternally,
         ): kotlin.js.Promise<KmlDataSource>
 
         fun load(
             data: org.w3c.dom.Document,
-            options: LoadOptions? = definedExternally,
+            options: ConstructorOptions? = definedExternally,
         ): kotlin.js.Promise<KmlDataSource>
 
         fun load(
             data: org.w3c.files.Blob,
-            options: LoadOptions? = definedExternally,
+            options: ConstructorOptions? = definedExternally,
         ): kotlin.js.Promise<KmlDataSource>
 
         /**
          * Initialization options for the `load` method.
-         * @property [camera] The camera that is used for viewRefreshModes and sending camera properties to network links.
-         * @property [canvas] The canvas that is used for sending viewer properties to network links.
          * @property [sourceUri] Overrides the url to use for resolving relative links and other KML network features.
          * @property [clampToGround] true if we want the geometry features (Polygons, LineStrings and LinearRings) clamped to the ground.
          *   Default value - `false`
          * @property [ellipsoid] The global ellipsoid used for geographical calculations.
          *   Default value - [Ellipsoid.WGS84]
-         * @property [credit] A credit for the data source, which is displayed on the canvas.
          * @property [screenOverlayContainer] A container for ScreenOverlay images.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/KmlDataSource.html#.LoadOptions">Online Documentation</a>
          */
         interface LoadOptions {
-            var camera: Camera
-            var canvas: org.w3c.dom.HTMLCanvasElement
             var sourceUri: String?
             var clampToGround: Boolean?
             var ellipsoid: Ellipsoid?
-            var credit: Credit?
             var screenOverlayContainer: org.w3c.dom.Element?
         }
     }

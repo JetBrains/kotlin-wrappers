@@ -54,19 +54,19 @@ external class GeoJsonDataSource(var name: String = definedExternally) {
      * Gets an event that will be raised when the underlying data changes.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GeoJsonDataSource.html#changedEvent">Online Documentation</a>
      */
-    var changedEvent: Event
+    var changedEvent: Event<*>
 
     /**
      * Gets an event that will be raised if an error is encountered during processing.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GeoJsonDataSource.html#errorEvent">Online Documentation</a>
      */
-    var errorEvent: Event
+    var errorEvent: Event<*>
 
     /**
      * Gets an event that will be raised when the data source either starts or stops loading.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GeoJsonDataSource.html#loadingEvent">Online Documentation</a>
      */
-    var loadingEvent: Event
+    var loadingEvent: Event<*>
 
     /**
      * Gets whether or not this data source should be displayed.
@@ -89,6 +89,7 @@ external class GeoJsonDataSource(var name: String = definedExternally) {
     /**
      * Asynchronously loads the provided GeoJSON or TopoJSON data, replacing any existing data.
      * @param [data] A url, GeoJSON object, or TopoJSON object to be loaded.
+     * @param [options] An object specifying configuration options
      * @return a promise that will resolve when the GeoJSON is loaded.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GeoJsonDataSource.html#load">Online Documentation</a>
      */
@@ -97,46 +98,34 @@ external class GeoJsonDataSource(var name: String = definedExternally) {
         options: LoadOptions? = definedExternally,
     ): kotlin.js.Promise<GeoJsonDataSource>
 
-    /**
-     * @property [sourceUri] Overrides the url to use for resolving relative links.
-     * @property [describe] A function which returns a Property object (or just a string),
-     *   which converts the properties into an html description.
-     *   Default value - [GeoJsonDataSource.defaultDescribeProperty]
-     * @property [markerSize] The default size of the map pin created for each point, in pixels.
-     *   Default value - [GeoJsonDataSource.markerSize]
-     * @property [markerSymbol] The default symbol of the map pin created for each point.
-     *   Default value - [GeoJsonDataSource.markerSymbol]
-     * @property [markerColor] The default color of the map pin created for each point.
-     *   Default value - [GeoJsonDataSource.markerColor]
-     * @property [stroke] The default color of polylines and polygon outlines.
-     *   Default value - [GeoJsonDataSource.stroke]
-     * @property [strokeWidth] The default width of polylines and polygon outlines.
-     *   Default value - [GeoJsonDataSource.strokeWidth]
-     * @property [fill] The default color for polygon interiors.
-     *   Default value - [GeoJsonDataSource.fill]
-     * @property [clampToGround] true if we want the features clamped to the ground.
-     *   Default value - [GeoJsonDataSource.clampToGround]
-     * @property [credit] A credit for the data source, which is displayed on the canvas.
-     */
-    interface LoadOptions {
-        var sourceUri: String?
-        var describe: describe?
-        var markerSize: Double?
-        var markerSymbol: String?
-        var markerColor: Color?
-        var stroke: Color?
-        var strokeWidth: Double?
-        var fill: Color?
-        var clampToGround: Boolean?
-        var credit: Credit?
-    }
-
     fun load(
         data: String,
         options: LoadOptions? = definedExternally,
     ): kotlin.js.Promise<GeoJsonDataSource>
 
     fun load(
+        data: Any,
+        options: LoadOptions? = definedExternally,
+    ): kotlin.js.Promise<GeoJsonDataSource>
+
+    /**
+     * Asynchronously loads the provided GeoJSON or TopoJSON data, without replacing any existing data.
+     * @param [data] A url, GeoJSON object, or TopoJSON object to be loaded.
+     * @param [options] An object specifying configuration options
+     * @return a promise that will resolve when the GeoJSON is loaded.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GeoJsonDataSource.html#process">Online Documentation</a>
+     */
+    fun process(
+        data: Resource,
+        options: LoadOptions? = definedExternally,
+    ): kotlin.js.Promise<GeoJsonDataSource>
+
+    fun process(
+        data: String,
+        options: LoadOptions? = definedExternally,
+    ): kotlin.js.Promise<GeoJsonDataSource>
+
+    fun process(
         data: Any,
         options: LoadOptions? = definedExternally,
     ): kotlin.js.Promise<GeoJsonDataSource>
@@ -250,6 +239,8 @@ external class GeoJsonDataSource(var name: String = definedExternally) {
         /**
          * Initialization options for the `load` method.
          * @property [sourceUri] Overrides the url to use for resolving relative links.
+         * @property [describe] A function which returns a Property object (or just a string).
+         *   Default value - [GeoJsonDataSource.defaultDescribeProperty]
          * @property [markerSize] The default size of the map pin created for each point, in pixels.
          *   Default value - [GeoJsonDataSource.markerSize]
          * @property [markerSymbol] The default symbol of the map pin created for each point.
@@ -269,6 +260,7 @@ external class GeoJsonDataSource(var name: String = definedExternally) {
          */
         interface LoadOptions {
             var sourceUri: String?
+            var describe: describe?
             var markerSize: Double?
             var markerSymbol: String?
             var markerColor: Color?

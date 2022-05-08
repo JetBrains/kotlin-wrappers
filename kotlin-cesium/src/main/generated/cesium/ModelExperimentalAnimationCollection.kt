@@ -6,10 +6,10 @@
 package cesium
 
 /**
- * A collection of active model animations.  Access this using [Model.activeAnimations].
- * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ModelAnimationCollection.html">Online Documentation</a>
+ * A collection of active model animations. Access this using [ModelExperimental.activeAnimations].
+ * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ModelExperimentalAnimationCollection.html">Online Documentation</a>
  */
-external class ModelAnimationCollection {
+external class ModelExperimentalAnimationCollection {
     /**
      * The event fired when an animation is added to the collection.  This can be used, for
      * example, to keep a UI in sync.
@@ -18,7 +18,7 @@ external class ModelAnimationCollection {
      *   console.log('Animation added: ' + animation.name);
      * });
      * ```
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ModelAnimationCollection.html#animationAdded">Online Documentation</a>
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ModelExperimentalAnimationCollection.html#animationAdded">Online Documentation</a>
      */
     var animationAdded: Event<*>
 
@@ -30,26 +30,33 @@ external class ModelAnimationCollection {
      *   console.log('Animation removed: ' + animation.name);
      * });
      * ```
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ModelAnimationCollection.html#animationRemoved">Online Documentation</a>
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ModelExperimentalAnimationCollection.html#animationRemoved">Online Documentation</a>
      */
     var animationRemoved: Event<*>
 
     /**
      * The number of animations in the collection.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ModelAnimationCollection.html#length">Online Documentation</a>
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ModelExperimentalAnimationCollection.html#length">Online Documentation</a>
      */
     val length: Int
 
     /**
+     * The model that owns this animation collection.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ModelExperimentalAnimationCollection.html#model">Online Documentation</a>
+     */
+    val model: ModelExperimental
+
+    /**
      * Creates and adds an animation with the specified initial properties to the collection.
      *
-     * This raises the [ModelAnimationCollection.animationAdded] event so, for example, a UI can stay in sync.
+     * This raises the [ModelExperimentalAnimationCollection.animationAdded] event so, for example, a UI can stay in sync.
      * ```
      * // Example 1. Add an animation by name
      * model.activeAnimations.add({
      *   name : 'animation name'
      * });
-     *
+     * ```
+     * ```
      * // Example 2. Add an animation by index
      * model.activeAnimations.add({
      *   index : 0
@@ -62,11 +69,11 @@ external class ModelAnimationCollection {
      * const animation = model.activeAnimations.add({
      *   name : 'another animation name',
      *   startTime : startTime,
-     *   delay : 0.0,                          // Play at startTime (default)
+     *   delay : 0.0,                                 // Play at startTime (default)
      *   stopTime : JulianDate.addSeconds(startTime, 4.0, new JulianDate()),
-     *   removeOnStop : false,                 // Do not remove when animation stops (default)
-     *   multiplier : 2.0,                        // Play at double speed
-     *   reverse : true,                       // Play in reverse
+     *   removeOnStop : false,                        // Do not remove when animation stops (default)
+     *   multiplier : 2.0,                            // Play at double speed
+     *   reverse : true,                              // Play in reverse
      *   loop : ModelAnimationLoop.REPEAT      // Loop the animation
      * });
      *
@@ -81,7 +88,7 @@ external class ModelAnimationCollection {
      * });
      * ```
      * @return The animation that was added to the collection.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ModelAnimationCollection.html#add">Online Documentation</a>
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ModelExperimentalAnimationCollection.html#add">Online Documentation</a>
      */
     fun add(options: AddOptions): ModelAnimation
 
@@ -89,10 +96,10 @@ external class ModelAnimationCollection {
      * @property [name] The glTF animation name that identifies the animation. Must be defined if `options.index` is `undefined`.
      * @property [index] The glTF animation index that identifies the animation. Must be defined if `options.name` is `undefined`.
      * @property [startTime] The scene time to start playing the animation.  When this is `undefined`, the animation starts at the next frame.
-     * @property [delay] The delay, in seconds, from `startTime` to start playing.
+     * @property [delay] The delay, in seconds, from `startTime` to start playing. This will only affect the animation if `options.loop` is ModelAnimationLoop.NONE.
      *   Default value - `0.0`
      * @property [stopTime] The scene time to stop playing the animation.  When this is `undefined`, the animation is played for its full duration.
-     * @property [removeOnStop] When `true`, the animation is removed after it stops playing.
+     * @property [removeOnStop] When `true`, the animation is removed after it stops playing. This will only affect the animation if `options.loop` is ModelAnimationLoop.NONE.
      *   Default value - `false`
      * @property [multiplier] Values greater than `1.0` increase the speed that the animation is played relative to the scene clock speed; values less than `1.0` decrease the speed.
      *   Default value - `1.0`
@@ -114,27 +121,27 @@ external class ModelAnimationCollection {
     }
 
     /**
-     * Creates and adds an animation with the specified initial properties to the collection
-     * for each animation in the model.
+     * Creates and adds animations with the specified initial properties to the collection
+     * for all animations in the model.
      *
-     * This raises the [ModelAnimationCollection.animationAdded] event for each model so, for example, a UI can stay in sync.
+     * This raises the [ModelExperimentalAnimationCollection.animationAdded] event for each model so, for example, a UI can stay in sync.
      * ```
      * model.activeAnimations.addAll({
-     *   multiplier : 0.5,                        // Play at half-speed
+     *   multiplier : 0.5,                            // Play at half-speed
      *   loop : ModelAnimationLoop.REPEAT      // Loop the animations
      * });
      * ```
-     * @return An array of [ModelAnimation] objects, one for each animation added to the collection.  If there are no glTF animations, the array is empty.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ModelAnimationCollection.html#addAll">Online Documentation</a>
+     * @return An array of [ModelExperimentalAnimation] objects, one for each animation added to the collection.  If there are no glTF animations, the array is empty.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ModelExperimentalAnimationCollection.html#addAll">Online Documentation</a>
      */
-    fun addAll(options: AddAllOptions? = definedExternally): Array<out ModelAnimation>
+    fun addAll(options: AddAllOptions? = definedExternally): Array<out ModelExperimentalAnimation>
 
     /**
-     * @property [startTime] The scene time to start playing the animations.  When this is `undefined`, the animations starts at the next frame.
-     * @property [delay] The delay, in seconds, from `startTime` to start playing.
+     * @property [startTime] The scene time to start playing the animations. When this is `undefined`, the animations starts at the next frame.
+     * @property [delay] The delay, in seconds, from `startTime` to start playing. This will only affect the animation if `options.loop` is ModelAnimationLoop.NONE.
      *   Default value - `0.0`
-     * @property [stopTime] The scene time to stop playing the animations.  When this is `undefined`, the animations are played for its full duration.
-     * @property [removeOnStop] When `true`, the animations are removed after they stop playing.
+     * @property [stopTime] The scene time to stop playing the animations. When this is `undefined`, the animations are played for its full duration.
+     * @property [removeOnStop] When `true`, the animations are removed after they stop playing. This will only affect the animation if `options.loop` is ModelAnimationLoop.NONE.
      *   Default value - `false`
      * @property [multiplier] Values greater than `1.0` increase the speed that the animations play relative to the scene clock speed; values less than `1.0` decrease the speed.
      *   Default value - `1.0`
@@ -156,38 +163,38 @@ external class ModelAnimationCollection {
     /**
      * Removes an animation from the collection.
      *
-     * This raises the [ModelAnimationCollection.animationRemoved] event so, for example, a UI can stay in sync.
+     * This raises the [ModelExperimentalAnimationCollection.animationRemoved] event so, for example, a UI can stay in sync.
      *
-     * An animation can also be implicitly removed from the collection by setting [ModelAnimation.removeOnStop] to
-     * `true`.  The [ModelAnimationCollection.animationRemoved] event is still fired when the animation is removed.
+     * An animation can also be implicitly removed from the collection by setting [ModelExperimentalAnimationCollection.removeOnStop] to
+     * `true`.  The [ModelExperimentalAnimationCollection.animationRemoved] event is still fired when the animation is removed.
      * ```
      * const a = model.activeAnimations.add({
      *   name : 'animation name'
      * });
      * model.activeAnimations.remove(a); // Returns true
      * ```
-     * @param [animation] The animation to remove.
+     * @param [runtimeAnimation] The runtime animation to remove.
      * @return `true` if the animation was removed; `false` if the animation was not found in the collection.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ModelAnimationCollection.html#remove">Online Documentation</a>
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ModelExperimentalAnimationCollection.html#remove">Online Documentation</a>
      */
-    fun remove(animation: ModelAnimation): Boolean
+    fun remove(runtimeAnimation: ModelExperimentalAnimation): Boolean
 
     /**
      * Removes all animations from the collection.
      *
-     * This raises the [ModelAnimationCollection.animationRemoved] event for each
+     * This raises the [ModelExperimentalAnimationCollection.animationRemoved] event for each
      * animation so, for example, a UI can stay in sync.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ModelAnimationCollection.html#removeAll">Online Documentation</a>
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ModelExperimentalAnimationCollection.html#removeAll">Online Documentation</a>
      */
     fun removeAll()
 
     /**
      * Determines whether this collection contains a given animation.
-     * @param [animation] The animation to check for.
+     * @param [runtimeAnimation] The runtime animation to check for.
      * @return `true` if this collection contains the animation, `false` otherwise.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ModelAnimationCollection.html#contains">Online Documentation</a>
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ModelExperimentalAnimationCollection.html#contains">Online Documentation</a>
      */
-    fun contains(animation: ModelAnimation): Boolean
+    fun contains(runtimeAnimation: ModelExperimentalAnimation): Boolean
 
     /**
      * Returns the animation in the collection at the specified index.  Indices are zero-based
@@ -203,8 +210,8 @@ external class ModelAnimationCollection {
      * }
      * ```
      * @param [index] The zero-based index of the animation.
-     * @return The animation at the specified index.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ModelAnimationCollection.html#get">Online Documentation</a>
+     * @return The runtime animation at the specified index.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ModelExperimentalAnimationCollection.html#get">Online Documentation</a>
      */
-    fun get(index: Int): ModelAnimation
+    fun get(index: Int): ModelExperimentalAnimation
 }

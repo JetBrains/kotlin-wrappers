@@ -10,9 +10,8 @@
 package cesium
 
 /**
- * An atmosphere drawn around the limb of the provided ellipsoid.  Based on
- * [Accurate Atmospheric Scattering](https://developer.nvidia.com/gpugems/GPUGems2/gpugems2_chapter16.html)
- * in GPU Gems 2.
+ * An atmosphere drawn around the limb of the provided ellipsoid. Based on
+ * [Display of The Earth Taking Into Account Atmospheric Scattering](http://nishitalab.org/user/nis/cdrom/sig93_nis.pdf).
  *
  * This is only supported in 3D. Atmosphere is faded out when morphing to 2D or Columbus view.
  * ```
@@ -38,6 +37,44 @@ external class SkyAtmosphere(val ellipsoid: Ellipsoid = definedExternally) {
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/SkyAtmosphere.html#perFragmentAtmosphere">Online Documentation</a>
      */
     var perFragmentAtmosphere: Boolean
+
+    /**
+     * The intensity of the light that is used for computing the sky atmosphere color.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/SkyAtmosphere.html#atmosphereLightIntensity">Online Documentation</a>
+     */
+    var atmosphereLightIntensity: Double
+
+    /**
+     * The Rayleigh scattering coefficient used in the atmospheric scattering equations for the sky atmosphere.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/SkyAtmosphere.html#atmosphereRayleighCoefficient">Online Documentation</a>
+     */
+    var atmosphereRayleighCoefficient: Cartesian3
+
+    /**
+     * The Mie scattering coefficient used in the atmospheric scattering equations for the sky atmosphere.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/SkyAtmosphere.html#atmosphereMieCoefficient">Online Documentation</a>
+     */
+    var atmosphereMieCoefficient: Cartesian3
+
+    /**
+     * The Rayleigh scale height used in the atmospheric scattering equations for the sky atmosphere, in meters.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/SkyAtmosphere.html#atmosphereRayleighScaleHeight">Online Documentation</a>
+     */
+    var atmosphereRayleighScaleHeight: Double
+
+    /**
+     * The Mie scale height used in the atmospheric scattering equations for the sky atmosphere, in meters.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/SkyAtmosphere.html#atmosphereMieScaleHeight">Online Documentation</a>
+     */
+    var atmosphereMieScaleHeight: Double
+
+    /**
+     * The anisotropy of the medium to consider for Mie scattering.
+     *
+     * Valid values are between -1.0 and 1.0.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/SkyAtmosphere.html#atmosphereMieAnisotropy">Online Documentation</a>
+     */
+    var atmosphereMieAnisotropy: Double
 
     /**
      * The hue shift to apply to the atmosphere. Defaults to 0.0 (no shift).

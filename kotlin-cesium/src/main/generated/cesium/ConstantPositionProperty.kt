@@ -37,7 +37,7 @@ external class ConstantPositionProperty(
      * a different result for the same time.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ConstantPositionProperty.html#definitionChanged">Online Documentation</a>
      */
-    val definitionChanged: Event
+    val definitionChanged: Event<*>
 
     /**
      * Gets the value of the property at the provided time in the fixed frame.

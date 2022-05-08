@@ -123,7 +123,7 @@ external class TimeDynamicPointCloud(options: ConstructorOptions) {
      * ```
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TimeDynamicPointCloud.html#frameFailed">Online Documentation</a>
      */
-    var frameFailed: Event
+    var frameFailed: Event<*>
 
     /**
      * The event fired to indicate that a new frame was rendered.
@@ -136,7 +136,7 @@ external class TimeDynamicPointCloud(options: ConstructorOptions) {
      * ```
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TimeDynamicPointCloud.html#frameChanged">Online Documentation</a>
      */
-    var frameChanged: Event
+    var frameChanged: Event<*>
 
     /**
      * The [ClippingPlaneCollection] used to selectively disable rendering the point cloud.

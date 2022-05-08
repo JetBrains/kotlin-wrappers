@@ -73,7 +73,7 @@ external class GeocoderViewModel(options: ConstructorOptions) {
      * Gets the event triggered on flight completion.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GeocoderViewModel.html#complete">Online Documentation</a>
      */
-    var complete: Event
+    var complete: Event<*>
 
     /**
      * Gets the scene to control.

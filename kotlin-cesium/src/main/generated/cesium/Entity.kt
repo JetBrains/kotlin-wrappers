@@ -42,7 +42,7 @@ external class Entity {
      * Gets the event that is raised whenever a property or sub-property is changed or modified.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Entity.html#definitionChanged">Online Documentation</a>
      */
-    val definitionChanged: Event
+    val definitionChanged: Event<*>
 
     /**
      * Gets or sets the name of the object.  The name is intended for end-user

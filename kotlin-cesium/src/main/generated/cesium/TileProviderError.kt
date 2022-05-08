@@ -90,7 +90,7 @@ external class TileProviderError(
         fun handleError(
             previousError: TileProviderError,
             provider: ImageryProvider,
-            event: Event,
+            event: Event<*>,
             message: String,
             x: Double,
             y: Double,
@@ -102,7 +102,7 @@ external class TileProviderError(
         fun handleError(
             previousError: TileProviderError,
             provider: TerrainProvider,
-            event: Event,
+            event: Event<*>,
             message: String,
             x: Double,
             y: Double,

@@ -32,7 +32,7 @@ external class CompositePositionProperty(var referenceFrame: ReferenceFrame = de
      * than the current value.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CompositePositionProperty.html#definitionChanged">Online Documentation</a>
      */
-    val definitionChanged: Event
+    val definitionChanged: Event<*>
 
     /**
      * Gets the interval collection.
@@ -49,8 +49,8 @@ external class CompositePositionProperty(var referenceFrame: ReferenceFrame = de
      */
     fun getValue(
         time: JulianDate,
-        result: Any? = definedExternally,
-    ): Any
+        result: Cartesian3? = definedExternally,
+    ): Cartesian3?
 
     /**
      * Gets the value of the property at the provided time and in the provided reference frame.
@@ -64,5 +64,5 @@ external class CompositePositionProperty(var referenceFrame: ReferenceFrame = de
         time: JulianDate,
         referenceFrame: ReferenceFrame,
         result: Cartesian3? = definedExternally,
-    ): Cartesian3
+    ): Cartesian3?
 }

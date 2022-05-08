@@ -232,7 +232,7 @@ external class ParticleSystem(options: ConstructorOptions? = definedExternally) 
      * Fires an event when the particle system has reached the end of its lifetime.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ParticleSystem.html#complete">Online Documentation</a>
      */
-    var complete: Event
+    var complete: Event<*>
 
     /**
      * When `true`, the particle system has reached the end of its lifetime; `false` otherwise.

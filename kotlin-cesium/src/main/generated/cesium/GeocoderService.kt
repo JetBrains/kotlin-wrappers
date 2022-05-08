@@ -20,7 +20,7 @@ external class GeocoderService {
     fun geocode(
         query: String,
         type: GeocodeType? = definedExternally,
-    ): kotlin.js.Promise<Array<out GeocoderService.Result>>
+    ): kotlin.js.Promise<Array<out Result>>
 
     /**
      * @property [displayName] The display name for a location

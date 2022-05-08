@@ -21,9 +21,9 @@ package cesium
  *
  * const p0 = spline.evaluate(times[0]);
  * ```
- * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/WeightSpline.html">Online Documentation</a>
+ * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/MorphWeightSpline.html">Online Documentation</a>
  */
-external class WeightSpline(options: ConstructorOptions) {
+external class MorphWeightSpline(options: ConstructorOptions) {
     /**
      * @property [times] An array of strictly increasing, unit-less, floating-point times at each point.
      *   The values are in no way connected to the clock time. They are the parameterization for the curve.
@@ -38,23 +38,11 @@ external class WeightSpline(options: ConstructorOptions) {
     }
 
     /**
-     * An array of times for the control weights.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/WeightSpline.html#times">Online Documentation</a>
-     */
-    val times: Array<out Double>
-
-    /**
-     * An array of floating-point array control weights.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/WeightSpline.html#weights">Online Documentation</a>
-     */
-    val weights: Array<out Double>
-
-    /**
      * Finds an index `i` in `times` such that the parameter
      * `time` is in the interval `[times[i], times[i + 1]]`.
      * @param [time] The time.
      * @return The index for the element at the start of the interval.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/WeightSpline.html#findTimeInterval">Online Documentation</a>
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/MorphWeightSpline.html#findTimeInterval">Online Documentation</a>
      */
     fun findTimeInterval(time: Double): Int
 
@@ -62,7 +50,7 @@ external class WeightSpline(options: ConstructorOptions) {
      * Wraps the given time to the period covered by the spline.
      * @param [time] The time.
      * @return The time, wrapped around to the updated animation.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/WeightSpline.html#wrapTime">Online Documentation</a>
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/MorphWeightSpline.html#wrapTime">Online Documentation</a>
      */
     fun wrapTime(time: Double): Double
 
@@ -70,7 +58,7 @@ external class WeightSpline(options: ConstructorOptions) {
      * Clamps the given time to the period covered by the spline.
      * @param [time] The time.
      * @return The time, clamped to the animation period.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/WeightSpline.html#clampTime">Online Documentation</a>
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/MorphWeightSpline.html#clampTime">Online Documentation</a>
      */
     fun clampTime(time: Double): Double
 
@@ -79,7 +67,7 @@ external class WeightSpline(options: ConstructorOptions) {
      * @param [time] The time at which to evaluate the curve.
      * @param [result] The object onto which to store the result.
      * @return The modified result parameter or a new instance of the point on the curve at the given time.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/WeightSpline.html#evaluate">Online Documentation</a>
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/MorphWeightSpline.html#evaluate">Online Documentation</a>
      */
     fun evaluate(
         time: Double,
@@ -87,10 +75,10 @@ external class WeightSpline(options: ConstructorOptions) {
     ): Array<out Double>
 }
 
-inline fun WeightSpline(
-    block: WeightSpline.ConstructorOptions.() -> Unit,
-): WeightSpline {
-    val options: WeightSpline.ConstructorOptions = js("({})")
+inline fun MorphWeightSpline(
+    block: MorphWeightSpline.ConstructorOptions.() -> Unit,
+): MorphWeightSpline {
+    val options: MorphWeightSpline.ConstructorOptions = js("({})")
     block(options)
-    return WeightSpline(options)
+    return MorphWeightSpline(options)
 }

@@ -56,13 +56,13 @@ external class Clock {
      * An [Event] that is fired whenever [Clock.tick] is called.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Clock.html#onTick">Online Documentation</a>
      */
-    var onTick: Event
+    var onTick: Event<*>
 
     /**
      * An [Event] that is fired whenever [Clock.stopTime] is reached.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Clock.html#onStop">Online Documentation</a>
      */
-    var onStop: Event
+    var onStop: Event<*>
 
     /**
      * The current time.

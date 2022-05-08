@@ -42,7 +42,7 @@ external class EntityCluster {
      * Gets the event that will be raised when a new cluster will be displayed. The signature of the event listener is [EntityCluster.newClusterCallback].
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/EntityCluster.html#clusterEvent">Online Documentation</a>
      */
-    var clusterEvent: Event
+    var clusterEvent: Event<newClusterCallback>
 
     /**
      * Gets or sets whether clustering billboard entities is enabled.
@@ -83,11 +83,11 @@ external class EntityCluster {
  * });
  * ```
  * @param [clusteredEntities] An array of the entities contained in the cluster.
- * @param [cluster] An object containing billboard, label, and point properties. The values are the same as
- *   billboard, label and point entities, but must be the values of the ConstantProperty.
+ * @param [cluster] An object containing the Billboard, Label, and Point
+ *   primitives that represent this cluster of entities.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/EntityCluster.html#.newClusterCallback">Online Documentation</a>
  */
-typealias newClusterCallback = (clusteredEntities: Array<out Entity>, cluster: Any) -> Unit
+typealias newClusterCallback = (clusteredEntities: Array<out Entity>, cluster: dynamic) -> Unit
 
 inline fun EntityCluster(
     block: EntityCluster.() -> Unit,

@@ -46,7 +46,7 @@ external class VelocityVectorProperty(
      * Gets the event that is raised whenever the definition of this property changes.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/VelocityVectorProperty.html#definitionChanged">Online Documentation</a>
      */
-    val definitionChanged: Event
+    val definitionChanged: Event<*>
 
     /**
      * Gets or sets the position property used to compute the velocity vector.

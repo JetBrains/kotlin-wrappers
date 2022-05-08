@@ -200,7 +200,7 @@ external class WebMapTileServiceImageryProvider(options: ConstructorOptions) {
      * are passed an instance of [TileProviderError].
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/WebMapTileServiceImageryProvider.html#errorEvent">Online Documentation</a>
      */
-    val errorEvent: Event
+    val errorEvent: Event<*>
 
     /**
      * Gets the mime type of images returned by this imagery provider.
@@ -279,9 +279,7 @@ external class WebMapTileServiceImageryProvider(options: ConstructorOptions) {
      * @param [level] The tile level.
      * @param [request] The request object. Intended for internal use only.
      * @return A promise for the image that will resolve when the image is available, or
-     *   undefined if there are too many active requests to the server, and the request
-     *   should be retried later.  The resolved image may be either an
-     *   Image or a Canvas DOM object.
+     *   undefined if there are too many active requests to the server, and the request should be retried later.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/WebMapTileServiceImageryProvider.html#requestImage">Online Documentation</a>
      */
     fun requestImage(
@@ -289,7 +287,7 @@ external class WebMapTileServiceImageryProvider(options: ConstructorOptions) {
         y: Double,
         level: Int,
         request: Request? = definedExternally,
-    ): kotlin.js.Promise<org.w3c.dom.HTMLElement>?
+    ): kotlin.js.Promise<ImageryTypes>?
 
     /**
      * Picking features is not currently supported by this imagery provider, so this function simply returns
@@ -299,10 +297,7 @@ external class WebMapTileServiceImageryProvider(options: ConstructorOptions) {
      * @param [level] The tile level.
      * @param [longitude] The longitude at which to pick features.
      * @param [latitude] The latitude at which to pick features.
-     * @return A promise for the picked features that will resolve when the asynchronous
-     *   picking completes.  The resolved value is an array of [ImageryLayerFeatureInfo]
-     *   instances.  The array may be empty if no features are found at the given location.
-     *   It may also be undefined if picking is not supported.
+     * @return Undefined since picking is not supported.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/WebMapTileServiceImageryProvider.html#pickFeatures">Online Documentation</a>
      */
     fun pickFeatures(
@@ -311,7 +306,7 @@ external class WebMapTileServiceImageryProvider(options: ConstructorOptions) {
         level: Int,
         longitude: Double,
         latitude: Double,
-    ): kotlin.js.Promise<Array<out ImageryLayerFeatureInfo>>?
+    ): Nothing?
 
     /**
      * Initialization options for the WebMapTileServiceImageryProvider constructor

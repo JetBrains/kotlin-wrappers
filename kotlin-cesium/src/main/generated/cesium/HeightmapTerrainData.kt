@@ -145,8 +145,7 @@ external class HeightmapTerrainData(options: ConstructorOptions) : TerrainData {
      * @param [descendantY] The Y coordinate within the tiling scheme of the descendant tile for which we are upsampling.
      * @param [descendantLevel] The level within the tiling scheme of the descendant tile for which we are upsampling.
      * @return A promise for upsampled heightmap terrain data for the descendant tile,
-     *   or undefined if too many asynchronous upsample operations are in progress and the request has been
-     *   deferred.
+     *   or undefined if the mesh is unavailable.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/HeightmapTerrainData.html#upsample">Online Documentation</a>
      */
     override fun upsample(

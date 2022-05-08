@@ -26,5 +26,5 @@ external object Iso8601 {
      * A [TimeInterval] representing the largest interval representable by an ISO8601 interval.
      * This is equivalent to the interval string '0000-01-01T00:00:00Z/9999-12-31T24:00:00Z'
      */
-    val MAXIMUM_INTERVAL: JulianDate
+    val MAXIMUM_INTERVAL: TimeInterval
 }

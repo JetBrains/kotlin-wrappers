@@ -21,21 +21,21 @@ external class DataSourceCollection {
      * Event handlers are passed the data source that was added.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/DataSourceCollection.html#dataSourceAdded">Online Documentation</a>
      */
-    val dataSourceAdded: Event
+    val dataSourceAdded: Event<*>
 
     /**
      * An event that is raised when a data source is removed from the collection.
      * Event handlers are passed the data source that was removed.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/DataSourceCollection.html#dataSourceRemoved">Online Documentation</a>
      */
-    val dataSourceRemoved: Event
+    val dataSourceRemoved: Event<*>
 
     /**
      * An event that is raised when a data source changes position in the collection.  Event handlers are passed the data source
      * that was moved, its new index after the move, and its old index prior to the move.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/DataSourceCollection.html#dataSourceMoved">Online Documentation</a>
      */
-    val dataSourceMoved: Event
+    val dataSourceMoved: Event<*>
 
     /**
      * Adds a data source to the collection.

@@ -63,11 +63,11 @@ external class InfoBoxViewModel {
      * Gets an [Event] that is fired when the user clicks the camera icon.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/InfoBoxViewModel.html#cameraClicked">Online Documentation</a>
      */
-    var cameraClicked: Event
+    var cameraClicked: Event<*>
 
     /**
      * Gets an [Event] that is fired when the user closes the info box.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/InfoBoxViewModel.html#closeClicked">Online Documentation</a>
      */
-    var closeClicked: Event
+    var closeClicked: Event<*>
 }

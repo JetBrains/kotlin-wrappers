@@ -18,7 +18,7 @@ external class TimeIntervalCollection(intervals: Array<out TimeInterval>? = defi
      * Gets an event that is raised whenever the collection of intervals change.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TimeIntervalCollection.html#changedEvent">Online Documentation</a>
      */
-    val changedEvent: Event
+    val changedEvent: Event<*>
 
     /**
      * Gets the start time of the collection.

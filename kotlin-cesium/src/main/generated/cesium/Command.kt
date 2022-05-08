@@ -28,12 +28,12 @@ abstract external class Command {
      * an `args` property, which is the array of arguments being passed to the command.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Command.html#beforeExecute">Online Documentation</a>
      */
-    abstract var beforeExecute: Event
+    abstract var beforeExecute: Event<*>
 
     /**
      * Gets an event which is raised after the command executes, the event
      * is raised with the return value of the command as its only parameter.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Command.html#afterExecute">Online Documentation</a>
      */
-    abstract var afterExecute: Event
+    abstract var afterExecute: Event<*>
 }

@@ -43,7 +43,7 @@ external class ArcGISTiledElevationTerrainProvider(options: ConstructorOptions) 
      * are passed an instance of [TileProviderError].
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ArcGISTiledElevationTerrainProvider.html#errorEvent">Online Documentation</a>
      */
-    override val errorEvent: Event
+    override val errorEvent: Event<*>
 
     /**
      * Gets the credit to display when this terrain provider is active.  Typically this is used to credit
@@ -143,14 +143,14 @@ external class ArcGISTiledElevationTerrainProvider(options: ConstructorOptions) 
      * @param [x] The X coordinate of the tile for which to request geometry.
      * @param [y] The Y coordinate of the tile for which to request geometry.
      * @param [level] The level of the tile for which to request geometry.
-     * @return Undefined if nothing need to be loaded or a Promise that resolves when all required tiles are loaded
+     * @return This provider does not support loading availability.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ArcGISTiledElevationTerrainProvider.html#loadTileDataAvailability">Online Documentation</a>
      */
     override fun loadTileDataAvailability(
         x: Double,
         y: Double,
         level: Int,
-    ): kotlin.js.Promise<Nothing?>?
+    ): Nothing?
 }
 
 inline fun ArcGISTiledElevationTerrainProvider(

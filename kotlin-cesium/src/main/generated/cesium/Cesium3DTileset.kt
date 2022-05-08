@@ -365,7 +365,7 @@ external class Cesium3DTileset(options: ConstructorOptions) {
      * ```
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileset.html#loadProgress">Online Documentation</a>
      */
-    var loadProgress: Event
+    var loadProgress: Event<*>
 
     /**
      * The event fired to indicate that all tiles that meet the screen space error this frame are loaded. The tileset
@@ -379,7 +379,7 @@ external class Cesium3DTileset(options: ConstructorOptions) {
      * ```
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileset.html#allTilesLoaded">Online Documentation</a>
      */
-    var allTilesLoaded: Event
+    var allTilesLoaded: Event<*>
 
     /**
      * The event fired to indicate that all tiles that meet the screen space error this frame are loaded. This event
@@ -393,7 +393,7 @@ external class Cesium3DTileset(options: ConstructorOptions) {
      * ```
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileset.html#initialTilesLoaded">Online Documentation</a>
      */
-    var initialTilesLoaded: Event
+    var initialTilesLoaded: Event<*>
 
     /**
      * The event fired to indicate that a tile's content was loaded.
@@ -410,7 +410,7 @@ external class Cesium3DTileset(options: ConstructorOptions) {
      * ```
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileset.html#tileLoad">Online Documentation</a>
      */
-    var tileLoad: Event
+    var tileLoad: Event<*>
 
     /**
      * The event fired to indicate that a tile's content was unloaded.
@@ -427,7 +427,7 @@ external class Cesium3DTileset(options: ConstructorOptions) {
      * ```
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileset.html#tileUnload">Online Documentation</a>
      */
-    var tileUnload: Event
+    var tileUnload: Event<*>
 
     /**
      * The event fired to indicate that a tile's content failed to load.
@@ -446,7 +446,7 @@ external class Cesium3DTileset(options: ConstructorOptions) {
      * ```
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileset.html#tileFailed">Online Documentation</a>
      */
-    var tileFailed: Event
+    var tileFailed: Event<*>
 
     /**
      * This event fires once for each visible tile in a frame.  This can be used to manually
@@ -479,7 +479,7 @@ external class Cesium3DTileset(options: ConstructorOptions) {
      * ```
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileset.html#tileVisible">Online Documentation</a>
      */
-    var tileVisible: Event
+    var tileVisible: Event<*>
 
     /**
      * Optimization option. Determines if level of detail skipping should be applied during the traversal.
