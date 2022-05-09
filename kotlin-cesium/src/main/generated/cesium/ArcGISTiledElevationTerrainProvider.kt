@@ -43,7 +43,7 @@ external class ArcGISTiledElevationTerrainProvider(options: ConstructorOptions) 
      * are passed an instance of [TileProviderError].
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ArcGISTiledElevationTerrainProvider.html#errorEvent">Online Documentation</a>
      */
-    override val errorEvent: Event<*>
+    override val errorEvent: DefaultEvent
 
     /**
      * Gets the credit to display when this terrain provider is active.  Typically this is used to credit

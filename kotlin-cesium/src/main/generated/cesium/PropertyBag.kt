@@ -36,7 +36,7 @@ external class PropertyBag(
      * object changes, or one of the properties itself changes.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PropertyBag.html#definitionChanged">Online Documentation</a>
      */
-    val definitionChanged: Event<*>
+    val definitionChanged: DefaultEvent
 
     /**
      * Determines if this object has defined a property with the given name.

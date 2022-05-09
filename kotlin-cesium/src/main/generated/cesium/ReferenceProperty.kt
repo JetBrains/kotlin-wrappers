@@ -67,7 +67,7 @@ external class ReferenceProperty(
      * The definition is changed whenever the referenced property's definition is changed.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ReferenceProperty.html#definitionChanged">Online Documentation</a>
      */
-    val definitionChanged: Event<*>
+    val definitionChanged: DefaultEvent
 
     /**
      * Gets the reference frame that the position is defined in.

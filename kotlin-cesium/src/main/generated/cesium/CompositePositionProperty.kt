@@ -32,7 +32,7 @@ external class CompositePositionProperty(var referenceFrame: ReferenceFrame = de
      * than the current value.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CompositePositionProperty.html#definitionChanged">Online Documentation</a>
      */
-    val definitionChanged: Event<*>
+    val definitionChanged: DefaultEvent
 
     /**
      * Gets the interval collection.

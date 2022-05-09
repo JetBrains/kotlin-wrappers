@@ -36,7 +36,7 @@ external class ModelAnimation {
      * ```
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ModelAnimation.html#start">Online Documentation</a>
      */
-    var start: Event<*>
+    var start: DefaultEvent
 
     /**
      * The event fired when on each frame when this animation is updated.  The
@@ -52,7 +52,7 @@ external class ModelAnimation {
      * ```
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ModelAnimation.html#update">Online Documentation</a>
      */
-    var update: Event<*>
+    var update: DefaultEvent
 
     /**
      * The event fired when this animation is stopped.  This can be used, for
@@ -66,7 +66,7 @@ external class ModelAnimation {
      * ```
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ModelAnimation.html#stop">Online Documentation</a>
      */
-    var stop: Event<*>
+    var stop: DefaultEvent
 
     /**
      * The glTF animation name that identifies this animation.

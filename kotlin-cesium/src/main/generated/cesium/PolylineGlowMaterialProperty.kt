@@ -27,7 +27,7 @@ external class PolylineGlowMaterialProperty : MaterialProperty {
      * a different result for the same time.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PolylineGlowMaterialProperty.html#definitionChanged">Online Documentation</a>
      */
-    override val definitionChanged: Event<*>
+    override val definitionChanged: DefaultEvent
 
     /**
      * Gets or sets the Property specifying the [Color] of the line.

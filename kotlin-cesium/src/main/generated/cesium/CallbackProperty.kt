@@ -28,7 +28,7 @@ external class CallbackProperty(
      * The definition is changed whenever setCallback is called.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CallbackProperty.html#definitionChanged">Online Documentation</a>
      */
-    val definitionChanged: Event<*>
+    val definitionChanged: DefaultEvent
 
     /**
      * Gets the value of the property.

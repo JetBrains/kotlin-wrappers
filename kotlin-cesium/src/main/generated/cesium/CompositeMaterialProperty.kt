@@ -23,7 +23,7 @@ external class CompositeMaterialProperty : MaterialProperty {
      * than the current value.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CompositeMaterialProperty.html#definitionChanged">Online Documentation</a>
      */
-    override val definitionChanged: Event<*>
+    override val definitionChanged: DefaultEvent
 
     /**
      * Gets the interval collection.

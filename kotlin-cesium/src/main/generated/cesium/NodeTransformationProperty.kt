@@ -27,7 +27,7 @@ external class NodeTransformationProperty {
      * a different result for the same time.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/NodeTransformationProperty.html#definitionChanged">Online Documentation</a>
      */
-    val definitionChanged: Event<*>
+    val definitionChanged: DefaultEvent
 
     /**
      * Gets or sets the [Cartesian3] Property specifying the (x, y, z) translation to apply to the node.

@@ -35,7 +35,7 @@ external class CompositeEntityCollection(collections: Array<out EntityCollection
      * The generated event is a [EntityCollection.collectionChangedEventCallback].
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CompositeEntityCollection.html#collectionChanged">Online Documentation</a>
      */
-    val collectionChanged: Event<*>
+    val collectionChanged: DefaultEvent
 
     /**
      * Gets a globally unique identifier for this collection.

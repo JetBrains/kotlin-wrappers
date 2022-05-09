@@ -40,7 +40,7 @@ abstract external class DataSource {
      * Gets an event that will be raised when the underlying data changes.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/DataSource.html#changedEvent">Online Documentation</a>
      */
-    abstract var changedEvent: Event<*>
+    abstract var changedEvent: DefaultEvent
 
     /**
      * Gets an event that will be raised if an error is encountered during processing.

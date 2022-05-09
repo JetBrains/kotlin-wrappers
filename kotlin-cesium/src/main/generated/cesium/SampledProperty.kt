@@ -73,7 +73,7 @@ external class SampledProperty(
      * a different result for the same time.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/SampledProperty.html#definitionChanged">Online Documentation</a>
      */
-    val definitionChanged: Event<*>
+    val definitionChanged: DefaultEvent
 
     /**
      * Gets the type of property.

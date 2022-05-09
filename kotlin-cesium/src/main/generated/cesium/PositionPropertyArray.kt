@@ -37,7 +37,7 @@ external class PositionPropertyArray(
      * than the current value or one of the properties in the array also changes.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PositionPropertyArray.html#definitionChanged">Online Documentation</a>
      */
-    val definitionChanged: Event<*>
+    val definitionChanged: DefaultEvent
 
     /**
      * Gets the value of the property.

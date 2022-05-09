@@ -37,7 +37,7 @@ external class SampledPositionProperty(
      * a different result for the same time.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/SampledPositionProperty.html#definitionChanged">Online Documentation</a>
      */
-    val definitionChanged: Event<*>
+    val definitionChanged: DefaultEvent
 
     /**
      * Gets the degree of interpolation to perform when retrieving a value. Call `setInterpolationOptions` to set this.
