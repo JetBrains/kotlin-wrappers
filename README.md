@@ -12,20 +12,20 @@ To learn more please refer to the `README`s of individual modules.
 
 | README                                                             | Version                                                                                                                                                                                                          |
 |:-------------------------------------------------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [kotlin-browser](kotlin-browser/README.md)                         | [![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-browser)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-browser)                         | 
-| [kotlin-cesium](kotlin-cesium/README.md)                           | [![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-cesium)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-cesium)                           | 
-| [kotlin-css](kotlin-css/README.md)                                 | [![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-css)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-css)                                 | 
-| [kotlin-csstype](kotlin-csstype/README.md)                         | [![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-csstype)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-csstype)                         | 
-| [kotlin-emotion](kotlin-emotion/README.md)                         | [![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-emotion)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-emotion)                         | 
-| [kotlin-extensions](kotlin-extensions/README.md)                   | [![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-extensions)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-extensions)                   | 
-| [kotlin-history](kotlin-history/README.md)                         | [![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-history)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-history)                         | 
-| [kotlin-mui](kotlin-mui/README.md)                                 | [![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-mui)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-mui)                                 | 
-| [kotlin-mui-icons](kotlin-mui-icons/README.md)                     | [![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-mui-icons)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-mui-icons)                     | 
+| [kotlin-browser](kotlin-browser/README.md)                         | [![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-browser)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-browser)                         |
+| [kotlin-cesium](kotlin-cesium/README.md)                           | [![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-cesium)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-cesium)                           |
+| [kotlin-css](kotlin-css/README.md)                                 | [![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-css)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-css)                                 |
+| [kotlin-csstype](kotlin-csstype/README.md)                         | [![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-csstype)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-csstype)                         |
+| [kotlin-emotion](kotlin-emotion/README.md)                         | [![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-emotion)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-emotion)                         |
+| [kotlin-extensions](kotlin-extensions/README.md)                   | [![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-extensions)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-extensions)                   |
+| [kotlin-history](kotlin-history/README.md)                         | [![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-history)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-history)                         |
+| [kotlin-mui](kotlin-mui/README.md)                                 | [![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-mui)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-mui)                                 |
+| [kotlin-mui-icons](kotlin-mui-icons/README.md)                     | [![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-mui-icons)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-mui-icons)                     |
 | [kotlin-muix-data-grid](kotlin-muix-data-grid/README.md)           | [![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-muix-data-grid)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-muix-data-grid)           |
 | [kotlin-node](kotlin-node/README.md)                               | [![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-node)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-node)                               |
-| [kotlin-popper](kotlin-popper/README.md)                           | [![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-popper)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-popper)                           | 
-| [kotlin-react](kotlin-react/README.md)                             | [![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-react)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-react)                             | 
-| [kotlin-react-beautiful-dnd](kotlin-react-beautiful-dnd/README.md) | [![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-react-beautiful-dnd)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-react-beautiful-dnd) | 
+| [kotlin-popper](kotlin-popper/README.md)                           | [![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-popper)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-popper)                           |
+| [kotlin-react](kotlin-react/README.md)                             | [![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-react)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-react)                             |
+| [kotlin-react-beautiful-dnd](kotlin-react-beautiful-dnd/README.md) | [![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-react-beautiful-dnd)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-react-beautiful-dnd) |
 | [kotlin-react-core](kotlin-react-core/README.md)                   | [![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-react-core)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-react-core)                   |
 | [kotlin-react-dom](kotlin-react-dom/README.md)                     | [![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-react-dom)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-react-dom)                     |
 | [kotlin-react-dom-legacy](kotlin-react-dom-legacy/README.md)       | [![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-react-dom-legacy)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-react-dom-legacy)       |
@@ -56,7 +56,7 @@ about version compatibility.
 Just declare `kotlin-wrappers-bom` and specify the modules you need:
 
 ```kotlin
-val kotlinWrappersVersion = "0.0.1-pre.334"
+val kotlinWrappersVersion = "0.0.1-pre.335"
 
 dependencies {
     implementation(enforcedPlatform("org.jetbrains.kotlin-wrappers:kotlin-wrappers-bom:$kotlinWrappersVersion"))
@@ -74,7 +74,7 @@ Or use a helper function:
 fun kotlinw(target: String): String =
     "org.jetbrains.kotlin-wrappers:kotlin-$target"
 
-val kotlinWrappersVersion = "0.0.1-pre.334"
+val kotlinWrappersVersion = "0.0.1-pre.335"
 
 dependencies {
     implementation(enforcedPlatform(kotlinw("wrappers-bom:$kotlinWrappersVersion")))
@@ -90,13 +90,13 @@ Make sure that you have `mavenCentral()` in the list of repositories.
 
 ## Examples
 
-1. [To-do list example](examples/src/main/kotlin/example/Todo.kt) 
+1. [To-do list example](examples/src/main/kotlin/example/Todo.kt)
 
 2. [Tic-Tac-Toe example](examples/src/main/kotlin/example/TicTacToe.kt)
 
 3. A port of "Thinking in React" [example](examples/src/main/kotlin/example/Product.kt)
 
-4. An [example of using axios](examples/src/main/kotlin/example/AxiosSearch.kt) to fetch remote data. It also 
+4. An [example of using axios](examples/src/main/kotlin/example/AxiosSearch.kt) to fetch remote data. It also
 demonstrates how to add typings for an external library.
 
 5. An [example of using Quill](examples/src/main/kotlin/example/Quill.kt) that shows how to use an external React component.
@@ -113,7 +113,7 @@ demonstrates how to add typings for an external library.
 
 11. [ByteLegend](https://bytelegend.com/): [an open-source, real-world HTML5 MMORPG game](https://github.com/ByteLegend/ByteLegend).
 
-Follow these examples to learn how to start developing your React apps with Kotlin. Good luck and have fun! 
+Follow these examples to learn how to start developing your React apps with Kotlin. Good luck and have fun!
 You also can clone [my-kotlin-react-sample](https://github.com/ScottHuangZL/my-kotlin-app) to see the result directly.
 
 ## Experimental IR Backend
@@ -130,6 +130,6 @@ If you’re implementing these interfaces via a class, you can mark it as `@JsEx
 
 ## Contributing
 
-Contributions to this project are welcome! Please see the open 
-[issues](https://github.com/JetBrains/kotlin-wrappers/issues) or chat with us on the [#react](https://kotlinlang.slack.com/messages/react/) channel in our 
-[Slack](https://slack.kotlinlang.org/). 
+Contributions to this project are welcome! Please see the open
+[issues](https://github.com/JetBrains/kotlin-wrappers/issues) or chat with us on the [#react](https://kotlinlang.slack.com/messages/react/) channel in our
+[Slack](https://slack.kotlinlang.org/).
