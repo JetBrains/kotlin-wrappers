@@ -7,7 +7,7 @@ package cesium
  * @property [direction] The unit "direction" vector
  * @property [up] The unit "up" vector
  */
-external interface DirectionUp {
+external interface DirectionUp : CameraOrientation {
     var direction: Cartesian3
     var up: Cartesian3
 }
