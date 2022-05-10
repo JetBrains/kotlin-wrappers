@@ -80,31 +80,31 @@ external class KmlDataSource(options: ConstructorOptions? = definedExternally) {
      * Gets an event that will be raised when the underlying data changes.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/KmlDataSource.html#changedEvent">Online Documentation</a>
      */
-    var changedEvent: Event<*>
+    var changedEvent: DefaultEvent
 
     /**
      * Gets an event that will be raised if an error is encountered during processing.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/KmlDataSource.html#errorEvent">Online Documentation</a>
      */
-    var errorEvent: Event<*>
+    var errorEvent: DefaultEvent
 
     /**
      * Gets an event that will be raised when the data source either starts or stops loading.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/KmlDataSource.html#loadingEvent">Online Documentation</a>
      */
-    var loadingEvent: Event<*>
+    var loadingEvent: DefaultEvent
 
     /**
      * Gets an event that will be raised when the data source refreshes a network link.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/KmlDataSource.html#refreshEvent">Online Documentation</a>
      */
-    var refreshEvent: Event<*>
+    var refreshEvent: DefaultEvent
 
     /**
      * Gets an event that will be raised when the data source finds an unsupported node type.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/KmlDataSource.html#unsupportedNodeEvent">Online Documentation</a>
      */
-    var unsupportedNodeEvent: Event<*>
+    var unsupportedNodeEvent: DefaultEvent
 
     /**
      * Gets whether or not this data source should be displayed.

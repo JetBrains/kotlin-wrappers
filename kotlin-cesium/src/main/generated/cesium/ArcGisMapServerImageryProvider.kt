@@ -170,7 +170,7 @@ external class ArcGisMapServerImageryProvider(options: ConstructorOptions) {
      * are passed an instance of [TileProviderError].
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ArcGisMapServerImageryProvider.html#errorEvent">Online Documentation</a>
      */
-    val errorEvent: Event<*>
+    val errorEvent: DefaultEvent
 
     /**
      * Gets a value indicating whether or not the provider is ready for use.

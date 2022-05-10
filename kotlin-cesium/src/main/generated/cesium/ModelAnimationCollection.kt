@@ -20,7 +20,7 @@ external class ModelAnimationCollection {
      * ```
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ModelAnimationCollection.html#animationAdded">Online Documentation</a>
      */
-    var animationAdded: Event<*>
+    var animationAdded: DefaultEvent
 
     /**
      * The event fired when an animation is removed from the collection.  This can be used, for
@@ -32,7 +32,7 @@ external class ModelAnimationCollection {
      * ```
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ModelAnimationCollection.html#animationRemoved">Online Documentation</a>
      */
-    var animationRemoved: Event<*>
+    var animationRemoved: DefaultEvent
 
     /**
      * The number of animations in the collection.

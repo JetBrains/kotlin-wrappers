@@ -150,7 +150,7 @@ abstract external class ImageryProvider {
      * are passed an instance of [TileProviderError].
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ImageryProvider.html#errorEvent">Online Documentation</a>
      */
-    abstract val errorEvent: Event<*>
+    abstract val errorEvent: DefaultEvent
 
     /**
      * Gets the credit to display when this imagery provider is active.  Typically this is used to credit

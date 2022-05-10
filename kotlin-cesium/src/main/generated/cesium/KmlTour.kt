@@ -36,7 +36,7 @@ external class KmlTour(
      * before any playlist entry starts to play.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/KmlTour.html#tourStart">Online Documentation</a>
      */
-    var tourStart: Event<*>
+    var tourStart: DefaultEvent
 
     /**
      * Event will be called when all playlist entries are
@@ -46,7 +46,7 @@ external class KmlTour(
      * be called with terminated=true parameter.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/KmlTour.html#tourEnd">Online Documentation</a>
      */
-    var tourEnd: Event<*>
+    var tourEnd: DefaultEvent
 
     /**
      * Event will be called when entry from playlist starts to play.
@@ -54,7 +54,7 @@ external class KmlTour(
      * Event callback will be called with curent entry as first parameter.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/KmlTour.html#entryStart">Online Documentation</a>
      */
-    var entryStart: Event<*>
+    var entryStart: DefaultEvent
 
     /**
      * Event will be called when entry from playlist ends to play.
@@ -64,7 +64,7 @@ external class KmlTour(
      * 2. terminated - true if playback was terminated by calling [KmlTour.stop]
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/KmlTour.html#entryEnd">Online Documentation</a>
      */
-    var entryEnd: Event<*>
+    var entryEnd: DefaultEvent
 
     /**
      * Add entry to this tour playlist.

@@ -272,7 +272,7 @@ external class Globe(var ellipsoid: Ellipsoid = definedExternally) {
      * Gets an event that's raised when an imagery layer is added, shown, hidden, moved, or removed.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Globe.html#imageryLayersUpdatedEvent">Online Documentation</a>
      */
-    val imageryLayersUpdatedEvent: Event<*>
+    val imageryLayersUpdatedEvent: DefaultEvent
 
     /**
      * Returns `true` when the tile load queue is empty, `false` otherwise.  When the load queue is empty,
@@ -317,14 +317,14 @@ external class Globe(var ellipsoid: Ellipsoid = definedExternally) {
      * Gets an event that's raised when the terrain provider is changed
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Globe.html#terrainProviderChanged">Online Documentation</a>
      */
-    val terrainProviderChanged: Event<*>
+    val terrainProviderChanged: DefaultEvent
 
     /**
      * Gets an event that's raised when the length of the tile load queue has changed since the last render frame.  When the load queue is empty,
      * all terrain and imagery for the current view have been loaded.  The event passes the new length of the tile load queue.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Globe.html#tileLoadProgressEvent">Online Documentation</a>
      */
-    var tileLoadProgressEvent: Event<*>
+    var tileLoadProgressEvent: DefaultEvent
 
     /**
      * Gets or sets the material appearance of the Globe.  This can be one of several built-in [Material] objects or a custom material, scripted with

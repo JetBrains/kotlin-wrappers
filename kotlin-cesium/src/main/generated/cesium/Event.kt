@@ -27,7 +27,7 @@ package cesium
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Event.html">Online Documentation</a>
  */
-external class Event<Listener : Function<*>> {
+external class Event<Listener : Function<Unit>> {
     /**
      * The number of listeners currently subscribed to the event.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Event.html#numberOfListeners">Online Documentation</a>

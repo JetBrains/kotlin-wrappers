@@ -28,7 +28,7 @@ external class PropertyArray(value: Array<out Property>? = definedExternally) {
      * than the current value or one of the properties in the array also changes.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PropertyArray.html#definitionChanged">Online Documentation</a>
      */
-    val definitionChanged: Event<*>
+    val definitionChanged: DefaultEvent
 
     /**
      * Gets the value of the property.

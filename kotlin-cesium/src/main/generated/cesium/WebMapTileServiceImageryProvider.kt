@@ -200,7 +200,7 @@ external class WebMapTileServiceImageryProvider(options: ConstructorOptions) {
      * are passed an instance of [TileProviderError].
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/WebMapTileServiceImageryProvider.html#errorEvent">Online Documentation</a>
      */
-    val errorEvent: Event<*>
+    val errorEvent: DefaultEvent
 
     /**
      * Gets the mime type of images returned by this imagery provider.

@@ -35,7 +35,7 @@ external class EventHelper {
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/EventHelper.html#add">Online Documentation</a>
      */
     fun add(
-        event: Event<*>,
+        event: DefaultEvent,
         listener: () -> Unit,
         scope: Any? = definedExternally,
     ): RemoveCallback

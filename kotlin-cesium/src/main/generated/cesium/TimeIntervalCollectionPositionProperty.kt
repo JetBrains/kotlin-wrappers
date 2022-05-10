@@ -32,7 +32,7 @@ external class TimeIntervalCollectionPositionProperty(val referenceFrame: Refere
      * a different result for the same time.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TimeIntervalCollectionPositionProperty.html#definitionChanged">Online Documentation</a>
      */
-    val definitionChanged: Event<*>
+    val definitionChanged: DefaultEvent
 
     /**
      * Gets the interval collection.

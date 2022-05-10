@@ -52,19 +52,19 @@ external class CustomDataSource(var name: String = definedExternally) {
      * Gets an event that will be raised when the underlying data changes.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CustomDataSource.html#changedEvent">Online Documentation</a>
      */
-    var changedEvent: Event<*>
+    var changedEvent: DefaultEvent
 
     /**
      * Gets an event that will be raised if an error is encountered during processing.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CustomDataSource.html#errorEvent">Online Documentation</a>
      */
-    var errorEvent: Event<*>
+    var errorEvent: DefaultEvent
 
     /**
      * Gets an event that will be raised when the data source either starts or stops loading.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CustomDataSource.html#loadingEvent">Online Documentation</a>
      */
-    var loadingEvent: Event<*>
+    var loadingEvent: DefaultEvent
 
     /**
      * Gets whether or not this data source should be displayed.

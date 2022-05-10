@@ -15,21 +15,21 @@ external class ImageryLayerCollection {
      * was added and the index at which it was added.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ImageryLayerCollection.html#layerAdded">Online Documentation</a>
      */
-    var layerAdded: Event<*>
+    var layerAdded: DefaultEvent
 
     /**
      * An event that is raised when a layer is removed from the collection.  Event handlers are passed the layer that
      * was removed and the index from which it was removed.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ImageryLayerCollection.html#layerRemoved">Online Documentation</a>
      */
-    var layerRemoved: Event<*>
+    var layerRemoved: DefaultEvent
 
     /**
      * An event that is raised when a layer changes position in the collection.  Event handlers are passed the layer that
      * was moved, its new index after the move, and its old index prior to the move.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ImageryLayerCollection.html#layerMoved">Online Documentation</a>
      */
-    var layerMoved: Event<*>
+    var layerMoved: DefaultEvent
 
     /**
      * An event that is raised when a layer is shown or hidden by setting the
@@ -38,7 +38,7 @@ external class ImageryLayerCollection {
      * shown or false if it is now hidden.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ImageryLayerCollection.html#layerShownOrHidden">Online Documentation</a>
      */
-    var layerShownOrHidden: Event<*>
+    var layerShownOrHidden: DefaultEvent
 
     /**
      * Gets the number of layers in this collection.

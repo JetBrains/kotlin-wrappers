@@ -27,7 +27,7 @@ external class ImageMaterialProperty : MaterialProperty {
      * a different result for the same time.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ImageMaterialProperty.html#definitionChanged">Online Documentation</a>
      */
-    override val definitionChanged: Event<*>
+    override val definitionChanged: DefaultEvent
 
     /**
      * Gets or sets the Property specifying Image, URL, Canvas, or Video to use.

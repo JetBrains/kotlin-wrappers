@@ -53,7 +53,7 @@ external class TimeIntervalCollectionProperty {
      * than the current value.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TimeIntervalCollectionProperty.html#definitionChanged">Online Documentation</a>
      */
-    val definitionChanged: Event<*>
+    val definitionChanged: DefaultEvent
 
     /**
      * Gets the interval collection.

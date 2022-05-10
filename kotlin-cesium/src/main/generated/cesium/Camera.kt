@@ -192,19 +192,19 @@ external class Camera(scene: Scene) {
      * Gets the event that will be raised at when the camera starts to move.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Camera.html#moveStart">Online Documentation</a>
      */
-    val moveStart: Event<*>
+    val moveStart: DefaultEvent
 
     /**
      * Gets the event that will be raised when the camera has stopped moving.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Camera.html#moveEnd">Online Documentation</a>
      */
-    val moveEnd: Event<*>
+    val moveEnd: DefaultEvent
 
     /**
      * Gets the event that will be raised when the camera has changed by `percentageChanged`.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Camera.html#changed">Online Documentation</a>
      */
-    val changed: Event<*>
+    val changed: DefaultEvent
 
     /**
      * Sets the camera position, orientation and transform.

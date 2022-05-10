@@ -116,13 +116,13 @@ external class Scene(
      * The event fired at the beginning of a scene transition.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Scene.html#morphStart">Online Documentation</a>
      */
-    var morphStart: Event<*>
+    var morphStart: DefaultEvent
 
     /**
      * The event fired at the completion of a scene transition.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Scene.html#morphComplete">Online Documentation</a>
      */
-    var morphComplete: Event<*>
+    var morphComplete: DefaultEvent
 
     /**
      * The [SkyBox] used to draw the stars.
@@ -488,14 +488,14 @@ external class Scene(
      * Gets an event that's raised when the terrain provider is changed
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Scene.html#terrainProviderChanged">Online Documentation</a>
      */
-    val terrainProviderChanged: Event<*>
+    val terrainProviderChanged: DefaultEvent
 
     /**
      * Gets the event that will be raised before the scene is updated or rendered.  Subscribers to the event
      * receive the Scene instance as the first parameter and the current time as the second parameter.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Scene.html#preUpdate">Online Documentation</a>
      */
-    val preUpdate: Event<*>
+    val preUpdate: DefaultEvent
 
     /**
      * Gets the event that will be raised immediately after the scene is updated and before the scene is rendered.
@@ -503,7 +503,7 @@ external class Scene(
      * parameter.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Scene.html#postUpdate">Online Documentation</a>
      */
-    val postUpdate: Event<*>
+    val postUpdate: DefaultEvent
 
     /**
      * Gets the event that will be raised when an error is thrown inside the `render` function.
@@ -512,7 +512,7 @@ external class Scene(
      * the `rethrowRenderErrors` property.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Scene.html#renderError">Online Documentation</a>
      */
-    val renderError: Event<*>
+    val renderError: DefaultEvent
 
     /**
      * Gets the event that will be raised after the scene is updated and immediately before the scene is rendered.
@@ -520,14 +520,14 @@ external class Scene(
      * parameter.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Scene.html#preRender">Online Documentation</a>
      */
-    val preRender: Event<*>
+    val preRender: DefaultEvent
 
     /**
      * Gets the event that will be raised immediately after the scene is rendered.  Subscribers to the event
      * receive the Scene instance as the first parameter and the current time as the second parameter.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Scene.html#postRender">Online Documentation</a>
      */
-    val postRender: Event<*>
+    val postRender: DefaultEvent
 
     /**
      * Gets the simulation time when the scene was last rendered. Returns undefined if the scene has not yet been
