@@ -133,10 +133,12 @@ external interface Channels {
     var lightChannel: String
 
     var darkChannel: String
+
+    var contrastTextChannel: String
 }
 
 external interface PaletteWithChannels {
-    var common: CommonColors
+    var common: dynamic
 
     var mode: mui.material.PaletteMode
 
@@ -161,6 +163,8 @@ external interface PaletteWithChannels {
     var text: dynamic
 
     var divider: dynamic
+
+    var dividerChannel: dynamic
 
     var action: dynamic
 

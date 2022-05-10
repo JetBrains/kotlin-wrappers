@@ -4,13 +4,6 @@ package mui.base
 
 external interface UseButtonParameters {
     /**
-     * The component used for the Root slot.
-     * Either a string to use a HTML element or a component.
-     * @default 'button'
-     */
-    var component: react.ElementType<*>?
-
-    /**
      * If `true`, the component is disabled.
      * @default false
      */
