@@ -16,7 +16,7 @@ external interface ThemeProviderProps : react.PropsWithChildren {
  * It should preferably be used at **the root of your component tree**.
  * API:
  *
- * - [ThemeProvider API](/material-ui/customization/theming/#themeprovider)
+ * - [ThemeProvider API](https://mui.com/material-ui/customization/theming/#themeprovider)
  */
 @JsName("default")
 external val ThemeProvider: react.FC<ThemeProviderProps>
