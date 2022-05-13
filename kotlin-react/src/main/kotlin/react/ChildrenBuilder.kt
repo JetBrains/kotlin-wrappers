@@ -54,6 +54,17 @@ sealed interface ChildrenBuilder {
         +create(block)
     }
 
+    operator fun <T> Context<T>.invoke(
+        value: T,
+        block: ChildrenBuilder.() -> Unit,
+    ) {
+        Provider {
+            this.value = value
+
+            block()
+        }
+    }
+
     operator fun <T> Provider<T>.invoke(
         value: T,
         block: ChildrenBuilder.() -> Unit,
