@@ -9,7 +9,7 @@ external interface LocalizationProviderProps : react.PropsWithChildren {
     override var children: react.ReactNode?
 
     /** DateIO adapter class function */
-    var dateAdapter: dynamic
+    var dateAdapter: DateAdapter /* new (...args: any) => MuiPickersAdapter<unknown> */
 
     /** Formats that are used for any child pickers */
     var dateFormats: dynamic
