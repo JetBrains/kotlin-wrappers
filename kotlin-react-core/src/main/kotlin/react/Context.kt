@@ -21,6 +21,8 @@ sealed external interface Consumer<T> :
 sealed external interface Context<T> {
     val Provider: Provider<T>
     val Consumer: Consumer<T>
+    
+    var displayName: String?
 }
 
 // Context (16.3+)
