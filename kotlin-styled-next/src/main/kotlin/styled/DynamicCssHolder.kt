@@ -16,10 +16,20 @@ internal class DynamicCssHolder(private val sheet: StyleSheet, cssSuffix: String
         }
     }
 
-    private fun scheduleToInject(className: String) {
+    internal fun scheduleToInject(className: String) {
         if (classNamesToInject[className] == true) {
             GlobalStyles.scheduleToInject(".$className", css)
         }
+    }
+
+    internal fun scheduleToInject() {
+        classNamesToInject.keys.forEach { className ->
+            scheduleToInject(className)
+        }
+    }
+
+    internal fun removeInjected() {
+        GlobalStyles.removeInjectedStyleSheet(classNamesToInject.map { (className, _) -> ".$className" })
     }
 
     /**

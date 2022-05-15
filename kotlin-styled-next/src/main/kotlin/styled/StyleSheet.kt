@@ -97,16 +97,23 @@ open class StyleSheet(
         holders.forEach {
             it.scheduleToInject()
         }
+        dynamicHolders.values.forEach {
+            it.scheduleToInject()
+        }
     }
 
     fun scheduleToInject(className: String) {
         holders.forEach {
             it.scheduleToInject(className)
         }
+        dynamicHolders.values.forEach {
+            it.scheduleToInject(className)
+        }
     }
 
     fun removeInjected() {
         holders.forEach { it.removeInjected() }
+        dynamicHolders.values.forEach { it.removeInjected() }
     }
 }
 
