@@ -36,11 +36,23 @@ open class StyleSheet(
         }
     private val holders: MutableList<CssHolder> = mutableListOf()
 
+    /** Keeps all holders providing dynamic styles - the holders are cached by their CSS suffixes. */
+    private val dynamicHolders = mutableMapOf<String, DynamicCssHolder>()
+
     constructor(name: String, parent: StyleSheet, isStatic: Boolean = true) : this(parent.name + "-" + name, isStatic)
 
     fun css(vararg parents: RuleSet, builder: RuleSet) =
         CssHolder(this, *parents, builder)
             .also { addCssHolder(it) }
+
+    /**
+     * Declares properties with dynamic styles according to provided arguments.
+     *
+     * @param builder Describes how to prepare a style according to the current argument.
+     *
+     * @return An instance of the [DynamicCssDelegate] allowing the target property to invoke required styles.
+     * */
+    fun <T : HasCssSuffix> dynamicCss(builder: CssBuilder.(T) -> Unit) = DynamicCssDelegate(this, builder)
 
     internal fun addCssHolder(holder: CssHolder) {
         holders.add(holder)
@@ -49,6 +61,28 @@ open class StyleSheet(
     fun inject() {
         scheduleToInject()
         GlobalStyles.injectScheduled()
+    }
+
+    /**
+     * Creates a new or uses an already cached [RuleSet] corresponding to the provided [argument].
+     *
+     * @param staticCssSuffix Some unique static (keeping even if the [argument] changes) name for a style:
+     *                        usually a property name.
+     * @param builder Describes how to prepare styles for the particular [argument].
+     * @param argument Some kind of seed and identifier to prepare a [RuleSet].
+     *
+     * @return A prepared [RuleSet] ready to be used.
+     * */
+    internal fun <T : HasCssSuffix> prepareCachedRuleSet(
+        staticCssSuffix: String,
+        builder: CssBuilder.(T) -> Unit,
+        argument: T
+    ): RuleSet {
+        val fullCssSuffix = "$staticCssSuffix-${argument.cssSuffix}"
+        return dynamicHolders.getOrPut(fullCssSuffix) {
+            DynamicCssHolder(this, fullCssSuffix, { builder.invoke(this, argument) })
+                .also { it.markToInject() }
+        }.provideRuleSet()
     }
 
     internal fun scheduleImports() {
