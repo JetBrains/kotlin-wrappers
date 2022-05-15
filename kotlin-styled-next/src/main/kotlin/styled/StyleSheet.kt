@@ -90,8 +90,8 @@ open class StyleSheet(
         is Boolean -> argument.toString()
         is Number -> argument.toString().replace(".", "-")
         is String -> argument.revampCssSuffix()
-        is Enum<*> -> argument.name.revampCssSuffix()
         is HasCssSuffix -> argument.cssSuffix.revampCssSuffix()
+        is Enum<*> -> argument.name.revampCssSuffix()
         else -> throw IllegalArgumentException("type is unsupported")
     }
 
