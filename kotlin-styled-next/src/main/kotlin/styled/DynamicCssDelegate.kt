@@ -7,7 +7,7 @@ import kotlin.reflect.KProperty
 /**
  * The only purpose of this class is to intercept a property's name which is used to construct a final CSS class name.
  * */
-class DynamicCssDelegate<T : HasCssSuffix> internal constructor(
+class DynamicCssDelegate<T : Any> internal constructor(
     private val sheet: StyleSheet,
     private val builder: CssBuilder.(T) -> Unit
 ) {
@@ -16,7 +16,7 @@ class DynamicCssDelegate<T : HasCssSuffix> internal constructor(
      * Almost anemic class with only one purpose
      * to avoid creation of an anonymous class holding a reference to the parent.
      * */
-    private class DynamicCssProviderProperty<T : HasCssSuffix>(
+    private class DynamicCssProviderProperty<T : Any>(
         private val provider: DynamicCssProvider<T>
     ) : ReadOnlyProperty<Any?, DynamicCssProvider<T>> {
 

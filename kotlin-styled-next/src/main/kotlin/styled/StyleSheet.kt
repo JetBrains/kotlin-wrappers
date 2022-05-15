@@ -2,6 +2,7 @@ package styled
 
 import kotlinx.css.CssBuilder
 import kotlinx.css.RuleSet
+import org.w3c.dom.css.CSS
 import kotlin.js.Promise
 import kotlin.properties.ReadOnlyProperty
 import kotlin.reflect.KProperty
@@ -52,7 +53,7 @@ open class StyleSheet(
      *
      * @return An instance of the [DynamicCssDelegate] allowing the target property to invoke required styles.
      * */
-    fun <T : HasCssSuffix> dynamicCss(builder: CssBuilder.(T) -> Unit) = DynamicCssDelegate(this, builder)
+    fun <T : Any> dynamicCss(builder: CssBuilder.(T) -> Unit) = DynamicCssDelegate(this, builder)
 
     internal fun addCssHolder(holder: CssHolder) {
         holders.add(holder)
@@ -73,17 +74,28 @@ open class StyleSheet(
      *
      * @return A prepared [RuleSet] ready to be used.
      * */
-    internal fun <T : HasCssSuffix> prepareCachedRuleSet(
+    internal fun <T : Any> prepareCachedRuleSet(
         staticCssSuffix: String,
         builder: CssBuilder.(T) -> Unit,
         argument: T
     ): RuleSet {
-        val fullCssSuffix = "$staticCssSuffix-${argument.cssSuffix}"
+        val fullCssSuffix = "$staticCssSuffix-${getArgumentCssSuffix(argument)}"
         return dynamicHolders.getOrPut(fullCssSuffix) {
             DynamicCssHolder(this, fullCssSuffix, { builder.invoke(this, argument) })
                 .also { it.markToInject() }
         }.provideRuleSet()
     }
+
+    private fun getArgumentCssSuffix(argument: Any): String = when (argument) {
+        is Boolean -> argument.toString()
+        is Number -> argument.toString().replace(".", "-")
+        is String -> argument.revampCssSuffix()
+        is Enum<*> -> argument.name.revampCssSuffix()
+        is HasCssSuffix -> argument.cssSuffix.revampCssSuffix()
+        else -> throw IllegalArgumentException("type is unsupported")
+    }
+
+    private fun String.revampCssSuffix() = CSS.escape(this.replace(" ", ""))
 
     internal fun scheduleImports() {
         if (imports.isNotEmpty()) {

@@ -10,7 +10,7 @@ import kotlinx.css.RuleSet
  * @param staticCssSuffix A suffix to be included into all names of dynamic CSS classes.
  * @param builder         A builder describing how to prepare CSS rules according to the current argument.
  * */
-class DynamicCssProvider<T : HasCssSuffix> internal constructor(
+class DynamicCssProvider<T : Any> internal constructor(
     private val sheet: StyleSheet,
     private val staticCssSuffix: String,
     private val builder: CssBuilder.(T) -> Unit
