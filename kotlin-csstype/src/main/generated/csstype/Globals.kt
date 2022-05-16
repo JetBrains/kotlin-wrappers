@@ -7,11 +7,12 @@
 package csstype
 
 // language=JavaScript
-@JsName("""(/*union*/{inherit: 'inherit', initial: 'initial', revert: 'revert', unset: 'unset'}/*union*/)""")
+@JsName("""(/*union*/{inherit: 'inherit', initial: 'initial', revert: 'revert', revertLayer: 'revert-layer', unset: 'unset'}/*union*/)""")
 external enum class Globals : GlobalsType {
     inherit,
     initial,
     revert,
+    revertLayer,
     unset,
 
     ;

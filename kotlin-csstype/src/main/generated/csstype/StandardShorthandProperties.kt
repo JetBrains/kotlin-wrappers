@@ -6,7 +6,7 @@ external interface StandardShorthandProperties {
     /**
      * The **`all`** shorthand CSS property resets all of an element's properties except `unicode-bidi`, `direction`, and CSS Custom Properties. It can set properties to their initial or inherited values, or to the values specified in another stylesheet origin.
      *
-     * **Syntax**: `initial | inherit | unset | revert`
+     * **Syntax**: `initial | inherit | unset | revert | revert-layer`
      *
      * **Initial value**: There is no practical initial value for it.
      *
@@ -627,9 +627,10 @@ external interface StandardShorthandProperties {
      *
      * **Syntax**: `<'text-emphasis-style'> || <'text-emphasis-color'>`
      *
-     *    |    Chrome    | Firefox | Safari |     Edge     | IE  |
-     *    | :----------: | :-----: | :----: | :----------: | :-: |
-     *    |       25′    |   46    |   7    |       79′    | No  |
+     *    |  Chrome  | Firefox | Safari |   Edge   | IE  |
+     *    | :------: | :-----: | :----: | :------: | :-: |
+     *    |    99    |   46    |   7    |    99    | No  |
+     *    |    25′   |         |        |    79′   |     |
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/text-emphasis">MDN</a>
      */
