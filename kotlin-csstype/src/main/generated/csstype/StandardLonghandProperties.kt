@@ -1632,9 +1632,9 @@ external interface StandardLonghandProperties {
      *
      * **Initial value**: `visible`
      *
-     *    | Chrome | Firefox |  Safari  |  Edge  | IE  |
-     *    | :----: | :-----: | :------: | :----: | :-: |
-     *    |   85   |   No    |   15.4   |   85   | No  |
+     *    | Chrome | Firefox | Safari |  Edge  | IE  |
+     *    | :----: | :-----: | :----: | :----: | :-: |
+     *    |   85   |   No    |   No   |   85   | No  |
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/content-visibility">MDN</a>
      */
@@ -2829,7 +2829,7 @@ external interface StandardLonghandProperties {
      *
      *    | Chrome | Firefox |  Safari  |  Edge  | IE  |
      *    | :----: | :-----: | :------: | :----: | :-: |
-     *    |   69   |   41    |   12.1   |   79   | No  |
+     *    |   87   |   41    |   12.1   |   87   | No  |
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/margin-block-end">MDN</a>
      */
@@ -2844,7 +2844,7 @@ external interface StandardLonghandProperties {
      *
      *    | Chrome | Firefox |  Safari  |  Edge  | IE  |
      *    | :----: | :-----: | :------: | :----: | :-: |
-     *    |   69   |   41    |   12.1   |   79   | No  |
+     *    |   87   |   41    |   12.1   |   87   | No  |
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/margin-block-start">MDN</a>
      */
@@ -2887,10 +2887,10 @@ external interface StandardLonghandProperties {
      *
      * **Initial value**: `0`
      *
-     *    |          Chrome          |        Firefox        |          Safari          |  Edge  | IE  |
-     *    | :----------------------: | :-------------------: | :----------------------: | :----: | :-: |
-     *    |            69            |          41           |           12.1           |   79   | No  |
-     *    | 2 _(-webkit-margin-end)_ | 3 _(-moz-margin-end)_ | 3 _(-webkit-margin-end)_ |        |     |
+     *    |          Chrome          |        Firefox        |          Safari          |           Edge            | IE  |
+     *    | :----------------------: | :-------------------: | :----------------------: | :-----------------------: | :-: |
+     *    |            87            |          41           |           12.1           |            87             | No  |
+     *    | 2 _(-webkit-margin-end)_ | 3 _(-moz-margin-end)_ | 3 _(-webkit-margin-end)_ | 79 _(-webkit-margin-end)_ |     |
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/margin-inline-end">MDN</a>
      */
@@ -2903,10 +2903,10 @@ external interface StandardLonghandProperties {
      *
      * **Initial value**: `0`
      *
-     *    |           Chrome           |         Firefox         |           Safari           |  Edge  | IE  |
-     *    | :------------------------: | :---------------------: | :------------------------: | :----: | :-: |
-     *    |             69             |           41            |            12.1            |   79   | No  |
-     *    | 2 _(-webkit-margin-start)_ | 3 _(-moz-margin-start)_ | 3 _(-webkit-margin-start)_ |        |     |
+     *    |           Chrome           |         Firefox         |           Safari           |            Edge             | IE  |
+     *    | :------------------------: | :---------------------: | :------------------------: | :-------------------------: | :-: |
+     *    |             87             |           41            |            12.1            |             87              | No  |
+     *    | 2 _(-webkit-margin-start)_ | 3 _(-moz-margin-start)_ | 3 _(-webkit-margin-start)_ | 79 _(-webkit-margin-start)_ |     |
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/margin-inline-start">MDN</a>
      */
@@ -3202,7 +3202,7 @@ external interface StandardLonghandProperties {
      *
      * **Syntax**: `<'max-width'>`
      *
-     * **Initial value**: `0`
+     * **Initial value**: `none`
      *
      *    | Chrome | Firefox |  Safari  |  Edge  | IE  |
      *    | :----: | :-----: | :------: | :----: | :-: |
@@ -3232,7 +3232,7 @@ external interface StandardLonghandProperties {
      *
      * **Syntax**: `<'max-width'>`
      *
-     * **Initial value**: `0`
+     * **Initial value**: `none`
      *
      *    | Chrome | Firefox |   Safari   |  Edge  | IE  |
      *    | :----: | :-----: | :--------: | :----: | :-: |
@@ -3328,7 +3328,7 @@ external interface StandardLonghandProperties {
     /**
      * The **`mix-blend-mode`** CSS property sets how an element's content should blend with the content of the element's parent and the element's background.
      *
-     * **Syntax**: `<blend-mode>`
+     * **Syntax**: `<blend-mode> | plus-lighter`
      *
      * **Initial value**: `normal`
      *
@@ -3423,9 +3423,9 @@ external interface StandardLonghandProperties {
      *
      * **Initial value**: `auto`
      *
-     *    | Chrome | Firefox | Safari |  Edge  | IE  |
-     *    | :----: | :-----: | :----: | :----: | :-: |
-     *    |   79   |   72    |   No   |   79   | No  |
+     *    | Chrome | Firefox | Safari | Edge | IE  |
+     *    | :----: | :-----: | :----: | :--: | :-: |
+     *    |   No   |   72    |   No   |  No  | No  |
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/offset-anchor">MDN</a>
      */
@@ -3798,7 +3798,7 @@ external interface StandardLonghandProperties {
      *
      *    | Chrome | Firefox |  Safari  |  Edge  | IE  |
      *    | :----: | :-----: | :------: | :----: | :-: |
-     *    |   69   |   41    |   12.1   |   79   | No  |
+     *    |   87   |   41    |   12.1   |   87   | No  |
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/padding-block-end">MDN</a>
      */
@@ -3813,7 +3813,7 @@ external interface StandardLonghandProperties {
      *
      *    | Chrome | Firefox |  Safari  |  Edge  | IE  |
      *    | :----: | :-----: | :------: | :----: | :-: |
-     *    |   69   |   41    |   12.1   |   79   | No  |
+     *    |   87   |   41    |   12.1   |   87   | No  |
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/padding-block-start">MDN</a>
      */
@@ -3856,10 +3856,10 @@ external interface StandardLonghandProperties {
      *
      * **Initial value**: `0`
      *
-     *    |          Chrome           |        Firefox         |          Safari           |  Edge  | IE  |
-     *    | :-----------------------: | :--------------------: | :-----------------------: | :----: | :-: |
-     *    |            69             |           41           |           12.1            |   79   | No  |
-     *    | 2 _(-webkit-padding-end)_ | 3 _(-moz-padding-end)_ | 3 _(-webkit-padding-end)_ |        |     |
+     *    |          Chrome           |        Firefox         |          Safari           |            Edge            | IE  |
+     *    | :-----------------------: | :--------------------: | :-----------------------: | :------------------------: | :-: |
+     *    |            87             |           41           |           12.1            |             87             | No  |
+     *    | 2 _(-webkit-padding-end)_ | 3 _(-moz-padding-end)_ | 3 _(-webkit-padding-end)_ | 79 _(-webkit-padding-end)_ |     |
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/padding-inline-end">MDN</a>
      */
@@ -3872,10 +3872,10 @@ external interface StandardLonghandProperties {
      *
      * **Initial value**: `0`
      *
-     *    |           Chrome            |         Firefox          |           Safari            |  Edge  | IE  |
-     *    | :-------------------------: | :----------------------: | :-------------------------: | :----: | :-: |
-     *    |             69              |            41            |            12.1             |   79   | No  |
-     *    | 2 _(-webkit-padding-start)_ | 3 _(-moz-padding-start)_ | 3 _(-webkit-padding-start)_ |        |     |
+     *    |           Chrome            |         Firefox          |           Safari            |             Edge             | IE  |
+     *    | :-------------------------: | :----------------------: | :-------------------------: | :--------------------------: | :-: |
+     *    |             87              |            41            |            12.1             |              87              | No  |
+     *    | 2 _(-webkit-padding-start)_ | 3 _(-moz-padding-start)_ | 3 _(-webkit-padding-start)_ | 79 _(-webkit-padding-start)_ |     |
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/padding-inline-start">MDN</a>
      */
@@ -4981,9 +4981,10 @@ external interface StandardLonghandProperties {
      *
      * **Initial value**: `currentcolor`
      *
-     *    |    Chrome    | Firefox | Safari |     Edge     | IE  |
-     *    | :----------: | :-----: | :----: | :----------: | :-: |
-     *    |       25′    |   46    |   7    |       79′    | No  |
+     *    |  Chrome  | Firefox | Safari |   Edge   | IE  |
+     *    | :------: | :-----: | :----: | :------: | :-: |
+     *    |    99    |   46    |   7    |    99    | No  |
+     *    |    25′   |         |        |    79′   |     |
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/text-emphasis-color">MDN</a>
      */
@@ -4996,9 +4997,10 @@ external interface StandardLonghandProperties {
      *
      * **Initial value**: `over right`
      *
-     *    |    Chrome    | Firefox | Safari |     Edge     | IE  |
-     *    | :----------: | :-----: | :----: | :----------: | :-: |
-     *    |       25′    |   46    |   7    |       79′    | No  |
+     *    |  Chrome  | Firefox | Safari |   Edge   | IE  |
+     *    | :------: | :-----: | :----: | :------: | :-: |
+     *    |    99    |   46    |   7    |    99    | No  |
+     *    |    25′   |         |        |    79′   |     |
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/text-emphasis-position">MDN</a>
      */
@@ -5011,9 +5013,10 @@ external interface StandardLonghandProperties {
      *
      * **Initial value**: `none`
      *
-     *    |    Chrome    | Firefox | Safari |     Edge     | IE  |
-     *    | :----------: | :-----: | :----: | :----------: | :-: |
-     *    |       25′    |   46    |   7    |       79′    | No  |
+     *    |  Chrome  | Firefox | Safari |   Edge   | IE  |
+     *    | :------: | :-----: | :----: | :------: | :-: |
+     *    |    99    |   46    |   7    |    99    | No  |
+     *    |    25′   |         |        |    79′   |     |
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/text-emphasis-style">MDN</a>
      */

@@ -2,4 +2,5 @@
 
 package csstype
 
-typealias MixBlendMode = BlendModeProperty
+// Globals | DataType.BlendMode | "plus-lighter"
+sealed external interface MixBlendMode
