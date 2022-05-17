@@ -10,12 +10,6 @@ import mui.system.SxProps
 
 external interface PickersDayProps<TDate> : mui.system.PropsWithSx {
     /**
-     * If `true`, `onChange` is fired on click even if the same date is selected.
-     * @default false
-     */
-    var allowSameDateSelection: Boolean?
-
-    /**
      * Override or extend the styles applied to the component.
      */
     var classes: PickersDayClasses?

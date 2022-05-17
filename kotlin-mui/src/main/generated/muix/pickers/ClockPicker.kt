@@ -24,24 +24,12 @@ external interface ClockPickerProps<TDate> : react.PropsWithClassName {
      * The components used for each slot.
      * Either a string to use an HTML element or a component.
      */
-    var components: Components?
-
-    interface Components {
-        var LeftArrowButton: react.ElementType<*>?
-        var LeftArrowIcon: react.ElementType<*>?
-        var RightArrowButton: react.ElementType<*>?
-        var RightArrowIcon: react.ElementType<*>?
-    }
+    var components: dynamic
 
     /**
      * The props used for each slot inside.
      */
-    var componentsProps: ComponentsProps?
-
-    interface ComponentsProps {
-        var leftArrowButton: react.Props? /* React.SVGAttributes<SVGSVGElement> & ClockPickerComponentsPropsOverrides */
-        var rightArrowButton: react.Props? /* React.SVGAttributes<SVGSVGElement> & ClockPickerComponentsPropsOverrides */
-    }
+    var componentsProps: ClockPickerSlotsComponentsProps?
 
     /**
      * Selected date @DateIOType.
@@ -113,6 +101,18 @@ external interface ClockPickerProps<TDate> : react.PropsWithClassName {
      * @default 'hours'
      */
     var openTo: dynamic
+
+    /**
+     * If `true`, the picker and text field are disabled.
+     * @default false
+     */
+    var disabled: Boolean?
+
+    /**
+     * Make picker read only.
+     * @default false
+     */
+    var readOnly: Boolean?
 }
 
 external interface ExportedClockPickerProps<TDate> : react.Props {
@@ -121,12 +121,6 @@ external interface ExportedClockPickerProps<TDate> : react.Props {
      * @default false
      */
     var ampm: Boolean?
-
-    /**
-     * Step over minutes.
-     * @default 1
-     */
-    var minutesStep: Number?
 
     /**
      * Display ampm controls under the clock (instead of in the toolbar).
@@ -151,6 +145,22 @@ external interface ExportedClockPickerProps<TDate> : react.Props {
      *   }`
      */
     var getClockLabelText: ((view: ClockPickerView, time: TDate?, adapter: dynamic /* MuiPickersAdapter<TDate> */) -> String)?
+}
+
+external interface ClockPickerSlotsComponent {
+    var LeftArrowButton: react.ElementType<*>
+
+    var LeftArrowIcon: react.ElementType<*>
+
+    var RightArrowButton: react.ElementType<*>
+
+    var RightArrowIcon: react.ElementType<*>
+}
+
+external interface ClockPickerSlotsComponentsProps : react.Props {
+    var leftArrowButton: dynamic
+
+    var rightArrowButton: dynamic
 }
 
 

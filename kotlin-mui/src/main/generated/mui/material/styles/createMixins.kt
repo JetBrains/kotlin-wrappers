@@ -32,6 +32,5 @@ external interface MixinsOptions {
 @JsName("default")
 external fun createMixins(
     breakpoints: mui.system.Breakpoints,
-    spacing: mui.system.Spacing,
     mixins: MixinsOptions,
 ): Mixins

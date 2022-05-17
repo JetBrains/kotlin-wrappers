@@ -13,6 +13,19 @@ external interface CalendarPickerProps<TDate> : react.PropsWithClassName {
 
     var classes: CalendarPickerClasses?
 
+    /**
+     * The components used for each slot.
+     * Either a string to use an HTML element or a component.
+     * @default {}
+     */
+    var components: dynamic
+
+    /**
+     * The props used for each slot inside.
+     * @default {}
+     */
+    var componentsProps: CalendarPickerSlotsComponentsProps?
+
     var date: TDate?
 
     /**
@@ -58,13 +71,6 @@ external interface CalendarPickerProps<TDate> : react.PropsWithClassName {
     var onChange: PickerOnChangeFn<TDate>
 
     /**
-     * Callback firing on month change. @DateIOType
-     * @template TDate
-     * @param {TDate} month The new month.
-     */
-    var onMonthChange: ((month: TDate) -> Unit)?
-
-    /**
      * Initially open view.
      * @default 'day'
      */
@@ -108,6 +114,10 @@ external interface CalendarPickerProps<TDate> : react.PropsWithClassName {
      */
     var views: ReadonlyArray<CalendarPickerView>?
 }
+
+external interface CalendarPickerSlotsComponent
+
+external interface CalendarPickerSlotsComponentsProps : react.Props
 
 /**
  *

@@ -65,6 +65,12 @@ external interface Breakpoints {
      *          the screen size given by the breakpoint key (exclusive) and starting at the screen size given by the next breakpoint key (inclusive).
      */
     var not: (key: Breakpoint) -> String
+
+    /**
+     * The unit used for the breakpoint's values.
+     * @default 'px'
+     */
+    var unit: dynamic
 }
 
 external interface BreakpointsOptions {
