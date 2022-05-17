@@ -41,6 +41,14 @@ external interface MenuUnstyledProps :
     }
 
     /**
+     * Always keep the menu in the DOM.
+     * This prop can be useful in SEO situation or when you want to maximize the responsiveness of the Menu.
+     *
+     * @default false
+     */
+    var keepMounted: Boolean?
+
+    /**
      * Triggered when focus leaves the menu and the menu should close.
      */
     var onClose: (() -> Unit)?

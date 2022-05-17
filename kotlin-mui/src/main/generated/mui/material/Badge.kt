@@ -30,7 +30,7 @@ external interface BadgeProps :
     /**
      * Override or extend the styles applied to the component.
      */
-    var classes: dynamic
+    var classes: BadgeClasses?
 
     /**
      * @ignore

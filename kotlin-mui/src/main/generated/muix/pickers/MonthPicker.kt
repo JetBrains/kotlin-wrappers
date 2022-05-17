@@ -45,8 +45,6 @@ external interface MonthPickerProps<TDate> :
     /** Callback fired on date change. */
     var onChange: PickerOnChangeFn<TDate>
 
-    var onMonthChange: ((date: TDate) -> Promise<Void>?)?
-
     /** If `true` picker is readonly */
     var readOnly: Boolean?
 
@@ -54,6 +52,25 @@ external interface MonthPickerProps<TDate> :
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
     override var sx: SxProps<Theme>?
+}
+
+external interface ExportedMonthPickerProps<TDate> : react.Props {
+    /**
+     * Callback firing on month change @DateIOType.
+     * @template TDate
+     * @param {TDate} month The new year.
+     * @returns {void|Promise} -
+     */
+    var onMonthChange: ((month: TDate) -> Promise<Void>?)?
+
+    /**
+     * Disable specific months dynamically.
+     * Works like `shouldDisableDate` but for month selection view @DateIOType.
+     * @template TDate
+     * @param {TDate} month The month to check.
+     * @returns {boolean} If `true` the month will be disabled.
+     */
+    var shouldDisableMonth: ((month: TDate) -> Boolean)?
 }
 
 

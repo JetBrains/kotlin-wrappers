@@ -5,13 +5,7 @@
 
 package muix.pickers
 
-external interface StaticDatePickerProps : react.Props {
-    /**
-     * Force static wrapper inner components to be rendered in mobile or desktop mode.
-     * @default 'mobile'
-     */
-    var displayStaticWrapperAs: dynamic /* PickerStaticWrapperProps['displayStaticWrapperAs'] */
-}
+external interface StaticDatePickerProps : react.Props
 
 
 external val StaticDatePicker: react.FC<StaticDatePickerProps>

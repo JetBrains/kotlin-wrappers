@@ -7,50 +7,7 @@ import csstype.ClassName
 external interface InputUnstyledProps :
     react.dom.html.HTMLAttributes<org.w3c.dom.HTMLDivElement>
 
-external interface InputOwnerState : InputUnstyledProps {
-    var formControl: dynamic
-
-    var focused: Boolean
-}
-
-external interface UseInputProps : react.Props {
-    /**
-     * The default value. Use when the component is not controlled.
-     */
-    var defaultValue: dynamic
-
-    /**
-     * If `true`, the component is disabled.
-     * The prop defaults to the value (`false`) inherited from the parent FormControl component.
-     */
-    var disabled: Boolean?
-
-    /**
-     * If `true`, the `input` will indicate an error.
-     * The prop defaults to the value (`false`) inherited from the parent FormControl component.
-     */
-    var error: Boolean?
-
-    var onBlur: react.dom.events.FocusEventHandler<*>?
-
-    var onClick: react.dom.events.MouseEventHandler<*>?
-
-    var onChange: react.dom.events.ChangeEventHandler<org.w3c.dom.HTMLInputElement>?
-
-    var onFocus: react.dom.events.FocusEventHandler<*>?
-
-    /**
-     * If `true`, the `input` element is required.
-     * The prop defaults to the value (`false`) inherited from the parent FormControl component.
-     */
-    var required: Boolean?
-
-    var value: dynamic
-}
-
-external interface InputUnstyledOwnProps :
-    UseInputProps,
-    react.PropsWithClassName {
+external interface InputUnstyledOwnProps : react.PropsWithClassName {
     // var `aria-describedby`: String?
 
     // var `aria-label`: String?
@@ -94,12 +51,8 @@ external interface InputUnstyledOwnProps :
     var componentsProps: ComponentsProps?
 
     interface ComponentsProps {
-        var root: react.Props? /* React.ComponentPropsWithRef<'div'> & {
-    ownerState: InputOwnerState
-} */
-        var input: react.Props? /* React.ComponentPropsWithRef<'input'> & {
-    ownerState: InputOwnerState
-} */
+        var root: react.Props? /* SlotComponentProps<'div', InputUnstyledComponentsPropsOverrides, InputUnstyledOwnerState> */
+        var input: react.Props? /* SlotComponentProps<'input', InputUnstyledComponentsPropsOverrides, InputUnstyledOwnerState> */
     }
 
     /**
@@ -162,10 +115,10 @@ external interface InputUnstyledOwnProps :
      * Type of the `input` element. It should be [a valid HTML5 input type](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#Form_%3Cinput%3E_types).
      * @default 'text'
      */
-    var type: String?
+    var type: dynamic
 
     /**
      * The value of the `input` element, required for a controlled component.
      */
-    override var value: dynamic
+    var value: dynamic
 }

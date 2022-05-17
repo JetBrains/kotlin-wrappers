@@ -198,15 +198,20 @@ external interface AutocompleteProps<T> :
      *
      * @param {T[]} value The `value` provided to the component.
      * @param {function} getTagProps A tag props getter.
+     * @param {object} ownerState The state of the Autocomplete component.
      * @returns {ReactNode}
      */
-    var renderTags: ((value: ReadonlyArray<T>, getTagProps: Function<*> /* AutocompleteRenderGetTagProps */) -> react.ReactNode)?
+    var renderTags: ((
+        value: ReadonlyArray<T>,
+        getTagProps: Function<*>, /* AutocompleteRenderGetTagProps */
+        ownerState: AutocompleteProps<T>, /* AutocompleteOwnerState<T> */
+    ) -> react.ReactNode)?
 
     /**
      * The size of the component.
      * @default 'medium'
      */
-    var size: BaseSize?
+    var size: mui.system.Union? /* 'small' | 'medium', AutocompletePropsSizeOverrides */
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
