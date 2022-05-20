@@ -92,6 +92,7 @@ open class StyleSheet(
         is String -> argument.revampCssSuffix()
         is HasCssSuffix -> argument.cssSuffix.revampCssSuffix()
         is Enum<*> -> argument.name.revampCssSuffix()
+        is KProperty<*> -> argument.name.revampCssSuffix()
         else -> throw IllegalArgumentException("type is unsupported")
     }
 
