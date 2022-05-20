@@ -5,7 +5,7 @@ import org.jetbrains.kotlin.gradle.targets.js.yarn.YarnRootExtension
 
 plugins.withType<YarnPlugin> {
     the<YarnRootExtension>().apply {
-        version = "1.22.18"
+        version = "1.22.19"
         lockFileDirectory = projectDir
         ignoreScripts = false
     }
