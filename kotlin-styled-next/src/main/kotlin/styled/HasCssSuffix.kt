@@ -6,8 +6,6 @@ package styled
  * and their computation can be more complex than needed.
  * */
 interface HasCssSuffix {
-
     /** A suffix to be used in name constructions of CSS classes. */
     val cssSuffix: String
-
 }

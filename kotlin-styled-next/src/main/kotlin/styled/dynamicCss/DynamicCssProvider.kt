@@ -1,7 +1,8 @@
-package styled
+package styled.dynamicCss
 
 import kotlinx.css.CssBuilder
 import kotlinx.css.RuleSet
+import styled.StyleSheet
 
 /**
  * Provides [RuleSet]s with caching according to provided arguments.
@@ -15,7 +16,5 @@ class DynamicCssProvider<T : Any> internal constructor(
     private val staticCssSuffix: String,
     private val builder: CssBuilder.(T) -> Unit
 ) {
-
     operator fun invoke(argument: T): RuleSet = sheet.prepareCachedRuleSet(staticCssSuffix, builder, argument)
-
 }
