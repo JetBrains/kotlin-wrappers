@@ -18,7 +18,7 @@ internal class DynamicCssHolder(sheet: StyleSheet, cssSuffix: String, vararg rul
     }
 
     /**
-     * Contains the property providing part from the [CssHolder].
+     * Contains the property providing the part from the [CssHolder].
      * */
     internal fun provideRuleSet(): RuleSet = {
         sheet.scheduleImports()

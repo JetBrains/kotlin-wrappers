@@ -1,5 +1,57 @@
 ## 1.2.0
 
+It is now possible to generate static CSS class names based on enumerations, properties, and other types.
+Consider the following example:
+
+```kotlin
+private val demoComponent = fc<Props> {
+    val (screenSize, setScreenSize) = useState(ScreenSize.fromRawWidth(window.innerWidth))
+
+    useEffectOnce {
+        val eventListener: (Event) -> Unit = {
+            setScreenSize(ScreenSize.fromRawWidth(window.innerWidth))
+        }
+        window.addEventListener("resize", eventListener)
+        cleanup {
+            window.removeEventListener("resize", eventListener)
+        }
+    }
+
+    styledP {
+        css(DemoComponentStyles.demoDynamicStyle(screenSize))
+
+        +"Hi, it seems like I'm running on the ${screenSize.name.lowercase()} screen!"
+    }
+}
+
+private object DemoComponentStyles : StyleSheet() {
+    val demoDynamicStyle by dynamicCss<ScreenSize> {
+        fontSize = when (it) {
+            ScreenSize.DESKTOP -> 2.rem
+            ScreenSize.TABLET  -> 1.5.rem
+            ScreenSize.PHONE   -> 1.rem
+        }
+    }
+}
+
+enum class ScreenSize(private val startsFromWidth: Int) : HasCssSuffix {
+    DESKTOP(992),
+    TABLET(768),
+    PHONE(0);
+
+    companion object {
+        fun fromRawWidth(rawWidth: Int): ScreenSize {
+            for (value in values()) {
+                if (rawWidth >= value.startsFromWidth) return value
+            }
+            return DESKTOP
+        }
+    }
+
+    override val cssSuffix: String get() = name.lowercase()
+}
+```
+
 The `name` parameter is now optional when creating a `StyleSheet`, the name is obtained via reflection when not
 specified. Additionally, the `isStatic` parameter is now `true` by default because it's more sensible.
 

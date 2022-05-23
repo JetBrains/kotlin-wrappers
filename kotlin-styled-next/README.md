@@ -76,7 +76,7 @@ While you can mix markup and styles in one-off scenarios like the example above,
 have them separated to enable code reuse:
 
 ```kotlin
-object ComponentStyles : StyleSheet("ComponentStyles", isStatic = true) {
+object ComponentStyles : StyleSheet("ComponentStyles") {
     val wrapper by css {
         padding(vertical = 16.px)
 
@@ -147,7 +147,7 @@ object ComponentStyles : StyleSheet("ComponentStyles") {
         }
     }
 
-    // Example of a ".wrapper:hover .inner" selector 
+    // Example of a ".wrapper:hover .inner" selector
     val wrapper by css {
         // CSS properties
     }
@@ -222,3 +222,91 @@ val styles = CssBuilder(allowClasses = false).apply {
 
 StyledComponents.injectGlobal(styles)
 ```
+
+### Defining Static CSS Class Names Based on Enumerations
+
+Typically, styling of a component consists of two parts: a fixed one, and a dynamic one. Imagine styling a button:
+a CSS rule such as "text-align: center" will be defined for all kinds of buttons, while the text color will depend
+on the type of the button: colors used for the "primary" and "secondary" buttons will differ. One could write the
+following code (example was simplified intentionally):
+
+```kotlin
+object ButtonStyles : StyleSheet() {
+    val button by css {
+        textAlign = TextAlign.center
+    }
+}
+
+private val button = fc<ButtonProps> {
+    styledButton {
+        css {
+            +ButtonStyles.button
+
+            if (props.kind == "primary") {
+                color = Color.white
+            } else if (props.kind == "secondary") {
+                color = Color.blue
+            }
+        }
+    }
+}
+```
+
+In this case, three CSS classes will be generated. but only the first one will have a semantic name (`ButtonStyles-button`),
+the other two will be auto-generated (`ksc-1`, `ksc-2`, etc.)
+
+While this example is purposely naive — it is of course possible to define `val primary by css` and `val secondary by css` in the
+stylesheet – in case of longer enumerations that could prove cumbersome. The `dynamicCss` delegate comes to the rescue:
+
+```kotlin
+private val demoComponent = fc<Props> {
+    val (screenSize, setScreenSize) = useState(ScreenSize.fromRawWidth(window.innerWidth))
+
+    useEffectOnce {
+        val eventListener: (Event) -> Unit = {
+            setScreenSize(ScreenSize.fromRawWidth(window.innerWidth))
+        }
+        window.addEventListener("resize", eventListener)
+        cleanup {
+            window.removeEventListener("resize", eventListener)
+        }
+    }
+
+    styledP {
+        css(DemoComponentStyles.demoDynamicStyle(screenSize))
+
+        +"Hi, it seems like I'm running on the ${screenSize.name.lowercase()} screen!"
+    }
+}
+
+private object DemoComponentStyles : StyleSheet() {
+    val demoDynamicStyle by dynamicCss<ScreenSize> {
+        fontSize = when (it) {
+            ScreenSize.DESKTOP -> 2.rem
+            ScreenSize.TABLET  -> 1.5.rem
+            ScreenSize.PHONE   -> 1.rem
+        }
+    }
+}
+
+enum class ScreenSize(private val startsFromWidth: Int) : HasCssSuffix {
+    DESKTOP(992),
+    TABLET(768),
+    PHONE(0);
+
+    companion object {
+        fun fromRawWidth(rawWidth: Int): ScreenSize {
+            for (value in values()) {
+                if (rawWidth >= value.startsFromWidth) return value
+            }
+            return DESKTOP
+        }
+    }
+
+    override val cssSuffix: String get() = name.lowercase()
+}
+```
+
+Note that one doesn't have to use the `HasCssSuffix` interface, it's only required in complex cases when the name of the CSS property can't be derived easily.
+
+You can use any `Enum<*>`, `KProperty<*>`, as well as primitive types (`Boolean`, `Number`, `String`) to derive CSS classes.

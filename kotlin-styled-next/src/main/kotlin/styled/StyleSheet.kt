@@ -68,7 +68,7 @@ open class StyleSheet(
     /**
      * Creates a new or uses an already cached [RuleSet] corresponding to the provided [argument].
      *
-     * @param staticCssSuffix Some unique static (keeping even if the [argument] changes) name for a style:
+     * @param staticCssSuffix Some unique static (stays the same even if the [argument] changes) name for a style:
      *                        usually a property name.
      * @param builder Describes how to prepare styles for the particular [argument].
      * @param argument Some kind of seed and identifier to prepare a [RuleSet].
@@ -139,11 +139,11 @@ fun StyleSheet.cssMarker() =
 private fun String.revampCssSuffix() = CSS.escape(this.replace(" ", ""))
 private val Any.cssSuffix: String
     get() = when (this) {
+        is HasCssSuffix -> cssSuffix.revampCssSuffix()
+        is KProperty<*> -> name.revampCssSuffix()
+        is Enum<*> -> name.revampCssSuffix()
+        is String -> revampCssSuffix()
         is Boolean -> toString()
         is Number -> toString().replace(".", "-")
-        is String -> revampCssSuffix()
-        is HasCssSuffix -> cssSuffix.revampCssSuffix()
-        is Enum<*> -> name.revampCssSuffix()
-        is KProperty<*> -> name.revampCssSuffix()
         else -> throw IllegalArgumentException("type is unsupported")
     }
