@@ -80,7 +80,7 @@ open class StyleSheet(
         builder: CssBuilder.(T) -> Unit,
         argument: T
     ): RuleSet {
-        val fullCssSuffix = "$staticCssSuffix-${argument.cssSuffix}"
+        val fullCssSuffix = "$staticCssSuffix-${argument.extractCssSuffix()}"
         return dynamicHolders.getOrPut(fullCssSuffix) {
             DynamicCssHolder(this, fullCssSuffix, { builder.invoke(this, argument) })
                 .also { it.markToInject() }
@@ -136,14 +136,14 @@ fun StyleSheet.cssMarker() =
     CssHolder(this, {})
         .also { addCssHolder(it) }
 
-private fun String.revampCssSuffix() = CSS.escape(this.replace(" ", ""))
-private val Any.cssSuffix: String
-    get() = when (this) {
-        is HasCssSuffix -> cssSuffix.revampCssSuffix()
-        is KProperty<*> -> name.revampCssSuffix()
-        is Enum<*> -> name.revampCssSuffix()
-        is String -> revampCssSuffix()
-        is Boolean -> toString()
-        is Number -> toString().replace(".", "-")
-        else -> throw IllegalArgumentException("type is unsupported")
-    }
+private fun String.revampCssSuffix(): String = CSS.escape(this.replace(" ", "-"))
+
+private fun Any.extractCssSuffix(): String = when (this) {
+    is HasCssSuffix -> cssSuffix.revampCssSuffix()
+    is KProperty<*> -> name.revampCssSuffix()
+    is Enum<*> -> name.revampCssSuffix()
+    is String -> revampCssSuffix()
+    is Boolean -> toString()
+    is Number -> toString().replace(".", "-")
+    else -> throw IllegalArgumentException("type is unsupported")
+}
