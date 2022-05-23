@@ -2,8 +2,10 @@ package styled
 
 import kotlinx.css.CssBuilder
 import kotlinx.css.RuleSet
+import org.w3c.dom.css.CSS
+import styled.dynamicCss.DynamicCssDelegate
+import styled.dynamicCss.DynamicCssHolder
 import kotlin.js.Promise
-import kotlin.properties.ReadOnlyProperty
 import kotlin.reflect.KProperty
 import kotlin.reflect.KProperty0
 
@@ -36,11 +38,23 @@ open class StyleSheet(
         }
     private val holders: MutableList<CssHolder> = mutableListOf()
 
+    /** Keeps all holders providing dynamic styles - the holders are cached by their CSS suffixes. */
+    private val dynamicHolders = mutableMapOf<String, DynamicCssHolder>()
+
     constructor(name: String, parent: StyleSheet, isStatic: Boolean = true) : this(parent.name + "-" + name, isStatic)
 
     fun css(vararg parents: RuleSet, builder: RuleSet) =
         CssHolder(this, *parents, builder)
             .also { addCssHolder(it) }
+
+    /**
+     * Declares properties with dynamic styles according to provided arguments.
+     *
+     * @param builder Describes how to prepare a style according to the current argument.
+     *
+     * @return An instance of the [DynamicCssDelegate] allowing the target property to invoke required styles.
+     * */
+    fun <T : Any> dynamicCss(builder: CssBuilder.(T) -> Unit) = DynamicCssDelegate(this, builder)
 
     internal fun addCssHolder(holder: CssHolder) {
         holders.add(holder)
@@ -49,6 +63,28 @@ open class StyleSheet(
     fun inject() {
         scheduleToInject()
         GlobalStyles.injectScheduled()
+    }
+
+    /**
+     * Creates a new or uses an already cached [RuleSet] corresponding to the provided [argument].
+     *
+     * @param staticCssSuffix Some unique static (keeping even if the [argument] changes) name for a style:
+     *                        usually a property name.
+     * @param builder Describes how to prepare styles for the particular [argument].
+     * @param argument Some kind of seed and identifier to prepare a [RuleSet].
+     *
+     * @return A prepared [RuleSet] ready to be used.
+     * */
+    internal fun <T : Any> prepareCachedRuleSet(
+        staticCssSuffix: String,
+        builder: CssBuilder.(T) -> Unit,
+        argument: T
+    ): RuleSet {
+        val fullCssSuffix = "$staticCssSuffix-${argument.cssSuffix}"
+        return dynamicHolders.getOrPut(fullCssSuffix) {
+            DynamicCssHolder(this, fullCssSuffix, { builder.invoke(this, argument) })
+                .also { it.markToInject() }
+        }.provideRuleSet()
     }
 
     internal fun scheduleImports() {
@@ -60,63 +96,19 @@ open class StyleSheet(
 
     private fun scheduleToInject() {
         scheduleImports()
-        holders.forEach {
+        (holders + dynamicHolders.values).forEach {
             it.scheduleToInject()
         }
     }
 
     fun scheduleToInject(className: String) {
-        holders.forEach {
+        (holders + dynamicHolders.values).forEach {
             it.scheduleToInject(className)
         }
     }
 
     fun removeInjected() {
-        holders.forEach { it.removeInjected() }
-    }
-}
-
-class CssHolder(private val sheet: StyleSheet, private vararg val ruleSets: RuleSet) {
-    private val classNamesToInject = mutableMapOf<ClassName, Boolean>()
-
-    val css by lazy {
-        CssBuilder(allowClasses = false).apply {
-            this@CssHolder.ruleSets.map { it() }
-        }
-    }
-
-    fun scheduleToInject(className: String) {
-        if (classNamesToInject[className] == true) {
-            GlobalStyles.scheduleToInject(".$className", css)
-        }
-    }
-
-    fun removeInjected() {
-        GlobalStyles.removeInjectedStyleSheet(classNamesToInject.map { (className, _) -> ".$className" })
-    }
-
-    fun scheduleToInject() {
-        classNamesToInject.keys.forEach { className ->
-            scheduleToInject(className)
-        }
-    }
-
-    operator fun provideDelegate(thisRef: Any?, providingProperty: KProperty<*>): ReadOnlyProperty<Any?, RuleSet> {
-        val className = sheet.getClassName(providingProperty)
-        classNamesToInject[className] = true
-        return ReadOnlyProperty { _, property ->
-            {
-                sheet.scheduleImports()
-                if (sheet.isStatic) {
-                    scheduleToInject(className)
-                    +className
-                }
-                if (!sheet.isStatic || !allowClasses || isHolder) {
-                    styleName.add(sheet.getClassName(property))
-                    ruleSets.forEach { it() }
-                }
-            }
-        }
+        (holders + dynamicHolders.values).forEach { it.removeInjected() }
     }
 }
 
@@ -129,7 +121,7 @@ fun <T : StyleSheet> T.getClassName(getClass: (T) -> KProperty0<RuleSet>): Strin
     }
 }
 
-private fun StyleSheet.getClassName(property: KProperty<*>): String {
+internal fun StyleSheet.getClassName(property: KProperty<*>): String {
     return "$name-${property.name}"
 }
 
@@ -143,3 +135,15 @@ fun <T : StyleSheet> T.getClassSelector(getClass: (T) -> KProperty0<RuleSet>): S
 fun StyleSheet.cssMarker() =
     CssHolder(this, {})
         .also { addCssHolder(it) }
+
+private fun String.revampCssSuffix() = CSS.escape(this.replace(" ", ""))
+private val Any.cssSuffix: String
+    get() = when (this) {
+        is Boolean -> toString()
+        is Number -> toString().replace(".", "-")
+        is String -> revampCssSuffix()
+        is HasCssSuffix -> cssSuffix.revampCssSuffix()
+        is Enum<*> -> name.revampCssSuffix()
+        is KProperty<*> -> name.revampCssSuffix()
+        else -> throw IllegalArgumentException("type is unsupported")
+    }
