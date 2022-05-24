@@ -1,6 +1,7 @@
 package styled
 
 import kotlinx.css.CssBuilder
+import kotlinx.css.CssValue
 import kotlinx.css.RuleSet
 import org.w3c.dom.css.CSS
 import styled.dynamicCss.DynamicCssDelegate
@@ -139,6 +140,7 @@ fun StyleSheet.cssMarker() =
 private fun String.revampCssSuffix(): String = CSS.escape(this.replace(" ", "-"))
 
 private fun Any.extractCssSuffix(): String = when (this) {
+    is CssValue -> value.revampCssSuffix()
     is HasCssSuffix -> cssSuffix.revampCssSuffix()
     is KProperty<*> -> name.revampCssSuffix()
     is Enum<*> -> name.revampCssSuffix()

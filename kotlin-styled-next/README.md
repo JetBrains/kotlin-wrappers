@@ -309,4 +309,4 @@ enum class ScreenSize(private val startsFromWidth: Int) : HasCssSuffix {
 
 Note that one doesn't have to use the `HasCssSuffix` interface, it's only required in complex cases when the name of the CSS property can't be derived easily.
 
-You can use any `Enum<*>`, `KProperty<*>`, as well as primitive types (`Boolean`, `Number`, `String`) to derive CSS classes.
+You can use any `CssValue`, `Enum`, `KProperty`, as well as primitive types (`Boolean`, `Number`, `String`) to derive CSS classes.
