@@ -80,6 +80,7 @@ var StyledElement.animationName: String by CssProperty()
 var StyledElement.animationPlayState: PlayState by CssProperty()
 var StyledElement.animationTimingFunction: Timing by CssProperty()
 var StyledElement.appearance: Appearance by CssProperty()
+var StyledElement.aspectRatio: AspectRatio by CssProperty()
 
 var StyledElement.backfaceVisibility: Visibility by CssProperty()
 var StyledElement.background: String by CssProperty()
