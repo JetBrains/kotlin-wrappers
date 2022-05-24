@@ -11,14 +11,14 @@ internal class DynamicCssHolder(sheet: StyleSheet, cssSuffix: String, vararg rul
     private val className = "${sheet.name}-$cssSuffix"
 
     /**
-     * Contains the initialization part of the delegate from the [CssHolder].
+     * Contains the initialization part of the delegate from [AbstractCssHolder].
      * */
     internal fun markToInject() {
         classNamesToInject[className] = true
     }
 
     /**
-     * Contains the property providing the part from the [CssHolder].
+     * Contains the property providing the part from [AbstractCssHolder].
      * */
     internal fun provideRuleSet(): RuleSet = {
         sheet.scheduleImports()

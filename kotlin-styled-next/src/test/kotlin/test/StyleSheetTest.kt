@@ -157,12 +157,24 @@ class StyleSheetTest : TestBase() {
                 css {
                     +staticStyleSheet.property1
                     +staticStyleSheet.property2
+                    +staticStyleSheet.dynamicProperty1("test")
+                    +staticStyleSheet.dynamicProperty2(true)
+                    +staticStyleSheet.dynamicProperty3(20)
+                    +staticStyleSheet.dynamicProperty4(Color.red)
+                    +staticStyleSheet.dynamicProperty5(StaticStyleSheetValues.One)
+                    +staticStyleSheet.dynamicProperty6(StaticStyleSheetValuesWithCustomSuffix.One)
                 }
             }
         }
         val classNames = clearAndInject(styledComponent).className.split(" ")
         assertContains(classNames, "StaticStyleSheet-property1")
         assertContains(classNames, "StaticStyleSheet-property2")
+        assertContains(classNames, "StaticStyleSheet-dynamicProperty1-test")
+        assertContains(classNames, "StaticStyleSheet-dynamicProperty2-true")
+        assertContains(classNames, "StaticStyleSheet-dynamicProperty3-20")
+        assertContains(classNames, "StaticStyleSheet-dynamicProperty4-red")
+        assertContains(classNames, "StaticStyleSheet-dynamicProperty5-One")
+        assertContains(classNames, "StaticStyleSheet-dynamicProperty6-one")
         assertCssInjected(
             "StaticStyleSheet-property1",
             "align-content" to "end",
@@ -171,6 +183,30 @@ class StyleSheetTest : TestBase() {
             "StaticStyleSheet-property2",
             "padding" to 40.px.toString(),
             "min-height" to 50.px.toString(),
+        )
+        assertCssInjected(
+            "StaticStyleSheet-dynamicProperty1-test",
+            "justify-items" to "baseline"
+        )
+        assertCssInjected(
+            "StaticStyleSheet-dynamicProperty2-true",
+            "justify-content" to "center"
+        )
+        assertCssInjected(
+            "StaticStyleSheet-dynamicProperty3-20",
+            "font-size" to "20px"
+        )
+        assertCssInjected(
+            "StaticStyleSheet-dynamicProperty4-red",
+            "color" to "red"
+        )
+        assertCssInjected(
+            "StaticStyleSheet-dynamicProperty5-One",
+            "background-color" to "red"
+        )
+        assertCssInjected(
+            "StaticStyleSheet-dynamicProperty6-one",
+            "user-select" to "none"
         )
     }
 
