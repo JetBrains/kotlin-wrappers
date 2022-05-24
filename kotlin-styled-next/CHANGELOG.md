@@ -1,3 +1,7 @@
+## 1.2.1
+
+`CssValue` can be used in `dynamicCss`
+
 ## 1.2.0
 
 It is now possible to generate static CSS class names based on enumerations, properties, and other types.
