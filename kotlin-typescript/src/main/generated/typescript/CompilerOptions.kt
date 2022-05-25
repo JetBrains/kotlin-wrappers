@@ -41,6 +41,8 @@ sealed external interface CompilerOptions {
     var maxNodeModuleJsDepth: Int?
     var module: ModuleKind?
     var moduleResolution: ModuleResolutionKind?
+    var moduleSuffixes: ReadonlyArray<String>?
+    var moduleDetection: ModuleDetectionKind?
     var newLine: NewLineKind?
     var noEmit: Boolean?
     var noEmitHelpers: Boolean?

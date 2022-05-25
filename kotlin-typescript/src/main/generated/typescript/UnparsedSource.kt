@@ -11,7 +11,7 @@ sealed external interface UnparsedSource : Node {
     val prologues: ReadonlyArray<UnparsedPrologue>
     var helpers: ReadonlyArray<UnscopedEmitHelper>?
     var referencedFiles: ReadonlyArray<FileReference>
-    var typeReferenceDirectives: ReadonlyArray<String>?
+    var typeReferenceDirectives: ReadonlyArray<FileReference>?
     var libReferenceDirectives: ReadonlyArray<FileReference>
     var hasNoDefaultLib: Boolean?
     var sourceMapPath: String?

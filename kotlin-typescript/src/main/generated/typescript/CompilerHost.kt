@@ -7,7 +7,7 @@ import kotlinx.js.ReadonlyArray
 sealed external interface CompilerHost : ModuleResolutionHost {
     fun getSourceFile(
         fileName: String,
-        languageVersion: ScriptTarget,
+        languageVersionOrOptions: dynamic, /* ScriptTarget | CreateSourceFileOptions */
         onError: (message: String) -> Unit = definedExternally,
         shouldCreateNewSourceFile: Boolean = definedExternally,
     ): SourceFile?
@@ -15,7 +15,7 @@ sealed external interface CompilerHost : ModuleResolutionHost {
     val getSourceFileByPath: ((
         fileName: String,
         path: Path,
-        languageVersion: ScriptTarget,
+        languageVersionOrOptions: dynamic, /* ScriptTarget | CreateSourceFileOptions */
         onError: ((message: String) -> Unit)?,
         shouldCreateNewSourceFile: Boolean?,
     ) -> SourceFile?)?
@@ -52,10 +52,11 @@ sealed external interface CompilerHost : ModuleResolutionHost {
      * This method is a companion for 'resolveModuleNames' and is used to resolve 'types' references to actual type declaration files
      */
     val resolveTypeReferenceDirectives: ((
-        typeReferenceDirectiveNames: ReadonlyArray<String>,
+        typeReferenceDirectiveNames: dynamic, /* string[] | readonly FileReference[] */
         containingFile: String,
         redirectedReference: ResolvedProjectReference?,
         options: CompilerOptions,
+        containingFileMode: NodeFormat?,
     ) -> ReadonlyArray<ResolvedTypeReferenceDirective?>)?
     val getEnvironmentVariable: ((name: String) -> String?)?
     val createHash: ((data: String) -> String)?

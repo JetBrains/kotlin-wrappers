@@ -8,5 +8,5 @@ sealed external interface InlayHintsContext {
     var cancellationToken: CancellationToken
     var host: LanguageServiceHost
     var span: TextSpan
-    var preferences: InlayHintsOptions
+    var preferences: UserPreferences
 }

@@ -6,5 +6,5 @@ import kotlinx.js.ReadonlyArray
 
 sealed external interface ReferencedSymbol {
     var definition: ReferencedSymbolDefinitionInfo
-    var references: ReadonlyArray<ReferenceEntry>
+    var references: ReadonlyArray<ReferencedSymbolEntry>
 }

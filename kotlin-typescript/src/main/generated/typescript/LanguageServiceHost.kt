@@ -4,8 +4,8 @@ package typescript
 
 import kotlinx.js.ReadonlyArray
 
-sealed external interface LanguageServiceHost : GetEffectiveTypeRootsHost {
-    fun getCompilationSettings(): CompilerOptions
+sealed external interface LanguageServiceHost : GetEffectiveTypeRootsHost, MinimalResolutionCacheHost {
+    override fun getCompilationSettings(): CompilerOptions
     val getNewLine: (() -> String)?
     val getProjectVersion: (() -> String)?
     fun getScriptFileNames(): ReadonlyArray<String>
@@ -18,9 +18,9 @@ sealed external interface LanguageServiceHost : GetEffectiveTypeRootsHost {
     fun getCurrentDirectory(): String
     fun getDefaultLibFileName(options: CompilerOptions): String
     val log: ((s: String) -> Unit)?
-    val trace: ((s: String) -> Unit)?
+    override val trace: ((s: String) -> Unit)?
     val error: ((s: String) -> Unit)?
-    val useCaseSensitiveFileNames: (() -> Boolean)?
+    override /* val */ var useCaseSensitiveFileNames: (() -> Boolean)?
     val readDirectory: ((
         path: String,
         extensions: ReadonlyArray<String>?,
@@ -28,12 +28,13 @@ sealed external interface LanguageServiceHost : GetEffectiveTypeRootsHost {
         include: ReadonlyArray<String>?,
         depth: Int?,
     ) -> ReadonlyArray<String>)?
-    val readFile: ((
+    override val realpath: ((path: String) -> String)?
+    fun readFile(
         path: String,
-        encoding: String?,
-    ) -> String?)?
-    val realpath: ((path: String) -> String)?
-    val fileExists: ((path: String) -> Boolean)?
+        encoding: String = definedExternally,
+    ): String?
+
+    override fun fileExists(fileName: String): Boolean
     val getTypeRootsVersion: (() -> Int)?
     val resolveModuleNames: ((
         moduleNames: ReadonlyArray<String>,
@@ -49,12 +50,13 @@ sealed external interface LanguageServiceHost : GetEffectiveTypeRootsHost {
         resolutionMode: ResolutionMode?,
     ) -> ResolvedModuleWithFailedLookupLocations?)?
     val resolveTypeReferenceDirectives: ((
-        typeDirectiveNames: ReadonlyArray<String>,
+        typeDirectiveNames: dynamic, /* string[] | FileReference[] */
         containingFile: String,
         redirectedReference: ResolvedProjectReference?,
         options: CompilerOptions,
+        containingFileMode: NodeFormat?,
     ) -> ReadonlyArray<ResolvedTypeReferenceDirective?>)?
-    val getDirectories: ((directoryName: String) -> ReadonlyArray<String>)?
+    override val getDirectories: ((directoryName: String) -> ReadonlyArray<String>)?
 
     /**
      * Gets a set of custom transformers to use during emit.
