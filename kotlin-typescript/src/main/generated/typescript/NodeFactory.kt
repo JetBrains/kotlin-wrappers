@@ -105,11 +105,28 @@ sealed external interface NodeFactory {
     ): ComputedPropertyName
 
     fun createTypeParameterDeclaration(
+        modifiers: ReadonlyArray<Modifier>?,
         name: dynamic, /* string | Identifier */
         constraint: TypeNode = definedExternally,
         defaultType: TypeNode = definedExternally,
     ): TypeParameterDeclaration
 
+    /** @deprecated */
+    fun createTypeParameterDeclaration(
+        name: dynamic, /* string | Identifier */
+        constraint: TypeNode = definedExternally,
+        defaultType: TypeNode = definedExternally,
+    ): TypeParameterDeclaration
+
+    fun updateTypeParameterDeclaration(
+        node: TypeParameterDeclaration,
+        modifiers: ReadonlyArray<Modifier>?,
+        name: Identifier,
+        constraint: TypeNode?,
+        defaultType: TypeNode?,
+    ): TypeParameterDeclaration
+
+    /** @deprecated */
     fun updateTypeParameterDeclaration(
         node: TypeParameterDeclaration,
         name: Identifier,
@@ -406,10 +423,15 @@ sealed external interface NodeFactory {
         type: TypeNode,
     ): ConstructorTypeNode
 
-    fun createTypeQueryNode(exprName: EntityName): TypeQueryNode
+    fun createTypeQueryNode(
+        exprName: EntityName,
+        typeArguments: ReadonlyArray<TypeNode> = definedExternally,
+    ): TypeQueryNode
+
     fun updateTypeQueryNode(
         node: TypeQueryNode,
         exprName: EntityName,
+        typeArguments: ReadonlyArray<TypeNode> = definedExternally,
     ): TypeQueryNode
 
     fun createTypeLiteralNode(members: ReadonlyArray<TypeElement>?): TypeLiteralNode
@@ -497,9 +519,26 @@ sealed external interface NodeFactory {
         isTypeOf: Boolean = definedExternally,
     ): ImportTypeNode
 
+    fun createImportTypeNode(
+        argument: TypeNode,
+        assertions: ImportTypeAssertionContainer = definedExternally,
+        qualifier: EntityName = definedExternally,
+        typeArguments: ReadonlyArray<TypeNode> = definedExternally,
+        isTypeOf: Boolean = definedExternally,
+    ): ImportTypeNode
+
     fun updateImportTypeNode(
         node: ImportTypeNode,
         argument: TypeNode,
+        qualifier: EntityName?,
+        typeArguments: ReadonlyArray<TypeNode>?,
+        isTypeOf: Boolean = definedExternally,
+    ): ImportTypeNode
+
+    fun updateImportTypeNode(
+        node: ImportTypeNode,
+        argument: TypeNode,
+        assertions: ImportTypeAssertionContainer?,
         qualifier: EntityName?,
         typeArguments: ReadonlyArray<TypeNode>?,
         isTypeOf: Boolean = definedExternally,
@@ -1402,6 +1441,17 @@ sealed external interface NodeFactory {
         value: Expression,
     ): AssertEntry
 
+    fun createImportTypeAssertionContainer(
+        clause: AssertClause,
+        multiLine: Boolean = definedExternally,
+    ): ImportTypeAssertionContainer
+
+    fun updateImportTypeAssertionContainer(
+        node: ImportTypeAssertionContainer,
+        clause: AssertClause,
+        multiLine: Boolean = definedExternally,
+    ): ImportTypeAssertionContainer
+
     fun createNamespaceImport(name: Identifier): NamespaceImport
     fun updateNamespaceImport(
         node: NamespaceImport,
@@ -1493,13 +1543,21 @@ sealed external interface NodeFactory {
 
     fun createJSDocAllType(): JSDocAllType
     fun createJSDocUnknownType(): JSDocUnknownType
-    fun createJSDocNonNullableType(type: TypeNode): JSDocNonNullableType
+    fun createJSDocNonNullableType(
+        type: TypeNode,
+        postfix: Boolean = definedExternally,
+    ): JSDocNonNullableType
+
     fun updateJSDocNonNullableType(
         node: JSDocNonNullableType,
         type: TypeNode,
     ): JSDocNonNullableType
 
-    fun createJSDocNullableType(type: TypeNode): JSDocNullableType
+    fun createJSDocNullableType(
+        type: TypeNode,
+        postfix: Boolean = definedExternally,
+    ): JSDocNullableType
+
     fun updateJSDocNullableType(
         node: JSDocNullableType,
         type: TypeNode,

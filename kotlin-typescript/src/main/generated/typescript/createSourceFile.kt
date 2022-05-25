@@ -8,7 +8,7 @@ package typescript
 external fun createSourceFile(
     fileName: String,
     sourceText: String,
-    languageVersion: ScriptTarget,
+    languageVersionOrOptions: dynamic, /* ScriptTarget | CreateSourceFileOptions */
     setParentNodes: Boolean = definedExternally,
     scriptKind: ScriptKind = definedExternally,
 ): SourceFile

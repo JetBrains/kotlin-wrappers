@@ -21,6 +21,7 @@ sealed external interface CompletionEntry {
     var hasAction: Boolean? /* true */
     var source: String?
     var sourceDisplay: ReadonlyArray<SymbolDisplayPart>?
+    var labelDetails: CompletionEntryLabelDetails?
     var isRecommended: Boolean? /* true */
     var isFromUncheckedFile: Boolean? /* true */
     var isPackageJsonImport: Boolean? /* true */

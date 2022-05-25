@@ -2,4 +2,4 @@
 
 package typescript
 
-const val versionMajorMinor = "4.7"
+sealed external interface WriteFileCallbackData
