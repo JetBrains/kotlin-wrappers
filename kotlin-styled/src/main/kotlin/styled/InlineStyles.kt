@@ -8,9 +8,10 @@ import react.dom.setProp
 
 // Inserts vendor prefixes (using inline-style-prefixer) and sets the style attribute
 fun RDOMBuilder<*>.inlineStyles(prefix: Boolean = true, builder: StyledElement.() -> Unit) {
-    val styles = StyledElement()
-    builder(styles)
-    setProp("style", styles.toStyle(prefix))
+    val newStyle = StyledElement().also(builder).toStyle(prefix)
+    val existingStyle = Object.assign(js("{}"), attrs["style"])
+    val style = Object.assign(existingStyle, newStyle)
+    setProp("style", style)
 }
 
 @JsName("Array")
