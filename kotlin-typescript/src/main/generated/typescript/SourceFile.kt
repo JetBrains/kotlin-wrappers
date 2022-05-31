@@ -30,7 +30,7 @@ sealed external interface SourceFile : Declaration, Union.SourceFile_ {
     var languageVersion: ScriptTarget
 
     /**
-     * When `module` is `Node12` or `NodeNext`, this field controls whether the
+     * When `module` is `Node16` or `NodeNext`, this field controls whether the
      * source file in question is an ESNext-output-format file, or a CommonJS-output-format
      * module. This is derived by the module resolver as it looks up the file, since
      * it is derived from either the file extension of the module, or the containing

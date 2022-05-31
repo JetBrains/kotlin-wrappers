@@ -2,8 +2,7 @@
 
 package typescript
 
-sealed external interface ExpressionWithTypeArguments : NodeWithTypeArguments, Union.ExpressionWithTypeArguments_ {
+sealed external interface ExpressionWithTypeArguments : MemberExpression, NodeWithTypeArguments, Union.ExpressionWithTypeArguments_ {
     override val kind: SyntaxKind.ExpressionWithTypeArguments
-    override val parent: Union.ExpressionWithTypeArguments_parent
     val expression: LeftHandSideExpression
 }

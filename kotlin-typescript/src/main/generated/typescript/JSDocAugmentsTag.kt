@@ -6,7 +6,7 @@ package typescript
  * Note that `@extends` is a synonym of `@augments`.
  * Both tags are represented by this interface.
  */
-sealed external interface JSDocAugmentsTag : JSDocTag, Union.JSDocAugmentsTag_ {
+sealed external interface JSDocAugmentsTag : JSDocTag {
     /*
     readonly kind: SyntaxKind.JSDocAugmentsTag;
     readonly class: ExpressionWithTypeArguments & {

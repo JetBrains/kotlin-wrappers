@@ -11,6 +11,8 @@ sealed external interface UserPreferences {
     val includeAutomaticOptionalChainCompletions: Boolean?
     val includeCompletionsWithInsertText: Boolean?
     val includeCompletionsWithClassMemberSnippets: Boolean?
+    val includeCompletionsWithObjectLiteralMethodSnippets: Boolean?
+    val useLabelDetailsInCompletionEntries: Boolean?
     val allowIncompleteCompletions: Boolean?
     val importModuleSpecifierPreference: ImportModuleSpecifierPreference?
 
@@ -21,4 +23,11 @@ sealed external interface UserPreferences {
     val includePackageJsonAutoImports: IncludePackageJsonAutoImports?
     val provideRefactorNotApplicableReason: Boolean?
     val jsxAttributeCompletionStyle: JsxAttributeCompletionStyle?
+    val includeInlayParameterNameHints: IncludeInlayParameterNameHints?
+    val includeInlayParameterNameHintsWhenArgumentMatchesName: Boolean?
+    val includeInlayFunctionParameterTypeHints: Boolean?
+    val includeInlayVariableTypeHints: Boolean?
+    val includeInlayPropertyDeclarationTypeHints: Boolean?
+    val includeInlayFunctionLikeReturnTypeHints: Boolean?
+    val includeInlayEnumMemberValueHints: Boolean?
 }

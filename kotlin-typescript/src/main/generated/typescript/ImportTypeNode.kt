@@ -6,5 +6,6 @@ sealed external interface ImportTypeNode : NodeWithTypeArguments {
     override val kind: SyntaxKind.ImportType
     val isTypeOf: Boolean
     val argument: TypeNode
+    val assertions: ImportTypeAssertionContainer?
     val qualifier: EntityName?
 }

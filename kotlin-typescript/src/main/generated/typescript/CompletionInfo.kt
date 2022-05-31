@@ -5,6 +5,9 @@ package typescript
 import kotlinx.js.ReadonlyArray
 
 sealed external interface CompletionInfo {
+    /** For performance telemetry. */
+    var flags: CompletionInfoFlags?
+
     /** Not true for all global completions. This will be true if the enclosing scope matches a few syntax kinds. See `isSnippetScope`. */
     var isGlobalCompletion: Boolean
     var isMemberCompletion: Boolean

@@ -24,9 +24,12 @@ sealed external interface DocumentRegistry {
      * the SourceFile if was not found in the registry.
      *
      * @param fileName The name of the file requested
-     * @param compilationSettings Some compilation settings like target affects the
+     * @param compilationSettingsOrHost Some compilation settings like target affects the
      * shape of a the resulting SourceFile. This allows the DocumentRegistry to store
-     * multiple copies of the same file for different compilation settings.
+     * multiple copies of the same file for different compilation settings. A minimal
+     * resolution cache is needed to fully define a source file's shape when
+     * the compilation settings include `module: node16`+, so providing a cache host
+     * object should be preferred. A common host is a language service `ConfiguredProject`.
      * @param scriptSnapshot Text of the file. Only used if the file was not found
      * in the registry and a new one was created.
      * @param version Current version of the file. Only used if the file was not found
@@ -34,7 +37,7 @@ sealed external interface DocumentRegistry {
      */
     fun acquireDocument(
         fileName: String,
-        compilationSettings: CompilerOptions,
+        compilationSettingsOrHost: dynamic, /* CompilerOptions | MinimalResolutionCacheHost */
         scriptSnapshot: IScriptSnapshot,
         version: String,
         scriptKind: ScriptKind = definedExternally,
@@ -43,7 +46,7 @@ sealed external interface DocumentRegistry {
     fun acquireDocumentWithKey(
         fileName: String,
         path: Path,
-        compilationSettings: CompilerOptions,
+        compilationSettingsOrHost: dynamic, /* CompilerOptions | MinimalResolutionCacheHost */
         key: DocumentRegistryBucketKey,
         scriptSnapshot: IScriptSnapshot,
         version: String,
@@ -56,15 +59,18 @@ sealed external interface DocumentRegistry {
      * to get an updated SourceFile.
      *
      * @param fileName The name of the file requested
-     * @param compilationSettings Some compilation settings like target affects the
+     * @param compilationSettingsOrHost Some compilation settings like target affects the
      * shape of a the resulting SourceFile. This allows the DocumentRegistry to store
-     * multiple copies of the same file for different compilation settings.
+     * multiple copies of the same file for different compilation settings. A minimal
+     * resolution cache is needed to fully define a source file's shape when
+     * the compilation settings include `module: node16`+, so providing a cache host
+     * object should be preferred. A common host is a language service `ConfiguredProject`.
      * @param scriptSnapshot Text of the file.
      * @param version Current version of the file.
      */
     fun updateDocument(
         fileName: String,
-        compilationSettings: CompilerOptions,
+        compilationSettingsOrHost: dynamic, /* CompilerOptions | MinimalResolutionCacheHost */
         scriptSnapshot: IScriptSnapshot,
         version: String,
         scriptKind: ScriptKind = definedExternally,
@@ -73,7 +79,7 @@ sealed external interface DocumentRegistry {
     fun updateDocumentWithKey(
         fileName: String,
         path: Path,
-        compilationSettings: CompilerOptions,
+        compilationSettingsOrHost: dynamic, /* CompilerOptions | MinimalResolutionCacheHost */
         key: DocumentRegistryBucketKey,
         scriptSnapshot: IScriptSnapshot,
         version: String,
