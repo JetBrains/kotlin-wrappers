@@ -3,6 +3,10 @@
 @file:JsModule("cesium")
 @file:JsNonModule
 
+@file:Suppress(
+    "EXTERNAL_CLASS_CONSTRUCTOR_PROPERTY_PARAMETER",
+)
+
 package cesium
 
 /**
@@ -32,21 +36,12 @@ package cesium
  * });
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileStyle.html">Online Documentation</a>
+ *
+ * @constructor
+ * @property [style] An object defining a style.
+ * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileStyle.html">Online Documentation</a>
  */
-external class Cesium3DTileStyle() {
-    constructor(style: Resource)
-
-    constructor(style: String)
-
-    constructor(style: Any)
-
-    /**
-     * Gets the object defining the style using the
-     * [3D Tiles Styling language](https://github.com/CesiumGS/3d-tiles/tree/main/specification/Styling).
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileStyle.html#style">Online Documentation</a>
-     */
-    val style: Any
-
+external class Cesium3DTileStyle(val style: Any = definedExternally) {
     /**
      * When `true`, the style is ready and its expressions can be evaluated.  When
      * a style is constructed with an object, as opposed to a url, this is `true` immediately.

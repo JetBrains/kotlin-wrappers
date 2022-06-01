@@ -221,7 +221,7 @@ external class BoundingSphere(
 
         /**
          * Computes a bounding sphere from the corner points of an axis-aligned bounding box.  The sphere
-         * tighly and fully encompases the box.
+         * tightly and fully encompasses the box.
          * ```
          * // Create a bounding sphere around the unit cube
          * const sphere = BoundingSphere.fromCornerPoints(new Cartesian3(-0.5, -0.5, -0.5), new Cartesian3(0.5, 0.5, 0.5));

@@ -106,12 +106,6 @@ external class Cesium3DTileset(options: ConstructorOptions) {
      * @property [pointCloudShading] Options for constructing a [PointCloudShading] object to control point attenuation based on geometric error and lighting.
      * @property [lightColor] The light color when shading models. When `undefined` the scene's light color is used instead.
      * @property [imageBasedLighting] The properties for managing image-based lighting for this tileset.
-     * @property [imageBasedLightingFactor] Scales the diffuse and specular image-based lighting from the earth, sky, atmosphere and star skybox. Deprecated in Cesium 1.92, will be removed in Cesium 1.94.
-     *   Default value - [Cartesian2(1.0, 1.0)][Cartesian2]
-     * @property [luminanceAtZenith] The sun's luminance at the zenith in kilo candela per meter squared to use for this model's procedural environment map. Deprecated in Cesium 1.92, will be removed in Cesium 1.94.
-     *   Default value - `0.2`
-     * @property [sphericalHarmonicCoefficients] The third order spherical harmonic coefficients used for the diffuse color of image-based lighting. Deprecated in Cesium 1.92, will be removed in Cesium 1.94.
-     * @property [specularEnvironmentMaps] A URL to a KTX2 file that contains a cube map of the specular lighting and the convoluted specular mipmaps. Deprecated in Cesium 1.92, will be removed in Cesium 1.94.
      * @property [backFaceCulling] Whether to cull back-facing geometry. When true, back face culling is determined by the glTF material's doubleSided property; when false, back face culling is disabled.
      *   Default value - `true`
      * @property [showOutline] Whether to display the outline for models using the [CESIUM_primitive_outline](https://github.com/KhronosGroup/glTF/tree/master/extensions/2.0/Vendor/CESIUM_primitive_outline) extension. When true, outlines are displayed. When false, outlines are not displayed.
@@ -133,6 +127,7 @@ external class Cesium3DTileset(options: ConstructorOptions) {
      *   Default value - `false`
      * @property [debugColorizeTiles] For debugging only. When true, assigns a random color to each tile.
      *   Default value - `false`
+     * @property [enableDebugWireframe] For debugging only. This must be true for debugWireframe to work for ModelExperimental in WebGL1. This cannot be set after the tileset has loaded.
      * @property [debugWireframe] For debugging only. When true, render's each tile's content as a wireframe.
      *   Default value - `false`
      * @property [debugShowBoundingVolume] For debugging only. When true, renders the bounding volume for each tile.
@@ -185,10 +180,6 @@ external class Cesium3DTileset(options: ConstructorOptions) {
         var pointCloudShading: Any?
         var lightColor: Cartesian3?
         var imageBasedLighting: ImageBasedLighting?
-        var imageBasedLightingFactor: Cartesian2?
-        var luminanceAtZenith: Double?
-        var sphericalHarmonicCoefficients: Array<out Cartesian3>?
-        var specularEnvironmentMaps: String?
         var backFaceCulling: Boolean?
         var showOutline: Boolean?
         var vectorClassificationOnly: Boolean?
@@ -200,6 +191,7 @@ external class Cesium3DTileset(options: ConstructorOptions) {
         var debugHeatmapTilePropertyName: String?
         var debugFreezeFrame: Boolean?
         var debugColorizeTiles: Boolean?
+        var enableDebugWireframe: Boolean?
         var debugWireframe: Boolean?
         var debugShowBoundingVolume: Boolean?
         var debugShowContentBoundingVolume: Boolean?
@@ -540,8 +532,9 @@ external class Cesium3DTileset(options: ConstructorOptions) {
     /**
      * The light color when shading models. When `undefined` the scene's light color is used instead.
      *
-     * For example, disabling additional light sources by setting `model.imageBasedLighting.imageBasedLightingFactor = new Cartesian2(0.0, 0.0)` will make the
-     * model much darker. Here, increasing the intensity of the light source will make the model brighter.
+     * For example, disabling additional light sources by setting
+     * `tileset.imageBasedLighting.imageBasedLightingFactor = new Cartesian2(0.0, 0.0)`
+     * will make the tileset much darker. Here, increasing the intensity of the light source will make the tileset brighter.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileset.html#lightColor">Online Documentation</a>
      */
     var lightColor: Cartesian3
@@ -928,40 +921,6 @@ external class Cesium3DTileset(options: ConstructorOptions) {
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileset.html#imageBasedLighting">Online Documentation</a>
      */
     var imageBasedLighting: ImageBasedLighting
-
-    /**
-     * Cesium adds lighting from the earth, sky, atmosphere, and star skybox. This cartesian is used to scale the final
-     * diffuse and specular lighting contribution from those sources to the final color. A value of 0.0 will disable those light sources.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileset.html#imageBasedLightingFactor">Online Documentation</a>
-     */
-    var imageBasedLightingFactor: Cartesian2
-
-    /**
-     * The sun's luminance at the zenith in kilo candela per meter squared to use for this model's procedural environment map.
-     * This is used when [Cesium3DTileset.specularEnvironmentMaps] and [Cesium3DTileset.sphericalHarmonicCoefficients] are not defined.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileset.html#luminanceAtZenith">Online Documentation</a>
-     */
-    var luminanceAtZenith: Double
-
-    /**
-     * The third order spherical harmonic coefficients used for the diffuse color of image-based lighting. When `undefined`, a diffuse irradiance
-     * computed from the atmosphere color is used.
-     *
-     * There are nine `Cartesian3` coefficients.
-     * The order of the coefficients is: L<sub>0,0</sub>, L<sub>1,-1</sub>, L<sub>1,0</sub>, L<sub>1,1</sub>, L<sub>2,-2</sub>, L<sub>2,-1</sub>, L<sub>2,0</sub>, L<sub>2,1</sub>, L<sub>2,2</sub>
-     *
-     * These values can be obtained by preprocessing the environment map using the `cmgen` tool of
-     * [Google's Filament project](https://github.com/google/filament/releases). This will also generate a KTX file that can be
-     * supplied to [Cesium3DTileset.specularEnvironmentMaps].
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileset.html#sphericalHarmonicCoefficients">Online Documentation</a>
-     */
-    var sphericalHarmonicCoefficients: Array<out Cartesian3>
-
-    /**
-     * A URL to a KTX file that contains a cube map of the specular lighting and the convoluted specular mipmaps.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileset.html#specularEnvironmentMaps">Online Documentation</a>
-     */
-    var specularEnvironmentMaps: String
 
     /**
      * Indicates that only the tileset's vector tiles should be used for classification.

@@ -30,7 +30,9 @@ external class ModelExperimental(options: ConstructorOptions) {
      *   Default value - `true`
      * @property [debugShowBoundingVolume] For debugging only. Draws the bounding sphere for each draw command in the model.
      *   Default value - `false`
-     * @property [debugWireframe] For debugging only. Draws the model in wireframe.
+     * @property [enableDebugWireframe] For debugging only. This must be set to true for debugWireframe to work in WebGL1. This cannot be set after the model has loaded.
+     *   Default value - `false`
+     * @property [debugWireframe] For debugging only. Draws the model in wireframe. Will only work for WebGL1 if enableDebugWireframe is set to true.
      *   Default value - `false`
      * @property [cull] Whether or not to cull the model using frustum/horizon culling. If the model is part of a 3D Tiles tileset, this property will always be false, since the 3D Tiles culling system is used.
      *   Default value - `true`
@@ -63,6 +65,8 @@ external class ModelExperimental(options: ConstructorOptions) {
      *   Default value - `false`
      * @property [splitDirection] The [SplitDirection] split to apply to this model.
      *   Default value - [SplitDirection.NONE]
+     * @property [projectTo2D] Whether to accurately project the model's positions in 2D. If this is false, the model will not show up in 2D / CV mode. This disables minimumPixelSize and prevents future modification to its model matrix. This also cannot be set after the model has loaded.
+     *   Default value - `false`
      */
     interface ConstructorOptions {
         var resource: Resource
@@ -72,6 +76,7 @@ external class ModelExperimental(options: ConstructorOptions) {
         var maximumScale: Double?
         var clampAnimations: Boolean?
         var debugShowBoundingVolume: Boolean?
+        var enableDebugWireframe: Boolean?
         var debugWireframe: Boolean?
         var cull: Boolean?
         var opaquePass: Boolean?
@@ -92,6 +97,7 @@ external class ModelExperimental(options: ConstructorOptions) {
         var shadows: ShadowMode?
         var showCreditsOnScreen: Boolean?
         var splitDirection: SplitDirection?
+        var projectTo2D: Boolean?
     }
 
     /**
@@ -157,7 +163,9 @@ external class ModelExperimental(options: ConstructorOptions) {
     var colorBlendAmount: Double
 
     /**
-     * Gets the model's bounding sphere.
+     * Gets the model's bounding sphere in world space. This does not take into account
+     * glTF animations, skins, or morph targets. It also does not account for
+     * [ModelExperimental.minimumPixelSize].
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ModelExperimental.html#boundingSphere">Online Documentation</a>
      */
     val boundingSphere: BoundingSphere
@@ -222,8 +230,9 @@ external class ModelExperimental(options: ConstructorOptions) {
     /**
      * The light color when shading the model. When `undefined` the scene's light color is used instead.
      *
-     * Disabling additional light sources by setting `model.imageBasedLightingFactor = new Cartesian2(0.0, 0.0)` will make the
-     * model much darker. Here, increasing the intensity of the light source will make the model brighter.
+     * Disabling additional light sources by setting
+     * `model.imageBasedLighting.imageBasedLightingFactor = new Cartesian2(0.0, 0.0)`
+     * will make the model much darker. Here, increasing the intensity of the light source will make the model brighter.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ModelExperimental.html#lightColor">Online Documentation</a>
      */
     var lightColor: Cartesian3
@@ -331,7 +340,7 @@ external class ModelExperimental(options: ConstructorOptions) {
         fun fromGltf(options: FromGltfOptions): ModelExperimental
 
         /**
-         * @property [gltf] A Resource/URL to a glTF/glb file, a binary glTF buffer, or a JSON object containing the glTF contents
+         * @property [url] The url to the .gltf or .glb file.
          * @property [basePath] The base path that paths in the glTF JSON are relative to.
          *   Default value - `''`
          * @property [modelMatrix] The 4x4 transformation matrix that transforms the model from model to world coordinates.
@@ -347,7 +356,9 @@ external class ModelExperimental(options: ConstructorOptions) {
          *   Default value - `false`
          * @property [debugShowBoundingVolume] For debugging only. Draws the bounding sphere for each draw command in the model.
          *   Default value - `false`
-         * @property [debugWireframe] For debugging only. Draws the model in wireframe.
+         * @property [enableDebugWireframe] For debugging only. This must be set to true for debugWireframe to work in WebGL1. This cannot be set after the model has loaded.
+         *   Default value - `false`
+         * @property [debugWireframe] For debugging only. Draws the model in wireframe. Will only work for WebGL1 if enableDebugWireframe is set to true.
          *   Default value - `false`
          * @property [cull] Whether or not to cull the model using frustum/horizon culling. If the model is part of a 3D Tiles tileset, this property will always be false, since the 3D Tiles culling system is used.
          *   Default value - `true`
@@ -384,9 +395,11 @@ external class ModelExperimental(options: ConstructorOptions) {
          *   Default value - `false`
          * @property [splitDirection] The [SplitDirection] split to apply to this model.
          *   Default value - [SplitDirection.NONE]
+         * @property [projectTo2D] Whether to accurately project the model's positions in 2D. If this is false, the model will not show up in 2D / CV mode. This disables minimumPixelSize and prevents future modification to its model matrix. This also cannot be set after the model has loaded.
+         *   Default value - `false`
          */
         interface FromGltfOptions {
-            var gltf: dynamic
+            var url: Resource
             var basePath: Resource?
             var modelMatrix: Matrix4?
             var scale: Double?
@@ -395,6 +408,7 @@ external class ModelExperimental(options: ConstructorOptions) {
             var incrementallyLoadTextures: Boolean?
             var releaseGltfJson: Boolean?
             var debugShowBoundingVolume: Boolean?
+            var enableDebugWireframe: Boolean?
             var debugWireframe: Boolean?
             var cull: Boolean?
             var opaquePass: Boolean?
@@ -417,6 +431,7 @@ external class ModelExperimental(options: ConstructorOptions) {
             var shadows: ShadowMode?
             var showCreditsOnScreen: Boolean?
             var splitDirection: SplitDirection?
+            var projectTo2D: Boolean?
         }
     }
 }
