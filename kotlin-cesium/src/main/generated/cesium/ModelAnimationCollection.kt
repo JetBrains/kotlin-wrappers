@@ -35,6 +35,15 @@ external class ModelAnimationCollection {
     var animationRemoved: DefaultEvent
 
     /**
+     * When true, the animation will play even when the scene time is paused. However,
+     * whether animation takes place will depend on the animationTime functions assigned
+     * to the model's animations. By default, this is based on scene time, so models using
+     * the default will not animate regardless of this setting.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ModelAnimationCollection.html#animateWhilePaused">Online Documentation</a>
+     */
+    var animateWhilePaused: Boolean
+
+    /**
      * The number of animations in the collection.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ModelAnimationCollection.html#length">Online Documentation</a>
      */
@@ -100,6 +109,7 @@ external class ModelAnimationCollection {
      *   Default value - `false`
      * @property [loop] Determines if and how the animation is looped.
      *   Default value - [ModelAnimationLoop.NONE]
+     * @property [animationTime] If defined, computes the local animation time for this animation.
      */
     interface AddOptions {
         var name: String?
@@ -111,6 +121,7 @@ external class ModelAnimationCollection {
         var multiplier: Double?
         var reverse: Boolean?
         var loop: ModelAnimationLoop?
+        var animationTime: AnimationTimeCallback?
     }
 
     /**
@@ -142,6 +153,7 @@ external class ModelAnimationCollection {
      *   Default value - `false`
      * @property [loop] Determines if and how the animations are looped.
      *   Default value - [ModelAnimationLoop.NONE]
+     * @property [animationTime] If defined, computes the local animation time for all of the animations.
      */
     interface AddAllOptions {
         var startTime: JulianDate?
@@ -151,6 +163,7 @@ external class ModelAnimationCollection {
         var multiplier: Double?
         var reverse: Boolean?
         var loop: ModelAnimationLoop?
+        var animationTime: AnimationTimeCallback?
     }
 
     /**

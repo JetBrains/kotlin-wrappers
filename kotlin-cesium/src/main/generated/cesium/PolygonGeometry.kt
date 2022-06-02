@@ -102,6 +102,7 @@ external class PolygonGeometry(options: ConstructorOptions) {
      *   Default value - `true`
      * @property [arcType] The type of line the polygon edges must follow. Valid options are [ArcType.GEODESIC] and [ArcType.RHUMB].
      *   Default value - [ArcType.GEODESIC]
+     * @property [textureCoordinates] Texture coordinates as a [PolygonHierarchy] of [Cartesian2] points. Has no effect for ground primitives.
      */
     interface ConstructorOptions {
         var polygonHierarchy: PolygonHierarchy
@@ -115,6 +116,7 @@ external class PolygonGeometry(options: ConstructorOptions) {
         var closeTop: Boolean?
         var closeBottom: Boolean?
         var arcType: ArcType?
+        var textureCoordinates: PolygonHierarchy?
     }
 
     /**
@@ -164,6 +166,7 @@ external class PolygonGeometry(options: ConstructorOptions) {
          *   Default value - `true`
          * @property [arcType] The type of line the polygon edges must follow. Valid options are [ArcType.GEODESIC] and [ArcType.RHUMB].
          *   Default value - [ArcType.GEODESIC]
+         * @property [textureCoordinates] Texture coordinates as a [PolygonHierarchy] of [Cartesian2] points. Has no effect for ground primitives.
          */
         interface FromPositionsOptions {
             var positions: Array<out Cartesian3>
@@ -177,6 +180,7 @@ external class PolygonGeometry(options: ConstructorOptions) {
             var closeTop: Boolean?
             var closeBottom: Boolean?
             var arcType: ArcType?
+            var textureCoordinates: PolygonHierarchy?
         }
 
         /**

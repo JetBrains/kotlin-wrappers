@@ -595,12 +595,6 @@ external class Scene(
     var splitPosition: Double
 
     /**
-     * Gets or sets the position of the Imagery splitter within the viewport.  Valid values are between 0.0 and 1.0.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Scene.html#imagerySplitPosition">Online Documentation</a>
-     */
-    var imagerySplitPosition: Double
-
-    /**
      * The distance from the camera at which to disable the depth test of billboards, labels and points
      * to, for example, prevent clipping against terrain. When set to zero, the depth test should always
      * be applied. When less than zero, the depth test should never be applied. Setting the disableDepthTestDistance

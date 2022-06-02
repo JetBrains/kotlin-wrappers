@@ -61,7 +61,7 @@ external class PolygonGraphics {
     var extrudedHeightReference: Property?
 
     /**
-     * Gets or sets the numeric property specifying the rotation of the polygon texture counter-clockwise from north.
+     * Gets or sets the numeric property specifying the rotation of the polygon texture counter-clockwise from north. Only has an effect if textureCoordinates is not defined.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PolygonGraphics.html#stRotation">Online Documentation</a>
      */
     var stRotation: Property?
@@ -154,6 +154,12 @@ external class PolygonGraphics {
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PolygonGraphics.html#zIndex">Online Documentation</a>
      */
     var zIndex: ConstantProperty?
+
+    /**
+     * A Property specifying texture coordinates as a [PolygonHierarchy] of [Cartesian2] points. Has no effect for ground primitives.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PolygonGraphics.html#textureCoordinates">Online Documentation</a>
+     */
+    var textureCoordinates: Property?
 
     /**
      * Duplicates this instance.

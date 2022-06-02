@@ -35,6 +35,15 @@ external class ModelExperimentalAnimationCollection {
     var animationRemoved: DefaultEvent
 
     /**
+     * When true, the animation will play even when the scene time is paused. However,
+     * whether animation takes place will depend on the animationTime functions assigned
+     * to the model's animations. By default, this is based on scene time, so models using
+     * the default will not animate regardless of this setting.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ModelExperimentalAnimationCollection.html#animateWhilePaused">Online Documentation</a>
+     */
+    var animateWhilePaused: Boolean
+
+    /**
      * The number of animations in the collection.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ModelExperimentalAnimationCollection.html#length">Online Documentation</a>
      */
@@ -90,7 +99,7 @@ external class ModelExperimentalAnimationCollection {
      * @return The animation that was added to the collection.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ModelExperimentalAnimationCollection.html#add">Online Documentation</a>
      */
-    fun add(options: AddOptions): ModelAnimation
+    fun add(options: AddOptions): ModelExperimentalAnimation
 
     /**
      * @property [name] The glTF animation name that identifies the animation. Must be defined if `options.index` is `undefined`.
@@ -107,6 +116,7 @@ external class ModelExperimentalAnimationCollection {
      *   Default value - `false`
      * @property [loop] Determines if and how the animation is looped.
      *   Default value - [ModelAnimationLoop.NONE]
+     * @property [animationTime] If defined, computes the local animation time for this animation.
      */
     interface AddOptions {
         var name: String?
@@ -118,6 +128,7 @@ external class ModelExperimentalAnimationCollection {
         var multiplier: Double?
         var reverse: Boolean?
         var loop: ModelAnimationLoop?
+        var animationTime: AnimationTimeCallback?
     }
 
     /**
@@ -149,6 +160,7 @@ external class ModelExperimentalAnimationCollection {
      *   Default value - `false`
      * @property [loop] Determines if and how the animations are looped.
      *   Default value - [ModelAnimationLoop.NONE]
+     * @property [animationTime] If defined, computes the local animation time for all of the animations.
      */
     interface AddAllOptions {
         var startTime: JulianDate?
@@ -158,6 +170,7 @@ external class ModelExperimentalAnimationCollection {
         var multiplier: Double?
         var reverse: Boolean?
         var loop: ModelAnimationLoop?
+        var animationTime: AnimationTimeCallback?
     }
 
     /**
