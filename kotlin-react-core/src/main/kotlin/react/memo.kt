@@ -5,6 +5,6 @@ package react
 
 // Memo (16.6+)
 external fun <P : Props> memo(
-    fc: FC<P>,
-    areEqual: (P, P) -> Boolean = definedExternally,
+    type: ComponentType<P>,
+    propsAreEqual: (P, P) -> Boolean = definedExternally,
 ): NamedExoticComponent<P>
