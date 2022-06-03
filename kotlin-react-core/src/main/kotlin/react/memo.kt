@@ -7,4 +7,4 @@ package react
 external fun <P : Props> memo(
     type: ComponentType<P>,
     propsAreEqual: (P, P) -> Boolean = definedExternally,
-): NamedExoticComponent<P>
+): FC<P>
