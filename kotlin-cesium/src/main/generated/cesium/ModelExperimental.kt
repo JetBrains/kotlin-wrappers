@@ -65,7 +65,7 @@ external class ModelExperimental(options: ConstructorOptions) {
      *   Default value - `false`
      * @property [splitDirection] The [SplitDirection] split to apply to this model.
      *   Default value - [SplitDirection.NONE]
-     * @property [projectTo2D] Whether to accurately project the model's positions in 2D. If this is false, the model will not show up in 2D / CV mode. This disables minimumPixelSize and prevents future modification to its model matrix. This also cannot be set after the model has loaded.
+     * @property [projectTo2D] Whether to accurately project the model's positions in 2D. If a model is part of a 3D Tiles tileset, this will always be true. If this is false, the model will show up in 2D / CV mode but its positions may be inaccurate. This disables minimumPixelSize and prevents future modification to its model matrix. This also cannot be set after the model has loaded.
      *   Default value - `false`
      */
     interface ConstructorOptions {
@@ -395,7 +395,7 @@ external class ModelExperimental(options: ConstructorOptions) {
          *   Default value - `false`
          * @property [splitDirection] The [SplitDirection] split to apply to this model.
          *   Default value - [SplitDirection.NONE]
-         * @property [projectTo2D] Whether to accurately project the model's positions in 2D. If this is false, the model will not show up in 2D / CV mode. This disables minimumPixelSize and prevents future modification to its model matrix. This also cannot be set after the model has loaded.
+         * @property [projectTo2D] Whether to accurately project the model's positions in 2D. If a model is part of a 3D Tiles tileset, this will always be true. If this is false, the model will show up in 2D / CV mode but its positions may be inaccurate. This disables minimumPixelSize and prevents future modification to its model matrix. This also cannot be set after the model has loaded.
          *   Default value - `false`
          */
         interface FromGltfOptions {
