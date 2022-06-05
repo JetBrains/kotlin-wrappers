@@ -6,6 +6,6 @@ inline fun <T : Any> jso(): T =
     js("({})")
 
 inline fun <T : Any> jso(
-    block: T.() -> Unit,
+    block: @JsoDsl T.() -> Unit,
 ): T =
     jso<T>().apply(block)
