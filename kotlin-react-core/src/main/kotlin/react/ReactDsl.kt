@@ -1,5 +1,5 @@
 package react
 
-import csstype.CssDsl
+import kotlinx.js.JsoDsl
 
-typealias ReactDsl = CssDsl
+typealias ReactDsl = JsoDsl
