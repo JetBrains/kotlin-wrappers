@@ -13,4 +13,4 @@ package react.router
  */
 external fun useOutlet(
     context: Any = definedExternally,
-): react.ReactElement<*>
+): react.ReactElement<*>?

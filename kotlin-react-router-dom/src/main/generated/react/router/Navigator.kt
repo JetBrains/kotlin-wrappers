@@ -11,4 +11,4 @@ package react.router
  * to avoid "tearing" that may occur in a suspense-enabled app if the action
  * and/or location were to be read directly from the history instance.
  */
-typealias Navigator = Any // Pick<History, "go" | "push" | "replace" | "createHref">
+typealias Navigator = history.History

@@ -5,4 +5,5 @@
 
 package react.router
 
+@JsName("UNSAFE_RouteContext")
 external val RouteContext: react.Context<RouteContextObject>

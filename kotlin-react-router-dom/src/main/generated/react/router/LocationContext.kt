@@ -5,4 +5,5 @@
 
 package react.router
 
+@JsName("UNSAFE_LocationContext")
 external val LocationContext: react.Context<LocationContextObject>
