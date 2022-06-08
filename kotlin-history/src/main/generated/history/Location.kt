@@ -14,7 +14,7 @@ external interface Location : Path {
      *
      * @see https://github.com/remix-run/history/tree/main/docs/api-reference.md#location.state
      */
-    var state: Any
+    var state: LocationState?
 
     /**
      * A unique string associated with this location. May be used to safely store

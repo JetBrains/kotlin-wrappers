@@ -9,4 +9,4 @@ package history
  * @deprecated
  * @see https://github.com/remix-run/history/tree/main/docs/api-reference.md#location.state
  */
-typealias State = Any?
+sealed external interface LocationState
