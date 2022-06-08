@@ -13,7 +13,7 @@ package react.router.dom
 external interface ClickHandlerOptions {
     var target: react.dom.html.AnchorTarget?
     var replace: Boolean?
-    var state: Any?
+    var state: history.LocationState?
 }
 
 external fun <E : org.w3c.dom.Element> useLinkClickHandler(
