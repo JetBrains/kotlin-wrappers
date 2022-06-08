@@ -16,4 +16,4 @@ package react.router
 external fun useRoutes(
     routes: kotlinx.js.ReadonlyArray<RouteObject>,
     locationArg: history.Location = definedExternally,
-): react.ReactElement<*>
+): react.ReactElement<*>?

@@ -14,4 +14,4 @@ package react.router
 external fun matchPath(
     pattern: String,
     pathname: String,
-): PathMatch
+): PathMatch?

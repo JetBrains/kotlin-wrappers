@@ -14,4 +14,4 @@ external fun matchRoutes(
     routes: kotlinx.js.ReadonlyArray<RouteObject>,
     locationArg: history.Location,
     basename: String = definedExternally,
-): kotlinx.js.ReadonlyArray<RouteMatch>
+): kotlinx.js.ReadonlyArray<RouteMatch>?

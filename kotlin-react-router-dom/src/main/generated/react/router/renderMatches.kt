@@ -9,5 +9,5 @@ package react.router
  * Renders the result of `matchRoutes()` into a React element.
  */
 external fun renderMatches(
-    matches: kotlinx.js.ReadonlyArray<RouteMatch>,
-): react.ReactElement<*>
+    matches: kotlinx.js.ReadonlyArray<RouteMatch>?,
+): react.ReactElement<*>?

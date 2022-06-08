@@ -5,4 +5,5 @@
 
 package react.router
 
+@JsName("UNSAFE_NavigationContext")
 external val NavigationContext: react.Context<NavigationContextObject>
