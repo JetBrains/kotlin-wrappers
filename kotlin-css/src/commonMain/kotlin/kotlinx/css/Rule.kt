@@ -6,10 +6,6 @@ data class Rule(
     val selector: Selector,
     @Deprecated("Left for compatibility with old api")
     val passStaticClassesToParent: Boolean = false,
-    @Deprecated("Left for compatibility with old api")
-    val block: CssBuilder.() -> Unit = {
-        append(css)
-    },
     val css: CssBuilder,
 ) {
     private var memoizedHashCode: Int? = null
