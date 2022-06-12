@@ -21,13 +21,15 @@ sealed external interface Consumer<T> :
 sealed external interface Context<T> {
     val Provider: Provider<T>
     val Consumer: Consumer<T>
-    
+
     var displayName: String?
 }
 
 // Context (16.3+)
+external fun <T : Any> createContext(): Context<T?>
+
 external fun <T> createContext(
-    defaultValue: T = definedExternally,
+    defaultValue: T,
 ): Context<T>
 
 // Context Hook (16.8+)
