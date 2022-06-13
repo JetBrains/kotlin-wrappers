@@ -21,13 +21,14 @@ external interface ClockPickerProps<TDate> : react.PropsWithClassName {
     var classes: ClockPickerClasses?
 
     /**
-     * The components used for each slot.
-     * Either a string to use an HTML element or a component.
+     * Overrideable components.
+     * @default {}
      */
     var components: dynamic
 
     /**
-     * The props used for each slot inside.
+     * The props used for each component slot.
+     * @default {}
      */
     var componentsProps: ClockPickerSlotsComponentsProps?
 
@@ -41,6 +42,7 @@ external interface ClockPickerProps<TDate> : react.PropsWithClassName {
      * @param {string} hours The hours to format.
      * @returns {string} the formatted hours text.
      * @default (hours: string) => `${hours} hours`
+     * @deprecated Use the `localeText` prop of `LocalizationProvider` instead, see https://mui.com/x/react-date-pickers/localization
      */
     var getHoursClockNumberText: ((hours: String) -> String)?
 
@@ -49,6 +51,7 @@ external interface ClockPickerProps<TDate> : react.PropsWithClassName {
      * @param {string} minutes The minutes to format.
      * @returns {string} the formatted minutes text.
      * @default (minutes: string) => `${minutes} minutes`
+     * @deprecated Use the `localeText` prop of `LocalizationProvider` instead, see https://mui.com/x/react-date-pickers/localization
      */
     var getMinutesClockNumberText: ((minutes: String) -> String)?
 
@@ -57,12 +60,14 @@ external interface ClockPickerProps<TDate> : react.PropsWithClassName {
      * @param {string} seconds The seconds to format.
      * @returns {string} the formatted seconds text.
      * @default (seconds: string) => `${seconds} seconds`
+     * @deprecated Use the `localeText` prop of `LocalizationProvider` instead, see https://mui.com/x/react-date-pickers/localization
      */
     var getSecondsClockNumberText: ((seconds: String) -> String)?
 
     /**
      * Left arrow icon aria-label text.
      * @default 'open previous view'
+     * @deprecated Use the `localeText` prop of `LocalizationProvider` instead, see https://mui.com/x/react-date-pickers/localization
      */
     var leftArrowButtonText: String?
 
@@ -74,6 +79,7 @@ external interface ClockPickerProps<TDate> : react.PropsWithClassName {
     /**
      * Right arrow icon aria-label text.
      * @default 'open next view'
+     * @deprecated Use the `localeText` prop of `LocalizationProvider` instead, see https://mui.com/x/react-date-pickers/localization
      */
     var rightArrowButtonText: String?
 
@@ -135,6 +141,7 @@ external interface ExportedClockPickerProps<TDate> : react.Props {
      * @param {TDate | null} time The current time.
      * @param {MuiPickersAdapter<TDate>} adapter The current date adapter.
      * @returns {string} The clock label.
+     * @deprecated Use the `localeText` prop of `LocalizationProvider` instead, see https://mui.com/x/react-date-pickers/localization
      * @default <TDate extends any>(
      *   view: ClockView,
      *   time: TDate | null,

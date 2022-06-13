@@ -30,13 +30,13 @@ external interface TabsUnstyledOwnProps :
      * The component orientation (layout flow direction).
      * @default 'horizontal'
      */
-    var orientation: mui.material.Orientation?
+    var orientation: dynamic
 
     /**
      * The direction of the text.
      * @default 'ltr'
      */
-    var direction: TabsUnstyledDirection?
+    var direction: mui.system.Direction?
 
     override var className: ClassName?
 

@@ -6,10 +6,8 @@
 package muix.pickers
 
 import csstype.ClassName
-import kotlinx.js.Void
 import mui.material.styles.Theme
 import mui.system.SxProps
-import kotlin.js.Promise
 
 external interface MonthPickerProps<TDate> :
     react.PropsWithClassName,
@@ -30,20 +28,8 @@ external interface MonthPickerProps<TDate> :
     /** If `true` picker is disabled */
     var disabled: Boolean?
 
-    /** If `true` past days are disabled. */
-    var disablePast: Boolean?
-
-    /** If `true` future days are disabled. */
-    var disableFuture: Boolean?
-
-    /** Minimal selectable date. */
-    var minDate: TDate
-
-    /** Maximal selectable date. */
-    var maxDate: TDate
-
     /** Callback fired on date change. */
-    var onChange: PickerOnChangeFn<TDate>
+    var onChange: dynamic
 
     /** If `true` picker is readonly */
     var readOnly: Boolean?
@@ -52,25 +38,6 @@ external interface MonthPickerProps<TDate> :
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
     override var sx: SxProps<Theme>?
-}
-
-external interface ExportedMonthPickerProps<TDate> : react.Props {
-    /**
-     * Callback firing on month change @DateIOType.
-     * @template TDate
-     * @param {TDate} month The new year.
-     * @returns {void|Promise} -
-     */
-    var onMonthChange: ((month: TDate) -> Promise<Void>?)?
-
-    /**
-     * Disable specific months dynamically.
-     * Works like `shouldDisableDate` but for month selection view @DateIOType.
-     * @template TDate
-     * @param {TDate} month The month to check.
-     * @returns {boolean} If `true` the month will be disabled.
-     */
-    var shouldDisableMonth: ((month: TDate) -> Boolean)?
 }
 
 

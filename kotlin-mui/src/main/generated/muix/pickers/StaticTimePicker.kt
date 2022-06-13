@@ -7,5 +7,9 @@ package muix.pickers
 
 external interface StaticTimePickerProps : react.Props
 
+external interface StaticTimePickerSlotsComponents
+
+external interface StaticTimePickerSlotsComponentsProps : react.Props
+
 
 external val StaticTimePicker: react.FC<StaticTimePickerProps>

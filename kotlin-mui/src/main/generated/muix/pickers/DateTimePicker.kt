@@ -12,7 +12,23 @@ external interface DateTimePickerProps : react.Props {
      * @example '@media (min-width: 720px)' or theme.breakpoints.up("sm")
      */
     var desktopModeMediaQuery: String?
+
+    /**
+     * Overrideable components.
+     * @default {}
+     */
+    var components: dynamic
+
+    /**
+     * The props used for each component slot.
+     * @default {}
+     */
+    var componentsProps: DateTimePickerSlotsComponentsProps?
 }
+
+external interface DateTimePickerSlotsComponent
+
+external interface DateTimePickerSlotsComponentsProps : react.Props
 
 /**
  *

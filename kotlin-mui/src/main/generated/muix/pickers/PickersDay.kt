@@ -26,7 +26,7 @@ external interface PickersDayProps<TDate> : mui.system.PropsWithSx {
     var disabled: Boolean?
 
     /**
-     * If `true`, todays date is rendering without highlighting with circle.
+     * If `true`, today's date is rendering without highlighting with circle.
      * @default false
      */
     var disableHighlightToday: Boolean?

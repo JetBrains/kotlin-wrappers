@@ -7,6 +7,8 @@ package muix.pickers
 
 import csstype.ClassName
 import kotlinx.js.ReadonlyArray
+import kotlinx.js.Void
+import kotlin.js.Promise
 
 external interface CalendarPickerProps<TDate> : react.PropsWithClassName {
     override var className: ClassName?
@@ -14,14 +16,13 @@ external interface CalendarPickerProps<TDate> : react.PropsWithClassName {
     var classes: CalendarPickerClasses?
 
     /**
-     * The components used for each slot.
-     * Either a string to use an HTML element or a component.
+     * Overrideable components.
      * @default {}
      */
     var components: dynamic
 
     /**
-     * The props used for each slot inside.
+     * The props used for each component slot.
      * @default {}
      */
     var componentsProps: CalendarPickerSlotsComponentsProps?
@@ -38,26 +39,6 @@ external interface CalendarPickerProps<TDate> : react.PropsWithClassName {
      * @default false
      */
     var disabled: Boolean?
-
-    /**
-     * @default false
-     */
-    var disableFuture: Boolean?
-
-    /**
-     * @default false
-     */
-    var disablePast: Boolean?
-
-    /**
-     * Max selectable date. @DateIOType
-     */
-    var maxDate: TDate?
-
-    /**
-     * Min selectable date. @DateIOType
-     */
-    var minDate: TDate?
 
     /**
      * Callback fired on view change.
@@ -96,14 +77,6 @@ external interface CalendarPickerProps<TDate> : react.PropsWithClassName {
     var renderLoading: (() -> react.ReactNode)?
 
     /**
-     * Disable specific date. @DateIOType
-     * @template TDate
-     * @param {TDate} day The date to check.
-     * @returns {boolean} If `true` the day will be disabled.
-     */
-    var shouldDisableDate: ((day: TDate) -> Boolean)?
-
-    /**
      * Controlled open view.
      */
     var view: CalendarPickerView?
@@ -113,6 +86,21 @@ external interface CalendarPickerProps<TDate> : react.PropsWithClassName {
      * @default ['year', 'day']
      */
     var views: ReadonlyArray<CalendarPickerView>?
+
+    /**
+     * Callback firing on year change @DateIOType.
+     * @template TDate
+     * @param {TDate} year The new year.
+     */
+    var onYearChange: ((year: TDate) -> Unit)?
+
+    /**
+     * Callback firing on month change @DateIOType.
+     * @template TDate
+     * @param {TDate} month The new month.
+     * @returns {void|Promise} -
+     */
+    var onMonthChange: ((month: TDate) -> Promise<Void>?)?
 }
 
 external interface CalendarPickerSlotsComponent
