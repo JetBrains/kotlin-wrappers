@@ -1,8 +1,5 @@
 // Automatically generated - do not modify!
 
-@file:JsModule("@mui/x-date-pickers/LocalizationProvider")
-@file:JsNonModule
-
 package muix.pickers
 
 external interface LocalizationProviderProps : react.PropsWithChildren {
@@ -22,15 +19,25 @@ external interface LocalizationProviderProps : react.PropsWithChildren {
      */
     var dateLibInstance: Any?
 
-    /** Locale for the date library you are using */
+    /** Locale for the date library you are using
+     * @deprecated Use `adapterLocale` instead
+     */
     var locale: dynamic
+
+    /** Locale for the date library you are using
+     */
+    var adapterLocale: dynamic
+
+    /**
+     * Locale for components texts
+     */
+    var localeText: dynamic
 }
 
 external interface MuiPickersAdapterContextValue {
     var defaultDates: dynamic
 
     var utils: dynamic
+
+    var localeText: dynamic
 }
-
-
-external val LocalizationProvider: react.FC<LocalizationProviderProps>

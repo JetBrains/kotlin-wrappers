@@ -12,7 +12,23 @@ external interface TimePickerProps : react.Props {
      * @example '@media (min-width: 720px)' or theme.breakpoints.up("sm")
      */
     var desktopModeMediaQuery: String?
+
+    /**
+     * Overrideable components.
+     * @default {}
+     */
+    var components: dynamic
+
+    /**
+     * The props used for each component slot.
+     * @default {}
+     */
+    var componentsProps: TimePickerSlotsComponentsProps?
 }
+
+external interface TimePickerSlotsComponent
+
+external interface TimePickerSlotsComponentsProps : react.Props
 
 
 external val TimePicker: react.FC<TimePickerProps>

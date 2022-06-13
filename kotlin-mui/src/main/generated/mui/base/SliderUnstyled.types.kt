@@ -209,9 +209,3 @@ external interface SliderUnstyledProps :
      */
     var valueLabelFormat: dynamic
 }
-
-external interface Mark {
-    var value: Number
-
-    var label: react.ReactNode?
-}
