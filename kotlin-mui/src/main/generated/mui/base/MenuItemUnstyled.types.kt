@@ -30,7 +30,7 @@ external interface MenuItemUnstyledProps :
     var componentsProps: ComponentsProps?
 
     interface ComponentsProps {
-        var root: react.Props? /* React.ComponentPropsWithRef<'li'> & MenuItemUnstyledComponentsPropsOverrides */
+        var root: react.Props? /* SlotComponentProps<'li', MenuItemUnstyledComponentsPropsOverrides, MenuItemUnstyledOwnerState> */
     }
 
     /**
@@ -40,7 +40,7 @@ external interface MenuItemUnstyledProps :
     var label: String?
 }
 
-external interface MenuItemOwnerState {
+external interface MenuItemUnstyledOwnerState {
     var disabled: Boolean
 
     var focusVisible: Boolean

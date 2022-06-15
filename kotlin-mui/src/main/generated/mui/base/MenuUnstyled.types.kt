@@ -36,8 +36,8 @@ external interface MenuUnstyledProps :
     var componentsProps: ComponentsProps?
 
     interface ComponentsProps {
-        var root: react.Props? /* Partial<React.ComponentPropsWithRef<typeof PopperUnstyled>> & MenuUnstyledComponentsPropsOverrides */
-        var listbox: react.Props? /* React.ComponentPropsWithRef<'ul'> & MenuUnstyledComponentsPropsOverrides */
+        var root: react.Props? /* SlotComponentProps<typeof PopperUnstyled, MenuUnstyledComponentsPropsOverrides, MenuUnstyledOwnerState> */
+        var listbox: react.Props? /* SlotComponentProps<'ul', MenuUnstyledComponentsPropsOverrides, MenuUnstyledOwnerState> */
     }
 
     /**
@@ -47,6 +47,8 @@ external interface MenuUnstyledProps :
      * @default false
      */
     var keepMounted: Boolean?
+
+    var listboxId: String?
 
     /**
      * Triggered when focus leaves the menu and the menu should close.
