@@ -55,7 +55,7 @@ external interface SliderUnstyledProps :
         var thumb: react.Props? /* React.ComponentPropsWithRef<'span'> & SliderUnstyledComponentsPropsOverrides */
         var mark: react.Props? /* React.ComponentPropsWithRef<'span'> & SliderUnstyledComponentsPropsOverrides */
         var markLabel: react.Props? /* React.ComponentPropsWithRef<'span'> & SliderUnstyledComponentsPropsOverrides */
-        var valueLabel: react.Props? /* React.ComponentPropsWithRef<typeof SliderValueLabelUnstyled> & SliderUnstyledComponentsPropsOverrides */
+        var valueLabel: react.Props? /* Partial<React.ComponentPropsWithRef<typeof SliderValueLabelUnstyled>> & SliderUnstyledComponentsPropsOverrides */
         var input: react.Props? /* React.ComponentPropsWithRef<'input'> & SliderUnstyledComponentsPropsOverrides */
     }
 
@@ -208,4 +208,16 @@ external interface SliderUnstyledProps :
      * @default (x) => x
      */
     var valueLabelFormat: dynamic
+}
+
+@Suppress("VIRTUAL_MEMBER_HIDDEN")
+external interface SliderValueLabelProps :
+    react.dom.html.HTMLAttributes<org.w3c.dom.HTMLSpanElement> {
+    var children: react.ReactElement<*>
+
+    var index: Number
+
+    var open: Boolean
+
+    var value: Number
 }

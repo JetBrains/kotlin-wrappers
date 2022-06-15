@@ -23,5 +23,5 @@ external interface UseMenuParameters {
 
     var listboxId: String?
 
-    var listboxRef: react.Ref<dynamic>?
+    var listboxRef: react.Ref<*>?
 }

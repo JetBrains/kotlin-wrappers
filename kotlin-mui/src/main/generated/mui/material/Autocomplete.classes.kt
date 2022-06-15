@@ -35,7 +35,7 @@ external interface AutocompleteClasses {
     /** Styles applied to the input element. */
     var input: ClassName
 
-    /** Styles applied to the input element if tag focused. */
+    /** Styles applied to the input element if the input is focused. */
     var inputFocused: ClassName
 
     /** Styles applied to the endAdornment element. */

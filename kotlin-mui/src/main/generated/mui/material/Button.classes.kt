@@ -20,6 +20,18 @@ external interface ButtonClasses {
     /** Styles applied to the root element if `variant="text"` and `color="secondary"`. */
     var textSecondary: ClassName
 
+    /** Styles applied to the root element if `variant="text"` and `color="success"`. */
+    var textSuccess: ClassName
+
+    /** Styles applied to the root element if `variant="text"` and `color="error"`. */
+    var textError: ClassName
+
+    /** Styles applied to the root element if `variant="text"` and `color="info"`. */
+    var textInfo: ClassName
+
+    /** Styles applied to the root element if `variant="text"` and `color="warning"`. */
+    var textWarning: ClassName
+
     /** Styles applied to the root element if `variant="outlined"`. */
     var outlined: ClassName
 
@@ -32,6 +44,18 @@ external interface ButtonClasses {
     /** Styles applied to the root element if `variant="outlined"` and `color="secondary"`. */
     var outlinedSecondary: ClassName
 
+    /** Styles applied to the root element if `variant="outlined"` and `color="success"`. */
+    var outlinedSuccess: ClassName
+
+    /** Styles applied to the root element if `variant="outlined"` and `color="error"`. */
+    var outlinedError: ClassName
+
+    /** Styles applied to the root element if `variant="outlined"` and `color="info"`. */
+    var outlinedInfo: ClassName
+
+    /** Styles applied to the root element if `variant="outlined"` and `color="warning"`. */
+    var outlinedWarning: ClassName
+
     /** Styles applied to the root element if `variant="contained"`. */
     var contained: ClassName
 
@@ -43,6 +67,18 @@ external interface ButtonClasses {
 
     /** Styles applied to the root element if `variant="contained"` and `color="secondary"`. */
     var containedSecondary: ClassName
+
+    /** Styles applied to the root element if `variant="contained"` and `color="success"`. */
+    var containedSuccess: ClassName
+
+    /** Styles applied to the root element if `variant="contained"` and `color="info"`. */
+    var containedInfo: ClassName
+
+    /** Styles applied to the root element if `variant="contained"` and `color="error"`. */
+    var containedError: ClassName
+
+    /** Styles applied to the root element if `variant="contained"` and `color="warning"`. */
+    var containedWarning: ClassName
 
     /** Styles applied to the root element if `disableElevation={true}`. */
     var disableElevation: ClassName
