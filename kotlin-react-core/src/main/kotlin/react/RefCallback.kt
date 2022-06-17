@@ -10,7 +10,7 @@ inline fun <T : Any> RefCallback(
     callback.unsafeCast<RefCallback<T>>()
 
 inline fun <T : Any> useRefCallback(
-    vararg dependencies: dynamic,
+    vararg dependencies: Any?,
     noinline callback: (T?) -> Unit,
 ): RefCallback<T> =
     RefCallback(rawUseCallback(callback, dependencies))

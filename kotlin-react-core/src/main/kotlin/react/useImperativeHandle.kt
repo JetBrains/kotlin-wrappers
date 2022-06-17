@@ -10,7 +10,7 @@ package react
  */
 inline fun <T : Any> useImperativeHandle(
     ref: Ref<T>?,
-    vararg dependencies: dynamic,
+    vararg dependencies: Any?,
     noinline init: () -> T?,
 ) =
     rawUseImperativeHandle(ref, init, dependencies)

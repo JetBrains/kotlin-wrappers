@@ -3,7 +3,7 @@ package styled
 import react.*
 
 internal fun <T> useStructMemo(
-    vararg dependencies: dynamic,
+    vararg dependencies: Any?,
     callback: () -> T,
 ): T {
     return rawUseMemo(getMemoizedCallback(dependencies, callback), dependencies)
@@ -15,7 +15,10 @@ external object ReactModule
 
 private val supportsInsertionEffect by kotlin.lazy { ReactModule.asDynamic().useInsertionEffect != undefined }
 
-internal fun useCustomInsertionEffect(vararg dependencies: dynamic, effect: EffectBuilder.() -> Unit) {
+internal fun useCustomInsertionEffect(
+    vararg dependencies: Any?,
+    effect: EffectBuilder.() -> Unit,
+) {
     if (supportsInsertionEffect) {
         useInsertionEffect(*dependencies, effect = effect)
     } else {
