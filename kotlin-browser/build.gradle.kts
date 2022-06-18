@@ -5,5 +5,5 @@ plugins {
 }
 
 dependencies {
-    api(project(":kotlin-extensions"))
+    api(project(":kotlin-js"))
 }

@@ -5,5 +5,5 @@ plugins {
 }
 
 dependencies {
-    testImplementation(kotlin("test-js"))
+    api(project(":kotlin-js"))
 }

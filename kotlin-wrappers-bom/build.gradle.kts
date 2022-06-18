@@ -12,6 +12,7 @@ dependencies {
         api(project(":kotlin-emotion"))
         api(project(":kotlin-extensions"))
         api(project(":kotlin-history"))
+        api(project(":kotlin-js"))
         api(project(":kotlin-mui"))
         api(project(":kotlin-mui-icons"))
         api(project(":kotlin-node"))

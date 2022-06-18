@@ -42,6 +42,9 @@ include("kotlin-extensions")
 // Kotlin/JS: History wrappers
 include("kotlin-history")
 
+// Kotlin/JS: Missed declarations of 'stdlib'
+include("kotlin-js")
+
 // Kotlin/JS: Material UI wrappers
 include("kotlin-mui")
 

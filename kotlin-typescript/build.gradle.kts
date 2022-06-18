@@ -11,7 +11,7 @@ tasks.withType<KotlinCompile<*>>().configureEach {
 }
 
 dependencies {
-    api(project(":kotlin-extensions"))
+    api(project(":kotlin-js"))
 
     api(npmv("typescript"))
 }
