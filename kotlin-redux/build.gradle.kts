@@ -7,6 +7,7 @@ plugins {
 
 dependencies {
     api(project(":kotlin-extensions"))
+    api(project(":kotlin-js"))
     api(kotlinxSerialization("json"))
 
     api(npmv("redux"))

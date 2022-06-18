@@ -5,7 +5,7 @@ plugins {
 }
 
 dependencies {
-    api(project(":kotlin-extensions"))
+    api(project(":kotlin-js"))
     api(project(":kotlin-browser"))
     api(project(":kotlin-react-core"))
 

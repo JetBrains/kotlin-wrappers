@@ -6,6 +6,7 @@ plugins {
 
 dependencies {
     api(project(":kotlin-extensions"))
+    api(project(":kotlin-js"))
     api(project(":kotlin-css"))
     api(project(":kotlin-react-legacy"))
     api(project(":kotlin-react-dom-legacy"))

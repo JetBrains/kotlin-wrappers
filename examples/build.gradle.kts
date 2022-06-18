@@ -5,7 +5,7 @@ plugins {
 
 dependencies {
     implementation(project(":kotlin-emotion"))
-    implementation(project(":kotlin-extensions"))
+    implementation(project(":kotlin-js"))
     implementation(project(":kotlin-react"))
     implementation(project(":kotlin-react-dom"))
     implementation(project(":kotlin-react-router-dom"))

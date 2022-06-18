@@ -5,7 +5,5 @@ plugins {
 }
 
 dependencies {
-    api(project(":kotlin-js"))
-
-    api(npmv("@popperjs/core"))
+    testImplementation(kotlin("test-js"))
 }
