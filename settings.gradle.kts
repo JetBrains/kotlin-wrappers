@@ -42,7 +42,7 @@ include("kotlin-extensions")
 // Kotlin/JS: History wrappers
 include("kotlin-history")
 
-// Kotlin/JS: Missed declarations of 'stdlib'
+// Kotlin/JS: APIs missing from the standard library
 include("kotlin-js")
 
 // Kotlin/JS: Material UI wrappers
