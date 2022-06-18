@@ -24,7 +24,7 @@ interface RuleContainer {
         rules.forEach {
             val foundRule = resolvedRules[it.selector]
             if (foundRule == null) {
-                resolvedRules[it.selector] = Rule(it.selector, css = CssBuilder().apply { append(it.css) })
+                resolvedRules[it.selector] = Rule(it.selector, CssBuilder().apply { append(it.css) })
             } else {
                 // if CSS with the selector already exists, append new CSS to the old one
                 foundRule.css.append(it.css)
@@ -45,7 +45,7 @@ interface RuleContainer {
     }
 
     fun rule(selector: String, passStaticClassesToParent: Boolean, repeatable: Boolean = false, css: CssBuilder) =
-        Rule(selector, passStaticClassesToParent, css = css).also {
+        Rule(selector, css).also {
             css.parent = if (passStaticClassesToParent) this else null
             (if (repeatable) multiRules else rules).add(it)
         }

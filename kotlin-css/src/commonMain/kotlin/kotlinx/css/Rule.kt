@@ -4,8 +4,6 @@ internal typealias Selector = String
 
 data class Rule(
     val selector: Selector,
-    @Deprecated("Left for compatibility with old api")
-    val passStaticClassesToParent: Boolean = false,
     val css: CssBuilder,
 ) {
     private var memoizedHashCode: Int? = null

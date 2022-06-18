@@ -39,7 +39,7 @@ internal fun CssBuilder.getCssRules(outerSelector: String?, indent: String = "")
     }
     result.addAll(buildRules(rules, outerSelector ?: ""))
 
-    handleRules.forEach { (selector, _, css) ->
+    handleRules.forEach { (selector, css) ->
         val resolvedSelector = resolveRelative(selector, outerSelector)
         if (withMedia(resolvedSelector)) {
             result.add(
@@ -87,7 +87,7 @@ private fun resolveRelative(selector: String, parentSelector: Selector?): Select
 
 private fun isPseudoClass(selector: Selector) = selector.trim().startsWith(":")
 private fun buildRules(rules: List<Rule>, outerSelector: String): List<String> {
-    return rules.flatMap { (selector, _, css) ->
+    return rules.flatMap { (selector, css) ->
         val delimiter = if (isPseudoClass(selector)) "" else " "
         css.getCssRules(selector.split(",").joinToString { "$outerSelector$delimiter${it.trim()}" })
     }
