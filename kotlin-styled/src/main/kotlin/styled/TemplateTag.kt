@@ -1,4 +1,4 @@
-package kotlinext.js
+package styled
 
 external interface TemplateTag<in T, out R> {
     fun call(ctx: Any?, strings: Array<String>, vararg values: T): R

@@ -1,7 +1,6 @@
 package styled
 
 import csstype.ClassName
-import kotlinext.js.invoke
 import kotlinx.browser.window
 import kotlinx.css.CssBuilder
 import kotlinx.css.CssDsl

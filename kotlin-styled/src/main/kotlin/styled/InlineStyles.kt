@@ -40,10 +40,8 @@ fun StyledElement.toStyle(prefix: Boolean = true): Any {
     // https://inline-style-prefixer.js.org/docs/guides/ResolvingArrays.html
     Object.keys(prefixed).forEach {
         if (prefixed.hasOwnProperty(it)) {
-            @Suppress("UNUSED_VARIABLE")
             val value = prefixed.asDynamic()[it]
 
-            @Suppress("UnsafeCastFromDynamic")
             if (value is JsArray) {
                 // TODO make this work
                 // val displayValue = CssInJsUtils.resolveArrayValue(it, prefixed.asDynamic()[it])

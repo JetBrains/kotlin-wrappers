@@ -1,5 +1,3 @@
-@file:Suppress("NOTHING_TO_INLINE")
-
 package kotlinext.js
 
 import kotlinx.js.Object

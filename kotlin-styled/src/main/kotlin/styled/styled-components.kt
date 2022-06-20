@@ -3,7 +3,6 @@
 
 package styled
 
-import kotlinext.js.TemplateTag
 import react.*
 
 external interface StyledProps : PropsWithChildren, PropsWithClassName {

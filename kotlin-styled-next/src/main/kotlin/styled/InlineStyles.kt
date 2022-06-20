@@ -36,10 +36,8 @@ fun StyledElement.toStyle(prefix: Boolean = true): Any {
     // https://inline-style-prefixer.js.org/docs/guides/ResolvingArrays.html
     Object.keys(prefixed).forEach {
         if (prefixed.hasOwnProperty(it)) {
-            @Suppress("UNUSED_VARIABLE")
             val value = prefixed.asDynamic()[it]
 
-            @Suppress("UnsafeCastFromDynamic")
             if (value is JsArray) {
                 // Find the unprefixed value in the array and use it: multiple values don't work for some reason
                 val displayValue = value.find(js("function(element) { return !element.startsWith('-') }"))
