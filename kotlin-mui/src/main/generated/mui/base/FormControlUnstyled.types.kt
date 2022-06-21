@@ -32,7 +32,7 @@ external interface FormControlUnstyledOwnProps : react.PropsWithClassName {
     var componentsProps: ComponentsProps?
 
     interface ComponentsProps {
-        var root: react.Props? /* React.HTMLAttributes<HTMLDivElement> & FormControlUnstyledComponentsPropsOverrides */
+        var root: react.Props? /* SlotComponentProps<'div', FormControlUnstyledComponentsPropsOverrides, FormControlUnstyledOwnerState> */
     }
 
     var defaultValue: dynamic
