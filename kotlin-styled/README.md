@@ -2,9 +2,11 @@
 
 ## kotlin-styled
 
-Kotlin wrappers for [styled-components](https://www.styled-components.com/) and [inline-style-prefixer](https://github.com/rofrischmann/inline-style-prefixer). 
+Kotlin wrappers for [styled-components](https://www.styled-components.com/) and [inline-style-prefixer](https://github.com/rofrischmann/inline-style-prefixer).
 
 Major version number of this wrapper matches that of styled-components itself.
+
+Please do note that `kotlin-styled` is only compatible with `kotlin-react-legacy`. If you are using `kotlin-react`, use `kotlin-emotion` instead.
 
 ### Maven
 
@@ -30,15 +32,15 @@ implementation("org.jetbrains.kotlin-wrappers:kotlin-styled:VERSION")
 
 ### Getting Started
 
-`kotlin-styled` is a great fit for applications built using `kotlin-react`. It gives you not only a type-safe way of 
-authoring stylesheets, but it also takes care of adding vendor prefixes for your CSS rules, assembling stylesheets, 
+`kotlin-styled` is a great fit for applications built using `kotlin-react`. It gives you not only a type-safe way of
+authoring stylesheets, but it also takes care of adding vendor prefixes for your CSS rules, assembling stylesheets,
 and injecting them into the DOM.
 
-If you are not familiar with [styled-components](https://www.styled-components.com/) or CSS-in-JS in general, now would 
-be a good time to [inform yourself about the concept](https://blog.codecarrot.net/all-you-need-to-know-about-css-in-js/), 
+If you are not familiar with [styled-components](https://www.styled-components.com/) or CSS-in-JS in general, now would
+be a good time to [inform yourself about the concept](https://blog.codecarrot.net/all-you-need-to-know-about-css-in-js/),
 because `kotlin-styled` implements this exact idea... in Kotlin.
 
-When using just `kotlin-react` you would create a regular CSS file and then you would reference CSS classes from Kotlin 
+When using just `kotlin-react` you would create a regular CSS file and then you would reference CSS classes from Kotlin
 like this:
 
 ```kotlin
@@ -56,7 +58,7 @@ fun RBuilder.div() {
     styledDiv {
         css {
             padding(vertical = 16.px)
-	        
+
             backgroundColor = Color.green
         }
 
@@ -65,14 +67,14 @@ fun RBuilder.div() {
 }
 ```
 
-While you can mix markup and styles in one-off scenarios like the example above, most times you would probably want to 
+While you can mix markup and styles in one-off scenarios like the example above, most times you would probably want to
 have them separated to enable code reuse:
 
 ```kotlin
 object ComponentStyles : StyleSheet("ComponentStyles", isStatic = true) {
     val wrapper by css {
         padding(vertical = 16.px)
-        
+
         backgroundColor = Color.green
     }
 }
@@ -88,13 +90,13 @@ fun RBuilder.div() {
 }
 ```
 
-The latter is much easier to debug in the browser as well: when inspecting the element you'll see readable class names, 
+The latter is much easier to debug in the browser as well: when inspecting the element you'll see readable class names,
 e.g. `class="ComponentStyles-wrapper"` rather than generated ones.
 
 ### CSS Properties
 
-The DSL supports most common CSS properties and values, including animations, transforms, shadows, flexbox, and grids. 
-**SVG properties are not supported yet, contributions are welcome**. 
+The DSL supports most common CSS properties and values, including animations, transforms, shadows, flexbox, and grids.
+**SVG properties are not supported yet, contributions are welcome**.
 However, you can use `put("property", "value")` syntax for any unsupported property:
 
 ```kotlin
@@ -109,7 +111,7 @@ fun RBuilder.div() {
 
 ### CSS Selectors
 
-The DSL allows you to use most CSS selectors. See 
+The DSL allows you to use most CSS selectors. See
 [CssBuilder](https://github.com/JetBrains/kotlin-wrappers/blob/master/kotlin-css/src/commonMain/kotlin/kotlinx/css/CssBuilder.kt)
 for more details. **Contributions are welcome**.
 
@@ -118,41 +120,41 @@ After creating a `StyleSheet` just go ahead and start using it in a component, i
 ```kotlin
 object ComponentStyles : StyleSheet("ComponentStyles") {
     // Example of an ".element:hover" selector
-    val element by css {        
+    val element by css {
         backgroundColor = Color.green
-        
+
         hover {
             backgroundColor = Color.red
         }
     }
-    
+
     // Example of a ".wrapper > *" selector
     val wrapper by css {
         children {
             // CSS properties
         }
     }
-    
+
     // Example of a ".wrapper > div" selector
     val wrapper by css {
         children("div") {
             // CSS properties
         }
     }
-    
-    // Example of a ".wrapper:hover .inner" selector 
+
+    // Example of a ".wrapper:hover .inner" selector
     val wrapper by css {
         // CSS properties
     }
-    
+
     val inner by css {
         backgroundColor = Color.green
-        
+
         // Use reflection to refer to other elements, it's longer but safer than using hard-coded class names
         ancestorHover("${ComponentStyles.name}-${ComponentStyles::wrapper.name}") {
             backgroundColor = Color.red
         }
-    }        
+    }
 }
 
 fun RBuilder.div() {
@@ -190,7 +192,7 @@ val styles = CssBuilder(allowClasses = false).apply {
         margin(0.px)
         padding(0.px)
     }
-    
+
     "[draggable=\"true\"]" {
         put("user-select", "none")
     }

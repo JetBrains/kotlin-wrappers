@@ -13,6 +13,8 @@ React 18 (`useInsertionEffect`) is already supported by `kotlin-styled-next`.
 
 To sum it up, if you're using `kotlin-styled`, we recommend switching to `kotlin-styled-next`.
 
+However, please do note that `kotlin-styled-next` is only compatible with `kotlin-react-legacy`. If you are using `kotlin-react`, use `kotlin-emotion` instead.
+
 ### Maven
 
 ```xml

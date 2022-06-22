@@ -86,6 +86,9 @@ directly. They are therefore more complete and up-to-date.
 To choose the migration path, apply the same reasoning as the one described above for `kotlin-react`: you could either
 ignore the new APIs and keep using the old ones, perform a gradual migration, or migrate "cold turkey" style.
 
+Please do note that `kotlin-styled` and `kotlin-styled-next` are only compatible with the legacy API. If you're migrating
+to the new API, you are going to need to switch to `kotlin-emotion`.
+
 ## pre.280
 
 * New DSL for React elements was implemented. `attrs` block is no longer required.
