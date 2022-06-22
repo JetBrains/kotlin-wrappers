@@ -173,6 +173,32 @@ external interface PaletteWithChannels {
     var getContrastText: (background: String) -> String
 
     var augmentColor: (options: PaletteAugmentColorOptions) -> PaletteColor
+
+    var AppBar: dynamic
+
+    var Avatar: dynamic
+
+    var Chip: dynamic
+
+    var FilledInput: dynamic
+
+    var LinearProgress: dynamic
+
+    var Slider: dynamic
+
+    var SnackbarContent: dynamic
+
+    var SpeedDialAction: dynamic
+
+    var StepConnector: dynamic
+
+    var StepContent: dynamic
+
+    var Switch: dynamic
+
+    var TableCell: dynamic
+
+    var Tooltip: dynamic
 }
 
 external interface PaletteOptions {

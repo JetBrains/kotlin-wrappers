@@ -17,6 +17,7 @@ external interface ModalProps :
     mui.system.PropsWithSx {
     /**
      * A backdrop component. This prop enables custom backdrop rendering.
+     * @deprecated Use `components.Backdrop` instead.
      * @default styled(Backdrop, {
      *   name: 'MuiModal',
      *   slot: 'Backdrop',
@@ -31,6 +32,7 @@ external interface ModalProps :
 
     /**
      * Props applied to the [`Backdrop`](/material-ui/api/backdrop/) element.
+     * @deprecated Use `componentsProps.backdrop` instead.
      */
     var BackdropProps: BackdropProps?
 
