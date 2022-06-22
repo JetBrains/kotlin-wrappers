@@ -41,7 +41,7 @@ configure<PublishingExtension> {
                     artifactId = project.name
                     version = publishVersion
 
-                    artifact(tasks.getByName<Zip>("jsLegacySourcesJar"))
+                    artifact(tasks.getByName<Zip>("kotlinSourcesJar"))
 
                     configurePom(project)
                 }
