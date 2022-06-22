@@ -10,7 +10,7 @@ import react.ReactNode
 
 // 18.0+
 external fun hydrateRoot(
-  container: Element,
-  initialChildren: React.ReactNode,
-  options: HydrationOptions = definedExternally,
+    container: Element,
+    initialChildren: ReactNode,
+    options: HydrationOptions = definedExternally,
 ): Root
