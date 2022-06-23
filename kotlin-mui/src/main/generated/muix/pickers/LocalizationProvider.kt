@@ -1,5 +1,8 @@
 // Automatically generated - do not modify!
 
+@file:JsModule("@mui/x-date-pickers/LocalizationProvider")
+@file:JsNonModule
+
 package muix.pickers
 
 external interface LocalizationProviderProps : react.PropsWithChildren {
@@ -41,3 +44,6 @@ external interface MuiPickersAdapterContextValue {
 
     var localeText: dynamic
 }
+
+
+external val LocalizationProvider: react.FC<LocalizationProviderProps>
