@@ -6,4 +6,5 @@ plugins {
 
 dependencies {
     api(project(":kotlin-js"))
+    api(project(":kotlin-csstype"))
 }
