@@ -2,350 +2,350 @@ package org.w3c.dom
 
 object HTML {
     inline val a: TagName<HTMLAnchorElement>
-        get() = "a".unsafeCast<TagName<HTMLAnchorElement>>()
+        get() = TagName("a")
 
     inline val abbr: TagName<HTMLElement>
-        get() = "abbr".unsafeCast<TagName<HTMLElement>>()
+        get() = TagName("abbr")
 
     inline val address: TagName<HTMLElement>
-        get() = "address".unsafeCast<TagName<HTMLElement>>()
+        get() = TagName("address")
 
     inline val area: TagName<HTMLAreaElement>
-        get() = "area".unsafeCast<TagName<HTMLAreaElement>>()
+        get() = TagName("area")
 
     inline val article: TagName<HTMLElement>
-        get() = "article".unsafeCast<TagName<HTMLElement>>()
+        get() = TagName("article")
 
     inline val aside: TagName<HTMLElement>
-        get() = "aside".unsafeCast<TagName<HTMLElement>>()
+        get() = TagName("aside")
 
     inline val audio: TagName<HTMLAudioElement>
-        get() = "audio".unsafeCast<TagName<HTMLAudioElement>>()
+        get() = TagName("audio")
 
     inline val b: TagName<HTMLElement>
-        get() = "b".unsafeCast<TagName<HTMLElement>>()
+        get() = TagName("b")
 
     inline val base: TagName<HTMLBaseElement>
-        get() = "base".unsafeCast<TagName<HTMLBaseElement>>()
+        get() = TagName("base")
 
     inline val bdi: TagName<HTMLElement>
-        get() = "bdi".unsafeCast<TagName<HTMLElement>>()
+        get() = TagName("bdi")
 
     inline val bdo: TagName<HTMLElement>
-        get() = "bdo".unsafeCast<TagName<HTMLElement>>()
+        get() = TagName("bdo")
 
     inline val big: TagName<HTMLElement>
-        get() = "big".unsafeCast<TagName<HTMLElement>>()
+        get() = TagName("big")
 
     inline val blockquote: TagName<HTMLQuoteElement>
-        get() = "blockquote".unsafeCast<TagName<HTMLQuoteElement>>()
+        get() = TagName("blockquote")
 
     inline val body: TagName<HTMLBodyElement>
-        get() = "body".unsafeCast<TagName<HTMLBodyElement>>()
+        get() = TagName("body")
 
     inline val br: TagName<HTMLBRElement>
-        get() = "br".unsafeCast<TagName<HTMLBRElement>>()
+        get() = TagName("br")
 
     inline val button: TagName<HTMLButtonElement>
-        get() = "button".unsafeCast<TagName<HTMLButtonElement>>()
+        get() = TagName("button")
 
     inline val canvas: TagName<HTMLCanvasElement>
-        get() = "canvas".unsafeCast<TagName<HTMLCanvasElement>>()
+        get() = TagName("canvas")
 
     inline val caption: TagName<HTMLElement>
-        get() = "caption".unsafeCast<TagName<HTMLElement>>()
+        get() = TagName("caption")
 
     inline val cite: TagName<HTMLElement>
-        get() = "cite".unsafeCast<TagName<HTMLElement>>()
+        get() = TagName("cite")
 
     inline val code: TagName<HTMLElement>
-        get() = "code".unsafeCast<TagName<HTMLElement>>()
+        get() = TagName("code")
 
     inline val col: TagName<HTMLTableColElement>
-        get() = "col".unsafeCast<TagName<HTMLTableColElement>>()
+        get() = TagName("col")
 
     inline val colgroup: TagName<HTMLTableColElement>
-        get() = "colgroup".unsafeCast<TagName<HTMLTableColElement>>()
+        get() = TagName("colgroup")
 
     inline val data: TagName<HTMLDataElement>
-        get() = "data".unsafeCast<TagName<HTMLDataElement>>()
+        get() = TagName("data")
 
     inline val datalist: TagName<HTMLDataListElement>
-        get() = "datalist".unsafeCast<TagName<HTMLDataListElement>>()
+        get() = TagName("datalist")
 
     inline val dd: TagName<HTMLElement>
-        get() = "dd".unsafeCast<TagName<HTMLElement>>()
+        get() = TagName("dd")
 
     inline val del: TagName<HTMLModElement>
-        get() = "del".unsafeCast<TagName<HTMLModElement>>()
+        get() = TagName("del")
 
     inline val details: TagName<HTMLDetailsElement>
-        get() = "details".unsafeCast<TagName<HTMLDetailsElement>>()
+        get() = TagName("details")
 
     inline val dfn: TagName<HTMLElement>
-        get() = "dfn".unsafeCast<TagName<HTMLElement>>()
+        get() = TagName("dfn")
 
     inline val dialog: TagName<HTMLDialogElement>
-        get() = "dialog".unsafeCast<TagName<HTMLDialogElement>>()
+        get() = TagName("dialog")
 
     inline val div: TagName<HTMLDivElement>
-        get() = "div".unsafeCast<TagName<HTMLDivElement>>()
+        get() = TagName("div")
 
     inline val dl: TagName<HTMLDListElement>
-        get() = "dl".unsafeCast<TagName<HTMLDListElement>>()
+        get() = TagName("dl")
 
     inline val dt: TagName<HTMLElement>
-        get() = "dt".unsafeCast<TagName<HTMLElement>>()
+        get() = TagName("dt")
 
     inline val em: TagName<HTMLElement>
-        get() = "em".unsafeCast<TagName<HTMLElement>>()
+        get() = TagName("em")
 
     inline val embed: TagName<HTMLEmbedElement>
-        get() = "embed".unsafeCast<TagName<HTMLEmbedElement>>()
+        get() = TagName("embed")
 
     inline val fieldset: TagName<HTMLFieldSetElement>
-        get() = "fieldset".unsafeCast<TagName<HTMLFieldSetElement>>()
+        get() = TagName("fieldset")
 
     inline val figcaption: TagName<HTMLElement>
-        get() = "figcaption".unsafeCast<TagName<HTMLElement>>()
+        get() = TagName("figcaption")
 
     inline val figure: TagName<HTMLElement>
-        get() = "figure".unsafeCast<TagName<HTMLElement>>()
+        get() = TagName("figure")
 
     inline val footer: TagName<HTMLElement>
-        get() = "footer".unsafeCast<TagName<HTMLElement>>()
+        get() = TagName("footer")
 
     inline val form: TagName<HTMLFormElement>
-        get() = "form".unsafeCast<TagName<HTMLFormElement>>()
+        get() = TagName("form")
 
     inline val h1: TagName<HTMLHeadingElement>
-        get() = "h1".unsafeCast<TagName<HTMLHeadingElement>>()
+        get() = TagName("h1")
 
     inline val h2: TagName<HTMLHeadingElement>
-        get() = "h2".unsafeCast<TagName<HTMLHeadingElement>>()
+        get() = TagName("h2")
 
     inline val h3: TagName<HTMLHeadingElement>
-        get() = "h3".unsafeCast<TagName<HTMLHeadingElement>>()
+        get() = TagName("h3")
 
     inline val h4: TagName<HTMLHeadingElement>
-        get() = "h4".unsafeCast<TagName<HTMLHeadingElement>>()
+        get() = TagName("h4")
 
     inline val h5: TagName<HTMLHeadingElement>
-        get() = "h5".unsafeCast<TagName<HTMLHeadingElement>>()
+        get() = TagName("h5")
 
     inline val h6: TagName<HTMLHeadingElement>
-        get() = "h6".unsafeCast<TagName<HTMLHeadingElement>>()
+        get() = TagName("h6")
 
     inline val head: TagName<HTMLElement>
-        get() = "head".unsafeCast<TagName<HTMLElement>>()
+        get() = TagName("head")
 
     inline val header: TagName<HTMLElement>
-        get() = "header".unsafeCast<TagName<HTMLElement>>()
+        get() = TagName("header")
 
     inline val hgroup: TagName<HTMLElement>
-        get() = "hgroup".unsafeCast<TagName<HTMLElement>>()
+        get() = TagName("hgroup")
 
     inline val hr: TagName<HTMLHRElement>
-        get() = "hr".unsafeCast<TagName<HTMLHRElement>>()
+        get() = TagName("hr")
 
     inline val html: TagName<HTMLHtmlElement>
-        get() = "html".unsafeCast<TagName<HTMLHtmlElement>>()
+        get() = TagName("html")
 
     inline val i: TagName<HTMLElement>
-        get() = "i".unsafeCast<TagName<HTMLElement>>()
+        get() = TagName("i")
 
     inline val iframe: TagName<HTMLIFrameElement>
-        get() = "iframe".unsafeCast<TagName<HTMLIFrameElement>>()
+        get() = TagName("iframe")
 
     inline val img: TagName<HTMLImageElement>
-        get() = "img".unsafeCast<TagName<HTMLImageElement>>()
+        get() = TagName("img")
 
     inline val input: TagName<HTMLInputElement>
-        get() = "input".unsafeCast<TagName<HTMLInputElement>>()
+        get() = TagName("input")
 
     inline val ins: TagName<HTMLModElement>
-        get() = "ins".unsafeCast<TagName<HTMLModElement>>()
+        get() = TagName("ins")
 
     inline val kbd: TagName<HTMLElement>
-        get() = "kbd".unsafeCast<TagName<HTMLElement>>()
+        get() = TagName("kbd")
 
     inline val keygen: TagName<HTMLElement>
-        get() = "keygen".unsafeCast<TagName<HTMLElement>>()
+        get() = TagName("keygen")
 
     inline val label: TagName<HTMLLabelElement>
-        get() = "label".unsafeCast<TagName<HTMLLabelElement>>()
+        get() = TagName("label")
 
     inline val legend: TagName<HTMLLegendElement>
-        get() = "legend".unsafeCast<TagName<HTMLLegendElement>>()
+        get() = TagName("legend")
 
     inline val li: TagName<HTMLLIElement>
-        get() = "li".unsafeCast<TagName<HTMLLIElement>>()
+        get() = TagName("li")
 
     inline val link: TagName<HTMLLinkElement>
-        get() = "link".unsafeCast<TagName<HTMLLinkElement>>()
+        get() = TagName("link")
 
     inline val main: TagName<HTMLElement>
-        get() = "main".unsafeCast<TagName<HTMLElement>>()
+        get() = TagName("main")
 
     inline val map: TagName<HTMLMapElement>
-        get() = "map".unsafeCast<TagName<HTMLMapElement>>()
+        get() = TagName("map")
 
     inline val mark: TagName<HTMLElement>
-        get() = "mark".unsafeCast<TagName<HTMLElement>>()
+        get() = TagName("mark")
 
     inline val menu: TagName<HTMLElement>
-        get() = "menu".unsafeCast<TagName<HTMLElement>>()
+        get() = TagName("menu")
 
     inline val menuitem: TagName<HTMLElement>
-        get() = "menuitem".unsafeCast<TagName<HTMLElement>>()
+        get() = TagName("menuitem")
 
     inline val meta: TagName<HTMLMetaElement>
-        get() = "meta".unsafeCast<TagName<HTMLMetaElement>>()
+        get() = TagName("meta")
 
     inline val meter: TagName<HTMLMeterElement>
-        get() = "meter".unsafeCast<TagName<HTMLMeterElement>>()
+        get() = TagName("meter")
 
     inline val nav: TagName<HTMLElement>
-        get() = "nav".unsafeCast<TagName<HTMLElement>>()
+        get() = TagName("nav")
 
     inline val noscript: TagName<HTMLElement>
-        get() = "noscript".unsafeCast<TagName<HTMLElement>>()
+        get() = TagName("noscript")
 
     inline val `object`: TagName<HTMLObjectElement>
-        get() = "object".unsafeCast<TagName<HTMLObjectElement>>()
+        get() = TagName("object")
 
     inline val ol: TagName<HTMLOListElement>
-        get() = "ol".unsafeCast<TagName<HTMLOListElement>>()
+        get() = TagName("ol")
 
     inline val optgroup: TagName<HTMLOptGroupElement>
-        get() = "optgroup".unsafeCast<TagName<HTMLOptGroupElement>>()
+        get() = TagName("optgroup")
 
     inline val option: TagName<HTMLOptionElement>
-        get() = "option".unsafeCast<TagName<HTMLOptionElement>>()
+        get() = TagName("option")
 
     inline val output: TagName<HTMLOutputElement>
-        get() = "output".unsafeCast<TagName<HTMLOutputElement>>()
+        get() = TagName("output")
 
     inline val p: TagName<HTMLParagraphElement>
-        get() = "p".unsafeCast<TagName<HTMLParagraphElement>>()
+        get() = TagName("p")
 
     inline val param: TagName<HTMLParamElement>
-        get() = "param".unsafeCast<TagName<HTMLParamElement>>()
+        get() = TagName("param")
 
     inline val picture: TagName<HTMLElement>
-        get() = "picture".unsafeCast<TagName<HTMLElement>>()
+        get() = TagName("picture")
 
     inline val pre: TagName<HTMLPreElement>
-        get() = "pre".unsafeCast<TagName<HTMLPreElement>>()
+        get() = TagName("pre")
 
     inline val progress: TagName<HTMLProgressElement>
-        get() = "progress".unsafeCast<TagName<HTMLProgressElement>>()
+        get() = TagName("progress")
 
     inline val q: TagName<HTMLQuoteElement>
-        get() = "q".unsafeCast<TagName<HTMLQuoteElement>>()
+        get() = TagName("q")
 
     inline val rp: TagName<HTMLElement>
-        get() = "rp".unsafeCast<TagName<HTMLElement>>()
+        get() = TagName("rp")
 
     inline val rt: TagName<HTMLElement>
-        get() = "rt".unsafeCast<TagName<HTMLElement>>()
+        get() = TagName("rt")
 
     inline val ruby: TagName<HTMLElement>
-        get() = "ruby".unsafeCast<TagName<HTMLElement>>()
+        get() = TagName("ruby")
 
     inline val s: TagName<HTMLElement>
-        get() = "s".unsafeCast<TagName<HTMLElement>>()
+        get() = TagName("s")
 
     inline val samp: TagName<HTMLElement>
-        get() = "samp".unsafeCast<TagName<HTMLElement>>()
+        get() = TagName("samp")
 
     inline val slot: TagName<HTMLSlotElement>
-        get() = "slot".unsafeCast<TagName<HTMLSlotElement>>()
+        get() = TagName("slot")
 
     inline val script: TagName<HTMLScriptElement>
-        get() = "script".unsafeCast<TagName<HTMLScriptElement>>()
+        get() = TagName("script")
 
     inline val section: TagName<HTMLElement>
-        get() = "section".unsafeCast<TagName<HTMLElement>>()
+        get() = TagName("section")
 
     inline val select: TagName<HTMLSelectElement>
-        get() = "select".unsafeCast<TagName<HTMLSelectElement>>()
+        get() = TagName("select")
 
     inline val small: TagName<HTMLElement>
-        get() = "small".unsafeCast<TagName<HTMLElement>>()
+        get() = TagName("small")
 
     inline val source: TagName<HTMLSourceElement>
-        get() = "source".unsafeCast<TagName<HTMLSourceElement>>()
+        get() = TagName("source")
 
     inline val span: TagName<HTMLSpanElement>
-        get() = "span".unsafeCast<TagName<HTMLSpanElement>>()
+        get() = TagName("span")
 
     inline val strong: TagName<HTMLElement>
-        get() = "strong".unsafeCast<TagName<HTMLElement>>()
+        get() = TagName("strong")
 
     inline val style: TagName<HTMLStyleElement>
-        get() = "style".unsafeCast<TagName<HTMLStyleElement>>()
+        get() = TagName("style")
 
     inline val sub: TagName<HTMLElement>
-        get() = "sub".unsafeCast<TagName<HTMLElement>>()
+        get() = TagName("sub")
 
     inline val summary: TagName<HTMLElement>
-        get() = "summary".unsafeCast<TagName<HTMLElement>>()
+        get() = TagName("summary")
 
     inline val sup: TagName<HTMLElement>
-        get() = "sup".unsafeCast<TagName<HTMLElement>>()
+        get() = TagName("sup")
 
     inline val table: TagName<HTMLTableElement>
-        get() = "table".unsafeCast<TagName<HTMLTableElement>>()
+        get() = TagName("table")
 
     inline val template: TagName<HTMLTemplateElement>
-        get() = "template".unsafeCast<TagName<HTMLTemplateElement>>()
+        get() = TagName("template")
 
     inline val tbody: TagName<HTMLTableSectionElement>
-        get() = "tbody".unsafeCast<TagName<HTMLTableSectionElement>>()
+        get() = TagName("tbody")
 
     inline val td: TagName<HTMLTableCellElement>
-        get() = "td".unsafeCast<TagName<HTMLTableCellElement>>()
+        get() = TagName("td")
 
     inline val textarea: TagName<HTMLTextAreaElement>
-        get() = "textarea".unsafeCast<TagName<HTMLTextAreaElement>>()
+        get() = TagName("textarea")
 
     inline val tfoot: TagName<HTMLTableSectionElement>
-        get() = "tfoot".unsafeCast<TagName<HTMLTableSectionElement>>()
+        get() = TagName("tfoot")
 
     inline val th: TagName<HTMLTableCellElement>
-        get() = "th".unsafeCast<TagName<HTMLTableCellElement>>()
+        get() = TagName("th")
 
     inline val thead: TagName<HTMLTableSectionElement>
-        get() = "thead".unsafeCast<TagName<HTMLTableSectionElement>>()
+        get() = TagName("thead")
 
     inline val time: TagName<HTMLTimeElement>
-        get() = "time".unsafeCast<TagName<HTMLTimeElement>>()
+        get() = TagName("time")
 
     inline val title: TagName<HTMLTitleElement>
-        get() = "title".unsafeCast<TagName<HTMLTitleElement>>()
+        get() = TagName("title")
 
     inline val tr: TagName<HTMLTableRowElement>
-        get() = "tr".unsafeCast<TagName<HTMLTableRowElement>>()
+        get() = TagName("tr")
 
     inline val track: TagName<HTMLTrackElement>
-        get() = "track".unsafeCast<TagName<HTMLTrackElement>>()
+        get() = TagName("track")
 
     inline val u: TagName<HTMLElement>
-        get() = "u".unsafeCast<TagName<HTMLElement>>()
+        get() = TagName("u")
 
     inline val ul: TagName<HTMLUListElement>
-        get() = "ul".unsafeCast<TagName<HTMLUListElement>>()
+        get() = TagName("ul")
 
     inline val `var`: TagName<HTMLElement>
-        get() = "var".unsafeCast<TagName<HTMLElement>>()
+        get() = TagName("var")
 
     inline val video: TagName<HTMLVideoElement>
-        get() = "video".unsafeCast<TagName<HTMLVideoElement>>()
+        get() = TagName("video")
 
     inline val wbr: TagName<HTMLElement>
-        get() = "wbr".unsafeCast<TagName<HTMLElement>>()
+        get() = TagName("wbr")
 
     inline val webview: TagName<HTMLElement>
-        get() = "webview".unsafeCast<TagName<HTMLElement>>()
+        get() = TagName("webview")
 }

@@ -7,350 +7,350 @@ import react.IntrinsicType
 
 object ReactHTML {
     inline val a: IntrinsicType<AnchorHTMLAttributes<HTMLAnchorElement>>
-        get() = "a".unsafeCast<IntrinsicType<AnchorHTMLAttributes<HTMLAnchorElement>>>()
+        get() = IntrinsicType("a")
 
     inline val abbr: IntrinsicType<HTMLAttributes<HTMLElement>>
-        get() = "abbr".unsafeCast<IntrinsicType<HTMLAttributes<HTMLElement>>>()
+        get() = IntrinsicType("abbr")
 
     inline val address: IntrinsicType<HTMLAttributes<HTMLElement>>
-        get() = "address".unsafeCast<IntrinsicType<HTMLAttributes<HTMLElement>>>()
+        get() = IntrinsicType("address")
 
     inline val area: IntrinsicType<AreaHTMLAttributes<HTMLAreaElement>>
-        get() = "area".unsafeCast<IntrinsicType<AreaHTMLAttributes<HTMLAreaElement>>>()
+        get() = IntrinsicType("area")
 
     inline val article: IntrinsicType<HTMLAttributes<HTMLElement>>
-        get() = "article".unsafeCast<IntrinsicType<HTMLAttributes<HTMLElement>>>()
+        get() = IntrinsicType("article")
 
     inline val aside: IntrinsicType<HTMLAttributes<HTMLElement>>
-        get() = "aside".unsafeCast<IntrinsicType<HTMLAttributes<HTMLElement>>>()
+        get() = IntrinsicType("aside")
 
     inline val audio: IntrinsicType<AudioHTMLAttributes<HTMLAudioElement>>
-        get() = "audio".unsafeCast<IntrinsicType<AudioHTMLAttributes<HTMLAudioElement>>>()
+        get() = IntrinsicType("audio")
 
     inline val b: IntrinsicType<HTMLAttributes<HTMLElement>>
-        get() = "b".unsafeCast<IntrinsicType<HTMLAttributes<HTMLElement>>>()
+        get() = IntrinsicType("b")
 
     inline val base: IntrinsicType<BaseHTMLAttributes<HTMLBaseElement>>
-        get() = "base".unsafeCast<IntrinsicType<BaseHTMLAttributes<HTMLBaseElement>>>()
+        get() = IntrinsicType("base")
 
     inline val bdi: IntrinsicType<HTMLAttributes<HTMLElement>>
-        get() = "bdi".unsafeCast<IntrinsicType<HTMLAttributes<HTMLElement>>>()
+        get() = IntrinsicType("bdi")
 
     inline val bdo: IntrinsicType<HTMLAttributes<HTMLElement>>
-        get() = "bdo".unsafeCast<IntrinsicType<HTMLAttributes<HTMLElement>>>()
+        get() = IntrinsicType("bdo")
 
     inline val big: IntrinsicType<HTMLAttributes<HTMLElement>>
-        get() = "big".unsafeCast<IntrinsicType<HTMLAttributes<HTMLElement>>>()
+        get() = IntrinsicType("big")
 
     inline val blockquote: IntrinsicType<BlockquoteHTMLAttributes<HTMLQuoteElement>>
-        get() = "blockquote".unsafeCast<IntrinsicType<BlockquoteHTMLAttributes<HTMLQuoteElement>>>()
+        get() = IntrinsicType("blockquote")
 
     inline val body: IntrinsicType<HTMLAttributes<HTMLBodyElement>>
-        get() = "body".unsafeCast<IntrinsicType<HTMLAttributes<HTMLBodyElement>>>()
+        get() = IntrinsicType("body")
 
     inline val br: IntrinsicType<HTMLAttributes<HTMLBRElement>>
-        get() = "br".unsafeCast<IntrinsicType<HTMLAttributes<HTMLBRElement>>>()
+        get() = IntrinsicType("br")
 
     inline val button: IntrinsicType<ButtonHTMLAttributes<HTMLButtonElement>>
-        get() = "button".unsafeCast<IntrinsicType<ButtonHTMLAttributes<HTMLButtonElement>>>()
+        get() = IntrinsicType("button")
 
     inline val canvas: IntrinsicType<CanvasHTMLAttributes<HTMLCanvasElement>>
-        get() = "canvas".unsafeCast<IntrinsicType<CanvasHTMLAttributes<HTMLCanvasElement>>>()
+        get() = IntrinsicType("canvas")
 
     inline val caption: IntrinsicType<HTMLAttributes<HTMLElement>>
-        get() = "caption".unsafeCast<IntrinsicType<HTMLAttributes<HTMLElement>>>()
+        get() = IntrinsicType("caption")
 
     inline val cite: IntrinsicType<HTMLAttributes<HTMLElement>>
-        get() = "cite".unsafeCast<IntrinsicType<HTMLAttributes<HTMLElement>>>()
+        get() = IntrinsicType("cite")
 
     inline val code: IntrinsicType<HTMLAttributes<HTMLElement>>
-        get() = "code".unsafeCast<IntrinsicType<HTMLAttributes<HTMLElement>>>()
+        get() = IntrinsicType("code")
 
     inline val col: IntrinsicType<ColHTMLAttributes<HTMLTableColElement>>
-        get() = "col".unsafeCast<IntrinsicType<ColHTMLAttributes<HTMLTableColElement>>>()
+        get() = IntrinsicType("col")
 
     inline val colgroup: IntrinsicType<ColgroupHTMLAttributes<HTMLTableColElement>>
-        get() = "colgroup".unsafeCast<IntrinsicType<ColgroupHTMLAttributes<HTMLTableColElement>>>()
+        get() = IntrinsicType("colgroup")
 
     inline val data: IntrinsicType<DataHTMLAttributes<HTMLDataElement>>
-        get() = "data".unsafeCast<IntrinsicType<DataHTMLAttributes<HTMLDataElement>>>()
+        get() = IntrinsicType("data")
 
     inline val datalist: IntrinsicType<HTMLAttributes<HTMLDataListElement>>
-        get() = "datalist".unsafeCast<IntrinsicType<HTMLAttributes<HTMLDataListElement>>>()
+        get() = IntrinsicType("datalist")
 
     inline val dd: IntrinsicType<HTMLAttributes<HTMLElement>>
-        get() = "dd".unsafeCast<IntrinsicType<HTMLAttributes<HTMLElement>>>()
+        get() = IntrinsicType("dd")
 
     inline val del: IntrinsicType<DelHTMLAttributes<HTMLModElement>>
-        get() = "del".unsafeCast<IntrinsicType<DelHTMLAttributes<HTMLModElement>>>()
+        get() = IntrinsicType("del")
 
     inline val details: IntrinsicType<DetailsHTMLAttributes<HTMLDetailsElement>>
-        get() = "details".unsafeCast<IntrinsicType<DetailsHTMLAttributes<HTMLDetailsElement>>>()
+        get() = IntrinsicType("details")
 
     inline val dfn: IntrinsicType<HTMLAttributes<HTMLElement>>
-        get() = "dfn".unsafeCast<IntrinsicType<HTMLAttributes<HTMLElement>>>()
+        get() = IntrinsicType("dfn")
 
     inline val dialog: IntrinsicType<DialogHTMLAttributes<HTMLDialogElement>>
-        get() = "dialog".unsafeCast<IntrinsicType<DialogHTMLAttributes<HTMLDialogElement>>>()
+        get() = IntrinsicType("dialog")
 
     inline val div: IntrinsicType<HTMLAttributes<HTMLDivElement>>
-        get() = "div".unsafeCast<IntrinsicType<HTMLAttributes<HTMLDivElement>>>()
+        get() = IntrinsicType("div")
 
     inline val dl: IntrinsicType<HTMLAttributes<HTMLDListElement>>
-        get() = "dl".unsafeCast<IntrinsicType<HTMLAttributes<HTMLDListElement>>>()
+        get() = IntrinsicType("dl")
 
     inline val dt: IntrinsicType<HTMLAttributes<HTMLElement>>
-        get() = "dt".unsafeCast<IntrinsicType<HTMLAttributes<HTMLElement>>>()
+        get() = IntrinsicType("dt")
 
     inline val em: IntrinsicType<HTMLAttributes<HTMLElement>>
-        get() = "em".unsafeCast<IntrinsicType<HTMLAttributes<HTMLElement>>>()
+        get() = IntrinsicType("em")
 
     inline val embed: IntrinsicType<EmbedHTMLAttributes<HTMLEmbedElement>>
-        get() = "embed".unsafeCast<IntrinsicType<EmbedHTMLAttributes<HTMLEmbedElement>>>()
+        get() = IntrinsicType("embed")
 
     inline val fieldset: IntrinsicType<FieldsetHTMLAttributes<HTMLFieldSetElement>>
-        get() = "fieldset".unsafeCast<IntrinsicType<FieldsetHTMLAttributes<HTMLFieldSetElement>>>()
+        get() = IntrinsicType("fieldset")
 
     inline val figcaption: IntrinsicType<HTMLAttributes<HTMLElement>>
-        get() = "figcaption".unsafeCast<IntrinsicType<HTMLAttributes<HTMLElement>>>()
+        get() = IntrinsicType("figcaption")
 
     inline val figure: IntrinsicType<HTMLAttributes<HTMLElement>>
-        get() = "figure".unsafeCast<IntrinsicType<HTMLAttributes<HTMLElement>>>()
+        get() = IntrinsicType("figure")
 
     inline val footer: IntrinsicType<HTMLAttributes<HTMLElement>>
-        get() = "footer".unsafeCast<IntrinsicType<HTMLAttributes<HTMLElement>>>()
+        get() = IntrinsicType("footer")
 
     inline val form: IntrinsicType<FormHTMLAttributes<HTMLFormElement>>
-        get() = "form".unsafeCast<IntrinsicType<FormHTMLAttributes<HTMLFormElement>>>()
+        get() = IntrinsicType("form")
 
     inline val h1: IntrinsicType<HTMLAttributes<HTMLHeadingElement>>
-        get() = "h1".unsafeCast<IntrinsicType<HTMLAttributes<HTMLHeadingElement>>>()
+        get() = IntrinsicType("h1")
 
     inline val h2: IntrinsicType<HTMLAttributes<HTMLHeadingElement>>
-        get() = "h2".unsafeCast<IntrinsicType<HTMLAttributes<HTMLHeadingElement>>>()
+        get() = IntrinsicType("h2")
 
     inline val h3: IntrinsicType<HTMLAttributes<HTMLHeadingElement>>
-        get() = "h3".unsafeCast<IntrinsicType<HTMLAttributes<HTMLHeadingElement>>>()
+        get() = IntrinsicType("h3")
 
     inline val h4: IntrinsicType<HTMLAttributes<HTMLHeadingElement>>
-        get() = "h4".unsafeCast<IntrinsicType<HTMLAttributes<HTMLHeadingElement>>>()
+        get() = IntrinsicType("h4")
 
     inline val h5: IntrinsicType<HTMLAttributes<HTMLHeadingElement>>
-        get() = "h5".unsafeCast<IntrinsicType<HTMLAttributes<HTMLHeadingElement>>>()
+        get() = IntrinsicType("h5")
 
     inline val h6: IntrinsicType<HTMLAttributes<HTMLHeadingElement>>
-        get() = "h6".unsafeCast<IntrinsicType<HTMLAttributes<HTMLHeadingElement>>>()
+        get() = IntrinsicType("h6")
 
     inline val head: IntrinsicType<HTMLAttributes<HTMLElement>>
-        get() = "head".unsafeCast<IntrinsicType<HTMLAttributes<HTMLElement>>>()
+        get() = IntrinsicType("head")
 
     inline val header: IntrinsicType<HTMLAttributes<HTMLElement>>
-        get() = "header".unsafeCast<IntrinsicType<HTMLAttributes<HTMLElement>>>()
+        get() = IntrinsicType("header")
 
     inline val hgroup: IntrinsicType<HTMLAttributes<HTMLElement>>
-        get() = "hgroup".unsafeCast<IntrinsicType<HTMLAttributes<HTMLElement>>>()
+        get() = IntrinsicType("hgroup")
 
     inline val hr: IntrinsicType<HTMLAttributes<HTMLHRElement>>
-        get() = "hr".unsafeCast<IntrinsicType<HTMLAttributes<HTMLHRElement>>>()
+        get() = IntrinsicType("hr")
 
     inline val html: IntrinsicType<HtmlHTMLAttributes<HTMLHtmlElement>>
-        get() = "html".unsafeCast<IntrinsicType<HtmlHTMLAttributes<HTMLHtmlElement>>>()
+        get() = IntrinsicType("html")
 
     inline val i: IntrinsicType<HTMLAttributes<HTMLElement>>
-        get() = "i".unsafeCast<IntrinsicType<HTMLAttributes<HTMLElement>>>()
+        get() = IntrinsicType("i")
 
     inline val iframe: IntrinsicType<IframeHTMLAttributes<HTMLIFrameElement>>
-        get() = "iframe".unsafeCast<IntrinsicType<IframeHTMLAttributes<HTMLIFrameElement>>>()
+        get() = IntrinsicType("iframe")
 
     inline val img: IntrinsicType<ImgHTMLAttributes<HTMLImageElement>>
-        get() = "img".unsafeCast<IntrinsicType<ImgHTMLAttributes<HTMLImageElement>>>()
+        get() = IntrinsicType("img")
 
     inline val input: IntrinsicType<InputHTMLAttributes<HTMLInputElement>>
-        get() = "input".unsafeCast<IntrinsicType<InputHTMLAttributes<HTMLInputElement>>>()
+        get() = IntrinsicType("input")
 
     inline val ins: IntrinsicType<InsHTMLAttributes<HTMLModElement>>
-        get() = "ins".unsafeCast<IntrinsicType<InsHTMLAttributes<HTMLModElement>>>()
+        get() = IntrinsicType("ins")
 
     inline val kbd: IntrinsicType<HTMLAttributes<HTMLElement>>
-        get() = "kbd".unsafeCast<IntrinsicType<HTMLAttributes<HTMLElement>>>()
+        get() = IntrinsicType("kbd")
 
     inline val keygen: IntrinsicType<KeygenHTMLAttributes<HTMLElement>>
-        get() = "keygen".unsafeCast<IntrinsicType<KeygenHTMLAttributes<HTMLElement>>>()
+        get() = IntrinsicType("keygen")
 
     inline val label: IntrinsicType<LabelHTMLAttributes<HTMLLabelElement>>
-        get() = "label".unsafeCast<IntrinsicType<LabelHTMLAttributes<HTMLLabelElement>>>()
+        get() = IntrinsicType("label")
 
     inline val legend: IntrinsicType<HTMLAttributes<HTMLLegendElement>>
-        get() = "legend".unsafeCast<IntrinsicType<HTMLAttributes<HTMLLegendElement>>>()
+        get() = IntrinsicType("legend")
 
     inline val li: IntrinsicType<LiHTMLAttributes<HTMLLIElement>>
-        get() = "li".unsafeCast<IntrinsicType<LiHTMLAttributes<HTMLLIElement>>>()
+        get() = IntrinsicType("li")
 
     inline val link: IntrinsicType<LinkHTMLAttributes<HTMLLinkElement>>
-        get() = "link".unsafeCast<IntrinsicType<LinkHTMLAttributes<HTMLLinkElement>>>()
+        get() = IntrinsicType("link")
 
     inline val main: IntrinsicType<HTMLAttributes<HTMLElement>>
-        get() = "main".unsafeCast<IntrinsicType<HTMLAttributes<HTMLElement>>>()
+        get() = IntrinsicType("main")
 
     inline val map: IntrinsicType<MapHTMLAttributes<HTMLMapElement>>
-        get() = "map".unsafeCast<IntrinsicType<MapHTMLAttributes<HTMLMapElement>>>()
+        get() = IntrinsicType("map")
 
     inline val mark: IntrinsicType<HTMLAttributes<HTMLElement>>
-        get() = "mark".unsafeCast<IntrinsicType<HTMLAttributes<HTMLElement>>>()
+        get() = IntrinsicType("mark")
 
     inline val menu: IntrinsicType<MenuHTMLAttributes<HTMLElement>>
-        get() = "menu".unsafeCast<IntrinsicType<MenuHTMLAttributes<HTMLElement>>>()
+        get() = IntrinsicType("menu")
 
     inline val menuitem: IntrinsicType<HTMLAttributes<HTMLElement>>
-        get() = "menuitem".unsafeCast<IntrinsicType<HTMLAttributes<HTMLElement>>>()
+        get() = IntrinsicType("menuitem")
 
     inline val meta: IntrinsicType<MetaHTMLAttributes<HTMLMetaElement>>
-        get() = "meta".unsafeCast<IntrinsicType<MetaHTMLAttributes<HTMLMetaElement>>>()
+        get() = IntrinsicType("meta")
 
     inline val meter: IntrinsicType<MeterHTMLAttributes<HTMLMeterElement>>
-        get() = "meter".unsafeCast<IntrinsicType<MeterHTMLAttributes<HTMLMeterElement>>>()
+        get() = IntrinsicType("meter")
 
     inline val nav: IntrinsicType<HTMLAttributes<HTMLElement>>
-        get() = "nav".unsafeCast<IntrinsicType<HTMLAttributes<HTMLElement>>>()
+        get() = IntrinsicType("nav")
 
     inline val noscript: IntrinsicType<HTMLAttributes<HTMLElement>>
-        get() = "noscript".unsafeCast<IntrinsicType<HTMLAttributes<HTMLElement>>>()
+        get() = IntrinsicType("noscript")
 
     inline val `object`: IntrinsicType<ObjectHTMLAttributes<HTMLObjectElement>>
-        get() = "object".unsafeCast<IntrinsicType<ObjectHTMLAttributes<HTMLObjectElement>>>()
+        get() = IntrinsicType("object")
 
     inline val ol: IntrinsicType<OlHTMLAttributes<HTMLOListElement>>
-        get() = "ol".unsafeCast<IntrinsicType<OlHTMLAttributes<HTMLOListElement>>>()
+        get() = IntrinsicType("ol")
 
     inline val optgroup: IntrinsicType<OptgroupHTMLAttributes<HTMLOptGroupElement>>
-        get() = "optgroup".unsafeCast<IntrinsicType<OptgroupHTMLAttributes<HTMLOptGroupElement>>>()
+        get() = IntrinsicType("optgroup")
 
     inline val option: IntrinsicType<OptionHTMLAttributes<HTMLOptionElement>>
-        get() = "option".unsafeCast<IntrinsicType<OptionHTMLAttributes<HTMLOptionElement>>>()
+        get() = IntrinsicType("option")
 
     inline val output: IntrinsicType<OutputHTMLAttributes<HTMLOutputElement>>
-        get() = "output".unsafeCast<IntrinsicType<OutputHTMLAttributes<HTMLOutputElement>>>()
+        get() = IntrinsicType("output")
 
     inline val p: IntrinsicType<HTMLAttributes<HTMLParagraphElement>>
-        get() = "p".unsafeCast<IntrinsicType<HTMLAttributes<HTMLParagraphElement>>>()
+        get() = IntrinsicType("p")
 
     inline val param: IntrinsicType<ParamHTMLAttributes<HTMLParamElement>>
-        get() = "param".unsafeCast<IntrinsicType<ParamHTMLAttributes<HTMLParamElement>>>()
+        get() = IntrinsicType("param")
 
     inline val picture: IntrinsicType<HTMLAttributes<HTMLElement>>
-        get() = "picture".unsafeCast<IntrinsicType<HTMLAttributes<HTMLElement>>>()
+        get() = IntrinsicType("picture")
 
     inline val pre: IntrinsicType<HTMLAttributes<HTMLPreElement>>
-        get() = "pre".unsafeCast<IntrinsicType<HTMLAttributes<HTMLPreElement>>>()
+        get() = IntrinsicType("pre")
 
     inline val progress: IntrinsicType<ProgressHTMLAttributes<HTMLProgressElement>>
-        get() = "progress".unsafeCast<IntrinsicType<ProgressHTMLAttributes<HTMLProgressElement>>>()
+        get() = IntrinsicType("progress")
 
     inline val q: IntrinsicType<QuoteHTMLAttributes<HTMLQuoteElement>>
-        get() = "q".unsafeCast<IntrinsicType<QuoteHTMLAttributes<HTMLQuoteElement>>>()
+        get() = IntrinsicType("q")
 
     inline val rp: IntrinsicType<HTMLAttributes<HTMLElement>>
-        get() = "rp".unsafeCast<IntrinsicType<HTMLAttributes<HTMLElement>>>()
+        get() = IntrinsicType("rp")
 
     inline val rt: IntrinsicType<HTMLAttributes<HTMLElement>>
-        get() = "rt".unsafeCast<IntrinsicType<HTMLAttributes<HTMLElement>>>()
+        get() = IntrinsicType("rt")
 
     inline val ruby: IntrinsicType<HTMLAttributes<HTMLElement>>
-        get() = "ruby".unsafeCast<IntrinsicType<HTMLAttributes<HTMLElement>>>()
+        get() = IntrinsicType("ruby")
 
     inline val s: IntrinsicType<HTMLAttributes<HTMLElement>>
-        get() = "s".unsafeCast<IntrinsicType<HTMLAttributes<HTMLElement>>>()
+        get() = IntrinsicType("s")
 
     inline val samp: IntrinsicType<HTMLAttributes<HTMLElement>>
-        get() = "samp".unsafeCast<IntrinsicType<HTMLAttributes<HTMLElement>>>()
+        get() = IntrinsicType("samp")
 
     inline val slot: IntrinsicType<SlotHTMLAttributes<HTMLSlotElement>>
-        get() = "slot".unsafeCast<IntrinsicType<SlotHTMLAttributes<HTMLSlotElement>>>()
+        get() = IntrinsicType("slot")
 
     inline val script: IntrinsicType<ScriptHTMLAttributes<HTMLScriptElement>>
-        get() = "script".unsafeCast<IntrinsicType<ScriptHTMLAttributes<HTMLScriptElement>>>()
+        get() = IntrinsicType("script")
 
     inline val section: IntrinsicType<HTMLAttributes<HTMLElement>>
-        get() = "section".unsafeCast<IntrinsicType<HTMLAttributes<HTMLElement>>>()
+        get() = IntrinsicType("section")
 
     inline val select: IntrinsicType<SelectHTMLAttributes<HTMLSelectElement>>
-        get() = "select".unsafeCast<IntrinsicType<SelectHTMLAttributes<HTMLSelectElement>>>()
+        get() = IntrinsicType("select")
 
     inline val small: IntrinsicType<HTMLAttributes<HTMLElement>>
-        get() = "small".unsafeCast<IntrinsicType<HTMLAttributes<HTMLElement>>>()
+        get() = IntrinsicType("small")
 
     inline val source: IntrinsicType<SourceHTMLAttributes<HTMLSourceElement>>
-        get() = "source".unsafeCast<IntrinsicType<SourceHTMLAttributes<HTMLSourceElement>>>()
+        get() = IntrinsicType("source")
 
     inline val span: IntrinsicType<HTMLAttributes<HTMLSpanElement>>
-        get() = "span".unsafeCast<IntrinsicType<HTMLAttributes<HTMLSpanElement>>>()
+        get() = IntrinsicType("span")
 
     inline val strong: IntrinsicType<HTMLAttributes<HTMLElement>>
-        get() = "strong".unsafeCast<IntrinsicType<HTMLAttributes<HTMLElement>>>()
+        get() = IntrinsicType("strong")
 
     inline val style: IntrinsicType<StyleHTMLAttributes<HTMLStyleElement>>
-        get() = "style".unsafeCast<IntrinsicType<StyleHTMLAttributes<HTMLStyleElement>>>()
+        get() = IntrinsicType("style")
 
     inline val sub: IntrinsicType<HTMLAttributes<HTMLElement>>
-        get() = "sub".unsafeCast<IntrinsicType<HTMLAttributes<HTMLElement>>>()
+        get() = IntrinsicType("sub")
 
     inline val summary: IntrinsicType<HTMLAttributes<HTMLElement>>
-        get() = "summary".unsafeCast<IntrinsicType<HTMLAttributes<HTMLElement>>>()
+        get() = IntrinsicType("summary")
 
     inline val sup: IntrinsicType<HTMLAttributes<HTMLElement>>
-        get() = "sup".unsafeCast<IntrinsicType<HTMLAttributes<HTMLElement>>>()
+        get() = IntrinsicType("sup")
 
     inline val table: IntrinsicType<TableHTMLAttributes<HTMLTableElement>>
-        get() = "table".unsafeCast<IntrinsicType<TableHTMLAttributes<HTMLTableElement>>>()
+        get() = IntrinsicType("table")
 
     inline val template: IntrinsicType<HTMLAttributes<HTMLTemplateElement>>
-        get() = "template".unsafeCast<IntrinsicType<HTMLAttributes<HTMLTemplateElement>>>()
+        get() = IntrinsicType("template")
 
     inline val tbody: IntrinsicType<HTMLAttributes<HTMLTableSectionElement>>
-        get() = "tbody".unsafeCast<IntrinsicType<HTMLAttributes<HTMLTableSectionElement>>>()
+        get() = IntrinsicType("tbody")
 
     inline val td: IntrinsicType<TdHTMLAttributes<HTMLTableCellElement>>
-        get() = "td".unsafeCast<IntrinsicType<TdHTMLAttributes<HTMLTableCellElement>>>()
+        get() = IntrinsicType("td")
 
     inline val textarea: IntrinsicType<TextareaHTMLAttributes<HTMLTextAreaElement>>
-        get() = "textarea".unsafeCast<IntrinsicType<TextareaHTMLAttributes<HTMLTextAreaElement>>>()
+        get() = IntrinsicType("textarea")
 
     inline val tfoot: IntrinsicType<HTMLAttributes<HTMLTableSectionElement>>
-        get() = "tfoot".unsafeCast<IntrinsicType<HTMLAttributes<HTMLTableSectionElement>>>()
+        get() = IntrinsicType("tfoot")
 
     inline val th: IntrinsicType<ThHTMLAttributes<HTMLTableCellElement>>
-        get() = "th".unsafeCast<IntrinsicType<ThHTMLAttributes<HTMLTableCellElement>>>()
+        get() = IntrinsicType("th")
 
     inline val thead: IntrinsicType<HTMLAttributes<HTMLTableSectionElement>>
-        get() = "thead".unsafeCast<IntrinsicType<HTMLAttributes<HTMLTableSectionElement>>>()
+        get() = IntrinsicType("thead")
 
     inline val time: IntrinsicType<TimeHTMLAttributes<HTMLTimeElement>>
-        get() = "time".unsafeCast<IntrinsicType<TimeHTMLAttributes<HTMLTimeElement>>>()
+        get() = IntrinsicType("time")
 
     inline val title: IntrinsicType<HTMLAttributes<HTMLTitleElement>>
-        get() = "title".unsafeCast<IntrinsicType<HTMLAttributes<HTMLTitleElement>>>()
+        get() = IntrinsicType("title")
 
     inline val tr: IntrinsicType<HTMLAttributes<HTMLTableRowElement>>
-        get() = "tr".unsafeCast<IntrinsicType<HTMLAttributes<HTMLTableRowElement>>>()
+        get() = IntrinsicType("tr")
 
     inline val track: IntrinsicType<TrackHTMLAttributes<HTMLTrackElement>>
-        get() = "track".unsafeCast<IntrinsicType<TrackHTMLAttributes<HTMLTrackElement>>>()
+        get() = IntrinsicType("track")
 
     inline val u: IntrinsicType<HTMLAttributes<HTMLElement>>
-        get() = "u".unsafeCast<IntrinsicType<HTMLAttributes<HTMLElement>>>()
+        get() = IntrinsicType("u")
 
     inline val ul: IntrinsicType<HTMLAttributes<HTMLUListElement>>
-        get() = "ul".unsafeCast<IntrinsicType<HTMLAttributes<HTMLUListElement>>>()
+        get() = IntrinsicType("ul")
 
     inline val `var`: IntrinsicType<HTMLAttributes<HTMLElement>>
-        get() = "var".unsafeCast<IntrinsicType<HTMLAttributes<HTMLElement>>>()
+        get() = IntrinsicType("var")
 
     inline val video: IntrinsicType<VideoHTMLAttributes<HTMLVideoElement>>
-        get() = "video".unsafeCast<IntrinsicType<VideoHTMLAttributes<HTMLVideoElement>>>()
+        get() = IntrinsicType("video")
 
     inline val wbr: IntrinsicType<HTMLAttributes<HTMLElement>>
-        get() = "wbr".unsafeCast<IntrinsicType<HTMLAttributes<HTMLElement>>>()
+        get() = IntrinsicType("wbr")
 
     inline val webview: IntrinsicType<WebViewHTMLAttributes<HTMLElement>>
-        get() = "webview".unsafeCast<IntrinsicType<WebViewHTMLAttributes<HTMLElement>>>()
+        get() = IntrinsicType("webview")
 }
