@@ -49,6 +49,10 @@ external class Cesium3DTileset(options: ConstructorOptions) {
      *   Default value - `true`
      * @property [modelMatrix] A 4x4 transformation matrix that transforms the tileset's root tile.
      *   Default value - [Matrix4.IDENTITY]
+     * @property [modelUpAxis] Which axis is considered up when loading models for tile contents.
+     *   Default value - [Axis.Y]
+     * @property [modelForwardAxis] Which axis is considered forward when loading models for tile contents.
+     *   Default value - [Axis.X]
      * @property [shadows] Determines whether the tileset casts or receives shadows from light sources.
      *   Default value - [ShadowMode.ENABLED]
      * @property [maximumScreenSpaceError] The maximum screen space error used to drive level of detail refinement.
@@ -122,6 +126,8 @@ external class Cesium3DTileset(options: ConstructorOptions) {
      *   Default value - `false`
      * @property [splitDirection] The [SplitDirection] split to apply to this tileset.
      *   Default value - [SplitDirection.NONE]
+     * @property [projectTo2D] Whether to accurately project the tileset to 2D. If this is true, the tileset will be projected accurately to 2D, but it will use more memory to do so. If this is false, the tileset will use less memory and will still render in 2D / CV mode, but its projected positions may be inaccurate. This cannot be set after the tileset has loaded.
+     *   Default value - `false`
      * @property [debugHeatmapTilePropertyName] The tile variable to colorize as a heatmap. All rendered tiles will be colorized relative to each other's specified variable value.
      * @property [debugFreezeFrame] For debugging only. Determines if only the tiles from last frame should be used for rendering.
      *   Default value - `false`
@@ -149,6 +155,8 @@ external class Cesium3DTileset(options: ConstructorOptions) {
         var url: dynamic
         var show: Boolean?
         var modelMatrix: Matrix4?
+        var modelUpAxis: Axis?
+        var modelForwardAxis: Axis?
         var shadows: ShadowMode?
         var maximumScreenSpaceError: Int?
         var maximumMemoryUsage: Int?
@@ -188,6 +196,7 @@ external class Cesium3DTileset(options: ConstructorOptions) {
         var instanceFeatureIdLabel: dynamic
         var showCreditsOnScreen: Boolean?
         var splitDirection: SplitDirection?
+        var projectTo2D: Boolean?
         var debugHeatmapTilePropertyName: String?
         var debugFreezeFrame: Boolean?
         var debugColorizeTiles: Boolean?
@@ -352,7 +361,7 @@ external class Cesium3DTileset(options: ConstructorOptions) {
      *         return;
      *     }
      *
-     *     console.log('Loading: requests: ' + numberOfPendingRequests + ', processing: ' + numberOfTilesProcessing);
+     *     console.log(`Loading: requests: ${numberOfPendingRequests}, processing: ${numberOfTilesProcessing}`);
      * });
      * ```
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileset.html#loadProgress">Online Documentation</a>
@@ -432,8 +441,8 @@ external class Cesium3DTileset(options: ConstructorOptions) {
      * If multiple contents are present, this event is raised once per inner content with errors.
      * ```
      * tileset.tileFailed.addEventListener(function(error) {
-     *     console.log('An error occurred loading tile: ' + error.url);
-     *     console.log('Error: ' + error.message);
+     *     console.log(`An error occurred loading tile: ${error.url}`);
+     *     console.log(`Error: ${error.message}`);
      * });
      * ```
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileset.html#tileFailed">Online Documentation</a>
@@ -680,8 +689,8 @@ external class Cesium3DTileset(options: ConstructorOptions) {
      * See the [properties schema reference](https://github.com/CesiumGS/3d-tiles/tree/main/specification#reference-properties)
      * in the 3D Tiles spec for the full set of properties.
      * ```
-     * console.log('Maximum building height: ' + tileset.properties.height.maximum);
-     * console.log('Minimum building height: ' + tileset.properties.height.minimum);
+     * console.log(`Maximum building height: ${tileset.properties.height.maximum}`);
+     * console.log(`Minimum building height: ${tileset.properties.height.minimum}`);
      * ```
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileset.html#properties">Online Documentation</a>
      */
@@ -864,8 +873,7 @@ external class Cesium3DTileset(options: ConstructorOptions) {
 
     /**
      * The total amount of GPU memory in bytes used by the tileset. This value is estimated from
-     * geometry, texture, and batch table textures of loaded tiles. For point clouds, this value also
-     * includes per-point metadata.
+     * geometry, texture, batch table textures, and binary metadata of loaded tiles.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileset.html#totalMemoryUsageInBytes">Online Documentation</a>
      */
     val totalMemoryUsageInBytes: Int

@@ -15,7 +15,7 @@ package cesium
  * Notes: This provider is for use with the 3D Earth API of Google Earth Enterprise,
  *        [GoogleEarthEnterpriseMapsProvider] should be used with 2D Maps API.
  * ```
- * const geeMetadata = new GoogleEarthEnterpriseMetadata('http://www.earthenterprise.org/3d');
+ * const geeMetadata = new GoogleEarthEnterpriseMetadata('http://www.example.com');
  * const gee = new GoogleEarthEnterpriseImageryProvider({
  *     metadata : geeMetadata
  * });

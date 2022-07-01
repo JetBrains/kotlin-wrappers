@@ -14,7 +14,7 @@ package cesium
 /**
  * Provides tiled terrain using the Google Earth Enterprise REST API.
  * ```
- * const geeMetadata = new GoogleEarthEnterpriseMetadata('http://www.earthenterprise.org/3d');
+ * const geeMetadata = new GoogleEarthEnterpriseMetadata('http://www.example.com');
  * const gee = new GoogleEarthEnterpriseTerrainProvider({
  *     metadata : geeMetadata
  * });

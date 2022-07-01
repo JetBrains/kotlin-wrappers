@@ -41,6 +41,13 @@ external class Cesium3DTilesInspectorViewModel(
     var showPickStatistics: Boolean
 
     /**
+     * Gets or sets the flag to show resource cache statistics. This property is
+     * observable.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTilesInspectorViewModel.html#showResourceCacheStatistics">Online Documentation</a>
+     */
+    var showResourceCacheStatistics: Boolean
+
+    /**
      * Gets or sets the flag to show the inspector.  This property is observable.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTilesInspectorViewModel.html#inspectorVisible">Online Documentation</a>
      */
@@ -308,6 +315,12 @@ external class Cesium3DTilesInspectorViewModel(
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTilesInspectorViewModel.html#pickStatisticsText">Online Documentation</a>
      */
     val pickStatisticsText: String
+
+    /**
+     * Gets the resource cache statistics text. This property is observable.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTilesInspectorViewModel.html#resourceCacheStatisticsText">Online Documentation</a>
+     */
+    val resourceCacheStatisticsText: String
 
     /**
      * Gets the available blend modes

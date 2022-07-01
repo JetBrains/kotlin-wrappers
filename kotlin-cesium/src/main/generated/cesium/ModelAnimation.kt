@@ -35,7 +35,7 @@ external class ModelAnimation {
      * This event is fired at the end of the frame after the scene is rendered.
      * ```
      * animation.start.addEventListener(function(model, animation) {
-     *   console.log('Animation started: ' + animation.name);
+     *   console.log(`Animation started: ${animation.name}`);
      * });
      * ```
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ModelAnimation.html#start">Online Documentation</a>
@@ -51,7 +51,7 @@ external class ModelAnimation {
      * This event is fired at the end of the frame after the scene is rendered.
      * ```
      * animation.update.addEventListener(function(model, animation, time) {
-     *   console.log('Animation updated: ' + animation.name + '. glTF animation time: ' + time);
+     *   console.log(`Animation updated: ${animation.name}. glTF animation time: ${time}`);
      * });
      * ```
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ModelAnimation.html#update">Online Documentation</a>
@@ -65,7 +65,7 @@ external class ModelAnimation {
      * This event is fired at the end of the frame after the scene is rendered.
      * ```
      * animation.stop.addEventListener(function(model, animation) {
-     *   console.log('Animation stopped: ' + animation.name);
+     *   console.log(`Animation stopped: ${animation.name}`);
      * });
      * ```
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ModelAnimation.html#stop">Online Documentation</a>

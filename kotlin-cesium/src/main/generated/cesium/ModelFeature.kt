@@ -73,11 +73,11 @@ external class ModelFeature(options: ConstructorOptions) {
      * Returns a copy of the value of the feature's property with the given name.
      * ```
      * // Display all the properties for a feature in the console log.
-     * const propertyNames = feature.getPropertyNames();
-     * const length = propertyNames.length;
+     * const propertyIds = feature.getPropertyIds();
+     * const length = propertyIds.length;
      * for (let i = 0; i < length; ++i) {
-     *     const propertyName = propertyNames[i];
-     *     console.log(propertyName + ': ' + feature.getProperty(propertyName));
+     *     const propertyId = propertyIds[i];
+     *     console.log(propertyId + ': ' + feature.getProperty(propertyId));
      * }
      * ```
      * @param [name] The case-sensitive name of the property.
@@ -111,6 +111,14 @@ external class ModelFeature(options: ConstructorOptions) {
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ModelFeature.html#getPropertyNames">Online Documentation</a>
      */
     fun getPropertyNames(results: Array<out String>? = definedExternally): Array<out String>
+
+    /**
+     * Returns an array of property IDs for the feature.
+     * @param [results] An array into which to store the results.
+     * @return The IDs of the feature's properties.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ModelFeature.html#getPropertyIds">Online Documentation</a>
+     */
+    fun getPropertyIds(results: Array<out String>? = definedExternally): Array<out String>
 
     /**
      * Sets the value of the feature's property with the given name.

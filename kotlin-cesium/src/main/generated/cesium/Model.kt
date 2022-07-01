@@ -88,7 +88,7 @@ external class Model(options: ConstructorOptions? = definedExternally) {
      * @property [silhouetteSize] The size of the silhouette in pixels.
      *   Default value - `0.0`
      * @property [clippingPlanes] The [ClippingPlaneCollection] used to selectively disable rendering the model.
-     * @property [dequantizeInShader] Determines if a [Draco](https://github.com/google/draco) encoded model is dequantized on the GPU. This decreases total memory usage for encoded models. Deprecated in CesiumJS 1.94, will be removed in CesiumJS 1.95.
+     * @property [dequantizeInShader] Determines if a [Draco](https://github.com/google/draco) encoded model is dequantized on the GPU. This decreases total memory usage for encoded models. Deprecated in CesiumJS 1.94, will be removed in CesiumJS 1.96.
      *   Default value - `true`
      * @property [lightColor] The light color when shading the model. When `undefined` the scene's light color is used instead.
      * @property [imageBasedLighting] The properties for managing image-based lighting on this model.
@@ -591,7 +591,7 @@ external class Model(options: ConstructorOptions? = definedExternally) {
          * @property [silhouetteSize] The size of the silhouette in pixels.
          *   Default value - `0.0`
          * @property [clippingPlanes] The [ClippingPlaneCollection] used to selectively disable rendering the model.
-         * @property [dequantizeInShader] Determines if a [Draco](https://github.com/google/draco) encoded model is dequantized on the GPU. This decreases total memory usage for encoded models. Deprecated in CesiumJS 1.94, will be removed in CesiumJS 1.95.
+         * @property [dequantizeInShader] Determines if a [Draco](https://github.com/google/draco) encoded model is dequantized on the GPU. This decreases total memory usage for encoded models. Deprecated in CesiumJS 1.94, will be removed in CesiumJS 1.96.
          *   Default value - `true`
          * @property [lightColor] The light color when shading the model. When `undefined` the scene's light color is used instead.
          * @property [imageBasedLighting] The properties for managing image-based lighting for this tileset.

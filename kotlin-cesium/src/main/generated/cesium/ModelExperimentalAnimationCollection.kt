@@ -15,7 +15,7 @@ external class ModelExperimentalAnimationCollection {
      * example, to keep a UI in sync.
      * ```
      * model.activeAnimations.animationAdded.addEventListener(function(model, animation) {
-     *   console.log('Animation added: ' + animation.name);
+     *   console.log(`Animation added: ${animation.name}`);
      * });
      * ```
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ModelExperimentalAnimationCollection.html#animationAdded">Online Documentation</a>
@@ -27,7 +27,7 @@ external class ModelExperimentalAnimationCollection {
      * example, to keep a UI in sync.
      * ```
      * model.activeAnimations.animationRemoved.addEventListener(function(model, animation) {
-     *   console.log('Animation removed: ' + animation.name);
+     *   console.log(`Animation removed: ${animation.name}`);
      * });
      * ```
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ModelExperimentalAnimationCollection.html#animationRemoved">Online Documentation</a>
@@ -87,13 +87,13 @@ external class ModelExperimentalAnimationCollection {
      * });
      *
      * animation.start.addEventListener(function(model, animation) {
-     *   console.log('Animation started: ' + animation.name);
+     *   console.log(`Animation started: ${animation.name}`);
      * });
      * animation.update.addEventListener(function(model, animation, time) {
-     *   console.log('Animation updated: ' + animation.name + '. glTF animation time: ' + time);
+     *   console.log(`Animation updated: ${animation.name}. glTF animation time: ${time}`);
      * });
      * animation.stop.addEventListener(function(model, animation) {
-     *   console.log('Animation stopped: ' + animation.name);
+     *   console.log(`Animation stopped: ${animation.name}`);
      * });
      * ```
      * @return The animation that was added to the collection.
