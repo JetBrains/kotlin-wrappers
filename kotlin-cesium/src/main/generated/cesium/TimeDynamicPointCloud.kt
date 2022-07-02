@@ -117,8 +117,8 @@ external class TimeDynamicPointCloud(options: ConstructorOptions) {
      * - `message`: the error message.
      * ```
      * pointCloud.frameFailed.addEventListener(function(error) {
-     *     console.log('An error occurred loading frame: ' + error.uri);
-     *     console.log('Error: ' + error.message);
+     *     console.log(`An error occurred loading frame: ${error.uri}`);
+     *     console.log(`Error: ${error.message}`);
      * });
      * ```
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TimeDynamicPointCloud.html#frameFailed">Online Documentation</a>

@@ -24,11 +24,11 @@ package cesium
  * handler.setInputAction(function(movement) {
  *     const feature = scene.pick(movement.endPosition);
  *     if (feature instanceof Cesium3DTileFeature) {
- *         const propertyNames = feature.getPropertyNames();
- *         const length = propertyNames.length;
+ *         const propertyIds = feature.getPropertyIds();
+ *         const length = propertyIds.length;
  *         for (let i = 0; i < length; ++i) {
- *             const propertyName = propertyNames[i];
- *             console.log(propertyName + ': ' + feature.getProperty(propertyName));
+ *             const propertyId = propertyIds[i];
+ *             console.log(`{propertyId}: ${feature.getProperty(propertyId)}`);
  *         }
  *     }
  * }, ScreenSpaceEventType.MOUSE_MOVE);
@@ -99,15 +99,24 @@ external class Cesium3DTileFeature {
     fun getPropertyNames(results: Array<out String>? = definedExternally): Array<out String>
 
     /**
+     * Returns an array of property IDs for the feature. This includes properties from this feature's
+     * class and inherited classes when using a batch table hierarchy.
+     * @param [results] An array into which to store the results.
+     * @return The IDs of the feature's properties.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileFeature.html#getPropertyIds">Online Documentation</a>
+     */
+    fun getPropertyIds(results: Array<out String>? = definedExternally): Array<out String>
+
+    /**
      * Returns a copy of the value of the feature's property with the given name. This includes properties from this feature's
      * class and inherited classes when using a batch table hierarchy.
      * ```
      * // Display all the properties for a feature in the console log.
-     * const propertyNames = feature.getPropertyNames();
-     * const length = propertyNames.length;
+     * const propertyIds = feature.getPropertyIds();
+     * const length = propertyIds.length;
      * for (let i = 0; i < length; ++i) {
-     *     const propertyName = propertyNames[i];
-     *     console.log(propertyName + ': ' + feature.getProperty(propertyName));
+     *     const propertyId = propertyIds[i];
+     *     console.log(`{propertyId}: ${feature.getProperty(propertyId)}`);
      * }
      * ```
      * @param [name] The case-sensitive name of the property.

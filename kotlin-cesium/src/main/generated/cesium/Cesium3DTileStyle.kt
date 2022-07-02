@@ -355,7 +355,7 @@ external class Cesium3DTileStyle(val style: Any = definedExternally) {
      * This expression is only applicable to point features in a Vector tile.
      * ```
      * const style = new Cesium3DTileStyle({
-     *     labelStyle : '(${Temperature} > 90) ? ' + LabelStyle.FILL_AND_OUTLINE + ' : ' + LabelStyle.FILL
+     *     labelStyle : `(\${Temperature} > 90) ? ${LabelStyle.FILL_AND_OUTLINE} : ${LabelStyle.FILL}`
      * });
      * style.labelStyle.evaluate(feature); // returns a LabelStyle
      * ```

@@ -13,6 +13,9 @@ package cesium
 
 /**
  * A [TerrainProvider] that accesses terrain data in a Cesium terrain format.
+ * Terrain formats can be one of the following:
+ * - [https://github.com/AnalyticalGraphicsInc/quantized-mesh Quantized Mesh]
+ * - [https://github.com/AnalyticalGraphicsInc/cesium/wiki/heightmap-1.0 Height Map]
  * ```
  * // Create Arctic DEM terrain with normals.
  * const viewer = new Viewer('cesiumContainer', {

@@ -49,7 +49,9 @@ abstract external class Cesium3DTileContent {
     abstract val texturesByteLength: Int
 
     /**
-     * Gets the amount of memory used by the batch table textures, in bytes.
+     * Gets the amount of memory used by the batch table textures and any binary
+     * metadata properties not accounted for in geometryByteLength or
+     * texturesByteLength
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileContent.html#batchTableByteLength">Online Documentation</a>
      */
     abstract val batchTableByteLength: Int
