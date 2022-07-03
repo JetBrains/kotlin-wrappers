@@ -5,6 +5,7 @@ package mui.base
 import csstype.ClassName
 
 external interface TabPanelUnstyledProps :
+    TabPanelUnstyledOwnProps,
     react.dom.html.HTMLAttributes<org.w3c.dom.HTMLDivElement>
 
 external interface TabPanelUnstyledOwnProps :

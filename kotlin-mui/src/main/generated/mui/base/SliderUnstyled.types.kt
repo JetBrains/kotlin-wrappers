@@ -3,7 +3,22 @@
 package mui.base
 
 external interface SliderUnstyledProps :
+    SliderUnstyledOwnProps,
+    react.dom.html.HTMLAttributes<org.w3c.dom.HTMLSpanElement>
+
+@Suppress("VIRTUAL_MEMBER_HIDDEN")
+external interface SliderValueLabelProps :
     react.dom.html.HTMLAttributes<org.w3c.dom.HTMLSpanElement> {
+    var children: react.ReactElement<*>
+
+    var index: Number
+
+    var open: Boolean
+
+    var value: Number
+}
+
+external interface SliderUnstyledOwnProps : react.Props {
     /**
      * The label of the slider.
      */
@@ -49,20 +64,20 @@ external interface SliderUnstyledProps :
     var componentsProps: ComponentsProps?
 
     interface ComponentsProps {
-        var root: react.Props? /* React.ComponentPropsWithRef<'span'> & SliderUnstyledComponentsPropsOverrides */
-        var track: react.Props? /* React.ComponentPropsWithRef<'span'> & SliderUnstyledComponentsPropsOverrides */
-        var rail: react.Props? /* React.ComponentPropsWithRef<'span'> & SliderUnstyledComponentsPropsOverrides */
-        var thumb: react.Props? /* React.ComponentPropsWithRef<'span'> & SliderUnstyledComponentsPropsOverrides */
-        var mark: react.Props? /* React.ComponentPropsWithRef<'span'> & SliderUnstyledComponentsPropsOverrides */
-        var markLabel: react.Props? /* React.ComponentPropsWithRef<'span'> & SliderUnstyledComponentsPropsOverrides */
-        var valueLabel: react.Props? /* Partial<React.ComponentPropsWithRef<typeof SliderValueLabelUnstyled>> & SliderUnstyledComponentsPropsOverrides */
-        var input: react.Props? /* React.ComponentPropsWithRef<'input'> & SliderUnstyledComponentsPropsOverrides */
+        var root: react.Props? /* SlotComponentProps<'span', SliderUnstyledComponentsPropsOverrides, SliderUnstyledOwnerState> */
+        var track: react.Props? /* SlotComponentProps<'span', SliderUnstyledComponentsPropsOverrides, SliderUnstyledOwnerState> */
+        var rail: react.Props? /* SlotComponentProps<'span', SliderUnstyledComponentsPropsOverrides, SliderUnstyledOwnerState> */
+        var thumb: react.Props? /* SlotComponentProps<'span', SliderUnstyledComponentsPropsOverrides, SliderUnstyledOwnerState> */
+        var mark: react.Props? /* SlotComponentProps<'span', SliderUnstyledComponentsPropsOverrides, SliderUnstyledOwnerState> */
+        var markLabel: react.Props? /* SlotComponentProps<'span', SliderUnstyledComponentsPropsOverrides, SliderUnstyledOwnerState> */
+        var valueLabel: react.Props? /* SlotComponentProps<typeof SliderValueLabelUnstyled, SliderUnstyledComponentsPropsOverrides, SliderUnstyledOwnerState> */
+        var input: react.Props? /* SlotComponentProps<'input', SliderUnstyledComponentsPropsOverrides, SliderUnstyledOwnerState> */
     }
 
     /**
      * The default value. Use when the component is not controlled.
      */
-    override var defaultValue: dynamic
+    var defaultValue: dynamic
 
     /**
      * If `true`, the component is disabled.
@@ -170,7 +185,7 @@ external interface SliderUnstyledProps :
     /**
      * Tab index attribute of the hidden `input` element.
      */
-    override var tabIndex: Int?
+    var tabIndex: Int?
 
     /**
      * The track presentation:
@@ -208,16 +223,4 @@ external interface SliderUnstyledProps :
      * @default (x) => x
      */
     var valueLabelFormat: dynamic
-}
-
-@Suppress("VIRTUAL_MEMBER_HIDDEN")
-external interface SliderValueLabelProps :
-    react.dom.html.HTMLAttributes<org.w3c.dom.HTMLSpanElement> {
-    var children: react.ReactElement<*>
-
-    var index: Number
-
-    var open: Boolean
-
-    var value: Number
 }

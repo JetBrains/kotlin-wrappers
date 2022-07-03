@@ -3,6 +3,7 @@
 package mui.base
 
 external interface TabUnstyledProps :
+    TabUnstyledOwnProps,
     react.dom.html.ButtonHTMLAttributes<org.w3c.dom.HTMLButtonElement>
 
 external interface TabUnstyledOwnProps :

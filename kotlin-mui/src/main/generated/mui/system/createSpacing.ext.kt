@@ -48,9 +48,18 @@ sealed interface Spacing {
     inline operator fun invoke(topBottom: SpacingArgument, rightLeft: SpacingArgument): csstype.Length =
         asDynamic()(topBottom, rightLeft)
 
-    inline operator fun invoke(top: SpacingArgument, rightLeft: SpacingArgument, bottom: SpacingArgument): csstype.Length =
+    inline operator fun invoke(
+        top: SpacingArgument,
+        rightLeft: SpacingArgument,
+        bottom: SpacingArgument,
+    ): csstype.Length =
         asDynamic()(top, rightLeft, bottom)
 
-    inline operator fun invoke(top: SpacingArgument, right: SpacingArgument, bottom: SpacingArgument, left: SpacingArgument): csstype.Length =
+    inline operator fun invoke(
+        top: SpacingArgument,
+        right: SpacingArgument,
+        bottom: SpacingArgument,
+        left: SpacingArgument,
+    ): csstype.Length =
         asDynamic()(top, right, bottom, left)
 }
