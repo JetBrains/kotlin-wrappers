@@ -20,7 +20,8 @@ external interface MutationCacheConfig {
 
 typealias MutationCacheListener = (mutation: Mutation<*, *, *, *>?) -> Unit
 
-open external class MutationCache(config: MutationCacheConfig = definedExternally) : Subscribable<MutationCacheListener> {
+open external class MutationCache(config: MutationCacheConfig = definedExternally) :
+    Subscribable<MutationCacheListener> {
     open var config: MutationCacheConfig
     open fun <TData, TError, TVariables, TContext> build(
         client: QueryClient,

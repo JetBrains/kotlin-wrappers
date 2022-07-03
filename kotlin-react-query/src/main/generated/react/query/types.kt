@@ -28,6 +28,10 @@ typealias UseMutateFunction<TData, TError, TVariables, TContext> = Function<Unit
 
 typealias UseMutateAsyncFunction<TData, TError, TVariables, TContext> = MutateFunction<TData, TError, TVariables, TContext>
 
-typealias UseBaseMutationResult<TData, TError, TVariables, TContext> = MutationObserverResult<TData, TError, TVariables, TContext>
+external interface UseBaseMutationResult<TData, TError, TVariables, TContext> :
+    MutationObserverResult<TData, TError, TVariables, TContext> {
+    // override val mutate: UseMutateFunction<TData, TError, TVariables, TContext>
+    val mutateAsync: UseMutateAsyncFunction<TData, TError, TVariables, TContext>
+}
 
 typealias UseMutationResult<TData, TError, TVariables, TContext> = UseBaseMutationResult<TData, TError, TVariables, TContext>
