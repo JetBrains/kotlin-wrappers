@@ -32,4 +32,11 @@ interface RuleBuilder<T : Any> {
     ) {
         Selector(this)(block)
     }
+
+    inline fun and(
+        className: ClassName,
+        block: T.() -> Unit,
+    ) {
+        Selector("&.$className")(block)
+    }
 }
