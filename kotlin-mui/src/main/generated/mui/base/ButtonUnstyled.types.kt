@@ -5,6 +5,7 @@ package mui.base
 import csstype.ClassName
 
 external interface ButtonUnstyledProps :
+    ButtonUnstyledOwnProps,
     react.dom.html.ButtonHTMLAttributes<org.w3c.dom.HTMLButtonElement>
 
 external interface ButtonUnstyledActions {

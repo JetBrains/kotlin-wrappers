@@ -5,7 +5,8 @@ package mui.base
 import csstype.ClassName
 
 external interface InputUnstyledProps :
-    react.dom.html.HTMLAttributes<org.w3c.dom.HTMLDivElement>
+    InputUnstyledOwnProps,
+    react.dom.html.HTMLAttributes<org.w3c.dom.HTMLInputElement>
 
 external interface InputUnstyledOwnProps : react.PropsWithClassName {
     // var `aria-describedby`: String?

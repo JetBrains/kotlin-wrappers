@@ -5,6 +5,7 @@ package mui.base
 import csstype.ClassName
 
 external interface TabsUnstyledProps :
+    TabsUnstyledOwnProps,
     react.dom.html.HTMLAttributes<org.w3c.dom.HTMLDivElement>
 
 external interface TabsUnstyledOwnProps :
