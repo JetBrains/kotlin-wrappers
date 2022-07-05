@@ -2,4 +2,4 @@
 
 package muix.pickers
 
-sealed external interface DateAdapter
+typealias DateAdapter = dateio.core.IUtils<*>
