@@ -170,7 +170,7 @@ external interface SelectProps<T> :
      * If the value is an object it must have reference equality with the option in order to be selected.
      * If the value is not an object, the string representation must match with the string representation of the option in order to be selected.
      */
-    var value: T?
+    var value: dynamic
 
     /**
      * The variant to use.

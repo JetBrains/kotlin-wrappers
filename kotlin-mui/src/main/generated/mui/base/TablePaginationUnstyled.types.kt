@@ -2,7 +2,21 @@
 
 package mui.base
 
-external interface TablePaginationUnstyledProps : react.Props {
+external interface TablePaginationUnstyledProps :
+    TablePaginationUnstyledOwnProps,
+    react.dom.html.HTMLAttributes<org.w3c.dom.HTMLTableCellElement>
+
+external interface LabelDisplayedRowsArgs {
+    var from: Number
+
+    var to: Number
+
+    var count: Number
+
+    var page: Number
+}
+
+external interface TablePaginationUnstyledOwnProps : react.Props {
     /**
      * Override or extend the styles applied to the component.
      */
@@ -38,14 +52,14 @@ external interface TablePaginationUnstyledProps : react.Props {
     var componentsProps: ComponentsProps?
 
     interface ComponentsProps {
-        var root: react.Props? /* React.ComponentPropsWithRef<'div'> & TablePaginationUnstyledComponentsPropsOverrides */
-        var actions: react.Props? /* React.ComponentPropsWithRef<'div'> & TablePaginationUnstyledComponentsPropsOverrides */
-        var select: react.Props? /* React.ComponentPropsWithRef<'select'> & TablePaginationUnstyledComponentsPropsOverrides */
-        var selectLabel: react.Props? /* React.ComponentPropsWithRef<'p'> & TablePaginationUnstyledComponentsPropsOverrides */
-        var menuItem: react.Props? /* React.ComponentPropsWithRef<'option'> & TablePaginationUnstyledComponentsPropsOverrides */
-        var displayedRows: react.Props? /* React.ComponentPropsWithRef<'p'> & TablePaginationUnstyledComponentsPropsOverrides */
-        var toolbar: react.Props? /* React.ComponentPropsWithRef<'div'> & TablePaginationUnstyledComponentsPropsOverrides */
-        var spacer: react.Props? /* React.ComponentPropsWithRef<'div'> & TablePaginationUnstyledComponentsPropsOverrides */
+        var root: react.Props? /* SlotComponentProps<'div', TablePaginationUnstyledComponentsPropsOverrides, TablePaginationUnstyledOwnerState> */
+        var actions: react.Props? /* SlotComponentProps<'div', TablePaginationUnstyledComponentsPropsOverrides, TablePaginationUnstyledOwnerState> */
+        var select: react.Props? /* SlotComponentProps<'select', TablePaginationUnstyledComponentsPropsOverrides, TablePaginationUnstyledOwnerState> */
+        var selectLabel: react.Props? /* SlotComponentProps<'p', TablePaginationUnstyledComponentsPropsOverrides, TablePaginationUnstyledOwnerState> */
+        var menuItem: react.Props? /* SlotComponentProps<'option', TablePaginationUnstyledComponentsPropsOverrides, TablePaginationUnstyledOwnerState> */
+        var displayedRows: react.Props? /* SlotComponentProps<'p', TablePaginationUnstyledComponentsPropsOverrides, TablePaginationUnstyledOwnerState> */
+        var toolbar: react.Props? /* SlotComponentProps<'div', TablePaginationUnstyledComponentsPropsOverrides, TablePaginationUnstyledOwnerState> */
+        var spacer: react.Props? /* SlotComponentProps<'div', TablePaginationUnstyledComponentsPropsOverrides, TablePaginationUnstyledOwnerState> */
     }
 
     /**
@@ -78,6 +92,11 @@ external interface TablePaginationUnstyledProps : react.Props {
      * }
      */
     var labelDisplayedRows: ((paginationInfo: LabelDisplayedRowsArgs) -> react.ReactNode)?
+
+    /**
+     * Id of the label element within the pagination.
+     */
+    var labelId: String?
 
     /**
      * Customize the rows per page label.
@@ -121,14 +140,9 @@ external interface TablePaginationUnstyledProps : react.Props {
      * @default [10, 25, 50, 100]
      */
     var rowsPerPageOptions: dynamic
-}
 
-external interface LabelDisplayedRowsArgs {
-    var from: Number
-
-    var to: Number
-
-    var count: Number
-
-    var page: Number
+    /**
+     * Id of the select element within the pagination.
+     */
+    var selectId: String?
 }

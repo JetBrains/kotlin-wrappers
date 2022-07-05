@@ -89,6 +89,12 @@ external interface UseAutocompleteProps<T> : react.Props {
     var componentName: String?
 
     /**
+     * The default value. Use when the component is not controlled.
+     * @default props.multiple ? [] : null
+     */
+    var defaultValue: dynamic
+
+    /**
      * If `true`, the input can't be cleared.
      * @default false
      */
@@ -99,6 +105,12 @@ external interface UseAutocompleteProps<T> : react.Props {
      * @default false
      */
     var disableCloseOnSelect: Boolean?
+
+    /**
+     * If `true`, the component is disabled.
+     * @default false
+     */
+    var disabled: Boolean?
 
     /**
      * If `true`, will allow focus on disabled items.
@@ -154,17 +166,6 @@ external interface UseAutocompleteProps<T> : react.Props {
     var getOptionLabel: ((option: T /* or AutocompleteFreeSoloValueMapping<FreeSolo> */) -> String)?
 
     /**
-     * Used to determine if the option represents the given value.
-     * Uses strict equality by default.
-     * ⚠️ Both arguments need to be handled, an option can only match with one value.
-     *
-     * @param {T} option The option to test.
-     * @param {T} value The value to test against.
-     * @returns {boolean}
-     */
-    var isOptionEqualToValue: ((option: T, value: T) -> Boolean)?
-
-    /**
      * If provided, the options will be grouped under the returned string.
      * The groupBy value is also used as the text for group headings when `renderGroup` is not provided.
      *
@@ -198,6 +199,38 @@ external interface UseAutocompleteProps<T> : react.Props {
     var inputValue: String?
 
     /**
+     * Used to determine if the option represents the given value.
+     * Uses strict equality by default.
+     * ⚠️ Both arguments need to be handled, an option can only match with one value.
+     *
+     * @param {T} option The option to test.
+     * @param {T} value The value to test against.
+     * @returns {boolean}
+     */
+    var isOptionEqualToValue: ((option: T, value: T) -> Boolean)?
+
+    /**
+     * If `true`, `value` must be an array and the menu will support multiple selections.
+     * @default false
+     */
+    var multiple: dynamic
+
+    /**
+     * Callback fired when the value changes.
+     *
+     * @param {React.SyntheticEvent} event The event source of the callback.
+     * @param {T|T[]} value The new value of the component.
+     * @param {string} reason One of "createOption", "selectOption", "removeOption", "blur" or "clear".
+     * @param {string} [details]
+     */
+    var onChange: ((
+        event: react.dom.events.SyntheticEvent<*, *>,
+        value: dynamic,
+        reason: AutocompleteChangeReason,
+        details: AutocompleteChangeDetails<T>?,
+    ) -> Unit)?
+
+    /**
      * Callback fired when the popup requests to be closed.
      * Use in controlled mode (see open).
      *
@@ -205,6 +238,19 @@ external interface UseAutocompleteProps<T> : react.Props {
      * @param {string} reason Can be: `"toggleInput"`, `"escape"`, `"selectOption"`, `"removeOption"`, `"blur"`.
      */
     var onClose: ((event: react.dom.events.SyntheticEvent<*, *>, reason: AutocompleteCloseReason) -> Unit)?
+
+    /**
+     * Callback fired when the highlight option changes.
+     *
+     * @param {React.SyntheticEvent} event The event source of the callback.
+     * @param {T} option The highlighted option.
+     * @param {string} reason Can be: `"keyboard"`, `"auto"`, `"mouse"`.
+     */
+    var onHighlightChange: ((
+        event: react.dom.events.SyntheticEvent<*, *>,
+        option: T?,
+        reason: AutocompleteHighlightChangeReason,
+    ) -> Unit)?
 
     /**
      * Callback fired when the input value changes.
@@ -228,19 +274,6 @@ external interface UseAutocompleteProps<T> : react.Props {
     var onOpen: ((event: react.dom.events.SyntheticEvent<*, *>) -> Unit)?
 
     /**
-     * Callback fired when the highlight option changes.
-     *
-     * @param {React.SyntheticEvent} event The event source of the callback.
-     * @param {T} option The highlighted option.
-     * @param {string} reason Can be: `"keyboard"`, `"auto"`, `"mouse"`.
-     */
-    var onHighlightChange: ((
-        event: react.dom.events.SyntheticEvent<*, *>,
-        option: T?,
-        reason: AutocompleteHighlightChangeReason,
-    ) -> Unit)?
-
-    /**
      * If `true`, the component is shown.
      */
     var open: Boolean?
@@ -257,17 +290,17 @@ external interface UseAutocompleteProps<T> : react.Props {
     var options: ReadonlyArray<T>
 
     /**
+     * If `true`, the component becomes readonly. It is also supported for multiple tags where the tag cannot be deleted.
+     * @default false
+     */
+    var readOnly: Boolean?
+
+    /**
      * If `true`, the input's text is selected on focus.
      * It helps the user clear the selected value.
      * @default !props.freeSolo
      */
     var selectOnFocus: Boolean?
-
-    /**
-     * If `true`, `value` must be an array and the menu will support multiple selections.
-     * @default false
-     */
-    var multiple: dynamic
 
     /**
      * The value of the autocomplete.
@@ -276,27 +309,6 @@ external interface UseAutocompleteProps<T> : react.Props {
      * You can customize the equality behavior with the `isOptionEqualToValue` prop.
      */
     var value: dynamic
-
-    /**
-     * The default value. Use when the component is not controlled.
-     * @default props.multiple ? [] : null
-     */
-    var defaultValue: dynamic
-
-    /**
-     * Callback fired when the value changes.
-     *
-     * @param {React.SyntheticEvent} event The event source of the callback.
-     * @param {T|T[]} value The new value of the component.
-     * @param {string} reason One of "createOption", "selectOption", "removeOption", "blur" or "clear".
-     * @param {string} [details]
-     */
-    var onChange: ((
-        event: react.dom.events.SyntheticEvent<*, *>,
-        value: dynamic,
-        reason: AutocompleteChangeReason,
-        details: AutocompleteChangeDetails<T>?,
-    ) -> Unit)?
 }
 
 external interface AutocompleteChangeDetails<T> {

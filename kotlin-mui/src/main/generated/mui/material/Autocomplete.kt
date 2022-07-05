@@ -55,13 +55,15 @@ external interface AutocompleteProps<T> :
     interface ComponentsProps {
         var clearIndicator: react.Props? /* Partial<IconButtonProps> */
         var paper: react.Props? /* PaperProps */
+        var popper: react.Props? /* Partial<PopperProps> */
+        var popupIndicator: react.Props? /* Partial<IconButtonProps> */
     }
 
     /**
      * If `true`, the component is disabled.
      * @default false
      */
-    var disabled: Boolean?
+    override var disabled: Boolean?
 
     /**
      * If `true`, the `Popper` content will be under the DOM hierarchy of the parent component.
@@ -161,7 +163,7 @@ external interface AutocompleteProps<T> :
      * If `true`, the component becomes readonly. It is also supported for multiple tags where the tag cannot be deleted.
      * @default false
      */
-    var readOnly: Boolean?
+    override var readOnly: Boolean?
 
     /**
      * Render the group.
