@@ -20,6 +20,8 @@ private val TARGET_ALIASES = mapOf(
 
     "@popperjs/core" to "popper",
 
+    "@tanstack/react-table" to "tanstack-react-table",
+
     "@jetbrains/ring-ui" to "ring-ui",
 
     "@types/node" to "node",
