@@ -6,7 +6,7 @@ import kotlinx.js.ReadonlyArray
 
 external interface CoreColumn<TData : RowData> {
     var id: String
-    var depth: Number
+    var depth: Int
     var accessorFn: AccessorFn<TData>?
     var columnDef: ColumnDef<TData>
     var columns: ReadonlyArray<Column<TData>>

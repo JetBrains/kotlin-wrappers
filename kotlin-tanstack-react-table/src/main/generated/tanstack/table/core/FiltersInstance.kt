@@ -16,5 +16,5 @@ external interface FiltersInstance<TData : RowData> {
     var getGlobalFilterFn: () -> FilterFn<TData>
     var getGlobalFacetedRowModel: () -> RowModel<TData>
     var getGlobalFacetedUniqueValues: () -> Record<Any, Int> /* JS Map */
-    var getGlobalFacetedMinMaxValues: () -> JsPair<Number, Number>?
+    var getGlobalFacetedMinMaxValues: () -> JsPair<Int, Int>?
 }

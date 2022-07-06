@@ -14,7 +14,7 @@ external interface FiltersColumn<TData : RowData> {
     var getFacetedRowModel: () -> RowModel<TData>
     var getIsFiltered: () -> Boolean
     var getFilterValue: () -> Any
-    var getFilterIndex: () -> Number
+    var getFilterIndex: () -> Int
     var getFacetedUniqueValues: () -> Record<Any, Int> /* JS Map */
-    var getFacetedMinMaxValues: () -> JsPair<Number, Number>?
+    var getFacetedMinMaxValues: () -> JsPair<Int, Int>?
 }

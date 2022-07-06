@@ -11,7 +11,7 @@ external fun <TData : RowData> createRow(
     table: Table<TData>,
     id: String,
     original: TData?,
-    rowIndex: Number,
-    depth: Number,
+    rowIndex: Int,
+    depth: Int,
     subRows: ReadonlyArray<Row<TData>>? = definedExternally,
 ): Row<TData>

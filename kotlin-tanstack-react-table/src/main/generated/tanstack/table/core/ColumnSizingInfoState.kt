@@ -6,10 +6,10 @@ import kotlinx.js.JsPair
 import kotlinx.js.ReadonlyArray
 
 external interface ColumnSizingInfoState {
-    var startOffset: Number?
-    var startSize: Number?
-    var deltaOffset: Number?
-    var deltaPercentage: Number?
+    var startOffset: Int?
+    var startSize: Int?
+    var deltaOffset: Int?
+    var deltaPercentage: Int?
     var isResizingColumn: String /* false | string */
-    var columnSizingStart: ReadonlyArray<JsPair<String, Number>>
+    var columnSizingStart: ReadonlyArray<JsPair<String, Int>>
 }

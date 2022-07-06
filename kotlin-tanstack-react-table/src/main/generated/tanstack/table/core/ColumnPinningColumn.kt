@@ -4,7 +4,7 @@ package tanstack.table.core
 
 external interface ColumnPinningColumn {
     var getCanPin: () -> Boolean
-    var getPinnedIndex: () -> Number
+    var getPinnedIndex: () -> Int
     var getIsPinned: () -> ColumnPinningPosition
     var pin: (position: ColumnPinningPosition) -> Unit
 }

@@ -6,9 +6,9 @@ import kotlinx.js.ReadonlyArray
 
 external interface CoreRow<TData : RowData> {
     var id: String
-    var index: Number
+    var index: Int
     var original: TData?
-    var depth: Number
+    var depth: Int
     var getValue: (columnId: String) -> Any
     var renderValue: (columnId: String) -> Any
     var subRows: ReadonlyArray<Row<TData>>

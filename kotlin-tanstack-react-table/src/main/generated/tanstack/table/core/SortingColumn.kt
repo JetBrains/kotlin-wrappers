@@ -9,7 +9,7 @@ external interface SortingColumn<TData : RowData> {
     var getNextSortingOrder: () -> SortDirection?
     var getCanSort: () -> Boolean
     var getCanMultiSort: () -> Boolean
-    var getSortIndex: () -> Number
+    var getSortIndex: () -> Int
     var getIsSorted: () -> SortDirection?
     var clearSorting: () -> Unit
     var toggleSorting: (desc: Boolean?, isMulti: Boolean?) -> Unit

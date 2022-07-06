@@ -6,13 +6,13 @@ import kotlinx.js.ReadonlyArray
 
 external interface CoreHeader<TData : RowData> {
     var id: String
-    var index: Number
-    var depth: Number
+    var index: Int
+    var depth: Int
     var column: Column<TData>
     var headerGroup: HeaderGroup<TData>
     var subHeaders: ReadonlyArray<Header<TData>>
-    var colSpan: Number
-    var rowSpan: Number
+    var colSpan: Int
+    var rowSpan: Int
     var getLeafHeaders: () -> ReadonlyArray<Header<TData>>
     var isPlaceholder: Boolean
     var placeholderId: String?

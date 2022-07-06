@@ -7,8 +7,8 @@ external interface ColumnSizingInstance {
     var setColumnSizingInfo: (updater: Updater<ColumnSizingInfoState>) -> Unit
     var resetColumnSizing: (defaultState: Boolean?) -> Unit
     var resetHeaderSizeInfo: (defaultState: Boolean?) -> Unit
-    var getTotalSize: () -> Number
-    var getLeftTotalSize: () -> Number
-    var getCenterTotalSize: () -> Number
-    var getRightTotalSize: () -> Number
+    var getTotalSize: () -> Int
+    var getLeftTotalSize: () -> Int
+    var getCenterTotalSize: () -> Int
+    var getRightTotalSize: () -> Int
 }
