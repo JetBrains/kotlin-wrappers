@@ -2,4 +2,12 @@
 
 package tanstack.table.core
 
-external interface ColumnResizeMode /* 'onChange' | 'onEnd' */
+@Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
+// language=JavaScript
+@JsName("""(/*union*/{onChange: 'onChange', onEnd: 'onEnd'}/*union*/)""")
+external enum class ColumnResizeMode {
+    onChange,
+    onEnd,
+
+    ;
+}

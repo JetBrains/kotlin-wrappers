@@ -6,7 +6,7 @@
 package tanstack.table.core
 
 external object defaultColumnSizing {
-    val size: Double
-    val minSize: Double
-    val maxSize: Double
+    val size: Int
+    val minSize: Int
+    val maxSize: Int
 }

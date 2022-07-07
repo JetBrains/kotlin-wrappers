@@ -2,4 +2,13 @@
 
 package tanstack.table.core
 
-external interface CoreColumnDefType /* 'data' | 'display' | 'group' */
+@Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
+// language=JavaScript
+@JsName("""(/*union*/{data: 'data', display: 'display', group: 'group'}/*union*/)""")
+external enum class CoreColumnDefType {
+    data,
+    display,
+    group,
+
+    ;
+}
