@@ -2,4 +2,12 @@
 
 package tanstack.table.core
 
-external interface SortDirection /* 'asc' | 'desc' */
+@Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
+// language=JavaScript
+@JsName("""(/*union*/{asc: 'asc', desc: 'desc'}/*union*/)""")
+external enum class SortDirection {
+    asc,
+    desc,
+
+    ;
+}
