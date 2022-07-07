@@ -34,6 +34,7 @@ dependencies {
         api(project(":kotlin-styled"))
         api(project(":kotlin-styled-next"))
         api(project(":kotlin-tanstack-react-table"))
+        api(project(":kotlin-tanstack-react-virtual"))
         api(project(":kotlin-typescript"))
         api(project(":kotlin-webrtc"))
     }

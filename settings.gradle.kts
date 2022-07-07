@@ -108,6 +108,9 @@ include("kotlin-styled-next")
 // Kotlin/JS: React Table wrappers
 include("kotlin-tanstack-react-table")
 
+// Kotlin/JS: React Virtual wrappers
+include("kotlin-tanstack-react-virtual")
+
 // Kotlin/JS: TypeScript wrappers
 include("kotlin-typescript")
 
