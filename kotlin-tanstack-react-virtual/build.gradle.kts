@@ -5,5 +5,6 @@ plugins {
 }
 
 dependencies {
+    api(npmv("@tanstack/virtual-core"))
     api(npmv("@tanstack/react-virtual"))
 }
