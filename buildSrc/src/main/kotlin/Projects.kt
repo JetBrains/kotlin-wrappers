@@ -9,9 +9,6 @@ private val TARGET_ALIASES = mapOf(
     "styled-components" to "styled",
 
     "emotion" to "emotion-react",
-    "@emotion/css" to "emotion-css",
-    "@emotion/react" to "emotion-react",
-    "@emotion/styled" to "emotion-styled",
 
     "@mui/material" to "mui",
     "@mui/icons-material" to "mui-icons",
@@ -20,10 +17,6 @@ private val TARGET_ALIASES = mapOf(
 
     "@popperjs/core" to "popper",
 
-    "@tanstack/react-table" to "tanstack-react-table",
-    "@tanstack/virtual-core" to "tanstack-virtual-core",
-    "@tanstack/react-virtual" to "tanstack-react-virtual",
-
     "@jetbrains/ring-ui" to "ring-ui",
 
     "@types/node" to "node",
@@ -31,7 +24,10 @@ private val TARGET_ALIASES = mapOf(
 )
 
 fun Project.version(target: String): String {
-    val finalTarget = TARGET_ALIASES[target] ?: target
+    val finalTarget = TARGET_ALIASES[target]
+        ?: target.removePrefix("@")
+            .replace("/", "-")
+
     return prop("$finalTarget.version")
 }
 
