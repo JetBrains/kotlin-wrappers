@@ -5,9 +5,9 @@
 
 package tanstack.table.core
 
-external fun <TData : RowData> createColumn(
+external fun <TData : RowData, TValue> createColumn(
     table: Table<TData>,
-    columnDef: ColumnDef<TData>,
+    columnDef: ColumnDef<TData, *>,
     depth: Int,
-    parent: Column<TData> = definedExternally,
-): Column<TData>
+    parent: Column<TData, TValue> = definedExternally,
+): Column<TData, TValue>

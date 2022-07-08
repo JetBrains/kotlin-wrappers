@@ -2,6 +2,6 @@
 
 package tanstack.table.core
 
-external interface Cell<TData : RowData> :
-    CoreCell<TData>,
+external interface Cell<TData : RowData, TValue> :
+    CoreCell<TData, TValue>,
     GroupingCell

@@ -2,4 +2,4 @@
 
 package tanstack.table.core
 
-external interface CoreColumnDef<TData : RowData> /* CoreColumnDefDisplay<TData> | CoreColumnDefDisplayWithStringHeader<TData> | CoreColumnDefAccessorFn<TData> | CoreColumnDefAccessorKey<TData> */
+external interface CoreColumnDef<TData : RowData, TValue> /* CoreColumnDefDisplay<TData, TValue> | CoreColumnDefDisplayWithStringHeader<TData, TValue> | CoreColumnDefAccessorFn<TData> | CoreColumnDefAccessorKey<TData, TValue> */

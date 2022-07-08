@@ -10,7 +10,7 @@ import kotlinx.js.ReadonlyArray
 external fun <TData : RowData> createRow(
     table: Table<TData>,
     id: String,
-    original: TData?,
+    original: TData,
     rowIndex: Int,
     depth: Int,
     subRows: ReadonlyArray<Row<TData>>? = definedExternally,

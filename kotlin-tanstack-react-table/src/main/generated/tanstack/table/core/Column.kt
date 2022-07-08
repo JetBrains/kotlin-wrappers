@@ -2,8 +2,8 @@
 
 package tanstack.table.core
 
-external interface Column<TData : RowData> :
-    CoreColumn<TData>,
+external interface Column<TData : RowData, TValue> :
+    CoreColumn<TData, TValue>,
     VisibilityColumn,
     ColumnPinningColumn,
     FiltersColumn<TData>,
