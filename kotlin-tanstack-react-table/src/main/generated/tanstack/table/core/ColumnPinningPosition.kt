@@ -2,4 +2,13 @@
 
 package tanstack.table.core
 
-external interface ColumnPinningPosition /* false | 'left' | 'right' */
+@Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
+// language=JavaScript
+@JsName("""(/*union*/{false: 'false', left: 'left', right: 'right'}/*union*/)""")
+external enum class ColumnPinningPosition {
+    `false`,
+    left,
+    right,
+
+    ;
+}
