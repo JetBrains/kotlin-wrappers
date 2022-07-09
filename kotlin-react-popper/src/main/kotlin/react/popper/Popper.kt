@@ -4,21 +4,20 @@
 package react.popper
 
 import kotlinx.js.ReadonlyArray
-import org.w3c.dom.HTMLElement
 import popper.core.Modifier
 import popper.core.Placement
 import popper.core.PositioningStrategy
+import popper.core.ReferenceElement
 import react.*
 import kotlin.js.Promise
 
-external interface PopperArrowProps : Props {
-    var ref: Ref<*>
-    var style: CSSProperties
-}
+external interface PopperArrowProps :
+    PropsWithRef<Any>,
+    PropsWithStyle
 
-external interface PopperChildrenProps : Props {
-    var ref: Ref<*>
-    var style: CSSProperties
+external interface PopperChildrenProps :
+    PropsWithRef<Any>,
+    PropsWithStyle {
 
     var placement: Placement
     var isReferenceHidden: Boolean
@@ -35,7 +34,7 @@ external interface PopperProps : Props {
     var modifiers: ReadonlyArray<Modifier<*>>
     var placement: Placement
     var strategy: PositioningStrategy
-    var referenceElement: HTMLElement // or PopperJS.VirtualElement
+    var referenceElement: ReferenceElement
     var onFirstUpdate: (state: State) -> Unit
 }
 
