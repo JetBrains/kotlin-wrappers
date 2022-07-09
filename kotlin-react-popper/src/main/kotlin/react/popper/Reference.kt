@@ -3,14 +3,10 @@
 
 package react.popper
 
-import react.ComponentClass
-import react.FC
-import react.Props
-import react.Ref
+import react.*
 
-external interface ReferenceChildrenProps : Props {
-    var ref: Ref<*>
-}
+external interface ReferenceChildrenProps :
+    PropsWithRef<Any>
 
 external interface ReferenceProps : Props {
     var children: FC<ReferenceChildrenProps>
