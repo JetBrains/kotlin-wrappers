@@ -2,10 +2,9 @@
     "NOTHING_TO_INLINE",
 )
 
-package react.popper
+package popper.core
 
 import org.w3c.dom.HTMLElement
-import popper.core.VirtualElement
 
 sealed external interface ReferenceElement
 

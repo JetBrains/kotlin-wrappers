@@ -7,6 +7,7 @@ import kotlinx.js.ReadonlyArray
 import popper.core.Modifier
 import popper.core.Placement
 import popper.core.PositioningStrategy
+import popper.core.ReferenceElement
 import react.*
 import kotlin.js.Promise
 
