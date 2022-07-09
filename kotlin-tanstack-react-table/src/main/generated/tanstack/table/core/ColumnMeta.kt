@@ -2,6 +2,4 @@
 
 package tanstack.table.core
 
-import kotlinx.js.Record
-
-typealias RowValues = Record<String, Any>
+external interface ColumnMeta

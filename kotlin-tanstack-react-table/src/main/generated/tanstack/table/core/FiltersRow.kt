@@ -6,5 +6,5 @@ import kotlinx.js.Record
 
 external interface FiltersRow<TData : RowData> {
     var columnFilters: Record<String, Boolean>
-    var columnFiltersMeta: Record<String, Any>
+    var columnFiltersMeta: Record<String, FilterMeta>
 }

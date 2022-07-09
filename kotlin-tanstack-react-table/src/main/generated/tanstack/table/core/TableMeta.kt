@@ -2,4 +2,4 @@
 
 package tanstack.table.core
 
-external interface RowData /* unknown | object | any[] */
+external interface TableMeta

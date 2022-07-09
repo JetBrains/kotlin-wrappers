@@ -7,5 +7,5 @@ import kotlinx.js.ReadonlyArray
 external interface CoreHeaderGroup<TData : RowData> {
     var id: String
     var depth: Int
-    var headers: ReadonlyArray<Header<TData>>
+    var headers: ReadonlyArray<Header<TData, *>>
 }

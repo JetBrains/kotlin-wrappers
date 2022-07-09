@@ -8,7 +8,7 @@ package tanstack.table.core
 import kotlinx.js.ReadonlyArray
 
 external fun <TData : RowData> orderColumns(
-    leafColumns: ReadonlyArray<Column<TData>>,
+    leafColumns: ReadonlyArray<Column<TData, *>>,
     grouping: ReadonlyArray<String>,
     groupedColumnMode: GroupingColumnMode = definedExternally,
-): ReadonlyArray<Column<TData>>
+): ReadonlyArray<Column<TData, *>>
