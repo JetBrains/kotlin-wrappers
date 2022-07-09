@@ -2,4 +2,13 @@
 
 package tanstack.table.core
 
-external interface GroupingColumnMode /* false | 'reorder' | 'remove' */
+@Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
+// language=JavaScript
+@JsName("""(/*union*/{false: 'false', reorder: 'reorder', remove: 'remove'}/*union*/)""")
+external enum class GroupingColumnMode {
+    `false`,
+    reorder,
+    remove,
+
+    ;
+}
