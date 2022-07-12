@@ -1,5 +1,19 @@
 // Automatically generated - do not modify!
 
+@file:Suppress(
+    "NOTHING_TO_INLINE",
+)
+
 package tanstack.table.core
 
-external interface Updater<T> /* T | ((old: T) -> T) */
+sealed external interface Updater<T> /* T | ((old: T) -> T) */
+
+inline fun <T> Updater(
+    source: T,
+): Updater<T> =
+    source.unsafeCast<Updater<T>>()
+
+inline fun <T> Updater(
+    source: (old: T) -> T,
+): Updater<T> =
+    source.unsafeCast<Updater<T>>()
