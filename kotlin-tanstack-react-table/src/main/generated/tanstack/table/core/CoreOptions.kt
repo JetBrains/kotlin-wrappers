@@ -17,7 +17,7 @@ external interface CoreOptions<TData : RowData> {
     var autoResetAll: Boolean?
     var mergeOptions: ((defaultOptions: TableOptions<TData>, options: TableOptions<TData> /* Partial */) -> TableOptions<TData>)?
     var meta: TableMeta?
-    var getCoreRowModel: (table: Table<*>) -> () -> RowModel<*>
+    var getCoreRowModel: (table: Table<TData>) -> () -> RowModel<TData>
     var getSubRows: ((originalRow: TData, index: Int) -> ReadonlyArray<TData>)?
     var getRowId: ((originalRow: TData, index: Int, parent: Row<TData>?) -> String)?
     var columns: ReadonlyArray<ColumnDef<TData, *>>
