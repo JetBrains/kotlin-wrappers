@@ -3,16 +3,10 @@
 
 package tanstack.react.table
 
-import react.ComponentType
-import react.Props
 import react.ReactNode
+import tanstack.table.core.ColumnDefTemplate
 
-external fun <TProps : Props> flexRender(
-    Comp: ReactNode,
-    props: TProps,
-): ReactNode?
-
-external fun <TProps : Props> flexRender(
-    Comp: ComponentType<TProps>,
-    props: TProps,
+external fun <T : Any> flexRender(
+    Comp: ColumnDefTemplate<out () -> T>?,
+    props: T
 ): ReactNode?
