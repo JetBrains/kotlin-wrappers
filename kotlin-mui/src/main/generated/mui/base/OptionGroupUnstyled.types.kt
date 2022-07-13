@@ -50,8 +50,8 @@ external interface OptionGroupUnstyledProps :
     var componentsProps: ComponentsProps?
 
     interface ComponentsProps {
-        var root: react.Props? /* React.ComponentPropsWithRef<'li'> & OptionGroupUnstyledComponentsPropsOverrides */
-        var label: react.Props? /* React.ComponentPropsWithRef<'span'> & OptionGroupUnstyledComponentsPropsOverrides */
-        var list: react.Props? /* React.ComponentPropsWithRef<'ul'> & OptionGroupUnstyledComponentsPropsOverrides */
+        var root: react.Props? /* SlotComponentProps<'li', OptionGroupUnstyledComponentsPropsOverrides, OptionGroupUnstyledOwnerState> */
+        var label: react.Props? /* SlotComponentProps<'span', OptionGroupUnstyledComponentsPropsOverrides, OptionGroupUnstyledOwnerState> */
+        var list: react.Props? /* SlotComponentProps<'ul', OptionGroupUnstyledComponentsPropsOverrides, OptionGroupUnstyledOwnerState> */
     }
 }

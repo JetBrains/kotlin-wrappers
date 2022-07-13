@@ -25,9 +25,9 @@ external interface SelectUnstyledProps<TValue> : react.Props {
     var componentsProps: ComponentsProps?
 
     interface ComponentsProps {
-        var root: react.Props? /* React.ComponentPropsWithRef<'button'> & SelectUnstyledComponentsPropsOverrides */
-        var listbox: react.Props? /* React.ComponentPropsWithRef<'ul'> & SelectUnstyledComponentsPropsOverrides */
-        var popper: react.Props? /* Partial<React.ComponentPropsWithRef<typeof PopperUnstyled>> & SelectUnstyledComponentsPropsOverrides */
+        var root: react.Props? /* SlotComponentProps<'button', SelectUnstyledComponentsPropsOverrides, SelectUnstyledOwnerState<TValue>> */
+        var listbox: react.Props? /* SlotComponentProps<'button', SelectUnstyledComponentsPropsOverrides, SelectUnstyledOwnerState<TValue>> */
+        var popper: react.Props? /* SlotComponentProps<typeof PopperUnstyled, SelectUnstyledComponentsPropsOverrides, SelectUnstyledOwnerState<TValue>> */
     }
 
     /**
@@ -78,6 +78,12 @@ external interface SelectUnstyledCommonProps :
      * @default false
      */
     var defaultListboxOpen: Boolean?
+
+    /**
+     * `id` attribute of the listbox element.
+     * Also used to derive the `id` attributes of options.
+     */
+    var listboxId: String?
 
     /**
      * Controls the open state of the select's listbox.

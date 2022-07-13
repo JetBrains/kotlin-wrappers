@@ -41,6 +41,6 @@ external interface TabPanelUnstyledOwnProps :
     var componentsProps: ComponentsProps?
 
     interface ComponentsProps {
-        var root: react.Props? /* React.ComponentPropsWithRef<'div'> & TabPanelUnstyledComponentsPropsOverrides */
+        var root: react.Props? /* SlotComponentProps<'div', TabPanelUnstyledComponentsPropsOverrides, TabPanelUnstyledOwnerState> */
     }
 }

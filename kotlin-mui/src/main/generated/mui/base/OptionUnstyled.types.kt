@@ -48,7 +48,7 @@ external interface OptionUnstyledProps<TValue> :
     var componentsProps: ComponentsProps?
 
     interface ComponentsProps {
-        var root: react.Props? /* React.ComponentPropsWithRef<'li'> & OptionUnstyledComponentsPropsOverrides */
+        var root: react.Props? /* SlotComponentProps<'li', OptionUnstyledComponentsPropsOverrides, OptionUnstyledOwnerState<TValue>> */
     }
 
     /**
