@@ -5,9 +5,13 @@
 
 package mui.material
 
+import mui.material.styles.Theme
+import mui.system.SxProps
+
 external interface ScopedCssBaselineProps :
     react.dom.html.HTMLAttributes<org.w3c.dom.HTMLDivElement>,
     react.PropsWithChildren,
+    mui.system.PropsWithSx,
     mui.types.PropsWithComponent {
     /**
      * The content of the component.
@@ -25,6 +29,11 @@ external interface ScopedCssBaselineProps :
      * For browser support, check out https://caniuse.com/?search=color-scheme
      */
     var enableColorScheme: Boolean?
+
+    /**
+     * The system prop that allows defining system overrides as well as additional CSS styles.
+     */
+    override var sx: SxProps<Theme>?
 }
 
 /**

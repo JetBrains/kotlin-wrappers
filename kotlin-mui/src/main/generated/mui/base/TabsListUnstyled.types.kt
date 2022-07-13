@@ -36,6 +36,6 @@ external interface TabsListUnstyledOwnProps :
     var componentsProps: ComponentsProps?
 
     interface ComponentsProps {
-        var root: react.Props? /* React.ComponentPropsWithRef<'div'> & TabsListUnstyledComponentsPropsOverrides */
+        var root: react.Props? /* SlotComponentProps<'div', TabsListUnstyledComponentsPropsOverrides, TabsListUnstyledOwnerState> */
     }
 }

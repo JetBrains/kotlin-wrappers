@@ -25,9 +25,9 @@ external interface MultiSelectUnstyledProps<TValue> : react.Props {
     var componentsProps: ComponentsProps?
 
     interface ComponentsProps {
-        var root: react.Props? /* React.ComponentPropsWithRef<'button'> & MultiSelectUnstyledComponentsPropsOverrides */
-        var listbox: react.Props? /* React.ComponentPropsWithRef<'ul'> & MultiSelectUnstyledComponentsPropsOverrides */
-        var popper: react.Props? /* Partial<React.ComponentPropsWithRef<typeof PopperUnstyled>> & MultiSelectUnstyledComponentsPropsOverrides */
+        var root: react.Props? /* SlotComponentProps<'button', MultiSelectUnstyledComponentsPropsOverrides, MultiSelectUnstyledOwnerState<TValue>> */
+        var listbox: react.Props? /* SlotComponentProps<'button', MultiSelectUnstyledComponentsPropsOverrides, MultiSelectUnstyledOwnerState<TValue>> */
+        var popper: react.Props? /* SlotComponentProps<typeof PopperUnstyled, MultiSelectUnstyledComponentsPropsOverrides, MultiSelectUnstyledOwnerState<TValue>> */
     }
 
     /**
