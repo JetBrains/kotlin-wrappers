@@ -1,8 +1,8 @@
 package react.dom
 
 import kotlinx.html.*
+import kotlinx.html.org.w3c.dom.events.Event
 import kotlinx.js.jso
-import org.w3c.dom.events.Event
 import react.*
 
 external interface InnerHTML {
