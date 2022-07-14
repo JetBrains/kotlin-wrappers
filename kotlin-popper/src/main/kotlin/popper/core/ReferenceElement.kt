@@ -4,12 +4,12 @@
 
 package popper.core
 
-import org.w3c.dom.HTMLElement
+import org.w3c.dom.Element
 
 sealed external interface ReferenceElement
 
 inline fun ReferenceElement(
-    source: HTMLElement?,
+    source: Element?,
 ): ReferenceElement? =
     source.unsafeCast<ReferenceElement?>()
 
