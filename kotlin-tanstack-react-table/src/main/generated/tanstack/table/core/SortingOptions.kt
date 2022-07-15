@@ -10,7 +10,7 @@ external interface SortingOptions<TData : RowData> {
     var enableMultiRemove: Boolean?
     var enableMultiSort: Boolean?
     var sortDescFirst: Boolean?
-    var getSortedRowModel: ((table: Table<*>) -> () -> RowModel<*>)?
+    var getSortedRowModel: ((table: Table<TData>) -> () -> RowModel<TData>)?
     var maxMultiSortColCount: Int?
     var isMultiSortEvent: ((e: Any) -> Boolean)?
 }
