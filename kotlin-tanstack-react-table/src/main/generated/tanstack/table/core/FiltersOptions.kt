@@ -9,7 +9,7 @@ external interface FiltersOptions<TData : RowData> {
     var enableFilters: Boolean?
     var manualFiltering: Boolean?
     var filterFromLeafRows: Boolean?
-    var getFilteredRowModel: ((table: Table<*>) -> () -> RowModel<*>)?
+    var getFilteredRowModel: ((table: Table<TData>) -> () -> RowModel<TData>)?
     var onColumnFiltersChange: OnChangeFn<ColumnFiltersState>?
     var enableColumnFilters: Boolean?
     var globalFilterFn: FilterFnOption<TData>?

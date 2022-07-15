@@ -9,8 +9,8 @@ external interface TableOptionsResolved<TData : RowData> :
     ColumnPinningOptions,
     FiltersOptions<TData>,
     SortingOptions<TData>,
-    GroupingOptions,
+    GroupingOptions<TData>,
     ExpandedOptions<TData>,
     ColumnSizingOptions,
-    PaginationOptions,
+    PaginationOptions<TData>,
     RowSelectionOptions<TData>
