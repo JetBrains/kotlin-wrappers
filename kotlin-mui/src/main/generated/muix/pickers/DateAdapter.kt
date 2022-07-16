@@ -2,4 +2,4 @@
 
 package muix.pickers
 
-typealias DateAdapter = dateio.core.IUtils<*>
+typealias DateAdapter = JsClass<dateio.core.IUtils<*>>
