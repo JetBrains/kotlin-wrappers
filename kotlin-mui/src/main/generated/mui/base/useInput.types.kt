@@ -38,3 +38,25 @@ external interface UseInputParameters {
 
     var value: dynamic
 }
+
+external interface UseInputRootSlotOwnProps : react.Props {
+    var onClick: dynamic
+}
+
+external interface UseInputInputSlotOwnProps : react.Props {
+    // var `aria-invalid`: dynamic /* React.AriaAttributes['aria-invalid'] */
+
+    var defaultValue: dynamic
+
+    var value: dynamic
+
+    var onBlur: react.dom.events.FocusEventHandler<*>
+
+    var onChange: react.dom.events.ChangeEventHandler<org.w3c.dom.HTMLInputElement>
+
+    var onFocus: react.dom.events.FocusEventHandler<*>
+
+    var required: Boolean
+
+    var disabled: Boolean
+}
