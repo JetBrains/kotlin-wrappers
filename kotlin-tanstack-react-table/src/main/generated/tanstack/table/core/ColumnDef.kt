@@ -2,7 +2,7 @@
 
 package tanstack.table.core
 
-external interface ColumnDef<TData : RowData, TValue : Any> :
+external interface ColumnDef<TData : RowData, TValue> :
     CoreColumnDef<TData, TValue>,
     VisibilityColumnDef,
     ColumnPinningColumnDef,
