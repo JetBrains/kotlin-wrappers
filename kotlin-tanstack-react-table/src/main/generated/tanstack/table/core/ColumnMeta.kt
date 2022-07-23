@@ -2,4 +2,4 @@
 
 package tanstack.table.core
 
-external interface ColumnMeta
+external interface ColumnMeta<TData : RowData, TValue>

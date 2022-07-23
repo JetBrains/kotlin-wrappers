@@ -9,5 +9,5 @@ external interface CoreColumnDefBase<TData : RowData, TValue> {
     var header: ColumnDefTemplate<HeaderContext<TData, TValue>>?
     var footer: ColumnDefTemplate<HeaderContext<TData, TValue>>?
     var cell: ColumnDefTemplate<CellContext<TData, TValue>>?
-    var meta: ColumnMeta?
+    var meta: ColumnMeta<TData, TValue>?
 }
