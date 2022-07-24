@@ -65,7 +65,7 @@ dependencies {
     implementation("org.jetbrains.kotlin-wrappers:kotlin-emotion")
     implementation("org.jetbrains.kotlin-wrappers:kotlin-react")
     implementation("org.jetbrains.kotlin-wrappers:kotlin-react-dom")
-    implementation("org.jetbrains.kotlin-wrappers:kotlin-react-table")
+    implementation("org.jetbrains.kotlin-wrappers:kotlin-tanstack-react-table")
     // other wrappers
 }
 ```
@@ -83,7 +83,7 @@ dependencies {
     implementation(kotlinw("emotion"))
     implementation(kotlinw("react"))
     implementation(kotlinw("react-dom"))
-    implementation(kotlinw("react-table"))
+    implementation(kotlinw("tanstack-react-table"))
     // other wrappers
 }
 ```
