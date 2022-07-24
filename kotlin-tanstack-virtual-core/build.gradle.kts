@@ -5,7 +5,7 @@ plugins {
 }
 
 dependencies {
-    api(project(":kotlin-react-core"))
+    api(project(":kotlin-js"))
 
     api(npmv("@tanstack/virtual-core"))
 }
