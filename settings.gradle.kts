@@ -114,6 +114,9 @@ include("kotlin-tanstack-react-table")
 // Kotlin/JS: React Virtual wrappers
 include("kotlin-tanstack-react-virtual")
 
+// Kotlin/JS: Tanstack Virtual Core wrappers
+include("kotlin-tanstack-virtual-core")
+
 // Kotlin/JS: TypeScript wrappers
 include("kotlin-typescript")
 
