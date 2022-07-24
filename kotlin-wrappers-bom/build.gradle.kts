@@ -33,6 +33,7 @@ dependencies {
         api(project(":kotlin-ring-ui"))
         api(project(":kotlin-styled"))
         api(project(":kotlin-styled-next"))
+        api(project(":kotlin-tanstack-table-core"))
         api(project(":kotlin-tanstack-react-table"))
         api(project(":kotlin-tanstack-react-virtual"))
         api(project(":kotlin-typescript"))
