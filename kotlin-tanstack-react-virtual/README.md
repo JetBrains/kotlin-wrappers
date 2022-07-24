@@ -2,7 +2,7 @@
 
 # kotlin-tanstack-react-virtual
 
-Kotlin wrapper for [React Virtual](https://github.com/TanStack/virtual) library.
+Kotlin wrapper for [Tanstack React Virtual](https://github.com/TanStack/virtual) library.
 
 ### Internals
 
