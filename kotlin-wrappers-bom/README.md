@@ -19,9 +19,9 @@ dependencies {
     implementation("org.jetbrains.kotlin-wrappers:kotlin-react-query")
     implementation("org.jetbrains.kotlin-wrappers:kotlin-react-redux")
     implementation("org.jetbrains.kotlin-wrappers:kotlin-react-router-dom")
-    implementation("org.jetbrains.kotlin-wrappers:kotlin-react-table")
     implementation("org.jetbrains.kotlin-wrappers:kotlin-ring-ui")
     implementation("org.jetbrains.kotlin-wrappers:kotlin-styled")
+    implementation("org.jetbrains.kotlin-wrappers:kotlin-tanstack-react-table")
 }
 ```
 
