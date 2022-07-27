@@ -6,7 +6,7 @@
 
 package tanstack.table.core
 
-sealed external interface AggregationFnOption<TData : RowData> /* 'auto' | BuiltInAggregationFn | AggregationFn<TData> */
+sealed external interface AggregationFnOption<TData : RowData> /* 'auto' | keyof AggregationFns | BuiltInAggregationFn | AggregationFn<TData> */
 
 inline fun <TData : RowData> AggregationFnOption(
     source: String, /* 'auto' */
