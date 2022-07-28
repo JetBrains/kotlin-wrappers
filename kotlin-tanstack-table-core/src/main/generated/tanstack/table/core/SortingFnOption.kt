@@ -6,7 +6,7 @@
 
 package tanstack.table.core
 
-sealed external interface SortingFnOption<TData : RowData> /* 'auto' | BuiltInSortingFn | SortingFn<TData> */
+sealed external interface SortingFnOption<TData : RowData> /* 'auto' | keyof SortingFns | BuiltInSortingFn | SortingFn<TData> */
 
 inline fun <TData : RowData> SortingFnOption(
     source: String, /* 'auto' */
