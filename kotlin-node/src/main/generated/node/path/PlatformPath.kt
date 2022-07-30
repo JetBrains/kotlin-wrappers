@@ -9,20 +9,21 @@ sealed external interface PlatformPath {
      * Normalize a string path, reducing '..' and '.' parts.
      * When multiple slashes are found, they're replaced by a single one; when the path contains a trailing slash, it is preserved. On Windows backslashes are used.
      *
-     * @param p string path to normalize.
+     * @param path string path to normalize.
+     * @throws {TypeError} if `path` is not a string.
      */
-    fun normalize(p: String): String
+    fun normalize(path: String): String
 
     /**
      * Join all arguments together and normalize the resulting path.
-     * Arguments must be strings. In v0.8, non-string arguments were silently ignored. In v0.10 and up, an exception is thrown.
      *
      * @param paths paths to join.
+     * @throws {TypeError} if any of the path segments is not a string.
      */
     fun join(vararg paths: ReadonlyArray<String>): String
 
     /**
-     * The right-most parameter is considered {to}.  Other parameters are considered an array of {from}.
+     * The right-most parameter is considered {to}. Other parameters are considered an array of {from}.
      *
      * Starting from leftmost {from} parameter, resolves {to} to an absolute path.
      *
@@ -31,20 +32,26 @@ sealed external interface PlatformPath {
      * the current working directory is used as well. The resulting path is normalized,
      * and trailing slashes are removed unless the path gets resolved to the root directory.
      *
-     * @param pathSegments string paths to join.  Non-string arguments are ignored.
+     * @param paths A sequence of paths or path segments.
+     * @throws {TypeError} if any of the arguments is not a string.
      */
-    fun resolve(vararg pathSegments: ReadonlyArray<String>): String
+    fun resolve(vararg paths: ReadonlyArray<String>): String
 
     /**
      * Determines whether {path} is an absolute path. An absolute path will always resolve to the same location, regardless of the working directory.
      *
+     * If the given {path} is a zero-length string, `false` will be returned.
+     *
      * @param path path to test.
+     * @throws {TypeError} if `path` is not a string.
      */
-    fun isAbsolute(p: String): Boolean
+    fun isAbsolute(path: String): Boolean
 
     /**
-     * Solve the relative path from {from} to {to}.
+     * Solve the relative path from {from} to {to} based on the current working directory.
      * At times we have two absolute paths, and we need to derive the relative path from one to the other. This is actually the reverse transform of path.resolve.
+     *
+     * @throws {TypeError} if either `from` or `to` is not a string.
      */
     fun relative(
         from: String,
@@ -54,29 +61,32 @@ sealed external interface PlatformPath {
     /**
      * Return the directory name of a path. Similar to the Unix dirname command.
      *
-     * @param p the path to evaluate.
+     * @param path the path to evaluate.
+     * @throws {TypeError} if `path` is not a string.
      */
-    fun dirname(p: String): String
+    fun dirname(path: String): String
 
     /**
      * Return the last portion of a path. Similar to the Unix basename command.
      * Often used to extract the file name from a fully qualified path.
      *
-     * @param p the path to evaluate.
+     * @param path the path to evaluate.
      * @param ext optionally, an extension to remove from the result.
+     * @throws {TypeError} if `path` is not a string or if `ext` is given and is not a string.
      */
     fun basename(
-        p: String,
+        path: String,
         ext: String = definedExternally,
     ): String
 
     /**
      * Return the extension of the path, from the last '.' to end of string in the last portion of the path.
-     * If there is no '.' in the last portion of the path or the first character of it is '.', then it returns an empty string
+     * If there is no '.' in the last portion of the path or the first character of it is '.', then it returns an empty string.
      *
-     * @param p the path to evaluate.
+     * @param path the path to evaluate.
+     * @throws {TypeError} if `path` is not a string.
      */
-    fun extname(p: String): String
+    fun extname(path: String): String
 
     /**
      * The platform-specific file separator. '\\' or '/'.
@@ -91,16 +101,17 @@ sealed external interface PlatformPath {
     /**
      * Returns an object from a path string - the opposite of format().
      *
-     * @param pathString path to evaluate.
+     * @param path path to evaluate.
+     * @throws {TypeError} if `path` is not a string.
      */
-    fun parse(p: String): ParsedPath
+    fun parse(path: String): ParsedPath
 
     /**
      * Returns a path string from an object - the opposite of parse().
      *
-     * @param pathString path to evaluate.
+     * @param pathObject path to evaluate.
      */
-    fun format(pP: FormatInputPathObject): String
+    fun format(pathObject: FormatInputPathObject): String
 
     /**
      * On Windows systems only, returns an equivalent namespace-prefixed path for the given path.
