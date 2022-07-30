@@ -2,7 +2,7 @@
 
 package node.fs
 
-sealed external interface CopyOptions : CopyOptionsBase {
+sealed external interface CopySyncOptions : CopyOptionsBase {
     /**
      * Function to filter copied files/directories. Return
      * `true` to copy the item, `false` to ignore it.
@@ -10,5 +10,5 @@ sealed external interface CopyOptions : CopyOptionsBase {
     val filter: ((
         source: String,
         destination: String,
-    ) -> dynamic /* boolean | Promise<boolean> */)?
+    ) -> Boolean)?
 }
