@@ -11,7 +11,6 @@ import react.dom.html.ReactHTML.div
 import react.dom.html.ReactHTML.h1
 import react.dom.html.ReactHTML.input
 import react.dom.html.ReactHTML.p
-import react.key
 import react.useState
 import kotlin.js.Promise
 
