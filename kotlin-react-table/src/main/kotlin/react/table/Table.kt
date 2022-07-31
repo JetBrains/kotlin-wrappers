@@ -84,7 +84,7 @@ external interface TableCommonProps :
 }
 
 external interface TableKeyedProps : TableCommonProps {
-    val key: Key
+    override var key: Key? /* Key */
 }
 
 external interface TableProps : TableCommonProps
@@ -338,4 +338,3 @@ typealias TableBodyPropGetter<D> = PropGetter<TableBodyProps, Meta<D>>
 
 typealias RowPropGetter<D> = PropGetter<TableRowProps, RowMeta<D>>
 typealias CellPropGetter<D, V> = PropGetter<TableCellProps, CellMeta<D, V>>
-
