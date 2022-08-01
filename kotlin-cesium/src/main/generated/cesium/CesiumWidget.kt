@@ -84,6 +84,8 @@ external class CesiumWidget(
      *   Default value - [ShadowMode.RECEIVE_ONLY]
      * @property [mapMode2D] Determines if the 2D map is rotatable or can be scrolled infinitely in the horizontal direction.
      *   Default value - [MapMode2D.INFINITE_SCROLL]
+     * @property [blurActiveElementOnCanvasFocus] If true, the active element will blur when the viewer's canvas is clicked. Setting this to false is useful for cases when the canvas is clicked only for retrieving position or an entity data without actually meaning to set the canvas to be the active element.
+     *   Default value - `true`
      * @property [requestRenderMode] If true, rendering a frame will only occur when needed as determined by changes within the scene. Enabling improves performance of the application, but requires using [Scene.requestRender] to render a new frame explicitly in this mode. This will be necessary in many cases after making changes to the scene in other parts of the API. See [Improving Performance with Explicit Rendering](https://cesium.com/blog/2018/01/24/cesium-scene-rendering-performance/).
      *   Default value - `false`
      * @property [maximumRenderTimeChange] If requestRenderMode is true, this value defines the maximum change in simulation time allowed before a render is requested. See [Improving Performance with Explicit Rendering](https://cesium.com/blog/2018/01/24/cesium-scene-rendering-performance/).
@@ -112,6 +114,7 @@ external class CesiumWidget(
         var shadows: Boolean?
         var terrainShadows: ShadowMode?
         var mapMode2D: MapMode2D?
+        var blurActiveElementOnCanvasFocus: Boolean?
         var requestRenderMode: Boolean?
         var maximumRenderTimeChange: Double?
         var msaaSamples: Double?
@@ -173,7 +176,7 @@ external class CesiumWidget(
 
     /**
      * Gets or sets the target frame rate of the widget when `useDefaultRenderLoop`
-     * is true. If undefined, the browser's [requestAnimationFrame] implementation
+     * is true. If undefined, the browser's requestAnimationFrame implementation
      * determines the frame rate.  If defined, this value must be greater than 0.  A value higher
      * than the underlying requestAnimationFrame implementation will have no effect.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CesiumWidget.html#targetFrameRate">Online Documentation</a>
@@ -182,7 +185,7 @@ external class CesiumWidget(
 
     /**
      * Gets or sets whether or not this widget should control the render loop.
-     * If set to true the widget will use [requestAnimationFrame] to
+     * If true the widget will use requestAnimationFrame to
      * perform rendering and resizing of the widget, as well as drive the
      * simulation clock. If set to false, you must manually call the
      * `resize`, `render` methods as part of a custom
