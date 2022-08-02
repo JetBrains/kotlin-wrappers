@@ -43,6 +43,8 @@ external fun createOsmBuildings(options: CreateOsmBuildingsOptions? = definedExt
  *   specified, a default style is used which gives each building or building part a
  *   color inferred from its OpenStreetMap `tags`. If no color can be inferred,
  *   `options.defaultColor` is used.
+ * @property [enableShowOutline] If true, enable rendering outlines. This can be set to false to avoid the additional processing of geometry at load time.
+ *   Default value - `true`
  * @property [showOutline] Whether to show outlines around buildings. When true,
  *   outlines are displayed. When false, outlines are not displayed.
  *   Default value - `true`
@@ -50,5 +52,6 @@ external fun createOsmBuildings(options: CreateOsmBuildingsOptions? = definedExt
 external interface CreateOsmBuildingsOptions {
     var defaultColor: Color?
     var style: Cesium3DTileStyle?
+    var enableShowOutline: Boolean?
     var showOutline: Boolean?
 }

@@ -60,6 +60,12 @@ external class ModelExperimental(options: ConstructorOptions) {
      *   Default value - [Color.RED]
      * @property [silhouetteSize] The size of the silhouette in pixels.
      *   Default value - `0.0`
+     * @property [enableShowOutline] Whether to enable outlines for models using the [CESIUM_primitive_outline](https://github.com/KhronosGroup/glTF/tree/master/extensions/2.0/Vendor/CESIUM_primitive_outline) extension. This can be set to false to avoid the additional processing of geometry at load time. When false, the showOutlines and outlineColor options are ignored.
+     *   Default value - `true`
+     * @property [showOutline] Whether to display the outline for models using the [CESIUM_primitive_outline](https://github.com/KhronosGroup/glTF/tree/master/extensions/2.0/Vendor/CESIUM_primitive_outline) extension. When true, outlines are displayed. When false, outlines are not displayed.
+     *   Default value - `true`
+     * @property [outlineColor] The color to use when rendering outlines.
+     *   Default value - [Color.BLACK]
      * @property [clippingPlanes] The [ClippingPlaneCollection] used to selectively disable rendering the model.
      * @property [lightColor] The light color when shading the model. When `undefined` the scene's light color is used instead.
      * @property [imageBasedLighting] The properties for managing image-based lighting on this model.
@@ -104,6 +110,9 @@ external class ModelExperimental(options: ConstructorOptions) {
         var colorBlendAmount: Double?
         var silhouetteColor: Color?
         var silhouetteSize: Double?
+        var enableShowOutline: Boolean?
+        var showOutline: Boolean?
+        var outlineColor: Color?
         var clippingPlanes: ClippingPlaneCollection?
         var lightColor: Cartesian3?
         var imageBasedLighting: ImageBasedLighting?
@@ -356,6 +365,20 @@ external class ModelExperimental(options: ConstructorOptions) {
     var splitDirection: SplitDirection
 
     /**
+     * Returns the node with the given `name` in the glTF. This is used to
+     * modify a node's transform for user-defined animation.
+     * ```
+     * // Apply non-uniform scale to node "Hand"
+     * const node = model.getNode("Hand");
+     * node.matrix = Matrix4.fromScale(new Cartesian3(5.0, 1.0, 1.0), node.matrix);
+     * ```
+     * @param [name] The name of the node in the glTF.
+     * @return The node, or `undefined` if no node with the `name` exists.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ModelExperimental.html#getNode">Online Documentation</a>
+     */
+    fun getNode(name: String): ModelExperimentalNode
+
+    /**
      * Sets the current value of an articulation stage.  After setting one or
      * multiple stage values, call ModelExperimental.applyArticulations() to
      * cause the node matrices to be recalculated.
@@ -480,6 +503,12 @@ external class ModelExperimental(options: ConstructorOptions) {
          *   Default value - [Color.RED]
          * @property [silhouetteSize] The size of the silhouette in pixels.
          *   Default value - `0.0`
+         * @property [enableShowOutline] Whether to enable outlines for models using the [CESIUM_primitive_outline](https://github.com/KhronosGroup/glTF/tree/master/extensions/2.0/Vendor/CESIUM_primitive_outline) extension. This can be set false to avoid post-processing geometry at load time. When false, the showOutlines and outlineColor options are ignored.
+         *   Default value - `true`
+         * @property [showOutline] Whether to display the outline for models using the [CESIUM_primitive_outline](https://github.com/KhronosGroup/glTF/tree/master/extensions/2.0/Vendor/CESIUM_primitive_outline) extension. When true, outlines are displayed. When false, outlines are not displayed.
+         *   Default value - `true`
+         * @property [outlineColor] The color to use when rendering outlines.
+         *   Default value - [Color.BLACK]
          * @property [clippingPlanes] The [ClippingPlaneCollection] used to selectively disable rendering the model.
          * @property [lightColor] The light color when shading the model. When `undefined` the scene's light color is used instead.
          * @property [imageBasedLighting] The properties for managing image-based lighting on this model.
@@ -530,6 +559,9 @@ external class ModelExperimental(options: ConstructorOptions) {
             var colorBlendAmount: Double?
             var silhouetteColor: Color?
             var silhouetteSize: Double?
+            var enableShowOutline: Boolean?
+            var showOutline: Boolean?
+            var outlineColor: Color?
             var clippingPlanes: ClippingPlaneCollection?
             var lightColor: Cartesian3?
             var imageBasedLighting: ImageBasedLighting?

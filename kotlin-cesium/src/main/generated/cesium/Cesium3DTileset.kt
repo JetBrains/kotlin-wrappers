@@ -112,8 +112,12 @@ external class Cesium3DTileset(options: ConstructorOptions) {
      * @property [imageBasedLighting] The properties for managing image-based lighting for this tileset.
      * @property [backFaceCulling] Whether to cull back-facing geometry. When true, back face culling is determined by the glTF material's doubleSided property; when false, back face culling is disabled.
      *   Default value - `true`
+     * @property [enableShowOutline] Whether to enable outlines for models using the [CESIUM_primitive_outline](https://github.com/KhronosGroup/glTF/tree/master/extensions/2.0/Vendor/CESIUM_primitive_outline) extension. This can be set to false to avoid the additional processing of geometry at load time. When false, the showOutlines and outlineColor options are ignored.
+     *   Default value - `true`
      * @property [showOutline] Whether to display the outline for models using the [CESIUM_primitive_outline](https://github.com/KhronosGroup/glTF/tree/master/extensions/2.0/Vendor/CESIUM_primitive_outline) extension. When true, outlines are displayed. When false, outlines are not displayed.
      *   Default value - `true`
+     * @property [outlineColor] The color to use when rendering outlines.
+     *   Default value - [Color.BLACK]
      * @property [vectorClassificationOnly] Indicates that only the tileset's vector tiles should be used for classification.
      *   Default value - `false`
      * @property [vectorKeepDecodedPositions] Whether vector tiles should keep decoded positions in memory. This is used with [Cesium3DTileFeature.getPolylinePositions].
@@ -189,7 +193,9 @@ external class Cesium3DTileset(options: ConstructorOptions) {
         var lightColor: Cartesian3?
         var imageBasedLighting: ImageBasedLighting?
         var backFaceCulling: Boolean?
+        var enableShowOutline: Boolean?
         var showOutline: Boolean?
+        var outlineColor: Color?
         var vectorClassificationOnly: Boolean?
         var vectorKeepDecodedPositions: Boolean?
         var featureIdLabel: dynamic
@@ -559,9 +565,20 @@ external class Cesium3DTileset(options: ConstructorOptions) {
      * Whether to display the outline for models using the
      * [CESIUM_primitive_outline](https://github.com/KhronosGroup/glTF/tree/master/extensions/2.0/Vendor/CESIUM_primitive_outline) extension.
      * When true, outlines are displayed. When false, outlines are not displayed.
+     *
+     * When enableModelExperimental is set to true, this property can be toggled
+     * at runtime. However, when enableModelExperimental is false, this property
+     * is readonly (it can only be set in the constructor).
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileset.html#showOutline">Online Documentation</a>
      */
-    val showOutline: Boolean
+    var showOutline: Boolean
+
+    /**
+     * The color to use when rendering outlines. This option is only used
+     * when enableModelExperimental is set to true.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileset.html#outlineColor">Online Documentation</a>
+     */
+    var outlineColor: Color
 
     /**
      * The [SplitDirection] to apply to this tileset.
