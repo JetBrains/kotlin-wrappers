@@ -14,6 +14,6 @@ external interface SelectHTMLAttributes<T : Element> : HTMLAttributes<T> {
     var name: String?
     var required: Boolean?
     var size: Int?
-    var value: String?
+    var value: Any? /* string | ReadonlyArray<string> | number */
     var onChange: ChangeEventHandler<T>?
 }

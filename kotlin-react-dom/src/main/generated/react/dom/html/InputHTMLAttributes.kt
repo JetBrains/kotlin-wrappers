@@ -23,9 +23,9 @@ external interface InputHTMLAttributes<T : Element> : HTMLAttributes<T> {
     var formTarget: String?
     var height: Double?
     var list: String?
-    var max: Double?
+    var max: Any? /* number | Date */
     var maxLength: Int?
-    var min: Double?
+    var min: Any? /* number | Date */
     var minLength: Int?
     var multiple: Boolean?
     var name: String?
@@ -37,7 +37,7 @@ external interface InputHTMLAttributes<T : Element> : HTMLAttributes<T> {
     var src: String?
     var step: Double?
     var type: InputType?
-    var value: String?
+    var value: Any? /* string | ReadonlyArray<string> | number */
     var width: Double?
     var onChange: ChangeEventHandler<T>?
 }

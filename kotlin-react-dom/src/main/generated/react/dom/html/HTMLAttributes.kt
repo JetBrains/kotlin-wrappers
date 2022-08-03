@@ -14,7 +14,7 @@ external interface HTMLAttributes<T : Element> :
     react.PropsWithStyle {
     // React-specific Attributes
     var defaultChecked: Boolean?
-    var defaultValue: String?
+    var defaultValue: Any? /* string | number | ReadonlyArray<string> */
     var suppressContentEditableWarning: Boolean?
     var suppressHydrationWarning: Boolean?
 
