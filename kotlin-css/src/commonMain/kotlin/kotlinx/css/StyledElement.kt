@@ -143,8 +143,8 @@ var StyledElement.display: Display by CssProperty()
 var StyledElement.filter: String by CssProperty()
 var StyledElement.flexBasis: FlexBasis by CssProperty()
 var StyledElement.flexDirection: FlexDirection by CssProperty()
-var StyledElement.flexGrow: Double by CssProperty()
-var StyledElement.flexShrink: Double by CssProperty()
+var StyledElement.flexGrow: Number by CssProperty()
+var StyledElement.flexShrink: Number by CssProperty()
 var StyledElement.flexWrap: FlexWrap by CssProperty()
 var StyledElement.float: Float by CssProperty()
 var StyledElement.fontFamily: String by CssProperty()
@@ -248,7 +248,7 @@ var StyledElement.wordWrap: WordWrap by CssProperty()
 
 var StyledElement.zIndex: Int by CssProperty()
 
-fun StyledElement.flex(flexGrow: Double) {
+fun StyledElement.flex(flexGrow: Number) {
     put("flex", "$flexGrow")
 }
 
@@ -256,19 +256,19 @@ fun StyledElement.flex(flexBasis: LinearDimension) {
     put("flex", "$flexBasis")
 }
 
-fun StyledElement.flex(flexGrow: Double, flexShrink: Double) {
+fun StyledElement.flex(flexGrow: Number, flexShrink: Number) {
     put("flex", "$flexGrow $flexShrink")
 }
 
-fun StyledElement.flex(flexGrow: Double, flexBasis: LinearDimension) {
+fun StyledElement.flex(flexGrow: Number, flexBasis: LinearDimension) {
     put("flex", "$flexGrow $flexBasis")
 }
 
-fun StyledElement.flex(flexGrow: Double = 0.0, flexShrink: Double = 1.0, flexBasis: FlexBasis = FlexBasis.auto) {
+fun StyledElement.flex(flexGrow: Number/* = 0.0 */, flexShrink: Number/* = 1.0 */, flexBasis: FlexBasis/* = FlexBasis.auto */) {
     put("flex", "$flexGrow $flexShrink $flexBasis")
 }
 
-fun StyledElement.flex(flexGrow: Double = 0.0, flexShrink: Double = 1.0, flexBasis: LinearDimension) =
+fun StyledElement.flex(flexGrow: Number/* = 0.0 */, flexShrink: Number/* = 1.0 */, flexBasis: LinearDimension) =
     flex(flexGrow, flexShrink, flexBasis.basis)
 
 fun StyledElement.grow(grow: Grow) {
