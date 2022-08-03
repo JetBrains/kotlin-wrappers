@@ -32,4 +32,5 @@ external interface KeyboardEvent<out T : Element> : UIEvent<T, NativeKeyboardEve
 
     @Deprecated("Will be removed soon!")
     val which: Int
+    override val target: T
 }

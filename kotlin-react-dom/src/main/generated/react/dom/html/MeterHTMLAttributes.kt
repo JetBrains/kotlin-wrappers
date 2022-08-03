@@ -11,5 +11,5 @@ external interface MeterHTMLAttributes<T : Element> : HTMLAttributes<T> {
     var max: Double?
     var min: Double?
     var optimum: Double?
-    var value: String?
+    var value: Any? /* string | ReadonlyArray<string> | number */
 }
