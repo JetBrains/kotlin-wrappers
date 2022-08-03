@@ -10,6 +10,8 @@ This repository hosts a number of [Kotlin](https://kotlinlang.org) wrappers for 
 
 To learn more please refer to the `README`s of individual modules.
 
+Versions with the `-compat` suffix are built with the `kotlin.mpp.enableCompatibilityMetadataVariant=true` option enabled. These are required for multiplatform projects that don't use [hierarchical project structure](https://kotlinlang.org/docs/multiplatform-hierarchy.html).
+
 | README                                                                   |   Note   | Version                                                                                                                                                                                                                |
 |:-------------------------------------------------------------------------|:--------:|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [kotlin-browser](kotlin-browser/README.md)                               |          | [![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-browser)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-browser)                               |
