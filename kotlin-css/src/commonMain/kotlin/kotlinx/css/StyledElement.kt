@@ -264,19 +264,21 @@ fun StyledElement.flex(flexGrow: Number, flexBasis: LinearDimension) {
     put("flex", "$flexGrow $flexBasis")
 }
 
+// The default values that are commented out used to be set before pre.362
 fun StyledElement.flex(flexGrow: Number/* = 0.0 */, flexShrink: Number/* = 1.0 */, flexBasis: FlexBasis/* = FlexBasis.auto */) {
     put("flex", "$flexGrow $flexShrink $flexBasis")
 }
 
+// The default values that are commented out used to be set before pre.362
 fun StyledElement.flex(flexGrow: Number/* = 0.0 */, flexShrink: Number/* = 1.0 */, flexBasis: LinearDimension) =
     flex(flexGrow, flexShrink, flexBasis.basis)
 
 fun StyledElement.grow(grow: Grow) {
     when (grow) {
-        Grow.GROW -> flex(1.0, 0.0)
-        Grow.SHRINK -> flex(0.0, 1.0)
-        Grow.NONE -> flex(0.0, 0.0)
-        Grow.GROW_SHRINK -> flex(1.0, 1.0)
+        Grow.GROW -> flex(1, 0, LinearDimension.auto)
+        Grow.SHRINK -> flex(0, 1, LinearDimension.auto)
+        Grow.NONE -> flex(0, 0, LinearDimension.auto)
+        Grow.GROW_SHRINK -> flex(1, 1, LinearDimension.auto)
     }
 }
 
