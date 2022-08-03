@@ -2,11 +2,7 @@
 
 package tanstack.table.core
 
-import kotlinx.js.ReadonlyArray
-
-external interface CoreColumnDefBase<TData : RowData, TValue> {
-    var columns: ReadonlyArray<ColumnDef<TData, *>>?
-    var header: ColumnDefTemplate<HeaderContext<TData, TValue>>?
+external interface ColumnDefBase<TData : RowData, TValue> {
     var footer: ColumnDefTemplate<HeaderContext<TData, TValue>>?
     var cell: ColumnDefTemplate<CellContext<TData, TValue>>?
     var meta: ColumnMeta<TData, TValue>?
