@@ -248,6 +248,22 @@ var StyledElement.wordWrap: WordWrap by CssProperty()
 
 var StyledElement.zIndex: Int by CssProperty()
 
+fun StyledElement.flex(flexGrow: Double) {
+    put("flex", "$flexGrow")
+}
+
+fun StyledElement.flex(flexBasis: LinearDimension) {
+    put("flex", "$flexBasis")
+}
+
+fun StyledElement.flex(flexGrow: Double, flexShrink: Double) {
+    put("flex", "$flexGrow $flexShrink")
+}
+
+fun StyledElement.flex(flexGrow: Double, flexBasis: LinearDimension) {
+    put("flex", "$flexGrow $flexBasis")
+}
+
 fun StyledElement.flex(flexGrow: Double = 0.0, flexShrink: Double = 1.0, flexBasis: FlexBasis = FlexBasis.auto) {
     put("flex", "$flexGrow $flexShrink $flexBasis")
 }
