@@ -167,6 +167,23 @@ inline fun Font(
     "$variant $stretch $size/$lineHeight $family".unsafeCast<Font>()
 
 inline fun Font(
+    weight: FontWeight,
+    stretch: FontStretch,
+    size: FontSize,
+    family: FontFamily,
+): Font =
+    "$weight $stretch $size $family".unsafeCast<Font>()
+
+inline fun Font(
+    weight: FontWeight,
+    stretch: FontStretch,
+    size: FontSize,
+    lineHeight: LineHeight,
+    family: FontFamily,
+): Font =
+    "$weight $stretch $size/$lineHeight $family".unsafeCast<Font>()
+
+inline fun Font(
     style: FontStyle,
     variant: FontVariant,
     weight: FontWeight,
