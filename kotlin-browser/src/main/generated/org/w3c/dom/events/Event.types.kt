@@ -17,6 +17,9 @@ inline val Event.Companion.PROCESS_OR_ERROR: EventType<Event>
 inline val Event.Companion.STATE_CHANGE: EventType<Event>
     get() = EventType("statechange")
 
+inline val Event.Companion.DOM_CONTENT_LOADED: EventType<Event>
+    get() = EventType("DOMContentLoaded")
+
 inline val Event.Companion.FULLSCREEN_CHANGE: EventType<Event>
     get() = EventType("fullscreenchange")
 
@@ -122,6 +125,9 @@ inline val Event.Companion.SELECTION_CHANGE: EventType<Event>
 inline val Event.Companion.SELECT_START: EventType<Event>
     get() = EventType("selectstart")
 
+inline val Event.Companion.SLOT_CHANGE: EventType<Event>
+    get() = EventType("slotchange")
+
 inline val Event.Companion.STALLED: EventType<Event>
     get() = EventType("stalled")
 
@@ -173,6 +179,9 @@ inline val Event.Companion.SUCCESS: EventType<Event>
 inline val Event.Companion.COMPLETE: EventType<Event>
     get() = EventType("complete")
 
+inline val Event.Companion.MIDI_MESSAGE: EventType<Event>
+    get() = EventType("midimessage")
+
 inline val Event.Companion.DEVICE_CHANGE: EventType<Event>
     get() = EventType("devicechange")
 
@@ -220,6 +229,12 @@ inline val Event.Companion.RESIZE: EventType<Event>
 
 inline val Event.Companion.BUFFERED_AMOUNT_LOW: EventType<Event>
     get() = EventType("bufferedamountlow")
+
+inline val Event.Companion.CLOSING: EventType<Event>
+    get() = EventType("closing")
+
+inline val Event.Companion.GATHERING_STATE_CHANGE: EventType<Event>
+    get() = EventType("gatheringstatechange")
 
 inline val Event.Companion.CONNECTION_STATE_CHANGE: EventType<Event>
     get() = EventType("connectionstatechange")
