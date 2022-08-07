@@ -8,7 +8,6 @@ package mui.material
 import kotlinx.js.ReadonlyArray
 import mui.material.styles.Theme
 import mui.system.SxProps
-import react.Key
 
 external interface AutocompleteProps<T> :
     mui.base.UseAutocompleteProps<T>,
@@ -229,7 +228,7 @@ external interface AutocompleteRenderOptionState {
 }
 
 external interface AutocompleteRenderGroupParams : react.PropsWithChildren {
-    override var key: Key? /* Key */
+    override var key: react.Key? /* Key */
 
     var group: String
 

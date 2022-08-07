@@ -27,7 +27,7 @@ external interface PopoverProps :
      * An HTML element, or a function that returns one.
      * It's used to set the position of the popover.
      */
-    var anchorEl: ((element: org.w3c.dom.Element) -> org.w3c.dom.Element)?
+    var anchorEl: org.w3c.dom.Element? /* null | Element | ((element: Element) => Element) */
 
     /**
      * This is the point on the anchor where the popover's
