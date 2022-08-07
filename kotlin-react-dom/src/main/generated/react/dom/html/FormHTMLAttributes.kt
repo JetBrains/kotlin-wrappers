@@ -13,4 +13,5 @@ external interface FormHTMLAttributes<T : Element> : HTMLAttributes<T> {
     var name: String?
     var noValidate: Boolean?
     var target: String?
+    var rel: String?
 }
