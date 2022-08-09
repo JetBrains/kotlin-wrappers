@@ -5,6 +5,23 @@
 
 package node.fs
 
+import org.khronos.webgl.ArrayBufferView
+
+/**
+ * For detailed information, see the documentation of the asynchronous version of
+ * this API: {@link write}.
+ * @since v0.1.21
+ * @return The number of bytes written.
+ */
+external fun writeSync(
+    fd: Number,
+    buffer: ArrayBufferView,
+    offset: Number? = definedExternally,
+    length: Number? = definedExternally,
+    position: Number? = definedExternally,
+): Number
+
+
 /**
  * Synchronously writes `string` to the file referenced by the supplied file descriptor, returning the number of bytes written.
  * @param fd A file descriptor.

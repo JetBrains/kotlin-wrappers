@@ -3,7 +3,9 @@
 package node.fs
 
 import kotlinx.js.ReadonlyArray
+import kotlinx.js.Void
 import org.khronos.webgl.ArrayBufferView
+import kotlin.js.Promise
 
 sealed external interface FileHandle {
     /**
@@ -23,7 +25,7 @@ sealed external interface FileHandle {
     fun appendFile(
         data: dynamic, /* string | Uint8Array */
         options: dynamic /* (ObjectEncodingOptions & FlagAndOpenMode) | BufferEncoding */ = definedExternally,
-    ): kotlin.js.Promise<Unit>
+    ): Promise<Void>
 
     /**
      * Changes the ownership of the file. A wrapper for [`chown(2)`](http://man7.org/linux/man-pages/man2/chown.2.html).
@@ -35,7 +37,7 @@ sealed external interface FileHandle {
     fun chown(
         uid: Number,
         gid: Number,
-    ): kotlin.js.Promise<Unit>
+    ): Promise<Void>
 
     /**
      * Modifies the permissions on the file. See [`chmod(2)`](http://man7.org/linux/man-pages/man2/chmod.2.html).
@@ -43,7 +45,7 @@ sealed external interface FileHandle {
      * @param mode the file mode bit mask.
      * @return Fulfills with `undefined` upon success.
      */
-    fun chmod(mode: Mode): kotlin.js.Promise<Unit>
+    fun chmod(mode: Mode): Promise<Void>
 
     /**
      * Unlike the 16 kb default `highWaterMark` for a `stream.Readable`, the stream
@@ -126,7 +128,7 @@ sealed external interface FileHandle {
      * @since v10.0.0
      * @return Fulfills with `undefined` upon success.
      */
-    fun datasync(): kotlin.js.Promise<Unit>
+    fun datasync(): Promise<Void>
 
     /**
      * Request that all data for the open file descriptor is flushed to the storage
@@ -135,7 +137,7 @@ sealed external interface FileHandle {
      * @since v10.0.0
      * @return Fufills with `undefined` upon success.
      */
-    fun sync(): kotlin.js.Promise<Unit>
+    fun sync(): Promise<Void>
 
     /**
      * Reads data from the file and stores that in the given buffer.
@@ -155,9 +157,9 @@ sealed external interface FileHandle {
         offset: Number? = definedExternally,
         length: Number? = definedExternally,
         position: Number? = definedExternally,
-    ): kotlin.js.Promise<FileReadResult<T>>
+    ): Promise<FileReadResult<T>>
 
-    fun <T : ArrayBufferView> read(options: FileReadOptions<T> = definedExternally): kotlin.js.Promise<FileReadResult<T>>
+    fun <T : ArrayBufferView> read(options: FileReadOptions<T> = definedExternally): Promise<FileReadResult<T>>
 
     /**
      * Returns a `ReadableStream` that may be used to read the files data.
@@ -274,7 +276,7 @@ sealed external interface FileHandle {
     */
     // HIDDEN METHOD END
 
-    fun stat(opts: StatOptions = definedExternally): dynamic /* Promise<Stats | BigIntStats> */
+    fun stat(opts: StatOptions = definedExternally): Promise<dynamic /* Stats | BigIntStats */>
 
     /**
      * Truncates the file.
@@ -304,7 +306,7 @@ sealed external interface FileHandle {
      * @param [len=0]
      * @return Fulfills with `undefined` upon success.
      */
-    fun truncate(len: Number = definedExternally): kotlin.js.Promise<Unit>
+    fun truncate(len: Number = definedExternally): Promise<Void>
 
     /**
      * Change the file system timestamps of the object referenced by the `FileHandle` then resolves the promise with no arguments upon success.
@@ -313,7 +315,7 @@ sealed external interface FileHandle {
     fun utimes(
         atime: dynamic, /* string | number | Date */
         mtime: dynamic, /* string | number | Date */
-    ): kotlin.js.Promise<Unit>
+    ): Promise<Void>
 
     /**
      * Asynchronously writes data to a file, replacing the file if it already exists.`data` can be a string, a buffer, an
@@ -336,7 +338,7 @@ sealed external interface FileHandle {
     fun writeFile(
         data: dynamic, /* string | Uint8Array */
         options: dynamic /* (ObjectEncodingOptions & FlagAndOpenMode & Abortable) | BufferEncoding */ = definedExternally,
-    ): kotlin.js.Promise<Unit>
+    ): Promise<Void>
     /**
      * Write `buffer` to the file.
      *
@@ -402,7 +404,7 @@ sealed external interface FileHandle {
     fun writev(
         buffers: ReadonlyArray<ArrayBufferView>,
         position: Number = definedExternally,
-    ): kotlin.js.Promise<WriteVResult>
+    ): Promise<WriteVResult>
 
     /**
      * Read from a file and write to an array of [ArrayBufferView](https://developer.mozilla.org/en-US/docs/Web/API/ArrayBufferView) s
@@ -413,7 +415,7 @@ sealed external interface FileHandle {
     fun readv(
         buffers: ReadonlyArray<ArrayBufferView>,
         position: Number = definedExternally,
-    ): kotlin.js.Promise<ReadVResult>
+    ): Promise<ReadVResult>
 
     /**
      * Closes the file handle after waiting for any pending operation on the handle to
@@ -432,5 +434,5 @@ sealed external interface FileHandle {
      * @since v10.0.0
      * @return Fulfills with `undefined` upon success.
      */
-    fun close(): kotlin.js.Promise<Unit>
+    fun close(): Promise<Void>
 }
