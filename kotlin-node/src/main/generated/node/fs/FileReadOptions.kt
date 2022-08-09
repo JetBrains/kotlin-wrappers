@@ -1,0 +1,21 @@
+// Automatically generated - do not modify!
+
+package node.fs
+
+sealed external interface FileReadOptions<T : org.khronos.webgl.ArrayBufferView> {
+    /**
+     * @default `Buffer.alloc(0xffff)`
+     */
+    var buffer: T?
+
+    /**
+     * @default 0
+     */
+    var offset: Number?
+
+    /**
+     * @default `buffer.byteLength`
+     */
+    var length: Number?
+    var position: Number?
+}
