@@ -2,6 +2,8 @@
 
 package node.fs
 
-sealed external interface ReadAsyncOptions<TBuffer : org.khronos.webgl.ArrayBufferView> : ReadSyncOptions {
+import org.khronos.webgl.ArrayBufferView
+
+sealed external interface ReadAsyncOptions<TBuffer : ArrayBufferView> : ReadSyncOptions {
     var buffer: TBuffer?
 }

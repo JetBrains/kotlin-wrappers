@@ -6,6 +6,7 @@
 package node.fs
 
 import kotlinx.js.ReadonlyArray
+import org.khronos.webgl.ArrayBufferView
 
 /**
  * For detailed information, see the documentation of the asynchronous version of
@@ -15,6 +16,6 @@ import kotlinx.js.ReadonlyArray
  */
 external fun readvSync(
     fd: Number,
-    buffers: ReadonlyArray<org.khronos.webgl.ArrayBufferView>,
+    buffers: ReadonlyArray<ArrayBufferView>,
     position: Number = definedExternally,
 ): Number

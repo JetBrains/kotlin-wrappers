@@ -3,8 +3,9 @@
 package node.fs
 
 import kotlinx.js.ReadonlyArray
+import org.khronos.webgl.ArrayBufferView
 
 sealed external interface ReadVResult {
     var bytesRead: Number
-    var buffers: ReadonlyArray<org.khronos.webgl.ArrayBufferView>
+    var buffers: ReadonlyArray<ArrayBufferView>
 }
