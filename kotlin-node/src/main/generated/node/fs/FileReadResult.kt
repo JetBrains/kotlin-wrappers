@@ -2,7 +2,9 @@
 
 package node.fs
 
-sealed external interface FileReadResult<T : org.khronos.webgl.ArrayBufferView> {
+import org.khronos.webgl.ArrayBufferView
+
+sealed external interface FileReadResult<T : ArrayBufferView> {
     var bytesRead: Number
     var buffer: T
 }

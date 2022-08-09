@@ -2,7 +2,9 @@
 
 package node.fs
 
-sealed external interface FileReadOptions<T : org.khronos.webgl.ArrayBufferView> {
+import org.khronos.webgl.ArrayBufferView
+
+sealed external interface FileReadOptions<T : ArrayBufferView> {
     /**
      * @default `Buffer.alloc(0xffff)`
      */
