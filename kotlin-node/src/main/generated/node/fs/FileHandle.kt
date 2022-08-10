@@ -313,8 +313,8 @@ sealed external interface FileHandle {
      * @since v10.0.0
      */
     fun utimes(
-        atime: Any, /* string | number | Date */
-        mtime: Any, /* string | number | Date */
+        atime: TimeLike,
+        mtime: TimeLike,
     ): Promise<Void>
 
     /**

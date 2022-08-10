@@ -1,5 +1,10 @@
 // Automatically generated - do not modify!
 
+@file:Suppress(
+    "NAME_CONTAINS_ILLEGAL_CHARS",
+)
+
 package node.fs
 
-sealed interface BufferEncodingOption
+@JsName("'buffer'")
+external object BufferEncodingOption
