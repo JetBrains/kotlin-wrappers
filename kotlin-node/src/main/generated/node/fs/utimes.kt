@@ -6,8 +6,8 @@ import kotlinx.coroutines.await
 
 suspend fun utimes(
     path: PathLike,
-    atime: Any, /* string | number | Date */
-    mtime: Any, /* string | number | Date */
+    atime: TimeLike,
+    mtime: TimeLike,
 ) {
     utimesAsync(
         path = path,
