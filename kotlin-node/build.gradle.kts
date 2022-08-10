@@ -6,6 +6,7 @@ plugins {
 
 dependencies {
     api(project(":kotlin-js"))
+    implementation(kotlinxCoroutines("core"))
 
     api(devNpmv("@types/node"))
 }
