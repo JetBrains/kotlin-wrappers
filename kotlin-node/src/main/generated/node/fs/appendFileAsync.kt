@@ -24,7 +24,7 @@ import kotlin.js.Promise
  */
 @JsName("appendFile")
 external fun appendFileAsync(
-    path: dynamic, /* PathLike | FileHandle */
-    data: dynamic, /* string | Uint8Array */
-    options: dynamic /* (ObjectEncodingOptions & FlagAndOpenMode) | BufferEncoding */ = definedExternally,
+    path: Any, /* PathLike | FileHandle */
+    data: Any, /* string | Uint8Array */
+    options: Any? /* (ObjectEncodingOptions & FlagAndOpenMode) | BufferEncoding */ = definedExternally,
 ): Promise<Void>

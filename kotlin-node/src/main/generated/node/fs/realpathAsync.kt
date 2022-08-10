@@ -26,7 +26,7 @@ import kotlin.js.Promise
 @JsName("realpath")
 external fun realpathAsync(
     path: PathLike,
-    options: dynamic /* ObjectEncodingOptions | BufferEncoding */ = definedExternally,
+    options: node.buffer.BufferEncoding? /* ObjectEncodingOptions | BufferEncoding */ = definedExternally,
 ): Promise<String>
 
 

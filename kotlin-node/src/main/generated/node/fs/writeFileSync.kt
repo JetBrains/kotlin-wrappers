@@ -17,6 +17,6 @@ package node.fs
  */
 external fun writeFileSync(
     file: PathOrFileDescriptor,
-    data: dynamic, /* string | NodeJS.ArrayBufferView */
+    data: Any, /* string | NodeJS.ArrayBufferView */
     options: WriteFileOptions = definedExternally,
 )

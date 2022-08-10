@@ -23,8 +23,8 @@ sealed external interface FileHandle {
      * @return Fulfills with `undefined` upon success.
      */
     fun appendFile(
-        data: dynamic, /* string | Uint8Array */
-        options: dynamic /* (ObjectEncodingOptions & FlagAndOpenMode) | BufferEncoding */ = definedExternally,
+        data: Any, /* string | Uint8Array */
+        options: Any? /* (ObjectEncodingOptions & FlagAndOpenMode) | BufferEncoding */ = definedExternally,
     ): Promise<Void>
 
     /**
@@ -276,7 +276,7 @@ sealed external interface FileHandle {
     */
     // HIDDEN METHOD END
 
-    fun stat(opts: StatOptions = definedExternally): Promise<dynamic /* Stats | BigIntStats */>
+    fun stat(opts: StatOptions = definedExternally): Promise<Any /* Stats | BigIntStats */>
 
     /**
      * Truncates the file.
@@ -313,8 +313,8 @@ sealed external interface FileHandle {
      * @since v10.0.0
      */
     fun utimes(
-        atime: dynamic, /* string | number | Date */
-        mtime: dynamic, /* string | number | Date */
+        atime: Any, /* string | number | Date */
+        mtime: Any, /* string | number | Date */
     ): Promise<Void>
 
     /**
@@ -336,8 +336,8 @@ sealed external interface FileHandle {
      * @since v10.0.0
      */
     fun writeFile(
-        data: dynamic, /* string | Uint8Array */
-        options: dynamic /* (ObjectEncodingOptions & FlagAndOpenMode & Abortable) | BufferEncoding */ = definedExternally,
+        data: Any, /* string | Uint8Array */
+        options: Any? /* (ObjectEncodingOptions & FlagAndOpenMode & Abortable) | BufferEncoding */ = definedExternally,
     ): Promise<Void>
     /**
      * Write `buffer` to the file.

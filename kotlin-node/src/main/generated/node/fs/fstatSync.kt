@@ -14,4 +14,4 @@ package node.fs
 external fun fstatSync(
     fd: Number,
     options: StatOptions = definedExternally,
-): dynamic /* Stats | BigIntStats */
+): Any /* Stats | BigIntStats */

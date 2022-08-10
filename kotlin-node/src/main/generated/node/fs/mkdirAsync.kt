@@ -16,5 +16,5 @@ import kotlin.js.Promise
 @JsName("mkdir")
 external fun mkdirAsync(
     path: PathLike,
-    options: dynamic /* Mode | MakeDirectoryOptions */ = definedExternally,
+    options: Any? /* Mode | MakeDirectoryOptions */ = definedExternally,
 ): Promise<String>

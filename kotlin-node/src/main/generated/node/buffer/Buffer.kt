@@ -1649,7 +1649,7 @@ external class Buffer : Uint8Array {
      * @return A reference to `buf`.
      */
     fun fill(
-        value: dynamic, /* string | Uint8Array | number */
+        value: Any, /* string | Uint8Array | number */
         offset: Number = definedExternally,
         end: Number = definedExternally,
         encoding: BufferEncoding = definedExternally,
@@ -1724,7 +1724,7 @@ external class Buffer : Uint8Array {
      * @return The index of the first occurrence of `value` in `buf`, or `-1` if `buf` does not contain `value`.
      */
     fun indexOf(
-        value: dynamic, /* string | number | Uint8Array */
+        value: Any, /* string | number | Uint8Array */
         byteOffset: Number = definedExternally,
         encoding: BufferEncoding = definedExternally,
     ): Number
@@ -1797,7 +1797,7 @@ external class Buffer : Uint8Array {
      * @return The index of the last occurrence of `value` in `buf`, or `-1` if `buf` does not contain `value`.
      */
     fun lastIndexOf(
-        value: dynamic, /* string | number | Uint8Array */
+        value: Any, /* string | number | Uint8Array */
         byteOffset: Number = definedExternally,
         encoding: BufferEncoding = definedExternally,
     ): Number
@@ -1858,7 +1858,7 @@ external class Buffer : Uint8Array {
      * @return `true` if `value` was found in `buf`, `false` otherwise.
      */
     fun includes(
-        value: dynamic, /* string | number | Buffer */
+        value: Any, /* string | number | Buffer */
         byteOffset: Number = definedExternally,
         encoding: BufferEncoding = definedExternally,
     ): Boolean

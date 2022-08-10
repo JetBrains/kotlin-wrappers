@@ -13,5 +13,5 @@ package node.fs
  */
 external fun mkdirSync(
     path: PathLike,
-    options: dynamic /* Mode | MakeDirectoryOptions */ = definedExternally,
+    options: Any? /* Mode | MakeDirectoryOptions */ = definedExternally,
 ): String

@@ -10,5 +10,5 @@ sealed external interface CopyOptions : CopyOptionsBase {
     val filter: ((
         source: String,
         destination: String,
-    ) -> dynamic /* boolean | Promise<boolean> */)?
+    ) -> Any /* boolean | Promise<boolean> */)?
 }
