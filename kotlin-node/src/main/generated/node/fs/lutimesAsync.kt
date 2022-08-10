@@ -18,6 +18,6 @@ import kotlin.js.Promise
 @JsName("lutimes")
 external fun lutimesAsync(
     path: PathLike,
-    atime: dynamic, /* string | number | Date */
-    mtime: dynamic, /* string | number | Date */
+    atime: Any, /* string | number | Date */
+    mtime: Any, /* string | number | Date */
 ): Promise<Void>

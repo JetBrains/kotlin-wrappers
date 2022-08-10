@@ -21,7 +21,7 @@ import kotlin.js.Promise
 @JsName("readlink")
 external fun readlinkAsync(
     path: PathLike,
-    options: dynamic /* ObjectEncodingOptions | BufferEncoding */ = definedExternally,
+    options: node.buffer.BufferEncoding? /* ObjectEncodingOptions | BufferEncoding */ = definedExternally,
 ): Promise<String>
 
 

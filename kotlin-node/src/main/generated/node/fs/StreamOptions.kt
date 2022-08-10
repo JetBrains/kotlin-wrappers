@@ -5,7 +5,7 @@ package node.fs
 sealed external interface StreamOptions {
     var flags: String?
     var encoding: node.buffer.BufferEncoding?
-    var fd: dynamic /* number | promises.FileHandle */
+    var fd: Any? /* number | promises.FileHandle */
     var mode: Number?
     var autoClose: Boolean?
 

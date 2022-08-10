@@ -54,6 +54,6 @@ package node.fs
  */
 external fun appendFileSync(
     path: PathOrFileDescriptor,
-    data: dynamic, /* string | Uint8Array */
+    data: Any, /* string | Uint8Array */
     options: WriteFileOptions = definedExternally,
 )

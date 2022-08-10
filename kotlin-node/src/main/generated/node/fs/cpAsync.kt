@@ -22,7 +22,7 @@ import kotlin.js.Promise
  */
 @JsName("cp")
 external fun cpAsync(
-    source: dynamic, /* string | URL */
-    destination: dynamic, /* string | URL */
+    source: Any, /* string | URL */
+    destination: Any, /* string | URL */
     opts: CopyOptions = definedExternally,
 ): Promise<Void>

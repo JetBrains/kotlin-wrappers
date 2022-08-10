@@ -17,7 +17,7 @@ package node.fs
  * @param dest destination path to copy to.
  */
 external fun cpSync(
-    source: dynamic, /* string | URL */
-    destination: dynamic, /* string | URL */
+    source: Any, /* string | URL */
+    destination: Any, /* string | URL */
     opts: CopySyncOptions = definedExternally,
 )

@@ -17,5 +17,5 @@ import kotlinx.js.AsyncIterable
  */
 external fun watch(
     filename: PathLike,
-    options: dynamic /* WatchOptions | BufferEncoding */ = definedExternally,
+    options: Any /* WatchOptions | BufferEncoding */ = definedExternally,
 ): AsyncIterable<FileChangeInfo<String>>

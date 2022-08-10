@@ -37,7 +37,7 @@ import kotlin.js.Promise
 @JsName("mkdtemp")
 external fun mkdtempAsync(
     prefix: String,
-    options: dynamic /* ObjectEncodingOptions | BufferEncoding */ = definedExternally,
+    options: node.buffer.BufferEncoding? /* ObjectEncodingOptions | BufferEncoding */ = definedExternally,
 ): Promise<String>
 
 

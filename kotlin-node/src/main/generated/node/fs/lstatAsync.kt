@@ -18,4 +18,4 @@ import kotlin.js.Promise
 external fun lstatAsync(
     path: PathLike,
     opts: StatOptions = definedExternally,
-): Promise<dynamic /* Stats | BigIntStats */>
+): Promise<Any /* Stats | BigIntStats */>

@@ -23,6 +23,6 @@ import kotlin.js.Promise
 @JsName("open")
 external fun openAsync(
     path: PathLike,
-    flags: dynamic /* string | number */ = definedExternally,
+    flags: Any /* string | number */ = definedExternally,
     mode: Mode = definedExternally,
 ): Promise<FileHandle>
