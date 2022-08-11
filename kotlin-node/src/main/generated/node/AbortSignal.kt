@@ -1,3 +1,5 @@
+// Automatically generated - do not modify!
+
 package node
 
 external class AbortSignal : kotlinx.js.AbortSignal {
