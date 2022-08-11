@@ -6,7 +6,6 @@
 package node.os
 
 import kotlinx.js.ReadonlyArray
-import kotlinx.js.Record
 
 /**
  * Returns an object containing network interfaces that have been assigned a
@@ -61,4 +60,4 @@ import kotlinx.js.Record
  * ```
  * @since v0.6.0
  */
-external fun networkInterfaces(): Record<String, ReadonlyArray<NetworkInterfaceInfo>>
+external fun networkInterfaces(): node.Dict<ReadonlyArray<NetworkInterfaceInfo>>
