@@ -5,8 +5,6 @@
 
 package node.url
 
-import org.w3c.dom.url.URL
-
 /**
  * This utility function converts a URL object into an ordinary options object as
  * expected by the `http.request()` and `https.request()` APIs.

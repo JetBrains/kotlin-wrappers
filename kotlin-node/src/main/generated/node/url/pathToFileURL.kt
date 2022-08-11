@@ -5,8 +5,6 @@
 
 package node.url
 
-import org.w3c.dom.url.URL
-
 /**
  * This function ensures that `path` is resolved absolutely, and that the URL
  * control characters are correctly encoded when converting into a File URL.

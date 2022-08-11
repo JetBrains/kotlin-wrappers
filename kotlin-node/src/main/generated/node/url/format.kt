@@ -5,8 +5,6 @@
 
 package node.url
 
-import org.w3c.dom.url.URL
-
 /**
  * The `url.format()` method returns a formatted URL string derived from`urlObject`.
  *
