@@ -2,4 +2,6 @@
 
 package node.querystring
 
-typealias ParsedUrlQuery = node.Dict<Any /* string | string[] */>
+import node.Dict
+
+typealias ParsedUrlQuery = Dict<Any /* string | string[] */>

@@ -2,4 +2,6 @@
 
 package node.querystring
 
-typealias ParsedUrlQueryInput = node.Dict<Any /* string | number | boolean | ReadonlyArray<string> | ReadonlyArray<number> | ReadonlyArray<boolean> | null */>
+import node.Dict
+
+typealias ParsedUrlQueryInput = Dict<Any /* string | number | boolean | ReadonlyArray<string> | ReadonlyArray<number> | ReadonlyArray<boolean> | null */>
