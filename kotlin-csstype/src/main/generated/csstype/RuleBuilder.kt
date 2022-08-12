@@ -9,17 +9,17 @@ package csstype
 import kotlinx.js.jso
 import kotlinx.js.set
 
-interface RuleBuilder<T : Any> {
+interface RuleBuilder<T : Any> : Rules {
     inline fun fontFace(
         block: FontFace.() -> Unit,
     ) {
-        this@RuleBuilder.unsafeCast<Rules>()[Selector("@font-face")] = jso(block)
+        set(Selector("@font-face"), jso(block))
     }
 
     inline operator fun Selector.invoke(
         block: T.() -> Unit,
     ) {
-        this@RuleBuilder.unsafeCast<Rules>()[this] = jso(block)
+        set(this, jso(block))
     }
 
     inline operator fun ClassName.invoke(
