@@ -3,6 +3,7 @@
 package mui.system
 
 import kotlinx.js.Record
+import kotlinx.js.set
 
 external interface ResponsiveStyleValue<T : Any>
 

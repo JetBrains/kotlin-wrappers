@@ -7,6 +7,7 @@
 package csstype
 
 import kotlinx.js.jso
+import kotlinx.js.set
 
 interface RuleBuilder<T : Any> {
     inline fun fontFace(

@@ -3,6 +3,7 @@ package emotion.css
 import csstype.*
 import kotlinx.js.Record
 import kotlinx.js.jso
+import kotlinx.js.set
 
 typealias Keyframes = Record<Percentage, Properties>
 
