@@ -2,6 +2,8 @@
 
 package node.fs
 
+import kotlinx.js.PromiseResult
+
 sealed external interface CopyOptions : CopyOptionsBase {
     /**
      * Function to filter copied files/directories. Return
@@ -10,5 +12,5 @@ sealed external interface CopyOptions : CopyOptionsBase {
     val filter: ((
         source: String,
         destination: String,
-    ) -> Any /* boolean | Promise<boolean> */)?
+    ) -> PromiseResult<Boolean>)?
 }
