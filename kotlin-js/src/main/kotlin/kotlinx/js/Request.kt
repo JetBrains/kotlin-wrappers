@@ -18,5 +18,5 @@ external class Request : org.w3c.fetch.Request {
         init: RequestInit = definedExternally,
     )
 
-    val signal: AbortSignal?
+    val signal: AbortSignal
 }
