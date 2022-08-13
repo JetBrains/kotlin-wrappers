@@ -5,7 +5,7 @@ package node.process
 import kotlinx.js.JsSet
 import kotlinx.js.ReadonlyArray
 
-sealed external interface Process /* : EventEmitter */ {
+sealed external interface Process : node.events.IEventEmitter {
     /**
      * The `process.stdout` property returns a stream connected to`stdout` (fd `1`). It is a `net.Socket` (which is a `Duplex` stream) unless fd `1` refers to a file, in which case it is
      * a `Writable` stream.

@@ -4,7 +4,7 @@ package node.events
 
 import kotlinx.js.ReadonlyArray
 
-sealed external interface IEventEmitter {
+external interface IEventEmitter {
     /**
      * Alias for `emitter.on(eventName, listener)`.
      * @since v0.1.26
