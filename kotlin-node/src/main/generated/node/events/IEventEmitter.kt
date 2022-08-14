@@ -10,7 +10,7 @@ external interface IEventEmitter {
      * @since v0.1.26
      */
     fun addListener(
-        eventName: String, /* | Symbol */
+        event: String, /* | Symbol */
         listener: Function<Unit>,
     ): IEventEmitter
 
@@ -45,7 +45,7 @@ external interface IEventEmitter {
      * @param listener The callback function
      */
     fun on(
-        eventName: String, /* | Symbol */
+        event: String, /* | Symbol */
         listener: Function<Unit>,
     ): IEventEmitter
 
@@ -78,7 +78,7 @@ external interface IEventEmitter {
      * @param listener The callback function
      */
     fun once(
-        eventName: String, /* | Symbol */
+        event: String, /* | Symbol */
         listener: Function<Unit>,
     ): IEventEmitter
 
@@ -162,7 +162,7 @@ external interface IEventEmitter {
      * @since v0.1.26
      */
     fun removeListener(
-        eventName: String, /* | Symbol */
+        event: String, /* | Symbol */
         listener: Function<Unit>,
     ): IEventEmitter
 
@@ -171,7 +171,7 @@ external interface IEventEmitter {
      * @since v10.0.0
      */
     fun off(
-        eventName: String, /* | Symbol */
+        event: String, /* | Symbol */
         listener: Function<Unit>,
     ): IEventEmitter
 
@@ -217,7 +217,7 @@ external interface IEventEmitter {
      * ```
      * @since v0.1.26
      */
-    fun listeners(eventName: String /* | Symbol */): ReadonlyArray<Function<*>>
+    fun listeners(event: String /* | Symbol */): ReadonlyArray<Function<*>>
 
     /**
      * Returns a copy of the array of listeners for the event named `eventName`,
@@ -248,7 +248,7 @@ external interface IEventEmitter {
      * ```
      * @since v9.4.0
      */
-    fun rawListeners(eventName: String /* | Symbol */): ReadonlyArray<Function<*>>
+    fun rawListeners(event: String /* | Symbol */): ReadonlyArray<Function<*>>
 
     /**
      * Synchronously calls each of the listeners registered for the event named`eventName`, in the order they were registered, passing the supplied arguments
@@ -291,7 +291,7 @@ external interface IEventEmitter {
      * @since v0.1.26
      */
     fun emit(
-        eventName: String, /* | Symbol */
+        event: String, /* | Symbol */
         vararg args: ReadonlyArray<Any>,
     ): Boolean
 
@@ -300,7 +300,7 @@ external interface IEventEmitter {
      * @since v3.2.0
      * @param eventName The name of the event being listened for
      */
-    fun listenerCount(eventName: String /* | Symbol */): Number
+    fun listenerCount(event: String /* | Symbol */): Number
 
     /**
      * Adds the `listener` function to the _beginning_ of the listeners array for the
@@ -320,7 +320,7 @@ external interface IEventEmitter {
      * @param listener The callback function
      */
     fun prependListener(
-        eventName: String, /* | Symbol */
+        event: String, /* | Symbol */
         listener: Function<Unit>,
     ): IEventEmitter
 
@@ -340,7 +340,7 @@ external interface IEventEmitter {
      * @param listener The callback function
      */
     fun prependOnceListener(
-        eventName: String, /* | Symbol */
+        event: String, /* | Symbol */
         listener: Function<Unit>,
     ): IEventEmitter
 

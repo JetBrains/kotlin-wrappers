@@ -4,7 +4,7 @@ package node.events
 
 sealed external interface NodeEventTarget {
     fun once(
-        eventName: String, /* | Symbol */
+        event: String, /* | Symbol */
         listener: Function<Unit>,
     ): NodeEventTarget
 }
