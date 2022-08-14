@@ -9,7 +9,7 @@ import kotlinx.js.ReadonlyArray
 import kotlinx.js.Symbol
 import kotlin.js.Promise
 
-external class EventEmitter {
+abstract external class EventEmitter : IEventEmitter {
     constructor(options: EventEmitterOptions = definedExternally)
 
     companion object {
