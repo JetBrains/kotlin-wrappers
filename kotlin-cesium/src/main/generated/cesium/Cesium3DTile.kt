@@ -5,6 +5,8 @@
 
 package cesium
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * A tile in a [Cesium3DTileset].  When a tile is first created, its content is not loaded;
  * the content is loaded on-demand when needed based on the view.
@@ -36,7 +38,7 @@ external class Cesium3DTile {
      * Gets the tile's children.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTile.html#children">Online Documentation</a>
      */
-    val children: Array<out Cesium3DTile>
+    val children: ReadonlyArray<Cesium3DTile>
 
     /**
      * This tile's parent or `undefined` if this tile is the root.

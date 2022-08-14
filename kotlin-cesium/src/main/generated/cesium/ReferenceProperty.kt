@@ -9,6 +9,8 @@
 
 package cesium
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * A [Property] which transparently links to another property on a provided object.
  * ```
@@ -54,7 +56,7 @@ package cesium
 external class ReferenceProperty(
     val targetCollection: EntityCollection,
     val targetId: String,
-    val targetPropertyNames: Array<out String>,
+    val targetPropertyNames: ReadonlyArray<String>,
 ) {
     /**
      * Gets a value indicating if this property is constant.

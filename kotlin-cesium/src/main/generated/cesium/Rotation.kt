@@ -9,6 +9,8 @@
 
 package cesium
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * Represents a [Packable] number that always interpolates values
  * towards the shortest angle of rotation. This object is never used directly
@@ -52,9 +54,9 @@ external interface Rotation {
          */
         override fun pack(
             value: Rotation,
-            array: Array<out Double>,
+            array: ReadonlyArray<Double>,
             startingIndex: Int?,
-        ): Array<out Double>
+        ): ReadonlyArray<Double>
 
         /**
          * Retrieves an instance from a packed array.
@@ -66,7 +68,7 @@ external interface Rotation {
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Rotation.html#.unpack">Online Documentation</a>
          */
         override fun unpack(
-            array: Array<out Double>,
+            array: ReadonlyArray<Double>,
             startingIndex: Int?,
             result: Rotation?,
         ): Rotation
@@ -82,10 +84,10 @@ external interface Rotation {
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Rotation.html#.convertPackedArrayForInterpolation">Online Documentation</a>
          */
         fun convertPackedArrayForInterpolation(
-            packedArray: Array<out Double>,
+            packedArray: ReadonlyArray<Double>,
             startingIndex: Int? = definedExternally,
             lastIndex: Int? = definedExternally,
-            result: Array<out Double>? = definedExternally,
+            result: ReadonlyArray<Double>? = definedExternally,
         )
 
         /**
@@ -101,8 +103,8 @@ external interface Rotation {
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Rotation.html#.unpackInterpolationResult">Online Documentation</a>
          */
         fun unpackInterpolationResult(
-            array: Array<out Double>,
-            sourceArray: Array<out Double>,
+            array: ReadonlyArray<Double>,
+            sourceArray: ReadonlyArray<Double>,
             firstIndex: Int? = definedExternally,
             lastIndex: Int? = definedExternally,
             result: Rotation? = definedExternally,

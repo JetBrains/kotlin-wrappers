@@ -9,6 +9,8 @@
 
 package cesium
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * A spline that linearly interpolates over an array of weight values used by morph targets.
  * ```
@@ -33,8 +35,8 @@ external class MorphWeightSpline(options: ConstructorOptions) {
      *   where i and j in w(i,j) are the time indices and target indices, respectively.
      */
     interface ConstructorOptions {
-        var times: Array<out Double>
-        var weights: Array<out Double>
+        var times: ReadonlyArray<Double>
+        var weights: ReadonlyArray<Double>
     }
 
     /**
@@ -71,8 +73,8 @@ external class MorphWeightSpline(options: ConstructorOptions) {
      */
     fun evaluate(
         time: Double,
-        result: Array<out Double>? = definedExternally,
-    ): Array<out Double>
+        result: ReadonlyArray<Double>? = definedExternally,
+    ): ReadonlyArray<Double>
 }
 
 inline fun MorphWeightSpline(

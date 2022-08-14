@@ -9,6 +9,8 @@
 
 package cesium
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * Describes a cube centered at the origin.
  * ```
@@ -92,9 +94,9 @@ external class BoxGeometry(options: ConstructorOptions) {
          */
         override fun pack(
             value: BoxGeometry,
-            array: Array<out Double>,
+            array: ReadonlyArray<Double>,
             startingIndex: Int?,
-        ): Array<out Double>
+        ): ReadonlyArray<Double>
 
         /**
          * Retrieves an instance from a packed array.
@@ -106,7 +108,7 @@ external class BoxGeometry(options: ConstructorOptions) {
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BoxGeometry.html#.unpack">Online Documentation</a>
          */
         override fun unpack(
-            array: Array<out Double>,
+            array: ReadonlyArray<Double>,
             startingIndex: Int?,
             result: BoxGeometry?,
         ): BoxGeometry

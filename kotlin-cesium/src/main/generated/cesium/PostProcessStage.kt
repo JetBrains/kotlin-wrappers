@@ -9,6 +9,8 @@
 
 package cesium
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * Runs a post-process stage on either the texture rendered by the scene or the output of a previous post-process stage.
  * ```
@@ -195,7 +197,7 @@ external class PostProcessStage(options: ConstructorOptions) {
      * ```
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PostProcessStage.html#selected">Online Documentation</a>
      */
-    var selected: Array<out Any>
+    var selected: ReadonlyArray<Any>
 
     /**
      * Returns true if this object was destroyed; otherwise, false.

@@ -9,6 +9,8 @@
 
 package cesium
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * A spline that uses piecewise linear interpolation to create a curve.
  * ```
@@ -35,21 +37,21 @@ external class LinearSpline(options: ConstructorOptions) {
      * @property [points] The array of control points.
      */
     interface ConstructorOptions {
-        var times: Array<out Double>
-        var points: Array<out Cartesian3 /* or number */>
+        var times: ReadonlyArray<Double>
+        var points: ReadonlyArray<Cartesian3 /* or number */>
     }
 
     /**
      * An array of times for the control points.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/LinearSpline.html#times">Online Documentation</a>
      */
-    val times: Array<out Double>
+    val times: ReadonlyArray<Double>
 
     /**
      * An array of [Cartesian3] control points.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/LinearSpline.html#points">Online Documentation</a>
      */
-    val points: Array<out Cartesian3 /* or number */>
+    val points: ReadonlyArray<Cartesian3 /* or number */>
 
     /**
      * Finds an index `i` in `times` such that the parameter

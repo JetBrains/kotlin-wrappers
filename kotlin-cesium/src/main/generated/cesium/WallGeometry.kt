@@ -9,6 +9,8 @@
 
 package cesium
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * A description of a wall, which is similar to a KML line string. A wall is defined by a series of points,
  * which extrude down to the ground. Optionally, they can extrude downwards to a specified height.
@@ -42,10 +44,10 @@ external class WallGeometry(options: ConstructorOptions) {
      *   Default value - [VertexFormat.DEFAULT]
      */
     interface ConstructorOptions {
-        var positions: Array<out Cartesian3>
+        var positions: ReadonlyArray<Cartesian3>
         var granularity: Double?
-        var maximumHeights: Array<out Double>?
-        var minimumHeights: Array<out Double>?
+        var maximumHeights: ReadonlyArray<Double>?
+        var minimumHeights: ReadonlyArray<Double>?
         var ellipsoid: Ellipsoid?
         var vertexFormat: VertexFormat?
     }
@@ -68,9 +70,9 @@ external class WallGeometry(options: ConstructorOptions) {
          */
         fun pack(
             value: WallGeometry,
-            array: Array<out Double>,
+            array: ReadonlyArray<Double>,
             startingIndex: Int? = definedExternally,
-        ): Array<out Double>
+        ): ReadonlyArray<Double>
 
         /**
          * Retrieves an instance from a packed array.
@@ -82,7 +84,7 @@ external class WallGeometry(options: ConstructorOptions) {
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/WallGeometry.html#.unpack">Online Documentation</a>
          */
         fun unpack(
-            array: Array<out Double>,
+            array: ReadonlyArray<Double>,
             startingIndex: Int? = definedExternally,
             result: WallGeometry? = definedExternally,
         ): WallGeometry
@@ -121,7 +123,7 @@ external class WallGeometry(options: ConstructorOptions) {
          *   Default value - [VertexFormat.DEFAULT]
          */
         interface FromConstantHeightsOptions {
-            var positions: Array<out Cartesian3>
+            var positions: ReadonlyArray<Cartesian3>
             var maximumHeight: Double?
             var minimumHeight: Double?
             var ellipsoid: Ellipsoid?

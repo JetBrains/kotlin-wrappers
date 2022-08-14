@@ -5,6 +5,8 @@
 
 package cesium
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * A vertex format defines what attributes make up a vertex.  A VertexFormat can be provided
  * to a [Geometry] to request that certain properties be computed, e.g., just position,
@@ -138,9 +140,9 @@ external class VertexFormat(options: Any? = definedExternally) {
          */
         override fun pack(
             value: VertexFormat,
-            array: Array<out Double>,
+            array: ReadonlyArray<Double>,
             startingIndex: Int?,
-        ): Array<out Double>
+        ): ReadonlyArray<Double>
 
         /**
          * Retrieves an instance from a packed array.
@@ -152,7 +154,7 @@ external class VertexFormat(options: Any? = definedExternally) {
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/VertexFormat.html#.unpack">Online Documentation</a>
          */
         override fun unpack(
-            array: Array<out Double>,
+            array: ReadonlyArray<Double>,
             startingIndex: Int?,
             result: VertexFormat?,
         ): VertexFormat

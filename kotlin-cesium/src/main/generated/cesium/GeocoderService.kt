@@ -5,6 +5,8 @@
 
 package cesium
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * Provides geocoding through an external service. This type describes an interface and
  * is not intended to be used.
@@ -20,7 +22,7 @@ external class GeocoderService {
     fun geocode(
         query: String,
         type: GeocodeType? = definedExternally,
-    ): kotlin.js.Promise<Array<out Result>>
+    ): kotlin.js.Promise<ReadonlyArray<Result>>
 
     /**
      * @property [displayName] The display name for a location

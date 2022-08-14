@@ -9,6 +9,8 @@
 
 package cesium
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * Provides tiled imagery hosted by a Web Map Service (WMS) server.
  * ```
@@ -237,7 +239,7 @@ external class WebMapServiceImageryProvider(options: ConstructorOptions) {
         x: Double,
         y: Double,
         level: Int,
-    ): Array<out Credit>
+    ): ReadonlyArray<Credit>
 
     /**
      * Requests the image for a given tile.  This function should
@@ -276,7 +278,7 @@ external class WebMapServiceImageryProvider(options: ConstructorOptions) {
         level: Int,
         longitude: Double,
         latitude: Double,
-    ): kotlin.js.Promise<Array<out ImageryLayerFeatureInfo>>?
+    ): kotlin.js.Promise<ReadonlyArray<ImageryLayerFeatureInfo>>?
 
     /**
      * Initialization options for the WebMapServiceImageryProvider constructor
@@ -331,7 +333,7 @@ external class WebMapServiceImageryProvider(options: ConstructorOptions) {
         var parameters: Any?
         var getFeatureInfoParameters: Any?
         var enablePickFeatures: Boolean?
-        var getFeatureInfoFormats: Array<out GetFeatureInfoFormat>?
+        var getFeatureInfoFormats: ReadonlyArray<GetFeatureInfoFormat>?
         var rectangle: Rectangle?
         var tilingScheme: TilingScheme?
         var ellipsoid: Ellipsoid?
@@ -342,7 +344,7 @@ external class WebMapServiceImageryProvider(options: ConstructorOptions) {
         var crs: String?
         var srs: String?
         var credit: Credit?
-        var subdomains: Array<out String>?
+        var subdomains: ReadonlyArray<String>?
         var clock: Clock?
         var times: TimeIntervalCollection?
         var getFeatureInfoUrl: Resource?

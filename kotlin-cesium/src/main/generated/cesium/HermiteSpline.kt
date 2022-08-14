@@ -9,6 +9,8 @@
 
 package cesium
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * A Hermite spline is a cubic interpolating spline. Points, incoming tangents, outgoing tangents, and times
  * must be defined for each control point. The outgoing tangents are defined for points [0, n - 2] and the incoming
@@ -54,35 +56,35 @@ external class HermiteSpline(options: ConstructorOptions) {
      * @property [outTangents] The array of outgoing tangents at each control point.
      */
     interface ConstructorOptions {
-        var times: Array<out Double>
-        var points: Array<out Cartesian3>
-        var inTangents: Array<out Cartesian3>
-        var outTangents: Array<out Cartesian3>
+        var times: ReadonlyArray<Double>
+        var points: ReadonlyArray<Cartesian3>
+        var inTangents: ReadonlyArray<Cartesian3>
+        var outTangents: ReadonlyArray<Cartesian3>
     }
 
     /**
      * An array of times for the control points.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/HermiteSpline.html#times">Online Documentation</a>
      */
-    val times: Array<out Double>
+    val times: ReadonlyArray<Double>
 
     /**
      * An array of control points.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/HermiteSpline.html#points">Online Documentation</a>
      */
-    val points: Array<out Cartesian3>
+    val points: ReadonlyArray<Cartesian3>
 
     /**
      * An array of incoming tangents at each control point.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/HermiteSpline.html#inTangents">Online Documentation</a>
      */
-    val inTangents: Array<out Cartesian3>
+    val inTangents: ReadonlyArray<Cartesian3>
 
     /**
      * An array of outgoing tangents at each control point.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/HermiteSpline.html#outTangents">Online Documentation</a>
      */
-    val outTangents: Array<out Cartesian3>
+    val outTangents: ReadonlyArray<Cartesian3>
 
     /**
      * Finds an index `i` in `times` such that the parameter
@@ -160,9 +162,9 @@ external class HermiteSpline(options: ConstructorOptions) {
          * @property [tangents] The array of tangents at the control points.
          */
         interface CreateC1Options {
-            var times: Array<out Double>
-            var points: Array<out Cartesian3>
-            var tangents: Array<out Cartesian3>
+            var times: ReadonlyArray<Double>
+            var points: ReadonlyArray<Cartesian3>
+            var tangents: ReadonlyArray<Cartesian3>
         }
 
         /**
@@ -191,8 +193,8 @@ external class HermiteSpline(options: ConstructorOptions) {
          * @property [points] The array of control points.
          */
         interface CreateNaturalCubicOptions {
-            var times: Array<out Double>
-            var points: Array<out Cartesian3>
+            var times: ReadonlyArray<Double>
+            var points: ReadonlyArray<Cartesian3>
         }
 
         /**
@@ -225,8 +227,8 @@ external class HermiteSpline(options: ConstructorOptions) {
          * @property [lastTangent] The incoming tangent of the last control point.
          */
         interface CreateClampedCubicOptions {
-            var times: Array<out Double>
-            var points: Array<out Cartesian3 /* or number */>
+            var times: ReadonlyArray<Double>
+            var points: ReadonlyArray<Cartesian3 /* or number */>
             var firstTangent: Cartesian3
             var lastTangent: Cartesian3
         }

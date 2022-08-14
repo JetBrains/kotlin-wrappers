@@ -9,6 +9,8 @@
 
 package cesium
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * A policy for discarding tile images that match a known image containing a
  * "missing" image.
@@ -26,7 +28,7 @@ external class DiscardMissingTileImagePolicy(options: ConstructorOptions) : Tile
      */
     interface ConstructorOptions {
         var missingImageUrl: Resource
-        var pixelsToCheck: Array<out Cartesian2>
+        var pixelsToCheck: ReadonlyArray<Cartesian2>
         var disableCheckIfAllPixelsAreTransparent: Boolean?
     }
 

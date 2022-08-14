@@ -9,6 +9,8 @@
 
 package cesium
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * A [DataSource] which processes Keyhole Markup Language 2.2 (KML).
  *
@@ -128,7 +130,7 @@ external class KmlDataSource(options: ConstructorOptions? = definedExternally) {
      * Gets the KML Tours that are used to guide the camera to specified destinations on given time intervals.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/KmlDataSource.html#kmlTours">Online Documentation</a>
      */
-    var kmlTours: Array<out KmlTour>
+    var kmlTours: ReadonlyArray<KmlTour>
 
     /**
      * Asynchronously loads the provided KML data, replacing any existing data.

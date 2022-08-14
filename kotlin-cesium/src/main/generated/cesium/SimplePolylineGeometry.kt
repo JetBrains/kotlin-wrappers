@@ -9,6 +9,8 @@
 
 package cesium
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * A description of a polyline modeled as a line strip; the first two positions define a line segment,
  * and each additional position defines a line segment from the previous position.
@@ -39,8 +41,8 @@ external class SimplePolylineGeometry(options: ConstructorOptions) {
      *   Default value - [Ellipsoid.WGS84]
      */
     interface ConstructorOptions {
-        var positions: Array<out Cartesian3>
-        var colors: Array<out Color>?
+        var positions: ReadonlyArray<Cartesian3>
+        var colors: ReadonlyArray<Color>?
         var colorsPerVertex: Boolean?
         var arcType: ArcType?
         var granularity: Double?
@@ -65,9 +67,9 @@ external class SimplePolylineGeometry(options: ConstructorOptions) {
          */
         fun pack(
             value: SimplePolylineGeometry,
-            array: Array<out Double>,
+            array: ReadonlyArray<Double>,
             startingIndex: Int? = definedExternally,
-        ): Array<out Double>
+        ): ReadonlyArray<Double>
 
         /**
          * Retrieves an instance from a packed array.
@@ -79,7 +81,7 @@ external class SimplePolylineGeometry(options: ConstructorOptions) {
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/SimplePolylineGeometry.html#.unpack">Online Documentation</a>
          */
         fun unpack(
-            array: Array<out Double>,
+            array: ReadonlyArray<Double>,
             startingIndex: Int? = definedExternally,
             result: SimplePolylineGeometry? = definedExternally,
         ): SimplePolylineGeometry

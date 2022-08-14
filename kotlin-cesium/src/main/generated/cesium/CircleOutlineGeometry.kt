@@ -9,6 +9,8 @@
 
 package cesium
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * A description of the outline of a circle on the ellipsoid.
  * ```
@@ -64,9 +66,9 @@ external class CircleOutlineGeometry(options: ConstructorOptions) {
          */
         override fun pack(
             value: CircleOutlineGeometry,
-            array: Array<out Double>,
+            array: ReadonlyArray<Double>,
             startingIndex: Int?,
-        ): Array<out Double>
+        ): ReadonlyArray<Double>
 
         /**
          * Retrieves an instance from a packed array.
@@ -78,7 +80,7 @@ external class CircleOutlineGeometry(options: ConstructorOptions) {
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CircleOutlineGeometry.html#.unpack">Online Documentation</a>
          */
         override fun unpack(
-            array: Array<out Double>,
+            array: ReadonlyArray<Double>,
             startingIndex: Int?,
             result: CircleOutlineGeometry?,
         ): CircleOutlineGeometry

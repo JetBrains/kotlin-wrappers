@@ -5,6 +5,8 @@
 
 package cesium
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * Uses the Tridiagonal Matrix Algorithm, also known as the Thomas Algorithm, to solve
  * a system of linear equations where the coefficient matrix is a tridiagonal matrix.
@@ -35,9 +37,9 @@ external object TridiagonalSystemSolver {
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TridiagonalSystemSolver.html#.solve">Online Documentation</a>
      */
     fun solve(
-        diagonal: Array<out Double>,
-        lower: Array<out Double>,
-        upper: Array<out Double>,
-        right: Array<out Cartesian3>,
-    ): Array<out Cartesian3>
+        diagonal: ReadonlyArray<Double>,
+        lower: ReadonlyArray<Double>,
+        upper: ReadonlyArray<Double>,
+        right: ReadonlyArray<Cartesian3>,
+    ): ReadonlyArray<Cartesian3>
 }

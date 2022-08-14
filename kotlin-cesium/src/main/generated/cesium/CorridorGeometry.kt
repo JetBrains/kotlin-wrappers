@@ -9,6 +9,8 @@
 
 package cesium
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * A description of a corridor. Corridor geometry can be rendered with both [Primitive] and [GroundPrimitive].
  * ```
@@ -37,7 +39,7 @@ external class CorridorGeometry(options: ConstructorOptions) {
      *   Default value - [CornerType.ROUNDED]
      */
     interface ConstructorOptions {
-        var positions: Array<out Cartesian3>
+        var positions: ReadonlyArray<Cartesian3>
         var width: Double
         var ellipsoid: Ellipsoid?
         var granularity: Double?
@@ -65,9 +67,9 @@ external class CorridorGeometry(options: ConstructorOptions) {
          */
         fun pack(
             value: CorridorGeometry,
-            array: Array<out Double>,
+            array: ReadonlyArray<Double>,
             startingIndex: Int? = definedExternally,
-        ): Array<out Double>
+        ): ReadonlyArray<Double>
 
         /**
          * Retrieves an instance from a packed array.
@@ -79,7 +81,7 @@ external class CorridorGeometry(options: ConstructorOptions) {
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CorridorGeometry.html#.unpack">Online Documentation</a>
          */
         fun unpack(
-            array: Array<out Double>,
+            array: ReadonlyArray<Double>,
             startingIndex: Int? = definedExternally,
             result: CorridorGeometry? = definedExternally,
         ): CorridorGeometry
@@ -104,7 +106,7 @@ external class CorridorGeometry(options: ConstructorOptions) {
          *   Default value - [CornerType.ROUNDED]
          */
         interface ComputeRectangleOptions {
-            var positions: Array<out Cartesian3>
+            var positions: ReadonlyArray<Cartesian3>
             var width: Double
             var ellipsoid: Ellipsoid?
             var cornerType: CornerType?

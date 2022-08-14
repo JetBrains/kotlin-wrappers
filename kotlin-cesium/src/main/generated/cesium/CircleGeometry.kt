@@ -9,6 +9,8 @@
 
 package cesium
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * A description of a circle on the ellipsoid. Circle geometry can be rendered with both [Primitive] and [GroundPrimitive].
  * ```
@@ -67,9 +69,9 @@ external class CircleGeometry(options: ConstructorOptions) {
          */
         override fun pack(
             value: CircleGeometry,
-            array: Array<out Double>,
+            array: ReadonlyArray<Double>,
             startingIndex: Int?,
-        ): Array<out Double>
+        ): ReadonlyArray<Double>
 
         /**
          * Retrieves an instance from a packed array.
@@ -81,7 +83,7 @@ external class CircleGeometry(options: ConstructorOptions) {
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CircleGeometry.html#.unpack">Online Documentation</a>
          */
         override fun unpack(
-            array: Array<out Double>,
+            array: ReadonlyArray<Double>,
             startingIndex: Int?,
             result: CircleGeometry?,
         ): CircleGeometry

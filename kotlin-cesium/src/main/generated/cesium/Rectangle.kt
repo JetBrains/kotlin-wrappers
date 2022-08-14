@@ -9,6 +9,8 @@
 
 package cesium
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * A two dimensional region specified as longitude and latitude coordinates.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Rectangle.html">Online Documentation</a>
@@ -83,9 +85,9 @@ external class Rectangle(
          */
         override fun pack(
             value: Rectangle,
-            array: Array<out Double>,
+            array: ReadonlyArray<Double>,
             startingIndex: Int?,
-        ): Array<out Double>
+        ): ReadonlyArray<Double>
 
         /**
          * Retrieves an instance from a packed array.
@@ -97,7 +99,7 @@ external class Rectangle(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Rectangle.html#.unpack">Online Documentation</a>
          */
         override fun unpack(
-            array: Array<out Double>,
+            array: ReadonlyArray<Double>,
             startingIndex: Int?,
             result: Rectangle?,
         ): Rectangle
@@ -176,7 +178,7 @@ external class Rectangle(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Rectangle.html#.fromCartographicArray">Online Documentation</a>
          */
         fun fromCartographicArray(
-            cartographics: Array<out Cartographic>,
+            cartographics: ReadonlyArray<Cartographic>,
             result: Rectangle? = definedExternally,
         ): Rectangle
 
@@ -190,7 +192,7 @@ external class Rectangle(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Rectangle.html#.fromCartesianArray">Online Documentation</a>
          */
         fun fromCartesianArray(
-            cartesians: Array<out Cartesian3>,
+            cartesians: ReadonlyArray<Cartesian3>,
             ellipsoid: Ellipsoid? = definedExternally,
             result: Rectangle? = definedExternally,
         ): Rectangle
@@ -396,8 +398,8 @@ external class Rectangle(
             rectangle: Rectangle,
             ellipsoid: Ellipsoid? = definedExternally,
             surfaceHeight: Double? = definedExternally,
-            result: Array<out Cartesian3>? = definedExternally,
-        ): Array<out Cartesian3>
+            result: ReadonlyArray<Cartesian3>? = definedExternally,
+        ): ReadonlyArray<Cartesian3>
 
         /**
          * Computes a subsection of a rectangle from normalized coordinates in the range [0.0, 1.0].

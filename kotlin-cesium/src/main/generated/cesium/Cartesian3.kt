@@ -9,6 +9,8 @@
 
 package cesium
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * A 3D Cartesian point.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cartesian3.html">Online Documentation</a>
@@ -124,9 +126,9 @@ external class Cartesian3(
          */
         override fun pack(
             value: Cartesian3,
-            array: Array<out Double>,
+            array: ReadonlyArray<Double>,
             startingIndex: Int?,
-        ): Array<out Double>
+        ): ReadonlyArray<Double>
 
         /**
          * Retrieves an instance from a packed array.
@@ -138,7 +140,7 @@ external class Cartesian3(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cartesian3.html#.unpack">Online Documentation</a>
          */
         override fun unpack(
-            array: Array<out Double>,
+            array: ReadonlyArray<Double>,
             startingIndex: Int?,
             result: Cartesian3?,
         ): Cartesian3
@@ -151,9 +153,9 @@ external class Cartesian3(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cartesian3.html#.packArray">Online Documentation</a>
          */
         fun packArray(
-            array: Array<out Cartesian3>,
-            result: Array<out Double>? = definedExternally,
-        ): Array<out Double>
+            array: ReadonlyArray<Cartesian3>,
+            result: ReadonlyArray<Double>? = definedExternally,
+        ): ReadonlyArray<Double>
 
         /**
          * Unpacks an array of cartesian components into an array of Cartesian3s.
@@ -163,9 +165,9 @@ external class Cartesian3(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cartesian3.html#.unpackArray">Online Documentation</a>
          */
         fun unpackArray(
-            array: Array<out Double>,
-            result: Array<out Cartesian3>? = definedExternally,
-        ): Array<out Cartesian3>
+            array: ReadonlyArray<Double>,
+            result: ReadonlyArray<Cartesian3>? = definedExternally,
+        ): ReadonlyArray<Cartesian3>
 
         /**
          * Creates a Cartesian3 from three consecutive elements in an array.
@@ -186,7 +188,7 @@ external class Cartesian3(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cartesian3.html#.fromArray">Online Documentation</a>
          */
         fun fromArray(
-            array: Array<out Double>,
+            array: ReadonlyArray<Double>,
             startingIndex: Int? = definedExternally,
             result: Cartesian3? = definedExternally,
         ): Cartesian3
@@ -606,10 +608,10 @@ external class Cartesian3(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cartesian3.html#.fromDegreesArray">Online Documentation</a>
          */
         fun fromDegreesArray(
-            coordinates: Array<out Double>,
+            coordinates: ReadonlyArray<Double>,
             ellipsoid: Ellipsoid? = definedExternally,
-            result: Array<out Cartesian3>? = definedExternally,
-        ): Array<out Cartesian3>
+            result: ReadonlyArray<Cartesian3>? = definedExternally,
+        ): ReadonlyArray<Cartesian3>
 
         /**
          * Returns an array of Cartesian3 positions given an array of longitude and latitude values given in radians.
@@ -624,10 +626,10 @@ external class Cartesian3(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cartesian3.html#.fromRadiansArray">Online Documentation</a>
          */
         fun fromRadiansArray(
-            coordinates: Array<out Double>,
+            coordinates: ReadonlyArray<Double>,
             ellipsoid: Ellipsoid? = definedExternally,
-            result: Array<out Cartesian3>? = definedExternally,
-        ): Array<out Cartesian3>
+            result: ReadonlyArray<Cartesian3>? = definedExternally,
+        ): ReadonlyArray<Cartesian3>
 
         /**
          * Returns an array of Cartesian3 positions given an array of longitude, latitude and height values where longitude and latitude are given in degrees.
@@ -642,10 +644,10 @@ external class Cartesian3(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cartesian3.html#.fromDegreesArrayHeights">Online Documentation</a>
          */
         fun fromDegreesArrayHeights(
-            coordinates: Array<out Double>,
+            coordinates: ReadonlyArray<Double>,
             ellipsoid: Ellipsoid? = definedExternally,
-            result: Array<out Cartesian3>? = definedExternally,
-        ): Array<out Cartesian3>
+            result: ReadonlyArray<Cartesian3>? = definedExternally,
+        ): ReadonlyArray<Cartesian3>
 
         /**
          * Returns an array of Cartesian3 positions given an array of longitude, latitude and height values where longitude and latitude are given in radians.
@@ -660,10 +662,10 @@ external class Cartesian3(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cartesian3.html#.fromRadiansArrayHeights">Online Documentation</a>
          */
         fun fromRadiansArrayHeights(
-            coordinates: Array<out Double>,
+            coordinates: ReadonlyArray<Double>,
             ellipsoid: Ellipsoid? = definedExternally,
-            result: Array<out Cartesian3>? = definedExternally,
-        ): Array<out Cartesian3>
+            result: ReadonlyArray<Cartesian3>? = definedExternally,
+        ): ReadonlyArray<Cartesian3>
 
         /**
          * An immutable Cartesian3 instance initialized to (0.0, 0.0, 0.0).

@@ -9,6 +9,8 @@
 
 package cesium
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * Describes a frustum at the given the origin and orientation.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/FrustumGeometry.html">Online Documentation</a>
@@ -46,9 +48,9 @@ external class FrustumGeometry(options: ConstructorOptions) {
          */
         fun pack(
             value: FrustumGeometry,
-            array: Array<out Double>,
+            array: ReadonlyArray<Double>,
             startingIndex: Int? = definedExternally,
-        ): Array<out Double>
+        ): ReadonlyArray<Double>
 
         /**
          * Retrieves an instance from a packed array.
@@ -59,7 +61,7 @@ external class FrustumGeometry(options: ConstructorOptions) {
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/FrustumGeometry.html#.unpack">Online Documentation</a>
          */
         fun unpack(
-            array: Array<out Double>,
+            array: ReadonlyArray<Double>,
             startingIndex: Int? = definedExternally,
             result: FrustumGeometry? = definedExternally,
         )

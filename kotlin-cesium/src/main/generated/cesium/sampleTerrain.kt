@@ -5,6 +5,8 @@
 
 package cesium
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * Initiates a terrain height query for an array of [Cartographic] positions by
  * requesting tiles from a terrain provider, sampling, and interpolating.  The interpolation
@@ -40,5 +42,5 @@ package cesium
 external fun sampleTerrain(
     terrainProvider: TerrainProvider,
     level: Int,
-    positions: Array<out Cartographic>,
-): kotlin.js.Promise<Array<out Cartographic>>
+    positions: ReadonlyArray<Cartographic>,
+): kotlin.js.Promise<ReadonlyArray<Cartographic>>

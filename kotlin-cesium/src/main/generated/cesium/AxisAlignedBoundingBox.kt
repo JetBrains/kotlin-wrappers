@@ -9,6 +9,8 @@
 
 package cesium
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * Creates an instance of an AxisAlignedBoundingBox from the minimum and maximum points along the x, y, and z axes.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/AxisAlignedBoundingBox.html">Online Documentation</a>
@@ -77,7 +79,7 @@ external class AxisAlignedBoundingBox(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/AxisAlignedBoundingBox.html#.fromPoints">Online Documentation</a>
          */
         fun fromPoints(
-            positions: Array<out Cartesian3>,
+            positions: ReadonlyArray<Cartesian3>,
             result: AxisAlignedBoundingBox? = definedExternally,
         ): AxisAlignedBoundingBox
 

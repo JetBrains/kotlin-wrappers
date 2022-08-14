@@ -9,6 +9,8 @@
 
 package cesium
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * Provides tiled imagery using the Bing Maps Imagery REST API.
  * ```
@@ -219,7 +221,7 @@ external class BingMapsImageryProvider(options: ConstructorOptions) {
         x: Double,
         y: Double,
         level: Int,
-    ): Array<out Credit>
+    ): ReadonlyArray<Credit>
 
     /**
      * Requests the image for a given tile.  This function should

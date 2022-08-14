@@ -9,6 +9,8 @@
 
 package cesium
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * A collection of [PostProcessStage]s or other post-process composite stages that execute together logically.
  *
@@ -75,7 +77,7 @@ external class PostProcessStageComposite(options: ConstructorOptions) {
      * @property [uniforms] An alias to the uniforms of post-process stages.
      */
     interface ConstructorOptions {
-        var stages: Array<out Any>
+        var stages: ReadonlyArray<Any>
         var inputPreviousStageTexture: Boolean?
         var name: String?
         var uniforms: Any?
@@ -124,7 +126,7 @@ external class PostProcessStageComposite(options: ConstructorOptions) {
      * The features selected for applying the post-process.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PostProcessStageComposite.html#selected">Online Documentation</a>
      */
-    var selected: Array<out Any>
+    var selected: ReadonlyArray<Any>
 
     /**
      * Gets the post-process stage at `index`

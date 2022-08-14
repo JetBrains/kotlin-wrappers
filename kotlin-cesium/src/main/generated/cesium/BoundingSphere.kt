@@ -9,6 +9,8 @@
 
 package cesium
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * A bounding sphere with a center and a radius.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BoundingSphere.html">Online Documentation</a>
@@ -101,7 +103,7 @@ external class BoundingSphere(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BoundingSphere.html#.fromPoints">Online Documentation</a>
          */
         fun fromPoints(
-            positions: Array<out Cartesian3>? = definedExternally,
+            positions: ReadonlyArray<Cartesian3>? = definedExternally,
             result: BoundingSphere? = definedExternally,
         ): BoundingSphere
 
@@ -194,7 +196,7 @@ external class BoundingSphere(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BoundingSphere.html#.fromVertices">Online Documentation</a>
          */
         fun fromVertices(
-            positions: Array<out Double>? = definedExternally,
+            positions: ReadonlyArray<Double>? = definedExternally,
             center: Cartesian3? = definedExternally,
             stride: Int? = definedExternally,
             result: BoundingSphere? = definedExternally,
@@ -214,8 +216,8 @@ external class BoundingSphere(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BoundingSphere.html#.fromEncodedCartesianVertices">Online Documentation</a>
          */
         fun fromEncodedCartesianVertices(
-            positionsHigh: Array<out Double>? = definedExternally,
-            positionsLow: Array<out Double>? = definedExternally,
+            positionsHigh: ReadonlyArray<Double>? = definedExternally,
+            positionsLow: ReadonlyArray<Double>? = definedExternally,
             result: BoundingSphere? = definedExternally,
         ): BoundingSphere
 
@@ -261,7 +263,7 @@ external class BoundingSphere(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BoundingSphere.html#.fromBoundingSpheres">Online Documentation</a>
          */
         fun fromBoundingSpheres(
-            boundingSpheres: Array<out BoundingSphere>? = definedExternally,
+            boundingSpheres: ReadonlyArray<BoundingSphere>? = definedExternally,
             result: BoundingSphere? = definedExternally,
         ): BoundingSphere
 
@@ -318,9 +320,9 @@ external class BoundingSphere(
          */
         override fun pack(
             value: BoundingSphere,
-            array: Array<out Double>,
+            array: ReadonlyArray<Double>,
             startingIndex: Int?,
-        ): Array<out Double>
+        ): ReadonlyArray<Double>
 
         /**
          * Retrieves an instance from a packed array.
@@ -332,7 +334,7 @@ external class BoundingSphere(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BoundingSphere.html#.unpack">Online Documentation</a>
          */
         override fun unpack(
-            array: Array<out Double>,
+            array: ReadonlyArray<Double>,
             startingIndex: Int?,
             result: BoundingSphere?,
         ): BoundingSphere

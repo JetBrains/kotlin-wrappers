@@ -9,6 +9,8 @@
 
 package cesium
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * A primitive represents geometry in the [Scene].  The geometry can be from a single [GeometryInstance]
  * as shown in example 1 below, or from an array of instances, even if the geometry is from different
@@ -124,7 +126,7 @@ external class Primitive(options: ConstructorOptions? = definedExternally) {
      *   Default value - [ShadowMode.DISABLED]
      */
     interface ConstructorOptions {
-        var geometryInstances: Array<out GeometryInstance>?
+        var geometryInstances: ReadonlyArray<GeometryInstance>?
         var appearance: Appearance?
         var depthFailAppearance: Appearance?
         var show: Boolean?
@@ -148,7 +150,7 @@ external class Primitive(options: ConstructorOptions? = definedExternally) {
      * Changing this property after the primitive is rendered has no effect.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Primitive.html#geometryInstances">Online Documentation</a>
      */
-    val geometryInstances: Array<out GeometryInstance>
+    val geometryInstances: ReadonlyArray<GeometryInstance>
 
     /**
      * The [Appearance] used to shade this primitive. Each geometry

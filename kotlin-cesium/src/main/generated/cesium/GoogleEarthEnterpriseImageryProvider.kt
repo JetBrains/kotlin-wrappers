@@ -9,6 +9,8 @@
 
 package cesium
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * Provides tiled imagery using the Google Earth Enterprise REST API.
  *
@@ -201,7 +203,7 @@ external class GoogleEarthEnterpriseImageryProvider(options: ConstructorOptions)
         x: Double,
         y: Double,
         level: Int,
-    ): Array<out Credit>
+    ): ReadonlyArray<Credit>
 
     /**
      * Requests the image for a given tile.  This function should

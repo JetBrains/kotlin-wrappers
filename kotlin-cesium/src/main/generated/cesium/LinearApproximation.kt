@@ -5,6 +5,8 @@
 
 package cesium
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * An [InterpolationAlgorithm] for performing linear interpolation.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/LinearApproximation.html">Online Documentation</a>
@@ -35,9 +37,9 @@ external object LinearApproximation {
      */
     fun interpolateOrderZero(
         x: Double,
-        xTable: Array<out Double>,
-        yTable: Array<out Double>,
+        xTable: ReadonlyArray<Double>,
+        yTable: ReadonlyArray<Double>,
         yStride: Double,
-        result: Array<out Double>? = definedExternally,
-    ): Array<out Double>
+        result: ReadonlyArray<Double>? = definedExternally,
+    ): ReadonlyArray<Double>
 }

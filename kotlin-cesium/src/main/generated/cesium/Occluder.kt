@@ -9,6 +9,8 @@
 
 package cesium
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * Creates an Occluder derived from an object's position and radius, as well as the camera position.
  * The occluder can be used to determine whether or not other objects are visible or hidden behind the
@@ -131,7 +133,7 @@ external class Occluder(
         fun computeOccludeePoint(
             occluderBoundingSphere: BoundingSphere,
             occludeePosition: Cartesian3,
-            positions: Array<out Cartesian3>,
+            positions: ReadonlyArray<Cartesian3>,
         ): Any
 
         /**

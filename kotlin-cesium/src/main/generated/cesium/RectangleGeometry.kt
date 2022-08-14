@@ -9,6 +9,8 @@
 
 package cesium
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * A description of a cartographic rectangle on an ellipsoid centered at the origin. Rectangle geometry can be rendered with both [Primitive] and [GroundPrimitive].
  * ```
@@ -77,9 +79,9 @@ external class RectangleGeometry(options: ConstructorOptions) {
          */
         override fun pack(
             value: RectangleGeometry,
-            array: Array<out Double>,
+            array: ReadonlyArray<Double>,
             startingIndex: Int?,
-        ): Array<out Double>
+        ): ReadonlyArray<Double>
 
         /**
          * Retrieves an instance from a packed array.
@@ -91,7 +93,7 @@ external class RectangleGeometry(options: ConstructorOptions) {
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/RectangleGeometry.html#.unpack">Online Documentation</a>
          */
         override fun unpack(
-            array: Array<out Double>,
+            array: ReadonlyArray<Double>,
             startingIndex: Int?,
             result: RectangleGeometry?,
         ): RectangleGeometry

@@ -5,6 +5,8 @@
 
 package cesium
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * A renderable polyline. Create this by calling [PolylineCollection.add]
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Polyline.html">Online Documentation</a>
@@ -35,7 +37,7 @@ external class Polyline(
         var width: Double?
         var loop: Boolean?
         var material: Material?
-        var positions: Array<out Cartesian3>?
+        var positions: ReadonlyArray<Cartesian3>?
         var id: Any?
         var distanceDisplayCondition: DistanceDisplayCondition?
     }
@@ -58,7 +60,7 @@ external class Polyline(
      * ```
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Polyline.html#positions">Online Documentation</a>
      */
-    var positions: Array<out Cartesian3>
+    var positions: ReadonlyArray<Cartesian3>
 
     /**
      * Gets or sets the surface appearance of the polyline.  This can be one of several built-in [Material] objects or a custom material, scripted with

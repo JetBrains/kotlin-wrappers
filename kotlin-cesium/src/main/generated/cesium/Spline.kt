@@ -5,6 +5,8 @@
 
 package cesium
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * Creates a curve parameterized and evaluated by time. This type describes an interface
  * and is not intended to be instantiated directly.
@@ -15,7 +17,7 @@ abstract external class Spline {
      * An array of times for the control points.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Spline.html#times">Online Documentation</a>
      */
-    abstract var times: Array<out Double>
+    abstract var times: ReadonlyArray<Double>
 
     /**
      * An array of control points.

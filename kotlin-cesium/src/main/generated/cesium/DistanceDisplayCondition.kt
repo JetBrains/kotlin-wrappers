@@ -9,6 +9,8 @@
 
 package cesium
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * Determines visibility based on the distance to the camera.
  * ```
@@ -54,9 +56,9 @@ external class DistanceDisplayCondition(
          */
         override fun pack(
             value: DistanceDisplayCondition,
-            array: Array<out Double>,
+            array: ReadonlyArray<Double>,
             startingIndex: Int?,
-        ): Array<out Double>
+        ): ReadonlyArray<Double>
 
         /**
          * Retrieves an instance from a packed array.
@@ -68,7 +70,7 @@ external class DistanceDisplayCondition(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/DistanceDisplayCondition.html#.unpack">Online Documentation</a>
          */
         override fun unpack(
-            array: Array<out Double>,
+            array: ReadonlyArray<Double>,
             startingIndex: Int?,
             result: DistanceDisplayCondition?,
         ): DistanceDisplayCondition

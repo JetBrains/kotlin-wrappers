@@ -9,6 +9,8 @@
 
 package cesium
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * The view model for the [Geocoder] widget.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GeocoderViewModel.html">Online Documentation</a>
@@ -25,7 +27,7 @@ external class GeocoderViewModel(options: ConstructorOptions) {
      */
     interface ConstructorOptions {
         var scene: Scene
-        var geocoderServices: Array<out GeocoderService>?
+        var geocoderServices: ReadonlyArray<GeocoderService>?
         var flightDuration: Double?
         var destinationFound: DestinationFoundFunction?
     }
@@ -97,7 +99,7 @@ external class GeocoderViewModel(options: ConstructorOptions) {
      * Gets the list of geocoder search suggestions
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GeocoderViewModel.html#suggestions">Online Documentation</a>
      */
-    var suggestions: Array<out Any>
+    var suggestions: ReadonlyArray<Any>
 
     /**
      * Destroys the widget.  Should be called if permanently

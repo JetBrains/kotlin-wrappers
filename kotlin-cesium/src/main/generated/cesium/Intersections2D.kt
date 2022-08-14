@@ -5,6 +5,8 @@
 
 package cesium
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * Contains functions for operating on 2D triangles.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Intersections2D.html">Online Documentation</a>
@@ -42,8 +44,8 @@ external object Intersections2D {
         u0: Double,
         u1: Double,
         u2: Double,
-        result: Array<out Double>? = definedExternally,
-    ): Array<out Double>
+        result: ReadonlyArray<Double>? = definedExternally,
+    ): ReadonlyArray<Double>
 
     /**
      * Compute the barycentric coordinates of a 2D position within a 2D triangle.

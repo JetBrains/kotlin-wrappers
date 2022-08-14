@@ -9,6 +9,8 @@
 
 package cesium
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * A description of an ellipsoid centered at the origin.
  * ```
@@ -71,9 +73,9 @@ external class EllipsoidGeometry(options: ConstructorOptions? = definedExternall
          */
         override fun pack(
             value: EllipsoidGeometry,
-            array: Array<out Double>,
+            array: ReadonlyArray<Double>,
             startingIndex: Int?,
-        ): Array<out Double>
+        ): ReadonlyArray<Double>
 
         /**
          * Retrieves an instance from a packed array.
@@ -85,7 +87,7 @@ external class EllipsoidGeometry(options: ConstructorOptions? = definedExternall
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/EllipsoidGeometry.html#.unpack">Online Documentation</a>
          */
         override fun unpack(
-            array: Array<out Double>,
+            array: ReadonlyArray<Double>,
             startingIndex: Int?,
             result: EllipsoidGeometry?,
         ): EllipsoidGeometry

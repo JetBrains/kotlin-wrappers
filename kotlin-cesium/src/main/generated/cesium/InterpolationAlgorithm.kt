@@ -9,6 +9,8 @@
 
 package cesium
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * The interface for interpolation algorithms.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/InterpolationAlgorithm.html">Online Documentation</a>
@@ -46,11 +48,11 @@ external interface InterpolationAlgorithm {
          */
         fun interpolateOrderZero(
             x: Double,
-            xTable: Array<out Double>,
-            yTable: Array<out Double>,
+            xTable: ReadonlyArray<Double>,
+            yTable: ReadonlyArray<Double>,
             yStride: Double,
-            result: Array<out Double>? = definedExternally,
-        ): Array<out Double>
+            result: ReadonlyArray<Double>? = definedExternally,
+        ): ReadonlyArray<Double>
 
         /**
          * Performs higher order interpolation.  Not all interpolators need to support high-order interpolation,
@@ -70,12 +72,12 @@ external interface InterpolationAlgorithm {
          */
         fun interpolate(
             x: Double,
-            xTable: Array<out Double>,
-            yTable: Array<out Double>,
+            xTable: ReadonlyArray<Double>,
+            yTable: ReadonlyArray<Double>,
             yStride: Double,
             inputOrder: Int,
             outputOrder: Int,
-            result: Array<out Double>? = definedExternally,
-        ): Array<out Double>
+            result: ReadonlyArray<Double>? = definedExternally,
+        ): ReadonlyArray<Double>
     }
 }

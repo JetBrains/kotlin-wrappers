@@ -9,6 +9,8 @@
 
 package cesium
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * An [ImageryProvider] that draws a wireframe grid on every tile with controllable background and glow.
  * May be useful for custom rendering effects or debugging terrain.
@@ -199,7 +201,7 @@ external class GridImageryProvider(options: ConstructorOptions) {
         x: Double,
         y: Double,
         level: Int,
-    ): Array<out Credit>
+    ): ReadonlyArray<Credit>
 
     /**
      * Requests the image for a given tile.  This function should

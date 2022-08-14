@@ -10,6 +10,8 @@
 
 package cesium
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * The view model for the [Animation] widget.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/AnimationViewModel.html">Online Documentation</a>
@@ -62,7 +64,7 @@ external class AnimationViewModel(var clockViewModel: ClockViewModel) {
      * @return The array of known clock multipliers associated with the shuttle ring.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/AnimationViewModel.html#getShuttleRingTicks">Online Documentation</a>
      */
-    fun getShuttleRingTicks(): Array<out Double>
+    fun getShuttleRingTicks(): ReadonlyArray<Double>
 
     /**
      * Sets the array of positive known clock multipliers to associate with the shuttle ring.
@@ -73,7 +75,7 @@ external class AnimationViewModel(var clockViewModel: ClockViewModel) {
      * @param [positiveTicks] The list of known positive clock multipliers to associate with the shuttle ring.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/AnimationViewModel.html#setShuttleRingTicks">Online Documentation</a>
      */
-    fun setShuttleRingTicks(positiveTicks: Array<out Double>)
+    fun setShuttleRingTicks(positiveTicks: ReadonlyArray<Double>)
 
     /**
      * Gets a command that decreases the speed of animation.
@@ -134,7 +136,7 @@ external class AnimationViewModel(var clockViewModel: ClockViewModel) {
          * Gets or sets the default array of known clock multipliers associated with new instances of the shuttle ring.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/AnimationViewModel.html#.defaultTicks">Online Documentation</a>
          */
-        var defaultTicks: Array<out Double>
+        var defaultTicks: ReadonlyArray<Double>
 
         /**
          * Gets or sets the default time formatter used by new instances.

@@ -9,6 +9,8 @@
 
 package cesium
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * Provides a single, top-level imagery tile.  The single image is assumed to use a
  * [GeographicTilingScheme].
@@ -193,7 +195,7 @@ external class SingleTileImageryProvider(options: ConstructorOptions) {
         x: Double,
         y: Double,
         level: Int,
-    ): Array<out Credit>
+    ): ReadonlyArray<Credit>
 
     /**
      * Requests the image for a given tile.  This function should

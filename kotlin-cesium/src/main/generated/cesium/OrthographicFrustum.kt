@@ -9,6 +9,8 @@
 
 package cesium
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * The viewing frustum is defined by 6 planes.
  * Each plane is represented by a [Cartesian4] object, where the x, y, and z components
@@ -139,9 +141,9 @@ external class OrthographicFrustum {
          */
         override fun pack(
             value: OrthographicFrustum,
-            array: Array<out Double>,
+            array: ReadonlyArray<Double>,
             startingIndex: Int?,
-        ): Array<out Double>
+        ): ReadonlyArray<Double>
 
         /**
          * Retrieves an instance from a packed array.
@@ -153,7 +155,7 @@ external class OrthographicFrustum {
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/OrthographicFrustum.html#.unpack">Online Documentation</a>
          */
         override fun unpack(
-            array: Array<out Double>,
+            array: ReadonlyArray<Double>,
             startingIndex: Int?,
             result: OrthographicFrustum?,
         ): OrthographicFrustum

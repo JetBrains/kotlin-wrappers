@@ -5,6 +5,8 @@
 
 package cesium
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * A point feature of a [Cesium3DTileset].
  *
@@ -253,7 +255,7 @@ external class Cesium3DTilePointFeature {
      * @return The names of the feature's properties.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTilePointFeature.html#getPropertyNames">Online Documentation</a>
      */
-    fun getPropertyNames(results: Array<out String>? = definedExternally): Array<out String>
+    fun getPropertyNames(results: ReadonlyArray<String>? = definedExternally): ReadonlyArray<String>
 
     /**
      * Returns an array of property IDs for the feature. This includes properties from this feature's
@@ -262,7 +264,7 @@ external class Cesium3DTilePointFeature {
      * @return The IDs of the feature's properties.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTilePointFeature.html#getPropertyIds">Online Documentation</a>
      */
-    fun getPropertyIds(results: Array<out String>? = definedExternally): Array<out String>
+    fun getPropertyIds(results: ReadonlyArray<String>? = definedExternally): ReadonlyArray<String>
 
     /**
      * Returns a copy of the value of the feature's property with the given name. This includes properties from this feature's

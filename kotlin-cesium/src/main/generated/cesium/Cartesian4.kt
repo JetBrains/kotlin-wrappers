@@ -9,6 +9,8 @@
 
 package cesium
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * A 4D Cartesian point.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cartesian4.html">Online Documentation</a>
@@ -117,9 +119,9 @@ external class Cartesian4(
          */
         override fun pack(
             value: Cartesian4,
-            array: Array<out Double>,
+            array: ReadonlyArray<Double>,
             startingIndex: Int?,
-        ): Array<out Double>
+        ): ReadonlyArray<Double>
 
         /**
          * Retrieves an instance from a packed array.
@@ -131,7 +133,7 @@ external class Cartesian4(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cartesian4.html#.unpack">Online Documentation</a>
          */
         override fun unpack(
-            array: Array<out Double>,
+            array: ReadonlyArray<Double>,
             startingIndex: Int?,
             result: Cartesian4?,
         ): Cartesian4
@@ -144,9 +146,9 @@ external class Cartesian4(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cartesian4.html#.packArray">Online Documentation</a>
          */
         fun packArray(
-            array: Array<out Cartesian4>,
-            result: Array<out Double>? = definedExternally,
-        ): Array<out Double>
+            array: ReadonlyArray<Cartesian4>,
+            result: ReadonlyArray<Double>? = definedExternally,
+        ): ReadonlyArray<Double>
 
         /**
          * Unpacks an array of cartesian components into an array of Cartesian4s.
@@ -156,9 +158,9 @@ external class Cartesian4(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cartesian4.html#.unpackArray">Online Documentation</a>
          */
         fun unpackArray(
-            array: Array<out Double>,
-            result: Array<out Cartesian4>? = definedExternally,
-        ): Array<out Cartesian4>
+            array: ReadonlyArray<Double>,
+            result: ReadonlyArray<Cartesian4>? = definedExternally,
+        ): ReadonlyArray<Cartesian4>
 
         /**
          * Creates a Cartesian4 from four consecutive elements in an array.
@@ -179,7 +181,7 @@ external class Cartesian4(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cartesian4.html#.fromArray">Online Documentation</a>
          */
         fun fromArray(
-            array: Array<out Double>,
+            array: ReadonlyArray<Double>,
             startingIndex: Int? = definedExternally,
             result: Cartesian4? = definedExternally,
         ): Cartesian4

@@ -9,6 +9,8 @@
 
 package cesium
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * A 2D Cartesian point.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cartesian2.html">Online Documentation</a>
@@ -120,9 +122,9 @@ external class Cartesian2(
          */
         override fun pack(
             value: Cartesian2,
-            array: Array<out Double>,
+            array: ReadonlyArray<Double>,
             startingIndex: Int?,
-        ): Array<out Double>
+        ): ReadonlyArray<Double>
 
         /**
          * Retrieves an instance from a packed array.
@@ -134,7 +136,7 @@ external class Cartesian2(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cartesian2.html#.unpack">Online Documentation</a>
          */
         override fun unpack(
-            array: Array<out Double>,
+            array: ReadonlyArray<Double>,
             startingIndex: Int?,
             result: Cartesian2?,
         ): Cartesian2
@@ -147,9 +149,9 @@ external class Cartesian2(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cartesian2.html#.packArray">Online Documentation</a>
          */
         fun packArray(
-            array: Array<out Cartesian2>,
-            result: Array<out Double>? = definedExternally,
-        ): Array<out Double>
+            array: ReadonlyArray<Cartesian2>,
+            result: ReadonlyArray<Double>? = definedExternally,
+        ): ReadonlyArray<Double>
 
         /**
          * Unpacks an array of cartesian components into an array of Cartesian2s.
@@ -159,9 +161,9 @@ external class Cartesian2(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cartesian2.html#.unpackArray">Online Documentation</a>
          */
         fun unpackArray(
-            array: Array<out Double>,
-            result: Array<out Cartesian2>? = definedExternally,
-        ): Array<out Cartesian2>
+            array: ReadonlyArray<Double>,
+            result: ReadonlyArray<Cartesian2>? = definedExternally,
+        ): ReadonlyArray<Cartesian2>
 
         /**
          * Creates a Cartesian2 from two consecutive elements in an array.
@@ -182,7 +184,7 @@ external class Cartesian2(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cartesian2.html#.fromArray">Online Documentation</a>
          */
         fun fromArray(
-            array: Array<out Double>,
+            array: ReadonlyArray<Double>,
             startingIndex: Int? = definedExternally,
             result: Cartesian2? = definedExternally,
         ): Cartesian2

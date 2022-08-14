@@ -9,6 +9,8 @@
 
 package cesium
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * Values and type information for per-instance geometry attributes.
  * ```
@@ -43,7 +45,7 @@ external class GeometryInstanceAttribute(options: ConstructorOptions) {
         var componentDatatype: ComponentDatatype
         var componentsPerAttribute: Int
         var normalize: Boolean?
-        var value: Array<out Double>
+        var value: ReadonlyArray<Double>
     }
 
     /**
@@ -104,7 +106,7 @@ external class GeometryInstanceAttribute(options: ConstructorOptions) {
      * ```
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GeometryInstanceAttribute.html#value">Online Documentation</a>
      */
-    var value: Array<out Double>
+    var value: ReadonlyArray<Double>
 }
 
 inline fun GeometryInstanceAttribute(

@@ -9,6 +9,8 @@
 
 package cesium
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * Defines how screen space objects (billboards, points, labels) are clustered.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/EntityCluster.html">Online Documentation</a>
@@ -87,7 +89,7 @@ external class EntityCluster {
  *   primitives that represent this cluster of entities.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/EntityCluster.html#.newClusterCallback">Online Documentation</a>
  */
-typealias newClusterCallback = (clusteredEntities: Array<out Entity>, cluster: dynamic) -> Unit
+typealias newClusterCallback = (clusteredEntities: ReadonlyArray<Entity>, cluster: dynamic) -> Unit
 
 inline fun EntityCluster(
     block: EntityCluster.() -> Unit,

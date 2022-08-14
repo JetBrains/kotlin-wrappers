@@ -5,6 +5,8 @@
 
 package cesium
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * Initiates a sampleTerrain() request at the maximum available tile level for a terrain dataset.
  * ```
@@ -28,5 +30,5 @@ package cesium
  */
 external fun sampleTerrainMostDetailed(
     terrainProvider: TerrainProvider,
-    positions: Array<out Cartographic>,
-): kotlin.js.Promise<Array<out Cartographic>>
+    positions: ReadonlyArray<Cartographic>,
+): kotlin.js.Promise<ReadonlyArray<Cartographic>>

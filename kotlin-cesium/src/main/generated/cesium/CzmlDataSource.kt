@@ -10,6 +10,8 @@
 
 package cesium
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * A [DataSource] which processes [CZML](https://github.com/AnalyticalGraphicsInc/czml-writer/wiki/CZML-Guide).
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CzmlDataSource.html">Online Documentation</a>
@@ -157,7 +159,7 @@ external class CzmlDataSource(var name: String = definedExternally) {
          * Gets the array of CZML processing functions.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CzmlDataSource.html#.updaters">Online Documentation</a>
          */
-        var updaters: Array<out UpdaterFunction>
+        var updaters: ReadonlyArray<UpdaterFunction>
 
         /**
          * A helper function used by custom CZML updater functions

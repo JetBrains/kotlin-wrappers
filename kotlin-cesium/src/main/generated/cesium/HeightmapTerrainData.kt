@@ -9,6 +9,8 @@
 
 package cesium
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * Terrain data for a single tile where the terrain data is represented as a heightmap.  A heightmap
  * is a rectangular array of heights in row-major order from north to south and west to east.
@@ -108,7 +110,7 @@ external class HeightmapTerrainData(options: ConstructorOptions) : TerrainData {
      * An array of credits for this tile.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/HeightmapTerrainData.html#credits">Online Documentation</a>
      */
-    override var credits: Array<out Credit>
+    override var credits: ReadonlyArray<Credit>
 
     /**
      * The water mask included in this terrain data, if any.  A water mask is a square

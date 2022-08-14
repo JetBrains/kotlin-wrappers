@@ -9,6 +9,8 @@
 
 package cesium
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * A description of a polyline on terrain or 3D Tiles. Only to be used with [GroundPolylinePrimitive].
  * ```
@@ -41,7 +43,7 @@ external class GroundPolylineGeometry(options: ConstructorOptions) {
      *   Default value - [ArcType.GEODESIC]
      */
     interface ConstructorOptions {
-        var positions: Array<out Cartesian3>
+        var positions: ReadonlyArray<Cartesian3>
         var width: Double?
         var granularity: Double?
         var loop: Boolean?
@@ -86,9 +88,9 @@ external class GroundPolylineGeometry(options: ConstructorOptions) {
          */
         fun pack(
             value: PolygonGeometry,
-            array: Array<out Double>,
+            array: ReadonlyArray<Double>,
             startingIndex: Int? = definedExternally,
-        ): Array<out Double>
+        ): ReadonlyArray<Double>
 
         /**
          * Retrieves an instance from a packed array.
@@ -99,7 +101,7 @@ external class GroundPolylineGeometry(options: ConstructorOptions) {
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GroundPolylineGeometry.html#.unpack">Online Documentation</a>
          */
         fun unpack(
-            array: Array<out Double>,
+            array: ReadonlyArray<Double>,
             startingIndex: Int? = definedExternally,
             result: PolygonGeometry? = definedExternally,
         )

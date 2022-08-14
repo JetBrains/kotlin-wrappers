@@ -9,6 +9,8 @@
 
 package cesium
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * Specifies a set of clipping planes. Clipping planes selectively disable rendering in a region on the
  * outside of the specified list of [ClippingPlane] objects for a single gltf model, 3D Tileset, or the globe.
@@ -56,7 +58,7 @@ external class ClippingPlaneCollection(options: ConstructorOptions? = definedExt
      *   Default value - `0.0`
      */
     interface ConstructorOptions {
-        var planes: Array<out ClippingPlane>?
+        var planes: ReadonlyArray<ClippingPlane>?
         var enabled: Boolean?
         var modelMatrix: Matrix4?
         var unionClippingRegions: Boolean?

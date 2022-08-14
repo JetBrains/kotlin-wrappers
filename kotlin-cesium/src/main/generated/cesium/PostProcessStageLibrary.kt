@@ -5,6 +5,8 @@
 
 package cesium
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * Contains functions for creating common post-process stages.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PostProcessStageLibrary.html">Online Documentation</a>
@@ -102,7 +104,7 @@ external object PostProcessStageLibrary {
      * @return A post-process stage that applies a silhouette effect.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PostProcessStageLibrary.html#.createSilhouetteStage">Online Documentation</a>
      */
-    fun createSilhouetteStage(edgeDetectionStages: Array<out PostProcessStage>? = definedExternally): PostProcessStageComposite
+    fun createSilhouetteStage(edgeDetectionStages: ReadonlyArray<PostProcessStage>? = definedExternally): PostProcessStageComposite
 
     /**
      * Whether or not a silhouette stage is supported.

@@ -5,6 +5,8 @@
 
 package cesium
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * A wrapper around a web worker that allows scheduling tasks for a given worker,
  * returning results asynchronously via a promise.
@@ -52,7 +54,7 @@ external class TaskProcessor(
      */
     fun scheduleTask(
         parameters: Any,
-        transferableObjects: Array<out Any>? = definedExternally,
+        transferableObjects: ReadonlyArray<Any>? = definedExternally,
     ): kotlin.js.Promise<Any>?
 
     /**
