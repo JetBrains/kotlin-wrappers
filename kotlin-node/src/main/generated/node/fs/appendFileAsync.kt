@@ -6,6 +6,7 @@
 package node.fs
 
 import kotlinx.js.Void
+import node.buffer.BufferEncoding
 import kotlin.js.Promise
 
 /**
@@ -24,7 +25,7 @@ import kotlin.js.Promise
  */
 @JsName("appendFile")
 external fun appendFileAsync(
-    path: Any, /* PathLike | FileHandle */
+    path: PathLike, /* | FileHandle */
     data: Any, /* string | Uint8Array */
-    options: Any? /* (ObjectEncodingOptions & FlagAndOpenMode) | BufferEncoding */ = definedExternally,
+    options: BufferEncoding? /* (ObjectEncodingOptions & FlagAndOpenMode) | BufferEncoding */ = definedExternally,
 ): Promise<Void>

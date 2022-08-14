@@ -3,11 +3,12 @@
 package node.fs
 
 import kotlinx.coroutines.await
+import node.buffer.BufferEncoding
 
 suspend fun appendFile(
-    path: Any, /* PathLike | FileHandle */
+    path: PathLike, /* | FileHandle */
     data: Any, /* string | Uint8Array */
-    options: Any?, /* (ObjectEncodingOptions & FlagAndOpenMode) | BufferEncoding */
+    options: BufferEncoding?, /* (ObjectEncodingOptions & FlagAndOpenMode) | BufferEncoding */
 ) {
     appendFileAsync(
         path = path,

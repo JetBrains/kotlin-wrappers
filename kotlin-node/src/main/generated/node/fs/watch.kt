@@ -6,6 +6,7 @@
 package node.fs
 
 import kotlinx.js.AsyncIterable
+import node.buffer.BufferEncoding
 
 /**
  * Watch for changes on `filename`, where `filename` is either a file or a directory, returning an `FSWatcher`.
@@ -17,5 +18,5 @@ import kotlinx.js.AsyncIterable
  */
 external fun watch(
     filename: PathLike,
-    options: Any /* WatchOptions | BufferEncoding */ = definedExternally,
+    options: BufferEncoding /* WatchOptions | BufferEncoding */ = definedExternally,
 ): AsyncIterable<FileChangeInfo<String>>
