@@ -9,6 +9,8 @@
 
 package cesium
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * Entity instances aggregate multiple forms of visualization into a single high-level object.
  * They can be created manually and added to [Viewer.entities] or be produced by
@@ -75,7 +77,7 @@ external class Entity {
      * Gets the names of all properties registered on this instance.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Entity.html#propertyNames">Online Documentation</a>
      */
-    var propertyNames: Array<out String>
+    var propertyNames: ReadonlyArray<String>
 
     /**
      * Gets or sets the billboard.

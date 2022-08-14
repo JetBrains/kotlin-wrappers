@@ -5,6 +5,8 @@
 
 package cesium
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * A quadratic surface defined in Cartesian coordinates by the equation
  * `(x / a)^2 + (y / b)^2 + (z / c)^2 = 1`.  Primarily used
@@ -147,9 +149,9 @@ external class Ellipsoid(
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Ellipsoid.html#cartographicArrayToCartesianArray">Online Documentation</a>
      */
     fun cartographicArrayToCartesianArray(
-        cartographics: Array<out Cartographic>,
-        result: Array<out Cartesian3>? = definedExternally,
-    ): Array<out Cartesian3>
+        cartographics: ReadonlyArray<Cartographic>,
+        result: ReadonlyArray<Cartesian3>? = definedExternally,
+    ): ReadonlyArray<Cartesian3>
 
     /**
      * Converts the provided cartesian to cartographic representation.
@@ -184,9 +186,9 @@ external class Ellipsoid(
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Ellipsoid.html#cartesianArrayToCartographicArray">Online Documentation</a>
      */
     fun cartesianArrayToCartographicArray(
-        cartesians: Array<out Cartesian3>,
-        result: Array<out Cartographic>? = definedExternally,
-    ): Array<out Cartographic>
+        cartesians: ReadonlyArray<Cartesian3>,
+        result: ReadonlyArray<Cartographic>? = definedExternally,
+    ): ReadonlyArray<Cartographic>
 
     /**
      * Scales the provided Cartesian position along the geodetic surface normal
@@ -336,9 +338,9 @@ external class Ellipsoid(
          */
         override fun pack(
             value: Ellipsoid,
-            array: Array<out Double>,
+            array: ReadonlyArray<Double>,
             startingIndex: Int?,
-        ): Array<out Double>
+        ): ReadonlyArray<Double>
 
         /**
          * Retrieves an instance from a packed array.
@@ -350,7 +352,7 @@ external class Ellipsoid(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Ellipsoid.html#.unpack">Online Documentation</a>
          */
         override fun unpack(
-            array: Array<out Double>,
+            array: ReadonlyArray<Double>,
             startingIndex: Int?,
             result: Ellipsoid?,
         ): Ellipsoid

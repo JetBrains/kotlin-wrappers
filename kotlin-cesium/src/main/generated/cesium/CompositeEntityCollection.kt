@@ -5,6 +5,8 @@
 
 package cesium
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * Non-destructively composites multiple [EntityCollection] instances into a single collection.
  * If a Entity with the same ID exists in multiple collections, it is non-destructively
@@ -19,14 +21,14 @@ package cesium
  * @param [owner] The data source (or composite entity collection) which created this collection.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CompositeEntityCollection.html">Online Documentation</a>
  */
-external class CompositeEntityCollection(collections: Array<out EntityCollection>? = definedExternally) {
+external class CompositeEntityCollection(collections: ReadonlyArray<EntityCollection>? = definedExternally) {
     constructor(
-        collections: Array<out EntityCollection>? = definedExternally,
+        collections: ReadonlyArray<EntityCollection>? = definedExternally,
         owner: DataSource,
     )
 
     constructor(
-        collections: Array<out EntityCollection>? = definedExternally,
+        collections: ReadonlyArray<EntityCollection>? = definedExternally,
         owner: CompositeEntityCollection,
     )
 
@@ -48,7 +50,7 @@ external class CompositeEntityCollection(collections: Array<out EntityCollection
      * This array should not be modified directly.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CompositeEntityCollection.html#values">Online Documentation</a>
      */
-    val values: Array<out Entity>
+    val values: ReadonlyArray<Entity>
 
     /**
      * Gets the owner of this composite entity collection, ie. the data source or composite entity collection which created it.

@@ -9,6 +9,8 @@
 
 package cesium
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * Provides tiled imagery using the Cesium ion REST API.
  * ```
@@ -194,7 +196,7 @@ external class IonImageryProvider(options: ConstructorOptions) {
         x: Double,
         y: Double,
         level: Int,
-    ): Array<out Credit>
+    ): ReadonlyArray<Credit>
 
     /**
      * Requests the image for a given tile.  This function should
@@ -235,7 +237,7 @@ external class IonImageryProvider(options: ConstructorOptions) {
         level: Int,
         longitude: Double,
         latitude: Double,
-    ): kotlin.js.Promise<Array<out ImageryLayerFeatureInfo>>?
+    ): kotlin.js.Promise<ReadonlyArray<ImageryLayerFeatureInfo>>?
 
     /**
      * Initialization options for the TileMapServiceImageryProvider constructor

@@ -5,6 +5,8 @@
 
 package cesium
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * Defines functions for 3rd order polynomial functions of one variable with only real coefficients.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CubicRealPolynomial.html">Online Documentation</a>
@@ -40,5 +42,5 @@ external object CubicRealPolynomial {
         b: Double,
         c: Double,
         d: Double,
-    ): Array<out Double>
+    ): ReadonlyArray<Double>
 }

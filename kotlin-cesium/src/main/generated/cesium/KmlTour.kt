@@ -9,6 +9,8 @@
 
 package cesium
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * Describes a KmlTour, which uses KmlTourFlyTo, and KmlTourWait to
  * guide the camera to a specified destinations on given time intervals.
@@ -23,7 +25,7 @@ package cesium
 external class KmlTour(
     var name: String,
     var id: String,
-    var playlist: Array<out Any>,
+    var playlist: ReadonlyArray<Any>,
 ) {
     /**
      * Index of current entry from playlist

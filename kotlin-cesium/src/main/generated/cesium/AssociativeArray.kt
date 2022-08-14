@@ -5,6 +5,8 @@
 
 package cesium
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * A collection of key-value pairs that is stored as a hash for easy
  * lookup but also provides an array for fast iteration.
@@ -23,7 +25,7 @@ external class AssociativeArray {
      * it should not be modified directly.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/AssociativeArray.html#values">Online Documentation</a>
      */
-    var values: Array<out Any>
+    var values: ReadonlyArray<Any>
 
     /**
      * Determines if the provided key is in the array.

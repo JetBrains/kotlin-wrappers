@@ -5,6 +5,8 @@
 
 package cesium
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * A collection of active model animations. Access this using [ModelExperimental.activeAnimations].
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ModelExperimentalAnimationCollection.html">Online Documentation</a>
@@ -145,7 +147,7 @@ external class ModelExperimentalAnimationCollection {
      * @return An array of [ModelExperimentalAnimation] objects, one for each animation added to the collection.  If there are no glTF animations, the array is empty.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ModelExperimentalAnimationCollection.html#addAll">Online Documentation</a>
      */
-    fun addAll(options: AddAllOptions? = definedExternally): Array<out ModelExperimentalAnimation>
+    fun addAll(options: AddAllOptions? = definedExternally): ReadonlyArray<ModelExperimentalAnimation>
 
     /**
      * @property [startTime] The scene time to start playing the animations. When this is `undefined`, the animations starts at the next frame.

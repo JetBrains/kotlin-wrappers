@@ -9,6 +9,8 @@
 
 package cesium
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * A spline that is composed of piecewise constants representing a step function.
  * ```
@@ -34,7 +36,7 @@ external class SteppedSpline(options: ConstructorOptions) {
      * @property [points] The array of control points.
      */
     interface ConstructorOptions {
-        var times: Array<out Double>
+        var times: ReadonlyArray<Double>
         var points: dynamic
     }
 
@@ -42,7 +44,7 @@ external class SteppedSpline(options: ConstructorOptions) {
      * An array of times for the control points.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/SteppedSpline.html#times">Online Documentation</a>
      */
-    val times: Array<out Double>
+    val times: ReadonlyArray<Double>
 
     /**
      * An array of control points.

@@ -10,6 +10,8 @@
 
 package cesium
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * A base widget for building applications.  It composites all of the standard Cesium widgets into one reusable package.
  * The widget can always be extended by using mixins, which add functionality useful for a variety of applications.
@@ -396,7 +398,7 @@ external class Viewer(
     ): kotlin.js.Promise<Boolean>
 
     fun zoomTo(
-        target: Array<out Entity>,
+        target: ReadonlyArray<Entity>,
         offset: HeadingPitchRange? = definedExternally,
     ): kotlin.js.Promise<Boolean>
 
@@ -431,7 +433,7 @@ external class Viewer(
     ): kotlin.js.Promise<Boolean>
 
     fun zoomTo(
-        target: kotlin.js.Promise<Array<out Entity>>,
+        target: kotlin.js.Promise<ReadonlyArray<Entity>>,
         offset: HeadingPitchRange? = definedExternally,
     ): kotlin.js.Promise<Boolean>
 
@@ -496,7 +498,7 @@ external class Viewer(
     }
 
     fun flyTo(
-        target: Array<out Entity>,
+        target: ReadonlyArray<Entity>,
         options: FlyToOptions? = definedExternally,
     ): kotlin.js.Promise<Boolean>
 
@@ -531,7 +533,7 @@ external class Viewer(
     ): kotlin.js.Promise<Boolean>
 
     fun flyTo(
-        target: kotlin.js.Promise<Array<out Entity>>,
+        target: kotlin.js.Promise<ReadonlyArray<Entity>>,
         options: FlyToOptions? = definedExternally,
     ): kotlin.js.Promise<Boolean>
 
@@ -666,9 +668,9 @@ external class Viewer(
         var shouldAnimate: Boolean?
         var clockViewModel: ClockViewModel?
         var selectedImageryProviderViewModel: ProviderViewModel?
-        var imageryProviderViewModels: Array<out ProviderViewModel>?
+        var imageryProviderViewModels: ReadonlyArray<ProviderViewModel>?
         var selectedTerrainProviderViewModel: ProviderViewModel?
-        var terrainProviderViewModels: Array<out ProviderViewModel>?
+        var terrainProviderViewModels: ReadonlyArray<ProviderViewModel>?
         var imageryProvider: ImageryProvider?
         var terrainProvider: TerrainProvider?
         var skyBox: dynamic

@@ -9,6 +9,8 @@
 
 package cesium
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * Describes geometry representing a plane centered at the origin, with a unit width and length.
  * ```
@@ -45,9 +47,9 @@ external class PlaneGeometry(options: ConstructorOptions? = definedExternally) {
          */
         override fun pack(
             value: PlaneGeometry,
-            array: Array<out Double>,
+            array: ReadonlyArray<Double>,
             startingIndex: Int?,
-        ): Array<out Double>
+        ): ReadonlyArray<Double>
 
         /**
          * Retrieves an instance from a packed array.
@@ -59,7 +61,7 @@ external class PlaneGeometry(options: ConstructorOptions? = definedExternally) {
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PlaneGeometry.html#.unpack">Online Documentation</a>
          */
         override fun unpack(
-            array: Array<out Double>,
+            array: ReadonlyArray<Double>,
             startingIndex: Int?,
             result: PlaneGeometry?,
         ): PlaneGeometry

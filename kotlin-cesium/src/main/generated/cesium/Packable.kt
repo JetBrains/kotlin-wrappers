@@ -5,6 +5,8 @@
 
 package cesium
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * Static interface for types which can store their values as packed
  * elements in an array.  These methods and properties are expected to be
@@ -30,9 +32,9 @@ external interface Packable<T : Any> {
      */
     fun pack(
         value: T,
-        array: Array<out Double>,
+        array: ReadonlyArray<Double>,
         startingIndex: Int? = definedExternally,
-    ): Array<out Double>
+    ): ReadonlyArray<Double>
 
     /**
      * Retrieves an instance from a packed array.
@@ -44,7 +46,7 @@ external interface Packable<T : Any> {
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Packable.html#.unpack">Online Documentation</a>
      */
     fun unpack(
-        array: Array<out Double>,
+        array: ReadonlyArray<Double>,
         startingIndex: Int? = definedExternally,
         result: T? = definedExternally,
     ): T

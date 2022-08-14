@@ -9,6 +9,8 @@
 
 package cesium
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * Terrain data for a single tile where the terrain data is represented as a quantized mesh.  A quantized
  * mesh consists of three vertex attributes, longitude, latitude, and height.  All attributes are expressed
@@ -83,10 +85,10 @@ external class QuantizedMeshTerrainData(options: ConstructorOptions) : TerrainDa
         var boundingSphere: BoundingSphere
         var orientedBoundingBox: OrientedBoundingBox?
         var horizonOcclusionPoint: Cartesian3
-        var westIndices: Array<out Double>
-        var southIndices: Array<out Double>
-        var eastIndices: Array<out Double>
-        var northIndices: Array<out Double>
+        var westIndices: ReadonlyArray<Double>
+        var southIndices: ReadonlyArray<Double>
+        var eastIndices: ReadonlyArray<Double>
+        var northIndices: ReadonlyArray<Double>
         var westSkirtHeight: Double
         var southSkirtHeight: Double
         var eastSkirtHeight: Double
@@ -95,14 +97,14 @@ external class QuantizedMeshTerrainData(options: ConstructorOptions) : TerrainDa
         var createdByUpsampling: Boolean?
         var encodedNormals: org.khronos.webgl.Uint8Array?
         var waterMask: org.khronos.webgl.Uint8Array?
-        var credits: Array<out Credit>?
+        var credits: ReadonlyArray<Credit>?
     }
 
     /**
      * An array of credits for this tile.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/QuantizedMeshTerrainData.html#credits">Online Documentation</a>
      */
-    override var credits: Array<out Credit>
+    override var credits: ReadonlyArray<Credit>
 
     /**
      * The water mask included in this terrain data, if any.  A water mask is a rectangular

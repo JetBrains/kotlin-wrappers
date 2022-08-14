@@ -9,6 +9,8 @@
 
 package cesium
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * The culling volume defined by planes.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CullingVolume.html">Online Documentation</a>
@@ -17,7 +19,7 @@ package cesium
  * @property [planes] An array of clipping planes.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CullingVolume.html">Online Documentation</a>
  */
-external class CullingVolume(var planes: Array<out Cartesian4> = definedExternally) {
+external class CullingVolume(var planes: ReadonlyArray<Cartesian4> = definedExternally) {
     /**
      * Determines whether a bounding volume intersects the culling volume.
      * @param [boundingVolume] The bounding volume whose intersection with the culling volume is to be tested.

@@ -5,6 +5,8 @@
 
 package cesium
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * A collection of [DataSource] instances.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/DataSourceCollection.html">Online Documentation</a>
@@ -101,7 +103,7 @@ external class DataSourceCollection {
      * @return A list of all data sources matching the provided name.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/DataSourceCollection.html#getByName">Online Documentation</a>
      */
-    fun getByName(name: String): Array<out DataSource>
+    fun getByName(name: String): ReadonlyArray<DataSource>
 
     /**
      * Raises a data source up one position in the collection.

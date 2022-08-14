@@ -5,6 +5,8 @@
 
 package cesium
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * Content pipeline functions for geometries.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GeometryPipeline.html">Online Documentation</a>
@@ -105,7 +107,7 @@ external object GeometryPipeline {
      * @return An array of geometries, each with indices that fit into unsigned shorts.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GeometryPipeline.html#.fitToUnsignedShortIndices">Online Documentation</a>
      */
-    fun fitToUnsignedShortIndices(geometry: Geometry): Array<out Geometry>
+    fun fitToUnsignedShortIndices(geometry: Geometry): ReadonlyArray<Geometry>
 
     /**
      * Projects a geometry's 3D `position` attribute to 2D, replacing the `position`

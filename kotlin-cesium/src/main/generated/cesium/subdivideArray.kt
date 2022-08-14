@@ -5,6 +5,8 @@
 
 package cesium
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * Subdivides an array into a number of smaller, equal sized arrays.
  * @param [array] The array to divide.
@@ -12,6 +14,6 @@ package cesium
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/subdivideArray.html">Online Documentation</a>
  */
 external fun subdivideArray(
-    array: Array<out Any>,
+    array: ReadonlyArray<Any>,
     numberOfArrays: Int,
 )

@@ -5,6 +5,8 @@
 
 package cesium
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * Defines functions for 4th order polynomial functions of one variable with only real coefficients.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/QuarticRealPolynomial.html">Online Documentation</a>
@@ -44,5 +46,5 @@ external object QuarticRealPolynomial {
         c: Double,
         d: Double,
         e: Double,
-    ): Array<out Double>
+    ): ReadonlyArray<Double>
 }

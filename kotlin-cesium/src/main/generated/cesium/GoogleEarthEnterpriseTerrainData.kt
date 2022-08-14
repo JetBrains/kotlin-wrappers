@@ -9,6 +9,8 @@
 
 package cesium
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * Terrain data for a single tile from a Google Earth Enterprise server.
  * ```
@@ -42,14 +44,14 @@ external class GoogleEarthEnterpriseTerrainData(options: ConstructorOptions) : T
         var negativeElevationThreshold: Double
         var childTileMask: Int?
         var createdByUpsampling: Boolean?
-        var credits: Array<out Credit>?
+        var credits: ReadonlyArray<Credit>?
     }
 
     /**
      * An array of credits for this tile
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GoogleEarthEnterpriseTerrainData.html#credits">Online Documentation</a>
      */
-    override var credits: Array<out Credit>
+    override var credits: ReadonlyArray<Credit>
 
     /**
      * The water mask included in this terrain data, if any.  A water mask is a rectangular

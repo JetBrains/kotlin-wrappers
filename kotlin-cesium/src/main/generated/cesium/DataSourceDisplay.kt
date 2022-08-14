@@ -9,6 +9,8 @@
 
 package cesium
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * Visualizes a collection of [DataSource] instances.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/DataSourceDisplay.html">Online Documentation</a>
@@ -107,7 +109,7 @@ external class DataSourceDisplay(options: ConstructorOptions) {
  * @param [dataSource] The data source to create visualizers for.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/DataSourceDisplay.html#.VisualizersCallback">Online Documentation</a>
  */
-typealias VisualizersCallback = (scene: Scene, dataSource: DataSource) -> Array<out Visualizer>
+typealias VisualizersCallback = (scene: Scene, dataSource: DataSource) -> ReadonlyArray<Visualizer>
 
 inline fun DataSourceDisplay(
     block: DataSourceDisplay.ConstructorOptions.() -> Unit,

@@ -9,6 +9,8 @@
 
 package cesium
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * A bounding rectangle given by a corner, width and height.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BoundingRectangle.html">Online Documentation</a>
@@ -64,9 +66,9 @@ external class BoundingRectangle(
          */
         override fun pack(
             value: BoundingRectangle,
-            array: Array<out Double>,
+            array: ReadonlyArray<Double>,
             startingIndex: Int?,
-        ): Array<out Double>
+        ): ReadonlyArray<Double>
 
         /**
          * Retrieves an instance from a packed array.
@@ -78,7 +80,7 @@ external class BoundingRectangle(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BoundingRectangle.html#.unpack">Online Documentation</a>
          */
         override fun unpack(
-            array: Array<out Double>,
+            array: ReadonlyArray<Double>,
             startingIndex: Int?,
             result: BoundingRectangle?,
         ): BoundingRectangle
@@ -92,7 +94,7 @@ external class BoundingRectangle(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BoundingRectangle.html#.fromPoints">Online Documentation</a>
          */
         fun fromPoints(
-            positions: Array<out Cartesian2>,
+            positions: ReadonlyArray<Cartesian2>,
             result: BoundingRectangle? = definedExternally,
         ): BoundingRectangle
 

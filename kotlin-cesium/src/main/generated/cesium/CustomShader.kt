@@ -9,6 +9,8 @@
 
 package cesium
 
+import kotlinx.js.Record
+
 /**
  * A user defined GLSL shader used with [ModelExperimental] as well
  * as [Cesium3DTileset].

@@ -5,6 +5,8 @@
 
 package cesium
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * Provides imagery to be displayed on the surface of an ellipsoid.  This type describes an
  * interface and is not intended to be instantiated directly.
@@ -188,7 +190,7 @@ abstract external class ImageryProvider {
         x: Double,
         y: Double,
         level: Int,
-    ): Array<out Credit>
+    ): ReadonlyArray<Credit>
 
     /**
      * Requests the image for a given tile.  This function should
@@ -229,7 +231,7 @@ abstract external class ImageryProvider {
         level: Int,
         longitude: Double,
         latitude: Double,
-    ): kotlin.js.Promise<Array<out ImageryLayerFeatureInfo>>?
+    ): kotlin.js.Promise<ReadonlyArray<ImageryLayerFeatureInfo>>?
 
     companion object {
         /**

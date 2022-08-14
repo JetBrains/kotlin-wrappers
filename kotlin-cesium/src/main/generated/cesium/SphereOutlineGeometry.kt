@@ -9,6 +9,8 @@
 
 package cesium
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * A description of the outline of a sphere.
  * ```
@@ -57,9 +59,9 @@ external class SphereOutlineGeometry(options: ConstructorOptions? = definedExter
          */
         override fun pack(
             value: SphereOutlineGeometry,
-            array: Array<out Double>,
+            array: ReadonlyArray<Double>,
             startingIndex: Int?,
-        ): Array<out Double>
+        ): ReadonlyArray<Double>
 
         /**
          * Retrieves an instance from a packed array.
@@ -71,7 +73,7 @@ external class SphereOutlineGeometry(options: ConstructorOptions? = definedExter
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/SphereOutlineGeometry.html#.unpack">Online Documentation</a>
          */
         override fun unpack(
-            array: Array<out Double>,
+            array: ReadonlyArray<Double>,
             startingIndex: Int?,
             result: SphereOutlineGeometry?,
         ): SphereOutlineGeometry

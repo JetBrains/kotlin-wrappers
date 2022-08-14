@@ -9,6 +9,8 @@
 
 package cesium
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * An abstract class for updating ground geometry entities.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GroundGeometryUpdater.html">Online Documentation</a>
@@ -26,7 +28,7 @@ external class GroundGeometryUpdater(options: ConstructorOptions) {
         var scene: Scene
         var geometryOptions: Any
         var geometryPropertyName: String
-        var observedPropertyNames: Array<out String>
+        var observedPropertyNames: ReadonlyArray<String>
     }
 
     /**

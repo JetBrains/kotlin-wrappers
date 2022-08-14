@@ -9,6 +9,8 @@
 
 package cesium
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * Provides imagery by requesting tiles using a specified URL template.
  * ```
@@ -297,7 +299,7 @@ external class UrlTemplateImageryProvider(options: ConstructorOptions) {
         x: Double,
         y: Double,
         level: Int,
-    ): Array<out Credit>
+    ): ReadonlyArray<Credit>
 
     /**
      * Requests the image for a given tile.  This function should
@@ -337,7 +339,7 @@ external class UrlTemplateImageryProvider(options: ConstructorOptions) {
         level: Int,
         longitude: Double,
         latitude: Double,
-    ): kotlin.js.Promise<Array<out ImageryLayerFeatureInfo>>?
+    ): kotlin.js.Promise<ReadonlyArray<ImageryLayerFeatureInfo>>?
 
     /**
      * Initialization options for the UrlTemplateImageryProvider constructor
@@ -433,7 +435,7 @@ external class UrlTemplateImageryProvider(options: ConstructorOptions) {
         var url: Resource
         var pickFeaturesUrl: Resource?
         var urlSchemeZeroPadding: Any?
-        var subdomains: Array<out String>?
+        var subdomains: ReadonlyArray<String>?
         var credit: Credit?
         var minimumLevel: Int?
         var maximumLevel: Int?
@@ -443,7 +445,7 @@ external class UrlTemplateImageryProvider(options: ConstructorOptions) {
         var tileWidth: Int?
         var tileHeight: Int?
         var hasAlphaChannel: Boolean?
-        var getFeatureInfoFormats: Array<out GetFeatureInfoFormat>?
+        var getFeatureInfoFormats: ReadonlyArray<GetFeatureInfoFormat>?
         var enablePickFeatures: Boolean?
         var customTags: Any?
     }

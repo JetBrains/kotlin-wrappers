@@ -5,5 +5,7 @@ plugins {
 }
 
 dependencies {
+    api(project(":kotlin-js"))
+
     api(npmv("cesium"))
 }

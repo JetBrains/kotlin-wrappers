@@ -5,6 +5,8 @@
 
 package cesium
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * Describes geometry representing the outline of a plane centered at the origin, with a unit width and length.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PlaneOutlineGeometry.html">Online Documentation</a>
@@ -28,8 +30,8 @@ external class PlaneOutlineGeometry {
          */
         fun pack(
             value: PlaneOutlineGeometry,
-            array: Array<out Double>,
-        ): Array<out Double>
+            array: ReadonlyArray<Double>,
+        ): ReadonlyArray<Double>
 
         /**
          * Retrieves an instance from a packed array.
@@ -41,7 +43,7 @@ external class PlaneOutlineGeometry {
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PlaneOutlineGeometry.html#.unpack">Online Documentation</a>
          */
         fun unpack(
-            array: Array<out Double>,
+            array: ReadonlyArray<Double>,
             startingIndex: Int? = definedExternally,
             result: PlaneOutlineGeometry? = definedExternally,
         ): PlaneOutlineGeometry

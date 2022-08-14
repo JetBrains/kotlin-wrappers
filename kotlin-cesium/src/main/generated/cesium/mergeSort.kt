@@ -5,6 +5,8 @@
 
 package cesium
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * A stable merge sort.
  * ```
@@ -21,7 +23,7 @@ package cesium
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/mergeSort.html">Online Documentation</a>
  */
 external fun mergeSort(
-    array: Array<out Any>,
+    array: ReadonlyArray<Any>,
     comparator: mergeSortComparator,
     userDefinedObject: Any? = definedExternally,
 )

@@ -5,6 +5,8 @@
 
 package cesium
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * An [InterpolationAlgorithm] for performing Lagrange interpolation.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/LagrangePolynomialApproximation.html">Online Documentation</a>
@@ -33,9 +35,9 @@ external object LagrangePolynomialApproximation {
      */
     fun interpolateOrderZero(
         x: Double,
-        xTable: Array<out Double>,
-        yTable: Array<out Double>,
+        xTable: ReadonlyArray<Double>,
+        yTable: ReadonlyArray<Double>,
         yStride: Double,
-        result: Array<out Double>? = definedExternally,
-    ): Array<out Double>
+        result: ReadonlyArray<Double>? = definedExternally,
+    ): ReadonlyArray<Double>
 }

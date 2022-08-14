@@ -9,6 +9,8 @@
 
 package cesium
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * A description of a sphere centered at the origin.
  * ```
@@ -56,9 +58,9 @@ external class SphereGeometry(options: ConstructorOptions? = definedExternally) 
          */
         override fun pack(
             value: SphereGeometry,
-            array: Array<out Double>,
+            array: ReadonlyArray<Double>,
             startingIndex: Int?,
-        ): Array<out Double>
+        ): ReadonlyArray<Double>
 
         /**
          * Retrieves an instance from a packed array.
@@ -70,7 +72,7 @@ external class SphereGeometry(options: ConstructorOptions? = definedExternally) 
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/SphereGeometry.html#.unpack">Online Documentation</a>
          */
         override fun unpack(
-            array: Array<out Double>,
+            array: ReadonlyArray<Double>,
             startingIndex: Int?,
             result: SphereGeometry?,
         ): SphereGeometry

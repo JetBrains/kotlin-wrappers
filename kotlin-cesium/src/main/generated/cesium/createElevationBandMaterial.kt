@@ -5,6 +5,8 @@
 
 package cesium
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * Creates a [Material] that combines multiple layers of color/gradient bands and maps them to terrain heights.
  *
@@ -45,5 +47,5 @@ external fun createElevationBandMaterial(options: CreateElevationBandMaterialOpt
  */
 external interface CreateElevationBandMaterialOptions {
     var scene: Scene
-    var layers: Array<out createElevationBandMaterialBand>
+    var layers: ReadonlyArray<createElevationBandMaterialBand>
 }

@@ -5,6 +5,8 @@
 
 package cesium
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * Static interface for [Packable] types which are interpolated in a
  * different representation than their packed value.  These methods and
@@ -29,10 +31,10 @@ external object PackableForInterpolation {
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PackableForInterpolation.html#.convertPackedArrayForInterpolation">Online Documentation</a>
      */
     fun convertPackedArrayForInterpolation(
-        packedArray: Array<out Double>,
+        packedArray: ReadonlyArray<Double>,
         startingIndex: Int? = definedExternally,
         lastIndex: Int? = definedExternally,
-        result: Array<out Double>? = definedExternally,
+        result: ReadonlyArray<Double>? = definedExternally,
     )
 
     /**
@@ -48,8 +50,8 @@ external object PackableForInterpolation {
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PackableForInterpolation.html#.unpackInterpolationResult">Online Documentation</a>
      */
     fun unpackInterpolationResult(
-        array: Array<out Double>,
-        sourceArray: Array<out Double>,
+        array: ReadonlyArray<Double>,
+        sourceArray: ReadonlyArray<Double>,
         startingIndex: Int? = definedExternally,
         lastIndex: Int? = definedExternally,
         result: Any? = definedExternally,

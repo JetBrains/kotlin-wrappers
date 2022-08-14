@@ -5,6 +5,8 @@
 
 package cesium
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * Defines functions for 2nd order polynomial functions of one variable with only real coefficients.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/QuadraticRealPolynomial.html">Online Documentation</a>
@@ -36,5 +38,5 @@ external object QuadraticRealPolynomial {
         a: Double,
         b: Double,
         c: Double,
-    ): Array<out Double>
+    ): ReadonlyArray<Double>
 }

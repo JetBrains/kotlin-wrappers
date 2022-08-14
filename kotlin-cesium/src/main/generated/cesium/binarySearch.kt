@@ -5,6 +5,8 @@
 
 package cesium
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * Finds an item in a sorted array.
  * ```
@@ -26,7 +28,7 @@ package cesium
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/binarySearch.html">Online Documentation</a>
  */
 external fun binarySearch(
-    array: Array<out Any>,
+    array: ReadonlyArray<Any>,
     itemToFind: Any,
     comparator: binarySearchComparator,
 ): Int

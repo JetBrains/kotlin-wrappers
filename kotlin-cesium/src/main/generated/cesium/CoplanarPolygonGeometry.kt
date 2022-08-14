@@ -9,6 +9,8 @@
 
 package cesium
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * A description of a polygon composed of arbitrary coplanar positions.
  * ```
@@ -80,7 +82,7 @@ external class CoplanarPolygonGeometry(options: ConstructorOptions) {
          * @property [textureCoordinates] Texture coordinates as a [PolygonHierarchy] of [Cartesian2] points.
          */
         interface FromPositionsOptions {
-            var positions: Array<out Cartesian3>
+            var positions: ReadonlyArray<Cartesian3>
             var vertexFormat: VertexFormat?
             var stRotation: Double?
             var ellipsoid: Ellipsoid?
@@ -98,9 +100,9 @@ external class CoplanarPolygonGeometry(options: ConstructorOptions) {
          */
         fun pack(
             value: CoplanarPolygonGeometry,
-            array: Array<out Double>,
+            array: ReadonlyArray<Double>,
             startingIndex: Int? = definedExternally,
-        ): Array<out Double>
+        ): ReadonlyArray<Double>
 
         /**
          * Retrieves an instance from a packed array.
@@ -112,7 +114,7 @@ external class CoplanarPolygonGeometry(options: ConstructorOptions) {
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CoplanarPolygonGeometry.html#.unpack">Online Documentation</a>
          */
         fun unpack(
-            array: Array<out Double>,
+            array: ReadonlyArray<Double>,
             startingIndex: Int? = definedExternally,
             result: CoplanarPolygonGeometry? = definedExternally,
         ): CoplanarPolygonGeometry

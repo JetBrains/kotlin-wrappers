@@ -5,6 +5,8 @@
 
 package cesium
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * A [Property] whose value is a key-value mapping of property names to the computed value of other properties.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PropertyBag.html">Online Documentation</a>
@@ -22,7 +24,7 @@ external class PropertyBag(
      * Gets the names of all properties registered on this instance.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PropertyBag.html#propertyNames">Online Documentation</a>
      */
-    var propertyNames: Array<out Any>
+    var propertyNames: ReadonlyArray<Any>
 
     /**
      * Gets a value indicating if this property is constant.  This property

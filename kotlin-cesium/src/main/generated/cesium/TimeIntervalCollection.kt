@@ -5,6 +5,8 @@
 
 package cesium
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * A non-overlapping collection of [TimeInterval] instances sorted by start time.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TimeIntervalCollection.html">Online Documentation</a>
@@ -13,7 +15,7 @@ package cesium
  * @param [intervals] An array of intervals to add to the collection.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TimeIntervalCollection.html">Online Documentation</a>
  */
-external class TimeIntervalCollection(intervals: Array<out TimeInterval>? = definedExternally) {
+external class TimeIntervalCollection(intervals: ReadonlyArray<TimeInterval>? = definedExternally) {
     /**
      * Gets an event that is raised whenever the collection of intervals change.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TimeIntervalCollection.html#changedEvent">Online Documentation</a>
@@ -200,7 +202,7 @@ external class TimeIntervalCollection(intervals: Array<out TimeInterval>? = defi
          * @property [dataCallback] A function that will be return the data that is called with each interval before it is added to the collection. If unspecified, the data will be the index in the collection.
          */
         interface FromJulianDateArrayOptions {
-            var julianDates: Array<out JulianDate>
+            var julianDates: ReadonlyArray<JulianDate>
             var isStartIncluded: Boolean?
             var isStopIncluded: Boolean?
             var leadingInterval: Boolean?
@@ -264,7 +266,7 @@ external class TimeIntervalCollection(intervals: Array<out TimeInterval>? = defi
          * @property [dataCallback] A function that will be return the data that is called with each interval before it is added to the collection. If unspecified, the data will be the index in the collection.
          */
         interface FromIso8601DateArrayOptions {
-            var iso8601Dates: Array<out String>
+            var iso8601Dates: ReadonlyArray<String>
             var isStartIncluded: Boolean?
             var isStopIncluded: Boolean?
             var leadingInterval: Boolean?

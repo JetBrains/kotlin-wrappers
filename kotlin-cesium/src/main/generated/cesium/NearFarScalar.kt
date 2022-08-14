@@ -9,6 +9,8 @@
 
 package cesium
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * Represents a scalar value's lower and upper bound at a near distance and far distance in eye space.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/NearFarScalar.html">Online Documentation</a>
@@ -68,9 +70,9 @@ external class NearFarScalar(
          */
         override fun pack(
             value: NearFarScalar,
-            array: Array<out Double>,
+            array: ReadonlyArray<Double>,
             startingIndex: Int?,
-        ): Array<out Double>
+        ): ReadonlyArray<Double>
 
         /**
          * Retrieves an instance from a packed array.
@@ -82,7 +84,7 @@ external class NearFarScalar(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/NearFarScalar.html#.unpack">Online Documentation</a>
          */
         override fun unpack(
-            array: Array<out Double>,
+            array: ReadonlyArray<Double>,
             startingIndex: Int?,
             result: NearFarScalar?,
         ): NearFarScalar

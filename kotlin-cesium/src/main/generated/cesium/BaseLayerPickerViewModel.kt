@@ -9,6 +9,8 @@
 
 package cesium
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * The view model for [BaseLayerPicker].
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BaseLayerPickerViewModel.html">Online Documentation</a>
@@ -25,9 +27,9 @@ external class BaseLayerPickerViewModel(options: ConstructorOptions) {
      */
     interface ConstructorOptions {
         var globe: Globe
-        var imageryProviderViewModels: Array<out ProviderViewModel>?
+        var imageryProviderViewModels: ReadonlyArray<ProviderViewModel>?
         var selectedImageryProviderViewModel: ProviderViewModel?
-        var terrainProviderViewModels: Array<out ProviderViewModel>?
+        var terrainProviderViewModels: ReadonlyArray<ProviderViewModel>?
         var selectedTerrainProviderViewModel: ProviderViewModel?
     }
 
@@ -36,14 +38,14 @@ external class BaseLayerPickerViewModel(options: ConstructorOptions) {
      * This property is observable.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BaseLayerPickerViewModel.html#imageryProviderViewModels">Online Documentation</a>
      */
-    var imageryProviderViewModels: Array<out ProviderViewModel>
+    var imageryProviderViewModels: ReadonlyArray<ProviderViewModel>
 
     /**
      * Gets or sets an array of ProviderViewModel instances available for terrain selection.
      * This property is observable.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BaseLayerPickerViewModel.html#terrainProviderViewModels">Online Documentation</a>
      */
-    var terrainProviderViewModels: Array<out ProviderViewModel>
+    var terrainProviderViewModels: ReadonlyArray<ProviderViewModel>
 
     /**
      * Gets or sets whether the imagery selection drop-down is currently visible.

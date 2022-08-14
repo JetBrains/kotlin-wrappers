@@ -5,6 +5,8 @@
 
 package cesium
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * The container for all 3D graphical objects and state in a Cesium virtual scene.  Generally,
  * a scene is not created directly; instead, it is implicitly created by [CesiumWidget].
@@ -362,7 +364,7 @@ external class Scene(
      * The spherical harmonic coefficients for image-based lighting of PBR models.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Scene.html#sphericalHarmonicCoefficients">Online Documentation</a>
      */
-    var sphericalHarmonicCoefficients: Array<out Cartesian3>
+    var sphericalHarmonicCoefficients: ReadonlyArray<Cartesian3>
 
     /**
      * The url to the KTX2 file containing the specular environment map and convoluted mipmaps for image-based lighting of PBR models.
@@ -739,7 +741,7 @@ external class Scene(
         limit: Double? = definedExternally,
         width: Double? = definedExternally,
         height: Double? = definedExternally,
-    ): Array<out Any>
+    ): ReadonlyArray<Any>
 
     /**
      * Returns the height of scene geometry at the given cartographic position or `undefined` if there was no
@@ -762,7 +764,7 @@ external class Scene(
      */
     fun sampleHeight(
         position: Cartographic,
-        objectsToExclude: Array<out Any>? = definedExternally,
+        objectsToExclude: ReadonlyArray<Any>? = definedExternally,
         width: Double? = definedExternally,
     ): Double
 
@@ -788,7 +790,7 @@ external class Scene(
      */
     fun clampToHeight(
         cartesian: Cartesian3,
-        objectsToExclude: Array<out Any>? = definedExternally,
+        objectsToExclude: ReadonlyArray<Any>? = definedExternally,
         width: Double? = definedExternally,
         result: Cartesian3? = definedExternally,
     ): Cartesian3
@@ -818,10 +820,10 @@ external class Scene(
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Scene.html#sampleHeightMostDetailed">Online Documentation</a>
      */
     fun sampleHeightMostDetailed(
-        positions: Array<out Cartographic>,
-        objectsToExclude: Array<out Any>? = definedExternally,
+        positions: ReadonlyArray<Cartographic>,
+        objectsToExclude: ReadonlyArray<Any>? = definedExternally,
         width: Double? = definedExternally,
-    ): kotlin.js.Promise<Array<out Cartographic>>
+    ): kotlin.js.Promise<ReadonlyArray<Cartographic>>
 
     /**
      * Initiates an asynchronous [Scene.clampToHeight] query for an array of [Cartesian3] positions
@@ -847,10 +849,10 @@ external class Scene(
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Scene.html#clampToHeightMostDetailed">Online Documentation</a>
      */
     fun clampToHeightMostDetailed(
-        cartesians: Array<out Cartesian3>,
-        objectsToExclude: Array<out Any>? = definedExternally,
+        cartesians: ReadonlyArray<Cartesian3>,
+        objectsToExclude: ReadonlyArray<Any>? = definedExternally,
         width: Double? = definedExternally,
-    ): kotlin.js.Promise<Array<out Cartesian3>>
+    ): kotlin.js.Promise<ReadonlyArray<Cartesian3>>
 
     /**
      * Transforms a position in cartesian coordinates to canvas coordinates.  This is commonly used to place an

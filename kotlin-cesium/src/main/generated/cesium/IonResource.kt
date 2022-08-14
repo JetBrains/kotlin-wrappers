@@ -5,6 +5,8 @@
 
 package cesium
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * A [Resource] instance that encapsulates Cesium ion asset access.
  * This object is normally not instantiated directly, use [IonResource.fromAssetId].
@@ -23,7 +25,7 @@ external class IonResource(
      * Gets the credits required for attribution of the asset.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/IonResource.html#credits">Online Documentation</a>
      */
-    val credits: Array<out Credit>
+    val credits: ReadonlyArray<Credit>
 
     /**
      * Duplicates a Resource instance.

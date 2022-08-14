@@ -5,6 +5,8 @@
 
 package cesium
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * Properties for managing image-based lighting on tilesets and models.
  * Also manages the necessary resources and textures.
@@ -46,7 +48,7 @@ external class ImageBasedLighting {
      * supplied to [Model.specularEnvironmentMaps].
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ImageBasedLighting.html#sphericalHarmonicCoefficients">Online Documentation</a>
      */
-    var sphericalHarmonicCoefficients: Array<out Cartesian3>
+    var sphericalHarmonicCoefficients: ReadonlyArray<Cartesian3>
 
     /**
      * A URL to a KTX2 file that contains a cube map of the specular lighting and the convoluted specular mipmaps.

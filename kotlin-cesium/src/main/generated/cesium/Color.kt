@@ -9,6 +9,8 @@
 
 package cesium
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * A color, specified using red, green, blue, and alpha values,
  * which range from `0` (no intensity) to `1.0` (full intensity).
@@ -73,7 +75,7 @@ external class Color(
      * @return The modified result parameter or a new instance if result was undefined.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Color.html#toBytes">Online Documentation</a>
      */
-    fun toBytes(result: Array<out Double>? = definedExternally): Array<out Double>
+    fun toBytes(result: ReadonlyArray<Double>? = definedExternally): ReadonlyArray<Double>
 
     /**
      * Converts this color to a single numeric unsigned 32-bit RGBA value, using the endianness
@@ -326,9 +328,9 @@ external class Color(
          */
         override fun pack(
             value: Color,
-            array: Array<out Double>,
+            array: ReadonlyArray<Double>,
             startingIndex: Int?,
-        ): Array<out Double>
+        ): ReadonlyArray<Double>
 
         /**
          * Retrieves an instance from a packed array.
@@ -340,7 +342,7 @@ external class Color(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Color.html#.unpack">Online Documentation</a>
          */
         override fun unpack(
-            array: Array<out Double>,
+            array: ReadonlyArray<Double>,
             startingIndex: Int?,
             result: Color?,
         ): Color

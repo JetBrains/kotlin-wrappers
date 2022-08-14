@@ -9,6 +9,8 @@
 
 package cesium
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * An observable collection of [Entity] instances where each entity has a unique id.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/EntityCollection.html">Online Documentation</a>
@@ -57,7 +59,7 @@ external class EntityCollection() {
      * This array should not be modified directly.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/EntityCollection.html#values">Online Documentation</a>
      */
-    val values: Array<out Entity>
+    val values: ReadonlyArray<Entity>
 
     /**
      * Gets whether or not this entity collection should be
@@ -146,4 +148,4 @@ external class EntityCollection() {
  * @param [changed] The array of [Entity] instances that have been modified.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/EntityCollection.html#.CollectionChangedEventCallback">Online Documentation</a>
  */
-typealias CollectionChangedEventCallback = (collection: EntityCollection, added: Array<out Entity>, removed: Array<out Entity>, changed: Array<out Entity>) -> Unit
+typealias CollectionChangedEventCallback = (collection: EntityCollection, added: ReadonlyArray<Entity>, removed: ReadonlyArray<Entity>, changed: ReadonlyArray<Entity>) -> Unit

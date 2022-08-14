@@ -9,6 +9,8 @@
 
 package cesium
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * Draws the outline of the camera's view frustum.
  * ```
@@ -33,7 +35,7 @@ external class DebugCameraPrimitive(options: ConstructorOptions) {
      */
     interface ConstructorOptions {
         var camera: Camera
-        var frustumSplits: Array<out Double>?
+        var frustumSplits: ReadonlyArray<Double>?
         var color: Color?
         var updateOnChange: Boolean?
         var show: Boolean?

@@ -2,6 +2,8 @@
 
 package cesium
 
+import kotlinx.js.Record
+
 /**
  * @property [kml] The generated KML.
  * @property [externalFiles] An object dictionary of external files

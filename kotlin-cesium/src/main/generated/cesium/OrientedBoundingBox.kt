@@ -9,6 +9,8 @@
 
 package cesium
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * Creates an instance of an OrientedBoundingBox.
  * An OrientedBoundingBox of some object is a closed and convex cuboid. It can provide a tighter bounding volume than [BoundingSphere] or [AxisAlignedBoundingBox] in many cases.
@@ -82,7 +84,7 @@ external class OrientedBoundingBox(
      * @return The modified result parameter or a new array if none was provided.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/OrientedBoundingBox.html#computeCorners">Online Documentation</a>
      */
-    fun computeCorners(result: Array<out Cartesian3>? = definedExternally): Array<out Cartesian3>
+    fun computeCorners(result: ReadonlyArray<Cartesian3>? = definedExternally): ReadonlyArray<Cartesian3>
 
     /**
      * Computes a transformation matrix from an oriented bounding box.
@@ -126,9 +128,9 @@ external class OrientedBoundingBox(
          */
         override fun pack(
             value: OrientedBoundingBox,
-            array: Array<out Double>,
+            array: ReadonlyArray<Double>,
             startingIndex: Int?,
-        ): Array<out Double>
+        ): ReadonlyArray<Double>
 
         /**
          * Retrieves an instance from a packed array.
@@ -140,7 +142,7 @@ external class OrientedBoundingBox(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/OrientedBoundingBox.html#.unpack">Online Documentation</a>
          */
         override fun unpack(
-            array: Array<out Double>,
+            array: ReadonlyArray<Double>,
             startingIndex: Int?,
             result: OrientedBoundingBox?,
         ): OrientedBoundingBox
@@ -159,7 +161,7 @@ external class OrientedBoundingBox(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/OrientedBoundingBox.html#.fromPoints">Online Documentation</a>
          */
         fun fromPoints(
-            positions: Array<out Cartesian3>? = definedExternally,
+            positions: ReadonlyArray<Cartesian3>? = definedExternally,
             result: OrientedBoundingBox? = definedExternally,
         ): OrientedBoundingBox
 
@@ -270,8 +272,8 @@ external class OrientedBoundingBox(
          */
         fun computeCorners(
             box: OrientedBoundingBox,
-            result: Array<out Cartesian3>? = definedExternally,
-        ): Array<out Cartesian3>
+            result: ReadonlyArray<Cartesian3>? = definedExternally,
+        ): ReadonlyArray<Cartesian3>
 
         /**
          * Computes a transformation matrix from an oriented bounding box.

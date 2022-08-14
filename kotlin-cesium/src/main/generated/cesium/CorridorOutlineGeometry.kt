@@ -9,6 +9,8 @@
 
 package cesium
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * A description of a corridor outline.
  * ```
@@ -34,7 +36,7 @@ external class CorridorOutlineGeometry(options: ConstructorOptions) {
      *   Default value - [CornerType.ROUNDED]
      */
     interface ConstructorOptions {
-        var positions: Array<out Cartesian3>
+        var positions: ReadonlyArray<Cartesian3>
         var width: Double
         var ellipsoid: Ellipsoid?
         var granularity: Double?
@@ -61,9 +63,9 @@ external class CorridorOutlineGeometry(options: ConstructorOptions) {
          */
         fun pack(
             value: CorridorOutlineGeometry,
-            array: Array<out Double>,
+            array: ReadonlyArray<Double>,
             startingIndex: Int? = definedExternally,
-        ): Array<out Double>
+        ): ReadonlyArray<Double>
 
         /**
          * Retrieves an instance from a packed array.
@@ -75,7 +77,7 @@ external class CorridorOutlineGeometry(options: ConstructorOptions) {
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CorridorOutlineGeometry.html#.unpack">Online Documentation</a>
          */
         fun unpack(
-            array: Array<out Double>,
+            array: ReadonlyArray<Double>,
             startingIndex: Int? = definedExternally,
             result: CorridorOutlineGeometry? = definedExternally,
         ): CorridorOutlineGeometry

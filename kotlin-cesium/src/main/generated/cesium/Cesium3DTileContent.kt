@@ -5,6 +5,8 @@
 
 package cesium
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * The content of a tile in a [Cesium3DTileset].
  *
@@ -60,7 +62,7 @@ abstract external class Cesium3DTileContent {
      * Gets the array of [Cesium3DTileContent] objects for contents that contain other contents, such as composite tiles. The inner contents may in turn have inner contents, such as a composite tile that contains a composite tile.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileContent.html#innerContents">Online Documentation</a>
      */
-    abstract val innerContents: Array<out Any>
+    abstract val innerContents: ReadonlyArray<Any>
 
     /**
      * Gets the promise that will be resolved when the tile's content is ready to render.

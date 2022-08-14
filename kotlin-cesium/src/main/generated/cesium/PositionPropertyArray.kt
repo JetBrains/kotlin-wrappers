@@ -9,6 +9,8 @@
 
 package cesium
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * A [Property] whose value is an array whose items are the computed value
  * of other PositionProperty instances.
@@ -21,7 +23,7 @@ package cesium
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PositionPropertyArray.html">Online Documentation</a>
  */
 external class PositionPropertyArray(
-    value: Array<out Property>? = definedExternally,
+    value: ReadonlyArray<Property>? = definedExternally,
     var referenceFrame: ReferenceFrame = definedExternally,
 ) {
     /**
@@ -48,8 +50,8 @@ external class PositionPropertyArray(
      */
     fun getValue(
         time: JulianDate,
-        result: Array<out Cartesian3>? = definedExternally,
-    ): Array<out Cartesian3>
+        result: ReadonlyArray<Cartesian3>? = definedExternally,
+    ): ReadonlyArray<Cartesian3>
 
     /**
      * Gets the value of the property at the provided time and in the provided reference frame.
@@ -62,13 +64,13 @@ external class PositionPropertyArray(
     fun getValueInReferenceFrame(
         time: JulianDate,
         referenceFrame: ReferenceFrame,
-        result: Array<out Cartesian3>? = definedExternally,
-    ): Array<out Cartesian3>
+        result: ReadonlyArray<Cartesian3>? = definedExternally,
+    ): ReadonlyArray<Cartesian3>
 
     /**
      * Sets the value of the property.
      * @param [value] An array of Property instances.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PositionPropertyArray.html#setValue">Online Documentation</a>
      */
-    fun setValue(value: Array<out Property>)
+    fun setValue(value: ReadonlyArray<Property>)
 }

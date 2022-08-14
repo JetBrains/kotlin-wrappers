@@ -5,6 +5,8 @@
 
 package cesium
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * A [Property] whose value is an array whose items are the computed value
  * of other property instances.
@@ -14,7 +16,7 @@ package cesium
  * @param [value] An array of Property instances.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PropertyArray.html">Online Documentation</a>
  */
-external class PropertyArray(value: Array<out Property>? = definedExternally) {
+external class PropertyArray(value: ReadonlyArray<Property>? = definedExternally) {
     /**
      * Gets a value indicating if this property is constant.  This property
      * is considered constant if all property items in the array are constant.
@@ -39,13 +41,13 @@ external class PropertyArray(value: Array<out Property>? = definedExternally) {
      */
     fun getValue(
         time: JulianDate,
-        result: Array<out Any>? = definedExternally,
-    ): Array<out Any>
+        result: ReadonlyArray<Any>? = definedExternally,
+    ): ReadonlyArray<Any>
 
     /**
      * Sets the value of the property.
      * @param [value] An array of Property instances.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PropertyArray.html#setValue">Online Documentation</a>
      */
-    fun setValue(value: Array<out Property>)
+    fun setValue(value: ReadonlyArray<Property>)
 }

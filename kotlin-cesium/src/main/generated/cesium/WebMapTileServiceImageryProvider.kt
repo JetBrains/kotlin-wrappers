@@ -9,6 +9,8 @@
 
 package cesium
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * Provides tiled imagery served by [WMTS 1.0.0](http://www.opengeospatial.org/standards/wmts) compliant servers.
  * This provider supports HTTP KVP-encoded and RESTful GetTile requests, but does not yet support the SOAP encoding.
@@ -269,7 +271,7 @@ external class WebMapTileServiceImageryProvider(options: ConstructorOptions) {
         x: Double,
         y: Double,
         level: Int,
-    ): Array<out Credit>
+    ): ReadonlyArray<Credit>
 
     /**
      * Requests the image for a given tile.  This function should
@@ -344,7 +346,7 @@ external class WebMapTileServiceImageryProvider(options: ConstructorOptions) {
         var layer: String
         var style: String
         var tileMatrixSetID: String
-        var tileMatrixLabels: Array<out Any>?
+        var tileMatrixLabels: ReadonlyArray<Any>?
         var clock: Clock?
         var times: TimeIntervalCollection?
         var dimensions: Any?
@@ -356,7 +358,7 @@ external class WebMapTileServiceImageryProvider(options: ConstructorOptions) {
         var maximumLevel: Int?
         var ellipsoid: Ellipsoid?
         var credit: Credit?
-        var subdomains: Array<out String>?
+        var subdomains: ReadonlyArray<String>?
     }
 }
 

@@ -9,6 +9,8 @@
 
 package cesium
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * A widget for finding addresses and landmarks, and flying the camera to them.  Geocoding is
  * performed using [Cesium ion](https://cesium.com/cesium-ion/).
@@ -29,7 +31,7 @@ external class Geocoder(options: ConstructorOptions) {
     interface ConstructorOptions {
         var container: org.w3c.dom.Element
         var scene: Scene
-        var geocoderServices: Array<out GeocoderService>?
+        var geocoderServices: ReadonlyArray<GeocoderService>?
         var autoComplete: Boolean?
         var flightDuration: Double?
         var destinationFound: DestinationFoundFunction?

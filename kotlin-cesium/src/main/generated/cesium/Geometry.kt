@@ -9,6 +9,8 @@
 
 package cesium
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * A geometry representation with attributes forming vertices and optional index data
  * defining primitives.  Geometries and an [Appearance], which describes the shading,
@@ -93,7 +95,7 @@ external class Geometry(options: ConstructorOptions) {
      * determines the primitives in the geometry.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Geometry.html#indices">Online Documentation</a>
      */
-    var indices: Array<out Any>
+    var indices: ReadonlyArray<Any>
 
     /**
      * The type of primitives in the geometry.  This is most often [PrimitiveType.TRIANGLES],

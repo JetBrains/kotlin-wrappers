@@ -9,6 +9,8 @@
 
 package cesium
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * A ParticleSystem manages the updating and display of a collection of particles.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ParticleSystem.html">Online Documentation</a>
@@ -65,7 +67,7 @@ external class ParticleSystem(options: ConstructorOptions? = definedExternally) 
         var modelMatrix: Matrix4?
         var emitterModelMatrix: Matrix4?
         var emissionRate: Int?
-        var bursts: Array<out ParticleBurst>?
+        var bursts: ReadonlyArray<ParticleBurst>?
         var loop: Boolean?
         var scale: Double?
         var startScale: Double?
@@ -124,7 +126,7 @@ external class ParticleSystem(options: ConstructorOptions? = definedExternally) 
      * An array of [ParticleBurst], emitting bursts of particles at periodic times.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ParticleSystem.html#bursts">Online Documentation</a>
      */
-    var bursts: Array<out ParticleBurst>
+    var bursts: ReadonlyArray<ParticleBurst>
 
     /**
      * The 4x4 transformation matrix that transforms the particle system from model to world coordinates.

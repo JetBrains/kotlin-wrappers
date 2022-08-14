@@ -9,6 +9,8 @@
 
 package cesium
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * An hierarchy of linear rings which define a polygon and its holes.
  * The holes themselves may also have holes which nest inner polygons.
@@ -20,6 +22,6 @@ package cesium
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PolygonHierarchy.html">Online Documentation</a>
  */
 external class PolygonHierarchy(
-    var positions: Array<out Cartesian3> = definedExternally,
-    var holes: Array<out PolygonHierarchy> = definedExternally,
+    var positions: ReadonlyArray<Cartesian3> = definedExternally,
+    var holes: ReadonlyArray<PolygonHierarchy> = definedExternally,
 )

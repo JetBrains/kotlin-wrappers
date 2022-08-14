@@ -9,6 +9,8 @@
 
 package cesium
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * Represents an astronomical Julian date, which is the number of days since noon on January 1, -4712 (4713 BC).
  * For increased precision, this class stores the whole number part of the date and the seconds
@@ -346,6 +348,6 @@ external class JulianDate(
          * Gets or sets the list of leap seconds used throughout Cesium.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/JulianDate.html#.leapSeconds">Online Documentation</a>
          */
-        var leapSeconds: Array<out LeapSecond>
+        var leapSeconds: ReadonlyArray<LeapSecond>
     }
 }

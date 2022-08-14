@@ -9,6 +9,8 @@
 
 package cesium
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * A [SampledProperty] which is also a [PositionProperty].
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/SampledPositionProperty.html">Online Documentation</a>
@@ -130,7 +132,7 @@ external class SampledPositionProperty(
     fun addSample(
         time: JulianDate,
         position: Cartesian3,
-        derivatives: Array<out Cartesian3>? = definedExternally,
+        derivatives: ReadonlyArray<Cartesian3>? = definedExternally,
     )
 
     /**
@@ -141,9 +143,9 @@ external class SampledPositionProperty(
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/SampledPositionProperty.html#addSamples">Online Documentation</a>
      */
     fun addSamples(
-        times: Array<out JulianDate>,
-        positions: Array<out Cartesian3>,
-        derivatives: Array<out Array<out Any>>? = definedExternally,
+        times: ReadonlyArray<JulianDate>,
+        positions: ReadonlyArray<Cartesian3>,
+        derivatives: ReadonlyArray<ReadonlyArray<Any>>? = definedExternally,
     )
 
     /**
@@ -154,7 +156,7 @@ external class SampledPositionProperty(
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/SampledPositionProperty.html#addSamplesPackedArray">Online Documentation</a>
      */
     fun addSamplesPackedArray(
-        packedSamples: Array<out Double>,
+        packedSamples: ReadonlyArray<Double>,
         epoch: JulianDate? = definedExternally,
     )
 

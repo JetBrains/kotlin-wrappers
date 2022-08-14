@@ -5,6 +5,8 @@
 
 package cesium
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * A model's mesh and its materials.
  *
@@ -29,5 +31,5 @@ external class ModelMesh {
      * primitive indices.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ModelMesh.html#materials">Online Documentation</a>
      */
-    val materials: Array<out ModelMaterial>
+    val materials: ReadonlyArray<ModelMaterial>
 }

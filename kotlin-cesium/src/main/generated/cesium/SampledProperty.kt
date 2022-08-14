@@ -9,6 +9,8 @@
 
 package cesium
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * A [Property] whose value is interpolated for a given time from the
  * provided set of samples and specified interpolation algorithm and degree.
@@ -53,11 +55,11 @@ package cesium
  */
 external class SampledProperty(
     type: Double,
-    var derivativeTypes: Array<out Packable<*>> = definedExternally,
+    var derivativeTypes: ReadonlyArray<Packable<*>> = definedExternally,
 ) {
     constructor(
         type: Packable<*>,
-        derivativeTypes: Array<out Packable<*>>? = definedExternally,
+        derivativeTypes: ReadonlyArray<Packable<*>>? = definedExternally,
     )
 
     /**
@@ -158,7 +160,7 @@ external class SampledProperty(
     fun addSample(
         time: JulianDate,
         value: Packable<*>,
-        derivatives: Array<out Packable<*>>? = definedExternally,
+        derivatives: ReadonlyArray<Packable<*>>? = definedExternally,
     )
 
     /**
@@ -169,9 +171,9 @@ external class SampledProperty(
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/SampledProperty.html#addSamples">Online Documentation</a>
      */
     fun addSamples(
-        times: Array<out JulianDate>,
-        values: Array<out Packable<*>>,
-        derivativeValues: Array<out Array<out Any>>? = definedExternally,
+        times: ReadonlyArray<JulianDate>,
+        values: ReadonlyArray<Packable<*>>,
+        derivativeValues: ReadonlyArray<ReadonlyArray<Any>>? = definedExternally,
     )
 
     /**
@@ -182,7 +184,7 @@ external class SampledProperty(
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/SampledProperty.html#addSamplesPackedArray">Online Documentation</a>
      */
     fun addSamplesPackedArray(
-        packedSamples: Array<out Double>,
+        packedSamples: ReadonlyArray<Double>,
         epoch: JulianDate? = definedExternally,
     )
 

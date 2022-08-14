@@ -5,6 +5,8 @@
 
 package cesium
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * An ordered collection of imagery layers.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ImageryLayerCollection.html">Online Documentation</a>
@@ -158,7 +160,7 @@ external class ImageryLayerCollection {
     fun pickImageryLayers(
         ray: Ray,
         scene: Scene,
-    ): Array<out ImageryLayer>?
+    ): ReadonlyArray<ImageryLayer>?
 
     /**
      * Asynchronously determines the imagery layer features that are intersected by a pick ray.  The intersected imagery
@@ -191,7 +193,7 @@ external class ImageryLayerCollection {
     fun pickImageryLayerFeatures(
         ray: Ray,
         scene: Scene,
-    ): kotlin.js.Promise<Array<out ImageryLayerFeatureInfo>>?
+    ): kotlin.js.Promise<ReadonlyArray<ImageryLayerFeatureInfo>>?
 
     /**
      * Returns true if this object was destroyed; otherwise, false.

@@ -9,6 +9,8 @@
 
 package cesium
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * A spline that uses spherical linear (slerp) interpolation to create a quaternion curve.
  * The generated curve is in the class C<sup>1</sup>.
@@ -21,21 +23,21 @@ external class QuaternionSpline(options: ConstructorOptions) {
      * @property [points] The array of [Quaternion] control points.
      */
     interface ConstructorOptions {
-        var times: Array<out Double>
-        var points: Array<out Quaternion>
+        var times: ReadonlyArray<Double>
+        var points: ReadonlyArray<Quaternion>
     }
 
     /**
      * An array of times for the control points.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/QuaternionSpline.html#times">Online Documentation</a>
      */
-    val times: Array<out Double>
+    val times: ReadonlyArray<Double>
 
     /**
      * An array of [Quaternion] control points.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/QuaternionSpline.html#points">Online Documentation</a>
      */
-    val points: Array<out Quaternion>
+    val points: ReadonlyArray<Quaternion>
 
     /**
      * Finds an index `i` in `times` such that the parameter

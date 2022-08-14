@@ -9,6 +9,8 @@
 
 package cesium
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * A plane tangent to the provided ellipsoid at the provided origin.
  * If origin is not on the surface of the ellipsoid, it's surface projection will be used.
@@ -70,9 +72,9 @@ external class EllipsoidTangentPlane(
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/EllipsoidTangentPlane.html#projectPointsOntoPlane">Online Documentation</a>
      */
     fun projectPointsOntoPlane(
-        cartesians: Array<out Cartesian3>,
-        result: Array<out Cartesian2>? = definedExternally,
-    ): Array<out Cartesian2>
+        cartesians: ReadonlyArray<Cartesian3>,
+        result: ReadonlyArray<Cartesian2>? = definedExternally,
+    ): ReadonlyArray<Cartesian2>
 
     /**
      * Computes the projection of the provided 3D position onto the 2D plane, along the plane normal.
@@ -94,9 +96,9 @@ external class EllipsoidTangentPlane(
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/EllipsoidTangentPlane.html#projectPointsToNearestOnPlane">Online Documentation</a>
      */
     fun projectPointsToNearestOnPlane(
-        cartesians: Array<out Cartesian3>,
-        result: Array<out Cartesian2>? = definedExternally,
-    ): Array<out Cartesian2>
+        cartesians: ReadonlyArray<Cartesian3>,
+        result: ReadonlyArray<Cartesian2>? = definedExternally,
+    ): ReadonlyArray<Cartesian2>
 
     /**
      * Computes the projection of the provided 2D position onto the 3D ellipsoid.
@@ -118,9 +120,9 @@ external class EllipsoidTangentPlane(
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/EllipsoidTangentPlane.html#projectPointsOntoEllipsoid">Online Documentation</a>
      */
     fun projectPointsOntoEllipsoid(
-        cartesians: Array<out Cartesian2>,
-        result: Array<out Cartesian3>? = definedExternally,
-    ): Array<out Cartesian3>
+        cartesians: ReadonlyArray<Cartesian2>,
+        result: ReadonlyArray<Cartesian3>? = definedExternally,
+    ): ReadonlyArray<Cartesian3>
 
     companion object {
         /**
@@ -133,7 +135,7 @@ external class EllipsoidTangentPlane(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/EllipsoidTangentPlane.html#.fromPoints">Online Documentation</a>
          */
         fun fromPoints(
-            cartesians: Array<out Cartesian3>,
+            cartesians: ReadonlyArray<Cartesian3>,
             ellipsoid: Ellipsoid? = definedExternally,
         ): EllipsoidTangentPlane
     }

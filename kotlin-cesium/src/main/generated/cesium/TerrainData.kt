@@ -5,6 +5,8 @@
 
 package cesium
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * Terrain data for a single tile.  This type describes an
  * interface and is not intended to be instantiated directly.
@@ -15,7 +17,7 @@ abstract external class TerrainData {
      * An array of credits for this tile.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TerrainData.html#credits">Online Documentation</a>
      */
-    abstract var credits: Array<out Credit>
+    abstract var credits: ReadonlyArray<Credit>
 
     /**
      * The water mask included in this terrain data, if any.  A water mask is a rectangular

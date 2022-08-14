@@ -9,6 +9,8 @@
 
 package cesium
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * A Catmull-Rom spline is a cubic spline where the tangent at control points,
  * except the first and last, are computed using the previous and next control points.
@@ -42,8 +44,8 @@ external class CatmullRomSpline(options: ConstructorOptions) {
      *   If the tangent is not given, it will be estimated.
      */
     interface ConstructorOptions {
-        var times: Array<out Double>
-        var points: Array<out Cartesian3>
+        var times: ReadonlyArray<Double>
+        var points: ReadonlyArray<Cartesian3>
         var firstTangent: Cartesian3?
         var lastTangent: Cartesian3?
     }
@@ -52,13 +54,13 @@ external class CatmullRomSpline(options: ConstructorOptions) {
      * An array of times for the control points.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CatmullRomSpline.html#times">Online Documentation</a>
      */
-    val times: Array<out Double>
+    val times: ReadonlyArray<Double>
 
     /**
      * An array of [Cartesian3] control points.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CatmullRomSpline.html#points">Online Documentation</a>
      */
-    val points: Array<out Cartesian3>
+    val points: ReadonlyArray<Cartesian3>
 
     /**
      * The tangent at the first control point.

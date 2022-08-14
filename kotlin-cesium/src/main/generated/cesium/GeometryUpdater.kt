@@ -9,6 +9,8 @@
 
 package cesium
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * An abstract class for updating geometry entities.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GeometryUpdater.html">Online Documentation</a>
@@ -26,7 +28,7 @@ external class GeometryUpdater(options: ConstructorOptions) {
         var scene: Scene
         var geometryOptions: Any
         var geometryPropertyName: String
-        var observedPropertyNames: Array<out String>
+        var observedPropertyNames: ReadonlyArray<String>
     }
 
     /**

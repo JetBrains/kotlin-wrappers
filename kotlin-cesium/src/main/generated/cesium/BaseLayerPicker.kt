@@ -10,6 +10,8 @@
 
 package cesium
 
+import kotlinx.js.ReadonlyArray
+
 /**
  * The BaseLayerPicker is a single button widget that displays a panel of available imagery and
  * terrain providers.  When imagery is selected, the corresponding imagery layer is created and inserted
@@ -89,9 +91,9 @@ external class BaseLayerPicker(
      */
     interface ConstructorOptions {
         var globe: Globe
-        var imageryProviderViewModels: Array<out ProviderViewModel>?
+        var imageryProviderViewModels: ReadonlyArray<ProviderViewModel>?
         var selectedImageryProviderViewModel: ProviderViewModel?
-        var terrainProviderViewModels: Array<out ProviderViewModel>?
+        var terrainProviderViewModels: ReadonlyArray<ProviderViewModel>?
         var selectedTerrainProviderViewModel: ProviderViewModel?
     }
 
