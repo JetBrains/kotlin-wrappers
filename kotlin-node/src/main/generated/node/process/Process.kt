@@ -4,6 +4,8 @@ package node.process
 
 import kotlinx.js.JsSet
 import kotlinx.js.ReadonlyArray
+import node.events.Event
+import kotlin.js.Promise
 
 sealed external interface Process : node.events.IEventEmitter {
     /**
@@ -1224,4 +1226,388 @@ sealed external interface Process : node.events.IEventEmitter {
      * @since v0.8.0
      */
     var traceDeprecation: Boolean
+
+    /* EventEmitter */
+    fun addListener(
+        event: Event.BEFORE_EXIT,
+        listener: BeforeExitListener,
+    ): Process
+
+    fun addListener(
+        event: Event.DISCONNECT,
+        listener: DisconnectListener,
+    ): Process
+
+    fun addListener(
+        event: Event.EXIT,
+        listener: ExitListener,
+    ): Process
+
+    fun addListener(
+        event: Event.REJECTION_HANDLED,
+        listener: RejectionHandledListener,
+    ): Process
+
+    fun addListener(
+        event: Event.UNCAUGHT_EXCEPTION,
+        listener: UncaughtExceptionListener,
+    ): Process
+
+    fun addListener(
+        event: Event.UNCAUGHT_EXCEPTION_MONITOR,
+        listener: UncaughtExceptionListener,
+    ): Process
+
+    fun addListener(
+        event: Event.UNHANDLED_REJECTION,
+        listener: UnhandledRejectionListener,
+    ): Process
+
+    fun addListener(
+        event: Event.WARNING,
+        listener: WarningListener,
+    ): Process
+
+    fun addListener(
+        event: Event.MESSAGE,
+        listener: MessageListener,
+    ): Process
+
+    fun addListener(
+        event: Signals,
+        listener: SignalsListener,
+    ): Process
+
+    fun addListener(
+        event: Event.MULTIPLE_RESOLVES,
+        listener: MultipleResolveListener,
+    ): Process
+
+    fun addListener(
+        event: Event.WORKER,
+        listener: WorkerListener,
+    ): Process
+
+    fun emit(
+        event: Event.BEFORE_EXIT,
+        code: Number,
+    ): Boolean
+
+    fun emit(event: Event.DISCONNECT): Boolean
+    fun emit(
+        event: Event.EXIT,
+        code: Number,
+    ): Boolean
+
+    fun emit(
+        event: Event.REJECTION_HANDLED,
+        promise: Promise<*>,
+    ): Boolean
+
+    fun emit(
+        event: Event.UNCAUGHT_EXCEPTION,
+        error: Error,
+    ): Boolean
+
+    fun emit(
+        event: Event.UNCAUGHT_EXCEPTION_MONITOR,
+        error: Error,
+    ): Boolean
+
+    fun emit(
+        event: Event.UNHANDLED_REJECTION,
+        reason: Any?,
+        promise: Promise<*>,
+    ): Boolean
+
+    fun emit(
+        event: Event.WARNING,
+        warning: Error,
+    ): Boolean
+
+    fun emit(
+        event: Event.MESSAGE,
+        message: Any?,
+        sendHandle: Any?,
+    ): Process
+
+    fun emit(
+        event: Signals,
+        signal: Signals = definedExternally,
+    ): Boolean
+
+    fun emit(
+        event: Event.MULTIPLE_RESOLVES,
+        type: MultipleResolveType,
+        promise: Promise<*>,
+        value: Any?,
+    ): Process
+
+    fun emit(
+        event: Event.WORKER,
+        listener: WorkerListener,
+    ): Process
+
+    fun on(
+        event: Event.BEFORE_EXIT,
+        listener: BeforeExitListener,
+    ): Process
+
+    fun on(
+        event: Event.DISCONNECT,
+        listener: DisconnectListener,
+    ): Process
+
+    fun on(
+        event: Event.EXIT,
+        listener: ExitListener,
+    ): Process
+
+    fun on(
+        event: Event.REJECTION_HANDLED,
+        listener: RejectionHandledListener,
+    ): Process
+
+    fun on(
+        event: Event.UNCAUGHT_EXCEPTION,
+        listener: UncaughtExceptionListener,
+    ): Process
+
+    fun on(
+        event: Event.UNCAUGHT_EXCEPTION_MONITOR,
+        listener: UncaughtExceptionListener,
+    ): Process
+
+    fun on(
+        event: Event.UNHANDLED_REJECTION,
+        listener: UnhandledRejectionListener,
+    ): Process
+
+    fun on(
+        event: Event.WARNING,
+        listener: WarningListener,
+    ): Process
+
+    fun on(
+        event: Event.MESSAGE,
+        listener: MessageListener,
+    ): Process
+
+    fun on(
+        event: Signals,
+        listener: SignalsListener,
+    ): Process
+
+    fun on(
+        event: Event.MULTIPLE_RESOLVES,
+        listener: MultipleResolveListener,
+    ): Process
+
+    fun on(
+        event: Event.WORKER,
+        listener: WorkerListener,
+    ): Process
+
+    override fun on(
+        event: String, /* | Symbol */
+        listener: Function<Unit>,
+    ): Process
+
+    fun once(
+        event: Event.BEFORE_EXIT,
+        listener: BeforeExitListener,
+    ): Process
+
+    fun once(
+        event: Event.DISCONNECT,
+        listener: DisconnectListener,
+    ): Process
+
+    fun once(
+        event: Event.EXIT,
+        listener: ExitListener,
+    ): Process
+
+    fun once(
+        event: Event.REJECTION_HANDLED,
+        listener: RejectionHandledListener,
+    ): Process
+
+    fun once(
+        event: Event.UNCAUGHT_EXCEPTION,
+        listener: UncaughtExceptionListener,
+    ): Process
+
+    fun once(
+        event: Event.UNCAUGHT_EXCEPTION_MONITOR,
+        listener: UncaughtExceptionListener,
+    ): Process
+
+    fun once(
+        event: Event.UNHANDLED_REJECTION,
+        listener: UnhandledRejectionListener,
+    ): Process
+
+    fun once(
+        event: Event.WARNING,
+        listener: WarningListener,
+    ): Process
+
+    fun once(
+        event: Event.MESSAGE,
+        listener: MessageListener,
+    ): Process
+
+    fun once(
+        event: Signals,
+        listener: SignalsListener,
+    ): Process
+
+    fun once(
+        event: Event.MULTIPLE_RESOLVES,
+        listener: MultipleResolveListener,
+    ): Process
+
+    fun once(
+        event: Event.WORKER,
+        listener: WorkerListener,
+    ): Process
+
+    override fun once(
+        event: String, /* | Symbol */
+        listener: Function<Unit>,
+    ): Process
+
+    fun prependListener(
+        event: Event.BEFORE_EXIT,
+        listener: BeforeExitListener,
+    ): Process
+
+    fun prependListener(
+        event: Event.DISCONNECT,
+        listener: DisconnectListener,
+    ): Process
+
+    fun prependListener(
+        event: Event.EXIT,
+        listener: ExitListener,
+    ): Process
+
+    fun prependListener(
+        event: Event.REJECTION_HANDLED,
+        listener: RejectionHandledListener,
+    ): Process
+
+    fun prependListener(
+        event: Event.UNCAUGHT_EXCEPTION,
+        listener: UncaughtExceptionListener,
+    ): Process
+
+    fun prependListener(
+        event: Event.UNCAUGHT_EXCEPTION_MONITOR,
+        listener: UncaughtExceptionListener,
+    ): Process
+
+    fun prependListener(
+        event: Event.UNHANDLED_REJECTION,
+        listener: UnhandledRejectionListener,
+    ): Process
+
+    fun prependListener(
+        event: Event.WARNING,
+        listener: WarningListener,
+    ): Process
+
+    fun prependListener(
+        event: Event.MESSAGE,
+        listener: MessageListener,
+    ): Process
+
+    fun prependListener(
+        event: Signals,
+        listener: SignalsListener,
+    ): Process
+
+    fun prependListener(
+        event: Event.MULTIPLE_RESOLVES,
+        listener: MultipleResolveListener,
+    ): Process
+
+    fun prependListener(
+        event: Event.WORKER,
+        listener: WorkerListener,
+    ): Process
+
+    fun prependOnceListener(
+        event: Event.BEFORE_EXIT,
+        listener: BeforeExitListener,
+    ): Process
+
+    fun prependOnceListener(
+        event: Event.DISCONNECT,
+        listener: DisconnectListener,
+    ): Process
+
+    fun prependOnceListener(
+        event: Event.EXIT,
+        listener: ExitListener,
+    ): Process
+
+    fun prependOnceListener(
+        event: Event.REJECTION_HANDLED,
+        listener: RejectionHandledListener,
+    ): Process
+
+    fun prependOnceListener(
+        event: Event.UNCAUGHT_EXCEPTION,
+        listener: UncaughtExceptionListener,
+    ): Process
+
+    fun prependOnceListener(
+        event: Event.UNCAUGHT_EXCEPTION_MONITOR,
+        listener: UncaughtExceptionListener,
+    ): Process
+
+    fun prependOnceListener(
+        event: Event.UNHANDLED_REJECTION,
+        listener: UnhandledRejectionListener,
+    ): Process
+
+    fun prependOnceListener(
+        event: Event.WARNING,
+        listener: WarningListener,
+    ): Process
+
+    fun prependOnceListener(
+        event: Event.MESSAGE,
+        listener: MessageListener,
+    ): Process
+
+    fun prependOnceListener(
+        event: Signals,
+        listener: SignalsListener,
+    ): Process
+
+    fun prependOnceListener(
+        event: Event.MULTIPLE_RESOLVES,
+        listener: MultipleResolveListener,
+    ): Process
+
+    fun prependOnceListener(
+        event: Event.WORKER,
+        listener: WorkerListener,
+    ): Process
+
+    fun listeners(event: Event.BEFORE_EXIT): ReadonlyArray<BeforeExitListener>
+    fun listeners(event: Event.DISCONNECT): ReadonlyArray<DisconnectListener>
+    fun listeners(event: Event.EXIT): ReadonlyArray<ExitListener>
+    fun listeners(event: Event.REJECTION_HANDLED): ReadonlyArray<RejectionHandledListener>
+    fun listeners(event: Event.UNCAUGHT_EXCEPTION): ReadonlyArray<UncaughtExceptionListener>
+    fun listeners(event: Event.UNCAUGHT_EXCEPTION_MONITOR): ReadonlyArray<UncaughtExceptionListener>
+    fun listeners(event: Event.UNHANDLED_REJECTION): ReadonlyArray<UnhandledRejectionListener>
+    fun listeners(event: Event.WARNING): ReadonlyArray<WarningListener>
+    fun listeners(event: Event.MESSAGE): ReadonlyArray<MessageListener>
+    fun listeners(event: Signals): ReadonlyArray<SignalsListener>
+    fun listeners(event: Event.MULTIPLE_RESOLVES): ReadonlyArray<MultipleResolveListener>
+    fun listeners(event: Event.WORKER): ReadonlyArray<WorkerListener>
 }
