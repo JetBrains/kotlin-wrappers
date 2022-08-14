@@ -8,12 +8,8 @@ import kotlin.coroutines.resumeWithException
 
 suspend fun fetch(
     input: Request,
-): Response {
-    require(input.signal == null) {
-        "Parent `AbortSignal` currently not supported!"
-    }
-
-    return suspendCancellableCoroutine { continuation ->
+): Response =
+    suspendCancellableCoroutine { continuation ->
         val controller = AbortController()
 
         continuation.invokeOnCancellation {
@@ -31,7 +27,6 @@ suspend fun fetch(
             .then(continuation::resume)
             .catch(continuation::resumeWithException)
     }
-}
 
 suspend fun fetch(
     input: Request,
