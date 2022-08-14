@@ -24,8 +24,8 @@ suspend fun fetch(
         )
 
         fetchAsync(request)
-            .then(continuation::resume)
-            .catch(continuation::resumeWithException)
+            .then { continuation.resume(it) }
+            .catch { continuation.resumeWithException(FetchException(it)) }
     }
 
 suspend fun fetch(
