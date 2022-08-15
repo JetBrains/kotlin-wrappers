@@ -4,6 +4,7 @@ package node.fs
 
 import kotlinx.js.ReadonlyArray
 import kotlinx.js.Void
+import node.buffer.BufferEncoding
 import org.khronos.webgl.ArrayBufferView
 import kotlin.js.Promise
 
@@ -24,7 +25,7 @@ sealed external interface FileHandle {
      */
     fun appendFile(
         data: Any, /* string | Uint8Array */
-        options: Any? /* (ObjectEncodingOptions & FlagAndOpenMode) | BufferEncoding */ = definedExternally,
+        options: BufferEncoding? /* (ObjectEncodingOptions & FlagAndOpenMode) | BufferEncoding */ = definedExternally,
     ): Promise<Void>
 
     /**
@@ -337,7 +338,7 @@ sealed external interface FileHandle {
      */
     fun writeFile(
         data: Any, /* string | Uint8Array */
-        options: Any? /* (ObjectEncodingOptions & FlagAndOpenMode & Abortable) | BufferEncoding */ = definedExternally,
+        options: BufferEncoding? /* (ObjectEncodingOptions & FlagAndOpenMode & Abortable) | BufferEncoding */ = definedExternally,
     ): Promise<Void>
     /**
      * Write `buffer` to the file.
