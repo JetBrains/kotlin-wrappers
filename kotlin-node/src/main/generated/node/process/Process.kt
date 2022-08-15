@@ -4,6 +4,7 @@ package node.process
 
 import kotlinx.js.JsSet
 import kotlinx.js.ReadonlyArray
+import node.Module
 import node.events.Event
 import kotlin.js.Promise
 
@@ -909,7 +910,7 @@ sealed external interface Process : node.events.IEventEmitter {
      * @since v0.1.17
      * @deprecated Since v14.0.0 - Use `main` instead.
      */
-    var mainModule: dynamic /* Module */
+    var mainModule: Module?
     var memoryUsage: MemoryUsageFn
 
     /**
