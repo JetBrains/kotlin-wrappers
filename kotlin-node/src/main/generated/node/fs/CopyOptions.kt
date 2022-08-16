@@ -9,7 +9,7 @@ sealed external interface CopyOptions : CopyOptionsBase {
      * Function to filter copied files/directories. Return
      * `true` to copy the item, `false` to ignore it.
      */
-    val filter: ((
+    var filter: ((
         source: String,
         destination: String,
     ) -> PromiseResult<Boolean>)?
