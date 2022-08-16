@@ -9,8 +9,62 @@ import kotlinx.js.ReadonlyArray
 import kotlinx.js.Symbol
 import kotlin.js.Promise
 
-abstract external class EventEmitter : IEventEmitter {
+open external class EventEmitter : IEventEmitter {
     constructor(options: EventEmitterOptions = definedExternally)
+
+    override fun addListener(
+        event: String, /* | Symbol */
+        listener: Function<Unit>,
+    ): IEventEmitter
+
+    override fun on(
+        event: String, /* | Symbol */
+        listener: Function<Unit>,
+    ): IEventEmitter
+
+    override fun once(
+        event: String, /* | Symbol */
+        listener: Function<Unit>,
+    ): IEventEmitter
+
+    override fun removeListener(
+        event: String, /* | Symbol */
+        listener: Function<Unit>,
+    ): IEventEmitter
+
+    override fun off(
+        event: String, /* | Symbol */
+        listener: Function<Unit>,
+    ): IEventEmitter
+
+    override fun removeAllListeners(event: String /* | Symbol */): IEventEmitter
+
+    override fun setMaxListeners(n: Number): IEventEmitter
+
+    override fun getMaxListeners(): Number
+
+    override fun listeners(event: String /* | Symbol */): ReadonlyArray<Function<*>>
+
+    override fun rawListeners(event: String /* | Symbol */): ReadonlyArray<Function<*>>
+
+    override fun emit(
+        event: String, /* | Symbol */
+        vararg args: ReadonlyArray<Any>,
+    ): Boolean
+
+    override fun listenerCount(event: String /* | Symbol */): Number
+
+    override fun prependListener(
+        event: String, /* | Symbol */
+        listener: Function<Unit>,
+    ): IEventEmitter
+
+    override fun prependOnceListener(
+        event: String, /* | Symbol */
+        listener: Function<Unit>,
+    ): IEventEmitter
+
+    override fun eventNames(): ReadonlyArray<String /* | Symbol */>
 
     companion object {
         /**
