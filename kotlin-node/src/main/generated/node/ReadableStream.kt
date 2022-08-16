@@ -2,12 +2,12 @@
 
 package node
 
-sealed external interface ReadableStream : node.events.IEventEmitter {
+external interface ReadableStream : node.events.IEventEmitter {
     var readable: Boolean
     fun read(size: Number = definedExternally): Any /* string | Buffer */
-    fun setEncoding(encoding: node.buffer.BufferEncoding): node.stream.ReadableStream
-    fun pause(): node.stream.ReadableStream
-    fun resume(): node.stream.ReadableStream
+    fun setEncoding(encoding: node.buffer.BufferEncoding): ReadableStream
+    fun pause(): ReadableStream
+    fun resume(): ReadableStream
     fun isPaused(): Boolean
 
     // HIDDEN METHOD START
@@ -16,12 +16,12 @@ sealed external interface ReadableStream : node.events.IEventEmitter {
     */
     // HIDDEN METHOD END
 
-    fun unpipe(destination: WritableStream = definedExternally): node.stream.ReadableStream
+    fun unpipe(destination: WritableStream = definedExternally): ReadableStream
     fun unshift(
         chunk: Any, /* string | Uint8Array */
         encoding: node.buffer.BufferEncoding = definedExternally,
     )
 
-    fun wrap(oldStream: node.stream.ReadableStream): node.stream.ReadableStream
+    fun wrap(stream: ReadableStream): ReadableStream
     /* [Symbol.asyncIterator](): AsyncIterableIterator<string | Buffer> */
 }
