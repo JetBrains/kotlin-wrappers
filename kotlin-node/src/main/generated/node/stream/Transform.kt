@@ -8,11 +8,11 @@ package node.stream
 open external class Transform : Duplex {
     constructor(opts: TransformOptions = definedExternally)
 
-    fun _transform(
+    open fun _transform(
         chunk: Any,
         encoding: node.buffer.BufferEncoding,
         callback: TransformCallback,
     )
 
-    fun _flush(callback: TransformCallback)
+    open fun _flush(callback: TransformCallback)
 }

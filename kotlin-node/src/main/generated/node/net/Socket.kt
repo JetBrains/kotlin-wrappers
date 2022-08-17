@@ -57,23 +57,23 @@ open external class Socket : node.stream.Duplex {
      * This function should only be used for reconnecting a socket after`'close'` has been emitted or otherwise it may lead to undefined
      * behavior.
      */
-    fun connect(
+    open fun connect(
         options: SocketConnectOpts,
         connectionListener: () -> Unit = definedExternally,
     ): Socket
 
-    fun connect(
+    open fun connect(
         port: Number,
         host: String,
         connectionListener: () -> Unit = definedExternally,
     ): Socket
 
-    fun connect(
+    open fun connect(
         port: Number,
         connectionListener: () -> Unit = definedExternally,
     ): Socket
 
-    fun connect(
+    open fun connect(
         path: String,
         connectionListener: () -> Unit = definedExternally,
     ): Socket
@@ -119,7 +119,7 @@ open external class Socket : node.stream.Duplex {
      * @since v0.1.90
      * @return The socket itself.
      */
-    fun setTimeout(
+    open fun setTimeout(
         timeout: Number,
         callback: () -> Unit = definedExternally,
     ): Socket
@@ -139,7 +139,7 @@ open external class Socket : node.stream.Duplex {
      * @param [noDelay=true]
      * @return The socket itself.
      */
-    fun setNoDelay(noDelay: Boolean = definedExternally): Socket
+    open fun setNoDelay(noDelay: Boolean = definedExternally): Socket
 
     /**
      * Enable/disable keep-alive functionality, and optionally set the initial
@@ -160,7 +160,7 @@ open external class Socket : node.stream.Duplex {
      * @param [initialDelay=0]
      * @return The socket itself.
      */
-    fun setKeepAlive(
+    open fun setKeepAlive(
         enable: Boolean = definedExternally,
         initialDelay: Number = definedExternally,
     ): Socket
@@ -182,7 +182,7 @@ open external class Socket : node.stream.Duplex {
      * @since v0.9.1
      * @return The socket itself.
      */
-    fun unref(): Socket
+    open fun unref(): Socket
 
     /**
      * Opposite of `unref()`, calling `ref()` on a previously `unref`ed socket will _not_ let the program exit if it's the only socket left (the default behavior).
@@ -190,7 +190,7 @@ open external class Socket : node.stream.Duplex {
      * @since v0.9.1
      * @return The socket itself.
      */
-    fun ref(): Socket
+    open fun ref(): Socket
 
     /**
      * This property shows the number of characters buffered for writing. The buffer
@@ -209,19 +209,19 @@ open external class Socket : node.stream.Duplex {
      * @since v0.3.8
      * @deprecated Since v14.6.0 - Use `writableLength` instead.
      */
-    val bufferSize: Number
+    open val bufferSize: Number
 
     /**
      * The amount of received bytes.
      * @since v0.5.3
      */
-    val bytesRead: Number
+    open val bytesRead: Number
 
     /**
      * The amount of bytes sent.
      * @since v0.5.3
      */
-    val bytesWritten: Number
+    open val bytesWritten: Number
 
     /**
      * If `true`,`socket.connect(options[, connectListener])` was
@@ -230,7 +230,7 @@ open external class Socket : node.stream.Duplex {
      * that the `socket.connect(options[, connectListener])` callback is a listener for the `'connect'` event.
      * @since v6.1.0
      */
-    val connecting: Boolean
+    open val connecting: Boolean
 
     /**
      * See `writable.destroyed` for further details.
@@ -243,45 +243,45 @@ open external class Socket : node.stream.Duplex {
      * connects on `'192.168.1.1'`, the value of `socket.localAddress` would be`'192.168.1.1'`.
      * @since v0.9.6
      */
-    val localAddress: String?
+    open val localAddress: String?
 
     /**
      * The numeric representation of the local port. For example, `80` or `21`.
      * @since v0.9.6
      */
-    val localPort: Number?
+    open val localPort: Number?
 
     /**
      * This property represents the state of the connection as a string.
      * @see {https://nodejs.org/api/net.html#socketreadystate}
      * @since v0.5.0
      */
-    val readyState: SocketReadyState
+    open val readyState: SocketReadyState
 
     /**
      * The string representation of the remote IP address. For example,`'74.125.127.100'` or `'2001:4860:a005::68'`. Value may be `undefined` if
      * the socket is destroyed (for example, if the client disconnected).
      * @since v0.5.10
      */
-    val remoteAddress: String?
+    open val remoteAddress: String?
 
     /**
      * The string representation of the remote IP family. `'IPv4'` or `'IPv6'`.
      * @since v0.11.14
      */
-    val remoteFamily: String?
+    open val remoteFamily: String?
 
     /**
      * The numeric representation of the remote port. For example, `80` or `21`.
      * @since v0.5.10
      */
-    val remotePort: Number?
+    open val remotePort: Number?
 
     /**
      * The socket timeout in milliseconds as set by socket.setTimeout(). It is undefined if a timeout has not been set.
      * @since v10.7.0
      */
-    val timeout: Number?
+    open val timeout: Number?
 
     /**
      * Half-closes the socket. i.e., it sends a FIN packet. It is possible the
@@ -321,22 +321,22 @@ open external class Socket : node.stream.Duplex {
         listener: Function<Unit>,
     ): Socket
 
-    fun addListener(
+    open fun addListener(
         event: Event.CLOSE,
         listener: (hadError: Boolean) -> Unit,
     ): Socket
 
-    fun addListener(
+    open fun addListener(
         event: Event.CONNECT,
         listener: () -> Unit,
     ): Socket
 
-    fun addListener(
+    open fun addListener(
         event: Event.DATA,
         listener: (data: Buffer) -> Unit,
     ): Socket
 
-    fun addListener(
+    open fun addListener(
         event: Event.DRAIN,
         listener: () -> Unit,
     ): Socket
@@ -351,7 +351,7 @@ open external class Socket : node.stream.Duplex {
         listener: (error: Error) -> Unit,
     ): Socket
 
-    fun addListener(
+    open fun addListener(
         event: Event.LOOKUP,
         listener: (
             error: Error,
@@ -361,12 +361,12 @@ open external class Socket : node.stream.Duplex {
         ) -> Unit,
     ): Socket
 
-    fun addListener(
+    open fun addListener(
         event: Event.READY,
         listener: () -> Unit,
     ): Socket
 
-    fun addListener(
+    open fun addListener(
         event: Event.TIMEOUT,
         listener: () -> Unit,
     ): Socket
@@ -376,25 +376,25 @@ open external class Socket : node.stream.Duplex {
         vararg args: ReadonlyArray<Any>,
     ): Boolean
 
-    fun emit(
+    open fun emit(
         event: Event.CLOSE,
         hadError: Boolean,
     ): Boolean
 
-    fun emit(event: Event.CONNECT): Boolean
-    fun emit(
+    open fun emit(event: Event.CONNECT): Boolean
+    open fun emit(
         event: Event.DATA,
         data: Buffer,
     ): Boolean
 
-    fun emit(event: Event.DRAIN): Boolean
+    open fun emit(event: Event.DRAIN): Boolean
     override fun emit(event: Event.END): Boolean
     override fun emit(
         event: Event.ERROR,
         err: Error,
     ): Boolean
 
-    fun emit(
+    open fun emit(
         event: Event.LOOKUP,
         err: Error,
         address: String,
@@ -402,29 +402,29 @@ open external class Socket : node.stream.Duplex {
         host: String,
     ): Boolean
 
-    fun emit(event: Event.READY): Boolean
-    fun emit(event: Event.TIMEOUT): Boolean
+    open fun emit(event: Event.READY): Boolean
+    open fun emit(event: Event.TIMEOUT): Boolean
     override fun on(
         event: String,
         listener: Function<Unit>,
     ): Socket
 
-    fun on(
+    open fun on(
         event: Event.CLOSE,
         listener: (hadError: Boolean) -> Unit,
     ): Socket
 
-    fun on(
+    open fun on(
         event: Event.CONNECT,
         listener: () -> Unit,
     ): Socket
 
-    fun on(
+    open fun on(
         event: Event.DATA,
         listener: (data: Buffer) -> Unit,
     ): Socket
 
-    fun on(
+    open fun on(
         event: Event.DRAIN,
         listener: () -> Unit,
     ): Socket
@@ -439,7 +439,7 @@ open external class Socket : node.stream.Duplex {
         listener: (error: Error) -> Unit,
     ): Socket
 
-    fun on(
+    open fun on(
         event: Event.LOOKUP,
         listener: (
             error: Error,
@@ -449,12 +449,12 @@ open external class Socket : node.stream.Duplex {
         ) -> Unit,
     ): Socket
 
-    fun on(
+    open fun on(
         event: Event.READY,
         listener: () -> Unit,
     ): Socket
 
-    fun on(
+    open fun on(
         event: Event.TIMEOUT,
         listener: () -> Unit,
     ): Socket
@@ -464,22 +464,22 @@ open external class Socket : node.stream.Duplex {
         listener: Function<Unit>,
     ): Socket
 
-    fun once(
+    open fun once(
         event: Event.CLOSE,
         listener: (hadError: Boolean) -> Unit,
     ): Socket
 
-    fun once(
+    open fun once(
         event: Event.CONNECT,
         listener: () -> Unit,
     ): Socket
 
-    fun once(
+    open fun once(
         event: Event.DATA,
         listener: (data: Buffer) -> Unit,
     ): Socket
 
-    fun once(
+    open fun once(
         event: Event.DRAIN,
         listener: () -> Unit,
     ): Socket
@@ -494,7 +494,7 @@ open external class Socket : node.stream.Duplex {
         listener: (error: Error) -> Unit,
     ): Socket
 
-    fun once(
+    open fun once(
         event: Event.LOOKUP,
         listener: (
             error: Error,
@@ -504,12 +504,12 @@ open external class Socket : node.stream.Duplex {
         ) -> Unit,
     ): Socket
 
-    fun once(
+    open fun once(
         event: Event.READY,
         listener: () -> Unit,
     ): Socket
 
-    fun once(
+    open fun once(
         event: Event.TIMEOUT,
         listener: () -> Unit,
     ): Socket
@@ -519,22 +519,22 @@ open external class Socket : node.stream.Duplex {
         listener: Function<Unit>,
     ): Socket
 
-    fun prependListener(
+    open fun prependListener(
         event: Event.CLOSE,
         listener: (hadError: Boolean) -> Unit,
     ): Socket
 
-    fun prependListener(
+    open fun prependListener(
         event: Event.CONNECT,
         listener: () -> Unit,
     ): Socket
 
-    fun prependListener(
+    open fun prependListener(
         event: Event.DATA,
         listener: (data: Buffer) -> Unit,
     ): Socket
 
-    fun prependListener(
+    open fun prependListener(
         event: Event.DRAIN,
         listener: () -> Unit,
     ): Socket
@@ -549,7 +549,7 @@ open external class Socket : node.stream.Duplex {
         listener: (error: Error) -> Unit,
     ): Socket
 
-    fun prependListener(
+    open fun prependListener(
         event: Event.LOOKUP,
         listener: (
             error: Error,
@@ -559,12 +559,12 @@ open external class Socket : node.stream.Duplex {
         ) -> Unit,
     ): Socket
 
-    fun prependListener(
+    open fun prependListener(
         event: Event.READY,
         listener: () -> Unit,
     ): Socket
 
-    fun prependListener(
+    open fun prependListener(
         event: Event.TIMEOUT,
         listener: () -> Unit,
     ): Socket
@@ -574,22 +574,22 @@ open external class Socket : node.stream.Duplex {
         listener: Function<Unit>,
     ): Socket
 
-    fun prependOnceListener(
+    open fun prependOnceListener(
         event: Event.CLOSE,
         listener: (hadError: Boolean) -> Unit,
     ): Socket
 
-    fun prependOnceListener(
+    open fun prependOnceListener(
         event: Event.CONNECT,
         listener: () -> Unit,
     ): Socket
 
-    fun prependOnceListener(
+    open fun prependOnceListener(
         event: Event.DATA,
         listener: (data: Buffer) -> Unit,
     ): Socket
 
-    fun prependOnceListener(
+    open fun prependOnceListener(
         event: Event.DRAIN,
         listener: () -> Unit,
     ): Socket
@@ -604,7 +604,7 @@ open external class Socket : node.stream.Duplex {
         listener: (error: Error) -> Unit,
     ): Socket
 
-    fun prependOnceListener(
+    open fun prependOnceListener(
         event: Event.LOOKUP,
         listener: (
             error: Error,
@@ -614,12 +614,12 @@ open external class Socket : node.stream.Duplex {
         ) -> Unit,
     ): Socket
 
-    fun prependOnceListener(
+    open fun prependOnceListener(
         event: Event.READY,
         listener: () -> Unit,
     ): Socket
 
-    fun prependOnceListener(
+    open fun prependOnceListener(
         event: Event.TIMEOUT,
         listener: () -> Unit,
     ): Socket
