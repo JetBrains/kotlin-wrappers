@@ -9,12 +9,10 @@ external interface ReadableStream : node.events.IEventEmitter {
     fun pause(): ReadableStream
     fun resume(): ReadableStream
     fun isPaused(): Boolean
-
-    // HIDDEN METHOD START
-    /*
-    pipe<T extends WritableStream>(destination: T, options?: { end?: boolean | undefined; }): T
-    */
-    // HIDDEN METHOD END
+    fun <T : WritableStream> pipe(
+        destination: T,
+        options: Any /* { end?: boolean | undefined; } */ = definedExternally,
+    ): T
 
     fun unpipe(destination: WritableStream = definedExternally): ReadableStream
     fun unshift(

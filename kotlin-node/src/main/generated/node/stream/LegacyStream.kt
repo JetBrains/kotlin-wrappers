@@ -5,16 +5,11 @@ package node.stream
 @JsModule("node:stream")
 @JsNonModule
 open external class LegacyStream : node.events.EventEmitter {
-
-    // HIDDEN METHOD START
-    /*
-    pipe<T extends NodeJS.WritableStream>(
+    open fun <T : node.WritableStream> pipe(
         destination: T,
-        options?: {
-            end?: boolean | undefined;
-        }
+        options: Any /* {
+        end?: boolean | undefined;
+    }
+ */ = definedExternally,
     ): T
-    */
-    // HIDDEN METHOD END
-
 }
