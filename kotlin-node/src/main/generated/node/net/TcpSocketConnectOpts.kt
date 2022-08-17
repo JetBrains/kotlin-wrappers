@@ -2,7 +2,7 @@
 
 package node.net
 
-sealed external interface TcpSocketConnectOpts : ConnectOpts {
+external interface TcpSocketConnectOpts : ConnectOpts {
     var port: Number
     var host: String?
     var localAddress: String?
