@@ -2,7 +2,7 @@
 
 package node
 
-sealed external interface RefCounted {
+external interface RefCounted {
     fun ref(): RefCounted
     fun unref(): RefCounted
 }

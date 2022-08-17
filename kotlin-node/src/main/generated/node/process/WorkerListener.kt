@@ -2,6 +2,8 @@
 
 package node.process
 
+import node.worker.Worker
+
 typealias WorkerListener = (
-    worker: Any, /* Worker */
+    worker: Worker,
 ) -> Unit
