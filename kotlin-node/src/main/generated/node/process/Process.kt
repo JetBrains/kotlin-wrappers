@@ -672,7 +672,7 @@ sealed external interface Process : node.events.IEventEmitter {
      * Using this function is mutually exclusive with using the deprecated `domain` built-in module.
      * @since v9.3.0
      */
-    fun setUncaughtExceptionCaptureCallback(callback: ((err: Error) -> Unit)?)
+    fun setUncaughtExceptionCaptureCallback(callback: ((error: Error) -> Unit)?)
 
     /**
      * Indicates whether a callback has been set using {@link setUncaughtExceptionCaptureCallback}.

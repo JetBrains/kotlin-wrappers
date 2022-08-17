@@ -307,7 +307,7 @@ open external class Writable : Stream, node.WritableStream {
 
     fun addListener(
         event: Event.ERROR,
-        listener: (err: Error) -> Unit,
+        listener: (error: Error) -> Unit,
     ): Writable
 
     fun addListener(
@@ -365,7 +365,7 @@ open external class Writable : Stream, node.WritableStream {
 
     fun on(
         event: Event.ERROR,
-        listener: (err: Error) -> Unit,
+        listener: (error: Error) -> Unit,
     ): Writable
 
     fun on(
@@ -400,7 +400,7 @@ open external class Writable : Stream, node.WritableStream {
 
     fun once(
         event: Event.ERROR,
-        listener: (err: Error) -> Unit,
+        listener: (error: Error) -> Unit,
     ): Writable
 
     fun once(
@@ -435,7 +435,7 @@ open external class Writable : Stream, node.WritableStream {
 
     fun prependListener(
         event: Event.ERROR,
-        listener: (err: Error) -> Unit,
+        listener: (error: Error) -> Unit,
     ): Writable
 
     fun prependListener(
@@ -470,7 +470,7 @@ open external class Writable : Stream, node.WritableStream {
 
     fun prependOnceListener(
         event: Event.ERROR,
-        listener: (err: Error) -> Unit,
+        listener: (error: Error) -> Unit,
     ): Writable
 
     fun prependOnceListener(
@@ -505,7 +505,7 @@ open external class Writable : Stream, node.WritableStream {
 
     fun removeListener(
         event: Event.ERROR,
-        listener: (err: Error) -> Unit,
+        listener: (error: Error) -> Unit,
     ): Writable
 
     fun removeListener(
