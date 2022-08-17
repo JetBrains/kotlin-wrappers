@@ -9,7 +9,7 @@ import kotlinx.js.ReadonlyArray
 import node.buffer.Buffer
 import node.events.Event
 
-external class Socket : node.stream.Duplex {
+open external class Socket : node.stream.Duplex {
     constructor(options: SocketConstructorOpts = definedExternally)
 
     /**
