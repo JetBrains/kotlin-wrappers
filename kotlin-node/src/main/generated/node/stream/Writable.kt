@@ -21,19 +21,19 @@ open external class Writable : Stream, node.WritableStream {
      * does not indicate whether the data has been flushed, for this use `writable.writableFinished` instead.
      * @since v12.9.0
      */
-    val writableEnded: Boolean
+    open val writableEnded: Boolean
 
     /**
      * Is set to `true` immediately before the `'finish'` event is emitted.
      * @since v12.6.0
      */
-    val writableFinished: Boolean
+    open val writableFinished: Boolean
 
     /**
      * Return the value of `highWaterMark` passed when creating this `Writable`.
      * @since v9.3.0
      */
-    val writableHighWaterMark: Number
+    open val writableHighWaterMark: Number
 
     /**
      * This property contains the number of bytes (or objects) in the queue
@@ -41,48 +41,48 @@ open external class Writable : Stream, node.WritableStream {
      * the status of the `highWaterMark`.
      * @since v9.4.0
      */
-    val writableLength: Number
+    open val writableLength: Number
 
     /**
      * Getter for the property `objectMode` of a given `Writable` stream.
      * @since v12.3.0
      */
-    val writableObjectMode: Boolean
+    open val writableObjectMode: Boolean
 
     /**
      * Number of times `writable.uncork()` needs to be
      * called in order to fully uncork the stream.
      * @since v13.2.0, v12.16.0
      */
-    val writableCorked: Number
+    open val writableCorked: Number
 
     /**
      * Is `true` after `writable.destroy()` has been called.
      * @since v8.0.0
      */
-    var destroyed: Boolean
+    open var destroyed: Boolean
 
     /**
      * Is true after 'close' has been emitted.
      * @since v8.0.0
      */
-    val closed: Boolean
+    open val closed: Boolean
 
     /**
      * Returns error if the stream has been destroyed with an error.
      * @since v18.0.0
      */
-    val errored: Error?
+    open val errored: Error?
 
     /**
      * Is `true` if the stream's buffer has been full and stream will emit 'drain'.
      * @since v15.2.0, v14.17.0
      */
-    val writableNeedDrain: Boolean
+    open val writableNeedDrain: Boolean
 
     constructor(opts: WritableOptions = definedExternally)
 
-    fun _write(
+    open fun _write(
         chunk: Any,
         encoding: node.buffer.BufferEncoding,
         callback: (error: Error?) -> Unit,
@@ -100,13 +100,13 @@ open external class Writable : Stream, node.WritableStream {
     */
     // HIDDEN METHOD END
 
-    var _construct: ((callback: (error: Error?) -> Unit) -> Unit)?
-    fun _destroy(
+    open var _construct: ((callback: (error: Error?) -> Unit) -> Unit)?
+    open fun _destroy(
         error: Error?,
         callback: (error: Error?) -> Unit,
     )
 
-    fun _final(callback: (error: Error?) -> Unit)
+    open fun _final(callback: (error: Error?) -> Unit)
 
     /**
      * The `writable.write()` method writes some data to the stream, and calls the
@@ -180,7 +180,7 @@ open external class Writable : Stream, node.WritableStream {
      * @since v0.11.15
      * @param encoding The new default encoding
      */
-    fun setDefaultEncoding(encoding: node.buffer.BufferEncoding): Writable
+    open fun setDefaultEncoding(encoding: node.buffer.BufferEncoding): Writable
 
     /**
      * Calling the `writable.end()` method signals that no more data will be written
@@ -230,7 +230,7 @@ open external class Writable : Stream, node.WritableStream {
      * See also: `writable.uncork()`, `writable._writev()`.
      * @since v0.11.2
      */
-    fun cork()
+    open fun cork()
 
     /**
      * The `writable.uncork()` method flushes all data buffered since {@link cork} was called.
@@ -265,7 +265,7 @@ open external class Writable : Stream, node.WritableStream {
      * See also: `writable.cork()`.
      * @since v0.11.2
      */
-    fun uncork()
+    open fun uncork()
 
     /**
      * Destroy the stream. Optionally emit an `'error'` event, and emit a `'close'`event (unless `emitClose` is set to `false`). After this call, the writable
@@ -283,7 +283,7 @@ open external class Writable : Stream, node.WritableStream {
      * @since v8.0.0
      * @param error Optional, an error to emit with `'error'` event.
      */
-    fun destroy(error: Error = definedExternally): Writable
+    open fun destroy(error: Error = definedExternally): Writable
 
     /**
      * Event emitter
@@ -295,32 +295,32 @@ open external class Writable : Stream, node.WritableStream {
      * 5. pipe
      * 6. unpipe
      */
-    fun addListener(
+    open fun addListener(
         event: Event.CLOSE,
         listener: () -> Unit,
     ): Writable
 
-    fun addListener(
+    open fun addListener(
         event: Event.DRAIN,
         listener: () -> Unit,
     ): Writable
 
-    fun addListener(
+    open fun addListener(
         event: Event.ERROR,
         listener: (error: Error) -> Unit,
     ): Writable
 
-    fun addListener(
+    open fun addListener(
         event: Event.FINISH,
         listener: () -> Unit,
     ): Writable
 
-    fun addListener(
+    open fun addListener(
         event: Event.PIPE,
         listener: (src: Readable) -> Unit,
     ): Writable
 
-    fun addListener(
+    open fun addListener(
         event: Event.UNPIPE,
         listener: (src: Readable) -> Unit,
     ): Writable
@@ -330,20 +330,20 @@ open external class Writable : Stream, node.WritableStream {
         listener: Function<Unit>,
     ): Writable
 
-    fun emit(event: Event.CLOSE): Boolean
-    fun emit(event: Event.DRAIN): Boolean
-    fun emit(
+    open fun emit(event: Event.CLOSE): Boolean
+    open fun emit(event: Event.DRAIN): Boolean
+    open fun emit(
         event: Event.ERROR,
         err: Error,
     ): Boolean
 
-    fun emit(event: Event.FINISH): Boolean
-    fun emit(
+    open fun emit(event: Event.FINISH): Boolean
+    open fun emit(
         event: Event.PIPE,
         src: Readable,
     ): Boolean
 
-    fun emit(
+    open fun emit(
         event: Event.UNPIPE,
         src: Readable,
     ): Boolean
@@ -353,32 +353,32 @@ open external class Writable : Stream, node.WritableStream {
         vararg args: ReadonlyArray<Any>,
     ): Boolean
 
-    fun on(
+    open fun on(
         event: Event.CLOSE,
         listener: () -> Unit,
     ): Writable
 
-    fun on(
+    open fun on(
         event: Event.DRAIN,
         listener: () -> Unit,
     ): Writable
 
-    fun on(
+    open fun on(
         event: Event.ERROR,
         listener: (error: Error) -> Unit,
     ): Writable
 
-    fun on(
+    open fun on(
         event: Event.FINISH,
         listener: () -> Unit,
     ): Writable
 
-    fun on(
+    open fun on(
         event: Event.PIPE,
         listener: (src: Readable) -> Unit,
     ): Writable
 
-    fun on(
+    open fun on(
         event: Event.UNPIPE,
         listener: (src: Readable) -> Unit,
     ): Writable
@@ -388,32 +388,32 @@ open external class Writable : Stream, node.WritableStream {
         listener: Function<Unit>,
     ): Writable
 
-    fun once(
+    open fun once(
         event: Event.CLOSE,
         listener: () -> Unit,
     ): Writable
 
-    fun once(
+    open fun once(
         event: Event.DRAIN,
         listener: () -> Unit,
     ): Writable
 
-    fun once(
+    open fun once(
         event: Event.ERROR,
         listener: (error: Error) -> Unit,
     ): Writable
 
-    fun once(
+    open fun once(
         event: Event.FINISH,
         listener: () -> Unit,
     ): Writable
 
-    fun once(
+    open fun once(
         event: Event.PIPE,
         listener: (src: Readable) -> Unit,
     ): Writable
 
-    fun once(
+    open fun once(
         event: Event.UNPIPE,
         listener: (src: Readable) -> Unit,
     ): Writable
@@ -423,32 +423,32 @@ open external class Writable : Stream, node.WritableStream {
         listener: Function<Unit>,
     ): Writable
 
-    fun prependListener(
+    open fun prependListener(
         event: Event.CLOSE,
         listener: () -> Unit,
     ): Writable
 
-    fun prependListener(
+    open fun prependListener(
         event: Event.DRAIN,
         listener: () -> Unit,
     ): Writable
 
-    fun prependListener(
+    open fun prependListener(
         event: Event.ERROR,
         listener: (error: Error) -> Unit,
     ): Writable
 
-    fun prependListener(
+    open fun prependListener(
         event: Event.FINISH,
         listener: () -> Unit,
     ): Writable
 
-    fun prependListener(
+    open fun prependListener(
         event: Event.PIPE,
         listener: (src: Readable) -> Unit,
     ): Writable
 
-    fun prependListener(
+    open fun prependListener(
         event: Event.UNPIPE,
         listener: (src: Readable) -> Unit,
     ): Writable
@@ -458,32 +458,32 @@ open external class Writable : Stream, node.WritableStream {
         listener: Function<Unit>,
     ): Writable
 
-    fun prependOnceListener(
+    open fun prependOnceListener(
         event: Event.CLOSE,
         listener: () -> Unit,
     ): Writable
 
-    fun prependOnceListener(
+    open fun prependOnceListener(
         event: Event.DRAIN,
         listener: () -> Unit,
     ): Writable
 
-    fun prependOnceListener(
+    open fun prependOnceListener(
         event: Event.ERROR,
         listener: (error: Error) -> Unit,
     ): Writable
 
-    fun prependOnceListener(
+    open fun prependOnceListener(
         event: Event.FINISH,
         listener: () -> Unit,
     ): Writable
 
-    fun prependOnceListener(
+    open fun prependOnceListener(
         event: Event.PIPE,
         listener: (src: Readable) -> Unit,
     ): Writable
 
-    fun prependOnceListener(
+    open fun prependOnceListener(
         event: Event.UNPIPE,
         listener: (src: Readable) -> Unit,
     ): Writable
@@ -493,32 +493,32 @@ open external class Writable : Stream, node.WritableStream {
         listener: Function<Unit>,
     ): Writable
 
-    fun removeListener(
+    open fun removeListener(
         event: Event.CLOSE,
         listener: () -> Unit,
     ): Writable
 
-    fun removeListener(
+    open fun removeListener(
         event: Event.DRAIN,
         listener: () -> Unit,
     ): Writable
 
-    fun removeListener(
+    open fun removeListener(
         event: Event.ERROR,
         listener: (error: Error) -> Unit,
     ): Writable
 
-    fun removeListener(
+    open fun removeListener(
         event: Event.FINISH,
         listener: () -> Unit,
     ): Writable
 
-    fun removeListener(
+    open fun removeListener(
         event: Event.PIPE,
         listener: (src: Readable) -> Unit,
     ): Writable
 
-    fun removeListener(
+    open fun removeListener(
         event: Event.UNPIPE,
         listener: (src: Readable) -> Unit,
     ): Writable

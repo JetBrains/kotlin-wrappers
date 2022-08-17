@@ -6,14 +6,14 @@
 package node.stream
 
 open external class Duplex : Readable /* , Writable */ {
-    val writable: Boolean
-    val writableEnded: Boolean
-    val writableFinished: Boolean
-    val writableHighWaterMark: Number
-    val writableLength: Number
-    val writableObjectMode: Boolean
-    val writableCorked: Number
-    val writableNeedDrain: Boolean
+    open val writable: Boolean
+    open val writableEnded: Boolean
+    open val writableFinished: Boolean
+    open val writableHighWaterMark: Number
+    open val writableLength: Number
+    open val writableObjectMode: Boolean
+    open val writableCorked: Number
+    open val writableNeedDrain: Boolean
     override val closed: Boolean
     override val errored: Error?
 
@@ -26,11 +26,11 @@ open external class Duplex : Readable /* , Writable */ {
      * emitted.
      * @since v0.9.4
      */
-    var allowHalfOpen: Boolean
+    open var allowHalfOpen: Boolean
 
     constructor(opts: DuplexOptions = definedExternally)
 
-    fun _write(
+    open fun _write(
         chunk: Any,
         encoding: node.buffer.BufferEncoding,
         callback: (error: Error?) -> Unit,
@@ -53,7 +53,7 @@ open external class Duplex : Readable /* , Writable */ {
         callback: (error: Error?) -> Unit,
     )
 
-    fun _final(callback: (error: Error?) -> Unit)
+    open fun _final(callback: (error: Error?) -> Unit)
     open fun write(
         chunk: Any,
         encoding: node.buffer.BufferEncoding = definedExternally,
@@ -65,7 +65,7 @@ open external class Duplex : Readable /* , Writable */ {
         callback: (error: Error?) -> Unit = definedExternally,
     ): Boolean
 
-    fun setDefaultEncoding(encoding: node.buffer.BufferEncoding): Duplex
+    open fun setDefaultEncoding(encoding: node.buffer.BufferEncoding): Duplex
     open fun end(callback: () -> Unit = definedExternally): Duplex
     open fun end(
         chunk: Any,
@@ -78,8 +78,8 @@ open external class Duplex : Readable /* , Writable */ {
         callback: () -> Unit = definedExternally,
     ): Duplex
 
-    fun cork()
-    fun uncork()
+    open fun cork()
+    open fun uncork()
 
     companion object {
         /**

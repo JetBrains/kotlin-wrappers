@@ -8,7 +8,7 @@ package node.net
 import kotlinx.js.ReadonlyArray
 import node.events.Event
 
-external class Server : node.events.EventEmitter {
+open external class Server : node.events.EventEmitter {
     constructor(connectionListener: (socket: Socket) -> Unit = definedExternally)
     constructor(
         options: ServerOpts = definedExternally,
@@ -56,53 +56,53 @@ external class Server : node.events.EventEmitter {
      * });
      * ```
      */
-    fun listen(
+    open fun listen(
         port: Number = definedExternally,
         hostname: String = definedExternally,
         backlog: Number = definedExternally,
         listeningListener: () -> Unit = definedExternally,
     ): Server
 
-    fun listen(
+    open fun listen(
         port: Number = definedExternally,
         hostname: String = definedExternally,
         listeningListener: () -> Unit = definedExternally,
     ): Server
 
-    fun listen(
+    open fun listen(
         port: Number = definedExternally,
         backlog: Number = definedExternally,
         listeningListener: () -> Unit = definedExternally,
     ): Server
 
-    fun listen(
+    open fun listen(
         port: Number = definedExternally,
         listeningListener: () -> Unit = definedExternally,
     ): Server
 
-    fun listen(
+    open fun listen(
         path: String,
         backlog: Number = definedExternally,
         listeningListener: () -> Unit = definedExternally,
     ): Server
 
-    fun listen(
+    open fun listen(
         path: String,
         listeningListener: () -> Unit = definedExternally,
     ): Server
 
-    fun listen(
+    open fun listen(
         options: ListenOptions,
         listeningListener: () -> Unit = definedExternally,
     ): Server
 
-    fun listen(
+    open fun listen(
         handle: Any,
         backlog: Number = definedExternally,
         listeningListener: () -> Unit = definedExternally,
     ): Server
 
-    fun listen(
+    open fun listen(
         handle: Any,
         listeningListener: () -> Unit = definedExternally,
     ): Server
@@ -117,7 +117,7 @@ external class Server : node.events.EventEmitter {
      * @since v0.1.90
      * @param callback Called when the server is closed.
      */
-    fun close(callback: (error: Error?) -> Unit = definedExternally): Server
+    open fun close(callback: (error: Error?) -> Unit = definedExternally): Server
 
     /**
      * Returns the bound `address`, the address `family` name, and `port` of the server
@@ -145,7 +145,7 @@ external class Server : node.events.EventEmitter {
      * emitted or after calling `server.close()`.
      * @since v0.1.90
      */
-    fun address(): Any? /* AddressInfo | string */
+    open fun address(): Any? /* AddressInfo | string */
 
     /**
      * Asynchronously get the number of concurrent connections on the server. Works
@@ -154,7 +154,7 @@ external class Server : node.events.EventEmitter {
      * Callback should take two arguments `err` and `count`.
      * @since v0.9.7
      */
-    fun getConnections(
+    open fun getConnections(
         callback: (
             error: Error?,
             count: Number,
@@ -166,14 +166,14 @@ external class Server : node.events.EventEmitter {
      * If the server is `ref`ed calling `ref()` again will have no effect.
      * @since v0.9.1
      */
-    fun ref(): Server
+    open fun ref(): Server
 
     /**
      * Calling `unref()` on a server will allow the program to exit if this is the only
      * active server in the event system. If the server is already `unref`ed calling`unref()` again will have no effect.
      * @since v0.9.1
      */
-    fun unref(): Server
+    open fun unref(): Server
 
     /**
      * Set this property to reject connections when the server's connection count gets
@@ -183,14 +183,14 @@ external class Server : node.events.EventEmitter {
      * with `child_process.fork()`.
      * @since v0.2.0
      */
-    var maxConnections: Number
-    var connections: Number
+    open var maxConnections: Number
+    open var connections: Number
 
     /**
      * Indicates whether or not the server is listening for connections.
      * @since v5.7.0
      */
-    var listening: Boolean
+    open var listening: Boolean
 
     /**
      * events.EventEmitter
@@ -204,22 +204,22 @@ external class Server : node.events.EventEmitter {
         listener: Function<Unit>,
     ): Server
 
-    fun addListener(
+    open fun addListener(
         event: Event.CLOSE,
         listener: () -> Unit,
     ): Server
 
-    fun addListener(
+    open fun addListener(
         event: Event.CONNECTION,
         listener: (socket: Socket) -> Unit,
     ): Server
 
-    fun addListener(
+    open fun addListener(
         event: Event.ERROR,
         listener: (error: Error) -> Unit,
     ): Server
 
-    fun addListener(
+    open fun addListener(
         event: Event.LISTENING,
         listener: () -> Unit,
     ): Server
@@ -229,39 +229,39 @@ external class Server : node.events.EventEmitter {
         vararg args: ReadonlyArray<Any>,
     ): Boolean
 
-    fun emit(event: Event.CLOSE): Boolean
-    fun emit(
+    open fun emit(event: Event.CLOSE): Boolean
+    open fun emit(
         event: Event.CONNECTION,
         socket: Socket,
     ): Boolean
 
-    fun emit(
+    open fun emit(
         event: Event.ERROR,
         err: Error,
     ): Boolean
 
-    fun emit(event: Event.LISTENING): Boolean
+    open fun emit(event: Event.LISTENING): Boolean
     override fun on(
         event: String,
         listener: Function<Unit>,
     ): Server
 
-    fun on(
+    open fun on(
         event: Event.CLOSE,
         listener: () -> Unit,
     ): Server
 
-    fun on(
+    open fun on(
         event: Event.CONNECTION,
         listener: (socket: Socket) -> Unit,
     ): Server
 
-    fun on(
+    open fun on(
         event: Event.ERROR,
         listener: (error: Error) -> Unit,
     ): Server
 
-    fun on(
+    open fun on(
         event: Event.LISTENING,
         listener: () -> Unit,
     ): Server
@@ -271,22 +271,22 @@ external class Server : node.events.EventEmitter {
         listener: Function<Unit>,
     ): Server
 
-    fun once(
+    open fun once(
         event: Event.CLOSE,
         listener: () -> Unit,
     ): Server
 
-    fun once(
+    open fun once(
         event: Event.CONNECTION,
         listener: (socket: Socket) -> Unit,
     ): Server
 
-    fun once(
+    open fun once(
         event: Event.ERROR,
         listener: (error: Error) -> Unit,
     ): Server
 
-    fun once(
+    open fun once(
         event: Event.LISTENING,
         listener: () -> Unit,
     ): Server
@@ -296,22 +296,22 @@ external class Server : node.events.EventEmitter {
         listener: Function<Unit>,
     ): Server
 
-    fun prependListener(
+    open fun prependListener(
         event: Event.CLOSE,
         listener: () -> Unit,
     ): Server
 
-    fun prependListener(
+    open fun prependListener(
         event: Event.CONNECTION,
         listener: (socket: Socket) -> Unit,
     ): Server
 
-    fun prependListener(
+    open fun prependListener(
         event: Event.ERROR,
         listener: (error: Error) -> Unit,
     ): Server
 
-    fun prependListener(
+    open fun prependListener(
         event: Event.LISTENING,
         listener: () -> Unit,
     ): Server
@@ -321,22 +321,22 @@ external class Server : node.events.EventEmitter {
         listener: Function<Unit>,
     ): Server
 
-    fun prependOnceListener(
+    open fun prependOnceListener(
         event: Event.CLOSE,
         listener: () -> Unit,
     ): Server
 
-    fun prependOnceListener(
+    open fun prependOnceListener(
         event: Event.CONNECTION,
         listener: (socket: Socket) -> Unit,
     ): Server
 
-    fun prependOnceListener(
+    open fun prependOnceListener(
         event: Event.ERROR,
         listener: (error: Error) -> Unit,
     ): Server
 
-    fun prependOnceListener(
+    open fun prependOnceListener(
         event: Event.LISTENING,
         listener: () -> Unit,
     ): Server
