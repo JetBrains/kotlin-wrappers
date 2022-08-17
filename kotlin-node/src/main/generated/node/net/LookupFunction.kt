@@ -8,7 +8,7 @@ typealias LookupFunction = (
     hostname: String,
     options: dynamic, /* dns.LookupOneOptions */
     callback: (
-        err: ErrnoException?,
+        error: ErrnoException?,
         address: String,
         family: Number,
     ) -> Unit,

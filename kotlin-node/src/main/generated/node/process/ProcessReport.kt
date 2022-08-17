@@ -22,7 +22,7 @@ sealed external interface ProcessReport {
      * Returns a JSON-formatted diagnostic report for the running process.
      * The report's JavaScript stack trace is taken from err, if present.
      */
-    fun getReport(err: Error = definedExternally): String
+    fun getReport(error: Error = definedExternally): String
 
     /**
      * If true, a diagnostic report is generated on fatal errors,

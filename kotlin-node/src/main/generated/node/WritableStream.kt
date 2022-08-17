@@ -6,13 +6,13 @@ external interface WritableStream : node.events.IEventEmitter {
     var writable: Boolean
     fun write(
         chunk: Any, /* Uint8Array | string */
-        callback: (err: Error?) -> Unit = definedExternally,
+        callback: (error: Error?) -> Unit = definedExternally,
     ): Boolean
 
     fun write(
         str: String,
         encoding: node.buffer.BufferEncoding = definedExternally,
-        callback: (err: Error?) -> Unit = definedExternally,
+        callback: (error: Error?) -> Unit = definedExternally,
     ): Boolean
 
     fun end(callback: () -> Unit = definedExternally): WritableStream
