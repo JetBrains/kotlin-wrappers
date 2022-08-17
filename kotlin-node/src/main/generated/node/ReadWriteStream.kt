@@ -2,4 +2,4 @@
 
 package node
 
-sealed external interface ReadWriteStream : ReadableStream, WritableStream
+external interface ReadWriteStream : ReadableStream, WritableStream
