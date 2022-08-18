@@ -29,7 +29,8 @@ sealed external interface ClientRequestArgs {
     var _defaultAgent: Agent?
     var timeout: Number?
     var setHost: Boolean?
-    var // https://github.com/nodejs/node/blob/master/lib/_http_client.js#L278
-            createConnection: (((options: ClientRequestArgs, oncreate: (error: Error, socket: Socket) -> Unit) -> Socket))?
+
+    // https://github.com/nodejs/node/blob/master/lib/_http_client.js#L278
+    var createConnection: (((options: ClientRequestArgs, oncreate: (error: Error, socket: Socket) -> Unit) -> Socket))?
     var lookup: LookupFunction?
 }
