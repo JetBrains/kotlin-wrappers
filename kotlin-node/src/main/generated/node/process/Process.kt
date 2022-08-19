@@ -1056,7 +1056,7 @@ sealed external interface Process : node.events.IEventEmitter {
      * @since v3.0.0
      */
     val release: ProcessRelease
-    var features: dynamic /* {
+    var features: Any /* {
         inspector: boolean;
         debug: boolean;
         uv: boolean;

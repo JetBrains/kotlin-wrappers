@@ -8,8 +8,8 @@ open external class LegacyStream : node.events.EventEmitter {
     open fun <T : node.WritableStream> pipe(
         destination: T,
         options: Any /* {
-        end?: boolean | undefined;
-    }
- */ = definedExternally,
+            end?: boolean | undefined;
+        }
+     */ = definedExternally,
     ): T
 }
