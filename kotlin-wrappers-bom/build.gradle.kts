@@ -37,8 +37,10 @@ dependencies {
         api(project(":kotlin-tanstack-react-query"))
         api(project(":kotlin-tanstack-react-table"))
         api(project(":kotlin-tanstack-react-virtual"))
+        api(project(":kotlin-tanstack-react-query"))
         api(project(":kotlin-tanstack-table-core"))
         api(project(":kotlin-tanstack-virtual-core"))
+        api(project(":kotlin-tanstack-react-core"))
         api(project(":kotlin-typescript"))
         api(project(":kotlin-webrtc"))
     }
