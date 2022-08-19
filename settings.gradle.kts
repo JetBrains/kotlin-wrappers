@@ -105,6 +105,12 @@ include("kotlin-styled")
 // Kotlin/JS: a reimplementation of kotlin-styled in pure Kotlin, without styled-components
 include("kotlin-styled-next")
 
+// Kotlin/JS: Tanstack Query Core wrappers
+include("kotlin-tanstack-query-core")
+
+// Kotlin/JS: Tanstack React Query wrappers
+include("kotlin-tanstack-react-query")
+
 // Kotlin/JS: Tanstack React Table wrappers
 include("kotlin-tanstack-react-table")
 
