@@ -123,6 +123,12 @@ include("kotlin-tanstack-table-core")
 // Kotlin/JS: Tanstack Virtual Core wrappers
 include("kotlin-tanstack-virtual-core")
 
+// Kotlin/JS: Tanstack React Query wrappers
+include("kotlin-tanstack-react-query")
+
+// Kotlin/JS: Tanstack Query Core wrappers
+include("kotlin-tanstack-query-core")
+
 // Kotlin/JS: TypeScript wrappers
 include("kotlin-typescript")
 
