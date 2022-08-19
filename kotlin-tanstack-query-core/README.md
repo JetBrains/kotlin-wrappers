@@ -4,7 +4,7 @@
 
 # kotlin-tanstack-query-core
 
-Kotlin wrapper for [Tanstack Table Core](https://github.com/TanStack/query/tree/main/packages/query-core) library.
+Kotlin wrapper for [Tanstack Query Core](https://github.com/TanStack/query) library.
 
 ### Internals
 

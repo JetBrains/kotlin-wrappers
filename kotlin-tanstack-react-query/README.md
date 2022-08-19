@@ -4,7 +4,7 @@
 
 # kotlin-tanstack-react-query
 
-Kotlin wrapper for [Tanstack Table Core](https://github.com/TanStack/query/tree/main/packages/react-query) library.
+Kotlin wrapper for [Tanstack React Query](https://github.com/TanStack/query/) library.
 
 ### Internals
 
