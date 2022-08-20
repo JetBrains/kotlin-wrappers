@@ -5,6 +5,8 @@
 
 package node.url
 
+import node.http.ClientRequestArgs
+
 /**
  * This utility function converts a URL object into an ordinary options object as
  * expected by the `http.request()` and `https.request()` APIs.
@@ -33,4 +35,4 @@ package node.url
  */
 external fun urlToHttpOptions(
     url: URL,
-): dynamic /* ClientRequestArgs */
+): ClientRequestArgs

@@ -5,6 +5,8 @@
 
 package node.worker
 
+import node.vm.Context
+
 /**
  * Transfer a `MessagePort` to a different `vm` Context. The original `port`object is rendered unusable, and the returned `MessagePort` instance
  * takes its place.
@@ -23,5 +25,5 @@ package node.worker
  */
 external fun moveMessagePortToContext(
     port: MessagePort,
-    contextifiedSandbox: dynamic, /* Context */
+    contextifiedSandbox: Context,
 ): MessagePort
