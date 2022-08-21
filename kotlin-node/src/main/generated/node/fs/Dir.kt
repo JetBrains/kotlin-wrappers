@@ -5,11 +5,12 @@
 
 package node.fs
 
+import kotlinx.js.AsyncIterable
 import kotlinx.js.Void
 import node.ErrnoException
 import kotlin.js.Promise
 
-external class Dir /* : AsyncIterable<Dirent> */ {
+external class Dir : AsyncIterable<Dirent> {
     /**
      * The read-only path of this directory as was provided to {@link opendir},{@link opendirSync}, or `fsPromises.opendir()`.
      * @since v12.12.0
