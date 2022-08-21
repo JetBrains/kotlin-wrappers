@@ -5,7 +5,6 @@
 
 package node.stream
 
-import kotlinx.js.ReadonlyArray
 import node.events.Event
 
 open external class Writable : Stream, node.WritableStream {
@@ -350,7 +349,7 @@ open external class Writable : Stream, node.WritableStream {
 
     override fun emit(
         event: String, /* | Symbol */
-        vararg args: ReadonlyArray<Any>,
+        vararg args: Any,
     ): Boolean
 
     open fun on(

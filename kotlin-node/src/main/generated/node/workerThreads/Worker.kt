@@ -164,7 +164,7 @@ external class Worker : node.events.EventEmitter {
     fun emit(event: Event.ONLINE): Boolean
     override fun emit(
         event: String, /* | Symbol */
-        vararg args: ReadonlyArray<Any>,
+        vararg args: Any,
     ): Boolean
 
     fun on(

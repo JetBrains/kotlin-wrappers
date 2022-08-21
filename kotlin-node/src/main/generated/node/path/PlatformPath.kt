@@ -2,8 +2,6 @@
 
 package node.path
 
-import kotlinx.js.ReadonlyArray
-
 sealed external interface PlatformPath {
     /**
      * Normalize a string path, reducing '..' and '.' parts.
@@ -20,7 +18,7 @@ sealed external interface PlatformPath {
      * @param paths paths to join.
      * @throws {TypeError} if any of the path segments is not a string.
      */
-    fun join(vararg paths: ReadonlyArray<String>): String
+    fun join(vararg paths: String): String
 
     /**
      * The right-most parameter is considered {to}. Other parameters are considered an array of {from}.
@@ -35,7 +33,7 @@ sealed external interface PlatformPath {
      * @param paths A sequence of paths or path segments.
      * @throws {TypeError} if any of the arguments is not a string.
      */
-    fun resolve(vararg paths: ReadonlyArray<String>): String
+    fun resolve(vararg paths: String): String
 
     /**
      * Determines whether {path} is an absolute path. An absolute path will always resolve to the same location, regardless of the working directory.

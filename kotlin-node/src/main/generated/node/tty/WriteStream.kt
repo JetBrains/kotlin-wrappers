@@ -6,7 +6,6 @@
 package node.tty
 
 import kotlinx.js.JsPair
-import kotlinx.js.ReadonlyArray
 import node.events.Event
 
 external class WriteStream : node.net.Socket {
@@ -24,7 +23,7 @@ external class WriteStream : node.net.Socket {
 
     override fun emit(
         event: String, /* | Symbol */
-        vararg args: ReadonlyArray<Any>,
+        vararg args: Any,
     ): Boolean
 
     fun emit(event: Event.RESIZE): Boolean

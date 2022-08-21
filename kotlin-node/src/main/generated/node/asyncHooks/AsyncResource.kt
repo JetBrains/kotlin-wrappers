@@ -5,8 +5,6 @@
 
 package node.asyncHooks
 
-import kotlinx.js.ReadonlyArray
-
 external class AsyncResource {
     /**
      * AsyncResource() is meant to be extended. Instantiating a
@@ -75,7 +73,7 @@ external class AsyncResource {
     fun <This, Result> runInAsyncScope(
         fn: Function<Result>, /* this: This */
         thisArg: This = definedExternally,
-        vararg args: ReadonlyArray<Any>,
+        vararg args: Any,
     ): Result
 
     /**

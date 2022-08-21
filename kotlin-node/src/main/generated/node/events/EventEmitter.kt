@@ -49,7 +49,7 @@ open external class EventEmitter : IEventEmitter {
 
     override fun emit(
         event: String, /* | Symbol */
-        vararg args: ReadonlyArray<Any>,
+        vararg args: Any,
     ): Boolean
 
     override fun listenerCount(event: String /* | Symbol */): Number
@@ -297,7 +297,7 @@ open external class EventEmitter : IEventEmitter {
          */
         fun setMaxListeners(
             n: Number = definedExternally,
-            vararg eventTargets: Any, /* Array<DOMEventTarget | NodeJS.EventEmitter> */
+            vararg eventTargets: Any, /* DOMEventTarget | NodeJS.EventEmitter */
         )
 
         /**

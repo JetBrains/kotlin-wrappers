@@ -63,10 +63,10 @@ external class AsyncLocalStorage<T> {
      * ```
      * @since v13.10.0, v12.17.0
      */
-    fun <R, TArgs> run(
+    fun <R, TArg : Any> run(
         store: T,
         callback: Function<R>, /* ...args: TArgs */
-        vararg args: TArgs,
+        vararg args: TArg,
     ): R
 
     /**
@@ -97,9 +97,9 @@ external class AsyncLocalStorage<T> {
      * @since v13.10.0, v12.17.0
      * @experimental
      */
-    fun <R, TArgs> exit(
+    fun <R, TArg : Any> exit(
         callback: Function<R>, /* ...args: TArgs */
-        vararg args: TArgs,
+        vararg args: TArg,
     ): R
 
     /**

@@ -5,7 +5,6 @@
 
 package node.net
 
-import kotlinx.js.ReadonlyArray
 import node.events.Event
 
 open external class Server : node.events.EventEmitter {
@@ -226,7 +225,7 @@ open external class Server : node.events.EventEmitter {
 
     override fun emit(
         event: String, /* | Symbol */
-        vararg args: ReadonlyArray<Any>,
+        vararg args: Any,
     ): Boolean
 
     open fun emit(event: Event.CLOSE): Boolean
