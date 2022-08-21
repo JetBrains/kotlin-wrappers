@@ -5,11 +5,12 @@
 
 package node.fs
 
+import node.ErrnoException
 import node.events.Event
 import node.stream.Readable
 
 external class ReadStream : Readable {
-    fun close(callback: Any /* (error?: NodeJS.ErrnoException | null)-> Unit */ = definedExternally)
+    fun close(callback: (error: ErrnoException?) -> Unit = definedExternally)
 
     /**
      * The number of bytes that have been read so far.
@@ -45,7 +46,7 @@ external class ReadStream : Readable {
 
     fun addListener(
         event: Event.DATA,
-        listener: Any, /* (chunk: Buffer | string)-> Unit */
+        listener: Any, /* (chunk: Any /* Buffer | string */) -> Unit */
     ): ReadStream
 
     override fun addListener(
@@ -95,7 +96,7 @@ external class ReadStream : Readable {
 
     fun on(
         event: Event.DATA,
-        listener: Any, /* (chunk: Buffer | string)-> Unit */
+        listener: Any, /* (chunk: Any /* Buffer | string */) -> Unit */
     ): ReadStream
 
     override fun on(
@@ -145,7 +146,7 @@ external class ReadStream : Readable {
 
     fun once(
         event: Event.DATA,
-        listener: Any, /* (chunk: Buffer | string)-> Unit */
+        listener: Any, /* (chunk: Any /* Buffer | string */) -> Unit */
     ): ReadStream
 
     override fun once(
@@ -195,7 +196,7 @@ external class ReadStream : Readable {
 
     fun prependListener(
         event: Event.DATA,
-        listener: Any, /* (chunk: Buffer | string)-> Unit */
+        listener: Any, /* (chunk: Any /* Buffer | string */) -> Unit */
     ): ReadStream
 
     override fun prependListener(
@@ -245,7 +246,7 @@ external class ReadStream : Readable {
 
     fun prependOnceListener(
         event: Event.DATA,
-        listener: Any, /* (chunk: Buffer | string)-> Unit */
+        listener: Any, /* (chunk: Any /* Buffer | string */) -> Unit */
     ): ReadStream
 
     override fun prependOnceListener(

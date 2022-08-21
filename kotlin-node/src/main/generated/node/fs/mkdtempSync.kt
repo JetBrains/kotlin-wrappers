@@ -5,6 +5,8 @@
 
 package node.fs
 
+import node.buffer.Buffer
+
 /**
  * Returns the created directory path.
  *
@@ -29,4 +31,4 @@ external fun mkdtempSync(
 external fun mkdtempSync(
     prefix: String,
     options: BufferEncodingOption,
-): node.buffer.Buffer
+): Buffer

@@ -6,6 +6,7 @@
 package node.childProcess
 
 import kotlinx.js.ReadonlyArray
+import node.buffer.Buffer
 
 /**
  * The `child_process.execFileSync()` method is generally identical to {@link execFile} with the exception that the method will not
@@ -29,7 +30,7 @@ import kotlinx.js.ReadonlyArray
  */
 external fun execFileSync(
     file: String,
-): node.buffer.Buffer
+): Buffer
 
 
 /**
@@ -81,7 +82,7 @@ external fun execFileSync(
 external fun execFileSync(
     file: String,
     options: ExecFileSyncOptionsWithBufferEncoding,
-): node.buffer.Buffer
+): Buffer
 
 
 /**
@@ -107,7 +108,7 @@ external fun execFileSync(
 external fun execFileSync(
     file: String,
     args: ReadonlyArray<String>,
-): node.buffer.Buffer
+): Buffer
 
 
 /**
@@ -161,4 +162,4 @@ external fun execFileSync(
     file: String,
     args: ReadonlyArray<String>,
     options: ExecFileSyncOptionsWithBufferEncoding,
-): node.buffer.Buffer
+): Buffer

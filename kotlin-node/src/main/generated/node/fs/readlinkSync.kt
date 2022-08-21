@@ -5,6 +5,8 @@
 
 package node.fs
 
+import node.buffer.Buffer
+
 /**
  * Returns the symbolic link's string value.
  *
@@ -30,4 +32,4 @@ external fun readlinkSync(
 external fun readlinkSync(
     path: PathLike,
     options: BufferEncodingOption,
-): node.buffer.Buffer
+): Buffer

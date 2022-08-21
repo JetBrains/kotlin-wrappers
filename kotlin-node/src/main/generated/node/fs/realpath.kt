@@ -3,6 +3,7 @@
 package node.fs
 
 import kotlinx.coroutines.await
+import node.buffer.Buffer
 
 suspend fun realpath(
     path: PathLike,
@@ -17,7 +18,7 @@ suspend fun realpath(
 suspend fun realpath(
     path: PathLike,
     options: BufferEncodingOption,
-): node.buffer.Buffer =
+): Buffer =
     realpathAsync(
         path = path,
         options = options,

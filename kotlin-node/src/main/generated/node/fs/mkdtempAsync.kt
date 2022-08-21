@@ -5,6 +5,7 @@
 
 package node.fs
 
+import node.buffer.Buffer
 import kotlin.js.Promise
 
 /**
@@ -50,4 +51,4 @@ external fun mkdtempAsync(
 external fun mkdtempAsync(
     prefix: String,
     options: BufferEncodingOption,
-): Promise<node.buffer.Buffer>
+): Promise<Buffer>

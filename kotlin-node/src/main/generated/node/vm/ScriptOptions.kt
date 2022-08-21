@@ -2,10 +2,12 @@
 
 package node.vm
 
+import node.buffer.Buffer
+
 sealed external interface ScriptOptions : BaseOptions {
     var displayErrors: Boolean?
     var timeout: Number?
-    var cachedData: node.buffer.Buffer?
+    var cachedData: Buffer?
 
     /** @deprecated in favor of `script.createCachedData()` */
     var produceCachedData: Boolean?

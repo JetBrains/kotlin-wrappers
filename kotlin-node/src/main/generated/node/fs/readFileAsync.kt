@@ -5,6 +5,7 @@
 
 package node.fs
 
+import node.buffer.Buffer
 import node.buffer.BufferEncoding
 import kotlin.js.Promise
 
@@ -58,7 +59,7 @@ external fun readFileAsync(
               flag?: OpenMode | undefined;
           } & Abortable)
         */ = definedExternally,
-): Promise<node.buffer.Buffer>
+): Promise<Buffer>
 
 
 /**

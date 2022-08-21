@@ -3,6 +3,7 @@
 package node.fs
 
 import kotlinx.coroutines.await
+import node.buffer.Buffer
 
 suspend fun mkdtemp(
     prefix: String,
@@ -17,7 +18,7 @@ suspend fun mkdtemp(
 suspend fun mkdtemp(
     prefix: String,
     options: BufferEncodingOption,
-): node.buffer.Buffer =
+): Buffer =
     mkdtempAsync(
         prefix = prefix,
         options = options,

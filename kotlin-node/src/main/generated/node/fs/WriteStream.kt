@@ -5,6 +5,7 @@
 
 package node.fs
 
+import node.ErrnoException
 import node.events.Event
 import node.stream.Readable
 import node.stream.Writable
@@ -15,7 +16,7 @@ external class WriteStream : Writable {
      * callback that will be executed once the `writeStream`is closed.
      * @since v0.9.4
      */
-    fun close(callback: Any /* (error?: NodeJS.ErrnoException | null)-> Unit */ = definedExternally)
+    fun close(callback: (error: ErrnoException?) -> Unit = definedExternally)
 
     /**
      * The number of bytes written so far. Does not include data that is still queued
