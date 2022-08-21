@@ -11,7 +11,8 @@ package typescript
  */
 external fun validateLocaleAndSetLanguage(
     locale: String,
-    sys: dynamic, /* {
+    sys: dynamic,
+    /* {
     getExecutingFilePath(): string;
     resolvePath(path: string): string;
     fileExists(fileName: string): boolean;

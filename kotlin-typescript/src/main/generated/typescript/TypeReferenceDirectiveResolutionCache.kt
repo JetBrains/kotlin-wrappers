@@ -2,4 +2,5 @@
 
 package typescript
 
-sealed external interface TypeReferenceDirectiveResolutionCache : PerDirectoryResolutionCache<ResolvedTypeReferenceDirectiveWithFailedLookupLocations>, PackageJsonInfoCache
+sealed external interface TypeReferenceDirectiveResolutionCache :
+    PerDirectoryResolutionCache<ResolvedTypeReferenceDirectiveWithFailedLookupLocations>, PackageJsonInfoCache

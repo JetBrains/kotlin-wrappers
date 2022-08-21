@@ -6,6 +6,7 @@
 
 package typescript
 
-sealed external interface CompletionEntryDataResolved : CompletionEntryDataAutoImport, Union.CompletionEntryDataResolved_ {
+sealed external interface CompletionEntryDataResolved : CompletionEntryDataAutoImport,
+    Union.CompletionEntryDataResolved_ {
     override var moduleSpecifier: String
 }

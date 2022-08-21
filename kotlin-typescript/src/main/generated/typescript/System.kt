@@ -75,8 +75,7 @@ sealed external interface System {
     val setTimeout: ((
         callback: Function<Unit>,
         ms: Int,
-/* vararg */
-        args: dynamic,
+        /* vararg */ args: dynamic,
     ) -> Any)?
     val clearTimeout: ((timeoutId: Any) -> Unit)?
     val clearScreen: (() -> Unit)?
