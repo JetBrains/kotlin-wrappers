@@ -1,6 +1,6 @@
 // Automatically generated - do not modify!
 
-package node.worker
+package node.workerThreads
 
 import node.RefCounted
 

@@ -2,7 +2,7 @@
 
 package node.process
 
-import node.worker.Worker
+import node.workerThreads.Worker
 
 typealias WorkerListener = (
     worker: Worker,

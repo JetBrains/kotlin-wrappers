@@ -3,7 +3,7 @@
 @file:JsModule("node:worker_threads")
 @file:JsNonModule
 
-package node.worker
+package node.workerThreads
 
 /**
  * Within a worker thread, `worker.getEnvironmentData()` returns a clone
