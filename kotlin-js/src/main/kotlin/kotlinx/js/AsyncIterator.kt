@@ -8,7 +8,7 @@ sealed external interface AsyncIterator<T, TReturn> {
     val `throw`: ((e: Throwable?) -> Promise<JsIterator.Result<T, TReturn>>)?
 }
 
-sealed external interface AsyncIterable<T>
+external interface AsyncIterable<T>
 
 fun <T> AsyncIterable<T>.asyncIterator(): AsyncIterator<T, Void> =
     asDynamic()[Symbol.asyncIterator]()
