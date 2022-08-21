@@ -3,7 +3,7 @@
 @file:JsModule("node:worker_threads")
 @file:JsNonModule
 
-package node.worker
+package node.workerThreads
 
 /**
  * The `worker.setEnvironmentData()` API sets the content of`worker.getEnvironmentData()` in the current thread and all new `Worker`instances spawned from the current context.

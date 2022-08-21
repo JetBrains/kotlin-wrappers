@@ -3,7 +3,7 @@
 @file:JsModule("node:worker_threads")
 @file:JsNonModule
 
-package node.worker
+package node.workerThreads
 
 import kotlinx.js.ReadonlyArray
 import node.events.Event
