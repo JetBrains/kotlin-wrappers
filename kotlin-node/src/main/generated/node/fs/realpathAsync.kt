@@ -5,6 +5,7 @@
 
 package node.fs
 
+import node.buffer.Buffer
 import kotlin.js.Promise
 
 /**
@@ -39,4 +40,4 @@ external fun realpathAsync(
 external fun realpathAsync(
     path: PathLike,
     options: BufferEncodingOption,
-): Promise<node.buffer.Buffer>
+): Promise<Buffer>

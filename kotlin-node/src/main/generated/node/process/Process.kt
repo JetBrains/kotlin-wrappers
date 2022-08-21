@@ -469,7 +469,7 @@ sealed external interface Process : node.events.IEventEmitter {
      * @since v0.1.31
      * @param id The group name or ID
      */
-    var setgid: Any? /* (id: number | string) => void */
+    var setgid: ((id: Any /* number | string */) -> Unit)?
 
     /**
      * The `process.getuid()` method returns the numeric user identity of the process.
@@ -514,7 +514,7 @@ sealed external interface Process : node.events.IEventEmitter {
      * This feature is not available in `Worker` threads.
      * @since v0.1.28
      */
-    var setuid: Any? /* (id: number | string) => void */
+    var setuid: ((id: Any /* number | string */) -> Unit)?
 
     /**
      * The `process.geteuid()` method returns the numerical effective user identity of
@@ -560,7 +560,7 @@ sealed external interface Process : node.events.IEventEmitter {
      * @since v2.0.0
      * @param id A user name or ID
      */
-    var seteuid: Any? /* (id: number | string) => void */
+    var seteuid: ((id: Any /* number | string */) -> Unit)?
 
     /**
      * The `process.getegid()` method returns the numerical effective group identity
@@ -606,7 +606,7 @@ sealed external interface Process : node.events.IEventEmitter {
      * @since v2.0.0
      * @param id A group name or ID
      */
-    var setegid: Any? /* (id: number | string) => void */
+    var setegid: ((id: Any /* number | string */) -> Unit)?
 
     /**
      * The `process.getgroups()` method returns an array with the supplementary group
@@ -625,7 +625,7 @@ sealed external interface Process : node.events.IEventEmitter {
      * Android).
      * @since v0.9.4
      */
-    var getgroups: ReadonlyArray<() -> Number>?
+    var getgroups: (() -> ReadonlyArray<Number>)?
 
     /**
      * The `process.setgroups()` method sets the supplementary group IDs for the
@@ -652,7 +652,7 @@ sealed external interface Process : node.events.IEventEmitter {
      * This feature is not available in `Worker` threads.
      * @since v0.9.4
      */
-    var setgroups: Any? /* (groups: ReadonlyArray<string | number>) => void */
+    var setgroups: ((groups: Any /* ReadonlyArray<string | number> */) -> Unit)?
 
     /**
      * The `process.setUncaughtExceptionCaptureCallback()` function sets a function

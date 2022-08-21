@@ -5,6 +5,8 @@
 
 package node.fs
 
+import node.buffer.Buffer
+
 /**
  * Returns the resolved pathname.
  *
@@ -26,4 +28,4 @@ external fun realpathSync(
 external fun realpathSync(
     path: PathLike,
     options: BufferEncodingOption,
-): node.buffer.Buffer
+): Buffer

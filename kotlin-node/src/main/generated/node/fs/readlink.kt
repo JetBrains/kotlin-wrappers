@@ -3,6 +3,7 @@
 package node.fs
 
 import kotlinx.coroutines.await
+import node.buffer.Buffer
 
 suspend fun readlink(
     path: PathLike,
@@ -17,7 +18,7 @@ suspend fun readlink(
 suspend fun readlink(
     path: PathLike,
     options: BufferEncodingOption,
-): node.buffer.Buffer =
+): Buffer =
     readlinkAsync(
         path = path,
         options = options,

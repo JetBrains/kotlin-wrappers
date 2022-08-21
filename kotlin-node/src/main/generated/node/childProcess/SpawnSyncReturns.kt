@@ -2,12 +2,14 @@
 
 package node.childProcess
 
+import node.process.Signals
+
 sealed external interface SpawnSyncReturns<T> {
     var pid: Number
     var output: Any /* Array<T | null> */
     var stdout: T
     var stderr: T
     var status: Number?
-    var signal: node.process.Signals?
+    var signal: Signals?
     var error: Error?
 }

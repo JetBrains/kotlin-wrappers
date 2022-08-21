@@ -3,6 +3,7 @@
 package node.fs
 
 import kotlinx.coroutines.await
+import node.buffer.Buffer
 import node.buffer.BufferEncoding
 
 suspend fun readFile(
@@ -13,7 +14,7 @@ suspend fun readFile(
               flag?: OpenMode | undefined;
           } & Abortable)
         */
-): node.buffer.Buffer =
+): Buffer =
     readFileAsync(
         path = path,
         options = options,

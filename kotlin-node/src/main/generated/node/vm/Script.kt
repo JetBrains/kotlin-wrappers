@@ -5,6 +5,8 @@
 
 package node.vm
 
+import node.buffer.Buffer
+
 external class Script {
     constructor(
         code: String,
@@ -129,10 +131,10 @@ external class Script {
      * ```
      * @since v10.6.0
      */
-    fun createCachedData(): node.buffer.Buffer
+    fun createCachedData(): Buffer
 
     /** @deprecated in favor of `script.createCachedData()` */
     var cachedDataProduced: Boolean?
     var cachedDataRejected: Boolean?
-    var cachedData: node.buffer.Buffer?
+    var cachedData: Buffer?
 }
