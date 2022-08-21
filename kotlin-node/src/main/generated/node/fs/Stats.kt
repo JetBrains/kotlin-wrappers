@@ -1,5 +1,8 @@
 // Automatically generated - do not modify!
 
+@file:JsModule("node:fs")
+@file:JsNonModule
+
 package node.fs
 
-sealed external interface Stats : StatsBase<Number>
+abstract external class Stats : IStats
