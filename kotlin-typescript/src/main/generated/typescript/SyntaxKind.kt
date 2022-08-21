@@ -88,7 +88,9 @@ sealed external interface SyntaxKind {
     object PercentEqualsToken : SyntaxKind, Union.SyntaxKind_PercentEqualsToken
     object LessThanLessThanEqualsToken : SyntaxKind, Union.SyntaxKind_LessThanLessThanEqualsToken
     object GreaterThanGreaterThanEqualsToken : SyntaxKind, Union.SyntaxKind_GreaterThanGreaterThanEqualsToken
-    object GreaterThanGreaterThanGreaterThanEqualsToken : SyntaxKind, Union.SyntaxKind_GreaterThanGreaterThanGreaterThanEqualsToken
+    object GreaterThanGreaterThanGreaterThanEqualsToken : SyntaxKind,
+        Union.SyntaxKind_GreaterThanGreaterThanGreaterThanEqualsToken
+
     object AmpersandEqualsToken : SyntaxKind, Union.SyntaxKind_AmpersandEqualsToken
     object BarEqualsToken : SyntaxKind, Union.SyntaxKind_BarEqualsToken
     object BarBarEqualsToken : SyntaxKind, Union.SyntaxKind_BarBarEqualsToken

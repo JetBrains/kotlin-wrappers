@@ -24,7 +24,8 @@ sealed external interface Union {
 
     sealed interface ArrayDestructuringAssignment_ : DestructuringAssignment
 
-    sealed interface ArrayLiteralExpression_ : ArrayBindingOrAssignmentPattern, AssignmentPattern, JsonObjectExpression, DestructuringPattern, SpreadElement_parent
+    sealed interface ArrayLiteralExpression_ : ArrayBindingOrAssignmentPattern, AssignmentPattern, JsonObjectExpression,
+        DestructuringPattern, SpreadElement_parent
 
     sealed interface ArrayTypeNode_ : TypeReference_node
 
@@ -50,8 +51,8 @@ sealed external interface Union {
 
     sealed interface BinaryExpression_ : FlowArrayMutation_node
 
-    sealed interface BindingElement_ : HasExpressionInitializer, VariableLikeDeclaration, ArrayBindingElement, ObjectBindingOrAssignmentElement, ObjectBindingPattern_parent,
-        ArrayBindingPattern_parent, FlowAssignment_node
+    sealed interface BindingElement_ : HasExpressionInitializer, VariableLikeDeclaration, ArrayBindingElement,
+        ObjectBindingOrAssignmentElement, ObjectBindingPattern_parent, ArrayBindingPattern_parent, FlowAssignment_node
 
     sealed interface BindingOrAssignmentPattern_ : BindingOrAssignmentElementTarget
 
@@ -69,7 +70,8 @@ sealed external interface Union {
 
     sealed interface CallChain_ : OptionalChain
 
-    sealed interface CallExpression_ : HasTypeArguments, CallLikeExpression, SpreadElement_parent, FlowArrayMutation_node
+    sealed interface CallExpression_ : HasTypeArguments, CallLikeExpression, SpreadElement_parent,
+        FlowArrayMutation_node
 
     sealed interface CallSignatureDeclaration_ : HasJSDoc, SignatureDeclaration
 
@@ -83,8 +85,8 @@ sealed external interface Union {
 
     sealed interface ClassExpression_ : ClassLikeDeclaration, ClassStaticBlockDeclaration_parent
 
-    sealed interface ClassLikeDeclaration_ : HasJSDoc, ObjectTypeDeclaration, DeclarationWithTypeParameterChildren, MethodDeclaration_parent, GetAccessorDeclaration_parent,
-        SetAccessorDeclaration_parent, HeritageClause_parent
+    sealed interface ClassLikeDeclaration_ : HasJSDoc, ObjectTypeDeclaration, DeclarationWithTypeParameterChildren,
+        MethodDeclaration_parent, GetAccessorDeclaration_parent, SetAccessorDeclaration_parent, HeritageClause_parent
 
     sealed interface ClassLikeDeclarationBase_kind : SyntaxKind
 
@@ -114,7 +116,8 @@ sealed external interface Union {
 
     sealed interface DeclarationStatement_name : DeclarationName
 
-    sealed interface DeclarationWithTypeParameterChildren_ : DeclarationWithTypeParameters, TypeParameterDeclaration_parent
+    sealed interface DeclarationWithTypeParameterChildren_ : DeclarationWithTypeParameters,
+        TypeParameterDeclaration_parent
 
     sealed interface DeclareKeyword_ : Modifier
 
@@ -136,7 +139,8 @@ sealed external interface Union {
 
     sealed interface EndOfFileToken_ : HasJSDoc
 
-    sealed interface EntityName_ : EntityNameOrEntityNameExpression, ModuleReference, JSDocNameReference_name, JSDocMemberName_left, JSDocLink_name, JSDocLinkCode_name, JSDocLinkPlain_name
+    sealed interface EntityName_ : EntityNameOrEntityNameExpression, ModuleReference, JSDocNameReference_name,
+        JSDocMemberName_left, JSDocLink_name, JSDocLinkCode_name, JSDocLinkPlain_name
 
     sealed interface EntityNameExpression_ : DeclarationName, EntityNameOrEntityNameExpression
 
@@ -220,8 +224,10 @@ sealed external interface Union {
 
     sealed interface HeritageClause_token
 
-    sealed interface Identifier_ : EntityName, PropertyName, MemberName, DeclarationName, BindingName, PropertyNameLiteral, BindingOrAssignmentElementTarget, EntityNameExpression,
-        JsxTagNameExpression, ModuleName, JSDocNamespaceBody, AssertionKey, DeclarationStatement_name, TypePredicateNode_parameterName, JSDocTypedefTag_fullName, JSDocCallbackTag_fullName
+    sealed interface Identifier_ : EntityName, PropertyName, MemberName, DeclarationName, BindingName,
+        PropertyNameLiteral, BindingOrAssignmentElementTarget, EntityNameExpression, JsxTagNameExpression, ModuleName,
+        JSDocNamespaceBody, AssertionKey, DeclarationStatement_name, TypePredicateNode_parameterName,
+        JSDocTypedefTag_fullName, JSDocCallbackTag_fullName
 
     sealed interface IdentifierTypePredicate_ : TypePredicate
 
@@ -255,7 +261,8 @@ sealed external interface Union {
 
     sealed interface InstantiableType_ : IndexType_type
 
-    sealed interface InterfaceDeclaration_ : HasJSDoc, ObjectTypeDeclaration, DeclarationWithTypeParameterChildren, GetAccessorDeclaration_parent, SetAccessorDeclaration_parent, HeritageClause_parent
+    sealed interface InterfaceDeclaration_ : HasJSDoc, ObjectTypeDeclaration, DeclarationWithTypeParameterChildren,
+        GetAccessorDeclaration_parent, SetAccessorDeclaration_parent, HeritageClause_parent
 
     sealed interface IntersectionType_ : BaseType, StructuredType
 
@@ -281,7 +288,8 @@ sealed external interface Union {
 
     sealed interface JSDocLinkPlain_name : DeclarationName
 
-    sealed interface JSDocMemberName_ : JSDocNameReference_name, JSDocMemberName_left, JSDocLink_name, JSDocLinkCode_name, JSDocLinkPlain_name
+    sealed interface JSDocMemberName_ : JSDocNameReference_name, JSDocMemberName_left, JSDocLink_name,
+        JSDocLinkCode_name, JSDocLinkPlain_name
 
     sealed interface JSDocMemberName_left
 
@@ -289,7 +297,8 @@ sealed external interface Union {
 
     sealed interface JSDocNamespaceBody_ : ModuleBody
 
-    sealed interface JSDocNamespaceDeclaration_ : JSDocNamespaceBody, ModuleDeclaration_body, JSDocTypedefTag_fullName, JSDocCallbackTag_fullName
+    sealed interface JSDocNamespaceDeclaration_ : JSDocNamespaceBody, ModuleDeclaration_body, JSDocTypedefTag_fullName,
+        JSDocCallbackTag_fullName
 
     sealed interface JSDocNonNullableType_ : HasType, JSDocTypeReferencingNode
 
@@ -373,7 +382,8 @@ sealed external interface Union {
 
     sealed interface MetaProperty_keywordToken
 
-    sealed interface MethodDeclaration_ : HasJSDoc, SignatureDeclaration, ObjectLiteralElementLike, FunctionLikeDeclaration, FlowStart_node
+    sealed interface MethodDeclaration_ : HasJSDoc, SignatureDeclaration, ObjectLiteralElementLike,
+        FunctionLikeDeclaration, FlowStart_node
 
     sealed interface MethodDeclaration_parent : Node
 
@@ -381,7 +391,8 @@ sealed external interface Union {
 
     sealed interface MinusToken_ : MappedTypeNode_readonlyToken, MappedTypeNode_questionToken
 
-    sealed interface ModuleBlock_ : BlockLike, NamespaceBody, ImportEqualsDeclaration_parent, ImportDeclaration_parent, ExportDeclaration_parent
+    sealed interface ModuleBlock_ : BlockLike, NamespaceBody, ImportEqualsDeclaration_parent, ImportDeclaration_parent,
+        ExportDeclaration_parent
 
     sealed interface ModuleBody_ : ModuleDeclaration_parent, ModuleDeclaration_body
 
@@ -413,13 +424,15 @@ sealed external interface Union {
 
     sealed interface NewExpression_ : HasTypeArguments, CallLikeExpression, SpreadElement_parent
 
-    sealed interface NoSubstitutionTemplateLiteral_ : StringLiteralLike, LiteralToken, TemplateLiteralToken, TemplateLiteral
+    sealed interface NoSubstitutionTemplateLiteral_ : StringLiteralLike, LiteralToken, TemplateLiteralToken,
+        TemplateLiteral
 
     sealed interface NonNullChain_ : OptionalChain
 
     sealed interface NullLiteral_ : JsonObjectExpression, LiteralTypeNode_literal
 
-    sealed interface NumericLiteral_ : PropertyName, DeclarationName, PropertyNameLiteral, LiteralToken, JsonObjectExpression, DeclarationStatement_name
+    sealed interface NumericLiteral_ : PropertyName, DeclarationName, PropertyNameLiteral, LiteralToken,
+        JsonObjectExpression, DeclarationStatement_name
 
     sealed interface ObjectBindingOrAssignmentElement_ : BindingOrAssignmentElement
 
@@ -431,8 +444,9 @@ sealed external interface Union {
 
     sealed interface ObjectDestructuringAssignment_ : DestructuringAssignment
 
-    sealed interface ObjectLiteralExpression_ : ObjectBindingOrAssignmentPattern, AssignmentPattern, JsonObjectExpression, DestructuringPattern, MethodDeclaration_parent,
-        GetAccessorDeclaration_parent, SetAccessorDeclaration_parent
+    sealed interface ObjectLiteralExpression_ : ObjectBindingOrAssignmentPattern, AssignmentPattern,
+        JsonObjectExpression, DestructuringPattern, MethodDeclaration_parent, GetAccessorDeclaration_parent,
+        SetAccessorDeclaration_parent
 
     sealed interface ObjectType_ : BaseType, StructuredType
 
@@ -442,7 +456,8 @@ sealed external interface Union {
 
     sealed interface OverrideKeyword_ : Modifier
 
-    sealed interface ParameterDeclaration_ : HasJSDoc, HasType, HasExpressionInitializer, VariableLikeDeclaration, BindingOrAssignmentElement, ObjectBindingPattern_parent, ArrayBindingPattern_parent,
+    sealed interface ParameterDeclaration_ : HasJSDoc, HasType, HasExpressionInitializer, VariableLikeDeclaration,
+        BindingOrAssignmentElement, ObjectBindingPattern_parent, ArrayBindingPattern_parent,
         SyntheticExpression_tupleNameSource
 
     sealed interface ParenthesizedExpression_ : HasJSDoc
@@ -463,7 +478,8 @@ sealed external interface Union {
 
     sealed interface PropertyAccessExpression_ : BindingOrAssignmentElementTarget, AccessExpression
 
-    sealed interface PropertyAssignment_ : HasJSDoc, HasExpressionInitializer, ObjectLiteralElementLike, VariableLikeDeclaration, ObjectBindingOrAssignmentElement
+    sealed interface PropertyAssignment_ : HasJSDoc, HasExpressionInitializer, ObjectLiteralElementLike,
+        VariableLikeDeclaration, ObjectBindingOrAssignmentElement
 
     sealed interface PropertyDeclaration_ : HasJSDoc, HasType, HasExpressionInitializer, VariableLikeDeclaration
 
@@ -483,7 +499,8 @@ sealed external interface Union {
 
     sealed interface QuestionToken_ : MappedTypeNode_questionToken
 
-    sealed interface ReadonlyKeyword_ : Modifier, ParameterPropertyModifier, ClassMemberModifier, MappedTypeNode_readonlyToken
+    sealed interface ReadonlyKeyword_ : Modifier, ParameterPropertyModifier, ClassMemberModifier,
+        MappedTypeNode_readonlyToken
 
     sealed interface RegularExpressionLiteral_ : LiteralToken
 
@@ -507,11 +524,13 @@ sealed external interface Union {
 
     sealed interface ShiftOperatorOrHigher_ : RelationalOperatorOrHigher
 
-    sealed interface ShorthandPropertyAssignment_ : HasJSDoc, ObjectLiteralElementLike, VariableLikeDeclaration, ObjectBindingOrAssignmentElement
+    sealed interface ShorthandPropertyAssignment_ : HasJSDoc, ObjectLiteralElementLike, VariableLikeDeclaration,
+        ObjectBindingOrAssignmentElement
 
     sealed interface Signature_declaration
 
-    sealed interface SignatureDeclaration_ : HasType, DeclarationWithTypeParameterChildren, TypePredicateNode_parent, Signature_declaration
+    sealed interface SignatureDeclaration_ : HasType, DeclarationWithTypeParameterChildren, TypePredicateNode_parent,
+        Signature_declaration
 
     sealed interface SignatureHelpCharacterTypedReason_ : SignatureHelpTriggerReason
 
@@ -519,9 +538,11 @@ sealed external interface Union {
 
     sealed interface SignatureHelpRetriggeredReason_ : SignatureHelpTriggerReason
 
-    sealed interface SourceFile_ : BlockLike, ModuleDeclaration_parent, ImportEqualsDeclaration_parent, ImportDeclaration_parent, ExportDeclaration_parent
+    sealed interface SourceFile_ : BlockLike, ModuleDeclaration_parent, ImportEqualsDeclaration_parent,
+        ImportDeclaration_parent, ExportDeclaration_parent
 
-    sealed interface SpreadAssignment_ : HasJSDoc, ObjectLiteralElementLike, ObjectBindingOrAssignmentElement, BindingOrAssignmentElementRestIndicator
+    sealed interface SpreadAssignment_ : HasJSDoc, ObjectLiteralElementLike, ObjectBindingOrAssignmentElement,
+        BindingOrAssignmentElementRestIndicator
 
     sealed interface SpreadElement_ : BindingOrAssignmentElementRestIndicator
 
@@ -529,7 +550,8 @@ sealed external interface Union {
 
     sealed interface StaticKeyword_ : Modifier, ClassMemberModifier
 
-    sealed interface StringLiteral_ : PropertyName, StringLiteralLike, LiteralToken, ModuleName, AssertionKey, JsonObjectExpression, DeclarationStatement_name, JsxAttribute_initializer
+    sealed interface StringLiteral_ : PropertyName, StringLiteralLike, LiteralToken, ModuleName, AssertionKey,
+        JsonObjectExpression, DeclarationStatement_name, JsxAttribute_initializer
 
     sealed interface StringLiteralLike_ : DeclarationName, PropertyNameLiteral
 
@@ -541,7 +563,8 @@ sealed external interface Union {
 
     sealed interface SyntaxKind_AbstractKeyword : KeywordSyntaxKind, ModifierSyntaxKind
 
-    sealed interface SyntaxKind_AmpersandAmpersandEqualsToken : CompoundAssignmentOperator, LogicalOrCoalescingAssignmentOperator
+    sealed interface SyntaxKind_AmpersandAmpersandEqualsToken : CompoundAssignmentOperator,
+        LogicalOrCoalescingAssignmentOperator
 
     sealed interface SyntaxKind_AmpersandAmpersandToken : PunctuationSyntaxKind, LogicalOperator
 
@@ -681,7 +704,8 @@ sealed external interface Union {
 
     sealed interface SyntaxKind_GreaterThanGreaterThanEqualsToken : PunctuationSyntaxKind, CompoundAssignmentOperator
 
-    sealed interface SyntaxKind_GreaterThanGreaterThanGreaterThanEqualsToken : PunctuationSyntaxKind, CompoundAssignmentOperator
+    sealed interface SyntaxKind_GreaterThanGreaterThanGreaterThanEqualsToken : PunctuationSyntaxKind,
+        CompoundAssignmentOperator
 
     sealed interface SyntaxKind_GreaterThanGreaterThanGreaterThanToken : PunctuationSyntaxKind, ShiftOperator
 
@@ -725,7 +749,8 @@ sealed external interface Union {
 
     sealed interface SyntaxKind_LessThanSlashToken : PunctuationSyntaxKind, JsxTokenSyntaxKind
 
-    sealed interface SyntaxKind_LessThanToken : PunctuationSyntaxKind, JsxTokenSyntaxKind, JSDocSyntaxKind, RelationalOperator
+    sealed interface SyntaxKind_LessThanToken : PunctuationSyntaxKind, JsxTokenSyntaxKind, JSDocSyntaxKind,
+        RelationalOperator
 
     sealed interface SyntaxKind_LetKeyword : KeywordSyntaxKind
 
@@ -789,7 +814,8 @@ sealed external interface Union {
 
     sealed interface SyntaxKind_QuestionDotToken : PunctuationSyntaxKind
 
-    sealed interface SyntaxKind_QuestionQuestionEqualsToken : CompoundAssignmentOperator, LogicalOrCoalescingAssignmentOperator
+    sealed interface SyntaxKind_QuestionQuestionEqualsToken : CompoundAssignmentOperator,
+        LogicalOrCoalescingAssignmentOperator
 
     sealed interface SyntaxKind_QuestionQuestionToken : PunctuationSyntaxKind, AssignmentOperatorOrHigher
 
@@ -921,7 +947,8 @@ sealed external interface Union {
 
     sealed interface TypeAssertion_ : AssertionExpression
 
-    sealed interface TypeLiteralNode_ : ObjectTypeDeclaration, GetAccessorDeclaration_parent, SetAccessorDeclaration_parent
+    sealed interface TypeLiteralNode_ : ObjectTypeDeclaration, GetAccessorDeclaration_parent,
+        SetAccessorDeclaration_parent
 
     sealed interface TypeOperatorNode_ : HasType
 
@@ -963,8 +990,8 @@ sealed external interface Union {
 
     sealed interface UnscopedEmitHelper_ : EmitHelper
 
-    sealed interface VariableDeclaration_ : HasJSDoc, HasType, HasExpressionInitializer, VariableLikeDeclaration, BindingOrAssignmentElement, ObjectBindingPattern_parent, ArrayBindingPattern_parent,
-        FlowAssignment_node
+    sealed interface VariableDeclaration_ : HasJSDoc, HasType, HasExpressionInitializer, VariableLikeDeclaration,
+        BindingOrAssignmentElement, ObjectBindingPattern_parent, ArrayBindingPattern_parent, FlowAssignment_node
 
     sealed interface VariableDeclaration_parent : Node
 

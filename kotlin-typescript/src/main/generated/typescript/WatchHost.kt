@@ -32,8 +32,7 @@ sealed external interface WatchHost {
     val setTimeout: ((
         callback: Function<Unit>,
         ms: Int,
-/* vararg */
-        args: dynamic,
+        /* vararg */ args: dynamic,
     ) -> Any)?
 
     /** If provided, will be used to reset existing delayed compilation */

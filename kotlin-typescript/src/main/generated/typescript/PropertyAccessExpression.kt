@@ -2,7 +2,8 @@
 
 package typescript
 
-sealed external interface PropertyAccessExpression : MemberExpression, NamedDeclaration, Union.PropertyAccessExpression_ {
+sealed external interface PropertyAccessExpression : MemberExpression, NamedDeclaration,
+    Union.PropertyAccessExpression_ {
     override val kind: SyntaxKind.PropertyAccessExpression
     val expression: LeftHandSideExpression
     val questionDotToken: QuestionDotToken?
