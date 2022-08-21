@@ -11,7 +11,7 @@ external interface ReadableStream : node.events.IEventEmitter {
     fun isPaused(): Boolean
     fun <T : WritableStream> pipe(
         destination: T,
-        options: Any /* { end?: boolean | undefined; } */ = definedExternally,
+        options: PipeOptions = definedExternally,
     ): T
 
     fun unpipe(destination: WritableStream = definedExternally): ReadableStream
