@@ -156,7 +156,7 @@ external class MessagePort : node.events.EventEmitter {
 
     override fun emit(
         event: String, /* | Symbol */
-        vararg args: ReadonlyArray<Any>,
+        vararg args: Any,
     ): Boolean
 
     fun on(

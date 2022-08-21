@@ -1031,7 +1031,7 @@ sealed external interface Process : node.events.IEventEmitter {
      */
     fun nextTick(
         callback: Function<*>,
-        vararg args: ReadonlyArray<Any>,
+        vararg args: Any,
     )
 
     /**

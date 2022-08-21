@@ -5,7 +5,6 @@
 
 package node.http
 
-import kotlinx.js.ReadonlyArray
 import node.buffer.Buffer
 import node.events.Event
 import node.net.Socket
@@ -194,7 +193,7 @@ open external class Server : node.net.Server {
 
     override fun emit(
         event: String,
-        vararg args: ReadonlyArray<Any>,
+        vararg args: Any,
     ): Boolean
 
     override fun emit(event: Event.CLOSE): Boolean

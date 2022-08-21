@@ -5,7 +5,6 @@
 
 package node.net
 
-import kotlinx.js.ReadonlyArray
 import node.buffer.Buffer
 import node.events.Event
 
@@ -373,7 +372,7 @@ open external class Socket : node.stream.Duplex {
 
     override fun emit(
         event: String, /* | Symbol */
-        vararg args: ReadonlyArray<Any>,
+        vararg args: Any,
     ): Boolean
 
     open fun emit(

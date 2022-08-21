@@ -292,7 +292,7 @@ external interface IEventEmitter {
      */
     fun emit(
         event: String, /* | Symbol */
-        vararg args: ReadonlyArray<Any>,
+        vararg args: Any,
     ): Boolean
 
     /**
