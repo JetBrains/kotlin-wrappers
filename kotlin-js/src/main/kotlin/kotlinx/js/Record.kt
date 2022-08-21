@@ -1,11 +1,7 @@
 package kotlinx.js
 
 external interface Record<in K : Any, V : Any>
-
-inline operator fun <K : Any, V : Any> Record<K, V>.get(
-    key: K,
-): V? =
-    asDynamic()[key]
+    : ReadonlyRecord<K, V>
 
 inline operator fun <K : Any, V : Any> Record<K, V>.set(
     key: K,
