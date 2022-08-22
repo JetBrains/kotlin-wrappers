@@ -1,3 +1,9 @@
+# [archived]
+
+Replacement - [Tanstack React Query](../kotlin-tanstack-react-query/README.md)
+
+---
+
 [![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-react-query)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-react-query)
 
 # kotlin-react-query
