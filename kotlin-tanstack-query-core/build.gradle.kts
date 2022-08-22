@@ -5,7 +5,7 @@ plugins {
 }
 
 dependencies {
-    api(project(":kotlin-browser"))
+    api(project(":kotlin-js"))
 
     api(npmv("@tanstack/query-core"))
 }
