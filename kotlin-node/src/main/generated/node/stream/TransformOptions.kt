@@ -2,7 +2,7 @@
 
 package node.stream
 
-sealed external interface TransformOptions : DuplexOptions {
+external interface TransformOptions : DuplexOptions {
     /* this: Transform */
     override var construct: ((callback: (error: Error?) -> Unit) -> Unit)?
 
