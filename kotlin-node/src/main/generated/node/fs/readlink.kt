@@ -7,6 +7,13 @@ import node.buffer.Buffer
 
 suspend fun readlink(
     path: PathLike,
+): String =
+    readlinkAsync(
+        path = path,
+    ).await()
+
+suspend fun readlink(
+    path: PathLike,
     options: node.buffer.BufferEncoding?, /* ObjectEncodingOptions | BufferEncoding */
 ): String =
     readlinkAsync(

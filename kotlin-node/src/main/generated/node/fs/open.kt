@@ -6,6 +6,13 @@ import kotlinx.coroutines.await
 
 suspend fun open(
     path: PathLike,
+): FileHandle =
+    openAsync(
+        path = path,
+    ).await()
+
+suspend fun open(
+    path: PathLike,
     flags: Any, /* string | number */
 ): FileHandle =
     openAsync(

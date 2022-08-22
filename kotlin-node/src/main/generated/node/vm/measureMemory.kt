@@ -4,6 +4,9 @@ package node.vm
 
 import kotlinx.coroutines.await
 
+suspend fun measureMemory(): MemoryMeasurement =
+    measureMemoryAsync().await()
+
 suspend fun measureMemory(
     options: MeasureMemoryOptions,
 ): MemoryMeasurement =

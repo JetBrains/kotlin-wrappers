@@ -7,6 +7,13 @@ import node.buffer.Buffer
 
 suspend fun realpath(
     path: PathLike,
+): String =
+    realpathAsync(
+        path = path,
+    ).await()
+
+suspend fun realpath(
+    path: PathLike,
     options: node.buffer.BufferEncoding?, /* ObjectEncodingOptions | BufferEncoding */
 ): String =
     realpathAsync(

@@ -7,6 +7,16 @@ import kotlinx.coroutines.await
 suspend fun copyFile(
     src: PathLike,
     dest: PathLike,
+) {
+    copyFileAsync(
+        src = src,
+        dest = dest,
+    ).await()
+}
+
+suspend fun copyFile(
+    src: PathLike,
+    dest: PathLike,
     mode: Number,
 ) {
     copyFileAsync(
