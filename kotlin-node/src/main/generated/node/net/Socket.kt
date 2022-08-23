@@ -7,8 +7,9 @@ package node.net
 
 import node.buffer.Buffer
 import node.events.Event
+import node.stream.Duplex
 
-open external class Socket : node.stream.Duplex {
+open external class Socket : Duplex {
     constructor(options: SocketConstructorOpts = definedExternally)
 
     /**

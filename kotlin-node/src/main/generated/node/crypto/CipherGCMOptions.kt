@@ -2,6 +2,8 @@
 
 package node.crypto
 
-sealed external interface CipherGCMOptions : node.stream.TransformOptions {
+import node.stream.TransformOptions
+
+sealed external interface CipherGCMOptions : TransformOptions {
     var authTagLength: Number?
 }
