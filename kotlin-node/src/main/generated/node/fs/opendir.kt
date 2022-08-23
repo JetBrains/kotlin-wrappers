@@ -6,6 +6,13 @@ import kotlinx.coroutines.await
 
 suspend fun opendir(
     path: PathLike,
+): Dir =
+    opendirAsync(
+        path = path,
+    ).await()
+
+suspend fun opendir(
+    path: PathLike,
     options: OpenDirOptions,
 ): Dir =
     opendirAsync(

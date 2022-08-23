@@ -6,6 +6,14 @@ import kotlinx.coroutines.await
 
 suspend fun truncate(
     path: PathLike,
+) {
+    truncateAsync(
+        path = path,
+    ).await()
+}
+
+suspend fun truncate(
+    path: PathLike,
     len: Number,
 ) {
     truncateAsync(

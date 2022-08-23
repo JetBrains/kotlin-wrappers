@@ -6,6 +6,14 @@ import kotlinx.coroutines.await
 
 suspend fun rm(
     path: PathLike,
+) {
+    rmAsync(
+        path = path,
+    ).await()
+}
+
+suspend fun rm(
+    path: PathLike,
     options: RmOptions,
 ) {
     rmAsync(

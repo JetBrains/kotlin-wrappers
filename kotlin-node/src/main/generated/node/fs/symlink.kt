@@ -7,6 +7,16 @@ import kotlinx.coroutines.await
 suspend fun symlink(
     target: PathLike,
     path: PathLike,
+) {
+    symlinkAsync(
+        target = target,
+        path = path,
+    ).await()
+}
+
+suspend fun symlink(
+    target: PathLike,
+    path: PathLike,
     type: String?,
 ) {
     symlinkAsync(

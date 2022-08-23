@@ -6,6 +6,14 @@ import kotlinx.coroutines.await
 
 suspend fun rmdir(
     path: PathLike,
+) {
+    rmdirAsync(
+        path = path,
+    ).await()
+}
+
+suspend fun rmdir(
+    path: PathLike,
     options: RmDirOptions,
 ) {
     rmdirAsync(

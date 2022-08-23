@@ -7,6 +7,13 @@ import node.buffer.Buffer
 
 suspend fun mkdtemp(
     prefix: String,
+): String =
+    mkdtempAsync(
+        prefix = prefix,
+    ).await()
+
+suspend fun mkdtemp(
+    prefix: String,
     options: node.buffer.BufferEncoding?, /* ObjectEncodingOptions | BufferEncoding */
 ): String =
     mkdtempAsync(

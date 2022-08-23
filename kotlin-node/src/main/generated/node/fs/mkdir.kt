@@ -6,6 +6,13 @@ import kotlinx.coroutines.await
 
 suspend fun mkdir(
     path: PathLike,
+): String =
+    mkdirAsync(
+        path = path,
+    ).await()
+
+suspend fun mkdir(
+    path: PathLike,
     options: Any?, /* Mode | MakeDirectoryOptions */
 ): String =
     mkdirAsync(

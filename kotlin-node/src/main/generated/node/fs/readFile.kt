@@ -8,6 +8,13 @@ import node.buffer.BufferEncoding
 
 suspend fun readFile(
     path: PathLike, /* | FileHandle */
+): Buffer =
+    readFileAsync(
+        path = path,
+    ).await()
+
+suspend fun readFile(
+    path: PathLike, /* | FileHandle */
     options: Any?,
     /*         | ({
               encoding?: null | undefined;
