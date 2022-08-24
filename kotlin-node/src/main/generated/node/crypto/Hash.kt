@@ -6,9 +6,10 @@
 package node.crypto
 
 import node.buffer.Buffer
+import node.stream.Transform
 import node.stream.TransformOptions
 
-sealed external class Hash : TransformOptions {
+sealed external class Hash : Transform {
     /* private constructor() */
     /**
      * Creates a new `Hash` object that contains a deep copy of the internal state

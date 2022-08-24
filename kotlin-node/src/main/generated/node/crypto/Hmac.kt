@@ -6,9 +6,9 @@
 package node.crypto
 
 import node.buffer.Buffer
-import node.stream.TransformOptions
+import node.stream.Transform
 
-sealed external class Hmac : TransformOptions {
+sealed external class Hmac : Transform {
     /* private constructor() */
     /**
      * Updates the `Hmac` content with the given `data`, the encoding of which
