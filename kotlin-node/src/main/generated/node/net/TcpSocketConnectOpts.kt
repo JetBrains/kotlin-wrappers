@@ -10,4 +10,7 @@ external interface TcpSocketConnectOpts : ConnectOpts {
     var hints: Number?
     var family: Number?
     var lookup: LookupFunction?
+    var noDelay: Boolean?
+    var keepAlive: Boolean?
+    var keepAliveInitialDelay: Number?
 }
