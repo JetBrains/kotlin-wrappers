@@ -7,6 +7,7 @@ package node.childProcess
 
 import kotlinx.js.ReadonlyArray
 import node.events.Event
+import node.events.EventType
 import node.process.Signals
 import node.stream.Pipe
 import node.stream.Readable
@@ -485,7 +486,7 @@ external class ChildProcess : node.events.EventEmitter {
      * 6. spawn
      */
     override fun addListener(
-        event: String,
+        event: EventType,
         listener: Function<Unit>,
     ): ChildProcess
 
@@ -529,7 +530,7 @@ external class ChildProcess : node.events.EventEmitter {
     ): ChildProcess
 
     override fun emit(
-        event: String, /* | Symbol */
+        event: EventType,
         vararg args: Any,
     ): Boolean
 
@@ -563,7 +564,7 @@ external class ChildProcess : node.events.EventEmitter {
     ): Boolean
 
     override fun on(
-        event: String,
+        event: EventType,
         listener: Function<Unit>,
     ): ChildProcess
 
@@ -607,7 +608,7 @@ external class ChildProcess : node.events.EventEmitter {
     ): ChildProcess
 
     override fun once(
-        event: String,
+        event: EventType,
         listener: Function<Unit>,
     ): ChildProcess
 
@@ -651,7 +652,7 @@ external class ChildProcess : node.events.EventEmitter {
     ): ChildProcess
 
     override fun prependListener(
-        event: String,
+        event: EventType,
         listener: Function<Unit>,
     ): ChildProcess
 
@@ -695,7 +696,7 @@ external class ChildProcess : node.events.EventEmitter {
     ): ChildProcess
 
     override fun prependOnceListener(
-        event: String,
+        event: EventType,
         listener: Function<Unit>,
     ): ChildProcess
 

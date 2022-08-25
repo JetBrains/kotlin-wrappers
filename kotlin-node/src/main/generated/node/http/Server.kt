@@ -7,6 +7,7 @@ package node.http
 
 import node.buffer.Buffer
 import node.events.Event
+import node.events.EventType
 import node.net.Socket
 import node.stream.Duplex
 
@@ -126,7 +127,7 @@ open external class Server : node.net.Server {
      */
     open fun closeIdleConnections()
     override fun addListener(
-        event: String,
+        event: EventType,
         listener: Function<Unit>,
     ): Server
 
@@ -192,7 +193,7 @@ open external class Server : node.net.Server {
     ): Server
 
     override fun emit(
-        event: String,
+        event: EventType,
         vararg args: Any,
     ): Boolean
 
@@ -247,7 +248,7 @@ open external class Server : node.net.Server {
     ): Boolean
 
     override fun on(
-        event: String,
+        event: EventType,
         listener: Function<Unit>,
     ): Server
 
@@ -313,7 +314,7 @@ open external class Server : node.net.Server {
     ): Server
 
     override fun once(
-        event: String,
+        event: EventType,
         listener: Function<Unit>,
     ): Server
 
@@ -379,7 +380,7 @@ open external class Server : node.net.Server {
     ): Server
 
     override fun prependListener(
-        event: String,
+        event: EventType,
         listener: Function<Unit>,
     ): Server
 
@@ -445,7 +446,7 @@ open external class Server : node.net.Server {
     ): Server
 
     override fun prependOnceListener(
-        event: String,
+        event: EventType,
         listener: Function<Unit>,
     ): Server
 

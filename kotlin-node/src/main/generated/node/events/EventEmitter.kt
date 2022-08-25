@@ -13,54 +13,54 @@ open external class EventEmitter : IEventEmitter {
     constructor(options: EventEmitterOptions = definedExternally)
 
     override fun addListener(
-        event: String, /* | Symbol */
+        event: EventType,
         listener: Function<Unit>,
     ): IEventEmitter
 
     override fun on(
-        event: String, /* | Symbol */
+        event: EventType,
         listener: Function<Unit>,
     ): IEventEmitter
 
     override fun once(
-        event: String, /* | Symbol */
+        event: EventType,
         listener: Function<Unit>,
     ): IEventEmitter
 
     override fun removeListener(
-        event: String, /* | Symbol */
+        event: EventType,
         listener: Function<Unit>,
     ): IEventEmitter
 
     override fun off(
-        event: String, /* | Symbol */
+        event: EventType,
         listener: Function<Unit>,
     ): IEventEmitter
 
-    override fun removeAllListeners(event: String /* | Symbol */): IEventEmitter
+    override fun removeAllListeners(event: EventType): IEventEmitter
 
     override fun setMaxListeners(n: Number): IEventEmitter
 
     override fun getMaxListeners(): Number
 
-    override fun listeners(event: String /* | Symbol */): ReadonlyArray<Function<*>>
+    override fun listeners(event: EventType): ReadonlyArray<Function<*>>
 
-    override fun rawListeners(event: String /* | Symbol */): ReadonlyArray<Function<*>>
+    override fun rawListeners(event: EventType): ReadonlyArray<Function<*>>
 
     override fun emit(
-        event: String, /* | Symbol */
+        event: EventType,
         vararg args: Any,
     ): Boolean
 
-    override fun listenerCount(event: String /* | Symbol */): Number
+    override fun listenerCount(event: EventType): Number
 
     override fun prependListener(
-        event: String, /* | Symbol */
+        event: EventType,
         listener: Function<Unit>,
     ): IEventEmitter
 
     override fun prependOnceListener(
-        event: String, /* | Symbol */
+        event: EventType,
         listener: Function<Unit>,
     ): IEventEmitter
 
@@ -151,13 +151,13 @@ open external class EventEmitter : IEventEmitter {
          */
         fun once(
             emitter: NodeEventTarget,
-            eventName: String, /* | Symbol */
+            event: EventType,
             options: StaticEventEmitterOptions = definedExternally,
         ): Promise<ReadonlyArray<Any>>
 
         fun once(
             emitter: DOMEventTarget,
-            eventName: String,
+            event: EventType,
             options: StaticEventEmitterOptions = definedExternally,
         ): Promise<ReadonlyArray<Any>>
 
@@ -221,7 +221,7 @@ open external class EventEmitter : IEventEmitter {
          */
         fun on(
             emitter: IEventEmitter,
-            eventName: String,
+            event: EventType,
             options: StaticEventEmitterOptions = definedExternally,
         ): dynamic /* AsyncIterableIterator<any> */
 
@@ -243,7 +243,7 @@ open external class EventEmitter : IEventEmitter {
          */
         fun listenerCount(
             emitter: IEventEmitter,
-            eventName: String, /* | Symbol */
+            event: EventType,
         ): Number
 
         /**
@@ -275,7 +275,7 @@ open external class EventEmitter : IEventEmitter {
          */
         fun getEventListeners(
             emitter: Any, /* DOMEventTarget | NodeJS.EventEmitter */
-            name: String, /* | Symbol */
+            event: EventType,
         ): ReadonlyArray<Function<*>>
 
         /**

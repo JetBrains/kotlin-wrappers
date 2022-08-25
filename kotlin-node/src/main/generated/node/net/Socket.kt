@@ -7,6 +7,7 @@ package node.net
 
 import node.buffer.Buffer
 import node.events.Event
+import node.events.EventType
 import node.stream.Duplex
 
 open external class Socket : Duplex {
@@ -317,7 +318,7 @@ open external class Socket : Duplex {
      *   8. timeout
      */
     override fun addListener(
-        event: String,
+        event: EventType,
         listener: Function<Unit>,
     ): Socket
 
@@ -372,7 +373,7 @@ open external class Socket : Duplex {
     ): Socket
 
     override fun emit(
-        event: String, /* | Symbol */
+        event: EventType,
         vararg args: Any,
     ): Boolean
 
@@ -405,7 +406,7 @@ open external class Socket : Duplex {
     open fun emit(event: Event.READY): Boolean
     open fun emit(event: Event.TIMEOUT): Boolean
     override fun on(
-        event: String,
+        event: EventType,
         listener: Function<Unit>,
     ): Socket
 
@@ -460,7 +461,7 @@ open external class Socket : Duplex {
     ): Socket
 
     override fun once(
-        event: String,
+        event: EventType,
         listener: Function<Unit>,
     ): Socket
 
@@ -515,7 +516,7 @@ open external class Socket : Duplex {
     ): Socket
 
     override fun prependListener(
-        event: String,
+        event: EventType,
         listener: Function<Unit>,
     ): Socket
 
@@ -570,7 +571,7 @@ open external class Socket : Duplex {
     ): Socket
 
     override fun prependOnceListener(
-        event: String,
+        event: EventType,
         listener: Function<Unit>,
     ): Socket
 

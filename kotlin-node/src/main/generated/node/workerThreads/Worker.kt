@@ -7,6 +7,7 @@ package node.workerThreads
 
 import kotlinx.js.ReadonlyArray
 import node.events.Event
+import node.events.EventType
 import node.stream.Readable
 import node.stream.Writable
 import kotlin.js.Promise
@@ -137,7 +138,7 @@ external class Worker : node.events.EventEmitter {
     ): Worker
 
     override fun addListener(
-        event: String, /* | Symbol */
+        event: EventType,
         listener: Function<Unit>,
     ): Worker
 
@@ -163,7 +164,7 @@ external class Worker : node.events.EventEmitter {
 
     fun emit(event: Event.ONLINE): Boolean
     override fun emit(
-        event: String, /* | Symbol */
+        event: EventType,
         vararg args: Any,
     ): Boolean
 
@@ -193,7 +194,7 @@ external class Worker : node.events.EventEmitter {
     ): Worker
 
     override fun on(
-        event: String, /* | Symbol */
+        event: EventType,
         listener: Function<Unit>,
     ): Worker
 
@@ -223,7 +224,7 @@ external class Worker : node.events.EventEmitter {
     ): Worker
 
     override fun once(
-        event: String, /* | Symbol */
+        event: EventType,
         listener: Function<Unit>,
     ): Worker
 
@@ -253,7 +254,7 @@ external class Worker : node.events.EventEmitter {
     ): Worker
 
     override fun prependListener(
-        event: String, /* | Symbol */
+        event: EventType,
         listener: Function<Unit>,
     ): Worker
 
@@ -283,7 +284,7 @@ external class Worker : node.events.EventEmitter {
     ): Worker
 
     override fun prependOnceListener(
-        event: String, /* | Symbol */
+        event: EventType,
         listener: Function<Unit>,
     ): Worker
 
@@ -313,7 +314,7 @@ external class Worker : node.events.EventEmitter {
     ): Worker
 
     override fun removeListener(
-        event: String, /* | Symbol */
+        event: EventType,
         listener: Function<Unit>,
     ): Worker
 
@@ -343,7 +344,7 @@ external class Worker : node.events.EventEmitter {
     ): Worker
 
     override fun off(
-        event: String, /* | Symbol */
+        event: EventType,
         listener: Function<Unit>,
     ): Worker
 }
