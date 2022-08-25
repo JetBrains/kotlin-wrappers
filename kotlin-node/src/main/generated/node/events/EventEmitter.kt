@@ -5,6 +5,7 @@
 
 package node.events
 
+import kotlinx.js.AsyncIterable
 import kotlinx.js.ReadonlyArray
 import kotlinx.js.Symbol
 import kotlin.js.Promise
@@ -223,7 +224,7 @@ open external class EventEmitter : IEventEmitter {
             emitter: IEventEmitter,
             event: EventType,
             options: StaticEventEmitterOptions = definedExternally,
-        ): dynamic /* AsyncIterableIterator<any> */
+        ): AsyncIterable.Iterator<*>
 
         /**
          * A class method that returns the number of listeners for the given `eventName`registered on the given `emitter`.
