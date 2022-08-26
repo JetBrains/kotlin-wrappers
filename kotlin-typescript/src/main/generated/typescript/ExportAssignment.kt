@@ -9,6 +9,7 @@ package typescript
 sealed external interface ExportAssignment : DeclarationStatement, JSDocContainer, Union.ExportAssignment_ {
     override val kind: SyntaxKind.ExportAssignment
     override val parent: SourceFile
+    val modifiers: NodeArray<Modifier>?
     val isExportEquals: Boolean?
     val expression: Expression
 }

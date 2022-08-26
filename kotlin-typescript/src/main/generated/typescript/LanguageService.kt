@@ -58,23 +58,11 @@ sealed external interface LanguageService {
      */
     fun getCompilerOptionsDiagnostics(): ReadonlyArray<Diagnostic>
 
-    /** @deprecated Use getEncodedSyntacticClassifications instead. */
-    fun getSyntacticClassifications(
-        fileName: String,
-        span: TextSpan,
-    ): ReadonlyArray<ClassifiedSpan>
-
     fun getSyntacticClassifications(
         fileName: String,
         span: TextSpan,
         format: SemanticClassificationFormat,
     ): dynamic /* ClassifiedSpan[] | ClassifiedSpan2020[] */
-
-    /** @deprecated Use getEncodedSemanticClassifications instead. */
-    fun getSemanticClassifications(
-        fileName: String,
-        span: TextSpan,
-    ): ReadonlyArray<ClassifiedSpan>
 
     fun getSemanticClassifications(
         fileName: String,
@@ -179,7 +167,7 @@ sealed external interface LanguageService {
     fun getRenameInfo(
         fileName: String,
         position: Int,
-        options: RenameInfoOptions = definedExternally,
+        preferences: UserPreferences,
     ): RenameInfo
 
     fun findRenameLocations(
@@ -232,12 +220,6 @@ sealed external interface LanguageService {
     ): ReadonlyArray<DocumentHighlights>?
 
     fun getFileReferences(fileName: String): ReadonlyArray<ReferenceEntry>
-
-    /** @deprecated */
-    fun getOccurrencesAtPosition(
-        fileName: String,
-        position: Int,
-    ): ReadonlyArray<ReferenceEntry>?
 
     fun getNavigateToItems(
         searchValue: String,
@@ -368,23 +350,6 @@ sealed external interface LanguageService {
         formatSettings: FormatCodeSettings = definedExternally,
     ): dynamic /* Promise<ApplyCodeActionCommandResult | ApplyCodeActionCommandResult[]> */
 
-    /** @deprecated `fileName` will be ignored */
-    fun applyCodeActionCommand(
-        fileName: String,
-        action: CodeActionCommand,
-    ): kotlin.js.Promise<ApplyCodeActionCommandResult>
-
-    /** @deprecated `fileName` will be ignored */
-    fun applyCodeActionCommand(
-        fileName: String,
-        action: ReadonlyArray<CodeActionCommand>,
-    ): kotlin.js.Promise<ReadonlyArray<ApplyCodeActionCommandResult>>
-
-    /** @deprecated `fileName` will be ignored */
-    fun applyCodeActionCommand(
-        fileName: String,
-        action: dynamic, /* CodeActionCommand | CodeActionCommand[] */
-    ): dynamic /* Promise<ApplyCodeActionCommandResult | ApplyCodeActionCommandResult[]> */
 
     fun getApplicableRefactors(
         fileName: String,

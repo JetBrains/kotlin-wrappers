@@ -5,6 +5,7 @@ package typescript
 sealed external interface ParameterDeclaration : NamedDeclaration, JSDocContainer, Union.ParameterDeclaration_ {
     override val kind: SyntaxKind.Parameter
     override val parent: SignatureDeclaration
+    val modifiers: NodeArray<ModifierLike>?
     val dotDotDotToken: DotDotDotToken?
     override val name: BindingName
     val questionToken: QuestionToken?

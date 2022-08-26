@@ -7,8 +7,6 @@ import kotlinx.js.ReadonlyArray
 sealed external interface Node : ReadonlyTextRange {
     val kind: SyntaxKind
     val flags: NodeFlags
-    val decorators: NodeArray<Decorator>?
-    val modifiers: ModifiersArray?
     val parent: Node
     fun getSourceFile(): SourceFile
     fun getChildCount(sourceFile: SourceFile = definedExternally): Int
@@ -36,4 +34,6 @@ sealed external interface Node : ReadonlyTextRange {
         cbNode: (node: Node) -> T?,
         cbNodeArray: (nodes: NodeArray<Node>) -> T? = definedExternally,
     ): T?
+
+
 }

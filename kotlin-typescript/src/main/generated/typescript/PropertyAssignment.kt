@@ -6,7 +6,7 @@ sealed external interface PropertyAssignment : ObjectLiteralElement, JSDocContai
     override val kind: SyntaxKind.PropertyAssignment
     override val parent: ObjectLiteralExpression
     override val name: PropertyName
-    val questionToken: QuestionToken?
-    val exclamationToken: ExclamationToken?
     val initializer: Expression
+
+
 }

@@ -6,6 +6,7 @@ sealed external interface SetAccessorDeclaration : FunctionLikeDeclarationBase, 
     ObjectLiteralElement, JSDocContainer, Union.SetAccessorDeclaration_ {
     override val kind: SyntaxKind.SetAccessor
     override val parent: Union.SetAccessorDeclaration_parent
+    val modifiers: NodeArray<ModifierLike>?
     override val name: PropertyName
     override val body: FunctionBody?
 }

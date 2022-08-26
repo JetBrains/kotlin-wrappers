@@ -2,4 +2,5 @@
 
 package typescript
 
-sealed external interface BitwiseOperator : SyntaxKind, Union.BitwiseOperator_ /* SyntaxKind.AmpersandToken | SyntaxKind.BarToken | SyntaxKind.CaretToken */
+sealed external interface BitwiseOperator : SyntaxKind,
+    Union.BitwiseOperator_ /* SyntaxKind.AmpersandToken | SyntaxKind.BarToken | SyntaxKind.CaretToken */

@@ -6,5 +6,5 @@ sealed external interface JsxAttribute : ObjectLiteralElement, Union.JsxAttribut
     override val kind: SyntaxKind.JsxAttribute
     override val parent: JsxAttributes
     override val name: Identifier
-    val initializer: Union.JsxAttribute_initializer?
+    val initializer: JsxAttributeValue?
 }

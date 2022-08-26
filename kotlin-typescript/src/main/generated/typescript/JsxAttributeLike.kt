@@ -2,4 +2,5 @@
 
 package typescript
 
-sealed external interface JsxAttributeLike : ObjectLiteralElement, Union.JsxAttributeLike_ /* JsxAttribute | JsxSpreadAttribute */
+sealed external interface JsxAttributeLike : ObjectLiteralElement,
+    Union.JsxAttributeLike_ /* JsxAttribute | JsxSpreadAttribute */

@@ -2,4 +2,4 @@
 
 package typescript
 
-sealed external interface ConciseBody : Union.FunctionLikeDeclarationBase_body /* FunctionBody | Expression */
+sealed external interface ConciseBody : Node /* FunctionBody | Expression */

@@ -6,5 +6,6 @@ sealed external interface IndexSignatureDeclaration : SignatureDeclarationBase, 
     Union.IndexSignatureDeclaration_ {
     override val kind: SyntaxKind.IndexSignature
     override val parent: ObjectTypeDeclaration
+    val modifiers: NodeArray<Modifier>?
     override val type: TypeNode
 }

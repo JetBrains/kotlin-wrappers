@@ -29,7 +29,8 @@ sealed external interface Union {
 
     sealed interface ArrayTypeNode_ : TypeReference_node
 
-    sealed interface ArrowFunction_ : HasJSDoc, SignatureDeclaration, FunctionLikeDeclaration, FlowStart_node
+    sealed interface ArrowFunction_ : HasJSDoc, HasModifiers, SignatureDeclaration, FunctionLikeDeclaration,
+        FlowStart_node
 
     sealed interface AsExpression_ : AssertionExpression
 
@@ -62,7 +63,7 @@ sealed external interface Union {
 
     sealed interface BitwiseOperatorOrHigher_ : LogicalOperatorOrHigher
 
-    sealed interface Block_ : HasJSDoc, BlockLike, FunctionLikeDeclarationBase_body
+    sealed interface Block_ : HasJSDoc, BlockLike
 
     sealed interface BooleanLiteral_ : JsonObjectExpression, LiteralTypeNode_literal
 
@@ -81,9 +82,11 @@ sealed external interface Union {
 
     sealed interface CatchClause_ : VariableDeclaration_parent
 
-    sealed interface ClassDeclaration_ : ClassLikeDeclaration, ClassStaticBlockDeclaration_parent
+    sealed interface ClassDeclaration_ : HasDecorators, HasModifiers, ClassLikeDeclaration,
+        ClassStaticBlockDeclaration_parent
 
-    sealed interface ClassExpression_ : ClassLikeDeclaration, ClassStaticBlockDeclaration_parent
+    sealed interface ClassExpression_ : HasDecorators, HasModifiers, ClassLikeDeclaration,
+        ClassStaticBlockDeclaration_parent
 
     sealed interface ClassLikeDeclaration_ : HasJSDoc, ObjectTypeDeclaration, DeclarationWithTypeParameterChildren,
         MethodDeclaration_parent, GetAccessorDeclaration_parent, SetAccessorDeclaration_parent, HeritageClause_parent
@@ -106,9 +109,9 @@ sealed external interface Union {
 
     sealed interface ConstructSignatureDeclaration_ : HasJSDoc, SignatureDeclaration
 
-    sealed interface ConstructorDeclaration_ : HasJSDoc, SignatureDeclaration, FunctionLikeDeclaration
+    sealed interface ConstructorDeclaration_ : HasJSDoc, HasModifiers, SignatureDeclaration, FunctionLikeDeclaration
 
-    sealed interface ConstructorTypeNode_ : HasJSDoc, SignatureDeclaration, FunctionOrConstructorTypeNode
+    sealed interface ConstructorTypeNode_ : HasJSDoc, HasModifiers, SignatureDeclaration, FunctionOrConstructorTypeNode
 
     sealed interface ContinueStatement_ : HasJSDoc, BreakOrContinueStatement
 
@@ -121,7 +124,7 @@ sealed external interface Union {
 
     sealed interface DeclareKeyword_ : Modifier
 
-    sealed interface Decorator_ : CallLikeExpression
+    sealed interface Decorator_ : ModifierLike, CallLikeExpression
 
     sealed interface DefaultClause_ : CaseOrDefaultClause
 
@@ -144,7 +147,7 @@ sealed external interface Union {
 
     sealed interface EntityNameExpression_ : DeclarationName, EntityNameOrEntityNameExpression
 
-    sealed interface EnumDeclaration_ : HasJSDoc
+    sealed interface EnumDeclaration_ : HasJSDoc, HasModifiers
 
     sealed interface EnumMember_ : HasJSDoc, HasExpressionInitializer, VariableLikeDeclaration
 
@@ -154,9 +157,9 @@ sealed external interface Union {
 
     sealed interface ExponentiationOperator_ : MultiplicativeOperatorOrHigher
 
-    sealed interface ExportAssignment_ : HasJSDoc
+    sealed interface ExportAssignment_ : HasJSDoc, HasModifiers
 
-    sealed interface ExportDeclaration_ : HasJSDoc, AssertClause_parent
+    sealed interface ExportDeclaration_ : HasJSDoc, HasModifiers, AssertClause_parent
 
     sealed interface ExportDeclaration_parent : Node
 
@@ -164,7 +167,7 @@ sealed external interface Union {
 
     sealed interface ExportSpecifier_ : HasJSDoc, ImportOrExportSpecifier
 
-    sealed interface Expression_ : ConciseBody, ForInitializer, FunctionLikeDeclarationBase_body, FlowAssignment_node
+    sealed interface Expression_ : ConciseBody, ForInitializer, FlowAssignment_node
 
     sealed interface ExpressionStatement_ : HasJSDoc
 
@@ -204,17 +207,17 @@ sealed external interface Union {
 
     sealed interface FunctionBody_ : ConciseBody
 
-    sealed interface FunctionDeclaration_ : HasJSDoc, SignatureDeclaration, FunctionLikeDeclaration
+    sealed interface FunctionDeclaration_ : HasJSDoc, HasModifiers, SignatureDeclaration, FunctionLikeDeclaration
 
-    sealed interface FunctionExpression_ : HasJSDoc, SignatureDeclaration, FunctionLikeDeclaration, FlowStart_node
-
-    sealed interface FunctionLikeDeclarationBase_body
+    sealed interface FunctionExpression_ : HasJSDoc, HasModifiers, SignatureDeclaration, FunctionLikeDeclaration,
+        FlowStart_node
 
     sealed interface FunctionOrConstructorTypeNodeBase_kind : SyntaxKind
 
     sealed interface FunctionTypeNode_ : HasJSDoc, SignatureDeclaration, FunctionOrConstructorTypeNode
 
-    sealed interface GetAccessorDeclaration_ : FunctionLikeDeclaration, AccessorDeclaration, FlowStart_node
+    sealed interface GetAccessorDeclaration_ : HasDecorators, HasModifiers, FunctionLikeDeclaration,
+        AccessorDeclaration, FlowStart_node
 
     sealed interface GetAccessorDeclaration_parent : Node
 
@@ -235,11 +238,11 @@ sealed external interface Union {
 
     sealed interface ImportClause_ : TypeOnlyCompatibleAliasDeclaration
 
-    sealed interface ImportDeclaration_ : HasJSDoc, AssertClause_parent
+    sealed interface ImportDeclaration_ : HasJSDoc, HasModifiers, AssertClause_parent
 
     sealed interface ImportDeclaration_parent : Node
 
-    sealed interface ImportEqualsDeclaration_ : HasJSDoc, TypeOnlyCompatibleAliasDeclaration
+    sealed interface ImportEqualsDeclaration_ : HasJSDoc, HasModifiers, TypeOnlyCompatibleAliasDeclaration
 
     sealed interface ImportEqualsDeclaration_parent : Node
 
@@ -251,7 +254,7 @@ sealed external interface Union {
 
     sealed interface IncompleteType_ : FlowType
 
-    sealed interface IndexSignatureDeclaration_ : HasJSDoc, SignatureDeclaration
+    sealed interface IndexSignatureDeclaration_ : HasJSDoc, HasModifiers, SignatureDeclaration
 
     sealed interface IndexType_type
 
@@ -261,8 +264,9 @@ sealed external interface Union {
 
     sealed interface InstantiableType_ : IndexType_type
 
-    sealed interface InterfaceDeclaration_ : HasJSDoc, ObjectTypeDeclaration, DeclarationWithTypeParameterChildren,
-        GetAccessorDeclaration_parent, SetAccessorDeclaration_parent, HeritageClause_parent
+    sealed interface InterfaceDeclaration_ : HasJSDoc, HasModifiers, ObjectTypeDeclaration,
+        DeclarationWithTypeParameterChildren, GetAccessorDeclaration_parent, SetAccessorDeclaration_parent,
+        HeritageClause_parent
 
     sealed interface IntersectionType_ : BaseType, StructuredType
 
@@ -334,23 +338,21 @@ sealed external interface Union {
 
     sealed interface JsxAttribute_ : HasInitializer, VariableLikeDeclaration, JsxAttributeLike
 
-    sealed interface JsxAttribute_initializer
-
     sealed interface JsxAttributeLike_ : JsxExpression_parent
 
-    sealed interface JsxElement_ : JsxChild, JsxExpression_parent, JsxText_parent
+    sealed interface JsxElement_ : JsxAttributeValue, JsxChild, JsxExpression_parent, JsxText_parent
 
-    sealed interface JsxExpression_ : JsxChild, JsxAttribute_initializer
+    sealed interface JsxExpression_ : JsxAttributeValue, JsxChild
 
     sealed interface JsxExpression_parent : Node
 
-    sealed interface JsxFragment_ : JsxChild, JsxExpression_parent, JsxText_parent
+    sealed interface JsxFragment_ : JsxAttributeValue, JsxChild, JsxExpression_parent, JsxText_parent
 
     sealed interface JsxOpeningElement_ : HasTypeArguments, JsxOpeningLikeElement
 
     sealed interface JsxOpeningLikeElement_ : CallLikeExpression
 
-    sealed interface JsxSelfClosingElement_ : HasTypeArguments, JsxOpeningLikeElement, JsxChild
+    sealed interface JsxSelfClosingElement_ : HasTypeArguments, JsxOpeningLikeElement, JsxAttributeValue, JsxChild
 
     sealed interface JsxSpreadAttribute_ : JsxAttributeLike
 
@@ -382,21 +384,23 @@ sealed external interface Union {
 
     sealed interface MetaProperty_keywordToken
 
-    sealed interface MethodDeclaration_ : HasJSDoc, SignatureDeclaration, ObjectLiteralElementLike,
-        FunctionLikeDeclaration, FlowStart_node
+    sealed interface MethodDeclaration_ : HasJSDoc, HasDecorators, HasModifiers, SignatureDeclaration,
+        ObjectLiteralElementLike, FunctionLikeDeclaration, FlowStart_node
 
     sealed interface MethodDeclaration_parent : Node
 
-    sealed interface MethodSignature_ : HasJSDoc, SignatureDeclaration
+    sealed interface MethodSignature_ : HasJSDoc, HasModifiers, SignatureDeclaration
 
     sealed interface MinusToken_ : MappedTypeNode_readonlyToken, MappedTypeNode_questionToken
+
+    sealed interface Modifier_ : ModifierLike
 
     sealed interface ModuleBlock_ : BlockLike, NamespaceBody, ImportEqualsDeclaration_parent, ImportDeclaration_parent,
         ExportDeclaration_parent
 
     sealed interface ModuleBody_ : ModuleDeclaration_parent, ModuleDeclaration_body
 
-    sealed interface ModuleDeclaration_ : HasJSDoc
+    sealed interface ModuleDeclaration_ : HasJSDoc, HasModifiers
 
     sealed interface ModuleDeclaration_body
 
@@ -456,8 +460,8 @@ sealed external interface Union {
 
     sealed interface OverrideKeyword_ : Modifier
 
-    sealed interface ParameterDeclaration_ : HasJSDoc, HasType, HasExpressionInitializer, VariableLikeDeclaration,
-        BindingOrAssignmentElement, ObjectBindingPattern_parent, ArrayBindingPattern_parent,
+    sealed interface ParameterDeclaration_ : HasJSDoc, HasType, HasExpressionInitializer, HasDecorators, HasModifiers,
+        VariableLikeDeclaration, BindingOrAssignmentElement, ObjectBindingPattern_parent, ArrayBindingPattern_parent,
         SyntheticExpression_tupleNameSource
 
     sealed interface ParenthesizedExpression_ : HasJSDoc
@@ -481,9 +485,10 @@ sealed external interface Union {
     sealed interface PropertyAssignment_ : HasJSDoc, HasExpressionInitializer, ObjectLiteralElementLike,
         VariableLikeDeclaration, ObjectBindingOrAssignmentElement
 
-    sealed interface PropertyDeclaration_ : HasJSDoc, HasType, HasExpressionInitializer, VariableLikeDeclaration
+    sealed interface PropertyDeclaration_ : HasJSDoc, HasType, HasExpressionInitializer, HasDecorators, HasModifiers,
+        VariableLikeDeclaration
 
-    sealed interface PropertySignature_ : HasJSDoc, HasType, HasExpressionInitializer, VariableLikeDeclaration
+    sealed interface PropertySignature_ : HasJSDoc, HasType, HasModifiers, VariableLikeDeclaration
 
     sealed interface ProtectedKeyword_ : Modifier, AccessibilityModifier
 
@@ -516,7 +521,8 @@ sealed external interface Union {
 
     sealed interface ScopedEmitHelper_ : EmitHelper
 
-    sealed interface SetAccessorDeclaration_ : FunctionLikeDeclaration, AccessorDeclaration, FlowStart_node
+    sealed interface SetAccessorDeclaration_ : HasDecorators, HasModifiers, FunctionLikeDeclaration,
+        AccessorDeclaration, FlowStart_node
 
     sealed interface SetAccessorDeclaration_parent : Node
 
@@ -550,8 +556,8 @@ sealed external interface Union {
 
     sealed interface StaticKeyword_ : Modifier, ClassMemberModifier
 
-    sealed interface StringLiteral_ : PropertyName, StringLiteralLike, LiteralToken, ModuleName, AssertionKey,
-        JsonObjectExpression, DeclarationStatement_name, JsxAttribute_initializer
+    sealed interface StringLiteral_ : PropertyName, StringLiteralLike, LiteralToken, JsxAttributeValue, ModuleName,
+        AssertionKey, JsonObjectExpression, DeclarationStatement_name
 
     sealed interface StringLiteralLike_ : DeclarationName, PropertyNameLiteral
 
@@ -943,7 +949,7 @@ sealed external interface Union {
 
     sealed interface Type_ : FlowType
 
-    sealed interface TypeAliasDeclaration_ : HasJSDoc, HasType, DeclarationWithTypeParameterChildren
+    sealed interface TypeAliasDeclaration_ : HasJSDoc, HasType, HasModifiers, DeclarationWithTypeParameterChildren
 
     sealed interface TypeAssertion_ : AssertionExpression
 
@@ -955,6 +961,8 @@ sealed external interface Union {
     sealed interface TypeOperatorNode_operator
 
     sealed interface TypeParameter_ : TypeVariable
+
+    sealed interface TypeParameterDeclaration_ : HasModifiers
 
     sealed interface TypeParameterDeclaration_parent : Node
 
@@ -999,7 +1007,7 @@ sealed external interface Union {
 
     sealed interface VariableDeclarationList_parent : Node
 
-    sealed interface VariableStatement_ : HasJSDoc, VariableDeclarationList_parent
+    sealed interface VariableStatement_ : HasJSDoc, HasModifiers, VariableDeclarationList_parent
 
     sealed interface WhileStatement_ : HasJSDoc
 

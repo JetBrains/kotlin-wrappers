@@ -2,4 +2,5 @@
 
 package typescript
 
-sealed external interface AdditiveOperatorOrHigher : Union.AdditiveOperatorOrHigher_ /* MultiplicativeOperatorOrHigher | AdditiveOperator */
+sealed external interface AdditiveOperatorOrHigher :
+    Union.AdditiveOperatorOrHigher_ /* MultiplicativeOperatorOrHigher | AdditiveOperator */
