@@ -7,8 +7,8 @@ sealed external interface ShorthandPropertyAssignment : ObjectLiteralElement, JS
     override val kind: SyntaxKind.ShorthandPropertyAssignment
     override val parent: ObjectLiteralExpression
     override val name: Identifier
-    val questionToken: QuestionToken?
-    val exclamationToken: ExclamationToken?
     val equalsToken: EqualsToken?
     val objectAssignmentInitializer: Expression?
+
+
 }

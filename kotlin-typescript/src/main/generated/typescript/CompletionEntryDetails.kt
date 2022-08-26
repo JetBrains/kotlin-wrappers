@@ -13,7 +13,5 @@ sealed external interface CompletionEntryDetails {
     var tags: ReadonlyArray<JSDocTagInfo>?
     var codeActions: ReadonlyArray<CodeAction>?
 
-    /** @deprecated Use `sourceDisplay` instead. */
-    var source: ReadonlyArray<SymbolDisplayPart>?
     var sourceDisplay: ReadonlyArray<SymbolDisplayPart>?
 }

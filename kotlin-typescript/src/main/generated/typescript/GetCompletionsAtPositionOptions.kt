@@ -10,9 +10,5 @@ sealed external interface GetCompletionsAtPositionOptions : UserPreferences {
     var triggerCharacter: CompletionsTriggerCharacter?
     var triggerKind: CompletionTriggerKind?
 
-    /** @deprecated Use includeCompletionsForModuleExports */
-    var includeExternalModuleExports: Boolean?
 
-    /** @deprecated Use includeCompletionsWithInsertText */
-    var includeInsertTextCompletions: Boolean?
 }

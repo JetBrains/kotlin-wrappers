@@ -6,5 +6,6 @@ sealed external interface ConstructorDeclaration : FunctionLikeDeclarationBase, 
     Union.ConstructorDeclaration_ {
     override val kind: SyntaxKind.Constructor
     override val parent: ClassLikeDeclaration
+    val modifiers: NodeArray<Modifier>?
     override val body: FunctionBody?
 }

@@ -2,6 +2,8 @@
 
 package typescript
 
+import kotlinx.js.ReadonlyArray
+
 sealed external interface UserPreferences {
     val disableSuggestions: Boolean?
     val quotePreference: QuotePreference?
@@ -27,7 +29,10 @@ sealed external interface UserPreferences {
     val includeInlayParameterNameHintsWhenArgumentMatchesName: Boolean?
     val includeInlayFunctionParameterTypeHints: Boolean?
     val includeInlayVariableTypeHints: Boolean?
+    val includeInlayVariableTypeHintsWhenTypeMatchesName: Boolean?
     val includeInlayPropertyDeclarationTypeHints: Boolean?
     val includeInlayFunctionLikeReturnTypeHints: Boolean?
     val includeInlayEnumMemberValueHints: Boolean?
+    val allowRenameOfImportPath: Boolean?
+    val autoImportFileExcludePatterns: ReadonlyArray<String>?
 }

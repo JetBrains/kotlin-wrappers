@@ -41,6 +41,7 @@ sealed external interface DocumentRegistry {
         scriptSnapshot: IScriptSnapshot,
         version: String,
         scriptKind: ScriptKind = definedExternally,
+        sourceFileOptions: dynamic /* CreateSourceFileOptions | ScriptTarget */ = definedExternally,
     ): SourceFile
 
     fun acquireDocumentWithKey(
@@ -51,6 +52,7 @@ sealed external interface DocumentRegistry {
         scriptSnapshot: IScriptSnapshot,
         version: String,
         scriptKind: ScriptKind = definedExternally,
+        sourceFileOptions: dynamic /* CreateSourceFileOptions | ScriptTarget */ = definedExternally,
     ): SourceFile
 
     /**
@@ -74,6 +76,7 @@ sealed external interface DocumentRegistry {
         scriptSnapshot: IScriptSnapshot,
         version: String,
         scriptKind: ScriptKind = definedExternally,
+        sourceFileOptions: dynamic /* CreateSourceFileOptions | ScriptTarget */ = definedExternally,
     ): SourceFile
 
     fun updateDocumentWithKey(
@@ -84,6 +87,7 @@ sealed external interface DocumentRegistry {
         scriptSnapshot: IScriptSnapshot,
         version: String,
         scriptKind: ScriptKind = definedExternally,
+        sourceFileOptions: dynamic /* CreateSourceFileOptions | ScriptTarget */ = definedExternally,
     ): SourceFile
 
     fun getKeyForCompilationSettings(settings: CompilerOptions): DocumentRegistryBucketKey
@@ -95,11 +99,13 @@ sealed external interface DocumentRegistry {
      *
      * @param fileName The name of the file to be released
      * @param compilationSettings The compilation settings used to acquire the file
+     * @param scriptKind The script kind of the file to be released
      */
-    /**@deprecated pass scriptKind for correctness */
+    /**@deprecated pass scriptKind and impliedNodeFormat for correctness */
     fun releaseDocument(
         fileName: String,
         compilationSettings: CompilerOptions,
+        scriptKind: ScriptKind = definedExternally,
     )
 
     /**
@@ -111,24 +117,20 @@ sealed external interface DocumentRegistry {
      * @param fileName The name of the file to be released
      * @param compilationSettings The compilation settings used to acquire the file
      * @param scriptKind The script kind of the file to be released
+     * @param impliedNodeFormat The implied source file format of the file to be released
      */
     fun releaseDocument(
         fileName: String,
         compilationSettings: CompilerOptions,
         scriptKind: ScriptKind,
-    )
-
-    /**
-     * @deprecated pass scriptKind for correctness */
-    fun releaseDocumentWithKey(
-        path: Path,
-        key: DocumentRegistryBucketKey,
+        impliedNodeFormat: NodeFormat,
     )
 
     fun releaseDocumentWithKey(
         path: Path,
         key: DocumentRegistryBucketKey,
         scriptKind: ScriptKind,
+        impliedNodeFormat: NodeFormat,
     )
 
     fun reportStats(): String

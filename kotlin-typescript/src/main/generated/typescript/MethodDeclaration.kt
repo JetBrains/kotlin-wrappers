@@ -6,6 +6,7 @@ sealed external interface MethodDeclaration : FunctionLikeDeclarationBase, Class
     JSDocContainer, Union.MethodDeclaration_ {
     override val kind: SyntaxKind.MethodDeclaration
     override val parent: Union.MethodDeclaration_parent
+    val modifiers: NodeArray<ModifierLike>?
     override val name: PropertyName
     override val body: FunctionBody?
 }

@@ -111,32 +111,16 @@ sealed external interface NodeFactory {
         defaultType: TypeNode = definedExternally,
     ): TypeParameterDeclaration
 
-    /** @deprecated */
-    fun createTypeParameterDeclaration(
-        name: dynamic, /* string | Identifier */
-        constraint: TypeNode = definedExternally,
-        defaultType: TypeNode = definedExternally,
-    ): TypeParameterDeclaration
-
     fun updateTypeParameterDeclaration(
         node: TypeParameterDeclaration,
         modifiers: ReadonlyArray<Modifier>?,
-        name: Identifier,
-        constraint: TypeNode?,
-        defaultType: TypeNode?,
-    ): TypeParameterDeclaration
-
-    /** @deprecated */
-    fun updateTypeParameterDeclaration(
-        node: TypeParameterDeclaration,
         name: Identifier,
         constraint: TypeNode?,
         defaultType: TypeNode?,
     ): TypeParameterDeclaration
 
     fun createParameterDeclaration(
-        decorators: ReadonlyArray<Decorator>?,
-        modifiers: ReadonlyArray<Modifier>?,
+        modifiers: ReadonlyArray<ModifierLike>?,
         dotDotDotToken: DotDotDotToken?,
         name: dynamic, /* string | BindingName */
         questionToken: QuestionToken = definedExternally,
@@ -146,8 +130,7 @@ sealed external interface NodeFactory {
 
     fun updateParameterDeclaration(
         node: ParameterDeclaration,
-        decorators: ReadonlyArray<Decorator>?,
-        modifiers: ReadonlyArray<Modifier>?,
+        modifiers: ReadonlyArray<ModifierLike>?,
         dotDotDotToken: DotDotDotToken?,
         name: dynamic, /* string | BindingName */
         questionToken: QuestionToken?,
@@ -177,8 +160,7 @@ sealed external interface NodeFactory {
     ): PropertySignature
 
     fun createPropertyDeclaration(
-        decorators: ReadonlyArray<Decorator>?,
-        modifiers: ReadonlyArray<Modifier>?,
+        modifiers: ReadonlyArray<ModifierLike>?,
         name: dynamic, /* string | PropertyName */
         questionOrExclamationToken: dynamic, /* QuestionToken | ExclamationToken */
         type: TypeNode?,
@@ -187,8 +169,7 @@ sealed external interface NodeFactory {
 
     fun updatePropertyDeclaration(
         node: PropertyDeclaration,
-        decorators: ReadonlyArray<Decorator>?,
-        modifiers: ReadonlyArray<Modifier>?,
+        modifiers: ReadonlyArray<ModifierLike>?,
         name: dynamic, /* string | PropertyName */
         questionOrExclamationToken: dynamic, /* QuestionToken | ExclamationToken */
         type: TypeNode?,
@@ -215,8 +196,7 @@ sealed external interface NodeFactory {
     ): MethodSignature
 
     fun createMethodDeclaration(
-        decorators: ReadonlyArray<Decorator>?,
-        modifiers: ReadonlyArray<Modifier>?,
+        modifiers: ReadonlyArray<ModifierLike>?,
         asteriskToken: AsteriskToken?,
         name: dynamic, /* string | PropertyName */
         questionToken: QuestionToken?,
@@ -228,8 +208,7 @@ sealed external interface NodeFactory {
 
     fun updateMethodDeclaration(
         node: MethodDeclaration,
-        decorators: ReadonlyArray<Decorator>?,
-        modifiers: ReadonlyArray<Modifier>?,
+        modifiers: ReadonlyArray<ModifierLike>?,
         asteriskToken: AsteriskToken?,
         name: PropertyName,
         questionToken: QuestionToken?,
@@ -240,7 +219,6 @@ sealed external interface NodeFactory {
     ): MethodDeclaration
 
     fun createConstructorDeclaration(
-        decorators: ReadonlyArray<Decorator>?,
         modifiers: ReadonlyArray<Modifier>?,
         parameters: ReadonlyArray<ParameterDeclaration>,
         body: Block?,
@@ -248,15 +226,13 @@ sealed external interface NodeFactory {
 
     fun updateConstructorDeclaration(
         node: ConstructorDeclaration,
-        decorators: ReadonlyArray<Decorator>?,
         modifiers: ReadonlyArray<Modifier>?,
         parameters: ReadonlyArray<ParameterDeclaration>,
         body: Block?,
     ): ConstructorDeclaration
 
     fun createGetAccessorDeclaration(
-        decorators: ReadonlyArray<Decorator>?,
-        modifiers: ReadonlyArray<Modifier>?,
+        modifiers: ReadonlyArray<ModifierLike>?,
         name: dynamic, /* string | PropertyName */
         parameters: ReadonlyArray<ParameterDeclaration>,
         type: TypeNode?,
@@ -265,8 +241,7 @@ sealed external interface NodeFactory {
 
     fun updateGetAccessorDeclaration(
         node: GetAccessorDeclaration,
-        decorators: ReadonlyArray<Decorator>?,
-        modifiers: ReadonlyArray<Modifier>?,
+        modifiers: ReadonlyArray<ModifierLike>?,
         name: PropertyName,
         parameters: ReadonlyArray<ParameterDeclaration>,
         type: TypeNode?,
@@ -274,8 +249,7 @@ sealed external interface NodeFactory {
     ): GetAccessorDeclaration
 
     fun createSetAccessorDeclaration(
-        decorators: ReadonlyArray<Decorator>?,
-        modifiers: ReadonlyArray<Modifier>?,
+        modifiers: ReadonlyArray<ModifierLike>?,
         name: dynamic, /* string | PropertyName */
         parameters: ReadonlyArray<ParameterDeclaration>,
         body: Block?,
@@ -283,8 +257,7 @@ sealed external interface NodeFactory {
 
     fun updateSetAccessorDeclaration(
         node: SetAccessorDeclaration,
-        decorators: ReadonlyArray<Decorator>?,
-        modifiers: ReadonlyArray<Modifier>?,
+        modifiers: ReadonlyArray<ModifierLike>?,
         name: PropertyName,
         parameters: ReadonlyArray<ParameterDeclaration>,
         body: Block?,
@@ -317,7 +290,6 @@ sealed external interface NodeFactory {
     ): ConstructSignatureDeclaration
 
     fun createIndexSignature(
-        decorators: ReadonlyArray<Decorator>?,
         modifiers: ReadonlyArray<Modifier>?,
         parameters: ReadonlyArray<ParameterDeclaration>,
         type: TypeNode,
@@ -325,7 +297,6 @@ sealed external interface NodeFactory {
 
     fun updateIndexSignature(
         node: IndexSignatureDeclaration,
-        decorators: ReadonlyArray<Decorator>?,
         modifiers: ReadonlyArray<Modifier>?,
         parameters: ReadonlyArray<ParameterDeclaration>,
         type: TypeNode,
@@ -342,16 +313,9 @@ sealed external interface NodeFactory {
         literal: dynamic, /* TemplateMiddle | TemplateTail */
     ): TemplateLiteralTypeSpan
 
-    fun createClassStaticBlockDeclaration(
-        decorators: ReadonlyArray<Decorator>?,
-        modifiers: ReadonlyArray<Modifier>?,
-        body: Block,
-    ): ClassStaticBlockDeclaration
-
+    fun createClassStaticBlockDeclaration(body: Block): ClassStaticBlockDeclaration
     fun updateClassStaticBlockDeclaration(
         node: ClassStaticBlockDeclaration,
-        decorators: ReadonlyArray<Decorator>?,
-        modifiers: ReadonlyArray<Modifier>?,
         body: Block,
     ): ClassStaticBlockDeclaration
 
@@ -400,24 +364,9 @@ sealed external interface NodeFactory {
         type: TypeNode,
     ): ConstructorTypeNode
 
-    /** @deprecated */
-    fun createConstructorTypeNode(
-        typeParameters: ReadonlyArray<TypeParameterDeclaration>?,
-        parameters: ReadonlyArray<ParameterDeclaration>,
-        type: TypeNode,
-    ): ConstructorTypeNode
-
     fun updateConstructorTypeNode(
         node: ConstructorTypeNode,
         modifiers: ReadonlyArray<Modifier>?,
-        typeParameters: NodeArray<TypeParameterDeclaration>?,
-        parameters: NodeArray<ParameterDeclaration>,
-        type: TypeNode,
-    ): ConstructorTypeNode
-
-    /** @deprecated */
-    fun updateConstructorTypeNode(
-        node: ConstructorTypeNode,
         typeParameters: NodeArray<TypeParameterDeclaration>?,
         parameters: NodeArray<ParameterDeclaration>,
         type: TypeNode,
@@ -514,24 +463,9 @@ sealed external interface NodeFactory {
 
     fun createImportTypeNode(
         argument: TypeNode,
-        qualifier: EntityName = definedExternally,
-        typeArguments: ReadonlyArray<TypeNode> = definedExternally,
-        isTypeOf: Boolean = definedExternally,
-    ): ImportTypeNode
-
-    fun createImportTypeNode(
-        argument: TypeNode,
         assertions: ImportTypeAssertionContainer = definedExternally,
         qualifier: EntityName = definedExternally,
         typeArguments: ReadonlyArray<TypeNode> = definedExternally,
-        isTypeOf: Boolean = definedExternally,
-    ): ImportTypeNode
-
-    fun updateImportTypeNode(
-        node: ImportTypeNode,
-        argument: TypeNode,
-        qualifier: EntityName?,
-        typeArguments: ReadonlyArray<TypeNode>?,
         isTypeOf: Boolean = definedExternally,
     ): ImportTypeNode
 
@@ -968,8 +902,7 @@ sealed external interface NodeFactory {
     ): SpreadElement
 
     fun createClassExpression(
-        decorators: ReadonlyArray<Decorator>?,
-        modifiers: ReadonlyArray<Modifier>?,
+        modifiers: ReadonlyArray<ModifierLike>?,
         name: dynamic, /* string | Identifier */
         typeParameters: ReadonlyArray<TypeParameterDeclaration>?,
         heritageClauses: ReadonlyArray<HeritageClause>?,
@@ -978,8 +911,7 @@ sealed external interface NodeFactory {
 
     fun updateClassExpression(
         node: ClassExpression,
-        decorators: ReadonlyArray<Decorator>?,
-        modifiers: ReadonlyArray<Modifier>?,
+        modifiers: ReadonlyArray<ModifierLike>?,
         name: Identifier?,
         typeParameters: ReadonlyArray<TypeParameterDeclaration>?,
         heritageClauses: ReadonlyArray<HeritageClause>?,
@@ -1246,8 +1178,7 @@ sealed external interface NodeFactory {
     ): VariableDeclarationList
 
     fun createFunctionDeclaration(
-        decorators: ReadonlyArray<Decorator>?,
-        modifiers: ReadonlyArray<Modifier>?,
+        modifiers: ReadonlyArray<ModifierLike>?,
         asteriskToken: AsteriskToken?,
         name: dynamic, /* string | Identifier */
         typeParameters: ReadonlyArray<TypeParameterDeclaration>?,
@@ -1258,8 +1189,7 @@ sealed external interface NodeFactory {
 
     fun updateFunctionDeclaration(
         node: FunctionDeclaration,
-        decorators: ReadonlyArray<Decorator>?,
-        modifiers: ReadonlyArray<Modifier>?,
+        modifiers: ReadonlyArray<ModifierLike>?,
         asteriskToken: AsteriskToken?,
         name: Identifier?,
         typeParameters: ReadonlyArray<TypeParameterDeclaration>?,
@@ -1269,8 +1199,7 @@ sealed external interface NodeFactory {
     ): FunctionDeclaration
 
     fun createClassDeclaration(
-        decorators: ReadonlyArray<Decorator>?,
-        modifiers: ReadonlyArray<Modifier>?,
+        modifiers: ReadonlyArray<ModifierLike>?,
         name: dynamic, /* string | Identifier */
         typeParameters: ReadonlyArray<TypeParameterDeclaration>?,
         heritageClauses: ReadonlyArray<HeritageClause>?,
@@ -1279,8 +1208,7 @@ sealed external interface NodeFactory {
 
     fun updateClassDeclaration(
         node: ClassDeclaration,
-        decorators: ReadonlyArray<Decorator>?,
-        modifiers: ReadonlyArray<Modifier>?,
+        modifiers: ReadonlyArray<ModifierLike>?,
         name: Identifier?,
         typeParameters: ReadonlyArray<TypeParameterDeclaration>?,
         heritageClauses: ReadonlyArray<HeritageClause>?,
@@ -1288,7 +1216,6 @@ sealed external interface NodeFactory {
     ): ClassDeclaration
 
     fun createInterfaceDeclaration(
-        decorators: ReadonlyArray<Decorator>?,
         modifiers: ReadonlyArray<Modifier>?,
         name: dynamic, /* string | Identifier */
         typeParameters: ReadonlyArray<TypeParameterDeclaration>?,
@@ -1298,7 +1225,6 @@ sealed external interface NodeFactory {
 
     fun updateInterfaceDeclaration(
         node: InterfaceDeclaration,
-        decorators: ReadonlyArray<Decorator>?,
         modifiers: ReadonlyArray<Modifier>?,
         name: Identifier,
         typeParameters: ReadonlyArray<TypeParameterDeclaration>?,
@@ -1307,7 +1233,6 @@ sealed external interface NodeFactory {
     ): InterfaceDeclaration
 
     fun createTypeAliasDeclaration(
-        decorators: ReadonlyArray<Decorator>?,
         modifiers: ReadonlyArray<Modifier>?,
         name: dynamic, /* string | Identifier */
         typeParameters: ReadonlyArray<TypeParameterDeclaration>?,
@@ -1316,7 +1241,6 @@ sealed external interface NodeFactory {
 
     fun updateTypeAliasDeclaration(
         node: TypeAliasDeclaration,
-        decorators: ReadonlyArray<Decorator>?,
         modifiers: ReadonlyArray<Modifier>?,
         name: Identifier,
         typeParameters: ReadonlyArray<TypeParameterDeclaration>?,
@@ -1324,7 +1248,6 @@ sealed external interface NodeFactory {
     ): TypeAliasDeclaration
 
     fun createEnumDeclaration(
-        decorators: ReadonlyArray<Decorator>?,
         modifiers: ReadonlyArray<Modifier>?,
         name: dynamic, /* string | Identifier */
         members: ReadonlyArray<EnumMember>,
@@ -1332,14 +1255,12 @@ sealed external interface NodeFactory {
 
     fun updateEnumDeclaration(
         node: EnumDeclaration,
-        decorators: ReadonlyArray<Decorator>?,
         modifiers: ReadonlyArray<Modifier>?,
         name: Identifier,
         members: ReadonlyArray<EnumMember>,
     ): EnumDeclaration
 
     fun createModuleDeclaration(
-        decorators: ReadonlyArray<Decorator>?,
         modifiers: ReadonlyArray<Modifier>?,
         name: ModuleName,
         body: ModuleBody?,
@@ -1348,7 +1269,6 @@ sealed external interface NodeFactory {
 
     fun updateModuleDeclaration(
         node: ModuleDeclaration,
-        decorators: ReadonlyArray<Decorator>?,
         modifiers: ReadonlyArray<Modifier>?,
         name: ModuleName,
         body: ModuleBody?,
@@ -1373,7 +1293,6 @@ sealed external interface NodeFactory {
     ): NamespaceExportDeclaration
 
     fun createImportEqualsDeclaration(
-        decorators: ReadonlyArray<Decorator>?,
         modifiers: ReadonlyArray<Modifier>?,
         isTypeOnly: Boolean,
         name: dynamic, /* string | Identifier */
@@ -1382,7 +1301,6 @@ sealed external interface NodeFactory {
 
     fun updateImportEqualsDeclaration(
         node: ImportEqualsDeclaration,
-        decorators: ReadonlyArray<Decorator>?,
         modifiers: ReadonlyArray<Modifier>?,
         isTypeOnly: Boolean,
         name: Identifier,
@@ -1390,7 +1308,6 @@ sealed external interface NodeFactory {
     ): ImportEqualsDeclaration
 
     fun createImportDeclaration(
-        decorators: ReadonlyArray<Decorator>?,
         modifiers: ReadonlyArray<Modifier>?,
         importClause: ImportClause?,
         moduleSpecifier: Expression,
@@ -1399,7 +1316,6 @@ sealed external interface NodeFactory {
 
     fun updateImportDeclaration(
         node: ImportDeclaration,
-        decorators: ReadonlyArray<Decorator>?,
         modifiers: ReadonlyArray<Modifier>?,
         importClause: ImportClause?,
         moduleSpecifier: Expression,
@@ -1484,7 +1400,6 @@ sealed external interface NodeFactory {
     ): ImportSpecifier
 
     fun createExportAssignment(
-        decorators: ReadonlyArray<Decorator>?,
         modifiers: ReadonlyArray<Modifier>?,
         isExportEquals: Boolean?,
         expression: Expression,
@@ -1492,13 +1407,11 @@ sealed external interface NodeFactory {
 
     fun updateExportAssignment(
         node: ExportAssignment,
-        decorators: ReadonlyArray<Decorator>?,
         modifiers: ReadonlyArray<Modifier>?,
         expression: Expression,
     ): ExportAssignment
 
     fun createExportDeclaration(
-        decorators: ReadonlyArray<Decorator>?,
         modifiers: ReadonlyArray<Modifier>?,
         isTypeOnly: Boolean,
         exportClause: NamedExportBindings?,
@@ -1508,7 +1421,6 @@ sealed external interface NodeFactory {
 
     fun updateExportDeclaration(
         node: ExportDeclaration,
-        decorators: ReadonlyArray<Decorator>?,
         modifiers: ReadonlyArray<Modifier>?,
         isTypeOnly: Boolean,
         exportClause: NamedExportBindings?,
@@ -2035,13 +1947,13 @@ sealed external interface NodeFactory {
 
     fun createJsxAttribute(
         name: Identifier,
-        initializer: dynamic, /* StringLiteral | JsxExpression */
+        initializer: JsxAttributeValue?,
     ): JsxAttribute
 
     fun updateJsxAttribute(
         node: JsxAttribute,
         name: Identifier,
-        initializer: dynamic, /* StringLiteral | JsxExpression */
+        initializer: JsxAttributeValue?,
     ): JsxAttribute
 
     fun createJsxAttributes(properties: ReadonlyArray<JsxAttributeLike>): JsxAttributes
@@ -2342,4 +2254,6 @@ sealed external interface NodeFactory {
         innerExpression: Expression,
         kinds: OuterExpressionKinds = definedExternally,
     ): Expression
+
+
 }

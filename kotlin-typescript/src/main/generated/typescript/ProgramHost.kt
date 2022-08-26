@@ -73,4 +73,9 @@ sealed external interface ProgramHost<T : BuilderProgram> {
         options: CompilerOptions,
         containingFileMode: NodeFormat?,
     ) -> ReadonlyArray<ResolvedTypeReferenceDirective?>)?
+
+    /**
+     * Returns the module resolution cache used by a provided `resolveModuleNames` implementation so that any non-name module resolution operations (eg, package.json lookup) can reuse it
+     */
+    val getModuleResolutionCache: (() -> ModuleResolutionCache?)?
 }

@@ -2,4 +2,5 @@
 
 package typescript
 
-sealed external interface UnparsedNode : UnparsedSection /* UnparsedPrologue | UnparsedSourceText | UnparsedSyntheticReference */
+sealed external interface UnparsedNode :
+    UnparsedSection /* UnparsedPrologue | UnparsedSourceText | UnparsedSyntheticReference */
