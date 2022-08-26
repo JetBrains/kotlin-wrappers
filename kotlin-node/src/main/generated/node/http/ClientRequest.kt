@@ -8,6 +8,7 @@ package node.http
 import kotlinx.js.ReadonlyArray
 import node.buffer.Buffer
 import node.events.Event
+import node.events.EventType
 import node.net.Socket
 import node.stream.Readable
 
@@ -238,7 +239,7 @@ external class ClientRequest : OutgoingMessage {
     ): ClientRequest
 
     override fun addListener(
-        event: String, /* | Symbol */
+        event: EventType,
         listener: Function<Unit>,
     ): ClientRequest
 
@@ -324,7 +325,7 @@ external class ClientRequest : OutgoingMessage {
     ): ClientRequest
 
     override fun on(
-        event: String, /* | Symbol */
+        event: EventType,
         listener: Function<Unit>,
     ): ClientRequest
 
@@ -410,7 +411,7 @@ external class ClientRequest : OutgoingMessage {
     ): ClientRequest
 
     override fun once(
-        event: String, /* | Symbol */
+        event: EventType,
         listener: Function<Unit>,
     ): ClientRequest
 
@@ -496,7 +497,7 @@ external class ClientRequest : OutgoingMessage {
     ): ClientRequest
 
     override fun prependListener(
-        event: String, /* | Symbol */
+        event: EventType,
         listener: Function<Unit>,
     ): ClientRequest
 
@@ -582,7 +583,7 @@ external class ClientRequest : OutgoingMessage {
     ): ClientRequest
 
     override fun prependOnceListener(
-        event: String, /* | Symbol */
+        event: EventType,
         listener: Function<Unit>,
     ): ClientRequest
 }

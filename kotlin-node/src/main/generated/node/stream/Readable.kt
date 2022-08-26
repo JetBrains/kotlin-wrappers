@@ -6,6 +6,7 @@
 package node.stream
 
 import node.events.Event
+import node.events.EventType
 
 open external class Readable : Stream, node.ReadableStream {
     /**
@@ -450,7 +451,7 @@ open external class Readable : Stream, node.ReadableStream {
     ): Readable
 
     override fun addListener(
-        event: String, /* | Symbol */
+        event: EventType,
         listener: Function<Unit>,
     ): Readable
 
@@ -470,7 +471,7 @@ open external class Readable : Stream, node.ReadableStream {
     open fun emit(event: Event.READABLE): Boolean
     open fun emit(event: Event.RESUME): Boolean
     override fun emit(
-        event: String, /* | Symbol */
+        event: EventType,
         vararg args: Any,
     ): Boolean
 
@@ -510,7 +511,7 @@ open external class Readable : Stream, node.ReadableStream {
     ): Readable
 
     override fun on(
-        event: String, /* | Symbol */
+        event: EventType,
         listener: Function<Unit>,
     ): Readable
 
@@ -550,7 +551,7 @@ open external class Readable : Stream, node.ReadableStream {
     ): Readable
 
     override fun once(
-        event: String, /* | Symbol */
+        event: EventType,
         listener: Function<Unit>,
     ): Readable
 
@@ -590,7 +591,7 @@ open external class Readable : Stream, node.ReadableStream {
     ): Readable
 
     override fun prependListener(
-        event: String, /* | Symbol */
+        event: EventType,
         listener: Function<Unit>,
     ): Readable
 
@@ -630,7 +631,7 @@ open external class Readable : Stream, node.ReadableStream {
     ): Readable
 
     override fun prependOnceListener(
-        event: String, /* | Symbol */
+        event: EventType,
         listener: Function<Unit>,
     ): Readable
 
@@ -670,7 +671,7 @@ open external class Readable : Stream, node.ReadableStream {
     ): Readable
 
     override fun removeListener(
-        event: String, /* | Symbol */
+        event: EventType,
         listener: Function<Unit>,
     ): Readable
     /* [Symbol.asyncIterator](): AsyncIterableIterator<any> */

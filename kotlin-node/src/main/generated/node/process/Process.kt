@@ -6,6 +6,7 @@ import kotlinx.js.JsSet
 import kotlinx.js.ReadonlyArray
 import node.Module
 import node.events.Event
+import node.events.EventType
 import kotlin.js.Promise
 
 sealed external interface Process : node.events.IEventEmitter {
@@ -1410,7 +1411,7 @@ sealed external interface Process : node.events.IEventEmitter {
     ): Process
 
     override fun on(
-        event: String, /* | Symbol */
+        event: EventType,
         listener: Function<Unit>,
     ): Process
 
@@ -1475,7 +1476,7 @@ sealed external interface Process : node.events.IEventEmitter {
     ): Process
 
     override fun once(
-        event: String, /* | Symbol */
+        event: EventType,
         listener: Function<Unit>,
     ): Process
 

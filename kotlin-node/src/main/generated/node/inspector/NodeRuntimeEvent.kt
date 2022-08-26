@@ -6,8 +6,10 @@
 
 package node.inspector
 
+import node.events.EventType
+
 // language=JavaScript
 @JsName("""(/*union*/{WAITING_FOR_DISCONNECT: 'NodeRuntime.waitingForDisconnect'}/*union*/)""")
 external object NodeRuntimeEvent {
-    object WAITING_FOR_DISCONNECT
+    object WAITING_FOR_DISCONNECT : EventType
 }

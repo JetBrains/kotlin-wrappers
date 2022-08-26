@@ -6,9 +6,11 @@
 
 package node.inspector
 
+import node.events.EventType
+
 // language=JavaScript
 @JsName("""(/*union*/{DATA_COLLECTED: 'NodeTracing.dataCollected', TRACING_COMPLETE: 'NodeTracing.tracingComplete'}/*union*/)""")
 external object NodeTracingEvent {
-    object DATA_COLLECTED
-    object TRACING_COMPLETE
+    object DATA_COLLECTED : EventType
+    object TRACING_COMPLETE : EventType
 }

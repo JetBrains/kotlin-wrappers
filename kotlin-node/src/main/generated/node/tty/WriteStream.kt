@@ -7,12 +7,13 @@ package node.tty
 
 import kotlinx.js.JsPair
 import node.events.Event
+import node.events.EventType
 
 external class WriteStream : node.net.Socket {
     constructor(fd: Number)
 
     override fun addListener(
-        event: String,
+        event: EventType,
         listener: Function<Unit>,
     ): WriteStream
 
@@ -22,13 +23,13 @@ external class WriteStream : node.net.Socket {
     ): WriteStream
 
     override fun emit(
-        event: String, /* | Symbol */
+        event: EventType,
         vararg args: Any,
     ): Boolean
 
     fun emit(event: Event.RESIZE): Boolean
     override fun on(
-        event: String,
+        event: EventType,
         listener: Function<Unit>,
     ): WriteStream
 
@@ -38,7 +39,7 @@ external class WriteStream : node.net.Socket {
     ): WriteStream
 
     override fun once(
-        event: String,
+        event: EventType,
         listener: Function<Unit>,
     ): WriteStream
 
@@ -48,7 +49,7 @@ external class WriteStream : node.net.Socket {
     ): WriteStream
 
     override fun prependListener(
-        event: String,
+        event: EventType,
         listener: Function<Unit>,
     ): WriteStream
 
@@ -58,7 +59,7 @@ external class WriteStream : node.net.Socket {
     ): WriteStream
 
     override fun prependOnceListener(
-        event: String,
+        event: EventType,
         listener: Function<Unit>,
     ): WriteStream
 

@@ -6,6 +6,7 @@
 package node.net
 
 import node.events.Event
+import node.events.EventType
 
 open external class Server : node.events.EventEmitter {
     constructor(connectionListener: (socket: Socket) -> Unit = definedExternally)
@@ -199,7 +200,7 @@ open external class Server : node.events.EventEmitter {
      *   4. listening
      */
     override fun addListener(
-        event: String,
+        event: EventType,
         listener: Function<Unit>,
     ): Server
 
@@ -224,7 +225,7 @@ open external class Server : node.events.EventEmitter {
     ): Server
 
     override fun emit(
-        event: String, /* | Symbol */
+        event: EventType,
         vararg args: Any,
     ): Boolean
 
@@ -241,7 +242,7 @@ open external class Server : node.events.EventEmitter {
 
     open fun emit(event: Event.LISTENING): Boolean
     override fun on(
-        event: String,
+        event: EventType,
         listener: Function<Unit>,
     ): Server
 
@@ -266,7 +267,7 @@ open external class Server : node.events.EventEmitter {
     ): Server
 
     override fun once(
-        event: String,
+        event: EventType,
         listener: Function<Unit>,
     ): Server
 
@@ -291,7 +292,7 @@ open external class Server : node.events.EventEmitter {
     ): Server
 
     override fun prependListener(
-        event: String,
+        event: EventType,
         listener: Function<Unit>,
     ): Server
 
@@ -316,7 +317,7 @@ open external class Server : node.events.EventEmitter {
     ): Server
 
     override fun prependOnceListener(
-        event: String,
+        event: EventType,
         listener: Function<Unit>,
     ): Server
 

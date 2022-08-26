@@ -7,6 +7,7 @@ package node.fs
 
 import node.ErrnoException
 import node.events.Event
+import node.events.EventType
 import node.stream.Readable
 import node.stream.Writable
 
@@ -87,7 +88,7 @@ external class WriteStream : Writable {
     ): WriteStream
 
     override fun addListener(
-        event: String, /* | Symbol */
+        event: EventType,
         listener: Function<Unit>,
     ): WriteStream
 
@@ -132,7 +133,7 @@ external class WriteStream : Writable {
     ): WriteStream
 
     override fun on(
-        event: String, /* | Symbol */
+        event: EventType,
         listener: Function<Unit>,
     ): WriteStream
 
@@ -177,7 +178,7 @@ external class WriteStream : Writable {
     ): WriteStream
 
     override fun once(
-        event: String, /* | Symbol */
+        event: EventType,
         listener: Function<Unit>,
     ): WriteStream
 
@@ -222,7 +223,7 @@ external class WriteStream : Writable {
     ): WriteStream
 
     override fun prependListener(
-        event: String, /* | Symbol */
+        event: EventType,
         listener: Function<Unit>,
     ): WriteStream
 
@@ -267,7 +268,7 @@ external class WriteStream : Writable {
     ): WriteStream
 
     override fun prependOnceListener(
-        event: String, /* | Symbol */
+        event: EventType,
         listener: Function<Unit>,
     ): WriteStream
 }

@@ -6,8 +6,10 @@
 
 package node.inspector
 
+import node.events.EventType
+
 // language=JavaScript
 @JsName("""(/*union*/{MESSAGE_ADDED: 'Console.messageAdded'}/*union*/)""")
 external object ConsoleEvent {
-    object MESSAGE_ADDED
+    object MESSAGE_ADDED : EventType
 }

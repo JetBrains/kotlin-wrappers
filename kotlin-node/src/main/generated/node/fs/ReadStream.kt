@@ -7,6 +7,7 @@ package node.fs
 
 import node.ErrnoException
 import node.events.Event
+import node.events.EventType
 import node.stream.Readable
 
 external class ReadStream : Readable {
@@ -85,7 +86,7 @@ external class ReadStream : Readable {
     ): ReadStream
 
     override fun addListener(
-        event: String, /* | Symbol */
+        event: EventType,
         listener: Function<Unit>,
     ): ReadStream
 
@@ -135,7 +136,7 @@ external class ReadStream : Readable {
     ): ReadStream
 
     override fun on(
-        event: String, /* | Symbol */
+        event: EventType,
         listener: Function<Unit>,
     ): ReadStream
 
@@ -185,7 +186,7 @@ external class ReadStream : Readable {
     ): ReadStream
 
     override fun once(
-        event: String, /* | Symbol */
+        event: EventType,
         listener: Function<Unit>,
     ): ReadStream
 
@@ -235,7 +236,7 @@ external class ReadStream : Readable {
     ): ReadStream
 
     override fun prependListener(
-        event: String, /* | Symbol */
+        event: EventType,
         listener: Function<Unit>,
     ): ReadStream
 
@@ -285,7 +286,7 @@ external class ReadStream : Readable {
     ): ReadStream
 
     override fun prependOnceListener(
-        event: String, /* | Symbol */
+        event: EventType,
         listener: Function<Unit>,
     ): ReadStream
 }

@@ -7,6 +7,7 @@ package node.workerThreads
 
 import kotlinx.js.ReadonlyArray
 import node.events.Event
+import node.events.EventType
 
 external class MessagePort : node.events.EventEmitter {
     /**
@@ -139,7 +140,7 @@ external class MessagePort : node.events.EventEmitter {
     ): MessagePort
 
     override fun addListener(
-        event: String, /* | Symbol */
+        event: EventType,
         listener: Function<Unit>,
     ): MessagePort
 
@@ -155,7 +156,7 @@ external class MessagePort : node.events.EventEmitter {
     ): Boolean
 
     override fun emit(
-        event: String, /* | Symbol */
+        event: EventType,
         vararg args: Any,
     ): Boolean
 
@@ -175,7 +176,7 @@ external class MessagePort : node.events.EventEmitter {
     ): MessagePort
 
     override fun on(
-        event: String, /* | Symbol */
+        event: EventType,
         listener: Function<Unit>,
     ): MessagePort
 
@@ -195,7 +196,7 @@ external class MessagePort : node.events.EventEmitter {
     ): MessagePort
 
     override fun once(
-        event: String, /* | Symbol */
+        event: EventType,
         listener: Function<Unit>,
     ): MessagePort
 
@@ -215,7 +216,7 @@ external class MessagePort : node.events.EventEmitter {
     ): MessagePort
 
     override fun prependListener(
-        event: String, /* | Symbol */
+        event: EventType,
         listener: Function<Unit>,
     ): MessagePort
 
@@ -235,7 +236,7 @@ external class MessagePort : node.events.EventEmitter {
     ): MessagePort
 
     override fun prependOnceListener(
-        event: String, /* | Symbol */
+        event: EventType,
         listener: Function<Unit>,
     ): MessagePort
 
@@ -255,7 +256,7 @@ external class MessagePort : node.events.EventEmitter {
     ): MessagePort
 
     override fun removeListener(
-        event: String, /* | Symbol */
+        event: EventType,
         listener: Function<Unit>,
     ): MessagePort
 
@@ -275,7 +276,7 @@ external class MessagePort : node.events.EventEmitter {
     ): MessagePort
 
     override fun off(
-        event: String, /* | Symbol */
+        event: EventType,
         listener: Function<Unit>,
     ): MessagePort
 }

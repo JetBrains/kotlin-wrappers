@@ -3,6 +3,8 @@
 package node.buffer
 
 import kotlinx.js.BigInt
+import kotlinx.js.JsIterable
+import kotlinx.js.JsPair
 import kotlinx.js.ReadonlyArray
 import org.khronos.webgl.Uint8Array
 
@@ -1881,7 +1883,7 @@ external class Buffer : Uint8Array {
      * ```
      * @since v1.1.0
      */
-    fun entries(): dynamic /* IterableIterator<[number, number]> */
+    fun entries(): JsIterable.Iterator<JsPair<Int, Int>>
 
     /**
      * Equivalent to `buf.indexOf() !== -1`.
@@ -1939,7 +1941,7 @@ external class Buffer : Uint8Array {
      * ```
      * @since v1.1.0
      */
-    fun keys(): dynamic /* IterableIterator<number> */
+    fun keys(): JsIterable.Iterator<Int>
 
     /**
      * Creates and returns an [iterator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols) for `buf` values (bytes). This function is
@@ -1974,7 +1976,7 @@ external class Buffer : Uint8Array {
      * ```
      * @since v1.1.0
      */
-    fun values(): dynamic /* IterableIterator<number> */
+    fun values(): JsIterable.Iterator<Int>
 
     companion object {
         /**
