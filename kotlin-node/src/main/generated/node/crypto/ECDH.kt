@@ -9,7 +9,7 @@ import kotlinx.js.Void
 import node.buffer.Buffer
 import org.khronos.webgl.ArrayBufferView
 
-external class ECDH {
+sealed external class ECDH {
     /* private constructor() */
     /**
      * Generates private and public EC Diffie-Hellman key values, and returns
