@@ -1879,7 +1879,7 @@ external class Buffer : Uint8Array {
      * ```
      * @since v1.1.0
      */
-    fun entries(): JsIterable.Iterator<JsPair<Int, Int>>
+    fun entries(): JsIterable.Iterator<JsTuple2<Int, Int>>
 
     /**
      * Equivalent to `buf.indexOf() !== -1`.

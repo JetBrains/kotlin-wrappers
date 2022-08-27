@@ -5,7 +5,7 @@
 
 package node.tty
 
-import kotlinx.js.JsPair
+import kotlinx.js.JsTuple2
 import node.events.Event
 import node.events.EventType
 
@@ -181,7 +181,7 @@ external class WriteStream : node.net.Socket {
      * of columns and rows in the corresponding TTY.
      * @since v0.7.7
      */
-    fun getWindowSize(): JsPair<Int, Int>
+    fun getWindowSize(): JsTuple2<Int, Int>
 
     /**
      * A `number` specifying the number of columns the TTY currently has. This property

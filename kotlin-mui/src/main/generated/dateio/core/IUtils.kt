@@ -128,7 +128,7 @@ external interface IUtils<TDate : Any> {
     fun isBeforeYear(value: TDate, comparing: TDate): Boolean
     fun isBefore(value: TDate, comparing: TDate): Boolean
 
-    fun isWithinRange(value: TDate, range: kotlinx.js.JsPair<TDate, TDate>): Boolean
+    fun isWithinRange(value: TDate, range: kotlinx.js.JsTuple2<TDate, TDate>): Boolean
 
     fun startOfYear(value: TDate): TDate
     fun endOfYear(value: TDate): TDate
