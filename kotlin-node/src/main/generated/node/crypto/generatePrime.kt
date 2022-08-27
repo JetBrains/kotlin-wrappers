@@ -5,8 +5,8 @@
 
 package node.crypto
 
+import kotlinx.js.ArrayBuffer
 import kotlinx.js.BigInt
-import org.khronos.webgl.ArrayBuffer
 
 /**
  * Generates a pseudorandom prime of `size` bits.

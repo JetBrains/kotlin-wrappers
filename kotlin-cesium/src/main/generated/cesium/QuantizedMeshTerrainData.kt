@@ -78,7 +78,7 @@ external class QuantizedMeshTerrainData(options: ConstructorOptions) : TerrainDa
      * @property [credits] Array of credits for this tile.
      */
     interface ConstructorOptions {
-        var quantizedVertices: org.khronos.webgl.Uint16Array
+        var quantizedVertices: kotlinx.js.Uint16Array
         var indices: dynamic
         var minimumHeight: Double
         var maximumHeight: Double
@@ -95,8 +95,8 @@ external class QuantizedMeshTerrainData(options: ConstructorOptions) : TerrainDa
         var northSkirtHeight: Double
         var childTileMask: Int?
         var createdByUpsampling: Boolean?
-        var encodedNormals: org.khronos.webgl.Uint8Array?
-        var waterMask: org.khronos.webgl.Uint8Array?
+        var encodedNormals: kotlinx.js.Uint8Array?
+        var waterMask: kotlinx.js.Uint8Array?
         var credits: ReadonlyArray<Credit>?
     }
 

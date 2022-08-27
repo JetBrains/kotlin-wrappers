@@ -26,13 +26,13 @@ external class CompressedTextureBuffer(
     val pixelDatatype: PixelDatatype,
     val width: Double,
     val height: Double,
-    buffer: org.khronos.webgl.Uint8Array,
+    buffer: kotlinx.js.Uint8Array,
 ) {
     /**
      * The compressed texture buffer.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CompressedTextureBuffer.html#bufferView">Online Documentation</a>
      */
-    val bufferView: org.khronos.webgl.Uint8Array
+    val bufferView: kotlinx.js.Uint8Array
 
     /**
      * Creates a shallow clone of this compressed texture buffer.

@@ -246,7 +246,7 @@ external class Resource(options: dynamic) {
      * @return a promise that will resolve to the requested data when loaded. Returns undefined if `request.throttle` is true and the request does not have high enough priority.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Resource.html#fetchArrayBuffer">Online Documentation</a>
      */
-    fun fetchArrayBuffer(): kotlin.js.Promise<org.khronos.webgl.ArrayBuffer>?
+    fun fetchArrayBuffer(): kotlin.js.Promise<kotlinx.js.ArrayBuffer>?
 
     /**
      * Asynchronously loads the given resource as a blob.  Returns a promise that will resolve to
@@ -641,7 +641,7 @@ external class Resource(options: dynamic) {
          * @return a promise that will resolve to the requested data when loaded. Returns undefined if `request.throttle` is true and the request does not have high enough priority.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Resource.html#.fetchArrayBuffer">Online Documentation</a>
          */
-        fun fetchArrayBuffer(options: FetchArrayBufferOptions): kotlin.js.Promise<org.khronos.webgl.ArrayBuffer>?
+        fun fetchArrayBuffer(options: FetchArrayBufferOptions): kotlin.js.Promise<kotlinx.js.ArrayBuffer>?
 
         /**
          * @property [url] The url of the resource.

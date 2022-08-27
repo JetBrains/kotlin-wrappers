@@ -2,7 +2,7 @@
 
 package node.fs
 
-import org.khronos.webgl.ArrayBufferView
+import kotlinx.js.ArrayBufferView
 
 sealed external interface FileReadResult<T : ArrayBufferView> {
     var bytesRead: Number

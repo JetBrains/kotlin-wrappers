@@ -43,7 +43,7 @@ external class ColorGeometryInstanceAttribute(
      * The values for the attributes stored in a typed array.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ColorGeometryInstanceAttribute.html#value">Online Documentation</a>
      */
-    var value: org.khronos.webgl.Uint8Array
+    var value: kotlinx.js.Uint8Array
 
     /**
      * The datatype of each component in the attribute, e.g., individual elements in
@@ -96,8 +96,8 @@ external class ColorGeometryInstanceAttribute(
          */
         fun toValue(
             color: Color,
-            result: org.khronos.webgl.Uint8Array? = definedExternally,
-        ): org.khronos.webgl.Uint8Array
+            result: kotlinx.js.Uint8Array? = definedExternally,
+        ): kotlinx.js.Uint8Array
 
         /**
          * Compares the provided ColorGeometryInstanceAttributes and returns

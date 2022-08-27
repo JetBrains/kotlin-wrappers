@@ -34,7 +34,7 @@ external class ShowGeometryInstanceAttribute(show: Boolean? = definedExternally)
      * The values for the attributes stored in a typed array.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ShowGeometryInstanceAttribute.html#value">Online Documentation</a>
      */
-    var value: org.khronos.webgl.Uint8Array
+    var value: kotlinx.js.Uint8Array
 
     /**
      * The datatype of each component in the attribute, e.g., individual elements in
@@ -71,7 +71,7 @@ external class ShowGeometryInstanceAttribute(show: Boolean? = definedExternally)
          */
         fun toValue(
             show: Boolean,
-            result: org.khronos.webgl.Uint8Array? = definedExternally,
-        ): org.khronos.webgl.Uint8Array
+            result: kotlinx.js.Uint8Array? = definedExternally,
+        ): kotlinx.js.Uint8Array
     }
 }

@@ -5,7 +5,7 @@
 
 package node.crypto
 
-import org.khronos.webgl.ArrayBufferView
+import kotlinx.js.ArrayBufferView
 
 /**
  * Verifies the given signature for `data` using the given key and algorithm. If`algorithm` is `null` or `undefined`, then the algorithm is dependent upon the

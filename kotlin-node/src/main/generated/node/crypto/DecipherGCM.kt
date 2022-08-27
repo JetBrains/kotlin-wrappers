@@ -2,7 +2,7 @@
 
 package node.crypto
 
-import org.khronos.webgl.ArrayBufferView
+import kotlinx.js.ArrayBufferView
 
 sealed external interface DecipherGCM : Decipher {
     fun setAuthTag(buffer: ArrayBufferView): DecipherGCM

@@ -5,7 +5,7 @@
 
 package node.crypto
 
-import org.khronos.webgl.ArrayBufferView
+import kotlinx.js.ArrayBufferView
 
 /**
  * Synchronous version of {@link randomFill}.

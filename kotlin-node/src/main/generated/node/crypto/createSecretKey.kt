@@ -5,7 +5,7 @@
 
 package node.crypto
 
-import org.khronos.webgl.ArrayBufferView
+import kotlinx.js.ArrayBufferView
 
 /**
  * Creates and returns a new key object containing a secret key for symmetric

@@ -5,7 +5,7 @@
 
 package node.crypto
 
-import org.khronos.webgl.ArrayBuffer
+import kotlinx.js.ArrayBuffer
 
 /**
  * HKDF is a simple key derivation function defined in RFC 5869\. The given `ikm`,`salt` and `info` are used with the `digest` to derive a key of `keylen` bytes.

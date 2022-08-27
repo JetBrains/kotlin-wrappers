@@ -2,11 +2,7 @@
 
 package node.buffer
 
-import kotlinx.js.BigInt
-import kotlinx.js.JsIterable
-import kotlinx.js.JsPair
-import kotlinx.js.ReadonlyArray
-import org.khronos.webgl.Uint8Array
+import kotlinx.js.*
 
 external class Buffer : Uint8Array {
     /**

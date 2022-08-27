@@ -5,8 +5,8 @@
 
 package node.crypto
 
+import kotlinx.js.ArrayBufferView
 import node.buffer.Buffer
-import org.khronos.webgl.ArrayBufferView
 
 /**
  * Decrypts `buffer` with `key`.`buffer` was previously encrypted using

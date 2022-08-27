@@ -5,7 +5,7 @@
 
 package node.crypto
 
-import org.khronos.webgl.ArrayBufferView
+import kotlinx.js.ArrayBufferView
 
 /**
  * This function is similar to {@link randomBytes} but requires the first
