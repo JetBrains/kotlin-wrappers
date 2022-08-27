@@ -7,7 +7,7 @@ import kotlinx.js.ReadonlyArray
 external class RTCDtlsTransport : org.w3c.dom.events.EventTarget {
     val iceTransport: RTCIceTransport
     val state: RTCDtlsTransportState
-    fun getRemoteCertificates(): ReadonlyArray<org.khronos.webgl.ArrayBuffer>
+    fun getRemoteCertificates(): ReadonlyArray<kotlinx.js.ArrayBuffer>
     var onerror: DtlsTransportEventHandler<org.w3c.dom.events.Event>
     var onstatechange: DtlsTransportEventHandler<org.w3c.dom.events.Event>
     // addEventListener<K extends keyof RTCDtlsTransportEventMap>(type: K, listener: (this: RTCDtlsTransport, ev: RTCDtlsTransportEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void

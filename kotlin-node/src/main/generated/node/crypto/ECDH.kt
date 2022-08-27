@@ -5,9 +5,9 @@
 
 package node.crypto
 
+import kotlinx.js.ArrayBufferView
 import kotlinx.js.Void
 import node.buffer.Buffer
-import org.khronos.webgl.ArrayBufferView
 
 sealed external class ECDH {
     /* private constructor() */

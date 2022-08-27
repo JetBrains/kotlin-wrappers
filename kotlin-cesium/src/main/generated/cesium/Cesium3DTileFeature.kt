@@ -59,7 +59,7 @@ external class Cesium3DTileFeature {
      * or the feature is not a polyline in a vector tile.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileFeature.html#polylinePositions">Online Documentation</a>
      */
-    var polylinePositions: org.khronos.webgl.Float64Array
+    var polylinePositions: kotlinx.js.Float64Array
 
     /**
      * Gets the tileset containing the feature.

@@ -39,7 +39,7 @@ external class GoogleEarthEnterpriseTerrainData(options: ConstructorOptions) : T
      * @property [credits] Array of credits for this tile.
      */
     interface ConstructorOptions {
-        var buffer: org.khronos.webgl.ArrayBuffer
+        var buffer: kotlinx.js.ArrayBuffer
         var negativeAltitudeExponentBias: Int
         var negativeElevationThreshold: Double
         var childTileMask: Int?

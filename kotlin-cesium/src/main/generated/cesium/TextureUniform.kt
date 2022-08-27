@@ -34,7 +34,7 @@ external class TextureUniform(options: ConstructorOptions) {
      *   Default value - `1.0`
      */
     interface ConstructorOptions {
-        var typedArray: org.khronos.webgl.Uint8Array?
+        var typedArray: kotlinx.js.Uint8Array?
         var width: Double?
         var height: Double?
         var url: Resource?

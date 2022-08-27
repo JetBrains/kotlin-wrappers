@@ -5,7 +5,7 @@
 
 package node.crypto
 
-import org.khronos.webgl.ArrayBuffer
+import kotlinx.js.ArrayBuffer
 
 /**
  * Provides a synchronous HKDF key derivation function as defined in RFC 5869\. The

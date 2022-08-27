@@ -5,8 +5,8 @@
 
 package node.crypto
 
+import kotlinx.js.ArrayBufferView
 import node.buffer.Buffer
-import org.khronos.webgl.ArrayBufferView
 
 /**
  * Calculates and returns the signature for `data` using the given private key and

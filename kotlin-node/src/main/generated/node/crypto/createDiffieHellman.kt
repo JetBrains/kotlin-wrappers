@@ -5,7 +5,7 @@
 
 package node.crypto
 
-import org.khronos.webgl.ArrayBufferView
+import kotlinx.js.ArrayBufferView
 
 /**
  * Creates a `DiffieHellman` key exchange object using the supplied `prime` and an

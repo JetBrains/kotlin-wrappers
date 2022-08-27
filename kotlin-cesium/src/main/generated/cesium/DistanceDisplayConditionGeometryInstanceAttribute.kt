@@ -39,7 +39,7 @@ external class DistanceDisplayConditionGeometryInstanceAttribute(
      * The values for the attributes stored in a typed array.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/DistanceDisplayConditionGeometryInstanceAttribute.html#value">Online Documentation</a>
      */
-    var value: org.khronos.webgl.Float32Array
+    var value: kotlinx.js.Float32Array
 
     /**
      * The datatype of each component in the attribute, e.g., individual elements in
@@ -93,7 +93,7 @@ external class DistanceDisplayConditionGeometryInstanceAttribute(
          */
         fun toValue(
             distanceDisplayCondition: DistanceDisplayCondition,
-            result: org.khronos.webgl.Float32Array? = definedExternally,
-        ): org.khronos.webgl.Float32Array
+            result: kotlinx.js.Float32Array? = definedExternally,
+        ): kotlinx.js.Float32Array
     }
 }

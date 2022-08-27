@@ -5,8 +5,8 @@
 
 package node.crypto
 
+import kotlinx.js.ArrayBufferView
 import node.stream.Writable
-import org.khronos.webgl.ArrayBufferView
 
 sealed external class Verify : Writable {
     /* private constructor() */

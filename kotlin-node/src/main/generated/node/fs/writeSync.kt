@@ -5,7 +5,7 @@
 
 package node.fs
 
-import org.khronos.webgl.ArrayBufferView
+import kotlinx.js.ArrayBufferView
 
 /**
  * For detailed information, see the documentation of the asynchronous version of

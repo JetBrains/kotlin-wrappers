@@ -2,10 +2,10 @@
 
 package node.fs
 
+import kotlinx.js.ArrayBufferView
 import kotlinx.js.ReadonlyArray
 import kotlinx.js.Void
 import node.buffer.BufferEncoding
-import org.khronos.webgl.ArrayBufferView
 import kotlin.js.Promise
 
 sealed external interface FileHandle {
