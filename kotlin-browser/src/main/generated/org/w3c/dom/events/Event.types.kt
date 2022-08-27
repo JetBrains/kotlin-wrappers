@@ -158,9 +158,6 @@ inline val Event.Companion.WEBKIT_ANIMATION_START: EventType<Event>
 inline val Event.Companion.WEBKIT_TRANSITION_END: EventType<Event>
     get() = EventType("webkittransitionend")
 
-inline val Event.Companion.ORIENTATION_CHANGE: EventType<Event>
-    get() = EventType("orientationchange")
-
 inline val Event.Companion.WAITING_FOR_KEY: EventType<Event>
     get() = EventType("waitingforkey")
 
@@ -178,9 +175,6 @@ inline val Event.Companion.SUCCESS: EventType<Event>
 
 inline val Event.Companion.COMPLETE: EventType<Event>
     get() = EventType("complete")
-
-inline val Event.Companion.MIDI_MESSAGE: EventType<Event>
-    get() = EventType("midimessage")
 
 inline val Event.Companion.DEVICE_CHANGE: EventType<Event>
     get() = EventType("devicechange")
@@ -292,6 +286,9 @@ inline val Event.Companion.ENTER: EventType<Event>
 
 inline val Event.Companion.EXIT: EventType<Event>
     get() = EventType("exit")
+
+inline val Event.Companion.ORIENTATION_CHANGE: EventType<Event>
+    get() = EventType("orientationchange")
 
 inline val Event.Companion.AFTER_PRINT: EventType<Event>
     get() = EventType("afterprint")
