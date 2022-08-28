@@ -1,19 +1,19 @@
 package kotlinx.js
 
 sealed external interface HasSymbol {
-    interface asyncIterator<V>
-    interface hasInstance<V>
-    interface isConcatSpreadable<V>
-    interface iterator<V>
-    interface match<V>
-    interface matchAll<V>
-    interface replace<V>
-    interface search<V>
-    interface species<V>
-    interface split<V>
-    interface toPrimitive<V>
-    interface toStringTag<V>
-    interface unscopables<V>
+    interface asyncIterator<out V>
+    interface hasInstance<out V>
+    interface isConcatSpreadable<out V>
+    interface iterator<out V>
+    interface match<out V>
+    interface matchAll<out V>
+    interface replace<out V>
+    interface search<out V>
+    interface species<out V>
+    interface split<out V>
+    interface toPrimitive<out V>
+    interface toStringTag<out V>
+    interface unscopables<out V>
 }
 
 inline operator fun <V> HasSymbol.asyncIterator<V>.get(
