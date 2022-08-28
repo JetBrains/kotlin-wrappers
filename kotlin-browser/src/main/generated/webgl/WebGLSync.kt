@@ -2,4 +2,4 @@
 
 package webgl
 
-sealed external interface WebGLSync
+sealed external class WebGLSync

@@ -2,4 +2,4 @@
 
 package webgl
 
-sealed external interface WebGLTransformFeedback
+sealed external class WebGLTransformFeedback
