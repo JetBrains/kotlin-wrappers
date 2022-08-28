@@ -8,11 +8,11 @@ sealed external interface JsIterator<out T> {
         val done: Boolean
     }
 
-    sealed interface YieldResult<TYield> : Result<TYield, Void> {
+    sealed interface YieldResult<out TYield> : Result<TYield, Void> {
         val value: TYield
     }
 
-    sealed interface ReturnResult<TReturn> : Result<Void, TReturn> {
+    sealed interface ReturnResult<out TReturn> : Result<Void, TReturn> {
         val value: TReturn
     }
 }
