@@ -10,7 +10,7 @@
 
 package react.query
 
-import kotlinx.js.JsPair
+import kotlinx.js.JsTuple2
 import kotlinx.js.ReadonlyArray
 import kotlinx.js.Void
 import kotlin.js.Promise
@@ -81,7 +81,7 @@ external fun <TFilters : QueryFilters, TOptions> parseFilterArgs(
     arg1: dynamic = definedExternally,
     arg2: dynamic = definedExternally,
     arg3: TOptions = definedExternally,
-): JsPair<TFilters, TOptions?>
+): JsTuple2<TFilters, TOptions?>
 
 external fun parseMutationFilterArgs(
     arg1: dynamic = definedExternally,

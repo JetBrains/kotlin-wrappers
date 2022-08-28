@@ -12,8 +12,8 @@ external class Object internal constructor() {
         fun <T : Any> create(o: T?, properties: dynamic = definedExternally): T
         fun <T : Any> defineProperties(o: T, properties: dynamic): T
         fun <T : Any, P> defineProperty(o: T, p: String, attributes: PropertyDescriptor<P>): T
-        fun <T : Any> entries(o: Record<String, T>): ReadonlyArray<JsPair<String, T>>
-        fun entries(o: Any): ReadonlyArray<JsPair<String, Any?>>
+        fun <T : Any> entries(o: Record<String, T>): ReadonlyArray<JsTuple2<String, T>>
+        fun entries(o: Any): ReadonlyArray<JsTuple2<String, Any?>>
         fun <R, T : R> freeze(o: T): R
         fun <T> getOwnPropertyDescriptor(o: Any, p: String): PropertyDescriptor<T>
         fun getOwnPropertyNames(o: Any): ReadonlyArray<String>

@@ -5,6 +5,6 @@
 
 package tanstack.table.core
 
-import kotlinx.js.JsPair
+import kotlinx.js.JsTuple2
 
-external fun <TData : RowData> getFacetedMinMaxValues(): (table: Table<TData>, columnId: String) -> () -> JsPair<Int, Int>?
+external fun <TData : RowData> getFacetedMinMaxValues(): (table: Table<TData>, columnId: String) -> () -> JsTuple2<Int, Int>?

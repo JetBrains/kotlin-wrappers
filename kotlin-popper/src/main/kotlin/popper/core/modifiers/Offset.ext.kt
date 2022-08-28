@@ -4,16 +4,17 @@
 
 package popper.core.modifiers
 
-import kotlinx.js.JsPair
+import kotlinx.js.JsTuple2
+import kotlinx.js.tupleOf
 
 inline fun Offset(
     x: Double?,
     y: Double?,
 ): OffsetType =
-    JsPair(x, y)
+    tupleOf(x, y)
         .unsafeCast<OffsetType>()
 
 inline fun OffsetFunction(
-    fn: Provider<JsPair<Int?, Int?>>,
+    fn: Provider<JsTuple2<Int?, Int?>>,
 ): OffsetType =
     fn.unsafeCast<OffsetType>()

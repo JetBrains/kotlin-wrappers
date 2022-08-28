@@ -5,7 +5,7 @@
 
 package react.query
 
-import kotlinx.js.JsPair
+import kotlinx.js.JsTuple2
 import kotlinx.js.ReadonlyArray
 import kotlin.js.Promise
 
@@ -24,8 +24,8 @@ open external class QueryClient(config: QueryClientConfig = definedExternally) {
         filters: QueryFilters = definedExternally,
     ): TData?
 
-    open fun <TData> getQueriesData(queryKey: QueryKey): ReadonlyArray<JsPair<QueryKey, TData>>
-    open fun <TData> getQueriesData(filters: QueryFilters): ReadonlyArray<JsPair<QueryKey, TData>>
+    open fun <TData> getQueriesData(queryKey: QueryKey): ReadonlyArray<JsTuple2<QueryKey, TData>>
+    open fun <TData> getQueriesData(filters: QueryFilters): ReadonlyArray<JsTuple2<QueryKey, TData>>
     open fun <TData> setQueryData(
         queryKey: QueryKey,
         updater: Updater<TData?, TData>,
@@ -36,13 +36,13 @@ open external class QueryClient(config: QueryClientConfig = definedExternally) {
         queryKey: QueryKey,
         updater: Updater<TData?, TData>,
         options: SetDataOptions = definedExternally,
-    ): ReadonlyArray<JsPair<QueryKey, TData>>
+    ): ReadonlyArray<JsTuple2<QueryKey, TData>>
 
     open fun <TData> setQueriesData(
         filters: QueryFilters,
         updater: Updater<TData?, TData>,
         options: SetDataOptions = definedExternally,
-    ): ReadonlyArray<JsPair<QueryKey, TData>>
+    ): ReadonlyArray<JsTuple2<QueryKey, TData>>
 
     open fun <TData, TError> getQueryState(
         queryKey: QueryKey,

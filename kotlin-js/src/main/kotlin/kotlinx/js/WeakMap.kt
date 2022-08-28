@@ -1,7 +1,7 @@
 package kotlinx.js
 
 external class WeakMap<in K : Any, V>(
-    entries: ReadonlyArray<JsPair<K, V>>? = definedExternally,
+    entries: ReadonlyArray<JsTuple2<K, V>>? = definedExternally,
 ) {
     fun delete(key: K): Boolean
     operator fun get(key: K): V?

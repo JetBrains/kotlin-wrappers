@@ -10,7 +10,7 @@
 
 package tanstack.query.core
 
-import kotlinx.js.JsPair
+import kotlinx.js.JsTuple2
 import kotlinx.js.ReadonlyArray
 import kotlinx.js.Void
 import kotlin.js.Promise
@@ -78,13 +78,13 @@ external fun <TFilters : QueryFilters, TOptions> parseFilterArgs(
     arg1: Any /* QueryKey | TFilters */ = definedExternally,
     arg2: Any /* TFilters | TOptions */ = definedExternally,
     arg3: TOptions = definedExternally,
-): JsPair<TFilters, TOptions?>
+): JsTuple2<TFilters, TOptions?>
 
 external fun <TFilters : MutationFilters, TOptions> parseMutationFilterArgs(
     arg1: Any /* QueryKey | TFilters */ = definedExternally,
     arg2: Any /* TFilters | TOptions */ = definedExternally,
     arg3: TOptions = definedExternally,
-): JsPair<TFilters, TOptions?>
+): JsTuple2<TFilters, TOptions?>
 
 external fun matchQuery(
     filters: QueryFilters,
