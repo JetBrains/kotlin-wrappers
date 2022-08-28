@@ -1,9 +1,9 @@
 package kotlinx.js
 
 external interface AsyncIterable<out T> :
-    HasSymbol.asyncIterator<() -> AsyncIterator<T, Void>> {
+    HasSymbol.asyncIterator<() -> AsyncIterator<T>> {
 
     interface Iterator<out T> :
-        AsyncIterator<T, Void>,
+        AsyncIterator<T>,
         HasSymbol.asyncIterator<() -> Iterator<T>>
 }
