@@ -2,4 +2,4 @@
 
 package webgl
 
-sealed external interface WebGLQuery
+sealed external class WebGLQuery

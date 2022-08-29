@@ -2,4 +2,4 @@
 
 package webgl
 
-sealed external interface WebGLVertexArrayObject
+sealed external class WebGLVertexArrayObject

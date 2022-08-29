@@ -2,4 +2,4 @@
 
 package webgl
 
-sealed external interface WebGLSampler
+sealed external class WebGLSampler
