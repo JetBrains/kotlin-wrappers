@@ -43,19 +43,6 @@ package cesium
  */
 external class Cesium3DTileStyle(val style: Any = definedExternally) {
     /**
-     * When `true`, the style is ready and its expressions can be evaluated.  When
-     * a style is constructed with an object, as opposed to a url, this is `true` immediately.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileStyle.html#ready">Online Documentation</a>
-     */
-    val ready: Boolean
-
-    /**
-     * Gets the promise that will be resolved when the the style is ready and its expressions can be evaluated.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileStyle.html#readyPromise">Online Documentation</a>
-     */
-    val readyPromise: kotlin.js.Promise<Cesium3DTileStyle>
-
-    /**
      * Gets or sets the [StyleExpression] object used to evaluate the style's `show` property. Alternatively a boolean, string, or object defining a show style can be used.
      * The getter will return the internal [Expression] or [ConditionsExpression], which may differ from the value provided to the setter.
      *

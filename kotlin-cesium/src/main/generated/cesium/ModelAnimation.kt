@@ -10,11 +10,11 @@
 package cesium
 
 /**
- * An active glTF animation.  A glTF asset can contain animations.  An active animation
- * is an animation that is currently playing or scheduled to be played because it was
- * added to a model's [ModelAnimationCollection].  An active animation is an
- * instance of an animation; for example, there can be multiple active animations
- * for the same glTF animation, each with a different start time.
+ * An active animation derived from a glTF asset. An active animation is an
+ * animation that is either currently playing or scheduled to be played due to
+ * being added to a model's [ModelAnimationCollection]. An active animation
+ * is an instance of an animation; for example, there can be multiple active
+ * animations for the same glTF animation, each with a different start time.
  *
  * Create this by calling [ModelAnimationCollection.add].
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ModelAnimation.html">Online Documentation</a>
@@ -73,13 +73,13 @@ external class ModelAnimation {
     var stop: DefaultEvent
 
     /**
-     * The glTF animation name that identifies this animation.
+     * The name that identifies this animation in the model, if it exists.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ModelAnimation.html#name">Online Documentation</a>
      */
     val name: String
 
     /**
-     * The scene time to start playing this animation.  When this is `undefined`,
+     * The scene time to start playing this animation. When this is `undefined`,
      * the animation starts at the next frame.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ModelAnimation.html#startTime">Online Documentation</a>
      */
@@ -92,7 +92,7 @@ external class ModelAnimation {
     val delay: Double
 
     /**
-     * The scene time to stop playing this animation.  When this is `undefined`,
+     * The scene time to stop playing this animation. When this is `undefined`,
      * the animation is played for its full duration and perhaps repeated depending on
      * [ModelAnimation.loop].
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ModelAnimation.html#stopTime">Online Documentation</a>

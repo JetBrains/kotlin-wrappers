@@ -137,7 +137,7 @@ external class Cesium3DTileset(options: ConstructorOptions) {
      *   Default value - `false`
      * @property [debugColorizeTiles] For debugging only. When true, assigns a random color to each tile.
      *   Default value - `false`
-     * @property [enableDebugWireframe] For debugging only. This must be true for debugWireframe to work for ModelExperimental in WebGL1. This cannot be set after the tileset has loaded.
+     * @property [enableDebugWireframe] For debugging only. This must be true for debugWireframe to work in WebGL1. This cannot be set after the tileset has loaded.
      * @property [debugWireframe] For debugging only. When true, render's each tile's content as a wireframe.
      *   Default value - `false`
      * @property [debugShowBoundingVolume] For debugging only. When true, renders the bounding volume for each tile.
@@ -198,8 +198,8 @@ external class Cesium3DTileset(options: ConstructorOptions) {
         var outlineColor: Color?
         var vectorClassificationOnly: Boolean?
         var vectorKeepDecodedPositions: Boolean?
-        var featureIdLabel: dynamic
-        var instanceFeatureIdLabel: dynamic
+        var featureIdLabel: String?
+        var instanceFeatureIdLabel: String?
         var showCreditsOnScreen: Boolean?
         var splitDirection: SplitDirection?
         var projectTo2D: Boolean?
@@ -466,8 +466,8 @@ external class Cesium3DTileset(options: ConstructorOptions) {
      * Cesium entities or primitives during the event listener.
      * ```
      * tileset.tileVisible.addEventListener(function(tile) {
-     *     if (tile.content instanceof Batched3DModel3DTileContent) {
-     *         console.log('A Batched 3D Model tile is visible.');
+     *     if (tile.content instanceof Model3DTileContent) {
+     *         console.log('A 3D model tile is visible.');
      *     }
      * });
      * ```
@@ -565,17 +565,12 @@ external class Cesium3DTileset(options: ConstructorOptions) {
      * Whether to display the outline for models using the
      * [CESIUM_primitive_outline](https://github.com/KhronosGroup/glTF/tree/master/extensions/2.0/Vendor/CESIUM_primitive_outline) extension.
      * When true, outlines are displayed. When false, outlines are not displayed.
-     *
-     * When enableModelExperimental is set to true, this property can be toggled
-     * at runtime. However, when enableModelExperimental is false, this property
-     * is readonly (it can only be set in the constructor).
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileset.html#showOutline">Online Documentation</a>
      */
     var showOutline: Boolean
 
     /**
-     * The color to use when rendering outlines. This option is only used
-     * when enableModelExperimental is set to true.
+     * The color to use when rendering outlines.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileset.html#outlineColor">Online Documentation</a>
      */
     var outlineColor: Color
@@ -797,10 +792,8 @@ external class Cesium3DTileset(options: ConstructorOptions) {
 
     /**
      * A custom shader to apply to all tiles in the tileset. Only used for
-     * contents that use [ModelExperimental]. Using custom shaders with a
+     * contents that use [Model]. Using custom shaders with a
      * [Cesium3DTileStyle] may lead to undefined behavior.
-     *
-     * To enable [ModelExperimental], set [ExperimentalFeatures.enableModelExperimental] or tileset.enableModelExperimental to `true`.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileset.html#customShader">Online Documentation</a>
      */
     var customShader: CustomShader?
@@ -896,19 +889,24 @@ external class Cesium3DTileset(options: ConstructorOptions) {
     val totalMemoryUsageInBytes: Int
 
     /**
-     * Determines whether terrain, 3D Tiles or both will be classified by this tileset.
+     * Determines whether terrain, 3D Tiles, or both will be classified by this tileset.
      *
-     * This option is only applied to tilesets containing batched 3D models, geometry data, or vector data. Even when undefined, vector data and geometry data
-     * must render as classifications and will default to rendering on both terrain and other 3D Tiles tilesets.
+     * This option is only applied to tilesets containing batched 3D models,
+     * glTF content, geometry data, or vector data. Even when undefined, vector
+     * and geometry data must render as classifications and will default to
+     * rendering on both terrain and other 3D Tiles tilesets.
      *
-     * When enabled for batched 3D model tilesets, there are a few requirements/limitations on the glTF:
-     * - POSITION and _BATCHID semantics are required.
-     * - All indices with the same batch id must occupy contiguous sections of the index buffer.
-     * - All shaders and techniques are ignored. The generated shader simply multiplies the position by the model-view-projection matrix.
-     * - The only supported extensions are CESIUM_RTC and WEB3D_quantized_attributes.
-     * - Only one node is supported.
-     * - Only one mesh per node is supported.
-     * - Only one primitive per mesh is supported.
+     * When enabled for batched 3D model and glTF tilesets, there are a few
+     * requirements/limitations on the glTF:
+     * - The glTF cannot contain morph targets, skins, or animations.
+     * - The glTF cannot contain the `EXT_mesh_gpu_instancing` extension.
+     * - Only meshes with TRIANGLES can be used to classify other assets.
+     * - The `POSITION` semantic is required.
+     * - If `_BATCHID`s and an index buffer are both present, all indices with the same batch id must occupy contiguous sections of the index buffer.
+     * - If `_BATCHID`s are present with no index buffer, all positions with the same batch id must occupy contiguous sections of the position buffer.
+     *
+     * Additionally, classification is not supported for points or instanced 3D
+     * models.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileset.html#classificationType">Online Documentation</a>
      */
     val classificationType: ClassificationType

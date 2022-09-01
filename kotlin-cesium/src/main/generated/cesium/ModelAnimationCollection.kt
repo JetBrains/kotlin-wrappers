@@ -8,7 +8,7 @@ package cesium
 import kotlinx.js.ReadonlyArray
 
 /**
- * A collection of active model animations.  Access this using [Model.activeAnimations].
+ * A collection of active model animations. Access this using [Model.activeAnimations].
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ModelAnimationCollection.html">Online Documentation</a>
  */
 external class ModelAnimationCollection {
@@ -52,6 +52,12 @@ external class ModelAnimationCollection {
     val length: Int
 
     /**
+     * The model that owns this animation collection.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ModelAnimationCollection.html#model">Online Documentation</a>
+     */
+    val model: Model
+
+    /**
      * Creates and adds an animation with the specified initial properties to the collection.
      *
      * This raises the [ModelAnimationCollection.animationAdded] event so, for example, a UI can stay in sync.
@@ -60,7 +66,8 @@ external class ModelAnimationCollection {
      * model.activeAnimations.add({
      *   name : 'animation name'
      * });
-     *
+     * ```
+     * ```
      * // Example 2. Add an animation by index
      * model.activeAnimations.add({
      *   index : 0
@@ -73,11 +80,11 @@ external class ModelAnimationCollection {
      * const animation = model.activeAnimations.add({
      *   name : 'another animation name',
      *   startTime : startTime,
-     *   delay : 0.0,                          // Play at startTime (default)
+     *   delay : 0.0,                                 // Play at startTime (default)
      *   stopTime : JulianDate.addSeconds(startTime, 4.0, new JulianDate()),
-     *   removeOnStop : false,                 // Do not remove when animation stops (default)
-     *   multiplier : 2.0,                        // Play at double speed
-     *   reverse : true,                       // Play in reverse
+     *   removeOnStop : false,                        // Do not remove when animation stops (default)
+     *   multiplier : 2.0,                            // Play at double speed
+     *   reverse : true,                              // Play in reverse
      *   loop : ModelAnimationLoop.REPEAT      // Loop the animation
      * });
      *
@@ -85,7 +92,7 @@ external class ModelAnimationCollection {
      *   console.log(`Animation started: ${animation.name}`);
      * });
      * animation.update.addEventListener(function(model, animation, time) {
-     *   console.log(`Animation updated:  ${animation.name}. glTF animation time: ${time}`);
+     *   console.log(`Animation updated: ${animation.name}. glTF animation time: ${time}`);
      * });
      * animation.stop.addEventListener(function(model, animation) {
      *   console.log(`Animation stopped: ${animation.name}`);
@@ -100,10 +107,10 @@ external class ModelAnimationCollection {
      * @property [name] The glTF animation name that identifies the animation. Must be defined if `options.index` is `undefined`.
      * @property [index] The glTF animation index that identifies the animation. Must be defined if `options.name` is `undefined`.
      * @property [startTime] The scene time to start playing the animation.  When this is `undefined`, the animation starts at the next frame.
-     * @property [delay] The delay, in seconds, from `startTime` to start playing.
+     * @property [delay] The delay, in seconds, from `startTime` to start playing. This will only affect the animation if `options.loop` is ModelAnimationLoop.NONE.
      *   Default value - `0.0`
      * @property [stopTime] The scene time to stop playing the animation.  When this is `undefined`, the animation is played for its full duration.
-     * @property [removeOnStop] When `true`, the animation is removed after it stops playing.
+     * @property [removeOnStop] When `true`, the animation is removed after it stops playing. This will only affect the animation if `options.loop` is ModelAnimationLoop.NONE.
      *   Default value - `false`
      * @property [multiplier] Values greater than `1.0` increase the speed that the animation is played relative to the scene clock speed; values less than `1.0` decrease the speed.
      *   Default value - `1.0`
@@ -127,13 +134,13 @@ external class ModelAnimationCollection {
     }
 
     /**
-     * Creates and adds an animation with the specified initial properties to the collection
-     * for each animation in the model.
+     * Creates and adds animations with the specified initial properties to the collection
+     * for all animations in the model.
      *
      * This raises the [ModelAnimationCollection.animationAdded] event for each model so, for example, a UI can stay in sync.
      * ```
      * model.activeAnimations.addAll({
-     *   multiplier : 0.5,                        // Play at half-speed
+     *   multiplier : 0.5,                            // Play at half-speed
      *   loop : ModelAnimationLoop.REPEAT      // Loop the animations
      * });
      * ```
@@ -143,11 +150,11 @@ external class ModelAnimationCollection {
     fun addAll(options: AddAllOptions? = definedExternally): ReadonlyArray<ModelAnimation>
 
     /**
-     * @property [startTime] The scene time to start playing the animations.  When this is `undefined`, the animations starts at the next frame.
-     * @property [delay] The delay, in seconds, from `startTime` to start playing.
+     * @property [startTime] The scene time to start playing the animations. When this is `undefined`, the animations starts at the next frame.
+     * @property [delay] The delay, in seconds, from `startTime` to start playing. This will only affect the animation if `options.loop` is ModelAnimationLoop.NONE.
      *   Default value - `0.0`
-     * @property [stopTime] The scene time to stop playing the animations.  When this is `undefined`, the animations are played for its full duration.
-     * @property [removeOnStop] When `true`, the animations are removed after they stop playing.
+     * @property [stopTime] The scene time to stop playing the animations. When this is `undefined`, the animations are played for its full duration.
+     * @property [removeOnStop] When `true`, the animations are removed after they stop playing. This will only affect the animation if `options.loop` is ModelAnimationLoop.NONE.
      *   Default value - `false`
      * @property [multiplier] Values greater than `1.0` increase the speed that the animations play relative to the scene clock speed; values less than `1.0` decrease the speed.
      *   Default value - `1.0`
@@ -173,7 +180,7 @@ external class ModelAnimationCollection {
      *
      * This raises the [ModelAnimationCollection.animationRemoved] event so, for example, a UI can stay in sync.
      *
-     * An animation can also be implicitly removed from the collection by setting [ModelAnimation.removeOnStop] to
+     * An animation can also be implicitly removed from the collection by setting [ModelAnimationCollection.removeOnStop] to
      * `true`.  The [ModelAnimationCollection.animationRemoved] event is still fired when the animation is removed.
      * ```
      * const a = model.activeAnimations.add({
@@ -181,11 +188,11 @@ external class ModelAnimationCollection {
      * });
      * model.activeAnimations.remove(a); // Returns true
      * ```
-     * @param [animation] The animation to remove.
+     * @param [runtimeAnimation] The runtime animation to remove.
      * @return `true` if the animation was removed; `false` if the animation was not found in the collection.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ModelAnimationCollection.html#remove">Online Documentation</a>
      */
-    fun remove(animation: ModelAnimation): Boolean
+    fun remove(runtimeAnimation: ModelAnimation): Boolean
 
     /**
      * Removes all animations from the collection.
@@ -198,11 +205,11 @@ external class ModelAnimationCollection {
 
     /**
      * Determines whether this collection contains a given animation.
-     * @param [animation] The animation to check for.
+     * @param [runtimeAnimation] The runtime animation to check for.
      * @return `true` if this collection contains the animation, `false` otherwise.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ModelAnimationCollection.html#contains">Online Documentation</a>
      */
-    fun contains(animation: ModelAnimation): Boolean
+    fun contains(runtimeAnimation: ModelAnimation): Boolean
 
     /**
      * Returns the animation in the collection at the specified index.  Indices are zero-based
@@ -218,7 +225,7 @@ external class ModelAnimationCollection {
      * }
      * ```
      * @param [index] The zero-based index of the animation.
-     * @return The animation at the specified index.
+     * @return The runtime animation at the specified index.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ModelAnimationCollection.html#get">Online Documentation</a>
      */
     fun get(index: Int): ModelAnimation

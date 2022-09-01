@@ -720,7 +720,7 @@ external class Matrix4(
          */
         fun setRotation(
             matrix: Matrix4,
-            rotation: Matrix4,
+            rotation: Matrix3,
         ): Matrix4
 
         /**
@@ -732,8 +732,8 @@ external class Matrix4(
          */
         fun getRotation(
             matrix: Matrix4,
-            result: Matrix4,
-        ): Matrix4
+            result: Matrix3,
+        ): Matrix3
 
         /**
          * Computes the product of two matrices.
