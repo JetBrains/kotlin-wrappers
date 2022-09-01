@@ -12,7 +12,7 @@ package cesium
 import kotlinx.js.ReadonlyArray
 
 /**
- * A feature of a [ModelExperimental].
+ * A feature of a [Model].
  *
  * Provides access to a feature's properties stored in the model's feature table.
  *
@@ -36,7 +36,7 @@ external class ModelFeature(options: ConstructorOptions) {
      * @property [featureId] The unique integral identifier for this feature.
      */
     interface ConstructorOptions {
-        var model: ModelExperimental
+        var model: Model
         var featureId: Int
     }
 

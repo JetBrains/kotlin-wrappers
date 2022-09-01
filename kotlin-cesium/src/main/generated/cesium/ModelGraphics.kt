@@ -165,6 +165,12 @@ external class ModelGraphics {
     var clippingPlanes: Property?
 
     /**
+     * Gets or sets the [CustomShader] to apply to this model. When `undefined`, no custom shader code is used.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ModelGraphics.html#customShader">Online Documentation</a>
+     */
+    var customShader: Property?
+
+    /**
      * Duplicates this instance.
      * @param [result] The object onto which to store the result.
      * @return The modified result parameter or a new instance if one was not provided.
