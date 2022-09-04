@@ -143,6 +143,7 @@ external interface IUtils<TDate : Any> {
     fun addDays(value: TDate, count: Int): TDate
     fun addWeeks(value: TDate, count: Int): TDate
     fun addMonths(value: TDate, count: Int): TDate
+    fun addYears(value: TDate, count: Int): TDate
 
     fun startOfDay(value: TDate): TDate
     fun endOfDay(value: TDate): TDate
