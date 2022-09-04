@@ -126,7 +126,4 @@ include("kotlin-tanstack-virtual-core")
 // Kotlin/JS: TypeScript wrappers
 include("kotlin-typescript")
 
-// Kotlin/JS: WebRTC wrappers
-include("kotlin-webrtc")
-
 include("kotlin-wrappers-bom")
