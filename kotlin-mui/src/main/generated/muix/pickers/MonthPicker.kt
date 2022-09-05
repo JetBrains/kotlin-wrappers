@@ -38,6 +38,20 @@ external interface MonthPickerProps<TDate> :
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
     override var sx: SxProps<Theme>?
+
+    /**
+     * If `true`, today's date is rendering without highlighting with circle.
+     * @default false
+     */
+    var disableHighlightToday: Boolean?
+
+    var autoFocus: Boolean?
+
+    var onMonthFocus: ((month: Number) -> Unit)?
+
+    var hasFocus: Boolean?
+
+    var onFocusedViewChange: ((newHasFocus: Boolean) -> Unit)?
 }
 
 

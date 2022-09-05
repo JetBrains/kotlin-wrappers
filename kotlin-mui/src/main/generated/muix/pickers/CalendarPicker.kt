@@ -11,6 +11,8 @@ import kotlinx.js.Void
 import kotlin.js.Promise
 
 external interface CalendarPickerProps<TDate> : react.PropsWithClassName {
+    var autoFocus: Boolean?
+
     override var className: ClassName?
 
     var classes: CalendarPickerClasses?
@@ -101,20 +103,15 @@ external interface CalendarPickerProps<TDate> : react.PropsWithClassName {
      * @returns {void|Promise} -
      */
     var onMonthChange: ((month: TDate) -> Promise<Void>?)?
+
+    var focusedView: CalendarPickerView?
+
+    var onFocusedViewChange: ((view: CalendarPickerView) -> (newHasFocus: Boolean) -> Unit)?
 }
 
 external interface CalendarPickerSlotsComponent
 
 external interface CalendarPickerSlotsComponentsProps : react.Props
 
-/**
- *
- * Demos:
- *
- * - [Date Picker](https://mui.com/x/react-date-pickers/date-picker/)
- *
- * API:
- *
- * - [CalendarPicker API](https://mui.com/x/api/date-pickers/calendar-picker/)
- */
+
 external val CalendarPicker: react.FC<CalendarPickerProps<*>>

@@ -3,12 +3,18 @@
 @file:JsModule("@mui/x-date-pickers/PickersDay")
 @file:JsNonModule
 
+@file:Suppress(
+    "VIRTUAL_MEMBER_HIDDEN",
+)
+
 package muix.pickers
 
 import mui.material.styles.Theme
 import mui.system.SxProps
 
-external interface PickersDayProps<TDate> : mui.system.PropsWithSx {
+external interface PickersDayProps<TDate> :
+    mui.material.ButtonBaseProps,
+    mui.system.PropsWithSx {
     /**
      * Override or extend the styles applied to the component.
      */
@@ -39,7 +45,11 @@ external interface PickersDayProps<TDate> : mui.system.PropsWithSx {
 
     var isAnimating: Boolean?
 
-    var onDayFocus: ((day: TDate) -> Unit)?
+    var onFocus: ((event: react.dom.events.FocusEvent<org.w3c.dom.HTMLButtonElement>, day: TDate) -> Unit)?
+
+    var onBlur: ((event: react.dom.events.FocusEvent<org.w3c.dom.HTMLButtonElement>, day: TDate) -> Unit)?
+
+    var onKeyDown: ((event: react.dom.events.KeyboardEvent<org.w3c.dom.HTMLButtonElement>, day: TDate) -> Unit)?
 
     var onDaySelect: (day: TDate, isFinish: PickerSelectionState) -> Unit
 

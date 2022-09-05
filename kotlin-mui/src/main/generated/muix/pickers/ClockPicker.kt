@@ -154,21 +154,9 @@ external interface ExportedClockPickerProps<TDate> : react.Props {
     var getClockLabelText: ((view: ClockPickerView, time: TDate?, adapter: dynamic /* MuiPickersAdapter<TDate> */) -> String)?
 }
 
-external interface ClockPickerSlotsComponent {
-    var LeftArrowButton: react.ElementType<*>
+external interface ClockPickerSlotsComponent
 
-    var LeftArrowIcon: react.ElementType<*>
-
-    var RightArrowButton: react.ElementType<*>
-
-    var RightArrowIcon: react.ElementType<*>
-}
-
-external interface ClockPickerSlotsComponentsProps : react.Props {
-    var leftArrowButton: dynamic
-
-    var rightArrowButton: dynamic
-}
+external interface ClockPickerSlotsComponentsProps : react.Props
 
 
 external val ClockPicker: react.FC<ClockPickerProps<*>>
