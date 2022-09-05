@@ -23,6 +23,18 @@ external interface YearPickerProps<TDate> : react.PropsWithClassName {
     var onFocusedDayChange: ((day: TDate) -> Unit)?
 
     var readOnly: Boolean?
+
+    /**
+     * If `true`, today's date is rendering without highlighting with circle.
+     * @default false
+     */
+    var disableHighlightToday: Boolean?
+
+    var onYearFocus: ((year: Number) -> Unit)?
+
+    var hasFocus: Boolean?
+
+    var onFocusedViewChange: ((newHasFocus: Boolean) -> Unit)?
 }
 
 
