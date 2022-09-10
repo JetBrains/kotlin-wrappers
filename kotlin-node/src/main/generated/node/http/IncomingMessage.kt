@@ -10,7 +10,7 @@ import node.Dict
 import node.net.Socket
 import node.stream.Readable
 
-external class IncomingMessage : Readable {
+open external class IncomingMessage : Readable {
     constructor(socket: Socket)
 
     /**
@@ -19,7 +19,7 @@ external class IncomingMessage : Readable {
      * @since v10.1.0
      * @deprecated Since v17.0.0,v16.12.0 - Check `message.destroyed` from <a href="stream.html#class-streamreadable" class="type">stream.Readable</a>.
      */
-    var aborted: Boolean
+    open var aborted: Boolean
 
     /**
      * In case of server request, the HTTP version sent by the client. In the case of
@@ -29,9 +29,9 @@ external class IncomingMessage : Readable {
      * Also `message.httpVersionMajor` is the first integer and`message.httpVersionMinor` is the second.
      * @since v0.1.1
      */
-    var httpVersion: String
-    var httpVersionMajor: Number
-    var httpVersionMinor: Number
+    open var httpVersion: String
+    open var httpVersionMajor: Number
+    open var httpVersionMinor: Number
 
     /**
      * The `message.complete` property will be `true` if a complete HTTP message has
@@ -56,14 +56,14 @@ external class IncomingMessage : Readable {
      * ```
      * @since v0.3.0
      */
-    var complete: Boolean
+    open var complete: Boolean
 
     /**
      * Alias for `message.socket`.
      * @since v0.1.90
      * @deprecated Since v16.0.0 - Use `socket`.
      */
-    var connection: Socket
+    open var connection: Socket
 
     /**
      * The `net.Socket` object associated with the connection.
@@ -76,7 +76,7 @@ external class IncomingMessage : Readable {
      * type other than `net.Socket` or internally nulled.
      * @since v0.3.0
      */
-    var socket: Socket
+    open var socket: Socket
 
     /**
      * The request/response headers object.
@@ -102,7 +102,7 @@ external class IncomingMessage : Readable {
      * * For all other headers, the values are joined together with ', '.
      * @since v0.1.5
      */
-    var headers: IncomingHttpHeaders
+    open var headers: IncomingHttpHeaders
 
     /**
      * The raw request/response headers list exactly as they were received.
@@ -128,26 +128,26 @@ external class IncomingMessage : Readable {
      * ```
      * @since v0.11.6
      */
-    var rawHeaders: ReadonlyArray<String>
+    open var rawHeaders: ReadonlyArray<String>
 
     /**
      * The request/response trailers object. Only populated at the `'end'` event.
      * @since v0.3.0
      */
-    var trailers: Dict<String>
+    open var trailers: Dict<String>
 
     /**
      * The raw request/response trailer keys and values exactly as they were
      * received. Only populated at the `'end'` event.
      * @since v0.11.6
      */
-    var rawTrailers: ReadonlyArray<String>
+    open var rawTrailers: ReadonlyArray<String>
 
     /**
      * Calls `message.socket.setTimeout(msecs, callback)`.
      * @since v0.5.9
      */
-    fun setTimeout(
+    open fun setTimeout(
         msecs: Number,
         callback: () -> Unit = definedExternally,
     ): IncomingMessage
@@ -158,7 +158,7 @@ external class IncomingMessage : Readable {
      * The request method as a string. Read only. Examples: `'GET'`, `'DELETE'`.
      * @since v0.1.1
      */
-    var method: String?
+    open var method: String?
 
     /**
      * **Only valid for request obtained from {@link Server}.**
@@ -199,7 +199,7 @@ external class IncomingMessage : Readable {
      * ```
      * @since v0.1.90
      */
-    var url: String?
+    open var url: String?
 
     /**
      * **Only valid for response obtained from {@link ClientRequest}.**
@@ -207,7 +207,7 @@ external class IncomingMessage : Readable {
      * The 3-digit HTTP response status code. E.G. `404`.
      * @since v0.1.1
      */
-    var statusCode: Number?
+    open var statusCode: Number?
 
     /**
      * **Only valid for response obtained from {@link ClientRequest}.**
@@ -215,7 +215,7 @@ external class IncomingMessage : Readable {
      * The HTTP response status message (reason phrase). E.G. `OK` or `Internal Server Error`.
      * @since v0.11.10
      */
-    var statusMessage: String?
+    open var statusMessage: String?
 
     /**
      * Calls `destroy()` on the socket that received the `IncomingMessage`. If `error`is provided, an `'error'` event is emitted on the socket and `error` is passed
