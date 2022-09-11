@@ -305,9 +305,9 @@ external interface MutationObserverOptions<TData, TError, TVariables, TContext>
 }
 
 external interface MutateOptions<TData, TError, TVariables, TContext> {
-    var onSuccess: (data: TData, variables: TVariables, context: TContext) -> Promise<*>?
-    var onError: (error: TError, variables: TVariables, context: TContext?) -> Promise<*>?
-    var onSettled: (data: TData?, error: TError?, variables: TVariables, context: TContext?) -> Promise<*>?
+    var onSuccess: (data: TData, variables: TVariables, context: TContext) -> Unit
+    var onError: (error: TError, variables: TVariables, context: TContext?) -> Unit
+    var onSettled: (data: TData?, error: TError?, variables: TVariables, context: TContext?) -> Unit
 }
 
 typealias MutateFunction<TData, TError, TVariables, TContext> = (variables: TVariables, options: MutateOptions<TData, TError, TVariables, TContext>?) -> Promise<TData>
