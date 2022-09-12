@@ -48,6 +48,7 @@ interface CssBuilder : StyledElement, RuleContainer {
     fun lastChild(block: RuleSet) = "&:last-child"(block)
     fun lastOfType(block: RuleSet) = "&:last-of-type"(block)
     fun link(block: RuleSet) = "&:link"(block)
+
     fun not(vararg selector: String, block: RuleSet): Rule {
         // The verbosity is necessitated by an IR bug, do not inline!
         val selectorString = selector.joinToString { "&:not($it)" }
@@ -94,6 +95,10 @@ interface CssBuilder : StyledElement, RuleContainer {
     fun descendants(vararg selector: String = arrayOf("*"), block: RuleSet): Rule {
         val selectorString = selector.joinToString { "& $it" }
         return selectorString(block)
+    }
+
+    fun has(selector: String, block: RuleSet): Rule {
+        return "&:has($selector)"(block)
     }
 
     fun ancestorHover(vararg selector: String, block: RuleSet): Rule {
@@ -181,6 +186,8 @@ interface CssBuilder : StyledElement, RuleContainer {
     fun media(query: String, block: RuleSet) = "@media $query"(block)
 
     fun supports(query: String, block: RuleSet) = "@supports $query"(block)
+
+    fun supportsSelector(query: String, block: RuleSet) = "@supports selector($query)"(block)
 
     fun container(query: String, block: RuleSet) = "@container $query"(block)
 
