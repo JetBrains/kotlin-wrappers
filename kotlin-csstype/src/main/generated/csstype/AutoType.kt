@@ -8,6 +8,7 @@ sealed external interface AutoType :
     AlignSelf,
     AnimationTimeline,
     Appearance,
+    AspectRatio,
     BackgroundSize,
     Bleed,
     BreakAfter,
