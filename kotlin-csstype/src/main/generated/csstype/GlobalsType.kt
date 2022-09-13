@@ -16,6 +16,7 @@ sealed external interface GlobalsType :
     AnimationTimeline,
     AnimationTimingFunction,
     Appearance,
+    AspectRatio,
     BackdropFilter,
     BackfaceVisibility,
     BackgroundAttachment,
