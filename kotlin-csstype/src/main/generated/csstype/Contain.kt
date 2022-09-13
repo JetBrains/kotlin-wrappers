@@ -8,10 +8,11 @@
 package csstype
 
 // language=JavaScript
-@JsName("""(/*union*/{content: 'content', layout: 'layout', paint: 'paint', size: 'size', strict: 'strict', style: 'style'}/*union*/)""")
+@JsName("""(/*union*/{content: 'content', inlineSize: 'inline-size', layout: 'layout', paint: 'paint', size: 'size', strict: 'strict', style: 'style'}/*union*/)""")
 sealed external interface Contain {
     companion object {
         val content: Contain
+        val inlineSize: Contain
         val layout: Contain
         val paint: Contain
         val size: Contain

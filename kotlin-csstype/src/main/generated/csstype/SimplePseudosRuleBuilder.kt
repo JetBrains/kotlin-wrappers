@@ -307,6 +307,12 @@ interface SimplePseudosRuleBuilder<T : Any> : RuleBuilder<T> {
         ":placeholder-shown"(block)
     }
 
+    inline fun playing(
+        block: T.() -> Unit,
+    ) {
+        ":playing"(block)
+    }
+
     inline fun readOnly(
         block: T.() -> Unit,
     ) {

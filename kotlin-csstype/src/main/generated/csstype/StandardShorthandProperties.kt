@@ -10,9 +10,9 @@ external interface StandardShorthandProperties {
      *
      * **Initial value**: There is no practical initial value for it.
      *
-     *    | Chrome | Firefox | Safari  |  Edge  | IE  |
-     *    | :----: | :-----: | :-----: | :----: | :-: |
-     *    |   37   |   27    |   9.1   |   79   | No  |
+     *    | Chrome | Firefox | Safari  | Edge | IE  |
+     *    | :----: | :-----: | :-----: | :--: | :-: |
+     *    |   37   |   27    |   9.1   | n/a  | No  |
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/all">MDN</a>
      */
@@ -78,9 +78,9 @@ external interface StandardShorthandProperties {
      *
      * **Syntax**: `<'border-top-width'> || <'border-top-style'> || <color>`
      *
-     *    | Chrome | Firefox |  Safari  |  Edge  | IE  |
-     *    | :----: | :-----: | :------: | :----: | :-: |
-     *    |   87   |   66    |   14.1   |   87   | No  |
+     *    | Chrome | Firefox |  Safari  | Edge | IE  |
+     *    | :----: | :-----: | :------: | :--: | :-: |
+     *    |   87   |   66    |   14.1   | n/a  | No  |
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/border-block">MDN</a>
      */
@@ -91,9 +91,9 @@ external interface StandardShorthandProperties {
      *
      * **Syntax**: `<'border-top-width'> || <'border-top-style'> || <color>`
      *
-     *    | Chrome | Firefox |  Safari  |  Edge  | IE  |
-     *    | :----: | :-----: | :------: | :----: | :-: |
-     *    |   69   |   41    |   12.1   |   79   | No  |
+     *    | Chrome | Firefox |  Safari  | Edge | IE  |
+     *    | :----: | :-----: | :------: | :--: | :-: |
+     *    |   69   |   41    |   12.1   | n/a  | No  |
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/border-block-end">MDN</a>
      */
@@ -104,9 +104,9 @@ external interface StandardShorthandProperties {
      *
      * **Syntax**: `<'border-top-width'> || <'border-top-style'> || <color>`
      *
-     *    | Chrome | Firefox |  Safari  |  Edge  | IE  |
-     *    | :----: | :-----: | :------: | :----: | :-: |
-     *    |   69   |   41    |   12.1   |   79   | No  |
+     *    | Chrome | Firefox |  Safari  | Edge | IE  |
+     *    | :----: | :-----: | :------: | :--: | :-: |
+     *    |   69   |   41    |   12.1   | n/a  | No  |
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/border-block-start">MDN</a>
      */
@@ -157,9 +157,9 @@ external interface StandardShorthandProperties {
      *
      * **Syntax**: `<'border-top-width'> || <'border-top-style'> || <color>`
      *
-     *    | Chrome | Firefox |  Safari  |  Edge  | IE  |
-     *    | :----: | :-----: | :------: | :----: | :-: |
-     *    |   87   |   66    |   14.1   |   87   | No  |
+     *    | Chrome | Firefox |  Safari  | Edge | IE  |
+     *    | :----: | :-----: | :------: | :--: | :-: |
+     *    |   87   |   66    |   14.1   | n/a  | No  |
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/border-inline">MDN</a>
      */
@@ -170,9 +170,9 @@ external interface StandardShorthandProperties {
      *
      * **Syntax**: `<'border-top-width'> || <'border-top-style'> || <color>`
      *
-     *    | Chrome | Firefox |  Safari  |  Edge  | IE  |
-     *    | :----: | :-----: | :------: | :----: | :-: |
-     *    |   69   |   41    |   12.1   |   79   | No  |
+     *    | Chrome | Firefox |  Safari  | Edge | IE  |
+     *    | :----: | :-----: | :------: | :--: | :-: |
+     *    |   69   |   41    |   12.1   | n/a  | No  |
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/border-inline-end">MDN</a>
      */
@@ -183,9 +183,9 @@ external interface StandardShorthandProperties {
      *
      * **Syntax**: `<'border-top-width'> || <'border-top-style'> || <color>`
      *
-     *    | Chrome | Firefox |  Safari  |  Edge  | IE  |
-     *    | :----: | :-----: | :------: | :----: | :-: |
-     *    |   69   |   41    |   12.1   |   79   | No  |
+     *    | Chrome | Firefox |  Safari  | Edge | IE  |
+     *    | :----: | :-----: | :------: | :--: | :-: |
+     *    |   69   |   41    |   12.1   | n/a  | No  |
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/border-inline-start">MDN</a>
      */
@@ -344,32 +344,9 @@ external interface StandardShorthandProperties {
      *
      * **Syntax**: `<'row-gap'> <'column-gap'>?`
      *
-     * ---
-     *
-     * _Supported in Flex Layout_
-     *
      *    | Chrome | Firefox |  Safari  |  Edge  | IE  |
      *    | :----: | :-----: | :------: | :----: | :-: |
-     *    |   84   |   63    |   14.1   |   84   | No  |
-     *
-     * ---
-     *
-     * _Supported in Grid Layout_
-     *
-     *    |     Chrome      |     Firefox     |      Safari       |  Edge  | IE  |
-     *    | :-------------: | :-------------: | :---------------: | :----: | :-: |
-     *    |       66        |       61        |        12         |   16   | No  |
-     *    | 57 _(grid-gap)_ | 52 _(grid-gap)_ | 10.1 _(grid-gap)_ |        |     |
-     *
-     * ---
-     *
-     * _Supported in Multi-column Layout_
-     *
-     *    | Chrome | Firefox | Safari |  Edge  | IE  |
-     *    | :----: | :-----: | :----: | :----: | :-: |
-     *    |   66   |   61    |   No   |   16   | No  |
-     *
-     * ---
+     *    |   57   |   52    |   10.1   |   16   | No  |
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/gap">MDN</a>
      */
@@ -491,9 +468,9 @@ external interface StandardShorthandProperties {
      *
      * **Syntax**: `<'mask-border-source'> || <'mask-border-slice'> [ / <'mask-border-width'>? [ / <'mask-border-outset'> ]? ]? || <'mask-border-repeat'> || <'mask-border-mode'>`
      *
-     *    |              Chrome              | Firefox |               Safari               |               Edge                | IE  |
-     *    | :------------------------------: | :-----: | :--------------------------------: | :-------------------------------: | :-: |
-     *    |   1   _(-webkit-mask-box-image)_ |   No    |   3.1   _(-webkit-mask-box-image)_ |   79   _(-webkit-mask-box-image)_ | No  |
+     *    |              Chrome              | Firefox |               Safari               | Edge | IE  |
+     *    | :------------------------------: | :-----: | :--------------------------------: | :--: | :-: |
+     *    |   1   _(-webkit-mask-box-image)_ |   No    |   3.1   _(-webkit-mask-box-image)_ | n/a  | No  |
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/mask-border">MDN</a>
      */
@@ -504,10 +481,10 @@ external interface StandardShorthandProperties {
      *
      * **Syntax**: `[ <'offset-position'>? [ <'offset-path'> [ <'offset-distance'> || <'offset-rotate'> ]? ]? ]! [ / <'offset-anchor'> ]?`
      *
-     *    |    Chrome     | Firefox | Safari |  Edge  | IE  |
-     *    | :-----------: | :-----: | :----: | :----: | :-: |
-     *    |      55       |   72    |   No   |   79   | No  |
-     *    | 46 _(motion)_ |         |        |        |     |
+     *    |    Chrome     | Firefox | Safari | Edge | IE  |
+     *    | :-----------: | :-----: | :----: | :--: | :-: |
+     *    |      55       |   72    |   16   | n/a  | No  |
+     *    | 46 _(motion)_ |         |        |      |     |
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/offset">MDN</a>
      */
@@ -518,10 +495,10 @@ external interface StandardShorthandProperties {
      *
      * **Syntax**: `[ <'offset-position'>? [ <'offset-path'> [ <'offset-distance'> || <'offset-rotate'> ]? ]? ]! [ / <'offset-anchor'> ]?`
      *
-     *    |    Chrome     | Firefox | Safari |  Edge  | IE  |
-     *    | :-----------: | :-----: | :----: | :----: | :-: |
-     *    |      55       |   72    |   No   |   79   | No  |
-     *    | 46 _(motion)_ |         |        |        |     |
+     *    |    Chrome     | Firefox | Safari | Edge | IE  |
+     *    | :-----------: | :-----: | :----: | :--: | :-: |
+     *    |      55       |   72    |   16   | n/a  | No  |
+     *    | 46 _(motion)_ |         |        |      |     |
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/offset">MDN</a>
      */
@@ -564,7 +541,7 @@ external interface StandardShorthandProperties {
      *
      *    | Chrome | Firefox | Safari |  Edge  | IE  |
      *    | :----: | :-----: | :----: | :----: | :-: |
-     *    |   63   |   59    |   No   |   18   | No  |
+     *    |   63   |   59    |   16   |   18   | No  |
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/overscroll-behavior">MDN</a>
      */
@@ -588,9 +565,9 @@ external interface StandardShorthandProperties {
      *
      * **Syntax**: `<'align-items'> <'justify-items'>?`
      *
-     *    | Chrome | Firefox | Safari |  Edge  | IE  |
-     *    | :----: | :-----: | :----: | :----: | :-: |
-     *    |   59   |   45    |   11   |   79   | No  |
+     *    | Chrome | Firefox | Safari | Edge | IE  |
+     *    | :----: | :-----: | :----: | :--: | :-: |
+     *    |   59   |   45    |   11   | n/a  | No  |
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/place-items">MDN</a>
      */
@@ -601,9 +578,9 @@ external interface StandardShorthandProperties {
      *
      * **Syntax**: `<'align-self'> <'justify-self'>?`
      *
-     *    | Chrome | Firefox | Safari |  Edge  | IE  |
-     *    | :----: | :-----: | :----: | :----: | :-: |
-     *    |   59   |   45    |   11   |   79   | No  |
+     *    | Chrome | Firefox | Safari | Edge | IE  |
+     *    | :----: | :-----: | :----: | :--: | :-: |
+     *    |   59   |   45    |   11   | n/a  | No  |
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/place-self">MDN</a>
      */
@@ -627,10 +604,10 @@ external interface StandardShorthandProperties {
      *
      * **Syntax**: `<'text-emphasis-style'> || <'text-emphasis-color'>`
      *
-     *    |  Chrome  | Firefox | Safari |   Edge   | IE  |
-     *    | :------: | :-----: | :----: | :------: | :-: |
-     *    |    99    |   46    |   7    |    99    | No  |
-     *    |    25′   |         |        |    79′   |     |
+     *    |  Chrome  | Firefox | Safari | Edge | IE  |
+     *    | :------: | :-----: | :----: | :--: | :-: |
+     *    |    99    |   46    |   7    | n/a  | No  |
+     *    |    25′   |         |        |      |     |
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/text-emphasis">MDN</a>
      */
