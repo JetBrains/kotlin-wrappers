@@ -16,6 +16,11 @@ kotlin {
     iosX64()
     iosSimulatorArm64()
 
+    // Sets the device ID for iosSimulatorArm64Test
+    targets.withType(org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTargetWithSimulatorTests::class.java) {
+        testRuns["test"].deviceId = "iPhone 14"
+    }
+
     sourceSets {
         val commonTest by getting {
             dependencies {
