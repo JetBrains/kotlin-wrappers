@@ -117,6 +117,7 @@ sealed external interface GlobalsType :
     MaskOrigin,
     MaskRepeat,
     MaskType,
+    MathDepth,
     MathShift,
     MathStyle,
     MaxLines,

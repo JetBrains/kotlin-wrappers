@@ -11,6 +11,7 @@ sealed external interface IntegerType :
     FontWeight,
     GridLine,
     LineClamp,
+    MathDepth,
     MaxLines,
     Order,
     Orphans,
