@@ -204,7 +204,7 @@ private fun <T> devOverrideUseRef(action: () -> T): T {
 /**
  * @deprecated Use [createGlobalStyle] instead
  */
-fun injectGlobal(handler: CssBuilder.() -> Unit) {
+fun injectGlobal(handler: RuleSet) {
     injectGlobal(CssBuilder(isStyledComponent = true).apply { handler() }.toString())
 }
 

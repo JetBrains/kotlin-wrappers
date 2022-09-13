@@ -1,6 +1,7 @@
 package styled
 
 import kotlinx.css.CssBuilder
+import kotlinx.css.RuleSet
 import kotlinx.css.properties.KeyframesBuilder
 import styled.sheets.*
 import kotlin.collections.*
@@ -24,6 +25,12 @@ internal typealias InjectedCssHolder = LinkedHashMap<CssBuilder, UsedCssInfo>
 fun injectGlobal(css: CssBuilder) {
     GlobalStyles.sheet.scheduleToInject(css.getCssRules(null))
     GlobalStyles.injectScheduled()
+}
+
+fun injectGlobal(css: RuleSet) {
+    CssBuilder(allowClasses = false).apply {
+        css()
+    }.apply { injectGlobal(this) }
 }
 
 @Suppress("NOTHING_TO_INLINE")
