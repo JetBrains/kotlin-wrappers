@@ -3,4 +3,4 @@
 package csstype
 
 @CssDsl
-external interface Properties : StandardProperties
+external interface Properties : StandardProperties, VariableRecord
