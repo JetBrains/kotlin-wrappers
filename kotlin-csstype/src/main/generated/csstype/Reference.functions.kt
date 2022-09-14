@@ -26,3 +26,14 @@ inline fun url(
     value: String,
 ): Url =
     "url($value)".unsafeCast<Url>()
+
+inline fun <T : Any> `var`(
+    name: Variable<T>,
+): T? =
+    "var($name)".unsafeCast<T?>()
+
+inline fun <T : Any> `var`(
+    name: Variable<T>,
+    fallback: T,
+): T =
+    "var($name,$fallback)".unsafeCast<T>()
