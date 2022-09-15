@@ -89,12 +89,12 @@ sealed external interface PlatformPath {
     /**
      * The platform-specific file separator. '\\' or '/'.
      */
-    val sep: String
+    val sep: String /* '\\' | '/' */
 
     /**
      * The platform-specific file delimiter. ';' or ':'.
      */
-    val delimiter: String
+    val delimiter: String /* ';' | ':' */
 
     /**
      * Returns an object from a path string - the opposite of format().
