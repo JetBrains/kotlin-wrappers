@@ -29,8 +29,7 @@ sealed external interface CreateContextOptions {
            * @default true
            */
           wasm?: boolean | undefined;
-      }
-    | undefined */
+      } */
 
     /**
      * If set to `afterEvaluate`, microtasks will be run immediately after the script has run.

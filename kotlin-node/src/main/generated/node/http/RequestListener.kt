@@ -2,7 +2,7 @@
 
 package node.http
 
-typealias RequestListener = (
-    req: IncomingMessage,
-    res: ServerResponse,
-) -> Unit
+typealias RequestListener<
+        Request, /* : IncomingMessage */
+        Response, /* : ServerResponse<*> */
+        > = (req: Request, res: Response) -> Unit

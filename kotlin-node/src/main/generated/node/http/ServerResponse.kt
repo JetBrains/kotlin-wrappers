@@ -7,7 +7,7 @@ package node.http
 
 import node.net.Socket
 
-external class ServerResponse : OutgoingMessage {
+external class ServerResponse<Request : IncomingMessage> : OutgoingMessage<Request> {
     /**
      * When using implicit headers (not calling `response.writeHead()` explicitly),
      * this property controls the status code that will be sent to the client when
@@ -39,7 +39,7 @@ external class ServerResponse : OutgoingMessage {
      */
     var statusMessage: String
 
-    constructor(req: IncomingMessage)
+    constructor(req: Request)
 
     fun assignSocket(socket: Socket)
     fun detachSocket(socket: Socket)

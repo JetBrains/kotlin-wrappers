@@ -12,7 +12,7 @@ import node.events.EventType
 import node.net.Socket
 import node.stream.Readable
 
-external class ClientRequest : OutgoingMessage {
+external class ClientRequest : OutgoingMessage<IncomingMessage> {
     /**
      * The `request.aborted` property will be `true` if the request has
      * been aborted.

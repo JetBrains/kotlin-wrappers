@@ -12,6 +12,9 @@ package node.http
  * added to the `'request'` event.
  * @since v0.1.13
  */
-external fun createServer(
-    requestListener: RequestListener = definedExternally,
-): Server
+external fun <
+        Request : IncomingMessage,
+        Response : ServerResponse<*>,
+        > createServer(
+    requestListener: RequestListener<Request, Response> = definedExternally,
+): Server<Request, Response>

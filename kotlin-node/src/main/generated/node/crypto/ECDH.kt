@@ -158,8 +158,7 @@ sealed external class ECDH {
             curve: String,
             inputEncoding: BinaryToTextEncoding = definedExternally,
             outputEncoding: Any /* 'latin1' | 'hex' | 'base64' | 'base64url' */ = definedExternally,
-            format: Any /* 'uncompressed' | 'compressed' | 'hybrid'
- */ = definedExternally,
+            format: Any /* 'uncompressed' | 'compressed' | 'hybrid' */ = definedExternally,
         ): Any /* Buffer | string */
     }
 }
