@@ -6,5 +6,5 @@ sealed external interface NodeEventTarget {
     fun once(
         event: EventType,
         listener: Function<Unit>,
-    ): NodeEventTarget
+    ) /* : this */
 }

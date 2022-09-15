@@ -35,9 +35,9 @@ open external class Server : node.net.Server {
     open fun setTimeout(
         msecs: Number = definedExternally,
         callback: () -> Unit = definedExternally,
-    ): Server
+    ) /* : this */
 
-    open fun setTimeout(callback: () -> Unit): Server
+    open fun setTimeout(callback: () -> Unit) /* : this */
 
     /**
      * Limits maximum incoming headers count. If set to 0, no limit will be applied.
@@ -129,37 +129,37 @@ open external class Server : node.net.Server {
     override fun addListener(
         event: EventType,
         listener: Function<Unit>,
-    ): Server
+    ) /* : this */
 
     override fun addListener(
         event: Event.CLOSE,
         listener: () -> Unit,
-    ): Server
+    ) /* : this */
 
     override fun addListener(
         event: Event.CONNECTION,
         listener: (socket: Socket) -> Unit,
-    ): Server
+    ) /* : this */
 
     override fun addListener(
         event: Event.ERROR,
         listener: (error: Error) -> Unit,
-    ): Server
+    ) /* : this */
 
     override fun addListener(
         event: Event.LISTENING,
         listener: () -> Unit,
-    ): Server
+    ) /* : this */
 
     open fun addListener(
         event: Event.CHECK_CONTINUE,
         listener: RequestListener,
-    ): Server
+    ) /* : this */
 
     open fun addListener(
         event: Event.CHECK_EXPECTATION,
         listener: RequestListener,
-    ): Server
+    ) /* : this */
 
     open fun addListener(
         event: Event.CLIENT_ERROR,
@@ -167,7 +167,7 @@ open external class Server : node.net.Server {
             error: Error,
             socket: Duplex,
         ) -> Unit,
-    ): Server
+    ) /* : this */
 
     open fun addListener(
         event: Event.CONNECT,
@@ -176,12 +176,12 @@ open external class Server : node.net.Server {
             socket: Duplex,
             head: Buffer,
         ) -> Unit,
-    ): Server
+    ) /* : this */
 
     open fun addListener(
         event: Event.REQUEST,
         listener: RequestListener,
-    ): Server
+    ) /* : this */
 
     open fun addListener(
         event: Event.UPGRADE,
@@ -190,7 +190,7 @@ open external class Server : node.net.Server {
             socket: Duplex,
             head: Buffer,
         ) -> Unit,
-    ): Server
+    ) /* : this */
 
     override fun emit(
         event: EventType,
@@ -250,37 +250,37 @@ open external class Server : node.net.Server {
     override fun on(
         event: EventType,
         listener: Function<Unit>,
-    ): Server
+    ) /* : this */
 
     override fun on(
         event: Event.CLOSE,
         listener: () -> Unit,
-    ): Server
+    ) /* : this */
 
     override fun on(
         event: Event.CONNECTION,
         listener: (socket: Socket) -> Unit,
-    ): Server
+    ) /* : this */
 
     override fun on(
         event: Event.ERROR,
         listener: (error: Error) -> Unit,
-    ): Server
+    ) /* : this */
 
     override fun on(
         event: Event.LISTENING,
         listener: () -> Unit,
-    ): Server
+    ) /* : this */
 
     open fun on(
         event: Event.CHECK_CONTINUE,
         listener: RequestListener,
-    ): Server
+    ) /* : this */
 
     open fun on(
         event: Event.CHECK_EXPECTATION,
         listener: RequestListener,
-    ): Server
+    ) /* : this */
 
     open fun on(
         event: Event.CLIENT_ERROR,
@@ -288,7 +288,7 @@ open external class Server : node.net.Server {
             error: Error,
             socket: Duplex,
         ) -> Unit,
-    ): Server
+    ) /* : this */
 
     open fun on(
         event: Event.CONNECT,
@@ -297,12 +297,12 @@ open external class Server : node.net.Server {
             socket: Duplex,
             head: Buffer,
         ) -> Unit,
-    ): Server
+    ) /* : this */
 
     open fun on(
         event: Event.REQUEST,
         listener: RequestListener,
-    ): Server
+    ) /* : this */
 
     open fun on(
         event: Event.UPGRADE,
@@ -311,42 +311,42 @@ open external class Server : node.net.Server {
             socket: Duplex,
             head: Buffer,
         ) -> Unit,
-    ): Server
+    ) /* : this */
 
     override fun once(
         event: EventType,
         listener: Function<Unit>,
-    ): Server
+    ) /* : this */
 
     override fun once(
         event: Event.CLOSE,
         listener: () -> Unit,
-    ): Server
+    ) /* : this */
 
     override fun once(
         event: Event.CONNECTION,
         listener: (socket: Socket) -> Unit,
-    ): Server
+    ) /* : this */
 
     override fun once(
         event: Event.ERROR,
         listener: (error: Error) -> Unit,
-    ): Server
+    ) /* : this */
 
     override fun once(
         event: Event.LISTENING,
         listener: () -> Unit,
-    ): Server
+    ) /* : this */
 
     open fun once(
         event: Event.CHECK_CONTINUE,
         listener: RequestListener,
-    ): Server
+    ) /* : this */
 
     open fun once(
         event: Event.CHECK_EXPECTATION,
         listener: RequestListener,
-    ): Server
+    ) /* : this */
 
     open fun once(
         event: Event.CLIENT_ERROR,
@@ -354,7 +354,7 @@ open external class Server : node.net.Server {
             error: Error,
             socket: Duplex,
         ) -> Unit,
-    ): Server
+    ) /* : this */
 
     open fun once(
         event: Event.CONNECT,
@@ -363,12 +363,12 @@ open external class Server : node.net.Server {
             socket: Duplex,
             head: Buffer,
         ) -> Unit,
-    ): Server
+    ) /* : this */
 
     open fun once(
         event: Event.REQUEST,
         listener: RequestListener,
-    ): Server
+    ) /* : this */
 
     open fun once(
         event: Event.UPGRADE,
@@ -377,42 +377,42 @@ open external class Server : node.net.Server {
             socket: Duplex,
             head: Buffer,
         ) -> Unit,
-    ): Server
+    ) /* : this */
 
     override fun prependListener(
         event: EventType,
         listener: Function<Unit>,
-    ): Server
+    ) /* : this */
 
     override fun prependListener(
         event: Event.CLOSE,
         listener: () -> Unit,
-    ): Server
+    ) /* : this */
 
     override fun prependListener(
         event: Event.CONNECTION,
         listener: (socket: Socket) -> Unit,
-    ): Server
+    ) /* : this */
 
     override fun prependListener(
         event: Event.ERROR,
         listener: (error: Error) -> Unit,
-    ): Server
+    ) /* : this */
 
     override fun prependListener(
         event: Event.LISTENING,
         listener: () -> Unit,
-    ): Server
+    ) /* : this */
 
     open fun prependListener(
         event: Event.CHECK_CONTINUE,
         listener: RequestListener,
-    ): Server
+    ) /* : this */
 
     open fun prependListener(
         event: Event.CHECK_EXPECTATION,
         listener: RequestListener,
-    ): Server
+    ) /* : this */
 
     open fun prependListener(
         event: Event.CLIENT_ERROR,
@@ -420,7 +420,7 @@ open external class Server : node.net.Server {
             error: Error,
             socket: Duplex,
         ) -> Unit,
-    ): Server
+    ) /* : this */
 
     open fun prependListener(
         event: Event.CONNECT,
@@ -429,12 +429,12 @@ open external class Server : node.net.Server {
             socket: Duplex,
             head: Buffer,
         ) -> Unit,
-    ): Server
+    ) /* : this */
 
     open fun prependListener(
         event: Event.REQUEST,
         listener: RequestListener,
-    ): Server
+    ) /* : this */
 
     open fun prependListener(
         event: Event.UPGRADE,
@@ -443,42 +443,42 @@ open external class Server : node.net.Server {
             socket: Duplex,
             head: Buffer,
         ) -> Unit,
-    ): Server
+    ) /* : this */
 
     override fun prependOnceListener(
         event: EventType,
         listener: Function<Unit>,
-    ): Server
+    ) /* : this */
 
     override fun prependOnceListener(
         event: Event.CLOSE,
         listener: () -> Unit,
-    ): Server
+    ) /* : this */
 
     override fun prependOnceListener(
         event: Event.CONNECTION,
         listener: (socket: Socket) -> Unit,
-    ): Server
+    ) /* : this */
 
     override fun prependOnceListener(
         event: Event.ERROR,
         listener: (error: Error) -> Unit,
-    ): Server
+    ) /* : this */
 
     override fun prependOnceListener(
         event: Event.LISTENING,
         listener: () -> Unit,
-    ): Server
+    ) /* : this */
 
     open fun prependOnceListener(
         event: Event.CHECK_CONTINUE,
         listener: RequestListener,
-    ): Server
+    ) /* : this */
 
     open fun prependOnceListener(
         event: Event.CHECK_EXPECTATION,
         listener: RequestListener,
-    ): Server
+    ) /* : this */
 
     open fun prependOnceListener(
         event: Event.CLIENT_ERROR,
@@ -486,7 +486,7 @@ open external class Server : node.net.Server {
             error: Error,
             socket: Duplex,
         ) -> Unit,
-    ): Server
+    ) /* : this */
 
     open fun prependOnceListener(
         event: Event.CONNECT,
@@ -495,12 +495,12 @@ open external class Server : node.net.Server {
             socket: Duplex,
             head: Buffer,
         ) -> Unit,
-    ): Server
+    ) /* : this */
 
     open fun prependOnceListener(
         event: Event.REQUEST,
         listener: RequestListener,
-    ): Server
+    ) /* : this */
 
     open fun prependOnceListener(
         event: Event.UPGRADE,
@@ -509,5 +509,5 @@ open external class Server : node.net.Server {
             socket: Duplex,
             head: Buffer,
         ) -> Unit,
-    ): Server
+    ) /* : this */
 }

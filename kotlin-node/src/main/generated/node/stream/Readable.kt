@@ -194,7 +194,7 @@ open external class Readable : Stream, node.ReadableStream {
      * @since v0.9.4
      * @param encoding The encoding to use.
      */
-    override fun setEncoding(encoding: node.buffer.BufferEncoding): Readable
+    override fun setEncoding(encoding: node.buffer.BufferEncoding) /* : this */
 
     /**
      * The `readable.pause()` method will cause a stream in flowing mode to stop
@@ -217,7 +217,7 @@ open external class Readable : Stream, node.ReadableStream {
      * The `readable.pause()` method has no effect if there is a `'readable'`event listener.
      * @since v0.9.4
      */
-    override fun pause(): Readable
+    override fun pause() /* : this */
 
     /**
      * The `readable.resume()` method causes an explicitly paused `Readable` stream to
@@ -237,7 +237,7 @@ open external class Readable : Stream, node.ReadableStream {
      * The `readable.resume()` method has no effect if there is a `'readable'`event listener.
      * @since v0.9.4
      */
-    override fun resume(): Readable
+    override fun resume() /* : this */
 
     /**
      * The `readable.isPaused()` method returns the current operating state of the`Readable`. This is used primarily by the mechanism that underlies the`readable.pipe()` method. In most
@@ -283,7 +283,7 @@ open external class Readable : Stream, node.ReadableStream {
      * @since v0.9.4
      * @param destination Optional specific stream to unpipe
      */
-    override fun unpipe(destination: node.WritableStream): Readable
+    override fun unpipe(destination: node.WritableStream) /* : this */
 
     /**
      * Passing `chunk` as `null` signals the end of the stream (EOF) and behaves the
@@ -380,7 +380,7 @@ open external class Readable : Stream, node.ReadableStream {
      * @since v0.9.4
      * @param stream An "old style" readable stream
      */
-    override fun wrap(stream: node.ReadableStream): Readable
+    override fun wrap(stream: node.ReadableStream) /* : this */
     open fun push(
         chunk: Any,
         encoding: node.buffer.BufferEncoding = definedExternally,
@@ -402,7 +402,7 @@ open external class Readable : Stream, node.ReadableStream {
      * @since v8.0.0
      * @param error Error which will be passed as payload in `'error'` event
      */
-    open fun destroy(error: Error = definedExternally): Readable
+    open fun destroy(error: Error = definedExternally) /* : this */
 
     /**
      * Event emitter
@@ -418,42 +418,42 @@ open external class Readable : Stream, node.ReadableStream {
     open fun addListener(
         event: Event.CLOSE,
         listener: () -> Unit,
-    ): Readable
+    ) /* : this */
 
     open fun addListener(
         event: Event.DATA,
         listener: (chunk: Any) -> Unit,
-    ): Readable
+    ) /* : this */
 
     open fun addListener(
         event: Event.END,
         listener: () -> Unit,
-    ): Readable
+    ) /* : this */
 
     open fun addListener(
         event: Event.ERROR,
         listener: (error: Error) -> Unit,
-    ): Readable
+    ) /* : this */
 
     open fun addListener(
         event: Event.PAUSE,
         listener: () -> Unit,
-    ): Readable
+    ) /* : this */
 
     open fun addListener(
         event: Event.READABLE,
         listener: () -> Unit,
-    ): Readable
+    ) /* : this */
 
     open fun addListener(
         event: Event.RESUME,
         listener: () -> Unit,
-    ): Readable
+    ) /* : this */
 
     override fun addListener(
         event: EventType,
         listener: Function<Unit>,
-    ): Readable
+    ) /* : this */
 
     open fun emit(event: Event.CLOSE): Boolean
     open fun emit(
@@ -478,202 +478,202 @@ open external class Readable : Stream, node.ReadableStream {
     open fun on(
         event: Event.CLOSE,
         listener: () -> Unit,
-    ): Readable
+    ) /* : this */
 
     open fun on(
         event: Event.DATA,
         listener: (chunk: Any) -> Unit,
-    ): Readable
+    ) /* : this */
 
     open fun on(
         event: Event.END,
         listener: () -> Unit,
-    ): Readable
+    ) /* : this */
 
     open fun on(
         event: Event.ERROR,
         listener: (error: Error) -> Unit,
-    ): Readable
+    ) /* : this */
 
     open fun on(
         event: Event.PAUSE,
         listener: () -> Unit,
-    ): Readable
+    ) /* : this */
 
     open fun on(
         event: Event.READABLE,
         listener: () -> Unit,
-    ): Readable
+    ) /* : this */
 
     open fun on(
         event: Event.RESUME,
         listener: () -> Unit,
-    ): Readable
+    ) /* : this */
 
     override fun on(
         event: EventType,
         listener: Function<Unit>,
-    ): Readable
+    ) /* : this */
 
     open fun once(
         event: Event.CLOSE,
         listener: () -> Unit,
-    ): Readable
+    ) /* : this */
 
     open fun once(
         event: Event.DATA,
         listener: (chunk: Any) -> Unit,
-    ): Readable
+    ) /* : this */
 
     open fun once(
         event: Event.END,
         listener: () -> Unit,
-    ): Readable
+    ) /* : this */
 
     open fun once(
         event: Event.ERROR,
         listener: (error: Error) -> Unit,
-    ): Readable
+    ) /* : this */
 
     open fun once(
         event: Event.PAUSE,
         listener: () -> Unit,
-    ): Readable
+    ) /* : this */
 
     open fun once(
         event: Event.READABLE,
         listener: () -> Unit,
-    ): Readable
+    ) /* : this */
 
     open fun once(
         event: Event.RESUME,
         listener: () -> Unit,
-    ): Readable
+    ) /* : this */
 
     override fun once(
         event: EventType,
         listener: Function<Unit>,
-    ): Readable
+    ) /* : this */
 
     open fun prependListener(
         event: Event.CLOSE,
         listener: () -> Unit,
-    ): Readable
+    ) /* : this */
 
     open fun prependListener(
         event: Event.DATA,
         listener: (chunk: Any) -> Unit,
-    ): Readable
+    ) /* : this */
 
     open fun prependListener(
         event: Event.END,
         listener: () -> Unit,
-    ): Readable
+    ) /* : this */
 
     open fun prependListener(
         event: Event.ERROR,
         listener: (error: Error) -> Unit,
-    ): Readable
+    ) /* : this */
 
     open fun prependListener(
         event: Event.PAUSE,
         listener: () -> Unit,
-    ): Readable
+    ) /* : this */
 
     open fun prependListener(
         event: Event.READABLE,
         listener: () -> Unit,
-    ): Readable
+    ) /* : this */
 
     open fun prependListener(
         event: Event.RESUME,
         listener: () -> Unit,
-    ): Readable
+    ) /* : this */
 
     override fun prependListener(
         event: EventType,
         listener: Function<Unit>,
-    ): Readable
+    ) /* : this */
 
     open fun prependOnceListener(
         event: Event.CLOSE,
         listener: () -> Unit,
-    ): Readable
+    ) /* : this */
 
     open fun prependOnceListener(
         event: Event.DATA,
         listener: (chunk: Any) -> Unit,
-    ): Readable
+    ) /* : this */
 
     open fun prependOnceListener(
         event: Event.END,
         listener: () -> Unit,
-    ): Readable
+    ) /* : this */
 
     open fun prependOnceListener(
         event: Event.ERROR,
         listener: (error: Error) -> Unit,
-    ): Readable
+    ) /* : this */
 
     open fun prependOnceListener(
         event: Event.PAUSE,
         listener: () -> Unit,
-    ): Readable
+    ) /* : this */
 
     open fun prependOnceListener(
         event: Event.READABLE,
         listener: () -> Unit,
-    ): Readable
+    ) /* : this */
 
     open fun prependOnceListener(
         event: Event.RESUME,
         listener: () -> Unit,
-    ): Readable
+    ) /* : this */
 
     override fun prependOnceListener(
         event: EventType,
         listener: Function<Unit>,
-    ): Readable
+    ) /* : this */
 
     open fun removeListener(
         event: Event.CLOSE,
         listener: () -> Unit,
-    ): Readable
+    ) /* : this */
 
     open fun removeListener(
         event: Event.DATA,
         listener: (chunk: Any) -> Unit,
-    ): Readable
+    ) /* : this */
 
     open fun removeListener(
         event: Event.END,
         listener: () -> Unit,
-    ): Readable
+    ) /* : this */
 
     open fun removeListener(
         event: Event.ERROR,
         listener: (error: Error) -> Unit,
-    ): Readable
+    ) /* : this */
 
     open fun removeListener(
         event: Event.PAUSE,
         listener: () -> Unit,
-    ): Readable
+    ) /* : this */
 
     open fun removeListener(
         event: Event.READABLE,
         listener: () -> Unit,
-    ): Readable
+    ) /* : this */
 
     open fun removeListener(
         event: Event.RESUME,
         listener: () -> Unit,
-    ): Readable
+    ) /* : this */
 
     override fun removeListener(
         event: EventType,
         listener: Function<Unit>,
-    ): Readable
+    ) /* : this */
     /* [Symbol.asyncIterator](): AsyncIterableIterator<any> */
 
     companion object {

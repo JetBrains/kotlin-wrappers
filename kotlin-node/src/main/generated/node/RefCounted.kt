@@ -3,6 +3,6 @@
 package node
 
 external interface RefCounted {
-    fun ref(): RefCounted
-    fun unref(): RefCounted
+    fun ref() /* : this */
+    fun unref() /* : this */
 }

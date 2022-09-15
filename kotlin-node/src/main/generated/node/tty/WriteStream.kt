@@ -15,12 +15,12 @@ external class WriteStream : node.net.Socket {
     override fun addListener(
         event: EventType,
         listener: Function<Unit>,
-    ): WriteStream
+    ) /* : this */
 
     fun addListener(
         event: Event.RESIZE,
         listener: () -> Unit,
-    ): WriteStream
+    ) /* : this */
 
     override fun emit(
         event: EventType,
@@ -31,42 +31,42 @@ external class WriteStream : node.net.Socket {
     override fun on(
         event: EventType,
         listener: Function<Unit>,
-    ): WriteStream
+    ) /* : this */
 
     fun on(
         event: Event.RESIZE,
         listener: () -> Unit,
-    ): WriteStream
+    ) /* : this */
 
     override fun once(
         event: EventType,
         listener: Function<Unit>,
-    ): WriteStream
+    ) /* : this */
 
     fun once(
         event: Event.RESIZE,
         listener: () -> Unit,
-    ): WriteStream
+    ) /* : this */
 
     override fun prependListener(
         event: EventType,
         listener: Function<Unit>,
-    ): WriteStream
+    ) /* : this */
 
     fun prependListener(
         event: Event.RESIZE,
         listener: () -> Unit,
-    ): WriteStream
+    ) /* : this */
 
     override fun prependOnceListener(
         event: EventType,
         listener: Function<Unit>,
-    ): WriteStream
+    ) /* : this */
 
     fun prependOnceListener(
         event: Event.RESIZE,
         listener: () -> Unit,
-    ): WriteStream
+    ) /* : this */
 
     /**
      * `writeStream.clearLine()` clears the current line of this `WriteStream` in a

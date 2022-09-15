@@ -5,7 +5,7 @@ package node.crypto
 import kotlinx.js.ArrayBufferView
 
 sealed external interface DecipherOCB : Decipher {
-    fun setAuthTag(buffer: ArrayBufferView): DecipherOCB
+    fun setAuthTag(buffer: ArrayBufferView) /* : this */
 
     // HIDDEN METHOD START
     /*
@@ -14,7 +14,7 @@ sealed external interface DecipherOCB : Decipher {
         options?: {
             plaintextLength: number;
         }
-    ): DecipherOCB
+    ): this
     */
     // HIDDEN METHOD END
 

@@ -50,225 +50,225 @@ external class WriteStream : Writable {
     override fun addListener(
         event: Event.CLOSE,
         listener: () -> Unit,
-    ): WriteStream
+    ) /* : this */
 
     override fun addListener(
         event: Event.DRAIN,
         listener: () -> Unit,
-    ): WriteStream
+    ) /* : this */
 
     override fun addListener(
         event: Event.ERROR,
         listener: (error: Error) -> Unit,
-    ): WriteStream
+    ) /* : this */
 
     override fun addListener(
         event: Event.FINISH,
         listener: () -> Unit,
-    ): WriteStream
+    ) /* : this */
 
     fun addListener(
         event: Event.OPEN,
         listener: (fd: Number) -> Unit,
-    ): WriteStream
+    ) /* : this */
 
     override fun addListener(
         event: Event.PIPE,
         listener: (src: Readable) -> Unit,
-    ): WriteStream
+    ) /* : this */
 
     fun addListener(
         event: Event.READY,
         listener: () -> Unit,
-    ): WriteStream
+    ) /* : this */
 
     override fun addListener(
         event: Event.UNPIPE,
         listener: (src: Readable) -> Unit,
-    ): WriteStream
+    ) /* : this */
 
     override fun addListener(
         event: EventType,
         listener: Function<Unit>,
-    ): WriteStream
+    ) /* : this */
 
     override fun on(
         event: Event.CLOSE,
         listener: () -> Unit,
-    ): WriteStream
+    ) /* : this */
 
     override fun on(
         event: Event.DRAIN,
         listener: () -> Unit,
-    ): WriteStream
+    ) /* : this */
 
     override fun on(
         event: Event.ERROR,
         listener: (error: Error) -> Unit,
-    ): WriteStream
+    ) /* : this */
 
     override fun on(
         event: Event.FINISH,
         listener: () -> Unit,
-    ): WriteStream
+    ) /* : this */
 
     fun on(
         event: Event.OPEN,
         listener: (fd: Number) -> Unit,
-    ): WriteStream
+    ) /* : this */
 
     override fun on(
         event: Event.PIPE,
         listener: (src: Readable) -> Unit,
-    ): WriteStream
+    ) /* : this */
 
     fun on(
         event: Event.READY,
         listener: () -> Unit,
-    ): WriteStream
+    ) /* : this */
 
     override fun on(
         event: Event.UNPIPE,
         listener: (src: Readable) -> Unit,
-    ): WriteStream
+    ) /* : this */
 
     override fun on(
         event: EventType,
         listener: Function<Unit>,
-    ): WriteStream
+    ) /* : this */
 
     override fun once(
         event: Event.CLOSE,
         listener: () -> Unit,
-    ): WriteStream
+    ) /* : this */
 
     override fun once(
         event: Event.DRAIN,
         listener: () -> Unit,
-    ): WriteStream
+    ) /* : this */
 
     override fun once(
         event: Event.ERROR,
         listener: (error: Error) -> Unit,
-    ): WriteStream
+    ) /* : this */
 
     override fun once(
         event: Event.FINISH,
         listener: () -> Unit,
-    ): WriteStream
+    ) /* : this */
 
     fun once(
         event: Event.OPEN,
         listener: (fd: Number) -> Unit,
-    ): WriteStream
+    ) /* : this */
 
     override fun once(
         event: Event.PIPE,
         listener: (src: Readable) -> Unit,
-    ): WriteStream
+    ) /* : this */
 
     fun once(
         event: Event.READY,
         listener: () -> Unit,
-    ): WriteStream
+    ) /* : this */
 
     override fun once(
         event: Event.UNPIPE,
         listener: (src: Readable) -> Unit,
-    ): WriteStream
+    ) /* : this */
 
     override fun once(
         event: EventType,
         listener: Function<Unit>,
-    ): WriteStream
+    ) /* : this */
 
     override fun prependListener(
         event: Event.CLOSE,
         listener: () -> Unit,
-    ): WriteStream
+    ) /* : this */
 
     override fun prependListener(
         event: Event.DRAIN,
         listener: () -> Unit,
-    ): WriteStream
+    ) /* : this */
 
     override fun prependListener(
         event: Event.ERROR,
         listener: (error: Error) -> Unit,
-    ): WriteStream
+    ) /* : this */
 
     override fun prependListener(
         event: Event.FINISH,
         listener: () -> Unit,
-    ): WriteStream
+    ) /* : this */
 
     fun prependListener(
         event: Event.OPEN,
         listener: (fd: Number) -> Unit,
-    ): WriteStream
+    ) /* : this */
 
     override fun prependListener(
         event: Event.PIPE,
         listener: (src: Readable) -> Unit,
-    ): WriteStream
+    ) /* : this */
 
     fun prependListener(
         event: Event.READY,
         listener: () -> Unit,
-    ): WriteStream
+    ) /* : this */
 
     override fun prependListener(
         event: Event.UNPIPE,
         listener: (src: Readable) -> Unit,
-    ): WriteStream
+    ) /* : this */
 
     override fun prependListener(
         event: EventType,
         listener: Function<Unit>,
-    ): WriteStream
+    ) /* : this */
 
     override fun prependOnceListener(
         event: Event.CLOSE,
         listener: () -> Unit,
-    ): WriteStream
+    ) /* : this */
 
     override fun prependOnceListener(
         event: Event.DRAIN,
         listener: () -> Unit,
-    ): WriteStream
+    ) /* : this */
 
     override fun prependOnceListener(
         event: Event.ERROR,
         listener: (error: Error) -> Unit,
-    ): WriteStream
+    ) /* : this */
 
     override fun prependOnceListener(
         event: Event.FINISH,
         listener: () -> Unit,
-    ): WriteStream
+    ) /* : this */
 
     fun prependOnceListener(
         event: Event.OPEN,
         listener: (fd: Number) -> Unit,
-    ): WriteStream
+    ) /* : this */
 
     override fun prependOnceListener(
         event: Event.PIPE,
         listener: (src: Readable) -> Unit,
-    ): WriteStream
+    ) /* : this */
 
     fun prependOnceListener(
         event: Event.READY,
         listener: () -> Unit,
-    ): WriteStream
+    ) /* : this */
 
     override fun prependOnceListener(
         event: Event.UNPIPE,
         listener: (src: Readable) -> Unit,
-    ): WriteStream
+    ) /* : this */
 
     override fun prependOnceListener(
         event: EventType,
         listener: Function<Unit>,
-    ): WriteStream
+    ) /* : this */
 }

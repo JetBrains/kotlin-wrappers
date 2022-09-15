@@ -15,15 +15,15 @@ external interface WritableStream : node.events.IEventEmitter {
         callback: (error: Error?) -> Unit = definedExternally,
     ): Boolean
 
-    fun end(callback: () -> Unit = definedExternally): WritableStream
+    fun end(callback: () -> Unit = definedExternally) /* : this */
     fun end(
         chunk: Any, /* string | Uint8Array */
         callback: () -> Unit = definedExternally,
-    ): WritableStream
+    ) /* : this */
 
     fun end(
         str: String,
         encoding: node.buffer.BufferEncoding = definedExternally,
         callback: () -> Unit = definedExternally,
-    ): WritableStream
+    ) /* : this */
 }

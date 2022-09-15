@@ -115,32 +115,32 @@ external class Worker : node.events.EventEmitter {
     fun addListener(
         event: Event.ERROR,
         listener: (error: Error) -> Unit,
-    ): Worker
+    ) /* : this */
 
     fun addListener(
         event: Event.EXIT,
         listener: (exitCode: Number) -> Unit,
-    ): Worker
+    ) /* : this */
 
     fun addListener(
         event: Event.MESSAGE,
         listener: (value: Any) -> Unit,
-    ): Worker
+    ) /* : this */
 
     fun addListener(
         event: Event.MESSAGE_ERROR,
         listener: (error: Error) -> Unit,
-    ): Worker
+    ) /* : this */
 
     fun addListener(
         event: Event.ONLINE,
         listener: () -> Unit,
-    ): Worker
+    ) /* : this */
 
     override fun addListener(
         event: EventType,
         listener: Function<Unit>,
-    ): Worker
+    ) /* : this */
 
     fun emit(
         event: Event.ERROR,
@@ -171,180 +171,180 @@ external class Worker : node.events.EventEmitter {
     fun on(
         event: Event.ERROR,
         listener: (error: Error) -> Unit,
-    ): Worker
+    ) /* : this */
 
     fun on(
         event: Event.EXIT,
         listener: (exitCode: Number) -> Unit,
-    ): Worker
+    ) /* : this */
 
     fun on(
         event: Event.MESSAGE,
         listener: (value: Any) -> Unit,
-    ): Worker
+    ) /* : this */
 
     fun on(
         event: Event.MESSAGE_ERROR,
         listener: (error: Error) -> Unit,
-    ): Worker
+    ) /* : this */
 
     fun on(
         event: Event.ONLINE,
         listener: () -> Unit,
-    ): Worker
+    ) /* : this */
 
     override fun on(
         event: EventType,
         listener: Function<Unit>,
-    ): Worker
+    ) /* : this */
 
     fun once(
         event: Event.ERROR,
         listener: (error: Error) -> Unit,
-    ): Worker
+    ) /* : this */
 
     fun once(
         event: Event.EXIT,
         listener: (exitCode: Number) -> Unit,
-    ): Worker
+    ) /* : this */
 
     fun once(
         event: Event.MESSAGE,
         listener: (value: Any) -> Unit,
-    ): Worker
+    ) /* : this */
 
     fun once(
         event: Event.MESSAGE_ERROR,
         listener: (error: Error) -> Unit,
-    ): Worker
+    ) /* : this */
 
     fun once(
         event: Event.ONLINE,
         listener: () -> Unit,
-    ): Worker
+    ) /* : this */
 
     override fun once(
         event: EventType,
         listener: Function<Unit>,
-    ): Worker
+    ) /* : this */
 
     fun prependListener(
         event: Event.ERROR,
         listener: (error: Error) -> Unit,
-    ): Worker
+    ) /* : this */
 
     fun prependListener(
         event: Event.EXIT,
         listener: (exitCode: Number) -> Unit,
-    ): Worker
+    ) /* : this */
 
     fun prependListener(
         event: Event.MESSAGE,
         listener: (value: Any) -> Unit,
-    ): Worker
+    ) /* : this */
 
     fun prependListener(
         event: Event.MESSAGE_ERROR,
         listener: (error: Error) -> Unit,
-    ): Worker
+    ) /* : this */
 
     fun prependListener(
         event: Event.ONLINE,
         listener: () -> Unit,
-    ): Worker
+    ) /* : this */
 
     override fun prependListener(
         event: EventType,
         listener: Function<Unit>,
-    ): Worker
+    ) /* : this */
 
     fun prependOnceListener(
         event: Event.ERROR,
         listener: (error: Error) -> Unit,
-    ): Worker
+    ) /* : this */
 
     fun prependOnceListener(
         event: Event.EXIT,
         listener: (exitCode: Number) -> Unit,
-    ): Worker
+    ) /* : this */
 
     fun prependOnceListener(
         event: Event.MESSAGE,
         listener: (value: Any) -> Unit,
-    ): Worker
+    ) /* : this */
 
     fun prependOnceListener(
         event: Event.MESSAGE_ERROR,
         listener: (error: Error) -> Unit,
-    ): Worker
+    ) /* : this */
 
     fun prependOnceListener(
         event: Event.ONLINE,
         listener: () -> Unit,
-    ): Worker
+    ) /* : this */
 
     override fun prependOnceListener(
         event: EventType,
         listener: Function<Unit>,
-    ): Worker
+    ) /* : this */
 
     fun removeListener(
         event: Event.ERROR,
         listener: (error: Error) -> Unit,
-    ): Worker
+    ) /* : this */
 
     fun removeListener(
         event: Event.EXIT,
         listener: (exitCode: Number) -> Unit,
-    ): Worker
+    ) /* : this */
 
     fun removeListener(
         event: Event.MESSAGE,
         listener: (value: Any) -> Unit,
-    ): Worker
+    ) /* : this */
 
     fun removeListener(
         event: Event.MESSAGE_ERROR,
         listener: (error: Error) -> Unit,
-    ): Worker
+    ) /* : this */
 
     fun removeListener(
         event: Event.ONLINE,
         listener: () -> Unit,
-    ): Worker
+    ) /* : this */
 
     override fun removeListener(
         event: EventType,
         listener: Function<Unit>,
-    ): Worker
+    ) /* : this */
 
     fun off(
         event: Event.ERROR,
         listener: (error: Error) -> Unit,
-    ): Worker
+    ) /* : this */
 
     fun off(
         event: Event.EXIT,
         listener: (exitCode: Number) -> Unit,
-    ): Worker
+    ) /* : this */
 
     fun off(
         event: Event.MESSAGE,
         listener: (value: Any) -> Unit,
-    ): Worker
+    ) /* : this */
 
     fun off(
         event: Event.MESSAGE_ERROR,
         listener: (error: Error) -> Unit,
-    ): Worker
+    ) /* : this */
 
     fun off(
         event: Event.ONLINE,
         listener: () -> Unit,
-    ): Worker
+    ) /* : this */
 
     override fun off(
         event: EventType,
         listener: Function<Unit>,
-    ): Worker
+    ) /* : this */
 }

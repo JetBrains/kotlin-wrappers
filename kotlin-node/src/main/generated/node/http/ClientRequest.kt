@@ -125,7 +125,7 @@ external class ClientRequest : OutgoingMessage {
     override fun setTimeout(
         msecs: Number,
         callback: () -> Unit,
-    ): ClientRequest
+    ) /* : this */
 
     /**
      * Once a socket is assigned to this request and is connected `socket.setNoDelay()` will be called.
@@ -163,7 +163,7 @@ external class ClientRequest : OutgoingMessage {
     fun addListener(
         event: Event.ABORT,
         listener: () -> Unit,
-    ): ClientRequest
+    ) /* : this */
 
     fun addListener(
         event: Event.CONNECT,
@@ -172,32 +172,32 @@ external class ClientRequest : OutgoingMessage {
             socket: Socket,
             head: Buffer,
         ) -> Unit,
-    ): ClientRequest
+    ) /* : this */
 
     fun addListener(
         event: Event.CONTINUE,
         listener: () -> Unit,
-    ): ClientRequest
+    ) /* : this */
 
     fun addListener(
         event: Event.INFORMATION,
         listener: (info: InformationEvent) -> Unit,
-    ): ClientRequest
+    ) /* : this */
 
     fun addListener(
         event: Event.RESPONSE,
         listener: (response: IncomingMessage) -> Unit,
-    ): ClientRequest
+    ) /* : this */
 
     fun addListener(
         event: Event.SOCKET,
         listener: (socket: Socket) -> Unit,
-    ): ClientRequest
+    ) /* : this */
 
     fun addListener(
         event: Event.TIMEOUT,
         listener: () -> Unit,
-    ): ClientRequest
+    ) /* : this */
 
     fun addListener(
         event: Event.UPGRADE,
@@ -206,42 +206,42 @@ external class ClientRequest : OutgoingMessage {
             socket: Socket,
             head: Buffer,
         ) -> Unit,
-    ): ClientRequest
+    ) /* : this */
 
     override fun addListener(
         event: Event.CLOSE,
         listener: () -> Unit,
-    ): ClientRequest
+    ) /* : this */
 
     override fun addListener(
         event: Event.DRAIN,
         listener: () -> Unit,
-    ): ClientRequest
+    ) /* : this */
 
     override fun addListener(
         event: Event.ERROR,
         listener: (error: Error) -> Unit,
-    ): ClientRequest
+    ) /* : this */
 
     override fun addListener(
         event: Event.FINISH,
         listener: () -> Unit,
-    ): ClientRequest
+    ) /* : this */
 
     override fun addListener(
         event: Event.PIPE,
         listener: (src: Readable) -> Unit,
-    ): ClientRequest
+    ) /* : this */
 
     override fun addListener(
         event: Event.UNPIPE,
         listener: (src: Readable) -> Unit,
-    ): ClientRequest
+    ) /* : this */
 
     override fun addListener(
         event: EventType,
         listener: Function<Unit>,
-    ): ClientRequest
+    ) /* : this */
 
     /**
      * @deprecated
@@ -249,7 +249,7 @@ external class ClientRequest : OutgoingMessage {
     fun on(
         event: Event.ABORT,
         listener: () -> Unit,
-    ): ClientRequest
+    ) /* : this */
 
     fun on(
         event: Event.CONNECT,
@@ -258,32 +258,32 @@ external class ClientRequest : OutgoingMessage {
             socket: Socket,
             head: Buffer,
         ) -> Unit,
-    ): ClientRequest
+    ) /* : this */
 
     fun on(
         event: Event.CONTINUE,
         listener: () -> Unit,
-    ): ClientRequest
+    ) /* : this */
 
     fun on(
         event: Event.INFORMATION,
         listener: (info: InformationEvent) -> Unit,
-    ): ClientRequest
+    ) /* : this */
 
     fun on(
         event: Event.RESPONSE,
         listener: (response: IncomingMessage) -> Unit,
-    ): ClientRequest
+    ) /* : this */
 
     fun on(
         event: Event.SOCKET,
         listener: (socket: Socket) -> Unit,
-    ): ClientRequest
+    ) /* : this */
 
     fun on(
         event: Event.TIMEOUT,
         listener: () -> Unit,
-    ): ClientRequest
+    ) /* : this */
 
     fun on(
         event: Event.UPGRADE,
@@ -292,42 +292,42 @@ external class ClientRequest : OutgoingMessage {
             socket: Socket,
             head: Buffer,
         ) -> Unit,
-    ): ClientRequest
+    ) /* : this */
 
     override fun on(
         event: Event.CLOSE,
         listener: () -> Unit,
-    ): ClientRequest
+    ) /* : this */
 
     override fun on(
         event: Event.DRAIN,
         listener: () -> Unit,
-    ): ClientRequest
+    ) /* : this */
 
     override fun on(
         event: Event.ERROR,
         listener: (error: Error) -> Unit,
-    ): ClientRequest
+    ) /* : this */
 
     override fun on(
         event: Event.FINISH,
         listener: () -> Unit,
-    ): ClientRequest
+    ) /* : this */
 
     override fun on(
         event: Event.PIPE,
         listener: (src: Readable) -> Unit,
-    ): ClientRequest
+    ) /* : this */
 
     override fun on(
         event: Event.UNPIPE,
         listener: (src: Readable) -> Unit,
-    ): ClientRequest
+    ) /* : this */
 
     override fun on(
         event: EventType,
         listener: Function<Unit>,
-    ): ClientRequest
+    ) /* : this */
 
     /**
      * @deprecated
@@ -335,7 +335,7 @@ external class ClientRequest : OutgoingMessage {
     fun once(
         event: Event.ABORT,
         listener: () -> Unit,
-    ): ClientRequest
+    ) /* : this */
 
     fun once(
         event: Event.CONNECT,
@@ -344,32 +344,32 @@ external class ClientRequest : OutgoingMessage {
             socket: Socket,
             head: Buffer,
         ) -> Unit,
-    ): ClientRequest
+    ) /* : this */
 
     fun once(
         event: Event.CONTINUE,
         listener: () -> Unit,
-    ): ClientRequest
+    ) /* : this */
 
     fun once(
         event: Event.INFORMATION,
         listener: (info: InformationEvent) -> Unit,
-    ): ClientRequest
+    ) /* : this */
 
     fun once(
         event: Event.RESPONSE,
         listener: (response: IncomingMessage) -> Unit,
-    ): ClientRequest
+    ) /* : this */
 
     fun once(
         event: Event.SOCKET,
         listener: (socket: Socket) -> Unit,
-    ): ClientRequest
+    ) /* : this */
 
     fun once(
         event: Event.TIMEOUT,
         listener: () -> Unit,
-    ): ClientRequest
+    ) /* : this */
 
     fun once(
         event: Event.UPGRADE,
@@ -378,42 +378,42 @@ external class ClientRequest : OutgoingMessage {
             socket: Socket,
             head: Buffer,
         ) -> Unit,
-    ): ClientRequest
+    ) /* : this */
 
     override fun once(
         event: Event.CLOSE,
         listener: () -> Unit,
-    ): ClientRequest
+    ) /* : this */
 
     override fun once(
         event: Event.DRAIN,
         listener: () -> Unit,
-    ): ClientRequest
+    ) /* : this */
 
     override fun once(
         event: Event.ERROR,
         listener: (error: Error) -> Unit,
-    ): ClientRequest
+    ) /* : this */
 
     override fun once(
         event: Event.FINISH,
         listener: () -> Unit,
-    ): ClientRequest
+    ) /* : this */
 
     override fun once(
         event: Event.PIPE,
         listener: (src: Readable) -> Unit,
-    ): ClientRequest
+    ) /* : this */
 
     override fun once(
         event: Event.UNPIPE,
         listener: (src: Readable) -> Unit,
-    ): ClientRequest
+    ) /* : this */
 
     override fun once(
         event: EventType,
         listener: Function<Unit>,
-    ): ClientRequest
+    ) /* : this */
 
     /**
      * @deprecated
@@ -421,7 +421,7 @@ external class ClientRequest : OutgoingMessage {
     fun prependListener(
         event: Event.ABORT,
         listener: () -> Unit,
-    ): ClientRequest
+    ) /* : this */
 
     fun prependListener(
         event: Event.CONNECT,
@@ -430,32 +430,32 @@ external class ClientRequest : OutgoingMessage {
             socket: Socket,
             head: Buffer,
         ) -> Unit,
-    ): ClientRequest
+    ) /* : this */
 
     fun prependListener(
         event: Event.CONTINUE,
         listener: () -> Unit,
-    ): ClientRequest
+    ) /* : this */
 
     fun prependListener(
         event: Event.INFORMATION,
         listener: (info: InformationEvent) -> Unit,
-    ): ClientRequest
+    ) /* : this */
 
     fun prependListener(
         event: Event.RESPONSE,
         listener: (response: IncomingMessage) -> Unit,
-    ): ClientRequest
+    ) /* : this */
 
     fun prependListener(
         event: Event.SOCKET,
         listener: (socket: Socket) -> Unit,
-    ): ClientRequest
+    ) /* : this */
 
     fun prependListener(
         event: Event.TIMEOUT,
         listener: () -> Unit,
-    ): ClientRequest
+    ) /* : this */
 
     fun prependListener(
         event: Event.UPGRADE,
@@ -464,42 +464,42 @@ external class ClientRequest : OutgoingMessage {
             socket: Socket,
             head: Buffer,
         ) -> Unit,
-    ): ClientRequest
+    ) /* : this */
 
     override fun prependListener(
         event: Event.CLOSE,
         listener: () -> Unit,
-    ): ClientRequest
+    ) /* : this */
 
     override fun prependListener(
         event: Event.DRAIN,
         listener: () -> Unit,
-    ): ClientRequest
+    ) /* : this */
 
     override fun prependListener(
         event: Event.ERROR,
         listener: (error: Error) -> Unit,
-    ): ClientRequest
+    ) /* : this */
 
     override fun prependListener(
         event: Event.FINISH,
         listener: () -> Unit,
-    ): ClientRequest
+    ) /* : this */
 
     override fun prependListener(
         event: Event.PIPE,
         listener: (src: Readable) -> Unit,
-    ): ClientRequest
+    ) /* : this */
 
     override fun prependListener(
         event: Event.UNPIPE,
         listener: (src: Readable) -> Unit,
-    ): ClientRequest
+    ) /* : this */
 
     override fun prependListener(
         event: EventType,
         listener: Function<Unit>,
-    ): ClientRequest
+    ) /* : this */
 
     /**
      * @deprecated
@@ -507,7 +507,7 @@ external class ClientRequest : OutgoingMessage {
     fun prependOnceListener(
         event: Event.ABORT,
         listener: () -> Unit,
-    ): ClientRequest
+    ) /* : this */
 
     fun prependOnceListener(
         event: Event.CONNECT,
@@ -516,32 +516,32 @@ external class ClientRequest : OutgoingMessage {
             socket: Socket,
             head: Buffer,
         ) -> Unit,
-    ): ClientRequest
+    ) /* : this */
 
     fun prependOnceListener(
         event: Event.CONTINUE,
         listener: () -> Unit,
-    ): ClientRequest
+    ) /* : this */
 
     fun prependOnceListener(
         event: Event.INFORMATION,
         listener: (info: InformationEvent) -> Unit,
-    ): ClientRequest
+    ) /* : this */
 
     fun prependOnceListener(
         event: Event.RESPONSE,
         listener: (response: IncomingMessage) -> Unit,
-    ): ClientRequest
+    ) /* : this */
 
     fun prependOnceListener(
         event: Event.SOCKET,
         listener: (socket: Socket) -> Unit,
-    ): ClientRequest
+    ) /* : this */
 
     fun prependOnceListener(
         event: Event.TIMEOUT,
         listener: () -> Unit,
-    ): ClientRequest
+    ) /* : this */
 
     fun prependOnceListener(
         event: Event.UPGRADE,
@@ -550,40 +550,40 @@ external class ClientRequest : OutgoingMessage {
             socket: Socket,
             head: Buffer,
         ) -> Unit,
-    ): ClientRequest
+    ) /* : this */
 
     override fun prependOnceListener(
         event: Event.CLOSE,
         listener: () -> Unit,
-    ): ClientRequest
+    ) /* : this */
 
     override fun prependOnceListener(
         event: Event.DRAIN,
         listener: () -> Unit,
-    ): ClientRequest
+    ) /* : this */
 
     override fun prependOnceListener(
         event: Event.ERROR,
         listener: (error: Error) -> Unit,
-    ): ClientRequest
+    ) /* : this */
 
     override fun prependOnceListener(
         event: Event.FINISH,
         listener: () -> Unit,
-    ): ClientRequest
+    ) /* : this */
 
     override fun prependOnceListener(
         event: Event.PIPE,
         listener: (src: Readable) -> Unit,
-    ): ClientRequest
+    ) /* : this */
 
     override fun prependOnceListener(
         event: Event.UNPIPE,
         listener: (src: Readable) -> Unit,
-    ): ClientRequest
+    ) /* : this */
 
     override fun prependOnceListener(
         event: EventType,
         listener: Function<Unit>,
-    ): ClientRequest
+    ) /* : this */
 }

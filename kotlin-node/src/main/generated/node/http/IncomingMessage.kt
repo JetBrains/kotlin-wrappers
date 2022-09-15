@@ -150,7 +150,7 @@ open external class IncomingMessage : Readable {
     open fun setTimeout(
         msecs: Number,
         callback: () -> Unit = definedExternally,
-    ): IncomingMessage
+    ) /* : this */
 
     /**
      * **Only valid for request obtained from {@link Server}.**
@@ -222,5 +222,5 @@ open external class IncomingMessage : Readable {
      * as an argument to any listeners on the event.
      * @since v0.3.0
      */
-    override fun destroy(error: Error): IncomingMessage
+    override fun destroy(error: Error) /* : this */
 }

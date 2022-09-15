@@ -1146,7 +1146,7 @@ external class Buffer : Uint8Array {
      * @param [offset=0] Number of bytes to skip before starting to read. Must satisfy `0 <= offset <= buf.length - 8`.
      */
     fun readDoubleBE(offset: Number = definedExternally): Number
-    fun reverse(): Buffer
+    fun reverse() /* : this */
 
     /**
      * Interprets `buf` as an array of unsigned 16-bit integers and swaps the
@@ -1706,7 +1706,7 @@ external class Buffer : Uint8Array {
         offset: Number = definedExternally,
         end: Number = definedExternally,
         encoding: BufferEncoding = definedExternally,
-    ): Buffer
+    ) /* : this */
 
     /**
      * If `value` is:

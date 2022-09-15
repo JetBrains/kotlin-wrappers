@@ -61,43 +61,43 @@ open external class Socket : Duplex {
     open fun connect(
         options: SocketConnectOpts,
         connectionListener: () -> Unit = definedExternally,
-    ): Socket
+    ) /* : this */
 
     open fun connect(
         port: Number,
         host: String,
         connectionListener: () -> Unit = definedExternally,
-    ): Socket
+    ) /* : this */
 
     open fun connect(
         port: Number,
         connectionListener: () -> Unit = definedExternally,
-    ): Socket
+    ) /* : this */
 
     open fun connect(
         path: String,
         connectionListener: () -> Unit = definedExternally,
-    ): Socket
+    ) /* : this */
 
     /**
      * Set the encoding for the socket as a `Readable Stream`. See `readable.setEncoding()` for more information.
      * @since v0.1.90
      * @return The socket itself.
      */
-    override fun setEncoding(encoding: node.buffer.BufferEncoding): Socket
+    override fun setEncoding(encoding: node.buffer.BufferEncoding) /* : this */
 
     /**
      * Pauses the reading of data. That is, `'data'` events will not be emitted.
      * Useful to throttle back an upload.
      * @return The socket itself.
      */
-    override fun pause(): Socket
+    override fun pause() /* : this */
 
     /**
      * Resumes reading after a call to `socket.pause()`.
      * @return The socket itself.
      */
-    override fun resume(): Socket
+    override fun resume() /* : this */
 
     /**
      * Sets the socket to timeout after `timeout` milliseconds of inactivity on
@@ -123,7 +123,7 @@ open external class Socket : Duplex {
     open fun setTimeout(
         timeout: Number,
         callback: () -> Unit = definedExternally,
-    ): Socket
+    ) /* : this */
 
     /**
      * Enable/disable the use of Nagle's algorithm.
@@ -140,7 +140,7 @@ open external class Socket : Duplex {
      * @param [noDelay=true]
      * @return The socket itself.
      */
-    open fun setNoDelay(noDelay: Boolean = definedExternally): Socket
+    open fun setNoDelay(noDelay: Boolean = definedExternally) /* : this */
 
     /**
      * Enable/disable keep-alive functionality, and optionally set the initial
@@ -164,7 +164,7 @@ open external class Socket : Duplex {
     open fun setKeepAlive(
         enable: Boolean = definedExternally,
         initialDelay: Number = definedExternally,
-    ): Socket
+    ) /* : this */
     /**
      * Returns the bound `address`, the address `family` name and `port` of the
      * socket as reported by the operating system:`{ port: 12346, family: 'IPv4', address: '127.0.0.1' }`
@@ -183,7 +183,7 @@ open external class Socket : Duplex {
      * @since v0.9.1
      * @return The socket itself.
      */
-    open fun unref(): Socket
+    open fun unref() /* : this */
 
     /**
      * Opposite of `unref()`, calling `ref()` on a previously `unref`ed socket will _not_ let the program exit if it's the only socket left (the default behavior).
@@ -191,7 +191,7 @@ open external class Socket : Duplex {
      * @since v0.9.1
      * @return The socket itself.
      */
-    open fun ref(): Socket
+    open fun ref() /* : this */
 
     /**
      * This property shows the number of characters buffered for writing. The buffer
@@ -294,17 +294,17 @@ open external class Socket : Duplex {
      * @param callback Optional callback for when the socket is finished.
      * @return The socket itself.
      */
-    override fun end(callback: () -> Unit): Socket
+    override fun end(callback: () -> Unit) /* : this */
     override fun end(
         chunk: Any, /* Uint8Array | string */
         callback: () -> Unit,
-    ): Socket
+    ) /* : this */
 
     override fun end(
         chunk: Any, /* Uint8Array | string */
         encoding: node.buffer.BufferEncoding,
         callback: () -> Unit,
-    ): Socket
+    ) /* : this */
 
     /**
      * events.EventEmitter
@@ -320,37 +320,37 @@ open external class Socket : Duplex {
     override fun addListener(
         event: EventType,
         listener: Function<Unit>,
-    ): Socket
+    ) /* : this */
 
     open fun addListener(
         event: Event.CLOSE,
         listener: (hadError: Boolean) -> Unit,
-    ): Socket
+    ) /* : this */
 
     open fun addListener(
         event: Event.CONNECT,
         listener: () -> Unit,
-    ): Socket
+    ) /* : this */
 
     open fun addListener(
         event: Event.DATA,
         listener: (data: Buffer) -> Unit,
-    ): Socket
+    ) /* : this */
 
     open fun addListener(
         event: Event.DRAIN,
         listener: () -> Unit,
-    ): Socket
+    ) /* : this */
 
     override fun addListener(
         event: Event.END,
         listener: () -> Unit,
-    ): Socket
+    ) /* : this */
 
     override fun addListener(
         event: Event.ERROR,
         listener: (error: Error) -> Unit,
-    ): Socket
+    ) /* : this */
 
     open fun addListener(
         event: Event.LOOKUP,
@@ -360,17 +360,17 @@ open external class Socket : Duplex {
             family: Any, /* string | number */
             host: String,
         ) -> Unit,
-    ): Socket
+    ) /* : this */
 
     open fun addListener(
         event: Event.READY,
         listener: () -> Unit,
-    ): Socket
+    ) /* : this */
 
     open fun addListener(
         event: Event.TIMEOUT,
         listener: () -> Unit,
-    ): Socket
+    ) /* : this */
 
     override fun emit(
         event: EventType,
@@ -408,37 +408,37 @@ open external class Socket : Duplex {
     override fun on(
         event: EventType,
         listener: Function<Unit>,
-    ): Socket
+    ) /* : this */
 
     open fun on(
         event: Event.CLOSE,
         listener: (hadError: Boolean) -> Unit,
-    ): Socket
+    ) /* : this */
 
     open fun on(
         event: Event.CONNECT,
         listener: () -> Unit,
-    ): Socket
+    ) /* : this */
 
     open fun on(
         event: Event.DATA,
         listener: (data: Buffer) -> Unit,
-    ): Socket
+    ) /* : this */
 
     open fun on(
         event: Event.DRAIN,
         listener: () -> Unit,
-    ): Socket
+    ) /* : this */
 
     override fun on(
         event: Event.END,
         listener: () -> Unit,
-    ): Socket
+    ) /* : this */
 
     override fun on(
         event: Event.ERROR,
         listener: (error: Error) -> Unit,
-    ): Socket
+    ) /* : this */
 
     open fun on(
         event: Event.LOOKUP,
@@ -448,52 +448,52 @@ open external class Socket : Duplex {
             family: Any, /* string | number */
             host: String,
         ) -> Unit,
-    ): Socket
+    ) /* : this */
 
     open fun on(
         event: Event.READY,
         listener: () -> Unit,
-    ): Socket
+    ) /* : this */
 
     open fun on(
         event: Event.TIMEOUT,
         listener: () -> Unit,
-    ): Socket
+    ) /* : this */
 
     override fun once(
         event: EventType,
         listener: Function<Unit>,
-    ): Socket
+    ) /* : this */
 
     open fun once(
         event: Event.CLOSE,
         listener: (hadError: Boolean) -> Unit,
-    ): Socket
+    ) /* : this */
 
     open fun once(
         event: Event.CONNECT,
         listener: () -> Unit,
-    ): Socket
+    ) /* : this */
 
     open fun once(
         event: Event.DATA,
         listener: (data: Buffer) -> Unit,
-    ): Socket
+    ) /* : this */
 
     open fun once(
         event: Event.DRAIN,
         listener: () -> Unit,
-    ): Socket
+    ) /* : this */
 
     override fun once(
         event: Event.END,
         listener: () -> Unit,
-    ): Socket
+    ) /* : this */
 
     override fun once(
         event: Event.ERROR,
         listener: (error: Error) -> Unit,
-    ): Socket
+    ) /* : this */
 
     open fun once(
         event: Event.LOOKUP,
@@ -503,52 +503,52 @@ open external class Socket : Duplex {
             family: Any, /* string | number */
             host: String,
         ) -> Unit,
-    ): Socket
+    ) /* : this */
 
     open fun once(
         event: Event.READY,
         listener: () -> Unit,
-    ): Socket
+    ) /* : this */
 
     open fun once(
         event: Event.TIMEOUT,
         listener: () -> Unit,
-    ): Socket
+    ) /* : this */
 
     override fun prependListener(
         event: EventType,
         listener: Function<Unit>,
-    ): Socket
+    ) /* : this */
 
     open fun prependListener(
         event: Event.CLOSE,
         listener: (hadError: Boolean) -> Unit,
-    ): Socket
+    ) /* : this */
 
     open fun prependListener(
         event: Event.CONNECT,
         listener: () -> Unit,
-    ): Socket
+    ) /* : this */
 
     open fun prependListener(
         event: Event.DATA,
         listener: (data: Buffer) -> Unit,
-    ): Socket
+    ) /* : this */
 
     open fun prependListener(
         event: Event.DRAIN,
         listener: () -> Unit,
-    ): Socket
+    ) /* : this */
 
     override fun prependListener(
         event: Event.END,
         listener: () -> Unit,
-    ): Socket
+    ) /* : this */
 
     override fun prependListener(
         event: Event.ERROR,
         listener: (error: Error) -> Unit,
-    ): Socket
+    ) /* : this */
 
     open fun prependListener(
         event: Event.LOOKUP,
@@ -558,52 +558,52 @@ open external class Socket : Duplex {
             family: Any, /* string | number */
             host: String,
         ) -> Unit,
-    ): Socket
+    ) /* : this */
 
     open fun prependListener(
         event: Event.READY,
         listener: () -> Unit,
-    ): Socket
+    ) /* : this */
 
     open fun prependListener(
         event: Event.TIMEOUT,
         listener: () -> Unit,
-    ): Socket
+    ) /* : this */
 
     override fun prependOnceListener(
         event: EventType,
         listener: Function<Unit>,
-    ): Socket
+    ) /* : this */
 
     open fun prependOnceListener(
         event: Event.CLOSE,
         listener: (hadError: Boolean) -> Unit,
-    ): Socket
+    ) /* : this */
 
     open fun prependOnceListener(
         event: Event.CONNECT,
         listener: () -> Unit,
-    ): Socket
+    ) /* : this */
 
     open fun prependOnceListener(
         event: Event.DATA,
         listener: (data: Buffer) -> Unit,
-    ): Socket
+    ) /* : this */
 
     open fun prependOnceListener(
         event: Event.DRAIN,
         listener: () -> Unit,
-    ): Socket
+    ) /* : this */
 
     override fun prependOnceListener(
         event: Event.END,
         listener: () -> Unit,
-    ): Socket
+    ) /* : this */
 
     override fun prependOnceListener(
         event: Event.ERROR,
         listener: (error: Error) -> Unit,
-    ): Socket
+    ) /* : this */
 
     open fun prependOnceListener(
         event: Event.LOOKUP,
@@ -613,15 +613,15 @@ open external class Socket : Duplex {
             family: Any, /* string | number */
             host: String,
         ) -> Unit,
-    ): Socket
+    ) /* : this */
 
     open fun prependOnceListener(
         event: Event.READY,
         listener: () -> Unit,
-    ): Socket
+    ) /* : this */
 
     open fun prependOnceListener(
         event: Event.TIMEOUT,
         listener: () -> Unit,
-    ): Socket
+    ) /* : this */
 }
