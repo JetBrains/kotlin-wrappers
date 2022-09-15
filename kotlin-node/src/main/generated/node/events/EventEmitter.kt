@@ -16,31 +16,31 @@ open external class EventEmitter : IEventEmitter {
     override fun addListener(
         event: EventType,
         listener: Function<Unit>,
-    ): IEventEmitter
+    ) /* : this */
 
     override fun on(
         event: EventType,
         listener: Function<Unit>,
-    ): IEventEmitter
+    ) /* : this */
 
     override fun once(
         event: EventType,
         listener: Function<Unit>,
-    ): IEventEmitter
+    ) /* : this */
 
     override fun removeListener(
         event: EventType,
         listener: Function<Unit>,
-    ): IEventEmitter
+    ) /* : this */
 
     override fun off(
         event: EventType,
         listener: Function<Unit>,
-    ): IEventEmitter
+    ) /* : this */
 
-    override fun removeAllListeners(event: EventType): IEventEmitter
+    override fun removeAllListeners(event: EventType) /* : this */
 
-    override fun setMaxListeners(n: Number): IEventEmitter
+    override fun setMaxListeners(n: Number) /* : this */
 
     override fun getMaxListeners(): Number
 
@@ -58,12 +58,12 @@ open external class EventEmitter : IEventEmitter {
     override fun prependListener(
         event: EventType,
         listener: Function<Unit>,
-    ): IEventEmitter
+    ) /* : this */
 
     override fun prependOnceListener(
         event: EventType,
         listener: Function<Unit>,
-    ): IEventEmitter
+    ) /* : this */
 
     override fun eventNames(): ReadonlyArray<String /* | Symbol */>
 

@@ -127,22 +127,22 @@ external class MessagePort : node.events.EventEmitter {
     fun addListener(
         event: Event.CLOSE,
         listener: () -> Unit,
-    ): MessagePort
+    ) /* : this */
 
     fun addListener(
         event: Event.MESSAGE,
         listener: (value: Any) -> Unit,
-    ): MessagePort
+    ) /* : this */
 
     fun addListener(
         event: Event.MESSAGE_ERROR,
         listener: (error: Error) -> Unit,
-    ): MessagePort
+    ) /* : this */
 
     override fun addListener(
         event: EventType,
         listener: Function<Unit>,
-    ): MessagePort
+    ) /* : this */
 
     fun emit(event: Event.CLOSE): Boolean
     fun emit(
@@ -163,120 +163,120 @@ external class MessagePort : node.events.EventEmitter {
     fun on(
         event: Event.CLOSE,
         listener: () -> Unit,
-    ): MessagePort
+    ) /* : this */
 
     fun on(
         event: Event.MESSAGE,
         listener: (value: Any) -> Unit,
-    ): MessagePort
+    ) /* : this */
 
     fun on(
         event: Event.MESSAGE_ERROR,
         listener: (error: Error) -> Unit,
-    ): MessagePort
+    ) /* : this */
 
     override fun on(
         event: EventType,
         listener: Function<Unit>,
-    ): MessagePort
+    ) /* : this */
 
     fun once(
         event: Event.CLOSE,
         listener: () -> Unit,
-    ): MessagePort
+    ) /* : this */
 
     fun once(
         event: Event.MESSAGE,
         listener: (value: Any) -> Unit,
-    ): MessagePort
+    ) /* : this */
 
     fun once(
         event: Event.MESSAGE_ERROR,
         listener: (error: Error) -> Unit,
-    ): MessagePort
+    ) /* : this */
 
     override fun once(
         event: EventType,
         listener: Function<Unit>,
-    ): MessagePort
+    ) /* : this */
 
     fun prependListener(
         event: Event.CLOSE,
         listener: () -> Unit,
-    ): MessagePort
+    ) /* : this */
 
     fun prependListener(
         event: Event.MESSAGE,
         listener: (value: Any) -> Unit,
-    ): MessagePort
+    ) /* : this */
 
     fun prependListener(
         event: Event.MESSAGE_ERROR,
         listener: (error: Error) -> Unit,
-    ): MessagePort
+    ) /* : this */
 
     override fun prependListener(
         event: EventType,
         listener: Function<Unit>,
-    ): MessagePort
+    ) /* : this */
 
     fun prependOnceListener(
         event: Event.CLOSE,
         listener: () -> Unit,
-    ): MessagePort
+    ) /* : this */
 
     fun prependOnceListener(
         event: Event.MESSAGE,
         listener: (value: Any) -> Unit,
-    ): MessagePort
+    ) /* : this */
 
     fun prependOnceListener(
         event: Event.MESSAGE_ERROR,
         listener: (error: Error) -> Unit,
-    ): MessagePort
+    ) /* : this */
 
     override fun prependOnceListener(
         event: EventType,
         listener: Function<Unit>,
-    ): MessagePort
+    ) /* : this */
 
     fun removeListener(
         event: Event.CLOSE,
         listener: () -> Unit,
-    ): MessagePort
+    ) /* : this */
 
     fun removeListener(
         event: Event.MESSAGE,
         listener: (value: Any) -> Unit,
-    ): MessagePort
+    ) /* : this */
 
     fun removeListener(
         event: Event.MESSAGE_ERROR,
         listener: (error: Error) -> Unit,
-    ): MessagePort
+    ) /* : this */
 
     override fun removeListener(
         event: EventType,
         listener: Function<Unit>,
-    ): MessagePort
+    ) /* : this */
 
     fun off(
         event: Event.CLOSE,
         listener: () -> Unit,
-    ): MessagePort
+    ) /* : this */
 
     fun off(
         event: Event.MESSAGE,
         listener: (value: Any) -> Unit,
-    ): MessagePort
+    ) /* : this */
 
     fun off(
         event: Event.MESSAGE_ERROR,
         listener: (error: Error) -> Unit,
-    ): MessagePort
+    ) /* : this */
 
     override fun off(
         event: EventType,
         listener: Function<Unit>,
-    ): MessagePort
+    ) /* : this */
 }

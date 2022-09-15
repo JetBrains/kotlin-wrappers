@@ -13,7 +13,7 @@ sealed external interface CipherCCM : Cipher {
         options: {
             plaintextLength: number;
         }
-    ): CipherCCM
+    ): this
     */
     // HIDDEN METHOD END
 

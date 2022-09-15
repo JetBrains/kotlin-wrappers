@@ -61,51 +61,51 @@ open external class Server : node.events.EventEmitter {
         hostname: String = definedExternally,
         backlog: Number = definedExternally,
         listeningListener: () -> Unit = definedExternally,
-    ): Server
+    ) /* : this */
 
     open fun listen(
         port: Number = definedExternally,
         hostname: String = definedExternally,
         listeningListener: () -> Unit = definedExternally,
-    ): Server
+    ) /* : this */
 
     open fun listen(
         port: Number = definedExternally,
         backlog: Number = definedExternally,
         listeningListener: () -> Unit = definedExternally,
-    ): Server
+    ) /* : this */
 
     open fun listen(
         port: Number = definedExternally,
         listeningListener: () -> Unit = definedExternally,
-    ): Server
+    ) /* : this */
 
     open fun listen(
         path: String,
         backlog: Number = definedExternally,
         listeningListener: () -> Unit = definedExternally,
-    ): Server
+    ) /* : this */
 
     open fun listen(
         path: String,
         listeningListener: () -> Unit = definedExternally,
-    ): Server
+    ) /* : this */
 
     open fun listen(
         options: ListenOptions,
         listeningListener: () -> Unit = definedExternally,
-    ): Server
+    ) /* : this */
 
     open fun listen(
         handle: Any,
         backlog: Number = definedExternally,
         listeningListener: () -> Unit = definedExternally,
-    ): Server
+    ) /* : this */
 
     open fun listen(
         handle: Any,
         listeningListener: () -> Unit = definedExternally,
-    ): Server
+    ) /* : this */
 
     /**
      * Stops the server from accepting new connections and keeps existing
@@ -117,7 +117,7 @@ open external class Server : node.events.EventEmitter {
      * @since v0.1.90
      * @param callback Called when the server is closed.
      */
-    open fun close(callback: (error: Error?) -> Unit = definedExternally): Server
+    open fun close(callback: (error: Error?) -> Unit = definedExternally) /* : this */
 
     /**
      * Returns the bound `address`, the address `family` name, and `port` of the server
@@ -166,14 +166,14 @@ open external class Server : node.events.EventEmitter {
      * If the server is `ref`ed calling `ref()` again will have no effect.
      * @since v0.9.1
      */
-    open fun ref(): Server
+    open fun ref() /* : this */
 
     /**
      * Calling `unref()` on a server will allow the program to exit if this is the only
      * active server in the event system. If the server is already `unref`ed calling`unref()` again will have no effect.
      * @since v0.9.1
      */
-    open fun unref(): Server
+    open fun unref() /* : this */
 
     /**
      * Set this property to reject connections when the server's connection count gets
@@ -202,27 +202,27 @@ open external class Server : node.events.EventEmitter {
     override fun addListener(
         event: EventType,
         listener: Function<Unit>,
-    ): Server
+    ) /* : this */
 
     open fun addListener(
         event: Event.CLOSE,
         listener: () -> Unit,
-    ): Server
+    ) /* : this */
 
     open fun addListener(
         event: Event.CONNECTION,
         listener: (socket: Socket) -> Unit,
-    ): Server
+    ) /* : this */
 
     open fun addListener(
         event: Event.ERROR,
         listener: (error: Error) -> Unit,
-    ): Server
+    ) /* : this */
 
     open fun addListener(
         event: Event.LISTENING,
         listener: () -> Unit,
-    ): Server
+    ) /* : this */
 
     override fun emit(
         event: EventType,
@@ -244,100 +244,100 @@ open external class Server : node.events.EventEmitter {
     override fun on(
         event: EventType,
         listener: Function<Unit>,
-    ): Server
+    ) /* : this */
 
     open fun on(
         event: Event.CLOSE,
         listener: () -> Unit,
-    ): Server
+    ) /* : this */
 
     open fun on(
         event: Event.CONNECTION,
         listener: (socket: Socket) -> Unit,
-    ): Server
+    ) /* : this */
 
     open fun on(
         event: Event.ERROR,
         listener: (error: Error) -> Unit,
-    ): Server
+    ) /* : this */
 
     open fun on(
         event: Event.LISTENING,
         listener: () -> Unit,
-    ): Server
+    ) /* : this */
 
     override fun once(
         event: EventType,
         listener: Function<Unit>,
-    ): Server
+    ) /* : this */
 
     open fun once(
         event: Event.CLOSE,
         listener: () -> Unit,
-    ): Server
+    ) /* : this */
 
     open fun once(
         event: Event.CONNECTION,
         listener: (socket: Socket) -> Unit,
-    ): Server
+    ) /* : this */
 
     open fun once(
         event: Event.ERROR,
         listener: (error: Error) -> Unit,
-    ): Server
+    ) /* : this */
 
     open fun once(
         event: Event.LISTENING,
         listener: () -> Unit,
-    ): Server
+    ) /* : this */
 
     override fun prependListener(
         event: EventType,
         listener: Function<Unit>,
-    ): Server
+    ) /* : this */
 
     open fun prependListener(
         event: Event.CLOSE,
         listener: () -> Unit,
-    ): Server
+    ) /* : this */
 
     open fun prependListener(
         event: Event.CONNECTION,
         listener: (socket: Socket) -> Unit,
-    ): Server
+    ) /* : this */
 
     open fun prependListener(
         event: Event.ERROR,
         listener: (error: Error) -> Unit,
-    ): Server
+    ) /* : this */
 
     open fun prependListener(
         event: Event.LISTENING,
         listener: () -> Unit,
-    ): Server
+    ) /* : this */
 
     override fun prependOnceListener(
         event: EventType,
         listener: Function<Unit>,
-    ): Server
+    ) /* : this */
 
     open fun prependOnceListener(
         event: Event.CLOSE,
         listener: () -> Unit,
-    ): Server
+    ) /* : this */
 
     open fun prependOnceListener(
         event: Event.CONNECTION,
         listener: (socket: Socket) -> Unit,
-    ): Server
+    ) /* : this */
 
     open fun prependOnceListener(
         event: Event.ERROR,
         listener: (error: Error) -> Unit,
-    ): Server
+    ) /* : this */
 
     open fun prependOnceListener(
         event: Event.LISTENING,
         listener: () -> Unit,
-    ): Server
+    ) /* : this */
 }

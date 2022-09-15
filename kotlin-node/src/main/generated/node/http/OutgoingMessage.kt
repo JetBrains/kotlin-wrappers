@@ -53,7 +53,7 @@ open external class OutgoingMessage : Writable {
     open fun setTimeout(
         msecs: Number,
         callback: () -> Unit = definedExternally,
-    ): OutgoingMessage
+    ) /* : this */
 
     /**
      * Sets a single header value for the header object.
@@ -64,7 +64,7 @@ open external class OutgoingMessage : Writable {
     open fun setHeader(
         name: String,
         value: Any, /* number | string | ReadonlyArray<string> */
-    ): OutgoingMessage
+    ) /* : this */
 
     /**
      * Gets the value of HTTP header with the given name. If such a name doesn't

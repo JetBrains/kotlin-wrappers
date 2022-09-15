@@ -5,7 +5,7 @@ package node.crypto
 import kotlinx.js.ArrayBufferView
 
 sealed external interface DecipherGCM : Decipher {
-    fun setAuthTag(buffer: ArrayBufferView): DecipherGCM
+    fun setAuthTag(buffer: ArrayBufferView) /* : this */
 
     // HIDDEN METHOD START
     /*
@@ -14,7 +14,7 @@ sealed external interface DecipherGCM : Decipher {
         options?: {
             plaintextLength: number;
         }
-    ): DecipherGCM
+    ): this
     */
     // HIDDEN METHOD END
 

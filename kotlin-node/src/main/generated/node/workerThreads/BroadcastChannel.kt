@@ -5,12 +5,10 @@
 
 package node.workerThreads
 
-import node.RefCounted
-
 external class BroadcastChannel : IBroadcastChannel {
 
-    override fun ref(): RefCounted
-    override fun unref(): RefCounted
+    override fun ref() /* : this */
+    override fun unref() /* : this */
 
     val name: String
 

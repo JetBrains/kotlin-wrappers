@@ -13,7 +13,7 @@ sealed external interface CipherGCM : Cipher {
         options?: {
             plaintextLength: number;
         }
-    ): CipherGCM
+    ): this
     */
     // HIDDEN METHOD END
 

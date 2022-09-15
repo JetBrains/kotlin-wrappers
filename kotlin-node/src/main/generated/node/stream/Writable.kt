@@ -180,7 +180,7 @@ open external class Writable : Stream, node.WritableStream {
      * @since v0.11.15
      * @param encoding The new default encoding
      */
-    open fun setDefaultEncoding(encoding: node.buffer.BufferEncoding): Writable
+    open fun setDefaultEncoding(encoding: node.buffer.BufferEncoding) /* : this */
 
     /**
      * Calling the `writable.end()` method signals that no more data will be written
@@ -204,17 +204,17 @@ open external class Writable : Stream, node.WritableStream {
      * @param encoding The encoding if `chunk` is a string
      * @param callback Callback for when the stream is finished.
      */
-    override fun end(callback: () -> Unit): Writable
+    override fun end(callback: () -> Unit) /* : this */
     override fun end(
         chunk: Any,
         callback: () -> Unit,
-    ): Writable
+    ) /* : this */
 
     override fun end(
         str: String,
         encoding: node.buffer.BufferEncoding,
         callback: () -> Unit,
-    ): Writable
+    ) /* : this */
 
     /**
      * The `writable.cork()` method forces all written data to be buffered in memory.
@@ -283,7 +283,7 @@ open external class Writable : Stream, node.WritableStream {
      * @since v8.0.0
      * @param error Optional, an error to emit with `'error'` event.
      */
-    open fun destroy(error: Error = definedExternally): Writable
+    open fun destroy(error: Error = definedExternally) /* : this */
 
     /**
      * Event emitter
@@ -298,37 +298,37 @@ open external class Writable : Stream, node.WritableStream {
     open fun addListener(
         event: Event.CLOSE,
         listener: () -> Unit,
-    ): Writable
+    ) /* : this */
 
     open fun addListener(
         event: Event.DRAIN,
         listener: () -> Unit,
-    ): Writable
+    ) /* : this */
 
     open fun addListener(
         event: Event.ERROR,
         listener: (error: Error) -> Unit,
-    ): Writable
+    ) /* : this */
 
     open fun addListener(
         event: Event.FINISH,
         listener: () -> Unit,
-    ): Writable
+    ) /* : this */
 
     open fun addListener(
         event: Event.PIPE,
         listener: (src: Readable) -> Unit,
-    ): Writable
+    ) /* : this */
 
     open fun addListener(
         event: Event.UNPIPE,
         listener: (src: Readable) -> Unit,
-    ): Writable
+    ) /* : this */
 
     override fun addListener(
         event: EventType,
         listener: Function<Unit>,
-    ): Writable
+    ) /* : this */
 
     open fun emit(event: Event.CLOSE): Boolean
     open fun emit(event: Event.DRAIN): Boolean
@@ -356,177 +356,177 @@ open external class Writable : Stream, node.WritableStream {
     open fun on(
         event: Event.CLOSE,
         listener: () -> Unit,
-    ): Writable
+    ) /* : this */
 
     open fun on(
         event: Event.DRAIN,
         listener: () -> Unit,
-    ): Writable
+    ) /* : this */
 
     open fun on(
         event: Event.ERROR,
         listener: (error: Error) -> Unit,
-    ): Writable
+    ) /* : this */
 
     open fun on(
         event: Event.FINISH,
         listener: () -> Unit,
-    ): Writable
+    ) /* : this */
 
     open fun on(
         event: Event.PIPE,
         listener: (src: Readable) -> Unit,
-    ): Writable
+    ) /* : this */
 
     open fun on(
         event: Event.UNPIPE,
         listener: (src: Readable) -> Unit,
-    ): Writable
+    ) /* : this */
 
     override fun on(
         event: EventType,
         listener: Function<Unit>,
-    ): Writable
+    ) /* : this */
 
     open fun once(
         event: Event.CLOSE,
         listener: () -> Unit,
-    ): Writable
+    ) /* : this */
 
     open fun once(
         event: Event.DRAIN,
         listener: () -> Unit,
-    ): Writable
+    ) /* : this */
 
     open fun once(
         event: Event.ERROR,
         listener: (error: Error) -> Unit,
-    ): Writable
+    ) /* : this */
 
     open fun once(
         event: Event.FINISH,
         listener: () -> Unit,
-    ): Writable
+    ) /* : this */
 
     open fun once(
         event: Event.PIPE,
         listener: (src: Readable) -> Unit,
-    ): Writable
+    ) /* : this */
 
     open fun once(
         event: Event.UNPIPE,
         listener: (src: Readable) -> Unit,
-    ): Writable
+    ) /* : this */
 
     override fun once(
         event: EventType,
         listener: Function<Unit>,
-    ): Writable
+    ) /* : this */
 
     open fun prependListener(
         event: Event.CLOSE,
         listener: () -> Unit,
-    ): Writable
+    ) /* : this */
 
     open fun prependListener(
         event: Event.DRAIN,
         listener: () -> Unit,
-    ): Writable
+    ) /* : this */
 
     open fun prependListener(
         event: Event.ERROR,
         listener: (error: Error) -> Unit,
-    ): Writable
+    ) /* : this */
 
     open fun prependListener(
         event: Event.FINISH,
         listener: () -> Unit,
-    ): Writable
+    ) /* : this */
 
     open fun prependListener(
         event: Event.PIPE,
         listener: (src: Readable) -> Unit,
-    ): Writable
+    ) /* : this */
 
     open fun prependListener(
         event: Event.UNPIPE,
         listener: (src: Readable) -> Unit,
-    ): Writable
+    ) /* : this */
 
     override fun prependListener(
         event: EventType,
         listener: Function<Unit>,
-    ): Writable
+    ) /* : this */
 
     open fun prependOnceListener(
         event: Event.CLOSE,
         listener: () -> Unit,
-    ): Writable
+    ) /* : this */
 
     open fun prependOnceListener(
         event: Event.DRAIN,
         listener: () -> Unit,
-    ): Writable
+    ) /* : this */
 
     open fun prependOnceListener(
         event: Event.ERROR,
         listener: (error: Error) -> Unit,
-    ): Writable
+    ) /* : this */
 
     open fun prependOnceListener(
         event: Event.FINISH,
         listener: () -> Unit,
-    ): Writable
+    ) /* : this */
 
     open fun prependOnceListener(
         event: Event.PIPE,
         listener: (src: Readable) -> Unit,
-    ): Writable
+    ) /* : this */
 
     open fun prependOnceListener(
         event: Event.UNPIPE,
         listener: (src: Readable) -> Unit,
-    ): Writable
+    ) /* : this */
 
     override fun prependOnceListener(
         event: EventType,
         listener: Function<Unit>,
-    ): Writable
+    ) /* : this */
 
     open fun removeListener(
         event: Event.CLOSE,
         listener: () -> Unit,
-    ): Writable
+    ) /* : this */
 
     open fun removeListener(
         event: Event.DRAIN,
         listener: () -> Unit,
-    ): Writable
+    ) /* : this */
 
     open fun removeListener(
         event: Event.ERROR,
         listener: (error: Error) -> Unit,
-    ): Writable
+    ) /* : this */
 
     open fun removeListener(
         event: Event.FINISH,
         listener: () -> Unit,
-    ): Writable
+    ) /* : this */
 
     open fun removeListener(
         event: Event.PIPE,
         listener: (src: Readable) -> Unit,
-    ): Writable
+    ) /* : this */
 
     open fun removeListener(
         event: Event.UNPIPE,
         listener: (src: Readable) -> Unit,
-    ): Writable
+    ) /* : this */
 
     override fun removeListener(
         event: EventType,
         listener: Function<Unit>,
-    ): Writable
+    ) /* : this */
 
     companion object {
         /**

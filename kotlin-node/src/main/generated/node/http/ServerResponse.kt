@@ -112,12 +112,12 @@ external class ServerResponse : OutgoingMessage {
         statusCode: Number,
         statusMessage: String = definedExternally,
         headers: Any /* OutgoingHttpHeaders | OutgoingHttpHeader[] */ = definedExternally,
-    ): ServerResponse
+    ) /* : this */
 
     fun writeHead(
         statusCode: Number,
         headers: Any /* OutgoingHttpHeaders | OutgoingHttpHeader[] */ = definedExternally,
-    ): ServerResponse
+    ) /* : this */
 
     /**
      * Sends a HTTP/1.1 102 Processing message to the client, indicating that

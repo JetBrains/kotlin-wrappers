@@ -13,7 +13,7 @@ sealed external interface CipherOCB : Cipher {
         options?: {
             plaintextLength: number;
         }
-    ): CipherOCB
+    ): this
     */
     // HIDDEN METHOD END
 

@@ -43,250 +43,250 @@ external class ReadStream : Readable {
     override fun addListener(
         event: Event.CLOSE,
         listener: () -> Unit,
-    ): ReadStream
+    ) /* : this */
 
     fun addListener(
         event: Event.DATA,
         listener: Any, /* (chunk: Any /* Buffer | string */) -> Unit */
-    ): ReadStream
+    ) /* : this */
 
     override fun addListener(
         event: Event.END,
         listener: () -> Unit,
-    ): ReadStream
+    ) /* : this */
 
     override fun addListener(
         event: Event.ERROR,
         listener: (error: Error) -> Unit,
-    ): ReadStream
+    ) /* : this */
 
     fun addListener(
         event: Event.OPEN,
         listener: (fd: Number) -> Unit,
-    ): ReadStream
+    ) /* : this */
 
     override fun addListener(
         event: Event.PAUSE,
         listener: () -> Unit,
-    ): ReadStream
+    ) /* : this */
 
     override fun addListener(
         event: Event.READABLE,
         listener: () -> Unit,
-    ): ReadStream
+    ) /* : this */
 
     fun addListener(
         event: Event.READY,
         listener: () -> Unit,
-    ): ReadStream
+    ) /* : this */
 
     override fun addListener(
         event: Event.RESUME,
         listener: () -> Unit,
-    ): ReadStream
+    ) /* : this */
 
     override fun addListener(
         event: EventType,
         listener: Function<Unit>,
-    ): ReadStream
+    ) /* : this */
 
     override fun on(
         event: Event.CLOSE,
         listener: () -> Unit,
-    ): ReadStream
+    ) /* : this */
 
     fun on(
         event: Event.DATA,
         listener: Any, /* (chunk: Any /* Buffer | string */) -> Unit */
-    ): ReadStream
+    ) /* : this */
 
     override fun on(
         event: Event.END,
         listener: () -> Unit,
-    ): ReadStream
+    ) /* : this */
 
     override fun on(
         event: Event.ERROR,
         listener: (error: Error) -> Unit,
-    ): ReadStream
+    ) /* : this */
 
     fun on(
         event: Event.OPEN,
         listener: (fd: Number) -> Unit,
-    ): ReadStream
+    ) /* : this */
 
     override fun on(
         event: Event.PAUSE,
         listener: () -> Unit,
-    ): ReadStream
+    ) /* : this */
 
     override fun on(
         event: Event.READABLE,
         listener: () -> Unit,
-    ): ReadStream
+    ) /* : this */
 
     fun on(
         event: Event.READY,
         listener: () -> Unit,
-    ): ReadStream
+    ) /* : this */
 
     override fun on(
         event: Event.RESUME,
         listener: () -> Unit,
-    ): ReadStream
+    ) /* : this */
 
     override fun on(
         event: EventType,
         listener: Function<Unit>,
-    ): ReadStream
+    ) /* : this */
 
     override fun once(
         event: Event.CLOSE,
         listener: () -> Unit,
-    ): ReadStream
+    ) /* : this */
 
     fun once(
         event: Event.DATA,
         listener: Any, /* (chunk: Any /* Buffer | string */) -> Unit */
-    ): ReadStream
+    ) /* : this */
 
     override fun once(
         event: Event.END,
         listener: () -> Unit,
-    ): ReadStream
+    ) /* : this */
 
     override fun once(
         event: Event.ERROR,
         listener: (error: Error) -> Unit,
-    ): ReadStream
+    ) /* : this */
 
     fun once(
         event: Event.OPEN,
         listener: (fd: Number) -> Unit,
-    ): ReadStream
+    ) /* : this */
 
     override fun once(
         event: Event.PAUSE,
         listener: () -> Unit,
-    ): ReadStream
+    ) /* : this */
 
     override fun once(
         event: Event.READABLE,
         listener: () -> Unit,
-    ): ReadStream
+    ) /* : this */
 
     fun once(
         event: Event.READY,
         listener: () -> Unit,
-    ): ReadStream
+    ) /* : this */
 
     override fun once(
         event: Event.RESUME,
         listener: () -> Unit,
-    ): ReadStream
+    ) /* : this */
 
     override fun once(
         event: EventType,
         listener: Function<Unit>,
-    ): ReadStream
+    ) /* : this */
 
     override fun prependListener(
         event: Event.CLOSE,
         listener: () -> Unit,
-    ): ReadStream
+    ) /* : this */
 
     fun prependListener(
         event: Event.DATA,
         listener: Any, /* (chunk: Any /* Buffer | string */) -> Unit */
-    ): ReadStream
+    ) /* : this */
 
     override fun prependListener(
         event: Event.END,
         listener: () -> Unit,
-    ): ReadStream
+    ) /* : this */
 
     override fun prependListener(
         event: Event.ERROR,
         listener: (error: Error) -> Unit,
-    ): ReadStream
+    ) /* : this */
 
     fun prependListener(
         event: Event.OPEN,
         listener: (fd: Number) -> Unit,
-    ): ReadStream
+    ) /* : this */
 
     override fun prependListener(
         event: Event.PAUSE,
         listener: () -> Unit,
-    ): ReadStream
+    ) /* : this */
 
     override fun prependListener(
         event: Event.READABLE,
         listener: () -> Unit,
-    ): ReadStream
+    ) /* : this */
 
     fun prependListener(
         event: Event.READY,
         listener: () -> Unit,
-    ): ReadStream
+    ) /* : this */
 
     override fun prependListener(
         event: Event.RESUME,
         listener: () -> Unit,
-    ): ReadStream
+    ) /* : this */
 
     override fun prependListener(
         event: EventType,
         listener: Function<Unit>,
-    ): ReadStream
+    ) /* : this */
 
     override fun prependOnceListener(
         event: Event.CLOSE,
         listener: () -> Unit,
-    ): ReadStream
+    ) /* : this */
 
     fun prependOnceListener(
         event: Event.DATA,
         listener: Any, /* (chunk: Any /* Buffer | string */) -> Unit */
-    ): ReadStream
+    ) /* : this */
 
     override fun prependOnceListener(
         event: Event.END,
         listener: () -> Unit,
-    ): ReadStream
+    ) /* : this */
 
     override fun prependOnceListener(
         event: Event.ERROR,
         listener: (error: Error) -> Unit,
-    ): ReadStream
+    ) /* : this */
 
     fun prependOnceListener(
         event: Event.OPEN,
         listener: (fd: Number) -> Unit,
-    ): ReadStream
+    ) /* : this */
 
     override fun prependOnceListener(
         event: Event.PAUSE,
         listener: () -> Unit,
-    ): ReadStream
+    ) /* : this */
 
     override fun prependOnceListener(
         event: Event.READABLE,
         listener: () -> Unit,
-    ): ReadStream
+    ) /* : this */
 
     fun prependOnceListener(
         event: Event.READY,
         listener: () -> Unit,
-    ): ReadStream
+    ) /* : this */
 
     override fun prependOnceListener(
         event: Event.RESUME,
         listener: () -> Unit,
-    ): ReadStream
+    ) /* : this */
 
     override fun prependOnceListener(
         event: EventType,
         listener: Function<Unit>,
-    ): ReadStream
+    ) /* : this */
 }

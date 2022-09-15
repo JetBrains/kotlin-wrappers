@@ -12,7 +12,7 @@ external interface IEventEmitter {
     fun addListener(
         event: EventType,
         listener: Function<Unit>,
-    ): IEventEmitter
+    ) /* : this */
 
     /**
      * Adds the `listener` function to the end of the listeners array for the
@@ -47,7 +47,7 @@ external interface IEventEmitter {
     fun on(
         event: EventType,
         listener: Function<Unit>,
-    ): IEventEmitter
+    ) /* : this */
 
     /**
      * Adds a **one-time**`listener` function for the event named `eventName`. The
@@ -80,7 +80,7 @@ external interface IEventEmitter {
     fun once(
         event: EventType,
         listener: Function<Unit>,
-    ): IEventEmitter
+    ) /* : this */
 
     /**
      * Removes the specified `listener` from the listener array for the event named`eventName`.
@@ -164,7 +164,7 @@ external interface IEventEmitter {
     fun removeListener(
         event: EventType,
         listener: Function<Unit>,
-    ): IEventEmitter
+    ) /* : this */
 
     /**
      * Alias for `emitter.removeListener()`.
@@ -173,7 +173,7 @@ external interface IEventEmitter {
     fun off(
         event: EventType,
         listener: Function<Unit>,
-    ): IEventEmitter
+    ) /* : this */
 
     /**
      * Removes all listeners, or those of the specified `eventName`.
@@ -185,7 +185,7 @@ external interface IEventEmitter {
      * Returns a reference to the `EventEmitter`, so that calls can be chained.
      * @since v0.1.26
      */
-    fun removeAllListeners(event: EventType = definedExternally): IEventEmitter
+    fun removeAllListeners(event: EventType = definedExternally) /* : this */
 
     /**
      * By default `EventEmitter`s will print a warning if more than `10` listeners are
@@ -196,7 +196,7 @@ external interface IEventEmitter {
      * Returns a reference to the `EventEmitter`, so that calls can be chained.
      * @since v0.3.5
      */
-    fun setMaxListeners(n: Number): IEventEmitter
+    fun setMaxListeners(n: Number) /* : this */
 
     /**
      * Returns the current max listener value for the `EventEmitter` which is either
@@ -322,7 +322,7 @@ external interface IEventEmitter {
     fun prependListener(
         event: EventType,
         listener: Function<Unit>,
-    ): IEventEmitter
+    ) /* : this */
 
     /**
      * Adds a **one-time**`listener` function for the event named `eventName` to the _beginning_ of the listeners array. The next time `eventName` is triggered, this
@@ -342,7 +342,7 @@ external interface IEventEmitter {
     fun prependOnceListener(
         event: EventType,
         listener: Function<Unit>,
-    ): IEventEmitter
+    ) /* : this */
 
     /**
      * Returns an array listing the events for which the emitter has registered

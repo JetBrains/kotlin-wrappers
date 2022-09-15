@@ -488,7 +488,7 @@ external class ChildProcess : node.events.EventEmitter {
     override fun addListener(
         event: EventType,
         listener: Function<Unit>,
-    ): ChildProcess
+    ) /* : this */
 
     fun addListener(
         event: Event.CLOSE,
@@ -496,17 +496,17 @@ external class ChildProcess : node.events.EventEmitter {
             code: Number?,
             signal: Signals?,
         ) -> Unit,
-    ): ChildProcess
+    ) /* : this */
 
     fun addListener(
         event: Event.DISCONNECT,
         listener: () -> Unit,
-    ): ChildProcess
+    ) /* : this */
 
     fun addListener(
         event: Event.ERROR,
         listener: (error: Error) -> Unit,
-    ): ChildProcess
+    ) /* : this */
 
     fun addListener(
         event: Event.EXIT,
@@ -514,7 +514,7 @@ external class ChildProcess : node.events.EventEmitter {
             code: Number?,
             signal: Signals?,
         ) -> Unit,
-    ): ChildProcess
+    ) /* : this */
 
     fun addListener(
         event: Event.MESSAGE,
@@ -522,12 +522,12 @@ external class ChildProcess : node.events.EventEmitter {
             message: Serializable,
             sendHandle: SendHandle,
         ) -> Unit,
-    ): ChildProcess
+    ) /* : this */
 
     fun addListener(
         event: Event.SPAWN,
         listener: () -> Unit,
-    ): ChildProcess
+    ) /* : this */
 
     override fun emit(
         event: EventType,
@@ -566,7 +566,7 @@ external class ChildProcess : node.events.EventEmitter {
     override fun on(
         event: EventType,
         listener: Function<Unit>,
-    ): ChildProcess
+    ) /* : this */
 
     fun on(
         event: Event.CLOSE,
@@ -574,17 +574,17 @@ external class ChildProcess : node.events.EventEmitter {
             code: Number?,
             signal: Signals?,
         ) -> Unit,
-    ): ChildProcess
+    ) /* : this */
 
     fun on(
         event: Event.DISCONNECT,
         listener: () -> Unit,
-    ): ChildProcess
+    ) /* : this */
 
     fun on(
         event: Event.ERROR,
         listener: (error: Error) -> Unit,
-    ): ChildProcess
+    ) /* : this */
 
     fun on(
         event: Event.EXIT,
@@ -592,7 +592,7 @@ external class ChildProcess : node.events.EventEmitter {
             code: Number?,
             signal: Signals?,
         ) -> Unit,
-    ): ChildProcess
+    ) /* : this */
 
     fun on(
         event: Event.MESSAGE,
@@ -600,17 +600,17 @@ external class ChildProcess : node.events.EventEmitter {
             message: Serializable,
             sendHandle: SendHandle,
         ) -> Unit,
-    ): ChildProcess
+    ) /* : this */
 
     fun on(
         event: Event.SPAWN,
         listener: () -> Unit,
-    ): ChildProcess
+    ) /* : this */
 
     override fun once(
         event: EventType,
         listener: Function<Unit>,
-    ): ChildProcess
+    ) /* : this */
 
     fun once(
         event: Event.CLOSE,
@@ -618,17 +618,17 @@ external class ChildProcess : node.events.EventEmitter {
             code: Number?,
             signal: Signals?,
         ) -> Unit,
-    ): ChildProcess
+    ) /* : this */
 
     fun once(
         event: Event.DISCONNECT,
         listener: () -> Unit,
-    ): ChildProcess
+    ) /* : this */
 
     fun once(
         event: Event.ERROR,
         listener: (error: Error) -> Unit,
-    ): ChildProcess
+    ) /* : this */
 
     fun once(
         event: Event.EXIT,
@@ -636,7 +636,7 @@ external class ChildProcess : node.events.EventEmitter {
             code: Number?,
             signal: Signals?,
         ) -> Unit,
-    ): ChildProcess
+    ) /* : this */
 
     fun once(
         event: Event.MESSAGE,
@@ -644,17 +644,17 @@ external class ChildProcess : node.events.EventEmitter {
             message: Serializable,
             sendHandle: SendHandle,
         ) -> Unit,
-    ): ChildProcess
+    ) /* : this */
 
     fun once(
         event: Event.SPAWN,
         listener: () -> Unit,
-    ): ChildProcess
+    ) /* : this */
 
     override fun prependListener(
         event: EventType,
         listener: Function<Unit>,
-    ): ChildProcess
+    ) /* : this */
 
     fun prependListener(
         event: Event.CLOSE,
@@ -662,17 +662,17 @@ external class ChildProcess : node.events.EventEmitter {
             code: Number?,
             signal: Signals?,
         ) -> Unit,
-    ): ChildProcess
+    ) /* : this */
 
     fun prependListener(
         event: Event.DISCONNECT,
         listener: () -> Unit,
-    ): ChildProcess
+    ) /* : this */
 
     fun prependListener(
         event: Event.ERROR,
         listener: (error: Error) -> Unit,
-    ): ChildProcess
+    ) /* : this */
 
     fun prependListener(
         event: Event.EXIT,
@@ -680,7 +680,7 @@ external class ChildProcess : node.events.EventEmitter {
             code: Number?,
             signal: Signals?,
         ) -> Unit,
-    ): ChildProcess
+    ) /* : this */
 
     fun prependListener(
         event: Event.MESSAGE,
@@ -688,17 +688,17 @@ external class ChildProcess : node.events.EventEmitter {
             message: Serializable,
             sendHandle: SendHandle,
         ) -> Unit,
-    ): ChildProcess
+    ) /* : this */
 
     fun prependListener(
         event: Event.SPAWN,
         listener: () -> Unit,
-    ): ChildProcess
+    ) /* : this */
 
     override fun prependOnceListener(
         event: EventType,
         listener: Function<Unit>,
-    ): ChildProcess
+    ) /* : this */
 
     fun prependOnceListener(
         event: Event.CLOSE,
@@ -706,17 +706,17 @@ external class ChildProcess : node.events.EventEmitter {
             code: Number?,
             signal: Signals?,
         ) -> Unit,
-    ): ChildProcess
+    ) /* : this */
 
     fun prependOnceListener(
         event: Event.DISCONNECT,
         listener: () -> Unit,
-    ): ChildProcess
+    ) /* : this */
 
     fun prependOnceListener(
         event: Event.ERROR,
         listener: (error: Error) -> Unit,
-    ): ChildProcess
+    ) /* : this */
 
     fun prependOnceListener(
         event: Event.EXIT,
@@ -724,7 +724,7 @@ external class ChildProcess : node.events.EventEmitter {
             code: Number?,
             signal: Signals?,
         ) -> Unit,
-    ): ChildProcess
+    ) /* : this */
 
     fun prependOnceListener(
         event: Event.MESSAGE,
@@ -732,10 +732,10 @@ external class ChildProcess : node.events.EventEmitter {
             message: Serializable,
             sendHandle: SendHandle,
         ) -> Unit,
-    ): ChildProcess
+    ) /* : this */
 
     fun prependOnceListener(
         event: Event.SPAWN,
         listener: () -> Unit,
-    ): ChildProcess
+    ) /* : this */
 }
