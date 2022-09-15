@@ -11,11 +11,14 @@ import node.events.EventType
 import node.net.Socket
 import node.stream.Duplex
 
-open external class Server : node.net.Server {
-    constructor(requestListener: RequestListener = definedExternally)
+open external class Server<
+        Request : IncomingMessage,
+        Response : ServerResponse<*>,
+        > : node.net.Server {
+    constructor(requestListener: RequestListener<Request, Response> = definedExternally)
     constructor(
-        options: ServerOptions,
-        requestListener: RequestListener = definedExternally,
+        options: ServerOptions<Request, Response>,
+        requestListener: RequestListener<Request, Response> = definedExternally,
     )
 
     /**
@@ -153,12 +156,12 @@ open external class Server : node.net.Server {
 
     open fun addListener(
         event: Event.CHECK_CONTINUE,
-        listener: RequestListener,
+        listener: RequestListener<Request, Response>,
     ) /* : this */
 
     open fun addListener(
         event: Event.CHECK_EXPECTATION,
-        listener: RequestListener,
+        listener: RequestListener<Request, Response>,
     ) /* : this */
 
     open fun addListener(
@@ -172,7 +175,7 @@ open external class Server : node.net.Server {
     open fun addListener(
         event: Event.CONNECT,
         listener: (
-            req: IncomingMessage,
+            req: Request,
             socket: Duplex,
             head: Buffer,
         ) -> Unit,
@@ -180,13 +183,13 @@ open external class Server : node.net.Server {
 
     open fun addListener(
         event: Event.REQUEST,
-        listener: RequestListener,
+        listener: RequestListener<Request, Response>,
     ) /* : this */
 
     open fun addListener(
         event: Event.UPGRADE,
         listener: (
-            req: IncomingMessage,
+            req: Request,
             socket: Duplex,
             head: Buffer,
         ) -> Unit,
@@ -211,14 +214,14 @@ open external class Server : node.net.Server {
     override fun emit(event: Event.LISTENING): Boolean
     open fun emit(
         event: Event.CHECK_CONTINUE,
-        req: IncomingMessage,
-        res: ServerResponse,
+        req: Request,
+        res: Response,
     ): Boolean
 
     open fun emit(
         event: Event.CHECK_EXPECTATION,
-        req: IncomingMessage,
-        res: ServerResponse,
+        req: Request,
+        res: Response,
     ): Boolean
 
     open fun emit(
@@ -229,20 +232,20 @@ open external class Server : node.net.Server {
 
     open fun emit(
         event: Event.CONNECT,
-        req: IncomingMessage,
+        req: Request,
         socket: Duplex,
         head: Buffer,
     ): Boolean
 
     open fun emit(
         event: Event.REQUEST,
-        req: IncomingMessage,
-        res: ServerResponse,
+        req: Request,
+        res: Response,
     ): Boolean
 
     open fun emit(
         event: Event.UPGRADE,
-        req: IncomingMessage,
+        req: Request,
         socket: Duplex,
         head: Buffer,
     ): Boolean
@@ -274,12 +277,12 @@ open external class Server : node.net.Server {
 
     open fun on(
         event: Event.CHECK_CONTINUE,
-        listener: RequestListener,
+        listener: RequestListener<Request, Response>,
     ) /* : this */
 
     open fun on(
         event: Event.CHECK_EXPECTATION,
-        listener: RequestListener,
+        listener: RequestListener<Request, Response>,
     ) /* : this */
 
     open fun on(
@@ -293,7 +296,7 @@ open external class Server : node.net.Server {
     open fun on(
         event: Event.CONNECT,
         listener: (
-            req: IncomingMessage,
+            req: Request,
             socket: Duplex,
             head: Buffer,
         ) -> Unit,
@@ -301,13 +304,13 @@ open external class Server : node.net.Server {
 
     open fun on(
         event: Event.REQUEST,
-        listener: RequestListener,
+        listener: RequestListener<Request, Response>,
     ) /* : this */
 
     open fun on(
         event: Event.UPGRADE,
         listener: (
-            req: IncomingMessage,
+            req: Request,
             socket: Duplex,
             head: Buffer,
         ) -> Unit,
@@ -340,12 +343,12 @@ open external class Server : node.net.Server {
 
     open fun once(
         event: Event.CHECK_CONTINUE,
-        listener: RequestListener,
+        listener: RequestListener<Request, Response>,
     ) /* : this */
 
     open fun once(
         event: Event.CHECK_EXPECTATION,
-        listener: RequestListener,
+        listener: RequestListener<Request, Response>,
     ) /* : this */
 
     open fun once(
@@ -359,7 +362,7 @@ open external class Server : node.net.Server {
     open fun once(
         event: Event.CONNECT,
         listener: (
-            req: IncomingMessage,
+            req: Request,
             socket: Duplex,
             head: Buffer,
         ) -> Unit,
@@ -367,13 +370,13 @@ open external class Server : node.net.Server {
 
     open fun once(
         event: Event.REQUEST,
-        listener: RequestListener,
+        listener: RequestListener<Request, Response>,
     ) /* : this */
 
     open fun once(
         event: Event.UPGRADE,
         listener: (
-            req: IncomingMessage,
+            req: Request,
             socket: Duplex,
             head: Buffer,
         ) -> Unit,
@@ -406,12 +409,12 @@ open external class Server : node.net.Server {
 
     open fun prependListener(
         event: Event.CHECK_CONTINUE,
-        listener: RequestListener,
+        listener: RequestListener<Request, Response>,
     ) /* : this */
 
     open fun prependListener(
         event: Event.CHECK_EXPECTATION,
-        listener: RequestListener,
+        listener: RequestListener<Request, Response>,
     ) /* : this */
 
     open fun prependListener(
@@ -425,7 +428,7 @@ open external class Server : node.net.Server {
     open fun prependListener(
         event: Event.CONNECT,
         listener: (
-            req: IncomingMessage,
+            req: Request,
             socket: Duplex,
             head: Buffer,
         ) -> Unit,
@@ -433,13 +436,13 @@ open external class Server : node.net.Server {
 
     open fun prependListener(
         event: Event.REQUEST,
-        listener: RequestListener,
+        listener: RequestListener<Request, Response>,
     ) /* : this */
 
     open fun prependListener(
         event: Event.UPGRADE,
         listener: (
-            req: IncomingMessage,
+            req: Request,
             socket: Duplex,
             head: Buffer,
         ) -> Unit,
@@ -472,12 +475,12 @@ open external class Server : node.net.Server {
 
     open fun prependOnceListener(
         event: Event.CHECK_CONTINUE,
-        listener: RequestListener,
+        listener: RequestListener<Request, Response>,
     ) /* : this */
 
     open fun prependOnceListener(
         event: Event.CHECK_EXPECTATION,
-        listener: RequestListener,
+        listener: RequestListener<Request, Response>,
     ) /* : this */
 
     open fun prependOnceListener(
@@ -491,7 +494,7 @@ open external class Server : node.net.Server {
     open fun prependOnceListener(
         event: Event.CONNECT,
         listener: (
-            req: IncomingMessage,
+            req: Request,
             socket: Duplex,
             head: Buffer,
         ) -> Unit,
@@ -499,13 +502,13 @@ open external class Server : node.net.Server {
 
     open fun prependOnceListener(
         event: Event.REQUEST,
-        listener: RequestListener,
+        listener: RequestListener<Request, Response>,
     ) /* : this */
 
     open fun prependOnceListener(
         event: Event.UPGRADE,
         listener: (
-            req: IncomingMessage,
+            req: Request,
             socket: Duplex,
             head: Buffer,
         ) -> Unit,

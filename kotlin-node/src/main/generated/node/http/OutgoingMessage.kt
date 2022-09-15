@@ -9,8 +9,8 @@ import kotlinx.js.ReadonlyArray
 import node.net.Socket
 import node.stream.Writable
 
-open external class OutgoingMessage : Writable {
-    open val req: IncomingMessage
+open external class OutgoingMessage<Request : IncomingMessage> : Writable {
+    open val req: Request
     open var chunkedEncoding: Boolean
     open var shouldKeepAlive: Boolean
     open var useChunkedEncodingByDefault: Boolean

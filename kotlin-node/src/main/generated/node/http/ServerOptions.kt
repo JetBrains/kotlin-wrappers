@@ -2,9 +2,12 @@
 
 package node.http
 
-sealed external interface ServerOptions {
-    var IncomingMessage: JsClass<IncomingMessage>?
-    var ServerResponse: JsClass<ServerResponse>?
+sealed external interface ServerOptions<
+        Request : IncomingMessage,
+        Response : ServerResponse<*>,
+        > {
+    var IncomingMessage: JsClass<Request>?
+    var ServerResponse: JsClass<Response>?
 
     /**
      * Optionally overrides the value of
