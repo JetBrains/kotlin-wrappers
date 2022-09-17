@@ -6,7 +6,7 @@
 
 package tanstack.table.core
 
-import kotlinx.js.Record
+import kotlinx.js.ReadonlyRecord
 
 sealed external interface ExpandedState /* true | Record<string, boolean> */
 
@@ -16,6 +16,6 @@ inline fun ExpandedState(
     source.unsafeCast<ExpandedState>()
 
 inline fun ExpandedState(
-    source: Record<String, Boolean>,
+    source: ReadonlyRecord<String, Boolean>,
 ): ExpandedState =
     source.unsafeCast<ExpandedState>()

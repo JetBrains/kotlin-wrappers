@@ -2,6 +2,6 @@
 
 package tanstack.table.core
 
-import kotlinx.js.Record
+import kotlinx.js.ReadonlyRecord
 
-typealias RowSelectionState = Record<String, Boolean>
+typealias RowSelectionState = ReadonlyRecord<String, Boolean>

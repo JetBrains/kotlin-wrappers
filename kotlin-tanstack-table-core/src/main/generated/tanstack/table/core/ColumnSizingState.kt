@@ -2,6 +2,6 @@
 
 package tanstack.table.core
 
-import kotlinx.js.Record
+import kotlinx.js.ReadonlyRecord
 
-typealias ColumnSizingState = Record<String, Int>
+typealias ColumnSizingState = ReadonlyRecord<String, Int>
