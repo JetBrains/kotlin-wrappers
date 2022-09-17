@@ -1,7 +1,4 @@
-package kotlinx
-
-import kotlinx.js.JsIterable
-import kotlinx.js.JsIterator
+package kotlinx.js
 
 @JsName("Array")
 sealed external class JsArray {
