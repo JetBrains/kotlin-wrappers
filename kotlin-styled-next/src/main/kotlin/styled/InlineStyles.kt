@@ -1,6 +1,7 @@
 package styled
 
 import kotlinext.js.js
+import kotlinx.JsArray
 import kotlinx.css.CssDeclarations
 import kotlinx.css.StyledElement
 import kotlinx.css.hyphenize
@@ -20,9 +21,6 @@ fun RDOMBuilder<*>.inlineStyles(prefix: Boolean = true, preserveExisting: Boolea
         setProp("style", newStyle)
     }
 }
-
-@JsName("Array")
-private external class JsArray
 
 fun StyledElement.toStyle(prefix: Boolean = true): Any {
     val res = declarations.mapToObj()
