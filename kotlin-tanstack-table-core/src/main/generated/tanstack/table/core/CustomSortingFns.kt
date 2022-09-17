@@ -2,6 +2,6 @@
 
 package tanstack.table.core
 
-import kotlinx.js.Record
+import kotlinx.js.ReadonlyRecord
 
-typealias CustomSortingFns<TData /* : RowData */> = Record<String, SortingFn<TData>>
+typealias CustomSortingFns<TData /* : RowData */> = ReadonlyRecord<String, SortingFn<TData>>

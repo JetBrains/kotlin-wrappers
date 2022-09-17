@@ -5,10 +5,10 @@
 
 package tanstack.table.core
 
-import kotlinx.js.Record
+import kotlinx.js.ReadonlyRecord
 
 external fun <TData : RowData> isSubRowSelected(
     row: Row<TData>,
-    selection: Record<String, Boolean>,
+    selection: ReadonlyRecord<String, Boolean>,
     table: Table<TData>,
 ): Any /* Boolean | 'some' | 'all' */

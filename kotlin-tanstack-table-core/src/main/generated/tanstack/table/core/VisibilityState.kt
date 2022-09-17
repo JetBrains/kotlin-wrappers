@@ -2,6 +2,6 @@
 
 package tanstack.table.core
 
-import kotlinx.js.Record
+import kotlinx.js.ReadonlyRecord
 
-typealias VisibilityState = Record<String, Boolean>
+typealias VisibilityState = ReadonlyRecord<String, Boolean>

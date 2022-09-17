@@ -2,6 +2,6 @@
 
 package tanstack.table.core
 
-import kotlinx.js.Record
+import kotlinx.js.ReadonlyRecord
 
-typealias ExpandedStateList = Record<String, Boolean>
+typealias ExpandedStateList = ReadonlyRecord<String, Boolean>

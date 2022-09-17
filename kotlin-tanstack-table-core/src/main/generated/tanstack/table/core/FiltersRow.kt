@@ -2,9 +2,9 @@
 
 package tanstack.table.core
 
-import kotlinx.js.Record
+import kotlinx.js.ReadonlyRecord
 
 external interface FiltersRow<TData : RowData> {
-    var columnFilters: Record<String, Boolean>
-    var columnFiltersMeta: Record<String, FilterMeta>
+    var columnFilters: ReadonlyRecord<String, Boolean>
+    var columnFiltersMeta: ReadonlyRecord<String, FilterMeta>
 }

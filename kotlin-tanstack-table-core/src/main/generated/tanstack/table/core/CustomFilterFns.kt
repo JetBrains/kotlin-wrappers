@@ -2,6 +2,6 @@
 
 package tanstack.table.core
 
-import kotlinx.js.Record
+import kotlinx.js.ReadonlyRecord
 
-typealias CustomFilterFns<TData /* : RowData */> = Record<String, FilterFn<TData>>
+typealias CustomFilterFns<TData /* : RowData */> = ReadonlyRecord<String, FilterFn<TData>>
