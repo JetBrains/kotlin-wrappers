@@ -2,4 +2,4 @@
 
 package node.url
 
-typealias URL = org.w3c.dom.url.URL
+typealias URL = kotlinx.js.URL

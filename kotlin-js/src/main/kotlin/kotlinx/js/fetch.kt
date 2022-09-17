@@ -1,7 +1,6 @@
 package kotlinx.js
 
 import kotlinx.coroutines.suspendCancellableCoroutine
-import org.w3c.dom.url.URL
 import org.w3c.fetch.Response
 import kotlin.coroutines.resume
 import kotlin.coroutines.resumeWithException
