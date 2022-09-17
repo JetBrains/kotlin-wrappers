@@ -10,6 +10,7 @@ package mui.system
  * Demos:
  *
  * - [Stack (Material UI)](https://mui.com/material-ui/react-stack/)
+ * - [Stack (MUI System)](https://mui.com/system/react-stack/)
  *
  * API:
  *
