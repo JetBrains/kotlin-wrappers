@@ -2,7 +2,7 @@
 
 package cesium
 
-import kotlinx.js.Record
+import kotlinx.js.ReadonlyRecord
 
 /**
  * @property [kml] The generated KML.
@@ -10,5 +10,5 @@ import kotlinx.js.Record
  */
 external interface exportKmlResultKml {
     var kml: String
-    var externalFiles: Record<String, org.w3c.files.Blob>
+    var externalFiles: ReadonlyRecord<String, org.w3c.files.Blob>
 }

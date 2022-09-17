@@ -9,7 +9,7 @@
 
 package cesium
 
-import kotlinx.js.Record
+import kotlinx.js.ReadonlyRecord
 
 /**
  * A user defined GLSL shader used with [Model] as well
@@ -78,8 +78,8 @@ external class CustomShader(options: ConstructorOptions) {
         var mode: CustomShaderMode?
         var lightingModel: LightingModel?
         var translucencyMode: CustomShaderTranslucencyMode?
-        var uniforms: Record<String, UniformSpecifier>?
-        var varyings: Record<String, VaryingType>?
+        var uniforms: ReadonlyRecord<String, UniformSpecifier>?
+        var varyings: ReadonlyRecord<String, VaryingType>?
         var vertexShaderText: String?
         var fragmentShaderText: String?
     }
@@ -102,14 +102,14 @@ external class CustomShader(options: ConstructorOptions) {
      * Additional uniforms as declared by the user.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CustomShader.html#uniforms">Online Documentation</a>
      */
-    val uniforms: Record<String, UniformSpecifier>
+    val uniforms: ReadonlyRecord<String, UniformSpecifier>
 
     /**
      * Additional varyings as declared by the user.
      * This is used by [CustomShaderPipelineStage]
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CustomShader.html#varyings">Online Documentation</a>
      */
-    val varyings: Record<String, VaryingType>
+    val varyings: ReadonlyRecord<String, VaryingType>
 
     /**
      * The user-defined GLSL code for the vertex shader
