@@ -7,7 +7,8 @@ sealed external interface LengthType :
     Bleed,
     GridLength,
     LengthProperty,
-    LineWidth {
+    LineWidth,
+    ShapeRadius {
 
     sealed interface Auto :
         AutoLength,
