@@ -1,27 +1,12 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
     "NOTHING_TO_INLINE",
 )
 
 package csstype
 
-// language=JavaScript
-@JsName("""(/*union*/{bottom: 'bottom', center: 'center', left: 'left', right: 'right', top: 'top'}/*union*/)""")
-sealed external interface TransformOrigin {
-
-    interface OffsetKeyword : TransformOrigin
-
-    companion object {
-        val bottom: OffsetKeyword
-        val center: OffsetKeyword
-        val left: OffsetKeyword
-        val right: OffsetKeyword
-        val top: OffsetKeyword
-    }
-}
+sealed external interface TransformOrigin
 
 inline fun TransformOrigin(
     xOffset: Length,
@@ -30,14 +15,14 @@ inline fun TransformOrigin(
     "$xOffset $yOffset".unsafeCast<TransformOrigin>()
 
 inline fun TransformOrigin(
-    xOffsetKeyword: TransformOrigin.OffsetKeyword,
+    xOffsetKeyword: GeometryPosition,
     yOffset: Length,
 ): TransformOrigin =
     "$xOffsetKeyword $yOffset".unsafeCast<TransformOrigin>()
 
 inline fun TransformOrigin(
-    xOffsetKeyword: TransformOrigin.OffsetKeyword,
-    yOffsetKeyword: TransformOrigin.OffsetKeyword,
+    xOffsetKeyword: GeometryPosition,
+    yOffsetKeyword: GeometryPosition,
 ): TransformOrigin =
     "$xOffsetKeyword $yOffsetKeyword".unsafeCast<TransformOrigin>()
 
@@ -49,15 +34,15 @@ inline fun TransformOrigin(
     "$xOffset $yOffset $zOffset".unsafeCast<TransformOrigin>()
 
 inline fun TransformOrigin(
-    xOffsetKeyword: TransformOrigin.OffsetKeyword,
+    xOffsetKeyword: GeometryPosition,
     yOffset: Length,
     zOffset: Length,
 ): TransformOrigin =
     "$xOffsetKeyword $yOffset $zOffset".unsafeCast<TransformOrigin>()
 
 inline fun TransformOrigin(
-    xOffsetKeyword: TransformOrigin.OffsetKeyword,
-    yOffsetKeyword: TransformOrigin.OffsetKeyword,
+    xOffsetKeyword: GeometryPosition,
+    yOffsetKeyword: GeometryPosition,
     zOffset: Length,
 ): TransformOrigin =
     "$xOffsetKeyword $yOffsetKeyword $zOffset".unsafeCast<TransformOrigin>()
