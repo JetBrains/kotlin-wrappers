@@ -105,3 +105,8 @@ inline fun inset(
     borderRadius: Length,
 ): BasicShape =
     "inset($top $right $bottom $left $round $borderRadius)".unsafeCast<BasicShape>()
+
+inline fun path(
+    d: String,
+): BasicShape =
+    "path($d)".unsafeCast<BasicShape>()
