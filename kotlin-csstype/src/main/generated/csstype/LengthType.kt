@@ -5,6 +5,7 @@ package csstype
 sealed external interface LengthType :
     AutoLength,
     Bleed,
+    GeometryPosition,
     GridLength,
     LengthProperty,
     LineWidth,
