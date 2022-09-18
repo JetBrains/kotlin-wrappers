@@ -6,6 +6,51 @@
 
 package csstype
 
+inline fun circle(): BasicShape =
+    "circle()".unsafeCast<BasicShape>()
+
+inline fun circle(
+    r: ShapeRadius,
+): BasicShape =
+    "circle($r)".unsafeCast<BasicShape>()
+
+inline fun circle(
+    r: ShapeRadius,
+    c: GeometryPosition,
+): BasicShape =
+    "circle($r at $c)".unsafeCast<BasicShape>()
+
+inline fun circle(
+    r: ShapeRadius,
+    cx: GeometryPosition,
+    cy: GeometryPosition,
+): BasicShape =
+    "circle($r at $cx $cy)".unsafeCast<BasicShape>()
+
+inline fun ellipse(): BasicShape =
+    "ellipse()".unsafeCast<BasicShape>()
+
+inline fun ellipse(
+    rx: ShapeRadius,
+    ry: ShapeRadius,
+): BasicShape =
+    "ellipse($rx $ry)".unsafeCast<BasicShape>()
+
+inline fun ellipse(
+    rx: ShapeRadius,
+    ry: ShapeRadius,
+    c: GeometryPosition,
+): BasicShape =
+    "ellipse($rx $ry at $c)".unsafeCast<BasicShape>()
+
+inline fun ellipse(
+    rx: ShapeRadius,
+    ry: ShapeRadius,
+    cx: GeometryPosition,
+    cy: GeometryPosition,
+): BasicShape =
+    "ellipse($rx $ry at $cx $cy)".unsafeCast<BasicShape>()
+
 inline fun inset(
     vertical: Length,
     horizontal: Length,
