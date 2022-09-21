@@ -14,4 +14,6 @@ external class CustomEvent<T>(
         type: String,
         eventInitDict: CustomEventInit<T> = definedExternally,
     )
+
+    val detail: T
 }
