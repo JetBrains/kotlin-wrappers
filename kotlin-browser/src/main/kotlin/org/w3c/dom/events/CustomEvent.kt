@@ -1,17 +1,17 @@
-@file:Suppress(
-    "NOTHING_TO_INLINE",
-)
-
 package org.w3c.dom.events
 
-import org.w3c.dom.CustomEvent
-import org.w3c.dom.CustomEventInit
+import org.w3c.dom.EventInit
 
-inline fun CustomEvent(
-    type: EventType<CustomEvent>,
-    init: CustomEventInit,
-): CustomEvent =
-    CustomEvent(
-        type = type.unsafeCast<String>(),
-        eventInitDict = init,
+external interface CustomEventInit<T> : EventInit {
+    var detail: T
+}
+
+external class CustomEvent<T>(
+    type: EventType<CustomEvent<T>>,
+    eventInitDict: CustomEventInit<T> = definedExternally,
+) : Event {
+    constructor(
+        type: String,
+        eventInitDict: CustomEventInit<T> = definedExternally,
     )
+}
