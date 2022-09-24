@@ -3,6 +3,6 @@
 @file:JsModule("node:stream/web")
 @file:JsNonModule
 
-package node.stream
+package node.stream.web
 
-external class ReadableStream
+external class WritableStream
