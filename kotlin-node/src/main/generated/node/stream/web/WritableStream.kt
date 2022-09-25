@@ -1,8 +1,13 @@
 // Automatically generated - do not modify!
 
-@file:JsModule("node:stream/web")
-@file:JsNonModule
-
 package node.stream.web
 
-external class WritableStream
+import kotlinx.js.Void
+import kotlin.js.Promise
+
+external interface WritableStream<W> {
+    val locked: Boolean
+    fun abort(reason: Any = definedExternally): Promise<Void>
+    fun close(): Promise<Void>
+    fun getWriter(): WritableStreamDefaultWriter<W>
+}

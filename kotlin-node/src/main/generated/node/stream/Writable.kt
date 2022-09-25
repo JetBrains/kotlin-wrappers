@@ -535,7 +535,7 @@ open external class Writable : Stream, node.WritableStream {
          * @experimental
          */
         fun fromWeb(
-            writableStream: node.stream.web.WritableStream,
+            writableStream: node.stream.web.WritableStream<*>,
             options: WritableOptions = definedExternally,
         ): Writable
 
@@ -544,6 +544,6 @@ open external class Writable : Stream, node.WritableStream {
          * @since v17.0.0
          * @experimental
          */
-        fun toWeb(streamWritable: Writable): node.stream.web.WritableStream
+        fun toWeb(streamWritable: Writable): node.stream.web.WritableStream<*>
     }
 }
