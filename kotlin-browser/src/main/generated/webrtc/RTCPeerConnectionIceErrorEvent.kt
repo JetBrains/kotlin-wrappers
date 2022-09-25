@@ -7,4 +7,6 @@ external class RTCPeerConnectionIceErrorEvent : org.w3c.dom.events.Event {
     val url: String
     val errorCode: Number
     val errorText: String
+
+    companion object
 }

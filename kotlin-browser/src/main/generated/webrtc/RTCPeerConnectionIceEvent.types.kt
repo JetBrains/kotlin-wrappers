@@ -1,8 +1,8 @@
 // Automatically generated - do not modify!
 
-package org.w3c.dom.events
+package webrtc
 
-import org.w3c.dom.events.Event as RTCPeerConnectionIceEvent
+import org.w3c.dom.events.EventType
 
 inline val RTCPeerConnectionIceEvent.Companion.ICE_CANDIDATE: EventType<RTCPeerConnectionIceEvent>
     get() = EventType("icecandidate")

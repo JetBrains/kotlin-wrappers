@@ -9,4 +9,6 @@ external class RTCTrackEvent : org.w3c.dom.events.Event {
     val track: org.w3c.dom.mediacapture.MediaStreamTrack
     val streams: ReadonlyArray<org.w3c.dom.mediacapture.MediaStream>
     val transceiver: RTCRtpTransceiver
+
+    companion object
 }
