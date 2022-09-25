@@ -4,4 +4,6 @@ package webrtc
 
 external class RTCErrorEvent : org.w3c.dom.events.Event {
     val error: RTCError
+
+    companion object
 }

@@ -1,8 +1,8 @@
 // Automatically generated - do not modify!
 
-package org.w3c.dom.events
+package webrtc
 
-import org.w3c.dom.events.Event as RTCTrackEvent
+import org.w3c.dom.events.EventType
 
 inline val RTCTrackEvent.Companion.TRACK: EventType<RTCTrackEvent>
     get() = EventType("track")

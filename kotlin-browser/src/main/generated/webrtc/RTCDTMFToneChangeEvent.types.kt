@@ -1,7 +1,8 @@
 // Automatically generated - do not modify!
 
-package org.w3c.dom.events
+package webrtc
 
+import org.w3c.dom.events.EventType
 import org.w3c.dom.events.Event as RTCDTMFToneChangeEvent
 
 inline val RTCDTMFToneChangeEvent.Companion.TONE_CHANGE: EventType<RTCDTMFToneChangeEvent>

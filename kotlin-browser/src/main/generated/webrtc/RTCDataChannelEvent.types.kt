@@ -1,8 +1,8 @@
 // Automatically generated - do not modify!
 
-package org.w3c.dom.events
+package webrtc
 
-import org.w3c.dom.events.Event as RTCDataChannelEvent
+import org.w3c.dom.events.EventType
 
 inline val RTCDataChannelEvent.Companion.DATA_CHANNEL: EventType<RTCDataChannelEvent>
     get() = EventType("datachannel")
