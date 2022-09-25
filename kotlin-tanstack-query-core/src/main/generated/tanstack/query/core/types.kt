@@ -60,6 +60,8 @@ external interface QueryOptions<TQueryFnData, TError, TData, TQueryKey : QueryKe
     var meta: QueryMeta
 }
 
+typealias UseErrorBoundary<TQueryFnData, TError, TQueryData, TQueryKey> = (error: TError, query: Query<TQueryFnData, TError, TQueryData, TQueryKey>) -> Boolean
+
 external interface QueryObserverOptions<TQueryFnData, TError, TData, TQueryData, TQueryKey : QueryKey>
     : QueryOptions<TQueryFnData, TError, TQueryData, TQueryKey> {
     var enabled: Boolean
@@ -74,7 +76,7 @@ external interface QueryObserverOptions<TQueryFnData, TError, TData, TQueryData,
     var onSuccess: (data: TData) -> Unit
     var onError: (err: TError) -> Unit
     var onSettled: (data: TData?, error: TError?) -> Unit
-    var useErrorBoundary: Any /* boolean | ((error: TError, query: Query<TQueryFnData, TError, TQueryData, TQueryKey>) => boolean) */
+    var useErrorBoundary: UseErrorBoundary<TQueryFnData, TError, TQueryData, TQueryKey>
     var select: (data: TQueryData) -> TData
     var suspense: Boolean
     var keepPreviousData: Boolean
