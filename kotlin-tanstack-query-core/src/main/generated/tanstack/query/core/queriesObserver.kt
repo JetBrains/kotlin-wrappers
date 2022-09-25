@@ -26,5 +26,6 @@ open external class QueriesObserver(
     )
 
     open fun getCurrentResult(): ReadonlyArray<QueryObserverResult<*, *>>
+    open fun getQueries(): ReadonlyArray<Query<*, *, *, QueryKey>>
     open fun getOptimisticResult(queries: ReadonlyArray<QueryObserverOptions<*, *, *, *, *>>): ReadonlyArray<QueryObserverResult<*, *>>
 }
