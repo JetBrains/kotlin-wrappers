@@ -2,6 +2,8 @@
 
 package node.stream.web
 
+import kotlinx.js.BufferSource
+
 sealed external interface TextDecoderStream {
     /** Returns encoding's name, lower cased. */
     val encoding: String
@@ -12,6 +14,6 @@ sealed external interface TextDecoderStream {
     /** Returns `true` if ignore BOM flag is set, and `false` otherwise. */
     val ignoreBOM: Boolean
     val readable: ReadableStream<String>
-    val writable: WritableStream<Any /* BufferSource */>
+    val writable: WritableStream<BufferSource>
     /* readonly [Symbol.toStringTag]: string */
 }
