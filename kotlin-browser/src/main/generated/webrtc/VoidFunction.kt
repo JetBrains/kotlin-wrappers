@@ -2,4 +2,4 @@
 
 package webrtc
 
-sealed external interface RTCOfferAnswerOptions
+typealias VoidFunction = () -> Unit

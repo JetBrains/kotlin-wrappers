@@ -2,7 +2,9 @@
 
 package webrtc
 
+import kotlinx.js.ReadonlyArray
+
 sealed external interface RTCCertificate {
-    val expires: Number
-    fun getAlgorithm(): String
+    val expires: EpochTimeStamp
+    fun getFingerprints(): ReadonlyArray<RTCDtlsFingerprint>
 }

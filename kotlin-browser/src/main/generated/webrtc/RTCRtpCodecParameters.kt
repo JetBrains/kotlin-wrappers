@@ -3,10 +3,9 @@
 package webrtc
 
 sealed external interface RTCRtpCodecParameters {
-    //payloadType: number;
+    var channels: Number?
+    var clockRate: Number
     var mimeType: String
-
-    //clockRate: number;
-    var channels: Number? // default = 1
+    var payloadType: Number
     var sdpFmtpLine: String?
 }

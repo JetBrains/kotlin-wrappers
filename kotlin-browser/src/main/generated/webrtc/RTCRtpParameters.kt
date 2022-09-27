@@ -2,11 +2,10 @@
 
 package webrtc
 
+import kotlinx.js.ReadonlyArray
+
 sealed external interface RTCRtpParameters {
-    var transactionId: String
-    //encodings: RTCRtpEncodingParameters[];
-    //headerExtensions: RTCRtpHeaderExtensionParameters[];
-    //rtcp: RTCRtcpParameters;
-    //codecs: RTCRtpCodecParameters[];
-    // degradationPreference?: RTCDegradationPreference; // default = 'balanced'
+    var codecs: ReadonlyArray<RTCRtpCodecParameters>
+    var headerExtensions: ReadonlyArray<RTCRtpHeaderExtensionParameters>
+    var rtcp: RTCRtcpParameters
 }

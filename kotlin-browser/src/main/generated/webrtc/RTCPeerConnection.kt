@@ -3,41 +3,47 @@
 package webrtc
 
 import kotlinx.js.ReadonlyArray
+import org.w3c.dom.events.Event
 
 external class RTCPeerConnection(
     configuration: RTCConfiguration = definedExternally,
     options: Any = definedExternally,
 ) : org.w3c.dom.events.EventTarget {
-    fun createOffer(options: RTCOfferOptions = definedExternally): kotlin.js.Promise<RTCSessionDescriptionInit>
-    fun createAnswer(options: RTCAnswerOptions = definedExternally): kotlin.js.Promise<RTCSessionDescriptionInit>
-    fun setLocalDescription(description: RTCSessionDescriptionInit): kotlin.js.Promise<Unit>
-    val localDescription: RTCSessionDescription?
-    val currentLocalDescription: RTCSessionDescription?
-    val pendingLocalDescription: RTCSessionDescription?
-    fun setRemoteDescription(description: RTCSessionDescriptionInit): kotlin.js.Promise<Unit>
-    val remoteDescription: RTCSessionDescription?
-    val currentRemoteDescription: RTCSessionDescription?
-    val pendingRemoteDescription: RTCSessionDescription?
-    fun addIceCandidate(candidate: RTCIceCandidateInit = definedExternally): kotlin.js.Promise<Unit>
-    fun addIceCandidate(candidate: RTCIceCandidate = definedExternally): kotlin.js.Promise<Unit>
-    val signalingState: RTCSignalingState
+    val canTrickleIceCandidates: Boolean?
     val connectionState: RTCPeerConnectionState
-    fun getConfiguration(): RTCConfiguration
-    fun setConfiguration(configuration: RTCConfiguration)
-    fun close()
-    var onicecandidateerror: PeerConnectionEventHandler<org.w3c.dom.events.Event>
-    var onconnectionstatechange: PeerConnectionEventHandler<org.w3c.dom.events.Event>
+    val currentLocalDescription: RTCSessionDescription?
+    val currentRemoteDescription: RTCSessionDescription?
+    val iceConnectionState: RTCIceConnectionState
+    val iceGatheringState: RTCIceGatheringState
+    val localDescription: RTCSessionDescription?
+    var onconnectionstatechange: ((event: Event) -> Unit)?
+    var ondatachannel: ((event: RTCDataChannelEvent) -> Unit)?
+    var onicecandidate: ((event: RTCPeerConnectionIceEvent) -> Unit)?
+    var onicecandidateerror: ((event: Event) -> Unit)?
+    var oniceconnectionstatechange: ((event: Event) -> Unit)?
+    var onicegatheringstatechange: ((event: Event) -> Unit)?
+    var onnegotiationneeded: ((event: Event) -> Unit)?
+    var onsignalingstatechange: ((event: Event) -> Unit)?
+    var ontrack: ((event: RTCTrackEvent) -> Unit)?
+    val pendingLocalDescription: RTCSessionDescription?
+    val pendingRemoteDescription: RTCSessionDescription?
+    val remoteDescription: RTCSessionDescription?
+    val sctp: RTCSctpTransport?
+    val signalingState: RTCSignalingState
+    fun addIceCandidate(candidate: RTCIceCandidateInit = definedExternally): kotlin.js.Promise<Unit>
 
-    // Extension: https://www.w3.org/TR/webrtc/#h-rtcpeerconnection-interface-extensions
-    fun getSenders(): ReadonlyArray<RTCRtpSender>
-    fun getReceivers(): ReadonlyArray<RTCRtpReceiver>
-    fun getTransceivers(): ReadonlyArray<RTCRtpTransceiver>
+    /** @deprecated */
+    fun addIceCandidate(
+        candidate: RTCIceCandidateInit,
+        successCallback: VoidFunction,
+        failureCallback: RTCPeerConnectionErrorCallback,
+    ): kotlin.js.Promise<Unit>
+
     fun addTrack(
         track: org.w3c.dom.mediacapture.MediaStreamTrack,
         vararg streams: ReadonlyArray<org.w3c.dom.mediacapture.MediaStream>,
     ): RTCRtpSender
 
-    fun removeTrack(sender: RTCRtpSender)
     fun addTransceiver(
         trackOrKind: org.w3c.dom.mediacapture.MediaStreamTrack,
         init: RTCRtpTransceiverInit = definedExternally,
@@ -48,67 +54,65 @@ external class RTCPeerConnection(
         init: RTCRtpTransceiverInit = definedExternally,
     ): RTCRtpTransceiver
 
-    var ontrack: PeerConnectionEventHandler<RTCTrackEvent>
+    fun close()
+    fun createAnswer(options: RTCAnswerOptions = definedExternally): kotlin.js.Promise<RTCSessionDescriptionInit>
 
-    // Extension: https://www.w3.org/TR/webrtc/#h-rtcpeerconnection-interface-extensions-1
-    val sctp: RTCSctpTransport?
+    /** @deprecated */
+    fun createAnswer(
+        successCallback: RTCSessionDescriptionCallback,
+        failureCallback: RTCPeerConnectionErrorCallback,
+    ): kotlin.js.Promise<Unit>
+
     fun createDataChannel(
-        label: String?,
+        label: String,
         dataChannelDict: RTCDataChannelInit = definedExternally,
     ): RTCDataChannel
 
-    var ondatachannel: PeerConnectionEventHandler<RTCDataChannelEvent>
+    fun createOffer(options: RTCOfferOptions = definedExternally): kotlin.js.Promise<RTCSessionDescriptionInit>
 
-    // Extension: https://www.w3.org/TR/webrtc/#h-rtcpeerconnection-interface-extensions-2
-    fun getStats(selector: org.w3c.dom.mediacapture.MediaStreamTrack? = definedExternally): kotlin.js.Promise<RTCStatsReport>
-
-    // Extension: https://www.w3.org/TR/webrtc/#legacy-interface-extensions
-    // Deprecated!
+    /** @deprecated */
     fun createOffer(
         successCallback: RTCSessionDescriptionCallback,
         failureCallback: RTCPeerConnectionErrorCallback,
         options: RTCOfferOptions = definedExternally,
     ): kotlin.js.Promise<Unit>
 
+    fun getConfiguration(): RTCConfiguration
+    fun getReceivers(): ReadonlyArray<RTCRtpReceiver>
+    fun getSenders(): ReadonlyArray<RTCRtpSender>
+    fun getStats(selector: org.w3c.dom.mediacapture.MediaStreamTrack? = definedExternally): kotlin.js.Promise<RTCStatsReport>
+    fun getTransceivers(): ReadonlyArray<RTCRtpTransceiver>
+    fun removeTrack(sender: RTCRtpSender)
+    fun restartIce()
+    fun setConfiguration(configuration: RTCConfiguration = definedExternally)
+    fun setLocalDescription(description: RTCLocalSessionDescriptionInit = definedExternally): kotlin.js.Promise<Unit>
+
+    /** @deprecated */
     fun setLocalDescription(
-        description: RTCSessionDescriptionInit,
-        successCallback: () -> Unit,
+        description: RTCLocalSessionDescriptionInit,
+        successCallback: VoidFunction,
         failureCallback: RTCPeerConnectionErrorCallback,
     ): kotlin.js.Promise<Unit>
 
-    fun createAnswer(
-        successCallback: RTCSessionDescriptionCallback,
-        failureCallback: RTCPeerConnectionErrorCallback,
-    ): kotlin.js.Promise<Unit>
+    fun setRemoteDescription(description: RTCSessionDescriptionInit): kotlin.js.Promise<Unit>
 
+    /** @deprecated */
     fun setRemoteDescription(
         description: RTCSessionDescriptionInit,
-        successCallback: () -> Unit,
+        successCallback: VoidFunction,
         failureCallback: RTCPeerConnectionErrorCallback,
     ): kotlin.js.Promise<Unit>
-
-    fun addIceCandidate(
-        candidate: RTCIceCandidateInit,
-        successCallback: () -> Unit,
-        failureCallback: RTCPeerConnectionErrorCallback,
-    ): kotlin.js.Promise<Unit>
-
-    fun addIceCandidate(
-        candidate: RTCIceCandidate,
-        successCallback: () -> Unit,
-        failureCallback: RTCPeerConnectionErrorCallback,
-    ): kotlin.js.Promise<Unit>
-
-    fun getStats(
-        selector: org.w3c.dom.mediacapture.MediaStreamTrack?,
-        successCallback: (report: RTCStatsReport) -> Unit,
-        failureCallback: RTCPeerConnectionErrorCallback,
-    ): kotlin.js.Promise<Unit>
+    // addEventListener<K extends keyof RTCPeerConnectionEventMap>(type: K, listener: (this: RTCPeerConnection, ev: RTCPeerConnectionEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void
+    // addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void
+    // removeEventListener<K extends keyof RTCPeerConnectionEventMap>(type: K, listener: (this: RTCPeerConnection, ev: RTCPeerConnectionEventMap[K]) => any, options?: boolean | EventListenerOptions): void
+    // removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void
 
     companion object {
         val defaultIceServers: ReadonlyArray<RTCIceServer>
 
         // Extension: https://www.w3.org/TR/webrtc/#sec.cert-mgmt
-        fun generateCertificate(keygenAlgorithm: String): kotlin.js.Promise<RTCCertificate>
+        fun generateCertificate(
+            keygenAlgorithm: String, /* AlgorithmIdentifier */
+        ): kotlin.js.Promise<RTCCertificate>
     }
 }

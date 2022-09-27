@@ -5,12 +5,11 @@ package webrtc
 import kotlinx.js.ReadonlyArray
 
 sealed external interface RTCRtpTransceiver {
-    val mid: String?
-    val sender: RTCRtpSender
-    val receiver: RTCRtpReceiver
-    val stopped: Boolean
+    val currentDirection: RTCRtpTransceiverDirection?
     var direction: RTCRtpTransceiverDirection
-    fun setDirection(direction: RTCRtpTransceiverDirection)
-    fun stop()
+    val mid: String?
+    val receiver: RTCRtpReceiver
+    val sender: RTCRtpSender
     fun setCodecPreferences(codecs: ReadonlyArray<RTCRtpCodecCapability>)
+    fun stop()
 }

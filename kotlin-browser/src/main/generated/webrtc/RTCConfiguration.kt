@@ -5,11 +5,10 @@ package webrtc
 import kotlinx.js.ReadonlyArray
 
 sealed external interface RTCConfiguration {
-    var iceServers: ReadonlyArray<RTCIceServer>?
-    var iceTransportPolicy: RTCIceTransportPolicy? // default = 'all'
-    var bundlePolicy: RTCBundlePolicy? // default = 'balanced'
-    var rtcpMuxPolicy: RTCRtcpMuxPolicy? // default = 'require'
-    var peerIdentity: String? // default = null
+    var bundlePolicy: RTCBundlePolicy?
     var certificates: ReadonlyArray<RTCCertificate>?
-    var iceCandidatePoolSize: Number? // default = 0
+    var iceCandidatePoolSize: Number?
+    var iceServers: ReadonlyArray<RTCIceServer>?
+    var iceTransportPolicy: RTCIceTransportPolicy?
+    var rtcpMuxPolicy: RTCRtcpMuxPolicy?
 }
