@@ -19,35 +19,35 @@ open external class QueryClient(config: QueryClientConfig = definedExternally) {
     ): Int
 
     open fun isMutating(filters: MutationFilters = definedExternally): Int
-    open fun <TData> getQueryData(
+    open fun <TQueryFnData> getQueryData(
         queryKey: QueryKey,
         filters: QueryFilters = definedExternally,
-    ): TData?
+    ): TQueryFnData?
 
-    open fun <TData> getQueriesData(queryKey: QueryKey): ReadonlyArray<JsTuple2<QueryKey, TData>>
-    open fun <TData> getQueriesData(filters: QueryFilters): ReadonlyArray<JsTuple2<QueryKey, TData>>
-    open fun <TData> setQueryData(
+    open fun <TQueryFnData> getQueriesData(queryKey: QueryKey): ReadonlyArray<JsTuple2<QueryKey, TQueryFnData?>>
+    open fun <TQueryFnData> getQueriesData(filters: QueryFilters): ReadonlyArray<JsTuple2<QueryKey, TQueryFnData?>>
+    open fun <TQueryFnData> setQueryData(
         queryKey: QueryKey,
-        updater: Updater<TData?, TData?>,
+        updater: Updater<TQueryFnData?, TQueryFnData?>,
         options: SetDataOptions = definedExternally,
-    ): TData?
+    ): TQueryFnData?
 
-    open fun <TData> setQueriesData(
+    open fun <TQueryFnData> setQueriesData(
         queryKey: QueryKey,
-        updater: Updater<TData?, TData?>,
+        updater: Updater<TQueryFnData?, TQueryFnData?>,
         options: SetDataOptions = definedExternally,
-    ): JsTuple2<QueryKey, Any /* TData | undefined][ */>
+    ): ReadonlyArray<JsTuple2<QueryKey, TQueryFnData?>>
 
-    open fun <TData> setQueriesData(
+    open fun <TQueryFnData> setQueriesData(
         filters: QueryFilters,
-        updater: Updater<TData?, TData?>,
+        updater: Updater<TQueryFnData?, TQueryFnData?>,
         options: SetDataOptions = definedExternally,
-    ): JsTuple2<QueryKey, Any /* TData | undefined][ */>
+    ): ReadonlyArray<JsTuple2<QueryKey, TQueryFnData?>>
 
-    open fun <TData, TError> getQueryState(
+    open fun <TQueryFnData, TError> getQueryState(
         queryKey: QueryKey,
         filters: QueryFilters = definedExternally,
-    ): QueryState<TData, TError>?
+    ): QueryState<TQueryFnData, TError>?
 
     open fun removeQueries(filters: QueryFilters = definedExternally)
     open fun removeQueries(
