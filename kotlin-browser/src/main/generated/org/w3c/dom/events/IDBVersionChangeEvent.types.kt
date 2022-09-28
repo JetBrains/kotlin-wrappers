@@ -2,6 +2,7 @@
 
 package org.w3c.dom.events
 
+import web.events.EventType
 import org.w3c.dom.events.Event as IDBVersionChangeEvent
 
 inline val IDBVersionChangeEvent.Companion.VERSION_CHANGE: EventType<IDBVersionChangeEvent>

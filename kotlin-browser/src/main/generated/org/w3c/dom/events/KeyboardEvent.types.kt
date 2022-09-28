@@ -2,6 +2,8 @@
 
 package org.w3c.dom.events
 
+import web.events.EventType
+
 inline val KeyboardEvent.Companion.KEY_DOWN: EventType<KeyboardEvent>
     get() = EventType("keydown")
 

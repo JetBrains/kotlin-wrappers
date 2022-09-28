@@ -3,6 +3,7 @@
 package org.w3c.dom.events
 
 import org.w3c.xhr.ProgressEvent
+import web.events.EventType
 
 inline val ProgressEvent.Companion.ABORT: EventType<ProgressEvent>
     get() = EventType("abort")

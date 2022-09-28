@@ -6,6 +6,7 @@ package org.w3c.dom.events
 
 import kotlinx.js.jso
 import org.w3c.fetch.AbortSignal
+import web.events.EventType
 
 @JsName("null") // IR workaround
 sealed external interface EventHandlerOptions {

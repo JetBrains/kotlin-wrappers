@@ -4,7 +4,9 @@
     "NOTHING_TO_INLINE",
 )
 
-package org.w3c.dom.events
+package web.events
+
+import org.w3c.dom.events.Event
 
 sealed external interface EventType<T : Event>
 

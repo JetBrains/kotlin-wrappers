@@ -2,6 +2,8 @@
 
 package org.w3c.dom.events
 
+import web.events.EventType
+
 inline val CompositionEvent.Companion.COMPOSITION_END: EventType<CompositionEvent>
     get() = EventType("compositionend")
 

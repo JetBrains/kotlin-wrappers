@@ -2,6 +2,8 @@
 
 package org.w3c.dom.events
 
+import web.events.EventType
+
 inline val Event.Companion.ABORT: EventType<Event>
     get() = EventType("abort")
 

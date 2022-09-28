@@ -2,7 +2,7 @@
 
 package webrtc
 
-import org.w3c.dom.events.EventType
+import web.events.EventType
 
 inline val RTCDTMFToneChangeEvent.Companion.TONE_CHANGE: EventType<RTCDTMFToneChangeEvent>
     get() = EventType("tonechange")

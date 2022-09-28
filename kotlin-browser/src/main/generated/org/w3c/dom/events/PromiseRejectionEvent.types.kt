@@ -3,6 +3,7 @@
 package org.w3c.dom.events
 
 import org.w3c.dom.PromiseRejectionEvent
+import web.events.EventType
 
 inline val PromiseRejectionEvent.Companion.REJECTION_HANDLED: EventType<PromiseRejectionEvent>
     get() = EventType("rejectionhandled")

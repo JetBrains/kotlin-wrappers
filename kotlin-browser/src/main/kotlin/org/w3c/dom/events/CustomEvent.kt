@@ -1,6 +1,7 @@
 package org.w3c.dom.events
 
 import org.w3c.dom.EventInit
+import web.events.EventType
 
 external interface CustomEventInit<T> : EventInit {
     var detail: T

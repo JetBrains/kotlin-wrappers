@@ -3,6 +3,7 @@
 package org.w3c.dom.events
 
 import org.w3c.dom.DragEvent
+import web.events.EventType
 
 inline val DragEvent.Companion.DRAG: EventType<DragEvent>
     get() = EventType("drag")
