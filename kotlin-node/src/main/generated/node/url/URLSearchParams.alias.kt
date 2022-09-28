@@ -2,4 +2,4 @@
 
 package node.url
 
-typealias URLSearchParams = kotlinx.js.URLSearchParams
+typealias URLSearchParams = web.url.URLSearchParams

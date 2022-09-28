@@ -4,7 +4,7 @@
 
 package org.w3c.dom
 
-import kotlinx.js.URL
+import web.url.URL
 
 inline fun Worker(
     scriptURL: URL,

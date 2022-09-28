@@ -1,4 +1,6 @@
-package kotlinx.js
+package web.url
+
+import kotlinx.js.*
 
 external class URLSearchParams() :
     org.w3c.dom.url.URLSearchParams,

@@ -6,9 +6,9 @@
 
 package react.router.dom
 
-import kotlinx.js.URLSearchParams
 import kotlinx.js.jso
 import react.router.NavigateOptions
+import web.url.URLSearchParams
 import kotlin.reflect.KProperty
 
 // TODO: make external in IR

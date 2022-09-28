@@ -1,7 +1,7 @@
 package web.http
 
-import kotlinx.js.URL
 import org.w3c.fetch.Response
+import web.url.URL
 import kotlin.js.Promise
 
 @JsName("fetch")

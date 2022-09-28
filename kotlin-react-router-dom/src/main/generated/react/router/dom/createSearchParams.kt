@@ -28,4 +28,4 @@ package react.router.dom
  */
 external fun createSearchParams(
     init: URLSearchParamsInit = definedExternally,
-): kotlinx.js.URLSearchParams
+): web.url.URLSearchParams

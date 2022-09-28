@@ -10,5 +10,5 @@ package react.router.dom
  * URLSearchParams interface.
  */
 external fun useSearchParams(
-    defaultInit: kotlinx.js.URLSearchParams = definedExternally,
+    defaultInit: web.url.URLSearchParams = definedExternally,
 ): SearchParamsInstance

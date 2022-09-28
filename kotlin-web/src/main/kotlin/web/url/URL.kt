@@ -1,4 +1,4 @@
-package kotlinx.js
+package web.url
 
 import org.w3c.dom.mediasource.MediaSource
 import org.w3c.files.Blob
