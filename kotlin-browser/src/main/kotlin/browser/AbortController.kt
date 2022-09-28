@@ -1,4 +1,4 @@
-package org.w3c.fetch
+package browser
 
 external class AbortController : web.AbortController {
     /**

@@ -1,4 +1,4 @@
-package org.w3c.fetch
+package browser
 
 import org.w3c.dom.events.EventTarget
 
