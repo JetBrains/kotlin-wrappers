@@ -1,9 +1,8 @@
 // Automatically generated - do not modify!
 
-package org.w3c.dom.events
+package web.events
 
 import org.w3c.dom.MessageEvent
-import web.events.EventType
 
 inline val MessageEvent.Companion.MESSAGE: EventType<MessageEvent>
     get() = EventType("message")
