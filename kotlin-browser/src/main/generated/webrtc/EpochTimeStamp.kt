@@ -2,4 +2,4 @@
 
 package webrtc
 
-typealias RTCPeerConnectionConfig = RTCConfiguration
+typealias EpochTimeStamp = Double

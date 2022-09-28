@@ -3,7 +3,7 @@
 package webrtc
 
 sealed external interface RTCRtpHeaderExtensionParameters {
-    //uri: string;
-    //id: number;
     var encrypted: Boolean?
+    var id: Number
+    var uri: String
 }

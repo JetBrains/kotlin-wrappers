@@ -2,28 +2,34 @@
 
 package webrtc
 
+import org.w3c.dom.MessageEvent
+import org.w3c.dom.events.Event
+
 external class RTCDataChannel : org.w3c.dom.events.EventTarget {
-    val label: String
-    val ordered: Boolean
-    val maxPacketLifeTime: Number?
-    val maxRetransmits: Number?
-    val protocol: String
-    val negotiated: Boolean
-    val id: Number?
-    val readyState: RTCDataChannelState
+    var binaryType: BinaryType
     val bufferedAmount: Number
     var bufferedAmountLowThreshold: Number
-
-    // binaryType: string;
+    val id: Number?
+    val label: String
+    val maxPacketLifeTime: Number?
+    val maxRetransmits: Number?
+    val negotiated: Boolean
+    var onbufferedamountlow: ((event: Event) -> Unit)?
+    var onclose: ((event: Event) -> Unit)?
+    var onclosing: ((event: Event) -> Unit)?
+    var onerror: ((event: Event) -> Unit)?
+    var onmessage: ((event: MessageEvent) -> Unit)?
+    var onopen: ((event: Event) -> Unit)?
+    val ordered: Boolean
+    val protocol: String
+    val readyState: RTCDataChannelState
     fun close()
     fun send(data: String)
     fun send(data: org.w3c.files.Blob)
     fun send(data: kotlinx.js.ArrayBuffer)
     fun send(data: kotlinx.js.ArrayBufferView)
-    var onopen: DataChannelEventHandler<org.w3c.dom.events.Event>
-    var onmessage: DataChannelEventHandler<org.w3c.dom.MessageEvent>
-    var onbufferedamountlow: DataChannelEventHandler<org.w3c.dom.events.Event>
-
-    // onerror: DataChannelEventHandler<RTCErrorEvent>;
-    var onclose: DataChannelEventHandler<org.w3c.dom.events.Event>
+    // addEventListener<K extends keyof RTCDataChannelEventMap>(type: K, listener: (this: RTCDataChannel, ev: RTCDataChannelEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void
+    // addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void
+    // removeEventListener<K extends keyof RTCDataChannelEventMap>(type: K, listener: (this: RTCDataChannel, ev: RTCDataChannelEventMap[K]) => any, options?: boolean | EventListenerOptions): void
+    // removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void
 }

@@ -3,9 +3,8 @@
 package webrtc
 
 sealed external interface RTCRtpContributingSource {
-    //readonly timestamp: number;
+    var audioLevel: Number?
+    var rtpTimestamp: Number
     var source: Number
-
-    //readonly audioLevel: number | null;
-    val voiceActivityFlag: Boolean?
+    var timestamp: kotlinx.js.HighResTimeStamp
 }

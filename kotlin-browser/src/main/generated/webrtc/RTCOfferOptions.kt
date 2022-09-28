@@ -3,5 +3,7 @@
 package webrtc
 
 sealed external interface RTCOfferOptions : RTCOfferAnswerOptions {
-    var iceRestart: Boolean? // default = false
+    var iceRestart: Boolean?
+    var offerToReceiveAudio: Boolean?
+    var offerToReceiveVideo: Boolean?
 }
