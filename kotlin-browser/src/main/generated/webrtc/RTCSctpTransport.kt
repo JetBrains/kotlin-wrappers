@@ -2,7 +2,7 @@
 
 package webrtc
 
-import org.w3c.dom.events.Event
+import web.events.Event
 
 external class RTCSctpTransport : org.w3c.dom.events.EventTarget {
     val maxChannels: Number?

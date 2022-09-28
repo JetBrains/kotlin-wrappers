@@ -1,6 +1,6 @@
 package browser
 
-import org.w3c.dom.events.EventTarget
+import web.events.EventTarget
 
 /** A signal object that allows you to communicate with a DOM request (such as a Fetch) and abort it if required via an AbortController object. */
 external class AbortSignal : web.AbortSignal, EventTarget {

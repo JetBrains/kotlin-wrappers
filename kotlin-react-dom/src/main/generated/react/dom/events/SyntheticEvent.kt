@@ -3,7 +3,7 @@
 package react.dom.events
 
 import dom.Element
-import org.w3c.dom.events.Event
-import org.w3c.dom.events.EventTarget
+import web.events.Event
+import web.events.EventTarget
 
 external interface SyntheticEvent<out T : Element, out E : Event> : BaseSyntheticEvent<E, T, EventTarget>

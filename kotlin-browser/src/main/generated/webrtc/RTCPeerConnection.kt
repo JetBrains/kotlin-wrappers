@@ -3,7 +3,7 @@
 package webrtc
 
 import kotlinx.js.ReadonlyArray
-import org.w3c.dom.events.Event
+import web.events.Event
 
 external class RTCPeerConnection(
     configuration: RTCConfiguration = definedExternally,

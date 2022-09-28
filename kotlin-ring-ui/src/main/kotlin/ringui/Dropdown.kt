@@ -3,10 +3,10 @@
 
 package ringui
 
-import org.w3c.dom.events.Event
 import react.ComponentClass
 import react.PropsWithChildren
 import react.PropsWithClassName
+import web.events.Event
 
 external interface AnchorProps : PropsWithChildren, PropsWithClassName
 

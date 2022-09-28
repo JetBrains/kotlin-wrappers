@@ -3,7 +3,7 @@
 package react.dom.events
 
 import dom.Element
-import org.w3c.dom.events.EventTarget
+import web.events.EventTarget
 
 external interface FocusEvent<out T : Element> : SyntheticEvent<T, NativeFocusEvent> {
     val relatedTarget: EventTarget?

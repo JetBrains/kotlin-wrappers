@@ -3,7 +3,7 @@
 package react.dom.events
 
 import dom.Element
-import org.w3c.dom.events.EventTarget
+import web.events.EventTarget
 
 external interface MouseEvent<out T : Element, out E : NativeMouseEvent> : UIEvent<T, E> {
     val altKey: Boolean
