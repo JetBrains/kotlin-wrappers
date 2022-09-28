@@ -2,7 +2,7 @@
     "NAME_CONTAINS_ILLEGAL_CHARS",
 )
 
-package org.w3c.dom.clipboard
+package browser.clipboard
 
 // language=JavaScript
 @JsName("""(/*union*/{attachment: 'attachment', inline: 'inline', unspecified: 'unspecified'}/*union*/)""")

@@ -1,4 +1,4 @@
-package org.w3c.dom.clipboard
+package browser.clipboard
 
 import kotlinx.js.ReadonlyArray
 import kotlinx.js.Record

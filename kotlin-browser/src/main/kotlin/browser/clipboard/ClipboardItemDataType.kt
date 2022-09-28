@@ -2,7 +2,7 @@
     "NOTHING_TO_INLINE",
 )
 
-package org.w3c.dom.clipboard
+package browser.clipboard
 
 import org.w3c.files.Blob
 
