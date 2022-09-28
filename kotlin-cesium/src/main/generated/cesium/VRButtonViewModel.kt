@@ -21,7 +21,7 @@ package cesium
  */
 external class VRButtonViewModel(
     scene: Scene,
-    var vrElement: org.w3c.dom.Element = definedExternally,
+    var vrElement: dom.Element = definedExternally,
 ) {
     /**
      * Gets whether or not VR mode is active.

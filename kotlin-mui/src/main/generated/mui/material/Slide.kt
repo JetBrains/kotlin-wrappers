@@ -23,7 +23,7 @@ external interface SlideProps :
      * An HTML element, or a function that returns one.
      * It's used to set the container the Slide is transitioning from.
      */
-    var container: org.w3c.dom.Element? /* null | Element | ((element: Element) => Element) */
+    var container: dom.Element? /* null | Element | ((element: Element) => Element) */
 
     /**
      * Direction the child node will enter from.

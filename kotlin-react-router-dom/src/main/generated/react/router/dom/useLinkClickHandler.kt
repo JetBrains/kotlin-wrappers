@@ -16,7 +16,7 @@ external interface ClickHandlerOptions {
     var state: history.LocationState?
 }
 
-external fun <E : org.w3c.dom.Element> useLinkClickHandler(
+external fun <E : dom.Element> useLinkClickHandler(
     to: history.To,
     options: ClickHandlerOptions = definedExternally,
 ): react.dom.events.MouseEventHandler<E>

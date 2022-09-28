@@ -19,7 +19,7 @@ package cesium
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTilesInspector.html">Online Documentation</a>
  */
 external class Cesium3DTilesInspector(
-    var container: org.w3c.dom.Element,
+    var container: dom.Element,
     scene: Scene,
 ) {
     /**

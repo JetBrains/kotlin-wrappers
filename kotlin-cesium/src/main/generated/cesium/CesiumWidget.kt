@@ -45,7 +45,7 @@ package cesium
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CesiumWidget.html">Online Documentation</a>
  */
 external class CesiumWidget(
-    val container: org.w3c.dom.Element,
+    val container: dom.Element,
     options: ConstructorOptions? = definedExternally,
 ) {
     /**
@@ -109,8 +109,8 @@ external class CesiumWidget(
         var targetFrameRate: Int?
         var showRenderLoopErrors: Boolean?
         var contextOptions: Any?
-        var creditContainer: org.w3c.dom.Element?
-        var creditViewport: org.w3c.dom.Element?
+        var creditContainer: dom.Element?
+        var creditViewport: dom.Element?
         var shadows: Boolean?
         var terrainShadows: ShadowMode?
         var mapMode2D: MapMode2D?
@@ -130,13 +130,13 @@ external class CesiumWidget(
      * Gets the credit container.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CesiumWidget.html#creditContainer">Online Documentation</a>
      */
-    val creditContainer: org.w3c.dom.Element
+    val creditContainer: dom.Element
 
     /**
      * Gets the credit viewport
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CesiumWidget.html#creditViewport">Online Documentation</a>
      */
-    val creditViewport: org.w3c.dom.Element
+    val creditViewport: dom.Element
 
     /**
      * Gets the scene.
@@ -265,7 +265,7 @@ external class CesiumWidget(
 }
 
 inline fun CesiumWidget(
-    container: org.w3c.dom.Element,
+    container: dom.Element,
     block: CesiumWidget.ConstructorOptions.() -> Unit,
 ): CesiumWidget {
     val options: CesiumWidget.ConstructorOptions = js("({})")

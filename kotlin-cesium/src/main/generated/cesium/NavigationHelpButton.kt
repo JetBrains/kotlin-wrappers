@@ -29,7 +29,7 @@ external class NavigationHelpButton(options: ConstructorOptions) {
      *   Default value - `false`
      */
     interface ConstructorOptions {
-        var container: org.w3c.dom.Element
+        var container: dom.Element
         var instructionsInitiallyVisible: Boolean?
     }
 
@@ -37,7 +37,7 @@ external class NavigationHelpButton(options: ConstructorOptions) {
      * Gets the parent container.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/NavigationHelpButton.html#container">Online Documentation</a>
      */
-    var container: org.w3c.dom.Element
+    var container: dom.Element
 
     /**
      * Gets the view model.

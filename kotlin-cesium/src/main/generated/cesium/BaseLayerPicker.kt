@@ -77,7 +77,7 @@ import kotlinx.js.ReadonlyArray
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BaseLayerPicker.html">Online Documentation</a>
  */
 external class BaseLayerPicker(
-    var container: org.w3c.dom.Element,
+    var container: dom.Element,
     options: ConstructorOptions,
 ) {
     /**
@@ -118,7 +118,7 @@ external class BaseLayerPicker(
 }
 
 inline fun BaseLayerPicker(
-    container: org.w3c.dom.Element,
+    container: dom.Element,
     block: BaseLayerPicker.ConstructorOptions.() -> Unit,
 ): BaseLayerPicker {
     val options: BaseLayerPicker.ConstructorOptions = js("({})")

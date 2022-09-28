@@ -20,8 +20,8 @@ package cesium
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/FullscreenButton.html">Online Documentation</a>
  */
 external class FullscreenButton(
-    var container: org.w3c.dom.Element,
-    fullscreenElement: org.w3c.dom.Element? = definedExternally,
+    var container: dom.Element,
+    fullscreenElement: dom.Element? = definedExternally,
 ) {
     /**
      * Gets the view model.

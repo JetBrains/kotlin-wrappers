@@ -86,8 +86,8 @@ external class Scene(
     interface ConstructorOptions {
         var canvas: org.w3c.dom.HTMLCanvasElement
         var contextOptions: Any?
-        var creditContainer: org.w3c.dom.Element?
-        var creditViewport: org.w3c.dom.Element?
+        var creditContainer: dom.Element?
+        var creditViewport: dom.Element?
         var mapProjection: MapProjection?
         var orderIndependentTranslucency: Boolean?
         var scene3DOnly: Boolean?

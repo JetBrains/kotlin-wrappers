@@ -21,9 +21,9 @@ package cesium
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/VRButton.html">Online Documentation</a>
  */
 external class VRButton(
-    var container: org.w3c.dom.Element,
+    var container: dom.Element,
     scene: Scene,
-    vrElement: org.w3c.dom.Element? = definedExternally,
+    vrElement: dom.Element? = definedExternally,
 ) {
     /**
      * Gets the view model.

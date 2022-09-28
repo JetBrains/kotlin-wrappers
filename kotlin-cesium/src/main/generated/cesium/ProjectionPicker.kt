@@ -26,7 +26,7 @@ package cesium
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ProjectionPicker.html">Online Documentation</a>
  */
 external class ProjectionPicker(
-    var container: org.w3c.dom.Element,
+    var container: dom.Element,
     scene: Scene,
 ) {
     /**

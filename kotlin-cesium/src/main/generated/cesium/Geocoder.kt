@@ -29,7 +29,7 @@ external class Geocoder(options: ConstructorOptions) {
      *   Default value - [GeocoderViewModel.flyToDestination]
      */
     interface ConstructorOptions {
-        var container: org.w3c.dom.Element
+        var container: dom.Element
         var scene: Scene
         var geocoderServices: ReadonlyArray<GeocoderService>?
         var autoComplete: Boolean?
@@ -41,13 +41,13 @@ external class Geocoder(options: ConstructorOptions) {
      * Gets the parent container.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Geocoder.html#container">Online Documentation</a>
      */
-    var container: org.w3c.dom.Element
+    var container: dom.Element
 
     /**
      * Gets the parent container.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Geocoder.html#searchSuggestionsContainer">Online Documentation</a>
      */
-    var searchSuggestionsContainer: org.w3c.dom.Element
+    var searchSuggestionsContainer: dom.Element
 
     /**
      * Gets the view model.

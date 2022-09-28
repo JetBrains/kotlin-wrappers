@@ -48,7 +48,7 @@ package cesium
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Animation.html">Online Documentation</a>
  */
 external class Animation(
-    val container: org.w3c.dom.Element,
+    val container: dom.Element,
     val viewModel: AnimationViewModel,
 ) {
     /**

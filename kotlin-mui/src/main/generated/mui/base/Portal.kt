@@ -18,7 +18,7 @@ external interface PortalProps : react.PropsWithChildren {
      * By default, it uses the body of the top-level document object,
      * so it's simply `document.body` most of the time.
      */
-    var container: org.w3c.dom.Element?
+    var container: dom.Element?
 
     /**
      * The `children` will be under the DOM hierarchy of the parent component.

@@ -193,7 +193,7 @@ external class KmlDataSource(options: ConstructorOptions? = definedExternally) {
         var sourceUri: String?
         var clampToGround: Boolean?
         var ellipsoid: Ellipsoid?
-        var screenOverlayContainer: org.w3c.dom.Element?
+        var screenOverlayContainer: dom.Element?
     }
 
     companion object {
@@ -238,7 +238,7 @@ external class KmlDataSource(options: ConstructorOptions? = definedExternally) {
             var sourceUri: String?
             var clampToGround: Boolean?
             var ellipsoid: Ellipsoid?
-            var screenOverlayContainer: org.w3c.dom.Element?
+            var screenOverlayContainer: dom.Element?
         }
     }
 }

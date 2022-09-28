@@ -27,7 +27,7 @@ external interface PopoverProps :
      * An HTML element, or a function that returns one.
      * It's used to set the position of the popover.
      */
-    var anchorEl: org.w3c.dom.Element? /* null | Element | ((element: Element) => Element) */
+    var anchorEl: dom.Element? /* null | Element | ((element: Element) => Element) */
 
     /**
      * This is the point on the anchor where the popover's
@@ -74,7 +74,7 @@ external interface PopoverProps :
      * By default, it uses the body of the anchorEl's top-level document object,
      * so it's simply `document.body` most of the time.
      */
-    override var container: org.w3c.dom.Element?
+    override var container: dom.Element?
 
     /**
      * The elevation of the popover.

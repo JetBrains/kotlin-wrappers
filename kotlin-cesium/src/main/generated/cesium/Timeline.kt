@@ -19,7 +19,7 @@ package cesium
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Timeline.html">Online Documentation</a>
  */
 external class Timeline(
-    var container: org.w3c.dom.Element,
+    var container: dom.Element,
     clock: Clock,
 ) {
     /**

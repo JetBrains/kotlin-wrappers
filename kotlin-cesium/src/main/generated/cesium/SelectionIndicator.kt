@@ -19,7 +19,7 @@ package cesium
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/SelectionIndicator.html">Online Documentation</a>
  */
 external class SelectionIndicator(
-    var container: org.w3c.dom.Element,
+    var container: dom.Element,
     scene: Scene,
 ) {
     /**

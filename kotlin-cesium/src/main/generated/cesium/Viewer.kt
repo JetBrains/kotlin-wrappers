@@ -58,7 +58,7 @@ import kotlinx.js.ReadonlyArray
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Viewer.html">Online Documentation</a>
  */
 external class Viewer(
-    val container: org.w3c.dom.Element,
+    val container: dom.Element,
     options: ConstructorOptions? = definedExternally,
 ) {
     /**
@@ -66,7 +66,7 @@ external class Viewer(
      * [CreditDisplay] and potentially other things.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Viewer.html#bottomContainer">Online Documentation</a>
      */
-    val bottomContainer: org.w3c.dom.Element
+    val bottomContainer: dom.Element
 
     /**
      * Gets the CesiumWidget.
@@ -675,7 +675,7 @@ external class Viewer(
         var terrainProvider: TerrainProvider?
         var skyBox: dynamic
         var skyAtmosphere: dynamic
-        var fullscreenElement: org.w3c.dom.Element?
+        var fullscreenElement: dom.Element?
         var useDefaultRenderLoop: Boolean?
         var targetFrameRate: Int?
         var showRenderLoopErrors: Boolean?
@@ -686,8 +686,8 @@ external class Viewer(
         var mapProjection: MapProjection?
         var globe: dynamic
         var orderIndependentTranslucency: Boolean?
-        var creditContainer: org.w3c.dom.Element?
-        var creditViewport: org.w3c.dom.Element?
+        var creditContainer: dom.Element?
+        var creditViewport: dom.Element?
         var dataSources: DataSourceCollection?
         var shadows: Boolean?
         var terrainShadows: ShadowMode?
@@ -710,7 +710,7 @@ external class Viewer(
 typealias ViewerMixin = (viewer: Viewer, options: Any) -> Unit
 
 inline fun Viewer(
-    container: org.w3c.dom.Element,
+    container: dom.Element,
     block: Viewer.ConstructorOptions.() -> Unit,
 ): Viewer {
     val options: Viewer.ConstructorOptions = js("({})")

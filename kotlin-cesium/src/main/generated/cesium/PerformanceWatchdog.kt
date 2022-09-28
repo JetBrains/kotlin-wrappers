@@ -23,7 +23,7 @@ external class PerformanceWatchdog(options: ConstructorOptions? = definedExterna
      *   Default value - `'This application appears to be performing poorly on your system.  Please try using a different web browser or updating your video drivers.'`
      */
     interface ConstructorOptions {
-        var container: org.w3c.dom.Element
+        var container: dom.Element
         var scene: Scene
         var lowFrameRateMessage: String?
     }
@@ -32,7 +32,7 @@ external class PerformanceWatchdog(options: ConstructorOptions? = definedExterna
      * Gets the parent container.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PerformanceWatchdog.html#container">Online Documentation</a>
      */
-    var container: org.w3c.dom.Element
+    var container: dom.Element
 
     /**
      * Gets the view model.
