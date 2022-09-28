@@ -2,7 +2,7 @@
 
 package webrtc
 
-external class RTCDataChannelEvent : org.w3c.dom.events.Event {
+external class RTCDataChannelEvent : web.events.Event {
     val channel: RTCDataChannel
 
     companion object

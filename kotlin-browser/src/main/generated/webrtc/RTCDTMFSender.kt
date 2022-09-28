@@ -2,7 +2,7 @@
 
 package webrtc
 
-external class RTCDTMFSender : org.w3c.dom.events.EventTarget {
+external class RTCDTMFSender : web.events.EventTarget {
     val canInsertDTMF: Boolean
     var ontonechange: ((event: RTCDTMFToneChangeEvent) -> Unit)?
     val toneBuffer: String

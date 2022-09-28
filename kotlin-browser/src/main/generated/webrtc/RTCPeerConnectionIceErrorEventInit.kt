@@ -2,7 +2,7 @@
 
 package webrtc
 
-sealed external interface RTCPeerConnectionIceErrorEventInit : org.w3c.dom.EventInit {
+sealed external interface RTCPeerConnectionIceErrorEventInit : web.events.EventInit {
     var address: String?
     var errorCode: Number
     var errorText: String?

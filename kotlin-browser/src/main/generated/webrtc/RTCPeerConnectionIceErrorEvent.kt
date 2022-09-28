@@ -2,7 +2,7 @@
 
 package webrtc
 
-external class RTCPeerConnectionIceErrorEvent : org.w3c.dom.events.Event {
+external class RTCPeerConnectionIceErrorEvent : web.events.Event {
     val address: String?
     val errorCode: Number
     val errorText: String

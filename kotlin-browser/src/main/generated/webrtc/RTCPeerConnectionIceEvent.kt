@@ -2,7 +2,7 @@
 
 package webrtc
 
-external class RTCPeerConnectionIceEvent : org.w3c.dom.events.Event {
+external class RTCPeerConnectionIceEvent : web.events.Event {
     val candidate: RTCIceCandidate?
 
     companion object

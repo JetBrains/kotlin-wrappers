@@ -2,7 +2,7 @@
 
 package webrtc
 
-external class RTCDTMFToneChangeEvent : org.w3c.dom.events.Event {
+external class RTCDTMFToneChangeEvent : web.events.Event {
     val tone: String
 
     companion object

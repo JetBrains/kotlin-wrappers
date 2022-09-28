@@ -5,7 +5,7 @@ package webrtc
 import kotlinx.js.ReadonlyArray
 import web.events.Event
 
-external class RTCDtlsTransport : org.w3c.dom.events.EventTarget {
+external class RTCDtlsTransport : web.events.EventTarget {
     val iceTransport: RTCIceTransport
     var onerror: ((event: Event) -> Unit)?
     var onstatechange: ((event: Event) -> Unit)?

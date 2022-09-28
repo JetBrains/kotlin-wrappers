@@ -21,7 +21,7 @@ external interface UseSliderParameters {
 
     var name: String?
 
-    var onChange: ((event: org.w3c.dom.events.Event, value: dynamic, activeThumb: Number) -> Unit)?
+    var onChange: ((event: web.events.Event, value: dynamic, activeThumb: Number) -> Unit)?
 
     var onChangeCommitted: ((event: react.dom.events.SyntheticEvent<*, *>, value: dynamic) -> Unit)?
 

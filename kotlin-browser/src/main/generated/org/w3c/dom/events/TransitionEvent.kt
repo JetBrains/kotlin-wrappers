@@ -7,7 +7,7 @@
 package org.w3c.dom.events
 
 import kotlinx.js.HighResTimeStamp
-import org.w3c.dom.EventInit
+import web.events.EventInit
 
 external interface TransitionEventInit : EventInit {
     var elapsedTime: HighResTimeStamp?

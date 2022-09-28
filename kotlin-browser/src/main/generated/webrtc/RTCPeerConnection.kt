@@ -8,7 +8,7 @@ import web.events.Event
 external class RTCPeerConnection(
     configuration: RTCConfiguration = definedExternally,
     options: Any = definedExternally,
-) : org.w3c.dom.events.EventTarget {
+) : web.events.EventTarget {
     val canTrickleIceCandidates: Boolean?
     val connectionState: RTCPeerConnectionState
     val currentLocalDescription: RTCSessionDescription?

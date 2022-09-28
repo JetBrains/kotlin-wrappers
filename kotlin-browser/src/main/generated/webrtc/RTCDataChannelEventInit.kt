@@ -2,6 +2,6 @@
 
 package webrtc
 
-sealed external interface RTCDataChannelEventInit : org.w3c.dom.EventInit {
+sealed external interface RTCDataChannelEventInit : web.events.EventInit {
     var channel: RTCDataChannel
 }

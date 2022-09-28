@@ -4,7 +4,7 @@ package webrtc
 
 import web.events.Event
 
-external class RTCSctpTransport : org.w3c.dom.events.EventTarget {
+external class RTCSctpTransport : web.events.EventTarget {
     val maxChannels: Number?
     val maxMessageSize: Number
     var onstatechange: ((event: Event) -> Unit)?

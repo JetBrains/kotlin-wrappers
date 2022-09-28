@@ -2,7 +2,7 @@
 
 package webrtc
 
-external class RTCErrorEvent : org.w3c.dom.events.Event {
+external class RTCErrorEvent : web.events.Event {
     val error: RTCError
 
     companion object

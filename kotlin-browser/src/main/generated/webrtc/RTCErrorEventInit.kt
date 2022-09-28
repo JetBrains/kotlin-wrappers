@@ -2,6 +2,6 @@
 
 package webrtc
 
-sealed external interface RTCErrorEventInit : org.w3c.dom.EventInit {
+sealed external interface RTCErrorEventInit : web.events.EventInit {
     var error: RTCError
 }

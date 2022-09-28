@@ -150,7 +150,7 @@ external interface SliderUnstyledOwnProps : react.Props {
      * @param {number | number[]} value The new value.
      * @param {number} activeThumb Index of the currently moved thumb.
      */
-    var onChange: ((event: org.w3c.dom.events.Event, value: dynamic, activeThumb: Number) -> Unit)?
+    var onChange: ((event: web.events.Event, value: dynamic, activeThumb: Number) -> Unit)?
 
     /**
      * Callback function that is fired when the `mouseup` is triggered.

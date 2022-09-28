@@ -2,6 +2,6 @@
 
 package webrtc
 
-sealed external interface RTCDTMFToneChangeEventInit : org.w3c.dom.EventInit {
+sealed external interface RTCDTMFToneChangeEventInit : web.events.EventInit {
     var tone: String?
 }
