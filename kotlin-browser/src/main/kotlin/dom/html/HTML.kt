@@ -1,6 +1,7 @@
-package org.w3c.dom
+package dom.html
 
 import dom.TagName
+import org.w3c.dom.*
 
 object HTML {
     inline val a: TagName<HTMLAnchorElement>
