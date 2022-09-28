@@ -1,5 +1,7 @@
 package org.w3c.dom
 
+import dom.TagName
+
 inline val Document.fonts: FontFaceSet
     get() = asDynamic().fonts
 

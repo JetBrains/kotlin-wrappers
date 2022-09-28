@@ -2,7 +2,9 @@
     "NOTHING_TO_INLINE",
 )
 
-package org.w3c.dom
+package dom
+
+import org.w3c.dom.Element
 
 sealed external interface TagName<T : Element>
 

@@ -1,5 +1,7 @@
 package org.w3c.dom
 
+import dom.TagName
+
 object HTML {
     inline val a: TagName<HTMLAnchorElement>
         get() = TagName("a")
