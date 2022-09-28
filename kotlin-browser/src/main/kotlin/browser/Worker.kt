@@ -2,9 +2,12 @@
     "NOTHING_TO_INLINE",
 )
 
-package org.w3c.dom
+package browser
 
 import web.url.URL
+
+typealias Worker = org.w3c.dom.Worker
+typealias WorkerOptions = org.w3c.dom.WorkerOptions
 
 inline fun Worker(
     scriptURL: URL,
