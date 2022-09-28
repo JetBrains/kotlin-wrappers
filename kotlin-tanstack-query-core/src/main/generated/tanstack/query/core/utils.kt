@@ -135,7 +135,7 @@ external fun sleep(timeout: JsDuration): Promise<Unit>
 
 external fun scheduleMicrotask(callback: () -> Unit)
 
-external fun getAbortController(): org.w3c.fetch.AbortController?
+external fun getAbortController(): web.AbortController?
 
 external fun <TData, TOptions : QueryOptions<*, *, *, *>> replaceData(
     prevData: TData?,
