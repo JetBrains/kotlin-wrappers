@@ -2,11 +2,12 @@
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
-package org.w3c.dom.events
+package web.events
 
 import kotlinx.js.jso
-import org.w3c.fetch.AbortSignal
-import web.events.EventType
+import web.AbortSignal
+
+typealias EventTarget = org.w3c.dom.events.EventTarget
 
 @JsName("null") // IR workaround
 sealed external interface EventHandlerOptions {
