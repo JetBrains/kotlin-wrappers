@@ -126,4 +126,7 @@ include("kotlin-tanstack-virtual-core")
 // Kotlin/JS: TypeScript wrappers
 include("kotlin-typescript")
 
+// Kotlin/JS: Common web wrappers
+include("kotlin-web")
+
 include("kotlin-wrappers-bom")
