@@ -2,7 +2,7 @@
 
 package node
 
-external class AbortController : kotlinx.js.AbortController {
+external class AbortController : web.AbortController {
     override val signal: AbortSignal
     override fun abort()
 }

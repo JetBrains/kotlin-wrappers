@@ -1,4 +1,4 @@
-package kotlinx.js
+package web
 
 external interface AbortController {
     val signal: AbortSignal

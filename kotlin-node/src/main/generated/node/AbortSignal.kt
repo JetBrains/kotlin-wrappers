@@ -2,7 +2,7 @@
 
 package node
 
-external class AbortSignal : kotlinx.js.AbortSignal {
+external class AbortSignal : web.AbortSignal {
     override val aborted: Boolean
     override var onabort: Function<Unit>?
 }

@@ -1,4 +1,4 @@
-package kotlinx.js
+package web
 
 external interface AbortSignal {
     val aborted: Boolean

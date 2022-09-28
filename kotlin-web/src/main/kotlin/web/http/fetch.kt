@@ -1,10 +1,10 @@
 package web.http
 
 import kotlinx.coroutines.suspendCancellableCoroutine
-import kotlinx.js.AbortController
 import kotlinx.js.URL
 import kotlinx.js.jso
 import org.w3c.fetch.Response
+import web.AbortController
 import kotlin.coroutines.resume
 import kotlin.coroutines.resumeWithException
 

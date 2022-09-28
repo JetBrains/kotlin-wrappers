@@ -1,6 +1,6 @@
 package org.w3c.fetch
 
-external class AbortController : kotlinx.js.AbortController {
+external class AbortController : web.AbortController {
     /**
      * Returns the AbortSignal object associated with this object.
      */

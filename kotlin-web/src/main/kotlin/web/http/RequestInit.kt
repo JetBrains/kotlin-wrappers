@@ -1,6 +1,6 @@
 package web.http
 
-import kotlinx.js.AbortSignal
+import web.AbortSignal
 
 external interface RequestInit : org.w3c.fetch.RequestInit {
     var signal: AbortSignal?
