@@ -1,4 +1,4 @@
-package org.w3c.dom
+package dom
 
 import kotlinx.js.ReadonlyArray
 import kotlin.js.Promise
