@@ -2,7 +2,7 @@
 
 package react.dom.events
 
-import org.w3c.dom.Element
+import dom.Element
 
 external interface TouchEvent<out T : Element> : UIEvent<T, NativeTouchEvent> {
     val altKey: Boolean

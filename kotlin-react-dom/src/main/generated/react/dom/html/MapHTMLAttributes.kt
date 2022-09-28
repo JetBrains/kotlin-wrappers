@@ -2,7 +2,7 @@
 
 package react.dom.html
 
-import org.w3c.dom.Element
+import dom.Element
 
 external interface MapHTMLAttributes<T : Element> : HTMLAttributes<T> {
     var name: String?

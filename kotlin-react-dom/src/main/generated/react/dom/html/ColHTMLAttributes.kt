@@ -2,7 +2,7 @@
 
 package react.dom.html
 
-import org.w3c.dom.Element
+import dom.Element
 
 external interface ColHTMLAttributes<T : Element> : HTMLAttributes<T> {
     var span: Int?

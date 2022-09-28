@@ -2,7 +2,7 @@
 
 package react.dom.events
 
-import org.w3c.dom.Element
+import dom.Element
 import org.w3c.dom.events.Event
 import org.w3c.dom.events.EventTarget
 

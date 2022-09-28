@@ -2,7 +2,7 @@
 
 package react.dom.html
 
-import org.w3c.dom.Element
+import dom.Element
 
 external interface StyleHTMLAttributes<T : Element> : HTMLAttributes<T> {
     var media: String?

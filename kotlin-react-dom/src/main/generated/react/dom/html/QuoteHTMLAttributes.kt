@@ -2,7 +2,7 @@
 
 package react.dom.html
 
-import org.w3c.dom.Element
+import dom.Element
 
 external interface QuoteHTMLAttributes<T : Element> : HTMLAttributes<T> {
     var cite: String?

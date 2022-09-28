@@ -2,7 +2,7 @@
 
 package react.dom.html
 
-import org.w3c.dom.Element
+import dom.Element
 
 external interface OlHTMLAttributes<T : Element> : HTMLAttributes<T> {
     var reversed: Boolean?

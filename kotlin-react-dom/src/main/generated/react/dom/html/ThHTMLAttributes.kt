@@ -2,7 +2,7 @@
 
 package react.dom.html
 
-import org.w3c.dom.Element
+import dom.Element
 
 external interface ThHTMLAttributes<T : Element> : HTMLAttributes<T> {
     var align: ThAlign?

@@ -2,7 +2,7 @@
 
 package react.dom.html
 
-import org.w3c.dom.Element
+import dom.Element
 
 external interface EmbedHTMLAttributes<T : Element> : HTMLAttributes<T> {
     var height: Double?

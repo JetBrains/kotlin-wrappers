@@ -3,7 +3,7 @@
 
 package react.dom.client
 
-import org.w3c.dom.Element
+import dom.Element
 import react.ReactNode
 
 // See https://reactjs.org/docs/react-dom.html

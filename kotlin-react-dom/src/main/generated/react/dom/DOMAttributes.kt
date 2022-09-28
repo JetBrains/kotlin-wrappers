@@ -2,7 +2,7 @@
 
 package react.dom
 
-import org.w3c.dom.Element
+import dom.Element
 import react.dom.events.*
 
 external interface DOMAttributes<T : Element> :

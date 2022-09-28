@@ -3,7 +3,7 @@
 
 package react.dom
 
-import org.w3c.dom.Element
+import dom.Element
 
 /**
  * [Deprecation details](https://reactjs.org/blog/2022/03/08/react-18-upgrade-guide.html#deprecations)

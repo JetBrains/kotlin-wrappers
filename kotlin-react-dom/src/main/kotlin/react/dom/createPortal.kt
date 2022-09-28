@@ -3,7 +3,7 @@
 
 package react.dom
 
-import org.w3c.dom.Element
+import dom.Element
 import react.Key
 import react.ReactNode
 import react.ReactPortal

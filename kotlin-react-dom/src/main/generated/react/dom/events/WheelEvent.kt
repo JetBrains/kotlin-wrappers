@@ -2,7 +2,7 @@
 
 package react.dom.events
 
-import org.w3c.dom.Element
+import dom.Element
 
 external interface WheelEvent<out T : Element> : MouseEvent<T, NativeWheelEvent> {
     val deltaMode: Int

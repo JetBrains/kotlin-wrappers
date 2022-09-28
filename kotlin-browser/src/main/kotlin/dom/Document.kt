@@ -1,7 +1,5 @@
 package dom
 
-import org.w3c.dom.Element
-
 typealias Document = org.w3c.dom.Document
 
 inline val Document.fonts: FontFaceSet

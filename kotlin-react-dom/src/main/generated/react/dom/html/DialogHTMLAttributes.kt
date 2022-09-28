@@ -2,7 +2,7 @@
 
 package react.dom.html
 
-import org.w3c.dom.Element
+import dom.Element
 import react.dom.events.ReactEventHandler
 
 external interface DialogHTMLAttributes<T : Element> : HTMLAttributes<T> {

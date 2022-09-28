@@ -2,7 +2,7 @@
 
 package react.dom.svg
 
-import org.w3c.dom.Element
+import dom.Element
 import react.dom.DOMAttributes
 import react.dom.aria.AriaAttributes
 import react.dom.aria.AriaRole
