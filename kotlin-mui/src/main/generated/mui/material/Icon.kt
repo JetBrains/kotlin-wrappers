@@ -10,7 +10,7 @@ import mui.material.styles.Theme
 import mui.system.SxProps
 
 external interface IconProps :
-    react.dom.html.HTMLAttributes<org.w3c.dom.HTMLSpanElement>,
+    react.dom.html.HTMLAttributes<dom.html.HTMLSpanElement>,
     react.PropsWithChildren,
     mui.system.PropsWithSx,
     mui.types.PropsWithComponent {

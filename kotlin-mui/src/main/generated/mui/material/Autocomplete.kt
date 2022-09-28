@@ -12,7 +12,7 @@ import mui.system.SxProps
 external interface AutocompleteProps<T> :
     mui.base.UseAutocompleteProps<T>,
     mui.system.StandardProps,
-    react.dom.html.HTMLAttributes<org.w3c.dom.HTMLDivElement>,
+    react.dom.html.HTMLAttributes<dom.html.HTMLDivElement>,
     mui.system.PropsWithSx {
     /**
      * Props applied to the [`Chip`](/material-ui/api/chip/) element.
@@ -190,7 +190,7 @@ external interface AutocompleteProps<T> :
      * @returns {ReactNode}
      */
     var renderOption: ((
-        props: react.dom.html.HTMLAttributes<org.w3c.dom.HTMLLIElement>,
+        props: react.dom.html.HTMLAttributes<dom.html.HTMLLIElement>,
         option: T,
         state: AutocompleteRenderOptionState,
     ) -> react.ReactNode)?

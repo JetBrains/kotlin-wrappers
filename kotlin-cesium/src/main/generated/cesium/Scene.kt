@@ -84,7 +84,7 @@ external class Scene(
      *   Default value - `1`
      */
     interface ConstructorOptions {
-        var canvas: org.w3c.dom.HTMLCanvasElement
+        var canvas: dom.html.HTMLCanvasElement
         var contextOptions: Any?
         var creditContainer: dom.Element?
         var creditViewport: dom.Element?
@@ -382,7 +382,7 @@ external class Scene(
      * Gets the canvas element to which this scene is bound.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Scene.html#canvas">Online Documentation</a>
      */
-    val canvas: org.w3c.dom.HTMLCanvasElement
+    val canvas: dom.html.HTMLCanvasElement
 
     /**
      * The drawingBufferHeight of the underlying GL context.

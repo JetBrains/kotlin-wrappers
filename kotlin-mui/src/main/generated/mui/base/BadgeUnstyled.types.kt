@@ -4,7 +4,7 @@ package mui.base
 
 external interface BadgeUnstyledProps :
     BadgeUnstyledOwnProps,
-    react.dom.html.HTMLAttributes<org.w3c.dom.HTMLSpanElement>
+    react.dom.html.HTMLAttributes<dom.html.HTMLSpanElement>
 
 external interface BadgeUnstyledOwnProps : react.PropsWithChildren {
     /**

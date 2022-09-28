@@ -6,7 +6,7 @@ import csstype.ClassName
 
 external interface TreeItemContentProps :
     mui.system.StandardProps,
-    react.dom.html.HTMLAttributes<org.w3c.dom.HTMLElement>,
+    react.dom.html.HTMLAttributes<dom.html.HTMLElement>,
     react.PropsWithClassName {
     /**
      * className applied to the root element.

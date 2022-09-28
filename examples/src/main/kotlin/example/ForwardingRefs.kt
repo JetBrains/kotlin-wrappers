@@ -1,7 +1,7 @@
 package example
 
-import org.w3c.dom.HTMLElement
-import org.w3c.dom.HTMLInputElement
+import dom.html.HTMLElement
+import dom.html.HTMLInputElement
 import react.*
 import react.dom.html.ReactHTML.input
 

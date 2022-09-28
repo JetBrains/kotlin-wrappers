@@ -29,7 +29,7 @@ external interface RadioGroupProps :
      * @param {string} value The value of the selected radio button.
      * You can pull out the new value by accessing `event.target.value` (string).
      */
-    var onChange: ((event: react.dom.events.ChangeEvent<org.w3c.dom.HTMLInputElement>, value: String) -> Unit)?
+    var onChange: ((event: react.dom.events.ChangeEvent<dom.html.HTMLInputElement>, value: String) -> Unit)?
 
     /**
      * Value of the selected radio button. The DOM API casts this to a string.

@@ -10,7 +10,7 @@ import mui.system.SxProps
 
 external interface SpeedDialIconProps :
     mui.system.StandardProps,
-    react.dom.html.HTMLAttributes<org.w3c.dom.HTMLSpanElement>,
+    react.dom.html.HTMLAttributes<dom.html.HTMLSpanElement>,
     mui.system.PropsWithSx {
     /**
      * Override or extend the styles applied to the component.

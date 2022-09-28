@@ -1,8 +1,8 @@
 package test
 
+import dom.html.HTMLStyleElement
 import kotlinx.browser.document
 import kotlinx.css.*
-import org.w3c.dom.HTMLStyleElement
 import org.w3c.dom.asList
 import org.w3c.dom.css.CSSStyleSheet
 import react.Props

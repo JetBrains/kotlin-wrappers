@@ -19,7 +19,7 @@ package cesium
  *   Default value - `document`
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ScreenSpaceEventHandler.html">Online Documentation</a>
  */
-external class ScreenSpaceEventHandler(element: org.w3c.dom.HTMLCanvasElement? = definedExternally) {
+external class ScreenSpaceEventHandler(element: dom.html.HTMLCanvasElement? = definedExternally) {
     /**
      * Set a function to be executed on an input event.
      * @param [action] Function to be executed when the input event occurs.

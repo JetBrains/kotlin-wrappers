@@ -2,8 +2,8 @@
 
 package webgl
 
+import dom.html.HTMLCanvasElement
 import kotlinx.js.ReadonlyArray
-import org.w3c.dom.HTMLCanvasElement
 
 sealed external interface WebGLRenderingContextBase {
     val canvas: HTMLCanvasElement

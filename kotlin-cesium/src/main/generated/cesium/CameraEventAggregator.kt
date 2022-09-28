@@ -16,7 +16,7 @@ package cesium
  *   Default value - `document`
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CameraEventAggregator.html">Online Documentation</a>
  */
-external class CameraEventAggregator(canvas: org.w3c.dom.HTMLCanvasElement? = definedExternally) {
+external class CameraEventAggregator(canvas: dom.html.HTMLCanvasElement? = definedExternally) {
     /**
      * Gets the current mouse position.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CameraEventAggregator.html#currentMousePosition">Online Documentation</a>

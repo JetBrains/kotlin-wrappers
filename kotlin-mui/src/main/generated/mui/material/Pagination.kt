@@ -11,7 +11,7 @@ import mui.system.SxProps
 external interface PaginationProps :
     UsePaginationProps,
     mui.system.StandardProps,
-    react.dom.html.HTMLAttributes<org.w3c.dom.HTMLElement>,
+    react.dom.html.HTMLAttributes<dom.html.HTMLElement>,
     mui.system.PropsWithSx {
     /**
      * Override or extend the styles applied to the component.

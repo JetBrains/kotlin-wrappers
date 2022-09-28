@@ -6,7 +6,7 @@ import csstype.ClassName
 
 external interface TabsListUnstyledProps :
     TabsListUnstyledOwnProps,
-    react.dom.html.HTMLAttributes<org.w3c.dom.HTMLDivElement>
+    react.dom.html.HTMLAttributes<dom.html.HTMLDivElement>
 
 external interface TabsListUnstyledOwnProps :
     react.PropsWithChildren,

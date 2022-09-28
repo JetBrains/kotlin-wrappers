@@ -6,7 +6,7 @@
 package mui.material
 
 external interface MenuListProps :
-    react.dom.html.HTMLAttributes<org.w3c.dom.HTMLUListElement>,
+    react.dom.html.HTMLAttributes<dom.html.HTMLUListElement>,
     react.PropsWithChildren {
     /**
      * If `true`, will focus the `[role="menu"]` container and move into tab order.

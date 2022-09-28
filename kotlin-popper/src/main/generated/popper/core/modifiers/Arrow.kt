@@ -9,7 +9,7 @@ package popper.core.modifiers
 external interface PaddingType
 
 external interface ArrowOptions {
-    var element: org.w3c.dom.HTMLElement?
+    var element: dom.html.HTMLElement?
     var padding: PaddingType
 }
 

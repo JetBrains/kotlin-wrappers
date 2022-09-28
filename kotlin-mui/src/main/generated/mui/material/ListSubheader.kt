@@ -9,7 +9,7 @@ import mui.material.styles.Theme
 import mui.system.SxProps
 
 external interface ListSubheaderProps :
-    react.dom.html.LiHTMLAttributes<org.w3c.dom.HTMLLIElement>,
+    react.dom.html.LiHTMLAttributes<dom.html.HTMLLIElement>,
     react.PropsWithChildren,
     mui.system.PropsWithSx,
     mui.types.PropsWithComponent {

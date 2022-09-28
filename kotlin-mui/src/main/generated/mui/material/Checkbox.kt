@@ -79,12 +79,12 @@ external interface CheckboxProps :
     /**
      * [Attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#Attributes) applied to the `input` element.
      */
-    var inputProps: react.dom.html.InputHTMLAttributes<org.w3c.dom.HTMLInputElement>?
+    var inputProps: react.dom.html.InputHTMLAttributes<dom.html.HTMLInputElement>?
 
     /**
      * Pass a ref to the `input` element.
      */
-    var inputRef: react.Ref<org.w3c.dom.HTMLInputElement>?
+    var inputRef: react.Ref<dom.html.HTMLInputElement>?
 
     /**
      * Callback fired when the state is changed.
@@ -92,7 +92,7 @@ external interface CheckboxProps :
      * @param {React.ChangeEvent<HTMLInputElement>} event The event source of the callback.
      * You can pull out the new checked state by accessing `event.target.checked` (boolean).
      */
-    var onChange: ((event: react.dom.events.ChangeEvent<org.w3c.dom.HTMLInputElement>, checked: Boolean) -> Unit)?
+    var onChange: ((event: react.dom.events.ChangeEvent<dom.html.HTMLInputElement>, checked: Boolean) -> Unit)?
 
     /**
      * If `true`, the `input` element is required.

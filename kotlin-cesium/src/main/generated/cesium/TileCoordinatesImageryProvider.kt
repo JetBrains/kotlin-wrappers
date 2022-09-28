@@ -207,7 +207,7 @@ external class TileCoordinatesImageryProvider(options: ConstructorOptions? = def
         y: Double,
         level: Int,
         request: Request? = definedExternally,
-    ): kotlin.js.Promise<org.w3c.dom.HTMLCanvasElement>
+    ): kotlin.js.Promise<dom.html.HTMLCanvasElement>
 
     /**
      * Picking features is not currently supported by this imagery provider, so this function simply returns

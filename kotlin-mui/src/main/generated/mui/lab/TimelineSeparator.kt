@@ -10,7 +10,7 @@ import mui.system.SxProps
 
 external interface TimelineSeparatorProps :
     mui.system.StandardProps,
-    react.dom.html.HTMLAttributes<org.w3c.dom.HTMLDivElement>,
+    react.dom.html.HTMLAttributes<dom.html.HTMLDivElement>,
     react.PropsWithChildren,
     mui.system.PropsWithSx {
     /**

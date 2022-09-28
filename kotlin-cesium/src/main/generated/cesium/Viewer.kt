@@ -169,7 +169,7 @@ external class Viewer(
      * Gets the canvas.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Viewer.html#canvas">Online Documentation</a>
      */
-    val canvas: org.w3c.dom.HTMLCanvasElement
+    val canvas: dom.html.HTMLCanvasElement
 
     /**
      * Gets the scene.

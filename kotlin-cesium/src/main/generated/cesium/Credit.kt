@@ -31,7 +31,7 @@ external class Credit(
      * Gets the credit element
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Credit.html#element">Online Documentation</a>
      */
-    val element: org.w3c.dom.HTMLElement
+    val element: dom.html.HTMLElement
 
     companion object {
         /**

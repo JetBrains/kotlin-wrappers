@@ -1,3 +1,5 @@
+import dom.html.HTMLElement
+import dom.html.HTMLStyleElement
 import kotlinx.browser.document
 import kotlinx.browser.window
 import kotlinx.coroutines.CoroutineScope
@@ -7,8 +9,6 @@ import kotlinx.css.CssBuilder
 import kotlinx.dom.clear
 import kotlinx.js.jso
 import org.w3c.dom.Element
-import org.w3c.dom.HTMLElement
-import org.w3c.dom.HTMLStyleElement
 import org.w3c.dom.asList
 import org.w3c.dom.css.CSSRule
 import org.w3c.dom.css.CSSRuleList

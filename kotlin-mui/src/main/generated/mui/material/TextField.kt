@@ -122,9 +122,9 @@ external interface BaseTextFieldProps :
      */
     var name: String?
 
-    var onBlur: react.dom.events.FocusEventHandler<org.w3c.dom.HTMLElement>?
+    var onBlur: react.dom.events.FocusEventHandler<dom.html.HTMLElement>?
 
-    var onFocus: react.dom.events.FocusEventHandler<org.w3c.dom.HTMLElement>?
+    var onFocus: react.dom.events.FocusEventHandler<dom.html.HTMLElement>?
 
     /**
      * The short hint displayed in the `input` before the user enters a value.
@@ -193,7 +193,7 @@ external interface StandardTextFieldProps :
      * @param {object} event The event source of the callback.
      * You can pull out the new value by accessing `event.target.value` (string).
      */
-    var onChange: react.dom.events.ChangeEventHandler<org.w3c.dom.HTMLElement>?
+    var onChange: react.dom.events.ChangeEventHandler<dom.html.HTMLElement>?
 
     /**
      * The variant to use.
@@ -218,7 +218,7 @@ external interface FilledTextFieldProps :
      * @param {object} event The event source of the callback.
      * You can pull out the new value by accessing `event.target.value` (string).
      */
-    var onChange: react.dom.events.ChangeEventHandler<org.w3c.dom.HTMLElement>?
+    var onChange: react.dom.events.ChangeEventHandler<dom.html.HTMLElement>?
 
     /**
      * The variant to use.
@@ -243,7 +243,7 @@ external interface OutlinedTextFieldProps :
      * @param {object} event The event source of the callback.
      * You can pull out the new value by accessing `event.target.value` (string).
      */
-    var onChange: react.dom.events.ChangeEventHandler<org.w3c.dom.HTMLElement>?
+    var onChange: react.dom.events.ChangeEventHandler<dom.html.HTMLElement>?
 
     /**
      * The variant to use.

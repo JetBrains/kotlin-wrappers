@@ -6,7 +6,7 @@ import csstype.ClassName
 
 external interface TabPanelUnstyledProps :
     TabPanelUnstyledOwnProps,
-    react.dom.html.HTMLAttributes<org.w3c.dom.HTMLDivElement>
+    react.dom.html.HTMLAttributes<dom.html.HTMLDivElement>
 
 external interface TabPanelUnstyledOwnProps :
     react.PropsWithChildren,

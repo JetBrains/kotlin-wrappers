@@ -1,7 +1,7 @@
 package styled.sheets
 
+import dom.html.HTMLStyleElement
 import kotlinx.browser.window
-import org.w3c.dom.HTMLStyleElement
 import org.w3c.dom.asList
 import kotlin.collections.component1
 import kotlin.collections.component2

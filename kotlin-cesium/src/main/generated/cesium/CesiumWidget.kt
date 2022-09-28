@@ -124,7 +124,7 @@ external class CesiumWidget(
      * Gets the canvas.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CesiumWidget.html#canvas">Online Documentation</a>
      */
-    val canvas: org.w3c.dom.HTMLCanvasElement
+    val canvas: dom.html.HTMLCanvasElement
 
     /**
      * Gets the credit container.

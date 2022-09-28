@@ -8,7 +8,7 @@ package mui.base
 import kotlinx.js.ReadonlyArray
 
 external interface PopperUnstyledProps :
-    react.dom.html.HTMLAttributes<org.w3c.dom.HTMLDivElement> {
+    react.dom.html.HTMLAttributes<dom.html.HTMLDivElement> {
     /**
      * An HTML element, [virtualElement](https://popper.js.org/docs/v2/virtual-elements/),
      * or a function that returns either.

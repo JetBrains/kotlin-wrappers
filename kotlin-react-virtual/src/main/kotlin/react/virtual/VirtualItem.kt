@@ -1,6 +1,6 @@
 package react.virtual
 
-import org.w3c.dom.HTMLElement
+import dom.html.HTMLElement
 import react.Key
 import react.RefCallback
 

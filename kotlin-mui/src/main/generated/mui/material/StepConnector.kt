@@ -10,7 +10,7 @@ import mui.system.SxProps
 
 external interface StepConnectorProps :
     mui.system.StandardProps,
-    react.dom.html.HTMLAttributes<org.w3c.dom.HTMLDivElement>,
+    react.dom.html.HTMLAttributes<dom.html.HTMLDivElement>,
     mui.system.PropsWithSx {
     /**
      * Override or extend the styles applied to the component.

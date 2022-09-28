@@ -40,7 +40,7 @@ external class KmlDataSource(options: ConstructorOptions? = definedExternally) {
      * for client height and width.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/KmlDataSource.html#canvas">Online Documentation</a>
      */
-    var canvas: org.w3c.dom.HTMLCanvasElement?
+    var canvas: dom.html.HTMLCanvasElement?
 
     /**
      * The position and orientation of this [Camera] will be used to
@@ -188,7 +188,7 @@ external class KmlDataSource(options: ConstructorOptions? = definedExternally) {
      */
     interface ConstructorOptions {
         var camera: Camera?
-        var canvas: org.w3c.dom.HTMLCanvasElement?
+        var canvas: dom.html.HTMLCanvasElement?
         var credit: Credit?
         var sourceUri: String?
         var clampToGround: Boolean?

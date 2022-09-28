@@ -4,11 +4,11 @@ package mui.base
 
 external interface SliderUnstyledProps :
     SliderUnstyledOwnProps,
-    react.dom.html.HTMLAttributes<org.w3c.dom.HTMLSpanElement>
+    react.dom.html.HTMLAttributes<dom.html.HTMLSpanElement>
 
 @Suppress("VIRTUAL_MEMBER_HIDDEN")
 external interface SliderValueLabelProps :
-    react.dom.html.HTMLAttributes<org.w3c.dom.HTMLSpanElement> {
+    react.dom.html.HTMLAttributes<dom.html.HTMLSpanElement> {
     var children: react.ReactElement<*>
 
     var index: Number

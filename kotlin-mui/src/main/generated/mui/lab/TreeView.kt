@@ -13,7 +13,7 @@ external interface TreeViewProps : react.Props
 
 external interface TreeViewPropsBase :
     mui.system.StandardProps,
-    react.dom.html.HTMLAttributes<org.w3c.dom.HTMLUListElement>,
+    react.dom.html.HTMLAttributes<dom.html.HTMLUListElement>,
     react.PropsWithChildren,
     mui.system.PropsWithSx {
     /**

@@ -40,7 +40,7 @@ external class VideoSynchronizer {
      * Gets or sets the video element to synchronize.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/VideoSynchronizer.html#element">Online Documentation</a>
      */
-    var element: org.w3c.dom.HTMLVideoElement
+    var element: dom.html.HTMLVideoElement
 
     /**
      * Destroys and resources used by the object.  Once an object is destroyed, it should not be used.

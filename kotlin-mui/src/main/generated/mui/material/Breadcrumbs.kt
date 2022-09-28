@@ -9,7 +9,7 @@ import mui.material.styles.Theme
 import mui.system.SxProps
 
 external interface BreadcrumbsProps :
-    react.dom.html.HTMLAttributes<org.w3c.dom.HTMLElement>,
+    react.dom.html.HTMLAttributes<dom.html.HTMLElement>,
     react.PropsWithChildren,
     mui.system.PropsWithSx,
     mui.types.PropsWithComponent {

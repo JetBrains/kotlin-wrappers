@@ -9,7 +9,7 @@ import mui.material.styles.Theme
 import mui.system.SxProps
 
 external interface TableProps :
-    react.dom.html.TableHTMLAttributes<org.w3c.dom.HTMLTableElement>,
+    react.dom.html.TableHTMLAttributes<dom.html.HTMLTableElement>,
     react.PropsWithChildren,
     mui.system.PropsWithSx,
     mui.types.PropsWithComponent {

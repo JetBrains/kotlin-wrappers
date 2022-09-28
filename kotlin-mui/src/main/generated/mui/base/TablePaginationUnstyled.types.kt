@@ -4,7 +4,7 @@ package mui.base
 
 external interface TablePaginationUnstyledProps :
     TablePaginationUnstyledOwnProps,
-    react.dom.html.HTMLAttributes<org.w3c.dom.HTMLTableCellElement>
+    react.dom.html.HTMLAttributes<dom.html.HTMLTableCellElement>
 
 external interface LabelDisplayedRowsArgs {
     var from: Number
@@ -112,14 +112,14 @@ external interface TablePaginationUnstyledOwnProps : react.Props {
      * @param {React.MouseEvent<HTMLButtonElement> | null} event The event source of the callback.
      * @param {number} page The page selected.
      */
-    var onPageChange: (event: react.dom.events.MouseEvent<org.w3c.dom.HTMLButtonElement, *>?, page: Number) -> Unit
+    var onPageChange: (event: react.dom.events.MouseEvent<dom.html.HTMLButtonElement, *>?, page: Number) -> Unit
 
     /**
      * Callback fired when the number of rows per page is changed.
      *
      * @param {React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>} event The event source of the callback.
      */
-    var onRowsPerPageChange: react.dom.events.ChangeEventHandler<org.w3c.dom.HTMLElement>?
+    var onRowsPerPageChange: react.dom.events.ChangeEventHandler<dom.html.HTMLElement>?
 
     /**
      * The zero-based index of the current page.

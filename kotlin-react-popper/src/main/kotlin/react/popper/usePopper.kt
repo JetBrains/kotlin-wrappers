@@ -3,7 +3,7 @@
 
 package react.popper
 
-import org.w3c.dom.HTMLElement
+import dom.html.HTMLElement
 import popper.core.Options
 import popper.core.ReferenceElement
 

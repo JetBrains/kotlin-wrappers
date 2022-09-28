@@ -3,7 +3,7 @@
 
 package ringui
 
-import org.w3c.dom.HTMLInputElement
+import dom.html.HTMLInputElement
 import org.w3c.dom.events.InputEvent
 import react.ComponentClass
 import react.PropsWithClassName

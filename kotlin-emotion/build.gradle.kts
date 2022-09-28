@@ -6,6 +6,7 @@ plugins {
 
 dependencies {
     api(project(":kotlin-csstype"))
+    api(project(":kotlin-browser"))
     api(project(":kotlin-react-core"))
 
     api(npmv("@emotion/css"))

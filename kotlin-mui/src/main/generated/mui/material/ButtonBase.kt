@@ -10,7 +10,7 @@ import mui.material.styles.Theme
 import mui.system.SxProps
 
 external interface ButtonBaseProps :
-    react.dom.html.ButtonHTMLAttributes<org.w3c.dom.HTMLButtonElement>,
+    react.dom.html.ButtonHTMLAttributes<dom.html.HTMLButtonElement>,
     react.PropsWithChildren,
     mui.system.PropsWithSx {
     /**

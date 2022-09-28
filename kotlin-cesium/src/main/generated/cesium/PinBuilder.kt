@@ -20,7 +20,7 @@ external class PinBuilder {
     fun fromColor(
         color: Color,
         size: Double,
-    ): org.w3c.dom.HTMLCanvasElement
+    ): dom.html.HTMLCanvasElement
 
     /**
      * Creates a pin with the specified icon, color, and size.
@@ -69,5 +69,5 @@ external class PinBuilder {
         text: String,
         color: Color,
         size: Double,
-    ): org.w3c.dom.HTMLCanvasElement
+    ): dom.html.HTMLCanvasElement
 }

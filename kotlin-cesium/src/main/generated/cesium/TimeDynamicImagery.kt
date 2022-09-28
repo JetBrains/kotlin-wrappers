@@ -60,7 +60,7 @@ external class TimeDynamicImagery(options: ConstructorOptions) {
         y: Double,
         level: Int,
         request: Request? = definedExternally,
-    ): kotlin.js.Promise<org.w3c.dom.HTMLImageElement>?
+    ): kotlin.js.Promise<dom.html.HTMLImageElement>?
 
     /**
      * Checks if the next interval is approaching and will start preload the tile if necessary. Otherwise it will

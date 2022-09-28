@@ -6,7 +6,7 @@ import csstype.ClassName
 
 external interface ButtonUnstyledProps :
     ButtonUnstyledOwnProps,
-    react.dom.html.ButtonHTMLAttributes<org.w3c.dom.HTMLButtonElement>
+    react.dom.html.ButtonHTMLAttributes<dom.html.HTMLButtonElement>
 
 external interface ButtonUnstyledActions {
     fun focusVisible()

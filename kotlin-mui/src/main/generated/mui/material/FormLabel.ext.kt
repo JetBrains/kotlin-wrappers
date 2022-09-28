@@ -2,7 +2,7 @@
 
 package mui.material
 
-typealias FormLabelBaseProps = react.dom.html.LabelHTMLAttributes<org.w3c.dom.HTMLLabelElement>
+typealias FormLabelBaseProps = react.dom.html.LabelHTMLAttributes<dom.html.HTMLLabelElement>
 
 @Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
 // language=JavaScript

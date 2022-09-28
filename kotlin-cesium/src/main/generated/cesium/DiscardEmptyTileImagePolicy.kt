@@ -25,13 +25,13 @@ external class DiscardEmptyTileImagePolicy : TileDiscardPolicy {
      * @return True if the image should be discarded; otherwise, false.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/DiscardEmptyTileImagePolicy.html#shouldDiscardImage">Online Documentation</a>
      */
-    override fun shouldDiscardImage(image: org.w3c.dom.HTMLImageElement): Boolean
+    override fun shouldDiscardImage(image: dom.html.HTMLImageElement): Boolean
 
     companion object {
         /**
          * Default value for representing an empty image.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/DiscardEmptyTileImagePolicy.html#.EMPTY_IMAGE">Online Documentation</a>
          */
-        val EMPTY_IMAGE: org.w3c.dom.HTMLImageElement
+        val EMPTY_IMAGE: dom.html.HTMLImageElement
     }
 }

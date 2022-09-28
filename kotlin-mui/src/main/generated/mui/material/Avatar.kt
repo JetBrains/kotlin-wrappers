@@ -9,7 +9,7 @@ import mui.material.styles.Theme
 import mui.system.SxProps
 
 external interface AvatarProps :
-    react.dom.html.HTMLAttributes<org.w3c.dom.HTMLDivElement>,
+    react.dom.html.HTMLAttributes<dom.html.HTMLDivElement>,
     react.PropsWithChildren,
     mui.system.PropsWithSx,
     mui.types.PropsWithComponent {
@@ -34,7 +34,7 @@ external interface AvatarProps :
      * [Attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#attributes) applied to the `img` element if the component is used to display an image.
      * It can be used to listen for the loading error event.
      */
-    var imgProps: react.dom.html.ImgHTMLAttributes<org.w3c.dom.HTMLImageElement>?
+    var imgProps: react.dom.html.ImgHTMLAttributes<dom.html.HTMLImageElement>?
 
     /**
      * The `sizes` attribute for the `img` element.

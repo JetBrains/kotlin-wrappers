@@ -6,7 +6,7 @@ import csstype.ClassName
 
 external interface InputUnstyledProps :
     InputUnstyledOwnProps,
-    react.dom.html.HTMLAttributes<org.w3c.dom.HTMLInputElement>
+    react.dom.html.HTMLAttributes<dom.html.HTMLInputElement>
 
 external interface InputUnstyledOwnProps : react.PropsWithClassName {
     // var `aria-describedby`: String?
@@ -77,9 +77,9 @@ external interface InputUnstyledOwnProps : react.PropsWithClassName {
      */
     var name: String?
 
-    var onKeyDown: react.dom.events.KeyboardEventHandler<org.w3c.dom.HTMLInputElement>?
+    var onKeyDown: react.dom.events.KeyboardEventHandler<dom.html.HTMLInputElement>?
 
-    var onKeyUp: react.dom.events.KeyboardEventHandler<org.w3c.dom.HTMLInputElement>?
+    var onKeyUp: react.dom.events.KeyboardEventHandler<dom.html.HTMLInputElement>?
 
     /**
      * The short hint displayed in the `input` before the user enters a value.

@@ -308,12 +308,12 @@ external class Billboard {
      */
     fun setImage(
         id: String,
-        image: org.w3c.dom.HTMLImageElement,
+        image: dom.html.HTMLImageElement,
     )
 
     fun setImage(
         id: String,
-        image: org.w3c.dom.HTMLCanvasElement,
+        image: dom.html.HTMLCanvasElement,
     )
 
     fun setImage(

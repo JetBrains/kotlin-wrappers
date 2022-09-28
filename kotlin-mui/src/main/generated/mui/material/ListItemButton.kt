@@ -10,7 +10,7 @@ import mui.system.SxProps
 
 external interface ListItemButtonProps :
     ListItemButtonBaseProps,
-    react.dom.html.HTMLAttributes<org.w3c.dom.HTMLElement>
+    react.dom.html.HTMLAttributes<dom.html.HTMLElement>
 
 external interface ListItemButtonBaseProps :
     react.PropsWithChildren,

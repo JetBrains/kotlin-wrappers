@@ -6,7 +6,7 @@
 package mui.material
 
 external interface TablePaginationActionsProps :
-    react.dom.html.HTMLAttributes<org.w3c.dom.HTMLDivElement> {
+    react.dom.html.HTMLAttributes<dom.html.HTMLDivElement> {
     var backIconButtonProps: IconButtonProps?
 
     /**
@@ -28,7 +28,7 @@ external interface TablePaginationActionsProps :
 
     var nextIconButtonProps: IconButtonProps?
 
-    var onPageChange: (event: react.dom.events.MouseEvent<org.w3c.dom.HTMLButtonElement, *>?, page: Number) -> Unit
+    var onPageChange: (event: react.dom.events.MouseEvent<dom.html.HTMLButtonElement, *>?, page: Number) -> Unit
 
     var page: Number
 

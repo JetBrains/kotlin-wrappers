@@ -22,7 +22,7 @@ import kotlinx.js.ReadonlyArray
  */
 external class Cesium3DTilesInspectorViewModel(
     val scene: Scene,
-    val performanceContainer: org.w3c.dom.HTMLElement,
+    val performanceContainer: dom.html.HTMLElement,
 ) {
     /**
      * Gets or sets the flag to enable performance display.  This property is observable.

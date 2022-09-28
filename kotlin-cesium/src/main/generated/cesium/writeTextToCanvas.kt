@@ -17,7 +17,7 @@ package cesium
 external fun writeTextToCanvas(
     text: String,
     options: WriteTextToCanvasOptions? = definedExternally,
-): org.w3c.dom.HTMLCanvasElement?
+): dom.html.HTMLCanvasElement?
 
 /**
  * @property [font] The CSS font to use.

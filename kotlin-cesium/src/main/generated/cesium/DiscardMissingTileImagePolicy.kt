@@ -45,7 +45,7 @@ external class DiscardMissingTileImagePolicy(options: ConstructorOptions) : Tile
      * @return True if the image should be discarded; otherwise, false.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/DiscardMissingTileImagePolicy.html#shouldDiscardImage">Online Documentation</a>
      */
-    override fun shouldDiscardImage(image: org.w3c.dom.HTMLImageElement): Boolean
+    override fun shouldDiscardImage(image: dom.html.HTMLImageElement): Boolean
 }
 
 inline fun DiscardMissingTileImagePolicy(

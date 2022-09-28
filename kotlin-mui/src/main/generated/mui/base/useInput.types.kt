@@ -24,11 +24,11 @@ external interface UseInputParameters {
 
     var onClick: react.dom.events.MouseEventHandler<*>?
 
-    var onChange: react.dom.events.ChangeEventHandler<org.w3c.dom.HTMLInputElement>?
+    var onChange: react.dom.events.ChangeEventHandler<dom.html.HTMLInputElement>?
 
     var onFocus: react.dom.events.FocusEventHandler<*>?
 
-    var inputRef: react.Ref<org.w3c.dom.HTMLInputElement>?
+    var inputRef: react.Ref<dom.html.HTMLInputElement>?
 
     /**
      * If `true`, the `input` element is required.
@@ -52,7 +52,7 @@ external interface UseInputInputSlotOwnProps : react.Props {
 
     var onBlur: react.dom.events.FocusEventHandler<*>
 
-    var onChange: react.dom.events.ChangeEventHandler<org.w3c.dom.HTMLInputElement>
+    var onChange: react.dom.events.ChangeEventHandler<dom.html.HTMLInputElement>
 
     var onFocus: react.dom.events.FocusEventHandler<*>
 

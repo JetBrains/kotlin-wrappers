@@ -6,7 +6,7 @@
 package mui.system
 
 external interface BoxProps :
-    react.dom.html.HTMLAttributes<org.w3c.dom.HTMLDivElement>,
+    react.dom.html.HTMLAttributes<dom.html.HTMLDivElement>,
     react.PropsWithChildren,
     PropsWithSx,
     mui.types.PropsWithComponent {

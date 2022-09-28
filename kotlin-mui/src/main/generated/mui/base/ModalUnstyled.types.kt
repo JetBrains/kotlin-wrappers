@@ -4,7 +4,7 @@ package mui.base
 
 external interface ModalUnstyledProps :
     ModalUnstyledOwnProps,
-    react.dom.html.HTMLAttributes<org.w3c.dom.HTMLDivElement>
+    react.dom.html.HTMLAttributes<dom.html.HTMLDivElement>
 
 external interface ModalUnstyledOwnProps : react.Props {
     /**

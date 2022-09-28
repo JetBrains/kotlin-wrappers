@@ -25,9 +25,9 @@ package cesium
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CreditDisplay.html">Online Documentation</a>
  */
 external class CreditDisplay(
-    var container: org.w3c.dom.HTMLElement,
+    var container: dom.html.HTMLElement,
     delimiter: String? = definedExternally,
-    viewport: org.w3c.dom.HTMLElement? = definedExternally,
+    viewport: dom.html.HTMLElement? = definedExternally,
 ) {
     /**
      * Adds a credit to the list of current credits to be displayed in the credit container

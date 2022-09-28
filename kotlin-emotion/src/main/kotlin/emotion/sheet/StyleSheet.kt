@@ -1,8 +1,8 @@
 package emotion.sheet
 
+import dom.html.HTMLElement
+import dom.html.HTMLStyleElement
 import kotlinx.js.ReadonlyArray
-import org.w3c.dom.HTMLElement
-import org.w3c.dom.HTMLStyleElement
 
 external interface StyleSheet {
     val container: HTMLElement
