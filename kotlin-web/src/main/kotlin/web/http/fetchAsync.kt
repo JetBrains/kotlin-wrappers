@@ -1,6 +1,5 @@
 package web.http
 
-import org.w3c.fetch.Response
 import web.url.URL
 import kotlin.js.Promise
 
