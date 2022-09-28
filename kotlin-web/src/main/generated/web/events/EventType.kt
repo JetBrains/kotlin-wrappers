@@ -6,8 +6,6 @@
 
 package web.events
 
-import org.w3c.dom.events.Event
-
 sealed external interface EventType<T : Event>
 
 inline fun <T : Event> EventType(
