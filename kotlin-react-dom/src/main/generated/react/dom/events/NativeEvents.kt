@@ -4,7 +4,7 @@ package react.dom.events
 
 typealias NativeAnimationEvent = org.w3c.dom.events.AnimationEvent
 
-typealias NativeClipboardEvent = org.w3c.dom.clipboard.ClipboardEvent
+typealias NativeClipboardEvent = browser.clipboard.ClipboardEvent
 
 typealias NativeCompositionEvent = org.w3c.dom.events.CompositionEvent
 
