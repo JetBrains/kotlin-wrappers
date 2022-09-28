@@ -1,5 +1,6 @@
-package kotlinx.js
+package web.http
 
+import kotlinx.js.URL
 import org.w3c.fetch.Response
 import kotlin.js.Promise
 

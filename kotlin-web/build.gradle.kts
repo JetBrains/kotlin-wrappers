@@ -6,4 +6,6 @@ plugins {
 
 dependencies {
     api(project(":kotlin-js"))
+
+    implementation(kotlinxCoroutines("core"))
 }

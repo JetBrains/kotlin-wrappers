@@ -1,4 +1,4 @@
-package kotlinx.js
+package web.http
 
 class FetchException(
     cause: Throwable

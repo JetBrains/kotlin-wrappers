@@ -1,4 +1,7 @@
-package kotlinx.js
+package web.http
+
+import kotlinx.js.AbortSignal
+import kotlinx.js.URL
 
 external class Request : org.w3c.fetch.Request {
     constructor(

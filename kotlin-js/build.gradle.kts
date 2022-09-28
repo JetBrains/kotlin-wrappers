@@ -5,7 +5,5 @@ plugins {
 }
 
 dependencies {
-    implementation(kotlinxCoroutines("core"))
-
     testImplementation(kotlin("test-js"))
 }
