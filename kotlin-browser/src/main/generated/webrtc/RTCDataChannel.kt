@@ -2,8 +2,8 @@
 
 package webrtc
 
-import org.w3c.dom.MessageEvent
 import web.events.Event
+import web.events.MessageEvent
 
 external class RTCDataChannel : web.events.EventTarget {
     var binaryType: BinaryType
