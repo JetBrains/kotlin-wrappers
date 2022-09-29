@@ -691,7 +691,7 @@ open external class Readable : Stream, node.ReadableStream {
          * @experimental
          */
         fun fromWeb(
-            readableStream: node.stream.web.ReadableStream<*>,
+            readableStream: web.stream.ReadableStream<*>,
             options: ReadableOptions = definedExternally,
         ): Readable
 
@@ -706,6 +706,6 @@ open external class Readable : Stream, node.ReadableStream {
          * @since v17.0.0
          * @experimental
          */
-        fun toWeb(streamReadable: Readable): node.stream.web.ReadableStream<*>
+        fun toWeb(streamReadable: Readable): web.stream.ReadableStream<*>
     }
 }
