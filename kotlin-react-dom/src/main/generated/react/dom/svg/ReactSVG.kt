@@ -2,9 +2,7 @@
 
 package react.dom.svg
 
-import org.w3c.css.masking.SVGClipPathElement
-import org.w3c.css.masking.SVGMaskElement
-import org.w3c.dom.svg.*
+import dom.svg.*
 import react.IntrinsicType
 
 object ReactSVG {
@@ -35,82 +33,82 @@ object ReactSVG {
     inline val ellipse: IntrinsicType<SVGAttributes<SVGEllipseElement>>
         get() = IntrinsicType("ellipse")
 
-    inline val feBlend: IntrinsicType<SVGAttributes<SVGElement /* SVGFEBlendElement */>>
+    inline val feBlend: IntrinsicType<SVGAttributes<SVGFEBlendElement>>
         get() = IntrinsicType("feBlend")
 
-    inline val feColorMatrix: IntrinsicType<SVGAttributes<SVGElement /* SVGFEColorMatrixElement */>>
+    inline val feColorMatrix: IntrinsicType<SVGAttributes<SVGFEColorMatrixElement>>
         get() = IntrinsicType("feColorMatrix")
 
-    inline val feComponentTransfer: IntrinsicType<SVGAttributes<SVGElement /* SVGFEComponentTransferElement */>>
+    inline val feComponentTransfer: IntrinsicType<SVGAttributes<SVGFEComponentTransferElement>>
         get() = IntrinsicType("feComponentTransfer")
 
-    inline val feComposite: IntrinsicType<SVGAttributes<SVGElement /* SVGFECompositeElement */>>
+    inline val feComposite: IntrinsicType<SVGAttributes<SVGFECompositeElement>>
         get() = IntrinsicType("feComposite")
 
-    inline val feConvolveMatrix: IntrinsicType<SVGAttributes<SVGElement /* SVGFEConvolveMatrixElement */>>
+    inline val feConvolveMatrix: IntrinsicType<SVGAttributes<SVGFEConvolveMatrixElement>>
         get() = IntrinsicType("feConvolveMatrix")
 
-    inline val feDiffuseLighting: IntrinsicType<SVGAttributes<SVGElement /* SVGFEDiffuseLightingElement */>>
+    inline val feDiffuseLighting: IntrinsicType<SVGAttributes<SVGFEDiffuseLightingElement>>
         get() = IntrinsicType("feDiffuseLighting")
 
-    inline val feDisplacementMap: IntrinsicType<SVGAttributes<SVGElement /* SVGFEDisplacementMapElement */>>
+    inline val feDisplacementMap: IntrinsicType<SVGAttributes<SVGFEDisplacementMapElement>>
         get() = IntrinsicType("feDisplacementMap")
 
-    inline val feDistantLight: IntrinsicType<SVGAttributes<SVGElement /* SVGFEDistantLightElement */>>
+    inline val feDistantLight: IntrinsicType<SVGAttributes<SVGFEDistantLightElement>>
         get() = IntrinsicType("feDistantLight")
 
-    inline val feDropShadow: IntrinsicType<SVGAttributes<SVGElement /* SVGFEDropShadowElement */>>
+    inline val feDropShadow: IntrinsicType<SVGAttributes<SVGFEDropShadowElement>>
         get() = IntrinsicType("feDropShadow")
 
-    inline val feFlood: IntrinsicType<SVGAttributes<SVGElement /* SVGFEFloodElement */>>
+    inline val feFlood: IntrinsicType<SVGAttributes<SVGFEFloodElement>>
         get() = IntrinsicType("feFlood")
 
-    inline val feFuncA: IntrinsicType<SVGAttributes<SVGElement /* SVGFEFuncAElement */>>
+    inline val feFuncA: IntrinsicType<SVGAttributes<SVGFEFuncAElement>>
         get() = IntrinsicType("feFuncA")
 
-    inline val feFuncB: IntrinsicType<SVGAttributes<SVGElement /* SVGFEFuncBElement */>>
+    inline val feFuncB: IntrinsicType<SVGAttributes<SVGFEFuncBElement>>
         get() = IntrinsicType("feFuncB")
 
-    inline val feFuncG: IntrinsicType<SVGAttributes<SVGElement /* SVGFEFuncGElement */>>
+    inline val feFuncG: IntrinsicType<SVGAttributes<SVGFEFuncGElement>>
         get() = IntrinsicType("feFuncG")
 
-    inline val feFuncR: IntrinsicType<SVGAttributes<SVGElement /* SVGFEFuncRElement */>>
+    inline val feFuncR: IntrinsicType<SVGAttributes<SVGFEFuncRElement>>
         get() = IntrinsicType("feFuncR")
 
-    inline val feGaussianBlur: IntrinsicType<SVGAttributes<SVGElement /* SVGFEGaussianBlurElement */>>
+    inline val feGaussianBlur: IntrinsicType<SVGAttributes<SVGFEGaussianBlurElement>>
         get() = IntrinsicType("feGaussianBlur")
 
-    inline val feImage: IntrinsicType<SVGAttributes<SVGElement /* SVGFEImageElement */>>
+    inline val feImage: IntrinsicType<SVGAttributes<SVGFEImageElement>>
         get() = IntrinsicType("feImage")
 
-    inline val feMerge: IntrinsicType<SVGAttributes<SVGElement /* SVGFEMergeElement */>>
+    inline val feMerge: IntrinsicType<SVGAttributes<SVGFEMergeElement>>
         get() = IntrinsicType("feMerge")
 
-    inline val feMergeNode: IntrinsicType<SVGAttributes<SVGElement /* SVGFEMergeNodeElement */>>
+    inline val feMergeNode: IntrinsicType<SVGAttributes<SVGFEMergeNodeElement>>
         get() = IntrinsicType("feMergeNode")
 
-    inline val feMorphology: IntrinsicType<SVGAttributes<SVGElement /* SVGFEMorphologyElement */>>
+    inline val feMorphology: IntrinsicType<SVGAttributes<SVGFEMorphologyElement>>
         get() = IntrinsicType("feMorphology")
 
-    inline val feOffset: IntrinsicType<SVGAttributes<SVGElement /* SVGFEOffsetElement */>>
+    inline val feOffset: IntrinsicType<SVGAttributes<SVGFEOffsetElement>>
         get() = IntrinsicType("feOffset")
 
-    inline val fePointLight: IntrinsicType<SVGAttributes<SVGElement /* SVGFEPointLightElement */>>
+    inline val fePointLight: IntrinsicType<SVGAttributes<SVGFEPointLightElement>>
         get() = IntrinsicType("fePointLight")
 
-    inline val feSpecularLighting: IntrinsicType<SVGAttributes<SVGElement /* SVGFESpecularLightingElement */>>
+    inline val feSpecularLighting: IntrinsicType<SVGAttributes<SVGFESpecularLightingElement>>
         get() = IntrinsicType("feSpecularLighting")
 
-    inline val feSpotLight: IntrinsicType<SVGAttributes<SVGElement /* SVGFESpotLightElement */>>
+    inline val feSpotLight: IntrinsicType<SVGAttributes<SVGFESpotLightElement>>
         get() = IntrinsicType("feSpotLight")
 
-    inline val feTile: IntrinsicType<SVGAttributes<SVGElement /* SVGFETileElement */>>
+    inline val feTile: IntrinsicType<SVGAttributes<SVGFETileElement>>
         get() = IntrinsicType("feTile")
 
-    inline val feTurbulence: IntrinsicType<SVGAttributes<SVGElement /* SVGFETurbulenceElement */>>
+    inline val feTurbulence: IntrinsicType<SVGAttributes<SVGFETurbulenceElement>>
         get() = IntrinsicType("feTurbulence")
 
-    inline val filter: IntrinsicType<SVGAttributes<SVGElement /* SVGFilterElement */>>
+    inline val filter: IntrinsicType<SVGAttributes<SVGFilterElement>>
         get() = IntrinsicType("filter")
 
     inline val foreignObject: IntrinsicType<SVGAttributes<SVGForeignObjectElement>>
