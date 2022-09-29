@@ -14,6 +14,6 @@ inline fun <TData : RowData> AggregationFnOption(
     source.unsafeCast<AggregationFnOption<TData>>()
 
 inline fun <TData : RowData> AggregationFnOption(
-    source: AggregationFn<TData>,
+    noinline source: AggregationFn<TData>,
 ): AggregationFnOption<TData> =
     source.unsafeCast<AggregationFnOption<TData>>()

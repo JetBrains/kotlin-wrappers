@@ -15,6 +15,6 @@ inline fun Offset(
         .unsafeCast<OffsetType>()
 
 inline fun OffsetFunction(
-    fn: Provider<JsTuple2<Int?, Int?>>,
+    noinline fn: Provider<JsTuple2<Int?, Int?>>,
 ): OffsetType =
     fn.unsafeCast<OffsetType>()

@@ -22,12 +22,12 @@ inline fun SpacingOptions(
     value.unsafeCast<SpacingOptions>()
 
 inline fun SpacingOptions(
-    value: (abs: Int) -> csstype.Length,
+    noinline value: (abs: Int) -> csstype.Length,
 ): SpacingOptions =
     value.unsafeCast<SpacingOptions>()
 
 inline fun SpacingOptions(
-    value: (abs: csstype.Length) -> csstype.Length,
+    noinline value: (abs: csstype.Length) -> csstype.Length,
 ): SpacingOptions =
     value.unsafeCast<SpacingOptions>()
 
