@@ -1,7 +1,6 @@
 package dom
 
 import kotlinx.js.ReadonlyArray
-import org.w3c.dom.DOMRectReadOnly
 
 typealias ResizeObserverCallback = (
     entries: ReadonlyArray<ResizeObserverEntry>,

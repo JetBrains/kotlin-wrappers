@@ -3,6 +3,6 @@
 package popper.core
 
 external interface VirtualElement {
-    var getBoundingClientRect: () -> org.w3c.dom.DOMRect
+    var getBoundingClientRect: () -> dom.DOMRect
     var contextElement: dom.Element?
 }

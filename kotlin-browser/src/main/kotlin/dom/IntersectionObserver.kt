@@ -2,7 +2,6 @@ package dom
 
 import kotlinx.js.HighResTimeStamp
 import kotlinx.js.ReadonlyArray
-import org.w3c.dom.DOMRectReadOnly
 
 typealias IntersectionObserverCallback = (
     entries: ReadonlyArray<IntersectionObserverEntry>,
