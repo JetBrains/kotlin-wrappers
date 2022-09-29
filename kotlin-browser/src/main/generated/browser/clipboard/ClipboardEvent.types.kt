@@ -1,6 +1,6 @@
 // Automatically generated - do not modify!
 
-package org.w3c.dom.events
+package browser.clipboard
 
 import org.w3c.dom.clipboard.ClipboardEvent
 import web.events.EventType
