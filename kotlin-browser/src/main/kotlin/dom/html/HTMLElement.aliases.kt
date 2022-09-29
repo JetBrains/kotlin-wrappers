@@ -35,6 +35,7 @@ typealias HTMLLegendElement = org.w3c.dom.HTMLLegendElement
 typealias HTMLLIElement = org.w3c.dom.HTMLLIElement
 typealias HTMLLinkElement = org.w3c.dom.HTMLLinkElement
 typealias HTMLMapElement = org.w3c.dom.HTMLMapElement
+typealias HTMLMediaElement = org.w3c.dom.HTMLMediaElement
 typealias HTMLMenuElement = org.w3c.dom.HTMLMenuElement
 typealias HTMLMetaElement = org.w3c.dom.HTMLMetaElement
 typealias HTMLMeterElement = org.w3c.dom.HTMLMeterElement
