@@ -1,6 +1,6 @@
 // Automatically generated - do not modify!
 
-package org.w3c.dom.events
+package idb
 
 import web.events.EventType
 import org.w3c.dom.events.Event as IDBVersionChangeEvent
