@@ -15,3 +15,4 @@ typealias DOMRectReadOnly = org.w3c.dom.DOMRectReadOnly
 typealias DOMQuad = org.w3c.dom.DOMQuad
 typealias DOMMatrixReadOnly = org.w3c.dom.DOMMatrixReadOnly
 typealias DOMMatrix = org.w3c.dom.DOMMatrix
+typealias DOMParser = org.w3c.dom.parsing.DOMParser
