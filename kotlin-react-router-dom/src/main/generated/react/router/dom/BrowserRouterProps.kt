@@ -5,5 +5,5 @@ package react.router.dom
 external interface BrowserRouterProps : react.PropsWithChildren {
     var basename: String?
     override var children: react.ReactNode?
-    var window: org.w3c.dom.Window?
+    var window: browser.Window?
 }

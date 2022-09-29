@@ -3,5 +3,5 @@
 package history
 
 external interface BrowserHistoryOptions {
-    var window: org.w3c.dom.Window?
+    var window: browser.Window?
 }

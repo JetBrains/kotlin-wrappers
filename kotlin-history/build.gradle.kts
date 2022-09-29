@@ -6,6 +6,7 @@ plugins {
 
 dependencies {
     api(project(":kotlin-js"))
+    api(project(":kotlin-browser"))
 
     api(devNpmv("history"))
 }
