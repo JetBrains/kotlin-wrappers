@@ -1,6 +1,6 @@
 // Automatically generated - do not modify!
 
-package org.w3c.dom.events
+package xhr
 
 import org.w3c.xhr.ProgressEvent
 import web.events.EventType
