@@ -1,3 +1,7 @@
+@file:Suppress(
+    "NOTHING_TO_INLINE",
+)
+
 package react.table
 
 external interface PluginHook<in D : Any> {
@@ -5,6 +9,6 @@ external interface PluginHook<in D : Any> {
 }
 
 inline fun <D : Any> PluginHook(
-    block: Hooks<D>.() -> Unit,
+    noinline block: Hooks<D>.() -> Unit,
 ): PluginHook<D> =
     block.unsafeCast<PluginHook<D>>()

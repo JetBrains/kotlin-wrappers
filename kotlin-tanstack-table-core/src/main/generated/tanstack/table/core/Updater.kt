@@ -14,6 +14,6 @@ inline fun <T> Updater(
     source.unsafeCast<Updater<T>>()
 
 inline fun <T> Updater(
-    source: (old: T) -> T,
+    noinline source: (old: T) -> T,
 ): Updater<T> =
     source.unsafeCast<Updater<T>>()
