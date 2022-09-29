@@ -1,7 +1,7 @@
 package web.url
 
+import buffer.Blob
 import org.w3c.dom.mediasource.MediaSource
-import org.w3c.files.Blob
 
 external class URL : org.w3c.dom.url.URL {
     constructor(url: String, base: String = definedExternally)

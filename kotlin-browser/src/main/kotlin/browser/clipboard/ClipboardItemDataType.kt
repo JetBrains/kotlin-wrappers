@@ -4,7 +4,7 @@
 
 package browser.clipboard
 
-import org.w3c.files.Blob
+import buffer.Blob
 
 sealed external interface ClipboardItemDataType
 

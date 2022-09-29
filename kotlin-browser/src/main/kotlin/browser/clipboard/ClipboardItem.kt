@@ -1,8 +1,8 @@
 package browser.clipboard
 
+import buffer.Blob
 import kotlinx.js.ReadonlyArray
 import kotlinx.js.Record
-import org.w3c.files.Blob
 import kotlin.js.Promise
 
 sealed external interface ClipboardItemOptions {

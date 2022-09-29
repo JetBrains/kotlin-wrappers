@@ -25,7 +25,7 @@ external class RTCDataChannel : web.events.EventTarget {
     val readyState: RTCDataChannelState
     fun close()
     fun send(data: String)
-    fun send(data: org.w3c.files.Blob)
+    fun send(data: buffer.Blob)
     fun send(data: kotlinx.js.ArrayBuffer)
     fun send(data: kotlinx.js.ArrayBufferView)
     // addEventListener<K extends keyof RTCDataChannelEventMap>(type: K, listener: (this: RTCDataChannel, ev: RTCDataChannelEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void
