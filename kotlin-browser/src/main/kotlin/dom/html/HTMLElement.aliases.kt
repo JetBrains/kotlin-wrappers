@@ -43,6 +43,7 @@ typealias HTMLOListElement = org.w3c.dom.HTMLOListElement
 typealias HTMLOptGroupElement = org.w3c.dom.HTMLOptGroupElement
 typealias HTMLOptionElement = org.w3c.dom.HTMLOptionElement
 typealias HTMLOutputElement = org.w3c.dom.HTMLOutputElement
+typealias HTMLParamElement = org.w3c.dom.HTMLParamElement
 typealias HTMLParagraphElement = org.w3c.dom.HTMLParagraphElement
 typealias HTMLPictureElement = org.w3c.dom.HTMLPictureElement
 typealias HTMLPreElement = org.w3c.dom.HTMLPreElement

@@ -2,7 +2,7 @@
 
 package react.dom.html
 
-import org.w3c.dom.*
+import dom.html.*
 import react.IntrinsicType
 
 object ReactHTML {
