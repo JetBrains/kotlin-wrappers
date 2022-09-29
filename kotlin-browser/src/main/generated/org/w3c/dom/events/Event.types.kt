@@ -223,9 +223,6 @@ inline val Event.Companion.RESOURCE_TIMING_BUFFER_FULL: EventType<Event>
 inline val Event.Companion.RESIZE: EventType<Event>
     get() = EventType("resize")
 
-inline val Event.Companion.BUFFERED_AMOUNT_LOW: EventType<Event>
-    get() = EventType("bufferedamountlow")
-
 inline val Event.Companion.CLOSING: EventType<Event>
     get() = EventType("closing")
 
