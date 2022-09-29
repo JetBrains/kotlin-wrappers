@@ -1,7 +1,8 @@
 // Automatically generated - do not modify!
 
-package org.w3c.dom.events
+package dom.events
 
+import org.w3c.dom.events.WheelEvent
 import web.events.EventType
 
 inline val WheelEvent.Companion.WHEEL: EventType<WheelEvent>

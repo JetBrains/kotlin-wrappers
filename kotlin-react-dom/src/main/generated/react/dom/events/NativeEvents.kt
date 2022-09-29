@@ -2,7 +2,7 @@
 
 package react.dom.events
 
-typealias NativeAnimationEvent = org.w3c.dom.events.AnimationEvent
+typealias NativeAnimationEvent = dom.events.AnimationEvent
 
 typealias NativeClipboardEvent = browser.clipboard.ClipboardEvent
 
@@ -20,7 +20,7 @@ typealias NativeTouchEvent = org.w3c.dom.TouchEvent
 
 typealias NativePointerEvent = org.w3c.dom.pointerevents.PointerEvent
 
-typealias NativeTransitionEvent = org.w3c.dom.events.TransitionEvent
+typealias NativeTransitionEvent = dom.events.TransitionEvent
 
 typealias NativeUIEvent = org.w3c.dom.events.UIEvent
 

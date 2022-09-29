@@ -4,9 +4,10 @@
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
-package org.w3c.dom.events
+package dom.events
 
 import kotlinx.js.HighResTimeStamp
+import web.events.Event
 import web.events.EventInit
 
 external interface AnimationEventInit : EventInit {
