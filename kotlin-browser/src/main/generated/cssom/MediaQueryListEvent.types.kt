@@ -1,6 +1,6 @@
 // Automatically generated - do not modify!
 
-package org.w3c.dom.events
+package cssom
 
 import org.w3c.dom.MediaQueryListEvent
 import web.events.EventType
