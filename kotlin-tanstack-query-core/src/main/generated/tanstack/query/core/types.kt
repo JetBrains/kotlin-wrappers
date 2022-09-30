@@ -151,6 +151,7 @@ external interface QueryObserverBaseResult<TData, TError> {
     val isFetching: Boolean
     val isLoading: Boolean
     val isLoadingError: Boolean
+    val isInitialLoading: Boolean
     val isPaused: Boolean
     val isPlaceholderData: Boolean
     val isPreviousData: Boolean
