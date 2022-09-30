@@ -19,15 +19,6 @@ inline val Event.Companion.PROCESS_OR_ERROR: EventType<Event>
 inline val Event.Companion.STATE_CHANGE: EventType<Event>
     get() = EventType("statechange")
 
-inline val Event.Companion.DOM_CONTENT_LOADED: EventType<Event>
-    get() = EventType("DOMContentLoaded")
-
-inline val Event.Companion.FULLSCREEN_CHANGE: EventType<Event>
-    get() = EventType("fullscreenchange")
-
-inline val Event.Companion.FULLSCREEN_ERROR: EventType<Event>
-    get() = EventType("fullscreenerror")
-
 inline val Event.Companion.POINTER_LOCK_CHANGE: EventType<Event>
     get() = EventType("pointerlockchange")
 
@@ -36,9 +27,6 @@ inline val Event.Companion.POINTER_LOCK_ERROR: EventType<Event>
 
 inline val Event.Companion.READY_STATE_CHANGE: EventType<Event>
     get() = EventType("readystatechange")
-
-inline val Event.Companion.VISIBILITY_CHANGE: EventType<Event>
-    get() = EventType("visibilitychange")
 
 inline val Event.Companion.ERROR: EventType<Event>
     get() = EventType("error")
@@ -60,9 +48,6 @@ inline val Event.Companion.CAN_PLAY: EventType<Event>
 
 inline val Event.Companion.CAN_PLAY_THROUGH: EventType<Event>
     get() = EventType("canplaythrough")
-
-inline val Event.Companion.CHANGE: EventType<Event>
-    get() = EventType("change")
 
 inline val Event.Companion.CLOSE: EventType<Event>
     get() = EventType("close")
@@ -109,26 +94,11 @@ inline val Event.Companion.RATE_CHANGE: EventType<Event>
 inline val Event.Companion.RESET: EventType<Event>
     get() = EventType("reset")
 
-inline val Event.Companion.SCROLL: EventType<Event>
-    get() = EventType("scroll")
-
 inline val Event.Companion.SEEKED: EventType<Event>
     get() = EventType("seeked")
 
 inline val Event.Companion.SEEKING: EventType<Event>
     get() = EventType("seeking")
-
-inline val Event.Companion.SELECT: EventType<Event>
-    get() = EventType("select")
-
-inline val Event.Companion.SELECTION_CHANGE: EventType<Event>
-    get() = EventType("selectionchange")
-
-inline val Event.Companion.SELECT_START: EventType<Event>
-    get() = EventType("selectstart")
-
-inline val Event.Companion.SLOT_CHANGE: EventType<Event>
-    get() = EventType("slotchange")
 
 inline val Event.Companion.STALLED: EventType<Event>
     get() = EventType("stalled")
@@ -220,9 +190,6 @@ inline val Event.Companion.PAYMENT_METHOD_CHANGE: EventType<Event>
 inline val Event.Companion.RESOURCE_TIMING_BUFFER_FULL: EventType<Event>
     get() = EventType("resourcetimingbufferfull")
 
-inline val Event.Companion.RESIZE: EventType<Event>
-    get() = EventType("resize")
-
 inline val Event.Companion.CLOSING: EventType<Event>
     get() = EventType("closing")
 
@@ -259,12 +226,6 @@ inline val Event.Companion.REMOVE_SOURCE_BUFFER: EventType<Event>
 inline val Event.Companion.VOICES_CHANGED: EventType<Event>
     get() = EventType("voiceschanged")
 
-inline val Event.Companion.ENTER: EventType<Event>
-    get() = EventType("enter")
-
-inline val Event.Companion.EXIT: EventType<Event>
-    get() = EventType("exit")
-
 inline val Event.Companion.ORIENTATION_CHANGE: EventType<Event>
     get() = EventType("orientationchange")
 
@@ -285,6 +246,3 @@ inline val Event.Companion.ONLINE: EventType<Event>
 
 inline val Event.Companion.UNLOAD: EventType<Event>
     get() = EventType("unload")
-
-inline val Event.Companion.WEBKIT_FULLSCREEN_CHANGE: EventType<Event>
-    get() = EventType("webkitfullscreenchange")
