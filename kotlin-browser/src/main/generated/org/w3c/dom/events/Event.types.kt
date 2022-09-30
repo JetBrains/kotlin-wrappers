@@ -61,15 +61,6 @@ inline val Event.Companion.DURATION_CHANGE: EventType<Event>
 inline val Event.Companion.EMPTIED: EventType<Event>
     get() = EventType("emptied")
 
-inline val Event.Companion.INPUT: EventType<Event>
-    get() = EventType("input")
-
-inline val Event.Companion.INVALID: EventType<Event>
-    get() = EventType("invalid")
-
-inline val Event.Companion.LOAD: EventType<Event>
-    get() = EventType("load")
-
 inline val Event.Companion.LOADED_DATA: EventType<Event>
     get() = EventType("loadeddata")
 

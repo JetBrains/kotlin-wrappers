@@ -17,6 +17,15 @@ inline val Event.Companion.FULLSCREEN_ERROR: EventType<Event>
 inline val Event.Companion.VISIBILITY_CHANGE: EventType<Event>
     get() = EventType("visibilitychange")
 
+inline val Event.Companion.INPUT: EventType<Event>
+    get() = EventType("input")
+
+inline val Event.Companion.INVALID: EventType<Event>
+    get() = EventType("invalid")
+
+inline val Event.Companion.LOAD: EventType<Event>
+    get() = EventType("load")
+
 inline val Event.Companion.CHANGE: EventType<Event>
     get() = EventType("change")
 
