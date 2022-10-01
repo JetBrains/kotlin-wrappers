@@ -12,7 +12,6 @@ typealias CanvasHitRegion = org.w3c.dom.CanvasHitRegion
 typealias CanvasImageData = org.w3c.dom.CanvasImageData
 typealias CanvasImageSmoothing = org.w3c.dom.CanvasImageSmoothing
 typealias CanvasImageSource = org.w3c.dom.CanvasImageSource
-typealias CanvasLineCap = org.w3c.dom.CanvasLineCap
 typealias CanvasLineJoin = org.w3c.dom.CanvasLineJoin
 typealias CanvasPath = org.w3c.dom.CanvasPath
 typealias CanvasPathDrawingStyles = org.w3c.dom.CanvasPathDrawingStyles
