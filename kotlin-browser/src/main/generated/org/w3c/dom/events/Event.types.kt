@@ -61,24 +61,6 @@ inline val Event.Companion.DURATION_CHANGE: EventType<Event>
 inline val Event.Companion.EMPTIED: EventType<Event>
     get() = EventType("emptied")
 
-inline val Event.Companion.LOADED_DATA: EventType<Event>
-    get() = EventType("loadeddata")
-
-inline val Event.Companion.LOADED_METADATA: EventType<Event>
-    get() = EventType("loadedmetadata")
-
-inline val Event.Companion.LOAD_START: EventType<Event>
-    get() = EventType("loadstart")
-
-inline val Event.Companion.PAUSE: EventType<Event>
-    get() = EventType("pause")
-
-inline val Event.Companion.PLAY: EventType<Event>
-    get() = EventType("play")
-
-inline val Event.Companion.PLAYING: EventType<Event>
-    get() = EventType("playing")
-
 inline val Event.Companion.RATE_CHANGE: EventType<Event>
     get() = EventType("ratechange")
 
@@ -96,9 +78,6 @@ inline val Event.Companion.STALLED: EventType<Event>
 
 inline val Event.Companion.SUSPEND: EventType<Event>
     get() = EventType("suspend")
-
-inline val Event.Companion.TIME_UPDATE: EventType<Event>
-    get() = EventType("timeupdate")
 
 inline val Event.Companion.TOGGLE: EventType<Event>
     get() = EventType("toggle")

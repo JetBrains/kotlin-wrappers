@@ -26,6 +26,24 @@ inline val Event.Companion.INVALID: EventType<Event>
 inline val Event.Companion.LOAD: EventType<Event>
     get() = EventType("load")
 
+inline val Event.Companion.LOADED_DATA: EventType<Event>
+    get() = EventType("loadeddata")
+
+inline val Event.Companion.LOADED_METADATA: EventType<Event>
+    get() = EventType("loadedmetadata")
+
+inline val Event.Companion.LOAD_START: EventType<Event>
+    get() = EventType("loadstart")
+
+inline val Event.Companion.PAUSE: EventType<Event>
+    get() = EventType("pause")
+
+inline val Event.Companion.PLAY: EventType<Event>
+    get() = EventType("play")
+
+inline val Event.Companion.PLAYING: EventType<Event>
+    get() = EventType("playing")
+
 inline val Event.Companion.CHANGE: EventType<Event>
     get() = EventType("change")
 
@@ -43,6 +61,9 @@ inline val Event.Companion.SELECT_START: EventType<Event>
 
 inline val Event.Companion.SLOT_CHANGE: EventType<Event>
     get() = EventType("slotchange")
+
+inline val Event.Companion.TIME_UPDATE: EventType<Event>
+    get() = EventType("timeupdate")
 
 inline val Event.Companion.RESIZE: EventType<Event>
     get() = EventType("resize")
