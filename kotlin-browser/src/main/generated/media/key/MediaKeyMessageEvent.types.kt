@@ -1,6 +1,6 @@
 // Automatically generated - do not modify!
 
-package org.w3c.dom.events
+package media.key
 
 import org.w3c.dom.encryptedmedia.MediaKeyMessageEvent
 import web.events.EventType
