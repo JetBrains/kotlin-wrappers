@@ -4,7 +4,7 @@
     "NAME_CONTAINS_ILLEGAL_CHARS",
 )
 
-package webrtc
+package websocket
 
 // language=JavaScript
 @JsName("""(/*union*/{arraybuffer: 'arraybuffer', blob: 'blob'}/*union*/)""")
