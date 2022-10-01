@@ -24,7 +24,6 @@ typealias CanvasShadowStyles = org.w3c.dom.CanvasShadowStyles
 typealias CanvasState = org.w3c.dom.CanvasState
 typealias CanvasText = org.w3c.dom.CanvasText
 typealias CanvasTextAlign = org.w3c.dom.CanvasTextAlign
-typealias CanvasTextBaseline = org.w3c.dom.CanvasTextBaseline
 typealias CanvasTextDrawingStyles = org.w3c.dom.CanvasTextDrawingStyles
 typealias CanvasTransform = org.w3c.dom.CanvasTransform
 typealias CanvasUserInterface = org.w3c.dom.CanvasUserInterface
