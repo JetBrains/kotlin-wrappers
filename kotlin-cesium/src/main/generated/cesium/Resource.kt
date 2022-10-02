@@ -366,7 +366,7 @@ external class Resource(options: dynamic) {
      * @return a promise that will resolve to the requested data when loaded. Returns undefined if `request.throttle` is true and the request does not have high enough priority.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Resource.html#fetchXML">Online Documentation</a>
      */
-    fun fetchXML(): kotlin.js.Promise<org.w3c.dom.XMLDocument>?
+    fun fetchXML(): kotlin.js.Promise<dom.xml.XMLDocument>?
 
     /**
      * Requests a resource using JSONP.
@@ -808,7 +808,7 @@ external class Resource(options: dynamic) {
          * @return a promise that will resolve to the requested data when loaded. Returns undefined if `request.throttle` is true and the request does not have high enough priority.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Resource.html#.fetchXML">Online Documentation</a>
          */
-        fun fetchXML(options: FetchXMLOptions): kotlin.js.Promise<org.w3c.dom.XMLDocument>?
+        fun fetchXML(options: FetchXMLOptions): kotlin.js.Promise<dom.xml.XMLDocument>?
 
         /**
          * @property [url] The url of the resource.

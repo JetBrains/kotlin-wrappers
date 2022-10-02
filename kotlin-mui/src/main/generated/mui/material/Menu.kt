@@ -21,7 +21,7 @@ external interface MenuProps :
      * An HTML element, or a function that returns one.
      * It's used to set the position of the menu.
      */
-    var anchorEl: ((element: dom.Element) -> org.w3c.dom.Element)?
+    var anchorEl: ((element: dom.Element) -> dom.Element)?
 
     /**
      * If `true` (Default) will focus the `[role="menu"]` if no focusable child is found. Disabled

@@ -13,7 +13,7 @@ import mui.material.styles.Theme
 import mui.system.SxProps
 
 external interface SvgIconProps :
-    react.dom.svg.SVGAttributes<org.w3c.dom.svg.SVGSVGElement>,
+    react.dom.svg.SVGAttributes<dom.svg.SVGSVGElement>,
     react.PropsWithChildren,
     mui.system.PropsWithSx,
     mui.types.PropsWithComponent {
