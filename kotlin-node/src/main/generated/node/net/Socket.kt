@@ -94,6 +94,18 @@ open external class Socket : Duplex {
     override fun pause() /* : this */
 
     /**
+     * Close the TCP connection by sending an RST packet and destroy the stream.
+     * If this TCP socket is in connecting status, it will send an RST packet
+     * and destroy this TCP socket once it is connected. Otherwise, it will call
+     * `socket.destroy` with an `ERR_SOCKET_CLOSED` Error. If this is not a TCP socket
+     * (for example, a pipe), calling this method will immediately throw
+     * an `ERR_INVALID_HANDLE_TYPE` Error.
+     * @since v18.3.0
+     * @return The socket itself.
+     */
+    open fun resetAndDestroy() /* : this */
+
+    /**
      * Resumes reading after a call to `socket.pause()`.
      * @return The socket itself.
      */
@@ -253,6 +265,12 @@ open external class Socket : Duplex {
     open val localPort: Number?
 
     /**
+     * The string representation of the local IP family. `'IPv4'` or `'IPv6'`.
+     * @since v18.8.0
+     */
+    open val localFamily: String?
+
+    /**
      * This property represents the state of the connection as a string.
      * @see {https://nodejs.org/api/net.html#socketreadystate}
      * @since v0.5.0
@@ -315,7 +333,8 @@ open external class Socket : Duplex {
      *   5. end
      *   6. error
      *   7. lookup
-     *   8. timeout
+     *   8. ready
+     *   9. timeout
      */
     override fun addListener(
         event: EventType,
