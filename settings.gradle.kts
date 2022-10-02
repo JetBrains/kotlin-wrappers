@@ -87,6 +87,9 @@ include("kotlin-react-redux")
 // Kotlin/JS: React Router wrappers
 include("kotlin-react-router-dom")
 
+// Kotlin/JS: React Select wrappers
+include("kotlin-react-select")
+
 // Kotlin/JS: React Table wrappers
 include("kotlin-react-table")
 

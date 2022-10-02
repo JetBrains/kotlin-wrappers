@@ -27,6 +27,7 @@ dependencies {
         api(project(":kotlin-react-query"))
         api(project(":kotlin-react-redux"))
         api(project(":kotlin-react-router-dom"))
+        api(project(":kotlin-react-select"))
         api(project(":kotlin-react-table"))
         api(project(":kotlin-react-virtual"))
         api(project(":kotlin-redux"))
