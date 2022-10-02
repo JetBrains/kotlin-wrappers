@@ -18,4 +18,4 @@ external fun getImagePixels(
     image: dynamic,
     width: Double,
     height: Double,
-): org.w3c.dom.ImageData
+): canvas.ImageData
