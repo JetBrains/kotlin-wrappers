@@ -25,4 +25,5 @@ typealias CanvasText = org.w3c.dom.CanvasText
 typealias CanvasTextDrawingStyles = org.w3c.dom.CanvasTextDrawingStyles
 typealias CanvasTransform = org.w3c.dom.CanvasTransform
 typealias CanvasUserInterface = org.w3c.dom.CanvasUserInterface
+typealias ImageData = org.w3c.dom.ImageData
 typealias Path2D = org.w3c.dom.Path2D
