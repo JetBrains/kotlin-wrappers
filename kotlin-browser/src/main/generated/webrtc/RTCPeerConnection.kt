@@ -41,7 +41,7 @@ external class RTCPeerConnection(
 
     fun addTrack(
         track: media.stream.MediaStreamTrack,
-        vararg streams: ReadonlyArray<org.w3c.dom.mediacapture.MediaStream>,
+        vararg streams: ReadonlyArray<media.stream.MediaStream>,
     ): RTCRtpSender
 
     fun addTransceiver(

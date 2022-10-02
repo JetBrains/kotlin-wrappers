@@ -12,5 +12,5 @@ sealed external interface RTCRtpSender {
     fun getStats(): kotlin.js.Promise<RTCStatsReport>
     fun replaceTrack(withTrack: media.stream.MediaStreamTrack?): kotlin.js.Promise<Unit>
     fun setParameters(parameters: RTCRtpSendParameters): kotlin.js.Promise<Unit>
-    fun setStreams(vararg streams: ReadonlyArray<org.w3c.dom.mediacapture.MediaStream>)
+    fun setStreams(vararg streams: ReadonlyArray<media.stream.MediaStream>)
 }
