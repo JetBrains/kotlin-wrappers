@@ -6,20 +6,22 @@
 package cesium
 
 /**
+ * <div class="notice">
+ * Use [Model.getNode] to get a node from a loaded model. Do not call the constructor directly.
+ * </div>
+ *
  * A model node with a modifiable transform to allow users to define their
  * own animations. While a model's asset can contain animations that target
  * a node's transform, this class allows users to change a node's transform
  * externally. In this way, animation can be driven by another source, not
  * just by the model's asset.
- *
- * Use [Model.getNode] to get an instance from a loaded model.
  * ```
  * const node = model.getNode("Hand");
  * node.matrix = Matrix4.fromScale(new Cartesian3(5.0, 1.0, 1.0), node.matrix);
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ModelNode.html">Online Documentation</a>
  */
-external class ModelNode {
+sealed external class ModelNode {
     /**
      * The value of the `name` property of this node.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ModelNode.html#name">Online Documentation</a>
