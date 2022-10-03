@@ -198,6 +198,7 @@ open external class Server : node.events.EventEmitter {
      *   2. connection
      *   3. error
      *   4. listening
+     *   5. drop
      */
     override fun addListener(
         event: EventType,
@@ -224,6 +225,11 @@ open external class Server : node.events.EventEmitter {
         listener: () -> Unit,
     ) /* : this */
 
+    open fun addListener(
+        event: Event.DROP,
+        listener: (data: DropArgument) -> Unit,
+    ) /* : this */
+
     override fun emit(
         event: EventType,
         vararg args: Any,
@@ -241,6 +247,11 @@ open external class Server : node.events.EventEmitter {
     ): Boolean
 
     open fun emit(event: Event.LISTENING): Boolean
+    open fun emit(
+        event: Event.DROP,
+        data: DropArgument = definedExternally,
+    ): Boolean
+
     override fun on(
         event: EventType,
         listener: Function<Unit>,
@@ -264,6 +275,11 @@ open external class Server : node.events.EventEmitter {
     open fun on(
         event: Event.LISTENING,
         listener: () -> Unit,
+    ) /* : this */
+
+    open fun on(
+        event: Event.DROP,
+        listener: (data: DropArgument) -> Unit,
     ) /* : this */
 
     override fun once(
@@ -291,6 +307,11 @@ open external class Server : node.events.EventEmitter {
         listener: () -> Unit,
     ) /* : this */
 
+    open fun once(
+        event: Event.DROP,
+        listener: (data: DropArgument) -> Unit,
+    ) /* : this */
+
     override fun prependListener(
         event: EventType,
         listener: Function<Unit>,
@@ -316,6 +337,11 @@ open external class Server : node.events.EventEmitter {
         listener: () -> Unit,
     ) /* : this */
 
+    open fun prependListener(
+        event: Event.DROP,
+        listener: (data: DropArgument) -> Unit,
+    ) /* : this */
+
     override fun prependOnceListener(
         event: EventType,
         listener: Function<Unit>,
@@ -339,5 +365,10 @@ open external class Server : node.events.EventEmitter {
     open fun prependOnceListener(
         event: Event.LISTENING,
         listener: () -> Unit,
+    ) /* : this */
+
+    open fun prependOnceListener(
+        event: Event.DROP,
+        listener: (data: DropArgument) -> Unit,
     ) /* : this */
 }
