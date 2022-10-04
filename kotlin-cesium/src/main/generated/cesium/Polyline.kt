@@ -8,40 +8,14 @@ package cesium
 import kotlinx.js.ReadonlyArray
 
 /**
- * A renderable polyline. Create this by calling [PolylineCollection.add]
- * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Polyline.html">Online Documentation</a>
+ * <div class="notice">
+ * Create this by calling [PolylineCollection.add]. Do not call the constructor directly.
+ * </div>
  *
- * @constructor
- * @param [polylineCollection] The renderable polyline collection.
+ * A renderable polyline.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Polyline.html">Online Documentation</a>
  */
-external class Polyline(
-    options: ConstructorOptions,
-    polylineCollection: PolylineCollection,
-) {
-    /**
-     * @property [show] `true` if this polyline will be shown; otherwise, `false`.
-     *   Default value - `true`
-     * @property [width] The width of the polyline in pixels.
-     *   Default value - `1.0`
-     * @property [loop] Whether a line segment will be added between the last and first line positions to make this line a loop.
-     *   Default value - `false`
-     * @property [material] The material.
-     *   Default value - [Material.ColorType]
-     * @property [positions] The positions.
-     * @property [id] The user-defined object to be returned when this polyline is picked.
-     * @property [distanceDisplayCondition] The condition specifying at what distance from the camera that this polyline will be displayed.
-     */
-    interface ConstructorOptions {
-        var show: Boolean?
-        var width: Double?
-        var loop: Boolean?
-        var material: Material?
-        var positions: ReadonlyArray<Cartesian3>?
-        var id: Any?
-        var distanceDisplayCondition: DistanceDisplayCondition?
-    }
-
+sealed external class Polyline {
     /**
      * Determines if this polyline will be shown.  Use this to hide or show a polyline, instead
      * of removing it and re-adding it to the collection.

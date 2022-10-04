@@ -14,7 +14,7 @@ import kotlinx.js.ReadonlyArray
  * Do not construct this directly, instead access tiles through [Cesium3DTileset.tileVisible].
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTile.html">Online Documentation</a>
  */
-external class Cesium3DTile {
+sealed external class Cesium3DTile {
     /**
      * The local transform of this tile.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTile.html#transform">Online Documentation</a>

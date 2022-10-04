@@ -10,16 +10,18 @@
 package cesium
 
 /**
+ * <div class="notice">
+ * Create animations by calling [ModelAnimationCollection.add]. Do not call the constructor directly.
+ * </div>
+ *
  * An active animation derived from a glTF asset. An active animation is an
  * animation that is either currently playing or scheduled to be played due to
  * being added to a model's [ModelAnimationCollection]. An active animation
  * is an instance of an animation; for example, there can be multiple active
  * animations for the same glTF animation, each with a different start time.
- *
- * Create this by calling [ModelAnimationCollection.add].
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ModelAnimation.html">Online Documentation</a>
  */
-external class ModelAnimation {
+sealed external class ModelAnimation {
     /**
      * When `true`, the animation is removed after it stops playing.
      * This is slightly more efficient that not removing it, but if, for example,

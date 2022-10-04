@@ -104,6 +104,12 @@ external class Cesium3DTilesInspectorViewModel(
     var styleString: String
 
     /**
+     * Gets or sets the JSON for the tileset enableDebugWireframe attribute.  This property is observable.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTilesInspectorViewModel.html#hasEnabledWireframe">Online Documentation</a>
+     */
+    var hasEnabledWireframe: Boolean
+
+    /**
      * Gets the names of the properties in the tileset.  This property is observable.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTilesInspectorViewModel.html#properties">Online Documentation</a>
      */

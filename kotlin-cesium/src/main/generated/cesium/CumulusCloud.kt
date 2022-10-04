@@ -6,12 +6,14 @@
 package cesium
 
 /**
- * A cumulus cloud billboard positioned in the 3D scene, that is created and rendered using a [CloudCollection].
+ * <div class="notice">
  * A cloud is created and its initial properties are set by calling [CloudCollection.add].
- * and [CloudCollection.remove].
+ * and [CloudCollection.remove]. Do not call the constructor directly.
+ * </div>
+ * A cumulus cloud billboard positioned in the 3D scene, that is created and rendered using a [CloudCollection].
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CumulusCloud.html">Online Documentation</a>
  */
-external class CumulusCloud {
+sealed external class CumulusCloud {
     /**
      * Determines if this cumulus cloud will be shown.  Use this to hide or show a cloud, instead
      * of removing it and re-adding it to the collection.
