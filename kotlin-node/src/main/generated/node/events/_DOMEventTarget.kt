@@ -2,7 +2,7 @@
 
 package node.events
 
-sealed external interface DOMEventTarget {
+sealed external interface _DOMEventTarget {
 
     // HIDDEN METHOD START
     /*

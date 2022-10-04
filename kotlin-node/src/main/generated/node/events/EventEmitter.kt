@@ -151,13 +151,13 @@ open external class EventEmitter : IEventEmitter {
          * @since v11.13.0, v10.16.0
          */
         fun once(
-            emitter: NodeEventTarget,
+            emitter: _NodeEventTarget,
             event: EventType,
             options: StaticEventEmitterOptions = definedExternally,
         ): Promise<ReadonlyArray<Any>>
 
         fun once(
-            emitter: DOMEventTarget,
+            emitter: _DOMEventTarget,
             event: EventType,
             options: StaticEventEmitterOptions = definedExternally,
         ): Promise<ReadonlyArray<Any>>
@@ -275,7 +275,7 @@ open external class EventEmitter : IEventEmitter {
          * @since v15.2.0, v14.17.0
          */
         fun getEventListeners(
-            emitter: Any, /* DOMEventTarget | NodeJS.EventEmitter */
+            emitter: Any, /* _DOMEventTarget | NodeJS.EventEmitter */
             event: EventType,
         ): ReadonlyArray<Function<*>>
 
@@ -298,7 +298,7 @@ open external class EventEmitter : IEventEmitter {
          */
         fun setMaxListeners(
             n: Number = definedExternally,
-            vararg eventTargets: Any, /* DOMEventTarget | NodeJS.EventEmitter */
+            vararg eventTargets: Any, /* _DOMEventTarget | NodeJS.EventEmitter */
         )
 
         /**

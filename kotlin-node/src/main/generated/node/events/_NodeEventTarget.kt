@@ -2,7 +2,7 @@
 
 package node.events
 
-sealed external interface NodeEventTarget {
+sealed external interface _NodeEventTarget {
     fun once(
         event: EventType,
         listener: Function<Unit>,
