@@ -5,7 +5,7 @@ import org.w3c.dom.events.Event
 import web.events.EventTarget
 
 sealed external class Performance : EventTarget {
-    var onresourcetimingbufferfull: ((ev: Event) -> Any)?
+    var onresourcetimingbufferfull: ((event: Event) -> Unit)?
     val timeOrigin: HighResTimeStamp
     fun clearMarks(markName: String = definedExternally)
     fun clearMeasures(measureName: String = definedExternally)
