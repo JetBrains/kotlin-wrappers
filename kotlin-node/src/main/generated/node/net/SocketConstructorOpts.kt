@@ -2,7 +2,7 @@
 
 package node.net
 
-import node.AbortSignal
+import web.abort.AbortSignal
 
 sealed external interface SocketConstructorOpts {
     var fd: Number?

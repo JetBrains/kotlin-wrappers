@@ -3,7 +3,7 @@
 package node.test
 
 import kotlinx.js.ReadonlyArray
-import node.AbortSignal
+import web.abort.AbortSignal
 
 sealed external interface RunOptions {
     /**

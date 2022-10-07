@@ -2,8 +2,8 @@
 
 package node.childProcess
 
-import node.AbortSignal
 import node.events.Abortable
+import web.abort.AbortSignal
 
 sealed external interface ExecFileOptions : CommonOptions, Abortable {
     var maxBuffer: Number?

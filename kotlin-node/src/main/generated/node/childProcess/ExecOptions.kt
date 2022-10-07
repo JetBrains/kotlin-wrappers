@@ -2,7 +2,7 @@
 
 package node.childProcess
 
-import node.AbortSignal
+import web.abort.AbortSignal
 
 sealed external interface ExecOptions : CommonOptions {
     var shell: String?

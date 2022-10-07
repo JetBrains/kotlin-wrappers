@@ -2,9 +2,9 @@
 
 package node.http
 
-import node.AbortSignal
 import node.net.LookupFunction
 import node.net.Socket
+import web.abort.AbortSignal
 
 sealed external interface ClientRequestArgs {
     var signal: AbortSignal?

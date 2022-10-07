@@ -2,7 +2,7 @@
 
 package node.events
 
-import node.AbortSignal
+import web.abort.AbortSignal
 
 external interface Abortable {
     /**

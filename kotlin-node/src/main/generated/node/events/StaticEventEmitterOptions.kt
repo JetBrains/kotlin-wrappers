@@ -2,7 +2,7 @@
 
 package node.events
 
-import node.AbortSignal
+import web.abort.AbortSignal
 
 sealed external interface StaticEventEmitterOptions {
     var signal: AbortSignal?

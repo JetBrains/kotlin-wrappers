@@ -2,7 +2,7 @@
 
 package node.test
 
-import node.AbortSignal
+import web.abort.AbortSignal
 
 sealed external interface TestOptions {
     /**
