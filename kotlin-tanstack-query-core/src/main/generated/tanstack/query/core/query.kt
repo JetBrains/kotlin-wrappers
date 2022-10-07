@@ -10,6 +10,7 @@
 
 package tanstack.query.core
 
+import web.abort.AbortSignal
 import kotlin.js.Promise
 
 external interface QueryConfig<TQueryFnData, TError, TData, TQueryKey : QueryKey> {
@@ -40,7 +41,7 @@ external interface QueryState<TData, TError> {
 external interface FetchContext<TQueryFnData, TError, TData, TQueryKey : QueryKey> {
     var fetchFn: () -> Promise<*>?
     var fetchOptions: FetchOptions
-    var signal: web.abort.AbortSignal
+    var signal: AbortSignal
     var options: QueryOptions<TQueryFnData, TError, TData, *>
     var queryKey: TQueryKey
     var state: QueryState<TData, TError>

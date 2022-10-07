@@ -13,6 +13,7 @@ package tanstack.query.core
 import kotlinx.js.JsTuple2
 import kotlinx.js.ReadonlyArray
 import kotlinx.js.Void
+import web.abort.AbortController
 import kotlin.js.Promise
 
 external interface QueryFilters {
@@ -135,7 +136,7 @@ external fun sleep(timeout: JsDuration): Promise<Unit>
 
 external fun scheduleMicrotask(callback: () -> Unit)
 
-external fun getAbortController(): web.abort.AbortController?
+external fun getAbortController(): AbortController?
 
 external fun <TData, TOptions : QueryOptions<*, *, *, *>> replaceData(
     prevData: TData?,

@@ -9,6 +9,7 @@ package tanstack.query.core
 import kotlinx.js.ReadonlyArray
 import kotlinx.js.Record
 import kotlinx.js.Void
+import web.abort.AbortSignal
 import kotlin.js.Promise
 
 // readonly unknown[]
@@ -18,7 +19,7 @@ typealias QueryFunction<T, TQueryKey> = (context: QueryFunctionContext<TQueryKey
 
 external interface QueryFunctionContext<TQueryKey : QueryKey, TPageParam> {
     var queryKey: TQueryKey
-    var signal: web.abort.AbortSignal
+    var signal: AbortSignal
     var pageParam: TPageParam
     var meta: QueryMeta?
 }
