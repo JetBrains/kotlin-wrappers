@@ -95,6 +95,9 @@ inline val Event.Companion.READY_STATE_CHANGE: EventType<Event>
 inline val Event.Companion.RESET: EventType<Event>
     get() = EventType("reset")
 
+inline val Event.Companion.RESIZE: EventType<Event>
+    get() = EventType("resize")
+
 inline val Event.Companion.SCROLL: EventType<Event>
     get() = EventType("scroll")
 
