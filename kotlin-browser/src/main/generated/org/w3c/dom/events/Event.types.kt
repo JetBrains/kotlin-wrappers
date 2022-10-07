@@ -64,9 +64,6 @@ inline val Event.Companion.SHOW: EventType<Event>
 inline val Event.Companion.PAYMENT_METHOD_CHANGE: EventType<Event>
     get() = EventType("paymentmethodchange")
 
-inline val Event.Companion.RESOURCE_TIMING_BUFFER_FULL: EventType<Event>
-    get() = EventType("resourcetimingbufferfull")
-
 inline val Event.Companion.CHANGE: EventType<Event>
     get() = EventType("change")
 
