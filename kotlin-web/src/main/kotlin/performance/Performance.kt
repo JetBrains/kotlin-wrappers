@@ -1,53 +1,7 @@
 package performance
 
 import kotlinx.js.HighResTimeStamp
-import kotlinx.js.ReadonlyArray
 import org.w3c.dom.events.Event
-
-external interface PerformanceEntry {
-    val duration: HighResTimeStamp
-    val entryType: String
-    val name: String
-    val startTime: HighResTimeStamp
-    fun toJSON(): Any
-}
-
-typealias PerformanceEntryList = ReadonlyArray<PerformanceEntry>
-
-external class PerformanceMark(
-    markName: String,
-    markOptions: PerformanceMarkOptions = definedExternally,
-) : PerformanceEntry {
-    val detail: Any
-
-    override val duration: HighResTimeStamp
-    override val entryType: String
-    override val name: String
-    override val startTime: HighResTimeStamp
-    override fun toJSON(): Any
-}
-
-external interface PerformanceMarkOptions {
-    var detail: Any?
-    var startTime: HighResTimeStamp?
-}
-
-external class PerformanceMeasure : PerformanceEntry {
-    val detail: Any
-
-    override val duration: HighResTimeStamp
-    override val entryType: String
-    override val name: String
-    override val startTime: HighResTimeStamp
-    override fun toJSON(): Any
-}
-
-interface PerformanceMeasureOptions {
-    var detail: Any?
-    var duration: HighResTimeStamp?
-    var end: HighResTimeStamp?
-    var start: HighResTimeStamp?
-}
 
 external interface Performance {
     var onresourcetimingbufferfull: ((ev: Event) -> Any)?
@@ -65,5 +19,3 @@ external interface Performance {
     fun setResourceTimingBufferSize(maxSize: Number)
     fun toJSON(): Any
 }
-
-external val performance: Performance
