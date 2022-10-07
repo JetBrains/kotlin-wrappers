@@ -5,9 +5,6 @@ package browser.events
 import org.w3c.dom.events.Event
 import web.events.EventType
 
-inline val Event.Companion.ABORT: EventType<Event>
-    get() = EventType("abort")
-
 inline val Event.Companion.RESIZE: EventType<Event>
     get() = EventType("resize")
 
