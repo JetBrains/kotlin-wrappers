@@ -1,5 +1,7 @@
-package kotlinx.js
+package performance
 
+import kotlinx.js.HighResTimeStamp
+import kotlinx.js.ReadonlyArray
 import org.w3c.dom.events.Event
 
 external interface PerformanceEntry {
