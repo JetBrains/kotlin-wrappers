@@ -2,8 +2,6 @@ package canvas
 
 import org.w3c.dom.CanvasTextAlign
 
-typealias CanvasTextAlign = CanvasTextAlign
-
 inline val CanvasTextAlign.Companion.START: CanvasTextAlign
     get() = "start".unsafeCast<CanvasTextAlign>()
 

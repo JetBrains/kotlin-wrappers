@@ -2,8 +2,6 @@ package canvas
 
 import org.w3c.dom.CanvasLineCap
 
-typealias CanvasLineCap = CanvasLineCap
-
 inline val CanvasLineCap.Companion.BUTT: CanvasLineCap
     get() = "butt".unsafeCast<CanvasLineCap>()
 

@@ -2,8 +2,6 @@ package canvas
 
 import org.w3c.dom.CanvasTextBaseline
 
-typealias CanvasTextBaseline = CanvasTextBaseline
-
 inline val CanvasTextBaseline.Companion.TOP: CanvasTextBaseline
     get() = "top".unsafeCast<CanvasTextBaseline>()
 
