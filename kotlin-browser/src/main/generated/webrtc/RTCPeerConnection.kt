@@ -3,6 +3,8 @@
 package webrtc
 
 import kotlinx.js.ReadonlyArray
+import media.stream.MediaStream
+import media.stream.MediaStreamTrack
 import web.events.Event
 
 external class RTCPeerConnection(
@@ -40,12 +42,12 @@ external class RTCPeerConnection(
     ): kotlin.js.Promise<Unit>
 
     fun addTrack(
-        track: media.stream.MediaStreamTrack,
-        vararg streams: ReadonlyArray<media.stream.MediaStream>,
+        track: MediaStreamTrack,
+        vararg streams: ReadonlyArray<MediaStream>,
     ): RTCRtpSender
 
     fun addTransceiver(
-        trackOrKind: media.stream.MediaStreamTrack,
+        trackOrKind: MediaStreamTrack,
         init: RTCRtpTransceiverInit = definedExternally,
     ): RTCRtpTransceiver
 
@@ -80,7 +82,7 @@ external class RTCPeerConnection(
     fun getConfiguration(): RTCConfiguration
     fun getReceivers(): ReadonlyArray<RTCRtpReceiver>
     fun getSenders(): ReadonlyArray<RTCRtpSender>
-    fun getStats(selector: media.stream.MediaStreamTrack? = definedExternally): kotlin.js.Promise<RTCStatsReport>
+    fun getStats(selector: MediaStreamTrack? = definedExternally): kotlin.js.Promise<RTCStatsReport>
     fun getTransceivers(): ReadonlyArray<RTCRtpTransceiver>
     fun removeTrack(sender: RTCRtpSender)
     fun restartIce()
