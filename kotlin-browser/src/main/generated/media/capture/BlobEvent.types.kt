@@ -1,6 +1,6 @@
 // Automatically generated - do not modify!
 
-package media.recorder
+package media.capture
 
 import web.events.EventType
 import org.w3c.dom.events.Event as BlobEvent
