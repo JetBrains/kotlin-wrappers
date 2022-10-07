@@ -1,7 +1,5 @@
 package dom
 
-typealias Document = org.w3c.dom.Document
-
 inline val Document.fonts: FontFaceSet
     get() = asDynamic().fonts
 

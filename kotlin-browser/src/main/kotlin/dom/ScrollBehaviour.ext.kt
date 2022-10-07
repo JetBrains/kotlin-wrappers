@@ -2,8 +2,6 @@ package dom
 
 import org.w3c.dom.ScrollBehavior
 
-typealias ScrollBehavior = ScrollBehavior
-
 inline val ScrollBehavior.Companion.AUTO: ScrollBehavior
     get() = "auto".unsafeCast<ScrollBehavior>()
 
