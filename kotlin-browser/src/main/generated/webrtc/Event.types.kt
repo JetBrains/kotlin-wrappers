@@ -14,20 +14,14 @@ inline val Event.Companion.CLOSE: EventType<Event>
 inline val Event.Companion.CLOSING: EventType<Event>
     get() = EventType("closing")
 
+inline val Event.Companion.CONNECTION_STATE_CHANGE: EventType<Event>
+    get() = EventType("connectionstatechange")
+
 inline val Event.Companion.ERROR: EventType<Event>
     get() = EventType("error")
 
-inline val Event.Companion.OPEN: EventType<Event>
-    get() = EventType("open")
-
-inline val Event.Companion.STATE_CHANGE: EventType<Event>
-    get() = EventType("statechange")
-
 inline val Event.Companion.GATHERING_STATE_CHANGE: EventType<Event>
     get() = EventType("gatheringstatechange")
-
-inline val Event.Companion.CONNECTION_STATE_CHANGE: EventType<Event>
-    get() = EventType("connectionstatechange")
 
 inline val Event.Companion.ICE_CANDIDATE_ERROR: EventType<Event>
     get() = EventType("icecandidateerror")
@@ -41,5 +35,11 @@ inline val Event.Companion.ICE_GATHERING_STATE_CHANGE: EventType<Event>
 inline val Event.Companion.NEGOTIATION_NEEDED: EventType<Event>
     get() = EventType("negotiationneeded")
 
+inline val Event.Companion.OPEN: EventType<Event>
+    get() = EventType("open")
+
 inline val Event.Companion.SIGNALING_STATE_CHANGE: EventType<Event>
     get() = EventType("signalingstatechange")
+
+inline val Event.Companion.STATE_CHANGE: EventType<Event>
+    get() = EventType("statechange")

@@ -8,33 +8,6 @@ import web.events.EventType
 inline val Event.Companion.DOM_CONTENT_LOADED: EventType<Event>
     get() = EventType("DOMContentLoaded")
 
-inline val Event.Companion.FULLSCREEN_CHANGE: EventType<Event>
-    get() = EventType("fullscreenchange")
-
-inline val Event.Companion.FULLSCREEN_ERROR: EventType<Event>
-    get() = EventType("fullscreenerror")
-
-inline val Event.Companion.POINTER_LOCK_CHANGE: EventType<Event>
-    get() = EventType("pointerlockchange")
-
-inline val Event.Companion.POINTER_LOCK_ERROR: EventType<Event>
-    get() = EventType("pointerlockerror")
-
-inline val Event.Companion.READY_STATE_CHANGE: EventType<Event>
-    get() = EventType("readystatechange")
-
-inline val Event.Companion.VISIBILITY_CHANGE: EventType<Event>
-    get() = EventType("visibilitychange")
-
-inline val Event.Companion.LOADING: EventType<Event>
-    get() = EventType("loading")
-
-inline val Event.Companion.LOADING_DONE: EventType<Event>
-    get() = EventType("loadingdone")
-
-inline val Event.Companion.LOADING_ERROR: EventType<Event>
-    get() = EventType("loadingerror")
-
 inline val Event.Companion.CAN_PLAY: EventType<Event>
     get() = EventType("canplay")
 
@@ -59,11 +32,23 @@ inline val Event.Companion.EMPTIED: EventType<Event>
 inline val Event.Companion.ENDED: EventType<Event>
     get() = EventType("ended")
 
+inline val Event.Companion.ENTER_PICTURE_IN_PICTURE: EventType<Event>
+    get() = EventType("enterpictureinpicture")
+
+inline val Event.Companion.FULLSCREEN_CHANGE: EventType<Event>
+    get() = EventType("fullscreenchange")
+
+inline val Event.Companion.FULLSCREEN_ERROR: EventType<Event>
+    get() = EventType("fullscreenerror")
+
 inline val Event.Companion.INPUT: EventType<Event>
     get() = EventType("input")
 
 inline val Event.Companion.INVALID: EventType<Event>
     get() = EventType("invalid")
+
+inline val Event.Companion.LEAVE_PICTURE_IN_PICTURE: EventType<Event>
+    get() = EventType("leavepictureinpicture")
 
 inline val Event.Companion.LOAD: EventType<Event>
     get() = EventType("load")
@@ -73,6 +58,15 @@ inline val Event.Companion.LOADED_DATA: EventType<Event>
 
 inline val Event.Companion.LOADED_METADATA: EventType<Event>
     get() = EventType("loadedmetadata")
+
+inline val Event.Companion.LOADING: EventType<Event>
+    get() = EventType("loading")
+
+inline val Event.Companion.LOADING_DONE: EventType<Event>
+    get() = EventType("loadingdone")
+
+inline val Event.Companion.LOADING_ERROR: EventType<Event>
+    get() = EventType("loadingerror")
 
 inline val Event.Companion.LOAD_START: EventType<Event>
     get() = EventType("loadstart")
@@ -86,8 +80,17 @@ inline val Event.Companion.PLAY: EventType<Event>
 inline val Event.Companion.PLAYING: EventType<Event>
     get() = EventType("playing")
 
+inline val Event.Companion.POINTER_LOCK_CHANGE: EventType<Event>
+    get() = EventType("pointerlockchange")
+
+inline val Event.Companion.POINTER_LOCK_ERROR: EventType<Event>
+    get() = EventType("pointerlockerror")
+
 inline val Event.Companion.RATE_CHANGE: EventType<Event>
     get() = EventType("ratechange")
+
+inline val Event.Companion.READY_STATE_CHANGE: EventType<Event>
+    get() = EventType("readystatechange")
 
 inline val Event.Companion.RESET: EventType<Event>
     get() = EventType("reset")
@@ -125,11 +128,17 @@ inline val Event.Companion.TIME_UPDATE: EventType<Event>
 inline val Event.Companion.TOGGLE: EventType<Event>
     get() = EventType("toggle")
 
+inline val Event.Companion.VISIBILITY_CHANGE: EventType<Event>
+    get() = EventType("visibilitychange")
+
 inline val Event.Companion.VOLUME_CHANGE: EventType<Event>
     get() = EventType("volumechange")
 
 inline val Event.Companion.WAITING: EventType<Event>
     get() = EventType("waiting")
+
+inline val Event.Companion.WAITING_FOR_KEY: EventType<Event>
+    get() = EventType("waitingforkey")
 
 inline val Event.Companion.WEBKIT_ANIMATION_END: EventType<Event>
     get() = EventType("webkitanimationend")
@@ -140,17 +149,8 @@ inline val Event.Companion.WEBKIT_ANIMATION_ITERATION: EventType<Event>
 inline val Event.Companion.WEBKIT_ANIMATION_START: EventType<Event>
     get() = EventType("webkitanimationstart")
 
-inline val Event.Companion.WEBKIT_TRANSITION_END: EventType<Event>
-    get() = EventType("webkittransitionend")
-
-inline val Event.Companion.WAITING_FOR_KEY: EventType<Event>
-    get() = EventType("waitingforkey")
-
-inline val Event.Companion.ENTER_PICTURE_IN_PICTURE: EventType<Event>
-    get() = EventType("enterpictureinpicture")
-
-inline val Event.Companion.LEAVE_PICTURE_IN_PICTURE: EventType<Event>
-    get() = EventType("leavepictureinpicture")
-
 inline val Event.Companion.WEBKIT_FULLSCREEN_CHANGE: EventType<Event>
     get() = EventType("webkitfullscreenchange")
+
+inline val Event.Companion.WEBKIT_TRANSITION_END: EventType<Event>
+    get() = EventType("webkittransitionend")
