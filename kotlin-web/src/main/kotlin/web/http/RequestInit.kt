@@ -1,6 +1,6 @@
 package web.http
 
-import web.AbortSignal
+import web.abort.AbortSignal
 
 external interface RequestInit : org.w3c.fetch.RequestInit {
     var signal: AbortSignal?

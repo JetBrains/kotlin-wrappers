@@ -2,7 +2,4 @@
 
 package node
 
-external class AbortController : web.AbortController {
-    override val signal: AbortSignal
-    override fun abort()
-}
+typealias AbortController = web.abort.AbortController

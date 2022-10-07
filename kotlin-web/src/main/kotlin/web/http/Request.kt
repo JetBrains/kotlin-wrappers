@@ -1,6 +1,6 @@
 package web.http
 
-import web.AbortSignal
+import web.abort.AbortSignal
 import web.url.URL
 
 external class Request : org.w3c.fetch.Request {

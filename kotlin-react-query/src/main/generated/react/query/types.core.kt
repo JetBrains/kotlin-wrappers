@@ -20,7 +20,7 @@ typealias QueryFunction<T, TQueryKey> = (context: QueryFunctionContext<TQueryKey
 
 external interface QueryFunctionContext<TQueryKey : QueryKey, TPageParam> {
     var queryKey: EnsuredQueryKey<TQueryKey>
-    var signal: web.AbortSignal
+    var signal: web.abort.AbortSignal
     var pageParam: TPageParam
     var meta: QueryMeta?
 }

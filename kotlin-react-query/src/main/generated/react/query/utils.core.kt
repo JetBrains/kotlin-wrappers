@@ -142,4 +142,4 @@ external fun sleep(timeout: JsDuration): Promise<Unit>
 
 external fun scheduleMicrotask(callback: () -> Unit)
 
-external fun getAbortController(): web.AbortController?
+external fun getAbortController(): web.abort.AbortController?

@@ -5,7 +5,7 @@
 package web.events
 
 import kotlinx.js.jso
-import web.AbortSignal
+import web.abort.AbortSignal
 
 typealias EventTarget = org.w3c.dom.events.EventTarget
 
