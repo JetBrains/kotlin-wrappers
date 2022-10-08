@@ -1,4 +1,4 @@
-package browser.clipboard
+package clipboard
 
 import buffer.Blob
 import kotlinx.js.ReadonlyArray
