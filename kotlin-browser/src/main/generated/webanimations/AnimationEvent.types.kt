@@ -1,6 +1,6 @@
 // Automatically generated - do not modify!
 
-package animation
+package webanimations
 
 import web.events.EventType
 

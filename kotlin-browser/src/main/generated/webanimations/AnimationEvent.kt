@@ -4,7 +4,7 @@
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
-package animation
+package webanimations
 
 import kotlinx.js.HighResTimeStamp
 import web.events.Event
