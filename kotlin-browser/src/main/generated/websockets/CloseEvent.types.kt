@@ -1,6 +1,6 @@
 // Automatically generated - do not modify!
 
-package websocket
+package websockets
 
 import org.w3c.dom.CloseEvent
 import web.events.EventType
