@@ -2,7 +2,7 @@
     "NOTHING_TO_INLINE",
 )
 
-package webworkers
+package web.workers
 
 import web.url.URL
 

@@ -4,10 +4,10 @@
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
-package webanimations
+package web.audio
 
 import web.events.Event
 
-sealed external class AnimationPlaybackEvent : Event {
+sealed external class OfflineAudioCompletionEvent : Event {
     companion object
 }

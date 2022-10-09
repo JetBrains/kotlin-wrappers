@@ -1,6 +1,6 @@
 // Automatically generated - do not modify!
 
-package webaudio
+package web.audio
 
 import web.events.EventType
 

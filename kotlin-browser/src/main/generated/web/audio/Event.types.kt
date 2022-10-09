@@ -1,6 +1,6 @@
 // Automatically generated - do not modify!
 
-package webaudio
+package web.audio
 
 import org.w3c.dom.events.Event
 import web.events.EventType

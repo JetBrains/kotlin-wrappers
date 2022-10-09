@@ -1,6 +1,6 @@
 // Automatically generated - do not modify!
 
-package webanimations
+package web.animations
 
 import org.w3c.dom.events.Event
 import web.events.EventType

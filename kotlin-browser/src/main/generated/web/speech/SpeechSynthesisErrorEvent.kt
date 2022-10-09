@@ -4,7 +4,7 @@
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
-package webspeech
+package web.speech
 
 import web.events.Event
 

@@ -1,6 +1,6 @@
 // Automatically generated - do not modify!
 
-package webspeech
+package web.speech
 
 import org.w3c.dom.events.Event
 import web.events.EventType

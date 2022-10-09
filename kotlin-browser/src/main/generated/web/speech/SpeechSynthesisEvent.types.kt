@@ -1,6 +1,6 @@
 // Automatically generated - do not modify!
 
-package webspeech
+package web.speech
 
 import web.events.EventType
 
