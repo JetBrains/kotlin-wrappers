@@ -2,4 +2,5 @@
 
 package dom.html
 
-typealias HTMLSpanElement = org.w3c.dom.HTMLSpanElement
+sealed external class HTMLSpanElement :
+    HTMLElement

@@ -2,4 +2,8 @@
 
 package dom.html
 
-typealias HTMLLegendElement = org.w3c.dom.HTMLLegendElement
+sealed external class HTMLLegendElement :
+    HTMLElement {
+    /** Retrieves a reference to the form that the object is embedded in. */
+    val form: HTMLFormElement?
+}

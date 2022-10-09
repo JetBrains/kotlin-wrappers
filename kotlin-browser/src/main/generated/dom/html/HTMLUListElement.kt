@@ -2,4 +2,5 @@
 
 package dom.html
 
-typealias HTMLUListElement = org.w3c.dom.HTMLUListElement
+sealed external class HTMLUListElement :
+    HTMLElement

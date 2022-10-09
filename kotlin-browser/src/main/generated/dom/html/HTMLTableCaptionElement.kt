@@ -2,4 +2,5 @@
 
 package dom.html
 
-typealias HTMLTableCaptionElement = org.w3c.dom.HTMLTableCaptionElement
+sealed external class HTMLTableCaptionElement :
+    HTMLElement

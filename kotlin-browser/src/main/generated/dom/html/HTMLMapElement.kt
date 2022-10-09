@@ -2,4 +2,11 @@
 
 package dom.html
 
-typealias HTMLMapElement = org.w3c.dom.HTMLMapElement
+sealed external class HTMLMapElement :
+    HTMLElement {
+    /** Retrieves a collection of the area objects defined for the given map object. */
+    val areas: HTMLCollection
+
+    /** Sets or retrieves the name of the object. */
+    var name: String
+}

@@ -2,4 +2,8 @@
 
 package dom.html
 
-typealias HTMLTableColElement = org.w3c.dom.HTMLTableColElement
+sealed external class HTMLTableColElement :
+    HTMLElement {
+    /** Sets or retrieves the number of columns in the group. */
+    var span: Number
+}

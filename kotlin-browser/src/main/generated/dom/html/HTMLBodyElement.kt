@@ -2,4 +2,6 @@
 
 package dom.html
 
-typealias HTMLBodyElement = org.w3c.dom.HTMLBodyElement
+sealed external class HTMLBodyElement :
+    HTMLElement,
+    WindowEventHandlers

@@ -2,4 +2,5 @@
 
 package dom.html
 
-typealias HTMLMenuElement = org.w3c.dom.HTMLMenuElement
+sealed external class HTMLMenuElement :
+    HTMLElement

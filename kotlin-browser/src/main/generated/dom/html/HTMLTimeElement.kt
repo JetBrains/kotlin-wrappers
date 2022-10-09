@@ -2,4 +2,7 @@
 
 package dom.html
 
-typealias HTMLTimeElement = org.w3c.dom.HTMLTimeElement
+sealed external class HTMLTimeElement :
+    HTMLElement {
+    var dateTime: String
+}

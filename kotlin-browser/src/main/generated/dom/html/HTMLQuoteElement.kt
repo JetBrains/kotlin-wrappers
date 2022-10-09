@@ -2,4 +2,8 @@
 
 package dom.html
 
-typealias HTMLQuoteElement = org.w3c.dom.HTMLQuoteElement
+sealed external class HTMLQuoteElement :
+    HTMLElement {
+    /** Sets or retrieves reference information about the object. */
+    var cite: String
+}

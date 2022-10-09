@@ -2,4 +2,5 @@
 
 package dom.html
 
-typealias HTMLBRElement = org.w3c.dom.HTMLBRElement
+sealed external class HTMLBRElement :
+    HTMLElement

@@ -2,4 +2,5 @@
 
 package dom.html
 
-typealias HTMLPreElement = org.w3c.dom.HTMLPreElement
+sealed external class HTMLPreElement :
+    HTMLElement
