@@ -1,4 +1,4 @@
-package clipboard
+package web.clipboard
 
 import kotlinx.js.Void
 import org.w3c.dom.DataTransfer

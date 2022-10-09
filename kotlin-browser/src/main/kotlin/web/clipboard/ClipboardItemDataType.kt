@@ -2,7 +2,7 @@
     "NOTHING_TO_INLINE",
 )
 
-package clipboard
+package web.clipboard
 
 import buffer.Blob
 

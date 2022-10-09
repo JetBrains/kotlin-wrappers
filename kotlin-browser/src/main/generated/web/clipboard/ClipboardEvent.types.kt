@@ -1,6 +1,6 @@
 // Automatically generated - do not modify!
 
-package clipboard
+package web.clipboard
 
 import org.w3c.dom.clipboard.ClipboardEvent
 import web.events.EventType
