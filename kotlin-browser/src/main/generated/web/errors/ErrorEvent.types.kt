@@ -1,6 +1,6 @@
 // Automatically generated - do not modify!
 
-package errors
+package web.errors
 
 import org.w3c.dom.ErrorEvent
 import web.events.EventType
