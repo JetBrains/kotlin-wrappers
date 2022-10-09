@@ -1,5 +1,5 @@
 // Automatically generated - do not modify!
 
-package dom
+package dom.geometry
 
 typealias DOMPointInit = org.w3c.dom.DOMPointInit

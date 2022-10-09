@@ -1,5 +1,5 @@
 // Automatically generated - do not modify!
 
-package dom
+package dom.geometry
 
 typealias DOMMatrixReadOnly = org.w3c.dom.DOMMatrixReadOnly
