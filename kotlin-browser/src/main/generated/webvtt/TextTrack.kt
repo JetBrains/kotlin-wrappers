@@ -1,6 +1,5 @@
 // Automatically generated - do not modify!
 
-package dom.html
+package webvtt
 
-// TODO: move to `webvtt` package
 sealed class TextTrack

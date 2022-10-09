@@ -2,6 +2,8 @@
 
 package dom.html
 
+import webvtt.TextTrack
+
 sealed external class HTMLTrackElement :
     HTMLElement {
     var default: Boolean
