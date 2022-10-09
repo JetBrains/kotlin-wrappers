@@ -184,7 +184,7 @@ sealed external interface FileHandle {
      * @since v17.0.0
      * @experimental
      */
-    fun readableWebStream(): web.stream.ReadableStream<*>
+    fun readableWebStream(): web.streams.ReadableStream<*>
     /**
      * Asynchronously reads the entire contents of a file.
      *
