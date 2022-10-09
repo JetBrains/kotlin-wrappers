@@ -2,4 +2,15 @@
 
 package dom.html
 
-typealias HTMLMeterElement = org.w3c.dom.HTMLMeterElement
+import dom.NodeListOf
+
+sealed external class HTMLMeterElement :
+    HTMLElement {
+    var high: Number
+    val labels: NodeListOf<HTMLLabelElement>
+    var low: Number
+    var max: Number
+    var min: Number
+    var optimum: Number
+    var value: Number
+}

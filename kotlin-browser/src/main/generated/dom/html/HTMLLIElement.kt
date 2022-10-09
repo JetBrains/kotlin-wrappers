@@ -2,4 +2,8 @@
 
 package dom.html
 
-typealias HTMLLIElement = org.w3c.dom.HTMLLIElement
+sealed external class HTMLLIElement :
+    HTMLElement {
+    /** Sets or retrieves the value of a list item. */
+    var value: Number
+}

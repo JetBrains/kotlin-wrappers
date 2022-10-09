@@ -2,4 +2,7 @@
 
 package dom.html
 
-typealias HTMLDataElement = org.w3c.dom.HTMLDataElement
+sealed external class HTMLDataElement :
+    HTMLElement {
+    var value: String
+}

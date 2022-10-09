@@ -2,4 +2,5 @@
 
 package dom.html
 
-typealias HTMLHtmlElement = org.w3c.dom.HTMLHtmlElement
+sealed external class HTMLHtmlElement :
+    HTMLElement

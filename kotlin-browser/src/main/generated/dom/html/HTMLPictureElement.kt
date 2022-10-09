@@ -2,4 +2,5 @@
 
 package dom.html
 
-typealias HTMLPictureElement = org.w3c.dom.HTMLPictureElement
+sealed external class HTMLPictureElement :
+    HTMLElement

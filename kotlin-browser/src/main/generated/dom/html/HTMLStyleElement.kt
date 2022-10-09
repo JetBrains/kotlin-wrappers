@@ -2,4 +2,14 @@
 
 package dom.html
 
-typealias HTMLStyleElement = org.w3c.dom.HTMLStyleElement
+import dom.css.LinkStyle
+
+sealed external class HTMLStyleElement :
+    HTMLElement,
+    LinkStyle {
+    /** Enables or disables the style sheet. */
+    var disabled: Boolean
+
+    /** Sets or retrieves the media type. */
+    var media: String
+}

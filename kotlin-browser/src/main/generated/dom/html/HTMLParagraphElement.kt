@@ -2,4 +2,5 @@
 
 package dom.html
 
-typealias HTMLParagraphElement = org.w3c.dom.HTMLParagraphElement
+sealed external class HTMLParagraphElement :
+    HTMLElement

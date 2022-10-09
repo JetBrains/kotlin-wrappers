@@ -2,4 +2,5 @@
 
 package dom.html
 
-typealias HTMLParamElement = org.w3c.dom.HTMLParamElement
+sealed external class HTMLParamElement :
+    HTMLElement

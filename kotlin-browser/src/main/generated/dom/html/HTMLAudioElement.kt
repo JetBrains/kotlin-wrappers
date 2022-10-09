@@ -2,4 +2,5 @@
 
 package dom.html
 
-typealias HTMLAudioElement = org.w3c.dom.HTMLAudioElement
+sealed external class HTMLAudioElement :
+    HTMLMediaElement

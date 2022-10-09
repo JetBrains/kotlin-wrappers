@@ -2,4 +2,11 @@
 
 package dom.html
 
-typealias HTMLBaseElement = org.w3c.dom.HTMLBaseElement
+sealed external class HTMLBaseElement :
+    HTMLElement {
+    /** Gets or sets the baseline URL on which relative links are based. */
+    var href: String
+
+    /** Sets or retrieves the window or frame at which to target content. */
+    var target: String
+}
