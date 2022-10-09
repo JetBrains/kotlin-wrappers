@@ -3,7 +3,7 @@
 
 package tanstack.react.virtual
 
-import browser.Window
+import dom.html.Window
 import tanstack.virtual.core.Virtualizer
 
 external interface UseWindowVirtualizerOptions<TItemElement> :
