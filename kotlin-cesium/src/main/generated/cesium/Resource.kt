@@ -264,7 +264,7 @@ external class Resource(options: dynamic) {
      * @return a promise that will resolve to the requested data when loaded. Returns undefined if `request.throttle` is true and the request does not have high enough priority.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Resource.html#fetchBlob">Online Documentation</a>
      */
-    fun fetchBlob(): kotlin.js.Promise<buffer.Blob>?
+    fun fetchBlob(): kotlin.js.Promise<web.buffer.Blob>?
 
     /**
      * Asynchronously loads the given image resource.  Returns a promise that will resolve to
@@ -672,7 +672,7 @@ external class Resource(options: dynamic) {
          * @return a promise that will resolve to the requested data when loaded. Returns undefined if `request.throttle` is true and the request does not have high enough priority.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Resource.html#.fetchBlob">Online Documentation</a>
          */
-        fun fetchBlob(options: FetchBlobOptions): kotlin.js.Promise<buffer.Blob>?
+        fun fetchBlob(options: FetchBlobOptions): kotlin.js.Promise<web.buffer.Blob>?
 
         /**
          * @property [url] The url of the resource.

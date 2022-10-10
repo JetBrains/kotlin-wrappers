@@ -10,5 +10,5 @@ import kotlinx.js.ReadonlyRecord
  */
 external interface exportKmlResultKml {
     var kml: String
-    var externalFiles: ReadonlyRecord<String, buffer.Blob>
+    var externalFiles: ReadonlyRecord<String, web.buffer.Blob>
 }

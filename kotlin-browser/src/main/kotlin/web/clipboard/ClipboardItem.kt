@@ -1,6 +1,6 @@
 package web.clipboard
 
-import buffer.Blob
+import web.buffer.Blob
 import kotlinx.js.ReadonlyArray
 import kotlinx.js.Record
 import kotlin.js.Promise
