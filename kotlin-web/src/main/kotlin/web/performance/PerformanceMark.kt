@@ -1,4 +1,4 @@
-package performance
+package web.performance
 
 import kotlinx.js.HighResTimeStamp
 

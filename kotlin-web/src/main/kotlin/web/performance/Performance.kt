@@ -1,4 +1,4 @@
-package performance
+package web.performance
 
 import kotlinx.js.HighResTimeStamp
 import org.w3c.dom.events.Event
