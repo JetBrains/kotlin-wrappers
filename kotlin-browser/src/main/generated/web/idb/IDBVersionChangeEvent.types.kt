@@ -1,6 +1,6 @@
 // Automatically generated - do not modify!
 
-package idb
+package web.idb
 
 import web.events.EventType
 
