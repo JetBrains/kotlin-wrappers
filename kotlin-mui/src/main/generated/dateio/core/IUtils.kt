@@ -161,6 +161,9 @@ external interface IUtils<TDate : Any> {
     fun getSeconds(value: TDate): Int
     fun setSeconds(value: TDate, count: Int): TDate
 
+    fun getDate(value: TDate): Int
+    fun setDate(value: TDate, count: Int): TDate
+
     fun getMonth(value: TDate): Int
     fun getDaysInMonth(value: TDate): Int
     fun setMonth(value: TDate, count: Int): TDate
