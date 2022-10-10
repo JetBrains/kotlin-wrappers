@@ -3,7 +3,7 @@
 
 package react.virtual
 
-import browser.Window
+import dom.html.Window
 import react.RefObject
 
 external interface ScrollOptions<T : Any> {
