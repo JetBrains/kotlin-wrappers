@@ -12,7 +12,7 @@ external interface YearPickerProps<TDate> : react.PropsWithClassName {
 
     override var className: ClassName?
 
-    var classes: dynamic
+    var classes: YearPickerClasses?
 
     var date: TDate?
 
