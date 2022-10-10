@@ -1,4 +1,4 @@
-package kotlinx.js.timers
+package web.timers
 
 import kotlin.time.Duration
 import kotlin.time.DurationUnit.MILLISECONDS

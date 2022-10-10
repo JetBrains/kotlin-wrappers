@@ -1,4 +1,4 @@
-package kotlinx.js.timers
+package web.timers
 
 sealed external interface Immediate
 

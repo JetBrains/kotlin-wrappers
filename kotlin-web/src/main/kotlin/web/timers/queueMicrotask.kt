@@ -1,4 +1,4 @@
-package kotlinx.js.timers
+package web.timers
 
 external fun queueMicrotask(
     callback: () -> Unit,

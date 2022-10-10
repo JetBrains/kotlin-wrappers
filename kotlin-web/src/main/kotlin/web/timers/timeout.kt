@@ -1,4 +1,4 @@
-package kotlinx.js.timers
+package web.timers
 
 import kotlin.time.Duration
 import kotlin.time.DurationUnit
@@ -24,4 +24,3 @@ fun setTimeout(
         callback,
         delay.toInt(DurationUnit.MILLISECONDS)
     )
-
