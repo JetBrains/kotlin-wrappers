@@ -1,5 +1,6 @@
-package dom
+package dom.observers
 
+import dom.Element
 import dom.geometry.DOMRectReadOnly
 import kotlinx.js.HighResTimeStamp
 import kotlinx.js.ReadonlyArray
