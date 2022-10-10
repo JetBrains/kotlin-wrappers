@@ -1,4 +1,4 @@
-package console
+package web.console
 
 import kotlinx.js.ReadonlyArray
 
