@@ -1,6 +1,6 @@
 // Automatically generated - do not modify!
 
-package browser.events
+package web.device
 
 import web.events.EventType
 
