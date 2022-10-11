@@ -1,6 +1,6 @@
 // Automatically generated - do not modify!
 
-package gamepad
+package web.gamepad
 
 import web.events.EventType
 

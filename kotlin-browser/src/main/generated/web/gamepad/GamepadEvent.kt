@@ -4,7 +4,7 @@
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
-package gamepad
+package web.gamepad
 
 import web.events.Event
 
