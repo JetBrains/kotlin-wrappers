@@ -1,6 +1,6 @@
 // Automatically generated - do not modify!
 
-package browser.events
+package web.storage
 
 import org.w3c.dom.StorageEvent
 import web.events.EventType
