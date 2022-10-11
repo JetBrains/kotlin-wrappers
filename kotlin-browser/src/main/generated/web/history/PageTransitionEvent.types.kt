@@ -1,6 +1,6 @@
 // Automatically generated - do not modify!
 
-package browser.events
+package web.history
 
 import org.w3c.dom.PageTransitionEvent
 import web.events.EventType

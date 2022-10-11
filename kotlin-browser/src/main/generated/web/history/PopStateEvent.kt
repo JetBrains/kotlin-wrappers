@@ -1,6 +1,6 @@
 // Automatically generated - do not modify!
 
-package browser.events
+package web.history
 
 typealias PopStateEventInit = org.w3c.dom.PopStateEventInit
 typealias PopStateEvent = org.w3c.dom.PopStateEvent
