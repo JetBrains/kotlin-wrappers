@@ -1,6 +1,6 @@
 package web.url
 
-import buffer.Blob
+import web.buffer.Blob
 import org.w3c.dom.mediasource.MediaSource
 
 external class URL : org.w3c.dom.url.URL {

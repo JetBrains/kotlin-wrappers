@@ -155,7 +155,7 @@ external class KmlDataSource(options: ConstructorOptions? = definedExternally) {
     ): kotlin.js.Promise<KmlDataSource>
 
     fun load(
-        data: buffer.Blob,
+        data: web.buffer.Blob,
         options: LoadOptions? = definedExternally,
     ): kotlin.js.Promise<KmlDataSource>
 
@@ -220,7 +220,7 @@ external class KmlDataSource(options: ConstructorOptions? = definedExternally) {
         ): kotlin.js.Promise<KmlDataSource>
 
         fun load(
-            data: buffer.Blob,
+            data: web.buffer.Blob,
             options: ConstructorOptions? = definedExternally,
         ): kotlin.js.Promise<KmlDataSource>
 

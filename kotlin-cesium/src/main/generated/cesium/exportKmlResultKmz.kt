@@ -6,5 +6,5 @@ package cesium
  * @property [kmz] The generated kmz file.
  */
 external interface exportKmlResultKmz {
-    var kmz: buffer.Blob
+    var kmz: web.buffer.Blob
 }
