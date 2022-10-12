@@ -3,6 +3,7 @@
 package react.dom.html
 
 import dom.Element
+import react.dom.events.*
 
 external interface IframeHTMLAttributes<T : Element> : HTMLAttributes<T> {
     var allow: String?
