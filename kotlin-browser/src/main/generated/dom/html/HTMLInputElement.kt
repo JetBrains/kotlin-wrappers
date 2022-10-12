@@ -116,7 +116,7 @@ sealed external class HTMLInputElement :
     var valueAsDate: Date?
 
     /** Returns the input field value as a number. */
-    var valueAsNumber: Double
+    var valueAsNumber: Number
     // readonly webkitEntries: ReadonlyArray<FileSystemEntry>
     // webkitdirectory: boolean
     /** Sets or retrieves the width of the object. */
