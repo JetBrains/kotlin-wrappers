@@ -51,10 +51,10 @@ external interface QueryOptions<TQueryFnData, TError, TData, TQueryKey : QueryKe
     var queryHash: String
     var queryKey: TQueryKey
     var queryKeyHashFn: QueryKeyHashFunction<TQueryKey>
-    var initialData: Any /* TData | InitialDataFunction<TData> */
+    var initialData: InitialDataFunction<TData> /* | TData */
     var initialDataUpdatedAt: Any /* number | (() => number | undefined) */
     var behavior: QueryBehavior<TQueryFnData, TError, TData, *>
-    var structuralSharing: Any /* boolean | ((oldData: TData | undefined, newData: TData) => TData) */
+    var structuralSharing: (oldData: TData?, newData: TData) -> TData /* | boolean */
     var getPreviousPageParam: GetPreviousPageParamFunction<TQueryFnData>
     var getNextPageParam: GetNextPageParamFunction<TQueryFnData>
     var _defaulted: Boolean
@@ -69,9 +69,9 @@ external interface QueryObserverOptions<TQueryFnData, TError, TData, TQueryData,
     var staleTime: JsDuration
     var refetchInterval: Any /* number | false | ((data: TData | undefined, query: Query<TQueryFnData, TError, TQueryData, TQueryKey>) => number | false) */
     var refetchIntervalInBackground: Boolean
-    var refetchOnWindowFocus: Any /* boolean | 'always' | ((query: Query<TQueryFnData, TError, TQueryData, TQueryKey>) => boolean | 'always') */
-    var refetchOnReconnect: Any /* boolean | 'always' | ((query: Query<TQueryFnData, TError, TQueryData, TQueryKey>) => boolean | 'always') */
-    var refetchOnMount: Any /* boolean | 'always' | ((query: Query<TQueryFnData, TError, TQueryData, TQueryKey>) => boolean | 'always') */
+    var refetchOnWindowFocus: (query: Query<TQueryFnData, TError, TQueryData, TQueryKey>) -> Boolean /* | boolean | 'always' */
+    var refetchOnReconnect: (query: Query<TQueryFnData, TError, TQueryData, TQueryKey>) -> Boolean /* | boolean | 'always' */
+    var refetchOnMount: (query: Query<TQueryFnData, TError, TQueryData, TQueryKey>) -> Boolean /* | boolean | 'always' */
     var retryOnMount: Boolean
     var notifyOnChangeProps: Any /* Array<keyof InfiniteQueryObserverResult> | 'all' */
     var onSuccess: (data: TData) -> Unit
@@ -81,7 +81,7 @@ external interface QueryObserverOptions<TQueryFnData, TError, TData, TQueryData,
     var select: (data: TQueryData) -> TData
     var suspense: Boolean
     var keepPreviousData: Boolean
-    var placeholderData: Any /* TQueryData | PlaceholderDataFunction<TQueryData> */
+    var placeholderData: PlaceholderDataFunction<TQueryData> /* | TQueryData */
     var _optimisticResults: String /* 'optimistic' | 'isRestoring' */
 }
 
