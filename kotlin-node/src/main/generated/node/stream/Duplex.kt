@@ -103,6 +103,6 @@ open external class Duplex : Readable /* , Writable */ {
          *
          * @since v16.8.0
          */
-        fun from(src: Any /* Stream | Blob | ArrayBuffer | string | Iterable<any> | AsyncIterable<any> | AsyncGeneratorFunction | Promise<any> | Object */): Duplex
+        fun from(src: Any /* Stream | NodeBlob | ArrayBuffer | string | Iterable<any> | AsyncIterable<any> | AsyncGeneratorFunction | Promise<any> | Object */): Duplex
     }
 }
