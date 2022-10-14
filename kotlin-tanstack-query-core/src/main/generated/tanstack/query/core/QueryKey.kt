@@ -7,5 +7,12 @@
 package tanstack.query.core
 
 inline fun <T : QueryKey> QueryKey(
-    vararg keys: Any,
-): T = keys.unsafeCast<T>()
+    vararg keys: Comparable<*>,
+): T =
+    keys.unsafeCast<T>()
+
+inline fun <T : QueryKey> QueryKey(
+    parentKey: QueryKey,
+    vararg keys: Comparable<*>,
+): T =
+    (parentKey.unsafeCast<Array<*>>() + keys).unsafeCast<T>()
