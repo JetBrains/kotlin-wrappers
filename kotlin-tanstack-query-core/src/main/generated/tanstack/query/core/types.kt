@@ -46,7 +46,6 @@ external interface QueryOptions<TQueryFnData, TError, TData, TQueryKey : QueryKe
     var retryDelay: RetryDelayValue<TError>
     var networkMode: NetworkMode
     var cacheTime: JsDuration
-    var isDataEqual: (oldData: TData?, newData: TData) -> Boolean
     var queryFn: QueryFunction<TQueryFnData, TQueryKey>
     var queryHash: String
     var queryKey: TQueryKey
