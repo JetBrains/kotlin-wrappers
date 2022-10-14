@@ -11,7 +11,7 @@ inline fun <T : QueryKey> QueryKey(
 ): T =
     keys.unsafeCast<T>()
 
-inline fun <T : QueryKey> QueryKey(
+fun <T : QueryKey> QueryKey(
     parentKey: QueryKey,
     vararg keys: Comparable<*>,
 ): T =
