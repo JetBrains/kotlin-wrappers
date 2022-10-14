@@ -39,7 +39,7 @@ external interface InfiniteData<TData> {
     var pageParams: ReadonlyArray<PageParam>
 }
 
-typealias QueryMeta = Record<String, *>
+external interface QueryMeta : Record<String, Any>
 
 external interface QueryOptions<TQueryFnData, TError, TData, TQueryKey : QueryKey> {
     var retry: RetryValue<TError>
@@ -282,7 +282,7 @@ sealed external interface InfiniteQueryObserverResult<TData, TError>
 
 typealias MutationKey = Any
 
-typealias MutationMeta = Record<String, *>
+external interface MutationMeta : Record<String, Any>
 
 typealias MutationFunction<TData, TVariables> = (variables: TVariables) -> Promise<TData>
 
