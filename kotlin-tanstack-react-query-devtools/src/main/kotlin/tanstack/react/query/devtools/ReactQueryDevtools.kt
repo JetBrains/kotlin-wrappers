@@ -1,4 +1,5 @@
 @file:JsModule("@tanstack/react-query-devtools")
+@file:JsNonModule
 
 package tanstack.react.query.devtools
 
