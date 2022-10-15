@@ -114,6 +114,9 @@ include("kotlin-tanstack-query-core")
 // Kotlin/JS: Tanstack React Query wrappers
 include("kotlin-tanstack-react-query")
 
+// Kotlin/JS: Tanstack React Query Devtools wrappers
+include("kotlin-tanstack-react-query-devtools")
+
 // Kotlin/JS: Tanstack React Table wrappers
 include("kotlin-tanstack-react-table")
 
