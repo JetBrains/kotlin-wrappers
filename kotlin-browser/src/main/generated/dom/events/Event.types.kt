@@ -8,6 +8,12 @@ import web.events.EventType
 inline val Event.Companion.DOM_CONTENT_LOADED: EventType<Event>
     get() = EventType("DOMContentLoaded")
 
+inline val Event.Companion.AFTER_PRINT: EventType<Event>
+    get() = EventType("afterprint")
+
+inline val Event.Companion.BEFORE_PRINT: EventType<Event>
+    get() = EventType("beforeprint")
+
 inline val Event.Companion.CAN_PLAY: EventType<Event>
     get() = EventType("canplay")
 
@@ -47,6 +53,9 @@ inline val Event.Companion.INPUT: EventType<Event>
 inline val Event.Companion.INVALID: EventType<Event>
     get() = EventType("invalid")
 
+inline val Event.Companion.LANGUAGE_CHANGE: EventType<Event>
+    get() = EventType("languagechange")
+
 inline val Event.Companion.LEAVE_PICTURE_IN_PICTURE: EventType<Event>
     get() = EventType("leavepictureinpicture")
 
@@ -70,6 +79,15 @@ inline val Event.Companion.LOADING_ERROR: EventType<Event>
 
 inline val Event.Companion.LOAD_START: EventType<Event>
     get() = EventType("loadstart")
+
+inline val Event.Companion.OFFLINE: EventType<Event>
+    get() = EventType("offline")
+
+inline val Event.Companion.ONLINE: EventType<Event>
+    get() = EventType("online")
+
+inline val Event.Companion.ORIENTATION_CHANGE: EventType<Event>
+    get() = EventType("orientationchange")
 
 inline val Event.Companion.PAUSE: EventType<Event>
     get() = EventType("pause")
@@ -130,6 +148,9 @@ inline val Event.Companion.TIME_UPDATE: EventType<Event>
 
 inline val Event.Companion.TOGGLE: EventType<Event>
     get() = EventType("toggle")
+
+inline val Event.Companion.UNLOAD: EventType<Event>
+    get() = EventType("unload")
 
 inline val Event.Companion.VISIBILITY_CHANGE: EventType<Event>
     get() = EventType("visibilitychange")

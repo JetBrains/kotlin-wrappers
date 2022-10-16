@@ -1,6 +1,6 @@
 // Automatically generated - do not modify!
 
-package browser.events
+package dom.events
 
 import org.w3c.dom.PromiseRejectionEvent
 import web.events.EventType
