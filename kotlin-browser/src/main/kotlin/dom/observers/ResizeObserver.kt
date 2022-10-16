@@ -14,10 +14,21 @@ external class ResizeObserverEntry {
     val contentRect: DOMRectReadOnly
 }
 
+external interface ResizeObserverOptions {
+    var box: ResizeObserverBoxOptions?
+}
+
 external class ResizeObserver(
     callback: ResizeObserverCallback,
 ) {
-    fun observe(target: Element)
-    fun unobserve(target: Element)
+    fun observe(
+        target: Element,
+        options: ResizeObserverOptions = definedExternally,
+    )
+
+    fun unobserve(
+        target: Element,
+    )
+
     fun disconnect()
 }
