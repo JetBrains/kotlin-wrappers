@@ -17,7 +17,7 @@ sealed external class HTMLImageElement :
     var decoding: String /* "async" | "sync" | "auto" */
 
     /** Sets or retrieves the height of the object. */
-    var height: Number
+    var height: Double
 
     /** Sets or retrieves whether the image is a server-side image map. */
     var isMap: Boolean
@@ -26,10 +26,10 @@ sealed external class HTMLImageElement :
     var loading: String /* "eager" | "lazy" */
 
     /** The original height of the image resource before sizing. */
-    val naturalHeight: Number
+    val naturalHeight: Int
 
     /** The original width of the image resource before sizing. */
-    val naturalWidth: Number
+    val naturalWidth: Int
     var referrerPolicy: String
     var sizes: String
 
@@ -41,8 +41,8 @@ sealed external class HTMLImageElement :
     var useMap: String
 
     /** Sets or retrieves the width of the object. */
-    var width: Number
-    val x: Number
-    val y: Number
+    var width: Double
+    val x: Double
+    val y: Double
     fun decode(): Promise<Void>
 }

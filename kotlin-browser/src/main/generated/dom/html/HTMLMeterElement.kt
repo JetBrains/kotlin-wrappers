@@ -6,11 +6,11 @@ import dom.NodeListOf
 
 sealed external class HTMLMeterElement :
     HTMLElement {
-    var high: Number
+    var high: Double
     val labels: NodeListOf<HTMLLabelElement>
-    var low: Number
-    var max: Number
-    var min: Number
-    var optimum: Number
-    var value: Number
+    var low: Double
+    var max: Double
+    var min: Double
+    var optimum: Double
+    var value: Double
 }

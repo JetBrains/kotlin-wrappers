@@ -51,7 +51,7 @@ sealed external class HTMLInputElement :
     var formTarget: String
 
     /** Sets or retrieves the height of the object. */
-    var height: Number
+    var height: Double
 
     /** When set, overrides the rendering of checkbox controls so that the current value is not visible. */
     var indeterminate: Boolean
@@ -64,11 +64,11 @@ sealed external class HTMLInputElement :
     var max: String
 
     /** Sets or retrieves the maximum number of characters that the user can enter in a text control. */
-    var maxLength: Number
+    var maxLength: Int
 
     /** Defines the minimum acceptable value for an input element with type="number". When used with the max and step attributes, lets you control the range and increment (such as even numbers only) that the user can enter into an input field. */
     var min: String
-    var minLength: Number
+    var minLength: Int
 
     /** Sets or retrieves the Boolean value indicating whether multiple items can be selected from a list. */
     var multiple: Boolean
@@ -88,11 +88,11 @@ sealed external class HTMLInputElement :
     var selectionDirection: String /* "forward" | "backward" | "none" */?
 
     /** Gets or sets the end position or offset of a text selection. */
-    var selectionEnd: Number?
+    var selectionEnd: Int?
 
     /** Gets or sets the starting position or offset of a text selection. */
-    var selectionStart: Number?
-    var size: Number
+    var selectionStart: Int?
+    var size: Int
 
     /** The address or URL of the a media resource that is to be considered. */
     var src: String
@@ -120,7 +120,7 @@ sealed external class HTMLInputElement :
     // readonly webkitEntries: ReadonlyArray<FileSystemEntry>
     // webkitdirectory: boolean
     /** Sets or retrieves the width of the object. */
-    var width: Number
+    var width: Double
 
     /** Returns whether an element will successfully validate based on forms validation rules and constraints. */
     val willValidate: Boolean

@@ -14,7 +14,7 @@ sealed external class HTMLSelectElement :
     val labels: NodeListOf<HTMLLabelElement>
 
     /** Sets or retrieves the number of objects in a collection. */
-    var length: Number
+    var length: Int
 
     /** Sets or retrieves the Boolean value indicating whether multiple items can be selected from a list. */
     var multiple: Boolean
@@ -29,11 +29,11 @@ sealed external class HTMLSelectElement :
     var required: Boolean
 
     /** Sets or retrieves the index of the selected option in a select object. */
-    var selectedIndex: Number
+    var selectedIndex: Int
     val selectedOptions: HTMLCollectionOf<HTMLOptionElement>
 
     /** Sets or retrieves the number of rows in the list box. */
-    var size: Number
+    var size: Int
 
     /** Retrieves the type of select control based on the value of the MULTIPLE attribute. */
     val type: String

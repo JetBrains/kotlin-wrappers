@@ -9,7 +9,7 @@ sealed external class HTMLTextAreaElement :
     var autocomplete: String
 
     /** Sets or retrieves the width of the object. */
-    var cols: Number
+    var cols: Int
 
     /** Sets or retrieves the initial contents of the object. */
     var defaultValue: String
@@ -21,8 +21,8 @@ sealed external class HTMLTextAreaElement :
     val labels: NodeListOf<HTMLLabelElement>
 
     /** Sets or retrieves the maximum number of characters that the user can enter in a text control. */
-    var maxLength: Number
-    var minLength: Number
+    var maxLength: Int
+    var minLength: Int
 
     /** Sets or retrieves the name of the object. */
     var name: String
@@ -37,15 +37,15 @@ sealed external class HTMLTextAreaElement :
     var required: Boolean
 
     /** Sets or retrieves the number of horizontal rows contained in the object. */
-    var rows: Number
+    var rows: Int
     var selectionDirection: String /* "forward" | "backward" | "none" */
 
     /** Gets or sets the end position or offset of a text selection. */
-    var selectionEnd: Number
+    var selectionEnd: Int
 
     /** Gets or sets the starting position or offset of a text selection. */
-    var selectionStart: Number
-    val textLength: Number
+    var selectionStart: Int
+    val textLength: Int
 
     /** Retrieves the type of control. */
     val type: String

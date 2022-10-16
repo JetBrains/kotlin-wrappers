@@ -8,10 +8,10 @@ sealed external class HTMLTableRowElement :
     val cells: HTMLCollectionOf<HTMLTableCellElement>
 
     /** Retrieves the position of the object in the rows collection for the table. */
-    val rowIndex: Number
+    val rowIndex: Int
 
     /** Retrieves the position of the object in the collection. */
-    val sectionRowIndex: Number
+    val sectionRowIndex: Int
 
     /**
      * Removes the specified cell from the table row, as well as from the cells collection.

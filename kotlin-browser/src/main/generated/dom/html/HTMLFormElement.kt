@@ -23,7 +23,7 @@ sealed external class HTMLFormElement :
     var enctype: String
 
     /** Sets or retrieves the number of objects in a collection. */
-    val length: Number
+    val length: Int
 
     /** Sets or retrieves how to send the form data to the server. */
     var method: String

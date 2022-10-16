@@ -7,6 +7,6 @@ sealed external class HTMLOListElement :
     var reversed: Boolean
 
     /** The starting number. */
-    var start: Number
+    var start: Int
     var type: String
 }

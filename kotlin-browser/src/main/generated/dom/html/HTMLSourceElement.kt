@@ -4,7 +4,7 @@ package dom.html
 
 sealed external class HTMLSourceElement :
     HTMLElement {
-    var height: Number
+    var height: Double
 
     /** Gets or sets the intended media type of the media source. */
     var media: String
@@ -16,5 +16,5 @@ sealed external class HTMLSourceElement :
 
     /** Gets or sets the MIME type of a media resource. */
     var type: String
-    var width: Number
+    var width: Double
 }

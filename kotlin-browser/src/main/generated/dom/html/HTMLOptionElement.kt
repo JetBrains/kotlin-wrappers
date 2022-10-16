@@ -12,7 +12,7 @@ sealed external class HTMLOptionElement :
     val form: HTMLFormElement?
 
     /** Sets or retrieves the ordinal position of an option in a list box. */
-    val index: Number
+    val index: Int
 
     /** Sets or retrieves a value that you can use to implement your own label functionality for the object. */
     var label: String
