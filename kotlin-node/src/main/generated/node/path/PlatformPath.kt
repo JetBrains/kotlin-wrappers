@@ -69,12 +69,12 @@ sealed external interface PlatformPath {
      * Often used to extract the file name from a fully qualified path.
      *
      * @param path the path to evaluate.
-     * @param ext optionally, an extension to remove from the result.
+     * @param suffix optionally, an extension to remove from the result.
      * @throws {TypeError} if `path` is not a string or if `ext` is given and is not a string.
      */
     fun basename(
         path: String,
-        ext: String = definedExternally,
+        suffix: String = definedExternally,
     ): String
 
     /**

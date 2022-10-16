@@ -5,6 +5,7 @@
 
 package node.http
 
+import kotlinx.js.Record
 import node.net.Socket
 
 external class ServerResponse<Request : IncomingMessage> : OutgoingMessage<Request> {
@@ -45,11 +46,50 @@ external class ServerResponse<Request : IncomingMessage> : OutgoingMessage<Reque
     fun detachSocket(socket: Socket)
 
     /**
-     * Sends a HTTP/1.1 100 Continue message to the client, indicating that
+     * Sends an HTTP/1.1 100 Continue message to the client, indicating that
      * the request body should be sent. See the `'checkContinue'` event on`Server`.
      * @since v0.3.0
      */
     fun writeContinue(callback: () -> Unit = definedExternally)
+
+    /**
+     * Sends an HTTP/1.1 103 Early Hints message to the client with a Link header,
+     * indicating that the user agent can preload/preconnect the linked resources.
+     * The `hints` is an object containing the values of headers to be sent with
+     * early hints message. The optional `callback` argument will be called when
+     * the response message has been written.
+     *
+     * Example:
+     *
+     * ```js
+     * const earlyHintsLink = '</styles.css>; rel=preload; as=style';
+     * response.writeEarlyHints({
+     *   'link': earlyHintsLink,
+     * });
+     *
+     * const earlyHintsLinks = [
+     *   '</styles.css>; rel=preload; as=style',
+     *   '</scripts.js>; rel=preload; as=script',
+     * ];
+     * response.writeEarlyHints({
+     *   'link': earlyHintsLinks,
+     *   'x-trace-id': 'id for diagnostics'
+     * });
+     *
+     * const earlyHintsCallback = () => console.log('early hints message sent');
+     * response.writeEarlyHints({
+     *   'link': earlyHintsLinks
+     * }, earlyHintsCallback);
+     * ```
+     *
+     * @since v18.11.0
+     * @param hints An object containing the values of headers
+     * @param callback Will be called when the response message has been written
+     */
+    fun writeEarlyHints(
+        hints: Record<String, Any /* string | string[] */>,
+        callback: () -> Unit = definedExternally,
+    )
 
     /**
      * Sends a response header to the request. The status code is a 3-digit HTTP
@@ -120,7 +160,7 @@ external class ServerResponse<Request : IncomingMessage> : OutgoingMessage<Reque
     ) /* : this */
 
     /**
-     * Sends a HTTP/1.1 102 Processing message to the client, indicating that
+     * Sends an HTTP/1.1 102 Processing message to the client, indicating that
      * the request body should be sent.
      * @since v10.0.0
      */
