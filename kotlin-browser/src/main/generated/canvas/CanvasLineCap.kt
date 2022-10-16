@@ -1,5 +1,18 @@
 // Automatically generated - do not modify!
 
+@file:Suppress(
+    "NAME_CONTAINS_ILLEGAL_CHARS",
+)
+
 package canvas
 
-typealias CanvasLineCap = org.w3c.dom.CanvasLineCap
+// language=JavaScript
+@JsName("""(/*union*/{butt: 'butt', round: 'round', square: 'square'}/*union*/)""")
+external enum class CanvasLineCap :
+    org.w3c.dom.CanvasLineCap {
+    butt,
+    round,
+    square,
+
+    ;
+}
