@@ -9,7 +9,7 @@ package canvas
 // language=JavaScript
 @JsName("""(/*union*/{butt: 'butt', round: 'round', square: 'square'}/*union*/)""")
 external enum class CanvasLineCap :
-    org.w3c.dom.CanvasLineCap {
+/* legacy adapter */ org.w3c.dom.CanvasLineCap {
     butt,
     round,
     square,

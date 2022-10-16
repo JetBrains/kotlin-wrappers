@@ -9,7 +9,7 @@ package canvas
 // language=JavaScript
 @JsName("""(/*union*/{bevel: 'bevel', miter: 'miter', round: 'round'}/*union*/)""")
 external enum class CanvasLineJoin :
-    org.w3c.dom.CanvasLineJoin {
+/* legacy adapter */ org.w3c.dom.CanvasLineJoin {
     bevel,
     miter,
     round,
