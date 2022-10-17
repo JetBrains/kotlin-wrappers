@@ -1,26 +1,36 @@
-@file:Suppress(
-    "NOTHING_TO_INLINE",
-)
-
 package web.workers
 
+import kotlinx.js.ReadonlyArray
+import web.events.EventTarget
+import web.events.MessageEvent
 import web.url.URL
 
-typealias Worker = org.w3c.dom.Worker
-typealias WorkerOptions = org.w3c.dom.WorkerOptions
-
-inline fun Worker(
-    scriptURL: URL,
-): Worker =
-    Worker(
-        scriptURL = scriptURL.unsafeCast<String>()
+external class Worker : EventTarget, AbstractWorker {
+    constructor(
+        scriptURL: String,
+        options: WorkerOptions = definedExternally,
     )
 
-inline fun Worker(
-    scriptURL: URL,
-    options: WorkerOptions,
-): Worker =
-    Worker(
-        scriptURL = scriptURL.unsafeCast<String>(),
-        options = options,
+    constructor(
+        scriptURL: URL,
+        options: WorkerOptions = definedExternally,
     )
+
+
+    var onmessage: ((event: MessageEvent) -> Unit)?
+    var onmessageerror: ((event: MessageEvent) -> Unit)?
+
+    /** Clones message and transmits it to worker's global environment. transfer can be passed as a list of objects that are to be transferred rather than cloned. */
+    fun postMessage(
+        message: Any?,
+        transfer: ReadonlyArray<Any /* Transferable */>,
+    )
+
+    fun postMessage(
+        message: Any?,
+        /* options?: StructuredSerializeOptions, */
+    )
+
+    /** Aborts worker's associated global environment. */
+    fun terminate()
+}
