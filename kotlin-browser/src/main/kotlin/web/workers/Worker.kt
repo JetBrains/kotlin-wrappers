@@ -5,7 +5,7 @@ import web.events.EventTarget
 import web.events.MessageEvent
 import web.url.URL
 
-external class Worker : EventTarget, AbstractWorker {
+open external class Worker : EventTarget, AbstractWorker {
     constructor(
         scriptURL: String,
         options: WorkerOptions = definedExternally,
