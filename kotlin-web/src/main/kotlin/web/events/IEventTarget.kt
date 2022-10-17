@@ -12,6 +12,4 @@ external interface IEventTarget {
         callback: ((Event) -> Unit)?,
         options: dynamic = definedExternally,
     )
-
-    fun dispatchEvent(event: Event): Boolean
 }
