@@ -1,7 +1,7 @@
 package web.performance
 
 import kotlinx.js.HighResTimeStamp
-import org.w3c.dom.events.Event
+import web.events.Event
 import web.events.EventTarget
 
 sealed external class Performance : EventTarget {
