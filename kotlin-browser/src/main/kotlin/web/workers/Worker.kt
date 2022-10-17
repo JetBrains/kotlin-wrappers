@@ -2,7 +2,7 @@ package web.workers
 
 import kotlinx.js.ReadonlyArray
 import web.events.EventTarget
-import web.events.MessageEvent
+import web.messaging.MessageEvent
 import web.url.URL
 
 open external class Worker : EventTarget, AbstractWorker {

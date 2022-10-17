@@ -6,7 +6,7 @@ import kotlinx.js.ReadonlyArray
 import web.buffer.Blob
 import web.events.Event
 import web.events.EventTarget
-import web.events.MessageEvent
+import web.messaging.MessageEvent
 import web.url.URL
 
 external class WebSocket : EventTarget {

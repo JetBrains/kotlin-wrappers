@@ -1,4 +1,4 @@
-package web.events
+package web.messaging
 
 typealias MessageEventInit = org.w3c.dom.MessageEventInit
 
