@@ -3,6 +3,8 @@ package web.workers
 import kotlinx.js.ReadonlyArray
 import web.events.EventTarget
 import web.messaging.MessageEvent
+import web.messaging.StructuredSerializeOptions
+import web.messaging.Transferable
 import web.url.URL
 
 open external class Worker : EventTarget, AbstractWorker {
@@ -23,12 +25,12 @@ open external class Worker : EventTarget, AbstractWorker {
     /** Clones message and transmits it to worker's global environment. transfer can be passed as a list of objects that are to be transferred rather than cloned. */
     fun postMessage(
         message: Any?,
-        transfer: ReadonlyArray<Any /* Transferable */>,
+        transfer: ReadonlyArray<Transferable>,
     )
 
     fun postMessage(
         message: Any?,
-        /* options?: StructuredSerializeOptions, */
+        options: StructuredSerializeOptions = definedExternally,
     )
 
     /** Aborts worker's associated global environment. */
