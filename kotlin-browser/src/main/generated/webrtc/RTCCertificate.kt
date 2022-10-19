@@ -2,6 +2,7 @@
 
 package webrtc
 
+import kotlinx.js.EpochTimeStamp
 import kotlinx.js.ReadonlyArray
 
 sealed external interface RTCCertificate {
