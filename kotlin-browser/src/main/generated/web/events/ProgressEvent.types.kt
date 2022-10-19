@@ -1,9 +1,8 @@
 // Automatically generated - do not modify!
 
-package web.xhr
+package web.events
 
 import org.w3c.xhr.ProgressEvent
-import web.events.EventType
 
 inline val ProgressEvent.Companion.ABORT: EventType<ProgressEvent>
     get() = EventType("abort")
