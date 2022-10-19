@@ -1,4 +1,4 @@
-package xhr
+package web.xhr
 
 typealias XMLHttpRequest = org.w3c.xhr.XMLHttpRequest
 typealias XMLHttpRequestEventTarget = org.w3c.xhr.XMLHttpRequestEventTarget
