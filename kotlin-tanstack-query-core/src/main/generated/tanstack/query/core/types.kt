@@ -6,6 +6,7 @@
 
 package tanstack.query.core
 
+import kotlinx.js.EpochTimeStamp
 import kotlinx.js.ReadonlyArray
 import kotlinx.js.Record
 import kotlinx.js.Void
@@ -140,9 +141,9 @@ external interface FetchPreviousPageOptions : ResultOptions {
 
 external interface QueryObserverBaseResult<TData, TError> {
     val data: TData?
-    val dataUpdatedAt: JsTimestamp
+    val dataUpdatedAt: EpochTimeStamp
     val error: TError?
-    val errorUpdatedAt: JsTimestamp
+    val errorUpdatedAt: EpochTimeStamp
     val failureCount: Int
     val errorUpdateCount: Int
     val isError: Boolean
@@ -390,5 +391,5 @@ external interface CancelOptions {
 }
 
 external interface SetDataOptions {
-    var updatedAt: JsTimestamp
+    var updatedAt: EpochTimeStamp
 }

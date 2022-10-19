@@ -2,7 +2,6 @@
 
 package tanstack.query.core
 
-typealias JsTimestamp = Double
 typealias JsDuration = Int
 
 typealias Union = Any

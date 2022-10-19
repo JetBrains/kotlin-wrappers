@@ -10,6 +10,7 @@
 
 package react.query
 
+import kotlinx.js.EpochTimeStamp
 import kotlin.js.Promise
 
 external interface QueryConfig<TQueryFnData, TError, TData, TQueryKey : QueryKey> {
@@ -25,10 +26,10 @@ external interface QueryConfig<TQueryFnData, TError, TData, TQueryKey : QueryKey
 external interface QueryState<TData, TError> {
     var data: TData?
     var dataUpdateCount: Int
-    var dataUpdatedAt: JsTimestamp
+    var dataUpdatedAt: EpochTimeStamp
     var error: TError?
     var errorUpdateCount: Int
-    var errorUpdatedAt: JsTimestamp
+    var errorUpdatedAt: EpochTimeStamp
     var fetchFailureCount: Int
     var fetchMeta: Any
     var isFetching: Boolean
@@ -67,7 +68,7 @@ external interface FetchAction {
 external interface SuccessAction<TData> {
     var data: TData?
     var type: Type /* 'success' */
-    var dataUpdatedAt: JsTimestamp
+    var dataUpdatedAt: EpochTimeStamp
 }
 
 external interface ErrorAction<TError> {

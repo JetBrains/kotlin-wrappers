@@ -10,6 +10,7 @@
 
 package tanstack.query.core
 
+import kotlinx.js.EpochTimeStamp
 import kotlinx.js.JsTuple2
 import kotlinx.js.ReadonlyArray
 import kotlinx.js.Void
@@ -59,7 +60,7 @@ external fun <T> replaceAt(
 ): ReadonlyArray<T>
 
 external fun timeUntilStale(
-    updatedAt: JsTimestamp,
+    updatedAt: EpochTimeStamp,
     staleTime: JsDuration = definedExternally,
 ): Int
 

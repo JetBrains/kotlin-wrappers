@@ -2,7 +2,6 @@
 
 package react.query
 
-typealias JsTimestamp = Double
 typealias JsDuration = Int
 
 typealias Union = Any
