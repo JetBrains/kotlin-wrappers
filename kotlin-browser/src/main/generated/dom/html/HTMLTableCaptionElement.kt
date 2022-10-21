@@ -2,5 +2,5 @@
 
 package dom.html
 
-sealed external class HTMLTableCaptionElement :
+abstract external class HTMLTableCaptionElement :
     HTMLElement

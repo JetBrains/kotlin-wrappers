@@ -2,7 +2,7 @@
 
 package dom.html
 
-sealed external class HTMLTableRowElement :
+abstract external class HTMLTableRowElement :
     HTMLElement {
     /** Retrieves a collection of all cells in the table row. */
     val cells: HTMLCollectionOf<HTMLTableCellElement>

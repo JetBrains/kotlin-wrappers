@@ -2,5 +2,5 @@
 
 package dom.html
 
-sealed external class HTMLMenuElement :
+abstract external class HTMLMenuElement :
     HTMLElement

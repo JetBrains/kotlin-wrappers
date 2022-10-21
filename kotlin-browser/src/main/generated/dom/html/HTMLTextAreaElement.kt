@@ -4,7 +4,7 @@ package dom.html
 
 import dom.NodeListOf
 
-sealed external class HTMLTextAreaElement :
+abstract external class HTMLTextAreaElement :
     HTMLElement {
     var autocomplete: String
 

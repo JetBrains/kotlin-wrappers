@@ -2,7 +2,7 @@
 
 package dom.html
 
-sealed external class HTMLOptionElement :
+abstract external class HTMLOptionElement :
     HTMLElement {
     /** Sets or retrieves the status of an option. */
     var defaultSelected: Boolean

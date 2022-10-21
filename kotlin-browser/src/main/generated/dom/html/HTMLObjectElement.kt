@@ -4,7 +4,7 @@ package dom.html
 
 import dom.Document
 
-sealed external class HTMLObjectElement :
+abstract external class HTMLObjectElement :
     HTMLElement {
     /** Retrieves the document object of the page or frame. */
     val contentDocument: Document?

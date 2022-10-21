@@ -2,5 +2,5 @@
 
 package dom.html
 
-sealed external class HTMLPictureElement :
+abstract external class HTMLPictureElement :
     HTMLElement

@@ -2,7 +2,7 @@
 
 package dom.html
 
-sealed external class HTMLOptGroupElement :
+abstract external class HTMLOptGroupElement :
     HTMLElement {
     var disabled: Boolean
 

@@ -2,7 +2,7 @@
 
 package dom.html
 
-sealed external class HTMLModElement :
+abstract external class HTMLModElement :
     HTMLElement {
     /** Sets or retrieves reference information about the object. */
     var cite: String

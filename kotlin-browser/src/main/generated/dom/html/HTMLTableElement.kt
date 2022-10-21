@@ -2,7 +2,7 @@
 
 package dom.html
 
-sealed external class HTMLTableElement :
+abstract external class HTMLTableElement :
     HTMLElement {
     /** Retrieves the caption object of a table. */
     var caption: HTMLTableCaptionElement?

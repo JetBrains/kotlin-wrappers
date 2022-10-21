@@ -2,5 +2,5 @@
 
 package dom.html
 
-sealed external class HTMLDListElement :
+abstract external class HTMLDListElement :
     HTMLElement

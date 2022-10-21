@@ -2,7 +2,7 @@
 
 package dom.html
 
-sealed external class HTMLDetailsElement :
+abstract external class HTMLDetailsElement :
     HTMLElement {
     var open: Boolean
 }

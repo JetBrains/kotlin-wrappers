@@ -4,7 +4,7 @@ package dom.html
 
 import dom.NodeListOf
 
-sealed external class HTMLMeterElement :
+abstract external class HTMLMeterElement :
     HTMLElement {
     var high: Double
     val labels: NodeListOf<HTMLLabelElement>

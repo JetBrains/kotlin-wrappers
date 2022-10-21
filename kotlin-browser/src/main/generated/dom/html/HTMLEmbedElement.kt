@@ -4,7 +4,7 @@ package dom.html
 
 import dom.Document
 
-sealed external class HTMLEmbedElement :
+abstract external class HTMLEmbedElement :
     HTMLElement {
     /** Sets or retrieves the height of the object. */
     var height: String

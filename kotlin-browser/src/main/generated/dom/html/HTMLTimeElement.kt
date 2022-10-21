@@ -2,7 +2,7 @@
 
 package dom.html
 
-sealed external class HTMLTimeElement :
+abstract external class HTMLTimeElement :
     HTMLElement {
     var dateTime: String
 }

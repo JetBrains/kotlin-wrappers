@@ -2,7 +2,7 @@
 
 package dom.html
 
-sealed external class HTMLBaseElement :
+abstract external class HTMLBaseElement :
     HTMLElement {
     /** Gets or sets the baseline URL on which relative links are based. */
     var href: String

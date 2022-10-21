@@ -2,5 +2,5 @@
 
 package dom.html
 
-sealed external class HTMLHRElement :
+abstract external class HTMLHRElement :
     HTMLElement

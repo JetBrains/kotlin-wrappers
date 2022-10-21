@@ -2,6 +2,6 @@
 
 package dom.html
 
-sealed external class HTMLBodyElement :
+abstract external class HTMLBodyElement :
     HTMLElement,
     WindowEventHandlers

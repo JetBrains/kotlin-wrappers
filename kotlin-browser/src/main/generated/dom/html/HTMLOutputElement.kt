@@ -5,7 +5,7 @@ package dom.html
 import dom.DOMTokenList
 import dom.NodeListOf
 
-sealed external class HTMLOutputElement :
+abstract external class HTMLOutputElement :
     HTMLElement {
     var defaultValue: String
     val form: HTMLFormElement?

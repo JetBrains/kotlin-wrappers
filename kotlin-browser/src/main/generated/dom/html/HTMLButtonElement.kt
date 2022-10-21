@@ -4,7 +4,7 @@ package dom.html
 
 import dom.NodeListOf
 
-sealed external class HTMLButtonElement :
+abstract external class HTMLButtonElement :
     HTMLElement {
     var disabled: Boolean
 

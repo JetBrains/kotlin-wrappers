@@ -4,7 +4,7 @@ package dom.html
 
 import webvtt.TextTrack
 
-sealed external class HTMLTrackElement :
+abstract external class HTMLTrackElement :
     HTMLElement {
     var default: Boolean
     var kind: String

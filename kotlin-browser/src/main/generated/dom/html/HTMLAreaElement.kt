@@ -4,7 +4,7 @@ package dom.html
 
 import dom.DOMTokenList
 
-sealed external class HTMLAreaElement :
+abstract external class HTMLAreaElement :
     HTMLElement,
     HTMLHyperlinkElementUtils {
     /** Sets or retrieves a text alternative to the graphic. */

@@ -2,5 +2,5 @@
 
 package dom.html
 
-sealed external class HTMLSpanElement :
+abstract external class HTMLSpanElement :
     HTMLElement

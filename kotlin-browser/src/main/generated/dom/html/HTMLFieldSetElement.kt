@@ -2,7 +2,7 @@
 
 package dom.html
 
-sealed external class HTMLFieldSetElement :
+abstract external class HTMLFieldSetElement :
     HTMLElement {
     var disabled: Boolean
 

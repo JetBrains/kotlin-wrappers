@@ -4,7 +4,7 @@ package dom.html
 
 import dom.DOMTokenList
 
-sealed external class HTMLAnchorElement :
+abstract external class HTMLAnchorElement :
     HTMLElement,
     HTMLHyperlinkElementUtils {
     var download: String

@@ -6,7 +6,7 @@ import dom.NodeListOf
 import web.file.FileList
 import kotlin.js.Date
 
-sealed external class HTMLInputElement :
+abstract external class HTMLInputElement :
     HTMLElement {
     /** Sets or retrieves a comma-separated list of content types. */
     var accept: String

@@ -2,7 +2,7 @@
 
 package dom.html
 
-sealed external class HTMLSourceElement :
+abstract external class HTMLSourceElement :
     HTMLElement {
     var height: Double
 

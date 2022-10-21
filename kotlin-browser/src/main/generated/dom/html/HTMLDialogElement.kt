@@ -2,7 +2,7 @@
 
 package dom.html
 
-sealed external class HTMLDialogElement :
+abstract external class HTMLDialogElement :
     HTMLElement {
     var open: Boolean
     var returnValue: String

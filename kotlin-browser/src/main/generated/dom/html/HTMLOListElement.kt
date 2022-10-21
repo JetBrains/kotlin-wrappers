@@ -2,7 +2,7 @@
 
 package dom.html
 
-sealed external class HTMLOListElement :
+abstract external class HTMLOListElement :
     HTMLElement {
     var reversed: Boolean
 

@@ -2,7 +2,7 @@
 
 package dom.html
 
-sealed external class HTMLMapElement :
+abstract external class HTMLMapElement :
     HTMLElement {
     /** Retrieves a collection of the area objects defined for the given map object. */
     val areas: HTMLCollection

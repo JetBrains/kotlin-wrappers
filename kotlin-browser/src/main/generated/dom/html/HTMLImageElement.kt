@@ -5,7 +5,7 @@ package dom.html
 import kotlinx.js.Void
 import kotlin.js.Promise
 
-sealed external class HTMLImageElement :
+abstract external class HTMLImageElement :
     HTMLElement {
     /** Sets or retrieves a text alternative to the graphic. */
     var alt: String

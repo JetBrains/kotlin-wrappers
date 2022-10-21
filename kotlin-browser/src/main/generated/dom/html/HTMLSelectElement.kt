@@ -4,7 +4,7 @@ package dom.html
 
 import dom.NodeListOf
 
-sealed external class HTMLSelectElement :
+abstract external class HTMLSelectElement :
     HTMLElement {
     var autocomplete: String
     var disabled: Boolean

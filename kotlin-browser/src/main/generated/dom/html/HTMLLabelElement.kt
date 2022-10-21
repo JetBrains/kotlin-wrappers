@@ -2,7 +2,7 @@
 
 package dom.html
 
-sealed external class HTMLLabelElement :
+abstract external class HTMLLabelElement :
     HTMLElement {
     /** Returns the form control that is associated with this element. */
     val control: HTMLElement?

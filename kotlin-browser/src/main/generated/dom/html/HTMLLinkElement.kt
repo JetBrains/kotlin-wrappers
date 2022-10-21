@@ -5,7 +5,7 @@ package dom.html
 import dom.DOMTokenList
 import dom.css.LinkStyle
 
-sealed external class HTMLLinkElement :
+abstract external class HTMLLinkElement :
     HTMLElement,
     LinkStyle {
     var `as`: String

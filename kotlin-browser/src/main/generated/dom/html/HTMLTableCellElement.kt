@@ -2,7 +2,7 @@
 
 package dom.html
 
-sealed external class HTMLTableCellElement :
+abstract external class HTMLTableCellElement :
     HTMLElement {
     /** Sets or retrieves abbreviated text for the object. */
     var abbr: String

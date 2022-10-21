@@ -2,7 +2,7 @@
 
 package dom.html
 
-sealed external class HTMLScriptElement :
+abstract external class HTMLScriptElement :
     HTMLElement {
     var async: Boolean
     var crossOrigin: String?

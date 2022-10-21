@@ -2,7 +2,7 @@
 
 package dom.html
 
-sealed external class HTMLFormElement :
+abstract external class HTMLFormElement :
     HTMLElement {
     /** Sets or retrieves a list of character encodings for input data that must be accepted by the server processing the form. */
     var acceptCharset: String

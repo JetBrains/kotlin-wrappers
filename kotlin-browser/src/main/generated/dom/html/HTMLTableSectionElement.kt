@@ -2,7 +2,7 @@
 
 package dom.html
 
-sealed external class HTMLTableSectionElement :
+abstract external class HTMLTableSectionElement :
     HTMLElement {
     /** Sets or retrieves the number of horizontal rows contained in the object. */
     val rows: HTMLCollectionOf<HTMLTableRowElement>

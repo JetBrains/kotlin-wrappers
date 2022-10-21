@@ -4,7 +4,7 @@ package dom.html
 
 import dom.css.LinkStyle
 
-sealed external class HTMLStyleElement :
+abstract external class HTMLStyleElement :
     HTMLElement,
     LinkStyle {
     /** Enables or disables the style sheet. */

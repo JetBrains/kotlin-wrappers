@@ -2,5 +2,5 @@
 
 package dom.html
 
-sealed external class HTMLDivElement :
+abstract external class HTMLDivElement :
     HTMLElement

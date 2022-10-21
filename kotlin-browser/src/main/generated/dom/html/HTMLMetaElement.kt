@@ -2,7 +2,7 @@
 
 package dom.html
 
-sealed external class HTMLMetaElement :
+abstract external class HTMLMetaElement :
     HTMLElement {
     /** Gets or sets meta-information to associate with httpEquiv or name. */
     var content: String

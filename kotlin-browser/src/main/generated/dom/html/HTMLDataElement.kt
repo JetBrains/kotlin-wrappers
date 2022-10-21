@@ -2,7 +2,7 @@
 
 package dom.html
 
-sealed external class HTMLDataElement :
+abstract external class HTMLDataElement :
     HTMLElement {
     var value: String
 }
