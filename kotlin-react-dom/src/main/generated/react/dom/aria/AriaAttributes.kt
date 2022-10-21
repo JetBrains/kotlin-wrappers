@@ -1,10 +1,5 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "EXTERNAL_TYPE_EXTENDS_NON_EXTERNAL_TYPE",
-    "DECLARATION_CANT_BE_INLINED",
-)
-
 package react.dom.aria
 
 external interface AriaAttributes
