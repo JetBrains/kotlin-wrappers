@@ -86,9 +86,6 @@ inline val Event.Companion.OFFLINE: EventType<Event>
 inline val Event.Companion.ONLINE: EventType<Event>
     get() = EventType("online")
 
-inline val Event.Companion.ORIENTATION_CHANGE: EventType<Event>
-    get() = EventType("orientationchange")
-
 inline val Event.Companion.PAUSE: EventType<Event>
     get() = EventType("pause")
 
