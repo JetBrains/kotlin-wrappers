@@ -19,8 +19,8 @@ open external class Worker : EventTarget, AbstractWorker {
     )
 
 
-    var onmessage: ((event: MessageEvent) -> Unit)?
-    var onmessageerror: ((event: MessageEvent) -> Unit)?
+    var onmessage: ((event: MessageEvent<*>) -> Unit)?
+    var onmessageerror: ((event: MessageEvent<*>) -> Unit)?
 
     /** Clones message and transmits it to worker's global environment. transfer can be passed as a list of objects that are to be transferred rather than cloned. */
     fun postMessage(

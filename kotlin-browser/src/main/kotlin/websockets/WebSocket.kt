@@ -48,7 +48,7 @@ external class WebSocket : EventTarget {
     val extensions: String
     var onclose: ((event: CloseEvent) -> Unit)?
     var onerror: ((event: Event) -> Unit)?
-    var onmessage: ((event: MessageEvent) -> Unit)?
+    var onmessage: ((event: MessageEvent<*>) -> Unit)?
     var onopen: ((event: Event) -> Unit)?
 
     /** Returns the subprotocol selected by the server, if any. It can be used in conjunction with the array form of the constructor's second argument to perform subprotocol negotiation. */

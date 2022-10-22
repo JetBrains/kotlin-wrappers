@@ -4,8 +4,8 @@ import kotlinx.js.ReadonlyArray
 import web.events.EventTarget
 
 sealed external class MessagePort : EventTarget {
-    var onmessage: ((event: MessageEvent) -> Unit)?
-    var onmessageerror: ((event: MessageEvent) -> Unit)?
+    var onmessage: ((event: MessageEvent<*>) -> Unit)?
+    var onmessageerror: ((event: MessageEvent<*>) -> Unit)?
 
     /** Disconnects the port, so that it is no longer active. */
     fun close()

@@ -19,7 +19,7 @@ external class RTCDataChannel : web.events.EventTarget {
     var onclose: ((event: Event) -> Unit)?
     var onclosing: ((event: Event) -> Unit)?
     var onerror: ((event: Event) -> Unit)?
-    var onmessage: ((event: MessageEvent) -> Unit)?
+    var onmessage: ((event: MessageEvent<*>) -> Unit)?
     var onopen: ((event: Event) -> Unit)?
     val ordered: Boolean
     val protocol: String
