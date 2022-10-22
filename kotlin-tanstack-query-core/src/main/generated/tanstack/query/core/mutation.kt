@@ -27,13 +27,16 @@ external interface MutationState<TData, TError, TVariables, TContext> {
     val data: TData?
     val error: TError?
     val failureCount: Int
+    val failureReason: TError?
     val isPaused: Boolean
     val status: MutationStatus
     val variables: TVariables?
 }
 
-external interface MutationFailedAction {
+external interface MutationFailedAction<TError> {
     var type: Type /* 'failed' */
+    var failureCount: Int
+    var error: TError?
 }
 
 external interface MutationLoadingAction<TVariables, TContext> {
@@ -65,7 +68,7 @@ external interface MutationSetStateAction<TData, TError, TVariables, TContext> {
     var state: MutationState<TData, TError, TVariables, TContext>
 }
 
-typealias MutationAction<TData, TError, TVariables, TContext> = Union /* ContinueAction | ErrorAction<TError> | FailedAction | LoadingAction<TVariables, TContext> | PauseAction | SetStateAction<TData, TError, TVariables, TContext> | SuccessAction<TData> */
+typealias MutationAction<TData, TError, TVariables, TContext> = Union /* ContinueAction | ErrorAction<TError> | FailedAction<TError> | LoadingAction<TVariables, TContext> | PauseAction | SetStateAction<TData, TError, TVariables, TContext> | SuccessAction<TData> */
 
 open external class Mutation<TData, TError, TVariables, TContext>(config: MutationConfig<TData, TError, TVariables, TContext>) :
     Removable {
