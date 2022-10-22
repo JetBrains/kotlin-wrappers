@@ -145,6 +145,7 @@ external interface QueryObserverBaseResult<TData, TError> {
     val error: TError?
     val errorUpdatedAt: EpochTimeStamp
     val failureCount: Int
+    val failureReason: TError?
     val errorUpdateCount: Int
     val isError: Boolean
     val isFetched: Boolean

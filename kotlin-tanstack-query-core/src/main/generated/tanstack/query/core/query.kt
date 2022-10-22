@@ -33,6 +33,7 @@ external interface QueryState<TData, TError> {
     var errorUpdateCount: Int
     var errorUpdatedAt: EpochTimeStamp
     var fetchFailureCount: Int
+    var fetchFailureReason: TError?
     var fetchMeta: Any
     var isInvalidated: Boolean
     var status: QueryStatus
@@ -58,8 +59,10 @@ external interface FetchOptions {
     var meta: Any
 }
 
-external interface FailedAction {
+external interface FailedAction<TError> {
     var type: Type /* 'failed' */
+    var failureCount: Int
+    var error: TError
 }
 
 external interface FetchAction {
@@ -97,7 +100,7 @@ external interface SetStateAction<TData, TError> {
     var setStateOptions: SetStateOptions
 }
 
-typealias Action<TData, TError> = Union /* ContinueAction | ErrorAction<TError> | FailedAction | FetchAction | InvalidateAction | PauseAction | SetStateAction<TData, TError> | SuccessAction<TData> */
+typealias Action<TData, TError> = Union /* ContinueAction | ErrorAction<TError> | FailedAction<TError> | FetchAction | InvalidateAction | PauseAction | SetStateAction<TData, TError> | SuccessAction<TData> */
 
 external interface SetStateOptions {
     var meta: Any
