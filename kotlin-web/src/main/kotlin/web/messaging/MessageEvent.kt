@@ -5,7 +5,7 @@ import web.events.Event
 import web.events.EventInit
 
 external interface MessageEventInit<T> : EventInit {
-    var data: T?
+    var data: T
     var lastEventId: String?
     var origin: String?
     var ports: ReadonlyArray<MessagePort>
