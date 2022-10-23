@@ -12,7 +12,7 @@ external interface MessageEventInit<T> : EventInit {
     var source: MessageEventSource?
 }
 
-external class MessageEvent<T>(
+external class MessageEvent<out T>(
     type: String,
     eventInitDict: MessageEventInit<T> = definedExternally
 ) : Event {
