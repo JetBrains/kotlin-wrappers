@@ -64,7 +64,7 @@ open external class Writable : Stream, node.WritableStream {
 
     /**
      * Is true after 'close' has been emitted.
-     * @since v8.0.0
+     * @since v18.0.0
      */
     open val closed: Boolean
 

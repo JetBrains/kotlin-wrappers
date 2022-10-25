@@ -71,13 +71,13 @@ open external class Readable : Stream, node.ReadableStream {
 
     /**
      * Is `true` after `readable.destroy()` has been called.
-     * @since v18.0.0
+     * @since v8.0.0
      */
     open var destroyed: Boolean
 
     /**
      * Is true after 'close' has been emitted.
-     * @since v8.0.0
+     * @since v18.0.0
      */
     open val closed: Boolean
 
