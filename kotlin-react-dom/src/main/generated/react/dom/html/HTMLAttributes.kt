@@ -27,6 +27,7 @@ external interface HTMLAttributes<T : Element> :
     var hidden: Boolean?
     var id: String?
     var lang: String?
+    var nonce: String?
     var placeholder: String?
     var slot: String?
     var spellCheck: Boolean?

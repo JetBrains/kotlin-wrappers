@@ -13,7 +13,6 @@ external interface ScriptHTMLAttributes<T : Element> : HTMLAttributes<T> {
     var defer: Boolean?
     var integrity: String?
     var noModule: Boolean?
-    var nonce: String?
     var referrerPolicy: ReferrerPolicy?
     var src: String?
     var type: String?
