@@ -2,4 +2,4 @@
 
 package webvtt
 
-typealias TextTrack = org.w3c.dom.TextTrack
+typealias TextTrackList = org.w3c.dom.TextTrackList
