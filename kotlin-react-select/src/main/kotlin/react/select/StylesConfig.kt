@@ -25,11 +25,16 @@ external interface StylesConfig<Option, Group : GroupBase<Option>> {
     var clearIndicator: StylesConfigFunction<ClearIndicatorProps>?
     var container: StylesConfigFunction<ContainerProps>?
     var control: StylesConfigFunction<ControlProps>
+    var dropdownIndicator: StylesConfigFunction<DropdownIndicatorProps>?
+    var indicatorsContainer: StylesConfigFunction<IndicatorsContainerProps>?
+    var indicatorSeparator: StylesConfigFunction<IndicatorSeparatorProps>?
+    var input: StylesConfigFunction<InputSpecificProps>?
     var loadingIndicator: StylesConfigFunction<LoadingIndicatorProps>?
     var menu: StylesConfigFunction<MenuProps>?
     var menuList: StylesConfigFunction<MenuListProps<Option, Group>>?
     var menuPortal: StylesConfigFunction<MenuPortalProps>? /* PortalStyleArgs */
     var option: StylesConfigFunction<OptionProps<Option, Group>>?
+    var placeholder: StylesConfigFunction<PlaceholderProps>?
     var singleValue: StylesConfigFunction<SingleValueProps<Option, Group>>?
     var valueContainer: StylesConfigFunction<ValueContainerProps>?
 }
