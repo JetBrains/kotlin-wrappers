@@ -5,7 +5,7 @@ import react.Props
 import react.dom.html.HTMLAttributes
 
 external interface IndicatorSeparatorProps : Props {
-    var innerProps: HTMLAttributes<HTMLSpanElement>
+    var innerProps: HTMLAttributes<HTMLSpanElement>?
     var isFocused: Boolean
     var isDisabled: Boolean
 }

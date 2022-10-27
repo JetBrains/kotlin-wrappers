@@ -25,10 +25,10 @@ external interface StylesConfig<Option, Group : GroupBase<Option>> {
     var clearIndicator: StylesConfigFunction<ClearIndicatorProps>?
     var container: StylesConfigFunction<ContainerProps>?
     var control: StylesConfigFunction<ControlProps>
-    var dropdownIndicator: StylesConfigFunction<DropdownIndicatorProps>
-    var indicatorsContainer: StylesConfigFunction<IndicatorsContainerProps>
-    var indicatorSeparator: StylesConfigFunction<IndicatorSeparatorProps>
-    var input: StylesConfigFunction<InputSpecificProps>
+    var dropdownIndicator: StylesConfigFunction<DropdownIndicatorProps>?
+    var indicatorsContainer: StylesConfigFunction<IndicatorsContainerProps>?
+    var indicatorSeparator: StylesConfigFunction<IndicatorSeparatorProps>?
+    var input: StylesConfigFunction<InputSpecificProps>?
     var loadingIndicator: StylesConfigFunction<LoadingIndicatorProps>?
     var menu: StylesConfigFunction<MenuProps>?
     var menuList: StylesConfigFunction<MenuListProps<Option, Group>>?
