@@ -2,4 +2,6 @@
 
 package webrtc
 
-typealias RTCSessionDescriptionCallback = (description: RTCSessionDescriptionInit) -> Unit
+typealias RTCSessionDescriptionCallback = (
+    description: RTCSessionDescriptionInit,
+) -> Unit

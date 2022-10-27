@@ -2,4 +2,6 @@
 
 package webrtc
 
-typealias RTCPeerConnectionErrorCallback = (error: Throwable) -> Unit
+typealias RTCPeerConnectionErrorCallback = (
+    error: Throwable,
+) -> Unit
