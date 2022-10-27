@@ -3,5 +3,5 @@
 package webrtc
 
 typealias RTCPeerConnectionErrorCallback = (
-    error: Throwable,
+    error: Throwable, /* DOMException */
 ) -> Unit
