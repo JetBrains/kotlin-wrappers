@@ -56,12 +56,6 @@ external interface DOMAttributes<T : Element> :
     // Keyboard Events
     var onKeyDown: KeyboardEventHandler<T>?
     var onKeyDownCapture: KeyboardEventHandler<T>?
-
-    @Deprecated("Will be removed soon!")
-    var onKeyPress: KeyboardEventHandler<T>?
-
-    @Deprecated("Will be removed soon!")
-    var onKeyPressCapture: KeyboardEventHandler<T>?
     var onKeyUp: KeyboardEventHandler<T>?
     var onKeyUpCapture: KeyboardEventHandler<T>?
 

@@ -6,9 +6,6 @@ import dom.Element
 
 external interface ScriptHTMLAttributes<T : Element> : HTMLAttributes<T> {
     var async: Boolean?
-
-    @Deprecated("Will be removed soon!")
-    var charSet: String?
     var crossOrigin: String?
     var defer: Boolean?
     var integrity: String?

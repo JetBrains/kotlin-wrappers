@@ -6,9 +6,6 @@ import dom.Element
 
 external interface KeyboardEvent<out T : Element> : UIEvent<T, NativeKeyboardEvent> {
     val altKey: Boolean
-
-    @Deprecated("Will be removed soon!")
-    val charCode: Int
     val ctrlKey: Boolean
     val code: String
 
@@ -21,15 +18,9 @@ external interface KeyboardEvent<out T : Element> : UIEvent<T, NativeKeyboardEve
      * See the [DOM Level 3 Events spec](https://www.w3.org/TR/uievents-key/#named-key-attribute-values). for possible values
      */
     val key: String
-
-    @Deprecated("Will be removed soon!")
-    val keyCode: Int
     val locale: String
     val location: Int
     val metaKey: Boolean
     val repeat: Boolean
     val shiftKey: Boolean
-
-    @Deprecated("Will be removed soon!")
-    val which: Int
 }
