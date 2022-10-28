@@ -14,10 +14,10 @@ import webgl.WebGLRenderingContext
 abstract external class HTMLCanvasElement :
     HTMLElement {
     /** Gets or sets the height of a canvas element on a document. */
-    var height: Double
+    var height: Int
 
     /** Gets or sets the width of a canvas element on a document. */
-    var width: Double
+    var width: Int
     fun captureStream(frameRequestRate: Number = definedExternally): MediaStream
 
     /**
