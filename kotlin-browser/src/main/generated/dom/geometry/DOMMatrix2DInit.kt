@@ -3,16 +3,16 @@
 package dom.geometry
 
 sealed external interface DOMMatrix2DInit {
-    var a: Number?
-    var b: Number?
-    var c: Number?
-    var d: Number?
-    var e: Number?
-    var f: Number?
-    var m11: Number?
-    var m12: Number?
-    var m21: Number?
-    var m22: Number?
-    var m41: Number?
-    var m42: Number?
+    var a: Double?
+    var b: Double?
+    var c: Double?
+    var d: Double?
+    var e: Double?
+    var f: Double?
+    var m11: Double?
+    var m12: Double?
+    var m21: Double?
+    var m22: Double?
+    var m41: Double?
+    var m42: Double?
 }
