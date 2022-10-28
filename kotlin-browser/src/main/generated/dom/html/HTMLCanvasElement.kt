@@ -25,22 +25,22 @@ abstract external class HTMLCanvasElement :
      * @param contextId The identifier (ID) of the type of canvas to create. Internet Explorer 9 and Internet Explorer 10 support only a 2-D context using canvas.getContext("2d"); IE11 Preview also supports 3-D or WebGL context using canvas.getContext("experimental-webgl");
      */
     fun getContext(
-        contextId: CanvasContextId.canvas,
+        contextId: RenderingContextId.canvas,
         options: CanvasRenderingContext2DSettings = definedExternally,
     ): CanvasRenderingContext2D?
 
     fun getContext(
-        contextId: CanvasContextId.bitmaprenderer,
+        contextId: RenderingContextId.bitmaprenderer,
         options: ImageBitmapRenderingContextSettings = definedExternally,
     ): ImageBitmapRenderingContext?
 
     fun getContext(
-        contextId: CanvasContextId.webgl,
+        contextId: RenderingContextId.webgl,
         options: WebGLContextAttributes = definedExternally,
     ): WebGLRenderingContext?
 
     fun getContext(
-        contextId: CanvasContextId.webgl2,
+        contextId: RenderingContextId.webgl2,
         options: WebGLContextAttributes = definedExternally,
     ): WebGL2RenderingContext?
 
