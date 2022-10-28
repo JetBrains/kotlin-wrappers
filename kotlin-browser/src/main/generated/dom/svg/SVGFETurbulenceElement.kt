@@ -11,10 +11,10 @@ sealed external class SVGFETurbulenceElement :
     val seed: SVGAnimatedNumber
     val stitchTiles: SVGAnimatedEnumeration
     val type: SVGAnimatedEnumeration
-    val SVG_STITCHTYPE_NOSTITCH: Number
-    val SVG_STITCHTYPE_STITCH: Number
-    val SVG_STITCHTYPE_UNKNOWN: Number
-    val SVG_TURBULENCE_TYPE_FRACTALNOISE: Number
-    val SVG_TURBULENCE_TYPE_TURBULENCE: Number
-    val SVG_TURBULENCE_TYPE_UNKNOWN: Number
+    val SVG_STITCHTYPE_NOSTITCH: Short
+    val SVG_STITCHTYPE_STITCH: Short
+    val SVG_STITCHTYPE_UNKNOWN: Short
+    val SVG_TURBULENCE_TYPE_FRACTALNOISE: Short
+    val SVG_TURBULENCE_TYPE_TURBULENCE: Short
+    val SVG_TURBULENCE_TYPE_UNKNOWN: Short
 }

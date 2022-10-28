@@ -8,21 +8,21 @@ sealed external class SVGFEBlendElement :
     val in1: SVGAnimatedString
     val in2: SVGAnimatedString
     val mode: SVGAnimatedEnumeration
-    val SVG_FEBLEND_MODE_COLOR: Number
-    val SVG_FEBLEND_MODE_COLOR_BURN: Number
-    val SVG_FEBLEND_MODE_COLOR_DODGE: Number
-    val SVG_FEBLEND_MODE_DARKEN: Number
-    val SVG_FEBLEND_MODE_DIFFERENCE: Number
-    val SVG_FEBLEND_MODE_EXCLUSION: Number
-    val SVG_FEBLEND_MODE_HARD_LIGHT: Number
-    val SVG_FEBLEND_MODE_HUE: Number
-    val SVG_FEBLEND_MODE_LIGHTEN: Number
-    val SVG_FEBLEND_MODE_LUMINOSITY: Number
-    val SVG_FEBLEND_MODE_MULTIPLY: Number
-    val SVG_FEBLEND_MODE_NORMAL: Number
-    val SVG_FEBLEND_MODE_OVERLAY: Number
-    val SVG_FEBLEND_MODE_SATURATION: Number
-    val SVG_FEBLEND_MODE_SCREEN: Number
-    val SVG_FEBLEND_MODE_SOFT_LIGHT: Number
-    val SVG_FEBLEND_MODE_UNKNOWN: Number
+    val SVG_FEBLEND_MODE_COLOR: Short
+    val SVG_FEBLEND_MODE_COLOR_BURN: Short
+    val SVG_FEBLEND_MODE_COLOR_DODGE: Short
+    val SVG_FEBLEND_MODE_DARKEN: Short
+    val SVG_FEBLEND_MODE_DIFFERENCE: Short
+    val SVG_FEBLEND_MODE_EXCLUSION: Short
+    val SVG_FEBLEND_MODE_HARD_LIGHT: Short
+    val SVG_FEBLEND_MODE_HUE: Short
+    val SVG_FEBLEND_MODE_LIGHTEN: Short
+    val SVG_FEBLEND_MODE_LUMINOSITY: Short
+    val SVG_FEBLEND_MODE_MULTIPLY: Short
+    val SVG_FEBLEND_MODE_NORMAL: Short
+    val SVG_FEBLEND_MODE_OVERLAY: Short
+    val SVG_FEBLEND_MODE_SATURATION: Short
+    val SVG_FEBLEND_MODE_SCREEN: Short
+    val SVG_FEBLEND_MODE_SOFT_LIGHT: Short
+    val SVG_FEBLEND_MODE_UNKNOWN: Short
 }

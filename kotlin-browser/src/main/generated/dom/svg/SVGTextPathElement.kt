@@ -8,10 +8,10 @@ sealed external class SVGTextPathElement :
     val method: SVGAnimatedEnumeration
     val spacing: SVGAnimatedEnumeration
     val startOffset: SVGAnimatedLength
-    val TEXTPATH_METHODTYPE_ALIGN: Number
-    val TEXTPATH_METHODTYPE_STRETCH: Number
-    val TEXTPATH_METHODTYPE_UNKNOWN: Number
-    val TEXTPATH_SPACINGTYPE_AUTO: Number
-    val TEXTPATH_SPACINGTYPE_EXACT: Number
-    val TEXTPATH_SPACINGTYPE_UNKNOWN: Number
+    val TEXTPATH_METHODTYPE_ALIGN: Short
+    val TEXTPATH_METHODTYPE_STRETCH: Short
+    val TEXTPATH_METHODTYPE_UNKNOWN: Short
+    val TEXTPATH_SPACINGTYPE_AUTO: Short
+    val TEXTPATH_SPACINGTYPE_EXACT: Short
+    val TEXTPATH_SPACINGTYPE_UNKNOWN: Short
 }

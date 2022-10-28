@@ -22,7 +22,7 @@ sealed external class SVGTextContentElement :
         nchars: Number,
     ): Number
 
-    val LENGTHADJUST_SPACING: Number
-    val LENGTHADJUST_SPACINGANDGLYPHS: Number
-    val LENGTHADJUST_UNKNOWN: Number
+    val LENGTHADJUST_SPACING: Short
+    val LENGTHADJUST_SPACINGANDGLYPHS: Short
+    val LENGTHADJUST_UNKNOWN: Short
 }

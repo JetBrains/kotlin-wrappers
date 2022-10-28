@@ -10,9 +10,9 @@ sealed external class SVGFEDisplacementMapElement :
     val scale: SVGAnimatedNumber
     val xChannelSelector: SVGAnimatedEnumeration
     val yChannelSelector: SVGAnimatedEnumeration
-    val SVG_CHANNEL_A: Number
-    val SVG_CHANNEL_B: Number
-    val SVG_CHANNEL_G: Number
-    val SVG_CHANNEL_R: Number
-    val SVG_CHANNEL_UNKNOWN: Number
+    val SVG_CHANNEL_A: Short
+    val SVG_CHANNEL_B: Short
+    val SVG_CHANNEL_G: Short
+    val SVG_CHANNEL_R: Short
+    val SVG_CHANNEL_UNKNOWN: Short
 }

@@ -13,15 +13,15 @@ sealed external class SVGLength {
         valueInSpecifiedUnits: Number,
     )
 
-    val SVG_LENGTHTYPE_CM: Number
-    val SVG_LENGTHTYPE_EMS: Number
-    val SVG_LENGTHTYPE_EXS: Number
-    val SVG_LENGTHTYPE_IN: Number
-    val SVG_LENGTHTYPE_MM: Number
-    val SVG_LENGTHTYPE_NUMBER: Number
-    val SVG_LENGTHTYPE_PC: Number
-    val SVG_LENGTHTYPE_PERCENTAGE: Number
-    val SVG_LENGTHTYPE_PT: Number
-    val SVG_LENGTHTYPE_PX: Number
-    val SVG_LENGTHTYPE_UNKNOWN: Number
+    val SVG_LENGTHTYPE_CM: Short
+    val SVG_LENGTHTYPE_EMS: Short
+    val SVG_LENGTHTYPE_EXS: Short
+    val SVG_LENGTHTYPE_IN: Short
+    val SVG_LENGTHTYPE_MM: Short
+    val SVG_LENGTHTYPE_NUMBER: Short
+    val SVG_LENGTHTYPE_PC: Short
+    val SVG_LENGTHTYPE_PERCENTAGE: Short
+    val SVG_LENGTHTYPE_PT: Short
+    val SVG_LENGTHTYPE_PX: Short
+    val SVG_LENGTHTYPE_UNKNOWN: Short
 }

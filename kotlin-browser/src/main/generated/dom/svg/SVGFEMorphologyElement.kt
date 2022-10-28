@@ -9,7 +9,7 @@ sealed external class SVGFEMorphologyElement :
     val operator: SVGAnimatedEnumeration
     val radiusX: SVGAnimatedNumber
     val radiusY: SVGAnimatedNumber
-    val SVG_MORPHOLOGY_OPERATOR_DILATE: Number
-    val SVG_MORPHOLOGY_OPERATOR_ERODE: Number
-    val SVG_MORPHOLOGY_OPERATOR_UNKNOWN: Number
+    val SVG_MORPHOLOGY_OPERATOR_DILATE: Short
+    val SVG_MORPHOLOGY_OPERATOR_ERODE: Short
+    val SVG_MORPHOLOGY_OPERATOR_UNKNOWN: Short
 }

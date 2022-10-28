@@ -13,9 +13,9 @@ sealed external class SVGAngle {
         valueInSpecifiedUnits: Number,
     )
 
-    val SVG_ANGLETYPE_DEG: Number
-    val SVG_ANGLETYPE_GRAD: Number
-    val SVG_ANGLETYPE_RAD: Number
-    val SVG_ANGLETYPE_UNKNOWN: Number
-    val SVG_ANGLETYPE_UNSPECIFIED: Number
+    val SVG_ANGLETYPE_DEG: Short
+    val SVG_ANGLETYPE_GRAD: Short
+    val SVG_ANGLETYPE_RAD: Short
+    val SVG_ANGLETYPE_UNKNOWN: Short
+    val SVG_ANGLETYPE_UNSPECIFIED: Short
 }

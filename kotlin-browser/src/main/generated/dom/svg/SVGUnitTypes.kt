@@ -3,7 +3,7 @@
 package dom.svg
 
 sealed external class SVGUnitTypes {
-    val SVG_UNIT_TYPE_OBJECTBOUNDINGBOX: Number
-    val SVG_UNIT_TYPE_UNKNOWN: Number
-    val SVG_UNIT_TYPE_USERSPACEONUSE: Number
+    val SVG_UNIT_TYPE_OBJECTBOUNDINGBOX: Short
+    val SVG_UNIT_TYPE_UNKNOWN: Short
+    val SVG_UNIT_TYPE_USERSPACEONUSE: Short
 }

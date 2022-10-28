@@ -14,10 +14,10 @@ sealed external class SVGMarkerElement :
     val refY: SVGAnimatedLength
     fun setOrientToAngle(angle: SVGAngle)
     fun setOrientToAuto()
-    val SVG_MARKERUNITS_STROKEWIDTH: Number
-    val SVG_MARKERUNITS_UNKNOWN: Number
-    val SVG_MARKERUNITS_USERSPACEONUSE: Number
-    val SVG_MARKER_ORIENT_ANGLE: Number
-    val SVG_MARKER_ORIENT_AUTO: Number
-    val SVG_MARKER_ORIENT_UNKNOWN: Number
+    val SVG_MARKERUNITS_STROKEWIDTH: Short
+    val SVG_MARKERUNITS_UNKNOWN: Short
+    val SVG_MARKERUNITS_USERSPACEONUSE: Short
+    val SVG_MARKER_ORIENT_ANGLE: Short
+    val SVG_MARKER_ORIENT_AUTO: Short
+    val SVG_MARKER_ORIENT_UNKNOWN: Short
 }

@@ -8,8 +8,8 @@ sealed external class SVGGradientElement :
     val gradientTransform: SVGAnimatedTransformList
     val gradientUnits: SVGAnimatedEnumeration
     val spreadMethod: SVGAnimatedEnumeration
-    val SVG_SPREADMETHOD_PAD: Number
-    val SVG_SPREADMETHOD_REFLECT: Number
-    val SVG_SPREADMETHOD_REPEAT: Number
-    val SVG_SPREADMETHOD_UNKNOWN: Number
+    val SVG_SPREADMETHOD_PAD: Short
+    val SVG_SPREADMETHOD_REFLECT: Short
+    val SVG_SPREADMETHOD_REPEAT: Short
+    val SVG_SPREADMETHOD_UNKNOWN: Short
 }

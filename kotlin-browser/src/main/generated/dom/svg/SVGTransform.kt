@@ -28,11 +28,11 @@ sealed external class SVGTransform {
         ty: Number,
     )
 
-    val SVG_TRANSFORM_MATRIX: Number
-    val SVG_TRANSFORM_ROTATE: Number
-    val SVG_TRANSFORM_SCALE: Number
-    val SVG_TRANSFORM_SKEWX: Number
-    val SVG_TRANSFORM_SKEWY: Number
-    val SVG_TRANSFORM_TRANSLATE: Number
-    val SVG_TRANSFORM_UNKNOWN: Number
+    val SVG_TRANSFORM_MATRIX: Short
+    val SVG_TRANSFORM_ROTATE: Short
+    val SVG_TRANSFORM_SCALE: Short
+    val SVG_TRANSFORM_SKEWX: Short
+    val SVG_TRANSFORM_SKEWY: Short
+    val SVG_TRANSFORM_TRANSLATE: Short
+    val SVG_TRANSFORM_UNKNOWN: Short
 }

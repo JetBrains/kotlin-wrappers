@@ -15,8 +15,8 @@ abstract external class HTMLTrackElement :
 
     /** Returns the TextTrack object corresponding to the text track of the track element. */
     val track: TextTrack
-    val ERROR: Number
-    val LOADED: Number
-    val LOADING: Number
-    val NONE: Number
+    val ERROR: Short
+    val LOADED: Short
+    val LOADING: Short
+    val NONE: Short
 }
