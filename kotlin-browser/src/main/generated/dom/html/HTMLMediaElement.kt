@@ -54,7 +54,7 @@ abstract external class HTMLMediaElement :
     var muted: Boolean
 
     /** Gets the current network activity for the element. */
-    val networkState: Number
+    val networkState: Short
     // onencrypted: ((this: HTMLMediaElement, ev: MediaEncryptedEvent) => any) | null
     // onwaitingforkey: ((this: HTMLMediaElement, ev: Event) => any) | null
     /** Gets a flag that specifies whether playback is paused. */
@@ -69,7 +69,7 @@ abstract external class HTMLMediaElement :
     /** Gets or sets a value indicating what data should be preloaded, if any. */
     var preload: String /* "none" | "metadata" | "auto" | "" */
     var preservesPitch: Boolean
-    val readyState: Number
+    val readyState: Short
     val remote: RemotePlayback
 
     /** Returns a TimeRanges object that represents the ranges of the current media resource that can be seeked. */

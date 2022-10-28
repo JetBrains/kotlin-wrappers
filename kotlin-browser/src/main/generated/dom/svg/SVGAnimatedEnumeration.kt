@@ -3,6 +3,6 @@
 package dom.svg
 
 sealed external class SVGAnimatedEnumeration {
-    val animVal: Number
-    var baseVal: Number
+    val animVal: Short
+    var baseVal: Short
 }

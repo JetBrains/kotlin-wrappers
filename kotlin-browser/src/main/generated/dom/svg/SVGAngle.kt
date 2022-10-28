@@ -3,7 +3,7 @@
 package dom.svg
 
 sealed external class SVGAngle {
-    val unitType: Number
+    val unitType: Short
     var value: Double
     var valueAsString: String
     var valueInSpecifiedUnits: Number

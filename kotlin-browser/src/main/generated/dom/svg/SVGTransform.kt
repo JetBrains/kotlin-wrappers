@@ -8,7 +8,7 @@ import dom.geometry.DOMMatrix2DInit
 sealed external class SVGTransform {
     val angle: Number
     val matrix: DOMMatrix
-    val type: Number
+    val type: Short
     fun setMatrix(matrix: DOMMatrix2DInit = definedExternally)
     fun setRotate(
         angle: Number,

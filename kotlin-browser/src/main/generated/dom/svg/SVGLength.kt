@@ -3,7 +3,7 @@
 package dom.svg
 
 sealed external class SVGLength {
-    val unitType: Number
+    val unitType: Short
     var value: Double
     var valueAsString: String
     var valueInSpecifiedUnits: Number

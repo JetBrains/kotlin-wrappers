@@ -9,7 +9,7 @@ abstract external class HTMLTrackElement :
     var default: Boolean
     var kind: String
     var label: String
-    val readyState: Number
+    val readyState: Short
     var src: String
     var srclang: String
 
