@@ -3,6 +3,6 @@
 package dom.svg
 
 sealed external class SVGAnimatedNumber {
-    val animVal: Number
-    var baseVal: Number
+    val animVal: Double
+    var baseVal: Double
 }

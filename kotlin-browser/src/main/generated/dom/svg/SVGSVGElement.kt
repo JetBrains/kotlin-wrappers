@@ -9,7 +9,7 @@ import dom.geometry.*
 sealed external class SVGSVGElement :
     SVGGraphicsElement,
     SVGFitToViewBox {
-    var currentScale: Number
+    var currentScale: Double
     val currentTranslate: DOMPointReadOnly
     val height: SVGAnimatedLength
     val width: SVGAnimatedLength

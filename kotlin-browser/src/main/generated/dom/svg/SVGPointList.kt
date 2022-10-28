@@ -6,7 +6,7 @@ import dom.geometry.DOMPoint
 
 sealed external class SVGPointList {
     val length: Int
-    val numberOfItems: Number
+    val numberOfItems: Int
     fun appendItem(newItem: DOMPoint): DOMPoint
     fun clear()
     fun getItem(index: Number): DOMPoint

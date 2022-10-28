@@ -6,7 +6,7 @@ import dom.geometry.DOMMatrix2DInit
 
 sealed external class SVGTransformList {
     val length: Int
-    val numberOfItems: Number
+    val numberOfItems: Int
     fun appendItem(newItem: SVGTransform): SVGTransform
     fun clear()
     fun consolidate(): SVGTransform?

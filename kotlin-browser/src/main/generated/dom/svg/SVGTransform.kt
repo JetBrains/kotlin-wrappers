@@ -6,7 +6,7 @@ import dom.geometry.DOMMatrix
 import dom.geometry.DOMMatrix2DInit
 
 sealed external class SVGTransform {
-    val angle: Number
+    val angle: Double
     val matrix: DOMMatrix
     val type: Short
     fun setMatrix(matrix: DOMMatrix2DInit = definedExternally)

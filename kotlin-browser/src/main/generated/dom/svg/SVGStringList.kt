@@ -4,7 +4,7 @@ package dom.svg
 
 sealed external class SVGStringList {
     val length: Int
-    val numberOfItems: Number
+    val numberOfItems: Int
     fun appendItem(newItem: String): String
     fun clear()
     fun getItem(index: Number): String
