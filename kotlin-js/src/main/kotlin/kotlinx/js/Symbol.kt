@@ -4,7 +4,7 @@
 
 package kotlinx.js
 
-sealed external interface Symbol {
+external interface Symbol {
     val description: String?
         get() = definedExternally
 
