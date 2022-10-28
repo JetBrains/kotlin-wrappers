@@ -3,8 +3,8 @@
 package dom.svg
 
 sealed external class SVGPreserveAspectRatio {
-    var align: Number
-    var meetOrSlice: Number
+    var align: Short
+    var meetOrSlice: Short
     val SVG_MEETORSLICE_MEET: Short
     val SVG_MEETORSLICE_SLICE: Short
     val SVG_MEETORSLICE_UNKNOWN: Short
