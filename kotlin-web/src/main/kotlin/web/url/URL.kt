@@ -1,6 +1,5 @@
 package web.url
 
-import org.w3c.dom.mediasource.MediaSource
 import web.buffer.Blob
 
 external class URL : org.w3c.dom.url.URL {
@@ -16,7 +15,6 @@ external class URL : org.w3c.dom.url.URL {
 
     companion object {
         fun createObjectURL(obj: Blob): String
-        fun createObjectURL(obj: MediaSource): String
         fun revokeObjectURL(url: String)
     }
 }
