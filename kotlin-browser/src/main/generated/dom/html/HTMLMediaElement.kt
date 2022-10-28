@@ -28,15 +28,15 @@ abstract external class HTMLMediaElement :
     val currentSrc: String
 
     /** Gets or sets the current playback position, in seconds. */
-    var currentTime: Number
+    var currentTime: Double
     var defaultMuted: Boolean
 
     /** Gets or sets the default playback rate when the user is not using fast forward or reverse for a video or audio resource. */
-    var defaultPlaybackRate: Number
+    var defaultPlaybackRate: Double
     var disableRemotePlayback: Boolean
 
     /** Returns the duration in seconds of the current media resource. A NaN value is returned if duration is not available, or Infinity if the media resource is streaming. */
-    val duration: Number
+    val duration: Double
 
     /** Gets information about whether the playback has ended or not. */
     val ended: Boolean
@@ -61,7 +61,7 @@ abstract external class HTMLMediaElement :
     val paused: Boolean
 
     /** Gets or sets the current rate of speed for the media resource to play. This speed is expressed as a multiple of the normal speed of the media resource. */
-    var playbackRate: Number
+    var playbackRate: Double
 
     /** Gets TimeRanges for the current media resource that has been played. */
     val played: TimeRanges
@@ -84,7 +84,7 @@ abstract external class HTMLMediaElement :
     val textTracks: TextTrackList
 
     /** Gets or sets the volume level for audio portions of the media element. */
-    var volume: Number
+    var volume: Double
     fun addTextTrack(
         kind: TextTrackKind,
         label: String = definedExternally,

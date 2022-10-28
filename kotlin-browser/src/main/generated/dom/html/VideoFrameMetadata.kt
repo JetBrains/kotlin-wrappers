@@ -8,11 +8,11 @@ sealed external interface VideoFrameMetadata {
     var captureTime: HighResTimeStamp?
     var expectedDisplayTime: HighResTimeStamp
     var height: Double
-    var mediaTime: Number
+    var mediaTime: Double
     var presentationTime: HighResTimeStamp
     var presentedFrames: Int
-    var processingDuration: Number?
+    var processingDuration: Double?
     var receiveTime: HighResTimeStamp?
-    var rtpTimestamp: Number?
+    var rtpTimestamp: Double?
     var width: Double
 }
