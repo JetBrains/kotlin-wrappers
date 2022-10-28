@@ -2,4 +2,6 @@
 
 package dom.svg
 
-typealias SVGViewElement = org.w3c.dom.svg.SVGViewElement
+sealed external class SVGViewElement :
+    SVGElement,
+    SVGFitToViewBox

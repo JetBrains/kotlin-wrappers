@@ -2,4 +2,5 @@
 
 package dom.svg
 
-sealed external class SVGAnimateElement : SVGElement
+sealed external class SVGAnimateElement :
+    SVGAnimationElement

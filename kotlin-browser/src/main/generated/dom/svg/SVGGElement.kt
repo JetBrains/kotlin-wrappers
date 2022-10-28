@@ -2,4 +2,5 @@
 
 package dom.svg
 
-typealias SVGGElement = org.w3c.dom.svg.SVGGElement
+sealed external class SVGGElement :
+    SVGGraphicsElement

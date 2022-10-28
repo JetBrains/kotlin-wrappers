@@ -2,4 +2,6 @@
 
 package dom.svg
 
-sealed external class SVGFEMergeElement : SVGElement
+sealed external class SVGFEMergeElement :
+    SVGElement,
+    SVGFilterPrimitiveStandardAttributes

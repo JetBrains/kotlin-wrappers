@@ -2,4 +2,13 @@
 
 package dom.svg
 
-typealias SVGStyleElement = org.w3c.dom.svg.SVGStyleElement
+import dom.css.LinkStyle
+
+sealed external class SVGStyleElement :
+    SVGElement,
+    LinkStyle {
+    var disabled: Boolean
+    var media: String
+    var title: String
+    var type: String
+}

@@ -2,4 +2,12 @@
 
 package dom.svg
 
-sealed external class SVGFEDiffuseLightingElement : SVGElement
+sealed external class SVGFEDiffuseLightingElement :
+    SVGElement,
+    SVGFilterPrimitiveStandardAttributes {
+    val diffuseConstant: SVGAnimatedNumber
+    val in1: SVGAnimatedString
+    val kernelUnitLengthX: SVGAnimatedNumber
+    val kernelUnitLengthY: SVGAnimatedNumber
+    val surfaceScale: SVGAnimatedNumber
+}

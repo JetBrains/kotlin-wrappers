@@ -1,0 +1,22 @@
+// Automatically generated - do not modify!
+
+package dom.svg
+
+sealed external class SVGPreserveAspectRatio {
+    var align: Number
+    var meetOrSlice: Number
+    val SVG_MEETORSLICE_MEET: Number
+    val SVG_MEETORSLICE_SLICE: Number
+    val SVG_MEETORSLICE_UNKNOWN: Number
+    val SVG_PRESERVEASPECTRATIO_NONE: Number
+    val SVG_PRESERVEASPECTRATIO_UNKNOWN: Number
+    val SVG_PRESERVEASPECTRATIO_XMAXYMAX: Number
+    val SVG_PRESERVEASPECTRATIO_XMAXYMID: Number
+    val SVG_PRESERVEASPECTRATIO_XMAXYMIN: Number
+    val SVG_PRESERVEASPECTRATIO_XMIDYMAX: Number
+    val SVG_PRESERVEASPECTRATIO_XMIDYMID: Number
+    val SVG_PRESERVEASPECTRATIO_XMIDYMIN: Number
+    val SVG_PRESERVEASPECTRATIO_XMINYMAX: Number
+    val SVG_PRESERVEASPECTRATIO_XMINYMID: Number
+    val SVG_PRESERVEASPECTRATIO_XMINYMIN: Number
+}

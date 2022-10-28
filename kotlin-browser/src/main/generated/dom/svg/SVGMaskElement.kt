@@ -2,4 +2,12 @@
 
 package dom.svg
 
-typealias SVGMaskElement = org.w3c.css.masking.SVGMaskElement
+sealed external class SVGMaskElement :
+    SVGElement {
+    val height: SVGAnimatedLength
+    val maskContentUnits: SVGAnimatedEnumeration
+    val maskUnits: SVGAnimatedEnumeration
+    val width: SVGAnimatedLength
+    val x: SVGAnimatedLength
+    val y: SVGAnimatedLength
+}

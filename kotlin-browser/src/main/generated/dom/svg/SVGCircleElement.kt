@@ -2,4 +2,9 @@
 
 package dom.svg
 
-typealias SVGCircleElement = org.w3c.dom.svg.SVGCircleElement
+sealed external class SVGCircleElement :
+    SVGGeometryElement {
+    val cx: SVGAnimatedLength
+    val cy: SVGAnimatedLength
+    val r: SVGAnimatedLength
+}

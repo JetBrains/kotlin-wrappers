@@ -2,4 +2,7 @@
 
 package dom.svg
 
-sealed external class SVGFEMergeNodeElement : SVGElement
+sealed external class SVGFEMergeNodeElement :
+    SVGElement {
+    val in1: SVGAnimatedString
+}

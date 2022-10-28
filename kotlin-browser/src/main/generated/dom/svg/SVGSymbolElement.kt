@@ -2,4 +2,6 @@
 
 package dom.svg
 
-typealias SVGSymbolElement = org.w3c.dom.svg.SVGSymbolElement
+sealed external class SVGSymbolElement :
+    SVGElement,
+    SVGFitToViewBox

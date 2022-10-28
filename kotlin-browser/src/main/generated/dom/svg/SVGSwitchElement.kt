@@ -2,4 +2,5 @@
 
 package dom.svg
 
-typealias SVGSwitchElement = org.w3c.dom.svg.SVGSwitchElement
+sealed external class SVGSwitchElement :
+    SVGGraphicsElement

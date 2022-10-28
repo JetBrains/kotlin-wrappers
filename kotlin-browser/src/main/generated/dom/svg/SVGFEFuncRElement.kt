@@ -2,4 +2,5 @@
 
 package dom.svg
 
-sealed external class SVGFEFuncRElement : SVGElement
+sealed external class SVGFEFuncRElement :
+    SVGComponentTransferFunctionElement

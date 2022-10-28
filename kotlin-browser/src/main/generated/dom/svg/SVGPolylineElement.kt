@@ -2,4 +2,6 @@
 
 package dom.svg
 
-typealias SVGPolylineElement = org.w3c.dom.svg.SVGPolylineElement
+sealed external class SVGPolylineElement :
+    SVGGeometryElement,
+    SVGAnimatedPoints

@@ -2,4 +2,12 @@
 
 package dom.svg
 
-typealias SVGElement = org.w3c.dom.svg.SVGElement
+import dom.Element
+import dom.css.ElementCSSInlineStyle
+
+sealed external class SVGElement :
+    Element,
+    ElementCSSInlineStyle {
+    val ownerSVGElement: SVGSVGElement?
+    val viewportElement: SVGElement?
+}

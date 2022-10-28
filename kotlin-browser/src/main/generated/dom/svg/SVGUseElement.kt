@@ -2,4 +2,11 @@
 
 package dom.svg
 
-typealias SVGUseElement = org.w3c.dom.svg.SVGUseElement
+sealed external class SVGUseElement :
+    SVGGraphicsElement,
+    SVGURIReference {
+    val height: SVGAnimatedLength
+    val width: SVGAnimatedLength
+    val x: SVGAnimatedLength
+    val y: SVGAnimatedLength
+}
