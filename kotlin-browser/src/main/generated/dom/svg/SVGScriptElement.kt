@@ -2,4 +2,8 @@
 
 package dom.svg
 
-typealias SVGScriptElement = org.w3c.dom.svg.SVGScriptElement
+sealed external class SVGScriptElement :
+    SVGElement,
+    SVGURIReference {
+    var type: String
+}

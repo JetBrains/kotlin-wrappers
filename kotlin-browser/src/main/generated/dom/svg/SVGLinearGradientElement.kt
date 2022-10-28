@@ -2,4 +2,10 @@
 
 package dom.svg
 
-typealias SVGLinearGradientElement = org.w3c.dom.svg.SVGLinearGradientElement
+sealed external class SVGLinearGradientElement :
+    SVGGradientElement {
+    val x1: SVGAnimatedLength
+    val x2: SVGAnimatedLength
+    val y1: SVGAnimatedLength
+    val y2: SVGAnimatedLength
+}

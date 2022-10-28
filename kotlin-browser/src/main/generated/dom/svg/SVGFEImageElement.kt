@@ -2,4 +2,9 @@
 
 package dom.svg
 
-sealed external class SVGFEImageElement : SVGElement
+sealed external class SVGFEImageElement :
+    SVGElement,
+    SVGFilterPrimitiveStandardAttributes,
+    SVGURIReference {
+    val preserveAspectRatio: SVGAnimatedPreserveAspectRatio
+}

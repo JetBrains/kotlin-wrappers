@@ -2,4 +2,5 @@
 
 package dom.svg
 
-typealias SVGTSpanElement = org.w3c.dom.svg.SVGTSpanElement
+sealed external class SVGTSpanElement :
+    SVGTextPositioningElement

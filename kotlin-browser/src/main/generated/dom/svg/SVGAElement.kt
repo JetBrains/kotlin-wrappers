@@ -2,4 +2,12 @@
 
 package dom.svg
 
-typealias SVGAElement = org.w3c.dom.svg.SVGAElement
+import dom.DOMTokenList
+
+sealed external class SVGAElement :
+    SVGGraphicsElement,
+    SVGURIReference {
+    var rel: String
+    val relList: DOMTokenList
+    val target: SVGAnimatedString
+}

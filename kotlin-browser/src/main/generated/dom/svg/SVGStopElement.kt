@@ -2,4 +2,7 @@
 
 package dom.svg
 
-typealias SVGStopElement = org.w3c.dom.svg.SVGStopElement
+sealed external class SVGStopElement :
+    SVGElement {
+    val offset: SVGAnimatedNumber
+}

@@ -2,4 +2,5 @@
 
 package dom.svg
 
-typealias SVGPathElement = org.w3c.dom.svg.SVGPathElement
+sealed external class SVGPathElement :
+    SVGGeometryElement

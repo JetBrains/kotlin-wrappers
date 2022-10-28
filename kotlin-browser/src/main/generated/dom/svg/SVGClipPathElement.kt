@@ -2,4 +2,8 @@
 
 package dom.svg
 
-typealias SVGClipPathElement = org.w3c.css.masking.SVGClipPathElement
+sealed external class SVGClipPathElement :
+    SVGElement {
+    val clipPathUnits: SVGAnimatedEnumeration
+    val transform: SVGAnimatedTransformList
+}

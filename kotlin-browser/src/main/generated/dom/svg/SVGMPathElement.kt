@@ -2,4 +2,6 @@
 
 package dom.svg
 
-sealed external class SVGMPathElement : SVGElement
+sealed external class SVGMPathElement :
+    SVGElement,
+    SVGURIReference

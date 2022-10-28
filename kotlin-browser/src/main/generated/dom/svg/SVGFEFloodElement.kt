@@ -2,4 +2,6 @@
 
 package dom.svg
 
-sealed external class SVGFEFloodElement : SVGElement
+sealed external class SVGFEFloodElement :
+    SVGElement,
+    SVGFilterPrimitiveStandardAttributes

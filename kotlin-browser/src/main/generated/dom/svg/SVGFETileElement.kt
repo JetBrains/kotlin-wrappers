@@ -2,4 +2,8 @@
 
 package dom.svg
 
-sealed external class SVGFETileElement : SVGElement
+sealed external class SVGFETileElement :
+    SVGElement,
+    SVGFilterPrimitiveStandardAttributes {
+    val in1: SVGAnimatedString
+}

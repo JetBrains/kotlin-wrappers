@@ -2,4 +2,8 @@
 
 package dom.svg
 
-sealed external class SVGFEDistantLightElement : SVGElement
+sealed external class SVGFEDistantLightElement :
+    SVGElement {
+    val azimuth: SVGAnimatedNumber
+    val elevation: SVGAnimatedNumber
+}

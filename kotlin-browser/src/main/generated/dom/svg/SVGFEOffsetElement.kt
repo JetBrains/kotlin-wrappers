@@ -2,4 +2,10 @@
 
 package dom.svg
 
-sealed external class SVGFEOffsetElement : SVGElement
+sealed external class SVGFEOffsetElement :
+    SVGElement,
+    SVGFilterPrimitiveStandardAttributes {
+    val dx: SVGAnimatedNumber
+    val dy: SVGAnimatedNumber
+    val in1: SVGAnimatedString
+}

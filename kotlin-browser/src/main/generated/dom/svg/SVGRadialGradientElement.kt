@@ -2,4 +2,12 @@
 
 package dom.svg
 
-typealias SVGRadialGradientElement = org.w3c.dom.svg.SVGRadialGradientElement
+sealed external class SVGRadialGradientElement :
+    SVGGradientElement {
+    val cx: SVGAnimatedLength
+    val cy: SVGAnimatedLength
+    val fr: SVGAnimatedLength
+    val fx: SVGAnimatedLength
+    val fy: SVGAnimatedLength
+    val r: SVGAnimatedLength
+}

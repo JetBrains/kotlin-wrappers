@@ -2,4 +2,10 @@
 
 package dom.svg
 
-typealias SVGForeignObjectElement = org.w3c.dom.svg.SVGForeignObjectElement
+sealed external class SVGForeignObjectElement :
+    SVGGraphicsElement {
+    val height: SVGAnimatedLength
+    val width: SVGAnimatedLength
+    val x: SVGAnimatedLength
+    val y: SVGAnimatedLength
+}

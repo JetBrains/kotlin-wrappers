@@ -2,4 +2,6 @@
 
 package dom.svg
 
-typealias SVGPolygonElement = org.w3c.dom.svg.SVGPolygonElement
+sealed external class SVGPolygonElement :
+    SVGGeometryElement,
+    SVGAnimatedPoints
