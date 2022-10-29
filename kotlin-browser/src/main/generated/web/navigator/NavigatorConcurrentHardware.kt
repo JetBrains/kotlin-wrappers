@@ -3,5 +3,5 @@
 package web.navigator
 
 sealed external interface NavigatorConcurrentHardware {
-    val hardwareConcurrency: Number
+    val hardwareConcurrency: Int
 }
