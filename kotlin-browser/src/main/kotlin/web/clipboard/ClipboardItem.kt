@@ -6,7 +6,7 @@ import web.buffer.Blob
 import kotlin.js.Promise
 
 external class ClipboardItem(
-    items: Record<String, ClipboardItemDataType>,
+    items: Record<String, Any /* String | Blob | PromiseLike<String | Blob> */>,
     options: ClipboardItemOptions = definedExternally,
 ) {
     val types: ReadonlyArray<String>
