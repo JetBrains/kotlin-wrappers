@@ -10,6 +10,7 @@ import media.key.MediaKeySystemConfiguration
 import serviceworkers.ServiceWorkerContainer
 import web.clipboard.Clipboard
 import web.gamepad.Gamepad
+import web.geolocation.Geolocation
 import web.permissions.Permissions
 import web.share.ShareData
 import web.url.URL
@@ -32,7 +33,7 @@ sealed external class Navigator :
     /** Available only in secure contexts. */
     val credentials: dynamic /* CredentialsContainer */
     val doNotTrack: String?
-    val geolocation: dynamic /* Geolocation */
+    val geolocation: Geolocation
     val maxTouchPoints: Int
     val mediaCapabilities: dynamic /* MediaCapabilities */
 
