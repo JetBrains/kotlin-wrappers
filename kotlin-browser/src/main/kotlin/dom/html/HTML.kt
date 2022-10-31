@@ -1,353 +1,351 @@
 package dom.html
 
-import dom.TagName
-
 object HTML {
-    inline val a: TagName<HTMLAnchorElement>
-        get() = TagName("a")
+    inline val a: HtmlTagName<HTMLAnchorElement>
+        get() = HtmlTagName("a")
 
-    inline val abbr: TagName<HTMLElement>
-        get() = TagName("abbr")
+    inline val abbr: HtmlTagName<HTMLElement>
+        get() = HtmlTagName("abbr")
 
-    inline val address: TagName<HTMLElement>
-        get() = TagName("address")
+    inline val address: HtmlTagName<HTMLElement>
+        get() = HtmlTagName("address")
 
-    inline val area: TagName<HTMLAreaElement>
-        get() = TagName("area")
+    inline val area: HtmlTagName<HTMLAreaElement>
+        get() = HtmlTagName("area")
 
-    inline val article: TagName<HTMLElement>
-        get() = TagName("article")
+    inline val article: HtmlTagName<HTMLElement>
+        get() = HtmlTagName("article")
 
-    inline val aside: TagName<HTMLElement>
-        get() = TagName("aside")
+    inline val aside: HtmlTagName<HTMLElement>
+        get() = HtmlTagName("aside")
 
-    inline val audio: TagName<HTMLAudioElement>
-        get() = TagName("audio")
+    inline val audio: HtmlTagName<HTMLAudioElement>
+        get() = HtmlTagName("audio")
 
-    inline val b: TagName<HTMLElement>
-        get() = TagName("b")
+    inline val b: HtmlTagName<HTMLElement>
+        get() = HtmlTagName("b")
 
-    inline val base: TagName<HTMLBaseElement>
-        get() = TagName("base")
+    inline val base: HtmlTagName<HTMLBaseElement>
+        get() = HtmlTagName("base")
 
-    inline val bdi: TagName<HTMLElement>
-        get() = TagName("bdi")
+    inline val bdi: HtmlTagName<HTMLElement>
+        get() = HtmlTagName("bdi")
 
-    inline val bdo: TagName<HTMLElement>
-        get() = TagName("bdo")
+    inline val bdo: HtmlTagName<HTMLElement>
+        get() = HtmlTagName("bdo")
 
-    inline val big: TagName<HTMLElement>
-        get() = TagName("big")
+    inline val big: HtmlTagName<HTMLElement>
+        get() = HtmlTagName("big")
 
-    inline val blockquote: TagName<HTMLQuoteElement>
-        get() = TagName("blockquote")
+    inline val blockquote: HtmlTagName<HTMLQuoteElement>
+        get() = HtmlTagName("blockquote")
 
-    inline val body: TagName<HTMLBodyElement>
-        get() = TagName("body")
+    inline val body: HtmlTagName<HTMLBodyElement>
+        get() = HtmlTagName("body")
 
-    inline val br: TagName<HTMLBRElement>
-        get() = TagName("br")
+    inline val br: HtmlTagName<HTMLBRElement>
+        get() = HtmlTagName("br")
 
-    inline val button: TagName<HTMLButtonElement>
-        get() = TagName("button")
+    inline val button: HtmlTagName<HTMLButtonElement>
+        get() = HtmlTagName("button")
 
-    inline val canvas: TagName<HTMLCanvasElement>
-        get() = TagName("canvas")
+    inline val canvas: HtmlTagName<HTMLCanvasElement>
+        get() = HtmlTagName("canvas")
 
-    inline val caption: TagName<HTMLElement>
-        get() = TagName("caption")
+    inline val caption: HtmlTagName<HTMLElement>
+        get() = HtmlTagName("caption")
 
-    inline val cite: TagName<HTMLElement>
-        get() = TagName("cite")
+    inline val cite: HtmlTagName<HTMLElement>
+        get() = HtmlTagName("cite")
 
-    inline val code: TagName<HTMLElement>
-        get() = TagName("code")
+    inline val code: HtmlTagName<HTMLElement>
+        get() = HtmlTagName("code")
 
-    inline val col: TagName<HTMLTableColElement>
-        get() = TagName("col")
+    inline val col: HtmlTagName<HTMLTableColElement>
+        get() = HtmlTagName("col")
 
-    inline val colgroup: TagName<HTMLTableColElement>
-        get() = TagName("colgroup")
+    inline val colgroup: HtmlTagName<HTMLTableColElement>
+        get() = HtmlTagName("colgroup")
 
-    inline val data: TagName<HTMLDataElement>
-        get() = TagName("data")
+    inline val data: HtmlTagName<HTMLDataElement>
+        get() = HtmlTagName("data")
 
-    inline val datalist: TagName<HTMLDataListElement>
-        get() = TagName("datalist")
+    inline val datalist: HtmlTagName<HTMLDataListElement>
+        get() = HtmlTagName("datalist")
 
-    inline val dd: TagName<HTMLElement>
-        get() = TagName("dd")
+    inline val dd: HtmlTagName<HTMLElement>
+        get() = HtmlTagName("dd")
 
-    inline val del: TagName<HTMLModElement>
-        get() = TagName("del")
+    inline val del: HtmlTagName<HTMLModElement>
+        get() = HtmlTagName("del")
 
-    inline val details: TagName<HTMLDetailsElement>
-        get() = TagName("details")
+    inline val details: HtmlTagName<HTMLDetailsElement>
+        get() = HtmlTagName("details")
 
-    inline val dfn: TagName<HTMLElement>
-        get() = TagName("dfn")
+    inline val dfn: HtmlTagName<HTMLElement>
+        get() = HtmlTagName("dfn")
 
-    inline val dialog: TagName<HTMLDialogElement>
-        get() = TagName("dialog")
+    inline val dialog: HtmlTagName<HTMLDialogElement>
+        get() = HtmlTagName("dialog")
 
-    inline val div: TagName<HTMLDivElement>
-        get() = TagName("div")
+    inline val div: HtmlTagName<HTMLDivElement>
+        get() = HtmlTagName("div")
 
-    inline val dl: TagName<HTMLDListElement>
-        get() = TagName("dl")
+    inline val dl: HtmlTagName<HTMLDListElement>
+        get() = HtmlTagName("dl")
 
-    inline val dt: TagName<HTMLElement>
-        get() = TagName("dt")
+    inline val dt: HtmlTagName<HTMLElement>
+        get() = HtmlTagName("dt")
 
-    inline val em: TagName<HTMLElement>
-        get() = TagName("em")
+    inline val em: HtmlTagName<HTMLElement>
+        get() = HtmlTagName("em")
 
-    inline val embed: TagName<HTMLEmbedElement>
-        get() = TagName("embed")
+    inline val embed: HtmlTagName<HTMLEmbedElement>
+        get() = HtmlTagName("embed")
 
-    inline val fieldset: TagName<HTMLFieldSetElement>
-        get() = TagName("fieldset")
+    inline val fieldset: HtmlTagName<HTMLFieldSetElement>
+        get() = HtmlTagName("fieldset")
 
-    inline val figcaption: TagName<HTMLElement>
-        get() = TagName("figcaption")
+    inline val figcaption: HtmlTagName<HTMLElement>
+        get() = HtmlTagName("figcaption")
 
-    inline val figure: TagName<HTMLElement>
-        get() = TagName("figure")
+    inline val figure: HtmlTagName<HTMLElement>
+        get() = HtmlTagName("figure")
 
-    inline val footer: TagName<HTMLElement>
-        get() = TagName("footer")
+    inline val footer: HtmlTagName<HTMLElement>
+        get() = HtmlTagName("footer")
 
-    inline val form: TagName<HTMLFormElement>
-        get() = TagName("form")
+    inline val form: HtmlTagName<HTMLFormElement>
+        get() = HtmlTagName("form")
 
-    inline val h1: TagName<HTMLHeadingElement>
-        get() = TagName("h1")
+    inline val h1: HtmlTagName<HTMLHeadingElement>
+        get() = HtmlTagName("h1")
 
-    inline val h2: TagName<HTMLHeadingElement>
-        get() = TagName("h2")
+    inline val h2: HtmlTagName<HTMLHeadingElement>
+        get() = HtmlTagName("h2")
 
-    inline val h3: TagName<HTMLHeadingElement>
-        get() = TagName("h3")
+    inline val h3: HtmlTagName<HTMLHeadingElement>
+        get() = HtmlTagName("h3")
 
-    inline val h4: TagName<HTMLHeadingElement>
-        get() = TagName("h4")
+    inline val h4: HtmlTagName<HTMLHeadingElement>
+        get() = HtmlTagName("h4")
 
-    inline val h5: TagName<HTMLHeadingElement>
-        get() = TagName("h5")
+    inline val h5: HtmlTagName<HTMLHeadingElement>
+        get() = HtmlTagName("h5")
 
-    inline val h6: TagName<HTMLHeadingElement>
-        get() = TagName("h6")
+    inline val h6: HtmlTagName<HTMLHeadingElement>
+        get() = HtmlTagName("h6")
 
-    inline val head: TagName<HTMLElement>
-        get() = TagName("head")
+    inline val head: HtmlTagName<HTMLElement>
+        get() = HtmlTagName("head")
 
-    inline val header: TagName<HTMLElement>
-        get() = TagName("header")
+    inline val header: HtmlTagName<HTMLElement>
+        get() = HtmlTagName("header")
 
-    inline val hgroup: TagName<HTMLElement>
-        get() = TagName("hgroup")
+    inline val hgroup: HtmlTagName<HTMLElement>
+        get() = HtmlTagName("hgroup")
 
-    inline val hr: TagName<HTMLHRElement>
-        get() = TagName("hr")
+    inline val hr: HtmlTagName<HTMLHRElement>
+        get() = HtmlTagName("hr")
 
-    inline val html: TagName<HTMLHtmlElement>
-        get() = TagName("html")
+    inline val html: HtmlTagName<HTMLHtmlElement>
+        get() = HtmlTagName("html")
 
-    inline val i: TagName<HTMLElement>
-        get() = TagName("i")
+    inline val i: HtmlTagName<HTMLElement>
+        get() = HtmlTagName("i")
 
-    inline val iframe: TagName<HTMLIFrameElement>
-        get() = TagName("iframe")
+    inline val iframe: HtmlTagName<HTMLIFrameElement>
+        get() = HtmlTagName("iframe")
 
-    inline val img: TagName<HTMLImageElement>
-        get() = TagName("img")
+    inline val img: HtmlTagName<HTMLImageElement>
+        get() = HtmlTagName("img")
 
-    inline val input: TagName<HTMLInputElement>
-        get() = TagName("input")
+    inline val input: HtmlTagName<HTMLInputElement>
+        get() = HtmlTagName("input")
 
-    inline val ins: TagName<HTMLModElement>
-        get() = TagName("ins")
+    inline val ins: HtmlTagName<HTMLModElement>
+        get() = HtmlTagName("ins")
 
-    inline val kbd: TagName<HTMLElement>
-        get() = TagName("kbd")
+    inline val kbd: HtmlTagName<HTMLElement>
+        get() = HtmlTagName("kbd")
 
-    inline val keygen: TagName<HTMLElement>
-        get() = TagName("keygen")
+    inline val keygen: HtmlTagName<HTMLElement>
+        get() = HtmlTagName("keygen")
 
-    inline val label: TagName<HTMLLabelElement>
-        get() = TagName("label")
+    inline val label: HtmlTagName<HTMLLabelElement>
+        get() = HtmlTagName("label")
 
-    inline val legend: TagName<HTMLLegendElement>
-        get() = TagName("legend")
+    inline val legend: HtmlTagName<HTMLLegendElement>
+        get() = HtmlTagName("legend")
 
-    inline val li: TagName<HTMLLIElement>
-        get() = TagName("li")
+    inline val li: HtmlTagName<HTMLLIElement>
+        get() = HtmlTagName("li")
 
-    inline val link: TagName<HTMLLinkElement>
-        get() = TagName("link")
+    inline val link: HtmlTagName<HTMLLinkElement>
+        get() = HtmlTagName("link")
 
-    inline val main: TagName<HTMLElement>
-        get() = TagName("main")
+    inline val main: HtmlTagName<HTMLElement>
+        get() = HtmlTagName("main")
 
-    inline val map: TagName<HTMLMapElement>
-        get() = TagName("map")
+    inline val map: HtmlTagName<HTMLMapElement>
+        get() = HtmlTagName("map")
 
-    inline val mark: TagName<HTMLElement>
-        get() = TagName("mark")
+    inline val mark: HtmlTagName<HTMLElement>
+        get() = HtmlTagName("mark")
 
-    inline val menu: TagName<HTMLElement>
-        get() = TagName("menu")
+    inline val menu: HtmlTagName<HTMLElement>
+        get() = HtmlTagName("menu")
 
-    inline val menuitem: TagName<HTMLElement>
-        get() = TagName("menuitem")
+    inline val menuitem: HtmlTagName<HTMLElement>
+        get() = HtmlTagName("menuitem")
 
-    inline val meta: TagName<HTMLMetaElement>
-        get() = TagName("meta")
+    inline val meta: HtmlTagName<HTMLMetaElement>
+        get() = HtmlTagName("meta")
 
-    inline val meter: TagName<HTMLMeterElement>
-        get() = TagName("meter")
+    inline val meter: HtmlTagName<HTMLMeterElement>
+        get() = HtmlTagName("meter")
 
-    inline val nav: TagName<HTMLElement>
-        get() = TagName("nav")
+    inline val nav: HtmlTagName<HTMLElement>
+        get() = HtmlTagName("nav")
 
-    inline val noscript: TagName<HTMLElement>
-        get() = TagName("noscript")
+    inline val noscript: HtmlTagName<HTMLElement>
+        get() = HtmlTagName("noscript")
 
-    inline val `object`: TagName<HTMLObjectElement>
-        get() = TagName("object")
+    inline val `object`: HtmlTagName<HTMLObjectElement>
+        get() = HtmlTagName("object")
 
-    inline val ol: TagName<HTMLOListElement>
-        get() = TagName("ol")
+    inline val ol: HtmlTagName<HTMLOListElement>
+        get() = HtmlTagName("ol")
 
-    inline val optgroup: TagName<HTMLOptGroupElement>
-        get() = TagName("optgroup")
+    inline val optgroup: HtmlTagName<HTMLOptGroupElement>
+        get() = HtmlTagName("optgroup")
 
-    inline val option: TagName<HTMLOptionElement>
-        get() = TagName("option")
+    inline val option: HtmlTagName<HTMLOptionElement>
+        get() = HtmlTagName("option")
 
-    inline val output: TagName<HTMLOutputElement>
-        get() = TagName("output")
+    inline val output: HtmlTagName<HTMLOutputElement>
+        get() = HtmlTagName("output")
 
-    inline val p: TagName<HTMLParagraphElement>
-        get() = TagName("p")
+    inline val p: HtmlTagName<HTMLParagraphElement>
+        get() = HtmlTagName("p")
 
-    inline val param: TagName<HTMLParamElement>
-        get() = TagName("param")
+    inline val param: HtmlTagName<HTMLParamElement>
+        get() = HtmlTagName("param")
 
-    inline val picture: TagName<HTMLElement>
-        get() = TagName("picture")
+    inline val picture: HtmlTagName<HTMLElement>
+        get() = HtmlTagName("picture")
 
-    inline val pre: TagName<HTMLPreElement>
-        get() = TagName("pre")
+    inline val pre: HtmlTagName<HTMLPreElement>
+        get() = HtmlTagName("pre")
 
-    inline val progress: TagName<HTMLProgressElement>
-        get() = TagName("progress")
+    inline val progress: HtmlTagName<HTMLProgressElement>
+        get() = HtmlTagName("progress")
 
-    inline val q: TagName<HTMLQuoteElement>
-        get() = TagName("q")
+    inline val q: HtmlTagName<HTMLQuoteElement>
+        get() = HtmlTagName("q")
 
-    inline val rp: TagName<HTMLElement>
-        get() = TagName("rp")
+    inline val rp: HtmlTagName<HTMLElement>
+        get() = HtmlTagName("rp")
 
-    inline val rt: TagName<HTMLElement>
-        get() = TagName("rt")
+    inline val rt: HtmlTagName<HTMLElement>
+        get() = HtmlTagName("rt")
 
-    inline val ruby: TagName<HTMLElement>
-        get() = TagName("ruby")
+    inline val ruby: HtmlTagName<HTMLElement>
+        get() = HtmlTagName("ruby")
 
-    inline val s: TagName<HTMLElement>
-        get() = TagName("s")
+    inline val s: HtmlTagName<HTMLElement>
+        get() = HtmlTagName("s")
 
-    inline val samp: TagName<HTMLElement>
-        get() = TagName("samp")
+    inline val samp: HtmlTagName<HTMLElement>
+        get() = HtmlTagName("samp")
 
-    inline val slot: TagName<HTMLSlotElement>
-        get() = TagName("slot")
+    inline val slot: HtmlTagName<HTMLSlotElement>
+        get() = HtmlTagName("slot")
 
-    inline val script: TagName<HTMLScriptElement>
-        get() = TagName("script")
+    inline val script: HtmlTagName<HTMLScriptElement>
+        get() = HtmlTagName("script")
 
-    inline val section: TagName<HTMLElement>
-        get() = TagName("section")
+    inline val section: HtmlTagName<HTMLElement>
+        get() = HtmlTagName("section")
 
-    inline val select: TagName<HTMLSelectElement>
-        get() = TagName("select")
+    inline val select: HtmlTagName<HTMLSelectElement>
+        get() = HtmlTagName("select")
 
-    inline val small: TagName<HTMLElement>
-        get() = TagName("small")
+    inline val small: HtmlTagName<HTMLElement>
+        get() = HtmlTagName("small")
 
-    inline val source: TagName<HTMLSourceElement>
-        get() = TagName("source")
+    inline val source: HtmlTagName<HTMLSourceElement>
+        get() = HtmlTagName("source")
 
-    inline val span: TagName<HTMLSpanElement>
-        get() = TagName("span")
+    inline val span: HtmlTagName<HTMLSpanElement>
+        get() = HtmlTagName("span")
 
-    inline val strong: TagName<HTMLElement>
-        get() = TagName("strong")
+    inline val strong: HtmlTagName<HTMLElement>
+        get() = HtmlTagName("strong")
 
-    inline val style: TagName<HTMLStyleElement>
-        get() = TagName("style")
+    inline val style: HtmlTagName<HTMLStyleElement>
+        get() = HtmlTagName("style")
 
-    inline val sub: TagName<HTMLElement>
-        get() = TagName("sub")
+    inline val sub: HtmlTagName<HTMLElement>
+        get() = HtmlTagName("sub")
 
-    inline val summary: TagName<HTMLElement>
-        get() = TagName("summary")
+    inline val summary: HtmlTagName<HTMLElement>
+        get() = HtmlTagName("summary")
 
-    inline val sup: TagName<HTMLElement>
-        get() = TagName("sup")
+    inline val sup: HtmlTagName<HTMLElement>
+        get() = HtmlTagName("sup")
 
-    inline val table: TagName<HTMLTableElement>
-        get() = TagName("table")
+    inline val table: HtmlTagName<HTMLTableElement>
+        get() = HtmlTagName("table")
 
-    inline val template: TagName<HTMLTemplateElement>
-        get() = TagName("template")
+    inline val template: HtmlTagName<HTMLTemplateElement>
+        get() = HtmlTagName("template")
 
-    inline val tbody: TagName<HTMLTableSectionElement>
-        get() = TagName("tbody")
+    inline val tbody: HtmlTagName<HTMLTableSectionElement>
+        get() = HtmlTagName("tbody")
 
-    inline val td: TagName<HTMLTableCellElement>
-        get() = TagName("td")
+    inline val td: HtmlTagName<HTMLTableCellElement>
+        get() = HtmlTagName("td")
 
-    inline val textarea: TagName<HTMLTextAreaElement>
-        get() = TagName("textarea")
+    inline val textarea: HtmlTagName<HTMLTextAreaElement>
+        get() = HtmlTagName("textarea")
 
-    inline val tfoot: TagName<HTMLTableSectionElement>
-        get() = TagName("tfoot")
+    inline val tfoot: HtmlTagName<HTMLTableSectionElement>
+        get() = HtmlTagName("tfoot")
 
-    inline val th: TagName<HTMLTableCellElement>
-        get() = TagName("th")
+    inline val th: HtmlTagName<HTMLTableCellElement>
+        get() = HtmlTagName("th")
 
-    inline val thead: TagName<HTMLTableSectionElement>
-        get() = TagName("thead")
+    inline val thead: HtmlTagName<HTMLTableSectionElement>
+        get() = HtmlTagName("thead")
 
-    inline val time: TagName<HTMLTimeElement>
-        get() = TagName("time")
+    inline val time: HtmlTagName<HTMLTimeElement>
+        get() = HtmlTagName("time")
 
-    inline val title: TagName<HTMLTitleElement>
-        get() = TagName("title")
+    inline val title: HtmlTagName<HTMLTitleElement>
+        get() = HtmlTagName("title")
 
-    inline val tr: TagName<HTMLTableRowElement>
-        get() = TagName("tr")
+    inline val tr: HtmlTagName<HTMLTableRowElement>
+        get() = HtmlTagName("tr")
 
-    inline val track: TagName<HTMLTrackElement>
-        get() = TagName("track")
+    inline val track: HtmlTagName<HTMLTrackElement>
+        get() = HtmlTagName("track")
 
-    inline val u: TagName<HTMLElement>
-        get() = TagName("u")
+    inline val u: HtmlTagName<HTMLElement>
+        get() = HtmlTagName("u")
 
-    inline val ul: TagName<HTMLUListElement>
-        get() = TagName("ul")
+    inline val ul: HtmlTagName<HTMLUListElement>
+        get() = HtmlTagName("ul")
 
-    inline val `var`: TagName<HTMLElement>
-        get() = TagName("var")
+    inline val `var`: HtmlTagName<HTMLElement>
+        get() = HtmlTagName("var")
 
-    inline val video: TagName<HTMLVideoElement>
-        get() = TagName("video")
+    inline val video: HtmlTagName<HTMLVideoElement>
+        get() = HtmlTagName("video")
 
-    inline val wbr: TagName<HTMLElement>
-        get() = TagName("wbr")
+    inline val wbr: HtmlTagName<HTMLElement>
+        get() = HtmlTagName("wbr")
 
-    inline val webview: TagName<HTMLElement>
-        get() = TagName("webview")
+    inline val webview: HtmlTagName<HTMLElement>
+        get() = HtmlTagName("webview")
 }
