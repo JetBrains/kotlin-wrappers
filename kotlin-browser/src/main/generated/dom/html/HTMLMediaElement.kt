@@ -55,8 +55,7 @@ abstract external class HTMLMediaElement :
 
     /** Gets the current network activity for the element. */
     val networkState: Short
-    // onencrypted: ((this: HTMLMediaElement, ev: MediaEncryptedEvent) => any) | null
-    // onwaitingforkey: ((this: HTMLMediaElement, ev: Event) => any) | null
+
     /** Gets a flag that specifies whether playback is paused. */
     val paused: Boolean
 

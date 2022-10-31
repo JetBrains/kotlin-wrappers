@@ -7,7 +7,6 @@ import web.events.EventTarget
 
 sealed external class SpeechSynthesis :
     EventTarget {
-    // onvoiceschanged: ((this: SpeechSynthesis, ev: Event) => any) | null
     val paused: Boolean
     val pending: Boolean
     val speaking: Boolean

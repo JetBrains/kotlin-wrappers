@@ -11,10 +11,6 @@ open external class Animation :
     var effect: AnimationEffect?
     val finished: Promise<Animation>
     var id: String
-
-    // oncancel: ((this: Animation, ev: AnimationPlaybackEvent) => any) | null
-    // onfinish: ((this: Animation, ev: AnimationPlaybackEvent) => any) | null
-    // onremove: ((this: Animation, ev: Event) => any) | null
     val pending: Boolean
     val playState: AnimationPlayState
     var playbackRate: Double

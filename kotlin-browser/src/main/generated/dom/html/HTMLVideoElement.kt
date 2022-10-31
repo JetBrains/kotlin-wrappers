@@ -10,8 +10,7 @@ abstract external class HTMLVideoElement :
 
     /** Gets or sets the height of the video element. */
     var height: Double
-    // onenterpictureinpicture: ((this: HTMLVideoElement, ev: Event) => any) | null
-    // onleavepictureinpicture: ((this: HTMLVideoElement, ev: Event) => any) | null
+
     /** Gets or sets the playsinline of the video element. for example, On iPhone, video elements will now be allowed to play inline, and will not automatically enter fullscreen mode when playback begins. */
     var playsInline: Boolean
 

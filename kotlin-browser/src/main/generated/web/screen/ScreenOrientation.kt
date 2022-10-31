@@ -9,8 +9,6 @@ import kotlin.js.Promise
 sealed external class ScreenOrientation :
     EventTarget {
     val angle: Double
-
-    // onchange: ((this: ScreenOrientation, ev: Event) => any) | null
     val type: OrientationType
     fun lock(orientation: OrientationLockType): Promise<Void>
     fun unlock()
