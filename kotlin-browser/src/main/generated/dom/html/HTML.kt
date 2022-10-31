@@ -1,3 +1,5 @@
+// Automatically generated - do not modify!
+
 package dom.html
 
 object HTML {
@@ -34,9 +36,6 @@ object HTML {
     inline val bdo: HtmlTagName<HTMLElement>
         get() = HtmlTagName("bdo")
 
-    inline val big: HtmlTagName<HTMLElement>
-        get() = HtmlTagName("big")
-
     inline val blockquote: HtmlTagName<HTMLQuoteElement>
         get() = HtmlTagName("blockquote")
 
@@ -52,7 +51,7 @@ object HTML {
     inline val canvas: HtmlTagName<HTMLCanvasElement>
         get() = HtmlTagName("canvas")
 
-    inline val caption: HtmlTagName<HTMLElement>
+    inline val caption: HtmlTagName<HTMLTableCaptionElement>
         get() = HtmlTagName("caption")
 
     inline val cite: HtmlTagName<HTMLElement>
@@ -136,7 +135,7 @@ object HTML {
     inline val h6: HtmlTagName<HTMLHeadingElement>
         get() = HtmlTagName("h6")
 
-    inline val head: HtmlTagName<HTMLElement>
+    inline val head: HtmlTagName<HTMLHeadElement>
         get() = HtmlTagName("head")
 
     inline val header: HtmlTagName<HTMLElement>
@@ -169,9 +168,6 @@ object HTML {
     inline val kbd: HtmlTagName<HTMLElement>
         get() = HtmlTagName("kbd")
 
-    inline val keygen: HtmlTagName<HTMLElement>
-        get() = HtmlTagName("keygen")
-
     inline val label: HtmlTagName<HTMLLabelElement>
         get() = HtmlTagName("label")
 
@@ -193,11 +189,8 @@ object HTML {
     inline val mark: HtmlTagName<HTMLElement>
         get() = HtmlTagName("mark")
 
-    inline val menu: HtmlTagName<HTMLElement>
+    inline val menu: HtmlTagName<HTMLMenuElement>
         get() = HtmlTagName("menu")
-
-    inline val menuitem: HtmlTagName<HTMLElement>
-        get() = HtmlTagName("menuitem")
 
     inline val meta: HtmlTagName<HTMLMetaElement>
         get() = HtmlTagName("meta")
@@ -229,10 +222,7 @@ object HTML {
     inline val p: HtmlTagName<HTMLParagraphElement>
         get() = HtmlTagName("p")
 
-    inline val param: HtmlTagName<HTMLParamElement>
-        get() = HtmlTagName("param")
-
-    inline val picture: HtmlTagName<HTMLElement>
+    inline val picture: HtmlTagName<HTMLPictureElement>
         get() = HtmlTagName("picture")
 
     inline val pre: HtmlTagName<HTMLPreElement>
@@ -259,9 +249,6 @@ object HTML {
     inline val samp: HtmlTagName<HTMLElement>
         get() = HtmlTagName("samp")
 
-    inline val slot: HtmlTagName<HTMLSlotElement>
-        get() = HtmlTagName("slot")
-
     inline val script: HtmlTagName<HTMLScriptElement>
         get() = HtmlTagName("script")
 
@@ -270,6 +257,9 @@ object HTML {
 
     inline val select: HtmlTagName<HTMLSelectElement>
         get() = HtmlTagName("select")
+
+    inline val slot: HtmlTagName<HTMLSlotElement>
+        get() = HtmlTagName("slot")
 
     inline val small: HtmlTagName<HTMLElement>
         get() = HtmlTagName("small")
@@ -298,14 +288,14 @@ object HTML {
     inline val table: HtmlTagName<HTMLTableElement>
         get() = HtmlTagName("table")
 
-    inline val template: HtmlTagName<HTMLTemplateElement>
-        get() = HtmlTagName("template")
-
     inline val tbody: HtmlTagName<HTMLTableSectionElement>
         get() = HtmlTagName("tbody")
 
     inline val td: HtmlTagName<HTMLTableCellElement>
         get() = HtmlTagName("td")
+
+    inline val template: HtmlTagName<HTMLTemplateElement>
+        get() = HtmlTagName("template")
 
     inline val textarea: HtmlTagName<HTMLTextAreaElement>
         get() = HtmlTagName("textarea")
@@ -345,7 +335,4 @@ object HTML {
 
     inline val wbr: HtmlTagName<HTMLElement>
         get() = HtmlTagName("wbr")
-
-    inline val webview: HtmlTagName<HTMLElement>
-        get() = HtmlTagName("webview")
 }
