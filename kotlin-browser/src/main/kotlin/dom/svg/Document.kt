@@ -2,9 +2,9 @@ package dom.svg
 
 import dom.Document
 
-const val SVG_NAMESPACE: String = "http://www.w3.org/2000/svg"
+private const val SVG_NAMESPACE: String = "http://www.w3.org/2000/svg"
 
-inline fun <T : SVGElement> Document.createElement(
+fun <T : SVGElement> Document.createElement(
     tagName: SvgTagName<T>,
 ): T =
     createElementNS(
