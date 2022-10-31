@@ -2,4 +2,14 @@
 
 package web.clipboard
 
-typealias Clipboard = org.w3c.dom.clipboard.Clipboard
+import kotlinx.js.Void
+import web.events.EventTarget
+import kotlin.js.Promise
+
+sealed external class Clipboard :
+    EventTarget {
+    fun read(): Promise<ClipboardItems>
+    fun readText(): Promise<String>
+    fun write(data: ClipboardItems): Promise<Void>
+    fun writeText(data: String): Promise<Void>
+}
