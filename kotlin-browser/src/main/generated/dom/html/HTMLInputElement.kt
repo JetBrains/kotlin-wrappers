@@ -3,7 +3,9 @@
 package dom.html
 
 import dom.NodeListOf
+import kotlinx.js.ReadonlyArray
 import web.file.FileList
+import web.filesystem.FileSystemEntry
 import kotlin.js.Date
 
 abstract external class HTMLInputElement :
@@ -117,8 +119,9 @@ abstract external class HTMLInputElement :
 
     /** Returns the input field value as a number. */
     var valueAsNumber: Double
-    // readonly webkitEntries: ReadonlyArray<FileSystemEntry>
-    // webkitdirectory: boolean
+    val webkitEntries: ReadonlyArray<FileSystemEntry>
+    var webkitdirectory: Boolean
+
     /** Sets or retrieves the width of the object. */
     var width: Double
 
