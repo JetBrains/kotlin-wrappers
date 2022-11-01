@@ -87,4 +87,10 @@ sealed external class Cesium3DTile {
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTile.html#extras">Online Documentation</a>
      */
     val extras: Any
+
+    /**
+     * Gets the I3S Node for the tile.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTile.html#i3sNode">Online Documentation</a>
+     */
+    var i3sNode: String
 }

@@ -79,13 +79,13 @@ external class KmlTour(
 
     /**
      * Play this tour.
-     * @param [viewer] viewer widget.
+     * @param [widget] The widget.
      * @param [cameraOptions] these options will be merged with [Camera.flyTo]
      *   options for FlyTo playlist entries.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/KmlTour.html#play">Online Documentation</a>
      */
     fun play(
-        viewer: Viewer,
+        widget: dynamic,
         cameraOptions: Any? = definedExternally,
     )
 
