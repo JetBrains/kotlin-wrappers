@@ -2,4 +2,13 @@
 
 package dom
 
-typealias DocumentFragment = org.w3c.dom.DocumentFragment
+import dom.html.HTMLElement
+
+sealed external class DocumentFragment :
+    Node,
+    NonElementParentNode,
+    ParentNode {
+    // TEMP: WA for old `Node`
+    // override val ownerDocument: Document
+    override fun getElementById(elementId: String): HTMLElement?
+}
