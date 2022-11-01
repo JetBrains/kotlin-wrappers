@@ -1,4 +1,4 @@
-package dom
+package cssom.fonts
 
 import kotlinx.js.ReadonlyArray
 import kotlin.js.Promise
