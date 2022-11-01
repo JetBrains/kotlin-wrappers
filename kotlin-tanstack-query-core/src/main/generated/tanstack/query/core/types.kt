@@ -67,7 +67,7 @@ external interface QueryObserverOptions<TQueryFnData, TError, TData, TQueryData,
     : QueryOptions<TQueryFnData, TError, TQueryData, TQueryKey> {
     var enabled: Boolean
     var staleTime: JsDuration
-    var refetchInterval: Any /* number | false | ((data: TData | undefined, query: Query<TQueryFnData, TError, TQueryData, TQueryKey>) => number | false) */
+    var refetchInterval: (data: TData?, query: Query<TQueryFnData, TError, TQueryData, TQueryKey>) -> JsDuration /* | number | false */
     var refetchIntervalInBackground: Boolean
     var refetchOnWindowFocus: (query: Query<TQueryFnData, TError, TQueryData, TQueryKey>) -> Boolean /* | boolean | 'always' */
     var refetchOnReconnect: (query: Query<TQueryFnData, TError, TQueryData, TQueryKey>) -> Boolean /* | boolean | 'always' */
