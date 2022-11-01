@@ -2,6 +2,7 @@
 
 package dom
 
+import cssom.fonts.FontFaceSource
 import dom.html.*
 import kotlinx.js.Void
 import web.url.URL
@@ -10,6 +11,7 @@ import kotlin.js.Promise
 abstract external class Document :
     Node,
     DocumentOrShadowRoot,
+    FontFaceSource,
     NonElementParentNode,
     ParentNode {
     /** Sets or gets the URL for the current document. */

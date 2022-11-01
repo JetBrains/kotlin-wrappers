@@ -2,6 +2,6 @@
 
 package cssom.fonts
 
-sealed external interface FontFaceSource {
+external interface FontFaceSource {
     val fonts: FontFaceSet
 }
