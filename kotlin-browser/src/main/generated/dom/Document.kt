@@ -4,6 +4,7 @@ package dom
 
 import cssom.fonts.FontFaceSource
 import dom.html.*
+import dom.xpath.XPathEvaluatorBase
 import kotlinx.js.Void
 import web.url.URL
 import kotlin.js.Promise
@@ -13,7 +14,8 @@ abstract external class Document :
     DocumentOrShadowRoot,
     FontFaceSource,
     NonElementParentNode,
-    ParentNode {
+    ParentNode,
+    XPathEvaluatorBase {
     /** Sets or gets the URL for the current document. */
     val URL: String
 
