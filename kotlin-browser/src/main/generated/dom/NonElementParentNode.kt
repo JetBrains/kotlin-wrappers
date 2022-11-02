@@ -2,4 +2,7 @@
 
 package dom
 
-typealias NonElementParentNode = org.w3c.dom.NonElementParentNode
+sealed external interface NonElementParentNode {
+    /** Returns the first element within node's descendants whose ID is elementId. */
+    fun getElementById(elementId: String): Element?
+}

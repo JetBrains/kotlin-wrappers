@@ -2,4 +2,5 @@
 
 package dom
 
-typealias CDATASection = org.w3c.dom.CDATASection
+sealed external class CDATASection :
+    Text

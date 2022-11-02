@@ -2,4 +2,6 @@
 
 package dom
 
-typealias ElementCreationOptions = org.w3c.dom.ElementCreationOptions
+sealed external interface ElementCreationOptions {
+    var `is`: String?
+}

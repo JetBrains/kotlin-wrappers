@@ -2,5 +2,4 @@
 
 package dom
 
-sealed external class Comment :
-    CharacterData
+typealias CharacterData = org.w3c.dom.CharacterData
