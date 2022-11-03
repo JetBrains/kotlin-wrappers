@@ -78,9 +78,6 @@ include("kotlin-react-legacy")
 // Kotlin/JS: React Popper wrappers
 include("kotlin-react-popper")
 
-// Kotlin/JS: React Query wrappers
-include("kotlin-react-query")
-
 // Kotlin/JS: React Redux wrappers
 include("kotlin-react-redux")
 
@@ -89,12 +86,6 @@ include("kotlin-react-router-dom")
 
 // Kotlin/JS: React Select wrappers
 include("kotlin-react-select")
-
-// Kotlin/JS: React Table wrappers
-include("kotlin-react-table")
-
-// Kotlin/JS: React Virtual wrappers
-include("kotlin-react-virtual")
 
 // Kotlin/JS: Redux wrappers
 include("kotlin-redux")
