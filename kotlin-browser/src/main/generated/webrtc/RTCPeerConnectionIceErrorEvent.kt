@@ -7,9 +7,9 @@ import web.events.EventInit
 
 external interface RTCPeerConnectionIceErrorEventInit : EventInit {
     var address: String?
-    var errorCode: Short
+    var errorCode: Int
     var errorText: String?
-    var port: Short?
+    var port: Int?
     var url: String?
 }
 
@@ -18,9 +18,9 @@ open external class RTCPeerConnectionIceErrorEvent(
     init: RTCPeerConnectionIceErrorEventInit,
 ) : Event {
     val address: String?
-    val errorCode: Short
+    val errorCode: Int
     val errorText: String
-    val port: Short?
+    val port: Int?
     val url: String
 
     companion object
