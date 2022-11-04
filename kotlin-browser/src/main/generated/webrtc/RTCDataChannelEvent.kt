@@ -2,7 +2,17 @@
 
 package webrtc
 
-external class RTCDataChannelEvent : web.events.Event {
+import web.events.Event
+import web.events.EventInit
+
+external interface RTCDataChannelEventInit : EventInit {
+    var channel: RTCDataChannel
+}
+
+open external class RTCDataChannelEvent(
+    type: String,
+    init: RTCDataChannelEventInit,
+) : Event {
     val channel: RTCDataChannel
 
     companion object

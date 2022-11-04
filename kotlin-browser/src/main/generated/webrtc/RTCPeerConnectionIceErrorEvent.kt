@@ -2,11 +2,25 @@
 
 package webrtc
 
-external class RTCPeerConnectionIceErrorEvent : web.events.Event {
+import web.events.Event
+import web.events.EventInit
+
+external interface RTCPeerConnectionIceErrorEventInit : EventInit {
+    var address: String?
+    var errorCode: Short
+    var errorText: String?
+    var port: Short?
+    var url: String?
+}
+
+open external class RTCPeerConnectionIceErrorEvent(
+    type: String,
+    init: RTCPeerConnectionIceErrorEventInit,
+) : Event {
     val address: String?
-    val errorCode: Number
+    val errorCode: Short
     val errorText: String
-    val port: Number?
+    val port: Short?
     val url: String
 
     companion object
