@@ -2,5 +2,19 @@
 
 package web.clipboard
 
-typealias ClipboardEventInit = org.w3c.dom.clipboard.ClipboardEventInit
-typealias ClipboardEvent = org.w3c.dom.clipboard.ClipboardEvent
+import dom.events.DataTransfer
+import web.events.Event
+import web.events.EventInit
+
+external interface ClipboardEventInit : EventInit {
+    var clipboardData: DataTransfer?
+}
+
+open external class ClipboardEvent(
+    type: String,
+    init: ClipboardEventInit = definedExternally,
+) : Event {
+    val clipboardData: DataTransfer?
+
+    companion object
+}

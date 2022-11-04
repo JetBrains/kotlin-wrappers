@@ -2,7 +2,6 @@
 
 package web.clipboard
 
-import org.w3c.dom.clipboard.ClipboardEvent
 import web.events.EventType
 
 inline val ClipboardEvent.Companion.COPY: EventType<ClipboardEvent>
