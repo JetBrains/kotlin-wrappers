@@ -17,5 +17,10 @@ external interface DeviceMotionEventInit : EventInit {
 }
 
 sealed external class DeviceMotionEvent : Event {
+    val acceleration: DeviceMotionEventAcceleration?
+    val accelerationIncludingGravity: DeviceMotionEventAcceleration?
+    val interval: Double
+    val rotationRate: DeviceMotionEventRotationRate?
+
     companion object
 }

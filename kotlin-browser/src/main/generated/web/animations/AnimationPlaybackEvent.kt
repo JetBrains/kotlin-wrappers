@@ -15,5 +15,8 @@ external interface AnimationPlaybackEventInit : EventInit {
 }
 
 sealed external class AnimationPlaybackEvent : Event {
+    val currentTime: CSSNumberish?
+    val timelineTime: CSSNumberish?
+
     companion object
 }

@@ -17,5 +17,10 @@ external interface DeviceOrientationEventInit : EventInit {
 }
 
 sealed external class DeviceOrientationEvent : Event {
+    val absolute: Boolean
+    val alpha: Double?
+    val beta: Double?
+    val gamma: Double?
+
     companion object
 }

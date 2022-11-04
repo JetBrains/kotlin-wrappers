@@ -14,5 +14,7 @@ external interface OfflineAudioCompletionEventInit : EventInit {
 }
 
 sealed external class OfflineAudioCompletionEvent : Event {
+    val renderedBuffer: Any /* AudioBuffer */
+
     companion object
 }

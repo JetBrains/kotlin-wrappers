@@ -18,5 +18,11 @@ external interface SpeechSynthesisEventInit : EventInit {
 }
 
 sealed external class SpeechSynthesisEvent : Event {
+    val charIndex: Int
+    val charLength: Int
+    val elapsedTime: Double
+    val name: String
+    val utterance: SpeechSynthesisUtterance
+
     companion object
 }

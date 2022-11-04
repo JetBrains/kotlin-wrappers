@@ -14,5 +14,7 @@ external interface GamepadEventInit : EventInit {
 }
 
 sealed external class GamepadEvent : Event {
+    val gamepad: Gamepad
+
     companion object
 }

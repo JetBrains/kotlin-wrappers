@@ -6,12 +6,12 @@
 
 package web.speech
 
-import web.events.Event
-
 external interface SpeechSynthesisErrorEventInit : SpeechSynthesisEventInit {
     var error: SpeechSynthesisErrorCode
 }
 
-sealed external class SpeechSynthesisErrorEvent : Event {
+sealed external class SpeechSynthesisErrorEvent : SpeechSynthesisEvent {
+    val error: SpeechSynthesisErrorCode
+
     companion object
 }
