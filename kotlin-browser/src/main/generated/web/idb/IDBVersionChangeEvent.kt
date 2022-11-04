@@ -6,12 +6,13 @@
 
 package web.idb
 
+import kotlinx.js.JsLong
 import web.events.Event
 import web.events.EventInit
 
 external interface IDBVersionChangeEventInit : EventInit {
-    var newVersion: Int?
-    var oldVersion: Int?
+    var newVersion: JsLong?
+    var oldVersion: JsLong?
 }
 
 sealed external class IDBVersionChangeEvent : Event {
