@@ -6,21 +6,20 @@
 
 package dom.events
 
-import kotlinx.js.HighResTimeStamp
 import web.events.Event
 import web.events.EventInit
 
 external interface TransitionEventInit : EventInit {
-    var elapsedTime: HighResTimeStamp?
+    var elapsedTime: Double?
     var propertyName: String?
     var pseudoElement: String?
 }
 
-external class TransitionEvent(
+open external class TransitionEvent(
     type: String,
     init: TransitionEventInit = definedExternally,
 ) : Event {
-    val elapsedTime: HighResTimeStamp
+    val elapsedTime: Double
     val propertyName: String
     val pseudoElement: String
 

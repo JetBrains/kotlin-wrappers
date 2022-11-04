@@ -6,22 +6,21 @@
 
 package web.animations
 
-import kotlinx.js.HighResTimeStamp
 import web.events.Event
 import web.events.EventInit
 
 external interface AnimationEventInit : EventInit {
     var animationName: String?
-    var elapsedTime: HighResTimeStamp?
+    var elapsedTime: Double?
     var pseudoElement: String?
 }
 
-external class AnimationEvent(
+open external class AnimationEvent(
     type: String,
     init: AnimationEventInit = definedExternally,
 ) : Event {
     val animationName: String
-    val elapsedTime: HighResTimeStamp
+    val elapsedTime: Double
     val pseudoElement: String
 
     companion object
