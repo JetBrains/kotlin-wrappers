@@ -2,7 +2,9 @@
 
 package web.storage
 
+import kotlinx.js.JsLong
+
 sealed external interface StorageEstimate {
-    var quota: Double /* Int64 */?
-    var usage: Double /* Int64 */?
+    var quota: JsLong?
+    var usage: JsLong?
 }

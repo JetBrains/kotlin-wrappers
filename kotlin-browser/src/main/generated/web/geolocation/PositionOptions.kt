@@ -2,8 +2,10 @@
 
 package web.geolocation
 
+import kotlinx.js.JsLong
+
 sealed external interface PositionOptions {
     var enableHighAccuracy: Boolean?
-    var maximumAge: Double /* Int64 */?
-    var timeout: Double /* Int64 */?
+    var maximumAge: JsLong?
+    var timeout: JsLong?
 }
