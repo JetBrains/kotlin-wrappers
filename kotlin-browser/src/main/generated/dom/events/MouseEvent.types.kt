@@ -2,7 +2,6 @@
 
 package dom.events
 
-import org.w3c.dom.events.MouseEvent
 import web.events.EventType
 
 inline val MouseEvent.Companion.AUX_CLICK: EventType<MouseEvent>

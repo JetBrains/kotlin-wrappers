@@ -2,5 +2,16 @@
 
 package dom.events
 
-typealias DragEventInit = org.w3c.dom.DragEventInit
-typealias DragEvent = org.w3c.dom.DragEvent
+external interface DragEventInit : MouseEventInit {
+    var dataTransfer: DataTransfer?
+}
+
+open external class DragEvent(
+    type: String,
+    init: DragEventInit = definedExternally,
+) : MouseEvent {
+    /** Returns the DataTransfer object for the event. */
+    val dataTransfer: DataTransfer?
+
+    companion object
+}

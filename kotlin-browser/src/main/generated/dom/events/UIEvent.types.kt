@@ -2,7 +2,6 @@
 
 package dom.events
 
-import org.w3c.dom.events.UIEvent
 import web.events.EventType
 
 inline val UIEvent.Companion.ABORT: EventType<UIEvent>

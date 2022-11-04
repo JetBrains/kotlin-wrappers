@@ -2,7 +2,6 @@
 
 package dom.events
 
-import org.w3c.dom.events.KeyboardEvent
 import web.events.EventType
 
 inline val KeyboardEvent.Companion.KEY_DOWN: EventType<KeyboardEvent>

@@ -2,5 +2,21 @@
 
 package dom.events
 
-typealias UIEventInit = org.w3c.dom.events.UIEventInit
-typealias UIEvent = org.w3c.dom.events.UIEvent
+import dom.html.Window
+import web.events.Event
+import web.events.EventInit
+
+external interface UIEventInit : EventInit {
+    var detail: Int?
+    var view: Window?
+}
+
+open external class UIEvent(
+    type: String,
+    init: UIEventInit = definedExternally,
+) : Event {
+    val detail: Int
+    val view: Window?
+
+    companion object
+}

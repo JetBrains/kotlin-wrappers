@@ -2,7 +2,6 @@
 
 package dom.events
 
-import org.w3c.dom.TouchEvent
 import web.events.EventType
 
 inline val TouchEvent.Companion.TOUCH_CANCEL: EventType<TouchEvent>

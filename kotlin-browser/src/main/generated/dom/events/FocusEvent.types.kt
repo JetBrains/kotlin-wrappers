@@ -2,7 +2,6 @@
 
 package dom.events
 
-import org.w3c.dom.events.FocusEvent
 import web.events.EventType
 
 inline val FocusEvent.Companion.BLUR: EventType<FocusEvent>

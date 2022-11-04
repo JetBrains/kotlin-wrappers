@@ -2,5 +2,17 @@
 
 package dom.events
 
-typealias FocusEventInit = org.w3c.dom.events.FocusEventInit
-typealias FocusEvent = org.w3c.dom.events.FocusEvent
+import web.events.EventTarget
+
+external interface FocusEventInit : UIEventInit {
+    var relatedTarget: EventTarget?
+}
+
+open external class FocusEvent(
+    type: String,
+    init: FocusEventInit = definedExternally,
+) : UIEvent {
+    val relatedTarget: EventTarget?
+
+    companion object
+}

@@ -2,5 +2,15 @@
 
 package dom.events
 
-typealias CompositionEventInit = org.w3c.dom.events.CompositionEventInit
-typealias CompositionEvent = org.w3c.dom.events.CompositionEvent
+external interface CompositionEventInit : UIEventInit {
+    var data: String?
+}
+
+open external class CompositionEvent(
+    type: String,
+    init: CompositionEventInit = definedExternally,
+) : UIEvent {
+    val data: String
+
+    companion object
+}

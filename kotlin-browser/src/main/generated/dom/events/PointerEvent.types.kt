@@ -2,7 +2,6 @@
 
 package dom.events
 
-import org.w3c.dom.pointerevents.PointerEvent
 import web.events.EventType
 
 inline val PointerEvent.Companion.GOT_POINTER_CAPTURE: EventType<PointerEvent>
