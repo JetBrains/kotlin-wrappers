@@ -1,9 +1,5 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package webgl
 
 import web.events.Event
@@ -15,7 +11,7 @@ external interface WebGLContextEventInit : EventInit {
 
 open external class WebGLContextEvent(
     type: String,
-    eventInit: WebGLContextEventInit = definedExternally,
+    init: WebGLContextEventInit = definedExternally,
 ) : Event {
     val statusMessage: String
 
