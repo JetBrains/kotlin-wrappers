@@ -15,7 +15,7 @@ external interface GamepadEventInit : EventInit {
 
 open external class GamepadEvent(
     type: String,
-    eventInitDict: GamepadEventInit,
+    init: GamepadEventInit,
 ) : Event {
     val gamepad: Gamepad
 

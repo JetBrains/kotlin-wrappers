@@ -17,7 +17,7 @@ external interface BlobEventInit {
 
 open external class BlobEvent(
     type: String,
-    eventInitDict: BlobEventInit,
+    init: BlobEventInit,
 ) : Event {
     val data: Blob
     val timecode: HighResTimeStamp

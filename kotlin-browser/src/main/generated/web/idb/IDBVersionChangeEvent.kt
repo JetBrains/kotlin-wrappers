@@ -17,7 +17,7 @@ external interface IDBVersionChangeEventInit : EventInit {
 
 open external class IDBVersionChangeEvent(
     type: String,
-    eventInitDict: IDBVersionChangeEventInit = definedExternally,
+    init: IDBVersionChangeEventInit = definedExternally,
 ) : Event {
     val newVersion: JsLong?
     val oldVersion: JsLong

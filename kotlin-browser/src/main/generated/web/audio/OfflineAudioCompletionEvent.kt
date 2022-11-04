@@ -15,7 +15,7 @@ external interface OfflineAudioCompletionEventInit : EventInit {
 
 open external class OfflineAudioCompletionEvent(
     type: String,
-    eventInitDict: OfflineAudioCompletionEventInit,
+    init: OfflineAudioCompletionEventInit,
 ) : Event {
     val renderedBuffer: Any /* AudioBuffer */
 

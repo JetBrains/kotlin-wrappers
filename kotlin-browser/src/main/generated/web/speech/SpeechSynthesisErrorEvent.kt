@@ -12,7 +12,7 @@ external interface SpeechSynthesisErrorEventInit : SpeechSynthesisEventInit {
 
 open external class SpeechSynthesisErrorEvent(
     type: String,
-    eventInitDict: SpeechSynthesisErrorEventInit,
+    init: SpeechSynthesisErrorEventInit,
 ) : SpeechSynthesisEvent {
     val error: SpeechSynthesisErrorCode
 

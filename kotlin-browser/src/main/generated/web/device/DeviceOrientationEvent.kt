@@ -18,7 +18,7 @@ external interface DeviceOrientationEventInit : EventInit {
 
 open external class DeviceOrientationEvent(
     type: String,
-    eventInitDict: DeviceOrientationEventInit = definedExternally,
+    init: DeviceOrientationEventInit = definedExternally,
 ) : Event {
     val absolute: Boolean
     val alpha: Double?

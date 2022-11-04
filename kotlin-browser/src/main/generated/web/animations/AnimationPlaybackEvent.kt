@@ -16,7 +16,7 @@ external interface AnimationPlaybackEventInit : EventInit {
 
 open external class AnimationPlaybackEvent(
     type: String,
-    eventInitDict: AnimationPlaybackEventInit = definedExternally,
+    init: AnimationPlaybackEventInit = definedExternally,
 ) : Event {
     val currentTime: CSSNumberish?
     val timelineTime: CSSNumberish?

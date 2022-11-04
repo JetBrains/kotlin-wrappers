@@ -19,7 +19,7 @@ external interface SpeechSynthesisEventInit : EventInit {
 
 open external class SpeechSynthesisEvent(
     type: String,
-    eventInitDict: SpeechSynthesisEventInit,
+    init: SpeechSynthesisEventInit,
 ) : Event {
     val charIndex: Int
     val charLength: Int

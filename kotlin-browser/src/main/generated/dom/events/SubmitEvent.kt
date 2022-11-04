@@ -16,7 +16,7 @@ external interface SubmitEventInit : EventInit {
 
 open external class SubmitEvent(
     type: String,
-    eventInitDict: SubmitEventInit = definedExternally,
+    init: SubmitEventInit = definedExternally,
 ) : Event {
     /** Returns the element representing the submit button that triggered the form submission, or null if the submission was not triggered by a button. */
     val submitter: HTMLElement?

@@ -15,7 +15,7 @@ external interface FormDataEventInit : EventInit {
 
 open external class FormDataEvent(
     type: String,
-    eventInitDict: FormDataEventInit,
+    init: FormDataEventInit,
 ) : Event {
     /** Returns a FormData object representing names and values of elements associated to the target form. Operations on the FormData object will affect form data to be submitted. */
     val formData: FormData

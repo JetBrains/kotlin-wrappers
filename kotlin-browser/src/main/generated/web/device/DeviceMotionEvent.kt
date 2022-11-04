@@ -18,7 +18,7 @@ external interface DeviceMotionEventInit : EventInit {
 
 open external class DeviceMotionEvent(
     type: String,
-    eventInitDict: DeviceMotionEventInit = definedExternally,
+    init: DeviceMotionEventInit = definedExternally,
 ) : Event {
     val acceleration: DeviceMotionEventAcceleration?
     val accelerationIncludingGravity: DeviceMotionEventAcceleration?
