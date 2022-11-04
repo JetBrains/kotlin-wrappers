@@ -2,5 +2,21 @@
 
 package media
 
-typealias MediaEncryptedEventInit = org.w3c.dom.encryptedmedia.MediaEncryptedEventInit
-typealias MediaEncryptedEvent = org.w3c.dom.encryptedmedia.MediaEncryptedEvent
+import kotlinx.js.ArrayBuffer
+import web.events.Event
+import web.events.EventInit
+
+external interface MediaEncryptedEventInit : EventInit {
+    var initData: ArrayBuffer?
+    var initDataType: String?
+}
+
+open external class MediaEncryptedEvent(
+    type: String,
+    init: MediaEncryptedEventInit = definedExternally,
+) : Event {
+    val initData: ArrayBuffer?
+    val initDataType: String
+
+    companion object
+}

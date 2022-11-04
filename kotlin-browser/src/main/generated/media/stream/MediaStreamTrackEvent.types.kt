@@ -2,7 +2,6 @@
 
 package media.stream
 
-import org.w3c.dom.mediacapture.MediaStreamTrackEvent
 import web.events.EventType
 
 inline val MediaStreamTrackEvent.Companion.ADD_TRACK: EventType<MediaStreamTrackEvent>

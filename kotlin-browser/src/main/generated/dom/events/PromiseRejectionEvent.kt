@@ -2,5 +2,21 @@
 
 package dom.events
 
-typealias PromiseRejectionEventInit = org.w3c.dom.PromiseRejectionEventInit
-typealias PromiseRejectionEvent = org.w3c.dom.PromiseRejectionEvent
+import web.events.Event
+import web.events.EventInit
+import kotlin.js.Promise
+
+external interface PromiseRejectionEventInit : EventInit {
+    var promise: Promise<*>
+    var reason: Any?
+}
+
+open external class PromiseRejectionEvent(
+    type: String,
+    init: PromiseRejectionEventInit,
+) : Event {
+    val promise: Promise<*>
+    val reason: Any?
+
+    companion object
+}

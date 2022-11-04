@@ -2,5 +2,19 @@
 
 package web.history
 
-typealias PopStateEventInit = org.w3c.dom.PopStateEventInit
-typealias PopStateEvent = org.w3c.dom.PopStateEvent
+import web.events.Event
+import web.events.EventInit
+
+external interface PopStateEventInit : EventInit {
+    var state: Any?
+}
+
+open external class PopStateEvent(
+    type: String,
+    init: PopStateEventInit = definedExternally,
+) : Event {
+    /** Returns a copy of the information that was provided to pushState() or replaceState(). */
+    val state: Any?
+
+    companion object
+}

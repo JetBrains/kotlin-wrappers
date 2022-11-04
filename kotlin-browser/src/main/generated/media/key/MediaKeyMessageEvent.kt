@@ -2,5 +2,21 @@
 
 package media.key
 
-typealias MediaKeyMessageEventInit = org.w3c.dom.encryptedmedia.MediaKeyMessageEventInit
-typealias MediaKeyMessageEvent = org.w3c.dom.encryptedmedia.MediaKeyMessageEvent
+import kotlinx.js.ArrayBuffer
+import web.events.Event
+import web.events.EventInit
+
+external interface MediaKeyMessageEventInit : EventInit {
+    var message: ArrayBuffer
+    var messageType: MediaKeyMessageType
+}
+
+open external class MediaKeyMessageEvent(
+    type: String,
+    init: MediaKeyMessageEventInit,
+) : Event {
+    val message: ArrayBuffer
+    val messageType: MediaKeyMessageType
+
+    companion object
+}

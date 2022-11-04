@@ -2,7 +2,6 @@
 
 package media
 
-import org.w3c.dom.TrackEvent
 import web.events.EventType
 
 inline val TrackEvent.Companion.ADD_TRACK: EventType<TrackEvent>

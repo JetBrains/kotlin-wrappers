@@ -2,5 +2,18 @@
 
 package media.stream
 
-typealias MediaStreamTrackEventInit = org.w3c.dom.mediacapture.MediaStreamTrackEventInit
-typealias MediaStreamTrackEvent = org.w3c.dom.mediacapture.MediaStreamTrackEvent
+import web.events.Event
+import web.events.EventInit
+
+external interface MediaStreamTrackEventInit : EventInit {
+    var track: MediaStreamTrack
+}
+
+open external class MediaStreamTrackEvent(
+    type: String,
+    init: MediaStreamTrackEventInit,
+) : Event {
+    val track: MediaStreamTrack
+
+    companion object
+}

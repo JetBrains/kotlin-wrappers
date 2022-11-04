@@ -2,4 +2,10 @@
 
 package dom.events
 
-typealias BeforeUnloadEvent = org.w3c.dom.BeforeUnloadEvent
+import web.events.Event
+
+sealed external class BeforeUnloadEvent : Event {
+    var returnValue: Any?
+
+    companion object
+}
