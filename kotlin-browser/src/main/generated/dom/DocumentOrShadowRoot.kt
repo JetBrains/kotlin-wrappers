@@ -7,7 +7,7 @@ import cssom.StyleSheetList
 import kotlinx.js.ReadonlyArray
 import web.animations.Animation
 
-sealed external interface DocumentOrShadowRoot {
+external interface DocumentOrShadowRoot {
     /**
      * Returns the deepest element in the document through which or to which key events are being routed. This is, roughly speaking, the focused element in the document.
      *

@@ -14,7 +14,7 @@ sealed external interface ElementInternals :
     val labels: NodeList
 
     /** Returns the ShadowRoot for internals's target element, if the target element is a shadow host, or null otherwise. */
-    val shadowRoot: Any /* ShadowRoot */?
+    val shadowRoot: ShadowRoot?
 
     /** Returns the error message that would be shown to the user if internals's target element was to be checked for validity. */
     val validationMessage: String

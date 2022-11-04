@@ -4,7 +4,7 @@ package dom
 
 import dom.html.HTMLElement
 
-sealed external class DocumentFragment :
+abstract external class DocumentFragment :
     Node,
     NonElementParentNode,
     ParentNode {
