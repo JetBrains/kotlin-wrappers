@@ -1,6 +1,6 @@
 package styled.sheets
 
-import kotlinx.dom.appendText
+import dom.appendText
 
 /**
  * A stylesheet that is injected by setting the text of a <style> tag. Useful in development mode,
@@ -16,7 +16,9 @@ internal class DevSheet(type: RuleType) : AbstractSheet(type, maxRulesPerSheet =
     }
 
     override fun injectScheduled() {
-        getCurrentStyleElement(scheduledRules.size).appendText(scheduledRules.joinToString("\n"))
+        getCurrentStyleElement(scheduledRules.size)
+            .appendText(scheduledRules.joinToString("\n"))
+
         scheduledRules.clear()
     }
 
