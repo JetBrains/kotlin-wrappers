@@ -90,6 +90,8 @@ external interface DOMAttributes<T : Element> :
     var onProgressCapture: ReactEventHandler<T>?
     var onRateChange: ReactEventHandler<T>?
     var onRateChangeCapture: ReactEventHandler<T>?
+    var onResize: ReactEventHandler<T>?
+    var onResizeCapture: ReactEventHandler<T>?
     var onSeeked: ReactEventHandler<T>?
     var onSeekedCapture: ReactEventHandler<T>?
     var onSeeking: ReactEventHandler<T>?
