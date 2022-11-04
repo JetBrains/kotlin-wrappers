@@ -13,7 +13,10 @@ external interface OfflineAudioCompletionEventInit : EventInit {
     var renderedBuffer: Any /* AudioBuffer */
 }
 
-sealed external class OfflineAudioCompletionEvent : Event {
+open external class OfflineAudioCompletionEvent(
+    type: String,
+    eventInitDict: OfflineAudioCompletionEventInit,
+) : Event {
     val renderedBuffer: Any /* AudioBuffer */
 
     companion object

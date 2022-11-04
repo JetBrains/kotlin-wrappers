@@ -10,7 +10,15 @@ import kotlinx.js.HighResTimeStamp
 import web.buffer.Blob
 import web.events.Event
 
-sealed external class BlobEvent : Event {
+external interface BlobEventInit {
+    var data: Blob
+    var timecode: HighResTimeStamp?
+}
+
+open external class BlobEvent(
+    type: String,
+    eventInitDict: BlobEventInit,
+) : Event {
     val data: Blob
     val timecode: HighResTimeStamp
 

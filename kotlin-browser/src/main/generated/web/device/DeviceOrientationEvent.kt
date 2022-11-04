@@ -16,7 +16,10 @@ external interface DeviceOrientationEventInit : EventInit {
     var gamma: Double?
 }
 
-sealed external class DeviceOrientationEvent : Event {
+open external class DeviceOrientationEvent(
+    type: String,
+    eventInitDict: DeviceOrientationEventInit = definedExternally,
+) : Event {
     val absolute: Boolean
     val alpha: Double?
     val beta: Double?

@@ -10,7 +10,10 @@ external interface SpeechSynthesisErrorEventInit : SpeechSynthesisEventInit {
     var error: SpeechSynthesisErrorCode
 }
 
-sealed external class SpeechSynthesisErrorEvent : SpeechSynthesisEvent {
+open external class SpeechSynthesisErrorEvent(
+    type: String,
+    eventInitDict: SpeechSynthesisErrorEventInit,
+) : SpeechSynthesisEvent {
     val error: SpeechSynthesisErrorCode
 
     companion object

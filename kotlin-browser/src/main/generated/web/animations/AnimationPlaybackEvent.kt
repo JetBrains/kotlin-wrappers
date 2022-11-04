@@ -14,7 +14,10 @@ external interface AnimationPlaybackEventInit : EventInit {
     var timelineTime: CSSNumberish?
 }
 
-sealed external class AnimationPlaybackEvent : Event {
+open external class AnimationPlaybackEvent(
+    type: String,
+    eventInitDict: AnimationPlaybackEventInit = definedExternally,
+) : Event {
     val currentTime: CSSNumberish?
     val timelineTime: CSSNumberish?
 

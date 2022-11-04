@@ -13,7 +13,10 @@ external interface GamepadEventInit : EventInit {
     var gamepad: Gamepad
 }
 
-sealed external class GamepadEvent : Event {
+open external class GamepadEvent(
+    type: String,
+    eventInitDict: GamepadEventInit,
+) : Event {
     val gamepad: Gamepad
 
     companion object

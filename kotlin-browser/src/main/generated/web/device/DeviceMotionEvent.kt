@@ -16,7 +16,10 @@ external interface DeviceMotionEventInit : EventInit {
     var rotationRate: DeviceMotionEventRotationRateInit?
 }
 
-sealed external class DeviceMotionEvent : Event {
+open external class DeviceMotionEvent(
+    type: String,
+    eventInitDict: DeviceMotionEventInit = definedExternally,
+) : Event {
     val acceleration: DeviceMotionEventAcceleration?
     val accelerationIncludingGravity: DeviceMotionEventAcceleration?
     val interval: Double
