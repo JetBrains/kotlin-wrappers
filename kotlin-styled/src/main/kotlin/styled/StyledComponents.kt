@@ -1,13 +1,13 @@
 package styled
 
 import csstype.ClassName
+import dom.Element
 import kotlinx.browser.window
 import kotlinx.css.CssBuilder
 import kotlinx.css.CssDsl
 import kotlinx.css.RuleSet
 import kotlinx.html.*
 import kotlinx.js.jso
-import org.w3c.dom.Element
 import react.*
 import react.dom.DOMProps
 import react.dom.RDOMBuilder
