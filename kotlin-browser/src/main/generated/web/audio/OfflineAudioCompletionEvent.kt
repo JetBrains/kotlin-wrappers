@@ -7,6 +7,11 @@
 package web.audio
 
 import web.events.Event
+import web.events.EventInit
+
+external interface OfflineAudioCompletionEventInit : EventInit {
+    var renderedBuffer: Any /* AudioBuffer */
+}
 
 sealed external class OfflineAudioCompletionEvent : Event {
     companion object

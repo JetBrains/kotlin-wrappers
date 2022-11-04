@@ -6,7 +6,13 @@
 
 package dom.events
 
+import dom.html.HTMLElement
 import web.events.Event
+import web.events.EventInit
+
+external interface SubmitEventInit : EventInit {
+    var submitter: HTMLElement?
+}
 
 sealed external class SubmitEvent : Event {
     companion object

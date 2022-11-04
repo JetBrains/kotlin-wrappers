@@ -8,6 +8,10 @@ package web.speech
 
 import web.events.Event
 
+external interface SpeechSynthesisErrorEventInit : SpeechSynthesisEventInit {
+    var error: SpeechSynthesisErrorCode
+}
+
 sealed external class SpeechSynthesisErrorEvent : Event {
     companion object
 }

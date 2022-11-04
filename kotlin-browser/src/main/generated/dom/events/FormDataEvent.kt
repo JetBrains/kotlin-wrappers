@@ -7,6 +7,11 @@
 package dom.events
 
 import web.events.Event
+import web.events.EventInit
+
+external interface FormDataEventInit : EventInit {
+    var formData: FormData
+}
 
 sealed external class FormDataEvent : Event {
     companion object

@@ -7,6 +7,12 @@
 package web.animations
 
 import web.events.Event
+import web.events.EventInit
+
+external interface AnimationPlaybackEventInit : EventInit {
+    var currentTime: CSSNumberish?
+    var timelineTime: CSSNumberish?
+}
 
 sealed external class AnimationPlaybackEvent : Event {
     companion object
