@@ -3,11 +3,13 @@
 package dom.svg
 
 import dom.Element
+import dom.HTMLOrSVGElement
 import dom.css.ElementCSSInlineStyle
 
 sealed external class SVGElement :
     Element,
-    ElementCSSInlineStyle {
+    ElementCSSInlineStyle,
+    HTMLOrSVGElement {
     val ownerSVGElement: SVGSVGElement?
     val viewportElement: SVGElement?
 }
