@@ -2,14 +2,18 @@
 
 package dom.html
 
+import dom.DocumentAndElementEventHandlers
 import dom.Element
+import dom.GlobalEventHandlers
 import dom.HTMLOrSVGElement
 import dom.css.ElementCSSInlineStyle
 
 abstract external class HTMLElement :
     Element,
+    DocumentAndElementEventHandlers,
     ElementCSSInlineStyle,
     ElementContentEditable,
+    GlobalEventHandlers,
     HTMLOrSVGElement {
     var accessKey: String
     val accessKeyLabel: String

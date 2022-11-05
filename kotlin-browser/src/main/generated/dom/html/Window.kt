@@ -3,6 +3,7 @@
 package dom.html
 
 import dom.Element
+import dom.GlobalEventHandlers
 import dom.ScrollToOptions
 import kotlinx.js.ReadonlyArray
 import web.events.EventTarget
@@ -10,7 +11,9 @@ import web.messaging.Transferable
 import web.url.URL
 
 sealed external class Window :
-    EventTarget {
+    EventTarget,
+    GlobalEventHandlers,
+    WindowEventHandlers {
     /** Returns true if the window has been closed, false otherwise. */
     val closed: Boolean
     val frameElement: Element?

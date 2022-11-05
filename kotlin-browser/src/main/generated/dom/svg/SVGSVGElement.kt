@@ -5,10 +5,12 @@ package dom.svg
 import dom.Element
 import dom.NodeListOf
 import dom.geometry.*
+import dom.html.WindowEventHandlers
 
 sealed external class SVGSVGElement :
     SVGGraphicsElement,
-    SVGFitToViewBox {
+    SVGFitToViewBox,
+    WindowEventHandlers {
     var currentScale: Double
     val currentTranslate: DOMPointReadOnly
     val height: SVGAnimatedLength

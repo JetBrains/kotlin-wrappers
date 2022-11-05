@@ -3,4 +3,5 @@
 package dom.html
 
 abstract external class HTMLBodyElement :
-    HTMLElement
+    HTMLElement,
+    WindowEventHandlers
