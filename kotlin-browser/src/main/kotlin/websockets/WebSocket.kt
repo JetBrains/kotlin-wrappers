@@ -4,7 +4,9 @@ import kotlinx.js.ArrayBuffer
 import kotlinx.js.ArrayBufferView
 import kotlinx.js.ReadonlyArray
 import web.buffer.Blob
+import web.events.Event
 import web.events.EventTarget
+import web.messaging.MessageEvent
 import web.url.URL
 
 external class WebSocket : EventTarget {
@@ -44,6 +46,10 @@ external class WebSocket : EventTarget {
 
     /** Returns the extensions selected by the server, if any. */
     val extensions: String
+    var onclose: ((event: CloseEvent) -> Unit)?
+    var onerror: ((event: Event) -> Unit)?
+    var onmessage: ((event: MessageEvent<*>) -> Unit)?
+    var onopen: ((event: Event) -> Unit)?
 
     /** Returns the subprotocol selected by the server, if any. It can be used in conjunction with the array form of the constructor's second argument to perform subprotocol negotiation. */
     val protocol: String
