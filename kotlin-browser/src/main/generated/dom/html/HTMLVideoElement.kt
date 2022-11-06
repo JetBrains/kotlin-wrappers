@@ -2,6 +2,7 @@
 
 package dom.html
 
+import web.events.Event
 import kotlin.js.Promise
 
 abstract external class HTMLVideoElement :
@@ -10,6 +11,8 @@ abstract external class HTMLVideoElement :
 
     /** Gets or sets the height of the video element. */
     var height: Double
+    var onenterpictureinpicture: ((event: Event) -> Unit)?
+    var onleavepictureinpicture: ((event: Event) -> Unit)?
 
     /** Gets or sets the playsinline of the video element. for example, On iPhone, video elements will now be allowed to play inline, and will not automatically enter fullscreen mode when playback begins. */
     var playsInline: Boolean

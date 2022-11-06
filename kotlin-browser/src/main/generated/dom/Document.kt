@@ -6,6 +6,7 @@ import cssom.fonts.FontFaceSource
 import dom.html.*
 import dom.xpath.XPathEvaluatorBase
 import kotlinx.js.Void
+import web.events.Event
 import web.url.URL
 import kotlin.js.Promise
 
@@ -94,6 +95,17 @@ abstract external class Document :
 
     /** Retrieves a collection of all a objects that specify the href property and all area objects in the document. */
     val links: HTMLCollectionOf<HTMLElement /* HTMLAnchorElement | HTMLAreaElement */>
+    var onfullscreenchange: ((event: Event) -> Unit)?
+    var onfullscreenerror: ((event: Event) -> Unit)?
+    var onpointerlockchange: ((event: Event) -> Unit)?
+    var onpointerlockerror: ((event: Event) -> Unit)?
+
+    /**
+     * Fires when the state of the object has changed.
+     * @param ev The event
+     */
+    var onreadystatechange: ((event: Event) -> Unit)?
+    var onvisibilitychange: ((event: Event) -> Unit)?
     override val ownerDocument: Void
     val pictureInPictureEnabled: Boolean
 

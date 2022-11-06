@@ -8,4 +8,5 @@ sealed external class MediaQueryList :
     EventTarget {
     val matches: Boolean
     val media: String
+    var onchange: ((event: MediaQueryListEvent) -> Unit)?
 }

@@ -3,10 +3,12 @@
 package dom.html
 
 import kotlinx.js.Void
+import media.MediaEncryptedEvent
 import media.MediaError
 import media.key.MediaKeys
 import media.source.TimeRanges
 import remoteplayback.RemotePlayback
+import web.events.Event
 import webvtt.TextTrack
 import webvtt.TextTrackKind
 import webvtt.TextTrackList
@@ -55,6 +57,8 @@ abstract external class HTMLMediaElement :
 
     /** Gets the current network activity for the element. */
     val networkState: Short
+    var onencrypted: ((event: MediaEncryptedEvent) -> Unit)?
+    var onwaitingforkey: ((event: Event) -> Unit)?
 
     /** Gets a flag that specifies whether playback is paused. */
     val paused: Boolean
