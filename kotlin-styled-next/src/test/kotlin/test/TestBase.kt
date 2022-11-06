@@ -1,13 +1,13 @@
 package test
 
 import TestScope
+import dom.Element
 import dom.html.HTMLInputElement
 import kotlinx.css.*
 import kotlinx.css.properties.KeyframesBuilder
 import kotlinx.css.properties.deg
 import kotlinx.css.properties.rotate
 import kotlinx.css.properties.transform
-import org.w3c.dom.Element
 import org.w3c.dom.get
 import runTest
 import kotlin.test.*

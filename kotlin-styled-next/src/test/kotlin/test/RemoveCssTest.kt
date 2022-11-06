@@ -2,11 +2,11 @@ package test
 
 import Component
 import RootInfo
+import dom.Element
 import kotlinx.css.color
 import kotlinx.css.paddingLeft
 import kotlinx.css.paddingRight
 import kotlinx.css.px
-import org.w3c.dom.Element
 import react.Props
 import react.dom.client.createRoot
 import react.dom.flushSync

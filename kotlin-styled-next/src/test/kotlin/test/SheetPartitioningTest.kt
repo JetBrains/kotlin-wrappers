@@ -2,9 +2,9 @@ package test
 
 import Component
 import RootInfo
+import dom.Element
 import kotlinx.css.height
 import kotlinx.css.px
-import org.w3c.dom.Element
 import react.FC
 import react.Props
 import react.dom.flushSync
