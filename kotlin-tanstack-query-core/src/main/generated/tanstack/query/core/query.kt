@@ -22,7 +22,6 @@ external interface QueryConfig<TQueryFnData, TError, TData, TQueryKey : QueryKey
     var options: QueryOptions<TQueryFnData, TError, TData, TQueryKey>
     var defaultOptions: QueryOptions<TQueryFnData, TError, TData, TQueryKey>
     var state: QueryState<TData, TError>
-    var meta: QueryMeta?
 }
 
 external interface QueryState<TData, TError> {
@@ -47,7 +46,6 @@ external interface FetchContext<TQueryFnData, TError, TData, TQueryKey : QueryKe
     var options: QueryOptions<TQueryFnData, TError, TData, *>
     var queryKey: TQueryKey
     var state: QueryState<TData, TError>
-    var meta: QueryMeta?
 }
 
 external interface QueryBehavior<TQueryFnData, TError, TData, TQueryKey : QueryKey> {
@@ -114,8 +112,8 @@ open external class Query<TQueryFnData, TError, TData, TQueryKey : QueryKey>(con
     open var initialState: QueryState<TData, TError>
     open var revertState: QueryState<TData, TError>
     open var state: QueryState<TData, TError>
-    open var meta: QueryMeta?
     open var isFetchingOptimistic: Boolean
+    open var meta: QueryMeta?
     override fun optionalRemove()
     open fun setData(
         newData: TData,
