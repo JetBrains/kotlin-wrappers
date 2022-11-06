@@ -3,7 +3,7 @@
 
 package ringui
 
-import org.w3c.dom.events.InputEvent
+import dom.events.InputEvent
 import react.CSSProperties
 import react.ComponentClass
 import react.PropsWithChildren

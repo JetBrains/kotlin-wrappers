@@ -3,7 +3,7 @@
 
 package ringui
 
-import org.w3c.dom.events.MouseEvent
+import dom.events.MouseEvent
 import react.ComponentClass
 import react.PropsWithChildren
 import react.PropsWithClassName
