@@ -229,7 +229,7 @@ external interface GlobalEventHandlers {
      * Occurs to indicate progress while downloading media data.
      * @param ev The event.
      */
-    var onprogress: ((event: ProgressEvent) -> Unit)?
+    var onprogress: ((event: ProgressEvent<*>) -> Unit)?
 
     /**
      * Occurs when the playback rate is increased or decreased.

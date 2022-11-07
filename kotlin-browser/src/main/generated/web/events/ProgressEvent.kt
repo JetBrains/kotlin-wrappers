@@ -2,5 +2,22 @@
 
 package web.events
 
-typealias ProgressEventInit = org.w3c.xhr.ProgressEventInit
-typealias ProgressEvent = org.w3c.xhr.ProgressEvent
+import kotlinx.js.JsLong
+
+external interface ProgressEventInit : EventInit {
+    var lengthComputable: Boolean?
+    var loaded: JsLong?
+    var total: JsLong?
+}
+
+external class ProgressEvent<T : EventTarget>(
+    type: String,
+    init: ProgressEventInit = definedExternally,
+) : Event {
+    val lengthComputable: Boolean
+    val loaded: JsLong
+    override val target: T?
+    val total: JsLong
+
+    companion object
+}
