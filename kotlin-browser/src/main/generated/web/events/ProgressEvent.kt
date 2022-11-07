@@ -10,7 +10,7 @@ external interface ProgressEventInit : EventInit {
     var total: JsLong?
 }
 
-external class ProgressEvent<T : EventTarget>(
+open external class ProgressEvent<T : EventTarget>(
     type: String,
     init: ProgressEventInit = definedExternally,
 ) : Event {
