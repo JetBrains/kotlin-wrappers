@@ -2,7 +2,7 @@
 
 package web.idb
 
-import org.w3c.dom.events.Event
+import web.events.Event
 import web.events.EventType
 
 inline val Event.Companion.ABORT: EventType<Event>

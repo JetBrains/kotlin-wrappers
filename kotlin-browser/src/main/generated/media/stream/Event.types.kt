@@ -2,7 +2,7 @@
 
 package media.stream
 
-import org.w3c.dom.events.Event
+import web.events.Event
 import web.events.EventType
 
 inline val Event.Companion.ENDED: EventType<Event>

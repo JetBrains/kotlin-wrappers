@@ -1,5 +1,14 @@
 package web.events
 
-typealias EventInit = org.w3c.dom.EventInit
+external interface EventInit {
+    var bubbles: Boolean?
+    var cancelable: Boolean?
+    var composed: Boolean?
+}
 
-typealias Event = org.w3c.dom.events.Event
+open external class Event(
+    type: String,
+    init: EventInit = definedExternally
+) : LegacyEvent {
+    companion object
+}

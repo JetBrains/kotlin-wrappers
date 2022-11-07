@@ -42,14 +42,14 @@ fun <T : Event> EventTarget.addEventHandler(
 ): () -> Unit {
     addEventListener(
         type = type.unsafeCast<String>(),
-        callback = handler.unsafeCast<(Event) -> Unit>(),
+        callback = handler.unsafeCast<(LegacyEvent) -> Unit>(),
         options = options,
     )
 
     return {
         removeEventListener(
             type = type.unsafeCast<String>(),
-            callback = handler.unsafeCast<(Event) -> Unit>(),
+            callback = handler.unsafeCast<(LegacyEvent) -> Unit>(),
             options = options,
         )
     }

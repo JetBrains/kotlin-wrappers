@@ -2,7 +2,7 @@
 
 package webrtc
 
-import org.w3c.dom.events.Event
+import web.events.Event
 import web.events.EventType
 
 inline val Event.Companion.BUFFERED_AMOUNT_LOW: EventType<Event>

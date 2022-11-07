@@ -3,13 +3,13 @@ package web.events
 external interface IEventTarget {
     fun addEventListener(
         type: String,
-        callback: ((Event) -> Unit)?,
+        callback: ((LegacyEvent) -> Unit)?,
         options: dynamic = definedExternally,
     )
 
     fun removeEventListener(
         type: String,
-        callback: ((Event) -> Unit)?,
+        callback: ((LegacyEvent) -> Unit)?,
         options: dynamic = definedExternally,
     )
 }

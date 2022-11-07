@@ -2,7 +2,7 @@
 
 package dom.events
 
-import org.w3c.dom.events.Event
+import web.events.Event
 import web.events.EventType
 
 inline val Event.Companion.DOM_CONTENT_LOADED: EventType<Event>
