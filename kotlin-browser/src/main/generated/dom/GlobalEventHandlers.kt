@@ -118,7 +118,7 @@ external interface GlobalEventHandlers {
      * Fires when an error occurs during object loading.
      * @param ev The event.
      */
-    var onerror: Any? /* OnErrorEventHandler */
+    var onerror: Function<Unit>? /* OnErrorEventHandler */
 
     /**
      * Fires when the object receives focus.
