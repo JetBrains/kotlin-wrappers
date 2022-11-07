@@ -3,10 +3,11 @@
 package web.permissions
 
 import web.events.Event
+import web.events.EventHandler
 import web.events.EventTarget
 
 sealed external class PermissionStatus :
     EventTarget {
-    var onchange: ((event: Event) -> Unit)?
+    var onchange: EventHandler<Event>?
     val state: PermissionState
 }

@@ -2,11 +2,12 @@
 
 package cssom
 
+import web.events.EventHandler
 import web.events.EventTarget
 
 sealed external class MediaQueryList :
     EventTarget {
     val matches: Boolean
     val media: String
-    var onchange: ((event: MediaQueryListEvent) -> Unit)?
+    var onchange: EventHandler<MediaQueryListEvent>?
 }

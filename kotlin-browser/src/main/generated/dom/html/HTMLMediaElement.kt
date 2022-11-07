@@ -9,6 +9,7 @@ import media.key.MediaKeys
 import media.source.TimeRanges
 import remoteplayback.RemotePlayback
 import web.events.Event
+import web.events.EventHandler
 import webvtt.TextTrack
 import webvtt.TextTrackKind
 import webvtt.TextTrackList
@@ -57,8 +58,8 @@ abstract external class HTMLMediaElement :
 
     /** Gets the current network activity for the element. */
     val networkState: Short
-    var onencrypted: ((event: MediaEncryptedEvent) -> Unit)?
-    var onwaitingforkey: ((event: Event) -> Unit)?
+    var onencrypted: EventHandler<MediaEncryptedEvent>?
+    var onwaitingforkey: EventHandler<Event>?
 
     /** Gets a flag that specifies whether playback is paused. */
     val paused: Boolean

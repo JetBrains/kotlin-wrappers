@@ -3,6 +3,7 @@
 package web.animations
 
 import web.events.Event
+import web.events.EventHandler
 import web.events.EventTarget
 import kotlin.js.Promise
 
@@ -12,9 +13,9 @@ open external class Animation :
     var effect: AnimationEffect?
     val finished: Promise<Animation>
     var id: String
-    var oncancel: ((event: AnimationPlaybackEvent) -> Unit)?
-    var onfinish: ((event: AnimationPlaybackEvent) -> Unit)?
-    var onremove: ((event: Event) -> Unit)?
+    var oncancel: EventHandler<AnimationPlaybackEvent>?
+    var onfinish: EventHandler<AnimationPlaybackEvent>?
+    var onremove: EventHandler<Event>?
     val pending: Boolean
     val playState: AnimationPlayState
     var playbackRate: Double

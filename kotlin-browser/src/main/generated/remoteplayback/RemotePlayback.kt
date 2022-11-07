@@ -4,14 +4,15 @@ package remoteplayback
 
 import kotlinx.js.Void
 import web.events.Event
+import web.events.EventHandler
 import web.events.EventTarget
 import kotlin.js.Promise
 
 sealed external class RemotePlayback :
     EventTarget {
-    var onconnect: ((event: Event) -> Unit)?
-    var onconnecting: ((event: Event) -> Unit)?
-    var ondisconnect: ((event: Event) -> Unit)?
+    var onconnect: EventHandler<Event>?
+    var onconnecting: EventHandler<Event>?
+    var ondisconnect: EventHandler<Event>?
     val state: RemotePlaybackState
     fun cancelWatchAvailability(id: Number = definedExternally): Promise<Void>
     fun prompt(): Promise<Void>

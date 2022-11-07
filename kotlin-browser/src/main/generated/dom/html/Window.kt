@@ -8,6 +8,7 @@ import dom.ScrollToOptions
 import kotlinx.js.ReadonlyArray
 import web.device.DeviceMotionEvent
 import web.device.DeviceOrientationEvent
+import web.events.EventHandler
 import web.events.EventTarget
 import web.messaging.Transferable
 import web.url.URL
@@ -26,10 +27,10 @@ sealed external class Window :
     var name: String
 
     /** Available only in secure contexts. */
-    var ondevicemotion: ((event: DeviceMotionEvent) -> Unit)?
+    var ondevicemotion: EventHandler<DeviceMotionEvent>?
 
     /** Available only in secure contexts. */
-    var ondeviceorientation: ((event: DeviceOrientationEvent) -> Unit)?
+    var ondeviceorientation: EventHandler<DeviceOrientationEvent>?
     var opener: Any?
     val outerHeight: Int
     val outerWidth: Int
