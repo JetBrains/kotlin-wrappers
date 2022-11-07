@@ -1,9 +1,9 @@
 package styled
 
+import cssom.CSS
 import kotlinx.css.CssBuilder
 import kotlinx.css.CssValue
 import kotlinx.css.RuleSet
-import org.w3c.dom.css.CSS
 import styled.dynamicCss.DynamicCssDelegate
 import styled.dynamicCss.DynamicCssHolder
 import kotlin.js.Promise
