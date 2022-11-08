@@ -17,12 +17,11 @@ import web.url.URL
 sealed external class Window :
     EventTarget,
     GlobalEventHandlers,
-    WindowEventHandlers,
-    ArrayLike<Window> {
+    WindowEventHandlers {
     /** Returns true if the window has been closed, false otherwise. */
     val closed: Boolean
     val frameElement: Element?
-    val frames: WindowProxy
+    val frames: ArrayLike<Window>
     val innerHeight: Int
     val innerWidth: Int
     var name: String
