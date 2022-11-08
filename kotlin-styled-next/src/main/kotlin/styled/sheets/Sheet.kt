@@ -1,8 +1,8 @@
 package styled.sheets
 
+import browser.document
 import cssom.CSSStyleSheet
 import dom.html.HTMLStyleElement
-import kotlinx.browser.window
 import org.w3c.dom.asList
 
 internal typealias GroupId = Int
@@ -46,7 +46,7 @@ internal abstract class AbstractSheet(
             null -> id
             else -> "${id}_${partitionCounter++}"
         }
-        val style = window.document.head!!.appendChild(window.document.createElement("style")) as HTMLStyleElement
+        val style = document.head.appendChild(document.createElement("style")) as HTMLStyleElement
         style.setAttribute("id", id)
         usedStyleElements += style
         return style
@@ -76,7 +76,7 @@ internal abstract class AbstractSheet(
         usedStyleElements.toList().forEach {
             it.removeAndCleanUp()
         }
-        window.document.querySelectorAll(styleElementsSelector(id)).asList().forEach {
+        document.querySelectorAll(styleElementsSelector(id)).asList().forEach {
             (it as HTMLStyleElement).remove()
         }
     }

@@ -1,3 +1,4 @@
+import browser.document
 import cssom.CSSRule
 import cssom.CSSRuleList
 import cssom.CSSStyleDeclaration
@@ -6,7 +7,6 @@ import dom.Element
 import dom.css.getComputedStyle
 import dom.html.HTMLElement
 import dom.html.HTMLStyleElement
-import kotlinx.browser.document
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.promise
@@ -152,8 +152,8 @@ class TestScope : CoroutineScope by testScope {
 }
 
 internal fun createDOMElement(): HTMLElement {
-    return (document.createElement("div") as HTMLElement).also {
-        document.body?.appendChild(it)
+    return (document.createElement("div")).also {
+        document.body.appendChild(it)
     }
 }
 

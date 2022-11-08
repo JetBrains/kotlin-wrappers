@@ -1,8 +1,8 @@
 package test
 
+import browser.document
 import cssom.CSSStyleSheet
 import dom.html.HTMLStyleElement
-import kotlinx.browser.document
 import kotlinx.css.*
 import kotlinx.js.asList
 import org.w3c.dom.asList

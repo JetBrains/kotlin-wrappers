@@ -1,6 +1,6 @@
 package styled
 
-import kotlinx.browser.window
+import browser.window
 import kotlinx.js.jso
 import web.location.location
 import web.storage.localStorage

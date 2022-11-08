@@ -1,7 +1,7 @@
 package styled.sheets
 
+import browser.window
 import dom.html.HTMLStyleElement
-import kotlinx.browser.window
 import kotlinx.js.asList
 import web.timers.setTimeout
 import kotlin.collections.component1
