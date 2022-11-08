@@ -2,4 +2,9 @@
 
 package dom.css
 
-typealias LinkStyle = org.w3c.dom.css.LinkStyle
+import cssom.StyleSheet
+
+external interface LinkStyle {
+    val sheet: StyleSheet?
+        get() = definedExternally
+}
