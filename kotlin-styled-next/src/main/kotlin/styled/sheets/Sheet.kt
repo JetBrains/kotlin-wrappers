@@ -1,9 +1,9 @@
 package styled.sheets
 
+import cssom.CSSStyleSheet
 import dom.html.HTMLStyleElement
 import kotlinx.browser.window
 import org.w3c.dom.asList
-import org.w3c.dom.css.CSSStyleSheet
 
 internal typealias GroupId = Int
 
@@ -61,7 +61,8 @@ internal abstract class AbstractSheet(
         return element
     }
 
-    protected val HTMLStyleElement.cssSheet: CSSStyleSheet get() = sheet as CSSStyleSheet
+    protected val HTMLStyleElement.cssSheet: CSSStyleSheet
+        get() = sheet as CSSStyleSheet
 
     protected fun HTMLStyleElement.removeAndCleanUp() {
         remove()

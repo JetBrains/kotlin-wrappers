@@ -1,10 +1,11 @@
 package test
 
+import cssom.CSSStyleSheet
 import dom.html.HTMLStyleElement
 import kotlinx.browser.document
 import kotlinx.css.*
+import kotlinx.js.asList
 import org.w3c.dom.asList
-import org.w3c.dom.css.CSSStyleSheet
 import react.Props
 import react.fc
 import runTest

@@ -1,4 +1,9 @@
+import cssom.CSSRule
+import cssom.CSSRuleList
+import cssom.CSSStyleDeclaration
+import cssom.CSSStyleSheet
 import dom.Element
+import dom.css.getComputedStyle
 import dom.html.HTMLElement
 import dom.html.HTMLStyleElement
 import kotlinx.browser.document
@@ -8,12 +13,9 @@ import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.promise
 import kotlinx.css.CssBuilder
 import kotlinx.dom.clear
+import kotlinx.js.asList
 import kotlinx.js.jso
 import org.w3c.dom.asList
-import org.w3c.dom.css.CSSRule
-import org.w3c.dom.css.CSSRuleList
-import org.w3c.dom.css.CSSStyleDeclaration
-import org.w3c.dom.css.CSSStyleSheet
 import react.ComponentType
 import react.Props
 import react.createElement
@@ -95,8 +97,10 @@ class TestScope : CoroutineScope by testScope {
         }
     }
 
-    fun Element.getStyle(pseudoElt: String? = null): CSSStyleDeclaration {
-        return window.getComputedStyle(this, pseudoElt)
+    fun Element.getStyle(
+        pseudoElt: String? = null,
+    ): CSSStyleDeclaration {
+        return getComputedStyle(this, pseudoElt)
     }
 
     fun Element.color(pseudoElt: String? = null): String {
