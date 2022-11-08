@@ -3,9 +3,10 @@
 package dom.svg
 
 import dom.geometry.DOMMatrix2DInit
+import kotlinx.js.ArrayLike
 
-sealed external class SVGTransformList {
-    val length: Int
+sealed external class SVGTransformList :
+    ArrayLike<SVGTransform> {
     val numberOfItems: Int
     fun appendItem(newItem: SVGTransform): SVGTransform
     fun clear()
@@ -23,5 +24,4 @@ sealed external class SVGTransformList {
         newItem: SVGTransform,
         index: Number,
     ): SVGTransform
-    // [index: number]: SVGTransform
 }

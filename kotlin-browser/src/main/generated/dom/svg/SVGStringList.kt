@@ -2,8 +2,10 @@
 
 package dom.svg
 
-sealed external class SVGStringList {
-    val length: Int
+import kotlinx.js.ArrayLike
+
+sealed external class SVGStringList :
+    ArrayLike<String> {
     val numberOfItems: Int
     fun appendItem(newItem: String): String
     fun clear()
@@ -19,5 +21,4 @@ sealed external class SVGStringList {
         newItem: String,
         index: Number,
     ): String
-    // [index: number]: string
 }

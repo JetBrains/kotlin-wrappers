@@ -3,9 +3,10 @@
 package dom.svg
 
 import dom.geometry.DOMPoint
+import kotlinx.js.ArrayLike
 
-sealed external class SVGPointList {
-    val length: Int
+sealed external class SVGPointList :
+    ArrayLike<DOMPoint> {
     val numberOfItems: Int
     fun appendItem(newItem: DOMPoint): DOMPoint
     fun clear()
@@ -21,5 +22,4 @@ sealed external class SVGPointList {
         newItem: DOMPoint,
         index: Number,
     ): DOMPoint
-    // [index: number]: DOMPoint
 }

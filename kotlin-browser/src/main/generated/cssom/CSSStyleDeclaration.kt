@@ -2,7 +2,10 @@
 
 package cssom
 
-sealed external class CSSStyleDeclaration {
+import kotlinx.js.ArrayLike
+
+sealed external class CSSStyleDeclaration :
+    ArrayLike<String> {
     var accentColor: String
     var alignContent: String
     var alignItems: String
@@ -198,7 +201,6 @@ sealed external class CSSStyleDeclaration {
     var justifyItems: String
     var justifySelf: String
     var left: String
-    val length: Int
     var letterSpacing: String
     var lightingColor: String
     var lineBreak: String
@@ -400,5 +402,4 @@ sealed external class CSSStyleDeclaration {
         value: String?,
         priority: String = definedExternally,
     )
-    // [index: number]: string
 }

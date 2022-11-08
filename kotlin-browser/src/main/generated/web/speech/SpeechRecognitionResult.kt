@@ -2,9 +2,10 @@
 
 package web.speech
 
-sealed external class SpeechRecognitionResult {
+import kotlinx.js.ArrayLike
+
+sealed external class SpeechRecognitionResult :
+    ArrayLike<SpeechRecognitionAlternative> {
     val isFinal: Boolean
-    val length: Int
     fun item(index: Number): SpeechRecognitionAlternative
-    // [index: number]: SpeechRecognitionAlternative
 }

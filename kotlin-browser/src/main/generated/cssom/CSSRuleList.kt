@@ -2,8 +2,9 @@
 
 package cssom
 
-sealed external class CSSRuleList {
-    val length: Int
+import kotlinx.js.ArrayLike
+
+sealed external class CSSRuleList :
+    ArrayLike<CSSRule> {
     fun item(index: Number): CSSRule?
-    // [index: number]: CSSRule
 }

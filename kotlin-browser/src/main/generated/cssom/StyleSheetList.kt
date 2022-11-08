@@ -2,8 +2,9 @@
 
 package cssom
 
-sealed external class StyleSheetList {
-    val length: Int
+import kotlinx.js.ArrayLike
+
+sealed external class StyleSheetList :
+    ArrayLike<CSSStyleSheet> {
     fun item(index: Number): CSSStyleSheet?
-    // [index: number]: CSSStyleSheet
 }

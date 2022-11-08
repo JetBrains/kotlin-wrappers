@@ -2,11 +2,12 @@
 
 package cssom
 
-sealed external class MediaList {
-    val length: Int
+import kotlinx.js.ArrayLike
+
+sealed external class MediaList :
+    ArrayLike<String> {
     var mediaText: String
     fun appendMedium(medium: String)
     fun deleteMedium(medium: String)
     fun item(index: Number): String?
-    // [index: number]: string
 }

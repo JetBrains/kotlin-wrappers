@@ -2,8 +2,12 @@
 
 package dom.html
 
+import dom.Element
+import kotlinx.js.ArrayLike
+
 abstract external class HTMLFormElement :
-    HTMLElement {
+    HTMLElement,
+    ArrayLike<Element> {
     /** Sets or retrieves a list of character encodings for input data that must be accepted by the server processing the form. */
     var acceptCharset: String
 
@@ -21,9 +25,6 @@ abstract external class HTMLFormElement :
 
     /** Sets or retrieves the encoding type for the form. */
     var enctype: String
-
-    /** Sets or retrieves the number of objects in a collection. */
-    val length: Int
 
     /** Sets or retrieves how to send the form data to the server. */
     var method: String
@@ -47,6 +48,5 @@ abstract external class HTMLFormElement :
 
     /** Fires when a FORM is about to be submitted. */
     fun submit()
-    // [index: number]: Element
     // [name: string]: any
 }

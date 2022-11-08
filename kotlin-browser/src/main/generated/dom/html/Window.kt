@@ -5,6 +5,7 @@ package dom.html
 import dom.Element
 import dom.GlobalEventHandlers
 import dom.ScrollToOptions
+import kotlinx.js.ArrayLike
 import kotlinx.js.ReadonlyArray
 import web.device.DeviceMotionEvent
 import web.device.DeviceOrientationEvent
@@ -16,14 +17,14 @@ import web.url.URL
 sealed external class Window :
     EventTarget,
     GlobalEventHandlers,
-    WindowEventHandlers {
+    WindowEventHandlers,
+    ArrayLike<Window> {
     /** Returns true if the window has been closed, false otherwise. */
     val closed: Boolean
     val frameElement: Element?
     val frames: WindowProxy
     val innerHeight: Int
     val innerWidth: Int
-    val length: Int
     var name: String
 
     /** Available only in secure contexts. */
@@ -124,5 +125,4 @@ sealed external class Window :
 
     /** Cancels the document load. */
     fun stop()
-    // [index: number]: Window
 }
