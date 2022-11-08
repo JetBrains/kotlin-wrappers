@@ -1,11 +1,11 @@
 package benchmark
 
 import TestScope
-import kotlinx.browser.window
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.toList
 import runTest
+import web.navigator.navigator
 import kotlin.test.BeforeTest
 import kotlin.test.assertTrue
 import kotlin.time.Duration
@@ -42,7 +42,7 @@ open class BenchmarkBase {
 
         val avgMs = durations.map { it.toInt(DurationUnit.MILLISECONDS) }.average().toInt()
 
-        val browserName = window.navigator.userAgent.lowercase().let {
+        val browserName = navigator.userAgent.lowercase().let {
             when {
                 it.contains("chrome") -> "chrome"
                 it.contains("firefox") -> "firefox"

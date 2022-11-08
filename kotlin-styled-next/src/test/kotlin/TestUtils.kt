@@ -7,7 +7,6 @@ import dom.css.getComputedStyle
 import dom.html.HTMLElement
 import dom.html.HTMLStyleElement
 import kotlinx.browser.document
-import kotlinx.browser.window
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.promise
@@ -25,6 +24,7 @@ import react.dom.flushSync
 import styled.GlobalStyles
 import styled.injectGlobal
 import styled.sheets.*
+import web.timers.requestAnimationFrame
 import kotlin.coroutines.resume
 import kotlin.coroutines.suspendCoroutine
 import kotlin.js.Promise
@@ -178,7 +178,7 @@ internal suspend fun measureTimeJS(block: () -> Unit): Duration = measureTime {
  */
 internal suspend fun waitForAnimationFrame() {
     suspendCoroutine<Unit> { continuation ->
-        window.requestAnimationFrame {
+        requestAnimationFrame {
             flushSync { continuation.resume(Unit) }
         }
     }

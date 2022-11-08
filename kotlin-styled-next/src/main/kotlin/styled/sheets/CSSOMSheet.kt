@@ -3,6 +3,7 @@ package styled.sheets
 import dom.html.HTMLStyleElement
 import kotlinx.browser.window
 import kotlinx.js.asList
+import web.timers.setTimeout
 import kotlin.collections.component1
 import kotlin.collections.component2
 import kotlin.collections.set
@@ -40,7 +41,7 @@ internal class CSSOMSheet(
             clean()
             return
         }
-        window.setTimeout({
+        setTimeout({
             val idleCallback = window.asDynamic().requestIdleCallback
             if (idleCallback != undefined && removeMode == RemoveMode.OnBrowserIdle) {
                 idleCallback {

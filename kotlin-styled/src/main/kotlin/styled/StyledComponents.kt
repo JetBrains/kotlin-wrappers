@@ -1,8 +1,10 @@
 package styled
 
+import browser.document
 import csstype.ClassName
 import dom.Element
-import kotlinx.browser.window
+import dom.html.HTML.div
+import dom.html.createElement
 import kotlinx.css.CssBuilder
 import kotlinx.css.CssDsl
 import kotlinx.css.RuleSet
@@ -151,7 +153,7 @@ private object GlobalStyles {
     }
 
     private val root by kotlin.lazy {
-        val element = window.document.body!!.appendChild(window.document.createElement("div")) as Element
+        val element = document.body.appendChild(document.createElement(div)) as Element
         element.setAttribute("id", "sc-global-styles")
         element
     }

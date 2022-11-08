@@ -2,7 +2,7 @@ package benchmark
 
 import TestScope
 import addCss
-import kotlinx.browser.window
+import browser.document
 import kotlinx.css.CssBuilder
 import kotlinx.css.height
 import kotlinx.css.px
@@ -56,7 +56,7 @@ class InjectCssNPlusOne : BenchmarkBase() {
                     height = 0.px
                 })
                 GlobalStyles.injectScheduled()
-                window.document.body!!.scrollTop += 1
+                document.body.scrollTop += 1
             }
         }
         clear()

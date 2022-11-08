@@ -2,6 +2,8 @@ package styled
 
 import kotlinx.browser.window
 import kotlinx.js.jso
+import web.location.location
+import web.storage.localStorage
 
 internal object GlobalCssAccess {
     private enum class SheetType {
@@ -80,12 +82,12 @@ internal object GlobalCssAccess {
     }
 
     internal fun useDevSheet(isDev: Boolean = true) {
-        window.localStorage.setItem(sheetTypeKey, if (isDev) SheetType.Dev.name else SheetType.CSSOM.name)
-        window.location.reload()
+        localStorage.setItem(sheetTypeKey, if (isDev) SheetType.Dev.name else SheetType.CSSOM.name)
+        location.reload()
     }
 
     fun isDevSheet(): Boolean {
-        return window.localStorage.getItem(sheetTypeKey) == SheetType.Dev.name
+        return localStorage.getItem(sheetTypeKey) == SheetType.Dev.name
     }
 
     internal fun setupCssHelperFunctions() {
