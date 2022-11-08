@@ -4,9 +4,6 @@ import browser.window
 import dom.html.HTMLStyleElement
 import kotlinx.js.asList
 import web.timers.setTimeout
-import kotlin.collections.component1
-import kotlin.collections.component2
-import kotlin.collections.set
 
 private typealias Rules = Iterable<String>
 

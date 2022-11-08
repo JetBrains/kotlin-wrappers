@@ -4,7 +4,6 @@ import kotlinext.js.js
 import kotlinx.html.INPUT
 import kotlinx.html.TEXTAREA
 import kotlinx.html.Tag
-import kotlin.collections.set
 import kotlin.reflect.KProperty
 
 private val events = listOf(

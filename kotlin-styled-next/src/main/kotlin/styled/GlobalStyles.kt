@@ -4,7 +4,6 @@ import kotlinx.css.CssBuilder
 import kotlinx.css.RuleSet
 import kotlinx.css.properties.KeyframesBuilder
 import styled.sheets.*
-import kotlin.collections.*
 
 data class UsedCssInfo(
     val className: ClassName,
