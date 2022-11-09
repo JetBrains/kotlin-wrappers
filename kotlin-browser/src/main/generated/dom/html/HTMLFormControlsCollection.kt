@@ -2,4 +2,12 @@
 
 package dom.html
 
-typealias HTMLFormControlsCollection = org.w3c.dom.HTMLFormControlsCollection
+sealed external class HTMLFormControlsCollection :
+    HTMLCollectionBase {
+    /**
+     * Returns the item with ID or name name from the collection.
+     *
+     * If there are multiple matching items, then a RadioNodeList object containing all those elements is returned.
+     */
+    fun namedItem(name: String): Any? /* RadioNodeList | Element */
+}

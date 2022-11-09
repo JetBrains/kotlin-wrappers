@@ -1,10 +1,10 @@
 package test
 
 import TestScope
+import dom.html.get
 import kotlinx.css.*
 import kotlinx.css.properties.*
 import kotlinx.html.classes
-import org.w3c.dom.get
 import react.Props
 import react.dom.attrs
 import react.dom.div

@@ -2,4 +2,10 @@
 
 package dom.html
 
-typealias HTMLCollection = org.w3c.dom.HTMLCollection
+import dom.Element
+
+sealed external class HTMLCollection :
+    HTMLCollectionBase {
+    /** Retrieves a select object or an object from an options collection. */
+    fun namedItem(name: String): Element?
+}
