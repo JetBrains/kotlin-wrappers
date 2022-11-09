@@ -4,6 +4,6 @@ package dom
 
 fun Node.clear() {
     while (hasChildNodes()) {
-        removeChild(firstChild!!)
+        removeChild(firstChild as Node)
     }
 }

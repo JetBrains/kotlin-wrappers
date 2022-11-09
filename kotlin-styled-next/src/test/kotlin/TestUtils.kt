@@ -4,6 +4,7 @@ import cssom.CSSRuleList
 import cssom.CSSStyleDeclaration
 import cssom.CSSStyleSheet
 import dom.Element
+import dom.clear
 import dom.css.getComputedStyle
 import dom.html.HTMLElement
 import dom.html.HTMLStyleElement
@@ -11,10 +12,8 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.promise
 import kotlinx.css.CssBuilder
-import kotlinx.dom.clear
 import kotlinx.js.asList
 import kotlinx.js.jso
-import org.w3c.dom.asList
 import react.ComponentType
 import react.Props
 import react.createElement

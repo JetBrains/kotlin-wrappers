@@ -46,9 +46,7 @@ abstract external class Element :
     var onfullscreenchange: EventHandler<Event>?
     var onfullscreenerror: EventHandler<Event>?
     var outerHTML: String
-
-    // TEMP: WA for old `Node`
-    // override val ownerDocument: Document
+    override val ownerDocument: Document
     val part: DOMTokenList
 
     /** Returns the namespace prefix. */

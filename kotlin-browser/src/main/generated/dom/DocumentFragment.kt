@@ -8,7 +8,6 @@ abstract external class DocumentFragment :
     Node,
     NonElementParentNode,
     ParentNode {
-    // TEMP: WA for old `Node`
-    // override val ownerDocument: Document
+    override val ownerDocument: Document
     override fun getElementById(elementId: String): HTMLElement?
 }

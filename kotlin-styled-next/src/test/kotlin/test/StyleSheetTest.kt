@@ -5,7 +5,6 @@ import cssom.CSSStyleSheet
 import dom.html.HTMLStyleElement
 import kotlinx.css.*
 import kotlinx.js.asList
-import org.w3c.dom.asList
 import react.Props
 import react.fc
 import runTest

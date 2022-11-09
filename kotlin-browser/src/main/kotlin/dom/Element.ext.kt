@@ -5,6 +5,6 @@ package dom
 fun Element.appendText(
     text: String,
 ): Element {
-    appendChild(ownerDocument!!.createTextNode(text))
+    appendChild(ownerDocument.createTextNode(text))
     return this
 }

@@ -7,9 +7,7 @@ sealed external class Attr :
     val localName: String
     val name: String
     val namespaceURI: String?
-
-    // TEMP: WA for old `Node`
-    // override val ownerDocument: Document
+    override val ownerDocument: Document
     val ownerElement: Element?
     val prefix: String?
     val specified: Boolean
