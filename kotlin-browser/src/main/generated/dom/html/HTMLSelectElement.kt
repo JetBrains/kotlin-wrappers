@@ -75,6 +75,12 @@ abstract external class HTMLSelectElement :
      * @param namedItem A String that specifies the name or id property of the object to retrieve. A collection is returned if more than one match is made.
      */
     fun namedItem(name: String): HTMLOptionElement?
+
+    /**
+     * Removes an element from the collection.
+     * @param index Number that specifies the zero-based index of the element to remove from the collection.
+     */
+    override fun remove()
     fun remove(index: Number)
     fun reportValidity(): Boolean
 

@@ -16,7 +16,7 @@ sealed external interface ChildNode /* : Node */ {
      * Throws a "HierarchyRequestError" DOMException if the constraints of the node tree are violated.
      */
     fun before(vararg nodes: Any /* Node | string */)
-    
+
     /** Removes node. */
     fun remove()
 
