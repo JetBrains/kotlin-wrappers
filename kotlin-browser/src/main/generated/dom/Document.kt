@@ -127,12 +127,14 @@ abstract external class Document :
     /** Contains the title of the document. */
     var title: String
     val visibilityState: DocumentVisibilityState
+
     /**
      * Moves node from another document and returns it.
      *
      * If node is a document, throws a "NotSupportedError" DOMException or, if node is a shadow root, throws a "HierarchyRequestError" DOMException.
      */
-    // adoptNode<T extends Node>(node: T): T
+    fun <T : Node> adoptNode(node: T): T
+
     /** Closes an output stream and forces the sent data to display. */
     fun close()
 
@@ -238,12 +240,17 @@ abstract external class Document :
     /** Gets a value indicating whether the object currently has focus. */
     fun hasFocus(): Boolean
     fun hasStorageAccess(): Promise<Boolean>
+
     /**
      * Returns a copy of node. If deep is true, the copy also includes the node's descendants.
      *
      * If node is a document or a shadow root, throws a "NotSupportedError" DOMException.
      */
-    // importNode<T extends Node>(node: T, deep?: boolean): T
+    fun <T : Node> importNode(
+        node: T,
+        deep: Boolean = definedExternally,
+    ): T
+
     /**
      * Opens a new window and loads a document specified by a given URL. Also, opens a new window that uses the url parameter and the name parameter to collect the output of the write method and the writeln method.
      * @param url Specifies a MIME type for the document.
