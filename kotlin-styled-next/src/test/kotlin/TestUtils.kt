@@ -4,7 +4,6 @@ import cssom.CSSRuleList
 import cssom.CSSStyleDeclaration
 import cssom.CSSStyleSheet
 import dom.Element
-import dom.clear
 import dom.css.getComputedStyle
 import dom.html.HTMLElement
 import dom.html.HTMLStyleElement
@@ -39,7 +38,7 @@ private val testScope = MainScope()
 data class RootInfo(val element: Element, var root: Root) {
     fun clear() {
         unmount()
-        element.clear()
+        element.replaceChildren()
     }
 
     fun renderComponent(component: Component) {
