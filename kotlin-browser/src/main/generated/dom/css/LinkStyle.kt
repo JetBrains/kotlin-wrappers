@@ -2,9 +2,8 @@
 
 package dom.css
 
-import cssom.StyleSheet
+import cssom.CSSStyleSheet
 
 external interface LinkStyle {
-    val sheet: StyleSheet?
-        get() = definedExternally
+    val sheet: CSSStyleSheet?
 }
