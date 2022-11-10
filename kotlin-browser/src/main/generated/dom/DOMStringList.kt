@@ -2,6 +2,13 @@
 
 package dom
 
-import kotlinx.js.ReadonlyArray
+import kotlinx.js.ArrayLike
 
-typealias DOMStringList = ReadonlyArray<String>
+sealed external class DOMStringList :
+    ArrayLike<String> {
+    /** Returns true if strings contains string, and false otherwise. */
+    fun contains(string: String): Boolean
+
+    /** Returns the string with index index from strings. */
+    fun item(index: Number): String?
+}
