@@ -8,8 +8,7 @@ package web.history
 
 // language=JavaScript
 @JsName("""(/*union*/{auto: 'auto', manual: 'manual'}/*union*/)""")
-external enum class ScrollRestoration :
-/* legacy adapter */ org.w3c.dom.ScrollRestoration {
+external enum class ScrollRestoration {
     auto,
     manual,
 

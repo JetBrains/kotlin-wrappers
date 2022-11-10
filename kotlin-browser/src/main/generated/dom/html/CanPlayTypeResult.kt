@@ -8,8 +8,7 @@ package dom.html
 
 // language=JavaScript
 @JsName("""(/*union*/{none: '', maybe: 'maybe', probably: 'probably'}/*union*/)""")
-external enum class CanPlayTypeResult :
-/* legacy adapter */ org.w3c.dom.CanPlayTypeResult {
+external enum class CanPlayTypeResult {
     none,
     maybe,
     probably,
