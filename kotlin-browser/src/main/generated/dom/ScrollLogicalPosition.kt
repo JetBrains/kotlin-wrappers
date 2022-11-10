@@ -8,8 +8,7 @@ package dom
 
 // language=JavaScript
 @JsName("""(/*union*/{center: 'center', end: 'end', nearest: 'nearest', start: 'start'}/*union*/)""")
-external enum class ScrollLogicalPosition :
-/* legacy adapter */ org.w3c.dom.ScrollLogicalPosition {
+external enum class ScrollLogicalPosition {
     center,
     end,
     nearest,

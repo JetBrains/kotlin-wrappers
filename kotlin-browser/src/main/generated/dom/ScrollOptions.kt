@@ -2,4 +2,6 @@
 
 package dom
 
-typealias ScrollOptions = org.w3c.dom.ScrollOptions
+sealed external interface ScrollOptions {
+    var behavior: ScrollBehavior?
+}

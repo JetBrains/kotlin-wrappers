@@ -2,4 +2,8 @@
 
 package dom
 
-typealias ScrollIntoViewOptions = org.w3c.dom.ScrollIntoViewOptions
+sealed external interface ScrollIntoViewOptions :
+    ScrollOptions {
+    var block: ScrollLogicalPosition?
+    var inline: ScrollLogicalPosition?
+}

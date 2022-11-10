@@ -8,8 +8,7 @@ package dom
 
 // language=JavaScript
 @JsName("""(/*union*/{auto: 'auto', smooth: 'smooth'}/*union*/)""")
-external enum class ScrollBehavior :
-/* legacy adapter */ org.w3c.dom.ScrollBehavior {
+external enum class ScrollBehavior {
     auto,
     smooth,
 
