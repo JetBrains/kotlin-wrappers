@@ -12,7 +12,6 @@ import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.promise
 import kotlinx.css.CssBuilder
 import kotlinx.js.asList
-import kotlinx.js.jso
 import react.ComponentType
 import react.Props
 import react.createElement
@@ -42,7 +41,7 @@ data class RootInfo(val element: Element, var root: Root) {
     }
 
     fun renderComponent(component: Component) {
-        val reactElement = createElement(component, jso { })
+        val reactElement = createElement(component)
         root.render(reactElement)
     }
 
