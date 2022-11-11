@@ -5,6 +5,7 @@ package dom.html
 import dom.Element
 import dom.GlobalEventHandlers
 import dom.ScrollToOptions
+import dom.selection.Selection
 import kotlinx.js.ArrayLike
 import kotlinx.js.ReadonlyArray
 import web.device.DeviceMotionEvent
@@ -55,6 +56,7 @@ sealed external class Window :
 
     /** Moves the focus to the window's browsing context, if any. */
     fun focus()
+    fun getSelection(): Selection?
     fun moveBy(
         x: Number,
         y: Number,

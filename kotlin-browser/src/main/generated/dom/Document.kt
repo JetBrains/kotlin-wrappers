@@ -4,6 +4,7 @@ package dom
 
 import cssom.fonts.FontFaceSource
 import dom.html.*
+import dom.selection.Selection
 import dom.xpath.XPathEvaluatorBase
 import kotlinx.js.Void
 import web.events.Event
@@ -235,7 +236,7 @@ abstract external class Document :
     ): HTMLCollectionOf<Element>
 
     /** Returns an object representing the current selection of the document that is loaded into the object displaying a webpage. */
-    fun getSelection(): Any /* Selection */?
+    fun getSelection(): Selection?
 
     /** Gets a value indicating whether the object currently has focus. */
     fun hasFocus(): Boolean
