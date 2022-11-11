@@ -17,7 +17,7 @@ sealed external class Storage {
     fun getItem(key: String): String?
 
     /** Returns the name of the nth key, or null if n is greater than or equal to the number of key/value pairs. */
-    fun key(index: Number): String?
+    fun key(index: Int): String?
 
     /**
      * Removes the key/value pair with the given key, if a key/value pair with the given key exists.

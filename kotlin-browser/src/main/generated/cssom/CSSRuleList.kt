@@ -6,5 +6,5 @@ import kotlinx.js.ArrayLike
 
 sealed external class CSSRuleList :
     ArrayLike<CSSRule> {
-    fun item(index: Number): CSSRule?
+    fun item(index: Int): CSSRule?
 }

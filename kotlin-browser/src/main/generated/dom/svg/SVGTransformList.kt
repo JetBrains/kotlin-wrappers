@@ -12,16 +12,16 @@ sealed external class SVGTransformList :
     fun clear()
     fun consolidate(): SVGTransform?
     fun createSVGTransformFromMatrix(matrix: DOMMatrix2DInit = definedExternally): SVGTransform
-    fun getItem(index: Number): SVGTransform
+    fun getItem(index: Int): SVGTransform
     fun initialize(newItem: SVGTransform): SVGTransform
     fun insertItemBefore(
         newItem: SVGTransform,
-        index: Number,
+        index: Int,
     ): SVGTransform
 
-    fun removeItem(index: Number): SVGTransform
+    fun removeItem(index: Int): SVGTransform
     fun replaceItem(
         newItem: SVGTransform,
-        index: Number,
+        index: Int,
     ): SVGTransform
 }

@@ -8,10 +8,10 @@ sealed external class CSSStyleSheet :
     StyleSheet {
     val cssRules: CSSRuleList
     val ownerRule: CSSRule?
-    fun deleteRule(index: Number)
+    fun deleteRule(index: Int)
     fun insertRule(
         rule: String,
-        index: Number = definedExternally,
+        index: Int = definedExternally,
     ): Number
 
     fun replace(text: String): Promise<CSSStyleSheet>

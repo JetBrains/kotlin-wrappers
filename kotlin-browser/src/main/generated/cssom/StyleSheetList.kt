@@ -6,5 +6,5 @@ import kotlinx.js.ArrayLike
 
 sealed external class StyleSheetList :
     ArrayLike<CSSStyleSheet> {
-    fun item(index: Number): CSSStyleSheet?
+    fun item(index: Int): CSSStyleSheet?
 }

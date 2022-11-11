@@ -7,5 +7,5 @@ import kotlinx.js.ArrayLike
 sealed external class SpeechRecognitionResult :
     ArrayLike<SpeechRecognitionAlternative> {
     val isFinal: Boolean
-    fun item(index: Number): SpeechRecognitionAlternative
+    fun item(index: Int): SpeechRecognitionAlternative
 }

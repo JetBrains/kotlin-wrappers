@@ -9,5 +9,5 @@ sealed external class MediaList :
     var mediaText: String
     fun appendMedium(medium: String)
     fun deleteMedium(medium: String)
-    fun item(index: Number): String?
+    fun item(index: Int): String?
 }

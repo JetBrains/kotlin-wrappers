@@ -395,7 +395,7 @@ sealed external class CSSStyleDeclaration :
     var zIndex: String
     fun getPropertyPriority(property: String): String
     fun getPropertyValue(property: String): String
-    fun item(index: Number): String
+    fun item(index: Int): String
     fun removeProperty(property: String): String
     fun setProperty(
         property: String,

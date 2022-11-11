@@ -10,16 +10,16 @@ sealed external class SVGPointList :
     val numberOfItems: Int
     fun appendItem(newItem: DOMPoint): DOMPoint
     fun clear()
-    fun getItem(index: Number): DOMPoint
+    fun getItem(index: Int): DOMPoint
     fun initialize(newItem: DOMPoint): DOMPoint
     fun insertItemBefore(
         newItem: DOMPoint,
-        index: Number,
+        index: Int,
     ): DOMPoint
 
-    fun removeItem(index: Number): DOMPoint
+    fun removeItem(index: Int): DOMPoint
     fun replaceItem(
         newItem: DOMPoint,
-        index: Number,
+        index: Int,
     ): DOMPoint
 }

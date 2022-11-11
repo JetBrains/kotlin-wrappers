@@ -10,5 +10,5 @@ sealed external class DOMStringList :
     fun contains(string: String): Boolean
 
     /** Returns the string with index index from strings. */
-    fun item(index: Number): String?
+    fun item(index: Int): String?
 }

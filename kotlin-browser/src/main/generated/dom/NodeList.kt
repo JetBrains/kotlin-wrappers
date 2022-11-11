@@ -7,7 +7,7 @@ import kotlinx.js.ArrayLike
 sealed external class NodeList :
     ArrayLike<Node> {
     /** Returns the node with index index from the collection. The nodes are sorted in tree order. */
-    fun item(index: Number): Node?
+    fun item(index: Int): Node?
 
     /**
      * Performs the specified action for each node in an list.

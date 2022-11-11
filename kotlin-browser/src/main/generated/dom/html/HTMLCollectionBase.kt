@@ -8,5 +8,5 @@ import kotlinx.js.ArrayLike
 sealed external interface HTMLCollectionBase :
     ArrayLike<Element> {
     /** Retrieves an object from various collections. */
-    fun item(index: Number): Element?
+    fun item(index: Int): Element?
 }

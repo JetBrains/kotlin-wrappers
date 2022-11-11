@@ -35,5 +35,5 @@ sealed external class HTMLOptionsCollection :
     )
 
     /** Removes the item with index index from the collection. */
-    fun remove(index: Number)
+    fun remove(index: Int)
 }

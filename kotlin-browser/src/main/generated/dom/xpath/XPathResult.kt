@@ -13,7 +13,7 @@ sealed external class XPathResult {
     val snapshotLength: Int
     val stringValue: String
     fun iterateNext(): Node?
-    fun snapshotItem(index: Number): Node?
+    fun snapshotItem(index: Int): Node?
     val ANY_TYPE: Short
     val ANY_UNORDERED_NODE_TYPE: Short
     val BOOLEAN_TYPE: Short

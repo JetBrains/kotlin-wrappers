@@ -5,9 +5,9 @@ package cssom
 sealed external class CSSGroupingRule :
     CSSRule {
     val cssRules: CSSRuleList
-    fun deleteRule(index: Number)
+    fun deleteRule(index: Int)
     fun insertRule(
         rule: String,
-        index: Number = definedExternally,
+        index: Int = definedExternally,
     ): Number
 }

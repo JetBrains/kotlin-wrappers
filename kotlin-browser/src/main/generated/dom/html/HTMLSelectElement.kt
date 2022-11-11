@@ -68,7 +68,7 @@ abstract external class HTMLSelectElement :
      * @param name Variant of type Number or String that specifies the object or collection to retrieve. If this parameter is an integer, it is the zero-based index of the object. If this parameter is a string, all objects with matching name or id properties are retrieved, and a collection is returned if more than one match is made.
      * @param index Variant of type Number that specifies the zero-based index of the object to retrieve when a collection is returned.
      */
-    fun item(index: Number): HTMLOptionElement?
+    fun item(index: Int): HTMLOptionElement?
 
     /**
      * Retrieves a select object or an object from an options collection.
@@ -81,7 +81,7 @@ abstract external class HTMLSelectElement :
      * @param index Number that specifies the zero-based index of the element to remove from the collection.
      */
     override fun remove()
-    fun remove(index: Number)
+    fun remove(index: Int)
     fun reportValidity(): Boolean
 
     /**

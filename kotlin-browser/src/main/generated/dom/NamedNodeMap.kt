@@ -12,7 +12,7 @@ sealed external class NamedNodeMap :
         localName: String,
     ): Attr?
 
-    fun item(index: Number): Attr?
+    fun item(index: Int): Attr?
     fun removeNamedItem(qualifiedName: String): Attr
     fun removeNamedItemNS(
         namespace: String?,

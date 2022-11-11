@@ -6,5 +6,5 @@ import kotlinx.js.ArrayLike
 
 sealed external class SpeechRecognitionResultList :
     ArrayLike<SpeechRecognitionResult> {
-    fun item(index: Number): SpeechRecognitionResult
+    fun item(index: Int): SpeechRecognitionResult
 }

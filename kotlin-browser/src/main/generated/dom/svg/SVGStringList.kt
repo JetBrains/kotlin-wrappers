@@ -9,16 +9,16 @@ sealed external class SVGStringList :
     val numberOfItems: Int
     fun appendItem(newItem: String): String
     fun clear()
-    fun getItem(index: Number): String
+    fun getItem(index: Int): String
     fun initialize(newItem: String): String
     fun insertItemBefore(
         newItem: String,
-        index: Number,
+        index: Int,
     ): String
 
-    fun removeItem(index: Number): String
+    fun removeItem(index: Int): String
     fun replaceItem(
         newItem: String,
-        index: Number,
+        index: Int,
     ): String
 }
