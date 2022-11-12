@@ -2,6 +2,8 @@
 
 package dom
 
+import dom.xml.XMLDocument
+
 sealed external class DOMImplementation {
     fun createDocument(
         namespace: String?,
