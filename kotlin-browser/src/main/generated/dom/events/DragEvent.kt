@@ -2,6 +2,8 @@
 
 package dom.events
 
+import dom.data.DataTransfer
+
 external interface DragEventInit : MouseEventInit {
     var dataTransfer: DataTransfer?
 }

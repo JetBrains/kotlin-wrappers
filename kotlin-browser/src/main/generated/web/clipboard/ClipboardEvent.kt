@@ -2,7 +2,7 @@
 
 package web.clipboard
 
-import dom.events.DataTransfer
+import dom.data.DataTransfer
 import web.events.Event
 import web.events.EventInit
 

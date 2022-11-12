@@ -1,5 +1,5 @@
 // Automatically generated - do not modify!
 
-package dom.events
+package dom.data
 
 typealias DataTransferItem = org.w3c.dom.DataTransferItem
