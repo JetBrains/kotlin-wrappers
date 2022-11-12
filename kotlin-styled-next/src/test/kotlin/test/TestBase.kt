@@ -3,12 +3,12 @@ package test
 import TestScope
 import dom.Element
 import dom.html.HTMLInputElement
-import dom.html.get
 import kotlinx.css.*
 import kotlinx.css.properties.KeyframesBuilder
 import kotlinx.css.properties.deg
 import kotlinx.css.properties.rotate
 import kotlinx.css.properties.transform
+import kotlinx.js.get
 import runTest
 import kotlin.test.*
 
