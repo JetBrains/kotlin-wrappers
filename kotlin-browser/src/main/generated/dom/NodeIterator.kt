@@ -2,12 +2,14 @@
 
 package dom
 
+import kotlinx.js.JsLong
+
 sealed external class NodeIterator {
     val filter: NodeFilter?
     val pointerBeforeReferenceNode: Boolean
     val referenceNode: Node
     val root: Node
-    val whatToShow: Number
+    val whatToShow: JsLong
     fun nextNode(): Node?
     fun previousNode(): Node?
 }
