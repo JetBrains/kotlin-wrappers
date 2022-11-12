@@ -2,4 +2,18 @@
 
 package dom
 
-typealias DOMImplementation = org.w3c.dom.DOMImplementation
+sealed external class DOMImplementation {
+    fun createDocument(
+        namespace: String?,
+        qualifiedName: String?,
+        doctype: DocumentType? = definedExternally,
+    ): XMLDocument
+
+    fun createDocumentType(
+        qualifiedName: String,
+        publicId: String,
+        systemId: String,
+    ): DocumentType
+
+    fun createHTMLDocument(title: String = definedExternally): Document
+}
