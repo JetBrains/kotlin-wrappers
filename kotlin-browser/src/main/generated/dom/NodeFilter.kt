@@ -2,4 +2,4 @@
 
 package dom
 
-typealias NodeFilter = org.w3c.dom.NodeFilter
+typealias NodeFilter = (node: Node) -> Short
