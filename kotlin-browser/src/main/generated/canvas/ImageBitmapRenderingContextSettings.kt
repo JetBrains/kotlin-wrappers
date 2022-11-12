@@ -2,4 +2,6 @@
 
 package canvas
 
-typealias ImageBitmapRenderingContextSettings = org.w3c.dom.ImageBitmapRenderingContextSettings
+sealed external interface ImageBitmapRenderingContextSettings {
+    var alpha: Boolean?
+}
