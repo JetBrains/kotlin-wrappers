@@ -8,7 +8,6 @@ import kotlinx.css.properties.KeyframesBuilder
 import kotlinx.css.properties.deg
 import kotlinx.css.properties.rotate
 import kotlinx.css.properties.transform
-import kotlinx.js.get
 import runTest
 import kotlin.test.*
 
@@ -68,7 +67,7 @@ open class TestBase {
     }
 
     protected fun Element.childAt(i: Int): Element {
-        val child = children[i]
+        val child = children.item(i)
         assertNotNull(child)
         return child
     }

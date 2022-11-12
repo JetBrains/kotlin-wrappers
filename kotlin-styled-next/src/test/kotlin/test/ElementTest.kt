@@ -4,7 +4,6 @@ import TestScope
 import kotlinx.css.*
 import kotlinx.css.properties.*
 import kotlinx.html.classes
-import kotlinx.js.get
 import react.Props
 import react.dom.attrs
 import react.dom.div
@@ -48,7 +47,7 @@ class ElementTest : TestBase() {
                 }
             }
         }
-        val child = clearAndInject(styledComponent).children[0]
+        val child = clearAndInject(styledComponent).children.item(0)
         assertNotNull(child)
 
         assertEquals(firstColor.toString(), child.getStyle().color)
