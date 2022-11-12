@@ -2,4 +2,9 @@
 
 package web.file
 
-typealias FileList = org.w3c.files.FileList
+import kotlinx.js.ArrayLike
+
+sealed external class FileList :
+    ArrayLike<File> {
+    fun item(index: Int): File?
+}
