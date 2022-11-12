@@ -8,8 +8,7 @@ package canvas
 
 // language=JavaScript
 @JsName("""(/*union*/{evenodd: 'evenodd', nonzero: 'nonzero'}/*union*/)""")
-external enum class CanvasFillRule :
-/* legacy adapter */ org.w3c.dom.CanvasFillRule {
+external enum class CanvasFillRule {
     evenodd,
     nonzero,
 

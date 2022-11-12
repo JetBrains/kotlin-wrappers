@@ -2,4 +2,19 @@
 
 package canvas
 
-typealias CanvasText = org.w3c.dom.CanvasText
+sealed external interface CanvasText {
+    fun fillText(
+        text: String,
+        x: Number,
+        y: Number,
+        maxWidth: Number = definedExternally,
+    )
+
+    fun measureText(text: String): TextMetrics
+    fun strokeText(
+        text: String,
+        x: Number,
+        y: Number,
+        maxWidth: Number = definedExternally,
+    )
+}

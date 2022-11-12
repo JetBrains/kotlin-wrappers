@@ -2,4 +2,25 @@
 
 package canvas
 
-typealias CanvasRenderingContext2D = org.w3c.dom.CanvasRenderingContext2D
+import dom.html.HTMLCanvasElement
+
+sealed external class CanvasRenderingContext2D :
+    CanvasCompositing,
+    CanvasDrawImage,
+    CanvasDrawPath,
+    CanvasFillStrokeStyles,
+    CanvasFilters,
+    CanvasImageData,
+    CanvasImageSmoothing,
+    CanvasPath,
+    CanvasPathDrawingStyles,
+    CanvasRect,
+    CanvasShadowStyles,
+    CanvasState,
+    CanvasText,
+    CanvasTextDrawingStyles,
+    CanvasTransform,
+    CanvasUserInterface {
+    val canvas: HTMLCanvasElement
+    fun getContextAttributes(): CanvasRenderingContext2DSettings
+}

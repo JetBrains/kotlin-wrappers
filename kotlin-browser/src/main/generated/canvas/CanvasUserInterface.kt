@@ -2,4 +2,12 @@
 
 package canvas
 
-typealias CanvasUserInterface = org.w3c.dom.CanvasUserInterface
+import dom.Element
+
+sealed external interface CanvasUserInterface {
+    fun drawFocusIfNeeded(element: Element)
+    fun drawFocusIfNeeded(
+        path: Path2D,
+        element: Element,
+    )
+}

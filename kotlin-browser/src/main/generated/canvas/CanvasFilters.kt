@@ -2,4 +2,6 @@
 
 package canvas
 
-typealias CanvasFilters = org.w3c.dom.CanvasFilters
+sealed external interface CanvasFilters {
+    var filter: String
+}

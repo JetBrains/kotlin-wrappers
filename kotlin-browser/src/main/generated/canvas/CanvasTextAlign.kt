@@ -8,8 +8,7 @@ package canvas
 
 // language=JavaScript
 @JsName("""(/*union*/{center: 'center', end: 'end', left: 'left', right: 'right', start: 'start'}/*union*/)""")
-external enum class CanvasTextAlign :
-/* legacy adapter */ org.w3c.dom.CanvasTextAlign {
+external enum class CanvasTextAlign {
     center,
     end,
     left,

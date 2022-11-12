@@ -2,4 +2,7 @@
 
 package canvas
 
-typealias CanvasState = org.w3c.dom.CanvasState
+sealed external interface CanvasState {
+    fun restore()
+    fun save()
+}

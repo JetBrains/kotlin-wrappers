@@ -2,4 +2,9 @@
 
 package canvas
 
-typealias CanvasTextDrawingStyles = org.w3c.dom.CanvasTextDrawingStyles
+sealed external interface CanvasTextDrawingStyles {
+    var direction: CanvasDirection
+    var font: String
+    var textAlign: CanvasTextAlign
+    var textBaseline: CanvasTextBaseline
+}

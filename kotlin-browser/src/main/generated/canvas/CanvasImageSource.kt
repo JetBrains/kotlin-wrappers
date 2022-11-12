@@ -2,4 +2,4 @@
 
 package canvas
 
-typealias CanvasImageSource = org.w3c.dom.CanvasImageSource
+typealias CanvasImageSource = Any /* HTMLOrSVGImageElement | HTMLVideoElement | HTMLCanvasElement | ImageBitmap */

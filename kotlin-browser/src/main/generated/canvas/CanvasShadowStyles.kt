@@ -2,4 +2,9 @@
 
 package canvas
 
-typealias CanvasShadowStyles = org.w3c.dom.CanvasShadowStyles
+sealed external interface CanvasShadowStyles {
+    var shadowBlur: Double
+    var shadowColor: String
+    var shadowOffsetX: Double
+    var shadowOffsetY: Double
+}

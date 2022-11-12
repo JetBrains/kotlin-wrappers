@@ -2,4 +2,9 @@
 
 package canvas
 
-typealias CanvasRenderingContext2DSettings = org.w3c.dom.CanvasRenderingContext2DSettings
+sealed external interface CanvasRenderingContext2DSettings {
+    var alpha: Boolean?
+    var colorSpace: PredefinedColorSpace?
+    var desynchronized: Boolean?
+    var willReadFrequently: Boolean?
+}

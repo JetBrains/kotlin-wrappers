@@ -2,4 +2,7 @@
 
 package canvas
 
-typealias CanvasCompositing = org.w3c.dom.CanvasCompositing
+sealed external interface CanvasCompositing {
+    var globalAlpha: Double
+    var globalCompositeOperation: GlobalCompositeOperation
+}

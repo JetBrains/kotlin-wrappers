@@ -2,4 +2,7 @@
 
 package canvas
 
-typealias CanvasImageSmoothing = org.w3c.dom.CanvasImageSmoothing
+sealed external interface CanvasImageSmoothing {
+    var imageSmoothingEnabled: Boolean
+    var imageSmoothingQuality: ImageSmoothingQuality
+}

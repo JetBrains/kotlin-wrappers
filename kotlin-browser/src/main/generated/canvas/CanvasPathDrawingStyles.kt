@@ -2,4 +2,14 @@
 
 package canvas
 
-typealias CanvasPathDrawingStyles = org.w3c.dom.CanvasPathDrawingStyles
+import kotlinx.js.ReadonlyArray
+
+sealed external interface CanvasPathDrawingStyles {
+    var lineCap: CanvasLineCap
+    var lineDashOffset: Double
+    var lineJoin: CanvasLineJoin
+    var lineWidth: Double
+    var miterLimit: Double
+    fun getLineDash(): ReadonlyArray<Double>
+    fun setLineDash(segments: ReadonlyArray<Double>)
+}

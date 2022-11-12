@@ -2,4 +2,25 @@
 
 package canvas
 
-typealias CanvasRect = org.w3c.dom.CanvasRect
+sealed external interface CanvasRect {
+    fun clearRect(
+        x: Number,
+        y: Number,
+        w: Number,
+        h: Number,
+    )
+
+    fun fillRect(
+        x: Number,
+        y: Number,
+        w: Number,
+        h: Number,
+    )
+
+    fun strokeRect(
+        x: Number,
+        y: Number,
+        w: Number,
+        h: Number,
+    )
+}
