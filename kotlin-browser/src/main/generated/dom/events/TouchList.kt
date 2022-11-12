@@ -2,4 +2,9 @@
 
 package dom.events
 
-typealias TouchList = org.w3c.dom.TouchList
+import kotlinx.js.ArrayLike
+
+sealed external class TouchList :
+    ArrayLike<Touch> {
+    fun item(index: Int): Touch?
+}
