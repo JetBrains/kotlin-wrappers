@@ -7,8 +7,10 @@ import web.events.EventHandler
 import web.events.EventTarget
 import kotlin.js.Promise
 
-open external class Animation :
-    EventTarget {
+open external class Animation(
+    effect: AnimationEffect? = definedExternally,
+    timeline: AnimationTimeline? = definedExternally,
+) : EventTarget {
     var currentTime: CSSNumberish?
     var effect: AnimationEffect?
     val finished: Promise<Animation>

@@ -5,8 +5,9 @@ package web.speech
 import web.events.EventHandler
 import web.events.EventTarget
 
-external class SpeechSynthesisUtterance :
-    EventTarget {
+external class SpeechSynthesisUtterance(
+    text: String = definedExternally,
+) : EventTarget {
     var lang: String
     var onboundary: EventHandler<SpeechSynthesisEvent>?
     var onend: EventHandler<SpeechSynthesisEvent>?
