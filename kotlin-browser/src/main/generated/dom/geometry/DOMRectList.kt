@@ -2,4 +2,9 @@
 
 package dom.geometry
 
-typealias DOMRectList = org.w3c.dom.DOMRectList
+import kotlinx.js.ArrayLike
+
+sealed external class DOMRectList :
+    ArrayLike<DOMRect> {
+    fun item(index: Int): DOMRect?
+}

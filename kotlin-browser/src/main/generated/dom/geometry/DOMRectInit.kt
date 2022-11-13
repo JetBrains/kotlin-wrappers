@@ -2,4 +2,9 @@
 
 package dom.geometry
 
-typealias DOMRectInit = org.w3c.dom.DOMRectInit
+sealed external interface DOMRectInit {
+    var height: Double?
+    var width: Double?
+    var x: Double?
+    var y: Double?
+}

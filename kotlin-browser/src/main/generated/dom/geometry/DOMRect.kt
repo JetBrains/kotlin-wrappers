@@ -2,4 +2,14 @@
 
 package dom.geometry
 
-typealias DOMRect = org.w3c.dom.DOMRect
+external class DOMRect(
+    x: Number = definedExternally,
+    y: Number = definedExternally,
+    width: Number = definedExternally,
+    height: Number = definedExternally,
+) : DOMRectReadOnly {
+    override var height: Double
+    override var width: Double
+    override var x: Double
+    override var y: Double
+}

@@ -2,4 +2,9 @@
 
 package dom.geometry
 
-typealias DOMPointInit = org.w3c.dom.DOMPointInit
+sealed external interface DOMPointInit {
+    var w: Double?
+    var x: Double?
+    var y: Double?
+    var z: Double?
+}
