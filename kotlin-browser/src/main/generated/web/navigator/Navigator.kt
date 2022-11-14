@@ -11,6 +11,7 @@ import serviceworkers.ServiceWorkerContainer
 import web.clipboard.Clipboard
 import web.gamepad.Gamepad
 import web.geolocation.Geolocation
+import web.http.BodyInit
 import web.permissions.Permissions
 import web.share.ShareData
 import web.url.URL
@@ -57,12 +58,12 @@ sealed external class Navigator :
 
     fun sendBeacon(
         url: String,
-        data: Any /* BodyInit */? = definedExternally,
+        data: BodyInit? = definedExternally,
     ): Boolean
 
     fun sendBeacon(
         url: URL,
-        data: Any /* BodyInit */? = definedExternally,
+        data: BodyInit? = definedExternally,
     ): Boolean
 
     /** Available only in secure contexts. */
