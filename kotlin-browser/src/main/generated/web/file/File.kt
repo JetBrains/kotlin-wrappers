@@ -2,4 +2,17 @@
 
 package web.file
 
-typealias File = org.w3c.files.File
+import kotlinx.js.EpochTimeStamp
+import kotlinx.js.ReadonlyArray
+import web.buffer.Blob
+import web.buffer.BlobPart
+
+external class File(
+    fileBits: ReadonlyArray<BlobPart>,
+    fileName: String,
+    options: FilePropertyBag = definedExternally,
+) : Blob {
+    val lastModified: EpochTimeStamp
+    val name: String
+    val webkitRelativePath: String
+}
