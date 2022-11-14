@@ -8,8 +8,7 @@ package web.xhr
 
 // language=JavaScript
 @JsName("""(/*union*/{none: '', arraybuffer: 'arraybuffer', blob: 'blob', document: 'document', json: 'json', text: 'text'}/*union*/)""")
-external enum class XMLHttpRequestResponseType :
-/* legacy adapter */ org.w3c.xhr.XMLHttpRequestResponseType {
+external enum class XMLHttpRequestResponseType {
     none,
     arraybuffer,
     blob,
