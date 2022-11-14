@@ -2,4 +2,11 @@
 
 package dom
 
-typealias ProcessingInstruction = org.w3c.dom.ProcessingInstruction
+import dom.css.LinkStyle
+
+sealed external class ProcessingInstruction :
+    CharacterData,
+    LinkStyle {
+    override val ownerDocument: Document
+    val target: String
+}
