@@ -265,7 +265,13 @@ abstract external class Document :
     ): Document
 
     fun open(
-        url: URL, /* | string */
+        url: String,
+        name: String,
+        features: String,
+    ): WindowProxy?
+
+    fun open(
+        url: URL,
         name: String,
         features: String,
     ): WindowProxy?

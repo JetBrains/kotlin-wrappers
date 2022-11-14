@@ -56,7 +56,12 @@ sealed external class Navigator :
     ): Promise<MediaKeySystemAccess>
 
     fun sendBeacon(
-        url: URL, /* | string */
+        url: String,
+        data: Any /* BodyInit */? = definedExternally,
+    ): Boolean
+
+    fun sendBeacon(
+        url: URL,
         data: Any /* BodyInit */? = definedExternally,
     ): Boolean
 

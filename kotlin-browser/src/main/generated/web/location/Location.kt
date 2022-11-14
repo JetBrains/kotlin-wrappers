@@ -69,11 +69,13 @@ sealed external class Location {
     var search: String
 
     /** Navigates to the given URL. */
-    fun assign(url: URL /* | string */)
+    fun assign(url: String)
+    fun assign(url: URL)
 
     /** Reloads the current page. */
     fun reload()
 
     /** Removes the current page from the session history and navigates to the given URL. */
-    fun replace(url: URL /* | string */)
+    fun replace(url: String)
+    fun replace(url: URL)
 }

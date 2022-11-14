@@ -9,9 +9,14 @@ import web.messaging.MessageEvent
 import web.url.URL
 
 external class EventSource(
-    url: URL, /* | string */
+    url: String,
     init: EventSourceInit = definedExternally,
 ) : EventTarget {
+    constructor(
+        url: URL,
+        init: EventSourceInit = definedExternally,
+    )
+
     var onerror: EventHandler<Event>?
     var onmessage: EventHandler<MessageEvent<*>>?
     var onopen: EventHandler<Event>?

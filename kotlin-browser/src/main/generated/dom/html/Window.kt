@@ -68,7 +68,13 @@ sealed external class Window :
     )
 
     fun open(
-        url: URL /* | string */ = definedExternally,
+        url: String = definedExternally,
+        target: String = definedExternally,
+        features: String = definedExternally,
+    ): WindowProxy?
+
+    fun open(
+        url: URL,
         target: String = definedExternally,
         features: String = definedExternally,
     ): WindowProxy?

@@ -80,12 +80,25 @@ external class XMLHttpRequest :
      */
     fun open(
         method: String,
-        url: URL, /* | string */
+        url: String,
     )
 
     fun open(
         method: String,
-        url: URL, /* | string */
+        url: URL,
+    )
+
+    fun open(
+        method: String,
+        url: String,
+        async: Boolean,
+        username: String? = definedExternally,
+        password: String? = definedExternally,
+    )
+
+    fun open(
+        method: String,
+        url: URL,
         async: Boolean,
         username: String? = definedExternally,
         password: String? = definedExternally,

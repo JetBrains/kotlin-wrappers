@@ -14,12 +14,24 @@ sealed external class History {
     fun pushState(
         data: Any?,
         unused: String,
-        url: URL /* | string */? = definedExternally,
+        url: String? = definedExternally,
+    )
+
+    fun pushState(
+        data: Any?,
+        unused: String,
+        url: URL?,
     )
 
     fun replaceState(
         data: Any?,
         unused: String,
-        url: URL /* | string */? = definedExternally,
+        url: String? = definedExternally,
+    )
+
+    fun replaceState(
+        data: Any?,
+        unused: String,
+        url: URL?,
     )
 }

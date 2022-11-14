@@ -8,6 +8,11 @@ sealed external interface NavigatorContentUtils {
     /** Available only in secure contexts. */
     fun registerProtocolHandler(
         scheme: String,
-        url: URL, /* | string */
+        url: String,
+    )
+
+    fun registerProtocolHandler(
+        scheme: String,
+        url: URL,
     )
 }

@@ -39,7 +39,18 @@ open external class StorageEvent(
         key: String? = definedExternally,
         oldValue: String? = definedExternally,
         newValue: String? = definedExternally,
-        url: URL /* | string */ = definedExternally,
+        url: String = definedExternally,
+        storageArea: Storage? = definedExternally,
+    )
+
+    fun initStorageEvent(
+        type: String,
+        bubbles: Boolean = definedExternally,
+        cancelable: Boolean = definedExternally,
+        key: String? = definedExternally,
+        oldValue: String? = definedExternally,
+        newValue: String? = definedExternally,
+        url: URL,
         storageArea: Storage? = definedExternally,
     )
 
