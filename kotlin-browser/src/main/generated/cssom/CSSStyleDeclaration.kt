@@ -23,6 +23,7 @@ sealed external class CSSStyleDeclaration :
     var animationTimingFunction: String
     var appearance: String
     var aspectRatio: String
+    var backdropFilter: String
     var backfaceVisibility: String
     var background: String
     var backgroundAttachment: String
@@ -125,6 +126,9 @@ sealed external class CSSStyleDeclaration :
     var columnWidth: String
     var columns: String
     var contain: String
+    var container: String
+    var containerName: String
+    var containerType: String
     var content: String
     var counterIncrement: String
     var counterReset: String
@@ -155,6 +159,7 @@ sealed external class CSSStyleDeclaration :
     var fontFeatureSettings: String
     var fontKerning: String
     var fontOpticalSizing: String
+    var fontPalette: String
     var fontSize: String
     var fontSizeAdjust: String
     var fontStretch: String
@@ -186,6 +191,7 @@ sealed external class CSSStyleDeclaration :
     var gridTemplateColumns: String
     var gridTemplateRows: String
     var height: String
+    var hyphenateCharacter: String
     var hyphens: String
     var imageRendering: String
     var inlineSize: String
@@ -259,6 +265,7 @@ sealed external class CSSStyleDeclaration :
     var outlineWidth: String
     var overflow: String
     var overflowAnchor: String
+    var overflowClipMargin: String
     var overflowWrap: String
     var overflowX: String
     var overflowY: String

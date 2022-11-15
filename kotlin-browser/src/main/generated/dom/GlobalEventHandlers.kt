@@ -20,12 +20,14 @@ external interface GlobalEventHandlers {
     var onanimationiteration: EventHandler<AnimationEvent>?
     var onanimationstart: EventHandler<AnimationEvent>?
     var onauxclick: EventHandler<MouseEvent>?
+    var onbeforeinput: EventHandler<InputEvent>?
 
     /**
      * Fires when the object loses the input focus.
      * @param ev The focus event.
      */
     var onblur: EventHandler<FocusEvent>?
+    var oncancel: EventHandler<Event>?
 
     /**
      * Occurs when playback is possible, but would require further buffering.

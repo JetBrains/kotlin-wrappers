@@ -10,6 +10,5 @@ sealed external class Attr :
     override val ownerDocument: Document
     val ownerElement: Element?
     val prefix: String?
-    val specified: Boolean
     var value: String
 }

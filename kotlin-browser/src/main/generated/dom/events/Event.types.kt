@@ -14,6 +14,9 @@ inline val Event.Companion.AFTER_PRINT: EventType<Event>
 inline val Event.Companion.BEFORE_PRINT: EventType<Event>
     get() = EventType("beforeprint")
 
+inline val Event.Companion.CANCEL: EventType<Event>
+    get() = EventType("cancel")
+
 inline val Event.Companion.CAN_PLAY: EventType<Event>
     get() = EventType("canplay")
 

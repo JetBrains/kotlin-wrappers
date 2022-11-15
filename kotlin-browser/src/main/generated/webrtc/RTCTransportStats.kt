@@ -9,7 +9,6 @@ sealed external interface RTCTransportStats : RTCStats {
     var dtlsState: RTCDtlsTransportState
     var localCertificateId: String?
     var remoteCertificateId: String?
-    var rtcpTransportStatsId: String?
     var selectedCandidatePairId: String?
     var srtpCipher: String?
     var tlsVersion: String?

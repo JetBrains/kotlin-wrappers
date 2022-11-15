@@ -9,12 +9,14 @@ external interface ARIAMixin {
     var ariaChecked: String?
     var ariaColCount: String?
     var ariaColIndex: String?
+    var ariaColIndexText: String?
     var ariaColSpan: String?
     var ariaCurrent: String?
     var ariaDisabled: String?
     var ariaExpanded: String?
     var ariaHasPopup: String?
     var ariaHidden: String?
+    var ariaInvalid: String?
     var ariaKeyShortcuts: String?
     var ariaLabel: String?
     var ariaLevel: String?
@@ -31,6 +33,7 @@ external interface ARIAMixin {
     var ariaRoleDescription: String?
     var ariaRowCount: String?
     var ariaRowIndex: String?
+    var ariaRowIndexText: String?
     var ariaRowSpan: String?
     var ariaSelected: String?
     var ariaSetSize: String?
@@ -39,4 +42,5 @@ external interface ARIAMixin {
     var ariaValueMin: String?
     var ariaValueNow: String?
     var ariaValueText: String?
+    var role: String?
 }

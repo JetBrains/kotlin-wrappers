@@ -6,5 +6,5 @@ import kotlinx.js.HighResTimeStamp
 
 typealias VideoFrameRequestCallback = (
     now: HighResTimeStamp,
-    metadata: VideoFrameMetadata,
+    metadata: VideoFrameCallbackMetadata,
 ) -> Unit

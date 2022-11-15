@@ -8,6 +8,9 @@ import web.events.EventType
 inline val Event.Companion.DEVICE_CHANGE: EventType<Event>
     get() = EventType("devicechange")
 
+inline val Event.Companion.ERROR: EventType<Event>
+    get() = EventType("error")
+
 inline val Event.Companion.PAUSE: EventType<Event>
     get() = EventType("pause")
 

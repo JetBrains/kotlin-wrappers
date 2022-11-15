@@ -7,9 +7,8 @@
 package media.session
 
 // language=JavaScript
-@JsName("""(/*union*/{hangup: 'hangup', nexttrack: 'nexttrack', pause: 'pause', play: 'play', previoustrack: 'previoustrack', seekbackward: 'seekbackward', seekforward: 'seekforward', seekto: 'seekto', skipad: 'skipad', stop: 'stop', togglecamera: 'togglecamera', togglemicrophone: 'togglemicrophone'}/*union*/)""")
+@JsName("""(/*union*/{nexttrack: 'nexttrack', pause: 'pause', play: 'play', previoustrack: 'previoustrack', seekbackward: 'seekbackward', seekforward: 'seekforward', seekto: 'seekto', skipad: 'skipad', stop: 'stop'}/*union*/)""")
 external enum class MediaSessionAction {
-    hangup,
     nexttrack,
     pause,
     play,
@@ -19,8 +18,6 @@ external enum class MediaSessionAction {
     seekto,
     skipad,
     stop,
-    togglecamera,
-    togglemicrophone,
 
     ;
 }

@@ -8,9 +8,6 @@ import web.events.EventType
 inline val Event.Companion.ABORT: EventType<Event>
     get() = EventType("abort")
 
-inline val Event.Companion.BLOCKED: EventType<Event>
-    get() = EventType("blocked")
-
 inline val Event.Companion.CLOSE: EventType<Event>
     get() = EventType("close")
 

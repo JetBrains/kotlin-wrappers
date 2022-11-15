@@ -10,5 +10,4 @@ sealed external class SVGStyleElement :
     var disabled: Boolean
     var media: String
     var title: String
-    var type: String
 }

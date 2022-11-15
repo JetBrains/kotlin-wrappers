@@ -8,6 +8,7 @@ import web.events.EventTarget
 
 sealed external class PermissionStatus :
     EventTarget {
+    val name: String
     var onchange: EventHandler<Event>?
     val state: PermissionState
 }

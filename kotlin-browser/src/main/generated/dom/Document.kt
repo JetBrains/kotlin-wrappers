@@ -70,9 +70,6 @@ abstract external class Document :
     /** Returns document's URL. */
     val documentURI: String
 
-    /** Sets or gets the security domain of the document. */
-    var domain: String
-
     /** Retrieves a collection of all embed objects in the document. */
     val embeds: HTMLCollectionOf<HTMLEmbedElement>
 
@@ -276,17 +273,6 @@ abstract external class Document :
         features: String,
     ): WindowProxy?
 
-    /**
-     * Returns a Boolean value that indicates whether the specified command is in the indeterminate state.
-     * @param commandId String that specifies a command identifier.
-     */
-    fun queryCommandIndeterm(commandId: String): Boolean
-
-    /**
-     * Returns the current value of the document, range, or current selection for the given command.
-     * @param commandId String that specifies a command identifier.
-     */
-    fun queryCommandValue(commandId: String): String
     fun requestStorageAccess(): Promise<Void>
 
     /**

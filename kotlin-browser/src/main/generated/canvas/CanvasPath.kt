@@ -64,4 +64,12 @@ sealed external interface CanvasPath {
         w: Number,
         h: Number,
     )
+
+    fun roundRect(
+        x: Number,
+        y: Number,
+        w: Number,
+        h: Number,
+        radii: Any /* number | DOMPointInit | (number | DOMPointInit)[] */ = definedExternally,
+    )
 }

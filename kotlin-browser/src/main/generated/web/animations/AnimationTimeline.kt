@@ -3,5 +3,5 @@
 package web.animations
 
 sealed external class AnimationTimeline {
-    val currentTime: Double?
+    val currentTime: CSSNumberish?
 }

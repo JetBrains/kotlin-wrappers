@@ -2,10 +2,7 @@
 
 package dom.html
 
-import canvas.CanvasRenderingContext2D
-import canvas.CanvasRenderingContext2DSettings
-import canvas.ImageBitmapRenderingContext
-import canvas.ImageBitmapRenderingContextSettings
+import canvas.*
 import media.stream.MediaStream
 import webgl.WebGL2RenderingContext
 import webgl.WebGLContextAttributes
@@ -58,4 +55,6 @@ abstract external class HTMLCanvasElement :
         type: String = definedExternally,
         quality: Number = definedExternally,
     ): String
+
+    fun transferControlToOffscreen(): OffscreenCanvas
 }

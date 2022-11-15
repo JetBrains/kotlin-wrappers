@@ -4,9 +4,25 @@ package webrtc
 
 sealed external interface RTCOutboundRtpStreamStats : RTCSentRtpStreamStats {
     var firCount: Number?
+    var frameHeight: Number?
+    var frameWidth: Number?
     var framesEncoded: Number?
+    var framesPerSecond: Number?
+    var framesSent: Number?
+    var headerBytesSent: Number?
+    var hugeFramesSent: Number?
+    var keyFramesEncoded: Number?
+    var mediaSourceId: String?
     var nackCount: Number?
     var pliCount: Number?
     var qpSum: Number?
+    var qualityLimitationResolutionChanges: Number?
     var remoteId: String?
+    var retransmittedBytesSent: Number?
+    var retransmittedPacketsSent: Number?
+    var rid: String?
+    var targetBitrate: Number?
+    var totalEncodeTime: Number?
+    var totalEncodedBytesTarget: Number?
+    var totalPacketSendDelay: Number?
 }

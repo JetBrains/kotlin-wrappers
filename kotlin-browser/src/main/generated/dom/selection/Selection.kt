@@ -34,6 +34,12 @@ sealed external class Selection {
     )
 
     fun getRangeAt(index: Int): Range
+    fun modify(
+        alter: String = definedExternally,
+        direction: String = definedExternally,
+        granularity: String = definedExternally,
+    )
+
     fun removeAllRanges()
     fun removeRange(range: Range)
     fun selectAllChildren(node: Node)

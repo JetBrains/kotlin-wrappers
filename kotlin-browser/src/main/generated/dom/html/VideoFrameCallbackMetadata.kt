@@ -4,7 +4,7 @@ package dom.html
 
 import kotlinx.js.HighResTimeStamp
 
-sealed external interface VideoFrameMetadata {
+sealed external interface VideoFrameCallbackMetadata {
     var captureTime: HighResTimeStamp?
     var expectedDisplayTime: HighResTimeStamp
     var height: Double
