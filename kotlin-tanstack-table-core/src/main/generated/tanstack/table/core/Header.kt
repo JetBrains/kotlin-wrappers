@@ -2,6 +2,4 @@
 
 package tanstack.table.core
 
-external interface Header<TData : RowData, TValue> :
-    CoreHeader<TData, TValue>,
-    ColumnSizingHeader
+external interface Header<TData : RowData, TValue> : CoreHeader<TData, TValue>, ColumnSizingHeader

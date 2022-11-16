@@ -2,10 +2,4 @@
 
 package tanstack.table.core
 
-external interface GroupingOptions<TData : RowData> {
-    var manualGrouping: Boolean?
-    var onGroupingChange: OnChangeFn<GroupingState>?
-    var enableGrouping: Boolean?
-    var getGroupedRowModel: ((table: Table<TData>) -> () -> RowModel<TData>)?
-    var groupedColumnMode: GroupingColumnMode?
-}
+external interface GroupingOptions<TData : RowData> : GroupingOptionsBase<TData>, ResolvedAggregationFns

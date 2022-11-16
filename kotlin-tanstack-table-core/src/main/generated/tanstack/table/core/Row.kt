@@ -2,11 +2,5 @@
 
 package tanstack.table.core
 
-external interface Row<TData : RowData> :
-    CoreRow<TData>,
-    VisibilityRow<TData>,
-    ColumnPinningRow<TData>,
-    FiltersRow<TData>,
-    GroupingRow,
-    RowSelectionRow,
-    ExpandedRow
+external interface Row<TData : RowData> : CoreRow<TData>, VisibilityRow<TData>, ColumnPinningRow<TData>,
+    FiltersRow<TData>, GroupingRow, RowSelectionRow, ExpandedRow
