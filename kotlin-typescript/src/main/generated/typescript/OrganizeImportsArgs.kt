@@ -3,5 +3,6 @@
 package typescript
 
 sealed external interface OrganizeImportsArgs : CombinedCodeFixScope {
-    var skipDestructiveCodeActions: Boolean?
+
+    var mode: OrganizeImportsMode?
 }

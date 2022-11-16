@@ -22,7 +22,7 @@ sealed external interface NodeFactory {
     ): StringLiteral
 
     fun createStringLiteralFromNode(
-        sourceNode: PropertyNameLiteral,
+        sourceNode: dynamic, /* PropertyNameLiteral | PrivateIdentifier */
         isSingleQuote: Boolean = definedExternally,
     ): StringLiteral
 
@@ -64,6 +64,8 @@ sealed external interface NodeFactory {
     ): Identifier
 
     fun createPrivateIdentifier(text: String): PrivateIdentifier
+    fun createUniquePrivateName(text: String = definedExternally): PrivateIdentifier
+    fun getGeneratedPrivateNameForNode(node: Node): PrivateIdentifier
     fun createToken(token: SyntaxKind.SuperKeyword): SuperExpression
     fun createToken(token: SyntaxKind.ThisKeyword): ThisExpression
     fun createToken(token: SyntaxKind.NullKeyword): NullLiteral
@@ -962,6 +964,17 @@ sealed external interface NodeFactory {
         node: MetaProperty,
         name: Identifier,
     ): MetaProperty
+
+    fun createSatisfiesExpression(
+        expression: Expression,
+        type: TypeNode,
+    ): SatisfiesExpression
+
+    fun updateSatisfiesExpression(
+        node: SatisfiesExpression,
+        expression: Expression,
+        type: TypeNode,
+    ): SatisfiesExpression
 
     fun createTemplateSpan(
         expression: Expression,

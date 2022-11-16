@@ -59,6 +59,9 @@ sealed external interface CompilerHost : ModuleResolutionHost {
         containingFileMode: NodeFormat?,
     ) -> ReadonlyArray<ResolvedTypeReferenceDirective?>)?
     val getEnvironmentVariable: ((name: String) -> String?)?
+
+    /** If provided along with custom resolveModuleNames or resolveTypeReferenceDirectives, used to determine if unchanged file path needs to re-resolve modules/type reference directives */
+    val hasInvalidatedResolutions: ((filePath: Path) -> Boolean)?
     val createHash: ((data: String) -> String)?
     val getParsedCommandLine: ((fileName: String) -> ParsedCommandLine?)?
 }

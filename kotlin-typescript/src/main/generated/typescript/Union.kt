@@ -10,6 +10,8 @@ sealed external interface Union {
 
     sealed interface AccessorDeclaration_ : HasJSDoc, SignatureDeclaration, ObjectLiteralElementLike
 
+    sealed interface AccessorKeyword_ : Modifier, ClassMemberModifier
+
     sealed interface AdditiveOperator_ : AdditiveOperatorOrHigher
 
     sealed interface AdditiveOperatorOrHigher_ : ShiftOperatorOrHigher
@@ -569,6 +571,8 @@ sealed external interface Union {
 
     sealed interface SyntaxKind_AbstractKeyword : KeywordSyntaxKind, ModifierSyntaxKind
 
+    sealed interface SyntaxKind_AccessorKeyword : KeywordSyntaxKind, ModifierSyntaxKind
+
     sealed interface SyntaxKind_AmpersandAmpersandEqualsToken : CompoundAssignmentOperator,
         LogicalOrCoalescingAssignmentOperator
 
@@ -834,6 +838,8 @@ sealed external interface Union {
     sealed interface SyntaxKind_RequireKeyword : KeywordSyntaxKind
 
     sealed interface SyntaxKind_ReturnKeyword : KeywordSyntaxKind
+
+    sealed interface SyntaxKind_SatisfiesKeyword : KeywordSyntaxKind
 
     sealed interface SyntaxKind_SemicolonToken : PunctuationSyntaxKind
 

@@ -8,7 +8,7 @@ package typescript
 
 // language=JavaScript
 @JsName(
-    """(/*union*/{unknown: '', warning: 'warning', keyword: 'keyword', scriptElement: 'script', moduleElement: 'module', classElement: 'class', localClassElement: 'local class', interfaceElement: 'interface', typeElement: 'type', enumElement: 'enum', enumMemberElement: 'enum member', variableElement: 'var', localVariableElement: 'local var', functionElement: 'function', localFunctionElement: 'local function', memberFunctionElement: 'method', memberGetAccessorElement: 'getter', memberSetAccessorElement: 'setter', memberVariableElement: 'property', constructorImplementationElement: 'constructor', callSignatureElement: 'call', indexSignatureElement: 'index', constructSignatureElement: 'construct', parameterElement: 'parameter', typeParameterElement: 'type parameter', primitiveType: 'primitive type', label: 'label', alias: 'alias', constElement: 'const', letElement: 'let', directory: 'directory', externalModuleName: 'external module name', jsxAttribute: 'JSX attribute', string: 'string', link: 'link', linkName: 'link name', linkText: 'link text'}/*union*/)"""
+    """(/*union*/{unknown: '', warning: 'warning', keyword: 'keyword', scriptElement: 'script', moduleElement: 'module', classElement: 'class', localClassElement: 'local class', interfaceElement: 'interface', typeElement: 'type', enumElement: 'enum', enumMemberElement: 'enum member', variableElement: 'var', localVariableElement: 'local var', functionElement: 'function', localFunctionElement: 'local function', memberFunctionElement: 'method', memberGetAccessorElement: 'getter', memberSetAccessorElement: 'setter', memberVariableElement: 'property', memberAccessorVariableElement: 'accessor', constructorImplementationElement: 'constructor', callSignatureElement: 'call', indexSignatureElement: 'index', constructSignatureElement: 'construct', parameterElement: 'parameter', typeParameterElement: 'type parameter', primitiveType: 'primitive type', label: 'label', alias: 'alias', constElement: 'const', letElement: 'let', directory: 'directory', externalModuleName: 'external module name', jsxAttribute: 'JSX attribute', string: 'string', link: 'link', linkName: 'link name', linkText: 'link text'}/*union*/)"""
 )
 external enum class ScriptElementKind {
     unknown,
@@ -69,6 +69,9 @@ external enum class ScriptElementKind {
      * interface Y { foo:number; }
      */
     memberVariableElement,
+
+    /** class X { [public|private]* accessor foo: number; } */
+    memberAccessorVariableElement,
 
     /**
      * class X { constructor() { } }

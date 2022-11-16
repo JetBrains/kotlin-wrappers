@@ -17,7 +17,7 @@ sealed external interface WatchHost {
         path: String,
         callback: FileWatcherCallback,
         pollingInterval: Int = definedExternally,
-        options: CompilerOptions = definedExternally,
+        options: WatchOptions = definedExternally,
     ): FileWatcher
 
     /** Used to watch resolved module's failed lookup locations, config file specs, type roots where auto type reference directives are added */
@@ -25,7 +25,7 @@ sealed external interface WatchHost {
         path: String,
         callback: DirectoryWatcherCallback,
         recursive: Boolean = definedExternally,
-        options: CompilerOptions = definedExternally,
+        options: WatchOptions = definedExternally,
     ): FileWatcher
 
     /** If provided, will be used to set delayed compilation, so that multiple changes in short span are compiled together */

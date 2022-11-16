@@ -74,6 +74,9 @@ sealed external interface ProgramHost<T : BuilderProgram> {
         containingFileMode: NodeFormat?,
     ) -> ReadonlyArray<ResolvedTypeReferenceDirective?>)?
 
+    /** If provided along with custom resolveModuleNames or resolveTypeReferenceDirectives, used to determine if unchanged file path needs to re-resolve modules/type reference directives */
+    val hasInvalidatedResolutions: ((filePath: Path) -> Boolean)?
+
     /**
      * Returns the module resolution cache used by a provided `resolveModuleNames` implementation so that any non-name module resolution operations (eg, package.json lookup) can reuse it
      */

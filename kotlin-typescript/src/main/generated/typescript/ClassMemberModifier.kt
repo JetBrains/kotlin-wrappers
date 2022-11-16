@@ -2,4 +2,4 @@
 
 package typescript
 
-sealed external interface ClassMemberModifier /* AccessibilityModifier | ReadonlyKeyword | StaticKeyword */
+sealed external interface ClassMemberModifier /* AccessibilityModifier | ReadonlyKeyword | StaticKeyword | AccessorKeyword */
