@@ -4,10 +4,19 @@
     "VIRTUAL_MEMBER_HIDDEN",
 )
 
+@file:JsQualifier("Intl")
+
 package web.intl
 
-sealed external interface Locale :
-    LocaleOptions {
+external class Locale(
+    tag: BCP47LanguageTag,
+    options: LocaleOptions = definedExternally,
+) : LocaleOptions {
+    constructor(
+        tag: Locale,
+        options: LocaleOptions = definedExternally,
+    )
+
     /** A string containing the language, and the script and region if available. */
     var baseName: String
 

@@ -1,8 +1,13 @@
 // Automatically generated - do not modify!
 
+@file:JsQualifier("Intl")
+
 package web.intl
 
-sealed external interface DisplayNames {
+external class DisplayNames(
+    locales: LocalesArgument,
+    options: DisplayNamesOptions,
+) {
     /**
      * Receives a code and returns a string based on the locale and options provided when instantiating
      * [`Intl.DisplayNames()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DisplayNames)

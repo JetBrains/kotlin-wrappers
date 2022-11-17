@@ -1,11 +1,21 @@
 // Automatically generated - do not modify!
 
+@file:JsQualifier("Intl")
+
 package web.intl
 
 import kotlinx.js.JsIterable
 import kotlinx.js.ReadonlyArray
 
-sealed external interface ListFormat {
+external class ListFormat(
+    locales: BCP47LanguageTag = definedExternally,
+    options: ListFormatOptions = definedExternally,
+) {
+    constructor(
+        locales: ReadonlyArray<BCP47LanguageTag>,
+        options: ListFormatOptions = definedExternally,
+    )
+
     /**
      * Returns a string with a language-specific representation of the list.
      *

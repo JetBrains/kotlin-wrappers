@@ -1,10 +1,12 @@
 // Automatically generated - do not modify!
 
+@file:JsQualifier("Intl")
+
 package web.intl
 
 import kotlinx.js.ReadonlyArray
 
-sealed external interface RelativeTimeFormat {
+sealed external class RelativeTimeFormat {
     /**
      * Formats a value and a unit according to the locale
      * and formatting options of the given
