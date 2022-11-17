@@ -28,6 +28,7 @@ dependencies {
         api(project(":kotlin-react-router-dom"))
         api(project(":kotlin-react-select"))
         api(project(":kotlin-redux"))
+        api(project(":kotlin-remix-run-router"))
         api(project(":kotlin-ring-ui"))
         api(project(":kotlin-styled"))
         api(project(":kotlin-styled-next"))

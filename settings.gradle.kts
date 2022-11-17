@@ -90,6 +90,9 @@ include("kotlin-react-select")
 // Kotlin/JS: Redux wrappers
 include("kotlin-redux")
 
+// Kotlin/JS: React Router wrappers
+include("kotlin-remix-run-router")
+
 // Kotlin/JS: Ring UI wrappers
 include("kotlin-ring-ui")
 
