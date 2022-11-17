@@ -8,9 +8,9 @@ sealed external interface ResolvedPluralRulesOptions {
     var locale: String
     var pluralCategories: ReadonlyArray<LDMLPluralRule>
     var type: PluralRuleType
-    var minimumIntegerDigits: Number
-    var minimumFractionDigits: Number
-    var maximumFractionDigits: Number
-    var minimumSignificantDigits: Number?
-    var maximumSignificantDigits: Number?
+    var minimumIntegerDigits: Int
+    var minimumFractionDigits: Int
+    var maximumFractionDigits: Int
+    var minimumSignificantDigits: Int?
+    var maximumSignificantDigits: Int?
 }
