@@ -1,0 +1,20 @@
+{
+    "input": [
+        "../build/js/node_modules/@remix-run/router/dist/history.d.ts"
+    ],
+    "output": "src/main/generated",
+    "libraryName": "@remix-run/router",
+    "granularity": "top-level",
+    "plugins": [
+        "../build/js/packages/kotlin-remix-run-router/karakum/**/*.js"
+    ],
+    "moduleNameMapper": {
+        ".*": ""
+    },
+    "importInjector": {
+        "history.kt": [
+            "web.url.URL",
+            "dom.html.Window"
+        ]
+    }
+}
