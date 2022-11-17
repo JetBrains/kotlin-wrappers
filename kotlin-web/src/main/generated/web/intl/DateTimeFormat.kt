@@ -14,4 +14,6 @@ sealed external interface DateTimeFormat {
         startDate: Any, /* Date | number | bigint */
         endDate: Any, /* Date | number | bigint */
     ): ReadonlyArray<DateTimeRangeFormatPart>
+
+    fun formatToParts(date: Any /* Date | number */ = definedExternally): ReadonlyArray<DateTimeFormatPart>
 }
