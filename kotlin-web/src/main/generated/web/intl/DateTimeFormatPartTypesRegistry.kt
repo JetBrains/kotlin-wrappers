@@ -3,8 +3,6 @@
 package web.intl
 
 sealed external interface DateTimeFormatPartTypesRegistry {
-    var fractionalSecond: Any?
-    var unknown: Any?
     var day: Any?
     var dayPeriod: Any?
     var era: Any?
@@ -16,4 +14,6 @@ sealed external interface DateTimeFormatPartTypesRegistry {
     var timeZoneName: Any?
     var weekday: Any?
     var year: Any?
+    var unknown: Any?
+    var fractionalSecond: Any?
 }

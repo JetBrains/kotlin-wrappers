@@ -5,6 +5,7 @@ package web.intl
 import kotlinx.js.ReadonlyArray
 
 sealed external interface DateTimeFormat {
+    fun formatToParts(date: Any /* Date | number */ = definedExternally): ReadonlyArray<DateTimeFormatPart>
     fun formatRange(
         startDate: Any, /* Date | number | bigint */
         endDate: Any, /* Date | number | bigint */
@@ -14,6 +15,4 @@ sealed external interface DateTimeFormat {
         startDate: Any, /* Date | number | bigint */
         endDate: Any, /* Date | number | bigint */
     ): ReadonlyArray<DateTimeRangeFormatPart>
-
-    fun formatToParts(date: Any /* Date | number */ = definedExternally): ReadonlyArray<DateTimeFormatPart>
 }
