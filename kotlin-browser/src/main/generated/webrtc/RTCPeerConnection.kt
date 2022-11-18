@@ -104,10 +104,6 @@ external class RTCPeerConnection(
         successCallback: VoidFunction,
         failureCallback: RTCPeerConnectionErrorCallback,
     ): kotlin.js.Promise<Unit>
-    // addEventListener<K extends keyof RTCPeerConnectionEventMap>(type: K, listener: (this: RTCPeerConnection, ev: RTCPeerConnectionEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void
-    // addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void
-    // removeEventListener<K extends keyof RTCPeerConnectionEventMap>(type: K, listener: (this: RTCPeerConnection, ev: RTCPeerConnectionEventMap[K]) => any, options?: boolean | EventListenerOptions): void
-    // removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void
 
     companion object {
         val defaultIceServers: ReadonlyArray<RTCIceServer>
