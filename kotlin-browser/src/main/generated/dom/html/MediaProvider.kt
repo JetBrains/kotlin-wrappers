@@ -2,4 +2,4 @@
 
 package dom.html
 
-typealias MediaProvider = org.w3c.dom.MediaProvider
+typealias MediaProvider = Any /* MediaStream | MediaSource | Blob */
