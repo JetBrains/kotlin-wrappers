@@ -1,6 +1,6 @@
 // Automatically generated - do not modify!
 
-package media
+package webvtt
 
 import web.events.EventType
 

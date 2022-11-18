@@ -2,4 +2,16 @@
 
 package webvtt
 
-typealias TextTrackList = org.w3c.dom.TextTrackList
+import kotlinx.js.ArrayLike
+import web.events.Event
+import web.events.EventHandler
+import web.events.EventTarget
+
+sealed external class TextTrackList :
+    EventTarget,
+    ArrayLike<TextTrack> {
+    var onaddtrack: EventHandler<TrackEvent>?
+    var onchange: EventHandler<Event>?
+    var onremovetrack: EventHandler<TrackEvent>?
+    fun getTrackById(id: String): TextTrack?
+}

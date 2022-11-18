@@ -1,10 +1,9 @@
 // Automatically generated - do not modify!
 
-package media
+package webvtt
 
 import web.events.Event
 import web.events.EventInit
-import webvtt.TextTrack
 
 external interface TrackEventInit : EventInit {
     var track: TextTrack?
