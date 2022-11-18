@@ -2,4 +2,16 @@
 
 package canvas
 
-typealias Path2D = org.w3c.dom.Path2D
+import dom.geometry.DOMMatrix2DInit
+
+external class Path2D(
+    path: Path2D = definedExternally,
+) : CanvasPath {
+    constructor(path: String)
+
+    /** Adds to the path the path given by the argument. */
+    fun addPath(
+        path: Path2D,
+        transform: DOMMatrix2DInit = definedExternally,
+    )
+}

@@ -2,7 +2,8 @@
 
 package canvas
 
-sealed external interface CanvasPath {
+@JsName("Object")
+sealed external class /* interface */ CanvasPath {
     fun arc(
         x: Number,
         y: Number,
