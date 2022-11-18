@@ -4,7 +4,7 @@
     "NAME_CONTAINS_ILLEGAL_CHARS",
 )
 
-package media.streams
+package media.stream
 
 // language=JavaScript
 @JsName("""(/*union*/{ended: 'ended', live: 'live'}/*union*/)""")
