@@ -4,6 +4,7 @@ package dom.events
 
 import web.events.Event
 import web.events.EventInit
+import web.http.FormData
 
 external interface FormDataEventInit : EventInit {
     var formData: FormData

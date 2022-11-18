@@ -1,5 +1,5 @@
 // Automatically generated - do not modify!
 
-package dom.events
+package web.http
 
 typealias FormData = org.w3c.xhr.FormData
