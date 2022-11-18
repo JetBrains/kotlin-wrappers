@@ -3,6 +3,7 @@
 package media.key
 
 import kotlinx.js.BufferSource
+import kotlinx.js.EpochTimeStamp
 import kotlinx.js.Void
 import web.events.Event
 import web.events.EventHandler
@@ -12,7 +13,7 @@ import kotlin.js.Promise
 sealed external class MediaKeySession :
     EventTarget {
     val closed: Promise<MediaKeySessionClosedReason>
-    val expiration: Number
+    val expiration: EpochTimeStamp
     val keyStatuses: MediaKeyStatusMap
     var onkeystatuseschange: EventHandler<Event>?
     var onmessage: EventHandler<MediaKeyMessageEvent>?
