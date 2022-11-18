@@ -2,4 +2,10 @@
 
 package media.key
 
-typealias MediaKeySystemAccess = org.w3c.dom.encryptedmedia.MediaKeySystemAccess
+import kotlin.js.Promise
+
+sealed external class MediaKeySystemAccess {
+    val keySystem: String
+    fun createMediaKeys(): Promise<MediaKeys>
+    fun getConfiguration(): MediaKeySystemConfiguration
+}

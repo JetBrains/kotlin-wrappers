@@ -2,4 +2,14 @@
 
 package media.key
 
-typealias MediaKeySystemConfiguration = org.w3c.dom.encryptedmedia.MediaKeySystemConfiguration
+import kotlinx.js.ReadonlyArray
+
+sealed external interface MediaKeySystemConfiguration {
+    var audioCapabilities: ReadonlyArray<MediaKeySystemMediaCapability>?
+    var distinctiveIdentifier: MediaKeysRequirement?
+    var initDataTypes: ReadonlyArray<String>?
+    var label: String?
+    var persistentState: MediaKeysRequirement?
+    var sessionTypes: ReadonlyArray<String>?
+    var videoCapabilities: ReadonlyArray<MediaKeySystemMediaCapability>?
+}
