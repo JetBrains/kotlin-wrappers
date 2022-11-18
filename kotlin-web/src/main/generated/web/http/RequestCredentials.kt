@@ -8,8 +8,7 @@ package web.http
 
 // language=JavaScript
 @JsName("""(/*union*/{include: 'include', omit: 'omit', sameOrigin: 'same-origin'}/*union*/)""")
-external enum class RequestCredentials :
-/* legacy adapter */ org.w3c.fetch.RequestCredentials {
+external enum class RequestCredentials {
     include,
     omit,
     sameOrigin,

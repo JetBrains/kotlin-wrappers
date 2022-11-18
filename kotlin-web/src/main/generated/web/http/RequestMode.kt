@@ -8,8 +8,7 @@ package web.http
 
 // language=JavaScript
 @JsName("""(/*union*/{cors: 'cors', navigate: 'navigate', noCors: 'no-cors', sameOrigin: 'same-origin'}/*union*/)""")
-external enum class RequestMode :
-/* legacy adapter */ org.w3c.fetch.RequestMode {
+external enum class RequestMode {
     cors,
     navigate,
     noCors,

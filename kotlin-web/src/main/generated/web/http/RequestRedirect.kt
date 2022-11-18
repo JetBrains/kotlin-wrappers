@@ -8,8 +8,7 @@ package web.http
 
 // language=JavaScript
 @JsName("""(/*union*/{error: 'error', follow: 'follow', manual: 'manual'}/*union*/)""")
-external enum class RequestRedirect :
-/* legacy adapter */ org.w3c.fetch.RequestRedirect {
+external enum class RequestRedirect {
     error,
     follow,
     manual,

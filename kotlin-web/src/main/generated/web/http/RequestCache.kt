@@ -8,8 +8,7 @@ package web.http
 
 // language=JavaScript
 @JsName("""(/*union*/{default: 'default', forceCache: 'force-cache', noCache: 'no-cache', noStore: 'no-store', onlyIfCached: 'only-if-cached', reload: 'reload'}/*union*/)""")
-external enum class RequestCache :
-/* legacy adapter */ org.w3c.fetch.RequestCache {
+external enum class RequestCache {
     default,
     forceCache,
     noCache,
