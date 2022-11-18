@@ -2,8 +2,10 @@
 
 package webrtc
 
-sealed external interface RTCEncodedVideoFrame {
-    var data: kotlinx.js.ArrayBuffer
+import kotlinx.js.ArrayBuffer
+
+sealed external class RTCEncodedVideoFrame {
+    var data: ArrayBuffer
     val timestamp: Number
     val type: RTCEncodedVideoFrameType
     fun getMetadata(): RTCEncodedVideoFrameMetadata

@@ -2,7 +2,8 @@
 
 package webrtc
 
-sealed external interface RTCSentRtpStreamStats : RTCRtpStreamStats {
+sealed external interface RTCSentRtpStreamStats :
+    RTCRtpStreamStats {
     var bytesSent: Number?
     var packetsSent: Number?
 }

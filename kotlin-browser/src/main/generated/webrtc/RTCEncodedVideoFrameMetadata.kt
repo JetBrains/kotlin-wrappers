@@ -8,9 +8,9 @@ sealed external interface RTCEncodedVideoFrameMetadata {
     var contributingSources: ReadonlyArray<Number>?
     var dependencies: ReadonlyArray<Number>?
     var frameId: Number?
-    var height: Number?
+    var height: Double?
     var spatialIndex: Number?
     var synchronizationSource: Number?
     var temporalIndex: Number?
-    var width: Number?
+    var width: Double?
 }

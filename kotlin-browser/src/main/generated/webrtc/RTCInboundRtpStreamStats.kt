@@ -2,13 +2,16 @@
 
 package webrtc
 
-sealed external interface RTCInboundRtpStreamStats : RTCReceivedRtpStreamStats {
+import kotlinx.js.HighResTimeStamp
+
+sealed external interface RTCInboundRtpStreamStats :
+    RTCReceivedRtpStreamStats {
     var audioLevel: Number?
     var bytesReceived: Number?
     var concealedSamples: Number?
     var concealmentEvents: Number?
     var decoderImplementation: String?
-    var estimatedPlayoutTimestamp: kotlinx.js.HighResTimeStamp?
+    var estimatedPlayoutTimestamp: HighResTimeStamp?
     var fecPacketsDiscarded: Number?
     var fecPacketsReceived: Number?
     var firCount: Number?
@@ -24,7 +27,7 @@ sealed external interface RTCInboundRtpStreamStats : RTCReceivedRtpStreamStats {
     var jitterBufferEmittedCount: Number?
     var keyFramesDecoded: Number?
     override var kind: String
-    var lastPacketReceivedTimestamp: kotlinx.js.HighResTimeStamp?
+    var lastPacketReceivedTimestamp: HighResTimeStamp?
     var nackCount: Number?
     var packetsDiscarded: Number?
     var pliCount: Number?

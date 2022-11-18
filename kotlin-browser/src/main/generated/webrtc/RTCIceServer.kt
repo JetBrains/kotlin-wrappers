@@ -4,6 +4,6 @@ package webrtc
 
 sealed external interface RTCIceServer {
     var credential: String?
-    var urls: dynamic /* string | string[] */
+    var urls: Any /* urls: string | string[] */
     var username: String?
 }

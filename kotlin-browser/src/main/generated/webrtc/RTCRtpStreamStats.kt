@@ -2,7 +2,8 @@
 
 package webrtc
 
-sealed external interface RTCRtpStreamStats : RTCStats {
+sealed external interface RTCRtpStreamStats :
+    RTCStats {
     var codecId: String?
     var kind: String
     var ssrc: Number

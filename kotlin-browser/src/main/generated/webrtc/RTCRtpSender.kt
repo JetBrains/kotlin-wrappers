@@ -2,17 +2,18 @@
 
 package webrtc
 
-import kotlinx.js.ReadonlyArray
+import kotlinx.js.Void
 import media.stream.MediaStream
 import media.stream.MediaStreamTrack
+import kotlin.js.Promise
 
-sealed external interface RTCRtpSender {
+sealed external class RTCRtpSender {
     val dtmf: RTCDTMFSender?
     val track: MediaStreamTrack?
     val transport: RTCDtlsTransport?
     fun getParameters(): RTCRtpSendParameters
-    fun getStats(): kotlin.js.Promise<RTCStatsReport>
-    fun replaceTrack(withTrack: MediaStreamTrack?): kotlin.js.Promise<Unit>
-    fun setParameters(parameters: RTCRtpSendParameters): kotlin.js.Promise<Unit>
-    fun setStreams(vararg streams: ReadonlyArray<MediaStream>)
+    fun getStats(): Promise<RTCStatsReport>
+    fun replaceTrack(withTrack: MediaStreamTrack?): Promise<Void>
+    fun setParameters(parameters: RTCRtpSendParameters): Promise<Void>
+    fun setStreams(vararg streams: MediaStream)
 }

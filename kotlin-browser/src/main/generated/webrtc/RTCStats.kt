@@ -2,8 +2,10 @@
 
 package webrtc
 
+import kotlinx.js.HighResTimeStamp
+
 sealed external interface RTCStats {
     var id: String
-    var timestamp: kotlinx.js.HighResTimeStamp
+    var timestamp: HighResTimeStamp
     var type: RTCStatsType
 }

@@ -2,7 +2,9 @@
 
 package webrtc
 
-sealed external interface RTCSessionDescription {
+external class RTCSessionDescription(
+    init: RTCSessionDescriptionInit,
+) {
     val sdp: String
     val type: RTCSdpType
     fun toJSON(): Any

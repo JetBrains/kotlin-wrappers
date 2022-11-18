@@ -2,12 +2,14 @@
 
 package webrtc
 
-sealed external interface RTCIceCandidate {
+external class RTCIceCandidate(
+    init: RTCIceCandidateInit = definedExternally,
+) {
     val address: String?
     val candidate: String
     val component: RTCIceComponent?
     val foundation: String?
-    val port: Number?
+    val port: Int?
     val priority: Number?
     val protocol: RTCIceProtocol?
     val relatedAddress: String?

@@ -3,10 +3,13 @@
 package webrtc
 
 import web.events.Event
+import web.events.EventHandler
+import web.events.EventTarget
 
-external class RTCIceTransport : web.events.EventTarget {
+sealed external class RTCIceTransport :
+    EventTarget {
     val gatheringState: RTCIceGathererState
-    var ongatheringstatechange: ((event: Event) -> Unit)?
-    var onstatechange: ((event: Event) -> Unit)?
+    var ongatheringstatechange: EventHandler<Event>?
+    var onstatechange: EventHandler<Event>?
     val state: RTCIceTransportState
 }

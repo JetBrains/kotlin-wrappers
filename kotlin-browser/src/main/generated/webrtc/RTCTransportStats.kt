@@ -2,7 +2,8 @@
 
 package webrtc
 
-sealed external interface RTCTransportStats : RTCStats {
+sealed external interface RTCTransportStats :
+    RTCStats {
     var bytesReceived: Number?
     var bytesSent: Number?
     var dtlsCipher: String?

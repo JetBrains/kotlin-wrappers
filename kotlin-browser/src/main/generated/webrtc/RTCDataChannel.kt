@@ -2,11 +2,17 @@
 
 package webrtc
 
+import kotlinx.js.ArrayBuffer
+import kotlinx.js.ArrayBufferView
+import web.buffer.Blob
 import web.events.Event
+import web.events.EventHandler
+import web.events.EventTarget
 import web.messaging.MessageEvent
 import websockets.BinaryType
 
-external class RTCDataChannel : web.events.EventTarget {
+sealed external class RTCDataChannel :
+    EventTarget {
     var binaryType: BinaryType
     val bufferedAmount: Number
     var bufferedAmountLowThreshold: Number
@@ -15,18 +21,18 @@ external class RTCDataChannel : web.events.EventTarget {
     val maxPacketLifeTime: Number?
     val maxRetransmits: Number?
     val negotiated: Boolean
-    var onbufferedamountlow: ((event: Event) -> Unit)?
-    var onclose: ((event: Event) -> Unit)?
-    var onclosing: ((event: Event) -> Unit)?
-    var onerror: ((event: Event) -> Unit)?
-    var onmessage: ((event: MessageEvent<*>) -> Unit)?
-    var onopen: ((event: Event) -> Unit)?
+    var onbufferedamountlow: EventHandler<Event>?
+    var onclose: EventHandler<Event>?
+    var onclosing: EventHandler<Event>?
+    var onerror: EventHandler<Event>?
+    var onmessage: EventHandler<MessageEvent<*>>?
+    var onopen: EventHandler<Event>?
     val ordered: Boolean
     val protocol: String
     val readyState: RTCDataChannelState
     fun close()
     fun send(data: String)
-    fun send(data: web.buffer.Blob)
-    fun send(data: kotlinx.js.ArrayBuffer)
-    fun send(data: kotlinx.js.ArrayBufferView)
+    fun send(data: Blob)
+    fun send(data: ArrayBuffer)
+    fun send(data: ArrayBufferView)
 }

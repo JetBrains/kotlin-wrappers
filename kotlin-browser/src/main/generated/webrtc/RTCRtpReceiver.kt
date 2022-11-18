@@ -4,12 +4,13 @@ package webrtc
 
 import kotlinx.js.ReadonlyArray
 import media.stream.MediaStreamTrack
+import kotlin.js.Promise
 
-sealed external interface RTCRtpReceiver {
+sealed external class RTCRtpReceiver {
     val track: MediaStreamTrack
     val transport: RTCDtlsTransport?
     fun getContributingSources(): ReadonlyArray<RTCRtpContributingSource>
     fun getParameters(): RTCRtpReceiveParameters
-    fun getStats(): kotlin.js.Promise<RTCStatsReport>
+    fun getStats(): Promise<RTCStatsReport>
     fun getSynchronizationSources(): ReadonlyArray<RTCRtpSynchronizationSource>
 }

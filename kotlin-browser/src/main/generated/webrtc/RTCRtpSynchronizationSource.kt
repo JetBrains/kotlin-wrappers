@@ -2,4 +2,5 @@
 
 package webrtc
 
-sealed external interface RTCRtpSynchronizationSource : RTCRtpContributingSource
+sealed external interface RTCRtpSynchronizationSource :
+    RTCRtpContributingSource

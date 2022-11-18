@@ -2,7 +2,8 @@
 
 package webrtc
 
-sealed external interface RTCOutboundRtpStreamStats : RTCSentRtpStreamStats {
+sealed external interface RTCOutboundRtpStreamStats :
+    RTCSentRtpStreamStats {
     var firCount: Number?
     var frameHeight: Number?
     var frameWidth: Number?

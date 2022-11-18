@@ -2,4 +2,5 @@
 
 package webrtc
 
-sealed external interface RTCRtpReceiveParameters : RTCRtpParameters
+sealed external interface RTCRtpReceiveParameters :
+    RTCRtpParameters

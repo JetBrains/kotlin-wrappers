@@ -2,13 +2,17 @@
 
 package webrtc
 
+import kotlinx.js.ArrayBuffer
 import kotlinx.js.ReadonlyArray
 import web.events.Event
+import web.events.EventHandler
+import web.events.EventTarget
 
-external class RTCDtlsTransport : web.events.EventTarget {
+sealed external class RTCDtlsTransport :
+    EventTarget {
     val iceTransport: RTCIceTransport
-    var onerror: ((event: Event) -> Unit)?
-    var onstatechange: ((event: Event) -> Unit)?
+    var onerror: EventHandler<Event>?
+    var onstatechange: EventHandler<Event>?
     val state: RTCDtlsTransportState
-    fun getRemoteCertificates(): ReadonlyArray<kotlinx.js.ArrayBuffer>
+    fun getRemoteCertificates(): ReadonlyArray<ArrayBuffer>
 }

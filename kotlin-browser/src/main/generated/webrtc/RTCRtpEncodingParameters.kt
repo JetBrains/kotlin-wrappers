@@ -2,7 +2,8 @@
 
 package webrtc
 
-sealed external interface RTCRtpEncodingParameters : RTCRtpCodingParameters {
+sealed external interface RTCRtpEncodingParameters :
+    RTCRtpCodingParameters {
     var active: Boolean?
     var maxBitrate: Number?
     var maxFramerate: Number?
