@@ -2,6 +2,8 @@
 
 package web.filesystem
 
+import web.errors.DOMException
+
 typealias ErrorCallback = (
-    err: Throwable, /* DOMException */
+    err: DOMException,
 ) -> Unit

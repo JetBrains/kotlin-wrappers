@@ -3,13 +3,14 @@
 package web.file
 
 import web.buffer.Blob
+import web.errors.DOMException
 import web.events.EventHandler
 import web.events.EventTarget
 import web.events.ProgressEvent
 
 external class FileReader :
     EventTarget {
-    val error: Throwable /* DOMException */?
+    val error: DOMException
     var onabort: EventHandler<ProgressEvent<FileReader>>?
     var onerror: EventHandler<ProgressEvent<FileReader>>?
     var onload: EventHandler<ProgressEvent<FileReader>>?

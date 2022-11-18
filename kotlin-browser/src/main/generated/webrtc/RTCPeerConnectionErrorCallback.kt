@@ -2,6 +2,8 @@
 
 package webrtc
 
+import web.errors.DOMException
+
 typealias RTCPeerConnectionErrorCallback = (
-    error: Throwable, /* DOMException */
+    error: DOMException,
 ) -> Unit
