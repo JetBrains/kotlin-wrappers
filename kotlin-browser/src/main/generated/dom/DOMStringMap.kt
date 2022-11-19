@@ -2,4 +2,6 @@
 
 package dom
 
-typealias DOMStringMap = org.w3c.dom.DOMStringMap
+import kotlinx.js.Record
+
+sealed external class DOMStringMap : Record<String, String>
