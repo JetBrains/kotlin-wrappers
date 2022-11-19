@@ -7,7 +7,7 @@ import dom.geometry.DOMRectReadOnly
 import kotlinx.js.HighResTimeStamp
 
 external class IntersectionObserverEntry(
-    intersectionObserverEntryInit: IntersectionObserverEntryInit,
+    init: IntersectionObserverEntryInit,
 ) {
     val boundingClientRect: DOMRectReadOnly
     val intersectionRatio: Double
