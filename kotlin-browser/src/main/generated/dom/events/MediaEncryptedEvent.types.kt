@@ -1,6 +1,6 @@
 // Automatically generated - do not modify!
 
-package media
+package dom.events
 
 import web.events.EventType
 

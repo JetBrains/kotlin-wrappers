@@ -1,5 +1,5 @@
 // Automatically generated - do not modify!
 
-package media
+package dom.html
 
 typealias MediaError = org.w3c.dom.MediaError
