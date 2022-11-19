@@ -1,3 +1,5 @@
+// Automatically generated - do not modify!
+
 package dom.observers
 
 import kotlinx.js.ReadonlyArray

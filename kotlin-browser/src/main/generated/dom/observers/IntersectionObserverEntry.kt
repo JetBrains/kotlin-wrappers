@@ -1,10 +1,14 @@
+// Automatically generated - do not modify!
+
 package dom.observers
 
 import dom.Element
 import dom.geometry.DOMRectReadOnly
 import kotlinx.js.HighResTimeStamp
 
-external interface IntersectionObserverEntry {
+external class IntersectionObserverEntry(
+    intersectionObserverEntryInit: IntersectionObserverEntryInit,
+) {
     val boundingClientRect: DOMRectReadOnly
     val intersectionRatio: Double
     val intersectionRect: DOMRectReadOnly

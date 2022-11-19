@@ -1,3 +1,5 @@
+// Automatically generated - do not modify!
+
 package dom.observers
 
 import dom.Element
@@ -5,14 +7,13 @@ import kotlinx.js.ReadonlyArray
 
 external class IntersectionObserver(
     callback: IntersectionObserverCallback,
-    options: IntersectionObserverOptions = definedExternally,
+    options: IntersectionObserverInit = definedExternally,
 ) {
-    val root: Element? // or Document
+    val root: Element /* | Document */?
     val rootMargin: String
     val thresholds: ReadonlyArray<Double>
-
-    fun observe(target: Element)
-    fun unobserve(target: Element)
-    fun takeRecords(): ReadonlyArray<IntersectionObserverEntry>
     fun disconnect()
+    fun observe(target: Element)
+    fun takeRecords(): ReadonlyArray<IntersectionObserverEntry>
+    fun unobserve(target: Element)
 }
