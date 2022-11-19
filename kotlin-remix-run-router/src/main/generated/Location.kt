@@ -7,6 +7,7 @@
 
 package remix.run.router
 
+
 /**
  * An entry in a history stack. A location contains information about the
  * URL path, as well as possibly some arbitrary state and a key.

@@ -7,6 +7,7 @@
 
 package remix.run.router
 
+
 /**
  * A hash history stores the current location in the fragment identifier portion
  * of the URL in a web browser environment.

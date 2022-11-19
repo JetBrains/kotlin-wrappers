@@ -9,8 +9,10 @@
         ".*": ""
     },
     "importInjector": {
-        "history.kt": [
-            "web.url.URL",
+        "createURL.kt": [
+            "web.url.URL"
+        ],
+        "UrlHistoryOptions.kt": [
             "dom.html.Window"
         ]
     }

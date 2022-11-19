@@ -7,6 +7,7 @@
 
 package remix.run.router
 
+
 /**
  * A history is an interface to the navigation stack. The history serves as the
  * source of truth for the current location, as well as provides a set of
