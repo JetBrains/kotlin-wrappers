@@ -2,4 +2,4 @@
 
 package dom
 
-typealias HTMLOrSVGScriptElement = org.w3c.dom.HTMLOrSVGScriptElement
+typealias HTMLOrSVGScriptElement = Any /* HTMLScriptElement | SVGScriptElement */
