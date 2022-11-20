@@ -3,8 +3,8 @@
 package webrtc
 
 import kotlinx.js.Void
-import media.stream.MediaStream
-import media.stream.MediaStreamTrack
+import media.streams.MediaStream
+import media.streams.MediaStreamTrack
 import kotlin.js.Promise
 
 sealed external class RTCRtpSender {

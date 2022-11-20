@@ -1,6 +1,6 @@
 // Automatically generated - do not modify!
 
-package media.stream
+package media.streams
 
 import kotlinx.js.Void
 import web.events.Event

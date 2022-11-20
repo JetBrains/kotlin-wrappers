@@ -1,5 +1,5 @@
 // Automatically generated - do not modify!
 
-package media.stream
+package media.streams
 
 typealias ConstrainBoolean = Any /* boolean | ConstrainBooleanParameters */

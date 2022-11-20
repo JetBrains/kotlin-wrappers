@@ -3,7 +3,7 @@
 package dom.html
 
 import canvas.*
-import media.stream.MediaStream
+import media.streams.MediaStream
 import webgl.WebGL2RenderingContext
 import webgl.WebGLContextAttributes
 import webgl.WebGLRenderingContext

@@ -1,6 +1,6 @@
 // Automatically generated - do not modify!
 
-package media.stream
+package media.streams
 
 import web.events.Event
 import web.events.EventType

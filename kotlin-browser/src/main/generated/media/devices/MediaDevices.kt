@@ -2,9 +2,9 @@
 
 package media.devices
 
-import media.stream.MediaStream
-import media.stream.MediaStreamConstraints
-import media.stream.MediaTrackSupportedConstraints
+import media.streams.MediaStream
+import media.streams.MediaStreamConstraints
+import media.streams.MediaTrackSupportedConstraints
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventTarget

@@ -3,7 +3,7 @@
 package webrtc
 
 import kotlinx.js.ReadonlyArray
-import media.stream.MediaStream
+import media.streams.MediaStream
 
 sealed external interface RTCRtpTransceiverInit {
     var direction: RTCRtpTransceiverDirection?

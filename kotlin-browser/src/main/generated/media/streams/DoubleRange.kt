@@ -1,6 +1,6 @@
 // Automatically generated - do not modify!
 
-package media.stream
+package media.streams
 
 sealed external interface DoubleRange {
     var max: Double?

@@ -2,7 +2,7 @@
 
 package media.devices
 
-import media.stream.MediaTrackConstraints
+import media.streams.MediaTrackConstraints
 
 sealed external interface DisplayMediaStreamOptions {
     var audio: MediaTrackConstraints /* | Boolean */?
