@@ -4,9 +4,11 @@ package web.navigator
 
 import kotlinx.js.ReadonlyArray
 import kotlinx.js.Void
+import media.capabilities.MediaCapabilities
 import media.devices.MediaDevices
 import media.key.MediaKeySystemAccess
 import media.key.MediaKeySystemConfiguration
+import media.session.MediaSession
 import serviceworkers.ServiceWorkerContainer
 import web.clipboard.Clipboard
 import web.gamepad.Gamepad
@@ -36,11 +38,11 @@ sealed external class Navigator :
     val doNotTrack: String?
     val geolocation: Geolocation
     val maxTouchPoints: Int
-    val mediaCapabilities: dynamic /* MediaCapabilities */
+    val mediaCapabilities: MediaCapabilities
 
     /** Available only in secure contexts. */
     val mediaDevices: MediaDevices
-    val mediaSession: dynamic /* MediaSession */
+    val mediaSession: MediaSession
     val permissions: Permissions
 
     /** Available only in secure contexts. */
