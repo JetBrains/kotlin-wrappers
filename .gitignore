@@ -3,6 +3,7 @@
 build/
 
 **/.idea/*
+!.idea/codeInsightSettings.xml
 !.idea/icon.png
 !.idea/vcs.xml
 *.iml
