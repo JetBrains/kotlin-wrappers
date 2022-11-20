@@ -8,5 +8,5 @@ sealed external interface ResolvedDateTimeFormatOptions {
     var timeStyle: String /* "full" | "long" | "medium" | "short" */?
     var hourCycle: String /* "h11" | "h12" | "h23" | "h24" */?
     var dayPeriod: String /* "narrow" | "short" | "long" */?
-    var fractionalSecondDigits: Int /* fractionalSecondDigits?: 1 | 2 | 3 */?
+    var fractionalSecondDigits: Int /* 1 | 2 | 3 */?
 }
