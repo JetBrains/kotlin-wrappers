@@ -9,8 +9,8 @@ import web.events.EventTarget
 
 sealed external class SourceBuffer :
     EventTarget {
-    var appendWindowEnd: Number
-    var appendWindowStart: Number
+    var appendWindowEnd: Double
+    var appendWindowStart: Double
     val buffered: TimeRanges
     var mode: AppendMode
     var onabort: EventHandler<Event>?
@@ -18,7 +18,7 @@ sealed external class SourceBuffer :
     var onupdate: EventHandler<Event>?
     var onupdateend: EventHandler<Event>?
     var onupdatestart: EventHandler<Event>?
-    var timestampOffset: Number
+    var timestampOffset: Double
     val updating: Boolean
     fun abort()
     fun appendBuffer(data: BufferSource)
