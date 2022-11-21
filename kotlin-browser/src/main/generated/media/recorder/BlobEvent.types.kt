@@ -1,6 +1,6 @@
 // Automatically generated - do not modify!
 
-package media.capture
+package media.recorder
 
 import web.events.EventType
 

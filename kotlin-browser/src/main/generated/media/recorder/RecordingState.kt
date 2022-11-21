@@ -4,7 +4,7 @@
     "NAME_CONTAINS_ILLEGAL_CHARS",
 )
 
-package media.capture
+package media.recorder
 
 // language=JavaScript
 @JsName("""(/*union*/{inactive: 'inactive', paused: 'paused', recording: 'recording'}/*union*/)""")

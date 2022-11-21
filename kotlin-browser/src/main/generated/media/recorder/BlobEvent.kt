@@ -1,6 +1,6 @@
 // Automatically generated - do not modify!
 
-package media.capture
+package media.recorder
 
 import kotlinx.js.HighResTimeStamp
 import web.buffer.Blob
