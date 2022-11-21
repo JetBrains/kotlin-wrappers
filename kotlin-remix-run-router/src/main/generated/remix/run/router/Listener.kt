@@ -11,8 +11,4 @@ package remix.run.router
 /**
  * A function that receives notifications about location changes.
  */
-
-external interface Listener {
-    fun invoke(update: Update): Unit
-}
-
+typealias Listener = (update: Update) -> Unit
