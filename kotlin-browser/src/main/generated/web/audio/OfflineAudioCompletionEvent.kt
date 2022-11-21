@@ -6,14 +6,14 @@ import web.events.Event
 import web.events.EventInit
 
 external interface OfflineAudioCompletionEventInit : EventInit {
-    var renderedBuffer: Any /* AudioBuffer */
+    var renderedBuffer: AudioBuffer
 }
 
 open external class OfflineAudioCompletionEvent(
     type: String,
     init: OfflineAudioCompletionEventInit,
 ) : Event {
-    val renderedBuffer: Any /* AudioBuffer */
+    val renderedBuffer: AudioBuffer
 
     companion object
 }
