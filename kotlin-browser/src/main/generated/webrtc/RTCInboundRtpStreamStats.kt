@@ -14,7 +14,7 @@ sealed external interface RTCInboundRtpStreamStats :
     var estimatedPlayoutTimestamp: HighResTimeStamp?
     var fecPacketsDiscarded: Number?
     var fecPacketsReceived: Number?
-    var firCount: Number?
+    var firCount: Int?
     var frameHeight: Number?
     var frameWidth: Number?
     var framesDecoded: Number?
@@ -24,13 +24,13 @@ sealed external interface RTCInboundRtpStreamStats :
     var headerBytesReceived: Number?
     var insertedSamplesForDeceleration: Number?
     var jitterBufferDelay: Number?
-    var jitterBufferEmittedCount: Number?
+    var jitterBufferEmittedCount: Int?
     var keyFramesDecoded: Number?
     override var kind: String
     var lastPacketReceivedTimestamp: HighResTimeStamp?
-    var nackCount: Number?
+    var nackCount: Int?
     var packetsDiscarded: Number?
-    var pliCount: Number?
+    var pliCount: Int?
     var qpSum: Number?
     var remoteId: String?
     var removedSamplesForAcceleration: Number?
