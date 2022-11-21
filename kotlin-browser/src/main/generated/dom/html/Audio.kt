@@ -6,7 +6,6 @@
 
 package dom.html
 
-external class Image(
-    width: Int = definedExternally,
-    height: Int = definedExternally,
-) : HTMLImageElement
+external class Audio(
+    src: String = definedExternally,
+) : HTMLAudioElement
