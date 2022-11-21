@@ -4,6 +4,7 @@
     ],
     "output": "src/main/generated",
     "libraryName": "@remix-run/router",
+    "libraryNameOutputPrefix": true,
     "granularity": "top-level",
     "moduleNameMapper": {
         ".*": ""
