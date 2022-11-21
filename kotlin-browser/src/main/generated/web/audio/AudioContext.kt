@@ -10,8 +10,8 @@ import kotlin.js.Promise
 external class AudioContext(
     contextOptions: AudioContextOptions = definedExternally,
 ) : BaseAudioContext {
-    val baseLatency: Number
-    val outputLatency: Number
+    val baseLatency: Double
+    val outputLatency: Double
     fun close(): Promise<Void>
     fun createMediaElementSource(mediaElement: HTMLMediaElement): MediaElementAudioSourceNode
     fun createMediaStreamDestination(): MediaStreamAudioDestinationNode

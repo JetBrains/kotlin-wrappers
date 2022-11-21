@@ -9,7 +9,7 @@ external class DynamicsCompressorNode(
     val attack: AudioParam
     val knee: AudioParam
     val ratio: AudioParam
-    val reduction: Number
+    val reduction: Double
     val release: AudioParam
     val threshold: AudioParam
 }

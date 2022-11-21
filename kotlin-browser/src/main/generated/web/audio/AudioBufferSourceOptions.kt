@@ -4,9 +4,9 @@ package web.audio
 
 sealed external interface AudioBufferSourceOptions {
     var buffer: AudioBuffer?
-    var detune: Number?
+    var detune: Double?
     var loop: Boolean?
-    var loopEnd: Number?
-    var loopStart: Number?
+    var loopEnd: Double?
+    var loopStart: Double?
     var playbackRate: Double?
 }

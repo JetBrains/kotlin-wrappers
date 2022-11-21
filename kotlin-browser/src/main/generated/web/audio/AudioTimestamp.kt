@@ -5,6 +5,6 @@ package web.audio
 import kotlinx.js.HighResTimeStamp
 
 sealed external interface AudioTimestamp {
-    var contextTime: Number?
+    var contextTime: Double?
     var performanceTime: HighResTimeStamp?
 }

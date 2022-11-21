@@ -9,11 +9,11 @@ external class AnalyserNode(
     context: BaseAudioContext,
     options: AnalyserOptions = definedExternally,
 ) : AudioNode {
-    var fftSize: Number
+    var fftSize: Int
     val frequencyBinCount: Int
-    var maxDecibels: Number
-    var minDecibels: Number
-    var smoothingTimeConstant: Number
+    var maxDecibels: Double
+    var minDecibels: Double
+    var smoothingTimeConstant: Double
     fun getByteFrequencyData(array: Uint8Array)
     fun getByteTimeDomainData(array: Uint8Array)
     fun getFloatFrequencyData(array: Float32Array)

@@ -9,8 +9,8 @@ external class AudioBufferSourceNode(
     var buffer: AudioBuffer?
     val detune: AudioParam
     var loop: Boolean
-    var loopEnd: Number
-    var loopStart: Number
+    var loopEnd: Double
+    var loopStart: Double
     val playbackRate: AudioParam
     fun start(
         `when`: Number = definedExternally,

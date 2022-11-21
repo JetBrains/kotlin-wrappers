@@ -6,9 +6,9 @@ import kotlinx.js.ReadonlyArray
 
 sealed external class AudioParam {
     var automationRate: AutomationRate
-    val defaultValue: Number
-    val maxValue: Number
-    val minValue: Number
+    val defaultValue: Double
+    val maxValue: Double
+    val minValue: Double
     var value: Double
     fun cancelAndHoldAtTime(cancelTime: Number): AudioParam
     fun cancelScheduledValues(cancelTime: Number): AudioParam

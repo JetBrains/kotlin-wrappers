@@ -4,6 +4,6 @@ package web.audio
 
 sealed external interface DelayOptions :
     AudioNodeOptions {
-    var delayTime: Number?
-    var maxDelayTime: Number?
+    var delayTime: Double?
+    var maxDelayTime: Double?
 }

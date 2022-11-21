@@ -4,8 +4,8 @@ package web.audio
 
 sealed external interface AnalyserOptions :
     AudioNodeOptions {
-    var fftSize: Number?
-    var maxDecibels: Number?
-    var minDecibels: Number?
-    var smoothingTimeConstant: Number?
+    var fftSize: Int?
+    var maxDecibels: Double?
+    var minDecibels: Double?
+    var smoothingTimeConstant: Double?
 }

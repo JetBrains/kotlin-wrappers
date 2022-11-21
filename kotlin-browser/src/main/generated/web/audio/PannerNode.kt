@@ -6,11 +6,11 @@ external class PannerNode(
     context: BaseAudioContext,
     options: PannerOptions = definedExternally,
 ) : AudioNode {
-    var coneInnerAngle: Number
-    var coneOuterAngle: Number
-    var coneOuterGain: Number
+    var coneInnerAngle: Double
+    var coneOuterAngle: Double
+    var coneOuterGain: Double
     var distanceModel: DistanceModelType
-    var maxDistance: Number
+    var maxDistance: Double
     val orientationX: AudioParam
     val orientationY: AudioParam
     val orientationZ: AudioParam
@@ -18,6 +18,6 @@ external class PannerNode(
     val positionX: AudioParam
     val positionY: AudioParam
     val positionZ: AudioParam
-    var refDistance: Number
-    var rolloffFactor: Number
+    var refDistance: Double
+    var rolloffFactor: Double
 }
