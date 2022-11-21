@@ -7,6 +7,7 @@
 
 package remix.run.router
 
+
 /**
  * Hash history stores the location in window.location.hash. This makes it ideal
  * for situations where you don't want to send the location to the server for

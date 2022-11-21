@@ -7,6 +7,7 @@
 
 package remix.run.router
 
+
 /**
  * Actions represent the type of change to a location value.
  */

@@ -4,13 +4,16 @@
     ],
     "output": "src/main/generated",
     "libraryName": "@remix-run/router",
+    "libraryNameOutputPrefix": true,
     "granularity": "top-level",
     "moduleNameMapper": {
         ".*": ""
     },
     "importInjector": {
-        "history.kt": [
-            "web.url.URL",
+        "createURL.kt": [
+            "web.url.URL"
+        ],
+        "UrlHistoryOptions.kt": [
             "dom.html.Window"
         ]
     }

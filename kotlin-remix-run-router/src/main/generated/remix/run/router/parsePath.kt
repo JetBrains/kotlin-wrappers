@@ -7,4 +7,8 @@
 
 package remix.run.router
 
-typealias HashHistoryOptions = UrlHistoryOptions
+
+/**
+ * Parses a string URL path into its separate pathname, search, and hash components.
+ */
+external fun parsePath(path: String): Path

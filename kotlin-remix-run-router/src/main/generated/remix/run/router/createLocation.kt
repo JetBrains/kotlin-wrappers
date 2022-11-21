@@ -7,6 +7,7 @@
 
 package remix.run.router
 
+
 /**
  * Creates a Location object with a unique key from the given Path
  */
