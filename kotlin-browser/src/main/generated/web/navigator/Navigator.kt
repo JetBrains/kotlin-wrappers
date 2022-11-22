@@ -17,6 +17,7 @@ import web.http.BodyInit
 import web.permissions.Permissions
 import web.share.ShareData
 import web.url.URL
+import web.vibration.VibratePattern
 import kotlin.js.Promise
 
 sealed external class Navigator :
@@ -70,5 +71,5 @@ sealed external class Navigator :
 
     /** Available only in secure contexts. */
     fun share(data: ShareData = definedExternally): Promise<Void>
-    fun vibrate(pattern: ReadonlyArray<Int> /* VibratePattern */): Boolean
+    fun vibrate(pattern: VibratePattern): Boolean
 }

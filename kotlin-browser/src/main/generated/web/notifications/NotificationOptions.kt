@@ -4,6 +4,7 @@ package web.notifications
 
 import kotlinx.js.EpochTimeStamp
 import kotlinx.js.ReadonlyArray
+import web.vibration.VibratePattern
 
 sealed external interface NotificationOptions {
     var actions: ReadonlyArray<NotificationAction>?
@@ -19,5 +20,5 @@ sealed external interface NotificationOptions {
     var silent: Boolean?
     var tag: String?
     var timestamp: EpochTimeStamp?
-    var vibrate: ReadonlyArray<Int> /* VibratePattern */?
+    var vibrate: VibratePattern?
 }
