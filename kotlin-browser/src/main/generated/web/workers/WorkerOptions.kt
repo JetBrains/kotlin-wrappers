@@ -1,8 +1,10 @@
+// Automatically generated - do not modify!
+
 package web.workers
 
 import web.http.RequestCredentials
 
-external interface WorkerOptions {
+sealed external interface WorkerOptions {
     var credentials: RequestCredentials?
     var name: String?
     var type: WorkerType?

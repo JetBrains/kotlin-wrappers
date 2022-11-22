@@ -1,26 +1,27 @@
+// Automatically generated - do not modify!
+
 package web.workers
 
 import kotlinx.js.ReadonlyArray
+import web.events.EventHandler
 import web.events.EventTarget
 import web.messaging.MessageEvent
 import web.messaging.StructuredSerializeOptions
 import web.messaging.Transferable
 import web.url.URL
 
-open external class Worker : EventTarget, AbstractWorker {
-    constructor(
-        scriptURL: String,
-        options: WorkerOptions = definedExternally,
-    )
-
+external class Worker(
+    scriptURL: String,
+    options: WorkerOptions = definedExternally,
+) : EventTarget,
+    AbstractWorker {
     constructor(
         scriptURL: URL,
         options: WorkerOptions = definedExternally,
     )
 
-
-    var onmessage: ((event: MessageEvent<*>) -> Unit)?
-    var onmessageerror: ((event: MessageEvent<*>) -> Unit)?
+    var onmessage: EventHandler<MessageEvent<*>>?
+    var onmessageerror: EventHandler<MessageEvent<*>>?
 
     /** Clones message and transmits it to worker's global environment. transfer can be passed as a list of objects that are to be transferred rather than cloned. */
     fun postMessage(
