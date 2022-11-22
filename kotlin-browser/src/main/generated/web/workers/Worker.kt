@@ -10,7 +10,7 @@ import web.messaging.StructuredSerializeOptions
 import web.messaging.Transferable
 import web.url.URL
 
-external class Worker(
+open external class Worker(
     scriptURL: String,
     options: WorkerOptions = definedExternally,
 ) : EventTarget,
