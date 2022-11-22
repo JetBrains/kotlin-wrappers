@@ -6,7 +6,7 @@ import web.errors.ErrorEvent
 import web.events.EventHandler
 import web.events.IEventTarget
 
-sealed external interface AbstractWorker : IEventTarget {
+external interface AbstractWorker : IEventTarget {
     var onerror: EventHandler<ErrorEvent>?
         get() = definedExternally
         set(value) = definedExternally
