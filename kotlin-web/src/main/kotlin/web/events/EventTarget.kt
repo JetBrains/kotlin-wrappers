@@ -1,29 +1,22 @@
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package web.events
 
-import kotlinx.js.jso
-import web.abort.AbortSignal
+open external class EventTarget : IEventTarget {
+    override fun addEventListener(
+        type: String,
+        callback: EventHandler<Event>?,
+        options: EventHandlerOptions?,
+    )
 
-typealias EventTarget = org.w3c.dom.events.EventTarget
+    override fun removeEventListener(
+        type: String,
+        callback: EventHandler<Event>?,
+        options: EventHandlerOptions?,
+    )
 
-@JsName("null") // IR workaround
-sealed external interface EventHandlerOptions {
-    var capture: Boolean?
-    var once: Boolean?
-    var passive: Boolean?
-    var signal: AbortSignal?
-
-    companion object
+    fun dispatchEvent(
+        event: Event,
+    ): Boolean
 }
-
-inline val EventHandlerOptions.Companion.ACTIVE: EventHandlerOptions
-    get() = jso { passive = false }
-
-inline val EventHandlerOptions.Companion.CAPTURE: EventHandlerOptions
-    get() = jso { capture = true }
 
 fun <T : Event> EventTarget.addEventHandler(
     type: EventType<T>,
@@ -42,14 +35,14 @@ fun <T : Event> EventTarget.addEventHandler(
 ): () -> Unit {
     addEventListener(
         type = type.unsafeCast<String>(),
-        callback = handler.unsafeCast<(LegacyEvent) -> Unit>(),
+        callback = handler.unsafeCast<EventHandler<Event>>(),
         options = options,
     )
 
     return {
         removeEventListener(
             type = type.unsafeCast<String>(),
-            callback = handler.unsafeCast<(LegacyEvent) -> Unit>(),
+            callback = handler.unsafeCast<EventHandler<Event>>(),
             options = options,
         )
     }
