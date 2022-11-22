@@ -2,6 +2,7 @@
 
 package media.devices
 
+import kotlinx.js.ReadonlyArray
 import media.streams.MediaStream
 import media.streams.MediaStreamConstraints
 import media.streams.MediaTrackSupportedConstraints
@@ -13,7 +14,7 @@ import kotlin.js.Promise
 sealed external class MediaDevices :
     EventTarget {
     var ondevicechange: EventHandler<Event>?
-    fun enumerateDevices(): Promise<MediaDeviceInfo>
+    fun enumerateDevices(): Promise<ReadonlyArray<MediaDeviceInfo>>
     fun getDisplayMedia(options: DisplayMediaStreamOptions = definedExternally): Promise<MediaStream>
     fun getSupportedConstraints(): MediaTrackSupportedConstraints
     fun getUserMedia(constraints: MediaStreamConstraints = definedExternally): Promise<MediaStream>
