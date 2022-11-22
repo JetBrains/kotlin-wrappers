@@ -2,4 +2,7 @@
 
 package web.audio
 
-sealed external class AudioWorklet /* : Worklet */
+import web.worklets.Worklet
+
+sealed external class AudioWorklet :
+    Worklet
