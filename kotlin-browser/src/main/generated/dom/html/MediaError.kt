@@ -3,7 +3,7 @@
 package dom.html
 
 sealed external class MediaError {
-    val code: Int
+    val code: Short
     val message: String
     val MEDIA_ERR_ABORTED: Short
     val MEDIA_ERR_DECODE: Short
