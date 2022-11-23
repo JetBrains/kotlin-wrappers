@@ -4,5 +4,5 @@ package tanstack.table.core
 
 external interface AccessorKeyColumnDefBase<TData : RowData, TValue> : ColumnDefBase<TData, TValue> {
     /* var id: String? */
-    var accessorKey: String /* string | keyof TData */
+    var accessorKey: String /* keyof TData */
 }

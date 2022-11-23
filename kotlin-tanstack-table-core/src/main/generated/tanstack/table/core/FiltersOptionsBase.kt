@@ -9,6 +9,7 @@ external interface FiltersOptionsBase<TData : RowData> {
     var enableFilters: Boolean?
     var manualFiltering: Boolean?
     var filterFromLeafRows: Boolean?
+    var maxLeafRowFilterDepth: Int?
     var getFilteredRowModel: ((table: Table<TData>) -> () -> RowModel<TData>)?
     var onColumnFiltersChange: OnChangeFn<ColumnFiltersState>?
     var enableColumnFilters: Boolean?
