@@ -19,4 +19,14 @@ sealed external class SVGFECompositeElement :
     val SVG_FECOMPOSITE_OPERATOR_OVER: Short
     val SVG_FECOMPOSITE_OPERATOR_UNKNOWN: Short
     val SVG_FECOMPOSITE_OPERATOR_XOR: Short
+
+    companion object {
+        val SVG_FECOMPOSITE_OPERATOR_ARITHMETIC: Short
+        val SVG_FECOMPOSITE_OPERATOR_ATOP: Short
+        val SVG_FECOMPOSITE_OPERATOR_IN: Short
+        val SVG_FECOMPOSITE_OPERATOR_OUT: Short
+        val SVG_FECOMPOSITE_OPERATOR_OVER: Short
+        val SVG_FECOMPOSITE_OPERATOR_UNKNOWN: Short
+        val SVG_FECOMPOSITE_OPERATOR_XOR: Short
+    }
 }

@@ -12,4 +12,11 @@ sealed external class SVGGradientElement :
     val SVG_SPREADMETHOD_REFLECT: Short
     val SVG_SPREADMETHOD_REPEAT: Short
     val SVG_SPREADMETHOD_UNKNOWN: Short
+
+    companion object {
+        val SVG_SPREADMETHOD_PAD: Short
+        val SVG_SPREADMETHOD_REFLECT: Short
+        val SVG_SPREADMETHOD_REPEAT: Short
+        val SVG_SPREADMETHOD_UNKNOWN: Short
+    }
 }

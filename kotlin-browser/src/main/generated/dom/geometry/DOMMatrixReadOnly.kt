@@ -82,4 +82,10 @@ open external class DOMMatrixReadOnly(
         ty: Number = definedExternally,
         tz: Number = definedExternally,
     ): DOMMatrix
+
+    companion object {
+        fun fromFloat32Array(array32: Float32Array): DOMMatrixReadOnly
+        fun fromFloat64Array(array64: Float64Array): DOMMatrixReadOnly
+        fun fromMatrix(other: DOMMatrixInit = definedExternally): DOMMatrixReadOnly
+    }
 }

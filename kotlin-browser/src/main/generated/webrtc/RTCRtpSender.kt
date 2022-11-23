@@ -16,4 +16,8 @@ sealed external class RTCRtpSender {
     fun replaceTrack(withTrack: MediaStreamTrack?): Promise<Void>
     fun setParameters(parameters: RTCRtpSendParameters): Promise<Void>
     fun setStreams(vararg streams: MediaStream)
+
+    companion object {
+        fun getCapabilities(kind: String): RTCRtpCapabilities?
+    }
 }

@@ -13,4 +13,8 @@ sealed external class RTCRtpReceiver {
     fun getParameters(): RTCRtpReceiveParameters
     fun getStats(): Promise<RTCStatsReport>
     fun getSynchronizationSources(): ReadonlyArray<RTCRtpSynchronizationSource>
+
+    companion object {
+        fun getCapabilities(kind: String): RTCRtpCapabilities?
+    }
 }

@@ -27,4 +27,8 @@ external class MediaRecorder(
     fun resume()
     fun start(timeslice: Number = definedExternally)
     fun stop()
+
+    companion object {
+        fun isTypeSupported(type: String): Boolean
+    }
 }

@@ -17,4 +17,8 @@ open external class DOMRectReadOnly(
     open val x: Double
     open val y: Double
     fun toJSON(): Any
+
+    companion object {
+        fun fromRect(other: DOMRectInit = definedExternally): DOMRectReadOnly
+    }
 }

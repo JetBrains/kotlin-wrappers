@@ -135,4 +135,12 @@ external class XMLHttpRequest :
     val LOADING: Short
     val OPENED: Short
     val UNSENT: Short
+
+    companion object {
+        val DONE: Short
+        val HEADERS_RECEIVED: Short
+        val LOADING: Short
+        val OPENED: Short
+        val UNSENT: Short
+    }
 }

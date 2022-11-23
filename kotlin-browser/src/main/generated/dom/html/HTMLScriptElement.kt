@@ -21,4 +21,8 @@ abstract external class HTMLScriptElement :
 
     /** Sets or retrieves the MIME type for the associated scripting engine. */
     var type: String
+
+    companion object {
+        fun supports(type: String): Boolean
+    }
 }

@@ -5,6 +5,7 @@ package web.notifications
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventTarget
+import kotlin.js.Promise
 
 external class Notification(
     title: String,
@@ -22,4 +23,9 @@ external class Notification(
     val tag: String
     val title: String
     fun close()
+
+    companion object {
+        val permission: NotificationPermission
+        fun requestPermission(deprecatedCallback: NotificationPermissionCallback = definedExternally): Promise<NotificationPermission>
+    }
 }

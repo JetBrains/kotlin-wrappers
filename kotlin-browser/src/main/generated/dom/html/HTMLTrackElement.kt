@@ -19,4 +19,11 @@ abstract external class HTMLTrackElement :
     val LOADED: Short
     val LOADING: Short
     val NONE: Short
+
+    companion object {
+        val ERROR: Short
+        val LOADED: Short
+        val LOADING: Short
+        val NONE: Short
+    }
 }

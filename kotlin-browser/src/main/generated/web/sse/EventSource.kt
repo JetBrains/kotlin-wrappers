@@ -35,4 +35,10 @@ external class EventSource(
     val CLOSED: Short
     val CONNECTING: Short
     val OPEN: Short
+
+    companion object {
+        val CLOSED: Short
+        val CONNECTING: Short
+        val OPEN: Short
+    }
 }

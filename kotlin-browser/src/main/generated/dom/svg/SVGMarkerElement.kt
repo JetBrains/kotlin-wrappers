@@ -20,4 +20,13 @@ sealed external class SVGMarkerElement :
     val SVG_MARKER_ORIENT_ANGLE: Short
     val SVG_MARKER_ORIENT_AUTO: Short
     val SVG_MARKER_ORIENT_UNKNOWN: Short
+
+    companion object {
+        val SVG_MARKERUNITS_STROKEWIDTH: Short
+        val SVG_MARKERUNITS_UNKNOWN: Short
+        val SVG_MARKERUNITS_USERSPACEONUSE: Short
+        val SVG_MARKER_ORIENT_ANGLE: Short
+        val SVG_MARKER_ORIENT_AUTO: Short
+        val SVG_MARKER_ORIENT_UNKNOWN: Short
+    }
 }

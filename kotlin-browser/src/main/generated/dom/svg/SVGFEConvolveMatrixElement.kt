@@ -21,4 +21,11 @@ sealed external class SVGFEConvolveMatrixElement :
     val SVG_EDGEMODE_NONE: Short
     val SVG_EDGEMODE_UNKNOWN: Short
     val SVG_EDGEMODE_WRAP: Short
+
+    companion object {
+        val SVG_EDGEMODE_DUPLICATE: Short
+        val SVG_EDGEMODE_NONE: Short
+        val SVG_EDGEMODE_UNKNOWN: Short
+        val SVG_EDGEMODE_WRAP: Short
+    }
 }

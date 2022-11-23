@@ -12,4 +12,10 @@ sealed external class SVGFEMorphologyElement :
     val SVG_MORPHOLOGY_OPERATOR_DILATE: Short
     val SVG_MORPHOLOGY_OPERATOR_ERODE: Short
     val SVG_MORPHOLOGY_OPERATOR_UNKNOWN: Short
+
+    companion object {
+        val SVG_MORPHOLOGY_OPERATOR_DILATE: Short
+        val SVG_MORPHOLOGY_OPERATOR_ERODE: Short
+        val SVG_MORPHOLOGY_OPERATOR_UNKNOWN: Short
+    }
 }

@@ -2,6 +2,8 @@
 
 package dom.geometry
 
+import kotlinx.js.Float32Array
+import kotlinx.js.Float64Array
 import kotlinx.js.ReadonlyArray
 
 external class DOMMatrix(
@@ -74,4 +76,10 @@ external class DOMMatrix(
         ty: Number = definedExternally,
         tz: Number = definedExternally,
     ): DOMMatrix
+
+    companion object {
+        fun fromFloat32Array(array32: Float32Array): DOMMatrix
+        fun fromFloat64Array(array64: Float64Array): DOMMatrix
+        fun fromMatrix(other: DOMMatrixInit = definedExternally): DOMMatrix
+    }
 }

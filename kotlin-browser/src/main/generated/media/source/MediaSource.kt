@@ -23,4 +23,8 @@ sealed external class MediaSource :
         start: Number,
         end: Number,
     )
+
+    companion object {
+        fun isTypeSupported(type: String): Boolean
+    }
 }

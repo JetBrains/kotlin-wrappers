@@ -13,4 +13,12 @@ sealed external class SVGFEColorMatrixElement :
     val SVG_FECOLORMATRIX_TYPE_MATRIX: Short
     val SVG_FECOLORMATRIX_TYPE_SATURATE: Short
     val SVG_FECOLORMATRIX_TYPE_UNKNOWN: Short
+
+    companion object {
+        val SVG_FECOLORMATRIX_TYPE_HUEROTATE: Short
+        val SVG_FECOLORMATRIX_TYPE_LUMINANCETOALPHA: Short
+        val SVG_FECOLORMATRIX_TYPE_MATRIX: Short
+        val SVG_FECOLORMATRIX_TYPE_SATURATE: Short
+        val SVG_FECOLORMATRIX_TYPE_UNKNOWN: Short
+    }
 }

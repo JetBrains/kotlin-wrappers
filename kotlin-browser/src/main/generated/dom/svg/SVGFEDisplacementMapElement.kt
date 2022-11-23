@@ -15,4 +15,12 @@ sealed external class SVGFEDisplacementMapElement :
     val SVG_CHANNEL_G: Short
     val SVG_CHANNEL_R: Short
     val SVG_CHANNEL_UNKNOWN: Short
+
+    companion object {
+        val SVG_CHANNEL_A: Short
+        val SVG_CHANNEL_B: Short
+        val SVG_CHANNEL_G: Short
+        val SVG_CHANNEL_R: Short
+        val SVG_CHANNEL_UNKNOWN: Short
+    }
 }

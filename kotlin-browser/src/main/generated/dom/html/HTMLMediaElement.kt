@@ -118,4 +118,16 @@ abstract external class HTMLMediaElement :
     val NETWORK_IDLE: Short
     val NETWORK_LOADING: Short
     val NETWORK_NO_SOURCE: Short
+
+    companion object {
+        val HAVE_CURRENT_DATA: Short
+        val HAVE_ENOUGH_DATA: Short
+        val HAVE_FUTURE_DATA: Short
+        val HAVE_METADATA: Short
+        val HAVE_NOTHING: Short
+        val NETWORK_EMPTY: Short
+        val NETWORK_IDLE: Short
+        val NETWORK_LOADING: Short
+        val NETWORK_NO_SOURCE: Short
+    }
 }

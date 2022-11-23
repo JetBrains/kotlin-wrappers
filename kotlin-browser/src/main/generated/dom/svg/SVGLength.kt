@@ -24,4 +24,18 @@ sealed external class SVGLength {
     val SVG_LENGTHTYPE_PT: Short
     val SVG_LENGTHTYPE_PX: Short
     val SVG_LENGTHTYPE_UNKNOWN: Short
+
+    companion object {
+        val SVG_LENGTHTYPE_CM: Short
+        val SVG_LENGTHTYPE_EMS: Short
+        val SVG_LENGTHTYPE_EXS: Short
+        val SVG_LENGTHTYPE_IN: Short
+        val SVG_LENGTHTYPE_MM: Short
+        val SVG_LENGTHTYPE_NUMBER: Short
+        val SVG_LENGTHTYPE_PC: Short
+        val SVG_LENGTHTYPE_PERCENTAGE: Short
+        val SVG_LENGTHTYPE_PT: Short
+        val SVG_LENGTHTYPE_PX: Short
+        val SVG_LENGTHTYPE_UNKNOWN: Short
+    }
 }

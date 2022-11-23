@@ -12,4 +12,8 @@ external class DOMRect(
     override var width: Double
     override var x: Double
     override var y: Double
+
+    companion object {
+        fun fromRect(other: DOMRectInit = definedExternally): DOMRect
+    }
 }

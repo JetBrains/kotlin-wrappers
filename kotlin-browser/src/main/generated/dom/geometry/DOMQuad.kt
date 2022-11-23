@@ -14,4 +14,9 @@ external class DOMQuad(
     val p4: DOMPoint
     fun getBounds(): DOMRect
     fun toJSON(): Any
+
+    companion object {
+        fun fromQuad(other: DOMQuadInit = definedExternally): DOMQuad
+        fun fromRect(other: DOMRectInit = definedExternally): DOMQuad
+    }
 }

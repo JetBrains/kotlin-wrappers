@@ -18,4 +18,12 @@ sealed external class SVGAngle {
     val SVG_ANGLETYPE_RAD: Short
     val SVG_ANGLETYPE_UNKNOWN: Short
     val SVG_ANGLETYPE_UNSPECIFIED: Short
+
+    companion object {
+        val SVG_ANGLETYPE_DEG: Short
+        val SVG_ANGLETYPE_GRAD: Short
+        val SVG_ANGLETYPE_RAD: Short
+        val SVG_ANGLETYPE_UNKNOWN: Short
+        val SVG_ANGLETYPE_UNSPECIFIED: Short
+    }
 }

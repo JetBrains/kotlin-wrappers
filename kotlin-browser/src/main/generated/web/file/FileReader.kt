@@ -31,4 +31,10 @@ external class FileReader :
     val DONE: Short
     val EMPTY: Short
     val LOADING: Short
+
+    companion object {
+        val DONE: Short
+        val EMPTY: Short
+        val LOADING: Short
+    }
 }

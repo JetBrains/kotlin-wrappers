@@ -25,4 +25,10 @@ sealed external class SVGTextContentElement :
     val LENGTHADJUST_SPACING: Short
     val LENGTHADJUST_SPACINGANDGLYPHS: Short
     val LENGTHADJUST_UNKNOWN: Short
+
+    companion object {
+        val LENGTHADJUST_SPACING: Short
+        val LENGTHADJUST_SPACINGANDGLYPHS: Short
+        val LENGTHADJUST_UNKNOWN: Short
+    }
 }

@@ -8,4 +8,10 @@ sealed external class GeolocationPositionError {
     val PERMISSION_DENIED: Short
     val POSITION_UNAVAILABLE: Short
     val TIMEOUT: Short
+
+    companion object {
+        val PERMISSION_DENIED: Short
+        val POSITION_UNAVAILABLE: Short
+        val TIMEOUT: Short
+    }
 }

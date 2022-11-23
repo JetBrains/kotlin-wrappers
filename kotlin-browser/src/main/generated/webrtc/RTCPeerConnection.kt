@@ -69,4 +69,8 @@ external class RTCPeerConnection(
     fun setConfiguration(configuration: RTCConfiguration = definedExternally)
     fun setLocalDescription(description: RTCLocalSessionDescriptionInit = definedExternally): Promise<Void>
     fun setRemoteDescription(description: RTCSessionDescriptionInit): Promise<Void>
+
+    companion object {
+        fun generateCertificate(keygenAlgorithm: Any /* AlgorithmIdentifier */): Promise<RTCCertificate>
+    }
 }

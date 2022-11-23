@@ -12,4 +12,8 @@ external class DOMPoint(
     override var x: Double
     override var y: Double
     override var z: Double
+
+    companion object {
+        fun fromPoint(other: DOMPointInit = definedExternally): DOMPoint
+    }
 }
