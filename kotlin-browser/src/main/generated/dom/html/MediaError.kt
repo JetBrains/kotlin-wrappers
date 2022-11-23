@@ -2,4 +2,18 @@
 
 package dom.html
 
-typealias MediaError = org.w3c.dom.MediaError
+sealed external class MediaError {
+    val code: Int
+    val message: String
+    val MEDIA_ERR_ABORTED: Short
+    val MEDIA_ERR_DECODE: Short
+    val MEDIA_ERR_NETWORK: Short
+    val MEDIA_ERR_SRC_NOT_SUPPORTED: Short
+
+    companion object {
+        val MEDIA_ERR_ABORTED: Short
+        val MEDIA_ERR_DECODE: Short
+        val MEDIA_ERR_NETWORK: Short
+        val MEDIA_ERR_SRC_NOT_SUPPORTED: Short
+    }
+}
