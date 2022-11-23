@@ -1,5 +1,9 @@
 // Automatically generated - do not modify!
 
+@file:Suppress(
+    "NAME_CONTAINS_ILLEGAL_CHARS",
+)
+
 package dom.events
 
 import kotlinx.js.ReadonlyArray
@@ -10,6 +14,7 @@ external interface TouchEventInit : EventModifierInit {
     var touches: ReadonlyArray<Touch>?
 }
 
+@JsName("globalThis.TouchEvent")
 open external class TouchEvent(
     type: String,
     init: TouchEventInit = definedExternally,
