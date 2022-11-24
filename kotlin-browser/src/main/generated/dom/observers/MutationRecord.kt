@@ -7,7 +7,7 @@ import dom.NodeList
 
 sealed external class MutationRecord {
     /** Return the nodes added and removed respectively. */
-    val addedNodes: NodeList
+    val addedNodes: NodeList<*>
 
     /** Returns the local name of the changed attribute, and null otherwise. */
     val attributeName: String?
@@ -25,7 +25,7 @@ sealed external class MutationRecord {
     val previousSibling: Node?
 
     /** Return the nodes added and removed respectively. */
-    val removedNodes: NodeList
+    val removedNodes: NodeList<*>
 
     /** Returns the node the mutation affected, depending on the type. For "attributes", it is the element whose attribute changed. For "characterData", it is the CharacterData node. For "childList", it is the node whose children changed. */
     val target: Node

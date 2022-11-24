@@ -11,7 +11,7 @@ sealed external interface ElementInternals :
     val form: HTMLFormElement?
 
     /** Returns a NodeList of all the label elements that internals's target element is associated with. */
-    val labels: NodeList
+    val labels: NodeList<*>
 
     /** Returns the ShadowRoot for internals's target element, if the target element is a shadow host, or null otherwise. */
     val shadowRoot: ShadowRoot?
