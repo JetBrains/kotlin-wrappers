@@ -2,8 +2,10 @@
 
 package dom.html
 
+import dom.Element
+
 sealed external class HTMLFormControlsCollection :
-    HTMLCollectionBase {
+    HTMLCollectionBase<Element> {
     /**
      * Returns the item with ID or name name from the collection.
      *

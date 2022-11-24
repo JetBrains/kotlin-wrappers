@@ -7,7 +7,7 @@ abstract external class HTMLFieldSetElement :
     var disabled: Boolean
 
     /** Returns an HTMLCollection of the form controls in the element. */
-    val elements: HTMLCollection
+    val elements: HTMLCollection<*>
 
     /** Retrieves a reference to the form that the object is embedded in. */
     val form: HTMLFormElement?

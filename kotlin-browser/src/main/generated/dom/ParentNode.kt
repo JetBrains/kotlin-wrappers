@@ -12,7 +12,7 @@ sealed external interface ParentNode /* : Node */ {
     val childElementCount: Int
 
     /** Returns the child elements. */
-    val children: HTMLCollection
+    val children: HTMLCollection<*>
 
     /** Returns the first child that is an element, and null otherwise. */
     val firstElementChild: Element?
