@@ -5,6 +5,8 @@
 
 package cesium
 
+import js.buffer.ArrayBuffer
+
 /**
  * Provides metadata using the Google Earth Enterprise REST API. This is used by the GoogleEarthEnterpriseImageryProvider
  *  and GoogleEarthEnterpriseTerrainProvider to share metadata requests.
@@ -57,7 +59,7 @@ external class GoogleEarthEnterpriseMetadata(resourceOrUrl: Resource) {
      * Key used to decode packets
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GoogleEarthEnterpriseMetadata.html#key">Online Documentation</a>
      */
-    var key: kotlinx.js.ArrayBuffer
+    var key: ArrayBuffer
 
     /**
      * Gets the name of the Google Earth Enterprise server.

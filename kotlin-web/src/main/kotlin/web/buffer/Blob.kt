@@ -1,6 +1,6 @@
 package web.buffer
 
-import kotlinx.js.ArrayBuffer
+import js.buffer.ArrayBuffer
 import kotlinx.js.JsLong
 import kotlinx.js.ReadonlyArray
 import kotlinx.js.Uint8Array

@@ -2,7 +2,7 @@
 
 package dom.events
 
-import kotlinx.js.ArrayBuffer
+import js.buffer.ArrayBuffer
 import web.events.Event
 import web.events.EventInit
 

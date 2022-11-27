@@ -2,7 +2,7 @@
 
 package node.fs
 
-import kotlinx.js.ArrayBufferView
+import js.buffer.ArrayBufferView
 
 sealed external interface FileReadOptions<T : ArrayBufferView> {
     /**

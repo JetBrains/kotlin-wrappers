@@ -2,8 +2,8 @@
 
 package webrtc
 
-import kotlinx.js.ArrayBuffer
-import kotlinx.js.ArrayBufferView
+import js.buffer.ArrayBuffer
+import js.buffer.ArrayBufferView
 import web.buffer.Blob
 import web.events.Event
 import web.events.EventHandler

@@ -2,7 +2,7 @@
 
 package webrtc
 
-import kotlinx.js.ArrayBuffer
+import js.buffer.ArrayBuffer
 
 sealed external class RTCEncodedAudioFrame {
     var data: ArrayBuffer

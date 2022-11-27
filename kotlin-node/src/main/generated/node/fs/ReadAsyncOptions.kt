@@ -2,7 +2,7 @@
 
 package node.fs
 
-import kotlinx.js.ArrayBufferView
+import js.buffer.ArrayBufferView
 
 sealed external interface ReadAsyncOptions<TBuffer : ArrayBufferView> : ReadSyncOptions {
     var buffer: TBuffer?

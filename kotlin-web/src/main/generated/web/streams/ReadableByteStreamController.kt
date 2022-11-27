@@ -2,7 +2,7 @@
 
 package web.streams
 
-import kotlinx.js.ArrayBufferView
+import js.buffer.ArrayBufferView
 import kotlinx.js.Void
 
 sealed external interface ReadableByteStreamController {

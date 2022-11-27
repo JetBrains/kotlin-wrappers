@@ -5,7 +5,7 @@
 
 package node.crypto
 
-import kotlinx.js.ArrayBufferView
+import js.buffer.ArrayBufferView
 
 /**
  * Verifies the given signature for `data` using the given key and algorithm. If`algorithm` is `null` or `undefined`, then the algorithm is dependent upon the

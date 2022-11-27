@@ -5,7 +5,7 @@
 
 package node.fs
 
-import kotlinx.js.ArrayBufferView
+import js.buffer.ArrayBufferView
 
 /**
  * For detailed information, see the documentation of the asynchronous version of

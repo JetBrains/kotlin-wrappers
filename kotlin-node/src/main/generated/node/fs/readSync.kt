@@ -5,7 +5,7 @@
 
 package node.fs
 
-import kotlinx.js.ArrayBufferView
+import js.buffer.ArrayBufferView
 
 /**
  * Returns the number of `bytesRead`.

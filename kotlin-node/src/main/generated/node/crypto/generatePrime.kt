@@ -5,7 +5,7 @@
 
 package node.crypto
 
-import kotlinx.js.ArrayBuffer
+import js.buffer.ArrayBuffer
 import kotlinx.js.BigInt
 
 /**

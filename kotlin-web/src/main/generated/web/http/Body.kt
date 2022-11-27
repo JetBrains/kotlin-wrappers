@@ -2,7 +2,7 @@
 
 package web.http
 
-import kotlinx.js.ArrayBuffer
+import js.buffer.ArrayBuffer
 import kotlinx.js.Uint8Array
 import web.buffer.Blob
 import web.streams.ReadableStream

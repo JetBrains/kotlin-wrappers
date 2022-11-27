@@ -5,7 +5,7 @@
 
 package node.crypto
 
-import kotlinx.js.ArrayBufferView
+import js.buffer.ArrayBufferView
 
 /**
  * This function is based on a constant-time algorithm.

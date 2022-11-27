@@ -5,7 +5,7 @@
 
 package node.crypto
 
-import kotlinx.js.ArrayBufferView
+import js.buffer.ArrayBufferView
 import node.buffer.Buffer
 
 /**

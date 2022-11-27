@@ -2,7 +2,7 @@
 
 package node.crypto
 
-import kotlinx.js.ArrayBufferView
+import js.buffer.ArrayBufferView
 
 sealed external interface DecipherOCB : Decipher {
     fun setAuthTag(buffer: ArrayBufferView) /* : this */

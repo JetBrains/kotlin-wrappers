@@ -5,7 +5,7 @@
 
 package node.crypto
 
-import kotlinx.js.ArrayBufferView
+import js.buffer.ArrayBufferView
 
 /**
  * Synchronous version of {@link randomFill}.
