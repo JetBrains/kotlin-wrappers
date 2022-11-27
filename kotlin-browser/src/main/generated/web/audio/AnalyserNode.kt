@@ -2,8 +2,8 @@
 
 package web.audio
 
-import kotlinx.js.Float32Array
-import kotlinx.js.Uint8Array
+import js.typedarrays.Float32Array
+import js.typedarrays.Uint8Array
 
 external class AnalyserNode(
     context: BaseAudioContext,

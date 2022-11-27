@@ -2,8 +2,8 @@
 
 package dom.geometry
 
-import kotlinx.js.Float32Array
-import kotlinx.js.Float64Array
+import js.typedarrays.Float32Array
+import js.typedarrays.Float64Array
 import kotlinx.js.ReadonlyArray
 
 open external class DOMMatrixReadOnly(

@@ -2,7 +2,7 @@
 
 package node.net
 
-import kotlinx.js.Uint8Array
+import js.typedarrays.Uint8Array
 
 sealed external interface OnReadOpts {
     var buffer: Any /* Uint8Array | (() => Uint8Array) */

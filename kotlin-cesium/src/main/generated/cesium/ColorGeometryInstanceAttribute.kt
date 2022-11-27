@@ -5,6 +5,8 @@
 
 package cesium
 
+import js.typedarrays.Uint8Array
+
 /**
  * Value and type information for per-instance geometry color.
  * ```
@@ -43,7 +45,7 @@ external class ColorGeometryInstanceAttribute(
      * The values for the attributes stored in a typed array.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ColorGeometryInstanceAttribute.html#value">Online Documentation</a>
      */
-    var value: kotlinx.js.Uint8Array
+    var value: Uint8Array
 
     /**
      * The datatype of each component in the attribute, e.g., individual elements in
@@ -96,8 +98,8 @@ external class ColorGeometryInstanceAttribute(
          */
         fun toValue(
             color: Color,
-            result: kotlinx.js.Uint8Array? = definedExternally,
-        ): kotlinx.js.Uint8Array
+            result: Uint8Array? = definedExternally,
+        ): Uint8Array
 
         /**
          * Compares the provided ColorGeometryInstanceAttributes and returns

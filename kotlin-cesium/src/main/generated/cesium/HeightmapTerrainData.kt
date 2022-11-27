@@ -9,6 +9,7 @@
 
 package cesium
 
+import js.typedarrays.Uint8Array
 import kotlinx.js.ReadonlyArray
 
 /**
@@ -89,7 +90,7 @@ external class HeightmapTerrainData(options: ConstructorOptions) : TerrainData {
         var width: Double
         var height: Double
         var childTileMask: Int?
-        var waterMask: kotlinx.js.Uint8Array?
+        var waterMask: Uint8Array?
         var structure: ConstructorOptionsStructure?
         var encoding: HeightmapEncoding?
         var createdByUpsampling: Boolean?

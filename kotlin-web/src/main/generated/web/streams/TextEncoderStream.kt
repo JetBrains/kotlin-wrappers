@@ -2,7 +2,7 @@
 
 package web.streams
 
-import kotlinx.js.Uint8Array
+import js.typedarrays.Uint8Array
 
 sealed external interface TextEncoderStream {
     /** Returns "utf-8". */

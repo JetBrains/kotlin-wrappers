@@ -3,7 +3,7 @@
 package web.http
 
 import js.buffer.ArrayBuffer
-import kotlinx.js.Uint8Array
+import js.typedarrays.Uint8Array
 import web.buffer.Blob
 import web.streams.ReadableStream
 import kotlin.js.Promise

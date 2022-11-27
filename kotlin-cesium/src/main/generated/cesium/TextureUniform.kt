@@ -9,6 +9,8 @@
 
 package cesium
 
+import js.typedarrays.Uint8Array
+
 /**
  * A simple struct that serves as a value of a `sampler2D`-valued
  * uniform. This is used with [CustomShader] and [TextureManager]
@@ -34,7 +36,7 @@ external class TextureUniform(options: ConstructorOptions) {
      *   Default value - `1.0`
      */
     interface ConstructorOptions {
-        var typedArray: kotlinx.js.Uint8Array?
+        var typedArray: Uint8Array?
         var width: Double?
         var height: Double?
         var url: Resource?

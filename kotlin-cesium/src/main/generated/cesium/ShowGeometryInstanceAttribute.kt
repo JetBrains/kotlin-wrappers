@@ -5,6 +5,8 @@
 
 package cesium
 
+import js.typedarrays.Uint8Array
+
 /**
  * Value and type information for per-instance geometry attribute that determines if the geometry instance will be shown.
  * ```
@@ -34,7 +36,7 @@ external class ShowGeometryInstanceAttribute(show: Boolean? = definedExternally)
      * The values for the attributes stored in a typed array.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ShowGeometryInstanceAttribute.html#value">Online Documentation</a>
      */
-    var value: kotlinx.js.Uint8Array
+    var value: Uint8Array
 
     /**
      * The datatype of each component in the attribute, e.g., individual elements in
@@ -71,7 +73,7 @@ external class ShowGeometryInstanceAttribute(show: Boolean? = definedExternally)
          */
         fun toValue(
             show: Boolean,
-            result: kotlinx.js.Uint8Array? = definedExternally,
-        ): kotlinx.js.Uint8Array
+            result: Uint8Array? = definedExternally,
+        ): Uint8Array
     }
 }

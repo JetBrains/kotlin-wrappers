@@ -9,6 +9,8 @@
 
 package cesium
 
+import js.typedarrays.Uint16Array
+import js.typedarrays.Uint8Array
 import kotlinx.js.ReadonlyArray
 
 /**
@@ -78,7 +80,7 @@ external class QuantizedMeshTerrainData(options: ConstructorOptions) : TerrainDa
      * @property [credits] Array of credits for this tile.
      */
     interface ConstructorOptions {
-        var quantizedVertices: kotlinx.js.Uint16Array
+        var quantizedVertices: Uint16Array
         var indices: dynamic
         var minimumHeight: Double
         var maximumHeight: Double
@@ -95,8 +97,8 @@ external class QuantizedMeshTerrainData(options: ConstructorOptions) : TerrainDa
         var northSkirtHeight: Double
         var childTileMask: Int?
         var createdByUpsampling: Boolean?
-        var encodedNormals: kotlinx.js.Uint8Array?
-        var waterMask: kotlinx.js.Uint8Array?
+        var encodedNormals: Uint8Array?
+        var waterMask: Uint8Array?
         var credits: ReadonlyArray<Credit>?
     }
 

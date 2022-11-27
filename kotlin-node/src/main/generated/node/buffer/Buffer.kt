@@ -2,6 +2,7 @@
 
 package node.buffer
 
+import js.typedarrays.Uint8Array
 import kotlinx.js.*
 
 external class Buffer : Uint8Array {

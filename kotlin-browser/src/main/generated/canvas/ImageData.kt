@@ -2,7 +2,7 @@
 
 package canvas
 
-import kotlinx.js.Uint8ClampedArray
+import js.typedarrays.Uint8ClampedArray
 
 external class ImageData(
     sw: Number,

@@ -2,6 +2,8 @@
 
 package kotlinx.js
 
+import js.typedarrays.*
+
 inline operator fun Float32Array.get(index: Int): Float = asDynamic()[index]
 inline operator fun Float64Array.get(index: Int): Double = asDynamic()[index]
 inline operator fun Int16Array.get(index: Int): Short = asDynamic()[index]

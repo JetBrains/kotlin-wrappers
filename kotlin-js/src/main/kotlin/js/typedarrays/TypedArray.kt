@@ -1,4 +1,4 @@
-package kotlinx.js
+package js.typedarrays
 
 // typealias BigInt64Array = org.khronos.webgl.BigInt64Array
 // typealias BigUint64Array = org.khronos.webgl.BigUint64Array

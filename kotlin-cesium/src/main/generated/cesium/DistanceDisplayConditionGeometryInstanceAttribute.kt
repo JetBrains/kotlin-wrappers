@@ -5,6 +5,8 @@
 
 package cesium
 
+import js.typedarrays.Float32Array
+
 /**
  * Value and type information for per-instance geometry attribute that determines if the geometry instance has a distance display condition.
  * ```
@@ -39,7 +41,7 @@ external class DistanceDisplayConditionGeometryInstanceAttribute(
      * The values for the attributes stored in a typed array.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/DistanceDisplayConditionGeometryInstanceAttribute.html#value">Online Documentation</a>
      */
-    var value: kotlinx.js.Float32Array
+    var value: Float32Array
 
     /**
      * The datatype of each component in the attribute, e.g., individual elements in
@@ -93,7 +95,7 @@ external class DistanceDisplayConditionGeometryInstanceAttribute(
          */
         fun toValue(
             distanceDisplayCondition: DistanceDisplayCondition,
-            result: kotlinx.js.Float32Array? = definedExternally,
-        ): kotlinx.js.Float32Array
+            result: Float32Array? = definedExternally,
+        ): Float32Array
     }
 }

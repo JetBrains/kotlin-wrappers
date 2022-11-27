@@ -2,7 +2,7 @@
 
 package web.audio
 
-import kotlinx.js.Float32Array
+import js.typedarrays.Float32Array
 
 external class BiquadFilterNode(
     context: BaseAudioContext,
