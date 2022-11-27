@@ -1,4 +1,7 @@
-package kotlinx.js
+package js.collections
+
+import kotlinx.js.JsTuple2
+import kotlinx.js.ReadonlyArray
 
 external class WeakMap<in K : Any, V>(
     entries: ReadonlyArray<JsTuple2<K, V>>? = definedExternally,

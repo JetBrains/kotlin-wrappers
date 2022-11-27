@@ -1,4 +1,8 @@
-package kotlinx.js
+package js.collections
+
+import kotlinx.js.JsIterable
+import kotlinx.js.JsTuple2
+import kotlinx.js.ReadonlyArray
 
 @JsName("Map")
 external class JsMap<K : Any, V> : ReadonlyMap<K, V> {

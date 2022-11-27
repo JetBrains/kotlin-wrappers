@@ -2,7 +2,7 @@
 
 package tanstack.table.core
 
-import kotlinx.js.JsMap
+import js.collections.JsMap
 import kotlinx.js.JsTuple2
 
 external interface FiltersInstance<TData : RowData> {

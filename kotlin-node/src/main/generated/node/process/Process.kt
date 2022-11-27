@@ -2,7 +2,7 @@
 
 package node.process
 
-import kotlinx.js.JsSet
+import js.collections.JsSet
 import kotlinx.js.ReadonlyArray
 import node.Module
 import node.events.Event

@@ -1,4 +1,8 @@
-package kotlinx.js
+package js.collections
+
+import kotlinx.js.HasSymbol
+import kotlinx.js.JsIterable
+import kotlinx.js.JsTuple2
 
 external interface ReadonlySet<T> :
     HasSymbol.iterator<() -> JsIterable.Iterator<T>> {

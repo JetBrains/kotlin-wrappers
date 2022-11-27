@@ -1,4 +1,9 @@
-package kotlinx.js
+package js.collections
+
+import kotlinx.js.JsIterable
+import kotlinx.js.JsIterator
+import kotlinx.js.JsTuple2
+import kotlinx.js.ReadonlyArray
 
 @JsName("Set")
 external class JsSet<T> : ReadonlySet<T> {
