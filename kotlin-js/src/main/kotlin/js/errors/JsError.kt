@@ -1,4 +1,4 @@
-package web.errors
+package js.errors
 
 typealias JsError = Throwable
 
