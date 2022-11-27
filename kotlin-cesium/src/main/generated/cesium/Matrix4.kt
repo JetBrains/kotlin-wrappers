@@ -5,7 +5,7 @@
 
 package cesium
 
-import kotlinx.js.ReadonlyArray
+import js.core.ReadonlyArray
 
 /**
  * A 4x4 matrix, indexable as a column-major order array.

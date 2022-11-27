@@ -2,7 +2,7 @@
 
 package dom.svg
 
-import kotlinx.js.ArrayLike
+import js.core.ArrayLike
 
 sealed external class SVGNumberList :
     ArrayLike<SVGNumber> {

@@ -2,7 +2,7 @@
 
 package web.filesystem
 
-import kotlinx.js.ReadonlyArray
+import js.core.ReadonlyArray
 
 typealias FileSystemEntriesCallback = (
     entries: ReadonlyArray<FileSystemEntry>,

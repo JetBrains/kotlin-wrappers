@@ -10,7 +10,7 @@
 
 package cesium
 
-import kotlinx.js.ReadonlyArray
+import js.core.ReadonlyArray
 
 /**
  * A base widget for building applications.  It composites all of the standard Cesium widgets into one reusable package.

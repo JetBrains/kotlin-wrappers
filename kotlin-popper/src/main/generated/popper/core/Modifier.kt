@@ -2,8 +2,8 @@
 
 package popper.core
 
-import kotlinx.js.ReadonlyArray
-import kotlinx.js.Record
+import js.core.ReadonlyArray
+import js.core.Record
 
 external interface Modifier<Options> {
     var name: ModifierName<Options>

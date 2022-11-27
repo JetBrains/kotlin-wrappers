@@ -1,9 +1,9 @@
 package styled
 
+import js.core.JsArray
+import js.core.Object
 import kotlinext.js.js
 import kotlinx.css.StyledElement
-import kotlinx.js.JsArray
-import kotlinx.js.Object
 import react.dom.RDOMBuilder
 import react.dom.setProp
 

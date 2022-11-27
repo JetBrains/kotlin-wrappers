@@ -5,7 +5,7 @@
 
 package node.vm
 
-import kotlinx.js.ReadonlyArray
+import js.core.ReadonlyArray
 
 /**
  * Compiles the given code into the provided context (if no context is

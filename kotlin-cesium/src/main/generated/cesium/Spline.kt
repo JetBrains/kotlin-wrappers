@@ -5,7 +5,7 @@
 
 package cesium
 
-import kotlinx.js.ReadonlyArray
+import js.core.ReadonlyArray
 
 /**
  * Creates a curve parameterized and evaluated by time. This type describes an interface

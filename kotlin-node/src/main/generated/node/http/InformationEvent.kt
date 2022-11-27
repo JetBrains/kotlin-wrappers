@@ -2,7 +2,7 @@
 
 package node.http
 
-import kotlinx.js.ReadonlyArray
+import js.core.ReadonlyArray
 
 sealed external interface InformationEvent {
     var statusCode: Number

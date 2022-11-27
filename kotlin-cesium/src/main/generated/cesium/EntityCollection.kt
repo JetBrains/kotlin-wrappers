@@ -9,7 +9,7 @@
 
 package cesium
 
-import kotlinx.js.ReadonlyArray
+import js.core.ReadonlyArray
 
 /**
  * An observable collection of [Entity] instances where each entity has a unique id.

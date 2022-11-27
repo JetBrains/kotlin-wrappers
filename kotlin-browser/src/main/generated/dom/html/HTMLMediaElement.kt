@@ -3,7 +3,7 @@
 package dom.html
 
 import dom.events.MediaEncryptedEvent
-import kotlinx.js.Void
+import js.core.Void
 import media.key.MediaKeys
 import media.source.TimeRanges
 import remoteplayback.RemotePlayback

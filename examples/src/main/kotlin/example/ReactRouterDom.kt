@@ -1,6 +1,6 @@
 package example
 
-import kotlinx.js.get
+import js.core.get
 import react.VFC
 import react.create
 import react.dom.html.ReactHTML.div

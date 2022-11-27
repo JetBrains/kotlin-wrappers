@@ -5,7 +5,7 @@
 
 package tanstack.table.core
 
-import kotlinx.js.ReadonlyRecord
+import js.core.ReadonlyRecord
 
 external fun <TData : RowData> isSubRowSelected(
     row: Row<TData>,

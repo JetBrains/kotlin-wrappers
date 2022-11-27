@@ -2,7 +2,7 @@ package styled.sheets
 
 import browser.window
 import dom.html.HTMLStyleElement
-import kotlinx.js.asList
+import js.core.asList
 import web.timers.setTimeout
 
 private typealias Rules = Iterable<String>

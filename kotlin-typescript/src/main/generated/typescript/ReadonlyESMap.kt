@@ -2,8 +2,8 @@
 
 package typescript
 
-import kotlinx.js.JsIterator
-import kotlinx.js.JsTuple2
+import js.core.JsIterator
+import js.core.JsTuple2
 
 /** ES6 Map interface, only read methods included. */
 sealed external interface ReadonlyESMap<K, V> : ReadonlyCollection<K> {

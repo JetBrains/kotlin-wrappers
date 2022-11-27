@@ -5,9 +5,9 @@
 
 package node.events
 
-import kotlinx.js.AsyncIterable
-import kotlinx.js.ReadonlyArray
-import kotlinx.js.Symbol
+import js.core.AsyncIterable
+import js.core.ReadonlyArray
+import js.core.Symbol
 import kotlin.js.Promise
 
 open external class EventEmitter : IEventEmitter {

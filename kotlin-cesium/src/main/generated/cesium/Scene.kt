@@ -5,7 +5,7 @@
 
 package cesium
 
-import kotlinx.js.ReadonlyArray
+import js.core.ReadonlyArray
 
 /**
  * The container for all 3D graphical objects and state in a Cesium virtual scene.  Generally,

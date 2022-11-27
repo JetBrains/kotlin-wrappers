@@ -5,7 +5,7 @@
 
 package cesium
 
-import kotlinx.js.ReadonlyArray
+import js.core.ReadonlyArray
 
 /**
  * Creates a [Material] that combines multiple layers of color/gradient bands and maps them to terrain heights.

@@ -2,7 +2,7 @@
 
 package typescript
 
-import kotlinx.js.ReadonlyArray
+import js.core.ReadonlyArray
 
 /**
  * Builder to manage the program state changes

@@ -2,7 +2,7 @@
 
 package node.os
 
-import kotlinx.js.Void
+import js.core.Void
 
 sealed external interface NetworkInterfaceInfoIPv4 : NetworkInterfaceBase {
     var family: String /* 'IPv4' */

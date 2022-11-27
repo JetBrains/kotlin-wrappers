@@ -4,7 +4,7 @@ package dom
 
 import cssom.CSSStyleSheet
 import cssom.StyleSheetList
-import kotlinx.js.ReadonlyArray
+import js.core.ReadonlyArray
 import web.animations.Animation
 
 external interface DocumentOrShadowRoot {

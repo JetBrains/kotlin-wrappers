@@ -2,7 +2,7 @@
 
 package dom.html
 
-import kotlinx.js.Void
+import js.core.Void
 import kotlin.js.Promise
 
 abstract external class HTMLImageElement :

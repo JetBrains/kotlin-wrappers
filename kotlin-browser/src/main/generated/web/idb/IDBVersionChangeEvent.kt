@@ -2,7 +2,7 @@
 
 package web.idb
 
-import kotlinx.js.JsLong
+import js.core.JsLong
 import web.events.Event
 import web.events.EventInit
 

@@ -5,7 +5,7 @@
 
 package cesium
 
-import kotlinx.js.ReadonlyArray
+import js.core.ReadonlyArray
 
 /**
  * A non-overlapping collection of [TimeInterval] instances sorted by start time.

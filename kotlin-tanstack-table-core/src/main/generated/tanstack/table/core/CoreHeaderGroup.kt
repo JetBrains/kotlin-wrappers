@@ -2,7 +2,7 @@
 
 package tanstack.table.core
 
-import kotlinx.js.ReadonlyArray
+import js.core.ReadonlyArray
 
 external interface CoreHeaderGroup<TData : RowData> {
     var id: String

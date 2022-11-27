@@ -4,7 +4,7 @@ package dom.html
 
 import dom.Element
 import dom.Node
-import kotlinx.js.ReadonlyArray
+import js.core.ReadonlyArray
 
 abstract external class HTMLSlotElement :
     HTMLElement {

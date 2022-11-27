@@ -9,7 +9,7 @@
 
 package cesium
 
-import kotlinx.js.ReadonlyArray
+import js.core.ReadonlyArray
 
 /**
  * A [Property] which transparently links to another property on a provided object.

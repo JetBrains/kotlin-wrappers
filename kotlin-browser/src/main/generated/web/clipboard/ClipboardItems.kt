@@ -2,6 +2,6 @@
 
 package web.clipboard
 
-import kotlinx.js.ReadonlyArray
+import js.core.ReadonlyArray
 
 typealias ClipboardItems = ReadonlyArray<ClipboardItem>

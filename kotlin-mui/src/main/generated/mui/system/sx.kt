@@ -3,7 +3,7 @@
 package mui.system
 
 import csstype.PropertiesBuilder
-import kotlinx.js.jso
+import js.core.jso
 
 inline fun PropsWithSx.sx(
     crossinline block: PropertiesBuilder.() -> Unit,

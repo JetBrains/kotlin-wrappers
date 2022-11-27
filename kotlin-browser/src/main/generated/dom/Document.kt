@@ -6,7 +6,7 @@ import cssom.fonts.FontFaceSource
 import dom.html.*
 import dom.selection.Selection
 import dom.xpath.XPathEvaluatorBase
-import kotlinx.js.Void
+import js.core.Void
 import web.events.Event
 import web.events.EventHandler
 import web.url.URL

@@ -1,6 +1,6 @@
 package react
 
-import kotlinx.js.jso
+import js.core.jso
 
 abstract class RComponent<P : Props, S : State> : Component<P, S> {
     constructor() : super() {

@@ -4,7 +4,7 @@
 
 package web.events
 
-import kotlinx.js.jso
+import js.core.jso
 import web.abort.AbortSignal
 
 @JsName("null") // IR workaround

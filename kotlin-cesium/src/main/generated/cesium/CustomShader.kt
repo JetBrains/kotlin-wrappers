@@ -9,7 +9,7 @@
 
 package cesium
 
-import kotlinx.js.ReadonlyRecord
+import js.core.ReadonlyRecord
 
 /**
  * A user defined GLSL shader used with [Model] as well

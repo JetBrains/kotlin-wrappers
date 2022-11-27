@@ -2,7 +2,7 @@
 
 package dom.events
 
-import kotlinx.js.ReadonlyArray
+import js.core.ReadonlyArray
 
 external interface PointerEventInit : MouseEventInit {
     var coalescedEvents: ReadonlyArray<PointerEvent>?

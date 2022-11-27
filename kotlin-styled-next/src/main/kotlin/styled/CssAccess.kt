@@ -1,7 +1,7 @@
 package styled
 
 import browser.window
-import kotlinx.js.jso
+import js.core.jso
 import web.location.location
 import web.storage.localStorage
 

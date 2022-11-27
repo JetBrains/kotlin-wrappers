@@ -5,7 +5,7 @@
 
 package node.os
 
-import kotlinx.js.ReadonlyArray
+import js.core.ReadonlyArray
 
 /**
  * Returns an array of objects containing information about each logical CPU core.

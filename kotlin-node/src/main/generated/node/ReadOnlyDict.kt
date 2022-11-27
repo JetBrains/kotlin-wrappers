@@ -2,6 +2,6 @@
 
 package node
 
-import kotlinx.js.Record
+import js.core.Record
 
 typealias ReadOnlyDict<T> = Record<String, out T>

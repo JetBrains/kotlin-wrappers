@@ -2,7 +2,7 @@
 
 package js.intl
 
-import kotlinx.js.ReadonlyArray
+import js.core.ReadonlyArray
 
 sealed external interface NumberFormat {
     fun formatToParts(number: Number /* | BigInt */ = definedExternally): ReadonlyArray<NumberFormatPart>

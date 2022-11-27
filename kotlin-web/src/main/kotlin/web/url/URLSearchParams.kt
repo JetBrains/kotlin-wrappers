@@ -1,6 +1,6 @@
 package web.url
 
-import kotlinx.js.*
+import js.core.*
 
 external class URLSearchParams() :
     HasSymbol.iterator<JsTuple2<String, String>> {

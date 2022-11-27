@@ -5,7 +5,7 @@
 
 package cesium
 
-import kotlinx.js.ReadonlyArray
+import js.core.ReadonlyArray
 
 /**
  * Describes geometry representing the outline of a plane centered at the origin, with a unit width and length.

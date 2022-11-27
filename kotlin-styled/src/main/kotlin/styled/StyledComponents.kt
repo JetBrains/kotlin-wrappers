@@ -5,11 +5,11 @@ import csstype.ClassName
 import dom.Element
 import dom.html.HTML.div
 import dom.html.createElement
+import js.core.jso
 import kotlinx.css.CssBuilder
 import kotlinx.css.CssDsl
 import kotlinx.css.RuleSet
 import kotlinx.html.*
-import kotlinx.js.jso
 import react.*
 import react.dom.DOMProps
 import react.dom.RDOMBuilder

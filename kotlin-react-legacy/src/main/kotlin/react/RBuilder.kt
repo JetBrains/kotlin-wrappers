@@ -1,7 +1,7 @@
 package react
 
+import js.core.jso
 import kotlinext.js.js
-import kotlinx.js.jso
 import kotlin.reflect.KClass
 
 typealias Render = RBuilder.() -> Unit

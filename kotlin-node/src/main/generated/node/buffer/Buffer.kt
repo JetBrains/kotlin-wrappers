@@ -2,8 +2,11 @@
 
 package node.buffer
 
+import js.core.BigInt
+import js.core.JsIterable
+import js.core.JsTuple2
+import js.core.ReadonlyArray
 import js.typedarrays.Uint8Array
-import kotlinx.js.*
 
 external class Buffer : Uint8Array {
     /**

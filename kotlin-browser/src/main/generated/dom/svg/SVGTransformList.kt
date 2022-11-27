@@ -3,7 +3,7 @@
 package dom.svg
 
 import dom.geometry.DOMMatrix2DInit
-import kotlinx.js.ArrayLike
+import js.core.ArrayLike
 
 sealed external class SVGTransformList :
     ArrayLike<SVGTransform> {

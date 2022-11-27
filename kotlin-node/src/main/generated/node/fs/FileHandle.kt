@@ -3,8 +3,8 @@
 package node.fs
 
 import js.buffer.ArrayBufferView
-import kotlinx.js.ReadonlyArray
-import kotlinx.js.Void
+import js.core.ReadonlyArray
+import js.core.Void
 import node.buffer.BufferEncoding
 import kotlin.js.Promise
 

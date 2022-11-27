@@ -9,7 +9,7 @@
 
 package cesium
 
-import kotlinx.js.ReadonlyArray
+import js.core.ReadonlyArray
 
 /**
  * A description of a polygon composed of arbitrary coplanar positions.

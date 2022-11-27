@@ -3,8 +3,8 @@
 package media.key
 
 import js.buffer.BufferSource
-import kotlinx.js.EpochTimeStamp
-import kotlinx.js.Void
+import js.core.EpochTimeStamp
+import js.core.Void
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventTarget

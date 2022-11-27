@@ -1,8 +1,8 @@
 package js.collections
 
-import kotlinx.js.HasSymbol
-import kotlinx.js.JsIterable
-import kotlinx.js.JsTuple2
+import js.core.HasSymbol
+import js.core.JsIterable
+import js.core.JsTuple2
 
 external interface ReadonlyMap<K : Any, V> :
     HasSymbol.iterator<() -> JsIterable.Iterator<JsTuple2<K, V>>> {

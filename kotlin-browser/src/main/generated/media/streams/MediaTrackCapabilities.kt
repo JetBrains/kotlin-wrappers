@@ -2,7 +2,7 @@
 
 package media.streams
 
-import kotlinx.js.ReadonlyArray
+import js.core.ReadonlyArray
 
 sealed external interface MediaTrackCapabilities {
     var aspectRatio: DoubleRange?

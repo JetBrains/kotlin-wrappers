@@ -1,6 +1,6 @@
 package react
 
-import kotlinx.js.JsTuple2
+import js.core.JsTuple2
 
 typealias TransitionFunction = () -> Unit
 typealias TransitionStartFunction = (callback: TransitionFunction) -> Unit

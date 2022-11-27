@@ -4,7 +4,7 @@
 
 package popper.core.modifiers
 
-import kotlinx.js.jso
+import js.core.jso
 import popper.core.Padding
 
 inline fun PaddingFunction(

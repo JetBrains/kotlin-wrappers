@@ -6,8 +6,8 @@ import csstype.ColorProperty
 import csstype.px
 import dom.html.HTMLDivElement
 import emotion.react.css
-import kotlinx.js.Object
-import kotlinx.js.jso
+import js.core.Object
+import js.core.jso
 import react.*
 import react.dom.html.HTMLAttributes
 import react.dom.html.InputType

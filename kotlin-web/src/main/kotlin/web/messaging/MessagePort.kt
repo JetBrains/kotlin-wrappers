@@ -1,6 +1,6 @@
 package web.messaging
 
-import kotlinx.js.ReadonlyArray
+import js.core.ReadonlyArray
 import web.events.EventTarget
 
 sealed external class MessagePort : EventTarget {

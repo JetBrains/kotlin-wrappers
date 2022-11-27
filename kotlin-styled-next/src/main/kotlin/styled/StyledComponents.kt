@@ -1,12 +1,12 @@
 package styled
 
+import js.core.delete
+import js.core.jso
 import kotlinext.js.clone
 import kotlinx.css.CssBuilder
 import kotlinx.css.CssDsl
 import kotlinx.css.RuleSet
 import kotlinx.html.*
-import kotlinx.js.delete
-import kotlinx.js.jso
 import react.*
 import react.dom.DOMProps
 import react.dom.RDOMBuilder

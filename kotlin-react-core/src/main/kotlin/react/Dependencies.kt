@@ -1,5 +1,5 @@
 package react
 
-import kotlinx.js.ReadonlyArray
+import js.core.ReadonlyArray
 
 typealias Dependencies = ReadonlyArray<Any?>

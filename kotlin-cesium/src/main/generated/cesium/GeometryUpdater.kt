@@ -9,7 +9,7 @@
 
 package cesium
 
-import kotlinx.js.ReadonlyArray
+import js.core.ReadonlyArray
 
 /**
  * An abstract class for updating geometry entities.

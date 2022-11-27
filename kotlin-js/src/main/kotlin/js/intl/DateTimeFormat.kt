@@ -2,7 +2,7 @@
 
 package js.intl
 
-import kotlinx.js.ReadonlyArray
+import js.core.ReadonlyArray
 
 sealed external interface DateTimeFormat {
     fun formatToParts(date: Any /* Date | number */ = definedExternally): ReadonlyArray<DateTimeFormatPart>

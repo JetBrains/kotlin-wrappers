@@ -1,6 +1,6 @@
 package csstype
 
-import kotlinx.js.Object
+import js.core.Object
 
 sealed class PropertiesBuilder :
     Properties,

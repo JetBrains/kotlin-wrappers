@@ -1,6 +1,6 @@
 package csstype
 
-import kotlinx.js.ReadonlyArray
+import js.core.ReadonlyArray
 
 fun GridTemplateAreas(
     vararg values: Ident,

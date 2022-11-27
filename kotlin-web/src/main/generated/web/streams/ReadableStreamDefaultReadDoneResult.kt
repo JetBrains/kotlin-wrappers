@@ -2,7 +2,7 @@
 
 package web.streams
 
-import kotlinx.js.Void
+import js.core.Void
 
 sealed external interface ReadableStreamDefaultReadDoneResult {
     var done: Boolean /* true */

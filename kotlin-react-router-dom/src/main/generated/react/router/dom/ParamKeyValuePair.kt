@@ -2,4 +2,6 @@
 
 package react.router.dom
 
-typealias ParamKeyValuePair = kotlinx.js.JsTuple2<String, String>
+import js.core.JsTuple2
+
+typealias ParamKeyValuePair = JsTuple2<String, String>

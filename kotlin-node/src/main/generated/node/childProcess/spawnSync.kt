@@ -5,7 +5,7 @@
 
 package node.childProcess
 
-import kotlinx.js.ReadonlyArray
+import js.core.ReadonlyArray
 import node.buffer.Buffer
 
 /**

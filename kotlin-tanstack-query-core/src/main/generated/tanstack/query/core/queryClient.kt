@@ -5,8 +5,8 @@
 
 package tanstack.query.core
 
-import kotlinx.js.JsTuple2
-import kotlinx.js.ReadonlyArray
+import js.core.JsTuple2
+import js.core.ReadonlyArray
 import kotlin.js.Promise
 
 open external class QueryClient(config: QueryClientConfig = definedExternally) {

@@ -4,7 +4,7 @@
 
 package js.intl
 
-import kotlinx.js.ReadonlyArray
+import js.core.ReadonlyArray
 
 external class PluralRules(
     locales: String = definedExternally,

@@ -3,7 +3,7 @@
 package dom.events
 
 import dom.data.DataTransfer
-import kotlinx.js.ReadonlyArray
+import js.core.ReadonlyArray
 
 external interface InputEventInit : UIEventInit {
     var data: String?

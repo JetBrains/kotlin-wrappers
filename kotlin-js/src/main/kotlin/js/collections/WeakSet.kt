@@ -1,6 +1,6 @@
 package js.collections
 
-import kotlinx.js.ReadonlyArray
+import js.core.ReadonlyArray
 
 external class WeakSet<in T>(
     values: ReadonlyArray<T>? = definedExternally,

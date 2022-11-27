@@ -3,7 +3,7 @@
 package webgl
 
 import js.buffer.ArrayBufferView
-import kotlinx.js.ReadonlyArray
+import js.core.ReadonlyArray
 
 sealed external interface WebGL2RenderingContextBase {
     fun beginQuery(

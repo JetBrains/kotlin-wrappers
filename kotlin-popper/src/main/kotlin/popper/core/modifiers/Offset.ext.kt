@@ -4,8 +4,8 @@
 
 package popper.core.modifiers
 
-import kotlinx.js.JsTuple2
-import kotlinx.js.tupleOf
+import js.core.JsTuple2
+import js.core.tupleOf
 
 inline fun Offset(
     x: Double?,

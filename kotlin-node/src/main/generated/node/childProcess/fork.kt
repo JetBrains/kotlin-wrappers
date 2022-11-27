@@ -5,7 +5,7 @@
 
 package node.childProcess
 
-import kotlinx.js.ReadonlyArray
+import js.core.ReadonlyArray
 
 /**
  * The `child_process.fork()` method is a special case of {@link spawn} used specifically to spawn new Node.js processes.

@@ -2,6 +2,6 @@
 
 package tanstack.table.core
 
-import kotlinx.js.ReadonlyArray
+import js.core.ReadonlyArray
 
 typealias ColumnOrderState = ReadonlyArray<String>

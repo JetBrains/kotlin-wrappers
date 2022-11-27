@@ -5,7 +5,7 @@
 
 package node.http
 
-import kotlinx.js.ReadonlyArray
+import js.core.ReadonlyArray
 import node.buffer.Buffer
 import node.events.Event
 import node.events.EventType

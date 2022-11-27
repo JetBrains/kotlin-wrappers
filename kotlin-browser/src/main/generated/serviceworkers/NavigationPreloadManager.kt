@@ -2,7 +2,7 @@
 
 package serviceworkers
 
-import kotlinx.js.Void
+import js.core.Void
 import kotlin.js.Promise
 
 sealed external class NavigationPreloadManager {

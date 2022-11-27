@@ -6,7 +6,7 @@
 
 package node.events
 
-import kotlinx.js.Symbol
+import js.core.Symbol
 
 external interface EventType
 

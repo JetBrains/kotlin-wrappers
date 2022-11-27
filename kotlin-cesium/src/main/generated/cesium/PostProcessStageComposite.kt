@@ -9,7 +9,7 @@
 
 package cesium
 
-import kotlinx.js.ReadonlyArray
+import js.core.ReadonlyArray
 
 /**
  * A collection of [PostProcessStage]s or other post-process composite stages that execute together logically.

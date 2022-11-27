@@ -2,6 +2,6 @@
 
 package tanstack.table.core
 
-import kotlinx.js.ReadonlyRecord
+import js.core.ReadonlyRecord
 
 typealias CustomAggregationFns = ReadonlyRecord<String, AggregationFn<*>>

@@ -3,6 +3,6 @@
 
 package emotion.css
 
-import kotlinx.js.ReadonlyArray
+import js.core.ReadonlyArray
 
 external fun hydrate(ids: ReadonlyArray<String>)

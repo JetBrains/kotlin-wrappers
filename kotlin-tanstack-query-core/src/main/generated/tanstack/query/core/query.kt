@@ -10,7 +10,7 @@
 
 package tanstack.query.core
 
-import kotlinx.js.EpochTimeStamp
+import js.core.EpochTimeStamp
 import web.abort.AbortSignal
 import kotlin.js.Promise
 

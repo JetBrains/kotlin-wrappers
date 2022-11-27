@@ -5,13 +5,15 @@
 
 package react.router
 
+import js.core.ReadonlyArray
+
 /**
  * Matches the given routes to a location and returns the match data.
  *
  * @see https://reactrouter.com/docs/en/v6/api#matchroutes
  */
 external fun matchRoutes(
-    routes: kotlinx.js.ReadonlyArray<RouteObject>,
+    routes: ReadonlyArray<RouteObject>,
     locationArg: history.Location,
     basename: String = definedExternally,
-): kotlinx.js.ReadonlyArray<RouteMatch>?
+): ReadonlyArray<RouteMatch>?

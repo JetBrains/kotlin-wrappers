@@ -5,6 +5,8 @@
 
 package react.router
 
+import js.core.ReadonlyArray
+
 /**
  * Creates a route config from a React "children" object, which is usually
  * either a `<Route>` element or an array of them. Used internally by
@@ -14,4 +16,4 @@ package react.router
  */
 external fun createRoutesFromChildren(
     children: react.ReactNode,
-): kotlinx.js.ReadonlyArray<RouteObject>
+): ReadonlyArray<RouteObject>

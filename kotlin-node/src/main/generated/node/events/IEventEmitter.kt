@@ -2,7 +2,7 @@
 
 package node.events
 
-import kotlinx.js.ReadonlyArray
+import js.core.ReadonlyArray
 
 external interface IEventEmitter {
     /**

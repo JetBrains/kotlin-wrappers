@@ -2,7 +2,7 @@
 
 package cssom
 
-import kotlinx.js.ArrayLike
+import js.core.ArrayLike
 
 sealed external class StyleSheetList :
     ArrayLike<CSSStyleSheet> {

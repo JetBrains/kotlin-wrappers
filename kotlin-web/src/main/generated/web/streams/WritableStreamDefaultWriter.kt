@@ -2,7 +2,7 @@
 
 package web.streams
 
-import kotlinx.js.Void
+import js.core.Void
 import kotlin.js.Promise
 
 sealed external interface WritableStreamDefaultWriter<W> {

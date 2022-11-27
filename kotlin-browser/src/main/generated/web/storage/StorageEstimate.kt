@@ -2,7 +2,7 @@
 
 package web.storage
 
-import kotlinx.js.JsLong
+import js.core.JsLong
 
 sealed external interface StorageEstimate {
     var quota: JsLong?

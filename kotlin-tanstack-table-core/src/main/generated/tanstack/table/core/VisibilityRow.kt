@@ -2,7 +2,7 @@
 
 package tanstack.table.core
 
-import kotlinx.js.ReadonlyArray
+import js.core.ReadonlyArray
 
 external interface VisibilityRow<TData : RowData> {
     var getVisibleCells: () -> ReadonlyArray<Cell<TData, *>>

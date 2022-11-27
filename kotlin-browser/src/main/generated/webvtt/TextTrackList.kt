@@ -2,7 +2,7 @@
 
 package webvtt
 
-import kotlinx.js.ArrayLike
+import js.core.ArrayLike
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventTarget

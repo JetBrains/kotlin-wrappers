@@ -1,6 +1,6 @@
 package react.popper
 
-import kotlinx.js.Record
+import js.core.Record
 import popper.core.ForceUpdate
 import popper.core.Name
 import popper.core.State

@@ -2,7 +2,7 @@
 
 package web.audio
 
-import kotlinx.js.HighResTimeStamp
+import js.core.HighResTimeStamp
 
 sealed external interface AudioTimestamp {
     var contextTime: Double?

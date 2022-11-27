@@ -2,7 +2,7 @@
 
 package tanstack.table.core
 
-import kotlinx.js.ReadonlyArray
+import js.core.ReadonlyArray
 
 external interface GroupColumnDefBase<TData : RowData, TValue> : ColumnDefBase<TData, TValue> {
     var columns: ReadonlyArray<ColumnDef<TData, *>>?

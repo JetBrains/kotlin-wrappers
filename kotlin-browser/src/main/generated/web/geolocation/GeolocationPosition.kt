@@ -2,7 +2,7 @@
 
 package web.geolocation
 
-import kotlinx.js.EpochTimeStamp
+import js.core.EpochTimeStamp
 
 sealed external class GeolocationPosition {
     val coords: GeolocationCoordinates

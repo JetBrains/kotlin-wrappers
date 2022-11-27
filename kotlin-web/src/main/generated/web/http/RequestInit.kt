@@ -2,7 +2,7 @@
 
 package web.http
 
-import kotlinx.js.Void
+import js.core.Void
 import web.abort.AbortSignal
 
 sealed external interface RequestInit {

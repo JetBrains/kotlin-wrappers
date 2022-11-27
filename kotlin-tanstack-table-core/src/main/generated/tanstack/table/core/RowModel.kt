@@ -2,8 +2,8 @@
 
 package tanstack.table.core
 
-import kotlinx.js.ReadonlyArray
-import kotlinx.js.ReadonlyRecord
+import js.core.ReadonlyArray
+import js.core.ReadonlyRecord
 
 external interface RowModel<TData : RowData> {
     var rows: ReadonlyArray<Row<TData>>

@@ -3,7 +3,7 @@
 package dom.observers
 
 import dom.Node
-import kotlinx.js.ReadonlyArray
+import js.core.ReadonlyArray
 
 external class MutationObserver(
     callback: MutationCallback,

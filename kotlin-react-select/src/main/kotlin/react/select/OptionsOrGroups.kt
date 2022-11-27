@@ -1,6 +1,6 @@
 package react.select
 
-import kotlinx.js.ReadonlyArray
+import js.core.ReadonlyArray
 
 external interface OptionsOrGroups<Option, Group : GroupBase<Option>>
 

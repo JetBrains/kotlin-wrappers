@@ -5,6 +5,6 @@
 
 package typescript
 
-import kotlinx.js.ReadonlyArray
+import js.core.ReadonlyArray
 
 external fun getSyntheticLeadingComments(node: Node): ReadonlyArray<SynthesizedComment>?

@@ -5,7 +5,7 @@
 
 package typescript
 
-import kotlinx.js.ReadonlyArray
+import js.core.ReadonlyArray
 
 /**
  * Reads the config file, reports errors if any and exits if the config file cannot be found

@@ -9,7 +9,7 @@
 
 package cesium
 
-import kotlinx.js.ReadonlyArray
+import js.core.ReadonlyArray
 
 /**
  * Represents a scalar value's lower and upper bound at a near distance and far distance in eye space.

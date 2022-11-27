@@ -2,7 +2,7 @@
 
 package dom.events
 
-import kotlinx.js.ArrayLike
+import js.core.ArrayLike
 
 sealed external class TouchList :
     ArrayLike<Touch> {

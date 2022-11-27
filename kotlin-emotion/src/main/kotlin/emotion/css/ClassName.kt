@@ -2,7 +2,7 @@ package emotion.css
 
 import csstype.ClassName
 import csstype.PropertiesBuilder
-import kotlinx.js.jso
+import js.core.jso
 
 inline fun ClassName(
     crossinline block: PropertiesBuilder.() -> Unit,

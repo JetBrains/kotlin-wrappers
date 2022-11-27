@@ -2,7 +2,7 @@
 
 package node.test
 
-import kotlinx.js.ReadonlyArray
+import js.core.ReadonlyArray
 import web.abort.AbortSignal
 
 sealed external interface RunOptions {

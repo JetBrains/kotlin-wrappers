@@ -7,11 +7,11 @@ import dom.Element
 import dom.css.getComputedStyle
 import dom.html.HTMLElement
 import dom.html.HTMLStyleElement
+import js.core.asList
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.promise
 import kotlinx.css.CssBuilder
-import kotlinx.js.asList
 import react.ComponentType
 import react.Props
 import react.createElement

@@ -5,7 +5,7 @@
 
 package node.fs
 
-import kotlinx.js.Void
+import js.core.Void
 import node.buffer.BufferEncoding
 import kotlin.js.Promise
 

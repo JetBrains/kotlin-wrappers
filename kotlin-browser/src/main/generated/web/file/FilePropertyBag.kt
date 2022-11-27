@@ -2,7 +2,7 @@
 
 package web.file
 
-import kotlinx.js.EpochTimeStamp
+import js.core.EpochTimeStamp
 import web.buffer.BlobPropertyBag
 
 sealed external interface FilePropertyBag :

@@ -3,7 +3,7 @@
 package tanstack.table.core
 
 import js.collections.JsMap
-import kotlinx.js.JsTuple2
+import js.core.JsTuple2
 
 external interface FiltersOptionsBase<TData : RowData> {
     var enableFilters: Boolean?

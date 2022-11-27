@@ -2,7 +2,7 @@
 
 package web.clipboard
 
-import kotlinx.js.Void
+import js.core.Void
 import web.events.EventTarget
 import kotlin.js.Promise
 

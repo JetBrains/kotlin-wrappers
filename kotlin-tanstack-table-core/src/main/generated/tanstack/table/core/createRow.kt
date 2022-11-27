@@ -5,7 +5,7 @@
 
 package tanstack.table.core
 
-import kotlinx.js.ReadonlyArray
+import js.core.ReadonlyArray
 
 external fun <TData : RowData> createRow(
     table: Table<TData>,

@@ -9,7 +9,7 @@
 
 package tanstack.query.core
 
-import kotlinx.js.ReadonlyArray
+import js.core.ReadonlyArray
 import kotlin.js.Promise
 
 external interface MutationCacheConfig {

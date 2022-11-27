@@ -5,7 +5,7 @@
 
 package typescript
 
-import kotlinx.js.ReadonlyArray
+import js.core.ReadonlyArray
 
 /**
  * Visits a Node using the supplied visitor, possibly returning a new Node in its place.

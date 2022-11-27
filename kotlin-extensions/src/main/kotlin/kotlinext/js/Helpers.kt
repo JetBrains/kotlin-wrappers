@@ -1,11 +1,12 @@
 package kotlinext.js
 
-import kotlinx.js.Object
+import js.core.Object
+import js.core.jso
 
 inline fun js(builder: dynamic.() -> Unit): dynamic =
-    kotlinx.js.jso(builder)
+    jso(builder)
 
-fun <T : Any> clone(obj: T) = Object.assign(kotlinx.js.jso(), obj)
+fun <T : Any> clone(obj: T) = Object.assign(jso(), obj)
 
 inline fun <T : Any> assign(obj: T, builder: T.() -> Unit) = clone(obj).apply(builder)
 

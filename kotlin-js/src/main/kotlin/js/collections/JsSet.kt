@@ -1,9 +1,9 @@
 package js.collections
 
-import kotlinx.js.JsIterable
-import kotlinx.js.JsIterator
-import kotlinx.js.JsTuple2
-import kotlinx.js.ReadonlyArray
+import js.core.JsIterable
+import js.core.JsIterator
+import js.core.JsTuple2
+import js.core.ReadonlyArray
 
 @JsName("Set")
 external class JsSet<T> : ReadonlySet<T> {

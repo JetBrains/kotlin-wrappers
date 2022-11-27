@@ -1,6 +1,6 @@
 package web.console
 
-import kotlinx.js.ReadonlyArray
+import js.core.ReadonlyArray
 
 external interface Console {
     fun assert(condition: Boolean? = definedExternally, vararg data: Any?)

@@ -5,7 +5,7 @@
 
 package typescript
 
-import kotlinx.js.ReadonlyArray
+import js.core.ReadonlyArray
 
 /**
  * Given a set of options, returns the set of type directive names

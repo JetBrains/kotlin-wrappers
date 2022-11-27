@@ -9,7 +9,7 @@
 
 package cesium
 
-import kotlinx.js.ReadonlyArray
+import js.core.ReadonlyArray
 
 /**
  * An [ImageryProvider] that draws a box around every rendered tile in the tiling scheme, and draws

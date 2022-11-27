@@ -9,7 +9,7 @@
 
 package cesium
 
-import kotlinx.js.ReadonlyArray
+import js.core.ReadonlyArray
 
 /**
  * A widget for finding addresses and landmarks, and flying the camera to them.  Geocoding is

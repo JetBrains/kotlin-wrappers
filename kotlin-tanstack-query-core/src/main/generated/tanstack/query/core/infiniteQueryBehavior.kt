@@ -5,7 +5,7 @@
 
 package tanstack.query.core
 
-import kotlinx.js.ReadonlyArray
+import js.core.ReadonlyArray
 
 external fun <TQueryFnData, TError, TData> infiniteQueryBehavior(): QueryBehavior<TQueryFnData, TError, InfiniteData<TData>, *>
 

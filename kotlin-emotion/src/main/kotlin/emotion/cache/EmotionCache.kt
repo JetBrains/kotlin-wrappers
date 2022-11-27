@@ -1,7 +1,7 @@
 package emotion.cache
 
 import emotion.sheet.StyleSheet
-import kotlinx.js.Record
+import js.core.Record
 
 typealias RegisteredCache = Record<String, String>
 

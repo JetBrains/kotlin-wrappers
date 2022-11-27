@@ -5,7 +5,7 @@
 
 package node.http
 
-import kotlinx.js.ReadonlyArray
+import js.core.ReadonlyArray
 import node.net.Socket
 import node.stream.Writable
 

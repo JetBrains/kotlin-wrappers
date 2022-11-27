@@ -3,7 +3,7 @@
 package dom.html
 
 import dom.NodeListOf
-import kotlinx.js.ReadonlyArray
+import js.core.ReadonlyArray
 import web.file.FileList
 import web.filesystem.FileSystemEntry
 import kotlin.js.Date

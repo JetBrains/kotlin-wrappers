@@ -5,6 +5,6 @@
 
 package node.http
 
-import kotlinx.js.ReadonlyArray
+import js.core.ReadonlyArray
 
 external val METHODS: ReadonlyArray<String>

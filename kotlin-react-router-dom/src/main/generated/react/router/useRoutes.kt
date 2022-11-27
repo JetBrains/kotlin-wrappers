@@ -5,6 +5,8 @@
 
 package react.router
 
+import js.core.ReadonlyArray
+
 /**
  * Returns the element of the route that matched the current location, prepared
  * with the correct context to render the remainder of the route tree. Route
@@ -14,6 +16,6 @@ package react.router
  * @see https://reactrouter.com/docs/en/v6/api#useroutes
  */
 external fun useRoutes(
-    routes: kotlinx.js.ReadonlyArray<RouteObject>,
+    routes: ReadonlyArray<RouteObject>,
     locationArg: history.Location = definedExternally,
 ): react.ReactElement<*>?

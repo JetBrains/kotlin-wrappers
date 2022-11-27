@@ -5,7 +5,7 @@
 
 package node.http
 
-import kotlinx.js.Record
+import js.core.Record
 import node.net.Socket
 
 external class ServerResponse<Request : IncomingMessage> : OutgoingMessage<Request> {

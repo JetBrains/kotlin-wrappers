@@ -5,7 +5,7 @@
 
 package typescript
 
-import kotlinx.js.ReadonlyArray
+import js.core.ReadonlyArray
 
 /** Gets all JSDoc tags of a specified kind */
 external fun getAllJSDocTagsOfKind(

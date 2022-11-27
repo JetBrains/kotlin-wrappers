@@ -9,8 +9,8 @@
 
 package cesium
 
+import js.core.ReadonlyArray
 import js.typedarrays.Uint8Array
-import kotlinx.js.ReadonlyArray
 
 /**
  * Terrain data for a single tile where the terrain data is represented as a heightmap.  A heightmap

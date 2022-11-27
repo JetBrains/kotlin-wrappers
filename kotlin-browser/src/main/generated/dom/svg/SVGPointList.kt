@@ -3,7 +3,7 @@
 package dom.svg
 
 import dom.geometry.DOMPoint
-import kotlinx.js.ArrayLike
+import js.core.ArrayLike
 
 sealed external class SVGPointList :
     ArrayLike<DOMPoint> {

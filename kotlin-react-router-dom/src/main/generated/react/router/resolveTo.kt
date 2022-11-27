@@ -5,8 +5,10 @@
 
 package react.router
 
+import js.core.ReadonlyArray
+
 external fun resolveTo(
     toArg: history.To,
-    routePathnames: kotlinx.js.ReadonlyArray<String>,
+    routePathnames: ReadonlyArray<String>,
     locationPathname: String,
 ): history.Path

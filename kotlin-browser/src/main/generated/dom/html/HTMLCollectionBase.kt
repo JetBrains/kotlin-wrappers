@@ -3,7 +3,7 @@
 package dom.html
 
 import dom.Element
-import kotlinx.js.ArrayLike
+import js.core.ArrayLike
 
 sealed external interface HTMLCollectionBase<T : Element> :
     ArrayLike<T> {

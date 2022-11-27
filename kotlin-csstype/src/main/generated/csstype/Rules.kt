@@ -2,6 +2,6 @@
 
 package csstype
 
-import kotlinx.js.Record
+import js.core.Record
 
 typealias Rules = Record<Selector, Any>

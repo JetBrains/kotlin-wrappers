@@ -5,8 +5,8 @@
 
 package node.fs
 
-import kotlinx.js.AsyncIterable
-import kotlinx.js.Void
+import js.core.AsyncIterable
+import js.core.Void
 import node.ErrnoException
 import kotlin.js.Promise
 

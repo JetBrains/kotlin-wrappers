@@ -1,6 +1,6 @@
 package web.messaging
 
-import kotlinx.js.ReadonlyArray
+import js.core.ReadonlyArray
 
 external interface StructuredSerializeOptions {
     var transfer: ReadonlyArray<Transferable>

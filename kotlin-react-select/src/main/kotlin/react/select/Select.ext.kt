@@ -1,6 +1,6 @@
 package react.select
 
-import kotlinx.js.jso
+import js.core.jso
 import react.ChildrenBuilder
 import react.ReactDsl
 

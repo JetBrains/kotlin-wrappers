@@ -6,7 +6,7 @@
 package node.crypto
 
 import js.buffer.ArrayBuffer
-import kotlinx.js.BigInt
+import js.core.BigInt
 
 /**
  * Generates a pseudorandom prime of `size` bits.

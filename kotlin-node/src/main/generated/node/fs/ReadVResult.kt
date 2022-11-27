@@ -3,7 +3,7 @@
 package node.fs
 
 import js.buffer.ArrayBufferView
-import kotlinx.js.ReadonlyArray
+import js.core.ReadonlyArray
 
 sealed external interface ReadVResult {
     var bytesRead: Number

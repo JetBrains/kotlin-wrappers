@@ -2,7 +2,7 @@
 
 package node.vm
 
-import kotlinx.js.ReadonlyArray
+import js.core.ReadonlyArray
 import node.buffer.Buffer
 
 sealed external interface CompileFunctionOptions : BaseOptions {

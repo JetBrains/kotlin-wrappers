@@ -4,8 +4,8 @@
 
 package js.intl
 
-import kotlinx.js.JsIterable
-import kotlinx.js.ReadonlyArray
+import js.core.JsIterable
+import js.core.ReadonlyArray
 
 external class ListFormat(
     locales: BCP47LanguageTag = definedExternally,

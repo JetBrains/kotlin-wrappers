@@ -2,7 +2,7 @@
 
 package media.session
 
-import kotlinx.js.ReadonlyArray
+import js.core.ReadonlyArray
 
 external class MediaMetadata(
     init: MediaMetadataInit = definedExternally,

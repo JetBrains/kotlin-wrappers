@@ -2,8 +2,8 @@
 
 package web.streams
 
-import kotlinx.js.ReadonlyArray
-import kotlinx.js.Void
+import js.core.ReadonlyArray
+import js.core.Void
 import kotlin.js.Promise
 
 external interface ReadableStream<R> {

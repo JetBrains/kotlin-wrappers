@@ -2,7 +2,7 @@
 
 package webrtc
 
-import kotlinx.js.ReadonlyArray
+import js.core.ReadonlyArray
 import media.streams.MediaStream
 
 sealed external interface RTCRtpTransceiverInit {

@@ -3,7 +3,7 @@
 package dom.observers
 
 import dom.Element
-import kotlinx.js.ReadonlyArray
+import js.core.ReadonlyArray
 
 external class IntersectionObserver(
     callback: IntersectionObserverCallback,

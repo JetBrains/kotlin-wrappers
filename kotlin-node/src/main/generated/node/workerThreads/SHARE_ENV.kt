@@ -5,6 +5,6 @@
 
 package node.workerThreads
 
-import kotlinx.js.Symbol
+import js.core.Symbol
 
 external val SHARE_ENV: Symbol

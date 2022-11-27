@@ -2,7 +2,7 @@
 
 package canvas
 
-import kotlinx.js.ReadonlyArray
+import js.core.ReadonlyArray
 
 sealed external interface CanvasPathDrawingStyles {
     var lineCap: CanvasLineCap

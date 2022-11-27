@@ -2,7 +2,7 @@
 
 package webrtc
 
-import kotlinx.js.ReadonlyArray
+import js.core.ReadonlyArray
 
 sealed external class RTCRtpTransceiver {
     val currentDirection: RTCRtpTransceiverDirection?

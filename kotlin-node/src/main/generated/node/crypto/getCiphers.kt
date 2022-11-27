@@ -5,7 +5,7 @@
 
 package node.crypto
 
-import kotlinx.js.ReadonlyArray
+import js.core.ReadonlyArray
 
 /**
  * ```js

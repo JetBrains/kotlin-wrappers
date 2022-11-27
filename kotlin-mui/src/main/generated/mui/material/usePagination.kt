@@ -5,7 +5,7 @@
 
 package mui.material
 
-import kotlinx.js.ReadonlyArray
+import js.core.ReadonlyArray
 
 external interface UsePaginationProps : react.Props {
     /**

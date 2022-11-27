@@ -2,7 +2,7 @@
 
 package dom
 
-import kotlinx.js.JsLong
+import js.core.JsLong
 
 sealed external class TreeWalker {
     var currentNode: Node

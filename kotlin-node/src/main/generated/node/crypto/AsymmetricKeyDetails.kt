@@ -2,7 +2,7 @@
 
 package node.crypto
 
-import kotlinx.js.BigInt
+import js.core.BigInt
 
 sealed external interface AsymmetricKeyDetails {
     /**

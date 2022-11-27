@@ -1,9 +1,9 @@
 package web.buffer
 
 import js.buffer.ArrayBuffer
+import js.core.JsLong
+import js.core.ReadonlyArray
 import js.typedarrays.Uint8Array
-import kotlinx.js.JsLong
-import kotlinx.js.ReadonlyArray
 import web.streams.ReadableStream
 import kotlin.js.Promise
 

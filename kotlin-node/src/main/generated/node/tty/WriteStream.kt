@@ -5,7 +5,7 @@
 
 package node.tty
 
-import kotlinx.js.JsTuple2
+import js.core.JsTuple2
 import node.events.Event
 import node.events.EventType
 

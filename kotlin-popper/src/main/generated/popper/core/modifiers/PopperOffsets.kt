@@ -6,7 +6,7 @@
 
 package popper.core.modifiers
 
-import kotlinx.js.Void
+import js.core.Void
 
 @JsName("'popperOffsets'")
 external val PopperOffsets: popper.core.ModifierName<Void>

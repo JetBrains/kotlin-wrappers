@@ -5,8 +5,8 @@
 
 package cesium
 
+import js.core.ReadonlyArray
 import js.typedarrays.Float64Array
-import kotlinx.js.ReadonlyArray
 
 /**
  * A feature of a [Cesium3DTileset].

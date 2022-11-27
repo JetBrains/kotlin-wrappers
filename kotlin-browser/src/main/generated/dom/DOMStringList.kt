@@ -2,7 +2,7 @@
 
 package dom
 
-import kotlinx.js.ArrayLike
+import js.core.ArrayLike
 
 sealed external class DOMStringList :
     ArrayLike<String> {

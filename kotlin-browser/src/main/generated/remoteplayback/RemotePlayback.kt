@@ -2,7 +2,7 @@
 
 package remoteplayback
 
-import kotlinx.js.Void
+import js.core.Void
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventTarget

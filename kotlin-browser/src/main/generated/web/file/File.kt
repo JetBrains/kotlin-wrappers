@@ -2,8 +2,8 @@
 
 package web.file
 
-import kotlinx.js.EpochTimeStamp
-import kotlinx.js.ReadonlyArray
+import js.core.EpochTimeStamp
+import js.core.ReadonlyArray
 import web.buffer.Blob
 import web.buffer.BlobPart
 

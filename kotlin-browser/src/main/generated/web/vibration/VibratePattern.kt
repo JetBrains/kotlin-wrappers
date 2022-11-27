@@ -2,6 +2,6 @@
 
 package web.vibration
 
-import kotlinx.js.ReadonlyArray
+import js.core.ReadonlyArray
 
 typealias VibratePattern = ReadonlyArray<Int> /* | Int */

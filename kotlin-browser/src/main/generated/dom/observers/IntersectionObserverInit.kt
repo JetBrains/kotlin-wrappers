@@ -3,7 +3,7 @@
 package dom.observers
 
 import dom.Element
-import kotlinx.js.ReadonlyArray
+import js.core.ReadonlyArray
 
 sealed external interface IntersectionObserverInit {
     var root: Element /* | Document */?

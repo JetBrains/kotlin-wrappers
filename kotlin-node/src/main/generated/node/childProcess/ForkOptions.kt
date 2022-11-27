@@ -2,7 +2,7 @@
 
 package node.childProcess
 
-import kotlinx.js.ReadonlyArray
+import js.core.ReadonlyArray
 import node.events.Abortable
 
 sealed external interface ForkOptions : ProcessEnvOptions, MessagingOptions, Abortable {

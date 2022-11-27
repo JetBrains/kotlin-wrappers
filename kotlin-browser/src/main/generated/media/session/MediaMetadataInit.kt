@@ -2,7 +2,7 @@
 
 package media.session
 
-import kotlinx.js.ReadonlyArray
+import js.core.ReadonlyArray
 
 sealed external interface MediaMetadataInit {
     var album: String?

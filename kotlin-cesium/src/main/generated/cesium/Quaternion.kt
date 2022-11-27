@@ -9,7 +9,7 @@
 
 package cesium
 
-import kotlinx.js.ReadonlyArray
+import js.core.ReadonlyArray
 
 /**
  * A set of 4-dimensional coordinates used to represent rotation in 3-dimensional space.

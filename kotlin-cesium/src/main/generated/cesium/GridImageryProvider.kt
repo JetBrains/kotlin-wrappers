@@ -9,7 +9,7 @@
 
 package cesium
 
-import kotlinx.js.ReadonlyArray
+import js.core.ReadonlyArray
 
 /**
  * An [ImageryProvider] that draws a wireframe grid on every tile with controllable background and glow.

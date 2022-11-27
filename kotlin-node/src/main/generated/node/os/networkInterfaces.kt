@@ -5,7 +5,7 @@
 
 package node.os
 
-import kotlinx.js.ReadonlyArray
+import js.core.ReadonlyArray
 import node.Dict
 
 /**

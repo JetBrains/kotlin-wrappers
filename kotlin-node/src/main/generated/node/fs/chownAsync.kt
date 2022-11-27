@@ -5,7 +5,7 @@
 
 package node.fs
 
-import kotlinx.js.Void
+import js.core.Void
 import kotlin.js.Promise
 
 /**

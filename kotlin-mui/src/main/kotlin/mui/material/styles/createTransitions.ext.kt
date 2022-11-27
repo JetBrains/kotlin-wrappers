@@ -1,7 +1,7 @@
 package mui.material.styles
 
 import csstype.Transition
-import kotlinx.js.jso
+import js.core.jso
 
 inline fun Transitions.create(
     vararg props: String,

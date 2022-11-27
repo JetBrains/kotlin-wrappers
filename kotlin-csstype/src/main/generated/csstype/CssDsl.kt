@@ -2,6 +2,6 @@
 
 package csstype
 
-import kotlinx.js.JsoDsl
+import js.core.JsoDsl
 
 typealias CssDsl = JsoDsl

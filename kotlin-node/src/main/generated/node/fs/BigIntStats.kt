@@ -2,7 +2,7 @@
 
 package node.fs
 
-import kotlinx.js.BigInt
+import js.core.BigInt
 
 sealed external interface BigIntStats : StatsBase<BigInt> {
     var atimeNs: BigInt

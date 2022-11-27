@@ -7,7 +7,7 @@
 
 package mui.system
 
-import kotlinx.js.ReadonlyArray
+import js.core.ReadonlyArray
 
 sealed external interface SpacingOptions
 

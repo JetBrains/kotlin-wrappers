@@ -5,7 +5,7 @@
 
 package react.select
 
-import kotlinx.js.ReadonlyArray
+import js.core.ReadonlyArray
 
 sealed external interface Value<T : Any>
 

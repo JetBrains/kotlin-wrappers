@@ -5,7 +5,7 @@
 
 package typescript
 
-import kotlinx.js.ReadonlyArray
+import js.core.ReadonlyArray
 
 /** Get all JSDoc tags related to a node, including those on parent nodes. */
 external fun getJSDocTags(node: Node): ReadonlyArray<JSDocTag>

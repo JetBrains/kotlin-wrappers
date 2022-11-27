@@ -2,8 +2,8 @@
 
 package web.navigator
 
-import kotlinx.js.ReadonlyArray
-import kotlinx.js.Void
+import js.core.ReadonlyArray
+import js.core.Void
 import media.capabilities.MediaCapabilities
 import media.devices.MediaDevices
 import media.key.MediaKeySystemAccess

@@ -5,7 +5,7 @@
 
 package node.fs
 
-import kotlinx.js.AsyncIterable
+import js.core.AsyncIterable
 import node.buffer.BufferEncoding
 
 /**

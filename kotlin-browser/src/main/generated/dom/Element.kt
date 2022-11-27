@@ -8,8 +8,8 @@ import dom.geometry.DOMRectList
 import dom.html.HTMLCollectionOf
 import dom.html.ShadowRoot
 import dom.html.ShadowRootInit
-import kotlinx.js.ReadonlyArray
-import kotlinx.js.Void
+import js.core.ReadonlyArray
+import js.core.Void
 import web.events.Event
 import web.events.EventHandler
 import kotlin.js.Promise

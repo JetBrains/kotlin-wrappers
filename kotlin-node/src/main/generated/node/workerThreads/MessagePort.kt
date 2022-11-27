@@ -5,7 +5,7 @@
 
 package node.workerThreads
 
-import kotlinx.js.ReadonlyArray
+import js.core.ReadonlyArray
 import node.events.Event
 import node.events.EventType
 

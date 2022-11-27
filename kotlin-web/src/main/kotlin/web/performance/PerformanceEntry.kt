@@ -1,6 +1,6 @@
 package web.performance
 
-import kotlinx.js.HighResTimeStamp
+import js.core.HighResTimeStamp
 
 external interface PerformanceEntry {
     val duration: HighResTimeStamp

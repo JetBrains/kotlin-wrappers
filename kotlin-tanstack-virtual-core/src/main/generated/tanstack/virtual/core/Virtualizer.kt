@@ -5,7 +5,7 @@
 
 package tanstack.virtual.core
 
-import kotlinx.js.ReadonlyArray
+import js.core.ReadonlyArray
 
 external class Virtualizer<TScrollElement, TItemElement> {
     var options: VirtualizerOptions<TScrollElement, TItemElement>

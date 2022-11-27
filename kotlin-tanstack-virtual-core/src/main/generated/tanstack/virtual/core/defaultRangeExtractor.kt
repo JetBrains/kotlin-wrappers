@@ -5,6 +5,6 @@
 
 package tanstack.virtual.core
 
-import kotlinx.js.ReadonlyArray
+import js.core.ReadonlyArray
 
 external val defaultRangeExtractor: (range: Range) -> ReadonlyArray<Int>

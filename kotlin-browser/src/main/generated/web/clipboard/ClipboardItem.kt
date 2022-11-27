@@ -2,8 +2,8 @@
 
 package web.clipboard
 
-import kotlinx.js.ReadonlyArray
-import kotlinx.js.Record
+import js.core.ReadonlyArray
+import js.core.Record
 import web.buffer.Blob
 import kotlin.js.Promise
 

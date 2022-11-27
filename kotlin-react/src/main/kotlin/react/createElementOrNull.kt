@@ -1,6 +1,6 @@
 package react
 
-import kotlinx.js.ReadonlyArray
+import js.core.ReadonlyArray
 
 internal fun createElementOrNull(
     block: ChildrenBuilder.() -> Unit,

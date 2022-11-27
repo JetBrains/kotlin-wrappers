@@ -6,8 +6,8 @@
 package muix.pickers
 
 import csstype.ClassName
-import kotlinx.js.ReadonlyArray
-import kotlinx.js.Void
+import js.core.ReadonlyArray
+import js.core.Void
 import kotlin.js.Promise
 
 external interface CalendarPickerProps<TDate> : react.PropsWithClassName {

@@ -1,7 +1,7 @@
 package react.select
 
-import kotlinx.js.ReadonlyArray
-import kotlinx.js.jso
+import js.core.ReadonlyArray
+import js.core.jso
 
 fun <Option, Group : GroupBase<Option>> Group(
     label: String?,

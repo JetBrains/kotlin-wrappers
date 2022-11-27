@@ -5,7 +5,7 @@
 
 package mui.lab
 
-import kotlinx.js.ReadonlyArray
+import js.core.ReadonlyArray
 import mui.material.styles.Theme
 import mui.system.SxProps
 

@@ -5,7 +5,7 @@
 
 package typescript
 
-import kotlinx.js.ReadonlyArray
+import js.core.ReadonlyArray
 
 external fun <T : Node> setSyntheticLeadingComments(
     node: T,

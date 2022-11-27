@@ -10,7 +10,7 @@
 
 package tanstack.react.query
 
-import kotlinx.js.ReadonlyArray
+import js.core.ReadonlyArray
 
 typealias UseQueryOptionsForUseQueries<TQueryFnData, TError, TData, TQueryKey> = Any
 

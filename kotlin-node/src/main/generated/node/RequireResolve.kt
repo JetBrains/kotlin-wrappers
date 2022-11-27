@@ -2,7 +2,7 @@
 
 package node
 
-import kotlinx.js.ReadonlyArray
+import js.core.ReadonlyArray
 
 sealed external interface RequireResolve {
 

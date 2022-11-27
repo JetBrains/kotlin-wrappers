@@ -2,8 +2,8 @@
 
 package web.notifications
 
-import kotlinx.js.EpochTimeStamp
-import kotlinx.js.ReadonlyArray
+import js.core.EpochTimeStamp
+import js.core.ReadonlyArray
 import web.vibration.VibratePattern
 
 sealed external interface NotificationOptions {

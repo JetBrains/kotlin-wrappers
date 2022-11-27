@@ -2,7 +2,7 @@
 
 package dom.html
 
-import kotlinx.js.HighResTimeStamp
+import js.core.HighResTimeStamp
 
 sealed external interface VideoFrameCallbackMetadata {
     var captureTime: HighResTimeStamp?

@@ -3,7 +3,7 @@
 
 package react
 
-import kotlinx.js.JsTuple2
+import js.core.JsTuple2
 
 // [Example](https://popper.js.org/react-popper/v2/#example)
 

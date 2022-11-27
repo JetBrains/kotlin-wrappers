@@ -1,5 +1,5 @@
 package web.performance
 
-import kotlinx.js.ReadonlyArray
+import js.core.ReadonlyArray
 
 typealias PerformanceEntryList = ReadonlyArray<PerformanceEntry>

@@ -6,7 +6,7 @@
 
 package popper.core.modifiers
 
-import kotlinx.js.Void
+import js.core.Void
 
 @JsName("'hide'")
 external val Hide: popper.core.ModifierName<Void>

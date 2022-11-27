@@ -4,7 +4,7 @@ package dom.observers
 
 import dom.Element
 import dom.geometry.DOMRectInit
-import kotlinx.js.HighResTimeStamp
+import js.core.HighResTimeStamp
 
 sealed external interface IntersectionObserverEntryInit {
     var boundingClientRect: DOMRectInit

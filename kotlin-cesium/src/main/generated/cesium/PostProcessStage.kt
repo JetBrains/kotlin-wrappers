@@ -9,7 +9,7 @@
 
 package cesium
 
-import kotlinx.js.ReadonlyArray
+import js.core.ReadonlyArray
 
 /**
  * Runs a post-process stage on either the texture rendered by the scene or the output of a previous post-process stage.

@@ -9,7 +9,7 @@
 
 package cesium
 
-import kotlinx.js.ReadonlyArray
+import js.core.ReadonlyArray
 
 /**
  * Specifies a set of clipping planes. Clipping planes selectively disable rendering in a region on the

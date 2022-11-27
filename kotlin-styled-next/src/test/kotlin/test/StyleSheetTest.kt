@@ -3,8 +3,8 @@ package test
 import browser.document
 import cssom.CSSStyleSheet
 import dom.html.HTMLStyleElement
+import js.core.asList
 import kotlinx.css.*
-import kotlinx.js.asList
 import react.Props
 import react.fc
 import runTest

@@ -2,7 +2,7 @@
 
 package webgl
 
-import kotlinx.js.ReadonlyArray
+import js.core.ReadonlyArray
 
 sealed external interface WEBGL_draw_buffers {
     fun drawBuffersWEBGL(buffers: ReadonlyArray<GLenum>)

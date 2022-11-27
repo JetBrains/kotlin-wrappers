@@ -2,7 +2,7 @@
 
 package typescript
 
-import kotlinx.js.ReadonlyArray
+import js.core.ReadonlyArray
 
 /** Create the program with rootNames and options, if they are undefined, oldProgram and new configFile diagnostics create new program */
 typealias CreateProgram<T /* : BuilderProgram */> = (

@@ -9,7 +9,7 @@
 
 package cesium
 
-import kotlinx.js.ReadonlyArray
+import js.core.ReadonlyArray
 
 /**
  * Describes a KmlTour, which uses KmlTourFlyTo, and KmlTourWait to

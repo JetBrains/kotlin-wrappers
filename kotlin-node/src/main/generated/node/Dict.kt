@@ -2,6 +2,6 @@
 
 package node
 
-import kotlinx.js.Record
+import js.core.Record
 
 typealias Dict<T> = Record<String, T>

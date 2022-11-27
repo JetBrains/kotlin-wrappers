@@ -10,7 +10,7 @@
 
 package cesium
 
-import kotlinx.js.ReadonlyArray
+import js.core.ReadonlyArray
 
 /**
  * The BaseLayerPicker is a single button widget that displays a panel of available imagery and

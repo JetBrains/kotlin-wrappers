@@ -2,7 +2,7 @@
 
 package web.audio
 
-import kotlinx.js.Void
+import js.core.Void
 import web.events.EventHandler
 import kotlin.js.Promise
 

@@ -2,7 +2,7 @@
 
 package media.devices
 
-import kotlinx.js.ReadonlyArray
+import js.core.ReadonlyArray
 import media.streams.MediaStream
 import media.streams.MediaStreamConstraints
 import media.streams.MediaTrackSupportedConstraints

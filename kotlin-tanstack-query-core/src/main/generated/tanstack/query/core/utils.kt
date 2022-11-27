@@ -10,10 +10,10 @@
 
 package tanstack.query.core
 
-import kotlinx.js.EpochTimeStamp
-import kotlinx.js.JsTuple2
-import kotlinx.js.ReadonlyArray
-import kotlinx.js.Void
+import js.core.EpochTimeStamp
+import js.core.JsTuple2
+import js.core.ReadonlyArray
+import js.core.Void
 import web.abort.AbortController
 import kotlin.js.Promise
 

@@ -1,9 +1,9 @@
 package kotlinext.js
 
-import kotlinx.js.Object
-import kotlinx.js.ReadonlyArray
+import js.core.Object
+import js.core.ReadonlyArray
 
-fun Any.asJsObject(): Object = unsafeCast<kotlinx.js.Object>()
+fun Any.asJsObject(): Object = unsafeCast<Object>()
 
 fun Any.getOwnPropertyNames(): ReadonlyArray<String> =
     Object.getOwnPropertyNames(this)

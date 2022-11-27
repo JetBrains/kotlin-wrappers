@@ -7,8 +7,8 @@
 
 package typescript
 
-import kotlinx.js.JsIterator
-import kotlinx.js.JsTuple2
+import js.core.JsIterator
+import js.core.JsTuple2
 
 /** ES6 Set interface, only read methods included. */
 sealed external interface ReadonlySet<T> : ReadonlyCollection<T> {

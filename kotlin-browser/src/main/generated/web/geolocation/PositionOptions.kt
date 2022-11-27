@@ -2,7 +2,7 @@
 
 package web.geolocation
 
-import kotlinx.js.JsLong
+import js.core.JsLong
 
 sealed external interface PositionOptions {
     var enableHighAccuracy: Boolean?

@@ -10,7 +10,7 @@
 
 package cesium
 
-import kotlinx.js.ReadonlyArray
+import js.core.ReadonlyArray
 
 /**
  * The view model for the [Animation] widget.

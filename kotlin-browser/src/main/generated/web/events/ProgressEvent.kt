@@ -2,7 +2,7 @@
 
 package web.events
 
-import kotlinx.js.JsLong
+import js.core.JsLong
 
 external interface ProgressEventInit : EventInit {
     var lengthComputable: Boolean?

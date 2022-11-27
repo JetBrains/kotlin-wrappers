@@ -1,6 +1,6 @@
 package web.performance
 
-import kotlinx.js.HighResTimeStamp
+import js.core.HighResTimeStamp
 import web.events.Event
 import web.events.EventTarget
 

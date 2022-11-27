@@ -2,7 +2,7 @@
 
 package web.share
 
-import kotlinx.js.ReadonlyArray
+import js.core.ReadonlyArray
 import web.file.File
 
 sealed external interface ShareData {

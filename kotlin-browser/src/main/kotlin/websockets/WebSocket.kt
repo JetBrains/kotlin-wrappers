@@ -2,7 +2,7 @@ package websockets
 
 import js.buffer.ArrayBuffer
 import js.buffer.ArrayBufferView
-import kotlinx.js.ReadonlyArray
+import js.core.ReadonlyArray
 import web.buffer.Blob
 import web.events.Event
 import web.events.EventTarget

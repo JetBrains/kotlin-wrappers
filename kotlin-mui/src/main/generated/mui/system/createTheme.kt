@@ -5,7 +5,7 @@
 
 package mui.system
 
-import kotlinx.js.Record
+import js.core.Record
 
 external interface ThemeOptions {
     var shape: ShapeOptions?

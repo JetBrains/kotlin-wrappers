@@ -2,7 +2,7 @@
 
 package mui.base
 
-import kotlinx.js.ReadonlyArray
+import js.core.ReadonlyArray
 
 external interface CreateFilterOptionsConfig<T> {
     var ignoreAccents: Boolean?

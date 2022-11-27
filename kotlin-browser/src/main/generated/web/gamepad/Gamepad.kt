@@ -2,8 +2,8 @@
 
 package web.gamepad
 
-import kotlinx.js.HighResTimeStamp
-import kotlinx.js.ReadonlyArray
+import js.core.HighResTimeStamp
+import js.core.ReadonlyArray
 
 sealed external class Gamepad {
     val axes: ReadonlyArray<Double>

@@ -6,7 +6,7 @@
 
 package dom.events
 
-import kotlinx.js.ReadonlyArray
+import js.core.ReadonlyArray
 
 external interface TouchEventInit : EventModifierInit {
     var changedTouches: ReadonlyArray<Touch>?

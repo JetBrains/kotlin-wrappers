@@ -2,7 +2,8 @@
 
 package dateio.core
 
-import kotlinx.js.ReadonlyArray
+import js.core.JsTuple2
+import js.core.ReadonlyArray
 
 external interface DateIOFormats<TLibFormatToken : Any> {
     /** Localized full date @example "Jan 1, 2019" */
@@ -128,7 +129,7 @@ external interface IUtils<TDate : Any> {
     fun isBeforeYear(value: TDate, comparing: TDate): Boolean
     fun isBefore(value: TDate, comparing: TDate): Boolean
 
-    fun isWithinRange(value: TDate, range: kotlinx.js.JsTuple2<TDate, TDate>): Boolean
+    fun isWithinRange(value: TDate, range: JsTuple2<TDate, TDate>): Boolean
 
     fun startOfYear(value: TDate): TDate
     fun endOfYear(value: TDate): TDate

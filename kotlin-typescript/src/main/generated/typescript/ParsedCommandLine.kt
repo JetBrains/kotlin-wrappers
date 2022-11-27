@@ -2,7 +2,7 @@
 
 package typescript
 
-import kotlinx.js.ReadonlyArray
+import js.core.ReadonlyArray
 
 /** Either a parsed command line or a parsed tsconfig.json */
 sealed external interface ParsedCommandLine {

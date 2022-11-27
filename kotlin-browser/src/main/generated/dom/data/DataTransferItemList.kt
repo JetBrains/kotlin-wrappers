@@ -2,7 +2,7 @@
 
 package dom.data
 
-import kotlinx.js.ArrayLike
+import js.core.ArrayLike
 import web.file.File
 
 sealed external class DataTransferItemList :

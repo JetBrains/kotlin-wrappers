@@ -2,7 +2,7 @@ package example
 
 import csstype.Color
 import emotion.react.css
-import kotlinx.js.jso
+import js.core.jso
 import react.FC
 import react.Props
 import react.dom.html.InputType

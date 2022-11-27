@@ -2,7 +2,7 @@
 
 package popper.core
 
-import kotlinx.js.jso
+import js.core.jso
 
 external interface ModifierName<Options> : Name
 

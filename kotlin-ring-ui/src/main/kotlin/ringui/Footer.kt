@@ -3,7 +3,7 @@
 
 package ringui
 
-import kotlinx.js.ReadonlyArray
+import js.core.ReadonlyArray
 import react.ComponentClass
 import react.PropsWithClassName
 

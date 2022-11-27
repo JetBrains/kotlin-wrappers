@@ -2,7 +2,7 @@
 
 package web.file
 
-import kotlinx.js.ArrayLike
+import js.core.ArrayLike
 
 sealed external class FileList :
     ArrayLike<File> {

@@ -1,7 +1,7 @@
 package web.events
 
-import kotlinx.js.HighResTimeStamp
-import kotlinx.js.ReadonlyArray
+import js.core.HighResTimeStamp
+import js.core.ReadonlyArray
 
 external interface EventInit {
     var bubbles: Boolean?

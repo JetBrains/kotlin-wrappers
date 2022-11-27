@@ -2,7 +2,7 @@
 
 package webrtc
 
-import kotlinx.js.HighResTimeStamp
+import js.core.HighResTimeStamp
 
 sealed external interface RTCRtpContributingSource {
     var audioLevel: Number?

@@ -4,7 +4,7 @@ package dom.observers
 
 import dom.Element
 import dom.geometry.DOMRectReadOnly
-import kotlinx.js.HighResTimeStamp
+import js.core.HighResTimeStamp
 
 external class IntersectionObserverEntry(
     init: IntersectionObserverEntryInit,

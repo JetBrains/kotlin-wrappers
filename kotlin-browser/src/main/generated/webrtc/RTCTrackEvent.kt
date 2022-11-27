@@ -2,7 +2,7 @@
 
 package webrtc
 
-import kotlinx.js.ReadonlyArray
+import js.core.ReadonlyArray
 import media.streams.MediaStream
 import media.streams.MediaStreamTrack
 import web.events.Event

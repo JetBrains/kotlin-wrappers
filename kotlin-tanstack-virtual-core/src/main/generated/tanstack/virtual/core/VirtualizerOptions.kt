@@ -2,7 +2,7 @@
 
 package tanstack.virtual.core
 
-import kotlinx.js.ReadonlyArray
+import js.core.ReadonlyArray
 
 external interface VirtualizerOptions<TScrollElement, TItemElement> {
     var count: Int

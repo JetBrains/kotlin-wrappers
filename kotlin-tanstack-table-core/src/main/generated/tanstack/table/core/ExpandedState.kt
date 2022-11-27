@@ -6,7 +6,7 @@
 
 package tanstack.table.core
 
-import kotlinx.js.ReadonlyRecord
+import js.core.ReadonlyRecord
 
 sealed external interface ExpandedState /* true | Record<string, boolean> */
 

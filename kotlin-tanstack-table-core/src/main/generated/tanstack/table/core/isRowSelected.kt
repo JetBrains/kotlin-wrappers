@@ -5,6 +5,6 @@
 
 package tanstack.table.core
 
-import kotlinx.js.ReadonlyRecord
+import js.core.ReadonlyRecord
 
 external fun <TData : RowData> isRowSelected(row: Row<TData>, selection: ReadonlyRecord<String, Boolean>): Boolean

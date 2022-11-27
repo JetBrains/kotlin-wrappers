@@ -2,7 +2,9 @@
 
 package react.router
 
+import js.core.Record
+
 /**
  * The parameters that were parsed from the URL path.
  */
-typealias Params = kotlinx.js.Record<String, String>
+typealias Params = Record<String, String>

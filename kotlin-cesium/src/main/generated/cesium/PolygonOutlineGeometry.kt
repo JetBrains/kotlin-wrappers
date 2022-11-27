@@ -9,7 +9,7 @@
 
 package cesium
 
-import kotlinx.js.ReadonlyArray
+import js.core.ReadonlyArray
 
 /**
  * A description of the outline of a polygon on the ellipsoid. The polygon is defined by a polygon hierarchy.

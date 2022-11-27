@@ -2,9 +2,9 @@
 
 package dom.geometry
 
+import js.core.ReadonlyArray
 import js.typedarrays.Float32Array
 import js.typedarrays.Float64Array
-import kotlinx.js.ReadonlyArray
 
 open external class DOMMatrixReadOnly(
     init: ReadonlyArray<Double> /* | String */ = definedExternally,

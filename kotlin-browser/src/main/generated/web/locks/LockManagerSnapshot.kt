@@ -2,7 +2,7 @@
 
 package web.locks
 
-import kotlinx.js.ReadonlyArray
+import js.core.ReadonlyArray
 
 sealed external interface LockManagerSnapshot {
     var held: ReadonlyArray<LockInfo>?

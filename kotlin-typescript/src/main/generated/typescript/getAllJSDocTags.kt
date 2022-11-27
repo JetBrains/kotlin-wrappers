@@ -5,7 +5,7 @@
 
 package typescript
 
-import kotlinx.js.ReadonlyArray
+import js.core.ReadonlyArray
 
 /** Gets all JSDoc tags that match a specified predicate */
 external fun <T : JSDocTag> getAllJSDocTags(

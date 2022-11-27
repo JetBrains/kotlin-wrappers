@@ -2,8 +2,8 @@
 
 package web.audio
 
-import kotlinx.js.ReadonlyArray
-import kotlinx.js.Record
+import js.core.ReadonlyArray
+import js.core.Record
 
 sealed external interface AudioWorkletNodeOptions :
     AudioNodeOptions {

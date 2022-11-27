@@ -2,7 +2,7 @@
 
 package web.navigator
 
-import kotlinx.js.ReadonlyArray
+import js.core.ReadonlyArray
 
 sealed external interface NavigatorLanguage {
     val language: String

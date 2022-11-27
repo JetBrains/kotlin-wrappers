@@ -2,7 +2,7 @@
 
 package dom.geometry
 
-import kotlinx.js.ArrayLike
+import js.core.ArrayLike
 
 sealed external class DOMRectList :
     ArrayLike<DOMRect> {

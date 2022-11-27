@@ -2,7 +2,7 @@
 
 package web.http
 
-import kotlinx.js.ReadonlyArray
+import js.core.ReadonlyArray
 import web.buffer.Blob
 import web.events.EventTarget
 

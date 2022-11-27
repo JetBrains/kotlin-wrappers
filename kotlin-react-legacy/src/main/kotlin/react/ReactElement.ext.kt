@@ -1,6 +1,6 @@
 package react
 
-import kotlinx.js.jso
+import js.core.jso
 
 fun <P : Props> createElement(
     block: Render,

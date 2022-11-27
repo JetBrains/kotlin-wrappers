@@ -3,7 +3,7 @@
 package dom.data
 
 import dom.Element
-import kotlinx.js.ReadonlyArray
+import js.core.ReadonlyArray
 import web.file.FileList
 
 external class DataTransfer {

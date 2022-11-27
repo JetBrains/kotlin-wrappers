@@ -2,6 +2,6 @@
 
 package dom
 
-import kotlinx.js.Record
+import js.core.Record
 
 sealed external class DOMStringMap : Record<String, String>

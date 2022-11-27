@@ -1,5 +1,5 @@
 package react.select
 
-import kotlinx.js.ReadonlyArray
+import js.core.ReadonlyArray
 
 typealias Options<Option> = ReadonlyArray<Option>

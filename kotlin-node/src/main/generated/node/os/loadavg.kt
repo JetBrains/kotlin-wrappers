@@ -5,7 +5,7 @@
 
 package node.os
 
-import kotlinx.js.ReadonlyArray
+import js.core.ReadonlyArray
 
 /**
  * Returns an array containing the 1, 5, and 15 minute load averages.

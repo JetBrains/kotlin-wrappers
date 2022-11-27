@@ -3,7 +3,7 @@ package styled.sheets
 import browser.document
 import cssom.CSSStyleSheet
 import dom.html.HTMLStyleElement
-import kotlinx.js.asList
+import js.core.asList
 
 internal typealias GroupId = Int
 

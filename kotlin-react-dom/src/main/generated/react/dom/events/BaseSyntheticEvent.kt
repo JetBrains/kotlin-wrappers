@@ -2,6 +2,8 @@
 
 package react.dom.events
 
+import js.core.HighResTimeStamp
+
 external interface BaseSyntheticEvent<out E : Any, out C : Any, out T : Any> {
     val nativeEvent: E
     val currentTarget: C
@@ -16,6 +18,6 @@ external interface BaseSyntheticEvent<out E : Any, out C : Any, out T : Any> {
     fun stopPropagation()
     fun isPropagationStopped(): Boolean
     fun persist()
-    val timeStamp: kotlinx.js.HighResTimeStamp
+    val timeStamp: HighResTimeStamp
     val type: String
 }

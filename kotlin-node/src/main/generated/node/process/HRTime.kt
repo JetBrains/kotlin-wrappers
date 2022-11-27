@@ -2,7 +2,7 @@
 
 package node.process
 
-import kotlinx.js.BigInt
+import js.core.BigInt
 
 sealed external interface HRTime {
     /* (time?: [number, number]): [number, number] */

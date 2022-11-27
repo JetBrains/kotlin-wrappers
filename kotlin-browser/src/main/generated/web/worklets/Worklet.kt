@@ -2,7 +2,7 @@
 
 package web.worklets
 
-import kotlinx.js.Void
+import js.core.Void
 import web.url.URL
 import kotlin.js.Promise
 

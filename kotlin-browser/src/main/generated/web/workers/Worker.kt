@@ -2,7 +2,7 @@
 
 package web.workers
 
-import kotlinx.js.ReadonlyArray
+import js.core.ReadonlyArray
 import web.events.EventHandler
 import web.events.EventTarget
 import web.messaging.MessageEvent

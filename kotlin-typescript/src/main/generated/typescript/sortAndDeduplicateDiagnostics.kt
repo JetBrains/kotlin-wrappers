@@ -5,6 +5,6 @@
 
 package typescript
 
-import kotlinx.js.ReadonlyArray
+import js.core.ReadonlyArray
 
 external fun <T : Diagnostic> sortAndDeduplicateDiagnostics(diagnostics: ReadonlyArray<T>): SortedReadonlyArray<T>

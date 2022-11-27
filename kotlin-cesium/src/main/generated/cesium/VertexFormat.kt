@@ -5,7 +5,7 @@
 
 package cesium
 
-import kotlinx.js.ReadonlyArray
+import js.core.ReadonlyArray
 
 /**
  * A vertex format defines what attributes make up a vertex.  A VertexFormat can be provided

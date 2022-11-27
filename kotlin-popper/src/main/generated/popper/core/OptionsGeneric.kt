@@ -2,7 +2,7 @@
 
 package popper.core
 
-import kotlinx.js.ReadonlyArray
+import js.core.ReadonlyArray
 
 external interface OptionsGeneric<TModifier> {
     var placement: Placement

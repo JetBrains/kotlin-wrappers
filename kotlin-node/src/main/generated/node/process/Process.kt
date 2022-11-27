@@ -3,7 +3,7 @@
 package node.process
 
 import js.collections.JsSet
-import kotlinx.js.ReadonlyArray
+import js.core.ReadonlyArray
 import node.Module
 import node.events.Event
 import node.events.EventType

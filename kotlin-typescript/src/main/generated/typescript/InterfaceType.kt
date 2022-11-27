@@ -2,7 +2,7 @@
 
 package typescript
 
-import kotlinx.js.ReadonlyArray
+import js.core.ReadonlyArray
 
 /** Class and interface types (ObjectFlags.Class and ObjectFlags.Interface). */
 sealed external interface InterfaceType : ObjectType {

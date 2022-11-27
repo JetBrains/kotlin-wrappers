@@ -1,7 +1,7 @@
 package web.http
 
+import js.core.jso
 import kotlinx.coroutines.suspendCancellableCoroutine
-import kotlinx.js.jso
 import web.abort.AbortController
 import web.url.URL
 import kotlin.coroutines.resume

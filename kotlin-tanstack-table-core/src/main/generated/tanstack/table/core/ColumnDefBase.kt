@@ -2,7 +2,7 @@
 
 package tanstack.table.core
 
-import kotlinx.js.ReadonlyArray
+import js.core.ReadonlyArray
 
 external interface ColumnDefBase<TData : RowData, TValue> : ColumnDefExtensions<TData, TValue> {
     var getUniqueValues: AccessorFn<TData, ReadonlyArray<Any?>>?

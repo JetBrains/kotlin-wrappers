@@ -1,6 +1,6 @@
 package web.timers
 
-import kotlinx.js.HighResTimeStamp
+import js.core.HighResTimeStamp
 
 sealed external interface FrameRequestId
 

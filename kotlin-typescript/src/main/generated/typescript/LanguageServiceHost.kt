@@ -2,7 +2,7 @@
 
 package typescript
 
-import kotlinx.js.ReadonlyArray
+import js.core.ReadonlyArray
 
 sealed external interface LanguageServiceHost : GetEffectiveTypeRootsHost, MinimalResolutionCacheHost {
     override fun getCompilationSettings(): CompilerOptions

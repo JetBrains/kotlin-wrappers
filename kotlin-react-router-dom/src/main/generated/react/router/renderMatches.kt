@@ -5,9 +5,11 @@
 
 package react.router
 
+import js.core.ReadonlyArray
+
 /**
  * Renders the result of `matchRoutes()` into a React element.
  */
 external fun renderMatches(
-    matches: kotlinx.js.ReadonlyArray<RouteMatch>?,
+    matches: ReadonlyArray<RouteMatch>?,
 ): react.ReactElement<*>?

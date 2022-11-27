@@ -3,7 +3,7 @@
 package web.audio
 
 import js.buffer.ArrayBuffer
-import kotlinx.js.ReadonlyArray
+import js.core.ReadonlyArray
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventTarget

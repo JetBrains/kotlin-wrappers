@@ -1,6 +1,6 @@
 package js.promise
 
-import kotlinx.js.Void
+import js.core.Void
 import kotlin.js.Promise
 
 inline fun Promise.Companion.resolve(): Promise<Void> =

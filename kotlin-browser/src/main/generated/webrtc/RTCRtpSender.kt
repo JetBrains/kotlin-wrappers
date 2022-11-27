@@ -2,7 +2,7 @@
 
 package webrtc
 
-import kotlinx.js.Void
+import js.core.Void
 import media.streams.MediaStream
 import media.streams.MediaStreamTrack
 import kotlin.js.Promise

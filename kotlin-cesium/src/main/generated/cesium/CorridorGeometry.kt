@@ -9,7 +9,7 @@
 
 package cesium
 
-import kotlinx.js.ReadonlyArray
+import js.core.ReadonlyArray
 
 /**
  * A description of a corridor. Corridor geometry can be rendered with both [Primitive] and [GroundPrimitive].
