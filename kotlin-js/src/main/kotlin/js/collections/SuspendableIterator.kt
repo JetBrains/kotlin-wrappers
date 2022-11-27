@@ -1,4 +1,4 @@
-package kotlinx.js.collections
+package js.collections
 
 interface SuspendableIterator<out T> {
     operator fun next(): T
