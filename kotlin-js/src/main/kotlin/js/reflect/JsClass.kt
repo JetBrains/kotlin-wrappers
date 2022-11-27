@@ -1,4 +1,4 @@
-package kotlinx.js
+package js.reflect
 
 inline fun <T : Any> JsClass<T>.newInstance(): T =
     newInstance(this)
