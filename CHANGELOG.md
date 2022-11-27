@@ -1,8 +1,24 @@
+## pre.452
+
+**BREAKING CHANGE**
+
+Core JS declarations from `kotlinx.js` package moved to following packages:
+
+* `js.buffer`
+* `js.collections`
+* `js.core`
+* `js.errors`
+* `js.import`
+* `js.intl` (ex `web.intl`)
+* `js.promise`
+* `js.reflect`
+* `js.typedarrays`
+
 ## pre.298 — pre.302
 
 Some factory functions were supported in `kotlin-csstype`. Declarations in `kotlin-csstype` were updated.
 
-**\[breaking change\]** `auto` and `none` values were generalized for the whole DSL, duplicates of these declarations
+**BREAKING CHANGE** `auto` and `none` values were generalized for the whole DSL, duplicates of these declarations
 were removed.
 
 `BigInt` declaration was added to `kotlin-extensions`.
