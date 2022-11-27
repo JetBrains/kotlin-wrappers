@@ -1,4 +1,4 @@
-package kotlinx.js
+package js.import
 
 import kotlin.js.Promise
 
