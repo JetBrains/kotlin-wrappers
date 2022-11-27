@@ -2,14 +2,14 @@
 
 **BREAKING CHANGE**
 
-Core JS declarations from `kotlinx.js` package moved to following packages:
+Core JS declarations from the `kotlinx.js` package were moved to the following packages:
 
 * `js.buffer`
 * `js.collections`
 * `js.core`
 * `js.errors`
 * `js.import`
-* `js.intl` (ex `web.intl`)
+* `js.intl` (ex-`web.intl`)
 * `js.promise`
 * `js.reflect`
 * `js.typedarrays`
