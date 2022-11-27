@@ -1,5 +1,5 @@
 package react
 
-import kotlinx.js.Module
+import js.import.Module
 
 typealias ComponentModule<P> = Module<ComponentType<P>>
