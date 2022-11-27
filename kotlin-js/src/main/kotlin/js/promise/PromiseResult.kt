@@ -2,7 +2,7 @@
     "NOTHING_TO_INLINE",
 )
 
-package kotlinx.js
+package js.promise
 
 import kotlin.js.Promise
 

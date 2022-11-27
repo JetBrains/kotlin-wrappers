@@ -1,5 +1,6 @@
 package kotlinx.js
 
+import js.promise.PromiseResult
 import kotlin.js.Promise
 
 sealed external interface AsyncIterator<out T> {

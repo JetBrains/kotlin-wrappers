@@ -2,7 +2,7 @@
 
 package node.fs
 
-import kotlinx.js.PromiseResult
+import js.promise.PromiseResult
 
 sealed external interface CopyOptions : CopyOptionsBase {
     /**
