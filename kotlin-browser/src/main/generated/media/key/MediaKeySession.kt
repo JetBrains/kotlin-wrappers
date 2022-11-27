@@ -2,7 +2,7 @@
 
 package media.key
 
-import kotlinx.js.BufferSource
+import js.buffer.BufferSource
 import kotlinx.js.EpochTimeStamp
 import kotlinx.js.Void
 import web.events.Event

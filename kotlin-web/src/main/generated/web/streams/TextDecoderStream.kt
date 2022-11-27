@@ -2,7 +2,7 @@
 
 package web.streams
 
-import kotlinx.js.BufferSource
+import js.buffer.BufferSource
 
 sealed external interface TextDecoderStream {
     /** Returns encoding's name, lower cased. */

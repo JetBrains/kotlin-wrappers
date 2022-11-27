@@ -2,7 +2,7 @@
 
 package media.source
 
-import kotlinx.js.BufferSource
+import js.buffer.BufferSource
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventTarget

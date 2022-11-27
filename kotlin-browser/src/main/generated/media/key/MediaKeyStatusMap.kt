@@ -2,7 +2,7 @@
 
 package media.key
 
-import kotlinx.js.BufferSource
+import js.buffer.BufferSource
 
 sealed external class MediaKeyStatusMap {
     val size: Int

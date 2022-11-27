@@ -1,5 +1,5 @@
 // Automatically generated - do not modify!
 
-package kotlinx.js
+package js.buffer
 
 typealias BufferSource = Any /* ArrayBufferView | ArrayBuffer */

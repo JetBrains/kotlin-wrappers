@@ -2,7 +2,7 @@
 
 package media.key
 
-import kotlinx.js.BufferSource
+import js.buffer.BufferSource
 import kotlin.js.Promise
 
 sealed external class MediaKeys {
