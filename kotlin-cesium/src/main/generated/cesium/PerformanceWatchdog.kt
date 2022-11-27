@@ -9,6 +9,8 @@
 
 package cesium
 
+import dom.Element
+
 /**
  * Monitors performance of the application and displays a message if poor performance is detected.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PerformanceWatchdog.html">Online Documentation</a>
@@ -23,7 +25,7 @@ external class PerformanceWatchdog(options: ConstructorOptions? = definedExterna
      *   Default value - `'This application appears to be performing poorly on your system.  Please try using a different web browser or updating your video drivers.'`
      */
     interface ConstructorOptions {
-        var container: dom.Element
+        var container: Element
         var scene: Scene
         var lowFrameRateMessage: String?
     }
@@ -32,7 +34,7 @@ external class PerformanceWatchdog(options: ConstructorOptions? = definedExterna
      * Gets the parent container.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PerformanceWatchdog.html#container">Online Documentation</a>
      */
-    var container: dom.Element
+    var container: Element
 
     /**
      * Gets the view model.

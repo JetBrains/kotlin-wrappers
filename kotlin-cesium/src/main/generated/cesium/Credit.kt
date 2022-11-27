@@ -9,6 +9,8 @@
 
 package cesium
 
+import dom.html.HTMLElement
+
 /**
  * A credit contains data pertaining to how to display attributions/credits for certain content on the screen.
  * ```
@@ -31,7 +33,7 @@ external class Credit(
      * Gets the credit element
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Credit.html#element">Online Documentation</a>
      */
-    val element: dom.html.HTMLElement
+    val element: HTMLElement
 
     companion object {
         /**

@@ -9,6 +9,8 @@
 
 package cesium
 
+import dom.Element
+
 /**
  * A single button widget for toggling vr mode.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/VRButton.html">Online Documentation</a>
@@ -21,9 +23,9 @@ package cesium
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/VRButton.html">Online Documentation</a>
  */
 external class VRButton(
-    var container: dom.Element,
+    var container: Element,
     scene: Scene,
-    vrElement: dom.Element? = definedExternally,
+    vrElement: Element? = definedExternally,
 ) {
     /**
      * Gets the view model.

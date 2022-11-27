@@ -5,6 +5,8 @@
 
 package cesium
 
+import dom.html.HTMLCanvasElement
+
 /**
  * Aggregates input events. For example, suppose the following inputs are received between frames:
  * left mouse button down, mouse move, mouse move, left mouse button up. These events will be aggregated into
@@ -16,7 +18,7 @@ package cesium
  *   Default value - `document`
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CameraEventAggregator.html">Online Documentation</a>
  */
-external class CameraEventAggregator(canvas: dom.html.HTMLCanvasElement? = definedExternally) {
+external class CameraEventAggregator(canvas: HTMLCanvasElement? = definedExternally) {
     /**
      * Gets the current mouse position.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CameraEventAggregator.html#currentMousePosition">Online Documentation</a>

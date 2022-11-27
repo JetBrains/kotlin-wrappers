@@ -9,6 +9,8 @@
 
 package cesium
 
+import dom.Element
+
 /**
  * A single button widget for returning to the default camera view of the current scene.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/HomeButton.html">Online Documentation</a>
@@ -20,7 +22,7 @@ package cesium
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/HomeButton.html">Online Documentation</a>
  */
 external class HomeButton(
-    var container: dom.Element,
+    var container: Element,
     scene: Scene,
     duration: Double? = definedExternally,
 ) {

@@ -9,6 +9,8 @@
 
 package cesium
 
+import dom.Element
+
 /**
  * The Animation widget provides buttons for play, pause, and reverse, along with the
  * current time and date, surrounded by a "shuttle ring" for controlling the speed of animation.
@@ -48,7 +50,7 @@ package cesium
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Animation.html">Online Documentation</a>
  */
 external class Animation(
-    val container: dom.Element,
+    val container: Element,
     val viewModel: AnimationViewModel,
 ) {
     /**

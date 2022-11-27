@@ -9,6 +9,8 @@
 
 package cesium
 
+import dom.Element
+
 /**
  * Inspector widget to aid in debugging
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CesiumInspector.html">Online Documentation</a>
@@ -19,7 +21,7 @@ package cesium
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CesiumInspector.html">Online Documentation</a>
  */
 external class CesiumInspector(
-    var container: dom.Element,
+    var container: Element,
     scene: Scene,
 ) {
     /**

@@ -9,6 +9,7 @@
 
 package cesium
 
+import dom.html.HTMLCanvasElement
 import js.core.ReadonlyArray
 
 /**
@@ -218,7 +219,7 @@ external class GridImageryProvider(options: ConstructorOptions) {
         y: Double,
         level: Int,
         request: Request? = definedExternally,
-    ): kotlin.js.Promise<dom.html.HTMLCanvasElement>
+    ): kotlin.js.Promise<HTMLCanvasElement>
 
     /**
      * Picking features is not currently supported by this imagery provider, so this function simply returns

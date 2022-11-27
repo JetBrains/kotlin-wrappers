@@ -9,6 +9,8 @@
 
 package cesium
 
+import dom.Element
+
 /**
  * The view model for [FullscreenButton].
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/FullscreenButtonViewModel.html">Online Documentation</a>
@@ -20,8 +22,8 @@ package cesium
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/FullscreenButtonViewModel.html">Online Documentation</a>
  */
 external class FullscreenButtonViewModel(
-    var fullscreenElement: dom.Element = definedExternally,
-    container: dom.Element? = definedExternally,
+    var fullscreenElement: Element = definedExternally,
+    container: Element? = definedExternally,
 ) {
     /**
      * Gets whether or not fullscreen mode is active.  This property is observable.

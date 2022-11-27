@@ -10,6 +10,9 @@
 
 package cesium
 
+import dom.Element
+import dom.html.HTMLCanvasElement
+
 /**
  * A widget containing a Cesium scene.
  * ```
@@ -45,7 +48,7 @@ package cesium
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CesiumWidget.html">Online Documentation</a>
  */
 external class CesiumWidget(
-    val container: dom.Element,
+    val container: Element,
     options: ConstructorOptions? = definedExternally,
 ) {
     /**
@@ -109,8 +112,8 @@ external class CesiumWidget(
         var targetFrameRate: Int?
         var showRenderLoopErrors: Boolean?
         var contextOptions: Any?
-        var creditContainer: dom.Element?
-        var creditViewport: dom.Element?
+        var creditContainer: Element?
+        var creditViewport: Element?
         var shadows: Boolean?
         var terrainShadows: ShadowMode?
         var mapMode2D: MapMode2D?
@@ -124,19 +127,19 @@ external class CesiumWidget(
      * Gets the canvas.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CesiumWidget.html#canvas">Online Documentation</a>
      */
-    val canvas: dom.html.HTMLCanvasElement
+    val canvas: HTMLCanvasElement
 
     /**
      * Gets the credit container.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CesiumWidget.html#creditContainer">Online Documentation</a>
      */
-    val creditContainer: dom.Element
+    val creditContainer: Element
 
     /**
      * Gets the credit viewport
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CesiumWidget.html#creditViewport">Online Documentation</a>
      */
-    val creditViewport: dom.Element
+    val creditViewport: Element
 
     /**
      * Gets the scene.
@@ -265,7 +268,7 @@ external class CesiumWidget(
 }
 
 inline fun CesiumWidget(
-    container: dom.Element,
+    container: Element,
     block: CesiumWidget.ConstructorOptions.() -> Unit,
 ): CesiumWidget {
     val options: CesiumWidget.ConstructorOptions = js("({})")

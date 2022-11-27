@@ -9,6 +9,8 @@
 
 package cesium
 
+import dom.Element
+
 /**
  * A single button widget for toggling fullscreen mode.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/FullscreenButton.html">Online Documentation</a>
@@ -20,8 +22,8 @@ package cesium
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/FullscreenButton.html">Online Documentation</a>
  */
 external class FullscreenButton(
-    var container: dom.Element,
-    fullscreenElement: dom.Element? = definedExternally,
+    var container: Element,
+    fullscreenElement: Element? = definedExternally,
 ) {
     /**
      * Gets the view model.

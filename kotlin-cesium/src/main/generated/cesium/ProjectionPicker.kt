@@ -9,6 +9,8 @@
 
 package cesium
 
+import dom.Element
+
 /**
  * The ProjectionPicker is a single button widget for switching between perspective and orthographic projections.
  * ```
@@ -26,7 +28,7 @@ package cesium
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ProjectionPicker.html">Online Documentation</a>
  */
 external class ProjectionPicker(
-    var container: dom.Element,
+    var container: Element,
     scene: Scene,
 ) {
     /**

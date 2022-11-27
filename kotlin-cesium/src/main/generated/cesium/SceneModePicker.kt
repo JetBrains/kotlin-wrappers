@@ -9,6 +9,8 @@
 
 package cesium
 
+import dom.Element
+
 /**
  * The SceneModePicker is a single button widget for switching between scene modes;
  * shown to the left in its expanded state. Programatic switching of scene modes will
@@ -31,7 +33,7 @@ package cesium
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/SceneModePicker.html">Online Documentation</a>
  */
 external class SceneModePicker(
-    var container: dom.Element,
+    var container: Element,
     scene: Scene,
     duration: Double? = definedExternally,
 ) {

@@ -9,6 +9,8 @@
 
 package cesium
 
+import dom.Element
+
 /**
  * The NavigationHelpButton is a single button widget for displaying instructions for
  * navigating the globe with the mouse.<p style="clear: both;"></p><br/>
@@ -29,7 +31,7 @@ external class NavigationHelpButton(options: ConstructorOptions) {
      *   Default value - `false`
      */
     interface ConstructorOptions {
-        var container: dom.Element
+        var container: Element
         var instructionsInitiallyVisible: Boolean?
     }
 
@@ -37,7 +39,7 @@ external class NavigationHelpButton(options: ConstructorOptions) {
      * Gets the parent container.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/NavigationHelpButton.html#container">Online Documentation</a>
      */
-    var container: dom.Element
+    var container: Element
 
     /**
      * Gets the view model.

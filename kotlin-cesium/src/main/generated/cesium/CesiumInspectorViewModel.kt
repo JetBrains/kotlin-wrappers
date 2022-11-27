@@ -9,6 +9,8 @@
 
 package cesium
 
+import dom.Element
+
 /**
  * The view model for [CesiumInspector].
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CesiumInspectorViewModel.html">Online Documentation</a>
@@ -20,7 +22,7 @@ package cesium
  */
 external class CesiumInspectorViewModel(
     var scene: Scene,
-    var performanceContainer: dom.Element,
+    var performanceContainer: Element,
 ) {
     /**
      * Gets or sets the show frustums state.  This property is observable.

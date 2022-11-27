@@ -9,6 +9,7 @@
 
 package cesium
 
+import dom.html.HTMLElement
 import js.core.ReadonlyArray
 
 /**
@@ -22,7 +23,7 @@ import js.core.ReadonlyArray
  */
 external class Cesium3DTilesInspectorViewModel(
     val scene: Scene,
-    val performanceContainer: dom.html.HTMLElement,
+    val performanceContainer: HTMLElement,
 ) {
     /**
      * Gets or sets the flag to enable performance display.  This property is observable.

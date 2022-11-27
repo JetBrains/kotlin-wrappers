@@ -5,6 +5,8 @@
 
 package cesium
 
+import dom.html.HTMLCanvasElement
+
 /**
  * Writes the given text into a new canvas.  The canvas will be sized to fit the text.
  * If text is blank, returns undefined.
@@ -17,7 +19,7 @@ package cesium
 external fun writeTextToCanvas(
     text: String,
     options: WriteTextToCanvasOptions? = definedExternally,
-): dom.html.HTMLCanvasElement?
+): HTMLCanvasElement?
 
 /**
  * @property [font] The CSS font to use.

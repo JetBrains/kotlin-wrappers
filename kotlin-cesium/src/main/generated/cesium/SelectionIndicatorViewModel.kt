@@ -10,6 +10,8 @@
 
 package cesium
 
+import dom.Element
+
 /**
  * The view model for [SelectionIndicator].
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/SelectionIndicatorViewModel.html">Online Documentation</a>
@@ -22,8 +24,8 @@ package cesium
  */
 external class SelectionIndicatorViewModel(
     var scene: Scene,
-    var selectionIndicatorElement: dom.Element,
-    var container: dom.Element,
+    var selectionIndicatorElement: Element,
+    var container: Element,
 ) {
     /**
      * Gets or sets the world position of the object for which to display the selection indicator.

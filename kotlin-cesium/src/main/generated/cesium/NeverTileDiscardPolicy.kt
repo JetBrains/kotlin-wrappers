@@ -5,6 +5,8 @@
 
 package cesium
 
+import dom.html.HTMLImageElement
+
 /**
  * A [TileDiscardPolicy] specifying that tile images should never be discard.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/NeverTileDiscardPolicy.html">Online Documentation</a>
@@ -23,5 +25,5 @@ external class NeverTileDiscardPolicy : TileDiscardPolicy {
      * @return True if the image should be discarded; otherwise, false.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/NeverTileDiscardPolicy.html#shouldDiscardImage">Online Documentation</a>
      */
-    override fun shouldDiscardImage(image: dom.html.HTMLImageElement): Boolean
+    override fun shouldDiscardImage(image: HTMLImageElement): Boolean
 }

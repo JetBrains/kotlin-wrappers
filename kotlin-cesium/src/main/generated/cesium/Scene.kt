@@ -5,6 +5,8 @@
 
 package cesium
 
+import dom.Element
+import dom.html.HTMLCanvasElement
 import js.core.ReadonlyArray
 
 /**
@@ -84,10 +86,10 @@ external class Scene(
      *   Default value - `1`
      */
     interface ConstructorOptions {
-        var canvas: dom.html.HTMLCanvasElement
+        var canvas: HTMLCanvasElement
         var contextOptions: Any?
-        var creditContainer: dom.Element?
-        var creditViewport: dom.Element?
+        var creditContainer: Element?
+        var creditViewport: Element?
         var mapProjection: MapProjection?
         var orderIndependentTranslucency: Boolean?
         var scene3DOnly: Boolean?
@@ -382,7 +384,7 @@ external class Scene(
      * Gets the canvas element to which this scene is bound.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Scene.html#canvas">Online Documentation</a>
      */
-    val canvas: dom.html.HTMLCanvasElement
+    val canvas: HTMLCanvasElement
 
     /**
      * The drawingBufferHeight of the underlying GL context.

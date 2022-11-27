@@ -5,6 +5,8 @@
 
 package cesium
 
+import canvas.ImageData
+
 /**
  * Extract a pixel array from a loaded image.  Draws the image
  * into a canvas so it can read the pixels back.
@@ -18,4 +20,4 @@ external fun getImagePixels(
     image: dynamic,
     width: Double,
     height: Double,
-): canvas.ImageData
+): ImageData

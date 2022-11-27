@@ -10,6 +10,8 @@
 
 package cesium
 
+import dom.Element
+import dom.html.HTMLCanvasElement
 import js.core.ReadonlyArray
 
 /**
@@ -58,7 +60,7 @@ import js.core.ReadonlyArray
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Viewer.html">Online Documentation</a>
  */
 external class Viewer(
-    val container: dom.Element,
+    val container: Element,
     options: ConstructorOptions? = definedExternally,
 ) {
     /**
@@ -66,7 +68,7 @@ external class Viewer(
      * [CreditDisplay] and potentially other things.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Viewer.html#bottomContainer">Online Documentation</a>
      */
-    val bottomContainer: dom.Element
+    val bottomContainer: Element
 
     /**
      * Gets the CesiumWidget.
@@ -169,7 +171,7 @@ external class Viewer(
      * Gets the canvas.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Viewer.html#canvas">Online Documentation</a>
      */
-    val canvas: dom.html.HTMLCanvasElement
+    val canvas: HTMLCanvasElement
 
     /**
      * Gets the scene.
@@ -675,7 +677,7 @@ external class Viewer(
         var terrainProvider: TerrainProvider?
         var skyBox: dynamic
         var skyAtmosphere: dynamic
-        var fullscreenElement: dom.Element?
+        var fullscreenElement: Element?
         var useDefaultRenderLoop: Boolean?
         var targetFrameRate: Int?
         var showRenderLoopErrors: Boolean?
@@ -686,8 +688,8 @@ external class Viewer(
         var mapProjection: MapProjection?
         var globe: dynamic
         var orderIndependentTranslucency: Boolean?
-        var creditContainer: dom.Element?
-        var creditViewport: dom.Element?
+        var creditContainer: Element?
+        var creditViewport: Element?
         var dataSources: DataSourceCollection?
         var shadows: Boolean?
         var terrainShadows: ShadowMode?
@@ -710,7 +712,7 @@ external class Viewer(
 typealias ViewerMixin = (viewer: Viewer, options: Any) -> Unit
 
 inline fun Viewer(
-    container: dom.Element,
+    container: Element,
     block: Viewer.ConstructorOptions.() -> Unit,
 ): Viewer {
     val options: Viewer.ConstructorOptions = js("({})")

@@ -5,6 +5,8 @@
 
 package cesium
 
+import dom.html.HTMLCanvasElement
+
 /**
  * A utility class for generating custom map pins as canvas elements.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PinBuilder.html">Online Documentation</a>
@@ -20,7 +22,7 @@ external class PinBuilder {
     fun fromColor(
         color: Color,
         size: Double,
-    ): dom.html.HTMLCanvasElement
+    ): HTMLCanvasElement
 
     /**
      * Creates a pin with the specified icon, color, and size.
@@ -69,5 +71,5 @@ external class PinBuilder {
         text: String,
         color: Color,
         size: Double,
-    ): dom.html.HTMLCanvasElement
+    ): HTMLCanvasElement
 }

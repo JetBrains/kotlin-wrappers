@@ -9,6 +9,8 @@
 
 package cesium
 
+import dom.html.HTMLElement
+
 /**
  * The credit display is responsible for displaying credits on screen.
  * ```
@@ -25,9 +27,9 @@ package cesium
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CreditDisplay.html">Online Documentation</a>
  */
 external class CreditDisplay(
-    var container: dom.html.HTMLElement,
+    var container: HTMLElement,
     delimiter: String? = definedExternally,
-    viewport: dom.html.HTMLElement? = definedExternally,
+    viewport: HTMLElement? = definedExternally,
 ) {
     /**
      * Adds a credit to the list of current credits to be displayed in the credit container

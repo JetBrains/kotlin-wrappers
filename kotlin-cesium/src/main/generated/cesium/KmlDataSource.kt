@@ -9,7 +9,11 @@
 
 package cesium
 
+import dom.Document
+import dom.Element
+import dom.html.HTMLCanvasElement
 import js.core.ReadonlyArray
+import web.buffer.Blob
 
 /**
  * A [DataSource] which processes Keyhole Markup Language 2.2 (KML).
@@ -40,7 +44,7 @@ external class KmlDataSource(options: ConstructorOptions? = definedExternally) {
      * for client height and width.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/KmlDataSource.html#canvas">Online Documentation</a>
      */
-    var canvas: dom.html.HTMLCanvasElement?
+    var canvas: HTMLCanvasElement?
 
     /**
      * The position and orientation of this [Camera] will be used to
@@ -150,12 +154,12 @@ external class KmlDataSource(options: ConstructorOptions? = definedExternally) {
     ): kotlin.js.Promise<KmlDataSource>
 
     fun load(
-        data: dom.Document,
+        data: Document,
         options: LoadOptions? = definedExternally,
     ): kotlin.js.Promise<KmlDataSource>
 
     fun load(
-        data: web.buffer.Blob,
+        data: Blob,
         options: LoadOptions? = definedExternally,
     ): kotlin.js.Promise<KmlDataSource>
 
@@ -188,12 +192,12 @@ external class KmlDataSource(options: ConstructorOptions? = definedExternally) {
      */
     interface ConstructorOptions {
         var camera: Camera?
-        var canvas: dom.html.HTMLCanvasElement?
+        var canvas: HTMLCanvasElement?
         var credit: Credit?
         var sourceUri: String?
         var clampToGround: Boolean?
         var ellipsoid: Ellipsoid?
-        var screenOverlayContainer: dom.Element?
+        var screenOverlayContainer: Element?
     }
 
     companion object {
@@ -215,12 +219,12 @@ external class KmlDataSource(options: ConstructorOptions? = definedExternally) {
         ): kotlin.js.Promise<KmlDataSource>
 
         fun load(
-            data: dom.Document,
+            data: Document,
             options: ConstructorOptions? = definedExternally,
         ): kotlin.js.Promise<KmlDataSource>
 
         fun load(
-            data: web.buffer.Blob,
+            data: Blob,
             options: ConstructorOptions? = definedExternally,
         ): kotlin.js.Promise<KmlDataSource>
 
@@ -238,7 +242,7 @@ external class KmlDataSource(options: ConstructorOptions? = definedExternally) {
             var sourceUri: String?
             var clampToGround: Boolean?
             var ellipsoid: Ellipsoid?
-            var screenOverlayContainer: dom.Element?
+            var screenOverlayContainer: Element?
         }
     }
 }

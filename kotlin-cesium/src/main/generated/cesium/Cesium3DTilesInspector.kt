@@ -9,6 +9,8 @@
 
 package cesium
 
+import dom.Element
+
 /**
  * Inspector widget to aid in debugging 3D Tiles
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTilesInspector.html">Online Documentation</a>
@@ -19,7 +21,7 @@ package cesium
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTilesInspector.html">Online Documentation</a>
  */
 external class Cesium3DTilesInspector(
-    var container: dom.Element,
+    var container: Element,
     scene: Scene,
 ) {
     /**

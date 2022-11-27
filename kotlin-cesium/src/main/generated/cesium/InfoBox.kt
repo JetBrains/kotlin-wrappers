@@ -9,6 +9,9 @@
 
 package cesium
 
+import dom.Element
+import dom.html.HTMLIFrameElement
+
 /**
  * A widget for displaying information or a description.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/InfoBox.html">Online Documentation</a>
@@ -17,7 +20,7 @@ package cesium
  * @property [container] The DOM element that will contain the widget.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/InfoBox.html">Online Documentation</a>
  */
-external class InfoBox(var container: dom.Element) {
+external class InfoBox(var container: Element) {
     /**
      * Gets the view model.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/InfoBox.html#viewModel">Online Documentation</a>
@@ -28,7 +31,7 @@ external class InfoBox(var container: dom.Element) {
      * Gets the iframe used to display the description.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/InfoBox.html#frame">Online Documentation</a>
      */
-    var frame: dom.html.HTMLIFrameElement
+    var frame: HTMLIFrameElement
 
     /**
      * @return true if the object has been destroyed, false otherwise.

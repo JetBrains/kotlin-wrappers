@@ -9,7 +9,9 @@
 
 package cesium
 
+import dom.xml.XMLDocument
 import js.buffer.ArrayBuffer
+import web.buffer.Blob
 
 /**
  * A resource that includes the location and any other parameters we need to retrieve it or create derived resources. It also provides the ability to retry requests.
@@ -266,7 +268,7 @@ external class Resource(options: dynamic) {
      * @return a promise that will resolve to the requested data when loaded. Returns undefined if `request.throttle` is true and the request does not have high enough priority.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Resource.html#fetchBlob">Online Documentation</a>
      */
-    fun fetchBlob(): kotlin.js.Promise<web.buffer.Blob>?
+    fun fetchBlob(): kotlin.js.Promise<Blob>?
 
     /**
      * Asynchronously loads the given image resource.  Returns a promise that will resolve to
@@ -368,7 +370,7 @@ external class Resource(options: dynamic) {
      * @return a promise that will resolve to the requested data when loaded. Returns undefined if `request.throttle` is true and the request does not have high enough priority.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Resource.html#fetchXML">Online Documentation</a>
      */
-    fun fetchXML(): kotlin.js.Promise<dom.xml.XMLDocument>?
+    fun fetchXML(): kotlin.js.Promise<XMLDocument>?
 
     /**
      * Requests a resource using JSONP.
@@ -674,7 +676,7 @@ external class Resource(options: dynamic) {
          * @return a promise that will resolve to the requested data when loaded. Returns undefined if `request.throttle` is true and the request does not have high enough priority.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Resource.html#.fetchBlob">Online Documentation</a>
          */
-        fun fetchBlob(options: FetchBlobOptions): kotlin.js.Promise<web.buffer.Blob>?
+        fun fetchBlob(options: FetchBlobOptions): kotlin.js.Promise<Blob>?
 
         /**
          * @property [url] The url of the resource.
@@ -810,7 +812,7 @@ external class Resource(options: dynamic) {
          * @return a promise that will resolve to the requested data when loaded. Returns undefined if `request.throttle` is true and the request does not have high enough priority.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Resource.html#.fetchXML">Online Documentation</a>
          */
-        fun fetchXML(options: FetchXMLOptions): kotlin.js.Promise<dom.xml.XMLDocument>?
+        fun fetchXML(options: FetchXMLOptions): kotlin.js.Promise<XMLDocument>?
 
         /**
          * @property [url] The url of the resource.

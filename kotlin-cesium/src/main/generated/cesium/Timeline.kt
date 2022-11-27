@@ -9,6 +9,8 @@
 
 package cesium
 
+import dom.Element
+
 /**
  * The Timeline is a widget for displaying and controlling the current scene time.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Timeline.html">Online Documentation</a>
@@ -19,7 +21,7 @@ package cesium
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Timeline.html">Online Documentation</a>
  */
 external class Timeline(
-    var container: dom.Element,
+    var container: Element,
     clock: Clock,
 ) {
     /**

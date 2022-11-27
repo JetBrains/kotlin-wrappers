@@ -5,6 +5,8 @@
 
 package cesium
 
+import dom.Element
+
 /**
  * A mixin which adds default drag and drop support for CZML files to the Viewer widget.
  * Rather than being called directly, this function is normally passed as
@@ -37,7 +39,7 @@ external fun viewerDragDropMixin(
  * @property [proxy] The proxy to be used for KML network links.
  */
 external interface ViewerDragDropMixinOptions {
-    var dropTarget: dom.Element?
+    var dropTarget: Element?
     var clearOnDrop: Boolean?
     var flyToOnDrop: Boolean?
     var clampToGround: Boolean?

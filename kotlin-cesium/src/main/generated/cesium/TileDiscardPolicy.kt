@@ -5,6 +5,8 @@
 
 package cesium
 
+import dom.html.HTMLImageElement
+
 /**
  * A policy for discarding tile images according to some criteria.  This type describes an
  * interface and is not intended to be instantiated directly.
@@ -24,5 +26,5 @@ abstract external class TileDiscardPolicy {
      * @return True if the image should be discarded; otherwise, false.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TileDiscardPolicy.html#shouldDiscardImage">Online Documentation</a>
      */
-    abstract fun shouldDiscardImage(image: dom.html.HTMLImageElement): Boolean
+    abstract fun shouldDiscardImage(image: HTMLImageElement): Boolean
 }

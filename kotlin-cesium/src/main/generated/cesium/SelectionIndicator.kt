@@ -9,6 +9,8 @@
 
 package cesium
 
+import dom.Element
+
 /**
  * A widget for displaying an indicator on a selected object.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/SelectionIndicator.html">Online Documentation</a>
@@ -19,7 +21,7 @@ package cesium
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/SelectionIndicator.html">Online Documentation</a>
  */
 external class SelectionIndicator(
-    var container: dom.Element,
+    var container: Element,
     scene: Scene,
 ) {
     /**

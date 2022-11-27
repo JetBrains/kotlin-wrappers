@@ -9,6 +9,9 @@
 
 package cesium
 
+import dom.html.HTMLCanvasElement
+import dom.html.HTMLImageElement
+
 /**
  * <div class="notice">
  * A billboard is created and its initial
@@ -311,12 +314,12 @@ sealed external class Billboard {
      */
     fun setImage(
         id: String,
-        image: dom.html.HTMLImageElement,
+        image: HTMLImageElement,
     )
 
     fun setImage(
         id: String,
-        image: dom.html.HTMLCanvasElement,
+        image: HTMLCanvasElement,
     )
 
     fun setImage(
