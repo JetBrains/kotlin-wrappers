@@ -86,7 +86,7 @@ fun Appendable.appendColorStop(colorStop: ColorStop) {
 
 sealed class RadialGradientShape {
     class Circle(val length: LinearDimension?) : RadialGradientShape()
-    class Shape() : RadialGradientShape()
+    class Shape : RadialGradientShape()
 }
 
 enum class RadialGradientExtent(val value: String) {
