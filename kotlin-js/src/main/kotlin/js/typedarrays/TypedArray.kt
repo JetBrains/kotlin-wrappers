@@ -2,13 +2,15 @@ package js.typedarrays
 
 import js.buffer.ArrayBuffer
 import js.buffer.ArrayBufferView
+import js.core.ArrayLike
 import js.core.ReadonlyArray
 
 @JsName("Object")
 sealed external class TypedArray<S : TypedArray<S, T>, T : Number> :
-    ArrayBufferView {
+    ArrayBufferView,
+    ArrayLike<T> {
 
-    val length: Int
+    override val length: Int
     override val buffer: ArrayBuffer
     override val byteOffset: Int
     override val byteLength: Int
