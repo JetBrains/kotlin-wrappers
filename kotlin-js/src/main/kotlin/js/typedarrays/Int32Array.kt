@@ -1,8 +1,7 @@
 package js.typedarrays
 
-import org.khronos.webgl.ArrayBuffer
-import org.khronos.webgl.ArrayBufferView
-import org.khronos.webgl.Int32Array
+import js.buffer.ArrayBuffer
+import js.buffer.ArrayBufferView
 
 open external class Int32Array : ArrayBufferView {
     constructor(length: Int)
