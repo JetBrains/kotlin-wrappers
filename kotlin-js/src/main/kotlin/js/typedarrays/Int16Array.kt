@@ -1,12 +1,13 @@
 package js.typedarrays
 
 import js.buffer.ArrayBuffer
+import js.core.ReadonlyArray
 
 open external class Int16Array :
     TypedArray<Int16Array, Short> {
     constructor(length: Int)
     constructor(array: Int16Array)
-    constructor(array: Array<Short>)
+    constructor(array: ReadonlyArray<Short>)
     constructor(
         buffer: ArrayBuffer,
         byteOffset: Int = definedExternally,

@@ -1,12 +1,13 @@
 package js.typedarrays
 
 import js.buffer.ArrayBuffer
+import js.core.ReadonlyArray
 
 open external class Uint8ClampedArray :
     TypedArray<Uint8ClampedArray, Byte> {
     constructor(length: Int)
     constructor(array: Uint8ClampedArray)
-    constructor(array: Array<Byte>)
+    constructor(array: ReadonlyArray<Byte>)
     constructor(
         buffer: ArrayBuffer,
         byteOffset: Int = definedExternally,
