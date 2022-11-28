@@ -1,6 +1,6 @@
 package js.core
 
-external interface Record<in K : Any, V : Any>
+external interface Record<K : Any, V : Any>
     : ReadonlyRecord<K, V>
 
 inline operator fun <K : Any, V : Any> Record<K, V>.set(
