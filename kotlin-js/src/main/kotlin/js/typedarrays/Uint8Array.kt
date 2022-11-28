@@ -1,9 +1,9 @@
 package js.typedarrays
 
 import js.buffer.ArrayBuffer
-import js.buffer.ArrayBufferView
 
-open external class Uint8Array : ArrayBufferView {
+open external class Uint8Array :
+    TypedArray<Uint8Array, Byte> {
     constructor(length: Int)
     constructor(array: Uint8Array)
     constructor(array: Array<Byte>)
@@ -12,25 +12,6 @@ open external class Uint8Array : ArrayBufferView {
         byteOffset: Int = definedExternally,
         length: Int = definedExternally
     )
-
-    val length: Int
-    override val buffer: ArrayBuffer
-    override val byteOffset: Int
-    override val byteLength: Int
-    fun set(
-        array: Uint8Array,
-        offset: Int = definedExternally
-    )
-
-    fun set(
-        array: Array<Byte>,
-        offset: Int = definedExternally
-    )
-
-    fun subarray(
-        start: Int,
-        end: Int
-    ): Uint8Array
 
     companion object {
         val BYTES_PER_ELEMENT: Int
