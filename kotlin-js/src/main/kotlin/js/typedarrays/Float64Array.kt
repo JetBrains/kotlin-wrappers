@@ -3,7 +3,7 @@ package js.typedarrays
 import js.buffer.ArrayBuffer
 import js.core.ReadonlyArray
 
-open external class Float64Array :
+open external class Float64Array() :
     TypedArray<Float64Array, Double> {
     constructor(length: Int)
     constructor(array: Float64Array)

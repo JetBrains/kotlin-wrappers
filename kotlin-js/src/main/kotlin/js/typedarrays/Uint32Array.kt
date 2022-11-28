@@ -3,7 +3,7 @@ package js.typedarrays
 import js.buffer.ArrayBuffer
 import js.core.ReadonlyArray
 
-open external class Uint32Array :
+open external class Uint32Array() :
     TypedArray<Uint32Array, Int> {
     constructor(length: Int)
     constructor(array: Uint32Array)

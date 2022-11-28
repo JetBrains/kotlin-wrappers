@@ -3,7 +3,7 @@ package js.typedarrays
 import js.buffer.ArrayBuffer
 import js.core.ReadonlyArray
 
-open external class Uint8Array :
+open external class Uint8Array() :
     TypedArray<Uint8Array, Byte> {
     constructor(length: Int)
     constructor(array: Uint8Array)
