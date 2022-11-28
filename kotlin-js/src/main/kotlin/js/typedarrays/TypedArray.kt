@@ -6,7 +6,7 @@ import js.core.ArrayLike
 import js.core.ReadonlyArray
 
 @JsName("Object")
-sealed external class TypedArray<S : TypedArray<S, T>, T : Number> :
+sealed external class TypedArray<S : TypedArray<S, T>, T : Any /* Number */> :
     ArrayBufferView,
     ArrayLike<T> {
 
