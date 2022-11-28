@@ -1,3 +1,7 @@
 package js.buffer
 
-typealias ArrayBufferView = org.khronos.webgl.ArrayBufferView
+external interface ArrayBufferView : BufferSource {
+    val buffer: ArrayBuffer
+    val byteOffset: Int
+    val byteLength: Int
+}
