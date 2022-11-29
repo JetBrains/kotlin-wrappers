@@ -8,6 +8,13 @@ external class DOMQuad(
     p3: DOMPointInit = definedExternally,
     p4: DOMPointInit = definedExternally,
 ) {
+    constructor(
+        p1: DOMPointReadOnly, /* DOMPointInit */
+        p2: DOMPointReadOnly, /* DOMPointInit */
+        p3: DOMPointReadOnly, /* DOMPointInit */
+        p4: DOMPointReadOnly, /* DOMPointInit */
+    )
+
     val p1: DOMPoint
     val p2: DOMPoint
     val p3: DOMPoint
@@ -18,5 +25,6 @@ external class DOMQuad(
     companion object {
         fun fromQuad(other: DOMQuadInit = definedExternally): DOMQuad
         fun fromRect(other: DOMRectInit = definedExternally): DOMQuad
+        fun fromRect(other: DOMRectReadOnly /* DOMRectInit */): DOMQuad
     }
 }

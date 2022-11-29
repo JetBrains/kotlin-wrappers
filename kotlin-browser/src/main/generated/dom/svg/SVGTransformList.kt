@@ -3,6 +3,7 @@
 package dom.svg
 
 import dom.geometry.DOMMatrix2DInit
+import dom.geometry.DOMMatrixReadOnly
 import js.core.ArrayLike
 
 sealed external class SVGTransformList :
@@ -12,6 +13,7 @@ sealed external class SVGTransformList :
     fun clear()
     fun consolidate(): SVGTransform?
     fun createSVGTransformFromMatrix(matrix: DOMMatrix2DInit = definedExternally): SVGTransform
+    fun createSVGTransformFromMatrix(matrix: DOMMatrixReadOnly /* DOMMatrix2DInit */): SVGTransform
     fun getItem(index: Int): SVGTransform
     fun initialize(newItem: SVGTransform): SVGTransform
     fun insertItemBefore(

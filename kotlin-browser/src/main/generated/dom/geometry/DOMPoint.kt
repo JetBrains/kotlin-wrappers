@@ -15,5 +15,6 @@ external class DOMPoint(
 
     companion object {
         fun fromPoint(other: DOMPointInit = definedExternally): DOMPoint
+        fun fromPoint(other: DOMPointReadOnly /* DOMPointInit */): DOMPoint
     }
 }

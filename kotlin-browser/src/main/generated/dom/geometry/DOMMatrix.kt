@@ -33,7 +33,9 @@ external class DOMMatrix(
     override var m44: Double
     fun invertSelf(): DOMMatrix
     fun multiplySelf(other: DOMMatrixInit = definedExternally): DOMMatrix
+    fun multiplySelf(other: DOMMatrixReadOnly /* DOMMatrixInit */): DOMMatrix
     fun preMultiplySelf(other: DOMMatrixInit = definedExternally): DOMMatrix
+    fun preMultiplySelf(other: DOMMatrixReadOnly /* DOMMatrixInit */): DOMMatrix
     fun rotateAxisAngleSelf(
         x: Number = definedExternally,
         y: Number = definedExternally,
@@ -81,5 +83,6 @@ external class DOMMatrix(
         fun fromFloat32Array(array32: Float32Array): DOMMatrix
         fun fromFloat64Array(array64: Float64Array): DOMMatrix
         fun fromMatrix(other: DOMMatrixInit = definedExternally): DOMMatrix
+        fun fromMatrix(other: DOMMatrixReadOnly /* DOMMatrixInit */): DOMMatrix
     }
 }

@@ -4,6 +4,7 @@ package dom.svg
 
 import dom.geometry.DOMPoint
 import dom.geometry.DOMPointInit
+import dom.geometry.DOMPointReadOnly
 import dom.geometry.DOMRect
 
 sealed external class SVGTextContentElement :
@@ -11,6 +12,7 @@ sealed external class SVGTextContentElement :
     val lengthAdjust: SVGAnimatedEnumeration
     val textLength: SVGAnimatedLength
     fun getCharNumAtPosition(point: DOMPointInit = definedExternally): Number
+    fun getCharNumAtPosition(point: DOMPointReadOnly /* DOMPointInit */): Number
     fun getComputedTextLength(): Number
     fun getEndPositionOfChar(charnum: Number): DOMPoint
     fun getExtentOfChar(charnum: Number): DOMRect

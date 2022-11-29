@@ -13,9 +13,11 @@ open external class DOMPointReadOnly(
     open val y: Double
     open val z: Double
     fun matrixTransform(matrix: DOMMatrixInit = definedExternally): DOMPoint
+    fun matrixTransform(matrix: DOMMatrixReadOnly /* DOMMatrixInit */): DOMPoint
     fun toJSON(): Any
 
     companion object {
         fun fromPoint(other: DOMPointInit = definedExternally): DOMPointReadOnly
+        fun fromPoint(other: DOMPointReadOnly /* DOMPointInit */): DOMPointReadOnly
     }
 }

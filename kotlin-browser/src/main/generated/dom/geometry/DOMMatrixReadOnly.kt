@@ -37,6 +37,7 @@ open external class DOMMatrixReadOnly(
     fun flipY(): DOMMatrix
     fun inverse(): DOMMatrix
     fun multiply(other: DOMMatrixInit = definedExternally): DOMMatrix
+    fun multiply(other: DOMMatrixReadOnly /* DOMMatrixInit */): DOMMatrix
     fun rotate(
         rotX: Number = definedExternally,
         rotY: Number = definedExternally,
@@ -77,6 +78,7 @@ open external class DOMMatrixReadOnly(
     fun toFloat64Array(): Float64Array
     fun toJSON(): Any
     fun transformPoint(point: DOMPointInit = definedExternally): DOMPoint
+    fun transformPoint(point: DOMPointReadOnly /* DOMPointInit */): DOMPoint
     fun translate(
         tx: Number = definedExternally,
         ty: Number = definedExternally,
@@ -87,5 +89,6 @@ open external class DOMMatrixReadOnly(
         fun fromFloat32Array(array32: Float32Array): DOMMatrixReadOnly
         fun fromFloat64Array(array64: Float64Array): DOMMatrixReadOnly
         fun fromMatrix(other: DOMMatrixInit = definedExternally): DOMMatrixReadOnly
+        fun fromMatrix(other: DOMMatrixReadOnly /* DOMMatrixInit */): DOMMatrixReadOnly
     }
 }

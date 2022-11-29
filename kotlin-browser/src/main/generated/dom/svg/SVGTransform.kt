@@ -4,12 +4,14 @@ package dom.svg
 
 import dom.geometry.DOMMatrix
 import dom.geometry.DOMMatrix2DInit
+import dom.geometry.DOMMatrixReadOnly
 
 sealed external class SVGTransform {
     val angle: Double
     val matrix: DOMMatrix
     val type: Short
     fun setMatrix(matrix: DOMMatrix2DInit = definedExternally)
+    fun setMatrix(matrix: DOMMatrixReadOnly /* DOMMatrix2DInit */)
     fun setRotate(
         angle: Number,
         cx: Number,

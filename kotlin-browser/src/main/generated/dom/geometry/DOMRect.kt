@@ -15,5 +15,6 @@ external class DOMRect(
 
     companion object {
         fun fromRect(other: DOMRectInit = definedExternally): DOMRect
+        fun fromRect(other: DOMRectReadOnly /* DOMRectInit */): DOMRect
     }
 }

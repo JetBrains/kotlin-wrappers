@@ -36,6 +36,7 @@ sealed external class SVGSVGElement :
     fun createSVGRect(): DOMRect
     fun createSVGTransform(): SVGTransform
     fun createSVGTransformFromMatrix(matrix: DOMMatrix2DInit = definedExternally): SVGTransform
+    fun createSVGTransformFromMatrix(matrix: DOMMatrixReadOnly /* DOMMatrix2DInit */): SVGTransform
     fun deselectAll()
     fun getCurrentTime(): Number
     fun getElementById(elementId: String): Element

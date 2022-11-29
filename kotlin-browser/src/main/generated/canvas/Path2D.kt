@@ -3,6 +3,7 @@
 package canvas
 
 import dom.geometry.DOMMatrix2DInit
+import dom.geometry.DOMMatrixReadOnly
 
 external class Path2D(
     path: Path2D = definedExternally,
@@ -13,5 +14,10 @@ external class Path2D(
     fun addPath(
         path: Path2D,
         transform: DOMMatrix2DInit = definedExternally,
+    )
+
+    fun addPath(
+        path: Path2D,
+        transform: DOMMatrixReadOnly, /* DOMMatrix2DInit */
     )
 }
