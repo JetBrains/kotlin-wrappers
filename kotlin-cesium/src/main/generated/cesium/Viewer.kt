@@ -619,7 +619,7 @@ external class Viewer(
      *   Default value - `true`
      * @property [automaticallyTrackDataSourceClocks] If true, this widget will automatically track the clock settings of newly added DataSources, updating if the DataSource's clock changes.  Set this to false if you want to configure the clock independently.
      *   Default value - `true`
-     * @property [contextOptions] Context and WebGL creation properties corresponding to `options` passed to [Scene].
+     * @property [contextOptions] Context and WebGL creation properties passed to [Scene].
      * @property [sceneMode] The initial scene mode.
      *   Default value - [SceneMode.SCENE3D]
      * @property [mapProjection] The map projection to use in 2D and Columbus View modes.
@@ -683,7 +683,7 @@ external class Viewer(
         var showRenderLoopErrors: Boolean?
         var useBrowserRecommendedResolution: Boolean?
         var automaticallyTrackDataSourceClocks: Boolean?
-        var contextOptions: Any?
+        var contextOptions: ContextOptions?
         var sceneMode: SceneMode?
         var mapProjection: MapProjection?
         var globe: dynamic

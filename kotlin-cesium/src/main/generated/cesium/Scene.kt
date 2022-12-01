@@ -3,6 +3,10 @@
 @file:JsModule("cesium")
 @file:JsNonModule
 
+@file:Suppress(
+    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
+)
+
 package cesium
 
 import dom.Element
@@ -12,37 +16,6 @@ import js.core.ReadonlyArray
 /**
  * The container for all 3D graphical objects and state in a Cesium virtual scene.  Generally,
  * a scene is not created directly; instead, it is implicitly created by [CesiumWidget].
- *
- * <em>`contextOptions` parameter details:</em>
- *
- * The default values are:
- * ```
- * {
- *   webgl : {
- *     alpha : false,
- *     depth : true,
- *     stencil : false,
- *     antialias : true,
- *     powerPreference: 'high-performance',
- *     premultipliedAlpha : true,
- *     preserveDrawingBuffer : false,
- *     failIfMajorPerformanceCaveat : false
- *   },
- *   allowTextureFilterAnisotropic : true
- * }
- * ```
- *
- * The `webgl` property corresponds to the [WebGLContextAttributes](http://www.khronos.org/registry/webgl/specs/latest/#5.2)
- * object used to create the WebGL context.
- *
- * `webgl.alpha` defaults to false, which can improve performance compared to the standard WebGL default
- * of true.  If an application needs to composite Cesium above other HTML elements using alpha-blending, set
- * `webgl.alpha` to true.
- *
- * The other `webgl` properties match the WebGL defaults for [WebGLContextAttributes](http://www.khronos.org/registry/webgl/specs/latest/#5.2).
- *
- * `allowTextureFilterAnisotropic` defaults to true, which enables anisotropic texture filtering when the
- * WebGL extension is supported.  Setting this to false will improve performance, but hurt visual quality, especially for horizon views.
  * ```
  * // Create scene without anisotropic texture filtering
  * const scene = new Scene({
@@ -53,19 +26,11 @@ import js.core.ReadonlyArray
  * });
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Scene.html">Online Documentation</a>
- *
- * @constructor
- * @param [depthPlaneEllipsoidOffset] Adjust the DepthPlane to address rendering artefacts below ellipsoid zero elevation.
- *   Default value - `0.0`
- * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Scene.html">Online Documentation</a>
  */
-external class Scene(
-    options: ConstructorOptions,
-    depthPlaneEllipsoidOffset: Double? = definedExternally,
-) {
+external class Scene(options: ConstructorOptions) {
     /**
      * @property [canvas] The HTML canvas element to create the scene for.
-     * @property [contextOptions] Context and WebGL creation properties.  See details above.
+     * @property [contextOptions] Context and WebGL creation properties.
      * @property [creditContainer] The HTML element in which the credits will be displayed.
      * @property [creditViewport] The HTML element in which to display the credit popup.  If not specified, the viewport will be a added as a sibling of the canvas.
      * @property [mapProjection] The map projection to use in 2D and Columbus View modes.
@@ -82,12 +47,14 @@ external class Scene(
      *   Default value - `false`
      * @property [maximumRenderTimeChange] If requestRenderMode is true, this value defines the maximum change in simulation time allowed before a render is requested. See [Improving Performance with Explicit Rendering](https://cesium.com/blog/2018/01/24/cesium-scene-rendering-performance/).
      *   Default value - `0.0`
+     * @property [depthPlaneEllipsoidOffset] Adjust the DepthPlane to address rendering artefacts below ellipsoid zero elevation.
+     *   Default value - `0.0`
      * @property [msaaSamples] If provided, this value controls the rate of multisample antialiasing. Typical multisampling rates are 2, 4, and sometimes 8 samples per pixel. Higher sampling rates of MSAA may impact performance in exchange for improved visual quality. This value only applies to WebGL2 contexts that support multisample render targets.
      *   Default value - `1`
      */
     interface ConstructorOptions {
         var canvas: HTMLCanvasElement
-        var contextOptions: Any?
+        var contextOptions: ContextOptions?
         var creditContainer: Element?
         var creditViewport: Element?
         var mapProjection: MapProjection?
@@ -97,6 +64,7 @@ external class Scene(
         var mapMode2D: MapMode2D?
         var requestRenderMode: Boolean?
         var maximumRenderTimeChange: Double?
+        var depthPlaneEllipsoidOffset: Double?
         var msaaSamples: Double?
     }
 
@@ -660,7 +628,7 @@ external class Scene(
 
     /**
      * Update and render the scene. It is usually not necessary to call this function
-     * directly because [CesiumWidget] or [Viewer] do it automatically.
+     * directly because [CesiumWidget] will do it automatically.
      * @param [time] The simulation time at which to render.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Scene.html#render">Online Documentation</a>
      */
@@ -932,4 +900,12 @@ external class Scene(
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Scene.html#destroy">Online Documentation</a>
      */
     fun destroy()
+}
+
+inline fun Scene(
+    block: Scene.ConstructorOptions.() -> Unit,
+): Scene {
+    val options: Scene.ConstructorOptions = js("({})")
+    block(options)
+    return Scene(options)
 }

@@ -77,7 +77,7 @@ external class CesiumWidget(
      * @property [targetFrameRate] The target frame rate when using the default render loop.
      * @property [showRenderLoopErrors] If true, this widget will automatically display an HTML panel to the user containing the error, if a render loop error occurs.
      *   Default value - `true`
-     * @property [contextOptions] Context and WebGL creation properties corresponding to `options` passed to [Scene].
+     * @property [contextOptions] Context and WebGL creation properties passed to [Scene].
      * @property [creditContainer] The DOM element that will contain the [CreditDisplay].  If not specified, the credits are added
      *   to the bottom of the widget itself.
      * @property [creditViewport] The DOM element that will contain the credit pop up created by the [CreditDisplay].  If not specified, it will appear over the widget itself.
@@ -111,7 +111,7 @@ external class CesiumWidget(
         var useBrowserRecommendedResolution: Boolean?
         var targetFrameRate: Int?
         var showRenderLoopErrors: Boolean?
-        var contextOptions: Any?
+        var contextOptions: ContextOptions?
         var creditContainer: Element?
         var creditViewport: Element?
         var shadows: Boolean?
