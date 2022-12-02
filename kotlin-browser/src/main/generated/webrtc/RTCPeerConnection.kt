@@ -6,6 +6,7 @@ import js.core.ReadonlyArray
 import js.core.Void
 import media.streams.MediaStream
 import media.streams.MediaStreamTrack
+import web.crypto.Algorithm
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventTarget
@@ -71,6 +72,7 @@ external class RTCPeerConnection(
     fun setRemoteDescription(description: RTCSessionDescriptionInit): Promise<Void>
 
     companion object {
-        fun generateCertificate(keygenAlgorithm: Any /* AlgorithmIdentifier */): Promise<RTCCertificate>
+        fun generateCertificate(keygenAlgorithm: Algorithm): Promise<RTCCertificate>
+        fun generateCertificate(keygenAlgorithm: String): Promise<RTCCertificate>
     }
 }
