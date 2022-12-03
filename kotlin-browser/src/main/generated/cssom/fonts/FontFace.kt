@@ -2,13 +2,27 @@
 
 package cssom.fonts
 
+import js.buffer.ArrayBuffer
+import js.buffer.ArrayBufferView
 import kotlin.js.Promise
 
 external class FontFace(
     family: String,
-    source: String, /* | BinaryData */
+    source: String,
     descriptors: FontFaceDescriptors = definedExternally,
 ) {
+    constructor(
+        family: String,
+        source: ArrayBuffer,
+        descriptors: FontFaceDescriptors = definedExternally,
+    )
+
+    constructor(
+        family: String,
+        source: ArrayBufferView,
+        descriptors: FontFaceDescriptors = definedExternally,
+    )
+
     var ascentOverride: String
     var descentOverride: String
     var display: String
