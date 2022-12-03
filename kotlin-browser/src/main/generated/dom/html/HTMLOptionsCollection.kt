@@ -30,8 +30,23 @@ sealed external class HTMLOptionsCollection :
      * This method will throw a "HierarchyRequestError" DOMException if element is an ancestor of the element into which it is to be inserted.
      */
     fun add(
-        element: HTMLElement, /* HTMLOptionElement | HTMLOptGroupElement */
-        before: Any? /* HTMLElement | number */ = definedExternally,
+        element: HTMLOptionElement,
+        before: HTMLElement? = definedExternally,
+    )
+
+    fun add(
+        element: HTMLOptionElement,
+        before: Number?,
+    )
+
+    fun add(
+        element: HTMLOptGroupElement,
+        before: HTMLElement? = definedExternally,
+    )
+
+    fun add(
+        element: HTMLOptGroupElement,
+        before: Number?,
     )
 
     /** Removes the item with index index from the collection. */

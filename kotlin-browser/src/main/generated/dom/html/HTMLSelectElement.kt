@@ -56,8 +56,23 @@ abstract external class HTMLSelectElement :
      * @param before Variant of type Object that specifies an element to insert before, or null to append the object to the collection.
      */
     fun add(
-        element: HTMLElement, /* HTMLOptionElement | HTMLOptGroupElement */
-        before: Any? /* HTMLElement | number */ = definedExternally,
+        element: HTMLOptionElement,
+        before: HTMLElement? = definedExternally,
+    )
+
+    fun add(
+        element: HTMLOptionElement,
+        before: Number?,
+    )
+
+    fun add(
+        element: HTMLOptGroupElement,
+        before: HTMLElement? = definedExternally,
+    )
+
+    fun add(
+        element: HTMLOptGroupElement,
+        before: Number?,
     )
 
     /** Returns whether a form will validate when it is submitted, without having to submit it. */
