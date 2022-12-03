@@ -4,6 +4,7 @@ package web.idb
 
 import dom.DOMStringList
 import js.core.JsLong
+import js.core.ReadonlyArray
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventTarget
@@ -45,7 +46,13 @@ sealed external class IDBDatabase :
 
     /** Returns a new transaction with the given mode ("readonly" or "readwrite") and scope which can be a single object store name or an array of names. */
     fun transaction(
-        storeNames: Any, /* string | string[] */
+        storeNames: String,
+        mode: IDBTransactionMode = definedExternally,
+        options: IDBTransactionOptions = definedExternally,
+    ): IDBTransaction
+
+    fun transaction(
+        storeNames: ReadonlyArray<String>,
         mode: IDBTransactionMode = definedExternally,
         options: IDBTransactionOptions = definedExternally,
     ): IDBTransaction

@@ -58,7 +58,13 @@ sealed external class IDBObjectStore {
      */
     fun createIndex(
         name: String,
-        keyPath: Any, /* string | string[] */
+        keyPath: String,
+        options: IDBIndexParameters = definedExternally,
+    ): IDBIndex
+
+    fun createIndex(
+        name: String,
+        keyPath: ReadonlyArray<String>,
         options: IDBIndexParameters = definedExternally,
     ): IDBIndex
 

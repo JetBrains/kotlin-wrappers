@@ -4,6 +4,7 @@ package web.audio
 
 import js.buffer.ArrayBuffer
 import js.core.ReadonlyArray
+import js.typedarrays.Float32Array
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventTarget
@@ -43,8 +44,14 @@ sealed external class BaseAudioContext :
     fun createOscillator(): OscillatorNode
     fun createPanner(): PannerNode
     fun createPeriodicWave(
-        real: ReadonlyArray<Double>, /* | Float32Array */
-        imag: ReadonlyArray<Double>, /* | Float32Array */
+        real: ReadonlyArray<Double>,
+        imag: ReadonlyArray<Double>,
+        constraints: PeriodicWaveConstraints = definedExternally,
+    ): PeriodicWave
+
+    fun createPeriodicWave(
+        real: Float32Array,
+        imag: Float32Array,
         constraints: PeriodicWaveConstraints = definedExternally,
     ): PeriodicWave
 

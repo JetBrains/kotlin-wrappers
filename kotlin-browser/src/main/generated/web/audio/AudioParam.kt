@@ -3,6 +3,7 @@
 package web.audio
 
 import js.core.ReadonlyArray
+import js.typedarrays.Float32Array
 
 sealed external class AudioParam {
     var automationRate: AutomationRate
@@ -34,7 +35,13 @@ sealed external class AudioParam {
     ): AudioParam
 
     fun setValueCurveAtTime(
-        values: ReadonlyArray<Double>, /* | Float32Array */
+        values: ReadonlyArray<Double>,
+        startTime: Number,
+        duration: Number,
+    ): AudioParam
+
+    fun setValueCurveAtTime(
+        values: Float32Array,
         startTime: Number,
         duration: Number,
     ): AudioParam

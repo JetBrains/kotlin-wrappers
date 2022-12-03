@@ -116,7 +116,8 @@ external class XMLHttpRequest :
      *
      * Throws an "InvalidStateError" DOMException if either state is not opened or the send() flag is set.
      */
-    fun send(body: XMLHttpRequestBodyInit /* Document */? = definedExternally)
+    fun send(body: Document? = definedExternally)
+    fun send(body: XMLHttpRequestBodyInit?)
 
     /**
      * Combines a header in author request headers.
