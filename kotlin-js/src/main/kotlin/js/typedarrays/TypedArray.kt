@@ -15,6 +15,10 @@ sealed external class TypedArray<S : TypedArray<S, T>, T : Any /* Number */> :
     override val byteOffset: Int
     override val byteLength: Int
 
+    /**
+     * Returns the item located at the specified index.
+     * @param index The zero-based index of the desired code unit. A negative index will count back from the last item.
+     */
     fun at(index: Int): T?
 
     fun set(
@@ -113,6 +117,16 @@ sealed external class TypedArray<S : TypedArray<S, T>, T : Any /* Number */> :
      * If thisArg is omitted, undefined is used as the this value.
      */
     fun forEach(action: (value: T) -> Unit)
+
+    /**
+     * Determines whether an array includes a certain element, returning true or false as appropriate.
+     * @param searchElement The element to search for.
+     * @param fromIndex The position in this array at which to begin searching for searchElement.
+     */
+    fun includes(
+        searchElement: T,
+        fromIndex: Int = definedExternally,
+    ): Boolean
 
     /**
      * Returns the index of the first occurrence of a value in an array.
