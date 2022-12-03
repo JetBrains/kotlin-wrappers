@@ -3,12 +3,15 @@ package js.typedarrays
 import js.buffer.ArrayBuffer
 import js.buffer.ArrayBufferView
 import js.core.ArrayLike
+import js.core.HasSymbol
+import js.core.JsIterable
 import js.core.ReadonlyArray
 
 @JsName("DONT_USE_IS_AS_OPERATORS_WITH_SYNTHETIC_TYPED_ARRAY")
 sealed external class TypedArray<S : TypedArray<S, T>, T : Any /* Number */> :
     ArrayBufferView,
-    ArrayLike<T> {
+    ArrayLike<T>,
+    HasSymbol.iterator<JsIterable.Iterator<T>> {
 
     override val length: Int
     override val buffer: ArrayBuffer
