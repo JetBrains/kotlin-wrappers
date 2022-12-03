@@ -165,7 +165,13 @@ abstract external class Document :
     fun createElementNS(
         namespace: String?,
         qualifiedName: String,
-        options: ElementCreationOptions /* | String */ = definedExternally,
+        options: String = definedExternally,
+    ): Element
+
+    fun createElementNS(
+        namespace: String?,
+        qualifiedName: String,
+        options: ElementCreationOptions,
     ): Element
 
     /**
