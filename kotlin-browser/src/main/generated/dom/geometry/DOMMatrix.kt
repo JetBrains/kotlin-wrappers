@@ -7,8 +7,10 @@ import js.typedarrays.Float32Array
 import js.typedarrays.Float64Array
 
 external class DOMMatrix(
-    init: ReadonlyArray<Double> /* | String */ = definedExternally,
+    init: String = definedExternally,
 ) : DOMMatrixReadOnly {
+    constructor(init: ReadonlyArray<Double>)
+
     override var a: Double
     override var b: Double
     override var c: Double

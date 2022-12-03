@@ -7,8 +7,10 @@ import js.typedarrays.Float32Array
 import js.typedarrays.Float64Array
 
 open external class DOMMatrixReadOnly(
-    init: ReadonlyArray<Double> /* | String */ = definedExternally,
+    init: String = definedExternally,
 ) {
+    constructor(init: ReadonlyArray<Double>)
+
     open val a: Double
     open val b: Double
     open val c: Double
