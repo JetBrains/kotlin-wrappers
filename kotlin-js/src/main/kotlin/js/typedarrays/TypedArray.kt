@@ -29,8 +29,4 @@ sealed external class TypedArray<S : TypedArray<S, T>, T : Any /* Number */> :
         start: Int,
         end: Int
     ): S
-
-    companion object {
-        val BYTES_PER_ELEMENT: Int
-    }
 }
