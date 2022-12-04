@@ -175,7 +175,7 @@ sealed external class TypedArray<S : TypedArray<S, T>, T : Any /* Number */> :
     /**
      * Reverses the elements in an Array.
      */
-    fun reverse(): S
+    open fun reverse(): S
 
     /**
      * Returns a section of an array.
