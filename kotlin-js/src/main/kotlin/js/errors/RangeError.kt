@@ -1,5 +1,6 @@
 package js.errors
 
 external class RangeError(
-    message: String? = definedExternally
+    message: String? = definedExternally,
+    options: ErrorOptions? = definedExternally,
 ) : JsError
