@@ -3,7 +3,7 @@ package web.url
 import js.core.*
 
 external class URLSearchParams() :
-    HasSymbol.iterator<JsTuple2<String, String>> {
+    HasSymbol.iterator<() -> JsIterable.Iterator<JsTuple2<String, String>>> {
 
     constructor(init: ReadonlyArray<JsTuple2<String, String>>)
     constructor(init: ReadonlyRecord<String, String>)

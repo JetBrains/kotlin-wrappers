@@ -11,7 +11,7 @@ import js.core.ReadonlyArray
 sealed external class TypedArray<S : TypedArray<S, T>, T : Any /* Number */> :
     ArrayBufferView,
     ArrayLike<T>,
-    HasSymbol.iterator<JsIterable.Iterator<T>> {
+    HasSymbol.iterator<() -> JsIterable.Iterator<T>> {
 
     override val length: Int
     override val buffer: ArrayBuffer

@@ -4,7 +4,7 @@ sealed external interface HasSymbol {
     interface asyncIterator<out V>
     interface hasInstance<out V>
     interface isConcatSpreadable<out V>
-    interface iterator<out V>
+    interface iterator<out V : () -> JsIterator<*>>
     interface match<out V>
     interface matchAll<out V>
     interface replace<out V>
@@ -31,7 +31,7 @@ inline operator fun <V> HasSymbol.isConcatSpreadable<V>.get(
 ): V =
     asDynamic()[key]
 
-inline operator fun <V> HasSymbol.iterator<V>.get(
+inline operator fun <V : () -> JsIterator<*>> HasSymbol.iterator<V>.get(
     key: Symbol.iterator,
 ): V =
     asDynamic()[key]
