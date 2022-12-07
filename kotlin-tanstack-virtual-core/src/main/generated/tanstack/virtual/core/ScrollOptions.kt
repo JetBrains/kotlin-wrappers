@@ -2,7 +2,8 @@
 
 package tanstack.virtual.core
 
-external interface ScrollToOptions {
-    var align: ScrollAlignment?
+external interface ScrollOptions {
+    var adjustments: Int?
     var behavior: ScrollBehavior?
+    var sync: Boolean
 }

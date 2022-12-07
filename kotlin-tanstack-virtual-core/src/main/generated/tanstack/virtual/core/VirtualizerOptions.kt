@@ -2,13 +2,14 @@
 
 package tanstack.virtual.core
 
+import dom.Element
 import js.core.ReadonlyArray
 
-external interface VirtualizerOptions<TScrollElement, TItemElement> {
+external interface VirtualizerOptions<TScrollElement : Any /* Element | Window */, TItemElement : Element> {
     var count: Int
-    var getScrollElement: () -> TScrollElement
+    var getScrollElement: () -> TScrollElement?
     var estimateSize: (index: Int) -> Int
-    var scrollToFn: (offset: Int, canSmooth: Boolean, instance: Virtualizer<TScrollElement, TItemElement>) -> Unit
+    var scrollToFn: (offset: Int, options: ScrollOptions, instance: Virtualizer<TScrollElement, TItemElement>) -> Unit
     var observeElementRect: (instance: Virtualizer<TScrollElement, TItemElement>, cb: (rect: Rect) -> Unit) -> (() -> Unit)?
     var observeElementOffset: (instance: Virtualizer<TScrollElement, TItemElement>, cb: (offset: Int) -> Unit) -> (() -> Unit)?
     var debug: Any?
@@ -24,5 +25,7 @@ external interface VirtualizerOptions<TScrollElement, TItemElement> {
     var initialOffset: Int?
     var getItemKey: ((index: Int) -> Key)?
     var rangeExtractor: ((range: Range) -> ReadonlyArray<Int>)?
-    var enableSmoothScroll: Boolean?
+    var scrollMargin: Int?
+    var scrollingDelay: Int?
+    var indexAttribute: String?
 }

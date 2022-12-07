@@ -3,10 +3,11 @@
 
 package tanstack.react.virtual
 
+import dom.Element
 import tanstack.virtual.core.Virtualizer
 import tanstack.virtual.core.VirtualizerOptions
 
-external interface UseVirtualizerOptions<TScrollElement, TItemElement> :
+external interface UseVirtualizerOptions<TScrollElement : Any, TItemElement : Element> :
     VirtualizerOptions<TScrollElement, TItemElement> {
 
     @Deprecated(message = "Excluded property", level = DeprecationLevel.HIDDEN)
@@ -19,6 +20,6 @@ external interface UseVirtualizerOptions<TScrollElement, TItemElement> :
     override var scrollToFn: dynamic
 }
 
-external fun <TScrollElement, TItemElement> useVirtualizer(
+external fun <TScrollElement : Any, TItemElement : Element> useVirtualizer(
     options: UseVirtualizerOptions<TScrollElement, TItemElement>
 ): Virtualizer<TScrollElement, TItemElement>
