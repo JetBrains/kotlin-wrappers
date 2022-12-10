@@ -1,11 +1,10 @@
 package js.collections
 
-import js.core.HasSymbol
 import js.core.JsIterable
 import js.core.JsTuple2
 
 external interface ReadonlySet<T> :
-    HasSymbol.iterator<() -> JsIterable.Iterator<T>> {
+    JsIterable<T> {
 
     val size: Int
 

@@ -1,9 +1,12 @@
 package web.url
 
-import js.core.*
+import js.core.JsIterable
+import js.core.JsTuple2
+import js.core.ReadonlyArray
+import js.core.ReadonlyRecord
 
 external class URLSearchParams() :
-    HasSymbol.iterator<() -> JsIterable.Iterator<JsTuple2<String, String>>> {
+    JsIterable<JsTuple2<String, String>> {
 
     constructor(init: ReadonlyArray<JsTuple2<String, String>>)
     constructor(init: ReadonlyRecord<String, String>)
