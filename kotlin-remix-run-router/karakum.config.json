@@ -1,6 +1,7 @@
 {
     "input": [
-        "<nodeModules>/@remix-run/router/dist/history.d.ts"
+        "<nodeModules>/@remix-run/router/dist/history.d.ts",
+        "<nodeModules>/@remix-run/router/dist/utils.d.ts"
     ],
     "output": "src/main/generated",
     "libraryName": "@remix-run/router",
@@ -13,8 +14,43 @@
         "createURL.kt": [
             "web.url.URL"
         ],
+        "ShouldRevalidateFunctionArgs.kt": [
+            "web.url.URL"
+        ],
         "UrlHistoryOptions.kt": [
             "dom.html.Window"
+        ],
+        "DataFunctionArgs.kt": [
+            "web.http.Request"
+        ],
+        "RedirectFunction.kt": [
+            "web.http.Response"
+        ],
+        "JsonFunction.kt": [
+            "web.http.Response"
+        ],
+        "DeferredData.kt": [
+            "kotlin.js.Promise",
+            "js.core.Record",
+            "web.abort.AbortSignal"
+        ],
+        "generatePath.kt": [
+            "js.core.Record"
+        ],
+        "defer.kt": [
+            "js.core.Record"
+        ],
+        "Params.kt": [
+            "js.core.Record"
+        ],
+        "Submission.kt": [
+            "web.http.FormData"
+        ],
+        "SuccessResult.kt": [
+            "web.http.Headers"
+        ],
+        "ErrorResult.kt": [
+            "web.http.Headers"
         ]
     }
 }
