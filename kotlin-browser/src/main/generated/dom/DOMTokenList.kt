@@ -3,9 +3,11 @@
 package dom
 
 import js.core.ArrayLike
+import js.core.JsIterable
 
 sealed external class DOMTokenList :
-    ArrayLike<String> {
+    ArrayLike<String>,
+    JsIterable<String> {
     /**
      * Returns the associated set as string.
      *

@@ -5,9 +5,11 @@ package dom.svg
 import dom.geometry.DOMMatrix2DInit
 import dom.geometry.DOMMatrixReadOnly
 import js.core.ArrayLike
+import js.core.JsIterable
 
 sealed external class SVGTransformList :
-    ArrayLike<SVGTransform> {
+    ArrayLike<SVGTransform>,
+    JsIterable<SVGTransform> {
     val numberOfItems: Int
     fun appendItem(newItem: SVGTransform): SVGTransform
     fun clear()

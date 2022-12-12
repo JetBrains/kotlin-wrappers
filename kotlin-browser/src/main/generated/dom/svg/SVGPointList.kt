@@ -4,9 +4,11 @@ package dom.svg
 
 import dom.geometry.DOMPoint
 import js.core.ArrayLike
+import js.core.JsIterable
 
 sealed external class SVGPointList :
-    ArrayLike<DOMPoint> {
+    ArrayLike<DOMPoint>,
+    JsIterable<DOMPoint> {
     val numberOfItems: Int
     fun appendItem(newItem: DOMPoint): DOMPoint
     fun clear()

@@ -3,9 +3,11 @@
 package dom
 
 import js.core.ArrayLike
+import js.core.JsIterable
 
 sealed external class NamedNodeMap :
-    ArrayLike<Attr> {
+    ArrayLike<Attr>,
+    JsIterable<Attr> {
     fun getNamedItem(qualifiedName: String): Attr?
     fun getNamedItemNS(
         namespace: String?,

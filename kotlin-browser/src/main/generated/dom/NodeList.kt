@@ -3,9 +3,11 @@
 package dom
 
 import js.core.ArrayLike
+import js.core.JsIterable
 
 sealed external class NodeList<T : Node> :
-    ArrayLike<T> {
+    ArrayLike<T>,
+    JsIterable<T> {
     /** Returns the node with index index from the collection. The nodes are sorted in tree order. */
     fun item(index: Int): T?
 

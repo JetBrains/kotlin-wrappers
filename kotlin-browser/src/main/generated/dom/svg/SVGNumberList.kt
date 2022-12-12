@@ -3,9 +3,11 @@
 package dom.svg
 
 import js.core.ArrayLike
+import js.core.JsIterable
 
 sealed external class SVGNumberList :
-    ArrayLike<SVGNumber> {
+    ArrayLike<SVGNumber>,
+    JsIterable<SVGNumber> {
     val numberOfItems: Int
     fun appendItem(newItem: SVGNumber): SVGNumber
     fun clear()

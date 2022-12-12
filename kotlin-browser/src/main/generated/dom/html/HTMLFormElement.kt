@@ -4,10 +4,12 @@ package dom.html
 
 import dom.Element
 import js.core.ArrayLike
+import js.core.JsIterable
 
 abstract external class HTMLFormElement :
     HTMLElement,
-    ArrayLike<Element> {
+    ArrayLike<Element>,
+    JsIterable<Element> {
     /** Sets or retrieves a list of character encodings for input data that must be accepted by the server processing the form. */
     var acceptCharset: String
 

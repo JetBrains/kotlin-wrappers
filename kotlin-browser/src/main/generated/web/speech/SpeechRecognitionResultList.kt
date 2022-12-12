@@ -3,8 +3,10 @@
 package web.speech
 
 import js.core.ArrayLike
+import js.core.JsIterable
 
 sealed external class SpeechRecognitionResultList :
-    ArrayLike<SpeechRecognitionResult> {
+    ArrayLike<SpeechRecognitionResult>,
+    JsIterable<SpeechRecognitionResult> {
     fun item(index: Int): SpeechRecognitionResult
 }

@@ -3,9 +3,11 @@
 package dom.html
 
 import dom.NodeListOf
+import js.core.JsIterable
 
 abstract external class HTMLSelectElement :
-    HTMLElement {
+    HTMLElement,
+    JsIterable<HTMLOptionElement> {
     var autocomplete: String
     var disabled: Boolean
 

@@ -3,9 +3,11 @@
 package dom.svg
 
 import js.core.ArrayLike
+import js.core.JsIterable
 
 sealed external class SVGLengthList :
-    ArrayLike<SVGLength> {
+    ArrayLike<SVGLength>,
+    JsIterable<SVGLength> {
     val numberOfItems: Int
     fun appendItem(newItem: SVGLength): SVGLength
     fun clear()

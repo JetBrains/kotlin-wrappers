@@ -3,8 +3,10 @@
 package dom.geometry
 
 import js.core.ArrayLike
+import js.core.JsIterable
 
 sealed external class DOMRectList :
-    ArrayLike<DOMRect> {
+    ArrayLike<DOMRect>,
+    JsIterable<DOMRect> {
     fun item(index: Int): DOMRect?
 }

@@ -3,9 +3,11 @@
 package cssom
 
 import js.core.ArrayLike
+import js.core.JsIterable
 
 sealed external class CSSStyleDeclaration :
-    ArrayLike<String> {
+    ArrayLike<String>,
+    JsIterable<String> {
     var accentColor: String
     var alignContent: String
     var alignItems: String

@@ -3,9 +3,11 @@
 package dom.svg
 
 import js.core.ArrayLike
+import js.core.JsIterable
 
 sealed external class SVGStringList :
-    ArrayLike<String> {
+    ArrayLike<String>,
+    JsIterable<String> {
     val numberOfItems: Int
     fun appendItem(newItem: String): String
     fun clear()

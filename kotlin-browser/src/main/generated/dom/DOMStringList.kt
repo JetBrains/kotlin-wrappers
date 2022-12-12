@@ -3,9 +3,11 @@
 package dom
 
 import js.core.ArrayLike
+import js.core.JsIterable
 
 sealed external class DOMStringList :
-    ArrayLike<String> {
+    ArrayLike<String>,
+    JsIterable<String> {
     /** Returns true if strings contains string, and false otherwise. */
     fun contains(string: String): Boolean
 
