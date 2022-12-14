@@ -5,9 +5,9 @@ package dom
 import dom.aria.ARIAMixin
 import dom.geometry.DOMRect
 import dom.geometry.DOMRectList
-import dom.html.HTMLCollectionOf
-import dom.html.ShadowRoot
-import dom.html.ShadowRootInit
+import dom.html.*
+import dom.svg.SVGElement
+import dom.svg.SvgTagName
 import js.core.ReadonlyArray
 import js.core.Void
 import web.events.Event
@@ -67,6 +67,11 @@ abstract external class Element :
 
     /** Creates a shadow root for element and returns it. */
     fun attachShadow(init: ShadowRootInit): ShadowRoot
+
+    /** Returns the first (starting at element) inclusive ancestor that matches selectors, and null otherwise. */
+    fun <T : HTMLElement> closest(selector: HtmlTagName<T>): T?
+    fun <T : SVGElement> closest(selector: SvgTagName<T>): T?
+    fun closest(selector: String): Element?
 
     /** Returns element's first attribute whose qualified name is qualifiedName, and null if there is no such attribute otherwise. */
     fun getAttribute(qualifiedName: String): String?
