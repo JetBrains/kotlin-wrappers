@@ -4,7 +4,6 @@ import browser.document
 import csstype.ClassName
 import dom.Element
 import dom.html.HTML.div
-import dom.html.createElement
 import js.core.jso
 import kotlinx.css.CssBuilder
 import kotlinx.css.CssDsl

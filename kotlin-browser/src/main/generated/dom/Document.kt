@@ -157,6 +157,16 @@ abstract external class Document :
 
     /** Creates a new document. */
     fun createDocumentFragment(): DocumentFragment
+
+    /**
+     * Creates an instance of the element for the specified tag.
+     * @param tagName The name of an element.
+     */
+    fun <T : HTMLElement> createElement(
+        tagName: HtmlTagName<T>,
+        options: ElementCreationOptions = definedExternally,
+    ): T
+
     fun createElement(
         tagName: String,
         options: ElementCreationOptions = definedExternally,
