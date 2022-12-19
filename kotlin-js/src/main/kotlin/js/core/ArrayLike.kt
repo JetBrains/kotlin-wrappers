@@ -4,10 +4,14 @@ external interface ArrayLike<out T> {
     val length: Int
 }
 
-inline operator fun <T> ArrayLike<T>.get(
+operator fun <T> ArrayLike<T>.get(
     index: Int,
 ): T =
-    asDynamic()[index]
+    if (index >= 0 && index < length) {
+        asDynamic()[index]
+    } else {
+        throw IndexOutOfBoundsException("index $index is not in range [0..${length - 1})]")
+    }
 
 fun <T> ArrayLike<T>.asList(): List<T> =
     object : AbstractList<T>() {
