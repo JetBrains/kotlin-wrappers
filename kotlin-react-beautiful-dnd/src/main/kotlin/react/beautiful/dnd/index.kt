@@ -61,17 +61,6 @@ external interface Spacing {
     var left: Double
 }
 
-/**
- * IDs
- */
-
-typealias Id = String
-typealias DraggableId = Id
-typealias DroppableId = Id
-typealias TypeId = Id
-typealias ContextId = Id
-typealias ElementId = Id
-
 typealias DroppableMode = String // 'standard' | 'virtual';
 
 external interface DroppableDescriptor {
