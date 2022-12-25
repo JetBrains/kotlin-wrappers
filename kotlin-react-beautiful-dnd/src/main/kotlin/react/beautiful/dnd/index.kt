@@ -3,7 +3,10 @@ package react.beautiful.dnd
 import dom.html.HTMLElement
 import js.core.ReadonlyArray
 import js.core.ReadonlyRecord
-import react.*
+import react.CSSProperties
+import react.Props
+import react.ReactElement
+import react.ReactNode
 import react.dom.events.DragEventHandler
 import react.dom.events.TransitionEventHandler
 import react.dom.html.HTMLAttributes
@@ -550,22 +553,6 @@ external interface SensorAPI {
 typealias Sensor = (api: SensorAPI) -> Unit
 
 /**
- *  DragDropContext
- */
-
-// Refer to https://github.com/atlassian/react-beautiful-dnd/blob/master/src/view/drag-drop-context/drag-drop-context.jsx
-
-external interface DragDropContextProps : PropsWithChildren, Responders {
-    override var children: ReactNode?
-    var dragHandleUsageInstructions: String?
-    var nonce: String?
-    var enableDefaultSensors: Boolean?
-    var sensors: ReadonlyArray<Sensor>?
-}
-
-external val DragDropContext: Component<DragDropContextProps, *>
-
-/**
  *  Droppable
  */
 
@@ -592,21 +579,6 @@ external interface DroppableStateSnapshot {
     var draggingFromThisWith: DraggableId?
     var isUsingPlaceholder: Boolean
 }
-
-external interface DroppableProps : Props {
-    var droppableId: DroppableId
-    var type: TypeId?
-    var mode: DroppableMode?
-    var isDropDisabled: Boolean?
-    var isCombineEnabled: Boolean?
-    var direction: Direction?
-    var ignoreContainerClipping: Boolean?
-    var renderClone: DraggableChildrenFn?
-    var getContainerForClone: (() -> HTMLElement)?
-    var children: (provided: DroppableProvided, snapshot: DroppableStateSnapshot) -> ReactElement<HTMLAttributes<*>>
-}
-
-external val Droppable: Component<DroppableProps, *>
 
 /**
  *  Draggable
@@ -749,20 +721,3 @@ typealias DraggableChildrenFn = (
     snapshot: DraggableStateSnapshot,
     rubric: DraggableRubric,
 ) -> ReactElement<HTMLAttributes<*>>
-
-external interface DraggableProps : Props {
-    var draggableId: DraggableId
-    var index: Int
-    var children: DraggableChildrenFn
-    var isDragDisabled: Boolean?
-    var disableInteractiveElementBlocking: Boolean?
-    var shouldRespectForcePress: Boolean?
-}
-
-external val Draggable: Component<DraggableProps, *>
-
-external fun resetServerContext()
-
-external val useMouseSensor: Sensor
-external val useTouchSensor: Sensor
-external val useKeyboardSensor: Sensor
