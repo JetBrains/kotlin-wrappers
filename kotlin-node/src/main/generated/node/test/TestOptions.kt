@@ -6,11 +6,14 @@ import web.abort.AbortSignal
 
 sealed external interface TestOptions {
     /**
-     * The number of tests that can be run at the same time. If unspecified, subtests inherit this
-     * value from their parent.
-     * @default 1
+     * If a number is provided, then that many tests would run in parallel.
+     * If truthy, it would run (number of cpu cores - 1) tests in parallel.
+     * For subtests, it will be `Infinity` tests in parallel.
+     * If falsy, it would only run one test at a time.
+     * If unspecified, subtests inherit this value from their parent.
+     * @default false
      */
-    var concurrency: Number?
+    var concurrency: Any? /* number | boolean */
 
     /**
      * If truthy, and the test context is configured to run `only` tests, then this test will be

@@ -3,9 +3,34 @@
 package node.test
 
 import js.core.Void
+import web.abort.AbortSignal
 import kotlin.js.Promise
 
 sealed external interface TestContext {
+    /**
+     * This function is used to create a hook running before each subtest of the current test.
+     * @param fn The hook function. If the hook uses callbacks, the callback function is passed as
+     *    the second argument. Default: A no-op function.
+     * @param options Configuration options for the hook.
+     * @since v18.8.0
+     */
+    var beforeEach: (
+        fn: HookFn,
+        options: HookOptions,
+    ) -> Unit /* typeof beforeEach */
+
+    /**
+     * This function is used to create a hook running after each subtest of the current test.
+     * @param fn The hook function. If the hook uses callbacks, the callback function is passed as
+     *    the second argument. Default: A no-op function.
+     * @param options Configuration options for the hook.
+     * @since v18.8.0
+     */
+    var afterEach: (
+        fn: HookFn,
+        options: HookOptions,
+    ) -> Unit /* typeof afterEach */
+
     /**
      * This function is used to write TAP diagnostics to the output. Any diagnostic information is
      * included at the end of the test's results. This function does not return a value.
@@ -15,6 +40,12 @@ sealed external interface TestContext {
     fun diagnostic(message: String)
 
     /**
+     * The name of the test.
+     * @since v18.8.0
+     */
+    val name: String
+
+    /**
      * If `shouldRunOnlyTests` is truthy, the test context will only run tests that have the `only`
      * option set. Otherwise, all tests are run. If Node.js was not started with the `--test-only`
      * command-line option, this function is a no-op.
@@ -22,6 +53,12 @@ sealed external interface TestContext {
      * @since v18.0.0
      */
     fun runOnly(shouldRunOnlyTests: Boolean)
+
+    /**
+     * Can be used to abort test subtasks when the test has been aborted.
+     * @since v18.7.0
+     */
+    val signal: AbortSignal
 
     /**
      * This function causes the test's output to indicate the test as skipped. If `message` is

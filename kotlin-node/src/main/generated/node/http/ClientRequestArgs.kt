@@ -2,35 +2,40 @@
 
 package node.http
 
+import js.core.ReadonlyArray
 import node.net.LookupFunction
 import node.net.Socket
 import web.abort.AbortSignal
 
 sealed external interface ClientRequestArgs {
-    var signal: AbortSignal?
-    var protocol: String?
+    var _defaultAgent: Agent?
+    var agent: Any? /* Agent | boolean */
+    var auth: String?
+
+    // https://github.com/nodejs/node/blob/master/lib/_http_client.js#L278
+    var createConnection: (((options: ClientRequestArgs, oncreate: (error: Error, socket: Socket) -> Unit) -> Socket))?
+    var defaultPort: Any? /* number | string */
+    var family: Number?
+    var headers: OutgoingHttpHeaders?
+    var hints: Int? /* LookupOptions['hints'] */
     var host: String?
     var hostname: String?
-    var family: Number?
-    var port: String?
-    var defaultPort: Any? /* number | string */
+    var insecureHTTPParser: Boolean?
     var localAddress: String?
-    var socketPath: String?
+    var localPort: Number?
+    var lookup: LookupFunction?
 
     /**
-     * @default 8192
+     * @default 16384
      */
     var maxHeaderSize: Number?
     var method: String?
     var path: String?
-    var headers: OutgoingHttpHeaders?
-    var auth: String?
-    var agent: Any? /* Agent | boolean */
-    var _defaultAgent: Agent?
-    var timeout: Number?
+    var port: String?
+    var protocol: String?
     var setHost: Boolean?
-
-    // https://github.com/nodejs/node/blob/master/lib/_http_client.js#L278
-    var createConnection: (((options: ClientRequestArgs, oncreate: (error: Error, socket: Socket) -> Unit) -> Socket))?
-    var lookup: LookupFunction?
+    var signal: AbortSignal?
+    var socketPath: String?
+    var timeout: Number?
+    var uniqueHeaders: ReadonlyArray<Any /* string | string[] */>?
 }
