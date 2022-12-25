@@ -61,8 +61,6 @@ external interface Spacing {
     var left: Double
 }
 
-typealias DroppableMode = String // 'standard' | 'virtual';
-
 external interface DroppableDescriptor {
     var id: DroppableId
     var type: TypeId
@@ -86,8 +84,6 @@ external interface DraggableOptions {
     var shouldRespectForcePress: Boolean
     var isEnabled: Boolean
 }
-
-typealias Direction = String // 'horizontal' | 'vertical';
 
 external interface VerticalAxis : Axis
 
@@ -294,11 +290,6 @@ external interface PagePositions {
     var offset: Position
 }
 
-// There are two seperate modes that a drag can be in
-// FLUID: everything is done in response to highly granular input (eg mouse)
-// SNAP: items move in response to commands (eg keyboard);
-typealias MovementMode = String // 'FLUID' | 'SNAP';
-
 external interface DragPositions {
     var client: ClientPositions
     var page: PagePositions
@@ -330,8 +321,6 @@ external interface DragUpdate : DragStart {
     // populated when a draggable is dragging over another in combine mode
     var combine: Combine?
 }
-
-typealias DropReason = String // 'DROP' | 'CANCEL';
 
 external interface DropResult : DragUpdate {
     var reason: DropReason
@@ -456,8 +445,6 @@ typealias State = Any // IdleState | DraggingState | CollectingState | DropPendi
 typealias StateWhenUpdatesAllowed = Any // DraggingState | CollectingState;
 
 typealias Announce = (message: String) -> Unit
-
-typealias InOutAnimationMode = String // 'none' | 'open' | 'close';
 
 external interface ResponderProvided {
     var announce: Announce
