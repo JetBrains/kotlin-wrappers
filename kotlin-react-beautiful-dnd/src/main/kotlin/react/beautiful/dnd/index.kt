@@ -12,12 +12,12 @@ import react.dom.events.TransitionEventHandler
 import react.dom.html.HTMLAttributes
 import web.events.Event
 
-external interface Position {
+sealed external interface Position {
     var x: Double
     var y: Double
 }
 
-external interface BoxModel {
+sealed external interface BoxModel {
     // content + padding + border + margin
     var marginBox: Rect
 
@@ -37,7 +37,7 @@ external interface BoxModel {
 }
 
 // This is an extension of DOMRect and ClientRect
-external interface Rect {
+sealed external interface Rect {
     // ClientRect
     var top: Double
     var right: Double
@@ -54,20 +54,20 @@ external interface Rect {
     var center: Position
 }
 
-external interface Spacing {
+sealed external interface Spacing {
     var top: Double
     var right: Double
     var bottom: Double
     var left: Double
 }
 
-external interface DroppableDescriptor {
+sealed external interface DroppableDescriptor {
     var id: DroppableId
     var type: TypeId
     var mode: DroppableMode
 }
 
-external interface DraggableDescriptor {
+sealed external interface DraggableDescriptor {
     var id: DraggableId
     var index: Int
 
@@ -79,17 +79,17 @@ external interface DraggableDescriptor {
     var type: TypeId
 }
 
-external interface DraggableOptions {
+sealed external interface DraggableOptions {
     var canDragInteractiveElements: Boolean
     var shouldRespectForcePress: Boolean
     var isEnabled: Boolean
 }
 
-external interface VerticalAxis : Axis
+sealed external interface VerticalAxis : Axis
 
-external interface HorizontalAxis : Axis
+sealed external interface HorizontalAxis : Axis
 
-external interface Axis {
+sealed external interface Axis {
     var direction: String // 'vertical' | 'horizontal'
     var line: String // 'y' | 'x'
     var start: String // 'top' | 'left'
@@ -101,12 +101,12 @@ external interface Axis {
     var crossAxisSize: String // 'width' | 'height'
 }
 
-external interface ScrollSize {
+sealed external interface ScrollSize {
     var scrollHeight: Double
     var scrollWidth: Double
 }
 
-external interface ScrollDifference {
+sealed external interface ScrollDifference {
     var value: Position
 
     // The actual displacement as a result of a scroll is in the opposite
@@ -115,7 +115,7 @@ external interface ScrollDifference {
     var displacement: Position
 }
 
-external interface ScrollDetails {
+sealed external interface ScrollDetails {
     var initial: Position
     var current: Position
 
@@ -124,13 +124,13 @@ external interface ScrollDetails {
     var diff: ScrollDifference
 }
 
-external interface Placeholder {
+sealed external interface Placeholder {
     var client: BoxModel
     var tagName: String
     var display: String
 }
 
-external interface DraggableDimension {
+sealed external interface DraggableDimension {
     var descriptor: DraggableDescriptor
 
     // the placeholder for the draggable
@@ -147,7 +147,7 @@ external interface DraggableDimension {
     var displaceBy: Position
 }
 
-external interface Scrollable {
+sealed external interface Scrollable {
     // This is the window through which the droppable is observed
     // It does not change during a drag
     var pageMarginBox: Rect
@@ -162,7 +162,7 @@ external interface Scrollable {
     var scroll: ScrollDetails
 }
 
-external interface PlaceholderInSubject {
+sealed external interface PlaceholderInSubject {
     // might not actually be increased by
     // placeholder if there is no required space
     var increasedBy: Position?
@@ -173,7 +173,7 @@ external interface PlaceholderInSubject {
     var oldFrameMaxScroll: Position?
 }
 
-external interface DroppableSubject {
+sealed external interface DroppableSubject {
     // raw, unchanging
     var page: BoxModel
     var withPlaceholder: PlaceholderInSubject?
@@ -187,7 +187,7 @@ external interface DroppableSubject {
     var active: Rect?
 }
 
-external interface DroppableDimension {
+sealed external interface DroppableDimension {
     var descriptor: DroppableDescriptor
     var axis: Axis
     var isEnabled: Boolean
@@ -209,7 +209,7 @@ external interface DroppableDimension {
     var subject: DroppableSubject
 }
 
-external interface DraggableLocation {
+sealed external interface DraggableLocation {
     var droppableId: DroppableId
     var index: Int
 }
@@ -222,54 +222,54 @@ typealias DraggableDimensionMap = ReadonlyRecord<String, DraggableDimension>
 
 typealias DroppableDimensionMap = ReadonlyRecord<String, DroppableDimension>
 
-external interface Displacement {
+sealed external interface Displacement {
     var draggableId: DraggableId
     var shouldAnimate: Boolean
 }
 
 typealias DisplacementMap = ReadonlyRecord<String, Displacement>
 
-external interface DisplacedBy {
+sealed external interface DisplacedBy {
     var value: Double
     var point: Position
 }
 
 // details of the item that is being combined with
-external interface Combine {
+sealed external interface Combine {
     var draggableId: DraggableId
     var droppableId: DroppableId
 }
 
-external interface DisplacementGroups {
+sealed external interface DisplacementGroups {
     var all: ReadonlyArray<DraggableId>
     var visible: DisplacementMap
     var invisible: DraggableIdMap
 }
 
-external interface ReorderImpact : ImpactLocation {
+sealed external interface ReorderImpact : ImpactLocation {
     var type: String // 'REORDER'
     var destination: DraggableLocation
 }
 
-external interface CombineImpact: ImpactLocation {
+sealed external interface CombineImpact : ImpactLocation {
     var type: String // 'COMBINE'
     var combine: Combine
 }
 
-external interface ImpactLocation
+sealed external interface ImpactLocation
 
-external interface Displaced {
+sealed external interface Displaced {
     var forwards: DisplacementGroups
     var backwards: DisplacementGroups
 }
 
-external interface DragImpact {
+sealed external interface DragImpact {
     var displaced: DisplacementGroups
     var displacedBy: DisplacedBy
     var at: ImpactLocation?
 }
 
-external interface ClientPositions {
+sealed external interface ClientPositions {
     // where the user initially selected
     // This point is not used to calculate the impact of a dragging item
     // It is used to calculate the offset from the initial selection point
@@ -282,7 +282,7 @@ external interface ClientPositions {
     var offset: Position
 }
 
-external interface PagePositions {
+sealed external interface PagePositions {
     var selection: Position
     var borderBoxCenter: Position
 
@@ -290,12 +290,12 @@ external interface PagePositions {
     var offset: Position
 }
 
-external interface DragPositions {
+sealed external interface DragPositions {
     var client: ClientPositions
     var page: PagePositions
 }
 
-external interface DraggableRubric {
+sealed external interface DraggableRubric {
     var draggableId: DraggableId
     var type: TypeId
     var source: DraggableLocation
@@ -304,17 +304,17 @@ external interface DraggableRubric {
 // Published in onBeforeCapture
 // We cannot give more information as things might change in the
 // onBeforeCapture responder!
-external interface BeforeCapture {
+sealed external interface BeforeCapture {
     var draggableId: DraggableId
     var mode: MovementMode
 }
 
 // published when a drag starts
-external interface DragStart : DraggableRubric {
+sealed external interface DragStart : DraggableRubric {
     var mode: MovementMode
 }
 
-external interface DragUpdate : DragStart {
+sealed external interface DragUpdate : DragStart {
     // may not have any destination (drag to nowhere)
     var destination: DraggableLocation?
 
@@ -322,11 +322,11 @@ external interface DragUpdate : DragStart {
     var combine: Combine?
 }
 
-external interface DropResult : DragUpdate {
+sealed external interface DropResult : DragUpdate {
     var reason: DropReason
 }
 
-external interface ScrollOptions {
+sealed external interface ScrollOptions {
     var shouldPublishImmediately: Boolean
 }
 
@@ -336,58 +336,58 @@ external interface ScrollOptions {
 // confusion the request is just an id which is looked up
 // in the dimension-marshal post-flush
 // Not including droppableId as it might change in a drop flush
-external interface LiftRequest {
+sealed external interface LiftRequest {
     var draggableId: DraggableId
     var scrollOptions: ScrollOptions
 }
 
-external interface Critical {
+sealed external interface Critical {
     var draggable: DraggableDescriptor
     var droppable: DroppableDescriptor
 }
 
-external interface Viewport {
+sealed external interface Viewport {
     // live updates with the latest values
     var frame: Rect
     var scroll: ScrollDetails
 }
 
-external interface LiftEffect {
+sealed external interface LiftEffect {
     var inVirtualList: Boolean
     var effected: DraggableIdMap
     var displacedBy: DisplacedBy
 }
 
-external interface DimensionMap {
+sealed external interface DimensionMap {
     var draggables: DraggableDimensionMap
     var droppables: DroppableDimensionMap
 }
 
-external interface DroppablePublish {
+sealed external interface DroppablePublish {
     var droppableId: DroppableId
     var scroll: Position
 }
 
-external interface Published {
+sealed external interface Published {
     var additions: ReadonlyArray<DraggableDimension>
     var removals: ReadonlyArray<DraggableId>
     var modified: ReadonlyArray<DroppablePublish>
 }
 
-external interface CompletedDrag {
+sealed external interface CompletedDrag {
     var critical: Critical
     var result: DropResult
     var impact: DragImpact
     var afterCritical: LiftEffect
 }
 
-external interface IdleState {
+sealed external interface IdleState {
     var phase: String // 'IDLE'
     var completed: CompletedDrag?
     var shouldFlush: Boolean
 }
 
-external interface DraggingState {
+sealed external interface DraggingState {
     var phase: String // 'DRAGGING'
     var isDragging: Boolean // true
     var critical: Critical
@@ -415,7 +415,7 @@ external interface DraggingState {
 // If a drop occurs during this phase, it must wait until it is
 // completed before continuing with the drop
 // TODO: rename to BulkCollectingState
-external interface CollectingState : DraggingState {
+sealed external interface CollectingState : DraggingState {
     override var phase: String // 'COLLECTING'
 }
 
@@ -423,14 +423,14 @@ external interface CollectingState : DraggingState {
 // wait for the collection to finish before performing the drop.
 // This is to ensure that everything has the correct index after
 // a drop
-external interface DropPendingState : DraggingState {
+sealed external interface DropPendingState : DraggingState {
     override var phase: String // 'DROP_PENDING'
     var isWaiting: Boolean
     var reason: DropReason
 }
 
 // An optional phase for animating the drop / cancel if it is needed
-external interface DropAnimatingState {
+sealed external interface DropAnimatingState {
     var phase: String // 'DROP_ANIMATING'
     var completed: CompletedDrag
     var newHomeClientOffset: Position
@@ -446,7 +446,7 @@ typealias StateWhenUpdatesAllowed = Any // DraggingState | CollectingState;
 
 typealias Announce = (message: String) -> Unit
 
-external interface ResponderProvided {
+sealed external interface ResponderProvided {
     var announce: Announce
 }
 
@@ -460,7 +460,7 @@ typealias OnDragUpdateResponder = (update: DragUpdate, provided: ResponderProvid
 
 typealias OnDragEndResponder = (result: DropResult, provided: ResponderProvided) -> Unit
 
-external interface Responders {
+sealed external interface Responders {
     var onBeforeCapture: OnBeforeCaptureResponder?
     var onBeforeDragStart: OnBeforeDragStartResponder?
     var onDragStart: OnDragStartResponder?
@@ -470,29 +470,29 @@ external interface Responders {
     var onDragEnd: OnDragEndResponder
 }
 
-external interface StopDragOptions {
+sealed external interface StopDragOptions {
     var shouldBlockNextClick: Boolean
 }
 
-external interface DragActions {
+sealed external interface DragActions {
     var drop: (args: StopDragOptions?) -> Unit
     var cancel: (args: StopDragOptions?) -> Unit
     var isActive: () -> Boolean
     var shouldRespectForcePress: () -> Boolean
 }
 
-external interface FluidDragActions : DragActions {
+sealed external interface FluidDragActions : DragActions {
     var move: (clientSelection: Position) -> Unit
 }
 
-external interface SnapDragActions : DragActions {
+sealed external interface SnapDragActions : DragActions {
     var moveUp: () -> Unit
     var moveDown: () -> Unit
     var moveRight: () -> Unit
     var moveLeft: () -> Unit
 }
 
-external interface PreDragActions {
+sealed external interface PreDragActions {
     // discover if the lock is still active
     var isActive: () -> Boolean
 
@@ -507,7 +507,7 @@ external interface PreDragActions {
     var abort: () -> Unit
 }
 
-external interface TryGetLockOptions {
+sealed external interface TryGetLockOptions {
     var sourceEvent: Event?
 }
 
@@ -517,7 +517,7 @@ typealias TryGetLock = (
     options: TryGetLockOptions?,
 ) -> PreDragActions?
 
-external interface SensorAPI {
+sealed external interface SensorAPI {
     var tryGetLock: TryGetLock
     var canGetLock: (id: DraggableId) -> Boolean
     var isLockClaimed: () -> Boolean
@@ -534,7 +534,7 @@ typealias Sensor = (api: SensorAPI) -> Unit
 
 // Refer to https://github.com/atlassian/react-beautiful-dnd/blob/master/src/view/droppable/droppable-types.js
 
-external interface DroppableProvidedProps : Props {
+sealed external interface DroppableProvidedProps : Props {
     // used for shared global styles
     // TODO: uncomment
     // var 'data-rbd-droppable-context-id': ContextId
@@ -543,13 +543,13 @@ external interface DroppableProvidedProps : Props {
     // var 'data-rbd-droppable-id': DroppableId
 }
 
-external interface DroppableProvided {
+sealed external interface DroppableProvided {
     var innerRef: (element: HTMLElement?) -> Unit
     var placeholder: ReactNode
     var droppableProps: DroppableProvidedProps
 }
 
-external interface DroppableStateSnapshot {
+sealed external interface DroppableStateSnapshot {
     var isDraggingOver: Boolean
     var draggingOverWith: DraggableId?
     var draggingFromThisWith: DraggableId?
@@ -562,7 +562,7 @@ external interface DroppableStateSnapshot {
 
 // Refer to https://github.com/atlassian/react-beautiful-dnd/blob/master/src/view/draggable/draggable-types.js
 
-external interface DropAnimation {
+sealed external interface DropAnimation {
     var duration: Double
     var curve: String
     var moveTo: Position
@@ -588,7 +588,7 @@ external interface DropAnimation {
     var scale: Double?
 }
 
-external interface NotDraggingStyle {
+sealed external interface NotDraggingStyle {
     /**
      * This value will actually be `null` instead of `undefined`.
      *
@@ -610,7 +610,7 @@ external interface NotDraggingStyle {
     var transition: String? // 'none'
 }
 
-external interface DraggingStyle {
+sealed external interface DraggingStyle {
     var position: String // 'fixed'
     var top: Double
     var left: Double
@@ -642,7 +642,7 @@ external interface DraggingStyle {
     var pointerEvents: String // 'none'
 }
 
-external interface DraggableProvidedDraggableProps : Props {
+sealed external interface DraggableProvidedDraggableProps : Props {
     // inline style
     var style: CSSProperties // DraggingStyle | NotDraggingStyle?
 
@@ -654,7 +654,7 @@ external interface DraggableProvidedDraggableProps : Props {
     var onTransitionEnd: TransitionEventHandler<*>?
 }
 
-external interface DraggableProvidedDragHandleProps : Props {
+sealed external interface DraggableProvidedDragHandleProps : Props {
     // TODO: uncomment
     // var 'data-rbd-drag-handle-draggable-id': DraggableId
     // TODO: uncomment
@@ -668,14 +668,14 @@ external interface DraggableProvidedDragHandleProps : Props {
     var onDragStart: DragEventHandler<*>
 }
 
-external interface DraggableProvided {
+sealed external interface DraggableProvided {
     // will be removed after move to react 16
     var innerRef: (element: HTMLElement?) -> Unit
     var draggableProps: DraggableProvidedDraggableProps
     var dragHandleProps: DraggableProvidedDragHandleProps?
 }
 
-external interface DraggableStateSnapshot {
+sealed external interface DraggableStateSnapshot {
     var isDragging: Boolean
     var isDropAnimating: Boolean
     var isClone: Boolean

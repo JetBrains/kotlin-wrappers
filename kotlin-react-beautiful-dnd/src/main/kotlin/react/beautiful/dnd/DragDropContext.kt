@@ -10,7 +10,7 @@ import react.ReactNode
 
 // Refer to https://github.com/atlassian/react-beautiful-dnd/blob/master/src/view/drag-drop-context/drag-drop-context.jsx
 
-external interface DragDropContextProps : PropsWithChildren, Responders {
+sealed external interface DragDropContextProps : PropsWithChildren, Responders {
     override var children: ReactNode?
     var dragHandleUsageInstructions: String?
     var nonce: String?

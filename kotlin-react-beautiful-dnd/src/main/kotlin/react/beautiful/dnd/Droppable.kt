@@ -9,7 +9,7 @@ import react.Props
 import react.ReactElement
 import react.dom.html.HTMLAttributes
 
-external interface DroppableProps : Props {
+sealed external interface DroppableProps : Props {
     var droppableId: DroppableId
     var type: TypeId?
     var mode: DroppableMode?
