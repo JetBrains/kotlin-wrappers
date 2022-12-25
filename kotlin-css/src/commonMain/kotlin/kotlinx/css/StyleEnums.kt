@@ -44,11 +44,7 @@ enum class Appearance {
 enum class Isolation {
     initial, inherit, revert, unset,
 
-    auto, isolate,
-
-    ;
-
-    override fun toString() = name
+    auto, isolate;
 }
 
 enum class JustifyContent {
@@ -106,8 +102,6 @@ enum class BackgroundAttachment {
     initial, inherit, unset,
 
     scroll, fixed, local;
-
-    override fun toString(): String = name
 }
 
 enum class BackgroundClip {
@@ -115,7 +109,7 @@ enum class BackgroundClip {
 
     borderBox, paddingBox, contentBox, text;
 
-    override fun toString(): String = name.hyphenize()
+    override fun toString() = name.hyphenize()
 }
 
 enum class BackgroundOrigin {
@@ -123,23 +117,19 @@ enum class BackgroundOrigin {
 
     borderBox, paddingBox, contentBox;
 
-    override fun toString(): String = name.hyphenize()
+    override fun toString() = name.hyphenize()
 }
 
 enum class BorderCollapse {
     initial, inherit, unset,
 
     separate, collapse;
-
-    override fun toString() = name
 }
 
 enum class BorderStyle {
     initial, inherit, unset,
 
     none, dotted, dashed, solid;
-
-    override fun toString(): String = name
 }
 
 enum class BoxSizing {
@@ -154,8 +144,6 @@ enum class Clear {
     initial, inherit, unset,
 
     none, left, right, both;
-
-    override fun toString(): String = name
 }
 
 /**
@@ -630,8 +618,6 @@ enum class Contain {
     initial, inherit, unset,
 
     none, strict, content, size, layout, style, paint;
-
-    override fun toString(): String = name
 }
 
 enum class Cursor {
@@ -660,8 +646,6 @@ enum class Direction {
     initial, inherit, unset,
 
     ltr, rtl;
-
-    override fun toString(): String = name
 }
 
 enum class Display {
@@ -679,7 +663,7 @@ enum class Display {
 
     inlineBlock, inlineListItem, inlineTable, inlineFlex, inlineGrid;
 
-    override fun toString(): String = name.hyphenize()
+    override fun toString() = name.hyphenize()
 }
 
 class FlexBasis(override val value: String) : CssValue(value) {
@@ -713,7 +697,7 @@ enum class Float {
 
     left, right, none;
 
-    override fun toString(): String = name.hyphenize()
+    override fun toString() = name.hyphenize()
 }
 
 class FontWeight(override val value: String) : CssValue(value) {
@@ -738,15 +722,10 @@ class FontWeight(override val value: String) : CssValue(value) {
     }
 }
 
-class FontStyle(override val value: String) : CssValue(value) {
-    companion object {
-        val initial = FontStyle("initial")
-        val inherit = FontStyle("inherit")
-        val unset = FontStyle("unset")
+enum class FontStyle {
+    initial, inherit, unset,
 
-        val normal = FontStyle("normal")
-        val italic = FontStyle("italic")
-    }
+    normal, italic;
 }
 
 enum class FlexDirection {
@@ -895,8 +874,6 @@ enum class Hyphens {
     initial, inherit, unset,
 
     none, manual, auto;
-
-    override fun toString() = name
 }
 
 enum class ListStyleType {
@@ -904,7 +881,7 @@ enum class ListStyleType {
 
     none, disc, circle, square, decimal;
 
-    override fun toString(): String = name.hyphenize()
+    override fun toString() = name.hyphenize()
 }
 
 enum class ObjectFit {
@@ -912,7 +889,7 @@ enum class ObjectFit {
 
     contain, cover, fill, none, scaleDown;
 
-    override fun toString(): String = name.hyphenize()
+    override fun toString() = name.hyphenize()
 }
 
 class Order(override val value: String) : CssValue(value) {
@@ -931,37 +908,20 @@ enum class Outline {
     initial, inherit, unset,
 
     none;
-
-    override fun toString(): String = name
 }
 
-class OutlineStyle(override val value: String) : CssValue(value) {
-    companion object {
-        val inherit = OutlineStyle("inherit")
-        val initial = OutlineStyle("initial")
-        val revert = OutlineStyle("revert")
-        val revertLayer = OutlineStyle("revert-layer")
-        val unset = OutlineStyle("unset")
+enum class OutlineStyle {
+    inherit, initial, revert, revertLayer, unset,
 
-        val auto = OutlineStyle("auto")
-        val none = OutlineStyle("none")
-        val dotted = OutlineStyle("dotted")
-        val dashed = OutlineStyle("dashed")
-        val solid = OutlineStyle("solid")
-        val double = OutlineStyle("double")
-        val groove = OutlineStyle("groove")
-        val ridge = OutlineStyle("ridge")
-        val inset = OutlineStyle("inset")
-        val outset = OutlineStyle("outset")
-    }
+    auto, none, dotted, dashed, solid, double, groove, ridge, inset, outset;
+
+    override fun toString() = name.hyphenize()
 }
 
 enum class Overflow {
     initial, inherit, unset,
 
     visible, hidden, scroll, auto;
-
-    override fun toString(): String = name
 }
 
 enum class OverflowWrap {
@@ -969,39 +929,31 @@ enum class OverflowWrap {
 
     normal, anywhere, breakWord;
 
-    override fun toString(): String = name.hyphenize()
+    override fun toString() = name.hyphenize()
 }
 
 enum class OverscrollBehavior {
     initial, inherit, unset,
 
     auto, contain, none;
-
-    override fun toString(): String = name
 }
 
 enum class PointerEvents {
     initial, inherit, unset,
 
     auto, none;
-
-    override fun toString(): String = name
 }
 
 enum class Position {
     initial, inherit, unset,
 
     static, relative, absolute, fixed, sticky;
-
-    override fun toString() = name
 }
 
 enum class ScrollBehavior {
     initial, inherit, unset,
 
     auto, smooth;
-
-    override fun toString() = name
 }
 
 enum class TextAlign {
@@ -1016,16 +968,12 @@ enum class TableLayout {
     initial, inherit, unset,
 
     auto, fixed;
-
-    override fun toString() = name
 }
 
 enum class TextOverflow {
     initial, inherit, unset,
 
     clip, ellipsis;
-
-    override fun toString() = name
 }
 
 enum class TextTransform {
@@ -1040,8 +988,6 @@ enum class UserSelect {
     initial, inherit, unset,
 
     none, auto, text, contain, all;
-
-    override fun toString() = name
 }
 
 class VerticalAlign(override val value: String) : CssValue(value) {
@@ -1068,8 +1014,6 @@ enum class Visibility {
     initial, inherit, unset,
 
     visible, hidden, collapse;
-
-    override fun toString() = name
 }
 
 enum class WhiteSpace {
@@ -1104,8 +1048,6 @@ enum class Resize {
     block, inline,
 
     inherit, initial, unset;
-
-    override fun toString() = name
 }
 
 class Image(override val value: String) : CssValue(value) {
