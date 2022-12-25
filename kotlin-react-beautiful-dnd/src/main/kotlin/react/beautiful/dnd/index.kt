@@ -246,17 +246,17 @@ external interface DisplacementGroups {
     var invisible: DraggableIdMap
 }
 
-external interface ReorderImpact {
+external interface ReorderImpact : ImpactLocation {
     var type: String // 'REORDER'
     var destination: DraggableLocation
 }
 
-external interface CombineImpact {
+external interface CombineImpact: ImpactLocation {
     var type: String // 'COMBINE'
     var combine: Combine
 }
 
-typealias ImpactLocation = Any // ReorderImpact | CombineImpact
+external interface ImpactLocation
 
 external interface Displaced {
     var forwards: DisplacementGroups
