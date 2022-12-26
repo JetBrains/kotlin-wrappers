@@ -4,7 +4,7 @@ package node.childProcess
 
 sealed external interface CommonOptions : ProcessEnvOptions {
     /**
-     * @default true
+     * @default false
      */
     var windowsHide: Boolean?
 
