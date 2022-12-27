@@ -1,6 +1,6 @@
 // Automatically generated - do not modify!
 
-package serviceworkers
+package web.serviceworker
 
 import web.events.Event
 import web.events.EventType

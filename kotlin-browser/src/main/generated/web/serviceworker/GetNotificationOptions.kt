@@ -1,6 +1,6 @@
 // Automatically generated - do not modify!
 
-package serviceworkers
+package web.serviceworker
 
 sealed external interface GetNotificationOptions {
     var tag: String?

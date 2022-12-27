@@ -1,6 +1,6 @@
 // Automatically generated - do not modify!
 
-package serviceworkers
+package web.serviceworker
 
 import dom.DocumentVisibilityState
 import web.url.URL

@@ -1,21 +1,16 @@
 // Automatically generated - do not modify!
 
-package serviceworkers
+package web.serviceworker
 
 import js.core.ReadonlyArray
-import web.events.Event
-import web.events.EventHandler
-import web.events.EventTarget
 import web.messaging.StructuredSerializeOptions
 import web.messaging.Transferable
-import web.workers.AbstractWorker
 
-sealed external class ServiceWorker :
-    EventTarget,
-    AbstractWorker {
-    var onstatechange: EventHandler<Event>?
-    val scriptURL: String
-    val state: ServiceWorkerState
+sealed external class Client {
+    val frameType: FrameType
+    val id: String
+    val type: ClientTypes
+    val url: String
     fun postMessage(
         message: Any?,
         transfer: ReadonlyArray<Transferable>,

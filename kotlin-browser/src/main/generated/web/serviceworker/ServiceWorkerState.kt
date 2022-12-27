@@ -4,7 +4,7 @@
     "NAME_CONTAINS_ILLEGAL_CHARS",
 )
 
-package serviceworkers
+package web.serviceworker
 
 // language=JavaScript
 @JsName("""(/*union*/{activated: 'activated', activating: 'activating', installed: 'installed', installing: 'installing', parsed: 'parsed', redundant: 'redundant'}/*union*/)""")

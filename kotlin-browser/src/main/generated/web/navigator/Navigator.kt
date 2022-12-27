@@ -9,12 +9,12 @@ import media.devices.MediaDevices
 import media.key.MediaKeySystemAccess
 import media.key.MediaKeySystemConfiguration
 import media.session.MediaSession
-import serviceworkers.ServiceWorkerContainer
 import web.clipboard.Clipboard
 import web.gamepad.Gamepad
 import web.geolocation.Geolocation
 import web.http.BodyInit
 import web.permissions.Permissions
+import web.serviceworker.ServiceWorkerContainer
 import web.share.ShareData
 import web.url.URL
 import web.vibration.VibratePattern

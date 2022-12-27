@@ -1,6 +1,6 @@
 // Automatically generated - do not modify!
 
-package serviceworkers
+package web.serviceworker
 
 import js.core.Void
 import kotlin.js.Promise

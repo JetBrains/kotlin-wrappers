@@ -1,6 +1,6 @@
 // Automatically generated - do not modify!
 
-package serviceworkers
+package web.serviceworker
 
 import js.core.ReadonlyArray
 import js.core.Void

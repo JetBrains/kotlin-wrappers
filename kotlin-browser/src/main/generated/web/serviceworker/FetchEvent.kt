@@ -4,7 +4,7 @@
     "EXTERNAL_CLASS_CONSTRUCTOR_PROPERTY_PARAMETER",
 )
 
-package serviceworkers
+package web.serviceworker
 
 import js.core.Void
 import web.events.EventType
