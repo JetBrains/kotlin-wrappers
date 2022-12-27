@@ -1,5 +1,9 @@
 // Automatically generated - do not modify!
 
+@file:Suppress(
+    "EXTERNAL_CLASS_CONSTRUCTOR_PROPERTY_PARAMETER",
+)
+
 package web.events
 
 import js.core.JsLong
@@ -11,7 +15,7 @@ external interface ProgressEventInit : EventInit {
 }
 
 open external class ProgressEvent<T : EventTarget>(
-    type: EventType<ProgressEvent<T>>,
+    override val type: EventType<ProgressEvent<T>>,
     init: ProgressEventInit = definedExternally,
 ) : Event {
     val lengthComputable: Boolean

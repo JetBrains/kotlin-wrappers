@@ -1,3 +1,7 @@
+@file:Suppress(
+    "EXTERNAL_CLASS_CONSTRUCTOR_PROPERTY_PARAMETER",
+)
+
 package web.messaging
 
 import js.core.ReadonlyArray
@@ -14,7 +18,7 @@ external interface MessageEventInit<T> : EventInit {
 }
 
 external class MessageEvent<out T>(
-    type: EventType<MessageEvent<T>>,
+    override val type: EventType<MessageEvent<T>>,
     init: MessageEventInit<T> = definedExternally,
 ) : Event {
     /** Returns the data of the message. */
