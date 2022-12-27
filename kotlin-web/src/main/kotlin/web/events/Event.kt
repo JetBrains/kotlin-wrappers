@@ -1,3 +1,7 @@
+@file:Suppress(
+    "EXTERNAL_CLASS_CONSTRUCTOR_PROPERTY_PARAMETER",
+)
+
 package web.events
 
 import js.core.HighResTimeStamp
@@ -10,10 +14,9 @@ external interface EventInit {
 }
 
 open external class Event(
-    type: EventType<Event>,
+    open val type: EventType<Event>,
     init: EventInit = definedExternally,
 ) {
-    open val type: EventType<Event>
     open val target: EventTarget?
     val currentTarget: EventTarget?
     val eventPhase: Short
