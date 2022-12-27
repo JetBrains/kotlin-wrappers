@@ -4,6 +4,7 @@ package web.history
 
 import web.events.Event
 import web.events.EventInit
+import web.events.EventType
 
 external interface HashChangeEventInit : EventInit {
     var newURL: String?
@@ -11,7 +12,7 @@ external interface HashChangeEventInit : EventInit {
 }
 
 open external class HashChangeEvent(
-    type: String,
+    type: EventType<HashChangeEvent>,
     init: HashChangeEventInit = definedExternally,
 ) : Event {
     /** Returns the URL of the session history entry that is now current. */

@@ -7,6 +7,7 @@ import media.streams.MediaStream
 import media.streams.MediaStreamTrack
 import web.events.Event
 import web.events.EventInit
+import web.events.EventType
 
 external interface RTCTrackEventInit : EventInit {
     var receiver: RTCRtpReceiver
@@ -16,7 +17,7 @@ external interface RTCTrackEventInit : EventInit {
 }
 
 open external class RTCTrackEvent(
-    type: String,
+    type: EventType<RTCTrackEvent>,
     init: RTCTrackEventInit,
 ) : Event {
     val receiver: RTCRtpReceiver

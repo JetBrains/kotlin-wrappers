@@ -11,7 +11,7 @@ external interface ProgressEventInit : EventInit {
 }
 
 open external class ProgressEvent<T : EventTarget>(
-    type: String,
+    type: EventType<ProgressEvent<T>>,
     init: ProgressEventInit = definedExternally,
 ) : Event {
     val lengthComputable: Boolean

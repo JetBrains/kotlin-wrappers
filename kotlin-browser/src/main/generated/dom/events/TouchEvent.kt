@@ -7,6 +7,7 @@
 package dom.events
 
 import js.core.ReadonlyArray
+import web.events.EventType
 
 external interface TouchEventInit : EventModifierInit {
     var changedTouches: ReadonlyArray<Touch>?
@@ -16,7 +17,7 @@ external interface TouchEventInit : EventModifierInit {
 
 @JsName("globalThis.TouchEvent")
 open external class TouchEvent(
-    type: String,
+    type: EventType<TouchEvent>,
     init: TouchEventInit = definedExternally,
 ) : UIEvent {
     val altKey: Boolean

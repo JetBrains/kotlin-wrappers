@@ -1,15 +1,15 @@
 package web.events
 
 open external class EventTarget : IEventTarget {
-    override fun addEventListener(
-        type: String,
-        callback: EventHandler<Event>?,
+    override fun <T : Event> addEventListener(
+        type: EventType<T>,
+        callback: EventHandler<T>?,
         options: EventHandlerOptions?,
     )
 
-    override fun removeEventListener(
-        type: String,
-        callback: EventHandler<Event>?,
+    override fun <T : Event> removeEventListener(
+        type: EventType<T>,
+        callback: EventHandler<T>?,
         options: EventHandlerOptions?,
     )
 
@@ -34,15 +34,15 @@ fun <T : Event> EventTarget.addEventHandler(
     handler: (T) -> Unit,
 ): () -> Unit {
     addEventListener(
-        type = type.unsafeCast<String>(),
-        callback = handler.unsafeCast<EventHandler<Event>>(),
+        type = type,
+        callback = handler,
         options = options,
     )
 
     return {
         removeEventListener(
-            type = type.unsafeCast<String>(),
-            callback = handler.unsafeCast<EventHandler<Event>>(),
+            type = type,
+            callback = handler,
             options = options,
         )
     }

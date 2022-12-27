@@ -4,6 +4,7 @@ package webrtc
 
 import web.events.Event
 import web.events.EventInit
+import web.events.EventType
 
 external interface RTCPeerConnectionIceErrorEventInit : EventInit {
     var address: String?
@@ -14,7 +15,7 @@ external interface RTCPeerConnectionIceErrorEventInit : EventInit {
 }
 
 open external class RTCPeerConnectionIceErrorEvent(
-    type: String,
+    type: EventType<RTCPeerConnectionIceErrorEvent>,
     init: RTCPeerConnectionIceErrorEventInit,
 ) : Event {
     val address: String?

@@ -4,6 +4,7 @@ package web.errors
 
 import web.events.Event
 import web.events.EventInit
+import web.events.EventType
 
 external interface ErrorEventInit : EventInit {
     var colno: Int?
@@ -14,7 +15,7 @@ external interface ErrorEventInit : EventInit {
 }
 
 open external class ErrorEvent(
-    type: String,
+    type: EventType<ErrorEvent>,
     init: ErrorEventInit = definedExternally,
 ) : Event {
     val colno: Int

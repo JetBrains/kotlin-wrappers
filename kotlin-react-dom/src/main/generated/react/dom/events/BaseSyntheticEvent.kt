@@ -3,8 +3,10 @@
 package react.dom.events
 
 import js.core.HighResTimeStamp
+import web.events.Event
+import web.events.EventType
 
-external interface BaseSyntheticEvent<out E : Any, out C : Any, out T : Any> {
+external interface BaseSyntheticEvent<out E : Event, out C : Any, out T : Any> {
     val nativeEvent: E
     val currentTarget: C
     val target: T
@@ -19,5 +21,5 @@ external interface BaseSyntheticEvent<out E : Any, out C : Any, out T : Any> {
     fun isPropagationStopped(): Boolean
     fun persist()
     val timeStamp: HighResTimeStamp
-    val type: String
+    val type: EventType<E>
 }

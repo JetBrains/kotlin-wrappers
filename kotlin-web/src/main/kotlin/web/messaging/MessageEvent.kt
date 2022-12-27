@@ -3,6 +3,7 @@ package web.messaging
 import js.core.ReadonlyArray
 import web.events.Event
 import web.events.EventInit
+import web.events.EventType
 
 external interface MessageEventInit<T> : EventInit {
     var data: T
@@ -13,8 +14,8 @@ external interface MessageEventInit<T> : EventInit {
 }
 
 external class MessageEvent<out T>(
-    type: String,
-    eventInitDict: MessageEventInit<T> = definedExternally
+    type: EventType<MessageEvent<T>>,
+    init: MessageEventInit<T> = definedExternally,
 ) : Event {
     /** Returns the data of the message. */
     val data: T

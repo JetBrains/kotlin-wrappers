@@ -2,6 +2,8 @@
 
 package dom.events
 
+import web.events.EventType
+
 external interface KeyboardEventInit : EventModifierInit {
     var code: String?
     var isComposing: Boolean?
@@ -11,7 +13,7 @@ external interface KeyboardEventInit : EventModifierInit {
 }
 
 open external class KeyboardEvent(
-    type: String,
+    type: EventType<KeyboardEvent>,
     init: KeyboardEventInit = definedExternally,
 ) : UIEvent {
     val altKey: Boolean

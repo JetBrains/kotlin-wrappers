@@ -5,6 +5,7 @@ package dom.events
 import dom.html.Window
 import web.events.Event
 import web.events.EventInit
+import web.events.EventType
 
 external interface UIEventInit : EventInit {
     var detail: Int?
@@ -12,7 +13,7 @@ external interface UIEventInit : EventInit {
 }
 
 open external class UIEvent(
-    type: String,
+    type: EventType<UIEvent>,
     init: UIEventInit = definedExternally,
 ) : Event {
     val detail: Int

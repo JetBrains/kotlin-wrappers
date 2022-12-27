@@ -4,6 +4,7 @@ package web.speech
 
 import web.events.Event
 import web.events.EventInit
+import web.events.EventType
 
 external interface SpeechSynthesisEventInit : EventInit {
     var charIndex: Int?
@@ -14,7 +15,7 @@ external interface SpeechSynthesisEventInit : EventInit {
 }
 
 open external class SpeechSynthesisEvent(
-    type: String,
+    type: EventType<SpeechSynthesisEvent>,
     init: SpeechSynthesisEventInit,
 ) : Event {
     val charIndex: Int

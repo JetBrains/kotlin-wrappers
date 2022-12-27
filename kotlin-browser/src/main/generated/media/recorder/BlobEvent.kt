@@ -5,6 +5,7 @@ package media.recorder
 import js.core.HighResTimeStamp
 import web.buffer.Blob
 import web.events.Event
+import web.events.EventType
 
 external interface BlobEventInit {
     var data: Blob
@@ -12,7 +13,7 @@ external interface BlobEventInit {
 }
 
 open external class BlobEvent(
-    type: String,
+    type: EventType<BlobEvent>,
     init: BlobEventInit,
 ) : Event {
     val data: Blob

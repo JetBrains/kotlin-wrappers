@@ -3,6 +3,7 @@
 package serviceworkers
 
 import js.core.ReadonlyArray
+import web.events.EventType
 import web.messaging.MessagePort
 
 external interface ExtendableMessageEventInit : ExtendableEventInit {
@@ -14,7 +15,7 @@ external interface ExtendableMessageEventInit : ExtendableEventInit {
 }
 
 open external class ExtendableMessageEvent(
-    type: String,
+    type: EventType<ExtendableMessageEvent>,
     init: ExtendableMessageEventInit = definedExternally,
 ) : ExtendableEvent {
     val data: Any?

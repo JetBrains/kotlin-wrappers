@@ -4,6 +4,7 @@ package dom.events
 
 import web.events.Event
 import web.events.EventInit
+import web.events.EventType
 import kotlin.js.Promise
 
 external interface PromiseRejectionEventInit : EventInit {
@@ -12,7 +13,7 @@ external interface PromiseRejectionEventInit : EventInit {
 }
 
 open external class PromiseRejectionEvent(
-    type: String,
+    type: EventType<PromiseRejectionEvent>,
     init: PromiseRejectionEventInit,
 ) : Event {
     val promise: Promise<*>

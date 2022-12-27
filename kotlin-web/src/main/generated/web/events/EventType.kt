@@ -6,7 +6,7 @@
 
 package web.events
 
-sealed external interface EventType<T : Event>
+sealed external interface EventType<out T : Event>
 
 inline fun <T : Event> EventType(
     value: String,

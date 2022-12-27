@@ -3,6 +3,7 @@
 package dom.events
 
 import web.events.EventTarget
+import web.events.EventType
 
 external interface MouseEventInit : EventModifierInit {
     var button: Short?
@@ -17,7 +18,7 @@ external interface MouseEventInit : EventModifierInit {
 }
 
 open external class MouseEvent(
-    type: String,
+    type: EventType<MouseEvent>,
     init: MouseEventInit = definedExternally,
 ) : UIEvent {
     val altKey: Boolean

@@ -2,6 +2,7 @@
 
 package serviceworkers
 
+import web.events.EventType
 import web.notifications.Notification
 
 external interface NotificationEventInit : ExtendableEventInit {
@@ -10,7 +11,7 @@ external interface NotificationEventInit : ExtendableEventInit {
 }
 
 open external class NotificationEvent(
-    type: String,
+    type: EventType<NotificationEvent>,
     init: NotificationEventInit,
 ) : ExtendableEvent {
     val action: String

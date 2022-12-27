@@ -4,6 +4,7 @@ package web.animations
 
 import web.events.Event
 import web.events.EventInit
+import web.events.EventType
 
 external interface AnimationPlaybackEventInit : EventInit {
     var currentTime: CSSNumberish?
@@ -11,7 +12,7 @@ external interface AnimationPlaybackEventInit : EventInit {
 }
 
 open external class AnimationPlaybackEvent(
-    type: String,
+    type: EventType<AnimationPlaybackEvent>,
     init: AnimationPlaybackEventInit = definedExternally,
 ) : Event {
     val currentTime: CSSNumberish?

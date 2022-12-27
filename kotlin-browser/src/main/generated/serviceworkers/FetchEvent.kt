@@ -3,6 +3,7 @@
 package serviceworkers
 
 import js.core.Void
+import web.events.EventType
 import web.http.Request
 import web.http.Response
 import kotlin.js.Promise
@@ -17,7 +18,7 @@ external interface FetchEventInit : ExtendableEventInit {
 }
 
 open external class FetchEvent(
-    type: String,
+    type: EventType<FetchEvent>,
     init: FetchEventInit,
 ) : ExtendableEvent {
     val clientId: String

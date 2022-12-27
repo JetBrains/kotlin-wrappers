@@ -4,6 +4,7 @@ package web.device
 
 import web.events.Event
 import web.events.EventInit
+import web.events.EventType
 
 external interface DeviceOrientationEventInit : EventInit {
     var absolute: Boolean?
@@ -13,7 +14,7 @@ external interface DeviceOrientationEventInit : EventInit {
 }
 
 open external class DeviceOrientationEvent(
-    type: String,
+    type: EventType<DeviceOrientationEvent>,
     init: DeviceOrientationEventInit = definedExternally,
 ) : Event {
     val absolute: Boolean

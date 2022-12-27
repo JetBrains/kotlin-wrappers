@@ -10,10 +10,10 @@ external interface EventInit {
 }
 
 open external class Event(
-    type: String,
+    type: EventType<Event>,
     init: EventInit = definedExternally,
 ) {
-    val type: String
+    val type: EventType<Event>
     open val target: EventTarget?
     val currentTarget: EventTarget?
     val eventPhase: Short

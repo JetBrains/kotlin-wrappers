@@ -4,13 +4,14 @@ package web.history
 
 import web.events.Event
 import web.events.EventInit
+import web.events.EventType
 
 external interface PageTransitionEventInit : EventInit {
     var persisted: Boolean?
 }
 
 open external class PageTransitionEvent(
-    type: String,
+    type: EventType<PageTransitionEvent>,
     init: PageTransitionEventInit = definedExternally,
 ) : Event {
     /**

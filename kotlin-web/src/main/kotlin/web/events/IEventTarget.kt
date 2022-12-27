@@ -1,15 +1,15 @@
 package web.events
 
 external interface IEventTarget {
-    fun addEventListener(
-        type: String,
-        callback: EventHandler<Event>?,
+    fun <T : Event> addEventListener(
+        type: EventType<T>,
+        callback: EventHandler<T>?,
         options: EventHandlerOptions? = definedExternally,
     )
 
-    fun removeEventListener(
-        type: String,
-        callback: EventHandler<Event>?,
+    fun <T : Event> removeEventListener(
+        type: EventType<T>,
+        callback: EventHandler<T>?,
         options: EventHandlerOptions? = definedExternally,
     )
 }

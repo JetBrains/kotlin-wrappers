@@ -4,6 +4,7 @@ package web.storage
 
 import web.events.Event
 import web.events.EventInit
+import web.events.EventType
 import web.url.URL
 
 external interface StorageEventInit : EventInit {
@@ -15,7 +16,7 @@ external interface StorageEventInit : EventInit {
 }
 
 open external class StorageEvent(
-    type: String,
+    type: EventType<StorageEvent>,
     init: StorageEventInit = definedExternally,
 ) : Event {
     /** Returns the key of the storage item being changed. */
@@ -33,7 +34,7 @@ open external class StorageEvent(
     /** Returns the URL of the document whose storage item changed. */
     val url: String
     fun initStorageEvent(
-        type: String,
+        type: EventType<StorageEvent>,
         bubbles: Boolean = definedExternally,
         cancelable: Boolean = definedExternally,
         key: String? = definedExternally,

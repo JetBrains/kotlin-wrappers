@@ -4,6 +4,7 @@ package cssom
 
 import web.events.Event
 import web.events.EventInit
+import web.events.EventType
 
 external interface MediaQueryListEventInit : EventInit {
     var matches: Boolean?
@@ -11,7 +12,7 @@ external interface MediaQueryListEventInit : EventInit {
 }
 
 open external class MediaQueryListEvent(
-    type: String,
+    type: EventType<MediaQueryListEvent>,
     init: MediaQueryListEventInit = definedExternally,
 ) : Event {
     val matches: Boolean

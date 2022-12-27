@@ -2,6 +2,8 @@
 
 package dom.events
 
+import web.events.EventType
+
 external interface WheelEventInit : MouseEventInit {
     var deltaMode: Short?
     var deltaX: Double?
@@ -10,7 +12,7 @@ external interface WheelEventInit : MouseEventInit {
 }
 
 open external class WheelEvent(
-    type: String,
+    type: EventType<WheelEvent>,
     init: WheelEventInit = definedExternally,
 ) : MouseEvent {
     val deltaMode: Short

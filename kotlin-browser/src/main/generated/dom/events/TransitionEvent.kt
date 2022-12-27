@@ -4,6 +4,7 @@ package dom.events
 
 import web.events.Event
 import web.events.EventInit
+import web.events.EventType
 
 external interface TransitionEventInit : EventInit {
     var elapsedTime: Double?
@@ -12,7 +13,7 @@ external interface TransitionEventInit : EventInit {
 }
 
 open external class TransitionEvent(
-    type: String,
+    type: EventType<TransitionEvent>,
     init: TransitionEventInit = definedExternally,
 ) : Event {
     val elapsedTime: Double

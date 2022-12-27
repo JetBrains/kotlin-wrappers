@@ -6,12 +6,7 @@ external interface CustomEventInit<T> : EventInit {
 
 external class CustomEvent<T>(
     type: EventType<CustomEvent<T>>,
-    eventInitDict: CustomEventInit<T> = definedExternally,
+    init: CustomEventInit<T> = definedExternally,
 ) : Event {
-    constructor(
-        type: String,
-        eventInitDict: CustomEventInit<T> = definedExternally,
-    )
-
     val detail: T
 }
