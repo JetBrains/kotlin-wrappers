@@ -1,5 +1,9 @@
 // Automatically generated - do not modify!
 
+@file:Suppress(
+    "EXTERNAL_CLASS_CONSTRUCTOR_PROPERTY_PARAMETER",
+)
+
 package dom.events
 
 import dom.html.Window
@@ -13,7 +17,7 @@ external interface UIEventInit : EventInit {
 }
 
 open external class UIEvent(
-    type: EventType<UIEvent>,
+    override val type: EventType<UIEvent>,
     init: UIEventInit = definedExternally,
 ) : Event {
     val detail: Int

@@ -1,5 +1,9 @@
 // Automatically generated - do not modify!
 
+@file:Suppress(
+    "EXTERNAL_CLASS_CONSTRUCTOR_PROPERTY_PARAMETER",
+)
+
 package web.idb
 
 import js.core.JsLong
@@ -13,7 +17,7 @@ external interface IDBVersionChangeEventInit : EventInit {
 }
 
 open external class IDBVersionChangeEvent(
-    type: EventType<IDBVersionChangeEvent>,
+    override val type: EventType<IDBVersionChangeEvent>,
     init: IDBVersionChangeEventInit = definedExternally,
 ) : Event {
     val newVersion: JsLong?

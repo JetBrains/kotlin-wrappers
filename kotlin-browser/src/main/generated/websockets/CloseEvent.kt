@@ -1,5 +1,9 @@
 // Automatically generated - do not modify!
 
+@file:Suppress(
+    "EXTERNAL_CLASS_CONSTRUCTOR_PROPERTY_PARAMETER",
+)
+
 package websockets
 
 import web.events.Event
@@ -13,7 +17,7 @@ external interface CloseEventInit : EventInit {
 }
 
 open external class CloseEvent(
-    type: EventType<CloseEvent>,
+    override val type: EventType<CloseEvent>,
     init: CloseEventInit = definedExternally,
 ) : Event {
     /** Returns the WebSocket connection close code provided by the server. */

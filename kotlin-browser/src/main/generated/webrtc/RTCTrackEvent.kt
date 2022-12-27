@@ -1,5 +1,9 @@
 // Automatically generated - do not modify!
 
+@file:Suppress(
+    "EXTERNAL_CLASS_CONSTRUCTOR_PROPERTY_PARAMETER",
+)
+
 package webrtc
 
 import js.core.ReadonlyArray
@@ -17,7 +21,7 @@ external interface RTCTrackEventInit : EventInit {
 }
 
 open external class RTCTrackEvent(
-    type: EventType<RTCTrackEvent>,
+    override val type: EventType<RTCTrackEvent>,
     init: RTCTrackEventInit,
 ) : Event {
     val receiver: RTCRtpReceiver

@@ -1,5 +1,9 @@
 // Automatically generated - do not modify!
 
+@file:Suppress(
+    "EXTERNAL_CLASS_CONSTRUCTOR_PROPERTY_PARAMETER",
+)
+
 package dom.events
 
 import js.buffer.ArrayBuffer
@@ -13,7 +17,7 @@ external interface MediaEncryptedEventInit : EventInit {
 }
 
 open external class MediaEncryptedEvent(
-    type: EventType<MediaEncryptedEvent>,
+    override val type: EventType<MediaEncryptedEvent>,
     init: MediaEncryptedEventInit = definedExternally,
 ) : Event {
     val initData: ArrayBuffer?

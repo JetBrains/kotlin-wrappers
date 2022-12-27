@@ -1,5 +1,9 @@
 // Automatically generated - do not modify!
 
+@file:Suppress(
+    "EXTERNAL_CLASS_CONSTRUCTOR_PROPERTY_PARAMETER",
+)
+
 package web.errors
 
 import web.events.Event
@@ -15,7 +19,7 @@ external interface ErrorEventInit : EventInit {
 }
 
 open external class ErrorEvent(
-    type: EventType<ErrorEvent>,
+    override val type: EventType<ErrorEvent>,
     init: ErrorEventInit = definedExternally,
 ) : Event {
     val colno: Int

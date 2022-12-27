@@ -13,7 +13,7 @@ open external class Event(
     type: EventType<Event>,
     init: EventInit = definedExternally,
 ) {
-    val type: EventType<Event>
+    open val type: EventType<Event>
     open val target: EventTarget?
     val currentTarget: EventTarget?
     val eventPhase: Short

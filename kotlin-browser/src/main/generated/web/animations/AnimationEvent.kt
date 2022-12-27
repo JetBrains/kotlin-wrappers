@@ -1,5 +1,9 @@
 // Automatically generated - do not modify!
 
+@file:Suppress(
+    "EXTERNAL_CLASS_CONSTRUCTOR_PROPERTY_PARAMETER",
+)
+
 package web.animations
 
 import web.events.Event
@@ -13,7 +17,7 @@ external interface AnimationEventInit : EventInit {
 }
 
 open external class AnimationEvent(
-    type: EventType<AnimationEvent>,
+    override val type: EventType<AnimationEvent>,
     init: AnimationEventInit = definedExternally,
 ) : Event {
     val animationName: String

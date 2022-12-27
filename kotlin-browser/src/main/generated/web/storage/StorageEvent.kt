@@ -1,5 +1,9 @@
 // Automatically generated - do not modify!
 
+@file:Suppress(
+    "EXTERNAL_CLASS_CONSTRUCTOR_PROPERTY_PARAMETER",
+)
+
 package web.storage
 
 import web.events.Event
@@ -16,7 +20,7 @@ external interface StorageEventInit : EventInit {
 }
 
 open external class StorageEvent(
-    type: EventType<StorageEvent>,
+    override val type: EventType<StorageEvent>,
     init: StorageEventInit = definedExternally,
 ) : Event {
     /** Returns the key of the storage item being changed. */

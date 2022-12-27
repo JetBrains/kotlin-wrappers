@@ -1,5 +1,9 @@
 // Automatically generated - do not modify!
 
+@file:Suppress(
+    "EXTERNAL_CLASS_CONSTRUCTOR_PROPERTY_PARAMETER",
+)
+
 package cssom
 
 import web.events.Event
@@ -12,7 +16,7 @@ external interface MediaQueryListEventInit : EventInit {
 }
 
 open external class MediaQueryListEvent(
-    type: EventType<MediaQueryListEvent>,
+    override val type: EventType<MediaQueryListEvent>,
     init: MediaQueryListEventInit = definedExternally,
 ) : Event {
     val matches: Boolean

@@ -1,5 +1,9 @@
 // Automatically generated - do not modify!
 
+@file:Suppress(
+    "EXTERNAL_CLASS_CONSTRUCTOR_PROPERTY_PARAMETER",
+)
+
 package dom.events
 
 import web.events.EventType
@@ -9,7 +13,7 @@ external interface CompositionEventInit : UIEventInit {
 }
 
 open external class CompositionEvent(
-    type: EventType<CompositionEvent>,
+    override val type: EventType<CompositionEvent>,
     init: CompositionEventInit = definedExternally,
 ) : UIEvent {
     val data: String

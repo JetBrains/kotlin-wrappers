@@ -1,5 +1,9 @@
 // Automatically generated - do not modify!
 
+@file:Suppress(
+    "EXTERNAL_CLASS_CONSTRUCTOR_PROPERTY_PARAMETER",
+)
+
 package web.gamepad
 
 import web.events.Event
@@ -11,7 +15,7 @@ external interface GamepadEventInit : EventInit {
 }
 
 open external class GamepadEvent(
-    type: EventType<GamepadEvent>,
+    override val type: EventType<GamepadEvent>,
     init: GamepadEventInit,
 ) : Event {
     val gamepad: Gamepad

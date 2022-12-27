@@ -1,5 +1,9 @@
 // Automatically generated - do not modify!
 
+@file:Suppress(
+    "EXTERNAL_CLASS_CONSTRUCTOR_PROPERTY_PARAMETER",
+)
+
 package web.speech
 
 import web.events.Event
@@ -15,7 +19,7 @@ external interface SpeechSynthesisEventInit : EventInit {
 }
 
 open external class SpeechSynthesisEvent(
-    type: EventType<SpeechSynthesisEvent>,
+    override val type: EventType<SpeechSynthesisEvent>,
     init: SpeechSynthesisEventInit,
 ) : Event {
     val charIndex: Int

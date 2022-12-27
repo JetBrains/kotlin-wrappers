@@ -1,5 +1,9 @@
 // Automatically generated - do not modify!
 
+@file:Suppress(
+    "EXTERNAL_CLASS_CONSTRUCTOR_PROPERTY_PARAMETER",
+)
+
 package dom.events
 
 import dom.data.DataTransfer
@@ -10,7 +14,7 @@ external interface DragEventInit : MouseEventInit {
 }
 
 open external class DragEvent(
-    type: EventType<DragEvent>,
+    override val type: EventType<DragEvent>,
     init: DragEventInit = definedExternally,
 ) : MouseEvent {
     /** Returns the DataTransfer object for the event. */

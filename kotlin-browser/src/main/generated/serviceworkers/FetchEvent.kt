@@ -1,5 +1,9 @@
 // Automatically generated - do not modify!
 
+@file:Suppress(
+    "EXTERNAL_CLASS_CONSTRUCTOR_PROPERTY_PARAMETER",
+)
+
 package serviceworkers
 
 import js.core.Void
@@ -18,7 +22,7 @@ external interface FetchEventInit : ExtendableEventInit {
 }
 
 open external class FetchEvent(
-    type: EventType<FetchEvent>,
+    override val type: EventType<FetchEvent>,
     init: FetchEventInit,
 ) : ExtendableEvent {
     val clientId: String

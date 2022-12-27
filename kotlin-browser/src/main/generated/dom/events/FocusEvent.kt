@@ -1,5 +1,9 @@
 // Automatically generated - do not modify!
 
+@file:Suppress(
+    "EXTERNAL_CLASS_CONSTRUCTOR_PROPERTY_PARAMETER",
+)
+
 package dom.events
 
 import web.events.EventTarget
@@ -10,7 +14,7 @@ external interface FocusEventInit : UIEventInit {
 }
 
 open external class FocusEvent(
-    type: EventType<FocusEvent>,
+    override val type: EventType<FocusEvent>,
     init: FocusEventInit = definedExternally,
 ) : UIEvent {
     val relatedTarget: EventTarget?

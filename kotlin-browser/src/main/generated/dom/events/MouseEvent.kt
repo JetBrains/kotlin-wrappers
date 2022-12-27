@@ -1,5 +1,9 @@
 // Automatically generated - do not modify!
 
+@file:Suppress(
+    "EXTERNAL_CLASS_CONSTRUCTOR_PROPERTY_PARAMETER",
+)
+
 package dom.events
 
 import web.events.EventTarget
@@ -18,7 +22,7 @@ external interface MouseEventInit : EventModifierInit {
 }
 
 open external class MouseEvent(
-    type: EventType<MouseEvent>,
+    override val type: EventType<MouseEvent>,
     init: MouseEventInit = definedExternally,
 ) : UIEvent {
     val altKey: Boolean

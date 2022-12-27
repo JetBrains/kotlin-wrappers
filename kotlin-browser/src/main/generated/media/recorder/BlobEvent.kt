@@ -1,5 +1,9 @@
 // Automatically generated - do not modify!
 
+@file:Suppress(
+    "EXTERNAL_CLASS_CONSTRUCTOR_PROPERTY_PARAMETER",
+)
+
 package media.recorder
 
 import js.core.HighResTimeStamp
@@ -13,7 +17,7 @@ external interface BlobEventInit {
 }
 
 open external class BlobEvent(
-    type: EventType<BlobEvent>,
+    override val type: EventType<BlobEvent>,
     init: BlobEventInit,
 ) : Event {
     val data: Blob

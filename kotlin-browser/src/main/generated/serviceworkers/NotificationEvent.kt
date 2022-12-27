@@ -1,5 +1,9 @@
 // Automatically generated - do not modify!
 
+@file:Suppress(
+    "EXTERNAL_CLASS_CONSTRUCTOR_PROPERTY_PARAMETER",
+)
+
 package serviceworkers
 
 import web.events.EventType
@@ -11,7 +15,7 @@ external interface NotificationEventInit : ExtendableEventInit {
 }
 
 open external class NotificationEvent(
-    type: EventType<NotificationEvent>,
+    override val type: EventType<NotificationEvent>,
     init: NotificationEventInit,
 ) : ExtendableEvent {
     val action: String

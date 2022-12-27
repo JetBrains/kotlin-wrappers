@@ -1,5 +1,9 @@
 // Automatically generated - do not modify!
 
+@file:Suppress(
+    "EXTERNAL_CLASS_CONSTRUCTOR_PROPERTY_PARAMETER",
+)
+
 package webrtc
 
 import web.events.Event
@@ -11,7 +15,7 @@ external interface RTCDataChannelEventInit : EventInit {
 }
 
 open external class RTCDataChannelEvent(
-    type: EventType<RTCDataChannelEvent>,
+    override val type: EventType<RTCDataChannelEvent>,
     init: RTCDataChannelEventInit,
 ) : Event {
     val channel: RTCDataChannel

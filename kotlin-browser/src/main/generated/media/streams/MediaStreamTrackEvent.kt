@@ -1,5 +1,9 @@
 // Automatically generated - do not modify!
 
+@file:Suppress(
+    "EXTERNAL_CLASS_CONSTRUCTOR_PROPERTY_PARAMETER",
+)
+
 package media.streams
 
 import web.events.Event
@@ -11,7 +15,7 @@ external interface MediaStreamTrackEventInit : EventInit {
 }
 
 open external class MediaStreamTrackEvent(
-    type: EventType<MediaStreamTrackEvent>,
+    override val type: EventType<MediaStreamTrackEvent>,
     init: MediaStreamTrackEventInit,
 ) : Event {
     val track: MediaStreamTrack

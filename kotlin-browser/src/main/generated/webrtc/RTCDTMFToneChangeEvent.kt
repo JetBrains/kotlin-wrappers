@@ -1,5 +1,9 @@
 // Automatically generated - do not modify!
 
+@file:Suppress(
+    "EXTERNAL_CLASS_CONSTRUCTOR_PROPERTY_PARAMETER",
+)
+
 package webrtc
 
 import web.events.Event
@@ -11,7 +15,7 @@ external interface RTCDTMFToneChangeEventInit : EventInit {
 }
 
 open external class RTCDTMFToneChangeEvent(
-    type: EventType<RTCDTMFToneChangeEvent>,
+    override val type: EventType<RTCDTMFToneChangeEvent>,
     init: RTCDTMFToneChangeEventInit = definedExternally,
 ) : Event {
     val tone: String

@@ -1,5 +1,9 @@
 // Automatically generated - do not modify!
 
+@file:Suppress(
+    "EXTERNAL_CLASS_CONSTRUCTOR_PROPERTY_PARAMETER",
+)
+
 package webrtc
 
 import web.events.Event
@@ -12,7 +16,7 @@ external interface RTCPeerConnectionIceEventInit : EventInit {
 }
 
 open external class RTCPeerConnectionIceEvent(
-    type: EventType<RTCPeerConnectionIceEvent>,
+    override val type: EventType<RTCPeerConnectionIceEvent>,
     init: RTCPeerConnectionIceEventInit = definedExternally,
 ) : Event {
     val candidate: RTCIceCandidate?

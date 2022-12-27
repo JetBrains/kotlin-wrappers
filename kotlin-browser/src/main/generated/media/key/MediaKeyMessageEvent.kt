@@ -1,5 +1,9 @@
 // Automatically generated - do not modify!
 
+@file:Suppress(
+    "EXTERNAL_CLASS_CONSTRUCTOR_PROPERTY_PARAMETER",
+)
+
 package media.key
 
 import js.buffer.ArrayBuffer
@@ -13,7 +17,7 @@ external interface MediaKeyMessageEventInit : EventInit {
 }
 
 open external class MediaKeyMessageEvent(
-    type: EventType<MediaKeyMessageEvent>,
+    override val type: EventType<MediaKeyMessageEvent>,
     init: MediaKeyMessageEventInit,
 ) : Event {
     val message: ArrayBuffer

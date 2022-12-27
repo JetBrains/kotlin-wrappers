@@ -1,5 +1,9 @@
 // Automatically generated - do not modify!
 
+@file:Suppress(
+    "EXTERNAL_CLASS_CONSTRUCTOR_PROPERTY_PARAMETER",
+)
+
 package webgl
 
 import web.events.Event
@@ -11,7 +15,7 @@ external interface WebGLContextEventInit : EventInit {
 }
 
 open external class WebGLContextEvent(
-    type: EventType<WebGLContextEvent>,
+    override val type: EventType<WebGLContextEvent>,
     init: WebGLContextEventInit = definedExternally,
 ) : Event {
     val statusMessage: String

@@ -1,5 +1,9 @@
 // Automatically generated - do not modify!
 
+@file:Suppress(
+    "EXTERNAL_CLASS_CONSTRUCTOR_PROPERTY_PARAMETER",
+)
+
 package dom.events
 
 import web.events.EventType
@@ -12,7 +16,7 @@ external interface WheelEventInit : MouseEventInit {
 }
 
 open external class WheelEvent(
-    type: EventType<WheelEvent>,
+    override val type: EventType<WheelEvent>,
     init: WheelEventInit = definedExternally,
 ) : MouseEvent {
     val deltaMode: Short

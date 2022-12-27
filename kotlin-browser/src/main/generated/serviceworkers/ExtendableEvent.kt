@@ -1,5 +1,9 @@
 // Automatically generated - do not modify!
 
+@file:Suppress(
+    "EXTERNAL_CLASS_CONSTRUCTOR_PROPERTY_PARAMETER",
+)
+
 package serviceworkers
 
 import web.events.Event
@@ -10,7 +14,7 @@ import kotlin.js.Promise
 external interface ExtendableEventInit : EventInit
 
 open external class ExtendableEvent(
-    type: EventType<ExtendableEvent>,
+    override val type: EventType<ExtendableEvent>,
     init: ExtendableEventInit = definedExternally,
 ) : Event {
     fun waitUntil(f: Promise<*>)

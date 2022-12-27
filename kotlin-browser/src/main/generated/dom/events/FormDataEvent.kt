@@ -1,5 +1,9 @@
 // Automatically generated - do not modify!
 
+@file:Suppress(
+    "EXTERNAL_CLASS_CONSTRUCTOR_PROPERTY_PARAMETER",
+)
+
 package dom.events
 
 import web.events.Event
@@ -12,7 +16,7 @@ external interface FormDataEventInit : EventInit {
 }
 
 open external class FormDataEvent(
-    type: EventType<FormDataEvent>,
+    override val type: EventType<FormDataEvent>,
     init: FormDataEventInit,
 ) : Event {
     /** Returns a FormData object representing names and values of elements associated to the target form. Operations on the FormData object will affect form data to be submitted. */

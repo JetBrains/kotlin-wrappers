@@ -1,5 +1,9 @@
 // Automatically generated - do not modify!
 
+@file:Suppress(
+    "EXTERNAL_CLASS_CONSTRUCTOR_PROPERTY_PARAMETER",
+)
+
 package web.clipboard
 
 import dom.data.DataTransfer
@@ -12,7 +16,7 @@ external interface ClipboardEventInit : EventInit {
 }
 
 open external class ClipboardEvent(
-    type: EventType<ClipboardEvent>,
+    override val type: EventType<ClipboardEvent>,
     init: ClipboardEventInit = definedExternally,
 ) : Event {
     val clipboardData: DataTransfer?

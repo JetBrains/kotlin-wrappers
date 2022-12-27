@@ -1,5 +1,9 @@
 // Automatically generated - do not modify!
 
+@file:Suppress(
+    "EXTERNAL_CLASS_CONSTRUCTOR_PROPERTY_PARAMETER",
+)
+
 package web.history
 
 import web.events.Event
@@ -11,7 +15,7 @@ external interface PopStateEventInit : EventInit {
 }
 
 open external class PopStateEvent(
-    type: EventType<PopStateEvent>,
+    override val type: EventType<PopStateEvent>,
     init: PopStateEventInit = definedExternally,
 ) : Event {
     /** Returns a copy of the information that was provided to pushState() or replaceState(). */

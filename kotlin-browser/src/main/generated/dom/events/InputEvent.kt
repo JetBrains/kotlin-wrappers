@@ -1,5 +1,9 @@
 // Automatically generated - do not modify!
 
+@file:Suppress(
+    "EXTERNAL_CLASS_CONSTRUCTOR_PROPERTY_PARAMETER",
+)
+
 package dom.events
 
 import dom.data.DataTransfer
@@ -15,7 +19,7 @@ external interface InputEventInit : UIEventInit {
 }
 
 open external class InputEvent(
-    type: EventType<InputEvent>,
+    override val type: EventType<InputEvent>,
     init: InputEventInit = definedExternally,
 ) : UIEvent {
     val data: String?

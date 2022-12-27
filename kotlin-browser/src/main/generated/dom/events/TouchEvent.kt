@@ -1,6 +1,7 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
+    "EXTERNAL_CLASS_CONSTRUCTOR_PROPERTY_PARAMETER",
     "NAME_CONTAINS_ILLEGAL_CHARS",
 )
 
@@ -17,7 +18,7 @@ external interface TouchEventInit : EventModifierInit {
 
 @JsName("globalThis.TouchEvent")
 open external class TouchEvent(
-    type: EventType<TouchEvent>,
+    override val type: EventType<TouchEvent>,
     init: TouchEventInit = definedExternally,
 ) : UIEvent {
     val altKey: Boolean

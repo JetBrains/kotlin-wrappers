@@ -1,5 +1,9 @@
 // Automatically generated - do not modify!
 
+@file:Suppress(
+    "EXTERNAL_CLASS_CONSTRUCTOR_PROPERTY_PARAMETER",
+)
+
 package web.history
 
 import web.events.Event
@@ -11,7 +15,7 @@ external interface PageTransitionEventInit : EventInit {
 }
 
 open external class PageTransitionEvent(
-    type: EventType<PageTransitionEvent>,
+    override val type: EventType<PageTransitionEvent>,
     init: PageTransitionEventInit = definedExternally,
 ) : Event {
     /**

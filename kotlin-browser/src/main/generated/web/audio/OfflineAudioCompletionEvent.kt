@@ -1,5 +1,9 @@
 // Automatically generated - do not modify!
 
+@file:Suppress(
+    "EXTERNAL_CLASS_CONSTRUCTOR_PROPERTY_PARAMETER",
+)
+
 package web.audio
 
 import web.events.Event
@@ -11,7 +15,7 @@ external interface OfflineAudioCompletionEventInit : EventInit {
 }
 
 open external class OfflineAudioCompletionEvent(
-    type: EventType<OfflineAudioCompletionEvent>,
+    override val type: EventType<OfflineAudioCompletionEvent>,
     init: OfflineAudioCompletionEventInit,
 ) : Event {
     val renderedBuffer: AudioBuffer

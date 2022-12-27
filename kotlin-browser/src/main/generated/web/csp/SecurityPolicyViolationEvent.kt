@@ -1,5 +1,9 @@
 // Automatically generated - do not modify!
 
+@file:Suppress(
+    "EXTERNAL_CLASS_CONSTRUCTOR_PROPERTY_PARAMETER",
+)
+
 package web.csp
 
 import web.events.Event
@@ -22,7 +26,7 @@ external interface SecurityPolicyViolationEventInit : EventInit {
 }
 
 open external class SecurityPolicyViolationEvent(
-    type: EventType<SecurityPolicyViolationEvent>,
+    override val type: EventType<SecurityPolicyViolationEvent>,
     init: SecurityPolicyViolationEventInit = definedExternally,
 ) : Event {
     val blockedURI: String

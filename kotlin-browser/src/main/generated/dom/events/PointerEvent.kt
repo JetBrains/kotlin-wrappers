@@ -1,5 +1,9 @@
 // Automatically generated - do not modify!
 
+@file:Suppress(
+    "EXTERNAL_CLASS_CONSTRUCTOR_PROPERTY_PARAMETER",
+)
+
 package dom.events
 
 import js.core.ReadonlyArray
@@ -21,7 +25,7 @@ external interface PointerEventInit : MouseEventInit {
 }
 
 open external class PointerEvent(
-    type: EventType<PointerEvent>,
+    override val type: EventType<PointerEvent>,
     init: PointerEventInit = definedExternally,
 ) : MouseEvent {
     val height: Double

@@ -1,5 +1,9 @@
 // Automatically generated - do not modify!
 
+@file:Suppress(
+    "EXTERNAL_CLASS_CONSTRUCTOR_PROPERTY_PARAMETER",
+)
+
 package web.animations
 
 import web.events.Event
@@ -12,7 +16,7 @@ external interface AnimationPlaybackEventInit : EventInit {
 }
 
 open external class AnimationPlaybackEvent(
-    type: EventType<AnimationPlaybackEvent>,
+    override val type: EventType<AnimationPlaybackEvent>,
     init: AnimationPlaybackEventInit = definedExternally,
 ) : Event {
     val currentTime: CSSNumberish?

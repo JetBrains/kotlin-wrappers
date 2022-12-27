@@ -1,5 +1,9 @@
 // Automatically generated - do not modify!
 
+@file:Suppress(
+    "EXTERNAL_CLASS_CONSTRUCTOR_PROPERTY_PARAMETER",
+)
+
 package dom.events
 
 import web.events.Event
@@ -13,7 +17,7 @@ external interface PromiseRejectionEventInit : EventInit {
 }
 
 open external class PromiseRejectionEvent(
-    type: EventType<PromiseRejectionEvent>,
+    override val type: EventType<PromiseRejectionEvent>,
     init: PromiseRejectionEventInit,
 ) : Event {
     val promise: Promise<*>

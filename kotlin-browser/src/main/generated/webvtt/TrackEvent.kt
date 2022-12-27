@@ -1,5 +1,9 @@
 // Automatically generated - do not modify!
 
+@file:Suppress(
+    "EXTERNAL_CLASS_CONSTRUCTOR_PROPERTY_PARAMETER",
+)
+
 package webvtt
 
 import web.events.Event
@@ -11,7 +15,7 @@ external interface TrackEventInit : EventInit {
 }
 
 open external class TrackEvent(
-    type: EventType<TrackEvent>,
+    override val type: EventType<TrackEvent>,
     init: TrackEventInit = definedExternally,
 ) : Event {
     /** Returns the track object (TextTrack, AudioTrack, or VideoTrack) to which the event relates. */
