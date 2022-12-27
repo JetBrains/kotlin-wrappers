@@ -1,6 +1,6 @@
 // Automatically generated - do not modify!
 
-package remoteplayback
+package web.remoteplayback
 
 typealias RemotePlaybackAvailabilityCallback = (
     available: Boolean,

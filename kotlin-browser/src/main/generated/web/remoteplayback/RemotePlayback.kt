@@ -1,6 +1,6 @@
 // Automatically generated - do not modify!
 
-package remoteplayback
+package web.remoteplayback
 
 import js.core.Void
 import web.events.Event

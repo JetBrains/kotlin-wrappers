@@ -4,7 +4,7 @@
     "NAME_CONTAINS_ILLEGAL_CHARS",
 )
 
-package remoteplayback
+package web.remoteplayback
 
 // language=JavaScript
 @JsName("""(/*union*/{connected: 'connected', connecting: 'connecting', disconnected: 'disconnected'}/*union*/)""")

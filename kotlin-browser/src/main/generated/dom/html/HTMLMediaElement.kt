@@ -6,9 +6,9 @@ import dom.events.MediaEncryptedEvent
 import js.core.Void
 import media.key.MediaKeys
 import media.source.TimeRanges
-import remoteplayback.RemotePlayback
 import web.events.Event
 import web.events.EventHandler
+import web.remoteplayback.RemotePlayback
 import webvtt.TextTrack
 import webvtt.TextTrackKind
 import webvtt.TextTrackList
