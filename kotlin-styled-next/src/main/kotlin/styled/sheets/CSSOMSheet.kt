@@ -1,9 +1,9 @@
 package styled.sheets
 
-import browser.window
 import dom.html.HTMLStyleElement
 import js.core.asList
 import web.timers.setTimeout
+import web.window.window
 
 private typealias Rules = Iterable<String>
 

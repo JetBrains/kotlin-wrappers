@@ -1,9 +1,9 @@
 package styled
 
-import browser.window
 import js.core.jso
 import web.location.location
 import web.storage.localStorage
+import web.window.window
 
 internal object GlobalCssAccess {
     private enum class SheetType {
