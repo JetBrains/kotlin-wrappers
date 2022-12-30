@@ -1,6 +1,6 @@
 // Automatically generated - do not modify!
 
-package dom.xpath
+package web.xpath
 
 sealed external class XPathEvaluator :
     XPathEvaluatorBase

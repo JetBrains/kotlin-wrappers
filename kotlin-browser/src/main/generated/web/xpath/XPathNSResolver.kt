@@ -1,5 +1,5 @@
 // Automatically generated - do not modify!
 
-package dom.xpath
+package web.xpath
 
 typealias XPathNSResolver = (prefix: String?) -> String?

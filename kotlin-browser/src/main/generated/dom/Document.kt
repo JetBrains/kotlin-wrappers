@@ -4,12 +4,12 @@ package dom
 
 import dom.html.*
 import dom.selection.Selection
-import dom.xpath.XPathEvaluatorBase
 import js.core.Void
 import web.events.Event
 import web.events.EventHandler
 import web.fonts.FontFaceSource
 import web.url.URL
+import web.xpath.XPathEvaluatorBase
 import kotlin.js.Promise
 
 abstract external class Document :

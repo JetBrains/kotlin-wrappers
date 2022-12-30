@@ -1,6 +1,6 @@
 // Automatically generated - do not modify!
 
-package dom.xpath
+package web.xpath
 
 import dom.Node
 
