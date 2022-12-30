@@ -9,6 +9,7 @@ import web.events.EventHandler
 import web.events.EventTarget
 import web.notifications.Notification
 import web.notifications.NotificationOptions
+import web.push.PushManager
 import kotlin.js.Promise
 
 sealed external class ServiceWorkerRegistration :
@@ -17,7 +18,7 @@ sealed external class ServiceWorkerRegistration :
     val installing: ServiceWorker?
     val navigationPreload: NavigationPreloadManager
     var onupdatefound: EventHandler<Event>?
-    val pushManager: Any /* PushManager */
+    val pushManager: PushManager
     val scope: String
     val updateViaCache: ServiceWorkerUpdateViaCache
     val waiting: ServiceWorker?
