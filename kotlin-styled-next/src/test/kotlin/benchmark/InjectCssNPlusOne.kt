@@ -2,7 +2,6 @@ package benchmark
 
 import TestScope
 import addCss
-import browser.document
 import kotlinx.css.CssBuilder
 import kotlinx.css.height
 import kotlinx.css.px
@@ -17,6 +16,7 @@ import styled.sheets.CSSOMSheet
 import styled.sheets.RemoveMode
 import styled.sheets.RuleType
 import styled.styledDiv
+import web.dom.document
 import kotlin.random.Random
 import kotlin.test.Test
 import kotlin.time.Duration

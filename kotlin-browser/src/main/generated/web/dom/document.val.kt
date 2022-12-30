@@ -1,7 +1,5 @@
 // Automatically generated - do not modify!
 
-package browser
-
-import web.dom.Document
+package web.dom
 
 external val document: Document
