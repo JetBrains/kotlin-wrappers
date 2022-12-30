@@ -1,6 +1,6 @@
 // Automatically generated - do not modify!
 
-package dom.aria
+package web.aria
 
 external interface ARIAMixin {
     var ariaAtomic: String?

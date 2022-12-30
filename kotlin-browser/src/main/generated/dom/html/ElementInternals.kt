@@ -3,7 +3,7 @@
 package dom.html
 
 import dom.NodeList
-import dom.aria.ARIAMixin
+import web.aria.ARIAMixin
 
 sealed external interface ElementInternals :
     ARIAMixin {
