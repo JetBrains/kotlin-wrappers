@@ -1,6 +1,6 @@
 // Automatically generated - do not modify!
 
-package dom.xml
+package web.xml
 
 import dom.Document
 

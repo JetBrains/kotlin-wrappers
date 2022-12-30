@@ -2,7 +2,7 @@
 
 package dom
 
-import dom.xml.XMLDocument
+import web.xml.XMLDocument
 
 sealed external class DOMImplementation {
     fun createDocument(

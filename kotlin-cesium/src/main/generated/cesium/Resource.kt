@@ -9,9 +9,9 @@
 
 package cesium
 
-import dom.xml.XMLDocument
 import js.buffer.ArrayBuffer
 import web.buffer.Blob
+import web.xml.XMLDocument
 
 /**
  * A resource that includes the location and any other parameters we need to retrieve it or create derived resources. It also provides the ability to retry requests.
