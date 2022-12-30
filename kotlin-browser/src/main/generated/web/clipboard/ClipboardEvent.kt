@@ -6,7 +6,7 @@
 
 package web.clipboard
 
-import dom.data.DataTransfer
+import web.data.DataTransfer
 import web.events.Event
 import web.events.EventInit
 import web.events.EventType

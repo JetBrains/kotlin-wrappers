@@ -6,7 +6,7 @@
 
 package dom.events
 
-import dom.data.DataTransfer
+import web.data.DataTransfer
 import web.events.EventType
 
 external interface DragEventInit : MouseEventInit {

@@ -6,8 +6,8 @@
 
 package dom.events
 
-import dom.data.DataTransfer
 import js.core.ReadonlyArray
+import web.data.DataTransfer
 import web.events.EventType
 
 external interface InputEventInit : UIEventInit {

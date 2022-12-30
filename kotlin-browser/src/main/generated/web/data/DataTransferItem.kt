@@ -1,6 +1,6 @@
 // Automatically generated - do not modify!
 
-package dom.data
+package web.data
 
 import web.file.File
 import web.filesystem.FileSystemEntry

@@ -1,6 +1,6 @@
 // Automatically generated - do not modify!
 
-package dom.data
+package web.data
 
 typealias FunctionStringCallback = (
     data: String,
