@@ -3,6 +3,7 @@
 package dom.html
 
 import dom.Document
+import web.window.WindowProxy
 
 abstract external class HTMLObjectElement :
     HTMLElement {

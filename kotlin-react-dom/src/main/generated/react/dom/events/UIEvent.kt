@@ -3,7 +3,7 @@
 package react.dom.events
 
 import dom.Element
-import dom.html.Window
+import web.window.Window
 
 external interface UIEvent<out T : Element, out E : NativeUIEvent> : SyntheticEvent<T, E> {
     val detail: Int

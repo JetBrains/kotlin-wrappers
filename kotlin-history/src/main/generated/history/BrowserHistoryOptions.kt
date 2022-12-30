@@ -2,6 +2,8 @@
 
 package history
 
+import web.window.Window
+
 external interface BrowserHistoryOptions {
-    var window: dom.html.Window?
+    var window: Window?
 }

@@ -5,6 +5,7 @@ package dom.html
 import dom.DOMTokenList
 import dom.Document
 import web.http.ReferrerPolicy
+import web.window.WindowProxy
 
 abstract external class HTMLIFrameElement :
     HTMLElement {

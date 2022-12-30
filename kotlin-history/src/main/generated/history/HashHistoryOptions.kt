@@ -2,6 +2,8 @@
 
 package history
 
+import web.window.Window
+
 external interface HashHistoryOptions {
-    var window: dom.html.Window?
+    var window: Window?
 }

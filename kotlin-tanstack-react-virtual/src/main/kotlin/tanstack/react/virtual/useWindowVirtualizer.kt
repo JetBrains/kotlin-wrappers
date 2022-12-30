@@ -4,8 +4,8 @@
 package tanstack.react.virtual
 
 import dom.Element
-import dom.html.Window
 import tanstack.virtual.core.Virtualizer
+import web.window.Window
 
 external interface UseWindowVirtualizerOptions<TItemElement : Element> :
     UseVirtualizerOptions<Window, TItemElement> {

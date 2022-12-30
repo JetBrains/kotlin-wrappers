@@ -1,5 +1,5 @@
 // Automatically generated - do not modify!
 
-package dom.html
+package web.window
 
 typealias WindowProxy = Window

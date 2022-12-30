@@ -6,10 +6,10 @@
 
 package dom.events
 
-import dom.html.Window
 import web.events.Event
 import web.events.EventInit
 import web.events.EventType
+import web.window.Window
 
 external interface UIEventInit : EventInit {
     var detail: Int?
