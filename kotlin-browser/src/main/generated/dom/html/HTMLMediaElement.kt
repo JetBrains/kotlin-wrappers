@@ -4,10 +4,10 @@ package dom.html
 
 import dom.events.MediaEncryptedEvent
 import js.core.Void
-import media.key.MediaKeys
-import media.source.TimeRanges
 import web.events.Event
 import web.events.EventHandler
+import web.media.key.MediaKeys
+import web.media.source.TimeRanges
 import web.remoteplayback.RemotePlayback
 import webvtt.TextTrack
 import webvtt.TextTrackKind

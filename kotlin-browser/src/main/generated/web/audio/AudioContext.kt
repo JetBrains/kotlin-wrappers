@@ -4,7 +4,7 @@ package web.audio
 
 import dom.html.HTMLMediaElement
 import js.core.Void
-import media.streams.MediaStream
+import web.media.streams.MediaStream
 import kotlin.js.Promise
 
 external class AudioContext(

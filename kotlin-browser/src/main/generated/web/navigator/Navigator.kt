@@ -4,15 +4,15 @@ package web.navigator
 
 import js.core.ReadonlyArray
 import js.core.Void
-import media.capabilities.MediaCapabilities
-import media.devices.MediaDevices
-import media.key.MediaKeySystemAccess
-import media.key.MediaKeySystemConfiguration
-import media.session.MediaSession
 import web.clipboard.Clipboard
 import web.gamepad.Gamepad
 import web.geolocation.Geolocation
 import web.http.BodyInit
+import web.media.capabilities.MediaCapabilities
+import web.media.devices.MediaDevices
+import web.media.key.MediaKeySystemAccess
+import web.media.key.MediaKeySystemConfiguration
+import web.media.session.MediaSession
 import web.permissions.Permissions
 import web.serviceworker.ServiceWorkerContainer
 import web.share.ShareData

@@ -6,7 +6,7 @@
 
 package web.workers
 
-import media.capabilities.MediaCapabilities
+import web.media.capabilities.MediaCapabilities
 import web.navigator.*
 
 sealed external class WorkerNavigator :

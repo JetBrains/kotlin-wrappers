@@ -7,11 +7,11 @@
 package webrtc
 
 import js.core.ReadonlyArray
-import media.streams.MediaStream
-import media.streams.MediaStreamTrack
 import web.events.Event
 import web.events.EventInit
 import web.events.EventType
+import web.media.streams.MediaStream
+import web.media.streams.MediaStreamTrack
 
 external interface RTCTrackEventInit : EventInit {
     var receiver: RTCRtpReceiver

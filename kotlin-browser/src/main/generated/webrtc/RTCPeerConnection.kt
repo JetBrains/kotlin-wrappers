@@ -4,12 +4,12 @@ package webrtc
 
 import js.core.ReadonlyArray
 import js.core.Void
-import media.streams.MediaStream
-import media.streams.MediaStreamTrack
 import web.crypto.Algorithm
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventTarget
+import web.media.streams.MediaStream
+import web.media.streams.MediaStreamTrack
 import kotlin.js.Promise
 
 external class RTCPeerConnection(

@@ -2,7 +2,7 @@
 
 package web.audio
 
-import media.streams.MediaStream
+import web.media.streams.MediaStream
 
 external class MediaStreamAudioDestinationNode(
     context: AudioContext,

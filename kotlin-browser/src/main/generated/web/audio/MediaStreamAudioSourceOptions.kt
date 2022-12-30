@@ -2,7 +2,7 @@
 
 package web.audio
 
-import media.streams.MediaStream
+import web.media.streams.MediaStream
 
 sealed external interface MediaStreamAudioSourceOptions {
     var mediaStream: MediaStream

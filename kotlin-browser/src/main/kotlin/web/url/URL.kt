@@ -1,6 +1,6 @@
 package web.url
 
-import media.source.MediaSource
+import web.media.source.MediaSource
 
 fun URL.Companion.createObjectURL(
     obj: MediaSource,

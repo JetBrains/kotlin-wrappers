@@ -3,7 +3,7 @@
 package webrtc
 
 import js.core.ReadonlyArray
-import media.streams.MediaStreamTrack
+import web.media.streams.MediaStreamTrack
 import kotlin.js.Promise
 
 sealed external class RTCRtpReceiver {

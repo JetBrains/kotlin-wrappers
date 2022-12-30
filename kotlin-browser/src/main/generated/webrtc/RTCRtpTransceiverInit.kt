@@ -3,7 +3,7 @@
 package webrtc
 
 import js.core.ReadonlyArray
-import media.streams.MediaStream
+import web.media.streams.MediaStream
 
 sealed external interface RTCRtpTransceiverInit {
     var direction: RTCRtpTransceiverDirection?
