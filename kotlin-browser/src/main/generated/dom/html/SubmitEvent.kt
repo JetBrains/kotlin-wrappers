@@ -4,9 +4,8 @@
     "EXTERNAL_CLASS_CONSTRUCTOR_PROPERTY_PARAMETER",
 )
 
-package dom.events
+package dom.html
 
-import dom.html.HTMLElement
 import web.events.Event
 import web.events.EventInit
 import web.events.EventType

@@ -4,7 +4,7 @@
     "EXTERNAL_CLASS_CONSTRUCTOR_PROPERTY_PARAMETER",
 )
 
-package dom.events
+package dom.html
 
 import js.buffer.ArrayBuffer
 import web.events.Event

@@ -3,6 +3,8 @@
 package dom
 
 import dom.events.*
+import dom.html.FormDataEvent
+import dom.html.SubmitEvent
 import web.animations.AnimationEvent
 import web.csp.SecurityPolicyViolationEvent
 import web.cssom.TransitionEvent
