@@ -14,7 +14,7 @@ import mui.system.SxProps
 
 external interface ImageListItemBarProps :
     mui.system.StandardProps,
-    react.dom.html.HTMLAttributes<dom.html.HTMLDivElement>,
+    react.dom.html.HTMLAttributes<web.html.HTMLDivElement>,
     mui.system.PropsWithSx {
     /**
      * An IconButton element to be used as secondary action target

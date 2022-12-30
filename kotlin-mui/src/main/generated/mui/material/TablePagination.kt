@@ -79,14 +79,14 @@ external interface TablePaginationProps :
      * @param {React.MouseEvent<HTMLButtonElement> | null} event The event source of the callback.
      * @param {number} page The page selected.
      */
-    var onPageChange: (event: react.dom.events.MouseEvent<dom.html.HTMLButtonElement, *>?, page: Number) -> Unit
+    var onPageChange: (event: react.dom.events.MouseEvent<web.html.HTMLButtonElement, *>?, page: Number) -> Unit
 
     /**
      * Callback fired when the number of rows per page is changed.
      *
      * @param {React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>} event The event source of the callback.
      */
-    var onRowsPerPageChange: react.dom.events.ChangeEventHandler<dom.html.HTMLElement>?
+    var onRowsPerPageChange: react.dom.events.ChangeEventHandler<web.html.HTMLElement>?
 
     /**
      * The zero-based index of the current page.

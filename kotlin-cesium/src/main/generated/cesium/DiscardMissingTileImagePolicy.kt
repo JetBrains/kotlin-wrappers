@@ -9,8 +9,8 @@
 
 package cesium
 
-import dom.html.HTMLImageElement
 import js.core.ReadonlyArray
+import web.html.HTMLImageElement
 
 /**
  * A policy for discarding tile images that match a known image containing a

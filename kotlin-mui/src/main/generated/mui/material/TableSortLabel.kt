@@ -9,7 +9,7 @@ import mui.material.styles.Theme
 import mui.system.SxProps
 
 external interface TableSortLabelProps :
-    react.dom.html.HTMLAttributes<dom.html.HTMLSpanElement>,
+    react.dom.html.HTMLAttributes<web.html.HTMLSpanElement>,
     react.PropsWithChildren,
     mui.system.PropsWithSx {
     /**

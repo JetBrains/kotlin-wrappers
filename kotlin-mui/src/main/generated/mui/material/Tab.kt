@@ -13,7 +13,7 @@ import mui.material.styles.Theme
 import mui.system.SxProps
 
 external interface TabProps :
-    react.dom.html.HTMLAttributes<dom.html.HTMLDivElement>,
+    react.dom.html.HTMLAttributes<web.html.HTMLDivElement>,
     mui.system.PropsWithSx {
     /**
      * This prop isn't supported.

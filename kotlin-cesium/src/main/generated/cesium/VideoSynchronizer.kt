@@ -9,7 +9,7 @@
 
 package cesium
 
-import dom.html.HTMLVideoElement
+import web.html.HTMLVideoElement
 
 /**
  * Synchronizes a video element with a simulation clock.

@@ -1,10 +1,10 @@
 package react.select
 
 import csstype.Length
-import dom.html.HTMLDivElement
 import react.PropsWithChildren
 import react.RefCallback
 import react.dom.html.HTMLAttributes
+import web.html.HTMLDivElement
 
 external interface MenuListProps<Option, Group : GroupBase<Option>> : PropsWithChildren {
     var maxHeight: Length

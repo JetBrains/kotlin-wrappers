@@ -9,8 +9,8 @@
 
 package cesium
 
-import dom.html.HTMLCanvasElement
-import dom.html.HTMLImageElement
+import web.html.HTMLCanvasElement
+import web.html.HTMLImageElement
 
 /**
  * <div class="notice">

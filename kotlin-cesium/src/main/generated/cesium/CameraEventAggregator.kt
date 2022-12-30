@@ -5,7 +5,7 @@
 
 package cesium
 
-import dom.html.HTMLCanvasElement
+import web.html.HTMLCanvasElement
 
 /**
  * Aggregates input events. For example, suppose the following inputs are received between frames:

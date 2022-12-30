@@ -1,7 +1,7 @@
 package styled.sheets
 
-import dom.html.HTMLStyleElement
 import js.core.asList
+import web.html.HTMLStyleElement
 import web.timers.setTimeout
 import web.window.window
 

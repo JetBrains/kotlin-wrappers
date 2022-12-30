@@ -9,7 +9,7 @@ import mui.material.styles.Theme
 import mui.system.SxProps
 
 external interface MenuItemProps :
-    react.dom.html.LiHTMLAttributes<dom.html.HTMLLIElement>,
+    react.dom.html.LiHTMLAttributes<web.html.HTMLLIElement>,
     mui.system.PropsWithSx {
     /**
      * If `true`, the list item is focused during the first mount.

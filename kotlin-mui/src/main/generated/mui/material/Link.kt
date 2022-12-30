@@ -9,7 +9,7 @@ import mui.material.styles.Theme
 import mui.system.SxProps
 
 external interface LinkProps :
-    react.dom.html.AnchorHTMLAttributes<dom.html.HTMLAnchorElement>,
+    react.dom.html.AnchorHTMLAttributes<web.html.HTMLAnchorElement>,
     react.PropsWithChildren,
     mui.system.PropsWithSx,
     mui.types.PropsWithComponent {

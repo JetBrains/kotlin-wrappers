@@ -9,7 +9,7 @@
 
 package cesium
 
-import dom.html.HTMLElement
+import web.html.HTMLElement
 
 /**
  * The credit display is responsible for displaying credits on screen.

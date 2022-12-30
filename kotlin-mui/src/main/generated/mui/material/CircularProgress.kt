@@ -10,7 +10,7 @@ import mui.system.SxProps
 
 external interface CircularProgressProps :
     mui.system.StandardProps,
-    react.dom.html.HTMLAttributes<dom.html.HTMLSpanElement>,
+    react.dom.html.HTMLAttributes<web.html.HTMLSpanElement>,
     mui.system.PropsWithSx {
     /**
      * Override or extend the styles applied to the component.

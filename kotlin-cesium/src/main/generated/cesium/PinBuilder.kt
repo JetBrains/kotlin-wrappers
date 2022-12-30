@@ -5,7 +5,7 @@
 
 package cesium
 
-import dom.html.HTMLCanvasElement
+import web.html.HTMLCanvasElement
 
 /**
  * A utility class for generating custom map pins as canvas elements.

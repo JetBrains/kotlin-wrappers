@@ -1,9 +1,9 @@
 package react.select
 
 import csstype.ClassName
-import dom.html.HTMLInputElement
 import react.Props
 import react.RefCallback
+import web.html.HTMLInputElement
 
 external interface InputSpecificProps : Props {
 

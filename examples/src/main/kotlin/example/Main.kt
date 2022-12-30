@@ -4,7 +4,6 @@ import csstype.BackgroundColor
 import csstype.Color
 import csstype.ColorProperty
 import csstype.px
-import dom.html.HTMLDivElement
 import emotion.react.css
 import js.core.Object
 import js.core.jso
@@ -16,6 +15,7 @@ import react.dom.html.ReactHTML.input
 import react.dom.html.ReactHTML.option
 import react.dom.html.ReactHTML.select
 import react.dom.html.ReactHTML.textarea
+import web.html.HTMLDivElement
 
 enum class Theme(
     val backgroundColor: BackgroundColor,

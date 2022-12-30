@@ -2,8 +2,8 @@
 
 package web.audio
 
-import dom.html.HTMLMediaElement
 import js.core.Void
+import web.html.HTMLMediaElement
 import web.media.streams.MediaStream
 import kotlin.js.Promise
 

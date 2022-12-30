@@ -10,7 +10,7 @@ import mui.system.SxProps
 
 external interface ListItemProps :
     ListItemBaseProps,
-    react.dom.html.HTMLAttributes<dom.html.HTMLElement> {
+    react.dom.html.HTMLAttributes<web.html.HTMLElement> {
     /**
      * The components used for each slot inside the InputBase.
      * Either a string to use a HTML element or a component.
@@ -66,14 +66,14 @@ external interface ListItemBaseProps :
      * @default 'li'
      * @deprecated
      */
-    var ContainerComponent: react.ElementType<react.dom.html.HTMLAttributes<dom.html.HTMLDivElement>>?
+    var ContainerComponent: react.ElementType<react.dom.html.HTMLAttributes<web.html.HTMLDivElement>>?
 
     /**
      * Props applied to the container component if used.
      * @default {}
      * @deprecated
      */
-    var ContainerProps: react.dom.html.HTMLAttributes<dom.html.HTMLDivElement>?
+    var ContainerProps: react.dom.html.HTMLAttributes<web.html.HTMLDivElement>?
 
     /**
      * If `true`, compact vertical padding designed for keyboard and mouse input is used.

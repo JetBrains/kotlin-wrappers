@@ -3,7 +3,7 @@
 package mui.system
 
 external interface ContainerProps :
-    react.dom.html.HTMLAttributes<dom.html.HTMLDivElement>,
+    react.dom.html.HTMLAttributes<web.html.HTMLDivElement>,
     react.PropsWithChildren,
     PropsWithSx {
     override var children: react.ReactNode?

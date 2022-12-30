@@ -9,7 +9,7 @@
 
 package cesium
 
-import dom.html.HTMLImageElement
+import web.html.HTMLImageElement
 
 /**
  * Provides functionality for ImageryProviders that have time dynamic imagery

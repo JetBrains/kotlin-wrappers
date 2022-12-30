@@ -11,7 +11,7 @@
 package cesium
 
 import dom.Element
-import dom.html.HTMLCanvasElement
+import web.html.HTMLCanvasElement
 
 /**
  * A widget containing a Cesium scene.

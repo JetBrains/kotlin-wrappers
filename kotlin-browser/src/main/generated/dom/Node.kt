@@ -2,8 +2,8 @@
 
 package dom
 
-import dom.html.HTMLElement
 import web.events.EventTarget
+import web.html.HTMLElement
 
 sealed external class Node :
     EventTarget {

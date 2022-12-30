@@ -13,7 +13,7 @@ import mui.material.styles.Theme
 import mui.system.SxProps
 
 external interface ChipProps :
-    react.dom.html.HTMLAttributes<dom.html.HTMLDivElement>,
+    react.dom.html.HTMLAttributes<web.html.HTMLDivElement>,
     mui.system.PropsWithSx,
     mui.types.PropsWithComponent {
     /**

@@ -5,7 +5,7 @@
 
 package cesium
 
-import dom.html.HTMLCanvasElement
+import web.html.HTMLCanvasElement
 
 /**
  * Writes the given text into a new canvas.  The canvas will be sized to fit the text.

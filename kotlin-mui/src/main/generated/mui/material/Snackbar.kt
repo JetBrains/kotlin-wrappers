@@ -14,7 +14,7 @@ import mui.system.SxProps
 
 external interface SnackbarProps :
     mui.system.StandardProps,
-    react.dom.html.HTMLAttributes<dom.html.HTMLDivElement>,
+    react.dom.html.HTMLAttributes<web.html.HTMLDivElement>,
     mui.system.PropsWithSx {
     /**
      * The action to display. It renders after the message, at the end of the snackbar.

@@ -10,7 +10,7 @@ import mui.system.SxProps
 
 external interface FormControlLabelProps :
     mui.system.StandardProps,
-    react.dom.html.LabelHTMLAttributes<dom.html.HTMLLabelElement>,
+    react.dom.html.LabelHTMLAttributes<web.html.HTMLLabelElement>,
     mui.system.PropsWithSx {
     /**
      * If `true`, the component appears selected.

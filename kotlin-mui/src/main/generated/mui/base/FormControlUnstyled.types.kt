@@ -6,7 +6,7 @@ import csstype.ClassName
 
 external interface FormControlUnstyledProps :
     FormControlUnstyledOwnProps,
-    react.dom.html.HTMLAttributes<dom.html.HTMLDivElement>
+    react.dom.html.HTMLAttributes<web.html.HTMLDivElement>
 
 external interface FormControlUnstyledOwnProps : react.PropsWithClassName {
     /**

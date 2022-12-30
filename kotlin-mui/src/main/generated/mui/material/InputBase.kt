@@ -14,7 +14,7 @@ import mui.system.SxProps
 
 external interface InputBaseProps :
     mui.system.StandardProps,
-    react.dom.html.HTMLAttributes<dom.html.HTMLDivElement>,
+    react.dom.html.HTMLAttributes<web.html.HTMLDivElement>,
     mui.system.PropsWithSx {
     // var `aria-describedby`: String?
 
@@ -147,7 +147,7 @@ external interface InputBaseProps :
      *
      * Notice that the first argument (event) might be undefined.
      */
-    var onBlur: react.dom.events.FocusEventHandler<dom.html.HTMLElement>?
+    var onBlur: react.dom.events.FocusEventHandler<web.html.HTMLElement>?
 
     /**
      * Callback fired when the value is changed.
@@ -155,13 +155,13 @@ external interface InputBaseProps :
      * @param {React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>} event The event source of the callback.
      * You can pull out the new value by accessing `event.target.value` (string).
      */
-    var onChange: react.dom.events.ChangeEventHandler<dom.html.HTMLElement>?
+    var onChange: react.dom.events.ChangeEventHandler<web.html.HTMLElement>?
 
-    var onFocus: react.dom.events.FocusEventHandler<dom.html.HTMLElement>?
+    var onFocus: react.dom.events.FocusEventHandler<web.html.HTMLElement>?
 
-    var onKeyDown: react.dom.events.KeyboardEventHandler<dom.html.HTMLElement>?
+    var onKeyDown: react.dom.events.KeyboardEventHandler<web.html.HTMLElement>?
 
-    var onKeyUp: react.dom.events.KeyboardEventHandler<dom.html.HTMLElement>?
+    var onKeyUp: react.dom.events.KeyboardEventHandler<web.html.HTMLElement>?
 
     /**
      * The short hint displayed in the `input` before the user enters a value.
@@ -225,7 +225,7 @@ external interface InputBaseProps :
 }
 
 external interface InputBaseComponentProps :
-    react.dom.html.HTMLAttributes<dom.html.HTMLElement>
+    react.dom.html.HTMLAttributes<web.html.HTMLElement>
 
 /**
  * `InputBase` contains as few styles as possible.

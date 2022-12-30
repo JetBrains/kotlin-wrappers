@@ -9,8 +9,8 @@
 
 package cesium
 
-import dom.html.HTMLElement
 import js.core.ReadonlyArray
+import web.html.HTMLElement
 
 /**
  * The view model for [Cesium3DTilesInspector].

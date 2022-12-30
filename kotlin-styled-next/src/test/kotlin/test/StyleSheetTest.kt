@@ -1,7 +1,6 @@
 package test
 
 import browser.document
-import dom.html.HTMLStyleElement
 import js.core.asList
 import kotlinx.css.*
 import react.Props
@@ -13,6 +12,7 @@ import styled.sheets.importStyleId
 import styled.sheets.styleElementsSelector
 import waitForAnimationFrame
 import web.cssom.CSSStyleSheet
+import web.html.HTMLStyleElement
 import kotlin.test.BeforeTest
 import kotlin.test.Test
 import kotlin.test.assertContains

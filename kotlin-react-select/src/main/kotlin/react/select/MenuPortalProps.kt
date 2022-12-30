@@ -1,9 +1,9 @@
 package react.select
 
-import dom.html.HTMLDivElement
-import dom.html.HTMLElement
 import react.PropsWithChildren
 import react.dom.html.HTMLAttributes
+import web.html.HTMLDivElement
+import web.html.HTMLElement
 
 external interface MenuPortalProps : PropsWithChildren {
     var appendTo: HTMLElement?

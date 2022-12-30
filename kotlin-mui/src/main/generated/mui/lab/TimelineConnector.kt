@@ -10,7 +10,7 @@ import mui.system.SxProps
 
 external interface TimelineConnectorProps :
     mui.system.StandardProps,
-    react.dom.html.HTMLAttributes<dom.html.HTMLSpanElement>,
+    react.dom.html.HTMLAttributes<web.html.HTMLSpanElement>,
     react.PropsWithChildren,
     mui.system.PropsWithSx {
     /**

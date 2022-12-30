@@ -2,7 +2,7 @@
 
 package dom
 
-import dom.html.HTMLElement
+import web.html.HTMLElement
 
 abstract external class DocumentFragment :
     Node,

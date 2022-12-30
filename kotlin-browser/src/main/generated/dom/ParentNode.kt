@@ -2,9 +2,9 @@
 
 package dom
 
-import dom.html.HTMLCollection
-import dom.html.HTMLElement
-import dom.html.HtmlTagName
+import web.html.HTMLCollection
+import web.html.HTMLElement
+import web.html.HtmlTagName
 import web.svg.SVGElement
 import web.svg.SvgTagName
 

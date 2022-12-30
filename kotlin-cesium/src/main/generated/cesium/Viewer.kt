@@ -11,8 +11,8 @@
 package cesium
 
 import dom.Element
-import dom.html.HTMLCanvasElement
 import js.core.ReadonlyArray
+import web.html.HTMLCanvasElement
 
 /**
  * A base widget for building applications.  It composites all of the standard Cesium widgets into one reusable package.

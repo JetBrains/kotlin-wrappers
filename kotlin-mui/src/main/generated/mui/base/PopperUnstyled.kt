@@ -9,7 +9,7 @@ import js.core.ReadonlyArray
 import popper.core.Modifier
 
 external interface PopperUnstyledProps :
-    react.dom.html.HTMLAttributes<dom.html.HTMLDivElement> {
+    react.dom.html.HTMLAttributes<web.html.HTMLDivElement> {
     /**
      * An HTML element, [virtualElement](https://popper.js.org/docs/v2/virtual-elements/),
      * or a function that returns either.

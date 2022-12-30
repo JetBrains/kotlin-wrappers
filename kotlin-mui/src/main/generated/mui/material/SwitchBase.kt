@@ -63,7 +63,7 @@ external interface SwitchBaseProps :
     /**
      * [Attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#Attributes) applied to the `input` element.
      */
-    var inputProps: react.dom.html.InputHTMLAttributes<dom.html.HTMLInputElement>?
+    var inputProps: react.dom.html.InputHTMLAttributes<web.html.HTMLInputElement>?
 
     /**
      * Pass a ref to the `input` element.
@@ -82,7 +82,7 @@ external interface SwitchBaseProps :
      * You can pull out the new value by accessing `event.target.value` (string).
      * You can pull out the new checked state by accessing `event.target.checked` (boolean).
      */
-    var onChange: ((event: react.dom.events.ChangeEvent<dom.html.HTMLInputElement>, checked: Boolean) -> Unit)?
+    var onChange: ((event: react.dom.events.ChangeEvent<web.html.HTMLInputElement>, checked: Boolean) -> Unit)?
 
     var readOnly: Boolean?
 

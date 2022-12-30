@@ -9,7 +9,7 @@ import mui.material.styles.Theme
 import mui.system.SxProps
 
 external interface FormHelperTextProps :
-    react.dom.html.HTMLAttributes<dom.html.HTMLParagraphElement>,
+    react.dom.html.HTMLAttributes<web.html.HTMLParagraphElement>,
     react.PropsWithChildren,
     mui.system.PropsWithSx,
     mui.types.PropsWithComponent {

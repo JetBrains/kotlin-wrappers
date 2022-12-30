@@ -10,8 +10,8 @@
 package cesium
 
 import dom.Element
-import dom.html.HTMLCanvasElement
 import js.core.ReadonlyArray
+import web.html.HTMLCanvasElement
 
 /**
  * The container for all 3D graphical objects and state in a Cesium virtual scene.  Generally,

@@ -9,8 +9,8 @@
 
 package cesium
 
-import dom.html.HTMLCanvasElement
 import js.core.ReadonlyArray
+import web.html.HTMLCanvasElement
 
 /**
  * An [ImageryProvider] that draws a box around every rendered tile in the tiling scheme, and draws

@@ -3,9 +3,9 @@
 
 package react.popper
 
-import dom.html.HTMLElement
 import popper.core.Options
 import popper.core.ReferenceElement
+import web.html.HTMLElement
 
 external interface UsePopperOptions : Options
 

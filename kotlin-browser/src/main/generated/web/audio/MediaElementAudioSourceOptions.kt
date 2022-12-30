@@ -2,7 +2,7 @@
 
 package web.audio
 
-import dom.html.HTMLMediaElement
+import web.html.HTMLMediaElement
 
 sealed external interface MediaElementAudioSourceOptions {
     var mediaElement: HTMLMediaElement

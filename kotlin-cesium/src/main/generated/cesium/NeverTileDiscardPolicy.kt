@@ -5,7 +5,7 @@
 
 package cesium
 
-import dom.html.HTMLImageElement
+import web.html.HTMLImageElement
 
 /**
  * A [TileDiscardPolicy] specifying that tile images should never be discard.

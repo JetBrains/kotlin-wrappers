@@ -3,7 +3,6 @@ package styled
 import browser.document
 import csstype.ClassName
 import dom.Element
-import dom.html.HTML.div
 import js.core.jso
 import kotlinx.css.CssBuilder
 import kotlinx.css.CssDsl
@@ -14,6 +13,7 @@ import react.dom.DOMProps
 import react.dom.RDOMBuilder
 import react.dom.RDOMBuilderImpl
 import react.dom.render
+import web.html.HTML.div
 import kotlin.js.Promise
 
 typealias AnyTagStyledBuilder = StyledDOMBuilder<CommonAttributeGroupFacade>

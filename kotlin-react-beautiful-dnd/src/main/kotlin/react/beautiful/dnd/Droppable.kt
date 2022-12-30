@@ -3,11 +3,11 @@
 
 package react.beautiful.dnd
 
-import dom.html.HTMLElement
 import react.Component
 import react.Props
 import react.ReactElement
 import react.dom.html.HTMLAttributes
+import web.html.HTMLElement
 
 sealed external interface DroppableProps : Props {
     var droppableId: DroppableId

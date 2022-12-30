@@ -1,8 +1,8 @@
 package emotion.sheet
 
-import dom.html.HTMLElement
-import dom.html.HTMLStyleElement
 import js.core.ReadonlyArray
+import web.html.HTMLElement
+import web.html.HTMLStyleElement
 
 external interface StyleSheet {
     val container: HTMLElement

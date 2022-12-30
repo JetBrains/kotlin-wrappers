@@ -3,10 +3,10 @@
 
 package ringui
 
-import dom.html.HTMLInputElement
 import react.ComponentClass
 import react.PropsWithClassName
 import react.RefObject
+import web.html.HTMLInputElement
 import web.uievents.InputEvent
 
 // https://github.com/JetBrains/ring-ui/blob/master/components/input/input.js

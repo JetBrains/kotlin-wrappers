@@ -2,11 +2,11 @@
 
 package dom
 
-import dom.html.*
 import js.core.Void
 import web.events.Event
 import web.events.EventHandler
 import web.fonts.FontFaceSource
+import web.html.*
 import web.selection.Selection
 import web.url.URL
 import web.window.WindowProxy

@@ -9,7 +9,7 @@ import mui.material.styles.Theme
 import mui.system.SxProps
 
 external interface ImageListItemProps :
-    react.dom.html.LiHTMLAttributes<dom.html.HTMLLIElement>,
+    react.dom.html.LiHTMLAttributes<web.html.HTMLLIElement>,
     react.PropsWithChildren,
     mui.system.PropsWithSx,
     mui.types.PropsWithComponent {

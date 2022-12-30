@@ -14,7 +14,7 @@ import mui.system.SxProps
 
 external interface TooltipProps :
     mui.system.StandardProps,
-    react.dom.html.HTMLAttributes<dom.html.HTMLDivElement>,
+    react.dom.html.HTMLAttributes<web.html.HTMLDivElement>,
     mui.system.PropsWithSx {
     /**
      * If `true`, adds an arrow to the tooltip.

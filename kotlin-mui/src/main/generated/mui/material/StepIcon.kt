@@ -10,7 +10,7 @@ import mui.system.SxProps
 
 external interface StepIconProps :
     mui.system.StandardProps,
-    react.dom.html.HTMLAttributes<dom.html.HTMLDivElement>,
+    react.dom.html.HTMLAttributes<web.html.HTMLDivElement>,
     mui.system.PropsWithSx {
     /**
      * Whether this step is active.

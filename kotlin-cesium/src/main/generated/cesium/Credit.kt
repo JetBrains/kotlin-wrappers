@@ -9,7 +9,7 @@
 
 package cesium
 
-import dom.html.HTMLElement
+import web.html.HTMLElement
 
 /**
  * A credit contains data pertaining to how to display attributions/credits for certain content on the screen.

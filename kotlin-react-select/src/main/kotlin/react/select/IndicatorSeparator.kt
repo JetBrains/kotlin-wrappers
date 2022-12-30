@@ -1,8 +1,8 @@
 package react.select
 
-import dom.html.HTMLSpanElement
 import react.Props
 import react.dom.html.HTMLAttributes
+import web.html.HTMLSpanElement
 
 external interface IndicatorSeparatorProps : Props {
     var innerProps: HTMLAttributes<HTMLSpanElement>?

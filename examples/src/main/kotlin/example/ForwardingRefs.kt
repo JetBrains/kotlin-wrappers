@@ -1,9 +1,9 @@
 package example
 
-import dom.html.HTMLElement
-import dom.html.HTMLInputElement
 import react.*
 import react.dom.html.ReactHTML.input
+import web.html.HTMLElement
+import web.html.HTMLInputElement
 
 external interface Focusable {
     fun focus()

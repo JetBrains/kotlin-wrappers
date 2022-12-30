@@ -2,7 +2,6 @@
 
 package dom
 
-import dom.html.*
 import js.core.ReadonlyArray
 import js.core.Void
 import web.aria.ARIAMixin
@@ -10,6 +9,7 @@ import web.events.Event
 import web.events.EventHandler
 import web.geometry.DOMRect
 import web.geometry.DOMRectList
+import web.html.*
 import web.scroll.ScrollIntoViewOptions
 import web.scroll.ScrollToOptions
 import web.svg.SVGElement

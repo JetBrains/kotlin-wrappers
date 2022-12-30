@@ -13,7 +13,7 @@ import mui.material.styles.Theme
 import mui.system.SxProps
 
 external interface ToggleButtonProps :
-    react.dom.html.ButtonHTMLAttributes<dom.html.HTMLButtonElement>,
+    react.dom.html.ButtonHTMLAttributes<web.html.HTMLButtonElement>,
     react.PropsWithChildren,
     mui.system.PropsWithSx {
     /**
@@ -58,7 +58,7 @@ external interface ToggleButtonProps :
      * @param {React.MouseEvent<HTMLElement>} event The event source of the callback.
      * @param {any} value of the selected button.
      */
-    var onChange: ((event: react.dom.events.MouseEvent<dom.html.HTMLElement, *>, value: dynamic) -> Unit)?
+    var onChange: ((event: react.dom.events.MouseEvent<web.html.HTMLElement, *>, value: dynamic) -> Unit)?
 
     /**
      * Callback fired when the button is clicked.
@@ -66,7 +66,7 @@ external interface ToggleButtonProps :
      * @param {React.MouseEvent<HTMLElement>} event The event source of the callback.
      * @param {any} value of the selected button.
      */
-    var onClick: ((event: react.dom.events.MouseEvent<dom.html.HTMLElement, *>, value: dynamic) -> Unit)?
+    var onClick: ((event: react.dom.events.MouseEvent<web.html.HTMLElement, *>, value: dynamic) -> Unit)?
 
     /**
      * If `true`, the button is rendered in an active state.

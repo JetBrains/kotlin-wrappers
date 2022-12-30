@@ -2,7 +2,7 @@
 
 package mui.material
 
-typealias TableCellBaseProps = react.dom.html.TdHTMLAttributes<dom.html.HTMLTableCellElement>
+typealias TableCellBaseProps = react.dom.html.TdHTMLAttributes<web.html.HTMLTableCellElement>
 
 @Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
 // language=JavaScript

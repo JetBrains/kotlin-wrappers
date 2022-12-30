@@ -27,7 +27,7 @@ external interface UseSwitchParameters {
      * You can pull out the new value by accessing `event.target.value` (string).
      * You can pull out the new checked state by accessing `event.target.checked` (boolean).
      */
-    var onChange: react.dom.events.ChangeEventHandler<dom.html.HTMLInputElement>?
+    var onChange: react.dom.events.ChangeEventHandler<web.html.HTMLInputElement>?
 
     var onFocus: react.dom.events.FocusEventHandler<*>?
 

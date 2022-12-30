@@ -1,6 +1,5 @@
 package react.beautiful.dnd
 
-import dom.html.HTMLElement
 import js.core.ReadonlyArray
 import js.core.ReadonlyRecord
 import react.CSSProperties
@@ -11,6 +10,7 @@ import react.dom.events.DragEventHandler
 import react.dom.events.TransitionEventHandler
 import react.dom.html.HTMLAttributes
 import web.events.Event
+import web.html.HTMLElement
 
 sealed external interface Position {
     var x: Double

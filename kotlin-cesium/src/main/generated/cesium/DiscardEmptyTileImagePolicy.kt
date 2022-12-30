@@ -5,7 +5,7 @@
 
 package cesium
 
-import dom.html.HTMLImageElement
+import web.html.HTMLImageElement
 
 /**
  * A policy for discarding tile images that contain no data (and so aren't actually images).

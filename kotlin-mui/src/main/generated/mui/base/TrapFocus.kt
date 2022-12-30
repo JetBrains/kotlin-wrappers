@@ -18,7 +18,7 @@ external interface TrapFocusProps : react.Props {
      * For instance, you can provide the "tabbable" npm dependency.
      * @param {HTMLElement} root
      */
-    var getTabbable: ((root: dom.html.HTMLElement) -> ReadonlyArray<String>)?
+    var getTabbable: ((root: web.html.HTMLElement) -> ReadonlyArray<String>)?
 
     /**
      * This prop extends the `open` prop.

@@ -2,7 +2,7 @@
 
 package dom
 
-import dom.html.HTMLSlotElement
+import web.html.HTMLSlotElement
 
 sealed external interface Slottable {
     val assignedSlot: HTMLSlotElement?

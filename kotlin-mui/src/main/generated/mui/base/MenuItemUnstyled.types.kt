@@ -11,7 +11,7 @@ external interface MenuItemUnstyledProps :
 
     override var className: ClassName?
 
-    var onClick: react.dom.events.MouseEventHandler<dom.html.HTMLElement>?
+    var onClick: react.dom.events.MouseEventHandler<web.html.HTMLElement>?
 
     /**
      * If `true`, the menu item will be disabled.

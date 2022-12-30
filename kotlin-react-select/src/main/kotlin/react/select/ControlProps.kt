@@ -1,9 +1,9 @@
 package react.select
 
-import dom.html.HTMLDivElement
 import react.PropsWithChildren
 import react.Ref
 import react.dom.html.HTMLAttributes
+import web.html.HTMLDivElement
 
 external interface ControlProps : PropsWithChildren {
     var innerRef: Ref<HTMLDivElement>

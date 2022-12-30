@@ -2,7 +2,7 @@
 
 package web.canvas
 
-import dom.html.HTMLCanvasElement
+import web.html.HTMLCanvasElement
 
 sealed external class CanvasRenderingContext2D :
     CanvasCompositing,

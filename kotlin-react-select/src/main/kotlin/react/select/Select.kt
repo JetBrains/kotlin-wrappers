@@ -4,15 +4,15 @@
 package react.select
 
 import csstype.ClassName
-import dom.html.HTMLDivElement
-import dom.html.HTMLElement
-import dom.html.HTMLInputElement
 import react.ComponentClass
 import react.Key
 import react.PropsWithClassName
 import react.ReactNode
 import react.dom.events.FocusEventHandler
 import react.dom.events.KeyboardEventHandler
+import web.html.HTMLDivElement
+import web.html.HTMLElement
+import web.html.HTMLInputElement
 import web.uievents.WheelEvent
 
 external interface MenuPosition

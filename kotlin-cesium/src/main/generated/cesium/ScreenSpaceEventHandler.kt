@@ -9,7 +9,7 @@
 
 package cesium
 
-import dom.html.HTMLCanvasElement
+import web.html.HTMLCanvasElement
 
 /**
  * Handles user input events. Custom functions can be added to be executed on

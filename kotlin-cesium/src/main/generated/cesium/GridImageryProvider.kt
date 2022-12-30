@@ -9,8 +9,8 @@
 
 package cesium
 
-import dom.html.HTMLCanvasElement
 import js.core.ReadonlyArray
+import web.html.HTMLCanvasElement
 
 /**
  * An [ImageryProvider] that draws a wireframe grid on every tile with controllable background and glow.

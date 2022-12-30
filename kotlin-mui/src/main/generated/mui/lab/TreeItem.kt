@@ -14,7 +14,7 @@ import mui.system.SxProps
 
 external interface TreeItemProps :
     mui.system.StandardProps,
-    react.dom.html.HTMLAttributes<dom.html.HTMLLIElement>,
+    react.dom.html.HTMLAttributes<web.html.HTMLLIElement>,
     react.PropsWithChildren,
     mui.system.PropsWithSx {
     /**
@@ -41,7 +41,7 @@ external interface TreeItemProps :
     /**
      * Props applied to ContentComponent
      */
-    var ContentProps: react.dom.html.HTMLAttributes<dom.html.HTMLElement>?
+    var ContentProps: react.dom.html.HTMLAttributes<web.html.HTMLElement>?
 
     /**
      * If `true`, the node is disabled.

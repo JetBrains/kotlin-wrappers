@@ -10,7 +10,7 @@ import mui.system.SxProps
 
 external interface AlertTitleProps :
     mui.system.StandardProps,
-    react.dom.html.HTMLAttributes<dom.html.HTMLDivElement>,
+    react.dom.html.HTMLAttributes<web.html.HTMLDivElement>,
     react.PropsWithChildren,
     mui.system.PropsWithSx {
     /**

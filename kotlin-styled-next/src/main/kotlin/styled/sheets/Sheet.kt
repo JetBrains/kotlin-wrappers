@@ -1,9 +1,9 @@
 package styled.sheets
 
 import browser.document
-import dom.html.HTMLStyleElement
 import js.core.asList
 import web.cssom.CSSStyleSheet
+import web.html.HTMLStyleElement
 
 internal typealias GroupId = Int
 

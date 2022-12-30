@@ -2,8 +2,8 @@
 
 package react.dom.html
 
-import dom.html.*
 import react.IntrinsicType
+import web.html.*
 
 object ReactHTML {
     inline val a: IntrinsicType<AnchorHTMLAttributes<HTMLAnchorElement>>
