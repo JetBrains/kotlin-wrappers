@@ -12,6 +12,8 @@ import web.events.Event
 import web.events.EventHandler
 import web.geometry.DOMRect
 import web.geometry.DOMRectList
+import web.scroll.ScrollIntoViewOptions
+import web.scroll.ScrollToOptions
 import kotlin.js.Promise
 
 abstract external class Element :

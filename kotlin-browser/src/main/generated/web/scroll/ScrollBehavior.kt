@@ -4,7 +4,7 @@
     "NAME_CONTAINS_ILLEGAL_CHARS",
 )
 
-package dom
+package web.scroll
 
 // language=JavaScript
 @JsName("""(/*union*/{auto: 'auto', smooth: 'smooth'}/*union*/)""")
