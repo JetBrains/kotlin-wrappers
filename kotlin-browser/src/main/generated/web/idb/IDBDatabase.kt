@@ -2,9 +2,9 @@
 
 package web.idb
 
-import dom.DOMStringList
 import js.core.JsLong
 import js.core.ReadonlyArray
+import web.dom.DOMStringList
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventTarget

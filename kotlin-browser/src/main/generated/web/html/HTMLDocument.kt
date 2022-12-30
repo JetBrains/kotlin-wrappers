@@ -2,7 +2,7 @@
 
 package web.html
 
-import dom.Document
+import web.dom.Document
 
 sealed external class HTMLDocument :
     Document

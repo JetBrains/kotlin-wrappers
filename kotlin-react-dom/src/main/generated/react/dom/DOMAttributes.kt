@@ -2,8 +2,8 @@
 
 package react.dom
 
-import dom.Element
 import react.dom.events.*
+import web.dom.Element
 
 external interface DOMAttributes<T : Element> :
     react.PropsWithRef<T>,

@@ -9,7 +9,7 @@
 
 package cesium
 
-import dom.Element
+import web.dom.Element
 
 /**
  * A single button widget for toggling vr mode.

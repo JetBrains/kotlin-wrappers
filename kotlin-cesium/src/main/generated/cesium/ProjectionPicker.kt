@@ -9,7 +9,7 @@
 
 package cesium
 
-import dom.Element
+import web.dom.Element
 
 /**
  * The ProjectionPicker is a single button widget for switching between perspective and orthographic projections.

@@ -2,7 +2,7 @@
 
 package web.html
 
-import dom.DOMTokenList
+import web.dom.DOMTokenList
 
 abstract external class HTMLAnchorElement :
     HTMLElement,

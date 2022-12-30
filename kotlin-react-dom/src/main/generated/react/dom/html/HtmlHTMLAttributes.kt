@@ -2,7 +2,7 @@
 
 package react.dom.html
 
-import dom.Element
+import web.dom.Element
 
 external interface HtmlHTMLAttributes<T : Element> : HTMLAttributes<T> {
     var manifest: String?

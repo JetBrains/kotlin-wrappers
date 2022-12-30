@@ -9,10 +9,10 @@
 
 package cesium
 
-import dom.Document
-import dom.Element
 import js.core.ReadonlyArray
 import web.buffer.Blob
+import web.dom.Document
+import web.dom.Element
 import web.html.HTMLCanvasElement
 
 /**

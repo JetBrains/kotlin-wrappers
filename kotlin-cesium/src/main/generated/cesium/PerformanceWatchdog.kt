@@ -9,7 +9,7 @@
 
 package cesium
 
-import dom.Element
+import web.dom.Element
 
 /**
  * Monitors performance of the application and displays a message if poor performance is detected.

@@ -2,6 +2,6 @@
 
 package browser
 
-import dom.Document
+import web.dom.Document
 
 external val document: Document

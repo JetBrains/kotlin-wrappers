@@ -2,7 +2,7 @@
 
 package react.dom.events
 
-import dom.Element
+import web.dom.Element
 import web.events.EventTarget
 
 external interface MouseEvent<out T : Element, out E : NativeMouseEvent> : UIEvent<T, E> {

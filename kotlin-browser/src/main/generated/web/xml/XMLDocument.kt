@@ -2,7 +2,7 @@
 
 package web.xml
 
-import dom.Document
+import web.dom.Document
 
 sealed external class XMLDocument :
     Document

@@ -2,8 +2,8 @@
 
 package web.selection
 
-import dom.Node
-import dom.Range
+import web.dom.Node
+import web.dom.Range
 
 sealed external class Selection {
     val anchorNode: Node?

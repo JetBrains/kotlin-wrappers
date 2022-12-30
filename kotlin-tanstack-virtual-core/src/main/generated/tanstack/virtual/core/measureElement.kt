@@ -5,6 +5,6 @@
 
 package tanstack.virtual.core
 
-import dom.Element
+import web.dom.Element
 
 external val measureElement: (element: Element, instance: Virtualizer<*, Element>) -> Int

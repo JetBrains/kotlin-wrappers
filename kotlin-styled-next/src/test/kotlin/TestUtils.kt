@@ -1,6 +1,4 @@
 import browser.document
-import dom.Element
-import dom.css.getComputedStyle
 import js.core.asList
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.MainScope
@@ -19,6 +17,8 @@ import web.cssom.CSSRule
 import web.cssom.CSSRuleList
 import web.cssom.CSSStyleDeclaration
 import web.cssom.CSSStyleSheet
+import web.dom.Element
+import web.dom.css.getComputedStyle
 import web.html.HTMLElement
 import web.html.HTMLStyleElement
 import web.timers.requestAnimationFrame

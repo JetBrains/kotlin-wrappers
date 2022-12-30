@@ -2,8 +2,8 @@
 
 package tanstack.virtual.core
 
-import dom.Element
 import js.core.ReadonlyArray
+import web.dom.Element
 
 external interface VirtualizerOptions<TScrollElement : Any /* Element | Window */, TItemElement : Element> {
     var count: Int

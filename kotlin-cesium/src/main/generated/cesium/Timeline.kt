@@ -9,7 +9,7 @@
 
 package cesium
 
-import dom.Element
+import web.dom.Element
 
 /**
  * The Timeline is a widget for displaying and controlling the current scene time.

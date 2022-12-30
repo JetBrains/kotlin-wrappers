@@ -9,7 +9,7 @@
 
 package cesium
 
-import dom.Element
+import web.dom.Element
 
 /**
  * The view model for [VRButton].

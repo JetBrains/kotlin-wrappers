@@ -9,8 +9,8 @@
 
 package cesium
 
-import dom.Element
 import js.core.ReadonlyArray
+import web.dom.Element
 
 /**
  * A widget for finding addresses and landmarks, and flying the camera to them.  Geocoding is

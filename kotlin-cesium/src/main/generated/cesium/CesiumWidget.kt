@@ -10,7 +10,7 @@
 
 package cesium
 
-import dom.Element
+import web.dom.Element
 import web.html.HTMLCanvasElement
 
 /**

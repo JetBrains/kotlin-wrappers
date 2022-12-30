@@ -2,7 +2,7 @@
 
 package web.html
 
-import dom.DocumentFragment
+import web.dom.DocumentFragment
 
 abstract external class HTMLTemplateElement :
     HTMLElement {

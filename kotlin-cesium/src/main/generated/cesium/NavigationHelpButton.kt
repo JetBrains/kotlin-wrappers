@@ -9,7 +9,7 @@
 
 package cesium
 
-import dom.Element
+import web.dom.Element
 
 /**
  * The NavigationHelpButton is a single button widget for displaying instructions for

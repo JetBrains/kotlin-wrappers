@@ -2,7 +2,7 @@
 
 package web.xpath
 
-import dom.Node
+import web.dom.Node
 
 external interface XPathEvaluatorBase {
     fun createExpression(

@@ -2,7 +2,7 @@
 
 package react.dom.html
 
-import dom.Element
+import web.dom.Element
 
 external interface LiHTMLAttributes<T : Element> : HTMLAttributes<T> {
     var value: Any? /* string | ReadonlyArray<string> | number */

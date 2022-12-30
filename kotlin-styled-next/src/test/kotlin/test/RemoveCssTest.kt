@@ -2,7 +2,6 @@ package test
 
 import Component
 import RootInfo
-import dom.Element
 import kotlinx.css.color
 import kotlinx.css.paddingLeft
 import kotlinx.css.paddingRight
@@ -17,6 +16,7 @@ import styled.animation
 import styled.css
 import styled.styledDiv
 import styled.styledSpan
+import web.dom.Element
 import kotlin.test.BeforeTest
 import kotlin.test.Test
 import kotlin.test.assertEquals

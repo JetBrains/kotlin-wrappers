@@ -2,7 +2,7 @@
 
 package web.idb
 
-import dom.DOMStringList
+import web.dom.DOMStringList
 import web.errors.DOMException
 import web.events.Event
 import web.events.EventHandler

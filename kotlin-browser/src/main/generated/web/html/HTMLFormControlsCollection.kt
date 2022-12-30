@@ -2,7 +2,7 @@
 
 package web.html
 
-import dom.Element
+import web.dom.Element
 
 sealed external class HTMLFormControlsCollection :
     HTMLCollectionBase<Element> {

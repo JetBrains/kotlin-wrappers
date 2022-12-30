@@ -2,12 +2,12 @@
 
 package web.window
 
-import dom.Element
-import dom.GlobalEventHandlers
 import js.core.ArrayLike
 import js.core.ReadonlyArray
 import web.device.DeviceMotionEvent
 import web.device.DeviceOrientationEvent
+import web.dom.Element
+import web.dom.GlobalEventHandlers
 import web.events.EventHandler
 import web.events.EventTarget
 import web.messaging.Transferable

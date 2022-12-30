@@ -2,8 +2,8 @@
 
 package web.data
 
-import dom.Element
 import js.core.ReadonlyArray
+import web.dom.Element
 import web.file.FileList
 
 external class DataTransfer {

@@ -2,8 +2,8 @@
 
 package web.html
 
-import dom.DOMTokenList
-import dom.Document
+import web.dom.DOMTokenList
+import web.dom.Document
 import web.http.ReferrerPolicy
 import web.window.WindowProxy
 

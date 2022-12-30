@@ -10,8 +10,8 @@
 
 package cesium
 
-import dom.Element
 import js.core.ReadonlyArray
+import web.dom.Element
 
 /**
  * The BaseLayerPicker is a single button widget that displays a panel of available imagery and

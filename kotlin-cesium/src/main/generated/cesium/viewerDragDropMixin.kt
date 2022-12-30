@@ -5,7 +5,7 @@
 
 package cesium
 
-import dom.Element
+import web.dom.Element
 
 /**
  * A mixin which adds default drag and drop support for CZML files to the Viewer widget.

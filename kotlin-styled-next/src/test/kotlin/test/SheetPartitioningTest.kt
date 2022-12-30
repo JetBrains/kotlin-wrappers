@@ -2,7 +2,6 @@ package test
 
 import Component
 import RootInfo
-import dom.Element
 import kotlinx.css.height
 import kotlinx.css.px
 import react.FC
@@ -16,6 +15,7 @@ import styled.sheets.CSSOMSheet
 import styled.sheets.RemoveMode
 import styled.sheets.RuleType
 import styled.styledDiv
+import web.dom.Element
 import kotlin.test.BeforeTest
 import kotlin.test.Test
 import kotlin.test.assertEquals

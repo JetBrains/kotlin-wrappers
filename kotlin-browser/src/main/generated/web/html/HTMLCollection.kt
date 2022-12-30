@@ -2,7 +2,7 @@
 
 package web.html
 
-import dom.Element
+import web.dom.Element
 
 sealed external class HTMLCollection<T : Element> :
     HTMLCollectionBase<T> {

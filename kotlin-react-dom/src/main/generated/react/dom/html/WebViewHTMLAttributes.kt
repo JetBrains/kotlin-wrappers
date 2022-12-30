@@ -2,7 +2,7 @@
 
 package react.dom.html
 
-import dom.Element
+import web.dom.Element
 
 external interface WebViewHTMLAttributes<T : Element> : HTMLAttributes<T> {
     var allowFullScreen: Boolean?

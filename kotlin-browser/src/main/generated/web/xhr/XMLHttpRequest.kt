@@ -2,7 +2,7 @@
 
 package web.xhr
 
-import dom.Document
+import web.dom.Document
 import web.events.Event
 import web.events.EventHandler
 import web.url.URL

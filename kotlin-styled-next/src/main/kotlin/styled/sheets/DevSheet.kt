@@ -1,6 +1,6 @@
 package styled.sheets
 
-import dom.appendText
+import web.dom.appendText
 
 /**
  * A stylesheet that is injected by setting the text of a <style> tag. Useful in development mode,

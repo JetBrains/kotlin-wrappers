@@ -2,7 +2,7 @@
 
 package react.dom.html
 
-import dom.Element
+import web.dom.Element
 
 external interface AreaHTMLAttributes<T : Element> : HTMLAttributes<T> {
     var alt: String?

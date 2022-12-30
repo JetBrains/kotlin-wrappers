@@ -11,6 +11,7 @@ package mui.material
 
 import mui.material.styles.Theme
 import mui.system.SxProps
+import web.dom.Element
 
 external interface PopoverProps :
     mui.system.StandardProps,
@@ -27,7 +28,7 @@ external interface PopoverProps :
      * An HTML element, or a function that returns one.
      * It's used to set the position of the popover.
      */
-    var anchorEl: dom.Element? /* null | Element | ((element: Element) => Element) */
+    var anchorEl: Element? /* null | Element | ((element: Element) => Element) */
 
     /**
      * This is the point on the anchor where the popover's
@@ -74,7 +75,7 @@ external interface PopoverProps :
      * By default, it uses the body of the anchorEl's top-level document object,
      * so it's simply `document.body` most of the time.
      */
-    override var container: dom.Element?
+    override var container: Element?
 
     /**
      * The elevation of the popover.

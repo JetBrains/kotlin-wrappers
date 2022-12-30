@@ -2,11 +2,11 @@
 
 package web.svg
 
-import dom.DocumentAndElementEventHandlers
-import dom.Element
-import dom.GlobalEventHandlers
-import dom.HTMLOrSVGElement
-import dom.css.ElementCSSInlineStyle
+import web.dom.DocumentAndElementEventHandlers
+import web.dom.Element
+import web.dom.GlobalEventHandlers
+import web.dom.HTMLOrSVGElement
+import web.dom.css.ElementCSSInlineStyle
 
 sealed external class SVGElement :
     Element,

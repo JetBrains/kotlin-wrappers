@@ -2,7 +2,7 @@
 
 package react.dom.events
 
-import dom.Element
+import web.dom.Element
 
 external interface AnimationEvent<out T : Element> : SyntheticEvent<T, NativeAnimationEvent> {
     val animationName: String

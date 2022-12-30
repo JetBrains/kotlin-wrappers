@@ -2,7 +2,7 @@
 
 package react.dom.html
 
-import dom.Element
+import web.dom.Element
 
 external interface TableHTMLAttributes<T : Element> : HTMLAttributes<T> {
     var align: TableAlign?

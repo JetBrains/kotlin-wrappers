@@ -2,9 +2,9 @@
 
 package web.html
 
-import dom.Element
 import js.core.ArrayLike
 import js.core.JsIterable
+import web.dom.Element
 
 abstract external class HTMLFormElement :
     HTMLElement,

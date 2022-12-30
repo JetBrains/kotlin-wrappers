@@ -2,8 +2,8 @@
 
 package react.dom.html
 
-import dom.Element
 import react.dom.events.ReactEventHandler
+import web.dom.Element
 
 external interface DetailsHTMLAttributes<T : Element> : HTMLAttributes<T> {
     var open: Boolean?

@@ -2,8 +2,8 @@
 
 package web.html
 
-import dom.NodeList
 import web.aria.ARIAMixin
+import web.dom.NodeList
 
 sealed external interface ElementInternals :
     ARIAMixin {

@@ -2,7 +2,7 @@
 
 package web.serviceworker
 
-import dom.DocumentVisibilityState
+import web.dom.DocumentVisibilityState
 import web.url.URL
 import kotlin.js.Promise
 

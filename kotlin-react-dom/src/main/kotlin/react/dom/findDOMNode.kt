@@ -3,7 +3,7 @@
 
 package react.dom
 
-import dom.Element
+import web.dom.Element
 
 // See https://reactjs.org/docs/react-dom.html
 

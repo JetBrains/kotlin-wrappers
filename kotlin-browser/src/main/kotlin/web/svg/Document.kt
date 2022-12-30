@@ -1,10 +1,8 @@
 package web.svg
 
-import dom.Document
-
 private const val SVG_NAMESPACE: String = "http://www.w3.org/2000/svg"
 
-fun <T : SVGElement> Document.createElement(
+fun <T : SVGElement> web.dom.Document.createElement(
     tagName: SvgTagName<T>,
 ): T =
     createElementNS(

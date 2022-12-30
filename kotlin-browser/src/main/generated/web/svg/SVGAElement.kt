@@ -2,7 +2,7 @@
 
 package web.svg
 
-import dom.DOMTokenList
+import web.dom.DOMTokenList
 
 sealed external class SVGAElement :
     SVGGraphicsElement,

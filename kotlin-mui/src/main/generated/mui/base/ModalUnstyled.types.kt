@@ -2,6 +2,8 @@
 
 package mui.base
 
+import web.dom.Element
+
 external interface ModalUnstyledProps :
     ModalUnstyledOwnProps,
     react.dom.html.HTMLAttributes<web.html.HTMLDivElement>
@@ -53,7 +55,7 @@ external interface ModalUnstyledOwnProps : react.Props {
      * By default, it uses the body of the top-level document object,
      * so it's simply `document.body` most of the time.
      */
-    var container: dom.Element?
+    var container: Element?
 
     /**
      * If `true`, the modal will not automatically shift focus to itself when it opens, and

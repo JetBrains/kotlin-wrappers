@@ -2,9 +2,9 @@
 
 package web.html
 
-import dom.Element
-import dom.Node
 import js.core.ReadonlyArray
+import web.dom.Element
+import web.dom.Node
 
 abstract external class HTMLSlotElement :
     HTMLElement {

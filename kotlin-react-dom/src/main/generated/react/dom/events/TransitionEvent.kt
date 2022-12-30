@@ -2,7 +2,7 @@
 
 package react.dom.events
 
-import dom.Element
+import web.dom.Element
 
 external interface TransitionEvent<out T : Element> : SyntheticEvent<T, NativeTransitionEvent> {
     val elapsedTime: Double

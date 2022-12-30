@@ -2,7 +2,7 @@
 
 package web.xpath
 
-import dom.Node
+import web.dom.Node
 
 sealed external class XPathExpression {
     fun evaluate(

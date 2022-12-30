@@ -1,10 +1,10 @@
 package react.dom
 
-import dom.Element
 import react.Props
 import react.ReactPortal
 import react.Render
 import react.createElement
+import web.dom.Element
 
 fun createPortal(
     container: Element,

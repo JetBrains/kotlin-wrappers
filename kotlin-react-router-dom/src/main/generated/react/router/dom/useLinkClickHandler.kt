@@ -5,6 +5,8 @@
 
 package react.router.dom
 
+import web.dom.Element
+
 /**
  * Handles the click behavior for router `<Link>` components. This is useful if
  * you need to create custom `<Link>` components with the same click behavior we
@@ -16,7 +18,7 @@ external interface ClickHandlerOptions {
     var state: history.LocationState?
 }
 
-external fun <E : dom.Element> useLinkClickHandler(
+external fun <E : Element> useLinkClickHandler(
     to: history.To,
     options: ClickHandlerOptions = definedExternally,
 ): react.dom.events.MouseEventHandler<E>

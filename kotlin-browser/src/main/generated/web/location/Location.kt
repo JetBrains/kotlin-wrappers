@@ -2,7 +2,7 @@
 
 package web.location
 
-import dom.DOMStringList
+import web.dom.DOMStringList
 import web.url.URL
 
 sealed external class Location {

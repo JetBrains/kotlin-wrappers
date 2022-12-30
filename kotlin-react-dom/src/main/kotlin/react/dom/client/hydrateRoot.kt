@@ -3,8 +3,8 @@
 
 package react.dom.client
 
-import dom.Element
 import react.ReactNode
+import web.dom.Element
 
 // See https://reactjs.org/docs/react-dom.html
 

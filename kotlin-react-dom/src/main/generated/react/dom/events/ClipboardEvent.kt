@@ -2,8 +2,8 @@
 
 package react.dom.events
 
-import dom.Element
 import web.data.DataTransfer
+import web.dom.Element
 
 external interface ClipboardEvent<out T : Element> : SyntheticEvent<T, NativeClipboardEvent> {
     val clipboardData: DataTransfer

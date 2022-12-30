@@ -2,7 +2,7 @@
 
 package web.html
 
-import dom.NodeListOf
+import web.dom.NodeListOf
 
 abstract external class HTMLTextAreaElement :
     HTMLElement {

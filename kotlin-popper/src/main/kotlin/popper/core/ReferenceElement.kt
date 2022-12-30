@@ -4,7 +4,7 @@
 
 package popper.core
 
-import dom.Element
+import web.dom.Element
 
 sealed external interface ReferenceElement
 

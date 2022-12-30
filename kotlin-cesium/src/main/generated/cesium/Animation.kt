@@ -9,7 +9,7 @@
 
 package cesium
 
-import dom.Element
+import web.dom.Element
 
 /**
  * The Animation widget provides buttons for play, pause, and reverse, along with the

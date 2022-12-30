@@ -2,8 +2,8 @@
 
 package web.svg
 
-import dom.Element
-import dom.NodeListOf
+import web.dom.Element
+import web.dom.NodeListOf
 import web.geometry.*
 import web.window.WindowEventHandlers
 

@@ -2,7 +2,7 @@
 
 package web.canvas
 
-import dom.Element
+import web.dom.Element
 
 sealed external interface CanvasUserInterface {
     fun drawFocusIfNeeded(element: Element)

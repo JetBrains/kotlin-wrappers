@@ -2,9 +2,9 @@
 
 package web.idb
 
-import dom.DOMStringList
 import js.core.ReadonlyArray
 import js.core.Void
+import web.dom.DOMStringList
 
 sealed external class IDBObjectStore {
     /** Returns true if the store has a key generator, and false otherwise. */

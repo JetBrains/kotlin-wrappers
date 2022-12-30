@@ -3,10 +3,10 @@
 
 package react.dom
 
-import dom.Element
 import react.Key
 import react.ReactNode
 import react.ReactPortal
+import web.dom.Element
 
 // See https://reactjs.org/docs/react-dom.html
 

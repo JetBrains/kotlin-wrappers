@@ -2,8 +2,8 @@
 
 package web.html
 
-import dom.NodeListOf
 import js.core.ReadonlyArray
+import web.dom.NodeListOf
 import web.file.FileList
 import web.filesystem.FileSystemEntry
 import kotlin.js.Date

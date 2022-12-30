@@ -2,7 +2,6 @@ package styled
 
 import browser.document
 import csstype.ClassName
-import dom.Element
 import js.core.jso
 import kotlinx.css.CssBuilder
 import kotlinx.css.CssDsl
@@ -152,7 +151,7 @@ private object GlobalStyles {
     }
 
     private val root by kotlin.lazy {
-        val element = document.body.appendChild(document.createElement(div)) as Element
+        val element = document.body.appendChild(document.createElement(div)) as web.dom.Element
         element.setAttribute("id", "sc-global-styles")
         element
     }

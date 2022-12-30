@@ -5,8 +5,8 @@
 
 package tanstack.virtual.core
 
-import dom.Element
 import js.core.ReadonlyArray
+import web.dom.Element
 
 external class Virtualizer<TScrollElement : Any /* Element | Window */, TItemElement : Element> {
     var options: VirtualizerOptions<TScrollElement, TItemElement>

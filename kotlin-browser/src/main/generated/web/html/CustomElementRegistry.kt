@@ -2,7 +2,7 @@
 
 package web.html
 
-import dom.Node
+import web.dom.Node
 import kotlin.js.Promise
 
 sealed external class CustomElementRegistry {

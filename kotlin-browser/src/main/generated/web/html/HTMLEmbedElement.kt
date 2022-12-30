@@ -2,7 +2,7 @@
 
 package web.html
 
-import dom.Document
+import web.dom.Document
 
 abstract external class HTMLEmbedElement :
     HTMLElement {

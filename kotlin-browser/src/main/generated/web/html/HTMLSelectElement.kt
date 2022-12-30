@@ -2,8 +2,8 @@
 
 package web.html
 
-import dom.NodeListOf
 import js.core.JsIterable
+import web.dom.NodeListOf
 
 abstract external class HTMLSelectElement :
     HTMLElement,

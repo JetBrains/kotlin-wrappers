@@ -2,7 +2,7 @@
 
 package react.dom.events
 
-import dom.Element
+import web.dom.Element
 
 external interface PointerEvent<out T : Element> : MouseEvent<T, NativePointerEvent> {
     val pointerId: Int

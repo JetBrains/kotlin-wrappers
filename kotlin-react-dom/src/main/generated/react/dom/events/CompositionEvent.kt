@@ -2,7 +2,7 @@
 
 package react.dom.events
 
-import dom.Element
+import web.dom.Element
 
 external interface CompositionEvent<out T : Element> : SyntheticEvent<T, NativeCompositionEvent> {
     val data: String

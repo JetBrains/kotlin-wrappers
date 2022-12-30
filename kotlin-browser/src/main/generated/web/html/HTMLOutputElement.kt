@@ -2,8 +2,8 @@
 
 package web.html
 
-import dom.DOMTokenList
-import dom.NodeListOf
+import web.dom.DOMTokenList
+import web.dom.NodeListOf
 
 abstract external class HTMLOutputElement :
     HTMLElement {

@@ -3,9 +3,9 @@
 
 package tanstack.react.virtual
 
-import dom.Element
 import tanstack.virtual.core.Virtualizer
 import tanstack.virtual.core.VirtualizerOptions
+import web.dom.Element
 
 external interface UseVirtualizerOptions<TScrollElement : Any, TItemElement : Element> :
     VirtualizerOptions<TScrollElement, TItemElement> {
