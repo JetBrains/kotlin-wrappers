@@ -3,11 +3,11 @@
 
 package ringui
 
-import dom.events.InputEvent
 import react.CSSProperties
 import react.ComponentClass
 import react.PropsWithChildren
 import react.PropsWithClassName
+import web.uievents.InputEvent
 
 external interface CheckboxProps : PropsWithChildren, PropsWithClassName {
     var name: String

@@ -6,22 +6,22 @@ typealias NativeAnimationEvent = web.animations.AnimationEvent
 
 typealias NativeClipboardEvent = web.clipboard.ClipboardEvent
 
-typealias NativeCompositionEvent = dom.events.CompositionEvent
+typealias NativeCompositionEvent = web.uievents.CompositionEvent
 
-typealias NativeDragEvent = dom.events.DragEvent
+typealias NativeDragEvent = web.uievents.DragEvent
 
-typealias NativeFocusEvent = dom.events.FocusEvent
+typealias NativeFocusEvent = web.uievents.FocusEvent
 
-typealias NativeKeyboardEvent = dom.events.KeyboardEvent
+typealias NativeKeyboardEvent = web.uievents.KeyboardEvent
 
-typealias NativeMouseEvent = dom.events.MouseEvent
+typealias NativeMouseEvent = web.uievents.MouseEvent
 
-typealias NativeTouchEvent = dom.events.TouchEvent
+typealias NativeTouchEvent = web.uievents.TouchEvent
 
-typealias NativePointerEvent = dom.events.PointerEvent
+typealias NativePointerEvent = web.uievents.PointerEvent
 
 typealias NativeTransitionEvent = web.cssom.TransitionEvent
 
-typealias NativeUIEvent = dom.events.UIEvent
+typealias NativeUIEvent = web.uievents.UIEvent
 
-typealias NativeWheelEvent = dom.events.WheelEvent
+typealias NativeWheelEvent = web.uievents.WheelEvent

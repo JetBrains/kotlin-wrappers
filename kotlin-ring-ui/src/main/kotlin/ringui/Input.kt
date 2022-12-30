@@ -3,11 +3,11 @@
 
 package ringui
 
-import dom.events.InputEvent
 import dom.html.HTMLInputElement
 import react.ComponentClass
 import react.PropsWithClassName
 import react.RefObject
+import web.uievents.InputEvent
 
 // https://github.com/JetBrains/ring-ui/blob/master/components/input/input.js
 external interface InputProps : PropsWithClassName {

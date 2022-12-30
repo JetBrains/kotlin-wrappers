@@ -4,7 +4,7 @@
     "NAME_CONTAINS_ILLEGAL_CHARS",
 )
 
-package dom.events
+package web.uievents
 
 // language=JavaScript
 @JsName("""(/*union*/{direct: 'direct', stylus: 'stylus'}/*union*/)""")

@@ -1,6 +1,6 @@
 // Automatically generated - do not modify!
 
-package dom.events
+package web.uievents
 
 sealed external interface EventModifierInit :
     UIEventInit {

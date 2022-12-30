@@ -4,7 +4,7 @@
     "EXTERNAL_CLASS_CONSTRUCTOR_PROPERTY_PARAMETER",
 )
 
-package dom.events
+package web.uievents
 
 import web.events.EventTarget
 import web.events.EventType

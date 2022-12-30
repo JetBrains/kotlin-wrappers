@@ -6,7 +6,7 @@ import dom.Element
 
 external interface TouchEvent<out T : Element> : UIEvent<T, NativeTouchEvent> {
     val altKey: Boolean
-    val changedTouches: dom.events.TouchList
+    val changedTouches: web.uievents.TouchList
     val ctrlKey: Boolean
 
     /**
@@ -15,6 +15,6 @@ external interface TouchEvent<out T : Element> : UIEvent<T, NativeTouchEvent> {
     fun getModifierState(key: ModifierKey): Boolean
     val metaKey: Boolean
     val shiftKey: Boolean
-    val targetTouches: dom.events.TouchList
-    val touches: dom.events.TouchList
+    val targetTouches: web.uievents.TouchList
+    val touches: web.uievents.TouchList
 }

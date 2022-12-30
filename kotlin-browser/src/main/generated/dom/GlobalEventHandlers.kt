@@ -2,7 +2,6 @@
 
 package dom
 
-import dom.events.*
 import dom.html.FormDataEvent
 import dom.html.SubmitEvent
 import web.animations.AnimationEvent
@@ -11,6 +10,7 @@ import web.cssom.TransitionEvent
 import web.events.Event
 import web.events.EventHandler
 import web.events.ProgressEvent
+import web.uievents.*
 
 external interface GlobalEventHandlers {
     /**

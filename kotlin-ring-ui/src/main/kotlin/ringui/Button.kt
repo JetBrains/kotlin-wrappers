@@ -3,10 +3,10 @@
 
 package ringui
 
-import dom.events.MouseEvent
 import react.ComponentClass
 import react.PropsWithChildren
 import react.PropsWithClassName
+import web.uievents.MouseEvent
 
 // https://github.com/JetBrains/ring-ui/blob/master/components/button/button.js
 external interface ButtonProps : PropsWithChildren, PropsWithClassName {

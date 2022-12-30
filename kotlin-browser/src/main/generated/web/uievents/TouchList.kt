@@ -1,6 +1,6 @@
 // Automatically generated - do not modify!
 
-package dom.events
+package web.uievents
 
 import js.core.ArrayLike
 import js.core.JsIterable

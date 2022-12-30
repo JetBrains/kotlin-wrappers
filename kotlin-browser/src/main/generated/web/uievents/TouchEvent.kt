@@ -5,7 +5,7 @@
     "NAME_CONTAINS_ILLEGAL_CHARS",
 )
 
-package dom.events
+package web.uievents
 
 import js.core.ReadonlyArray
 import web.events.EventType
