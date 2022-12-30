@@ -4,7 +4,7 @@
 
 package csstype
 
-import cssom.CSS
+import web.cssom.CSS
 
 inline fun Content(): Content =
     string("''")

@@ -1,8 +1,4 @@
 import browser.document
-import cssom.CSSRule
-import cssom.CSSRuleList
-import cssom.CSSStyleDeclaration
-import cssom.CSSStyleSheet
 import dom.Element
 import dom.css.getComputedStyle
 import dom.html.HTMLElement
@@ -21,6 +17,10 @@ import react.dom.flushSync
 import styled.GlobalStyles
 import styled.injectGlobal
 import styled.sheets.*
+import web.cssom.CSSRule
+import web.cssom.CSSRuleList
+import web.cssom.CSSStyleDeclaration
+import web.cssom.CSSStyleSheet
 import web.timers.requestAnimationFrame
 import kotlin.coroutines.resume
 import kotlin.coroutines.suspendCoroutine

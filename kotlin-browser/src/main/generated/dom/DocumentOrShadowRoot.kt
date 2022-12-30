@@ -2,10 +2,10 @@
 
 package dom
 
-import cssom.CSSStyleSheet
-import cssom.StyleSheetList
 import js.core.ReadonlyArray
 import web.animations.Animation
+import web.cssom.CSSStyleSheet
+import web.cssom.StyleSheetList
 
 external interface DocumentOrShadowRoot {
     /**

@@ -1,7 +1,7 @@
 package dom.css
 
-import cssom.CSSStyleDeclaration
 import dom.Element
+import web.cssom.CSSStyleDeclaration
 
 external fun getComputedStyle(
     element: Element,

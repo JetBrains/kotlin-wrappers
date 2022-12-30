@@ -8,7 +8,7 @@ package mui.material
 external interface UseMediaQueryOptions {
     var defaultMatches: Boolean?
 
-    var matchMedia: ((query: String) -> cssom.MediaQueryList)?
+    var matchMedia: ((query: String) -> web.cssom.MediaQueryList)?
 
     /**
      * This option is kept for backwards compatibility and has no longer any effect.

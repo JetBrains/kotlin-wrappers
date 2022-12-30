@@ -1,6 +1,6 @@
 package styled.sheets
 
-import cssom.CSSStyleSheet
+import web.cssom.CSSStyleSheet
 
 // A stylesheet that is injected using the CSSOM API. Useful in production mode because of better performance,
 // but can't be easily edited using devtools.

@@ -2,7 +2,7 @@
 
 package dom.css
 
-import cssom.CSSStyleDeclaration
+import web.cssom.CSSStyleDeclaration
 
 external interface ElementCSSInlineStyle {
     val style: CSSStyleDeclaration

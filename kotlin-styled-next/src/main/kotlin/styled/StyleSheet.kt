@@ -1,11 +1,11 @@
 package styled
 
-import cssom.CSS
 import kotlinx.css.CssBuilder
 import kotlinx.css.CssValue
 import kotlinx.css.RuleSet
 import styled.dynamicCss.DynamicCssDelegate
 import styled.dynamicCss.DynamicCssHolder
+import web.cssom.CSS
 import kotlin.js.Promise
 import kotlin.reflect.KProperty
 import kotlin.reflect.KProperty0
