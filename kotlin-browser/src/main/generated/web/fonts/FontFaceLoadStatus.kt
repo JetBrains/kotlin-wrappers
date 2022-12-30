@@ -4,7 +4,7 @@
     "NAME_CONTAINS_ILLEGAL_CHARS",
 )
 
-package cssom.fonts
+package web.fonts
 
 // language=JavaScript
 @JsName("""(/*union*/{error: 'error', loaded: 'loaded', loading: 'loading', unloaded: 'unloaded'}/*union*/)""")

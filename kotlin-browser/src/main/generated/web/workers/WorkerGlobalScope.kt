@@ -2,12 +2,12 @@
 
 package web.workers
 
-import cssom.fonts.FontFaceSource
 import dom.events.PromiseRejectionEvent
 import web.errors.ErrorEvent
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventTarget
+import web.fonts.FontFaceSource
 
 sealed external class WorkerGlobalScope :
     EventTarget,

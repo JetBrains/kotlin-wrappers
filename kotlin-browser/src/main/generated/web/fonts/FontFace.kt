@@ -1,6 +1,6 @@
 // Automatically generated - do not modify!
 
-package cssom.fonts
+package web.fonts
 
 import js.buffer.ArrayBuffer
 import js.buffer.ArrayBufferView

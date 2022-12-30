@@ -1,6 +1,6 @@
 // Automatically generated - do not modify!
 
-package cssom.fonts
+package web.fonts
 
 external interface FontFaceSource {
     val fonts: FontFaceSet

@@ -1,6 +1,6 @@
 // Automatically generated - do not modify!
 
-package cssom.fonts
+package web.fonts
 
 import js.core.ReadonlyArray
 import web.events.Event
