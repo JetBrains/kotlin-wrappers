@@ -3,8 +3,6 @@
 package dom
 
 import dom.html.*
-import dom.svg.SVGElement
-import dom.svg.SvgTagName
 import js.core.ReadonlyArray
 import js.core.Void
 import web.aria.ARIAMixin
@@ -14,6 +12,8 @@ import web.geometry.DOMRect
 import web.geometry.DOMRectList
 import web.scroll.ScrollIntoViewOptions
 import web.scroll.ScrollToOptions
+import web.svg.SVGElement
+import web.svg.SvgTagName
 import kotlin.js.Promise
 
 abstract external class Element :

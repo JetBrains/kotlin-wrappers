@@ -5,8 +5,8 @@ package dom
 import dom.html.HTMLCollection
 import dom.html.HTMLElement
 import dom.html.HtmlTagName
-import dom.svg.SVGElement
-import dom.svg.SvgTagName
+import web.svg.SVGElement
+import web.svg.SvgTagName
 
 sealed external interface ParentNode /* : Node */ {
     val childElementCount: Int

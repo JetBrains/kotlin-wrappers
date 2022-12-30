@@ -2,8 +2,8 @@
 
 package react.dom.svg
 
-import dom.svg.*
 import react.IntrinsicType
+import web.svg.*
 
 object ReactSVG {
     inline val svg: IntrinsicType<SVGAttributes<SVGSVGElement>>
