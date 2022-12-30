@@ -2,8 +2,6 @@
 
 package web.window
 
-import dom.events.BeforeUnloadEvent
-import dom.events.PromiseRejectionEvent
 import web.events.Event
 import web.events.EventHandler
 import web.gamepad.GamepadEvent
