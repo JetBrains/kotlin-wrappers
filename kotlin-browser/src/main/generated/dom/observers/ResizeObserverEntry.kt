@@ -3,8 +3,8 @@
 package dom.observers
 
 import dom.Element
-import dom.geometry.DOMRectReadOnly
 import js.core.ReadonlyArray
+import web.geometry.DOMRectReadOnly
 
 sealed external class ResizeObserverEntry {
     val borderBoxSize: ReadonlyArray<ResizeObserverSize>

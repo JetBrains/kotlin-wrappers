@@ -2,10 +2,10 @@
 
 package dom.svg
 
-import dom.geometry.DOMMatrix2DInit
-import dom.geometry.DOMMatrixReadOnly
 import js.core.ArrayLike
 import js.core.JsIterable
+import web.geometry.DOMMatrix2DInit
+import web.geometry.DOMMatrixReadOnly
 
 sealed external class SVGTransformList :
     ArrayLike<SVGTransform>,

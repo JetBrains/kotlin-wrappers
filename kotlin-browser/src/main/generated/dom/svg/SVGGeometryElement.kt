@@ -2,9 +2,9 @@
 
 package dom.svg
 
-import dom.geometry.DOMPoint
-import dom.geometry.DOMPointInit
-import dom.geometry.DOMPointReadOnly
+import web.geometry.DOMPoint
+import web.geometry.DOMPointInit
+import web.geometry.DOMPointReadOnly
 
 sealed external class SVGGeometryElement :
     SVGGraphicsElement {

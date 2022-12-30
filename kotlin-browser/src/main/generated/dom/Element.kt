@@ -2,8 +2,6 @@
 
 package dom
 
-import dom.geometry.DOMRect
-import dom.geometry.DOMRectList
 import dom.html.*
 import dom.svg.SVGElement
 import dom.svg.SvgTagName
@@ -12,6 +10,8 @@ import js.core.Void
 import web.aria.ARIAMixin
 import web.events.Event
 import web.events.EventHandler
+import web.geometry.DOMRect
+import web.geometry.DOMRectList
 import kotlin.js.Promise
 
 abstract external class Element :

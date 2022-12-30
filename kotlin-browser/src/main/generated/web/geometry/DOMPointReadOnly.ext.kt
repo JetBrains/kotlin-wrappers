@@ -4,7 +4,7 @@
     "NOTHING_TO_INLINE",
 )
 
-package dom.geometry
+package web.geometry
 
 inline fun DOMPointReadOnly.asInit(): DOMPointInit =
     unsafeCast<DOMPointInit>()

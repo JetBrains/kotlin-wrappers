@@ -3,8 +3,8 @@
 package dom.observers
 
 import dom.Element
-import dom.geometry.DOMRectReadOnly
 import js.core.HighResTimeStamp
+import web.geometry.DOMRectReadOnly
 
 external class IntersectionObserverEntry(
     init: IntersectionObserverEntryInit,

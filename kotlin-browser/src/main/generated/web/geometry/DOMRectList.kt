@@ -1,6 +1,6 @@
 // Automatically generated - do not modify!
 
-package dom.geometry
+package web.geometry
 
 import js.core.ArrayLike
 import js.core.JsIterable

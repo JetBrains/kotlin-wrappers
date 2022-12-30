@@ -2,9 +2,9 @@
 
 package dom.svg
 
-import dom.geometry.DOMPoint
 import js.core.ArrayLike
 import js.core.JsIterable
+import web.geometry.DOMPoint
 
 sealed external class SVGPointList :
     ArrayLike<DOMPoint>,

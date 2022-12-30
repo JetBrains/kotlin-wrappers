@@ -1,6 +1,6 @@
 // Automatically generated - do not modify!
 
-package dom.geometry
+package web.geometry
 
 import js.core.ReadonlyArray
 import js.typedarrays.Float32Array

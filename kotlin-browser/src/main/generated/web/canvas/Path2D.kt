@@ -2,8 +2,8 @@
 
 package web.canvas
 
-import dom.geometry.DOMMatrix2DInit
-import dom.geometry.DOMMatrixReadOnly
+import web.geometry.DOMMatrix2DInit
+import web.geometry.DOMMatrixReadOnly
 
 external class Path2D(
     path: Path2D = definedExternally,

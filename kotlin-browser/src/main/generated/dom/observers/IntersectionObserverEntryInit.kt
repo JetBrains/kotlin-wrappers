@@ -3,8 +3,8 @@
 package dom.observers
 
 import dom.Element
-import dom.geometry.DOMRectInit
 import js.core.HighResTimeStamp
+import web.geometry.DOMRectInit
 
 sealed external interface IntersectionObserverEntryInit {
     var boundingClientRect: DOMRectInit

@@ -1,6 +1,6 @@
 // Automatically generated - do not modify!
 
-package dom.geometry
+package web.geometry
 
 sealed external interface DOMQuadInit {
     var p1: DOMPointInit?

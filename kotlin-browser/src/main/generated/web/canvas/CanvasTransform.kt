@@ -2,9 +2,9 @@
 
 package web.canvas
 
-import dom.geometry.DOMMatrix
-import dom.geometry.DOMMatrix2DInit
-import dom.geometry.DOMMatrixReadOnly
+import web.geometry.DOMMatrix
+import web.geometry.DOMMatrix2DInit
+import web.geometry.DOMMatrixReadOnly
 
 sealed external interface CanvasTransform {
     fun getTransform(): DOMMatrix

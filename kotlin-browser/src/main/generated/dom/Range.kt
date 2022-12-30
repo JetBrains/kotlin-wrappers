@@ -2,8 +2,8 @@
 
 package dom
 
-import dom.geometry.DOMRect
-import dom.geometry.DOMRectList
+import web.geometry.DOMRect
+import web.geometry.DOMRectList
 
 sealed external class Range :
     AbstractRange {

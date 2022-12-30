@@ -2,8 +2,8 @@
 
 package web.canvas
 
-import dom.geometry.DOMMatrix2DInit
-import dom.geometry.DOMMatrixReadOnly
+import web.geometry.DOMMatrix2DInit
+import web.geometry.DOMMatrixReadOnly
 
 sealed external class CanvasPattern {
     /** Sets the transformation matrix that will be used when rendering the pattern during a fill or stroke painting operation. */

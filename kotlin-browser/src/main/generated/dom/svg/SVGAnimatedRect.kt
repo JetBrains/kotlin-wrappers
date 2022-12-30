@@ -2,8 +2,8 @@
 
 package dom.svg
 
-import dom.geometry.DOMRect
-import dom.geometry.DOMRectReadOnly
+import web.geometry.DOMRect
+import web.geometry.DOMRectReadOnly
 
 sealed external class SVGAnimatedRect {
     val animVal: DOMRectReadOnly

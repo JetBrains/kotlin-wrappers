@@ -1,6 +1,6 @@
 // Automatically generated - do not modify!
 
-package dom.geometry
+package web.geometry
 
 sealed external interface DOMMatrixInit :
     DOMMatrix2DInit {

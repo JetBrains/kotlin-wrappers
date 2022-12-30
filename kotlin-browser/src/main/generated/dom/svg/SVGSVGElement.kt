@@ -4,8 +4,8 @@ package dom.svg
 
 import dom.Element
 import dom.NodeListOf
-import dom.geometry.*
 import dom.html.WindowEventHandlers
+import web.geometry.*
 
 sealed external class SVGSVGElement :
     SVGGraphicsElement,
