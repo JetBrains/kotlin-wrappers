@@ -1,6 +1,6 @@
 // Automatically generated - do not modify!
 
-package dom.selection
+package web.selection
 
 import dom.Node
 import dom.Range

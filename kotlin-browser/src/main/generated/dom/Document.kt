@@ -3,11 +3,11 @@
 package dom
 
 import dom.html.*
-import dom.selection.Selection
 import js.core.Void
 import web.events.Event
 import web.events.EventHandler
 import web.fonts.FontFaceSource
+import web.selection.Selection
 import web.url.URL
 import web.xpath.XPathEvaluatorBase
 import kotlin.js.Promise

@@ -5,7 +5,6 @@ package dom.html
 import dom.Element
 import dom.GlobalEventHandlers
 import dom.ScrollToOptions
-import dom.selection.Selection
 import js.core.ArrayLike
 import js.core.ReadonlyArray
 import web.device.DeviceMotionEvent
@@ -13,6 +12,7 @@ import web.device.DeviceOrientationEvent
 import web.events.EventHandler
 import web.events.EventTarget
 import web.messaging.Transferable
+import web.selection.Selection
 import web.url.URL
 
 sealed external class Window :
