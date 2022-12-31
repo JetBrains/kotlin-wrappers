@@ -1,3 +1,16 @@
+## pre.467
+
+**BREAKING CHANGE**
+
+`kotlin-browser` package structure changed:
+
+* `canvas` -> `web.canvas`
+* `dom.geometry` -> `web.geometry`
+* `dom.html` -> `web.html`
+* `dom.svg` -> `web.svg`
+* `dom` -> `web.dom`
+* `media` -> `web.media`
+
 ## pre.452
 
 **BREAKING CHANGE**
