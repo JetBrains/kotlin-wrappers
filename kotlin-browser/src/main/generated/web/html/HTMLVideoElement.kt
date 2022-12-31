@@ -4,6 +4,7 @@ package web.html
 
 import web.events.Event
 import web.events.EventHandler
+import web.window.PictureInPictureWindow
 import kotlin.js.Promise
 
 abstract external class HTMLVideoElement :

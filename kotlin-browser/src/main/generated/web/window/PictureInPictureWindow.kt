@@ -1,6 +1,6 @@
 // Automatically generated - do not modify!
 
-package web.html
+package web.window
 
 import web.events.Event
 import web.events.EventHandler
