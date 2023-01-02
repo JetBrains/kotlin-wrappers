@@ -6,6 +6,7 @@
 package cesium
 
 import js.core.ReadonlyArray
+import kotlin.js.Promise
 
 /**
  * An ordered collection of imagery layers.
@@ -193,7 +194,7 @@ external class ImageryLayerCollection {
     fun pickImageryLayerFeatures(
         ray: Ray,
         scene: Scene,
-    ): kotlin.js.Promise<ReadonlyArray<ImageryLayerFeatureInfo>>?
+    ): Promise<ReadonlyArray<ImageryLayerFeatureInfo>>?
 
     /**
      * Returns true if this object was destroyed; otherwise, false.

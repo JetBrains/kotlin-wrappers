@@ -12,6 +12,7 @@ package cesium
 import js.core.ReadonlyArray
 import web.dom.Element
 import web.html.HTMLCanvasElement
+import kotlin.js.Promise
 
 /**
  * The container for all 3D graphical objects and state in a Cesium virtual scene.  Generally,
@@ -793,7 +794,7 @@ external class Scene(options: ConstructorOptions) {
         positions: ReadonlyArray<Cartographic>,
         objectsToExclude: ReadonlyArray<Any>? = definedExternally,
         width: Double? = definedExternally,
-    ): kotlin.js.Promise<ReadonlyArray<Cartographic>>
+    ): Promise<ReadonlyArray<Cartographic>>
 
     /**
      * Initiates an asynchronous [Scene.clampToHeight] query for an array of [Cartesian3] positions
@@ -822,7 +823,7 @@ external class Scene(options: ConstructorOptions) {
         cartesians: ReadonlyArray<Cartesian3>,
         objectsToExclude: ReadonlyArray<Any>? = definedExternally,
         width: Double? = definedExternally,
-    ): kotlin.js.Promise<ReadonlyArray<Cartesian3>>
+    ): Promise<ReadonlyArray<Cartesian3>>
 
     /**
      * Transforms a position in cartesian coordinates to canvas coordinates.  This is commonly used to place an

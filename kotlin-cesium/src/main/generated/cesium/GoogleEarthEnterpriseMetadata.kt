@@ -6,6 +6,7 @@
 package cesium
 
 import js.buffer.ArrayBuffer
+import kotlin.js.Promise
 
 /**
  * Provides metadata using the Google Earth Enterprise REST API. This is used by the GoogleEarthEnterpriseImageryProvider
@@ -83,7 +84,7 @@ external class GoogleEarthEnterpriseMetadata(resourceOrUrl: Resource) {
      * Gets a promise that resolves to true when the metadata is ready for use.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GoogleEarthEnterpriseMetadata.html#readyPromise">Online Documentation</a>
      */
-    val readyPromise: kotlin.js.Promise<Boolean>
+    val readyPromise: Promise<Boolean>
 
     companion object {
         /**

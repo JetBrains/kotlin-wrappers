@@ -9,6 +9,8 @@
 
 package cesium
 
+import kotlin.js.Promise
+
 /**
  * Stores information for making a request. In general this does not need to be constructed directly.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Request.html">Online Documentation</a>
@@ -113,7 +115,7 @@ external class Request(options: ConstructorOptions? = definedExternally) {
  * The function that makes the actual data request.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Request.html#.RequestCallback">Online Documentation</a>
  */
-typealias RequestCallback = () -> kotlin.js.Promise<Unit>
+typealias RequestCallback = () -> Promise<Unit>
 
 /**
  * The function that is called when the request is cancelled.

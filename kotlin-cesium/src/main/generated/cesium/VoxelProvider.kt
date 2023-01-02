@@ -6,6 +6,7 @@
 package cesium
 
 import js.core.ReadonlyArray
+import kotlin.js.Promise
 
 /**
  * Provides voxel data. Intended to be used with [VoxelPrimitive].
@@ -23,7 +24,7 @@ abstract external class VoxelProvider {
      * Gets the promise that will be resolved when the provider is ready for use.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/VoxelProvider.html#readyPromise">Online Documentation</a>
      */
-    abstract val readyPromise: kotlin.js.Promise<VoxelProvider>
+    abstract val readyPromise: Promise<VoxelProvider>
 
     /**
      * A transform from local space to global space. If undefined, the identity matrix will be used instead.
@@ -129,7 +130,7 @@ abstract external class VoxelProvider {
      * @return A promise to an array of typed arrays containing the requested voxel data or undefined if there was a problem loading the data.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/VoxelProvider.html#requestData">Online Documentation</a>
      */
-    abstract fun requestData(options: RequestDataOptions? = definedExternally): kotlin.js.Promise<ReadonlyArray<ReadonlyArray<Any>>>?
+    abstract fun requestData(options: RequestDataOptions? = definedExternally): Promise<ReadonlyArray<ReadonlyArray<Any>>>?
 
     /**
      * @property [tileLevel] The tile's level.

@@ -11,6 +11,9 @@
 
 package cesium
 
+import js.core.Void
+import kotlin.js.Promise
+
 /**
  * A very simple [TerrainProvider] that produces geometry by tessellating an ellipsoidal
  * surface.
@@ -62,7 +65,7 @@ external class EllipsoidTerrainProvider(options: ConstructorOptions? = definedEx
      * Gets a promise that resolves to true when the provider is ready for use.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/EllipsoidTerrainProvider.html#readyPromise">Online Documentation</a>
      */
-    override val readyPromise: kotlin.js.Promise<Boolean>
+    override val readyPromise: Promise<Boolean>
 
     /**
      * Gets a value indicating whether or not the provider includes a water mask.  The water mask
@@ -107,7 +110,7 @@ external class EllipsoidTerrainProvider(options: ConstructorOptions? = definedEx
         y: Double,
         level: Int,
         request: Request?,
-    ): kotlin.js.Promise<TerrainData>?
+    ): Promise<TerrainData>?
 
     /**
      * Gets the maximum geometric error allowed in a tile at a given level.
@@ -143,7 +146,7 @@ external class EllipsoidTerrainProvider(options: ConstructorOptions? = definedEx
         x: Double,
         y: Double,
         level: Int,
-    ): Nothing?
+    ): Void
 }
 
 inline fun EllipsoidTerrainProvider(

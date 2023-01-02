@@ -10,6 +10,7 @@
 package cesium
 
 import js.core.ReadonlyArray
+import kotlin.js.Promise
 
 /**
  * Provides geocoding through Bing Maps.
@@ -41,7 +42,7 @@ external class BingMapsGeocoderService(options: ConstructorOptions) {
      * @param [query] The query to be sent to the geocoder service
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BingMapsGeocoderService.html#geocode">Online Documentation</a>
      */
-    fun geocode(query: String): kotlin.js.Promise<ReadonlyArray<GeocoderService.Result>>
+    fun geocode(query: String): Promise<ReadonlyArray<GeocoderService.Result>>
 }
 
 inline fun BingMapsGeocoderService(

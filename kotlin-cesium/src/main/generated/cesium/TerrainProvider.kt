@@ -9,6 +9,9 @@
 
 package cesium
 
+import js.core.Void
+import kotlin.js.Promise
+
 /**
  * Provides terrain or other geometry for the surface of an ellipsoid.  The surface geometry is
  * organized into a pyramid of tiles according to a [TilingScheme].  This type describes an
@@ -49,7 +52,7 @@ abstract external class TerrainProvider {
      * Gets a promise that resolves to true when the provider is ready for use.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TerrainProvider.html#readyPromise">Online Documentation</a>
      */
-    abstract val readyPromise: kotlin.js.Promise<Boolean>
+    abstract val readyPromise: Promise<Boolean>
 
     /**
      * Gets a value indicating whether or not the provider includes a water mask.  The water mask
@@ -94,7 +97,7 @@ abstract external class TerrainProvider {
         y: Double,
         level: Int,
         request: Request? = definedExternally,
-    ): kotlin.js.Promise<TerrainData>?
+    ): Promise<TerrainData>?
 
     /**
      * Gets the maximum geometric error allowed in a tile at a given level.  This function should not be
@@ -131,7 +134,7 @@ abstract external class TerrainProvider {
         x: Double,
         y: Double,
         level: Int,
-    ): kotlin.js.Promise<Nothing?>?
+    ): Promise<Void>?
 
     companion object {
         /**

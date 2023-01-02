@@ -13,6 +13,7 @@ package cesium
 import js.core.ReadonlyArray
 import web.dom.Element
 import web.html.HTMLCanvasElement
+import kotlin.js.Promise
 
 /**
  * A base widget for building applications.  It composites all of the standard Cesium widgets into one reusable package.
@@ -397,77 +398,77 @@ external class Viewer(
     fun zoomTo(
         target: Entity,
         offset: HeadingPitchRange? = definedExternally,
-    ): kotlin.js.Promise<Boolean>
+    ): Promise<Boolean>
 
     fun zoomTo(
         target: ReadonlyArray<Entity>,
         offset: HeadingPitchRange? = definedExternally,
-    ): kotlin.js.Promise<Boolean>
+    ): Promise<Boolean>
 
     fun zoomTo(
         target: EntityCollection,
         offset: HeadingPitchRange? = definedExternally,
-    ): kotlin.js.Promise<Boolean>
+    ): Promise<Boolean>
 
     fun zoomTo(
         target: DataSource,
         offset: HeadingPitchRange? = definedExternally,
-    ): kotlin.js.Promise<Boolean>
+    ): Promise<Boolean>
 
     fun zoomTo(
         target: ImageryLayer,
         offset: HeadingPitchRange? = definedExternally,
-    ): kotlin.js.Promise<Boolean>
+    ): Promise<Boolean>
 
     fun zoomTo(
         target: Cesium3DTileset,
         offset: HeadingPitchRange? = definedExternally,
-    ): kotlin.js.Promise<Boolean>
+    ): Promise<Boolean>
 
     fun zoomTo(
         target: TimeDynamicPointCloud,
         offset: HeadingPitchRange? = definedExternally,
-    ): kotlin.js.Promise<Boolean>
+    ): Promise<Boolean>
 
     fun zoomTo(
-        target: kotlin.js.Promise<Entity>,
+        target: Promise<Entity>,
         offset: HeadingPitchRange? = definedExternally,
-    ): kotlin.js.Promise<Boolean>
+    ): Promise<Boolean>
 
     fun zoomTo(
-        target: kotlin.js.Promise<ReadonlyArray<Entity>>,
+        target: Promise<ReadonlyArray<Entity>>,
         offset: HeadingPitchRange? = definedExternally,
-    ): kotlin.js.Promise<Boolean>
+    ): Promise<Boolean>
 
     fun zoomTo(
-        target: kotlin.js.Promise<EntityCollection>,
+        target: Promise<EntityCollection>,
         offset: HeadingPitchRange? = definedExternally,
-    ): kotlin.js.Promise<Boolean>
+    ): Promise<Boolean>
 
     fun zoomTo(
-        target: kotlin.js.Promise<DataSource>,
+        target: Promise<DataSource>,
         offset: HeadingPitchRange? = definedExternally,
-    ): kotlin.js.Promise<Boolean>
+    ): Promise<Boolean>
 
     fun zoomTo(
-        target: kotlin.js.Promise<ImageryLayer>,
+        target: Promise<ImageryLayer>,
         offset: HeadingPitchRange? = definedExternally,
-    ): kotlin.js.Promise<Boolean>
+    ): Promise<Boolean>
 
     fun zoomTo(
-        target: kotlin.js.Promise<Cesium3DTileset>,
+        target: Promise<Cesium3DTileset>,
         offset: HeadingPitchRange? = definedExternally,
-    ): kotlin.js.Promise<Boolean>
+    ): Promise<Boolean>
 
     fun zoomTo(
-        target: kotlin.js.Promise<TimeDynamicPointCloud>,
+        target: Promise<TimeDynamicPointCloud>,
         offset: HeadingPitchRange? = definedExternally,
-    ): kotlin.js.Promise<Boolean>
+    ): Promise<Boolean>
 
     fun zoomTo(
-        target: kotlin.js.Promise<VoxelPrimitive>,
+        target: Promise<VoxelPrimitive>,
         offset: HeadingPitchRange? = definedExternally,
-    ): kotlin.js.Promise<Boolean>
+    ): Promise<Boolean>
 
     /**
      * Flies the camera to the provided entity, entities, or data source.
@@ -490,7 +491,7 @@ external class Viewer(
     fun flyTo(
         target: Entity,
         options: FlyToOptions? = definedExternally,
-    ): kotlin.js.Promise<Boolean>
+    ): Promise<Boolean>
 
     /**
      * @property [duration] The duration of the flight in seconds.
@@ -507,72 +508,72 @@ external class Viewer(
     fun flyTo(
         target: ReadonlyArray<Entity>,
         options: FlyToOptions? = definedExternally,
-    ): kotlin.js.Promise<Boolean>
+    ): Promise<Boolean>
 
     fun flyTo(
         target: EntityCollection,
         options: FlyToOptions? = definedExternally,
-    ): kotlin.js.Promise<Boolean>
+    ): Promise<Boolean>
 
     fun flyTo(
         target: DataSource,
         options: FlyToOptions? = definedExternally,
-    ): kotlin.js.Promise<Boolean>
+    ): Promise<Boolean>
 
     fun flyTo(
         target: ImageryLayer,
         options: FlyToOptions? = definedExternally,
-    ): kotlin.js.Promise<Boolean>
+    ): Promise<Boolean>
 
     fun flyTo(
         target: Cesium3DTileset,
         options: FlyToOptions? = definedExternally,
-    ): kotlin.js.Promise<Boolean>
+    ): Promise<Boolean>
 
     fun flyTo(
         target: TimeDynamicPointCloud,
         options: FlyToOptions? = definedExternally,
-    ): kotlin.js.Promise<Boolean>
+    ): Promise<Boolean>
 
     fun flyTo(
-        target: kotlin.js.Promise<Entity>,
+        target: Promise<Entity>,
         options: FlyToOptions? = definedExternally,
-    ): kotlin.js.Promise<Boolean>
+    ): Promise<Boolean>
 
     fun flyTo(
-        target: kotlin.js.Promise<ReadonlyArray<Entity>>,
+        target: Promise<ReadonlyArray<Entity>>,
         options: FlyToOptions? = definedExternally,
-    ): kotlin.js.Promise<Boolean>
+    ): Promise<Boolean>
 
     fun flyTo(
-        target: kotlin.js.Promise<EntityCollection>,
+        target: Promise<EntityCollection>,
         options: FlyToOptions? = definedExternally,
-    ): kotlin.js.Promise<Boolean>
+    ): Promise<Boolean>
 
     fun flyTo(
-        target: kotlin.js.Promise<DataSource>,
+        target: Promise<DataSource>,
         options: FlyToOptions? = definedExternally,
-    ): kotlin.js.Promise<Boolean>
+    ): Promise<Boolean>
 
     fun flyTo(
-        target: kotlin.js.Promise<ImageryLayer>,
+        target: Promise<ImageryLayer>,
         options: FlyToOptions? = definedExternally,
-    ): kotlin.js.Promise<Boolean>
+    ): Promise<Boolean>
 
     fun flyTo(
-        target: kotlin.js.Promise<Cesium3DTileset>,
+        target: Promise<Cesium3DTileset>,
         options: FlyToOptions? = definedExternally,
-    ): kotlin.js.Promise<Boolean>
+    ): Promise<Boolean>
 
     fun flyTo(
-        target: kotlin.js.Promise<TimeDynamicPointCloud>,
+        target: Promise<TimeDynamicPointCloud>,
         options: FlyToOptions? = definedExternally,
-    ): kotlin.js.Promise<Boolean>
+    ): Promise<Boolean>
 
     fun flyTo(
-        target: kotlin.js.Promise<VoxelPrimitive>,
+        target: Promise<VoxelPrimitive>,
         options: FlyToOptions? = definedExternally,
-    ): kotlin.js.Promise<Boolean>
+    ): Promise<Boolean>
 
     /**
      * Initialization options for the Viewer constructor

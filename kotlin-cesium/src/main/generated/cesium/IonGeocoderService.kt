@@ -10,6 +10,7 @@
 package cesium
 
 import js.core.ReadonlyArray
+import kotlin.js.Promise
 
 /**
  * Provides geocoding through Cesium ion.
@@ -38,7 +39,7 @@ external class IonGeocoderService(options: ConstructorOptions) {
     fun geocode(
         query: String,
         type: GeocodeType? = definedExternally,
-    ): kotlin.js.Promise<ReadonlyArray<GeocoderService.Result>>
+    ): Promise<ReadonlyArray<GeocoderService.Result>>
 }
 
 inline fun IonGeocoderService(

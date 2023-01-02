@@ -9,6 +9,8 @@
 
 package cesium
 
+import kotlin.js.Promise
+
 /**
  * A [3D Tiles tileset](https://github.com/CesiumGS/3d-tiles/tree/main/specification),
  * used for streaming massive heterogeneous 3D geospatial datasets.
@@ -732,7 +734,7 @@ external class Cesium3DTileset(options: ConstructorOptions) {
      * ```
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileset.html#readyPromise">Online Documentation</a>
      */
-    val readyPromise: kotlin.js.Promise<Cesium3DTileset>
+    val readyPromise: Promise<Cesium3DTileset>
 
     /**
      * When `true`, all tiles that meet the screen space error this frame are loaded. The tileset is
@@ -1051,9 +1053,9 @@ external class Cesium3DTileset(options: ConstructorOptions) {
          * @return A promise that resolves with the fetched json data
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileset.html#.loadJson">Online Documentation</a>
          */
-        fun loadJson(tilesetUrl: Resource): kotlin.js.Promise<Any>
+        fun loadJson(tilesetUrl: Resource): Promise<Any>
 
-        fun loadJson(tilesetUrl: String): kotlin.js.Promise<Any>
+        fun loadJson(tilesetUrl: String): Promise<Any>
     }
 }
 

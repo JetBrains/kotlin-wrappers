@@ -10,6 +10,7 @@
 package cesium
 
 import js.core.ReadonlyArray
+import kotlin.js.Promise
 
 /**
  * Provides geocoding via a [Pelias](https://pelias.io/) server.
@@ -42,5 +43,5 @@ external class PeliasGeocoderService(val url: Resource) {
     fun geocode(
         query: String,
         type: GeocodeType? = definedExternally,
-    ): kotlin.js.Promise<ReadonlyArray<GeocoderService.Result>>
+    ): Promise<ReadonlyArray<GeocoderService.Result>>
 }

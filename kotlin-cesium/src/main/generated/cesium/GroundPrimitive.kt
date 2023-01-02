@@ -9,6 +9,8 @@
 
 package cesium
 
+import kotlin.js.Promise
+
 /**
  * A ground primitive represents geometry draped over terrain or 3D Tiles in the [Scene].
  *
@@ -207,7 +209,7 @@ external class GroundPrimitive(options: ConstructorOptions? = definedExternally)
      * Gets a promise that resolves when the primitive is ready to render.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GroundPrimitive.html#readyPromise">Online Documentation</a>
      */
-    val readyPromise: kotlin.js.Promise<GroundPrimitive>
+    val readyPromise: Promise<GroundPrimitive>
 
     /**
      * Called when [Viewer] or [CesiumWidget] render the scene to
@@ -271,7 +273,7 @@ external class GroundPrimitive(options: ConstructorOptions? = definedExternally)
          * @return A promise that will resolve once the terrain heights have been loaded.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GroundPrimitive.html#.initializeTerrainHeights">Online Documentation</a>
          */
-        fun initializeTerrainHeights(): kotlin.js.Promise<Unit>
+        fun initializeTerrainHeights(): Promise<Unit>
 
         /**
          * Checks if the given Scene supports materials on GroundPrimitives.

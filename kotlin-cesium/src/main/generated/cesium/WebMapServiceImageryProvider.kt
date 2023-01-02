@@ -10,6 +10,7 @@
 package cesium
 
 import js.core.ReadonlyArray
+import kotlin.js.Promise
 
 /**
  * Provides tiled imagery hosted by a Web Map Service (WMS) server.
@@ -178,7 +179,7 @@ external class WebMapServiceImageryProvider(options: ConstructorOptions) {
      * Gets a promise that resolves to true when the provider is ready for use.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/WebMapServiceImageryProvider.html#readyPromise">Online Documentation</a>
      */
-    val readyPromise: kotlin.js.Promise<Boolean>
+    val readyPromise: Promise<Boolean>
 
     /**
      * Gets the credit to display when this imagery provider is active.  Typically this is used to credit
@@ -257,7 +258,7 @@ external class WebMapServiceImageryProvider(options: ConstructorOptions) {
         y: Double,
         level: Int,
         request: Request? = definedExternally,
-    ): kotlin.js.Promise<ImageryTypes>?
+    ): Promise<ImageryTypes>?
 
     /**
      * Asynchronously determines what features, if any, are located at a given longitude and latitude within
@@ -278,7 +279,7 @@ external class WebMapServiceImageryProvider(options: ConstructorOptions) {
         level: Int,
         longitude: Double,
         latitude: Double,
-    ): kotlin.js.Promise<ReadonlyArray<ImageryLayerFeatureInfo>>?
+    ): Promise<ReadonlyArray<ImageryLayerFeatureInfo>>?
 
     /**
      * Initialization options for the WebMapServiceImageryProvider constructor

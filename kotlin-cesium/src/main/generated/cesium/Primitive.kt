@@ -10,6 +10,7 @@
 package cesium
 
 import js.core.ReadonlyArray
+import kotlin.js.Promise
 
 /**
  * A primitive represents geometry in the [Scene].  The geometry can be from a single [GeometryInstance]
@@ -269,7 +270,7 @@ external class Primitive(options: ConstructorOptions? = definedExternally) {
      * Gets a promise that resolves when the primitive is ready to render.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Primitive.html#readyPromise">Online Documentation</a>
      */
-    val readyPromise: kotlin.js.Promise<Primitive>
+    val readyPromise: Promise<Primitive>
 
     /**
      * Called when [Viewer] or [CesiumWidget] render the scene to

@@ -10,6 +10,8 @@
 package cesium
 
 import js.core.ReadonlyArray
+import js.core.Void
+import kotlin.js.Promise
 
 /**
  * Provides tiled imagery served by [WMTS 1.0.0](http://www.opengeospatial.org/standards/wmts) compliant servers.
@@ -220,7 +222,7 @@ external class WebMapTileServiceImageryProvider(options: ConstructorOptions) {
      * Gets a promise that resolves to true when the provider is ready for use.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/WebMapTileServiceImageryProvider.html#readyPromise">Online Documentation</a>
      */
-    val readyPromise: kotlin.js.Promise<Boolean>
+    val readyPromise: Promise<Boolean>
 
     /**
      * Gets the credit to display when this imagery provider is active.  Typically this is used to credit
@@ -289,7 +291,7 @@ external class WebMapTileServiceImageryProvider(options: ConstructorOptions) {
         y: Double,
         level: Int,
         request: Request? = definedExternally,
-    ): kotlin.js.Promise<ImageryTypes>?
+    ): Promise<ImageryTypes>?
 
     /**
      * Picking features is not currently supported by this imagery provider, so this function simply returns
@@ -308,7 +310,7 @@ external class WebMapTileServiceImageryProvider(options: ConstructorOptions) {
         level: Int,
         longitude: Double,
         latitude: Double,
-    ): Nothing?
+    ): Void
 
     /**
      * Initialization options for the WebMapTileServiceImageryProvider constructor

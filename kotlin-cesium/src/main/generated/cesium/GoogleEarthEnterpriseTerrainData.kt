@@ -11,6 +11,7 @@ package cesium
 
 import js.buffer.ArrayBuffer
 import js.core.ReadonlyArray
+import kotlin.js.Promise
 
 /**
  * Terrain data for a single tile from a Google Earth Enterprise server.
@@ -101,7 +102,7 @@ external class GoogleEarthEnterpriseTerrainData(options: ConstructorOptions) : T
         descendantX: Double,
         descendantY: Double,
         descendantLevel: Int,
-    ): kotlin.js.Promise<HeightmapTerrainData>?
+    ): Promise<HeightmapTerrainData>?
 
     /**
      * Determines if a given child tile is available, based on the

@@ -5,6 +5,8 @@
 
 package cesium
 
+import kotlin.js.Promise
+
 /**
  * Exports an EntityCollection as a KML document. Only Point, Billboard, Model, Path, Polygon, Polyline geometries
  * will be exported. Note that there is not a 1 to 1 mapping of Entity properties to KML Feature properties. For
@@ -31,7 +33,7 @@ package cesium
  * @return A promise that resolved to an object containing the KML string and a dictionary of external file blobs, or a kmz file as a blob if options.kmz is true.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/exportKml.html">Online Documentation</a>
  */
-external fun exportKml(options: ExportKmlOptions): kotlin.js.Promise<dynamic>
+external fun exportKml(options: ExportKmlOptions): Promise<dynamic>
 
 /**
  * @property [entities] The EntityCollection to export as KML.

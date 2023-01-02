@@ -12,6 +12,7 @@ package cesium
 import js.buffer.ArrayBuffer
 import web.buffer.Blob
 import web.xml.XMLDocument
+import kotlin.js.Promise
 
 /**
  * A resource that includes the location and any other parameters we need to retrieve it or create derived resources. It also provides the ability to retry requests.
@@ -250,7 +251,7 @@ external class Resource(options: dynamic) {
      * @return a promise that will resolve to the requested data when loaded. Returns undefined if `request.throttle` is true and the request does not have high enough priority.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Resource.html#fetchArrayBuffer">Online Documentation</a>
      */
-    fun fetchArrayBuffer(): kotlin.js.Promise<ArrayBuffer>?
+    fun fetchArrayBuffer(): Promise<ArrayBuffer>?
 
     /**
      * Asynchronously loads the given resource as a blob.  Returns a promise that will resolve to
@@ -268,7 +269,7 @@ external class Resource(options: dynamic) {
      * @return a promise that will resolve to the requested data when loaded. Returns undefined if `request.throttle` is true and the request does not have high enough priority.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Resource.html#fetchBlob">Online Documentation</a>
      */
-    fun fetchBlob(): kotlin.js.Promise<Blob>?
+    fun fetchBlob(): Promise<Blob>?
 
     /**
      * Asynchronously loads the given image resource.  Returns a promise that will resolve to
@@ -331,7 +332,7 @@ external class Resource(options: dynamic) {
      * @return a promise that will resolve to the requested data when loaded. Returns undefined if `request.throttle` is true and the request does not have high enough priority.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Resource.html#fetchText">Online Documentation</a>
      */
-    fun fetchText(): kotlin.js.Promise<String>?
+    fun fetchText(): Promise<String>?
 
     /**
      * Asynchronously loads the given resource as JSON.  Returns a promise that will resolve to
@@ -350,7 +351,7 @@ external class Resource(options: dynamic) {
      * @return a promise that will resolve to the requested data when loaded. Returns undefined if `request.throttle` is true and the request does not have high enough priority.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Resource.html#fetchJson">Online Documentation</a>
      */
-    fun fetchJson(): kotlin.js.Promise<Any>?
+    fun fetchJson(): Promise<Any>?
 
     /**
      * Asynchronously loads the given resource as XML.  Returns a promise that will resolve to
@@ -370,7 +371,7 @@ external class Resource(options: dynamic) {
      * @return a promise that will resolve to the requested data when loaded. Returns undefined if `request.throttle` is true and the request does not have high enough priority.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Resource.html#fetchXML">Online Documentation</a>
      */
-    fun fetchXML(): kotlin.js.Promise<XMLDocument>?
+    fun fetchXML(): Promise<XMLDocument>?
 
     /**
      * Requests a resource using JSONP.
@@ -387,7 +388,7 @@ external class Resource(options: dynamic) {
      * @return a promise that will resolve to the requested data when loaded. Returns undefined if `request.throttle` is true and the request does not have high enough priority.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Resource.html#fetchJsonp">Online Documentation</a>
      */
-    fun fetchJsonp(callbackParameterName: String? = definedExternally): kotlin.js.Promise<Any>?
+    fun fetchJsonp(callbackParameterName: String? = definedExternally): Promise<Any>?
 
     /**
      * Asynchronously loads the given resource.  Returns a promise that will resolve to
@@ -406,7 +407,7 @@ external class Resource(options: dynamic) {
      * @return a promise that will resolve to the requested data when loaded. Returns undefined if `request.throttle` is true and the request does not have high enough priority.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Resource.html#fetch">Online Documentation</a>
      */
-    fun fetch(options: FetchOptions? = definedExternally): kotlin.js.Promise<Any>?
+    fun fetch(options: FetchOptions? = definedExternally): Promise<Any>?
 
     /**
      * @property [responseType] The type of response.  This controls the type of item returned.
@@ -435,7 +436,7 @@ external class Resource(options: dynamic) {
      * @return a promise that will resolve to the requested data when loaded. Returns undefined if `request.throttle` is true and the request does not have high enough priority.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Resource.html#delete">Online Documentation</a>
      */
-    fun delete(options: DeleteOptions? = definedExternally): kotlin.js.Promise<Any>?
+    fun delete(options: DeleteOptions? = definedExternally): Promise<Any>?
 
     /**
      * @property [responseType] The type of response.  This controls the type of item returned.
@@ -464,7 +465,7 @@ external class Resource(options: dynamic) {
      * @return a promise that will resolve to the requested data when loaded. Returns undefined if `request.throttle` is true and the request does not have high enough priority.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Resource.html#head">Online Documentation</a>
      */
-    fun head(options: HeadOptions? = definedExternally): kotlin.js.Promise<Any>?
+    fun head(options: HeadOptions? = definedExternally): Promise<Any>?
 
     /**
      * @property [responseType] The type of response.  This controls the type of item returned.
@@ -493,7 +494,7 @@ external class Resource(options: dynamic) {
      * @return a promise that will resolve to the requested data when loaded. Returns undefined if `request.throttle` is true and the request does not have high enough priority.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Resource.html#options">Online Documentation</a>
      */
-    fun options(options: OptionsOptions? = definedExternally): kotlin.js.Promise<Any>?
+    fun options(options: OptionsOptions? = definedExternally): Promise<Any>?
 
     /**
      * @property [responseType] The type of response.  This controls the type of item returned.
@@ -526,7 +527,7 @@ external class Resource(options: dynamic) {
     fun post(
         data: Any,
         options: PostOptions? = definedExternally,
-    ): kotlin.js.Promise<Any>?
+    ): Promise<Any>?
 
     /**
      * @property [data] Data that is posted with the resource.
@@ -561,7 +562,7 @@ external class Resource(options: dynamic) {
     fun put(
         data: Any,
         options: PutOptions? = definedExternally,
-    ): kotlin.js.Promise<Any>?
+    ): Promise<Any>?
 
     /**
      * @property [responseType] The type of response.  This controls the type of item returned.
@@ -594,7 +595,7 @@ external class Resource(options: dynamic) {
     fun patch(
         data: Any,
         options: PatchOptions? = definedExternally,
-    ): kotlin.js.Promise<Any>?
+    ): Promise<Any>?
 
     /**
      * @property [responseType] The type of response.  This controls the type of item returned.
@@ -645,7 +646,7 @@ external class Resource(options: dynamic) {
          * @return a promise that will resolve to the requested data when loaded. Returns undefined if `request.throttle` is true and the request does not have high enough priority.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Resource.html#.fetchArrayBuffer">Online Documentation</a>
          */
-        fun fetchArrayBuffer(options: FetchArrayBufferOptions): kotlin.js.Promise<ArrayBuffer>?
+        fun fetchArrayBuffer(options: FetchArrayBufferOptions): Promise<ArrayBuffer>?
 
         /**
          * @property [url] The url of the resource.
@@ -676,7 +677,7 @@ external class Resource(options: dynamic) {
          * @return a promise that will resolve to the requested data when loaded. Returns undefined if `request.throttle` is true and the request does not have high enough priority.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Resource.html#.fetchBlob">Online Documentation</a>
          */
-        fun fetchBlob(options: FetchBlobOptions): kotlin.js.Promise<Blob>?
+        fun fetchBlob(options: FetchBlobOptions): Promise<Blob>?
 
         /**
          * @property [url] The url of the resource.
@@ -750,7 +751,7 @@ external class Resource(options: dynamic) {
          * @return a promise that will resolve to the requested data when loaded. Returns undefined if `request.throttle` is true and the request does not have high enough priority.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Resource.html#.fetchText">Online Documentation</a>
          */
-        fun fetchText(options: FetchTextOptions): kotlin.js.Promise<String>?
+        fun fetchText(options: FetchTextOptions): Promise<String>?
 
         /**
          * @property [url] The url of the resource.
@@ -781,7 +782,7 @@ external class Resource(options: dynamic) {
          * @return a promise that will resolve to the requested data when loaded. Returns undefined if `request.throttle` is true and the request does not have high enough priority.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Resource.html#.fetchJson">Online Documentation</a>
          */
-        fun fetchJson(options: FetchJsonOptions): kotlin.js.Promise<Any>?
+        fun fetchJson(options: FetchJsonOptions): Promise<Any>?
 
         /**
          * @property [url] The url of the resource.
@@ -812,7 +813,7 @@ external class Resource(options: dynamic) {
          * @return a promise that will resolve to the requested data when loaded. Returns undefined if `request.throttle` is true and the request does not have high enough priority.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Resource.html#.fetchXML">Online Documentation</a>
          */
-        fun fetchXML(options: FetchXMLOptions): kotlin.js.Promise<XMLDocument>?
+        fun fetchXML(options: FetchXMLOptions): Promise<XMLDocument>?
 
         /**
          * @property [url] The url of the resource.
@@ -843,7 +844,7 @@ external class Resource(options: dynamic) {
          * @return a promise that will resolve to the requested data when loaded. Returns undefined if `request.throttle` is true and the request does not have high enough priority.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Resource.html#.fetchJsonp">Online Documentation</a>
          */
-        fun fetchJsonp(options: FetchJsonpOptions): kotlin.js.Promise<Any>?
+        fun fetchJsonp(options: FetchJsonpOptions): Promise<Any>?
 
         /**
          * @property [url] The url of the resource.
@@ -877,7 +878,7 @@ external class Resource(options: dynamic) {
          * @return a promise that will resolve to the requested data when loaded. Returns undefined if `request.throttle` is true and the request does not have high enough priority.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Resource.html#.fetch">Online Documentation</a>
          */
-        fun fetch(options: FetchOptions): kotlin.js.Promise<Any>?
+        fun fetch(options: FetchOptions): Promise<Any>?
 
         /**
          * @property [url] The url of the resource.
@@ -912,7 +913,7 @@ external class Resource(options: dynamic) {
          * @return a promise that will resolve to the requested data when loaded. Returns undefined if `request.throttle` is true and the request does not have high enough priority.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Resource.html#.delete">Online Documentation</a>
          */
-        fun delete(options: DeleteOptions): kotlin.js.Promise<Any>?
+        fun delete(options: DeleteOptions): Promise<Any>?
 
         /**
          * @property [url] The url of the resource.
@@ -949,7 +950,7 @@ external class Resource(options: dynamic) {
          * @return a promise that will resolve to the requested data when loaded. Returns undefined if `request.throttle` is true and the request does not have high enough priority.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Resource.html#.head">Online Documentation</a>
          */
-        fun head(options: HeadOptions): kotlin.js.Promise<Any>?
+        fun head(options: HeadOptions): Promise<Any>?
 
         /**
          * @property [url] The url of the resource.
@@ -984,7 +985,7 @@ external class Resource(options: dynamic) {
          * @return a promise that will resolve to the requested data when loaded. Returns undefined if `request.throttle` is true and the request does not have high enough priority.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Resource.html#.options">Online Documentation</a>
          */
-        fun options(options: OptionsOptions): kotlin.js.Promise<Any>?
+        fun options(options: OptionsOptions): Promise<Any>?
 
         /**
          * @property [url] The url of the resource.
@@ -1019,7 +1020,7 @@ external class Resource(options: dynamic) {
          * @return a promise that will resolve to the requested data when loaded. Returns undefined if `request.throttle` is true and the request does not have high enough priority.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Resource.html#.post">Online Documentation</a>
          */
-        fun post(options: PostOptions): kotlin.js.Promise<Any>?
+        fun post(options: PostOptions): Promise<Any>?
 
         /**
          * @property [url] The url of the resource.
@@ -1056,7 +1057,7 @@ external class Resource(options: dynamic) {
          * @return a promise that will resolve to the requested data when loaded. Returns undefined if `request.throttle` is true and the request does not have high enough priority.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Resource.html#.put">Online Documentation</a>
          */
-        fun put(options: PutOptions): kotlin.js.Promise<Any>?
+        fun put(options: PutOptions): Promise<Any>?
 
         /**
          * @property [url] The url of the resource.
@@ -1093,7 +1094,7 @@ external class Resource(options: dynamic) {
          * @return a promise that will resolve to the requested data when loaded. Returns undefined if `request.throttle` is true and the request does not have high enough priority.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Resource.html#.patch">Online Documentation</a>
          */
-        fun patch(options: PatchOptions): kotlin.js.Promise<Any>?
+        fun patch(options: PatchOptions): Promise<Any>?
 
         /**
          * @property [url] The url of the resource.

@@ -11,6 +11,7 @@ package cesium
 
 import js.core.ReadonlyArray
 import js.typedarrays.Uint8Array
+import kotlin.js.Promise
 
 /**
  * Terrain data for a single tile where the terrain data is represented as a heightmap.  A heightmap
@@ -159,7 +160,7 @@ external class HeightmapTerrainData(options: ConstructorOptions) : TerrainData {
         descendantX: Double,
         descendantY: Double,
         descendantLevel: Int,
-    ): kotlin.js.Promise<HeightmapTerrainData>?
+    ): Promise<HeightmapTerrainData>?
 
     /**
      * Determines if a given child tile is available, based on the

@@ -6,6 +6,7 @@
 package cesium
 
 import js.core.ReadonlyArray
+import kotlin.js.Promise
 
 /**
  * A wrapper around a web worker that allows scheduling tasks for a given worker,
@@ -55,7 +56,7 @@ external class TaskProcessor(
     fun scheduleTask(
         parameters: Any,
         transferableObjects: ReadonlyArray<Any>? = definedExternally,
-    ): kotlin.js.Promise<Any>?
+    ): Promise<Any>?
 
     /**
      * Posts a message to a web worker with configuration to initialize loading
@@ -64,7 +65,7 @@ external class TaskProcessor(
      * @return A promise that resolves to the result when the web worker has loaded and compiled the web assembly module and is ready to process tasks.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TaskProcessor.html#initWebAssemblyModule">Online Documentation</a>
      */
-    fun initWebAssemblyModule(options: InitWebAssemblyModuleOptions? = definedExternally): kotlin.js.Promise<Any>
+    fun initWebAssemblyModule(options: InitWebAssemblyModuleOptions? = definedExternally): Promise<Any>
 
     /**
      * @property [modulePath] The path of the web assembly JavaScript wrapper module.

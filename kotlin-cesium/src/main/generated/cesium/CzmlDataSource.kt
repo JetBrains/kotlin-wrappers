@@ -11,6 +11,7 @@
 package cesium
 
 import js.core.ReadonlyArray
+import kotlin.js.Promise
 
 /**
  * A [DataSource] which processes [CZML](https://github.com/AnalyticalGraphicsInc/czml-writer/wiki/CZML-Guide).
@@ -87,17 +88,17 @@ external class CzmlDataSource(var name: String = definedExternally) {
     fun process(
         czml: Resource,
         options: LoadOptions? = definedExternally,
-    ): kotlin.js.Promise<CzmlDataSource>
+    ): Promise<CzmlDataSource>
 
     fun process(
         czml: String,
         options: LoadOptions? = definedExternally,
-    ): kotlin.js.Promise<CzmlDataSource>
+    ): Promise<CzmlDataSource>
 
     fun process(
         czml: Any,
         options: LoadOptions? = definedExternally,
-    ): kotlin.js.Promise<CzmlDataSource>
+    ): Promise<CzmlDataSource>
 
     /**
      * Loads the provided url or CZML object, replacing any existing data.
@@ -109,17 +110,17 @@ external class CzmlDataSource(var name: String = definedExternally) {
     fun load(
         czml: Resource,
         options: LoadOptions? = definedExternally,
-    ): kotlin.js.Promise<CzmlDataSource>
+    ): Promise<CzmlDataSource>
 
     fun load(
         czml: String,
         options: LoadOptions? = definedExternally,
-    ): kotlin.js.Promise<CzmlDataSource>
+    ): Promise<CzmlDataSource>
 
     fun load(
         czml: Any,
         options: LoadOptions? = definedExternally,
-    ): kotlin.js.Promise<CzmlDataSource>
+    ): Promise<CzmlDataSource>
 
     /**
      * Updates the data source to the provided time.  This function is optional and
@@ -143,17 +144,17 @@ external class CzmlDataSource(var name: String = definedExternally) {
         fun load(
             czml: Resource,
             options: LoadOptions? = definedExternally,
-        ): kotlin.js.Promise<CzmlDataSource>
+        ): Promise<CzmlDataSource>
 
         fun load(
             czml: String,
             options: LoadOptions? = definedExternally,
-        ): kotlin.js.Promise<CzmlDataSource>
+        ): Promise<CzmlDataSource>
 
         fun load(
             czml: Any,
             options: LoadOptions? = definedExternally,
-        ): kotlin.js.Promise<CzmlDataSource>
+        ): Promise<CzmlDataSource>
 
         /**
          * Gets the array of CZML processing functions.

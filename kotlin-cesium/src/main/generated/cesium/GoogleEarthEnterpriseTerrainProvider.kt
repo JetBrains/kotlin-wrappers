@@ -11,6 +11,9 @@
 
 package cesium
 
+import js.core.Void
+import kotlin.js.Promise
+
 /**
  * Provides tiled terrain using the Google Earth Enterprise REST API.
  * ```
@@ -72,7 +75,7 @@ external class GoogleEarthEnterpriseTerrainProvider(options: ConstructorOptions)
      * Gets a promise that resolves to true when the provider is ready for use.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GoogleEarthEnterpriseTerrainProvider.html#readyPromise">Online Documentation</a>
      */
-    override val readyPromise: kotlin.js.Promise<Boolean>
+    override val readyPromise: Promise<Boolean>
 
     /**
      * Gets the credit to display when this terrain provider is active.  Typically this is used to credit
@@ -124,7 +127,7 @@ external class GoogleEarthEnterpriseTerrainProvider(options: ConstructorOptions)
         y: Double,
         level: Int,
         request: Request?,
-    ): kotlin.js.Promise<TerrainData>?
+    ): Promise<TerrainData>?
 
     /**
      * Gets the maximum geometric error allowed in a tile at a given level.
@@ -159,7 +162,7 @@ external class GoogleEarthEnterpriseTerrainProvider(options: ConstructorOptions)
         x: Double,
         y: Double,
         level: Int,
-    ): Nothing?
+    ): Void
 }
 
 inline fun GoogleEarthEnterpriseTerrainProvider(

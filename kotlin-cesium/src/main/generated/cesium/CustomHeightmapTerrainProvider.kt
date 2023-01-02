@@ -11,6 +11,9 @@
 
 package cesium
 
+import js.core.Void
+import kotlin.js.Promise
+
 /**
  * A simple [TerrainProvider] that gets height values from a callback function.
  * It can be used for procedurally generated terrain or as a way to load custom
@@ -85,7 +88,7 @@ external class CustomHeightmapTerrainProvider(options: ConstructorOptions) : Ter
      * Gets a promise that resolves to true when the provider is ready for use.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CustomHeightmapTerrainProvider.html#readyPromise">Online Documentation</a>
      */
-    override val readyPromise: kotlin.js.Promise<Boolean>
+    override val readyPromise: Promise<Boolean>
 
     /**
      * Gets a value indicating whether or not the provider includes a water mask. The water mask
@@ -137,7 +140,7 @@ external class CustomHeightmapTerrainProvider(options: ConstructorOptions) : Ter
         y: Double,
         level: Int,
         request: Request?,
-    ): kotlin.js.Promise<TerrainData>?
+    ): Promise<TerrainData>?
 
     /**
      * Gets the maximum geometric error allowed in a tile at a given level.
@@ -173,7 +176,7 @@ external class CustomHeightmapTerrainProvider(options: ConstructorOptions) : Ter
         x: Double,
         y: Double,
         level: Int,
-    ): kotlin.js.Promise<Nothing?>?
+    ): Promise<Void>?
 }
 
 /**

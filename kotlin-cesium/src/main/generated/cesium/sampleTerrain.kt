@@ -6,6 +6,7 @@
 package cesium
 
 import js.core.ReadonlyArray
+import kotlin.js.Promise
 
 /**
  * Initiates a terrain height query for an array of [Cartographic] positions by
@@ -43,4 +44,4 @@ external fun sampleTerrain(
     terrainProvider: TerrainProvider,
     level: Int,
     positions: ReadonlyArray<Cartographic>,
-): kotlin.js.Promise<ReadonlyArray<Cartographic>>
+): Promise<ReadonlyArray<Cartographic>>

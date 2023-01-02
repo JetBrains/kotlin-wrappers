@@ -9,6 +9,8 @@
 
 package cesium
 
+import kotlin.js.Promise
+
 /**
  * Provides playback of time-dynamic point cloud data.
  *
@@ -160,7 +162,7 @@ external class TimeDynamicPointCloud(options: ConstructorOptions) {
      * Gets the promise that will be resolved when the point cloud renders a frame for the first time.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TimeDynamicPointCloud.html#readyPromise">Online Documentation</a>
      */
-    val readyPromise: kotlin.js.Promise<TimeDynamicPointCloud>
+    val readyPromise: Promise<TimeDynamicPointCloud>
 
     /**
      * Marks the point cloud's [TimeDynamicPointCloud.style] as dirty, which forces all

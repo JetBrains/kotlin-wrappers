@@ -9,6 +9,8 @@
 
 package cesium
 
+import kotlin.js.Promise
+
 /**
  * Contains functions for transforming positions to various reference frames.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Transforms.html">Online Documentation</a>
@@ -256,7 +258,7 @@ external object Transforms {
      *   no longer return undefined for a time inside the interval.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Transforms.html#.preloadIcrfFixed">Online Documentation</a>
      */
-    fun preloadIcrfFixed(timeInterval: TimeInterval): kotlin.js.Promise<Unit>
+    fun preloadIcrfFixed(timeInterval: TimeInterval): Promise<Unit>
 
     /**
      * Computes a rotation matrix to transform a point or vector from the International Celestial

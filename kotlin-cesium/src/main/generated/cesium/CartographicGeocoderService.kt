@@ -6,6 +6,7 @@
 package cesium
 
 import js.core.ReadonlyArray
+import kotlin.js.Promise
 
 /**
  * Geocodes queries containing longitude and latitude coordinates and an optional height.
@@ -17,5 +18,5 @@ external class CartographicGeocoderService {
      * @param [query] The query to be sent to the geocoder service
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CartographicGeocoderService.html#geocode">Online Documentation</a>
      */
-    fun geocode(query: String): kotlin.js.Promise<ReadonlyArray<GeocoderService.Result>>
+    fun geocode(query: String): Promise<ReadonlyArray<GeocoderService.Result>>
 }

@@ -5,6 +5,8 @@
 
 package cesium
 
+import kotlin.js.Promise
+
 /**
  * <div class="notice">
  * To construct a Model, call [Model.fromGltf]. Do not call the constructor directly.
@@ -79,7 +81,7 @@ sealed external class Model {
      * This promise is resolved at the end of the frame before the first frame the model is rendered in.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Model.html#readyPromise">Online Documentation</a>
      */
-    val readyPromise: kotlin.js.Promise<Model>
+    val readyPromise: Promise<Model>
 
     /**
      * The currently playing glTF animations.

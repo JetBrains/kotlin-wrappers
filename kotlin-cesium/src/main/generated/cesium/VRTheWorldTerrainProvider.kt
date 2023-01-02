@@ -11,6 +11,9 @@
 
 package cesium
 
+import js.core.Void
+import kotlin.js.Promise
+
 /**
  * A [TerrainProvider] that produces terrain geometry by tessellating height maps
  * retrieved from a [VT MÄK VR-TheWorld server](http://vr-theworld.com/).
@@ -68,7 +71,7 @@ external class VRTheWorldTerrainProvider(options: ConstructorOptions) : TerrainP
      * Gets a promise that resolves to true when the provider is ready for use.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/VRTheWorldTerrainProvider.html#readyPromise">Online Documentation</a>
      */
-    override val readyPromise: kotlin.js.Promise<Boolean>
+    override val readyPromise: Promise<Boolean>
 
     /**
      * Gets a value indicating whether or not the provider includes a water mask.  The water mask
@@ -113,7 +116,7 @@ external class VRTheWorldTerrainProvider(options: ConstructorOptions) : TerrainP
         y: Double,
         level: Int,
         request: Request?,
-    ): kotlin.js.Promise<TerrainData>?
+    ): Promise<TerrainData>?
 
     /**
      * Gets the maximum geometric error allowed in a tile at a given level.
@@ -149,7 +152,7 @@ external class VRTheWorldTerrainProvider(options: ConstructorOptions) : TerrainP
         x: Double,
         y: Double,
         level: Int,
-    ): kotlin.js.Promise<Nothing?>?
+    ): Promise<Void>?
 }
 
 inline fun VRTheWorldTerrainProvider(

@@ -10,6 +10,7 @@
 package cesium
 
 import js.core.ReadonlyArray
+import kotlin.js.Promise
 
 /**
  * Provides tiled imagery using the Cesium ion REST API.
@@ -95,7 +96,7 @@ external class IonImageryProvider(options: ConstructorOptions) {
      * Gets a promise that resolves to true when the provider is ready for use.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/IonImageryProvider.html#readyPromise">Online Documentation</a>
      */
-    val readyPromise: kotlin.js.Promise<Boolean>
+    val readyPromise: Promise<Boolean>
 
     /**
      * Gets the rectangle, in radians, of the imagery provided by the instance.  This function should
@@ -214,7 +215,7 @@ external class IonImageryProvider(options: ConstructorOptions) {
         y: Double,
         level: Int,
         request: Request? = definedExternally,
-    ): kotlin.js.Promise<ImageryTypes>?
+    ): Promise<ImageryTypes>?
 
     /**
      * Asynchronously determines what features, if any, are located at a given longitude and latitude within
@@ -237,7 +238,7 @@ external class IonImageryProvider(options: ConstructorOptions) {
         level: Int,
         longitude: Double,
         latitude: Double,
-    ): kotlin.js.Promise<ReadonlyArray<ImageryLayerFeatureInfo>>?
+    ): Promise<ReadonlyArray<ImageryLayerFeatureInfo>>?
 
     /**
      * Initialization options for the TileMapServiceImageryProvider constructor

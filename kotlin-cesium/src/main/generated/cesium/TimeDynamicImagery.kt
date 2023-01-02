@@ -10,6 +10,7 @@
 package cesium
 
 import web.html.HTMLImageElement
+import kotlin.js.Promise
 
 /**
  * Provides functionality for ImageryProviders that have time dynamic imagery
@@ -62,7 +63,7 @@ external class TimeDynamicImagery(options: ConstructorOptions) {
         y: Double,
         level: Int,
         request: Request? = definedExternally,
-    ): kotlin.js.Promise<HTMLImageElement>?
+    ): Promise<HTMLImageElement>?
 
     /**
      * Checks if the next interval is approaching and will start preload the tile if necessary. Otherwise it will

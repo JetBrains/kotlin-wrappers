@@ -14,6 +14,7 @@ import web.buffer.Blob
 import web.dom.Document
 import web.dom.Element
 import web.html.HTMLCanvasElement
+import kotlin.js.Promise
 
 /**
  * A [DataSource] which processes Keyhole Markup Language 2.2 (KML).
@@ -146,22 +147,22 @@ external class KmlDataSource(options: ConstructorOptions? = definedExternally) {
     fun load(
         data: Resource,
         options: LoadOptions? = definedExternally,
-    ): kotlin.js.Promise<KmlDataSource>
+    ): Promise<KmlDataSource>
 
     fun load(
         data: String,
         options: LoadOptions? = definedExternally,
-    ): kotlin.js.Promise<KmlDataSource>
+    ): Promise<KmlDataSource>
 
     fun load(
         data: Document,
         options: LoadOptions? = definedExternally,
-    ): kotlin.js.Promise<KmlDataSource>
+    ): Promise<KmlDataSource>
 
     fun load(
         data: Blob,
         options: LoadOptions? = definedExternally,
-    ): kotlin.js.Promise<KmlDataSource>
+    ): Promise<KmlDataSource>
 
     /**
      * Cleans up any non-entity elements created by the data source. Currently this only affects ScreenOverlay elements.
@@ -211,22 +212,22 @@ external class KmlDataSource(options: ConstructorOptions? = definedExternally) {
         fun load(
             data: Resource,
             options: ConstructorOptions? = definedExternally,
-        ): kotlin.js.Promise<KmlDataSource>
+        ): Promise<KmlDataSource>
 
         fun load(
             data: String,
             options: ConstructorOptions? = definedExternally,
-        ): kotlin.js.Promise<KmlDataSource>
+        ): Promise<KmlDataSource>
 
         fun load(
             data: Document,
             options: ConstructorOptions? = definedExternally,
-        ): kotlin.js.Promise<KmlDataSource>
+        ): Promise<KmlDataSource>
 
         fun load(
             data: Blob,
             options: ConstructorOptions? = definedExternally,
-        ): kotlin.js.Promise<KmlDataSource>
+        ): Promise<KmlDataSource>
 
         /**
          * Initialization options for the `load` method.

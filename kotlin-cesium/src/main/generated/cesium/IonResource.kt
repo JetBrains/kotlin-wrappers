@@ -6,6 +6,7 @@
 package cesium
 
 import js.core.ReadonlyArray
+import kotlin.js.Promise
 
 /**
  * A [Resource] instance that encapsulates Cesium ion asset access.
@@ -95,7 +96,7 @@ external class IonResource(
         fun fromAssetId(
             assetId: Int,
             options: FromAssetIdOptions? = definedExternally,
-        ): kotlin.js.Promise<IonResource>
+        ): Promise<IonResource>
 
         /**
          * @property [accessToken] The access token to use.

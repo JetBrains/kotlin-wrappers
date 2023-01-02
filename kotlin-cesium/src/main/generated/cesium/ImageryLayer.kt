@@ -10,6 +10,8 @@
 
 package cesium
 
+import kotlin.js.Promise
+
 /**
  * An imagery layer that displays tiled image data from a single imagery provider
  * on a [Globe].
@@ -303,7 +305,7 @@ external class ImageryLayer(
      * @return A promise to a rectangle which defines the overall bounds of imagery that can be produced by this layer.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ImageryLayer.html#getViewableRectangle">Online Documentation</a>
      */
-    fun getViewableRectangle(): kotlin.js.Promise<Rectangle>
+    fun getViewableRectangle(): Promise<Rectangle>
 
     companion object {
         /**

@@ -10,6 +10,7 @@
 package cesium
 
 import js.core.ReadonlyArray
+import kotlin.js.Promise
 
 /**
  * A [VoxelProvider] that fetches voxel data from a 3D Tiles tileset.
@@ -135,7 +136,7 @@ external class Cesium3DTilesVoxelProvider(options: ConstructorOptions) {
      * @return A promise to an array of typed arrays containing the requested voxel data or undefined if there was a problem loading the data.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTilesVoxelProvider.html#requestData">Online Documentation</a>
      */
-    fun requestData(options: RequestDataOptions? = definedExternally): kotlin.js.Promise<ReadonlyArray<ReadonlyArray<Any>>>?
+    fun requestData(options: RequestDataOptions? = definedExternally): Promise<ReadonlyArray<ReadonlyArray<Any>>>?
 
     /**
      * @property [tileLevel] The tile's level.

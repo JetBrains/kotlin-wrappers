@@ -10,6 +10,8 @@
 
 package cesium
 
+import kotlin.js.Promise
+
 /**
  * A [DataSource] which processes both
  * [GeoJSON](http://www.geojson.org/) and [TopoJSON](https://github.com/mbostock/topojson) data.
@@ -96,17 +98,17 @@ external class GeoJsonDataSource(var name: String = definedExternally) {
     fun load(
         data: Resource,
         options: LoadOptions? = definedExternally,
-    ): kotlin.js.Promise<GeoJsonDataSource>
+    ): Promise<GeoJsonDataSource>
 
     fun load(
         data: String,
         options: LoadOptions? = definedExternally,
-    ): kotlin.js.Promise<GeoJsonDataSource>
+    ): Promise<GeoJsonDataSource>
 
     fun load(
         data: Any,
         options: LoadOptions? = definedExternally,
-    ): kotlin.js.Promise<GeoJsonDataSource>
+    ): Promise<GeoJsonDataSource>
 
     /**
      * Asynchronously loads the provided GeoJSON or TopoJSON data, without replacing any existing data.
@@ -118,17 +120,17 @@ external class GeoJsonDataSource(var name: String = definedExternally) {
     fun process(
         data: Resource,
         options: LoadOptions? = definedExternally,
-    ): kotlin.js.Promise<GeoJsonDataSource>
+    ): Promise<GeoJsonDataSource>
 
     fun process(
         data: String,
         options: LoadOptions? = definedExternally,
-    ): kotlin.js.Promise<GeoJsonDataSource>
+    ): Promise<GeoJsonDataSource>
 
     fun process(
         data: Any,
         options: LoadOptions? = definedExternally,
-    ): kotlin.js.Promise<GeoJsonDataSource>
+    ): Promise<GeoJsonDataSource>
 
     /**
      * Updates the data source to the provided time.  This function is optional and
@@ -152,17 +154,17 @@ external class GeoJsonDataSource(var name: String = definedExternally) {
         fun load(
             data: Resource,
             options: LoadOptions? = definedExternally,
-        ): kotlin.js.Promise<GeoJsonDataSource>
+        ): Promise<GeoJsonDataSource>
 
         fun load(
             data: String,
             options: LoadOptions? = definedExternally,
-        ): kotlin.js.Promise<GeoJsonDataSource>
+        ): Promise<GeoJsonDataSource>
 
         fun load(
             data: Any,
             options: LoadOptions? = definedExternally,
-        ): kotlin.js.Promise<GeoJsonDataSource>
+        ): Promise<GeoJsonDataSource>
 
         /**
          * Gets or sets the default size of the map pin created for each point, in pixels.

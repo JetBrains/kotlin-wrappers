@@ -11,6 +11,9 @@
 
 package cesium
 
+import js.core.Void
+import kotlin.js.Promise
+
 /**
  * A [TerrainProvider] that accesses terrain data in a Cesium terrain format.
  * Terrain formats can be one of the following:
@@ -66,7 +69,7 @@ external class CesiumTerrainProvider(options: ConstructorOptions) : TerrainProvi
         y: Double,
         level: Int,
         request: Request?,
-    ): kotlin.js.Promise<TerrainData>?
+    ): Promise<TerrainData>?
 
     /**
      * Gets an event that is raised when the terrain provider encounters an asynchronous error.  By subscribing
@@ -100,7 +103,7 @@ external class CesiumTerrainProvider(options: ConstructorOptions) : TerrainProvi
      * Gets a promise that resolves to true when the provider is ready for use.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CesiumTerrainProvider.html#readyPromise">Online Documentation</a>
      */
-    override val readyPromise: kotlin.js.Promise<Boolean>
+    override val readyPromise: Promise<Boolean>
 
     /**
      * Gets a value indicating whether or not the provider includes a water mask.  The water mask
@@ -195,7 +198,7 @@ external class CesiumTerrainProvider(options: ConstructorOptions) : TerrainProvi
         x: Double,
         y: Double,
         level: Int,
-    ): kotlin.js.Promise<Nothing?>?
+    ): Promise<Void>?
 }
 
 inline fun CesiumTerrainProvider(

@@ -5,6 +5,8 @@
 
 package cesium
 
+import kotlin.js.Promise
+
 /**
  * A [DataSource] which processes the GPS Exchange Format (GPX).
  * ```
@@ -109,7 +111,7 @@ external class GpxDataSource {
     fun load(
         data: dynamic,
         options: LoadOptions? = definedExternally,
-    ): kotlin.js.Promise<GpxDataSource>
+    ): Promise<GpxDataSource>
 
     /**
      * @property [clampToGround] True if the symbols should be rendered at the same height as the terrain
@@ -136,7 +138,7 @@ external class GpxDataSource {
         fun load(
             data: dynamic,
             options: LoadOptions? = definedExternally,
-        ): kotlin.js.Promise<GpxDataSource>
+        ): Promise<GpxDataSource>
 
         /**
          * @property [clampToGround] True if the symbols should be rendered at the same height as the terrain

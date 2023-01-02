@@ -9,6 +9,8 @@
 
 package cesium
 
+import kotlin.js.Promise
+
 /**
  * A GroundPolylinePrimitive represents a polyline draped over the terrain or 3D Tiles in the [Scene].
  *
@@ -170,7 +172,7 @@ external class GroundPolylinePrimitive(options: ConstructorOptions? = definedExt
      * Gets a promise that resolves when the primitive is ready to render.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GroundPolylinePrimitive.html#readyPromise">Online Documentation</a>
      */
-    val readyPromise: kotlin.js.Promise<GroundPolylinePrimitive>
+    val readyPromise: Promise<GroundPolylinePrimitive>
 
     /**
      * This property is for debugging only; it is not for production use nor is it optimized.
@@ -234,7 +236,7 @@ external class GroundPolylinePrimitive(options: ConstructorOptions? = definedExt
          * @return A promise that will resolve once the terrain heights have been loaded.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GroundPolylinePrimitive.html#.initializeTerrainHeights">Online Documentation</a>
          */
-        fun initializeTerrainHeights(): kotlin.js.Promise<Unit>
+        fun initializeTerrainHeights(): Promise<Unit>
 
         /**
          * Checks if the given Scene supports GroundPolylinePrimitives.

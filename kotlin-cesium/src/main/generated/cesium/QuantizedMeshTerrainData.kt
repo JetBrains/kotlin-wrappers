@@ -12,6 +12,7 @@ package cesium
 import js.core.ReadonlyArray
 import js.typedarrays.Uint16Array
 import js.typedarrays.Uint8Array
+import kotlin.js.Promise
 
 /**
  * Terrain data for a single tile where the terrain data is represented as a quantized mesh.  A quantized
@@ -139,7 +140,7 @@ external class QuantizedMeshTerrainData(options: ConstructorOptions) : TerrainDa
         descendantX: Double,
         descendantY: Double,
         descendantLevel: Int,
-    ): kotlin.js.Promise<QuantizedMeshTerrainData>?
+    ): Promise<QuantizedMeshTerrainData>?
 
     /**
      * Computes the terrain height at a specified longitude and latitude.

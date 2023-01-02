@@ -6,6 +6,7 @@
 package cesium
 
 import js.core.ReadonlyArray
+import kotlin.js.Promise
 
 /**
  * Provides imagery to be displayed on the surface of an ellipsoid.  This type describes an
@@ -89,7 +90,7 @@ abstract external class ImageryProvider {
      * Gets a promise that resolves to true when the provider is ready for use.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ImageryProvider.html#readyPromise">Online Documentation</a>
      */
-    abstract val readyPromise: kotlin.js.Promise<Boolean>
+    abstract val readyPromise: Promise<Boolean>
 
     /**
      * Gets the rectangle, in radians, of the imagery provided by the instance.  This function should
@@ -208,7 +209,7 @@ abstract external class ImageryProvider {
         y: Double,
         level: Int,
         request: Request? = definedExternally,
-    ): kotlin.js.Promise<ImageryTypes>?
+    ): Promise<ImageryTypes>?
 
     /**
      * Asynchronously determines what features, if any, are located at a given longitude and latitude within
@@ -231,7 +232,7 @@ abstract external class ImageryProvider {
         level: Int,
         longitude: Double,
         latitude: Double,
-    ): kotlin.js.Promise<ReadonlyArray<ImageryLayerFeatureInfo>>?
+    ): Promise<ReadonlyArray<ImageryLayerFeatureInfo>>?
 
     companion object {
         /**
@@ -247,11 +248,11 @@ abstract external class ImageryProvider {
         fun loadImage(
             imageryProvider: ImageryProvider,
             url: Resource,
-        ): kotlin.js.Promise<Any /* ImageryTypes | CompressedTextureBuffer */>?
+        ): Promise<Any /* ImageryTypes | CompressedTextureBuffer */>?
 
         fun loadImage(
             imageryProvider: ImageryProvider,
             url: String,
-        ): kotlin.js.Promise<Any /* ImageryTypes | CompressedTextureBuffer */>?
+        ): Promise<Any /* ImageryTypes | CompressedTextureBuffer */>?
     }
 }

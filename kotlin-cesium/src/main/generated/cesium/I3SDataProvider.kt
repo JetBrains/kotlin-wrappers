@@ -10,6 +10,7 @@
 package cesium
 
 import js.core.ReadonlyArray
+import kotlin.js.Promise
 
 /**
  * An I3SDataProvider is the main public class for I3S support. The url option
@@ -100,7 +101,7 @@ external class I3SDataProvider(options: ConstructorOptions) {
      * Gets the promise that will be resolved when the I3S scene is loaded.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/I3SDataProvider.html#readyPromise">Online Documentation</a>
      */
-    val readyPromise: kotlin.js.Promise<I3SDataProvider>
+    val readyPromise: Promise<I3SDataProvider>
 
     /**
      * When `true`, the I3S scene is loaded.

@@ -10,6 +10,7 @@
 package cesium
 
 import js.core.ReadonlyArray
+import kotlin.js.Promise
 
 /**
  * Provides imagery by requesting tiles using a specified URL template.
@@ -257,7 +258,7 @@ external class UrlTemplateImageryProvider(options: ConstructorOptions) {
      * Gets a promise that resolves to true when the provider is ready for use.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/UrlTemplateImageryProvider.html#readyPromise">Online Documentation</a>
      */
-    val readyPromise: kotlin.js.Promise<Boolean>
+    val readyPromise: Promise<Boolean>
 
     /**
      * Gets the credit to display when this imagery provider is active.  Typically this is used to credit
@@ -283,7 +284,7 @@ external class UrlTemplateImageryProvider(options: ConstructorOptions) {
      * @param [options] Any of the options that may be passed to the [UrlTemplateImageryProvider] constructor.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/UrlTemplateImageryProvider.html#reinitialize">Online Documentation</a>
      */
-    fun reinitialize(options: kotlin.js.Promise<Any>)
+    fun reinitialize(options: Promise<Any>)
 
     fun reinitialize(options: Any)
 
@@ -317,7 +318,7 @@ external class UrlTemplateImageryProvider(options: ConstructorOptions) {
         y: Double,
         level: Int,
         request: Request? = definedExternally,
-    ): kotlin.js.Promise<ImageryTypes>?
+    ): Promise<ImageryTypes>?
 
     /**
      * Asynchronously determines what features, if any, are located at a given longitude and latitude within
@@ -339,7 +340,7 @@ external class UrlTemplateImageryProvider(options: ConstructorOptions) {
         level: Int,
         longitude: Double,
         latitude: Double,
-    ): kotlin.js.Promise<ReadonlyArray<ImageryLayerFeatureInfo>>?
+    ): Promise<ReadonlyArray<ImageryLayerFeatureInfo>>?
 
     /**
      * Initialization options for the UrlTemplateImageryProvider constructor

@@ -6,6 +6,7 @@
 package cesium
 
 import js.core.ReadonlyArray
+import kotlin.js.Promise
 
 /**
  * Terrain data for a single tile.  This type describes an
@@ -84,7 +85,7 @@ abstract external class TerrainData {
         descendantX: Double,
         descendantY: Double,
         descendantLevel: Int,
-    ): kotlin.js.Promise<TerrainData>?
+    ): Promise<TerrainData>?
 
     /**
      * Gets a value indicating whether or not this terrain data was created by upsampling lower resolution

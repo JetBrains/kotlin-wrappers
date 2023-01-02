@@ -10,7 +10,9 @@
 package cesium
 
 import js.core.ReadonlyArray
+import js.core.Void
 import web.html.HTMLCanvasElement
+import kotlin.js.Promise
 
 /**
  * An [ImageryProvider] that draws a wireframe grid on every tile with controllable background and glow.
@@ -159,7 +161,7 @@ external class GridImageryProvider(options: ConstructorOptions) {
      * Gets a promise that resolves to true when the provider is ready for use.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GridImageryProvider.html#readyPromise">Online Documentation</a>
      */
-    val readyPromise: kotlin.js.Promise<Boolean>
+    val readyPromise: Promise<Boolean>
 
     /**
      * Gets the credit to display when this imagery provider is active.  Typically this is used to credit
@@ -219,7 +221,7 @@ external class GridImageryProvider(options: ConstructorOptions) {
         y: Double,
         level: Int,
         request: Request? = definedExternally,
-    ): kotlin.js.Promise<HTMLCanvasElement>
+    ): Promise<HTMLCanvasElement>
 
     /**
      * Picking features is not currently supported by this imagery provider, so this function simply returns
@@ -238,7 +240,7 @@ external class GridImageryProvider(options: ConstructorOptions) {
         level: Int,
         longitude: Double,
         latitude: Double,
-    ): Nothing?
+    ): Void
 
     /**
      * Initialization options for the GridImageryProvider constructor

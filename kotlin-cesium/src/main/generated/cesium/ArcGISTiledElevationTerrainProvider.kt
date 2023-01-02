@@ -11,6 +11,9 @@
 
 package cesium
 
+import js.core.Void
+import kotlin.js.Promise
+
 /**
  * A [TerrainProvider] that produces terrain geometry by tessellating height maps
  * retrieved from Elevation Tiles of an an ArcGIS ImageService.
@@ -69,7 +72,7 @@ external class ArcGISTiledElevationTerrainProvider(options: ConstructorOptions) 
      * Gets a promise that resolves to true when the provider is ready for use.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ArcGISTiledElevationTerrainProvider.html#readyPromise">Online Documentation</a>
      */
-    override val readyPromise: kotlin.js.Promise<Boolean>
+    override val readyPromise: Promise<Boolean>
 
     /**
      * Gets a value indicating whether or not the provider includes a water mask.  The water mask
@@ -114,7 +117,7 @@ external class ArcGISTiledElevationTerrainProvider(options: ConstructorOptions) 
         y: Double,
         level: Int,
         request: Request?,
-    ): kotlin.js.Promise<TerrainData>?
+    ): Promise<TerrainData>?
 
     /**
      * Gets the maximum geometric error allowed in a tile at a given level.
@@ -150,7 +153,7 @@ external class ArcGISTiledElevationTerrainProvider(options: ConstructorOptions) 
         x: Double,
         y: Double,
         level: Int,
-    ): Nothing?
+    ): Void
 }
 
 inline fun ArcGISTiledElevationTerrainProvider(

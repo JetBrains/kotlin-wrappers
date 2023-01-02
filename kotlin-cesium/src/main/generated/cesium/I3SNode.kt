@@ -6,6 +6,7 @@
 package cesium
 
 import js.core.ReadonlyArray
+import kotlin.js.Promise
 
 /**
  * This class implements an I3S Node. In CesiumJS each I3SNode creates a Cesium3DTile.
@@ -73,7 +74,7 @@ sealed external class I3SNode {
      * @return A promise that is resolved when the I3S Node fields are loaded
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/I3SNode.html#loadFields">Online Documentation</a>
      */
-    fun loadFields(): kotlin.js.Promise<Unit>
+    fun loadFields(): Promise<Unit>
 
     /**
      * Returns the fields for a given picked position
