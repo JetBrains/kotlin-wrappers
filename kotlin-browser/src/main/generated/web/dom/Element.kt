@@ -7,6 +7,7 @@ import js.core.Void
 import web.aria.ARIAMixin
 import web.events.Event
 import web.events.EventHandler
+import web.fullscreen.FullscreenOptions
 import web.geometry.DOMRect
 import web.geometry.DOMRectList
 import web.html.*

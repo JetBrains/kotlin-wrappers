@@ -4,7 +4,7 @@
     "NAME_CONTAINS_ILLEGAL_CHARS",
 )
 
-package web.dom
+package web.fullscreen
 
 // language=JavaScript
 @JsName("""(/*union*/{auto: 'auto', hide: 'hide', show: 'show'}/*union*/)""")
