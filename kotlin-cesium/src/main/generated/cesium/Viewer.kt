@@ -464,6 +464,11 @@ external class Viewer(
         offset: HeadingPitchRange? = definedExternally,
     ): kotlin.js.Promise<Boolean>
 
+    fun zoomTo(
+        target: kotlin.js.Promise<VoxelPrimitive>,
+        offset: HeadingPitchRange? = definedExternally,
+    ): kotlin.js.Promise<Boolean>
+
     /**
      * Flies the camera to the provided entity, entities, or data source.
      * If the data source is still in the process of loading or the visualization is otherwise still loading,
@@ -561,6 +566,11 @@ external class Viewer(
 
     fun flyTo(
         target: kotlin.js.Promise<TimeDynamicPointCloud>,
+        options: FlyToOptions? = definedExternally,
+    ): kotlin.js.Promise<Boolean>
+
+    fun flyTo(
+        target: kotlin.js.Promise<VoxelPrimitive>,
         options: FlyToOptions? = definedExternally,
     ): kotlin.js.Promise<Boolean>
 

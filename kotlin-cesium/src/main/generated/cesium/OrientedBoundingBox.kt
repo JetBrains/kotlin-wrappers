@@ -13,7 +13,7 @@ import js.core.ReadonlyArray
 
 /**
  * Creates an instance of an OrientedBoundingBox.
- * An OrientedBoundingBox of some object is a closed and convex cuboid. It can provide a tighter bounding volume than [BoundingSphere] or [AxisAlignedBoundingBox] in many cases.
+ * An OrientedBoundingBox of some object is a closed and convex rectangular cuboid. It can provide a tighter bounding volume than [BoundingSphere] or [AxisAlignedBoundingBox] in many cases.
  * ```
  * // Create an OrientedBoundingBox using a transformation matrix, a position where the box will be translated, and a scale.
  * const center = new Cartesian3(1.0, 0.0, 0.0);
@@ -27,7 +27,7 @@ import js.core.ReadonlyArray
  * @property [center] The center of the box.
  *   Default value - [Cartesian3.ZERO]
  * @property [halfAxes] The three orthogonal half-axes of the bounding box.
- *   Equivalently, the transformation matrix, to rotate and scale a 0x0x0
+ *   Equivalently, the transformation matrix, to rotate and scale a 1x1x1
  *   cube centered at the origin.
  *   Default value - [Matrix3.ZERO]
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/OrientedBoundingBox.html">Online Documentation</a>

@@ -247,9 +247,8 @@ external object Transforms {
      * indicates that the preload has completed.
      * ```
      * const interval = new TimeInterval(...);
-     * Promise.resolve(Transforms.preloadIcrfFixed(interval)).then(function() {
-     *     // the data is now loaded
-     * });
+     * await Transforms.preloadIcrfFixed(interval));
+     * // the data is now loaded
      * ```
      * @param [timeInterval] The interval to preload.
      * @return A promise that, when resolved, indicates that the preload has completed

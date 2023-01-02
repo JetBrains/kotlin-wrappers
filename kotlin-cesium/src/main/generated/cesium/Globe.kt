@@ -263,6 +263,13 @@ external class Globe(var ellipsoid: Ellipsoid = definedExternally) {
     var backFaceCulling: Boolean
 
     /**
+     * Determines the darkness of the vertex shadow.
+     * This only takes effect when `enableLighting` is `true`.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Globe.html#vertexShadowDarkness">Online Documentation</a>
+     */
+    var vertexShadowDarkness: Double
+
+    /**
      * Gets the collection of image layers that will be rendered on this globe.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Globe.html#imageryLayers">Online Documentation</a>
      */

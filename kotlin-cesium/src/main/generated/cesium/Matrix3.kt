@@ -481,12 +481,14 @@ external class Matrix3(
          * Sets the rotation assuming the matrix is an affine transformation.
          * @param [matrix] The matrix.
          * @param [rotation] The rotation matrix.
+         * @param [result] The object onto which to store the result.
          * @return The modified result parameter.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Matrix3.html#.setRotation">Online Documentation</a>
          */
         fun setRotation(
             matrix: Matrix3,
             rotation: Matrix3,
+            result: Matrix3,
         ): Matrix3
 
         /**
@@ -585,7 +587,7 @@ external class Matrix3(
          */
         fun multiplyByScale(
             matrix: Matrix3,
-            scale: Double,
+            scale: Cartesian3,
             result: Matrix3,
         ): Matrix3
 
