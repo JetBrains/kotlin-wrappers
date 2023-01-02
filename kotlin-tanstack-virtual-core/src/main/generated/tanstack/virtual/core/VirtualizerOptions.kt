@@ -28,4 +28,5 @@ external interface VirtualizerOptions<TScrollElement : Any /* Element | Window *
     var scrollMargin: Int?
     var scrollingDelay: Int?
     var indexAttribute: String?
+    var initialMeasurementsCache: ReadonlyArray<VirtualItem>?
 }
