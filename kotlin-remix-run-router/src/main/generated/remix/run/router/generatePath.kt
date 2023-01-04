@@ -14,6 +14,4 @@ import js.core.Record
  *
  * @see https://reactrouter.com/docs/en/v6/utils/generate-path
  */
-
 external fun generatePath(path: String, params: Record<String, String> = definedExternally): String
-
