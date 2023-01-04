@@ -14,8 +14,6 @@ package remix.run.router
  *
  * @see https://reactrouter.com/docs/en/v6/utils/match-path
  */
-
-external fun matchPath(pattern: String, pathname: String): PathMatch?
-
 external fun matchPath(pattern: PathPattern, pathname: String): PathMatch?
 
+external fun matchPath(pattern: String, pathname: String): PathMatch?
