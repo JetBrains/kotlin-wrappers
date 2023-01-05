@@ -9,6 +9,8 @@
 
 package cesium
 
+import js.core.jso
+
 /**
  * A renderable collection of labels.  Labels are viewport-aligned text positioned in the 3D scene.
  * Each label can have a different font, color, scale, etc.
@@ -232,8 +234,5 @@ external class LabelCollection(options: ConstructorOptions? = definedExternally)
 
 inline fun LabelCollection(
     block: LabelCollection.ConstructorOptions.() -> Unit,
-): LabelCollection {
-    val options: LabelCollection.ConstructorOptions = js("({})")
-    block(options)
-    return LabelCollection(options)
-}
+): LabelCollection =
+    LabelCollection(options = jso(block))

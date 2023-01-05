@@ -10,6 +10,7 @@
 package cesium
 
 import js.core.ReadonlyArray
+import js.core.jso
 
 /**
  * An abstract class for updating ground geometry entities.
@@ -46,8 +47,5 @@ external class GroundGeometryUpdater(options: ConstructorOptions) {
 
 inline fun GroundGeometryUpdater(
     block: GroundGeometryUpdater.ConstructorOptions.() -> Unit,
-): GroundGeometryUpdater {
-    val options: GroundGeometryUpdater.ConstructorOptions = js("({})")
-    block(options)
-    return GroundGeometryUpdater(options)
-}
+): GroundGeometryUpdater =
+    GroundGeometryUpdater(options = jso(block))

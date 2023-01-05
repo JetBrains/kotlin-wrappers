@@ -10,6 +10,7 @@
 package cesium
 
 import js.core.ReadonlyArray
+import js.core.jso
 
 /**
  * A description of a corridor. Corridor geometry can be rendered with both [Primitive] and [GroundPrimitive].
@@ -124,8 +125,5 @@ external class CorridorGeometry(options: ConstructorOptions) {
 
 inline fun CorridorGeometry(
     block: CorridorGeometry.ConstructorOptions.() -> Unit,
-): CorridorGeometry {
-    val options: CorridorGeometry.ConstructorOptions = js("({})")
-    block(options)
-    return CorridorGeometry(options)
-}
+): CorridorGeometry =
+    CorridorGeometry(options = jso(block))

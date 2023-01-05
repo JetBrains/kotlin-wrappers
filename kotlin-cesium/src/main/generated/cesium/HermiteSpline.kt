@@ -10,6 +10,7 @@
 package cesium
 
 import js.core.ReadonlyArray
+import js.core.jso
 
 /**
  * A Hermite spline is a cubic interpolating spline. Points, incoming tangents, outgoing tangents, and times
@@ -237,8 +238,5 @@ external class HermiteSpline(options: ConstructorOptions) {
 
 inline fun HermiteSpline(
     block: HermiteSpline.ConstructorOptions.() -> Unit,
-): HermiteSpline {
-    val options: HermiteSpline.ConstructorOptions = js("({})")
-    block(options)
-    return HermiteSpline(options)
-}
+): HermiteSpline =
+    HermiteSpline(options = jso(block))

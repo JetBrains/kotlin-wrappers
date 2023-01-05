@@ -10,6 +10,7 @@
 package cesium
 
 import js.core.ReadonlyArray
+import js.core.jso
 
 /**
  * Describes a frustum at the given the origin and orientation.
@@ -78,8 +79,5 @@ external class FrustumGeometry(options: ConstructorOptions) {
 
 inline fun FrustumGeometry(
     block: FrustumGeometry.ConstructorOptions.() -> Unit,
-): FrustumGeometry {
-    val options: FrustumGeometry.ConstructorOptions = js("({})")
-    block(options)
-    return FrustumGeometry(options)
-}
+): FrustumGeometry =
+    FrustumGeometry(options = jso(block))

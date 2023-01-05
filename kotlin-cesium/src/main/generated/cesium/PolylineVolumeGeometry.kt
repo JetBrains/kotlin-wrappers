@@ -10,6 +10,7 @@
 package cesium
 
 import js.core.ReadonlyArray
+import js.core.jso
 
 /**
  * A description of a polyline with a volume (a 2D shape extruded along a polyline).
@@ -105,8 +106,5 @@ external class PolylineVolumeGeometry(options: ConstructorOptions) {
 
 inline fun PolylineVolumeGeometry(
     block: PolylineVolumeGeometry.ConstructorOptions.() -> Unit,
-): PolylineVolumeGeometry {
-    val options: PolylineVolumeGeometry.ConstructorOptions = js("({})")
-    block(options)
-    return PolylineVolumeGeometry(options)
-}
+): PolylineVolumeGeometry =
+    PolylineVolumeGeometry(options = jso(block))

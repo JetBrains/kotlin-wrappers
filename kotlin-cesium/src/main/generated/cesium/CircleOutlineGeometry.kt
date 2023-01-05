@@ -10,6 +10,7 @@
 package cesium
 
 import js.core.ReadonlyArray
+import js.core.jso
 
 /**
  * A description of the outline of a circle on the ellipsoid.
@@ -97,8 +98,5 @@ external class CircleOutlineGeometry(options: ConstructorOptions) {
 
 inline fun CircleOutlineGeometry(
     block: CircleOutlineGeometry.ConstructorOptions.() -> Unit,
-): CircleOutlineGeometry {
-    val options: CircleOutlineGeometry.ConstructorOptions = js("({})")
-    block(options)
-    return CircleOutlineGeometry(options)
-}
+): CircleOutlineGeometry =
+    CircleOutlineGeometry(options = jso(block))

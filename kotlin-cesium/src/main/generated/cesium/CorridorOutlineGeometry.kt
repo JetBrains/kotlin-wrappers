@@ -10,6 +10,7 @@
 package cesium
 
 import js.core.ReadonlyArray
+import js.core.jso
 
 /**
  * A description of a corridor outline.
@@ -94,8 +95,5 @@ external class CorridorOutlineGeometry(options: ConstructorOptions) {
 
 inline fun CorridorOutlineGeometry(
     block: CorridorOutlineGeometry.ConstructorOptions.() -> Unit,
-): CorridorOutlineGeometry {
-    val options: CorridorOutlineGeometry.ConstructorOptions = js("({})")
-    block(options)
-    return CorridorOutlineGeometry(options)
-}
+): CorridorOutlineGeometry =
+    CorridorOutlineGeometry(options = jso(block))

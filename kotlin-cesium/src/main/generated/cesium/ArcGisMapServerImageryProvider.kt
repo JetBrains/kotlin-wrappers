@@ -10,6 +10,7 @@
 package cesium
 
 import js.core.ReadonlyArray
+import js.core.jso
 import kotlin.js.Promise
 
 /**
@@ -335,8 +336,5 @@ external class ArcGisMapServerImageryProvider(options: ConstructorOptions) {
 
 inline fun ArcGisMapServerImageryProvider(
     block: ArcGisMapServerImageryProvider.ConstructorOptions.() -> Unit,
-): ArcGisMapServerImageryProvider {
-    val options: ArcGisMapServerImageryProvider.ConstructorOptions = js("({})")
-    block(options)
-    return ArcGisMapServerImageryProvider(options)
-}
+): ArcGisMapServerImageryProvider =
+    ArcGisMapServerImageryProvider(options = jso(block))

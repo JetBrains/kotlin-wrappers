@@ -10,6 +10,7 @@
 package cesium
 
 import js.core.ReadonlyArray
+import js.core.jso
 import kotlin.js.Promise
 
 /**
@@ -140,8 +141,5 @@ external class I3SDataProvider(options: ConstructorOptions) {
 
 inline fun I3SDataProvider(
     block: I3SDataProvider.ConstructorOptions.() -> Unit,
-): I3SDataProvider {
-    val options: I3SDataProvider.ConstructorOptions = js("({})")
-    block(options)
-    return I3SDataProvider(options)
-}
+): I3SDataProvider =
+    I3SDataProvider(options = jso(block))

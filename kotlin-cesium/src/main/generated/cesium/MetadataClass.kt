@@ -10,6 +10,7 @@
 package cesium
 
 import js.core.ReadonlyRecord
+import js.core.jso
 
 /**
  * A metadata class.
@@ -74,8 +75,5 @@ external class MetadataClass(options: ConstructorOptions) {
 
 inline fun MetadataClass(
     block: MetadataClass.ConstructorOptions.() -> Unit,
-): MetadataClass {
-    val options: MetadataClass.ConstructorOptions = js("({})")
-    block(options)
-    return MetadataClass(options)
-}
+): MetadataClass =
+    MetadataClass(options = jso(block))

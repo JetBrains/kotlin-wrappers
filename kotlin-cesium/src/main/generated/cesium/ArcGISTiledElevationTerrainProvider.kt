@@ -12,6 +12,7 @@
 package cesium
 
 import js.core.Void
+import js.core.jso
 import kotlin.js.Promise
 
 /**
@@ -158,8 +159,5 @@ external class ArcGISTiledElevationTerrainProvider(options: ConstructorOptions) 
 
 inline fun ArcGISTiledElevationTerrainProvider(
     block: ArcGISTiledElevationTerrainProvider.ConstructorOptions.() -> Unit,
-): ArcGISTiledElevationTerrainProvider {
-    val options: ArcGISTiledElevationTerrainProvider.ConstructorOptions = js("({})")
-    block(options)
-    return ArcGISTiledElevationTerrainProvider(options)
-}
+): ArcGISTiledElevationTerrainProvider =
+    ArcGISTiledElevationTerrainProvider(options = jso(block))

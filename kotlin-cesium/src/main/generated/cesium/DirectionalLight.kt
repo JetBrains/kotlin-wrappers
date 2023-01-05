@@ -9,6 +9,8 @@
 
 package cesium
 
+import js.core.jso
+
 /**
  * A light that gets emitted in a single direction from infinitely far away.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/DirectionalLight.html">Online Documentation</a>
@@ -48,8 +50,5 @@ external class DirectionalLight(options: ConstructorOptions) : Light {
 
 inline fun DirectionalLight(
     block: DirectionalLight.ConstructorOptions.() -> Unit,
-): DirectionalLight {
-    val options: DirectionalLight.ConstructorOptions = js("({})")
-    block(options)
-    return DirectionalLight(options)
-}
+): DirectionalLight =
+    DirectionalLight(options = jso(block))

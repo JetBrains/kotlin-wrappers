@@ -10,6 +10,7 @@
 package cesium
 
 import js.core.ReadonlyArray
+import js.core.jso
 
 /**
  * A collection of [PostProcessStage]s or other post-process composite stages that execute together logically.
@@ -160,8 +161,5 @@ external class PostProcessStageComposite(options: ConstructorOptions) {
 
 inline fun PostProcessStageComposite(
     block: PostProcessStageComposite.ConstructorOptions.() -> Unit,
-): PostProcessStageComposite {
-    val options: PostProcessStageComposite.ConstructorOptions = js("({})")
-    block(options)
-    return PostProcessStageComposite(options)
-}
+): PostProcessStageComposite =
+    PostProcessStageComposite(options = jso(block))

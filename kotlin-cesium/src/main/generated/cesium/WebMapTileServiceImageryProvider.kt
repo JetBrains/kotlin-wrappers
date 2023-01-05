@@ -11,6 +11,7 @@ package cesium
 
 import js.core.ReadonlyArray
 import js.core.Void
+import js.core.jso
 import kotlin.js.Promise
 
 /**
@@ -366,8 +367,5 @@ external class WebMapTileServiceImageryProvider(options: ConstructorOptions) {
 
 inline fun WebMapTileServiceImageryProvider(
     block: WebMapTileServiceImageryProvider.ConstructorOptions.() -> Unit,
-): WebMapTileServiceImageryProvider {
-    val options: WebMapTileServiceImageryProvider.ConstructorOptions = js("({})")
-    block(options)
-    return WebMapTileServiceImageryProvider(options)
-}
+): WebMapTileServiceImageryProvider =
+    WebMapTileServiceImageryProvider(options = jso(block))

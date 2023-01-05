@@ -10,6 +10,7 @@
 package cesium
 
 import js.core.ReadonlyArray
+import js.core.jso
 import js.typedarrays.Uint16Array
 import js.typedarrays.Uint8Array
 import kotlin.js.Promise
@@ -189,8 +190,5 @@ external class QuantizedMeshTerrainData(options: ConstructorOptions) : TerrainDa
 
 inline fun QuantizedMeshTerrainData(
     block: QuantizedMeshTerrainData.ConstructorOptions.() -> Unit,
-): QuantizedMeshTerrainData {
-    val options: QuantizedMeshTerrainData.ConstructorOptions = js("({})")
-    block(options)
-    return QuantizedMeshTerrainData(options)
-}
+): QuantizedMeshTerrainData =
+    QuantizedMeshTerrainData(options = jso(block))

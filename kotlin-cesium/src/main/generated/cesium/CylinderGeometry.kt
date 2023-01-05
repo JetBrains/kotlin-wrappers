@@ -10,6 +10,7 @@
 package cesium
 
 import js.core.ReadonlyArray
+import js.core.jso
 
 /**
  * A description of a cylinder.
@@ -91,8 +92,5 @@ external class CylinderGeometry(options: ConstructorOptions) {
 
 inline fun CylinderGeometry(
     block: CylinderGeometry.ConstructorOptions.() -> Unit,
-): CylinderGeometry {
-    val options: CylinderGeometry.ConstructorOptions = js("({})")
-    block(options)
-    return CylinderGeometry(options)
-}
+): CylinderGeometry =
+    CylinderGeometry(options = jso(block))

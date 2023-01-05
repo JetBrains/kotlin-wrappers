@@ -11,6 +11,7 @@
 package cesium
 
 import js.core.ReadonlyArray
+import js.core.jso
 import web.dom.Element
 
 /**
@@ -121,8 +122,5 @@ external class BaseLayerPicker(
 inline fun BaseLayerPicker(
     container: Element,
     block: BaseLayerPicker.ConstructorOptions.() -> Unit,
-): BaseLayerPicker {
-    val options: BaseLayerPicker.ConstructorOptions = js("({})")
-    block(options)
-    return BaseLayerPicker(container, options)
-}
+): BaseLayerPicker =
+    BaseLayerPicker(container, options = jso(block))

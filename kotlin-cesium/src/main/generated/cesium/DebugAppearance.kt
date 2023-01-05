@@ -9,6 +9,8 @@
 
 package cesium
 
+import js.core.jso
+
 /**
  * Visualizes a vertex attribute by displaying it as a color for debugging.
  *
@@ -123,8 +125,5 @@ external class DebugAppearance(options: ConstructorOptions) {
 
 inline fun DebugAppearance(
     block: DebugAppearance.ConstructorOptions.() -> Unit,
-): DebugAppearance {
-    val options: DebugAppearance.ConstructorOptions = js("({})")
-    block(options)
-    return DebugAppearance(options)
-}
+): DebugAppearance =
+    DebugAppearance(options = jso(block))

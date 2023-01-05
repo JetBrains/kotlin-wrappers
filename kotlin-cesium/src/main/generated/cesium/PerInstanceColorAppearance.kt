@@ -9,6 +9,8 @@
 
 package cesium
 
+import js.core.jso
+
 /**
  * An appearance for [GeometryInstance] instances with color attributes.
  * This allows several geometry instances, each with a different color, to
@@ -197,8 +199,5 @@ external class PerInstanceColorAppearance(options: ConstructorOptions? = defined
 
 inline fun PerInstanceColorAppearance(
     block: PerInstanceColorAppearance.ConstructorOptions.() -> Unit,
-): PerInstanceColorAppearance {
-    val options: PerInstanceColorAppearance.ConstructorOptions = js("({})")
-    block(options)
-    return PerInstanceColorAppearance(options)
-}
+): PerInstanceColorAppearance =
+    PerInstanceColorAppearance(options = jso(block))

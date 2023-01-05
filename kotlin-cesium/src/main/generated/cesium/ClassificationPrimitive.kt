@@ -9,6 +9,7 @@
 
 package cesium
 
+import js.core.jso
 import kotlin.js.Promise
 
 /**
@@ -225,8 +226,5 @@ external class ClassificationPrimitive(options: ConstructorOptions? = definedExt
 
 inline fun ClassificationPrimitive(
     block: ClassificationPrimitive.ConstructorOptions.() -> Unit,
-): ClassificationPrimitive {
-    val options: ClassificationPrimitive.ConstructorOptions = js("({})")
-    block(options)
-    return ClassificationPrimitive(options)
-}
+): ClassificationPrimitive =
+    ClassificationPrimitive(options = jso(block))

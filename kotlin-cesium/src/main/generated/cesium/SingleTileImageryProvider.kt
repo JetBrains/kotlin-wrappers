@@ -11,6 +11,7 @@ package cesium
 
 import js.core.ReadonlyArray
 import js.core.Void
+import js.core.jso
 import kotlin.js.Promise
 
 /**
@@ -254,8 +255,5 @@ external class SingleTileImageryProvider(options: ConstructorOptions) {
 
 inline fun SingleTileImageryProvider(
     block: SingleTileImageryProvider.ConstructorOptions.() -> Unit,
-): SingleTileImageryProvider {
-    val options: SingleTileImageryProvider.ConstructorOptions = js("({})")
-    block(options)
-    return SingleTileImageryProvider(options)
-}
+): SingleTileImageryProvider =
+    SingleTileImageryProvider(options = jso(block))

@@ -10,6 +10,7 @@
 package cesium
 
 import js.core.ReadonlyArray
+import js.core.jso
 
 /**
  * Draws the outline of the camera's view frustum.
@@ -81,8 +82,5 @@ external class DebugCameraPrimitive(options: ConstructorOptions) {
 
 inline fun DebugCameraPrimitive(
     block: DebugCameraPrimitive.ConstructorOptions.() -> Unit,
-): DebugCameraPrimitive {
-    val options: DebugCameraPrimitive.ConstructorOptions = js("({})")
-    block(options)
-    return DebugCameraPrimitive(options)
-}
+): DebugCameraPrimitive =
+    DebugCameraPrimitive(options = jso(block))

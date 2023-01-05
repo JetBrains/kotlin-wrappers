@@ -10,6 +10,7 @@
 package cesium
 
 import js.core.ReadonlyArray
+import js.core.jso
 import kotlin.js.Promise
 
 /**
@@ -454,8 +455,5 @@ external class UrlTemplateImageryProvider(options: ConstructorOptions) {
 
 inline fun UrlTemplateImageryProvider(
     block: UrlTemplateImageryProvider.ConstructorOptions.() -> Unit,
-): UrlTemplateImageryProvider {
-    val options: UrlTemplateImageryProvider.ConstructorOptions = js("({})")
-    block(options)
-    return UrlTemplateImageryProvider(options)
-}
+): UrlTemplateImageryProvider =
+    UrlTemplateImageryProvider(options = jso(block))

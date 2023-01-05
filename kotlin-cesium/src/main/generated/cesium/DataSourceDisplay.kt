@@ -10,6 +10,7 @@
 package cesium
 
 import js.core.ReadonlyArray
+import js.core.jso
 
 /**
  * Visualizes a collection of [DataSource] instances.
@@ -113,8 +114,5 @@ typealias VisualizersCallback = (scene: Scene, dataSource: DataSource) -> Readon
 
 inline fun DataSourceDisplay(
     block: DataSourceDisplay.ConstructorOptions.() -> Unit,
-): DataSourceDisplay {
-    val options: DataSourceDisplay.ConstructorOptions = js("({})")
-    block(options)
-    return DataSourceDisplay(options)
-}
+): DataSourceDisplay =
+    DataSourceDisplay(options = jso(block))

@@ -10,6 +10,7 @@
 package cesium
 
 import js.core.ReadonlyArray
+import js.core.jso
 
 /**
  * A description of the outline of a polygon composed of arbitrary coplanar positions.
@@ -96,8 +97,5 @@ external class CoplanarPolygonOutlineGeometry(options: ConstructorOptions) {
 
 inline fun CoplanarPolygonOutlineGeometry(
     block: CoplanarPolygonOutlineGeometry.ConstructorOptions.() -> Unit,
-): CoplanarPolygonOutlineGeometry {
-    val options: CoplanarPolygonOutlineGeometry.ConstructorOptions = js("({})")
-    block(options)
-    return CoplanarPolygonOutlineGeometry(options)
-}
+): CoplanarPolygonOutlineGeometry =
+    CoplanarPolygonOutlineGeometry(options = jso(block))

@@ -9,6 +9,7 @@
 
 package cesium
 
+import js.core.jso
 import web.dom.Element
 
 /**
@@ -63,8 +64,5 @@ external class NavigationHelpButton(options: ConstructorOptions) {
 
 inline fun NavigationHelpButton(
     block: NavigationHelpButton.ConstructorOptions.() -> Unit,
-): NavigationHelpButton {
-    val options: NavigationHelpButton.ConstructorOptions = js("({})")
-    block(options)
-    return NavigationHelpButton(options)
-}
+): NavigationHelpButton =
+    NavigationHelpButton(options = jso(block))

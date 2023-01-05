@@ -9,6 +9,7 @@
 
 package cesium
 
+import js.core.jso
 import kotlin.js.Promise
 
 /**
@@ -251,8 +252,5 @@ external class GroundPolylinePrimitive(options: ConstructorOptions? = definedExt
 
 inline fun GroundPolylinePrimitive(
     block: GroundPolylinePrimitive.ConstructorOptions.() -> Unit,
-): GroundPolylinePrimitive {
-    val options: GroundPolylinePrimitive.ConstructorOptions = js("({})")
-    block(options)
-    return GroundPolylinePrimitive(options)
-}
+): GroundPolylinePrimitive =
+    GroundPolylinePrimitive(options = jso(block))

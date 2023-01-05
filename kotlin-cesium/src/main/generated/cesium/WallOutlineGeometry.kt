@@ -10,6 +10,7 @@
 package cesium
 
 import js.core.ReadonlyArray
+import js.core.jso
 
 /**
  * A description of a wall outline. A wall is defined by a series of points,
@@ -136,8 +137,5 @@ external class WallOutlineGeometry(options: ConstructorOptions) {
 
 inline fun WallOutlineGeometry(
     block: WallOutlineGeometry.ConstructorOptions.() -> Unit,
-): WallOutlineGeometry {
-    val options: WallOutlineGeometry.ConstructorOptions = js("({})")
-    block(options)
-    return WallOutlineGeometry(options)
-}
+): WallOutlineGeometry =
+    WallOutlineGeometry(options = jso(block))

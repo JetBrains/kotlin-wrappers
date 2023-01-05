@@ -9,6 +9,8 @@
 
 package cesium
 
+import js.core.jso
+
 /**
  * An appearance for geometry on the surface of the ellipsoid like [PolygonGeometry]
  * and [RectangleGeometry], which supports all materials like [MaterialAppearance]
@@ -173,8 +175,5 @@ external class EllipsoidSurfaceAppearance(options: ConstructorOptions? = defined
 
 inline fun EllipsoidSurfaceAppearance(
     block: EllipsoidSurfaceAppearance.ConstructorOptions.() -> Unit,
-): EllipsoidSurfaceAppearance {
-    val options: EllipsoidSurfaceAppearance.ConstructorOptions = js("({})")
-    block(options)
-    return EllipsoidSurfaceAppearance(options)
-}
+): EllipsoidSurfaceAppearance =
+    EllipsoidSurfaceAppearance(options = jso(block))

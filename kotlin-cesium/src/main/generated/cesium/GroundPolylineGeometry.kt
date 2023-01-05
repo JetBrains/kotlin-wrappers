@@ -10,6 +10,7 @@
 package cesium
 
 import js.core.ReadonlyArray
+import js.core.jso
 
 /**
  * A description of a polyline on terrain or 3D Tiles. Only to be used with [GroundPolylinePrimitive].
@@ -110,8 +111,5 @@ external class GroundPolylineGeometry(options: ConstructorOptions) {
 
 inline fun GroundPolylineGeometry(
     block: GroundPolylineGeometry.ConstructorOptions.() -> Unit,
-): GroundPolylineGeometry {
-    val options: GroundPolylineGeometry.ConstructorOptions = js("({})")
-    block(options)
-    return GroundPolylineGeometry(options)
-}
+): GroundPolylineGeometry =
+    GroundPolylineGeometry(options = jso(block))

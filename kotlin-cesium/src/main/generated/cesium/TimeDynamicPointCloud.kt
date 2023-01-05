@@ -9,6 +9,7 @@
 
 package cesium
 
+import js.core.jso
 import kotlin.js.Promise
 
 /**
@@ -198,8 +199,5 @@ external class TimeDynamicPointCloud(options: ConstructorOptions) {
 
 inline fun TimeDynamicPointCloud(
     block: TimeDynamicPointCloud.ConstructorOptions.() -> Unit,
-): TimeDynamicPointCloud {
-    val options: TimeDynamicPointCloud.ConstructorOptions = js("({})")
-    block(options)
-    return TimeDynamicPointCloud(options)
-}
+): TimeDynamicPointCloud =
+    TimeDynamicPointCloud(options = jso(block))

@@ -10,6 +10,7 @@
 package cesium
 
 import js.core.ReadonlyArray
+import js.core.jso
 
 /**
  * A description of a polygon on the ellipsoid. The polygon is defined by a polygon hierarchy. Polygon geometry can be rendered with both [Primitive] and [GroundPrimitive].
@@ -253,8 +254,5 @@ external class PolygonGeometry(options: ConstructorOptions) {
 
 inline fun PolygonGeometry(
     block: PolygonGeometry.ConstructorOptions.() -> Unit,
-): PolygonGeometry {
-    val options: PolygonGeometry.ConstructorOptions = js("({})")
-    block(options)
-    return PolygonGeometry(options)
-}
+): PolygonGeometry =
+    PolygonGeometry(options = jso(block))

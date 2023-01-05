@@ -10,6 +10,7 @@
 package cesium
 
 import js.core.ReadonlyArray
+import js.core.jso
 import kotlin.js.Promise
 
 /**
@@ -158,8 +159,5 @@ external class Cesium3DTilesVoxelProvider(options: ConstructorOptions) {
 
 inline fun Cesium3DTilesVoxelProvider(
     block: Cesium3DTilesVoxelProvider.ConstructorOptions.() -> Unit,
-): Cesium3DTilesVoxelProvider {
-    val options: Cesium3DTilesVoxelProvider.ConstructorOptions = js("({})")
-    block(options)
-    return Cesium3DTilesVoxelProvider(options)
-}
+): Cesium3DTilesVoxelProvider =
+    Cesium3DTilesVoxelProvider(options = jso(block))

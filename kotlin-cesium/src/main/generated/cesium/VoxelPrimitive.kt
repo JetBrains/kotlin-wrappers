@@ -10,6 +10,7 @@
 package cesium
 
 import js.core.ReadonlyArray
+import js.core.jso
 import kotlin.js.Promise
 
 /**
@@ -218,8 +219,5 @@ external class VoxelPrimitive(options: ConstructorOptions? = definedExternally) 
 
 inline fun VoxelPrimitive(
     block: VoxelPrimitive.ConstructorOptions.() -> Unit,
-): VoxelPrimitive {
-    val options: VoxelPrimitive.ConstructorOptions = js("({})")
-    block(options)
-    return VoxelPrimitive(options)
-}
+): VoxelPrimitive =
+    VoxelPrimitive(options = jso(block))

@@ -10,6 +10,7 @@
 package cesium
 
 import js.core.ReadonlyArray
+import js.core.jso
 
 /**
  * A description of a polygon composed of arbitrary coplanar positions.
@@ -131,8 +132,5 @@ external class CoplanarPolygonGeometry(options: ConstructorOptions) {
 
 inline fun CoplanarPolygonGeometry(
     block: CoplanarPolygonGeometry.ConstructorOptions.() -> Unit,
-): CoplanarPolygonGeometry {
-    val options: CoplanarPolygonGeometry.ConstructorOptions = js("({})")
-    block(options)
-    return CoplanarPolygonGeometry(options)
-}
+): CoplanarPolygonGeometry =
+    CoplanarPolygonGeometry(options = jso(block))

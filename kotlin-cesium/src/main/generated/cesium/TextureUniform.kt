@@ -9,6 +9,7 @@
 
 package cesium
 
+import js.core.jso
 import js.typedarrays.Uint8Array
 
 /**
@@ -51,8 +52,5 @@ external class TextureUniform(options: ConstructorOptions) {
 
 inline fun TextureUniform(
     block: TextureUniform.ConstructorOptions.() -> Unit,
-): TextureUniform {
-    val options: TextureUniform.ConstructorOptions = js("({})")
-    block(options)
-    return TextureUniform(options)
-}
+): TextureUniform =
+    TextureUniform(options = jso(block))

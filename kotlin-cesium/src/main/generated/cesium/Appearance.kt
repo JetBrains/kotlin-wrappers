@@ -9,6 +9,8 @@
 
 package cesium
 
+import js.core.jso
+
 /**
  * An appearance defines the full GLSL vertex and fragment shaders and the
  * render state used to draw a [Primitive].  All appearances implement
@@ -102,8 +104,5 @@ external class Appearance(options: ConstructorOptions? = definedExternally) {
 
 inline fun Appearance(
     block: Appearance.ConstructorOptions.() -> Unit,
-): Appearance {
-    val options: Appearance.ConstructorOptions = js("({})")
-    block(options)
-    return Appearance(options)
-}
+): Appearance =
+    Appearance(options = jso(block))

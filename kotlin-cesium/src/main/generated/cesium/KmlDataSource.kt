@@ -10,6 +10,7 @@
 package cesium
 
 import js.core.ReadonlyArray
+import js.core.jso
 import web.buffer.Blob
 import web.dom.Document
 import web.dom.Element
@@ -250,8 +251,5 @@ external class KmlDataSource(options: ConstructorOptions? = definedExternally) {
 
 inline fun KmlDataSource(
     block: KmlDataSource.ConstructorOptions.() -> Unit,
-): KmlDataSource {
-    val options: KmlDataSource.ConstructorOptions = js("({})")
-    block(options)
-    return KmlDataSource(options)
-}
+): KmlDataSource =
+    KmlDataSource(options = jso(block))

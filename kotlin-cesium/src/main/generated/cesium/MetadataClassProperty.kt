@@ -9,6 +9,8 @@
 
 package cesium
 
+import js.core.jso
+
 /**
  * A metadata property, as part of a [MetadataClass].
  *
@@ -191,8 +193,5 @@ external class MetadataClassProperty(options: ConstructorOptions) {
 
 inline fun MetadataClassProperty(
     block: MetadataClassProperty.ConstructorOptions.() -> Unit,
-): MetadataClassProperty {
-    val options: MetadataClassProperty.ConstructorOptions = js("({})")
-    block(options)
-    return MetadataClassProperty(options)
-}
+): MetadataClassProperty =
+    MetadataClassProperty(options = jso(block))

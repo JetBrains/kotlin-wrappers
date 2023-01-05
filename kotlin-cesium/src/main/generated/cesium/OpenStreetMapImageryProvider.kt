@@ -9,6 +9,8 @@
 
 package cesium
 
+import js.core.jso
+
 /**
  * An imagery provider that provides tiled imagery hosted by OpenStreetMap
  * or another provider of Slippy tiles.  The default url connects to OpenStreetMap's volunteer-run
@@ -51,8 +53,5 @@ external class OpenStreetMapImageryProvider(options: ConstructorOptions) {
 
 inline fun OpenStreetMapImageryProvider(
     block: OpenStreetMapImageryProvider.ConstructorOptions.() -> Unit,
-): OpenStreetMapImageryProvider {
-    val options: OpenStreetMapImageryProvider.ConstructorOptions = js("({})")
-    block(options)
-    return OpenStreetMapImageryProvider(options)
-}
+): OpenStreetMapImageryProvider =
+    OpenStreetMapImageryProvider(options = jso(block))

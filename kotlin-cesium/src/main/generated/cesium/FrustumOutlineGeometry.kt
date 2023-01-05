@@ -10,6 +10,7 @@
 package cesium
 
 import js.core.ReadonlyArray
+import js.core.jso
 
 /**
  * A description of the outline of a frustum with the given the origin and orientation.
@@ -75,8 +76,5 @@ external class FrustumOutlineGeometry(options: ConstructorOptions) {
 
 inline fun FrustumOutlineGeometry(
     block: FrustumOutlineGeometry.ConstructorOptions.() -> Unit,
-): FrustumOutlineGeometry {
-    val options: FrustumOutlineGeometry.ConstructorOptions = js("({})")
-    block(options)
-    return FrustumOutlineGeometry(options)
-}
+): FrustumOutlineGeometry =
+    FrustumOutlineGeometry(options = jso(block))

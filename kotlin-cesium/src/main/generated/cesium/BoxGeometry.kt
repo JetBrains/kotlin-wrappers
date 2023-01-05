@@ -10,6 +10,7 @@
 package cesium
 
 import js.core.ReadonlyArray
+import js.core.jso
 
 /**
  * Describes a cube centered at the origin.
@@ -125,8 +126,5 @@ external class BoxGeometry(options: ConstructorOptions) {
 
 inline fun BoxGeometry(
     block: BoxGeometry.ConstructorOptions.() -> Unit,
-): BoxGeometry {
-    val options: BoxGeometry.ConstructorOptions = js("({})")
-    block(options)
-    return BoxGeometry(options)
-}
+): BoxGeometry =
+    BoxGeometry(options = jso(block))

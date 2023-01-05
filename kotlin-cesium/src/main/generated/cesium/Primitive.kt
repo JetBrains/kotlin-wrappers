@@ -10,6 +10,7 @@
 package cesium
 
 import js.core.ReadonlyArray
+import js.core.jso
 import kotlin.js.Promise
 
 /**
@@ -324,8 +325,5 @@ external class Primitive(options: ConstructorOptions? = definedExternally) {
 
 inline fun Primitive(
     block: Primitive.ConstructorOptions.() -> Unit,
-): Primitive {
-    val options: Primitive.ConstructorOptions = js("({})")
-    block(options)
-    return Primitive(options)
-}
+): Primitive =
+    Primitive(options = jso(block))

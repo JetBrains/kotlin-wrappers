@@ -9,6 +9,8 @@
 
 package cesium
 
+import js.core.jso
+
 /**
  * A metadata enum value.
  *
@@ -64,8 +66,5 @@ external class MetadataEnumValue(options: ConstructorOptions) {
 
 inline fun MetadataEnumValue(
     block: MetadataEnumValue.ConstructorOptions.() -> Unit,
-): MetadataEnumValue {
-    val options: MetadataEnumValue.ConstructorOptions = js("({})")
-    block(options)
-    return MetadataEnumValue(options)
-}
+): MetadataEnumValue =
+    MetadataEnumValue(options = jso(block))

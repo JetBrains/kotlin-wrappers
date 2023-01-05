@@ -12,6 +12,7 @@
 package cesium
 
 import js.core.Void
+import js.core.jso
 import kotlin.js.Promise
 
 /**
@@ -157,8 +158,5 @@ external class VRTheWorldTerrainProvider(options: ConstructorOptions) : TerrainP
 
 inline fun VRTheWorldTerrainProvider(
     block: VRTheWorldTerrainProvider.ConstructorOptions.() -> Unit,
-): VRTheWorldTerrainProvider {
-    val options: VRTheWorldTerrainProvider.ConstructorOptions = js("({})")
-    block(options)
-    return VRTheWorldTerrainProvider(options)
-}
+): VRTheWorldTerrainProvider =
+    VRTheWorldTerrainProvider(options = jso(block))

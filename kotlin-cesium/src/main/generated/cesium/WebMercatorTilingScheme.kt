@@ -9,6 +9,8 @@
 
 package cesium
 
+import js.core.jso
+
 /**
  * A tiling scheme for geometry referenced to a [WebMercatorProjection], EPSG:3857.  This is
  * the tiling scheme used by Google Maps, Microsoft Bing Maps, and most of ESRI ArcGIS Online.
@@ -148,8 +150,5 @@ external class WebMercatorTilingScheme(options: ConstructorOptions? = definedExt
 
 inline fun WebMercatorTilingScheme(
     block: WebMercatorTilingScheme.ConstructorOptions.() -> Unit,
-): WebMercatorTilingScheme {
-    val options: WebMercatorTilingScheme.ConstructorOptions = js("({})")
-    block(options)
-    return WebMercatorTilingScheme(options)
-}
+): WebMercatorTilingScheme =
+    WebMercatorTilingScheme(options = jso(block))

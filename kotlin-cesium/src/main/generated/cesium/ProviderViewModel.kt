@@ -9,6 +9,8 @@
 
 package cesium
 
+import js.core.jso
+
 /**
  * A view model that represents each item in the [BaseLayerPicker].
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ProviderViewModel.html">Online Documentation</a>
@@ -74,8 +76,5 @@ typealias CreationFunction = () -> dynamic
 
 inline fun ProviderViewModel(
     block: ProviderViewModel.ConstructorOptions.() -> Unit,
-): ProviderViewModel {
-    val options: ProviderViewModel.ConstructorOptions = js("({})")
-    block(options)
-    return ProviderViewModel(options)
-}
+): ProviderViewModel =
+    ProviderViewModel(options = jso(block))

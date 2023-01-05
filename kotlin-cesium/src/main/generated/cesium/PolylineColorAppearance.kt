@@ -9,6 +9,8 @@
 
 package cesium
 
+import js.core.jso
+
 /**
  * An appearance for [GeometryInstance] instances with color attributes and
  * [PolylineGeometry] or [GroundPolylineGeometry].
@@ -138,8 +140,5 @@ external class PolylineColorAppearance(options: ConstructorOptions? = definedExt
 
 inline fun PolylineColorAppearance(
     block: PolylineColorAppearance.ConstructorOptions.() -> Unit,
-): PolylineColorAppearance {
-    val options: PolylineColorAppearance.ConstructorOptions = js("({})")
-    block(options)
-    return PolylineColorAppearance(options)
-}
+): PolylineColorAppearance =
+    PolylineColorAppearance(options = jso(block))

@@ -10,6 +10,7 @@
 package cesium
 
 import js.core.ReadonlyArray
+import js.core.jso
 
 /**
  * Values and type information for per-instance geometry attributes.
@@ -111,8 +112,5 @@ external class GeometryInstanceAttribute(options: ConstructorOptions) {
 
 inline fun GeometryInstanceAttribute(
     block: GeometryInstanceAttribute.ConstructorOptions.() -> Unit,
-): GeometryInstanceAttribute {
-    val options: GeometryInstanceAttribute.ConstructorOptions = js("({})")
-    block(options)
-    return GeometryInstanceAttribute(options)
-}
+): GeometryInstanceAttribute =
+    GeometryInstanceAttribute(options = jso(block))

@@ -10,6 +10,7 @@
 package cesium
 
 import js.core.ReadonlyArray
+import js.core.jso
 
 /**
  * A spline that linearly interpolates over an array of weight values used by morph targets.
@@ -79,8 +80,5 @@ external class MorphWeightSpline(options: ConstructorOptions) {
 
 inline fun MorphWeightSpline(
     block: MorphWeightSpline.ConstructorOptions.() -> Unit,
-): MorphWeightSpline {
-    val options: MorphWeightSpline.ConstructorOptions = js("({})")
-    block(options)
-    return MorphWeightSpline(options)
-}
+): MorphWeightSpline =
+    MorphWeightSpline(options = jso(block))

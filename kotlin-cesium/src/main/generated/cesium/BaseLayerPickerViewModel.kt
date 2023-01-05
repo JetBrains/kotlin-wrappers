@@ -10,6 +10,7 @@
 package cesium
 
 import js.core.ReadonlyArray
+import js.core.jso
 
 /**
  * The view model for [BaseLayerPicker].
@@ -92,8 +93,5 @@ external class BaseLayerPickerViewModel(options: ConstructorOptions) {
 
 inline fun BaseLayerPickerViewModel(
     block: BaseLayerPickerViewModel.ConstructorOptions.() -> Unit,
-): BaseLayerPickerViewModel {
-    val options: BaseLayerPickerViewModel.ConstructorOptions = js("({})")
-    block(options)
-    return BaseLayerPickerViewModel(options)
-}
+): BaseLayerPickerViewModel =
+    BaseLayerPickerViewModel(options = jso(block))

@@ -9,6 +9,7 @@
 
 package cesium
 
+import js.core.jso
 import web.dom.Element
 
 /**
@@ -58,8 +59,5 @@ external class PerformanceWatchdog(options: ConstructorOptions? = definedExterna
 
 inline fun PerformanceWatchdog(
     block: PerformanceWatchdog.ConstructorOptions.() -> Unit,
-): PerformanceWatchdog {
-    val options: PerformanceWatchdog.ConstructorOptions = js("({})")
-    block(options)
-    return PerformanceWatchdog(options)
-}
+): PerformanceWatchdog =
+    PerformanceWatchdog(options = jso(block))

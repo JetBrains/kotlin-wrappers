@@ -9,6 +9,8 @@
 
 package cesium
 
+import js.core.jso
+
 /**
  * Draws the Moon in 3D.
  * ```
@@ -85,8 +87,5 @@ external class Moon(options: ConstructorOptions? = definedExternally) {
 
 inline fun Moon(
     block: Moon.ConstructorOptions.() -> Unit,
-): Moon {
-    val options: Moon.ConstructorOptions = js("({})")
-    block(options)
-    return Moon(options)
-}
+): Moon =
+    Moon(options = jso(block))

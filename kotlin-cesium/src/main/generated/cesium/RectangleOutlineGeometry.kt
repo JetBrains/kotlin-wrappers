@@ -10,6 +10,7 @@
 package cesium
 
 import js.core.ReadonlyArray
+import js.core.jso
 
 /**
  * A description of the outline of a a cartographic rectangle on an ellipsoid centered at the origin.
@@ -94,8 +95,5 @@ external class RectangleOutlineGeometry(options: ConstructorOptions) {
 
 inline fun RectangleOutlineGeometry(
     block: RectangleOutlineGeometry.ConstructorOptions.() -> Unit,
-): RectangleOutlineGeometry {
-    val options: RectangleOutlineGeometry.ConstructorOptions = js("({})")
-    block(options)
-    return RectangleOutlineGeometry(options)
-}
+): RectangleOutlineGeometry =
+    RectangleOutlineGeometry(options = jso(block))

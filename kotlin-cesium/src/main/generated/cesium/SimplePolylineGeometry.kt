@@ -10,6 +10,7 @@
 package cesium
 
 import js.core.ReadonlyArray
+import js.core.jso
 
 /**
  * A description of a polyline modeled as a line strip; the first two positions define a line segment,
@@ -98,8 +99,5 @@ external class SimplePolylineGeometry(options: ConstructorOptions) {
 
 inline fun SimplePolylineGeometry(
     block: SimplePolylineGeometry.ConstructorOptions.() -> Unit,
-): SimplePolylineGeometry {
-    val options: SimplePolylineGeometry.ConstructorOptions = js("({})")
-    block(options)
-    return SimplePolylineGeometry(options)
-}
+): SimplePolylineGeometry =
+    SimplePolylineGeometry(options = jso(block))

@@ -12,6 +12,7 @@
 package cesium
 
 import js.core.Void
+import js.core.jso
 import kotlin.js.Promise
 
 /**
@@ -189,8 +190,5 @@ typealias GeometryCallback = (x: Double, y: Double, level: Double) -> dynamic
 
 inline fun CustomHeightmapTerrainProvider(
     block: CustomHeightmapTerrainProvider.ConstructorOptions.() -> Unit,
-): CustomHeightmapTerrainProvider {
-    val options: CustomHeightmapTerrainProvider.ConstructorOptions = js("({})")
-    block(options)
-    return CustomHeightmapTerrainProvider(options)
-}
+): CustomHeightmapTerrainProvider =
+    CustomHeightmapTerrainProvider(options = jso(block))

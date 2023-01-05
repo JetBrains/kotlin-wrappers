@@ -11,6 +11,7 @@ package cesium
 
 import js.core.ReadonlyArray
 import js.core.Void
+import js.core.jso
 import kotlin.js.Promise
 
 /**
@@ -325,8 +326,5 @@ external class BingMapsImageryProvider(options: ConstructorOptions) {
 
 inline fun BingMapsImageryProvider(
     block: BingMapsImageryProvider.ConstructorOptions.() -> Unit,
-): BingMapsImageryProvider {
-    val options: BingMapsImageryProvider.ConstructorOptions = js("({})")
-    block(options)
-    return BingMapsImageryProvider(options)
-}
+): BingMapsImageryProvider =
+    BingMapsImageryProvider(options = jso(block))

@@ -10,6 +10,7 @@
 package cesium
 
 import js.core.ReadonlyArray
+import js.core.jso
 
 /**
  * An abstract class for updating geometry entities.
@@ -175,8 +176,5 @@ external class GeometryUpdater(options: ConstructorOptions) {
 
 inline fun GeometryUpdater(
     block: GeometryUpdater.ConstructorOptions.() -> Unit,
-): GeometryUpdater {
-    val options: GeometryUpdater.ConstructorOptions = js("({})")
-    block(options)
-    return GeometryUpdater(options)
-}
+): GeometryUpdater =
+    GeometryUpdater(options = jso(block))

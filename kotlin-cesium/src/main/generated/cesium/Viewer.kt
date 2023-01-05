@@ -11,6 +11,7 @@
 package cesium
 
 import js.core.ReadonlyArray
+import js.core.jso
 import web.dom.Element
 import web.html.HTMLCanvasElement
 import kotlin.js.Promise
@@ -725,8 +726,5 @@ typealias ViewerMixin = (viewer: Viewer, options: Any) -> Unit
 inline fun Viewer(
     container: Element,
     block: Viewer.ConstructorOptions.() -> Unit,
-): Viewer {
-    val options: Viewer.ConstructorOptions = js("({})")
-    block(options)
-    return Viewer(container, options)
-}
+): Viewer =
+    Viewer(container, options = jso(block))

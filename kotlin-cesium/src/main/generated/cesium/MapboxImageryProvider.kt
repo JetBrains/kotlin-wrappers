@@ -10,6 +10,7 @@
 package cesium
 
 import js.core.ReadonlyArray
+import js.core.jso
 import kotlin.js.Promise
 
 /**
@@ -284,8 +285,5 @@ external class MapboxImageryProvider(options: ConstructorOptions) {
 
 inline fun MapboxImageryProvider(
     block: MapboxImageryProvider.ConstructorOptions.() -> Unit,
-): MapboxImageryProvider {
-    val options: MapboxImageryProvider.ConstructorOptions = js("({})")
-    block(options)
-    return MapboxImageryProvider(options)
-}
+): MapboxImageryProvider =
+    MapboxImageryProvider(options = jso(block))

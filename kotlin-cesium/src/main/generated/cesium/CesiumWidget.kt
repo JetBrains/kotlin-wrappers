@@ -10,6 +10,7 @@
 
 package cesium
 
+import js.core.jso
 import web.dom.Element
 import web.html.HTMLCanvasElement
 
@@ -270,8 +271,5 @@ external class CesiumWidget(
 inline fun CesiumWidget(
     container: Element,
     block: CesiumWidget.ConstructorOptions.() -> Unit,
-): CesiumWidget {
-    val options: CesiumWidget.ConstructorOptions = js("({})")
-    block(options)
-    return CesiumWidget(container, options)
-}
+): CesiumWidget =
+    CesiumWidget(container, options = jso(block))

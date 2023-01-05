@@ -10,6 +10,7 @@
 package cesium
 
 import js.core.ReadonlyArray
+import js.core.jso
 
 /**
  * A description of a wall, which is similar to a KML line string. A wall is defined by a series of points,
@@ -142,8 +143,5 @@ external class WallGeometry(options: ConstructorOptions) {
 
 inline fun WallGeometry(
     block: WallGeometry.ConstructorOptions.() -> Unit,
-): WallGeometry {
-    val options: WallGeometry.ConstructorOptions = js("({})")
-    block(options)
-    return WallGeometry(options)
-}
+): WallGeometry =
+    WallGeometry(options = jso(block))

@@ -9,6 +9,8 @@
 
 package cesium
 
+import js.core.jso
+
 /**
  * A renderable collection of billboards.  Billboards are viewport-aligned
  * images positioned in the 3D scene.
@@ -249,8 +251,5 @@ external class BillboardCollection(options: ConstructorOptions? = definedExterna
 
 inline fun BillboardCollection(
     block: BillboardCollection.ConstructorOptions.() -> Unit,
-): BillboardCollection {
-    val options: BillboardCollection.ConstructorOptions = js("({})")
-    block(options)
-    return BillboardCollection(options)
-}
+): BillboardCollection =
+    BillboardCollection(options = jso(block))

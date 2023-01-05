@@ -9,6 +9,7 @@
 
 package cesium
 
+import js.core.jso
 import kotlin.js.Promise
 
 /**
@@ -131,8 +132,5 @@ typealias PriorityCallback = () -> Double
 
 inline fun Request(
     block: Request.ConstructorOptions.() -> Unit,
-): Request {
-    val options: Request.ConstructorOptions = js("({})")
-    block(options)
-    return Request(options)
-}
+): Request =
+    Request(options = jso(block))

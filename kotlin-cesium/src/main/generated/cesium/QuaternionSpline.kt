@@ -10,6 +10,7 @@
 package cesium
 
 import js.core.ReadonlyArray
+import js.core.jso
 
 /**
  * A spline that uses spherical linear (slerp) interpolation to create a quaternion curve.
@@ -79,8 +80,5 @@ external class QuaternionSpline(options: ConstructorOptions) {
 
 inline fun QuaternionSpline(
     block: QuaternionSpline.ConstructorOptions.() -> Unit,
-): QuaternionSpline {
-    val options: QuaternionSpline.ConstructorOptions = js("({})")
-    block(options)
-    return QuaternionSpline(options)
-}
+): QuaternionSpline =
+    QuaternionSpline(options = jso(block))

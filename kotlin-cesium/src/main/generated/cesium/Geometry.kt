@@ -10,6 +10,7 @@
 package cesium
 
 import js.core.ReadonlyArray
+import js.core.jso
 
 /**
  * A geometry representation with attributes forming vertices and optional index data
@@ -128,8 +129,5 @@ external class Geometry(options: ConstructorOptions) {
 
 inline fun Geometry(
     block: Geometry.ConstructorOptions.() -> Unit,
-): Geometry {
-    val options: Geometry.ConstructorOptions = js("({})")
-    block(options)
-    return Geometry(options)
-}
+): Geometry =
+    Geometry(options = jso(block))

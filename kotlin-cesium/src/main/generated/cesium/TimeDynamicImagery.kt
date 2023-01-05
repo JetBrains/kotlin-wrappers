@@ -9,6 +9,7 @@
 
 package cesium
 
+import js.core.jso
 import web.html.HTMLImageElement
 import kotlin.js.Promise
 
@@ -84,8 +85,5 @@ external class TimeDynamicImagery(options: ConstructorOptions) {
 
 inline fun TimeDynamicImagery(
     block: TimeDynamicImagery.ConstructorOptions.() -> Unit,
-): TimeDynamicImagery {
-    val options: TimeDynamicImagery.ConstructorOptions = js("({})")
-    block(options)
-    return TimeDynamicImagery(options)
-}
+): TimeDynamicImagery =
+    TimeDynamicImagery(options = jso(block))

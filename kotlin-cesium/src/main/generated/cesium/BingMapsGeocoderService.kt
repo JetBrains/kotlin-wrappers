@@ -10,6 +10,7 @@
 package cesium
 
 import js.core.ReadonlyArray
+import js.core.jso
 import kotlin.js.Promise
 
 /**
@@ -47,8 +48,5 @@ external class BingMapsGeocoderService(options: ConstructorOptions) {
 
 inline fun BingMapsGeocoderService(
     block: BingMapsGeocoderService.ConstructorOptions.() -> Unit,
-): BingMapsGeocoderService {
-    val options: BingMapsGeocoderService.ConstructorOptions = js("({})")
-    block(options)
-    return BingMapsGeocoderService(options)
-}
+): BingMapsGeocoderService =
+    BingMapsGeocoderService(options = jso(block))

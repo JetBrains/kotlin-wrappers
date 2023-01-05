@@ -11,6 +11,7 @@ package cesium
 
 import js.core.ReadonlyArray
 import js.core.Void
+import js.core.jso
 import web.html.HTMLCanvasElement
 import kotlin.js.Promise
 
@@ -283,8 +284,5 @@ external class GridImageryProvider(options: ConstructorOptions) {
 
 inline fun GridImageryProvider(
     block: GridImageryProvider.ConstructorOptions.() -> Unit,
-): GridImageryProvider {
-    val options: GridImageryProvider.ConstructorOptions = js("({})")
-    block(options)
-    return GridImageryProvider(options)
-}
+): GridImageryProvider =
+    GridImageryProvider(options = jso(block))

@@ -10,6 +10,7 @@
 package cesium
 
 import js.core.ReadonlyArray
+import js.core.jso
 import web.dom.Element
 
 /**
@@ -80,8 +81,5 @@ typealias DestinationFoundFunction = (viewModel: GeocoderViewModel, destination:
 
 inline fun Geocoder(
     block: Geocoder.ConstructorOptions.() -> Unit,
-): Geocoder {
-    val options: Geocoder.ConstructorOptions = js("({})")
-    block(options)
-    return Geocoder(options)
-}
+): Geocoder =
+    Geocoder(options = jso(block))

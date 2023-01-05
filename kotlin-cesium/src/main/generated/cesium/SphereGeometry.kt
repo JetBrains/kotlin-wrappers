@@ -10,6 +10,7 @@
 package cesium
 
 import js.core.ReadonlyArray
+import js.core.jso
 
 /**
  * A description of a sphere centered at the origin.
@@ -89,8 +90,5 @@ external class SphereGeometry(options: ConstructorOptions? = definedExternally) 
 
 inline fun SphereGeometry(
     block: SphereGeometry.ConstructorOptions.() -> Unit,
-): SphereGeometry {
-    val options: SphereGeometry.ConstructorOptions = js("({})")
-    block(options)
-    return SphereGeometry(options)
-}
+): SphereGeometry =
+    SphereGeometry(options = jso(block))

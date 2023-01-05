@@ -10,6 +10,7 @@
 package cesium
 
 import js.core.ReadonlyArray
+import js.core.jso
 
 /**
  * A Catmull-Rom spline is a cubic spline where the tangent at control points,
@@ -114,8 +115,5 @@ external class CatmullRomSpline(options: ConstructorOptions) {
 
 inline fun CatmullRomSpline(
     block: CatmullRomSpline.ConstructorOptions.() -> Unit,
-): CatmullRomSpline {
-    val options: CatmullRomSpline.ConstructorOptions = js("({})")
-    block(options)
-    return CatmullRomSpline(options)
-}
+): CatmullRomSpline =
+    CatmullRomSpline(options = jso(block))

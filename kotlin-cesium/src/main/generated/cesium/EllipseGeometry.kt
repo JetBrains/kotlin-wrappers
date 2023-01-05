@@ -10,6 +10,7 @@
 package cesium
 
 import js.core.ReadonlyArray
+import js.core.jso
 
 /**
  * A description of an ellipse on an ellipsoid. Ellipse geometry can be rendered with both [Primitive] and [GroundPrimitive].
@@ -137,8 +138,5 @@ external class EllipseGeometry(options: ConstructorOptions) {
 
 inline fun EllipseGeometry(
     block: EllipseGeometry.ConstructorOptions.() -> Unit,
-): EllipseGeometry {
-    val options: EllipseGeometry.ConstructorOptions = js("({})")
-    block(options)
-    return EllipseGeometry(options)
-}
+): EllipseGeometry =
+    EllipseGeometry(options = jso(block))

@@ -10,6 +10,7 @@
 package cesium
 
 import js.core.ReadonlyArray
+import js.core.jso
 
 /**
  * A description of a circle on the ellipsoid. Circle geometry can be rendered with both [Primitive] and [GroundPrimitive].
@@ -100,8 +101,5 @@ external class CircleGeometry(options: ConstructorOptions) {
 
 inline fun CircleGeometry(
     block: CircleGeometry.ConstructorOptions.() -> Unit,
-): CircleGeometry {
-    val options: CircleGeometry.ConstructorOptions = js("({})")
-    block(options)
-    return CircleGeometry(options)
-}
+): CircleGeometry =
+    CircleGeometry(options = jso(block))

@@ -10,6 +10,7 @@
 package cesium
 
 import js.core.ReadonlyArray
+import js.core.jso
 
 /**
  * A description of the outline of a sphere.
@@ -90,8 +91,5 @@ external class SphereOutlineGeometry(options: ConstructorOptions? = definedExter
 
 inline fun SphereOutlineGeometry(
     block: SphereOutlineGeometry.ConstructorOptions.() -> Unit,
-): SphereOutlineGeometry {
-    val options: SphereOutlineGeometry.ConstructorOptions = js("({})")
-    block(options)
-    return SphereOutlineGeometry(options)
-}
+): SphereOutlineGeometry =
+    SphereOutlineGeometry(options = jso(block))

@@ -10,6 +10,7 @@
 package cesium
 
 import js.core.ReadonlyArray
+import js.core.jso
 import js.typedarrays.Uint8Array
 import kotlin.js.Promise
 
@@ -194,8 +195,5 @@ external class HeightmapTerrainData(options: ConstructorOptions) : TerrainData {
 
 inline fun HeightmapTerrainData(
     block: HeightmapTerrainData.ConstructorOptions.() -> Unit,
-): HeightmapTerrainData {
-    val options: HeightmapTerrainData.ConstructorOptions = js("({})")
-    block(options)
-    return HeightmapTerrainData(options)
-}
+): HeightmapTerrainData =
+    HeightmapTerrainData(options = jso(block))

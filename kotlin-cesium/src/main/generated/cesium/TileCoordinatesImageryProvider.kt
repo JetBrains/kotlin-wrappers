@@ -11,6 +11,7 @@ package cesium
 
 import js.core.ReadonlyArray
 import js.core.Void
+import js.core.jso
 import web.html.HTMLCanvasElement
 import kotlin.js.Promise
 
@@ -257,8 +258,5 @@ external class TileCoordinatesImageryProvider(options: ConstructorOptions? = def
 
 inline fun TileCoordinatesImageryProvider(
     block: TileCoordinatesImageryProvider.ConstructorOptions.() -> Unit,
-): TileCoordinatesImageryProvider {
-    val options: TileCoordinatesImageryProvider.ConstructorOptions = js("({})")
-    block(options)
-    return TileCoordinatesImageryProvider(options)
-}
+): TileCoordinatesImageryProvider =
+    TileCoordinatesImageryProvider(options = jso(block))

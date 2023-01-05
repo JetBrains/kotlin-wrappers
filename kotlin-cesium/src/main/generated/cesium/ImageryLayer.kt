@@ -10,6 +10,7 @@
 
 package cesium
 
+import js.core.jso
 import kotlin.js.Promise
 
 /**
@@ -376,8 +377,5 @@ external class ImageryLayer(
 inline fun ImageryLayer(
     imageryProvider: ImageryProvider,
     block: ImageryLayer.ConstructorOptions.() -> Unit,
-): ImageryLayer {
-    val options: ImageryLayer.ConstructorOptions = js("({})")
-    block(options)
-    return ImageryLayer(imageryProvider, options)
-}
+): ImageryLayer =
+    ImageryLayer(imageryProvider, options = jso(block))

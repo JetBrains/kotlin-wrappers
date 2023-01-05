@@ -12,6 +12,7 @@
 package cesium
 
 import js.core.Void
+import js.core.jso
 import kotlin.js.Promise
 
 /**
@@ -151,8 +152,5 @@ external class EllipsoidTerrainProvider(options: ConstructorOptions? = definedEx
 
 inline fun EllipsoidTerrainProvider(
     block: EllipsoidTerrainProvider.ConstructorOptions.() -> Unit,
-): EllipsoidTerrainProvider {
-    val options: EllipsoidTerrainProvider.ConstructorOptions = js("({})")
-    block(options)
-    return EllipsoidTerrainProvider(options)
-}
+): EllipsoidTerrainProvider =
+    EllipsoidTerrainProvider(options = jso(block))

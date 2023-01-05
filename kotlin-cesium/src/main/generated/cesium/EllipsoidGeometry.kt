@@ -10,6 +10,7 @@
 package cesium
 
 import js.core.ReadonlyArray
+import js.core.jso
 
 /**
  * A description of an ellipsoid centered at the origin.
@@ -104,8 +105,5 @@ external class EllipsoidGeometry(options: ConstructorOptions? = definedExternall
 
 inline fun EllipsoidGeometry(
     block: EllipsoidGeometry.ConstructorOptions.() -> Unit,
-): EllipsoidGeometry {
-    val options: EllipsoidGeometry.ConstructorOptions = js("({})")
-    block(options)
-    return EllipsoidGeometry(options)
-}
+): EllipsoidGeometry =
+    EllipsoidGeometry(options = jso(block))

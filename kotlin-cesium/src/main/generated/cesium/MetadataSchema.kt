@@ -10,6 +10,7 @@
 package cesium
 
 import js.core.ReadonlyRecord
+import js.core.jso
 
 /**
  * A schema containing classes and enums.
@@ -90,8 +91,5 @@ external class MetadataSchema(options: ConstructorOptions) {
 
 inline fun MetadataSchema(
     block: MetadataSchema.ConstructorOptions.() -> Unit,
-): MetadataSchema {
-    val options: MetadataSchema.ConstructorOptions = js("({})")
-    block(options)
-    return MetadataSchema(options)
-}
+): MetadataSchema =
+    MetadataSchema(options = jso(block))

@@ -9,6 +9,8 @@
 
 package cesium
 
+import js.core.jso
+
 /**
  * An appearance for arbitrary geometry (as opposed to [EllipsoidSurfaceAppearance], for example)
  * that supports shading with materials.
@@ -200,8 +202,5 @@ external class MaterialAppearance(options: ConstructorOptions? = definedExternal
 
 inline fun MaterialAppearance(
     block: MaterialAppearance.ConstructorOptions.() -> Unit,
-): MaterialAppearance {
-    val options: MaterialAppearance.ConstructorOptions = js("({})")
-    block(options)
-    return MaterialAppearance(options)
-}
+): MaterialAppearance =
+    MaterialAppearance(options = jso(block))

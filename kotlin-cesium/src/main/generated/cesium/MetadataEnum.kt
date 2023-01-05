@@ -10,6 +10,7 @@
 package cesium
 
 import js.core.ReadonlyArray
+import js.core.jso
 
 /**
  * A metadata enum.
@@ -83,8 +84,5 @@ external class MetadataEnum(options: ConstructorOptions) {
 
 inline fun MetadataEnum(
     block: MetadataEnum.ConstructorOptions.() -> Unit,
-): MetadataEnum {
-    val options: MetadataEnum.ConstructorOptions = js("({})")
-    block(options)
-    return MetadataEnum(options)
-}
+): MetadataEnum =
+    MetadataEnum(options = jso(block))

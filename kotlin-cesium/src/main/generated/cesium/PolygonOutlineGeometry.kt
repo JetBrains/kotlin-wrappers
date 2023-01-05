@@ -10,6 +10,7 @@
 package cesium
 
 import js.core.ReadonlyArray
+import js.core.jso
 
 /**
  * A description of the outline of a polygon on the ellipsoid. The polygon is defined by a polygon hierarchy.
@@ -202,8 +203,5 @@ external class PolygonOutlineGeometry(options: ConstructorOptions) {
 
 inline fun PolygonOutlineGeometry(
     block: PolygonOutlineGeometry.ConstructorOptions.() -> Unit,
-): PolygonOutlineGeometry {
-    val options: PolygonOutlineGeometry.ConstructorOptions = js("({})")
-    block(options)
-    return PolygonOutlineGeometry(options)
-}
+): PolygonOutlineGeometry =
+    PolygonOutlineGeometry(options = jso(block))

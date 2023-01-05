@@ -9,6 +9,7 @@
 
 package cesium
 
+import js.core.jso
 import kotlin.js.Promise
 
 /**
@@ -1071,8 +1072,5 @@ typealias FoveatedInterpolationCallback = (p: Double, q: Double, time: Double) -
 
 inline fun Cesium3DTileset(
     block: Cesium3DTileset.ConstructorOptions.() -> Unit,
-): Cesium3DTileset {
-    val options: Cesium3DTileset.ConstructorOptions = js("({})")
-    block(options)
-    return Cesium3DTileset(options)
-}
+): Cesium3DTileset =
+    Cesium3DTileset(options = jso(block))

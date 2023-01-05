@@ -10,6 +10,7 @@
 package cesium
 
 import js.core.ReadonlyArray
+import js.core.jso
 
 /**
  * A description of a cartographic rectangle on an ellipsoid centered at the origin. Rectangle geometry can be rendered with both [Primitive] and [GroundPrimitive].
@@ -137,8 +138,5 @@ external class RectangleGeometry(options: ConstructorOptions) {
 
 inline fun RectangleGeometry(
     block: RectangleGeometry.ConstructorOptions.() -> Unit,
-): RectangleGeometry {
-    val options: RectangleGeometry.ConstructorOptions = js("({})")
-    block(options)
-    return RectangleGeometry(options)
-}
+): RectangleGeometry =
+    RectangleGeometry(options = jso(block))

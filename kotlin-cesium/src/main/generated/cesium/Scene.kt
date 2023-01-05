@@ -10,6 +10,7 @@
 package cesium
 
 import js.core.ReadonlyArray
+import js.core.jso
 import web.dom.Element
 import web.html.HTMLCanvasElement
 import kotlin.js.Promise
@@ -905,8 +906,5 @@ external class Scene(options: ConstructorOptions) {
 
 inline fun Scene(
     block: Scene.ConstructorOptions.() -> Unit,
-): Scene {
-    val options: Scene.ConstructorOptions = js("({})")
-    block(options)
-    return Scene(options)
-}
+): Scene =
+    Scene(options = jso(block))

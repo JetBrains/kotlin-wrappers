@@ -10,6 +10,7 @@
 package cesium
 
 import js.core.ReadonlyArray
+import js.core.jso
 import web.html.HTMLImageElement
 
 /**
@@ -51,8 +52,5 @@ external class DiscardMissingTileImagePolicy(options: ConstructorOptions) : Tile
 
 inline fun DiscardMissingTileImagePolicy(
     block: DiscardMissingTileImagePolicy.ConstructorOptions.() -> Unit,
-): DiscardMissingTileImagePolicy {
-    val options: DiscardMissingTileImagePolicy.ConstructorOptions = js("({})")
-    block(options)
-    return DiscardMissingTileImagePolicy(options)
-}
+): DiscardMissingTileImagePolicy =
+    DiscardMissingTileImagePolicy(options = jso(block))

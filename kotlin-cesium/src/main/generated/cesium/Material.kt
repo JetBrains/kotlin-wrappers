@@ -9,6 +9,8 @@
 
 package cesium
 
+import js.core.jso
+
 /**
  * A Material defines surface appearance through a combination of diffuse, specular,
  * normal, emission, and alpha components. These values are specified using a
@@ -300,8 +302,5 @@ external class Material(options: ConstructorOptions? = definedExternally) {
 
 inline fun Material(
     block: Material.ConstructorOptions.() -> Unit,
-): Material {
-    val options: Material.ConstructorOptions = js("({})")
-    block(options)
-    return Material(options)
-}
+): Material =
+    Material(options = jso(block))

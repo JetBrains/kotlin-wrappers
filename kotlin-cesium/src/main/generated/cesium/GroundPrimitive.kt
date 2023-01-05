@@ -9,6 +9,7 @@
 
 package cesium
 
+import js.core.jso
 import kotlin.js.Promise
 
 /**
@@ -288,8 +289,5 @@ external class GroundPrimitive(options: ConstructorOptions? = definedExternally)
 
 inline fun GroundPrimitive(
     block: GroundPrimitive.ConstructorOptions.() -> Unit,
-): GroundPrimitive {
-    val options: GroundPrimitive.ConstructorOptions = js("({})")
-    block(options)
-    return GroundPrimitive(options)
-}
+): GroundPrimitive =
+    GroundPrimitive(options = jso(block))

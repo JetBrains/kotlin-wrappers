@@ -10,6 +10,7 @@
 package cesium
 
 import js.core.ReadonlyArray
+import js.core.jso
 
 /**
  * Runs a post-process stage on either the texture rendered by the scene or the output of a previous post-process stage.
@@ -223,8 +224,5 @@ external class PostProcessStage(options: ConstructorOptions) {
 
 inline fun PostProcessStage(
     block: PostProcessStage.ConstructorOptions.() -> Unit,
-): PostProcessStage {
-    val options: PostProcessStage.ConstructorOptions = js("({})")
-    block(options)
-    return PostProcessStage(options)
-}
+): PostProcessStage =
+    PostProcessStage(options = jso(block))

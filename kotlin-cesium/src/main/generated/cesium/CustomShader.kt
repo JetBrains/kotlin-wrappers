@@ -10,6 +10,7 @@
 package cesium
 
 import js.core.ReadonlyRecord
+import js.core.jso
 
 /**
  * A user defined GLSL shader used with [Model] as well
@@ -146,8 +147,5 @@ external class CustomShader(options: ConstructorOptions) {
 
 inline fun CustomShader(
     block: CustomShader.ConstructorOptions.() -> Unit,
-): CustomShader {
-    val options: CustomShader.ConstructorOptions = js("({})")
-    block(options)
-    return CustomShader(options)
-}
+): CustomShader =
+    CustomShader(options = jso(block))

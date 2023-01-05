@@ -12,6 +12,7 @@
 package cesium
 
 import js.core.Void
+import js.core.jso
 import kotlin.js.Promise
 
 /**
@@ -167,8 +168,5 @@ external class GoogleEarthEnterpriseTerrainProvider(options: ConstructorOptions)
 
 inline fun GoogleEarthEnterpriseTerrainProvider(
     block: GoogleEarthEnterpriseTerrainProvider.ConstructorOptions.() -> Unit,
-): GoogleEarthEnterpriseTerrainProvider {
-    val options: GoogleEarthEnterpriseTerrainProvider.ConstructorOptions = js("({})")
-    block(options)
-    return GoogleEarthEnterpriseTerrainProvider(options)
-}
+): GoogleEarthEnterpriseTerrainProvider =
+    GoogleEarthEnterpriseTerrainProvider(options = jso(block))

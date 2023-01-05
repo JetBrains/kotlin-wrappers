@@ -10,6 +10,7 @@
 package cesium
 
 import js.core.ReadonlyArray
+import js.core.jso
 import kotlin.js.Promise
 
 /**
@@ -258,8 +259,5 @@ external class IonImageryProvider(options: ConstructorOptions) {
 
 inline fun IonImageryProvider(
     block: IonImageryProvider.ConstructorOptions.() -> Unit,
-): IonImageryProvider {
-    val options: IonImageryProvider.ConstructorOptions = js("({})")
-    block(options)
-    return IonImageryProvider(options)
-}
+): IonImageryProvider =
+    IonImageryProvider(options = jso(block))

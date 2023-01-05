@@ -10,6 +10,7 @@
 package cesium
 
 import js.core.ReadonlyArray
+import js.core.jso
 
 /**
  * A description of the outline of an ellipse on an ellipsoid.
@@ -102,8 +103,5 @@ external class EllipseOutlineGeometry(options: ConstructorOptions) {
 
 inline fun EllipseOutlineGeometry(
     block: EllipseOutlineGeometry.ConstructorOptions.() -> Unit,
-): EllipseOutlineGeometry {
-    val options: EllipseOutlineGeometry.ConstructorOptions = js("({})")
-    block(options)
-    return EllipseOutlineGeometry(options)
-}
+): EllipseOutlineGeometry =
+    EllipseOutlineGeometry(options = jso(block))

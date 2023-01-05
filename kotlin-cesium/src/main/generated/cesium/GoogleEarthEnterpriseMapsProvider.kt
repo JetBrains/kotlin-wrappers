@@ -11,6 +11,7 @@ package cesium
 
 import js.core.ReadonlyArray
 import js.core.Void
+import js.core.jso
 import kotlin.js.Promise
 
 /**
@@ -330,8 +331,5 @@ external class GoogleEarthEnterpriseMapsProvider(options: ConstructorOptions) {
 
 inline fun GoogleEarthEnterpriseMapsProvider(
     block: GoogleEarthEnterpriseMapsProvider.ConstructorOptions.() -> Unit,
-): GoogleEarthEnterpriseMapsProvider {
-    val options: GoogleEarthEnterpriseMapsProvider.ConstructorOptions = js("({})")
-    block(options)
-    return GoogleEarthEnterpriseMapsProvider(options)
-}
+): GoogleEarthEnterpriseMapsProvider =
+    GoogleEarthEnterpriseMapsProvider(options = jso(block))

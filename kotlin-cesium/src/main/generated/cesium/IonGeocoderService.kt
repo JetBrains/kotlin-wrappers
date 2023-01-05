@@ -10,6 +10,7 @@
 package cesium
 
 import js.core.ReadonlyArray
+import js.core.jso
 import kotlin.js.Promise
 
 /**
@@ -44,8 +45,5 @@ external class IonGeocoderService(options: ConstructorOptions) {
 
 inline fun IonGeocoderService(
     block: IonGeocoderService.ConstructorOptions.() -> Unit,
-): IonGeocoderService {
-    val options: IonGeocoderService.ConstructorOptions = js("({})")
-    block(options)
-    return IonGeocoderService(options)
-}
+): IonGeocoderService =
+    IonGeocoderService(options = jso(block))

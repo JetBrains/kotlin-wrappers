@@ -10,6 +10,7 @@
 package cesium
 
 import js.core.ReadonlyArray
+import js.core.jso
 
 /**
  * A spline that is composed of piecewise constants representing a step function.
@@ -96,8 +97,5 @@ external class SteppedSpline(options: ConstructorOptions) {
 
 inline fun SteppedSpline(
     block: SteppedSpline.ConstructorOptions.() -> Unit,
-): SteppedSpline {
-    val options: SteppedSpline.ConstructorOptions = js("({})")
-    block(options)
-    return SteppedSpline(options)
-}
+): SteppedSpline =
+    SteppedSpline(options = jso(block))

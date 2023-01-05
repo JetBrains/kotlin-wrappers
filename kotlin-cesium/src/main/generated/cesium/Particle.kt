@@ -9,6 +9,8 @@
 
 package cesium
 
+import js.core.jso
+
 /**
  * A particle emitted by a [ParticleSystem].
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Particle.html">Online Documentation</a>
@@ -123,8 +125,5 @@ external class Particle(options: ConstructorOptions) {
 
 inline fun Particle(
     block: Particle.ConstructorOptions.() -> Unit,
-): Particle {
-    val options: Particle.ConstructorOptions = js("({})")
-    block(options)
-    return Particle(options)
-}
+): Particle =
+    Particle(options = jso(block))

@@ -9,6 +9,8 @@
 
 package cesium
 
+import js.core.jso
+
 /**
  * Geometry instancing allows one [Geometry] object to be positions in several
  * different locations and colored uniquely.  For example, one [BoxGeometry] can
@@ -89,8 +91,5 @@ external class GeometryInstance(options: ConstructorOptions) {
 
 inline fun GeometryInstance(
     block: GeometryInstance.ConstructorOptions.() -> Unit,
-): GeometryInstance {
-    val options: GeometryInstance.ConstructorOptions = js("({})")
-    block(options)
-    return GeometryInstance(options)
-}
+): GeometryInstance =
+    GeometryInstance(options = jso(block))

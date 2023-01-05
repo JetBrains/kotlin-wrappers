@@ -10,6 +10,7 @@
 package cesium
 
 import js.core.ReadonlyArray
+import js.core.jso
 
 /**
  * Describes geometry representing a plane centered at the origin, with a unit width and length.
@@ -78,8 +79,5 @@ external class PlaneGeometry(options: ConstructorOptions? = definedExternally) {
 
 inline fun PlaneGeometry(
     block: PlaneGeometry.ConstructorOptions.() -> Unit,
-): PlaneGeometry {
-    val options: PlaneGeometry.ConstructorOptions = js("({})")
-    block(options)
-    return PlaneGeometry(options)
-}
+): PlaneGeometry =
+    PlaneGeometry(options = jso(block))

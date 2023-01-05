@@ -10,6 +10,7 @@
 package cesium
 
 import js.core.ReadonlyArray
+import js.core.jso
 
 /**
  * A description of the outline of a cube centered at the origin.
@@ -117,8 +118,5 @@ external class BoxOutlineGeometry(options: ConstructorOptions) {
 
 inline fun BoxOutlineGeometry(
     block: BoxOutlineGeometry.ConstructorOptions.() -> Unit,
-): BoxOutlineGeometry {
-    val options: BoxOutlineGeometry.ConstructorOptions = js("({})")
-    block(options)
-    return BoxOutlineGeometry(options)
-}
+): BoxOutlineGeometry =
+    BoxOutlineGeometry(options = jso(block))

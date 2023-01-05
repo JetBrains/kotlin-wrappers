@@ -11,6 +11,7 @@ package cesium
 
 import js.buffer.ArrayBuffer
 import js.core.ReadonlyArray
+import js.core.jso
 import kotlin.js.Promise
 
 /**
@@ -136,8 +137,5 @@ external class GoogleEarthEnterpriseTerrainData(options: ConstructorOptions) : T
 
 inline fun GoogleEarthEnterpriseTerrainData(
     block: GoogleEarthEnterpriseTerrainData.ConstructorOptions.() -> Unit,
-): GoogleEarthEnterpriseTerrainData {
-    val options: GoogleEarthEnterpriseTerrainData.ConstructorOptions = js("({})")
-    block(options)
-    return GoogleEarthEnterpriseTerrainData(options)
-}
+): GoogleEarthEnterpriseTerrainData =
+    GoogleEarthEnterpriseTerrainData(options = jso(block))

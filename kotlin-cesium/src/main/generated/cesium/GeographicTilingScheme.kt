@@ -9,6 +9,8 @@
 
 package cesium
 
+import js.core.jso
+
 /**
  * A tiling scheme for geometry referenced to a simple [GeographicProjection] where
  * longitude and latitude are directly mapped to X and Y.  This projection is commonly
@@ -142,8 +144,5 @@ external class GeographicTilingScheme(options: ConstructorOptions? = definedExte
 
 inline fun GeographicTilingScheme(
     block: GeographicTilingScheme.ConstructorOptions.() -> Unit,
-): GeographicTilingScheme {
-    val options: GeographicTilingScheme.ConstructorOptions = js("({})")
-    block(options)
-    return GeographicTilingScheme(options)
-}
+): GeographicTilingScheme =
+    GeographicTilingScheme(options = jso(block))

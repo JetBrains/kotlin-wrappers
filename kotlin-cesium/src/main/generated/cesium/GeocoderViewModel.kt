@@ -10,6 +10,7 @@
 package cesium
 
 import js.core.ReadonlyArray
+import js.core.jso
 
 /**
  * The view model for the [Geocoder] widget.
@@ -119,8 +120,5 @@ external class GeocoderViewModel(options: ConstructorOptions) {
 
 inline fun GeocoderViewModel(
     block: GeocoderViewModel.ConstructorOptions.() -> Unit,
-): GeocoderViewModel {
-    val options: GeocoderViewModel.ConstructorOptions = js("({})")
-    block(options)
-    return GeocoderViewModel(options)
-}
+): GeocoderViewModel =
+    GeocoderViewModel(options = jso(block))

@@ -10,6 +10,7 @@
 package cesium
 
 import js.core.ReadonlyArray
+import js.core.jso
 
 /**
  * Specifies a set of clipping planes. Clipping planes selectively disable rendering in a region on the
@@ -199,8 +200,5 @@ external class ClippingPlaneCollection(options: ConstructorOptions? = definedExt
 
 inline fun ClippingPlaneCollection(
     block: ClippingPlaneCollection.ConstructorOptions.() -> Unit,
-): ClippingPlaneCollection {
-    val options: ClippingPlaneCollection.ConstructorOptions = js("({})")
-    block(options)
-    return ClippingPlaneCollection(options)
-}
+): ClippingPlaneCollection =
+    ClippingPlaneCollection(options = jso(block))

@@ -9,6 +9,8 @@
 
 package cesium
 
+import js.core.jso
+
 /**
  * A sky box around the scene to draw stars.  The sky box is defined using the True Equator Mean Equinox (TEME) axes.
  *
@@ -91,8 +93,5 @@ external class SkyBox(options: ConstructorOptions) {
 
 inline fun SkyBox(
     block: SkyBox.ConstructorOptions.() -> Unit,
-): SkyBox {
-    val options: SkyBox.ConstructorOptions = js("({})")
-    block(options)
-    return SkyBox(options)
-}
+): SkyBox =
+    SkyBox(options = jso(block))

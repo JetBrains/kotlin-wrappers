@@ -10,6 +10,7 @@
 package cesium
 
 import js.core.ReadonlyArray
+import js.core.jso
 
 /**
  * A ParticleSystem manages the updating and display of a collection of particles.
@@ -283,8 +284,5 @@ typealias UpdateCallback = (particle: Particle, dt: Double) -> Unit
 
 inline fun ParticleSystem(
     block: ParticleSystem.ConstructorOptions.() -> Unit,
-): ParticleSystem {
-    val options: ParticleSystem.ConstructorOptions = js("({})")
-    block(options)
-    return ParticleSystem(options)
-}
+): ParticleSystem =
+    ParticleSystem(options = jso(block))

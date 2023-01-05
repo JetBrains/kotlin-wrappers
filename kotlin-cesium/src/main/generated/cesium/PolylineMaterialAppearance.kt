@@ -9,6 +9,8 @@
 
 package cesium
 
+import js.core.jso
+
 /**
  * An appearance for [PolylineGeometry] that supports shading with materials.
  * ```
@@ -136,8 +138,5 @@ external class PolylineMaterialAppearance(options: ConstructorOptions? = defined
 
 inline fun PolylineMaterialAppearance(
     block: PolylineMaterialAppearance.ConstructorOptions.() -> Unit,
-): PolylineMaterialAppearance {
-    val options: PolylineMaterialAppearance.ConstructorOptions = js("({})")
-    block(options)
-    return PolylineMaterialAppearance(options)
-}
+): PolylineMaterialAppearance =
+    PolylineMaterialAppearance(options = jso(block))

@@ -10,6 +10,7 @@
 package cesium
 
 import js.core.ReadonlyArray
+import js.core.jso
 
 /**
  * A spline that uses piecewise linear interpolation to create a curve.
@@ -93,8 +94,5 @@ external class LinearSpline(options: ConstructorOptions) {
 
 inline fun LinearSpline(
     block: LinearSpline.ConstructorOptions.() -> Unit,
-): LinearSpline {
-    val options: LinearSpline.ConstructorOptions = js("({})")
-    block(options)
-    return LinearSpline(options)
-}
+): LinearSpline =
+    LinearSpline(options = jso(block))
