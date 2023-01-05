@@ -3,6 +3,7 @@
 package web.html
 
 import web.dom.DOMTokenList
+import web.window.WindowTarget
 
 abstract external class HTMLAreaElement :
     HTMLElement,
@@ -22,5 +23,5 @@ abstract external class HTMLAreaElement :
     var shape: String
 
     /** Sets or retrieves the window or frame at which to target content. */
-    var target: String
+    var target: WindowTarget
 }

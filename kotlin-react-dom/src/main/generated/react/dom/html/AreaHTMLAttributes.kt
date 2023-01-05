@@ -3,6 +3,7 @@
 package react.dom.html
 
 import web.dom.Element
+import web.window.WindowTarget
 
 external interface AreaHTMLAttributes<T : Element> : HTMLAttributes<T> {
     var alt: String?
@@ -14,5 +15,5 @@ external interface AreaHTMLAttributes<T : Element> : HTMLAttributes<T> {
     var referrerPolicy: ReferrerPolicy?
     var rel: String?
     var shape: String?
-    var target: String?
+    var target: WindowTarget?
 }

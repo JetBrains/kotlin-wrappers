@@ -69,13 +69,13 @@ sealed external class Window :
 
     fun open(
         url: String = definedExternally,
-        target: String = definedExternally,
+        target: WindowTarget = definedExternally,
         features: String = definedExternally,
     ): WindowProxy?
 
     fun open(
         url: URL,
-        target: String = definedExternally,
+        target: WindowTarget = definedExternally,
         features: String = definedExternally,
     ): WindowProxy?
 

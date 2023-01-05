@@ -3,6 +3,7 @@
 package web.html
 
 import web.dom.DOMTokenList
+import web.window.WindowTarget
 
 abstract external class HTMLAnchorElement :
     HTMLElement,
@@ -19,7 +20,7 @@ abstract external class HTMLAnchorElement :
     val relList: DOMTokenList
 
     /** Sets or retrieves the window or frame at which to target content. */
-    var target: String
+    var target: WindowTarget
 
     /** Retrieves or sets the text of the object as a string. */
     var text: String

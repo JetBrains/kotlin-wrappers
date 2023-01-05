@@ -3,6 +3,7 @@
 package react.dom.html
 
 import web.dom.Element
+import web.window.WindowTarget
 
 external interface FormHTMLAttributes<T : Element> : HTMLAttributes<T> {
     var acceptCharset: String?
@@ -12,6 +13,6 @@ external interface FormHTMLAttributes<T : Element> : HTMLAttributes<T> {
     var method: String?
     var name: String?
     var noValidate: Boolean?
-    var target: String?
+    var target: WindowTarget?
     var rel: String?
 }

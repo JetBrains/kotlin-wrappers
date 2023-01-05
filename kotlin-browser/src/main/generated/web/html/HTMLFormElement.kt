@@ -5,6 +5,7 @@ package web.html
 import js.core.ArrayLike
 import js.core.JsIterable
 import web.dom.Element
+import web.window.WindowTarget
 
 abstract external class HTMLFormElement :
     HTMLElement,
@@ -38,7 +39,7 @@ abstract external class HTMLFormElement :
     var noValidate: Boolean
 
     /** Sets or retrieves the window or frame at which to target content. */
-    var target: String
+    var target: WindowTarget
 
     /** Returns whether a form will validate when it is submitted, without having to submit it. */
     fun checkValidity(): Boolean
