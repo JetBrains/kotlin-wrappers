@@ -25,7 +25,7 @@ sealed external class Window :
     val frames: ArrayLike<Window>
     val innerHeight: Int
     val innerWidth: Int
-    var name: String
+    var name: WindowName
 
     /** Available only in secure contexts. */
     var ondevicemotion: EventHandler<DeviceMotionEvent>?
