@@ -2,7 +2,7 @@
 
 package ringui
 
-import react.dom.html.AnchorTarget
+import web.window.WindowTarget
 
 sealed external interface IFooterItem
 
@@ -14,5 +14,5 @@ external interface FooterItem : IFooterItem {
     var url: String
     var label: String
     var title: String
-    var target: AnchorTarget
+    var target: WindowTarget
 }

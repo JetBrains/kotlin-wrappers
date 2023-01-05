@@ -3,6 +3,7 @@
 package react.dom.html
 
 import web.dom.Element
+import web.window.WindowTarget
 
 external interface AnchorHTMLAttributes<T : Element> : HTMLAttributes<T> {
     var download: Any?
@@ -11,7 +12,7 @@ external interface AnchorHTMLAttributes<T : Element> : HTMLAttributes<T> {
     var media: String?
     var ping: String?
     var rel: String?
-    var target: AnchorTarget?
+    var target: WindowTarget?
     var type: String?
     var referrerPolicy: ReferrerPolicy?
 }

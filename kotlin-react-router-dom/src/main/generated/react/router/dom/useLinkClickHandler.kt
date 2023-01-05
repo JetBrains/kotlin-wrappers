@@ -6,6 +6,7 @@
 package react.router.dom
 
 import web.dom.Element
+import web.window.WindowTarget
 
 /**
  * Handles the click behavior for router `<Link>` components. This is useful if
@@ -13,7 +14,7 @@ import web.dom.Element
  * use in our exported `<Link>`.
  */
 external interface ClickHandlerOptions {
-    var target: react.dom.html.AnchorTarget?
+    var target: WindowTarget?
     var replace: Boolean?
     var state: history.LocationState?
 }
