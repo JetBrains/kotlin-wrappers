@@ -2,11 +2,6 @@ package web.performance
 
 import js.core.HighResTimeStamp
 
-external interface PerformanceMarkOptions {
-    var detail: Any?
-    var startTime: HighResTimeStamp?
-}
-
 external class PerformanceMark(
     markName: String,
     markOptions: PerformanceMarkOptions = definedExternally,
