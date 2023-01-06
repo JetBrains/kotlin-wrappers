@@ -1,9 +1,10 @@
 package styled.sheets
 
 import js.core.asList
+import js.core.globalThis
 import web.html.HTMLStyleElement
+import web.timers.requestIdleCallback
 import web.timers.setTimeout
-import web.window.window
 
 private typealias Rules = Iterable<String>
 
@@ -39,9 +40,8 @@ internal class CSSOMSheet(
             return
         }
         setTimeout({
-            val idleCallback = window.asDynamic().requestIdleCallback
-            if (idleCallback != undefined && removeMode == RemoveMode.OnBrowserIdle) {
-                idleCallback {
+            if (!!globalThis.requestIdleCallback && removeMode == RemoveMode.OnBrowserIdle) {
+                requestIdleCallback {
                     isCleanRequested = false
                     clean()
                 }
