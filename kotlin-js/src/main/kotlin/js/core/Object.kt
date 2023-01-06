@@ -17,6 +17,7 @@ external class Object internal constructor() {
         fun <R, T : R> freeze(o: T): R
         fun <T> getOwnPropertyDescriptor(o: Any, p: String): PropertyDescriptor<T>
         fun getOwnPropertyNames(o: Any): ReadonlyArray<String>
+        fun getOwnPropertySymbols(o: Any): ReadonlyArray<Symbol>
         fun <P : Any, T : P> getPrototypeOf(o: T): P
         fun hasOwn(o: Any, v: String /* PropertyKey */): Boolean
         fun hasOwn(o: Any, v: Number /* PropertyKey */): Boolean
