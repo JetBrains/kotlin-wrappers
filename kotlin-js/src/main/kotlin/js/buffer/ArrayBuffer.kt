@@ -1,9 +1,12 @@
+@file:Suppress(
+    "EXTERNAL_CLASS_CONSTRUCTOR_PROPERTY_PARAMETER",
+)
+
 package js.buffer
 
 external class ArrayBuffer(
-    byteLength: Int,
+    val byteLength: Int,
 ) : BufferSource {
-    val byteLength: Int
     fun slice(
         begin: Int,
         end: Int = definedExternally,
