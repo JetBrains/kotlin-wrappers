@@ -1,13 +1,14 @@
+@file:Suppress(
+    "EXTERNAL_CLASS_CONSTRUCTOR_PROPERTY_PARAMETER",
+)
+
 package js.buffer
 
 external class DataView(
-    buffer: ArrayBuffer,
-    byteOffset: Int = definedExternally,
-    byteLength: Int = definedExternally,
+    override val buffer: ArrayBuffer,
+    override val byteOffset: Int = definedExternally,
+    override val byteLength: Int = definedExternally,
 ) : ArrayBufferView {
-    override val buffer: ArrayBuffer
-    override val byteOffset: Int
-    override val byteLength: Int
     fun getInt8(byteOffset: Int): Byte
     fun getUint8(byteOffset: Int): Byte
     fun getInt16(
