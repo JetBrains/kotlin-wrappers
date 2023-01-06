@@ -5,7 +5,7 @@ external class Object internal constructor() {
     fun isPrototypeOf(v: Any): Boolean
     fun propertyIsEnumerable(v: String): Boolean
     fun toLocaleString(): String
-    fun valueOf(): dynamic
+    fun valueOf(): Any
 
     companion object {
         fun <T : Any, R : T> assign(dest: R, vararg src: T?): R
