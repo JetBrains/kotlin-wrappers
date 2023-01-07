@@ -6,7 +6,8 @@ package js.buffer
 
 external class ArrayBuffer(
     val byteLength: Int,
-) : BufferSource {
+) : ArrayBufferLike,
+    BufferSource {
     fun slice(
         begin: Int,
         end: Int = definedExternally,
