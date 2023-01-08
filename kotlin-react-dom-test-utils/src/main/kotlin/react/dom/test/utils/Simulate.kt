@@ -3,6 +3,7 @@
 
 package react.dom.test.utils
 
+import web.animations.AnimationEventInit
 import web.events.EventInit
 
 /**
@@ -11,9 +12,9 @@ import web.events.EventInit
  */
 external object Simulate {
     val abort: EventSimulator<EventInit>
-    val animationEnd: EventSimulator<EventInit>
-    val animationIteration: EventSimulator<EventInit>
-    val animationStart: EventSimulator<EventInit>
+    val animationEnd: EventSimulator<AnimationEventInit>
+    val animationIteration: EventSimulator<AnimationEventInit>
+    val animationStart: EventSimulator<AnimationEventInit>
     val blur: EventSimulator<EventInit>
     val canPlay: EventSimulator<EventInit>
     val canPlayThrough: EventSimulator<EventInit>
