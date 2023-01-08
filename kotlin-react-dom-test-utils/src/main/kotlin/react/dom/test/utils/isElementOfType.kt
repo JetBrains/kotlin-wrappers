@@ -1,0 +1,15 @@
+@file:JsModule("react-dom/test-utils")
+@file:JsNonModule
+
+package react.dom.test.utils
+
+import react.ComponentType
+import react.ReactElement
+
+/**
+ * Returns `true` if `element` is a React element whose type is of a React `type`.
+ */
+external fun isElementOfType(
+    element: ReactElement<*>,
+    type: ComponentType<*>,
+): Boolean
