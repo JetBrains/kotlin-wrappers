@@ -8,6 +8,7 @@ import web.clipboard.ClipboardEventInit
 import web.cssom.TransitionEventInit
 import web.events.EventInit
 import web.events.ProgressEventInit
+import web.html.SubmitEventInit
 import web.uievents.*
 
 /**
@@ -72,7 +73,7 @@ external object Simulate {
     val seeking: EventSimulator<EventInit>
     val select: EventSimulator<EventInit>
     val stalled: EventSimulator<EventInit>
-    val submit: EventSimulator<EventInit>
+    val submit: EventSimulator<SubmitEventInit>
     val suspend: EventSimulator<EventInit>
     val timeUpdate: EventSimulator<EventInit>
     val touchCancel: EventSimulator<TouchEventInit>
