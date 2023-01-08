@@ -1,6 +1,6 @@
 package js.typedarrays
 
-import js.buffer.ArrayBuffer
+import js.buffer.ArrayBufferLike
 import js.core.JsIterable
 import js.core.ReadonlyArray
 
@@ -10,7 +10,7 @@ open external class Int32Array() :
     constructor(elements: JsIterable<Int>)
     constructor(elements: ReadonlyArray<Int>)
     constructor(
-        buffer: ArrayBuffer,
+        buffer: ArrayBufferLike,
         byteOffset: Int = definedExternally,
         length: Int = definedExternally
     )
