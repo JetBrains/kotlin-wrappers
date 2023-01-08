@@ -1,6 +1,5 @@
 package js.typedarrays
 
-import js.buffer.ArrayBufferLike
 import js.buffer.ArrayBufferView
 import js.core.ArrayLike
 import js.core.JsIterable
@@ -11,10 +10,6 @@ sealed external class TypedArray<S : TypedArray<S, T>, T : Any /* Number */> :
     ArrayBufferView,
     ArrayLike<T>,
     JsIterable<T> {
-
-    override val length: Int
-    override val buffer: ArrayBufferLike
-    override val byteOffset: Int
 
     /**
      * Returns the item located at the specified index.
