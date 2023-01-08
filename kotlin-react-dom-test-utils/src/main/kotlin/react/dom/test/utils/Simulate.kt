@@ -26,9 +26,9 @@ external object Simulate {
     val canPlayThrough: EventSimulator<EventInit>
     val change: EventSimulator<EventInit>
     val click: EventSimulator<MouseEventInit>
-    val compositionEnd: EventSimulator<EventInit>
-    val compositionStart: EventSimulator<EventInit>
-    val compositionUpdate: EventSimulator<EventInit>
+    val compositionEnd: EventSimulator<CompositionEventInit>
+    val compositionStart: EventSimulator<CompositionEventInit>
+    val compositionUpdate: EventSimulator<CompositionEventInit>
     val contextMenu: EventSimulator<MouseEventInit>
     val copy: EventSimulator<ClipboardEventInit>
     val cut: EventSimulator<ClipboardEventInit>
