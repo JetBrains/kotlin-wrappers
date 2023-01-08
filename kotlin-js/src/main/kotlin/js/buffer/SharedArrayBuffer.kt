@@ -5,11 +5,11 @@
 package js.buffer
 
 external class SharedArrayBuffer(
-    val byteLength: Int,
+    override val byteLength: Int,
 ) : ArrayBufferLike,
     BufferSource {
-    fun slice(
+    override fun slice(
         begin: Int,
-        end: Int = definedExternally,
+        end: Int,
     ): SharedArrayBuffer
 }
