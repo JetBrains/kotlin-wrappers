@@ -29,14 +29,14 @@ external object Simulate {
     val copy: EventSimulator<EventInit>
     val cut: EventSimulator<EventInit>
     val doubleClick: EventSimulator<EventInit>
-    val drag: EventSimulator<EventInit>
-    val dragEnd: EventSimulator<EventInit>
-    val dragEnter: EventSimulator<EventInit>
-    val dragExit: EventSimulator<EventInit>
-    val dragLeave: EventSimulator<EventInit>
-    val dragOver: EventSimulator<EventInit>
-    val dragStart: EventSimulator<EventInit>
-    val drop: EventSimulator<EventInit>
+    val drag: EventSimulator<DragEventInit>
+    val dragEnd: EventSimulator<DragEventInit>
+    val dragEnter: EventSimulator<DragEventInit>
+    val dragExit: EventSimulator<DragEventInit>
+    val dragLeave: EventSimulator<DragEventInit>
+    val dragOver: EventSimulator<DragEventInit>
+    val dragStart: EventSimulator<DragEventInit>
+    val drop: EventSimulator<DragEventInit>
     val durationChange: EventSimulator<EventInit>
     val emptied: EventSimulator<EventInit>
     val encrypted: EventSimulator<EventInit>
