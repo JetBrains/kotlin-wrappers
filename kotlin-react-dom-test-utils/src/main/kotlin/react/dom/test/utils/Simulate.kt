@@ -6,6 +6,7 @@ package react.dom.test.utils
 import web.animations.AnimationEventInit
 import web.events.EventInit
 import web.uievents.FocusEventInit
+import web.uievents.KeyboardEventInit
 
 /**
  * Simulate an event dispatch on a DOM node with optional `eventData` event data.
@@ -44,9 +45,9 @@ external object Simulate {
     val focus: EventSimulator<FocusEventInit>
     val input: EventSimulator<EventInit>
     val invalid: EventSimulator<EventInit>
-    val keyDown: EventSimulator<EventInit>
-    val keyPress: EventSimulator<EventInit>
-    val keyUp: EventSimulator<EventInit>
+    val keyDown: EventSimulator<KeyboardEventInit>
+    val keyPress: EventSimulator<KeyboardEventInit>
+    val keyUp: EventSimulator<KeyboardEventInit>
     val load: EventSimulator<EventInit>
     val loadStart: EventSimulator<EventInit>
     val loadedData: EventSimulator<EventInit>
