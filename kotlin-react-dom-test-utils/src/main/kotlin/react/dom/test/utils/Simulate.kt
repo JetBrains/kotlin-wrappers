@@ -5,6 +5,7 @@ package react.dom.test.utils
 
 import web.animations.AnimationEventInit
 import web.events.EventInit
+import web.uievents.FocusEventInit
 
 /**
  * Simulate an event dispatch on a DOM node with optional `eventData` event data.
@@ -15,7 +16,7 @@ external object Simulate {
     val animationEnd: EventSimulator<AnimationEventInit>
     val animationIteration: EventSimulator<AnimationEventInit>
     val animationStart: EventSimulator<AnimationEventInit>
-    val blur: EventSimulator<EventInit>
+    val blur: EventSimulator<FocusEventInit>
     val canPlay: EventSimulator<EventInit>
     val canPlayThrough: EventSimulator<EventInit>
     val change: EventSimulator<EventInit>
@@ -40,7 +41,7 @@ external object Simulate {
     val encrypted: EventSimulator<EventInit>
     val ended: EventSimulator<EventInit>
     val error: EventSimulator<EventInit>
-    val focus: EventSimulator<EventInit>
+    val focus: EventSimulator<FocusEventInit>
     val input: EventSimulator<EventInit>
     val invalid: EventSimulator<EventInit>
     val keyDown: EventSimulator<EventInit>
