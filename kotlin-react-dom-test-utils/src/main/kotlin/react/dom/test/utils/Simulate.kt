@@ -8,6 +8,7 @@ import web.events.EventInit
 import web.uievents.FocusEventInit
 import web.uievents.KeyboardEventInit
 import web.uievents.MouseEventInit
+import web.uievents.TouchEventInit
 
 /**
  * Simulate an event dispatch on a DOM node with optional `eventData` event data.
@@ -74,10 +75,10 @@ external object Simulate {
     val submit: EventSimulator<EventInit>
     val suspend: EventSimulator<EventInit>
     val timeUpdate: EventSimulator<EventInit>
-    val touchCancel: EventSimulator<EventInit>
-    val touchEnd: EventSimulator<EventInit>
-    val touchMove: EventSimulator<EventInit>
-    val touchStart: EventSimulator<EventInit>
+    val touchCancel: EventSimulator<TouchEventInit>
+    val touchEnd: EventSimulator<TouchEventInit>
+    val touchMove: EventSimulator<TouchEventInit>
+    val touchStart: EventSimulator<TouchEventInit>
     val transitionEnd: EventSimulator<EventInit>
     val volumeChange: EventSimulator<EventInit>
     val waiting: EventSimulator<EventInit>
