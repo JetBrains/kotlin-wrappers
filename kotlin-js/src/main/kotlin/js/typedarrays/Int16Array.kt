@@ -14,6 +14,8 @@ open external class Int16Array(
     constructor(elements: JsIterable<Short>)
     constructor(elements: ReadonlyArray<Short>)
 
+    override val byteLength: Int
+
     companion object {
         val BYTES_PER_ELEMENT: Int
     }

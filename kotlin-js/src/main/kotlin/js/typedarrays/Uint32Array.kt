@@ -14,6 +14,8 @@ open external class Uint32Array(
     constructor(elements: JsIterable<Int>)
     constructor(elements: ReadonlyArray<Int>)
 
+    override val byteLength: Int
+
     companion object {
         val BYTES_PER_ELEMENT: Int
     }

@@ -15,7 +15,6 @@ sealed external class TypedArray<S : TypedArray<S, T>, T : Any /* Number */> :
     override val length: Int
     override val buffer: ArrayBufferLike
     override val byteOffset: Int
-    override val byteLength: Int
 
     /**
      * Returns the item located at the specified index.

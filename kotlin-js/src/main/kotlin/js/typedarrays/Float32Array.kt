@@ -14,6 +14,8 @@ open external class Float32Array(
     constructor(elements: JsIterable<Float>)
     constructor(elements: ReadonlyArray<Float>)
 
+    override val byteLength: Int
+
     companion object {
         val BYTES_PER_ELEMENT: Int
     }

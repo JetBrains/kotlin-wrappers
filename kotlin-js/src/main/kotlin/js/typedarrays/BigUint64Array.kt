@@ -15,6 +15,8 @@ open external class BigUint64Array(
     constructor(elements: JsIterable<BigInt>)
     constructor(elements: ReadonlyArray<BigInt>)
 
+    override val byteLength: Int
+
     companion object {
         val BYTES_PER_ELEMENT: Int
     }
