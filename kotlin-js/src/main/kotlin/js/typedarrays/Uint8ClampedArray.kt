@@ -18,8 +18,6 @@ open external class Uint8ClampedArray(
     constructor(elements: JsIterable<Byte>)
     constructor(elements: ReadonlyArray<Byte>)
 
-    override val byteLength: Int
-
     companion object {
         val BYTES_PER_ELEMENT: Int
     }

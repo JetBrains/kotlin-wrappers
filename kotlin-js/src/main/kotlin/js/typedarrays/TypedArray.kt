@@ -11,6 +11,8 @@ sealed external class TypedArray<S : TypedArray<S, T>, T : Any /* Number */> :
     ArrayLike<T>,
     JsIterable<T> {
 
+    override val byteLength: Int
+
     /**
      * Returns the item located at the specified index.
      * @param index The zero-based index of the desired code unit. A negative index will count back from the last item.

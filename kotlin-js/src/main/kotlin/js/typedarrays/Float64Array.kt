@@ -18,8 +18,6 @@ open external class Float64Array(
     constructor(elements: JsIterable<Double>)
     constructor(elements: ReadonlyArray<Double>)
 
-    override val byteLength: Int
-
     companion object {
         val BYTES_PER_ELEMENT: Int
     }
