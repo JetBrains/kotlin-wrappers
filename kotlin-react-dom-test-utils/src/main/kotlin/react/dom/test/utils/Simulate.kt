@@ -29,7 +29,7 @@ external object Simulate {
     val contextMenu: EventSimulator<EventInit>
     val copy: EventSimulator<EventInit>
     val cut: EventSimulator<EventInit>
-    val doubleClick: EventSimulator<EventInit>
+    val doubleClick: EventSimulator<MouseEventInit>
     val drag: EventSimulator<DragEventInit>
     val dragEnd: EventSimulator<DragEventInit>
     val dragEnter: EventSimulator<DragEventInit>
