@@ -1,6 +1,6 @@
 package js.typedarrays
 
-import js.buffer.ArrayBuffer
+import js.buffer.ArrayBufferLike
 import js.buffer.ArrayBufferView
 import js.core.ArrayLike
 import js.core.JsIterable
@@ -13,7 +13,7 @@ sealed external class TypedArray<S : TypedArray<S, T>, T : Any /* Number */> :
     JsIterable<T> {
 
     override val length: Int
-    override val buffer: ArrayBuffer
+    override val buffer: ArrayBufferLike
     override val byteOffset: Int
     override val byteLength: Int
 
