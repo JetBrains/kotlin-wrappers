@@ -22,6 +22,7 @@ dependencies {
         api(project(":kotlin-react-core"))
         api(project(":kotlin-react-dom"))
         api(project(":kotlin-react-dom-legacy"))
+        api(project(":kotlin-react-dom-test-utils"))
         api(project(":kotlin-react-legacy"))
         api(project(":kotlin-react-popper"))
         api(project(":kotlin-react-redux"))

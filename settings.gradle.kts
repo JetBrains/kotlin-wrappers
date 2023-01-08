@@ -72,6 +72,9 @@ include("kotlin-react-dom")
 // Kotlin/JS: React DOM legacy wrappers
 include("kotlin-react-dom-legacy")
 
+// Kotlin/JS: React DOM Test Utilities wrappers
+include("kotlin-react-dom-test-utils")
+
 // Kotlin/JS: React legacy wrappers
 include("kotlin-react-legacy")
 

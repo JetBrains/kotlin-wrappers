@@ -4,6 +4,7 @@ private val TARGET_ALIASES = mapOf(
     "react-core" to "react",
     "react-dom" to "react",
     "react-dom-legacy" to "react",
+    "react-dom-test-utils" to "react",
     "react-legacy" to "react",
 
     "styled-components" to "styled",
