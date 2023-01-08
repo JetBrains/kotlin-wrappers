@@ -6,6 +6,7 @@ package react.dom.test.utils
 import web.animations.AnimationEventInit
 import web.cssom.TransitionEventInit
 import web.events.EventInit
+import web.events.ProgressEventInit
 import web.uievents.*
 
 /**
@@ -63,7 +64,7 @@ external object Simulate {
     val pause: EventSimulator<EventInit>
     val play: EventSimulator<EventInit>
     val playing: EventSimulator<EventInit>
-    val progress: EventSimulator<EventInit>
+    val progress: EventSimulator<ProgressEventInit>
     val rateChange: EventSimulator<EventInit>
     val scroll: EventSimulator<EventInit>
     val seeked: EventSimulator<EventInit>
