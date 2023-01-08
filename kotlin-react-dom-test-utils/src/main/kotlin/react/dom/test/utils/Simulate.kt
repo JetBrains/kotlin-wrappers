@@ -7,6 +7,7 @@ import web.animations.AnimationEventInit
 import web.events.EventInit
 import web.uievents.FocusEventInit
 import web.uievents.KeyboardEventInit
+import web.uievents.MouseEventInit
 
 /**
  * Simulate an event dispatch on a DOM node with optional `eventData` event data.
@@ -21,7 +22,7 @@ external object Simulate {
     val canPlay: EventSimulator<EventInit>
     val canPlayThrough: EventSimulator<EventInit>
     val change: EventSimulator<EventInit>
-    val click: EventSimulator<EventInit>
+    val click: EventSimulator<MouseEventInit>
     val compositionEnd: EventSimulator<EventInit>
     val compositionStart: EventSimulator<EventInit>
     val compositionUpdate: EventSimulator<EventInit>
@@ -52,13 +53,13 @@ external object Simulate {
     val loadStart: EventSimulator<EventInit>
     val loadedData: EventSimulator<EventInit>
     val loadedMetadata: EventSimulator<EventInit>
-    val mouseDown: EventSimulator<EventInit>
-    val mouseEnter: EventSimulator<EventInit>
-    val mouseLeave: EventSimulator<EventInit>
-    val mouseMove: EventSimulator<EventInit>
-    val mouseOut: EventSimulator<EventInit>
-    val mouseOver: EventSimulator<EventInit>
-    val mouseUp: EventSimulator<EventInit>
+    val mouseDown: EventSimulator<MouseEventInit>
+    val mouseEnter: EventSimulator<MouseEventInit>
+    val mouseLeave: EventSimulator<MouseEventInit>
+    val mouseMove: EventSimulator<MouseEventInit>
+    val mouseOut: EventSimulator<MouseEventInit>
+    val mouseOver: EventSimulator<MouseEventInit>
+    val mouseUp: EventSimulator<MouseEventInit>
     val paste: EventSimulator<EventInit>
     val pause: EventSimulator<EventInit>
     val play: EventSimulator<EventInit>
