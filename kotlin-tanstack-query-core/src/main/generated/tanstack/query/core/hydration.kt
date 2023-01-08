@@ -47,6 +47,10 @@ typealias ShouldDehydrateQueryFunction = (query: Query<*, *, *, *>) -> Boolean
 
 typealias ShouldDehydrateMutationFunction = (mutation: Mutation<*, *, *, *>) -> Boolean
 
+external fun defaultShouldDehydrateMutation(mutation: Mutation<*, *, *, *>): Boolean
+
+external fun defaultShouldDehydrateQuery(query: Query<*, *, *, *>): Boolean
+
 external fun dehydrate(
     client: QueryClient,
     options: DehydrateOptions = definedExternally,
