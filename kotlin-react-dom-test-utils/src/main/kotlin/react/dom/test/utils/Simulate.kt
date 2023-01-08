@@ -4,6 +4,7 @@
 package react.dom.test.utils
 
 import web.animations.AnimationEventInit
+import web.clipboard.ClipboardEventInit
 import web.cssom.TransitionEventInit
 import web.events.EventInit
 import web.events.ProgressEventInit
@@ -27,8 +28,8 @@ external object Simulate {
     val compositionStart: EventSimulator<EventInit>
     val compositionUpdate: EventSimulator<EventInit>
     val contextMenu: EventSimulator<MouseEventInit>
-    val copy: EventSimulator<EventInit>
-    val cut: EventSimulator<EventInit>
+    val copy: EventSimulator<ClipboardEventInit>
+    val cut: EventSimulator<ClipboardEventInit>
     val doubleClick: EventSimulator<MouseEventInit>
     val drag: EventSimulator<DragEventInit>
     val dragEnd: EventSimulator<DragEventInit>
@@ -60,7 +61,7 @@ external object Simulate {
     val mouseOut: EventSimulator<MouseEventInit>
     val mouseOver: EventSimulator<MouseEventInit>
     val mouseUp: EventSimulator<MouseEventInit>
-    val paste: EventSimulator<EventInit>
+    val paste: EventSimulator<ClipboardEventInit>
     val pause: EventSimulator<EventInit>
     val play: EventSimulator<EventInit>
     val playing: EventSimulator<EventInit>
