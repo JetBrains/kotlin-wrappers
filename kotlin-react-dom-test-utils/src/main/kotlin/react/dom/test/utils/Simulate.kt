@@ -4,11 +4,9 @@
 package react.dom.test.utils
 
 import web.animations.AnimationEventInit
+import web.cssom.TransitionEventInit
 import web.events.EventInit
-import web.uievents.FocusEventInit
-import web.uievents.KeyboardEventInit
-import web.uievents.MouseEventInit
-import web.uievents.TouchEventInit
+import web.uievents.*
 
 /**
  * Simulate an event dispatch on a DOM node with optional `eventData` event data.
@@ -79,8 +77,8 @@ external object Simulate {
     val touchEnd: EventSimulator<TouchEventInit>
     val touchMove: EventSimulator<TouchEventInit>
     val touchStart: EventSimulator<TouchEventInit>
-    val transitionEnd: EventSimulator<EventInit>
+    val transitionEnd: EventSimulator<TransitionEventInit>
     val volumeChange: EventSimulator<EventInit>
     val waiting: EventSimulator<EventInit>
-    val wheel: EventSimulator<EventInit>
+    val wheel: EventSimulator<WheelEventInit>
 }
