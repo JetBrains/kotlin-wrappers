@@ -8,6 +8,7 @@ import web.clipboard.ClipboardEventInit
 import web.cssom.TransitionEventInit
 import web.events.EventInit
 import web.events.ProgressEventInit
+import web.html.MediaEncryptedEventInit
 import web.html.SubmitEventInit
 import web.uievents.*
 
@@ -42,7 +43,7 @@ external object Simulate {
     val drop: EventSimulator<DragEventInit>
     val durationChange: EventSimulator<EventInit>
     val emptied: EventSimulator<EventInit>
-    val encrypted: EventSimulator<EventInit>
+    val encrypted: EventSimulator<MediaEncryptedEventInit>
     val ended: EventSimulator<EventInit>
     val error: EventSimulator<EventInit>
     val focus: EventSimulator<FocusEventInit>
