@@ -5,6 +5,7 @@ package react.dom.test.utils
 
 import kotlin.js.Promise
 
-external fun <T> act(
+@JsName("act")
+external fun <T> actAsync(
     callback: () -> T, /* | Promise<T> */
 ): Promise<T>
