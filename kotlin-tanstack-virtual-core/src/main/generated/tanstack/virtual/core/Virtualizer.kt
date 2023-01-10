@@ -27,7 +27,7 @@ external class Virtualizer<TScrollElement : Any /* Element | Window */, TItemEle
     var getOffsetForAlignment: (toOffset: Int, align: ScrollAlignment) -> Int
     var scrollToOffset: (toOffset: Int, options: ScrollToOffsetOptions?) -> Unit
     var scrollToIndex: (index: Int, options: ScrollToIndexOptions?) -> Unit
-    var scrollBy: (adjustments: Int, options: ScrollByOptions?) -> Unit
+    var scrollBy: (delta: Int, options: ScrollToOffsetOptions?) -> Unit
     var getTotalSize: () -> Int
     var measure: () -> Unit
 }
