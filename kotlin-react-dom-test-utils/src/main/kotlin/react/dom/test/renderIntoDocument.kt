@@ -1,7 +1,7 @@
 @file:JsModule("react-dom/test-utils")
 @file:JsNonModule
 
-package react.dom.test.utils
+package react.dom.test
 
 import react.ReactElement
 

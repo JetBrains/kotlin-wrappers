@@ -2,7 +2,7 @@
     "NOTHING_TO_INLINE",
 )
 
-package react.dom.test.utils
+package react.dom.test
 
 import js.core.jso
 import web.dom.Element

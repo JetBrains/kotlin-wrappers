@@ -1,4 +1,4 @@
-package react.dom.test.utils
+package react.dom.test
 
 import kotlinx.coroutines.await
 import kotlin.contracts.InvocationKind
