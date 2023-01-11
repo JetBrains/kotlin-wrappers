@@ -3,10 +3,13 @@ import org.jetbrains.kotlin.gradle.dsl.KotlinJsCompile
 import org.jetbrains.kotlin.gradle.dsl.KotlinJsProjectExtension
 import org.jetbrains.kotlin.gradle.plugin.KotlinJsPluginWrapper
 
-
 tasks.withType<KotlinCompile<*>>().configureEach {
     kotlinOptions {
         allWarningsAsErrors = true
+
+        freeCompilerArgs += listOf(
+            "-opt-in=kotlin.contracts.ExperimentalContracts",
+        )
     }
 }
 
