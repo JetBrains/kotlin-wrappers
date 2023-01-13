@@ -90,6 +90,9 @@ include("kotlin-react-router-dom")
 // Kotlin/JS: React Select wrappers
 include("kotlin-react-select")
 
+// Kotlin/JS: React Use wrappers
+include("kotlin-react-use")
+
 // Kotlin/JS: Redux wrappers
 include("kotlin-redux")
 
