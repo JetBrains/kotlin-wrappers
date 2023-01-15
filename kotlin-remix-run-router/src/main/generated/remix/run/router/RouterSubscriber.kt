@@ -7,11 +7,8 @@
 
 package remix.run.router
 
-import web.window.Window
 
-
-external interface UrlHistoryOptions {
-    var window: Window?
-    var v5Compat: Boolean?
-}
-
+/**
+ * Subscriber function signature for changes to router state
+ */
+typealias RouterSubscriber = (state: RouterState) -> Unit

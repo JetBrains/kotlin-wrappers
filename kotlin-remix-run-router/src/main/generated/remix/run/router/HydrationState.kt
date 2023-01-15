@@ -7,11 +7,8 @@
 
 package remix.run.router
 
-import web.window.Window
 
-
-external interface UrlHistoryOptions {
-    var window: Window?
-    var v5Compat: Boolean?
-}
-
+/**
+ * Data that can be passed into hydrate a Router from SSR
+ */
+typealias HydrationState = RouterState

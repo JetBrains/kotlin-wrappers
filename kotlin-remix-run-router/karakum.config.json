@@ -1,7 +1,8 @@
 {
     "input": [
         "<nodeModules>/@remix-run/router/dist/history.d.ts",
-        "<nodeModules>/@remix-run/router/dist/utils.d.ts"
+        "<nodeModules>/@remix-run/router/dist/utils.d.ts",
+        "<nodeModules>/@remix-run/router/dist/router.d.ts"
     ],
     "output": "src/main/generated",
     "libraryName": "@remix-run/router",
@@ -18,7 +19,7 @@
             "web.url.URL"
         ],
         "UrlHistoryOptions.kt": [
-            "dom.html.Window"
+            "web.window.Window"
         ],
         "DataFunctionArgs.kt": [
             "web.http.Request"
@@ -51,6 +52,37 @@
         ],
         "ErrorResult.kt": [
             "web.http.Headers"
+        ],
+        "FetcherStatesLoading.kt": [
+            "web.http.FormData"
+        ],
+        "FetcherStatesSubmitting.kt": [
+            "web.http.FormData"
+        ],
+        "NavigationStatesLoading.kt": [
+            "web.http.FormData"
+        ],
+        "NavigationStatesSubmitting.kt": [
+            "web.http.FormData"
+        ],
+        "Router.kt": [
+            "js.core.Record",
+            "web.url.URL",
+            "web.abort.AbortController"
+        ],
+        "RouterState.kt": [
+            "history.Action as HistoryAction"
+        ],
+        "StaticHandler.kt": [
+            "kotlin.js.Promise",
+            "web.http.Request"
+        ],
+        "StaticHandlerContext.kt": [
+            "js.core.Record",
+            "web.http.Headers"
+        ],
+        "SubmissionNavigateOptions.kt": [
+            "web.http.FormData"
         ]
     }
 }

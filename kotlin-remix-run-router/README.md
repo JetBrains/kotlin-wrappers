@@ -10,13 +10,16 @@ Kotlin wrapper for [React Router](https://remix.run/docs/en/v1/other-api/react-r
     * `AgnosticDataRouteObject`
     * `AgnosticRouteObject`
     * `DataResult`
+    * `Fetcher` and `FetcherStates`
 2) Support string unions:
     * `FormEncType`
     * `FormMethod`
+    * `RevalidationState`
 3) Improve typing coverage for types:
     * `DeferredData`
     * `ShouldRevalidateFunctionArgs`
 4) Support indexed type signatures:
     * `RouteData`
-5) Remove redundant `?` automatically
+5) Support getters for types:
+    * `Router`
 

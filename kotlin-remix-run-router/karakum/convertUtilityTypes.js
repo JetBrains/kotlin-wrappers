@@ -8,6 +8,7 @@ module.exports = function (node, context, render) {
             node.typeName.text === "Partial"
             || node.typeName.text === "Readonly"
             || node.typeName.text === "Exclude"
+            || node.typeName.text === "Pick"
         )
     ) {
         return render(node.typeArguments[0])
