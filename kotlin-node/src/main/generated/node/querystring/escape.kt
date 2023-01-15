@@ -1,7 +1,6 @@
 // Automatically generated - do not modify!
 
 @file:JsModule("node:querystring")
-@file:JsNonModule
 
 package node.querystring
 

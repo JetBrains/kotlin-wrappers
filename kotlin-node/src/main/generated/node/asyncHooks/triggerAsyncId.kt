@@ -1,7 +1,6 @@
 // Automatically generated - do not modify!
 
 @file:JsModule("node:async_hooks")
-@file:JsNonModule
 
 package node.asyncHooks
 

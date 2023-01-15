@@ -1,7 +1,6 @@
 // Automatically generated - do not modify!
 
 @file:JsModule("node:net")
-@file:JsNonModule
 
 package node.net
 

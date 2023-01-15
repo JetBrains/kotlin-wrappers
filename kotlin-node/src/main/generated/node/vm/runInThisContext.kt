@@ -1,7 +1,6 @@
 // Automatically generated - do not modify!
 
 @file:JsModule("node:vm")
-@file:JsNonModule
 
 package node.vm
 

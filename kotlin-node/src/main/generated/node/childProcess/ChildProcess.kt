@@ -1,7 +1,6 @@
 // Automatically generated - do not modify!
 
 @file:JsModule("node:child_process")
-@file:JsNonModule
 
 package node.childProcess
 

@@ -1,7 +1,6 @@
 // Automatically generated - do not modify!
 
 @file:JsModule("node:tty")
-@file:JsNonModule
 
 package node.tty
 

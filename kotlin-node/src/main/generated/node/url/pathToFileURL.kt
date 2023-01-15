@@ -1,7 +1,6 @@
 // Automatically generated - do not modify!
 
 @file:JsModule("node:url")
-@file:JsNonModule
 
 package node.url
 
