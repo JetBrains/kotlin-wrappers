@@ -7,11 +7,4 @@
 
 package remix.run.router
 
-import web.window.Window
-
-
-external interface UrlHistoryOptions {
-    var window: Window?
-    var v5Compat: Boolean?
-}
-
+external fun unstable_createStaticHandler(routes: Array<AgnosticRouteObject>): StaticHandler

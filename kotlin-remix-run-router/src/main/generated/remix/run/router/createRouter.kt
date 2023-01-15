@@ -7,11 +7,7 @@
 
 package remix.run.router
 
-import web.window.Window
-
-
-external interface UrlHistoryOptions {
-    var window: Window?
-    var v5Compat: Boolean?
-}
-
+/**
+ * Create a router and listen to history POP navigations
+ */
+external fun createRouter(init: RouterInit): Router
