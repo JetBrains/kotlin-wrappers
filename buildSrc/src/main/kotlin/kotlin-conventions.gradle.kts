@@ -13,7 +13,7 @@ tasks.withType<KotlinCompile<*>>().configureEach {
     }
 }
 
-val moduleDefinition = if (property("modular") == "true") "commonjs" else "umd"
+val moduleDefinition = if (findProperty("modular") == "true") "commonjs" else "umd"
 
 tasks.withType<KotlinJsCompile>().configureEach {
     kotlinOptions {
