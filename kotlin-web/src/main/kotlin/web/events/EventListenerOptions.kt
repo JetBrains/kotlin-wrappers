@@ -7,9 +7,13 @@ package web.events
 import js.core.jso
 import web.abort.AbortSignal
 
-@JsName("null") // IR workaround
-sealed external interface AddEventListenerOptions {
+sealed external interface EventListenerOptions {
     var capture: Boolean?
+}
+
+@JsName("null") // IR workaround
+sealed external interface AddEventListenerOptions :
+    EventListenerOptions {
     var once: Boolean?
     var passive: Boolean?
     var signal: AbortSignal?
