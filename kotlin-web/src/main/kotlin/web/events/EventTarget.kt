@@ -10,7 +10,7 @@ open external class EventTarget : IEventTarget {
     override fun <T : Event> removeEventListener(
         type: EventType<T>,
         callback: EventHandler<T>?,
-        options: AddEventListenerOptions?,
+        options: EventListenerOptions?,
     )
 
     fun dispatchEvent(

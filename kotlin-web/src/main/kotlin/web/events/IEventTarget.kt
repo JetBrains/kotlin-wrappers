@@ -10,6 +10,6 @@ external interface IEventTarget {
     fun <T : Event> removeEventListener(
         type: EventType<T>,
         callback: EventHandler<T>?,
-        options: AddEventListenerOptions? = definedExternally,
+        options: EventListenerOptions? = definedExternally,
     )
 }
