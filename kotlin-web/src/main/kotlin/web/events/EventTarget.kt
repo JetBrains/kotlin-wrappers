@@ -4,13 +4,13 @@ open external class EventTarget : IEventTarget {
     override fun <T : Event> addEventListener(
         type: EventType<T>,
         callback: EventHandler<T>?,
-        options: EventHandlerOptions?,
+        options: AddEventListenerOptions?,
     )
 
     override fun <T : Event> removeEventListener(
         type: EventType<T>,
         callback: EventHandler<T>?,
-        options: EventHandlerOptions?,
+        options: AddEventListenerOptions?,
     )
 
     fun dispatchEvent(
@@ -30,7 +30,7 @@ fun <T : Event> EventTarget.addEventHandler(
 
 fun <T : Event> EventTarget.addEventHandler(
     type: EventType<T>,
-    options: EventHandlerOptions?,
+    options: AddEventListenerOptions?,
     handler: (T) -> Unit,
 ): () -> Unit {
     addEventListener(

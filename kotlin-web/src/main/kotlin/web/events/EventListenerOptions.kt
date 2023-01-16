@@ -8,7 +8,7 @@ import js.core.jso
 import web.abort.AbortSignal
 
 @JsName("null") // IR workaround
-sealed external interface EventHandlerOptions {
+sealed external interface AddEventListenerOptions {
     var capture: Boolean?
     var once: Boolean?
     var passive: Boolean?
@@ -17,12 +17,12 @@ sealed external interface EventHandlerOptions {
     companion object
 }
 
-inline val EventHandlerOptions.Companion.ACTIVE: EventHandlerOptions
+inline val AddEventListenerOptions.Companion.ACTIVE: AddEventListenerOptions
     get() = jso {
         passive = false
     }
 
-inline val EventHandlerOptions.Companion.CAPTURE: EventHandlerOptions
+inline val AddEventListenerOptions.Companion.CAPTURE: AddEventListenerOptions
     get() = jso {
         capture = true
     }
