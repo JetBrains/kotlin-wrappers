@@ -10,10 +10,10 @@ fun useUpdateEffect(
     vararg dependencies: Any?,
     effect: EffectBuilder.() -> Unit,
 ) {
-    val isFirstMount = useFirstMountState()
+    val isFirstRender = useIsFirstRender()
 
     useEffect(dependencies = dependencies) {
-        if (!isFirstMount) {
+        if (!isFirstRender) {
             effect()
         }
     }
