@@ -3,9 +3,17 @@
 
 @file:Suppress(
     "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
+    "NAME_CONTAINS_ILLEGAL_CHARS",
 )
 
 package remix.run.router
 
 
-typealias RevalidationState = Any /* "idle" | "loading" */
+@JsName("""(/*union*/{idle: 'idle', loading: 'loading'}/*union*/)""")
+external enum class RevalidationState {
+    idle,
+    loading,
+
+    ;
+}
+

@@ -3,9 +3,17 @@
 
 @file:Suppress(
     "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
+    "NAME_CONTAINS_ILLEGAL_CHARS",
 )
 
 package remix.run.router
 
 
-typealias FormEncType = Any /* "application/x-www-form-urlencoded" | "multipart/form-data" */
+@JsName("""(/*union*/{applicationXWwwFormUrlencoded: 'application/x-www-form-urlencoded', multipartFormData: 'multipart/form-data'}/*union*/)""")
+external enum class FormEncType {
+    applicationXWwwFormUrlencoded,
+    multipartFormData,
+
+    ;
+}
+
