@@ -7,10 +7,11 @@
 package web.uievents
 
 import web.events.EventType
+import web.keyboard.KeyCode
 import web.keyboard.ModifierKeyCode
 
 external interface KeyboardEventInit : EventModifierInit {
-    var code: String?
+    var code: KeyCode?
     var isComposing: Boolean?
     var key: String?
     var location: Short?
@@ -22,7 +23,7 @@ open external class KeyboardEvent(
     init: KeyboardEventInit = definedExternally,
 ) : UIEvent {
     val altKey: Boolean
-    val code: String
+    val code: KeyCode
     val ctrlKey: Boolean
     val isComposing: Boolean
     val key: String
