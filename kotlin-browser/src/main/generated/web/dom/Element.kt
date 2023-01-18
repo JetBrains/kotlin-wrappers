@@ -99,6 +99,7 @@ abstract external class Element :
     /** Returns a HTMLCollection of the elements in the object on which the method was invoked (a document or an element) that have all the classes given by classNames. The classNames argument is interpreted as a space-separated list of classes. */
     fun getElementsByClassName(classNames: String): HTMLCollectionOf<Element>
     fun <T : HTMLElement> getElementsByTagName(qualifiedName: HtmlTagName<T>): HTMLCollectionOf<T>
+    fun <T : SVGElement> getElementsByTagName(qualifiedName: SvgTagName<T>): HTMLCollectionOf<T>
     fun getElementsByTagName(qualifiedName: String): HTMLCollectionOf<Element>
     fun getElementsByTagNameNS(
         namespace: String?,

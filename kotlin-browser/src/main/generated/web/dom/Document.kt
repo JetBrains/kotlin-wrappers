@@ -8,6 +8,8 @@ import web.events.EventHandler
 import web.fonts.FontFaceSource
 import web.html.*
 import web.selection.Selection
+import web.svg.SVGElement
+import web.svg.SvgTagName
 import web.url.URL
 import web.window.WindowProxy
 import web.xpath.XPathEvaluatorBase
@@ -243,6 +245,13 @@ abstract external class Document :
      * @param elementName Gets a collection of objects based on the value of the NAME or ID attribute.
      */
     fun getElementsByName(elementName: String): NodeListOf<HTMLElement>
+
+    /**
+     * Retrieves a collection of objects based on the specified element name.
+     * @param name Specifies the name of an element.
+     */
+    fun <T : HTMLElement> getElementsByTagName(qualifiedName: HtmlTagName<T>): HTMLCollectionOf<T>
+    fun <T : SVGElement> getElementsByTagName(qualifiedName: SvgTagName<T>): HTMLCollectionOf<T>
     fun getElementsByTagName(qualifiedName: String): HTMLCollectionOf<Element>
     fun getElementsByTagNameNS(
         namespace: String?,
