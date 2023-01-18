@@ -7,6 +7,7 @@
 package web.uievents
 
 import web.events.EventType
+import web.keyboard.ModifierKey
 
 external interface KeyboardEventInit : EventModifierInit {
     var code: String?
@@ -29,7 +30,7 @@ open external class KeyboardEvent(
     val metaKey: Boolean
     val repeat: Boolean
     val shiftKey: Boolean
-    fun getModifierState(keyArg: String): Boolean
+    fun getModifierState(keyArg: ModifierKey): Boolean
     val DOM_KEY_LOCATION_LEFT: Short
     val DOM_KEY_LOCATION_NUMPAD: Short
     val DOM_KEY_LOCATION_RIGHT: Short

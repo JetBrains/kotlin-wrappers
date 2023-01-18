@@ -3,6 +3,7 @@
 package react.dom.events
 
 import web.dom.Element
+import web.keyboard.ModifierKey
 
 external interface TouchEvent<out T : Element> : UIEvent<T, NativeTouchEvent> {
     val altKey: Boolean

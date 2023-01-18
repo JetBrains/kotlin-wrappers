@@ -4,6 +4,7 @@ package react.dom.events
 
 import web.dom.Element
 import web.events.EventTarget
+import web.keyboard.ModifierKey
 
 external interface MouseEvent<out T : Element, out E : NativeMouseEvent> : UIEvent<T, E> {
     val altKey: Boolean
