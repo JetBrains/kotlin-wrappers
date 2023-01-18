@@ -4,7 +4,7 @@ package react.dom.events
 
 import web.dom.Element
 import web.events.EventTarget
-import web.keyboard.ModifierKey
+import web.keyboard.ModifierKeyCode
 
 external interface MouseEvent<out T : Element, out E : NativeMouseEvent> : UIEvent<T, E> {
     val altKey: Boolean
@@ -17,7 +17,7 @@ external interface MouseEvent<out T : Element, out E : NativeMouseEvent> : UIEve
     /**
      * See [DOM Level 3 Events spec](https://www.w3.org/TR/uievents-key/#keys-modifier). for a list of valid (case-sensitive) arguments to this method.
      */
-    fun getModifierState(key: ModifierKey): Boolean
+    fun getModifierState(key: ModifierKeyCode): Boolean
     val metaKey: Boolean
     val movementX: Double
     val movementY: Double

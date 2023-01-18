@@ -8,7 +8,7 @@ package web.keyboard
 
 // language=JavaScript
 @JsName("""(/*union*/{Alt: 'Alt', AltGraph: 'AltGraph', CapsLock: 'CapsLock', Control: 'Control', Fn: 'Fn', FnLock: 'FnLock', Meta: 'Meta', NumLock: 'NumLock', ScrollLock: 'ScrollLock', Shift: 'Shift', Symbol: 'Symbol', SymbolLock: 'SymbolLock'}/*union*/)""")
-external enum class ModifierKey {
+external enum class ModifierKeyCode {
     Alt,
     AltGraph,
     CapsLock,

@@ -8,7 +8,7 @@ package web.uievents
 
 import web.events.EventTarget
 import web.events.EventType
-import web.keyboard.ModifierKey
+import web.keyboard.ModifierKeyCode
 
 external interface MouseEventInit : EventModifierInit {
     var button: Short?
@@ -45,7 +45,7 @@ open external class MouseEvent(
     val shiftKey: Boolean
     val x: Double
     val y: Double
-    fun getModifierState(keyArg: ModifierKey): Boolean
+    fun getModifierState(keyArg: ModifierKeyCode): Boolean
 
     companion object
 }

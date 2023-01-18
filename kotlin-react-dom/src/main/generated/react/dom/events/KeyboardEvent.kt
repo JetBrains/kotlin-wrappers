@@ -3,7 +3,7 @@
 package react.dom.events
 
 import web.dom.Element
-import web.keyboard.ModifierKey
+import web.keyboard.ModifierKeyCode
 
 external interface KeyboardEvent<out T : Element> : UIEvent<T, NativeKeyboardEvent> {
     val altKey: Boolean
@@ -13,7 +13,7 @@ external interface KeyboardEvent<out T : Element> : UIEvent<T, NativeKeyboardEve
     /**
      * See [DOM Level 3 Events spec](https://www.w3.org/TR/uievents-key/#keys-modifier). for a list of valid (case-sensitive) arguments to this method.
      */
-    fun getModifierState(key: ModifierKey): Boolean
+    fun getModifierState(key: ModifierKeyCode): Boolean
 
     /**
      * See the [DOM Level 3 Events spec](https://www.w3.org/TR/uievents-key/#named-key-attribute-values). for possible values
