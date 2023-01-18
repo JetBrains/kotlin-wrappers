@@ -14,7 +14,7 @@ import websockets.BinaryType
 sealed external class RTCDataChannel :
     EventTarget {
     var binaryType: BinaryType
-    val bufferedAmount: Number
+    val bufferedAmount: Int
     var bufferedAmountLowThreshold: Number
     val id: Number?
     val label: String
