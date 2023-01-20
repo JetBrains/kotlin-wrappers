@@ -15,7 +15,7 @@ abstract external class HTMLImageElement :
     val complete: Boolean
     var crossOrigin: CrossOrigin?
     val currentSrc: String
-    var decoding: String /* "async" | "sync" | "auto" */
+    var decoding: ImageDecoding
 
     /** Sets or retrieves the height of the object. */
     var height: Double
@@ -24,7 +24,7 @@ abstract external class HTMLImageElement :
     var isMap: Boolean
 
     /** Sets or retrieves the policy for loading image elements that are outside the viewport. */
-    var loading: String /* "eager" | "lazy" */
+    var loading: ImageLoading
 
     /** The original height of the image resource before sizing. */
     val naturalHeight: Int
