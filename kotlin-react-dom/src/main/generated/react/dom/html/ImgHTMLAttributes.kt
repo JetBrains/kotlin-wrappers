@@ -3,10 +3,11 @@
 package react.dom.html
 
 import web.dom.Element
+import web.html.CrossOrigin
 
 external interface ImgHTMLAttributes<T : Element> : HTMLAttributes<T> {
     var alt: String?
-    var crossOrigin: ImgCrossOrigin?
+    var crossOrigin: CrossOrigin?
     var decoding: ImgDecoding?
     var height: Double?
     var loading: ImgLoading?
