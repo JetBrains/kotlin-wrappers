@@ -3,6 +3,7 @@
 package react.dom.html
 
 import web.dom.Element
+import web.html.Loading
 import web.http.ReferrerPolicy
 
 external interface IframeHTMLAttributes<T : Element> : HTMLAttributes<T> {
@@ -10,7 +11,7 @@ external interface IframeHTMLAttributes<T : Element> : HTMLAttributes<T> {
     var allowFullScreen: Boolean?
     var allowTransparency: Boolean?
     var height: Double?
-    var loading: IframeLoading?
+    var loading: Loading?
     var name: String?
     var referrerPolicy: ReferrerPolicy?
     var sandbox: String?
