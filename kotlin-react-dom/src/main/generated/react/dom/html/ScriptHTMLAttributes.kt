@@ -4,6 +4,7 @@ package react.dom.html
 
 import web.dom.Element
 import web.html.CrossOrigin
+import web.http.ReferrerPolicy
 
 external interface ScriptHTMLAttributes<T : Element> : HTMLAttributes<T> {
     var async: Boolean?

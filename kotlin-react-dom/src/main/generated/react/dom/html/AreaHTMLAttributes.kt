@@ -3,6 +3,7 @@
 package react.dom.html
 
 import web.dom.Element
+import web.http.ReferrerPolicy
 import web.window.WindowTarget
 
 external interface AreaHTMLAttributes<T : Element> : HTMLAttributes<T> {
