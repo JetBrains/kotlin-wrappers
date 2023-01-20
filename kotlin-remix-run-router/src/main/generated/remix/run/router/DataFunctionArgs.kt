@@ -19,5 +19,6 @@ import web.http.Request
 external interface DataFunctionArgs {
     var request: Request
     var params: Params
+    var context: Any?
 }
 

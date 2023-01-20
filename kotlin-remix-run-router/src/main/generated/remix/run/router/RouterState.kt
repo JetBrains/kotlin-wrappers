@@ -79,5 +79,10 @@ external interface RouterState {
      * Map of current fetchers
      */
     var fetchers: js.collections.JsMap<String, Fetcher<*>>
+
+    /**
+     * Map of current blockers
+     */
+    var blockers: js.collections.JsMap<String, Blocker>
 }
 

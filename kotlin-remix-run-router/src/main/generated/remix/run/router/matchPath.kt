@@ -13,7 +13,7 @@ package remix.run.router
  * Performs pattern matching on a URL pathname and returns information about
  * the match.
  *
- * @see https://reactrouter.com/docs/en/v6/utils/match-path
+ * @see https://reactrouter.com/utils/match-path
  */
 external fun matchPath(pattern: PathPattern, pathname: String): PathMatch?
 

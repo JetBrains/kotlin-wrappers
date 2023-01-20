@@ -37,6 +37,8 @@ external val normalizeHash: (hash: String) -> String
  */
 external val json: JsonFunction<*>
 
+external val defer: DeferFunction
+
 /**
  * A redirect response. Sets the status code and the `Location` header.
  * Defaults to "302 Found".

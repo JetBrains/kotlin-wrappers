@@ -8,5 +8,6 @@ external interface FetcherStatesIdle<TData> {
     var formEncType: Any? /* some expression */
     var formData: Any? /* some expression */
     var data: TData?
+    var String: Boolean?
 }
 

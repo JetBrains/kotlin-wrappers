@@ -8,6 +8,4 @@
 
 package remix.run.router
 
-import js.core.Record
-
-external fun defer(data: Record<String, Any>): DeferredData
+external fun createStaticHandler(routes: Array<AgnosticRouteObject>, opts: CreateStaticHandlerOpts = definedExternally): StaticHandler

@@ -9,4 +9,10 @@
 package remix.run.router
 
 
-typealias FormMethod = Any /* "get" | MutationFormMethod */
+external interface BlockerBlocked {
+    var state: String
+    fun reset(): Unit
+    fun proceed(): Unit
+    var location: Location
+}
+

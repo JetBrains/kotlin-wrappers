@@ -8,4 +8,5 @@
 
 package remix.run.router
 
-external fun unstable_createStaticHandler(routes: Array<AgnosticRouteObject>): StaticHandler
+
+typealias BlockerFunction = (args: BlockerFunctionArgs) -> Boolean

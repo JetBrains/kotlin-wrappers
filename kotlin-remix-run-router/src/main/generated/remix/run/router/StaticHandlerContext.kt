@@ -16,6 +16,7 @@ import web.http.Headers
  */
 
 external interface StaticHandlerContext {
+    var basename: Any /* Router["basename"] */
     var location: Any /* RouterState["location"] */
     var matches: Any /* RouterState["matches"] */
     var loaderData: Any /* RouterState["loaderData"] */
@@ -24,6 +25,7 @@ external interface StaticHandlerContext {
     var statusCode: Double
     var loaderHeaders: Record<String, Headers>
     var actionHeaders: Record<String, Headers>
+    var activeDeferreds: Record<String, DeferredData>?
     var _deepestRenderedBoundaryId: String?
 }
 

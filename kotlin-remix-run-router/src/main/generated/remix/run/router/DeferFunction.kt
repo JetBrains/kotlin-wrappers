@@ -8,5 +8,6 @@
 
 package remix.run.router
 
+import js.core.Record
 
-typealias FormMethod = Any /* "get" | MutationFormMethod */
+typealias DeferFunction = (data: Record<String, Any>, init: Any /* number | ResponseInit */) -> DeferredData

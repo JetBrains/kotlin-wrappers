@@ -9,7 +9,7 @@
 package remix.run.router
 
 
-/* import type { History, Location, To } from "./history"; */
+/* import type { History, Location, Path, To } from "./history"; */
 
 /* import { Action as HistoryAction } from "./history"; */
 
@@ -20,5 +20,9 @@ package remix.run.router
 external val IDLE_NAVIGATION: Any /* NavigationStates["Idle"] */
 
 external val IDLE_FETCHER: Any /* FetcherStates["Idle"] */
+
+external val IDLE_BLOCKER: BlockerUnblocked
+
+external val UNSAFE_DEFERRED_SYMBOL: /* unique */ js.core.Symbol
 
 /* export {}; */

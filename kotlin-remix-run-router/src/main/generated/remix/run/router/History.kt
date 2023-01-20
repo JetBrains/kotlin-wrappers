@@ -8,6 +8,7 @@
 
 package remix.run.router
 
+import web.url.URL
 
 /**
  * A history is an interface to the navigation stack. The history serves as the
@@ -39,13 +40,20 @@ external interface History {
     fun createHref(to: To): String
 
     /**
+     * Returns a URL for the given `to` value
+     *
+     * @param to - The destination URL
+     */
+    fun createURL(to: To): URL
+
+    /**
      * Encode a location the same way window.history would do (no-op for memory
-     * history) so we ensure our PUSH/REPLAC e navigations for data routers
+     * history) so we ensure our PUSH/REPLACE navigations for data routers
      * behave the same as POP
      *
-     * @param location The incoming location from router.navigate()
+     * @param to Unencoded path
      */
-    fun encodeLocation(location: Location): Location
+    fun encodeLocation(to: To): Path
 
     /**
      * Pushes a new location onto the history stack, increasing its length by one.
