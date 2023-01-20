@@ -1,6 +1,6 @@
 // Automatically generated - do not modify!
 
-package react.dom.html
+package web.html
 
 @Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
 // language=JavaScript
