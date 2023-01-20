@@ -3,10 +3,11 @@
 package react.dom.html
 
 import web.dom.Element
+import web.html.CrossOrigin
 
 external interface ScriptHTMLAttributes<T : Element> : HTMLAttributes<T> {
     var async: Boolean?
-    var crossOrigin: String?
+    var crossOrigin: CrossOrigin?
     var defer: Boolean?
     var integrity: String?
     var noModule: Boolean?

@@ -4,6 +4,7 @@ package react.dom.html
 
 import react.dom.events.ChangeEventHandler
 import web.dom.Element
+import web.html.CrossOrigin
 
 external interface InputHTMLAttributes<T : Element> : HTMLAttributes<T> {
     var accept: String?
@@ -12,7 +13,7 @@ external interface InputHTMLAttributes<T : Element> : HTMLAttributes<T> {
     var autoFocus: Boolean?
     var capture: Capture?
     var checked: Boolean?
-    var crossOrigin: String?
+    var crossOrigin: CrossOrigin?
     var disabled: Boolean?
     var enterKeyHint: EnterKeyHint?
     var form: String?

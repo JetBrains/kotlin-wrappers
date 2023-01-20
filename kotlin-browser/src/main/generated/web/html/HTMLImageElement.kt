@@ -12,7 +12,7 @@ abstract external class HTMLImageElement :
 
     /** Retrieves whether the object is fully loaded. */
     val complete: Boolean
-    var crossOrigin: String?
+    var crossOrigin: CrossOrigin?
     val currentSrc: String
     var decoding: String /* "async" | "sync" | "auto" */
 

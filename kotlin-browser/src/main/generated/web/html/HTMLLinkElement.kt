@@ -9,7 +9,7 @@ abstract external class HTMLLinkElement :
     HTMLElement,
     LinkStyle {
     var `as`: String
-    var crossOrigin: String?
+    var crossOrigin: CrossOrigin?
     var disabled: Boolean
 
     /** Sets or retrieves a destination URL or an anchor point. */

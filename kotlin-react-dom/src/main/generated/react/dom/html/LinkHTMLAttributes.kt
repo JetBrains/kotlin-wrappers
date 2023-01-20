@@ -3,10 +3,11 @@
 package react.dom.html
 
 import web.dom.Element
+import web.html.CrossOrigin
 
 external interface LinkHTMLAttributes<T : Element> : HTMLAttributes<T> {
     var `as`: String?
-    var crossOrigin: String?
+    var crossOrigin: CrossOrigin?
     var href: String?
     var hrefLang: String?
     var integrity: String?

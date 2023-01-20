@@ -23,7 +23,7 @@ abstract external class HTMLMediaElement :
 
     /** Gets or sets a flag that indicates whether the client provides a set of controls for the media (in case the developer does not include controls for the player). */
     var controls: Boolean
-    var crossOrigin: String?
+    var crossOrigin: CrossOrigin?
 
     /** Gets the address or URL of the current media resource that is selected by IHTMLMediaElement. */
     val currentSrc: String
