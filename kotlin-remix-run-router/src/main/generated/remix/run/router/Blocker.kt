@@ -8,8 +8,5 @@
 
 package remix.run.router
 
-import web.url.URL
 
-external fun createURL(location: Location): URL
-
-external fun createURL(location: String): URL
+typealias Blocker = Any /* BlockerUnblocked | BlockerBlocked | BlockerProceeding */

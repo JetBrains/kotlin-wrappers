@@ -10,5 +10,6 @@ external interface FetcherStatesSubmitting<TData> {
     var formEncType: FormEncType
     var formData: FormData
     var data: TData?
+    var String: Boolean?
 }
 

@@ -9,4 +9,13 @@
 package remix.run.router
 
 
-typealias FormMethod = Any /* "get" | MutationFormMethod */
+@JsName("""(/*union*/{post: 'post', put: 'put', patch: 'patch', delete: 'delete'}/*union*/)""")
+external enum class MutationFormMethod {
+    post,
+    put,
+    patch,
+    delete,
+
+    ;
+}
+

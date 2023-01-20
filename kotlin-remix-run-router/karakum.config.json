@@ -11,6 +11,9 @@
     "moduleNameMapper": {
         ".*": ""
     },
+    "packageNameMapper": {
+        "router.kt": "router.const.kt"
+    },
     "importInjector": {
         "createURL.kt": [
             "web.url.URL"
@@ -33,7 +36,8 @@
         "DeferredData.kt": [
             "kotlin.js.Promise",
             "js.core.Record",
-            "web.abort.AbortSignal"
+            "web.abort.AbortSignal",
+            "web.http.ResponseInit"
         ],
         "generatePath.kt": [
             "js.core.Record"
@@ -66,6 +70,7 @@
             "web.http.FormData"
         ],
         "Router.kt": [
+            "kotlin.js.Promise",
             "js.core.Record",
             "web.url.URL",
             "web.abort.AbortController"
@@ -83,6 +88,18 @@
         ],
         "SubmissionNavigateOptions.kt": [
             "web.http.FormData"
+        ],
+        "BlockerFunctionArgs.kt": [
+            "history.Action as HistoryAction"
+        ],
+        "DeferFunction.kt": [
+            "js.core.Record"
+        ],
+        "DeferredResult.kt": [
+            "web.http.Headers"
+        ],
+        "History.kt": [
+            "web.url.URL"
         ]
     }
 }

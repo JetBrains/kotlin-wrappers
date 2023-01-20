@@ -11,6 +11,7 @@ package remix.run.router
 import js.core.Record
 import web.abort.AbortController
 import web.url.URL
+import kotlin.js.Promise
 
 /**
  * A Router instance manages all navigation and data loading/mutations
@@ -78,14 +79,14 @@ external interface Router {
      * Navigate forward/backward in the history stack
      * @param to Delta to move in the history stack
      */
-    fun navigate(to: Double): Unit
+    fun navigate(to: Double): Promise<Unit>
 
     /**
      * Navigate to the given path
      * @param to Path to navigate to
      * @param opts Navigation options (method, submission, etc.)
      */
-    fun navigate(to: To, opts: RouterNavigateOptions = definedExternally): Unit
+    fun navigate(to: To, opts: RouterNavigateOptions = definedExternally): Promise<Unit>
 
     /**
      * @internal
@@ -123,6 +124,16 @@ external interface Router {
      * @internal
      * PRIVATE - DO NOT USE
      *
+     * Utility function to URL encode a destination path according to the internal
+     * history implementation
+     * @param to
+     */
+    fun encodeLocation(to: To): Path
+
+    /**
+     * @internal
+     * PRIVATE - DO NOT USE
+     *
      * Get/create a fetcher for the given key
      * @param key
      */
@@ -144,6 +155,25 @@ external interface Router {
      * Cleanup listeners and abort any in-progress loads
      */
     fun dispose(): Unit
+
+    /**
+     * @internal
+     * PRIVATE - DO NOT USE
+     *
+     * Get a navigation blocker
+     * @param key The identifier for the blocker
+     * @param fn The blocker function implementation
+     */
+    fun getBlocker(key: String, fn: BlockerFunction): Blocker
+
+    /**
+     * @internal
+     * PRIVATE - DO NOT USE
+     *
+     * Delete a navigation blocker
+     * @param key The identifier for the blocker
+     */
+    fun deleteBlocker(key: String): Unit
 
     /**
      * @internal

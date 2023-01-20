@@ -10,5 +10,6 @@ external interface FetcherStatesLoading<TData> {
     var formEncType: FormEncType?
     var formData: FormData?
     var data: TData?
+    var String: Boolean?
 }
 

@@ -18,7 +18,9 @@ external class ErrorResponse {
     var status: Double
     var statusText: String
     var data: Any?
+    var error: Error?
+    var internal: Boolean
 
-    constructor (status: Double, statusText: String?, data: Any?)
+    constructor (status: Double, statusText: String?, data: Any?, internal: Boolean = definedExternally)
 }
 

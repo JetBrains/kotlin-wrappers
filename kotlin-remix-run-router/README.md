@@ -18,4 +18,6 @@ Kotlin wrapper for [React Router](https://remix.run/docs/en/v1/other-api/react-r
     * `RouteData`
 4) Support getters for types:
     * `Router`
+5) Support hybrid string unions:
+    * `FormMethod`
 
