@@ -4,6 +4,8 @@ package react.dom.html
 
 import web.dom.Element
 import web.html.CrossOrigin
+import web.html.ImgDecoding
+import web.html.ImgLoading
 import web.http.ReferrerPolicy
 
 external interface ImgHTMLAttributes<T : Element> : HTMLAttributes<T> {
