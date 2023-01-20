@@ -5,13 +5,13 @@ import emotion.react.css
 import js.core.jso
 import react.FC
 import react.Props
-import react.dom.html.InputType
 import react.dom.html.ReactHTML.br
 import react.dom.html.ReactHTML.div
 import react.dom.html.ReactHTML.h1
 import react.dom.html.ReactHTML.input
 import react.dom.html.ReactHTML.p
 import react.useState
+import web.html.InputType
 import kotlin.js.Promise
 
 /**

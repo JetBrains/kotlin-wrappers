@@ -1,13 +1,13 @@
 package example
 
 import react.*
-import react.dom.html.InputType
 import react.dom.html.ReactHTML.button
 import react.dom.html.ReactHTML.div
 import react.dom.html.ReactHTML.h3
 import react.dom.html.ReactHTML.input
 import react.dom.html.ReactHTML.li
 import react.dom.html.ReactHTML.ul
+import web.html.InputType
 
 /**
  * A to-do list implementation by Scott_Huang@qq.com

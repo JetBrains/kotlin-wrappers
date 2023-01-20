@@ -5,6 +5,7 @@ package react.dom.html
 import react.dom.events.ChangeEventHandler
 import web.dom.Element
 import web.html.CrossOrigin
+import web.html.InputType
 
 external interface InputHTMLAttributes<T : Element> : HTMLAttributes<T> {
     var accept: String?

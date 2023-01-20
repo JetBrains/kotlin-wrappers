@@ -5,7 +5,6 @@ import emotion.react.css
 import react.FC
 import react.Props
 import react.PropsWithChildren
-import react.dom.html.InputType
 import react.dom.html.ReactHTML.div
 import react.dom.html.ReactHTML.input
 import react.dom.html.ReactHTML.p
@@ -17,6 +16,7 @@ import react.dom.html.ReactHTML.th
 import react.dom.html.ReactHTML.thead
 import react.dom.html.ReactHTML.tr
 import react.useState
+import web.html.InputType
 
 /**
  * A thinking-in-react implementation by Scott_Huang@qq.com (Zhiliang.Huang@gmail.com)

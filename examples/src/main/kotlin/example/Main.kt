@@ -9,13 +9,13 @@ import js.core.Object
 import js.core.jso
 import react.*
 import react.dom.html.HTMLAttributes
-import react.dom.html.InputType
 import react.dom.html.ReactHTML.div
 import react.dom.html.ReactHTML.input
 import react.dom.html.ReactHTML.option
 import react.dom.html.ReactHTML.select
 import react.dom.html.ReactHTML.textarea
 import web.html.HTMLDivElement
+import web.html.InputType
 
 enum class Theme(
     val backgroundColor: BackgroundColor,

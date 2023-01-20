@@ -7,6 +7,7 @@ import react.dom.aria.AriaAttributes
 import react.dom.aria.AriaRole
 import react.dom.events.*
 import web.dom.Element
+import web.html.InputMode
 
 external interface HTMLAttributes<T : Element> :
     AriaAttributes,

@@ -12,6 +12,7 @@ package mui.material
 
 import mui.material.styles.Theme
 import mui.system.SxProps
+import web.html.InputType
 
 typealias TextFieldProps = BaseTextFieldProps
 
@@ -177,7 +178,7 @@ external interface BaseTextFieldProps :
     /**
      * Type of the `input` element. It should be [a valid HTML5 input type](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#Form_%3Cinput%3E_types).
      */
-    var type: react.dom.html.InputType?
+    var type: InputType?
 
     /**
      * The value of the `input` element, required for a controlled component.
