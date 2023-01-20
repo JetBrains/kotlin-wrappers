@@ -24,7 +24,7 @@ abstract external class HTMLImageElement :
     var isMap: Boolean
 
     /** Sets or retrieves the policy for loading image elements that are outside the viewport. */
-    var loading: ImageLoading
+    var loading: Loading
 
     /** The original height of the image resource before sizing. */
     val naturalHeight: Int
