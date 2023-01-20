@@ -4,6 +4,7 @@ package web.html
 
 import web.dom.DOMTokenList
 import web.dom.css.LinkStyle
+import web.http.ReferrerPolicy
 
 abstract external class HTMLLinkElement :
     HTMLElement,
@@ -23,7 +24,7 @@ abstract external class HTMLLinkElement :
 
     /** Sets or retrieves the media type. */
     var media: String
-    var referrerPolicy: String
+    var referrerPolicy: ReferrerPolicy
 
     /** Sets or retrieves the relationship between the object and the destination of the link. */
     var rel: String

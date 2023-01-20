@@ -2,6 +2,8 @@
 
 package web.html
 
+import web.http.ReferrerPolicy
+
 abstract external class HTMLScriptElement :
     HTMLElement {
     var async: Boolean
@@ -11,7 +13,7 @@ abstract external class HTMLScriptElement :
     var defer: Boolean
     var integrity: String
     var noModule: Boolean
-    var referrerPolicy: String
+    var referrerPolicy: ReferrerPolicy
 
     /** Retrieves the URL to an external file that contains the source code or data. */
     var src: String

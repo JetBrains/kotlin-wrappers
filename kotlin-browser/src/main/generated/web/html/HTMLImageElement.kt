@@ -3,6 +3,7 @@
 package web.html
 
 import js.core.Void
+import web.http.ReferrerPolicy
 import kotlin.js.Promise
 
 abstract external class HTMLImageElement :
@@ -30,7 +31,7 @@ abstract external class HTMLImageElement :
 
     /** The original width of the image resource before sizing. */
     val naturalWidth: Int
-    var referrerPolicy: String
+    var referrerPolicy: ReferrerPolicy
     var sizes: String
 
     /** The address or URL of the a media resource that is to be considered. */

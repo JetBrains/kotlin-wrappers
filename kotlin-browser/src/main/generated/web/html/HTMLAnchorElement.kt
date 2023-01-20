@@ -3,6 +3,7 @@
 package web.html
 
 import web.dom.DOMTokenList
+import web.http.ReferrerPolicy
 import web.window.WindowTarget
 
 abstract external class HTMLAnchorElement :
@@ -13,7 +14,7 @@ abstract external class HTMLAnchorElement :
     /** Sets or retrieves the language code of the object. */
     var hreflang: String
     var ping: String
-    var referrerPolicy: String
+    var referrerPolicy: ReferrerPolicy
 
     /** Sets or retrieves the relationship between the object and the destination of the link. */
     var rel: String

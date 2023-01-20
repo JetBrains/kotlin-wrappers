@@ -3,6 +3,7 @@
 package web.html
 
 import web.dom.DOMTokenList
+import web.http.ReferrerPolicy
 import web.window.WindowTarget
 
 abstract external class HTMLAreaElement :
@@ -15,7 +16,7 @@ abstract external class HTMLAreaElement :
     var coords: String
     var download: String
     var ping: String
-    var referrerPolicy: String
+    var referrerPolicy: ReferrerPolicy
     var rel: String
     val relList: DOMTokenList
 
