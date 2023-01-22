@@ -26,6 +26,7 @@ dependencies {
         api(project(":kotlin-react-legacy"))
         api(project(":kotlin-react-popper"))
         api(project(":kotlin-react-redux"))
+        api(project(":kotlin-react-router"))
         api(project(":kotlin-react-router-dom"))
         api(project(":kotlin-react-select"))
         api(project(":kotlin-react-use"))

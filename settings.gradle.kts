@@ -85,6 +85,9 @@ include("kotlin-react-popper")
 include("kotlin-react-redux")
 
 // Kotlin/JS: React Router wrappers
+include("kotlin-react-router")
+
+// Kotlin/JS: React Router wrappers
 include("kotlin-react-router-dom")
 
 // Kotlin/JS: React Select wrappers
