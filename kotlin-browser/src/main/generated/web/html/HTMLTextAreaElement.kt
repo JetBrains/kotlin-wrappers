@@ -38,7 +38,7 @@ abstract external class HTMLTextAreaElement :
 
     /** Sets or retrieves the number of horizontal rows contained in the object. */
     var rows: Int
-    var selectionDirection: String /* "forward" | "backward" | "none" */
+    var selectionDirection: SelectionDirection
 
     /** Gets or sets the end position or offset of a text selection. */
     var selectionEnd: Int
@@ -94,6 +94,6 @@ abstract external class HTMLTextAreaElement :
     fun setSelectionRange(
         start: Number?,
         end: Number?,
-        direction: String /* "forward" | "backward" | "none" */ = definedExternally,
+        direction: SelectionDirection = definedExternally,
     )
 }

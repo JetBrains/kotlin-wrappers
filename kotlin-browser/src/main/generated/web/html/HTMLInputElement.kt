@@ -87,7 +87,7 @@ abstract external class HTMLInputElement :
 
     /** When present, marks an element that can't be submitted without a value. */
     var required: Boolean
-    var selectionDirection: String /* "forward" | "backward" | "none" */?
+    var selectionDirection: SelectionDirection?
 
     /** Gets or sets the end position or offset of a text selection. */
     var selectionEnd: Int?
@@ -157,7 +157,7 @@ abstract external class HTMLInputElement :
     fun setSelectionRange(
         start: Number?,
         end: Number?,
-        direction: String /* "forward" | "backward" | "none" */ = definedExternally,
+        direction: SelectionDirection = definedExternally,
     )
 
     fun showPicker()
