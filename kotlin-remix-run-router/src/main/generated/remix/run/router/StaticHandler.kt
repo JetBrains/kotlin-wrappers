@@ -17,7 +17,7 @@ import kotlin.js.Promise
 
 external interface StaticHandler {
     var dataRoutes: Array<AgnosticDataRouteObject>
-    fun query(request: Request, opts: Opts = definedExternally): Promise<Any /* StaticHandlerContext | Response */>
-    fun queryRoute(request: Request, opts: Opts = definedExternally): Promise<Any?>
+    fun query(request: Request, opts: StaticHandlerQueryOpts = definedExternally): Promise<Any /* StaticHandlerContext | Response */>
+    fun queryRoute(request: Request, opts: StaticHandlerQueryRouteOpts = definedExternally): Promise<Any?>
 }
 
