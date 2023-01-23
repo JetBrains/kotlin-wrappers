@@ -55,15 +55,15 @@ sealed external class Range :
     fun setStartAfter(node: Node)
     fun setStartBefore(node: Node)
     fun surroundContents(newParent: Node)
+    val START_TO_START: Short
+    val START_TO_END: Short
     val END_TO_END: Short
     val END_TO_START: Short
-    val START_TO_END: Short
-    val START_TO_START: Short
 
     companion object {
+        val START_TO_START: Short
+        val START_TO_END: Short
         val END_TO_END: Short
         val END_TO_START: Short
-        val START_TO_END: Short
-        val START_TO_START: Short
     }
 }

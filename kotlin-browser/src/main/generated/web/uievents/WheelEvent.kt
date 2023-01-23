@@ -23,13 +23,13 @@ open external class WheelEvent(
     val deltaX: Double
     val deltaY: Double
     val deltaZ: Double
+    val DOM_DELTA_PIXEL: Short
     val DOM_DELTA_LINE: Short
     val DOM_DELTA_PAGE: Short
-    val DOM_DELTA_PIXEL: Short
 
     companion object {
+        val DOM_DELTA_PIXEL: Short
         val DOM_DELTA_LINE: Short
         val DOM_DELTA_PAGE: Short
-        val DOM_DELTA_PIXEL: Short
     }
 }

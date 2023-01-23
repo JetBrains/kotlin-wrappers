@@ -32,13 +32,13 @@ external class EventSource(
 
     /** Aborts any instances of the fetch algorithm started for this EventSource object, and sets the readyState attribute to CLOSED. */
     fun close()
-    val CLOSED: Short
     val CONNECTING: Short
     val OPEN: Short
+    val CLOSED: Short
 
     companion object {
-        val CLOSED: Short
         val CONNECTING: Short
         val OPEN: Short
+        val CLOSED: Short
     }
 }

@@ -15,26 +15,26 @@ sealed external class XPathResult {
     fun iterateNext(): Node?
     fun snapshotItem(index: Int): Node?
     val ANY_TYPE: Short
-    val ANY_UNORDERED_NODE_TYPE: Short
-    val BOOLEAN_TYPE: Short
-    val FIRST_ORDERED_NODE_TYPE: Short
     val NUMBER_TYPE: Short
-    val ORDERED_NODE_ITERATOR_TYPE: Short
-    val ORDERED_NODE_SNAPSHOT_TYPE: Short
     val STRING_TYPE: Short
+    val BOOLEAN_TYPE: Short
     val UNORDERED_NODE_ITERATOR_TYPE: Short
+    val ORDERED_NODE_ITERATOR_TYPE: Short
     val UNORDERED_NODE_SNAPSHOT_TYPE: Short
+    val ORDERED_NODE_SNAPSHOT_TYPE: Short
+    val ANY_UNORDERED_NODE_TYPE: Short
+    val FIRST_ORDERED_NODE_TYPE: Short
 
     companion object {
         val ANY_TYPE: Short
-        val ANY_UNORDERED_NODE_TYPE: Short
-        val BOOLEAN_TYPE: Short
-        val FIRST_ORDERED_NODE_TYPE: Short
         val NUMBER_TYPE: Short
-        val ORDERED_NODE_ITERATOR_TYPE: Short
-        val ORDERED_NODE_SNAPSHOT_TYPE: Short
         val STRING_TYPE: Short
+        val BOOLEAN_TYPE: Short
         val UNORDERED_NODE_ITERATOR_TYPE: Short
+        val ORDERED_NODE_ITERATOR_TYPE: Short
         val UNORDERED_NODE_SNAPSHOT_TYPE: Short
+        val ORDERED_NODE_SNAPSHOT_TYPE: Short
+        val ANY_UNORDERED_NODE_TYPE: Short
+        val FIRST_ORDERED_NODE_TYPE: Short
     }
 }

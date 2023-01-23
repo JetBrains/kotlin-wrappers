@@ -81,95 +81,93 @@ sealed external class Node :
         child: T,
     ): T
 
-    val ATTRIBUTE_NODE: Short
-
-    /** node is a CDATASection node. */
-    val CDATA_SECTION_NODE: Short
-
-    /** node is a Comment node. */
-    val COMMENT_NODE: Short
-
-    /** node is a DocumentFragment node. */
-    val DOCUMENT_FRAGMENT_NODE: Short
-
-    /** node is a document. */
-    val DOCUMENT_NODE: Short
-
-    /** Set when other is a descendant of node. */
-    val DOCUMENT_POSITION_CONTAINED_BY: Short
-
-    /** Set when other is an ancestor of node. */
-    val DOCUMENT_POSITION_CONTAINS: Short
-
-    /** Set when node and other are not in the same tree. */
-    val DOCUMENT_POSITION_DISCONNECTED: Short
-
-    /** Set when other is following node. */
-    val DOCUMENT_POSITION_FOLLOWING: Short
-    val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
-
-    /** Set when other is preceding node. */
-    val DOCUMENT_POSITION_PRECEDING: Short
-
-    /** node is a doctype. */
-    val DOCUMENT_TYPE_NODE: Short
-
     /** node is an element. */
     val ELEMENT_NODE: Short
-    val ENTITY_NODE: Short
-    val ENTITY_REFERENCE_NODE: Short
-    val NOTATION_NODE: Short
-
-    /** node is a ProcessingInstruction node. */
-    val PROCESSING_INSTRUCTION_NODE: Short
+    val ATTRIBUTE_NODE: Short
 
     /** node is a Text node. */
     val TEXT_NODE: Short
 
+    /** node is a CDATASection node. */
+    val CDATA_SECTION_NODE: Short
+    val ENTITY_REFERENCE_NODE: Short
+    val ENTITY_NODE: Short
+
+    /** node is a ProcessingInstruction node. */
+    val PROCESSING_INSTRUCTION_NODE: Short
+
+    /** node is a Comment node. */
+    val COMMENT_NODE: Short
+
+    /** node is a document. */
+    val DOCUMENT_NODE: Short
+
+    /** node is a doctype. */
+    val DOCUMENT_TYPE_NODE: Short
+
+    /** node is a DocumentFragment node. */
+    val DOCUMENT_FRAGMENT_NODE: Short
+    val NOTATION_NODE: Short
+
+    /** Set when node and other are not in the same tree. */
+    val DOCUMENT_POSITION_DISCONNECTED: Short
+
+    /** Set when other is preceding node. */
+    val DOCUMENT_POSITION_PRECEDING: Short
+
+    /** Set when other is following node. */
+    val DOCUMENT_POSITION_FOLLOWING: Short
+
+    /** Set when other is an ancestor of node. */
+    val DOCUMENT_POSITION_CONTAINS: Short
+
+    /** Set when other is a descendant of node. */
+    val DOCUMENT_POSITION_CONTAINED_BY: Short
+    val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
+
     companion object {
+        /** node is an element. */
+        val ELEMENT_NODE: Short
         val ATTRIBUTE_NODE: Short
+
+        /** node is a Text node. */
+        val TEXT_NODE: Short
 
         /** node is a CDATASection node. */
         val CDATA_SECTION_NODE: Short
-
-        /** node is a Comment node. */
-        val COMMENT_NODE: Short
-
-        /** node is a DocumentFragment node. */
-        val DOCUMENT_FRAGMENT_NODE: Short
-
-        /** node is a document. */
-        val DOCUMENT_NODE: Short
-
-        /** Set when other is a descendant of node. */
-        val DOCUMENT_POSITION_CONTAINED_BY: Short
-
-        /** Set when other is an ancestor of node. */
-        val DOCUMENT_POSITION_CONTAINS: Short
-
-        /** Set when node and other are not in the same tree. */
-        val DOCUMENT_POSITION_DISCONNECTED: Short
-
-        /** Set when other is following node. */
-        val DOCUMENT_POSITION_FOLLOWING: Short
-        val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
-
-        /** Set when other is preceding node. */
-        val DOCUMENT_POSITION_PRECEDING: Short
-
-        /** node is a doctype. */
-        val DOCUMENT_TYPE_NODE: Short
-
-        /** node is an element. */
-        val ELEMENT_NODE: Short
-        val ENTITY_NODE: Short
         val ENTITY_REFERENCE_NODE: Short
-        val NOTATION_NODE: Short
+        val ENTITY_NODE: Short
 
         /** node is a ProcessingInstruction node. */
         val PROCESSING_INSTRUCTION_NODE: Short
 
-        /** node is a Text node. */
-        val TEXT_NODE: Short
+        /** node is a Comment node. */
+        val COMMENT_NODE: Short
+
+        /** node is a document. */
+        val DOCUMENT_NODE: Short
+
+        /** node is a doctype. */
+        val DOCUMENT_TYPE_NODE: Short
+
+        /** node is a DocumentFragment node. */
+        val DOCUMENT_FRAGMENT_NODE: Short
+        val NOTATION_NODE: Short
+
+        /** Set when node and other are not in the same tree. */
+        val DOCUMENT_POSITION_DISCONNECTED: Short
+
+        /** Set when other is preceding node. */
+        val DOCUMENT_POSITION_PRECEDING: Short
+
+        /** Set when other is following node. */
+        val DOCUMENT_POSITION_FOLLOWING: Short
+
+        /** Set when other is an ancestor of node. */
+        val DOCUMENT_POSITION_CONTAINS: Short
+
+        /** Set when other is a descendant of node. */
+        val DOCUMENT_POSITION_CONTAINED_BY: Short
+        val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
     }
 }

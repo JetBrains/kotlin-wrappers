@@ -131,17 +131,17 @@ external class XMLHttpRequest :
         value: String,
     )
 
-    val DONE: Short
+    val UNSENT: Short
+    val OPENED: Short
     val HEADERS_RECEIVED: Short
     val LOADING: Short
-    val OPENED: Short
-    val UNSENT: Short
+    val DONE: Short
 
     companion object {
-        val DONE: Short
+        val UNSENT: Short
+        val OPENED: Short
         val HEADERS_RECEIVED: Short
         val LOADING: Short
-        val OPENED: Short
-        val UNSENT: Short
+        val DONE: Short
     }
 }

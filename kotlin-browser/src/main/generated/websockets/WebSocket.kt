@@ -72,15 +72,15 @@ external class WebSocket(
     fun send(data: ArrayBufferLike)
     fun send(data: Blob)
     fun send(data: ArrayBufferView)
-    val CLOSED: Short
-    val CLOSING: Short
     val CONNECTING: Short
     val OPEN: Short
+    val CLOSING: Short
+    val CLOSED: Short
 
     companion object {
-        val CLOSED: Short
-        val CLOSING: Short
         val CONNECTING: Short
         val OPEN: Short
+        val CLOSING: Short
+        val CLOSED: Short
     }
 }

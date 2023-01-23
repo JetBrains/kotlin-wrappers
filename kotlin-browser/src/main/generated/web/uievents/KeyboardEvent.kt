@@ -32,15 +32,15 @@ open external class KeyboardEvent(
     val repeat: Boolean
     val shiftKey: Boolean
     fun getModifierState(keyArg: ModifierKeyCode): Boolean
-    val DOM_KEY_LOCATION_LEFT: Short
-    val DOM_KEY_LOCATION_NUMPAD: Short
-    val DOM_KEY_LOCATION_RIGHT: Short
     val DOM_KEY_LOCATION_STANDARD: Short
+    val DOM_KEY_LOCATION_LEFT: Short
+    val DOM_KEY_LOCATION_RIGHT: Short
+    val DOM_KEY_LOCATION_NUMPAD: Short
 
     companion object {
-        val DOM_KEY_LOCATION_LEFT: Short
-        val DOM_KEY_LOCATION_NUMPAD: Short
-        val DOM_KEY_LOCATION_RIGHT: Short
         val DOM_KEY_LOCATION_STANDARD: Short
+        val DOM_KEY_LOCATION_LEFT: Short
+        val DOM_KEY_LOCATION_RIGHT: Short
+        val DOM_KEY_LOCATION_NUMPAD: Short
     }
 }
