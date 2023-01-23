@@ -285,10 +285,10 @@ fun StyledElement.flex(flex: Flex) {
 }
 
 private fun getShorthandValue(
-    top: LinearDimension?,
-    right: LinearDimension?,
-    bottom: LinearDimension?,
-    left: LinearDimension?,
+    top: LinearDimension,
+    right: LinearDimension,
+    bottom: LinearDimension,
+    left: LinearDimension,
 ): String {
     return if (top == bottom && right == left) {
         if (top == right) {
