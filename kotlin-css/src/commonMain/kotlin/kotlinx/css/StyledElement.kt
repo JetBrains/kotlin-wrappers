@@ -50,11 +50,11 @@ class StyledElementImpl : StyledElement {
     override val declarations = CssDeclarations()
 }
 
-private class CssProperty<T : Any>(private val default: (() -> T)? = null) {
+private class CssProperty<T>(private val default: (() -> T)? = null) {
     operator fun getValue(thisRef: StyledElement, property: KProperty<*>): T {
         default?.let { default ->
             if (!thisRef.declarations.containsKey(property.name)) {
-                thisRef.declarations[property.name] = default()
+                thisRef.declarations[property.name] = default() as Any
             }
         }
 
@@ -63,7 +63,7 @@ private class CssProperty<T : Any>(private val default: (() -> T)? = null) {
     }
 
     operator fun setValue(thisRef: StyledElement, property: KProperty<*>, value: T) {
-        thisRef.declarations[property.name] = value
+        thisRef.declarations[property.name] = value as Any
     }
 }
 
