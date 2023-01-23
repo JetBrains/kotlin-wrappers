@@ -13,6 +13,8 @@ import web.media.devices.MediaDevices
 import web.media.key.MediaKeySystemAccess
 import web.media.key.MediaKeySystemConfiguration
 import web.media.session.MediaSession
+import web.midi.MIDIAccess
+import web.midi.MIDIOptions
 import web.permissions.Permissions
 import web.serviceworker.ServiceWorkerContainer
 import web.share.ShareData
@@ -52,6 +54,9 @@ sealed external class Navigator :
     /** Available only in secure contexts. */
     fun canShare(data: ShareData = definedExternally): Boolean
     fun getGamepads(): ReadonlyArray<Gamepad?>
+
+    /** Available only in secure contexts. */
+    fun requestMIDIAccess(options: MIDIOptions = definedExternally): Promise<MIDIAccess>
 
     /** Available only in secure contexts. */
     fun requestMediaKeySystemAccess(
