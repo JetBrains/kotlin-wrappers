@@ -7,10 +7,10 @@
 package web.canvas
 
 // language=JavaScript
-@JsName("""(/*union*/{flipY: 'flipY', none: 'none'}/*union*/)""")
+@JsName("""(/*union*/{flipY: 'flipY', fromImage: 'from-image'}/*union*/)""")
 external enum class ImageOrientation {
     flipY,
-    none,
+    fromImage,
 
     ;
 }
