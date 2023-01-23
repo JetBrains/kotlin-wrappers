@@ -70,6 +70,7 @@ abstract external class Element :
 
     /** Creates a shadow root for element and returns it. */
     fun attachShadow(init: ShadowRootInit): ShadowRoot
+    fun checkVisibility(options: CheckVisibilityOptions = definedExternally): Boolean
 
     /** Returns the first (starting at element) inclusive ancestor that matches selectors, and null otherwise. */
     fun <T : HTMLElement> closest(selector: HtmlTagName<T>): T?
