@@ -4,6 +4,7 @@ package web.html
 
 import js.core.ArrayLike
 import js.core.JsIterable
+import web.dom.DOMTokenList
 import web.dom.Element
 import web.window.WindowTarget
 
@@ -37,6 +38,8 @@ abstract external class HTMLFormElement :
 
     /** Designates a form that is not validated when submitted. */
     var noValidate: Boolean
+    var rel: String
+    val relList: DOMTokenList
 
     /** Sets or retrieves the window or frame at which to target content. */
     var target: WindowTarget
