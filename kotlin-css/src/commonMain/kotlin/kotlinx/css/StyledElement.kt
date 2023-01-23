@@ -275,12 +275,12 @@ fun StyledElement.flex(flexGrow: Number/* = 0.0 */, flexShrink: Number/* = 1.0 *
 fun StyledElement.flex(flexGrow: Number/* = 0.0 */, flexShrink: Number/* = 1.0 */, flexBasis: LinearDimension) =
     flex(flexGrow, flexShrink, flexBasis.basis)
 
-fun StyledElement.grow(grow: Grow) {
-    when (grow) {
-        Grow.GROW -> flex(1, 0, LinearDimension.auto)
-        Grow.SHRINK -> flex(0, 1, LinearDimension.auto)
-        Grow.NONE -> flex(0, 0, LinearDimension.auto)
-        Grow.GROW_SHRINK -> flex(1, 1, LinearDimension.auto)
+fun StyledElement.flex(flex: Flex) {
+    when (flex) {
+        Flex.NONE -> flex(0, 0, LinearDimension.auto)
+        Flex.GROW -> flex(1, 0, LinearDimension.auto)
+        Flex.SHRINK -> flex(0, 1, LinearDimension.auto)
+        Flex.GROW_SHRINK -> flex(1, 1, LinearDimension.auto)
     }
 }
 

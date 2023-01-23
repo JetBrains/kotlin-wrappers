@@ -866,7 +866,7 @@ class GridTemplateRows(override val value: String) : CssValue(value) {
     }
 }
 
-enum class Grow {
+enum class Flex {
     NONE, GROW, SHRINK, GROW_SHRINK
 }
 
