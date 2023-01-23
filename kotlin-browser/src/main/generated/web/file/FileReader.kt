@@ -28,13 +28,13 @@ external class FileReader :
         encoding: String = definedExternally,
     )
 
-    val DONE: Short
     val EMPTY: Short
     val LOADING: Short
+    val DONE: Short
 
     companion object {
-        val DONE: Short
         val EMPTY: Short
         val LOADING: Short
+        val DONE: Short
     }
 }
