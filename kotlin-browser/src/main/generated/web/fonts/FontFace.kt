@@ -25,7 +25,7 @@ external class FontFace(
 
     var ascentOverride: String
     var descentOverride: String
-    var display: String
+    var display: FontDisplay
     var family: String
     var featureSettings: String
     var lineGapOverride: String
@@ -35,7 +35,6 @@ external class FontFace(
     var style: String
     var unicodeRange: String
     var variant: String
-    var variationSettings: String
     var weight: String
     fun load(): Promise<FontFace>
 }
