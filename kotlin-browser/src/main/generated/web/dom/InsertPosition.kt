@@ -7,12 +7,12 @@
 package web.dom
 
 // language=JavaScript
-@JsName("""(/*union*/{beforebegin: 'beforebegin', afterbegin: 'afterbegin', beforeend: 'beforeend', afterend: 'afterend'}/*union*/)""")
+@JsName("""(/*union*/{afterbegin: 'afterbegin', afterend: 'afterend', beforebegin: 'beforebegin', beforeend: 'beforeend'}/*union*/)""")
 external enum class InsertPosition {
-    beforebegin,
     afterbegin,
-    beforeend,
     afterend,
+    beforebegin,
+    beforeend,
 
     ;
 }
