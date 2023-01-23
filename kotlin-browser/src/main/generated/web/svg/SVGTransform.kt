@@ -30,21 +30,21 @@ sealed external class SVGTransform {
         ty: Number,
     )
 
+    val SVG_TRANSFORM_UNKNOWN: Short
     val SVG_TRANSFORM_MATRIX: Short
-    val SVG_TRANSFORM_ROTATE: Short
+    val SVG_TRANSFORM_TRANSLATE: Short
     val SVG_TRANSFORM_SCALE: Short
+    val SVG_TRANSFORM_ROTATE: Short
     val SVG_TRANSFORM_SKEWX: Short
     val SVG_TRANSFORM_SKEWY: Short
-    val SVG_TRANSFORM_TRANSLATE: Short
-    val SVG_TRANSFORM_UNKNOWN: Short
 
     companion object {
+        val SVG_TRANSFORM_UNKNOWN: Short
         val SVG_TRANSFORM_MATRIX: Short
-        val SVG_TRANSFORM_ROTATE: Short
+        val SVG_TRANSFORM_TRANSLATE: Short
         val SVG_TRANSFORM_SCALE: Short
+        val SVG_TRANSFORM_ROTATE: Short
         val SVG_TRANSFORM_SKEWX: Short
         val SVG_TRANSFORM_SKEWY: Short
-        val SVG_TRANSFORM_TRANSLATE: Short
-        val SVG_TRANSFORM_UNKNOWN: Short
     }
 }

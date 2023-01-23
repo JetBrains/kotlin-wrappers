@@ -24,13 +24,13 @@ sealed external class SVGTextContentElement :
         nchars: Number,
     ): Number
 
+    val LENGTHADJUST_UNKNOWN: Short
     val LENGTHADJUST_SPACING: Short
     val LENGTHADJUST_SPACINGANDGLYPHS: Short
-    val LENGTHADJUST_UNKNOWN: Short
 
     companion object {
+        val LENGTHADJUST_UNKNOWN: Short
         val LENGTHADJUST_SPACING: Short
         val LENGTHADJUST_SPACINGANDGLYPHS: Short
-        val LENGTHADJUST_UNKNOWN: Short
     }
 }
