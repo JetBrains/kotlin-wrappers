@@ -128,10 +128,16 @@ sealed external class CSSStyleDeclaration :
     var columnWidth: String
     var columns: String
     var contain: String
+    var containIntrinsicBlockSize: String
+    var containIntrinsicHeight: String
+    var containIntrinsicInlineSize: String
+    var containIntrinsicSize: String
+    var containIntrinsicWidth: String
     var container: String
     var containerName: String
     var containerType: String
     var content: String
+    var contentVisibility: String
     var counterIncrement: String
     var counterReset: String
     var counterSet: String
@@ -242,6 +248,7 @@ sealed external class CSSStyleDeclaration :
     var maskRepeat: String
     var maskSize: String
     var maskType: String
+    var mathStyle: String
     var maxBlockSize: String
     var maxHeight: String
     var maxInlineSize: String
