@@ -17,7 +17,6 @@ import kotlin.js.Promise
 
 abstract external class Document :
     Node,
-    DocumentAndElementEventHandlers,
     DocumentOrShadowRoot,
     FontFaceSource,
     GlobalEventHandlers,

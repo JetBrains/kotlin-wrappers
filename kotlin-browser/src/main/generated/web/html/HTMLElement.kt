@@ -2,7 +2,6 @@
 
 package web.html
 
-import web.dom.DocumentAndElementEventHandlers
 import web.dom.Element
 import web.dom.GlobalEventHandlers
 import web.dom.HTMLOrSVGElement
@@ -10,7 +9,6 @@ import web.dom.css.ElementCSSInlineStyle
 
 abstract external class HTMLElement :
     Element,
-    DocumentAndElementEventHandlers,
     ElementCSSInlineStyle,
     ElementContentEditable,
     GlobalEventHandlers,

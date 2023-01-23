@@ -3,6 +3,7 @@
 package web.dom
 
 import web.animations.AnimationEvent
+import web.clipboard.ClipboardEvent
 import web.csp.SecurityPolicyViolationEvent
 import web.cssom.TransitionEvent
 import web.events.Event
@@ -57,7 +58,9 @@ external interface GlobalEventHandlers {
      * @param ev The mouse event.
      */
     var oncontextmenu: EventHandler<MouseEvent>?
+    var oncopy: EventHandler<ClipboardEvent>?
     var oncuechange: EventHandler<Event>?
+    var oncut: EventHandler<ClipboardEvent>?
 
     /**
      * Fires when the user double-clicks the object.
@@ -204,6 +207,7 @@ external interface GlobalEventHandlers {
      * @param ev The mouse event.
      */
     var onmouseup: EventHandler<MouseEvent>?
+    var onpaste: EventHandler<ClipboardEvent>?
 
     /**
      * Occurs when playback is paused.
