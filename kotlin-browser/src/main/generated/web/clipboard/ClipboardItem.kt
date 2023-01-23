@@ -11,6 +11,7 @@ external class ClipboardItem(
     items: Record<String, Any /* String | Blob | PromiseLike<String | Blob> */>,
     options: ClipboardItemOptions = definedExternally,
 ) {
+    val presentationStyle: PresentationStyle
     val types: ReadonlyArray<String>
     fun getType(type: String): Promise<Blob>
 }
