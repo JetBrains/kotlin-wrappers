@@ -9,7 +9,6 @@ external interface ARIAMixin {
     var ariaChecked: String?
     var ariaColCount: String?
     var ariaColIndex: String?
-    var ariaColIndexText: String?
     var ariaColSpan: String?
     var ariaCurrent: String?
     var ariaDisabled: String?
@@ -33,7 +32,6 @@ external interface ARIAMixin {
     var ariaRoleDescription: String?
     var ariaRowCount: String?
     var ariaRowIndex: String?
-    var ariaRowIndexText: String?
     var ariaRowSpan: String?
     var ariaSelected: String?
     var ariaSetSize: String?
