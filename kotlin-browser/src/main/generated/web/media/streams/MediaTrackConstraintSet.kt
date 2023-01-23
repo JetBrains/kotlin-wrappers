@@ -7,15 +7,14 @@ sealed external interface MediaTrackConstraintSet {
     var autoGainControl: ConstrainBoolean?
     var channelCount: ConstrainULong?
     var deviceId: ConstrainDOMString?
+    var displaySurface: ConstrainDOMString?
     var echoCancellation: ConstrainBoolean?
     var facingMode: ConstrainDOMString?
     var frameRate: ConstrainDouble?
     var groupId: ConstrainDOMString?
     var height: ConstrainULong?
-    var latency: ConstrainDouble?
     var noiseSuppression: ConstrainBoolean?
     var sampleRate: ConstrainULong?
     var sampleSize: ConstrainULong?
-    var suppressLocalAudioPlayback: ConstrainBoolean?
     var width: ConstrainULong?
 }
