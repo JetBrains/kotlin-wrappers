@@ -5,6 +5,8 @@ package web.dom
 import web.html.HTMLCollection
 import web.html.HTMLElement
 import web.html.HtmlTagName
+import web.mathml.MathMLElement
+import web.mathml.MathMLTagName
 import web.svg.SVGElement
 import web.svg.SvgTagName
 
@@ -37,11 +39,13 @@ sealed external interface ParentNode /* : Node */ {
     /** Returns the first element that is a descendant of node that matches selectors. */
     fun <T : HTMLElement> querySelector(selectors: HtmlTagName<T>): T?
     fun <T : SVGElement> querySelector(selectors: SvgTagName<T>): T?
+    fun <T : MathMLElement> querySelector(selectors: MathMLTagName<T>): T?
     fun querySelector(selectors: String): Element?
 
     /** Returns all element descendants of node that match selectors. */
     fun <T : HTMLElement> querySelectorAll(selectors: HtmlTagName<T>): NodeListOf<T>
     fun <T : SVGElement> querySelectorAll(selectors: SvgTagName<T>): NodeListOf<T>
+    fun <T : MathMLElement> querySelectorAll(selectors: MathMLTagName<T>): NodeListOf<T>
     fun querySelectorAll(selectors: String): NodeListOf<Element>
 
     /**

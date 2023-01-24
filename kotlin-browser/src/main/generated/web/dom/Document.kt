@@ -7,6 +7,8 @@ import web.events.Event
 import web.events.EventHandler
 import web.fonts.FontFaceSource
 import web.html.*
+import web.mathml.MathMLElement
+import web.mathml.MathMLTagName
 import web.selection.Selection
 import web.svg.SVGElement
 import web.svg.SvgTagName
@@ -251,6 +253,7 @@ abstract external class Document :
      */
     fun <T : HTMLElement> getElementsByTagName(qualifiedName: HtmlTagName<T>): HTMLCollectionOf<T>
     fun <T : SVGElement> getElementsByTagName(qualifiedName: SvgTagName<T>): HTMLCollectionOf<T>
+    fun <T : MathMLElement> getElementsByTagName(qualifiedName: MathMLTagName<T>): HTMLCollectionOf<T>
     fun getElementsByTagName(qualifiedName: String): HTMLCollectionOf<Element>
     fun getElementsByTagNameNS(
         namespace: String?,

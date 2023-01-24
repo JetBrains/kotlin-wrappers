@@ -11,6 +11,8 @@ import web.fullscreen.FullscreenOptions
 import web.geometry.DOMRect
 import web.geometry.DOMRectList
 import web.html.*
+import web.mathml.MathMLElement
+import web.mathml.MathMLTagName
 import web.scroll.ScrollIntoViewOptions
 import web.scroll.ScrollToOptions
 import web.svg.SVGElement
@@ -75,6 +77,7 @@ abstract external class Element :
     /** Returns the first (starting at element) inclusive ancestor that matches selectors, and null otherwise. */
     fun <T : HTMLElement> closest(selector: HtmlTagName<T>): T?
     fun <T : SVGElement> closest(selector: SvgTagName<T>): T?
+    fun <T : MathMLElement> closest(selector: MathMLTagName<T>): T?
     fun closest(selector: String): Element?
 
     /** Returns element's first attribute whose qualified name is qualifiedName, and null if there is no such attribute otherwise. */
@@ -101,6 +104,7 @@ abstract external class Element :
     fun getElementsByClassName(classNames: String): HTMLCollectionOf<Element>
     fun <T : HTMLElement> getElementsByTagName(qualifiedName: HtmlTagName<T>): HTMLCollectionOf<T>
     fun <T : SVGElement> getElementsByTagName(qualifiedName: SvgTagName<T>): HTMLCollectionOf<T>
+    fun <T : MathMLElement> getElementsByTagName(qualifiedName: MathMLTagName<T>): HTMLCollectionOf<T>
     fun getElementsByTagName(qualifiedName: String): HTMLCollectionOf<Element>
     fun getElementsByTagNameNS(
         namespace: String?,
