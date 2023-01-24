@@ -5,7 +5,7 @@
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
-package web.html
+package web.canvas
 
 // language=JavaScript
 @JsName("""(/*union*/{canvas: '2d', bitmaprenderer: 'bitmaprenderer', webgl: 'webgl', webgl2: 'webgl2'}/*union*/)""")

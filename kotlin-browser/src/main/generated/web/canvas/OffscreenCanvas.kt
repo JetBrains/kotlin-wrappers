@@ -6,7 +6,6 @@ import web.buffer.Blob
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventTarget
-import web.html.RenderingContextId
 import webgl.WebGL2RenderingContext
 import webgl.WebGLRenderingContext
 import kotlin.js.Promise
