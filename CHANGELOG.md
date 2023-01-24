@@ -2,7 +2,7 @@
 
 **BREAKING CHANGE**
 
-`fun StyledElement.grow(grow: Grow)` renamed to `fun StyledElement.flex(flex: Flex)`. Please update your code accordingly if you're using `kotlin-csss`.
+`fun StyledElement.grow(grow: Grow)` renamed to `fun StyledElement.flex(flex: Flex)`. Please update your code accordingly if you're using `kotlin-css`.
 
 ## pre.467
 
