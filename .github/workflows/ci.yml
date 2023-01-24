@@ -16,7 +16,7 @@ jobs:
           java-version: 17
       - name: Build
         run: |
-          ./gradlew build
+          ./gradlew build -x kotlin-styled-next:legacyBrowserTest -x kotlin-styled-next:irBrowserTest -x kotlin-styled-next:printBenchmarkResults
 
   test:
 
