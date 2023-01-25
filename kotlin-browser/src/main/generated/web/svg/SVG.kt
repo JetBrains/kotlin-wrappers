@@ -2,7 +2,12 @@
 
 package web.svg
 
+import web.dom.ElementNamespace
+
 object SVG {
+    inline val NAMESPACE: ElementNamespace
+        get() = "http://www.w3.org/2000/svg".unsafeCast<ElementNamespace>()
+
     inline val a: SvgTagName<SVGAElement>
         get() = SvgTagName("a")
 

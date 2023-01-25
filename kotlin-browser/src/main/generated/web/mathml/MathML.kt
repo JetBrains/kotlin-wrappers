@@ -2,7 +2,12 @@
 
 package web.mathml
 
+import web.dom.ElementNamespace
+
 object MathML {
+    inline val NAMESPACE: ElementNamespace
+        get() = "http://www.w3.org/1998/Math/MathML".unsafeCast<ElementNamespace>()
+
     inline val annotation: MathMLTagName<MathMLElement>
         get() = MathMLTagName("annotation")
 
