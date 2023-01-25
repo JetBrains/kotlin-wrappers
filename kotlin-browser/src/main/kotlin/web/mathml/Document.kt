@@ -6,6 +6,6 @@ fun <T : MathMLElement> Document.createElement(
     tagName: MathMLTagName<T>,
 ): T =
     createElementNS(
-        namespace = MATHML_NAMESPACE.unsafeCast<String>(),
-        qualifiedName = tagName.unsafeCast<String>(),
-    ).unsafeCast<T>()
+        namespaceURI = MATHML_NAMESPACE,
+        qualifiedName = tagName,
+    )
