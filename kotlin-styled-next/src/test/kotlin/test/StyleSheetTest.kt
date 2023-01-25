@@ -1,7 +1,9 @@
 package test
 
+import TestScope
 import js.core.asList
 import kotlinx.css.*
+import react.FC
 import react.Props
 import react.fc
 import runTest
@@ -11,6 +13,7 @@ import styled.sheets.importStyleId
 import styled.sheets.styleElementsSelector
 import waitForAnimationFrame
 import web.cssom.CSSStyleSheet
+import web.dom.Element
 import web.dom.document
 import web.html.HTMLStyleElement
 import kotlin.test.BeforeTest
@@ -296,5 +299,45 @@ class StyleSheetTest : TestBase() {
         waitForAnimationFrame()
         assertEquals(expectedColor, element.color())
         assertCssInjected("StaticStyleSheetObject-property", "color" to expectedColor)
+    }
+
+    private fun createComponentWithLocalStylesheet(builder: CssBuilder.() -> Unit): FC<Props> {
+        val myStylesheet = object : StyleSheet() {
+            val rule by css { builder() }
+        }
+        return fc {
+            styledSpan {
+                css { +myStylesheet.rule }
+            }
+        }
+    }
+
+    private fun TestScope.checkStylesheet(builder: CssBuilder.() -> Unit, assert: (Element) -> Unit) {
+        val styledComponent = createComponentWithLocalStylesheet(builder)
+        val element = inject(styledComponent)
+        assert(element)
+    }
+
+    @Test
+    fun sameNameStylesheetsInjectedBoth_injectedSequentially() = runTest {
+        checkStylesheet({ color = firstColor }) { el ->
+            assertEquals(firstColor.toString(), el.color())
+        }
+        checkStylesheet({ color = secondColor }) { el ->
+            assertEquals(secondColor.toString(), el.color())
+        }
+        checkStylesheet({ color = thirdColor }) { el ->
+            assertEquals(thirdColor.toString(), el.color())
+        }
+    }
+
+    @Test
+    fun sameNameStylesheetsInjectedBoth_injectedTogether() = runTest {
+        val elem1 = createComponentWithLocalStylesheet { color = firstColor }
+        val elem2 = createComponentWithLocalStylesheet { color = secondColor }
+        val elem3 = createComponentWithLocalStylesheet { color = thirdColor }
+        assertEquals(firstColor.toString(), inject(elem1).color())
+        assertEquals(secondColor.toString(), inject(elem2).color())
+        assertEquals(thirdColor.toString(), inject(elem3).color())
     }
 }
