@@ -17,7 +17,7 @@ jobs:
           java-version: '17'
       - name: Build
         run: |
-          ./gradlew build --no-daemon
+          ./gradlew build -x :kotlin-styled-next:test -x kotlin-styled-next:legacyBrowserTest  -x kotlin-styled-next:irBrowserTest --no-daemon
 
   test:
 
