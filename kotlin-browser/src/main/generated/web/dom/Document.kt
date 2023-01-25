@@ -7,10 +7,12 @@ import web.events.Event
 import web.events.EventHandler
 import web.fonts.FontFaceSource
 import web.html.*
+import web.mathml.MATHML_NAMESPACE
 import web.mathml.MathMLElement
 import web.mathml.MathMLTagName
 import web.selection.Selection
 import web.svg.SVGElement
+import web.svg.SVG_NAMESPACE
 import web.svg.SvgTagName
 import web.url.URL
 import web.window.WindowProxy
@@ -176,6 +178,16 @@ abstract external class Document :
         options: ElementCreationOptions = definedExternally,
     ): HTMLElement
 
+    fun <T : SVGElement> createElementNS(
+        namespaceURI: SVG_NAMESPACE,
+        qualifiedName: SvgTagName<T>,
+    ): T
+
+    fun <T : MathMLElement> createElementNS(
+        namespaceURI: MATHML_NAMESPACE,
+        qualifiedName: MathMLTagName<T>,
+    ): T
+
     fun createElementNS(
         namespace: String?,
         qualifiedName: String,
@@ -255,6 +267,16 @@ abstract external class Document :
     fun <T : SVGElement> getElementsByTagName(qualifiedName: SvgTagName<T>): HTMLCollectionOf<T>
     fun <T : MathMLElement> getElementsByTagName(qualifiedName: MathMLTagName<T>): HTMLCollectionOf<T>
     fun getElementsByTagName(qualifiedName: String): HTMLCollectionOf<Element>
+    fun <T : SVGElement> getElementsByTagNameNS(
+        namespaceURI: SVG_NAMESPACE,
+        localName: SvgTagName<T>,
+    ): HTMLCollectionOf<T>
+
+    fun <T : MathMLElement> getElementsByTagNameNS(
+        namespaceURI: MATHML_NAMESPACE,
+        localName: MathMLTagName<T>,
+    ): HTMLCollectionOf<T>
+
     fun getElementsByTagNameNS(
         namespace: String?,
         localName: String,

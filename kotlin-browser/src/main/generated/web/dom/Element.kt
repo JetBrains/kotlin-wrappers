@@ -11,11 +11,13 @@ import web.fullscreen.FullscreenOptions
 import web.geometry.DOMRect
 import web.geometry.DOMRectList
 import web.html.*
+import web.mathml.MATHML_NAMESPACE
 import web.mathml.MathMLElement
 import web.mathml.MathMLTagName
 import web.scroll.ScrollIntoViewOptions
 import web.scroll.ScrollToOptions
 import web.svg.SVGElement
+import web.svg.SVG_NAMESPACE
 import web.svg.SvgTagName
 import kotlin.js.Promise
 
@@ -106,6 +108,16 @@ abstract external class Element :
     fun <T : SVGElement> getElementsByTagName(qualifiedName: SvgTagName<T>): HTMLCollectionOf<T>
     fun <T : MathMLElement> getElementsByTagName(qualifiedName: MathMLTagName<T>): HTMLCollectionOf<T>
     fun getElementsByTagName(qualifiedName: String): HTMLCollectionOf<Element>
+    fun <T : SVGElement> getElementsByTagNameNS(
+        namespaceURI: SVG_NAMESPACE,
+        localName: SvgTagName<T>,
+    ): HTMLCollectionOf<T>
+
+    fun <T : MathMLElement> getElementsByTagNameNS(
+        namespaceURI: MATHML_NAMESPACE,
+        localName: MathMLTagName<T>,
+    ): HTMLCollectionOf<T>
+
     fun getElementsByTagNameNS(
         namespace: String?,
         localName: String,
