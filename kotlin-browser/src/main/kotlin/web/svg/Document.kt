@@ -6,6 +6,6 @@ fun <T : SVGElement> Document.createElement(
     tagName: SvgTagName<T>,
 ): T =
     createElementNS(
-        namespace = SVG.NAMESPACE.unsafeCast<String>(),
+        namespace = SVG_NAMESPACE.unsafeCast<String>(),
         qualifiedName = tagName.unsafeCast<String>(),
     ).unsafeCast<T>()

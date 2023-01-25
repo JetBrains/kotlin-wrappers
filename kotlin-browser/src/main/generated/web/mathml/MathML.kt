@@ -1,13 +1,17 @@
 // Automatically generated - do not modify!
 
+@file:Suppress(
+    "NAME_CONTAINS_ILLEGAL_CHARS",
+)
+
 package web.mathml
 
 import web.dom.ElementNamespace
 
-object MathML {
-    inline val NAMESPACE: ElementNamespace
-        get() = "http://www.w3.org/1998/Math/MathML".unsafeCast<ElementNamespace>()
+@JsName("'http://www.w3.org/1998/Math/MathML'")
+external object MATHML_NAMESPACE : ElementNamespace
 
+object MathML {
     inline val annotation: MathMLTagName<MathMLElement>
         get() = MathMLTagName("annotation")
 
