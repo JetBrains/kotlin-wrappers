@@ -10,7 +10,7 @@ operator fun <T : Any> CSSStyleDeclaration.get(
     )
 
     return if (value.isNotEmpty()) {
-        value.unsafeCast<T?>()
+        value.unsafeCast<T>()
     } else null
 }
 
