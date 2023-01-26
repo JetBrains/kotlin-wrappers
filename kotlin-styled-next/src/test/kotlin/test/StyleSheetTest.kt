@@ -319,7 +319,8 @@ class StyleSheetTest : TestBase() {
     }
 
     @Test
-    fun sameNameStylesheetsInjectedBoth_injectedSequentially() = runTest {
+    fun sameNameStylesheetsInjectedSequentially() = runTest {
+        clear()
         checkStylesheet({ color = firstColor }) { el ->
             assertEquals(firstColor.toString(), el.color())
         }
@@ -332,7 +333,8 @@ class StyleSheetTest : TestBase() {
     }
 
     @Test
-    fun sameNameStylesheetsInjectedBoth_injectedTogether() = runTest {
+    fun sameNameStylesheetsInjectedTogether() = runTest {
+        clear()
         val elem1 = createComponentWithLocalStylesheet { color = firstColor }
         val elem2 = createComponentWithLocalStylesheet { color = secondColor }
         val elem3 = createComponentWithLocalStylesheet { color = thirdColor }

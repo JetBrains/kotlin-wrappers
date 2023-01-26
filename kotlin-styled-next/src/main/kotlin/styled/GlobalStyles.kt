@@ -72,7 +72,7 @@ object GlobalStyles {
     }
 
     internal val injectedStyleSheetRules = mutableMapOf<Selector, GroupId>()
-    internal val usedStyleSheet = mutableMapOf<Selector, CssBuilder>()
+    internal val usedStyleSheet = mutableMapOf<Selector, StyleSheet>()
 
     /**
      * Schedule CSS from [css] for injection into the DOM with the corresponding [selector].

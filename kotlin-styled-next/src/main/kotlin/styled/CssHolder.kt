@@ -32,12 +32,14 @@ abstract class AbstractCssHolder(protected val sheet: StyleSheet, protected vara
 
 
 class CssHolder(sheet: StyleSheet, vararg ruleSets: RuleSet) : AbstractCssHolder(sheet, *ruleSets) {
+    /**
+     * Used to be able to create styleSheets with the same name.
+     * Time complexity is O(n), where n is the number of css blocks with the same classname (styleSheet name + property name) and different CSS names, which were injected before this one
+     */
     private fun updateClassnameIfClashes(className: ClassName): ClassName {
         var newClassname = className
         var counter = 0
-        while ((GlobalStyles.usedStyleSheet.contains(".${newClassname}") && GlobalStyles.usedStyleSheet[".${newClassname}"] != css)
-            || (GlobalStyles.injectedStyleSheetRules.contains(".${newClassname}") && GlobalStyles.styledClasses[css]?.className != newClassname)
-        ) {
+        while (GlobalStyles.usedStyleSheet.contains(".${newClassname}") && GlobalStyles.usedStyleSheet[".${newClassname}"] != sheet) {
             newClassname = className + counter
             counter++
         }
@@ -47,7 +49,7 @@ class CssHolder(sheet: StyleSheet, vararg ruleSets: RuleSet) : AbstractCssHolder
     operator fun provideDelegate(thisRef: Any?, providingProperty: KProperty<*>): ReadOnlyProperty<Any?, RuleSet> {
         val className = updateClassnameIfClashes(sheet.getClassName(providingProperty))
         classNamesToInject.add(className)
-        GlobalStyles.usedStyleSheet[".$className"] = css
+        GlobalStyles.usedStyleSheet[".$className"] = sheet
         return ReadOnlyProperty { _, property ->
             {
                 sheet.scheduleImports()
