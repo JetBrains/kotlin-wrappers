@@ -77,7 +77,6 @@ val printBenchmarkResults by tasks.registering {
 }
 
 tasks.test {
-    enabled = project.hasProperty("test")
     if (enabled) {
         finalizedBy(printBenchmarkResults)
     }
