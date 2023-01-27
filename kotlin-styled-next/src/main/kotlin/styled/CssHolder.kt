@@ -33,8 +33,7 @@ abstract class AbstractCssHolder(protected val sheet: StyleSheet, protected vara
 
 class CssHolder(sheet: StyleSheet, vararg ruleSets: RuleSet) : AbstractCssHolder(sheet, *ruleSets) {
     /**
-     * Used to be able to create styleSheets with the same name.
-     * Time complexity is O(n), where n is the number of css blocks with the same classname (styleSheet name + property name) and different CSS names, which were injected before this one
+     * Used to inject styleSheet properties with the same name but different CSS
      */
     private fun updateClassnameIfClashes(className: ClassName): ClassName {
         var newClassname = className

@@ -22,6 +22,7 @@ external interface StyledNext {
     var getCss: (String?) -> Array<String>
 
     var getStylesheets: () -> Array<CSSStyleSheet>
+    var useDevSheet: (Boolean) -> Unit
 
     /**
      * @param [block] is executed on every CSS text rule in DOM
@@ -50,7 +51,7 @@ internal object GlobalCssAccess {
         document.body.removeChild(link)
     }
 
-    internal fun useDevSheet(isDev: Boolean = true) {
+    fun useDevSheet(isDev: Boolean = true) {
         localStorage.setItem(sheetTypeKey, if (isDev) SheetType.Dev.name else SheetType.CSSOM.name)
         location.reload()
     }
@@ -88,6 +89,8 @@ internal object GlobalCssAccess {
             this.getCss = { partialCss ->
                 mapNotNullRules { if (it.contains(partialCss ?: "")) it else null }
             }
+
+            this.useDevSheet = this@GlobalCssAccess::useDevSheet
         }
     }
 }
