@@ -1,3 +1,7 @@
+## 1.2.2
+
+It is now possible to have multiple `StyleSheet` objects with the same name, name clashes will be resolved automatically.
+
 ## 1.2.1
 
 `CssValue` can be used in `dynamicCss`
