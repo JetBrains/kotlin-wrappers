@@ -1,5 +1,6 @@
 package styled
 
+import js.core.asList
 import js.core.jso
 import web.buffer.Blob
 import web.buffer.BlobPart
@@ -15,20 +16,21 @@ import web.url.URL
 import web.window.window
 
 external interface StyledNext {
-    /** download a file with CSS rules that contain partialCss */
-    var downloadCss: (partialCss: String?, filename: String?) -> Unit
+    fun useDevSheet(isDev: Boolean)
 
-    /** @return array of all CSS rules that contain partialCss */
-    var getCss: (String?) -> Array<String>
-
-    var getStylesheets: () -> Array<CSSStyleSheet>
-    var useDevSheet: (Boolean) -> Unit
+    fun getStylesheets(): Array<CSSStyleSheet>
 
     /**
      * @param [block] is executed on every CSS text rule in DOM
      * @return resulting array of [block] returned values if they are not null
      */
     fun <T> mapNotNullRules(block: (String) -> T?): Array<T>
+
+    /** @return array of all CSS rules that contain partialCss */
+    fun getCss(partialCss: String?): Array<String>
+
+    /** download a file with CSS rules that contain partialCss */
+    fun downloadCss(partialCss: String?, filename: String?)
 }
 
 internal object GlobalCssAccess {
@@ -61,9 +63,13 @@ internal object GlobalCssAccess {
     }
 
     internal fun setupCssHelperFunctions() {
-        window.asDynamic().StyledNext = jso<StyledNext> {
-            this.getStylesheets = {
-                buildList {
+        window.asDynamic().StyledNext = object : StyledNext {
+            override fun useDevSheet(isDev: Boolean) {
+                this@GlobalCssAccess.useDevSheet(isDev)
+            }
+
+            override fun getStylesheets(): Array<CSSStyleSheet> {
+                return buildList {
                     for (i in 0 until document.styleSheets.length) {
                         val node = document.styleSheets.item(i) ?: continue
                         if ((node.ownerNode as Element).id.startsWith("ksc-global-style")) add(node)
@@ -71,26 +77,18 @@ internal object GlobalCssAccess {
                 }.toTypedArray()
             }
 
-            this.asDynamic().mapNotNullRules = { block: (String) -> Any ->
-                getStylesheets().flatMap {
-                    val rules = it.cssRules
-                    (0 until rules.length).mapNotNull { i ->
-                        rules.item(i)?.run {
-                            block(cssText)
-                        }
+            override fun <T> mapNotNullRules(block: (String) -> T?): Array<T> {
+                return getStylesheets().flatMap { sheet ->
+                    sheet.cssRules.asList().mapNotNull { rule ->
+                        block(rule.cssText)
                     }
                 }.toTypedArray()
             }
 
-            this.downloadCss = { partialCss: String?, filename: String? ->
+            override fun getCss(partialCss: String?) = mapNotNullRules { if (it.contains(partialCss ?: "")) it else null }
+            override fun downloadCss(partialCss: String?, filename: String?) {
                 downloadFile(getCss(partialCss).joinToString("\n"), filename ?: "index.css")
             }
-
-            this.getCss = { partialCss ->
-                mapNotNullRules { if (it.contains(partialCss ?: "")) it else null }
-            }
-
-            this.useDevSheet = this@GlobalCssAccess::useDevSheet
         }
     }
 }
