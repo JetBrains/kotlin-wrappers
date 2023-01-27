@@ -34,9 +34,7 @@ open class StyleSheet(
 ) {
     val name: String = name
         ?: this::class.simpleName
-        ?: this::class.js.name.replace("$", "").replace(".", "").also {
-            console.warn("Style sheet with no name specified: $it")
-        }
+        ?: this::class.js.name.replace("$", "").replace(".", "")
     private val holders: MutableList<CssHolder> = mutableListOf()
 
     /** Keeps all holders providing dynamic styles - the holders are cached by their CSS suffixes. */

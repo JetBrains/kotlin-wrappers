@@ -85,9 +85,4 @@ class DataTypeOperations : BenchmarkBase() {
     fun get5kElements() = runBenchmark(name = "get5kElements") {
         getNElements(5000)
     }
-
-    @Test
-    fun get10kElements() = runBenchmark(name = "get10kElements") {
-        getNElements(10000)
-    }
 }

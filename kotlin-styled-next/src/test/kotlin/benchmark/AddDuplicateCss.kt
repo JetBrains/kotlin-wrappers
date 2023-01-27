@@ -38,17 +38,17 @@ class AddDuplicateCss : BenchmarkBase() {
     }
 
     @Test
+    fun add20DuplicatedElements() = runBenchmark("add20DuplicatedElements") {
+        addElement(20, 15)
+    }
+
+    @Test
+    fun add50DuplicatedElements() = runBenchmark("add50DuplicatedElements") {
+        addElement(50, 5)
+    }
+
+    @Test
     fun add100DuplicatedElements() = runBenchmark("add100DuplicatedElements") {
         addElement(100, 20)
-    }
-
-    @Test
-    fun add200DuplicatedElements() = runBenchmark("add200DuplicatedElements") {
-        addElement(200, 15)
-    }
-
-    @Test
-    fun add500DuplicatedElements() = runBenchmark("add500DuplicatedElements") {
-        addElement(500, 5)
     }
 }

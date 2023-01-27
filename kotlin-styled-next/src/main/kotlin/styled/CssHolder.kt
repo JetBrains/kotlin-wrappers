@@ -6,7 +6,7 @@ import kotlin.properties.ReadOnlyProperty
 import kotlin.reflect.KProperty
 
 abstract class AbstractCssHolder(protected val sheet: StyleSheet, protected vararg val ruleSets: RuleSet) {
-    protected val classNamesToInject = mutableMapOf<ClassName, Boolean>()
+    protected val classNamesToInject = mutableSetOf<ClassName>()
     val css by lazy {
         CssBuilder(allowClasses = false).apply {
             this@AbstractCssHolder.ruleSets.map { it() }
@@ -14,26 +14,41 @@ abstract class AbstractCssHolder(protected val sheet: StyleSheet, protected vara
     }
 
     fun scheduleToInject() {
-        classNamesToInject.keys.forEach { className ->
+        classNamesToInject.forEach { className ->
             scheduleToInject(className)
         }
     }
 
     fun scheduleToInject(className: String) {
-        if (classNamesToInject[className] == true) {
+        if (classNamesToInject.contains(className)) {
             GlobalStyles.scheduleToInject(".$className", css)
         }
     }
 
     fun removeInjected() {
-        GlobalStyles.removeInjectedStyleSheet(classNamesToInject.map { (className, _) -> ".$className" })
+        GlobalStyles.removeInjectedStyleSheet(classNamesToInject.map { className -> ".$className" })
     }
 }
 
+
 class CssHolder(sheet: StyleSheet, vararg ruleSets: RuleSet) : AbstractCssHolder(sheet, *ruleSets) {
+    /**
+     * Used to inject styleSheet properties with the same name but different CSS
+     */
+    private fun updateClassnameIfClashes(className: ClassName): ClassName {
+        var newClassname = className
+        var counter = 0
+        while (GlobalStyles.usedStyleSheet.contains(".${newClassname}") && GlobalStyles.usedStyleSheet[".${newClassname}"] != sheet) {
+            newClassname = className + counter
+            counter++
+        }
+        return newClassname
+    }
+
     operator fun provideDelegate(thisRef: Any?, providingProperty: KProperty<*>): ReadOnlyProperty<Any?, RuleSet> {
-        val className = sheet.getClassName(providingProperty)
-        classNamesToInject[className] = true
+        val className = updateClassnameIfClashes(sheet.getClassName(providingProperty))
+        classNamesToInject.add(className)
+        GlobalStyles.usedStyleSheet[".$className"] = sheet
         return ReadOnlyProperty { _, property ->
             {
                 sheet.scheduleImports()

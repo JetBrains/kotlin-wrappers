@@ -14,7 +14,7 @@ internal class DynamicCssHolder(sheet: StyleSheet, cssSuffix: String, vararg rul
      * Contains the initialization part of the delegate from [AbstractCssHolder].
      * */
     internal fun markToInject() {
-        classNamesToInject[className] = true
+        classNamesToInject.add(className)
     }
 
     /**

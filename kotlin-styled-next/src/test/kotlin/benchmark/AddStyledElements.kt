@@ -79,14 +79,4 @@ class AddStyledElements : BenchmarkBase() {
     fun add1000Elements() = runBenchmark(name = "add1000Elements") {
         addNElements(1000)
     }
-
-    @Test
-    fun add5000Elements() = runBenchmark(name = "add5000Elements") {
-        addNElements(5000)
-    }
-
-    @Test
-    fun add10000Elements() = runBenchmark(name = "add10000Elements") {
-        addNElements(10000)
-    }
 }
