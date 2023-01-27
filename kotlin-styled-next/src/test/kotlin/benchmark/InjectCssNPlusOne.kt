@@ -63,10 +63,6 @@ class InjectCssNPlusOne : BenchmarkBase() {
         return duration
     }
 
-    private fun disableSheetPartitioning() {
-        GlobalStyles.sheet = CSSOMSheet(RuleType.REGULAR, RemoveMode.Instantly, maxRulesPerSheet = null)
-    }
-
     @Test
     fun injectRulesOneByOne500Elements() = runBenchmark("injectRulesOneByOne500Elements") {
         preloadElements(500)
@@ -88,26 +84,35 @@ class InjectCssNPlusOne : BenchmarkBase() {
         injectRulesOneByOne()
     }
 
-    @Test
-    fun injectRulesOneByOne500Elements_partitioningDisabled() = runBenchmark("injectRulesOneByOne500Elements_partitioningDisabled") {
+
+    private fun disableSheetPartitioning() {
+        GlobalStyles.sheet = CSSOMSheet(RuleType.REGULAR, RemoveMode.Instantly, maxRulesPerSheet = null)
+    }
+
+    private fun enableSheetPartitioning() {
+        GlobalStyles.sheet = CSSOMSheet(RuleType.REGULAR, RemoveMode.Instantly)
+    }
+
+    private fun runBenchmarkWithoutPartitioning(
+        name: String,
+        repeat: Int = 5,
+        run: suspend TestScope.() -> Duration
+    ) {
         disableSheetPartitioning()
+        runBenchmark(name, repeat, run)
+        enableSheetPartitioning()
+    }
+
+    @Test
+    fun injectRulesOneByOne200Elements_partitioningDisabled() = runBenchmarkWithoutPartitioning("injectRulesOneByOne500Elements_partitioningDisabled") {
+        preloadElements(200)
+
+        injectRulesOneByOne()
+    }
+
+    @Test
+    fun injectRulesOneByOne500Elements_partitioningDisabled() = runBenchmarkWithoutPartitioning("injectRulesOneByOne1000Elements_partitioningDisabled") {
         preloadElements(500)
-
-        injectRulesOneByOne()
-    }
-
-    @Test
-    fun injectRulesOneByOne1000Elements_partitioningDisabled() = runBenchmark("injectRulesOneByOne1000Elements_partitioningDisabled") {
-        disableSheetPartitioning()
-        preloadElements(1000)
-
-        injectRulesOneByOne()
-    }
-
-    @Test
-    fun injectRulesOneByOne2000Elements_partitioningDisabled() = runBenchmark("injectRulesOneByOne2000Elements_partitioningDisabled") {
-        disableSheetPartitioning()
-        preloadElements(2000)
 
         injectRulesOneByOne()
     }
