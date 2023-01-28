@@ -44,12 +44,12 @@ external class AssociativeArray {
      * @param [value] The value to associate with the provided key.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/AssociativeArray.html#set">Online Documentation</a>
      */
-    fun set(
+    operator fun set(
         key: String,
         value: Any,
     )
 
-    fun set(
+    operator fun set(
         key: Int,
         value: Any,
     )
