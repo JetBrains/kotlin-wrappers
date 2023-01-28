@@ -4,7 +4,10 @@ const karakum = require("karakum");
 module.exports = function (node, context, render) {
     if (
         ts.isFunctionDeclaration(node)
-        && node.name.text === "generatePath"
+        && (
+            node.name.text === "generatePath"
+            || node.name.text === "matchPath"
+        )
     ) {
         const name = render(node.name)
 
@@ -20,6 +23,7 @@ module.exports = function (node, context, render) {
                     })
                     .join(", ")
 
+                // remove generics
                 return `external fun ${name}(${parameters}): ${returnType}`
             })
             .join("\n\n")
