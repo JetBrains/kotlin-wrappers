@@ -25,16 +25,26 @@ external class FormData(
     operator fun get(name: String): FormDataEntryValue?
     fun getAll(name: String): ReadonlyArray<FormDataEntryValue>
     fun has(name: String): Boolean
+    operator fun set(
+        name: String,
+        value: String,
+    )
+
     fun set(
         name: String,
         value: String,
-        fileName: String = definedExternally,
+        fileName: String,
+    )
+
+    operator fun set(
+        name: String,
+        value: Blob,
     )
 
     fun set(
         name: String,
         value: Blob,
-        fileName: String = definedExternally,
+        fileName: String,
     )
 
     fun forEach(action: (item: FormDataEntryValue) -> Unit)
