@@ -232,5 +232,5 @@ sealed external class ModelAnimationCollection {
      * @return The runtime animation at the specified index.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ModelAnimationCollection.html#get">Online Documentation</a>
      */
-    fun get(index: Int): ModelAnimation
+    operator fun get(index: Int): ModelAnimation
 }

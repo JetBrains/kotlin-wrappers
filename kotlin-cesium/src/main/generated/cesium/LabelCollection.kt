@@ -205,7 +205,7 @@ external class LabelCollection(options: ConstructorOptions? = definedExternally)
      * @return The label at the specified index.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/LabelCollection.html#get">Online Documentation</a>
      */
-    fun get(index: Int): Label
+    operator fun get(index: Int): Label
 
     /**
      * Returns true if this object was destroyed; otherwise, false.

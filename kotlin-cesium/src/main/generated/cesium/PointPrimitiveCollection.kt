@@ -165,7 +165,7 @@ external class PointPrimitiveCollection {
      * @return The point at the specified index.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PointPrimitiveCollection.html#get">Online Documentation</a>
      */
-    fun get(index: Int): PointPrimitive
+    operator fun get(index: Int): PointPrimitive
 
     /**
      * Returns true if this object was destroyed; otherwise, false.

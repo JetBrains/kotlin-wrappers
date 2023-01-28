@@ -96,7 +96,7 @@ external class DataSourceCollection {
      * @return The data source at the specified index.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/DataSourceCollection.html#get">Online Documentation</a>
      */
-    fun get(index: Int): DataSource
+    operator fun get(index: Int): DataSource
 
     /**
      * Gets a data source by name from the collection.

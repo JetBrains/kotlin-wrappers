@@ -149,7 +149,7 @@ external class CloudCollection {
      * @return The cloud at the specified index.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CloudCollection.html#get">Online Documentation</a>
      */
-    fun get(index: Int): CumulusCloud
+    operator fun get(index: Int): CumulusCloud
 
     /**
      * Returns true if this object was destroyed; otherwise, false.

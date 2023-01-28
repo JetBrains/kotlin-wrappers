@@ -141,7 +141,7 @@ external class ClippingPlaneCollection(options: ConstructorOptions? = definedExt
      * @return The ClippingPlane at the specified index.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ClippingPlaneCollection.html#get">Online Documentation</a>
      */
-    fun get(index: Int): ClippingPlane
+    operator fun get(index: Int): ClippingPlane
 
     /**
      * Checks whether this collection contains a ClippingPlane equal to the given ClippingPlane.

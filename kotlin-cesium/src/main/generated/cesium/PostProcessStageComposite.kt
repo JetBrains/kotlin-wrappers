@@ -135,7 +135,7 @@ external class PostProcessStageComposite(options: ConstructorOptions) {
      * @return The post-process stage or composite at index.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PostProcessStageComposite.html#get">Online Documentation</a>
      */
-    fun get(index: Int): dynamic
+    operator fun get(index: Int): dynamic
 
     /**
      * Returns true if this object was destroyed; otherwise, false.

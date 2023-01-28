@@ -60,9 +60,9 @@ external class AssociativeArray {
      * @return The associated value, or undefined if the key does not exist in the collection.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/AssociativeArray.html#get">Online Documentation</a>
      */
-    fun get(key: String): Any
+    operator fun get(key: String): Any
 
-    fun get(key: Int): Any
+    operator fun get(key: Int): Any
 
     /**
      * Removes a key-value pair from the collection.

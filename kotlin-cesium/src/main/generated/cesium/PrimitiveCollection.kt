@@ -150,7 +150,7 @@ external class PrimitiveCollection {
      * @return The primitive at the `index`.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PrimitiveCollection.html#get">Online Documentation</a>
      */
-    fun get(index: Int): Any
+    operator fun get(index: Int): Any
 
     /**
      * Returns true if this object was destroyed; otherwise, false.
