@@ -23,7 +23,7 @@ external class URLSearchParams() :
     fun delete(name: String)
 
     /** Returns the first value associated to the given search parameter. */
-    fun get(name: String): String?
+    operator fun get(name: String): String?
 
     /** Returns all the values association with a given search parameter. */
     fun getAll(name: String): ReadonlyArray<String>

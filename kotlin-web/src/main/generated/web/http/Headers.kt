@@ -11,7 +11,7 @@ external class Headers(
     )
 
     fun delete(name: String)
-    fun get(name: String): String?
+    operator fun get(name: String): String?
     fun has(name: String): Boolean
     fun set(
         name: String,

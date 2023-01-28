@@ -22,7 +22,7 @@ external class FormData(
     )
 
     fun delete(name: String)
-    fun get(name: String): FormDataEntryValue?
+    operator fun get(name: String): FormDataEntryValue?
     fun getAll(name: String): ReadonlyArray<FormDataEntryValue>
     fun has(name: String): Boolean
     fun set(
