@@ -13,7 +13,7 @@ external class JsMap<K : Any, V> : ReadonlyMap<K, V> {
 
     fun clear()
     fun delete(key: K): Boolean
-    fun set(key: K, value: V): JsMap<K, V>
+    operator fun set(key: K, value: V): JsMap<K, V>
 
     override fun entries(): JsIterable.Iterator<JsTuple2<K, V>>
     override fun forEach(action: (value: V, key: K) -> Unit)
