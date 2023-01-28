@@ -3,12 +3,12 @@
 package web.clipboard
 
 import js.core.ReadonlyArray
-import js.core.Record
+import js.core.ReadonlyRecord
 import web.buffer.Blob
 import kotlin.js.Promise
 
 external class ClipboardItem(
-    items: Record<String, Any /* String | Blob | PromiseLike<String | Blob> */>,
+    items: ReadonlyRecord<String, Any /* String | Blob | PromiseLike<String | Blob> */>,
     options: ClipboardItemOptions = definedExternally,
 ) {
     val presentationStyle: PresentationStyle
