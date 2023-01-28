@@ -12,7 +12,7 @@ sealed external class CustomElementRegistry {
         options: ElementDefinitionOptions = definedExternally,
     )
 
-    fun get(name: String): CustomElementConstructor?
+    operator fun get(name: String): CustomElementConstructor?
     fun upgrade(root: Node)
     fun whenDefined(name: String): Promise<CustomElementConstructor>
 }

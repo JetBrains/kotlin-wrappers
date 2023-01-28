@@ -88,8 +88,8 @@ sealed external class IDBObjectStore {
      *
      * If successful, request's result will be the value, or undefined if there was no matching record.
      */
-    fun get(query: IDBValidKey): IDBRequest<*>
-    fun get(query: IDBKeyRange): IDBRequest<*>
+    operator fun get(query: IDBValidKey): IDBRequest<*>
+    operator fun get(query: IDBKeyRange): IDBRequest<*>
 
     /**
      * Retrieves the values of the records matching the given key or key range in query (up to count if given).
