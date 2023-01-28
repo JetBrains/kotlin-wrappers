@@ -32,7 +32,7 @@ external class URLSearchParams() :
     fun has(name: String): Boolean
 
     /** Sets the value associated to a given search parameter to the given value. If there were several values, delete the others. */
-    fun set(
+    operator fun set(
         name: String,
         value: String
     )

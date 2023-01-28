@@ -13,7 +13,7 @@ external class Headers(
     fun delete(name: String)
     operator fun get(name: String): String?
     fun has(name: String): Boolean
-    fun set(
+    operator fun set(
         name: String,
         value: String,
     )
