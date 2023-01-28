@@ -18,7 +18,7 @@ module.exports = function (node) {
         ts.isInterfaceDeclaration(node)
         && node.name.text === "TrackedPromise"
     ) {
-        return ""
+        return "typealias TrackedPromise = Promise<Any?>"
     }
     return null
 }

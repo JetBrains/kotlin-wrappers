@@ -100,6 +100,9 @@
         ],
         "History.kt": [
             "web.url.URL"
+        ],
+        "TrackedPromise.kt": [
+            "kotlin.js.Promise"
         ]
     }
 }
