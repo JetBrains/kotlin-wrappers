@@ -1,10 +1,78 @@
 {
     "input": [
+        "<nodeModules>/react-router/dist/lib/hooks.d.ts"
+    ],
+    "ignoreInput": [
+        "**/@remix-run/router/**",
+        "**/@types/prop-types/**",
+        "**/@types/react/**",
+        "**/@types/scheduler/**",
+        "**/csstype/**"
     ],
     "output": "src/main/generated",
     "libraryName": "react-router",
     "libraryNameOutputPrefix": true,
     "granularity": "top-level",
     "importInjector": {
+        "context.kt": [
+            "remix.run.router.RouterState",
+            "remix.run.router.TrackedPromise"
+        ],
+        "DataRouterContextObject.kt": [
+            "remix.run.router.Router",
+            "remix.run.router.StaticHandlerContext"
+        ],
+        "LocationContextObject.kt": [
+            "remix.run.router.Location",
+            "remix.run.router.Action as NavigationType"
+        ],
+        "NavigateFunction.kt": [
+            "remix.run.router.To"
+        ],
+        "Navigator.kt": [
+            "remix.run.router.To"
+        ],
+        "RenderErrorBoundaryState.kt": [
+            "remix.run.router.Location"
+        ],
+        "UseMatchesResultItem.kt": [
+            "remix.run.router.Params"
+        ],
+        "UseRevalidatorResult.kt": [
+            "remix.run.router.RevalidationState"
+        ],
+        "useBlocker.kt": [
+            "remix.run.router.Blocker",
+            "remix.run.router.BlockerFunction"
+        ],
+        "useHref.kt": [
+            "remix.run.router.To"
+        ],
+        "useLocation.kt": [
+            "remix.run.router.Location"
+        ],
+        "useNavigation.kt": [
+            "remix.run.router.Navigation"
+        ],
+        "useNavigationType.kt": [
+            "remix.run.router.Action as NavigationType"
+        ],
+        "useMatch.kt": [
+            "remix.run.router.PathMatch",
+            "remix.run.router.PathPattern"
+        ],
+        "useParams.kt": [
+            "remix.run.router.Params"
+        ],
+        "useResolvedPath.kt": [
+            "remix.run.router.To",
+            "remix.run.router.Path"
+        ],
+        "useRoutes.kt": [
+            "remix.run.router.Location"
+        ],
+        "RouteMatch.kt": [
+            "remix.run.router.AgnosticRouteMatch"
+        ]
     }
 }
