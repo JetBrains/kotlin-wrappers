@@ -8,6 +8,6 @@
 
 package remix.run.router
 
+import kotlin.js.Promise
 
-
-
+typealias TrackedPromise = Promise<Any?>

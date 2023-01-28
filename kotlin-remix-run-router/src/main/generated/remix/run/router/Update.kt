@@ -27,6 +27,6 @@ external interface Update {
     /**
      * The delta between this location and the former location in the history stack
      */
-    var delta: Double
+    var delta: Double?
 }
 
