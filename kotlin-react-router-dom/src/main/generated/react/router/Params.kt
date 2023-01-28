@@ -2,9 +2,9 @@
 
 package react.router
 
-import js.core.Record
+import js.core.ReadonlyRecord
 
 /**
  * The parameters that were parsed from the URL path.
  */
-typealias Params = Record<String, String>
+typealias Params = ReadonlyRecord<String, String>

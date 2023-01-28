@@ -2,6 +2,6 @@
 
 package react.router.dom
 
-import js.core.Record
+import js.core.ReadonlyRecord
 
-typealias URLSearchParamsInit = Record<String, String> // string | ParamKeyValuePair[] | Record<string, string | string[]> | URLSearchParams
+typealias URLSearchParamsInit = ReadonlyRecord<String, String> // string | ParamKeyValuePair[] | Record<string, string | string[]> | URLSearchParams
