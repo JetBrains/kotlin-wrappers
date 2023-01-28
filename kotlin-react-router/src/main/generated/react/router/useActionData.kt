@@ -1,4 +1,4 @@
-@file:JsModule("react-router/hooks")
+@file:JsModule("react-router")
 @file:JsNonModule
 
 @file:Suppress(

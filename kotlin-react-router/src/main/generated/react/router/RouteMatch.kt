@@ -1,4 +1,4 @@
-@file:JsModule("react-router/context")
+@file:JsModule("react-router")
 @file:JsNonModule
 
 @file:Suppress(

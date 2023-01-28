@@ -13,6 +13,9 @@
     "libraryName": "react-router",
     "libraryNameOutputPrefix": true,
     "granularity": "top-level",
+    "moduleNameMapper": {
+        ".*": ""
+    },
     "importInjector": {
         "context.kt": [
             "remix.run.router.RouterState",
