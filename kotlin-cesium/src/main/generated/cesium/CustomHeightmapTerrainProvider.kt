@@ -1,7 +1,6 @@
 // Automatically generated - do not modify!
 
 @file:JsModule("cesium")
-@file:JsNonModule
 
 @file:Suppress(
     "VAR_OVERRIDDEN_BY_VAL",
