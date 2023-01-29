@@ -3,7 +3,6 @@
 package node.fs
 
 import kotlinx.coroutines.await
-import node.buffer.BufferEncoding
 
 suspend fun writeFile(
     file: PathLike, /* | FileHandle */
@@ -18,13 +17,20 @@ suspend fun writeFile(
 suspend fun writeFile(
     file: PathLike, /* | FileHandle */
     data: Any, /* string | NodeJS.ArrayBufferView | Iterable<string | NodeJS.ArrayBufferView> | AsyncIterable<string | NodeJS.ArrayBufferView> | Stream */
-    options: BufferEncoding?,
-    /*         | (ObjectEncodingOptions & {
-              mode?: Mode | undefined;
-              flag?: OpenMode | undefined;
-          } & Abortable)
-        | BufferEncoding
-        */
+    options: WriteFileOptions,
+) {
+    writeFileAsync(
+        file = file,
+        data = data,
+        options = options,
+    ).await()
+}
+
+
+suspend fun writeFile(
+    file: PathLike, /* | FileHandle */
+    data: Any, /* string | NodeJS.ArrayBufferView | Iterable<string | NodeJS.ArrayBufferView> | AsyncIterable<string | NodeJS.ArrayBufferView> | Stream */
+    options: node.buffer.BufferEncoding,
 ) {
     writeFileAsync(
         file = file,
