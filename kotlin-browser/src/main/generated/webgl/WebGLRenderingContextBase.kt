@@ -215,6 +215,7 @@ sealed external interface WebGLRenderingContextBase {
     fun getExtension(extensionName: WebGLExtension.WEBGL_compressed_texture_astc): WEBGL_compressed_texture_astc?
     fun getExtension(extensionName: WebGLExtension.WEBGL_compressed_texture_etc): WEBGL_compressed_texture_etc?
     fun getExtension(extensionName: WebGLExtension.WEBGL_compressed_texture_etc1): WEBGL_compressed_texture_etc1?
+    fun getExtension(extensionName: WebGLExtension.WEBGL_compressed_texture_pvrtc): WEBGL_compressed_texture_pvrtc?
     fun getExtension(extensionName: WebGLExtension.WEBGL_compressed_texture_s3tc): WEBGL_compressed_texture_s3tc?
     fun getExtension(extensionName: WebGLExtension.WEBGL_compressed_texture_s3tc_srgb): WEBGL_compressed_texture_s3tc_srgb?
     fun getExtension(extensionName: WebGLExtension.WEBGL_debug_renderer_info): WEBGL_debug_renderer_info?
