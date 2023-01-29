@@ -7,9 +7,10 @@
 package web.scroll
 
 // language=JavaScript
-@JsName("""(/*union*/{auto: 'auto', smooth: 'smooth'}/*union*/)""")
+@JsName("""(/*union*/{auto: 'auto', instant: 'instant', smooth: 'smooth'}/*union*/)""")
 external enum class ScrollBehavior {
     auto,
+    instant,
     smooth,
 
     ;
