@@ -17,7 +17,7 @@ jobs:
           java-version: '17'
       - name: Build
         run: |
-          ./gradlew build --no-daemon
+          ./gradlew build
 
   test:
 
@@ -33,4 +33,4 @@ jobs:
           java-version: '17'
       - name: Tests and benchmarks
         run: |
-          ./gradlew test -Ptest --no-daemon
+          ./gradlew test -Ptest
