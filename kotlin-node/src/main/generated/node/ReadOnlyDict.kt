@@ -2,6 +2,6 @@
 
 package node
 
-import js.core.Record
+import js.core.ReadonlyRecord
 
-typealias ReadOnlyDict<T> = Record<String, out T>
+typealias ReadOnlyDict<T> = ReadonlyRecord<String, T>
