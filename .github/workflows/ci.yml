@@ -8,12 +8,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v3
       - uses: gradle/wrapper-validation-action@v1
       - name: Set up JDK 17
-        uses: actions/setup-java@v1
+        uses: actions/setup-java@v3
         with:
-          java-version: 17
+          distribution: 'zulu'
+          java-version: '17'
       - name: Build
         run: |
           ./gradlew build
@@ -23,12 +24,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v3
       - uses: gradle/wrapper-validation-action@v1
       - name: Set up JDK 17
         uses: actions/setup-java@v1
         with:
-          java-version: 17
+          distribution: 'zulu'
+          java-version: '17'
       - name: Tests and benchmarks
         run: |
           ./gradlew test -Ptest
