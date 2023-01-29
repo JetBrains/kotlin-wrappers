@@ -2,4 +2,9 @@
 
 package node.fs
 
-typealias WriteFileOptions = node.buffer.BufferEncoding?
+import node.events.Abortable
+
+sealed external interface WriteFileOptions :
+    ObjectEncodingOptions,
+    FlagAndOpenMode,
+    Abortable
