@@ -35,6 +35,9 @@
         "Navigator.kt": [
             "remix.run.router.To"
         ],
+        "RenderErrorBoundaryProps.kt": [
+            "remix.run.router.Location"
+        ],
         "RenderErrorBoundaryState.kt": [
             "remix.run.router.Location"
         ],
