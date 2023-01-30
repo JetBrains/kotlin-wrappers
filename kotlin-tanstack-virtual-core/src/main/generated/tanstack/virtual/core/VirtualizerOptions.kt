@@ -4,8 +4,9 @@ package tanstack.virtual.core
 
 import js.core.ReadonlyArray
 import web.dom.Element
+import web.events.EventTarget
 
-external interface VirtualizerOptions<TScrollElement : Any /* Element | Window */, TItemElement : Element> {
+external interface VirtualizerOptions<TScrollElement : EventTarget /* Element | Window */, TItemElement : Element> {
     var count: Int
     var getScrollElement: () -> TScrollElement?
     var estimateSize: (index: Int) -> Int

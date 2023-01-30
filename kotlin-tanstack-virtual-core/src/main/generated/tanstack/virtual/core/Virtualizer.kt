@@ -7,8 +7,9 @@ package tanstack.virtual.core
 
 import js.core.ReadonlyArray
 import web.dom.Element
+import web.events.EventTarget
 
-external class Virtualizer<TScrollElement : Any /* Element | Window */, TItemElement : Element> {
+external class Virtualizer<TScrollElement : EventTarget /* Element | Window */, TItemElement : Element> {
     var options: VirtualizerOptions<TScrollElement, TItemElement>
     var scrollElement: TScrollElement?
     var isScrolling: Boolean
