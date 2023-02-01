@@ -12,7 +12,7 @@ package remix.run.router
 external interface UseMatchesMatch {
     var id: String
     var pathname: String
-    var params: Any /* AgnosticRouteMatch["params"] */
+    var params: Params
     var data: Any?
     var handle: Any?
 }

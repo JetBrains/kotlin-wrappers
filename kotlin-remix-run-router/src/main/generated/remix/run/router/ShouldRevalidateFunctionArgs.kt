@@ -1,17 +1,18 @@
 package remix.run.router
 
+import web.http.FormData
 import web.url.URL
 
 
 external interface ShouldRevalidateFunctionArgs {
     var currentUrl: URL
-    var currentParams: Any /* AgnosticDataRouteMatch["params"] */
+    var currentParams: Params
     var nextUrl: URL
-    var nextParams: Any /* AgnosticDataRouteMatch["params"] */
-    var formMethod: Any /* Submission["formMethod"] */?
-    var formAction: Any /* Submission["formAction"] */?
-    var formEncType: Any /* Submission["formEncType"] */?
-    var formData: Any /* Submission["formData"] */?
+    var nextParams: Params
+    var formMethod: FormMethod?
+    var formAction: String?
+    var formEncType: FormEncType?
+    var formData: FormData?
     var actionResult: DataResult?
     var defaultShouldRevalidate: Boolean
 }

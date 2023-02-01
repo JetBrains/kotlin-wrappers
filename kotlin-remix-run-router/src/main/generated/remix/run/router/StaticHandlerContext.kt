@@ -16,12 +16,12 @@ import web.http.Headers
  */
 
 external interface StaticHandlerContext {
-    var basename: Any /* Router["basename"] */
-    var location: Any /* RouterState["location"] */
-    var matches: Any /* RouterState["matches"] */
-    var loaderData: Any /* RouterState["loaderData"] */
-    var actionData: Any /* RouterState["actionData"] */
-    var errors: Any /* RouterState["errors"] */
+    var basename: String?
+    var location: Location
+    var matches: Array<AgnosticDataRouteMatch>
+    var loaderData: RouteData
+    var actionData: RouteData?
+    var errors: RouteData?
     var statusCode: Double
     var loaderHeaders: Record<String, Headers>
     var actionHeaders: Record<String, Headers>

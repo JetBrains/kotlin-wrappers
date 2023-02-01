@@ -13,7 +13,6 @@ Kotlin wrapper for [React Router](https://remix.run/docs/en/v1/other-api/react-r
     * `Fetcher` and `FetcherStates`
 2) Improve typing coverage for types:
     * `DeferredData`
-    * `ShouldRevalidateFunctionArgs`
 3) Support indexed type signatures:
     * `RouteData`
 4) Support getters for types:

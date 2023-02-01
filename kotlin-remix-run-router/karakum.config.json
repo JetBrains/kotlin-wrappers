@@ -19,6 +19,7 @@
             "web.url.URL"
         ],
         "ShouldRevalidateFunctionArgs.kt": [
+            "web.http.FormData",
             "web.url.URL"
         ],
         "UrlHistoryOptions.kt": [

@@ -17,9 +17,9 @@ package remix.run.router
 
 /* import { DeferredData } from "./utils"; */
 
-external val IDLE_NAVIGATION: Any /* NavigationStates["Idle"] */
+external val IDLE_NAVIGATION: NavigationStatesIdle
 
-external val IDLE_FETCHER: Any /* FetcherStates["Idle"] */
+external val IDLE_FETCHER: FetcherStatesIdle<*>
 
 external val IDLE_BLOCKER: BlockerUnblocked
 
