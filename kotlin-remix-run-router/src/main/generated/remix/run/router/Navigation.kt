@@ -9,4 +9,4 @@
 package remix.run.router
 
 
-typealias Navigation = Any /* NavigationStates[keyof NavigationStates] */
+external interface Navigation /* export declare type Navigation = NavigationStates[keyof NavigationStates]; */

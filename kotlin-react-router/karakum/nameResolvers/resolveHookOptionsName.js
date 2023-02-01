@@ -2,7 +2,9 @@ const ts = require("typescript")
 
 module.exports = (node) => {
     if (
-        ts.isParameter(node.parent)
+        node.parent
+        && ts.isParameter(node.parent)
+        && node.parent.parent
         && ts.isFunctionDeclaration(node.parent.parent)
         && node.parent.parent.name.text === "useHref"
     ) {
@@ -10,7 +12,9 @@ module.exports = (node) => {
     }
 
     if (
-        ts.isParameter(node.parent)
+        node.parent
+        && ts.isParameter(node.parent)
+        && node.parent.parent
         && ts.isFunctionDeclaration(node.parent.parent)
         && node.parent.parent.name.text === "useResolvedPath"
     ) {
