@@ -65,4 +65,12 @@ external object FeatureDetection {
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/FeatureDetection.html#.supportsWebAssembly">Online Documentation</a>
      */
     fun supportsWebAssembly(): Boolean
+
+    /**
+     * Detects whether the current browser supports a WebGL2 rendering context for the specified scene.
+     * @param [scene] the Cesium scene specifying the rendering context
+     * @return true if the browser supports a WebGL2 rendering context, false if not.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/FeatureDetection.html#.supportsWebgl2">Online Documentation</a>
+     */
+    fun supportsWebgl2(scene: Scene): Boolean
 }

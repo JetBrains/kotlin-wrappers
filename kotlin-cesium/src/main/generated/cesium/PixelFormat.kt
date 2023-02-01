@@ -27,6 +27,16 @@ external enum class PixelFormat {
     ALPHA,
 
     /**
+     * A pixel format containing a red channel
+     */
+    RED,
+
+    /**
+     * A pixel format containing red and green channels.
+     */
+    RG,
+
+    /**
      * A pixel format containing red, green, and blue channels.
      */
     RGB,

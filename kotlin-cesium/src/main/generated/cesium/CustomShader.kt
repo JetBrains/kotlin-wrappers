@@ -50,7 +50,7 @@ import js.core.jso
  *   `,
  *   fragmentShaderText: `
  *   void fragmentMain(FragmentInput fsInput, inout czm_modelMaterial material) {
- *     material.normal = texture2D(u_normalMap, fsInput.attributes.texCoord_0);
+ *     material.normal = texture(u_normalMap, fsInput.attributes.texCoord_0);
  *     material.diffuse = v_selectedColor;
  *   }
  *   `

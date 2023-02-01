@@ -17,12 +17,12 @@ import js.core.jso
  * // Simple stage to change the color
  * const fs =`
  *     uniform sampler2D colorTexture;
- *     varying vec2 v_textureCoordinates;
+ *     in vec2 v_textureCoordinates;
  *     uniform float scale;
  *     uniform vec3 offset;
  *     void main() {
- *         vec4 color = texture2D(colorTexture, v_textureCoordinates);
- *         gl_FragColor = vec4(color.rgb * scale + offset, 1.0);
+ *         vec4 color = texture(colorTexture, v_textureCoordinates);
+ *         out_FragColor = vec4(color.rgb * scale + offset, 1.0);
  *     }`;
  * scene.postProcessStages.add(new PostProcessStage({
  *     fragmentShader : fs,
@@ -39,15 +39,15 @@ import js.core.jso
  * // If czm_selected returns true, the current fragment belongs to geometry in the selected array.
  * const fs =`
  *     uniform sampler2D colorTexture;
- *     varying vec2 v_textureCoordinates;
+ *     in vec2 v_textureCoordinates;
  *     uniform vec4 highlight;
  *     void main() {
- *         vec4 color = texture2D(colorTexture, v_textureCoordinates);
+ *         vec4 color = texture(colorTexture, v_textureCoordinates);
  *         if (czm_selected()) {
  *             vec3 highlighted = highlight.a * highlight.rgb + (1.0 - highlight.a) * color.rgb;
- *             gl_FragColor = vec4(highlighted, 1.0);
+ *             out_FragColor = vec4(highlighted, 1.0);
  *         } else {
- *             gl_FragColor = color;
+ *             out_FragColor = color;
  *         }
  *     }`;
  * const stage = scene.postProcessStages.add(new PostProcessStage({
@@ -192,7 +192,7 @@ external class PostProcessStage(options: ConstructorOptions) {
      * if (czm_selected(v_textureCoordinates)) {
      *     // apply post-process stage
      * } else {
-     *     gl_FragColor = texture2D(colorTexture, v_textureCoordinates);
+     *     out_FragColor = texture(colorTexture, v_textureCoordinates);
      * }
      * ```
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PostProcessStage.html#selected">Online Documentation</a>

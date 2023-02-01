@@ -14,7 +14,7 @@ external enum class LightingModel {
     /**
      * Use unlit shading, i.e. skip lighting calculations. The model's
      * diffuse color (assumed to be linear RGB, not sRGB) is used directly
-     * when computing `gl_FragColor`. The alpha mode is still
+     * when computing `out_FragColor`. The alpha mode is still
      * applied.
      */
     UNLIT,
