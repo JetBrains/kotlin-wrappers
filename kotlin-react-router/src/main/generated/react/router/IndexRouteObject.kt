@@ -8,16 +8,20 @@
 
 package react.router
 
+import remix.run.router.ActionFunction
+import remix.run.router.LoaderFunction
+import remix.run.router.ShouldRevalidateFunction
+
 
 external interface IndexRouteObject {
-    var caseSensitive: Any /* AgnosticIndexRouteObject["caseSensitive"] */?
-    var path: Any /* AgnosticIndexRouteObject["path"] */?
-    var id: Any /* AgnosticIndexRouteObject["id"] */?
-    var loader: Any /* AgnosticIndexRouteObject["loader"] */?
-    var action: Any /* AgnosticIndexRouteObject["action"] */?
-    var hasErrorBoundary: Any /* AgnosticIndexRouteObject["hasErrorBoundary"] */?
-    var shouldRevalidate: Any /* AgnosticIndexRouteObject["shouldRevalidate"] */?
-    var handle: Any /* AgnosticIndexRouteObject["handle"] */?
+    var caseSensitive: Boolean?
+    var path: String?
+    var id: String?
+    var loader: LoaderFunction?
+    var action: ActionFunction?
+    var hasErrorBoundary: Boolean?
+    var shouldRevalidate: ShouldRevalidateFunction?
+    var handle: Any?
     var index: Boolean
     var children: Any? /* some expression */
     var element: react.ReactNode?
