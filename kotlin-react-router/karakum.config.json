@@ -17,6 +17,9 @@
         ".*": ""
     },
     "importInjector": {
+        "_renderMatches.kt": [
+            "remix.run.router.RouterState"
+        ],
         "context.kt": [
             "remix.run.router.RouterState",
             "remix.run.router.TrackedPromise"
@@ -24,6 +27,11 @@
         "DataRouterContextObject.kt": [
             "remix.run.router.Router",
             "remix.run.router.StaticHandlerContext"
+        ],
+        "IndexRouteObject.kt": [
+            "remix.run.router.LoaderFunction",
+            "remix.run.router.ActionFunction",
+            "remix.run.router.ShouldRevalidateFunction"
         ],
         "LocationContextObject.kt": [
             "remix.run.router.Location",
@@ -33,7 +41,13 @@
             "remix.run.router.To"
         ],
         "Navigator.kt": [
-            "remix.run.router.To"
+            "remix.run.router.To",
+            "remix.run.router.Path"
+        ],
+        "NonIndexRouteObject.kt": [
+            "remix.run.router.LoaderFunction",
+            "remix.run.router.ActionFunction",
+            "remix.run.router.ShouldRevalidateFunction"
         ],
         "RenderErrorBoundaryProps.kt": [
             "remix.run.router.Location"

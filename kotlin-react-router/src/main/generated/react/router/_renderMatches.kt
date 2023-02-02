@@ -8,9 +8,6 @@
 
 package react.router
 
+import remix.run.router.RouterState
 
-external fun _renderMatches(
-    matches: Array<RouteMatch<*>>?,
-    parentMatches: Array<RouteMatch<*>> = definedExternally,
-    dataRouterState: Any /* RemixRouter["state"] */ = definedExternally
-): react.ReactElement<*>?
+external fun _renderMatches(matches: Array<RouteMatch<*>>?, parentMatches: Array<RouteMatch<*>> = definedExternally, dataRouterState: RouterState = definedExternally): react.ReactElement<*>?

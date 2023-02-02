@@ -8,6 +8,7 @@
 
 package react.router
 
+import remix.run.router.Path
 import remix.run.router.To
 
 /**
@@ -21,9 +22,9 @@ import remix.run.router.To
  */
 
 external interface Navigator {
-    var createHref: Any /* History["createHref"] */
-    var encodeLocation: Any /* History["encodeLocation"] */?
-    var go: Any /* History["go"] */
+    var createHref: (to: To) -> String
+    var encodeLocation: (to: To) -> Path?
+    var go: (delta: Double) -> Unit
     fun push(to: To, state: Any? = definedExternally, opts: NavigateOptions = definedExternally): Unit
     fun replace(to: To, state: Any? = definedExternally, opts: NavigateOptions = definedExternally): Unit
 }
