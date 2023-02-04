@@ -13,3 +13,5 @@ Kotlin wrapper for [React Router](https://reactrouter.com/en/main) library.
 2) Improve parameter naming:
    * `useHref`
    * `useResolvedPath`
+3) Fix numeric types
+   * `MemoryRouterProps.initialIndex`

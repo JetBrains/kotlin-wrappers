@@ -1,4 +1,5 @@
 const ts = require("typescript")
+const karakum = require("karakum")
 
 module.exports = function (node, context, render) {
     if (
@@ -25,7 +26,7 @@ module.exports = function (node, context, render) {
             .join("\n")
 
         return `
-external interface ${name}${typeParameters ? `<${typeParameters}>` : ""}${heritageClauses ?? ""} {
+external interface ${name}${karakum.ifPresent(typeParameters, it => `<${it}>`)}${karakum.ifPresent(heritageClauses, it => ` : ${it}`)} {
 ${members}
 }
         `
