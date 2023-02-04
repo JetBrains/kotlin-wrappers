@@ -5,6 +5,7 @@ plugins {
 
 dependencies {
     constraints {
+        api(project(":kotlin-actions-toolkit"))
         api(project(":kotlin-browser"))
         api(project(":kotlin-cesium"))
         api(project(":kotlin-css"))

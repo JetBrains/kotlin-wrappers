@@ -21,6 +21,9 @@ dependencyResolutionManagement {
 // Examples
 include("examples")
 
+// Kotlin/JS: GitHub Actions Toolkit wrappers
+include("kotlin-actions-toolkit")
+
 // Kotlin/JS: Browser APIs missing from the standard library
 include("kotlin-browser")
 
