@@ -1,6 +1,7 @@
 {
     "input": [
-        "<nodeModules>/react-router/dist/lib/hooks.d.ts"
+        "<nodeModules>/react-router/dist/lib/hooks.d.ts",
+        "<nodeModules>/react-router/dist/lib/components.d.ts"
     ],
     "ignoreInput": [
         "**/@remix-run/router/**",
@@ -10,6 +11,10 @@
         "**/csstype/**"
     ],
     "output": "src/main/generated",
+    "ignoreOutput": [
+        "**/Navigate.kt",
+        "**/NavigateProps.kt"
+    ],
     "libraryName": "react-router",
     "libraryNameOutputPrefix": true,
     "granularity": "top-level",
@@ -33,9 +38,17 @@
             "remix.run.router.ActionFunction",
             "remix.run.router.ShouldRevalidateFunction"
         ],
+        "IndexRouteProps.kt": [
+            "remix.run.router.LoaderFunction",
+            "remix.run.router.ActionFunction",
+            "remix.run.router.ShouldRevalidateFunction"
+        ],
         "LocationContextObject.kt": [
             "remix.run.router.Location",
             "remix.run.router.Action as NavigationType"
+        ],
+        "MemoryRouterProps.kt": [
+            "remix.run.router.InitialEntry"
         ],
         "NavigateFunction.kt": [
             "remix.run.router.To"
@@ -49,11 +62,25 @@
             "remix.run.router.ActionFunction",
             "remix.run.router.ShouldRevalidateFunction"
         ],
+        "PathRouteProps.kt": [
+            "remix.run.router.LoaderFunction",
+            "remix.run.router.ActionFunction",
+            "remix.run.router.ShouldRevalidateFunction"
+        ],
         "RenderErrorBoundaryProps.kt": [
             "remix.run.router.Location"
         ],
         "RenderErrorBoundaryState.kt": [
             "remix.run.router.Location"
+        ],
+        "RouteMatch.kt": [
+            "remix.run.router.AgnosticRouteMatch"
+        ],
+        "RouterProps.kt": [
+            "remix.run.router.Action as NavigationType"
+        ],
+        "RouterProviderProps": [
+            "remix.run.router.Router as RemixRouter"
         ],
         "UseMatchesResultItem.kt": [
             "remix.run.router.Params"
@@ -90,9 +117,6 @@
         ],
         "useRoutes.kt": [
             "remix.run.router.Location"
-        ],
-        "RouteMatch.kt": [
-            "remix.run.router.AgnosticRouteMatch"
         ]
     }
 }
