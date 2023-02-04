@@ -13,7 +13,7 @@ import remix.run.router.LoaderFunction
 import remix.run.router.ShouldRevalidateFunction
 
 
-external interface PathRouteProps : react.Props {
+external interface PathRouteProps : react.PropsWithChildren {
     var caseSensitive: Boolean?
     var path: String?
     var id: String?
@@ -23,7 +23,6 @@ external interface PathRouteProps : react.Props {
     var shouldRevalidate: ShouldRevalidateFunction?
     var handle: Any?
     var index: Boolean?
-    var children: react.ReactNode?
     var element: react.ReactNode?
     var errorElement: react.ReactNode?
 }

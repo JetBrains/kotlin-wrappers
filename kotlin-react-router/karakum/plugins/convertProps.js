@@ -12,12 +12,37 @@ module.exports = function (node, context, render) {
             ?.map(heritageClause => render(heritageClause))
             ?.join(", ")
 
-        const members = node.members
+        let members = node.members
             .map(member => render(member))
             .join("\n")
 
+        let parentType = "react.Props"
+
+        if (node.members.some(member => (
+            ts.isIdentifier(member.name)
+            && member.name.text === "children"
+
+            && member.type
+            && ts.isTypeReferenceNode(member.type)
+            && ts.isQualifiedName(member.type.typeName)
+            && ts.isIdentifier(member.type.typeName.left)
+            && member.type.typeName.left.text === "React"
+            && member.type.typeName.right.text === "ReactNode"
+        ))) {
+            members = node.members
+                .filter(member => !(
+                    ts.isIdentifier(member.name)
+                    && member.name.text === "children"
+                ))
+                .map(member => render(member))
+                .join("\n")
+
+            parentType = "react.PropsWithChildren"
+
+        }
+
         return `
-external interface ${name} : react.Props${karakum.ifPresent(heritageClauses, it => `, ${it}`)} {
+external interface ${name} : ${parentType}${karakum.ifPresent(heritageClauses, it => `, ${it}`)} {
 ${members}
 }
         `

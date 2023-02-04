@@ -11,9 +11,8 @@ package react.router
 import remix.run.router.Action as NavigationType
 
 
-external interface RouterProps : react.Props {
+external interface RouterProps : react.PropsWithChildren {
     var basename: String?
-    var children: react.ReactNode?
     var location: Any /* Partial<Location> | string */
     var navigationType: NavigationType?
     var navigator: Navigator

@@ -10,7 +10,7 @@ package react.router
 
 
 external interface AwaitProps : react.Props {
-    var children: Any /* React.ReactNode | AwaitResolveRenderFunction */
+    var children: AwaitResolveRenderFunction
     var errorElement: react.ReactNode?
     var resolve: Any /* TrackedPromise | any */
 }

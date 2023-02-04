@@ -9,8 +9,7 @@
 package react.router
 
 
-external interface RoutesProps : react.Props {
-    var children: react.ReactNode?
+external interface RoutesProps : react.PropsWithChildren {
     var location: Any /* Partial<Location> | string */?
 }
 
