@@ -1,10 +1,51 @@
 {
     "input": [
+        "<nodeModules>/react-router-dom/dist/dom.d.ts"
+    ],
+    "ignoreInput": [
+        "**/@remix-run/router/**",
+        "**/@types/prop-types/**",
+        "**/@types/react/**",
+        "**/@types/scheduler/**",
+        "**/csstype/**",
+        "**/react-router/**"
     ],
     "output": "src/main/generated",
     "libraryName": "react-router-dom",
     "libraryNameOutputPrefix": true,
     "granularity": "top-level",
+    "moduleNameMapper": {
+        ".*": ""
+    },
     "importInjector": {
+        "createSearchParams.kt": [
+            "web.url.URLSearchParams"
+        ],
+        "getFormSubmissionInfo.kt": [
+            "js.core.Record",
+            "web.html.HTMLButtonElement",
+            "web.html.HTMLFormElement",
+            "web.html.HTMLInputElement",
+            "web.http.FormData",
+            "web.url.URLSearchParams"
+        ],
+        "GetFormSubmissionInfoResult.kt": [
+            "web.http.FormData",
+            "web.url.URL"
+        ],
+        "getSearchParamsForLocation.kt": [
+            "web.url.URLSearchParams"
+        ],
+        "LimitedMouseEvent.kt": [
+            "web.uievents.MouseEvent"
+        ],
+        "ParamKeyValuePair.kt": [
+            "js.core.JsTuple2"
+        ],
+        "SubmitOptions.kt": [
+            "react.router.RelativeRoutingType",
+            "remix.run.router.FormEncType",
+            "remix.run.router.FormMethod"
+        ]
     }
 }
