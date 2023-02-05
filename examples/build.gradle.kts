@@ -8,7 +8,7 @@ dependencies {
     implementation(project(":kotlin-js"))
     implementation(project(":kotlin-react"))
     implementation(project(":kotlin-react-dom"))
-    implementation(project(":kotlin-react-router-dom"))
+    implementation(project(":kotlin-react-router-dom-legacy"))
 
     implementation(kotlinxHtml("js"))
 

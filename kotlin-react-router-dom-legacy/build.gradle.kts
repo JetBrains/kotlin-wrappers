@@ -8,5 +8,5 @@ dependencies {
     api(project(":kotlin-history"))
     api(project(":kotlin-react-dom"))
 
-    api(npmv("react-router-dom"))
+    api(npm("react-router-dom", "^6.3.0"))
 }
