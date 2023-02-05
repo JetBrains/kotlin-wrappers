@@ -4,3 +4,9 @@
 
 Kotlin wrapper for [React Router DOM](https://reactrouter.com/en/main) library.
 
+### TODO:
+
+1) Infer types for constants:
+   * `defaultMethod`
+2) Do not hardcode `Record` type:
+   * `getFormSubmissionInfo`
