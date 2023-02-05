@@ -1,0 +1,10 @@
+{
+    "input": [
+    ],
+    "output": "src/main/generated",
+    "libraryName": "react-router-dom",
+    "libraryNameOutputPrefix": true,
+    "granularity": "top-level",
+    "importInjector": {
+    }
+}
