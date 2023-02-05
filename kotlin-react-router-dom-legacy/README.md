@@ -1,6 +1,6 @@
-[![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-react-router-dom)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-react-router-dom)
+[![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-react-router-dom-legacy)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-react-router-dom-legacy)
 
-## kotlin-react-router-dom
+## kotlin-react-router-dom-legacy
 
 Kotlin wrapper for [React Router DOM library](https://reacttraining.com/react-router/). Major version number of this wrapper matches that of React Router DOM itself.
 
@@ -12,7 +12,7 @@ Both `BrowserRouter` and `HashRouter` are supported.
 <project>
     <dependency>
         <groupId>org.jetbrains.kotlin-wrappers</groupId>
-        <artifactId>kotlin-react-router-dom</artifactId>
+        <artifactId>kotlin-react-router-dom-legacy</artifactId>
         <version>VERSION</version>
     </dependency>
 </project>
@@ -25,7 +25,7 @@ repositories {
     mavenCentral()
 }
 
-implementation("org.jetbrains.kotlin-wrappers:kotlin-react-router-dom:VERSION")
+implementation("org.jetbrains.kotlin-wrappers:kotlin-react-router-dom-legacy:VERSION")
 ```
 
 ### Example
@@ -38,7 +38,7 @@ val Application = fc<Props> {
                 attrs.index = true
                 attrs.element = createElement(IndexPage)
             }
-            
+
             Route {
                 attrs.path = "/login"
                 attrs.element = createElement(LoginPage)
@@ -48,7 +48,7 @@ val Application = fc<Props> {
                 attrs.path = "/issues"
                 attrs.element = createElement(IssuesPage)
             }
-            
+
             Route {
                 attrs.path = "/pulls"
                 attrs.element = createElement(PullRequestsPage)
