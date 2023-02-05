@@ -286,6 +286,7 @@ external interface StandardLonghandProperties {
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/backdrop-filter">MDN</a>
      */
     var backdropFilter: BackdropFilter?
+    var WebkitBackdropFilter: BackdropFilter?
 
     /**
      * The **`backface-visibility`** CSS property sets whether the back face of an element is visible when turned towards the user.
