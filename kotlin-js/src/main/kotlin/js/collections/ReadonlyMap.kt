@@ -3,7 +3,7 @@ package js.collections
 import js.core.JsIterable
 import js.core.JsTuple2
 
-external interface ReadonlyMap<K : Any, V> :
+external interface ReadonlyMap<K, out V> :
     JsIterable<JsTuple2<K, V>> {
 
     val size: Int
