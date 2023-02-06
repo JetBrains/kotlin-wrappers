@@ -29,7 +29,7 @@ external interface RouterState {
     /**
      * The current set of route matches
      */
-    var matches: Array<AgnosticDataRouteMatch>
+    var matches: js.core.ReadonlyArray<AgnosticDataRouteMatch>
 
     /**
      * Tracks whether we've completed our initial data load
@@ -78,11 +78,11 @@ external interface RouterState {
     /**
      * Map of current fetchers
      */
-    var fetchers: js.collections.JsMap<String, Fetcher<*>>
+    var fetchers: js.collections.ReadonlyMap<String, Fetcher<*>>
 
     /**
      * Map of current blockers
      */
-    var blockers: js.collections.JsMap<String, Blocker>
+    var blockers: js.collections.ReadonlyMap<String, Blocker>
 }
 

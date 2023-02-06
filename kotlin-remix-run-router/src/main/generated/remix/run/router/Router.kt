@@ -8,7 +8,6 @@
 
 package remix.run.router
 
-import js.core.Record
 import web.abort.AbortController
 import web.url.URL
 import kotlin.js.Promise
@@ -70,7 +69,11 @@ external interface Router {
      * @param getScrollPosition    Function to get the active Y scroll position
      * @param getKey               Function to get the key to use for restoration
      */
-    fun enableScrollRestoration(savedScrollPositions: Record<String, Double>, getScrollPosition: GetScrollPositionFunction, getKey: GetScrollRestorationKeyFunction = definedExternally): () -> Unit
+    fun enableScrollRestoration(
+        savedScrollPositions: js.core.ReadonlyRecord<String, Double>,
+        getScrollPosition: GetScrollPositionFunction,
+        getKey: GetScrollRestorationKeyFunction = definedExternally
+    ): () -> Unit
 
     /**
      * @internal
@@ -181,7 +184,7 @@ external interface Router {
      *
      * Internal fetch AbortControllers accessed by unit tests
      */
-    var _internalFetchControllers: js.collections.JsMap<String, AbortController>
+    var _internalFetchControllers: js.collections.ReadonlyMap<String, AbortController>
 
     /**
      * @internal
@@ -189,6 +192,6 @@ external interface Router {
      *
      * Internal pending DeferredData instances accessed by unit tests
      */
-    var _internalActiveDeferreds: js.collections.JsMap<String, DeferredData>
+    var _internalActiveDeferreds: js.collections.ReadonlyMap<String, DeferredData>
 }
 

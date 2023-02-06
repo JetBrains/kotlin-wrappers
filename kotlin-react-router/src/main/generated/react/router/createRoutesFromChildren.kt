@@ -16,4 +16,4 @@ package react.router
  *
  * @see https://reactrouter.com/utils/create-routes-from-children
  */
-external fun createRoutesFromChildren(children: react.ReactNode, parentPath: Array<Double> = definedExternally): Array<RouteObject>
+external fun createRoutesFromChildren(children: react.ReactNode, parentPath: js.core.ReadonlyArray<Double> = definedExternally): js.core.ReadonlyArray<RouteObject>

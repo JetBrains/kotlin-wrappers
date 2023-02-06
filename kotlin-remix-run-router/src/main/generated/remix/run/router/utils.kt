@@ -14,7 +14,7 @@ package remix.run.router
 /**
  * @private
  */
-external val joinPaths: (paths: Array<String>) -> String
+external val joinPaths: (paths: js.core.ReadonlyArray<String>) -> String
 
 /**
  * @private

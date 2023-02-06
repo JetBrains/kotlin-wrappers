@@ -10,7 +10,7 @@ package remix.run.router
 
 
 external interface AgnosticDataNonIndexRouteObject : AgnosticNonIndexRouteObject {
-    override var children: Array<AgnosticDataRouteObject>?
+    override var children: js.core.ReadonlyArray<AgnosticDataRouteObject>?
     override var id: String?
 }
 

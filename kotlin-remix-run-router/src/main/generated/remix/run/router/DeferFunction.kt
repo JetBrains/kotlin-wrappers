@@ -8,6 +8,5 @@
 
 package remix.run.router
 
-import js.core.Record
 
-typealias DeferFunction = (data: Record<String, Any>, init: Any /* number | ResponseInit */) -> DeferredData
+typealias DeferFunction = (data: js.core.ReadonlyRecord<String, Any>, init: Any /* number | ResponseInit */) -> DeferredData

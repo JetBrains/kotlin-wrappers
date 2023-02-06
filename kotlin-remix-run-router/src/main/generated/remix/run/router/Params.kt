@@ -8,9 +8,8 @@
 
 package remix.run.router
 
-import js.core.Record
 
 /**
  * The parameters that were parsed from the URL path.
  */
-typealias Params = Record<String, String>
+typealias Params = js.core.ReadonlyRecord<String, String>
