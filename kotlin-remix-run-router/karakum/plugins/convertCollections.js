@@ -20,5 +20,13 @@ module.exports = function (node, context, render) {
     ) {
         return "js.collections.ReadonlyMap"
     }
+
+    if (
+        ts.isIdentifier(node)
+        && ts.isTypeReferenceNode(node.parent)
+        && node.text === "Set"
+    ) {
+        return "js.collections.ReadonlySet"
+    }
     return null
 }
