@@ -8,7 +8,6 @@
 
 package remix.run.router
 
-import js.core.Record
 import web.http.Headers
 
 /**
@@ -23,9 +22,9 @@ external interface StaticHandlerContext {
     var actionData: RouteData?
     var errors: RouteData?
     var statusCode: Double
-    var loaderHeaders: Record<String, Headers>
-    var actionHeaders: Record<String, Headers>
-    var activeDeferreds: Record<String, DeferredData>?
+    var loaderHeaders: js.core.ReadonlyRecord<String, Headers>
+    var actionHeaders: js.core.ReadonlyRecord<String, Headers>
+    var activeDeferreds: js.core.ReadonlyRecord<String, DeferredData>?
     var _deepestRenderedBoundaryId: String?
 }
 

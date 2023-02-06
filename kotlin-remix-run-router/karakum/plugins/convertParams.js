@@ -5,7 +5,7 @@ module.exports = function (node, context, render) {
         ts.isTypeAliasDeclaration(node)
         && node.name.text === "Params"
     ) {
-        return `typealias ${render(node.name)} = Record<String, String>`
+        return `typealias ${render(node.name)} = js.core.ReadonlyRecord<String, String>`
     }
 
     if (

@@ -7,7 +7,7 @@ module.exports = function (node) {
         && ts.isFunctionDeclaration(node.parent.parent)
         && node.parent.parent.name.text === "generatePath"
     ) {
-        return "Record<String, String>"
+        return "js.core.ReadonlyRecord<String, String>"
     }
     return null
 }
