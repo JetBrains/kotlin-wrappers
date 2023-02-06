@@ -29,7 +29,7 @@ external interface RouterState {
     /**
      * The current set of route matches
      */
-    var matches: Array<AgnosticDataRouteMatch>
+    var matches: js.core.ReadonlyArray<AgnosticDataRouteMatch>
 
     /**
      * Tracks whether we've completed our initial data load

@@ -32,4 +32,4 @@ package remix.run.router
  *     </Route>
  *   </Route>
  */
-external fun <T : AgnosticRouteMatch<*> /* default is AgnosticRouteMatch<*> */> getPathContributingMatches(matches: Array<T>): Array<T>
+external fun <T : AgnosticRouteMatch<*> /* default is AgnosticRouteMatch<*> */> getPathContributingMatches(matches: js.core.ReadonlyArray<T>): js.core.ReadonlyArray<T>

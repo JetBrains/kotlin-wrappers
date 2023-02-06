@@ -15,7 +15,7 @@ package remix.run.router
 
 external interface RouterInit {
     var basename: String?
-    var routes: Array<AgnosticRouteObject>
+    var routes: js.core.ReadonlyArray<AgnosticRouteObject>
     var history: History
     var hydrationData: HydrationState?
 }

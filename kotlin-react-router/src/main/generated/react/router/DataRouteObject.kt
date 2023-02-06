@@ -10,7 +10,7 @@ package react.router
 
 
 external interface DataRouteObject : RouteObject {
-    var children: Array<DataRouteObject>?
+    var children: js.core.ReadonlyArray<DataRouteObject>?
     var id: String
 }
 

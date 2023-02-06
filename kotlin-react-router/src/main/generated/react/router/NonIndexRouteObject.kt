@@ -23,7 +23,7 @@ external interface NonIndexRouteObject {
     var shouldRevalidate: ShouldRevalidateFunction?
     var handle: Any?
     var index: Boolean?
-    var children: Array<RouteObject>?
+    var children: js.core.ReadonlyArray<RouteObject>?
     var element: react.ReactNode?
     var errorElement: react.ReactNode?
 }

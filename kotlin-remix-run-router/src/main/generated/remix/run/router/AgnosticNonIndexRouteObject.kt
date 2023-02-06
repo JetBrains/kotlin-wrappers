@@ -14,7 +14,7 @@ package remix.run.router
  */
 
 external interface AgnosticNonIndexRouteObject : AgnosticBaseRouteObject {
-    var children: Array<AgnosticRouteObject>?
+    var children: js.core.ReadonlyArray<AgnosticRouteObject>?
     var index: Boolean?
 }
 

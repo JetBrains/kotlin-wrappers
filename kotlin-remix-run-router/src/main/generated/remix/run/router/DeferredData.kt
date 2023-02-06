@@ -21,7 +21,7 @@ external class DeferredData {
     var subscribers: Any? /* some expression */
     var data: js.core.ReadonlyRecord<String, Any>
     var init: ResponseInit?
-    var deferredKeys: Array<String>
+    var deferredKeys: js.core.ReadonlyArray<String>
 
     constructor (data: js.core.ReadonlyRecord<String, Any>, responseInit: ResponseInit = definedExternally)
 

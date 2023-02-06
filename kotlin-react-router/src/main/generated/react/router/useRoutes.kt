@@ -18,6 +18,6 @@ import remix.run.router.Location
  *
  * @see https://reactrouter.com/hooks/use-routes
  */
-external fun useRoutes(routes: Array<RouteObject>, locationArg: Location = definedExternally): react.ReactElement<*>?
+external fun useRoutes(routes: js.core.ReadonlyArray<RouteObject>, locationArg: Location = definedExternally): react.ReactElement<*>?
 
-external fun useRoutes(routes: Array<RouteObject>, locationArg: String = definedExternally): react.ReactElement<*>?
+external fun useRoutes(routes: js.core.ReadonlyArray<RouteObject>, locationArg: String = definedExternally): react.ReactElement<*>?
