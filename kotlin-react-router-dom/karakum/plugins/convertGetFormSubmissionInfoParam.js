@@ -8,7 +8,7 @@ module.exports = (node) => {
         && ts.isFunctionDeclaration(node.parent.parent.parent)
         && node.parent.parent.parent.name.text === "getFormSubmissionInfo"
     ) {
-        return "Record<String, String>"
+        return "js.core.ReadonlyRecord<String, String>"
     }
 
     return null

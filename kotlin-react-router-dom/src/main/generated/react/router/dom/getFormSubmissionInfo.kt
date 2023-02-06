@@ -8,7 +8,6 @@
 
 package react.router.dom
 
-import js.core.Record
 import web.html.HTMLButtonElement
 import web.html.HTMLFormElement
 import web.html.HTMLInputElement
@@ -25,4 +24,4 @@ external fun getFormSubmissionInfo(target: FormData?, defaultAction: String, opt
 
 external fun getFormSubmissionInfo(target: URLSearchParams?, defaultAction: String, options: SubmitOptions): GetFormSubmissionInfoResult
 
-external fun getFormSubmissionInfo(target: Record<String, String>?, defaultAction: String, options: SubmitOptions): GetFormSubmissionInfoResult
+external fun getFormSubmissionInfo(target: js.core.ReadonlyRecord<String, String>?, defaultAction: String, options: SubmitOptions): GetFormSubmissionInfoResult

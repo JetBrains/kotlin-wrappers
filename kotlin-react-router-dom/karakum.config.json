@@ -22,7 +22,6 @@
             "web.url.URLSearchParams"
         ],
         "getFormSubmissionInfo.kt": [
-            "js.core.Record",
             "web.html.HTMLButtonElement",
             "web.html.HTMLFormElement",
             "web.html.HTMLInputElement",
