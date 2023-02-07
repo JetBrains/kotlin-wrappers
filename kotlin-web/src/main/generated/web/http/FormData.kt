@@ -8,6 +8,7 @@ import web.events.EventTarget
 
 external class FormData(
     form: EventTarget /* HTMLFormElement */ = definedExternally,
+    submitter: EventTarget /* HTMLElement */? = definedExternally,
 ) {
     fun append(
         name: String,
@@ -30,15 +31,15 @@ external class FormData(
         value: String,
     )
 
+    operator fun set(
+        name: String,
+        value: Blob,
+    )
+
     fun set(
         name: String,
         value: String,
         fileName: String,
-    )
-
-    operator fun set(
-        name: String,
-        value: Blob,
     )
 
     fun set(

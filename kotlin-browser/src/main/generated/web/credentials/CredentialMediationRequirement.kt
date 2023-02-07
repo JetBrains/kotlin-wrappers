@@ -7,8 +7,9 @@
 package web.credentials
 
 // language=JavaScript
-@JsName("""(/*union*/{optional: 'optional', required: 'required', silent: 'silent'}/*union*/)""")
+@JsName("""(/*union*/{conditional: 'conditional', optional: 'optional', required: 'required', silent: 'silent'}/*union*/)""")
 external enum class CredentialMediationRequirement {
+    conditional,
     optional,
     required,
     silent,
