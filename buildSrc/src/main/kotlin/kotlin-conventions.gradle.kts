@@ -31,7 +31,10 @@ plugins.withType<KotlinJsPluginWrapper> {
             browser()
         }
 
-        val generatedDir = projectDir.resolve("src/main/generated")
+        val kotlinDir = projectDir.resolve("src/jsMain/kotlin")
+        sourceSets["main"].kotlin.srcDir(kotlinDir)
+
+        val generatedDir = projectDir.resolve("src/jsMain/generated")
         if (generatedDir.exists()) {
             sourceSets["main"].kotlin.srcDir(generatedDir)
         }
