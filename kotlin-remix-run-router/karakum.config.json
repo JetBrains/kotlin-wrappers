@@ -1,9 +1,5 @@
 {
-    "input": [
-        "<nodeModules>/@remix-run/router/dist/history.d.ts",
-        "<nodeModules>/@remix-run/router/dist/utils.d.ts",
-        "<nodeModules>/@remix-run/router/dist/router.d.ts"
-    ],
+    "input": "<nodeModules>/@remix-run/router/dist/**/*.d.ts",
     "output": "src/main/generated",
     "libraryName": "@remix-run/router",
     "libraryNameOutputPrefix": true,

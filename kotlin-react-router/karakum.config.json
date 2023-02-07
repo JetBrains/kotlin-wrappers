@@ -1,14 +1,13 @@
 {
-    "input": [
-        "<nodeModules>/react-router/dist/lib/hooks.d.ts",
-        "<nodeModules>/react-router/dist/lib/components.d.ts"
-    ],
+    "input": "<nodeModules>/react-router/dist/**/*.d.ts",
     "ignoreInput": [
         "**/@remix-run/router/**",
         "**/@types/prop-types/**",
         "**/@types/react/**",
         "**/@types/scheduler/**",
-        "**/csstype/**"
+        "**/csstype/**",
+
+        "**/react-router/dist/lib/use-sync-external-store-shim/**"
     ],
     "output": "src/main/generated",
     "ignoreOutput": [
@@ -21,6 +20,9 @@
     "moduleNameMapper": {
         ".*": ""
     },
+    "packageNameMapper": {
+        ".*/(.*).kt": "$1.kt"
+    },
     "importInjector": {
         "_renderMatches.kt": [
             "remix.run.router.RouterState"
@@ -28,6 +30,13 @@
         "context.kt": [
             "remix.run.router.RouterState",
             "remix.run.router.TrackedPromise"
+        ],
+        "createMemoryRouter.kt": [
+            "remix.run.router.Router as RemixRouter"
+        ],
+        "CreateMemoryRouterOpts.kt": [
+            "remix.run.router.HydrationState",
+            "remix.run.router.InitialEntry"
         ],
         "DataRouterContextObject.kt": [
             "remix.run.router.Router",
