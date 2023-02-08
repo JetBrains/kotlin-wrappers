@@ -32,7 +32,7 @@ sealed interface ChildrenBuilder {
         child(this)
     }
 
-    operator fun String.unaryPlus() {
+    operator fun String?.unaryPlus() {
         +ReactNode(this)
     }
 
