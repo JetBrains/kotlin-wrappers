@@ -1,7 +1,9 @@
 import org.jetbrains.kotlin.gradle.dsl.KotlinCompile
 import org.jetbrains.kotlin.gradle.dsl.KotlinJsCompile
 import org.jetbrains.kotlin.gradle.dsl.KotlinJsProjectExtension
+import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
 import org.jetbrains.kotlin.gradle.plugin.KotlinJsPluginWrapper
+import org.jetbrains.kotlin.gradle.plugin.KotlinMultiplatformPluginWrapper
 
 tasks.withType<KotlinCompile<*>>().configureEach {
     kotlinOptions {
@@ -21,6 +23,20 @@ tasks.withType<KotlinJsCompile>().configureEach {
         sourceMapEmbedSources = null
         sourceMapPrefix = null
         moduleKind = moduleDefinition
+    }
+}
+
+plugins.withType<KotlinMultiplatformPluginWrapper> {
+    extensions.configure<KotlinMultiplatformExtension> {
+        js {
+            moduleName = project.name
+            browser()
+        }
+
+        val generatedDir = projectDir.resolve("src/jsMain/generated")
+        if (generatedDir.exists()) {
+            sourceSets["main"].kotlin.srcDir(generatedDir)
+        }
     }
 }
 

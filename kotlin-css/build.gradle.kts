@@ -6,10 +6,7 @@ plugins {
 
 kotlin {
     jvm()
-    js {
-        moduleName = project.name
-        browser()
-    }
+    js()
 
     iosArm32()
     iosArm64()
