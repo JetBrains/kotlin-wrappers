@@ -1,11 +1,11 @@
 plugins {
-    kotlin("js")
+    kotlin("multiplatform")
     `kotlin-conventions`
     `publish-conventions`
 }
 
 dependencies {
-    api(project(":kotlin-mui"))
+    jsMainApi(project(":kotlin-mui"))
 
-    api(npmv("@mui/icons-material"))
+    jsMainApi(npmv("@mui/icons-material"))
 }

@@ -1,12 +1,12 @@
 plugins {
-    kotlin("js")
+    kotlin("multiplatform")
     `kotlin-conventions`
     `publish-conventions`
 }
 
 dependencies {
-    api(project(":kotlin-history"))
-    api(project(":kotlin-react-dom"))
+    jsMainApi(project(":kotlin-history"))
+    jsMainApi(project(":kotlin-react-dom"))
 
-    api(npm("react-router-dom", "^6.3.0"))
+    jsMainApi(npm("react-router-dom", "^6.3.0"))
 }

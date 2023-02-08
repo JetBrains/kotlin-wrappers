@@ -1,12 +1,12 @@
 plugins {
-    kotlin("js")
+    kotlin("multiplatform")
     `kotlin-conventions`
     `publish-conventions`
 }
 
 dependencies {
-    api(project(":kotlin-browser"))
-    api(project(":kotlin-react-router"))
+    jsMainApi(project(":kotlin-browser"))
+    jsMainApi(project(":kotlin-react-router"))
 
-    api(npmv("react-router-dom"))
+    jsMainApi(npmv("react-router-dom"))
 }

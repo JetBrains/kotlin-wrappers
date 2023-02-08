@@ -1,12 +1,12 @@
 plugins {
-    kotlin("js")
+    kotlin("multiplatform")
     `kotlin-conventions`
     `publish-conventions`
 }
 
 dependencies {
-    api(project(":kotlin-react-core"))
-    api(project(":kotlin-tanstack-query-core"))
+    jsMainApi(project(":kotlin-react-core"))
+    jsMainApi(project(":kotlin-tanstack-query-core"))
 
-    api(npmv("@tanstack/react-query"))
+    jsMainApi(npmv("@tanstack/react-query"))
 }

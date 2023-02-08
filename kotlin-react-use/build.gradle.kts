@@ -1,9 +1,9 @@
 plugins {
-    kotlin("js")
+    kotlin("multiplatform")
     `kotlin-conventions`
     `publish-conventions`
 }
 
 dependencies {
-    api(project(":kotlin-react"))
+    jsMainApi(project(":kotlin-react"))
 }

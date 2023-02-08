@@ -1,13 +1,13 @@
 plugins {
-    kotlin("js")
+    kotlin("multiplatform")
     `kotlin-conventions`
     `publish-conventions`
 }
 
 dependencies {
-    api(project(":kotlin-emotion"))
-    api(project(":kotlin-react"))
-    api(project(":kotlin-react-dom"))
+    jsMainApi(project(":kotlin-emotion"))
+    jsMainApi(project(":kotlin-react"))
+    jsMainApi(project(":kotlin-react-dom"))
 
-    api(npmv("react-select"))
+    jsMainApi(npmv("react-select"))
 }

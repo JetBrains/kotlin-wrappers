@@ -1,12 +1,12 @@
 plugins {
-    kotlin("js")
+    kotlin("multiplatform")
     `kotlin-conventions`
     `publish-conventions`
 }
 
 dependencies {
-    api(project(":kotlin-react-legacy"))
-    api(project(":kotlin-react-dom"))
+    jsMainApi(project(":kotlin-react-legacy"))
+    jsMainApi(project(":kotlin-react-dom"))
 
-    implementation(npmv("@jetbrains/ring-ui"))
+    jsMainImplementation(npmv("@jetbrains/ring-ui"))
 }

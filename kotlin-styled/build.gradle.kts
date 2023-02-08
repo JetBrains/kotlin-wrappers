@@ -1,19 +1,19 @@
 plugins {
-    kotlin("js")
+    kotlin("multiplatform")
     `kotlin-conventions`
     `publish-conventions`
 }
 
 dependencies {
-    api(project(":kotlin-extensions"))
-    api(project(":kotlin-js"))
-    api(project(":kotlin-css"))
-    api(project(":kotlin-react-legacy"))
-    api(project(":kotlin-react-dom-legacy"))
+    jsMainApi(project(":kotlin-extensions"))
+    jsMainApi(project(":kotlin-js"))
+    jsMainApi(project(":kotlin-css"))
+    jsMainApi(project(":kotlin-react-legacy"))
+    jsMainApi(project(":kotlin-react-dom-legacy"))
 
-    api(kotlinxHtml("js"))
+    jsMainApi(kotlinxHtml("js"))
 
-    api(npmv("css-in-js-utils"))
-    api(npmv("inline-style-prefixer"))
-    api(npmv("styled-components"))
+    jsMainApi(npmv("css-in-js-utils"))
+    jsMainApi(npmv("inline-style-prefixer"))
+    jsMainApi(npmv("styled-components"))
 }

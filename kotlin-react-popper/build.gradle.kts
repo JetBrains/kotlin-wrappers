@@ -1,12 +1,12 @@
 plugins {
-    kotlin("js")
+    kotlin("multiplatform")
     `kotlin-conventions`
     `publish-conventions`
 }
 
 dependencies {
-    api(project(":kotlin-popper"))
-    api(project(":kotlin-react-core"))
+    jsMainApi(project(":kotlin-popper"))
+    jsMainApi(project(":kotlin-react-core"))
 
-    api(npmv("react-popper"))
+    jsMainApi(npmv("react-popper"))
 }

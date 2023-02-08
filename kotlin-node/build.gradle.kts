@@ -1,13 +1,13 @@
 plugins {
-    kotlin("js")
+    kotlin("multiplatform")
     `kotlin-conventions`
     `publish-conventions`
 }
 
 dependencies {
-    api(project(":kotlin-js"))
-    api(project(":kotlin-web"))
-    implementation(kotlinxCoroutines("core"))
+    jsMainApi(project(":kotlin-js"))
+    jsMainApi(project(":kotlin-web"))
+    jsMainImplementation(kotlinxCoroutines("core"))
 
-    api(devNpmv("@types/node"))
+    jsMainApi(devNpmv("@types/node"))
 }

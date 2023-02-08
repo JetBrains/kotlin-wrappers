@@ -1,15 +1,15 @@
 plugins {
-    kotlin("js")
+    kotlin("multiplatform")
     `kotlin-conventions`
     `publish-conventions`
 }
 
 dependencies {
-    api(project(":kotlin-csstype"))
-    api(project(":kotlin-browser"))
-    api(project(":kotlin-react-core"))
+    jsMainApi(project(":kotlin-csstype"))
+    jsMainApi(project(":kotlin-browser"))
+    jsMainApi(project(":kotlin-react-core"))
 
-    api(npmv("@emotion/css"))
-    api(npmv("@emotion/react"))
-    api(npmv("@emotion/styled"))
+    jsMainApi(npmv("@emotion/css"))
+    jsMainApi(npmv("@emotion/react"))
+    jsMainApi(npmv("@emotion/styled"))
 }

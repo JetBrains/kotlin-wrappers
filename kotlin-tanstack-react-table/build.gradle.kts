@@ -1,12 +1,12 @@
 plugins {
-    kotlin("js")
+    kotlin("multiplatform")
     `kotlin-conventions`
     `publish-conventions`
 }
 
 dependencies {
-    api(project(":kotlin-react-core"))
-    api(project(":kotlin-tanstack-table-core"))
+    jsMainApi(project(":kotlin-react-core"))
+    jsMainApi(project(":kotlin-tanstack-table-core"))
 
-    api(npmv("@tanstack/react-table"))
+    jsMainApi(npmv("@tanstack/react-table"))
 }

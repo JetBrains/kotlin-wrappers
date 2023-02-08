@@ -1,9 +1,9 @@
 plugins {
-    kotlin("js")
+    kotlin("multiplatform")
     `kotlin-conventions`
     `publish-conventions`
 }
 
 dependencies {
-    testImplementation(kotlin("test-js"))
+    jsTestImplementation(kotlin("test-js"))
 }

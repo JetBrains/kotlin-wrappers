@@ -1,21 +1,21 @@
 import org.jetbrains.kotlin.gradle.dsl.KotlinCompile
 
 plugins {
-    kotlin("js")
+    kotlin("multiplatform")
     `kotlin-conventions`
     `publish-conventions`
 }
 
 dependencies {
-    api(project(":kotlin-js"))
-    api(project(":kotlin-browser"))
-    api(project(":kotlin-react"))
-    api(project(":kotlin-react-dom"))
+    jsMainApi(project(":kotlin-js"))
+    jsMainApi(project(":kotlin-browser"))
+    jsMainApi(project(":kotlin-react"))
+    jsMainApi(project(":kotlin-react-dom"))
 
-    implementation(kotlinxCoroutines("core"))
-    implementation(kotlinxCoroutines("test"))
+    jsMainImplementation(kotlinxCoroutines("core"))
+    jsMainImplementation(kotlinxCoroutines("test"))
 
-    api(npmv("react-dom"))
+    jsMainApi(npmv("react-dom"))
 }
 
 tasks.withType<KotlinCompile<*>>().configureEach {

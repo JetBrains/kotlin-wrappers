@@ -1,14 +1,14 @@
 plugins {
-    kotlin("js")
+    kotlin("multiplatform")
     kotlin("plugin.serialization")
     `kotlin-conventions`
     `publish-conventions`
 }
 
 dependencies {
-    api(project(":kotlin-extensions"))
-    api(project(":kotlin-js"))
-    api(kotlinxSerialization("json"))
+    jsMainApi(project(":kotlin-extensions"))
+    jsMainApi(project(":kotlin-js"))
+    jsMainApi(kotlinxSerialization("json"))
 
-    api(npmv("redux"))
+    jsMainApi(npmv("redux"))
 }

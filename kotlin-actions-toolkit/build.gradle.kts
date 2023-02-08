@@ -1,19 +1,19 @@
 plugins {
-    kotlin("js")
+    kotlin("multiplatform")
     `kotlin-conventions`
     `publish-conventions`
 }
 
 dependencies {
-    api(npmv("@actions/artifact"))
-    api(npmv("@actions/cache"))
-    api(npmv("@actions/core"))
-    api(npmv("@actions/exec"))
-    // api(npmv("@actions/github"))
-    api(npmv("@actions/glob"))
-    api(npmv("@actions/http-client"))
-    api(npmv("@actions/io"))
-    api(npmv("@actions/tool-cache"))
+    jsMainApi(npmv("@actions/artifact"))
+    jsMainApi(npmv("@actions/cache"))
+    jsMainApi(npmv("@actions/core"))
+    jsMainApi(npmv("@actions/exec"))
+    // jsMainApi(npmv("@actions/github"))
+    jsMainApi(npmv("@actions/glob"))
+    jsMainApi(npmv("@actions/http-client"))
+    jsMainApi(npmv("@actions/io"))
+    jsMainApi(npmv("@actions/tool-cache"))
 
-    api(project(":kotlin-node"))
+    jsMainApi(project(":kotlin-node"))
 }

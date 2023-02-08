@@ -1,12 +1,12 @@
 plugins {
-    kotlin("js")
+    kotlin("multiplatform")
     `kotlin-conventions`
     `publish-conventions`
 }
 
 dependencies {
-    api(project(":kotlin-browser"))
-    api(project(":kotlin-history"))
+    jsMainApi(project(":kotlin-browser"))
+    jsMainApi(project(":kotlin-history"))
 
-    api(npmv("@remix-run/router"))
+    jsMainApi(npmv("@remix-run/router"))
 }
