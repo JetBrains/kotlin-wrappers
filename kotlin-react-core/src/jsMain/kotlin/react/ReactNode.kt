@@ -16,6 +16,16 @@ inline fun ReactNode(
 ): ReactNode =
     source.unsafeCast<ReactNode>()
 
+inline fun ReactNode(
+    source: String?,
+): ReactNode? =
+    source.unsafeCast<ReactNode?>()
+
+inline fun ReactNode(
+    source: Char,
+): ReactNode =
+    ReactNode(source.toString())
+
 fun ReactNode.asStringOrNull(): String? =
     asDynamic() as? String
 
