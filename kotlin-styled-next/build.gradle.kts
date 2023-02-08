@@ -1,17 +1,19 @@
 import org.jetbrains.kotlin.gradle.dsl.KotlinCompile
 
 plugins {
-    kotlin("js")
+    kotlin("multiplatform")
     `kotlin-conventions`
     `publish-conventions`
 }
 
-kotlin.js {
-    browser {
-        testTask {
-            testLogging.showStandardStreams = true
-            useKarma {
-                useChromeHeadless()
+kotlin {
+    js {
+        browser {
+            testTask {
+                testLogging.showStandardStreams = true
+                useKarma {
+                    useChromeHeadless()
+                }
             }
         }
     }
@@ -22,20 +24,20 @@ tasks.withType<KotlinCompile<*>>().configureEach {
 }
 
 dependencies {
-    api(project(":kotlin-extensions"))
-    api(project(":kotlin-js"))
-    api(project(":kotlin-css"))
-    api(project(":kotlin-react-legacy"))
-    api(project(":kotlin-react-dom-legacy"))
+    jsMainApi(project(":kotlin-extensions"))
+    jsMainApi(project(":kotlin-js"))
+    jsMainApi(project(":kotlin-css"))
+    jsMainApi(project(":kotlin-react-legacy"))
+    jsMainApi(project(":kotlin-react-dom-legacy"))
 
-    api(kotlinxHtml("js"))
+    jsMainApi(kotlinxHtml("js"))
 
-    api(npmv("inline-style-prefixer"))
+    jsMainApi(npmv("inline-style-prefixer"))
 
-    testImplementation(kotlin("test-js"))
-    testImplementation(kotlinxCoroutines("core"))
+    jsTestImplementation(kotlin("test-js"))
+    jsTestImplementation(kotlinxCoroutines("core"))
 
-    testImplementation(devNpmv("puppeteer"))
+    jsTestImplementation(devNpmv("puppeteer"))
 }
 
 val printBenchmarkResults by tasks.registering {
@@ -76,7 +78,7 @@ val printBenchmarkResults by tasks.registering {
     }
 }
 
-tasks.test {
+tasks.jsIrTest {
     enabled = project.hasProperty("test") && project.property("test") == true
 
     if (enabled) {
