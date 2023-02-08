@@ -78,7 +78,7 @@ val printBenchmarkResults by tasks.registering {
     }
 }
 
-tasks.jsIrTest {
+tasks.allTests {
     enabled = project.hasProperty("test") && project.property("test") == true
 
     if (enabled) {

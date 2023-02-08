@@ -33,4 +33,4 @@ jobs:
           java-version: '17'
       - name: Tests and benchmarks
         run: |
-          ./gradlew test -Ptest=true
+          ./gradlew allTests -Ptest=true
