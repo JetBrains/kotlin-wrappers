@@ -36,6 +36,10 @@ sealed interface ChildrenBuilder {
         +ReactNode(this)
     }
 
+    operator fun Char.unaryPlus() {
+        +ReactNode(this)
+    }
+
     fun <P : Props> child(
         type: ElementType<P>,
         props: P,
