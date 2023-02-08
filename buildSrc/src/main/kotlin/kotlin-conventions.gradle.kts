@@ -39,25 +39,3 @@ plugins.withType<KotlinMultiplatformPluginWrapper> {
         }
     }
 }
-
-plugins.withType<KotlinJsPluginWrapper> {
-    extensions.configure<KotlinJsProjectExtension> {
-        js {
-            moduleName = project.name
-            browser()
-        }
-
-        val kotlinDir = projectDir.resolve("src/jsMain/kotlin")
-        sourceSets["main"].kotlin.srcDir(kotlinDir)
-
-        val generatedDir = projectDir.resolve("src/jsMain/generated")
-        if (generatedDir.exists()) {
-            sourceSets["main"].kotlin.srcDir(generatedDir)
-        }
-
-        val testDir = projectDir.resolve("src/jsTest/kotlin")
-        if (testDir.exists()) {
-            sourceSets["test"].kotlin.srcDir(testDir)
-        }
-    }
-}

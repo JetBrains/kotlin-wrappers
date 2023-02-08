@@ -33,19 +33,6 @@ configure<PublishingExtension> {
                     configurePom(project)
                 }
 
-            isKotlinJsProject ->
-                create<MavenPublication>("kotlin") {
-                    from(components["kotlin"])
-
-                    groupId = project.group.toString()
-                    artifactId = project.name
-                    version = publishVersion
-
-                    artifact(tasks.getByName<Zip>("kotlinSourcesJar"))
-
-                    configurePom(project)
-                }
-
             else ->
                 create<MavenPublication>("bom") {
                     from(components["javaPlatform"])
