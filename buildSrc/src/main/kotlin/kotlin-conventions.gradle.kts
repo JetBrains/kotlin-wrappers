@@ -38,5 +38,10 @@ plugins.withType<KotlinJsPluginWrapper> {
         if (generatedDir.exists()) {
             sourceSets["main"].kotlin.srcDir(generatedDir)
         }
+
+        val testDir = projectDir.resolve("src/jsTest/kotlin")
+        if (testDir.exists()) {
+            sourceSets["test"].kotlin.srcDir(testDir)
+        }
     }
 }
