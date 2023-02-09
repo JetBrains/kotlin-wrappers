@@ -1,7 +1,6 @@
 // Automatically generated - do not modify!
 
 @file:JsModule("@tanstack/react-query")
-@file:JsNonModule
 
 @file:Suppress(
     "UNUSED_TYPEALIAS_PARAMETER",

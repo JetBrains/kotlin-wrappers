@@ -1,5 +1,4 @@
 @file:JsModule("@tanstack/react-table")
-@file:JsNonModule
 
 package tanstack.react.table
 

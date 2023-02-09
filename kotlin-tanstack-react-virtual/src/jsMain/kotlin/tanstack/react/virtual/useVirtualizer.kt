@@ -1,5 +1,4 @@
 @file:JsModule("@tanstack/react-virtual")
-@file:JsNonModule
 
 package tanstack.react.virtual
 

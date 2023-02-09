@@ -1,7 +1,6 @@
 // Automatically generated - do not modify!
 
 @file:JsModule("@tanstack/query-core")
-@file:JsNonModule
 
 @file:Suppress(
     "UNUSED_TYPEALIAS_PARAMETER",
