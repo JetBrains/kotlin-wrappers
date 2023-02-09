@@ -13,4 +13,14 @@ external interface TcpSocketConnectOpts : ConnectOpts {
     var noDelay: Boolean?
     var keepAlive: Boolean?
     var keepAliveInitialDelay: Number?
+
+    /**
+     * @since v18.13.0
+     */
+    var autoSelectFamily: Boolean?
+
+    /**
+     * @since v18.13.0
+     */
+    var autoSelectFamilyAttemptTimeout: Number?
 }

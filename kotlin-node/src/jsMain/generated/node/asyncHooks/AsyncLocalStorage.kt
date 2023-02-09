@@ -5,6 +5,8 @@
 package node.asyncHooks
 
 external class AsyncLocalStorage<T> {
+    constructor(options: AsyncLocalStorageOptions<T> = definedExternally)
+
     /**
      * Disables the instance of `AsyncLocalStorage`. All subsequent calls
      * to `asyncLocalStorage.getStore()` will return `undefined` until`asyncLocalStorage.run()` or `asyncLocalStorage.enterWith()` is called again.
