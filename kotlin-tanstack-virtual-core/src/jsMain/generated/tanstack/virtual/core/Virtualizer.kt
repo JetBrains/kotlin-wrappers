@@ -5,6 +5,7 @@
 
 package tanstack.virtual.core
 
+import js.core.JsTuple2
 import js.core.ReadonlyArray
 import web.dom.Element
 import web.events.EventTarget
@@ -26,6 +27,7 @@ external class Virtualizer<TScrollElement : EventTarget /* Element | Window */, 
     var measureElement: (node: TItemElement?) -> Unit
     var getVirtualItems: () -> ReadonlyArray<VirtualItem>
     var getOffsetForAlignment: (toOffset: Int, align: ScrollAlignment) -> Int
+    var getOffsetForIndex: (index: Int, align: ScrollAlignment?) -> JsTuple2<Double, ScrollAlignment>
     var scrollToOffset: (toOffset: Int, options: ScrollToOffsetOptions?) -> Unit
     var scrollToIndex: (index: Int, options: ScrollToIndexOptions?) -> Unit
     var scrollBy: (delta: Int, options: ScrollToOffsetOptions?) -> Unit

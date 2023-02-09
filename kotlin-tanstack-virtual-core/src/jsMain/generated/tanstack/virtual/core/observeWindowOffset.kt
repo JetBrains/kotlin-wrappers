@@ -5,4 +5,6 @@
 
 package tanstack.virtual.core
 
-external val observeWindowOffset: (instance: Virtualizer<*, *>, cb: (offset: Int) -> Unit) -> (() -> Unit)?
+import web.window.Window
+
+external val observeWindowOffset: (instance: Virtualizer<Window, *>, cb: (offset: Int) -> Unit) -> (() -> Unit)?
