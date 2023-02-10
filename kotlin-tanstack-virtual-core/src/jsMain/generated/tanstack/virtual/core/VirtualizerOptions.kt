@@ -4,6 +4,7 @@ package tanstack.virtual.core
 
 import js.core.ReadonlyArray
 import web.dom.Element
+import web.dom.observers.ResizeObserverEntry
 import web.events.EventTarget
 
 external interface VirtualizerOptions<TScrollElement : EventTarget /* Element | Window */, TItemElement : Element> {
@@ -16,7 +17,7 @@ external interface VirtualizerOptions<TScrollElement : EventTarget /* Element | 
     var debug: Any?
     var initialRect: Rect?
     var onChange: ((instance: Virtualizer<TScrollElement, TItemElement>) -> Unit)?
-    var measureElement: ((el: TItemElement, instance: Virtualizer<TScrollElement, TItemElement>) -> Int)?
+    var measureElement: ((element: TItemElement, entry: ResizeObserverEntry?, instance: Virtualizer<TScrollElement, TItemElement>) -> Int)?
     var overscan: Int?
     var horizontal: Boolean?
     var paddingStart: Int?
