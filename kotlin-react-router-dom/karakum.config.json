@@ -10,7 +10,7 @@
         "**/csstype/**",
         "**/react-router/**"
     ],
-    "output": "src/main/generated",
+    "output": "src/jsMain/generated",
     "libraryName": "react-router-dom",
     "libraryNameOutputPrefix": true,
     "granularity": "top-level",

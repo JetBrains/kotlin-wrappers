@@ -9,7 +9,7 @@
 
         "**/react-router/dist/lib/use-sync-external-store-shim/**"
     ],
-    "output": "src/main/generated",
+    "output": "src/jsMain/generated",
     "ignoreOutput": [
         "**/Navigate.kt",
         "**/NavigateProps.kt"
