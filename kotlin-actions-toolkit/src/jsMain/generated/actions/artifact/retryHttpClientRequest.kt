@@ -5,11 +5,12 @@
 package actions.artifact
 
 import actions.http.client.HttpClientResponse
+import js.collections.ReadonlyMap
 import kotlin.js.Promise
 
 external fun retryHttpClientRequest(
     name: String,
     method: () -> Promise<HttpClientResponse>,
-    customErrorMessages: Map<Int, String> = definedExternally,
+    customErrorMessages: ReadonlyMap<Int, String> = definedExternally,
     maxAttempts: Number = definedExternally,
 ): Promise<HttpClientResponse>
