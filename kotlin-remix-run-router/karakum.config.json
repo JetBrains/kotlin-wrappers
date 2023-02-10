@@ -1,6 +1,6 @@
 {
     "input": "<nodeModules>/@remix-run/router/dist/**/*.d.ts",
-    "output": "src/main/generated",
+    "output": "src/jsMain/generated",
     "libraryName": "@remix-run/router",
     "libraryNameOutputPrefix": true,
     "granularity": "top-level",
