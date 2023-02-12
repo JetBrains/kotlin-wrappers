@@ -158,7 +158,7 @@ open external class QueryClient(config: QueryClientConfig = definedExternally) {
         options: FetchInfiniteQueryOptions<TQueryFnData, TError, TData, TQueryKey> = definedExternally,
     ): Promise<Unit>
 
-    open fun resumePausedMutations(): Promise<Unit>
+    open fun resumePausedMutations(): Promise<Any?>
     open fun getQueryCache(): QueryCache
     open fun getMutationCache(): MutationCache
     open fun getLogger(): Logger

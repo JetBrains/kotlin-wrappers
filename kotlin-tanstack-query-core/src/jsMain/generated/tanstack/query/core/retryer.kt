@@ -28,7 +28,7 @@ external interface RetryerConfig<TData, TError> {
 external interface Retryer<TData> {
     var promise: Promise<TData>
     var cancel: (cancelOptions: CancelOptions?) -> Unit
-    var `continue`: () -> Unit
+    var `continue`: () -> Promise<Any?>
     var cancelRetry: () -> Unit
     var continueRetry: () -> Unit
 }

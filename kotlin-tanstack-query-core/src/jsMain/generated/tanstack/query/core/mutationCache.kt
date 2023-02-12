@@ -71,5 +71,5 @@ open external class MutationCache(config: MutationCacheConfig = definedExternall
     open fun <TData, TError, TVariables, TContext> find(filters: MutationFilters): Mutation<TData, TError, TVariables, TContext>?
     open fun findAll(filters: MutationFilters): ReadonlyArray<Mutation<*, *, *, *>>
     open fun notify(event: MutationCacheNotifyEvent)
-    open fun resumePausedMutations(): Promise<Unit>
+    open fun resumePausedMutations(): Promise<Any?>
 }

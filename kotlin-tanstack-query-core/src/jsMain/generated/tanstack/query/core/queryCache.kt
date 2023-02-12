@@ -69,7 +69,7 @@ open external class QueryCache(config: QueryCacheConfig = definedExternally) : S
     open fun add(query: Query<*, *, *, *>)
     open fun remove(query: Query<*, *, *, *>)
     open fun clear()
-    open fun <TQueryFnData, TError, TData, TQueyKey : QueryKey> get(queryHash: String): Query<TQueryFnData, TError, TData, TQueyKey>?
+    open fun <TQueryFnData, TError, TData, TQueryKey : QueryKey> get(queryHash: String): Query<TQueryFnData, TError, TData, TQueryKey>?
     open fun getAll(): ReadonlyArray<Query<*, *, *, *>>
     open fun <TQueryFnData, TError, TData> find(
         arg1: QueryKey,
