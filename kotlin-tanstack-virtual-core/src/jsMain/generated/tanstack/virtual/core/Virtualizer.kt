@@ -27,6 +27,7 @@ external class Virtualizer<TScrollElement : EventTarget /* Element | Window */, 
     var indexFromElement: (node: TItemElement) -> Int
     var measureElement: (node: TItemElement?) -> Unit
     var getVirtualItems: () -> ReadonlyArray<VirtualItem>
+    var getVirtualItemForOffset: (offset: Int) -> VirtualItem
     var getOffsetForAlignment: (toOffset: Int, align: ScrollAlignment) -> Int
     var getOffsetForIndex: (index: Int, align: ScrollAlignment?) -> JsTuple2<Double, ScrollAlignment>
     var scrollToOffset: (toOffset: Int, options: ScrollToOffsetOptions?) -> Unit
