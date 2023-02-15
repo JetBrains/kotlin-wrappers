@@ -11,12 +11,5 @@ import kotlin.js.Promise
 external fun extractTarAsync(
     file: String,
     dest: String = definedExternally,
-    flags: String = definedExternally,
-): Promise<String>
-
-@JsName("extractTar")
-external fun extractTarAsync(
-    file: String,
-    dest: String = definedExternally,
     flags: ReadonlyArray<String> = definedExternally,
 ): Promise<String>

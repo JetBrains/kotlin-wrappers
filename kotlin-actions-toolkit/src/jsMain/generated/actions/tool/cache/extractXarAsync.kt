@@ -11,12 +11,5 @@ import kotlin.js.Promise
 external fun extractXarAsync(
     file: String,
     dest: String = definedExternally,
-    flags: String = definedExternally,
-): Promise<String>
-
-@JsName("extractXar")
-external fun extractXarAsync(
-    file: String,
-    dest: String = definedExternally,
     flags: ReadonlyArray<String> = definedExternally,
 ): Promise<String>
