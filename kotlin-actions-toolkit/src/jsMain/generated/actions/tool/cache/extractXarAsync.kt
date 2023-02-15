@@ -14,7 +14,8 @@ external fun extractXarAsync(
     flags: String = definedExternally,
 ): Promise<String>
 
-external fun extractXar(
+@JsName("extractXar")
+external fun extractXarAsync(
     file: String,
     dest: String = definedExternally,
     flags: ReadonlyArray<String> = definedExternally,

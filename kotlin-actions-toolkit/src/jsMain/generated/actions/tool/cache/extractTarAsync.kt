@@ -14,7 +14,8 @@ external fun extractTarAsync(
     flags: String = definedExternally,
 ): Promise<String>
 
-external fun extractTar(
+@JsName("extractTar")
+external fun extractTarAsync(
     file: String,
     dest: String = definedExternally,
     flags: ReadonlyArray<String> = definedExternally,
