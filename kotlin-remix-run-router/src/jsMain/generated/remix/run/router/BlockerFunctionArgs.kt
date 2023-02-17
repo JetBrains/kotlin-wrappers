@@ -1,6 +1,6 @@
 package remix.run.router
 
-import history.Action as HistoryAction
+import remix.run.router.Action as HistoryAction
 
 
 external interface BlockerFunctionArgs {

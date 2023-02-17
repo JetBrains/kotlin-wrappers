@@ -6,7 +6,6 @@ plugins {
 
 dependencies {
     jsMainApi(project(":kotlin-browser"))
-    jsMainApi(project(":kotlin-history"))
 
     jsMainApi(npmv("@remix-run/router"))
 }

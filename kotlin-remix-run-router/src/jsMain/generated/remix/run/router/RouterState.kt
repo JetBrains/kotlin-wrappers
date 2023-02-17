@@ -7,7 +7,7 @@
 
 package remix.run.router
 
-import history.Action as HistoryAction
+import remix.run.router.Action as HistoryAction
 
 /**
  * State maintained internally by the router.  During a navigation, all states

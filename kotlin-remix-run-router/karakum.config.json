@@ -62,7 +62,7 @@
             "web.abort.AbortController"
         ],
         "RouterState.kt": [
-            "history.Action as HistoryAction"
+            "remix.run.router.Action as HistoryAction"
         ],
         "StaticHandler.kt": [
             "kotlin.js.Promise",
@@ -75,7 +75,7 @@
             "web.http.FormData"
         ],
         "BlockerFunctionArgs.kt": [
-            "history.Action as HistoryAction"
+            "remix.run.router.Action as HistoryAction"
         ],
         "DeferredResult.kt": [
             "web.http.Headers"
