@@ -2022,7 +2022,7 @@ external class Buffer : Uint8Array {
                 | {
                       [Symbol.toPrimitive](hint: 'string'): string;
                   },
-            encoding?: BufferEncoding
+            encoding?: BufferEncoding,
         ): Buffer
         */
         // HIDDEN METHOD END
