@@ -2,9 +2,9 @@ const ts = require("typescript");
 
 const overriddenProps = {
     "NavLinkProps": {
-        "className": ["classNameFn", "csstype.ClassName"],
-        "style": ["styleFn", "react.CSSProperties"],
-        "children": ["childrenFn", "react.ReactNode"],
+        "className": "classNameFn",
+        "style": "styleFn",
+        "children": "childrenFn",
     },
     "FormProps": {
         "method": ["routerMethod", "String"],
@@ -35,22 +35,37 @@ module.exports = function (node, context, render) {
 
         const overrideConfig = overriddenProps[node.parent.name.text][node.name.text]
 
-        const hidden = overrideConfig !== null
+        const hasAlias = overrideConfig !== null
 
-        if (hidden) {
-            const [alias, parentType] = overrideConfig
+        if (hasAlias) {
+            let alias
+            let parentType
 
-            const deprecation = `@Deprecated(message = "use ${alias}", level = DeprecationLevel.HIDDEN)`
-            const signature = `override ${modifier}${name}: ${parentType}${nullable ? "?" : ""}`
+            if (Array.isArray(overrideConfig)) {
+                [alias, parentType] = overrideConfig
+            } else {
+                alias = overrideConfig
+            }
+
             const jsName = `@JsName("${name}")`
             const aliasSignature = `${modifier}${alias}: ${type}${nullable ? "?" : ""}`
 
-            return [
-                deprecation,
-                signature,
-                jsName,
-                aliasSignature,
-            ].join("\n")
+            if (parentType) {
+                const deprecation = `@Deprecated(message = "use ${alias}", level = DeprecationLevel.HIDDEN)`
+                const signature = `override ${modifier}${name}: ${parentType}${nullable ? "?" : ""}`
+
+                return [
+                    deprecation,
+                    signature,
+                    jsName,
+                    aliasSignature,
+                ].join("\n")
+            } else {
+                return [
+                    jsName,
+                    aliasSignature,
+                ].join("\n")
+            }
         }
 
         return `override ${modifier}${name}: ${type}${nullable ? "?" : ""}`
