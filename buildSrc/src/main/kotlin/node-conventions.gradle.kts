@@ -15,6 +15,6 @@ plugins.withType<YarnPlugin> {
 
 plugins.withType<NodeJsRootPlugin> {
     the<NodeJsRootExtension>().apply {
-        nodeVersion = "18.14.0"
+        nodeVersion = "18.14.1"
     }
 }
