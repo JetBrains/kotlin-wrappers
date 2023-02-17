@@ -14,7 +14,7 @@ package remix.run.router
  */
 
 external interface AgnosticIndexRouteObject : AgnosticBaseRouteObject {
-    var children: Any? /* some expression */
+    var children: Nothing?
     var index: Boolean
 }
 

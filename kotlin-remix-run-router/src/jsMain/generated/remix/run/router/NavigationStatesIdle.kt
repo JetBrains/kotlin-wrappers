@@ -3,10 +3,10 @@ package remix.run.router
 
 external interface NavigationStatesIdle {
     var state: String
-    var location: Any? /* some expression */
-    var formMethod: Any? /* some expression */
-    var formAction: Any? /* some expression */
-    var formEncType: Any? /* some expression */
-    var formData: Any? /* some expression */
+    var location: Nothing?
+    var formMethod: Nothing?
+    var formAction: Nothing?
+    var formEncType: Nothing?
+    var formData: Nothing?
 }
 
