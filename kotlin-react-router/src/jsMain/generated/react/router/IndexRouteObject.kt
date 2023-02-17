@@ -23,7 +23,7 @@ external interface IndexRouteObject {
     var shouldRevalidate: ShouldRevalidateFunction?
     var handle: Any?
     var index: Boolean
-    var children: Any? /* some expression */
+    var children: Nothing?
     var element: react.ReactNode?
     var errorElement: react.ReactNode?
 }

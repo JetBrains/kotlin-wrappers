@@ -11,8 +11,8 @@ package remix.run.router
 
 external interface BlockerUnblocked {
     var state: String
-    var reset: Any? /* some expression */
-    var proceed: Any? /* some expression */
-    var location: Any? /* some expression */
+    var reset: Nothing?
+    var proceed: Nothing?
+    var location: Nothing?
 }
 
