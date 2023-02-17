@@ -1,3 +1,7 @@
+# [archived]
+
+---
+
 [![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-history)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-history)
 
 ## kotlin-history
