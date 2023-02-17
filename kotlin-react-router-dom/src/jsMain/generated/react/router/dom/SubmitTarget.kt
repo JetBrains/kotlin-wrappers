@@ -9,4 +9,6 @@
 package react.router.dom
 
 
-typealias ParamKeyValuePair = js.core.JsTuple2<String, String>
+typealias SubmitTarget = (Any /* HTMLFormElement | HTMLButtonElement | HTMLInputElement | FormData | URLSearchParams | {
+    [name: string]: string;
+} | null */)?

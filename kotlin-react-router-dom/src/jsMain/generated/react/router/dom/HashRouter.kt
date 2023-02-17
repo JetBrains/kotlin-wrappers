@@ -9,4 +9,8 @@
 package react.router.dom
 
 
-typealias ParamKeyValuePair = js.core.JsTuple2<String, String>
+/**
+ * A `<Router>` for use in web browsers. Stores the location in the hash
+ * portion of the URL so it is not sent to the server.
+ */
+external val HashRouter: react.FC<HashRouterProps>

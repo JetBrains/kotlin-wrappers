@@ -1,4 +1,5 @@
 const ts = require("typescript");
+const karakum = require("karakum");
 
 module.exports = function (node, context, render) {
     if (
@@ -15,13 +16,14 @@ module.exports = function (node, context, render) {
     ) {
         const signature = node.members[0]
 
-        const parameters = signature.parameters
-            ?.map(parameter => render(parameter))
-            ?.join(", ")
-
         const returnType = render(signature.type)
 
-        return `typealias ${render(node.name)} = (${parameters}) -> ${returnType}`
+        return karakum.convertParameterDeclarations(signature, context, render, {
+            strategy: "lambda",
+            template: parameters => {
+                return `typealias ${render(node.name)} = (${parameters}) -> ${returnType}`
+            }
+        })
     }
     return null
 }

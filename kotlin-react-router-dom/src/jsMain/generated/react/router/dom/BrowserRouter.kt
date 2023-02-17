@@ -9,4 +9,7 @@
 package react.router.dom
 
 
-typealias ParamKeyValuePair = js.core.JsTuple2<String, String>
+/**
+ * A `<Router>` for use in web browsers. Provides the cleanest URLs.
+ */
+external val BrowserRouter: react.FC<BrowserRouterProps>

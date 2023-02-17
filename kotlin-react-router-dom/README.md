@@ -10,3 +10,8 @@ Kotlin wrapper for [React Router DOM](https://reactrouter.com/en/main) library.
    * `defaultMethod`
 2) Do not hardcode `Record` type:
    * `getFormSubmissionInfo`
+3) Improve parameter naming:
+   * `useFormAction`
+   * `useLinkClickHandler`
+4) Improve signature overloads:
+   * `SetURLSearchParams`

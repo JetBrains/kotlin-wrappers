@@ -1,6 +1,7 @@
 {
     "input": [
-        "<nodeModules>/react-router-dom/dist/dom.d.ts"
+        "<nodeModules>/react-router-dom/dist/dom.d.ts",
+        "<nodeModules>/react-router-dom/dist/index.d.ts"
     ],
     "ignoreInput": [
         "**/@remix-run/router/**",
@@ -18,8 +19,36 @@
         ".*": ""
     },
     "importInjector": {
+        "BrowserRouterProps.kt": [
+            "web.window.Window"
+        ],
+        "createBrowserRouter.kt": [
+            "react.router.RouteObject",
+            "remix.run.router.Router as RemixRouter"
+        ],
+        "CreateBrowserRouterOpts.kt": [
+            "web.window.Window",
+            "remix.run.router.HydrationState"
+        ],
+        "createHashRouter.kt": [
+            "react.router.RouteObject",
+            "remix.run.router.Router as RemixRouter"
+        ],
+        "CreateHashRouterOpts.kt": [
+            "web.window.Window",
+            "remix.run.router.HydrationState"
+        ],
         "createSearchParams.kt": [
             "web.url.URLSearchParams"
+        ],
+        "FetcherWithComponents.kt": [
+            "react.ForwardRefExoticComponent",
+            "remix.run.router.Fetcher"
+        ],
+        "FormProps.kt": [
+            "web.html.HTMLFormElement",
+            "remix.run.router.FormMethod",
+            "react.router.RelativeRoutingType"
         ],
         "getFormSubmissionInfo.kt": [
             "web.html.HTMLButtonElement",
@@ -35,16 +64,56 @@
         "getSearchParamsForLocation.kt": [
             "web.url.URLSearchParams"
         ],
+        "HashRouterProps.kt": [
+            "web.window.Window"
+        ],
+        "HistoryRouterProps.kt": [
+            "remix.run.router.History"
+        ],
         "LimitedMouseEvent.kt": [
             "web.uievents.MouseEvent"
         ],
-        "ParamKeyValuePair.kt": [
-            "js.core.JsTuple2"
+        "LinkProps.kt": [
+            "web.html.HTMLAnchorElement",
+            "remix.run.router.To",
+            "react.router.RelativeRoutingType"
+        ],
+        "NavLinkProps.kt": [
+            "web.html.HTMLAnchorElement"
+        ],
+        "ScrollRestorationProps.kt": [
+            "remix.run.router.GetScrollRestorationKeyFunction"
+        ],
+        "SetURLSearchParams.kt": [
+            "react.router.NavigateOptions"
         ],
         "SubmitOptions.kt": [
             "react.router.RelativeRoutingType",
             "remix.run.router.FormEncType",
             "remix.run.router.FormMethod"
+        ],
+        "useBeforeUnload.kt": [
+            "web.window.BeforeUnloadEvent"
+        ],
+        "useFetchers.kt": [
+            "remix.run.router.Fetcher"
+        ],
+        "UseFormActionOptions.kt": [
+            "react.router.RelativeRoutingType"
+        ],
+        "useLinkClickHandler.kt": [
+            "web.dom.Element",
+            "web.uievents.MouseEvent",
+            "remix.run.router.To"
+        ],
+        "UseLinkClickHandlerOptions.kt": [
+            "react.router.RelativeRoutingType"
+        ],
+        "UseScrollRestorationOptions.kt": [
+            "remix.run.router.GetScrollRestorationKeyFunction"
+        ],
+        "useSearchParams.kt": [
+            "web.url.URLSearchParams"
         ]
     }
 }
