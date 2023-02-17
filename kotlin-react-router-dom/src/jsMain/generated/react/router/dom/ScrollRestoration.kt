@@ -9,4 +9,8 @@
 package react.router.dom
 
 
-typealias ParamKeyValuePair = js.core.JsTuple2<String, String>
+/**
+ * This component will emulate the browser's scroll restoration on location
+ * changes.
+ */
+external val ScrollRestoration: react.FC<ScrollRestorationProps>

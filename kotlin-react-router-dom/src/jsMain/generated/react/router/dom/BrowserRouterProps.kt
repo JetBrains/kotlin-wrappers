@@ -8,5 +8,11 @@
 
 package react.router.dom
 
+import web.window.Window
 
-typealias ParamKeyValuePair = js.core.JsTuple2<String, String>
+
+external interface BrowserRouterProps : react.PropsWithChildren {
+    var basename: String?
+    var window: Window?
+}
+

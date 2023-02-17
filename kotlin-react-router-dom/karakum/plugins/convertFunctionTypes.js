@@ -5,7 +5,7 @@ module.exports = function (node, context, render) {
     if (
         ts.isInterfaceDeclaration(node)
         && (
-            node.name.text === "AwaitResolveRenderFunction"
+            node.name.text === "SubmitFunction"
         )
     ) {
         const signature = node.members[0]

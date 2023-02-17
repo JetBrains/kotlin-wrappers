@@ -9,4 +9,8 @@
 package react.router.dom
 
 
-typealias ParamKeyValuePair = js.core.JsTuple2<String, String>
+/**
+ * Returns a function that may be used to programmatically submit a form (or
+ * some arbitrary data) to the server.
+ */
+external fun useSubmit(): SubmitFunction

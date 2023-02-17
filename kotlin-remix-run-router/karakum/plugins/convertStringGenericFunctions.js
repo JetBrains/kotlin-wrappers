@@ -13,20 +13,13 @@ module.exports = function (node, context, render) {
 
         const returnType = render(node.type)
 
-        const signatures = karakum.prepareParameters(node, context)
-
-        return signatures
-            .map(signature => {
-                const parameters = signature
-                    .map(({parameter, type, nullable}) => {
-                        return karakum.convertParameterDeclarationWithFixedType(parameter, type, nullable, context, render);
-                    })
-                    .join(", ")
-
+        return karakum.convertParameterDeclarations(node, context, render, {
+            strategy: "function",
+            template: parameters => {
                 // remove generics
                 return `external fun ${name}(${parameters}): ${returnType}`
-            })
-            .join("\n\n")
+            }
+        })
     }
     return null
 }

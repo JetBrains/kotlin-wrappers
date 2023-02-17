@@ -9,4 +9,4 @@
 package react.router.dom
 
 
-typealias ParamKeyValuePair = js.core.JsTuple2<String, String>
+external fun useFormAction(action: String = definedExternally, param1: UseFormActionOptions = definedExternally): String

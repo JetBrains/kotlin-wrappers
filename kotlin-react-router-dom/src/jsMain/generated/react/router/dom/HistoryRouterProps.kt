@@ -8,5 +8,11 @@
 
 package react.router.dom
 
+import remix.run.router.History
 
-typealias ParamKeyValuePair = js.core.JsTuple2<String, String>
+
+external interface HistoryRouterProps : react.PropsWithChildren {
+    var basename: String?
+    var history: History
+}
+

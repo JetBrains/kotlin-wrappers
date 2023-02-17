@@ -28,7 +28,7 @@ external class DeferredData {
     var trackPromise: Any? /* some expression */
     var onSettle: Any? /* some expression */
     var emit: Any? /* some expression */
-    fun subscribe(fn: (aborted: Boolean, settledKey: String) -> Unit): () -> Boolean
+    fun subscribe(fn: (aborted: Boolean, settledKey: String? /* use undefined for default */) -> Unit): () -> Boolean
     fun cancel(): Unit
     fun resolveData(signal: AbortSignal): Promise<Boolean>
     /* get done(): boolean; */
