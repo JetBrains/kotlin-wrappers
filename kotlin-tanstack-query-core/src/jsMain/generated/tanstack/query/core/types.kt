@@ -394,3 +394,7 @@ external interface CancelOptions {
 external interface SetDataOptions {
     var updatedAt: EpochTimeStamp
 }
+
+external interface NotifyEvent {
+    var type: NotifyEventType
+}

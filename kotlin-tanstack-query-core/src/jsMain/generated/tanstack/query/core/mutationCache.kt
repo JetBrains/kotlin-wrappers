@@ -17,36 +17,36 @@ external interface MutationCacheConfig {
     var onMutate: (variables: Any?, mutation: Mutation<*, *, *, *>) -> Promise<*>?
 }
 
-external interface NotifyEventMutationAdded {
-    var type: Type /* 'added' */
+external interface NotifyEventMutationAdded : NotifyEvent {
+    override var type: NotifyEventType /* 'added' */
     var mutation: Mutation<*, *, *, *>
 }
 
-external interface NotifyEventMutationRemoved {
-    var type: Type /* 'removed' */
+external interface NotifyEventMutationRemoved : NotifyEvent {
+    override var type: NotifyEventType /* 'removed' */
     var mutation: Mutation<*, *, *, *>
 }
 
-external interface NotifyEventMutationObserverAdded {
-    var type: Type /* 'observerAdded' */
-    var mutation: Mutation<*, *, *, *>
-    var observer: MutationObserver<*, *, *, *>
-}
-
-external interface NotifyEventMutationObserverRemoved {
-    var type: Type /* 'observerRemoved' */
+external interface NotifyEventMutationObserverAdded : NotifyEvent {
+    override var type: NotifyEventType /* 'observerAdded' */
     var mutation: Mutation<*, *, *, *>
     var observer: MutationObserver<*, *, *, *>
 }
 
-external interface NotifyEventMutationObserverOptionsUpdated {
-    var type: Type /* 'observerOptionsUpdated' */
+external interface NotifyEventMutationObserverRemoved : NotifyEvent {
+    override var type: NotifyEventType /* 'observerRemoved' */
     var mutation: Mutation<*, *, *, *>
     var observer: MutationObserver<*, *, *, *>
 }
 
-external interface NotifyEventMutationUpdated {
-    var type: Type /* 'updated' */
+external interface NotifyEventMutationObserverOptionsUpdated : NotifyEvent {
+    override var type: NotifyEventType /* 'observerOptionsUpdated' */
+    var mutation: Mutation<*, *, *, *>
+    var observer: MutationObserver<*, *, *, *>
+}
+
+external interface NotifyEventMutationUpdated : NotifyEvent {
+    override var type: NotifyEventType /* 'updated' */
     var mutation: Mutation<*, *, *, *>
     var action: MutationAction<*, *, *, *>
 }

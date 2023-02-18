@@ -15,41 +15,41 @@ external interface QueryCacheConfig {
     var onSuccess: (data: Any, query: Query<*, *, *, *>) -> Unit
 }
 
-external interface NotifyEventQueryAdded {
-    var type: Type /* 'added' */
+external interface NotifyEventQueryAdded : NotifyEvent {
+    override var type: NotifyEventType /* 'added' */
     var query: Query<*, *, *, *>
 }
 
-external interface NotifyEventQueryRemoved {
-    var type: Type /* 'removed' */
+external interface NotifyEventQueryRemoved : NotifyEvent {
+    override var type: NotifyEventType /* 'removed' */
     var query: Query<*, *, *, *>
 }
 
-external interface NotifyEventQueryUpdated {
-    var type: Type /* 'updated' */
+external interface NotifyEventQueryUpdated : NotifyEvent {
+    override var type: NotifyEventType /* 'updated' */
     var query: Query<*, *, *, *>
     var action: Action<*, *>
 }
 
-external interface NotifyEventQueryObserverAdded {
-    var type: Type /* 'observerAdded' */
+external interface NotifyEventQueryObserverAdded : NotifyEvent {
+    override var type: NotifyEventType /* 'observerAdded' */
     var query: Query<*, *, *, *>
     var observer: QueryObserver<*, *, *, *, *>
 }
 
-external interface NotifyEventQueryObserverRemoved {
-    var type: Type /* 'observerRemoved' */
+external interface NotifyEventQueryObserverRemoved : NotifyEvent {
+    override var type: NotifyEventType /* 'observerRemoved' */
     var query: Query<*, *, *, *>
     var observer: QueryObserver<*, *, *, *, *>
 }
 
-external interface NotifyEventQueryObserverResultsUpdated {
-    var type: Type /* 'observerResultsUpdated' */
+external interface NotifyEventQueryObserverResultsUpdated : NotifyEvent {
+    override var type: NotifyEventType /* 'observerResultsUpdated' */
     var query: Query<*, *, *, *>
 }
 
-external interface NotifyEventQueryObserverOptionsUpdated {
-    var type: Type /* 'observerOptionsUpdated' */
+external interface NotifyEventQueryObserverOptionsUpdated : NotifyEvent {
+    override var type: NotifyEventType /* 'observerOptionsUpdated' */
     var query: Query<*, *, *, *>
     var observer: QueryObserver<*, *, *, *, *>
 }
