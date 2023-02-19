@@ -4,7 +4,7 @@
 package react.beautiful.dnd
 
 import js.core.ReadonlyArray
-import react.Component
+import react.ComponentClass
 import react.PropsWithChildren
 import react.ReactNode
 
@@ -18,4 +18,4 @@ sealed external interface DragDropContextProps : PropsWithChildren, Responders {
     var sensors: ReadonlyArray<Sensor>?
 }
 
-external val DragDropContext: Component<DragDropContextProps, *>
+external val DragDropContext: ComponentClass<DragDropContextProps>

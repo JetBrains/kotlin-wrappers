@@ -3,7 +3,7 @@
 
 package react.beautiful.dnd
 
-import react.Component
+import react.ComponentClass
 import react.Props
 
 sealed external interface DraggableProps : Props {
@@ -15,4 +15,4 @@ sealed external interface DraggableProps : Props {
     var shouldRespectForcePress: Boolean?
 }
 
-external val Draggable: Component<DraggableProps, *>
+external val Draggable: ComponentClass<DraggableProps>
