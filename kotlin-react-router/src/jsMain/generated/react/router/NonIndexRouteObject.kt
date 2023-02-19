@@ -12,7 +12,7 @@ import remix.run.router.LoaderFunction
 import remix.run.router.ShouldRevalidateFunction
 
 
-external interface NonIndexRouteObject {
+external interface NonIndexRouteObject : RouteObject {
     var caseSensitive: Boolean?
     var path: String?
     var id: String?
