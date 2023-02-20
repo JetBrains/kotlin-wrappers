@@ -8,8 +8,9 @@
 package react.router
 
 
-external interface DataRouteObject : RouteObject {
+sealed external interface DataRouteObject : RouteObject {
+    /*
     var children: js.core.ReadonlyArray<DataRouteObject>?
     var id: String
+    */
 }
-
