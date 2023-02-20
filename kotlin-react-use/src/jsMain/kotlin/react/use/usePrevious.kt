@@ -7,7 +7,7 @@ import react.useRef
  * [Original](https://github.com/streamich/react-use/blob/master/src/usePrevious.ts)
  */
 fun <T : Any> usePrevious(
-    value: T,
+    value: T?,
 ): T? {
     val ref = useRef<T>()
 
