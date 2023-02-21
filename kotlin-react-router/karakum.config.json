@@ -12,7 +12,9 @@
     "output": "src/jsMain/generated",
     "ignoreOutput": [
         "**/Navigate.kt",
-        "**/NavigateProps.kt"
+        "**/NavigateProps.kt",
+        "**/IndexRouteObject.kt",
+        "**/NonIndexRouteObject.kt"
     ],
     "libraryName": "react-router",
     "libraryNameOutputPrefix": true,
@@ -42,11 +44,6 @@
             "remix.run.router.Router",
             "remix.run.router.StaticHandlerContext"
         ],
-        "IndexRouteObject.kt": [
-            "remix.run.router.LoaderFunction",
-            "remix.run.router.ActionFunction",
-            "remix.run.router.ShouldRevalidateFunction"
-        ],
         "IndexRouteProps.kt": [
             "remix.run.router.LoaderFunction",
             "remix.run.router.ActionFunction",
@@ -66,11 +63,6 @@
             "remix.run.router.To",
             "remix.run.router.Path"
         ],
-        "NonIndexRouteObject.kt": [
-            "remix.run.router.LoaderFunction",
-            "remix.run.router.ActionFunction",
-            "remix.run.router.ShouldRevalidateFunction"
-        ],
         "PathRouteProps.kt": [
             "remix.run.router.LoaderFunction",
             "remix.run.router.ActionFunction",
@@ -84,6 +76,11 @@
         ],
         "RouteMatch.kt": [
             "remix.run.router.AgnosticRouteMatch"
+        ],
+        "RouteObject.kt": [
+            "remix.run.router.LoaderFunction",
+            "remix.run.router.ActionFunction",
+            "remix.run.router.ShouldRevalidateFunction"
         ],
         "RouterProps.kt": [
             "remix.run.router.Action as NavigationType"
