@@ -696,4 +696,4 @@ typealias DraggableChildrenFn = (
     provided: DraggableProvided,
     snapshot: DraggableStateSnapshot,
     rubric: DraggableRubric,
-) -> ReactElement<HTMLAttributes<*>>
+) -> ReactElement<out HTMLAttributes<*>>

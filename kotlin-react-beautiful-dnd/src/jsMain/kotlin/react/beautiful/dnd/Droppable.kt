@@ -22,7 +22,7 @@ sealed external interface DroppableProps : Props {
     var children: (
         provided: DroppableProvided,
         snapshot: DroppableStateSnapshot,
-    ) -> ReactElement<HTMLAttributes<*>>
+    ) -> ReactElement<out HTMLAttributes<*>>
 }
 
 external val Droppable: ComponentClass<DroppableProps>
