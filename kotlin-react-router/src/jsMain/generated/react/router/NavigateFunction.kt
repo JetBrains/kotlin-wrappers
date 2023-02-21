@@ -8,12 +8,17 @@ import remix.run.router.To
 
 sealed class NavigateFunction {
     @Suppress("NOTHING_TO_INLINE")
-    inline operator fun invoke(to: To): Unit = asDynamic()(to)
+    inline operator fun invoke(to: To) {
+        asDynamic()(to)
+    }
 
     @Suppress("NOTHING_TO_INLINE")
-    inline operator fun invoke(to: To, options: NavigateOptions): Unit = asDynamic()(to, options)
+    inline operator fun invoke(to: To, options: NavigateOptions) {
+        asDynamic()(to, options)
+    }
 
     @Suppress("NOTHING_TO_INLINE")
-    inline operator fun invoke(delta: Int): Unit = asDynamic()(delta)
-
+    inline operator fun invoke(delta: Int) {
+        asDynamic()(delta)
+    }
 }
