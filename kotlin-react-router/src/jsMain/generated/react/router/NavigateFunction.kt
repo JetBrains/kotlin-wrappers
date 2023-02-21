@@ -1,5 +1,8 @@
+@file:JsModule("react-router")
+
 @file:Suppress(
-    "NOTHING_TO_INLINE",
+    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
+    "NAME_CONTAINS_ILLEGAL_CHARS",
 )
 
 package react.router
@@ -11,15 +14,13 @@ import remix.run.router.To
  */
 
 sealed class NavigateFunction {
-    inline operator fun invoke(to: To) {
-        asDynamic()(to)
-    }
 
-    inline operator fun invoke(to: To, options: NavigateOptions) {
-        asDynamic()(to, options)
-    }
+    @Suppress("NOTHING_TO_INLINE")
+    inline operator fun invoke(to: To, options: NavigateOptions): Unit = asDynamic()(to, options)
 
-    inline operator fun invoke(delta: Int) {
-        asDynamic()(delta)
-    }
+
+    @Suppress("NOTHING_TO_INLINE")
+    inline operator fun invoke(delta: Double): Unit = asDynamic()(delta)
+
 }
+
