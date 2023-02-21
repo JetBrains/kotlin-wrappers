@@ -16,4 +16,5 @@ package react.router.dom
  * very incorrectly in some cases) across browsers if user click addition
  * back/forward navigations while the confirm is open.  Use at your own risk.
  */
+@JsName("unstable_usePrompt")
 external fun usePrompt(param: UsePromptOptions): Unit
