@@ -19,7 +19,10 @@ sealed external interface DroppableProps : Props {
     var ignoreContainerClipping: Boolean?
     var renderClone: DraggableChildrenFn?
     var getContainerForClone: (() -> HTMLElement)?
-    var children: (provided: DroppableProvided, snapshot: DroppableStateSnapshot) -> ReactElement<HTMLAttributes<*>>
+    var children: (
+        provided: DroppableProvided,
+        snapshot: DroppableStateSnapshot,
+    ) -> ReactElement<HTMLAttributes<*>>
 }
 
 external val Droppable: ComponentClass<DroppableProps>
