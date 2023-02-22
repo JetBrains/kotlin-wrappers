@@ -6,8 +6,6 @@
 package mui.base
 
 import js.core.ReadonlyArray
-import popper.core.Modifier
-import web.dom.Element
 
 external interface PopperUnstyledProps :
     react.dom.html.HTMLAttributes<web.html.HTMLDivElement> {
@@ -31,7 +29,7 @@ external interface PopperUnstyledProps :
      * By default, it uses the body of the top-level document object,
      * so it's simply `document.body` most of the time.
      */
-    var container: Element?
+    var container: web.dom.Element?
 
     /**
      * Direction of the text.
@@ -62,7 +60,7 @@ external interface PopperUnstyledProps :
      * For this reason, modifiers should be very performant to avoid bottlenecks.
      * To learn how to create a modifier, [read the modifiers documentation](https://popper.js.org/docs/v2/modifiers/).
      */
-    var modifiers: ReadonlyArray<Modifier<*>>?
+    var modifiers: ReadonlyArray<popper.core.Modifier<*>>?
 
     /**
      * If `true`, the component is shown.

@@ -9,8 +9,6 @@
 
 package mui.material
 
-import web.html.InputType
-
 external interface SwitchBaseProps :
     mui.system.StandardProps,
     ButtonBaseProps {
@@ -95,7 +93,7 @@ external interface SwitchBaseProps :
 
     var tabIndex: Int?
 
-    var type: InputType?
+    var type: web.html.InputType?
 
     /**
      * The value of the component. The DOM API casts this to a string.

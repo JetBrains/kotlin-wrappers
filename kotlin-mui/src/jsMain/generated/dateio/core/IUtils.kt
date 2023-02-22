@@ -2,7 +2,6 @@
 
 package dateio.core
 
-import js.core.JsTuple2
 import js.core.ReadonlyArray
 
 external interface DateIOFormats<TLibFormatToken : Any> {
@@ -129,7 +128,7 @@ external interface IUtils<TDate : Any> {
     fun isBeforeYear(value: TDate, comparing: TDate): Boolean
     fun isBefore(value: TDate, comparing: TDate): Boolean
 
-    fun isWithinRange(value: TDate, range: JsTuple2<TDate, TDate>): Boolean
+    fun isWithinRange(value: TDate, range: js.core.JsTuple2<TDate, TDate>): Boolean
 
     fun startOfYear(value: TDate): TDate
     fun endOfYear(value: TDate): TDate

@@ -11,7 +11,6 @@ package mui.material
 
 import mui.material.styles.Theme
 import mui.system.SxProps
-import web.dom.Element
 
 external interface MenuProps :
     mui.system.StandardProps,
@@ -22,7 +21,7 @@ external interface MenuProps :
      * An HTML element, or a function that returns one.
      * It's used to set the position of the menu.
      */
-    var anchorEl: ((element: Element) -> Element)?
+    var anchorEl: ((element: web.dom.Element) -> web.dom.Element)?
 
     /**
      * If `true` (Default) will focus the `[role="menu"]` if no focusable child is found. Disabled

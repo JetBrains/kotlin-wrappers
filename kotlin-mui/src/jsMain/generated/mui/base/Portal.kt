@@ -5,8 +5,6 @@
 
 package mui.base
 
-import web.dom.Element
-
 external interface PortalProps : react.PropsWithChildren {
     /**
      * The children to render into the `container`.
@@ -20,7 +18,7 @@ external interface PortalProps : react.PropsWithChildren {
      * By default, it uses the body of the top-level document object,
      * so it's simply `document.body` most of the time.
      */
-    var container: Element?
+    var container: web.dom.Element?
 
     /**
      * The `children` will be under the DOM hierarchy of the parent component.
