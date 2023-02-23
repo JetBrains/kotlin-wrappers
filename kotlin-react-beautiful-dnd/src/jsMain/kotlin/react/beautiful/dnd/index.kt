@@ -2,10 +2,7 @@ package react.beautiful.dnd
 
 import js.core.ReadonlyArray
 import js.core.ReadonlyRecord
-import react.CSSProperties
-import react.Props
-import react.ReactElement
-import react.ReactNode
+import react.*
 import react.dom.events.DragEventHandler
 import react.dom.events.TransitionEventHandler
 import react.dom.html.HTMLAttributes
@@ -544,7 +541,7 @@ sealed external interface DroppableProvidedProps : Props {
 }
 
 sealed external interface DroppableProvided {
-    var innerRef: (element: HTMLElement?) -> Unit
+    var innerRef: RefCallback<HTMLElement>
     var placeholder: ReactNode
     var droppableProps: DroppableProvidedProps
 }
@@ -670,7 +667,7 @@ sealed external interface DraggableProvidedDragHandleProps : Props {
 
 sealed external interface DraggableProvided {
     // will be removed after move to react 16
-    var innerRef: (element: HTMLElement?) -> Unit
+    var innerRef: RefCallback<HTMLElement>
     var draggableProps: DraggableProvidedDraggableProps
     var dragHandleProps: DraggableProvidedDragHandleProps?
 }
