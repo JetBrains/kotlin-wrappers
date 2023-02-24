@@ -137,7 +137,6 @@ sealed external class CSSStyleDeclaration :
     var containerName: String
     var containerType: String
     var content: String
-    var contentVisibility: String
     var counterIncrement: String
     var counterReset: String
     var counterSet: String
