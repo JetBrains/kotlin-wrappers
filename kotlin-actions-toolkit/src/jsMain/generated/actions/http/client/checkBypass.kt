@@ -1,6 +1,6 @@
 // Automatically generated - do not modify!
 
-@file:JsModule("@actions/http-client")
+@file:JsModule("@actions/http-client/lib/proxy")
 
 package actions.http.client
 
