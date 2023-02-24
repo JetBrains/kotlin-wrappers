@@ -112,7 +112,7 @@ Make sure that you have `mavenCentral()` in the list of repositories.
 4. An [example of using axios](examples/src/main/kotlin/example/AxiosSearch.kt) to fetch remote data. It also
 demonstrates how to add typings for an external library.
 
-5. An [example of using Quill](examples/src/main/kotlin/example/Quill.kt) that shows how to use an external React component.
+5. An [example of using Quill](examples/src/jsMain/kotlin/example/Quill.kt) that shows how to use an external React component.
 
 6. An [example of using react-router-dom](examples/src/main/kotlin/example/ReactRouterDom.kt) that shows how to use react-route-dom with hooks API.
 
