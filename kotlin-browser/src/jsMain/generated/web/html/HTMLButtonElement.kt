@@ -31,7 +31,7 @@ abstract external class HTMLButtonElement :
     var name: String
 
     /** Gets the classification and default behavior of the button. */
-    var type: String
+    var type: ButtonType
 
     /** Returns the error message that would be displayed if the user submits the form, or an empty string if no error message. It also triggers the standard error message, such as "this is a required field". The result is that the user sees validation messages without actually submitting. */
     val validationMessage: String

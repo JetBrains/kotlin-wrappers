@@ -3,6 +3,7 @@
 package react.dom.html
 
 import web.dom.Element
+import web.html.ButtonType
 
 external interface ButtonHTMLAttributes<T : Element> : HTMLAttributes<T> {
     var autoFocus: Boolean?
