@@ -28,12 +28,12 @@ import js.core.jso
  *
  * // Create a color material with full Fabric notation:
  * polygon.material = new Material({
- *     fabric : {
- *         type : 'Color',
- *         uniforms : {
- *             color : new Color(1.0, 1.0, 0.0, 1.0)
- *         }
+ *   fabric: {
+ *     type: 'Color',
+ *     uniforms: {
+ *       color: new Color(1.0, 1.0, 0.0, 1.0)
  *     }
+ *   }
  * });
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Material.html">Online Documentation</a>
@@ -50,6 +50,7 @@ external class Material(options: ConstructorOptions? = definedExternally) {
      * @property [magnificationFilter] The [TextureMagnificationFilter] to apply to this material's textures.
      *   Default value - [TextureMagnificationFilter.LINEAR]
      * @property [fabric] The fabric JSON used to generate the material.
+     *   ructor
      */
     interface ConstructorOptions {
         var strict: Boolean?
@@ -128,7 +129,7 @@ external class Material(options: ConstructorOptions? = definedExternally) {
          * Shorthand for: new Material({fabric : {type : type}});
          * ```
          * const material = Material.fromType('Color', {
-         *     color : new Color(1.0, 0.0, 0.0, 1.0)
+         *   color: new Color(1.0, 0.0, 0.0, 1.0)
          * });
          * ```
          * @param [type] The base material type.

@@ -9,7 +9,7 @@ package cesium
  * anisotropic texture filtering when the WebGL extension is supported.
  * Setting this to false will improve performance, but hurt visual quality,
  * especially for horizon views.
- * @property [requestWebGl1] If true and the browser supports it, use a WebGL 1 rendering context
+ * @property [requestWebgl1] If true and the browser supports it, use a WebGL 1 rendering context
  *   Default value - `false`
  * @property [allowTextureFilterAnisotropic] If true, use anisotropic filtering during texture sampling
  *   Default value - `true`
@@ -17,7 +17,7 @@ package cesium
  * @property [getWebGLStub] A function to create a WebGL stub for testing
  */
 external interface ContextOptions {
-    var requestWebGl1: Boolean?
+    var requestWebgl1: Boolean?
     var allowTextureFilterAnisotropic: Boolean?
     var webgl: WebGLOptions?
     var getWebGLStub: Function<*>?

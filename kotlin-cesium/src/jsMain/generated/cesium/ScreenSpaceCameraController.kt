@@ -167,6 +167,12 @@ external class ScreenSpaceCameraController(scene: Scene) {
     var minimumPickingTerrainHeight: Double
 
     /**
+     * The minimum distance the camera must be before testing for collision with terrain when zoom with inertia.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ScreenSpaceCameraController.html#minimumPickingTerrainDistanceWithInertia">Online Documentation</a>
+     */
+    var minimumPickingTerrainDistanceWithInertia: Double
+
+    /**
      * The minimum height the camera must be before testing for collision with terrain.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ScreenSpaceCameraController.html#minimumCollisionTerrainHeight">Online Documentation</a>
      */
