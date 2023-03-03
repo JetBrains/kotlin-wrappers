@@ -1,8 +1,8 @@
 package react
 
-fun <T> useRequiredContext(
-    context: Context<T>,
-): T & Any {
+fun <T : Any> useRequiredContext(
+    context: Context<T?>,
+): T {
     val value = useContext(context)
     return requireNotNull(value)
 }
