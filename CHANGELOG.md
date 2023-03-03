@@ -1,3 +1,9 @@
+## pre.506
+
+**BREAKING CHANGE**
+
+Strict `createContext` signature (aligned with TS version)
+
 ## pre.482
 
 **BREAKING CHANGE**
