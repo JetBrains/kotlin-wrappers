@@ -11,8 +11,6 @@
     ],
     "output": "src/jsMain/generated",
     "ignoreOutput": [
-        "**/Navigate.kt",
-        "**/NavigateProps.kt",
         "**/IndexRouteObject.kt",
         "**/NonIndexRouteObject.kt"
     ],
@@ -57,6 +55,9 @@
             "remix.run.router.InitialEntry"
         ],
         "NavigateFunction.kt": [
+            "remix.run.router.To"
+        ],
+        "NavigateProps.kt": [
             "remix.run.router.To"
         ],
         "Navigator.kt": [
