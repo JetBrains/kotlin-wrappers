@@ -4,6 +4,7 @@ module.exports = (node) => {
     if (
         node.kind === ts.SyntaxKind.AnyKeyword
 
+        && node.parent
         && ts.isPropertySignature(node.parent)
         && ts.isIdentifier(node.parent.name)
         && node.parent.name.text === "state"
@@ -11,12 +12,13 @@ module.exports = (node) => {
         && ts.isInterfaceDeclaration(node.parent.parent)
         && node.parent.parent.name.text === "Location"
     ) {
-        return "LocationState"
+        return "LocationState?"
     }
 
     if (
         node.kind === ts.SyntaxKind.AnyKeyword
 
+        && node.parent
         && ts.isPropertySignature(node.parent)
         && ts.isIdentifier(node.parent.name)
         && node.parent.name.text === "state"
@@ -33,6 +35,7 @@ module.exports = (node) => {
     if (
         node.kind === ts.SyntaxKind.AnyKeyword
 
+        && node.parent
         && ts.isParameter(node.parent)
         && ts.isIdentifier(node.parent.name)
         && node.parent.name.text === "state"
@@ -40,12 +43,13 @@ module.exports = (node) => {
         && ts.isFunctionDeclaration(node.parent.parent)
         && node.parent.parent.name.text === "createLocation"
     ) {
-        return "LocationState"
+        return "LocationState?"
     }
 
     if (
         node.kind === ts.SyntaxKind.AnyKeyword
 
+        && node.parent
         && ts.isParameter(node.parent)
         && ts.isIdentifier(node.parent.name)
         && node.parent.name.text === "state"
@@ -59,7 +63,7 @@ module.exports = (node) => {
         && ts.isInterfaceDeclaration(node.parent.parent.parent)
         && node.parent.parent.parent.name.text === "History"
     ) {
-        return "LocationState"
+        return "LocationState?"
     }
 
     return null

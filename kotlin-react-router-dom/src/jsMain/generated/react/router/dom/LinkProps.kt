@@ -12,7 +12,7 @@ import web.html.HTMLAnchorElement
 external interface LinkProps : react.Props, react.PropsWithRef<HTMLAnchorElement>, react.dom.html.AnchorHTMLAttributes<HTMLAnchorElement> {
     var reloadDocument: Boolean?
     var replace: Boolean?
-    var state: Any?
+    var state: remix.run.router.LocationState?
     var preventScrollReset: Boolean?
     var relative: RelativeRoutingType?
     var to: To

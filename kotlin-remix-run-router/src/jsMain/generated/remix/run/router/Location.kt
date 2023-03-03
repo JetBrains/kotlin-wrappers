@@ -14,7 +14,7 @@ external interface Location : Path {
     /**
      * A value of arbitrary data associated with this location.
      */
-    var state: LocationState
+    var state: LocationState?
 
     /**
      * A unique string associated with this location. May be used to safely store

@@ -10,7 +10,7 @@ import remix.run.router.To
 external interface NavigateProps : react.Props {
     var to: To
     var replace: Boolean?
-    var state: Any?
+    var state: remix.run.router.LocationState?
     var relative: RelativeRoutingType?
 }
 
