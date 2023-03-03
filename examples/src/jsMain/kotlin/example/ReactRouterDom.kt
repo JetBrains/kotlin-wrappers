@@ -8,7 +8,7 @@ import react.dom.html.ReactHTML.h2
 import react.dom.html.ReactHTML.h3
 import react.dom.html.ReactHTML.li
 import react.dom.html.ReactHTML.ul
-import react.router.Route
+import react.router.PathRoute
 import react.router.Routes
 import react.router.dom.BrowserRouter
 import react.router.dom.Link
@@ -53,11 +53,11 @@ val Topics = VFC {
         }
 
         Routes {
-            Route {
+            PathRoute {
                 path = "${location.pathname}/:topicId"
                 element = Topic.create()
             }
-            Route {
+            PathRoute {
                 path = location.pathname
                 element = h3.create { +"Please select a topic." }
             }
@@ -102,15 +102,15 @@ val ReactRouterDomApp = VFC {
             }
 
             Routes {
-                Route {
+                PathRoute {
                     path = "/about"
                     element = About.create()
                 }
-                Route {
+                PathRoute {
                     path = "/topics"
                     element = Topics.create()
                 }
-                Route {
+                PathRoute {
                     path = "/"
                     element = Home.create()
                 }

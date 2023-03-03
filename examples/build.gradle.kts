@@ -8,7 +8,7 @@ dependencies {
     jsMainImplementation(project(":kotlin-js"))
     jsMainImplementation(project(":kotlin-react"))
     jsMainImplementation(project(":kotlin-react-dom"))
-    jsMainImplementation(project(":kotlin-react-router-dom-legacy"))
+    jsMainImplementation(project(":kotlin-react-router-dom"))
 
     jsMainImplementation(kotlinxHtml("js"))
 
