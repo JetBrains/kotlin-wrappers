@@ -12,7 +12,7 @@ import web.http.FormData
 
 external interface SubmissionNavigateOptions {
     var replace: Boolean?
-    var state: Any?
+    var state: LocationState?
     var preventScrollReset: Boolean?
     var formMethod: FormMethod?
     var formEncType: FormEncType?

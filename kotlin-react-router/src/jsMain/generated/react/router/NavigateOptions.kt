@@ -7,7 +7,7 @@ package react.router
 
 external interface NavigateOptions {
     var replace: Boolean?
-    var state: Any?
+    var state: remix.run.router.LocationState?
     var preventScrollReset: Boolean?
     var relative: RelativeRoutingType?
 }
