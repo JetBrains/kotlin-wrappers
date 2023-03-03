@@ -11,7 +11,7 @@ package remix.run.router
 
 external interface LinkNavigateOptions {
     var replace: Boolean?
-    var state: Any?
+    var state: LocationState?
     var preventScrollReset: Boolean?
 }
 
