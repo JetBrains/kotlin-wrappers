@@ -13,9 +13,11 @@ package remix.run.router
 
 /* export type { BrowserHistory, BrowserHistoryOptions, HashHistory, HashHistoryOptions, History, InitialEntry, Location, MemoryHistory, MemoryHistoryOptions, Path, To, } from "./history"; */
 
-/* export { Action, createBrowserHistory, createPath, createHashHistory, createMemoryHistory, invariant, parsePath, } from "./history"; */
+/* export { Action, createBrowserHistory, createPath, createHashHistory, createMemoryHistory, parsePath, } from "./history"; */
 
 /* export * from "./router"; */
 
 /** @internal */
 /* export { DeferredData as UNSAFE_DeferredData, convertRoutesToDataRoutes as UNSAFE_convertRoutesToDataRoutes, getPathContributingMatches as UNSAFE_getPathContributingMatches, } from "./utils"; */
+
+/* export { invariant as UNSAFE_invariant } from "./history"; */

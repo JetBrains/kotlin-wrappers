@@ -178,6 +178,15 @@ external interface Router {
      * @internal
      * PRIVATE - DO NOT USE
      *
+     * HMR needs to pass in-flight route updates to React Router
+     * TODO: Replace this with granular route update APIs (addRoute, updateRoute, deleteRoute)
+     */
+    fun _internalSetRoutes(routes: js.core.ReadonlyArray<AgnosticRouteObject>): Unit
+
+    /**
+     * @internal
+     * PRIVATE - DO NOT USE
+     *
      * Internal fetch AbortControllers accessed by unit tests
      */
     var _internalFetchControllers: js.collections.ReadonlyMap<String, AbortController>

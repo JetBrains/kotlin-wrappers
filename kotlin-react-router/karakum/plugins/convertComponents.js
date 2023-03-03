@@ -16,6 +16,11 @@ function isJsxElement(node) {
         && node.typeName.right.text === "Element"
 }
 
+function isNull(type) {
+    return ts.isLiteralTypeNode(type)
+        && type.literal.kind === ts.SyntaxKind.NullKeyword
+}
+
 module.exports = function (node, context, render) {
     if (
         ts.isFunctionDeclaration(node)
@@ -35,6 +40,7 @@ module.exports = function (node, context, render) {
                     || isJsxElement(node.type.types[0])
                 )
             )
+            || isNull(node.type)
         )
     ) {
         const name = render(node.name)
