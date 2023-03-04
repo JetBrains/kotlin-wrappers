@@ -6,6 +6,7 @@ import js.core.ReadonlyArray
 import web.dom.NodeListOf
 import web.file.FileList
 import web.filesystem.FileSystemEntry
+import web.window.WindowName
 import kotlin.js.Date
 
 abstract external class HTMLInputElement :
@@ -50,7 +51,7 @@ abstract external class HTMLInputElement :
     var formNoValidate: Boolean
 
     /** Overrides the target attribute on a form element. */
-    var formTarget: String
+    var formTarget: WindowName
 
     /** Sets or retrieves the height of the object. */
     var height: Double

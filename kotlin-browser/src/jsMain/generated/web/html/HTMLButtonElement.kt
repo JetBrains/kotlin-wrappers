@@ -3,6 +3,7 @@
 package web.html
 
 import web.dom.NodeListOf
+import web.window.WindowName
 
 abstract external class HTMLButtonElement :
     HTMLElement {
@@ -24,7 +25,7 @@ abstract external class HTMLButtonElement :
     var formNoValidate: Boolean
 
     /** Overrides the target attribute on a form element. */
-    var formTarget: String
+    var formTarget: WindowName
     val labels: NodeListOf<HTMLLabelElement>
 
     /** Sets or retrieves the name of the object. */
