@@ -2,10 +2,10 @@
 
 package web.mathml
 
+import web.cssom.ElementCSSInlineStyle
 import web.dom.Element
 import web.dom.GlobalEventHandlers
 import web.dom.HTMLOrSVGElement
-import web.cssom.ElementCSSInlineStyle
 
 sealed external class MathMLElement :
     Element,

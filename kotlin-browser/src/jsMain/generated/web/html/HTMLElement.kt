@@ -2,10 +2,10 @@
 
 package web.html
 
+import web.cssom.ElementCSSInlineStyle
 import web.dom.Element
 import web.dom.GlobalEventHandlers
 import web.dom.HTMLOrSVGElement
-import web.cssom.ElementCSSInlineStyle
 
 abstract external class HTMLElement :
     Element,
