@@ -21,21 +21,21 @@ val Root = VFC {
         ul {
             li {
                 Link {
-                    to = "/"
+                    to = "."
 
                     +"Home"
                 }
             }
             li {
                 Link {
-                    to = "/about"
+                    to = "about"
 
                     +"About"
                 }
             }
             li {
                 Link {
-                    to = "/topics"
+                    to = "topics"
 
                     +"Topics"
                 }
@@ -67,14 +67,14 @@ val Topics = VFC {
         ul {
             li {
                 Link {
-                    to = "/components"
+                    to = "components"
 
                     +"Components"
                 }
             }
             li {
                 Link {
-                    to = "/props-v-state"
+                    to = "props-v-state"
 
                     +"Props v. State"
                 }
@@ -105,11 +105,11 @@ val appRouter = createBrowserRouter(
                     element = Home.create()
                 },
                 jso {
-                    path = "/about"
+                    path = "about"
                     element = About.create()
                 },
                 jso {
-                    path = "/topics"
+                    path = "topics"
                     element = Topics.create()
                     children = arrayOf(
                         jso {
@@ -117,7 +117,7 @@ val appRouter = createBrowserRouter(
                             element = h3.create { +"Please select a topic." }
                         },
                         jso {
-                            path = "/:topicId"
+                            path = ":topicId"
                             element = Topic.create()
                         },
                     )
