@@ -38,7 +38,7 @@ inline val Event.Companion.NEGOTIATION_NEEDED: EventType<Event>
 inline val Event.Companion.OPEN: EventType<Event>
     get() = EventType("open")
 
-inline val Event.Companion.SELECTEDCANDIDATEPAIRCHANGE: EventType<Event>
+inline val Event.Companion.SELECTED_CANDIDATE_PAIR_CHANGE: EventType<Event>
     get() = EventType("selectedcandidatepairchange")
 
 inline val Event.Companion.SIGNALING_STATE_CHANGE: EventType<Event>
