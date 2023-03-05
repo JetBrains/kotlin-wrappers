@@ -10,6 +10,8 @@ sealed external class RTCIceTransport :
     EventTarget {
     val gatheringState: RTCIceGathererState
     var ongatheringstatechange: EventHandler<Event>?
+    var onselectedcandidatepairchange: EventHandler<Event>?
     var onstatechange: EventHandler<Event>?
     val state: RTCIceTransportState
+    fun getSelectedCandidatePair(): RTCIceCandidatePair?
 }

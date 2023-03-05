@@ -14,4 +14,5 @@ sealed external class Gamepad {
     val index: Int
     val mapping: GamepadMappingType
     val timestamp: HighResTimeStamp
+    val vibrationActuator: GamepadHapticActuator?
 }

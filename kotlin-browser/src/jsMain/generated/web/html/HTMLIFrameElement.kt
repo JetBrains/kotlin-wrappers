@@ -20,6 +20,7 @@ abstract external class HTMLIFrameElement :
 
     /** Sets or retrieves the height of the object. */
     var height: String
+    var loading: String
 
     /** Sets or retrieves the frame name. */
     var name: String

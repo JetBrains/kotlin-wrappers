@@ -6,4 +6,5 @@ sealed external class CSSStyleRule :
     CSSRule {
     var selectorText: String
     val style: CSSStyleDeclaration
+    val styleMap: StylePropertyMap
 }

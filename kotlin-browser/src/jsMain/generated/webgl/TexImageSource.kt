@@ -2,4 +2,4 @@
 
 package webgl
 
-typealias TexImageSource = Any /* ImageBitmap | ImageData | HTMLImageElement | HTMLCanvasElement | HTMLVideoElement | OffscreenCanvas */
+typealias TexImageSource = Any /* ImageBitmap | ImageData | HTMLImageElement | HTMLCanvasElement | HTMLVideoElement | OffscreenCanvas | VideoFrame */

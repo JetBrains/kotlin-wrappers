@@ -5,7 +5,7 @@ package web.animations
 sealed external interface EffectTiming {
     var delay: Double?
     var direction: PlaybackDirection?
-    var duration: Double?
+    var duration: Any /* number | CSSNumericValue | string */?
     var easing: String?
     var endDelay: Double?
     var fill: FillMode?

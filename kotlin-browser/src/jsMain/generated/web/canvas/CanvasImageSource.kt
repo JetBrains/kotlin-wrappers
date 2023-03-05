@@ -2,4 +2,4 @@
 
 package web.canvas
 
-typealias CanvasImageSource = Any /* HTMLOrSVGImageElement | HTMLVideoElement | HTMLCanvasElement | ImageBitmap | OffscreenCanvas */
+typealias CanvasImageSource = Any /* HTMLOrSVGImageElement | HTMLVideoElement | HTMLCanvasElement | ImageBitmap | OffscreenCanvas | VideoFrame */

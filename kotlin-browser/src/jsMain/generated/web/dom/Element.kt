@@ -5,6 +5,7 @@ package web.dom
 import js.core.ReadonlyArray
 import js.core.Void
 import web.aria.ARIAMixin
+import web.cssom.StylePropertyMapReadOnly
 import web.events.Event
 import web.events.EventHandler
 import web.fullscreen.FullscreenOptions
@@ -81,6 +82,7 @@ abstract external class Element :
     fun <T : SVGElement> closest(selector: SvgTagName<T>): T?
     fun <T : MathMLElement> closest(selector: MathMLTagName<T>): T?
     fun closest(selector: String): Element?
+    fun computedStyleMap(): StylePropertyMapReadOnly
 
     /** Returns element's first attribute whose qualified name is qualifiedName, and null if there is no such attribute otherwise. */
     fun getAttribute(qualifiedName: String): String?

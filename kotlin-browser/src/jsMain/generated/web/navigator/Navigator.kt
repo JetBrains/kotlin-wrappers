@@ -19,7 +19,9 @@ import web.permissions.Permissions
 import web.serviceworker.ServiceWorkerContainer
 import web.share.ShareData
 import web.url.URL
+import web.useractivation.UserActivation
 import web.vibration.VibratePattern
+import web.wakelock.WakeLock
 import kotlin.js.Promise
 
 sealed external class Navigator :
@@ -50,6 +52,8 @@ sealed external class Navigator :
 
     /** Available only in secure contexts. */
     val serviceWorker: ServiceWorkerContainer
+    val userActivation: UserActivation
+    val wakeLock: WakeLock
 
     /** Available only in secure contexts. */
     fun canShare(data: ShareData = definedExternally): Boolean

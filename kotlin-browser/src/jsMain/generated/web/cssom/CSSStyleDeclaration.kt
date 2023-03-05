@@ -172,6 +172,9 @@ sealed external class CSSStyleDeclaration :
     var fontStretch: String
     var fontStyle: String
     var fontSynthesis: String
+    var fontSynthesisSmallCaps: String
+    var fontSynthesisStyle: String
+    var fontSynthesisWeight: String
     var fontVariant: String
     var fontVariantAlternates: String
     var fontVariantCaps: String
