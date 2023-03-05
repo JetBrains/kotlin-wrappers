@@ -1,6 +1,6 @@
 package csstype
 
-import web.dom.css.ElementCSSInlineStyle
+import web.cssom.ElementCSSInlineStyle
 
 inline val ElementCSSInlineStyle.sx: Properties
     get() = style.unsafeCast<Properties>()

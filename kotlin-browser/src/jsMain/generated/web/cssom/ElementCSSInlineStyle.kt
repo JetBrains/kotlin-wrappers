@@ -1,8 +1,6 @@
 // Automatically generated - do not modify!
 
-package web.dom.css
-
-import web.cssom.CSSStyleDeclaration
+package web.cssom
 
 external interface ElementCSSInlineStyle {
     val style: CSSStyleDeclaration

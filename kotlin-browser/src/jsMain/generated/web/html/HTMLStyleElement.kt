@@ -2,7 +2,7 @@
 
 package web.html
 
-import web.dom.css.LinkStyle
+import web.cssom.LinkStyle
 
 abstract external class HTMLStyleElement :
     HTMLElement,

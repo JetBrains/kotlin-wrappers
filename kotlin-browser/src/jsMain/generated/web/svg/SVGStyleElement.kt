@@ -2,7 +2,7 @@
 
 package web.svg
 
-import web.dom.css.LinkStyle
+import web.cssom.LinkStyle
 
 sealed external class SVGStyleElement :
     SVGElement,

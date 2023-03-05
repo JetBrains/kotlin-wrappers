@@ -1,8 +1,6 @@
 // Automatically generated - do not modify!
 
-package web.dom.css
-
-import web.cssom.CSSStyleSheet
+package web.cssom
 
 external interface LinkStyle {
     val sheet: CSSStyleSheet?

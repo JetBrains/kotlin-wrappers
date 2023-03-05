@@ -5,7 +5,7 @@ package web.mathml
 import web.dom.Element
 import web.dom.GlobalEventHandlers
 import web.dom.HTMLOrSVGElement
-import web.dom.css.ElementCSSInlineStyle
+import web.cssom.ElementCSSInlineStyle
 
 sealed external class MathMLElement :
     Element,

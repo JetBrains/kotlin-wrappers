@@ -3,7 +3,7 @@
 package web.html
 
 import web.dom.DOMTokenList
-import web.dom.css.LinkStyle
+import web.cssom.LinkStyle
 import web.http.ReferrerPolicy
 
 abstract external class HTMLLinkElement :
