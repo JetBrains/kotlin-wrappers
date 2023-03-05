@@ -15,6 +15,7 @@ external interface MutationCacheConfig {
     var onError: (error: Any?, variables: Any?, context: Any?, mutation: Mutation<*, *, *, *>) -> Promise<*>?
     var onSuccess: (data: Any?, variables: Any?, context: Any?, mutation: Mutation<*, *, *, *>) -> Promise<*>?
     var onMutate: (variables: Any?, mutation: Mutation<*, *, *, *>) -> Promise<*>?
+    var onSettled: (data: Any?, error: Any?, variables: Any?, context: Any?, mutation: Mutation<*, *, *, *>) -> Promise<*>?
 }
 
 external interface NotifyEventMutationAdded : NotifyEvent {
