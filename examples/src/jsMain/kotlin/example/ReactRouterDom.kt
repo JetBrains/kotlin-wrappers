@@ -1,19 +1,50 @@
 package example
 
 import js.core.get
+import js.core.jso
 import react.VFC
 import react.create
 import react.dom.html.ReactHTML.div
 import react.dom.html.ReactHTML.h2
 import react.dom.html.ReactHTML.h3
 import react.dom.html.ReactHTML.li
+import react.dom.html.ReactHTML.nav
 import react.dom.html.ReactHTML.ul
-import react.router.PathRoute
-import react.router.Routes
-import react.router.dom.BrowserRouter
+import react.router.Outlet
+import react.router.RouterProvider
 import react.router.dom.Link
-import react.router.useLocation
+import react.router.dom.createBrowserRouter
 import react.router.useParams
+
+val Root = VFC {
+    nav {
+        ul {
+            li {
+                Link {
+                    to = "/"
+
+                    +"Home"
+                }
+            }
+            li {
+                Link {
+                    to = "/about"
+
+                    +"About"
+                }
+            }
+            li {
+                Link {
+                    to = "/topics"
+
+                    +"Topics"
+                }
+            }
+        }
+    }
+
+    Outlet()
+}
 
 val Home = VFC {
     h2 {
@@ -28,8 +59,6 @@ val About = VFC {
 }
 
 val Topics = VFC {
-    val location = useLocation()
-
     div {
         h2 {
             +"Topics"
@@ -52,16 +81,7 @@ val Topics = VFC {
             }
         }
 
-        Routes {
-            PathRoute {
-                path = "${location.pathname}/:topicId"
-                element = Topic.create()
-            }
-            PathRoute {
-                path = location.pathname
-                element = h3.create { +"Please select a topic." }
-            }
-        }
+        Outlet()
     }
 }
 
@@ -74,47 +94,39 @@ val Topic = VFC {
     }
 }
 
-val ReactRouterDomApp = VFC {
-    BrowserRouter {
-        div {
-            ul {
-                li {
-                    Link {
-                        to = "/"
-
-                        +"Home"
-                    }
-                }
-                li {
-                    Link {
-                        to = "/about"
-
-                        +"About"
-                    }
-                }
-                li {
-                    Link {
-                        to = "/topics"
-
-                        +"Topics"
-                    }
-                }
-            }
-
-            Routes {
-                PathRoute {
+val appRouter = createBrowserRouter(
+    arrayOf(
+        jso {
+            path = "/"
+            element = Root.create()
+            children = arrayOf(
+                jso {
+                    index = true
+                    element = Home.create()
+                },
+                jso {
                     path = "/about"
                     element = About.create()
-                }
-                PathRoute {
+                },
+                jso {
                     path = "/topics"
                     element = Topics.create()
-                }
-                PathRoute {
-                    path = "/"
-                    element = Home.create()
-                }
-            }
-        }
-    }
+                    children = arrayOf(
+                        jso {
+                            index = true
+                            element = h3.create { +"Please select a topic." }
+                        },
+                        jso {
+                            path = "/:topicId"
+                            element = Topic.create()
+                        },
+                    )
+                },
+            )
+        },
+    )
+)
+
+val ReactRouterDomApp = VFC {
+    RouterProvider { router = appRouter }
 }
