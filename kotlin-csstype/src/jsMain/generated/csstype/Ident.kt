@@ -12,7 +12,8 @@ sealed external interface Ident :
 sealed external interface IdentType :
     AnimationName,
     GridArea,
-    TransitionProperty
+    TransitionProperty,
+    WillChange
 
 inline fun ident(
     value: String,
