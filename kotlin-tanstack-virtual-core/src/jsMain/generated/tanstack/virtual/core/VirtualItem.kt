@@ -8,4 +8,5 @@ external interface VirtualItem {
     var start: Int
     var end: Int
     var size: Int
+    var lane: Int
 }
