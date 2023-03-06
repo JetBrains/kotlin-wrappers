@@ -10,7 +10,7 @@ external interface XPathEvaluatorBase {
         resolver: XPathNSResolver? = definedExternally,
     ): XPathExpression
 
-    fun createNSResolver(nodeResolver: Node): XPathNSResolver
+    fun createNSResolver(nodeResolver: Node): Node
     fun evaluate(
         expression: String,
         contextNode: Node,
