@@ -6,4 +6,5 @@ sealed external interface PublicKeyInput {
     var key: Any /* string | Buffer */
     var format: KeyFormat?
     var type: Any? /* 'pkcs1' | 'spki' */
+    var encoding: String?
 }

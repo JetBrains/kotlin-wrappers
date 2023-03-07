@@ -245,6 +245,13 @@ open external class Socket : Duplex {
     open val connecting: Boolean
 
     /**
+     * This is `true` if the socket is not connected yet, either because `.connect()`
+     * has not yet been called or because it is still in the process of connecting (see `socket.connecting`).
+     * @since v10.16.0
+     */
+    open val pending: Boolean
+
+    /**
      * See `writable.destroyed` for further details.
      */
     override var /* val */ destroyed: Boolean

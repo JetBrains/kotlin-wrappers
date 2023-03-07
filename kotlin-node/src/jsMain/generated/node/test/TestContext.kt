@@ -103,4 +103,9 @@ sealed external interface TestContext {
      * @returns A {@link Promise} resolved with `undefined` once the test completes.
      */
     var test: Function<Promise<Void>> /* typeof test */
+
+    /**
+     * Each test provides its own MockTracker instance.
+     */
+    val mock: dynamic /* MockTracker */
 }
