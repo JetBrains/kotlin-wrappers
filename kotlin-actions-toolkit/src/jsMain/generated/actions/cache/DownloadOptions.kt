@@ -34,4 +34,13 @@ sealed external interface DownloadOptions {
      * @default 3600000
      */
     var segmentTimeoutInMs: Number?
+
+    /**
+     * Weather to skip downloading the cache entry.
+     * If lookupOnly is set to true, the restore function will only check if
+     * a matching cache entry exists and return the cache key if it does.
+     *
+     * @default false
+     */
+    var lookupOnly: Boolean?
 }
