@@ -1,20 +1,10 @@
-@file:Suppress("NOTHING_TO_INLINE")
+@file:Suppress(
+    "NOTHING_TO_INLINE",
+)
 
 package react
 
 import kotlin.reflect.KProperty
-
-// TODO: make external in IR
-class StateSetter<T>
-private constructor() {
-    inline operator fun invoke(value: T) {
-        asDynamic()(value)
-    }
-
-    inline operator fun invoke(noinline transform: (T) -> T) {
-        asDynamic()(transform)
-    }
-}
 
 /**
  * Only works inside [fc]
@@ -40,4 +30,3 @@ private constructor() {
         asDynamic()[1](value)
     }
 }
-
