@@ -12,29 +12,23 @@ import kotlin.reflect.KProperty
  */
 // TODO: make external in IR
 sealed class StateInstance<T> {
-    inline val value: T
-        get() = asDynamic()[0].unsafeCast<T>()
-
-    inline val setter: StateSetter<T>
-        get() = asDynamic()[1].unsafeCast<StateSetter<T>>()
-
     inline operator fun component1(): T =
-        value
+        asDynamic()[0].unsafeCast<T>()
 
     inline operator fun component2(): StateSetter<T> =
-        setter
+        asDynamic()[1].unsafeCast<StateSetter<T>>()
 
     inline operator fun getValue(
         thisRef: Nothing?,
         property: KProperty<*>,
     ): T =
-        value
+        asDynamic()[0].unsafeCast<T>()
 
     inline operator fun setValue(
         thisRef: Nothing?,
         property: KProperty<*>,
         value: T,
     ) {
-        setter(value)
+        asDynamic()[1].unsafeCast<StateSetter<T>>()(value)
     }
 }
