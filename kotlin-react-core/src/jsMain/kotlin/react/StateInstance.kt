@@ -16,7 +16,7 @@ sealed class StateInstance<T> {
         get() = asDynamic()[0].unsafeCast<T>()
 
     inline val setter: StateSetter<T>
-        get() = asDynamic()[0].unsafeCast<StateSetter<T>>()
+        get() = asDynamic()[1].unsafeCast<StateSetter<T>>()
 
     inline operator fun component1(): T =
         value
