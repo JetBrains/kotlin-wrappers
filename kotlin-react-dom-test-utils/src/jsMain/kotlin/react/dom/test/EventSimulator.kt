@@ -8,8 +8,7 @@ import js.core.jso
 import web.dom.Element
 import web.events.EventInit
 
-class EventSimulator<O : EventInit>
-private constructor() {
+sealed class EventSimulator<O : EventInit> {
     inline operator fun invoke(
         element: Element, /* | Component<any> */
     ) {

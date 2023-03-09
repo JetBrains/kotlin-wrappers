@@ -25,8 +25,7 @@ inline fun <T : Any> useRefValue(
         .unsafeCast<RefValueInstance<T>>()
 
 // TODO: make external in IR
-class RefValueInstance<T>
-private constructor() {
+sealed class RefValueInstance<T> {
     inline operator fun getValue(
         thisRef: Nothing?,
         property: KProperty<*>,

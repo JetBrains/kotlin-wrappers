@@ -21,8 +21,7 @@ fun <T : Any> useLatest(
 }
 
 // TODO: make external in IR
-class LatestInstance<T>
-private constructor() {
+sealed class LatestInstance<T> {
     inline operator fun getValue(
         thisRef: Void,
         property: KProperty<*>,

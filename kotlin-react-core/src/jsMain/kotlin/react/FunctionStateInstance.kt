@@ -7,8 +7,7 @@ package react
 import kotlin.reflect.KProperty
 
 // TODO: make external in IR
-class FunctionStateInstance<T>
-private constructor() {
+sealed class FunctionStateInstance<T> {
     inline operator fun getValue(
         thisRef: Nothing?,
         property: KProperty<*>,

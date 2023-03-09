@@ -7,8 +7,7 @@ package react
 import js.core.ReadonlyArray
 
 // TODO: make external in IR
-class EffectBuilder
-private constructor() {
+sealed class EffectBuilder {
     inline fun cleanup(
         noinline block: Cleanup,
     ) {

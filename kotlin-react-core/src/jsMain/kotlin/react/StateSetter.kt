@@ -5,8 +5,7 @@
 package react
 
 // TODO: make external in IR
-class StateSetter<T>
-private constructor() {
+sealed class StateSetter<T> {
     inline operator fun invoke(value: T) {
         asDynamic()(value)
     }
