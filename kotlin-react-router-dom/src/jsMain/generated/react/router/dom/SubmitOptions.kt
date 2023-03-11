@@ -51,4 +51,3 @@ external interface SubmitOptions {
      */
     var preventScrollReset: Boolean?
 }
-

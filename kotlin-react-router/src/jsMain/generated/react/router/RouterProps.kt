@@ -14,4 +14,3 @@ external interface RouterProps : react.PropsWithChildren {
     var navigator: Navigator
     var static: Boolean?
 }
-

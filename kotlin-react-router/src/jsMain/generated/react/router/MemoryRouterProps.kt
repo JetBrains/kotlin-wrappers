@@ -12,4 +12,3 @@ external interface MemoryRouterProps : react.PropsWithChildren {
     var initialEntries: js.core.ReadonlyArray<InitialEntry>?
     var initialIndex: Double?
 }
-

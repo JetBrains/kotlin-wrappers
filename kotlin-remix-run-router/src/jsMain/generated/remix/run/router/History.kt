@@ -87,4 +87,3 @@ external interface History {
      */
     fun listen(listener: Listener): () -> Unit
 }
-

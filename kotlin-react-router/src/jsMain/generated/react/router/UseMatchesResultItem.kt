@@ -10,4 +10,3 @@ external interface UseMatchesResultItem {
     var data: Any?
     var handle: Any?
 }
-

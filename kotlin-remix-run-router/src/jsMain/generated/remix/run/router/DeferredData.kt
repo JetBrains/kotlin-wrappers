@@ -33,4 +33,3 @@ external class DeferredData {
     /* get unwrappedData(): {}; */
     /* get pendingKeys(): string[]; */
 }
-

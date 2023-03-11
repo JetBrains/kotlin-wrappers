@@ -13,4 +13,3 @@ external interface FetcherWithComponents<TData> : Fetcher<TData> {
     var submit: (target: SubmitTarget, options: SubmitOptions? /* use undefined for default */) -> Unit
     var load: (href: String) -> Unit
 }
-

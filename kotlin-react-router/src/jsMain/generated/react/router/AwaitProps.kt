@@ -10,4 +10,3 @@ external interface AwaitProps : react.Props {
     var errorElement: react.ReactNode?
     var resolve: Any /* TrackedPromise | any */
 }
-

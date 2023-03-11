@@ -10,4 +10,3 @@ external interface GetFormSubmissionInfoResult {
     var encType: String
     var formData: FormData
 }
-

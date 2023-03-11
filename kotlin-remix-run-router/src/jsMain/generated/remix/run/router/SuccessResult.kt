@@ -16,4 +16,3 @@ external interface SuccessResult {
     var statusCode: Double?
     var headers: Headers?
 }
-

@@ -25,4 +25,3 @@ external interface Update {
      */
     var delta: Double?
 }
-

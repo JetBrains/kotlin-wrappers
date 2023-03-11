@@ -7,4 +7,3 @@ external interface UseScrollRestorationOptions {
     var getKey: GetScrollRestorationKeyFunction?
     var storageKey: String?
 }
-

@@ -11,4 +11,3 @@ external interface NavigationStatesLoading {
     var formEncType: FormEncType?
     var formData: FormData?
 }
-

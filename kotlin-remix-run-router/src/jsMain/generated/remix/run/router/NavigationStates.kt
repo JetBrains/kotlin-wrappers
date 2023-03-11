@@ -14,4 +14,3 @@ external interface NavigationStates {
     var Loading: NavigationStatesLoading
     var Submitting: NavigationStatesSubmitting
 }
-

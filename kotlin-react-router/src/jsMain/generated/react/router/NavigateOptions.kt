@@ -11,4 +11,3 @@ external interface NavigateOptions {
     var preventScrollReset: Boolean?
     var relative: RelativeRoutingType?
 }
-

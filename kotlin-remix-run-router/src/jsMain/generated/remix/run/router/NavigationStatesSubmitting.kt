@@ -11,4 +11,3 @@ external interface NavigationStatesSubmitting {
     var formEncType: FormEncType
     var formData: FormData
 }
-

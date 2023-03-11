@@ -9,4 +9,3 @@ external interface CreateBrowserRouterOpts {
     var hydrationData: HydrationState?
     var window: Window?
 }
-

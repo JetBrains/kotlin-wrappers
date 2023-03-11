@@ -19,4 +19,3 @@ external interface NavLinkProps : react.Props, react.PropsWithRef<HTMLAnchorElem
     @JsName("style")
     var styleFn: ((props: NavLinkOptions) -> react.CSSProperties?)?
 }
-

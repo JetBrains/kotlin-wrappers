@@ -28,4 +28,3 @@ external interface PathPattern {
      */
     var end: Boolean?
 }
-

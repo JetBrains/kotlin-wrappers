@@ -21,4 +21,3 @@ external class ErrorResponse {
 
     constructor (status: Double, statusText: String?, data: Any?, internal: Boolean = definedExternally)
 }
-

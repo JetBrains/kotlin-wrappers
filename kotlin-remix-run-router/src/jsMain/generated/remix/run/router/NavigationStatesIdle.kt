@@ -9,4 +9,3 @@ external interface NavigationStatesIdle {
     var formEncType: Nothing?
     var formData: Nothing?
 }
-

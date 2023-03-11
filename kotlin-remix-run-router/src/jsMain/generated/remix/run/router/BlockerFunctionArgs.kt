@@ -8,4 +8,3 @@ external interface BlockerFunctionArgs {
     var nextLocation: Location
     var historyAction: HistoryAction
 }
-

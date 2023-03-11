@@ -12,4 +12,3 @@ external interface FetcherStatesSubmitting<TData> {
     var data: TData?
     var String: Boolean?
 }
-

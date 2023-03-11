@@ -9,4 +9,3 @@ external interface CreateHashRouterOpts {
     var hydrationData: HydrationState?
     var window: Window?
 }
-

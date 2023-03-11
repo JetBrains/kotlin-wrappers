@@ -24,4 +24,3 @@ sealed class NavigateFunction {
     inline operator fun invoke(delta: Double): Unit = asDynamic()(delta)
 
 }
-

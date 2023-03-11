@@ -14,4 +14,3 @@ external interface LinkNavigateOptions {
     var state: LocationState?
     var preventScrollReset: Boolean?
 }
-

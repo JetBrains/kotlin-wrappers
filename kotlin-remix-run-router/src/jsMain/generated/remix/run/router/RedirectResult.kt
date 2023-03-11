@@ -15,4 +15,3 @@ external interface RedirectResult {
     var location: String
     var revalidate: Boolean
 }
-

@@ -12,4 +12,3 @@ external interface FetcherStatesLoading<TData> {
     var data: TData?
     var String: Boolean?
 }
-

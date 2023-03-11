@@ -30,4 +30,3 @@ external interface PathMatch {
      */
     var pattern: PathPattern
 }
-

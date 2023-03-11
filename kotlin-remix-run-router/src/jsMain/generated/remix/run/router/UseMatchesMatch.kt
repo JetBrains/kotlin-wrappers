@@ -12,4 +12,3 @@ external interface UseMatchesMatch {
     var data: Any?
     var handle: Any?
 }
-

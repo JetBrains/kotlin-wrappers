@@ -13,4 +13,3 @@ package remix.run.router
  */
 
 external interface BrowserHistory : UrlHistory
-

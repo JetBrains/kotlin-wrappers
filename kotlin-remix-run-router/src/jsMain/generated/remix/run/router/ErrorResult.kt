@@ -15,4 +15,3 @@ external interface ErrorResult {
     var error: Any?
     var headers: Headers?
 }
-

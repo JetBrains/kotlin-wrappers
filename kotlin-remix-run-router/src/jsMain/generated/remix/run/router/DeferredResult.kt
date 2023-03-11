@@ -16,4 +16,3 @@ external interface DeferredResult {
     var statusCode: Double?
     var headers: Headers?
 }
-

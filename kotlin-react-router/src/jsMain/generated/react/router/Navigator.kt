@@ -24,4 +24,3 @@ external interface Navigator {
     fun push(to: To, state: remix.run.router.LocationState? = definedExternally, opts: NavigateOptions = definedExternally): Unit
     fun replace(to: To, state: remix.run.router.LocationState? = definedExternally, opts: NavigateOptions = definedExternally): Unit
 }
-

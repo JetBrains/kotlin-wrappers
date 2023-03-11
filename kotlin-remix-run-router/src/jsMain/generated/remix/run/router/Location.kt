@@ -24,4 +24,3 @@ external interface Location : Path {
      */
     var key: String
 }
-

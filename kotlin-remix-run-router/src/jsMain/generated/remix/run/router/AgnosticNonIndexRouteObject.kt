@@ -13,4 +13,3 @@ external interface AgnosticNonIndexRouteObject : AgnosticBaseRouteObject {
     var children: js.core.ReadonlyArray<AgnosticRouteObject>?
     var index: Boolean?
 }
-

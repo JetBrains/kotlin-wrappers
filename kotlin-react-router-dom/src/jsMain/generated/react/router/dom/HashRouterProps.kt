@@ -11,4 +11,3 @@ external interface HashRouterProps : react.PropsWithChildren {
     var basename: String?
     var window: Window?
 }
-

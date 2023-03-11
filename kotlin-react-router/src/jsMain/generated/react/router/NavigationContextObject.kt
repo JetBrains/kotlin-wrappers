@@ -10,4 +10,3 @@ external interface NavigationContextObject {
     var navigator: Navigator
     var static: Boolean
 }
-

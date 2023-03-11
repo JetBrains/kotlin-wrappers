@@ -23,4 +23,3 @@ external interface StaticHandlerContext {
     var activeDeferreds: js.core.ReadonlyRecord<String, DeferredData>?
     var _deepestRenderedBoundaryId: String?
 }
-

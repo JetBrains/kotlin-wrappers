@@ -12,4 +12,3 @@ package remix.run.router
 external interface RouteData {
     /* [routeId: string]: any; */
 }
-

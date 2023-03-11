@@ -30,4 +30,3 @@ external interface AgnosticRouteMatch<RouteObjectType : AgnosticRouteObject /* d
      */
     var route: RouteObjectType
 }
-

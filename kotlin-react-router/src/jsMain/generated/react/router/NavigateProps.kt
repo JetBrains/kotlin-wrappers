@@ -13,4 +13,3 @@ external interface NavigateProps : react.Props {
     var state: remix.run.router.LocationState?
     var relative: RelativeRoutingType?
 }
-

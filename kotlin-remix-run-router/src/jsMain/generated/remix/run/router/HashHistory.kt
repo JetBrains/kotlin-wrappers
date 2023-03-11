@@ -17,4 +17,3 @@ package remix.run.router
  */
 
 external interface HashHistory : UrlHistory
-

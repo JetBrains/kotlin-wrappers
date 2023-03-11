@@ -11,4 +11,3 @@ external interface BlockerBlocked {
     fun proceed(): Unit
     var location: Location
 }
-

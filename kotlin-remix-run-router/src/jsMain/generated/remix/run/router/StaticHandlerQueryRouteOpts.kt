@@ -5,4 +5,3 @@ external interface StaticHandlerQueryRouteOpts {
     var routeId: String?
     var requestContext: Any?
 }
-

@@ -14,4 +14,3 @@ external interface FetcherStates<TData /* default is Any? */> {
     var Loading: FetcherStatesLoading<TData>
     var Submitting: FetcherStatesSubmitting<TData>
 }
-

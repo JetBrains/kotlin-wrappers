@@ -6,4 +6,3 @@ package react.router
 
 
 external interface LayoutRouteProps : react.Props, PathRouteProps
-

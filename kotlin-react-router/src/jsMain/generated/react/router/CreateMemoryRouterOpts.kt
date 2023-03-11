@@ -10,4 +10,3 @@ external interface CreateMemoryRouterOpts {
     var initialEntries: js.core.ReadonlyArray<InitialEntry>?
     var initialIndex: Double?
 }
-

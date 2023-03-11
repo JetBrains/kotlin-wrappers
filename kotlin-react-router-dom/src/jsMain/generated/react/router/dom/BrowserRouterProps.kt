@@ -11,4 +11,3 @@ external interface BrowserRouterProps : react.PropsWithChildren {
     var basename: String?
     var window: Window?
 }
-

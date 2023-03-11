@@ -10,4 +10,3 @@ external interface FetcherStatesIdle<TData> {
     var data: TData?
     var String: Boolean?
 }
-

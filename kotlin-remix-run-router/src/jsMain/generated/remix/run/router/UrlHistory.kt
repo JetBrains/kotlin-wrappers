@@ -6,4 +6,3 @@ package remix.run.router
 
 
 external interface UrlHistory : History
-

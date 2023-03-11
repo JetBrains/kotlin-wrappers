@@ -25,4 +25,3 @@ external interface Path {
      */
     var hash: String
 }
-

@@ -13,4 +13,3 @@ external interface AgnosticIndexRouteObject : AgnosticBaseRouteObject {
     var children: Nothing?
     var index: Boolean
 }
-

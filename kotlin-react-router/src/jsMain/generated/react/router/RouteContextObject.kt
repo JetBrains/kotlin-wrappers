@@ -9,4 +9,3 @@ external interface RouteContextObject {
     var outlet: react.ReactElement<*>?
     var matches: js.core.ReadonlyArray<RouteMatch<*>>
 }
-

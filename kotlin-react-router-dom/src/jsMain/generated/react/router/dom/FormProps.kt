@@ -56,4 +56,3 @@ external interface FormProps : react.Props, react.PropsWithRef<HTMLFormElement>,
      */
     override var onSubmit: react.dom.events.FormEventHandler<HTMLFormElement>?
 }
-

@@ -10,4 +10,3 @@ external interface UseLinkClickHandlerOptions {
     var preventScrollReset: Boolean?
     var relative: RelativeRoutingType?
 }
-

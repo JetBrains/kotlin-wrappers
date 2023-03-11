@@ -18,4 +18,3 @@ external interface Submission {
     var formEncType: FormEncType
     var formData: FormData
 }
-

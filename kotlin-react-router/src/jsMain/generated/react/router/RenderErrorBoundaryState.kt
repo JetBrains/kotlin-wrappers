@@ -11,4 +11,3 @@ external interface RenderErrorBoundaryState {
     var location: Location
     var error: Any?
 }
-

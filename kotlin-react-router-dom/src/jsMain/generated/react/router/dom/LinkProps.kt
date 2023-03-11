@@ -20,4 +20,3 @@ external interface LinkProps : react.Props, react.PropsWithRef<HTMLAnchorElement
     @Deprecated(message = "don't use href", level = DeprecationLevel.HIDDEN)
     override var href: String?
 }
-

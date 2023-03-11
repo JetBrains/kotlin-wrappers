@@ -18,4 +18,3 @@ external interface SubmissionNavigateOptions {
     var formEncType: FormEncType?
     var formData: FormData
 }
-

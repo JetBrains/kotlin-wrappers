@@ -11,4 +11,3 @@ external interface UrlHistoryOptions {
     var window: Window?
     var v5Compat: Boolean?
 }
-

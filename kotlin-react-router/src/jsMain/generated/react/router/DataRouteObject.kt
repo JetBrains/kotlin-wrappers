@@ -15,4 +15,3 @@ external interface DataRouteObject : RouteObject {
     override var id: String
 
 }
-

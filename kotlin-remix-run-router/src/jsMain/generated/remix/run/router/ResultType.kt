@@ -13,4 +13,3 @@ external enum class ResultType {
     redirect,
     error
 }
-

@@ -22,4 +22,3 @@ external fun useBlocker(shouldBlock: Boolean): Blocker
 
 @JsName("unstable_useBlocker")
 external fun useBlocker(shouldBlock: BlockerFunction): Blocker
-

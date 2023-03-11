@@ -11,4 +11,3 @@ external interface RouterProviderProps : react.Props {
     var fallbackElement: react.ReactNode?
     var router: RemixRouter
 }
-

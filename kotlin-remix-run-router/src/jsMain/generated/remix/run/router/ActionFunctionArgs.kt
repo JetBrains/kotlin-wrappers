@@ -10,4 +10,3 @@ package remix.run.router
  */
 
 external interface ActionFunctionArgs : DataFunctionArgs
-

@@ -81,4 +81,3 @@ external interface RouterState {
      */
     var blockers: js.collections.ReadonlyMap<String, Blocker>
 }
-

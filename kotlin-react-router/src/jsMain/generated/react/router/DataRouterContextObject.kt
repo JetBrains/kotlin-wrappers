@@ -12,4 +12,3 @@ external interface DataRouterContextObject : NavigationContextObject {
     var router: Router
     var staticContext: StaticHandlerContext?
 }
-

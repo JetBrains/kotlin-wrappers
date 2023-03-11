@@ -8,4 +8,3 @@ import remix.run.router.AgnosticRouteMatch
 
 
 external interface RouteMatch<RouteObjectType : RouteObject /* default is RouteObject */> : AgnosticRouteMatch<RouteObjectType>
-

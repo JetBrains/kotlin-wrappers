@@ -16,4 +16,3 @@ external interface MemoryHistory : History {
      */
     val index: Double
 }
-

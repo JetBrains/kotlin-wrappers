@@ -11,4 +11,3 @@ external interface HistoryRouterProps : react.PropsWithChildren {
     var basename: String?
     var history: History
 }
-

@@ -16,4 +16,3 @@ external interface ShouldRevalidateFunctionArgs {
     var actionResult: DataResult?
     var defaultShouldRevalidate: Boolean
 }
-

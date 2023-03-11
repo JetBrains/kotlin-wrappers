@@ -199,4 +199,3 @@ external interface Router {
      */
     var _internalActiveDeferreds: js.collections.ReadonlyMap<String, DeferredData>
 }
-

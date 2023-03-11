@@ -11,4 +11,3 @@ external interface BlockerProceeding {
     var proceed: Nothing?
     var location: Location
 }
-

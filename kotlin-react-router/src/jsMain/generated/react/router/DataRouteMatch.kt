@@ -6,4 +6,3 @@ package react.router
 
 
 external interface DataRouteMatch : RouteMatch<DataRouteObject>
-

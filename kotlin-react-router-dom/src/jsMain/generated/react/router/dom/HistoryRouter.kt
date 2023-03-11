@@ -16,4 +16,3 @@ package react.router.dom
 
 @JsName("unstable_HistoryRouter")
 external val HistoryRouter: react.FC<HistoryRouterProps>
-

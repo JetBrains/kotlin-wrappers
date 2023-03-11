@@ -11,4 +11,3 @@ external interface BlockerUnblocked {
     var proceed: Nothing?
     var location: Nothing?
 }
-

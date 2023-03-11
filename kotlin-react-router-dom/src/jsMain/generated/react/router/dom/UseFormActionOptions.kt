@@ -6,4 +6,3 @@ import react.router.RelativeRoutingType
 external interface UseFormActionOptions {
     var relative: RelativeRoutingType?
 }
-

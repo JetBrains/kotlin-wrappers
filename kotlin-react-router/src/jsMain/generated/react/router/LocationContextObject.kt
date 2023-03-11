@@ -12,4 +12,3 @@ external interface LocationContextObject {
     var location: Location
     var navigationType: NavigationType
 }
-

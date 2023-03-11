@@ -13,4 +13,3 @@ external interface RenderErrorBoundaryProps : react.PropsWithChildren {
     var component: react.ReactNode
     var routeContext: RouteContextObject
 }
-

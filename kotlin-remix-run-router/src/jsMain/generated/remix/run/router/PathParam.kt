@@ -14,4 +14,3 @@ package remix.run.router
  * "/:a/:b" -> "a" | "b"
  * "/:a/b/:c&#47;*" -> "a" | "c" | "*"
  */
-
