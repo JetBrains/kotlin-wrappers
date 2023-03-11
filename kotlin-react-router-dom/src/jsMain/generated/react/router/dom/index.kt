@@ -25,12 +25,12 @@ package react.router.dom
 
 /* export { createSearchParams }; */
 
-/* export type { ActionFunction, ActionFunctionArgs, AwaitProps, unstable_Blocker, unstable_BlockerFunction, DataRouteMatch, DataRouteObject, Fetcher, Hash, IndexRouteObject, IndexRouteProps, JsonFunction, LayoutRouteProps, LoaderFunction, LoaderFunctionArgs, Location, MemoryRouterProps, NavigateFunction, NavigateOptions, NavigateProps, Navigation, Navigator, NonIndexRouteObject, OutletProps, Params, ParamParseKey, Path, PathMatch, Pathname, PathPattern, PathRouteProps, RedirectFunction, RelativeRoutingType, RouteMatch, RouteObject, RouteProps, RouterProps, RouterProviderProps, RoutesProps, Search, ShouldRevalidateFunction, To, } from "react-router"; */
+/* export type { ActionFunction, ActionFunctionArgs, AwaitProps, unstable_Blocker, unstable_BlockerFunction, DataRouteMatch, DataRouteObject, Fetcher, Hash, IndexRouteObject, IndexRouteProps, JsonFunction, LazyRouteFunction, LayoutRouteProps, LoaderFunction, LoaderFunctionArgs, Location, MemoryRouterProps, NavigateFunction, NavigateOptions, NavigateProps, Navigation, Navigator, NonIndexRouteObject, OutletProps, Params, ParamParseKey, Path, PathMatch, Pathname, PathPattern, PathRouteProps, RedirectFunction, RelativeRoutingType, RouteMatch, RouteObject, RouteProps, RouterProps, RouterProviderProps, RoutesProps, Search, ShouldRevalidateFunction, To, } from "react-router"; */
 
 /* export { AbortedDeferredError, Await, MemoryRouter, Navigate, NavigationType, Outlet, Route, Router, RouterProvider, Routes, createMemoryRouter, createPath, createRoutesFromChildren, createRoutesFromElements, defer, isRouteErrorResponse, generatePath, json, matchPath, matchRoutes, parsePath, redirect, renderMatches, resolvePath, useActionData, useAsyncError, useAsyncValue, unstable_useBlocker, useHref, useInRouterContext, useLoaderData, useLocation, useMatch, useMatches, useNavigate, useNavigation, useNavigationType, useOutlet, useOutletContext, useParams, useResolvedPath, useRevalidator, useRouteError, useRouteLoaderData, useRoutes, } from "react-router"; */
 
 /** @internal */
-/* export { UNSAFE_DataRouterContext, UNSAFE_DataRouterStateContext, UNSAFE_NavigationContext, UNSAFE_LocationContext, UNSAFE_RouteContext, UNSAFE_enhanceManualRouteObjects, } from "react-router"; */
+/* export { UNSAFE_DataRouterContext, UNSAFE_DataRouterStateContext, UNSAFE_NavigationContext, UNSAFE_LocationContext, UNSAFE_RouteContext, } from "react-router"; */
 
 /* declare global {
     var __staticRouterHydrationData: HydrationState | undefined;
@@ -58,6 +58,6 @@ external val NavLink: react.ForwardRefExoticComponent<NavLinkProps>
 external val Form: react.ForwardRefExoticComponent<FormProps>
 
 
-/* export { usePrompt as unstable_usePrompt }; */
-
 /* export { useScrollRestoration as UNSAFE_useScrollRestoration }; */
+
+/* export { usePrompt as unstable_usePrompt }; */

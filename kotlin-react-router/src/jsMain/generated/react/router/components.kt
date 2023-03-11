@@ -9,7 +9,7 @@ package react.router
 
 /* import * as React from "react"; */
 
-/* import type { TrackedPromise, InitialEntry, Location, Router as RemixRouter, To } from "@remix-run/router"; */
+/* import type { TrackedPromise, InitialEntry, Location, Router as RemixRouter, To, LazyRouteFunction } from "@remix-run/router"; */
 
 /* import { Action as NavigationType } from "@remix-run/router"; */
 

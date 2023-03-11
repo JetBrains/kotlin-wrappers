@@ -9,6 +9,7 @@ package remix.run.router
 
 external fun convertRoutesToDataRoutes(
     routes: js.core.ReadonlyArray<AgnosticRouteObject>,
+    detectErrorBoundary: DetectErrorBoundaryFunction,
     parentPath: js.core.ReadonlyArray<Double> = definedExternally,
-    allIds: js.collections.ReadonlySet<String> = definedExternally
+    manifest: RouteManifest = definedExternally
 ): js.core.ReadonlyArray<AgnosticDataRouteObject>

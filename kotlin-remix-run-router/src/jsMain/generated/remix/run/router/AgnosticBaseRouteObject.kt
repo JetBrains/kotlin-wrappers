@@ -18,5 +18,5 @@ external interface AgnosticBaseRouteObject {
     var hasErrorBoundary: Boolean?
     var shouldRevalidate: ShouldRevalidateFunction?
     var handle: Any?
+    var lazy: LazyRouteFunction<AgnosticBaseRouteObject>?
 }
-

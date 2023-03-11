@@ -9,6 +9,8 @@ package remix.run.router
 
 /* import type { Location, Path, To } from "./history"; */
 
+external val immutableRouteKeys: js.collections.ReadonlySet<ImmutableRouteKey>
+
 /**
  * @private
  */

@@ -14,5 +14,5 @@ external interface RouterInit {
     var routes: js.core.ReadonlyArray<AgnosticRouteObject>
     var history: History
     var hydrationData: HydrationState?
+    var detectErrorBoundary: DetectErrorBoundaryFunction?
 }
-

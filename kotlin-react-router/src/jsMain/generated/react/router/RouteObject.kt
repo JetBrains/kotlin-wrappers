@@ -5,6 +5,7 @@
 package react.router
 
 import remix.run.router.ActionFunction
+import remix.run.router.LazyRouteFunction
 import remix.run.router.LoaderFunction
 import remix.run.router.ShouldRevalidateFunction
 
@@ -22,5 +23,7 @@ external interface RouteObject {
     var children: js.core.ReadonlyArray<RouteObject>?
     var element: react.ReactNode?
     var errorElement: react.ReactNode?
+    var Component: react.ComponentType<*>?
+    var ErrorBoundary: react.ComponentType<*>?
+    var lazy: LazyRouteFunction<RouteObject>?
 }
-
