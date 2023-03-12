@@ -1,6 +1,11 @@
 rootProject.name = "kotlin-wrappers"
 
 pluginManagement {
+    repositories {
+        mavenLocal()
+        gradlePluginPortal()
+    }
+
     resolutionStrategy {
         plugins {
             val kotlinVersion = extra["kotlin.version"] as String
