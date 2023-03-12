@@ -24,9 +24,7 @@ module.exports = function (node, context, render) {
             ?.map(heritageClause => render(heritageClause))
             ?.join(", ")
 
-        let members = node.members
-            .map(member => render(member))
-            .join("\n")
+        let members
 
         let parentType = "react.Props"
 
@@ -50,7 +48,10 @@ module.exports = function (node, context, render) {
                 .join("\n")
 
             parentType = "react.PropsWithChildren"
-
+        } else {
+            members = node.members
+                .map(member => render(member))
+                .join("\n")
         }
 
         if (name in propsWithRef) {

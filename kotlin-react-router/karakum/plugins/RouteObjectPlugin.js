@@ -17,6 +17,16 @@ module.exports = {
         if (!this.sourceRouteObjectNode) return null;
 
         if (
+            ts.isInterfaceDeclaration(node)
+            && (
+                node.name.text === "IndexRouteObject"
+                || node.name.text === "NonIndexRouteObject"
+            )
+        ) {
+            return ""
+        }
+
+        if (
             ts.isTypeAliasDeclaration(node)
             && node.name.text === "RouteObject"
         ) {
@@ -29,6 +39,17 @@ external interface RouteObject {
 ${members}
 }
             `
+        }
+
+        if (
+            ts.isTypeReferenceNode(node)
+            && ts.isIdentifier(node.typeName)
+            && (
+                node.typeName.text === "IndexRouteObject"
+                || node.typeName.text === "NonIndexRouteObject"
+            )
+        ) {
+            return "RouteObject"
         }
 
         return null;
