@@ -296,6 +296,7 @@ sealed external class CSSStyleDeclaration :
     var paddingLeft: String
     var paddingRight: String
     var paddingTop: String
+    var page: String
     var pageBreakAfter: String
     var pageBreakBefore: String
     var pageBreakInside: String
