@@ -7,7 +7,7 @@ package react.router.dom
 import remix.run.router.GetScrollRestorationKeyFunction
 
 
-external interface ScrollRestorationProps : react.Props {
+sealed external interface ScrollRestorationProps : react.Props {
     var getKey: GetScrollRestorationKeyFunction?
     var storageKey: String?
 }

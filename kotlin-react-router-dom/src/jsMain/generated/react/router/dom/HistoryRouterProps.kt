@@ -7,7 +7,7 @@ package react.router.dom
 import remix.run.router.History
 
 
-external interface HistoryRouterProps : react.PropsWithChildren {
+sealed external interface HistoryRouterProps : react.PropsWithChildren {
     var basename: String?
     var history: History
 }

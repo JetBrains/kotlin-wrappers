@@ -8,7 +8,7 @@ import remix.run.router.Location
 import remix.run.router.Action as NavigationType
 
 
-external interface LocationContextObject {
+sealed external interface LocationContextObject {
     var location: Location
     var navigationType: NavigationType
 }

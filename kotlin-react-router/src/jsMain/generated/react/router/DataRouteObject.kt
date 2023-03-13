@@ -5,7 +5,7 @@
 package react.router
 
 
-external interface DataRouteObject : RouteObject {
+sealed external interface DataRouteObject : RouteObject {
 
     @Suppress("VAR_TYPE_MISMATCH_ON_OVERRIDE")
     override var children: js.core.ReadonlyArray<DataRouteObject>?

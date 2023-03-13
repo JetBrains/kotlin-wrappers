@@ -10,7 +10,7 @@ package remix.run.router
  * Native.
  */
 
-external interface MemoryHistory : History {
+sealed external interface MemoryHistory : History {
     /**
      * The current index in the history stack.
      */

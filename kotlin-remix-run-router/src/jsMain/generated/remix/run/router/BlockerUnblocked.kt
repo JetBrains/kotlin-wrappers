@@ -5,7 +5,7 @@
 package remix.run.router
 
 
-external interface BlockerUnblocked {
+sealed external interface BlockerUnblocked {
     var state: String
     var reset: Nothing?
     var proceed: Nothing?

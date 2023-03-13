@@ -9,7 +9,7 @@ package remix.run.router
  * Base RouteObject with common props shared by all types of routes
  */
 
-external interface AgnosticBaseRouteObject {
+sealed external interface AgnosticBaseRouteObject {
     var caseSensitive: Boolean?
     var path: String?
     var id: String?

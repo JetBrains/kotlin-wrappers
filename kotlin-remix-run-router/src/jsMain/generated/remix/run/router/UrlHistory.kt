@@ -5,4 +5,4 @@
 package remix.run.router
 
 
-external interface UrlHistory : History
+sealed external interface UrlHistory : History

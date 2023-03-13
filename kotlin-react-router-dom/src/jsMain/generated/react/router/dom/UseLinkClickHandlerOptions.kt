@@ -3,7 +3,7 @@ package react.router.dom
 import react.router.RelativeRoutingType
 
 
-external interface UseLinkClickHandlerOptions {
+sealed external interface UseLinkClickHandlerOptions {
     var target: web.window.WindowTarget?
     var replace: Boolean?
     var state: remix.run.router.LocationState?

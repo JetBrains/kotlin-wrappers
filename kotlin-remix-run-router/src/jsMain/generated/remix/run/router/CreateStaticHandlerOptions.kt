@@ -5,7 +5,7 @@
 package remix.run.router
 
 
-external interface CreateStaticHandlerOptions {
+sealed external interface CreateStaticHandlerOptions {
     var basename: String?
     var detectErrorBoundary: DetectErrorBoundaryFunction?
 }

@@ -4,7 +4,7 @@ import web.http.FormData
 import web.url.URL
 
 
-external interface ShouldRevalidateFunctionArgs {
+sealed external interface ShouldRevalidateFunctionArgs {
     var currentUrl: URL
     var currentParams: Params
     var nextUrl: URL

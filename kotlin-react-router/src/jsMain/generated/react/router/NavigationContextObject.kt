@@ -5,7 +5,7 @@
 package react.router
 
 
-external interface NavigationContextObject {
+sealed external interface NavigationContextObject {
     var basename: String
     var navigator: Navigator
     var static: Boolean

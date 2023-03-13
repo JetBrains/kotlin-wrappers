@@ -9,7 +9,7 @@ package remix.run.router
  * A PathMatch contains info about how a PathPattern matched on a URL pathname.
  */
 
-external interface PathMatch {
+sealed external interface PathMatch {
     /**
      * The names and values of dynamic parameters in the URL.
      */

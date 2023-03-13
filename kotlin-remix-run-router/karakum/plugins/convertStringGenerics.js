@@ -10,7 +10,11 @@ module.exports = function (node, context, render) {
             || node.name.text === "PathPattern"
         )
     ) {
+        const inheritanceModifierService = context.lookupService(karakum.inheritanceModifierServiceKey)
+
         const name = render(node.name)
+
+        const inheritanceModifier = inheritanceModifierService?.resolveInheritanceModifier(node, context)
 
         const typeParameters = node.typeParameters
             ?.filter(typeParameter => typeParameter?.constraint?.kind !== ts.SyntaxKind.StringKeyword)
@@ -26,7 +30,7 @@ module.exports = function (node, context, render) {
             .join("\n")
 
         return `
-external interface ${name}${karakum.ifPresent(typeParameters, it => `<${it}>`)}${karakum.ifPresent(heritageClauses, it => ` : ${it}`)} {
+${karakum.ifPresent(inheritanceModifier, it => `${it} `)}external interface ${name}${karakum.ifPresent(typeParameters, it => `<${it}>`)}${karakum.ifPresent(heritageClauses, it => ` : ${it}`)} {
 ${members}
 }
         `

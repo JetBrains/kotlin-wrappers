@@ -7,7 +7,7 @@ package react.router.dom
 import web.window.Window
 
 
-external interface HashRouterProps : react.PropsWithChildren {
+sealed external interface HashRouterProps : react.PropsWithChildren {
     var basename: String?
     var window: Window?
 }

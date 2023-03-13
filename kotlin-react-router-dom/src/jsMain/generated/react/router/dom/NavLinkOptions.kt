@@ -1,7 +1,7 @@
 package react.router.dom
 
 
-external interface NavLinkOptions {
+sealed external interface NavLinkOptions {
     var isActive: Boolean
     var isPending: Boolean
 }

@@ -3,6 +3,6 @@ package react.router.dom
 import react.router.RelativeRoutingType
 
 
-external interface UseFormActionOptions {
+sealed external interface UseFormActionOptions {
     var relative: RelativeRoutingType?
 }

@@ -10,7 +10,7 @@ import web.http.Headers
  * Successful defer() result from a loader or action
  */
 
-external interface DeferredResult {
+sealed external interface DeferredResult {
     var type: ResultType /* ResultType.deferred */
     var deferredData: DeferredData
     var statusCode: Double?

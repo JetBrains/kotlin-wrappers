@@ -9,7 +9,7 @@ package remix.run.router
  * A change to the current location.
  */
 
-external interface Update {
+sealed external interface Update {
     /**
      * The action that triggered the change.
      */

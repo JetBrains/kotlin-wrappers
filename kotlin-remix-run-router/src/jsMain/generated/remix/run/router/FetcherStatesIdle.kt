@@ -1,7 +1,7 @@
 package remix.run.router
 
 
-external interface FetcherStatesIdle<TData> {
+sealed external interface FetcherStatesIdle<TData> {
     var state: String
     var formMethod: Nothing?
     var formAction: Nothing?

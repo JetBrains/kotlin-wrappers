@@ -5,4 +5,4 @@
 package react.router
 
 
-external interface RouteProps : react.Props /* export declare type RouteProps = PathRouteProps | LayoutRouteProps | IndexRouteProps; */
+sealed external interface RouteProps : react.Props /* export declare type RouteProps = PathRouteProps | LayoutRouteProps | IndexRouteProps; */

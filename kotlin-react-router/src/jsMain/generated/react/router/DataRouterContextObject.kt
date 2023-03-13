@@ -8,7 +8,7 @@ import remix.run.router.Router
 import remix.run.router.StaticHandlerContext
 
 
-external interface DataRouterContextObject : NavigationContextObject {
+sealed external interface DataRouterContextObject : NavigationContextObject {
     var router: Router
     var staticContext: StaticHandlerContext?
 }

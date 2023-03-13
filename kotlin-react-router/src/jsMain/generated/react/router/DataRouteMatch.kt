@@ -5,4 +5,4 @@
 package react.router
 
 
-external interface DataRouteMatch : RouteMatch<DataRouteObject>
+sealed external interface DataRouteMatch : RouteMatch<DataRouteObject>

@@ -10,7 +10,7 @@ import remix.run.router.LoaderFunction
 import remix.run.router.ShouldRevalidateFunction
 
 
-external interface IndexRouteProps : react.Props {
+sealed external interface IndexRouteProps : react.Props {
     var caseSensitive: Boolean?
     var path: String?
     var id: String?

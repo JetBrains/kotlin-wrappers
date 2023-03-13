@@ -10,7 +10,7 @@ import web.http.Headers
  * State returned from a server-side query() call
  */
 
-external interface StaticHandlerContext {
+sealed external interface StaticHandlerContext {
     var basename: String?
     var location: Location
     var matches: js.core.ReadonlyArray<AgnosticDataRouteMatch>

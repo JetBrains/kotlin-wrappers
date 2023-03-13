@@ -5,7 +5,7 @@
 package remix.run.router
 
 
-external interface MemoryHistoryOptions {
+sealed external interface MemoryHistoryOptions {
     var initialEntries: js.core.ReadonlyArray<InitialEntry>?
     var initialIndex: Double?
     var v5Compat: Boolean?

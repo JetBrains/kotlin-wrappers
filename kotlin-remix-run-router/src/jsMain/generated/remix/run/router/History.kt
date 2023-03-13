@@ -15,7 +15,7 @@ import web.url.URL
  * focused API.
  */
 
-external interface History {
+sealed external interface History {
     /**
      * The last action that modified the current location. This will always be
      * Action.Pop when a history instance is first created. This value is mutable.

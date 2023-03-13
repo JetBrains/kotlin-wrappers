@@ -18,7 +18,11 @@ module.exports = function (node, context, render) {
         ts.isInterfaceDeclaration(node)
         && node.name.text.endsWith("Props")
     ) {
+        const inheritanceModifierService = context.lookupService(karakum.inheritanceModifierServiceKey)
+
         const name = render(node.name)
+
+        const inheritanceModifier = inheritanceModifierService?.resolveInheritanceModifier(node, context)
 
         const heritageClauses = node.heritageClauses
             ?.map(heritageClause => render(heritageClause))
@@ -70,7 +74,7 @@ module.exports = function (node, context, render) {
         }
 
         return `
-external interface ${name} : ${parentType}${karakum.ifPresent(heritageClauses, it => `, ${it}`)} {
+${karakum.ifPresent(inheritanceModifier, it => `${it} `)}external interface ${name} : ${parentType}${karakum.ifPresent(heritageClauses, it => `, ${it}`)} {
 ${members}
 }
         `
