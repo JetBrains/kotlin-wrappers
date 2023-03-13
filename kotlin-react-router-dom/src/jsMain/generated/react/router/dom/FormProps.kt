@@ -9,7 +9,7 @@ import remix.run.router.FormMethod
 import web.html.HTMLFormElement
 
 
-external interface FormProps : react.Props, react.PropsWithRef<HTMLFormElement>, react.dom.html.FormHTMLAttributes<HTMLFormElement> {
+sealed external interface FormProps : react.Props, react.PropsWithRef<HTMLFormElement>, react.dom.html.FormHTMLAttributes<HTMLFormElement> {
     /**
      * The HTTP verb to use when the form is submit. Supports "get", "post",
      * "put", "delete", "patch".

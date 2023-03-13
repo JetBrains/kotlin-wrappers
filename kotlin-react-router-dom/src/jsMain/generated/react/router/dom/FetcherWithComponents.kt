@@ -8,7 +8,7 @@ import react.ForwardRefExoticComponent
 import remix.run.router.Fetcher
 
 
-external interface FetcherWithComponents<TData> : Fetcher<TData> {
+sealed external interface FetcherWithComponents<TData> : Fetcher<TData> {
     var Form: ForwardRefExoticComponent<FormProps>
     var submit: (target: SubmitTarget, options: SubmitOptions? /* use undefined for default */) -> Unit
     var load: (href: String) -> Unit

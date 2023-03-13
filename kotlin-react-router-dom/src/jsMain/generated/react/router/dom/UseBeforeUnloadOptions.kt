@@ -1,6 +1,6 @@
 package react.router.dom
 
 
-external interface UseBeforeUnloadOptions {
+sealed external interface UseBeforeUnloadOptions {
     var capture: Boolean?
 }

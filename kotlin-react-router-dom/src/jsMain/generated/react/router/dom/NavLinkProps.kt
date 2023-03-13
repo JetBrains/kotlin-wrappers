@@ -7,7 +7,7 @@ package react.router.dom
 import web.html.HTMLAnchorElement
 
 
-external interface NavLinkProps : react.Props, react.PropsWithRef<HTMLAnchorElement>, LinkProps {
+sealed external interface NavLinkProps : react.Props, react.PropsWithRef<HTMLAnchorElement>, LinkProps {
     @JsName("children")
     var childrenFn: ((props: NavLinkOptions) -> react.ReactNode)?
     var caseSensitive: Boolean?

@@ -9,7 +9,7 @@ import remix.run.router.FormEncType
 import remix.run.router.FormMethod
 
 
-external interface SubmitOptions {
+sealed external interface SubmitOptions {
     /**
      * The HTTP method used to submit the form. Overrides `<form method>`.
      * Defaults to "GET".
