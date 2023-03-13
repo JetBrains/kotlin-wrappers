@@ -1,4 +1,5 @@
 const ts = require("typescript");
+const karakum = require("karakum");
 
 module.exports = {
     setup(context) {
@@ -30,12 +31,16 @@ module.exports = {
             ts.isTypeAliasDeclaration(node)
             && node.name.text === "RouteObject"
         ) {
+            const inheritanceModifierService = context.lookupService(karakum.inheritanceModifierServiceKey)
+
+            const inheritanceModifier = inheritanceModifierService?.resolveInheritanceModifier(node, context)
+
             const members = this.sourceRouteObjectNode.members
                 .map(member => next(member))
                 .join("\n")
 
             return `
-external interface RouteObject {
+${karakum.ifPresent(inheritanceModifier, it => `${it} `)}external interface RouteObject {
 ${members}
 }
             `

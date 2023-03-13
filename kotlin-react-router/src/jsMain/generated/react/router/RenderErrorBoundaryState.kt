@@ -7,7 +7,7 @@ package react.router
 import remix.run.router.Location
 
 
-external interface RenderErrorBoundaryState {
+sealed external interface RenderErrorBoundaryState {
     var location: Location
     var error: Any?
 }

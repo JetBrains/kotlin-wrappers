@@ -5,4 +5,4 @@
 package react.router
 
 
-external interface LayoutRouteProps : react.Props, PathRouteProps
+sealed external interface LayoutRouteProps : react.Props, PathRouteProps

@@ -1,6 +1,6 @@
 package react.router
 
 
-external interface UseResolvedPathOptions {
+sealed external interface UseResolvedPathOptions {
     var relative: RelativeRoutingType?
 }

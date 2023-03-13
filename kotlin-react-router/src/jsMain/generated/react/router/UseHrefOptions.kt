@@ -1,6 +1,6 @@
 package react.router
 
 
-external interface UseHrefOptions {
+sealed external interface UseHrefOptions {
     var relative: RelativeRoutingType?
 }

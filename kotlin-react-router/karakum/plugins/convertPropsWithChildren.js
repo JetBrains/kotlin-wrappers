@@ -1,4 +1,5 @@
 const ts = require("typescript");
+const karakum = require("karakum");
 
 module.exports = function (node, context, render) {
     if (
@@ -10,14 +11,18 @@ module.exports = function (node, context, render) {
         && node.type.typeArguments !== undefined
         && ts.isTypeLiteralNode(node.type.typeArguments[0])
     ) {
+        const inheritanceModifierService = context.lookupService(karakum.inheritanceModifierServiceKey)
+
         const name = render(node.name)
+
+        const inheritanceModifier = inheritanceModifierService?.resolveInheritanceModifier(node, context)
 
         const members = node.type.typeArguments[0].members
             .map(member => render(member))
             .join("\n")
 
         return `
-external interface ${name} : react.PropsWithChildren {
+${karakum.ifPresent(inheritanceModifier, it => `${it} `)}external interface ${name} : react.PropsWithChildren {
 ${members}
 }
         `

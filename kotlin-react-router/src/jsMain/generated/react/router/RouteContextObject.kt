@@ -5,7 +5,7 @@
 package react.router
 
 
-external interface RouteContextObject {
+sealed external interface RouteContextObject {
     var outlet: react.ReactElement<*>?
     var matches: js.core.ReadonlyArray<RouteMatch<*>>
 }

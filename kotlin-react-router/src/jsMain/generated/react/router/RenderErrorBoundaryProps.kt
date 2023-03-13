@@ -7,7 +7,7 @@ package react.router
 import remix.run.router.Location
 
 
-external interface RenderErrorBoundaryProps : react.PropsWithChildren {
+sealed external interface RenderErrorBoundaryProps : react.PropsWithChildren {
     var location: Location
     var error: Any?
     var component: react.ReactNode

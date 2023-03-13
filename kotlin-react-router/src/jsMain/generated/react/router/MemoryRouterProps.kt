@@ -7,7 +7,7 @@ package react.router
 import remix.run.router.InitialEntry
 
 
-external interface MemoryRouterProps : react.PropsWithChildren {
+sealed external interface MemoryRouterProps : react.PropsWithChildren {
     var basename: String?
     var initialEntries: js.core.ReadonlyArray<InitialEntry>?
     var initialIndex: Double?

@@ -17,7 +17,7 @@ import remix.run.router.To
  * and/or location were to be read directly from the history instance.
  */
 
-external interface Navigator {
+sealed external interface Navigator {
     var createHref: (to: To) -> String
     var encodeLocation: (to: To) -> Path?
     var go: (delta: Double) -> Unit

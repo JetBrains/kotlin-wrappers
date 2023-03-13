@@ -3,7 +3,7 @@ package react.router
 import remix.run.router.Params
 
 
-external interface UseMatchesResultItem {
+sealed external interface UseMatchesResultItem {
     var id: String
     var pathname: String
     var params: Params

@@ -10,7 +10,7 @@ import remix.run.router.LoaderFunction
 import remix.run.router.ShouldRevalidateFunction
 
 
-external interface PathRouteProps : react.PropsWithChildren {
+sealed external interface PathRouteProps : react.PropsWithChildren {
     var caseSensitive: Boolean?
     var path: String?
     var id: String?
