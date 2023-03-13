@@ -9,7 +9,7 @@ package remix.run.router
  * A PathPattern is used to match on some portion of a URL pathname.
  */
 
-external interface PathPattern {
+sealed external interface PathPattern {
     /**
      * A string to match against a URL pathname. May contain `:id`-style segments
      * to indicate placeholders for dynamic parameters. May also end with `&#47;*` to

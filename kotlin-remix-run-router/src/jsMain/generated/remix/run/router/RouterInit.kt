@@ -9,7 +9,7 @@ package remix.run.router
  * Initialization options for createRouter
  */
 
-external interface RouterInit {
+sealed external interface RouterInit {
     var basename: String?
     var routes: js.core.ReadonlyArray<AgnosticRouteObject>
     var history: History

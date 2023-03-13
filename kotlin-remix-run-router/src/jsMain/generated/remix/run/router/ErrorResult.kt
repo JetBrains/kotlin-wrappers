@@ -10,7 +10,7 @@ import web.http.Headers
  * Unsuccessful result from a loader or action
  */
 
-external interface ErrorResult {
+sealed external interface ErrorResult {
     var type: ResultType /* ResultType.error */
     var error: Any?
     var headers: Headers?

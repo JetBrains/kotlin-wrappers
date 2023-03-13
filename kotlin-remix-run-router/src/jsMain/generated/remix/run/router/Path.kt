@@ -9,7 +9,7 @@ package remix.run.router
  * The pathname, search, and hash values of a URL.
  */
 
-external interface Path {
+sealed external interface Path {
     /**
      * A URL pathname, beginning with a /.
      */

@@ -9,7 +9,7 @@ package remix.run.router
  * A RouteMatch contains info about how a route matched a URL.
  */
 
-external interface AgnosticRouteMatch<RouteObjectType : AgnosticRouteObject /* default is AgnosticRouteObject */> {
+sealed external interface AgnosticRouteMatch<RouteObjectType : AgnosticRouteObject /* default is AgnosticRouteObject */> {
     /**
      * The names and values of dynamic parameters in the URL.
      */

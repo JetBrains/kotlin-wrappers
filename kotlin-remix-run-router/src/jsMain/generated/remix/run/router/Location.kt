@@ -10,7 +10,7 @@ package remix.run.router
  * URL path, as well as possibly some arbitrary state and a key.
  */
 
-external interface Location : Path {
+sealed external interface Location : Path {
     /**
      * A value of arbitrary data associated with this location.
      */

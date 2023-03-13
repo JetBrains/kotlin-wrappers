@@ -9,7 +9,7 @@ package remix.run.router
  * Potential states for fetchers
  */
 
-external interface FetcherStates<TData /* default is Any? */> {
+sealed external interface FetcherStates<TData /* default is Any? */> {
     var Idle: FetcherStatesIdle<TData>
     var Loading: FetcherStatesLoading<TData>
     var Submitting: FetcherStatesSubmitting<TData>

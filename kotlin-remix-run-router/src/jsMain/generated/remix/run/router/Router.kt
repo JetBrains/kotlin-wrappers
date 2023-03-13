@@ -12,7 +12,7 @@ import kotlin.js.Promise
  * A Router instance manages all navigation and data loading/mutations
  */
 
-external interface Router {
+sealed external interface Router {
     /**
      * @internal
      * PRIVATE - DO NOT USE

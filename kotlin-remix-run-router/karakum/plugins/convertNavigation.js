@@ -7,8 +7,11 @@ module.exports = function (node, context) {
         && node.name.text === "Navigation"
     ) {
         const typeScriptService = context.lookupService(karakum.typeScriptServiceKey)
+        const inheritanceModifierService = context.lookupService(karakum.inheritanceModifierServiceKey)
 
-        return `external interface Navigation /* ${typeScriptService?.printNode(node)} */`
+        const inheritanceModifier = inheritanceModifierService?.resolveInheritanceModifier(node, context)
+
+        return `${karakum.ifPresent(inheritanceModifier, it => `${it} `)}external interface Navigation /* ${typeScriptService?.printNode(node)} */`
     }
     return null
 }

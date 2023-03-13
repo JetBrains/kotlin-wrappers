@@ -12,7 +12,7 @@ import web.http.FormData
  * external consumption
  */
 
-external interface Submission {
+sealed external interface Submission {
     var formMethod: FormMethod
     var formAction: String
     var formEncType: FormEncType

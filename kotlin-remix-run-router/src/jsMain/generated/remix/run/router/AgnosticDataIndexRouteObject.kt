@@ -5,6 +5,6 @@
 package remix.run.router
 
 
-external interface AgnosticDataIndexRouteObject : AgnosticIndexRouteObject {
+sealed external interface AgnosticDataIndexRouteObject : AgnosticIndexRouteObject {
     override var id: String?
 }

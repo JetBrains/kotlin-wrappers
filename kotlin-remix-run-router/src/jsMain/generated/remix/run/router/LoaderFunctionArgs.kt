@@ -9,4 +9,4 @@ package remix.run.router
  * Arguments passed to loader functions
  */
 
-external interface LoaderFunctionArgs : DataFunctionArgs
+sealed external interface LoaderFunctionArgs : DataFunctionArgs

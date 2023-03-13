@@ -1,6 +1,6 @@
 package remix.run.router
 
 
-external interface StaticHandlerQueryOpts {
+sealed external interface StaticHandlerQueryOpts {
     var requestContext: Any?
 }

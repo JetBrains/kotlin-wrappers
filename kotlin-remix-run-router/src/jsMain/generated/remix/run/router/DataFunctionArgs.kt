@@ -12,7 +12,7 @@ import web.http.Request
  * this as a private implementation detail in case they diverge in the future.
  */
 
-external interface DataFunctionArgs {
+sealed external interface DataFunctionArgs {
     var request: Request
     var params: Params
     var context: Any?

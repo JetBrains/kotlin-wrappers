@@ -9,6 +9,6 @@ package remix.run.router
  * Map of routeId -> data returned from a loader/action/error
  */
 
-external interface RouteData {
+sealed external interface RouteData {
     /* [routeId: string]: any; */
 }

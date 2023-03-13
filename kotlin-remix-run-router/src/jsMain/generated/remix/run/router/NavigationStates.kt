@@ -9,7 +9,7 @@ package remix.run.router
  * Potential states for state.navigation
  */
 
-external interface NavigationStates {
+sealed external interface NavigationStates {
     var Idle: NavigationStatesIdle
     var Loading: NavigationStatesLoading
     var Submitting: NavigationStatesSubmitting

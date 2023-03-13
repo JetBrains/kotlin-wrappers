@@ -9,7 +9,7 @@ package remix.run.router
  * Index routes must not have children
  */
 
-external interface AgnosticIndexRouteObject : AgnosticBaseRouteObject {
+sealed external interface AgnosticIndexRouteObject : AgnosticBaseRouteObject {
     var children: Nothing?
     var index: Boolean
 }

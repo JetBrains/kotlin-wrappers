@@ -16,4 +16,4 @@ package remix.run.router
  * @see https://github.com/remix-run/history/tree/main/docs/api-reference.md#hashhistory
  */
 
-external interface HashHistory : UrlHistory
+sealed external interface HashHistory : UrlHistory

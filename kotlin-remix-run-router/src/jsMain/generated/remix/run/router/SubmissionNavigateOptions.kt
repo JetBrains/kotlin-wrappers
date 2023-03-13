@@ -10,7 +10,7 @@ import web.http.FormData
  * Options for a navigate() call for a Form navigation
  */
 
-external interface SubmissionNavigateOptions {
+sealed external interface SubmissionNavigateOptions {
     var replace: Boolean?
     var state: LocationState?
     var preventScrollReset: Boolean?

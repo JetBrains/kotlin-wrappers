@@ -5,7 +5,7 @@
 package remix.run.router
 
 
-external interface UseMatchesMatch {
+sealed external interface UseMatchesMatch {
     var id: String
     var pathname: String
     var params: Params

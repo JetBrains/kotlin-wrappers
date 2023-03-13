@@ -9,7 +9,7 @@ package remix.run.router
  * Redirect result from a loader or action
  */
 
-external interface RedirectResult {
+sealed external interface RedirectResult {
     var type: ResultType /* ResultType.redirect */
     var status: Double
     var location: String

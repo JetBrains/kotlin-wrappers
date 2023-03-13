@@ -9,4 +9,4 @@ package remix.run.router
  * Arguments passed to action functions
  */
 
-external interface ActionFunctionArgs : DataFunctionArgs
+sealed external interface ActionFunctionArgs : DataFunctionArgs

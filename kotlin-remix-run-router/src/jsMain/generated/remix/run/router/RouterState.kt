@@ -11,7 +11,7 @@ import remix.run.router.Action as HistoryAction
  * reflect the the "old" location unless otherwise noted.
  */
 
-external interface RouterState {
+sealed external interface RouterState {
     /**
      * The action of the most recent navigation
      */
