@@ -50,6 +50,9 @@
         "FetcherStatesSubmitting.kt": [
             "web.http.FormData"
         ],
+        "LazyRouteFunction.kt": [
+            "kotlin.js.Promise"
+        ],
         "NavigationStatesLoading.kt": [
             "web.http.FormData"
         ],

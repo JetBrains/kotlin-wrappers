@@ -6,7 +6,6 @@
         "**/@types/react/**",
         "**/@types/scheduler/**",
         "**/csstype/**",
-
         "**/react-router/dist/lib/use-sync-external-store-shim/**"
     ],
     "output": "src/jsMain/generated",
@@ -45,7 +44,8 @@
         "IndexRouteProps.kt": [
             "remix.run.router.LoaderFunction",
             "remix.run.router.ActionFunction",
-            "remix.run.router.ShouldRevalidateFunction"
+            "remix.run.router.ShouldRevalidateFunction",
+            "remix.run.router.LazyRouteFunction"
         ],
         "LocationContextObject.kt": [
             "remix.run.router.Location",
@@ -67,7 +67,8 @@
         "PathRouteProps.kt": [
             "remix.run.router.LoaderFunction",
             "remix.run.router.ActionFunction",
-            "remix.run.router.ShouldRevalidateFunction"
+            "remix.run.router.ShouldRevalidateFunction",
+            "remix.run.router.LazyRouteFunction"
         ],
         "RenderErrorBoundaryProps.kt": [
             "remix.run.router.Location"
@@ -81,7 +82,8 @@
         "RouteObject.kt": [
             "remix.run.router.LoaderFunction",
             "remix.run.router.ActionFunction",
-            "remix.run.router.ShouldRevalidateFunction"
+            "remix.run.router.ShouldRevalidateFunction",
+            "remix.run.router.LazyRouteFunction"
         ],
         "RouterProps.kt": [
             "remix.run.router.Action as NavigationType"

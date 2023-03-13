@@ -22,5 +22,16 @@ module.exports = function (node, context, render) {
     ) {
         return `${render(node.typeName)}<*>`
     }
+    if (
+        ts.isTypeReferenceNode(node)
+        && ts.isQualifiedName(node.typeName)
+        && ts.isIdentifier(node.typeName.right)
+        && (
+            node.typeName.right.text === "ComponentType"
+        )
+        && !node.typeArguments
+    ) {
+        return `${render(node.typeName)}<*>`
+    }
     return null
 }
