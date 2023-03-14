@@ -45,12 +45,12 @@ sealed external class Verify : Writable {
      * @since v0.1.92
      */
     fun verify(
-        o: Any, /* KeyLike | VerifyKeyObjectInput | VerifyPublicKeyInput */
+        o: Any, /* KeyLike | VerifyKeyObjectInput | VerifyPublicKeyInput | VerifyJsonWebKeyInput */
         signature: ArrayBufferView,
     ): Boolean
 
     fun verify(
-        o: Any, /* KeyLike | VerifyKeyObjectInput | VerifyPublicKeyInput */
+        o: Any, /* KeyLike | VerifyKeyObjectInput | VerifyPublicKeyInput | VerifyJsonWebKeyInput */
         signature: String,
         signature_format: BinaryToTextEncoding = definedExternally,
     ): Boolean

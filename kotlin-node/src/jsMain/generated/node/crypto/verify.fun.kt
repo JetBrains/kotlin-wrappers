@@ -25,7 +25,7 @@ import js.buffer.ArrayBufferView
 external fun verify(
     algorithm: String?,
     data: ArrayBufferView,
-    key: Any, /* KeyLike | VerifyKeyObjectInput | VerifyPublicKeyInput */
+    key: Any, /* KeyLike | VerifyKeyObjectInput | VerifyPublicKeyInput | VerifyJsonWebKeyInput */
     signature: ArrayBufferView,
 ): Boolean
 
@@ -49,7 +49,7 @@ external fun verify(
 external fun verify(
     algorithm: String?,
     data: ArrayBufferView,
-    key: Any, /* KeyLike | VerifyKeyObjectInput | VerifyPublicKeyInput */
+    key: Any, /* KeyLike | VerifyKeyObjectInput | VerifyPublicKeyInput | VerifyJsonWebKeyInput */
     signature: ArrayBufferView,
     callback: (
         error: Error?,
