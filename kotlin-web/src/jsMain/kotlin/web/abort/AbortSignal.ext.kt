@@ -22,7 +22,7 @@ fun AbortSignal.Companion.any(signals: ReadonlyArray<AbortSignal>): AbortSignal 
 
     for (signal in signals) {
         if (signal.aborted) {
-            onAbort.invoke()
+            onAbort()
             break
         }
 
