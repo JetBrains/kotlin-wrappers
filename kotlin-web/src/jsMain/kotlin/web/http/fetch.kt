@@ -3,6 +3,8 @@ package web.http
 import js.core.jso
 import kotlinx.coroutines.suspendCancellableCoroutine
 import web.abort.AbortController
+import web.abort.AbortSignal
+import web.abort.any
 import web.url.URL
 import kotlin.coroutines.resume
 import kotlin.coroutines.resumeWithException
@@ -17,10 +19,12 @@ suspend fun fetch(
             controller.abort()
         }
 
+        val signals = arrayOf(input.signal, controller.signal)
+
         val request = Request(
             input = input,
             init = jso {
-                signal = controller.signal
+                signal = AbortSignal.any(signals)
             }
         )
 
