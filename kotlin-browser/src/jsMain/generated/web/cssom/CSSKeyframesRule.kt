@@ -2,8 +2,11 @@
 
 package web.cssom
 
+import js.core.JsIterable
+
 sealed external class CSSKeyframesRule :
-    CSSRule {
+    CSSRule,
+    JsIterable<CSSKeyframeRule> {
     val cssRules: CSSRuleList
     var name: String
     fun appendRule(rule: String)
