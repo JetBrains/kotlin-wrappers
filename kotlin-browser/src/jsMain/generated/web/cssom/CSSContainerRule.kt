@@ -3,4 +3,7 @@
 package web.cssom
 
 sealed external class CSSContainerRule :
-    CSSConditionRule
+    CSSConditionRule {
+    val containerName: String
+    val containerQuery: String
+}
