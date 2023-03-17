@@ -3,8 +3,10 @@
 package web.cssom
 
 import js.core.ArrayLike
+import js.core.JsIterable
 
 sealed external class CSSNumericArray :
-    ArrayLike<CSSNumericValue> {
+    ArrayLike<CSSNumericValue>,
+    JsIterable<CSSNumericValue> {
     fun forEach(action: (item: CSSNumericValue) -> Unit)
 }
