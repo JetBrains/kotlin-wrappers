@@ -8,6 +8,7 @@ package web.workers
 
 import web.media.capabilities.MediaCapabilities
 import web.navigator.*
+import web.permissions.Permissions
 
 sealed external class WorkerNavigator :
     NavigatorConcurrentHardware,
@@ -17,4 +18,5 @@ sealed external class WorkerNavigator :
     NavigatorOnLine,
     NavigatorStorage {
     val mediaCapabilities: MediaCapabilities
+    val permissions: Permissions
 }
