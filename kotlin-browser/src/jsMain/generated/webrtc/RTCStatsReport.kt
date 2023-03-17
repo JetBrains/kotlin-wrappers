@@ -2,6 +2,9 @@
 
 package webrtc
 
-sealed external class RTCStatsReport {
+import js.collections.ReadonlyMap
+
+sealed external class RTCStatsReport :
+    ReadonlyMap<String, Any?> {
     fun forEach(action: (item: Any?) -> Unit)
 }

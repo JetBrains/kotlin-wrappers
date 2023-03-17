@@ -2,6 +2,9 @@
 
 package web.midi
 
-sealed external class MIDIInputMap {
+import js.collections.ReadonlyMap
+
+sealed external class MIDIInputMap :
+    ReadonlyMap<String, MIDIInput> {
     fun forEach(action: (item: MIDIInput) -> Unit)
 }

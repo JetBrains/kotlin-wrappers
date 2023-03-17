@@ -2,6 +2,9 @@
 
 package web.audio
 
-sealed external class AudioParamMap {
+import js.collections.ReadonlyMap
+
+sealed external class AudioParamMap :
+    ReadonlyMap<String, AudioParam> {
     fun forEach(action: (item: AudioParam) -> Unit)
 }
