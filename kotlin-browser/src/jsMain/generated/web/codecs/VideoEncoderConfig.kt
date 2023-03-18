@@ -6,7 +6,7 @@ sealed external interface VideoEncoderConfig {
     var alpha: AlphaOption?
     var avc: AvcEncoderConfig?
     var bitrate: Int?
-    var bitrateMode: BitrateMode?
+    var bitrateMode: VideoEncoderBitrateMode?
     var codec: String
     var displayHeight: Int?
     var displayWidth: Int?

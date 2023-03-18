@@ -7,9 +7,10 @@
 package web.codecs
 
 // language=JavaScript
-@JsName("""(/*union*/{constant: 'constant', variable: 'variable'}/*union*/)""")
-external enum class BitrateMode {
+@JsName("""(/*union*/{constant: 'constant', quantizer: 'quantizer', variable: 'variable'}/*union*/)""")
+external enum class VideoEncoderBitrateMode {
     constant,
+    quantizer,
     variable,
 
     ;
