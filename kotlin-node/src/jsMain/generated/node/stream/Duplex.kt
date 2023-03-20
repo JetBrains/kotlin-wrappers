@@ -4,6 +4,9 @@
 
 package node.stream
 
+import node.events.Event
+import node.events.EventType
+
 open external class Duplex : Readable /* , Writable */ {
     open val writable: Boolean
     open val writableEnded: Boolean
@@ -79,6 +82,413 @@ open external class Duplex : Readable /* , Writable */ {
 
     open fun cork()
     open fun uncork()
+
+    /**
+     * Event emitter
+     * The defined events on documents including:
+     * 1.  close
+     * 2.  data
+     * 3.  drain
+     * 4.  end
+     * 5.  error
+     * 6.  finish
+     * 7.  pause
+     * 8.  pipe
+     * 9.  readable
+     * 10. resume
+     * 11. unpipe
+     */
+    override fun addListener(
+        event: Event.CLOSE,
+        listener: () -> Unit,
+    ) /* : this */
+
+    override fun addListener(
+        event: Event.DATA,
+        listener: (chunk: Any) -> Unit,
+    ) /* : this */
+
+    open fun addListener(
+        event: Event.DRAIN,
+        listener: () -> Unit,
+    ) /* : this */
+
+    override fun addListener(
+        event: Event.END,
+        listener: () -> Unit,
+    ) /* : this */
+
+    override fun addListener(
+        event: Event.ERROR,
+        listener: (error: Error) -> Unit,
+    ) /* : this */
+
+    open fun addListener(
+        event: Event.FINISH,
+        listener: () -> Unit,
+    ) /* : this */
+
+    override fun addListener(
+        event: Event.PAUSE,
+        listener: () -> Unit,
+    ) /* : this */
+
+    open fun addListener(
+        event: Event.PIPE,
+        listener: (src: Readable) -> Unit,
+    ) /* : this */
+
+    override fun addListener(
+        event: Event.READABLE,
+        listener: () -> Unit,
+    ) /* : this */
+
+    override fun addListener(
+        event: Event.RESUME,
+        listener: () -> Unit,
+    ) /* : this */
+
+    open fun addListener(
+        event: Event.UNPIPE,
+        listener: (src: Readable) -> Unit,
+    ) /* : this */
+
+    override fun addListener(
+        event: EventType,
+        listener: Function<Unit>,
+    ) /* : this */
+
+    override fun emit(event: Event.CLOSE): Boolean
+    override fun emit(
+        event: Event.DATA,
+        chunk: Any,
+    ): Boolean
+
+    open fun emit(event: Event.DRAIN): Boolean
+    override fun emit(event: Event.END): Boolean
+    override fun emit(
+        event: Event.ERROR,
+        err: Error,
+    ): Boolean
+
+    open fun emit(event: Event.FINISH): Boolean
+    override fun emit(event: Event.PAUSE): Boolean
+    open fun emit(
+        event: Event.PIPE,
+        src: Readable,
+    ): Boolean
+
+    override fun emit(event: Event.READABLE): Boolean
+    override fun emit(event: Event.RESUME): Boolean
+    open fun emit(
+        event: Event.UNPIPE,
+        src: Readable,
+    ): Boolean
+
+    override fun emit(
+        event: EventType,
+        vararg args: Any,
+    ): Boolean
+
+    override fun on(
+        event: Event.CLOSE,
+        listener: () -> Unit,
+    ) /* : this */
+
+    override fun on(
+        event: Event.DATA,
+        listener: (chunk: Any) -> Unit,
+    ) /* : this */
+
+    open fun on(
+        event: Event.DRAIN,
+        listener: () -> Unit,
+    ) /* : this */
+
+    override fun on(
+        event: Event.END,
+        listener: () -> Unit,
+    ) /* : this */
+
+    override fun on(
+        event: Event.ERROR,
+        listener: (error: Error) -> Unit,
+    ) /* : this */
+
+    open fun on(
+        event: Event.FINISH,
+        listener: () -> Unit,
+    ) /* : this */
+
+    override fun on(
+        event: Event.PAUSE,
+        listener: () -> Unit,
+    ) /* : this */
+
+    open fun on(
+        event: Event.PIPE,
+        listener: (src: Readable) -> Unit,
+    ) /* : this */
+
+    override fun on(
+        event: Event.READABLE,
+        listener: () -> Unit,
+    ) /* : this */
+
+    override fun on(
+        event: Event.RESUME,
+        listener: () -> Unit,
+    ) /* : this */
+
+    open fun on(
+        event: Event.UNPIPE,
+        listener: (src: Readable) -> Unit,
+    ) /* : this */
+
+    override fun on(
+        event: EventType,
+        listener: Function<Unit>,
+    ) /* : this */
+
+    override fun once(
+        event: Event.CLOSE,
+        listener: () -> Unit,
+    ) /* : this */
+
+    override fun once(
+        event: Event.DATA,
+        listener: (chunk: Any) -> Unit,
+    ) /* : this */
+
+    open fun once(
+        event: Event.DRAIN,
+        listener: () -> Unit,
+    ) /* : this */
+
+    override fun once(
+        event: Event.END,
+        listener: () -> Unit,
+    ) /* : this */
+
+    override fun once(
+        event: Event.ERROR,
+        listener: (error: Error) -> Unit,
+    ) /* : this */
+
+    open fun once(
+        event: Event.FINISH,
+        listener: () -> Unit,
+    ) /* : this */
+
+    override fun once(
+        event: Event.PAUSE,
+        listener: () -> Unit,
+    ) /* : this */
+
+    open fun once(
+        event: Event.PIPE,
+        listener: (src: Readable) -> Unit,
+    ) /* : this */
+
+    override fun once(
+        event: Event.READABLE,
+        listener: () -> Unit,
+    ) /* : this */
+
+    override fun once(
+        event: Event.RESUME,
+        listener: () -> Unit,
+    ) /* : this */
+
+    open fun once(
+        event: Event.UNPIPE,
+        listener: (src: Readable) -> Unit,
+    ) /* : this */
+
+    override fun once(
+        event: EventType,
+        listener: Function<Unit>,
+    ) /* : this */
+
+    override fun prependListener(
+        event: Event.CLOSE,
+        listener: () -> Unit,
+    ) /* : this */
+
+    override fun prependListener(
+        event: Event.DATA,
+        listener: (chunk: Any) -> Unit,
+    ) /* : this */
+
+    open fun prependListener(
+        event: Event.DRAIN,
+        listener: () -> Unit,
+    ) /* : this */
+
+    override fun prependListener(
+        event: Event.END,
+        listener: () -> Unit,
+    ) /* : this */
+
+    override fun prependListener(
+        event: Event.ERROR,
+        listener: (error: Error) -> Unit,
+    ) /* : this */
+
+    open fun prependListener(
+        event: Event.FINISH,
+        listener: () -> Unit,
+    ) /* : this */
+
+    override fun prependListener(
+        event: Event.PAUSE,
+        listener: () -> Unit,
+    ) /* : this */
+
+    open fun prependListener(
+        event: Event.PIPE,
+        listener: (src: Readable) -> Unit,
+    ) /* : this */
+
+    override fun prependListener(
+        event: Event.READABLE,
+        listener: () -> Unit,
+    ) /* : this */
+
+    override fun prependListener(
+        event: Event.RESUME,
+        listener: () -> Unit,
+    ) /* : this */
+
+    open fun prependListener(
+        event: Event.UNPIPE,
+        listener: (src: Readable) -> Unit,
+    ) /* : this */
+
+    override fun prependListener(
+        event: EventType,
+        listener: Function<Unit>,
+    ) /* : this */
+
+    override fun prependOnceListener(
+        event: Event.CLOSE,
+        listener: () -> Unit,
+    ) /* : this */
+
+    override fun prependOnceListener(
+        event: Event.DATA,
+        listener: (chunk: Any) -> Unit,
+    ) /* : this */
+
+    open fun prependOnceListener(
+        event: Event.DRAIN,
+        listener: () -> Unit,
+    ) /* : this */
+
+    override fun prependOnceListener(
+        event: Event.END,
+        listener: () -> Unit,
+    ) /* : this */
+
+    override fun prependOnceListener(
+        event: Event.ERROR,
+        listener: (error: Error) -> Unit,
+    ) /* : this */
+
+    open fun prependOnceListener(
+        event: Event.FINISH,
+        listener: () -> Unit,
+    ) /* : this */
+
+    override fun prependOnceListener(
+        event: Event.PAUSE,
+        listener: () -> Unit,
+    ) /* : this */
+
+    open fun prependOnceListener(
+        event: Event.PIPE,
+        listener: (src: Readable) -> Unit,
+    ) /* : this */
+
+    override fun prependOnceListener(
+        event: Event.READABLE,
+        listener: () -> Unit,
+    ) /* : this */
+
+    override fun prependOnceListener(
+        event: Event.RESUME,
+        listener: () -> Unit,
+    ) /* : this */
+
+    open fun prependOnceListener(
+        event: Event.UNPIPE,
+        listener: (src: Readable) -> Unit,
+    ) /* : this */
+
+    override fun prependOnceListener(
+        event: EventType,
+        listener: Function<Unit>,
+    ) /* : this */
+
+    override fun removeListener(
+        event: Event.CLOSE,
+        listener: () -> Unit,
+    ) /* : this */
+
+    override fun removeListener(
+        event: Event.DATA,
+        listener: (chunk: Any) -> Unit,
+    ) /* : this */
+
+    open fun removeListener(
+        event: Event.DRAIN,
+        listener: () -> Unit,
+    ) /* : this */
+
+    override fun removeListener(
+        event: Event.END,
+        listener: () -> Unit,
+    ) /* : this */
+
+    override fun removeListener(
+        event: Event.ERROR,
+        listener: (error: Error) -> Unit,
+    ) /* : this */
+
+    open fun removeListener(
+        event: Event.FINISH,
+        listener: () -> Unit,
+    ) /* : this */
+
+    override fun removeListener(
+        event: Event.PAUSE,
+        listener: () -> Unit,
+    ) /* : this */
+
+    open fun removeListener(
+        event: Event.PIPE,
+        listener: (src: Readable) -> Unit,
+    ) /* : this */
+
+    override fun removeListener(
+        event: Event.READABLE,
+        listener: () -> Unit,
+    ) /* : this */
+
+    override fun removeListener(
+        event: Event.RESUME,
+        listener: () -> Unit,
+    ) /* : this */
+
+    open fun removeListener(
+        event: Event.UNPIPE,
+        listener: (src: Readable) -> Unit,
+    ) /* : this */
+
+    override fun removeListener(
+        event: EventType,
+        listener: Function<Unit>,
+    ) /* : this */
 
     companion object {
         /**

@@ -11,4 +11,4 @@ package node.crypto
  */
 external fun randomUUID(
     options: RandomUUIDOptions = definedExternally,
-): String
+): UUID

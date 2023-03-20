@@ -362,7 +362,7 @@ open external class Socket : Duplex {
         listener: (data: Buffer) -> Unit,
     ) /* : this */
 
-    open fun addListener(
+    override fun addListener(
         event: Event.DRAIN,
         listener: () -> Unit,
     ) /* : this */
@@ -413,7 +413,7 @@ open external class Socket : Duplex {
         data: Buffer,
     ): Boolean
 
-    open fun emit(event: Event.DRAIN): Boolean
+    override fun emit(event: Event.DRAIN): Boolean
     override fun emit(event: Event.END): Boolean
     override fun emit(
         event: Event.ERROR,
@@ -450,7 +450,7 @@ open external class Socket : Duplex {
         listener: (data: Buffer) -> Unit,
     ) /* : this */
 
-    open fun on(
+    override fun on(
         event: Event.DRAIN,
         listener: () -> Unit,
     ) /* : this */
@@ -505,7 +505,7 @@ open external class Socket : Duplex {
         listener: (data: Buffer) -> Unit,
     ) /* : this */
 
-    open fun once(
+    override fun once(
         event: Event.DRAIN,
         listener: () -> Unit,
     ) /* : this */
@@ -560,7 +560,7 @@ open external class Socket : Duplex {
         listener: (data: Buffer) -> Unit,
     ) /* : this */
 
-    open fun prependListener(
+    override fun prependListener(
         event: Event.DRAIN,
         listener: () -> Unit,
     ) /* : this */
@@ -615,7 +615,7 @@ open external class Socket : Duplex {
         listener: (data: Buffer) -> Unit,
     ) /* : this */
 
-    open fun prependOnceListener(
+    override fun prependOnceListener(
         event: Event.DRAIN,
         listener: () -> Unit,
     ) /* : this */
