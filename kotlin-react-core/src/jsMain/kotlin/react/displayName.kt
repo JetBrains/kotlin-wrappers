@@ -17,3 +17,9 @@ inline var Context<*>.displayName: String?
     set(value) {
         asDynamic().displayName = value
     }
+
+inline var RequiredContext<*>.displayName: String?
+    get() = asDynamic().displayName
+    set(value) {
+        asDynamic().displayName = value
+    }
