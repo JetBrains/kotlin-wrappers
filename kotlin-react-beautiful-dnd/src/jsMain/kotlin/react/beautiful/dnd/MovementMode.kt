@@ -1,5 +1,6 @@
 @file:Suppress(
     "NAME_CONTAINS_ILLEGAL_CHARS",
+    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package react.beautiful.dnd
@@ -9,9 +10,9 @@ package react.beautiful.dnd
 // SNAP: items move in response to commands (eg keyboard);
 // language=JavaScript
 @JsName("""(/*union*/{FLUID: 'FLUID', SNAP: 'SNAP'}/*union*/)""")
-external enum class MovementMode {
-    FLUID,
-    SNAP,
-
-    ;
+sealed external interface MovementMode {
+    companion object {
+        val FLUID: MovementMode
+        val SNAP: MovementMode
+    }
 }
