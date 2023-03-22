@@ -1,13 +1,17 @@
 // Automatically generated - do not modify!
 
+@file:Suppress(
+    "NAME_CONTAINS_ILLEGAL_CHARS",
+    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
+)
+
 package react.dom.aria
 
-@Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
 // language=JavaScript
 @JsName("""(/*union*/{horizontal: 'horizontal', vertical: 'vertical'}/*union*/)""")
-external enum class AriaOrientation {
-    horizontal,
-    vertical,
-
-    ;
+sealed external interface AriaOrientation {
+    companion object {
+        val horizontal: AriaOrientation
+        val vertical: AriaOrientation
+    }
 }

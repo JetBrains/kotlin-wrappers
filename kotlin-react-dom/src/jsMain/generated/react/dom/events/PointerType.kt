@@ -1,14 +1,18 @@
 // Automatically generated - do not modify!
 
+@file:Suppress(
+    "NAME_CONTAINS_ILLEGAL_CHARS",
+    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
+)
+
 package react.dom.events
 
-@Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
 // language=JavaScript
 @JsName("""(/*union*/{mouse: 'mouse', pen: 'pen', touch: 'touch'}/*union*/)""")
-external enum class PointerType {
-    mouse,
-    pen,
-    touch,
-
-    ;
+sealed external interface PointerType {
+    companion object {
+        val mouse: PointerType
+        val pen: PointerType
+        val touch: PointerType
+    }
 }

@@ -1,14 +1,18 @@
 // Automatically generated - do not modify!
 
+@file:Suppress(
+    "NAME_CONTAINS_ILLEGAL_CHARS",
+    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
+)
+
 package react.dom.svg
 
-@Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
 // language=JavaScript
 @JsName("""(/*union*/{nonzero: 'nonzero', evenodd: 'evenodd', inherit: 'inherit'}/*union*/)""")
-external enum class FillRule {
-    nonzero,
-    evenodd,
-    inherit,
-
-    ;
+sealed external interface FillRule {
+    companion object {
+        val nonzero: FillRule
+        val evenodd: FillRule
+        val inherit: FillRule
+    }
 }

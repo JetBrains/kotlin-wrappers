@@ -1,13 +1,17 @@
 // Automatically generated - do not modify!
 
+@file:Suppress(
+    "NAME_CONTAINS_ILLEGAL_CHARS",
+    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
+)
+
 package react.dom.html
 
-@Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
 // language=JavaScript
 @JsName("""(/*union*/{on: 'on', off: 'off'}/*union*/)""")
-external enum class Unselectable {
-    on,
-    off,
-
-    ;
+sealed external interface Unselectable {
+    companion object {
+        val on: Unselectable
+        val off: Unselectable
+    }
 }

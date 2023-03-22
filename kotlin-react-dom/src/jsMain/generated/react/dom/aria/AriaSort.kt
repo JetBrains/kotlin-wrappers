@@ -1,15 +1,19 @@
 // Automatically generated - do not modify!
 
+@file:Suppress(
+    "NAME_CONTAINS_ILLEGAL_CHARS",
+    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
+)
+
 package react.dom.aria
 
-@Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
 // language=JavaScript
 @JsName("""(/*union*/{none: 'none', ascending: 'ascending', descending: 'descending', other: 'other'}/*union*/)""")
-external enum class AriaSort {
-    none,
-    ascending,
-    descending,
-    other,
-
-    ;
+sealed external interface AriaSort {
+    companion object {
+        val none: AriaSort
+        val ascending: AriaSort
+        val descending: AriaSort
+        val other: AriaSort
+    }
 }

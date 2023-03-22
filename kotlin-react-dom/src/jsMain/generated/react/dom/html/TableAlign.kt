@@ -1,14 +1,18 @@
 // Automatically generated - do not modify!
 
+@file:Suppress(
+    "NAME_CONTAINS_ILLEGAL_CHARS",
+    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
+)
+
 package react.dom.html
 
-@Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
 // language=JavaScript
 @JsName("""(/*union*/{left: 'left', center: 'center', right: 'right'}/*union*/)""")
-external enum class TableAlign {
-    left,
-    center,
-    right,
-
-    ;
+sealed external interface TableAlign {
+    companion object {
+        val left: TableAlign
+        val center: TableAlign
+        val right: TableAlign
+    }
 }

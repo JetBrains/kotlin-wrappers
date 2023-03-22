@@ -1,15 +1,19 @@
 // Automatically generated - do not modify!
 
+@file:Suppress(
+    "NAME_CONTAINS_ILLEGAL_CHARS",
+    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
+)
+
 package react.dom.aria
 
-@Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
 // language=JavaScript
 @JsName("""(/*union*/{false: 'false', true: 'true', grammar: 'grammar', spelling: 'spelling'}/*union*/)""")
-external enum class AriaInvalid {
-    `false`,
-    `true`,
-    grammar,
-    spelling,
-
-    ;
+sealed external interface AriaInvalid {
+    companion object {
+        val `false`: AriaInvalid
+        val `true`: AriaInvalid
+        val grammar: AriaInvalid
+        val spelling: AriaInvalid
+    }
 }
