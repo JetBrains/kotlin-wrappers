@@ -2,16 +2,17 @@
 
 @file:Suppress(
     "NAME_CONTAINS_ILLEGAL_CHARS",
+    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package typescript
 
 // language=JavaScript
 @JsName("""(/*union*/{none: 'none', literals: 'literals', all: 'all'}/*union*/)""")
-external enum class IncludeInlayParameterNameHints {
-    none,
-    literals,
-    all,
-
-    ;
+sealed external interface IncludeInlayParameterNameHints {
+    companion object {
+        val none: IncludeInlayParameterNameHints
+        val literals: IncludeInlayParameterNameHints
+        val all: IncludeInlayParameterNameHints
+    }
 }

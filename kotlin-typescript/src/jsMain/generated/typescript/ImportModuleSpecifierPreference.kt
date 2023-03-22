@@ -2,17 +2,18 @@
 
 @file:Suppress(
     "NAME_CONTAINS_ILLEGAL_CHARS",
+    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package typescript
 
 // language=JavaScript
 @JsName("""(/*union*/{shortest: 'shortest', projectRelative: 'project-relative', relative: 'relative', nonRelative: 'non-relative'}/*union*/)""")
-external enum class ImportModuleSpecifierPreference {
-    shortest,
-    projectRelative,
-    relative,
-    nonRelative,
-
-    ;
+sealed external interface ImportModuleSpecifierPreference {
+    companion object {
+        val shortest: ImportModuleSpecifierPreference
+        val projectRelative: ImportModuleSpecifierPreference
+        val relative: ImportModuleSpecifierPreference
+        val nonRelative: ImportModuleSpecifierPreference
+    }
 }
