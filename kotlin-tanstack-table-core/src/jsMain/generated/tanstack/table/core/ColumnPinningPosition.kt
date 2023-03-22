@@ -1,14 +1,18 @@
 // Automatically generated - do not modify!
 
+@file:Suppress(
+    "NAME_CONTAINS_ILLEGAL_CHARS",
+    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
+)
+
 package tanstack.table.core
 
-@Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
 // language=JavaScript
 @JsName("""(/*union*/{false: 'false', left: 'left', right: 'right'}/*union*/)""")
-external enum class ColumnPinningPosition {
-    `false`,
-    left,
-    right,
-
-    ;
+sealed external interface ColumnPinningPosition {
+    companion object {
+        val `false`: ColumnPinningPosition
+        val left: ColumnPinningPosition
+        val right: ColumnPinningPosition
+    }
 }
