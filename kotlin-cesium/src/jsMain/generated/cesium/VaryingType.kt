@@ -2,6 +2,10 @@
 
 @file:JsModule("cesium")
 
+@file:Suppress(
+    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
+)
+
 package cesium
 
 /**
@@ -10,43 +14,42 @@ package cesium
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#VaryingType">Online Documentation</a>
  */
 
-external enum class VaryingType {
+sealed external interface VaryingType {
+    companion object {
 
-    /**
-     * A single floating point value.
-     */
-    FLOAT,
+        /**
+         * A single floating point value.
+         */
+        val FLOAT: VaryingType
 
-    /**
-     * A vector of 2 floating point values.
-     */
-    VEC2,
+        /**
+         * A vector of 2 floating point values.
+         */
+        val VEC2: VaryingType
 
-    /**
-     * A vector of 3 floating point values.
-     */
-    VEC3,
+        /**
+         * A vector of 3 floating point values.
+         */
+        val VEC3: VaryingType
 
-    /**
-     * A vector of 4 floating point values.
-     */
-    VEC4,
+        /**
+         * A vector of 4 floating point values.
+         */
+        val VEC4: VaryingType
 
-    /**
-     * A 2x2 matrix of floating point values.
-     */
-    MAT2,
+        /**
+         * A 2x2 matrix of floating point values.
+         */
+        val MAT2: VaryingType
 
-    /**
-     * A 3x3 matrix of floating point values.
-     */
-    MAT3,
+        /**
+         * A 3x3 matrix of floating point values.
+         */
+        val MAT3: VaryingType
 
-    /**
-     * A 3x3 matrix of floating point values.
-     */
-    MAT4,
-
-    ;
-
+        /**
+         * A 3x3 matrix of floating point values.
+         */
+        val MAT4: VaryingType
+    }
 }

@@ -2,6 +2,10 @@
 
 @file:JsModule("cesium")
 
+@file:Suppress(
+    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
+)
+
 package cesium
 
 /**
@@ -12,28 +16,27 @@ package cesium
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#VerticalOrigin">Online Documentation</a>
  */
 
-external enum class VerticalOrigin {
+sealed external interface VerticalOrigin {
+    companion object {
 
-    /**
-     * The origin is at the vertical center between `BASELINE` and `TOP`.
-     */
-    CENTER,
+        /**
+         * The origin is at the vertical center between `BASELINE` and `TOP`.
+         */
+        val CENTER: VerticalOrigin
 
-    /**
-     * The origin is at the bottom of the object.
-     */
-    BOTTOM,
+        /**
+         * The origin is at the bottom of the object.
+         */
+        val BOTTOM: VerticalOrigin
 
-    /**
-     * If the object contains text, the origin is at the baseline of the text, else the origin is at the bottom of the object.
-     */
-    BASELINE,
+        /**
+         * If the object contains text, the origin is at the baseline of the text, else the origin is at the bottom of the object.
+         */
+        val BASELINE: VerticalOrigin
 
-    /**
-     * The origin is at the top of the object.
-     */
-    TOP,
-
-    ;
-
+        /**
+         * The origin is at the top of the object.
+         */
+        val TOP: VerticalOrigin
+    }
 }

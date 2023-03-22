@@ -2,6 +2,10 @@
 
 @file:JsModule("cesium")
 
+@file:Suppress(
+    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
+)
+
 package cesium
 
 /**
@@ -9,18 +13,17 @@ package cesium
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#ReferenceFrame">Online Documentation</a>
  */
 
-external enum class ReferenceFrame {
+sealed external interface ReferenceFrame {
+    companion object {
 
-    /**
-     * The fixed frame.
-     */
-    FIXED,
+        /**
+         * The fixed frame.
+         */
+        val FIXED: ReferenceFrame
 
-    /**
-     * The inertial frame.
-     */
-    INERTIAL,
-
-    ;
-
+        /**
+         * The inertial frame.
+         */
+        val INERTIAL: ReferenceFrame
+    }
 }

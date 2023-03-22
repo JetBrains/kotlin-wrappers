@@ -2,6 +2,10 @@
 
 @file:JsModule("cesium")
 
+@file:Suppress(
+    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
+)
+
 package cesium
 
 /**
@@ -9,23 +13,22 @@ package cesium
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#HeightReference">Online Documentation</a>
  */
 
-external enum class HeightReference {
+sealed external interface HeightReference {
+    companion object {
 
-    /**
-     * The position is absolute.
-     */
-    NONE,
+        /**
+         * The position is absolute.
+         */
+        val NONE: HeightReference
 
-    /**
-     * The position is clamped to the terrain.
-     */
-    CLAMP_TO_GROUND,
+        /**
+         * The position is clamped to the terrain.
+         */
+        val CLAMP_TO_GROUND: HeightReference
 
-    /**
-     * The position height is the height above the terrain.
-     */
-    RELATIVE_TO_GROUND,
-
-    ;
-
+        /**
+         * The position height is the height above the terrain.
+         */
+        val RELATIVE_TO_GROUND: HeightReference
+    }
 }

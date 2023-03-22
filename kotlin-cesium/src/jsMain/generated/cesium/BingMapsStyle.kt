@@ -2,6 +2,10 @@
 
 @file:JsModule("cesium")
 
+@file:Suppress(
+    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
+)
+
 package cesium
 
 /**
@@ -9,58 +13,57 @@ package cesium
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#BingMapsStyle">Online Documentation</a>
  */
 
-external enum class BingMapsStyle {
+sealed external interface BingMapsStyle {
+    companion object {
 
-    /**
-     * Aerial imagery.
-     */
-    AERIAL,
+        /**
+         * Aerial imagery.
+         */
+        val AERIAL: BingMapsStyle
 
-    /**
-     * Aerial imagery with a road overlay.
-     */
-    AERIAL_WITH_LABELS,
+        /**
+         * Aerial imagery with a road overlay.
+         */
+        val AERIAL_WITH_LABELS: BingMapsStyle
 
-    /**
-     * Aerial imagery with a road overlay.
-     */
-    AERIAL_WITH_LABELS_ON_DEMAND,
+        /**
+         * Aerial imagery with a road overlay.
+         */
+        val AERIAL_WITH_LABELS_ON_DEMAND: BingMapsStyle
 
-    /**
-     * Roads without additional imagery.
-     */
-    ROAD,
+        /**
+         * Roads without additional imagery.
+         */
+        val ROAD: BingMapsStyle
 
-    /**
-     * Roads without additional imagery.
-     */
-    ROAD_ON_DEMAND,
+        /**
+         * Roads without additional imagery.
+         */
+        val ROAD_ON_DEMAND: BingMapsStyle
 
-    /**
-     * A dark version of the road maps.
-     */
-    CANVAS_DARK,
+        /**
+         * A dark version of the road maps.
+         */
+        val CANVAS_DARK: BingMapsStyle
 
-    /**
-     * A lighter version of the road maps.
-     */
-    CANVAS_LIGHT,
+        /**
+         * A lighter version of the road maps.
+         */
+        val CANVAS_LIGHT: BingMapsStyle
 
-    /**
-     * A grayscale version of the road maps.
-     */
-    CANVAS_GRAY,
+        /**
+         * A grayscale version of the road maps.
+         */
+        val CANVAS_GRAY: BingMapsStyle
 
-    /**
-     * Ordnance Survey imagery. This imagery is visible only for the London, UK area.
-     */
-    ORDNANCE_SURVEY,
+        /**
+         * Ordnance Survey imagery. This imagery is visible only for the London, UK area.
+         */
+        val ORDNANCE_SURVEY: BingMapsStyle
 
-    /**
-     * Collins Bart imagery.
-     */
-    COLLINS_BART,
-
-    ;
-
+        /**
+         * Collins Bart imagery.
+         */
+        val COLLINS_BART: BingMapsStyle
+    }
 }

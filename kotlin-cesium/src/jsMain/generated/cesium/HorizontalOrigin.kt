@@ -2,6 +2,10 @@
 
 @file:JsModule("cesium")
 
+@file:Suppress(
+    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
+)
+
 package cesium
 
 /**
@@ -12,23 +16,22 @@ package cesium
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#HorizontalOrigin">Online Documentation</a>
  */
 
-external enum class HorizontalOrigin {
+sealed external interface HorizontalOrigin {
+    companion object {
 
-    /**
-     * The origin is at the horizontal center of the object.
-     */
-    CENTER,
+        /**
+         * The origin is at the horizontal center of the object.
+         */
+        val CENTER: HorizontalOrigin
 
-    /**
-     * The origin is on the left side of the object.
-     */
-    LEFT,
+        /**
+         * The origin is on the left side of the object.
+         */
+        val LEFT: HorizontalOrigin
 
-    /**
-     * The origin is on the right side of the object.
-     */
-    RIGHT,
-
-    ;
-
+        /**
+         * The origin is on the right side of the object.
+         */
+        val RIGHT: HorizontalOrigin
+    }
 }

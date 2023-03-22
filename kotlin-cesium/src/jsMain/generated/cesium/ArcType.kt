@@ -2,6 +2,10 @@
 
 @file:JsModule("cesium")
 
+@file:Suppress(
+    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
+)
+
 package cesium
 
 /**
@@ -9,23 +13,22 @@ package cesium
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#ArcType">Online Documentation</a>
  */
 
-external enum class ArcType {
+sealed external interface ArcType {
+    companion object {
 
-    /**
-     * Straight line that does not conform to the surface of the ellipsoid.
-     */
-    NONE,
+        /**
+         * Straight line that does not conform to the surface of the ellipsoid.
+         */
+        val NONE: ArcType
 
-    /**
-     * Follow geodesic path.
-     */
-    GEODESIC,
+        /**
+         * Follow geodesic path.
+         */
+        val GEODESIC: ArcType
 
-    /**
-     * Follow rhumb or loxodrome path.
-     */
-    RHUMB,
-
-    ;
-
+        /**
+         * Follow rhumb or loxodrome path.
+         */
+        val RHUMB: ArcType
+    }
 }

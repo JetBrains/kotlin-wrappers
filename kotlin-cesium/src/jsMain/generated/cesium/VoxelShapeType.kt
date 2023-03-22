@@ -2,6 +2,10 @@
 
 @file:JsModule("cesium")
 
+@file:Suppress(
+    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
+)
+
 package cesium
 
 /**
@@ -9,23 +13,22 @@ package cesium
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#VoxelShapeType">Online Documentation</a>
  */
 
-external enum class VoxelShapeType {
+sealed external interface VoxelShapeType {
+    companion object {
 
-    /**
-     * A box shape.
-     */
-    BOX,
+        /**
+         * A box shape.
+         */
+        val BOX: VoxelShapeType
 
-    /**
-     * An ellipsoid shape.
-     */
-    ELLIPSOID,
+        /**
+         * An ellipsoid shape.
+         */
+        val ELLIPSOID: VoxelShapeType
 
-    /**
-     * A cylinder shape.
-     */
-    CYLINDER,
-
-    ;
-
+        /**
+         * A cylinder shape.
+         */
+        val CYLINDER: VoxelShapeType
+    }
 }

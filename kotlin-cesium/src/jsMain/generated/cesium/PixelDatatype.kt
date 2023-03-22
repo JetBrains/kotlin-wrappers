@@ -2,6 +2,10 @@
 
 @file:JsModule("cesium")
 
+@file:Suppress(
+    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
+)
+
 package cesium
 
 /**
@@ -9,26 +13,25 @@ package cesium
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#PixelDatatype">Online Documentation</a>
  */
 
-external enum class PixelDatatype {
+sealed external interface PixelDatatype {
+    companion object {
 
-    UNSIGNED_BYTE,
+        val UNSIGNED_BYTE: PixelDatatype
 
-    UNSIGNED_SHORT,
+        val UNSIGNED_SHORT: PixelDatatype
 
-    UNSIGNED_INT,
+        val UNSIGNED_INT: PixelDatatype
 
-    FLOAT,
+        val FLOAT: PixelDatatype
 
-    HALF_FLOAT,
+        val HALF_FLOAT: PixelDatatype
 
-    UNSIGNED_INT_24_8,
+        val UNSIGNED_INT_24_8: PixelDatatype
 
-    UNSIGNED_SHORT_4_4_4_4,
+        val UNSIGNED_SHORT_4_4_4_4: PixelDatatype
 
-    UNSIGNED_SHORT_5_5_5_1,
+        val UNSIGNED_SHORT_5_5_5_1: PixelDatatype
 
-    UNSIGNED_SHORT_5_6_5,
-
-    ;
-
+        val UNSIGNED_SHORT_5_6_5: PixelDatatype
+    }
 }

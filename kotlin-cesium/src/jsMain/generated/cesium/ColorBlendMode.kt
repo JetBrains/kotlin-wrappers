@@ -2,6 +2,10 @@
 
 @file:JsModule("cesium")
 
+@file:Suppress(
+    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
+)
+
 package cesium
 
 /**
@@ -13,14 +17,13 @@ package cesium
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#ColorBlendMode">Online Documentation</a>
  */
 
-external enum class ColorBlendMode {
+sealed external interface ColorBlendMode {
+    companion object {
 
-    HIGHLIGHT,
+        val HIGHLIGHT: ColorBlendMode
 
-    REPLACE,
+        val REPLACE: ColorBlendMode
 
-    MIX,
-
-    ;
-
+        val MIX: ColorBlendMode
+    }
 }

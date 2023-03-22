@@ -2,6 +2,10 @@
 
 @file:JsModule("cesium")
 
+@file:Suppress(
+    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
+)
+
 package cesium
 
 /**
@@ -29,23 +33,22 @@ package cesium
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#Cesium3DTileColorBlendMode">Online Documentation</a>
  */
 
-external enum class Cesium3DTileColorBlendMode {
+sealed external interface Cesium3DTileColorBlendMode {
+    companion object {
 
-    /**
-     * Multiplies the source color by the feature color.
-     */
-    HIGHLIGHT,
+        /**
+         * Multiplies the source color by the feature color.
+         */
+        val HIGHLIGHT: Cesium3DTileColorBlendMode
 
-    /**
-     * Replaces the source color with the feature color.
-     */
-    REPLACE,
+        /**
+         * Replaces the source color with the feature color.
+         */
+        val REPLACE: Cesium3DTileColorBlendMode
 
-    /**
-     * Blends the source color and feature color together.
-     */
-    MIX,
-
-    ;
-
+        /**
+         * Blends the source color and feature color together.
+         */
+        val MIX: Cesium3DTileColorBlendMode
+    }
 }

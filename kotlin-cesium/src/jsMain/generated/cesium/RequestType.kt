@@ -2,6 +2,10 @@
 
 @file:JsModule("cesium")
 
+@file:Suppress(
+    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
+)
+
 package cesium
 
 /**
@@ -9,28 +13,27 @@ package cesium
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#RequestType">Online Documentation</a>
  */
 
-external enum class RequestType {
+sealed external interface RequestType {
+    companion object {
 
-    /**
-     * Terrain request.
-     */
-    TERRAIN,
+        /**
+         * Terrain request.
+         */
+        val TERRAIN: RequestType
 
-    /**
-     * Imagery request.
-     */
-    IMAGERY,
+        /**
+         * Imagery request.
+         */
+        val IMAGERY: RequestType
 
-    /**
-     * 3D Tiles request.
-     */
-    TILES3D,
+        /**
+         * 3D Tiles request.
+         */
+        val TILES3D: RequestType
 
-    /**
-     * Other request.
-     */
-    OTHER,
-
-    ;
-
+        /**
+         * Other request.
+         */
+        val OTHER: RequestType
+    }
 }

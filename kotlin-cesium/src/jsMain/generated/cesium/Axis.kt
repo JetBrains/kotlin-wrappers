@@ -2,6 +2,10 @@
 
 @file:JsModule("cesium")
 
+@file:Suppress(
+    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
+)
+
 package cesium
 
 /**
@@ -9,23 +13,22 @@ package cesium
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#Axis">Online Documentation</a>
  */
 
-external enum class Axis {
+sealed external interface Axis {
+    companion object {
 
-    /**
-     * Denotes the x-axis.
-     */
-    X,
+        /**
+         * Denotes the x-axis.
+         */
+        val X: Axis
 
-    /**
-     * Denotes the y-axis.
-     */
-    Y,
+        /**
+         * Denotes the y-axis.
+         */
+        val Y: Axis
 
-    /**
-     * Denotes the z-axis.
-     */
-    Z,
-
-    ;
-
+        /**
+         * Denotes the z-axis.
+         */
+        val Z: Axis
+    }
 }

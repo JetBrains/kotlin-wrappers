@@ -2,6 +2,10 @@
 
 @file:JsModule("cesium")
 
+@file:Suppress(
+    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
+)
+
 package cesium
 
 /**
@@ -10,26 +14,25 @@ package cesium
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#IndexDatatype">Online Documentation</a>
  */
 
-external enum class IndexDatatype {
+sealed external interface IndexDatatype {
+    companion object {
 
-    /**
-     * 8-bit unsigned byte corresponding to `UNSIGNED_BYTE` and the type
-     * of an element in `Uint8Array`.
-     */
-    UNSIGNED_BYTE,
+        /**
+         * 8-bit unsigned byte corresponding to `UNSIGNED_BYTE` and the type
+         * of an element in `Uint8Array`.
+         */
+        val UNSIGNED_BYTE: IndexDatatype
 
-    /**
-     * 16-bit unsigned short corresponding to `UNSIGNED_SHORT` and the type
-     * of an element in `Uint16Array`.
-     */
-    UNSIGNED_SHORT,
+        /**
+         * 16-bit unsigned short corresponding to `UNSIGNED_SHORT` and the type
+         * of an element in `Uint16Array`.
+         */
+        val UNSIGNED_SHORT: IndexDatatype
 
-    /**
-     * 32-bit unsigned int corresponding to `UNSIGNED_INT` and the type
-     * of an element in `Uint32Array`.
-     */
-    UNSIGNED_INT,
-
-    ;
-
+        /**
+         * 32-bit unsigned int corresponding to `UNSIGNED_INT` and the type
+         * of an element in `Uint32Array`.
+         */
+        val UNSIGNED_INT: IndexDatatype
+    }
 }

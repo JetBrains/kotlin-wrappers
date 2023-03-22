@@ -2,6 +2,10 @@
 
 @file:JsModule("cesium")
 
+@file:Suppress(
+    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
+)
+
 package cesium
 
 /**
@@ -9,23 +13,22 @@ package cesium
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#BlendOption">Online Documentation</a>
  */
 
-external enum class BlendOption {
+sealed external interface BlendOption {
+    companion object {
 
-    /**
-     * The billboards, points, or labels in the collection are completely opaque.
-     */
-    OPAQUE,
+        /**
+         * The billboards, points, or labels in the collection are completely opaque.
+         */
+        val OPAQUE: BlendOption
 
-    /**
-     * The billboards, points, or labels in the collection are completely translucent.
-     */
-    TRANSLUCENT,
+        /**
+         * The billboards, points, or labels in the collection are completely translucent.
+         */
+        val TRANSLUCENT: BlendOption
 
-    /**
-     * The billboards, points, or labels in the collection are both opaque and translucent.
-     */
-    OPAQUE_AND_TRANSLUCENT,
-
-    ;
-
+        /**
+         * The billboards, points, or labels in the collection are both opaque and translucent.
+         */
+        val OPAQUE_AND_TRANSLUCENT: BlendOption
+    }
 }

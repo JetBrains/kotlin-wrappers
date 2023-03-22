@@ -2,6 +2,10 @@
 
 @file:JsModule("cesium")
 
+@file:Suppress(
+    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
+)
+
 package cesium
 
 /**
@@ -9,23 +13,22 @@ package cesium
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#IonWorldImageryStyle">Online Documentation</a>
  */
 
-external enum class IonWorldImageryStyle {
+sealed external interface IonWorldImageryStyle {
+    companion object {
 
-    /**
-     * Aerial imagery.
-     */
-    AERIAL,
+        /**
+         * Aerial imagery.
+         */
+        val AERIAL: IonWorldImageryStyle
 
-    /**
-     * Aerial imagery with a road overlay.
-     */
-    AERIAL_WITH_LABELS,
+        /**
+         * Aerial imagery with a road overlay.
+         */
+        val AERIAL_WITH_LABELS: IonWorldImageryStyle
 
-    /**
-     * Roads without additional imagery.
-     */
-    ROAD,
-
-    ;
-
+        /**
+         * Roads without additional imagery.
+         */
+        val ROAD: IonWorldImageryStyle
+    }
 }

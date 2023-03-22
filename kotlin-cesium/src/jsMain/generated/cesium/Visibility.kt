@@ -2,6 +2,10 @@
 
 @file:JsModule("cesium")
 
+@file:Suppress(
+    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
+)
+
 package cesium
 
 /**
@@ -12,23 +16,22 @@ package cesium
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#Visibility">Online Documentation</a>
  */
 
-external enum class Visibility {
+sealed external interface Visibility {
+    companion object {
 
-    /**
-     * Represents that no part of an object is visible.
-     */
-    NONE,
+        /**
+         * Represents that no part of an object is visible.
+         */
+        val NONE: Visibility
 
-    /**
-     * Represents that part, but not all, of an object is visible
-     */
-    PARTIAL,
+        /**
+         * Represents that part, but not all, of an object is visible
+         */
+        val PARTIAL: Visibility
 
-    /**
-     * Represents that an object is visible in its entirety.
-     */
-    FULL,
-
-    ;
-
+        /**
+         * Represents that an object is visible in its entirety.
+         */
+        val FULL: Visibility
+    }
 }

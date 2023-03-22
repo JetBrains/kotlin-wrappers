@@ -2,6 +2,10 @@
 
 @file:JsModule("cesium")
 
+@file:Suppress(
+    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
+)
+
 package cesium
 
 /**
@@ -15,1172 +19,1171 @@ package cesium
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#WebGLConstants">Online Documentation</a>
  */
 
-external enum class WebGLConstants {
+sealed external interface WebGLConstants {
+    companion object {
 
-    DEPTH_BUFFER_BIT,
+        val DEPTH_BUFFER_BIT: WebGLConstants
 
-    STENCIL_BUFFER_BIT,
+        val STENCIL_BUFFER_BIT: WebGLConstants
 
-    COLOR_BUFFER_BIT,
+        val COLOR_BUFFER_BIT: WebGLConstants
 
-    POINTS,
+        val POINTS: WebGLConstants
 
-    LINES,
+        val LINES: WebGLConstants
 
-    LINE_LOOP,
+        val LINE_LOOP: WebGLConstants
 
-    LINE_STRIP,
+        val LINE_STRIP: WebGLConstants
 
-    TRIANGLES,
+        val TRIANGLES: WebGLConstants
 
-    TRIANGLE_STRIP,
+        val TRIANGLE_STRIP: WebGLConstants
 
-    TRIANGLE_FAN,
+        val TRIANGLE_FAN: WebGLConstants
 
-    ZERO,
+        val ZERO: WebGLConstants
 
-    ONE,
+        val ONE: WebGLConstants
 
-    SRC_COLOR,
+        val SRC_COLOR: WebGLConstants
 
-    ONE_MINUS_SRC_COLOR,
+        val ONE_MINUS_SRC_COLOR: WebGLConstants
 
-    SRC_ALPHA,
+        val SRC_ALPHA: WebGLConstants
 
-    ONE_MINUS_SRC_ALPHA,
+        val ONE_MINUS_SRC_ALPHA: WebGLConstants
 
-    DST_ALPHA,
+        val DST_ALPHA: WebGLConstants
 
-    ONE_MINUS_DST_ALPHA,
+        val ONE_MINUS_DST_ALPHA: WebGLConstants
 
-    DST_COLOR,
+        val DST_COLOR: WebGLConstants
 
-    ONE_MINUS_DST_COLOR,
+        val ONE_MINUS_DST_COLOR: WebGLConstants
 
-    SRC_ALPHA_SATURATE,
+        val SRC_ALPHA_SATURATE: WebGLConstants
 
-    FUNC_ADD,
+        val FUNC_ADD: WebGLConstants
 
-    BLEND_EQUATION,
+        val BLEND_EQUATION: WebGLConstants
 
-    BLEND_EQUATION_RGB,
+        val BLEND_EQUATION_RGB: WebGLConstants
 
-    BLEND_EQUATION_ALPHA,
+        val BLEND_EQUATION_ALPHA: WebGLConstants
 
-    FUNC_SUBTRACT,
+        val FUNC_SUBTRACT: WebGLConstants
 
-    FUNC_REVERSE_SUBTRACT,
+        val FUNC_REVERSE_SUBTRACT: WebGLConstants
 
-    BLEND_DST_RGB,
+        val BLEND_DST_RGB: WebGLConstants
 
-    BLEND_SRC_RGB,
+        val BLEND_SRC_RGB: WebGLConstants
 
-    BLEND_DST_ALPHA,
+        val BLEND_DST_ALPHA: WebGLConstants
 
-    BLEND_SRC_ALPHA,
+        val BLEND_SRC_ALPHA: WebGLConstants
 
-    CONSTANT_COLOR,
+        val CONSTANT_COLOR: WebGLConstants
 
-    ONE_MINUS_CONSTANT_COLOR,
+        val ONE_MINUS_CONSTANT_COLOR: WebGLConstants
 
-    CONSTANT_ALPHA,
+        val CONSTANT_ALPHA: WebGLConstants
 
-    ONE_MINUS_CONSTANT_ALPHA,
+        val ONE_MINUS_CONSTANT_ALPHA: WebGLConstants
 
-    BLEND_COLOR,
+        val BLEND_COLOR: WebGLConstants
 
-    ARRAY_BUFFER,
+        val ARRAY_BUFFER: WebGLConstants
 
-    ELEMENT_ARRAY_BUFFER,
+        val ELEMENT_ARRAY_BUFFER: WebGLConstants
 
-    ARRAY_BUFFER_BINDING,
+        val ARRAY_BUFFER_BINDING: WebGLConstants
 
-    ELEMENT_ARRAY_BUFFER_BINDING,
+        val ELEMENT_ARRAY_BUFFER_BINDING: WebGLConstants
 
-    STREAM_DRAW,
+        val STREAM_DRAW: WebGLConstants
 
-    STATIC_DRAW,
+        val STATIC_DRAW: WebGLConstants
 
-    DYNAMIC_DRAW,
+        val DYNAMIC_DRAW: WebGLConstants
 
-    BUFFER_SIZE,
+        val BUFFER_SIZE: WebGLConstants
 
-    BUFFER_USAGE,
+        val BUFFER_USAGE: WebGLConstants
 
-    CURRENT_VERTEX_ATTRIB,
+        val CURRENT_VERTEX_ATTRIB: WebGLConstants
 
-    FRONT,
+        val FRONT: WebGLConstants
 
-    BACK,
+        val BACK: WebGLConstants
 
-    FRONT_AND_BACK,
+        val FRONT_AND_BACK: WebGLConstants
 
-    CULL_FACE,
+        val CULL_FACE: WebGLConstants
 
-    BLEND,
+        val BLEND: WebGLConstants
 
-    DITHER,
+        val DITHER: WebGLConstants
 
-    STENCIL_TEST,
+        val STENCIL_TEST: WebGLConstants
 
-    DEPTH_TEST,
+        val DEPTH_TEST: WebGLConstants
 
-    SCISSOR_TEST,
+        val SCISSOR_TEST: WebGLConstants
 
-    POLYGON_OFFSET_FILL,
+        val POLYGON_OFFSET_FILL: WebGLConstants
 
-    SAMPLE_ALPHA_TO_COVERAGE,
+        val SAMPLE_ALPHA_TO_COVERAGE: WebGLConstants
 
-    SAMPLE_COVERAGE,
+        val SAMPLE_COVERAGE: WebGLConstants
 
-    NO_ERROR,
+        val NO_ERROR: WebGLConstants
 
-    INVALID_ENUM,
+        val INVALID_ENUM: WebGLConstants
 
-    INVALID_VALUE,
+        val INVALID_VALUE: WebGLConstants
 
-    INVALID_OPERATION,
+        val INVALID_OPERATION: WebGLConstants
 
-    OUT_OF_MEMORY,
+        val OUT_OF_MEMORY: WebGLConstants
 
-    CW,
+        val CW: WebGLConstants
 
-    CCW,
+        val CCW: WebGLConstants
 
-    LINE_WIDTH,
+        val LINE_WIDTH: WebGLConstants
 
-    ALIASED_POINT_SIZE_RANGE,
+        val ALIASED_POINT_SIZE_RANGE: WebGLConstants
 
-    ALIASED_LINE_WIDTH_RANGE,
+        val ALIASED_LINE_WIDTH_RANGE: WebGLConstants
 
-    CULL_FACE_MODE,
+        val CULL_FACE_MODE: WebGLConstants
 
-    FRONT_FACE,
+        val FRONT_FACE: WebGLConstants
 
-    DEPTH_RANGE,
+        val DEPTH_RANGE: WebGLConstants
 
-    DEPTH_WRITEMASK,
+        val DEPTH_WRITEMASK: WebGLConstants
 
-    DEPTH_CLEAR_VALUE,
+        val DEPTH_CLEAR_VALUE: WebGLConstants
 
-    DEPTH_FUNC,
+        val DEPTH_FUNC: WebGLConstants
 
-    STENCIL_CLEAR_VALUE,
+        val STENCIL_CLEAR_VALUE: WebGLConstants
 
-    STENCIL_FUNC,
+        val STENCIL_FUNC: WebGLConstants
 
-    STENCIL_FAIL,
+        val STENCIL_FAIL: WebGLConstants
 
-    STENCIL_PASS_DEPTH_FAIL,
+        val STENCIL_PASS_DEPTH_FAIL: WebGLConstants
 
-    STENCIL_PASS_DEPTH_PASS,
+        val STENCIL_PASS_DEPTH_PASS: WebGLConstants
 
-    STENCIL_REF,
+        val STENCIL_REF: WebGLConstants
 
-    STENCIL_VALUE_MASK,
+        val STENCIL_VALUE_MASK: WebGLConstants
 
-    STENCIL_WRITEMASK,
+        val STENCIL_WRITEMASK: WebGLConstants
 
-    STENCIL_BACK_FUNC,
+        val STENCIL_BACK_FUNC: WebGLConstants
 
-    STENCIL_BACK_FAIL,
+        val STENCIL_BACK_FAIL: WebGLConstants
 
-    STENCIL_BACK_PASS_DEPTH_FAIL,
+        val STENCIL_BACK_PASS_DEPTH_FAIL: WebGLConstants
 
-    STENCIL_BACK_PASS_DEPTH_PASS,
+        val STENCIL_BACK_PASS_DEPTH_PASS: WebGLConstants
 
-    STENCIL_BACK_REF,
+        val STENCIL_BACK_REF: WebGLConstants
 
-    STENCIL_BACK_VALUE_MASK,
+        val STENCIL_BACK_VALUE_MASK: WebGLConstants
 
-    STENCIL_BACK_WRITEMASK,
+        val STENCIL_BACK_WRITEMASK: WebGLConstants
 
-    VIEWPORT,
+        val VIEWPORT: WebGLConstants
 
-    SCISSOR_BOX,
+        val SCISSOR_BOX: WebGLConstants
 
-    COLOR_CLEAR_VALUE,
+        val COLOR_CLEAR_VALUE: WebGLConstants
 
-    COLOR_WRITEMASK,
+        val COLOR_WRITEMASK: WebGLConstants
 
-    UNPACK_ALIGNMENT,
+        val UNPACK_ALIGNMENT: WebGLConstants
 
-    PACK_ALIGNMENT,
+        val PACK_ALIGNMENT: WebGLConstants
 
-    MAX_TEXTURE_SIZE,
+        val MAX_TEXTURE_SIZE: WebGLConstants
 
-    MAX_VIEWPORT_DIMS,
+        val MAX_VIEWPORT_DIMS: WebGLConstants
 
-    SUBPIXEL_BITS,
+        val SUBPIXEL_BITS: WebGLConstants
 
-    RED_BITS,
+        val RED_BITS: WebGLConstants
 
-    GREEN_BITS,
+        val GREEN_BITS: WebGLConstants
 
-    BLUE_BITS,
+        val BLUE_BITS: WebGLConstants
 
-    ALPHA_BITS,
+        val ALPHA_BITS: WebGLConstants
 
-    DEPTH_BITS,
+        val DEPTH_BITS: WebGLConstants
 
-    STENCIL_BITS,
+        val STENCIL_BITS: WebGLConstants
 
-    POLYGON_OFFSET_UNITS,
+        val POLYGON_OFFSET_UNITS: WebGLConstants
 
-    POLYGON_OFFSET_FACTOR,
+        val POLYGON_OFFSET_FACTOR: WebGLConstants
 
-    TEXTURE_BINDING_2D,
+        val TEXTURE_BINDING_2D: WebGLConstants
 
-    SAMPLE_BUFFERS,
+        val SAMPLE_BUFFERS: WebGLConstants
 
-    SAMPLES,
+        val SAMPLES: WebGLConstants
 
-    SAMPLE_COVERAGE_VALUE,
+        val SAMPLE_COVERAGE_VALUE: WebGLConstants
 
-    SAMPLE_COVERAGE_INVERT,
+        val SAMPLE_COVERAGE_INVERT: WebGLConstants
 
-    COMPRESSED_TEXTURE_FORMATS,
+        val COMPRESSED_TEXTURE_FORMATS: WebGLConstants
 
-    DONT_CARE,
+        val DONT_CARE: WebGLConstants
 
-    FASTEST,
+        val FASTEST: WebGLConstants
 
-    NICEST,
+        val NICEST: WebGLConstants
 
-    GENERATE_MIPMAP_HINT,
+        val GENERATE_MIPMAP_HINT: WebGLConstants
 
-    BYTE,
+        val BYTE: WebGLConstants
 
-    UNSIGNED_BYTE,
+        val UNSIGNED_BYTE: WebGLConstants
 
-    SHORT,
+        val SHORT: WebGLConstants
 
-    UNSIGNED_SHORT,
+        val UNSIGNED_SHORT: WebGLConstants
 
-    INT,
+        val INT: WebGLConstants
 
-    UNSIGNED_INT,
+        val UNSIGNED_INT: WebGLConstants
 
-    FLOAT,
+        val FLOAT: WebGLConstants
 
-    DEPTH_COMPONENT,
+        val DEPTH_COMPONENT: WebGLConstants
 
-    ALPHA,
+        val ALPHA: WebGLConstants
 
-    RGB,
+        val RGB: WebGLConstants
 
-    RGBA,
+        val RGBA: WebGLConstants
 
-    LUMINANCE,
+        val LUMINANCE: WebGLConstants
 
-    LUMINANCE_ALPHA,
+        val LUMINANCE_ALPHA: WebGLConstants
 
-    UNSIGNED_SHORT_4_4_4_4,
+        val UNSIGNED_SHORT_4_4_4_4: WebGLConstants
 
-    UNSIGNED_SHORT_5_5_5_1,
+        val UNSIGNED_SHORT_5_5_5_1: WebGLConstants
 
-    UNSIGNED_SHORT_5_6_5,
+        val UNSIGNED_SHORT_5_6_5: WebGLConstants
 
-    FRAGMENT_SHADER,
+        val FRAGMENT_SHADER: WebGLConstants
 
-    VERTEX_SHADER,
+        val VERTEX_SHADER: WebGLConstants
 
-    MAX_VERTEX_ATTRIBS,
+        val MAX_VERTEX_ATTRIBS: WebGLConstants
 
-    MAX_VERTEX_UNIFORM_VECTORS,
+        val MAX_VERTEX_UNIFORM_VECTORS: WebGLConstants
 
-    MAX_VARYING_VECTORS,
+        val MAX_VARYING_VECTORS: WebGLConstants
 
-    MAX_COMBINED_TEXTURE_IMAGE_UNITS,
+        val MAX_COMBINED_TEXTURE_IMAGE_UNITS: WebGLConstants
 
-    MAX_VERTEX_TEXTURE_IMAGE_UNITS,
+        val MAX_VERTEX_TEXTURE_IMAGE_UNITS: WebGLConstants
 
-    MAX_TEXTURE_IMAGE_UNITS,
+        val MAX_TEXTURE_IMAGE_UNITS: WebGLConstants
 
-    MAX_FRAGMENT_UNIFORM_VECTORS,
+        val MAX_FRAGMENT_UNIFORM_VECTORS: WebGLConstants
 
-    SHADER_TYPE,
+        val SHADER_TYPE: WebGLConstants
 
-    DELETE_STATUS,
+        val DELETE_STATUS: WebGLConstants
 
-    LINK_STATUS,
+        val LINK_STATUS: WebGLConstants
 
-    VALIDATE_STATUS,
+        val VALIDATE_STATUS: WebGLConstants
 
-    ATTACHED_SHADERS,
+        val ATTACHED_SHADERS: WebGLConstants
 
-    ACTIVE_UNIFORMS,
+        val ACTIVE_UNIFORMS: WebGLConstants
 
-    ACTIVE_ATTRIBUTES,
+        val ACTIVE_ATTRIBUTES: WebGLConstants
 
-    SHADING_LANGUAGE_VERSION,
+        val SHADING_LANGUAGE_VERSION: WebGLConstants
 
-    CURRENT_PROGRAM,
+        val CURRENT_PROGRAM: WebGLConstants
 
-    NEVER,
+        val NEVER: WebGLConstants
 
-    LESS,
+        val LESS: WebGLConstants
 
-    EQUAL,
+        val EQUAL: WebGLConstants
 
-    LEQUAL,
+        val LEQUAL: WebGLConstants
 
-    GREATER,
+        val GREATER: WebGLConstants
 
-    NOTEQUAL,
+        val NOTEQUAL: WebGLConstants
 
-    GEQUAL,
+        val GEQUAL: WebGLConstants
 
-    ALWAYS,
+        val ALWAYS: WebGLConstants
 
-    KEEP,
+        val KEEP: WebGLConstants
 
-    REPLACE,
+        val REPLACE: WebGLConstants
 
-    INCR,
+        val INCR: WebGLConstants
 
-    DECR,
+        val DECR: WebGLConstants
 
-    INVERT,
+        val INVERT: WebGLConstants
 
-    INCR_WRAP,
+        val INCR_WRAP: WebGLConstants
 
-    DECR_WRAP,
+        val DECR_WRAP: WebGLConstants
 
-    VENDOR,
+        val VENDOR: WebGLConstants
 
-    RENDERER,
+        val RENDERER: WebGLConstants
 
-    VERSION,
+        val VERSION: WebGLConstants
 
-    NEAREST,
+        val NEAREST: WebGLConstants
 
-    LINEAR,
+        val LINEAR: WebGLConstants
 
-    NEAREST_MIPMAP_NEAREST,
+        val NEAREST_MIPMAP_NEAREST: WebGLConstants
 
-    LINEAR_MIPMAP_NEAREST,
+        val LINEAR_MIPMAP_NEAREST: WebGLConstants
 
-    NEAREST_MIPMAP_LINEAR,
+        val NEAREST_MIPMAP_LINEAR: WebGLConstants
 
-    LINEAR_MIPMAP_LINEAR,
+        val LINEAR_MIPMAP_LINEAR: WebGLConstants
 
-    TEXTURE_MAG_FILTER,
+        val TEXTURE_MAG_FILTER: WebGLConstants
 
-    TEXTURE_MIN_FILTER,
+        val TEXTURE_MIN_FILTER: WebGLConstants
 
-    TEXTURE_WRAP_S,
+        val TEXTURE_WRAP_S: WebGLConstants
 
-    TEXTURE_WRAP_T,
+        val TEXTURE_WRAP_T: WebGLConstants
 
-    TEXTURE_2D,
+        val TEXTURE_2D: WebGLConstants
 
-    TEXTURE,
+        val TEXTURE: WebGLConstants
 
-    TEXTURE_CUBE_MAP,
+        val TEXTURE_CUBE_MAP: WebGLConstants
 
-    TEXTURE_BINDING_CUBE_MAP,
+        val TEXTURE_BINDING_CUBE_MAP: WebGLConstants
 
-    TEXTURE_CUBE_MAP_POSITIVE_X,
+        val TEXTURE_CUBE_MAP_POSITIVE_X: WebGLConstants
 
-    TEXTURE_CUBE_MAP_NEGATIVE_X,
+        val TEXTURE_CUBE_MAP_NEGATIVE_X: WebGLConstants
 
-    TEXTURE_CUBE_MAP_POSITIVE_Y,
+        val TEXTURE_CUBE_MAP_POSITIVE_Y: WebGLConstants
 
-    TEXTURE_CUBE_MAP_NEGATIVE_Y,
+        val TEXTURE_CUBE_MAP_NEGATIVE_Y: WebGLConstants
 
-    TEXTURE_CUBE_MAP_POSITIVE_Z,
+        val TEXTURE_CUBE_MAP_POSITIVE_Z: WebGLConstants
 
-    TEXTURE_CUBE_MAP_NEGATIVE_Z,
+        val TEXTURE_CUBE_MAP_NEGATIVE_Z: WebGLConstants
 
-    MAX_CUBE_MAP_TEXTURE_SIZE,
+        val MAX_CUBE_MAP_TEXTURE_SIZE: WebGLConstants
 
-    TEXTURE0,
+        val TEXTURE0: WebGLConstants
 
-    TEXTURE1,
+        val TEXTURE1: WebGLConstants
 
-    TEXTURE2,
+        val TEXTURE2: WebGLConstants
 
-    TEXTURE3,
+        val TEXTURE3: WebGLConstants
 
-    TEXTURE4,
+        val TEXTURE4: WebGLConstants
 
-    TEXTURE5,
+        val TEXTURE5: WebGLConstants
 
-    TEXTURE6,
+        val TEXTURE6: WebGLConstants
 
-    TEXTURE7,
+        val TEXTURE7: WebGLConstants
 
-    TEXTURE8,
+        val TEXTURE8: WebGLConstants
 
-    TEXTURE9,
+        val TEXTURE9: WebGLConstants
 
-    TEXTURE10,
+        val TEXTURE10: WebGLConstants
 
-    TEXTURE11,
+        val TEXTURE11: WebGLConstants
 
-    TEXTURE12,
+        val TEXTURE12: WebGLConstants
 
-    TEXTURE13,
+        val TEXTURE13: WebGLConstants
 
-    TEXTURE14,
+        val TEXTURE14: WebGLConstants
 
-    TEXTURE15,
+        val TEXTURE15: WebGLConstants
 
-    TEXTURE16,
+        val TEXTURE16: WebGLConstants
 
-    TEXTURE17,
+        val TEXTURE17: WebGLConstants
 
-    TEXTURE18,
+        val TEXTURE18: WebGLConstants
 
-    TEXTURE19,
+        val TEXTURE19: WebGLConstants
 
-    TEXTURE20,
+        val TEXTURE20: WebGLConstants
 
-    TEXTURE21,
+        val TEXTURE21: WebGLConstants
 
-    TEXTURE22,
+        val TEXTURE22: WebGLConstants
 
-    TEXTURE23,
+        val TEXTURE23: WebGLConstants
 
-    TEXTURE24,
+        val TEXTURE24: WebGLConstants
 
-    TEXTURE25,
+        val TEXTURE25: WebGLConstants
 
-    TEXTURE26,
+        val TEXTURE26: WebGLConstants
 
-    TEXTURE27,
+        val TEXTURE27: WebGLConstants
 
-    TEXTURE28,
+        val TEXTURE28: WebGLConstants
 
-    TEXTURE29,
+        val TEXTURE29: WebGLConstants
 
-    TEXTURE30,
+        val TEXTURE30: WebGLConstants
 
-    TEXTURE31,
+        val TEXTURE31: WebGLConstants
 
-    ACTIVE_TEXTURE,
+        val ACTIVE_TEXTURE: WebGLConstants
 
-    REPEAT,
+        val REPEAT: WebGLConstants
 
-    CLAMP_TO_EDGE,
+        val CLAMP_TO_EDGE: WebGLConstants
 
-    MIRRORED_REPEAT,
+        val MIRRORED_REPEAT: WebGLConstants
 
-    FLOAT_VEC2,
+        val FLOAT_VEC2: WebGLConstants
 
-    FLOAT_VEC3,
+        val FLOAT_VEC3: WebGLConstants
 
-    FLOAT_VEC4,
+        val FLOAT_VEC4: WebGLConstants
 
-    INT_VEC2,
+        val INT_VEC2: WebGLConstants
 
-    INT_VEC3,
+        val INT_VEC3: WebGLConstants
 
-    INT_VEC4,
+        val INT_VEC4: WebGLConstants
 
-    BOOL,
+        val BOOL: WebGLConstants
 
-    BOOL_VEC2,
+        val BOOL_VEC2: WebGLConstants
 
-    BOOL_VEC3,
+        val BOOL_VEC3: WebGLConstants
 
-    BOOL_VEC4,
+        val BOOL_VEC4: WebGLConstants
 
-    FLOAT_MAT2,
+        val FLOAT_MAT2: WebGLConstants
 
-    FLOAT_MAT3,
+        val FLOAT_MAT3: WebGLConstants
 
-    FLOAT_MAT4,
+        val FLOAT_MAT4: WebGLConstants
 
-    SAMPLER_2D,
+        val SAMPLER_2D: WebGLConstants
 
-    SAMPLER_CUBE,
+        val SAMPLER_CUBE: WebGLConstants
 
-    VERTEX_ATTRIB_ARRAY_ENABLED,
+        val VERTEX_ATTRIB_ARRAY_ENABLED: WebGLConstants
 
-    VERTEX_ATTRIB_ARRAY_SIZE,
+        val VERTEX_ATTRIB_ARRAY_SIZE: WebGLConstants
 
-    VERTEX_ATTRIB_ARRAY_STRIDE,
+        val VERTEX_ATTRIB_ARRAY_STRIDE: WebGLConstants
 
-    VERTEX_ATTRIB_ARRAY_TYPE,
+        val VERTEX_ATTRIB_ARRAY_TYPE: WebGLConstants
 
-    VERTEX_ATTRIB_ARRAY_NORMALIZED,
+        val VERTEX_ATTRIB_ARRAY_NORMALIZED: WebGLConstants
 
-    VERTEX_ATTRIB_ARRAY_POINTER,
+        val VERTEX_ATTRIB_ARRAY_POINTER: WebGLConstants
 
-    VERTEX_ATTRIB_ARRAY_BUFFER_BINDING,
+        val VERTEX_ATTRIB_ARRAY_BUFFER_BINDING: WebGLConstants
 
-    IMPLEMENTATION_COLOR_READ_TYPE,
+        val IMPLEMENTATION_COLOR_READ_TYPE: WebGLConstants
 
-    IMPLEMENTATION_COLOR_READ_FORMAT,
+        val IMPLEMENTATION_COLOR_READ_FORMAT: WebGLConstants
 
-    COMPILE_STATUS,
+        val COMPILE_STATUS: WebGLConstants
 
-    LOW_FLOAT,
+        val LOW_FLOAT: WebGLConstants
 
-    MEDIUM_FLOAT,
+        val MEDIUM_FLOAT: WebGLConstants
 
-    HIGH_FLOAT,
+        val HIGH_FLOAT: WebGLConstants
 
-    LOW_INT,
+        val LOW_INT: WebGLConstants
 
-    MEDIUM_INT,
+        val MEDIUM_INT: WebGLConstants
 
-    HIGH_INT,
+        val HIGH_INT: WebGLConstants
 
-    FRAMEBUFFER,
+        val FRAMEBUFFER: WebGLConstants
 
-    RENDERBUFFER,
+        val RENDERBUFFER: WebGLConstants
 
-    RGBA4,
+        val RGBA4: WebGLConstants
 
-    RGB5_A1,
+        val RGB5_A1: WebGLConstants
 
-    RGB565,
+        val RGB565: WebGLConstants
 
-    DEPTH_COMPONENT16,
+        val DEPTH_COMPONENT16: WebGLConstants
 
-    STENCIL_INDEX,
+        val STENCIL_INDEX: WebGLConstants
 
-    STENCIL_INDEX8,
+        val STENCIL_INDEX8: WebGLConstants
 
-    DEPTH_STENCIL,
+        val DEPTH_STENCIL: WebGLConstants
 
-    RENDERBUFFER_WIDTH,
+        val RENDERBUFFER_WIDTH: WebGLConstants
 
-    RENDERBUFFER_HEIGHT,
+        val RENDERBUFFER_HEIGHT: WebGLConstants
 
-    RENDERBUFFER_INTERNAL_FORMAT,
+        val RENDERBUFFER_INTERNAL_FORMAT: WebGLConstants
 
-    RENDERBUFFER_RED_SIZE,
+        val RENDERBUFFER_RED_SIZE: WebGLConstants
 
-    RENDERBUFFER_GREEN_SIZE,
+        val RENDERBUFFER_GREEN_SIZE: WebGLConstants
 
-    RENDERBUFFER_BLUE_SIZE,
+        val RENDERBUFFER_BLUE_SIZE: WebGLConstants
 
-    RENDERBUFFER_ALPHA_SIZE,
+        val RENDERBUFFER_ALPHA_SIZE: WebGLConstants
 
-    RENDERBUFFER_DEPTH_SIZE,
+        val RENDERBUFFER_DEPTH_SIZE: WebGLConstants
 
-    RENDERBUFFER_STENCIL_SIZE,
+        val RENDERBUFFER_STENCIL_SIZE: WebGLConstants
 
-    FRAMEBUFFER_ATTACHMENT_OBJECT_TYPE,
+        val FRAMEBUFFER_ATTACHMENT_OBJECT_TYPE: WebGLConstants
 
-    FRAMEBUFFER_ATTACHMENT_OBJECT_NAME,
+        val FRAMEBUFFER_ATTACHMENT_OBJECT_NAME: WebGLConstants
 
-    FRAMEBUFFER_ATTACHMENT_TEXTURE_LEVEL,
+        val FRAMEBUFFER_ATTACHMENT_TEXTURE_LEVEL: WebGLConstants
 
-    FRAMEBUFFER_ATTACHMENT_TEXTURE_CUBE_MAP_FACE,
+        val FRAMEBUFFER_ATTACHMENT_TEXTURE_CUBE_MAP_FACE: WebGLConstants
 
-    COLOR_ATTACHMENT0,
+        val COLOR_ATTACHMENT0: WebGLConstants
 
-    DEPTH_ATTACHMENT,
+        val DEPTH_ATTACHMENT: WebGLConstants
 
-    STENCIL_ATTACHMENT,
+        val STENCIL_ATTACHMENT: WebGLConstants
 
-    DEPTH_STENCIL_ATTACHMENT,
+        val DEPTH_STENCIL_ATTACHMENT: WebGLConstants
 
-    NONE,
+        val NONE: WebGLConstants
 
-    FRAMEBUFFER_COMPLETE,
+        val FRAMEBUFFER_COMPLETE: WebGLConstants
 
-    FRAMEBUFFER_INCOMPLETE_ATTACHMENT,
+        val FRAMEBUFFER_INCOMPLETE_ATTACHMENT: WebGLConstants
 
-    FRAMEBUFFER_INCOMPLETE_MISSING_ATTACHMENT,
+        val FRAMEBUFFER_INCOMPLETE_MISSING_ATTACHMENT: WebGLConstants
 
-    FRAMEBUFFER_INCOMPLETE_DIMENSIONS,
+        val FRAMEBUFFER_INCOMPLETE_DIMENSIONS: WebGLConstants
 
-    FRAMEBUFFER_UNSUPPORTED,
+        val FRAMEBUFFER_UNSUPPORTED: WebGLConstants
 
-    FRAMEBUFFER_BINDING,
+        val FRAMEBUFFER_BINDING: WebGLConstants
 
-    RENDERBUFFER_BINDING,
+        val RENDERBUFFER_BINDING: WebGLConstants
 
-    MAX_RENDERBUFFER_SIZE,
+        val MAX_RENDERBUFFER_SIZE: WebGLConstants
 
-    INVALID_FRAMEBUFFER_OPERATION,
+        val INVALID_FRAMEBUFFER_OPERATION: WebGLConstants
 
-    UNPACK_FLIP_Y_WEBGL,
+        val UNPACK_FLIP_Y_WEBGL: WebGLConstants
 
-    UNPACK_PREMULTIPLY_ALPHA_WEBGL,
+        val UNPACK_PREMULTIPLY_ALPHA_WEBGL: WebGLConstants
 
-    CONTEXT_LOST_WEBGL,
+        val CONTEXT_LOST_WEBGL: WebGLConstants
 
-    UNPACK_COLORSPACE_CONVERSION_WEBGL,
+        val UNPACK_COLORSPACE_CONVERSION_WEBGL: WebGLConstants
 
-    BROWSER_DEFAULT_WEBGL,
+        val BROWSER_DEFAULT_WEBGL: WebGLConstants
 
-    COMPRESSED_RGB_S3TC_DXT1_EXT,
+        val COMPRESSED_RGB_S3TC_DXT1_EXT: WebGLConstants
 
-    COMPRESSED_RGBA_S3TC_DXT1_EXT,
+        val COMPRESSED_RGBA_S3TC_DXT1_EXT: WebGLConstants
 
-    COMPRESSED_RGBA_S3TC_DXT3_EXT,
+        val COMPRESSED_RGBA_S3TC_DXT3_EXT: WebGLConstants
 
-    COMPRESSED_RGBA_S3TC_DXT5_EXT,
+        val COMPRESSED_RGBA_S3TC_DXT5_EXT: WebGLConstants
 
-    COMPRESSED_RGB_PVRTC_4BPPV1_IMG,
+        val COMPRESSED_RGB_PVRTC_4BPPV1_IMG: WebGLConstants
 
-    COMPRESSED_RGB_PVRTC_2BPPV1_IMG,
+        val COMPRESSED_RGB_PVRTC_2BPPV1_IMG: WebGLConstants
 
-    COMPRESSED_RGBA_PVRTC_4BPPV1_IMG,
+        val COMPRESSED_RGBA_PVRTC_4BPPV1_IMG: WebGLConstants
 
-    COMPRESSED_RGBA_PVRTC_2BPPV1_IMG,
+        val COMPRESSED_RGBA_PVRTC_2BPPV1_IMG: WebGLConstants
 
-    COMPRESSED_RGBA_ASTC_4x4_WEBGL,
+        val COMPRESSED_RGBA_ASTC_4x4_WEBGL: WebGLConstants
 
-    COMPRESSED_RGB_ETC1_WEBGL,
+        val COMPRESSED_RGB_ETC1_WEBGL: WebGLConstants
 
-    COMPRESSED_RGBA_BPTC_UNORM,
+        val COMPRESSED_RGBA_BPTC_UNORM: WebGLConstants
 
-    HALF_FLOAT_OES,
+        val HALF_FLOAT_OES: WebGLConstants
 
-    DOUBLE,
+        val DOUBLE: WebGLConstants
 
-    READ_BUFFER,
+        val READ_BUFFER: WebGLConstants
 
-    UNPACK_ROW_LENGTH,
+        val UNPACK_ROW_LENGTH: WebGLConstants
 
-    UNPACK_SKIP_ROWS,
+        val UNPACK_SKIP_ROWS: WebGLConstants
 
-    UNPACK_SKIP_PIXELS,
+        val UNPACK_SKIP_PIXELS: WebGLConstants
 
-    PACK_ROW_LENGTH,
+        val PACK_ROW_LENGTH: WebGLConstants
 
-    PACK_SKIP_ROWS,
+        val PACK_SKIP_ROWS: WebGLConstants
 
-    PACK_SKIP_PIXELS,
+        val PACK_SKIP_PIXELS: WebGLConstants
 
-    COLOR,
+        val COLOR: WebGLConstants
 
-    DEPTH,
+        val DEPTH: WebGLConstants
 
-    STENCIL,
+        val STENCIL: WebGLConstants
 
-    RED,
+        val RED: WebGLConstants
 
-    RGB8,
+        val RGB8: WebGLConstants
 
-    RGBA8,
+        val RGBA8: WebGLConstants
 
-    RGB10_A2,
+        val RGB10_A2: WebGLConstants
 
-    TEXTURE_BINDING_3D,
+        val TEXTURE_BINDING_3D: WebGLConstants
 
-    UNPACK_SKIP_IMAGES,
+        val UNPACK_SKIP_IMAGES: WebGLConstants
 
-    UNPACK_IMAGE_HEIGHT,
+        val UNPACK_IMAGE_HEIGHT: WebGLConstants
 
-    TEXTURE_3D,
+        val TEXTURE_3D: WebGLConstants
 
-    TEXTURE_WRAP_R,
+        val TEXTURE_WRAP_R: WebGLConstants
 
-    MAX_3D_TEXTURE_SIZE,
+        val MAX_3D_TEXTURE_SIZE: WebGLConstants
 
-    UNSIGNED_INT_2_10_10_10_REV,
+        val UNSIGNED_INT_2_10_10_10_REV: WebGLConstants
 
-    MAX_ELEMENTS_VERTICES,
+        val MAX_ELEMENTS_VERTICES: WebGLConstants
 
-    MAX_ELEMENTS_INDICES,
+        val MAX_ELEMENTS_INDICES: WebGLConstants
 
-    TEXTURE_MIN_LOD,
+        val TEXTURE_MIN_LOD: WebGLConstants
 
-    TEXTURE_MAX_LOD,
+        val TEXTURE_MAX_LOD: WebGLConstants
 
-    TEXTURE_BASE_LEVEL,
+        val TEXTURE_BASE_LEVEL: WebGLConstants
 
-    TEXTURE_MAX_LEVEL,
+        val TEXTURE_MAX_LEVEL: WebGLConstants
 
-    MIN,
+        val MIN: WebGLConstants
 
-    MAX,
+        val MAX: WebGLConstants
 
-    DEPTH_COMPONENT24,
+        val DEPTH_COMPONENT24: WebGLConstants
 
-    MAX_TEXTURE_LOD_BIAS,
+        val MAX_TEXTURE_LOD_BIAS: WebGLConstants
 
-    TEXTURE_COMPARE_MODE,
+        val TEXTURE_COMPARE_MODE: WebGLConstants
 
-    TEXTURE_COMPARE_FUNC,
+        val TEXTURE_COMPARE_FUNC: WebGLConstants
 
-    CURRENT_QUERY,
+        val CURRENT_QUERY: WebGLConstants
 
-    QUERY_RESULT,
+        val QUERY_RESULT: WebGLConstants
 
-    QUERY_RESULT_AVAILABLE,
+        val QUERY_RESULT_AVAILABLE: WebGLConstants
 
-    STREAM_READ,
+        val STREAM_READ: WebGLConstants
 
-    STREAM_COPY,
+        val STREAM_COPY: WebGLConstants
 
-    STATIC_READ,
+        val STATIC_READ: WebGLConstants
 
-    STATIC_COPY,
+        val STATIC_COPY: WebGLConstants
 
-    DYNAMIC_READ,
+        val DYNAMIC_READ: WebGLConstants
 
-    DYNAMIC_COPY,
+        val DYNAMIC_COPY: WebGLConstants
 
-    MAX_DRAW_BUFFERS,
+        val MAX_DRAW_BUFFERS: WebGLConstants
 
-    DRAW_BUFFER0,
+        val DRAW_BUFFER0: WebGLConstants
 
-    DRAW_BUFFER1,
+        val DRAW_BUFFER1: WebGLConstants
 
-    DRAW_BUFFER2,
+        val DRAW_BUFFER2: WebGLConstants
 
-    DRAW_BUFFER3,
+        val DRAW_BUFFER3: WebGLConstants
 
-    DRAW_BUFFER4,
+        val DRAW_BUFFER4: WebGLConstants
 
-    DRAW_BUFFER5,
+        val DRAW_BUFFER5: WebGLConstants
 
-    DRAW_BUFFER6,
+        val DRAW_BUFFER6: WebGLConstants
 
-    DRAW_BUFFER7,
+        val DRAW_BUFFER7: WebGLConstants
 
-    DRAW_BUFFER8,
+        val DRAW_BUFFER8: WebGLConstants
 
-    DRAW_BUFFER9,
+        val DRAW_BUFFER9: WebGLConstants
 
-    DRAW_BUFFER10,
+        val DRAW_BUFFER10: WebGLConstants
 
-    DRAW_BUFFER11,
+        val DRAW_BUFFER11: WebGLConstants
 
-    DRAW_BUFFER12,
+        val DRAW_BUFFER12: WebGLConstants
 
-    DRAW_BUFFER13,
+        val DRAW_BUFFER13: WebGLConstants
 
-    DRAW_BUFFER14,
+        val DRAW_BUFFER14: WebGLConstants
 
-    DRAW_BUFFER15,
+        val DRAW_BUFFER15: WebGLConstants
 
-    MAX_FRAGMENT_UNIFORM_COMPONENTS,
+        val MAX_FRAGMENT_UNIFORM_COMPONENTS: WebGLConstants
 
-    MAX_VERTEX_UNIFORM_COMPONENTS,
+        val MAX_VERTEX_UNIFORM_COMPONENTS: WebGLConstants
 
-    SAMPLER_3D,
+        val SAMPLER_3D: WebGLConstants
 
-    SAMPLER_2D_SHADOW,
+        val SAMPLER_2D_SHADOW: WebGLConstants
 
-    FRAGMENT_SHADER_DERIVATIVE_HINT,
+        val FRAGMENT_SHADER_DERIVATIVE_HINT: WebGLConstants
 
-    PIXEL_PACK_BUFFER,
+        val PIXEL_PACK_BUFFER: WebGLConstants
 
-    PIXEL_UNPACK_BUFFER,
+        val PIXEL_UNPACK_BUFFER: WebGLConstants
 
-    PIXEL_PACK_BUFFER_BINDING,
+        val PIXEL_PACK_BUFFER_BINDING: WebGLConstants
 
-    PIXEL_UNPACK_BUFFER_BINDING,
+        val PIXEL_UNPACK_BUFFER_BINDING: WebGLConstants
 
-    FLOAT_MAT2x3,
+        val FLOAT_MAT2x3: WebGLConstants
 
-    FLOAT_MAT2x4,
+        val FLOAT_MAT2x4: WebGLConstants
 
-    FLOAT_MAT3x2,
+        val FLOAT_MAT3x2: WebGLConstants
 
-    FLOAT_MAT3x4,
+        val FLOAT_MAT3x4: WebGLConstants
 
-    FLOAT_MAT4x2,
+        val FLOAT_MAT4x2: WebGLConstants
 
-    FLOAT_MAT4x3,
+        val FLOAT_MAT4x3: WebGLConstants
 
-    SRGB,
+        val SRGB: WebGLConstants
 
-    SRGB8,
+        val SRGB8: WebGLConstants
 
-    SRGB8_ALPHA8,
+        val SRGB8_ALPHA8: WebGLConstants
 
-    COMPARE_REF_TO_TEXTURE,
+        val COMPARE_REF_TO_TEXTURE: WebGLConstants
 
-    RGBA32F,
+        val RGBA32F: WebGLConstants
 
-    RGB32F,
+        val RGB32F: WebGLConstants
 
-    RGBA16F,
+        val RGBA16F: WebGLConstants
 
-    RGB16F,
+        val RGB16F: WebGLConstants
 
-    VERTEX_ATTRIB_ARRAY_INTEGER,
+        val VERTEX_ATTRIB_ARRAY_INTEGER: WebGLConstants
 
-    MAX_ARRAY_TEXTURE_LAYERS,
+        val MAX_ARRAY_TEXTURE_LAYERS: WebGLConstants
 
-    MIN_PROGRAM_TEXEL_OFFSET,
+        val MIN_PROGRAM_TEXEL_OFFSET: WebGLConstants
 
-    MAX_PROGRAM_TEXEL_OFFSET,
+        val MAX_PROGRAM_TEXEL_OFFSET: WebGLConstants
 
-    MAX_VARYING_COMPONENTS,
+        val MAX_VARYING_COMPONENTS: WebGLConstants
 
-    TEXTURE_2D_ARRAY,
+        val TEXTURE_2D_ARRAY: WebGLConstants
 
-    TEXTURE_BINDING_2D_ARRAY,
+        val TEXTURE_BINDING_2D_ARRAY: WebGLConstants
 
-    R11F_G11F_B10F,
+        val R11F_G11F_B10F: WebGLConstants
 
-    UNSIGNED_INT_10F_11F_11F_REV,
+        val UNSIGNED_INT_10F_11F_11F_REV: WebGLConstants
 
-    RGB9_E5,
+        val RGB9_E5: WebGLConstants
 
-    UNSIGNED_INT_5_9_9_9_REV,
+        val UNSIGNED_INT_5_9_9_9_REV: WebGLConstants
 
-    TRANSFORM_FEEDBACK_BUFFER_MODE,
+        val TRANSFORM_FEEDBACK_BUFFER_MODE: WebGLConstants
 
-    MAX_TRANSFORM_FEEDBACK_SEPARATE_COMPONENTS,
+        val MAX_TRANSFORM_FEEDBACK_SEPARATE_COMPONENTS: WebGLConstants
 
-    TRANSFORM_FEEDBACK_VARYINGS,
+        val TRANSFORM_FEEDBACK_VARYINGS: WebGLConstants
 
-    TRANSFORM_FEEDBACK_BUFFER_START,
+        val TRANSFORM_FEEDBACK_BUFFER_START: WebGLConstants
 
-    TRANSFORM_FEEDBACK_BUFFER_SIZE,
+        val TRANSFORM_FEEDBACK_BUFFER_SIZE: WebGLConstants
 
-    TRANSFORM_FEEDBACK_PRIMITIVES_WRITTEN,
+        val TRANSFORM_FEEDBACK_PRIMITIVES_WRITTEN: WebGLConstants
 
-    RASTERIZER_DISCARD,
+        val RASTERIZER_DISCARD: WebGLConstants
 
-    MAX_TRANSFORM_FEEDBACK_INTERLEAVED_COMPONENTS,
+        val MAX_TRANSFORM_FEEDBACK_INTERLEAVED_COMPONENTS: WebGLConstants
 
-    MAX_TRANSFORM_FEEDBACK_SEPARATE_ATTRIBS,
+        val MAX_TRANSFORM_FEEDBACK_SEPARATE_ATTRIBS: WebGLConstants
 
-    INTERLEAVED_ATTRIBS,
+        val INTERLEAVED_ATTRIBS: WebGLConstants
 
-    SEPARATE_ATTRIBS,
+        val SEPARATE_ATTRIBS: WebGLConstants
 
-    TRANSFORM_FEEDBACK_BUFFER,
+        val TRANSFORM_FEEDBACK_BUFFER: WebGLConstants
 
-    TRANSFORM_FEEDBACK_BUFFER_BINDING,
+        val TRANSFORM_FEEDBACK_BUFFER_BINDING: WebGLConstants
 
-    RGBA32UI,
+        val RGBA32UI: WebGLConstants
 
-    RGB32UI,
+        val RGB32UI: WebGLConstants
 
-    RGBA16UI,
+        val RGBA16UI: WebGLConstants
 
-    RGB16UI,
+        val RGB16UI: WebGLConstants
 
-    RGBA8UI,
+        val RGBA8UI: WebGLConstants
 
-    RGB8UI,
+        val RGB8UI: WebGLConstants
 
-    RGBA32I,
+        val RGBA32I: WebGLConstants
 
-    RGB32I,
+        val RGB32I: WebGLConstants
 
-    RGBA16I,
+        val RGBA16I: WebGLConstants
 
-    RGB16I,
+        val RGB16I: WebGLConstants
 
-    RGBA8I,
+        val RGBA8I: WebGLConstants
 
-    RGB8I,
+        val RGB8I: WebGLConstants
 
-    RED_INTEGER,
+        val RED_INTEGER: WebGLConstants
 
-    RGB_INTEGER,
+        val RGB_INTEGER: WebGLConstants
 
-    RGBA_INTEGER,
+        val RGBA_INTEGER: WebGLConstants
 
-    SAMPLER_2D_ARRAY,
+        val SAMPLER_2D_ARRAY: WebGLConstants
 
-    SAMPLER_2D_ARRAY_SHADOW,
+        val SAMPLER_2D_ARRAY_SHADOW: WebGLConstants
 
-    SAMPLER_CUBE_SHADOW,
+        val SAMPLER_CUBE_SHADOW: WebGLConstants
 
-    UNSIGNED_INT_VEC2,
+        val UNSIGNED_INT_VEC2: WebGLConstants
 
-    UNSIGNED_INT_VEC3,
+        val UNSIGNED_INT_VEC3: WebGLConstants
 
-    UNSIGNED_INT_VEC4,
+        val UNSIGNED_INT_VEC4: WebGLConstants
 
-    INT_SAMPLER_2D,
+        val INT_SAMPLER_2D: WebGLConstants
 
-    INT_SAMPLER_3D,
+        val INT_SAMPLER_3D: WebGLConstants
 
-    INT_SAMPLER_CUBE,
+        val INT_SAMPLER_CUBE: WebGLConstants
 
-    INT_SAMPLER_2D_ARRAY,
+        val INT_SAMPLER_2D_ARRAY: WebGLConstants
 
-    UNSIGNED_INT_SAMPLER_2D,
+        val UNSIGNED_INT_SAMPLER_2D: WebGLConstants
 
-    UNSIGNED_INT_SAMPLER_3D,
+        val UNSIGNED_INT_SAMPLER_3D: WebGLConstants
 
-    UNSIGNED_INT_SAMPLER_CUBE,
+        val UNSIGNED_INT_SAMPLER_CUBE: WebGLConstants
 
-    UNSIGNED_INT_SAMPLER_2D_ARRAY,
+        val UNSIGNED_INT_SAMPLER_2D_ARRAY: WebGLConstants
 
-    DEPTH_COMPONENT32F,
+        val DEPTH_COMPONENT32F: WebGLConstants
 
-    DEPTH32F_STENCIL8,
+        val DEPTH32F_STENCIL8: WebGLConstants
 
-    FLOAT_32_UNSIGNED_INT_24_8_REV,
+        val FLOAT_32_UNSIGNED_INT_24_8_REV: WebGLConstants
 
-    FRAMEBUFFER_ATTACHMENT_COLOR_ENCODING,
+        val FRAMEBUFFER_ATTACHMENT_COLOR_ENCODING: WebGLConstants
 
-    FRAMEBUFFER_ATTACHMENT_COMPONENT_TYPE,
+        val FRAMEBUFFER_ATTACHMENT_COMPONENT_TYPE: WebGLConstants
 
-    FRAMEBUFFER_ATTACHMENT_RED_SIZE,
+        val FRAMEBUFFER_ATTACHMENT_RED_SIZE: WebGLConstants
 
-    FRAMEBUFFER_ATTACHMENT_GREEN_SIZE,
+        val FRAMEBUFFER_ATTACHMENT_GREEN_SIZE: WebGLConstants
 
-    FRAMEBUFFER_ATTACHMENT_BLUE_SIZE,
+        val FRAMEBUFFER_ATTACHMENT_BLUE_SIZE: WebGLConstants
 
-    FRAMEBUFFER_ATTACHMENT_ALPHA_SIZE,
+        val FRAMEBUFFER_ATTACHMENT_ALPHA_SIZE: WebGLConstants
 
-    FRAMEBUFFER_ATTACHMENT_DEPTH_SIZE,
+        val FRAMEBUFFER_ATTACHMENT_DEPTH_SIZE: WebGLConstants
 
-    FRAMEBUFFER_ATTACHMENT_STENCIL_SIZE,
+        val FRAMEBUFFER_ATTACHMENT_STENCIL_SIZE: WebGLConstants
 
-    FRAMEBUFFER_DEFAULT,
+        val FRAMEBUFFER_DEFAULT: WebGLConstants
 
-    UNSIGNED_INT_24_8,
+        val UNSIGNED_INT_24_8: WebGLConstants
 
-    DEPTH24_STENCIL8,
+        val DEPTH24_STENCIL8: WebGLConstants
 
-    UNSIGNED_NORMALIZED,
+        val UNSIGNED_NORMALIZED: WebGLConstants
 
-    DRAW_FRAMEBUFFER_BINDING,
+        val DRAW_FRAMEBUFFER_BINDING: WebGLConstants
 
-    READ_FRAMEBUFFER,
+        val READ_FRAMEBUFFER: WebGLConstants
 
-    DRAW_FRAMEBUFFER,
+        val DRAW_FRAMEBUFFER: WebGLConstants
 
-    READ_FRAMEBUFFER_BINDING,
+        val READ_FRAMEBUFFER_BINDING: WebGLConstants
 
-    RENDERBUFFER_SAMPLES,
+        val RENDERBUFFER_SAMPLES: WebGLConstants
 
-    FRAMEBUFFER_ATTACHMENT_TEXTURE_LAYER,
+        val FRAMEBUFFER_ATTACHMENT_TEXTURE_LAYER: WebGLConstants
 
-    MAX_COLOR_ATTACHMENTS,
+        val MAX_COLOR_ATTACHMENTS: WebGLConstants
 
-    COLOR_ATTACHMENT1,
+        val COLOR_ATTACHMENT1: WebGLConstants
 
-    COLOR_ATTACHMENT2,
+        val COLOR_ATTACHMENT2: WebGLConstants
 
-    COLOR_ATTACHMENT3,
+        val COLOR_ATTACHMENT3: WebGLConstants
 
-    COLOR_ATTACHMENT4,
+        val COLOR_ATTACHMENT4: WebGLConstants
 
-    COLOR_ATTACHMENT5,
+        val COLOR_ATTACHMENT5: WebGLConstants
 
-    COLOR_ATTACHMENT6,
+        val COLOR_ATTACHMENT6: WebGLConstants
 
-    COLOR_ATTACHMENT7,
+        val COLOR_ATTACHMENT7: WebGLConstants
 
-    COLOR_ATTACHMENT8,
+        val COLOR_ATTACHMENT8: WebGLConstants
 
-    COLOR_ATTACHMENT9,
+        val COLOR_ATTACHMENT9: WebGLConstants
 
-    COLOR_ATTACHMENT10,
+        val COLOR_ATTACHMENT10: WebGLConstants
 
-    COLOR_ATTACHMENT11,
+        val COLOR_ATTACHMENT11: WebGLConstants
 
-    COLOR_ATTACHMENT12,
+        val COLOR_ATTACHMENT12: WebGLConstants
 
-    COLOR_ATTACHMENT13,
+        val COLOR_ATTACHMENT13: WebGLConstants
 
-    COLOR_ATTACHMENT14,
+        val COLOR_ATTACHMENT14: WebGLConstants
 
-    COLOR_ATTACHMENT15,
+        val COLOR_ATTACHMENT15: WebGLConstants
 
-    FRAMEBUFFER_INCOMPLETE_MULTISAMPLE,
+        val FRAMEBUFFER_INCOMPLETE_MULTISAMPLE: WebGLConstants
 
-    MAX_SAMPLES,
+        val MAX_SAMPLES: WebGLConstants
 
-    HALF_FLOAT,
+        val HALF_FLOAT: WebGLConstants
 
-    RG,
+        val RG: WebGLConstants
 
-    RG_INTEGER,
+        val RG_INTEGER: WebGLConstants
 
-    R8,
+        val R8: WebGLConstants
 
-    RG8,
+        val RG8: WebGLConstants
 
-    R16F,
+        val R16F: WebGLConstants
 
-    R32F,
+        val R32F: WebGLConstants
 
-    RG16F,
+        val RG16F: WebGLConstants
 
-    RG32F,
+        val RG32F: WebGLConstants
 
-    R8I,
+        val R8I: WebGLConstants
 
-    R8UI,
+        val R8UI: WebGLConstants
 
-    R16I,
+        val R16I: WebGLConstants
 
-    R16UI,
+        val R16UI: WebGLConstants
 
-    R32I,
+        val R32I: WebGLConstants
 
-    R32UI,
+        val R32UI: WebGLConstants
 
-    RG8I,
+        val RG8I: WebGLConstants
 
-    RG8UI,
+        val RG8UI: WebGLConstants
 
-    RG16I,
+        val RG16I: WebGLConstants
 
-    RG16UI,
+        val RG16UI: WebGLConstants
 
-    RG32I,
+        val RG32I: WebGLConstants
 
-    RG32UI,
+        val RG32UI: WebGLConstants
 
-    VERTEX_ARRAY_BINDING,
+        val VERTEX_ARRAY_BINDING: WebGLConstants
 
-    R8_SNORM,
+        val R8_SNORM: WebGLConstants
 
-    RG8_SNORM,
+        val RG8_SNORM: WebGLConstants
 
-    RGB8_SNORM,
+        val RGB8_SNORM: WebGLConstants
 
-    RGBA8_SNORM,
+        val RGBA8_SNORM: WebGLConstants
 
-    SIGNED_NORMALIZED,
+        val SIGNED_NORMALIZED: WebGLConstants
 
-    COPY_READ_BUFFER,
+        val COPY_READ_BUFFER: WebGLConstants
 
-    COPY_WRITE_BUFFER,
+        val COPY_WRITE_BUFFER: WebGLConstants
 
-    COPY_READ_BUFFER_BINDING,
+        val COPY_READ_BUFFER_BINDING: WebGLConstants
 
-    COPY_WRITE_BUFFER_BINDING,
+        val COPY_WRITE_BUFFER_BINDING: WebGLConstants
 
-    UNIFORM_BUFFER,
+        val UNIFORM_BUFFER: WebGLConstants
 
-    UNIFORM_BUFFER_BINDING,
+        val UNIFORM_BUFFER_BINDING: WebGLConstants
 
-    UNIFORM_BUFFER_START,
+        val UNIFORM_BUFFER_START: WebGLConstants
 
-    UNIFORM_BUFFER_SIZE,
+        val UNIFORM_BUFFER_SIZE: WebGLConstants
 
-    MAX_VERTEX_UNIFORM_BLOCKS,
+        val MAX_VERTEX_UNIFORM_BLOCKS: WebGLConstants
 
-    MAX_FRAGMENT_UNIFORM_BLOCKS,
+        val MAX_FRAGMENT_UNIFORM_BLOCKS: WebGLConstants
 
-    MAX_COMBINED_UNIFORM_BLOCKS,
+        val MAX_COMBINED_UNIFORM_BLOCKS: WebGLConstants
 
-    MAX_UNIFORM_BUFFER_BINDINGS,
+        val MAX_UNIFORM_BUFFER_BINDINGS: WebGLConstants
 
-    MAX_UNIFORM_BLOCK_SIZE,
+        val MAX_UNIFORM_BLOCK_SIZE: WebGLConstants
 
-    MAX_COMBINED_VERTEX_UNIFORM_COMPONENTS,
+        val MAX_COMBINED_VERTEX_UNIFORM_COMPONENTS: WebGLConstants
 
-    MAX_COMBINED_FRAGMENT_UNIFORM_COMPONENTS,
+        val MAX_COMBINED_FRAGMENT_UNIFORM_COMPONENTS: WebGLConstants
 
-    UNIFORM_BUFFER_OFFSET_ALIGNMENT,
+        val UNIFORM_BUFFER_OFFSET_ALIGNMENT: WebGLConstants
 
-    ACTIVE_UNIFORM_BLOCKS,
+        val ACTIVE_UNIFORM_BLOCKS: WebGLConstants
 
-    UNIFORM_TYPE,
+        val UNIFORM_TYPE: WebGLConstants
 
-    UNIFORM_SIZE,
+        val UNIFORM_SIZE: WebGLConstants
 
-    UNIFORM_BLOCK_INDEX,
+        val UNIFORM_BLOCK_INDEX: WebGLConstants
 
-    UNIFORM_OFFSET,
+        val UNIFORM_OFFSET: WebGLConstants
 
-    UNIFORM_ARRAY_STRIDE,
+        val UNIFORM_ARRAY_STRIDE: WebGLConstants
 
-    UNIFORM_MATRIX_STRIDE,
+        val UNIFORM_MATRIX_STRIDE: WebGLConstants
 
-    UNIFORM_IS_ROW_MAJOR,
+        val UNIFORM_IS_ROW_MAJOR: WebGLConstants
 
-    UNIFORM_BLOCK_BINDING,
+        val UNIFORM_BLOCK_BINDING: WebGLConstants
 
-    UNIFORM_BLOCK_DATA_SIZE,
+        val UNIFORM_BLOCK_DATA_SIZE: WebGLConstants
 
-    UNIFORM_BLOCK_ACTIVE_UNIFORMS,
+        val UNIFORM_BLOCK_ACTIVE_UNIFORMS: WebGLConstants
 
-    UNIFORM_BLOCK_ACTIVE_UNIFORM_INDICES,
+        val UNIFORM_BLOCK_ACTIVE_UNIFORM_INDICES: WebGLConstants
 
-    UNIFORM_BLOCK_REFERENCED_BY_VERTEX_SHADER,
+        val UNIFORM_BLOCK_REFERENCED_BY_VERTEX_SHADER: WebGLConstants
 
-    UNIFORM_BLOCK_REFERENCED_BY_FRAGMENT_SHADER,
+        val UNIFORM_BLOCK_REFERENCED_BY_FRAGMENT_SHADER: WebGLConstants
 
-    INVALID_INDEX,
+        val INVALID_INDEX: WebGLConstants
 
-    MAX_VERTEX_OUTPUT_COMPONENTS,
+        val MAX_VERTEX_OUTPUT_COMPONENTS: WebGLConstants
 
-    MAX_FRAGMENT_INPUT_COMPONENTS,
+        val MAX_FRAGMENT_INPUT_COMPONENTS: WebGLConstants
 
-    MAX_SERVER_WAIT_TIMEOUT,
+        val MAX_SERVER_WAIT_TIMEOUT: WebGLConstants
 
-    OBJECT_TYPE,
+        val OBJECT_TYPE: WebGLConstants
 
-    SYNC_CONDITION,
+        val SYNC_CONDITION: WebGLConstants
 
-    SYNC_STATUS,
+        val SYNC_STATUS: WebGLConstants
 
-    SYNC_FLAGS,
+        val SYNC_FLAGS: WebGLConstants
 
-    SYNC_FENCE,
+        val SYNC_FENCE: WebGLConstants
 
-    SYNC_GPU_COMMANDS_COMPLETE,
+        val SYNC_GPU_COMMANDS_COMPLETE: WebGLConstants
 
-    UNSIGNALED,
+        val UNSIGNALED: WebGLConstants
 
-    SIGNALED,
+        val SIGNALED: WebGLConstants
 
-    ALREADY_SIGNALED,
+        val ALREADY_SIGNALED: WebGLConstants
 
-    TIMEOUT_EXPIRED,
+        val TIMEOUT_EXPIRED: WebGLConstants
 
-    CONDITION_SATISFIED,
+        val CONDITION_SATISFIED: WebGLConstants
 
-    WAIT_FAILED,
+        val WAIT_FAILED: WebGLConstants
 
-    SYNC_FLUSH_COMMANDS_BIT,
+        val SYNC_FLUSH_COMMANDS_BIT: WebGLConstants
 
-    VERTEX_ATTRIB_ARRAY_DIVISOR,
+        val VERTEX_ATTRIB_ARRAY_DIVISOR: WebGLConstants
 
-    ANY_SAMPLES_PASSED,
+        val ANY_SAMPLES_PASSED: WebGLConstants
 
-    ANY_SAMPLES_PASSED_CONSERVATIVE,
+        val ANY_SAMPLES_PASSED_CONSERVATIVE: WebGLConstants
 
-    SAMPLER_BINDING,
+        val SAMPLER_BINDING: WebGLConstants
 
-    RGB10_A2UI,
+        val RGB10_A2UI: WebGLConstants
 
-    INT_2_10_10_10_REV,
+        val INT_2_10_10_10_REV: WebGLConstants
 
-    TRANSFORM_FEEDBACK,
+        val TRANSFORM_FEEDBACK: WebGLConstants
 
-    TRANSFORM_FEEDBACK_PAUSED,
+        val TRANSFORM_FEEDBACK_PAUSED: WebGLConstants
 
-    TRANSFORM_FEEDBACK_ACTIVE,
+        val TRANSFORM_FEEDBACK_ACTIVE: WebGLConstants
 
-    TRANSFORM_FEEDBACK_BINDING,
+        val TRANSFORM_FEEDBACK_BINDING: WebGLConstants
 
-    COMPRESSED_R11_EAC,
+        val COMPRESSED_R11_EAC: WebGLConstants
 
-    COMPRESSED_SIGNED_R11_EAC,
+        val COMPRESSED_SIGNED_R11_EAC: WebGLConstants
 
-    COMPRESSED_RG11_EAC,
+        val COMPRESSED_RG11_EAC: WebGLConstants
 
-    COMPRESSED_SIGNED_RG11_EAC,
+        val COMPRESSED_SIGNED_RG11_EAC: WebGLConstants
 
-    COMPRESSED_RGB8_ETC2,
+        val COMPRESSED_RGB8_ETC2: WebGLConstants
 
-    COMPRESSED_SRGB8_ETC2,
+        val COMPRESSED_SRGB8_ETC2: WebGLConstants
 
-    COMPRESSED_RGB8_PUNCHTHROUGH_ALPHA1_ETC2,
+        val COMPRESSED_RGB8_PUNCHTHROUGH_ALPHA1_ETC2: WebGLConstants
 
-    COMPRESSED_SRGB8_PUNCHTHROUGH_ALPHA1_ETC2,
+        val COMPRESSED_SRGB8_PUNCHTHROUGH_ALPHA1_ETC2: WebGLConstants
 
-    COMPRESSED_RGBA8_ETC2_EAC,
+        val COMPRESSED_RGBA8_ETC2_EAC: WebGLConstants
 
-    COMPRESSED_SRGB8_ALPHA8_ETC2_EAC,
+        val COMPRESSED_SRGB8_ALPHA8_ETC2_EAC: WebGLConstants
 
-    TEXTURE_IMMUTABLE_FORMAT,
+        val TEXTURE_IMMUTABLE_FORMAT: WebGLConstants
 
-    MAX_ELEMENT_INDEX,
+        val MAX_ELEMENT_INDEX: WebGLConstants
 
-    TEXTURE_IMMUTABLE_LEVELS,
+        val TEXTURE_IMMUTABLE_LEVELS: WebGLConstants
 
-    MAX_TEXTURE_MAX_ANISOTROPY_EXT,
-
-    ;
-
+        val MAX_TEXTURE_MAX_ANISOTROPY_EXT: WebGLConstants
+    }
 }

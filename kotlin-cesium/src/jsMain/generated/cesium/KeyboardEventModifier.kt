@@ -2,6 +2,10 @@
 
 @file:JsModule("cesium")
 
+@file:Suppress(
+    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
+)
+
 package cesium
 
 /**
@@ -10,23 +14,22 @@ package cesium
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#KeyboardEventModifier">Online Documentation</a>
  */
 
-external enum class KeyboardEventModifier {
+sealed external interface KeyboardEventModifier {
+    companion object {
 
-    /**
-     * Represents the shift key being held down.
-     */
-    SHIFT,
+        /**
+         * Represents the shift key being held down.
+         */
+        val SHIFT: KeyboardEventModifier
 
-    /**
-     * Represents the control key being held down.
-     */
-    CTRL,
+        /**
+         * Represents the control key being held down.
+         */
+        val CTRL: KeyboardEventModifier
 
-    /**
-     * Represents the alt key being held down.
-     */
-    ALT,
-
-    ;
-
+        /**
+         * Represents the alt key being held down.
+         */
+        val ALT: KeyboardEventModifier
+    }
 }

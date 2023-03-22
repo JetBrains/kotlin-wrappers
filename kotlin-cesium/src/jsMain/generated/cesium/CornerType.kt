@@ -2,6 +2,10 @@
 
 @file:JsModule("cesium")
 
+@file:Suppress(
+    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
+)
+
 package cesium
 
 /**
@@ -9,23 +13,22 @@ package cesium
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#CornerType">Online Documentation</a>
  */
 
-external enum class CornerType {
+sealed external interface CornerType {
+    companion object {
 
-    /**
-     * Corner has a smooth edge.
-     */
-    ROUNDED,
+        /**
+         * Corner has a smooth edge.
+         */
+        val ROUNDED: CornerType
 
-    /**
-     * Corner point is the intersection of adjacent edges.
-     */
-    MITERED,
+        /**
+         * Corner point is the intersection of adjacent edges.
+         */
+        val MITERED: CornerType
 
-    /**
-     * Corner is clipped.
-     */
-    BEVELED,
-
-    ;
-
+        /**
+         * Corner is clipped.
+         */
+        val BEVELED: CornerType
+    }
 }

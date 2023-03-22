@@ -2,6 +2,10 @@
 
 @file:JsModule("cesium")
 
+@file:Suppress(
+    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
+)
+
 package cesium
 
 /**
@@ -9,18 +13,17 @@ package cesium
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#PostProcessStageSampleMode">Online Documentation</a>
  */
 
-external enum class PostProcessStageSampleMode {
+sealed external interface PostProcessStageSampleMode {
+    companion object {
 
-    /**
-     * Samples the texture by returning the closest texel.
-     */
-    NEAREST,
+        /**
+         * Samples the texture by returning the closest texel.
+         */
+        val NEAREST: PostProcessStageSampleMode
 
-    /**
-     * Samples the texture through bi-linear interpolation of the four nearest texels.
-     */
-    LINEAR,
-
-    ;
-
+        /**
+         * Samples the texture through bi-linear interpolation of the four nearest texels.
+         */
+        val LINEAR: PostProcessStageSampleMode
+    }
 }

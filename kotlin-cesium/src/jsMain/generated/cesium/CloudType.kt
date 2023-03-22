@@ -2,6 +2,10 @@
 
 @file:JsModule("cesium")
 
+@file:Suppress(
+    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
+)
+
 package cesium
 
 /**
@@ -9,13 +13,12 @@ package cesium
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#CloudType">Online Documentation</a>
  */
 
-external enum class CloudType {
+sealed external interface CloudType {
+    companion object {
 
-    /**
-     * Cumulus cloud.
-     */
-    CUMULUS,
-
-    ;
-
+        /**
+         * Cumulus cloud.
+         */
+        val CUMULUS: CloudType
+    }
 }

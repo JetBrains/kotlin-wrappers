@@ -2,6 +2,10 @@
 
 @file:JsModule("cesium")
 
+@file:Suppress(
+    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
+)
+
 package cesium
 
 /**
@@ -12,23 +16,22 @@ package cesium
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#Intersect">Online Documentation</a>
  */
 
-external enum class Intersect {
+sealed external interface Intersect {
+    companion object {
 
-    /**
-     * Represents that an object is not contained within the frustum.
-     */
-    OUTSIDE,
+        /**
+         * Represents that an object is not contained within the frustum.
+         */
+        val OUTSIDE: Intersect
 
-    /**
-     * Represents that an object intersects one of the frustum's planes.
-     */
-    INTERSECTING,
+        /**
+         * Represents that an object intersects one of the frustum's planes.
+         */
+        val INTERSECTING: Intersect
 
-    /**
-     * Represents that an object is fully within the frustum.
-     */
-    INSIDE,
-
-    ;
-
+        /**
+         * Represents that an object is fully within the frustum.
+         */
+        val INSIDE: Intersect
+    }
 }
