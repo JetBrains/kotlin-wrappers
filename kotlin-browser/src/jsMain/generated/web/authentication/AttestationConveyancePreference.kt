@@ -2,17 +2,18 @@
 
 @file:Suppress(
     "NAME_CONTAINS_ILLEGAL_CHARS",
+    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package web.authentication
 
 // language=JavaScript
 @JsName("""(/*union*/{direct: 'direct', enterprise: 'enterprise', indirect: 'indirect', none: 'none'}/*union*/)""")
-external enum class AttestationConveyancePreference {
-    direct,
-    enterprise,
-    indirect,
-    none,
-
-    ;
+sealed external interface AttestationConveyancePreference {
+    companion object {
+        val direct: AttestationConveyancePreference
+        val enterprise: AttestationConveyancePreference
+        val indirect: AttestationConveyancePreference
+        val none: AttestationConveyancePreference
+    }
 }

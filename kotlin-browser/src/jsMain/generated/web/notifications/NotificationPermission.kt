@@ -2,16 +2,17 @@
 
 @file:Suppress(
     "NAME_CONTAINS_ILLEGAL_CHARS",
+    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package web.notifications
 
 // language=JavaScript
 @JsName("""(/*union*/{default: 'default', denied: 'denied', granted: 'granted'}/*union*/)""")
-external enum class NotificationPermission {
-    default,
-    denied,
-    granted,
-
-    ;
+sealed external interface NotificationPermission {
+    companion object {
+        val default: NotificationPermission
+        val denied: NotificationPermission
+        val granted: NotificationPermission
+    }
 }

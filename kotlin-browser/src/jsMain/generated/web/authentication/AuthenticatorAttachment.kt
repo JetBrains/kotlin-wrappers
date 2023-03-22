@@ -2,15 +2,16 @@
 
 @file:Suppress(
     "NAME_CONTAINS_ILLEGAL_CHARS",
+    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package web.authentication
 
 // language=JavaScript
 @JsName("""(/*union*/{crossPlatform: 'cross-platform', platform: 'platform'}/*union*/)""")
-external enum class AuthenticatorAttachment {
-    crossPlatform,
-    platform,
-
-    ;
+sealed external interface AuthenticatorAttachment {
+    companion object {
+        val crossPlatform: AuthenticatorAttachment
+        val platform: AuthenticatorAttachment
+    }
 }

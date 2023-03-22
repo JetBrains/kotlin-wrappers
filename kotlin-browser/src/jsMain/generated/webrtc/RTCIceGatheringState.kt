@@ -2,16 +2,17 @@
 
 @file:Suppress(
     "NAME_CONTAINS_ILLEGAL_CHARS",
+    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package webrtc
 
 // language=JavaScript
 @JsName("""(/*union*/{complete: 'complete', gathering: 'gathering', new: 'new'}/*union*/)""")
-external enum class RTCIceGatheringState {
-    complete,
-    gathering,
-    new,
-
-    ;
+sealed external interface RTCIceGatheringState {
+    companion object {
+        val complete: RTCIceGatheringState
+        val gathering: RTCIceGatheringState
+        val new: RTCIceGatheringState
+    }
 }

@@ -2,14 +2,15 @@
 
 @file:Suppress(
     "NAME_CONTAINS_ILLEGAL_CHARS",
+    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package web.authentication
 
 // language=JavaScript
 @JsName("""(/*union*/{publicKey: 'public-key'}/*union*/)""")
-external enum class PublicKeyCredentialType {
-    publicKey,
-
-    ;
+sealed external interface PublicKeyCredentialType {
+    companion object {
+        val publicKey: PublicKeyCredentialType
+    }
 }

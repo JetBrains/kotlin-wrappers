@@ -2,16 +2,17 @@
 
 @file:Suppress(
     "NAME_CONTAINS_ILLEGAL_CHARS",
+    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package web.idb
 
 // language=JavaScript
 @JsName("""(/*union*/{default: 'default', relaxed: 'relaxed', strict: 'strict'}/*union*/)""")
-external enum class IDBTransactionDurability {
-    default,
-    relaxed,
-    strict,
-
-    ;
+sealed external interface IDBTransactionDurability {
+    companion object {
+        val default: IDBTransactionDurability
+        val relaxed: IDBTransactionDurability
+        val strict: IDBTransactionDurability
+    }
 }

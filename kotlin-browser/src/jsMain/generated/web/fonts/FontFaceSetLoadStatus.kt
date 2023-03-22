@@ -2,15 +2,16 @@
 
 @file:Suppress(
     "NAME_CONTAINS_ILLEGAL_CHARS",
+    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package web.fonts
 
 // language=JavaScript
 @JsName("""(/*union*/{loaded: 'loaded', loading: 'loading'}/*union*/)""")
-external enum class FontFaceSetLoadStatus {
-    loaded,
-    loading,
-
-    ;
+sealed external interface FontFaceSetLoadStatus {
+    companion object {
+        val loaded: FontFaceSetLoadStatus
+        val loading: FontFaceSetLoadStatus
+    }
 }

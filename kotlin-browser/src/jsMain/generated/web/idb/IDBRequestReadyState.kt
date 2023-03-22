@@ -2,15 +2,16 @@
 
 @file:Suppress(
     "NAME_CONTAINS_ILLEGAL_CHARS",
+    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package web.idb
 
 // language=JavaScript
 @JsName("""(/*union*/{done: 'done', pending: 'pending'}/*union*/)""")
-external enum class IDBRequestReadyState {
-    done,
-    pending,
-
-    ;
+sealed external interface IDBRequestReadyState {
+    companion object {
+        val done: IDBRequestReadyState
+        val pending: IDBRequestReadyState
+    }
 }

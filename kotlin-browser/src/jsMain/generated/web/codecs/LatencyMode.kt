@@ -2,15 +2,16 @@
 
 @file:Suppress(
     "NAME_CONTAINS_ILLEGAL_CHARS",
+    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package web.codecs
 
 // language=JavaScript
 @JsName("""(/*union*/{quality: 'quality', realtime: 'realtime'}/*union*/)""")
-external enum class LatencyMode {
-    quality,
-    realtime,
-
-    ;
+sealed external interface LatencyMode {
+    companion object {
+        val quality: LatencyMode
+        val realtime: LatencyMode
+    }
 }

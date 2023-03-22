@@ -2,14 +2,15 @@
 
 @file:Suppress(
     "NAME_CONTAINS_ILLEGAL_CHARS",
+    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package web.gamepad
 
 // language=JavaScript
 @JsName("""(/*union*/{vibration: 'vibration'}/*union*/)""")
-external enum class GamepadHapticActuatorType {
-    vibration,
-
-    ;
+sealed external interface GamepadHapticActuatorType {
+    companion object {
+        val vibration: GamepadHapticActuatorType
+    }
 }

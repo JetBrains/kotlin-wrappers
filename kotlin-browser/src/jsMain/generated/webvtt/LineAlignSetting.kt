@@ -2,16 +2,17 @@
 
 @file:Suppress(
     "NAME_CONTAINS_ILLEGAL_CHARS",
+    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package webvtt
 
 // language=JavaScript
 @JsName("""(/*union*/{center: 'center', end: 'end', start: 'start'}/*union*/)""")
-external enum class LineAlignSetting {
-    center,
-    end,
-    start,
-
-    ;
+sealed external interface LineAlignSetting {
+    companion object {
+        val center: LineAlignSetting
+        val end: LineAlignSetting
+        val start: LineAlignSetting
+    }
 }

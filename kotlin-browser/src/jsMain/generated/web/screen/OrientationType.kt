@@ -2,17 +2,18 @@
 
 @file:Suppress(
     "NAME_CONTAINS_ILLEGAL_CHARS",
+    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package web.screen
 
 // language=JavaScript
 @JsName("""(/*union*/{landscapePrimary: 'landscape-primary', landscapeSecondary: 'landscape-secondary', portraitPrimary: 'portrait-primary', portraitSecondary: 'portrait-secondary'}/*union*/)""")
-external enum class OrientationType {
-    landscapePrimary,
-    landscapeSecondary,
-    portraitPrimary,
-    portraitSecondary,
-
-    ;
+sealed external interface OrientationType {
+    companion object {
+        val landscapePrimary: OrientationType
+        val landscapeSecondary: OrientationType
+        val portraitPrimary: OrientationType
+        val portraitSecondary: OrientationType
+    }
 }

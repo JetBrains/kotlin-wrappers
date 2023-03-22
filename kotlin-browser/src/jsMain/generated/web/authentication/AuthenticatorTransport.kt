@@ -2,18 +2,19 @@
 
 @file:Suppress(
     "NAME_CONTAINS_ILLEGAL_CHARS",
+    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package web.authentication
 
 // language=JavaScript
 @JsName("""(/*union*/{ble: 'ble', hybrid: 'hybrid', internal: 'internal', nfc: 'nfc', usb: 'usb'}/*union*/)""")
-external enum class AuthenticatorTransport {
-    ble,
-    hybrid,
-    internal,
-    nfc,
-    usb,
-
-    ;
+sealed external interface AuthenticatorTransport {
+    companion object {
+        val ble: AuthenticatorTransport
+        val hybrid: AuthenticatorTransport
+        val internal: AuthenticatorTransport
+        val nfc: AuthenticatorTransport
+        val usb: AuthenticatorTransport
+    }
 }

@@ -2,14 +2,15 @@
 
 @file:Suppress(
     "NAME_CONTAINS_ILLEGAL_CHARS",
+    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package webrtc
 
 // language=JavaScript
 @JsName("""(/*union*/{require: 'require'}/*union*/)""")
-external enum class RTCRtcpMuxPolicy {
-    require,
-
-    ;
+sealed external interface RTCRtcpMuxPolicy {
+    companion object {
+        val require: RTCRtcpMuxPolicy
+    }
 }

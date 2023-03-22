@@ -2,15 +2,16 @@
 
 @file:Suppress(
     "NAME_CONTAINS_ILLEGAL_CHARS",
+    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package web.html
 
 // language=JavaScript
 @JsName("""(/*union*/{closed: 'closed', open: 'open'}/*union*/)""")
-external enum class ShadowRootMode {
-    closed,
-    open,
-
-    ;
+sealed external interface ShadowRootMode {
+    companion object {
+        val closed: ShadowRootMode
+        val open: ShadowRootMode
+    }
 }
