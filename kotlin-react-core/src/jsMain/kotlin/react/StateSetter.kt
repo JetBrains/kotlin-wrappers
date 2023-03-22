@@ -1,20 +1,16 @@
-@file:Suppress(
-    "NOTHING_TO_INLINE",
-)
-
 package react
 
-// TODO: make external in IR
-sealed class StateSetter<T> {
-    inline operator fun invoke(
-        value: T,
-    ) {
-        unsafeCast<SetValue<T>>()(value)
-    }
+sealed external interface StateSetter<T> {
+    @nativeInvoke
+    @Suppress("DEPRECATION")
 
-    inline operator fun invoke(
-        noinline transform: (T) -> T,
-    ) {
-        unsafeCast<TransformValue<T>>()(transform)
-    }
+    operator fun invoke(
+        value: T,
+    )
+
+    @nativeInvoke
+    @Suppress("DEPRECATION")
+    operator fun invoke(
+        transform: (T) -> T,
+    )
 }
