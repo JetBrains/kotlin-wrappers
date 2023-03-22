@@ -2,15 +2,16 @@
 
 @file:Suppress(
     "NAME_CONTAINS_ILLEGAL_CHARS",
+    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package js.intl
 
 // language=JavaScript
 @JsName("""(/*union*/{code: 'code', none: 'none'}/*union*/)""")
-external enum class DisplayNamesFallback {
-    code,
-    none,
-
-    ;
+sealed external interface DisplayNamesFallback {
+    companion object {
+        val code: DisplayNamesFallback
+        val none: DisplayNamesFallback
+    }
 }

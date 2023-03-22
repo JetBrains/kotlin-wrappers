@@ -2,16 +2,17 @@
 
 @file:Suppress(
     "NAME_CONTAINS_ILLEGAL_CHARS",
+    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package js.intl
 
 // language=JavaScript
 @JsName("""(/*union*/{long: 'long', short: 'short', narrow: 'narrow'}/*union*/)""")
-external enum class ListFormatStyle {
-    long,
-    short,
-    narrow,
-
-    ;
+sealed external interface ListFormatStyle {
+    companion object {
+        val long: ListFormatStyle
+        val short: ListFormatStyle
+        val narrow: ListFormatStyle
+    }
 }
