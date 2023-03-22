@@ -1,13 +1,17 @@
 // Automatically generated - do not modify!
 
+@file:Suppress(
+    "NAME_CONTAINS_ILLEGAL_CHARS",
+    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
+)
+
 package tanstack.virtual.core
 
-@Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
 // language=JavaScript
 @JsName("""(/*union*/{forward: 'forward', backward: 'backward'}/*union*/)""")
-external enum class ScrollDirection {
-    forward,
-    backward,
-
-    ;
+sealed external interface ScrollDirection {
+    companion object {
+        val forward: ScrollDirection
+        val backward: ScrollDirection
+    }
 }
