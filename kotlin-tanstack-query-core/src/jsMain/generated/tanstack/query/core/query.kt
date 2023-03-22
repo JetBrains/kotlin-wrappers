@@ -93,7 +93,7 @@ external interface ContinueAction {
 
 external interface SetStateAction<TData, TError> {
     var type: Type /* 'setState' */
-    var state: QueryState<TData, TError>
+    var state: QueryState<TData, TError> /* Partial */
     var setStateOptions: SetStateOptions
 }
 
@@ -120,7 +120,7 @@ open external class Query<TQueryFnData, TError, TData, TQueryKey : QueryKey>(con
     ): TData
 
     open fun setState(
-        state: QueryState<TData, TError>,
+        state: QueryState<TData, TError>, /* Partial */
         setStateOptions: SetStateOptions = definedExternally,
     )
 
