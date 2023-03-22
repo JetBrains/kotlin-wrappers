@@ -8,10 +8,10 @@
 package js.intl
 
 // language=JavaScript
-@JsName("""(/*union*/{cardinal: 'cardinal', ordinal_: 'ordinal'}/*union*/)""")
+@JsName("""(/*union*/{cardinal: 'cardinal', ordinal: 'ordinal'}/*union*/)""")
 sealed external interface PluralRuleType {
     companion object {
         val cardinal: PluralRuleType
-        val ordinal_: PluralRuleType
+        val ordinal: PluralRuleType
     }
 }
