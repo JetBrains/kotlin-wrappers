@@ -11,15 +11,18 @@ package remix.run.router
  * ignored.
  */
 
-@Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
+@Suppress(
+    "NAME_CONTAINS_ILLEGAL_CHARS",
+    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
+)
 @JsName("""(/*union*/{lazy: 'lazy', caseSensitive: 'caseSensitive', path: 'path', id: 'id', index: 'index', children: 'children'}/*union*/)""")
-external enum class ImmutableRouteKey {
-    lazy,
-    caseSensitive,
-    path,
-    id,
-    index,
-    children,
-
-    ;
+sealed external interface ImmutableRouteKey {
+    companion object {
+        val lazy: ImmutableRouteKey
+        val caseSensitive: ImmutableRouteKey
+        val path: ImmutableRouteKey
+        val id: ImmutableRouteKey
+        val index: ImmutableRouteKey
+        val children: ImmutableRouteKey
+    }
 }

@@ -5,13 +5,16 @@
 package remix.run.router
 
 
-@Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
+@Suppress(
+    "NAME_CONTAINS_ILLEGAL_CHARS",
+    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
+)
 @JsName("""(/*union*/{post: 'post', put: 'put', patch: 'patch', delete: 'delete'}/*union*/)""")
-external enum class MutationFormMethod {
-    post,
-    put,
-    patch,
-    delete,
-
-    ;
+sealed external interface MutationFormMethod {
+    companion object {
+        val post: MutationFormMethod
+        val put: MutationFormMethod
+        val patch: MutationFormMethod
+        val delete: MutationFormMethod
+    }
 }
