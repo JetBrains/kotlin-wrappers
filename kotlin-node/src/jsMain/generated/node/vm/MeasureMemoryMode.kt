@@ -2,15 +2,16 @@
 
 @file:Suppress(
     "NAME_CONTAINS_ILLEGAL_CHARS",
+    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package node.vm
 
 // language=JavaScript
 @JsName("""(/*union*/{summary: 'summary', detailed: 'detailed'}/*union*/)""")
-external enum class MeasureMemoryMode {
-    summary,
-    detailed,
-
-    ;
+sealed external interface MeasureMemoryMode {
+    companion object {
+        val summary: MeasureMemoryMode
+        val detailed: MeasureMemoryMode
+    }
 }

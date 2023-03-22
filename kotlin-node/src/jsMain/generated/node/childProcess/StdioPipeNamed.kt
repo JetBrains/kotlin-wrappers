@@ -2,15 +2,16 @@
 
 @file:Suppress(
     "NAME_CONTAINS_ILLEGAL_CHARS",
+    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package node.childProcess
 
 // language=JavaScript
 @JsName("""(/*union*/{pipe: 'pipe', overlapped: 'overlapped'}/*union*/)""")
-external enum class StdioPipeNamed {
-    pipe,
-    overlapped,
-
-    ;
+sealed external interface StdioPipeNamed {
+    companion object {
+        val pipe: StdioPipeNamed
+        val overlapped: StdioPipeNamed
+    }
 }
