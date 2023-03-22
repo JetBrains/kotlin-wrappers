@@ -2,15 +2,16 @@
 
 @file:Suppress(
     "NAME_CONTAINS_ILLEGAL_CHARS",
+    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package typescript
 
 // language=JavaScript
 @JsName("""(/*union*/{Standard: 0, JSX: 1}/*union*/)""")
-external enum class LanguageVariant {
-    Standard,
-    JSX,
-
-    ;
+sealed external interface LanguageVariant {
+    companion object {
+        val Standard: LanguageVariant
+        val JSX: LanguageVariant
+    }
 }
