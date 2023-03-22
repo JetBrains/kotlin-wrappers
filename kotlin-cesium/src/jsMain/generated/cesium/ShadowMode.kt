@@ -13,7 +13,6 @@ package cesium
  * shadows are enabled.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#ShadowMode">Online Documentation</a>
  */
-
 sealed external interface ShadowMode {
     companion object {
 

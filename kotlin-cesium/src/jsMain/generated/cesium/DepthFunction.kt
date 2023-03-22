@@ -12,7 +12,6 @@ package cesium
  * Determines the function used to compare two depths for the depth test.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#DepthFunction">Online Documentation</a>
  */
-
 sealed external interface DepthFunction {
     companion object {
 

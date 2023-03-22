@@ -12,7 +12,6 @@ package cesium
  * The format of a pixel, i.e., the number of components it has and what they represent.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#PixelFormat">Online Documentation</a>
  */
-
 sealed external interface PixelFormat {
     companion object {
 

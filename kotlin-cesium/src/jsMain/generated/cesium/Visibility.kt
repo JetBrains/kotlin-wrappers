@@ -15,7 +15,6 @@ package cesium
  * leading to full visibility.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#Visibility">Online Documentation</a>
  */
-
 sealed external interface Visibility {
     companion object {
 

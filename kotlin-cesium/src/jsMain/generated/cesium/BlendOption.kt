@@ -12,7 +12,6 @@ package cesium
  * Determines how opaque and translucent parts of billboards, points, and labels are blended with the scene.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#BlendOption">Online Documentation</a>
  */
-
 sealed external interface BlendOption {
     companion object {
 

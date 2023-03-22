@@ -12,7 +12,6 @@ package cesium
  * ArcType defines the path that should be taken connecting vertices.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#ArcType">Online Documentation</a>
  */
-
 sealed external interface ArcType {
     companion object {
 

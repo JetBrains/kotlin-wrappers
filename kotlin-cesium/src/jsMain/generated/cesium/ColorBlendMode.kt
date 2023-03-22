@@ -16,7 +16,6 @@ package cesium
  * MIX blends the source color and target color together
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#ColorBlendMode">Online Documentation</a>
  */
-
 sealed external interface ColorBlendMode {
     companion object {
 

@@ -18,7 +18,6 @@ package cesium
  * specifications.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#WebGLConstants">Online Documentation</a>
  */
-
 sealed external interface WebGLConstants {
     companion object {
 

@@ -13,7 +13,6 @@ package cesium
  * to [Clock.tick].
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#ClockStep">Online Documentation</a>
  */
-
 sealed external interface ClockStep {
     companion object {
 

@@ -12,7 +12,6 @@ package cesium
  * Enumerates all possible filters used when minifying WebGL textures.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#TextureMinificationFilter">Online Documentation</a>
  */
-
 sealed external interface TextureMinificationFilter {
     companion object {
 

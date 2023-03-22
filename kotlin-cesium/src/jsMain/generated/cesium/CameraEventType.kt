@@ -12,7 +12,6 @@ package cesium
  * Enumerates the available input for interacting with the camera.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#CameraEventType">Online Documentation</a>
  */
-
 sealed external interface CameraEventType {
     companion object {
 

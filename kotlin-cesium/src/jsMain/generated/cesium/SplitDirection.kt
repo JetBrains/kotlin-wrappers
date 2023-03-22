@@ -12,7 +12,6 @@ package cesium
  * The direction to display a primitive or ImageryLayer relative to the [Scene.splitPosition].
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#SplitDirection">Online Documentation</a>
  */
-
 sealed external interface SplitDirection {
     companion object {
 

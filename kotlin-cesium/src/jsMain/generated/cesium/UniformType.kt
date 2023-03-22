@@ -13,7 +13,6 @@ package cesium
  * [CustomShader] to declare user-defined uniforms.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#UniformType">Online Documentation</a>
  */
-
 sealed external interface UniformType {
     companion object {
 

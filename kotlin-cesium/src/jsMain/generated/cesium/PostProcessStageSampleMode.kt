@@ -12,7 +12,6 @@ package cesium
  * Determines how input texture to a [PostProcessStage] is sampled.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#PostProcessStageSampleMode">Online Documentation</a>
  */
-
 sealed external interface PostProcessStageSampleMode {
     companion object {
 

@@ -12,7 +12,6 @@ package cesium
  * The type of a geometric primitive, i.e., points, lines, and triangles.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#PrimitiveType">Online Documentation</a>
  */
-
 sealed external interface PrimitiveType {
     companion object {
 

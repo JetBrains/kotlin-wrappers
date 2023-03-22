@@ -13,7 +13,6 @@ package cesium
  * in [CustomShader]
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#VaryingType">Online Documentation</a>
  */
-
 sealed external interface VaryingType {
     companion object {
 

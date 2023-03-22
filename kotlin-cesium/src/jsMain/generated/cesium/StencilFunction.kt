@@ -12,7 +12,6 @@ package cesium
  * Determines the function used to compare stencil values for the stencil test.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#StencilFunction">Online Documentation</a>
  */
-
 sealed external interface StencilFunction {
     companion object {
 

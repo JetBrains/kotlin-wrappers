@@ -12,7 +12,6 @@ package cesium
  * Provides the type of time standards which JulianDate can take as input.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#TimeStandard">Online Documentation</a>
  */
-
 sealed external interface TimeStandard {
     companion object {
 

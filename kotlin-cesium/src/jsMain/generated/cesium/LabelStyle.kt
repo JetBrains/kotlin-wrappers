@@ -12,7 +12,6 @@ package cesium
  * Describes how to draw a label.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#LabelStyle">Online Documentation</a>
  */
-
 sealed external interface LabelStyle {
     companion object {
 

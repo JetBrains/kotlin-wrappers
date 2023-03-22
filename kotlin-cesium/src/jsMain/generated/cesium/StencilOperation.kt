@@ -12,7 +12,6 @@ package cesium
  * Determines the action taken based on the result of the stencil test.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#StencilOperation">Online Documentation</a>
  */
-
 sealed external interface StencilOperation {
     companion object {
 

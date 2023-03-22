@@ -13,7 +13,6 @@ package cesium
  * `type` parameter of [drawElements](http://www.khronos.org/opengles/sdk/docs/man/xhtml/glDrawElements.xml).
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#IndexDatatype">Online Documentation</a>
  */
-
 sealed external interface IndexDatatype {
     companion object {
 

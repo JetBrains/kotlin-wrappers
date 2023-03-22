@@ -13,7 +13,6 @@ package cesium
  * fragment shader. This determines how the shader interacts with the material.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#CustomShaderMode">Online Documentation</a>
  */
-
 sealed external interface CustomShaderMode {
     companion object {
 

@@ -12,7 +12,6 @@ package cesium
  * Determines which triangles, if any, are culled.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#CullFace">Online Documentation</a>
  */
-
 sealed external interface CullFace {
     companion object {
 

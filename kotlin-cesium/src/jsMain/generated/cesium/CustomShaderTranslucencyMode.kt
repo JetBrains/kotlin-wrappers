@@ -13,7 +13,6 @@ package cesium
  * primitive.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#CustomShaderTranslucencyMode">Online Documentation</a>
  */
-
 sealed external interface CustomShaderTranslucencyMode {
     companion object {
 

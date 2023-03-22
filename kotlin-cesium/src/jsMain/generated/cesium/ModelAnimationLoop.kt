@@ -12,7 +12,6 @@ package cesium
  * Determines if and how a glTF animation is looped.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#ModelAnimationLoop">Online Documentation</a>
  */
-
 sealed external interface ModelAnimationLoop {
     companion object {
 

@@ -13,7 +13,6 @@ package cesium
  * one or more components of type [MetadataComponentType]
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#MetadataType">Online Documentation</a>
  */
-
 sealed external interface MetadataType {
     companion object {
 

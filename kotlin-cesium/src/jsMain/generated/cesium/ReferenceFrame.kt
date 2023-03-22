@@ -12,7 +12,6 @@ package cesium
  * Constants for identifying well-known reference frames.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#ReferenceFrame">Online Documentation</a>
  */
-
 sealed external interface ReferenceFrame {
     companion object {
 
