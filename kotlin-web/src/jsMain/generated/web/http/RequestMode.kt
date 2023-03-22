@@ -2,17 +2,18 @@
 
 @file:Suppress(
     "NAME_CONTAINS_ILLEGAL_CHARS",
+    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package web.http
 
 // language=JavaScript
 @JsName("""(/*union*/{cors: 'cors', navigate: 'navigate', noCors: 'no-cors', sameOrigin: 'same-origin'}/*union*/)""")
-external enum class RequestMode {
-    cors,
-    navigate,
-    noCors,
-    sameOrigin,
-
-    ;
+sealed external interface RequestMode {
+    companion object {
+        val cors: RequestMode
+        val navigate: RequestMode
+        val noCors: RequestMode
+        val sameOrigin: RequestMode
+    }
 }

@@ -2,17 +2,18 @@
 
 @file:Suppress(
     "NAME_CONTAINS_ILLEGAL_CHARS",
+    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package web.performance
 
 // language=JavaScript
 @JsName("""(/*union*/{back_forward: 'back_forward', navigate: 'navigate', prerender: 'prerender', reload: 'reload'}/*union*/)""")
-external enum class NavigationTimingType {
-    back_forward,
-    navigate,
-    prerender,
-    reload,
-
-    ;
+sealed external interface NavigationTimingType {
+    companion object {
+        val back_forward: NavigationTimingType
+        val navigate: NavigationTimingType
+        val prerender: NavigationTimingType
+        val reload: NavigationTimingType
+    }
 }
