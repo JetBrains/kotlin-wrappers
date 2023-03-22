@@ -1,14 +1,18 @@
 // Automatically generated - do not modify!
 
+@file:Suppress(
+    "NAME_CONTAINS_ILLEGAL_CHARS",
+    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
+)
+
 package tanstack.query.core
 
-@Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
 // language=JavaScript
-@JsName("""({ ONLINE: 'online', ALWAYS: 'always', OFFLINEFIRST: 'offlineFirst' })""")
-external enum class NetworkMode {
-    ONLINE,
-    ALWAYS,
-    OFFLINEFIRST,
-
-    ;
+@JsName("""(/*union*/{online: 'online', always: 'always', offlineFirst: 'offlineFirst'}/*union*/)""")
+sealed external interface NetworkMode {
+    companion object {
+        val online: NetworkMode
+        val always: NetworkMode
+        val offlineFirst: NetworkMode
+    }
 }
