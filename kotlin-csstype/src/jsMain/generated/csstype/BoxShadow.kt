@@ -2,6 +2,7 @@
 
 @file:Suppress(
     "NAME_CONTAINS_ILLEGAL_CHARS",
+    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
     "NOTHING_TO_INLINE",
 )
 
@@ -11,10 +12,10 @@ sealed external interface BoxShadow
 
 // language=JavaScript
 @JsName("""(/*union*/{inset: 'inset'}/*union*/)""")
-external enum class BoxShadowInset {
-    inset,
-
-    ;
+sealed external interface BoxShadowInset {
+    companion object {
+        val inset: BoxShadowInset
+    }
 }
 
 inline fun BoxShadow(

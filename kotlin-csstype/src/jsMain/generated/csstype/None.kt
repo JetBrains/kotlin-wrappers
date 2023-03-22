@@ -2,14 +2,15 @@
 
 @file:Suppress(
     "NAME_CONTAINS_ILLEGAL_CHARS",
+    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package csstype
 
 // language=JavaScript
 @JsName("""(/*union*/{none: 'none'}/*union*/)""")
-external enum class None : NoneType {
-    none,
-
-    ;
+sealed external interface None : NoneType {
+    companion object {
+        val none: None
+    }
 }
