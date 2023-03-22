@@ -8,7 +8,7 @@
 package js.intl
 
 // language=JavaScript
-@JsName("""(/*union*/{literal: 'literal', nan: 'nan', infinity: 'infinity', percent: 'percent', integer: 'integer', group: 'group', decimal: 'decimal', fraction: 'fraction', plusSign: 'plusSign', minusSign: 'minusSign', percentSign: 'percentSign', currency: 'currency', code: 'code', symbol: 'symbol', name_: 'name', compact: 'compact', exponentInteger: 'exponentInteger', exponentMinusSign: 'exponentMinusSign', exponentSeparator: 'exponentSeparator', unit: 'unit', unknown: 'unknown'}/*union*/)""")
+@JsName("""(/*union*/{literal: 'literal', nan: 'nan', infinity: 'infinity', percent: 'percent', integer: 'integer', group: 'group', decimal: 'decimal', fraction: 'fraction', plusSign: 'plusSign', minusSign: 'minusSign', percentSign: 'percentSign', currency: 'currency', code: 'code', symbol: 'symbol', name: 'name', compact: 'compact', exponentInteger: 'exponentInteger', exponentMinusSign: 'exponentMinusSign', exponentSeparator: 'exponentSeparator', unit: 'unit', unknown: 'unknown'}/*union*/)""")
 sealed external interface NumberFormatPartType {
     companion object {
         val literal: NumberFormatPartType
@@ -25,7 +25,7 @@ sealed external interface NumberFormatPartType {
         val currency: NumberFormatPartType
         val code: NumberFormatPartType
         val symbol: NumberFormatPartType
-        val name_: NumberFormatPartType
+        val name: NumberFormatPartType
         val compact: NumberFormatPartType
         val exponentInteger: NumberFormatPartType
         val exponentMinusSign: NumberFormatPartType
