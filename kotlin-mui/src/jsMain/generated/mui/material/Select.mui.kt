@@ -1,14 +1,13 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package mui.material
 
 import csstype.ClassName
 
-@Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
+@Suppress(
+    "NAME_CONTAINS_ILLEGAL_CHARS",
+    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
+)
 // language=JavaScript
 @JsName("""(/*union*/{select: 'MuiSelect-select', multiple: 'MuiSelect-multiple', filled: 'MuiSelect-filled', outlined: 'MuiSelect-outlined', standard: 'MuiSelect-standard', icon: 'MuiSelect-icon', iconOpen: 'MuiSelect-iconOpen', iconFilled: 'MuiSelect-iconFilled', iconOutlined: 'MuiSelect-iconOutlined', iconStandard: 'MuiSelect-iconStandard', nativeInput: 'MuiSelect-nativeInput'}/*union*/)""")
 sealed external interface MuiSelect {

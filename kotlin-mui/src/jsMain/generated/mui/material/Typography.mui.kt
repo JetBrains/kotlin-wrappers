@@ -1,14 +1,13 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package mui.material
 
 import csstype.ClassName
 
-@Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
+@Suppress(
+    "NAME_CONTAINS_ILLEGAL_CHARS",
+    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
+)
 // language=JavaScript
 @JsName("""(/*union*/{root: 'MuiTypography-root', body2: 'MuiTypography-body2', body1: 'MuiTypography-body1', caption: 'MuiTypography-caption', button: 'MuiTypography-button', h1: 'MuiTypography-h1', h2: 'MuiTypography-h2', h3: 'MuiTypography-h3', h4: 'MuiTypography-h4', h5: 'MuiTypography-h5', h6: 'MuiTypography-h6', subtitle1: 'MuiTypography-subtitle1', subtitle2: 'MuiTypography-subtitle2', overline: 'MuiTypography-overline', inherit: 'MuiTypography-inherit', alignLeft: 'MuiTypography-alignLeft', alignCenter: 'MuiTypography-alignCenter', alignRight: 'MuiTypography-alignRight', alignJustify: 'MuiTypography-alignJustify', noWrap: 'MuiTypography-noWrap', gutterBottom: 'MuiTypography-gutterBottom', paragraph: 'MuiTypography-paragraph'}/*union*/)""")
 sealed external interface MuiTypography {

@@ -1,14 +1,13 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package mui.material
 
 import csstype.ClassName
 
-@Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
+@Suppress(
+    "NAME_CONTAINS_ILLEGAL_CHARS",
+    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
+)
 // language=JavaScript
 @JsName("""(/*union*/{root: 'MuiRating-root', sizeSmall: 'MuiRating-sizeSmall', sizeMedium: 'MuiRating-sizeMedium', sizeLarge: 'MuiRating-sizeLarge', readOnly: 'MuiRating-readOnly', visuallyHidden: 'MuiRating-visuallyHidden', label: 'MuiRating-label', labelEmptyValueActive: 'MuiRating-labelEmptyValueActive', icon: 'MuiRating-icon', iconEmpty: 'MuiRating-iconEmpty', iconFilled: 'MuiRating-iconFilled', iconHover: 'MuiRating-iconHover', iconFocus: 'MuiRating-iconFocus', iconActive: 'MuiRating-iconActive', decimal: 'MuiRating-decimal'}/*union*/)""")
 sealed external interface MuiRating {

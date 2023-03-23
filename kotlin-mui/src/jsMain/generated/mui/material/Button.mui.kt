@@ -1,14 +1,13 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package mui.material
 
 import csstype.ClassName
 
-@Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
+@Suppress(
+    "NAME_CONTAINS_ILLEGAL_CHARS",
+    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
+)
 // language=JavaScript
 @JsName(
     """(/*union*/{root: 'MuiButton-root', text: 'MuiButton-text', textInherit: 'MuiButton-textInherit', textPrimary: 'MuiButton-textPrimary', textSecondary: 'MuiButton-textSecondary', textSuccess: 'MuiButton-textSuccess', textError: 'MuiButton-textError', textInfo: 'MuiButton-textInfo', textWarning: 'MuiButton-textWarning', outlined: 'MuiButton-outlined', outlinedInherit: 'MuiButton-outlinedInherit', outlinedPrimary: 'MuiButton-outlinedPrimary', outlinedSecondary: 'MuiButton-outlinedSecondary', outlinedSuccess: 'MuiButton-outlinedSuccess', outlinedError: 'MuiButton-outlinedError', outlinedInfo: 'MuiButton-outlinedInfo', outlinedWarning: 'MuiButton-outlinedWarning', contained: 'MuiButton-contained', containedInherit: 'MuiButton-containedInherit', containedPrimary: 'MuiButton-containedPrimary', containedSecondary: 'MuiButton-containedSecondary', containedSuccess: 'MuiButton-containedSuccess', containedInfo: 'MuiButton-containedInfo', containedError: 'MuiButton-containedError', containedWarning: 'MuiButton-containedWarning', disableElevation: 'MuiButton-disableElevation', colorInherit: 'MuiButton-colorInherit', textSizeSmall: 'MuiButton-textSizeSmall', textSizeMedium: 'MuiButton-textSizeMedium', textSizeLarge: 'MuiButton-textSizeLarge', outlinedSizeSmall: 'MuiButton-outlinedSizeSmall', outlinedSizeMedium: 'MuiButton-outlinedSizeMedium', outlinedSizeLarge: 'MuiButton-outlinedSizeLarge', containedSizeSmall: 'MuiButton-containedSizeSmall', containedSizeMedium: 'MuiButton-containedSizeMedium', containedSizeLarge: 'MuiButton-containedSizeLarge', sizeSmall: 'MuiButton-sizeSmall', sizeMedium: 'MuiButton-sizeMedium', sizeLarge: 'MuiButton-sizeLarge', fullWidth: 'MuiButton-fullWidth', startIcon: 'MuiButton-startIcon', endIcon: 'MuiButton-endIcon', iconSizeSmall: 'MuiButton-iconSizeSmall', iconSizeMedium: 'MuiButton-iconSizeMedium', iconSizeLarge: 'MuiButton-iconSizeLarge'}/*union*/)"""

@@ -1,14 +1,13 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package mui.material
 
 import csstype.ClassName
 
-@Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
+@Suppress(
+    "NAME_CONTAINS_ILLEGAL_CHARS",
+    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
+)
 // language=JavaScript
 @JsName(
     """(/*union*/{root: 'MuiChip-root', sizeSmall: 'MuiChip-sizeSmall', sizeMedium: 'MuiChip-sizeMedium', colorPrimary: 'MuiChip-colorPrimary', colorSecondary: 'MuiChip-colorSecondary', clickable: 'MuiChip-clickable', clickableColorPrimary: 'MuiChip-clickableColorPrimary', clickableColorSecondary: 'MuiChip-clickableColorSecondary', deletable: 'MuiChip-deletable', deletableColorPrimary: 'MuiChip-deletableColorPrimary', deletableColorSecondary: 'MuiChip-deletableColorSecondary', outlined: 'MuiChip-outlined', filled: 'MuiChip-filled', outlinedPrimary: 'MuiChip-outlinedPrimary', outlinedSecondary: 'MuiChip-outlinedSecondary', avatar: 'MuiChip-avatar', avatarSmall: 'MuiChip-avatarSmall', avatarMedium: 'MuiChip-avatarMedium', avatarColorPrimary: 'MuiChip-avatarColorPrimary', avatarColorSecondary: 'MuiChip-avatarColorSecondary', icon: 'MuiChip-icon', iconSmall: 'MuiChip-iconSmall', iconMedium: 'MuiChip-iconMedium', iconColorPrimary: 'MuiChip-iconColorPrimary', iconColorSecondary: 'MuiChip-iconColorSecondary', label: 'MuiChip-label', labelSmall: 'MuiChip-labelSmall', labelMedium: 'MuiChip-labelMedium', deleteIcon: 'MuiChip-deleteIcon', deleteIconSmall: 'MuiChip-deleteIconSmall', deleteIconMedium: 'MuiChip-deleteIconMedium', deleteIconColorPrimary: 'MuiChip-deleteIconColorPrimary', deleteIconColorSecondary: 'MuiChip-deleteIconColorSecondary', deleteIconOutlinedColorPrimary: 'MuiChip-deleteIconOutlinedColorPrimary', deleteIconOutlinedColorSecondary: 'MuiChip-deleteIconOutlinedColorSecondary'}/*union*/)"""

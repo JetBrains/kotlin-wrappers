@@ -1,14 +1,13 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package mui.material
 
 import csstype.ClassName
 
-@Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
+@Suppress(
+    "NAME_CONTAINS_ILLEGAL_CHARS",
+    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
+)
 // language=JavaScript
 @JsName("""(/*union*/{root: 'MuiSpeedDial-root', fab: 'MuiSpeedDial-fab', directionUp: 'MuiSpeedDial-directionUp', directionDown: 'MuiSpeedDial-directionDown', directionLeft: 'MuiSpeedDial-directionLeft', directionRight: 'MuiSpeedDial-directionRight', actions: 'MuiSpeedDial-actions', actionsClosed: 'MuiSpeedDial-actionsClosed'}/*union*/)""")
 sealed external interface MuiSpeedDial {

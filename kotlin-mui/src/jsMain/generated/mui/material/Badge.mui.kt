@@ -1,14 +1,13 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package mui.material
 
 import csstype.ClassName
 
-@Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
+@Suppress(
+    "NAME_CONTAINS_ILLEGAL_CHARS",
+    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
+)
 // language=JavaScript
 @JsName(
     """(/*union*/{root: 'MuiBadge-root', badge: 'MuiBadge-badge', dot: 'MuiBadge-dot', standard: 'MuiBadge-standard', anchorOriginTopRight: 'MuiBadge-anchorOriginTopRight', anchorOriginBottomRight: 'MuiBadge-anchorOriginBottomRight', anchorOriginTopLeft: 'MuiBadge-anchorOriginTopLeft', anchorOriginBottomLeft: 'MuiBadge-anchorOriginBottomLeft', invisible: 'MuiBadge-invisible', colorPrimary: 'MuiBadge-colorPrimary', colorSecondary: 'MuiBadge-colorSecondary', colorError: 'MuiBadge-colorError', colorInfo: 'MuiBadge-colorInfo', colorSuccess: 'MuiBadge-colorSuccess', colorWarning: 'MuiBadge-colorWarning', anchorOriginTopRightRectangular: 'MuiBadge-anchorOriginTopRightRectangular', anchorOriginBottomRightRectangular: 'MuiBadge-anchorOriginBottomRightRectangular', anchorOriginTopLeftRectangular: 'MuiBadge-anchorOriginTopLeftRectangular', anchorOriginBottomLeftRectangular: 'MuiBadge-anchorOriginBottomLeftRectangular', anchorOriginTopRightCircular: 'MuiBadge-anchorOriginTopRightCircular', anchorOriginBottomRightCircular: 'MuiBadge-anchorOriginBottomRightCircular', anchorOriginTopLeftCircular: 'MuiBadge-anchorOriginTopLeftCircular', anchorOriginBottomLeftCircular: 'MuiBadge-anchorOriginBottomLeftCircular', overlapRectangular: 'MuiBadge-overlapRectangular', overlapCircular: 'MuiBadge-overlapCircular'}/*union*/)"""
