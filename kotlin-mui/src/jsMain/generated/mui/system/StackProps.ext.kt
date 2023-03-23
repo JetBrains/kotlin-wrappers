@@ -2,14 +2,17 @@
 
 package mui.system
 
-@Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
+@Suppress(
+    "NAME_CONTAINS_ILLEGAL_CHARS",
+    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
+)
 // language=JavaScript
 @JsName("""(/*union*/{row: 'row', rowReverse: 'row-reverse', column: 'column', columnReverse: 'column-reverse'}/*union*/)""")
-external enum class StackDirection {
-    row,
-    rowReverse,
-    column,
-    columnReverse,
-
-    ;
+sealed external interface StackDirection {
+    companion object {
+        val row: StackDirection
+        val rowReverse: StackDirection
+        val column: StackDirection
+        val columnReverse: StackDirection
+    }
 }

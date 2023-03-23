@@ -2,12 +2,15 @@
 
 package mui.material
 
-@Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
+@Suppress(
+    "NAME_CONTAINS_ILLEGAL_CHARS",
+    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
+)
 // language=JavaScript
 @JsName("""(/*union*/{menu: 'menu', selectedMenu: 'selectedMenu'}/*union*/)""")
-external enum class MenuVariant {
-    menu,
-    selectedMenu,
-
-    ;
+sealed external interface MenuVariant {
+    companion object {
+        val menu: MenuVariant
+        val selectedMenu: MenuVariant
+    }
 }

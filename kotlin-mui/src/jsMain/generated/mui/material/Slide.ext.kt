@@ -2,14 +2,17 @@
 
 package mui.material
 
-@Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
+@Suppress(
+    "NAME_CONTAINS_ILLEGAL_CHARS",
+    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
+)
 // language=JavaScript
 @JsName("""(/*union*/{left: 'left', right: 'right', up: 'up', down: 'down'}/*union*/)""")
-external enum class SlideDirection {
-    left,
-    right,
-    up,
-    down,
-
-    ;
+sealed external interface SlideDirection {
+    companion object {
+        val left: SlideDirection
+        val right: SlideDirection
+        val up: SlideDirection
+        val down: SlideDirection
+    }
 }

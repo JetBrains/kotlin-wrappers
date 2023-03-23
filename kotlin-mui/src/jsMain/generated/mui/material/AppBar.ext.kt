@@ -2,28 +2,34 @@
 
 package mui.material
 
-@Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
+@Suppress(
+    "NAME_CONTAINS_ILLEGAL_CHARS",
+    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
+)
 // language=JavaScript
 @JsName("""(/*union*/{inherit: 'inherit', primary: 'primary', secondary: 'secondary', default: 'default', transparent: 'transparent'}/*union*/)""")
-external enum class AppBarColor {
-    inherit,
-    primary,
-    secondary,
-    default,
-    transparent,
-
-    ;
+sealed external interface AppBarColor {
+    companion object {
+        val inherit: AppBarColor
+        val primary: AppBarColor
+        val secondary: AppBarColor
+        val default: AppBarColor
+        val transparent: AppBarColor
+    }
 }
 
-@Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
+@Suppress(
+    "NAME_CONTAINS_ILLEGAL_CHARS",
+    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
+)
 // language=JavaScript
 @JsName("""(/*union*/{fixed: 'fixed', absolute: 'absolute', sticky: 'sticky', static: 'static', relative: 'relative'}/*union*/)""")
-external enum class AppBarPosition {
-    fixed,
-    absolute,
-    sticky,
-    static,
-    relative,
-
-    ;
+sealed external interface AppBarPosition {
+    companion object {
+        val fixed: AppBarPosition
+        val absolute: AppBarPosition
+        val sticky: AppBarPosition
+        val static: AppBarPosition
+        val relative: AppBarPosition
+    }
 }

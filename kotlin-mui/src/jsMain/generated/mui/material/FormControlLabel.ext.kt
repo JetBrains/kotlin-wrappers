@@ -2,14 +2,17 @@
 
 package mui.material
 
-@Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
+@Suppress(
+    "NAME_CONTAINS_ILLEGAL_CHARS",
+    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
+)
 // language=JavaScript
 @JsName("""(/*union*/{end: 'end', start: 'start', top: 'top', bottom: 'bottom'}/*union*/)""")
-external enum class LabelPlacement {
-    end,
-    start,
-    top,
-    bottom,
-
-    ;
+sealed external interface LabelPlacement {
+    companion object {
+        val end: LabelPlacement
+        val start: LabelPlacement
+        val top: LabelPlacement
+        val bottom: LabelPlacement
+    }
 }

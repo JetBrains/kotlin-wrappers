@@ -2,13 +2,16 @@
 
 package mui.material
 
-@Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
+@Suppress(
+    "NAME_CONTAINS_ILLEGAL_CHARS",
+    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
+)
 // language=JavaScript
 @JsName("""(/*union*/{default: 'default', primary: 'primary', inherit: 'inherit'}/*union*/)""")
-external enum class ListSubheaderColor {
-    default,
-    primary,
-    inherit,
-
-    ;
+sealed external interface ListSubheaderColor {
+    companion object {
+        val default: ListSubheaderColor
+        val primary: ListSubheaderColor
+        val inherit: ListSubheaderColor
+    }
 }

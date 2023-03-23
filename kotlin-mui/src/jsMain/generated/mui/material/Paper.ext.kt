@@ -2,12 +2,15 @@
 
 package mui.material
 
-@Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
+@Suppress(
+    "NAME_CONTAINS_ILLEGAL_CHARS",
+    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
+)
 // language=JavaScript
 @JsName("""(/*union*/{elevation: 'elevation', outlined: 'outlined'}/*union*/)""")
-external enum class PaperVariant {
-    elevation,
-    outlined,
-
-    ;
+sealed external interface PaperVariant {
+    companion object {
+        val elevation: PaperVariant
+        val outlined: PaperVariant
+    }
 }
