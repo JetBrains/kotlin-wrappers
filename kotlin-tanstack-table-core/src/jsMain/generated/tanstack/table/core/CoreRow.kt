@@ -16,4 +16,5 @@ external interface CoreRow<TData : RowData> {
     var getLeafRows: () -> ReadonlyArray<Row<TData>>
     var originalSubRows: ReadonlyArray<TData>?
     var getAllCells: () -> ReadonlyArray<Cell<TData, *>>
+    var parentRow: Row<TData>?
 }
