@@ -2,27 +2,33 @@
 
 package mui.material
 
-@Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
+@Suppress(
+    "NAME_CONTAINS_ILLEGAL_CHARS",
+    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
+)
 // language=JavaScript
 @JsName("""(/*union*/{default: 'default', primary: 'primary', secondary: 'secondary', error: 'error', info: 'info', success: 'success', warning: 'warning'}/*union*/)""")
-external enum class ChipColor {
-    default,
-    primary,
-    secondary,
-    error,
-    info,
-    success,
-    warning,
-
-    ;
+sealed external interface ChipColor {
+    companion object {
+        val default: ChipColor
+        val primary: ChipColor
+        val secondary: ChipColor
+        val error: ChipColor
+        val info: ChipColor
+        val success: ChipColor
+        val warning: ChipColor
+    }
 }
 
-@Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
+@Suppress(
+    "NAME_CONTAINS_ILLEGAL_CHARS",
+    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
+)
 // language=JavaScript
 @JsName("""(/*union*/{filled: 'filled', outlined: 'outlined'}/*union*/)""")
-external enum class ChipVariant {
-    filled,
-    outlined,
-
-    ;
+sealed external interface ChipVariant {
+    companion object {
+        val filled: ChipVariant
+        val outlined: ChipVariant
+    }
 }

@@ -2,38 +2,47 @@
 
 package mui.material
 
-@Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
+@Suppress(
+    "NAME_CONTAINS_ILLEGAL_CHARS",
+    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
+)
 // language=JavaScript
 @JsName("""(/*union*/{primary: 'primary', secondary: 'secondary', error: 'error', info: 'info', success: 'success', warning: 'warning'}/*union*/)""")
-external enum class FormControlColor {
-    primary,
-    secondary,
-    error,
-    info,
-    success,
-    warning,
-
-    ;
+sealed external interface FormControlColor {
+    companion object {
+        val primary: FormControlColor
+        val secondary: FormControlColor
+        val error: FormControlColor
+        val info: FormControlColor
+        val success: FormControlColor
+        val warning: FormControlColor
+    }
 }
 
-@Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
+@Suppress(
+    "NAME_CONTAINS_ILLEGAL_CHARS",
+    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
+)
 // language=JavaScript
 @JsName("""(/*union*/{standard: 'standard', outlined: 'outlined', filled: 'filled'}/*union*/)""")
-external enum class FormControlVariant {
-    standard,
-    outlined,
-    filled,
-
-    ;
+sealed external interface FormControlVariant {
+    companion object {
+        val standard: FormControlVariant
+        val outlined: FormControlVariant
+        val filled: FormControlVariant
+    }
 }
 
-@Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
+@Suppress(
+    "NAME_CONTAINS_ILLEGAL_CHARS",
+    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
+)
 // language=JavaScript
 @JsName("""(/*union*/{dense: 'dense', normal: 'normal', none: 'none'}/*union*/)""")
-external enum class FormControlMargin {
-    dense,
-    normal,
-    none,
-
-    ;
+sealed external interface FormControlMargin {
+    companion object {
+        val dense: FormControlMargin
+        val normal: FormControlMargin
+        val none: FormControlMargin
+    }
 }

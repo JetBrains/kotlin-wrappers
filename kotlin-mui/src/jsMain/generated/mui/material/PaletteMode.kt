@@ -2,12 +2,15 @@
 
 package mui.material
 
-@Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
+@Suppress(
+    "NAME_CONTAINS_ILLEGAL_CHARS",
+    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
+)
 // language=JavaScript
 @JsName("""(/*union*/{light: 'light', dark: 'dark'}/*union*/)""")
-external enum class PaletteMode {
-    light,
-    dark,
-
-    ;
+sealed external interface PaletteMode {
+    companion object {
+        val light: PaletteMode
+        val dark: PaletteMode
+    }
 }

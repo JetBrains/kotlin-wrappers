@@ -2,33 +2,42 @@
 
 package mui.material
 
-@Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
+@Suppress(
+    "NAME_CONTAINS_ILLEGAL_CHARS",
+    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
+)
 // language=JavaScript
 @JsName("""(/*union*/{standard: 'standard', primary: 'primary', secondary: 'secondary'}/*union*/)""")
-external enum class PaginationItemColor {
-    standard,
-    primary,
-    secondary,
-
-    ;
+sealed external interface PaginationItemColor {
+    companion object {
+        val standard: PaginationItemColor
+        val primary: PaginationItemColor
+        val secondary: PaginationItemColor
+    }
 }
 
-@Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
+@Suppress(
+    "NAME_CONTAINS_ILLEGAL_CHARS",
+    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
+)
 // language=JavaScript
 @JsName("""(/*union*/{text: 'text', outlined: 'outlined'}/*union*/)""")
-external enum class PaginationItemVariant {
-    text,
-    outlined,
-
-    ;
+sealed external interface PaginationItemVariant {
+    companion object {
+        val text: PaginationItemVariant
+        val outlined: PaginationItemVariant
+    }
 }
 
-@Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
+@Suppress(
+    "NAME_CONTAINS_ILLEGAL_CHARS",
+    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
+)
 // language=JavaScript
 @JsName("""(/*union*/{circular: 'circular', rounded: 'rounded'}/*union*/)""")
-external enum class PaginationItemShape {
-    circular,
-    rounded,
-
-    ;
+sealed external interface PaginationItemShape {
+    companion object {
+        val circular: PaginationItemShape
+        val rounded: PaginationItemShape
+    }
 }

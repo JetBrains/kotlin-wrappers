@@ -2,34 +2,43 @@
 
 package mui.material
 
-@Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
+@Suppress(
+    "NAME_CONTAINS_ILLEGAL_CHARS",
+    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
+)
 // language=JavaScript
 @JsName("""(/*union*/{timeout: 'timeout', clickaway: 'clickaway', escapeKeyDown: 'escapeKeyDown'}/*union*/)""")
-external enum class SnackbarCloseReason {
-    timeout,
-    clickaway,
-    escapeKeyDown,
-
-    ;
+sealed external interface SnackbarCloseReason {
+    companion object {
+        val timeout: SnackbarCloseReason
+        val clickaway: SnackbarCloseReason
+        val escapeKeyDown: SnackbarCloseReason
+    }
 }
 
-@Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
+@Suppress(
+    "NAME_CONTAINS_ILLEGAL_CHARS",
+    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
+)
 // language=JavaScript
 @JsName("""(/*union*/{top: 'top', bottom: 'bottom'}/*union*/)""")
-external enum class SnackbarOriginVertical {
-    top,
-    bottom,
-
-    ;
+sealed external interface SnackbarOriginVertical {
+    companion object {
+        val top: SnackbarOriginVertical
+        val bottom: SnackbarOriginVertical
+    }
 }
 
-@Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
+@Suppress(
+    "NAME_CONTAINS_ILLEGAL_CHARS",
+    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
+)
 // language=JavaScript
 @JsName("""(/*union*/{left: 'left', center: 'center', right: 'right'}/*union*/)""")
-external enum class SnackbarOriginHorizontal {
-    left,
-    center,
-    right,
-
-    ;
+sealed external interface SnackbarOriginHorizontal {
+    companion object {
+        val left: SnackbarOriginHorizontal
+        val center: SnackbarOriginHorizontal
+        val right: SnackbarOriginHorizontal
+    }
 }

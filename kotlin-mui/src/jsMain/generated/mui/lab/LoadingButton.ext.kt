@@ -2,13 +2,16 @@
 
 package mui.lab
 
-@Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
+@Suppress(
+    "NAME_CONTAINS_ILLEGAL_CHARS",
+    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
+)
 // language=JavaScript
 @JsName("""(/*union*/{start: 'start', end: 'end', center: 'center'}/*union*/)""")
-external enum class LoadingPosition {
-    start,
-    end,
-    center,
-
-    ;
+sealed external interface LoadingPosition {
+    companion object {
+        val start: LoadingPosition
+        val end: LoadingPosition
+        val center: LoadingPosition
+    }
 }

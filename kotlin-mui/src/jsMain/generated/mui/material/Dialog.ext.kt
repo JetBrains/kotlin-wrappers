@@ -2,12 +2,15 @@
 
 package mui.material
 
-@Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
+@Suppress(
+    "NAME_CONTAINS_ILLEGAL_CHARS",
+    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
+)
 // language=JavaScript
 @JsName("""(/*union*/{body: 'body', paper: 'paper'}/*union*/)""")
-external enum class DialogScroll {
-    body,
-    paper,
-
-    ;
+sealed external interface DialogScroll {
+    companion object {
+        val body: DialogScroll
+        val paper: DialogScroll
+    }
 }

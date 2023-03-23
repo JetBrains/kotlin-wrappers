@@ -2,25 +2,31 @@
 
 package mui.material
 
-@Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
+@Suppress(
+    "NAME_CONTAINS_ILLEGAL_CHARS",
+    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
+)
 // language=JavaScript
 @JsName("""(/*union*/{row: 'row', rowReverse: 'row-reverse', column: 'column', columnReverse: 'column-reverse'}/*union*/)""")
-external enum class GridDirection {
-    row,
-    rowReverse,
-    column,
-    columnReverse,
-
-    ;
+sealed external interface GridDirection {
+    companion object {
+        val row: GridDirection
+        val rowReverse: GridDirection
+        val column: GridDirection
+        val columnReverse: GridDirection
+    }
 }
 
-@Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
+@Suppress(
+    "NAME_CONTAINS_ILLEGAL_CHARS",
+    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
+)
 // language=JavaScript
 @JsName("""(/*union*/{nowrap: 'nowrap', wrap: 'wrap', wrapReverse: 'wrap-reverse'}/*union*/)""")
-external enum class GridWrap {
-    nowrap,
-    wrap,
-    wrapReverse,
-
-    ;
+sealed external interface GridWrap {
+    companion object {
+        val nowrap: GridWrap
+        val wrap: GridWrap
+        val wrapReverse: GridWrap
+    }
 }

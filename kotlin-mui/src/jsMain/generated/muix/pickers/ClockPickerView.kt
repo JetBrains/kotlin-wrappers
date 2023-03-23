@@ -2,13 +2,16 @@
 
 package muix.pickers
 
-@Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
+@Suppress(
+    "NAME_CONTAINS_ILLEGAL_CHARS",
+    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
+)
 // language=JavaScript
 @JsName("""(/*union*/{hours: 'hours', minutes: 'minutes', seconds: 'seconds'}/*union*/)""")
-external enum class ClockPickerView {
-    hours,
-    minutes,
-    seconds,
-
-    ;
+sealed external interface ClockPickerView {
+    companion object {
+        val hours: ClockPickerView
+        val minutes: ClockPickerView
+        val seconds: ClockPickerView
+    }
 }

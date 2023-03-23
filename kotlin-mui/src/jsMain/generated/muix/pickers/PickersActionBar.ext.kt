@@ -2,14 +2,17 @@
 
 package muix.pickers
 
-@Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
+@Suppress(
+    "NAME_CONTAINS_ILLEGAL_CHARS",
+    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
+)
 // language=JavaScript
 @JsName("""(/*union*/{clear: 'clear', cancel: 'cancel', accept: 'accept', today: 'today'}/*union*/)""")
-external enum class PickersActionBarAction {
-    clear,
-    cancel,
-    accept,
-    today,
-
-    ;
+sealed external interface PickersActionBarAction {
+    companion object {
+        val clear: PickersActionBarAction
+        val cancel: PickersActionBarAction
+        val accept: PickersActionBarAction
+        val today: PickersActionBarAction
+    }
 }

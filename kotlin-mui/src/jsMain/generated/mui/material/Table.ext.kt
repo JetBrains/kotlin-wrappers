@@ -2,13 +2,16 @@
 
 package mui.material
 
-@Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
+@Suppress(
+    "NAME_CONTAINS_ILLEGAL_CHARS",
+    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
+)
 // language=JavaScript
 @JsName("""(/*union*/{normal: 'normal', checkbox: 'checkbox', none: 'none'}/*union*/)""")
-external enum class TablePadding {
-    normal,
-    checkbox,
-    none,
-
-    ;
+sealed external interface TablePadding {
+    companion object {
+        val normal: TablePadding
+        val checkbox: TablePadding
+        val none: TablePadding
+    }
 }
