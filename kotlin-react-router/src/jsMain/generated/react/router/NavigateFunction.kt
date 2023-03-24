@@ -10,17 +10,15 @@ import remix.run.router.To
  * The interface for the navigate() function returned from useNavigate().
  */
 
-sealed class NavigateFunction {
+sealed external interface NavigateFunction {
 
-    @Suppress("NOTHING_TO_INLINE")
-    inline operator fun invoke(to: To, options: NavigateOptions): Unit = asDynamic()(to, options)
-
-
-    @Suppress("NOTHING_TO_INLINE")
-    inline operator fun invoke(to: To): Unit = asDynamic()(to)
+    @Suppress("DEPRECATION")
+    @nativeInvoke
+    operator fun invoke(to: To, options: NavigateOptions = definedExternally): Unit
 
 
-    @Suppress("NOTHING_TO_INLINE")
-    inline operator fun invoke(delta: Double): Unit = asDynamic()(delta)
+    @Suppress("DEPRECATION")
+    @nativeInvoke
+    operator fun invoke(delta: Double)
 
 }
