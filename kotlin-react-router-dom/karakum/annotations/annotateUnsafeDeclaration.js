@@ -10,7 +10,7 @@ module.exports = (node) => {
         && node.name
         && unsafeDeclarations.some(name => node.name.text === name)
     ) {
-        return `UNSAFE_${node.name.text}`
+        return `@JsName("UNSAFE_${node.name.text}")`
     }
 
     return null

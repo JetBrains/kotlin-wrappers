@@ -11,7 +11,7 @@ module.exports = (node) => {
         && node.name
         && unstableDeclarations.some(name => node.name.text === name)
     ) {
-        return `unstable_${node.name.text}`
+        return `@JsName("unstable_${node.name.text}")`
     }
 
     return null
