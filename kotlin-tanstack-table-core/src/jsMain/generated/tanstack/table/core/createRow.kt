@@ -13,5 +13,5 @@ external fun <TData : RowData> createRow(
     rowIndex: Int,
     depth: Int,
     subRows: ReadonlyArray<Row<TData>>? = definedExternally,
-    parentRow: Row<TData>? = definedExternally,
+    parentId: String? = definedExternally,
 ): Row<TData>
