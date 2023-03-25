@@ -24,5 +24,3 @@ external interface Console {
     fun trace(vararg data: Any?)
     fun warn(vararg data: Any?)
 }
-
-external val console: Console
