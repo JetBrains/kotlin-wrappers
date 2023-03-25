@@ -13,10 +13,6 @@ sealed external class TypedArray<S : TypedArray<S, T>, T : Any /* Number */> :
 
     override val byteLength: Int
 
-    override operator fun get(
-        index: Int,
-    ): T
-
     /**
      * Returns the item located at the specified index.
      * @param index The zero-based index of the desired code unit. A negative index will count back from the last item.

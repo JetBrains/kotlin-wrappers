@@ -14,11 +14,6 @@ external class CSSTransformValue(
     JsIterable<CSSTransformComponent> {
     override val length: Int
     val is2D: Boolean
-
-    override operator fun get(
-        index: Int,
-    ): CSSTransformComponent
-
     fun toMatrix(): DOMMatrix
     fun forEach(action: (item: CSSTransformComponent) -> Unit)
 }
