@@ -1,82 +1,101 @@
+@file:Suppress(
+    "DEPRECATION",
+    "NATIVE_INDEXER_KEY_SHOULD_BE_STRING_OR_NUMBER",
+    "NATIVE_GETTER_RETURN_TYPE_SHOULD_BE_NULLABLE",
+    "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
+)
+
 package js.core
 
 sealed external interface HasSymbol {
-    interface asyncIterator<out V>
-    interface hasInstance<out V>
-    interface isConcatSpreadable<out V>
-    interface iterator<out V : () -> JsIterator<*>>
-    interface match<out V>
-    interface matchAll<out V>
-    interface replace<out V>
-    interface search<out V>
-    interface species<out V>
-    interface split<out V>
-    interface toPrimitive<out V>
-    interface toStringTag<out V>
-    interface unscopables<out V>
+    interface asyncIterator<out V> {
+        @nativeGetter
+        operator fun get(
+            key: Symbol.asyncIterator,
+        ): V = definedExternally
+    }
+
+    interface hasInstance<out V> {
+        @nativeGetter
+        operator fun get(
+            key: Symbol.hasInstance,
+        ): V = definedExternally
+    }
+
+    interface isConcatSpreadable<out V> {
+        @nativeGetter
+        operator fun get(
+            key: Symbol.isConcatSpreadable,
+        ): V = definedExternally
+    }
+
+    interface iterator<out V : () -> JsIterator<*>> {
+        @nativeGetter
+        operator fun get(
+            key: Symbol.iterator,
+        ): V = definedExternally
+    }
+
+    interface match<out V> {
+        @nativeGetter
+        operator fun get(
+            key: Symbol.match,
+        ): V = definedExternally
+    }
+
+    interface matchAll<out V> {
+        @nativeGetter
+        operator fun get(
+            key: Symbol.matchAll,
+        ): V = definedExternally
+    }
+
+    interface replace<out V> {
+        @nativeGetter
+        operator fun get(
+            key: Symbol.replace,
+        ): V = definedExternally
+    }
+
+    interface search<out V> {
+        @nativeGetter
+        operator fun get(
+            key: Symbol.search,
+        ): V = definedExternally
+    }
+
+    interface species<out V> {
+        @nativeGetter
+        operator fun get(
+            key: Symbol.species,
+        ): V = definedExternally
+    }
+
+    interface split<out V> {
+        @nativeGetter
+        operator fun get(
+            key: Symbol.split,
+        ): V = definedExternally
+    }
+
+    interface toPrimitive<out V> {
+        @nativeGetter
+        operator fun get(
+            key: Symbol.toPrimitive,
+        ): V = definedExternally
+    }
+
+    interface toStringTag<out V> {
+        @nativeGetter
+        operator fun get(
+            key: Symbol.toStringTag,
+        ): V = definedExternally
+    }
+
+    interface unscopables<out V> {
+        @nativeGetter
+        operator fun get(
+            key: Symbol.unscopables,
+        ): V = definedExternally
+    }
 }
-
-inline operator fun <V> HasSymbol.asyncIterator<V>.get(
-    key: Symbol.asyncIterator,
-): V =
-    asDynamic()[key]
-
-inline operator fun <V> HasSymbol.hasInstance<V>.get(
-    key: Symbol.hasInstance,
-): V =
-    asDynamic()[key]
-
-inline operator fun <V> HasSymbol.isConcatSpreadable<V>.get(
-    key: Symbol.isConcatSpreadable,
-): V =
-    asDynamic()[key]
-
-inline operator fun <V : () -> JsIterator<*>> HasSymbol.iterator<V>.get(
-    key: Symbol.iterator,
-): V =
-    asDynamic()[key]
-
-inline operator fun <V> HasSymbol.match<V>.get(
-    key: Symbol.match,
-): V =
-    asDynamic()[key]
-
-inline operator fun <V> HasSymbol.matchAll<V>.get(
-    key: Symbol.matchAll,
-): V =
-    asDynamic()[key]
-
-inline operator fun <V> HasSymbol.replace<V>.get(
-    key: Symbol.replace,
-): V =
-    asDynamic()[key]
-
-inline operator fun <V> HasSymbol.search<V>.get(
-    key: Symbol.search,
-): V =
-    asDynamic()[key]
-
-inline operator fun <V> HasSymbol.species<V>.get(
-    key: Symbol.species,
-): V =
-    asDynamic()[key]
-
-inline operator fun <V> HasSymbol.split<V>.get(
-    key: Symbol.split,
-): V =
-    asDynamic()[key]
-
-inline operator fun <V> HasSymbol.toPrimitive<V>.get(
-    key: Symbol.toPrimitive,
-): V =
-    asDynamic()[key]
-
-inline operator fun <V> HasSymbol.toStringTag<V>.get(
-    key: Symbol.toStringTag,
-): V =
-    asDynamic()[key]
-
-inline operator fun <V> HasSymbol.unscopables<V>.get(
-    key: Symbol.unscopables,
-): V =
-    asDynamic()[key]
