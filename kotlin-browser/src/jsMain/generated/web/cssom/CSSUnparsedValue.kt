@@ -12,5 +12,10 @@ external class CSSUnparsedValue(
     ArrayLike<CSSUnparsedSegment>,
     JsIterable<CSSUnparsedSegment> {
     override val length: Int
+
+    override operator fun get(
+        index: Int,
+    ): CSSUnparsedSegment
+
     fun forEach(action: (item: CSSUnparsedSegment) -> Unit)
 }
