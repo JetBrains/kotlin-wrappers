@@ -1,6 +1,5 @@
 package example
 
-import js.core.get
 import js.core.jso
 import react.VFC
 import react.create
