@@ -32,3 +32,10 @@ sealed class StateInstance<T> {
         asDynamic()[1].unsafeCast<StateSetter<T>>()(value)
     }
 }
+
+inline fun <T> StateInstance(
+    value: T,
+    setter: StateSetter<T>
+): StateInstance<T> =
+    arrayOf(value, setter)
+        .unsafeCast<StateInstance<T>>()
