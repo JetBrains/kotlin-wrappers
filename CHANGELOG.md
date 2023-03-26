@@ -1,3 +1,9 @@
+## pre.524
+
+**BREAKING CHANGE**
+
+Kotlin/JS Legacy compiler support removed
+
 ## pre.506
 
 **BREAKING CHANGE**
