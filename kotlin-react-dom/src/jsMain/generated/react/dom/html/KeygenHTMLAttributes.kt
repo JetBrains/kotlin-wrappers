@@ -5,7 +5,6 @@ package react.dom.html
 import web.dom.Element
 
 external interface KeygenHTMLAttributes<T : Element> : HTMLAttributes<T> {
-    var autoFocus: Boolean?
     var challenge: String?
     var disabled: Boolean?
     var form: String?

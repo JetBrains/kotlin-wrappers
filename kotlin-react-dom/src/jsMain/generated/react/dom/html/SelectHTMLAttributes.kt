@@ -7,7 +7,6 @@ import web.dom.Element
 
 external interface SelectHTMLAttributes<T : Element> : HTMLAttributes<T> {
     var autoComplete: AutoComplete?
-    var autoFocus: Boolean?
     var disabled: Boolean?
     var form: String?
     var multiple: Boolean?

@@ -7,7 +7,6 @@ import web.dom.Element
 
 external interface TextareaHTMLAttributes<T : Element> : HTMLAttributes<T> {
     var autoComplete: AutoComplete?
-    var autoFocus: Boolean?
     var cols: Int?
     var dirName: String?
     var disabled: Boolean?

@@ -7,7 +7,6 @@ import web.html.ButtonType
 import web.window.WindowName
 
 external interface ButtonHTMLAttributes<T : Element> : HTMLAttributes<T> {
-    var autoFocus: Boolean?
     var disabled: Boolean?
     var form: String?
     var formAction: String?
