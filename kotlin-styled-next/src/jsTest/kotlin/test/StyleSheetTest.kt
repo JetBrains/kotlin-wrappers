@@ -301,7 +301,7 @@ class StyleSheetTest : TestBase() {
         assertCssInjected("StaticStyleSheetObject-property", "color" to expectedColor)
     }
 
-    private fun createComponentWithLocalStylesheet(builder: CssBuilder.() -> Unit): FC<Props> {
+    private fun createComponentWithLocalStylesheet(builder: RuleSet): FC<Props> {
         val myStylesheet = object : StyleSheet() {
             val rule by css { builder() }
         }
@@ -312,7 +312,7 @@ class StyleSheetTest : TestBase() {
         }
     }
 
-    private fun TestScope.checkStylesheet(builder: CssBuilder.() -> Unit, assert: (Element) -> Unit) {
+    private fun TestScope.checkStylesheet(builder: RuleSet, assert: (Element) -> Unit) {
         val styledComponent = createComponentWithLocalStylesheet(builder)
         val element = inject(styledComponent)
         assert(element)

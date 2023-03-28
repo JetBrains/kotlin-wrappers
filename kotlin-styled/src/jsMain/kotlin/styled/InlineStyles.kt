@@ -3,12 +3,13 @@ package styled
 import js.core.JsArray
 import js.core.Object
 import kotlinext.js.js
+import kotlinx.css.StyledElementBuilder
 import kotlinx.css.StyledElement
 import react.dom.RDOMBuilder
 import react.dom.setProp
 
 // Inserts vendor prefixes (using inline-style-prefixer) and sets the style attribute
-fun RDOMBuilder<*>.inlineStyles(prefix: Boolean = true, preserveExisting: Boolean = false, builder: StyledElement.() -> Unit) {
+fun RDOMBuilder<*>.inlineStyles(prefix: Boolean = true, preserveExisting: Boolean = false, builder: StyledElementBuilder) {
     val newStyle = StyledElement().also(builder).toStyle(prefix)
 
     if (preserveExisting) {

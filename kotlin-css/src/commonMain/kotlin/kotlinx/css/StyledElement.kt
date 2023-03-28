@@ -41,6 +41,8 @@ interface StyledElement {
     }
 }
 
+typealias StyledElementBuilder = StyledElement.() -> Unit
+
 @JsName("StyledElement_create")
 fun StyledElement(): StyledElement {
     return StyledElementImpl()

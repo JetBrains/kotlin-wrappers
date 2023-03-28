@@ -1,5 +1,5 @@
 import kotlinx.css.*
-import react.RBuilder
+import react.Render
 import react.fc
 import styleSheets.SimpleStyleSheet
 import styleSheets.StaticStyleSheet
@@ -75,7 +75,7 @@ object StyledElementsFactory {
     /**
      * @return styled component with [count] styled children, each having random CSS
      */
-    fun getStyledComponent(count: Int, random: Random? = null, additional: (RBuilder.() -> Unit)? = null): Component {
+    fun getStyledComponent(count: Int, random: Random? = null, additional: Render? = null): Component {
         return fc {
             (1..count).forEach {
                 styledDiv {
