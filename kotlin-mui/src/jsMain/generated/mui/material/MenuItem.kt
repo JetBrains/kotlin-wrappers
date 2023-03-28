@@ -16,7 +16,7 @@ external interface MenuItemProps :
      * Focus will also be triggered if the value changes from false to true.
      * @default false
      */
-    var autoFocus: Boolean?
+    override var autoFocus: Boolean?
 
     /**
      * Override or extend the styles applied to the component.

@@ -12,7 +12,7 @@ external interface MenuListProps :
      * If `true`, will focus the `[role="menu"]` container and move into tab order.
      * @default false
      */
-    var autoFocus: Boolean?
+    override var autoFocus: Boolean?
 
     /**
      * If `true`, will focus the first menuitem if `variant="menu"` or selected item
