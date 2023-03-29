@@ -38,7 +38,7 @@ private fun <T> toEqualSetter(
     setter: StateSetter<T>,
 ): StateSetter<T> =
     { source: Any? ->
-        if (jsTypeOf(source) === "function") {
+        if (source is Function<*>) {
             val transform = source.unsafeCast<(T) -> T>()
             setter { oldValue ->
                 val newValue = transform(oldValue)
