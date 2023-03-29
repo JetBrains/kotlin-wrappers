@@ -17,8 +17,8 @@ import web.cssom.CSSRuleList
 import web.cssom.CSSStyleDeclaration
 import web.cssom.CSSStyleSheet
 import web.dom.Element
-import web.dom.css.getComputedStyle
 import web.dom.document
+import web.dom.getComputedStyle
 import web.html.HTMLElement
 import web.html.HTMLStyleElement
 import web.timers.requestAnimationFrame
