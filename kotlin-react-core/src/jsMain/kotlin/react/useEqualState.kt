@@ -23,31 +23,10 @@ private fun <T> useEqualStateInternal(
     state: StateInstance<T>,
 ): StateInstance<T> {
     val (value, setter) = state
-
-    val equalSetter = useMemo(setter) {
-        toEqualSetter(setter)
-    }
+    val equalSetter = useEqualSetter(setter)
 
     return StateInstance(
         value = value,
         setter = equalSetter,
     )
 }
-
-private fun <T> toEqualSetter(
-    setter: StateSetter<T>,
-): StateSetter<T> =
-    { source: Any? ->
-        if (source is Function<*>) {
-            val transform = source.unsafeCast<(T) -> T>()
-            setter { oldValue ->
-                val newValue = transform(oldValue)
-                if (newValue != oldValue) newValue else oldValue
-            }
-        } else {
-            val newValue = source.unsafeCast<T>()
-            setter { oldValue ->
-                if (newValue != oldValue) newValue else oldValue
-            }
-        }
-    }.unsafeCast<StateSetter<T>>()
