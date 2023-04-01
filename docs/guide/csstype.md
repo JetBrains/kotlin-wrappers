@@ -1,8 +1,7 @@
 # FAQ
 
-## How to avoid name intersections while using `csstype` values?
+## Which `csstype` constants are recommended for static import?
 
-We recommend to apply static imports strictly for next entities:
 - `AnimationIterationCount`
 - `AnimationFillMode`
 - `AnimationTimingFunction`
