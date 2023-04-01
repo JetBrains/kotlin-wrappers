@@ -1,6 +1,6 @@
 # FAQ
 
-## There are some name intersections when I try to import csstype value. How to avoid it?
+## There are some name intersections when I try to import `csstype` value. How to avoid it?
 
 We recommend to apply static imports strictly for next entities:
 - [`AnimationIterationCount`](https://github.com/JetBrains/kotlin-wrappers/blob/master/kotlin-csstype/src/jsMain/generated/csstype/AnimationIterationCount.kt)
