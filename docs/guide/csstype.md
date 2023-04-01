@@ -1,6 +1,6 @@
 # FAQ
 
-## There are some name intersections when I try to import `csstype` value. How to avoid it?
+## How to avoid name intersections while using `csstype` values?
 
 We recommend to apply static imports strictly for next entities:
 - `AnimationIterationCount`
