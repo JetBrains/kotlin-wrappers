@@ -2,4 +2,4 @@
 
 package csstype
 
-sealed external interface Page
+sealed external interface ContainIntrinsicSize

@@ -10,6 +10,7 @@ sealed external interface IntegerType :
     ColumnCount,
     FontWeight,
     GridLine,
+    HyphenateLimitChars,
     LineClamp,
     MathDepth,
     MaxLines,

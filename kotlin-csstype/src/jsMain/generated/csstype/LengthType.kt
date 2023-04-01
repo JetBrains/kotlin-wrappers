@@ -85,6 +85,11 @@ sealed external interface LengthType :
         Width
 
     sealed interface None :
+        ContainIntrinsicBlockSize,
+        ContainIntrinsicHeight,
+        ContainIntrinsicInlineSize,
+        ContainIntrinsicSize,
+        ContainIntrinsicWidth,
         GridTemplateTracks,
         MaxBlockSize,
         MaxHeight,

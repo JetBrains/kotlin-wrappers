@@ -85,6 +85,12 @@ interface SimplePseudosRuleBuilder<T : Any> : RuleBuilder<T> {
         "::target-text"(block)
     }
 
+    inline fun viewTransition(
+        block: T.() -> Unit,
+    ) {
+        "::view-transition"(block)
+    }
+
     inline fun active(
         block: T.() -> Unit,
     ) {

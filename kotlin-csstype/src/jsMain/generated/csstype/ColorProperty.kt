@@ -6,6 +6,7 @@ sealed external interface ColorProperty :
     AccentColor,
     Background,
     Border,
+    Caret,
     CaretColor,
     Outline,
     OutlineColor,

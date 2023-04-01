@@ -63,6 +63,62 @@ interface AdvancedPseudosRuleBuilder<T : Any> : RuleBuilder<T> {
         "::slotted($selector)"(block)
     }
 
+    inline fun viewTransitionGroup(
+        selector: Selector,
+        block: T.() -> Unit,
+    ) {
+        "::view-transition-group($selector)"(block)
+    }
+
+    inline fun viewTransitionGroup(
+        selector: String,
+        block: T.() -> Unit,
+    ) {
+        "::view-transition-group($selector)"(block)
+    }
+
+    inline fun viewTransitionImagePair(
+        selector: Selector,
+        block: T.() -> Unit,
+    ) {
+        "::view-transition-image-pair($selector)"(block)
+    }
+
+    inline fun viewTransitionImagePair(
+        selector: String,
+        block: T.() -> Unit,
+    ) {
+        "::view-transition-image-pair($selector)"(block)
+    }
+
+    inline fun viewTransitionNew(
+        selector: Selector,
+        block: T.() -> Unit,
+    ) {
+        "::view-transition-new($selector)"(block)
+    }
+
+    inline fun viewTransitionNew(
+        selector: String,
+        block: T.() -> Unit,
+    ) {
+        "::view-transition-new($selector)"(block)
+    }
+
+    inline fun viewTransitionOld(
+        selector: Selector,
+        block: T.() -> Unit,
+    ) {
+        "::view-transition-old($selector)"(block)
+    }
+
+    inline fun viewTransitionOld(
+        selector: String,
+        block: T.() -> Unit,
+    ) {
+        "::view-transition-old($selector)"(block)
+    }
+
     inline fun dir(
         selector: Selector,
         block: T.() -> Unit,

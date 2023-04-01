@@ -4,7 +4,7 @@ package csstype
 
 external interface StandardShorthandProperties {
     /**
-     * The **`all`** shorthand CSS property resets all of an element's properties except `unicode-bidi`, `direction`, and CSS Custom Properties. It can set properties to their initial or inherited values, or to the values specified in another stylesheet origin.
+     * The **`all`** shorthand CSS property resets all of an element's properties except `unicode-bidi`, `direction`, and CSS Custom Properties. It can set properties to their initial or inherited values, or to the values specified in another cascade layer or stylesheet origin.
      *
      * **Syntax**: `initial | inherit | unset | revert | revert-layer`
      *
@@ -270,6 +270,9 @@ external interface StandardShorthandProperties {
      */
     var borderWidth: BorderWidth?
 
+    /** **Syntax**: `<'caret-color'> || <'caret-shape'>` */
+    var caret: Caret?
+
     /**
      * The **`column-rule`** shorthand CSS property sets the width, style, and color of the line drawn between columns in a multi-column layout.
      *
@@ -297,6 +300,32 @@ external interface StandardShorthandProperties {
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/columns">MDN</a>
      */
     var columns: Columns?
+
+    /**
+     * The **`contain-intrinsic-size`** CSS shorthand property sets the size of an element that a browser will use for layout when the element is subject to size containment.
+     *
+     * **Syntax**: `[ none | <length> | auto <length> ]{1,2}`
+     *
+     *    | Chrome | Firefox | Safari | Edge | IE  |
+     *    | :----: | :-----: | :----: | :--: | :-: |
+     *    |   83   |   107   |   No   | n/a  | No  |
+     *
+     * @see <a href="https://developer.mozilla.org/docs/Web/CSS/contain-intrinsic-size">MDN</a>
+     */
+    var containIntrinsicSize: ContainIntrinsicSize?
+
+    /**
+     * The **container** shorthand CSS property establishes the element as a query container and specifies the name or name for the containment context used in a container query.
+     *
+     * **Syntax**: `<'container-name'> [ / <'container-type'> ]?`
+     *
+     *    | Chrome  | Firefox | Safari | Edge | IE  |
+     *    | :-----: | :-----: | :----: | :--: | :-: |
+     *    |   105   |   110   |   16   | n/a  | No  |
+     *
+     * @see <a href="https://developer.mozilla.org/docs/Web/CSS/container">MDN</a>
+     */
+    var container: Container?
 
     /**
      * The **`flex`** CSS shorthand property sets how a flex _item_ will grow or shrink to fit the space available in its flex container.
@@ -392,7 +421,7 @@ external interface StandardShorthandProperties {
     var gridColumn: GridColumn?
 
     /**
-     * The **`grid-row`** CSS shorthand property specifies a grid item's size and location within the grid row by contributing a line, a span, or nothing (automatic) to its grid placement, thereby specifying the inline-start and inline-end edge of its grid area.
+     * The **`grid-row`** CSS shorthand property specifies a grid item's size and location within a grid row by contributing a line, a span, or nothing (automatic) to its grid placement, thereby specifying the inline-start and inline-end edge of its grid area.
      *
      * **Syntax**: `<grid-line> [ / <grid-line> ]?`
      *
@@ -405,7 +434,7 @@ external interface StandardShorthandProperties {
     var gridRow: GridRow?
 
     /**
-     * The **`grid-template`** CSS property is a shorthand property for defining grid columns, rows, and areas.
+     * The **`grid-template`** CSS property is a shorthand property for defining grid columns, grid rows, and grid areas.
      *
      * **Syntax**: `none | [ <'grid-template-rows'> / <'grid-template-columns'> ] | [ <line-names>? <string> <track-size>? <line-names>? ]+ [ / <explicit-track-list> ]?`
      *
@@ -416,6 +445,45 @@ external interface StandardShorthandProperties {
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/grid-template">MDN</a>
      */
     var gridTemplate: GridTemplate?
+
+    /**
+     * The **`inset`** CSS property is a shorthand that corresponds to the `top`, `right`, `bottom`, and/or `left` properties. It has the same multi-value syntax of the `margin` shorthand.
+     *
+     * **Syntax**: `<'top'>{1,4}`
+     *
+     *    | Chrome | Firefox |  Safari  | Edge | IE  |
+     *    | :----: | :-----: | :------: | :--: | :-: |
+     *    |   87   |   66    |   14.1   | n/a  | No  |
+     *
+     * @see <a href="https://developer.mozilla.org/docs/Web/CSS/inset">MDN</a>
+     */
+    var inset: Inset?
+
+    /**
+     * The **`inset-block`** CSS property defines the logical block start and end offsets of an element, which maps to physical offsets depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top` and `bottom`, or `right` and `left` properties depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+     *
+     * **Syntax**: `<'top'>{1,2}`
+     *
+     *    | Chrome | Firefox |  Safari  | Edge | IE  |
+     *    | :----: | :-----: | :------: | :--: | :-: |
+     *    |   87   |   63    |   14.1   | n/a  | No  |
+     *
+     * @see <a href="https://developer.mozilla.org/docs/Web/CSS/inset-block">MDN</a>
+     */
+    var insetBlock: InsetBlock?
+
+    /**
+     * The **`inset-inline`** CSS property defines the logical start and end offsets of an element in the inline direction, which maps to physical offsets depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top` and `bottom`, or `right` and `left` properties depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+     *
+     * **Syntax**: `<'top'>{1,2}`
+     *
+     *    | Chrome | Firefox |  Safari  | Edge | IE  |
+     *    | :----: | :-----: | :------: | :--: | :-: |
+     *    |   87   |   63    |   14.1   | n/a  | No  |
+     *
+     * @see <a href="https://developer.mozilla.org/docs/Web/CSS/inset-inline">MDN</a>
+     */
+    var insetInline: InsetInline?
 
     /**
      * **Syntax**: `none | <integer>`
@@ -449,6 +517,32 @@ external interface StandardShorthandProperties {
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/margin">MDN</a>
      */
     var margin: Margin?
+
+    /**
+     * The **`margin-block`** CSS shorthand property defines the logical block start and end margins of an element, which maps to physical margins depending on the element's writing mode, directionality, and text orientation.
+     *
+     * **Syntax**: `<'margin-left'>{1,2}`
+     *
+     *    | Chrome | Firefox |  Safari  | Edge | IE  |
+     *    | :----: | :-----: | :------: | :--: | :-: |
+     *    |   87   |   66    |   14.1   | n/a  | No  |
+     *
+     * @see <a href="https://developer.mozilla.org/docs/Web/CSS/margin-block">MDN</a>
+     */
+    var marginBlock: MarginBlock?
+
+    /**
+     * The **`margin-inline`** CSS shorthand property is a shorthand property that defines both the logical inline start and end margins of an element, which maps to physical margins depending on the element's writing mode, directionality, and text orientation.
+     *
+     * **Syntax**: `<'margin-left'>{1,2}`
+     *
+     *    | Chrome | Firefox |  Safari  | Edge | IE  |
+     *    | :----: | :-----: | :------: | :--: | :-: |
+     *    |   87   |   66    |   14.1   | n/a  | No  |
+     *
+     * @see <a href="https://developer.mozilla.org/docs/Web/CSS/margin-inline">MDN</a>
+     */
+    var marginInline: MarginInline?
 
     /**
      * The **`mask`** CSS shorthand property hides an element (partially or fully) by masking or clipping the image at specific points.
@@ -505,13 +599,13 @@ external interface StandardShorthandProperties {
     var offset: Offset?
 
     /**
-     * The **`outline`** CSS shorthand property set all the outline properties in a single declaration.
+     * The **`outline`** CSS shorthand property sets most of the outline properties in a single declaration.
      *
      * **Syntax**: `[ <'outline-color'> || <'outline-style'> || <'outline-width'> ]`
      *
      *    | Chrome | Firefox | Safari  |  Edge  |  IE   |
      *    | :----: | :-----: | :-----: | :----: | :---: |
-     *    |   1    |   1.5   |   1.2   |   12   |   8   |
+     *    |   94   |   88    |   1.2   |   94   |   8   |
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/outline">MDN</a>
      */
@@ -561,6 +655,45 @@ external interface StandardShorthandProperties {
     var padding: Padding?
 
     /**
+     * The **`padding-block`** CSS shorthand property defines the logical block start and end padding of an element, which maps to physical padding properties depending on the element's writing mode, directionality, and text orientation.
+     *
+     * **Syntax**: `<'padding-left'>{1,2}`
+     *
+     *    | Chrome | Firefox |  Safari  | Edge | IE  |
+     *    | :----: | :-----: | :------: | :--: | :-: |
+     *    |   87   |   66    |   14.1   | n/a  | No  |
+     *
+     * @see <a href="https://developer.mozilla.org/docs/Web/CSS/padding-block">MDN</a>
+     */
+    var paddingBlock: PaddingBlock?
+
+    /**
+     * The **`padding-inline`** CSS shorthand property defines the logical inline start and end padding of an element, which maps to physical padding properties depending on the element's writing mode, directionality, and text orientation.
+     *
+     * **Syntax**: `<'padding-left'>{1,2}`
+     *
+     *    | Chrome | Firefox |  Safari  | Edge | IE  |
+     *    | :----: | :-----: | :------: | :--: | :-: |
+     *    |   87   |   66    |   14.1   | n/a  | No  |
+     *
+     * @see <a href="https://developer.mozilla.org/docs/Web/CSS/padding-inline">MDN</a>
+     */
+    var paddingInline: PaddingInline?
+
+    /**
+     * The **`place-content`** CSS shorthand property allows you to align content along both the block and inline directions at once (i.e. the `align-content` and `justify-content` properties) in a relevant layout system such as Grid or Flexbox.
+     *
+     * **Syntax**: `<'align-content'> <'justify-content'>?`
+     *
+     *    | Chrome | Firefox | Safari | Edge | IE  |
+     *    | :----: | :-----: | :----: | :--: | :-: |
+     *    |   59   |   45    |   9    | n/a  | No  |
+     *
+     * @see <a href="https://developer.mozilla.org/docs/Web/CSS/place-content">MDN</a>
+     */
+    var placeContent: PlaceContent?
+
+    /**
      * The CSS **`place-items`** shorthand property allows you to align items along both the block and inline directions at once (i.e. the `align-items` and `justify-items` properties) in a relevant layout system such as Grid or Flexbox. If the second value is not set, the first value is also used for it.
      *
      * **Syntax**: `<'align-items'> <'justify-items'>?`
@@ -585,6 +718,112 @@ external interface StandardShorthandProperties {
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/place-self">MDN</a>
      */
     var placeSelf: PlaceSelf?
+
+    /**
+     * The **`scroll-margin`** shorthand property sets all of the scroll margins of an element at once, assigning values much like the `margin` property does for margins of an element.
+     *
+     * **Syntax**: `<length>{1,4}`
+     *
+     *    | Chrome | Firefox |          Safari           | Edge | IE  |
+     *    | :----: | :-----: | :-----------------------: | :--: | :-: |
+     *    |   69   |   90    |           14.1            | n/a  | No  |
+     *    |        |         | 11 _(scroll-snap-margin)_ |      |     |
+     *
+     * @see <a href="https://developer.mozilla.org/docs/Web/CSS/scroll-margin">MDN</a>
+     */
+    var scrollMargin: ScrollMargin?
+
+    /**
+     * The `scroll-margin-block` shorthand property sets the scroll margins of an element in the block dimension.
+     *
+     * **Syntax**: `<length>{1,2}`
+     *
+     *    | Chrome | Firefox |  Safari  | Edge | IE  |
+     *    | :----: | :-----: | :------: | :--: | :-: |
+     *    |   69   |   68    |   14.1   | n/a  | No  |
+     *
+     * @see <a href="https://developer.mozilla.org/docs/Web/CSS/scroll-margin-block">MDN</a>
+     */
+    var scrollMarginBlock: ScrollMarginBlock?
+
+    /**
+     * The `scroll-margin-inline` shorthand property sets the scroll margins of an element in the inline dimension.
+     *
+     * **Syntax**: `<length>{1,2}`
+     *
+     *    | Chrome | Firefox |  Safari  | Edge | IE  |
+     *    | :----: | :-----: | :------: | :--: | :-: |
+     *    |   69   |   68    |   14.1   | n/a  | No  |
+     *
+     * @see <a href="https://developer.mozilla.org/docs/Web/CSS/scroll-margin-inline">MDN</a>
+     */
+    var scrollMarginInline: ScrollMarginInline?
+
+    /**
+     * The **`scroll-padding`** shorthand property sets scroll padding on all sides of an element at once, much like the `padding` property does for padding on an element.
+     *
+     * **Syntax**: `[ auto | <length-percentage> ]{1,4}`
+     *
+     *    | Chrome | Firefox |  Safari  | Edge | IE  |
+     *    | :----: | :-----: | :------: | :--: | :-: |
+     *    |   69   |   68    |   14.1   | n/a  | No  |
+     *
+     * @see <a href="https://developer.mozilla.org/docs/Web/CSS/scroll-padding">MDN</a>
+     */
+    var scrollPadding: ScrollPadding?
+
+    /**
+     * The `scroll-padding-block` shorthand property sets the scroll padding of an element in the block dimension.
+     *
+     * **Syntax**: `[ auto | <length-percentage> ]{1,2}`
+     *
+     *    | Chrome | Firefox | Safari | Edge | IE  |
+     *    | :----: | :-----: | :----: | :--: | :-: |
+     *    |   69   |   68    |   15   | n/a  | No  |
+     *
+     * @see <a href="https://developer.mozilla.org/docs/Web/CSS/scroll-padding-block">MDN</a>
+     */
+    var scrollPaddingBlock: ScrollPaddingBlock?
+
+    /**
+     * The `scroll-padding-inline` shorthand property sets the scroll padding of an element in the inline dimension.
+     *
+     * **Syntax**: `[ auto | <length-percentage> ]{1,2}`
+     *
+     *    | Chrome | Firefox | Safari | Edge | IE  |
+     *    | :----: | :-----: | :----: | :--: | :-: |
+     *    |   69   |   68    |   15   | n/a  | No  |
+     *
+     * @see <a href="https://developer.mozilla.org/docs/Web/CSS/scroll-padding-inline">MDN</a>
+     */
+    var scrollPaddingInline: ScrollPaddingInline?
+
+    /**
+     * The **`scroll-margin`** shorthand property sets all of the scroll margins of an element at once, assigning values much like the `margin` property does for margins of an element.
+     *
+     * **Syntax**: `<length>{1,4}`
+     *
+     *    | Chrome | Firefox |          Safari           | Edge | IE  |
+     *    | :----: | :-----: | :-----------------------: | :--: | :-: |
+     *    |   69   |  68-90  |           14.1            | n/a  | No  |
+     *    |        |         | 11 _(scroll-snap-margin)_ |      |     |
+     *
+     * @see <a href="https://developer.mozilla.org/docs/Web/CSS/scroll-margin">MDN</a>
+     */
+    var scrollSnapMargin: ScrollMargin?
+
+    /**
+     * The **`scroll-timeline`** CSS shorthand property defines a name that can be used to identify the source element of a scroll timeline, along with the scrollbar axis that should provide the timeline.
+     *
+     * **Syntax**: `[<'scroll-timeline-name'> <'scroll-timeline-axis'>?]#`
+     *
+     *    | Chrome | Firefox | Safari | Edge | IE  |
+     *    | :----: | :-----: | :----: | :--: | :-: |
+     *    |   No   |   n/a   |   No   | n/a  | No  |
+     *
+     * @see <a href="https://developer.mozilla.org/docs/Web/CSS/scroll-timeline">MDN</a>
+     */
+    var scrollTimeline: ScrollTimeline?
 
     /**
      * The **`text-decoration`** shorthand CSS property sets the appearance of decorative lines on text. It is a shorthand for `text-decoration-line`, `text-decoration-color`, `text-decoration-style`, and the newer `text-decoration-thickness` property.

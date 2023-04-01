@@ -14,6 +14,7 @@ sealed external interface GeometryPosition :
     MaskPosition,
     ObjectPosition,
     OffsetAnchor,
+    OffsetPosition,
     PerspectiveOrigin,
     TransformOrigin {
     companion object {

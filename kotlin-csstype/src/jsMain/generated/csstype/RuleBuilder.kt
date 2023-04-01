@@ -7,7 +7,6 @@
 package csstype
 
 import js.core.jso
-import js.core.set
 
 interface RuleBuilder<T : Any> : Rules {
     inline fun fontFace(

@@ -11,8 +11,11 @@ sealed external interface Ident :
 
 sealed external interface IdentType :
     AnimationName,
+    ContainerName,
     GridArea,
+    ScrollTimelineName,
     TransitionProperty,
+    ViewTransitionName,
     WillChange
 
 inline fun ident(

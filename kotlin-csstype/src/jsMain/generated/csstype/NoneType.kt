@@ -17,6 +17,8 @@ sealed external interface NoneType :
     ClipPath,
     ColumnSpan,
     Contain,
+    Container,
+    ContainerName,
     Content,
     CounterIncrement,
     CounterReset,
@@ -43,6 +45,7 @@ sealed external interface NoneType :
     ListStyle,
     ListStyleImage,
     ListStyleType,
+    MarginTrim,
     Marks,
     Mask,
     MaskBorder,
@@ -62,6 +65,8 @@ sealed external interface NoneType :
     Scale,
     ScrollSnapAlign,
     ScrollSnapType,
+    ScrollTimeline,
+    ScrollTimelineName,
     ScrollbarWidth,
     ShapeOutside,
     TextCombineUpright,
@@ -80,4 +85,5 @@ sealed external interface NoneType :
     Transition,
     TransitionProperty,
     Translate,
-    UserSelect
+    UserSelect,
+    ViewTransitionName
