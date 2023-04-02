@@ -1,3 +1,7 @@
+## pre.527
+
+* Kotlin `1.8.20` support
+
 ## pre.524
 
 **BREAKING CHANGE**
