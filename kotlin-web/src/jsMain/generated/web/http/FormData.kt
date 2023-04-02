@@ -38,12 +38,6 @@ external class FormData(
 
     fun set(
         name: String,
-        value: String,
-        fileName: String,
-    )
-
-    fun set(
-        name: String,
         value: Blob,
         fileName: String,
     )
