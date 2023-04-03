@@ -1,18 +1,26 @@
-# FAQ
+# `kotlin-csstype`
 
-## Which `csstype` constants are recommended for static import?
+## FAQ
 
-- `AnimationIterationCount`
-- `AnimationFillMode`
-- `AnimationTimingFunction`
-- `Auto`
-- `AutoRepeat`
-- `BoxSizing`
-- `Globals`
-- `Length`
-- `LineStyle`
-- `NamedColor`
-- `None`
-- `Round`
-- `TransitionTimingFunction`
-- `Visibility`
+### Which `csstype` constants are recommended for static import?
+
+- Common
+    - `Auto`
+    - `Globals`
+    - `None`
+    - `Length`
+
+- Properties
+    - `AnimationIterationCount`
+    - `AnimationFillMode`
+    - `AnimationTimingFunction`
+    - `AutoRepeat`
+    - `BoxSizing`
+    - `LineStyle`
+    - `Color`
+    - `NamedColor`
+    - `Round`
+    - `Transition`
+    - `TransitionProperty`
+    - `TransitionTimingFunction`
+    - `Visibility`
