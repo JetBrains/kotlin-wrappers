@@ -10,7 +10,7 @@ Defining your CSS styles with `kotlin-emotion` is very similar to creating a typ
 most CSS properties match the CSS specification. However, there are a few things to keep in mind when defining properties
 with Kotlin. This guide is designed to help you get up and running fast.
 
-To create a React HTML element style, first, create a `css` block. Next, define your CSS properties. The
+To style an HTML element, first, create a `css` block. Next, define your CSS properties. The
 example below isn't the most elegant `div` tag, but it does showcase some common CSS properties and how to define
 them. Once you have your frontend up and running, have fun and experiment!
 
@@ -20,21 +20,25 @@ them. Once you have your frontend up and running, have fun and experiment!
 ```kotlin
 div {
     css {
-        margin = Auto.auto
-        width = 70.pct
-        padding = 10.px
-        fontSize = 22.pt
-        color = NamedColor.white
-        fontWeight = FontWeight.bold
-        border = Border(4.px, LineStyle.solid)
-        borderColor = Color("purple")
-        backgroundImage = linearGradient(angle = 90.deg, Color("#8150fe"), Color("#e3465b"))
-        borderRadius = 6.em
-        boxSizing = BoxSizing.borderBox
         position = Position.fixed
+        boxSizing = BoxSizing.borderBox
+
         opacity = number(.75)
         overflow = Overflow.hidden
         visibility = Visibility.visible
+
+        width = 70.pct
+        margin = Auto.auto
+        padding = 10.px
+
+        border = Border(4.px, LineStyle.solid)
+        borderColor = Color("purple")
+        borderRadius = 6.em
+        backgroundImage = linearGradient(angle = 90.deg, Color("#8150fe"), Color("#e3465b"))
+
+        color = NamedColor.white
+        fontSize = 22.pt
+        fontWeight = FontWeight.bold
     }
 
     +"Welcome to the kotlin-emotion wrapper"
@@ -54,10 +58,10 @@ You can use `NamedColor` or specify an HTML color string with `Color`.
 Properties that support `Number` or `Percent` values accept various CSS number types (e.g., `em`, `px`, pt, `cm`, `in`, `pct`).
 You can also define `auto` values, for example:
 
-* `margin = Auto.auto`
 * `width = 10.px`
 * `width = 10.em`
 * `width = 100.pct`
+* `margin = Auto.auto`
 
 These number types are included in the `csstype` package. For more information, refer to (_Number - Length.kt_).
 
@@ -83,9 +87,9 @@ Add background images with `url`:
 div {
     css {
         height = 150.px
-        backgroundImage = url("https://kotlinlang.org/docs/images/kotlin-logo.png")
         backgroundSize = BackgroundSize.contain
         backgroundRepeat = BackgroundRepeat.noRepeat
+        backgroundImage = url("https://kotlinlang.org/docs/images/kotlin-logo.png")
     }
 }
 ```
@@ -112,8 +116,8 @@ for example, `index.css`, and you'd like to add additional properties to your HT
 
 ```kotlin
 css(ClassName("kotlin-emotion")) {
-    margin = Auto.auto
     width = 50.pc
+    margin = Auto.auto
 }
 ```
 
@@ -131,9 +135,6 @@ text will be `green`. Otherwise, it's `red`.
 
 ```kotlin
 css {
-    color = if (it.accountBalance >= 0 )
-        NamedColor.green
-    else
-        NamedColor.red
+    color = if (it.accountBalance >= 0) NamedColor.green else NamedColor.red
 }
 ```
