@@ -6,9 +6,6 @@ plugins {
 
 repositories {
     gradlePluginPortal()
-    // TODO: remove after issue fix
-    //  https://youtrack.jetbrains.com/issue/KT-57687
-    mavenCentral()
 }
 
 val props = Properties().apply {
