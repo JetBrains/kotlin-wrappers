@@ -46,11 +46,14 @@ external interface HTMLAttributes<T : Element> :
 
     // RDFa Attributes
     var about: String?
+    var content: String?
     var datatype: String?
     var inlist: Any?
     var prefix: String?
     var property: String?
+    var rel: String?
     var resource: String?
+    var rev: String?
     var `typeof`: String?
     var vocab: String?
 

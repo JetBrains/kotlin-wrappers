@@ -14,5 +14,4 @@ external interface FormHTMLAttributes<T : Element> : HTMLAttributes<T> {
     var name: String?
     var noValidate: Boolean?
     var target: WindowTarget?
-    var rel: String?
 }
