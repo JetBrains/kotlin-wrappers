@@ -11,8 +11,8 @@ import react.PropsWithClassName
 private inline val Props.theme: Theme
     get() = asDynamic().theme
 
-fun <P : PropsWithClassName, T : Theme> ElementType<P>.customStyled(
-    options: StyledOptions? = null,
+fun <P : PropsWithClassName, T : Theme> ElementType<P>.styledWithTheme(
+    options: StyledOptions?,
     block: PropertiesBuilder.(P, T) -> Unit,
 ): StyledComponent<P> {
     val style = { props: P ->
@@ -30,8 +30,18 @@ fun <P : PropsWithClassName, T : Theme> ElementType<P>.customStyled(
     return styled(this, finalOptions)(style)
 }
 
+fun <P : PropsWithClassName, T : Theme> ElementType<P>.styledWithTheme(
+    block: PropertiesBuilder.(P, T) -> Unit,
+): StyledComponent<P> =
+    styledWithTheme(null, block)
+
 fun <P : PropsWithClassName> ElementType<P>.styled(
-    options: StyledOptions? = null,
+    options: StyledOptions?,
     block: PropertiesBuilder.(P) -> Unit,
 ): StyledComponent<P> =
-    customStyled(options) { props, _: Theme -> block(props) }
+    styledWithTheme(options) { props, _: Theme -> block(props) }
+
+fun <P : PropsWithClassName> ElementType<P>.styled(
+    block: PropertiesBuilder.(P) -> Unit,
+): StyledComponent<P> =
+    styled(null, block)
