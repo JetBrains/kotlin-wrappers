@@ -23,4 +23,3 @@
     - `Transition`
     - `TransitionProperty`
     - `TransitionTimingFunction`
-    - `Visibility`
