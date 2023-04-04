@@ -1,21 +1,22 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NOTHING_TO_INLINE",
+    "NATIVE_INDEXER_KEY_SHOULD_BE_STRING_OR_NUMBER"
 )
 
 package csstype
 
-sealed external interface VariableRecord
+sealed external interface VariableRecord {
+    @nativeGetter
+    @Suppress("DEPRECATION")
+    operator fun <T : Any> get(
+        name: Variable<T>,
+    ): T?
 
-inline fun <T : Any> VariableRecord.get(
-    name: Variable<T>,
-): T? =
-    asDynamic()[name]
-
-inline fun <T : Any> VariableRecord.set(
-    name: Variable<T>,
-    value: T?,
-) {
-    asDynamic()[name] = value
+    @nativeSetter
+    @Suppress("DEPRECATION")
+    operator fun <T : Any> set(
+        name: Variable<T>,
+        value: T?,
+    )
 }
