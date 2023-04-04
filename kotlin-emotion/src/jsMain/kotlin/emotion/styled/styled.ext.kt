@@ -8,8 +8,8 @@ import react.ElementType
 import react.Props
 import react.PropsWithClassName
 
-private inline val Props.theme: Theme
-    get() = asDynamic().theme
+private inline fun <T : Theme> Props.getTheme(): T =
+    asDynamic().theme
 
 fun <P : PropsWithClassName, T : Theme> ElementType<P>.styledWithTheme(
     options: StyledOptions?,
@@ -17,7 +17,7 @@ fun <P : PropsWithClassName, T : Theme> ElementType<P>.styledWithTheme(
 ): StyledComponent<P> {
     val style = { props: P ->
         val builder: PropertiesBuilder = jso()
-        block(builder, props, props.theme.unsafeCast<T>())
+        block(builder, props, props.getTheme())
         builder
     }
 
