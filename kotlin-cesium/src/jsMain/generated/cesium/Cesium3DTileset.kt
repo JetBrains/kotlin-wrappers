@@ -15,210 +15,47 @@ import kotlin.js.Promise
  * A [3D Tiles tileset](https://github.com/CesiumGS/3d-tiles/tree/main/specification),
  * used for streaming massive heterogeneous 3D geospatial datasets.
  * ```
- * const tileset = scene.primitives.add(new Cesium3DTileset({
- *      url : 'http://localhost:8002/tilesets/Seattle/tileset.json'
- * }));
+ * try {
+ *   const tileset = await Cesium3DTileset.fromUrl(
+ *      "http://localhost:8002/tilesets/Seattle/tileset.json"
+ *   });
+ *   scene.primitives.add(tileset);
+ * } catch (error) {
+ *   console.error(`Error creating tileset: ${error}`);
+ * }
  * ```
  * ```
  * // Common setting for the skipLevelOfDetail optimization
- * const tileset = scene.primitives.add(new Cesium3DTileset({
- *      url : 'http://localhost:8002/tilesets/Seattle/tileset.json',
- *      skipLevelOfDetail : true,
- *      baseScreenSpaceError : 1024,
- *      skipScreenSpaceErrorFactor : 16,
- *      skipLevels : 1,
- *      immediatelyLoadDesiredLevelOfDetail : false,
- *      loadSiblings : false,
- *      cullWithChildrenBounds : true
- * }));
+ * const tileset = await Cesium3DTileset.fromUrl(
+ *   "http://localhost:8002/tilesets/Seattle/tileset.json", {
+ *      skipLevelOfDetail: true,
+ *      baseScreenSpaceError: 1024,
+ *      skipScreenSpaceErrorFactor: 16,
+ *      skipLevels: 1,
+ *      immediatelyLoadDesiredLevelOfDetail: false,
+ *      loadSiblings: false,
+ *      cullWithChildrenBounds: true
+ * });
+ * scene.primitives.add(tileset);
  * ```
  * ```
  * // Common settings for the dynamicScreenSpaceError optimization
- * const tileset = scene.primitives.add(new Cesium3DTileset({
- *      url : 'http://localhost:8002/tilesets/Seattle/tileset.json',
- *      dynamicScreenSpaceError : true,
- *      dynamicScreenSpaceErrorDensity : 0.00278,
- *      dynamicScreenSpaceErrorFactor : 4.0,
- *      dynamicScreenSpaceErrorHeightFalloff : 0.25
- * }));
+ * const tileset = await Cesium3DTileset.fromUrl(
+ *   "http://localhost:8002/tilesets/Seattle/tileset.json", {
+ *      dynamicScreenSpaceError: true,
+ *      dynamicScreenSpaceErrorDensity: 0.00278,
+ *      dynamicScreenSpaceErrorFactor: 4.0,
+ *      dynamicScreenSpaceErrorHeightFalloff: 0.25
+ * });
+ * scene.primitives.add(tileset);
  * ```
+ * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileset.html">Online Documentation</a>
+ *
+ * @constructor
+ * @param [options] An object describing initialization options
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileset.html">Online Documentation</a>
  */
 external class Cesium3DTileset(options: ConstructorOptions) {
-    /**
-     * @property [url] The url to a tileset JSON file.
-     * @property [show] Determines if the tileset will be shown.
-     *   Default value - `true`
-     * @property [modelMatrix] A 4x4 transformation matrix that transforms the tileset's root tile.
-     *   Default value - [Matrix4.IDENTITY]
-     * @property [modelUpAxis] Which axis is considered up when loading models for tile contents.
-     *   Default value - [Axis.Y]
-     * @property [modelForwardAxis] Which axis is considered forward when loading models for tile contents.
-     *   Default value - [Axis.X]
-     * @property [shadows] Determines whether the tileset casts or receives shadows from light sources.
-     *   Default value - [ShadowMode.ENABLED]
-     * @property [maximumScreenSpaceError] The maximum screen space error used to drive level of detail refinement.
-     *   Default value - `16`
-     * @property [maximumMemoryUsage] The maximum amount of memory in MB that can be used by the tileset.
-     *   Default value - `512`
-     * @property [cullWithChildrenBounds] Optimization option. Whether to cull tiles using the union of their children bounding volumes.
-     *   Default value - `true`
-     * @property [cullRequestsWhileMoving] Optimization option. Don't request tiles that will likely be unused when they come back because of the camera's movement. This optimization only applies to stationary tilesets.
-     *   Default value - `true`
-     * @property [cullRequestsWhileMovingMultiplier] Optimization option. Multiplier used in culling requests while moving. Larger is more aggressive culling, smaller less aggressive culling.
-     *   Default value - `60.0`
-     * @property [preloadWhenHidden] Preload tiles when `tileset.show` is `false`. Loads tiles as if the tileset is visible but does not render them.
-     *   Default value - `false`
-     * @property [preloadFlightDestinations] Optimization option. Preload tiles at the camera's flight destination while the camera is in flight.
-     *   Default value - `true`
-     * @property [preferLeaves] Optimization option. Prefer loading of leaves first.
-     *   Default value - `false`
-     * @property [dynamicScreenSpaceError] Optimization option. Reduce the screen space error for tiles that are further away from the camera.
-     *   Default value - `false`
-     * @property [dynamicScreenSpaceErrorDensity] Density used to adjust the dynamic screen space error, similar to fog density.
-     *   Default value - `0.00278`
-     * @property [dynamicScreenSpaceErrorFactor] A factor used to increase the computed dynamic screen space error.
-     *   Default value - `4.0`
-     * @property [dynamicScreenSpaceErrorHeightFalloff] A ratio of the tileset's height at which the density starts to falloff.
-     *   Default value - `0.25`
-     * @property [progressiveResolutionHeightFraction] Optimization option. If between (0.0, 0.5], tiles at or above the screen space error for the reduced screen resolution of `progressiveResolutionHeightFraction*screenHeight` will be prioritized first. This can help get a quick layer of tiles down while full resolution tiles continue to load.
-     *   Default value - `0.3`
-     * @property [foveatedScreenSpaceError] Optimization option. Prioritize loading tiles in the center of the screen by temporarily raising the screen space error for tiles around the edge of the screen. Screen space error returns to normal once all the tiles in the center of the screen as determined by the [Cesium3DTileset.foveatedConeSize] are loaded.
-     *   Default value - `true`
-     * @property [foveatedConeSize] Optimization option. Used when [Cesium3DTileset.foveatedScreenSpaceError] is true to control the cone size that determines which tiles are deferred. Tiles that are inside this cone are loaded immediately. Tiles outside the cone are potentially deferred based on how far outside the cone they are and their screen space error. This is controlled by [Cesium3DTileset.foveatedInterpolationCallback] and [Cesium3DTileset.foveatedMinimumScreenSpaceErrorRelaxation]. Setting this to 0.0 means the cone will be the line formed by the camera position and its view direction. Setting this to 1.0 means the cone encompasses the entire field of view of the camera, disabling the effect.
-     *   Default value - `0.1`
-     * @property [foveatedMinimumScreenSpaceErrorRelaxation] Optimization option. Used when [Cesium3DTileset.foveatedScreenSpaceError] is true to control the starting screen space error relaxation for tiles outside the foveated cone. The screen space error will be raised starting with tileset value up to [Cesium3DTileset.maximumScreenSpaceError] based on the provided [Cesium3DTileset.foveatedInterpolationCallback].
-     *   Default value - `0.0`
-     * @property [foveatedInterpolationCallback] Optimization option. Used when [Cesium3DTileset.foveatedScreenSpaceError] is true to control how much to raise the screen space error for tiles outside the foveated cone, interpolating between [Cesium3DTileset.foveatedMinimumScreenSpaceErrorRelaxation] and [Cesium3DTileset.maximumScreenSpaceError]
-     *   Default value - [Math.lerp]
-     * @property [foveatedTimeDelay] Optimization option. Used when [Cesium3DTileset.foveatedScreenSpaceError] is true to control how long in seconds to wait after the camera stops moving before deferred tiles start loading in. This time delay prevents requesting tiles around the edges of the screen when the camera is moving. Setting this to 0.0 will immediately request all tiles in any given view.
-     *   Default value - `0.2`
-     * @property [skipLevelOfDetail] Optimization option. Determines if level of detail skipping should be applied during the traversal.
-     *   Default value - `false`
-     * @property [baseScreenSpaceError] When `skipLevelOfDetail` is `true`, the screen space error that must be reached before skipping levels of detail.
-     *   Default value - `1024`
-     * @property [skipScreenSpaceErrorFactor] When `skipLevelOfDetail` is `true`, a multiplier defining the minimum screen space error to skip. Used in conjunction with `skipLevels` to determine which tiles to load.
-     *   Default value - `16`
-     * @property [skipLevels] When `skipLevelOfDetail` is `true`, a constant defining the minimum number of levels to skip when loading tiles. When it is 0, no levels are skipped. Used in conjunction with `skipScreenSpaceErrorFactor` to determine which tiles to load.
-     *   Default value - `1`
-     * @property [immediatelyLoadDesiredLevelOfDetail] When `skipLevelOfDetail` is `true`, only tiles that meet the maximum screen space error will ever be downloaded. Skipping factors are ignored and just the desired tiles are loaded.
-     *   Default value - `false`
-     * @property [loadSiblings] When `skipLevelOfDetail` is `true`, determines whether siblings of visible tiles are always downloaded during traversal.
-     *   Default value - `false`
-     * @property [clippingPlanes] The [ClippingPlaneCollection] used to selectively disable rendering the tileset.
-     * @property [classificationType] Determines whether terrain, 3D Tiles or both will be classified by this tileset. See [Cesium3DTileset.classificationType] for details about restrictions and limitations.
-     * @property [ellipsoid] The ellipsoid determining the size and shape of the globe.
-     *   Default value - [Ellipsoid.WGS84]
-     * @property [pointCloudShading] Options for constructing a [PointCloudShading] object to control point attenuation based on geometric error and lighting.
-     * @property [lightColor] The light color when shading models. When `undefined` the scene's light color is used instead.
-     * @property [imageBasedLighting] The properties for managing image-based lighting for this tileset.
-     * @property [backFaceCulling] Whether to cull back-facing geometry. When true, back face culling is determined by the glTF material's doubleSided property; when false, back face culling is disabled.
-     *   Default value - `true`
-     * @property [enableShowOutline] Whether to enable outlines for models using the [CESIUM_primitive_outline](https://github.com/KhronosGroup/glTF/tree/master/extensions/2.0/Vendor/CESIUM_primitive_outline) extension. This can be set to false to avoid the additional processing of geometry at load time. When false, the showOutlines and outlineColor options are ignored.
-     *   Default value - `true`
-     * @property [showOutline] Whether to display the outline for models using the [CESIUM_primitive_outline](https://github.com/KhronosGroup/glTF/tree/master/extensions/2.0/Vendor/CESIUM_primitive_outline) extension. When true, outlines are displayed. When false, outlines are not displayed.
-     *   Default value - `true`
-     * @property [outlineColor] The color to use when rendering outlines.
-     *   Default value - [Color.BLACK]
-     * @property [vectorClassificationOnly] Indicates that only the tileset's vector tiles should be used for classification.
-     *   Default value - `false`
-     * @property [vectorKeepDecodedPositions] Whether vector tiles should keep decoded positions in memory. This is used with [Cesium3DTileFeature.getPolylinePositions].
-     *   Default value - `false`
-     * @property [featureIdLabel] Label of the feature ID set to use for picking and styling. For EXT_mesh_features, this is the feature ID's label property, or "featureId_N" (where N is the index in the featureIds array) when not specified. EXT_feature_metadata did not have a label field, so such feature ID sets are always labeled "featureId_N" where N is the index in the list of all feature Ids, where feature ID attributes are listed before feature ID textures. If featureIdLabel is an integer N, it is converted to the string "featureId_N" automatically. If both per-primitive and per-instance feature IDs are present, the instance feature IDs take priority.
-     *   Default value - `"featureId_0"`
-     * @property [instanceFeatureIdLabel] Label of the instance feature ID set used for picking and styling. If instanceFeatureIdLabel is set to an integer N, it is converted to the string "instanceFeatureId_N" automatically. If both per-primitive and per-instance feature IDs are present, the instance feature IDs take priority.
-     *   Default value - `"instanceFeatureId_0"`
-     * @property [showCreditsOnScreen] Whether to display the credits of this tileset on screen.
-     *   Default value - `false`
-     * @property [splitDirection] The [SplitDirection] split to apply to this tileset.
-     *   Default value - [SplitDirection.NONE]
-     * @property [projectTo2D] Whether to accurately project the tileset to 2D. If this is true, the tileset will be projected accurately to 2D, but it will use more memory to do so. If this is false, the tileset will use less memory and will still render in 2D / CV mode, but its projected positions may be inaccurate. This cannot be set after the tileset has loaded.
-     *   Default value - `false`
-     * @property [debugHeatmapTilePropertyName] The tile variable to colorize as a heatmap. All rendered tiles will be colorized relative to each other's specified variable value.
-     * @property [debugFreezeFrame] For debugging only. Determines if only the tiles from last frame should be used for rendering.
-     *   Default value - `false`
-     * @property [debugColorizeTiles] For debugging only. When true, assigns a random color to each tile.
-     *   Default value - `false`
-     * @property [enableDebugWireframe] For debugging only. This must be true for debugWireframe to work in WebGL1. This cannot be set after the tileset has loaded.
-     * @property [debugWireframe] For debugging only. When true, render's each tile's content as a wireframe.
-     *   Default value - `false`
-     * @property [debugShowBoundingVolume] For debugging only. When true, renders the bounding volume for each tile.
-     *   Default value - `false`
-     * @property [debugShowContentBoundingVolume] For debugging only. When true, renders the bounding volume for each tile's content.
-     *   Default value - `false`
-     * @property [debugShowViewerRequestVolume] For debugging only. When true, renders the viewer request volume for each tile.
-     *   Default value - `false`
-     * @property [debugShowGeometricError] For debugging only. When true, draws labels to indicate the geometric error of each tile.
-     *   Default value - `false`
-     * @property [debugShowRenderingStatistics] For debugging only. When true, draws labels to indicate the number of commands, points, triangles and features for each tile.
-     *   Default value - `false`
-     * @property [debugShowMemoryUsage] For debugging only. When true, draws labels to indicate the texture and geometry memory in megabytes used by each tile.
-     *   Default value - `false`
-     * @property [debugShowUrl] For debugging only. When true, draws labels to indicate the url of each tile.
-     *   Default value - `false`
-     */
-    interface ConstructorOptions {
-        var url: dynamic
-        var show: Boolean?
-        var modelMatrix: Matrix4?
-        var modelUpAxis: Axis?
-        var modelForwardAxis: Axis?
-        var shadows: ShadowMode?
-        var maximumScreenSpaceError: Int?
-        var maximumMemoryUsage: Int?
-        var cullWithChildrenBounds: Boolean?
-        var cullRequestsWhileMoving: Boolean?
-        var cullRequestsWhileMovingMultiplier: Double?
-        var preloadWhenHidden: Boolean?
-        var preloadFlightDestinations: Boolean?
-        var preferLeaves: Boolean?
-        var dynamicScreenSpaceError: Boolean?
-        var dynamicScreenSpaceErrorDensity: Double?
-        var dynamicScreenSpaceErrorFactor: Double?
-        var dynamicScreenSpaceErrorHeightFalloff: Double?
-        var progressiveResolutionHeightFraction: Double?
-        var foveatedScreenSpaceError: Boolean?
-        var foveatedConeSize: Double?
-        var foveatedMinimumScreenSpaceErrorRelaxation: Double?
-        var foveatedInterpolationCallback: FoveatedInterpolationCallback?
-        var foveatedTimeDelay: Double?
-        var skipLevelOfDetail: Boolean?
-        var baseScreenSpaceError: Int?
-        var skipScreenSpaceErrorFactor: Int?
-        var skipLevels: Int?
-        var immediatelyLoadDesiredLevelOfDetail: Boolean?
-        var loadSiblings: Boolean?
-        var clippingPlanes: ClippingPlaneCollection?
-        var classificationType: ClassificationType?
-        var ellipsoid: Ellipsoid?
-        var pointCloudShading: Any?
-        var lightColor: Cartesian3?
-        var imageBasedLighting: ImageBasedLighting?
-        var backFaceCulling: Boolean?
-        var enableShowOutline: Boolean?
-        var showOutline: Boolean?
-        var outlineColor: Color?
-        var vectorClassificationOnly: Boolean?
-        var vectorKeepDecodedPositions: Boolean?
-        var featureIdLabel: String?
-        var instanceFeatureIdLabel: String?
-        var showCreditsOnScreen: Boolean?
-        var splitDirection: SplitDirection?
-        var projectTo2D: Boolean?
-        var debugHeatmapTilePropertyName: String?
-        var debugFreezeFrame: Boolean?
-        var debugColorizeTiles: Boolean?
-        var enableDebugWireframe: Boolean?
-        var debugWireframe: Boolean?
-        var debugShowBoundingVolume: Boolean?
-        var debugShowContentBoundingVolume: Boolean?
-        var debugShowViewerRequestVolume: Boolean?
-        var debugShowGeometricError: Boolean?
-        var debugShowRenderingStatistics: Boolean?
-        var debugShowMemoryUsage: Boolean?
-        var debugShowUrl: Boolean?
-    }
-
     /**
      * Optimization option. Don't request tiles that will likely be unused when they come back because of the camera's movement. This optimization only applies to stationary tilesets.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileset.html#cullRequestsWhileMoving">Online Documentation</a>
@@ -712,7 +549,6 @@ external class Cesium3DTileset(options: ConstructorOptions) {
 
     /**
      * When `true`, the tileset's root tile is loaded and the tileset is ready to render.
-     * This is set to `true` right before [Cesium3DTileset.readyPromise] is resolved.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileset.html#ready">Online Documentation</a>
      */
     val ready: Boolean
@@ -848,14 +684,12 @@ external class Cesium3DTileset(options: ConstructorOptions) {
     /**
      * The tileset's bounding sphere.
      * ```
-     * const tileset = viewer.scene.primitives.add(new Cesium3DTileset({
-     *     url : 'http://localhost:8002/tilesets/Seattle/tileset.json'
-     * }));
+     * const tileset = await Cesium3DTileset.fromUrl("http://localhost:8002/tilesets/Seattle/tileset.json");
      *
-     * tileset.readyPromise.then(function(tileset) {
-     *     // Set the camera to view the newly added tileset
-     *     viewer.camera.viewBoundingSphere(tileset.boundingSphere, new HeadingPitchRange(0, -0.5, 0));
-     * });
+     * viewer.scene.primitives.add(tileset);
+     *
+     * // Set the camera to view the newly added tileset
+     * viewer.camera.viewBoundingSphere(tileset.boundingSphere, new HeadingPitchRange(0, -0.5, 0));
      * ```
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileset.html#boundingSphere">Online Documentation</a>
      */
@@ -1045,7 +879,255 @@ external class Cesium3DTileset(options: ConstructorOptions) {
      */
     fun destroy()
 
+    /**
+     * Initialization options for the Cesium3DTileset constructor
+     * @property [.url] The url to a tileset JSON file. Deprecated.
+     * @property [show] Determines if the tileset will be shown.
+     *   Default value - `true`
+     * @property [modelMatrix] A 4x4 transformation matrix that transforms the tileset's root tile.
+     *   Default value - [Matrix4.IDENTITY]
+     * @property [modelUpAxis] Which axis is considered up when loading models for tile contents.
+     *   Default value - [Axis.Y]
+     * @property [modelForwardAxis] Which axis is considered forward when loading models for tile contents.
+     *   Default value - [Axis.X]
+     * @property [shadows] Determines whether the tileset casts or receives shadows from light sources.
+     *   Default value - [ShadowMode.ENABLED]
+     * @property [maximumScreenSpaceError] The maximum screen space error used to drive level of detail refinement.
+     *   Default value - `16`
+     * @property [maximumMemoryUsage] The maximum amount of memory in MB that can be used by the tileset.
+     *   Default value - `512`
+     * @property [cullWithChildrenBounds] Optimization option. Whether to cull tiles using the union of their children bounding volumes.
+     *   Default value - `true`
+     * @property [cullRequestsWhileMoving] Optimization option. Don't request tiles that will likely be unused when they come back because of the camera's movement. This optimization only applies to stationary tilesets.
+     *   Default value - `true`
+     * @property [cullRequestsWhileMovingMultiplier] Optimization option. Multiplier used in culling requests while moving. Larger is more aggressive culling, smaller less aggressive culling.
+     *   Default value - `60.0`
+     * @property [preloadWhenHidden] Preload tiles when `tileset.show` is `false`. Loads tiles as if the tileset is visible but does not render them.
+     *   Default value - `false`
+     * @property [preloadFlightDestinations] Optimization option. Preload tiles at the camera's flight destination while the camera is in flight.
+     *   Default value - `true`
+     * @property [preferLeaves] Optimization option. Prefer loading of leaves first.
+     *   Default value - `false`
+     * @property [dynamicScreenSpaceError] Optimization option. Reduce the screen space error for tiles that are further away from the camera.
+     *   Default value - `false`
+     * @property [dynamicScreenSpaceErrorDensity] Density used to adjust the dynamic screen space error, similar to fog density.
+     *   Default value - `0.00278`
+     * @property [dynamicScreenSpaceErrorFactor] A factor used to increase the computed dynamic screen space error.
+     *   Default value - `4.0`
+     * @property [dynamicScreenSpaceErrorHeightFalloff] A ratio of the tileset's height at which the density starts to falloff.
+     *   Default value - `0.25`
+     * @property [progressiveResolutionHeightFraction] Optimization option. If between (0.0, 0.5], tiles at or above the screen space error for the reduced screen resolution of `progressiveResolutionHeightFraction*screenHeight` will be prioritized first. This can help get a quick layer of tiles down while full resolution tiles continue to load.
+     *   Default value - `0.3`
+     * @property [foveatedScreenSpaceError] Optimization option. Prioritize loading tiles in the center of the screen by temporarily raising the screen space error for tiles around the edge of the screen. Screen space error returns to normal once all the tiles in the center of the screen as determined by the [Cesium3DTileset.foveatedConeSize] are loaded.
+     *   Default value - `true`
+     * @property [foveatedConeSize] Optimization option. Used when [Cesium3DTileset.foveatedScreenSpaceError] is true to control the cone size that determines which tiles are deferred. Tiles that are inside this cone are loaded immediately. Tiles outside the cone are potentially deferred based on how far outside the cone they are and their screen space error. This is controlled by [Cesium3DTileset.foveatedInterpolationCallback] and [Cesium3DTileset.foveatedMinimumScreenSpaceErrorRelaxation]. Setting this to 0.0 means the cone will be the line formed by the camera position and its view direction. Setting this to 1.0 means the cone encompasses the entire field of view of the camera, disabling the effect.
+     *   Default value - `0.1`
+     * @property [foveatedMinimumScreenSpaceErrorRelaxation] Optimization option. Used when [Cesium3DTileset.foveatedScreenSpaceError] is true to control the starting screen space error relaxation for tiles outside the foveated cone. The screen space error will be raised starting with tileset value up to [Cesium3DTileset.maximumScreenSpaceError] based on the provided [Cesium3DTileset.foveatedInterpolationCallback].
+     *   Default value - `0.0`
+     * @property [foveatedInterpolationCallback] Optimization option. Used when [Cesium3DTileset.foveatedScreenSpaceError] is true to control how much to raise the screen space error for tiles outside the foveated cone, interpolating between [Cesium3DTileset.foveatedMinimumScreenSpaceErrorRelaxation] and [Cesium3DTileset.maximumScreenSpaceError]
+     *   Default value - [Math.lerp]
+     * @property [foveatedTimeDelay] Optimization option. Used when [Cesium3DTileset.foveatedScreenSpaceError] is true to control how long in seconds to wait after the camera stops moving before deferred tiles start loading in. This time delay prevents requesting tiles around the edges of the screen when the camera is moving. Setting this to 0.0 will immediately request all tiles in any given view.
+     *   Default value - `0.2`
+     * @property [skipLevelOfDetail] Optimization option. Determines if level of detail skipping should be applied during the traversal.
+     *   Default value - `false`
+     * @property [baseScreenSpaceError] When `skipLevelOfDetail` is `true`, the screen space error that must be reached before skipping levels of detail.
+     *   Default value - `1024`
+     * @property [skipScreenSpaceErrorFactor] When `skipLevelOfDetail` is `true`, a multiplier defining the minimum screen space error to skip. Used in conjunction with `skipLevels` to determine which tiles to load.
+     *   Default value - `16`
+     * @property [skipLevels] When `skipLevelOfDetail` is `true`, a constant defining the minimum number of levels to skip when loading tiles. When it is 0, no levels are skipped. Used in conjunction with `skipScreenSpaceErrorFactor` to determine which tiles to load.
+     *   Default value - `1`
+     * @property [immediatelyLoadDesiredLevelOfDetail] When `skipLevelOfDetail` is `true`, only tiles that meet the maximum screen space error will ever be downloaded. Skipping factors are ignored and just the desired tiles are loaded.
+     *   Default value - `false`
+     * @property [loadSiblings] When `skipLevelOfDetail` is `true`, determines whether siblings of visible tiles are always downloaded during traversal.
+     *   Default value - `false`
+     * @property [clippingPlanes] The [ClippingPlaneCollection] used to selectively disable rendering the tileset.
+     * @property [classificationType] Determines whether terrain, 3D Tiles or both will be classified by this tileset. See [Cesium3DTileset.classificationType] for details about restrictions and limitations.
+     * @property [ellipsoid] The ellipsoid determining the size and shape of the globe.
+     *   Default value - [Ellipsoid.WGS84]
+     * @property [pointCloudShading] Options for constructing a [PointCloudShading] object to control point attenuation based on geometric error and lighting.
+     * @property [lightColor] The light color when shading models. When `undefined` the scene's light color is used instead.
+     * @property [imageBasedLighting] The properties for managing image-based lighting for this tileset.
+     * @property [backFaceCulling] Whether to cull back-facing geometry. When true, back face culling is determined by the glTF material's doubleSided property; when false, back face culling is disabled.
+     *   Default value - `true`
+     * @property [enableShowOutline] Whether to enable outlines for models using the [CESIUM_primitive_outline](https://github.com/KhronosGroup/glTF/tree/master/extensions/2.0/Vendor/CESIUM_primitive_outline) extension. This can be set to false to avoid the additional processing of geometry at load time. When false, the showOutlines and outlineColor options are ignored.
+     *   Default value - `true`
+     * @property [showOutline] Whether to display the outline for models using the [CESIUM_primitive_outline](https://github.com/KhronosGroup/glTF/tree/master/extensions/2.0/Vendor/CESIUM_primitive_outline) extension. When true, outlines are displayed. When false, outlines are not displayed.
+     *   Default value - `true`
+     * @property [outlineColor] The color to use when rendering outlines.
+     *   Default value - [Color.BLACK]
+     * @property [vectorClassificationOnly] Indicates that only the tileset's vector tiles should be used for classification.
+     *   Default value - `false`
+     * @property [vectorKeepDecodedPositions] Whether vector tiles should keep decoded positions in memory. This is used with [Cesium3DTileFeature.getPolylinePositions].
+     *   Default value - `false`
+     * @property [featureIdLabel] Label of the feature ID set to use for picking and styling. For EXT_mesh_features, this is the feature ID's label property, or "featureId_N" (where N is the index in the featureIds array) when not specified. EXT_feature_metadata did not have a label field, so such feature ID sets are always labeled "featureId_N" where N is the index in the list of all feature Ids, where feature ID attributes are listed before feature ID textures. If featureIdLabel is an integer N, it is converted to the string "featureId_N" automatically. If both per-primitive and per-instance feature IDs are present, the instance feature IDs take priority.
+     *   Default value - `"featureId_0"`
+     * @property [instanceFeatureIdLabel] Label of the instance feature ID set used for picking and styling. If instanceFeatureIdLabel is set to an integer N, it is converted to the string "instanceFeatureId_N" automatically. If both per-primitive and per-instance feature IDs are present, the instance feature IDs take priority.
+     *   Default value - `"instanceFeatureId_0"`
+     * @property [showCreditsOnScreen] Whether to display the credits of this tileset on screen.
+     *   Default value - `false`
+     * @property [splitDirection] The [SplitDirection] split to apply to this tileset.
+     *   Default value - [SplitDirection.NONE]
+     * @property [projectTo2D] Whether to accurately project the tileset to 2D. If this is true, the tileset will be projected accurately to 2D, but it will use more memory to do so. If this is false, the tileset will use less memory and will still render in 2D / CV mode, but its projected positions may be inaccurate. This cannot be set after the tileset has loaded.
+     *   Default value - `false`
+     * @property [debugHeatmapTilePropertyName] The tile variable to colorize as a heatmap. All rendered tiles will be colorized relative to each other's specified variable value.
+     * @property [debugFreezeFrame] For debugging only. Determines if only the tiles from last frame should be used for rendering.
+     *   Default value - `false`
+     * @property [debugColorizeTiles] For debugging only. When true, assigns a random color to each tile.
+     *   Default value - `false`
+     * @property [enableDebugWireframe] For debugging only. This must be true for debugWireframe to work in WebGL1. This cannot be set after the tileset has loaded.
+     * @property [debugWireframe] For debugging only. When true, render's each tile's content as a wireframe.
+     *   Default value - `false`
+     * @property [debugShowBoundingVolume] For debugging only. When true, renders the bounding volume for each tile.
+     *   Default value - `false`
+     * @property [debugShowContentBoundingVolume] For debugging only. When true, renders the bounding volume for each tile's content.
+     *   Default value - `false`
+     * @property [debugShowViewerRequestVolume] For debugging only. When true, renders the viewer request volume for each tile.
+     *   Default value - `false`
+     * @property [debugShowGeometricError] For debugging only. When true, draws labels to indicate the geometric error of each tile.
+     *   Default value - `false`
+     * @property [debugShowRenderingStatistics] For debugging only. When true, draws labels to indicate the number of commands, points, triangles and features for each tile.
+     *   Default value - `false`
+     * @property [debugShowMemoryUsage] For debugging only. When true, draws labels to indicate the texture and geometry memory in megabytes used by each tile.
+     *   Default value - `false`
+     * @property [debugShowUrl] For debugging only. When true, draws labels to indicate the url of each tile.
+     *   Default value - `false`
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileset.html#.ConstructorOptions">Online Documentation</a>
+     */
+    interface ConstructorOptions {
+        var show: Boolean?
+        var modelMatrix: Matrix4?
+        var modelUpAxis: Axis?
+        var modelForwardAxis: Axis?
+        var shadows: ShadowMode?
+        var maximumScreenSpaceError: Int?
+        var maximumMemoryUsage: Int?
+        var cullWithChildrenBounds: Boolean?
+        var cullRequestsWhileMoving: Boolean?
+        var cullRequestsWhileMovingMultiplier: Double?
+        var preloadWhenHidden: Boolean?
+        var preloadFlightDestinations: Boolean?
+        var preferLeaves: Boolean?
+        var dynamicScreenSpaceError: Boolean?
+        var dynamicScreenSpaceErrorDensity: Double?
+        var dynamicScreenSpaceErrorFactor: Double?
+        var dynamicScreenSpaceErrorHeightFalloff: Double?
+        var progressiveResolutionHeightFraction: Double?
+        var foveatedScreenSpaceError: Boolean?
+        var foveatedConeSize: Double?
+        var foveatedMinimumScreenSpaceErrorRelaxation: Double?
+        var foveatedInterpolationCallback: FoveatedInterpolationCallback?
+        var foveatedTimeDelay: Double?
+        var skipLevelOfDetail: Boolean?
+        var baseScreenSpaceError: Int?
+        var skipScreenSpaceErrorFactor: Int?
+        var skipLevels: Int?
+        var immediatelyLoadDesiredLevelOfDetail: Boolean?
+        var loadSiblings: Boolean?
+        var clippingPlanes: ClippingPlaneCollection?
+        var classificationType: ClassificationType?
+        var ellipsoid: Ellipsoid?
+        var pointCloudShading: Any?
+        var lightColor: Cartesian3?
+        var imageBasedLighting: ImageBasedLighting?
+        var backFaceCulling: Boolean?
+        var enableShowOutline: Boolean?
+        var showOutline: Boolean?
+        var outlineColor: Color?
+        var vectorClassificationOnly: Boolean?
+        var vectorKeepDecodedPositions: Boolean?
+        var featureIdLabel: String?
+        var instanceFeatureIdLabel: String?
+        var showCreditsOnScreen: Boolean?
+        var splitDirection: SplitDirection?
+        var projectTo2D: Boolean?
+        var debugHeatmapTilePropertyName: String?
+        var debugFreezeFrame: Boolean?
+        var debugColorizeTiles: Boolean?
+        var enableDebugWireframe: Boolean?
+        var debugWireframe: Boolean?
+        var debugShowBoundingVolume: Boolean?
+        var debugShowContentBoundingVolume: Boolean?
+        var debugShowViewerRequestVolume: Boolean?
+        var debugShowGeometricError: Boolean?
+        var debugShowRenderingStatistics: Boolean?
+        var debugShowMemoryUsage: Boolean?
+        var debugShowUrl: Boolean?
+    }
+
     companion object {
+        /**
+         * Creates a [3D Tiles tileset](https://github.com/CesiumGS/3d-tiles/tree/main/specification),
+         * used for streaming massive heterogeneous 3D geospatial datasets, from a Cesium ion asset ID.
+         * ```
+         * // Load a Cesium3DTileset with a Cesium ion asset ID of 124624234
+         * try {
+         *   const tileset = await Cesium3DTileset.fromIonAssetId(124624234);
+         *   scene.primitives.add(tileset);
+         * } catch (error) {
+         *   console.error(`Error creating tileset: ${error}`);
+         * }
+         * ```
+         * @param [assetId] The Cesium ion asset id.
+         * @param [options] An object describing initialization options
+         * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileset.html#.fromIonAssetId">Online Documentation</a>
+         */
+        fun fromIonAssetId(
+            assetId: Int,
+            options: ConstructorOptions,
+        ): Promise<Cesium3DTileset>
+
+        /**
+         * Creates a [3D Tiles tileset](https://github.com/CesiumGS/3d-tiles/tree/main/specification),
+         * used for streaming massive heterogeneous 3D geospatial datasets.
+         * ```
+         * try {
+         *   const tileset = await Cesium3DTileset.fromUrl(
+         *      "http://localhost:8002/tilesets/Seattle/tileset.json"
+         *   });
+         *   scene.primitives.add(tileset);
+         * } catch (error) {
+         *   console.error(`Error creating tileset: ${error}`);
+         * }
+         * ```
+         * ```
+         * // Common setting for the skipLevelOfDetail optimization
+         * const tileset = await Cesium3DTileset.fromUrl(
+         *   "http://localhost:8002/tilesets/Seattle/tileset.json", {
+         *      skipLevelOfDetail: true,
+         *      baseScreenSpaceError: 1024,
+         *      skipScreenSpaceErrorFactor: 16,
+         *      skipLevels: 1,
+         *      immediatelyLoadDesiredLevelOfDetail: false,
+         *      loadSiblings: false,
+         *      cullWithChildrenBounds: true
+         * });
+         * scene.primitives.add(tileset);
+         * ```
+         * ```
+         * // Common settings for the dynamicScreenSpaceError optimization
+         * const tileset = await Cesium3DTileset.fromUrl(
+         *   "http://localhost:8002/tilesets/Seattle/tileset.json", {
+         *      dynamicScreenSpaceError: true,
+         *      dynamicScreenSpaceErrorDensity: 0.00278,
+         *      dynamicScreenSpaceErrorFactor: 4.0,
+         *      dynamicScreenSpaceErrorHeightFalloff: 0.25
+         * });
+         * scene.primitives.add(tileset);
+         * ```
+         * @param [url] The url to a tileset JSON file.
+         * @param [options] An object describing initialization options
+         * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileset.html#.fromUrl">Online Documentation</a>
+         */
+        fun fromUrl(
+            url: Resource,
+            options: ConstructorOptions,
+        ): Promise<Cesium3DTileset>
+
+        fun fromUrl(
+            url: String,
+            options: ConstructorOptions,
+        ): Promise<Cesium3DTileset>
+
         /**
          * Provides a hook to override the method used to request the tileset json
          * useful when fetching tilesets from remote servers

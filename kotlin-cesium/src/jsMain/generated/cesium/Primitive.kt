@@ -262,6 +262,19 @@ external class Primitive(options: ConstructorOptions? = definedExternally) {
      * Determines if the primitive is complete and ready to render.  If this property is
      * true, the primitive will be rendered the next time that [Primitive.update]
      * is called.
+     * ```
+     * // Wait for a primitive to become ready before accessing attributes
+     * const removeListener = scene.postRender.addEventListener(() => {
+     *   if (!frustumPrimitive.ready) {
+     *     return;
+     *   }
+     *
+     *   const attributes = primitive.getGeometryInstanceAttributes('an id');
+     *   attributes.color = ColorGeometryInstanceAttribute.toValue(Color.AQUA);
+     *
+     *   removeListener();
+     * });
+     * ```
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Primitive.html#ready">Online Documentation</a>
      */
     val ready: Boolean

@@ -22,6 +22,93 @@ import kotlin.js.Promise
  */
 external class TileCoordinatesImageryProvider(options: ConstructorOptions? = definedExternally) {
     /**
+     * Gets the proxy used by this provider.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TileCoordinatesImageryProvider.html#proxy">Online Documentation</a>
+     */
+    val proxy: Proxy
+
+    /**
+     * Gets the width of each tile, in pixels.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TileCoordinatesImageryProvider.html#tileWidth">Online Documentation</a>
+     */
+    val tileWidth: Int
+
+    /**
+     * Gets the height of each tile, in pixels.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TileCoordinatesImageryProvider.html#tileHeight">Online Documentation</a>
+     */
+    val tileHeight: Int
+
+    /**
+     * Gets the maximum level-of-detail that can be requested.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TileCoordinatesImageryProvider.html#maximumLevel">Online Documentation</a>
+     */
+    val maximumLevel: Int?
+
+    /**
+     * Gets the minimum level-of-detail that can be requested.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TileCoordinatesImageryProvider.html#minimumLevel">Online Documentation</a>
+     */
+    val minimumLevel: Int
+
+    /**
+     * Gets the tiling scheme used by this provider.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TileCoordinatesImageryProvider.html#tilingScheme">Online Documentation</a>
+     */
+    val tilingScheme: TilingScheme
+
+    /**
+     * Gets the rectangle, in radians, of the imagery provided by this instance.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TileCoordinatesImageryProvider.html#rectangle">Online Documentation</a>
+     */
+    val rectangle: Rectangle
+
+    /**
+     * Gets the tile discard policy.  If not undefined, the discard policy is responsible
+     * for filtering out "missing" tiles via its shouldDiscardImage function.  If this function
+     * returns undefined, no tiles are filtered.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TileCoordinatesImageryProvider.html#tileDiscardPolicy">Online Documentation</a>
+     */
+    val tileDiscardPolicy: TileDiscardPolicy
+
+    /**
+     * Gets an event that is raised when the imagery provider encounters an asynchronous error.  By subscribing
+     * to the event, you will be notified of the error and can potentially recover from it.  Event listeners
+     * are passed an instance of [TileProviderError].
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TileCoordinatesImageryProvider.html#errorEvent">Online Documentation</a>
+     */
+    val errorEvent: DefaultEvent
+
+    /**
+     * Gets a value indicating whether or not the provider is ready for use.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TileCoordinatesImageryProvider.html#ready">Online Documentation</a>
+     */
+    val ready: Boolean
+
+    /**
+     * Gets a promise that resolves to true when the provider is ready for use.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TileCoordinatesImageryProvider.html#readyPromise">Online Documentation</a>
+     */
+    val readyPromise: Promise<Boolean>
+
+    /**
+     * Gets the credit to display when this imagery provider is active.  Typically this is used to credit
+     * the source of the imagery.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TileCoordinatesImageryProvider.html#credit">Online Documentation</a>
+     */
+    val credit: Credit
+
+    /**
+     * Gets a value indicating whether or not the images provided by this imagery provider
+     * include an alpha channel.  If this property is false, an alpha channel, if present, will
+     * be ignored.  If this property is true, any images without an alpha channel will be treated
+     * as if their alpha is 1.0 everywhere.  Setting this property to false reduces memory usage
+     * and texture upload time.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TileCoordinatesImageryProvider.html#hasAlphaChannel">Online Documentation</a>
+     */
+    val hasAlphaChannel: Boolean
+
+    /**
      * The default alpha blending value of this provider, with 0.0 representing fully transparent and
      * 1.0 representing fully opaque.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TileCoordinatesImageryProvider.html#defaultAlpha">Online Documentation</a>
@@ -88,100 +175,6 @@ external class TileCoordinatesImageryProvider(options: ConstructorOptions? = def
     var defaultMagnificationFilter: TextureMagnificationFilter
 
     /**
-     * Gets the proxy used by this provider.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TileCoordinatesImageryProvider.html#proxy">Online Documentation</a>
-     */
-    val proxy: Proxy
-
-    /**
-     * Gets the width of each tile, in pixels. This function should
-     * not be called before [TileCoordinatesImageryProvider.ready] returns true.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TileCoordinatesImageryProvider.html#tileWidth">Online Documentation</a>
-     */
-    val tileWidth: Int
-
-    /**
-     * Gets the height of each tile, in pixels.  This function should
-     * not be called before [TileCoordinatesImageryProvider.ready] returns true.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TileCoordinatesImageryProvider.html#tileHeight">Online Documentation</a>
-     */
-    val tileHeight: Int
-
-    /**
-     * Gets the maximum level-of-detail that can be requested.  This function should
-     * not be called before [TileCoordinatesImageryProvider.ready] returns true.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TileCoordinatesImageryProvider.html#maximumLevel">Online Documentation</a>
-     */
-    val maximumLevel: Int?
-
-    /**
-     * Gets the minimum level-of-detail that can be requested.  This function should
-     * not be called before [TileCoordinatesImageryProvider.ready] returns true.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TileCoordinatesImageryProvider.html#minimumLevel">Online Documentation</a>
-     */
-    val minimumLevel: Int
-
-    /**
-     * Gets the tiling scheme used by this provider.  This function should
-     * not be called before [TileCoordinatesImageryProvider.ready] returns true.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TileCoordinatesImageryProvider.html#tilingScheme">Online Documentation</a>
-     */
-    val tilingScheme: TilingScheme
-
-    /**
-     * Gets the rectangle, in radians, of the imagery provided by this instance.  This function should
-     * not be called before [TileCoordinatesImageryProvider.ready] returns true.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TileCoordinatesImageryProvider.html#rectangle">Online Documentation</a>
-     */
-    val rectangle: Rectangle
-
-    /**
-     * Gets the tile discard policy.  If not undefined, the discard policy is responsible
-     * for filtering out "missing" tiles via its shouldDiscardImage function.  If this function
-     * returns undefined, no tiles are filtered.  This function should
-     * not be called before [TileCoordinatesImageryProvider.ready] returns true.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TileCoordinatesImageryProvider.html#tileDiscardPolicy">Online Documentation</a>
-     */
-    val tileDiscardPolicy: TileDiscardPolicy
-
-    /**
-     * Gets an event that is raised when the imagery provider encounters an asynchronous error.  By subscribing
-     * to the event, you will be notified of the error and can potentially recover from it.  Event listeners
-     * are passed an instance of [TileProviderError].
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TileCoordinatesImageryProvider.html#errorEvent">Online Documentation</a>
-     */
-    val errorEvent: DefaultEvent
-
-    /**
-     * Gets a value indicating whether or not the provider is ready for use.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TileCoordinatesImageryProvider.html#ready">Online Documentation</a>
-     */
-    val ready: Boolean
-
-    /**
-     * Gets a promise that resolves to true when the provider is ready for use.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TileCoordinatesImageryProvider.html#readyPromise">Online Documentation</a>
-     */
-    val readyPromise: Promise<Boolean>
-
-    /**
-     * Gets the credit to display when this imagery provider is active.  Typically this is used to credit
-     * the source of the imagery.  This function should not be called before [TileCoordinatesImageryProvider.ready] returns true.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TileCoordinatesImageryProvider.html#credit">Online Documentation</a>
-     */
-    val credit: Credit
-
-    /**
-     * Gets a value indicating whether or not the images provided by this imagery provider
-     * include an alpha channel.  If this property is false, an alpha channel, if present, will
-     * be ignored.  If this property is true, any images without an alpha channel will be treated
-     * as if their alpha is 1.0 everywhere.  Setting this property to false reduces memory usage
-     * and texture upload time.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TileCoordinatesImageryProvider.html#hasAlphaChannel">Online Documentation</a>
-     */
-    val hasAlphaChannel: Boolean
-
-    /**
      * Gets the credits to be displayed when a given tile is displayed.
      * @param [x] The tile X coordinate.
      * @param [y] The tile Y coordinate.
@@ -196,8 +189,7 @@ external class TileCoordinatesImageryProvider(options: ConstructorOptions? = def
     ): ReadonlyArray<Credit>
 
     /**
-     * Requests the image for a given tile.  This function should
-     * not be called before [TileCoordinatesImageryProvider.ready] returns true.
+     * Requests the image for a given tile.
      * @param [x] The tile X coordinate.
      * @param [y] The tile Y coordinate.
      * @param [level] The tile level.

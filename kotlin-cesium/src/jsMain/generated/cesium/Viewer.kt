@@ -19,39 +19,43 @@ import kotlin.js.Promise
  * A base widget for building applications.  It composites all of the standard Cesium widgets into one reusable package.
  * The widget can always be extended by using mixins, which add functionality useful for a variety of applications.
  * ```
- * //Initialize the viewer widget with several custom options and mixins.
- * const viewer = new Viewer('cesiumContainer', {
- *     //Start in Columbus Viewer
- *     sceneMode : SceneMode.COLUMBUS_VIEW,
- *     //Use Cesium World Terrain
- *     terrainProvider : createWorldTerrain(),
- *     //Hide the base layer picker
- *     baseLayerPicker : false,
- *     //Use OpenStreetMaps
- *     imageryProvider : new OpenStreetMapImageryProvider({
- *         url : 'https://a.tile.openstreetmap.org/'
- *     }),
- *     skyBox : new SkyBox({
- *         sources : {
- *           positiveX : 'stars/TychoSkymapII.t3_08192x04096_80_px.jpg',
- *           negativeX : 'stars/TychoSkymapII.t3_08192x04096_80_mx.jpg',
- *           positiveY : 'stars/TychoSkymapII.t3_08192x04096_80_py.jpg',
- *           negativeY : 'stars/TychoSkymapII.t3_08192x04096_80_my.jpg',
- *           positiveZ : 'stars/TychoSkymapII.t3_08192x04096_80_pz.jpg',
- *           negativeZ : 'stars/TychoSkymapII.t3_08192x04096_80_mz.jpg'
- *         }
+ * // Initialize the viewer widget with several custom options and mixins.
+ * try {
+ *   const viewer = new Viewer("cesiumContainer", {
+ *     // Start in Columbus Viewer
+ *     sceneMode: SceneMode.COLUMBUS_VIEW,
+ *     // Use Cesium World Terrain
+ *     terrain: Terrain.fromWorldTerrain(),
+ *     // Hide the base layer picker
+ *     baseLayerPicker: false,
+ *     // Use OpenStreetMaps
+ *     baseLayer: new ImageryLayer(OpenStreetMapImageryProvider({
+ *       url: "https://a.tile.openstreetmap.org/"
+ *     })),
+ *     skyBox: new SkyBox({
+ *       sources: {
+ *         positiveX: "stars/TychoSkymapII.t3_08192x04096_80_px.jpg",
+ *         negativeX: "stars/TychoSkymapII.t3_08192x04096_80_mx.jpg",
+ *         positiveY: "stars/TychoSkymapII.t3_08192x04096_80_py.jpg",
+ *         negativeY: "stars/TychoSkymapII.t3_08192x04096_80_my.jpg",
+ *         positiveZ: "stars/TychoSkymapII.t3_08192x04096_80_pz.jpg",
+ *         negativeZ: "stars/TychoSkymapII.t3_08192x04096_80_mz.jpg"
+ *       }
  *     }),
  *     // Show Columbus View map with Web Mercator projection
- *     mapProjection : new WebMercatorProjection()
- * });
+ *     mapProjection: new WebMercatorProjection()
+ *   });
+ * } catch (error) {
+ *   console.log(error);
+ * }
  *
- * //Add basic drag and drop functionality
+ * // Add basic drag and drop functionality
  * viewer.extend(viewerDragDropMixin);
  *
- * //Show a pop-up alert if we encounter an error when processing a dropped file
+ * // Show a pop-up alert if we encounter an error when processing a dropped file
  * viewer.dropError.addEventListener(function(dropHandler, name, error) {
- *     console.log(error);
- *     window.alert(error);
+ *   console.log(error);
+ *   window.alert(error);
  * });
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Viewer.html">Online Documentation</a>
@@ -64,6 +68,18 @@ external class Viewer(
     val container: Element,
     options: ConstructorOptions? = definedExternally,
 ) {
+    /**
+     * Returns true when the terrain provider has been successfully created. Otherwise, returns false.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Viewer.html#ready">Online Documentation</a>
+     */
+    val ready: Boolean
+
+    /**
+     * The terrain provider providing surface geometry to a globe. Do not use until [Terrain.readyEvent] is raised.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Viewer.html#provider">Online Documentation</a>
+     */
+    val provider: TerrainProvider
+
     /**
      * Gets the DOM element for the area at the bottom of the window containing the
      * [CreditDisplay] and potentially other things.
@@ -613,10 +629,13 @@ external class Viewer(
      * @property [selectedTerrainProviderViewModel] The view model for the current base terrain layer, if not supplied the first available base layer is used.  This value is only valid if `baseLayerPicker` is set to true.
      * @property [terrainProviderViewModels] The array of ProviderViewModels to be selectable from the BaseLayerPicker.  This value is only valid if `baseLayerPicker` is set to true.
      *   Default value - `createDefaultTerrainProviderViewModels()`
-     * @property [imageryProvider] The imagery provider to use.  This value is only valid if `baseLayerPicker` is set to false.
+     * @property [imageryProvider] The imagery provider to use.  This value is only valid if `baseLayerPicker` is set to false. Deprecated.
      *   Default value - [createWorldImagery()][createWorldImagery]
+     * @property [baseLayer] The bottommost imagery layer applied to the globe. If set to `false`, no imagery provider will be added. This value is only valid if `baseLayerPicker` is set to false.
+     *   Default value - `ImageryLayer.fromWorldImagery()`
      * @property [terrainProvider] The terrain provider to use
      *   Default value - [EllipsoidTerrainProvider()][EllipsoidTerrainProvider]
+     * @property [options.terrain] A terrain object which handles asynchronous terrain provider. Can only specify if options.terrainProvider is undefined.
      * @property [skyBox] The skybox used to render the stars.  When `undefined`, the default stars are used. If set to `false`, no skyBox, Sun, or Moon will be added.
      * @property [skyAtmosphere] Blue sky, and the glow around the Earth's limb.  Set to `false` to turn it off.
      * @property [fullscreenElement] The element or id to be placed into fullscreen mode when the full screen button is pressed.
@@ -684,7 +703,8 @@ external class Viewer(
         var imageryProviderViewModels: ReadonlyArray<ProviderViewModel>?
         var selectedTerrainProviderViewModel: ProviderViewModel?
         var terrainProviderViewModels: ReadonlyArray<ProviderViewModel>?
-        var imageryProvider: ImageryProvider?
+        var imageryProvider: dynamic
+        var baseLayer: dynamic
         var terrainProvider: TerrainProvider?
         var skyBox: dynamic
         var skyAtmosphere: dynamic

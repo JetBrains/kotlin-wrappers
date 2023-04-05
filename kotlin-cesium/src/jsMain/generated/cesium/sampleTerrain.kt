@@ -22,16 +22,14 @@ import kotlin.js.Promise
  * as possible (i.e. with maximum level of detail) use [sampleTerrainMostDetailed].
  * ```
  * // Query the terrain height of two Cartographic positions
- * const terrainProvider = createWorldTerrain();
+ * const terrainProvider = await createWorldTerrainAsync();
  * const positions = [
  *     Cartographic.fromDegrees(86.925145, 27.988257),
  *     Cartographic.fromDegrees(87.0, 28.0)
  * ];
- * const promise = sampleTerrain(terrainProvider, 11, positions);
- * Promise.resolve(promise).then(function(updatedPositions) {
- *     // positions[0].height and positions[1].height have been updated.
- *     // updatedPositions is just a reference to positions.
- * });
+ * const updatedPositions = await sampleTerrain(terrainProvider, 11, positions);
+ * // positions[0].height and positions[1].height have been updated.
+ * // updatedPositions is just a reference to positions.
  * ```
  * @param [terrainProvider] The terrain provider from which to query heights.
  * @param [level] The terrain level-of-detail from which to query terrain heights.

@@ -5,39 +5,30 @@
 @file:Suppress(
     "VAR_OVERRIDDEN_BY_VAL",
     "VAR_TYPE_MISMATCH_ON_OVERRIDE",
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
 )
 
 package cesium
 
 import js.core.Void
-import js.core.jso
 import kotlin.js.Promise
 
 /**
+ * <div class="notice">
+ * To construct a GoogleEarthEnterpriseTerrainProvider, call {@link  GoogleEarthEnterpriseTerrainProvider.fromMetadata}. Do not call the constructor directly.
+ * </div>
+ *
  * Provides tiled terrain using the Google Earth Enterprise REST API.
  * ```
- * const geeMetadata = new GoogleEarthEnterpriseMetadata('http://www.example.com');
- * const gee = new GoogleEarthEnterpriseTerrainProvider({
- *     metadata : geeMetadata
- * });
+ * const geeMetadata = await GoogleEarthEnterpriseMetadata.fromUrl("http://www.example.com");
+ * const gee = GoogleEarthEnterpriseTerrainProvider.fromMetadata(geeMetadata);
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GoogleEarthEnterpriseTerrainProvider.html">Online Documentation</a>
+ *
+ * @constructor
+ * @param [options] An object describing initialization options
+ * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GoogleEarthEnterpriseTerrainProvider.html">Online Documentation</a>
  */
-external class GoogleEarthEnterpriseTerrainProvider(options: ConstructorOptions) : TerrainProvider {
-    /**
-     * @property [url] The url of the Google Earth Enterprise server hosting the imagery.
-     * @property [metadata] A metadata object that can be used to share metadata requests with a GoogleEarthEnterpriseImageryProvider.
-     * @property [ellipsoid] The ellipsoid.  If not specified, the WGS84 ellipsoid is used.
-     * @property [credit] A credit for the data source, which is displayed on the canvas.
-     */
-    interface ConstructorOptions {
-        var url: Resource
-        var metadata: GoogleEarthEnterpriseMetadata
-        var ellipsoid: Ellipsoid?
-        var credit: Credit?
-    }
-
+sealed external class GoogleEarthEnterpriseTerrainProvider : TerrainProvider {
     /**
      * Gets the name of the Google Earth Enterprise server url hosting the imagery.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GoogleEarthEnterpriseTerrainProvider.html#url">Online Documentation</a>
@@ -51,8 +42,7 @@ external class GoogleEarthEnterpriseTerrainProvider(options: ConstructorOptions)
     val proxy: Proxy
 
     /**
-     * Gets the tiling scheme used by this provider.  This function should
-     * not be called before [GoogleEarthEnterpriseTerrainProvider.ready] returns true.
+     * Gets the tiling scheme used by this provider.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GoogleEarthEnterpriseTerrainProvider.html#tilingScheme">Online Documentation</a>
      */
     override val tilingScheme: TilingScheme
@@ -79,7 +69,7 @@ external class GoogleEarthEnterpriseTerrainProvider(options: ConstructorOptions)
 
     /**
      * Gets the credit to display when this terrain provider is active.  Typically this is used to credit
-     * the source of the terrain.  This function should not be called before [GoogleEarthEnterpriseTerrainProvider.ready] returns true.
+     * the source of the terrain.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GoogleEarthEnterpriseTerrainProvider.html#credit">Online Documentation</a>
      */
     override val credit: Credit
@@ -87,31 +77,27 @@ external class GoogleEarthEnterpriseTerrainProvider(options: ConstructorOptions)
     /**
      * Gets a value indicating whether or not the provider includes a water mask.  The water mask
      * indicates which areas of the globe are water rather than land, so they can be rendered
-     * as a reflective surface with animated waves.  This function should not be
-     * called before [GoogleEarthEnterpriseTerrainProvider.ready] returns true.
+     * as a reflective surface with animated waves.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GoogleEarthEnterpriseTerrainProvider.html#hasWaterMask">Online Documentation</a>
      */
     override val hasWaterMask: Boolean
 
     /**
      * Gets a value indicating whether or not the requested tiles include vertex normals.
-     * This function should not be called before [GoogleEarthEnterpriseTerrainProvider.ready] returns true.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GoogleEarthEnterpriseTerrainProvider.html#hasVertexNormals">Online Documentation</a>
      */
     override val hasVertexNormals: Boolean
 
     /**
      * Gets an object that can be used to determine availability of terrain from this provider, such as
-     * at points and in rectangles.  This function should not be called before
-     * [GoogleEarthEnterpriseTerrainProvider.ready] returns true.  This property may be undefined if availability
+     * at points and in rectangles. This property may be undefined if availability
      * information is not available.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GoogleEarthEnterpriseTerrainProvider.html#availability">Online Documentation</a>
      */
     override val availability: TileAvailability
 
     /**
-     * Requests the geometry for a given tile.  This function should not be called before
-     * [GoogleEarthEnterpriseTerrainProvider.ready] returns true.  The result must include terrain data and
+     * Requests the geometry for a given tile.   The result must include terrain data and
      * may optionally include a water mask and an indication of which child tiles are available.
      * @param [x] The X coordinate of the tile for which to request geometry.
      * @param [y] The Y coordinate of the tile for which to request geometry.
@@ -163,9 +149,36 @@ external class GoogleEarthEnterpriseTerrainProvider(options: ConstructorOptions)
         y: Double,
         level: Int,
     ): Void
-}
 
-inline fun GoogleEarthEnterpriseTerrainProvider(
-    block: GoogleEarthEnterpriseTerrainProvider.ConstructorOptions.() -> Unit,
-): GoogleEarthEnterpriseTerrainProvider =
-    GoogleEarthEnterpriseTerrainProvider(options = jso(block))
+    /**
+     * Initialization options for GoogleEarthEnterpriseTerrainProvider constructor
+     * @property [ellipsoid] The ellipsoid.  If not specified, the WGS84 ellipsoid is used.
+     * @property [credit] A credit for the data source, which is displayed on the canvas.
+     * @property [url] The url of the Google Earth Enterprise server hosting the imagery. Deprecated.
+     * @property [metadata] A metadata object that can be used to share metadata requests with a GoogleEarthEnterpriseImageryProvider. Deprecated.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GoogleEarthEnterpriseTerrainProvider.html#.ConstructorOptions">Online Documentation</a>
+     */
+    interface ConstructorOptions {
+        var ellipsoid: Ellipsoid?
+        var credit: Credit?
+        var url: Resource?
+        var metadata: GoogleEarthEnterpriseMetadata?
+    }
+
+    companion object {
+        /**
+         * Creates a GoogleEarthTerrainProvider from GoogleEarthEnterpriseMetadata
+         * ```
+         * const geeMetadata = await GoogleEarthEnterpriseMetadata.fromUrl("http://www.example.com");
+         * const gee = GoogleEarthEnterpriseTerrainProvider.fromMetadata(geeMetadata);
+         * ```
+         * @param [metadata] A metadata object that can be used to share metadata requests with a GoogleEarthEnterpriseImageryProvider.
+         * @param [options] An object describing initialization options
+         * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GoogleEarthEnterpriseTerrainProvider.html#.fromMetadata">Online Documentation</a>
+         */
+        fun fromMetadata(
+            metadata: GoogleEarthEnterpriseMetadata,
+            options: ConstructorOptions,
+        ): GoogleEarthEnterpriseTerrainProvider
+    }
+}

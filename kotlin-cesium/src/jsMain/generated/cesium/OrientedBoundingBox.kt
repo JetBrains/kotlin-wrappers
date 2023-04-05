@@ -26,7 +26,7 @@ import js.core.ReadonlyArray
  * @property [center] The center of the box.
  *   Default value - [Cartesian3.ZERO]
  * @property [halfAxes] The three orthogonal half-axes of the bounding box.
- *   Equivalently, the transformation matrix, to rotate and scale a 1x1x1
+ *   Equivalently, the transformation matrix, to rotate and scale a 2x2x2
  *   cube centered at the origin.
  *   Default value - [Matrix3.ZERO]
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/OrientedBoundingBox.html">Online Documentation</a>

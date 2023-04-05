@@ -20,11 +20,17 @@ import kotlin.js.Promise
  */
 external class Cesium3DTilesVoxelProvider(options: ConstructorOptions) {
     /**
-     * @property [url] The URL to a tileset JSON file.
+     * @property [url] The URL to a tileset JSON file. Deprecated.
      */
     interface ConstructorOptions {
         var url: dynamic
     }
+
+    /**
+     * Gets the promise that will be resolved when the provider is ready for use.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTilesVoxelProvider.html#readyPromise">Online Documentation</a>
+     */
+    val readyPromise: Promise<Cesium3DTilesVoxelProvider>
 
     /**
      * Gets a value indicating whether or not the provider is ready for use.
@@ -153,6 +159,18 @@ external class Cesium3DTilesVoxelProvider(options: ConstructorOptions) {
         var tileX: Double?
         var tileY: Double?
         var tileZ: Double?
+    }
+
+    companion object {
+        /**
+         * Creates a [VoxelProvider] that fetches voxel data from a 3D Tiles tileset.
+         * @param [url] The URL to a tileset JSON file
+         * @return The created provider
+         * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTilesVoxelProvider.html#.fromUrl">Online Documentation</a>
+         */
+        fun fromUrl(url: Resource): Promise<Cesium3DTilesVoxelProvider>
+
+        fun fromUrl(url: String): Promise<Cesium3DTilesVoxelProvider>
     }
 }
 

@@ -14,7 +14,7 @@ import kotlin.js.Promise
  *
  * @constructor
  * @param [endpoint] The result of the Cesium ion asset endpoint service.
- * @param [endpointResource] The resource used to retreive the endpoint.
+ * @param [endpointResource] The resource used to retrieve the endpoint.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/IonResource.html">Online Documentation</a>
  */
 external class IonResource(
@@ -78,8 +78,14 @@ external class IonResource(
         /**
          * Asynchronously creates an instance.
          * ```
-         * //Load a Cesium3DTileset with asset ID of 124624234
-         * viewer.scene.primitives.add(new Cesium3DTileset({ url: fromAssetId(124624234) }));
+         * // Load a Cesium3DTileset with asset ID of 124624234
+         * try {
+         *   const resource = await IonResource.fromAssetId(124624234);
+         *   const tileset = await Cesium3DTileset.fromUrl(resource);
+         *   scene.primitives.add(tileset);
+         * } catch (error) {
+         *   console.error(`Error creating tileset: ${error}`);
+         * }
          * ```
          * ```
          * //Load a CZML file with asset ID of 10890

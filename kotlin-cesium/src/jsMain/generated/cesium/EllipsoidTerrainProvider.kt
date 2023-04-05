@@ -43,14 +43,13 @@ external class EllipsoidTerrainProvider(options: ConstructorOptions? = definedEx
 
     /**
      * Gets the credit to display when this terrain provider is active.  Typically this is used to credit
-     * the source of the terrain.  This function should not be called before [EllipsoidTerrainProvider.ready] returns true.
+     * the source of the terrain.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/EllipsoidTerrainProvider.html#credit">Online Documentation</a>
      */
     override val credit: Credit
 
     /**
-     * Gets the tiling scheme used by this provider.  This function should
-     * not be called before [EllipsoidTerrainProvider.ready] returns true.
+     * Gets the tiling scheme used by this provider.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/EllipsoidTerrainProvider.html#tilingScheme">Online Documentation</a>
      */
     override val tilingScheme: GeographicTilingScheme
@@ -70,31 +69,27 @@ external class EllipsoidTerrainProvider(options: ConstructorOptions? = definedEx
     /**
      * Gets a value indicating whether or not the provider includes a water mask.  The water mask
      * indicates which areas of the globe are water rather than land, so they can be rendered
-     * as a reflective surface with animated waves.  This function should not be
-     * called before [EllipsoidTerrainProvider.ready] returns true.
+     * as a reflective surface with animated waves.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/EllipsoidTerrainProvider.html#hasWaterMask">Online Documentation</a>
      */
     override val hasWaterMask: Boolean
 
     /**
      * Gets a value indicating whether or not the requested tiles include vertex normals.
-     * This function should not be called before [EllipsoidTerrainProvider.ready] returns true.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/EllipsoidTerrainProvider.html#hasVertexNormals">Online Documentation</a>
      */
     override val hasVertexNormals: Boolean
 
     /**
      * Gets an object that can be used to determine availability of terrain from this provider, such as
-     * at points and in rectangles.  This function should not be called before
-     * [TerrainProvider.ready] returns true.  This property may be undefined if availability
+     * at points and in rectangles. This property may be undefined if availability
      * information is not available.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/EllipsoidTerrainProvider.html#availability">Online Documentation</a>
      */
     override val availability: TileAvailability
 
     /**
-     * Requests the geometry for a given tile.  This function should not be called before
-     * [TerrainProvider.ready] returns true.  The result includes terrain
+     * Requests the geometry for a given tile. The result includes terrain
      * data and indicates that all child tiles are available.
      * @param [x] The X coordinate of the tile for which to request geometry.
      * @param [y] The Y coordinate of the tile for which to request geometry.

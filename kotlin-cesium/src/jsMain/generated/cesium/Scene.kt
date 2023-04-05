@@ -879,6 +879,27 @@ external class Scene(options: ConstructorOptions) {
     fun morphTo3D(duration: Double? = definedExternally)
 
     /**
+     * Update the terrain providing surface geometry for the globe.
+     * ```
+     * // Use Cesium World Terrain
+     * scene.setTerrain(Terrain.fromWorldTerrain());
+     * ```
+     * ```
+     * // Use a custom terrain provider
+     * const terrain = new Terrain(CesiumTerrainProvider.fromUrl("https://myTestTerrain.com"));
+     * scene.setTerrain(terrain);
+     *
+     * terrain.errorEvent.addEventListener(error => {
+     *   alert(`Encountered an error while creating terrain! ${error}`);
+     * });
+     * ```
+     * @param [terrain] The terrain provider async helper
+     * @return terrain The terrain provider async helper
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Scene.html#setTerrain">Online Documentation</a>
+     */
+    fun setTerrain(terrain: Terrain): Terrain
+
+    /**
      * Returns true if this object was destroyed; otherwise, false.
      *
      * If this object was destroyed, it should not be used; calling any function other than

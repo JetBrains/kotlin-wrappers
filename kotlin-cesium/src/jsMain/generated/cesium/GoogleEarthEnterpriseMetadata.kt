@@ -8,17 +8,19 @@ import js.buffer.ArrayBuffer
 import kotlin.js.Promise
 
 /**
+ * <div class="notice">
+ * To construct GoogleEarthEnterpriseMetadata, call [GoogleEarthEnterpriseMetadata.fromUrl]. Do not call the constructor directly.
+ * </div>
+ *
  * Provides metadata using the Google Earth Enterprise REST API. This is used by the GoogleEarthEnterpriseImageryProvider
  *  and GoogleEarthEnterpriseTerrainProvider to share metadata requests.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GoogleEarthEnterpriseMetadata.html">Online Documentation</a>
  *
  * @constructor
- * @param [resourceOrUrl] The url of the Google Earth Enterprise server hosting the imagery
+ * @param [resourceOrUrl] The url of the Google Earth Enterprise server hosting the imagery. Deprecated.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GoogleEarthEnterpriseMetadata.html">Online Documentation</a>
  */
-external class GoogleEarthEnterpriseMetadata(resourceOrUrl: Resource) {
-    constructor(resourceOrUrl: String)
-
+sealed external class GoogleEarthEnterpriseMetadata {
     /**
      * True if imagery is available.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GoogleEarthEnterpriseMetadata.html#imageryPresent">Online Documentation</a>
@@ -86,6 +88,17 @@ external class GoogleEarthEnterpriseMetadata(resourceOrUrl: Resource) {
     val readyPromise: Promise<Boolean>
 
     companion object {
+        /**
+         * Creates a metadata object using the Google Earth Enterprise REST API. This is used by the GoogleEarthEnterpriseImageryProvider
+         * and GoogleEarthEnterpriseTerrainProvider to share metadata requests.
+         * @param [resourceOrUrl] The url of the Google Earth Enterprise server hosting the imagery.
+         * @return A promise which resolves to the created GoogleEarthEnterpriseMetadata instance/
+         * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GoogleEarthEnterpriseMetadata.html#.fromUrl">Online Documentation</a>
+         */
+        fun fromUrl(resourceOrUrl: Resource): Promise<GoogleEarthEnterpriseMetadata>
+
+        fun fromUrl(resourceOrUrl: String): Promise<GoogleEarthEnterpriseMetadata>
+
         /**
          * Converts a tiles (x, y, level) position into a quadkey used to request an image
          * from a Google Earth Enterprise server.

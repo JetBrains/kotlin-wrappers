@@ -11,16 +11,14 @@ import kotlin.js.Promise
  * Initiates a sampleTerrain() request at the maximum available tile level for a terrain dataset.
  * ```
  * // Query the terrain height of two Cartographic positions
- * const terrainProvider = createWorldTerrain();
+ * const terrainProvider = await createWorldTerrainAsync();
  * const positions = [
  *     Cartographic.fromDegrees(86.925145, 27.988257),
  *     Cartographic.fromDegrees(87.0, 28.0)
  * ];
- * const promise = sampleTerrainMostDetailed(terrainProvider, positions);
- * Promise.resolve(promise).then(function(updatedPositions) {
- *     // positions[0].height and positions[1].height have been updated.
- *     // updatedPositions is just a reference to positions.
- * });
+ * const updatedPositions = await sampleTerrainMostDetailed(terrainProvider, positions);
+ * // positions[0].height and positions[1].height have been updated.
+ * // updatedPositions is just a reference to positions.
  * ```
  * @param [terrainProvider] The terrain provider from which to query heights.
  * @param [positions] The positions to update with terrain heights.

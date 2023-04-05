@@ -8,9 +8,10 @@ package cesium
  * Given a relative URL under the Cesium base URL, returns an absolute URL.
  * ```
  * const viewer = new Viewer("cesiumContainer", {
- *   imageryProvider: new TileMapServiceImageryProvider({
- *   url: buildModuleUrl("Assets/Textures/NaturalEarthII"),
- *   }),
+ *   baseLayer: ImageryLayer.fromProviderAsync(
+ *     TileMapServiceImageryProvider.fromUrl(
+ *       buildModuleUrl("Assets/Textures/NaturalEarthII"),
+ *     )),
  *   baseLayerPicker: false,
  * });
  * ```

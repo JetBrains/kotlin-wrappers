@@ -50,6 +50,14 @@ external class ImageryLayerCollection {
 
     /**
      * Adds a layer to the collection.
+     * ```
+     * const imageryLayer = ImageryLayer.fromWorldImagery();
+     * scene.imageryLayers.add(imageryLayer);
+     * ```
+     * ```
+     * const imageryLayer = ImageryLayer.fromProviderAsync(IonImageryProvider.fromAssetId(3812));
+     * scene.imageryLayers.add(imageryLayer);
+     * ```
      * @param [layer] the layer to add.
      * @param [index] the index to add the layer at.  If omitted, the layer will
      *   be added on top of all existing layers.
@@ -62,6 +70,14 @@ external class ImageryLayerCollection {
 
     /**
      * Creates a new layer using the given ImageryProvider and adds it to the collection.
+     * ```
+     * try {
+     *    const provider = await IonImageryProvider.fromAssetId(3812);
+     *    scene.imageryLayers.addImageryProvider(provider);
+     * } catch (error) {
+     *   console.log(`There was an error creating the imagery layer. ${error}`)
+     * }
+     * ```
      * @param [imageryProvider] the imagery provider to create a new layer for.
      * @param [index] the index to add the layer at.  If omitted, the layer will
      *   added on top of all existing layers.

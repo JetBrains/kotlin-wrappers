@@ -27,7 +27,7 @@ sealed external class I3SLayer {
      * Gets the Cesium3DTileset for this layer.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/I3SLayer.html#tileset">Online Documentation</a>
      */
-    val tileset: Cesium3DTileset
+    val tileset: Cesium3DTileset?
 
     /**
      * Gets the I3S data for this object.

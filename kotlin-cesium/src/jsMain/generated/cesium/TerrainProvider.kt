@@ -19,7 +19,7 @@ import kotlin.js.Promise
  */
 abstract external class TerrainProvider {
     /**
-     * Gets an event that is raised when the terrain provider encounters an asynchronous error..  By subscribing
+     * Gets an event that is raised when the terrain provider encounters an asynchronous error.  By subscribing
      * to the event, you will be notified of the error and can potentially recover from it.  Event listeners
      * are passed an instance of [TileProviderError].
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TerrainProvider.html#errorEvent">Online Documentation</a>
@@ -28,15 +28,13 @@ abstract external class TerrainProvider {
 
     /**
      * Gets the credit to display when this terrain provider is active.  Typically this is used to credit
-     * the source of the terrain. This function should
-     * not be called before [TerrainProvider.ready] returns true.
+     * the source of the terrain.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TerrainProvider.html#credit">Online Documentation</a>
      */
     abstract val credit: Credit
 
     /**
-     * Gets the tiling scheme used by the provider.  This function should
-     * not be called before [TerrainProvider.ready] returns true.
+     * Gets the tiling scheme used by the provider.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TerrainProvider.html#tilingScheme">Online Documentation</a>
      */
     abstract val tilingScheme: TilingScheme
@@ -56,31 +54,27 @@ abstract external class TerrainProvider {
     /**
      * Gets a value indicating whether or not the provider includes a water mask.  The water mask
      * indicates which areas of the globe are water rather than land, so they can be rendered
-     * as a reflective surface with animated waves.  This function should not be
-     * called before [TerrainProvider.ready] returns true.
+     * as a reflective surface with animated waves.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TerrainProvider.html#hasWaterMask">Online Documentation</a>
      */
     abstract val hasWaterMask: Boolean
 
     /**
      * Gets a value indicating whether or not the requested tiles include vertex normals.
-     * This function should not be called before [TerrainProvider.ready] returns true.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TerrainProvider.html#hasVertexNormals">Online Documentation</a>
      */
     abstract val hasVertexNormals: Boolean
 
     /**
      * Gets an object that can be used to determine availability of terrain from this provider, such as
-     * at points and in rectangles.  This function should not be called before
-     * [TerrainProvider.ready] returns true.  This property may be undefined if availability
+     * at points and in rectangles. This property may be undefined if availability
      * information is not available.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TerrainProvider.html#availability">Online Documentation</a>
      */
     abstract val availability: TileAvailability
 
     /**
-     * Requests the geometry for a given tile.  This function should not be called before
-     * [TerrainProvider.ready] returns true.  The result must include terrain data and
+     * Requests the geometry for a given tile. The result must include terrain data and
      * may optionally include a water mask and an indication of which child tiles are available.
      * @param [x] The X coordinate of the tile for which to request geometry.
      * @param [y] The Y coordinate of the tile for which to request geometry.
@@ -99,8 +93,7 @@ abstract external class TerrainProvider {
     ): Promise<TerrainData>?
 
     /**
-     * Gets the maximum geometric error allowed in a tile at a given level.  This function should not be
-     * called before [TerrainProvider.ready] returns true.
+     * Gets the maximum geometric error allowed in a tile at a given level.
      * @param [level] The tile level for which to get the maximum geometric error.
      * @return The maximum geometric error.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TerrainProvider.html#getLevelMaximumGeometricError">Online Documentation</a>

@@ -2,29 +2,141 @@
 
 @file:JsModule("cesium")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium
 
 import js.core.ReadonlyArray
 import js.core.Void
-import js.core.jso
 import kotlin.js.Promise
 
 /**
+ * <div class="notice">
+ * To construct a BingMapsImageryProvider, call [BingMapsImageryProvider.fromUrl]. Do not call the constructor directly.
+ * </div>
+ *
  * Provides tiled imagery using the Bing Maps Imagery REST API.
  * ```
- * const bing = new BingMapsImageryProvider({
- *     url : 'https://dev.virtualearth.net',
- *     key : 'get-yours-at-https://www.bingmapsportal.com/',
- *     mapStyle : BingMapsStyle.AERIAL
+ * const bing = await BingMapsImageryProvider.fromUrl(
+ *   "https://dev.virtualearth.net", {
+ *     key: "get-yours-at-https://www.bingmapsportal.com/",
+ *     mapStyle: BingMapsStyle.AERIAL
  * });
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BingMapsImageryProvider.html">Online Documentation</a>
  */
-external class BingMapsImageryProvider(options: ConstructorOptions) {
+sealed external class BingMapsImageryProvider {
+    /**
+     * Gets the name of the BingMaps server url hosting the imagery.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BingMapsImageryProvider.html#url">Online Documentation</a>
+     */
+    val url: String
+
+    /**
+     * Gets the proxy used by this provider.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BingMapsImageryProvider.html#proxy">Online Documentation</a>
+     */
+    val proxy: Proxy
+
+    /**
+     * Gets the Bing Maps key.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BingMapsImageryProvider.html#key">Online Documentation</a>
+     */
+    val key: String
+
+    /**
+     * Gets the type of Bing Maps imagery to load.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BingMapsImageryProvider.html#mapStyle">Online Documentation</a>
+     */
+    val mapStyle: BingMapsStyle
+
+    /**
+     * The culture to use when requesting Bing Maps imagery. Not
+     * all cultures are supported. See [http://msdn.microsoft.com/en-us/library/hh441729.aspx]
+     * for information on the supported cultures.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BingMapsImageryProvider.html#culture">Online Documentation</a>
+     */
+    val culture: String
+
+    /**
+     * Gets the width of each tile, in pixels.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BingMapsImageryProvider.html#tileWidth">Online Documentation</a>
+     */
+    val tileWidth: Int
+
+    /**
+     * Gets the height of each tile, in pixels.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BingMapsImageryProvider.html#tileHeight">Online Documentation</a>
+     */
+    val tileHeight: Int
+
+    /**
+     * Gets the maximum level-of-detail that can be requested.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BingMapsImageryProvider.html#maximumLevel">Online Documentation</a>
+     */
+    val maximumLevel: Int?
+
+    /**
+     * Gets the minimum level-of-detail that can be requested.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BingMapsImageryProvider.html#minimumLevel">Online Documentation</a>
+     */
+    val minimumLevel: Int
+
+    /**
+     * Gets the tiling scheme used by this provider.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BingMapsImageryProvider.html#tilingScheme">Online Documentation</a>
+     */
+    val tilingScheme: TilingScheme
+
+    /**
+     * Gets the rectangle, in radians, of the imagery provided by this instance.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BingMapsImageryProvider.html#rectangle">Online Documentation</a>
+     */
+    val rectangle: Rectangle
+
+    /**
+     * Gets the tile discard policy.  If not undefined, the discard policy is responsible
+     * for filtering out "missing" tiles via its shouldDiscardImage function.  If this function
+     * returns undefined, no tiles are filtered.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BingMapsImageryProvider.html#tileDiscardPolicy">Online Documentation</a>
+     */
+    val tileDiscardPolicy: TileDiscardPolicy
+
+    /**
+     * Gets an event that is raised when the imagery provider encounters an asynchronous error.  By subscribing
+     * to the event, you will be notified of the error and can potentially recover from it.  Event listeners
+     * are passed an instance of [TileProviderError].
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BingMapsImageryProvider.html#errorEvent">Online Documentation</a>
+     */
+    val errorEvent: DefaultEvent
+
+    /**
+     * Gets a value indicating whether or not the provider is ready for use.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BingMapsImageryProvider.html#ready">Online Documentation</a>
+     */
+    val ready: Boolean
+
+    /**
+     * Gets a promise that resolves to true when the provider is ready for use.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BingMapsImageryProvider.html#readyPromise">Online Documentation</a>
+     */
+    val readyPromise: Promise<Boolean>
+
+    /**
+     * Gets the credit to display when this imagery provider is active.  Typically this is used to credit
+     * the source of the imagery.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BingMapsImageryProvider.html#credit">Online Documentation</a>
+     */
+    val credit: Credit
+
+    /**
+     * Gets a value indicating whether or not the images provided by this imagery provider
+     * include an alpha channel.  If this property is false, an alpha channel, if present, will
+     * be ignored.  If this property is true, any images without an alpha channel will be treated
+     * as if their alpha is 1.0 everywhere.  Setting this property to false reduces memory usage
+     * and texture upload time.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BingMapsImageryProvider.html#hasAlphaChannel">Online Documentation</a>
+     */
+    val hasAlphaChannel: Boolean
+
     /**
      * The default alpha blending value of this provider, with 0.0 representing fully transparent and
      * 1.0 representing fully opaque.
@@ -92,126 +204,6 @@ external class BingMapsImageryProvider(options: ConstructorOptions) {
     var defaultMagnificationFilter: TextureMagnificationFilter
 
     /**
-     * Gets the name of the BingMaps server url hosting the imagery.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BingMapsImageryProvider.html#url">Online Documentation</a>
-     */
-    val url: String
-
-    /**
-     * Gets the proxy used by this provider.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BingMapsImageryProvider.html#proxy">Online Documentation</a>
-     */
-    val proxy: Proxy
-
-    /**
-     * Gets the Bing Maps key.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BingMapsImageryProvider.html#key">Online Documentation</a>
-     */
-    val key: String
-
-    /**
-     * Gets the type of Bing Maps imagery to load.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BingMapsImageryProvider.html#mapStyle">Online Documentation</a>
-     */
-    val mapStyle: BingMapsStyle
-
-    /**
-     * The culture to use when requesting Bing Maps imagery. Not
-     * all cultures are supported. See [http://msdn.microsoft.com/en-us/library/hh441729.aspx]
-     * for information on the supported cultures.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BingMapsImageryProvider.html#culture">Online Documentation</a>
-     */
-    val culture: String
-
-    /**
-     * Gets the width of each tile, in pixels. This function should
-     * not be called before [BingMapsImageryProvider.ready] returns true.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BingMapsImageryProvider.html#tileWidth">Online Documentation</a>
-     */
-    val tileWidth: Int
-
-    /**
-     * Gets the height of each tile, in pixels.  This function should
-     * not be called before [BingMapsImageryProvider.ready] returns true.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BingMapsImageryProvider.html#tileHeight">Online Documentation</a>
-     */
-    val tileHeight: Int
-
-    /**
-     * Gets the maximum level-of-detail that can be requested.  This function should
-     * not be called before [BingMapsImageryProvider.ready] returns true.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BingMapsImageryProvider.html#maximumLevel">Online Documentation</a>
-     */
-    val maximumLevel: Int?
-
-    /**
-     * Gets the minimum level-of-detail that can be requested.  This function should
-     * not be called before [BingMapsImageryProvider.ready] returns true.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BingMapsImageryProvider.html#minimumLevel">Online Documentation</a>
-     */
-    val minimumLevel: Int
-
-    /**
-     * Gets the tiling scheme used by this provider.  This function should
-     * not be called before [BingMapsImageryProvider.ready] returns true.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BingMapsImageryProvider.html#tilingScheme">Online Documentation</a>
-     */
-    val tilingScheme: TilingScheme
-
-    /**
-     * Gets the rectangle, in radians, of the imagery provided by this instance.  This function should
-     * not be called before [BingMapsImageryProvider.ready] returns true.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BingMapsImageryProvider.html#rectangle">Online Documentation</a>
-     */
-    val rectangle: Rectangle
-
-    /**
-     * Gets the tile discard policy.  If not undefined, the discard policy is responsible
-     * for filtering out "missing" tiles via its shouldDiscardImage function.  If this function
-     * returns undefined, no tiles are filtered.  This function should
-     * not be called before [BingMapsImageryProvider.ready] returns true.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BingMapsImageryProvider.html#tileDiscardPolicy">Online Documentation</a>
-     */
-    val tileDiscardPolicy: TileDiscardPolicy
-
-    /**
-     * Gets an event that is raised when the imagery provider encounters an asynchronous error.  By subscribing
-     * to the event, you will be notified of the error and can potentially recover from it.  Event listeners
-     * are passed an instance of [TileProviderError].
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BingMapsImageryProvider.html#errorEvent">Online Documentation</a>
-     */
-    val errorEvent: DefaultEvent
-
-    /**
-     * Gets a value indicating whether or not the provider is ready for use.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BingMapsImageryProvider.html#ready">Online Documentation</a>
-     */
-    val ready: Boolean
-
-    /**
-     * Gets a promise that resolves to true when the provider is ready for use.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BingMapsImageryProvider.html#readyPromise">Online Documentation</a>
-     */
-    val readyPromise: Promise<Boolean>
-
-    /**
-     * Gets the credit to display when this imagery provider is active.  Typically this is used to credit
-     * the source of the imagery.  This function should not be called before [BingMapsImageryProvider.ready] returns true.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BingMapsImageryProvider.html#credit">Online Documentation</a>
-     */
-    val credit: Credit
-
-    /**
-     * Gets a value indicating whether or not the images provided by this imagery provider
-     * include an alpha channel.  If this property is false, an alpha channel, if present, will
-     * be ignored.  If this property is true, any images without an alpha channel will be treated
-     * as if their alpha is 1.0 everywhere.  Setting this property to false reduces memory usage
-     * and texture upload time.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BingMapsImageryProvider.html#hasAlphaChannel">Online Documentation</a>
-     */
-    val hasAlphaChannel: Boolean
-
-    /**
      * Gets the credits to be displayed when a given tile is displayed.
      * @param [x] The tile X coordinate.
      * @param [y] The tile Y coordinate.
@@ -226,8 +218,7 @@ external class BingMapsImageryProvider(options: ConstructorOptions) {
     ): ReadonlyArray<Credit>
 
     /**
-     * Requests the image for a given tile.  This function should
-     * not be called before [BingMapsImageryProvider.ready] returns true.
+     * Requests the image for a given tile.
      * @param [x] The tile X coordinate.
      * @param [y] The tile Y coordinate.
      * @param [level] The tile level.
@@ -264,7 +255,7 @@ external class BingMapsImageryProvider(options: ConstructorOptions) {
 
     /**
      * Initialization options for the BingMapsImageryProvider constructor
-     * @property [url] The url of the Bing Maps server hosting the imagery.
+     * @property [url] The url of the Bing Maps server hosting the imagery. Deprecated.
      * @property [key] The Bing Maps key for your application, which can be
      *   created at [https://www.bingmapsportal.com/].
      * @property [tileProtocol] The protocol to use when loading tiles, e.g. 'http' or 'https'.
@@ -283,8 +274,8 @@ external class BingMapsImageryProvider(options: ConstructorOptions) {
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BingMapsImageryProvider.html#.ConstructorOptions">Online Documentation</a>
      */
     interface ConstructorOptions {
-        var url: Resource
-        var key: String
+        var url: Resource?
+        var key: String?
         var tileProtocol: String?
         var mapStyle: BingMapsStyle?
         var culture: String?
@@ -293,6 +284,29 @@ external class BingMapsImageryProvider(options: ConstructorOptions) {
     }
 
     companion object {
+        /**
+         * Creates an [ImageryProvider] which provides tiled imagery using the Bing Maps Imagery REST API.
+         * ```
+         * const bing = await BingMapsImageryProvider.fromUrl(
+         *   "https://dev.virtualearth.net", {
+         *     key: "get-yours-at-https://www.bingmapsportal.com/",
+         *     mapStyle: BingMapsStyle.AERIAL
+         * });
+         * ```
+         * @param [url] The url of the Bing Maps server hosting the imagery.
+         * @return A promise that resolves to the created BingMapsImageryProvider
+         * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BingMapsImageryProvider.html#.fromUrl">Online Documentation</a>
+         */
+        fun fromUrl(
+            url: Resource,
+            options: ConstructorOptions,
+        ): Promise<BingMapsImageryProvider>
+
+        fun fromUrl(
+            url: String,
+            options: ConstructorOptions,
+        ): Promise<BingMapsImageryProvider>
+
         /**
          * Converts a tiles (x, y, level) position into a quadkey used to request an image
          * from a Bing Maps server.
@@ -322,8 +336,3 @@ external class BingMapsImageryProvider(options: ConstructorOptions) {
         var logoUrl: String
     }
 }
-
-inline fun BingMapsImageryProvider(
-    block: BingMapsImageryProvider.ConstructorOptions.() -> Unit,
-): BingMapsImageryProvider =
-    BingMapsImageryProvider(options = jso(block))

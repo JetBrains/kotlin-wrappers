@@ -5,41 +5,33 @@
 @file:Suppress(
     "VAR_OVERRIDDEN_BY_VAL",
     "VAR_TYPE_MISMATCH_ON_OVERRIDE",
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
 )
 
 package cesium
 
 import js.core.Void
-import js.core.jso
 import kotlin.js.Promise
 
 /**
+ * <div class="notice">
+ * To construct a CesiumTerrainProvider, call [ArcGISTiledElevationTerrainProvider.fromUrl]. Do not call the constructor directly.
+ * </div>
+ *
  * A [TerrainProvider] that produces terrain geometry by tessellating height maps
  * retrieved from Elevation Tiles of an an ArcGIS ImageService.
  * ```
- * const terrainProvider = new ArcGISTiledElevationTerrainProvider({
- *   url : 'https://elevation3d.arcgis.com/arcgis/rest/services/WorldElevation3D/Terrain3D/ImageServer',
- *   token : 'KED1aF_I4UzXOHy3BnhwyBHU4l5oY6rO6walkmHoYqGp4XyIWUd5YZUC1ZrLAzvV40pR6gBXQayh0eFA8m6vPg..'
+ * const terrainProvider = await ArcGISTiledElevationTerrainProvider.fromUrl("https://elevation3d.arcgis.com/arcgis/rest/services/WorldElevation3D/Terrain3D/ImageServer", {
+ *   token: "KED1aF_I4UzXOHy3BnhwyBHU4l5oY6rO6walkmHoYqGp4XyIWUd5YZUC1ZrLAzvV40pR6gBXQayh0eFA8m6vPg.."
  * });
  * viewer.terrainProvider = terrainProvider;
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ArcGISTiledElevationTerrainProvider.html">Online Documentation</a>
+ *
+ * @constructor
+ * @param [options] A url or an object describing initialization options
+ * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ArcGISTiledElevationTerrainProvider.html">Online Documentation</a>
  */
-external class ArcGISTiledElevationTerrainProvider(options: ConstructorOptions) : TerrainProvider {
-    /**
-     * @property [url] The URL of the ArcGIS ImageServer service.
-     * @property [token] The authorization token to use to connect to the service.
-     * @property [ellipsoid] The ellipsoid.  If the tilingScheme is specified,
-     *   this parameter is ignored and the tiling scheme's ellipsoid is used instead.
-     *   If neither parameter is specified, the WGS84 ellipsoid is used.
-     */
-    interface ConstructorOptions {
-        var url: dynamic
-        var token: String?
-        var ellipsoid: Ellipsoid?
-    }
-
+sealed external class ArcGISTiledElevationTerrainProvider : TerrainProvider {
     /**
      * Gets an event that is raised when the terrain provider encounters an asynchronous error.  By subscribing
      * to the event, you will be notified of the error and can potentially recover from it.  Event listeners
@@ -50,14 +42,13 @@ external class ArcGISTiledElevationTerrainProvider(options: ConstructorOptions) 
 
     /**
      * Gets the credit to display when this terrain provider is active.  Typically this is used to credit
-     * the source of the terrain.  This function should not be called before [ArcGISTiledElevationTerrainProvider.ready] returns true.
+     * the source of the terrain.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ArcGISTiledElevationTerrainProvider.html#credit">Online Documentation</a>
      */
     override val credit: Credit
 
     /**
-     * Gets the tiling scheme used by this provider.  This function should
-     * not be called before [ArcGISTiledElevationTerrainProvider.ready] returns true.
+     * Gets the tiling scheme used by this provider.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ArcGISTiledElevationTerrainProvider.html#tilingScheme">Online Documentation</a>
      */
     override val tilingScheme: GeographicTilingScheme
@@ -77,31 +68,27 @@ external class ArcGISTiledElevationTerrainProvider(options: ConstructorOptions) 
     /**
      * Gets a value indicating whether or not the provider includes a water mask.  The water mask
      * indicates which areas of the globe are water rather than land, so they can be rendered
-     * as a reflective surface with animated waves.  This function should not be
-     * called before [ArcGISTiledElevationTerrainProvider.ready] returns true.
+     * as a reflective surface with animated waves.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ArcGISTiledElevationTerrainProvider.html#hasWaterMask">Online Documentation</a>
      */
     override val hasWaterMask: Boolean
 
     /**
      * Gets a value indicating whether or not the requested tiles include vertex normals.
-     * This function should not be called before [ArcGISTiledElevationTerrainProvider.ready] returns true.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ArcGISTiledElevationTerrainProvider.html#hasVertexNormals">Online Documentation</a>
      */
     override val hasVertexNormals: Boolean
 
     /**
      * Gets an object that can be used to determine availability of terrain from this provider, such as
-     * at points and in rectangles.  This function should not be called before
-     * [TerrainProvider.ready] returns true.  This property may be undefined if availability
+     * at points and in rectangles. This property may be undefined if availability
      * information is not available.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ArcGISTiledElevationTerrainProvider.html#availability">Online Documentation</a>
      */
     override val availability: TileAvailability
 
     /**
-     * Requests the geometry for a given tile.  This function should not be called before
-     * [ArcGISTiledElevationTerrainProvider.ready] returns true.  The result includes terrain
+     * Requests the geometry for a given tile. The result includes terrain
      * data and indicates that all child tiles are available.
      * @param [x] The X coordinate of the tile for which to request geometry.
      * @param [y] The Y coordinate of the tile for which to request geometry.
@@ -154,9 +141,39 @@ external class ArcGISTiledElevationTerrainProvider(options: ConstructorOptions) 
         y: Double,
         level: Int,
     ): Void
-}
 
-inline fun ArcGISTiledElevationTerrainProvider(
-    block: ArcGISTiledElevationTerrainProvider.ConstructorOptions.() -> Unit,
-): ArcGISTiledElevationTerrainProvider =
-    ArcGISTiledElevationTerrainProvider(options = jso(block))
+    /**
+     * Initialization options for the ArcGISTiledElevationTerrainProvider constructor
+     * @property [token] The authorization token to use to connect to the service.
+     * @property [ellipsoid] The ellipsoid.  If the tilingScheme is specified,
+     *   this parameter is ignored and the tiling scheme's ellipsoid is used instead.
+     *   If neither parameter is specified, the WGS84 ellipsoid is used.
+     * @property [url] The URL of the ArcGIS ImageServer service. Deprecated.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ArcGISTiledElevationTerrainProvider.html#.ConstructorOptions">Online Documentation</a>
+     */
+    interface ConstructorOptions {
+        var token: String?
+        var ellipsoid: Ellipsoid?
+        var url: dynamic
+    }
+
+    companion object {
+        /**
+         * Creates a [TerrainProvider] that produces terrain geometry by tessellating height maps
+         * retrieved from Elevation Tiles of an an ArcGIS ImageService.
+         * ```
+         * const terrainProvider = await ArcGISTiledElevationTerrainProvider.fromUrl("https://elevation3d.arcgis.com/arcgis/rest/services/WorldElevation3D/Terrain3D/ImageServer", {
+         *   token: "KED1aF_I4UzXOHy3BnhwyBHU4l5oY6rO6walkmHoYqGp4XyIWUd5YZUC1ZrLAzvV40pR6gBXQayh0eFA8m6vPg.."
+         * });
+         * viewer.terrainProvider = terrainProvider;
+         * ```
+         * @param [url] The URL of the ArcGIS ImageServer service.
+         * @param [options] A url or an object describing initialization options.
+         * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ArcGISTiledElevationTerrainProvider.html#.fromUrl">Online Documentation</a>
+         */
+        fun fromUrl(
+            url: dynamic,
+            options: ConstructorOptions? = definedExternally,
+        ): Promise<ArcGISTiledElevationTerrainProvider>
+    }
+}

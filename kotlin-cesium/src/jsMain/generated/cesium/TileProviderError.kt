@@ -85,23 +85,33 @@ external class TileProviderError(
          */
         fun reportError(
             previousError: TileProviderError,
+            event: DefaultEvent? = definedExternally,
+            message: String? = definedExternally,
+            x: Double? = definedExternally,
+            y: Double? = definedExternally,
+            level: Int? = definedExternally,
+            errorDetails: Error? = definedExternally,
+        ): TileProviderError
+
+        fun reportError(
+            previousError: TileProviderError,
             provider: ImageryProvider,
-            event: DefaultEvent,
-            message: String,
-            x: Double,
-            y: Double,
-            level: Int,
+            event: DefaultEvent? = definedExternally,
+            message: String? = definedExternally,
+            x: Double? = definedExternally,
+            y: Double? = definedExternally,
+            level: Int? = definedExternally,
             errorDetails: Error? = definedExternally,
         ): TileProviderError
 
         fun reportError(
             previousError: TileProviderError,
             provider: TerrainProvider,
-            event: DefaultEvent,
-            message: String,
-            x: Double,
-            y: Double,
-            level: Int,
+            event: DefaultEvent? = definedExternally,
+            message: String? = definedExternally,
+            x: Double? = definedExternally,
+            y: Double? = definedExternally,
+            level: Int? = definedExternally,
             errorDetails: Error? = definedExternally,
         ): TileProviderError
 

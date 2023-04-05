@@ -1138,4 +1138,4 @@ external class Resource(options: dynamic) {
  * @param [error] The error that occurred during the loading of the resource.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Resource.html#.RetryCallback">Online Documentation</a>
  */
-typealias RetryCallback = (resource: Resource?, error: Error?) -> dynamic
+typealias RetryCallback = (resource: Resource?, error: RequestErrorEvent?) -> dynamic

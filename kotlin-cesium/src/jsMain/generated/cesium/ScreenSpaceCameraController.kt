@@ -186,7 +186,7 @@ external class ScreenSpaceCameraController(scene: Scene) {
     var minimumTrackBallHeight: Double
 
     /**
-     * Enables or disables camera collision detection with terrain.
+     * When disabled, the values of `maximumZoomDistance` and `minimumZoomDistance` are ignored.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ScreenSpaceCameraController.html#enableCollisionDetection">Online Documentation</a>
      */
     var enableCollisionDetection: Boolean

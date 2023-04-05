@@ -2,31 +2,121 @@
 
 @file:JsModule("cesium")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium
 
 import js.core.ReadonlyArray
 import js.core.Void
-import js.core.jso
 import kotlin.js.Promise
 
 /**
+ * <div class="notice">
+ * To construct a GoogleEarthEnterpriseImageryProvider, call [GoogleEarthEnterpriseImageryProvider.fromMetadata]. Do not call the constructor directly.
+ * </div>
+ *
  * Provides tiled imagery using the Google Earth Enterprise REST API.
  *
  * Notes: This provider is for use with the 3D Earth API of Google Earth Enterprise,
  *        [GoogleEarthEnterpriseMapsProvider] should be used with 2D Maps API.
  * ```
- * const geeMetadata = new GoogleEarthEnterpriseMetadata('http://www.example.com');
- * const gee = new GoogleEarthEnterpriseImageryProvider({
- *     metadata : geeMetadata
- * });
+ * const geeMetadata = await GoogleEarthEnterpriseMetadata.fromUrl("http://www.example.com");
+ * const gee = GoogleEarthEnterpriseImageryProvider.fromMetadata(geeMetadata);
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GoogleEarthEnterpriseImageryProvider.html">Online Documentation</a>
  */
-external class GoogleEarthEnterpriseImageryProvider(options: ConstructorOptions) {
+sealed external class GoogleEarthEnterpriseImageryProvider {
+    /**
+     * Gets the name of the Google Earth Enterprise server url hosting the imagery.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GoogleEarthEnterpriseImageryProvider.html#url">Online Documentation</a>
+     */
+    val url: String
+
+    /**
+     * Gets the proxy used by this provider.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GoogleEarthEnterpriseImageryProvider.html#proxy">Online Documentation</a>
+     */
+    val proxy: Proxy
+
+    /**
+     * Gets the width of each tile, in pixels.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GoogleEarthEnterpriseImageryProvider.html#tileWidth">Online Documentation</a>
+     */
+    val tileWidth: Int
+
+    /**
+     * Gets the height of each tile, in pixels.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GoogleEarthEnterpriseImageryProvider.html#tileHeight">Online Documentation</a>
+     */
+    val tileHeight: Int
+
+    /**
+     * Gets the maximum level-of-detail that can be requested.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GoogleEarthEnterpriseImageryProvider.html#maximumLevel">Online Documentation</a>
+     */
+    val maximumLevel: Int?
+
+    /**
+     * Gets the minimum level-of-detail that can be requested.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GoogleEarthEnterpriseImageryProvider.html#minimumLevel">Online Documentation</a>
+     */
+    val minimumLevel: Int
+
+    /**
+     * Gets the tiling scheme used by this provider.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GoogleEarthEnterpriseImageryProvider.html#tilingScheme">Online Documentation</a>
+     */
+    val tilingScheme: TilingScheme
+
+    /**
+     * Gets the rectangle, in radians, of the imagery provided by this instance.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GoogleEarthEnterpriseImageryProvider.html#rectangle">Online Documentation</a>
+     */
+    val rectangle: Rectangle
+
+    /**
+     * Gets the tile discard policy.  If not undefined, the discard policy is responsible
+     * for filtering out "missing" tiles via its shouldDiscardImage function.  If this function
+     * returns undefined, no tiles are filtered.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GoogleEarthEnterpriseImageryProvider.html#tileDiscardPolicy">Online Documentation</a>
+     */
+    val tileDiscardPolicy: TileDiscardPolicy
+
+    /**
+     * Gets an event that is raised when the imagery provider encounters an asynchronous error.  By subscribing
+     * to the event, you will be notified of the error and can potentially recover from it.  Event listeners
+     * are passed an instance of [TileProviderError].
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GoogleEarthEnterpriseImageryProvider.html#errorEvent">Online Documentation</a>
+     */
+    val errorEvent: DefaultEvent
+
+    /**
+     * Gets a value indicating whether or not the provider is ready for use.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GoogleEarthEnterpriseImageryProvider.html#ready">Online Documentation</a>
+     */
+    val ready: Boolean
+
+    /**
+     * Gets a promise that resolves to true when the provider is ready for use.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GoogleEarthEnterpriseImageryProvider.html#readyPromise">Online Documentation</a>
+     */
+    val readyPromise: Promise<Boolean>
+
+    /**
+     * Gets the credit to display when this imagery provider is active.  Typically this is used to credit
+     * the source of the imagery.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GoogleEarthEnterpriseImageryProvider.html#credit">Online Documentation</a>
+     */
+    val credit: Credit
+
+    /**
+     * Gets a value indicating whether or not the images provided by this imagery provider
+     * include an alpha channel.  If this property is false, an alpha channel, if present, will
+     * be ignored.  If this property is true, any images without an alpha channel will be treated
+     * as if their alpha is 1.0 everywhere.  Setting this property to false reduces memory usage
+     * and texture upload time.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GoogleEarthEnterpriseImageryProvider.html#hasAlphaChannel">Online Documentation</a>
+     */
+    val hasAlphaChannel: Boolean
+
     /**
      * The default alpha blending value of this provider, with 0.0 representing fully transparent and
      * 1.0 representing fully opaque.
@@ -94,106 +184,6 @@ external class GoogleEarthEnterpriseImageryProvider(options: ConstructorOptions)
     var defaultMagnificationFilter: TextureMagnificationFilter
 
     /**
-     * Gets the name of the Google Earth Enterprise server url hosting the imagery.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GoogleEarthEnterpriseImageryProvider.html#url">Online Documentation</a>
-     */
-    val url: String
-
-    /**
-     * Gets the proxy used by this provider.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GoogleEarthEnterpriseImageryProvider.html#proxy">Online Documentation</a>
-     */
-    val proxy: Proxy
-
-    /**
-     * Gets the width of each tile, in pixels. This function should
-     * not be called before [GoogleEarthEnterpriseImageryProvider.ready] returns true.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GoogleEarthEnterpriseImageryProvider.html#tileWidth">Online Documentation</a>
-     */
-    val tileWidth: Int
-
-    /**
-     * Gets the height of each tile, in pixels.  This function should
-     * not be called before [GoogleEarthEnterpriseImageryProvider.ready] returns true.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GoogleEarthEnterpriseImageryProvider.html#tileHeight">Online Documentation</a>
-     */
-    val tileHeight: Int
-
-    /**
-     * Gets the maximum level-of-detail that can be requested.  This function should
-     * not be called before [GoogleEarthEnterpriseImageryProvider.ready] returns true.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GoogleEarthEnterpriseImageryProvider.html#maximumLevel">Online Documentation</a>
-     */
-    val maximumLevel: Int?
-
-    /**
-     * Gets the minimum level-of-detail that can be requested.  This function should
-     * not be called before [GoogleEarthEnterpriseImageryProvider.ready] returns true.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GoogleEarthEnterpriseImageryProvider.html#minimumLevel">Online Documentation</a>
-     */
-    val minimumLevel: Int
-
-    /**
-     * Gets the tiling scheme used by this provider.  This function should
-     * not be called before [GoogleEarthEnterpriseImageryProvider.ready] returns true.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GoogleEarthEnterpriseImageryProvider.html#tilingScheme">Online Documentation</a>
-     */
-    val tilingScheme: TilingScheme
-
-    /**
-     * Gets the rectangle, in radians, of the imagery provided by this instance.  This function should
-     * not be called before [GoogleEarthEnterpriseImageryProvider.ready] returns true.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GoogleEarthEnterpriseImageryProvider.html#rectangle">Online Documentation</a>
-     */
-    val rectangle: Rectangle
-
-    /**
-     * Gets the tile discard policy.  If not undefined, the discard policy is responsible
-     * for filtering out "missing" tiles via its shouldDiscardImage function.  If this function
-     * returns undefined, no tiles are filtered.  This function should
-     * not be called before [GoogleEarthEnterpriseImageryProvider.ready] returns true.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GoogleEarthEnterpriseImageryProvider.html#tileDiscardPolicy">Online Documentation</a>
-     */
-    val tileDiscardPolicy: TileDiscardPolicy
-
-    /**
-     * Gets an event that is raised when the imagery provider encounters an asynchronous error.  By subscribing
-     * to the event, you will be notified of the error and can potentially recover from it.  Event listeners
-     * are passed an instance of [TileProviderError].
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GoogleEarthEnterpriseImageryProvider.html#errorEvent">Online Documentation</a>
-     */
-    val errorEvent: DefaultEvent
-
-    /**
-     * Gets a value indicating whether or not the provider is ready for use.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GoogleEarthEnterpriseImageryProvider.html#ready">Online Documentation</a>
-     */
-    val ready: Boolean
-
-    /**
-     * Gets a promise that resolves to true when the provider is ready for use.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GoogleEarthEnterpriseImageryProvider.html#readyPromise">Online Documentation</a>
-     */
-    val readyPromise: Promise<Boolean>
-
-    /**
-     * Gets the credit to display when this imagery provider is active.  Typically this is used to credit
-     * the source of the imagery.  This function should not be called before [GoogleEarthEnterpriseImageryProvider.ready] returns true.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GoogleEarthEnterpriseImageryProvider.html#credit">Online Documentation</a>
-     */
-    val credit: Credit
-
-    /**
-     * Gets a value indicating whether or not the images provided by this imagery provider
-     * include an alpha channel.  If this property is false, an alpha channel, if present, will
-     * be ignored.  If this property is true, any images without an alpha channel will be treated
-     * as if their alpha is 1.0 everywhere.  Setting this property to false reduces memory usage
-     * and texture upload time.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GoogleEarthEnterpriseImageryProvider.html#hasAlphaChannel">Online Documentation</a>
-     */
-    val hasAlphaChannel: Boolean
-
-    /**
      * Gets the credits to be displayed when a given tile is displayed.
      * @param [x] The tile X coordinate.
      * @param [y] The tile Y coordinate.
@@ -208,8 +198,7 @@ external class GoogleEarthEnterpriseImageryProvider(options: ConstructorOptions)
     ): ReadonlyArray<Credit>
 
     /**
-     * Requests the image for a given tile.  This function should
-     * not be called before [GoogleEarthEnterpriseImageryProvider.ready] returns true.
+     * Requests the image for a given tile.
      * @param [x] The tile X coordinate.
      * @param [y] The tile Y coordinate.
      * @param [level] The tile level.
@@ -246,8 +235,8 @@ external class GoogleEarthEnterpriseImageryProvider(options: ConstructorOptions)
 
     /**
      * Initialization options for the GoogleEarthEnterpriseImageryProvider constructor
-     * @property [url] The url of the Google Earth Enterprise server hosting the imagery.
-     * @property [metadata] A metadata object that can be used to share metadata requests with a GoogleEarthEnterpriseTerrainProvider.
+     * @property [url] The url of the Google Earth Enterprise server hosting the imagery. Deprecated.
+     * @property [metadata] A metadata object that can be used to share metadata requests with a GoogleEarthEnterpriseTerrainProvider. Deprecated.
      * @property [ellipsoid] The ellipsoid.  If not specified, the WGS84 ellipsoid is used.
      * @property [tileDiscardPolicy] The policy that determines if a tile
      *   is invalid and should be discarded. If this value is not specified, a default
@@ -256,15 +245,27 @@ external class GoogleEarthEnterpriseImageryProvider(options: ConstructorOptions)
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GoogleEarthEnterpriseImageryProvider.html#.ConstructorOptions">Online Documentation</a>
      */
     interface ConstructorOptions {
-        var url: Resource
-        var metadata: GoogleEarthEnterpriseMetadata
+        var url: Resource?
+        var metadata: GoogleEarthEnterpriseMetadata?
         var ellipsoid: Ellipsoid?
         var tileDiscardPolicy: TileDiscardPolicy?
         var credit: Credit?
     }
-}
 
-inline fun GoogleEarthEnterpriseImageryProvider(
-    block: GoogleEarthEnterpriseImageryProvider.ConstructorOptions.() -> Unit,
-): GoogleEarthEnterpriseImageryProvider =
-    GoogleEarthEnterpriseImageryProvider(options = jso(block))
+    companion object {
+        /**
+         * Creates a tiled imagery provider using the Google Earth Enterprise REST API.
+         * ```
+         * const geeMetadata = await GoogleEarthEnterpriseMetadata.fromUrl("http://www.example.com");
+         * const gee = GoogleEarthEnterpriseImageryProvider.fromMetadata(geeMetadata);
+         * ```
+         * @param [metadata] A metadata object that can be used to share metadata requests with a GoogleEarthEnterpriseTerrainProvider.
+         * @param [options] Object describing initialization options.
+         * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GoogleEarthEnterpriseImageryProvider.html#.fromMetadata">Online Documentation</a>
+         */
+        fun fromMetadata(
+            metadata: GoogleEarthEnterpriseMetadata,
+            options: ConstructorOptions,
+        ): GoogleEarthEnterpriseImageryProvider
+    }
+}

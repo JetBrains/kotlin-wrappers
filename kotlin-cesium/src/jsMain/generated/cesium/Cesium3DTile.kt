@@ -12,6 +12,13 @@ import js.core.ReadonlyArray
  *
  * Do not construct this directly, instead access tiles through [Cesium3DTileset.tileVisible].
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTile.html">Online Documentation</a>
+ *
+ * @constructor
+ * @param [tileset] The tileset
+ * @param [baseResource] The base resource for the tileset
+ * @param [header] The JSON header for the tile
+ * @param [parent] The parent tile of the new tile
+ * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTile.html">Online Documentation</a>
  */
 sealed external class Cesium3DTile {
     /**

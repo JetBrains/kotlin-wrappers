@@ -18,7 +18,6 @@ import kotlin.js.Promise
  * // Access Natural Earth II imagery, which uses a TMS tiling scheme and Geographic (EPSG:4326) project
  * const tms = new UrlTemplateImageryProvider({
  *     url : buildModuleUrl('Assets/Textures/NaturalEarthII') + '/{z}/{x}/{reverseY}.jpg',
- *     credit : '© Analytical Graphics, Inc.',
  *     tilingScheme : new GeographicTilingScheme(),
  *     maximumLevel : 5
  * });
@@ -50,72 +49,6 @@ import kotlin.js.Promise
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/UrlTemplateImageryProvider.html">Online Documentation</a>
  */
 external class UrlTemplateImageryProvider(options: ConstructorOptions) {
-    /**
-     * The default alpha blending value of this provider, with 0.0 representing fully transparent and
-     * 1.0 representing fully opaque.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/UrlTemplateImageryProvider.html#defaultAlpha">Online Documentation</a>
-     */
-    var defaultAlpha: Double?
-
-    /**
-     * The default alpha blending value on the night side of the globe of this provider, with 0.0 representing fully transparent and
-     * 1.0 representing fully opaque.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/UrlTemplateImageryProvider.html#defaultNightAlpha">Online Documentation</a>
-     */
-    var defaultNightAlpha: Double?
-
-    /**
-     * The default alpha blending value on the day side of the globe of this provider, with 0.0 representing fully transparent and
-     * 1.0 representing fully opaque.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/UrlTemplateImageryProvider.html#defaultDayAlpha">Online Documentation</a>
-     */
-    var defaultDayAlpha: Double?
-
-    /**
-     * The default brightness of this provider.  1.0 uses the unmodified imagery color.  Less than 1.0
-     * makes the imagery darker while greater than 1.0 makes it brighter.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/UrlTemplateImageryProvider.html#defaultBrightness">Online Documentation</a>
-     */
-    var defaultBrightness: Double?
-
-    /**
-     * The default contrast of this provider.  1.0 uses the unmodified imagery color.  Less than 1.0 reduces
-     * the contrast while greater than 1.0 increases it.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/UrlTemplateImageryProvider.html#defaultContrast">Online Documentation</a>
-     */
-    var defaultContrast: Double?
-
-    /**
-     * The default hue of this provider in radians. 0.0 uses the unmodified imagery color.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/UrlTemplateImageryProvider.html#defaultHue">Online Documentation</a>
-     */
-    var defaultHue: Double?
-
-    /**
-     * The default saturation of this provider. 1.0 uses the unmodified imagery color. Less than 1.0 reduces the
-     * saturation while greater than 1.0 increases it.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/UrlTemplateImageryProvider.html#defaultSaturation">Online Documentation</a>
-     */
-    var defaultSaturation: Double?
-
-    /**
-     * The default gamma correction to apply to this provider.  1.0 uses the unmodified imagery color.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/UrlTemplateImageryProvider.html#defaultGamma">Online Documentation</a>
-     */
-    var defaultGamma: Double?
-
-    /**
-     * The default texture minification filter to apply to this provider.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/UrlTemplateImageryProvider.html#defaultMinificationFilter">Online Documentation</a>
-     */
-    var defaultMinificationFilter: TextureMinificationFilter
-
-    /**
-     * The default texture magnification filter to apply to this provider.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/UrlTemplateImageryProvider.html#defaultMagnificationFilter">Online Documentation</a>
-     */
-    var defaultMagnificationFilter: TextureMagnificationFilter
-
     /**
      * Gets or sets a value indicating whether feature picking is enabled.  If true, [UrlTemplateImageryProvider.pickFeatures] will
      * request the `options.pickFeaturesUrl` and attempt to interpret the features included in the response.  If false,
@@ -190,43 +123,37 @@ external class UrlTemplateImageryProvider(options: ConstructorOptions) {
     val proxy: Proxy
 
     /**
-     * Gets the width of each tile, in pixels. This function should
-     * not be called before [UrlTemplateImageryProvider.ready] returns true.
+     * Gets the width of each tile, in pixels.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/UrlTemplateImageryProvider.html#tileWidth">Online Documentation</a>
      */
     val tileWidth: Int
 
     /**
-     * Gets the height of each tile, in pixels.  This function should
-     * not be called before [UrlTemplateImageryProvider.ready] returns true.
+     * Gets the height of each tile, in pixels.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/UrlTemplateImageryProvider.html#tileHeight">Online Documentation</a>
      */
     val tileHeight: Int
 
     /**
      * Gets the maximum level-of-detail that can be requested, or undefined if there is no limit.
-     * This function should not be called before [UrlTemplateImageryProvider.ready] returns true.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/UrlTemplateImageryProvider.html#maximumLevel">Online Documentation</a>
      */
     val maximumLevel: Int?
 
     /**
-     * Gets the minimum level-of-detail that can be requested.  This function should
-     * not be called before [UrlTemplateImageryProvider.ready] returns true.
+     * Gets the minimum level-of-detail that can be requested.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/UrlTemplateImageryProvider.html#minimumLevel">Online Documentation</a>
      */
     val minimumLevel: Int
 
     /**
-     * Gets the tiling scheme used by this provider.  This function should
-     * not be called before [UrlTemplateImageryProvider.ready] returns true.
+     * Gets the tiling scheme used by this provider.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/UrlTemplateImageryProvider.html#tilingScheme">Online Documentation</a>
      */
     val tilingScheme: TilingScheme
 
     /**
-     * Gets the rectangle, in radians, of the imagery provided by this instance.  This function should
-     * not be called before [UrlTemplateImageryProvider.ready] returns true.
+     * Gets the rectangle, in radians, of the imagery provided by this instance.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/UrlTemplateImageryProvider.html#rectangle">Online Documentation</a>
      */
     val rectangle: Rectangle
@@ -234,8 +161,7 @@ external class UrlTemplateImageryProvider(options: ConstructorOptions) {
     /**
      * Gets the tile discard policy.  If not undefined, the discard policy is responsible
      * for filtering out "missing" tiles via its shouldDiscardImage function.  If this function
-     * returns undefined, no tiles are filtered.  This function should
-     * not be called before [UrlTemplateImageryProvider.ready] returns true.
+     * returns undefined, no tiles are filtered.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/UrlTemplateImageryProvider.html#tileDiscardPolicy">Online Documentation</a>
      */
     val tileDiscardPolicy: TileDiscardPolicy
@@ -262,7 +188,7 @@ external class UrlTemplateImageryProvider(options: ConstructorOptions) {
 
     /**
      * Gets the credit to display when this imagery provider is active.  Typically this is used to credit
-     * the source of the imagery.  This function should not be called before [UrlTemplateImageryProvider.ready] returns true.
+     * the source of the imagery.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/UrlTemplateImageryProvider.html#credit">Online Documentation</a>
      */
     val credit: Credit
@@ -272,11 +198,76 @@ external class UrlTemplateImageryProvider(options: ConstructorOptions) {
      * include an alpha channel.  If this property is false, an alpha channel, if present, will
      * be ignored.  If this property is true, any images without an alpha channel will be treated
      * as if their alpha is 1.0 everywhere.  When this property is false, memory usage
-     * and texture upload time are reduced.  This function should
-     * not be called before [ImageryProvider.ready] returns true.
+     * and texture upload time are reduced.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/UrlTemplateImageryProvider.html#hasAlphaChannel">Online Documentation</a>
      */
     val hasAlphaChannel: Boolean
+
+    /**
+     * The default alpha blending value of this provider, with 0.0 representing fully transparent and
+     * 1.0 representing fully opaque.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/UrlTemplateImageryProvider.html#defaultAlpha">Online Documentation</a>
+     */
+    var defaultAlpha: Double?
+
+    /**
+     * The default alpha blending value on the night side of the globe of this provider, with 0.0 representing fully transparent and
+     * 1.0 representing fully opaque.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/UrlTemplateImageryProvider.html#defaultNightAlpha">Online Documentation</a>
+     */
+    var defaultNightAlpha: Double?
+
+    /**
+     * The default alpha blending value on the day side of the globe of this provider, with 0.0 representing fully transparent and
+     * 1.0 representing fully opaque.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/UrlTemplateImageryProvider.html#defaultDayAlpha">Online Documentation</a>
+     */
+    var defaultDayAlpha: Double?
+
+    /**
+     * The default brightness of this provider.  1.0 uses the unmodified imagery color.  Less than 1.0
+     * makes the imagery darker while greater than 1.0 makes it brighter.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/UrlTemplateImageryProvider.html#defaultBrightness">Online Documentation</a>
+     */
+    var defaultBrightness: Double?
+
+    /**
+     * The default contrast of this provider.  1.0 uses the unmodified imagery color.  Less than 1.0 reduces
+     * the contrast while greater than 1.0 increases it.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/UrlTemplateImageryProvider.html#defaultContrast">Online Documentation</a>
+     */
+    var defaultContrast: Double?
+
+    /**
+     * The default hue of this provider in radians. 0.0 uses the unmodified imagery color.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/UrlTemplateImageryProvider.html#defaultHue">Online Documentation</a>
+     */
+    var defaultHue: Double?
+
+    /**
+     * The default saturation of this provider. 1.0 uses the unmodified imagery color. Less than 1.0 reduces the
+     * saturation while greater than 1.0 increases it.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/UrlTemplateImageryProvider.html#defaultSaturation">Online Documentation</a>
+     */
+    var defaultSaturation: Double?
+
+    /**
+     * The default gamma correction to apply to this provider.  1.0 uses the unmodified imagery color.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/UrlTemplateImageryProvider.html#defaultGamma">Online Documentation</a>
+     */
+    var defaultGamma: Double?
+
+    /**
+     * The default texture minification filter to apply to this provider.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/UrlTemplateImageryProvider.html#defaultMinificationFilter">Online Documentation</a>
+     */
+    var defaultMinificationFilter: TextureMinificationFilter
+
+    /**
+     * The default texture magnification filter to apply to this provider.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/UrlTemplateImageryProvider.html#defaultMagnificationFilter">Online Documentation</a>
+     */
+    var defaultMagnificationFilter: TextureMagnificationFilter
 
     /**
      * Reinitializes this instance.  Reinitializing an instance already in use is supported, but it is not
@@ -303,8 +294,6 @@ external class UrlTemplateImageryProvider(options: ConstructorOptions) {
     ): ReadonlyArray<Credit>
 
     /**
-     * Requests the image for a given tile.  This function should
-     * not be called before [UrlTemplateImageryProvider.ready] returns true.
      * @param [x] The tile X coordinate.
      * @param [y] The tile Y coordinate.
      * @param [level] The tile level.
@@ -322,7 +311,7 @@ external class UrlTemplateImageryProvider(options: ConstructorOptions) {
 
     /**
      * Asynchronously determines what features, if any, are located at a given longitude and latitude within
-     * a tile.  This function should not be called before [ImageryProvider.ready] returns true.
+     * a tile.
      * @param [x] The tile X coordinate.
      * @param [y] The tile Y coordinate.
      * @param [level] The tile level.
@@ -428,6 +417,7 @@ external class UrlTemplateImageryProvider(options: ConstructorOptions) {
      *   that this can be dynamically overridden by modifying the [UriTemplateImageryProvider.enablePickFeatures]
      *   property.
      *   Default value - `true`
+     * @property [tileDiscardPolicy] A policy for discarding tile images according to some criteria
      * @property [customTags] Allow to replace custom keywords in the URL template. The object must have strings as keys and functions as values.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/UrlTemplateImageryProvider.html#.ConstructorOptions">Online Documentation</a>
      */
@@ -448,6 +438,7 @@ external class UrlTemplateImageryProvider(options: ConstructorOptions) {
         var hasAlphaChannel: Boolean?
         var getFeatureInfoFormats: ReadonlyArray<GetFeatureInfoFormat>?
         var enablePickFeatures: Boolean?
+        var tileDiscardPolicy: TileDiscardPolicy?
         var customTags: Any?
     }
 }

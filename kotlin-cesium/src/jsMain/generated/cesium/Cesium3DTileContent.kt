@@ -65,6 +65,12 @@ abstract external class Cesium3DTileContent {
     abstract val innerContents: ReadonlyArray<Any>
 
     /**
+     * Returns true when the tile's content is ready to render; otherwise false
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileContent.html#ready">Online Documentation</a>
+     */
+    abstract val ready: Boolean
+
+    /**
      * Gets the promise that will be resolved when the tile's content is ready to render.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileContent.html#readyPromise">Online Documentation</a>
      */

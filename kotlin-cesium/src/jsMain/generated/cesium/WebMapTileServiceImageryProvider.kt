@@ -70,6 +70,125 @@ import kotlin.js.Promise
  */
 external class WebMapTileServiceImageryProvider(options: ConstructorOptions) {
     /**
+     * Gets the URL of the service hosting the imagery.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/WebMapTileServiceImageryProvider.html#url">Online Documentation</a>
+     */
+    val url: String
+
+    /**
+     * Gets the proxy used by this provider.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/WebMapTileServiceImageryProvider.html#proxy">Online Documentation</a>
+     */
+    val proxy: Proxy
+
+    /**
+     * Gets the width of each tile, in pixels.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/WebMapTileServiceImageryProvider.html#tileWidth">Online Documentation</a>
+     */
+    val tileWidth: Int
+
+    /**
+     * Gets the height of each tile, in pixels.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/WebMapTileServiceImageryProvider.html#tileHeight">Online Documentation</a>
+     */
+    val tileHeight: Int
+
+    /**
+     * Gets the maximum level-of-detail that can be requested.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/WebMapTileServiceImageryProvider.html#maximumLevel">Online Documentation</a>
+     */
+    val maximumLevel: Int?
+
+    /**
+     * Gets the minimum level-of-detail that can be requested.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/WebMapTileServiceImageryProvider.html#minimumLevel">Online Documentation</a>
+     */
+    val minimumLevel: Int
+
+    /**
+     * Gets the tiling scheme used by this provider.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/WebMapTileServiceImageryProvider.html#tilingScheme">Online Documentation</a>
+     */
+    val tilingScheme: TilingScheme
+
+    /**
+     * Gets the rectangle, in radians, of the imagery provided by this instance.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/WebMapTileServiceImageryProvider.html#rectangle">Online Documentation</a>
+     */
+    val rectangle: Rectangle
+
+    /**
+     * Gets the tile discard policy.  If not undefined, the discard policy is responsible
+     * for filtering out "missing" tiles via its shouldDiscardImage function.  If this function
+     * returns undefined, no tiles are filtered.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/WebMapTileServiceImageryProvider.html#tileDiscardPolicy">Online Documentation</a>
+     */
+    val tileDiscardPolicy: TileDiscardPolicy
+
+    /**
+     * Gets an event that is raised when the imagery provider encounters an asynchronous error.  By subscribing
+     * to the event, you will be notified of the error and can potentially recover from it.  Event listeners
+     * are passed an instance of [TileProviderError].
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/WebMapTileServiceImageryProvider.html#errorEvent">Online Documentation</a>
+     */
+    val errorEvent: DefaultEvent
+
+    /**
+     * Gets the mime type of images returned by this imagery provider.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/WebMapTileServiceImageryProvider.html#format">Online Documentation</a>
+     */
+    val format: String
+
+    /**
+     * Gets a value indicating whether or not the provider is ready for use.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/WebMapTileServiceImageryProvider.html#ready">Online Documentation</a>
+     */
+    val ready: Boolean
+
+    /**
+     * Gets a promise that resolves to true when the provider is ready for use.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/WebMapTileServiceImageryProvider.html#readyPromise">Online Documentation</a>
+     */
+    val readyPromise: Promise<Boolean>
+
+    /**
+     * Gets the credit to display when this imagery provider is active.  Typically this is used to credit
+     * the source of the imagery.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/WebMapTileServiceImageryProvider.html#credit">Online Documentation</a>
+     */
+    val credit: Credit
+
+    /**
+     * Gets a value indicating whether or not the images provided by this imagery provider
+     * include an alpha channel.  If this property is false, an alpha channel, if present, will
+     * be ignored.  If this property is true, any images without an alpha channel will be treated
+     * as if their alpha is 1.0 everywhere.  When this property is false, memory usage
+     * and texture upload time are reduced.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/WebMapTileServiceImageryProvider.html#hasAlphaChannel">Online Documentation</a>
+     */
+    val hasAlphaChannel: Boolean
+
+    /**
+     * Gets or sets a clock that is used to get keep the time used for time dynamic parameters.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/WebMapTileServiceImageryProvider.html#clock">Online Documentation</a>
+     */
+    var clock: Clock
+
+    /**
+     * Gets or sets a time interval collection that is used to get time dynamic parameters. The data of each
+     * TimeInterval is an object containing the keys and values of the properties that are used during
+     * tile requests.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/WebMapTileServiceImageryProvider.html#times">Online Documentation</a>
+     */
+    var times: TimeIntervalCollection
+
+    /**
+     * Gets or sets an object that contains static dimensions and their values.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/WebMapTileServiceImageryProvider.html#dimensions">Online Documentation</a>
+     */
+    var dimensions: Any
+
+    /**
      * The default alpha blending value of this provider, with 0.0 representing fully transparent and
      * 1.0 representing fully opaque.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/WebMapTileServiceImageryProvider.html#defaultAlpha">Online Documentation</a>
@@ -136,132 +255,6 @@ external class WebMapTileServiceImageryProvider(options: ConstructorOptions) {
     var defaultMagnificationFilter: TextureMagnificationFilter
 
     /**
-     * Gets the URL of the service hosting the imagery.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/WebMapTileServiceImageryProvider.html#url">Online Documentation</a>
-     */
-    val url: String
-
-    /**
-     * Gets the proxy used by this provider.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/WebMapTileServiceImageryProvider.html#proxy">Online Documentation</a>
-     */
-    val proxy: Proxy
-
-    /**
-     * Gets the width of each tile, in pixels. This function should
-     * not be called before [WebMapTileServiceImageryProvider.ready] returns true.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/WebMapTileServiceImageryProvider.html#tileWidth">Online Documentation</a>
-     */
-    val tileWidth: Int
-
-    /**
-     * Gets the height of each tile, in pixels.  This function should
-     * not be called before [WebMapTileServiceImageryProvider.ready] returns true.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/WebMapTileServiceImageryProvider.html#tileHeight">Online Documentation</a>
-     */
-    val tileHeight: Int
-
-    /**
-     * Gets the maximum level-of-detail that can be requested.  This function should
-     * not be called before [WebMapTileServiceImageryProvider.ready] returns true.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/WebMapTileServiceImageryProvider.html#maximumLevel">Online Documentation</a>
-     */
-    val maximumLevel: Int?
-
-    /**
-     * Gets the minimum level-of-detail that can be requested.  This function should
-     * not be called before [WebMapTileServiceImageryProvider.ready] returns true.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/WebMapTileServiceImageryProvider.html#minimumLevel">Online Documentation</a>
-     */
-    val minimumLevel: Int
-
-    /**
-     * Gets the tiling scheme used by this provider.  This function should
-     * not be called before [WebMapTileServiceImageryProvider.ready] returns true.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/WebMapTileServiceImageryProvider.html#tilingScheme">Online Documentation</a>
-     */
-    val tilingScheme: TilingScheme
-
-    /**
-     * Gets the rectangle, in radians, of the imagery provided by this instance.  This function should
-     * not be called before [WebMapTileServiceImageryProvider.ready] returns true.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/WebMapTileServiceImageryProvider.html#rectangle">Online Documentation</a>
-     */
-    val rectangle: Rectangle
-
-    /**
-     * Gets the tile discard policy.  If not undefined, the discard policy is responsible
-     * for filtering out "missing" tiles via its shouldDiscardImage function.  If this function
-     * returns undefined, no tiles are filtered.  This function should
-     * not be called before [WebMapTileServiceImageryProvider.ready] returns true.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/WebMapTileServiceImageryProvider.html#tileDiscardPolicy">Online Documentation</a>
-     */
-    val tileDiscardPolicy: TileDiscardPolicy
-
-    /**
-     * Gets an event that is raised when the imagery provider encounters an asynchronous error.  By subscribing
-     * to the event, you will be notified of the error and can potentially recover from it.  Event listeners
-     * are passed an instance of [TileProviderError].
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/WebMapTileServiceImageryProvider.html#errorEvent">Online Documentation</a>
-     */
-    val errorEvent: DefaultEvent
-
-    /**
-     * Gets the mime type of images returned by this imagery provider.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/WebMapTileServiceImageryProvider.html#format">Online Documentation</a>
-     */
-    val format: String
-
-    /**
-     * Gets a value indicating whether or not the provider is ready for use.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/WebMapTileServiceImageryProvider.html#ready">Online Documentation</a>
-     */
-    val ready: Boolean
-
-    /**
-     * Gets a promise that resolves to true when the provider is ready for use.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/WebMapTileServiceImageryProvider.html#readyPromise">Online Documentation</a>
-     */
-    val readyPromise: Promise<Boolean>
-
-    /**
-     * Gets the credit to display when this imagery provider is active.  Typically this is used to credit
-     * the source of the imagery.  This function should not be called before [WebMapTileServiceImageryProvider.ready] returns true.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/WebMapTileServiceImageryProvider.html#credit">Online Documentation</a>
-     */
-    val credit: Credit
-
-    /**
-     * Gets a value indicating whether or not the images provided by this imagery provider
-     * include an alpha channel.  If this property is false, an alpha channel, if present, will
-     * be ignored.  If this property is true, any images without an alpha channel will be treated
-     * as if their alpha is 1.0 everywhere.  When this property is false, memory usage
-     * and texture upload time are reduced.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/WebMapTileServiceImageryProvider.html#hasAlphaChannel">Online Documentation</a>
-     */
-    val hasAlphaChannel: Boolean
-
-    /**
-     * Gets or sets a clock that is used to get keep the time used for time dynamic parameters.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/WebMapTileServiceImageryProvider.html#clock">Online Documentation</a>
-     */
-    var clock: Clock
-
-    /**
-     * Gets or sets a time interval collection that is used to get time dynamic parameters. The data of each
-     * TimeInterval is an object containing the keys and values of the properties that are used during
-     * tile requests.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/WebMapTileServiceImageryProvider.html#times">Online Documentation</a>
-     */
-    var times: TimeIntervalCollection
-
-    /**
-     * Gets or sets an object that contains static dimensions and their values.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/WebMapTileServiceImageryProvider.html#dimensions">Online Documentation</a>
-     */
-    var dimensions: Any
-
-    /**
      * Gets the credits to be displayed when a given tile is displayed.
      * @param [x] The tile X coordinate.
      * @param [y] The tile Y coordinate.
@@ -276,8 +269,7 @@ external class WebMapTileServiceImageryProvider(options: ConstructorOptions) {
     ): ReadonlyArray<Credit>
 
     /**
-     * Requests the image for a given tile.  This function should
-     * not be called before [WebMapTileServiceImageryProvider.ready] returns true.
+     * Requests the image for a given tile.
      * @param [x] The tile X coordinate.
      * @param [y] The tile Y coordinate.
      * @param [level] The tile level.

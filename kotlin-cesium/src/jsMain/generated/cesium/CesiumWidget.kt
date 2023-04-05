@@ -3,13 +3,11 @@
 @file:JsModule("cesium")
 
 @file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
     "EXTERNAL_CLASS_CONSTRUCTOR_PROPERTY_PARAMETER",
 )
 
 package cesium
 
-import js.core.jso
 import web.dom.Element
 import web.html.HTMLCanvasElement
 
@@ -19,45 +17,49 @@ import web.html.HTMLCanvasElement
  * // For each example, include a link to CesiumWidget.css stylesheet in HTML head,
  * // and in the body, include: <div id="cesiumContainer"></div>
  *
- * //Widget with no terrain and default Bing Maps imagery provider.
- * const widget = new CesiumWidget('cesiumContainer');
+ * // Widget with no terrain and default Bing Maps imagery provider.
+ * const widget = new CesiumWidget("cesiumContainer");
  *
- * //Widget with ion imagery and Cesium World Terrain.
- * const widget2 = new CesiumWidget('cesiumContainer', {
- *     imageryProvider : createWorldImagery(),
- *     terrainProvider : createWorldTerrain(),
- *     skyBox : new SkyBox({
- *         sources : {
- *           positiveX : 'stars/TychoSkymapII.t3_08192x04096_80_px.jpg',
- *           negativeX : 'stars/TychoSkymapII.t3_08192x04096_80_mx.jpg',
- *           positiveY : 'stars/TychoSkymapII.t3_08192x04096_80_py.jpg',
- *           negativeY : 'stars/TychoSkymapII.t3_08192x04096_80_my.jpg',
- *           positiveZ : 'stars/TychoSkymapII.t3_08192x04096_80_pz.jpg',
- *           negativeZ : 'stars/TychoSkymapII.t3_08192x04096_80_mz.jpg'
- *         }
+ * // Widget with ion imagery and Cesium World Terrain.
+ * const widget2 = new CesiumWidget("cesiumContainer", {
+ *     baseLayer: ImageryLayer.fromWorldTerrain(),
+ *     terrain: Terrain.fromWorldTerrain()
+ *     skyBox: new SkyBox({
+ *       sources: {
+ *         positiveX: "stars/TychoSkymapII.t3_08192x04096_80_px.jpg",
+ *         negativeX: "stars/TychoSkymapII.t3_08192x04096_80_mx.jpg",
+ *         positiveY: "stars/TychoSkymapII.t3_08192x04096_80_py.jpg",
+ *         negativeY: "stars/TychoSkymapII.t3_08192x04096_80_my.jpg",
+ *         positiveZ: "stars/TychoSkymapII.t3_08192x04096_80_pz.jpg",
+ *         negativeZ: "stars/TychoSkymapII.t3_08192x04096_80_mz.jpg"
+ *       }
  *     }),
  *     // Show Columbus View map with Web Mercator projection
- *     sceneMode : SceneMode.COLUMBUS_VIEW,
- *     mapProjection : new WebMercatorProjection()
+ *     sceneMode: SceneMode.COLUMBUS_VIEW,
+ *     mapProjection: new WebMercatorProjection()
  * });
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CesiumWidget.html">Online Documentation</a>
  *
  * @constructor
  * @property [container] The DOM element that will contain the widget.
+ * @param [baseLayer] The bottommost imagery layer applied to the globe. If set to `false`, no imagery provider will be added.
+ *   Default value - `ImageryLayer.fromWorldImagery()`
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CesiumWidget.html">Online Documentation</a>
  */
 external class CesiumWidget(
     val container: Element,
     options: ConstructorOptions? = definedExternally,
+    baseLayer: dynamic = definedExternally,
 ) {
     /**
      * @property [clock] The clock to use to control current time.
      *   Default value - [Clock()][Clock]
-     * @property [imageryProvider] The imagery provider to serve as the base layer. If set to `false`, no imagery provider will be added.
+     * @property [imageryProvider] The imagery provider to serve as the base layer. If set to `false`, no imagery provider will be added. Deprecated.
      *   Default value - [createWorldImagery()][createWorldImagery]
      * @property [terrainProvider] The terrain provider.
      *   Default value - [EllipsoidTerrainProvider][EllipsoidTerrainProvider]
+     * @property [terrain] A terrain object which handles asynchronous terrain provider. Can only specify if options.terrainProvider is undefined.
      * @property [skyBox] The skybox used to render the stars.  When `undefined`, the default stars are used. If set to `false`, no skyBox, Sun, or Moon will be added.
      * @property [skyAtmosphere] Blue sky, and the glow around the Earth's limb.  Set to `false` to turn it off.
      * @property [sceneMode] The initial scene mode.
@@ -100,6 +102,7 @@ external class CesiumWidget(
         var clock: Clock?
         var imageryProvider: dynamic
         var terrainProvider: TerrainProvider?
+        var terrain: Terrain?
         var skyBox: dynamic
         var skyAtmosphere: dynamic
         var sceneMode: SceneMode?
@@ -266,9 +269,3 @@ external class CesiumWidget(
      */
     fun render()
 }
-
-inline fun CesiumWidget(
-    container: Element,
-    block: CesiumWidget.ConstructorOptions.() -> Unit,
-): CesiumWidget =
-    CesiumWidget(container, options = jso(block))

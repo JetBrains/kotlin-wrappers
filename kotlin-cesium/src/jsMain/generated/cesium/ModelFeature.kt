@@ -2,10 +2,6 @@
 
 @file:JsModule("cesium")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium
 
 import js.core.ReadonlyArray
@@ -29,7 +25,7 @@ import js.core.ReadonlyArray
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ModelFeature.html">Online Documentation</a>
  */
-sealed external class ModelFeature(options: ConstructorOptions) {
+sealed external class ModelFeature {
     /**
      * @property [model] The model the feature belongs to.
      * @property [featureId] The unique integral identifier for this feature.
