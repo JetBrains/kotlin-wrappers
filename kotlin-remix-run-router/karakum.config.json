@@ -1,6 +1,12 @@
 {
     "input": "<nodeModules>/@remix-run/router/dist/**/*.d.ts",
     "output": "src/jsMain/generated",
+    "ignoreOutput": [
+        "**/LowerCaseFormMethod.kt",
+        "**/UpperCaseFormMethod.kt",
+        "**/V7_FormMethod.kt",
+        "**/V7_MutationFormMethod.kt"
+    ],
     "libraryName": "@remix-run/router",
     "libraryNameOutputPrefix": true,
     "granularity": "top-level",

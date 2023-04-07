@@ -10,9 +10,10 @@ package remix.run.router
  */
 
 sealed external interface RouterInit {
-    var basename: String?
     var routes: js.core.ReadonlyArray<AgnosticRouteObject>
     var history: History
-    var hydrationData: HydrationState?
+    var basename: String?
     var detectErrorBoundary: DetectErrorBoundaryFunction?
+    var future: FutureConfig?
+    var hydrationData: HydrationState?
 }
