@@ -26,20 +26,20 @@
             "react.router.RouteObject",
             "remix.run.router.Router as RemixRouter"
         ],
-        "CreateBrowserRouterOpts.kt": [
-            "web.window.Window",
-            "remix.run.router.HydrationState"
-        ],
         "createHashRouter.kt": [
             "react.router.RouteObject",
             "remix.run.router.Router as RemixRouter"
         ],
-        "CreateHashRouterOpts.kt": [
-            "web.window.Window",
-            "remix.run.router.HydrationState"
-        ],
         "createSearchParams.kt": [
             "web.url.URLSearchParams"
+        ],
+        "dom.kt": [
+            "remix.run.router.HTMLFormMethod"
+        ],
+        "DOMRouterOpts.kt": [
+            "web.window.Window",
+            "remix.run.router.FutureConfig",
+            "remix.run.router.HydrationState"
         ],
         "FetcherWithComponents.kt": [
             "react.ForwardRefExoticComponent",
@@ -47,7 +47,7 @@
         ],
         "FormProps.kt": [
             "web.html.HTMLFormElement",
-            "remix.run.router.FormMethod",
+            "remix.run.router.HTMLFormMethod",
             "react.router.RelativeRoutingType"
         ],
         "getFormSubmissionInfo.kt": [
@@ -90,7 +90,7 @@
         "SubmitOptions.kt": [
             "react.router.RelativeRoutingType",
             "remix.run.router.FormEncType",
-            "remix.run.router.FormMethod"
+            "remix.run.router.HTMLFormMethod"
         ],
         "useBeforeUnload.kt": [
             "web.window.BeforeUnloadEvent"

@@ -14,7 +14,7 @@ sealed external interface SubmissionNavigateOptions {
     var replace: Boolean?
     var state: LocationState?
     var preventScrollReset: Boolean?
-    var formMethod: FormMethod?
+    var formMethod: HTMLFormMethod?
     var formEncType: FormEncType?
     var formData: FormData
 }

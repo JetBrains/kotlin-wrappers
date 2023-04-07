@@ -7,7 +7,7 @@
 package remix.run.router
 
 
-/* export type { ActionFunction, ActionFunctionArgs, AgnosticDataIndexRouteObject, AgnosticDataNonIndexRouteObject, AgnosticDataRouteMatch, AgnosticDataRouteObject, AgnosticIndexRouteObject, AgnosticNonIndexRouteObject, AgnosticRouteMatch, AgnosticRouteObject, LazyRouteFunction, TrackedPromise, FormEncType, FormMethod, JsonFunction, LoaderFunction, LoaderFunctionArgs, ParamParseKey, Params, PathMatch, PathPattern, RedirectFunction, ShouldRevalidateFunction, Submission, } from "./utils"; */
+/* export type { ActionFunction, ActionFunctionArgs, AgnosticDataIndexRouteObject, AgnosticDataNonIndexRouteObject, AgnosticDataRouteMatch, AgnosticDataRouteObject, AgnosticIndexRouteObject, AgnosticNonIndexRouteObject, AgnosticRouteMatch, AgnosticRouteObject, LazyRouteFunction, TrackedPromise, FormEncType, FormMethod, HTMLFormMethod, JsonFunction, LoaderFunction, LoaderFunctionArgs, ParamParseKey, Params, PathMatch, PathPattern, RedirectFunction, ShouldRevalidateFunction, V7_FormMethod, } from "./utils"; */
 
 /* export { AbortedDeferredError, ErrorResponse, defer, generatePath, getToPathname, isRouteErrorResponse, joinPaths, json, matchPath, matchRoutes, normalizePathname, redirect, resolvePath, resolveTo, stripBasename, } from "./utils"; */
 

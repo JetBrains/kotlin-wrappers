@@ -15,13 +15,13 @@ package react.router.dom
 
 /* import type { NavigateOptions, RelativeRoutingType, RouteObject, To } from "react-router"; */
 
-/* import type { Fetcher, FormEncType, FormMethod, GetScrollRestorationKeyFunction, History, HydrationState, Router as RemixRouter } from "@remix-run/router"; */
+/* import type { Fetcher, FormEncType, FormMethod, FutureConfig, GetScrollRestorationKeyFunction, History, HTMLFormMethod, HydrationState, Router as RemixRouter, V7_FormMethod } from "@remix-run/router"; */
 
 /* import type { SubmitOptions, ParamKeyValuePair, URLSearchParamsInit } from "./dom"; */
 
 /* import { createSearchParams } from "./dom"; */
 
-/* export type { FormEncType, FormMethod, GetScrollRestorationKeyFunction, ParamKeyValuePair, SubmitOptions, URLSearchParamsInit, }; */
+/* export type { FormEncType, FormMethod, GetScrollRestorationKeyFunction, ParamKeyValuePair, SubmitOptions, URLSearchParamsInit, V7_FormMethod, }; */
 
 /* export { createSearchParams }; */
 

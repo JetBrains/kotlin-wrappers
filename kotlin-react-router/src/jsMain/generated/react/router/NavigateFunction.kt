@@ -19,6 +19,6 @@ sealed external interface NavigateFunction {
 
     @Suppress("DEPRECATION")
     @nativeInvoke
-    operator fun invoke(delta: Double)
+    operator fun invoke(delta: Double): Unit
 
 }
