@@ -6,7 +6,7 @@ package react.router.dom
 
 import react.router.RelativeRoutingType
 import remix.run.router.FormEncType
-import remix.run.router.FormMethod
+import remix.run.router.HTMLFormMethod
 
 
 sealed external interface SubmitOptions {
@@ -14,7 +14,7 @@ sealed external interface SubmitOptions {
      * The HTTP method used to submit the form. Overrides `<form method>`.
      * Defaults to "GET".
      */
-    var method: FormMethod?
+    var method: HTMLFormMethod?
 
     /**
      * The action URL path used to submit the form. Overrides `<form action>`.

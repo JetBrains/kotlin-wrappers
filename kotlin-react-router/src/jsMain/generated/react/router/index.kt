@@ -7,7 +7,7 @@
 package react.router
 
 
-/* import type { ActionFunction, ActionFunctionArgs, Blocker, BlockerFunction, Fetcher, HydrationState, JsonFunction, LoaderFunction, LoaderFunctionArgs, Location, Navigation, Params, ParamParseKey, Path, PathMatch, PathPattern, RedirectFunction, Router as RemixRouter, ShouldRevalidateFunction, To, InitialEntry, LazyRouteFunction } from "@remix-run/router"; */
+/* import type { ActionFunction, ActionFunctionArgs, Blocker, BlockerFunction, Fetcher, HydrationState, JsonFunction, LoaderFunction, LoaderFunctionArgs, Location, Navigation, Params, ParamParseKey, Path, PathMatch, PathPattern, RedirectFunction, Router as RemixRouter, ShouldRevalidateFunction, To, InitialEntry, LazyRouteFunction, FutureConfig } from "@remix-run/router"; */
 
 /* import { AbortedDeferredError, Action as NavigationType, createPath, defer, generatePath, isRouteErrorResponse, json, matchPath, matchRoutes, parsePath, redirect, resolvePath } from "@remix-run/router"; */
 

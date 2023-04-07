@@ -5,7 +5,7 @@
 package react.router.dom
 
 import react.router.RelativeRoutingType
-import remix.run.router.FormMethod
+import remix.run.router.HTMLFormMethod
 import web.html.HTMLFormElement
 
 
@@ -18,7 +18,7 @@ sealed external interface FormProps : react.Props, react.PropsWithRef<HTMLFormEl
     override var method: String?
 
     @JsName("method")
-    var routerMethod: FormMethod?
+    var routerMethod: HTMLFormMethod?
 
     /**
      * Normal `<form action>` but supports React Router's relative paths.

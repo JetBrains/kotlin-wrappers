@@ -34,6 +34,7 @@
             "remix.run.router.Router as RemixRouter"
         ],
         "CreateMemoryRouterOpts.kt": [
+            "remix.run.router.FutureConfig",
             "remix.run.router.HydrationState",
             "remix.run.router.InitialEntry"
         ],
