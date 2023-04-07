@@ -10,6 +10,7 @@ dependencies {
         api(project(":kotlin-cesium"))
         api(project(":kotlin-css"))
         api(project(":kotlin-csstype"))
+        api(project(":kotlin-electron"))
         api(project(":kotlin-emotion"))
         api(project(":kotlin-extensions"))
         api(project(":kotlin-js"))

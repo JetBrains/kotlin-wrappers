@@ -1,0 +1,13 @@
+{
+    "input": [
+        "<nodeModules>/electron/electron.d.ts"
+    ],
+    "ignoreInput": [],
+    "output": "src/jsMain/generated",
+    "libraryName": "electron",
+    "libraryNameOutputPrefix": true,
+    "granularity": "top-level",
+    "importInjector": {
+
+    }
+}
