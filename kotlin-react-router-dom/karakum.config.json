@@ -16,7 +16,7 @@
     "libraryNameOutputPrefix": true,
     "granularity": "top-level",
     "moduleNameMapper": {
-        ".*": ""
+        ".*": "react-router-dom"
     },
     "importInjector": {
         "BrowserRouterProps.kt": [

@@ -11,7 +11,7 @@
     "libraryNameOutputPrefix": true,
     "granularity": "top-level",
     "moduleNameMapper": {
-        ".*": ""
+        ".*": "@remix-run/router"
     },
     "packageNameMapper": {
         "router.kt": "router.const.kt"

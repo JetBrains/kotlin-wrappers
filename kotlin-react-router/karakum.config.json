@@ -17,13 +17,13 @@
     "libraryNameOutputPrefix": true,
     "granularity": "top-level",
     "moduleNameMapper": {
-        ".*": ""
+        ".*": "react-router"
     },
     "packageNameMapper": {
-        ".*/(.*).kt": "$1.kt"
+        "/lib": "/"
     },
     "importInjector": {
-        "_renderMatches.kt": [
+        "RenderMatches.kt": [
             "remix.run.router.RouterState"
         ],
         "context.kt": [
