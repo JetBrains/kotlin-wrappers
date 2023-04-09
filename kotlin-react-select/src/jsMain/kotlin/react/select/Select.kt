@@ -4,6 +4,7 @@
 package react.select
 
 import csstype.ClassName
+import csstype.Length
 import react.ComponentClass
 import react.Key
 import react.PropsWithClassName
@@ -158,10 +159,10 @@ external interface SelectProps<Option : Any, Group : GroupBase<Option>> : PropsW
     var loadingMessage: (inputValue: InputValue) -> ReactNode
 
     /** Minimum height of the menu before flipping */
-    var minMenuHeight: Double
+    var minMenuHeight: Length?
 
     /** Maximum height of the menu before scrolling */
-    var maxMenuHeight: Double
+    var maxMenuHeight: Length?
 
     /** Whether the menu is open */
     var menuIsOpen: Boolean?
