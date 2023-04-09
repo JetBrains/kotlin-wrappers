@@ -53,6 +53,12 @@ external interface ChipClasses {
     /** Styles applied to the root element if `variant="outlined"` and `color="secondary"`. */
     var outlinedSecondary: ClassName
 
+    /** Styles applied to the root element if `variant="filled"` and `color="primary"`. */
+    var filledPrimary: ClassName
+
+    /** Styles applied to the root element if `variant="filled"` and `color="secondary"`. */
+    var filledSecondary: ClassName
+
     /** Styles applied to the avatar element. */
     var avatar: ClassName
 
@@ -112,6 +118,12 @@ external interface ChipClasses {
 
     /** Styles applied to the deleteIcon element if `color="secondary"` and `variant="outlined"`. */
     var deleteIconOutlinedColorSecondary: ClassName
+
+    /** Styles applied to the deleteIcon element if `color="primary"` and `variant="filled"`. */
+    var deleteIconFilledColorPrimary: ClassName
+
+    /** Styles applied to the deleteIcon element if `color="secondary"` and `variant="filled"`. */
+    var deleteIconFilledColorSecondary: ClassName
 
     /** State class applied to the root element if keyboard focused. */
     var focusVisible: ClassName
