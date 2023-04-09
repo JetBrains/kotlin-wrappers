@@ -19,21 +19,27 @@ sealed external interface Router {
      *
      * Return the basename for the router
      */
-    /* get basename(): RouterInit["basename"]; */
+
+    val basename: String?
+
     /**
      * @internal
      * PRIVATE - DO NOT USE
      *
      * Return the current state of the router
      */
-    /* get state(): RouterState; */
+
+    val state: RouterState
+
     /**
      * @internal
      * PRIVATE - DO NOT USE
      *
      * Return the routes for this router instance
      */
-    /* get routes(): AgnosticDataRouteObject[]; */
+
+    val routes: js.core.ReadonlyArray<AgnosticDataRouteObject>
+
     /**
      * @internal
      * PRIVATE - DO NOT USE
