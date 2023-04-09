@@ -76,7 +76,7 @@ external interface SelectProps<Option : Any, Group : GroupBase<Option>> : PropsW
      * instead. For a list of the components that can be passed in, and the shape
      * that will be passed to them, see [the components docs](/components)
      */
-    var components: SelectComponentsConfig<Option, Group>
+    var components: SelectComponentsConfig<Option, Group>?
 
     /** Whether the value of the select, e.g. SingleValue, should be displayed in the control. */
     var controlShouldRenderValue: Boolean?
@@ -95,7 +95,7 @@ external interface SelectProps<Option : Any, Group : GroupBase<Option>> : PropsW
      *
      * An example can be found in the [Replacing builtins](/advanced#replacing-builtins) documentation.
      */
-    var formatGroupLabel: (group: Group) -> ReactNode
+    var formatGroupLabel: ((group: Group) -> ReactNode)?
 
     /** Formats option labels in the menu and control as React components */
     var formatOptionLabel: ((data: Option, formatOptionLabelMeta: FormatOptionLabelMeta<Option>) -> ReactNode)?
@@ -106,10 +106,10 @@ external interface SelectProps<Option : Any, Group : GroupBase<Option>> : PropsW
      * Note: Failure to resolve to a String type can interfere with filtering and
      * screen reader support.
      */
-    var getOptionLabel: GetOptionLabel<Option>
+    var getOptionLabel: GetOptionLabel<Option>?
 
     /** Resolves option data to a String to compare options and specify value attributes */
-    var getOptionValue: GetOptionValue<Option>
+    var getOptionValue: GetOptionValue<Option>?
 
     /** Hide the selected option from the menu */
     var hideSelectedOptions: Boolean?
@@ -118,7 +118,7 @@ external interface SelectProps<Option : Any, Group : GroupBase<Option>> : PropsW
     var id: String?
 
     /** The value of the search input */
-    var inputValue: String
+    var inputValue: String?
 
     /** The id of the search input */
     var inputId: String?
@@ -140,10 +140,10 @@ external interface SelectProps<Option : Any, Group : GroupBase<Option>> : PropsW
      *
      * An example can be found in the [Replacing builtins](/advanced#replacing-builtins) documentation.
      */
-    var isOptionDisabled: (option: Option, selectValue: Options<Option>) -> Boolean
+    var isOptionDisabled: ((option: Option, selectValue: Options<Option>) -> Boolean)?
 
     /** Override the built-in logic to detect whether an option is selected */
-    var isOptionSelected: (option: Option, selectValue: Options<Option>) -> Boolean
+    var isOptionSelected: ((option: Option, selectValue: Options<Option>) -> Boolean)?
 
     /** Support multiple selected options */
     var isMulti: Boolean?
@@ -170,10 +170,10 @@ external interface SelectProps<Option : Any, Group : GroupBase<Option>> : PropsW
      * Default placement of the menu in relation to the control. 'auto' will flip
      * when there isn't enough space below the control.
      */
-    var menuPlacement: MenuPlacement
+    var menuPlacement: MenuPlacement?
 
     /** The CSS position value of the menu, when "fixed" extra layout management is required */
-    var menuPosition: MenuPosition
+    var menuPosition: MenuPosition?
 
     /**
      * Whether the menu should use a portal, and where it should attach
@@ -192,28 +192,28 @@ external interface SelectProps<Option : Any, Group : GroupBase<Option>> : PropsW
     var name: String?
 
     /** Text to display when there are no options */
-    var noOptionsMessage: (inputValue: InputValue) -> ReactNode
+    var noOptionsMessage: ((inputValue: InputValue) -> ReactNode)?
 
     /** Handle blur events on the control */
     var onBlur: FocusEventHandler<HTMLInputElement>?
 
     /** Handle change events on the select */
-    var onChange: (newValue: OnChangeValue<Option>, actionMeta: ActionMeta<Option>) -> Unit
+    var onChange: ((newValue: OnChangeValue<Option>, actionMeta: ActionMeta<Option>) -> Unit)?
 
     /** Handle focus events on the control */
     var onFocus: FocusEventHandler<HTMLInputElement>?
 
     /** Handle change events on the input */
-    var onInputChange: (newValue: String, actionMeta: InputActionMeta) -> Unit
+    var onInputChange: ((newValue: String, actionMeta: InputActionMeta) -> Unit)?
 
     /** Handle key down events on the select */
     var onKeyDown: KeyboardEventHandler<HTMLDivElement>?
 
     /** Handle the menu opening */
-    var onMenuOpen: () -> Unit
+    var onMenuOpen: (() -> Unit)?
 
     /** Handle the menu closing */
-    var onMenuClose: () -> Unit
+    var onMenuClose: (() -> Unit)?
 
     /** Fired when the user scrolls to the top of the menu */
     // TODO TouchEvent
@@ -230,13 +230,13 @@ external interface SelectProps<Option : Any, Group : GroupBase<Option>> : PropsW
     var openMenuOnClick: Boolean?
 
     /** Array of options that populate the select menu */
-    var options: OptionsOrGroups<Option, Group>
+    var options: OptionsOrGroups<Option, Group>?
 
     /** Number of options to jump in menu when page{up|down} keys are used */
-    var pageSize: Int
+    var pageSize: Int?
 
     /** Placeholder for the select value */
-    var placeholder: ReactNode
+    var placeholder: ReactNode?
 
     /** Status to relay to screen readers */
     var screenReaderStatus: (obj: dynamic /*{ count: Int}*/) -> String
@@ -246,19 +246,19 @@ external interface SelectProps<Option : Any, Group : GroupBase<Option>> : PropsW
      *
      * A basic example can be found at the bottom of the [Replacing builtins](/advanced#replacing-builtins) documentation.
      */
-    var styles: StylesConfig<Option, Group>
+    var styles: StylesConfig<Option, Group>?
 
     /** Theme modifier method */
     var theme: ThemeConfig?
 
     /** Sets the tabIndex attribute on the input */
-    var tabIndex: Int
+    var tabIndex: Int?
 
     /** Select the currently focused option when the user presses tab */
     var tabSelectsValue: Boolean?
 
     /** The value of the select reflected by the selected option */
-    var value: PropsValue<Option>
+    var value: PropsValue<Option>?
 
     /** Sets the form attribute on the input */
     var form: String?
