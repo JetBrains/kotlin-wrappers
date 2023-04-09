@@ -4,18 +4,15 @@ package mui.base
 
 import csstype.ClassName
 
-external interface SwitchUnstyledProps : react.PropsWithClassName {
+external interface SwitchUnstyledProps :
+    SwitchUnstyledOwnProps,
+    react.dom.html.HTMLAttributes<web.html.HTMLSpanElement>
+
+external interface SwitchUnstyledOwnProps : react.PropsWithClassName {
     /**
      * Class name applied to the root element.
      */
     override var className: ClassName?
-
-    /**
-     * The component used for the Root slot.
-     * Either a string to use a HTML element or a component.
-     * This is equivalent to `components.Root`. If both are provided, the `component` is used.
-     */
-    var component: react.ElementType<*>?
 
     /**
      * The components used for each slot inside the Switch.
