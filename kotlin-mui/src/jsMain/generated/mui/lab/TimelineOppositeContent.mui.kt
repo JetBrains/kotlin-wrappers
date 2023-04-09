@@ -2,13 +2,13 @@
 
 @file:Suppress(
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
+    "NAME_CONTAINS_ILLEGAL_CHARS",
 )
 
 package mui.lab
 
 import csstype.ClassName
 
-@Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
 // language=JavaScript
 @JsName("""(/*union*/{root: 'MuiTimelineOppositeContent-root', positionRight: 'MuiTimelineOppositeContent-positionRight', positionLeft: 'MuiTimelineOppositeContent-positionLeft', positionAlternate: 'MuiTimelineOppositeContent-positionAlternate'}/*union*/)""")
 sealed external interface MuiTimelineOppositeContent {

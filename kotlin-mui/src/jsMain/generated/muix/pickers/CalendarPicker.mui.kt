@@ -2,13 +2,13 @@
 
 @file:Suppress(
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
+    "NAME_CONTAINS_ILLEGAL_CHARS",
 )
 
 package muix.pickers
 
 import csstype.ClassName
 
-@Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
 // language=JavaScript
 @JsName("""(/*union*/{root: 'MuiCalendarPicker-root', viewTransitionContainer: 'MuiCalendarPicker-viewTransitionContainer'}/*union*/)""")
 sealed external interface MuiCalendarPicker {

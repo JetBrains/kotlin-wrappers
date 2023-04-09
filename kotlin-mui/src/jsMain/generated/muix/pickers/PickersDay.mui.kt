@@ -2,13 +2,13 @@
 
 @file:Suppress(
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
+    "NAME_CONTAINS_ILLEGAL_CHARS",
 )
 
 package muix.pickers
 
 import csstype.ClassName
 
-@Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
 // language=JavaScript
 @JsName("""(/*union*/{root: 'MuiPickersDay-root', dayWithMargin: 'MuiPickersDay-dayWithMargin', dayOutsideMonth: 'MuiPickersDay-dayOutsideMonth', hiddenDaySpacingFiller: 'MuiPickersDay-hiddenDaySpacingFiller', today: 'MuiPickersDay-today'}/*union*/)""")
 sealed external interface MuiPickersDay {

@@ -2,13 +2,13 @@
 
 @file:Suppress(
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
+    "NAME_CONTAINS_ILLEGAL_CHARS",
 )
 
 package mui.material
 
 import csstype.ClassName
 
-@Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
 // language=JavaScript
 @JsName("""(/*union*/{root: 'MuiCircularProgress-root', determinate: 'MuiCircularProgress-determinate', indeterminate: 'MuiCircularProgress-indeterminate', colorPrimary: 'MuiCircularProgress-colorPrimary', colorSecondary: 'MuiCircularProgress-colorSecondary', svg: 'MuiCircularProgress-svg', circle: 'MuiCircularProgress-circle', circleDeterminate: 'MuiCircularProgress-circleDeterminate', circleIndeterminate: 'MuiCircularProgress-circleIndeterminate', circleDisableShrink: 'MuiCircularProgress-circleDisableShrink'}/*union*/)""")
 sealed external interface MuiCircularProgress {

@@ -5,6 +5,11 @@ package mui.base
 import csstype.ClassName
 
 external interface OptionUnstyledProps<TValue> :
+    OptionUnstyledOwnProps<TValue> {
+    var component: react.ElementType<*>?
+}
+
+external interface OptionUnstyledOwnProps<TValue> :
     react.PropsWithChildren,
     react.PropsWithClassName {
     /**
@@ -23,14 +28,6 @@ external interface OptionUnstyledProps<TValue> :
     override var className: ClassName?
 
     /**
-     * The component used for the Root slot.
-     * Either a string to use a HTML element or a component.
-     * This is equivalent to components.Root.
-     * If both are provided, the component is used.
-     */
-    var component: react.ElementType<*>?
-
-    /**
      * The components used for each slot inside the OptionUnstyled.
      * Either a string to use a HTML element or a component.
      * @default {}
@@ -42,7 +39,7 @@ external interface OptionUnstyledProps<TValue> :
     }
 
     /**
-     * The props used for each slot inside the Input.
+     * The props used for each slot inside the OptionUnstyled.
      * @default {}
      */
     var componentsProps: ComponentsProps?
@@ -56,4 +53,8 @@ external interface OptionUnstyledProps<TValue> :
      * Used for keyboard text navigation matching.
      */
     var label: String?
+}
+
+external interface OptionUnstyledType {
+    var propTypes: Any?
 }

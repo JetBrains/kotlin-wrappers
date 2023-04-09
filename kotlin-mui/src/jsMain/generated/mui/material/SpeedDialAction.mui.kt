@@ -2,13 +2,13 @@
 
 @file:Suppress(
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
+    "NAME_CONTAINS_ILLEGAL_CHARS",
 )
 
 package mui.material
 
 import csstype.ClassName
 
-@Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
 // language=JavaScript
 @JsName("""(/*union*/{fab: 'MuiSpeedDialAction-fab', fabClosed: 'MuiSpeedDialAction-fabClosed', staticTooltip: 'MuiSpeedDialAction-staticTooltip', staticTooltipClosed: 'MuiSpeedDialAction-staticTooltipClosed', staticTooltipLabel: 'MuiSpeedDialAction-staticTooltipLabel', tooltipPlacementLeft: 'MuiSpeedDialAction-tooltipPlacementLeft', tooltipPlacementRight: 'MuiSpeedDialAction-tooltipPlacementRight'}/*union*/)""")
 sealed external interface MuiSpeedDialAction {

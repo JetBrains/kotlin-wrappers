@@ -2,13 +2,13 @@
 
 @file:Suppress(
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
+    "NAME_CONTAINS_ILLEGAL_CHARS",
 )
 
 package mui.material
 
 import csstype.ClassName
 
-@Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
 // language=JavaScript
 @JsName("""(/*union*/{root: 'MuiTableCell-root', head: 'MuiTableCell-head', body: 'MuiTableCell-body', footer: 'MuiTableCell-footer', sizeSmall: 'MuiTableCell-sizeSmall', sizeMedium: 'MuiTableCell-sizeMedium', paddingCheckbox: 'MuiTableCell-paddingCheckbox', paddingNone: 'MuiTableCell-paddingNone', alignLeft: 'MuiTableCell-alignLeft', alignCenter: 'MuiTableCell-alignCenter', alignRight: 'MuiTableCell-alignRight', alignJustify: 'MuiTableCell-alignJustify', stickyHeader: 'MuiTableCell-stickyHeader'}/*union*/)""")
 sealed external interface MuiTableCell {
