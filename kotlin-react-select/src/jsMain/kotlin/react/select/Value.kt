@@ -14,12 +14,15 @@ inline fun <T : Any> Value(
 ): Value<T> =
     value.unsafeCast<Value<T>>()
 
-fun <T : Any> Value<T>?.toArray(): ReadonlyArray<T> =
-    when (this) {
-        null -> emptyArray()
-        is Array<*> -> unsafeCast<ReadonlyArray<T>>()
-        else -> arrayOf(this.unsafeCast<T>())
+fun <T : Any> Value<T>?.asArray(): ReadonlyArray<T> {
+    this ?: return emptyArray()
+
+    require(this is Array<*>) {
+        "Multivalue required, but `$this` found instead"
     }
+
+    return unsafeCast<ReadonlyArray<T>>()
+}
 
 fun <T : Any> Value<T>.single(): T {
     require(this !is Array<*>) {
