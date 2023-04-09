@@ -54,7 +54,3 @@ external interface OptionUnstyledOwnProps<TValue> :
      */
     var label: String?
 }
-
-external interface OptionUnstyledType {
-    var propTypes: Any?
-}

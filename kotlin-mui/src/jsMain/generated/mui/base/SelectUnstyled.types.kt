@@ -102,10 +102,6 @@ external interface SelectUnstyledOwnProps<TValue> :
     var value: TValue?
 }
 
-external interface SelectUnstyledType {
-    var propTypes: Any?
-}
-
 external interface SelectUnstyledOwnerState<TValue> : SelectUnstyledOwnProps<TValue> {
     var active: Boolean
 

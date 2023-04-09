@@ -59,10 +59,6 @@ external interface MultiSelectUnstyledOwnProps<TValue> :
     var value: ReadonlyArray<TValue>?
 }
 
-external interface MultiSelectUnstyledType {
-    var propTypes: Any?
-}
-
 external interface MultiSelectUnstyledOwnerState<TValue> : MultiSelectUnstyledProps<TValue> {
     var active: Boolean
 
