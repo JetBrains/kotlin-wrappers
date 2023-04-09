@@ -2,13 +2,13 @@
 
 @file:Suppress(
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
+    "NAME_CONTAINS_ILLEGAL_CHARS",
 )
 
 package mui.material
 
 import csstype.ClassName
 
-@Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
 // language=JavaScript
 @JsName("""(/*union*/{root: 'MuiMobileStepper-root', positionBottom: 'MuiMobileStepper-positionBottom', positionTop: 'MuiMobileStepper-positionTop', positionStatic: 'MuiMobileStepper-positionStatic', dots: 'MuiMobileStepper-dots', dot: 'MuiMobileStepper-dot', dotActive: 'MuiMobileStepper-dotActive', progress: 'MuiMobileStepper-progress'}/*union*/)""")
 sealed external interface MuiMobileStepper {

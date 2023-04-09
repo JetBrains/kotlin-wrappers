@@ -2,13 +2,13 @@
 
 @file:Suppress(
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
+    "NAME_CONTAINS_ILLEGAL_CHARS",
 )
 
 package mui.material
 
 import csstype.ClassName
 
-@Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
 // language=JavaScript
 @JsName("""(/*union*/{root: 'MuiSvgIcon-root', colorPrimary: 'MuiSvgIcon-colorPrimary', colorSecondary: 'MuiSvgIcon-colorSecondary', colorAction: 'MuiSvgIcon-colorAction', colorError: 'MuiSvgIcon-colorError', colorDisabled: 'MuiSvgIcon-colorDisabled', fontSizeInherit: 'MuiSvgIcon-fontSizeInherit', fontSizeSmall: 'MuiSvgIcon-fontSizeSmall', fontSizeLarge: 'MuiSvgIcon-fontSizeLarge'}/*union*/)""")
 sealed external interface MuiSvgIcon {

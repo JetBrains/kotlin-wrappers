@@ -2,13 +2,13 @@
 
 @file:Suppress(
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
+    "NAME_CONTAINS_ILLEGAL_CHARS",
 )
 
 package mui.material
 
 import csstype.ClassName
 
-@Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
 // language=JavaScript
 @JsName("""(/*union*/{root: 'MuiFilledInput-root', colorSecondary: 'MuiFilledInput-colorSecondary', underline: 'MuiFilledInput-underline', adornedStart: 'MuiFilledInput-adornedStart', adornedEnd: 'MuiFilledInput-adornedEnd', sizeSmall: 'MuiFilledInput-sizeSmall', multiline: 'MuiFilledInput-multiline', hiddenLabel: 'MuiFilledInput-hiddenLabel', input: 'MuiFilledInput-input', inputSizeSmall: 'MuiFilledInput-inputSizeSmall', inputHiddenLabel: 'MuiFilledInput-inputHiddenLabel', inputMultiline: 'MuiFilledInput-inputMultiline', inputAdornedStart: 'MuiFilledInput-inputAdornedStart', inputAdornedEnd: 'MuiFilledInput-inputAdornedEnd'}/*union*/)""")
 sealed external interface MuiFilledInput {

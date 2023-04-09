@@ -2,13 +2,13 @@
 
 @file:Suppress(
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
+    "NAME_CONTAINS_ILLEGAL_CHARS",
 )
 
 package mui.material
 
 import csstype.ClassName
 
-@Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
 // language=JavaScript
 @JsName("""(/*union*/{root: 'MuiSkeleton-root', text: 'MuiSkeleton-text', rectangular: 'MuiSkeleton-rectangular', circular: 'MuiSkeleton-circular', pulse: 'MuiSkeleton-pulse', wave: 'MuiSkeleton-wave', withChildren: 'MuiSkeleton-withChildren', fitContent: 'MuiSkeleton-fitContent', heightAuto: 'MuiSkeleton-heightAuto'}/*union*/)""")
 sealed external interface MuiSkeleton {

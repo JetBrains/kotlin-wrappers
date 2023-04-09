@@ -2,13 +2,13 @@
 
 @file:Suppress(
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
+    "NAME_CONTAINS_ILLEGAL_CHARS",
 )
 
 package mui.material
 
 import csstype.ClassName
 
-@Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
 // language=JavaScript
 @JsName("""(/*union*/{root: 'MuiCheckbox-root', indeterminate: 'MuiCheckbox-indeterminate', colorPrimary: 'MuiCheckbox-colorPrimary', colorSecondary: 'MuiCheckbox-colorSecondary'}/*union*/)""")
 sealed external interface MuiCheckbox {

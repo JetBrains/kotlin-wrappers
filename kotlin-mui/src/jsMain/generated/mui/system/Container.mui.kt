@@ -2,13 +2,13 @@
 
 @file:Suppress(
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
+    "NAME_CONTAINS_ILLEGAL_CHARS",
 )
 
 package mui.system
 
 import csstype.ClassName
 
-@Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
 // language=JavaScript
 @JsName("""(/*union*/{root: 'MuiContainer-root', disableGutters: 'MuiContainer-disableGutters', fixed: 'MuiContainer-fixed', maxWidthXs: 'MuiContainer-maxWidthXs', maxWidthSm: 'MuiContainer-maxWidthSm', maxWidthMd: 'MuiContainer-maxWidthMd', maxWidthLg: 'MuiContainer-maxWidthLg', maxWidthXl: 'MuiContainer-maxWidthXl'}/*union*/)""")
 sealed external interface MuiContainer {

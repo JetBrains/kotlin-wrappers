@@ -2,13 +2,13 @@
 
 @file:Suppress(
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
+    "NAME_CONTAINS_ILLEGAL_CHARS",
 )
 
 package mui.material
 
 import csstype.ClassName
 
-@Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
 // language=JavaScript
 @JsName(
     """(/*union*/{root: 'MuiPaper-root', rounded: 'MuiPaper-rounded', outlined: 'MuiPaper-outlined', elevation: 'MuiPaper-elevation', elevation0: 'MuiPaper-elevation0', elevation1: 'MuiPaper-elevation1', elevation2: 'MuiPaper-elevation2', elevation3: 'MuiPaper-elevation3', elevation4: 'MuiPaper-elevation4', elevation5: 'MuiPaper-elevation5', elevation6: 'MuiPaper-elevation6', elevation7: 'MuiPaper-elevation7', elevation8: 'MuiPaper-elevation8', elevation9: 'MuiPaper-elevation9', elevation10: 'MuiPaper-elevation10', elevation11: 'MuiPaper-elevation11', elevation12: 'MuiPaper-elevation12', elevation13: 'MuiPaper-elevation13', elevation14: 'MuiPaper-elevation14', elevation15: 'MuiPaper-elevation15', elevation16: 'MuiPaper-elevation16', elevation17: 'MuiPaper-elevation17', elevation18: 'MuiPaper-elevation18', elevation19: 'MuiPaper-elevation19', elevation20: 'MuiPaper-elevation20', elevation21: 'MuiPaper-elevation21', elevation22: 'MuiPaper-elevation22', elevation23: 'MuiPaper-elevation23', elevation24: 'MuiPaper-elevation24'}/*union*/)"""

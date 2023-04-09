@@ -2,13 +2,13 @@
 
 @file:Suppress(
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
+    "NAME_CONTAINS_ILLEGAL_CHARS",
 )
 
 package mui.material
 
 import csstype.ClassName
 
-@Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
 // language=JavaScript
 @JsName("""(/*union*/{root: 'MuiStepConnector-root', horizontal: 'MuiStepConnector-horizontal', vertical: 'MuiStepConnector-vertical', alternativeLabel: 'MuiStepConnector-alternativeLabel', line: 'MuiStepConnector-line', lineHorizontal: 'MuiStepConnector-lineHorizontal', lineVertical: 'MuiStepConnector-lineVertical'}/*union*/)""")
 sealed external interface MuiStepConnector {
