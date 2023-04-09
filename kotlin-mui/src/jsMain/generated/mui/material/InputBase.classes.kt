@@ -41,6 +41,9 @@ external interface InputBaseClasses {
     /** Styles applied to the root element if `hiddenLabel={true}`. */
     var hiddenLabel: ClassName
 
+    /** State class applied to the root element if `readOnly={true}`. */
+    var readOnly: ClassName
+
     /** Styles applied to the input element. */
     var input: ClassName
 

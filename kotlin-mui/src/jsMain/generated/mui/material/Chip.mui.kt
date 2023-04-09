@@ -11,7 +11,7 @@ import csstype.ClassName
 
 // language=JavaScript
 @JsName(
-    """(/*union*/{root: 'MuiChip-root', sizeSmall: 'MuiChip-sizeSmall', sizeMedium: 'MuiChip-sizeMedium', colorPrimary: 'MuiChip-colorPrimary', colorSecondary: 'MuiChip-colorSecondary', clickable: 'MuiChip-clickable', clickableColorPrimary: 'MuiChip-clickableColorPrimary', clickableColorSecondary: 'MuiChip-clickableColorSecondary', deletable: 'MuiChip-deletable', deletableColorPrimary: 'MuiChip-deletableColorPrimary', deletableColorSecondary: 'MuiChip-deletableColorSecondary', outlined: 'MuiChip-outlined', filled: 'MuiChip-filled', outlinedPrimary: 'MuiChip-outlinedPrimary', outlinedSecondary: 'MuiChip-outlinedSecondary', avatar: 'MuiChip-avatar', avatarSmall: 'MuiChip-avatarSmall', avatarMedium: 'MuiChip-avatarMedium', avatarColorPrimary: 'MuiChip-avatarColorPrimary', avatarColorSecondary: 'MuiChip-avatarColorSecondary', icon: 'MuiChip-icon', iconSmall: 'MuiChip-iconSmall', iconMedium: 'MuiChip-iconMedium', iconColorPrimary: 'MuiChip-iconColorPrimary', iconColorSecondary: 'MuiChip-iconColorSecondary', label: 'MuiChip-label', labelSmall: 'MuiChip-labelSmall', labelMedium: 'MuiChip-labelMedium', deleteIcon: 'MuiChip-deleteIcon', deleteIconSmall: 'MuiChip-deleteIconSmall', deleteIconMedium: 'MuiChip-deleteIconMedium', deleteIconColorPrimary: 'MuiChip-deleteIconColorPrimary', deleteIconColorSecondary: 'MuiChip-deleteIconColorSecondary', deleteIconOutlinedColorPrimary: 'MuiChip-deleteIconOutlinedColorPrimary', deleteIconOutlinedColorSecondary: 'MuiChip-deleteIconOutlinedColorSecondary'}/*union*/)"""
+    """(/*union*/{root: 'MuiChip-root', sizeSmall: 'MuiChip-sizeSmall', sizeMedium: 'MuiChip-sizeMedium', colorPrimary: 'MuiChip-colorPrimary', colorSecondary: 'MuiChip-colorSecondary', clickable: 'MuiChip-clickable', clickableColorPrimary: 'MuiChip-clickableColorPrimary', clickableColorSecondary: 'MuiChip-clickableColorSecondary', deletable: 'MuiChip-deletable', deletableColorPrimary: 'MuiChip-deletableColorPrimary', deletableColorSecondary: 'MuiChip-deletableColorSecondary', outlined: 'MuiChip-outlined', filled: 'MuiChip-filled', outlinedPrimary: 'MuiChip-outlinedPrimary', outlinedSecondary: 'MuiChip-outlinedSecondary', filledPrimary: 'MuiChip-filledPrimary', filledSecondary: 'MuiChip-filledSecondary', avatar: 'MuiChip-avatar', avatarSmall: 'MuiChip-avatarSmall', avatarMedium: 'MuiChip-avatarMedium', avatarColorPrimary: 'MuiChip-avatarColorPrimary', avatarColorSecondary: 'MuiChip-avatarColorSecondary', icon: 'MuiChip-icon', iconSmall: 'MuiChip-iconSmall', iconMedium: 'MuiChip-iconMedium', iconColorPrimary: 'MuiChip-iconColorPrimary', iconColorSecondary: 'MuiChip-iconColorSecondary', label: 'MuiChip-label', labelSmall: 'MuiChip-labelSmall', labelMedium: 'MuiChip-labelMedium', deleteIcon: 'MuiChip-deleteIcon', deleteIconSmall: 'MuiChip-deleteIconSmall', deleteIconMedium: 'MuiChip-deleteIconMedium', deleteIconColorPrimary: 'MuiChip-deleteIconColorPrimary', deleteIconColorSecondary: 'MuiChip-deleteIconColorSecondary', deleteIconOutlinedColorPrimary: 'MuiChip-deleteIconOutlinedColorPrimary', deleteIconOutlinedColorSecondary: 'MuiChip-deleteIconOutlinedColorSecondary', deleteIconFilledColorPrimary: 'MuiChip-deleteIconFilledColorPrimary', deleteIconFilledColorSecondary: 'MuiChip-deleteIconFilledColorSecondary'}/*union*/)"""
 )
 sealed external interface MuiChip {
     companion object {
@@ -30,6 +30,8 @@ sealed external interface MuiChip {
         val filled: ClassName
         val outlinedPrimary: ClassName
         val outlinedSecondary: ClassName
+        val filledPrimary: ClassName
+        val filledSecondary: ClassName
         val avatar: ClassName
         val avatarSmall: ClassName
         val avatarMedium: ClassName
@@ -50,5 +52,7 @@ sealed external interface MuiChip {
         val deleteIconColorSecondary: ClassName
         val deleteIconOutlinedColorPrimary: ClassName
         val deleteIconOutlinedColorSecondary: ClassName
+        val deleteIconFilledColorPrimary: ClassName
+        val deleteIconFilledColorSecondary: ClassName
     }
 }

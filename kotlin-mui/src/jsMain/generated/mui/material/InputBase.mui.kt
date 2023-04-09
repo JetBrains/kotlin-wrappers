@@ -10,7 +10,7 @@ package mui.material
 import csstype.ClassName
 
 // language=JavaScript
-@JsName("""(/*union*/{root: 'MuiInputBase-root', formControl: 'MuiInputBase-formControl', adornedStart: 'MuiInputBase-adornedStart', adornedEnd: 'MuiInputBase-adornedEnd', sizeSmall: 'MuiInputBase-sizeSmall', multiline: 'MuiInputBase-multiline', colorSecondary: 'MuiInputBase-colorSecondary', fullWidth: 'MuiInputBase-fullWidth', hiddenLabel: 'MuiInputBase-hiddenLabel', input: 'MuiInputBase-input', inputSizeSmall: 'MuiInputBase-inputSizeSmall', inputMultiline: 'MuiInputBase-inputMultiline', inputTypeSearch: 'MuiInputBase-inputTypeSearch', inputAdornedStart: 'MuiInputBase-inputAdornedStart', inputAdornedEnd: 'MuiInputBase-inputAdornedEnd', inputHiddenLabel: 'MuiInputBase-inputHiddenLabel'}/*union*/)""")
+@JsName("""(/*union*/{root: 'MuiInputBase-root', formControl: 'MuiInputBase-formControl', adornedStart: 'MuiInputBase-adornedStart', adornedEnd: 'MuiInputBase-adornedEnd', sizeSmall: 'MuiInputBase-sizeSmall', multiline: 'MuiInputBase-multiline', colorSecondary: 'MuiInputBase-colorSecondary', fullWidth: 'MuiInputBase-fullWidth', hiddenLabel: 'MuiInputBase-hiddenLabel', readOnly: 'MuiInputBase-readOnly', input: 'MuiInputBase-input', inputSizeSmall: 'MuiInputBase-inputSizeSmall', inputMultiline: 'MuiInputBase-inputMultiline', inputTypeSearch: 'MuiInputBase-inputTypeSearch', inputAdornedStart: 'MuiInputBase-inputAdornedStart', inputAdornedEnd: 'MuiInputBase-inputAdornedEnd', inputHiddenLabel: 'MuiInputBase-inputHiddenLabel'}/*union*/)""")
 sealed external interface MuiInputBase {
     companion object {
         val root: ClassName
@@ -22,6 +22,7 @@ sealed external interface MuiInputBase {
         val colorSecondary: ClassName
         val fullWidth: ClassName
         val hiddenLabel: ClassName
+        val readOnly: ClassName
         val input: ClassName
         val inputSizeSmall: ClassName
         val inputMultiline: ClassName
