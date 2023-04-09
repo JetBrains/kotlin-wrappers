@@ -11,7 +11,8 @@ sealed external interface Value<T : Any>
 
 inline fun <T : Any> Value(
     vararg value: T?,
-): Value<T> = value.unsafeCast<Value<T>>()
+): Value<T> =
+    value.unsafeCast<Value<T>>()
 
 inline fun <T : Any> Value<T>?.toArray(): ReadonlyArray<T> =
     when (this) {
