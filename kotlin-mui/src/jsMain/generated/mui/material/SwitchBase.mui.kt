@@ -2,13 +2,13 @@
 
 @file:Suppress(
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
+    "NAME_CONTAINS_ILLEGAL_CHARS",
 )
 
 package mui.material
 
 import csstype.ClassName
 
-@Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
 // language=JavaScript
 @JsName("""(/*union*/{root: 'MuiSwitchBase-root', input: 'MuiSwitchBase-input', edgeStart: 'MuiSwitchBase-edgeStart', edgeEnd: 'MuiSwitchBase-edgeEnd'}/*union*/)""")
 sealed external interface MuiSwitchBase {

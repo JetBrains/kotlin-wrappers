@@ -2,13 +2,13 @@
 
 @file:Suppress(
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
+    "NAME_CONTAINS_ILLEGAL_CHARS",
 )
 
 package mui.material
 
 import csstype.ClassName
 
-@Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
 // language=JavaScript
 @JsName("""(/*union*/{root: 'MuiAppBar-root', positionFixed: 'MuiAppBar-positionFixed', positionAbsolute: 'MuiAppBar-positionAbsolute', positionSticky: 'MuiAppBar-positionSticky', positionStatic: 'MuiAppBar-positionStatic', positionRelative: 'MuiAppBar-positionRelative', colorDefault: 'MuiAppBar-colorDefault', colorPrimary: 'MuiAppBar-colorPrimary', colorSecondary: 'MuiAppBar-colorSecondary', colorInherit: 'MuiAppBar-colorInherit', colorTransparent: 'MuiAppBar-colorTransparent'}/*union*/)""")
 sealed external interface MuiAppBar {

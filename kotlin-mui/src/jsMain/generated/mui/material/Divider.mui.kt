@@ -2,13 +2,13 @@
 
 @file:Suppress(
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
+    "NAME_CONTAINS_ILLEGAL_CHARS",
 )
 
 package mui.material
 
 import csstype.ClassName
 
-@Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
 // language=JavaScript
 @JsName("""(/*union*/{root: 'MuiDivider-root', absolute: 'MuiDivider-absolute', inset: 'MuiDivider-inset', fullWidth: 'MuiDivider-fullWidth', light: 'MuiDivider-light', middle: 'MuiDivider-middle', vertical: 'MuiDivider-vertical', flexItem: 'MuiDivider-flexItem', withChildren: 'MuiDivider-withChildren', withChildrenVertical: 'MuiDivider-withChildrenVertical', textAlignRight: 'MuiDivider-textAlignRight', textAlignLeft: 'MuiDivider-textAlignLeft', wrapper: 'MuiDivider-wrapper', wrapperVertical: 'MuiDivider-wrapperVertical'}/*union*/)""")
 sealed external interface MuiDivider {

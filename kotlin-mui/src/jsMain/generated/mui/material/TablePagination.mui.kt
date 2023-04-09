@@ -2,13 +2,13 @@
 
 @file:Suppress(
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
+    "NAME_CONTAINS_ILLEGAL_CHARS",
 )
 
 package mui.material
 
 import csstype.ClassName
 
-@Suppress("NAME_CONTAINS_ILLEGAL_CHARS")
 // language=JavaScript
 @JsName("""(/*union*/{root: 'MuiTablePagination-root', toolbar: 'MuiTablePagination-toolbar', spacer: 'MuiTablePagination-spacer', selectLabel: 'MuiTablePagination-selectLabel', selectRoot: 'MuiTablePagination-selectRoot', select: 'MuiTablePagination-select', selectIcon: 'MuiTablePagination-selectIcon', input: 'MuiTablePagination-input', menuItem: 'MuiTablePagination-menuItem', displayedRows: 'MuiTablePagination-displayedRows', actions: 'MuiTablePagination-actions'}/*union*/)""")
 sealed external interface MuiTablePagination {
