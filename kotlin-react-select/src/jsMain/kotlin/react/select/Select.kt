@@ -32,13 +32,13 @@ external interface SelectProps<Option : Any, Group : GroupBase<Option>> : PropsW
     var autoFocus: Boolean?
 
     /** Remove the currently focused option when the user presses backspace when Select isClearable or isMulti */
-    var backspaceRemovesValue: Boolean
+    var backspaceRemovesValue: Boolean?
 
     /** Remove focus from the input when the user selects an option (handy for dismissing the keyboard on touch devices) */
-    var blurInputOnSelect: Boolean
+    var blurInputOnSelect: Boolean?
 
     /** When the user reaches the top/bottom of the menu, prevent scroll on the scroll-parent  */
-    var captureMenuScroll: Boolean
+    var captureMenuScroll: Boolean?
 
     /** Sets a className attribute on the outer component */
     override var className: ClassName?
@@ -51,7 +51,7 @@ external interface SelectProps<Option : Any, Group : GroupBase<Option>> : PropsW
     var classNamePrefix: String?
 
     /** Close the select menu when the user selects an option */
-    var closeMenuOnSelect: Boolean
+    var closeMenuOnSelect: Boolean?
 
     /**
      * If `true`, close the select menu when the user scrolls the document/body.
@@ -79,13 +79,13 @@ external interface SelectProps<Option : Any, Group : GroupBase<Option>> : PropsW
     var components: SelectComponentsConfig<Option, Group>
 
     /** Whether the value of the select, e.g. SingleValue, should be displayed in the control. */
-    var controlShouldRenderValue: Boolean
+    var controlShouldRenderValue: Boolean?
 
     /** Delimiter used to join multiple values into a single HTML Input value */
     var delimiter: String?
 
     /** Clear all values when the user presses escape AND the menu is closed */
-    var escapeClearsValue: Boolean
+    var escapeClearsValue: Boolean?
 
     /** Custom method to filter whether an option should be displayed in the menu */
     var filterOption: ((option: FilterOptionOption<Option>, inputValue: String) -> Boolean)?
@@ -130,10 +130,10 @@ external interface SelectProps<Option : Any, Group : GroupBase<Option>> : PropsW
     var isClearable: Boolean?
 
     /** Is the select disabled */
-    var isDisabled: Boolean
+    var isDisabled: Boolean?
 
     /** Is the select in a state of loading (async) */
-    var isLoading: Boolean
+    var isLoading: Boolean?
 
     /**
      * Override the built-in logic to detect whether an option is disabled
@@ -146,13 +146,13 @@ external interface SelectProps<Option : Any, Group : GroupBase<Option>> : PropsW
     var isOptionSelected: (option: Option, selectValue: Options<Option>) -> Boolean
 
     /** Support multiple selected options */
-    var isMulti: Boolean
+    var isMulti: Boolean?
 
     /** Is the select direction right-to-left */
-    var isRtl: Boolean
+    var isRtl: Boolean?
 
     /** Whether to enable search functionality */
-    var isSearchable: Boolean
+    var isSearchable: Boolean?
 
     /** Async: Text to display when loading options */
     var loadingMessage: (inputValue: InputValue) -> ReactNode
@@ -164,7 +164,7 @@ external interface SelectProps<Option : Any, Group : GroupBase<Option>> : PropsW
     var maxMenuHeight: Double
 
     /** Whether the menu is open */
-    var menuIsOpen: Boolean
+    var menuIsOpen: Boolean?
 
     /**
      * Default placement of the menu in relation to the control. 'auto' will flip
@@ -183,10 +183,10 @@ external interface SelectProps<Option : Any, Group : GroupBase<Option>> : PropsW
     var menuPortalTarget: HTMLElement?
 
     /** Whether to block scroll events when the menu is open */
-    var menuShouldBlockScroll: Boolean
+    var menuShouldBlockScroll: Boolean?
 
     /** Whether the menu should be scrolled into view when it opens */
-    var menuShouldScrollIntoView: Boolean
+    var menuShouldScrollIntoView: Boolean?
 
     /** Name of the HTML Input (optional - without this, no input will be rendered) */
     var name: String?
@@ -224,10 +224,10 @@ external interface SelectProps<Option : Any, Group : GroupBase<Option>> : PropsW
     var onMenuScrollToBottom: ((event: WheelEvent) -> Unit)?
 
     /** Allows control of whether the menu is opened when the Select is focused */
-    var openMenuOnFocus: Boolean
+    var openMenuOnFocus: Boolean?
 
     /** Allows control of whether the menu is opened when the Select is clicked */
-    var openMenuOnClick: Boolean
+    var openMenuOnClick: Boolean?
 
     /** Array of options that populate the select menu */
     var options: OptionsOrGroups<Option, Group>
@@ -255,7 +255,7 @@ external interface SelectProps<Option : Any, Group : GroupBase<Option>> : PropsW
     var tabIndex: Int
 
     /** Select the currently focused option when the user presses tab */
-    var tabSelectsValue: Boolean
+    var tabSelectsValue: Boolean?
 
     /** The value of the select reflected by the selected option */
     var value: PropsValue<Option>
