@@ -11,7 +11,7 @@ module.exports = function (node, context, render) {
 
         && node.parent.type === node
     ) {
-        return "Throwable? /* JsError */"
+        return "Throwable /* JsError */?"
     }
 
     return null
