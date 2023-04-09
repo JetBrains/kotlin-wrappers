@@ -21,6 +21,15 @@ function convertReactDomQualifiedName(node, context, render) {
         return `react.dom.events.${render(node)}`
     }
 
+    if (
+        ts.isIdentifier(node)
+        && (
+            node.text === "HTMLAttributeAnchorTarget"
+        )
+    ) {
+        return `web.window.WindowTarget`
+    }
+
     return null
 }
 

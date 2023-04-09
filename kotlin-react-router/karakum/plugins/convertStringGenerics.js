@@ -60,7 +60,7 @@ ${members}
             ?.map(typeArgument => render(typeArgument))
             ?.join(", ")
 
-        return `${render(name)}${typeArguments ? `<${typeArguments}>` : ""}`
+        return `${render(name)}${typeArguments ? `<${typeArguments}>` : "<*>"}`
     }
 
     if (

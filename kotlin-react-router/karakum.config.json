@@ -20,10 +20,10 @@
         ".*": "react-router"
     },
     "packageNameMapper": {
-        "/lib": "/"
+        "/lib": ""
     },
     "importInjector": {
-        "RenderMatches.kt": [
+        "_renderMatches.kt": [
             "remix.run.router.RouterState"
         ],
         "context.kt": [
