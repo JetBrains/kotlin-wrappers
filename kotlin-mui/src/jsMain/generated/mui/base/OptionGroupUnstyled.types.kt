@@ -5,6 +5,10 @@ package mui.base
 import csstype.ClassName
 
 external interface OptionGroupUnstyledProps :
+    OptionGroupUnstyledOwnProps,
+    react.dom.html.LiHTMLAttributes<web.html.HTMLLIElement>
+
+external interface OptionGroupUnstyledOwnProps :
     react.PropsWithChildren,
     react.PropsWithClassName {
     /**
@@ -21,14 +25,6 @@ external interface OptionGroupUnstyledProps :
      * @default false
      */
     var disabled: Boolean?
-
-    /**
-     * The component used for the Root slot.
-     * Either a string to use a HTML element or a component.
-     * This is equivalent to components.Root.
-     * If both are provided, the component is used.
-     */
-    var component: react.ElementType<*>?
 
     /**
      * The components used for each slot inside the OptionGroupUnstyled.

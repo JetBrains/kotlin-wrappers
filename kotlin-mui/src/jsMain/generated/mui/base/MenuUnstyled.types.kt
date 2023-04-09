@@ -5,6 +5,15 @@ package mui.base
 import csstype.ClassName
 
 external interface MenuUnstyledProps :
+    MenuUnstyledOwnProps,
+    react.dom.html.HTMLAttributes<web.html.HTMLUListElement>
+
+external interface MenuUnstyledActions {
+    fun highlightFirstItem()
+    fun highlightLastItem()
+}
+
+external interface MenuUnstyledOwnProps :
     react.PropsWithChildren,
     react.PropsWithClassName {
     /**
@@ -24,8 +33,11 @@ external interface MenuUnstyledProps :
 
     override var className: ClassName?
 
-    var component: react.ElementType<*>?
-
+    /**
+     * The components used for each slot inside the Menu.
+     * Either a string to use a HTML element or a component.
+     * @default {}
+     */
     var components: Components?
 
     interface Components {
@@ -33,6 +45,10 @@ external interface MenuUnstyledProps :
         var Listbox: react.ElementType<*>?
     }
 
+    /**
+     * The props used for each slot inside the Menu.
+     * @default {}
+     */
     var componentsProps: ComponentsProps?
 
     interface ComponentsProps {
@@ -60,11 +76,6 @@ external interface MenuUnstyledProps :
      * @default false
      */
     var open: Boolean?
-}
-
-external interface MenuUnstyledActions {
-    fun highlightFirstItem()
-    fun highlightLastItem()
 }
 
 external interface MenuUnstyledOwnerState {

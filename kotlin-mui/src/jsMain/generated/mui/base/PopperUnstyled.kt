@@ -5,12 +5,16 @@
 
 package mui.base
 
+import csstype.ClassName
 import js.core.ReadonlyArray
 import popper.core.Modifier
 import web.dom.Element
 
 external interface PopperUnstyledProps :
-    react.dom.html.HTMLAttributes<web.html.HTMLDivElement> {
+    PopperUnstyledOwnProps,
+    react.dom.html.HTMLAttributes<web.html.HTMLDivElement>
+
+external interface PopperUnstyledOwnProps : react.Props {
     /**
      * An HTML element, [virtualElement](https://popper.js.org/docs/v2/virtual-elements/),
      * or a function that returns either.
@@ -22,7 +26,7 @@ external interface PopperUnstyledProps :
     /**
      * Popper render function or node.
      */
-    override var children: dynamic
+    var children: dynamic
 
     /**
      * An HTML element or function that returns one.
@@ -32,6 +36,31 @@ external interface PopperUnstyledProps :
      * so it's simply `document.body` most of the time.
      */
     var container: Element?
+
+    /**
+     * The components used for each slot inside the Popper.
+     * Either a string to use a HTML element or a component.
+     * @default {}
+     */
+    var components: Components?
+
+    interface Components {
+        var Root: react.ElementType<*>?
+    }
+
+    /**
+     * The props used for each slot inside the Popper.
+     * @default {}
+     */
+    var componentsProps: ComponentsProps?
+
+    interface ComponentsProps {
+        var root: react.Props? /* SlotComponentProps<
+  'div',
+  PopperUnstyledComponentsPropsOverrides,
+  PopperUnstyledOwnerState
+> */
+    }
 
     /**
      * Direction of the text.
@@ -91,6 +120,12 @@ external interface PopperUnstyledProps :
      * @default false
      */
     var transition: Boolean?
+}
+
+external interface PopperUnstyledRootSlotProps : react.PropsWithClassName {
+    override var className: ClassName?
+
+    var ownerState: dynamic
 }
 
 /**

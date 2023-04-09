@@ -4,7 +4,13 @@ package mui.base
 
 import js.core.ReadonlyArray
 
-external interface MultiSelectUnstyledProps<TValue> : react.Props {
+external interface MultiSelectUnstyledProps<TValue> :
+    MultiSelectUnstyledOwnProps<TValue> {
+    var component: react.ElementType<*>?
+}
+
+external interface MultiSelectUnstyledOwnProps<TValue> :
+    SelectUnstyledCommonProps {
     /**
      * The components used for each slot inside the Select.
      * Either a string to use a HTML element or a component.
@@ -53,10 +59,14 @@ external interface MultiSelectUnstyledProps<TValue> : react.Props {
     var value: ReadonlyArray<TValue>?
 }
 
+external interface MultiSelectUnstyledType {
+    var propTypes: Any?
+}
+
 external interface MultiSelectUnstyledOwnerState<TValue> : MultiSelectUnstyledProps<TValue> {
     var active: Boolean
 
-    var disabled: Boolean
+    override var disabled: Boolean?
 
     var open: Boolean
 
