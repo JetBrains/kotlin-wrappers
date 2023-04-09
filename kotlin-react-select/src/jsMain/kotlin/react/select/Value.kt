@@ -21,13 +21,10 @@ fun <T : Any> Value<T>?.toArray(): ReadonlyArray<T> =
         else -> arrayOf(this.unsafeCast<T>())
     }
 
-fun <T : Any> Value<T>?.only(): T? =
-    when (this) {
-        null -> null
-        is Array<*> ->
-            if (this.isNotEmpty()) {
-                single().unsafeCast<T>()
-            } else null
-
-        else -> unsafeCast<T>()
+fun <T : Any> Value<T>.single(): T {
+    require(this !is Array<*>) {
+        "Single value required, but array found instead"
     }
+
+    return unsafeCast<T>()
+}
