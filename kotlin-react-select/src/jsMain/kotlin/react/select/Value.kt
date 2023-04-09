@@ -14,14 +14,14 @@ inline fun <T : Any> Value(
 ): Value<T> =
     value.unsafeCast<Value<T>>()
 
-inline fun <T : Any> Value<T>?.toArray(): ReadonlyArray<T> =
+fun <T : Any> Value<T>?.toArray(): ReadonlyArray<T> =
     when (this) {
         null -> emptyArray()
         is Array<*> -> unsafeCast<ReadonlyArray<T>>()
         else -> arrayOf(this.unsafeCast<T>())
     }
 
-inline fun <T : Any> Value<T>?.only(): T? =
+fun <T : Any> Value<T>?.only(): T? =
     when (this) {
         null -> null
         is Array<*> ->
