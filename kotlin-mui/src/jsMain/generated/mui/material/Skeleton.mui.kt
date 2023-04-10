@@ -10,12 +10,13 @@ package mui.material
 import csstype.ClassName
 
 // language=JavaScript
-@JsName("""(/*union*/{root: 'MuiSkeleton-root', text: 'MuiSkeleton-text', rectangular: 'MuiSkeleton-rectangular', circular: 'MuiSkeleton-circular', pulse: 'MuiSkeleton-pulse', wave: 'MuiSkeleton-wave', withChildren: 'MuiSkeleton-withChildren', fitContent: 'MuiSkeleton-fitContent', heightAuto: 'MuiSkeleton-heightAuto'}/*union*/)""")
+@JsName("""(/*union*/{root: 'MuiSkeleton-root', text: 'MuiSkeleton-text', rectangular: 'MuiSkeleton-rectangular', rounded: 'MuiSkeleton-rounded', circular: 'MuiSkeleton-circular', pulse: 'MuiSkeleton-pulse', wave: 'MuiSkeleton-wave', withChildren: 'MuiSkeleton-withChildren', fitContent: 'MuiSkeleton-fitContent', heightAuto: 'MuiSkeleton-heightAuto'}/*union*/)""")
 sealed external interface MuiSkeleton {
     companion object {
         val root: ClassName
         val text: ClassName
         val rectangular: ClassName
+        val rounded: ClassName
         val circular: ClassName
         val pulse: ClassName
         val wave: ClassName

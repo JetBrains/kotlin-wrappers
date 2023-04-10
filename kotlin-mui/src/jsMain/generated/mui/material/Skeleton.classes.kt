@@ -14,6 +14,9 @@ external interface SkeletonClasses {
     /** Styles applied to the root element if `variant="rectangular"`. */
     var rectangular: ClassName
 
+    /** Styles applied to the root element if `variant="rounded"`. */
+    var rounded: ClassName
+
     /** Styles applied to the root element if `variant="circular"`. */
     var circular: ClassName
 

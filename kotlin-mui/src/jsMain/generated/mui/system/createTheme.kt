@@ -29,6 +29,8 @@ external interface ThemeOptions {
     var typography: dynamic
 
     var zIndex: dynamic
+
+    var unstable_sxConfig: dynamic
 }
 
 external interface Theme {
@@ -53,6 +55,10 @@ external interface Theme {
     var typography: dynamic
 
     var zIndex: dynamic
+
+    var unstable_sxConfig: dynamic
+
+    var unstable_sx: (props: SxProps<Theme>) -> dynamic /* CSSObject from `@mui/styled-engine` */
 }
 
 @JsName("default")
