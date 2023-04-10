@@ -2,10 +2,17 @@ const ts = require("typescript");
 
 module.exports = function (node) {
     if (
-        ts.isIdentifier(node)
-        && ts.isExpressionWithTypeArguments(node.parent)
-        && ts.isHeritageClause(node.parent.parent)
-        && node.text === "Error"
+        ts.isTypeReferenceNode(node)
+        && ts.isIdentifier(node.typeName)
+        && node.typeName.text === "Error"
+    ) {
+
+        return "Throwable /* JsError */"
+    }
+    if (
+        ts.isExpressionWithTypeArguments(node)
+        && ts.isIdentifier(node.expression)
+        && node.expression.text === "Error"
     ) {
 
         return "Throwable /* JsError */"
