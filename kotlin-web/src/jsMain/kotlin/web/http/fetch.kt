@@ -26,7 +26,11 @@ suspend fun fetch(
 
         fetchAsync(request)
             .then { continuation.resume(it) }
-            .catch { continuation.resumeWithException(FetchException(it)) }
+            .catch { error ->
+                if (!error.isAbortError()) {
+                    continuation.resumeWithException(FetchException(error))
+                }
+            }
     }
 
 suspend fun fetch(
