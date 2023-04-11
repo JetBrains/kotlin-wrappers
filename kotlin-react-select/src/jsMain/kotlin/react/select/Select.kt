@@ -187,13 +187,13 @@ external interface SelectProps<Option : Any, Group : GroupBase<Option>> : PropsW
     var onBlur: FocusEventHandler<HTMLInputElement>?
 
     /** Handle change events on the select */
-    var onChange: ((newValue: Value<Option>?, actionMeta: ActionMeta<Option>) -> Unit)?
+    var onChange: ChangeHandler<Option>?
 
     /** Handle focus events on the control */
     var onFocus: FocusEventHandler<HTMLInputElement>?
 
     /** Handle change events on the input */
-    var onInputChange: ((newValue: String, actionMeta: InputActionMeta) -> Unit)?
+    var onInputChange: InputChangeHandler?
 
     /** Handle key down events on the select */
     var onKeyDown: KeyboardEventHandler<HTMLDivElement>?
