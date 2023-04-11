@@ -99,7 +99,7 @@ external interface RegularBreakpoints {
      * The value is applied for the `lg` breakpoint and wider screens if not overridden.
      * @default false
      */
-    var lg: dynamic /* boolean | GridSize /* 'auto' | number */ */
+    var lg: Any? /* boolean | 'auto' | number */
 
     /**
      * If a number, it sets the number of columns the grid item uses.
@@ -110,7 +110,7 @@ external interface RegularBreakpoints {
      * The value is applied for the `md` breakpoint and wider screens if not overridden.
      * @default false
      */
-    var md: dynamic /* boolean | GridSize /* 'auto' | number */ */
+    var md: Any? /* boolean | 'auto' | number */
 
     /**
      * If a number, it sets the number of columns the grid item uses.
@@ -121,7 +121,7 @@ external interface RegularBreakpoints {
      * The value is applied for the `sm` breakpoint and wider screens if not overridden.
      * @default false
      */
-    var sm: dynamic /* boolean | GridSize /* 'auto' | number */ */
+    var sm: Any? /* boolean | 'auto' | number */
 
     /**
      * If a number, it sets the number of columns the grid item uses.
@@ -132,7 +132,7 @@ external interface RegularBreakpoints {
      * The value is applied for the `xl` breakpoint and wider screens if not overridden.
      * @default false
      */
-    var xl: dynamic /* boolean | GridSize /* 'auto' | number */ */
+    var xl: Any? /* boolean | 'auto' | number */
 
     /**
      * If a number, it sets the number of columns the grid item uses.
@@ -143,7 +143,7 @@ external interface RegularBreakpoints {
      * The value is applied for all the screen sizes with the lowest priority.
      * @default false
      */
-    var xs: dynamic /* boolean | GridSize /* 'auto' | number */ */
+    var xs: Any? /* boolean | 'auto' | number */
 }
 
 /**
