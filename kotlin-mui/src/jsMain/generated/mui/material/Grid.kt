@@ -89,6 +89,63 @@ external interface GridProps :
     var zeroMinWidth: Boolean?
 }
 
+external interface RegularBreakpoints {
+    /**
+     * If a number, it sets the number of columns the grid item uses.
+     * It can't be greater than the total number of columns of the container (12 by default).
+     * If 'auto', the grid item's width matches its content.
+     * If false, the prop is ignored.
+     * If true, the grid item's width grows to use the space available in the grid container.
+     * The value is applied for the `lg` breakpoint and wider screens if not overridden.
+     * @default false
+     */
+    var lg: dynamic /* boolean | GridSize /* 'auto' | number */ */
+
+    /**
+     * If a number, it sets the number of columns the grid item uses.
+     * It can't be greater than the total number of columns of the container (12 by default).
+     * If 'auto', the grid item's width matches its content.
+     * If false, the prop is ignored.
+     * If true, the grid item's width grows to use the space available in the grid container.
+     * The value is applied for the `md` breakpoint and wider screens if not overridden.
+     * @default false
+     */
+    var md: dynamic /* boolean | GridSize /* 'auto' | number */ */
+
+    /**
+     * If a number, it sets the number of columns the grid item uses.
+     * It can't be greater than the total number of columns of the container (12 by default).
+     * If 'auto', the grid item's width matches its content.
+     * If false, the prop is ignored.
+     * If true, the grid item's width grows to use the space available in the grid container.
+     * The value is applied for the `sm` breakpoint and wider screens if not overridden.
+     * @default false
+     */
+    var sm: dynamic /* boolean | GridSize /* 'auto' | number */ */
+
+    /**
+     * If a number, it sets the number of columns the grid item uses.
+     * It can't be greater than the total number of columns of the container (12 by default).
+     * If 'auto', the grid item's width matches its content.
+     * If false, the prop is ignored.
+     * If true, the grid item's width grows to use the space available in the grid container.
+     * The value is applied for the `xl` breakpoint and wider screens if not overridden.
+     * @default false
+     */
+    var xl: dynamic /* boolean | GridSize /* 'auto' | number */ */
+
+    /**
+     * If a number, it sets the number of columns the grid item uses.
+     * It can't be greater than the total number of columns of the container (12 by default).
+     * If 'auto', the grid item's width matches its content.
+     * If false, the prop is ignored.
+     * If true, the grid item's width grows to use the space available in the grid container.
+     * The value is applied for all the screen sizes with the lowest priority.
+     * @default false
+     */
+    var xs: dynamic /* boolean | GridSize /* 'auto' | number */ */
+}
+
 /**
  *
  * Demos:

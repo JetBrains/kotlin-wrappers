@@ -21,11 +21,12 @@ sealed external interface SkeletonAnimation {
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 // language=JavaScript
-@JsName("""(/*union*/{text: 'text', rectangular: 'rectangular', circular: 'circular'}/*union*/)""")
+@JsName("""(/*union*/{text: 'text', rectangular: 'rectangular', rounded: 'rounded', circular: 'circular'}/*union*/)""")
 sealed external interface SkeletonVariant {
     companion object {
         val text: SkeletonVariant
         val rectangular: SkeletonVariant
+        val rounded: SkeletonVariant
         val circular: SkeletonVariant
     }
 }
