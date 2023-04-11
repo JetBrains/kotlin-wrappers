@@ -16,10 +16,6 @@ import web.html.HTMLElement
 import web.html.HTMLInputElement
 import web.uievents.UIEvent
 
-external interface InputValue {
-    var inputValue: String
-}
-
 external interface SelectProps<Option : Any, Group : GroupBase<Option>> : PropsWithClassName {
     /** Focus the control when it is mounted */
     var autoFocus: Boolean?
@@ -148,7 +144,7 @@ external interface SelectProps<Option : Any, Group : GroupBase<Option>> : PropsW
     var isSearchable: Boolean?
 
     /** Async: Text to display when loading options */
-    var loadingMessage: (inputValue: InputValue) -> ReactNode
+    var loadingMessage: ((HasInputValue) -> ReactNode)?
 
     /** Minimum height of the menu before flipping */
     var minMenuHeight: Length?
@@ -185,7 +181,7 @@ external interface SelectProps<Option : Any, Group : GroupBase<Option>> : PropsW
     var name: String?
 
     /** Text to display when there are no options */
-    var noOptionsMessage: ((inputValue: InputValue) -> ReactNode)?
+    var noOptionsMessage: ((HasInputValue) -> ReactNode)?
 
     /** Handle blur events on the control */
     var onBlur: FocusEventHandler<HTMLInputElement>?
