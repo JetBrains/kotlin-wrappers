@@ -14,7 +14,7 @@ import react.dom.events.KeyboardEventHandler
 import web.html.HTMLDivElement
 import web.html.HTMLElement
 import web.html.HTMLInputElement
-import web.uievents.WheelEvent
+import web.uievents.UIEvent
 
 external interface MenuPosition
 
@@ -217,12 +217,10 @@ external interface SelectProps<Option : Any, Group : GroupBase<Option>> : PropsW
     var onMenuClose: (() -> Unit)?
 
     /** Fired when the user scrolls to the top of the menu */
-    // TODO TouchEvent
-    var onMenuScrollToTop: ((event: WheelEvent) -> Unit)?
+    var onMenuScrollToTop: ((event: UIEvent /* WheelEvent | TouchEvent */) -> Unit)?
 
     /** Fired when the user scrolls to the bottom of the menu */
-    // TODO TouchEvent
-    var onMenuScrollToBottom: ((event: WheelEvent) -> Unit)?
+    var onMenuScrollToBottom: ((event: UIEvent /* WheelEvent | TouchEvent */) -> Unit)?
 
     /** Allows control of whether the menu is opened when the Select is focused */
     var openMenuOnFocus: Boolean?
