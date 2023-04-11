@@ -16,14 +16,6 @@ import web.html.HTMLElement
 import web.html.HTMLInputElement
 import web.uievents.UIEvent
 
-external interface MenuPosition
-
-external interface ActionMeta<Option>
-external interface InputActionMeta
-
-external interface ThemeConfig
-
-
 external interface InputValue {
     var inputValue: String
 }
