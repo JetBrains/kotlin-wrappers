@@ -77,7 +77,7 @@ external interface SelectProps<Option : Any, Group : GroupBase<Option>> : PropsW
     var escapeClearsValue: Boolean?
 
     /** Custom method to filter whether an option should be displayed in the menu */
-    var filterOption: ((option: FilterOptionOption<Option>, inputValue: String) -> Boolean)?
+    var filterOption: FilterPredicate<Option>?
 
     /**
      * Formats group labels in the menu as React components
