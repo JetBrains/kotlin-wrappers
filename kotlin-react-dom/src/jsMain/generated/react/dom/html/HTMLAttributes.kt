@@ -22,7 +22,7 @@ external interface HTMLAttributes<T : Element> :
     // Standard HTML Attributes
     var accessKey: String?
     var autoFocus: Boolean?
-    var contentEditable: dynamic // Booleanish | "inherit"
+    var contentEditable: Any? // Booleanish | "inherit"
     var contextMenu: String?
     var dir: String?
     var draggable: Boolean?

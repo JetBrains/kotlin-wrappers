@@ -93,7 +93,7 @@ external interface SVGAttributes<T : Element> :
     var filterUnits: String?
     var floodColor: String?
     var floodOpacity: String?
-    var focusable: dynamic // Booleanish | "auto"
+    var focusable: Any? // Booleanish | "auto"
     var fontFamily: String?
     var fontSize: Double?
     var fontSizeAdjust: String?
@@ -210,8 +210,8 @@ external interface SVGAttributes<T : Element> :
     var strikethroughThickness: Double?
     var string: String?
     var stroke: String?
-    var strokeDasharray: dynamic // string | number
-    var strokeDashoffset: dynamic // string | number
+    var strokeDasharray: Any? // string | number
+    var strokeDashoffset: Any? // string | number
     var strokeLinecap: StrokeLinecap?
     var strokeLinejoin: StrokeLinejoin?
     var strokeMiterlimit: Double?
