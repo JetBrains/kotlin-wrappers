@@ -3,5 +3,5 @@
 package react.dom
 
 sealed external interface DangerouslySetInnerHTML {
-    var __html: String
+    var __html: String /* | TrustedHTML */
 }
