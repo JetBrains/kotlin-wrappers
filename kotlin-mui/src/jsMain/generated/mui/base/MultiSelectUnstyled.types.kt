@@ -43,9 +43,25 @@ external interface MultiSelectUnstyledOwnProps<TValue> :
     var defaultValue: ReadonlyArray<TValue>?
 
     /**
+     * A function to convert the currently selected values to a type accepted by HTML input.
+     * Used to set a value of a hidden input associated with the select,
+     * so that the selected values can be posted with a form.
+     */
+    var getSerializedValue: ((option: ReadonlyArray<SelectOption<TValue>>) -> Any /* String | ReadonlyArray<String> | Number */)?
+
+    /**
      * Callback fired when an option is selected.
      */
     var onChange: ((value: ReadonlyArray<TValue>) -> Unit)?
+
+    /**
+     * A function used to convert the option label to a string.
+     * It's useful when labels are elements and need to be converted to plain text
+     * to enable navigation using character keys on a keyboard.
+     *
+     * @default defaultOptionStringifier
+     */
+    var optionStringifier: ((option: SelectOption<TValue>) -> String)?
 
     /**
      * Function that customizes the rendering of the selected values.

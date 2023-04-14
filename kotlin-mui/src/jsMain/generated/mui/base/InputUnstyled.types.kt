@@ -8,7 +8,65 @@ external interface InputUnstyledProps :
     InputUnstyledOwnProps,
     react.dom.html.HTMLAttributes<web.html.HTMLInputElement>
 
-external interface InputUnstyledOwnProps : react.PropsWithClassName {
+external interface SingleLineInputUnstyledProps : react.Props {
+    /**
+     * Maximum number of rows to display when multiline option is set to true.
+     */
+    var maxRows: dynamic
+
+    /**
+     * Minimum number of rows to display when multiline option is set to true.
+     */
+    var minRows: dynamic
+
+    /**
+     * If `true`, a `textarea` element is rendered.
+     * @default false
+     */
+    var multiline: Boolean? /* false */
+
+    /**
+     * Number of rows to display when multiline option is set to true.
+     */
+    var rows: dynamic
+
+    /**
+     * Type of the `input` element. It should be [a valid HTML5 input type](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#Form_%3Cinput%3E_types).
+     * @default 'text'
+     */
+    var type: dynamic
+}
+
+external interface MultiLineInputUnstyledProps : SingleLineInputUnstyledProps {
+    /**
+     * Maximum number of rows to display when multiline option is set to true.
+     */
+    override var maxRows: Number?
+
+    /**
+     * Minimum number of rows to display when multiline option is set to true.
+     */
+    override var minRows: Number?
+
+    /**
+     * If `true`, a `textarea` element is rendered.
+     * @default false
+     */
+    override var multiline: Boolean? /* true */
+
+    /**
+     * Number of rows to display when multiline option is set to true.
+     */
+    override var rows: Number?
+
+    /**
+     * Type of the `input` element. It should be [a valid HTML5 input type](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#Form_%3Cinput%3E_types).
+     * @default 'text'
+     */
+    override var type: dynamic
+}
+
+external interface InputUnstyledOwnProps : MultiLineInputUnstyledProps, react.PropsWithClassName {
     // var `aria-describedby`: String?
 
     // var `aria-label`: String?
@@ -67,12 +125,6 @@ external interface InputUnstyledOwnProps : react.PropsWithClassName {
     var id: String?
 
     /**
-     * If `true`, a `textarea` element is rendered.
-     * @default false
-     */
-    var multiline: Boolean?
-
-    /**
      * Name attribute of the `input` element.
      */
     var name: String?
@@ -93,30 +145,9 @@ external interface InputUnstyledOwnProps : react.PropsWithClassName {
     var readOnly: Boolean?
 
     /**
-     * Number of rows to display when multiline option is set to true.
-     */
-    var rows: Number?
-
-    /**
      * Leading adornment for this input.
      */
     var startAdornment: react.ReactNode?
-
-    /**
-     * Minimum number of rows to display when multiline option is set to true.
-     */
-    var minRows: Number?
-
-    /**
-     * Maximum number of rows to display when multiline option is set to true.
-     */
-    var maxRows: Number?
-
-    /**
-     * Type of the `input` element. It should be [a valid HTML5 input type](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#Form_%3Cinput%3E_types).
-     * @default 'text'
-     */
-    var type: dynamic
 
     /**
      * The value of the `input` element, required for a controlled component.
