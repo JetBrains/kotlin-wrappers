@@ -3,6 +3,7 @@
 package web.html
 
 import web.cssom.LinkStyle
+import web.cssom.MediaQuery
 
 abstract external class HTMLStyleElement :
     HTMLElement,
@@ -11,5 +12,5 @@ abstract external class HTMLStyleElement :
     var disabled: Boolean
 
     /** Sets or retrieves the media type. */
-    var media: String
+    var media: MediaQuery
 }

@@ -12,7 +12,7 @@ import web.events.EventType
 
 external interface MediaQueryListEventInit : EventInit {
     var matches: Boolean?
-    var media: String?
+    var media: MediaQuery?
 }
 
 open external class MediaQueryListEvent(

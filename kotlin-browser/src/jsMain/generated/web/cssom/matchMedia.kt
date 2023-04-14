@@ -3,5 +3,5 @@
 package web.cssom
 
 external fun matchMedia(
-    query: String,
+    query: MediaQuery,
 ): MediaQueryList
