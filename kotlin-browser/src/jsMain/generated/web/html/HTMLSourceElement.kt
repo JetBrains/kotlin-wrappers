@@ -2,12 +2,14 @@
 
 package web.html
 
+import web.cssom.MediaQuery
+
 abstract external class HTMLSourceElement :
     HTMLElement {
     var height: Double
 
     /** Gets or sets the intended media type of the media source. */
-    var media: String
+    var media: MediaQuery
     var sizes: String
 
     /** The address or URL of the a media resource that is to be considered. */
