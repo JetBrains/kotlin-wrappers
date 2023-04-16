@@ -7,7 +7,5 @@ external fun <T : Any> import(
 ): Promise<T>
 
 external object import {
-    object meta {
-        val url: String
-    }
+    val meta: ImportMeta
 }
