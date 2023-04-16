@@ -47,6 +47,12 @@ external interface SelectUnstyledCommonProps :
     var listboxOpen: Boolean?
 
     /**
+     * Name of the element. For example used by the server to identify the fields in form submits.
+     * If the name is provided, the component will render a hidden input element that can be submitted to a server.
+     */
+    var name: String?
+
+    /**
      * Callback fired when the component requests to be opened.
      * Use in controlled mode (see listboxOpen).
      */
@@ -86,9 +92,25 @@ external interface SelectUnstyledOwnProps<TValue> :
     var defaultValue: TValue?
 
     /**
+     * A function to convert the currently selected value to a string.
+     * Used to set a value of a hidden input associated with the select,
+     * so that the selected value can be posted with a form.
+     */
+    var getSerializedValue: ((option: SelectOption<TValue>?) -> Any /* String | ReadonlyArray<String> | Number */)?
+
+    /**
      * Callback fired when an option is selected.
      */
     var onChange: ((value: TValue?) -> Unit)?
+
+    /**
+     * A function used to convert the option label to a string.
+     * It's useful when labels are elements and need to be converted to plain text
+     * to enable navigation using character keys on a keyboard.
+     *
+     * @default defaultOptionStringifier
+     */
+    var optionStringifier: ((option: SelectOption<TValue>) -> String)?
 
     /**
      * Function that customizes the rendering of the selected value.
