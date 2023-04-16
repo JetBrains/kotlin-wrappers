@@ -19,9 +19,7 @@ fun useMediaQuery(
         matchMedia(query)
     }
 
-    val (matches, setMatches) = useState {
-        queryList.matches
-    }
+    val (matches, setMatches) = useState(queryList.matches)
 
     useEffect(queryList) {
         setMatches(queryList.matches)
