@@ -3,6 +3,7 @@
 package mui.base
 
 import csstype.ClassName
+import web.html.InputType
 
 external interface InputUnstyledProps :
     InputUnstyledOwnProps,
@@ -12,12 +13,12 @@ external interface SingleLineInputUnstyledProps : react.Props {
     /**
      * Maximum number of rows to display when multiline option is set to true.
      */
-    var maxRows: dynamic
+    var maxRows: Number? /* undefined */
 
     /**
      * Minimum number of rows to display when multiline option is set to true.
      */
-    var minRows: dynamic
+    var minRows: Number? /* undefined */
 
     /**
      * If `true`, a `textarea` element is rendered.
@@ -28,13 +29,13 @@ external interface SingleLineInputUnstyledProps : react.Props {
     /**
      * Number of rows to display when multiline option is set to true.
      */
-    var rows: dynamic
+    var rows: Number? /* undefined */
 
     /**
      * Type of the `input` element. It should be [a valid HTML5 input type](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#Form_%3Cinput%3E_types).
      * @default 'text'
      */
-    var type: dynamic
+    var type: InputType?
 }
 
 external interface MultiLineInputUnstyledProps : SingleLineInputUnstyledProps {
@@ -63,10 +64,12 @@ external interface MultiLineInputUnstyledProps : SingleLineInputUnstyledProps {
      * Type of the `input` element. It should be [a valid HTML5 input type](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#Form_%3Cinput%3E_types).
      * @default 'text'
      */
-    override var type: dynamic
+    override var type: InputType? /* undefined */
 }
 
-external interface InputUnstyledOwnProps : MultiLineInputUnstyledProps, react.PropsWithClassName {
+external interface InputUnstyledOwnProps :
+    react.PropsWithClassName,
+    MultiLineInputUnstyledProps {
     // var `aria-describedby`: String?
 
     // var `aria-label`: String?
