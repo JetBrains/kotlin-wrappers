@@ -4,14 +4,24 @@ package node.test
 
 sealed external interface TestPass {
     /**
-     * The test duration.
+     * Additional execution metadata.
      */
-    var duration: Number
+    var details: Any /* {
+        /**
+         * The duration of the test in milliseconds.
+         */
+        duration: number;
+    } */
 
     /**
      * The test name.
      */
     var name: String
+
+    /**
+     * The nesting level of the test.
+     */
+    var nesting: Number
 
     /**
      * The ordinal number of the test.
@@ -21,10 +31,10 @@ sealed external interface TestPass {
     /**
      * Present if `context.todo` is called.
      */
-    var todo: String?
+    var todo: Any? /* string | boolean */
 
     /**
      * Present if `context.skip` is called.
      */
-    var skip: String?
+    var skip: Any? /* string | boolean */
 }

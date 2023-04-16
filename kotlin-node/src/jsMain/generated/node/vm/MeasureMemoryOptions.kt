@@ -7,5 +7,9 @@ sealed external interface MeasureMemoryOptions {
      * @default 'summary'
      */
     var mode: MeasureMemoryMode?
-    var context: Context?
+
+    /**
+     * @default 'default'
+     */
+    var execution: Any? /* 'default' | 'eager' */
 }

@@ -22,9 +22,4 @@ sealed external interface RunningScriptOptions : BaseOptions {
      * Default: `false`.
      */
     var breakOnSigint: Boolean?
-
-    /**
-     * If set to `afterEvaluate`, microtasks will be run immediately after the script has run.
-     */
-    var microtaskMode: String? /* 'afterEvaluate' */
 }

@@ -35,5 +35,5 @@ package node.vm
 external fun runInNewContext(
     code: String,
     contextObject: Context = definedExternally,
-    options: Any /* RunningScriptOptions | string */ = definedExternally,
+    options: Any /* RunningCodeInNewContextOptions | string */ = definedExternally,
 ): Any

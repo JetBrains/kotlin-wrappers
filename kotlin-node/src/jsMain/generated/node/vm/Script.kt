@@ -9,7 +9,7 @@ import node.buffer.Buffer
 external class Script {
     constructor(
         code: String,
-        options: ScriptOptions = definedExternally,
+        options: Any /* ScriptOptions | string */ = definedExternally,
     )
 
     /**
@@ -79,7 +79,7 @@ external class Script {
      */
     fun runInNewContext(
         contextObject: Context = definedExternally,
-        options: RunningScriptOptions = definedExternally,
+        options: RunningScriptInNewContextOptions = definedExternally,
     ): Any
 
     /**
@@ -136,4 +136,9 @@ external class Script {
     var cachedDataProduced: Boolean?
     var cachedDataRejected: Boolean?
     var cachedData: Buffer?
+
+    /**
+     * When the script is compiled from a source that contains a source map magic comment, this property will be set to the URL of the source map.
+     */
+    var sourceMapURL: String?
 }

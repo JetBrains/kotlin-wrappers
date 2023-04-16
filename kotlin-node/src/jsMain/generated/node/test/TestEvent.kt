@@ -10,9 +10,11 @@ package node.test
 import node.events.EventType
 
 // language=JavaScript
-@JsName("""(/*union*/{DIAGNOSTIC: 'test:diagnostic', FAIL: 'test:fail', PASS: 'test:pass'}/*union*/)""")
+@JsName("""(/*union*/{DIAGNOSTIC: 'test:diagnostic', FAIL: 'test:fail', PASS: 'test:pass', PLAN: 'test:plan', START: 'test:start'}/*union*/)""")
 external object TestEvent {
     object DIAGNOSTIC : EventType
     object FAIL : EventType
     object PASS : EventType
+    object PLAN : EventType
+    object START : EventType
 }

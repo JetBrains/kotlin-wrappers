@@ -44,9 +44,9 @@ sealed external interface TestContext {
     ) -> Unit /* typeof afterEach */
 
     /**
-     * This function is used to write TAP diagnostics to the output. Any diagnostic information is
+     * This function is used to write diagnostics to the output. Any diagnostic information is
      * included at the end of the test's results. This function does not return a value.
-     * @param message Message to be displayed as a TAP diagnostic.
+     * @param message Message to be reported.
      * @since v18.0.0
      */
     fun diagnostic(message: String)
@@ -74,18 +74,18 @@ sealed external interface TestContext {
 
     /**
      * This function causes the test's output to indicate the test as skipped. If `message` is
-     * provided, it is included in the TAP output. Calling `skip()` does not terminate execution of
+     * provided, it is included in the output. Calling `skip()` does not terminate execution of
      * the test function. This function does not return a value.
-     * @param message Optional skip message to be displayed in TAP output.
+     * @param message Optional skip message.
      * @since v18.0.0
      */
     fun skip(message: String = definedExternally)
 
     /**
      * This function adds a `TODO` directive to the test's output. If `message` is provided, it is
-     * included in the TAP output. Calling `todo()` does not terminate execution of the test
+     * included in the output. Calling `todo()` does not terminate execution of the test
      * function. This function does not return a value.
-     * @param message Optional `TODO` message to be displayed in TAP output.
+     * @param message Optional `TODO` message.
      * @since v18.0.0
      */
     fun todo(message: String = definedExternally)

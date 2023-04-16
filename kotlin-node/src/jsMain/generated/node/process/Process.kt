@@ -915,6 +915,13 @@ sealed external interface Process : node.events.IEventEmitter {
     var memoryUsage: MemoryUsageFn
 
     /**
+     * Gets the amount of memory available to the process (in bytes) based on
+     * limits imposed by the OS. If there is no such constraint, or the constraint
+     * is unknown, `undefined` is returned.
+     */
+    fun constrainedMemory(): Number
+
+    /**
      * The `process.cpuUsage()` method returns the user and system CPU time usage of
      * the current process, in an object with properties `user` and `system`, whose
      * values are microsecond values (millionth of a second). These values measure time

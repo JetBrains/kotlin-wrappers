@@ -27,6 +27,13 @@ sealed external interface ServerOptions<
     var requestTimeout: Number?
 
     /**
+     * It joins the field line values of multiple headers in a request with `, ` instead of discarding the duplicates.
+     * @default false
+     * @since v18.14.0
+     */
+    var joinDuplicateHeaders: Boolean?
+
+    /**
      * The number of milliseconds of inactivity a server needs to wait for additional incoming data,
      * after it has finished writing the last response, before a socket will be destroyed.
      * @see Server.keepAliveTimeout for more information.

@@ -38,4 +38,5 @@ sealed external interface ClientRequestArgs {
     var socketPath: String?
     var timeout: Number?
     var uniqueHeaders: ReadonlyArray<Any /* string | string[] */>?
+    var joinDuplicateHeaders: Boolean?
 }

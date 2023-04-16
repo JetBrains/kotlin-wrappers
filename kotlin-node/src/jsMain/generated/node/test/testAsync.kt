@@ -9,10 +9,10 @@ import kotlin.js.Promise
 
 /**
  * The `test()` function is the value imported from the test module. Each invocation of this
- * function results in the creation of a test point in the TAP output.
+ * function results in reporting the test to the {@link TestsStream}.
  *
  * The {@link TestContext} object passed to the fn argument can be used to perform actions
- * related to the current test. Examples include skipping the test, adding additional TAP
+ * related to the current test. Examples include skipping the test, adding additional
  * diagnostic information, or creating subtests.
  *
  * `test()` returns a {@link Promise} that resolves once the test completes. The return value
@@ -50,10 +50,10 @@ external fun testAsync(
 
 /**
  * The `test()` function is the value imported from the test module. Each invocation of this
- * function results in the creation of a test point in the TAP output.
+ * function results in reporting the test to the {@link TestsStream}.
  *
  * The {@link TestContext} object passed to the fn argument can be used to perform actions
- * related to the current test. Examples include skipping the test, adding additional TAP
+ * related to the current test. Examples include skipping the test, adding additional
  * diagnostic information, or creating subtests.
  *
  * `test()` returns a {@link Promise} that resolves once the test completes. The return value
@@ -92,10 +92,10 @@ external fun testAsync(
 
 /**
  * The `test()` function is the value imported from the test module. Each invocation of this
- * function results in the creation of a test point in the TAP output.
+ * function results in reporting the test to the {@link TestsStream}.
  *
  * The {@link TestContext} object passed to the fn argument can be used to perform actions
- * related to the current test. Examples include skipping the test, adding additional TAP
+ * related to the current test. Examples include skipping the test, adding additional
  * diagnostic information, or creating subtests.
  *
  * `test()` returns a {@link Promise} that resolves once the test completes. The return value
@@ -133,10 +133,10 @@ external fun testAsync(
 
 /**
  * The `test()` function is the value imported from the test module. Each invocation of this
- * function results in the creation of a test point in the TAP output.
+ * function results in reporting the test to the {@link TestsStream}.
  *
  * The {@link TestContext} object passed to the fn argument can be used to perform actions
- * related to the current test. Examples include skipping the test, adding additional TAP
+ * related to the current test. Examples include skipping the test, adding additional
  * diagnostic information, or creating subtests.
  *
  * `test()` returns a {@link Promise} that resolves once the test completes. The return value

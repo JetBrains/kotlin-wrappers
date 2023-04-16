@@ -68,5 +68,5 @@ package node.vm
  */
 external fun runInThisContext(
     code: String,
-    options: Any /* RunningScriptOptions | string */ = definedExternally,
+    options: Any /* RunningCodeOptions | string */ = definedExternally,
 ): Any
