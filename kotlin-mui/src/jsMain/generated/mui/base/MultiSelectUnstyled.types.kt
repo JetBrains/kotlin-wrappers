@@ -3,7 +3,6 @@
 package mui.base
 
 import js.core.ReadonlyArray
-import web.dom.Element
 
 external interface MultiSelectUnstyledProps<TValue> :
     MultiSelectUnstyledOwnProps<TValue> {
@@ -53,7 +52,7 @@ external interface MultiSelectUnstyledOwnProps<TValue> :
     /**
      * Callback fired when an option is selected.
      */
-    var onChange: ((e: react.dom.events.SyntheticEvent<Element, web.events.Event>?, value: ReadonlyArray<TValue>) -> Unit)?
+    var onChange: ((e: react.dom.events.SyntheticEvent<*, *>?, value: ReadonlyArray<TValue>) -> Unit)?
 
     /**
      * A function used to convert the option label to a string.
