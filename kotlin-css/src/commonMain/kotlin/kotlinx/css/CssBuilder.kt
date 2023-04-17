@@ -220,6 +220,9 @@ interface CssBuilder : StyledElement, RuleContainer {
     fun max(v1: LinearDimension, v2: LinearDimension): LinearDimension =
         LinearDimension("max($v1, $v2)")
 
+    fun minmax(v1: LinearDimension, v2: LinearDimension): LinearDimension =
+        LinearDimension("minmax($v1, $v2)")
+
     fun clamp(min: LinearDimension, preferred: LinearDimension, max: LinearDimension): LinearDimension =
         LinearDimension("clamp($min, $preferred, $max)")
 
