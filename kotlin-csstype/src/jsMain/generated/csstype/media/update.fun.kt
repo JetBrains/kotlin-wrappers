@@ -7,4 +7,4 @@ import web.cssom.MediaQuery
 fun update(
     value: Update,
 ): MediaQuery =
-    MediaQuery("(update: $value)")
+    MediaQuery("(update:$value)")

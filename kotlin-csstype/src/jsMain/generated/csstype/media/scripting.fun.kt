@@ -7,4 +7,4 @@ import web.cssom.MediaQuery
 fun scripting(
     value: Scripting,
 ): MediaQuery =
-    MediaQuery("(scripting: $value)")
+    MediaQuery("(scripting:$value)")

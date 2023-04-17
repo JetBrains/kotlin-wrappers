@@ -7,4 +7,4 @@ import web.cssom.MediaQuery
 fun prefersContrast(
     value: PrefersContrast,
 ): MediaQuery =
-    MediaQuery("(prefers-contrast: $value)")
+    MediaQuery("(prefers-contrast:$value)")

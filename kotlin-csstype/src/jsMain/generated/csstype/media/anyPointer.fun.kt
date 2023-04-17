@@ -7,4 +7,4 @@ import web.cssom.MediaQuery
 fun anyPointer(
     value: Pointer,
 ): MediaQuery =
-    MediaQuery("(any-pointer: $value)")
+    MediaQuery("(any-pointer:$value)")

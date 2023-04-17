@@ -7,4 +7,4 @@ import web.cssom.MediaQuery
 fun colorGamut(
     value: ColorGamut,
 ): MediaQuery =
-    MediaQuery("(color-gamut: $value)")
+    MediaQuery("(color-gamut:$value)")

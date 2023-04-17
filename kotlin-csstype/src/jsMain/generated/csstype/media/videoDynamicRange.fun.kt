@@ -7,4 +7,4 @@ import web.cssom.MediaQuery
 fun videoDynamicRange(
     value: DynamicRange,
 ): MediaQuery =
-    MediaQuery("(video-dynamic-range: $value)")
+    MediaQuery("(video-dynamic-range:$value)")

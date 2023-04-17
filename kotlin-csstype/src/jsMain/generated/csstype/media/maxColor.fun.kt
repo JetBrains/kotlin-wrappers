@@ -7,4 +7,4 @@ import web.cssom.MediaQuery
 fun maxColor(
     value: Int,
 ): MediaQuery =
-    MediaQuery("(max-color: $value)")
+    MediaQuery("(max-color:$value)")

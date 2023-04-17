@@ -7,4 +7,4 @@ import web.cssom.MediaQuery
 fun overflowBlock(
     value: OverflowBlock,
 ): MediaQuery =
-    MediaQuery("(overflow-block: $value)")
+    MediaQuery("(overflow-block:$value)")

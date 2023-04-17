@@ -7,4 +7,4 @@ import web.cssom.MediaQuery
 fun minColor(
     value: Int,
 ): MediaQuery =
-    MediaQuery("(min-color: $value)")
+    MediaQuery("(min-color:$value)")

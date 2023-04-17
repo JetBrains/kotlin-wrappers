@@ -7,4 +7,4 @@ import web.cssom.MediaQuery
 fun invertedColors(
     value: InvertedColors,
 ): MediaQuery =
-    MediaQuery("(inverted-colors: $value)")
+    MediaQuery("(inverted-colors:$value)")

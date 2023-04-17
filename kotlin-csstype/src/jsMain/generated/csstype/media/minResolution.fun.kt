@@ -7,4 +7,4 @@ import web.cssom.MediaQuery
 fun minResolution(
     value: Resolution,
 ): MediaQuery =
-    MediaQuery("(min-resolution: $value)")
+    MediaQuery("(min-resolution:$value)")

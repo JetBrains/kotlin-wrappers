@@ -7,4 +7,4 @@ import web.cssom.MediaQuery
 fun forcedColors(
     value: ForcedColors,
 ): MediaQuery =
-    MediaQuery("(forced-colors: $value)")
+    MediaQuery("(forced-colors:$value)")

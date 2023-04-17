@@ -7,4 +7,4 @@ import web.cssom.MediaQuery
 fun color(
     value: Int,
 ): MediaQuery =
-    MediaQuery("(color: $value)")
+    MediaQuery("(color:$value)")

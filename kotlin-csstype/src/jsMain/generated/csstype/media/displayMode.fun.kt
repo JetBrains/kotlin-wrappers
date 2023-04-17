@@ -7,4 +7,4 @@ import web.cssom.MediaQuery
 fun displayMode(
     value: DisplayMode,
 ): MediaQuery =
-    MediaQuery("(display-mode: $value)")
+    MediaQuery("(display-mode:$value)")

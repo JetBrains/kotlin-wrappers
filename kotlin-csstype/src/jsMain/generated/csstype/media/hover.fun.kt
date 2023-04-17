@@ -7,4 +7,4 @@ import web.cssom.MediaQuery
 fun hover(
     value: Hover,
 ): MediaQuery =
-    MediaQuery("(hover: $value)")
+    MediaQuery("(hover:$value)")

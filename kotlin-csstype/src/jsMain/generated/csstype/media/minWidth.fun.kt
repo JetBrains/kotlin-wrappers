@@ -8,4 +8,4 @@ import web.cssom.MediaQuery
 fun minWidth(
     value: Length,
 ): MediaQuery =
-    MediaQuery("(min-width: $value)")
+    MediaQuery("(min-width:$value)")

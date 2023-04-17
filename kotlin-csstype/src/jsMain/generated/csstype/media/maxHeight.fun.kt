@@ -8,4 +8,4 @@ import web.cssom.MediaQuery
 fun maxHeight(
     value: Length,
 ): MediaQuery =
-    MediaQuery("(max-height: $value)")
+    MediaQuery("(max-height:$value)")

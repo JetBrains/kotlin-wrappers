@@ -7,4 +7,4 @@ import web.cssom.MediaQuery
 fun colorIndex(
     value: Int,
 ): MediaQuery =
-    MediaQuery("(color-index: $value)")
+    MediaQuery("(color-index:$value)")

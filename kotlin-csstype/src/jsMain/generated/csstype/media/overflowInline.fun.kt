@@ -7,4 +7,4 @@ import web.cssom.MediaQuery
 fun overflowInline(
     value: OverflowInline,
 ): MediaQuery =
-    MediaQuery("(overflow-inline: $value)")
+    MediaQuery("(overflow-inline:$value)")

@@ -8,4 +8,4 @@ import web.cssom.MediaQuery
 fun width(
     value: Length,
 ): MediaQuery =
-    MediaQuery("(width: $value)")
+    MediaQuery("(width:$value)")

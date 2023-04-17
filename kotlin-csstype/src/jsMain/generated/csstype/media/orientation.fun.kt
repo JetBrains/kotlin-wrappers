@@ -7,4 +7,4 @@ import web.cssom.MediaQuery
 fun orientation(
     value: Orientation,
 ): MediaQuery =
-    MediaQuery("(orientation: $value)")
+    MediaQuery("(orientation:$value)")
