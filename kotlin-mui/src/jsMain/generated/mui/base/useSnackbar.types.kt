@@ -53,5 +53,5 @@ external interface UseSnackbarRootSlotOwnProps : react.Props {
 
     var onMouseLeave: react.dom.events.MouseEventHandler<*>
 
-    var role: dynamic
+    var role: react.dom.aria.AriaRole
 }

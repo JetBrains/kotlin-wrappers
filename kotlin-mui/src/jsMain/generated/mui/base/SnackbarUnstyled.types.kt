@@ -41,5 +41,5 @@ external interface SnackbarUnstyledOwnProps :
 }
 
 external interface SnackbarUnstyledClickAwayListenerSlotProps : react.Props {
-    var ownerState: dynamic
+    var ownerState: Any
 }

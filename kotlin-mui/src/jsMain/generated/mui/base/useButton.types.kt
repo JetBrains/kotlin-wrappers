@@ -11,7 +11,7 @@ external interface UseButtonRootSlotOwnProps : react.Props {
 
     var type: dynamic /* React.ButtonHTMLAttributes<HTMLButtonElement>['type'] */
 
-    var role: dynamic
+    var role: react.dom.aria.AriaRole?
 
     var onBlur: react.dom.events.FocusEventHandler<*>
 
