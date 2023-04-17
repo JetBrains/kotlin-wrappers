@@ -9,27 +9,27 @@ external interface InputUnstyledProps :
     InputUnstyledOwnProps,
     react.dom.html.HTMLAttributes<web.html.HTMLInputElement>
 
-external interface SingleLineInputUnstyledProps : react.Props {
+external interface InputUnstyledBaseProps : react.Props {
     /**
      * Maximum number of rows to display when multiline option is set to true.
      */
-    var maxRows: Number? /* undefined */
+    var maxRows: Number?
 
     /**
      * Minimum number of rows to display when multiline option is set to true.
      */
-    var minRows: Number? /* undefined */
+    var minRows: Number?
 
     /**
      * If `true`, a `textarea` element is rendered.
      * @default false
      */
-    var multiline: Boolean? /* false */
+    var multiline: Boolean /* true */
 
     /**
      * Number of rows to display when multiline option is set to true.
      */
-    var rows: Number? /* undefined */
+    var rows: Number?
 
     /**
      * Type of the `input` element. It should be [a valid HTML5 input type](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#Form_%3Cinput%3E_types).
@@ -38,38 +38,9 @@ external interface SingleLineInputUnstyledProps : react.Props {
     var type: InputType?
 }
 
-external interface MultiLineInputUnstyledProps : SingleLineInputUnstyledProps {
-    /**
-     * Maximum number of rows to display when multiline option is set to true.
-     */
-    override var maxRows: Number?
-
-    /**
-     * Minimum number of rows to display when multiline option is set to true.
-     */
-    override var minRows: Number?
-
-    /**
-     * If `true`, a `textarea` element is rendered.
-     * @default false
-     */
-    override var multiline: Boolean? /* true */
-
-    /**
-     * Number of rows to display when multiline option is set to true.
-     */
-    override var rows: Number?
-
-    /**
-     * Type of the `input` element. It should be [a valid HTML5 input type](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#Form_%3Cinput%3E_types).
-     * @default 'text'
-     */
-    override var type: InputType? /* undefined */
-}
-
 external interface InputUnstyledOwnProps :
     react.PropsWithClassName,
-    MultiLineInputUnstyledProps {
+    InputUnstyledBaseProps {
     // var `aria-describedby`: String?
 
     // var `aria-label`: String?
