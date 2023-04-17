@@ -44,7 +44,7 @@ external interface FilledInputProps :
  *
  * Demos:
  *
- * - [Text fields](https://mui.com/material-ui/react-text-field/)
+ * - [Text Field](https://mui.com/material-ui/react-text-field/)
  *
  * API:
  *

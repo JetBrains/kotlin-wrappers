@@ -118,10 +118,10 @@ external interface FormControlProps :
  *
  * Demos:
  *
- * - [Checkboxes](https://mui.com/material-ui/react-checkbox/)
- * - [Radio buttons](https://mui.com/material-ui/react-radio-button/)
- * - [Switches](https://mui.com/material-ui/react-switch/)
- * - [Text fields](https://mui.com/material-ui/react-text-field/)
+ * - [Checkbox](https://mui.com/material-ui/react-checkbox/)
+ * - [Radio button](https://mui.com/material-ui/react-radio-button/)
+ * - [Switch](https://mui.com/material-ui/react-switch/)
+ * - [Text Field](https://mui.com/material-ui/react-text-field/)
  *
  * API:
  *

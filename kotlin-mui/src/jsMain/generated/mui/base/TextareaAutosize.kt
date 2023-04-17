@@ -24,7 +24,7 @@ external interface TextareaAutosizeProps :
  * Demos:
  *
  * - [Textarea autosize](https://mui.com/base/react-textarea-autosize/)
- * - [Textarea autosize](https://mui.com/material-ui/react-textarea-autosize/)
+ * - [Textarea Autosize](https://mui.com/material-ui/react-textarea-autosize/)
  *
  * API:
  *

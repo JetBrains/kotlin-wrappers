@@ -39,7 +39,7 @@ external interface DialogContentProps :
  *
  * Demos:
  *
- * - [Dialogs](https://mui.com/material-ui/react-dialog/)
+ * - [Dialog](https://mui.com/material-ui/react-dialog/)
  *
  * API:
  *

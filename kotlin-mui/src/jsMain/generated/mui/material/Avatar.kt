@@ -68,7 +68,7 @@ external interface AvatarProps :
  *
  * Demos:
  *
- * - [Avatars](https://mui.com/material-ui/react-avatar/)
+ * - [Avatar](https://mui.com/material-ui/react-avatar/)
  *
  * API:
  *

@@ -183,7 +183,7 @@ external interface SelectProps<T> :
  *
  * Demos:
  *
- * - [Selects](https://mui.com/material-ui/react-select/)
+ * - [Select](https://mui.com/material-ui/react-select/)
  *
  * API:
  *

@@ -56,7 +56,7 @@ external interface IconProps :
  * Demos:
  *
  * - [Icons](https://mui.com/material-ui/icons/)
- * - [Material icons](https://mui.com/material-ui/material-icons/)
+ * - [Material Icons](https://mui.com/material-ui/material-icons/)
  *
  * API:
  *

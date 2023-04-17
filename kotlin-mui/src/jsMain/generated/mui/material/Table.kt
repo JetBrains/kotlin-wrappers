@@ -53,7 +53,7 @@ external interface TableProps :
  *
  * Demos:
  *
- * - [Tables](https://mui.com/material-ui/react-table/)
+ * - [Table](https://mui.com/material-ui/react-table/)
  *
  * API:
  *

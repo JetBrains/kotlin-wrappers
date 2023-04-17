@@ -46,7 +46,7 @@ external interface CardMediaProps :
  *
  * Demos:
  *
- * - [Cards](https://mui.com/material-ui/react-card/)
+ * - [Card](https://mui.com/material-ui/react-card/)
  *
  * API:
  *

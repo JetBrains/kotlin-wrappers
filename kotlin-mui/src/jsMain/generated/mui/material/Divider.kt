@@ -69,7 +69,7 @@ external interface DividerProps :
  *
  * Demos:
  *
- * - [Dividers](https://mui.com/material-ui/react-divider/)
+ * - [Divider](https://mui.com/material-ui/react-divider/)
  * - [Lists](https://mui.com/material-ui/react-list/)
  *
  * API:

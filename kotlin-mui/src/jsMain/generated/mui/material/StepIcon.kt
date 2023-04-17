@@ -50,7 +50,7 @@ external interface StepIconProps :
  *
  * Demos:
  *
- * - [Steppers](https://mui.com/material-ui/react-stepper/)
+ * - [Stepper](https://mui.com/material-ui/react-stepper/)
  *
  * API:
  *

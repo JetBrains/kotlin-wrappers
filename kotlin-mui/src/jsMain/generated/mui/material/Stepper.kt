@@ -13,10 +13,12 @@ import mui.material.styles.Theme
 import mui.system.SxProps
 
 external interface StepperProps :
-    mui.system.StandardProps,
-    PaperProps,
+    react.dom.html.HTMLAttributes<web.html.HTMLDivElement>,
     react.PropsWithChildren,
-    mui.system.PropsWithSx {
+    mui.system.PropsWithSx,
+    mui.types.PropsWithComponent,
+    mui.system.StandardProps,
+    PaperProps {
     /**
      * Set the active step (zero based index).
      * Set to -1 to disable all the steps.
@@ -69,7 +71,7 @@ external interface StepperProps :
  *
  * Demos:
  *
- * - [Steppers](https://mui.com/material-ui/react-stepper/)
+ * - [Stepper](https://mui.com/material-ui/react-stepper/)
  *
  * API:
  *

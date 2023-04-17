@@ -42,8 +42,8 @@ external interface FormGroupProps :
  *
  * Demos:
  *
- * - [Checkboxes](https://mui.com/material-ui/react-checkbox/)
- * - [Switches](https://mui.com/material-ui/react-switch/)
+ * - [Checkbox](https://mui.com/material-ui/react-checkbox/)
+ * - [Switch](https://mui.com/material-ui/react-switch/)
  *
  * API:
  *

@@ -100,7 +100,7 @@ external interface ChipProps :
  *
  * Demos:
  *
- * - [Chips](https://mui.com/material-ui/react-chip/)
+ * - [Chip](https://mui.com/material-ui/react-chip/)
  *
  * API:
  *

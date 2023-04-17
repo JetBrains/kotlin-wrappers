@@ -40,7 +40,7 @@ external interface ScopedCssBaselineProps :
  *
  * Demos:
  *
- * - [Css baseline](https://mui.com/material-ui/react-css-baseline/)
+ * - [CSS Baseline](https://mui.com/material-ui/react-css-baseline/)
  *
  * API:
  *
