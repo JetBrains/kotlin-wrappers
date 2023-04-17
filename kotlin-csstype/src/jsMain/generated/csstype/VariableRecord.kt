@@ -1,7 +1,7 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NATIVE_INDEXER_KEY_SHOULD_BE_STRING_OR_NUMBER"
+    "NATIVE_INDEXER_KEY_SHOULD_BE_STRING_OR_NUMBER",
 )
 
 package csstype
