@@ -14,11 +14,23 @@ external interface ChipClasses {
     /** Styles applied to the root element if `size="medium"`. */
     var sizeMedium: ClassName
 
+    /** Styles applied to the root element if `color="error"`. */
+    var colorError: ClassName
+
+    /** Styles applied to the root element if `color="info"`. */
+    var colorInfo: ClassName
+
     /** Styles applied to the root element if `color="primary"`. */
     var colorPrimary: ClassName
 
     /** Styles applied to the root element if `color="secondary"`. */
     var colorSecondary: ClassName
+
+    /** Styles applied to the root element if `color="success"`. */
+    var colorSuccess: ClassName
+
+    /** Styles applied to the root element if `color="warning"`. */
+    var colorWarning: ClassName
 
     /** State class applied to the root element if `disabled={true}`. */
     var disabled: ClassName

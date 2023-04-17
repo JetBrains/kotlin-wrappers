@@ -29,6 +29,9 @@ external interface SvgIconClasses {
     /** Styles applied to the root element if `fontSize="small"`. */
     var fontSizeSmall: ClassName
 
+    /** Styles applied to the root element if `fontSize="medium"`. */
+    var fontSizeMedium: ClassName
+
     /** Styles applied to the root element if `fontSize="large"`. */
     var fontSizeLarge: ClassName
 }

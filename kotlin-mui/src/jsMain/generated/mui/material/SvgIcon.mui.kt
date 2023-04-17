@@ -10,7 +10,7 @@ package mui.material
 import csstype.ClassName
 
 // language=JavaScript
-@JsName("""(/*union*/{root: 'MuiSvgIcon-root', colorPrimary: 'MuiSvgIcon-colorPrimary', colorSecondary: 'MuiSvgIcon-colorSecondary', colorAction: 'MuiSvgIcon-colorAction', colorError: 'MuiSvgIcon-colorError', colorDisabled: 'MuiSvgIcon-colorDisabled', fontSizeInherit: 'MuiSvgIcon-fontSizeInherit', fontSizeSmall: 'MuiSvgIcon-fontSizeSmall', fontSizeLarge: 'MuiSvgIcon-fontSizeLarge'}/*union*/)""")
+@JsName("""(/*union*/{root: 'MuiSvgIcon-root', colorPrimary: 'MuiSvgIcon-colorPrimary', colorSecondary: 'MuiSvgIcon-colorSecondary', colorAction: 'MuiSvgIcon-colorAction', colorError: 'MuiSvgIcon-colorError', colorDisabled: 'MuiSvgIcon-colorDisabled', fontSizeInherit: 'MuiSvgIcon-fontSizeInherit', fontSizeSmall: 'MuiSvgIcon-fontSizeSmall', fontSizeMedium: 'MuiSvgIcon-fontSizeMedium', fontSizeLarge: 'MuiSvgIcon-fontSizeLarge'}/*union*/)""")
 sealed external interface MuiSvgIcon {
     companion object {
         val root: ClassName
@@ -21,6 +21,7 @@ sealed external interface MuiSvgIcon {
         val colorDisabled: ClassName
         val fontSizeInherit: ClassName
         val fontSizeSmall: ClassName
+        val fontSizeMedium: ClassName
         val fontSizeLarge: ClassName
     }
 }
