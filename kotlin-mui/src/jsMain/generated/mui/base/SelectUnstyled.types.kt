@@ -101,7 +101,7 @@ external interface SelectUnstyledOwnProps<TValue> :
     /**
      * Callback fired when an option is selected.
      */
-    var onChange: ((value: TValue?) -> Unit)?
+    var onChange: ((e: react.dom.events.SyntheticEvent<*, *>?, value: TValue?) -> Unit)?
 
     /**
      * A function used to convert the option label to a string.

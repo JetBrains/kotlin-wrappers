@@ -9,7 +9,7 @@ package mui.base
  *
  * Demos:
  *
- * - [Unstyled menu](https://mui.com/base/react-menu/)
+ * - [Unstyled Menu](https://mui.com/base/react-menu/)
  *
  * API:
  *

@@ -3,6 +3,7 @@
 package mui.base
 
 import js.core.ReadonlyArray
+import web.dom.Element
 
 external interface SelectOption<TValue> {
     var value: TValue
@@ -25,7 +26,7 @@ external interface UseSelectSingleParameters<TValue> {
 
     var multiple: Boolean? /* false */
 
-    var onChange: ((value: TValue?) -> Unit)?
+    var onChange: ((e: react.dom.events.SyntheticEvent<Element, web.events.Event>?, value: TValue?) -> Unit)?
 
     var value: TValue?
 }
@@ -35,7 +36,7 @@ external interface UseSelectMultiParameters<TValue> {
 
     var multiple: Boolean /* true */
 
-    var onChange: ((value: ReadonlyArray<TValue>) -> Unit)?
+    var onChange: ((e: react.dom.events.SyntheticEvent<Element, web.events.Event>?, value: ReadonlyArray<TValue>) -> Unit)?
 
     var value: ReadonlyArray<TValue>?
 }

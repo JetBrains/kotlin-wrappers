@@ -133,7 +133,7 @@ external interface PopperUnstyledRootSlotProps : react.PropsWithClassName {
  *
  * Demos:
  *
- * - [Unstyled popper](https://mui.com/base/react-popper/)
+ * - [Unstyled Popper](https://mui.com/base/react-popper/)
  *
  * API:
  *

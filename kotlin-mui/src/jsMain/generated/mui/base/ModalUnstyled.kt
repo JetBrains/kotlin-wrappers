@@ -20,7 +20,7 @@ package mui.base
  *
  * Demos:
  *
- * - [Unstyled modal](https://mui.com/base/react-modal/)
+ * - [Unstyled Modal](https://mui.com/base/react-modal/)
  *
  * API:
  *
