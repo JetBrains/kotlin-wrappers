@@ -184,7 +184,7 @@ external interface TooltipProps :
     override var sx: SxProps<Theme>?
 
     /**
-     * Tooltip title. Zero-length titles string are never displayed.
+     * Tooltip title. Zero-length titles string, undefined, null and false are never displayed.
      */
     var title: react.ReactNode
 
