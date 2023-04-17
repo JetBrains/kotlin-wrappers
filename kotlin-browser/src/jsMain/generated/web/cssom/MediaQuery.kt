@@ -6,7 +6,7 @@
 
 package web.cssom
 
-sealed external interface MediaQuery
+external interface MediaQuery
 
 inline fun MediaQuery(
     value: String,
