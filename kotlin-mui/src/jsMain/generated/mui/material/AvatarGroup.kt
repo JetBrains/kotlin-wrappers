@@ -24,6 +24,12 @@ external interface AvatarGroupProps :
     var classes: AvatarGroupClasses?
 
     /**
+     * The component used for the root node.
+     * Either a string to use a HTML element or a component.
+     */
+    var component: react.ElementType<*>?
+
+    /**
      * The props used for each slot inside the AvatarGroup.
      * @default {}
      */
@@ -68,7 +74,7 @@ external interface AvatarGroupProps :
  *
  * Demos:
  *
- * - [Avatars](https://mui.com/material-ui/react-avatar/)
+ * - [Avatar](https://mui.com/material-ui/react-avatar/)
  *
  * API:
  *

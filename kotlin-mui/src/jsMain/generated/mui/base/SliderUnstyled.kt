@@ -9,7 +9,7 @@ package mui.base
  *
  * Demos:
  *
- * - [Slider](https://mui.com/base/react-slider/)
+ * - [Unstyled slider](https://mui.com/base/react-slider/)
  *
  * API:
  *

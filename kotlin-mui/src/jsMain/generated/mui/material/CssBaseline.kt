@@ -25,7 +25,7 @@ external interface CssBaselineProps : react.PropsWithChildren {
  *
  * Demos:
  *
- * - [Css baseline](https://mui.com/material-ui/react-css-baseline/)
+ * - [CSS Baseline](https://mui.com/material-ui/react-css-baseline/)
  *
  * API:
  *

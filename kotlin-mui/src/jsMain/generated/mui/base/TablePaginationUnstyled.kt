@@ -10,7 +10,7 @@ package mui.base
  *
  * Demos:
  *
- * - [Table pagination](https://mui.com/base/react-table-pagination/)
+ * - [Unstyled table pagination](https://mui.com/base/react-table-pagination/)
  *
  * API:
  *

@@ -37,7 +37,7 @@ external interface NoSsrProps : react.PropsWithChildren {
  *
  * Demos:
  *
- * - [No ssr](https://mui.com/base/react-no-ssr/)
+ * - [No SSR](https://mui.com/base/react-no-ssr/)
  *
  * API:
  *

@@ -76,7 +76,7 @@ external interface FabProps :
  *
  * Demos:
  *
- * - [Floating action button](https://mui.com/material-ui/react-floating-action-button/)
+ * - [Floating Action Button](https://mui.com/material-ui/react-floating-action-button/)
  *
  * API:
  *

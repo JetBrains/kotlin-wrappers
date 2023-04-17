@@ -83,7 +83,7 @@ external interface SwipeableDrawerProps :
  *
  * Demos:
  *
- * - [Drawers](https://mui.com/material-ui/react-drawer/)
+ * - [Drawer](https://mui.com/material-ui/react-drawer/)
  *
  * API:
  *

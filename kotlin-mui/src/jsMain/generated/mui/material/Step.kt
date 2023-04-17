@@ -9,10 +9,11 @@ import mui.material.styles.Theme
 import mui.system.SxProps
 
 external interface StepProps :
-    mui.system.StandardProps,
     react.dom.html.HTMLAttributes<web.html.HTMLDivElement>,
     react.PropsWithChildren,
-    mui.system.PropsWithSx {
+    mui.system.PropsWithSx,
+    mui.types.PropsWithComponent,
+    mui.system.StandardProps {
     /**
      * Sets the step as active. Is passed to child components.
      */
@@ -67,7 +68,7 @@ external interface StepProps :
  *
  * Demos:
  *
- * - [Steppers](https://mui.com/material-ui/react-stepper/)
+ * - [Stepper](https://mui.com/material-ui/react-stepper/)
  *
  * API:
  *

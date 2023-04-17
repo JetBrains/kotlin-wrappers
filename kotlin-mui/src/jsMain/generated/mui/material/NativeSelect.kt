@@ -75,7 +75,7 @@ external interface NativeSelectProps :
  *
  * Demos:
  *
- * - [Selects](https://mui.com/material-ui/react-select/)
+ * - [Select](https://mui.com/material-ui/react-select/)
  *
  * API:
  *

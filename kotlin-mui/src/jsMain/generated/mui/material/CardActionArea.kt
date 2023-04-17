@@ -27,7 +27,7 @@ external interface CardActionAreaProps : mui.system.PropsWithSx {
  *
  * Demos:
  *
- * - [Cards](https://mui.com/material-ui/react-card/)
+ * - [Card](https://mui.com/material-ui/react-card/)
  *
  * API:
  *

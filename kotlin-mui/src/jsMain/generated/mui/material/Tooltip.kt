@@ -206,7 +206,7 @@ external interface TooltipProps :
  *
  * Demos:
  *
- * - [Tooltips](https://mui.com/material-ui/react-tooltip/)
+ * - [Tooltip](https://mui.com/material-ui/react-tooltip/)
  *
  * API:
  *

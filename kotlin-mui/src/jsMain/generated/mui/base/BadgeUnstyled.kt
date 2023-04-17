@@ -9,7 +9,7 @@ package mui.base
  *
  * Demos:
  *
- * - [Badge](https://mui.com/base/react-badge/)
+ * - [Unstyled badge](https://mui.com/base/react-badge/)
  *
  * API:
  *

@@ -9,7 +9,7 @@ package mui.base
  *
  * Demos:
  *
- * - [Input](https://mui.com/base/react-input/)
+ * - [Unstyled input](https://mui.com/base/react-input/)
  *
  * API:
  *
