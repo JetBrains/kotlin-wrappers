@@ -42,7 +42,7 @@ external interface ClickAwayListenerProps : react.Props {
  *
  * Demos:
  *
- * - [Click-away listener](https://mui.com/base/react-click-away-listener/)
+ * - [Click-Away Listener](https://mui.com/base/react-click-away-listener/)
  *
  * API:
  *

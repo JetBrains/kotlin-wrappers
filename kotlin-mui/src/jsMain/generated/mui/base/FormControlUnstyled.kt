@@ -31,7 +31,7 @@ package mui.base
  *
  * Demos:
  *
- * - [Unstyled form control](https://mui.com/base/react-form-control/)
+ * - [Unstyled Form Control](https://mui.com/base/react-form-control/)
  *
  * API:
  *

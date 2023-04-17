@@ -3,6 +3,7 @@
 package mui.base
 
 import csstype.ClassName
+import web.dom.Element
 
 external interface SelectUnstyledProps<TValue> :
     SelectUnstyledOwnProps<TValue> {
@@ -101,7 +102,7 @@ external interface SelectUnstyledOwnProps<TValue> :
     /**
      * Callback fired when an option is selected.
      */
-    var onChange: ((value: TValue?) -> Unit)?
+    var onChange: ((e: react.dom.events.SyntheticEvent<Element, web.events.Event>?, value: TValue?) -> Unit)?
 
     /**
      * A function used to convert the option label to a string.
