@@ -7,9 +7,11 @@
 
 package csstype.media
 
+import web.cssom.MediaQuery
+
 // language=JavaScript
 @JsName("""(/*union*/{all: 'all', print: 'print', screen: 'screen'}/*union*/)""")
-sealed external interface MediaType {
+sealed external interface MediaType : MediaQuery {
     companion object {
         val all: MediaType
         val print: MediaType
