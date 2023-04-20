@@ -8,6 +8,7 @@ import csstype.PropertiesBuilder
 import js.core.ReadonlyRecord
 import js.core.Record
 import js.core.jso
+import react.CSSProperties
 
 external interface TypographyOptions :
     ReadonlyRecord<TypographyVariant, CSSProperties>,
