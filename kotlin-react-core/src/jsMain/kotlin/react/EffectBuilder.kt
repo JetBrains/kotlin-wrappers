@@ -1,18 +1,17 @@
-@file:Suppress(
-    "NOTHING_TO_INLINE",
-)
-
 package react
 
 import js.core.ReadonlyArray
 
-// TODO: make external in IR
-sealed class EffectBuilder {
-    inline fun cleanup(
-        noinline block: Cleanup,
-    ) {
-        asDynamic().push(block)
-    }
+sealed external interface EffectBuilder {
+    @JsName("push")
+    fun cleanup(
+        block: Cleanup,
+    )
+
+    @JsName("push")
+    fun cleanup(
+        vararg blocks: Cleanup,
+    )
 }
 
 internal fun createEffectCallback(
