@@ -9,3 +9,9 @@ inline fun <T> Array<T>.push(
 ) {
     asDynamic().push(item)
 }
+
+inline fun <T> Array<T>.push(
+    vararg items: T,
+) {
+    asDynamic().push.apply(this, items)
+}
