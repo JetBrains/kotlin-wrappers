@@ -7,11 +7,6 @@ sealed external interface EffectBuilder {
     fun cleanup(
         block: Cleanup,
     )
-
-    @JsName("push")
-    fun cleanup(
-        vararg blocks: Cleanup,
-    )
 }
 
 internal fun createEffectCallback(
