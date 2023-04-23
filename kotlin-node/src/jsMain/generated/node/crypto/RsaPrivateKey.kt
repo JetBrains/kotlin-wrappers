@@ -2,7 +2,7 @@
 
 package node.crypto
 
-import js.core.ReadonlyArray
+import js.typedarrays.TypedArray
 
 sealed external interface RsaPrivateKey {
     var key: KeyLike
@@ -12,6 +12,6 @@ sealed external interface RsaPrivateKey {
      * @default 'sha1'
      */
     var oaepHash: String?
-    var oaepLabel: ReadonlyArray<*>? /* TypedArray */
+    var oaepLabel: TypedArray<*, *>?
     var padding: Number?
 }

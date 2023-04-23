@@ -8,6 +8,7 @@ import js.core.BigInt
 import js.core.JsIterable
 import js.core.JsTuple2
 import js.core.ReadonlyArray
+import js.typedarrays.TypedArray
 import js.typedarrays.Uint8Array
 
 external class Buffer : Uint8Array {
@@ -2160,7 +2161,7 @@ external class Buffer : Uint8Array {
          * @param length The number of elements from `view` to copy.
          */
         fun copyBytesFrom(
-            view: ReadonlyArray<*>, /* TypedArray */
+            view: TypedArray<*, *>,
             offset: Number = definedExternally,
             length: Number = definedExternally,
         ): Buffer
