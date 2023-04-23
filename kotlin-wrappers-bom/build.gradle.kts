@@ -9,6 +9,7 @@ dependencies {
         api(project(":kotlin-browser"))
         api(project(":kotlin-cesium"))
         api(project(":kotlin-css"))
+        api(project(":kotlin-cssom-core"))
         api(project(":kotlin-csstype"))
         api(project(":kotlin-electron"))
         api(project(":kotlin-emotion"))

@@ -35,6 +35,9 @@ include("kotlin-cesium")
 // Platform-agnostic CSS support
 include("kotlin-css")
 
+// Kotlin/JS: Zero-runtime CSS core typings
+include("kotlin-cssom-core")
+
 // Kotlin/JS: Zero-runtime CSS typings
 include("kotlin-csstype")
 
