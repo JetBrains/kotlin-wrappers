@@ -30,4 +30,11 @@ sealed external interface WorkerOptions {
      * @default true
      */
     var trackUnmanagedFds: Boolean?
+
+    /**
+     * An optional `name` to be appended to the worker title
+     * for debuggin/identification purposes, making the final title as
+     * `[worker ${id}] ${name}`.
+     */
+    var name: String?
 }

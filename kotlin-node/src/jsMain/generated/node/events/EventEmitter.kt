@@ -52,7 +52,10 @@ open external class EventEmitter : IEventEmitter {
         vararg args: Any,
     ): Boolean
 
-    override fun listenerCount(event: EventType): Number
+    override fun listenerCount(
+        event: EventType,
+        listener: Function<*>,
+    ): Number
 
     override fun prependListener(
         event: EventType,

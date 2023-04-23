@@ -2153,6 +2153,19 @@ external class Buffer : Uint8Array {
         ): Buffer
 
         /**
+         * Copies the underlying memory of `view` into a new `Buffer`.
+         * @since v18.16.0
+         * @param view The `TypedArray` to copy.
+         * @param offset The starting offset within `view`.
+         * @param length The number of elements from `view` to copy.
+         */
+        fun copyBytesFrom(
+            view: ReadonlyArray<*>, /* TypedArray */
+            offset: Number = definedExternally,
+            length: Number = definedExternally,
+        ): Buffer
+
+        /**
          * Compares `buf1` to `buf2`, typically for the purpose of sorting arrays of`Buffer` instances. This is equivalent to calling `buf1.compare(buf2)`.
          *
          * ```js

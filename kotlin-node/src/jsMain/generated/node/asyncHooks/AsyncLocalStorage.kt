@@ -5,7 +5,34 @@
 package node.asyncHooks
 
 external class AsyncLocalStorage<T> {
-    constructor(options: AsyncLocalStorageOptions<T> = definedExternally)
+    /**
+     * Binds the given function to the current execution context.
+     * @since v18.16.0
+     * @param fn The function to bind to the current execution context.
+     * @returns A new function that calls `fn` within the captured execution context.
+     */
+
+    // HIDDEN METHOD START
+    /*
+    static bind<Func extends (...args: any[]) => any>(fn: Func): Func & {
+        asyncResource: AsyncResource;
+    }
+    */
+    // HIDDEN METHOD END
+
+    /**
+     * Captures the current execution context and returns a function that accepts a function as an argument.
+     * Whenever the returned function is called, it calls the function passed to it within the captured context.
+     * @since v18.16.0
+     */
+
+    // HIDDEN METHOD START
+    /*
+    static snapshot(): (<R, TArgs extends any[]>(fn: Function<R> /* ...args: TArgs */, ...args: TArgs) => R) & {
+        asyncResource: AsyncResource;
+    }
+    */
+    // HIDDEN METHOD END
 
     /**
      * Disables the instance of `AsyncLocalStorage`. All subsequent calls

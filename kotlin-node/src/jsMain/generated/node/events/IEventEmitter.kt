@@ -297,10 +297,17 @@ external interface IEventEmitter {
 
     /**
      * Returns the number of listeners listening to the event named `eventName`.
+     *
+     * If `listener` is provided, it will return how many times the listener
+     * is found in the list of the listeners of the event.
      * @since v3.2.0
      * @param eventName The name of the event being listened for
+     * @param listener The event handler function
      */
-    fun listenerCount(event: EventType): Number
+    fun listenerCount(
+        event: EventType,
+        listener: Function<*> = definedExternally,
+    ): Number
 
     /**
      * Adds the `listener` function to the _beginning_ of the listeners array for the
