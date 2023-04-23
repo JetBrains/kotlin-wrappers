@@ -4,9 +4,9 @@
     "DECLARATION_CANT_BE_INLINED",
 )
 
-package web.cssom
+package csstype
 
-import csstype.RuleBuilder
+import web.cssom.Selector
 
 interface AdvancedPseudosRuleBuilder<T : Any> : RuleBuilder<T> {
     inline fun cue(
