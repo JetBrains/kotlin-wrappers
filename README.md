@@ -10,7 +10,8 @@ This repository hosts a number of [Kotlin](https://kotlinlang.org) wrappers for 
 
 To learn more please refer to the `README`s of individual modules.
 
-Versions with the `-compat` suffix are built with the `kotlin.mpp.enableCompatibilityMetadataVariant=true` option enabled. These are required for multiplatform projects that don't use [hierarchical project structure](https://kotlinlang.org/docs/multiplatform-hierarchy.html).
+Versions with the `-compat` suffix are built with the `kotlin.mpp.enableCompatibilityMetadataVariant=true` option enabled. These are required for multiplatform projects that don't
+use [hierarchical project structure](https://kotlinlang.org/docs/multiplatform-hierarchy.html).
 
 | README                                                                                 |               Note               | Version                                                                                                                                                                                                                              |
 |:---------------------------------------------------------------------------------------|:--------------------------------:|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -109,7 +110,7 @@ Make sure that you have `mavenCentral()` in the list of repositories.
 3. A port of "Thinking in React" [example](examples/src/jsMain/kotlin/example/Product.kt)
 
 4. An [example of using axios](examples/src/jsMain/kotlin/example/AxiosSearch.kt) to fetch remote data. It also
-demonstrates how to add typings for an external library.
+   demonstrates how to add typings for an external library.
 
 5. An [example of using Quill](examples/src/jsMain/kotlin/example/Quill.kt) that shows how to use an external React component.
 
@@ -135,10 +136,9 @@ Please note that React wrappers in particular heavily relied on specific charact
 ### React error: "X not a function" in production mode
 
 - Every interface implementing `Props` or `State` should be marked as `external` interface. Otherwise, you will get `Uncaught ClassCastException`.
-If you’re implementing these interfaces via a class, you can mark it as `@JsExport` — however, we suggest evaluating if you could use an external interface instead.
+  If you’re implementing these interfaces via a class, you can mark it as `@JsExport` — however, we suggest evaluating if you could use an external interface instead.
 - Every component extending `RComponent` must be marked with `@JsExport`. Otherwise, you might run into issues such as `TypeError: l.render is not a function (react-dom.production.min.js:182)`
 - https://youtrack.jetbrains.com/issue/KT-42427, https://youtrack.jetbrains.com/issue/KT-39506
-
 
 ## Contributing
 
