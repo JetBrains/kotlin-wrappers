@@ -46,7 +46,7 @@ external interface ToolbarProps :
  *
  * Demos:
  *
- * - [App bar](https://mui.com/material-ui/react-app-bar/)
+ * - [App Bar](https://mui.com/material-ui/react-app-bar/)
  *
  * API:
  *

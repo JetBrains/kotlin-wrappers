@@ -26,23 +26,23 @@ external interface ButtonUnstyledOwnProps :
     override var className: ClassName?
 
     /**
+     * The props used for each slot inside the Button.
+     * @default {}
+     */
+    var slotProps: SlotProps?
+
+    interface SlotProps {
+        var root: react.Props? /* SlotComponentProps<'button', ButtonUnstyledComponentsPropsOverrides, ButtonUnstyledOwnerState> */
+    }
+
+    /**
      * The components used for each slot inside the Button.
      * Either a string to use a HTML element or a component.
      * @default {}
      */
-    var components: Components?
+    var slots: Slots?
 
-    interface Components {
-        var Root: react.ElementType<*>?
-    }
-
-    /**
-     * The props used for each slot inside the Button.
-     * @default {}
-     */
-    var componentsProps: ComponentsProps?
-
-    interface ComponentsProps {
-        var root: react.Props? /* SlotComponentProps<'button', ButtonUnstyledComponentsPropsOverrides, ButtonUnstyledOwnerState> */
+    interface Slots {
+        var root: react.ElementType<*>?
     }
 }

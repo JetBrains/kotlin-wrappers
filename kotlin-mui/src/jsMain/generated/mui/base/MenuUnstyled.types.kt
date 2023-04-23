@@ -34,29 +34,6 @@ external interface MenuUnstyledOwnProps :
     override var className: ClassName?
 
     /**
-     * The components used for each slot inside the Menu.
-     * Either a string to use a HTML element or a component.
-     * @default {}
-     */
-    var components: Components?
-
-    interface Components {
-        var Root: react.ElementType<*>?
-        var Listbox: react.ElementType<*>?
-    }
-
-    /**
-     * The props used for each slot inside the Menu.
-     * @default {}
-     */
-    var componentsProps: ComponentsProps?
-
-    interface ComponentsProps {
-        var root: react.Props? /* SlotComponentProps<typeof PopperUnstyled, MenuUnstyledComponentsPropsOverrides, MenuUnstyledOwnerState> */
-        var listbox: react.Props? /* SlotComponentProps<'ul', MenuUnstyledComponentsPropsOverrides, MenuUnstyledOwnerState> */
-    }
-
-    /**
      * Always keep the menu in the DOM.
      * This prop can be useful in SEO situation or when you want to maximize the responsiveness of the Menu.
      *
@@ -76,6 +53,29 @@ external interface MenuUnstyledOwnProps :
      * @default false
      */
     var open: Boolean?
+
+    /**
+     * The props used for each slot inside the Menu.
+     * @default {}
+     */
+    var slotProps: SlotProps?
+
+    interface SlotProps {
+        var root: react.Props? /* SlotComponentProps<typeof PopperUnstyled, MenuUnstyledComponentsPropsOverrides, MenuUnstyledOwnerState> */
+        var listbox: react.Props? /* SlotComponentProps<'ul', MenuUnstyledComponentsPropsOverrides, MenuUnstyledOwnerState> */
+    }
+
+    /**
+     * The components used for each slot inside the Menu.
+     * Either a string to use a HTML element or a component.
+     * @default {}
+     */
+    var slots: Slots?
+
+    interface Slots {
+        var root: react.ElementType<*>?
+        var listbox: react.ElementType<*>?
+    }
 }
 
 external interface MenuUnstyledOwnerState {

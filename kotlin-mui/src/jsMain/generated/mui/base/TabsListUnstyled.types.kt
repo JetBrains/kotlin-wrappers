@@ -19,23 +19,23 @@ external interface TabsListUnstyledOwnProps :
     override var className: ClassName?
 
     /**
+     * The props used for each slot inside the TabsList.
+     * @default {}
+     */
+    var slotProps: SlotProps?
+
+    interface SlotProps {
+        var root: react.Props? /* SlotComponentProps<'div', TabsListUnstyledComponentsPropsOverrides, TabsListUnstyledOwnerState> */
+    }
+
+    /**
      * The components used for each slot inside the TabsList.
      * Either a string to use a HTML element or a component.
      * @default {}
      */
-    var components: Components?
+    var slots: Slots?
 
-    interface Components {
-        var Root: react.ElementType<*>?
-    }
-
-    /**
-     * The props used for each slot inside the TabsList.
-     * @default {}
-     */
-    var componentsProps: ComponentsProps?
-
-    interface ComponentsProps {
-        var root: react.Props? /* SlotComponentProps<'div', TabsListUnstyledComponentsPropsOverrides, TabsListUnstyledOwnerState> */
+    interface Slots {
+        var root: react.ElementType<*>?
     }
 }

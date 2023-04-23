@@ -26,29 +26,6 @@ external interface ModalUnstyledOwnProps : react.Props {
     var closeAfterTransition: Boolean?
 
     /**
-     * The components used for each slot inside the Modal.
-     * Either a string to use a HTML element or a component.
-     * @default {}
-     */
-    var components: Components?
-
-    interface Components {
-        var Root: react.ElementType<*>?
-        var Backdrop: react.ElementType<*>?
-    }
-
-    /**
-     * The props used for each slot inside the Modal.
-     * @default {}
-     */
-    var componentsProps: ComponentsProps?
-
-    interface ComponentsProps {
-        var root: react.Props? /* SlotComponentProps<'div', ModalUnstyledComponentsPropsOverrides, ModalUnstyledOwnerState> */
-        var backdrop: react.Props? /* SlotComponentProps<'div', ModalUnstyledComponentsPropsOverrides, ModalUnstyledOwnerState> */
-    }
-
-    /**
      * An HTML element or function that returns one.
      * The `container` will have the portal children appended to it.
      *
@@ -137,4 +114,27 @@ external interface ModalUnstyledOwnProps : react.Props {
      * If `true`, the component is shown.
      */
     var open: Boolean
+
+    /**
+     * The props used for each slot inside the Modal.
+     * @default {}
+     */
+    var slotProps: SlotProps?
+
+    interface SlotProps {
+        var root: react.Props? /* SlotComponentProps<'div', ModalUnstyledComponentsPropsOverrides, ModalUnstyledOwnerState> */
+        var backdrop: react.Props? /* SlotComponentProps<'div', ModalUnstyledComponentsPropsOverrides, ModalUnstyledOwnerState> */
+    }
+
+    /**
+     * The components used for each slot inside the Modal.
+     * Either a string to use a HTML element or a component.
+     * @default {}
+     */
+    var slots: Slots?
+
+    interface Slots {
+        var root: react.ElementType<*>?
+        var backdrop: react.ElementType<*>?
+    }
 }

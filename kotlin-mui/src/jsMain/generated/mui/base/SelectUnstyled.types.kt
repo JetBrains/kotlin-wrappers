@@ -62,31 +62,6 @@ external interface SelectUnstyledCommonProps :
 external interface SelectUnstyledOwnProps<TValue> :
     SelectUnstyledCommonProps {
     /**
-     * The components used for each slot inside the Select.
-     * Either a string to use a HTML element or a component.
-     * @default {}
-     */
-    var components: Components?
-
-    interface Components {
-        var Root: react.ElementType<*>?
-        var Listbox: react.ElementType<*>?
-        var Popper: react.ElementType<*>? /* React.ComponentType<SelectUnstyledPopperSlotProps<TValue>> */
-    }
-
-    /**
-     * The props used for each slot inside the Input.
-     * @default {}
-     */
-    var componentsProps: ComponentsProps?
-
-    interface ComponentsProps {
-        var root: react.Props? /* SlotComponentProps<'button', SelectUnstyledComponentsPropsOverrides, SelectUnstyledOwnerState<TValue>> */
-        var listbox: react.Props? /* SlotComponentProps<'button', SelectUnstyledComponentsPropsOverrides, SelectUnstyledOwnerState<TValue>> */
-        var popper: react.Props? /* SlotComponentProps<typeof PopperUnstyled, SelectUnstyledComponentsPropsOverrides, SelectUnstyledOwnerState<TValue>> */
-    }
-
-    /**
      * The default selected value. Use when the component is not controlled.
      */
     var defaultValue: TValue?
@@ -116,6 +91,31 @@ external interface SelectUnstyledOwnProps<TValue> :
      * Function that customizes the rendering of the selected value.
      */
     var renderValue: ((option: SelectOption<TValue>?) -> react.ReactNode)?
+
+    /**
+     * The props used for each slot inside the Input.
+     * @default {}
+     */
+    var slotProps: SlotProps?
+
+    interface SlotProps {
+        var root: react.Props? /* SlotComponentProps<'button', SelectUnstyledComponentsPropsOverrides, SelectUnstyledOwnerState<TValue>> */
+        var listbox: react.Props? /* SlotComponentProps<'button', SelectUnstyledComponentsPropsOverrides, SelectUnstyledOwnerState<TValue>> */
+        var popper: react.Props? /* SlotComponentProps<typeof PopperUnstyled, SelectUnstyledComponentsPropsOverrides, SelectUnstyledOwnerState<TValue>> */
+    }
+
+    /**
+     * The components used for each slot inside the Select.
+     * Either a string to use a HTML element or a component.
+     * @default {}
+     */
+    var slots: Slots?
+
+    interface Slots {
+        var root: react.ElementType<*>?
+        var listbox: react.ElementType<*>?
+        var popper: react.ElementType<*>? /* React.ComponentType<SelectUnstyledPopperSlotProps<TValue>> */
+    }
 
     /**
      * The selected value.

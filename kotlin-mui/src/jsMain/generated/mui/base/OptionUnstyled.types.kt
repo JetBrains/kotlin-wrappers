@@ -28,24 +28,24 @@ external interface OptionUnstyledOwnProps<TValue> :
     override var className: ClassName?
 
     /**
+     * The props used for each slot inside the OptionUnstyled.
+     * @default {}
+     */
+    var slotProps: SlotProps?
+
+    interface SlotProps {
+        var root: react.Props? /* SlotComponentProps<'li', OptionUnstyledComponentsPropsOverrides, OptionUnstyledOwnerState<TValue>> */
+    }
+
+    /**
      * The components used for each slot inside the OptionUnstyled.
      * Either a string to use a HTML element or a component.
      * @default {}
      */
-    var components: Components?
+    var slots: Slots?
 
-    interface Components {
-        var Root: react.ElementType<*>?
-    }
-
-    /**
-     * The props used for each slot inside the OptionUnstyled.
-     * @default {}
-     */
-    var componentsProps: ComponentsProps?
-
-    interface ComponentsProps {
-        var root: react.Props? /* SlotComponentProps<'li', OptionUnstyledComponentsPropsOverrides, OptionUnstyledOwnerState<TValue>> */
+    interface Slots {
+        var root: react.ElementType<*>?
     }
 
     /**

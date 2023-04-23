@@ -65,30 +65,6 @@ external interface InputUnstyledOwnProps :
     override var className: ClassName?
 
     /**
-     * The components used for each slot inside the InputBase.
-     * Either a string to use a HTML element or a component.
-     * @default {}
-     */
-    var components: Components?
-
-    interface Components {
-        var Root: react.ElementType<*>?
-        var Input: react.ElementType<*>?
-        var Textarea: react.ElementType<*>?
-    }
-
-    /**
-     * The props used for each slot inside the Input.
-     * @default {}
-     */
-    var componentsProps: ComponentsProps?
-
-    interface ComponentsProps {
-        var root: react.Props? /* SlotComponentProps<'div', InputUnstyledComponentsPropsOverrides, InputUnstyledOwnerState> */
-        var input: react.Props? /* SlotComponentProps<'input', InputUnstyledComponentsPropsOverrides, InputUnstyledOwnerState> */
-    }
-
-    /**
      * Trailing adornment for this input.
      */
     var endAdornment: react.ReactNode?
@@ -117,6 +93,30 @@ external interface InputUnstyledOwnProps :
      * (not from interacting with the field).
      */
     var readOnly: Boolean?
+
+    /**
+     * The props used for each slot inside the Input.
+     * @default {}
+     */
+    var slotProps: SlotProps?
+
+    interface SlotProps {
+        var root: react.Props? /* SlotComponentProps<'div', InputUnstyledComponentsPropsOverrides, InputUnstyledOwnerState> */
+        var input: react.Props? /* SlotComponentProps<'input', InputUnstyledComponentsPropsOverrides, InputUnstyledOwnerState> */
+    }
+
+    /**
+     * The components used for each slot inside the InputBase.
+     * Either a string to use a HTML element or a component.
+     * @default {}
+     */
+    var slots: Slots?
+
+    interface Slots {
+        var root: react.ElementType<*>?
+        var input: react.ElementType<*>?
+        var textarea: react.ElementType<*>?
+    }
 
     /**
      * Leading adornment for this input.

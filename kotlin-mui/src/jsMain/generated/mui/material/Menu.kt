@@ -105,7 +105,7 @@ external interface MenuProps :
  *
  * Demos:
  *
- * - [App bar](https://mui.com/material-ui/react-app-bar/)
+ * - [App Bar](https://mui.com/material-ui/react-app-bar/)
  * - [Menu](https://mui.com/material-ui/react-menu/)
  *
  * API:

@@ -38,31 +38,6 @@ external interface PopperUnstyledOwnProps : react.Props {
     var container: Element?
 
     /**
-     * The components used for each slot inside the Popper.
-     * Either a string to use a HTML element or a component.
-     * @default {}
-     */
-    var components: Components?
-
-    interface Components {
-        var Root: react.ElementType<*>?
-    }
-
-    /**
-     * The props used for each slot inside the Popper.
-     * @default {}
-     */
-    var componentsProps: ComponentsProps?
-
-    interface ComponentsProps {
-        var root: react.Props? /* SlotComponentProps<
-  'div',
-  PopperUnstyledComponentsPropsOverrides,
-  PopperUnstyledOwnerState
-> */
-    }
-
-    /**
      * Direction of the text.
      * @default 'ltr'
      */
@@ -114,6 +89,31 @@ external interface PopperUnstyledOwnProps : react.Props {
      * A ref that points to the used popper instance.
      */
     var popperRef: react.Ref<popper.core.Instance>?
+
+    /**
+     * The props used for each slot inside the Popper.
+     * @default {}
+     */
+    var slotProps: SlotProps?
+
+    interface SlotProps {
+        var root: react.Props? /* SlotComponentProps<
+  'div',
+  PopperUnstyledComponentsPropsOverrides,
+  PopperUnstyledOwnerState
+> */
+    }
+
+    /**
+     * The components used for each slot inside the Popper.
+     * Either a string to use a HTML element or a component.
+     * @default {}
+     */
+    var slots: Slots?
+
+    interface Slots {
+        var root: react.ElementType<*>?
+    }
 
     /**
      * Help supporting a react-transition-group/Transition component.

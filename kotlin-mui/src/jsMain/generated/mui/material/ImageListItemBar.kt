@@ -59,7 +59,7 @@ external interface ImageListItemBarProps :
  *
  * Demos:
  *
- * - [Image list](https://mui.com/material-ui/react-image-list/)
+ * - [Image List](https://mui.com/material-ui/react-image-list/)
  *
  * API:
  *

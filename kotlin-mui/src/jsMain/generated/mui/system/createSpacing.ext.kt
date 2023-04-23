@@ -36,7 +36,7 @@ inline fun SpacingOptions(
 ): SpacingOptions =
     value.unsafeCast<SpacingOptions>()
 
-typealias SpacingArgument = Int /* csstype.Auto */
+typealias SpacingArgument = Int /* web.cssom.Auto */
 
 sealed interface Spacing {
     inline operator fun invoke(): web.cssom.Length =

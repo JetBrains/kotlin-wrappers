@@ -42,27 +42,6 @@ external interface TabsUnstyledOwnProps :
     override var className: ClassName?
 
     /**
-     * The components used for each slot inside the Tabs.
-     * Either a string to use a HTML element or a component.
-     * @default {}
-     */
-    var components: Components?
-
-    interface Components {
-        var Root: react.ElementType<*>?
-    }
-
-    /**
-     * The props used for each slot inside the Tabs.
-     * @default {}
-     */
-    var componentsProps: ComponentsProps?
-
-    interface ComponentsProps {
-        var root: react.Props? /* SlotComponentProps<'div', TabsUnstyledComponentsPropsOverrides, TabsUnstyledOwnerState> */
-    }
-
-    /**
      * Callback invoked when new value is being set.
      */
     var onChange: ((event: react.dom.events.SyntheticEvent<*, *>, value: dynamic) -> Unit)?
@@ -72,4 +51,25 @@ external interface TabsUnstyledOwnProps :
      * changes on activation.
      */
     var selectionFollowsFocus: Boolean?
+
+    /**
+     * The props used for each slot inside the Tabs.
+     * @default {}
+     */
+    var slotProps: SlotProps?
+
+    interface SlotProps {
+        var root: react.Props? /* SlotComponentProps<'div', TabsUnstyledComponentsPropsOverrides, TabsUnstyledOwnerState> */
+    }
+
+    /**
+     * The components used for each slot inside the Tabs.
+     * Either a string to use a HTML element or a component.
+     * @default {}
+     */
+    var slots: Slots?
+
+    interface Slots {
+        var root: react.ElementType<*>?
+    }
 }

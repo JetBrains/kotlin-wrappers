@@ -46,6 +46,24 @@ external interface BadgeProps :
     var color: BadgeColor?
 
     /**
+     * The props used for each slot inside the Badge.
+     * @default {}
+     */
+    var componentsProps: mui.base.BadgeUnstyledOwnProps.SlotProps?
+
+    /**
+     * The components used for each slot inside the Badge.
+     * Either a string to use a HTML element or a component.
+     * @default {}
+     */
+    var components: Components?
+
+    interface Components {
+        var Root: react.ElementType<*>?
+        var Badge: react.ElementType<*>?
+    }
+
+    /**
      * Wrapped shape the badge should overlap.
      * @default 'rectangular'
      */

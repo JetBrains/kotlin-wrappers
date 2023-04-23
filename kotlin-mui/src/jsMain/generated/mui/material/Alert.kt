@@ -42,6 +42,29 @@ external interface AlertProps :
     var color: AlertColor?
 
     /**
+     * The components used for each slot inside the Alert.
+     * Either a string to use a HTML element or a component.
+     * @default {}
+     */
+    var components: Components?
+
+    interface Components {
+        var CloseButton: react.ElementType<*>?
+        var CloseIcon: react.ElementType<*>?
+    }
+
+    /**
+     * The props used for each slot inside.
+     * @default {}
+     */
+    var componentsProps: ComponentsProps?
+
+    interface ComponentsProps {
+        var closeButton: react.Props? /* IconButtonProps */
+        var closeIcon: react.Props? /* SvgIconProps */
+    }
+
+    /**
      * The severity of the alert. This defines the color and icon used.
      * @default 'success'
      */
