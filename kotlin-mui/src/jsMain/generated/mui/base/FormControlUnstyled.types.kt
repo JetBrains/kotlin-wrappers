@@ -19,23 +19,6 @@ external interface FormControlUnstyledOwnProps : react.PropsWithClassName {
      */
     override var className: ClassName?
 
-    /**
-     * The components used for each slot inside the FormControl.
-     * Either a string to use a HTML element or a component.
-     * @default {}
-     */
-    var components: Components?
-
-    interface Components {
-        var Root: react.ElementType<*>?
-    }
-
-    var componentsProps: ComponentsProps?
-
-    interface ComponentsProps {
-        var root: react.Props? /* SlotComponentProps<'div', FormControlUnstyledComponentsPropsOverrides, FormControlUnstyledOwnerState> */
-    }
-
     var defaultValue: dynamic
 
     /**
@@ -57,6 +40,27 @@ external interface FormControlUnstyledOwnProps : react.PropsWithClassName {
      * @default false
      */
     var required: Boolean?
+
+    /**
+     * The props used for each slot inside the FormControl.
+     * @default {}
+     */
+    var slotProps: SlotProps?
+
+    interface SlotProps {
+        var root: react.Props? /* SlotComponentProps<'div', FormControlUnstyledComponentsPropsOverrides, FormControlUnstyledOwnerState> */
+    }
+
+    /**
+     * The components used for each slot inside the FormControl.
+     * Either a string to use a HTML element or a component.
+     * @default {}
+     */
+    var slots: Slots?
+
+    interface Slots {
+        var root: react.ElementType<*>?
+    }
 
     var value: dynamic
 }

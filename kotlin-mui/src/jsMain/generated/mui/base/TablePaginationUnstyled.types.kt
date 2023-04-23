@@ -32,26 +32,26 @@ external interface TablePaginationUnstyledOwnProps : react.Props {
      * Either a string to use a HTML element or a component.
      * @default {}
      */
-    var components: Components?
+    var slots: Slots?
 
-    interface Components {
-        var Root: react.ElementType<*>?
-        var Actions: react.ElementType<*>?
-        var Select: react.ElementType<*>?
-        var SelectLabel: react.ElementType<*>?
-        var MenuItem: react.ElementType<*>?
-        var DisplayedRows: react.ElementType<*>?
-        var Toolbar: react.ElementType<*>?
-        var Spacer: react.ElementType<*>?
+    interface Slots {
+        var root: react.ElementType<*>?
+        var actions: react.ElementType<*>?
+        var select: react.ElementType<*>?
+        var selectLabel: react.ElementType<*>?
+        var menuItem: react.ElementType<*>?
+        var displayedRows: react.ElementType<*>?
+        var toolbar: react.ElementType<*>?
+        var spacer: react.ElementType<*>?
     }
 
     /**
      * The props used for each slot inside the TablePagination.
      * @default {}
      */
-    var componentsProps: ComponentsProps?
+    var slotProps: SlotProps?
 
-    interface ComponentsProps {
+    interface SlotProps {
         var root: react.Props? /* SlotComponentProps<'div', TablePaginationUnstyledComponentsPropsOverrides, TablePaginationUnstyledOwnerState> */
         var actions: react.Props? /* SlotComponentProps<'div', TablePaginationUnstyledComponentsPropsOverrides, TablePaginationUnstyledOwnerState> */
         var select: react.Props? /* SlotComponentProps<'select', TablePaginationUnstyledComponentsPropsOverrides, TablePaginationUnstyledOwnerState> */

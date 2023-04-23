@@ -8,29 +8,6 @@ external interface BadgeUnstyledProps :
 
 external interface BadgeUnstyledOwnProps : react.PropsWithChildren {
     /**
-     * The components used for each slot inside the Badge.
-     * Either a string to use a HTML element or a component.
-     * @default {}
-     */
-    var components: Components?
-
-    interface Components {
-        var Root: react.ElementType<*>?
-        var Badge: react.ElementType<*>?
-    }
-
-    /**
-     * The props used for each slot inside the Badge.
-     * @default {}
-     */
-    var componentsProps: ComponentsProps?
-
-    interface ComponentsProps {
-        var root: react.Props? /* SlotComponentProps<'span', BadgeUnstyledComponentsPropsOverrides, BadgeUnstyledOwnerState> */
-        var badge: react.Props? /* SlotComponentProps<'span', BadgeUnstyledComponentsPropsOverrides, BadgeUnstyledOwnerState> */
-    }
-
-    /**
      * The content rendered within the badge.
      */
     var badgeContent: react.ReactNode?
@@ -51,6 +28,29 @@ external interface BadgeUnstyledOwnProps : react.PropsWithChildren {
      * @default 99
      */
     var max: Number?
+
+    /**
+     * The props used for each slot inside the Badge.
+     * @default {}
+     */
+    var slotProps: SlotProps?
+
+    interface SlotProps {
+        var root: react.Props? /* SlotComponentProps<'span', BadgeUnstyledComponentsPropsOverrides, BadgeUnstyledOwnerState> */
+        var badge: react.Props? /* SlotComponentProps<'span', BadgeUnstyledComponentsPropsOverrides, BadgeUnstyledOwnerState> */
+    }
+
+    /**
+     * The components used for each slot inside the Badge.
+     * Either a string to use a HTML element or a component.
+     * @default {}
+     */
+    var slots: Slots?
+
+    interface Slots {
+        var root: react.ElementType<*>?
+        var badge: react.ElementType<*>?
+    }
 
     /**
      * Controls whether the badge is hidden when `badgeContent` is zero.

@@ -20,6 +20,26 @@ external interface SliderProps :
     var color: SliderColor?
 
     /**
+     * The components used for each slot inside the Slider.
+     * Either a string to use a HTML element or a component.
+     * @default {}
+     */
+    var components: Components?
+
+    interface Components {
+        var Root: react.ElementType<*>?
+        var Track: react.ElementType<*>?
+        var Rail: react.ElementType<*>?
+        var Thumb: react.ElementType<*>?
+        var Mark: react.ElementType<*>?
+        var MarkLabel: react.ElementType<*>?
+        var ValueLabel: react.ElementType<*>?
+        var Input: react.ElementType<*>?
+    }
+
+    var componentsProps: mui.base.SliderUnstyledOwnProps.SlotProps?
+
+    /**
      * Override or extend the styles applied to the component.
      */
     override var classes: dynamic

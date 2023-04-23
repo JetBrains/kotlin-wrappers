@@ -12,6 +12,23 @@ external interface PopperProps :
     mui.base.PopperUnstyledProps,
     mui.system.PropsWithSx {
     /**
+     * The components used for each slot inside the Popper.
+     * Either a string to use a HTML element or a component.
+     * @default {}
+     */
+    var components: Components?
+
+    interface Components {
+        var Root: react.ElementType<*>?
+    }
+
+    /**
+     * The props used for each slot inside the Popper.
+     * @default {}
+     */
+    var componentsProps: mui.base.PopperUnstyledOwnProps.SlotProps?
+
+    /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
     override var sx: SxProps<Theme>?

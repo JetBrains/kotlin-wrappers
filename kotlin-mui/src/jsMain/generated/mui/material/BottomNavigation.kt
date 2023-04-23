@@ -53,7 +53,7 @@ external interface BottomNavigationProps :
  *
  * Demos:
  *
- * - [Bottom navigation](https://mui.com/material-ui/react-bottom-navigation/)
+ * - [Bottom Navigation](https://mui.com/material-ui/react-bottom-navigation/)
  *
  * API:
  *

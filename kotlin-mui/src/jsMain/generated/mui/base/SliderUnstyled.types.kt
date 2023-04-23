@@ -40,41 +40,6 @@ external interface SliderUnstyledOwnProps : react.Props {
     var classes: SliderUnstyledClasses?
 
     /**
-     * The components used for each slot inside the Slider.
-     * Either a string to use a HTML element or a component.
-     * @default {}
-     */
-    var components: Components?
-
-    interface Components {
-        var Root: react.ElementType<*>?
-        var Track: react.ElementType<*>?
-        var Rail: react.ElementType<*>?
-        var Thumb: react.ElementType<*>?
-        var Mark: react.ElementType<*>?
-        var MarkLabel: react.ElementType<*>?
-        var ValueLabel: react.ElementType<*>?
-        var Input: react.ElementType<*>?
-    }
-
-    /**
-     * The props used for each slot inside the Slider.
-     * @default {}
-     */
-    var componentsProps: ComponentsProps?
-
-    interface ComponentsProps {
-        var root: react.Props? /* SlotComponentProps<'span', SliderUnstyledComponentsPropsOverrides, SliderUnstyledOwnerState> */
-        var track: react.Props? /* SlotComponentProps<'span', SliderUnstyledComponentsPropsOverrides, SliderUnstyledOwnerState> */
-        var rail: react.Props? /* SlotComponentProps<'span', SliderUnstyledComponentsPropsOverrides, SliderUnstyledOwnerState> */
-        var thumb: react.Props? /* SlotComponentProps<'span', SliderUnstyledComponentsPropsOverrides, SliderUnstyledOwnerState> */
-        var mark: react.Props? /* SlotComponentProps<'span', SliderUnstyledComponentsPropsOverrides, SliderUnstyledOwnerState> */
-        var markLabel: react.Props? /* SlotComponentProps<'span', SliderUnstyledComponentsPropsOverrides, SliderUnstyledOwnerState> */
-        var valueLabel: react.Props? /* SlotComponentProps<typeof SliderValueLabelUnstyled, SliderUnstyledComponentsPropsOverrides, SliderUnstyledOwnerState> */
-        var input: react.Props? /* SlotComponentProps<'input', SliderUnstyledComponentsPropsOverrides, SliderUnstyledOwnerState> */
-    }
-
-    /**
      * The default value. Use when the component is not controlled.
      */
     var defaultValue: dynamic
@@ -171,6 +136,41 @@ external interface SliderUnstyledOwnProps : react.Props {
      * @default (x) => x
      */
     var scale: ((value: Number) -> Number)?
+
+    /**
+     * The props used for each slot inside the Slider.
+     * @default {}
+     */
+    var slotProps: SlotProps?
+
+    interface SlotProps {
+        var root: react.Props? /* SlotComponentProps<'span', SliderUnstyledComponentsPropsOverrides, SliderUnstyledOwnerState> */
+        var track: react.Props? /* SlotComponentProps<'span', SliderUnstyledComponentsPropsOverrides, SliderUnstyledOwnerState> */
+        var rail: react.Props? /* SlotComponentProps<'span', SliderUnstyledComponentsPropsOverrides, SliderUnstyledOwnerState> */
+        var thumb: react.Props? /* SlotComponentProps<'span', SliderUnstyledComponentsPropsOverrides, SliderUnstyledOwnerState> */
+        var mark: react.Props? /* SlotComponentProps<'span', SliderUnstyledComponentsPropsOverrides, SliderUnstyledOwnerState> */
+        var markLabel: react.Props? /* SlotComponentProps<'span', SliderUnstyledComponentsPropsOverrides, SliderUnstyledOwnerState> */
+        var valueLabel: react.Props? /* SlotComponentProps<typeof SliderValueLabelUnstyled, SliderUnstyledComponentsPropsOverrides, SliderUnstyledOwnerState> */
+        var input: react.Props? /* SlotComponentProps<'input', SliderUnstyledComponentsPropsOverrides, SliderUnstyledOwnerState> */
+    }
+
+    /**
+     * The components used for each slot inside the Slider.
+     * Either a string to use a HTML element or a component.
+     * @default {}
+     */
+    var slots: Slots?
+
+    interface Slots {
+        var root: react.ElementType<*>?
+        var track: react.ElementType<*>?
+        var rail: react.ElementType<*>?
+        var thumb: react.ElementType<*>?
+        var mark: react.ElementType<*>?
+        var markLabel: react.ElementType<*>?
+        var valueLabel: react.ElementType<*>?
+        var input: react.ElementType<*>?
+    }
 
     /**
      * The granularity with which the slider can step through values. (A "discrete" slider.)

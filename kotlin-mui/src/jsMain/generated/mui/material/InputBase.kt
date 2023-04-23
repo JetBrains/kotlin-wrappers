@@ -164,6 +164,11 @@ external interface InputBaseProps :
     var onKeyUp: react.dom.events.KeyboardEventHandler<web.html.HTMLElement>?
 
     /**
+     * Callback fired when the `input` doesn't satisfy its constraints.
+     */
+    var onInvalid: react.dom.events.FormEventHandler<web.html.HTMLElement>?
+
+    /**
      * The short hint displayed in the `input` before the user enters a value.
      */
     var placeholder: String?

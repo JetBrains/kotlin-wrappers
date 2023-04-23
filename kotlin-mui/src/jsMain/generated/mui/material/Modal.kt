@@ -17,8 +17,8 @@ external interface ModalProps :
     mui.system.PropsWithSx {
     /**
      * A backdrop component. This prop enables custom backdrop rendering.
-     * @deprecated Use `components.Backdrop` instead. While this prop currently works, it will be removed in the next major version.
-     * Use the `components.Backdrop` prop to make your application ready for the next version of Material UI.
+     * @deprecated Use `slots.backdrop` instead. While this prop currently works, it will be removed in the next major version.
+     * Use the `slots.backdrop` prop to make your application ready for the next version of Material UI.
      * @default styled(Backdrop, {
      *   name: 'MuiModal',
      *   slot: 'Backdrop',
@@ -33,9 +33,27 @@ external interface ModalProps :
 
     /**
      * Props applied to the [`Backdrop`](/material-ui/api/backdrop/) element.
-     * @deprecated Use `componentsProps.backdrop` instead.
+     * @deprecated Use `slotProps.backdrop` instead.
      */
     var BackdropProps: BackdropProps?
+
+    /**
+     * The components used for each slot inside the Modal.
+     * Either a string to use a HTML element or a component.
+     * @default {}
+     */
+    var components: Components?
+
+    interface Components {
+        var Root: react.ElementType<*>?
+        var Backdrop: react.ElementType<*>?
+    }
+
+    /**
+     * The props used for each slot inside the Modal.
+     * @default {}
+     */
+    var componentsProps: mui.base.ModalUnstyledOwnProps.SlotProps?
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
