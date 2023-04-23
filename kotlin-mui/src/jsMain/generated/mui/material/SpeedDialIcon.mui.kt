@@ -7,7 +7,7 @@
 
 package mui.material
 
-import csstype.ClassName
+import web.cssom.ClassName
 
 // language=JavaScript
 @JsName("""(/*union*/{root: 'MuiSpeedDialIcon-root', icon: 'MuiSpeedDialIcon-icon', iconOpen: 'MuiSpeedDialIcon-iconOpen', iconWithOpenIconOpen: 'MuiSpeedDialIcon-iconWithOpenIconOpen', openIcon: 'MuiSpeedDialIcon-openIcon', openIconOpen: 'MuiSpeedDialIcon-openIconOpen'}/*union*/)""")

@@ -7,7 +7,7 @@
 
 package mui.material
 
-import csstype.ClassName
+import web.cssom.ClassName
 
 // language=JavaScript
 @JsName("""(/*union*/{root: 'MuiAlert-root', filled: 'MuiAlert-filled', outlined: 'MuiAlert-outlined', standard: 'MuiAlert-standard', standardSuccess: 'MuiAlert-standardSuccess', standardInfo: 'MuiAlert-standardInfo', standardWarning: 'MuiAlert-standardWarning', standardError: 'MuiAlert-standardError', outlinedSuccess: 'MuiAlert-outlinedSuccess', outlinedInfo: 'MuiAlert-outlinedInfo', outlinedWarning: 'MuiAlert-outlinedWarning', outlinedError: 'MuiAlert-outlinedError', filledSuccess: 'MuiAlert-filledSuccess', filledInfo: 'MuiAlert-filledInfo', filledWarning: 'MuiAlert-filledWarning', filledError: 'MuiAlert-filledError', icon: 'MuiAlert-icon', message: 'MuiAlert-message', action: 'MuiAlert-action'}/*union*/)""")

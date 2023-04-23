@@ -7,7 +7,7 @@
 
 package mui.lab
 
-import csstype.ClassName
+import web.cssom.ClassName
 
 // language=JavaScript
 @JsName("""(/*union*/{root: 'MuiMasonry-root'}/*union*/)""")

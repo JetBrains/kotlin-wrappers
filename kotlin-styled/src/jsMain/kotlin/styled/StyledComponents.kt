@@ -1,6 +1,5 @@
 package styled
 
-import csstype.ClassName
 import js.core.jso
 import kotlinx.css.CssBuilder
 import kotlinx.css.CssDsl
@@ -11,6 +10,7 @@ import react.dom.DOMProps
 import react.dom.RDOMBuilder
 import react.dom.RDOMBuilderImpl
 import react.dom.render
+import web.cssom.ClassName
 import web.dom.document
 import web.html.HTML.div
 import kotlin.js.Promise

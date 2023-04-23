@@ -7,7 +7,7 @@
 
 package mui.system
 
-import csstype.ClassName
+import web.cssom.ClassName
 
 // language=JavaScript
 @JsName("""(/*union*/{root: 'MuiStack-root'}/*union*/)""")

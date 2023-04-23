@@ -7,7 +7,10 @@
 package csstype
 
 import js.core.jso
+import web.cssom.ClassName
+import web.cssom.FontFace
 import web.cssom.MediaQuery
+import web.cssom.Selector
 
 interface RuleBuilder<T : Any> : Rules {
     inline fun media(

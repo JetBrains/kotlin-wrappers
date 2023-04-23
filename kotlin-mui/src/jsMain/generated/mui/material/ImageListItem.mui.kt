@@ -7,7 +7,7 @@
 
 package mui.material
 
-import csstype.ClassName
+import web.cssom.ClassName
 
 // language=JavaScript
 @JsName("""(/*union*/{root: 'MuiImageListItem-root', img: 'MuiImageListItem-img', standard: 'MuiImageListItem-standard', woven: 'MuiImageListItem-woven', masonry: 'MuiImageListItem-masonry', quilted: 'MuiImageListItem-quilted'}/*union*/)""")

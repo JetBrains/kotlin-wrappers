@@ -2,7 +2,7 @@
 
 package mui.material
 
-import csstype.ClassName
+import web.cssom.ClassName
 
 external interface SpeedDialActionClasses {
     /** Styles applied to the Fab component. */

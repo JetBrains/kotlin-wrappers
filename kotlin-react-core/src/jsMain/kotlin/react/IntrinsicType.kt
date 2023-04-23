@@ -4,7 +4,7 @@
 
 package react
 
-import csstype.Selector
+import web.cssom.Selector
 
 sealed external interface IntrinsicType<in P : PropsWithClassName> :
     ElementType<P>,

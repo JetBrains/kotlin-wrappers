@@ -3,7 +3,7 @@
 
 package emotion.css
 
-import csstype.ClassName
+import web.cssom.ClassName
 
 external fun merge(
     className: ClassName,

@@ -7,7 +7,7 @@
 
 package mui.material
 
-import csstype.ClassName
+import web.cssom.ClassName
 
 // language=JavaScript
 @JsName("""(/*union*/{root: 'MuiMobileStepper-root', positionBottom: 'MuiMobileStepper-positionBottom', positionTop: 'MuiMobileStepper-positionTop', positionStatic: 'MuiMobileStepper-positionStatic', dots: 'MuiMobileStepper-dots', dot: 'MuiMobileStepper-dot', dotActive: 'MuiMobileStepper-dotActive', progress: 'MuiMobileStepper-progress'}/*union*/)""")

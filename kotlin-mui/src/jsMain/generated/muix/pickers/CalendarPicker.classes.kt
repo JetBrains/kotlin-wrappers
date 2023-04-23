@@ -2,7 +2,7 @@
 
 package muix.pickers
 
-import csstype.ClassName
+import web.cssom.ClassName
 
 external interface CalendarPickerClasses {
     /** Styles applied to the root element. */

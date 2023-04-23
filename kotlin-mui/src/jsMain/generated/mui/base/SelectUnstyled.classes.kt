@@ -2,7 +2,7 @@
 
 package mui.base
 
-import csstype.ClassName
+import web.cssom.ClassName
 
 external interface SelectUnstyledClasses {
     var root: ClassName

@@ -7,7 +7,7 @@
 
 package mui.lab
 
-import csstype.ClassName
+import web.cssom.ClassName
 
 // language=JavaScript
 @JsName("""(/*union*/{root: 'MuiTimelineContent-root', positionRight: 'MuiTimelineContent-positionRight', positionLeft: 'MuiTimelineContent-positionLeft', positionAlternate: 'MuiTimelineContent-positionAlternate'}/*union*/)""")

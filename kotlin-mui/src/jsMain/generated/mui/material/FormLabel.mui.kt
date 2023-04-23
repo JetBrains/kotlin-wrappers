@@ -7,7 +7,7 @@
 
 package mui.material
 
-import csstype.ClassName
+import web.cssom.ClassName
 
 // language=JavaScript
 @JsName("""(/*union*/{root: 'MuiFormLabel-root', colorSecondary: 'MuiFormLabel-colorSecondary', filled: 'MuiFormLabel-filled', asterisk: 'MuiFormLabel-asterisk'}/*union*/)""")

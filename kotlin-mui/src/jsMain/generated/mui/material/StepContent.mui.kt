@@ -7,7 +7,7 @@
 
 package mui.material
 
-import csstype.ClassName
+import web.cssom.ClassName
 
 // language=JavaScript
 @JsName("""(/*union*/{root: 'MuiStepContent-root', last: 'MuiStepContent-last', transition: 'MuiStepContent-transition'}/*union*/)""")

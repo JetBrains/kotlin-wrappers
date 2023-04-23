@@ -7,7 +7,7 @@
 
 package mui.material
 
-import csstype.ClassName
+import web.cssom.ClassName
 
 // language=JavaScript
 @JsName("""(/*union*/{root: 'MuiRadio-root', colorPrimary: 'MuiRadio-colorPrimary', colorSecondary: 'MuiRadio-colorSecondary'}/*union*/)""")

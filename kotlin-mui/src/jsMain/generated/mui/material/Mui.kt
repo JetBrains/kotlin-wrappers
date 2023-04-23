@@ -7,7 +7,7 @@
 
 package mui.material
 
-import csstype.ClassName
+import web.cssom.ClassName
 
 // language=JavaScript
 @JsName("""(/*union*/{active: 'Mui-active', checked: 'Mui-checked', completed: 'Mui-completed', disabled: 'Mui-disabled', error: 'Mui-error', expanded: 'Mui-expanded', focusVisible: 'Mui-focusVisible', focused: 'Mui-focused', required: 'Mui-required', selected: 'Mui-selected'}/*union*/)""")

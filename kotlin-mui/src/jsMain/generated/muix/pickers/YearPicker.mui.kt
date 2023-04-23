@@ -7,7 +7,7 @@
 
 package muix.pickers
 
-import csstype.ClassName
+import web.cssom.ClassName
 
 // language=JavaScript
 @JsName("""(/*union*/{root: 'MuiYearPicker-root'}/*union*/)""")

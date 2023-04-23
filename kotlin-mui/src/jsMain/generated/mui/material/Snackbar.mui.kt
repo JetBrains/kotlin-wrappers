@@ -7,7 +7,7 @@
 
 package mui.material
 
-import csstype.ClassName
+import web.cssom.ClassName
 
 // language=JavaScript
 @JsName("""(/*union*/{root: 'MuiSnackbar-root', anchorOriginTopCenter: 'MuiSnackbar-anchorOriginTopCenter', anchorOriginBottomCenter: 'MuiSnackbar-anchorOriginBottomCenter', anchorOriginTopRight: 'MuiSnackbar-anchorOriginTopRight', anchorOriginBottomRight: 'MuiSnackbar-anchorOriginBottomRight', anchorOriginTopLeft: 'MuiSnackbar-anchorOriginTopLeft', anchorOriginBottomLeft: 'MuiSnackbar-anchorOriginBottomLeft'}/*union*/)""")

@@ -7,7 +7,7 @@
 
 package mui.material
 
-import csstype.ClassName
+import web.cssom.ClassName
 
 // language=JavaScript
 @JsName("""(/*union*/{root: 'MuiCircularProgress-root', determinate: 'MuiCircularProgress-determinate', indeterminate: 'MuiCircularProgress-indeterminate', colorPrimary: 'MuiCircularProgress-colorPrimary', colorSecondary: 'MuiCircularProgress-colorSecondary', svg: 'MuiCircularProgress-svg', circle: 'MuiCircularProgress-circle', circleDeterminate: 'MuiCircularProgress-circleDeterminate', circleIndeterminate: 'MuiCircularProgress-circleIndeterminate', circleDisableShrink: 'MuiCircularProgress-circleDisableShrink'}/*union*/)""")

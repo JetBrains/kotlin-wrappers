@@ -2,7 +2,7 @@
 
 package mui.lab
 
-import csstype.ClassName
+import web.cssom.ClassName
 
 external interface TimelineConnectorClasses {
     /** Styles applied to the root element. */

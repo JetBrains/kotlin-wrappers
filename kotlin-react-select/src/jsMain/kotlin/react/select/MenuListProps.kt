@@ -1,9 +1,9 @@
 package react.select
 
-import csstype.Length
 import react.PropsWithChildren
 import react.RefCallback
 import react.dom.html.HTMLAttributes
+import web.cssom.Length
 import web.html.HTMLDivElement
 
 external interface MenuListProps<Option, Group : GroupBase<Option>> : PropsWithChildren {

@@ -2,7 +2,7 @@
 
 package mui.material
 
-import csstype.ClassName
+import web.cssom.ClassName
 
 external interface TooltipClasses {
     /** Styles applied to the Popper component. */

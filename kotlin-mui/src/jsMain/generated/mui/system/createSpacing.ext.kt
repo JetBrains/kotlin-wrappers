@@ -22,12 +22,12 @@ inline fun SpacingOptions(
     value.unsafeCast<SpacingOptions>()
 
 inline fun SpacingOptions(
-    noinline value: (abs: Int) -> csstype.Length,
+    noinline value: (abs: Int) -> web.cssom.Length,
 ): SpacingOptions =
     value.unsafeCast<SpacingOptions>()
 
 inline fun SpacingOptions(
-    noinline value: (abs: csstype.Length) -> csstype.Length,
+    noinline value: (abs: web.cssom.Length) -> web.cssom.Length,
 ): SpacingOptions =
     value.unsafeCast<SpacingOptions>()
 
@@ -39,20 +39,20 @@ inline fun SpacingOptions(
 typealias SpacingArgument = Int /* csstype.Auto */
 
 sealed interface Spacing {
-    inline operator fun invoke(): csstype.Length =
+    inline operator fun invoke(): web.cssom.Length =
         asDynamic()()
 
-    inline operator fun invoke(value: Int): csstype.Length =
+    inline operator fun invoke(value: Int): web.cssom.Length =
         asDynamic()(value)
 
-    inline operator fun invoke(topBottom: SpacingArgument, rightLeft: SpacingArgument): csstype.Length =
+    inline operator fun invoke(topBottom: SpacingArgument, rightLeft: SpacingArgument): web.cssom.Length =
         asDynamic()(topBottom, rightLeft)
 
     inline operator fun invoke(
         top: SpacingArgument,
         rightLeft: SpacingArgument,
         bottom: SpacingArgument,
-    ): csstype.Length =
+    ): web.cssom.Length =
         asDynamic()(top, rightLeft, bottom)
 
     inline operator fun invoke(
@@ -60,6 +60,6 @@ sealed interface Spacing {
         right: SpacingArgument,
         bottom: SpacingArgument,
         left: SpacingArgument,
-    ): csstype.Length =
+    ): web.cssom.Length =
         asDynamic()(top, right, bottom, left)
 }

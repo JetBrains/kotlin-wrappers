@@ -7,7 +7,7 @@
 
 package mui.material
 
-import csstype.ClassName
+import web.cssom.ClassName
 
 // language=JavaScript
 @JsName("""(/*union*/{root: 'MuiTab-root', labelIcon: 'MuiTab-labelIcon', textColorInherit: 'MuiTab-textColorInherit', textColorPrimary: 'MuiTab-textColorPrimary', textColorSecondary: 'MuiTab-textColorSecondary', fullWidth: 'MuiTab-fullWidth', wrapped: 'MuiTab-wrapped', iconWrapper: 'MuiTab-iconWrapper'}/*union*/)""")

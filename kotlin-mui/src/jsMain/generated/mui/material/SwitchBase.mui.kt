@@ -7,7 +7,7 @@
 
 package mui.material
 
-import csstype.ClassName
+import web.cssom.ClassName
 
 // language=JavaScript
 @JsName("""(/*union*/{root: 'MuiSwitchBase-root', input: 'MuiSwitchBase-input', edgeStart: 'MuiSwitchBase-edgeStart', edgeEnd: 'MuiSwitchBase-edgeEnd'}/*union*/)""")

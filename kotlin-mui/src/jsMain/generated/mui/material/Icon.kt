@@ -5,9 +5,9 @@
 
 package mui.material
 
-import csstype.ClassName
 import mui.material.styles.Theme
 import mui.system.SxProps
+import web.cssom.ClassName
 
 external interface IconProps :
     react.dom.html.HTMLAttributes<web.html.HTMLSpanElement>,

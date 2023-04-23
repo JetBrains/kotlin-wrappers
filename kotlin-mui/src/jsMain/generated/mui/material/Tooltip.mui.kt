@@ -7,7 +7,7 @@
 
 package mui.material
 
-import csstype.ClassName
+import web.cssom.ClassName
 
 // language=JavaScript
 @JsName("""(/*union*/{popper: 'MuiTooltip-popper', popperInteractive: 'MuiTooltip-popperInteractive', popperArrow: 'MuiTooltip-popperArrow', popperClose: 'MuiTooltip-popperClose', tooltip: 'MuiTooltip-tooltip', tooltipArrow: 'MuiTooltip-tooltipArrow', arrow: 'MuiTooltip-arrow', touch: 'MuiTooltip-touch', tooltipPlacementLeft: 'MuiTooltip-tooltipPlacementLeft', tooltipPlacementRight: 'MuiTooltip-tooltipPlacementRight', tooltipPlacementTop: 'MuiTooltip-tooltipPlacementTop', tooltipPlacementBottom: 'MuiTooltip-tooltipPlacementBottom'}/*union*/)""")

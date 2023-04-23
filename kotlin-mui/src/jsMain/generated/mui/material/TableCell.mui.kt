@@ -7,7 +7,7 @@
 
 package mui.material
 
-import csstype.ClassName
+import web.cssom.ClassName
 
 // language=JavaScript
 @JsName("""(/*union*/{root: 'MuiTableCell-root', head: 'MuiTableCell-head', body: 'MuiTableCell-body', footer: 'MuiTableCell-footer', sizeSmall: 'MuiTableCell-sizeSmall', sizeMedium: 'MuiTableCell-sizeMedium', paddingCheckbox: 'MuiTableCell-paddingCheckbox', paddingNone: 'MuiTableCell-paddingNone', alignLeft: 'MuiTableCell-alignLeft', alignCenter: 'MuiTableCell-alignCenter', alignRight: 'MuiTableCell-alignRight', alignJustify: 'MuiTableCell-alignJustify', stickyHeader: 'MuiTableCell-stickyHeader'}/*union*/)""")

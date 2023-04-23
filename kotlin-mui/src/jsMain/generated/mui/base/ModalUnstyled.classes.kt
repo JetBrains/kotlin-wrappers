@@ -2,7 +2,7 @@
 
 package mui.base
 
-import csstype.ClassName
+import web.cssom.ClassName
 
 external interface ModalUnstyledClasses {
     /** Styles applied to the root element. */

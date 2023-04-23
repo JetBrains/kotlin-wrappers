@@ -6,37 +6,37 @@
 package mui.material.styles
 
 external interface CommonColors {
-    var black: csstype.Color
+    var black: web.cssom.Color
 
-    var white: csstype.Color
+    var white: web.cssom.Color
 }
 
 external interface TypeText {
-    var primary: csstype.Color
+    var primary: web.cssom.Color
 
-    var secondary: csstype.Color
+    var secondary: web.cssom.Color
 
-    var disabled: csstype.Color
+    var disabled: web.cssom.Color
 }
 
 external interface TypeAction {
-    var active: csstype.Color
+    var active: web.cssom.Color
 
-    var hover: csstype.Color
+    var hover: web.cssom.Color
 
     var hoverOpacity: Number
 
-    var selected: csstype.Color
+    var selected: web.cssom.Color
 
     var selectedOpacity: Number
 
-    var disabled: csstype.Color
+    var disabled: web.cssom.Color
 
     var disabledOpacity: Number
 
-    var disabledBackground: csstype.Color
+    var disabledBackground: web.cssom.Color
 
-    var focus: csstype.Color
+    var focus: web.cssom.Color
 
     var focusOpacity: Number
 
@@ -50,23 +50,23 @@ external interface TypeBackground {
 }
 
 external interface SimplePaletteColorOptions {
-    var light: csstype.Color?
+    var light: web.cssom.Color?
 
-    var main: csstype.Color
+    var main: web.cssom.Color
 
-    var dark: csstype.Color?
+    var dark: web.cssom.Color?
 
-    var contrastText: csstype.Color?
+    var contrastText: web.cssom.Color?
 }
 
 external interface PaletteColor {
-    var light: csstype.Color
+    var light: web.cssom.Color
 
-    var main: csstype.Color
+    var main: web.cssom.Color
 
-    var dark: csstype.Color
+    var dark: web.cssom.Color
 
-    var contrastText: csstype.Color
+    var contrastText: web.cssom.Color
 }
 
 external interface TypeObject {

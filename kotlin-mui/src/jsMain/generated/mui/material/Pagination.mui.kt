@@ -7,7 +7,7 @@
 
 package mui.material
 
-import csstype.ClassName
+import web.cssom.ClassName
 
 // language=JavaScript
 @JsName("""(/*union*/{root: 'MuiPagination-root', ul: 'MuiPagination-ul', outlined: 'MuiPagination-outlined', text: 'MuiPagination-text'}/*union*/)""")

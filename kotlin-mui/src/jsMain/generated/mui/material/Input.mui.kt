@@ -7,7 +7,7 @@
 
 package mui.material
 
-import csstype.ClassName
+import web.cssom.ClassName
 
 // language=JavaScript
 @JsName("""(/*union*/{root: 'MuiInput-root', formControl: 'MuiInput-formControl', colorSecondary: 'MuiInput-colorSecondary', underline: 'MuiInput-underline', sizeSmall: 'MuiInput-sizeSmall', multiline: 'MuiInput-multiline', fullWidth: 'MuiInput-fullWidth', input: 'MuiInput-input', inputSizeSmall: 'MuiInput-inputSizeSmall', inputMultiline: 'MuiInput-inputMultiline', inputTypeSearch: 'MuiInput-inputTypeSearch'}/*union*/)""")

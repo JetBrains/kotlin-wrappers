@@ -7,7 +7,7 @@
 
 package mui.material
 
-import csstype.ClassName
+import web.cssom.ClassName
 
 // language=JavaScript
 @JsName("""(/*union*/{root: 'MuiCardActionArea-root', focusHighlight: 'MuiCardActionArea-focusHighlight'}/*union*/)""")

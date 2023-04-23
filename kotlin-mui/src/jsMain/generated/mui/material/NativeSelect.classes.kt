@@ -2,7 +2,7 @@
 
 package mui.material
 
-import csstype.ClassName
+import web.cssom.ClassName
 
 external interface NativeSelectClasses {
     /** Styles applied to the root element. */

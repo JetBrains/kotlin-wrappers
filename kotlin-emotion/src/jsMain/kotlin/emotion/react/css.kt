@@ -1,9 +1,9 @@
 package emotion.react
 
-import csstype.ClassName
 import csstype.PropertiesBuilder
 import emotion.css.ClassName
 import react.PropsWithClassName
+import web.cssom.ClassName
 
 inline fun PropsWithClassName.css(
     crossinline block: PropertiesBuilder.() -> Unit,

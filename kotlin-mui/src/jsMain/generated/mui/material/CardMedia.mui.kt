@@ -7,7 +7,7 @@
 
 package mui.material
 
-import csstype.ClassName
+import web.cssom.ClassName
 
 // language=JavaScript
 @JsName("""(/*union*/{root: 'MuiCardMedia-root', media: 'MuiCardMedia-media', img: 'MuiCardMedia-img'}/*union*/)""")

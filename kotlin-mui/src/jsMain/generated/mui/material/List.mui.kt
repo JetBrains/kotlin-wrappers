@@ -7,7 +7,7 @@
 
 package mui.material
 
-import csstype.ClassName
+import web.cssom.ClassName
 
 // language=JavaScript
 @JsName("""(/*union*/{root: 'MuiList-root', padding: 'MuiList-padding', dense: 'MuiList-dense', subheader: 'MuiList-subheader'}/*union*/)""")

@@ -5,9 +5,9 @@
 
 package muix.pickers
 
-import csstype.ClassName
 import mui.material.styles.Theme
 import mui.system.SxProps
+import web.cssom.ClassName
 
 external interface MonthPickerProps<TDate> :
     react.PropsWithClassName,

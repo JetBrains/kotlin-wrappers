@@ -7,7 +7,7 @@
 
 package muix.pickers
 
-import csstype.ClassName
+import web.cssom.ClassName
 
 // language=JavaScript
 @JsName("""(/*union*/{root: 'MuiCalendarPickerSkeleton-root', week: 'MuiCalendarPickerSkeleton-week', daySkeleton: 'MuiCalendarPickerSkeleton-daySkeleton'}/*union*/)""")

@@ -2,7 +2,7 @@
 
 package mui.material
 
-import csstype.ClassName
+import web.cssom.ClassName
 
 external interface SelectClasses {
     /** Styles applied to the select component `select` class. */

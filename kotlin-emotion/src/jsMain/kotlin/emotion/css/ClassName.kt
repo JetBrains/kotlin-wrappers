@@ -1,8 +1,8 @@
 package emotion.css
 
-import csstype.ClassName
 import csstype.PropertiesBuilder
 import js.core.jso
+import web.cssom.ClassName
 
 inline fun ClassName(
     crossinline block: PropertiesBuilder.() -> Unit,

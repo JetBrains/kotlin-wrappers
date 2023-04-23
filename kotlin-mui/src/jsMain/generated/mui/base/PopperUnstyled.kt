@@ -5,9 +5,9 @@
 
 package mui.base
 
-import csstype.ClassName
 import js.core.ReadonlyArray
 import popper.core.Modifier
+import web.cssom.ClassName
 import web.dom.Element
 
 external interface PopperUnstyledProps :

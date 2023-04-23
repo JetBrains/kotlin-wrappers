@@ -2,7 +2,7 @@
 
 package mui.system
 
-import csstype.ClassName
+import web.cssom.ClassName
 
 external interface ContainerClasses {
     /** Styles applied to the root element. */

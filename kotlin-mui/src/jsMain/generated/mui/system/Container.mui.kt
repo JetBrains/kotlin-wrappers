@@ -7,7 +7,7 @@
 
 package mui.system
 
-import csstype.ClassName
+import web.cssom.ClassName
 
 // language=JavaScript
 @JsName("""(/*union*/{root: 'MuiContainer-root', disableGutters: 'MuiContainer-disableGutters', fixed: 'MuiContainer-fixed', maxWidthXs: 'MuiContainer-maxWidthXs', maxWidthSm: 'MuiContainer-maxWidthSm', maxWidthMd: 'MuiContainer-maxWidthMd', maxWidthLg: 'MuiContainer-maxWidthLg', maxWidthXl: 'MuiContainer-maxWidthXl'}/*union*/)""")

@@ -1,6 +1,5 @@
 package example
 
-import csstype.ClassName
 import react.FC
 import react.Props
 import react.dom.html.ReactHTML.button
@@ -8,6 +7,7 @@ import react.dom.html.ReactHTML.div
 import react.dom.html.ReactHTML.li
 import react.dom.html.ReactHTML.ol
 import react.useState
+import web.cssom.ClassName
 
 /**
  * A TicTacToe implementation by Scott_Huang@qq.com

@@ -2,7 +2,7 @@
 
 package mui.material
 
-import csstype.ClassName
+import web.cssom.ClassName
 
 external interface ListItemClasses {
     /** Styles applied to the (normally root) `component` element. May be wrapped by a `container`. */

@@ -7,7 +7,7 @@
 
 package mui.material
 
-import csstype.ClassName
+import web.cssom.ClassName
 
 // language=JavaScript
 @JsName("""(/*union*/{root: 'MuiAccordion-root', rounded: 'MuiAccordion-rounded', gutters: 'MuiAccordion-gutters', region: 'MuiAccordion-region'}/*union*/)""")

@@ -3,14 +3,14 @@
 
 package react.select
 
-import csstype.ClassName
-import csstype.Length
 import react.ComponentClass
 import react.Key
 import react.PropsWithClassName
 import react.ReactNode
 import react.dom.events.FocusEventHandler
 import react.dom.events.KeyboardEventHandler
+import web.cssom.ClassName
+import web.cssom.Length
 import web.html.HTMLDivElement
 import web.html.HTMLElement
 import web.html.HTMLInputElement

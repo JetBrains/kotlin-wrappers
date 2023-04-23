@@ -3,8 +3,8 @@
 
 package emotion.css
 
-import csstype.ClassName
 import csstype.Properties
+import web.cssom.ClassName
 
 external fun css(
     properties: Properties,

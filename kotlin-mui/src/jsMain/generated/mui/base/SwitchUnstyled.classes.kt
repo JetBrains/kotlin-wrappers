@@ -2,7 +2,7 @@
 
 package mui.base
 
-import csstype.ClassName
+import web.cssom.ClassName
 
 external interface SwitchUnstyledClasses {
     /** Class applied to the root element. */

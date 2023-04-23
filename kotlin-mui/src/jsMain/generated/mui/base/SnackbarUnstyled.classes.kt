@@ -2,7 +2,7 @@
 
 package mui.base
 
-import csstype.ClassName
+import web.cssom.ClassName
 
 external interface SnackbarUnstyledClasses {
     /** Class name applied to the root element. */

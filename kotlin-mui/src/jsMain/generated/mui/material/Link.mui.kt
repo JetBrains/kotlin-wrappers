@@ -7,7 +7,7 @@
 
 package mui.material
 
-import csstype.ClassName
+import web.cssom.ClassName
 
 // language=JavaScript
 @JsName("""(/*union*/{root: 'MuiLink-root', underlineNone: 'MuiLink-underlineNone', underlineHover: 'MuiLink-underlineHover', underlineAlways: 'MuiLink-underlineAlways', button: 'MuiLink-button'}/*union*/)""")

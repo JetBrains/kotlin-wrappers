@@ -7,7 +7,7 @@
 
 package mui.material
 
-import csstype.ClassName
+import web.cssom.ClassName
 
 // language=JavaScript
 @JsName("""(/*union*/{root: 'MuiCollapse-root', horizontal: 'MuiCollapse-horizontal', entered: 'MuiCollapse-entered', hidden: 'MuiCollapse-hidden', wrapper: 'MuiCollapse-wrapper', wrapperInner: 'MuiCollapse-wrapperInner'}/*union*/)""")

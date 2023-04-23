@@ -7,7 +7,7 @@
 
 package mui.material
 
-import csstype.ClassName
+import web.cssom.ClassName
 
 // language=JavaScript
 @JsName("""(/*union*/{root: 'MuiCardHeader-root', avatar: 'MuiCardHeader-avatar', action: 'MuiCardHeader-action', content: 'MuiCardHeader-content', title: 'MuiCardHeader-title', subheader: 'MuiCardHeader-subheader'}/*union*/)""")

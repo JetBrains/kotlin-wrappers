@@ -7,7 +7,7 @@
 
 package mui.material
 
-import csstype.ClassName
+import web.cssom.ClassName
 
 // language=JavaScript
 @JsName("""(/*union*/{select: 'MuiSelect-select', multiple: 'MuiSelect-multiple', filled: 'MuiSelect-filled', outlined: 'MuiSelect-outlined', standard: 'MuiSelect-standard', icon: 'MuiSelect-icon', iconOpen: 'MuiSelect-iconOpen', iconFilled: 'MuiSelect-iconFilled', iconOutlined: 'MuiSelect-iconOutlined', iconStandard: 'MuiSelect-iconStandard', nativeInput: 'MuiSelect-nativeInput'}/*union*/)""")

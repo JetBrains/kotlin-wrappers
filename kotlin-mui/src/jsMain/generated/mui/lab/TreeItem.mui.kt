@@ -7,7 +7,7 @@
 
 package mui.lab
 
-import csstype.ClassName
+import web.cssom.ClassName
 
 // language=JavaScript
 @JsName("""(/*union*/{root: 'MuiTreeItem-root', group: 'MuiTreeItem-group', content: 'MuiTreeItem-content', iconContainer: 'MuiTreeItem-iconContainer', label: 'MuiTreeItem-label'}/*union*/)""")

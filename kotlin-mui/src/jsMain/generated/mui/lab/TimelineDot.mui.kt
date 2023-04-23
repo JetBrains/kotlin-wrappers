@@ -7,7 +7,7 @@
 
 package mui.lab
 
-import csstype.ClassName
+import web.cssom.ClassName
 
 // language=JavaScript
 @JsName("""(/*union*/{root: 'MuiTimelineDot-root', filled: 'MuiTimelineDot-filled', outlined: 'MuiTimelineDot-outlined', filledGrey: 'MuiTimelineDot-filledGrey', outlinedGrey: 'MuiTimelineDot-outlinedGrey', filledPrimary: 'MuiTimelineDot-filledPrimary', outlinedPrimary: 'MuiTimelineDot-outlinedPrimary', filledSecondary: 'MuiTimelineDot-filledSecondary', outlinedSecondary: 'MuiTimelineDot-outlinedSecondary'}/*union*/)""")

@@ -7,7 +7,7 @@
 
 package mui.material
 
-import csstype.ClassName
+import web.cssom.ClassName
 
 // language=JavaScript
 @JsName("""(/*union*/{root: 'MuiFormControlLabel-root', labelPlacementStart: 'MuiFormControlLabel-labelPlacementStart', labelPlacementTop: 'MuiFormControlLabel-labelPlacementTop', labelPlacementBottom: 'MuiFormControlLabel-labelPlacementBottom', label: 'MuiFormControlLabel-label'}/*union*/)""")

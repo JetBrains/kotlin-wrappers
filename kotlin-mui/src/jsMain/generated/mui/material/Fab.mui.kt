@@ -7,7 +7,7 @@
 
 package mui.material
 
-import csstype.ClassName
+import web.cssom.ClassName
 
 // language=JavaScript
 @JsName("""(/*union*/{root: 'MuiFab-root', primary: 'MuiFab-primary', secondary: 'MuiFab-secondary', extended: 'MuiFab-extended', circular: 'MuiFab-circular', colorInherit: 'MuiFab-colorInherit', sizeSmall: 'MuiFab-sizeSmall', sizeMedium: 'MuiFab-sizeMedium'}/*union*/)""")

@@ -7,7 +7,7 @@
 
 package mui.material
 
-import csstype.ClassName
+import web.cssom.ClassName
 
 // language=JavaScript
 @JsName("""(/*union*/{root: 'MuiTableRow-root', hover: 'MuiTableRow-hover', head: 'MuiTableRow-head', footer: 'MuiTableRow-footer'}/*union*/)""")

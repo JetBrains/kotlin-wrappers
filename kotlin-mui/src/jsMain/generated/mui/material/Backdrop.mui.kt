@@ -7,7 +7,7 @@
 
 package mui.material
 
-import csstype.ClassName
+import web.cssom.ClassName
 
 // language=JavaScript
 @JsName("""(/*union*/{root: 'MuiBackdrop-root', invisible: 'MuiBackdrop-invisible'}/*union*/)""")

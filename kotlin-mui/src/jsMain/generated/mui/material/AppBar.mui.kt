@@ -7,7 +7,7 @@
 
 package mui.material
 
-import csstype.ClassName
+import web.cssom.ClassName
 
 // language=JavaScript
 @JsName("""(/*union*/{root: 'MuiAppBar-root', positionFixed: 'MuiAppBar-positionFixed', positionAbsolute: 'MuiAppBar-positionAbsolute', positionSticky: 'MuiAppBar-positionSticky', positionStatic: 'MuiAppBar-positionStatic', positionRelative: 'MuiAppBar-positionRelative', colorDefault: 'MuiAppBar-colorDefault', colorPrimary: 'MuiAppBar-colorPrimary', colorSecondary: 'MuiAppBar-colorSecondary', colorInherit: 'MuiAppBar-colorInherit', colorTransparent: 'MuiAppBar-colorTransparent'}/*union*/)""")

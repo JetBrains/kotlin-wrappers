@@ -7,7 +7,7 @@
 
 package mui.material
 
-import csstype.ClassName
+import web.cssom.ClassName
 
 // language=JavaScript
 @JsName("""(/*union*/{root: 'MuiPaginationItem-root', page: 'MuiPaginationItem-page', sizeSmall: 'MuiPaginationItem-sizeSmall', sizeLarge: 'MuiPaginationItem-sizeLarge', text: 'MuiPaginationItem-text', textPrimary: 'MuiPaginationItem-textPrimary', textSecondary: 'MuiPaginationItem-textSecondary', outlined: 'MuiPaginationItem-outlined', outlinedPrimary: 'MuiPaginationItem-outlinedPrimary', outlinedSecondary: 'MuiPaginationItem-outlinedSecondary', rounded: 'MuiPaginationItem-rounded', ellipsis: 'MuiPaginationItem-ellipsis', firstLast: 'MuiPaginationItem-firstLast', previousNext: 'MuiPaginationItem-previousNext', icon: 'MuiPaginationItem-icon'}/*union*/)""")

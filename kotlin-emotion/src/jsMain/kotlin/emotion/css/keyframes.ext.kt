@@ -1,9 +1,12 @@
 package emotion.css
 
-import csstype.*
+import csstype.CssDsl
+import csstype.Properties
 import js.core.Record
 import js.core.jso
-import js.core.set
+import web.cssom.AnimationName
+import web.cssom.Percentage
+import web.cssom.pct
 
 typealias Keyframes = Record<Percentage, Properties>
 

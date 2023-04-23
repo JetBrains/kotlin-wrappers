@@ -7,7 +7,7 @@
 
 package mui.material
 
-import csstype.ClassName
+import web.cssom.ClassName
 
 // language=JavaScript
 @JsName("""(/*union*/{root: 'MuiInputAdornment-root', filled: 'MuiInputAdornment-filled', outlined: 'MuiInputAdornment-outlined', standard: 'MuiInputAdornment-standard', positionStart: 'MuiInputAdornment-positionStart', positionEnd: 'MuiInputAdornment-positionEnd', disablePointerEvents: 'MuiInputAdornment-disablePointerEvents', hiddenLabel: 'MuiInputAdornment-hiddenLabel', sizeSmall: 'MuiInputAdornment-sizeSmall'}/*union*/)""")

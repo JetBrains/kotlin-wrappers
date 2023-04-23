@@ -7,7 +7,7 @@
 
 package mui.material
 
-import csstype.ClassName
+import web.cssom.ClassName
 
 // language=JavaScript
 @JsName("""(/*union*/{root: 'MuiStepButton-root', horizontal: 'MuiStepButton-horizontal', vertical: 'MuiStepButton-vertical', touchRipple: 'MuiStepButton-touchRipple'}/*union*/)""")

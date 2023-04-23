@@ -2,7 +2,7 @@
 
 package mui.base
 
-import csstype.ClassName
+import web.cssom.ClassName
 import web.html.InputType
 
 external interface InputUnstyledProps :

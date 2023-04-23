@@ -1,6 +1,5 @@
 package example
 
-import csstype.Color
 import emotion.react.css
 import react.FC
 import react.Props
@@ -16,6 +15,7 @@ import react.dom.html.ReactHTML.th
 import react.dom.html.ReactHTML.thead
 import react.dom.html.ReactHTML.tr
 import react.useState
+import web.cssom.Color
 import web.html.InputType
 
 /**

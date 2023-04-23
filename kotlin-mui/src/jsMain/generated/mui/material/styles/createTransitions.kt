@@ -35,7 +35,7 @@ external interface TransitionsOptions {
 
     var duration: Duration?
 
-    var create: ((props: ReadonlyArray<String>, options: TransitionCreateOptions?) -> csstype.Transition)?
+    var create: ((props: ReadonlyArray<String>, options: TransitionCreateOptions?) -> web.cssom.Transition)?
 
     var getAutoHeightDuration: ((height: Number) -> Number)?
 }
@@ -45,7 +45,7 @@ external interface Transitions {
 
     var duration: Duration
 
-    var create: (props: ReadonlyArray<String>, options: TransitionCreateOptions?) -> csstype.Transition
+    var create: (props: ReadonlyArray<String>, options: TransitionCreateOptions?) -> web.cssom.Transition
 
     var getAutoHeightDuration: (height: Number) -> Number
 }

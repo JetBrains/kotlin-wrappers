@@ -2,7 +2,7 @@
 
 package mui.system
 
-import csstype.ClassName
+import web.cssom.ClassName
 
 external interface StackClasses {
     /** Styles applied to the root element. */

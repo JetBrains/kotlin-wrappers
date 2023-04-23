@@ -3,7 +3,7 @@
 
 package emotion.css
 
-import csstype.AnimationName
+import web.cssom.AnimationName
 
 external fun keyframes(
     keyframes: Keyframes,

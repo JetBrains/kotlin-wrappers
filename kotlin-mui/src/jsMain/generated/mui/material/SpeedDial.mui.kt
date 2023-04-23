@@ -7,7 +7,7 @@
 
 package mui.material
 
-import csstype.ClassName
+import web.cssom.ClassName
 
 // language=JavaScript
 @JsName("""(/*union*/{root: 'MuiSpeedDial-root', fab: 'MuiSpeedDial-fab', directionUp: 'MuiSpeedDial-directionUp', directionDown: 'MuiSpeedDial-directionDown', directionLeft: 'MuiSpeedDial-directionLeft', directionRight: 'MuiSpeedDial-directionRight', actions: 'MuiSpeedDial-actions', actionsClosed: 'MuiSpeedDial-actionsClosed'}/*union*/)""")

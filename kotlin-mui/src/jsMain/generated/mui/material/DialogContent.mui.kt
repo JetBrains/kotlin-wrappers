@@ -7,7 +7,7 @@
 
 package mui.material
 
-import csstype.ClassName
+import web.cssom.ClassName
 
 // language=JavaScript
 @JsName("""(/*union*/{root: 'MuiDialogContent-root', dividers: 'MuiDialogContent-dividers'}/*union*/)""")

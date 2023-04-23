@@ -7,7 +7,7 @@
 
 package mui.material
 
-import csstype.ClassName
+import web.cssom.ClassName
 
 // language=JavaScript
 @JsName("""(/*union*/{root: 'MuiBreadcrumbs-root', ol: 'MuiBreadcrumbs-ol', li: 'MuiBreadcrumbs-li', separator: 'MuiBreadcrumbs-separator'}/*union*/)""")

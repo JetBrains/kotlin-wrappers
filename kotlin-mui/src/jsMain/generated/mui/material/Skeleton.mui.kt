@@ -7,7 +7,7 @@
 
 package mui.material
 
-import csstype.ClassName
+import web.cssom.ClassName
 
 // language=JavaScript
 @JsName("""(/*union*/{root: 'MuiSkeleton-root', text: 'MuiSkeleton-text', rectangular: 'MuiSkeleton-rectangular', rounded: 'MuiSkeleton-rounded', circular: 'MuiSkeleton-circular', pulse: 'MuiSkeleton-pulse', wave: 'MuiSkeleton-wave', withChildren: 'MuiSkeleton-withChildren', fitContent: 'MuiSkeleton-fitContent', heightAuto: 'MuiSkeleton-heightAuto'}/*union*/)""")

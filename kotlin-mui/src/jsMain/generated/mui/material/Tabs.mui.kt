@@ -7,7 +7,7 @@
 
 package mui.material
 
-import csstype.ClassName
+import web.cssom.ClassName
 
 // language=JavaScript
 @JsName("""(/*union*/{root: 'MuiTabs-root', vertical: 'MuiTabs-vertical', flexContainer: 'MuiTabs-flexContainer', flexContainerVertical: 'MuiTabs-flexContainerVertical', centered: 'MuiTabs-centered', scroller: 'MuiTabs-scroller', fixed: 'MuiTabs-fixed', scrollableX: 'MuiTabs-scrollableX', scrollableY: 'MuiTabs-scrollableY', hideScrollbar: 'MuiTabs-hideScrollbar', scrollButtons: 'MuiTabs-scrollButtons', scrollButtonsHideMobile: 'MuiTabs-scrollButtonsHideMobile', indicator: 'MuiTabs-indicator'}/*union*/)""")

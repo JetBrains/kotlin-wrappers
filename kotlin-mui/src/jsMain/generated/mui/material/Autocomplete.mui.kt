@@ -7,7 +7,7 @@
 
 package mui.material
 
-import csstype.ClassName
+import web.cssom.ClassName
 
 // language=JavaScript
 @JsName("""(/*union*/{root: 'MuiAutocomplete-root', fullWidth: 'MuiAutocomplete-fullWidth', tag: 'MuiAutocomplete-tag', tagSizeSmall: 'MuiAutocomplete-tagSizeSmall', tagSizeMedium: 'MuiAutocomplete-tagSizeMedium', hasPopupIcon: 'MuiAutocomplete-hasPopupIcon', hasClearIcon: 'MuiAutocomplete-hasClearIcon', inputRoot: 'MuiAutocomplete-inputRoot', input: 'MuiAutocomplete-input', inputFocused: 'MuiAutocomplete-inputFocused', endAdornment: 'MuiAutocomplete-endAdornment', clearIndicator: 'MuiAutocomplete-clearIndicator', popupIndicator: 'MuiAutocomplete-popupIndicator', popupIndicatorOpen: 'MuiAutocomplete-popupIndicatorOpen', popper: 'MuiAutocomplete-popper', popperDisablePortal: 'MuiAutocomplete-popperDisablePortal', paper: 'MuiAutocomplete-paper', listbox: 'MuiAutocomplete-listbox', loading: 'MuiAutocomplete-loading', noOptions: 'MuiAutocomplete-noOptions', option: 'MuiAutocomplete-option', groupLabel: 'MuiAutocomplete-groupLabel', groupUl: 'MuiAutocomplete-groupUl'}/*union*/)""")

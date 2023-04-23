@@ -1,6 +1,7 @@
 package csstype
 
 import web.cssom.CSSStyleDeclaration
+import web.cssom.Variable
 
 operator fun <T : Any> CSSStyleDeclaration.get(
     variable: Variable<T>,

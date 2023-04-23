@@ -7,7 +7,7 @@
 
 package mui.material
 
-import csstype.ClassName
+import web.cssom.ClassName
 
 // language=JavaScript
 @JsName("""(/*union*/{root: 'MuiToggleButton-root', standard: 'MuiToggleButton-standard', primary: 'MuiToggleButton-primary', secondary: 'MuiToggleButton-secondary', sizeSmall: 'MuiToggleButton-sizeSmall', sizeMedium: 'MuiToggleButton-sizeMedium', sizeLarge: 'MuiToggleButton-sizeLarge'}/*union*/)""")

@@ -7,7 +7,7 @@
 
 package mui.material
 
-import csstype.ClassName
+import web.cssom.ClassName
 
 // language=JavaScript
 @JsName("""(/*union*/{root: 'MuiAvatar-root', colorDefault: 'MuiAvatar-colorDefault', circular: 'MuiAvatar-circular', rounded: 'MuiAvatar-rounded', square: 'MuiAvatar-square', img: 'MuiAvatar-img', fallback: 'MuiAvatar-fallback'}/*union*/)""")

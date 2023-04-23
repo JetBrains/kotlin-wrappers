@@ -2,7 +2,7 @@
 
 package muix.pickers
 
-import csstype.ClassName
+import web.cssom.ClassName
 
 external interface MonthPickerClasses {
     /** Styles applied to the root element. */

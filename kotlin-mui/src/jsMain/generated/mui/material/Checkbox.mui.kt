@@ -7,7 +7,7 @@
 
 package mui.material
 
-import csstype.ClassName
+import web.cssom.ClassName
 
 // language=JavaScript
 @JsName("""(/*union*/{root: 'MuiCheckbox-root', indeterminate: 'MuiCheckbox-indeterminate', colorPrimary: 'MuiCheckbox-colorPrimary', colorSecondary: 'MuiCheckbox-colorSecondary'}/*union*/)""")

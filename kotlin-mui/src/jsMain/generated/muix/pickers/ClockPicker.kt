@@ -5,7 +5,7 @@
 
 package muix.pickers
 
-import csstype.ClassName
+import web.cssom.ClassName
 
 external interface ClockPickerProps<TDate> : react.PropsWithClassName {
     override var className: ClassName?

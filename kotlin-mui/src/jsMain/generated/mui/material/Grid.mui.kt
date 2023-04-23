@@ -7,7 +7,7 @@
 
 package mui.material
 
-import csstype.ClassName
+import web.cssom.ClassName
 
 // language=JavaScript
 @JsName("""(/*union*/{root: 'MuiGrid-root', container: 'MuiGrid-container', item: 'MuiGrid-item', zeroMinWidth: 'MuiGrid-zeroMinWidth'}/*union*/)""")

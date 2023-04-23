@@ -7,7 +7,7 @@
 
 package mui.material
 
-import csstype.ClassName
+import web.cssom.ClassName
 
 // language=JavaScript
 @JsName("""(/*union*/{root: 'MuiStepLabel-root', horizontal: 'MuiStepLabel-horizontal', vertical: 'MuiStepLabel-vertical', label: 'MuiStepLabel-label', iconContainer: 'MuiStepLabel-iconContainer', alternativeLabel: 'MuiStepLabel-alternativeLabel', labelContainer: 'MuiStepLabel-labelContainer'}/*union*/)""")

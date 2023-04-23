@@ -3,7 +3,7 @@
 package mui.system
 
 external interface Shape {
-    var borderRadius: csstype.BorderRadius
+    var borderRadius: web.cssom.BorderRadius
 }
 
 typealias ShapeOptions = Shape

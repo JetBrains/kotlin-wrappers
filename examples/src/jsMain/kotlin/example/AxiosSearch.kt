@@ -1,6 +1,5 @@
 package example
 
-import csstype.Color
 import emotion.react.css
 import js.core.jso
 import react.FC
@@ -11,6 +10,7 @@ import react.dom.html.ReactHTML.h1
 import react.dom.html.ReactHTML.input
 import react.dom.html.ReactHTML.p
 import react.useState
+import web.cssom.Color
 import web.html.InputType
 import kotlin.js.Promise
 

@@ -7,7 +7,7 @@
 
 package mui.material
 
-import csstype.ClassName
+import web.cssom.ClassName
 
 // language=JavaScript
 @JsName("""(/*union*/{fab: 'MuiSpeedDialAction-fab', fabClosed: 'MuiSpeedDialAction-fabClosed', staticTooltip: 'MuiSpeedDialAction-staticTooltip', staticTooltipClosed: 'MuiSpeedDialAction-staticTooltipClosed', staticTooltipLabel: 'MuiSpeedDialAction-staticTooltipLabel', tooltipPlacementLeft: 'MuiSpeedDialAction-tooltipPlacementLeft', tooltipPlacementRight: 'MuiSpeedDialAction-tooltipPlacementRight'}/*union*/)""")

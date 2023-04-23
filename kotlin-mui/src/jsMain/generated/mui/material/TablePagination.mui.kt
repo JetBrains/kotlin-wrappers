@@ -7,7 +7,7 @@
 
 package mui.material
 
-import csstype.ClassName
+import web.cssom.ClassName
 
 // language=JavaScript
 @JsName("""(/*union*/{root: 'MuiTablePagination-root', toolbar: 'MuiTablePagination-toolbar', spacer: 'MuiTablePagination-spacer', selectLabel: 'MuiTablePagination-selectLabel', selectRoot: 'MuiTablePagination-selectRoot', select: 'MuiTablePagination-select', selectIcon: 'MuiTablePagination-selectIcon', input: 'MuiTablePagination-input', menuItem: 'MuiTablePagination-menuItem', displayedRows: 'MuiTablePagination-displayedRows', actions: 'MuiTablePagination-actions'}/*union*/)""")

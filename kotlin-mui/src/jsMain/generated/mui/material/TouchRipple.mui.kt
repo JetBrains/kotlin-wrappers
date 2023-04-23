@@ -7,7 +7,7 @@
 
 package mui.material
 
-import csstype.ClassName
+import web.cssom.ClassName
 
 // language=JavaScript
 @JsName("""(/*union*/{root: 'MuiTouchRipple-root', ripple: 'MuiTouchRipple-ripple', rippleVisible: 'MuiTouchRipple-rippleVisible', ripplePulsate: 'MuiTouchRipple-ripplePulsate', child: 'MuiTouchRipple-child', childLeaving: 'MuiTouchRipple-childLeaving', childPulsate: 'MuiTouchRipple-childPulsate'}/*union*/)""")

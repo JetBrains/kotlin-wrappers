@@ -7,7 +7,7 @@
 
 package mui.lab
 
-import csstype.ClassName
+import web.cssom.ClassName
 
 // language=JavaScript
 @JsName("""(/*union*/{root: 'MuiLoadingButton-root', loading: 'MuiLoadingButton-loading', loadingIndicator: 'MuiLoadingButton-loadingIndicator', loadingIndicatorCenter: 'MuiLoadingButton-loadingIndicatorCenter', loadingIndicatorStart: 'MuiLoadingButton-loadingIndicatorStart', loadingIndicatorEnd: 'MuiLoadingButton-loadingIndicatorEnd', endIconLoadingEnd: 'MuiLoadingButton-endIconLoadingEnd', startIconLoadingStart: 'MuiLoadingButton-startIconLoadingStart'}/*union*/)""")

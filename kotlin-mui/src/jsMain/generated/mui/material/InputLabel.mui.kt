@@ -7,7 +7,7 @@
 
 package mui.material
 
-import csstype.ClassName
+import web.cssom.ClassName
 
 // language=JavaScript
 @JsName("""(/*union*/{root: 'MuiInputLabel-root', asterisk: 'MuiInputLabel-asterisk', formControl: 'MuiInputLabel-formControl', sizeSmall: 'MuiInputLabel-sizeSmall', shrink: 'MuiInputLabel-shrink', animated: 'MuiInputLabel-animated', filled: 'MuiInputLabel-filled', outlined: 'MuiInputLabel-outlined', standard: 'MuiInputLabel-standard'}/*union*/)""")

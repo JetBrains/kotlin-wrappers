@@ -7,7 +7,7 @@
 
 package mui.material
 
-import csstype.ClassName
+import web.cssom.ClassName
 
 // language=JavaScript
 @JsName("""(/*union*/{root: 'MuiImageListItemBar-root', positionBottom: 'MuiImageListItemBar-positionBottom', positionTop: 'MuiImageListItemBar-positionTop', positionBelow: 'MuiImageListItemBar-positionBelow', titleWrap: 'MuiImageListItemBar-titleWrap', titleWrapBelow: 'MuiImageListItemBar-titleWrapBelow', titleWrapActionPosLeft: 'MuiImageListItemBar-titleWrapActionPosLeft', titleWrapActionPosRight: 'MuiImageListItemBar-titleWrapActionPosRight', title: 'MuiImageListItemBar-title', subtitle: 'MuiImageListItemBar-subtitle', actionIcon: 'MuiImageListItemBar-actionIcon', actionIconActionPosLeft: 'MuiImageListItemBar-actionIconActionPosLeft'}/*union*/)""")

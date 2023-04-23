@@ -7,7 +7,7 @@
 
 package mui.material
 
-import csstype.ClassName
+import web.cssom.ClassName
 
 // language=JavaScript
 @JsName("""(/*union*/{root: 'MuiSvgIcon-root', colorPrimary: 'MuiSvgIcon-colorPrimary', colorSecondary: 'MuiSvgIcon-colorSecondary', colorAction: 'MuiSvgIcon-colorAction', colorError: 'MuiSvgIcon-colorError', colorDisabled: 'MuiSvgIcon-colorDisabled', fontSizeInherit: 'MuiSvgIcon-fontSizeInherit', fontSizeSmall: 'MuiSvgIcon-fontSizeSmall', fontSizeMedium: 'MuiSvgIcon-fontSizeMedium', fontSizeLarge: 'MuiSvgIcon-fontSizeLarge'}/*union*/)""")

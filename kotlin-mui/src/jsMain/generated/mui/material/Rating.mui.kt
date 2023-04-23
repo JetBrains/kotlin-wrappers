@@ -7,7 +7,7 @@
 
 package mui.material
 
-import csstype.ClassName
+import web.cssom.ClassName
 
 // language=JavaScript
 @JsName("""(/*union*/{root: 'MuiRating-root', sizeSmall: 'MuiRating-sizeSmall', sizeMedium: 'MuiRating-sizeMedium', sizeLarge: 'MuiRating-sizeLarge', readOnly: 'MuiRating-readOnly', visuallyHidden: 'MuiRating-visuallyHidden', label: 'MuiRating-label', labelEmptyValueActive: 'MuiRating-labelEmptyValueActive', icon: 'MuiRating-icon', iconEmpty: 'MuiRating-iconEmpty', iconFilled: 'MuiRating-iconFilled', iconHover: 'MuiRating-iconHover', iconFocus: 'MuiRating-iconFocus', iconActive: 'MuiRating-iconActive', decimal: 'MuiRating-decimal'}/*union*/)""")

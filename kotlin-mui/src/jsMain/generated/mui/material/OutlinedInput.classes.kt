@@ -2,7 +2,7 @@
 
 package mui.material
 
-import csstype.ClassName
+import web.cssom.ClassName
 
 external interface OutlinedInputClasses {
     /** Styles applied to the root element. */

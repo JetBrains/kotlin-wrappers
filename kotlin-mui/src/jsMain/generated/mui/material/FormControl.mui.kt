@@ -7,7 +7,7 @@
 
 package mui.material
 
-import csstype.ClassName
+import web.cssom.ClassName
 
 // language=JavaScript
 @JsName("""(/*union*/{root: 'MuiFormControl-root', marginNormal: 'MuiFormControl-marginNormal', marginDense: 'MuiFormControl-marginDense', fullWidth: 'MuiFormControl-fullWidth'}/*union*/)""")

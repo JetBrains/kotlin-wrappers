@@ -1,8 +1,8 @@
 package react.select
 
-import csstype.ClassName
 import react.PropsWithChildren
 import react.PropsWithClassName
+import web.cssom.ClassName
 
 external interface MultiValueGenericProps<Option : Any, Group : GroupBase<Option>> : PropsWithChildren {
     var data: Any

@@ -1,8 +1,8 @@
 package react.select
 
-import csstype.ClassName
 import react.Props
 import react.RefCallback
+import web.cssom.ClassName
 import web.html.HTMLInputElement
 
 external interface InputSpecificProps : Props {
