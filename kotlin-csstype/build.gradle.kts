@@ -5,6 +5,7 @@ plugins {
 }
 
 dependencies {
+    jsMainApi(project(":kotlin-cssom-core"))
     jsMainApi(project(":kotlin-js"))
     jsMainApi(project(":kotlin-browser"))
 
