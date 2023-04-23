@@ -1,3 +1,9 @@
+## pre.542
+
+**BREAKING CHANGE**
+
+Core CSSOM types moved from package `csstype` to `web.cssom` package
+
 ## pre.527
 
 * Kotlin `1.8.20` support
