@@ -42,8 +42,11 @@ external interface AlertProps :
     var color: AlertColor?
 
     /**
-     * The components used for each slot inside the Alert.
-     * Either a string to use a HTML element or a component.
+     * The components used for each slot inside.
+     *
+     * This prop is an alias for the `slots` prop.
+     * It's recommended to use the `slots` prop instead.
+     *
      * @default {}
      */
     var components: Components?
@@ -54,7 +57,12 @@ external interface AlertProps :
     }
 
     /**
-     * The props used for each slot inside.
+     * The extra props for the slot components.
+     * You can override the existing props or add new ones.
+     *
+     * This prop is an alias for the `slotProps` prop.
+     * It's recommended to use the `slotProps` prop instead, as `componentsProps` will be deprecated in the future.
+     *
      * @default {}
      */
     var componentsProps: ComponentsProps?
@@ -103,6 +111,35 @@ external interface AlertProps :
      * @default 'standard'
      */
     var variant: AlertVariant?
+
+    /**
+     * The extra props for the slot components.
+     * You can override the existing props or add new ones.
+     *
+     * This prop is an alias for the `componentsProps` prop, which will be deprecated in the future.
+     *
+     * @default {}
+     */
+    var slotProps: SlotProps?
+
+    interface SlotProps {
+        var closeButton: react.Props? /* IconButtonProps */
+        var closeIcon: react.Props? /* SvgIconProps */
+    }
+
+    /**
+     * The components used for each slot inside.
+     *
+     * This prop is an alias for the `components` prop, which will be deprecated in the future.
+     *
+     * @default {}
+     */
+    var slots: Slots?
+
+    interface Slots {
+        var closeButton: react.ElementType<*>?
+        var closeIcon: react.ElementType<*>?
+    }
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.

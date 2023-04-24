@@ -30,7 +30,12 @@ external interface AvatarGroupProps :
     var component: react.ElementType<*>?
 
     /**
-     * The props used for each slot inside the AvatarGroup.
+     * The extra props for the slot components.
+     * You can override the existing props or add new ones.
+     *
+     * This prop is an alias for the `slotProps` prop.
+     * It's recommended to use the `slotProps` prop instead, as `componentsProps` will be deprecated in the future.
+     *
      * @default {}
      */
     var componentsProps: ComponentsProps?
@@ -45,6 +50,21 @@ external interface AvatarGroupProps :
      * @default 5
      */
     var max: Number?
+
+    /**
+     * The extra props for the slot components.
+     * You can override the existing props or add new ones.
+     *
+     * This prop is an alias for the `componentsProps` prop, which will be deprecated in the future.
+     *
+     * @default {}
+     */
+    var slotProps: SlotProps?
+
+    interface SlotProps {
+        var additionalAvatar: react.Props? /* React.ComponentPropsWithRef<typeof Avatar> &
+  AvatarGroupComponentsPropsOverrides */
+    }
 
     /**
      * Spacing between avatars.

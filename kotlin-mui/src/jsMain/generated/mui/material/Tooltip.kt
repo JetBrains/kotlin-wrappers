@@ -33,23 +33,29 @@ external interface TooltipProps :
     var classes: TooltipClasses?
 
     /**
-     * The components used for each slot inside the Tooltip.
-     * Either a string to use a HTML element or a component.
+     * The components used for each slot inside.
+     *
+     * This prop is an alias for the `slots` prop.
+     * It's recommended to use the `slots` prop instead.
+     *
      * @default {}
      */
     var components: Components?
 
     interface Components {
-        var Popper: react.ElementType<*>?
+        var Popper: react.ElementType<*>? /* React.ElementType<PopperProps> */
         var Transition: react.ElementType<*>?
         var Tooltip: react.ElementType<*>?
         var Arrow: react.ElementType<*>?
     }
 
     /**
-     * The props used for each slot inside the Tooltip.
-     * Note that `componentsProps.popper` prop values win over `PopperProps`
-     * and `componentsProps.transition` prop values win over `TransitionProps` if both are applied.
+     * The extra props for the slot components.
+     * You can override the existing props or add new ones.
+     *
+     * This prop is an alias for the `slotProps` prop.
+     * It's recommended to use the `slotProps` prop instead, as `componentsProps` will be deprecated in the future.
+     *
      * @default {}
      */
     var componentsProps: ComponentsProps?
@@ -177,6 +183,43 @@ external interface TooltipProps :
      * @default {}
      */
     var PopperProps: PopperProps?
+
+    /**
+     * The extra props for the slot components.
+     * You can override the existing props or add new ones.
+     *
+     * This prop is an alias for the `componentsProps` prop, which will be deprecated in the future.
+     *
+     * @default {}
+     */
+    var slotProps: SlotProps?
+
+    interface SlotProps {
+        var popper: react.Props? /* Partial<PopperProps> & TooltipComponentsPropsOverrides */
+        var transition: react.Props? /* TransitionProps & TooltipComponentsPropsOverrides */
+        var tooltip: react.Props? /* React.HTMLProps<HTMLDivElement> &
+  MUIStyledCommonProps &
+  TooltipComponentsPropsOverrides */
+        var arrow: react.Props? /* React.HTMLProps<HTMLSpanElement> &
+  MUIStyledCommonProps &
+  TooltipComponentsPropsOverrides */
+    }
+
+    /**
+     * The components used for each slot inside.
+     *
+     * This prop is an alias for the `components` prop, which will be deprecated in the future.
+     *
+     * @default {}
+     */
+    var slots: Slots?
+
+    interface Slots {
+        var popper: react.ElementType<*>? /* React.ElementType<PopperProps> */
+        var transition: react.ElementType<*>?
+        var tooltip: react.ElementType<*>?
+        var arrow: react.ElementType<*>?
+    }
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.

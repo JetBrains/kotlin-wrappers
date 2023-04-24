@@ -26,13 +26,12 @@ external interface PaginationItemProps :
     var color: PaginationItemColor?
 
     /**
-     * The components used for first, last, next & previous item type
-     * @default {
-     *   first: FirstPageIcon,
-     *   last: LastPageIcon,
-     *   next: NavigateNextIcon,
-     *   previous: NavigateBeforeIcon,
-     * }
+     * The components used for each slot inside.
+     *
+     * This prop is an alias for the `slots` prop.
+     * It's recommended to use the `slots` prop instead.
+     *
+     * @default {}
      */
     var components: Components?
 
@@ -71,6 +70,22 @@ external interface PaginationItemProps :
      * @default 'medium'
      */
     var size: Size?
+
+    /**
+     * The components used for each slot inside.
+     *
+     * This prop is an alias for the `components` prop, which will be deprecated in the future.
+     *
+     * @default {}
+     */
+    var slots: Slots?
+
+    interface Slots {
+        var first: react.ElementType<*>?
+        var last: react.ElementType<*>?
+        var next: react.ElementType<*>?
+        var previous: react.ElementType<*>?
+    }
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.

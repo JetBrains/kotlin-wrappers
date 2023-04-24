@@ -27,8 +27,11 @@ external interface StepLabelProps :
      * The props used for each slot inside.
      * @default {}
      */
-    var componentsProps: dynamic
-    var label: dynamic
+    var componentsProps: ComponentsProps?
+
+    interface ComponentsProps {
+        var label: react.Props? /* React.HTMLProps<HTMLSpanElement> */
+    }
 
     /**
      * If `true`, the step is marked as failed.
@@ -45,6 +48,16 @@ external interface StepLabelProps :
      * The optional node to display.
      */
     var optional: react.ReactNode?
+
+    /**
+     * The props used for each slot inside.
+     * @default {}
+     */
+    var slotProps: SlotProps?
+
+    interface SlotProps {
+        var label: react.Props? /* React.HTMLProps<HTMLSpanElement> */
+    }
 
     /**
      * The component to render in place of the [`StepIcon`](/material-ui/api/step-icon/).

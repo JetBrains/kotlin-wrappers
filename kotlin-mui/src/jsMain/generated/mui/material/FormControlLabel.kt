@@ -26,8 +26,11 @@ external interface FormControlLabelProps :
      * The props used for each slot inside.
      * @default {}
      */
-    var componentsProps: dynamic
-    var typography: dynamic
+    var componentsProps: ComponentsProps?
+
+    interface ComponentsProps {
+        var typography: react.Props? /* TypographyProps */
+    }
 
     /**
      * A control element. For instance, it can be a `Radio`, a `Switch` or a `Checkbox`.
@@ -69,6 +72,16 @@ external interface FormControlLabelProps :
      * You can pull out the new checked state by accessing `event.target.checked` (boolean).
      */
     var onChange: ((event: react.dom.events.SyntheticEvent<*, *>, checked: Boolean) -> Unit)?
+
+    /**
+     * The props used for each slot inside.
+     * @default {}
+     */
+    var slotProps: SlotProps?
+
+    interface SlotProps {
+        var typography: react.Props? /* TypographyProps */
+    }
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.

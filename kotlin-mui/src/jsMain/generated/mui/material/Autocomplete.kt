@@ -216,6 +216,19 @@ external interface AutocompleteProps<T> :
     var size: mui.system.Union? /* 'small' | 'medium', AutocompletePropsSizeOverrides */
 
     /**
+     * The props used for each slot inside.
+     * @default {}
+     */
+    var slotProps: SlotProps?
+
+    interface SlotProps {
+        var clearIndicator: react.Props? /* Partial<IconButtonProps> */
+        var paper: react.Props? /* PaperProps */
+        var popper: react.Props? /* Partial<PopperProps> */
+        var popupIndicator: react.Props? /* Partial<IconButtonProps> */
+    }
+
+    /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
     override var sx: SxProps<Theme>?
