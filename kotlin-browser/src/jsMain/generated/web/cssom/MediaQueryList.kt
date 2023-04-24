@@ -8,6 +8,6 @@ import web.events.EventTarget
 sealed external class MediaQueryList :
     EventTarget {
     val matches: Boolean
-    val media: String
+    val media: MediaQuery
     var onchange: EventHandler<MediaQueryListEvent>?
 }

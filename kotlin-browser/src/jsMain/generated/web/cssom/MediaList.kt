@@ -6,10 +6,10 @@ import js.core.ArrayLike
 import js.core.JsIterable
 
 sealed external class MediaList :
-    ArrayLike<String>,
-    JsIterable<String> {
+    ArrayLike<MediaQuery>,
+    JsIterable<MediaQuery> {
     var mediaText: String
-    fun appendMedium(medium: String)
-    fun deleteMedium(medium: String)
-    fun item(index: Int): String?
+    fun appendMedium(medium: MediaQuery)
+    fun deleteMedium(medium: MediaQuery)
+    fun item(index: Int): MediaQuery?
 }
