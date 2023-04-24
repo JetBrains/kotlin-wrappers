@@ -44,8 +44,11 @@ external interface InputBaseProps :
     var color: InputBaseColor?
 
     /**
-     * The components used for each slot inside the InputBase.
-     * Either a string to use a HTML element or a component.
+     * The components used for each slot inside.
+     *
+     * This prop is an alias for the `slots` prop.
+     * It's recommended to use the `slots` prop instead.
+     *
      * @default {}
      */
     var components: Components?
@@ -56,7 +59,12 @@ external interface InputBaseProps :
     }
 
     /**
-     * The props used for each slot inside the Input.
+     * The extra props for the slot components.
+     * You can override the existing props or add new ones.
+     *
+     * This prop is an alias for the `slotProps` prop.
+     * It's recommended to use the `slotProps` prop instead, as `componentsProps` will be deprecated in the future.
+     *
      * @default {}
      */
     var componentsProps: ComponentsProps?
@@ -206,6 +214,35 @@ external interface InputBaseProps :
      * The size of the component.
      */
     var size: BaseSize?
+
+    /**
+     * The extra props for the slot components.
+     * You can override the existing props or add new ones.
+     *
+     * This prop is an alias for the `componentsProps` prop, which will be deprecated in the future.
+     *
+     * @default {}
+     */
+    var slotProps: SlotProps?
+
+    interface SlotProps {
+        var root: react.Props? /* React.HTMLAttributes<HTMLDivElement> & InputBaseComponentsPropsOverrides */
+        var input: react.Props? /* React.InputHTMLAttributes<HTMLInputElement> & InputBaseComponentsPropsOverrides */
+    }
+
+    /**
+     * The components used for each slot inside.
+     *
+     * This prop is an alias for the `components` prop, which will be deprecated in the future.
+     *
+     * @default {}
+     */
+    var slots: Slots?
+
+    interface Slots {
+        var root: react.ElementType<*>?
+        var input: react.ElementType<*>?
+    }
 
     /**
      * Start `InputAdornment` for this component.
