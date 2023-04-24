@@ -4,6 +4,8 @@
 
 package web.cssom
 
+import web.cssom.internal.CSS
+
 inline fun Content(): Content =
     string("''")
 
