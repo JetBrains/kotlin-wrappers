@@ -29,7 +29,7 @@ external interface FormControlLabelProps :
     var componentsProps: ComponentsProps?
 
     interface ComponentsProps {
-        var typography: TypographyProps?
+        var typography: react.Props? /* TypographyProps */
     }
 
     /**
@@ -80,7 +80,7 @@ external interface FormControlLabelProps :
     var slotProps: SlotProps?
 
     interface SlotProps {
-        var typography: TypographyProps?
+        var typography: react.Props? /* TypographyProps */
     }
 
     /**
