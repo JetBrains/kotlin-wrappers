@@ -84,9 +84,21 @@ external interface ChipProps :
     var size: BaseSize?
 
     /**
+     * If `true`, allows the disabled chip to escape focus.
+     * If `false`, allows the disabled chip to receive focus.
+     * @default false
+     */
+    var skipFocusWhenDisabled: Boolean?
+
+    /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
     override var sx: SxProps<Theme>?
+
+    /**
+     *  @ignore
+     */
+    var tabIndex: Int?
 
     /**
      * The variant to use.
