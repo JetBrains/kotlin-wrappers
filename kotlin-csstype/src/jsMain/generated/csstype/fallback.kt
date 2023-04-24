@@ -2,7 +2,7 @@
     "NOTHING_TO_INLINE",
 )
 
-package web.cssom
+package csstype
 
 inline fun <T : Any> fallback(
     vararg values: T,
