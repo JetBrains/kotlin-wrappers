@@ -2,6 +2,8 @@
 
 package mui.base
 
+import web.events.Event
+
 external interface UseSliderParameters {
     // var `aria-labelledby`: String?
 
@@ -21,7 +23,7 @@ external interface UseSliderParameters {
 
     var name: String?
 
-    var onChange: ((event: web.events.Event, value: dynamic, activeThumb: Number) -> Unit)?
+    var onChange: ((event: Event, value: dynamic, activeThumb: Number) -> Unit)?
 
     var onChangeCommitted: ((event: react.dom.events.SyntheticEvent<*, *>, value: dynamic) -> Unit)?
 

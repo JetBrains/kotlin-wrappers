@@ -2,6 +2,8 @@
 
 package mui.base
 
+import web.events.Event
+
 external interface SliderUnstyledProps :
     SliderUnstyledOwnProps,
     react.dom.html.HTMLAttributes<web.html.HTMLSpanElement>
@@ -115,7 +117,7 @@ external interface SliderUnstyledOwnProps : react.Props {
      * @param {number | number[]} value The new value.
      * @param {number} activeThumb Index of the currently moved thumb.
      */
-    var onChange: ((event: web.events.Event, value: dynamic, activeThumb: Number) -> Unit)?
+    var onChange: ((event: Event, value: dynamic, activeThumb: Number) -> Unit)?
 
     /**
      * Callback function that is fired when the `mouseup` is triggered.

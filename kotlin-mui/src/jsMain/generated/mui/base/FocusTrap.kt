@@ -6,6 +6,7 @@
 package mui.base
 
 import js.core.ReadonlyArray
+import web.html.HTMLElement
 
 external interface FocusTrapProps : react.Props {
     /**
@@ -18,7 +19,7 @@ external interface FocusTrapProps : react.Props {
      * For instance, you can provide the "tabbable" npm dependency.
      * @param {HTMLElement} root
      */
-    var getTabbable: ((root: web.html.HTMLElement) -> ReadonlyArray<String>)?
+    var getTabbable: ((root: HTMLElement) -> ReadonlyArray<String>)?
 
     /**
      * This prop extends the `open` prop.

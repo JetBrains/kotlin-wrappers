@@ -3,6 +3,7 @@
 package mui.base
 
 import js.core.ReadonlyArray
+import web.html.HTMLElement
 
 external interface CreateFilterOptionsConfig<T> {
     var ignoreAccents: Boolean?
@@ -35,6 +36,19 @@ external interface AutocompleteGroupedOption {
 }
 
 external interface UseAutocompleteProps<T> : react.Props {
+    /**
+     * @internal The prefix of the state class name, temporary for Joy UI
+     * @default 'Mui'
+     */
+    var unstable_classNamePrefix: String?
+
+    /**
+     * @internal
+     * Temporary for Joy UI because the parent listbox is the document object
+     * TODO v6: Normalize the logic and remove this param.
+     */
+    var unstable_isActiveElementInListbox: ((listbox: react.RefObject<HTMLElement>) -> Boolean)?
+
     /**
      * If `true`, the portion of the selected suggestion that has not been typed by the user,
      * known as the completion string, appears inline after the input cursor in the textbox.
