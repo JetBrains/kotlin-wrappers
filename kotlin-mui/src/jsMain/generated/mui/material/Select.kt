@@ -51,18 +51,6 @@ external interface SelectProps<T> :
     var defaultValue: T?
 
     /**
-     * If `true`, a value is displayed even if no items are selected.
-     *
-     * In order to display a meaningful value, a function can be passed to the `renderValue` prop which
-     * returns the value to be displayed when no items are selected.
-     *
-     * ⚠️ When using this prop, make sure the label doesn't overlap with the empty displayed value.
-     * The label should either be hidden or forced to a shrunk state.
-     * @default false
-     */
-    var displayEmpty: Boolean?
-
-    /**
      * The icon that displays the arrow.
      * @default ArrowDropDownIcon
      */
@@ -99,12 +87,6 @@ external interface SelectProps<T> :
      * Props applied to the [`Menu`](/material-ui/api/menu/) element.
      */
     var MenuProps: MenuProps?
-
-    /**
-     * If `true`, `value` must be an array and the menu will support multiple selections.
-     * @default false
-     */
-    var multiple: Boolean?
 
     /**
      * If `true`, the component uses a native `select` element.
@@ -145,15 +127,6 @@ external interface SelectProps<T> :
     var open: Boolean?
 
     /**
-     * Render the selected value.
-     * You can only use it when the `native` prop is `false` (default).
-     *
-     * @param {any} value The `value` provided to the component.
-     * @returns {ReactNode}
-     */
-    var renderValue: ((value: T) -> react.ReactNode)?
-
-    /**
      * Props applied to the clickable div element.
      */
     var SelectDisplayProps: react.dom.html.HTMLAttributes<web.html.HTMLDivElement>?
@@ -177,6 +150,33 @@ external interface SelectProps<T> :
      * @default 'outlined'
      */
     var variant: SelectVariant?
+
+    /**
+     * If `true`, a value is displayed even if no items are selected.
+     *
+     * In order to display a meaningful value, a function can be passed to the `renderValue` prop which
+     * returns the value to be displayed when no items are selected.
+     *
+     * ⚠️ When using this prop, make sure the label doesn't overlap with the empty displayed value.
+     * The label should either be hidden or forced to a shrunk state.
+     * @default false
+     */
+    var displayEmpty: Boolean?
+
+    /**
+     * If `true`, `value` must be an array and the menu will support multiple selections.
+     * @default false
+     */
+    var multiple: Boolean?
+
+    /**
+     * Render the selected value.
+     * You can only use it when the `native` prop is `false` (default).
+     *
+     * @param {any} value The `value` provided to the component.
+     * @returns {ReactNode}
+     */
+    var renderValue: ((value: T) -> react.ReactNode)?
 }
 
 /**

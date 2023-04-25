@@ -2,6 +2,7 @@
 
 package mui.base
 
+import web.cssom.ClassName
 import web.dom.Element
 
 external interface ModalUnstyledProps :
@@ -137,4 +138,30 @@ external interface ModalUnstyledOwnProps : react.Props {
         var root: react.ElementType<*>?
         var backdrop: react.ElementType<*>?
     }
+}
+
+external interface ModalUnstyledRootSlotProps :
+    react.PropsWithChildren,
+    react.PropsWithClassName {
+    override var children: react.ReactNode?
+
+    override var className: ClassName?
+
+    var onKeyDown: dynamic
+
+    var ownerState: dynamic
+
+    var role: react.dom.aria.AriaRole
+}
+
+external interface ModalUnstyledBackdropSlotProps : react.PropsWithChildren {
+    // var `aria-hidden`: dynamic /* React.AriaAttributes['aria-hidden'] */
+
+    override var children: react.ReactNode?
+
+    var onClick: react.dom.events.MouseEventHandler<*>
+
+    var open: Boolean
+
+    var ownerState: dynamic
 }
