@@ -76,7 +76,7 @@ external interface SliderUnstyledOwnProps : react.Props {
     var getAriaValueText: ((value: Number, index: Number) -> String)?
 
     /**
-     * Indicates whether the theme context has rtl direction. It is set automatically.
+     * If `true` the Slider will be rendered right-to-left (with the lowest value on the right-hand side).
      * @default false
      */
     var isRtl: Boolean?
