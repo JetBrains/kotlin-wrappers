@@ -63,6 +63,7 @@ external interface SwipeableDrawerProps :
 
     /**
      * If `true`, the component is shown.
+     * @default false
      */
     override var open: Boolean?
 

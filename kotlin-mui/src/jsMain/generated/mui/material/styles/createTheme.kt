@@ -5,6 +5,8 @@
 
 package mui.material.styles
 
+import mui.system.SxProps
+
 external interface ThemeOptions : mui.system.ThemeOptions {
     override var mixins: MixinsOptions?
 
@@ -21,6 +23,8 @@ external interface ThemeOptions : mui.system.ThemeOptions {
     override var zIndex: dynamic
 
     var unstable_strictMode: Boolean?
+
+    override var unstable_sxConfig: dynamic
 }
 
 external interface BaseTheme : mui.system.Theme {
@@ -41,6 +45,10 @@ external interface BaseTheme : mui.system.Theme {
 
 external interface Theme : BaseTheme {
     override var components: dynamic
+
+    override var unstable_sx: (props: SxProps<Theme>) -> dynamic /* CSSObject from `@mui/styled-engine` */
+
+    override var unstable_sxConfig: dynamic
 }
 
 @JsName("default")
