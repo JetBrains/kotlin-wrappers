@@ -2,7 +2,7 @@
 
 **BREAKING CHANGE**
 
-Core CSSOM types moved from package `csstype` to `web.cssom` package
+Core CSSOM types moved from the `csstype` package to `web.cssom`
 
 ## pre.527
 
