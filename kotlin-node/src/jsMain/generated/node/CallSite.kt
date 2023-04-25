@@ -37,7 +37,7 @@ sealed external interface CallSite {
     /**
      * Name of the script [if this function was defined in a script]
      */
-    fun getFileName(): String?
+    fun getFileName(): String
 
     /**
      * Current line number [if this function was defined in a script]
