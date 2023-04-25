@@ -24,8 +24,6 @@ external interface UseButtonRootSlotOwnProps : react.Props {
     var onMouseDown: react.dom.events.MouseEventHandler<*>
 
     var onMouseLeave: react.dom.events.MouseEventHandler<*>
-
-    var onMouseUp: react.dom.events.MouseEventHandler<*>
 }
 
 external interface UseButtonParameters {
