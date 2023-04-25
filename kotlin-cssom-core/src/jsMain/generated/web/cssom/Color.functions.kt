@@ -16,12 +16,12 @@ inline fun rgb(
     green: Int,
     blue: Int,
 ): Color =
-    "rgb($red,$green,$blue)".unsafeCast<Color>()
+    "rgb($red $green $blue)".unsafeCast<Color>()
 
-inline fun rgba(
+inline fun rgb(
     red: Int,
     green: Int,
     blue: Int,
     alpha: Double,
 ): Color =
-    "rgba($red,$green,$blue,$alpha)".unsafeCast<Color>()
+    "rgb($red $green $blue / $alpha)".unsafeCast<Color>()
