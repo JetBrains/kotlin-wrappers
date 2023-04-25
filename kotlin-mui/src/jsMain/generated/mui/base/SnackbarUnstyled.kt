@@ -9,7 +9,7 @@ package mui.base
  *
  * Demos:
  *
- * - [Unstyled snackbar](https://mui.com/base/react-snackbar/)
+ * - [Unstyled Snackbar](https://mui.com/base/react-snackbar/)
  *
  * API:
  *
