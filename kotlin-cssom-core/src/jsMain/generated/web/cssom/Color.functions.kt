@@ -39,4 +39,4 @@ inline fun oklch(
     h: Double,
     a: Double,
 ): Color =
-    "oklch($l $c $h $a)".unsafeCast<Color>()
+    "oklch($l $c $h / $a)".unsafeCast<Color>()
