@@ -194,7 +194,7 @@ class TestColor {
     @Test
     fun testWithAlpha() {
         val rgb = rgb(0, 0, 0).withAlpha(0.1)
-        val rgba = rgba(0, 0, 0, 0.5).withAlpha(0.1)
+        val rgba = rgb(0, 0, 0, 0.5).withAlpha(0.1)
         val hex = Color("#000").withAlpha(0.1)
         val hexa = Color("#00000000").withAlpha(0.1)
 
@@ -207,7 +207,7 @@ class TestColor {
     @Test
     fun testChangeAlpha() {
         val rgb = rgb(0, 0, 0).changeAlpha(0.1)
-        val rgba = rgba(0, 0, 0, 0.5).changeAlpha(0.1)
+        val rgba = rgb(0, 0, 0, 0.5).changeAlpha(0.1)
         val hex = Color("#000").changeAlpha(0.1)
         val hexa = Color("#00000000").changeAlpha(0.1)
         val hexa2 = Color("#00000022").changeAlpha(0.1)

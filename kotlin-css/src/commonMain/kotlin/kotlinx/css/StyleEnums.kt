@@ -364,8 +364,8 @@ class Color(override val value: String) : CssValue(value) {
      */
     fun withAlpha(alpha: Double) =
         when {
-            value.startsWith("hsl", true) -> with(fromHSLANotation()) { hsla(hue, saturation, lightness, normalizeAlpha(alpha) * this.alpha) }
-            else -> with(toRGBA()) { rgba(red, green, blue, normalizeAlpha(alpha) * this.alpha) }
+            value.startsWith("hsl", true) -> with(fromHSLANotation()) { hsl(hue, saturation, lightness, normalizeAlpha(alpha) * this.alpha) }
+            else -> with(toRGBA()) { rgb(red, green, blue, normalizeAlpha(alpha) * this.alpha) }
         }
 
     /**
@@ -373,8 +373,8 @@ class Color(override val value: String) : CssValue(value) {
      */
     fun changeAlpha(alpha: Double) =
         when {
-            value.startsWith("hsl", true) -> with(fromHSLANotation()) { hsla(hue, saturation, lightness, normalizeAlpha(alpha)) }
-            else -> with(toRGBA()) { rgba(red, green, blue, normalizeAlpha(alpha)) }
+            value.startsWith("hsl", true) -> with(fromHSLANotation()) { hsl(hue, saturation, lightness, normalizeAlpha(alpha)) }
+            else -> with(toRGBA()) { rgb(red, green, blue, normalizeAlpha(alpha)) }
         }
 
     // https://stackoverflow.com/questions/2049230/convert-rgba-color-to-rgb
@@ -402,9 +402,9 @@ class Color(override val value: String) : CssValue(value) {
         val lightness = hsla.lightness + (hsla.lightness * (normalizePercent(percent) / 100.0)).roundToInt()
         val newHSLa = hsla.copy(lightness = normalizePercent(lightness))
         return if (isHSLA) {
-            hsla(newHSLa.hue, newHSLa.saturation, newHSLa.lightness, newHSLa.alpha)
+            hsl(newHSLa.hue, newHSLa.saturation, newHSLa.lightness, newHSLa.alpha)
         } else {
-            with(newHSLa.asRGBA()) { rgba(red, green, blue, alpha) }
+            with(newHSLa.asRGBA()) { rgb(red, green, blue, alpha) }
         }
     }
 
@@ -421,9 +421,9 @@ class Color(override val value: String) : CssValue(value) {
         val darkness = hsla.lightness - (hsla.lightness * (normalizePercent(percent) / 100.0)).roundToInt()
         val newHSLa = hsla.copy(lightness = normalizePercent(darkness))
         return if (isHSLA) {
-            hsla(newHSLa.hue, newHSLa.saturation, newHSLa.lightness, newHSLa.alpha)
+            hsl(newHSLa.hue, newHSLa.saturation, newHSLa.lightness, newHSLa.alpha)
         } else {
-            with(newHSLa.asRGBA()) { rgba(red, green, blue, alpha) }
+            with(newHSLa.asRGBA()) { rgb(red, green, blue, alpha) }
         }
     }
 
@@ -440,9 +440,9 @@ class Color(override val value: String) : CssValue(value) {
         val saturation = hsla.saturation + (hsla.saturation * (normalizePercent(percent) / 100.0)).roundToInt()
         val newHSLa = hsla.copy(saturation = normalizePercent(saturation))
         return if (isHSLA) {
-            hsla(newHSLa.hue, newHSLa.saturation, newHSLa.lightness, newHSLa.alpha)
+            hsl(newHSLa.hue, newHSLa.saturation, newHSLa.lightness, newHSLa.alpha)
         } else {
-            with(newHSLa.asRGBA()) { rgba(red, green, blue, alpha) }
+            with(newHSLa.asRGBA()) { rgb(red, green, blue, alpha) }
         }
     }
 
@@ -459,9 +459,9 @@ class Color(override val value: String) : CssValue(value) {
         val desaturation = hsla.saturation - (hsla.saturation * (normalizePercent(percent) / 100.0)).roundToInt()
         val newHSLa = hsla.copy(saturation = normalizePercent(desaturation))
         return if (isHSLA) {
-            hsla(newHSLa.hue, newHSLa.saturation, newHSLa.lightness, newHSLa.alpha)
+            hsl(newHSLa.hue, newHSLa.saturation, newHSLa.lightness, newHSLa.alpha)
         } else {
-            with(newHSLa.asRGBA()) { rgba(red, green, blue, alpha) }
+            with(newHSLa.asRGBA()) { rgb(red, green, blue, alpha) }
         }
     }
 
@@ -601,11 +601,21 @@ class Color(override val value: String) : CssValue(value) {
 }
 
 private fun String.withZeros() = this + "0".repeat(max(0, 3 - this.length))
+
 fun hex(value: Int) = Color("#${value.toString(16).withZeros()}")
+
+// TODO use modern format
 fun rgb(red: Int, green: Int, blue: Int) = Color("rgb($red, $green, $blue)")
-fun rgba(red: Int, green: Int, blue: Int, alpha: Double) = Color("rgba($red, $green, $blue, ${formatAlpha(alpha)})")
+fun rgb(red: Int, green: Int, blue: Int, alpha: Double) = Color("rgba($red, $green, $blue, ${formatAlpha(alpha)})")
+
+// TODO use modern format
 fun hsl(hue: Int, saturation: Int, lightness: Int) = Color("hsl($hue, $saturation%, $lightness%)")
-fun hsla(hue: Int, saturation: Int, lightness: Int, alpha: Double) = Color("hsla($hue, $saturation%, $lightness%, ${formatAlpha(alpha)})")
+fun hsl(hue: Int, saturation: Int, lightness: Int, alpha: Double) = Color("hsla($hue, $saturation%, $lightness%, ${formatAlpha(alpha)})")
+
+// TODO tests
+fun oklch(l: Int, c: Double, h: Double) = Color("oklch($l $c $h)")
+fun oklch(l: Int, c: Double, h: Double, a: Double) = Color("oklch($l $c $h / $a)")
+
 fun blackAlpha(alpha: Double) = Color.black.withAlpha(alpha)
 fun whiteAlpha(alpha: Double) = Color.white.withAlpha(alpha)
 
