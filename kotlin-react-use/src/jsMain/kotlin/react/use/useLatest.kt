@@ -11,10 +11,10 @@ import kotlin.reflect.KProperty
 /**
  * [Original](https://github.com/streamich/react-use/blob/master/src/useLatest.ts)
  */
-fun <T : Any> useLatest(
+fun <T> useLatest(
     value: T,
 ): LatestInstance<T> {
-    val ref = useRef(value)
+    val ref = useRef<T & Any>()
     ref.current = value
 
     return ref.unsafeCast<LatestInstance<T>>()
