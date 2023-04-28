@@ -56,6 +56,7 @@ open external class OutgoingMessage<Request : IncomingMessage> : Writable {
 
     /**
      * Sets a single header value for the header object.
+     * If the header already exists in the to-be-sent headers, its value will be replaced. Use an array of strings to send multiple headers with the same name.
      * @since v0.4.0
      * @param name Header name
      * @param value Header value
@@ -63,6 +64,24 @@ open external class OutgoingMessage<Request : IncomingMessage> : Writable {
     open fun setHeader(
         name: String,
         value: Any, /* number | string | ReadonlyArray<string> */
+    ) /* : this */
+
+    /**
+     * Append a single header value for the header object.
+     *
+     * If the value is an array, this is equivalent of calling this method multiple times.
+     *
+     * If there were no previous value for the header, this is equivalent of calling `outgoingMessage.setHeader(name, value)`.
+     *
+     * Depending of the value of `options.uniqueHeaders` when the client request or the server were created,
+     * this will end up in the header being sent multiple times or a single time with values joined using `; `.
+     * @since v18.3.0, v16.17.0
+     * @param name Header name
+     * @param value Header value
+     */
+    open fun appendHeader(
+        name: String,
+        value: Any, /* string | ReadonlyArray<string> */
     ) /* : this */
 
     /**

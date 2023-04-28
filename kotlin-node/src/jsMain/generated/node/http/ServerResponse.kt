@@ -39,6 +39,15 @@ external class ServerResponse<Request : IncomingMessage> : OutgoingMessage<Reque
      */
     var statusMessage: String
 
+    /**
+     * If set to `true`, Node.js will check whether the `Content-Length` header value
+     * and the size of the body, in bytes, are equal. Mismatching the
+     * `Content-Length` header value will result in an `Error` being thrown,
+     * identified by `code: 'ERR_HTTP_CONTENT_LENGTH_MISMATCH'`.
+     * @since v18.10.0, v16.18.0
+     */
+    var strictContentLength: Boolean
+
     constructor(req: Request)
 
     fun assignSocket(socket: Socket)

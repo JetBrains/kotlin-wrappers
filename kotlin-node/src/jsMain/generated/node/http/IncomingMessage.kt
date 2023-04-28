@@ -104,6 +104,21 @@ open external class IncomingMessage : Readable {
     open var headers: IncomingHttpHeaders
 
     /**
+     * Similar to `message.headers`, but there is no join logic and the values are always arrays of strings, even for headers received just once.
+     *
+     * ```js
+     * // Prints something like:
+     * //
+     * // { 'user-agent': ['curl/7.22.0'],
+     * //   host: ['127.0.0.1:8000'],
+     * //   accept: ['*'] }
+     * console.log(request.headersDistinct);
+     * ```
+     * @since v18.3.0, v16.17.0
+     */
+    open var headersDistinct: Dict<ReadonlyArray<String>>
+
+    /**
      * The raw request/response headers list exactly as they were received.
      *
      * The keys and values are in the same list. It is _not_ a
@@ -134,6 +149,13 @@ open external class IncomingMessage : Readable {
      * @since v0.3.0
      */
     open var trailers: Dict<String>
+
+    /**
+     * Similar to `message.trailers`, but there is no join logic and the values are always arrays of strings, even for headers received just once.
+     * Only populated at the `'end'` event.
+     * @since v18.3.0, v16.17.0
+     */
+    open var trailersDistinct: Dict<ReadonlyArray<String>>
 
     /**
      * The raw request/response trailer keys and values exactly as they were

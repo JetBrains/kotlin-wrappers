@@ -181,6 +181,14 @@ open external class Server<
     ) /* : this */
 
     open fun addListener(
+        event: Event.DROP_REQUEST,
+        listener: (
+            req: Request,
+            socket: Duplex,
+        ) -> Unit,
+    ) /* : this */
+
+    open fun addListener(
         event: Event.REQUEST,
         listener: RequestListener<Request, Response>,
     ) /* : this */
@@ -237,6 +245,12 @@ open external class Server<
     ): Boolean
 
     open fun emit(
+        event: Event.DROP_REQUEST,
+        req: Request,
+        socket: Duplex,
+    ): Boolean
+
+    open fun emit(
         event: Event.REQUEST,
         req: Request,
         res: Response,
@@ -302,6 +316,14 @@ open external class Server<
     ) /* : this */
 
     open fun on(
+        event: Event.DROP_REQUEST,
+        listener: (
+            req: Request,
+            socket: Duplex,
+        ) -> Unit,
+    ) /* : this */
+
+    open fun on(
         event: Event.REQUEST,
         listener: RequestListener<Request, Response>,
     ) /* : this */
@@ -368,6 +390,14 @@ open external class Server<
     ) /* : this */
 
     open fun once(
+        event: Event.DROP_REQUEST,
+        listener: (
+            req: Request,
+            socket: Duplex,
+        ) -> Unit,
+    ) /* : this */
+
+    open fun once(
         event: Event.REQUEST,
         listener: RequestListener<Request, Response>,
     ) /* : this */
@@ -434,6 +464,14 @@ open external class Server<
     ) /* : this */
 
     open fun prependListener(
+        event: Event.DROP_REQUEST,
+        listener: (
+            req: Request,
+            socket: Duplex,
+        ) -> Unit,
+    ) /* : this */
+
+    open fun prependListener(
         event: Event.REQUEST,
         listener: RequestListener<Request, Response>,
     ) /* : this */
@@ -496,6 +534,14 @@ open external class Server<
             req: Request,
             socket: Duplex,
             head: Buffer,
+        ) -> Unit,
+    ) /* : this */
+
+    open fun prependOnceListener(
+        event: Event.DROP_REQUEST,
+        listener: (
+            req: Request,
+            socket: Duplex,
         ) -> Unit,
     ) /* : this */
 
