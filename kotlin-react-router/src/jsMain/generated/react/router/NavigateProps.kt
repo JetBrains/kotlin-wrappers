@@ -4,6 +4,7 @@
 
 package react.router
 
+import remix.run.router.RelativeRoutingType
 import remix.run.router.To
 
 

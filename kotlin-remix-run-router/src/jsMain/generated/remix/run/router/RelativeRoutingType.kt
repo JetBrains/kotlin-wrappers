@@ -2,7 +2,7 @@
     "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
 )
 
-package react.router
+package remix.run.router
 
 
 @Suppress(

@@ -11,14 +11,14 @@ import web.html.HTMLInputElement
 import web.http.FormData
 import web.url.URLSearchParams
 
-external fun getFormSubmissionInfo(target: HTMLFormElement?, defaultAction: String, options: SubmitOptions): GetFormSubmissionInfoResult
+external fun getFormSubmissionInfo(target: HTMLFormElement?, options: SubmitOptions, basename: String): GetFormSubmissionInfoResult
 
-external fun getFormSubmissionInfo(target: HTMLButtonElement?, defaultAction: String, options: SubmitOptions): GetFormSubmissionInfoResult
+external fun getFormSubmissionInfo(target: HTMLButtonElement?, options: SubmitOptions, basename: String): GetFormSubmissionInfoResult
 
-external fun getFormSubmissionInfo(target: HTMLInputElement?, defaultAction: String, options: SubmitOptions): GetFormSubmissionInfoResult
+external fun getFormSubmissionInfo(target: HTMLInputElement?, options: SubmitOptions, basename: String): GetFormSubmissionInfoResult
 
-external fun getFormSubmissionInfo(target: FormData?, defaultAction: String, options: SubmitOptions): GetFormSubmissionInfoResult
+external fun getFormSubmissionInfo(target: FormData?, options: SubmitOptions, basename: String): GetFormSubmissionInfoResult
 
-external fun getFormSubmissionInfo(target: URLSearchParams?, defaultAction: String, options: SubmitOptions): GetFormSubmissionInfoResult
+external fun getFormSubmissionInfo(target: URLSearchParams?, options: SubmitOptions, basename: String): GetFormSubmissionInfoResult
 
-external fun getFormSubmissionInfo(target: js.core.ReadonlyRecord<String, String>?, defaultAction: String, options: SubmitOptions): GetFormSubmissionInfoResult
+external fun getFormSubmissionInfo(target: js.core.ReadonlyRecord<String, String>?, options: SubmitOptions, basename: String): GetFormSubmissionInfoResult

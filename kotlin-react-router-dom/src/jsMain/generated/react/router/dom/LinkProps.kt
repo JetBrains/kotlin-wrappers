@@ -4,7 +4,7 @@
 
 package react.router.dom
 
-import react.router.RelativeRoutingType
+import remix.run.router.RelativeRoutingType
 import remix.run.router.To
 import web.html.HTMLAnchorElement
 

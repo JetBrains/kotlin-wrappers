@@ -7,9 +7,7 @@ package react.router.dom
 
 import remix.run.router.HTMLFormMethod
 
-/* import type { FormEncType, HTMLFormMethod } from "@remix-run/router"; */
-
-/* import type { RelativeRoutingType } from "react-router"; */
+/* import type { FormEncType, HTMLFormMethod, RelativeRoutingType } from "@remix-run/router"; */
 
 external val defaultMethod: HTMLFormMethod
 

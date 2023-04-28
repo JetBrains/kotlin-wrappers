@@ -11,4 +11,5 @@ package remix.run.router
 
 sealed external interface FutureConfig {
     var v7_normalizeFormMethod: Boolean
+    var v7_prependBasename: Boolean
 }

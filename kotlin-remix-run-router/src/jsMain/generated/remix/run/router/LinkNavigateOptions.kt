@@ -8,9 +8,4 @@ package remix.run.router
 /**
  * Options for a navigate() call for a Link navigation
  */
-
-sealed external interface LinkNavigateOptions {
-    var replace: Boolean?
-    var state: LocationState?
-    var preventScrollReset: Boolean?
-}
+typealias LinkNavigateOptions = BaseNavigateOptions

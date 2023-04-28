@@ -8,4 +8,4 @@ package remix.run.router
 /**
  * Route action function signature
  */
-typealias ActionFunction = (args: ActionFunctionArgs) -> Any /* Promise<Response> | Response | Promise<any> | any */
+typealias ActionFunction = (args: ActionFunctionArgs) -> Any /* Promise<DataFunctionValue> | DataFunctionValue */

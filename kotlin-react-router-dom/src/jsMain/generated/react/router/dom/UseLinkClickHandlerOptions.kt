@@ -1,6 +1,6 @@
 package react.router.dom
 
-import react.router.RelativeRoutingType
+import remix.run.router.RelativeRoutingType
 
 
 sealed external interface UseLinkClickHandlerOptions {

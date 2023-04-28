@@ -10,7 +10,7 @@ import remix.run.router.TrackedPromise
 
 /* import * as React from "react"; */
 
-/* import type { AgnosticRouteMatch, AgnosticIndexRouteObject, AgnosticNonIndexRouteObject, History, Location, Router, StaticHandlerContext, To, TrackedPromise, LazyRouteFunction } from "@remix-run/router"; */
+/* import type { AgnosticRouteMatch, AgnosticIndexRouteObject, AgnosticNonIndexRouteObject, History, Location, RelativeRoutingType, Router, StaticHandlerContext, To, TrackedPromise, LazyRouteFunction } from "@remix-run/router"; */
 
 /* import type { Action as NavigationType } from "@remix-run/router"; */
 

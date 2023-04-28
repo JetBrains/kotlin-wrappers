@@ -91,7 +91,7 @@ sealed external interface Router {
      * @param to Path to navigate to
      * @param opts Navigation options (method, submission, etc.)
      */
-    fun navigate(to: To, opts: RouterNavigateOptions = definedExternally): Promise<Unit>
+    fun navigate(to: To?, opts: RouterNavigateOptions = definedExternally): Promise<Unit>
 
     /**
      * @internal
@@ -104,7 +104,7 @@ sealed external interface Router {
      * @param href    href to fetch
      * @param opts    Fetcher options, (method, submission, etc.)
      */
-    fun fetch(key: String, routeId: String, href: String, opts: RouterNavigateOptions = definedExternally): Unit
+    fun fetch(key: String, routeId: String, href: String?, opts: RouterNavigateOptions = definedExternally): Unit
 
     /**
      * @internal

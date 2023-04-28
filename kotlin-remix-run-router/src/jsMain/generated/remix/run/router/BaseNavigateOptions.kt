@@ -2,14 +2,13 @@
     "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
 )
 
-package react.router
-
-import remix.run.router.RelativeRoutingType
+package remix.run.router
 
 
-sealed external interface NavigateOptions {
+sealed external interface BaseNavigateOptions {
     var replace: Boolean?
-    var state: remix.run.router.LocationState?
+    var state: Any?
     var preventScrollReset: Boolean?
     var relative: RelativeRoutingType?
+    var fromRouteId: String?
 }

@@ -6,4 +6,6 @@
 package react.router
 
 
-external fun detectErrorBoundary(route: RouteObject): Boolean
+external fun mapRouteProperties(route: RouteObject): Any /* Partial<RouteObject> & {
+    hasErrorBoundary: boolean;
+} */

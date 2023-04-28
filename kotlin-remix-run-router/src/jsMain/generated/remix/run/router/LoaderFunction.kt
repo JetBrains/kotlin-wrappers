@@ -8,4 +8,4 @@ package remix.run.router
 /**
  * Route loader function signature
  */
-typealias LoaderFunction = (args: LoaderFunctionArgs) -> Any /* Promise<Response> | Response | Promise<any> | any */
+typealias LoaderFunction = (args: LoaderFunctionArgs) -> Any /* Promise<DataFunctionValue> | DataFunctionValue */
