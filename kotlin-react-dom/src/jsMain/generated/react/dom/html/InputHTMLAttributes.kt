@@ -19,7 +19,7 @@ external interface InputHTMLAttributes<T : Element> : HTMLAttributes<T> {
     var disabled: Boolean?
     var enterKeyHint: EnterKeyHint?
     var form: String?
-    var formAction: String?
+    var formAction: String? /* FormAction */
     var formEncType: String?
     var formMethod: String?
     var formNoValidate: Boolean?

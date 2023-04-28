@@ -7,7 +7,7 @@ import web.window.WindowTarget
 
 external interface FormHTMLAttributes<T : Element> : HTMLAttributes<T> {
     var acceptCharset: String?
-    var action: String?
+    var action: String? /* FormAction */
     var autoComplete: AutoComplete?
     var encType: String?
     var method: String?
