@@ -85,6 +85,7 @@
             "remix.run.router.GetScrollRestorationKeyFunction"
         ],
         "SetURLSearchParams.kt": [
+            "web.url.URLSearchParams",
             "react.router.NavigateOptions"
         ],
         "SubmitOptions.kt": [

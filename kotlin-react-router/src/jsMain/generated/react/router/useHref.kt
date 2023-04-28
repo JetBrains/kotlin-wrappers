@@ -13,4 +13,4 @@ import remix.run.router.To
  *
  * @see https://reactrouter.com/hooks/use-href
  */
-external fun useHref(to: To, param1: UseHrefOptions = definedExternally): String
+external fun useHref(to: To, options: UseHrefOptions = definedExternally): String

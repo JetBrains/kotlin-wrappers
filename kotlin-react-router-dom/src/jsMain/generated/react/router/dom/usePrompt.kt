@@ -16,4 +16,4 @@ package react.router.dom
  */
 
 @JsName("unstable_usePrompt")
-external fun usePrompt(param: UsePromptOptions): Unit
+external fun usePrompt(options: UsePromptOptions): Unit

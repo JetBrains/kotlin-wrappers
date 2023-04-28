@@ -11,5 +11,3 @@ Kotlin wrapper for [React Router](https://remix.run/docs/en/v1/other-api/react-r
     * `AgnosticRouteObject`
     * `DataResult`
     * `Fetcher` and `FetcherStates`
-2) Support indexed type signatures:
-    * `RouteData`

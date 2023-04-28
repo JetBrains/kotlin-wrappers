@@ -11,4 +11,4 @@ package react.router.dom
  */
 
 @JsName("UNSAFE_useScrollRestoration")
-external fun useScrollRestoration(param: UseScrollRestorationOptions = definedExternally): Unit
+external fun useScrollRestoration(options: UseScrollRestorationOptions = definedExternally): Unit

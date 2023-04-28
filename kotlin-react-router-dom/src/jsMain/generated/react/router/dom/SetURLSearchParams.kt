@@ -5,5 +5,6 @@
 package react.router.dom
 
 import react.router.NavigateOptions
+import web.url.URLSearchParams
 
-typealias SetURLSearchParams = (nextInit: Any /* URLSearchParamsInit | ((prev: URLSearchParams) => URLSearchParamsInit) */, navigateOpts: NavigateOptions? /* use undefined for default */) -> Unit
+typealias SetURLSearchParams = (nextInit: ((prev: URLSearchParams) -> URLSearchParamsInit), navigateOpts: NavigateOptions? /* use undefined for default */) -> Unit

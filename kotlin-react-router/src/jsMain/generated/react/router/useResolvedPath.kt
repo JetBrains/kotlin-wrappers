@@ -13,4 +13,4 @@ import remix.run.router.To
  *
  * @see https://reactrouter.com/hooks/use-resolved-path
  */
-external fun useResolvedPath(to: To, param1: UseResolvedPathOptions = definedExternally): Path
+external fun useResolvedPath(to: To, options: UseResolvedPathOptions = definedExternally): Path

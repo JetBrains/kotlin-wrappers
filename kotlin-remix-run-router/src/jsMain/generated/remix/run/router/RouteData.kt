@@ -10,5 +10,22 @@ package remix.run.router
  */
 
 sealed external interface RouteData {
-    /* [routeId: string]: any; */
+
+
+    @Suppress(
+        "DEPRECATION",
+        "NATIVE_INDEXER_KEY_SHOULD_BE_STRING_OR_NUMBER",
+    )
+    @nativeGetter
+    operator fun get(key: String): Any?
+
+
+    @Suppress(
+        "DEPRECATION",
+        "NATIVE_INDEXER_KEY_SHOULD_BE_STRING_OR_NUMBER",
+    )
+    @nativeSetter
+    operator fun set(key: String, value: Any?)
+
+
 }
