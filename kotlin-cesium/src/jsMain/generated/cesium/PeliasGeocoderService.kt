@@ -34,6 +34,13 @@ external class PeliasGeocoderService(val url: Resource) {
     constructor(url: String)
 
     /**
+     * Gets the credit to display after a geocode is performed. Typically this is used to credit
+     * the geocoder service.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PeliasGeocoderService.html#credit">Online Documentation</a>
+     */
+    val credit: Credit?
+
+    /**
      * @param [query] The query to be sent to the geocoder service
      * @param [type] The type of geocode to perform.
      *   Default value - [GeocodeType.SEARCH]

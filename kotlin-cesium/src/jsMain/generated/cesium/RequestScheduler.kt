@@ -26,11 +26,15 @@ external object RequestScheduler {
     var maximumRequestsPerServer: Int
 
     /**
-     * A per server key list of overrides to use for throttling instead of `maximumRequestsPerServer`
+     * A per server key list of overrides to use for throttling instead of `maximumRequestsPerServer`.
+     * Useful when streaming data from a known HTTP/2 or HTTP/3 server.
+     * ```
+     * RequestScheduler.requestsByServer["myserver.com:443"] = 18;
+     * ```
      * ```
      * RequestScheduler.requestsByServer = {
-     *   'api.cesium.com:443': 18,
-     *   'assets.cesium.com:443': 18
+     *   "api.cesium.com:443": 18,
+     *   "assets.cesium.com:443": 18,
      * };
      * ```
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/RequestScheduler.html#.requestsByServer">Online Documentation</a>

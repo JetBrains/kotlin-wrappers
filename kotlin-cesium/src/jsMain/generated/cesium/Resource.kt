@@ -619,6 +619,8 @@ external class Resource(options: dynamic) {
      * @property [retryAttempts] The number of times the retryCallback should be called before giving up.
      *   Default value - `0`
      * @property [request] A Request object that will be used. Intended for internal use only.
+     * @property [parseUrl] If true, parse the url for query parameters; otherwise store the url without change
+     *   Default value - `true`
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Resource.html#.ConstructorOptions">Online Documentation</a>
      */
     interface ConstructorOptions {
@@ -630,6 +632,7 @@ external class Resource(options: dynamic) {
         var retryCallback: RetryCallback?
         var retryAttempts: Int?
         var request: Request?
+        var parseUrl: Boolean?
     }
 
     companion object {

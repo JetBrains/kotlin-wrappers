@@ -29,6 +29,7 @@ external class Request(options: ConstructorOptions? = definedExternally) {
      *   Default value - `false`
      * @property [type] The type of request.
      *   Default value - [RequestType.OTHER]
+     * @property [serverKey] A key used to identify the server that a request is going to.
      */
     interface ConstructorOptions {
         var url: String?
@@ -39,6 +40,7 @@ external class Request(options: ConstructorOptions? = definedExternally) {
         var throttle: Boolean?
         var throttleByServer: Boolean?
         var type: RequestType?
+        var serverKey: String?
     }
 
     /**

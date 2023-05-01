@@ -18,7 +18,7 @@ import kotlin.js.Promise
  * try {
  *   const tileset = await Cesium3DTileset.fromUrl(
  *      "http://localhost:8002/tilesets/Seattle/tileset.json"
- *   });
+ *   );
  *   scene.primitives.add(tileset);
  * } catch (error) {
  *   console.error(`Error creating tileset: ${error}`);
@@ -1083,7 +1083,7 @@ external class Cesium3DTileset(options: ConstructorOptions) {
          * try {
          *   const tileset = await Cesium3DTileset.fromUrl(
          *      "http://localhost:8002/tilesets/Seattle/tileset.json"
-         *   });
+         *   );
          *   scene.primitives.add(tileset);
          * } catch (error) {
          *   console.error(`Error creating tileset: ${error}`);
@@ -1120,12 +1120,12 @@ external class Cesium3DTileset(options: ConstructorOptions) {
          */
         fun fromUrl(
             url: Resource,
-            options: ConstructorOptions,
+            options: ConstructorOptions? = definedExternally,
         ): Promise<Cesium3DTileset>
 
         fun fromUrl(
             url: String,
-            options: ConstructorOptions,
+            options: ConstructorOptions? = definedExternally,
         ): Promise<Cesium3DTileset>
 
         /**

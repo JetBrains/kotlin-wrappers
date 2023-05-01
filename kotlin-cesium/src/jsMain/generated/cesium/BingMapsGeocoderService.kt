@@ -39,6 +39,13 @@ external class BingMapsGeocoderService(options: ConstructorOptions) {
     val key: String
 
     /**
+     * Gets the credit to display after a geocode is performed. Typically this is used to credit
+     * the geocoder service.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BingMapsGeocoderService.html#credit">Online Documentation</a>
+     */
+    val credit: Credit?
+
+    /**
      * @param [query] The query to be sent to the geocoder service
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BingMapsGeocoderService.html#geocode">Online Documentation</a>
      */

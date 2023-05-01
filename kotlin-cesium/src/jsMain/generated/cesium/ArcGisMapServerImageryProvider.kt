@@ -2,26 +2,52 @@
 
 @file:JsModule("cesium")
 
+@file:Suppress(
+    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
+)
+
 package cesium
 
 import js.core.ReadonlyArray
+import js.core.jso
 import kotlin.js.Promise
 
 /**
  * <div class="notice">
- * To construct a ArcGisMapServerImageryProvider call [ArcGisMapServerImageryProvider.fromUrl]. Do not call the constructor directly.
+ * This object is normally not instantiated directly, use [ArcGisMapServerImageryProvider.fromBasemapType] or [ArcGisMapServerImageryProvider.fromUrl].
  * </div>
  *
  * Provides tiled imagery hosted by an ArcGIS MapServer.  By default, the server's pre-cached tiles are
  * used, if available.
+ *
+ * <br/>
+ *
+ * An [ ArcGIS Access Token ](https://developers.arcgis.com/documentation/mapping-apis-and-services/security) is required to authenticate requests to an ArcGIS Image Tile service.
+ * To access secure ArcGIS resources, it's required to create an ArcGIS developer
+ * account or an ArcGIS online account, then implement an authentication method to obtain an access token.
  * ```
+ * // Set the default access token for accessing ArcGIS Image Tile service
+ * ArcGisMapService.defaultAccessToken = "<ArcGIS Access Token>";
+ *
+ * // Add a base layer from a default ArcGIS basemap
+ * const viewer = new Viewer("cesiumContainer", {
+ *   baseLayer: ImageryLayer.fromProviderAsync(
+ *     ArcGisMapServerImageryProvider.fromBasemapType(
+ *       ArcGisBaseMapType.SATELLITE
+ *     )
+ *   ),
+ * });
+ * ```
+ * ```
+ * // Create an imagery provider from the url directly
  * const esri = await ArcGisMapServerImageryProvider.fromUrl(
- *     "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer"
- * );
+ *   "https://ibasemaps-api.arcgis.com/arcgis/rest/services/World_Imagery/MapServer", {
+ *     token: "<ArcGIS Access Token>"
+ * });
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ArcGisMapServerImageryProvider.html">Online Documentation</a>
  */
-sealed external class ArcGisMapServerImageryProvider {
+external class ArcGisMapServerImageryProvider(options: ConstructorOptions? = definedExternally) {
     /**
      * Gets or sets a value indicating whether feature picking is enabled.  If true, [ArcGisMapServerImageryProvider.pickFeatures] will
      * invoke the "identify" operation on the ArcGIS server and return the features included in the response.  If false,
@@ -277,8 +303,7 @@ sealed external class ArcGisMapServerImageryProvider {
      *   that no tiles are discarded, construct and pass a [NeverTileDiscardPolicy] for this
      *   parameter.
      * @property [usePreCachedTilesIfAvailable] If true, the server's pre-cached
-     *   tiles are used if they are available.  If false, any pre-cached tiles are ignored and the
-     *   'export' service is used.
+     *   tiles are used if they are available. Exporting Tiles is only supported with deprecated APIs.
      *   Default value - `true`
      * @property [layers] A comma-separated list of the layers to show, or undefined if all layers should be shown.
      * @property [enablePickFeatures] If true, [ArcGisMapServerImageryProvider.pickFeatures] will invoke
@@ -323,6 +348,38 @@ sealed external class ArcGisMapServerImageryProvider {
 
     companion object {
         /**
+         * Creates an [ImageryProvider] which provides tiled imagery from an ArcGIS base map.
+         * ```
+         * // Set the default access token for accessing ArcGIS Image Tile service
+         * ArcGisMapService.defaultAccessToken = "<ArcGIS Access Token>";
+         *
+         * // Add a base layer from a default ArcGIS basemap
+         * const provider = await ArcGisMapServerImageryProvider.fromBasemapType(
+         *   ArcGisBaseMapType.SATELLITE);
+         * ```
+         * ```
+         * // Add a base layer from a default ArcGIS Basemap
+         * const viewer = new Viewer("cesiumContainer", {
+         *   baseLayer: ImageryLayer.fromProviderAsync(
+         *     ArcGisMapServerImageryProvider.fromBasemapType(
+         *       ArcGisBaseMapType.HILLSHADE, {
+         *         token: "<ArcGIS Access Token>"
+         *       }
+         *     )
+         *   ),
+         * });
+         * ```
+         * @param [style] The style of the ArcGIS base map imagery. Valid options are [ArcGisBaseMapType.SATELLITE], [ArcGisBaseMapType.OCEANS], and [ArcGisBaseMapType.HILLSHADE].
+         * @param [options] Object describing initialization options.
+         * @return A promise that resolves to the created ArcGisMapServerImageryProvider.
+         * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ArcGisMapServerImageryProvider.html#.fromBasemapType">Online Documentation</a>
+         */
+        fun fromBasemapType(
+            style: ArcGisBaseMapType,
+            options: ConstructorOptions? = definedExternally,
+        ): Promise<ArcGisMapServerImageryProvider>
+
+        /**
          * Creates an [ImageryProvider] which provides tiled imagery hosted by an ArcGIS MapServer.  By default, the server's pre-cached tiles are
          * used, if available.
          * ```
@@ -346,3 +403,8 @@ sealed external class ArcGisMapServerImageryProvider {
         ): Promise<ArcGisMapServerImageryProvider>
     }
 }
+
+inline fun ArcGisMapServerImageryProvider(
+    block: ArcGisMapServerImageryProvider.ConstructorOptions.() -> Unit,
+): ArcGisMapServerImageryProvider =
+    ArcGisMapServerImageryProvider(options = jso(block))

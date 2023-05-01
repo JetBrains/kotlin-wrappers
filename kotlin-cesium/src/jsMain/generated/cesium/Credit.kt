@@ -13,7 +13,7 @@ import web.html.HTMLElement
 /**
  * A credit contains data pertaining to how to display attributions/credits for certain content on the screen.
  * ```
- * //Create a credit with a tooltip, image and link
+ * // Create a credit with a tooltip, image and link
  * const credit = new Credit('<a href="https://cesium.com/" target="_blank"><img src="/images/cesium_logo.png" title="Cesium"/></a>');
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Credit.html">Online Documentation</a>

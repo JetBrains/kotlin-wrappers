@@ -102,6 +102,12 @@ external class GeocoderViewModel(options: ConstructorOptions) {
     var suggestions: ReadonlyArray<Any>
 
     /**
+     * @return true if the object has been destroyed, false otherwise.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GeocoderViewModel.html#isDestroyed">Online Documentation</a>
+     */
+    fun isDestroyed(): Boolean
+
+    /**
      * Destroys the widget.  Should be called if permanently
      * removing the widget from layout.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GeocoderViewModel.html#destroy">Online Documentation</a>

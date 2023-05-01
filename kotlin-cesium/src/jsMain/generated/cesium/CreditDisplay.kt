@@ -13,7 +13,14 @@ import web.html.HTMLElement
 /**
  * The credit display is responsible for displaying credits on screen.
  * ```
- * const creditDisplay = new CreditDisplay(creditContainer);
+ * // Add a credit with a tooltip, image and link to display onscreen
+ * const credit = new Credit(`<a href="https://cesium.com/" target="_blank"><img src="/images/cesium_logo.png" title="Cesium"/></a>`, true);
+ * viewer.creditDisplay.addStaticCredit(credit);
+ * ```
+ * ```
+ * // Add a credit with a plaintext link to display in the lightbox
+ * const credit = new Credit('<a href="https://cesium.com/" target="_blank">Cesium</a>');
+ * viewer.creditDisplay.addStaticCredit(credit);
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CreditDisplay.html">Online Documentation</a>
  *
@@ -32,10 +39,19 @@ external class CreditDisplay(
 ) {
     /**
      * Adds a credit to the list of current credits to be displayed in the credit container
+     * for the next frame
      * @param [credit] The credit to display
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CreditDisplay.html#addCredit">Online Documentation</a>
      */
     fun addCredit(credit: Credit)
+
+    /**
+     * Adds a [Credit] that will show on screen or in the lightbox until
+     * the next frame. This is mostly for internal use. Use [CreditDisplay.addStaticCredit] to add a persistent credit to the screen.
+     * @param [credit] The credit to display in the next frame.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CreditDisplay.html#addCreditToNextFrame">Online Documentation</a>
+     */
+    fun addCreditToNextFrame(credit: Credit)
 
     /**
      * Adds credits that will persist until they are removed
@@ -45,7 +61,31 @@ external class CreditDisplay(
     fun addDefaultCredit(credit: Credit)
 
     /**
-     * Removes a default credit
+     * Adds a [Credit] that will show on screen or in the lightbox until removed with [CreditDisplay.removeStaticCredit].
+     * ```
+     * // Add a credit with a tooltip, image and link to display onscreen
+     * const credit = new Credit(`<a href="https://cesium.com/" target="_blank"><img src="/images/cesium_logo.png" title="Cesium"/></a>`, true);
+     * viewer.creditDisplay.addStaticCredit(credit);
+     * ```
+     * ```
+     * // Add a credit with a plaintext link to display in the lightbox
+     * const credit = new Credit('<a href="https://cesium.com/" target="_blank">Cesium</a>');
+     * viewer.creditDisplay.addStaticCredit(credit);
+     * ```
+     * @param [credit] The credit to added
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CreditDisplay.html#addStaticCredit">Online Documentation</a>
+     */
+    fun addStaticCredit(credit: Credit)
+
+    /**
+     * Removes a static credit shown on screen or in the lightbox.
+     * @param [credit] The credit to be removed.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CreditDisplay.html#removeStaticCredit">Online Documentation</a>
+     */
+    fun removeStaticCredit(credit: Credit)
+
+    /**
+     * Removes a default credit.
      * @param [credit] The credit to be removed from defaults
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CreditDisplay.html#removeDefaultCredit">Online Documentation</a>
      */

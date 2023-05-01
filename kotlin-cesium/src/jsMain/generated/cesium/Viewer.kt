@@ -81,6 +81,12 @@ external class Viewer(
     val provider: TerrainProvider
 
     /**
+     * Manages the list of credits to display on screen and in the lightbox.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Viewer.html#creditDisplay">Online Documentation</a>
+     */
+    var creditDisplay: CreditDisplay
+
+    /**
      * Gets the DOM element for the area at the bottom of the window containing the
      * [CreditDisplay] and potentially other things.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Viewer.html#bottomContainer">Online Documentation</a>
@@ -635,7 +641,7 @@ external class Viewer(
      *   Default value - `ImageryLayer.fromWorldImagery()`
      * @property [terrainProvider] The terrain provider to use
      *   Default value - [EllipsoidTerrainProvider()][EllipsoidTerrainProvider]
-     * @property [options.terrain] A terrain object which handles asynchronous terrain provider. Can only specify if options.terrainProvider is undefined.
+     * @property [terrain] A terrain object which handles asynchronous terrain provider. Can only specify if options.terrainProvider is undefined.
      * @property [skyBox] The skybox used to render the stars.  When `undefined`, the default stars are used. If set to `false`, no skyBox, Sun, or Moon will be added.
      * @property [skyAtmosphere] Blue sky, and the glow around the Earth's limb.  Set to `false` to turn it off.
      * @property [fullscreenElement] The element or id to be placed into fullscreen mode when the full screen button is pressed.
@@ -706,6 +712,7 @@ external class Viewer(
         var imageryProvider: dynamic
         var baseLayer: dynamic
         var terrainProvider: TerrainProvider?
+        var terrain: Terrain?
         var skyBox: dynamic
         var skyAtmosphere: dynamic
         var fullscreenElement: Element?

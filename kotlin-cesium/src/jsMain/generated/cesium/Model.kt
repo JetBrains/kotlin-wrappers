@@ -2,6 +2,10 @@
 
 @file:JsModule("cesium")
 
+@file:Suppress(
+    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
+)
+
 package cesium
 
 import kotlin.js.Promise
@@ -608,6 +612,28 @@ sealed external class Model {
          *  console.log(`Failed to load model. ${error}`);
          * }
          * ```
+         * ```
+         * // Load a model and play the last animation at half speed
+         * let animations;
+         * try {
+         *  const model = await Model.fromGltfAsync({
+         *    url: "../../SampleData/models/CesiumMan/Cesium_Man.glb",
+         *    gltfCallback: gltf => {
+         *      animations = gltf.animations
+         *    }
+         *  });
+         *  viewer.scene.primitives.add(model);
+         *  model.readyEvent.addEventListener(() => {
+         *    model.activeAnimations.add({
+         *      index: animations.length - 1,
+         *      loop: ModelAnimationLoop.REPEAT,
+         *      multiplier: 0.5,
+         *    });
+         *  });
+         * } catch (error) {
+         *  console.log(`Failed to load model. ${error}`);
+         * }
+         * ```
          * @return A promise that resolves to the created model when it is ready to render.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Model.html#.fromGltfAsync">Online Documentation</a>
          */
@@ -692,6 +718,7 @@ sealed external class Model {
          *   Default value - `"instanceFeatureId_0"`
          * @property [pointCloudShading] Options for constructing a [PointCloudShading] object to control point attenuation and lighting.
          * @property [classificationType] Determines whether terrain, 3D Tiles or both will be classified by this model. This cannot be set after the model has loaded.
+         * @property [gltfCallback] A function that is called with the loaded gltf object once loaded.
          */
         interface FromGltfAsyncOptions {
             var url: Resource
@@ -740,6 +767,14 @@ sealed external class Model {
             var instanceFeatureIdLabel: String?
             var pointCloudShading: Any?
             var classificationType: ClassificationType?
+            var gltfCallback: GltfCallback?
         }
     }
 }
+
+/**
+ * Interface for the function that is called with the loaded gltf object once loaded.
+ * @param [gltf] The gltf object
+ * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Model.html#.GltfCallback">Online Documentation</a>
+ */
+typealias GltfCallback = (gltf: Any) -> Unit

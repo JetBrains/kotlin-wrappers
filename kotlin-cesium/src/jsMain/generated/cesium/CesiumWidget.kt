@@ -163,6 +163,12 @@ external class CesiumWidget(
     var terrainProvider: TerrainProvider
 
     /**
+     * Manages the list of credits to display on screen and in the lightbox.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CesiumWidget.html#creditDisplay">Online Documentation</a>
+     */
+    var creditDisplay: CreditDisplay
+
+    /**
      * Gets the camera.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CesiumWidget.html#camera">Online Documentation</a>
      */
