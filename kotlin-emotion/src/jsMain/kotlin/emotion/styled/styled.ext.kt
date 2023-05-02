@@ -1,18 +1,23 @@
 package emotion.styled
 
 import csstype.PropertiesBuilder
+import emotion.react.Theme
 import js.core.Object
 import js.core.jso
 import react.ElementType
+import react.Props
 import react.PropsWithClassName
 
-fun <P : PropsWithClassName> ElementType<P>.styled(
+private inline fun <T : Theme> Props.getTheme(): T =
+    asDynamic().theme
+
+fun <P : PropsWithClassName, T : Theme> ElementType<P>.styledWithTheme(
     options: StyledOptions?,
-    block: PropertiesBuilder.(P) -> Unit,
+    block: PropertiesBuilder.(P, T) -> Unit,
 ): StyledComponent<P> {
     val style = { props: P ->
         val builder: PropertiesBuilder = jso()
-        block(builder, props)
+        block(builder, props, props.getTheme())
         builder
     }
 
@@ -24,6 +29,17 @@ fun <P : PropsWithClassName> ElementType<P>.styled(
 
     return styled(this, finalOptions)(style)
 }
+
+fun <P : PropsWithClassName, T : Theme> ElementType<P>.styledWithTheme(
+    block: PropertiesBuilder.(P, T) -> Unit,
+): StyledComponent<P> =
+    styledWithTheme(null, block)
+
+fun <P : PropsWithClassName> ElementType<P>.styled(
+    options: StyledOptions?,
+    block: PropertiesBuilder.(P) -> Unit,
+): StyledComponent<P> =
+    styledWithTheme(options) { props, _: Theme -> block(props) }
 
 fun <P : PropsWithClassName> ElementType<P>.styled(
     block: PropertiesBuilder.(P) -> Unit,
