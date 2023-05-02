@@ -2,8 +2,6 @@ package emotion.utils
 
 import js.core.Record
 
-typealias RegisteredCache = Record<String, String>
-
 external interface EmotionCache {
     val inserted: Record<String, Any /* string | true */>
     val registered: RegisteredCache
