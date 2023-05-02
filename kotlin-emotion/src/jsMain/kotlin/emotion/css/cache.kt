@@ -3,6 +3,6 @@
 
 package emotion.css
 
-import emotion.cache.EmotionCache
+import emotion.utils.EmotionCache
 
 external val cache: EmotionCache

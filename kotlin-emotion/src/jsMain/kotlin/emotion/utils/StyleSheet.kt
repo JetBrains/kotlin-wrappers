@@ -1,4 +1,4 @@
-package emotion.sheet
+package emotion.utils
 
 import js.core.ReadonlyArray
 import web.html.HTMLElement

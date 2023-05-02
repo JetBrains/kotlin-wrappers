@@ -1,6 +1,5 @@
-package emotion.cache
+package emotion.utils
 
-import emotion.sheet.StyleSheet
 import js.core.Record
 
 typealias RegisteredCache = Record<String, String>

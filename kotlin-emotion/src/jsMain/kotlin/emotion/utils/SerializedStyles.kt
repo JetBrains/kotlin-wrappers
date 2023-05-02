@@ -1,4 +1,4 @@
-package emotion.cache
+package emotion.utils
 
 external interface SerializedStyles {
     val name: String

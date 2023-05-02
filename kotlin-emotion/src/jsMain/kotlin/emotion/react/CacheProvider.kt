@@ -3,7 +3,7 @@
 
 package emotion.react
 
-import emotion.cache.EmotionCache
+import emotion.utils.EmotionCache
 import react.Provider
 
 external val CacheProvider: Provider<EmotionCache>
