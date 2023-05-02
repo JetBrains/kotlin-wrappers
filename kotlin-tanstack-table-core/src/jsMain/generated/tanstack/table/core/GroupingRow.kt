@@ -6,4 +6,5 @@ external interface GroupingRow {
     var groupingColumnId: String?
     var groupingValue: Any?
     var getIsGrouped: () -> Boolean
+    var getGroupingValue: (columnId: String) -> Any
 }
