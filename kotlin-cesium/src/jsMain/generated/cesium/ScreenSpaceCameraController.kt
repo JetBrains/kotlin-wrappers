@@ -161,7 +161,7 @@ external class ScreenSpaceCameraController(scene: Scene) {
     var lookEventTypes: CameraEventType?
 
     /**
-     * The minimum height the camera must be before picking the terrain instead of the ellipsoid.
+     * The minimum height the camera must be before picking the terrain or scene content instead of the ellipsoid.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ScreenSpaceCameraController.html#minimumPickingTerrainHeight">Online Documentation</a>
      */
     var minimumPickingTerrainHeight: Double
