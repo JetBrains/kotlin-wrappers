@@ -8,12 +8,12 @@
 
 package tanstack.query.core
 
-import js.core.ReadonlyArray
+import js.collections.JsSet
 
 typealias Listener = () -> Unit
 
 open external class Subscribable<TListener : Function<*>> {
-    protected open var listeners: ReadonlyArray<TListener>
+    protected open var listeners: JsSet<Any /* HasListener<TListener> */>
     open fun subscribe(listener: TListener): () -> Unit
     open fun hasListeners(): Boolean
     protected open fun onSubscribe()
