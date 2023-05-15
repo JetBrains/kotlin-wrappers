@@ -245,11 +245,10 @@ external class Entity {
     fun merge(source: Entity)
 
     /**
-     * Computes the model matrix for the entity's transform at specified time. Returns undefined if orientation or position
-     * are undefined.
+     * Computes the model matrix for the entity's transform at specified time. Returns undefined if position is undefined
      * @param [time] The time to retrieve model matrix for.
      * @param [result] The object onto which to store the result.
-     * @return The modified result parameter or a new Matrix4 instance if one was not provided. Result is undefined if position or orientation are undefined.
+     * @return The modified result parameter or a new Matrix4 instance if one was not provided. Result is undefined if position is undefined.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Entity.html#computeModelMatrix">Online Documentation</a>
      */
     fun computeModelMatrix(
