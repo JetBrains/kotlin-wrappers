@@ -2,9 +2,13 @@
 
 package web.http
 
+import js.collections.MapLike
+import js.core.JsIterable
+import js.core.JsTuple2
+
 external class Headers(
     init: HeadersInit = definedExternally,
-) {
+) : MapLike<String, String> {
     fun append(
         name: String,
         value: String,
@@ -18,5 +22,8 @@ external class Headers(
         value: String,
     )
 
-    fun forEach(action: (item: String) -> Unit)
+    override fun entries(): JsIterable.Iterator<JsTuple2<String, String>>
+    override fun keys(): JsIterable.Iterator<String>
+    override fun values(): JsIterable.Iterator<String>
+    override fun forEach(action: (value: String, key: String) -> Unit)
 }

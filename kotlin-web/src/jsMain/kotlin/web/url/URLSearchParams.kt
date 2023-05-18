@@ -1,12 +1,13 @@
 package web.url
 
+import js.collections.MapLike
 import js.core.JsIterable
 import js.core.JsTuple2
 import js.core.ReadonlyArray
 import js.core.ReadonlyRecord
 
 external class URLSearchParams() :
-    JsIterable<JsTuple2<String, String>> {
+    MapLike<String, String> {
 
     constructor(init: ReadonlyArray<JsTuple2<String, String>>)
     constructor(init: ReadonlyRecord<String, String>)
@@ -38,9 +39,9 @@ external class URLSearchParams() :
     )
 
     fun sort()
-    fun forEach(action: (item: String) -> Unit)
 
-    fun entries(): JsIterable.Iterator<JsTuple2<String, String>>
-    fun keys(): JsIterable.Iterator<String>
-    fun values(): JsIterable.Iterator<String>
+    override fun entries(): JsIterable.Iterator<JsTuple2<String, String>>
+    override fun keys(): JsIterable.Iterator<String>
+    override fun values(): JsIterable.Iterator<String>
+    override fun forEach(action: (value: String, key: String) -> Unit)
 }
