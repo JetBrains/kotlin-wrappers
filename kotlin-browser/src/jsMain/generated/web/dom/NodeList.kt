@@ -2,12 +2,10 @@
 
 package web.dom
 
-import js.collections.CollectionLike
-import js.core.ArrayLike
+import js.collections.ListLike
 
 sealed external class NodeList<T : Node> :
-    ArrayLike<T>,
-    CollectionLike<Int, T> {
+    ListLike<T> {
     /** Returns the node with index index from the collection. The nodes are sorted in tree order. */
     fun item(index: Int): T?
 

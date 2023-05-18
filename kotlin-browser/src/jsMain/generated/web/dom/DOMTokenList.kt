@@ -2,12 +2,10 @@
 
 package web.dom
 
-import js.collections.CollectionLike
-import js.core.ArrayLike
+import js.collections.ListLike
 
 sealed external class DOMTokenList :
-    ArrayLike<String>,
-    CollectionLike<Int, String> {
+    ListLike<String> {
     /**
      * Returns the associated set as string.
      *

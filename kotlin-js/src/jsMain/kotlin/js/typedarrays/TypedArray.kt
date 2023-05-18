@@ -1,8 +1,7 @@
 package js.typedarrays
 
 import js.buffer.ArrayBufferView
-import js.collections.CollectionLike
-import js.core.ArrayLike
+import js.collections.ListLike
 import js.core.JsIterable
 import js.core.JsTuple2
 import js.core.ReadonlyArray
@@ -10,8 +9,7 @@ import js.core.ReadonlyArray
 @JsName("DONT_USE_IS_AS_OPERATORS_WITH_SYNTHETIC_TYPED_ARRAY")
 sealed external class TypedArray<S : TypedArray<S, T>, T : Any /* Number */> :
     ArrayBufferView,
-    ArrayLike<T>,
-    CollectionLike<Int, T> {
+    ListLike<T> {
 
     override val byteLength: Int
 
