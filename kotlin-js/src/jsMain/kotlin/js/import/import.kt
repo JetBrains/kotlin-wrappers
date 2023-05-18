@@ -1,10 +1,10 @@
 package js.import
 
-import kotlin.js.Promise
+import js.promise.PromiseLike
 
 external fun <T : Any> import(
     path: String,
-): Promise<T>
+): PromiseLike<T>
 
 external object import {
     val meta: ImportMeta
