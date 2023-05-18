@@ -1,15 +1,17 @@
 package js.typedarrays
 
 import js.buffer.ArrayBufferView
+import js.collections.CollectionLike
 import js.core.ArrayLike
 import js.core.JsIterable
+import js.core.JsTuple2
 import js.core.ReadonlyArray
 
 @JsName("DONT_USE_IS_AS_OPERATORS_WITH_SYNTHETIC_TYPED_ARRAY")
 sealed external class TypedArray<S : TypedArray<S, T>, T : Any /* Number */> :
     ArrayBufferView,
     ArrayLike<T>,
-    JsIterable<T> {
+    CollectionLike<Int, T> {
 
     override val byteLength: Int
 
@@ -114,7 +116,7 @@ sealed external class TypedArray<S : TypedArray<S, T>, T : Any /* Number */> :
      * @param thisArg  An object to which the this keyword can refer in the callbackfn function.
      * If thisArg is omitted, undefined is used as the this value.
      */
-    fun forEach(action: (value: T) -> Unit)
+    override fun forEach(action: (item: T) -> Unit)
 
     /**
      * Determines whether an array includes a certain element, returning true or false as appropriate.
@@ -218,4 +220,10 @@ sealed external class TypedArray<S : TypedArray<S, T>, T : Any /* Number */> :
         start: Int,
         end: Int
     ): S
+
+    override fun entries(): JsIterable.Iterator<JsTuple2<Int, T>>
+
+    override fun keys(): JsIterable.Iterator<Int>
+
+    override fun values(): JsIterable.Iterator<T>
 }

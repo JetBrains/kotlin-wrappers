@@ -2,12 +2,12 @@
 
 package web.dom
 
+import js.collections.CollectionLike
 import js.core.ArrayLike
-import js.core.JsIterable
 
 sealed external class DOMTokenList :
     ArrayLike<String>,
-    JsIterable<String> {
+    CollectionLike<Int, String> {
     /**
      * Returns the associated set as string.
      *
@@ -74,5 +74,5 @@ sealed external class DOMTokenList :
         force: Boolean = definedExternally,
     ): Boolean
 
-    fun forEach(action: (item: String) -> Unit)
+    override fun forEach(action: (item: String) -> Unit)
 }
