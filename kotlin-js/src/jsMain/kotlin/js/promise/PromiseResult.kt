@@ -6,7 +6,7 @@ package js.promise
 
 import kotlin.js.Promise
 
-// T | Promise<T>
+// T | PromiseLike<T>
 sealed external interface PromiseResult<out T>
 
 inline fun <T> PromiseResult(
