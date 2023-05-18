@@ -6,6 +6,10 @@ sealed external interface PromiseLike<out T> :
     PromiseResult<T> {
     fun <S> then(
         onFulfilled: ((T) -> S)?,
-        onRejected: ((Throwable) -> S)? = definedExternally,
+    ): Promise<S>
+
+    fun <S> then(
+        onFulfilled: ((T) -> S)?,
+        onRejected: ((Throwable) -> S)?,
     ): Promise<S>
 }
