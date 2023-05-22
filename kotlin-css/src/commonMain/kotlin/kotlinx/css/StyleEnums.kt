@@ -382,9 +382,10 @@ class Color(override val value: String) : CssValue(value) {
         val source = this.toRGBA()
         val background = backgroundColor.toRGBA()
 
-        val targetR = ((1 - source.alpha) * background.red) + (source.alpha * source.red)
-        val targetG = ((1 - source.alpha) * background.green) + (source.alpha * source.green)
-        val targetB = ((1 - source.alpha) * background.blue) + (source.alpha * source.blue)
+        val alpha = 1 - source.alpha
+        val targetR = (alpha * background.red) + (source.alpha * source.red)
+        val targetG = (alpha * background.green) + (source.alpha * source.green)
+        val targetB = (alpha * background.blue) + (source.alpha * source.blue)
 
         return rgb(targetR.roundToInt(), targetG.roundToInt(), targetB.roundToInt())
     }
