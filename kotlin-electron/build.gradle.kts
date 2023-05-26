@@ -6,5 +6,8 @@ plugins {
 }
 
 dependencies {
+    jsMainApi(project(":kotlin-node"))
+    jsMainApi(project(":kotlin-browser"))
+
     jsMainApi(npmv("electron"))
 }

@@ -2,12 +2,73 @@
     "input": [
         "<nodeModules>/electron/electron.d.ts"
     ],
-    "ignoreInput": [],
+    "ignoreInput": [
+        "**/@types/node/**"
+    ],
     "output": "src/jsMain/generated",
     "libraryName": "electron",
     "libraryNameOutputPrefix": true,
     "granularity": "top-level",
     "importInjector": {
-
+        "AddRepresentationOptions.kt": [
+            "node.buffer.Buffer"
+        ],
+        "App.kt": [
+            "kotlin.js.Promise"
+        ],
+        "BrowserWindow.kt": [
+            "kotlin.js.Promise",
+            "node.buffer.Buffer"
+        ],
+        "ContentTracing.kt": [
+            "kotlin.js.Promise"
+        ],
+        "Cookies.kt": [
+            "kotlin.js.Promise"
+        ],
+        "Dialog.kt": [
+            "kotlin.js.Promise"
+        ],
+        "InAppPurchase.kt": [
+            "kotlin.js.Promise"
+        ],
+        "IpcRenderer.kt": [
+            "kotlin.js.Promise",
+            "web.messaging.MessagePort"
+        ],
+        "IpcRendererEvent.kt": [
+            "web.messaging.MessagePort"
+        ],
+        "NativeImage.kt": [
+            "kotlin.js.Promise",
+            "node.buffer.Buffer"
+        ],
+        "Session.kt": [
+            "kotlin.js.Promise",
+            "node.buffer.Buffer"
+        ],
+        "Shell.kt": [
+            "kotlin.js.Promise"
+        ],
+        "WebContents.kt": [
+            "kotlin.js.Promise",
+            "node.buffer.Buffer"
+        ],
+        "WebviewTag.kt": [
+            "kotlin.js.Promise",
+            "js.typedarrays.Uint8Array",
+            "web.html.HTMLElement"
+        ],
+        "namespace.kt": [
+            "node.events.EventEmitter"
+        ]
+    },
+    "namespaceStrategy": {
+        "Electron": "package",
+        "electron": "ignore",
+        "electron/main": "ignore",
+        "electron/common": "ignore",
+        "electron/renderer": "ignore",
+        "original-fs": "ignore"
     }
 }
