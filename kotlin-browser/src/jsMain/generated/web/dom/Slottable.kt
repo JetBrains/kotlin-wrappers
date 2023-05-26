@@ -6,4 +6,5 @@ import web.html.HTMLSlotElement
 
 sealed external interface Slottable {
     val assignedSlot: HTMLSlotElement?
+        get() = definedExternally
 }
