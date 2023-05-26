@@ -58,8 +58,12 @@
         "NavigateFunction.kt": [
             "remix.run.router.To"
         ],
+        "NavigateOptions.kt": [
+            "remix.run.router.RelativeRoutingType"
+        ],
         "NavigateProps.kt": [
-            "remix.run.router.To"
+            "remix.run.router.To",
+            "remix.run.router.RelativeRoutingType"
         ],
         "Navigator.kt": [
             "remix.run.router.To",
@@ -72,10 +76,12 @@
             "remix.run.router.LazyRouteFunction"
         ],
         "RenderErrorBoundaryProps.kt": [
-            "remix.run.router.Location"
+            "remix.run.router.Location",
+            "remix.run.router.RevalidationState"
         ],
         "RenderErrorBoundaryState.kt": [
-            "remix.run.router.Location"
+            "remix.run.router.Location",
+            "remix.run.router.RevalidationState"
         ],
         "RouteMatch.kt": [
             "remix.run.router.AgnosticRouteMatch"
@@ -92,8 +98,14 @@
         "RouterProviderProps": [
             "remix.run.router.Router as RemixRouter"
         ],
+        "UseHrefOptions.kt": [
+            "remix.run.router.RelativeRoutingType"
+        ],
         "UseMatchesResultItem.kt": [
             "remix.run.router.Params"
+        ],
+        "UseResolvedPathOptions.kt": [
+            "remix.run.router.RelativeRoutingType"
         ],
         "UseRevalidatorResult.kt": [
             "remix.run.router.RevalidationState"
@@ -127,6 +139,10 @@
         ],
         "useRoutes.kt": [
             "remix.run.router.Location"
+        ],
+        "useRoutesImpl.kt": [
+            "remix.run.router.Location",
+            "remix.run.router.RouterState"
         ]
     }
 }
