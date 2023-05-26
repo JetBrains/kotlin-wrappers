@@ -22,7 +22,7 @@ sealed external interface ChildNode /* : Node */ {
     fun before(vararg nodes: Any /* Node | string */): Unit = definedExternally
 
     /** Removes node. */
-    fun remove()
+    fun remove(): Unit = definedExternally
 
     /**
      * Replaces node with nodes, while replacing strings in nodes with equivalent Text nodes.
