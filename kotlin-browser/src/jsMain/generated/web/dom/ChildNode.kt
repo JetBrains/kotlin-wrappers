@@ -1,5 +1,9 @@
 // Automatically generated - do not modify!
 
+@file:Suppress(
+    "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
+)
+
 package web.dom
 
 sealed external interface ChildNode /* : Node */ {
@@ -8,14 +12,14 @@ sealed external interface ChildNode /* : Node */ {
      *
      * Throws a "HierarchyRequestError" DOMException if the constraints of the node tree are violated.
      */
-    fun after(vararg nodes: Any /* Node | string */)
+    fun after(vararg nodes: Any /* Node | string */): Unit = definedExternally
 
     /**
      * Inserts nodes just before node, while replacing strings in nodes with equivalent Text nodes.
      *
      * Throws a "HierarchyRequestError" DOMException if the constraints of the node tree are violated.
      */
-    fun before(vararg nodes: Any /* Node | string */)
+    fun before(vararg nodes: Any /* Node | string */): Unit = definedExternally
 
     /** Removes node. */
     fun remove()
@@ -25,5 +29,5 @@ sealed external interface ChildNode /* : Node */ {
      *
      * Throws a "HierarchyRequestError" DOMException if the constraints of the node tree are violated.
      */
-    fun replaceWith(vararg nodes: Any /* Node | string */)
+    fun replaceWith(vararg nodes: Any /* Node | string */): Unit = definedExternally
 }
