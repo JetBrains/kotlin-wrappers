@@ -215,6 +215,8 @@ external interface GlobalEventHandlers {
      * @param ev The event.
      */
     var onerror: Function<Unit>? /* OnErrorEventHandler */
+        get() = definedExternally
+        set(value) = definedExternally
 
     /**
      * Fires when the object receives focus.
