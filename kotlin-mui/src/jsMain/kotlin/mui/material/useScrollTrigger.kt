@@ -3,10 +3,10 @@
 
 package mui.material
 
-@JsName("useScrollTrigger")
-internal external fun useScrollTrigger(options: ScrollTriggerOptions = definedExternally): Boolean
+@JsName("default")
+external fun useScrollTrigger(options: ScrollTriggerOptions = definedExternally): Boolean
 
-internal external interface ScrollTriggerOptions {
+external interface ScrollTriggerOptions {
     /** Defaults to false. Disable the hysteresis. Ignore the scroll direction when determining the trigger value. */
     var disableHysteresis: Boolean
     /** Defaults to window. */
