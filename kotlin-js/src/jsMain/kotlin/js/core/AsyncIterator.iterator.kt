@@ -11,11 +11,8 @@ private class AsyncIteratorAdapter<T>(
 ) : SuspendableIterator<T> {
     private lateinit var lastResult: JsIterator.Result<T, Void>
 
-    override fun next(): T {
-        check(!lastResult.done)
-
-        return lastResult.asYield().value
-    }
+    override fun next(): T =
+        lastResult.asYield().value
 
     override suspend fun hasNext(): Boolean {
         lastResult = source.next().await()
