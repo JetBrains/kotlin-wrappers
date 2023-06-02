@@ -14,9 +14,7 @@ private class AsyncIteratorAdapter<T>(
     override fun next(): T {
         check(!lastResult.done)
 
-        return lastResult
-            .unsafeCast<JsIterator.ReturnResult<T>>()
-            .value
+        return lastResult.asYield().value
     }
 
     override suspend fun hasNext(): Boolean {

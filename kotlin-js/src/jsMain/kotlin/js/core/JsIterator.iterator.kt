@@ -2,14 +2,10 @@ package js.core
 
 operator fun <T> JsIterator<T>.iterator(): Iterator<T> =
     iterator {
-        var result = next()
-        while (!result.done) {
-            val value = result
-                .unsafeCast<JsIterator.YieldResult<T>>()
-                .value
+        do {
+            val result = next().asYieldOrNull()
+                ?: break
 
-            yield(value)
-
-            result = next()
-        }
+            yield(result.value)
+        } while (true)
     }
