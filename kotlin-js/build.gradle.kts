@@ -5,5 +5,7 @@ plugins {
 }
 
 dependencies {
+    jsMainImplementation(kotlinxCoroutines("core"))
+
     jsTestImplementation(kotlin("test-js"))
 }
