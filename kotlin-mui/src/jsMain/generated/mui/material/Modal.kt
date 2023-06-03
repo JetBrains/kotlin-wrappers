@@ -13,8 +13,9 @@ import mui.material.styles.Theme
 import mui.system.SxProps
 
 external interface ModalProps :
-    mui.base.ModalUnstyledProps,
-    mui.system.PropsWithSx {
+    mui.system.PropsWithSx,
+    mui.types.PropsWithComponent,
+    mui.base.ModalUnstyledProps {
     /**
      * A backdrop component. This prop enables custom backdrop rendering.
      * @deprecated Use `slots.backdrop` instead. While this prop currently works, it will be removed in the next major version.
@@ -61,12 +62,40 @@ external interface ModalProps :
      *
      * @default {}
      */
-    var componentsProps: mui.base.ModalUnstyledOwnProps.SlotProps?
+    var componentsProps: ComponentsProps?
+
+    interface ComponentsProps {
+        var root: react.Props? /* SlotComponentProps<'div', ModalComponentsPropsOverrides, ModalOwnerState> */
+        var backdrop: react.Props? /* SlotComponentProps<
+  typeof Backdrop,
+  ModalComponentsPropsOverrides,
+  ModalOwnerState
+> */
+    }
+
+    /**
+     * The props used for each slot inside the Modal.
+     * @default {}
+     */
+    var slotProps: SlotProps?
+
+    interface SlotProps {
+        var root: react.Props? /* SlotComponentProps<'div', ModalComponentsPropsOverrides, ModalOwnerState> */
+        var backdrop: react.Props? /* SlotComponentProps<
+  typeof Backdrop,
+  ModalComponentsPropsOverrides,
+  ModalOwnerState
+> */
+    }
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
     override var sx: SxProps<Theme>?
+}
+
+external interface ModalOwnerState {
+    var exited: Boolean
 }
 
 /**

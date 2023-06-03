@@ -49,7 +49,7 @@ external interface MenuItemProps :
     var divider: Boolean?
 
     /**
-     * Use to apply selected styling.
+     * If `true`, the component is selected.
      * @default false
      */
     var selected: Boolean?

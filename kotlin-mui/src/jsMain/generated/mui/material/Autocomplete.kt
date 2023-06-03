@@ -237,6 +237,8 @@ external interface AutocompleteProps<T> :
 external interface AutocompleteRenderOptionState {
     var inputValue: String
 
+    var index: Number
+
     var selected: Boolean
 }
 
