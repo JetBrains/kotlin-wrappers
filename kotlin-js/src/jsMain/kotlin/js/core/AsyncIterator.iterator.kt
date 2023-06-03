@@ -20,9 +20,10 @@ private class AsyncIteratorAdapter<T>(
         return !result.done
     }
 
-    override suspend fun next(): T {
-        val result = lastResult
-            ?: source.next().await()
+    override fun next(): T {
+        val result = checkNotNull(lastResult) {
+            "`hasNext` must be called before `next`"
+        }
 
         lastResult = null
 
