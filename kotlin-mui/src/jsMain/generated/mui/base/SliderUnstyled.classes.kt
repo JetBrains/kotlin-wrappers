@@ -41,18 +41,6 @@ external interface SliderUnstyledClasses {
     /** State class applied to the thumb element if keyboard focused. */
     var focusVisible: ClassName
 
-    /** Class name applied to the thumb label element. */
-    var valueLabel: ClassName
-
-    /** Class name applied to the thumb label element if it's open. */
-    var valueLabelOpen: ClassName
-
-    /** Class name applied to the thumb label's circle element. */
-    var valueLabelCircle: ClassName
-
-    /** Class name applied to the thumb label's label element. */
-    var valueLabelLabel: ClassName
-
     /** Class name applied to the mark element. */
     var mark: ClassName
 

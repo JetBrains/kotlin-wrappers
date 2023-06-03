@@ -31,21 +31,7 @@ external interface SliderUnstyledOwnerState {
 
     var track: mui.system.Union /* 'normal' | false | 'inverted' */
 
-    var valueLabelDisplay: mui.system.Union /* 'on' | 'auto' | 'off' */
-
     var valueLabelFormat: String /* or (value: Number, index: Number) -> react.ReactNode*/
-}
-
-@Suppress("VIRTUAL_MEMBER_HIDDEN")
-external interface SliderValueLabelProps :
-    react.dom.html.HTMLAttributes<web.html.HTMLSpanElement> {
-    var children: react.ReactElement<*>
-
-    var index: Number
-
-    var open: Boolean
-
-    var value: Number
 }
 
 external interface SliderUnstyledOwnProps : react.Props {
@@ -184,7 +170,7 @@ external interface SliderUnstyledOwnProps : react.Props {
         var thumb: react.Props? /* SlotComponentProps<'span', SliderUnstyledComponentsPropsOverrides, SliderUnstyledOwnerState> */
         var mark: react.Props? /* SlotComponentProps<'span', SliderUnstyledComponentsPropsOverrides, SliderUnstyledOwnerState> */
         var markLabel: react.Props? /* SlotComponentProps<'span', SliderUnstyledComponentsPropsOverrides, SliderUnstyledOwnerState> */
-        var valueLabel: react.Props? /* SlotComponentProps<typeof SliderValueLabelUnstyled, SliderUnstyledComponentsPropsOverrides, SliderUnstyledOwnerState> */
+        var valueLabel: react.Props? /* SlotComponentProps<React.ElementType, SliderUnstyledComponentsPropsOverrides, SliderUnstyledOwnerState> */
         var input: react.Props? /* SlotComponentProps<'input', SliderUnstyledComponentsPropsOverrides, SliderUnstyledOwnerState> */
     }
 
@@ -236,16 +222,6 @@ external interface SliderUnstyledOwnProps : react.Props {
      * For ranged sliders, provide an array with two values.
      */
     var value: dynamic
-
-    /**
-     * Controls when the value label is displayed:
-     *
-     * - `auto` the value label will display when the thumb is hovered or focused.
-     * - `on` will display persistently.
-     * - `off` will never display.
-     * @default 'off'
-     */
-    var valueLabelDisplay: mui.system.Union? /* 'on' | 'auto' | 'off' */
 
     /**
      * The format function the value label's value.
