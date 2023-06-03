@@ -30,6 +30,7 @@ external interface TabScrollButtonProps :
 
     /**
      * If `true`, the component is disabled.
+     * @default false
      */
     var disabled: Boolean?
 

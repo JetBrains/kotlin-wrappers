@@ -33,10 +33,14 @@ external interface SwitchBaseProps :
      */
     var defaultChecked: Boolean?
 
+    /**
+     * If `true`, the component is disabled.
+     */
     var disabled: Boolean?
 
     /**
      * If `true`, the ripple effect is disabled.
+     * @default false
      */
     var disableRipple: Boolean?
 
@@ -90,6 +94,7 @@ external interface SwitchBaseProps :
 
     /**
      * If `true`, the `input` element is required.
+     * @default false
      */
     var required: Boolean?
 
