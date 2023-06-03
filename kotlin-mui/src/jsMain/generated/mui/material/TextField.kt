@@ -183,7 +183,7 @@ external interface BaseTextFieldProps :
     /**
      * The value of the `input` element, required for a controlled component.
      */
-    var value: dynamic
+    var value: Any?
 }
 
 external interface StandardTextFieldProps :

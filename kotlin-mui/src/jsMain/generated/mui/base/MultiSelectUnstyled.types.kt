@@ -50,9 +50,9 @@ external interface MultiSelectUnstyledOwnProps<TValue> :
     var slotProps: SlotProps?
 
     interface SlotProps {
-        var root: react.Props? /* SlotComponentProps<'button', MultiSelectUnstyledComponentsPropsOverrides, MultiSelectUnstyledOwnerState<TValue>> */
-        var listbox: react.Props? /* SlotComponentProps<'button', MultiSelectUnstyledComponentsPropsOverrides, MultiSelectUnstyledOwnerState<TValue>> */
-        var popper: react.Props? /* SlotComponentProps<typeof PopperUnstyled, MultiSelectUnstyledComponentsPropsOverrides, MultiSelectUnstyledOwnerState<TValue>> */
+        var root: react.Props? /* SlotComponentProps<'button', MultiSelectUnstyledRootSlotPropsOverrides, MultiSelectUnstyledOwnerState<TValue>> */
+        var listbox: react.Props? /* SlotComponentProps<'button', MultiSelectUnstyledListboxSlotPropsOverrides, MultiSelectUnstyledOwnerState<TValue>> */
+        var popper: react.Props? /* SlotComponentProps<typeof PopperUnstyled, MultiSelectUnstyledPopperSlotPropsOverrides, MultiSelectUnstyledOwnerState<TValue>> */
     }
 
     /**

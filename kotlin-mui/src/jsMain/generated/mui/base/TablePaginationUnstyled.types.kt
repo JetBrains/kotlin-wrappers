@@ -52,14 +52,14 @@ external interface TablePaginationUnstyledOwnProps : react.Props {
     var slotProps: SlotProps?
 
     interface SlotProps {
-        var root: react.Props? /* SlotComponentProps<'div', TablePaginationUnstyledComponentsPropsOverrides, TablePaginationUnstyledOwnerState> */
-        var actions: react.Props? /* SlotComponentProps<'div', TablePaginationUnstyledComponentsPropsOverrides, TablePaginationUnstyledOwnerState> */
-        var select: react.Props? /* SlotComponentProps<'select', TablePaginationUnstyledComponentsPropsOverrides, TablePaginationUnstyledOwnerState> */
-        var selectLabel: react.Props? /* SlotComponentProps<'p', TablePaginationUnstyledComponentsPropsOverrides, TablePaginationUnstyledOwnerState> */
-        var menuItem: react.Props? /* SlotComponentProps<'option', TablePaginationUnstyledComponentsPropsOverrides, TablePaginationUnstyledOwnerState> */
-        var displayedRows: react.Props? /* SlotComponentProps<'p', TablePaginationUnstyledComponentsPropsOverrides, TablePaginationUnstyledOwnerState> */
-        var toolbar: react.Props? /* SlotComponentProps<'div', TablePaginationUnstyledComponentsPropsOverrides, TablePaginationUnstyledOwnerState> */
-        var spacer: react.Props? /* SlotComponentProps<'div', TablePaginationUnstyledComponentsPropsOverrides, TablePaginationUnstyledOwnerState> */
+        var root: react.Props? /* SlotComponentProps<'div', TablePaginationUnstyledRootSlotPropsOverrides, TablePaginationUnstyledOwnerState> */
+        var actions: react.Props? /* SlotComponentProps<'div', TablePaginationUnstyledActionsSlotPropsOverrides, TablePaginationUnstyledOwnerState> */
+        var select: react.Props? /* SlotComponentProps<'select', TablePaginationUnstyledSelectSlotPropsOverrides, TablePaginationUnstyledOwnerState> */
+        var selectLabel: react.Props? /* SlotComponentProps<'p', TablePaginationUnstyledSelectLabelSlotPropsOverrides, TablePaginationUnstyledOwnerState> */
+        var menuItem: react.Props? /* SlotComponentProps<'option', TablePaginationUnstyledMenuItemSlotPropsOverrides, TablePaginationUnstyledOwnerState> */
+        var displayedRows: react.Props? /* SlotComponentProps<'p', TablePaginationUnstyledDisplayedRowsSlotPropsOverrides, TablePaginationUnstyledOwnerState> */
+        var toolbar: react.Props? /* SlotComponentProps<'div', TablePaginationUnstyledToolbarSlotPropsOverrides, TablePaginationUnstyledOwnerState> */
+        var spacer: react.Props? /* SlotComponentProps<'div', TablePaginationUnstyledSpacerSlotPropsOverrides, TablePaginationUnstyledOwnerState> */
     }
 
     /**

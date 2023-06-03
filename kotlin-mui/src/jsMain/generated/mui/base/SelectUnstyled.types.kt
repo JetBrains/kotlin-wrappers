@@ -99,9 +99,9 @@ external interface SelectUnstyledOwnProps<TValue> :
     var slotProps: SlotProps?
 
     interface SlotProps {
-        var root: react.Props? /* SlotComponentProps<'button', SelectUnstyledComponentsPropsOverrides, SelectUnstyledOwnerState<TValue>> */
-        var listbox: react.Props? /* SlotComponentProps<'button', SelectUnstyledComponentsPropsOverrides, SelectUnstyledOwnerState<TValue>> */
-        var popper: react.Props? /* SlotComponentProps<typeof PopperUnstyled, SelectUnstyledComponentsPropsOverrides, SelectUnstyledOwnerState<TValue>> */
+        var root: react.Props? /* SlotComponentProps<'button', SelectUnstyledRootSlotPropsOverrides, SelectUnstyledOwnerState<TValue>> */
+        var listbox: react.Props? /* SlotComponentProps<'button', SelectUnstyledListboxSlotPropsOverrides, SelectUnstyledOwnerState<TValue>> */
+        var popper: react.Props? /* SlotComponentProps<typeof PopperUnstyled, SelectUnstyledPopperSlotPropsOverrides, SelectUnstyledOwnerState<TValue>> */
     }
 
     /**

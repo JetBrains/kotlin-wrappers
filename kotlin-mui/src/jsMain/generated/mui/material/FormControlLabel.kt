@@ -91,7 +91,7 @@ external interface FormControlLabelProps :
     /**
      * The value of the component.
      */
-    var value: dynamic
+    var value: Any?
 }
 
 /**

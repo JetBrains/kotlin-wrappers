@@ -32,7 +32,7 @@ external interface ButtonUnstyledOwnProps :
     var slotProps: SlotProps?
 
     interface SlotProps {
-        var root: react.Props? /* SlotComponentProps<'button', ButtonUnstyledComponentsPropsOverrides, ButtonUnstyledOwnerState> */
+        var root: react.Props? /* SlotComponentProps<'button', ButtonUnstyledRootSlotPropsOverrides, ButtonUnstyledOwnerState> */
     }
 
     /**

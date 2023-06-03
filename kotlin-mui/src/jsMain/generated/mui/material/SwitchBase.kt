@@ -105,7 +105,7 @@ external interface SwitchBaseProps :
     /**
      * The value of the component. The DOM API casts this to a string.
      */
-    var value: dynamic
+    var value: Any?
 }
 
 

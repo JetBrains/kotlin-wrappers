@@ -164,14 +164,14 @@ external interface SliderUnstyledOwnProps : react.Props {
     var slotProps: SlotProps?
 
     interface SlotProps {
-        var root: react.Props? /* SlotComponentProps<'span', SliderUnstyledComponentsPropsOverrides, SliderUnstyledOwnerState> */
-        var track: react.Props? /* SlotComponentProps<'span', SliderUnstyledComponentsPropsOverrides, SliderUnstyledOwnerState> */
-        var rail: react.Props? /* SlotComponentProps<'span', SliderUnstyledComponentsPropsOverrides, SliderUnstyledOwnerState> */
-        var thumb: react.Props? /* SlotComponentProps<'span', SliderUnstyledComponentsPropsOverrides, SliderUnstyledOwnerState> */
-        var mark: react.Props? /* SlotComponentProps<'span', SliderUnstyledComponentsPropsOverrides, SliderUnstyledOwnerState> */
-        var markLabel: react.Props? /* SlotComponentProps<'span', SliderUnstyledComponentsPropsOverrides, SliderUnstyledOwnerState> */
-        var valueLabel: react.Props? /* SlotComponentProps<React.ElementType, SliderUnstyledComponentsPropsOverrides, SliderUnstyledOwnerState> */
-        var input: react.Props? /* SlotComponentProps<'input', SliderUnstyledComponentsPropsOverrides, SliderUnstyledOwnerState> */
+        var root: react.Props? /* SlotComponentProps<'span', SliderUnstyledRootSlotPropsOverrides, SliderUnstyledOwnerState> */
+        var track: react.Props? /* SlotComponentProps<'span', SliderUnstyledTrackSlotPropsOverrides, SliderUnstyledOwnerState> */
+        var rail: react.Props? /* SlotComponentProps<'span', SliderUnstyledRailSlotPropsOverrides, SliderUnstyledOwnerState> */
+        var thumb: react.Props? /* SlotComponentProps<'span', SliderUnstyledThumbSlotPropsOverrides, SliderUnstyledOwnerState> */
+        var mark: react.Props? /* SlotComponentProps<'span', SliderUnstyledMarkSlotPropsOverrides, SliderUnstyledOwnerState> */
+        var markLabel: react.Props? /* SlotComponentProps<'span', SliderUnstyledMarkLabelSlotPropsOverrides, SliderUnstyledOwnerState> */
+        var valueLabel: react.Props? /* SlotComponentProps<React.ElementType, SliderUnstyledValueLabelSlotPropsOverrides, SliderUnstyledOwnerState> */
+        var input: react.Props? /* SlotComponentProps<'input', SliderUnstyledInputSlotPropsOverrides, SliderUnstyledOwnerState> */
     }
 
     /**

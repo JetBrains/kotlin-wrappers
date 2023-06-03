@@ -46,8 +46,8 @@ external interface OptionGroupUnstyledOwnProps :
     var slotProps: SlotProps?
 
     interface SlotProps {
-        var root: react.Props? /* SlotComponentProps<'li', OptionGroupUnstyledComponentsPropsOverrides, OptionGroupUnstyledOwnerState> */
-        var label: react.Props? /* SlotComponentProps<'span', OptionGroupUnstyledComponentsPropsOverrides, OptionGroupUnstyledOwnerState> */
-        var list: react.Props? /* SlotComponentProps<'ul', OptionGroupUnstyledComponentsPropsOverrides, OptionGroupUnstyledOwnerState> */
+        var root: react.Props? /* SlotComponentProps<'li', OptionGroupUnstyledRootSlotPropsOverrides, OptionGroupUnstyledOwnerState> */
+        var label: react.Props? /* SlotComponentProps<'span', OptionGroupUnstyledLabelSlotPropsOverrides, OptionGroupUnstyledOwnerState> */
+        var list: react.Props? /* SlotComponentProps<'ul', OptionGroupUnstyledListSlotPropsOverrides, OptionGroupUnstyledOwnerState> */
     }
 }

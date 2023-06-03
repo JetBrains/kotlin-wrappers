@@ -36,6 +36,6 @@ external interface TabUnstyledOwnProps :
     override var slotProps: ButtonUnstyledOwnProps.SlotProps?
 
     interface SlotProps {
-        var root: react.Props? /* SlotComponentProps<'div', TabUnstyledComponentsPropsOverrides, TabUnstyledOwnerState> */
+        var root: react.Props? /* SlotComponentProps<'div', TabUnstyledRootSlotPropsOverrides, TabUnstyledOwnerState> */
     }
 }

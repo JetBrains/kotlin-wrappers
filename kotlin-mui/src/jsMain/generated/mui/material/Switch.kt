@@ -60,7 +60,7 @@ external interface SwitchProps :
      * The value of the component. The DOM API casts this to a string.
      * The browser uses "on" as the default value.
      */
-    var value: dynamic
+    var value: Any?
 }
 
 /**

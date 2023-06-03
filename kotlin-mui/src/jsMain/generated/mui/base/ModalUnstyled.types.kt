@@ -123,8 +123,8 @@ external interface ModalUnstyledOwnProps : react.Props {
     var slotProps: SlotProps?
 
     interface SlotProps {
-        var root: react.Props? /* SlotComponentProps<'div', ModalUnstyledComponentsPropsOverrides, ModalUnstyledOwnerState> */
-        var backdrop: react.Props? /* SlotComponentProps<'div', ModalUnstyledComponentsPropsOverrides, ModalUnstyledOwnerState> */
+        var root: react.Props? /* SlotComponentProps<'div', ModalUnstyledRootSlotPropsOverrides, ModalUnstyledOwnerState> */
+        var backdrop: react.Props? /* SlotComponentProps<'div', ModalUnstyledBackdropSlotPropsOverrides, ModalUnstyledOwnerState> */
     }
 
     /**
