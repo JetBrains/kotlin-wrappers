@@ -53,3 +53,35 @@ external interface UseButtonParameters {
      */
     var type: dynamic /* React.ButtonHTMLAttributes<HTMLButtonElement>['type'] */
 }
+
+external interface UseButtonReturnValue {
+    /**
+     * Resolver for the root slot's props.
+     * @param otherHandlers event handlers for the root slot
+     * @returns props that should be spread on the root slot
+     */
+    var getRootProps: react.Props /* <TOther extends EventHandlers = {}>(otherHandlers?: TOther) => UseButtonRootSlotProps<TOther> */
+
+    /**
+     * If `true`, the component is being focused using keyboard.
+     * @default false
+     */
+    var focusVisible: Boolean
+
+    /**
+     * Callback for setting the `focusVisible` param.
+     */
+    var setFocusVisible: react.StateSetter<Boolean>
+
+    /**
+     * If `true`, the component is disabled.
+     * @default false
+     */
+    var disabled: Boolean
+
+    /**
+     * If `true`, the component is active (pressed).
+     * @default false
+     */
+    var active: Boolean
+}
