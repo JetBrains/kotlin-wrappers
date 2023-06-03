@@ -10,16 +10,12 @@ package mui.material
 import web.cssom.ClassName
 
 // language=JavaScript
-@JsName("""(/*union*/{colorPrimary: 'MuiSlider-colorPrimary', colorSecondary: 'MuiSlider-colorSecondary', sizeSmall: 'MuiSlider-sizeSmall', thumbColorPrimary: 'MuiSlider-thumbColorPrimary', thumbColorSecondary: 'MuiSlider-thumbColorSecondary', thumbSizeSmall: 'MuiSlider-thumbSizeSmall', root: 'MuiSlider-root', marked: 'MuiSlider-marked', vertical: 'MuiSlider-vertical', dragging: 'MuiSlider-dragging', rail: 'MuiSlider-rail', track: 'MuiSlider-track', trackFalse: 'MuiSlider-trackFalse', trackInverted: 'MuiSlider-trackInverted', thumb: 'MuiSlider-thumb', valueLabel: 'MuiSlider-valueLabel', valueLabelOpen: 'MuiSlider-valueLabelOpen', valueLabelCircle: 'MuiSlider-valueLabelCircle', valueLabelLabel: 'MuiSlider-valueLabelLabel', mark: 'MuiSlider-mark', markActive: 'MuiSlider-markActive', markLabel: 'MuiSlider-markLabel', markLabelActive: 'MuiSlider-markLabelActive'}/*union*/)""")
+@JsName("""(/*union*/{root: 'MuiSlider-root', colorPrimary: 'MuiSlider-colorPrimary', colorSecondary: 'MuiSlider-colorSecondary', marked: 'MuiSlider-marked', vertical: 'MuiSlider-vertical', dragging: 'MuiSlider-dragging', rail: 'MuiSlider-rail', track: 'MuiSlider-track', trackFalse: 'MuiSlider-trackFalse', trackInverted: 'MuiSlider-trackInverted', thumb: 'MuiSlider-thumb', mark: 'MuiSlider-mark', markActive: 'MuiSlider-markActive', markLabel: 'MuiSlider-markLabel', markLabelActive: 'MuiSlider-markLabelActive', sizeSmall: 'MuiSlider-sizeSmall', thumbColorPrimary: 'MuiSlider-thumbColorPrimary', thumbColorSecondary: 'MuiSlider-thumbColorSecondary', thumbSizeSmall: 'MuiSlider-thumbSizeSmall', valueLabel: 'MuiSlider-valueLabel', valueLabelOpen: 'MuiSlider-valueLabelOpen', valueLabelCircle: 'MuiSlider-valueLabelCircle', valueLabelLabel: 'MuiSlider-valueLabelLabel'}/*union*/)""")
 sealed external interface MuiSlider {
     companion object {
+        val root: ClassName
         val colorPrimary: ClassName
         val colorSecondary: ClassName
-        val sizeSmall: ClassName
-        val thumbColorPrimary: ClassName
-        val thumbColorSecondary: ClassName
-        val thumbSizeSmall: ClassName
-        val root: ClassName
         val marked: ClassName
         val vertical: ClassName
         val dragging: ClassName
@@ -28,13 +24,17 @@ sealed external interface MuiSlider {
         val trackFalse: ClassName
         val trackInverted: ClassName
         val thumb: ClassName
-        val valueLabel: ClassName
-        val valueLabelOpen: ClassName
-        val valueLabelCircle: ClassName
-        val valueLabelLabel: ClassName
         val mark: ClassName
         val markActive: ClassName
         val markLabel: ClassName
         val markLabelActive: ClassName
+        val sizeSmall: ClassName
+        val thumbColorPrimary: ClassName
+        val thumbColorSecondary: ClassName
+        val thumbSizeSmall: ClassName
+        val valueLabel: ClassName
+        val valueLabelOpen: ClassName
+        val valueLabelCircle: ClassName
+        val valueLabelLabel: ClassName
     }
 }
