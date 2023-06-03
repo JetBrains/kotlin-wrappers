@@ -47,7 +47,7 @@ external interface MenuListProps :
 }
 
 /**
- * A permanently displayed menu following https://www.w3.org/WAI/ARIA/apg/patterns/menubutton/.
+ * A permanently displayed menu following https://www.w3.org/WAI/ARIA/apg/patterns/menu-button/.
  * It's exposed to help customization of the [`Menu`](https://mui.com/material-ui/api/menu/) component if you
  * use it separately you need to move focus into the component manually. Once
  * the focus is placed inside the component it is fully keyboard accessible.
