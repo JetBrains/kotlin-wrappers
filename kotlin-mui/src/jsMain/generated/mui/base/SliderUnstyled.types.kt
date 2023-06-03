@@ -8,6 +8,34 @@ external interface SliderUnstyledProps :
     SliderUnstyledOwnProps,
     react.dom.html.HTMLAttributes<web.html.HTMLSpanElement>
 
+external interface SliderUnstyledOwnerState {
+    var disabled: Boolean
+
+    var focusedThumbIndex: Number
+
+    var isRtl: Boolean
+
+    var max: Number
+
+    var min: Number
+
+    var dragging: Boolean
+
+    var marked: Boolean
+
+    var orientation: mui.material.Orientation
+
+    var scale: (value: Number) -> Number
+
+    var step: Number?
+
+    var track: mui.system.Union /* 'normal' | false | 'inverted' */
+
+    var valueLabelDisplay: mui.system.Union /* 'on' | 'auto' | 'off' */
+
+    var valueLabelFormat: String /* or (value: Number, index: Number) -> react.ReactNode*/
+}
+
 @Suppress("VIRTUAL_MEMBER_HIDDEN")
 external interface SliderValueLabelProps :
     react.dom.html.HTMLAttributes<web.html.HTMLSpanElement> {
@@ -135,7 +163,11 @@ external interface SliderUnstyledOwnProps : react.Props {
 
     /**
      * A transformation function, to change the scale of the slider.
-     * @default (x) => x
+     * @param {any} x
+     * @returns {any}
+     * @default function Identity(x) {
+     *   return x;
+     * }
      */
     var scale: ((value: Number) -> Number)?
 
@@ -222,7 +254,11 @@ external interface SliderUnstyledOwnProps : react.Props {
      *
      * - {number} value The value label's value to format
      * - {number} index The value label's index to format
-     * @default (x) => x
+     * @param {any} x
+     * @returns {any}
+     * @default function Identity(x) {
+     *   return x;
+     * }
      */
-    var valueLabelFormat: dynamic
+    var valueLabelFormat: String? /* or (value: Number, index: Number) -> react.ReactNode*/
 }
