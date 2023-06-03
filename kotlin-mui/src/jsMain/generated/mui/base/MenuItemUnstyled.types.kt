@@ -12,6 +12,8 @@ external interface MenuItemUnstyledOwnerState {
     var disabled: Boolean
 
     var focusVisible: Boolean
+
+    var highlighted: Boolean
 }
 
 external interface MenuItemUnstyledOwnProps :
@@ -47,7 +49,7 @@ external interface MenuItemUnstyledOwnProps :
     var slotProps: SlotProps?
 
     interface SlotProps {
-        var root: react.Props? /* SlotComponentProps<'li', MenuItemUnstyledComponentsPropsOverrides, MenuItemUnstyledOwnerState> */
+        var root: react.Props? /* SlotComponentProps<'li', MenuItemUnstyledRootSlotPropsOverrides, MenuItemUnstyledOwnerState> */
     }
 
     /**

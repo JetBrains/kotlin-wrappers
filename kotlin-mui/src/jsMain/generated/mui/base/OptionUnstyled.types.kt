@@ -34,7 +34,7 @@ external interface OptionUnstyledOwnProps<TValue> :
     var slotProps: SlotProps?
 
     interface SlotProps {
-        var root: react.Props? /* SlotComponentProps<'li', OptionUnstyledComponentsPropsOverrides, OptionUnstyledOwnerState<TValue>> */
+        var root: react.Props? /* SlotComponentProps<'li', OptionUnstyledRootSlotPropsOverrides, OptionUnstyledOwnerState<TValue>> */
     }
 
     /**

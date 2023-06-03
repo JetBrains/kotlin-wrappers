@@ -62,7 +62,7 @@ external interface NativeSelectProps :
     /**
      * The `input` value. The DOM API casts this to a string.
      */
-    var value: dynamic
+    var value: Any?
 
     /**
      * The variant to use.

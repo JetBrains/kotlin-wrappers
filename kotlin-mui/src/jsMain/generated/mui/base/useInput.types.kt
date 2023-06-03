@@ -36,7 +36,7 @@ external interface UseInputParameters {
      */
     var required: Boolean?
 
-    var value: dynamic
+    var value: Any?
 }
 
 external interface UseInputRootSlotOwnProps : react.Props {
@@ -59,4 +59,54 @@ external interface UseInputInputSlotOwnProps : react.Props {
     var required: Boolean
 
     var disabled: Boolean
+}
+
+external interface UseInputReturnValue {
+    /**
+     * If `true`, the component will be disabled.
+     * @default false
+     */
+    var disabled: Boolean
+
+    /**
+     * If `true`, the `input` will indicate an error by setting the `aria-invalid` attribute.
+     * @default false
+     */
+    var error: Boolean
+
+    /**
+     * If `true`, the `input` will be focused.
+     * @default false
+     */
+    var focused: Boolean
+
+    /**
+     * Return value from the `useFormControlUnstyledContext` hook.
+     */
+    var formControlContext: dynamic
+
+    /**
+     * Resolver for the input slot's props.
+     * @param externalProps props for the input slot
+     * @returns props that should be spread on the input slot
+     */
+    var getInputProps: react.Props /* <TOther extends Record<string, any> = {}>(externalProps?: TOther) => UseInputInputSlotProps<TOther> */
+
+    /**
+     * Resolver for the root slot's props.
+     * @param externalProps props for the root slot
+     * @returns props that should be spread on the root slot
+     */
+    var getRootProps: react.Props /* <TOther extends Record<string, any> = {}>(externalProps?: TOther) => UseInputRootSlotProps<TOther> */
+
+    /**
+     * If `true`, the `input` will indicate that it's required.
+     * @default false
+     */
+    var required: Boolean
+
+    /**
+     * The `value` of the `input` element.
+     */
+    var value: Any
 }

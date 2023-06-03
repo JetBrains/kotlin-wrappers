@@ -36,8 +36,8 @@ external interface BadgeUnstyledOwnProps : react.PropsWithChildren {
     var slotProps: SlotProps?
 
     interface SlotProps {
-        var root: react.Props? /* SlotComponentProps<'span', BadgeUnstyledComponentsPropsOverrides, BadgeUnstyledOwnerState> */
-        var badge: react.Props? /* SlotComponentProps<'span', BadgeUnstyledComponentsPropsOverrides, BadgeUnstyledOwnerState> */
+        var root: react.Props? /* SlotComponentProps<'span', BadgeUnstyledRootSlotPropsOverrides, BadgeUnstyledOwnerState> */
+        var badge: react.Props? /* SlotComponentProps<'span', BadgeUnstyledBadgeSlotPropsOverrides, BadgeUnstyledOwnerState> */
     }
 
     /**

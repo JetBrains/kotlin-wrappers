@@ -48,7 +48,7 @@ external interface FormControlUnstyledOwnProps : react.PropsWithClassName {
     var slotProps: SlotProps?
 
     interface SlotProps {
-        var root: react.Props? /* SlotComponentProps<'div', FormControlUnstyledComponentsPropsOverrides, FormControlUnstyledOwnerState> */
+        var root: react.Props? /* SlotComponentProps<'div', FormControlUnstyledRootSlotPropsOverrides, FormControlUnstyledOwnerState> */
     }
 
     /**
@@ -62,5 +62,5 @@ external interface FormControlUnstyledOwnProps : react.PropsWithClassName {
         var root: react.ElementType<*>?
     }
 
-    var value: dynamic
+    var value: Any?
 }

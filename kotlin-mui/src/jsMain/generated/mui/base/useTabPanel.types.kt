@@ -16,3 +16,17 @@ external interface UseTabPanelRootSlotProps : react.Props {
 
     var id: String?
 }
+
+external interface UseTabPanelReturnValue {
+    /**
+     * If `true`, it indicates that the tab panel will be hidden.
+     * @default false
+     */
+    var hidden: Boolean
+
+    /**
+     * Resolver for the root slot's props.
+     * @returns props that should be spread on the root slot
+     */
+    var getRootProps: () -> UseTabPanelRootSlotProps
+}

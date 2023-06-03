@@ -108,7 +108,7 @@ external interface PopperUnstyledOwnProps : react.Props {
     var slotProps: SlotProps?
 
     interface SlotProps {
-        var root: react.Props? /* SlotComponentProps<'div', PopperUnstyledComponentsPropsOverrides, PopperUnstyledOwnerState> */
+        var root: react.Props? /* SlotComponentProps<'div', PopperUnstyledRootSlotPropsOverrides, PopperUnstyledOwnerState> */
     }
 
     /**

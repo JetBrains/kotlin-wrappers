@@ -29,8 +29,8 @@ external interface SnackbarUnstyledOwnProps :
     var slotProps: SlotProps?
 
     interface SlotProps {
-        var clickAwayListener: react.Props? /* SlotComponentProps<typeof ClickAwayListener, SnackbarUnstyledComponentsPropsOverrides, SnackbarUnstyledOwnerState> */
-        var root: react.Props? /* SlotComponentProps<'div', SnackbarUnstyledComponentsPropsOverrides, SnackbarUnstyledOwnerState> */
+        var clickAwayListener: react.Props? /* SlotComponentProps<typeof ClickAwayListener, SnackbarUnstyledClickAwayListenerSlotPropsOverrides, SnackbarUnstyledOwnerState> */
+        var root: react.Props? /* SlotComponentProps<'div', SnackbarUnstyledRootSlotPropsOverrides, SnackbarUnstyledOwnerState> */
     }
 
     /**

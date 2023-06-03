@@ -61,8 +61,8 @@ external interface MenuUnstyledOwnProps :
     var slotProps: SlotProps?
 
     interface SlotProps {
-        var root: react.Props? /* SlotComponentProps<typeof PopperUnstyled, MenuUnstyledComponentsPropsOverrides, MenuUnstyledOwnerState> */
-        var listbox: react.Props? /* SlotComponentProps<'ul', MenuUnstyledComponentsPropsOverrides, MenuUnstyledOwnerState> */
+        var root: react.Props? /* SlotComponentProps<typeof PopperUnstyled, MenuUnstyledRootSlotPropsOverrides, MenuUnstyledOwnerState> */
+        var listbox: react.Props? /* SlotComponentProps<'ul', MenuUnstyledListboxSlotPropsOverrides, MenuUnstyledOwnerState> */
     }
 
     /**

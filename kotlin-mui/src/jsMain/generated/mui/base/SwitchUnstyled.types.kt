@@ -35,9 +35,9 @@ external interface SwitchUnstyledOwnProps : react.PropsWithClassName {
     var slotProps: SlotProps?
 
     interface SlotProps {
-        var root: react.Props? /* SlotComponentProps<'span', SwitchUnstyledComponentsPropsOverrides, SwitchUnstyledOwnerState> */
-        var thumb: react.Props? /* SlotComponentProps<'span', SwitchUnstyledComponentsPropsOverrides, SwitchUnstyledOwnerState> */
-        var input: react.Props? /* SlotComponentProps<'input', SwitchUnstyledComponentsPropsOverrides, SwitchUnstyledOwnerState> */
-        var track: react.Props? /* SlotComponentProps<'span', SwitchUnstyledComponentsPropsOverrides, SwitchUnstyledOwnerState> */
+        var root: react.Props? /* SlotComponentProps<'span', SwitchUnstyledRootSlotPropsOverrides, SwitchUnstyledOwnerState> */
+        var thumb: react.Props? /* SlotComponentProps<'span', SwitchUnstyledThumbSlotPropsOverrides, SwitchUnstyledOwnerState> */
+        var input: react.Props? /* SlotComponentProps<'input', SwitchUnstyledInputSlotPropsOverrides, SwitchUnstyledOwnerState> */
+        var track: react.Props? /* SlotComponentProps<'span', SwitchUnstyledTrackSlotPropsOverrides, SwitchUnstyledOwnerState> */
     }
 }

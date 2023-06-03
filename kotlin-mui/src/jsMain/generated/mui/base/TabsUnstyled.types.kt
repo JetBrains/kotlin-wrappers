@@ -20,12 +20,12 @@ external interface TabsUnstyledOwnProps :
      * The value of the currently selected `Tab`.
      * If you don't want any selected `Tab`, you can set this prop to `false`.
      */
-    var value: dynamic
+    var value: Any? /* String or Number or Boolean? /* false */ */
 
     /**
      * The default value. Use when the component is not controlled.
      */
-    var defaultValue: dynamic
+    var defaultValue: Any? /* String or Number or Boolean? /* false */ */
 
     /**
      * The component orientation (layout flow direction).
@@ -59,7 +59,7 @@ external interface TabsUnstyledOwnProps :
     var slotProps: SlotProps?
 
     interface SlotProps {
-        var root: react.Props? /* SlotComponentProps<'div', TabsUnstyledComponentsPropsOverrides, TabsUnstyledOwnerState> */
+        var root: react.Props? /* SlotComponentProps<'div', TabsUnstyledRootSlotPropsOverrides, TabsUnstyledOwnerState> */
     }
 
     /**

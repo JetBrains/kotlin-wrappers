@@ -107,8 +107,8 @@ external interface InputUnstyledOwnProps :
     var slotProps: SlotProps?
 
     interface SlotProps {
-        var root: react.Props? /* SlotComponentProps<'div', InputUnstyledComponentsPropsOverrides, InputUnstyledOwnerState> */
-        var input: react.Props? /* SlotComponentProps<'input', InputUnstyledComponentsPropsOverrides, InputUnstyledOwnerState> */
+        var root: react.Props? /* SlotComponentProps<'div', InputUnstyledRootSlotPropsOverrides, InputUnstyledOwnerState> */
+        var input: react.Props? /* SlotComponentProps<'input', InputUnstyledInputSlotPropsOverrides, InputUnstyledOwnerState> */
     }
 
     /**
@@ -132,5 +132,5 @@ external interface InputUnstyledOwnProps :
     /**
      * The value of the `input` element, required for a controlled component.
      */
-    var value: dynamic
+    var value: Any?
 }
