@@ -83,7 +83,7 @@ external interface UseInputReturnValue {
     /**
      * Return value from the `useFormControlUnstyledContext` hook.
      */
-    var formControlContext: dynamic
+    var formControlContext: Any?
 
     /**
      * Resolver for the input slot's props.

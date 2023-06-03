@@ -7,7 +7,7 @@ external interface UseOptionParameters {
 
     var value: Any
 
-    var optionRef: react.Ref<dynamic>?
+    var optionRef: react.Ref<web.html.HTMLElement>?
 }
 
 external interface UseOptionReturnValue {
