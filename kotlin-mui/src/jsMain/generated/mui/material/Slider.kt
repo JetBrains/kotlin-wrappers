@@ -77,7 +77,6 @@ external interface SliderProps :
  * API:
  *
  * - [Slider API](https://mui.com/material-ui/api/slider/)
- * - inherits [SliderUnstyled API](https://mui.com/base/api/slider-unstyled/)
  */
 @JsName("default")
 external val Slider: react.FC<SliderProps>

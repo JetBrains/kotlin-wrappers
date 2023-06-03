@@ -5,27 +5,7 @@
 
 package mui.material
 
-import mui.material.styles.Theme
-import mui.system.SxProps
-
-external interface BoxProps :
-    react.dom.html.HTMLAttributes<web.html.HTMLDivElement>,
-    react.PropsWithChildren,
-    mui.system.PropsWithSx,
-    mui.types.PropsWithComponent {
-    override var children: react.ReactNode?
-
-    /**
-     * The component used for the root node.
-     * Either a string to use a HTML element or a component.
-     */
-    override var component: react.ElementType<*>?
-
-    /**
-     * The system prop that allows defining system overrides as well as additional CSS styles.
-     */
-    override var sx: SxProps<Theme>?
-}
+import mui.system.BoxProps
 
 /**
  *
