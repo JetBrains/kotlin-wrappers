@@ -45,6 +45,7 @@ external interface TreeItemProps :
 
     /**
      * If `true`, the node is disabled.
+     * @default false
      */
     var disabled: Boolean?
 

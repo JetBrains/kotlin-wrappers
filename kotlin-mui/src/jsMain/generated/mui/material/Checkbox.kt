@@ -42,11 +42,13 @@ external interface CheckboxProps :
 
     /**
      * If `true`, the component is disabled.
+     * @default false
      */
     var disabled: Boolean?
 
     /**
      * If `true`, the ripple effect is disabled.
+     * @default false
      */
     var disableRipple: Boolean?
 
@@ -96,6 +98,7 @@ external interface CheckboxProps :
 
     /**
      * If `true`, the `input` element is required.
+     * @default false
      */
     var required: Boolean?
 

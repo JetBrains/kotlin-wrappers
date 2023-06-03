@@ -9,10 +9,12 @@ import mui.material.styles.Theme
 import mui.system.SxProps
 
 external interface FormLabelProps :
-    FormLabelBaseProps,
+    react.dom.html.LabelHTMLAttributes<web.html.HTMLLabelElement>,
+    FormLabelOwnProps
+
+external interface FormLabelOwnProps :
     react.PropsWithChildren,
-    mui.system.PropsWithSx,
-    mui.types.PropsWithComponent {
+    mui.system.PropsWithSx {
     /**
      * The content of the component.
      */
