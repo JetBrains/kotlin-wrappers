@@ -11,15 +11,6 @@ private class AsyncIteratorAdapter<T>(
 ) : SuspendableIterator<T> {
     private var lastResult: JsIterator.Result<T, Void>? = null
 
-    override suspend fun next(): T {
-        val result = lastResult
-            ?: source.next().await()
-
-        lastResult = null
-
-        return result.asYield().value
-    }
-
     override suspend fun hasNext(): Boolean {
         val result = lastResult
             ?: source.next().await()
@@ -27,5 +18,14 @@ private class AsyncIteratorAdapter<T>(
         lastResult = result
 
         return !result.done
+    }
+
+    override suspend fun next(): T {
+        val result = lastResult
+            ?: source.next().await()
+
+        lastResult = null
+
+        return result.asYield().value
     }
 }
