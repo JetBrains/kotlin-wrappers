@@ -105,7 +105,6 @@ external interface BadgeOrigin {
  * API:
  *
  * - [Badge API](https://mui.com/material-ui/api/badge/)
- * - inherits [BadgeUnstyled API](https://mui.com/base/api/badge-unstyled/)
  */
 @JsName("default")
 external val Badge: react.FC<BadgeProps>
