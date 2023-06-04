@@ -63,7 +63,11 @@ sealed interface ChildrenBuilder {
         block: @ReactDsl P.() -> Unit,
     ) where P : PropsWithValue<T>,
             P : ChildrenBuilder {
-        +create(block)
+        this {
+            this.value = value
+
+            block()
+        }
     }
 
     operator fun <T> Context<T>.invoke(
