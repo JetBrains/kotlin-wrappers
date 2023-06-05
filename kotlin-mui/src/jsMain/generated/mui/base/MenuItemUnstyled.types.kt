@@ -62,3 +62,17 @@ external interface MenuItemUnstyledSlots {
      */
     var root: react.ElementType<*>?
 }
+
+external interface MenuItemMetadata {
+    var id: String
+
+    var disabled: Boolean
+
+    var label: String?
+}
+
+external interface MenuItemState {
+    var disabled: Boolean
+
+    var highlighted: Boolean
+}

@@ -43,3 +43,33 @@ external interface UseSwitchParameters {
      */
     var required: Boolean?
 }
+
+external interface UseSwitchReturnValue {
+    /**
+     * If `true`, the component will be checked.
+     */
+    var checked: Boolean
+
+    /**
+     * If `true`, the component will be disabled.
+     */
+    var disabled: Boolean
+
+    /**
+     * If `true`, it indicates that the component is being focused using keyboard.
+     * @default false
+     */
+    var focusVisible: Boolean
+
+    /**
+     * Resolver for the input slot's props.
+     * @param externalProps props for the input slot
+     * @returns props that should be spread on the input slot
+     */
+    var getInputProps: (externalProps: react.dom.html.HTMLAttributes<web.html.HTMLInputElement>?) -> Any /* UseSwitchInputSlotProps */
+
+    /**
+     * If `true`, the component will be read only.
+     */
+    var readOnly: Boolean
+}

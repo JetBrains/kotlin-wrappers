@@ -9,7 +9,7 @@ external interface SelectUnstyledProps<TValue> :
     var component: react.ElementType<*>?
 }
 
-external interface SelectUnstyledCommonProps :
+external interface SelectUnstyledOwnProps<TValue> :
     react.PropsWithChildren,
     react.PropsWithClassName {
     /**
@@ -23,16 +23,28 @@ external interface SelectUnstyledCommonProps :
     override var className: ClassName?
 
     /**
+     * If `true`, the select will be initially open.
+     * @default false
+     */
+    var defaultListboxOpen: Boolean?
+
+    /**
+     * The default selected value. Use when the component is not controlled.
+     */
+    var defaultValue: Any? /* SelectValue<TValue, Multiple> */
+
+    /**
      * If `true`, the select is disabled.
      * @default false
      */
     var disabled: Boolean?
 
     /**
-     * If `true`, the select will be initially open.
-     * @default false
+     * A function to convert the currently selected value to a string.
+     * Used to set a value of a hidden input associated with the select,
+     * so that the selected value can be posted with a form.
      */
-    var defaultListboxOpen: Boolean?
+    var getSerializedValue: Any? /* (option: SelectValue<SelectOption<TValue>, Multiple>) => React.InputHTMLAttributes<HTMLInputElement>['value'] */
 
     /**
      * `id` attribute of the listbox element.
@@ -47,36 +59,28 @@ external interface SelectUnstyledCommonProps :
     var listboxOpen: Boolean?
 
     /**
+     * If `true`, selecting multiple values is allowed.
+     *
+     * @default false
+     */
+    var multiple: Any? /* Multiple? /* Boolean */ */
+
+    /**
      * Name of the element. For example used by the server to identify the fields in form submits.
      * If the name is provided, the component will render a hidden input element that can be submitted to a server.
      */
     var name: String?
 
     /**
+     * Callback fired when an option is selected.
+     */
+    var onChange: Any? /* (e: React.MouseEvent | React.KeyboardEvent | React.FocusEvent | null, value: SelectValue<TValue, Multiple>) => void */
+
+    /**
      * Callback fired when the component requests to be opened.
      * Use in controlled mode (see listboxOpen).
      */
     var onListboxOpenChange: ((isOpen: Boolean) -> Unit)?
-}
-
-external interface SelectUnstyledOwnProps<TValue> :
-    SelectUnstyledCommonProps {
-    /**
-     * The default selected value. Use when the component is not controlled.
-     */
-    var defaultValue: TValue?
-
-    /**
-     * A function to convert the currently selected value to a string.
-     * Used to set a value of a hidden input associated with the select,
-     * so that the selected value can be posted with a form.
-     */
-    var getSerializedValue: ((option: SelectOption<TValue>?) -> Any /* String | ReadonlyArray<String> | Number */)?
-
-    /**
-     * Callback fired when an option is selected.
-     */
-    var onChange: ((e: react.dom.events.SyntheticEvent<*, *>?, value: TValue?) -> Unit)?
 
     /**
      * A function used to convert the option label to a string.
@@ -90,7 +94,7 @@ external interface SelectUnstyledOwnProps<TValue> :
     /**
      * Function that customizes the rendering of the selected value.
      */
-    var renderValue: ((option: SelectOption<TValue>?) -> react.ReactNode)?
+    var renderValue: Any? /* (option: SelectValue<SelectOption<TValue>, Multiple>) => React.ReactNode */
 
     /**
      * The props used for each slot inside the Input.
@@ -99,9 +103,9 @@ external interface SelectUnstyledOwnProps<TValue> :
     var slotProps: SlotProps?
 
     interface SlotProps {
-        var root: react.Props? /* SlotComponentProps<'button', SelectUnstyledRootSlotPropsOverrides, SelectUnstyledOwnerState<TValue>> */
-        var listbox: react.Props? /* SlotComponentProps<'button', SelectUnstyledListboxSlotPropsOverrides, SelectUnstyledOwnerState<TValue>> */
-        var popper: react.Props? /* SlotComponentProps<typeof PopperUnstyled, SelectUnstyledPopperSlotPropsOverrides, SelectUnstyledOwnerState<TValue>> */
+        var root: react.Props? /* SlotComponentProps<'button', SelectUnstyledRootSlotPropsOverrides, SelectUnstyledOwnerState<TValue, Multiple>> */
+        var listbox: react.Props? /* SlotComponentProps<'ul', SelectUnstyledListboxSlotPropsOverrides, SelectUnstyledOwnerState<TValue, Multiple>> */
+        var popper: react.Props? /* SlotComponentProps<typeof PopperUnstyled, SelectUnstyledPopperSlotPropsOverrides, SelectUnstyledOwnerState<TValue, Multiple>> */
     }
 
     /**
@@ -115,7 +119,7 @@ external interface SelectUnstyledOwnProps<TValue> :
      * The selected value.
      * Set to `null` to deselect all options.
      */
-    var value: TValue?
+    var value: Any? /* SelectValue<TValue, Multiple> */
 }
 
 external interface SelectUnstyledSlots {

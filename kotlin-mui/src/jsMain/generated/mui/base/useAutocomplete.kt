@@ -227,7 +227,7 @@ external interface UseAutocompleteProps<T> : react.Props {
      * If `true`, `value` must be an array and the menu will support multiple selections.
      * @default false
      */
-    var multiple: dynamic
+    var multiple: Any? /* Multiple? /* Boolean */ */
 
     /**
      * Callback fired when the value changes.
@@ -258,7 +258,7 @@ external interface UseAutocompleteProps<T> : react.Props {
      *
      * @param {React.SyntheticEvent} event The event source of the callback.
      * @param {T} option The highlighted option.
-     * @param {string} reason Can be: `"keyboard"`, `"auto"`, `"mouse"`.
+     * @param {string} reason Can be: `"keyboard"`, `"auto"`, `"mouse"`, `"touch"`.
      */
     var onHighlightChange: ((
         event: react.dom.events.SyntheticEvent<*, *>,
