@@ -11,6 +11,9 @@ external interface AutocompleteClasses {
     /** Styles applied to the root element if `fullWidth={true}`. */
     var fullWidth: ClassName
 
+    /** State class applied to the root element if the listbox is displayed. */
+    var expanded: ClassName
+
     /** State class applied to the root element if focused. */
     var focused: ClassName
 
