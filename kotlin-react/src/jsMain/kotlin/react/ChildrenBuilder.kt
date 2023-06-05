@@ -3,6 +3,7 @@ package react
 import js.core.Object
 import js.core.ReadonlyArray
 import js.core.Symbol
+import js.core.jso
 
 private val CHILDREN = Symbol("@@children")
 
@@ -56,6 +57,17 @@ sealed interface ChildrenBuilder {
     ) where P : Props,
             P : ChildrenBuilder {
         +create(block)
+    }
+
+    operator fun <T, P : PropsWithValue<T>> ElementType<P>.invoke(
+        value: T,
+    ) {
+        child(
+            type = this,
+            props = jso {
+                this.value = value
+            },
+        )
     }
 
     operator fun <P, T> ElementType<P>.invoke(
