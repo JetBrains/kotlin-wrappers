@@ -1,13 +1,11 @@
 // Automatically generated - do not modify!
 
+@file:JsModule("@mui/base/useBadge")
+@file:JsNonModule
+
 package mui.base
 
-external interface UseBadgeParameters {
-    var badgeContent: react.ReactNode?
-
-    var invisible: Boolean?
-
-    var max: Number?
-
-    var showZero: Boolean?
-}
+@JsName("default")
+external fun useBadge(
+    parameters: UseBadgeParameters,
+): UseBadgeReturnValue

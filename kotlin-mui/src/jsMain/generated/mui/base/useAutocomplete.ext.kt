@@ -7,12 +7,13 @@ package mui.base
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 // language=JavaScript
-@JsName("""(/*union*/{keyboard: 'keyboard', mouse: 'mouse', auto: 'auto'}/*union*/)""")
+@JsName("""(/*union*/{keyboard: 'keyboard', mouse: 'mouse', auto: 'auto', touch: 'touch'}/*union*/)""")
 sealed external interface AutocompleteHighlightChangeReason {
     companion object {
         val keyboard: AutocompleteHighlightChangeReason
         val mouse: AutocompleteHighlightChangeReason
         val auto: AutocompleteHighlightChangeReason
+        val touch: AutocompleteHighlightChangeReason
     }
 }
 

@@ -2,8 +2,6 @@
 
 package mui.base
 
-import js.core.ReadonlyArray
-
 external interface SelectOption<TValue> {
     var value: TValue
 
@@ -20,30 +18,24 @@ external interface SelectOptionGroup {
     var disabled: Boolean?
 }
 
-external interface UseSelectSingleParameters<TValue> {
-    var defaultValue: TValue?
+external interface UseSelectResult<TValue> {
+    var buttonActive: Boolean
 
-    var multiple: Boolean? /* false */
+    var buttonFocusVisible: Boolean
 
-    var onChange: ((e: react.dom.events.SyntheticEvent<*, *>?, value: TValue?) -> Unit)?
+    var disabled: Boolean
 
-    var value: TValue?
-}
+    var getButtonProps: react.Props /* <TOther extends EventHandlers = {}>(otherHandlers?: TOther) => UseSelectButtonSlotProps<TOther> */
 
-external interface UseSelectMultiParameters<TValue> {
-    var defaultValue: ReadonlyArray<TValue>?
+    var getListboxProps: react.Props /* <TOther extends EventHandlers = {}>(otherHandlers?: TOther) => UseSelectListboxSlotProps<TOther> */
 
-    var multiple: Boolean /* true */
+    var contextValue: dynamic
+    var registerHighlightChangeHandler: dynamic
+    var registerSelectionChangeHandler: dynamic
 
-    var onChange: ((e: react.dom.events.SyntheticEvent<*, *>?, value: ReadonlyArray<TValue>) -> Unit)?
+    var highlightedOption: TValue?
 
-    var value: ReadonlyArray<TValue>?
-}
+    var open: Boolean
 
-external interface UseSelectSingleResult<TValue> {
-    var value: TValue?
-}
-
-external interface UseSelectMultiResult<TValue> {
-    var value: ReadonlyArray<TValue>
+    var value: Any /* SelectValue<TValue, Multiple> */
 }
