@@ -19,23 +19,27 @@ external interface TabUnstyledOwnProps :
     var onChange: ((event: react.dom.events.SyntheticEvent<*, *>, value: dynamic) -> Unit)?
 
     /**
-     * The components used for each slot inside the Tab.
-     * Either a string to use a HTML element or a component.
-     * @default {}
-     */
-    override var slots: ButtonUnstyledOwnProps.Slots?
-
-    interface Slots {
-        var root: react.ElementType<*>?
-    }
-
-    /**
      * The props used for each slot inside the Tab.
      * @default {}
      */
     override var slotProps: ButtonUnstyledOwnProps.SlotProps?
 
     interface SlotProps {
-        var root: react.Props? /* SlotComponentProps<'div', TabUnstyledRootSlotPropsOverrides, TabUnstyledOwnerState> */
+        var root: react.Props? /* SlotComponentProps<'button', TabUnstyledRootSlotPropsOverrides, TabUnstyledOwnerState> */
     }
+
+    /**
+     * The components used for each slot inside the Tab.
+     * Either a string to use a HTML element or a component.
+     * @default {}
+     */
+    override var slots: ButtonUnstyledSlots? /* TabUnstyledSlots? */
+}
+
+external interface TabUnstyledSlots {
+    /**
+     * The component used to render the root.
+     * @default 'button'
+     */
+    var root: react.ElementType<*>?
 }

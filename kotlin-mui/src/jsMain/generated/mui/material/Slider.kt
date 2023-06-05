@@ -7,9 +7,11 @@ package mui.material
 
 import mui.material.styles.Theme
 import mui.system.SxProps
+import web.cssom.ClassName
 import web.events.Event
 
 external interface SliderProps :
+    react.PropsWithClassName,
     mui.system.PropsWithSx,
     mui.types.PropsWithComponent {
     /**
@@ -86,6 +88,11 @@ external interface SliderProps :
      * Override or extend the styles applied to the component.
      */
     var classes: SliderClasses?
+
+    /**
+     * @ignore
+     */
+    override var className: ClassName?
 
     /**
      * The default value. Use when the component is not controlled.

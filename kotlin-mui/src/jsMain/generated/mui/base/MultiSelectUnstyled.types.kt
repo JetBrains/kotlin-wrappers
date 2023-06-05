@@ -60,19 +60,33 @@ external interface MultiSelectUnstyledOwnProps<TValue> :
      * Either a string to use a HTML element or a component.
      * @default {}
      */
-    var slots: Slots?
-
-    interface Slots {
-        var root: react.ElementType<*>?
-        var listbox: react.ElementType<*>?
-        var popper: react.ElementType<*>? /* React.ComponentType<MultiSelectUnstyledPopperSlotProps<TValue>> */
-    }
+    var slots: MultiSelectUnstyledSlots?
 
     /**
      * The selected values.
      * Set to an empty array to deselect all options.
      */
     var value: ReadonlyArray<TValue>?
+}
+
+external interface MultiSelectUnstyledSlots {
+    /**
+     * The component used to render the root.
+     * @default 'button'
+     */
+    var root: react.ElementType<*>?
+
+    /**
+     * The component used to render the listbox.
+     * @default 'ul'
+     */
+    var listbox: react.ElementType<*>?
+
+    /**
+     * The component used to render the popper.
+     * @default PopperUnstyled
+     */
+    var popper: react.ComponentType<*>?
 }
 
 external interface MultiSelectUnstyledOwnerState<TValue> : MultiSelectUnstyledProps<TValue> {

@@ -40,9 +40,13 @@ external interface ButtonUnstyledOwnProps :
      * Either a string to use a HTML element or a component.
      * @default {}
      */
-    var slots: Slots?
+    var slots: ButtonUnstyledSlots?
+}
 
-    interface Slots {
-        var root: react.ElementType<*>?
-    }
+external interface ButtonUnstyledSlots {
+    /**
+     * The component used to render the root.
+     * @default props.href || props.to ? 'a' : 'button'
+     */
+    var root: react.ElementType<*>?
 }

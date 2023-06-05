@@ -16,11 +16,6 @@ external interface ModalUnstyledOwnProps : react.Props {
     var children: dynamic /* react.ReactElement<*> */
 
     /**
-     * Override or extend the styles applied to the component.
-     */
-    var classes: ModalUnstyledClasses?
-
-    /**
      * When set to true the Modal waits until a nested Transition is completed before closing.
      * @default false
      */
@@ -132,12 +127,20 @@ external interface ModalUnstyledOwnProps : react.Props {
      * Either a string to use a HTML element or a component.
      * @default {}
      */
-    var slots: Slots?
+    var slots: ModalUnstyledSlots?
+}
 
-    interface Slots {
-        var root: react.ElementType<*>?
-        var backdrop: react.ElementType<*>?
-    }
+external interface ModalUnstyledSlots {
+    /**
+     * The component used to render the root.
+     * @default 'div'
+     */
+    var root: react.ElementType<*>?
+
+    /**
+     * The component used to render the backdrop.
+     */
+    var backdrop: react.ElementType<*>?
 }
 
 external interface ModalUnstyledRootSlotProps :
