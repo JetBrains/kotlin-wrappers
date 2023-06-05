@@ -116,13 +116,7 @@ external interface InputUnstyledOwnProps :
      * Either a string to use a HTML element or a component.
      * @default {}
      */
-    var slots: Slots?
-
-    interface Slots {
-        var root: react.ElementType<*>?
-        var input: react.ElementType<*>?
-        var textarea: react.ElementType<*>?
-    }
+    var slots: InputUnstyledSlots?
 
     /**
      * Leading adornment for this input.
@@ -133,4 +127,24 @@ external interface InputUnstyledOwnProps :
      * The value of the `input` element, required for a controlled component.
      */
     var value: Any?
+}
+
+external interface InputUnstyledSlots {
+    /**
+     * The component used to render the root.
+     * @default 'div'
+     */
+    var root: react.ElementType<*>?
+
+    /**
+     * The component used to render the input.
+     * @default 'input'
+     */
+    var input: react.ElementType<*>?
+
+    /**
+     * The component used to render the textarea.
+     * @default 'textarea'
+     */
+    var textarea: react.ElementType<*>?
 }

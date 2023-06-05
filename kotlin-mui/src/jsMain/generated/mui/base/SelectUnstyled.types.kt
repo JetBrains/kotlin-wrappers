@@ -109,19 +109,33 @@ external interface SelectUnstyledOwnProps<TValue> :
      * Either a string to use a HTML element or a component.
      * @default {}
      */
-    var slots: Slots?
-
-    interface Slots {
-        var root: react.ElementType<*>?
-        var listbox: react.ElementType<*>?
-        var popper: react.ElementType<*>? /* React.ComponentType<SelectUnstyledPopperSlotProps<TValue>> */
-    }
+    var slots: SelectUnstyledSlots?
 
     /**
      * The selected value.
      * Set to `null` to deselect all options.
      */
     var value: TValue?
+}
+
+external interface SelectUnstyledSlots {
+    /**
+     * The component used to render the root.
+     * @default 'button'
+     */
+    var root: react.ElementType<*>?
+
+    /**
+     * The component used to render the listbox.
+     * @default 'ul'
+     */
+    var listbox: react.ElementType<*>?
+
+    /**
+     * The component used to render the popper.
+     * @default PopperUnstyled
+     */
+    var popper: react.ComponentType<*>?
 }
 
 external interface SelectUnstyledOwnerState<TValue> : SelectUnstyledOwnProps<TValue> {

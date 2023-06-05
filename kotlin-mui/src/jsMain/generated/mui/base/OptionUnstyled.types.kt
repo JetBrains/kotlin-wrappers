@@ -42,15 +42,19 @@ external interface OptionUnstyledOwnProps<TValue> :
      * Either a string to use a HTML element or a component.
      * @default {}
      */
-    var slots: Slots?
-
-    interface Slots {
-        var root: react.ElementType<*>?
-    }
+    var slots: OptionUnstyledSlots?
 
     /**
      * A text representation of the option's content.
      * Used for keyboard text navigation matching.
      */
     var label: String?
+}
+
+external interface OptionUnstyledSlots {
+    /**
+     * The component used to render the root.
+     * @default 'li'
+     */
+    var root: react.ElementType<*>?
 }

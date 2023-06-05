@@ -56,11 +56,15 @@ external interface FormControlUnstyledOwnProps : react.PropsWithClassName {
      * Either a string to use a HTML element or a component.
      * @default {}
      */
-    var slots: Slots?
-
-    interface Slots {
-        var root: react.ElementType<*>?
-    }
+    var slots: FormControlUnstyledSlots?
 
     var value: Any?
+}
+
+external interface FormControlUnstyledSlots {
+    /**
+     * The component used to render the root.
+     * @default 'div'
+     */
+    var root: react.ElementType<*>?
 }

@@ -70,12 +70,21 @@ external interface MenuUnstyledOwnProps :
      * Either a string to use a HTML element or a component.
      * @default {}
      */
-    var slots: Slots?
+    var slots: MenuUnstyledSlots?
+}
 
-    interface Slots {
-        var root: react.ElementType<*>?
-        var listbox: react.ElementType<*>?
-    }
+external interface MenuUnstyledSlots {
+    /**
+     * The component used to render the root.
+     * @default PopperUnstyled
+     */
+    var root: react.ElementType<*>?
+
+    /**
+     * The component used to render the listbox.
+     * @default 'ul'
+     */
+    var listbox: react.ElementType<*>?
 }
 
 external interface MenuUnstyledOwnerState {

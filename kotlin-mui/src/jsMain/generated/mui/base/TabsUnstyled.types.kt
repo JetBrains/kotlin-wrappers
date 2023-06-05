@@ -67,9 +67,13 @@ external interface TabsUnstyledOwnProps :
      * Either a string to use a HTML element or a component.
      * @default {}
      */
-    var slots: Slots?
+    var slots: TabsUnstyledSlots?
+}
 
-    interface Slots {
-        var root: react.ElementType<*>?
-    }
+external interface TabsUnstyledSlots {
+    /**
+     * The component used to render the root.
+     * @default 'div'
+     */
+    var root: react.ElementType<*>?
 }

@@ -45,16 +45,25 @@ external interface BadgeUnstyledOwnProps : react.PropsWithChildren {
      * Either a string to use a HTML element or a component.
      * @default {}
      */
-    var slots: Slots?
-
-    interface Slots {
-        var root: react.ElementType<*>?
-        var badge: react.ElementType<*>?
-    }
+    var slots: BadgeUnstyledSlots?
 
     /**
      * Controls whether the badge is hidden when `badgeContent` is zero.
      * @default false
      */
     var showZero: Boolean?
+}
+
+external interface BadgeUnstyledSlots {
+    /**
+     * The component used to render the root.
+     * @default 'span'
+     */
+    var root: react.ElementType<*>?
+
+    /**
+     * The component used to render the badge.
+     * @default 'span'
+     */
+    var badge: react.ElementType<*>?
 }

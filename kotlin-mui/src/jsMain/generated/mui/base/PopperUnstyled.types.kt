@@ -116,11 +116,7 @@ external interface PopperUnstyledOwnProps : react.Props {
      * Either a string to use a HTML element or a component.
      * @default {}
      */
-    var slots: Slots?
-
-    interface Slots {
-        var root: react.ElementType<*>?
-    }
+    var slots: PopperUnstyledSlots?
 
     /**
      * Help supporting a react-transition-group/Transition component.
@@ -129,6 +125,14 @@ external interface PopperUnstyledOwnProps : react.Props {
     var transition: Boolean?
 
     var ownerState: Any?
+}
+
+external interface PopperUnstyledSlots {
+    /**
+     * The component used to render the root.
+     * @default 'div'
+     */
+    var root: react.ElementType<*>?
 }
 
 external interface PopperUnstyledRootSlotProps : react.PropsWithClassName {

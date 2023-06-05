@@ -19,14 +19,7 @@ external interface SwitchUnstyledOwnProps : react.PropsWithClassName {
      * Either a string to use a HTML element or a component.
      * @default {}
      */
-    var slots: Slots?
-
-    interface Slots {
-        var root: react.ElementType<*>?
-        var thumb: react.ElementType<*>?
-        var input: react.ElementType<*>?
-        var track: react.ElementType<*>? /* React.ElementType | null */
-    }
+    var slots: SwitchUnstyledSlots?
 
     /**
      * The props used for each slot inside the Switch.
@@ -40,4 +33,30 @@ external interface SwitchUnstyledOwnProps : react.PropsWithClassName {
         var input: react.Props? /* SlotComponentProps<'input', SwitchUnstyledInputSlotPropsOverrides, SwitchUnstyledOwnerState> */
         var track: react.Props? /* SlotComponentProps<'span', SwitchUnstyledTrackSlotPropsOverrides, SwitchUnstyledOwnerState> */
     }
+}
+
+external interface SwitchUnstyledSlots {
+    /**
+     * The component used to render the root.
+     * @default 'span'
+     */
+    var root: react.ElementType<*>?
+
+    /**
+     * The component used to render the input.
+     * @default 'input'
+     */
+    var input: react.ElementType<*>?
+
+    /**
+     * The component used to render the thumb.
+     * @default 'span'
+     */
+    var thumb: react.ElementType<*>?
+
+    /**
+     * The component used to render the track.
+     * @default 'span'
+     */
+    var track: react.ElementType<*>?
 }

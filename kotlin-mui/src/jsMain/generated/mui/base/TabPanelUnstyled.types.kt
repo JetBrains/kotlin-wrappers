@@ -28,11 +28,7 @@ external interface TabPanelUnstyledOwnProps :
      * Either a string to use a HTML element or a component.
      * @default {}
      */
-    var slots: Slots?
-
-    interface Slots {
-        var root: react.ElementType<*>?
-    }
+    var slots: TabPanelUnstyledSlots?
 
     /**
      * The props used for each slot inside the TabPanel.
@@ -43,4 +39,12 @@ external interface TabPanelUnstyledOwnProps :
     interface SlotProps {
         var root: react.Props? /* SlotComponentProps<'div', TabPanelUnstyledRootSlotPropsOverrides, TabPanelUnstyledOwnerState> */
     }
+}
+
+external interface TabPanelUnstyledSlots {
+    /**
+     * The component used to render the root.
+     * @default 'div'
+     */
+    var root: react.ElementType<*>?
 }

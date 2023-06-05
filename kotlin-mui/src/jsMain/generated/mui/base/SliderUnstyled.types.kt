@@ -51,11 +51,6 @@ external interface SliderUnstyledOwnProps : react.Props {
     // var `aria-valuetext`: String?
 
     /**
-     * Override or extend the styles applied to the component.
-     */
-    var classes: SliderUnstyledClasses?
-
-    /**
      * The default value. Use when the component is not controlled.
      */
     var defaultValue: dynamic
@@ -179,18 +174,7 @@ external interface SliderUnstyledOwnProps : react.Props {
      * Either a string to use a HTML element or a component.
      * @default {}
      */
-    var slots: Slots?
-
-    interface Slots {
-        var root: react.ElementType<*>?
-        var track: react.ElementType<*>?
-        var rail: react.ElementType<*>?
-        var thumb: react.ElementType<*>?
-        var mark: react.ElementType<*>?
-        var markLabel: react.ElementType<*>?
-        var valueLabel: react.ElementType<*>?
-        var input: react.ElementType<*>?
-    }
+    var slots: SliderUnstyledSlots?
 
     /**
      * The granularity with which the slider can step through values. (A "discrete" slider.)
@@ -237,4 +221,53 @@ external interface SliderUnstyledOwnProps : react.Props {
      * }
      */
     var valueLabelFormat: String? /* or (value: Number, index: Number) -> react.ReactNode*/
+}
+
+external interface SliderUnstyledSlots {
+    /**
+     * The component used to render the root.
+     * @default 'span'
+     */
+    var root: react.ElementType<*>?
+
+    /**
+     * The component used to render the track.
+     * @default 'span'
+     */
+    var track: react.ElementType<*>?
+
+    /**
+     * The component used to render the rail.
+     * @default 'span'
+     */
+    var rail: react.ElementType<*>?
+
+    /**
+     * The component used to render the thumb.
+     * @default 'span'
+     */
+    var thumb: react.ElementType<*>?
+
+    /**
+     * The component used to render the mark.
+     * @default 'span'
+     */
+    var mark: react.ElementType<*>?
+
+    /**
+     * The component used to render the mark label.
+     * @default 'span'
+     */
+    var markLabel: react.ElementType<*>?
+
+    /**
+     * The component used to render the value label.
+     */
+    var valueLabel: react.ElementType<*>?
+
+    /**
+     * The component used to render the input.
+     * @default 'input'
+     */
+    var input: react.ElementType<*>?
 }

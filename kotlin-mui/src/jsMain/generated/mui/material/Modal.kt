@@ -9,10 +9,13 @@
 
 package mui.material
 
+import mui.base.ModalUnstyledClasses
 import mui.material.styles.Theme
 import mui.system.SxProps
+import web.cssom.ClassName
 
 external interface ModalProps :
+    react.PropsWithClassName,
     mui.system.PropsWithSx,
     mui.types.PropsWithComponent,
     mui.base.ModalUnstyledProps {
@@ -37,6 +40,16 @@ external interface ModalProps :
      * @deprecated Use `slotProps.backdrop` instead.
      */
     var BackdropProps: BackdropProps?
+
+    /**
+     * Override or extend the styles applied to the component.
+     */
+    var classes: ModalUnstyledClasses?
+
+    /**
+     * @ignore
+     */
+    override var className: ClassName?
 
     /**
      * The components used for each slot inside.

@@ -18,11 +18,6 @@ external interface LabelDisplayedRowsArgs {
 
 external interface TablePaginationUnstyledOwnProps : react.Props {
     /**
-     * Override or extend the styles applied to the component.
-     */
-    var classes: TablePaginationUnstyledClasses?
-
-    /**
      * @ignore
      */
     var colSpan: Number?
@@ -32,18 +27,7 @@ external interface TablePaginationUnstyledOwnProps : react.Props {
      * Either a string to use a HTML element or a component.
      * @default {}
      */
-    var slots: Slots?
-
-    interface Slots {
-        var root: react.ElementType<*>?
-        var actions: react.ElementType<*>?
-        var select: react.ElementType<*>?
-        var selectLabel: react.ElementType<*>?
-        var menuItem: react.ElementType<*>?
-        var displayedRows: react.ElementType<*>?
-        var toolbar: react.ElementType<*>?
-        var spacer: react.ElementType<*>?
-    }
+    var slots: TablePaginationUnstyledSlots?
 
     /**
      * The props used for each slot inside the TablePagination.
@@ -52,7 +36,7 @@ external interface TablePaginationUnstyledOwnProps : react.Props {
     var slotProps: SlotProps?
 
     interface SlotProps {
-        var root: react.Props? /* SlotComponentProps<'div', TablePaginationUnstyledRootSlotPropsOverrides, TablePaginationUnstyledOwnerState> */
+        var root: react.Props? /* SlotComponentProps<'td', TablePaginationUnstyledRootSlotPropsOverrides, TablePaginationUnstyledOwnerState> */
         var actions: react.Props? /* SlotComponentProps<'div', TablePaginationUnstyledActionsSlotPropsOverrides, TablePaginationUnstyledOwnerState> */
         var select: react.Props? /* SlotComponentProps<'select', TablePaginationUnstyledSelectSlotPropsOverrides, TablePaginationUnstyledOwnerState> */
         var selectLabel: react.Props? /* SlotComponentProps<'p', TablePaginationUnstyledSelectLabelSlotPropsOverrides, TablePaginationUnstyledOwnerState> */
@@ -145,4 +129,54 @@ external interface TablePaginationUnstyledOwnProps : react.Props {
      * Id of the select element within the pagination.
      */
     var selectId: String?
+}
+
+external interface TablePaginationUnstyledSlots {
+    /**
+     * The component used to render the root.
+     * @default 'td'
+     */
+    var root: react.ElementType<*>?
+
+    /**
+     * The component used to render the actions.
+     * @default TablePaginationActionsUnstyled
+     */
+    var actions: react.ElementType<*>?
+
+    /**
+     * The component used to render the select.
+     * @default 'select'
+     */
+    var select: react.ElementType<*>?
+
+    /**
+     * The component used to render the select label.
+     * @default 'p'
+     */
+    var selectLabel: react.ElementType<*>?
+
+    /**
+     * The component used to render the menu item.
+     * @default 'option'
+     */
+    var menuItem: react.ElementType<*>?
+
+    /**
+     * The component used to render the displayed rows.
+     * @default 'p'
+     */
+    var displayedRows: react.ElementType<*>?
+
+    /**
+     * The component used to render the toolbar.
+     * @default 'div'
+     */
+    var toolbar: react.ElementType<*>?
+
+    /**
+     * The component used to render the spacer.
+     * @default 'div'
+     */
+    var spacer: react.ElementType<*>?
 }

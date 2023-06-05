@@ -31,13 +31,7 @@ external interface OptionGroupUnstyledOwnProps :
      * Either a string to use a HTML element or a component.
      * @default {}
      */
-    var slots: Slots?
-
-    interface Slots {
-        var root: react.ElementType<*>?
-        var label: react.ElementType<*>?
-        var list: react.ElementType<*>?
-    }
+    var slots: OptionGroupUnstyledSlots?
 
     /**
      * The props used for each slot inside the Input.
@@ -50,4 +44,24 @@ external interface OptionGroupUnstyledOwnProps :
         var label: react.Props? /* SlotComponentProps<'span', OptionGroupUnstyledLabelSlotPropsOverrides, OptionGroupUnstyledOwnerState> */
         var list: react.Props? /* SlotComponentProps<'ul', OptionGroupUnstyledListSlotPropsOverrides, OptionGroupUnstyledOwnerState> */
     }
+}
+
+external interface OptionGroupUnstyledSlots {
+    /**
+     * The component used to render the root.
+     * @default 'li'
+     */
+    var root: react.ElementType<*>?
+
+    /**
+     * The component used to render the label.
+     * @default 'span'
+     */
+    var label: react.ElementType<*>?
+
+    /**
+     * The component used to render the list.
+     * @default 'ul'
+     */
+    var list: react.ElementType<*>?
 }
