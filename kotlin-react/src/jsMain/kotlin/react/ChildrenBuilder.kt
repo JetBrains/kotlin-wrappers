@@ -70,7 +70,7 @@ sealed interface ChildrenBuilder {
         )
     }
 
-    operator fun <P, T> ElementType<P>.invoke(
+    operator fun <T, P> ElementType<P>.invoke(
         value: T,
         block: @ReactDsl P.() -> Unit,
     ) where P : PropsWithValue<T>,
