@@ -1,7 +1,19 @@
 package react
 
+import js.core.jso
+
 fun <P : Props> ElementType<P>.create(): ReactElement<P> =
     createElement(this)
+
+fun <T, P : PropsWithValue<T>> ElementType<P>.create(
+    value: T,
+): ReactElement<P> =
+    createElement(
+        type = this,
+        props = jso {
+            this.value = value
+        }
+    )
 
 fun <P> ElementType<P>.create(
     block: @ReactDsl P.() -> Unit,
