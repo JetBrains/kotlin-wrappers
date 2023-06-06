@@ -4,6 +4,7 @@
 
 package remix.run.router
 
+import web.window.Window
 
 /**
  * Initialization options for createRouter
@@ -21,4 +22,5 @@ sealed external interface RouterInit {
     var mapRouteProperties: MapRoutePropertiesFunction?
     var future: FutureConfig?
     var hydrationData: HydrationState?
+    var window: Window?
 }
