@@ -6,6 +6,6 @@ fun <T : Any, P : PropsWithRef<T>> ForwardRef(
         forwardedRef: Ref<T>?,
     ) -> Unit,
 ): ForwardRefExoticComponent<P> =
-    rawForwardRef { props, ref ->
-        createElementOrNull { block(props, ref) }
+    rawForwardRef { props, forwardedRef ->
+        createElementOrNull { block(props, forwardedRef) }
     }
