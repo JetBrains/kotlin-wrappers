@@ -5,7 +5,7 @@
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
-package web.authentication
+package web.authn
 
 // language=JavaScript
 @JsName("""(/*union*/{crossPlatform: 'cross-platform', platform: 'platform'}/*union*/)""")

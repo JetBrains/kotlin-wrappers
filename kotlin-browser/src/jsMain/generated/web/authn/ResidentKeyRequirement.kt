@@ -5,14 +5,14 @@
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
-package web.authentication
+package web.authn
 
 // language=JavaScript
 @JsName("""(/*union*/{discouraged: 'discouraged', preferred: 'preferred', required: 'required'}/*union*/)""")
-sealed external interface UserVerificationRequirement {
+sealed external interface ResidentKeyRequirement {
     companion object {
-        val discouraged: UserVerificationRequirement
-        val preferred: UserVerificationRequirement
-        val required: UserVerificationRequirement
+        val discouraged: ResidentKeyRequirement
+        val preferred: ResidentKeyRequirement
+        val required: ResidentKeyRequirement
     }
 }

@@ -5,7 +5,7 @@
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
-package web.authentication
+package web.authn
 
 // language=JavaScript
 @JsName("""(/*union*/{ble: 'ble', hybrid: 'hybrid', internal: 'internal', nfc: 'nfc', usb: 'usb'}/*union*/)""")
