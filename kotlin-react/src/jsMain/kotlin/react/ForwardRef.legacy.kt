@@ -1,5 +1,6 @@
 package react
 
+@Deprecated("Legacy API. Please use `ForwardRef` factory with `props` only parameter in lambda")
 fun <T : Any, P : PropsWithRef<T>> ForwardRef(
     block: ChildrenBuilder.(
         props: P,
