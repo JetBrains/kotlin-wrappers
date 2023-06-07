@@ -3,8 +3,9 @@
 package web.credentials
 
 import web.abort.AbortSignal
+import web.authn.PublicKeyCredentialCreationOptions
 
 sealed external interface CredentialCreationOptions {
-    var publicKey: Any /* PublicKeyCredentialCreationOptions */?
+    var publicKey: PublicKeyCredentialCreationOptions?
     var signal: AbortSignal?
 }
