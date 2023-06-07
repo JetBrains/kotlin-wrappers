@@ -5,6 +5,7 @@ package web.navigator
 import js.core.ReadonlyArray
 import js.core.Void
 import web.clipboard.Clipboard
+import web.credentials.CredentialsContainer
 import web.gamepad.Gamepad
 import web.geolocation.Geolocation
 import web.http.BodyInit
@@ -39,7 +40,7 @@ sealed external class Navigator :
     val clipboard: Clipboard
 
     /** Available only in secure contexts. */
-    val credentials: dynamic /* CredentialsContainer */
+    val credentials: CredentialsContainer
     val doNotTrack: String?
     val geolocation: Geolocation
     val maxTouchPoints: Int
