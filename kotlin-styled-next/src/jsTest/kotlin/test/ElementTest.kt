@@ -32,6 +32,31 @@ class ElementTest : TestBase() {
         )
     }
 
+    @Test
+    fun emptyCssNoClassname() = runTest {
+        val styledComponent = fc<Props> {
+            styledSpan {
+                css {}
+            }
+        }
+        val styledElement = clearAndInject(styledComponent)
+        assertEquals("", styledElement.className)
+    }
+
+    @Test
+    fun emptyCssClassnameAdded() = runTest {
+        val className = "className"
+        val styledComponent = fc<Props> {
+            styledSpan {
+                css {
+                    +className
+                }
+            }
+        }
+        val styledElement = clearAndInject(styledComponent)
+        assertEquals(className, styledElement.className)
+    }
+
 
     @Test
     fun innerElementPseudoClass() = runTest {

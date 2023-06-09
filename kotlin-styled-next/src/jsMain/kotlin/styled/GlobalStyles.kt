@@ -155,9 +155,12 @@ object GlobalStyles {
             info.usedBy++
             CssInfo(isFresh = false, info.className)
         } else {
-            val className = "ksc-$incrementedClassName"
+            var className = "ksc-$incrementedClassName"
             val selector = ".$className"
             val rules = css.getCssRules(selector)
+            if (rules.isEmpty()) {
+                className = ""
+            }
             val groupId = sheet.scheduleToInject(rules)
             styledClasses[css] = UsedCssInfo(className, 1, groupId)
             CssInfo(isFresh = true, className)
