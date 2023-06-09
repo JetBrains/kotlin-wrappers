@@ -138,13 +138,10 @@ internal fun customStyled(type: dynamic): ElementType<StyledProps> {
         }
 
         val newProps = clone(props)
-        if (classes.isNotEmpty()) {
-            className = "$className $classes"
+        className = listOf(props.className?.toString(), className, classes).filter { !it.isNullOrEmpty() }.joinToString(" ")
+        if (className.isNotEmpty()) {
+            newProps.className = web.cssom.ClassName(className)
         }
-        if (props.className != undefined) {
-            className = "${props.className} $className"
-        }
-        newProps.className = web.cssom.ClassName(className)
         newProps.ref = rRef
         delete(newProps.css)
         delete(newProps.classes)
