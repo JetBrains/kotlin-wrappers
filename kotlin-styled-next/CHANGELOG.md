@@ -1,3 +1,7 @@
+## 1.2.3
+
+Do not assign a generated class name (`ksc-XXX`) if the `css` block is empty.
+
 ## 1.2.2
 
 It is now possible to have multiple `StyleSheet` objects with the same name, name clashes will be resolved automatically.
