@@ -8,6 +8,8 @@
 
 package cesium
 
+import js.errors.JsError
+
 /**
  * Constructs an exception object that is thrown due to a developer error, e.g., invalid argument,
  * argument out of range, etc.  This exception should only be thrown during development;
@@ -23,7 +25,7 @@ package cesium
  * @property [message] The error message for this exception.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/DeveloperError.html">Online Documentation</a>
  */
-external class DeveloperError(val message: String = definedExternally) {
+external class DeveloperError(override val message: String = definedExternally) : JsError {
     /**
      * 'DeveloperError' indicating that this exception was thrown due to a developer error.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/DeveloperError.html#name">Online Documentation</a>
