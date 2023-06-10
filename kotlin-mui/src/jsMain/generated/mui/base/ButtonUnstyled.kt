@@ -20,7 +20,7 @@ external interface ButtonUnstyledOwnerState : ButtonUnstyledOwnProps {
  *
  * API:
  *
- * - [ButtonUnstyled API](https://mui.com/base/api/button-unstyled/)
+ * - [ButtonUnstyled API](https://mui.com/base/react-button/components-api/#button-unstyled)
  */
 @JsName("default")
 external val ButtonUnstyled: react.FC<ButtonUnstyledProps>

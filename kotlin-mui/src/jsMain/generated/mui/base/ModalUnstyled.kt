@@ -24,7 +24,7 @@ package mui.base
  *
  * API:
  *
- * - [ModalUnstyled API](https://mui.com/base/api/modal-unstyled/)
+ * - [ModalUnstyled API](https://mui.com/base/react-modal/components-api/#modal-unstyled)
  */
 @JsName("default")
 external val ModalUnstyled: react.FC<ModalUnstyledProps>

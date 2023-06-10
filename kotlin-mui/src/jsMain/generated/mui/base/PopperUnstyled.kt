@@ -14,7 +14,7 @@ package mui.base
  *
  * API:
  *
- * - [PopperUnstyled API](https://mui.com/base/api/popper-unstyled/)
+ * - [PopperUnstyled API](https://mui.com/base/react-popper/components-api/#popper-unstyled)
  */
 @JsName("default")
 external val PopperUnstyled: react.FC<PopperUnstyledProps>

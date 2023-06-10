@@ -40,4 +40,7 @@ external interface SelectClasses {
 
     /** Styles applied to the underlying native input component. */
     var nativeInput: ClassName
+
+    /** State class applied to the root element if `error={true}`. */
+    var error: ClassName
 }

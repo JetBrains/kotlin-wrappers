@@ -13,7 +13,7 @@ package mui.base
  *
  * API:
  *
- * - [BadgeUnstyled API](https://mui.com/base/api/badge-unstyled/)
+ * - [BadgeUnstyled API](https://mui.com/base/react-badge/components-api/#badge-unstyled)
  */
 @JsName("default")
 external val BadgeUnstyled: react.FC<BadgeUnstyledProps>

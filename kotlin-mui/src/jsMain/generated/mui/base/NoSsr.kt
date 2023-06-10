@@ -21,7 +21,7 @@ package mui.base
  *
  * API:
  *
- * - [NoSsr API](https://mui.com/base/api/no-ssr/)
+ * - [NoSsr API](https://mui.com/base/react-no-ssr/components-api/#no-ssr)
  */
 @JsName("default")
 external val NoSsr: react.FC<NoSsrProps>

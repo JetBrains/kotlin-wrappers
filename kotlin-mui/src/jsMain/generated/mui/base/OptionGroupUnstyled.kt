@@ -14,7 +14,7 @@ package mui.base
  *
  * API:
  *
- * - [OptionGroupUnstyled API](https://mui.com/base/api/option-group-unstyled/)
+ * - [OptionGroupUnstyled API](https://mui.com/base/react-select/components-api/#option-group-unstyled)
  */
 @JsName("default")
 external val OptionGroupUnstyled: react.FC<OptionGroupUnstyledProps>
