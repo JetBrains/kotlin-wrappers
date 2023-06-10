@@ -9,6 +9,7 @@ private val STRICT_VERSION_REQUIRED = setOf(
     "@mui/icons-material",
     "@mui/lab",
     "@mui/x-date-pickers",
+
     // TODO: Remove after issue fix
     //  Details: https://github.com/remix-run/react-router/issues/10579
     "react-router",
