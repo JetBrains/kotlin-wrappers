@@ -64,7 +64,7 @@ package node.url
  * string, an `Error` is thrown.
  * * `result` is returned.
  * @since v0.1.25
- * @deprecated Legacy: Use the WHATWG URL API instead.
+ * @legacy Use the WHATWG URL API instead.
  * @param urlObject A URL object (as returned by `url.parse()` or constructed otherwise). If a string, it is converted to an object by passing it to `url.parse()`.
  */
 external fun format(
@@ -133,7 +133,7 @@ external fun format(
  * string, an `Error` is thrown.
  * * `result` is returned.
  * @since v0.1.25
- * @deprecated Legacy: Use the WHATWG URL API instead.
+ * @legacy Use the WHATWG URL API instead.
  * @param urlObject A URL object (as returned by `url.parse()` or constructed otherwise). If a string, it is converted to an object by passing it to `url.parse()`.
  */
 external fun format(

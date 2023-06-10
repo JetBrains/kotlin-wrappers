@@ -15,7 +15,7 @@ package node.test
 external fun it(
     name: String = definedExternally,
     options: TestOptions = definedExternally,
-    fn: ItFn = definedExternally,
+    fn: TestFn = definedExternally,
 )
 
 
@@ -29,7 +29,7 @@ external fun it(
  */
 external fun it(
     name: String = definedExternally,
-    fn: ItFn = definedExternally,
+    fn: TestFn = definedExternally,
 )
 
 
@@ -43,5 +43,5 @@ external fun it(
  */
 external fun it(
     options: TestOptions = definedExternally,
-    fn: ItFn = definedExternally,
+    fn: TestFn = definedExternally,
 )

@@ -33,7 +33,7 @@ package node.url
  * resolve('http://example.com/one', '/two'); // 'http://example.com/two'
  * ```
  * @since v0.1.25
- * @deprecated Legacy: Use the WHATWG URL API instead.
+ * @legacy Use the WHATWG URL API instead.
  * @param from The base URL to use if `to` is a relative URL.
  * @param to The target URL to resolve.
  */
