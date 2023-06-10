@@ -8,6 +8,8 @@
 
 package cesium
 
+import js.errors.JsError
+
 /**
  * Constructs an exception object that is thrown due to an error that can occur at runtime, e.g.,
  * out of memory, could not compile shader, etc.  If a function may throw this
@@ -22,7 +24,7 @@ package cesium
  * @property [message] The error message for this exception.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/RuntimeError.html">Online Documentation</a>
  */
-external class RuntimeError(val message: String = definedExternally) {
+external class RuntimeError(override val message: String = definedExternally) : JsError {
     /**
      * 'RuntimeError' indicating that this exception was thrown due to a runtime error.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/RuntimeError.html#name">Online Documentation</a>
