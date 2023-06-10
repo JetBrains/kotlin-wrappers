@@ -33,6 +33,9 @@ external interface FormControlUnstyledOwnProps : react.PropsWithClassName {
      */
     var error: Boolean?
 
+    /**
+     * Callback fired when the form element's value is modified.
+     */
     var onChange: react.dom.events.ChangeEventHandler<NativeFormControlElement>?
 
     /**
@@ -58,6 +61,9 @@ external interface FormControlUnstyledOwnProps : react.PropsWithClassName {
      */
     var slots: FormControlUnstyledSlots?
 
+    /**
+     * The value of the form element.
+     */
     var value: Any?
 }
 

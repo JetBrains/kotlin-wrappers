@@ -13,7 +13,7 @@ package mui.base
  *
  * API:
  *
- * - [InputUnstyled API](https://mui.com/base/api/input-unstyled/)
+ * - [InputUnstyled API](https://mui.com/base/react-input/components-api/#input-unstyled)
  */
 @JsName("default")
 external val InputUnstyled: react.FC<InputUnstyledProps>

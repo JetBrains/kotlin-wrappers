@@ -35,7 +35,7 @@ package mui.base
  *
  * API:
  *
- * - [FormControlUnstyled API](https://mui.com/base/api/form-control-unstyled/)
+ * - [FormControlUnstyled API](https://mui.com/base/react-form-control/components-api/#form-control-unstyled)
  */
 @JsName("default")
 external val FormControlUnstyled: react.FC<FormControlUnstyledProps>

@@ -13,7 +13,7 @@ package mui.base
  *
  * API:
  *
- * - [TabUnstyled API](https://mui.com/base/api/tab-unstyled/)
+ * - [TabUnstyled API](https://mui.com/base/react-tabs/components-api/#tab-unstyled)
  */
 @JsName("default")
 external val TabUnstyled: react.FC<TabUnstyledProps>

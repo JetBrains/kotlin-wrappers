@@ -14,7 +14,7 @@ package mui.base
  *
  * API:
  *
- * - [SwitchUnstyled API](https://mui.com/base/api/switch-unstyled/)
+ * - [SwitchUnstyled API](https://mui.com/base/react-switch/components-api/#switch-unstyled)
  */
 @JsName("default")
 external val SwitchUnstyled: react.FC<SwitchUnstyledProps>

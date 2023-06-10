@@ -13,7 +13,7 @@ package mui.base
  *
  * API:
  *
- * - [SliderUnstyled API](https://mui.com/base/api/slider-unstyled/)
+ * - [SliderUnstyled API](https://mui.com/base/react-slider/components-api/#slider-unstyled)
  */
 @JsName("default")
 external val SliderUnstyled: react.FC<SliderUnstyledProps>

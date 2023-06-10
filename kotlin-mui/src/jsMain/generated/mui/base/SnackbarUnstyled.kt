@@ -13,7 +13,7 @@ package mui.base
  *
  * API:
  *
- * - [SnackbarUnstyled API](https://mui.com/base/api/snackbar-unstyled/)
+ * - [SnackbarUnstyled API](https://mui.com/base/react-snackbar/components-api/#snackbar-unstyled)
  */
 @JsName("default")
 external val SnackbarUnstyled: react.FC<SnackbarUnstyledProps>

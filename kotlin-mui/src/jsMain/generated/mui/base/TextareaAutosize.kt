@@ -14,7 +14,7 @@ package mui.base
  *
  * API:
  *
- * - [TextareaAutosize API](https://mui.com/base/api/textarea-autosize/)
+ * - [TextareaAutosize API](https://mui.com/base/react-textarea-autosize/components-api/#textarea-autosize)
  */
 @JsName("default")
 external val TextareaAutosize: react.FC<TextareaAutosizeProps>
