@@ -8,9 +8,9 @@ import js.core.ReadonlyArray
 import node.ReadOnlyDict
 import node.net.Socket
 
-external class Agent {
+external class Agent : node.events.EventEmitter {
     /**
-     * By default set to 256\. For agents with `keepAlive` enabled, this
+     * By default set to 256. For agents with `keepAlive` enabled, this
      * sets the maximum number of sockets that will be left open in the free
      * state.
      * @since v0.11.7
