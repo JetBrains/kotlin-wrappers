@@ -1,7 +1,6 @@
 // Automatically generated - do not modify!
 
 @file:JsModule("@mui/icons-material/AodTwoTone")
-@file:JsNonModule
 
 package mui.icons.material
 

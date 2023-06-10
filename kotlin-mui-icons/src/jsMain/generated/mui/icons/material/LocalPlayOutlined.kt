@@ -1,7 +1,6 @@
 // Automatically generated - do not modify!
 
 @file:JsModule("@mui/icons-material/LocalPlayOutlined")
-@file:JsNonModule
 
 package mui.icons.material
 
