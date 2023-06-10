@@ -5,7 +5,12 @@ package mui.base
 import web.cssom.ClassName
 
 external interface TabsListUnstyledClasses {
+    /** Class name applied to the root element. */
     var root: ClassName
+
+    /** Class name applied to the root element if `orientation='horizontal'`. */
     var horizontal: ClassName
+
+    /** Class name applied to the root element if `orientation='vertical'`. */
     var vertical: ClassName
 }

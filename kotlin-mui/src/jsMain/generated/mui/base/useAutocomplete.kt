@@ -67,6 +67,9 @@ external interface UseAutocompleteProps<T> : react.Props {
      * If `true`, the selected option becomes the value of the input
      * when the Autocomplete loses focus unless the user chooses
      * a different option or changes the character string in the input.
+     *
+     * When using `freeSolo` mode, the typed value will be the input value
+     * if the Autocomplete loses focus without highlighting an option.
      * @default false
      */
     var autoSelect: Boolean?

@@ -37,7 +37,7 @@ external interface TablePaginationUnstyledOwnProps : react.Props {
 
     interface SlotProps {
         var root: react.Props? /* SlotComponentProps<'td', TablePaginationUnstyledRootSlotPropsOverrides, TablePaginationUnstyledOwnerState> */
-        var actions: react.Props? /* SlotComponentProps<'div', TablePaginationUnstyledActionsSlotPropsOverrides, TablePaginationUnstyledOwnerState> */
+        var actions: react.Props? /* SlotComponentProps<typeof TablePaginationActionsUnstyled, TablePaginationUnstyledActionsSlotPropsOverrides, TablePaginationUnstyledOwnerState> */
         var select: react.Props? /* SlotComponentProps<'select', TablePaginationUnstyledSelectSlotPropsOverrides, TablePaginationUnstyledOwnerState> */
         var selectLabel: react.Props? /* SlotComponentProps<'p', TablePaginationUnstyledSelectLabelSlotPropsOverrides, TablePaginationUnstyledOwnerState> */
         var menuItem: react.Props? /* SlotComponentProps<'option', TablePaginationUnstyledMenuItemSlotPropsOverrides, TablePaginationUnstyledOwnerState> */

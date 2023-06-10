@@ -17,13 +17,13 @@ external interface SwitchUnstyledClasses {
     /** Class applied to the thumb element */
     var thumb: ClassName
 
-    /** Class applied to the root element if the switch is checked */
+    /** State class applied to the root element if the switch is checked */
     var checked: ClassName
 
-    /** Class applied to the root element if the switch is disabled */
+    /** State class applied to the root element if the switch is disabled */
     var disabled: ClassName
 
-    /** Class applied to the root element if the switch has visible focus */
+    /** State class applied to the root element if the switch has visible focus */
     var focusVisible: ClassName
 
     /** Class applied to the root element if the switch is read-only */
