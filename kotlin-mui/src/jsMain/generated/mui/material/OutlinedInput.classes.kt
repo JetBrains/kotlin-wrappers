@@ -49,4 +49,7 @@ external interface OutlinedInputClasses {
 
     /** Styles applied to the input element if `endAdornment` is provided. */
     var inputAdornedEnd: ClassName
+
+    /** Styles applied to the input element if `type="search"`. */
+    var inputTypeSearch: ClassName
 }
