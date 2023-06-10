@@ -4,8 +4,21 @@ import org.jetbrains.kotlin.gradle.targets.js.npm.DevNpmDependencyExtension
 import org.jetbrains.kotlin.gradle.targets.js.npm.NpmDependency
 import org.jetbrains.kotlin.gradle.targets.js.npm.NpmDependencyExtension
 
-private fun Project.npmVersion(name: String): String =
-    "^${version(name)}"
+// TODO: remove after issue fix
+//  https://github.com/remix-run/react-router/issues/10579
+private val STRICT_VERSION_REQUIRED = setOf(
+    "react-router",
+    "react-router-dom",
+)
+
+private fun Project.npmVersion(name: String): String {
+    val version = version(name)
+    if (name in STRICT_VERSION_REQUIRED) {
+        return version
+    }
+
+    return "^$version"
+}
 
 fun Project.npmv(name: String): NpmDependency {
     val npm = dependencies.the<NpmDependencyExtension>()
