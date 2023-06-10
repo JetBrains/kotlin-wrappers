@@ -133,49 +133,49 @@ external interface TablePaginationUnstyledOwnProps : react.Props {
 
 external interface TablePaginationUnstyledSlots {
     /**
-     * The component used to render the root.
+     * The component that renders the root.
      * @default 'td'
      */
     var root: react.ElementType<*>?
 
     /**
-     * The component used to render the actions.
+     * The component that renders the actions.
      * @default TablePaginationActionsUnstyled
      */
     var actions: react.ElementType<*>?
 
     /**
-     * The component used to render the select.
+     * The component that renders the select.
      * @default 'select'
      */
     var select: react.ElementType<*>?
 
     /**
-     * The component used to render the select label.
+     * The component that renders the select label.
      * @default 'p'
      */
     var selectLabel: react.ElementType<*>?
 
     /**
-     * The component used to render the menu item.
+     * The component that renders the menu item.
      * @default 'option'
      */
     var menuItem: react.ElementType<*>?
 
     /**
-     * The component used to render the displayed rows.
+     * The component that renders the displayed rows.
      * @default 'p'
      */
     var displayedRows: react.ElementType<*>?
 
     /**
-     * The component used to render the toolbar.
+     * The component that renders the toolbar.
      * @default 'div'
      */
     var toolbar: react.ElementType<*>?
 
     /**
-     * The component used to render the spacer.
+     * The component that renders the spacer.
      * @default 'div'
      */
     var spacer: react.ElementType<*>?

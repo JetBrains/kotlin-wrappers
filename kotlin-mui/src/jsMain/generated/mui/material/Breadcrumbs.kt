@@ -24,6 +24,31 @@ external interface BreadcrumbsProps :
     var classes: BreadcrumbsClasses?
 
     /**
+     * The components used for each slot inside the Breadcumb.
+     * Either a string to use a HTML element or a component.
+     * @default {}
+     */
+    var slots: Slots?
+
+    interface Slots {
+        var CollapsedIcon: react.ElementType<*>?
+    }
+
+    /**
+     * The props used for each slot inside the Breadcumb.
+     * @default {}
+     */
+    var slotProps: SlotProps?
+
+    interface SlotProps {
+        var collapsedIcon: react.Props? /* SlotComponentProps<
+  typeof SvgIcon,
+  BreadcrumbsCollapsedIconSlotPropsOverrides,
+  BreadcrumbsOwnerState
+> */
+    }
+
+    /**
      * Override the default label for the expand button.
      *
      * For localization purposes, you can use the provided [translations](/material-ui/guides/localization/).
@@ -61,6 +86,10 @@ external interface BreadcrumbsProps :
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
     override var sx: SxProps<Theme>?
+}
+
+external interface BreadcrumbsOwnerState {
+    var expanded: Boolean
 }
 
 /**

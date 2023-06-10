@@ -57,6 +57,37 @@ external interface TabsProps :
     var classes: TabsClasses?
 
     /**
+     * The components used for each slot inside.
+     * @default {}
+     */
+    var slots: Slots?
+
+    interface Slots {
+        var StartScrollButtonIcon: react.ElementType<*>?
+        var EndScrollButtonIcon: react.ElementType<*>?
+    }
+
+    /**
+     * The extra props for the slot components.
+     * You can override the existing props or add new ones.
+     * @default {}
+     */
+    var slotProps: SlotProps?
+
+    interface SlotProps {
+        var startScrollButtonIcon: react.Props? /* SlotComponentProps<
+  typeof SvgIcon,
+  TabsStartScrollButtonIconSlotPropsOverrides,
+  TabsOwnerState
+> */
+        var endScrollButtonIcon: react.Props? /* SlotComponentProps<
+  typeof SvgIcon,
+  TabsEndScrollButtonIconSlotPropsOverrides,
+  TabsOwnerState
+> */
+    }
+
+    /**
      * Determines the color of the indicator.
      * @default 'primary'
      */
@@ -148,6 +179,22 @@ external interface TabsProps :
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
     override var sx: SxProps<Theme>?
+}
+
+external interface TabsOwnerState {
+    var vertical: Boolean
+
+    var fixed: Boolean
+
+    var hideScrollbar: Boolean
+
+    var scrollableX: Boolean
+
+    var scrollableY: Boolean
+
+    var centered: Boolean
+
+    var scrollButtonsHideMobile: Boolean
 }
 
 external interface TabsActions {

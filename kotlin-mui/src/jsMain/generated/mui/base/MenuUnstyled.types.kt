@@ -75,13 +75,13 @@ external interface MenuUnstyledOwnProps :
 
 external interface MenuUnstyledSlots {
     /**
-     * The component used to render the root.
+     * The component that renders the root.
      * @default PopperUnstyled
      */
     var root: react.ElementType<*>?
 
     /**
-     * The component used to render the listbox.
+     * The component that renders the listbox.
      * @default 'ul'
      */
     var listbox: react.ElementType<*>?

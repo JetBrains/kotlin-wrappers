@@ -132,13 +132,13 @@ external interface ModalUnstyledOwnProps : react.Props {
 
 external interface ModalUnstyledSlots {
     /**
-     * The component used to render the root.
+     * The component that renders the root.
      * @default 'div'
      */
     var root: react.ElementType<*>?
 
     /**
-     * The component used to render the backdrop.
+     * The component that renders the backdrop.
      */
     var backdrop: react.ElementType<*>?
 }

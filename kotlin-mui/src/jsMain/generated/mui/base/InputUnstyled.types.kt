@@ -131,19 +131,19 @@ external interface InputUnstyledOwnProps :
 
 external interface InputUnstyledSlots {
     /**
-     * The component used to render the root.
+     * The component that renders the root.
      * @default 'div'
      */
     var root: react.ElementType<*>?
 
     /**
-     * The component used to render the input.
+     * The component that renders the input.
      * @default 'input'
      */
     var input: react.ElementType<*>?
 
     /**
-     * The component used to render the textarea.
+     * The component that renders the textarea.
      * @default 'textarea'
      */
     var textarea: react.ElementType<*>?

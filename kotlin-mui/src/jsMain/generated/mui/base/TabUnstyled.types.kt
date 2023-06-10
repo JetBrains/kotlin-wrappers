@@ -38,7 +38,7 @@ external interface TabUnstyledOwnProps :
 
 external interface TabUnstyledSlots {
     /**
-     * The component used to render the root.
+     * The component that renders the root.
      * @default 'button'
      */
     var root: react.ElementType<*>?

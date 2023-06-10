@@ -129,7 +129,7 @@ external interface PopperUnstyledOwnProps : react.Props {
 
 external interface PopperUnstyledSlots {
     /**
-     * The component used to render the root.
+     * The component that renders the root.
      * @default 'div'
      */
     var root: react.ElementType<*>?

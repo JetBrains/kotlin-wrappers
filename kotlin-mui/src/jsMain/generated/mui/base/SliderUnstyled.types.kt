@@ -225,48 +225,48 @@ external interface SliderUnstyledOwnProps : react.Props {
 
 external interface SliderUnstyledSlots {
     /**
-     * The component used to render the root.
+     * The component that renders the root.
      * @default 'span'
      */
     var root: react.ElementType<*>?
 
     /**
-     * The component used to render the track.
+     * The component that renders the track.
      * @default 'span'
      */
     var track: react.ElementType<*>?
 
     /**
-     * The component used to render the rail.
+     * The component that renders the rail.
      * @default 'span'
      */
     var rail: react.ElementType<*>?
 
     /**
-     * The component used to render the thumb.
+     * The component that renders the thumb.
      * @default 'span'
      */
     var thumb: react.ElementType<*>?
 
     /**
-     * The component used to render the mark.
+     * The component that renders the mark.
      * @default 'span'
      */
     var mark: react.ElementType<*>?
 
     /**
-     * The component used to render the mark label.
+     * The component that renders the mark label.
      * @default 'span'
      */
     var markLabel: react.ElementType<*>?
 
     /**
-     * The component used to render the value label.
+     * The component that renders the value label.
      */
     var valueLabel: react.ElementType<*>?
 
     /**
-     * The component used to render the input.
+     * The component that renders the input.
      * @default 'input'
      */
     var input: react.ElementType<*>?
