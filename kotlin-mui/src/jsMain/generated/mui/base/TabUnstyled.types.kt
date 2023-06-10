@@ -9,7 +9,7 @@ external interface TabUnstyledProps :
 external interface TabUnstyledOwnProps :
     ButtonUnstyledOwnProps {
     /**
-     * You can provide your own value. Otherwise, we fall back to the child position index.
+     * You can provide your own value. Otherwise, it falls back to the child position index.
      */
     var value: dynamic
 

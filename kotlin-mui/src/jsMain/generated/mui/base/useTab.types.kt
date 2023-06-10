@@ -4,7 +4,7 @@ package mui.base
 
 external interface UseTabParameters {
     /**
-     * You can provide your own value. Otherwise, we fall back to the child position index.
+     * You can provide your own value. Otherwise, it falls back to the child position index.
      */
     var value: dynamic
 
@@ -15,6 +15,10 @@ external interface UseTabParameters {
 
     var onClick: react.dom.events.MouseEventHandler<*>?
 
+    /**
+     * If `true`, the component is disabled.
+     * @default false
+     */
     var disabled: Boolean?
 
     var onFocus: react.dom.events.FocusEventHandler<*>?

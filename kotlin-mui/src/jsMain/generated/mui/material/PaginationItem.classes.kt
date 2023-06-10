@@ -41,10 +41,10 @@ external interface PaginationItemClasses {
     /** Styles applied to the root element if `type="start-ellipsis"` or `type="end-ellipsis"`. */
     var ellipsis: ClassName
 
-    /** Styles applyed to the root element if `type="first"` or type="last". */
+    /** Styles applied to the root element if `type="first"` or type="last". */
     var firstLast: ClassName
 
-    /** Styles applyed to the root element if `type="previous"` or type="next". */
+    /** Styles applied to the root element if `type="previous"` or type="next". */
     var previousNext: ClassName
 
     /** State class applied to the root element if keyboard focused. */
