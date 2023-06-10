@@ -123,7 +123,7 @@ external interface SelectProps<T> :
 
     /**
      * Callback fired when the component requests to be closed.
-     * Use it in either controlled (see the `open` prop), or uncontrolled mode (to detect when the Select collapes).
+     * Use it in either controlled (see the `open` prop), or uncontrolled mode (to detect when the Select collapses).
      *
      * @param {object} event The event source of the callback.
      */

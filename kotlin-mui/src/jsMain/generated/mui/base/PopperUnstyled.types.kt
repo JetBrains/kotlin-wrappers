@@ -123,8 +123,6 @@ external interface PopperUnstyledOwnProps : react.Props {
      * @default false
      */
     var transition: Boolean?
-
-    var ownerState: Any?
 }
 
 external interface PopperUnstyledSlots {
