@@ -1,7 +1,6 @@
 // Automatically generated - do not modify!
 
 @file:JsModule("@mui/icons-material/FormatAlignCenterRounded")
-@file:JsNonModule
 
 package mui.icons.material
 

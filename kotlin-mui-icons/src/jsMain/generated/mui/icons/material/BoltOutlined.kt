@@ -1,7 +1,6 @@
 // Automatically generated - do not modify!
 
 @file:JsModule("@mui/icons-material/BoltOutlined")
-@file:JsNonModule
 
 package mui.icons.material
 

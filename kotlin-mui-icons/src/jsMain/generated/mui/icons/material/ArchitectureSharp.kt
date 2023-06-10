@@ -1,7 +1,6 @@
 // Automatically generated - do not modify!
 
 @file:JsModule("@mui/icons-material/ArchitectureSharp")
-@file:JsNonModule
 
 package mui.icons.material
 
