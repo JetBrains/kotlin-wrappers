@@ -53,7 +53,7 @@ external interface OptionUnstyledOwnProps<TValue> :
 
 external interface OptionUnstyledSlots {
     /**
-     * The component used to render the root.
+     * The component that renders the root.
      * @default 'li'
      */
     var root: react.ElementType<*>?

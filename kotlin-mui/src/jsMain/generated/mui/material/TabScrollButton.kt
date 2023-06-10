@@ -24,6 +24,37 @@ external interface TabScrollButtonProps :
     var classes: TabScrollButtonClasses?
 
     /**
+     * The components used for each slot inside.
+     * @default {}
+     */
+    var slots: Slots?
+
+    interface Slots {
+        var StartScrollButtonIcon: react.ElementType<*>?
+        var EndScrollButtonIcon: react.ElementType<*>?
+    }
+
+    /**
+     * The extra props for the slot components.
+     * You can override the existing props or add new ones.
+     * @default {}
+     */
+    var slotProps: SlotProps?
+
+    interface SlotProps {
+        var startScrollButtonIcon: react.Props? /* SlotComponentProps<
+  typeof SvgIcon,
+  TabScrollButtonStartIconSlotPropsOverrides,
+  TabScrollButtonOwnerState
+> */
+        var endScrollButtonIcon: react.Props? /* SlotComponentProps<
+  typeof SvgIcon,
+  TabScrollButtonEndIconSlotPropsOverrides,
+  TabScrollButtonOwnerState
+> */
+    }
+
+    /**
      * The direction the button should indicate.
      */
     var direction: TabScrollButtonDirection
@@ -43,6 +74,10 @@ external interface TabScrollButtonProps :
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
     override var sx: SxProps<Theme>?
+}
+
+external interface TabScrollButtonOwnerState {
+    var isRtl: Boolean
 }
 
 /**

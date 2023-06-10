@@ -56,13 +56,13 @@ external interface BadgeUnstyledOwnProps : react.PropsWithChildren {
 
 external interface BadgeUnstyledSlots {
     /**
-     * The component used to render the root.
+     * The component that renders the root.
      * @default 'span'
      */
     var root: react.ElementType<*>?
 
     /**
-     * The component used to render the badge.
+     * The component that renders the badge.
      * @default 'span'
      */
     var badge: react.ElementType<*>?

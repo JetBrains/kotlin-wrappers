@@ -37,25 +37,25 @@ external interface SwitchUnstyledOwnProps : react.PropsWithClassName {
 
 external interface SwitchUnstyledSlots {
     /**
-     * The component used to render the root.
+     * The component that renders the root.
      * @default 'span'
      */
     var root: react.ElementType<*>?
 
     /**
-     * The component used to render the input.
+     * The component that renders the input.
      * @default 'input'
      */
     var input: react.ElementType<*>?
 
     /**
-     * The component used to render the thumb.
+     * The component that renders the thumb.
      * @default 'span'
      */
     var thumb: react.ElementType<*>?
 
     /**
-     * The component used to render the track.
+     * The component that renders the track.
      * @default 'span'
      */
     var track: react.ElementType<*>?

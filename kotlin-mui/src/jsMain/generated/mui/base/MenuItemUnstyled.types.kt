@@ -57,7 +57,7 @@ external interface MenuItemUnstyledOwnProps :
 
 external interface MenuItemUnstyledSlots {
     /**
-     * The component used to render the root.
+     * The component that renders the root.
      * @default 'li'
      */
     var root: react.ElementType<*>?

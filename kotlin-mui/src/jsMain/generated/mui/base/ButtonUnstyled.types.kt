@@ -45,7 +45,7 @@ external interface ButtonUnstyledOwnProps :
 
 external interface ButtonUnstyledSlots {
     /**
-     * The component used to render the root.
+     * The component that renders the root.
      * @default props.href || props.to ? 'a' : 'button'
      */
     var root: react.ElementType<*>?

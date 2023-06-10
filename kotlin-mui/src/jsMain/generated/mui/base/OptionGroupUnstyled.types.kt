@@ -48,19 +48,19 @@ external interface OptionGroupUnstyledOwnProps :
 
 external interface OptionGroupUnstyledSlots {
     /**
-     * The component used to render the root.
+     * The component that renders the root.
      * @default 'li'
      */
     var root: react.ElementType<*>?
 
     /**
-     * The component used to render the label.
+     * The component that renders the label.
      * @default 'span'
      */
     var label: react.ElementType<*>?
 
     /**
-     * The component used to render the list.
+     * The component that renders the list.
      * @default 'ul'
      */
     var list: react.ElementType<*>?
