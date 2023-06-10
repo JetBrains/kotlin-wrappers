@@ -2,7 +2,7 @@
 
 # kotlin-react-router-dom
 
-Kotlin wrapper for [React Router DOM](https://reactrouter.com/en/main) library.
+Kotlin wrapper for the [React Router DOM](https://reactrouter.com/en/main) library.
 
 ### TODO:
 

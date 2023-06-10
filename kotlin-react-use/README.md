@@ -2,4 +2,4 @@
 
 # kotlin-react-use
 
-Kotlin wrapper for [react-use](https://github.com/streamich/react-use)
+Kotlin wrapper for [react-use](https://github.com/streamich/react-use).

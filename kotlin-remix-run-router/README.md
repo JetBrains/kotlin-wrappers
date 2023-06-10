@@ -2,7 +2,7 @@
 
 # kotlin-remix-run-router
 
-Kotlin wrapper for [React Router](https://remix.run/docs/en/v1/other-api/react-router) library.
+Kotlin wrapper for the [React Router](https://remix.run/docs/en/v1/other-api/react-router) library.
 
 ### TODO:
 

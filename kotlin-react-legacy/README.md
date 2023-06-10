@@ -2,7 +2,7 @@
 
 ## kotlin-react-legacy
 
-Kotlin wrapper for React library. Major version number of this wrapper matches that of React itself.
+Kotlin wrapper for the React library. The major version number of this wrapper matches that of React itself.
 
 ## kotlin-react vs kotlin-react-legacy
 

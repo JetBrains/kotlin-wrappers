@@ -2,7 +2,7 @@
 
 ## kotlin-redux
 
-Kotlin wrapper for Redux library. Major version number of this wrapper matches that of Redux itself.
+Kotlin wrapper for the Redux library. The major version number of this wrapper matches that of Redux itself.
 
 ### Maven
 
@@ -28,7 +28,7 @@ implementation("org.jetbrains.kotlin-wrappers:kotlin-redux:VERSION")
 
 ### Creating and using a store in Kotlin
 
-In Redux, the store is an object that contains state, which could be anything. In Kotlin, this is 
+In Redux, the store is an object that contains state, which could be anything. In Kotlin, this is
 no different. Just note that you must specify the preloaded state. Also, it is encouraged that you
 use the `rEnhancer` function to adapt Redux to Kotlin.
 
@@ -73,7 +73,7 @@ val unsubscribe = myStore.subscribe { println(myStore.state) }
 
 Middleware works as usual. However, if you are using `rEnhancer`, it is important to keep in mind the
 order in which you compose `rEnhancer` and `applyMiddleware`. If you specify `rEnhancer` first, then your
-middleware will be passed actions that `rEnhancer` has already processed. If you specify `rEnhancer` 
+middleware will be passed actions that `rEnhancer` has already processed. If you specify `rEnhancer`
 last, it will be passed your unprocessed `RActions`.
 
 ```kotlin
@@ -86,7 +86,7 @@ compose(applyMiddleware(someMiddleware), rEnhancer()) // Middleware works with R
 
 If you need to serialize `RActions` to JSON, you can do so using
 [kotlinx.serialization](https://github.com/Kotlin/kotlinx.serialization). Just mark the actions you
-want to serialize with `@Serializable`, and you can serialize and deserialize them in a type-safe 
+want to serialize with `@Serializable`, and you can serialize and deserialize them in a type-safe
 manner using `serializeAction()` and `deserializeAction()`:
 
 ```kotlin

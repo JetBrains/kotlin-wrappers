@@ -2,7 +2,7 @@
 
 # kotlin-tanstack-react-query-devtools
 
-Kotlin wrapper for [Tanstack React Query Devtools](https://tanstack.com/query/v4/docs/devtools) library.
+Kotlin wrapper for the [Tanstack React Query Devtools](https://tanstack.com/query/v4/docs/devtools) library.
 
 ### Internals
 

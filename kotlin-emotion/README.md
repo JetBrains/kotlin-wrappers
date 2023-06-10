@@ -2,4 +2,4 @@
 
 # kotlin-emotion
 
-Kotlin wrapper for [Emotion](https://emotion.sh/) library
+Kotlin wrapper for the [Emotion](https://emotion.sh/) library.

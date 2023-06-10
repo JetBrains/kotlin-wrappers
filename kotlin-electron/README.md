@@ -2,4 +2,4 @@
 
 # kotlin-electron
 
-Kotlin wrapper for [Electron](https://www.electronjs.org/) library.
+Kotlin wrapper for [Electron](https://www.electronjs.org/).

@@ -2,4 +2,4 @@
 
 # kotlin-react-select
 
-Kotlin wrapper for [React Select](https://github.com/JedWatson/react-select)
+Kotlin wrapper for [React Select](https://github.com/JedWatson/react-select).

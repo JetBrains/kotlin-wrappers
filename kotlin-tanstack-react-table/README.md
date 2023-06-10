@@ -2,7 +2,7 @@
 
 # kotlin-tanstack-react-table
 
-Kotlin wrapper for [Tanstack React Table](https://github.com/TanStack/table) library.
+Kotlin wrapper for the [Tanstack React Table](https://github.com/TanStack/table) library.
 
 ### Internals
 

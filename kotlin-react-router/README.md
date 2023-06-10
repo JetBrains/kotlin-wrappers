@@ -2,7 +2,7 @@
 
 # kotlin-react-router
 
-Kotlin wrapper for [React Router](https://reactrouter.com/en/main) library.
+Kotlin wrapper for the [React Router](https://reactrouter.com/en/main) library.
 
 ### TODO:
 

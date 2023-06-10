@@ -2,7 +2,7 @@
 
 ## kotlin-react-redux
 
-Kotlin wrapper for React Redux library. Major version number of this wrapper matches that of React Redux itself.
+Kotlin wrapper for the React Redux library. The major version number of this wrapper matches that of React Redux itself.
 
 ### Maven
 
@@ -36,7 +36,7 @@ provider(store) {
 }
 ```
 
-However, you may want to use `rConnect` to connect your components, because it allows you to use 
+However, you may want to use `rConnect` to connect your components, because it allows you to use
 type-safe builders instead of returning props objects. If you would like to just use `connect` as usual,
 you can do that too:
 
