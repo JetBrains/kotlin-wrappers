@@ -1,7 +1,6 @@
 // Automatically generated - do not modify!
 
 @file:JsModule("@mui/x-date-pickers/PickersDay")
-@file:JsNonModule
 
 @file:Suppress(
     "VIRTUAL_MEMBER_HIDDEN",

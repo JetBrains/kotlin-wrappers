@@ -1,7 +1,6 @@
 // Automatically generated - do not modify!
 
 @file:JsModule("@mui/material/SpeedDial")
-@file:JsNonModule
 
 package mui.material
 

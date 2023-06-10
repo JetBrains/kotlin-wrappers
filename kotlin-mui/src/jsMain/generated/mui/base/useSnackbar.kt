@@ -1,7 +1,6 @@
 // Automatically generated - do not modify!
 
 @file:JsModule("@mui/base/useSnackbar")
-@file:JsNonModule
 
 package mui.base
 

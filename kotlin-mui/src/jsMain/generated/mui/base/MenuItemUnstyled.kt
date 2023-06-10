@@ -1,7 +1,6 @@
 // Automatically generated - do not modify!
 
 @file:JsModule("@mui/base/MenuItemUnstyled")
-@file:JsNonModule
 
 package mui.base
 

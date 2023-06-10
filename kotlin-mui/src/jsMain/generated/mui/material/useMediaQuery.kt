@@ -1,7 +1,6 @@
 // Automatically generated - do not modify!
 
 @file:JsModule("@mui/material/useMediaQuery")
-@file:JsNonModule
 
 package mui.material
 

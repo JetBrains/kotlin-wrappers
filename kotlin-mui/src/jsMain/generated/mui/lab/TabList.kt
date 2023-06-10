@@ -1,7 +1,6 @@
 // Automatically generated - do not modify!
 
 @file:JsModule("@mui/lab/TabList")
-@file:JsNonModule
 
 package mui.lab
 

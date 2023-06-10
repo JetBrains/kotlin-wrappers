@@ -1,7 +1,6 @@
 // Automatically generated - do not modify!
 
 @file:JsModule("@mui/material/StepLabel")
-@file:JsNonModule
 
 package mui.material
 

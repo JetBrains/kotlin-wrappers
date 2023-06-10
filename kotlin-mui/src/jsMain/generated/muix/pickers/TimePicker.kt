@@ -1,7 +1,6 @@
 // Automatically generated - do not modify!
 
 @file:JsModule("@mui/x-date-pickers/TimePicker")
-@file:JsNonModule
 
 package muix.pickers
 

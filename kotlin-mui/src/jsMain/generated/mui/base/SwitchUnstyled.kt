@@ -1,7 +1,6 @@
 // Automatically generated - do not modify!
 
 @file:JsModule("@mui/base/SwitchUnstyled")
-@file:JsNonModule
 
 package mui.base
 
