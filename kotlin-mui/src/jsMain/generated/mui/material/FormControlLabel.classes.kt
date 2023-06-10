@@ -25,4 +25,10 @@ external interface FormControlLabelClasses {
 
     /** State class applied to the root element if `error={true}`. */
     var error: ClassName
+
+    /** State class applied to the root element if `required={true}`. */
+    var required: ClassName
+
+    /** Styles applied to the asterisk element. */
+    var asterisk: ClassName
 }
