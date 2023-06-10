@@ -17,10 +17,10 @@ external interface InputUnstyledClasses {
     /** Class name applied to the root element if `endAdornment` is provided. */
     var adornedEnd: ClassName
 
-    /** Class name applied to the root element if the component is focused. */
+    /** State class applied to the root element if the component is focused. */
     var focused: ClassName
 
-    /** Class name applied to the root element if `disabled={true}`. */
+    /** State class applied to the root element if `disabled={true}`. */
     var disabled: ClassName
 
     /** State class applied to the root element if `error={true}`. */
