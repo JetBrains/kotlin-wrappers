@@ -1,7 +1,6 @@
 // Automatically generated - do not modify!
 
 @file:JsModule("@mui/material/ListItemSecondaryAction")
-@file:JsNonModule
 
 package mui.material
 

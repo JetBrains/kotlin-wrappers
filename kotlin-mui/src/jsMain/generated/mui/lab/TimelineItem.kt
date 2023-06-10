@@ -1,7 +1,6 @@
 // Automatically generated - do not modify!
 
 @file:JsModule("@mui/lab/TimelineItem")
-@file:JsNonModule
 
 package mui.lab
 

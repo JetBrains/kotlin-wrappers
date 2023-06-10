@@ -1,7 +1,6 @@
 // Automatically generated - do not modify!
 
 @file:JsModule("@mui/material/usePagination")
-@file:JsNonModule
 
 package mui.material
 

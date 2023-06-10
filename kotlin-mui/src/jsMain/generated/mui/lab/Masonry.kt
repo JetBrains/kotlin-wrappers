@@ -1,7 +1,6 @@
 // Automatically generated - do not modify!
 
 @file:JsModule("@mui/lab/Masonry")
-@file:JsNonModule
 
 package mui.lab
 

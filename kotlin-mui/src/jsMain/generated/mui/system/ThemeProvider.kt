@@ -1,7 +1,6 @@
 // Automatically generated - do not modify!
 
 @file:JsModule("@mui/system/ThemeProvider")
-@file:JsNonModule
 
 package mui.system
 

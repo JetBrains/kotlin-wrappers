@@ -1,7 +1,6 @@
 // Automatically generated - do not modify!
 
 @file:JsModule("@mui/x-date-pickers/YearPicker")
-@file:JsNonModule
 
 package muix.pickers
 
