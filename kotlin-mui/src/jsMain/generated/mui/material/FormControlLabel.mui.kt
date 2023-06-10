@@ -10,7 +10,7 @@ package mui.material
 import web.cssom.ClassName
 
 // language=JavaScript
-@JsName("""(/*union*/{root: 'MuiFormControlLabel-root', labelPlacementStart: 'MuiFormControlLabel-labelPlacementStart', labelPlacementTop: 'MuiFormControlLabel-labelPlacementTop', labelPlacementBottom: 'MuiFormControlLabel-labelPlacementBottom', label: 'MuiFormControlLabel-label', asterisk: 'MuiFormControlLabel-asterisk'}/*union*/)""")
+@JsName("""(/*union*/{root: 'MuiFormControlLabel-root', labelPlacementStart: 'MuiFormControlLabel-labelPlacementStart', labelPlacementTop: 'MuiFormControlLabel-labelPlacementTop', labelPlacementBottom: 'MuiFormControlLabel-labelPlacementBottom', label: 'MuiFormControlLabel-label'}/*union*/)""")
 sealed external interface MuiFormControlLabel {
     companion object {
         val root: ClassName
@@ -18,6 +18,5 @@ sealed external interface MuiFormControlLabel {
         val labelPlacementTop: ClassName
         val labelPlacementBottom: ClassName
         val label: ClassName
-        val asterisk: ClassName
     }
 }
