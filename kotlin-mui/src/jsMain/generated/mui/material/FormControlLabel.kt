@@ -73,6 +73,11 @@ external interface FormControlLabelProps :
     var onChange: ((event: react.dom.events.SyntheticEvent<*, *>, checked: Boolean) -> Unit)?
 
     /**
+     * If `true`, the label will indicate that the `input` is required.
+     */
+    var required: Boolean?
+
+    /**
      * The props used for each slot inside.
      * @default {}
      */

@@ -10,7 +10,7 @@ package mui.material
 import web.cssom.ClassName
 
 // language=JavaScript
-@JsName("""(/*union*/{root: 'MuiOutlinedInput-root', colorSecondary: 'MuiOutlinedInput-colorSecondary', adornedStart: 'MuiOutlinedInput-adornedStart', adornedEnd: 'MuiOutlinedInput-adornedEnd', sizeSmall: 'MuiOutlinedInput-sizeSmall', multiline: 'MuiOutlinedInput-multiline', notchedOutline: 'MuiOutlinedInput-notchedOutline', input: 'MuiOutlinedInput-input', inputSizeSmall: 'MuiOutlinedInput-inputSizeSmall', inputMultiline: 'MuiOutlinedInput-inputMultiline', inputAdornedStart: 'MuiOutlinedInput-inputAdornedStart', inputAdornedEnd: 'MuiOutlinedInput-inputAdornedEnd'}/*union*/)""")
+@JsName("""(/*union*/{root: 'MuiOutlinedInput-root', colorSecondary: 'MuiOutlinedInput-colorSecondary', adornedStart: 'MuiOutlinedInput-adornedStart', adornedEnd: 'MuiOutlinedInput-adornedEnd', sizeSmall: 'MuiOutlinedInput-sizeSmall', multiline: 'MuiOutlinedInput-multiline', notchedOutline: 'MuiOutlinedInput-notchedOutline', input: 'MuiOutlinedInput-input', inputSizeSmall: 'MuiOutlinedInput-inputSizeSmall', inputMultiline: 'MuiOutlinedInput-inputMultiline', inputAdornedStart: 'MuiOutlinedInput-inputAdornedStart', inputAdornedEnd: 'MuiOutlinedInput-inputAdornedEnd', inputTypeSearch: 'MuiOutlinedInput-inputTypeSearch'}/*union*/)""")
 sealed external interface MuiOutlinedInput {
     companion object {
         val root: ClassName
@@ -25,5 +25,6 @@ sealed external interface MuiOutlinedInput {
         val inputMultiline: ClassName
         val inputAdornedStart: ClassName
         val inputAdornedEnd: ClassName
+        val inputTypeSearch: ClassName
     }
 }
