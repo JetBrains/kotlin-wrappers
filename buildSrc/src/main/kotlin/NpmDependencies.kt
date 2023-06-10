@@ -4,9 +4,14 @@ import org.jetbrains.kotlin.gradle.targets.js.npm.DevNpmDependencyExtension
 import org.jetbrains.kotlin.gradle.targets.js.npm.NpmDependency
 import org.jetbrains.kotlin.gradle.targets.js.npm.NpmDependencyExtension
 
-// TODO: remove after issue fix
-//  https://github.com/remix-run/react-router/issues/10579
 private val STRICT_VERSION_REQUIRED = setOf(
+    "@mui/material",
+    "@mui/icons-material",
+    "@mui/lab",
+    "@mui/x-date-pickers",
+
+    // TODO: Remove after issue fix
+    //  Details: https://github.com/remix-run/react-router/issues/10579
     "react-router",
     "react-router-dom",
 )
