@@ -4,4 +4,4 @@
 package styled
 
 @JsName("useInsertionEffect")
-external val supportsInsertionEffect: Boolean?
+internal external val supportsInsertionEffect: Boolean?
