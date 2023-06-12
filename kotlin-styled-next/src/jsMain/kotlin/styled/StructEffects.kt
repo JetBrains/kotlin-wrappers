@@ -9,20 +9,14 @@ internal fun <T> useStructMemo(
     return rawUseMemo(getMemoizedCallback(dependencies, callback), dependencies)
 }
 
-@JsModule("react")
-@JsNonModule
-external object ReactModule
-
-private val supportsInsertionEffect by kotlin.lazy { ReactModule.asDynamic().useInsertionEffect != undefined }
-
 internal fun useCustomInsertionEffect(
     vararg dependencies: Any?,
     effect: EffectBuilder.() -> Unit,
 ) {
-    if (supportsInsertionEffect) {
-        useInsertionEffect(*dependencies, effect = effect)
-    } else {
+    if (supportsInsertionEffect == undefined) {
         useLayoutEffect(*dependencies, effect = effect)
+    } else {
+        useInsertionEffect(*dependencies, effect = effect)
     }
 }
 
