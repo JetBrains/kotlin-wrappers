@@ -2,7 +2,7 @@
 
 package web.credentials
 
-sealed external class Credential {
+open external class Credential {
     val id: String
     val type: String
 }
