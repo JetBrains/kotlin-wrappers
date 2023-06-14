@@ -1,11 +1,23 @@
 // Automatically generated - do not modify!
 
+@file:JsQualifier("Intl")
+
 package js.intl
 
 import js.core.BigInt
 import js.core.ReadonlyArray
 
-sealed external interface NumberFormat {
+external class NumberFormat(
+    locales: String = definedExternally,
+    options: NumberFormatOptions = definedExternally,
+) {
+    constructor(
+        locales: ReadonlyArray<String>,
+        options: NumberFormatOptions = definedExternally,
+    )
+
+    fun format(value: Number): String
+    fun resolvedOptions(): ResolvedNumberFormatOptions
     fun formatToParts(number: Number = definedExternally): ReadonlyArray<NumberFormatPart>
     fun formatToParts(number: BigInt): ReadonlyArray<NumberFormatPart>
     fun formatRange(
