@@ -18,6 +18,17 @@ sealed external class JsArray {
         fun <T> from(source: ArrayLike<T>): ReadonlyArray<T>
 
         fun <T, U> from(
+            source: JsIterator<T>,
+            map: (item: T, index: Int) -> U,
+        ): ReadonlyArray<U>
+
+        fun <T, U> from(
+            source: JsIterable<T>,
+            map: (item: T, index: Int) -> U,
+        ): ReadonlyArray<U>
+
+        @LowPriorityInOverloadResolution
+        fun <T, U> from(
             source: ArrayLike<T>,
             map: (item: T, index: Int) -> U,
         ): ReadonlyArray<U>
