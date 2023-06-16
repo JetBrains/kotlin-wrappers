@@ -13,7 +13,6 @@ inline fun <S> Promise.Companion.all(
 ): Promise<ReadonlyArray<S>> =
     all(promise = values.unsafeCast<ReadonlyArray<Promise<S>>>())
 
-
 suspend fun <T> Promise<T>.asResult(): Result<T> =
     then(
         onFulfilled = { Result.success(it) },
