@@ -18,4 +18,3 @@ suspend fun <T> Promise<T>.asResult(): Result<T> =
         onFulfilled = { Result.success(it) },
         onRejected = { Result.failure(it) },
     ).await()
-
