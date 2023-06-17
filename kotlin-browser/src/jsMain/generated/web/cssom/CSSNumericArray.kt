@@ -2,11 +2,7 @@
 
 package web.cssom
 
-import js.core.ArrayLike
-import js.core.JsIterable
+import js.collections.ListLike
 
 sealed external class CSSNumericArray :
-    ArrayLike<CSSNumericValue>,
-    JsIterable<CSSNumericValue> {
-    fun forEach(action: (item: CSSNumericValue) -> Unit)
-}
+    ListLike<CSSNumericValue>

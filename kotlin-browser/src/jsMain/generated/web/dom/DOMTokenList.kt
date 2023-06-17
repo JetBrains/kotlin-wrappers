@@ -71,6 +71,4 @@ sealed external class DOMTokenList :
         token: String,
         force: Boolean = definedExternally,
     ): Boolean
-
-    override fun forEach(action: (item: String) -> Unit)
 }
