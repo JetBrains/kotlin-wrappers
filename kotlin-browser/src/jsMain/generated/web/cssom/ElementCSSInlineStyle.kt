@@ -9,7 +9,6 @@ package web.cssom
 external interface ElementCSSInlineStyle {
     val attributeStyleMap: StylePropertyMap
         get() = definedExternally
-
     val style: CSSStyleDeclaration
         get() = definedExternally
 }

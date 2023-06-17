@@ -10,14 +10,11 @@ external interface HTMLOrSVGElement {
     var autofocus: Boolean
         get() = definedExternally
         set(value) = definedExternally
-
     val dataset: DOMStringMap
         get() = definedExternally
-
     var nonce: String?
         get() = definedExternally
         set(value) = definedExternally
-
     var tabIndex: Int
         get() = definedExternally
         set(value) = definedExternally

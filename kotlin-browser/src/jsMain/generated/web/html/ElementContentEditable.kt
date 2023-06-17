@@ -10,15 +10,12 @@ sealed external interface ElementContentEditable {
     var contentEditable: String
         get() = definedExternally
         set(value) = definedExternally
-
     var enterKeyHint: EnterKeyHint
         get() = definedExternally
         set(value) = definedExternally
-
     var inputMode: InputMode
         get() = definedExternally
         set(value) = definedExternally
-
     val isContentEditable: Boolean
         get() = definedExternally
 }
