@@ -20,7 +20,7 @@ open external class MediaQueryListEvent(
     init: MediaQueryListEventInit = definedExternally,
 ) : Event {
     val matches: Boolean
-    val media: String
+    val media: MediaQuery
 
     companion object
 }
