@@ -326,9 +326,124 @@ external interface UseAutocompleteProps<T> : react.Props {
      * The value must have reference equality with the option in order to be selected.
      * You can customize the equality behavior with the `isOptionEqualToValue` prop.
      */
-    var value: dynamic
+    var value: Any? /* AutocompleteValue<T, Multiple, DisableClearable, FreeSolo> */
 }
 
 external interface AutocompleteChangeDetails<T> {
     var option: T
+}
+
+external interface UseAutocompleteRenderedOption<T> {
+    var option: T
+
+    var index: Number
+}
+
+external interface UseAutocompleteReturnValue<T> {
+    /**
+     * Resolver for the root slot's props.
+     * @param externalProps props for the root slot
+     * @returns props that should be spread on the root slot
+     */
+    var getRootProps: (externalProps: Any?) -> react.dom.html.HTMLAttributes<web.html.HTMLDivElement>
+
+    /**
+     * Resolver for the input element's props.
+     * @returns props that should be spread on the input element
+     */
+    var getInputProps: () -> react.dom.html.InputHTMLAttributes<web.html.HTMLInputElement>
+
+    /**
+     * Resolver for the input label element's props.
+     * @returns props that should be spread on the input label element
+     */
+    var getInputLabelProps: () -> react.dom.html.InputHTMLAttributes<web.html.HTMLLabelElement>
+
+    /**
+     * Resolver for the `clear` button element's props.
+     * @returns props that should be spread on the *clear* button element
+     */
+    var getClearProps: () -> react.dom.html.HTMLAttributes<web.html.HTMLButtonElement>
+
+    /**
+     * Resolver for the popup icon's props.
+     * @returns props that should be spread on the popup icon
+     */
+    var getPopupIndicatorProps: () -> react.dom.html.HTMLAttributes<web.html.HTMLButtonElement>
+
+    /**
+     * A tag props getter.
+     */
+    var getTagProps: Any /* AutocompleteGetTagProps */
+
+    /**
+     * Resolver for the listbox component's props.
+     * @returns props that should be spread on the listbox component
+     */
+    var getListboxProps: () -> react.dom.html.HTMLAttributes<web.html.HTMLUListElement>
+
+    /**
+     * Resolver for the rendered option element's props.
+     * @param renderedOption option rendered on the Autocomplete
+     * @returns props that should be spread on the li element
+     */
+    var getOptionProps: (
+        renderedOption: UseAutocompleteRenderedOption<T>,
+    ) -> react.dom.html.HTMLAttributes<web.html.HTMLLIElement>
+
+    /**
+     * Id for the Autocomplete.
+     */
+    var id: String
+
+    /**
+     * The input value.
+     */
+    var inputValue: String
+
+    /**
+     * The value of the autocomplete.
+     */
+    var value: Any /* AutocompleteValue<T, Multiple, DisableClearable, FreeSolo> */
+
+    /**
+     * If `true`, the component input has some values.
+     */
+    var dirty: Boolean
+
+    /**
+     * If `true`, the listbox is being displayed.
+     */
+    var expanded: Boolean
+
+    /**
+     * If `true`, the popup is open on the component.
+     */
+    var popupOpen: Boolean
+
+    /**
+     * If `true`, the component is focused.
+     */
+    var focused: Boolean
+
+    /**
+     * An HTML element that is used to set the position of the component.
+     */
+    var anchorEl: HTMLElement?
+
+    /**
+     * Setter for the component `anchorEl`.
+     * @returns function for setting `anchorEl`
+     */
+    var setAnchorEl: () -> Unit
+
+    /**
+     * Index of the focused tag for the component.
+     */
+    var focusedTag: Number
+
+    /**
+     * The options to render. It's either `T[]` or `AutocompleteGroupedOption<T>[]` if the groupBy prop is provided.
+     */
+    var groupedOptions: Any /* T[] | Array<AutocompleteGroupedOption<T>> */
 }

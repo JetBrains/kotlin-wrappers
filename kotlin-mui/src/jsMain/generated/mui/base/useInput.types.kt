@@ -64,19 +64,16 @@ external interface UseInputInputSlotOwnProps : react.Props {
 external interface UseInputReturnValue {
     /**
      * If `true`, the component will be disabled.
-     * @default false
      */
     var disabled: Boolean
 
     /**
      * If `true`, the `input` will indicate an error by setting the `aria-invalid` attribute.
-     * @default false
      */
     var error: Boolean
 
     /**
      * If `true`, the `input` will be focused.
-     * @default false
      */
     var focused: Boolean
 
@@ -103,7 +100,6 @@ external interface UseInputReturnValue {
 
     /**
      * If `true`, the `input` will indicate that it's required.
-     * @default false
      */
     var required: Boolean
 

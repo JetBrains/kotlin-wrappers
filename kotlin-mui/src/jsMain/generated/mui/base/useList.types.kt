@@ -180,7 +180,7 @@ external interface UseListReturnValue {
 
     var dispatch: (action: Any /* CustomAction | ListAction<ItemValue> */) -> Unit
 
-    var getRootProps: react.Props /* <TOther extends EventHandlers = {}>(otherHandlers?: TOther) => UseListRootSlotProps<TOther> */
+    var getRootProps: Any /* <TOther extends EventHandlers = {}>(otherHandlers?: TOther) => UseListRootSlotProps<TOther> */
 
     var rootRef: react.RefCallback<web.dom.Element>?
 

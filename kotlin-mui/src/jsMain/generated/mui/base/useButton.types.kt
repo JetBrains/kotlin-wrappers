@@ -66,7 +66,6 @@ external interface UseButtonReturnValue {
 
     /**
      * If `true`, the component is being focused using keyboard.
-     * @default false
      */
     var focusVisible: Boolean
 
@@ -77,7 +76,6 @@ external interface UseButtonReturnValue {
 
     /**
      * If `true`, the component is active (pressed).
-     * @default false
      */
     var active: Boolean
 
