@@ -144,6 +144,7 @@ external interface UseAutocompleteProps<T> : react.Props {
     /**
      * A function that determines the filtered options to be rendered on search.
      *
+     * @default createFilterOptions()
      * @param {T[]} options The options to render.
      * @param {object} state The state of the component.
      * @returns {T[]}

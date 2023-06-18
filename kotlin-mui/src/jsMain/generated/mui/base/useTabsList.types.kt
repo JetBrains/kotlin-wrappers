@@ -6,7 +6,7 @@ external interface UseTabsListParameters {
     /**
      * Ref to the root element.
      */
-    var rootRef: react.Ref<web.html.HTMLElement>
+    var rootRef: react.Ref<web.dom.Element>
 }
 
 external interface UseTabsListReturnValue {
@@ -45,7 +45,7 @@ external interface UseTabsListReturnValue {
      */
     var orientation: mui.material.Orientation
 
-    var rootRef: react.RefCallback<web.html.HTMLElement>?
+    var rootRef: react.RefCallback<web.dom.Element>?
 
     /**
      * The value of the currently selected tab.
