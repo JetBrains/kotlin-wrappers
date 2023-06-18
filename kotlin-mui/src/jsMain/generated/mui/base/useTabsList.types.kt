@@ -2,18 +2,25 @@
 
 package mui.base
 
-external interface UseTabsListParameters : react.PropsWithChildren {
-    // var `aria-label`: String?
-
-    // var `aria-labelledby`: String?
-
+external interface UseTabsListParameters {
     /**
-     * The content of the component.
+     * Ref to the root element.
      */
-    override var children: react.ReactNode?
+
 }
 
 external interface UseTabsListReturnValue {
+    /**
+     * Action dispatcher for the tabs list component.
+     * Allows to programmatically control the tabs list.
+     */
+    var dispatch: (action: Any /* ListAction<string | number> */) -> Unit
+
+    /**
+     * The value of the currently highlighted tab.
+     */
+    var highlightedValue: Any /* String or Number */
+
     /**
      * If `true`, it will indicate that the text's direction in right-to-left.
      * @default false
@@ -27,14 +34,9 @@ external interface UseTabsListReturnValue {
     var orientation: mui.material.Orientation
 
     /**
-     * The value of the currently selected `Tab`.
+     * The value of the currently selected tab.
      */
-    var value: Any /* String or Number or Boolean /* false */ */
-
-    /**
-     * Callback for processing the children of the tabs list. It adds the necessary attributes for correct a11y and navigation.
-     */
-    var processChildren: () -> react.ReactElement<*>?
+    var selectedValue: Any /* String or Number */
 
     /**
      * Resolver for the root slot's props.
@@ -42,4 +44,15 @@ external interface UseTabsListReturnValue {
      * @returns props that should be spread on the root slot
      */
     var getRootProps: react.Props /* <TOther extends Record<string, any> = {}>(externalProps?: TOther) => UseTabsListRootSlotProps<TOther> */
+
+    /**
+     * The value to be passed to the TabListProvider above all the tabs.
+     */
+    var contextValue: dynamic
+}
+
+external interface ValueChangeAction {
+    var type: dynamic
+
+    var value: Any /* String or Number */
 }

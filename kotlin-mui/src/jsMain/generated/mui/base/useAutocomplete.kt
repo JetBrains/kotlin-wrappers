@@ -230,7 +230,7 @@ external interface UseAutocompleteProps<T> : react.Props {
      * If `true`, `value` must be an array and the menu will support multiple selections.
      * @default false
      */
-    var multiple: Any? /* Multiple? /* Boolean */ */
+    var multiple: Any? /* Multiple */
 
     /**
      * Callback fired when the value changes.

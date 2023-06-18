@@ -54,7 +54,7 @@ external interface BaseTextFieldProps :
     /**
      * The default value. Use when the component is not controlled.
      */
-    var defaultValue: dynamic
+    var defaultValue: Any?
 
     /**
      * If `true`, the component is disabled.

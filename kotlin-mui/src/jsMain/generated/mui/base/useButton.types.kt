@@ -84,4 +84,9 @@ external interface UseButtonReturnValue {
      * @default false
      */
     var active: Boolean
+
+    /**
+     * A ref to the component's root DOM element.
+     */
+
 }

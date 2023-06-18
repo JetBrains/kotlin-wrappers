@@ -8,7 +8,7 @@
 
 package mui.material
 
-import mui.base.ModalUnstyledClasses
+import mui.base.ModalClasses
 import mui.material.styles.Theme
 import mui.system.SxProps
 import web.cssom.ClassName
@@ -17,7 +17,7 @@ external interface ModalProps :
     react.PropsWithClassName,
     mui.system.PropsWithSx,
     mui.types.PropsWithComponent,
-    mui.base.ModalUnstyledProps {
+    mui.base.ModalProps {
     /**
      * A backdrop component. This prop enables custom backdrop rendering.
      * @deprecated Use `slots.backdrop` instead. While this prop currently works, it will be removed in the next major version.
@@ -43,7 +43,7 @@ external interface ModalProps :
     /**
      * Override or extend the styles applied to the component.
      */
-    var classes: ModalUnstyledClasses?
+    var classes: ModalClasses?
 
     /**
      * @ignore

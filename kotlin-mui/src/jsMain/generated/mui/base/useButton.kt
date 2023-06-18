@@ -6,5 +6,5 @@ package mui.base
 
 @JsName("default")
 external fun useButton(
-    parameters: UseButtonParameters,
+    parameters: UseButtonParameters? = definedExternally,
 ): UseButtonReturnValue

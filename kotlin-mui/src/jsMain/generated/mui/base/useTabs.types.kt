@@ -7,12 +7,12 @@ external interface UseTabsParameters {
      * The value of the currently selected `Tab`.
      * If you don't want any selected `Tab`, you can set this prop to `false`.
      */
-    var value: Any? /* String or Number or Boolean? /* false */ */
+    var value: Any? /* String or Number */
 
     /**
      * The default value. Use when the component is not controlled.
      */
-    var defaultValue: Any? /* String or Number or Boolean? /* false */ */
+    var defaultValue: Any? /* String or Number */
 
     /**
      * The component orientation (layout flow direction).
@@ -29,7 +29,7 @@ external interface UseTabsParameters {
     /**
      * Callback invoked when new value is being set.
      */
-    var onChange: ((event: react.dom.events.SyntheticEvent<*, *>, value: dynamic) -> Unit)?
+    var onChange: ((event: react.dom.events.SyntheticEvent<*, *>?, value: Any /* Number | String */?) -> Unit)?
 
     /**
      * If `true` the selected tab changes on focus. Otherwise it only
@@ -40,7 +40,7 @@ external interface UseTabsParameters {
 
 external interface UseTabsReturnValue {
     /**
-     * Returns the values to be passed to the tabs context provider.
+     * Returns the values to be passed to the tabs provider.
      */
-    var tabsContextValue: Any /* TabsContextValue */
+    var contextValue: dynamic
 }

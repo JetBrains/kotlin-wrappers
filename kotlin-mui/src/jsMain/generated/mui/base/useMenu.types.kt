@@ -3,20 +3,45 @@
 package mui.base
 
 external interface UseMenuParameters {
+    /**
+     * If `true`, the menu will be initially open.
+     * @default false
+     */
+    var defaultOpen: Boolean?
+
+    /**
+     * If `true`, the menu will be open.
+     * This is the controlled equivalent of the `defaultOpen` parameter.
+     */
     var open: Boolean?
 
-    var onClose: (() -> Unit)?
+    /**
+     * Callback fired when the menu is opened or closed.
+     */
+    var onOpenChange: ((open: Boolean) -> Unit)?
 
+    /**
+     * Id of the menu listbox.
+     */
     var listboxId: String?
 
+    /**
+     * Ref of the menu listbox.
+     */
     var listboxRef: react.Ref<*>?
 }
 
 external interface UseMenuReturnValue {
     /**
-     * The value for the menu context.
+     * The value to be passed into the MenuProvider.
      */
-    var contextValue: Any /* mui.base.MenuUnstyledContextType */
+    var contextValue: dynamic
+
+    /**
+     * Action dispatcher for the menu component.
+     * Allows to programmatically control the menu.
+     */
+    var dispatch: (action: Any /* ListAction<string> */) -> Unit
 
     /**
      * Resolver for the listbox component's props.
@@ -28,20 +53,22 @@ external interface UseMenuReturnValue {
     /**
      * The highlighted option in the menu listbox.
      */
-    var highlightedOption: String?
-
-    /**
-     * Callback for highlighting the first item in the menu listbox.
-     */
-    var highlightFirstItem: () -> Unit
-
-    /**
-     * Callback for highlighting the last item in the menu listbox.
-     */
-    var highlightLastItem: () -> Unit
+    var highlightedValue: String?
 
     /**
      * Items in the menu listbox.
      */
-    var menuItems: Any /* Record<string, MenuItemMetadata> */
+    var menuItems: dynamic
+
+    /**
+     * If `true`, the menu is open.
+     */
+    var open: Boolean
+}
+
+external interface MenuInternalState {
+    /**
+     * If `true`, the menu is open.
+     */
+    var open: Boolean
 }
