@@ -10,7 +10,7 @@ package mui.material
 import web.cssom.ClassName
 
 // language=JavaScript
-@JsName("""(/*union*/{root: 'MuiInput-root', formControl: 'MuiInput-formControl', colorSecondary: 'MuiInput-colorSecondary', underline: 'MuiInput-underline', sizeSmall: 'MuiInput-sizeSmall', multiline: 'MuiInput-multiline', fullWidth: 'MuiInput-fullWidth', input: 'MuiInput-input', inputSizeSmall: 'MuiInput-inputSizeSmall', inputMultiline: 'MuiInput-inputMultiline', inputTypeSearch: 'MuiInput-inputTypeSearch'}/*union*/)""")
+@JsName("""(/*union*/{root: 'MuiInput-root', formControl: 'MuiInput-formControl', colorSecondary: 'MuiInput-colorSecondary', underline: 'MuiInput-underline', sizeSmall: 'MuiInput-sizeSmall', multiline: 'MuiInput-multiline', fullWidth: 'MuiInput-fullWidth', input: 'MuiInput-input', inputSizeSmall: 'MuiInput-inputSizeSmall', inputMultiline: 'MuiInput-inputMultiline', inputAdornedStart: 'MuiInput-inputAdornedStart', inputAdornedEnd: 'MuiInput-inputAdornedEnd', inputTypeSearch: 'MuiInput-inputTypeSearch'}/*union*/)""")
 sealed external interface MuiInput {
     companion object {
         val root: ClassName
@@ -23,6 +23,8 @@ sealed external interface MuiInput {
         val input: ClassName
         val inputSizeSmall: ClassName
         val inputMultiline: ClassName
+        val inputAdornedStart: ClassName
+        val inputAdornedEnd: ClassName
         val inputTypeSearch: ClassName
     }
 }

@@ -141,13 +141,3 @@ external interface SelectSlots {
      */
     var popper: react.ComponentType<*>?
 }
-
-external interface SelectOwnerState<TValue> : SelectOwnProps<TValue> {
-    var active: Boolean
-
-    override var disabled: Boolean?
-
-    var focusVisible: Boolean
-
-    var open: Boolean
-}

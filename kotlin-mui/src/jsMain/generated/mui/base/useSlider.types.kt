@@ -88,7 +88,7 @@ external interface UseSliderParameters {
     /**
      * The ref attached to the root of the Slider.
      */
-
+    var rootRef: react.Ref<web.html.HTMLElement>?
 
     /**
      * A transformation function, to change the scale of the slider.
@@ -193,6 +193,11 @@ external interface UseSliderReturnValue {
      * If `true`, the slider is a range slider when the `value` prop passed is an array.
      */
     var range: Boolean
+
+    /**
+     * Ref to the root slot's DOM node.
+     */
+    var rootRef: react.RefCallback<web.html.HTMLElement>?
 
     /**
      * The track leap for the current value of the slider.

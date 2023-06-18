@@ -69,6 +69,11 @@ external interface UseSwitchReturnValue {
     var getInputProps: (externalProps: react.dom.html.HTMLAttributes<web.html.HTMLInputElement>?) -> Any /* UseSwitchInputSlotProps */
 
     /**
+     * Ref to the input slot's DOM node.
+     */
+    var inputRef: react.RefCallback<web.html.HTMLInputElement>?
+
+    /**
      * If `true`, the component will be read only.
      */
     var readOnly: Boolean

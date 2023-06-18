@@ -17,6 +17,8 @@ external interface UseMenuItemParameters {
 
     var onClick: react.dom.events.MouseEventHandler<*>?
 
+    var rootRef: react.Ref<web.html.HTMLElement>
+
     var label: String?
 }
 
@@ -51,7 +53,7 @@ external interface UseMenuItemReturnValue {
     /**
      * The ref to the component's root DOM element.
      */
-
+    var rootRef: react.RefCallback<web.html.HTMLElement>?
 
     /**
      * Total number of items in the menu.

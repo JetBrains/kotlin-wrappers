@@ -44,6 +44,12 @@ external interface InputClasses {
     /** Styles applied to the input element if `multiline={true}`. */
     var inputMultiline: ClassName
 
+    /** Styles applied to the input element if `startAdornment` is provided. */
+    var inputAdornedStart: ClassName
+
+    /** Styles applied to the input element if `endAdornment` is provided. */
+    var inputAdornedEnd: ClassName
+
     /** Styles applied to the input element if `type="search"`. */
     var inputTypeSearch: ClassName
 }

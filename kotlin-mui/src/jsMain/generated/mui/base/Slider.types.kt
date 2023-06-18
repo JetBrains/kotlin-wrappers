@@ -6,32 +6,6 @@ external interface SliderProps :
     SliderOwnProps,
     react.dom.html.HTMLAttributes<web.html.HTMLSpanElement>
 
-external interface SliderOwnerState {
-    var disabled: Boolean
-
-    var focusedThumbIndex: Number
-
-    var isRtl: Boolean
-
-    var max: Number
-
-    var min: Number
-
-    var dragging: Boolean
-
-    var marked: Boolean
-
-    var orientation: mui.material.Orientation
-
-    var scale: (value: Number) -> Number
-
-    var step: Number?
-
-    var track: mui.system.Union /* 'normal' | false | 'inverted' */
-
-    var valueLabelFormat: String /* or (value: Number, index: Number) -> react.ReactNode*/
-}
-
 external interface SliderOwnProps :
     UseSliderParameters {
     /**
