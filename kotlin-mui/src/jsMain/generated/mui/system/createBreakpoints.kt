@@ -69,7 +69,7 @@ external interface Breakpoints {
      * The unit used for the breakpoint's values.
      * @default 'px'
      */
-    var unit: dynamic
+    var unit: String?
 }
 
 external interface BreakpointsOptions {
@@ -84,7 +84,7 @@ external interface BreakpointsOptions {
      * The unit used for the breakpoint's values.
      * @default 'px'
      */
-    var unit: dynamic
+    var unit: String?
 }
 
 @JsName("default")

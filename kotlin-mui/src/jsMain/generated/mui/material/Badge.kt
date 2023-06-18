@@ -13,7 +13,7 @@ import mui.system.SxProps
 import web.cssom.ClassName
 
 external interface BadgeProps :
-    mui.base.BadgeUnstyledProps,
+    mui.base.BadgeProps,
     react.PropsWithClassName,
     mui.system.PropsWithSx,
     mui.types.PropsWithComponent {
@@ -53,7 +53,7 @@ external interface BadgeProps :
      *
      * @default {}
      */
-    var componentsProps: mui.base.BadgeUnstyledOwnProps.SlotProps?
+    var componentsProps: mui.base.BadgeOwnProps.SlotProps?
 
     /**
      * The components used for each slot inside.

@@ -6,7 +6,7 @@ external interface UseInputParameters {
     /**
      * The default value. Use when the component is not controlled.
      */
-    var defaultValue: dynamic
+    var defaultValue: Any?
 
     /**
      * If `true`, the component is disabled.
@@ -81,7 +81,7 @@ external interface UseInputReturnValue {
     var focused: Boolean
 
     /**
-     * Return value from the `useFormControlUnstyledContext` hook.
+     * Return value from the `useFormControlContext` hook.
      */
     var formControlContext: Any?
 

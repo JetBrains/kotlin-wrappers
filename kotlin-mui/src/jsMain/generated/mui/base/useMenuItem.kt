@@ -6,5 +6,5 @@ package mui.base
 
 @JsName("default")
 external fun useMenuItem(
-    props: UseMenuItemParameters,
+    params: UseMenuItemParameters,
 ): UseMenuItemReturnValue

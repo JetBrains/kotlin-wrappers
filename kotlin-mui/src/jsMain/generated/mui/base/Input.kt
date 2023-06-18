@@ -1,0 +1,22 @@
+// Automatically generated - do not modify!
+
+@file:JsModule("@mui/base/Input")
+
+@file:Suppress(
+    "VIRTUAL_MEMBER_HIDDEN",
+)
+
+package mui.base
+
+/**
+ *
+ * Demos:
+ *
+ * - [Input](https://mui.com/base/react-input/)
+ *
+ * API:
+ *
+ * - [Input API](https://mui.com/base/react-input/components-api/#input)
+ */
+@JsName("default")
+external val Input: react.FC<InputProps>
