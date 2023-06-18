@@ -1,16 +1,26 @@
+// Automatically generated - do not modify!
+
 package web.url
 
 import web.buffer.Blob
 
-external class URL {
+external class URL(
+    url: String,
+    base: String = definedExternally,
+) {
     constructor(
-        url: String,
+        url: URL,
         base: String = definedExternally,
     )
 
     constructor(
+        url: String,
+        base: URL,
+    )
+
+    constructor(
         url: URL,
-        base: URL = definedExternally,
+        base: URL,
     )
 
     var hash: String
@@ -28,7 +38,7 @@ external class URL {
     fun toJSON(): String
 
     companion object {
-        fun createObjectURL(obj: Blob): String
+        fun createObjectURL(obj: Blob /* | MediaSource */): String
         fun revokeObjectURL(url: String)
     }
 }

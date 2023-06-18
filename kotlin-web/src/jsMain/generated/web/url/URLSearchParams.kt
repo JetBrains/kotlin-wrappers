@@ -1,3 +1,5 @@
+// Automatically generated - do not modify!
+
 package web.url
 
 import js.collections.MapLike
@@ -6,11 +8,10 @@ import js.core.JsTuple2
 import js.core.ReadonlyArray
 import js.core.ReadonlyRecord
 
-external class URLSearchParams() :
-    MapLike<String, String> {
-
-    constructor(init: ReadonlyArray<JsTuple2<String, String>>)
-    constructor(init: ReadonlyRecord<String, String>)
+external class URLSearchParams(
+    init: ReadonlyArray<JsTuple2<String, String>> = definedExternally,
+) : MapLike<String, String> {
+    constructor(init: ReadonlyRecord<String, String> = definedExternally)
     constructor(init: String)
     constructor(init: URLSearchParams)
 
@@ -35,7 +36,7 @@ external class URLSearchParams() :
     /** Sets the value associated to a given search parameter to the given value. If there were several values, delete the others. */
     operator fun set(
         name: String,
-        value: String
+        value: String,
     )
 
     fun sort()
