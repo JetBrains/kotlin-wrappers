@@ -4,7 +4,7 @@ package web.encoding
 
 import js.typedarrays.Uint8Array
 
-sealed external class TextEncoder :
+external class TextEncoder :
     TextEncoderCommon {
     /** Returns the result of running UTF-8's encoder. */
     fun encode(input: String = definedExternally): Uint8Array

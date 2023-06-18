@@ -2,6 +2,7 @@
 
 @file:Suppress(
     "ABSTRACT_MEMBER_NOT_IMPLEMENTED",
+    "SEALED_INHERITOR_IN_DIFFERENT_PACKAGE",
 )
 
 package web.encoding
