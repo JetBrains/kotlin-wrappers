@@ -9,6 +9,11 @@ external interface UseTabPanelParameters {
     var id: String?
 
     /**
+     * The ref of the TabPanel.
+     */
+    var rootRef: react.Ref<web.html.HTMLElement>?
+
+    /**
      * The value of the TabPanel. It will be shown when the Tab with the corresponding value is selected.
      */
     var value: dynamic
@@ -33,4 +38,6 @@ external interface UseTabPanelReturnValue {
      * @returns props that should be spread on the root slot
      */
     var getRootProps: () -> UseTabPanelRootSlotProps
+
+    var rootRef: react.Ref<web.html.HTMLElement>
 }
