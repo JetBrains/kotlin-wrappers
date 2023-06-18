@@ -3,6 +3,7 @@
 package web.encoding
 
 import js.typedarrays.Uint8Array
+import web.streams.GenericTransformStream
 import web.streams.ReadableStream
 import web.streams.WritableStream
 
