@@ -32,9 +32,9 @@ external interface UseTabParameters {
     var id: String?
 
     /**
-     * Ref to the DOM element associated with the tab.
+     * Ref to the root slot's DOM element.
      */
-
+    var rootRef: react.Ref<web.html.HTMLElement>?
 }
 
 external interface UseTabReturnValue {
@@ -65,6 +65,11 @@ external interface UseTabReturnValue {
      * 0-based index of the tab in the list of tabs.
      */
     var index: Number
+
+    /**
+     * Ref to the root slot's DOM element.
+     */
+    var rootRef: react.RefCallback<web.html.HTMLElement>?
 
     /**
      * If `true`, the tab is selected.

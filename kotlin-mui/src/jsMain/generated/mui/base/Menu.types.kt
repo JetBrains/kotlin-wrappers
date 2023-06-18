@@ -79,7 +79,3 @@ external interface MenuSlots {
      */
     var listbox: react.ElementType<*>?
 }
-
-external interface MenuOwnerState {
-    var open: Boolean
-}

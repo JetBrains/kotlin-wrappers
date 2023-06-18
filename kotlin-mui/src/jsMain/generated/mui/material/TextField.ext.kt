@@ -7,6 +7,20 @@ package mui.material
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 // language=JavaScript
+@JsName("""(/*union*/{outlined: 'outlined', standard: 'standard', filled: 'filled'}/*union*/)""")
+sealed external interface TextFieldVariants {
+    companion object {
+        val outlined: TextFieldVariants
+        val standard: TextFieldVariants
+        val filled: TextFieldVariants
+    }
+}
+
+@Suppress(
+    "NAME_CONTAINS_ILLEGAL_CHARS",
+    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
+)
+// language=JavaScript
 @JsName("""(/*union*/{primary: 'primary', secondary: 'secondary', error: 'error', info: 'info', success: 'success', warning: 'warning'}/*union*/)""")
 sealed external interface TextFieldColor {
     companion object {

@@ -11,6 +11,12 @@ external interface PopperProps :
     mui.system.PropsWithSx,
     mui.base.PopperProps {
     /**
+     * The component used for the root node.
+     * Either a string to use a HTML element or a component.
+     */
+    var component: react.ElementType<*>?
+
+    /**
      * The components used for each slot inside the Popper.
      * Either a string to use a HTML element or a component.
      * @default {}

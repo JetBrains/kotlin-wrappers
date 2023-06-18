@@ -6,15 +6,27 @@ external interface UseTabsListParameters {
     /**
      * Ref to the root element.
      */
-
+    var rootRef: react.Ref<web.html.HTMLElement>
 }
 
 external interface UseTabsListReturnValue {
+    /**
+     * The value to be passed to the TabListProvider above all the tabs.
+     */
+    var contextValue: dynamic
+
     /**
      * Action dispatcher for the tabs list component.
      * Allows to programmatically control the tabs list.
      */
     var dispatch: (action: Any /* ListAction<string | number> */) -> Unit
+
+    /**
+     * Resolver for the root slot's props.
+     * @param externalProps props for the root slot
+     * @returns props that should be spread on the root slot
+     */
+    var getRootProps: react.Props /* <TOther extends Record<string, any> = {}>(externalProps?: TOther) => UseTabsListRootSlotProps<TOther> */
 
     /**
      * The value of the currently highlighted tab.
@@ -33,22 +45,12 @@ external interface UseTabsListReturnValue {
      */
     var orientation: mui.material.Orientation
 
+    var rootRef: react.RefCallback<web.html.HTMLElement>?
+
     /**
      * The value of the currently selected tab.
      */
     var selectedValue: Any /* String or Number */
-
-    /**
-     * Resolver for the root slot's props.
-     * @param externalProps props for the root slot
-     * @returns props that should be spread on the root slot
-     */
-    var getRootProps: react.Props /* <TOther extends Record<string, any> = {}>(externalProps?: TOther) => UseTabsListRootSlotProps<TOther> */
-
-    /**
-     * The value to be passed to the TabListProvider above all the tabs.
-     */
-    var contextValue: dynamic
 }
 
 external interface ValueChangeAction {

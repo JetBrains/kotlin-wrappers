@@ -31,7 +31,7 @@ external interface UseSelectParameters<OptionValue, Multiple> {
     /**
      * The ref of the trigger button element.
      */
-    var buttonRef: react.Ref<dynamic>?
+    var buttonRef: react.Ref<web.html.HTMLElement>?
 
     /**
      * The `id` attribute of the listbox element.
@@ -41,7 +41,7 @@ external interface UseSelectParameters<OptionValue, Multiple> {
     /**
      * The ref of the listbox element.
      */
-    var listboxRef: react.Ref<dynamic>?
+    var listboxRef: react.Ref<web.html.HTMLElement>?
 
     /**
      * If `true`, the end user can select multiple values.
@@ -106,6 +106,11 @@ external interface UseSelectReturnValue<Value> {
     var buttonFocusVisible: Boolean
 
     /**
+     * Ref to the button slot DOM node.
+     */
+    var buttonRef: react.RefCallback<web.html.HTMLElement>?
+
+    /**
      * If `true`, the select is disabled.
      */
     var disabled: Boolean
@@ -147,6 +152,11 @@ external interface UseSelectReturnValue<Value> {
      * The value of the highlighted option.
      */
     var highlightedOption: dynamic
+
+    /**
+     * Ref to the listbox slot DOM node.
+     */
+    var listboxRef: react.RefCallback<web.html.HTMLElement>?
 
     /**
      * If `true`, the listbox is open.

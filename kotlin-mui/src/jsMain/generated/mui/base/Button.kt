@@ -4,12 +4,6 @@
 
 package mui.base
 
-external interface ButtonOwnerState : ButtonOwnProps {
-    var focusVisible: Boolean
-
-    var active: Boolean
-}
-
 /**
  * The foundation for building custom-styled buttons.
  *

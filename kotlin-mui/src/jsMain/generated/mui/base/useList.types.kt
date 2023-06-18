@@ -78,19 +78,19 @@ external interface UseListParameters<ItemValue, State, CustomAction, CustomActio
     /**
      * Ref of the list root DOM element.
      */
-    var listRef: react.Ref<*>?
+    var rootRef: react.Ref<HTMLElement>?
 
     /**
      * Callback fired when the selected value changes.
      * This is a strongly typed convenience event that can be used instead of `onStateChange`.
      */
-    var onChange: ((e: react.dom.events.SyntheticEvent<*, *>?, value: ReadonlyArray<ItemValue>, reason: String) -> Unit)?
+    var onChange: ((event: react.dom.events.SyntheticEvent<*, *>?, value: ReadonlyArray<ItemValue>, reason: String) -> Unit)?
 
     /**
      * Callback fired when the highlighted option changes.
      * This is a strongly typed convenience event that can be used instead of `onStateChange`.
      */
-    var onHighlightChange: ((e: react.dom.events.SyntheticEvent<*, *>?, option: ItemValue?, reason: String) -> Unit)?
+    var onHighlightChange: ((event: react.dom.events.SyntheticEvent<*, *>?, option: ItemValue?, reason: String) -> Unit)?
 
     /**
      * Callback fired when the any of the state items change.
@@ -173,4 +173,16 @@ external interface ListItemState {
      * If `true` the item is selected.
      */
     var selected: Boolean
+}
+
+external interface UseListReturnValue {
+    var contextValue: dynamic
+
+    var dispatch: (action: Any /* CustomAction | ListAction<ItemValue> */) -> Unit
+
+    var getRootProps: react.Props /* <TOther extends EventHandlers = {}>(otherHandlers?: TOther) => UseListRootSlotProps<TOther> */
+
+    var rootRef: react.RefCallback<HTMLElement>?
+
+    var state: dynamic
 }

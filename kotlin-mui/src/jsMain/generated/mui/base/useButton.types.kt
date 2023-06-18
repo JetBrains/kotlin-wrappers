@@ -43,6 +43,8 @@ external interface UseButtonParameters {
 
     var onFocusVisible: react.dom.events.FocusEventHandler<*>?
 
+    var rootRef: react.Ref<web.html.HTMLElement>?
+
     var tabIndex: Int?
 
     var to: String?
@@ -74,12 +76,6 @@ external interface UseButtonReturnValue {
     var setFocusVisible: react.StateSetter<Boolean>
 
     /**
-     * If `true`, the component is disabled.
-     * @default false
-     */
-    var disabled: Boolean
-
-    /**
      * If `true`, the component is active (pressed).
      * @default false
      */
@@ -88,5 +84,5 @@ external interface UseButtonReturnValue {
     /**
      * A ref to the component's root DOM element.
      */
-
+    var rootRef: react.RefCallback<web.html.HTMLElement>?
 }
