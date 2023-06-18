@@ -20,6 +20,7 @@
     },
     "importInjector": {
         "BrowserRouterProps.kt": [
+            "react.router.FutureConfig",
             "web.window.Window"
         ],
         "createBrowserRouter.kt": [
@@ -38,7 +39,7 @@
         ],
         "DOMRouterOpts.kt": [
             "web.window.Window",
-            "remix.run.router.FutureConfig",
+            "remix.run.router.FutureConfig as RouterFutureConfig",
             "remix.run.router.HydrationState"
         ],
         "FetcherWithComponents.kt": [
@@ -65,9 +66,11 @@
             "web.url.URLSearchParams"
         ],
         "HashRouterProps.kt": [
+            "react.router.FutureConfig",
             "web.window.Window"
         ],
         "HistoryRouterProps.kt": [
+            "react.router.FutureConfig",
             "remix.run.router.History"
         ],
         "LimitedMouseEvent.kt": [

@@ -6,7 +6,7 @@
         "**/@types/react/**",
         "**/@types/scheduler/**",
         "**/csstype/**",
-        "**/react-router/dist/lib/use-sync-external-store-shim/**"
+        "**/react-router/dist/lib/polyfills/**"
     ],
     "output": "src/jsMain/generated",
     "ignoreOutput": [
@@ -34,7 +34,7 @@
             "remix.run.router.Router as RemixRouter"
         ],
         "CreateMemoryRouterOpts.kt": [
-            "remix.run.router.FutureConfig",
+            "remix.run.router.FutureConfig as RouterFutureConfig",
             "remix.run.router.HydrationState",
             "remix.run.router.InitialEntry"
         ],

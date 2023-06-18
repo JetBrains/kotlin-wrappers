@@ -12,9 +12,9 @@ package react.router.dom
  */
 /* import * as React from "react"; */
 
-/* import type { NavigateOptions, RelativeRoutingType, RouteObject, To } from "react-router"; */
+/* import type { FutureConfig, NavigateOptions, RelativeRoutingType, RouteObject, To } from "react-router"; */
 
-/* import type { Fetcher, FormEncType, FormMethod, FutureConfig, GetScrollRestorationKeyFunction, History, HTMLFormMethod, HydrationState, Router as RemixRouter, V7_FormMethod } from "@remix-run/router"; */
+/* import type { Fetcher, FormEncType, FormMethod, FutureConfig as RouterFutureConfig, GetScrollRestorationKeyFunction, History, HTMLFormMethod, HydrationState, Router as RemixRouter, V7_FormMethod } from "@remix-run/router"; */
 
 /* import type { SubmitOptions, ParamKeyValuePair, URLSearchParamsInit } from "./dom"; */
 
