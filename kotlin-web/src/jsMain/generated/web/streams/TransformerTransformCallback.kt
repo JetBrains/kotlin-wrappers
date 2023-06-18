@@ -3,9 +3,9 @@
 package web.streams
 
 import js.core.Void
-import kotlin.js.Promise
+import js.promise.PromiseLike
 
 typealias TransformerTransformCallback<I, O> = (
     chunk: I,
     controller: TransformStreamDefaultController<O>,
-) -> Promise<Void>?
+) -> PromiseLike<Void>?

@@ -3,8 +3,8 @@
 package web.streams
 
 import js.core.Void
-import kotlin.js.Promise
+import js.promise.PromiseLike
 
-typealias UnderlyingSourcePullCallback<R> = (
-    controller: ReadableStreamController<R>,
-) -> Promise<Void>?
+typealias UnderlyingSourcePullCallback = (
+    controller: ReadableStreamController,
+) -> PromiseLike<Void>?

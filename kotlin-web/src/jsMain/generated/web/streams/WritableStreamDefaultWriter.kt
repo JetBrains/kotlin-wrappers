@@ -5,11 +5,13 @@ package web.streams
 import js.core.Void
 import kotlin.js.Promise
 
-sealed external interface WritableStreamDefaultWriter<W> {
+external class WritableStreamDefaultWriter<W>(
+    stream: WritableStream<W>,
+) {
     val closed: Promise<Void>
     val desiredSize: Number?
     val ready: Promise<Void>
-    fun abort(reason: Any = definedExternally): Promise<Void>
+    fun abort(reason: Any? = definedExternally): Promise<Void>
     fun close(): Promise<Void>
     fun releaseLock()
     fun write(chunk: W = definedExternally): Promise<Void>

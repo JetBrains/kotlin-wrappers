@@ -2,10 +2,13 @@
 
 package web.streams
 
+import js.core.Void
+import js.promise.PromiseLike
+
 sealed external interface UnderlyingByteSource {
     var autoAllocateChunkSize: Number?
-    var cancel: ReadableStreamErrorCallback?
-    var pull: ReadableByteStreamControllerCallback?
-    var start: ReadableByteStreamControllerCallback?
-    var type: String /* 'bytes' */
+    var cancel: UnderlyingSourceCancelCallback?
+    var pull: (controller: ReadableByteStreamController) -> PromiseLike<Void>?
+    var start: (controller: ReadableByteStreamController) -> Unit?
+    var type: String /* "bytes" */
 }

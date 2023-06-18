@@ -2,7 +2,7 @@
 
 package web.streams
 
-sealed external interface ReadableStreamDefaultReadValueResult<T> {
+sealed external interface ReadableStreamReadValueResult<T> {
     var done: Boolean /* false */
     var value: T
 }

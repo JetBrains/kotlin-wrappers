@@ -2,14 +2,23 @@
 
 package web.streams
 
-import js.core.ReadonlyArray
+import js.core.JsTuple2
 import js.core.Void
 import kotlin.js.Promise
 
-external interface ReadableStream<R> {
+external class ReadableStream<R>(
+    underlyingSource: UnderlyingDefaultSource<R>,
+    strategy: QueuingStrategy<R> = definedExternally,
+) {
+    constructor(
+        underlyingSource: UnderlyingSource<R> = definedExternally,
+        strategy: QueuingStrategy<R> = definedExternally,
+    )
+
     val locked: Boolean
-    fun cancel(reason: Any = definedExternally): Promise<Void>
+    fun cancel(reason: Any? = definedExternally): Promise<Void>
     fun getReader(): ReadableStreamDefaultReader<R>
+    fun getReader(options: ReadableStreamGetReaderOptions = definedExternally): ReadableStreamReader
     fun <T> pipeThrough(
         transform: ReadableWritablePair<T, R>,
         options: StreamPipeOptions = definedExternally,
@@ -20,13 +29,5 @@ external interface ReadableStream<R> {
         options: StreamPipeOptions = definedExternally,
     ): Promise<Void>
 
-    fun tee(): ReadonlyArray<*> /* [ReadableStream<R>, ReadableStream<R>] */
-
-    // HIDDEN METHOD START
-    /*
-    values(options?: { preventCancel?: boolean }): AsyncIterableIterator<R>
-    */
-    // HIDDEN METHOD END
-
-    /* [Symbol.asyncIterator](): AsyncIterableIterator<R> */
+    fun tee(): JsTuple2<ReadableStream<R>, ReadableStream<R>>
 }

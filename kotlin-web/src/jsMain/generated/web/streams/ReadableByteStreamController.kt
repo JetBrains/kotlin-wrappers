@@ -3,12 +3,12 @@
 package web.streams
 
 import js.buffer.ArrayBufferView
-import js.core.Void
+import js.errors.JsError
 
-sealed external interface ReadableByteStreamController {
-    val byobRequest: Void
+sealed external class ReadableByteStreamController {
+    val byobRequest: ReadableStreamBYOBRequest?
     val desiredSize: Number?
     fun close()
     fun enqueue(chunk: ArrayBufferView)
-    fun error(error: Any = definedExternally)
+    fun error(error: JsError = definedExternally)
 }

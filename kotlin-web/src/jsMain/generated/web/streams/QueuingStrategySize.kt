@@ -3,5 +3,5 @@
 package web.streams
 
 typealias QueuingStrategySize<T> = (
-    chunk: T?,
-) -> Number
+    chunk: T,
+) -> Int

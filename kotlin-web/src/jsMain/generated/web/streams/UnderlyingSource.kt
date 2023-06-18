@@ -2,11 +2,10 @@
 
 package web.streams
 
-import js.core.Void
-
 sealed external interface UnderlyingSource<R> {
+    var autoAllocateChunkSize: Number?
     var cancel: UnderlyingSourceCancelCallback?
-    var pull: UnderlyingSourcePullCallback<R>?
-    var start: UnderlyingSourceStartCallback<R>?
-    var type: Void
+    var pull: UnderlyingSourcePullCallback?
+    var start: UnderlyingSourceStartCallback?
+    var type: ReadableStreamType?
 }

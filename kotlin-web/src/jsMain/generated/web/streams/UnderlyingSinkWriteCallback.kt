@@ -3,9 +3,9 @@
 package web.streams
 
 import js.core.Void
-import kotlin.js.Promise
+import js.promise.PromiseLike
 
 typealias UnderlyingSinkWriteCallback<W> = (
     chunk: W,
     controller: WritableStreamDefaultController,
-) -> Promise<Void>?
+) -> PromiseLike<Void>?

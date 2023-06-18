@@ -3,8 +3,8 @@
 package web.streams
 
 import js.core.Void
-import kotlin.js.Promise
+import js.promise.PromiseLike
 
 typealias UnderlyingSourceCancelCallback = (
     reason: Any?,
-) -> Promise<Void>?
+) -> PromiseLike<Void>?

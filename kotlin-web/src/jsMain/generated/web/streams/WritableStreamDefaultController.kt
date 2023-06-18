@@ -2,6 +2,10 @@
 
 package web.streams
 
-sealed external interface WritableStreamDefaultController {
-    fun error(e: Any = definedExternally)
+import js.errors.JsError
+import web.abort.AbortSignal
+
+sealed external class WritableStreamDefaultController {
+    val signal: AbortSignal
+    fun error(error: JsError = definedExternally)
 }
