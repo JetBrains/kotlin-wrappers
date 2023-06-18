@@ -12,7 +12,7 @@ import mui.material.styles.Theme
 import mui.system.SxProps
 
 external interface AppBarProps :
-    PaperProps,
+    react.dom.html.HTMLAttributes<web.html.HTMLElement>,
     mui.system.PropsWithSx,
     mui.types.PropsWithComponent {
     /**
