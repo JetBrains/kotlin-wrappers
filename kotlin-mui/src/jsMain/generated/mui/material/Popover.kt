@@ -97,9 +97,38 @@ external interface PopoverProps :
 
     /**
      * Props applied to the [`Paper`](/material-ui/api/paper/) element.
+     *
+     * This prop is an alias for `slotProps.paper` and will be overriden by it if both are used.
+     * @deprecated Use `slotProps.paper` instead.
+     *
      * @default {}
      */
     var PaperProps: PaperProps?
+
+    /**
+     * The components used for each slot inside.
+     *
+     * @default {}
+     */
+    var slots: Slots?
+
+    interface Slots {
+        var root: react.ElementType<*>?
+        var paper: react.ElementType<*>?
+    }
+
+    /**
+     * The extra props for the slot components.
+     * You can override the existing props or add new ones.
+     *
+     * @default {}
+     */
+    var slotProps: SlotProps?
+
+    interface SlotProps {
+        var root: react.Props? /* SlotComponentProps<typeof Modal, {}, ModalOwnerState> */
+        var paper: react.Props? /* SlotComponentProps<typeof Paper, {}, {}> */
+    }
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
