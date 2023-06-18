@@ -131,13 +131,11 @@ external interface Mark {
 external interface UseSliderReturnValue {
     /**
      * The active index of the slider.
-     * @default -1
      */
     var active: Number
 
     /**
      * The orientation of the slider.
-     * @default horizontal
      */
     var axis: dynamic
 
@@ -148,7 +146,6 @@ external interface UseSliderReturnValue {
 
     /**
      * If `true`, the slider is being dragged.
-     * @default false
      */
     var dragging: Boolean
 
@@ -185,7 +182,6 @@ external interface UseSliderReturnValue {
 
     /**
      * The thumb index for the current value when in hover state.
-     * @default -1
      */
     var open: Number
 

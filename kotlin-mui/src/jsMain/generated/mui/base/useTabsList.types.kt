@@ -35,13 +35,11 @@ external interface UseTabsListReturnValue {
 
     /**
      * If `true`, it will indicate that the text's direction in right-to-left.
-     * @default false
      */
     var isRtl: Boolean
 
     /**
      * The component orientation (layout flow direction).
-     * @default 'horizontal'
      */
     var orientation: mui.material.Orientation
 
