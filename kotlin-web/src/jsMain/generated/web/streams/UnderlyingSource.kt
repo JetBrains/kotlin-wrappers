@@ -3,7 +3,7 @@
 package web.streams
 
 sealed external interface UnderlyingSource<R> {
-    var autoAllocateChunkSize: Number?
+    var autoAllocateChunkSize: Int?
     var cancel: UnderlyingSourceCancelCallback?
     var pull: UnderlyingSourcePullCallback?
     var start: UnderlyingSourceStartCallback?

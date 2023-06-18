@@ -9,7 +9,7 @@ external class WritableStreamDefaultWriter<W>(
     stream: WritableStream<W>,
 ) {
     val closed: Promise<Void>
-    val desiredSize: Number?
+    val desiredSize: Int?
     val ready: Promise<Void>
     fun abort(reason: Any? = definedExternally): Promise<Void>
     fun close(): Promise<Void>

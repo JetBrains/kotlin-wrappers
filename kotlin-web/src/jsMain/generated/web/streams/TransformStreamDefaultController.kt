@@ -3,7 +3,7 @@
 package web.streams
 
 sealed external class TransformStreamDefaultController<O> {
-    val desiredSize: Number?
+    val desiredSize: Int?
     fun enqueue(chunk: O = definedExternally)
     fun error(reason: Any? = definedExternally)
     fun terminate()

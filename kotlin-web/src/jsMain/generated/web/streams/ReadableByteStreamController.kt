@@ -7,7 +7,7 @@ import js.errors.JsError
 
 sealed external class ReadableByteStreamController {
     val byobRequest: ReadableStreamBYOBRequest?
-    val desiredSize: Number?
+    val desiredSize: Int?
     fun close()
     fun enqueue(chunk: ArrayBufferView)
     fun error(error: JsError = definedExternally)
