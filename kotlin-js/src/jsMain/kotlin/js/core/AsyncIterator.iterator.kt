@@ -3,13 +3,13 @@ package js.core
 import js.collections.SuspendableIterator
 import kotlinx.coroutines.await
 
-operator fun <T> AsyncIterator<T>.iterator(): SuspendableIterator<T> =
+operator fun <T> AsyncIterator<T, *, *>.iterator(): SuspendableIterator<T> =
     AsyncIteratorAdapter(this)
 
 private class AsyncIteratorAdapter<T>(
-    private val source: AsyncIterator<T>,
+    private val source: AsyncIterator<T, *, *>,
 ) : SuspendableIterator<T> {
-    private var lastResult: JsIterator.Result<T, Void>? = null
+    private var lastResult: JsIterator.Result<T, *>? = null
 
     override suspend fun hasNext(): Boolean {
         val result = lastResult

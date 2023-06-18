@@ -29,7 +29,7 @@ sealed external interface HasSymbol {
         ): V = definedExternally
     }
 
-    interface iterator<out V : () -> JsIterator<*>> {
+    interface iterator<out V : () -> JsIterator<*, *, *>> {
         @nativeGetter
         operator fun get(
             key: Symbol.iterator,

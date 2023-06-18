@@ -1,14 +1,11 @@
 package js.collections
 
-import js.core.JsIterable
-import js.core.JsIterator
-import js.core.JsTuple2
-import js.core.ReadonlyArray
+import js.core.*
 
 @JsName("Set")
 external class JsSet<T> : ReadonlySet<T> {
     constructor()
-    constructor(values: JsIterator<T>?)
+    constructor(values: JsIterator<T, *, *>?)
     constructor(values: ReadonlyArray<T>?)
 
     override val size: Int

@@ -8,5 +8,5 @@ import js.core.JsIterator
 sealed external interface ReadonlyCollection<K> {
     val size: Int
     fun has(key: K): Boolean
-    fun keys(): JsIterator<K>
+    fun keys(): JsIterator<K, *, *>
 }
