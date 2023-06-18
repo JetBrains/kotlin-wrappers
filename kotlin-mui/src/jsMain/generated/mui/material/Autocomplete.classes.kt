@@ -17,6 +17,9 @@ external interface AutocompleteClasses {
     /** State class applied to the root element if focused. */
     var focused: ClassName
 
+    /** Styles applied to the option elements if they are keyboard focused. */
+    var focusVisible: ClassName
+
     /** Styles applied to the tag elements, e.g. the chips. */
     var tag: ClassName
 
