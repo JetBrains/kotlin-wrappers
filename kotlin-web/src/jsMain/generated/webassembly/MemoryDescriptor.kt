@@ -3,7 +3,7 @@
 package webassembly
 
 sealed external interface MemoryDescriptor {
-    var initial: Number
-    var maximum: Number?
+    var initial: Int
+    var maximum: Int?
     var shared: Boolean?
 }
