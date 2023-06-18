@@ -1,11 +1,11 @@
 package web.timers
 
-import js.core.HighResTimeStamp
+import js.core.DOMHighResTimeStamp
 
 sealed external interface FrameRequestId
 
 typealias FrameRequestCallback = (
-    time: HighResTimeStamp,
+    time: DOMHighResTimeStamp,
 ) -> Unit
 
 external fun requestAnimationFrame(

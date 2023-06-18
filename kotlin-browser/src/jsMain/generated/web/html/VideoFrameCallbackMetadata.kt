@@ -2,17 +2,17 @@
 
 package web.html
 
-import js.core.HighResTimeStamp
+import js.core.DOMHighResTimeStamp
 
 sealed external interface VideoFrameCallbackMetadata {
-    var captureTime: HighResTimeStamp?
-    var expectedDisplayTime: HighResTimeStamp
+    var captureTime: DOMHighResTimeStamp?
+    var expectedDisplayTime: DOMHighResTimeStamp
     var height: Double
     var mediaTime: Double
-    var presentationTime: HighResTimeStamp
+    var presentationTime: DOMHighResTimeStamp
     var presentedFrames: Int
     var processingDuration: Double?
-    var receiveTime: HighResTimeStamp?
+    var receiveTime: DOMHighResTimeStamp?
     var rtpTimestamp: Double?
     var width: Double
 }

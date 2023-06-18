@@ -1,12 +1,12 @@
 package web.timers
 
-import js.core.HighResTimeStamp
+import js.core.DOMHighResTimeStamp
 
 sealed external interface IdleRequestId
 
 sealed external class IdleDeadline {
     val didTimeout: Boolean
-    fun timeRemaining(): HighResTimeStamp
+    fun timeRemaining(): DOMHighResTimeStamp
 }
 
 typealias IdleRequestCallback = (

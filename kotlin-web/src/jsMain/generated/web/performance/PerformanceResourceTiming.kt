@@ -2,28 +2,28 @@
 
 package web.performance
 
-import js.core.HighResTimeStamp
+import js.core.DOMHighResTimeStamp
 import js.core.ReadonlyArray
 
 sealed external class PerformanceResourceTiming :
     PerformanceEntry {
-    val connectEnd: HighResTimeStamp
-    val connectStart: HighResTimeStamp
+    val connectEnd: DOMHighResTimeStamp
+    val connectStart: DOMHighResTimeStamp
     val decodedBodySize: Int
-    val domainLookupEnd: HighResTimeStamp
-    val domainLookupStart: HighResTimeStamp
+    val domainLookupEnd: DOMHighResTimeStamp
+    val domainLookupStart: DOMHighResTimeStamp
     val encodedBodySize: Int
-    val fetchStart: HighResTimeStamp
+    val fetchStart: DOMHighResTimeStamp
     val initiatorType: String
     val nextHopProtocol: String
-    val redirectEnd: HighResTimeStamp
-    val redirectStart: HighResTimeStamp
-    val requestStart: HighResTimeStamp
-    val responseEnd: HighResTimeStamp
-    val responseStart: HighResTimeStamp
-    val secureConnectionStart: HighResTimeStamp
+    val redirectEnd: DOMHighResTimeStamp
+    val redirectStart: DOMHighResTimeStamp
+    val requestStart: DOMHighResTimeStamp
+    val responseEnd: DOMHighResTimeStamp
+    val responseStart: DOMHighResTimeStamp
+    val secureConnectionStart: DOMHighResTimeStamp
     val serverTiming: ReadonlyArray<PerformanceServerTiming>
     val transferSize: Int
-    val workerStart: HighResTimeStamp
+    val workerStart: DOMHighResTimeStamp
     override fun toJSON(): Any
 }

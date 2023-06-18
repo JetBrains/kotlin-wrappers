@@ -2,9 +2,9 @@
 
 package web.performance
 
-import js.core.HighResTimeStamp
+import js.core.DOMHighResTimeStamp
 
 sealed external interface PerformanceMarkOptions {
     var detail: Any?
-    var startTime: HighResTimeStamp?
+    var startTime: DOMHighResTimeStamp?
 }

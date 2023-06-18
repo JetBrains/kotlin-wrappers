@@ -2,11 +2,11 @@
 
 package web.performance
 
-import js.core.HighResTimeStamp
+import js.core.DOMHighResTimeStamp
 
 sealed external class PerformanceServerTiming {
     val description: String
-    val duration: HighResTimeStamp
+    val duration: DOMHighResTimeStamp
     val name: String
     fun toJSON(): Any
 }

@@ -4,7 +4,7 @@
 
 package web.events
 
-import js.core.HighResTimeStamp
+import js.core.DOMHighResTimeStamp
 import js.core.ReadonlyArray
 
 external interface EventInit {
@@ -25,7 +25,7 @@ open external class Event(
     val defaultPrevented: Boolean
     val composed: Boolean
     val isTrusted: Boolean
-    val timeStamp: HighResTimeStamp
+    val timeStamp: DOMHighResTimeStamp
     fun composedPath(): ReadonlyArray<EventTarget>
     fun stopPropagation()
     fun stopImmediatePropagation()

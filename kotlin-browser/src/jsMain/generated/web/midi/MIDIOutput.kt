@@ -2,13 +2,13 @@
 
 package web.midi
 
-import js.core.HighResTimeStamp
+import js.core.DOMHighResTimeStamp
 import js.core.ReadonlyArray
 
 sealed external class MIDIOutput :
     MIDIPort {
     fun send(
         data: ReadonlyArray<Double>,
-        timestamp: HighResTimeStamp = definedExternally,
+        timestamp: DOMHighResTimeStamp = definedExternally,
     )
 }

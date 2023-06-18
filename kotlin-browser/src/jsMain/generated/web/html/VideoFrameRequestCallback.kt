@@ -2,9 +2,9 @@
 
 package web.html
 
-import js.core.HighResTimeStamp
+import js.core.DOMHighResTimeStamp
 
 typealias VideoFrameRequestCallback = (
-    now: HighResTimeStamp,
+    now: DOMHighResTimeStamp,
     metadata: VideoFrameCallbackMetadata,
 ) -> Unit

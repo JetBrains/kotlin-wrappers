@@ -2,11 +2,11 @@
 
 package webrtc
 
-import js.core.HighResTimeStamp
+import js.core.DOMHighResTimeStamp
 
 sealed external interface RTCRtpContributingSource {
     var audioLevel: Number?
     var rtpTimestamp: Double
     var source: Number
-    var timestamp: HighResTimeStamp
+    var timestamp: DOMHighResTimeStamp
 }

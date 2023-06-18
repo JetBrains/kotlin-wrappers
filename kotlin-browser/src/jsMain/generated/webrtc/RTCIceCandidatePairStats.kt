@@ -2,7 +2,7 @@
 
 package webrtc
 
-import js.core.HighResTimeStamp
+import js.core.DOMHighResTimeStamp
 
 sealed external interface RTCIceCandidatePairStats :
     RTCStats {
@@ -11,8 +11,8 @@ sealed external interface RTCIceCandidatePairStats :
     var bytesReceived: Number?
     var bytesSent: Number?
     var currentRoundTripTime: Number?
-    var lastPacketReceivedTimestamp: HighResTimeStamp?
-    var lastPacketSentTimestamp: HighResTimeStamp?
+    var lastPacketReceivedTimestamp: DOMHighResTimeStamp?
+    var lastPacketSentTimestamp: DOMHighResTimeStamp?
     var localCandidateId: String
     var nominated: Boolean?
     var remoteCandidateId: String

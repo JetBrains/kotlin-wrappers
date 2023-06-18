@@ -2,19 +2,19 @@
 
 package web.performance
 
-import js.core.HighResTimeStamp
+import js.core.DOMHighResTimeStamp
 
 sealed external class PerformanceNavigationTiming :
     PerformanceResourceTiming {
-    val domComplete: HighResTimeStamp
-    val domContentLoadedEventEnd: HighResTimeStamp
-    val domContentLoadedEventStart: HighResTimeStamp
-    val domInteractive: HighResTimeStamp
-    val loadEventEnd: HighResTimeStamp
-    val loadEventStart: HighResTimeStamp
+    val domComplete: DOMHighResTimeStamp
+    val domContentLoadedEventEnd: DOMHighResTimeStamp
+    val domContentLoadedEventStart: DOMHighResTimeStamp
+    val domInteractive: DOMHighResTimeStamp
+    val loadEventEnd: DOMHighResTimeStamp
+    val loadEventStart: DOMHighResTimeStamp
     val redirectCount: Int
     val type: NavigationTimingType
-    val unloadEventEnd: HighResTimeStamp
-    val unloadEventStart: HighResTimeStamp
+    val unloadEventEnd: DOMHighResTimeStamp
+    val unloadEventStart: DOMHighResTimeStamp
     override fun toJSON(): Any
 }

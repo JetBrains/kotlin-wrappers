@@ -2,10 +2,10 @@
 
 package web.html
 
-import js.core.HighResTimeStamp
+import js.core.DOMHighResTimeStamp
 
 sealed external class VideoPlaybackQuality {
-    val creationTime: HighResTimeStamp
+    val creationTime: DOMHighResTimeStamp
     val droppedVideoFrames: Int
     val totalVideoFrames: Int
 }

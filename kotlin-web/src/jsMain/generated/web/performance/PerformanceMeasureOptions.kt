@@ -2,11 +2,11 @@
 
 package web.performance
 
-import js.core.HighResTimeStamp
+import js.core.DOMHighResTimeStamp
 
 sealed external interface PerformanceMeasureOptions {
     var detail: Any?
-    var duration: HighResTimeStamp?
-    var end: HighResTimeStamp /* | String */?
-    var start: HighResTimeStamp /* | String */?
+    var duration: DOMHighResTimeStamp?
+    var end: DOMHighResTimeStamp /* | String */?
+    var start: DOMHighResTimeStamp /* | String */?
 }

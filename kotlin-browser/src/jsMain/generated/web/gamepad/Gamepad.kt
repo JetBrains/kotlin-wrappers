@@ -2,7 +2,7 @@
 
 package web.gamepad
 
-import js.core.HighResTimeStamp
+import js.core.DOMHighResTimeStamp
 import js.core.ReadonlyArray
 
 sealed external class Gamepad {
@@ -13,6 +13,6 @@ sealed external class Gamepad {
     val id: String
     val index: Int
     val mapping: GamepadMappingType
-    val timestamp: HighResTimeStamp
+    val timestamp: DOMHighResTimeStamp
     val vibrationActuator: GamepadHapticActuator?
 }

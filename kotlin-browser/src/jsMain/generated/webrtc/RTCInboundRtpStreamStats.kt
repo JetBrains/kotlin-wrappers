@@ -2,7 +2,7 @@
 
 package webrtc
 
-import js.core.HighResTimeStamp
+import js.core.DOMHighResTimeStamp
 
 sealed external interface RTCInboundRtpStreamStats :
     RTCReceivedRtpStreamStats {
@@ -11,7 +11,7 @@ sealed external interface RTCInboundRtpStreamStats :
     var concealedSamples: Number?
     var concealmentEvents: Number?
     var decoderImplementation: String?
-    var estimatedPlayoutTimestamp: HighResTimeStamp?
+    var estimatedPlayoutTimestamp: DOMHighResTimeStamp?
     var fecPacketsDiscarded: Number?
     var fecPacketsReceived: Number?
     var firCount: Int?
@@ -27,7 +27,7 @@ sealed external interface RTCInboundRtpStreamStats :
     var jitterBufferEmittedCount: Int?
     var keyFramesDecoded: Number?
     override var kind: String
-    var lastPacketReceivedTimestamp: HighResTimeStamp?
+    var lastPacketReceivedTimestamp: DOMHighResTimeStamp?
     var nackCount: Int?
     var packetsDiscarded: Number?
     var pliCount: Int?

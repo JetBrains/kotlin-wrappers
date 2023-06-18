@@ -2,7 +2,7 @@
 
 package web.performance
 
-import js.core.HighResTimeStamp
+import js.core.DOMHighResTimeStamp
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventTarget
@@ -11,7 +11,7 @@ sealed external class Performance :
     EventTarget {
     val eventCounts: EventCounts
     var onresourcetimingbufferfull: EventHandler<Event>?
-    val timeOrigin: HighResTimeStamp
+    val timeOrigin: DOMHighResTimeStamp
     fun clearMarks(markName: String = definedExternally)
     fun clearMeasures(measureName: String = definedExternally)
     fun clearResourceTimings()
@@ -39,7 +39,7 @@ sealed external class Performance :
         endMark: String = definedExternally,
     ): PerformanceMeasure
 
-    fun now(): HighResTimeStamp
+    fun now(): DOMHighResTimeStamp
     fun setResourceTimingBufferSize(maxSize: Number)
     fun toJSON(): Any
 }

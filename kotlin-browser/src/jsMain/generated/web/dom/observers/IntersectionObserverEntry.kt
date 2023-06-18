@@ -2,7 +2,7 @@
 
 package web.dom.observers
 
-import js.core.HighResTimeStamp
+import js.core.DOMHighResTimeStamp
 import web.dom.Element
 import web.geometry.DOMRectReadOnly
 
@@ -15,5 +15,5 @@ external class IntersectionObserverEntry(
     val isIntersecting: Boolean
     val rootBounds: DOMRectReadOnly?
     val target: Element
-    val time: HighResTimeStamp
+    val time: DOMHighResTimeStamp
 }

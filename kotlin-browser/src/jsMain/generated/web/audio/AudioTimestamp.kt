@@ -2,9 +2,9 @@
 
 package web.audio
 
-import js.core.HighResTimeStamp
+import js.core.DOMHighResTimeStamp
 
 sealed external interface AudioTimestamp {
     var contextTime: Double?
-    var performanceTime: HighResTimeStamp?
+    var performanceTime: DOMHighResTimeStamp?
 }
