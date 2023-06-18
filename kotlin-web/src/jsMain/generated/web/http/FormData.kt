@@ -49,5 +49,4 @@ external class FormData(
     override fun keys(): JsIterable.Iterator<String>
     override fun values(): JsIterable.Iterator<FormDataEntryValue>
     override fun forEach(action: (value: FormDataEntryValue, key: String) -> Unit)
-
 }
