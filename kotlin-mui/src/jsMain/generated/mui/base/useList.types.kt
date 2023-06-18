@@ -78,7 +78,7 @@ external interface UseListParameters<ItemValue, State, CustomAction, CustomActio
     /**
      * Ref of the list root DOM element.
      */
-    var rootRef: react.Ref<HTMLElement>?
+    var rootRef: react.Ref<web.dom.Element>?
 
     /**
      * Callback fired when the selected value changes.
@@ -116,7 +116,7 @@ external interface UseListParameters<ItemValue, State, CustomAction, CustomActio
      * A function that converts an object to its string representation
      * @default (o) => o
      */
-    var itemStringifier: ((option: ItemValue) -> String?)?
+    var getItemAsString: ((option: ItemValue) -> String?)?
 
     /**
      * Array of list items.
@@ -182,7 +182,7 @@ external interface UseListReturnValue {
 
     var getRootProps: react.Props /* <TOther extends EventHandlers = {}>(otherHandlers?: TOther) => UseListRootSlotProps<TOther> */
 
-    var rootRef: react.RefCallback<HTMLElement>?
+    var rootRef: react.RefCallback<web.dom.Element>?
 
     var state: dynamic
 }

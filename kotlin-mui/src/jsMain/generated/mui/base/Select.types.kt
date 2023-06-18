@@ -74,7 +74,7 @@ external interface SelectOwnProps<OptionValue> :
     /**
      * Callback fired when an option is selected.
      */
-    var onChange: Any? /* (e: React.MouseEvent | React.KeyboardEvent | React.FocusEvent | null, value: SelectValue<OptionValue, Multiple>) => void */
+    var onChange: Any? /* (event: React.MouseEvent | React.KeyboardEvent | React.FocusEvent | null, value: SelectValue<OptionValue, Multiple>) => void */
 
     /**
      * Callback fired when the component requests to be opened.
@@ -89,7 +89,7 @@ external interface SelectOwnProps<OptionValue> :
      *
      * @default defaultOptionStringifier
      */
-    var optionStringifier: ((option: SelectOption<OptionValue>) -> String)?
+    var getOptionAsString: ((option: SelectOption<OptionValue>) -> String)?
 
     /**
      * Function that customizes the rendering of the selected value.

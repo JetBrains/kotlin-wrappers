@@ -31,7 +31,7 @@ external interface UseSelectParameters<OptionValue, Multiple> {
     /**
      * The ref of the trigger button element.
      */
-    var buttonRef: react.Ref<web.html.HTMLElement>?
+    var buttonRef: react.Ref<web.dom.Element>?
 
     /**
      * The `id` attribute of the listbox element.
@@ -41,7 +41,7 @@ external interface UseSelectParameters<OptionValue, Multiple> {
     /**
      * The ref of the listbox element.
      */
-    var listboxRef: react.Ref<web.html.HTMLElement>?
+    var listboxRef: react.Ref<web.dom.Element>?
 
     /**
      * If `true`, the end user can select multiple values.
@@ -54,12 +54,12 @@ external interface UseSelectParameters<OptionValue, Multiple> {
     /**
      * Callback fired when an option is selected.
      */
-    var onChange: Any? /* (e: React.MouseEvent | React.KeyboardEvent | React.FocusEvent | null, value: SelectValue<OptionValue, Multiple>) => void */
+    var onChange: Any? /* (event: React.MouseEvent | React.KeyboardEvent | React.FocusEvent | null, value: SelectValue<OptionValue, Multiple>) => void */
 
     /**
      * Callback fired when an option is highlighted.
      */
-    var onHighlightChange: Any? /* (e: React.MouseEvent<Element, MouseEvent> | React.KeyboardEvent<Element> | React.FocusEvent<Element, Element> | null, highlighted: OptionValue | null) => void */
+    var onHighlightChange: Any? /* (event: React.MouseEvent<Element, MouseEvent> | React.KeyboardEvent<Element> | React.FocusEvent<Element, Element> | null, highlighted: OptionValue | null) => void */
 
     /**
      * Callback fired when the listbox is opened or closed.
@@ -85,7 +85,7 @@ external interface UseSelectParameters<OptionValue, Multiple> {
      *
      * @default defaultOptionStringifier
      */
-    var optionStringifier: ((option: SelectOption<OptionValue>) -> String)?
+    var getOptionAsString: ((option: SelectOption<OptionValue>) -> String)?
 
     /**
      * The selected value.
@@ -108,7 +108,7 @@ external interface UseSelectReturnValue<Value> {
     /**
      * Ref to the button slot DOM node.
      */
-    var buttonRef: react.RefCallback<web.html.HTMLElement>?
+    var buttonRef: react.RefCallback<web.dom.Element>?
 
     /**
      * If `true`, the select is disabled.
@@ -156,7 +156,7 @@ external interface UseSelectReturnValue<Value> {
     /**
      * Ref to the listbox slot DOM node.
      */
-    var listboxRef: react.RefCallback<web.html.HTMLElement>?
+    var listboxRef: react.RefCallback<web.dom.Element>?
 
     /**
      * If `true`, the listbox is open.
@@ -176,14 +176,6 @@ external interface UseSelectReturnValue<Value> {
 
 external interface ButtonClickAction {
     var type: dynamic
-
-    var event: dynamic
-}
-
-external interface ButtonArrowKeyDownAction {
-    var type: dynamic
-
-    var key: String
 
     var event: dynamic
 }

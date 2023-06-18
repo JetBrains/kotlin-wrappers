@@ -28,7 +28,7 @@ external interface UseMenuParameters {
     /**
      * Ref of the menu listbox.
      */
-    var listboxRef: react.Ref<web.html.HTMLElement>?
+    var listboxRef: react.Ref<web.dom.Element>?
 }
 
 external interface UseMenuReturnValue {
@@ -58,7 +58,7 @@ external interface UseMenuReturnValue {
     /**
      * The ref to the listbox DOM node.
      */
-    var listboxRef: react.RefCallback<web.html.HTMLElement>?
+    var listboxRef: react.RefCallback<web.dom.Element>?
 
     /**
      * Items in the menu listbox.

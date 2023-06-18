@@ -43,7 +43,7 @@ external interface UseButtonParameters {
 
     var onFocusVisible: react.dom.events.FocusEventHandler<*>?
 
-    var rootRef: react.Ref<web.html.HTMLElement>?
+    var rootRef: react.Ref<web.dom.Element>?
 
     var tabIndex: Int?
 
@@ -84,5 +84,5 @@ external interface UseButtonReturnValue {
     /**
      * A ref to the component's root DOM element.
      */
-    var rootRef: react.RefCallback<web.html.HTMLElement>?
+    var rootRef: react.RefCallback<web.dom.Element>?
 }

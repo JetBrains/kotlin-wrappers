@@ -19,7 +19,7 @@ external interface UseOptionParameters {
 
     var value: Any
 
-    var rootRef: react.Ref<web.html.HTMLElement>?
+    var rootRef: react.Ref<web.dom.Element>?
 
     var id: String?
 }
@@ -33,5 +33,5 @@ external interface UseOptionReturnValue {
 
     var getRootProps: react.Props /* <Other extends EventHandlers>(otherHandlers?: Other) => UseOptionRootSlotProps<Other> */
 
-    var rootRef: react.RefCallback<web.html.HTMLElement>?
+    var rootRef: react.RefCallback<web.dom.Element>?
 }
