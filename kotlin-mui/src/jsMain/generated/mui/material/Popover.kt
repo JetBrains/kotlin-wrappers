@@ -24,10 +24,11 @@ external interface PopoverProps :
     var action: react.Ref<PopoverActions>?
 
     /**
-     * An HTML element, or a function that returns one.
+     * An HTML element, [PopoverVirtualElement](/material-ui/react-popover/#virtual-element),
+     * or a function that returns either.
      * It's used to set the position of the popover.
      */
-    var anchorEl: Element? /* null | Element | ((element: Element) => Element) */
+    var anchorEl: Element? /* null | Element | (() => Element) | PopoverVirtualElement | (() => PopoverVirtualElement) */
 
     /**
      * This is the point on the anchor where the popover's
