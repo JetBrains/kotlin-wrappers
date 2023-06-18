@@ -123,7 +123,7 @@ val myComponentInstance = Welcome.create {
 }
 ```
 
-## Using `ChildrenBuilder` extensions to structure complex components
+## Using `ChildrenBuilder` extensions to structure complex components [bad advice]
 
 If a single component contains a lot of code, you can use `ChildrenBuilder` extension functions to group and structure
 code that belongs together.
