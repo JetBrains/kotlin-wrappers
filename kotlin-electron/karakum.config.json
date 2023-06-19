@@ -16,18 +16,50 @@
         "App.kt": [
             "kotlin.js.Promise"
         ],
+        "AutoUpdater.kt": [
+            "kotlin.js.Date"
+        ],
         "BrowserWindow.kt": [
             "kotlin.js.Promise",
+            "node.buffer.Buffer",
+            "node.events.EventEmitter as NodeEventEmitter"
+        ],
+        "ClientRequest.kt": [
+            "node.buffer.Buffer",
+            "node.events.EventEmitter as NodeEventEmitter"
+        ],
+        "Clipboard.kt": [
             "node.buffer.Buffer"
         ],
         "ContentTracing.kt": [
             "kotlin.js.Promise"
         ],
         "Cookies.kt": [
+            "kotlin.js.Promise",
+            "node.events.EventEmitter as NodeEventEmitter"
+        ],
+        "CrashReport.kt": [
+            "kotlin.js.Date"
+        ],
+        "Debugger.kt": [
+            "kotlin.js.Promise",
+            "node.events.EventEmitter as NodeEventEmitter"
+        ],
+        "DesktopCapturer.kt": [
             "kotlin.js.Promise"
         ],
         "Dialog.kt": [
             "kotlin.js.Promise"
+        ],
+        "Dock.kt": [
+            "kotlin.js.Promise"
+        ],
+        "DownloadItem.kt": [
+            "node.buffer.Buffer",
+            "node.events.EventEmitter as NodeEventEmitter"
+        ],
+        "IncomingMessage.kt": [
+            "node.events.EventEmitter as NodeEventEmitter"
         ],
         "InAppPurchase.kt": [
             "kotlin.js.Promise"
@@ -39,15 +71,52 @@
         "IpcRendererEvent.kt": [
             "web.messaging.MessagePort"
         ],
+        "MessageBoxOptions.kt": [
+            "web.abort.AbortSignal"
+        ],
+        "MessageChannelMain.kt": [
+            "node.events.EventEmitter as NodeEventEmitter"
+        ],
+        "MessagePortMain.kt": [
+            "node.events.EventEmitter as NodeEventEmitter"
+        ],
+        "MimeTypedBuffer.kt": [
+            "node.buffer.Buffer"
+        ],
         "NativeImage.kt": [
             "kotlin.js.Promise",
             "node.buffer.Buffer"
         ],
-        "Session.kt": [
-            "kotlin.js.Promise",
+        "Net.kt": [
+            "kotlin.js.Promise"
+        ],
+        "NetLog.kt": [
+            "kotlin.js.Promise"
+        ],
+        "Notification.kt": [
+            "node.events.EventEmitter as NodeEventEmitter"
+        ],
+        "PushNotifications.kt": [
+            "kotlin.js.Promise"
+        ],
+        "SafeStorage.kt": [
             "node.buffer.Buffer"
         ],
+        "ServiceWorkers.kt": [
+            "node.events.EventEmitter as NodeEventEmitter"
+        ],
+        "Session.kt": [
+            "kotlin.js.Promise",
+            "node.buffer.Buffer",
+            "node.events.EventEmitter as NodeEventEmitter"
+        ],
         "Shell.kt": [
+            "kotlin.js.Promise"
+        ],
+        "ShareMenu.kt": [
+            "node.events.EventEmitter as NodeEventEmitter"
+        ],
+        "SystemPreferences.kt": [
             "kotlin.js.Promise"
         ],
         "WebContents.kt": [
