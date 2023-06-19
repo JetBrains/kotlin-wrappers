@@ -59,6 +59,7 @@
             "node.events.EventEmitter as NodeEventEmitter"
         ],
         "IncomingMessage.kt": [
+            "node.buffer.Buffer",
             "node.events.EventEmitter as NodeEventEmitter"
         ],
         "InAppPurchase.kt": [
@@ -119,9 +120,56 @@
         "SystemPreferences.kt": [
             "kotlin.js.Promise"
         ],
+        "TouchBarColorPicker.kt": [
+            "node.events.EventEmitter as NodeEventEmitter"
+        ],
+        "TouchBarGroup.kt": [
+            "node.events.EventEmitter as NodeEventEmitter"
+        ],
+        "TouchBarLabel.kt": [
+            "node.events.EventEmitter as NodeEventEmitter"
+        ],
+        "TouchBarOtherItemsProxy.kt": [
+            "node.events.EventEmitter as NodeEventEmitter"
+        ],
+        "TouchBarPopover.kt": [
+            "node.events.EventEmitter as NodeEventEmitter"
+        ],
+        "TouchBarScrubber.kt": [
+            "node.events.EventEmitter as NodeEventEmitter"
+        ],
+        "TouchBarSegmentedControl.kt": [
+            "node.events.EventEmitter as NodeEventEmitter"
+        ],
+        "TouchBarSlider.kt": [
+            "node.events.EventEmitter as NodeEventEmitter"
+        ],
+        "TouchBarSpacer.kt": [
+            "node.events.EventEmitter as NodeEventEmitter"
+        ],
+        "Tray.kt": [
+            "node.events.EventEmitter as NodeEventEmitter"
+        ],
+        "UploadData.kt": [
+            "node.buffer.Buffer"
+        ],
+        "UploadRawData.kt": [
+            "node.buffer.Buffer"
+        ],
+        "UtilityProcess.kt": [
+            "node.events.EventEmitter as NodeEventEmitter"
+        ],
         "WebContents.kt": [
             "kotlin.js.Promise",
-            "node.buffer.Buffer"
+            "node.buffer.Buffer",
+            "node.events.EventEmitter as NodeEventEmitter"
+        ],
+        "WebFrame.kt": [
+            "kotlin.js.Promise"
+        ],
+        "WebFrameMain.kt": [
+            "kotlin.js.Promise",
+            "node.events.EventEmitter as NodeEventEmitter"
         ],
         "WebviewTag.kt": [
             "kotlin.js.Promise",

@@ -8,6 +8,7 @@ module.exports = (node) => {
             node.name.text === "Tray"
             || node.name.text === "TouchBar"
             || node.name.text === "ShareMenu"
+            || node.name.text === "Notification"
             || node.name.text === "MessageChannelMain"
             || node.name.text === "MenuItem"
             || node.name.text === "Menu"
