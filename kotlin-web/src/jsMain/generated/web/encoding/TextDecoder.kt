@@ -1,9 +1,5 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "ABSTRACT_MEMBER_NOT_IMPLEMENTED",
-)
-
 package web.encoding
 
 import js.buffer.BufferSource

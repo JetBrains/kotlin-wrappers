@@ -1,7 +1,6 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "ABSTRACT_MEMBER_NOT_IMPLEMENTED",
     "SEALED_INHERITOR_IN_DIFFERENT_PACKAGE",
 )
 
