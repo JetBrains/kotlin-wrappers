@@ -60,6 +60,9 @@ object ReactHTML {
     inline val caption: IntrinsicType<HTMLAttributes<HTMLElement>>
         get() = IntrinsicType("caption")
 
+    inline val center: IntrinsicType<HTMLAttributes<HTMLElement>>
+        get() = IntrinsicType("center")
+
     inline val cite: IntrinsicType<HTMLAttributes<HTMLElement>>
         get() = IntrinsicType("cite")
 
@@ -263,6 +266,9 @@ object ReactHTML {
 
     inline val samp: IntrinsicType<HTMLAttributes<HTMLElement>>
         get() = IntrinsicType("samp")
+
+    inline val search: IntrinsicType<HTMLAttributes<HTMLElement>>
+        get() = IntrinsicType("search")
 
     inline val slot: IntrinsicType<SlotHTMLAttributes<HTMLSlotElement>>
         get() = IntrinsicType("slot")
