@@ -26,7 +26,7 @@ val FancyInput = ForwardRef<_, FancyInputProps> { props ->
         inputRef.current?.let(::SimpleFocusable)
     }
 
-    input.create {
+    input {
         ref = inputRef
     }
 }
