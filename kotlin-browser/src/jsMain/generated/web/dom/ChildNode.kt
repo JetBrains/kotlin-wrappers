@@ -2,11 +2,13 @@
 
 @file:Suppress(
     "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
+    "INTERFACE_WITH_SUPERCLASS",
 )
 
 package web.dom
 
-sealed external interface ChildNode /* : Node */ {
+sealed external interface ChildNode :
+    Node {
     /**
      * Inserts nodes just after node, while replacing strings in nodes with equivalent Text nodes.
      *

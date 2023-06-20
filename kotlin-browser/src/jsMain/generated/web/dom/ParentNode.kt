@@ -2,6 +2,7 @@
 
 @file:Suppress(
     "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
+    "INTERFACE_WITH_SUPERCLASS",
 )
 
 package web.dom
@@ -14,7 +15,8 @@ import web.mathml.MathMLTagName
 import web.svg.SVGElement
 import web.svg.SvgTagName
 
-sealed external interface ParentNode /* : Node */ {
+sealed external interface ParentNode :
+    Node {
     val childElementCount: Int
         get() = definedExternally
 

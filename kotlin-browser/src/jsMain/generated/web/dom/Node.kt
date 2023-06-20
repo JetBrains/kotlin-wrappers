@@ -11,19 +11,19 @@ sealed external class Node :
     val baseURI: String
 
     /** Returns the children. */
-    val childNodes: NodeListOf<Node /* ChildNode */>
+    val childNodes: NodeListOf<ChildNode>
 
     /** Returns the first child. */
-    val firstChild: Node /* ChildNode */?
+    val firstChild: ChildNode?
 
     /** Returns true if node is connected and false otherwise. */
     val isConnected: Boolean
 
     /** Returns the last child. */
-    val lastChild: Node /* ChildNode */?
+    val lastChild: ChildNode?
 
     /** Returns the next sibling. */
-    val nextSibling: Node /* ChildNode */?
+    val nextSibling: ChildNode?
 
     /** Returns a string appropriate for the type of node. */
     val nodeName: String
@@ -39,10 +39,10 @@ sealed external class Node :
     val parentElement: HTMLElement?
 
     /** Returns the parent. */
-    val parentNode: Node /* ParentNode */?
+    val parentNode: ParentNode?
 
     /** Returns the previous sibling. */
-    val previousSibling: Node /* ChildNode */?
+    val previousSibling: ChildNode?
     var textContent: String?
     fun <T : Node> appendChild(node: T): T
 
