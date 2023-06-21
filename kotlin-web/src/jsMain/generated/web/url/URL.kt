@@ -38,6 +38,16 @@ external class URL(
     fun toJSON(): String
 
     companion object {
+        fun canParse(
+            url: String,
+            base: String = definedExternally,
+        ): Boolean
+
+        fun canParse(
+            url: URL,
+            base: String = definedExternally,
+        ): Boolean
+
         fun createObjectURL(obj: Blob /* | MediaSource */): String
         fun revokeObjectURL(url: String)
     }
