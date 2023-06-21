@@ -17,7 +17,11 @@ open external class DragEvent(
     override val type: EventType<DragEvent>,
     init: DragEventInit = definedExternally,
 ) : MouseEvent {
-    /** Returns the DataTransfer object for the event. */
+    /**
+     * Returns the DataTransfer object for the event.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DragEvent/dataTransfer)
+     */
     val dataTransfer: DataTransfer?
 
     companion object

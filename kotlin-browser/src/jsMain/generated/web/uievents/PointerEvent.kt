@@ -39,7 +39,11 @@ open external class PointerEvent(
     val twist: Int
     val width: Double
 
-    /** Available only in secure contexts. */
+    /**
+     * Available only in secure contexts.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PointerEvent/getCoalescedEvents)
+     */
     fun getCoalescedEvents(): ReadonlyArray<PointerEvent>
     fun getPredictedEvents(): ReadonlyArray<PointerEvent>
 
