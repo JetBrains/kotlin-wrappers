@@ -252,6 +252,9 @@ object HTML {
     inline val script: HtmlTagName<HTMLScriptElement>
         get() = HtmlTagName("script")
 
+    inline val search: HtmlTagName<HTMLElement>
+        get() = HtmlTagName("search")
+
     inline val section: HtmlTagName<HTMLElement>
         get() = HtmlTagName("section")
 
