@@ -7,5 +7,5 @@ sealed external class CSSImportRule :
     val href: String
     val layerName: String?
     val media: MediaList
-    val styleSheet: CSSStyleSheet
+    val styleSheet: CSSStyleSheet?
 }

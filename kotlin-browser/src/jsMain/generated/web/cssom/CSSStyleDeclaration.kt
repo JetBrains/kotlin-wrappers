@@ -15,6 +15,7 @@ sealed external class CSSStyleDeclaration :
     var alignmentBaseline: String
     var all: String
     var animation: String
+    var animationComposition: String
     var animationDelay: String
     var animationDirection: String
     var animationDuration: String
@@ -184,6 +185,7 @@ sealed external class CSSStyleDeclaration :
     var fontVariantPosition: String
     var fontVariationSettings: String
     var fontWeight: String
+    var forcedColorAdjust: String
     var gap: String
     var grid: String
     var gridArea: String
