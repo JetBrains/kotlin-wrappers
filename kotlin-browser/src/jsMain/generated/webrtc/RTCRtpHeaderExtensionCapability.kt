@@ -3,5 +3,5 @@
 package webrtc
 
 sealed external interface RTCRtpHeaderExtensionCapability {
-    var uri: String?
+    var uri: String
 }

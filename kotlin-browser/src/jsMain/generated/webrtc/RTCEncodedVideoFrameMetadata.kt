@@ -5,7 +5,6 @@ package webrtc
 import js.core.ReadonlyArray
 
 sealed external interface RTCEncodedVideoFrameMetadata {
-    var contributingSources: ReadonlyArray<Number>?
     var dependencies: ReadonlyArray<Number>?
     var frameId: Number?
     var height: Double?

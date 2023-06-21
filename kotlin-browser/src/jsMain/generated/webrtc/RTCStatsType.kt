@@ -8,7 +8,7 @@
 package webrtc
 
 // language=JavaScript
-@JsName("""(/*union*/{candidatePair: 'candidate-pair', certificate: 'certificate', codec: 'codec', dataChannel: 'data-channel', inboundRtp: 'inbound-rtp', localCandidate: 'local-candidate', mediaSource: 'media-source', outboundRtp: 'outbound-rtp', peerConnection: 'peer-connection', remoteCandidate: 'remote-candidate', remoteInboundRtp: 'remote-inbound-rtp', remoteOutboundRtp: 'remote-outbound-rtp', track: 'track', transport: 'transport'}/*union*/)""")
+@JsName("""(/*union*/{candidatePair: 'candidate-pair', certificate: 'certificate', codec: 'codec', dataChannel: 'data-channel', inboundRtp: 'inbound-rtp', localCandidate: 'local-candidate', mediaSource: 'media-source', outboundRtp: 'outbound-rtp', peerConnection: 'peer-connection', remoteCandidate: 'remote-candidate', remoteInboundRtp: 'remote-inbound-rtp', remoteOutboundRtp: 'remote-outbound-rtp', transport: 'transport'}/*union*/)""")
 sealed external interface RTCStatsType {
     companion object {
         val candidatePair: RTCStatsType
@@ -23,7 +23,6 @@ sealed external interface RTCStatsType {
         val remoteCandidate: RTCStatsType
         val remoteInboundRtp: RTCStatsType
         val remoteOutboundRtp: RTCStatsType
-        val track: RTCStatsType
         val transport: RTCStatsType
     }
 }
