@@ -28,9 +28,13 @@ abstract external class HTMLElement :
     val offsetTop: Int
     val offsetWidth: Int
     var outerText: String
+    var popover: String?
     var spellcheck: Boolean
     var title: String
     var translate: Boolean
     fun attachInternals(): ElementInternals
     fun click()
+    fun hidePopover()
+    fun showPopover()
+    fun togglePopover(force: Boolean = definedExternally)
 }

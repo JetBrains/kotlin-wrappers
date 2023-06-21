@@ -6,7 +6,8 @@ import web.dom.NodeListOf
 import web.window.WindowName
 
 abstract external class HTMLButtonElement :
-    HTMLElement {
+    HTMLElement,
+    PopoverInvokerElement {
     var disabled: Boolean
 
     /**

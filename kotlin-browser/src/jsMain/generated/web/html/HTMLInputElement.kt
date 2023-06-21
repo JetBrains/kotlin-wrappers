@@ -10,7 +10,8 @@ import web.window.WindowName
 import kotlin.js.Date
 
 abstract external class HTMLInputElement :
-    HTMLElement {
+    HTMLElement,
+    PopoverInvokerElement {
     /** Sets or retrieves a comma-separated list of content types. */
     var accept: String
 
