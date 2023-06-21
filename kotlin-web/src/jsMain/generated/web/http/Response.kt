@@ -19,6 +19,11 @@ external class Response(
 
     companion object {
         fun error(): Response
+        fun json(
+            data: Any?,
+            init: ResponseInit = definedExternally,
+        ): Response
+
         fun redirect(
             url: String,
             status: Number = definedExternally,

@@ -16,13 +16,17 @@ external class FormData(
     fun append(
         name: String,
         value: String,
-        fileName: String = definedExternally,
     )
 
     fun append(
         name: String,
         value: Blob,
-        fileName: String = definedExternally,
+    )
+
+    fun append(
+        name: String,
+        blobValue: Blob,
+        filename: String = definedExternally,
     )
 
     fun delete(name: String)
@@ -41,8 +45,8 @@ external class FormData(
 
     fun set(
         name: String,
-        value: Blob,
-        fileName: String,
+        blobValue: Blob,
+        filename: String = definedExternally,
     )
 
     override fun entries(): JsIterable.Iterator<JsTuple2<String, FormDataEntryValue>>

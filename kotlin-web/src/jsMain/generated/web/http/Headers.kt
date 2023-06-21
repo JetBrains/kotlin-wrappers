@@ -5,6 +5,7 @@ package web.http
 import js.collections.MapLike
 import js.core.JsIterable
 import js.core.JsTuple2
+import js.core.ReadonlyArray
 
 external class Headers(
     init: HeadersInit = definedExternally,
@@ -16,6 +17,7 @@ external class Headers(
 
     fun delete(name: String)
     operator fun get(name: String): String?
+    fun getSetCookie(): ReadonlyArray<String>
     fun has(name: String): Boolean
     operator fun set(
         name: String,
