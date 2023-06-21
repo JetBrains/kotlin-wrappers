@@ -7,6 +7,9 @@ import kotlin.js.Promise
 external class ReadableStreamDefaultReader<R>(
     stream: ReadableStream<R>,
 ) : ReadableStreamGenericReader {
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStreamDefaultReader/read) */
     fun read(): Promise<ReadableStreamReadResult<R>>
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStreamDefaultReader/releaseLock) */
     fun releaseLock()
 }

@@ -15,6 +15,7 @@ external class URLSearchParams(
     constructor(init: String)
     constructor(init: URLSearchParams)
 
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/URLSearchParams/size) */
     val size: Int
 
     /**
@@ -71,6 +72,7 @@ external class URLSearchParams(
         value: String,
     )
 
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/URLSearchParams/sort) */
     fun sort()
 
     override fun entries(): JsIterable.Iterator<JsTuple2<String, String>>

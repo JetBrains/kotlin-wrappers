@@ -8,6 +8,7 @@ import js.core.ReadonlyArray
 import kotlin.js.Promise
 
 sealed external class SubtleCrypto {
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/decrypt) */
     fun decrypt(
         algorithm: Algorithm,
         key: CryptoKey,
@@ -44,6 +45,7 @@ sealed external class SubtleCrypto {
         data: BufferSource,
     ): Promise<ArrayBuffer>
 
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveBits) */
     fun deriveBits(
         algorithm: Algorithm,
         baseKey: CryptoKey,
@@ -74,6 +76,7 @@ sealed external class SubtleCrypto {
         length: Number,
     ): Promise<ArrayBuffer>
 
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveKey) */
     fun deriveKey(
         algorithm: Algorithm,
         baseKey: CryptoKey,
@@ -298,6 +301,7 @@ sealed external class SubtleCrypto {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/digest) */
     fun digest(
         algorithm: Algorithm,
         data: BufferSource,
@@ -308,6 +312,7 @@ sealed external class SubtleCrypto {
         data: BufferSource,
     ): Promise<ArrayBuffer>
 
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/encrypt) */
     fun encrypt(
         algorithm: Algorithm,
         key: CryptoKey,
@@ -344,6 +349,7 @@ sealed external class SubtleCrypto {
         data: BufferSource,
     ): Promise<ArrayBuffer>
 
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/exportKey) */
     fun exportKey(
         format: KeyFormat.jwk,
         key: CryptoKey,
@@ -354,6 +360,7 @@ sealed external class SubtleCrypto {
         key: CryptoKey,
     ): Promise<ArrayBuffer>
 
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/generateKey) */
     fun generateKey(
         algorithm: RsaHashedKeyGenParams,
         extractable: Boolean,
@@ -396,6 +403,7 @@ sealed external class SubtleCrypto {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<Any /* CryptoKeyPair | CryptoKey */>
 
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/importKey) */
     fun importKey(
         format: KeyFormat.jwk,
         keyData: JsonWebKey,
@@ -492,6 +500,7 @@ sealed external class SubtleCrypto {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/sign) */
     fun sign(
         algorithm: Algorithm,
         key: CryptoKey,
@@ -516,6 +525,7 @@ sealed external class SubtleCrypto {
         data: BufferSource,
     ): Promise<ArrayBuffer>
 
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/unwrapKey) */
     fun unwrapKey(
         format: KeyFormat,
         wrappedKey: BufferSource,
@@ -856,6 +866,7 @@ sealed external class SubtleCrypto {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/verify) */
     fun verify(
         algorithm: Algorithm,
         key: CryptoKey,
@@ -884,6 +895,7 @@ sealed external class SubtleCrypto {
         data: BufferSource,
     ): Promise<Boolean>
 
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/wrapKey) */
     fun wrapKey(
         format: KeyFormat,
         key: CryptoKey,

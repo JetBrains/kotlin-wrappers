@@ -11,6 +11,8 @@ sealed external class Crypto {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Crypto/subtle)
      */
     val subtle: SubtleCrypto
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Crypto/getRandomValues) */
     fun <T : ArrayBufferView?> getRandomValues(array: T): T
 
     /**
