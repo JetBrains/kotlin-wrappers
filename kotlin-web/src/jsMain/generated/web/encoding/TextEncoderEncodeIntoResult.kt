@@ -3,6 +3,6 @@
 package web.encoding
 
 sealed external interface TextEncoderEncodeIntoResult {
-    var read: Int?
-    var written: Int?
+    var read: Int
+    var written: Int
 }

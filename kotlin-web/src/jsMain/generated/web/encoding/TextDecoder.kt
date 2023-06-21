@@ -2,8 +2,6 @@
 
 package web.encoding
 
-import js.buffer.BufferSource
-
 external class TextDecoder(
     label: String = definedExternally,
     options: TextDecoderOptions = definedExternally,
@@ -20,9 +18,11 @@ external class TextDecoder(
      * ```
      *
      * If the error mode is "fatal" and encoding's decoder returns error, throws a TypeError.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextDecoder/decode)
      */
     fun decode(
-        input: BufferSource = definedExternally,
+        input: AllowSharedBufferSource = definedExternally,
         options: TextDecodeOptions = definedExternally,
     ): String
 }

@@ -7,7 +7,11 @@
 package web.encoding
 
 sealed external interface TextEncoderCommon {
-    /** Returns "utf-8". */
+    /**
+     * Returns "utf-8".
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextEncoder/encoding)
+     */
     val encoding: String
         get() = definedExternally
 }
