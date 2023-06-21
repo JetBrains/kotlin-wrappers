@@ -8,10 +8,18 @@ sealed external class IDBIndex {
     val keyPath: Any /* string | string[] */
     val multiEntry: Boolean
 
-    /** Returns the name of the index. */
+    /**
+     * Returns the name of the index.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBIndex/name)
+     */
     var name: String
 
-    /** Returns the IDBObjectStore the index belongs to. */
+    /**
+     * Returns the IDBObjectStore the index belongs to.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBIndex/objectStore)
+     */
     val objectStore: IDBObjectStore
     val unique: Boolean
 
@@ -19,6 +27,8 @@ sealed external class IDBIndex {
      * Retrieves the number of records matching the given key or key range in query.
      *
      * If successful, request's result will be the count.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBIndex/count)
      */
     fun count(query: IDBValidKey = definedExternally): IDBRequest<Int>
     fun count(query: IDBKeyRange): IDBRequest<Int>
@@ -27,6 +37,8 @@ sealed external class IDBIndex {
      * Retrieves the value of the first record matching the given key or key range in query.
      *
      * If successful, request's result will be the value, or undefined if there was no matching record.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBIndex/get)
      */
     operator fun get(query: IDBValidKey): IDBRequest<*>
     operator fun get(query: IDBKeyRange): IDBRequest<*>
@@ -35,6 +47,8 @@ sealed external class IDBIndex {
      * Retrieves the values of the records matching the given key or key range in query (up to count if given).
      *
      * If successful, request's result will be an Array of the values.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBIndex/getAll)
      */
     fun getAll(
         query: IDBValidKey? = definedExternally,
@@ -50,6 +64,8 @@ sealed external class IDBIndex {
      * Retrieves the keys of records matching the given key or key range in query (up to count if given).
      *
      * If successful, request's result will be an Array of the keys.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBIndex/getAllKeys)
      */
     fun getAllKeys(
         query: IDBValidKey? = definedExternally,
@@ -65,6 +81,8 @@ sealed external class IDBIndex {
      * Retrieves the key of the first record matching the given key or key range in query.
      *
      * If successful, request's result will be the key, or undefined if there was no matching record.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBIndex/getKey)
      */
     fun getKey(query: IDBValidKey): IDBRequest<IDBValidKey?>
     fun getKey(query: IDBKeyRange): IDBRequest<IDBValidKey?>
@@ -73,6 +91,8 @@ sealed external class IDBIndex {
      * Opens a cursor over the records matching query, ordered by direction. If query is null, all records in index are matched.
      *
      * If successful, request's result will be an IDBCursorWithValue, or null if there were no matching records.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBIndex/openCursor)
      */
     fun openCursor(
         query: IDBValidKey? = definedExternally,
@@ -88,6 +108,8 @@ sealed external class IDBIndex {
      * Opens a cursor with key only flag set over the records matching query, ordered by direction. If query is null, all records in index are matched.
      *
      * If successful, request's result will be an IDBCursor, or null if there were no matching records.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBIndex/openKeyCursor)
      */
     fun openKeyCursor(
         query: IDBValidKey? = definedExternally,

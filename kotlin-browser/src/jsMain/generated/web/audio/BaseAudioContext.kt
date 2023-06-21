@@ -12,7 +12,11 @@ import kotlin.js.Promise
 
 sealed external class BaseAudioContext :
     EventTarget {
-    /** Available only in secure contexts. */
+    /**
+     * Available only in secure contexts.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BaseAudioContext/audioWorklet)
+     */
     val audioWorklet: AudioWorklet
     val currentTime: Double
     val destination: AudioDestinationNode

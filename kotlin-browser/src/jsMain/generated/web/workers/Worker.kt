@@ -23,7 +23,11 @@ open external class Worker(
     var onmessage: EventHandler<MessageEvent<*>>?
     var onmessageerror: EventHandler<MessageEvent<*>>?
 
-    /** Clones message and transmits it to worker's global environment. transfer can be passed as a list of objects that are to be transferred rather than cloned. */
+    /**
+     * Clones message and transmits it to worker's global environment. transfer can be passed as a list of objects that are to be transferred rather than cloned.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Worker/postMessage)
+     */
     fun postMessage(
         message: Any?,
         transfer: ReadonlyArray<Transferable>,
@@ -34,6 +38,10 @@ open external class Worker(
         options: StructuredSerializeOptions = definedExternally,
     )
 
-    /** Aborts worker's associated global environment. */
+    /**
+     * Aborts worker's associated global environment.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Worker/terminate)
+     */
     fun terminate()
 }

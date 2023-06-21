@@ -29,6 +29,8 @@ open external class PageTransitionEvent(
      * Having iframes that are not salvageable
      * Active WebSocket objects
      * Aborting a Document
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PageTransitionEvent/persisted)
      */
     val persisted: Boolean
 

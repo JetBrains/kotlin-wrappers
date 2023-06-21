@@ -10,7 +10,11 @@ external class Path2D(
 ) : CanvasPath {
     constructor(path: String)
 
-    /** Adds to the path the path given by the argument. */
+    /**
+     * Adds to the path the path given by the argument.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Path2D/addPath)
+     */
     fun addPath(
         path: Path2D,
         transform: DOMMatrix2DInit = definedExternally,

@@ -18,7 +18,11 @@ open external class PopStateEvent(
     override val type: EventType<PopStateEvent>,
     init: PopStateEventInit = definedExternally,
 ) : Event {
-    /** Returns a copy of the information that was provided to pushState() or replaceState(). */
+    /**
+     * Returns a copy of the information that was provided to pushState() or replaceState().
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PopStateEvent/state)
+     */
     val state: Any?
 
     companion object

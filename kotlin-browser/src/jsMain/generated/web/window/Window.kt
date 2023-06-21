@@ -19,7 +19,11 @@ sealed external class Window :
     EventTarget,
     GlobalEventHandlers,
     WindowEventHandlers {
-    /** Returns true if the window has been closed, false otherwise. */
+    /**
+     * Returns true if the window has been closed, false otherwise.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/closed)
+     */
     val closed: Boolean
     val frameElement: Element?
     val frames: ArrayLike<Window>
@@ -27,10 +31,18 @@ sealed external class Window :
     val innerWidth: Int
     var name: WindowName
 
-    /** Available only in secure contexts. */
+    /**
+     * Available only in secure contexts.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/devicemotion_event)
+     */
     var ondevicemotion: EventHandler<DeviceMotionEvent>?
 
-    /** Available only in secure contexts. */
+    /**
+     * Available only in secure contexts.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/deviceorientation_event)
+     */
     var ondeviceorientation: EventHandler<DeviceOrientationEvent>?
     var opener: Any?
     val outerHeight: Int
@@ -40,6 +52,8 @@ sealed external class Window :
      * Refers to either the parent WindowProxy, or itself.
      *
      * It can rarely be null e.g. for contentWindow of an iframe that is already removed from the parent.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/parent)
      */
     val parent: WindowProxy
     val screenLeft: Int
@@ -51,10 +65,18 @@ sealed external class Window :
     val top: WindowProxy?
     fun blur()
 
-    /** Closes the window. */
+    /**
+     * Closes the window.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/close)
+     */
     fun close()
 
-    /** Moves the focus to the window's browsing context, if any. */
+    /**
+     * Moves the focus to the window's browsing context, if any.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/focus)
+     */
     fun focus()
     fun getSelection(): Selection?
     fun moveBy(
@@ -89,6 +111,8 @@ sealed external class Window :
      * If the origin of the target window doesn't match the given target origin, the message is discarded, to avoid information leakage. To send the message to the target regardless of origin, set the target origin to "*".
      *
      * Throws a "DataCloneError" DOMException if transfer array contains duplicate objects or if message could not be cloned.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/postMessage)
      */
     fun postMessage(
         message: Any?,
@@ -130,6 +154,10 @@ sealed external class Window :
         y: Number,
     )
 
-    /** Cancels the document load. */
+    /**
+     * Cancels the document load.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/stop)
+     */
     fun stop()
 }

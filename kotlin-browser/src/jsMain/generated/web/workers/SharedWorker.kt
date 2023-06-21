@@ -26,6 +26,10 @@ external class SharedWorker(
         options: WorkerOptions,
     )
 
-    /** Returns sharedWorker's MessagePort object which can be used to communicate with the global environment. */
+    /**
+     * Returns sharedWorker's MessagePort object which can be used to communicate with the global environment.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SharedWorker/port)
+     */
     val port: MessagePort
 }

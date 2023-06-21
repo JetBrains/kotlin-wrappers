@@ -13,6 +13,8 @@ abstract external class Worklet {
      * The credentials option can be set to a credentials mode to modify the script-fetching process. It defaults to "same-origin".
      *
      * Any failures in fetching the script or its dependencies will cause the returned promise to be rejected with an "AbortError" DOMException. Any errors in parsing the script or its dependencies will cause the returned promise to be rejected with the exception generated during parsing.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Worklet/addModule)
      */
     fun addModule(
         moduleURL: String,
