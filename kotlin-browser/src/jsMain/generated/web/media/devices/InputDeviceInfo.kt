@@ -2,5 +2,9 @@
 
 package web.media.devices
 
+import web.media.streams.MediaTrackCapabilities
+
 sealed external class InputDeviceInfo :
-    MediaDeviceInfo
+    MediaDeviceInfo {
+    fun getCapabilities(): MediaTrackCapabilities
+}

@@ -3,6 +3,7 @@
 package web.canvas
 
 sealed external interface CanvasState {
+    fun reset()
     fun restore()
     fun save()
 }

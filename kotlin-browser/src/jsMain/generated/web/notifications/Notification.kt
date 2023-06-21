@@ -20,6 +20,7 @@ external class Notification(
     var onclose: EventHandler<Event>?
     var onerror: EventHandler<Event>?
     var onshow: EventHandler<Event>?
+    val silent: Boolean?
     val tag: String
     val title: String
     fun close()
