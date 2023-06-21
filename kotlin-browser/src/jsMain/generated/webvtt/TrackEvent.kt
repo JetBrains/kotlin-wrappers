@@ -18,7 +18,11 @@ open external class TrackEvent(
     override val type: EventType<TrackEvent>,
     init: TrackEventInit = definedExternally,
 ) : Event {
-    /** Returns the track object (TextTrack, AudioTrack, or VideoTrack) to which the event relates. */
+    /**
+     * Returns the track object (TextTrack, AudioTrack, or VideoTrack) to which the event relates.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TrackEvent/track)
+     */
     val track: TextTrack?
 
     companion object
