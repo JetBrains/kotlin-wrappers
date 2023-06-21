@@ -10,6 +10,8 @@ sealed external class DOMTokenList :
      * Returns the associated set as string.
      *
      * Can be set, to change the associated attribute.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMTokenList/value)
      */
     var value: String
 
@@ -19,13 +21,23 @@ sealed external class DOMTokenList :
      * Throws a "SyntaxError" DOMException if one of the arguments is the empty string.
      *
      * Throws an "InvalidCharacterError" DOMException if one of the arguments contains any ASCII whitespace.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMTokenList/add)
      */
     fun add(vararg tokens: String)
 
-    /** Returns true if token is present, and false otherwise. */
+    /**
+     * Returns true if token is present, and false otherwise.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMTokenList/contains)
+     */
     fun contains(token: String): Boolean
 
-    /** Returns the token with index index. */
+    /**
+     * Returns the token with index index.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMTokenList/item)
+     */
     fun item(index: Int): String?
 
     /**
@@ -34,6 +46,8 @@ sealed external class DOMTokenList :
      * Throws a "SyntaxError" DOMException if one of the arguments is the empty string.
      *
      * Throws an "InvalidCharacterError" DOMException if one of the arguments contains any ASCII whitespace.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMTokenList/remove)
      */
     fun remove(vararg tokens: String)
 
@@ -45,6 +59,8 @@ sealed external class DOMTokenList :
      * Throws a "SyntaxError" DOMException if one of the arguments is the empty string.
      *
      * Throws an "InvalidCharacterError" DOMException if one of the arguments contains any ASCII whitespace.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMTokenList/replace)
      */
     fun replace(
         token: String,
@@ -55,6 +71,8 @@ sealed external class DOMTokenList :
      * Returns true if token is in the associated attribute's supported tokens. Returns false otherwise.
      *
      * Throws a TypeError if the associated attribute has no supported tokens defined.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMTokenList/supports)
      */
     fun supports(token: String): Boolean
 
@@ -66,6 +84,8 @@ sealed external class DOMTokenList :
      * Throws a "SyntaxError" DOMException if token is empty.
      *
      * Throws an "InvalidCharacterError" DOMException if token contains any spaces.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMTokenList/toggle)
      */
     fun toggle(
         token: String,

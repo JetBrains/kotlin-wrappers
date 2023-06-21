@@ -7,7 +7,11 @@ import web.geometry.DOMRectList
 
 sealed external class Range :
     AbstractRange {
-    /** Returns the node, furthest away from the document, that is an ancestor of both range's start node and end node. */
+    /**
+     * Returns the node, furthest away from the document, that is an ancestor of both range's start node and end node.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Range/commonAncestorContainer)
+     */
     val commonAncestorContainer: Node
     fun cloneContents(): DocumentFragment
     fun cloneRange(): Range
@@ -17,7 +21,11 @@ sealed external class Range :
         sourceRange: Range,
     ): Number
 
-    /** Returns −1 if the point is before the range, 0 if the point is in the range, and 1 if the point is after the range. */
+    /**
+     * Returns −1 if the point is before the range, 0 if the point is in the range, and 1 if the point is after the range.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Range/comparePoint)
+     */
     fun comparePoint(
         node: Node,
         offset: Number,
@@ -31,7 +39,11 @@ sealed external class Range :
     fun getClientRects(): DOMRectList
     fun insertNode(node: Node)
 
-    /** Returns whether range intersects node. */
+    /**
+     * Returns whether range intersects node.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Range/intersectsNode)
+     */
     fun intersectsNode(node: Node): Boolean
     fun isPointInRange(
         node: Node,

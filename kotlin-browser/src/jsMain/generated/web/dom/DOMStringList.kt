@@ -8,9 +8,17 @@ import js.core.JsIterable
 sealed external class DOMStringList :
     ArrayLike<String>,
     JsIterable<String> {
-    /** Returns true if strings contains string, and false otherwise. */
+    /**
+     * Returns true if strings contains string, and false otherwise.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMStringList/contains)
+     */
     fun contains(string: String): Boolean
 
-    /** Returns the string with index index from strings. */
+    /**
+     * Returns the string with index index from strings.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMStringList/item)
+     */
     fun item(index: Int): String?
 }

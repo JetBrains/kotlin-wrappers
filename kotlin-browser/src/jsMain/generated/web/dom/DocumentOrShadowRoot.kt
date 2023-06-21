@@ -14,16 +14,26 @@ external interface DocumentOrShadowRoot {
      * For the purposes of this API, when a child browsing context is focused, its container is focused in the parent browsing context. For example, if the user moves the focus to a text control in an iframe, the iframe is the element returned by the activeElement API in the iframe's node document.
      *
      * Similarly, when the focused element is in a different node tree than documentOrShadowRoot, the element returned will be the host that's located in the same node tree as documentOrShadowRoot if documentOrShadowRoot is a shadow-including inclusive ancestor of the focused element, and null if not.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/activeElement)
      */
     val activeElement: Element?
     var adoptedStyleSheets: ReadonlyArray<CSSStyleSheet>
 
-    /** Returns document's fullscreen element. */
+    /**
+     * Returns document's fullscreen element.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/fullscreenElement)
+     */
     val fullscreenElement: Element?
     val pictureInPictureElement: Element?
     val pointerLockElement: Element?
 
-    /** Retrieves a collection of styleSheet objects representing the style sheets that correspond to each instance of a link or style object in the document. */
+    /**
+     * Retrieves a collection of styleSheet objects representing the style sheets that correspond to each instance of a link or style object in the document.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/styleSheets)
+     */
     val styleSheets: StyleSheetList
 
     /**
