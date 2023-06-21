@@ -26,7 +26,11 @@ abstract external class HTMLLinkElement :
     var media: String
     var referrerPolicy: ReferrerPolicy
 
-    /** Sets or retrieves the relationship between the object and the destination of the link. */
+    /**
+     * Sets or retrieves the relationship between the object and the destination of the link.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLLinkElement/rel)
+     */
     var rel: String
     val relList: DOMTokenList
     val sizes: DOMTokenList

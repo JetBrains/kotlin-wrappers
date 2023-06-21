@@ -6,6 +6,10 @@ import web.dom.DocumentFragment
 
 abstract external class HTMLTemplateElement :
     HTMLElement {
-    /** Returns the template contents (a DocumentFragment). */
+    /**
+     * Returns the template contents (a DocumentFragment).
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTemplateElement/content)
+     */
     val content: DocumentFragment
 }

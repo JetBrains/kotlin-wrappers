@@ -6,7 +6,7 @@ import web.dom.NodeListOf
 
 abstract external class HTMLTextAreaElement :
     HTMLElement {
-    var autocomplete: String
+    var autocomplete: AutoFill
 
     /** Sets or retrieves the width of the object. */
     var cols: Int

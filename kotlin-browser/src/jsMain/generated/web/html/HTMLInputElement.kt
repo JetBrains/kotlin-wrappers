@@ -17,8 +17,12 @@ abstract external class HTMLInputElement :
     /** Sets or retrieves a text alternative to the graphic. */
     var alt: String
 
-    /** Specifies whether autocomplete is applied to an editable text field. */
-    var autocomplete: String
+    /**
+     * Specifies whether autocomplete is applied to an editable text field.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/autocomplete)
+     */
+    var autocomplete: AutoFill
     var capture: String
 
     /** Sets or retrieves the state of the check box or radio button. */
@@ -32,35 +36,71 @@ abstract external class HTMLInputElement :
     var dirName: String
     var disabled: Boolean
 
-    /** Returns a FileList object on a file type input object. */
+    /**
+     * Returns a FileList object on a file type input object.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/files)
+     */
     var files: FileList?
 
     /** Retrieves a reference to the form that the object is embedded in. */
     val form: HTMLFormElement?
 
-    /** Overrides the action attribute (where the data on a form is sent) on the parent form element. */
+    /**
+     * Overrides the action attribute (where the data on a form is sent) on the parent form element.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/formAction)
+     */
     var formAction: String
 
-    /** Used to override the encoding (formEnctype attribute) specified on the form element. */
+    /**
+     * Used to override the encoding (formEnctype attribute) specified on the form element.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/formEnctype)
+     */
     var formEnctype: String
 
-    /** Overrides the submit method attribute previously specified on a form element. */
+    /**
+     * Overrides the submit method attribute previously specified on a form element.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/formMethod)
+     */
     var formMethod: String
 
-    /** Overrides any validation or required attributes on a form or form elements to allow it to be submitted without validation. This can be used to create a "save draft"-type submit option. */
+    /**
+     * Overrides any validation or required attributes on a form or form elements to allow it to be submitted without validation. This can be used to create a "save draft"-type submit option.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/formNoValidate)
+     */
     var formNoValidate: Boolean
 
-    /** Overrides the target attribute on a form element. */
+    /**
+     * Overrides the target attribute on a form element.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/formTarget)
+     */
     var formTarget: WindowName
 
-    /** Sets or retrieves the height of the object. */
+    /**
+     * Sets or retrieves the height of the object.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/height)
+     */
     var height: Double
 
-    /** When set, overrides the rendering of checkbox controls so that the current value is not visible. */
+    /**
+     * When set, overrides the rendering of checkbox controls so that the current value is not visible.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/indeterminate)
+     */
     var indeterminate: Boolean
     val labels: NodeListOf<HTMLLabelElement>?
 
-    /** Specifies the ID of a pre-defined datalist of options for an input element. */
+    /**
+     * Specifies the ID of a pre-defined datalist of options for an input element.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/list)
+     */
     val list: HTMLDataListElement?
 
     /** Defines the maximum acceptable value for an input element with type="number".When used with the min and step attributes, lets you control the range and increment (such as only even numbers) that the user can enter into an input field. */
@@ -73,20 +113,36 @@ abstract external class HTMLInputElement :
     var min: String
     var minLength: Int
 
-    /** Sets or retrieves the Boolean value indicating whether multiple items can be selected from a list. */
+    /**
+     * Sets or retrieves the Boolean value indicating whether multiple items can be selected from a list.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/multiple)
+     */
     var multiple: Boolean
 
     /** Sets or retrieves the name of the object. */
     var name: String
 
-    /** Gets or sets a string containing a regular expression that the user's input must match. */
+    /**
+     * Gets or sets a string containing a regular expression that the user's input must match.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/pattern)
+     */
     var pattern: String
 
-    /** Gets or sets a text string that is displayed in an input field as a hint or prompt to users as the format or type of information they need to enter.The text appears in an input field until the user puts focus on the field. */
+    /**
+     * Gets or sets a text string that is displayed in an input field as a hint or prompt to users as the format or type of information they need to enter.The text appears in an input field until the user puts focus on the field.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/placeholder)
+     */
     var placeholder: String
     var readOnly: Boolean
 
-    /** When present, marks an element that can't be submitted without a value. */
+    /**
+     * When present, marks an element that can't be submitted without a value.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/required)
+     */
     var required: Boolean
     var selectionDirection: SelectionDirection?
 
@@ -106,10 +162,18 @@ abstract external class HTMLInputElement :
     /** Returns the content type of the object. */
     var type: InputType
 
-    /** Returns the error message that would be displayed if the user submits the form, or an empty string if no error message. It also triggers the standard error message, such as "this is a required field". The result is that the user sees validation messages without actually submitting. */
+    /**
+     * Returns the error message that would be displayed if the user submits the form, or an empty string if no error message. It also triggers the standard error message, such as "this is a required field". The result is that the user sees validation messages without actually submitting.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/validationMessage)
+     */
     val validationMessage: String
 
-    /** Returns a  ValidityState object that represents the validity states of an element. */
+    /**
+     * Returns a  ValidityState object that represents the validity states of an element.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/validity)
+     */
     val validity: ValidityState
 
     /** Returns the value of the data at the cursor's current position. */
@@ -123,22 +187,40 @@ abstract external class HTMLInputElement :
     val webkitEntries: ReadonlyArray<FileSystemEntry>
     var webkitdirectory: Boolean
 
-    /** Sets or retrieves the width of the object. */
+    /**
+     * Sets or retrieves the width of the object.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/width)
+     */
     var width: Double
 
-    /** Returns whether an element will successfully validate based on forms validation rules and constraints. */
+    /**
+     * Returns whether an element will successfully validate based on forms validation rules and constraints.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/willValidate)
+     */
     val willValidate: Boolean
 
-    /** Returns whether a form will validate when it is submitted, without having to submit it. */
+    /**
+     * Returns whether a form will validate when it is submitted, without having to submit it.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/checkValidity)
+     */
     fun checkValidity(): Boolean
     fun reportValidity(): Boolean
 
-    /** Makes the selection equal to the current object. */
+    /**
+     * Makes the selection equal to the current object.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/select)
+     */
     fun select()
 
     /**
      * Sets a custom error message that is displayed when a form is submitted.
      * @param error Sets a custom error message that is displayed when a form is submitted.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/setCustomValidity)
      */
     fun setCustomValidity(error: String)
     fun setRangeText(replacement: String)
@@ -154,6 +236,8 @@ abstract external class HTMLInputElement :
      * @param start The offset into the text field for the start of the selection.
      * @param end The offset into the text field for the end of the selection.
      * @param direction The direction in which the selection is performed.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/setSelectionRange)
      */
     fun setSelectionRange(
         start: Number?,
@@ -166,12 +250,16 @@ abstract external class HTMLInputElement :
     /**
      * Decrements a range input control's value by the value given by the Step attribute. If the optional parameter is used, it will decrement the input control's step value multiplied by the parameter's value.
      * @param n Value to decrement the value by.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/stepDown)
      */
     fun stepDown(n: Number = definedExternally)
 
     /**
      * Increments a range input control's value by the value given by the Step attribute. If the optional parameter is used, will increment the input control's value by that value.
      * @param n Value to increment the value by.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/stepUp)
      */
     fun stepUp(n: Number = definedExternally)
 }

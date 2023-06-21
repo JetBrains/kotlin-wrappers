@@ -18,7 +18,11 @@ open external class SubmitEvent(
     override val type: EventType<SubmitEvent>,
     init: SubmitEventInit = definedExternally,
 ) : Event {
-    /** Returns the element representing the submit button that triggered the form submission, or null if the submission was not triggered by a button. */
+    /**
+     * Returns the element representing the submit button that triggered the form submission, or null if the submission was not triggered by a button.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubmitEvent/submitter)
+     */
     val submitter: HTMLElement?
 
     companion object

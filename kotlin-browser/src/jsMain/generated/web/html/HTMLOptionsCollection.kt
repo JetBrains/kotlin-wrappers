@@ -10,6 +10,8 @@ sealed external class HTMLOptionsCollection :
      * When set to a smaller number, truncates the number of option elements in the corresponding container.
      *
      * When set to a greater number, adds new blank option elements to that container.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOptionsCollection/length)
      */
     override var length: Int
 
@@ -17,6 +19,8 @@ sealed external class HTMLOptionsCollection :
      * Returns the index of the first selected item, if any, or −1 if there is no selected item.
      *
      * Can be set, to change the selection.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOptionsCollection/selectedIndex)
      */
     var selectedIndex: Int
 
@@ -28,6 +32,8 @@ sealed external class HTMLOptionsCollection :
      * If before is omitted, null, or a number out of range, then element will be added at the end of the list.
      *
      * This method will throw a "HierarchyRequestError" DOMException if element is an ancestor of the element into which it is to be inserted.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOptionsCollection/add)
      */
     fun add(
         element: HTMLOptionElement,
@@ -49,6 +55,10 @@ sealed external class HTMLOptionsCollection :
         before: Number?,
     )
 
-    /** Removes the item with index index from the collection. */
+    /**
+     * Removes the item with index index from the collection.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOptionsCollection/remove)
+     */
     fun remove(index: Int)
 }

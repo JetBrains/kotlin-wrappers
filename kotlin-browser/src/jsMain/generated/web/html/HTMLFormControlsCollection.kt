@@ -10,6 +10,8 @@ sealed external class HTMLFormControlsCollection :
      * Returns the item with ID or name name from the collection.
      *
      * If there are multiple matching items, then a RadioNodeList object containing all those elements is returned.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFormControlsCollection/namedItem)
      */
     fun namedItem(name: String): Any? /* RadioNodeList | Element */
 }

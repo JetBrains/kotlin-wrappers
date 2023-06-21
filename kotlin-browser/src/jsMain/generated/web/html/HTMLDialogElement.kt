@@ -11,10 +11,16 @@ abstract external class HTMLDialogElement :
      * Closes the dialog element.
      *
      * The argument, if provided, provides a return value.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLDialogElement/close)
      */
     fun close(returnValue: String = definedExternally)
 
-    /** Displays the dialog element. */
+    /**
+     * Displays the dialog element.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLDialogElement/show)
+     */
     fun show()
     fun showModal()
 }

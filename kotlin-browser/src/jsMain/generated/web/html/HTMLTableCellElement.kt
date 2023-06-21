@@ -4,21 +4,45 @@ package web.html
 
 abstract external class HTMLTableCellElement :
     HTMLElement {
-    /** Sets or retrieves abbreviated text for the object. */
+    /**
+     * Sets or retrieves abbreviated text for the object.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableCellElement/abbr)
+     */
     var abbr: String
 
-    /** Retrieves the position of the object in the cells collection of a row. */
+    /**
+     * Retrieves the position of the object in the cells collection of a row.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableCellElement/cellIndex)
+     */
     val cellIndex: Int
 
-    /** Sets or retrieves the number columns in the table that the object should span. */
+    /**
+     * Sets or retrieves the number columns in the table that the object should span.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableCellElement/colSpan)
+     */
     var colSpan: Int
 
-    /** Sets or retrieves a list of header cells that provide information for the object. */
+    /**
+     * Sets or retrieves a list of header cells that provide information for the object.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableCellElement/headers)
+     */
     var headers: String
 
-    /** Sets or retrieves how many rows in a table the cell should span. */
+    /**
+     * Sets or retrieves how many rows in a table the cell should span.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableCellElement/rowSpan)
+     */
     var rowSpan: Int
 
-    /** Sets or retrieves the group of cells in a table to which the object's information applies. */
+    /**
+     * Sets or retrieves the group of cells in a table to which the object's information applies.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableCellElement/scope)
+     */
     var scope: String
 }
