@@ -27,6 +27,7 @@ import kotlin.js.Promise
 
 sealed external class Navigator :
     NavigatorAutomationInformation,
+    NavigatorBadge,
     NavigatorConcurrentHardware,
     NavigatorContentUtils,
     NavigatorCookies,
@@ -36,34 +37,62 @@ sealed external class Navigator :
     NavigatorOnLine,
     NavigatorPlugins,
     NavigatorStorage {
-    /** Available only in secure contexts. */
+    /**
+     * Available only in secure contexts.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/clipboard)
+     */
     val clipboard: Clipboard
 
-    /** Available only in secure contexts. */
+    /**
+     * Available only in secure contexts.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/credentials)
+     */
     val credentials: CredentialsContainer
     val doNotTrack: String?
     val geolocation: Geolocation
     val maxTouchPoints: Int
     val mediaCapabilities: MediaCapabilities
 
-    /** Available only in secure contexts. */
+    /**
+     * Available only in secure contexts.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/mediaDevices)
+     */
     val mediaDevices: MediaDevices
     val mediaSession: MediaSession
     val permissions: Permissions
 
-    /** Available only in secure contexts. */
+    /**
+     * Available only in secure contexts.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/serviceWorker)
+     */
     val serviceWorker: ServiceWorkerContainer
     val userActivation: UserActivation
     val wakeLock: WakeLock
 
-    /** Available only in secure contexts. */
+    /**
+     * Available only in secure contexts.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/canShare)
+     */
     fun canShare(data: ShareData = definedExternally): Boolean
     fun getGamepads(): ReadonlyArray<Gamepad?>
 
-    /** Available only in secure contexts. */
+    /**
+     * Available only in secure contexts.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/requestMIDIAccess)
+     */
     fun requestMIDIAccess(options: MIDIOptions = definedExternally): Promise<MIDIAccess>
 
-    /** Available only in secure contexts. */
+    /**
+     * Available only in secure contexts.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/requestMediaKeySystemAccess)
+     */
     fun requestMediaKeySystemAccess(
         keySystem: String,
         supportedConfigurations: ReadonlyArray<MediaKeySystemConfiguration>,
@@ -79,7 +108,11 @@ sealed external class Navigator :
         data: BodyInit? = definedExternally,
     ): Boolean
 
-    /** Available only in secure contexts. */
+    /**
+     * Available only in secure contexts.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/share)
+     */
     fun share(data: ShareData = definedExternally): Promise<Void>
     fun vibrate(pattern: VibratePattern): Boolean
 }
