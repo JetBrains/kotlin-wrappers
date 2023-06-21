@@ -9,5 +9,5 @@ package web.compression
 import web.streams.GenericTransformStream
 
 external class CompressionStream(
-    format: String,
+    format: CompressionFormat,
 ) : GenericTransformStream
