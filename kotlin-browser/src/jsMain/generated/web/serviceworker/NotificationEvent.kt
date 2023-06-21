@@ -18,7 +18,10 @@ open external class NotificationEvent(
     override val type: EventType<NotificationEvent>,
     init: NotificationEventInit,
 ) : ExtendableEvent {
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/NotificationEvent/action) */
     val action: String
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/NotificationEvent/notification) */
     val notification: Notification
 
     companion object
