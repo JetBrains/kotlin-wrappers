@@ -20,7 +20,10 @@ open external class BlobEvent(
     override val type: EventType<BlobEvent>,
     init: BlobEventInit,
 ) : Event {
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/BlobEvent/data) */
     val data: Blob
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/BlobEvent/timecode) */
     val timecode: DOMHighResTimeStamp
 
     companion object

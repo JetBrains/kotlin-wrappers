@@ -18,6 +18,7 @@ open external class MIDIConnectionEvent(
     override val type: EventType<MIDIConnectionEvent>,
     init: MIDIConnectionEventInit = definedExternally,
 ) : Event {
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/MIDIConnectionEvent/port) */
     val port: MIDIPort
 
     companion object

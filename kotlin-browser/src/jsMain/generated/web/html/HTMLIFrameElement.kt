@@ -40,6 +40,8 @@ abstract external class HTMLIFrameElement :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLIFrameElement/name)
      */
     var name: String
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLIFrameElement/referrerPolicy) */
     var referrerPolicy: ReferrerPolicy
     val sandbox: DOMTokenList
 

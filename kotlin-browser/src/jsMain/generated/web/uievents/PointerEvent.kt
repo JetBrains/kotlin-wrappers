@@ -28,15 +28,34 @@ open external class PointerEvent(
     override val type: EventType<PointerEvent>,
     init: PointerEventInit = definedExternally,
 ) : MouseEvent {
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/PointerEvent/height) */
     val height: Double
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/PointerEvent/isPrimary) */
     val isPrimary: Boolean
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/PointerEvent/pointerId) */
     val pointerId: Int
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/PointerEvent/pointerType) */
     val pointerType: String
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/PointerEvent/pressure) */
     val pressure: Double
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/PointerEvent/tangentialPressure) */
     val tangentialPressure: Double
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/PointerEvent/tiltX) */
     val tiltX: Int
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/PointerEvent/tiltY) */
     val tiltY: Int
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/PointerEvent/twist) */
     val twist: Int
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/PointerEvent/width) */
     val width: Double
 
     /**

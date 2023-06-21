@@ -13,9 +13,16 @@ import web.workers.AbstractWorker
 sealed external class ServiceWorker :
     EventTarget,
     AbstractWorker {
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorker/statechange_event) */
     var onstatechange: EventHandler<Event>?
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorker/scriptURL) */
     val scriptURL: String
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorker/state) */
     val state: ServiceWorkerState
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorker/postMessage) */
     fun postMessage(
         message: Any?,
         transfer: ReadonlyArray<Transferable>,

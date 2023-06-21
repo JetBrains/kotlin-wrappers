@@ -4,6 +4,7 @@ package web.html
 
 abstract external class HTMLFieldSetElement :
     HTMLElement {
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFieldSetElement/disabled) */
     var disabled: Boolean
 
     /**
@@ -19,6 +20,8 @@ abstract external class HTMLFieldSetElement :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFieldSetElement/form)
      */
     val form: HTMLFormElement?
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFieldSetElement/name) */
     var name: String
 
     /**
@@ -51,6 +54,8 @@ abstract external class HTMLFieldSetElement :
 
     /** Returns whether a form will validate when it is submitted, without having to submit it. */
     fun checkValidity(): Boolean
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFieldSetElement/reportValidity) */
     fun reportValidity(): Boolean
 
     /**

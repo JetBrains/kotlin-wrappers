@@ -22,10 +22,18 @@ abstract external class HTMLAreaElement :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAreaElement/coords)
      */
     var coords: String
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAreaElement/download) */
     var download: String
     var ping: String
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAreaElement/referrerPolicy) */
     var referrerPolicy: ReferrerPolicy
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAreaElement/rel) */
     var rel: String
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAreaElement/relList) */
     val relList: DOMTokenList
 
     /**

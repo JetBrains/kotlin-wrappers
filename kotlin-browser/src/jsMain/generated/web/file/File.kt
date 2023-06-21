@@ -12,7 +12,12 @@ external class File(
     fileName: String,
     options: FilePropertyBag = definedExternally,
 ) : Blob {
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/File/lastModified) */
     val lastModified: EpochTimeStamp
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/File/name) */
     val name: String
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/File/webkitRelativePath) */
     val webkitRelativePath: String
 }

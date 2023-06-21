@@ -18,6 +18,8 @@ external interface DocumentOrShadowRoot {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/activeElement)
      */
     val activeElement: Element?
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/adoptedStyleSheets) */
     var adoptedStyleSheets: ReadonlyArray<CSSStyleSheet>
 
     /**
@@ -26,7 +28,11 @@ external interface DocumentOrShadowRoot {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/fullscreenElement)
      */
     val fullscreenElement: Element?
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/pictureInPictureElement) */
     val pictureInPictureElement: Element?
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/pointerLockElement) */
     val pointerLockElement: Element?
 
     /**
@@ -51,5 +57,6 @@ external interface DocumentOrShadowRoot {
         y: Number,
     ): ReadonlyArray<Element>
 
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/getAnimations) */
     fun getAnimations(): ReadonlyArray<Animation>
 }

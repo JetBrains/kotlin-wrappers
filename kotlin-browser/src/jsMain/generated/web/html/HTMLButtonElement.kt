@@ -8,6 +8,7 @@ import web.window.WindowName
 abstract external class HTMLButtonElement :
     HTMLElement,
     PopoverInvokerElement {
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLButtonElement/disabled) */
     var disabled: Boolean
 
     /**
@@ -51,6 +52,8 @@ abstract external class HTMLButtonElement :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLButtonElement/formTarget)
      */
     var formTarget: WindowName
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLButtonElement/labels) */
     val labels: NodeListOf<HTMLLabelElement>
 
     /**
@@ -97,6 +100,8 @@ abstract external class HTMLButtonElement :
 
     /** Returns whether a form will validate when it is submitted, without having to submit it. */
     fun checkValidity(): Boolean
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLButtonElement/reportValidity) */
     fun reportValidity(): Boolean
 
     /**

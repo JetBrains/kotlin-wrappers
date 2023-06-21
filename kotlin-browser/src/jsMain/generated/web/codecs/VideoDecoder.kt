@@ -12,13 +12,26 @@ import kotlin.js.Promise
 external class VideoDecoder(
     init: VideoDecoderInit,
 ) : EventTarget {
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoDecoder/decodeQueueSize) */
     val decodeQueueSize: JsLong
     var ondequeue: EventHandler<Event>?
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoDecoder/state) */
     val state: CodecState
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoDecoder/close) */
     fun close()
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoDecoder/configure) */
     fun configure(config: VideoDecoderConfig)
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoDecoder/decode) */
     fun decode(chunk: EncodedVideoChunk)
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoDecoder/flush) */
     fun flush(): Promise<Void>
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoDecoder/reset) */
     fun reset()
 
     companion object {

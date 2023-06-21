@@ -9,6 +9,7 @@ import web.url.URL
 
 external class XMLHttpRequest :
     XMLHttpRequestEventTarget {
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/readystatechange_event) */
     var onreadystatechange: EventHandler<Event>?
 
     /**
@@ -48,6 +49,8 @@ external class XMLHttpRequest :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/responseType)
      */
     var responseType: XMLHttpRequestResponseType
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/responseURL) */
     val responseURL: String
 
     /**
@@ -58,7 +61,11 @@ external class XMLHttpRequest :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/responseXML)
      */
     val responseXML: Document?
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/status) */
     val status: Int
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/statusText) */
     val statusText: String
 
     /**
@@ -92,7 +99,11 @@ external class XMLHttpRequest :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/abort)
      */
     fun abort()
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/getAllResponseHeaders) */
     fun getAllResponseHeaders(): String
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/getResponseHeader) */
     fun getResponseHeader(name: String): String?
 
     /**

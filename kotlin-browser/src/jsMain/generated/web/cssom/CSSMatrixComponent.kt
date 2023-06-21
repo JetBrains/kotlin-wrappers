@@ -9,5 +9,6 @@ external class CSSMatrixComponent(
     matrix: DOMMatrixReadOnly,
     options: CSSMatrixComponentOptions = definedExternally,
 ) : CSSTransformComponent {
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSMatrixComponent/matrix) */
     var matrix: DOMMatrix
 }

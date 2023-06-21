@@ -9,6 +9,7 @@ import web.window.WindowTarget
 abstract external class HTMLAnchorElement :
     HTMLElement,
     HTMLHyperlinkElementUtils {
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAnchorElement/download) */
     var download: String
 
     /**
@@ -18,6 +19,8 @@ abstract external class HTMLAnchorElement :
      */
     var hreflang: String
     var ping: String
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAnchorElement/referrerPolicy) */
     var referrerPolicy: ReferrerPolicy
 
     /**
@@ -26,6 +29,8 @@ abstract external class HTMLAnchorElement :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAnchorElement/rel)
      */
     var rel: String
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAnchorElement/relList) */
     val relList: DOMTokenList
 
     /**
@@ -41,5 +46,7 @@ abstract external class HTMLAnchorElement :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAnchorElement/text)
      */
     var text: String
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAnchorElement/type) */
     var type: String
 }

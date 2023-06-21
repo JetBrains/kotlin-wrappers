@@ -4,6 +4,7 @@ package web.html
 
 abstract external class HTMLOptGroupElement :
     HTMLElement {
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOptGroupElement/disabled) */
     var disabled: Boolean
 
     /**

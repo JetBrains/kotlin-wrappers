@@ -15,7 +15,11 @@ external class BroadcastChannel(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BroadcastChannel/name)
      */
     val name: String
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/BroadcastChannel/message_event) */
     var onmessage: EventHandler<MessageEvent<*>>?
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/BroadcastChannel/messageerror_event) */
     var onmessageerror: EventHandler<MessageEvent<*>>?
 
     /**

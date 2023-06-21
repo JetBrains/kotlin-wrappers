@@ -17,6 +17,7 @@ open external class PaymentRequestUpdateEvent(
     override val type: EventType<PaymentRequestUpdateEvent>,
     init: PaymentRequestUpdateEventInit = definedExternally,
 ) : Event {
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentRequestUpdateEvent/updateWith) */
     fun updateWith(detailsPromise: PaymentDetailsUpdate)
     fun updateWith(detailsPromise: Promise<PaymentDetailsUpdate> /* PromiseLike */)
 

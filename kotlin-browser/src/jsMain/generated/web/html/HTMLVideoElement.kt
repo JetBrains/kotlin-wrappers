@@ -9,6 +9,7 @@ import kotlin.js.Promise
 
 abstract external class HTMLVideoElement :
     HTMLMediaElement {
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLVideoElement/disablePictureInPicture) */
     var disablePictureInPicture: Boolean
 
     /**
@@ -17,7 +18,11 @@ abstract external class HTMLVideoElement :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLVideoElement/height)
      */
     var height: Double
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLVideoElement/enterpictureinpicture_event) */
     var onenterpictureinpicture: EventHandler<Event>?
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLVideoElement/leavepictureinpicture_event) */
     var onleavepictureinpicture: EventHandler<Event>?
 
     /** Gets or sets the playsinline of the video element. for example, On iPhone, video elements will now be allowed to play inline, and will not automatically enter fullscreen mode when playback begins. */
@@ -51,7 +56,11 @@ abstract external class HTMLVideoElement :
      */
     var width: Double
     fun cancelVideoFrameCallback(requestId: VideoFrameRequestId)
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLVideoElement/getVideoPlaybackQuality) */
     fun getVideoPlaybackQuality(): VideoPlaybackQuality
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLVideoElement/requestPictureInPicture) */
     fun requestPictureInPicture(): Promise<PictureInPictureWindow>
     fun requestVideoFrameCallback(callback: VideoFrameRequestCallback): VideoFrameRequestId
 }

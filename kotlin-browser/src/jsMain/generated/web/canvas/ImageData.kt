@@ -16,6 +16,7 @@ external class ImageData(
         settings: ImageDataSettings = definedExternally,
     )
 
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageData/colorSpace) */
     val colorSpace: PredefinedColorSpace
 
     /**

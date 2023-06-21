@@ -22,10 +22,19 @@ open external class InputEvent(
     override val type: EventType<InputEvent>,
     init: InputEventInit = definedExternally,
 ) : UIEvent {
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/InputEvent/data) */
     val data: String?
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/InputEvent/dataTransfer) */
     val dataTransfer: DataTransfer?
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/InputEvent/inputType) */
     val inputType: String
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/InputEvent/isComposing) */
     val isComposing: Boolean
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/InputEvent/getTargetRanges) */
     fun getTargetRanges(): ReadonlyArray<Any /* StaticRange */>
 
     companion object

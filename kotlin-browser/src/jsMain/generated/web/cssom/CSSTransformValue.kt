@@ -13,7 +13,11 @@ external class CSSTransformValue(
 ) : CSSStyleValue,
     ListLike<CSSTransformComponent> {
     override val length: Int
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSTransformValue/is2D) */
     val is2D: Boolean
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSTransformValue/toMatrix) */
     fun toMatrix(): DOMMatrix
 
     override fun entries(): JsIterable.Iterator<JsTuple2<Int, CSSTransformComponent>>

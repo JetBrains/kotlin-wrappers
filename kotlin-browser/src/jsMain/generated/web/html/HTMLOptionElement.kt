@@ -10,6 +10,8 @@ abstract external class HTMLOptionElement :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOptionElement/defaultSelected)
      */
     var defaultSelected: Boolean
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOptionElement/disabled) */
     var disabled: Boolean
 
     /**

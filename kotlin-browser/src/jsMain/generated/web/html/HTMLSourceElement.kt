@@ -14,6 +14,8 @@ abstract external class HTMLSourceElement :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSourceElement/media)
      */
     var media: MediaQuery
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSourceElement/sizes) */
     var sizes: String
 
     /**
@@ -22,6 +24,8 @@ abstract external class HTMLSourceElement :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSourceElement/src)
      */
     var src: String
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSourceElement/srcset) */
     var srcset: String
 
     /**

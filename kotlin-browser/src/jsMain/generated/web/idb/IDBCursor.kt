@@ -25,6 +25,8 @@ sealed external class IDBCursor {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBCursor/primaryKey)
      */
     val primaryKey: IDBValidKey
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBCursor/request) */
     val request: IDBRequest<*>
 
     /**

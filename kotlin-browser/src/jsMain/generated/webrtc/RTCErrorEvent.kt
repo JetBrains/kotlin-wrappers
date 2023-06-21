@@ -18,6 +18,7 @@ open external class RTCErrorEvent(
     override val type: EventType<RTCErrorEvent>,
     init: RTCErrorEventInit,
 ) : Event {
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCErrorEvent/error) */
     val error: RTCError
 
     companion object

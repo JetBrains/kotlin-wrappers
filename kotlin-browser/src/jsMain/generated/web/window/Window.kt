@@ -25,10 +25,20 @@ sealed external class Window :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/closed)
      */
     val closed: Boolean
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/frameElement) */
     val frameElement: Element?
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/frames) */
     val frames: ArrayLike<Window>
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/innerHeight) */
     val innerHeight: Int
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/innerWidth) */
     val innerWidth: Int
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/name) */
     var name: WindowName
 
     /**
@@ -44,8 +54,14 @@ sealed external class Window :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/deviceorientation_event)
      */
     var ondeviceorientation: EventHandler<DeviceOrientationEvent>?
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/opener) */
     var opener: Any?
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/outerHeight) */
     val outerHeight: Int
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/outerWidth) */
     val outerWidth: Int
 
     /**
@@ -56,13 +72,29 @@ sealed external class Window :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/parent)
      */
     val parent: WindowProxy
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/screenLeft) */
     val screenLeft: Int
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/screenTop) */
     val screenTop: Int
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/screenX) */
     val screenX: Int
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/screenY) */
     val screenY: Int
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/scrollX) */
     val scrollX: Double
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/scrollY) */
     val scrollY: Double
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/top) */
     val top: WindowProxy?
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/blur) */
     fun blur()
 
     /**
@@ -78,17 +110,23 @@ sealed external class Window :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/focus)
      */
     fun focus()
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/getSelection) */
     fun getSelection(): Selection?
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/moveBy) */
     fun moveBy(
         x: Number,
         y: Number,
     )
 
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/moveTo) */
     fun moveTo(
         x: Number,
         y: Number,
     )
 
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/open) */
     fun open(
         url: String = definedExternally,
         target: WindowTarget = definedExternally,
@@ -125,29 +163,36 @@ sealed external class Window :
         options: WindowPostMessageOptions = definedExternally,
     )
 
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/print) */
     fun print()
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/resizeBy) */
     fun resizeBy(
         x: Number,
         y: Number,
     )
 
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/resizeTo) */
     fun resizeTo(
         width: Number,
         height: Number,
     )
 
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/scroll) */
     fun scroll(options: ScrollToOptions = definedExternally)
     fun scroll(
         x: Number,
         y: Number,
     )
 
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/scrollBy) */
     fun scrollBy(options: ScrollToOptions = definedExternally)
     fun scrollBy(
         x: Number,
         y: Number,
     )
 
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/scrollTo) */
     fun scrollTo(options: ScrollToOptions = definedExternally)
     fun scrollTo(
         x: Number,

@@ -35,6 +35,8 @@ abstract external class HTMLMediaElement :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/controls)
      */
     var controls: Boolean
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/crossOrigin) */
     var crossOrigin: CrossOrigin?
 
     /**
@@ -50,6 +52,8 @@ abstract external class HTMLMediaElement :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/currentTime)
      */
     var currentTime: Double
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/defaultMuted) */
     var defaultMuted: Boolean
 
     /**
@@ -58,6 +62,8 @@ abstract external class HTMLMediaElement :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/defaultPlaybackRate)
      */
     var defaultPlaybackRate: Double
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/disableRemotePlayback) */
     var disableRemotePlayback: Boolean
 
     /**
@@ -108,7 +114,11 @@ abstract external class HTMLMediaElement :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/networkState)
      */
     val networkState: Short
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/encrypted_event) */
     var onencrypted: EventHandler<MediaEncryptedEvent>?
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/waitingforkey_event) */
     var onwaitingforkey: EventHandler<Event>?
 
     /**
@@ -138,7 +148,11 @@ abstract external class HTMLMediaElement :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/preload)
      */
     var preload: String /* "none" | "metadata" | "auto" | "" */
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/preservesPitch) */
     var preservesPitch: Boolean
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/readyState) */
     val readyState: Short
     val remote: RemotePlayback
 
@@ -162,7 +176,11 @@ abstract external class HTMLMediaElement :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/src)
      */
     var src: String
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/srcObject) */
     var srcObject: MediaProvider?
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/textTracks) */
     val textTracks: TextTrackList
 
     /**
@@ -171,6 +189,8 @@ abstract external class HTMLMediaElement :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/volume)
      */
     var volume: Double
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/addTextTrack) */
     fun addTextTrack(
         kind: TextTrackKind,
         label: String = definedExternally,
@@ -183,6 +203,8 @@ abstract external class HTMLMediaElement :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/canPlayType)
      */
     fun canPlayType(type: String): CanPlayTypeResult
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/fastSeek) */
     fun fastSeek(time: Number)
 
     /**

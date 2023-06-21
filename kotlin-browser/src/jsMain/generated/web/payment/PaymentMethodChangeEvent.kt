@@ -17,7 +17,10 @@ open external class PaymentMethodChangeEvent(
     override val type: EventType<PaymentMethodChangeEvent>,
     init: PaymentMethodChangeEventInit = definedExternally,
 ) : PaymentRequestUpdateEvent {
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentMethodChangeEvent/methodDetails) */
     val methodDetails: Any?
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentMethodChangeEvent/methodName) */
     val methodName: String
 
     companion object

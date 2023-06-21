@@ -18,6 +18,7 @@ open external class WebGLContextEvent(
     override val type: EventType<WebGLContextEvent>,
     init: WebGLContextEventInit = definedExternally,
 ) : Event {
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLContextEvent/statusMessage) */
     val statusMessage: String
 
     companion object

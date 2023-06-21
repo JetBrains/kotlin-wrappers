@@ -19,9 +19,16 @@ open external class WheelEvent(
     override val type: EventType<WheelEvent>,
     init: WheelEventInit = definedExternally,
 ) : MouseEvent {
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/WheelEvent/deltaMode) */
     val deltaMode: Short
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/WheelEvent/deltaX) */
     val deltaX: Double
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/WheelEvent/deltaY) */
     val deltaY: Double
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/WheelEvent/deltaZ) */
     val deltaZ: Double
     val DOM_DELTA_PIXEL: Short
     val DOM_DELTA_LINE: Short

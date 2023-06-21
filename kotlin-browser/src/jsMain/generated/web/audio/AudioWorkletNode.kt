@@ -11,7 +11,12 @@ external class AudioWorkletNode(
     name: String,
     options: AudioWorkletNodeOptions = definedExternally,
 ) : AudioNode {
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioWorkletNode/processorerror_event) */
     var onprocessorerror: EventHandler<Event>?
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioWorkletNode/parameters) */
     val parameters: AudioParamMap
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioWorkletNode/port) */
     val port: MessagePort
 }

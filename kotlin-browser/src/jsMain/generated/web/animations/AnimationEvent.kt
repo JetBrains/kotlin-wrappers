@@ -20,8 +20,13 @@ open external class AnimationEvent(
     override val type: EventType<AnimationEvent>,
     init: AnimationEventInit = definedExternally,
 ) : Event {
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/AnimationEvent/animationName) */
     val animationName: String
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/AnimationEvent/elapsedTime) */
     val elapsedTime: Double
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/AnimationEvent/pseudoElement) */
     val pseudoElement: String
 
     companion object

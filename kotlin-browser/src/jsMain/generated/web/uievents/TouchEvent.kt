@@ -21,12 +21,25 @@ open external class TouchEvent(
     override val type: EventType<TouchEvent>,
     init: TouchEventInit = definedExternally,
 ) : UIEvent {
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/TouchEvent/altKey) */
     val altKey: Boolean
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/TouchEvent/changedTouches) */
     val changedTouches: TouchList
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/TouchEvent/ctrlKey) */
     val ctrlKey: Boolean
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/TouchEvent/metaKey) */
     val metaKey: Boolean
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/TouchEvent/shiftKey) */
     val shiftKey: Boolean
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/TouchEvent/targetTouches) */
     val targetTouches: TouchList
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/TouchEvent/touches) */
     val touches: TouchList
 
     companion object

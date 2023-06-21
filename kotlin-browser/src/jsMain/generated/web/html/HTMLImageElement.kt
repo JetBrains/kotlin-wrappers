@@ -21,8 +21,14 @@ abstract external class HTMLImageElement :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/complete)
      */
     val complete: Boolean
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/crossOrigin) */
     var crossOrigin: CrossOrigin?
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/currentSrc) */
     val currentSrc: String
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/decoding) */
     var decoding: ImageDecoding
 
     /**
@@ -59,7 +65,11 @@ abstract external class HTMLImageElement :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/naturalWidth)
      */
     val naturalWidth: Int
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/referrerPolicy) */
     var referrerPolicy: ReferrerPolicy
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/sizes) */
     var sizes: String
 
     /**
@@ -68,6 +78,8 @@ abstract external class HTMLImageElement :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/src)
      */
     var src: String
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/srcset) */
     var srcset: String
 
     /**
@@ -83,7 +95,13 @@ abstract external class HTMLImageElement :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/width)
      */
     var width: Double
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/x) */
     val x: Double
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/y) */
     val y: Double
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/decode) */
     fun decode(): Promise<Void>
 }

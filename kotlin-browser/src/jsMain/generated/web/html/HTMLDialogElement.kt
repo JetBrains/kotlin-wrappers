@@ -4,7 +4,10 @@ package web.html
 
 abstract external class HTMLDialogElement :
     HTMLElement {
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLDialogElement/open) */
     var open: Boolean
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLDialogElement/returnValue) */
     var returnValue: String
 
     /**
@@ -22,5 +25,7 @@ abstract external class HTMLDialogElement :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLDialogElement/show)
      */
     fun show()
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLDialogElement/showModal) */
     fun showModal()
 }

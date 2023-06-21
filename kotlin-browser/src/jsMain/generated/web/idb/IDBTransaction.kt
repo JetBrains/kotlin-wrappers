@@ -16,6 +16,8 @@ sealed external class IDBTransaction :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBTransaction/db)
      */
     val db: IDBDatabase
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBTransaction/durability) */
     val durability: IDBTransactionDurability
 
     /**
@@ -38,8 +40,14 @@ sealed external class IDBTransaction :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBTransaction/objectStoreNames)
      */
     val objectStoreNames: DOMStringList
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBTransaction/abort_event) */
     var onabort: EventHandler<Event>?
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBTransaction/complete_event) */
     var oncomplete: EventHandler<Event>?
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBTransaction/error_event) */
     var onerror: EventHandler<Event>?
 
     /**
@@ -48,6 +56,8 @@ sealed external class IDBTransaction :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBTransaction/abort)
      */
     fun abort()
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBTransaction/commit) */
     fun commit()
 
     /**

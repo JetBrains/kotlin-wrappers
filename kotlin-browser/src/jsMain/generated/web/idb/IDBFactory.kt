@@ -18,6 +18,7 @@ sealed external class IDBFactory {
         second: Any?,
     ): Number
 
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBFactory/databases) */
     fun databases(): Promise<ReadonlyArray<IDBDatabaseInfo>>
 
     /**

@@ -17,6 +17,7 @@ open external class FocusEvent(
     override val type: EventType<FocusEvent>,
     init: FocusEventInit = definedExternally,
 ) : UIEvent {
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/FocusEvent/relatedTarget) */
     val relatedTarget: EventTarget?
 
     companion object

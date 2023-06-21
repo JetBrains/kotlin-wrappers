@@ -95,6 +95,8 @@ abstract external class HTMLInputElement :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/indeterminate)
      */
     var indeterminate: Boolean
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/labels) */
     val labels: NodeListOf<HTMLLabelElement>?
 
     /**
@@ -145,6 +147,8 @@ abstract external class HTMLInputElement :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/required)
      */
     var required: Boolean
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/selectionDirection) */
     var selectionDirection: SelectionDirection?
 
     /** Gets or sets the end position or offset of a text selection. */
@@ -185,7 +189,11 @@ abstract external class HTMLInputElement :
 
     /** Returns the input field value as a number. */
     var valueAsNumber: Double
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/webkitEntries) */
     val webkitEntries: ReadonlyArray<FileSystemEntry>
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/webkitdirectory) */
     var webkitdirectory: Boolean
 
     /**
@@ -208,6 +216,8 @@ abstract external class HTMLInputElement :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/checkValidity)
      */
     fun checkValidity(): Boolean
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/reportValidity) */
     fun reportValidity(): Boolean
 
     /**
@@ -224,6 +234,8 @@ abstract external class HTMLInputElement :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/setCustomValidity)
      */
     fun setCustomValidity(error: String)
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/setRangeText) */
     fun setRangeText(replacement: String)
     fun setRangeText(
         replacement: String,
@@ -246,6 +258,7 @@ abstract external class HTMLInputElement :
         direction: SelectionDirection = definedExternally,
     )
 
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/showPicker) */
     fun showPicker()
 
     /**

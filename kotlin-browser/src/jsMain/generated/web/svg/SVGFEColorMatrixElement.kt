@@ -5,8 +5,13 @@ package web.svg
 sealed external class SVGFEColorMatrixElement :
     SVGElement,
     SVGFilterPrimitiveStandardAttributes {
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFEColorMatrixElement/in1) */
     val in1: SVGAnimatedString
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFEColorMatrixElement/type) */
     val type: SVGAnimatedEnumeration
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFEColorMatrixElement/values) */
     val values: SVGAnimatedNumberList
     val SVG_FECOLORMATRIX_TYPE_UNKNOWN: Short
     val SVG_FECOLORMATRIX_TYPE_MATRIX: Short

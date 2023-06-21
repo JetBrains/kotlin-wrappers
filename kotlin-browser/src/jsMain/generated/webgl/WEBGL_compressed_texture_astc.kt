@@ -5,6 +5,7 @@ package webgl
 import js.core.ReadonlyArray
 
 sealed external interface WEBGL_compressed_texture_astc {
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/WEBGL_compressed_texture_astc/getSupportedProfiles) */
     fun getSupportedProfiles(): ReadonlyArray<String>
     val COMPRESSED_RGBA_ASTC_4x4_KHR: GLenum
     val COMPRESSED_RGBA_ASTC_5x4_KHR: GLenum

@@ -14,20 +14,42 @@ import kotlin.js.Promise
 
 sealed external class ServiceWorkerRegistration :
     EventTarget {
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/active) */
     val active: ServiceWorker?
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/installing) */
     val installing: ServiceWorker?
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/navigationPreload) */
     val navigationPreload: NavigationPreloadManager
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/updatefound_event) */
     var onupdatefound: EventHandler<Event>?
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/pushManager) */
     val pushManager: PushManager
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/scope) */
     val scope: String
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/updateViaCache) */
     val updateViaCache: ServiceWorkerUpdateViaCache
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/waiting) */
     val waiting: ServiceWorker?
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/getNotifications) */
     fun getNotifications(filter: GetNotificationOptions = definedExternally): Promise<ReadonlyArray<Notification>>
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/showNotification) */
     fun showNotification(
         title: String,
         options: NotificationOptions = definedExternally,
     ): Promise<Void>
 
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/unregister) */
     fun unregister(): Promise<Boolean>
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/update) */
     fun update(): Promise<Void>
 }

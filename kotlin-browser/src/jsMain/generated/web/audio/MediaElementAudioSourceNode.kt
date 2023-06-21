@@ -8,5 +8,6 @@ external class MediaElementAudioSourceNode(
     context: AudioContext,
     options: MediaElementAudioSourceOptions,
 ) : AudioNode {
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaElementAudioSourceNode/mediaElement) */
     val mediaElement: HTMLMediaElement
 }

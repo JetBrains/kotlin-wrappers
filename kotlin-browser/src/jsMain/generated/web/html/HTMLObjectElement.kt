@@ -13,6 +13,8 @@ abstract external class HTMLObjectElement :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLObjectElement/contentDocument)
      */
     val contentDocument: Document?
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLObjectElement/contentWindow) */
     val contentWindow: WindowProxy?
 
     /**
@@ -91,7 +93,11 @@ abstract external class HTMLObjectElement :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLObjectElement/checkValidity)
      */
     fun checkValidity(): Boolean
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLObjectElement/getSVGDocument) */
     fun getSVGDocument(): Document?
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLObjectElement/reportValidity) */
     fun reportValidity(): Boolean
 
     /**

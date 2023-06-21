@@ -18,6 +18,7 @@ open external class MediaStreamTrackEvent(
     override val type: EventType<MediaStreamTrackEvent>,
     init: MediaStreamTrackEventInit,
 ) : Event {
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStreamTrackEvent/track) */
     val track: MediaStreamTrack
 
     companion object

@@ -20,7 +20,10 @@ open external class Worker(
         options: WorkerOptions = definedExternally,
     )
 
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Worker/message_event) */
     var onmessage: EventHandler<MessageEvent<*>>?
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Worker/messageerror_event) */
     var onmessageerror: EventHandler<MessageEvent<*>>?
 
     /**

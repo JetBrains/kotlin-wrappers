@@ -6,6 +6,7 @@ import web.dom.NodeListOf
 
 abstract external class HTMLTextAreaElement :
     HTMLElement {
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/autocomplete) */
     var autocomplete: AutoFill
 
     /** Sets or retrieves the width of the object. */
@@ -18,6 +19,8 @@ abstract external class HTMLTextAreaElement :
 
     /** Retrieves a reference to the form that the object is embedded in. */
     val form: HTMLFormElement?
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/labels) */
     val labels: NodeListOf<HTMLLabelElement>
 
     /** Sets or retrieves the maximum number of characters that the user can enter in a text control. */
@@ -45,6 +48,8 @@ abstract external class HTMLTextAreaElement :
 
     /** Gets or sets the starting position or offset of a text selection. */
     var selectionStart: Int
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/textLength) */
     val textLength: Int
 
     /** Retrieves the type of control. */
@@ -67,6 +72,8 @@ abstract external class HTMLTextAreaElement :
 
     /** Returns whether a form will validate when it is submitted, without having to submit it. */
     fun checkValidity(): Boolean
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/reportValidity) */
     fun reportValidity(): Boolean
 
     /** Highlights the input area of a form element. */

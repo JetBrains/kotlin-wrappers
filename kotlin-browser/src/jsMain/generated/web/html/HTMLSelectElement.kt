@@ -8,7 +8,10 @@ import web.dom.NodeListOf
 abstract external class HTMLSelectElement :
     HTMLElement,
     JsIterable<HTMLOptionElement> {
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/autocomplete) */
     var autocomplete: AutoFill
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/disabled) */
     var disabled: Boolean
 
     /**
@@ -17,6 +20,8 @@ abstract external class HTMLSelectElement :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/form)
      */
     val form: HTMLFormElement?
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/labels) */
     val labels: NodeListOf<HTMLLabelElement>
 
     /**
@@ -60,6 +65,8 @@ abstract external class HTMLSelectElement :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/selectedIndex)
      */
     var selectedIndex: Int
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/selectedOptions) */
     val selectedOptions: HTMLCollectionOf<HTMLOptionElement>
 
     /**
@@ -163,6 +170,8 @@ abstract external class HTMLSelectElement :
      */
     override fun remove()
     fun remove(index: Int)
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/reportValidity) */
     fun reportValidity(): Boolean
 
     /**

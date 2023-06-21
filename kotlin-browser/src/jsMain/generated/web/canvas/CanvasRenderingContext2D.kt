@@ -21,6 +21,9 @@ sealed external class CanvasRenderingContext2D :
     CanvasTextDrawingStyles,
     CanvasTransform,
     CanvasUserInterface {
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/canvas) */
     val canvas: HTMLCanvasElement
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/getContextAttributes) */
     fun getContextAttributes(): CanvasRenderingContext2DSettings
 }

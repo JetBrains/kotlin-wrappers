@@ -18,6 +18,7 @@ open external class RTCDataChannelEvent(
     override val type: EventType<RTCDataChannelEvent>,
     init: RTCDataChannelEventInit,
 ) : Event {
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDataChannelEvent/channel) */
     val channel: RTCDataChannel
 
     companion object

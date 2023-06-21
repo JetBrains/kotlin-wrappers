@@ -15,7 +15,11 @@ sealed external class IDBRequest<T> :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBRequest/error)
      */
     val error: DOMException?
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBRequest/error_event) */
     var onerror: EventHandler<Event>?
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBRequest/success_event) */
     var onsuccess: EventHandler<Event>?
 
     /**

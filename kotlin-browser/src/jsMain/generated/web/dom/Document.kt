@@ -151,6 +151,8 @@ abstract external class Document :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/head)
      */
     val head: HTMLHeadElement
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/hidden) */
     val hidden: Boolean
 
     /**
@@ -180,9 +182,17 @@ abstract external class Document :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/links)
      */
     val links: HTMLCollectionOf<HTMLElement /* HTMLAnchorElement | HTMLAreaElement */>
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/fullscreenchange_event) */
     var onfullscreenchange: EventHandler<Event>?
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/fullscreenerror_event) */
     var onfullscreenerror: EventHandler<Event>?
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/pointerlockchange_event) */
     var onpointerlockchange: EventHandler<Event>?
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/pointerlockerror_event) */
     var onpointerlockerror: EventHandler<Event>?
 
     /**
@@ -192,8 +202,12 @@ abstract external class Document :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/readystatechange_event)
      */
     var onreadystatechange: EventHandler<Event>?
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/visibilitychange_event) */
     var onvisibilitychange: EventHandler<Event>?
     override val ownerDocument: Void
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/pictureInPictureEnabled) */
     val pictureInPictureEnabled: Boolean
 
     /**
@@ -223,7 +237,11 @@ abstract external class Document :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/scripts)
      */
     val scripts: HTMLCollectionOf<HTMLScriptElement>
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/scrollingElement) */
     val scrollingElement: Element?
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/timeline) */
     val timeline: dynamic /* DocumentTimeline */
 
     /**
@@ -232,6 +250,8 @@ abstract external class Document :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/title)
      */
     var title: String
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/visibilityState) */
     val visibilityState: DocumentVisibilityState
 
     /**
@@ -257,6 +277,8 @@ abstract external class Document :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/createAttribute)
      */
     fun createAttribute(localName: String): Attr
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/createAttributeNS) */
     fun createAttributeNS(
         namespace: String?,
         qualifiedName: String,
@@ -381,7 +403,11 @@ abstract external class Document :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/exitFullscreen)
      */
     fun exitFullscreen(): Promise<Void>
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/exitPictureInPicture) */
     fun exitPictureInPicture(): Promise<Void>
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/exitPointerLock) */
     fun exitPointerLock()
 
     /**
@@ -443,6 +469,8 @@ abstract external class Document :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/hasFocus)
      */
     fun hasFocus(): Boolean
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/hasStorageAccess) */
     fun hasStorageAccess(): Promise<Boolean>
 
     /**
@@ -483,6 +511,7 @@ abstract external class Document :
         features: String,
     ): WindowProxy?
 
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/requestStorageAccess) */
     fun requestStorageAccess(): Promise<Void>
 
     /**

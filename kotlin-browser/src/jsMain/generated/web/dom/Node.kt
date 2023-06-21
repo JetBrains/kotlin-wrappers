@@ -62,6 +62,8 @@ sealed external class Node :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/nodeType)
      */
     val nodeType: Short
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/nodeValue) */
     var nodeValue: String?
 
     /**
@@ -91,7 +93,11 @@ sealed external class Node :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/previousSibling)
      */
     val previousSibling: ChildNode?
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/textContent) */
     var textContent: String?
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/appendChild) */
     fun <T : Node> appendChild(node: T): T
 
     /**
@@ -128,11 +134,14 @@ sealed external class Node :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/hasChildNodes)
      */
     fun hasChildNodes(): Boolean
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/insertBefore) */
     fun <T : Node> insertBefore(
         node: T,
         child: Node?,
     ): T
 
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/isDefaultNamespace) */
     fun isDefaultNamespace(namespace: String?): Boolean
 
     /**
@@ -141,8 +150,14 @@ sealed external class Node :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/isEqualNode)
      */
     fun isEqualNode(otherNode: Node?): Boolean
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/isSameNode) */
     fun isSameNode(otherNode: Node?): Boolean
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/lookupNamespaceURI) */
     fun lookupNamespaceURI(prefix: String?): String?
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/lookupPrefix) */
     fun lookupPrefix(namespace: String?): String?
 
     /**
@@ -151,7 +166,11 @@ sealed external class Node :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/normalize)
      */
     fun normalize()
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/removeChild) */
     fun <T : Node> removeChild(child: T): T
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/replaceChild) */
     fun <T : Node> replaceChild(
         node: Node,
         child: T,

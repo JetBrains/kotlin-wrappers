@@ -23,6 +23,8 @@ abstract external class HTMLCanvasElement :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLCanvasElement/width)
      */
     var width: Int
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLCanvasElement/captureStream) */
     fun captureStream(frameRequestRate: Number = definedExternally): MediaStream
 
     /**
@@ -51,6 +53,7 @@ abstract external class HTMLCanvasElement :
         options: WebGLContextAttributes = definedExternally,
     ): WebGL2RenderingContext?
 
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLCanvasElement/toBlob) */
     fun toBlob(
         callback: BlobCallback,
         type: String = definedExternally,
@@ -68,5 +71,6 @@ abstract external class HTMLCanvasElement :
         quality: Number = definedExternally,
     ): String
 
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLCanvasElement/transferControlToOffscreen) */
     fun transferControlToOffscreen(): OffscreenCanvas
 }

@@ -56,6 +56,7 @@ external class DOMMatrix(
         rotZ: Number = definedExternally,
     ): DOMMatrix
 
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrix/scale3dSelf) */
     fun scale3dSelf(
         scale: Number = definedExternally,
         originX: Number = definedExternally,
@@ -63,6 +64,7 @@ external class DOMMatrix(
         originZ: Number = definedExternally,
     ): DOMMatrix
 
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrix/scaleSelf) */
     fun scaleSelf(
         scaleX: Number = definedExternally,
         scaleY: Number = definedExternally,

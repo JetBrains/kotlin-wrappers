@@ -9,7 +9,10 @@ import web.http.ReferrerPolicy
 abstract external class HTMLLinkElement :
     HTMLElement,
     LinkStyle {
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLLinkElement/as) */
     var `as`: String
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLLinkElement/crossOrigin) */
     var crossOrigin: CrossOrigin?
     var disabled: Boolean
 
@@ -24,6 +27,8 @@ abstract external class HTMLLinkElement :
 
     /** Sets or retrieves the media type. */
     var media: String
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLLinkElement/referrerPolicy) */
     var referrerPolicy: ReferrerPolicy
 
     /**
@@ -32,7 +37,11 @@ abstract external class HTMLLinkElement :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLLinkElement/rel)
      */
     var rel: String
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLLinkElement/relList) */
     val relList: DOMTokenList
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLLinkElement/sizes) */
     val sizes: DOMTokenList
 
     /** Sets or retrieves the MIME type of the object. */

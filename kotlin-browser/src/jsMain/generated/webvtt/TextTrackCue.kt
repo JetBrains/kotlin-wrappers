@@ -25,7 +25,11 @@ sealed external class TextTrackCue :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrackCue/id)
      */
     var id: String
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrackCue/enter_event) */
     var onenter: EventHandler<Event>?
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrackCue/exit_event) */
     var onexit: EventHandler<Event>?
 
     /**

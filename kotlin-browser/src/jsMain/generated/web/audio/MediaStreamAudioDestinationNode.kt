@@ -8,5 +8,6 @@ external class MediaStreamAudioDestinationNode(
     context: AudioContext,
     options: AudioNodeOptions = definedExternally,
 ) : AudioNode {
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStreamAudioDestinationNode/stream) */
     val stream: MediaStream
 }

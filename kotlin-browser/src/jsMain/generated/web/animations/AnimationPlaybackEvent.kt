@@ -19,7 +19,10 @@ open external class AnimationPlaybackEvent(
     override val type: EventType<AnimationPlaybackEvent>,
     init: AnimationPlaybackEventInit = definedExternally,
 ) : Event {
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/AnimationPlaybackEvent/currentTime) */
     val currentTime: CSSNumberish?
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/AnimationPlaybackEvent/timelineTime) */
     val timelineTime: CSSNumberish?
 
     companion object

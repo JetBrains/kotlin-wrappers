@@ -8,5 +8,6 @@ import js.core.JsIterable
 sealed external class StyleSheetList :
     ArrayLike<CSSStyleSheet>,
     JsIterable<CSSStyleSheet> {
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/StyleSheetList/item) */
     fun item(index: Int): CSSStyleSheet?
 }

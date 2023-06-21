@@ -3,8 +3,13 @@
 package web.cssom
 
 sealed external class CSSRule {
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSRule/cssText) */
     var cssText: String
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSRule/parentRule) */
     val parentRule: CSSRule?
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSRule/parentStyleSheet) */
     val parentStyleSheet: CSSStyleSheet?
     val STYLE_RULE: Short
     val CHARSET_RULE: Short

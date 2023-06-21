@@ -5,7 +5,10 @@ package web.idb
 import js.core.ReadonlyArray
 
 sealed external class IDBIndex {
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBIndex/keyPath) */
     val keyPath: Any /* string | string[] */
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBIndex/multiEntry) */
     val multiEntry: Boolean
 
     /**
@@ -21,6 +24,8 @@ sealed external class IDBIndex {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBIndex/objectStore)
      */
     val objectStore: IDBObjectStore
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBIndex/unique) */
     val unique: Boolean
 
     /**

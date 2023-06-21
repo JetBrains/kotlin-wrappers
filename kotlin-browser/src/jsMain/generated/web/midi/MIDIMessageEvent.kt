@@ -19,6 +19,7 @@ open external class MIDIMessageEvent(
     override val type: EventType<MIDIMessageEvent>,
     init: MIDIMessageEventInit = definedExternally,
 ) : Event {
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/MIDIMessageEvent/data) */
     val data: Uint8Array
 
     companion object

@@ -6,6 +6,7 @@ import web.dom.NodeListOf
 
 abstract external class HTMLProgressElement :
     HTMLElement {
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLProgressElement/labels) */
     val labels: NodeListOf<HTMLLabelElement>
 
     /**

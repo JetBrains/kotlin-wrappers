@@ -22,10 +22,17 @@ open external class RTCPeerConnectionIceErrorEvent(
     override val type: EventType<RTCPeerConnectionIceErrorEvent>,
     init: RTCPeerConnectionIceErrorEventInit,
 ) : Event {
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnectionIceErrorEvent/address) */
     val address: String?
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnectionIceErrorEvent/errorCode) */
     val errorCode: Int
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnectionIceErrorEvent/errorText) */
     val errorText: String
     val port: Int?
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnectionIceErrorEvent/url) */
     val url: String
 
     companion object
