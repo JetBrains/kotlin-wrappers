@@ -480,8 +480,14 @@ sealed external class CSSStyleDeclaration :
 
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/font-synthesis) */
     var fontSynthesis: String
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/font-synthesis-small-caps) */
     var fontSynthesisSmallCaps: String
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/font-synthesis-style) */
     var fontSynthesisStyle: String
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/font-synthesis-weight) */
     var fontSynthesisWeight: String
 
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/font-variant) */
