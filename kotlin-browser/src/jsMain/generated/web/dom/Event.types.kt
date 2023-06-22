@@ -86,6 +86,9 @@ inline val Event.Companion.RESET: EventType<Event>
 inline val Event.Companion.SCROLL: EventType<Event>
     get() = EventType("scroll")
 
+inline val Event.Companion.SCROLL_END: EventType<Event>
+    get() = EventType("scrollend")
+
 inline val Event.Companion.SEEKED: EventType<Event>
     get() = EventType("seeked")
 

@@ -524,6 +524,11 @@ external interface GlobalEventHandlers {
         get() = definedExternally
         set(value) = definedExternally
 
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/scrollend_event) */
+    var onscrollend: EventHandler<Event>?
+        get() = definedExternally
+        set(value) = definedExternally
+
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/securitypolicyviolation_event) */
     var onsecuritypolicyviolation: EventHandler<SecurityPolicyViolationEvent>?
         get() = definedExternally
