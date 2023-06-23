@@ -13,14 +13,12 @@ private inline fun <T : Theme> Props.getTheme(): T =
 
 fun <P : PropsWithClassName, T : Theme> ElementType<P>.styledWithTheme(
     options: StyledOptions?,
-    block: (PropertiesBuilder.(P, T) -> Unit)?,
+    block: PropertiesBuilder.(P, T) -> Unit,
 ): StyledComponent<P> {
-    val style = block?.let {
-        { props: P ->
-            val builder: PropertiesBuilder = jso()
-            block(builder, props, props.getTheme())
-            builder
-        }
+    val style = { props: P ->
+        val builder: PropertiesBuilder = jso()
+        block(builder, props, props.getTheme())
+        builder
     }
 
     val defaultOptions: StyledOptions = jso {
@@ -33,25 +31,20 @@ fun <P : PropsWithClassName, T : Theme> ElementType<P>.styledWithTheme(
 }
 
 fun <P : PropsWithClassName, T : Theme> ElementType<P>.styledWithTheme(
-    block: (PropertiesBuilder.(P, T) -> Unit)?,
+    block: PropertiesBuilder.(P, T) -> Unit,
 ): StyledComponent<P> =
     styledWithTheme(null, block)
 
 fun <P : PropsWithClassName> ElementType<P>.styled(
     options: StyledOptions?,
-    block: (PropertiesBuilder.(P) -> Unit)?,
-): StyledComponent<P> {
-    val style: (PropertiesBuilder.(P, Theme) -> Unit)? = block?.let {
-        { props, _ -> block(props) }
-    }
-
-    return styledWithTheme(options, style)
-}
+    block: PropertiesBuilder.(P) -> Unit,
+): StyledComponent<P> =
+    styledWithTheme(options) { props, _: Theme -> block(props) }
 
 fun <P : PropsWithClassName> ElementType<P>.styled(
-    block: (PropertiesBuilder.(P) -> Unit)?,
+    block: PropertiesBuilder.(P) -> Unit,
 ): StyledComponent<P> =
     styled(null, block)
 
 fun <P : PropsWithClassName> ElementType<P>.styled(): StyledComponent<P> =
-    styled(null)
+    styled(block = {})

@@ -11,4 +11,4 @@ import react.Props
 external fun <P : Props> styled(
     type: ElementType<P>,
     options: StyledOptions? = definedExternally,
-): (((P) -> Properties)?) -> StyledComponent<P>
+): ((P) -> Properties) -> StyledComponent<P>
