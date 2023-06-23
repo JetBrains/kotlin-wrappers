@@ -5,7 +5,7 @@ import kotlin.test.Test
 import kotlin.test.assertEquals
 
 class AsyncIteratorTest {
-    val asyncGeneratorFn: () -> AsyncIterator<Int, *, *>
+    val asyncGeneratorFn: () -> AsyncIterator<Int>
 
     init {
         @Suppress("UNUSED_VARIABLE")

@@ -1,9 +1,9 @@
 package js.core
 
 external interface AsyncIterable<out T> :
-    HasSymbol.asyncIterator<() -> AsyncIterator<T, *, *>> {
+    HasSymbol.asyncIterator<() -> AsyncIterator<T>> {
 
     interface Iterator<out T> :
-        AsyncIterator<T, Any?, Void>,
+        AsyncIterator<T>,
         HasSymbol.asyncIterator<() -> Iterator<T>>
 }

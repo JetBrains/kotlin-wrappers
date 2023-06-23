@@ -1,6 +1,6 @@
 package js.core
 
-operator fun <T> JsIterator<T, *, *>.iterator(): Iterator<T> =
+operator fun <T> JsIterator<T>.iterator(): Iterator<T> =
     iterator {
         do {
             val result = next().asYieldOrNull()
