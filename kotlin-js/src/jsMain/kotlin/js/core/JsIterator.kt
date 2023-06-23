@@ -2,7 +2,7 @@ package js.core
 
 /** ES6 Iterator type. */
 sealed external interface JsIterator<out T> {
-    fun next(): Result<T, Void>
+    fun next(): Result<T, *>
 
     sealed interface Result<out T, out TReturn> {
         val done: Boolean
