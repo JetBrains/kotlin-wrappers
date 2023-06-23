@@ -45,3 +45,6 @@ fun <P : PropsWithClassName> ElementType<P>.styled(
     block: PropertiesBuilder.(P) -> Unit,
 ): StyledComponent<P> =
     styled(null, block)
+
+fun <P : PropsWithClassName> ElementType<P>.styled(): StyledComponent<P> =
+    styled(block = {})
