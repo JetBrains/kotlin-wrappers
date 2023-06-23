@@ -3,6 +3,7 @@ package benchmark
 import StyledElementsFactory.getCssBuilders
 import measureTimeJS
 import measureTimeJSSync
+import styled.ClassNameWithPrefix
 import styled.GlobalStyles
 import styled.UsedCssInfo
 import kotlin.test.Test
@@ -17,7 +18,7 @@ class DataTypeOperations : BenchmarkBase() {
     private suspend fun putNElements(n: Int): Duration {
         val builders = getCssBuilders(n)
         return measureTimeJS {
-            builders.forEach { GlobalStyles.styledClasses[it] = UsedCssInfo("", 1, 1) }
+            builders.forEach { GlobalStyles.styledClasses[it] = UsedCssInfo(ClassNameWithPrefix(null, ""), 1, 1) }
         }
     }
 
@@ -31,7 +32,7 @@ class DataTypeOperations : BenchmarkBase() {
 
         val collisionsN = (n * collisionProb).toInt()
         val builders = getCssBuilders(collisionsN).toMutableList()
-        builders.forEach { GlobalStyles.styledClasses[it] = UsedCssInfo("", 1, 1) }
+        builders.forEach { GlobalStyles.styledClasses[it] = UsedCssInfo(ClassNameWithPrefix(null, ""), 1, 1) }
 
         val nonCollisionsN = (n * (1 - collisionProb)).toInt()
         builders.addAll(getCssBuilders(nonCollisionsN))

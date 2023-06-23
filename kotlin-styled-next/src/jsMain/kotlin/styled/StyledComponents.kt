@@ -45,6 +45,10 @@ interface StyledBuilder<P : PropsWithClassName> {
 }
 
 inline fun StyledBuilder<*>.css(handler: RuleSet) = css.handler()
+inline fun StyledBuilder<*>.css(className: String? = null, handler: RuleSet) {
+    css.prefix = className
+    css.handler()
+}
 
 interface StyledElementBuilder<P : PropsWithClassName> : RElementBuilder<P>, StyledBuilder<P> {
     fun create(): ReactElement<*>
@@ -92,10 +96,15 @@ fun <P : PropsWithClassName> styled(type: ElementType<P>): RBuilder.(StyledHandl
     })
 }
 
+inline fun CustomStyledProps.css(className: String? = null, noinline handler: RuleSet) {
+    css = (css ?: CssBuilder(isHolder = true, prefix = className)).apply(handler)
+}
 inline fun CustomStyledProps.css(noinline handler: RuleSet) {
     css = (css ?: CssBuilder(isHolder = true)).apply(handler)
 }
 
+@Suppress("NOTHING_TO_INLINE")
+inline fun <P : CustomStyledProps> RElementBuilder<P>.css(className: String? = null, noinline handler: RuleSet) = attrs.css(className, handler)
 @Suppress("NOTHING_TO_INLINE")
 inline fun <P : CustomStyledProps> RElementBuilder<P>.css(noinline handler: RuleSet) = attrs.css(handler)
 
@@ -114,9 +123,9 @@ internal fun customStyled(type: dynamic): ElementType<StyledProps> {
         val classes = props.classes
 
         val generatedClasses = if (isDevelopment()) useState<ClassNameState?>(hashSetOf()) else null
-        var (isFresh, className) = useStructMemo(css) {
-            GlobalStyles.getInjectedClassNames(css).also { (_, selfClassName) ->
-                generatedClasses?.checkGeneratedCss(selfClassName, type.toString())
+        val (isFresh, className) = useStructMemo(css) {
+            GlobalStyles.getInjectedClassNames(css).also { (_, className) ->
+                generatedClasses?.checkGeneratedCss(className.className, type.toString())
             }
         }
 
@@ -138,9 +147,9 @@ internal fun customStyled(type: dynamic): ElementType<StyledProps> {
         }
 
         val newProps = clone(props)
-        className = listOf(props.className?.toString(), className, classes).filter { !it.isNullOrEmpty() }.joinToString(" ")
-        if (className.isNotEmpty()) {
-            newProps.className = web.cssom.ClassName(className)
+        val elementClassName = listOf(props.className?.toString(), className.className, className.prefix, classes).filter { !it.isNullOrEmpty() }.joinToString(" ")
+        if (elementClassName.isNotEmpty()) {
+            newProps.className = web.cssom.ClassName(elementClassName)
         }
         newProps.ref = rRef
         delete(newProps.css)

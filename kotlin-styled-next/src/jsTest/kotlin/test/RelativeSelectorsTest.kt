@@ -82,7 +82,7 @@ class RelativeSelectorsTest : TestBase() {
             }
         }
         val element = clearAndInject(styledComponent)
-        assertNotEquals(secondColor.toString(), element.color())
+        assertEquals(firstColor.toString(), element.color())
         assertEquals(secondColor.toString(), element.childAt(0).color())
         assertEquals(secondColor.toString(), element.childAt(0).childAt(0).color())
         assertEquals(secondColor.toString(), element.childAt(1).color())

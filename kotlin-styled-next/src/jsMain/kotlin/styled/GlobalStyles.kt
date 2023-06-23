@@ -5,15 +5,17 @@ import kotlinx.css.RuleSet
 import kotlinx.css.properties.KeyframesBuilder
 import styled.sheets.*
 
+data class ClassNameWithPrefix(val prefix: String?, val className: String)
+
 data class UsedCssInfo(
-    val className: ClassName,
+    val classNames: ClassNameWithPrefix,
     var usedBy: Int,
     val groupId: Int,
 )
 
 data class CssInfo(
     val isFresh: Boolean,
-    val className: ClassName,
+    val classNames: ClassNameWithPrefix,
 )
 
 internal typealias InjectedCssHolder = LinkedHashMap<CssBuilder, UsedCssInfo>
@@ -116,10 +118,10 @@ object GlobalStyles {
             val css = keyframes.toString()
             val prefixes = listOf("@-webkit-keyframes", "@keyframes")
             val groupId = sheet.scheduleToInject(prefixes.map { prefix -> "$prefix $keyframeName { $css }" })
-            injectedKeyframes[keyframes] = UsedCssInfo(keyframeName, 0, groupId)
+            injectedKeyframes[keyframes] = UsedCssInfo(ClassNameWithPrefix(null, keyframeName), 0, groupId)
             keyframeByName[keyframeName] = keyframes
             keyframeName
-        } else keyframe.className
+        } else keyframe.classNames.className
     }
 
     internal fun removeStyles(css: CssBuilder) {
@@ -153,17 +155,21 @@ object GlobalStyles {
         val info = styledClasses[css]
         return if (info != null) {
             info.usedBy++
-            CssInfo(isFresh = false, info.className)
+            CssInfo(isFresh = false, info.classNames)
         } else {
             var className = "ksc-$incrementedClassName"
-            val selector = ".$className"
+            var selector = ".$className"
+            css.prefix?.let {pr ->
+                selector = ".$pr$selector"
+            }
             val rules = css.getCssRules(selector)
             if (rules.isEmpty()) {
                 className = ""
             }
             val groupId = sheet.scheduleToInject(rules)
-            styledClasses[css] = UsedCssInfo(className, 1, groupId)
-            CssInfo(isFresh = true, className)
+            val classNames = ClassNameWithPrefix(css.prefix, className)
+            styledClasses[css] = UsedCssInfo(classNames, 1, groupId)
+            CssInfo(isFresh = true, classNames)
         }
     }
 }
