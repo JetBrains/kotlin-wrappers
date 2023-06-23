@@ -2,6 +2,7 @@
 
 package web.svg
 
+/** [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimationElement) */
 sealed external class SVGAnimationElement :
     SVGElement,
     SVGTests {

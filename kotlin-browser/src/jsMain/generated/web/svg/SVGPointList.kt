@@ -6,6 +6,7 @@ import js.core.ArrayLike
 import js.core.JsIterable
 import web.geometry.DOMPoint
 
+/** [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPointList) */
 sealed external class SVGPointList :
     ArrayLike<DOMPoint>,
     JsIterable<DOMPoint> {

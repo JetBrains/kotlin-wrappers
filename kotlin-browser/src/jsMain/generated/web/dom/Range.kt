@@ -5,6 +5,11 @@ package web.dom
 import web.geometry.DOMRect
 import web.geometry.DOMRectList
 
+/**
+ * A fragment of a document that can contain nodes and parts of text nodes.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Range)
+ */
 sealed external class Range :
     AbstractRange {
     /**

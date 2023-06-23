@@ -5,6 +5,7 @@ package webrtc
 import js.core.EpochTimeStamp
 import js.core.ReadonlyArray
 
+/** [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCCertificate) */
 sealed external class RTCCertificate {
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCCertificate/expires) */
     val expires: EpochTimeStamp

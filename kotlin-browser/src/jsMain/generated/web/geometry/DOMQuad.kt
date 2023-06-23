@@ -2,6 +2,7 @@
 
 package web.geometry
 
+/** [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMQuad) */
 external class DOMQuad(
     p1: DOMPointInit = definedExternally,
     p2: DOMPointInit = definedExternally,

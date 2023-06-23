@@ -15,6 +15,11 @@ import web.scroll.ScrollToOptions
 import web.selection.Selection
 import web.url.URL
 
+/**
+ * A window containing a DOM document; the document property points to the DOM document loaded in that window.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window)
+ */
 sealed external class Window :
     EventTarget,
     GlobalEventHandlers,

@@ -9,6 +9,11 @@ import web.filesystem.FileSystemEntry
 import web.window.WindowName
 import kotlin.js.Date
 
+/**
+ * Provides special properties and methods for manipulating the options, layout, and presentation of <input> elements.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement)
+ */
 abstract external class HTMLInputElement :
     HTMLElement,
     PopoverInvokerElement {

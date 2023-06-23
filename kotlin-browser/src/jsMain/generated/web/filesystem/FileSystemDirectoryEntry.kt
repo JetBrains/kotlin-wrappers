@@ -2,6 +2,7 @@
 
 package web.filesystem
 
+/** [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemDirectoryEntry) */
 sealed external class FileSystemDirectoryEntry :
     FileSystemEntry {
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemDirectoryEntry/createReader) */

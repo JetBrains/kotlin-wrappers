@@ -5,6 +5,7 @@ package webrtc
 import web.events.EventHandler
 import web.events.EventTarget
 
+/** [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDTMFSender) */
 sealed external class RTCDTMFSender :
     EventTarget {
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDTMFSender/canInsertDTMF) */

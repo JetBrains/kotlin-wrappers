@@ -2,6 +2,11 @@
 
 package web.svg
 
+/**
+ * Corresponds to the <feColorMatrix> element.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFEColorMatrixElement)
+ */
 sealed external class SVGFEColorMatrixElement :
     SVGElement,
     SVGFilterPrimitiveStandardAttributes {

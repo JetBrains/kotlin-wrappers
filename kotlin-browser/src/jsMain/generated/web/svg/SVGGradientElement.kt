@@ -2,6 +2,11 @@
 
 package web.svg
 
+/**
+ * The SVGGradient interface is a base interface used by SVGLinearGradientElement and SVGRadialGradientElement.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGGradientElement)
+ */
 sealed external class SVGGradientElement :
     SVGElement,
     SVGURIReference {

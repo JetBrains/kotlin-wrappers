@@ -6,6 +6,7 @@ import web.events.Event
 import web.events.EventHandler
 import web.events.EventTarget
 
+/** [MDN Reference](https://developer.mozilla.org/docs/Web/API/VisualViewport) */
 sealed external class VisualViewport :
     EventTarget {
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/VisualViewport/height) */

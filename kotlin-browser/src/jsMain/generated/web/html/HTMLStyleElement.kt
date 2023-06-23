@@ -5,6 +5,11 @@ package web.html
 import web.cssom.LinkStyle
 import web.cssom.MediaQuery
 
+/**
+ * A <style> element. It inherits properties and methods from its parent, HTMLElement, and from LinkStyle.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLStyleElement)
+ */
 abstract external class HTMLStyleElement :
     HTMLElement,
     LinkStyle {

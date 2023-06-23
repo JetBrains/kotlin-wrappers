@@ -2,6 +2,11 @@
 
 package web.audio
 
+/**
+ * The position and orientation of the unique person listening to the audio scene, and is used in audio spatialization. All PannerNodes spatialize in relation to the AudioListener stored in the BaseAudioContext.listener attribute.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioListener)
+ */
 sealed external class AudioListener {
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioListener/forwardX) */
     val forwardX: AudioParam

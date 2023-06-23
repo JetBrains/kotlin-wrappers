@@ -6,6 +6,7 @@ import web.events.EventTarget
 import web.messaging.MessagePort
 import web.url.URL
 
+/** [MDN Reference](https://developer.mozilla.org/docs/Web/API/SharedWorker) */
 external class SharedWorker(
     scriptURL: String,
     options: String = definedExternally,

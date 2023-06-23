@@ -5,6 +5,11 @@ package web.dom
 import js.core.ArrayLike
 import js.core.JsIterable
 
+/**
+ * A type returned by some APIs which contains a list of DOMString (strings).
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMStringList)
+ */
 sealed external class DOMStringList :
     ArrayLike<String>,
     JsIterable<String> {

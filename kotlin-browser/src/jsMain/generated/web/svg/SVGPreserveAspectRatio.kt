@@ -2,6 +2,11 @@
 
 package web.svg
 
+/**
+ * Corresponds to the preserveAspectRatio attribute, which is available for some of SVG's elements.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPreserveAspectRatio)
+ */
 sealed external class SVGPreserveAspectRatio {
     var align: Short
     var meetOrSlice: Short

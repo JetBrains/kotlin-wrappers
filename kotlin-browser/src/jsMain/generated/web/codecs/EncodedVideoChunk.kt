@@ -5,6 +5,7 @@ package web.codecs
 import js.buffer.BufferSource
 import js.core.JsLong
 
+/** [MDN Reference](https://developer.mozilla.org/docs/Web/API/EncodedVideoChunk) */
 external class EncodedVideoChunk(
     init: EncodedVideoChunkInit,
 ) {

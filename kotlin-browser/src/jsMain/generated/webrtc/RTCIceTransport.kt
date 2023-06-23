@@ -6,6 +6,11 @@ import web.events.Event
 import web.events.EventHandler
 import web.events.EventTarget
 
+/**
+ * Provides access to information about the ICE transport layer over which the data is being sent and received.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCIceTransport)
+ */
 sealed external class RTCIceTransport :
     EventTarget {
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCIceTransport/gatheringState) */

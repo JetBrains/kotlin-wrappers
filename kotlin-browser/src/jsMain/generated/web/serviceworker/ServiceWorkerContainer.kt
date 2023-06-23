@@ -10,6 +10,12 @@ import web.messaging.MessageEvent
 import web.url.URL
 import kotlin.js.Promise
 
+/**
+ * The ServiceWorkerContainer interface of the ServiceWorker API provides an object representing the service worker as an overall unit in the network ecosystem, including facilities to register, unregister and update service workers, and access the state of service workers and their registrations.
+ * Available only in secure contexts.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer)
+ */
 sealed external class ServiceWorkerContainer :
     EventTarget {
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/controller) */

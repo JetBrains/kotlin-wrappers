@@ -10,6 +10,7 @@ import webgl.WebGL2RenderingContext
 import webgl.WebGLRenderingContext
 import kotlin.js.Promise
 
+/** [MDN Reference](https://developer.mozilla.org/docs/Web/API/OffscreenCanvas) */
 external class OffscreenCanvas(
     width: Number,
     height: Number,

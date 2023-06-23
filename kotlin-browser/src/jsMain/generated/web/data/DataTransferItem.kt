@@ -5,6 +5,11 @@ package web.data
 import web.file.File
 import web.filesystem.FileSystemEntry
 
+/**
+ * One drag data item. During a drag operation, each drag event has a dataTransfer property which contains a list of drag data items. Each item in the list is a DataTransferItem object.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DataTransferItem)
+ */
 sealed external class DataTransferItem {
     /**
      * Returns the drag data item kind, one of: "string", "file".

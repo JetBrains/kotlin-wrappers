@@ -7,6 +7,11 @@ import web.media.streams.MediaStream
 import web.media.streams.MediaStreamTrack
 import kotlin.js.Promise
 
+/**
+ * Provides the ability to control and obtain details about how a particular MediaStreamTrack is encoded and sent to a remote peer.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpSender)
+ */
 sealed external class RTCRtpSender {
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpSender/dtmf) */
     val dtmf: RTCDTMFSender?

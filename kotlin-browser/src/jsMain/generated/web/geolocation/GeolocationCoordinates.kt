@@ -2,6 +2,11 @@
 
 package web.geolocation
 
+/**
+ * Available only in secure contexts.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GeolocationCoordinates)
+ */
 sealed external class GeolocationCoordinates {
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/GeolocationCoordinates/accuracy) */
     val accuracy: Double

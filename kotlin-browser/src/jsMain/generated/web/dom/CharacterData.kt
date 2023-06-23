@@ -2,6 +2,11 @@
 
 package web.dom
 
+/**
+ * The CharacterData abstract interface represents a Node object that contains characters. This is an abstract interface, meaning there aren't any object of type CharacterData: it is implemented by other interfaces, like Text, Comment, or ProcessingInstruction which aren't abstract.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CharacterData)
+ */
 sealed external class CharacterData :
     Node,
     ChildNode,

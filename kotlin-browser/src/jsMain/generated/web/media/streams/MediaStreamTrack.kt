@@ -8,6 +8,11 @@ import web.events.EventHandler
 import web.events.EventTarget
 import kotlin.js.Promise
 
+/**
+ * A single media track within a stream; typically, these are audio or video tracks, but other track types may exist as well.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStreamTrack)
+ */
 sealed external class MediaStreamTrack :
     EventTarget {
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStreamTrack/contentHint) */

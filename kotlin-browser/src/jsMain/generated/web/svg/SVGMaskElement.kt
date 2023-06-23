@@ -2,6 +2,11 @@
 
 package web.svg
 
+/**
+ * Provides access to the properties of <mask> elements, as well as methods to manipulate them.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGMaskElement)
+ */
 sealed external class SVGMaskElement :
     SVGElement {
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGMaskElement/height) */

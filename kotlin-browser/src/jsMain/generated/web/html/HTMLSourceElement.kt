@@ -4,6 +4,11 @@ package web.html
 
 import web.cssom.MediaQuery
 
+/**
+ * Provides special properties (beyond the regular HTMLElement object interface it also has available to it by inheritance) for manipulating <source> elements.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSourceElement)
+ */
 abstract external class HTMLSourceElement :
     HTMLElement {
     var height: Double

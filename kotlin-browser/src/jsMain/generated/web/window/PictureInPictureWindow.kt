@@ -6,6 +6,7 @@ import web.events.Event
 import web.events.EventHandler
 import web.events.EventTarget
 
+/** [MDN Reference](https://developer.mozilla.org/docs/Web/API/PictureInPictureWindow) */
 sealed external class PictureInPictureWindow :
     EventTarget {
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/PictureInPictureWindow/height) */

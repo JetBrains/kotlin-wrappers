@@ -8,6 +8,11 @@ import webgl.WebGL2RenderingContext
 import webgl.WebGLContextAttributes
 import webgl.WebGLRenderingContext
 
+/**
+ * Provides properties and methods for manipulating the layout and presentation of <canvas> elements. The HTMLCanvasElement interface also inherits the properties and methods of the HTMLElement interface.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLCanvasElement)
+ */
 abstract external class HTMLCanvasElement :
     HTMLElement {
     /**

@@ -4,6 +4,11 @@ package web.audio
 
 import js.typedarrays.Float32Array
 
+/**
+ * A simple low-order filter, and is created using the AudioContext.createBiquadFilter() method. It is an AudioNode that can represent different kinds of filters, tone control devices, and graphic equalizers.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BiquadFilterNode)
+ */
 external class BiquadFilterNode(
     context: BaseAudioContext,
     options: BiquadFilterOptions = definedExternally,

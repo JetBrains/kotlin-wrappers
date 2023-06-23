@@ -5,6 +5,11 @@ package web.audio
 import js.typedarrays.Float32Array
 import js.typedarrays.Uint8Array
 
+/**
+ * A node able to provide real-time frequency and time-domain analysis information. It is an AudioNode that passes the audio stream unchanged from the input to the output, but allows you to take the generated data, process it, and create audio visualizations.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AnalyserNode)
+ */
 external class AnalyserNode(
     context: BaseAudioContext,
     options: AnalyserOptions = definedExternally,

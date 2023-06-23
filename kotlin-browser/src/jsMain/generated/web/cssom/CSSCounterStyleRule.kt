@@ -2,6 +2,7 @@
 
 package web.cssom
 
+/** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSCounterStyleRule) */
 sealed external class CSSCounterStyleRule :
     CSSRule {
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSCounterStyleRule/additiveSymbols) */

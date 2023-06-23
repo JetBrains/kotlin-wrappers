@@ -5,6 +5,7 @@ package web.speech
 import js.core.ArrayLike
 import js.core.JsIterable
 
+/** [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechRecognitionResult) */
 sealed external class SpeechRecognitionResult :
     ArrayLike<SpeechRecognitionAlternative>,
     JsIterable<SpeechRecognitionAlternative> {

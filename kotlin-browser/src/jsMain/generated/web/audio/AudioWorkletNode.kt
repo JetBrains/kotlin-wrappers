@@ -6,6 +6,11 @@ import web.events.Event
 import web.events.EventHandler
 import web.messaging.MessagePort
 
+/**
+ * Available only in secure contexts.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioWorkletNode)
+ */
 external class AudioWorkletNode(
     context: BaseAudioContext,
     name: String,

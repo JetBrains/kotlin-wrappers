@@ -7,6 +7,11 @@ import web.events.EventHandler
 import web.events.EventTarget
 import kotlin.js.Promise
 
+/**
+ * Available only in secure contexts.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MIDIPort)
+ */
 sealed external class MIDIPort :
     EventTarget {
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/MIDIPort/connection) */

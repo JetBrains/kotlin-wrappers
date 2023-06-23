@@ -6,6 +6,11 @@ import js.core.ReadonlyArray
 import web.dom.Element
 import web.file.FileList
 
+/**
+ * Used to hold the data that is being dragged during a drag and drop operation. It may hold one or more data items, each of one or more data types. For more information about drag and drop, see HTML Drag and Drop API.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DataTransfer)
+ */
 external class DataTransfer {
     /**
      * Returns the kind of operation that is currently selected. If the kind of operation isn't one of those that is allowed by the effectAllowed attribute, then the operation will fail.

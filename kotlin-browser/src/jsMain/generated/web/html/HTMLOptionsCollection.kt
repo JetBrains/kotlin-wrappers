@@ -2,6 +2,11 @@
 
 package web.html
 
+/**
+ * HTMLOptionsCollection is an interface representing a collection of HTML option elements (in document order) and offers methods and properties for traversing the list as well as optionally altering its items. This type is returned solely by the "options" property of select.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOptionsCollection)
+ */
 sealed external class HTMLOptionsCollection :
     HTMLCollectionOf<HTMLOptionElement> {
     /**

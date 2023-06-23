@@ -2,6 +2,11 @@
 
 package web.svg
 
+/**
+ * Correspond to the <length> basic data type.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGLength)
+ */
 sealed external class SVGLength {
     val unitType: Short
     var value: Double

@@ -4,6 +4,11 @@ package web.html
 
 import webvtt.TextTrack
 
+/**
+ * The HTMLTrackElement
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTrackElement)
+ */
 abstract external class HTMLTrackElement :
     HTMLElement {
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTrackElement/default) */

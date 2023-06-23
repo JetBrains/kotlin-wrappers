@@ -9,6 +9,11 @@ import web.events.EventHandler
 import web.events.EventTarget
 import kotlin.js.Promise
 
+/**
+ * Available only in secure contexts.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoEncoder)
+ */
 external class VideoEncoder(
     init: VideoEncoderInit,
 ) : EventTarget {

@@ -7,6 +7,11 @@ import web.dom.Element
 import web.dom.GlobalEventHandlers
 import web.dom.HTMLOrSVGElement
 
+/**
+ * Any HTML element. Some elements directly implement this interface, while others implement it via an interface that inherits it.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement)
+ */
 abstract external class HTMLElement :
     Element,
     ElementCSSInlineStyle,

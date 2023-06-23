@@ -4,6 +4,7 @@ package web.cssom
 
 import js.core.ReadonlyArray
 
+/** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleValue) */
 sealed external class CSSStyleValue {
     companion object {
         /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleValue/parse_static) */

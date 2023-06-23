@@ -2,6 +2,7 @@
 
 package web.html
 
+/** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLDialogElement) */
 abstract external class HTMLDialogElement :
     HTMLElement {
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLDialogElement/open) */

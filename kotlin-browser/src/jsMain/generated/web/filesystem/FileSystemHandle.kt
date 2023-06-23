@@ -4,6 +4,11 @@ package web.filesystem
 
 import kotlin.js.Promise
 
+/**
+ * Available only in secure contexts.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemHandle)
+ */
 sealed external class FileSystemHandle {
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemHandle/kind) */
     val kind: FileSystemHandleKind

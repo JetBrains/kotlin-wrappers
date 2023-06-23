@@ -7,6 +7,11 @@ import web.events.Event
 import web.events.EventHandler
 import web.events.EventTarget
 
+/**
+ * The request object does not initially contain any information about the result of the operation, but once information becomes available, an event is fired on the request, and the information becomes available through the properties of the IDBRequest instance.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBRequest)
+ */
 sealed external class IDBRequest<T> :
     EventTarget {
     /**

@@ -4,6 +4,11 @@ package web.audio
 
 import js.typedarrays.Float32Array
 
+/**
+ * A short audio asset residing in memory, created from an audio file using the AudioContext.decodeAudioData() method, or from raw data using AudioContext.createBuffer(). Once put into an AudioBuffer, the audio can then be played by being passed into an AudioBufferSourceNode.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioBuffer)
+ */
 external class AudioBuffer(
     options: AudioBufferOptions,
 ) {

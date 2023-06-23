@@ -13,6 +13,11 @@ import webvtt.TextTrackKind
 import webvtt.TextTrackList
 import kotlin.js.Promise
 
+/**
+ * Adds to HTMLElement the properties and methods needed to support basic media-related capabilities that are common to audio and video.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement)
+ */
 abstract external class HTMLMediaElement :
     HTMLElement {
     /**

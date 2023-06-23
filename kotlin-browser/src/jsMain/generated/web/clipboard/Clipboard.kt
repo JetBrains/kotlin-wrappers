@@ -6,6 +6,11 @@ import js.core.Void
 import web.events.EventTarget
 import kotlin.js.Promise
 
+/**
+ * Available only in secure contexts.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Clipboard)
+ */
 sealed external class Clipboard :
     EventTarget {
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Clipboard/read) */

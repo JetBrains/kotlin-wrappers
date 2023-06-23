@@ -4,6 +4,11 @@ package web.authn
 
 import js.buffer.ArrayBuffer
 
+/**
+ * Available only in secure contexts.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AuthenticatorAssertionResponse)
+ */
 sealed external class AuthenticatorAssertionResponse :
     AuthenticatorResponse {
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/AuthenticatorAssertionResponse/authenticatorData) */

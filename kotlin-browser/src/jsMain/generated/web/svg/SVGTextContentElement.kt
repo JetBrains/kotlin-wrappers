@@ -7,6 +7,11 @@ import web.geometry.DOMPointInit
 import web.geometry.DOMPointReadOnly
 import web.geometry.DOMRect
 
+/**
+ * Implemented by elements that support rendering child text content. It is inherited by various text-related interfaces, such as SVGTextElement, SVGTSpanElement, SVGTRefElement, SVGAltGlyphElement and SVGTextPathElement.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTextContentElement)
+ */
 sealed external class SVGTextContentElement :
     SVGGraphicsElement {
     val lengthAdjust: SVGAnimatedEnumeration

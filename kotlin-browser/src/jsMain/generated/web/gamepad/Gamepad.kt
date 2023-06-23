@@ -5,6 +5,12 @@ package web.gamepad
 import js.core.DOMHighResTimeStamp
 import js.core.ReadonlyArray
 
+/**
+ * This Gamepad API interface defines an individual gamepad or other controller, allowing access to information such as button presses, axis positions, and id.
+ * Available only in secure contexts.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Gamepad)
+ */
 sealed external class Gamepad {
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Gamepad/axes) */
     val axes: ReadonlyArray<Double>

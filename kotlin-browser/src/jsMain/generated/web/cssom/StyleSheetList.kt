@@ -5,6 +5,11 @@ package web.cssom
 import js.core.ArrayLike
 import js.core.JsIterable
 
+/**
+ * A list of StyleSheet.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StyleSheetList)
+ */
 sealed external class StyleSheetList :
     ArrayLike<CSSStyleSheet>,
     JsIterable<CSSStyleSheet> {

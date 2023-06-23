@@ -6,6 +6,11 @@ import js.core.ReadonlyArray
 import js.core.Void
 import kotlin.js.Promise
 
+/**
+ * Available only in secure contexts.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemDirectoryHandle)
+ */
 sealed external class FileSystemDirectoryHandle :
     FileSystemHandle {
     /* val kind: "directory" */

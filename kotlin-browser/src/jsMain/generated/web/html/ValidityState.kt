@@ -2,6 +2,11 @@
 
 package web.html
 
+/**
+ * The validity states that an element can be in, with respect to constraint validation. Together, they help explain why an element's value fails to validate, if it's not valid.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ValidityState)
+ */
 sealed external class ValidityState {
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/ValidityState/badInput) */
     val badInput: Boolean

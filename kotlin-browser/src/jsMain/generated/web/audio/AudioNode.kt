@@ -4,6 +4,11 @@ package web.audio
 
 import web.events.EventTarget
 
+/**
+ * A generic interface for representing an audio processing module. Examples include:
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioNode)
+ */
 sealed external class AudioNode :
     EventTarget {
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioNode/channelCount) */

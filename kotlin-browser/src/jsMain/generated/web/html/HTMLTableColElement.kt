@@ -2,6 +2,11 @@
 
 package web.html
 
+/**
+ * Provides special properties (beyond the HTMLElement interface it also has available to it inheritance) for manipulating single or grouped table column elements.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableColElement)
+ */
 abstract external class HTMLTableColElement :
     HTMLElement {
     /**

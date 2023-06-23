@@ -2,6 +2,11 @@
 
 package web.media.source
 
+/**
+ * Used to represent a set of time ranges, primarily for the purpose of tracking which portions of media have been buffered when loading it for use by the <audio> and <video> elements.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TimeRanges)
+ */
 sealed external class TimeRanges {
     /**
      * Returns the number of ranges in the object.

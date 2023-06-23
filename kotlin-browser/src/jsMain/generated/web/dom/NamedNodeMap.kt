@@ -5,6 +5,11 @@ package web.dom
 import js.core.ArrayLike
 import js.core.JsIterable
 
+/**
+ * A collection of Attr objects. Objects inside a NamedNodeMap are not in any particular order, unlike NodeList, although they may be accessed by an index as in an array.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NamedNodeMap)
+ */
 sealed external class NamedNodeMap :
     ArrayLike<Attr>,
     JsIterable<Attr> {

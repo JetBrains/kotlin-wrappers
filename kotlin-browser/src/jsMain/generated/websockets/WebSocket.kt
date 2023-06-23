@@ -12,6 +12,11 @@ import web.events.EventTarget
 import web.messaging.MessageEvent
 import web.url.URL
 
+/**
+ * Provides the API for creating and managing a WebSocket connection to a server, as well as for sending and receiving data on the connection.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebSocket)
+ */
 external class WebSocket(
     url: String,
     protocols: String = definedExternally,

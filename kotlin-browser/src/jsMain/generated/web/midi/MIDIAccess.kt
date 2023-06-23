@@ -6,6 +6,11 @@ import web.events.Event
 import web.events.EventHandler
 import web.events.EventTarget
 
+/**
+ * Available only in secure contexts.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MIDIAccess)
+ */
 sealed external class MIDIAccess :
     EventTarget {
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/MIDIAccess/inputs) */

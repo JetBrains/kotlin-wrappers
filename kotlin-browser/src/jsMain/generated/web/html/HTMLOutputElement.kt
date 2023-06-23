@@ -5,6 +5,11 @@ package web.html
 import web.dom.DOMTokenList
 import web.dom.NodeListOf
 
+/**
+ * Provides properties and methods (beyond those inherited from HTMLElement) for manipulating the layout and presentation of <output> elements.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOutputElement)
+ */
 abstract external class HTMLOutputElement :
     HTMLElement {
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOutputElement/defaultValue) */

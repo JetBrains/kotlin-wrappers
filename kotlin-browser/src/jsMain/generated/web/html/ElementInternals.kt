@@ -5,6 +5,7 @@ package web.html
 import web.aria.ARIAMixin
 import web.dom.NodeList
 
+/** [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals) */
 sealed external interface ElementInternals :
     ARIAMixin {
     /**

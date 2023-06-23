@@ -2,6 +2,7 @@
 
 package web.canvas
 
+/** [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageBitmap) */
 sealed external class ImageBitmap {
     /**
      * Returns the intrinsic height of the image, in CSS pixels.

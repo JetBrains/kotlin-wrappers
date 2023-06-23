@@ -4,6 +4,11 @@ package web.html
 
 import web.dom.NodeListOf
 
+/**
+ * Provides special properties and methods (beyond the regular HTMLElement interface it also has available to it by inheritance) for manipulating the layout and presentation of <progress> elements.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLProgressElement)
+ */
 abstract external class HTMLProgressElement :
     HTMLElement {
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLProgressElement/labels) */

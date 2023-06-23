@@ -6,6 +6,7 @@ import web.events.Event
 import web.events.EventHandler
 import web.events.EventTarget
 
+/** [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCSctpTransport) */
 sealed external class RTCSctpTransport :
     EventTarget {
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCSctpTransport/maxChannels) */

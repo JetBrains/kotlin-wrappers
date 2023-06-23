@@ -2,6 +2,11 @@
 
 package web.svg
 
+/**
+ * Corresponds to the <feGaussianBlur> element.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFEGaussianBlurElement)
+ */
 sealed external class SVGFEGaussianBlurElement :
     SVGElement,
     SVGFilterPrimitiveStandardAttributes {

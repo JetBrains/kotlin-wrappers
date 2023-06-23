@@ -7,6 +7,11 @@ import web.events.EventHandler
 import web.events.EventTarget
 import kotlin.js.Promise
 
+/**
+ * This Notifications API interface is used to configure and display desktop notifications to the user.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification)
+ */
 external class Notification(
     title: String,
     options: NotificationOptions = definedExternally,

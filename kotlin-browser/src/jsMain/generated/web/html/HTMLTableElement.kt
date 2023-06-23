@@ -2,6 +2,11 @@
 
 package web.html
 
+/**
+ * Provides special properties and methods (beyond the regular HTMLElement object interface it also has available to it by inheritance) for manipulating the layout and presentation of tables in an HTML document.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableElement)
+ */
 abstract external class HTMLTableElement :
     HTMLElement {
     /**

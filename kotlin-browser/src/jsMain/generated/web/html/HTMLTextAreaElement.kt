@@ -4,6 +4,11 @@ package web.html
 
 import web.dom.NodeListOf
 
+/**
+ * Provides special properties and methods for manipulating the layout and presentation of <textarea> elements.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement)
+ */
 abstract external class HTMLTextAreaElement :
     HTMLElement {
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/autocomplete) */

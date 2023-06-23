@@ -8,6 +8,7 @@ import web.events.EventHandler
 import web.events.EventTarget
 import kotlin.js.Promise
 
+/** [MDN Reference](https://developer.mozilla.org/docs/Web/API/FontFaceSet) */
 external class FontFaceSet(
     initialFaces: ReadonlyArray<FontFace>,
 ) : EventTarget {

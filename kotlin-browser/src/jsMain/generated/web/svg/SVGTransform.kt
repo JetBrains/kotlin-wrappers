@@ -6,6 +6,11 @@ import web.geometry.DOMMatrix
 import web.geometry.DOMMatrix2DInit
 import web.geometry.DOMMatrixReadOnly
 
+/**
+ * SVGTransform is the interface for one of the component transformations within an SVGTransformList; thus, an SVGTransform object corresponds to a single component (e.g., scale(…) or matrix(…)) within a transform attribute.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTransform)
+ */
 sealed external class SVGTransform {
     val angle: Double
     val matrix: DOMMatrix

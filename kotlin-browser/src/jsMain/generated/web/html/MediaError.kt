@@ -2,6 +2,11 @@
 
 package web.html
 
+/**
+ * An error which occurred while handling media in an HTML media element based on HTMLMediaElement, such as <audio> or <video>.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaError)
+ */
 sealed external class MediaError {
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaError/code) */
     val code: Short

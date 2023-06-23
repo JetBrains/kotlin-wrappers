@@ -2,6 +2,11 @@
 
 package web.svg
 
+/**
+ * Corresponds to the <feSpotLight> element.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFESpotLightElement)
+ */
 sealed external class SVGFESpotLightElement :
     SVGElement {
     val limitingConeAngle: SVGAnimatedNumber

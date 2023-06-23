@@ -6,6 +6,11 @@ import web.events.Event
 import web.events.EventHandler
 import web.events.EventTarget
 
+/**
+ * This Media Source Extensions API interface represents a source of media data for an HTMLMediaElement object. A MediaSource object can be attached to a HTMLMediaElement to be played in the user agent.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSource)
+ */
 sealed external class MediaSource :
     EventTarget {
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSource/activeSourceBuffers) */

@@ -2,6 +2,11 @@
 
 package web.svg
 
+/**
+ * Corresponds to the <feBlend> element.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFEBlendElement)
+ */
 sealed external class SVGFEBlendElement :
     SVGElement,
     SVGFilterPrimitiveStandardAttributes {

@@ -7,6 +7,11 @@ import web.dom.Document
 import web.http.ReferrerPolicy
 import web.window.WindowProxy
 
+/**
+ * Provides special properties and methods (beyond those of the HTMLElement interface it also has available to it by inheritance) for manipulating the layout and presentation of inline frame elements.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLIFrameElement)
+ */
 abstract external class HTMLIFrameElement :
     HTMLElement {
     var allow: String

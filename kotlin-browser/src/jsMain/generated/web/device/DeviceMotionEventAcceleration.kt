@@ -2,6 +2,11 @@
 
 package web.device
 
+/**
+ * Available only in secure contexts.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DeviceMotionEventAcceleration)
+ */
 sealed external interface DeviceMotionEventAcceleration {
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/DeviceMotionEventAcceleration/x) */
     val x: Double?

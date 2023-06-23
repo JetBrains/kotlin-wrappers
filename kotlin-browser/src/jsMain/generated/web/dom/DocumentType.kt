@@ -2,6 +2,11 @@
 
 package web.dom
 
+/**
+ * A Node containing a doctype.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DocumentType)
+ */
 sealed external class DocumentType :
     Node,
     ChildNode {

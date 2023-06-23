@@ -6,6 +6,11 @@ import web.dom.DOMTokenList
 import web.http.ReferrerPolicy
 import web.window.WindowTarget
 
+/**
+ * Provides special properties and methods (beyond those of the regular object HTMLElement interface it also has available to it by inheritance) for manipulating the layout and presentation of <area> elements.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAreaElement)
+ */
 abstract external class HTMLAreaElement :
     HTMLElement,
     HTMLHyperlinkElementUtils {

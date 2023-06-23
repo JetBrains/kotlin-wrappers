@@ -2,6 +2,11 @@
 
 package web.cssom
 
+/**
+ * CSSStyleRule represents a single CSS style rule. It implements the CSSRule interface with a type value of 1 (CSSRule.STYLE_RULE).
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleRule)
+ */
 sealed external class CSSStyleRule :
     CSSRule {
     val cssRules: CSSRuleList

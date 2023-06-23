@@ -6,6 +6,12 @@ import js.core.Void
 import web.events.EventTarget
 import kotlin.js.Promise
 
+/**
+ * This Payment Request API interface is returned after a user selects a payment method and approves a payment request.
+ * Available only in secure contexts.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentResponse)
+ */
 sealed external class PaymentResponse :
     EventTarget {
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentResponse/details) */

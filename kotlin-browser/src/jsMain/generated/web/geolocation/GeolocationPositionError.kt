@@ -2,6 +2,7 @@
 
 package web.geolocation
 
+/** [MDN Reference](https://developer.mozilla.org/docs/Web/API/GeolocationPositionError) */
 sealed external class GeolocationPositionError {
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/GeolocationPositionError/code) */
     val code: Short

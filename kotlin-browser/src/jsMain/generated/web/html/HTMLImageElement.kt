@@ -6,6 +6,11 @@ import js.core.Void
 import web.http.ReferrerPolicy
 import kotlin.js.Promise
 
+/**
+ * Provides special properties and methods for manipulating <img> elements.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLImageElement)
+ */
 abstract external class HTMLImageElement :
     HTMLElement {
     /**

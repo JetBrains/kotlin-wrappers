@@ -2,6 +2,11 @@
 
 package web.svg
 
+/**
+ * Corresponds to the <feDisplacementMap> element.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFEDisplacementMapElement)
+ */
 sealed external class SVGFEDisplacementMapElement :
     SVGElement,
     SVGFilterPrimitiveStandardAttributes {

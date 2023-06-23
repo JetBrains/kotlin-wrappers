@@ -2,6 +2,11 @@
 
 package web.cssom
 
+/**
+ * Any CSS at-rule that contains other rules nested within it.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSGroupingRule)
+ */
 sealed external class CSSGroupingRule :
     CSSRule {
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSGroupingRule/cssRules) */

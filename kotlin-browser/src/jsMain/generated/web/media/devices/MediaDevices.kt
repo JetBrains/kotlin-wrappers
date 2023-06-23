@@ -11,6 +11,12 @@ import web.media.streams.MediaStreamConstraints
 import web.media.streams.MediaTrackSupportedConstraints
 import kotlin.js.Promise
 
+/**
+ * Provides access to connected media input devices like cameras and microphones, as well as screen sharing. In essence, it lets you obtain access to any hardware source of media data.
+ * Available only in secure contexts.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaDevices)
+ */
 sealed external class MediaDevices :
     EventTarget {
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaDevices/devicechange_event) */

@@ -6,6 +6,7 @@ import js.core.ReadonlyArray
 import web.dom.Element
 import web.dom.Node
 
+/** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSlotElement) */
 abstract external class HTMLSlotElement :
     HTMLElement {
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSlotElement/name) */

@@ -2,6 +2,11 @@
 
 package web.svg
 
+/**
+ * Corresponds to the <linearGradient> element.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGLinearGradientElement)
+ */
 sealed external class SVGLinearGradientElement :
     SVGGradientElement {
     val x1: SVGAnimatedLength

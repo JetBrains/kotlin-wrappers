@@ -5,6 +5,11 @@ package web.dom.observers
 import js.core.ReadonlyArray
 import web.dom.Node
 
+/**
+ * Provides the ability to watch for changes being made to the DOM tree. It is designed as a replacement for the older Mutation Events feature which was part of the DOM3 Events specification.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MutationObserver)
+ */
 external class MutationObserver(
     callback: MutationCallback,
 ) {

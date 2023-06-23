@@ -7,6 +7,11 @@ import web.events.Event
 import web.events.EventHandler
 import web.url.URL
 
+/**
+ * Use XMLHttpRequest (XHR) objects to interact with servers. You can retrieve data from a URL without having to do a full page refresh. This enables a Web page to update just part of a page without disrupting what the user is doing.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest)
+ */
 external class XMLHttpRequest :
     XMLHttpRequestEventTarget {
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/readystatechange_event) */

@@ -5,6 +5,11 @@ package web.html
 import web.dom.Document
 import web.window.WindowProxy
 
+/**
+ * Provides special properties and methods (beyond those on the HTMLElement interface it also has available to it by inheritance) for manipulating the layout and presentation of <object> element, representing external resources.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLObjectElement)
+ */
 abstract external class HTMLObjectElement :
     HTMLElement {
     /**

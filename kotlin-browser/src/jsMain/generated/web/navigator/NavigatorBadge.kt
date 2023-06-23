@@ -5,6 +5,7 @@ package web.navigator
 import js.core.Void
 import kotlin.js.Promise
 
+/** Available only in secure contexts. */
 sealed external interface NavigatorBadge {
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/clearAppBadge) */
     fun clearAppBadge(): Promise<Void>

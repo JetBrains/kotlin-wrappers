@@ -7,6 +7,11 @@ import js.core.JsIterable
 import web.geometry.DOMMatrix2DInit
 import web.geometry.DOMMatrixReadOnly
 
+/**
+ * The SVGTransformList defines a list of SVGTransform objects.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTransformList)
+ */
 sealed external class SVGTransformList :
     ArrayLike<SVGTransform>,
     JsIterable<SVGTransform> {

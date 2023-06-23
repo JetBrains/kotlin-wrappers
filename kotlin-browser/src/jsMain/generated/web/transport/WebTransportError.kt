@@ -4,6 +4,11 @@ package web.transport
 
 import web.errors.DOMException
 
+/**
+ * Available only in secure contexts.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebTransportError)
+ */
 external class WebTransportError(
     message: String = definedExternally,
     options: WebTransportErrorOptions = definedExternally,

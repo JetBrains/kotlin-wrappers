@@ -5,6 +5,11 @@ package web.html
 import js.core.JsIterable
 import web.dom.NodeListOf
 
+/**
+ * A <select> HTML Element. These elements also share all of the properties and methods of other HTML elements via the HTMLElement interface.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement)
+ */
 abstract external class HTMLSelectElement :
     HTMLElement,
     JsIterable<HTMLOptionElement> {

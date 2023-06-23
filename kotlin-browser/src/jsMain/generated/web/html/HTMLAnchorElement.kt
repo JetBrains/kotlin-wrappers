@@ -6,6 +6,11 @@ import web.dom.DOMTokenList
 import web.http.ReferrerPolicy
 import web.window.WindowTarget
 
+/**
+ * Hyperlink elements and provides special properties and methods (beyond those of the regular HTMLElement object interface that they inherit from) for manipulating the layout and presentation of such elements.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAnchorElement)
+ */
 abstract external class HTMLAnchorElement :
     HTMLElement,
     HTMLHyperlinkElementUtils {

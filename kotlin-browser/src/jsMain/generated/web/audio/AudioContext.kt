@@ -7,6 +7,11 @@ import web.html.HTMLMediaElement
 import web.media.streams.MediaStream
 import kotlin.js.Promise
 
+/**
+ * An audio-processing graph built from audio modules linked together, each represented by an AudioNode.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioContext)
+ */
 external class AudioContext(
     contextOptions: AudioContextOptions = definedExternally,
 ) : BaseAudioContext {

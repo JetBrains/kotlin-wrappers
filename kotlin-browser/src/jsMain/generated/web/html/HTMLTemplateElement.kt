@@ -4,6 +4,11 @@ package web.html
 
 import web.dom.DocumentFragment
 
+/**
+ * Enables access to the contents of an HTML <template> element.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTemplateElement)
+ */
 abstract external class HTMLTemplateElement :
     HTMLElement {
     /**

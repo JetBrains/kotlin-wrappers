@@ -2,6 +2,7 @@
 
 package web.svg
 
+/** [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGMarkerElement) */
 sealed external class SVGMarkerElement :
     SVGElement,
     SVGFitToViewBox {

@@ -2,6 +2,11 @@
 
 package web.html
 
+/**
+ * Provides special properties and methods (beyond the regular HTMLElement interface it also has available to it by inheritance) for manipulating the layout and presentation of table cells, either header or data cells, in an HTML document.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableCellElement)
+ */
 abstract external class HTMLTableCellElement :
     HTMLElement {
     /**

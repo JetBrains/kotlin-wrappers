@@ -5,6 +5,11 @@ package web.authn
 import js.buffer.ArrayBuffer
 import js.core.ReadonlyArray
 
+/**
+ * Available only in secure contexts.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AuthenticatorAttestationResponse)
+ */
 sealed external class AuthenticatorAttestationResponse :
     AuthenticatorResponse {
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/AuthenticatorAttestationResponse/attestationObject) */

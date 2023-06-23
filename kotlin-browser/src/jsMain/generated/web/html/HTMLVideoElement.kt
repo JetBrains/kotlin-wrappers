@@ -7,6 +7,11 @@ import web.events.EventHandler
 import web.window.PictureInPictureWindow
 import kotlin.js.Promise
 
+/**
+ * Provides special properties and methods for manipulating video objects. It also inherits properties and methods of HTMLMediaElement and HTMLElement.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLVideoElement)
+ */
 abstract external class HTMLVideoElement :
     HTMLMediaElement {
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLVideoElement/disablePictureInPicture) */

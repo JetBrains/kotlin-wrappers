@@ -2,6 +2,7 @@
 
 package web.audio
 
+/** [MDN Reference](https://developer.mozilla.org/docs/Web/API/ConstantSourceNode) */
 external class ConstantSourceNode(
     context: BaseAudioContext,
     options: ConstantSourceOptions = definedExternally,

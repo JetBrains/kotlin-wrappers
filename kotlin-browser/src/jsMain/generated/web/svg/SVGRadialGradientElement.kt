@@ -2,6 +2,11 @@
 
 package web.svg
 
+/**
+ * Corresponds to the <RadialGradient> element.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGRadialGradientElement)
+ */
 sealed external class SVGRadialGradientElement :
     SVGGradientElement {
     val cx: SVGAnimatedLength

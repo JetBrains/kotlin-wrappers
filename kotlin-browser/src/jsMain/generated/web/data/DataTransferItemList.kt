@@ -6,6 +6,11 @@ import js.core.ArrayLike
 import js.core.JsIterable
 import web.file.File
 
+/**
+ * A list of DataTransferItem objects representing items being dragged. During a drag operation, each DragEvent has a dataTransfer property and that property is a DataTransferItemList.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DataTransferItemList)
+ */
 sealed external class DataTransferItemList :
     ArrayLike<DataTransferItem>,
     JsIterable<DataTransferItem> {

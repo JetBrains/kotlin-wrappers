@@ -5,6 +5,11 @@ package web.speech
 import web.events.EventHandler
 import web.events.EventTarget
 
+/**
+ * This Web Speech API interface represents a speech request. It contains the content the speech service should read and information about how to read it (e.g. language, pitch and volume.)
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesisUtterance)
+ */
 external class SpeechSynthesisUtterance(
     text: String = definedExternally,
 ) : EventTarget {

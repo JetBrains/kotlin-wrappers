@@ -6,6 +6,11 @@ import js.core.ReadonlyArray
 import web.events.EventHandler
 import web.events.EventTarget
 
+/**
+ * A stream of media content. A stream consists of several tracks such as video or audio tracks. Each track is specified as an instance of MediaStreamTrack.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStream)
+ */
 external class MediaStream() : EventTarget {
     constructor(stream: MediaStream)
     constructor(tracks: ReadonlyArray<MediaStreamTrack>)

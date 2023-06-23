@@ -4,6 +4,7 @@ package webrtc
 
 import web.errors.DOMException
 
+/** [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCError) */
 external class RTCError(
     init: RTCErrorInit,
     message: String = definedExternally,

@@ -6,6 +6,11 @@ import web.events.Event
 import web.events.EventHandler
 import web.events.EventTarget
 
+/**
+ * This interface also inherits properties from EventTarget.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrack)
+ */
 sealed external class TextTrack :
     EventTarget {
     /**

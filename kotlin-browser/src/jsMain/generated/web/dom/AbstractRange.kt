@@ -2,6 +2,7 @@
 
 package web.dom
 
+/** [MDN Reference](https://developer.mozilla.org/docs/Web/API/AbstractRange) */
 sealed external class AbstractRange {
     /**
      * Returns true if range is collapsed, and false otherwise.

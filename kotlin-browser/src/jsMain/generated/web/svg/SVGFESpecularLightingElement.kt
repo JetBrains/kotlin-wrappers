@@ -2,6 +2,11 @@
 
 package web.svg
 
+/**
+ * Corresponds to the <feSpecularLighting> element.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFESpecularLightingElement)
+ */
 sealed external class SVGFESpecularLightingElement :
     SVGElement,
     SVGFilterPrimitiveStandardAttributes {

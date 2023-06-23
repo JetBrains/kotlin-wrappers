@@ -11,6 +11,7 @@ import web.events.EventTarget
 import web.messaging.MessageEvent
 import websockets.BinaryType
 
+/** [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDataChannel) */
 sealed external class RTCDataChannel :
     EventTarget {
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDataChannel/binaryType) */

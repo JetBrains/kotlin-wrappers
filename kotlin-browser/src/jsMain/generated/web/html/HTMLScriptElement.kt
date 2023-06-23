@@ -4,6 +4,11 @@ package web.html
 
 import web.http.ReferrerPolicy
 
+/**
+ * HTML <script> elements expose the HTMLScriptElement interface, which provides special properties and methods for manipulating the behavior and execution of <script> elements (beyond the inherited HTMLElement interface).
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLScriptElement)
+ */
 abstract external class HTMLScriptElement :
     HTMLElement {
     var async: Boolean

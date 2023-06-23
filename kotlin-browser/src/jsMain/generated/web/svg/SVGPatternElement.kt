@@ -2,6 +2,11 @@
 
 package web.svg
 
+/**
+ * Corresponds to the <pattern> element.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPatternElement)
+ */
 sealed external class SVGPatternElement :
     SVGElement,
     SVGFitToViewBox,

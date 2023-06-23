@@ -9,6 +9,11 @@ import web.events.Event
 import web.events.EventHandler
 import web.events.EventTarget
 
+/**
+ * This IndexedDB API interface provides a connection to a database; you can use an IDBDatabase object to open a transaction on your database then create, manipulate, and delete objects (data) in that database. The interface provides the only way to get and manage versions of the database.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBDatabase)
+ */
 sealed external class IDBDatabase :
     EventTarget {
     /**

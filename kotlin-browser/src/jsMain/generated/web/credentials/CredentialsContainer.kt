@@ -5,6 +5,11 @@ package web.credentials
 import js.core.Void
 import kotlin.js.Promise
 
+/**
+ * Available only in secure contexts.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CredentialsContainer)
+ */
 sealed external class CredentialsContainer {
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CredentialsContainer/create) */
     fun create(options: CredentialCreationOptions = definedExternally): Promise<Credential?>

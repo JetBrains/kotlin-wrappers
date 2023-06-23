@@ -4,6 +4,11 @@ package web.idb
 
 import js.core.Void
 
+/**
+ * This IndexedDB API interface represents a cursor for traversing or iterating over multiple records in a database.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBCursor)
+ */
 sealed external class IDBCursor {
     /**
      * Returns the direction ("next", "nextunique", "prev" or "prevunique") of the cursor.

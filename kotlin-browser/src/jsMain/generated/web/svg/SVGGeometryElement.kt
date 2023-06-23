@@ -6,6 +6,7 @@ import web.geometry.DOMPoint
 import web.geometry.DOMPointInit
 import web.geometry.DOMPointReadOnly
 
+/** [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGGeometryElement) */
 sealed external class SVGGeometryElement :
     SVGGraphicsElement {
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGGeometryElement/pathLength) */

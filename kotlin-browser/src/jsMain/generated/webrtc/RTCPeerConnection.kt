@@ -12,6 +12,11 @@ import web.media.streams.MediaStream
 import web.media.streams.MediaStreamTrack
 import kotlin.js.Promise
 
+/**
+ * A WebRTC connection between the local computer and a remote peer. It provides methods to connect to a remote peer, maintain and monitor the connection, and close the connection once it's no longer needed.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection)
+ */
 external class RTCPeerConnection(
     configuration: RTCConfiguration = definedExternally,
 ) : EventTarget {

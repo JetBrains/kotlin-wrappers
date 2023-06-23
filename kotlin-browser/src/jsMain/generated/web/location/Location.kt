@@ -5,6 +5,11 @@ package web.location
 import web.dom.DOMStringList
 import web.url.URL
 
+/**
+ * The location (URL) of the object it is linked to. Changes done on it are reflected on the object it relates to. Both the Document and Window interface have such a linked Location, accessible via Document.location and Window.location respectively.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Location)
+ */
 sealed external class Location {
     /**
      * Returns a DOMStringList object listing the origins of the ancestor browsing contexts, from the parent browsing context to the top-level browsing context.

@@ -6,6 +6,7 @@ import js.core.ReadonlyArray
 import web.dom.Element
 import web.geometry.DOMRectReadOnly
 
+/** [MDN Reference](https://developer.mozilla.org/docs/Web/API/ResizeObserverEntry) */
 sealed external class ResizeObserverEntry {
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/ResizeObserverEntry/borderBoxSize) */
     val borderBoxSize: ReadonlyArray<ResizeObserverSize>

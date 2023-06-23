@@ -4,6 +4,11 @@ package web.html
 
 import web.dom.Document
 
+/**
+ * Provides special properties (beyond the regular HTMLElement interface it also has available to it by inheritance) for manipulating <embed> elements.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLEmbedElement)
+ */
 abstract external class HTMLEmbedElement :
     HTMLElement {
     /** Sets or retrieves the height of the object. */

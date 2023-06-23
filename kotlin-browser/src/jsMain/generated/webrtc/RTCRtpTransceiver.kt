@@ -4,6 +4,7 @@ package webrtc
 
 import js.core.ReadonlyArray
 
+/** [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpTransceiver) */
 sealed external class RTCRtpTransceiver {
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpTransceiver/currentDirection) */
     val currentDirection: RTCRtpTransceiverDirection?

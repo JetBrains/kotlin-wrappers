@@ -5,6 +5,11 @@ package web.audio
 import js.core.ReadonlyArray
 import js.typedarrays.Float32Array
 
+/**
+ * The Web Audio API's AudioParam interface represents an audio-related parameter, usually a parameter of an AudioNode (such as GainNode.gain).
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioParam)
+ */
 sealed external class AudioParam {
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioParam/automationRate) */
     var automationRate: AutomationRate

@@ -2,6 +2,7 @@
 
 package web.geometry
 
+/** [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMPointReadOnly) */
 open external class DOMPointReadOnly(
     x: Number = definedExternally,
     y: Number = definedExternally,

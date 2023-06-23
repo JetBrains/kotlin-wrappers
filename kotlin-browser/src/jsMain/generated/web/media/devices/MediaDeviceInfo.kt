@@ -2,6 +2,12 @@
 
 package web.media.devices
 
+/**
+ * The MediaDevicesInfo interface contains information that describes a single media input or output device.
+ * Available only in secure contexts.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaDeviceInfo)
+ */
 sealed external class MediaDeviceInfo {
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaDeviceInfo/deviceId) */
     val deviceId: String

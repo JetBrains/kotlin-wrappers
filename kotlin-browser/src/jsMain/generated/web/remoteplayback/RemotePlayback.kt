@@ -8,6 +8,7 @@ import web.events.EventHandler
 import web.events.EventTarget
 import kotlin.js.Promise
 
+/** [MDN Reference](https://developer.mozilla.org/docs/Web/API/RemotePlayback) */
 sealed external class RemotePlayback :
     EventTarget {
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/RemotePlayback/connect_event) */

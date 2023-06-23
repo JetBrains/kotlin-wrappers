@@ -25,6 +25,11 @@ import web.vibration.VibratePattern
 import web.wakelock.WakeLock
 import kotlin.js.Promise
 
+/**
+ * The state and the identity of the user agent. It allows scripts to query it and to register themselves to carry on some activities.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator)
+ */
 sealed external class Navigator :
     NavigatorAutomationInformation,
     NavigatorBadge,

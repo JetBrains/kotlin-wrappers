@@ -2,6 +2,11 @@
 
 package web.svg
 
+/**
+ * Corresponds to the <feComponentTransfer> element.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFEComponentTransferElement)
+ */
 sealed external class SVGFEComponentTransferElement :
     SVGElement,
     SVGFilterPrimitiveStandardAttributes {

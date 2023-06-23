@@ -8,6 +8,11 @@ import web.dom.DOMTokenList
 import web.dom.Element
 import web.window.WindowTarget
 
+/**
+ * A <form> element in the DOM; it allows access to and in some cases modification of aspects of the form, as well as access to its component elements.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFormElement)
+ */
 abstract external class HTMLFormElement :
     HTMLElement,
     ArrayLike<Element>,

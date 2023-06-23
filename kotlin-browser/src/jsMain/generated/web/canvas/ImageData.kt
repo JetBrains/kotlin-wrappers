@@ -4,6 +4,11 @@ package web.canvas
 
 import js.typedarrays.Uint8ClampedArray
 
+/**
+ * The underlying pixel data of an area of a <canvas> element. It is created using the ImageData() constructor or creator methods on the CanvasRenderingContext2D object associated with a canvas: createImageData() and getImageData(). It can also be used to set a part of the canvas by using putImageData().
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageData)
+ */
 external class ImageData(
     sw: Number,
     sh: Number,

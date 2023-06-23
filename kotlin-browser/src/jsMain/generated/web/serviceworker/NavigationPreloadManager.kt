@@ -5,6 +5,11 @@ package web.serviceworker
 import js.core.Void
 import kotlin.js.Promise
 
+/**
+ * Available only in secure contexts.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationPreloadManager)
+ */
 sealed external class NavigationPreloadManager {
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationPreloadManager/disable) */
     fun disable(): Promise<Void>

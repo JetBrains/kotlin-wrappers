@@ -2,6 +2,11 @@
 
 package web.svg
 
+/**
+ * Corresponds to the <feTurbulence> element.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFETurbulenceElement)
+ */
 sealed external class SVGFETurbulenceElement :
     SVGElement,
     SVGFilterPrimitiveStandardAttributes {

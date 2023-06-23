@@ -2,6 +2,11 @@
 
 package web.svg
 
+/**
+ * Corresponds to the <feConvolveMatrix> element.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFEConvolveMatrixElement)
+ */
 sealed external class SVGFEConvolveMatrixElement :
     SVGElement,
     SVGFilterPrimitiveStandardAttributes {

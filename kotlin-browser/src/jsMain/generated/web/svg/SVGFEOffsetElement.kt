@@ -2,6 +2,11 @@
 
 package web.svg
 
+/**
+ * Corresponds to the <feOffset> element.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFEOffsetElement)
+ */
 sealed external class SVGFEOffsetElement :
     SVGElement,
     SVGFilterPrimitiveStandardAttributes {

@@ -2,6 +2,7 @@
 
 package web.canvas
 
+/** [MDN Reference](https://developer.mozilla.org/docs/Web/API/OffscreenCanvasRenderingContext2D) */
 sealed external class OffscreenCanvasRenderingContext2D :
     CanvasCompositing,
     CanvasDrawImage,

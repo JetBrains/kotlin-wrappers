@@ -7,6 +7,11 @@ import js.core.ReadonlyArray
 import web.buffer.Blob
 import web.buffer.BlobPart
 
+/**
+ * Provides information about files and allows JavaScript in a web page to access their content.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/File)
+ */
 external class File(
     fileBits: ReadonlyArray<BlobPart>,
     fileName: String,

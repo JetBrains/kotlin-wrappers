@@ -7,6 +7,11 @@ import web.events.Event
 import web.events.EventHandler
 import web.events.EventTarget
 
+/**
+ * This Web Speech API interface is the controller interface for the speech service; this can be used to retrieve information about the synthesis voices available on the device, start and pause speech, and other commands besides.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesis)
+ */
 sealed external class SpeechSynthesis :
     EventTarget {
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesis/voiceschanged_event) */

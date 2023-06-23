@@ -2,6 +2,7 @@
 
 package web.cssom
 
+/** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSTranslate) */
 external class CSSTranslate(
     x: CSSNumericValue,
     y: CSSNumericValue,

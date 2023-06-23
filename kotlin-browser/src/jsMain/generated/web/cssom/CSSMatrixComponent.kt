@@ -5,6 +5,7 @@ package web.cssom
 import web.geometry.DOMMatrix
 import web.geometry.DOMMatrixReadOnly
 
+/** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSMatrixComponent) */
 external class CSSMatrixComponent(
     matrix: DOMMatrixReadOnly,
     options: CSSMatrixComponentOptions = definedExternally,

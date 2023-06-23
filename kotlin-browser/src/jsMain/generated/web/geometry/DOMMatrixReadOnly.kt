@@ -6,6 +6,7 @@ import js.core.ReadonlyArray
 import js.typedarrays.Float32Array
 import js.typedarrays.Float64Array
 
+/** [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly) */
 open external class DOMMatrixReadOnly(
     init: String = definedExternally,
 ) {

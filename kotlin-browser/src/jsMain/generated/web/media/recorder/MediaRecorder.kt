@@ -7,6 +7,7 @@ import web.events.EventHandler
 import web.events.EventTarget
 import web.media.streams.MediaStream
 
+/** [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaRecorder) */
 external class MediaRecorder(
     stream: MediaStream,
     options: MediaRecorderOptions = definedExternally,

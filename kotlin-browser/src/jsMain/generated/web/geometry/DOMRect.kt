@@ -2,6 +2,7 @@
 
 package web.geometry
 
+/** [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMRect) */
 external class DOMRect(
     x: Number = definedExternally,
     y: Number = definedExternally,

@@ -2,6 +2,11 @@
 
 package web.cssom
 
+/**
+ * A single style sheet. CSS style sheets will further implement the more specialized CSSStyleSheet interface.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StyleSheet)
+ */
 sealed external class StyleSheet {
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/StyleSheet/disabled) */
     var disabled: Boolean

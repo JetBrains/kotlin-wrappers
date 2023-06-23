@@ -6,6 +6,11 @@ import web.cssom.LinkStyle
 import web.dom.DOMTokenList
 import web.http.ReferrerPolicy
 
+/**
+ * Reference information for external resources and the relationship of those resources to a document and vice-versa. This object inherits all of the properties and methods of the HTMLElement interface.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLLinkElement)
+ */
 abstract external class HTMLLinkElement :
     HTMLElement,
     LinkStyle {

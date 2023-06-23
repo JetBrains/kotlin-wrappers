@@ -2,6 +2,11 @@
 
 package web.html
 
+/**
+ * <option> elements and inherits all classes and methods of the HTMLElement interface.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOptionElement)
+ */
 abstract external class HTMLOptionElement :
     HTMLElement {
     /**

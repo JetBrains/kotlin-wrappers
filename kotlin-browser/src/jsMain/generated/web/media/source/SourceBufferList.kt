@@ -8,6 +8,11 @@ import web.events.Event
 import web.events.EventHandler
 import web.events.EventTarget
 
+/**
+ * A simple container list for multiple SourceBuffer objects.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SourceBufferList)
+ */
 sealed external class SourceBufferList :
     EventTarget,
     ArrayLike<SourceBuffer>,

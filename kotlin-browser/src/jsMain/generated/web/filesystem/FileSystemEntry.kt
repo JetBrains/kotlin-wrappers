@@ -2,6 +2,7 @@
 
 package web.filesystem
 
+/** [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemEntry) */
 sealed external class FileSystemEntry {
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemEntry/filesystem) */
     val filesystem: FileSystem

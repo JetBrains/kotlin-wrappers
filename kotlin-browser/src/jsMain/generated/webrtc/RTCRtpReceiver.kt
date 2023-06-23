@@ -6,6 +6,11 @@ import js.core.ReadonlyArray
 import web.media.streams.MediaStreamTrack
 import kotlin.js.Promise
 
+/**
+ * This WebRTC API interface manages the reception and decoding of data for a MediaStreamTrack on an RTCPeerConnection.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpReceiver)
+ */
 sealed external class RTCRtpReceiver {
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpReceiver/track) */
     val track: MediaStreamTrack

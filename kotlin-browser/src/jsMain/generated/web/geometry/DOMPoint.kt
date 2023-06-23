@@ -2,6 +2,7 @@
 
 package web.geometry
 
+/** [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMPoint) */
 external class DOMPoint(
     x: Number = definedExternally,
     y: Number = definedExternally,

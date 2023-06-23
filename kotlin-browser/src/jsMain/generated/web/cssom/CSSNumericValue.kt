@@ -2,6 +2,7 @@
 
 package web.cssom
 
+/** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSNumericValue) */
 sealed external class CSSNumericValue :
     CSSStyleValue {
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSNumericValue/add) */

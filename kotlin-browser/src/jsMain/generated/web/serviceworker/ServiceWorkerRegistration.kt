@@ -12,6 +12,12 @@ import web.notifications.NotificationOptions
 import web.push.PushManager
 import kotlin.js.Promise
 
+/**
+ * This ServiceWorker API interface represents the service worker registration. You register a service worker to control one or more pages that share the same origin.
+ * Available only in secure contexts.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration)
+ */
 sealed external class ServiceWorkerRegistration :
     EventTarget {
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/active) */

@@ -5,6 +5,11 @@ package web.svg
 import js.core.ArrayLike
 import js.core.JsIterable
 
+/**
+ * The SVGStringList defines a list of DOMString objects.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGStringList)
+ */
 sealed external class SVGStringList :
     ArrayLike<String>,
     JsIterable<String> {

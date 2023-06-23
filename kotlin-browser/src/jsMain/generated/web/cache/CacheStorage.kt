@@ -8,6 +8,12 @@ import web.http.Response
 import web.url.URL
 import kotlin.js.Promise
 
+/**
+ * The storage for Cache objects.
+ * Available only in secure contexts.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CacheStorage)
+ */
 sealed external class CacheStorage {
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CacheStorage/delete) */
     fun delete(cacheName: String): Promise<Boolean>

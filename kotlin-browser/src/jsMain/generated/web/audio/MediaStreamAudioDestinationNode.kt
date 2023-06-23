@@ -4,6 +4,7 @@ package web.audio
 
 import web.media.streams.MediaStream
 
+/** [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStreamAudioDestinationNode) */
 external class MediaStreamAudioDestinationNode(
     context: AudioContext,
     options: AudioNodeOptions = definedExternally,

@@ -6,6 +6,12 @@ import js.core.ReadonlyArray
 import web.permissions.PermissionState
 import kotlin.js.Promise
 
+/**
+ * This Push API interface provides a way to receive notifications from third-party servers as well as request URLs for push notifications.
+ * Available only in secure contexts.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PushManager)
+ */
 sealed external class PushManager {
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/PushManager/getSubscription) */
     fun getSubscription(): Promise<PushSubscription?>

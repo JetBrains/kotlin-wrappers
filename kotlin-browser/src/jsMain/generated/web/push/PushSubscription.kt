@@ -6,6 +6,12 @@ import js.buffer.ArrayBuffer
 import js.core.EpochTimeStamp
 import kotlin.js.Promise
 
+/**
+ * This Push API interface provides a subcription's URL endpoint and allows unsubscription from a push service.
+ * Available only in secure contexts.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PushSubscription)
+ */
 sealed external class PushSubscription {
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/PushSubscription/endpoint) */
     val endpoint: String

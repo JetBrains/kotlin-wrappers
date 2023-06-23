@@ -4,6 +4,11 @@ package web.dom
 
 import js.collections.ListLike
 
+/**
+ * NodeList objects are collections of nodes, usually returned by properties such as Node.childNodes and methods such as document.querySelectorAll().
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NodeList)
+ */
 sealed external class NodeList<T : Node> :
     ListLike<T> {
     /**

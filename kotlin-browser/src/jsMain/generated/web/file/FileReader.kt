@@ -8,6 +8,11 @@ import web.events.EventHandler
 import web.events.EventTarget
 import web.events.ProgressEvent
 
+/**
+ * Lets web applications asynchronously read the contents of files (or raw data buffers) stored on the user's computer, using File or Blob objects to specify the file or data to read.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileReader)
+ */
 external class FileReader :
     EventTarget {
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileReader/error) */

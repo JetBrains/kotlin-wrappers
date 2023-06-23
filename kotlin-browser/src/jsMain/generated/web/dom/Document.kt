@@ -19,6 +19,11 @@ import web.window.WindowProxy
 import web.xpath.XPathEvaluatorBase
 import kotlin.js.Promise
 
+/**
+ * Any web page loaded in the browser and serves as an entry point into the web page's content, which is the DOM tree.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document)
+ */
 abstract external class Document :
     Node,
     DocumentOrShadowRoot,

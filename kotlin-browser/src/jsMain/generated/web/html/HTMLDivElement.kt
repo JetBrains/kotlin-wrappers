@@ -2,5 +2,10 @@
 
 package web.html
 
+/**
+ * Provides special properties (beyond the regular HTMLElement interface it also has available to it by inheritance) for manipulating <div> elements.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLDivElement)
+ */
 abstract external class HTMLDivElement :
     HTMLElement

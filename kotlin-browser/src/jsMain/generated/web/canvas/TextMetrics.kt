@@ -2,6 +2,11 @@
 
 package web.canvas
 
+/**
+ * The dimensions of a piece of text in the canvas, as created by the CanvasRenderingContext2D.measureText() method.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextMetrics)
+ */
 sealed external class TextMetrics {
     /**
      * Returns the measurement described below.

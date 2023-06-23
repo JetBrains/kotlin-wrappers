@@ -5,6 +5,11 @@ package web.cssom
 import js.core.ArrayLike
 import js.core.JsIterable
 
+/**
+ * An object that is a CSS declaration block, and exposes style information and various style-related methods and properties.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleDeclaration)
+ */
 sealed external class CSSStyleDeclaration :
     ArrayLike<String>,
     JsIterable<String> {

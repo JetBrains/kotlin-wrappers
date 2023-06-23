@@ -4,6 +4,11 @@ package web.cssom
 
 import kotlin.js.Promise
 
+/**
+ * A single CSS style sheet. It inherits properties and methods from its parent, StyleSheet.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleSheet)
+ */
 external class CSSStyleSheet(
     options: CSSStyleSheetInit = definedExternally,
 ) : StyleSheet {

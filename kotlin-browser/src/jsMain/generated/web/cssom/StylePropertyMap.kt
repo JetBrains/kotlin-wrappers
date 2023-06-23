@@ -2,6 +2,7 @@
 
 package web.cssom
 
+/** [MDN Reference](https://developer.mozilla.org/docs/Web/API/StylePropertyMap) */
 sealed external class StylePropertyMap :
     StylePropertyMapReadOnly {
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/StylePropertyMap/append) */

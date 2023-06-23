@@ -2,6 +2,11 @@
 
 package web.html
 
+/**
+ * Provides special properties and methods (beyond the regular HTMLElement interface it also has available to it by inheritance) for manipulating the layout and presentation of <fieldset> elements.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFieldSetElement)
+ */
 abstract external class HTMLFieldSetElement :
     HTMLElement {
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFieldSetElement/disabled) */

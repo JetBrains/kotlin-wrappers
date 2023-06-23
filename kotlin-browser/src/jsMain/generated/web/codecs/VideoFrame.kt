@@ -9,6 +9,7 @@ import web.canvas.CanvasImageSource
 import web.geometry.DOMRectReadOnly
 import kotlin.js.Promise
 
+/** [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoFrame) */
 external class VideoFrame(
     image: CanvasImageSource,
     init: VideoFrameInit = definedExternally,

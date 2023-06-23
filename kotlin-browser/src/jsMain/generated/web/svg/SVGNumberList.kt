@@ -5,6 +5,11 @@ package web.svg
 import js.core.ArrayLike
 import js.core.JsIterable
 
+/**
+ * The SVGNumberList defines a list of SVGNumber objects.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGNumberList)
+ */
 sealed external class SVGNumberList :
     ArrayLike<SVGNumber>,
     JsIterable<SVGNumber> {

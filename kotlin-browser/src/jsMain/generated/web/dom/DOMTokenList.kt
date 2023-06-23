@@ -4,6 +4,11 @@ package web.dom
 
 import js.collections.ListLike
 
+/**
+ * A set of space-separated tokens. Such a set is returned by Element.classList, HTMLLinkElement.relList, HTMLAnchorElement.relList, HTMLAreaElement.relList, HTMLIframeElement.sandbox, or HTMLOutputElement.htmlFor. It is indexed beginning with 0 as with JavaScript Array objects. DOMTokenList is always case-sensitive.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMTokenList)
+ */
 sealed external class DOMTokenList :
     ListLike<String> {
     /**

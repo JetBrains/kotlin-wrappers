@@ -10,6 +10,12 @@ import web.messaging.StructuredSerializeOptions
 import web.messaging.Transferable
 import web.workers.AbstractWorker
 
+/**
+ * This ServiceWorker API interface provides a reference to a service worker. Multiple browsing contexts (e.g. pages, workers, etc.) can be associated with the same service worker, each through a unique ServiceWorker object.
+ * Available only in secure contexts.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorker)
+ */
 sealed external class ServiceWorker :
     EventTarget,
     AbstractWorker {

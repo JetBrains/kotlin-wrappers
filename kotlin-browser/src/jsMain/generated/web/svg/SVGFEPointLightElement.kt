@@ -2,6 +2,11 @@
 
 package web.svg
 
+/**
+ * Corresponds to the <fePointLight> element.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFEPointLightElement)
+ */
 sealed external class SVGFEPointLightElement :
     SVGElement {
     val x: SVGAnimatedNumber

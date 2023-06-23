@@ -2,6 +2,7 @@
 
 package web.cssom
 
+/** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSUnitValue) */
 external class CSSUnitValue(
     value: Number,
     unit: String,

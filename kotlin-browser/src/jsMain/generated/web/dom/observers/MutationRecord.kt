@@ -5,6 +5,11 @@ package web.dom.observers
 import web.dom.Node
 import web.dom.NodeList
 
+/**
+ * A MutationRecord represents an individual DOM mutation. It is the object that is passed to MutationObserver's callback.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MutationRecord)
+ */
 sealed external class MutationRecord {
     /**
      * Return the nodes added and removed respectively.

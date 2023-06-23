@@ -6,6 +6,7 @@ import js.collections.MapLike
 import js.core.JsIterable
 import js.core.ReadonlyArray
 
+/** [MDN Reference](https://developer.mozilla.org/docs/Web/API/StylePropertyMapReadOnly) */
 sealed external class StylePropertyMapReadOnly :
     MapLike<String, JsIterable<CSSStyleValue>> {
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/StylePropertyMapReadOnly/size) */

@@ -5,6 +5,11 @@ package web.dom.observers
 import js.core.ReadonlyArray
 import web.dom.Element
 
+/**
+ * provides a way to asynchronously observe changes in the intersection of a target element with an ancestor element or with a top-level document's viewport.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IntersectionObserver)
+ */
 external class IntersectionObserver(
     callback: IntersectionObserverCallback,
     options: IntersectionObserverInit = definedExternally,
