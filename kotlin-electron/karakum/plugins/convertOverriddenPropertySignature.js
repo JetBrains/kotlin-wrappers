@@ -2,13 +2,13 @@ const ts = require("typescript");
 
 const overriddenProps = {
     "KeyboardInputEvent": {
-        "type": ["keyboardType", "Temp17"],
+        "type": ["keyboardType", "InputEventType"],
     },
     "MouseInputEvent": {
-        "type": ["mouseType", "Temp17"],
+        "type": ["mouseType", "InputEventType"],
     },
     "MouseWheelInputEvent": {
-        "type": ["mouseWheelType", "Temp17"],
+        "type": ["mouseWheelType", "InputEventType"],
     },
 }
 
