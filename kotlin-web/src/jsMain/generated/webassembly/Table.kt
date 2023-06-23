@@ -4,6 +4,7 @@
 
 package webassembly
 
+/** [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/WebAssembly/Table) */
 external class Table(
     descriptor: TableDescriptor,
     value: Any? = definedExternally,

@@ -8,6 +8,7 @@ import js.buffer.ArrayBuffer
 import js.buffer.BufferSource
 import js.core.ReadonlyArray
 
+/** [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/WebAssembly/Module) */
 external class Module(
     bytes: BufferSource,
 ) {

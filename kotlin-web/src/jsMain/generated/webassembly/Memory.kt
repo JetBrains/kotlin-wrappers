@@ -6,6 +6,7 @@ package webassembly
 
 import js.buffer.ArrayBuffer
 
+/** [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/WebAssembly/Memory) */
 external class Memory(
     descriptor: MemoryDescriptor,
 ) {
