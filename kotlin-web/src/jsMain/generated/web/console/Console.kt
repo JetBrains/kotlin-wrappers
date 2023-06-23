@@ -4,6 +4,7 @@ package web.console
 
 import js.core.ReadonlyArray
 
+/** [MDN Reference](https://developer.mozilla.org/docs/Web/API/console) */
 sealed external interface Console {
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/console/assert) */
     fun assert(

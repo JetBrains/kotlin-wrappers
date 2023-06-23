@@ -5,6 +5,7 @@ package web.performance
 import js.core.DOMHighResTimeStamp
 import web.events.EventTarget
 
+/** [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceEventTiming) */
 sealed external class PerformanceEventTiming :
     PerformanceEntry {
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceEventTiming/cancelable) */

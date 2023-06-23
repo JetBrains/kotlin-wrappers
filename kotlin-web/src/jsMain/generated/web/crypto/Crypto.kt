@@ -4,6 +4,11 @@ package web.crypto
 
 import js.buffer.ArrayBufferView
 
+/**
+ * Basic cryptography features available in the current context. It allows access to a cryptographically strong random number generator and to cryptographic primitives.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Crypto)
+ */
 sealed external class Crypto {
     /**
      * Available only in secure contexts.

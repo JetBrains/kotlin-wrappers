@@ -4,6 +4,7 @@ package web.performance
 
 import js.core.DOMHighResTimeStamp
 
+/** [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceServerTiming) */
 sealed external class PerformanceServerTiming {
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceServerTiming/description) */
     val description: String

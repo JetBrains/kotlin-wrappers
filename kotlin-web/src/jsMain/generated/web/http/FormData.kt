@@ -9,6 +9,11 @@ import js.core.ReadonlyArray
 import web.buffer.Blob
 import web.events.EventTarget
 
+/**
+ * Provides a way to easily construct a set of key/value pairs representing form fields and their values, which can then be easily sent using the XMLHttpRequest.send() method. It uses the same format a form would use if the encoding type were set to "multipart/form-data".
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FormData)
+ */
 external class FormData(
     form: EventTarget /* HTMLFormElement */ = definedExternally,
     submitter: EventTarget /* HTMLElement */? = definedExternally,

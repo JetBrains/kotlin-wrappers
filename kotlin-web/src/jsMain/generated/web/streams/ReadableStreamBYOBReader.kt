@@ -5,6 +5,7 @@ package web.streams
 import js.buffer.ArrayBufferView
 import kotlin.js.Promise
 
+/** [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStreamBYOBReader) */
 external class ReadableStreamBYOBReader(
     stream: ReadableStream<*>,
 ) : ReadableStreamGenericReader {

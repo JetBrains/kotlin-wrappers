@@ -4,6 +4,12 @@ package web.crypto
 
 import js.core.ReadonlyArray
 
+/**
+ * The CryptoKey dictionary of the Web Crypto API represents a cryptographic key.
+ * Available only in secure contexts.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CryptoKey)
+ */
 sealed external class CryptoKey {
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CryptoKey/algorithm) */
     val algorithm: KeyAlgorithm

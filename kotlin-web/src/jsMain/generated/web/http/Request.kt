@@ -5,6 +5,11 @@ package web.http
 import web.abort.AbortSignal
 import web.url.URL
 
+/**
+ * This Fetch API interface represents a resource request.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request)
+ */
 external class Request(
     input: Request,
     init: RequestInit = definedExternally,

@@ -4,6 +4,11 @@ package web.http
 
 import web.url.URL
 
+/**
+ * This Fetch API interface represents the response to a request.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Response)
+ */
 external class Response(
     body: BodyInit? = definedExternally,
     init: ResponseInit = definedExternally,

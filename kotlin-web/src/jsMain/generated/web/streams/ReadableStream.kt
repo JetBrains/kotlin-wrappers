@@ -6,6 +6,11 @@ import js.core.JsTuple2
 import js.core.Void
 import kotlin.js.Promise
 
+/**
+ * This Streams API interface represents a readable stream of byte data. The Fetch API offers a concrete instance of a ReadableStream through the body property of a Response object.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStream)
+ */
 external class ReadableStream<R>(
     underlyingSource: UnderlyingDefaultSource<R>,
     strategy: QueuingStrategy<R> = definedExternally,

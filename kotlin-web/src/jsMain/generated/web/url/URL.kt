@@ -4,6 +4,11 @@ package web.url
 
 import web.buffer.Blob
 
+/**
+ * The URL interface represents an object providing static methods used for creating object URLs.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URL)
+ */
 external class URL(
     url: String,
     base: String = definedExternally,

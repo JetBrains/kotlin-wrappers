@@ -8,6 +8,7 @@ import js.core.JsTuple2
 import js.core.ReadonlyArray
 import js.core.ReadonlyRecord
 
+/** [MDN Reference](https://developer.mozilla.org/docs/Web/API/URLSearchParams) */
 external class URLSearchParams(
     init: ReadonlyArray<JsTuple2<String, String>> = definedExternally,
 ) : MapLike<String, String> {

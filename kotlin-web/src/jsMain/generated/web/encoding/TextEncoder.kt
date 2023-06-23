@@ -4,6 +4,11 @@ package web.encoding
 
 import js.typedarrays.Uint8Array
 
+/**
+ * TextEncoder takes a stream of code points as input and emits a stream of bytes. For a more scalable, non-native library, see StringView – a C-like representation of strings based on typed arrays.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextEncoder)
+ */
 external class TextEncoder :
     TextEncoderCommon {
     /**

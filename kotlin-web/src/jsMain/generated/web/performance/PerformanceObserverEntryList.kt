@@ -2,6 +2,7 @@
 
 package web.performance
 
+/** [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceObserverEntryList) */
 sealed external class PerformanceObserverEntryList {
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceObserverEntryList/getEntries) */
     fun getEntries(): PerformanceEntryList

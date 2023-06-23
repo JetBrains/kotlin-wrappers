@@ -4,6 +4,7 @@ package web.streams
 
 import js.errors.JsError
 
+/** [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStreamDefaultController) */
 sealed external class ReadableStreamDefaultController<R> {
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStreamDefaultController/desiredSize) */
     val desiredSize: Int?
