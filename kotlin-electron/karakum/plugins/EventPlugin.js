@@ -3,10 +3,15 @@ const ts = require("typescript");
 const karakum = require("karakum");
 
 const eventHandlerMethods = new Set([
+    // nodejs style events
     "on",
     "once",
     "addListener",
     "removeListener",
+
+    // browser style events
+    "addEventListener",
+    "removeEventListener",
 ])
 
 function extractEventContainer(node) {

@@ -173,8 +173,7 @@
         ],
         "WebviewTag.kt": [
             "kotlin.js.Promise",
-            "js.typedarrays.Uint8Array",
-            "web.html.HTMLElement"
+            "js.typedarrays.Uint8Array"
         ],
         "namespace.kt": [
             "node.events.EventEmitter"
