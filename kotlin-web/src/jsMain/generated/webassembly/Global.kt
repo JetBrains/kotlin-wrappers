@@ -4,10 +4,13 @@
 
 package webassembly
 
-external class Global(
-    descriptor: GlobalDescriptor,
-    v: Any? = definedExternally,
+external class Global<T>(
+    descriptor: GlobalDescriptor<T>,
+    v: T = definedExternally,
 ) {
-    var value: Any?
-    fun valueOf(): Any
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/WebAssembly/Global/value) */
+    var value: T
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/WebAssembly/Global/valueOf) */
+    fun valueOf(): T
 }

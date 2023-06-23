@@ -2,7 +2,7 @@
 
 package webassembly
 
-sealed external interface GlobalDescriptor {
+sealed external interface GlobalDescriptor<T> {
     var mutable: Boolean?
-    var value: ValueType
+    var value: ValueType<T>
 }
