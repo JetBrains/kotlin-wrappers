@@ -10,6 +10,7 @@ import web.events.Event
 import web.events.EventInit
 import web.events.EventType
 
+/** [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaQueryListEvent) */
 external interface MediaQueryListEventInit : EventInit {
     var matches: Boolean?
     var media: MediaQuery?

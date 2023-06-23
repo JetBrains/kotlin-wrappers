@@ -8,6 +8,7 @@ package web.speech
 
 import web.events.EventType
 
+/** [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesisErrorEvent) */
 external interface SpeechSynthesisErrorEventInit : SpeechSynthesisEventInit {
     var error: SpeechSynthesisErrorCode
 }

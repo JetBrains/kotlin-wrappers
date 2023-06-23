@@ -10,6 +10,11 @@ import web.events.Event
 import web.events.EventInit
 import web.events.EventType
 
+/**
+ * The PageTransitionEvent is fired when a document is being loaded or unloaded.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PageTransitionEvent)
+ */
 external interface PageTransitionEventInit : EventInit {
     var persisted: Boolean?
 }

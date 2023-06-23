@@ -11,6 +11,11 @@ import web.events.Event
 import web.events.EventInit
 import web.events.EventType
 
+/**
+ * This IndexedDB API interface indicates that the version of the database has changed, as the result of an IDBOpenDBRequest.onupgradeneeded event handler function.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBVersionChangeEvent)
+ */
 external interface IDBVersionChangeEventInit : EventInit {
     var newVersion: JsLong?
     var oldVersion: JsLong?

@@ -10,6 +10,11 @@ import web.events.Event
 import web.events.EventInit
 import web.events.EventType
 
+/**
+ * Events that fire when the fragment identifier of the URL has changed.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HashChangeEvent)
+ */
 external interface HashChangeEventInit : EventInit {
     var newURL: String?
     var oldURL: String?

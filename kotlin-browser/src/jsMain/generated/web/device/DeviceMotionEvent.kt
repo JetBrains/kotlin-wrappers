@@ -10,6 +10,12 @@ import web.events.Event
 import web.events.EventInit
 import web.events.EventType
 
+/**
+ * The DeviceMotionEvent provides web developers with information about the speed of changes for the device's position and orientation.
+ * Available only in secure contexts.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DeviceMotionEvent)
+ */
 external interface DeviceMotionEventInit : EventInit {
     var acceleration: DeviceMotionEventAccelerationInit?
     var accelerationIncludingGravity: DeviceMotionEventAccelerationInit?

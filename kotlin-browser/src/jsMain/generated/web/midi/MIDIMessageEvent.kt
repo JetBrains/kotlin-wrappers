@@ -11,6 +11,11 @@ import web.events.Event
 import web.events.EventInit
 import web.events.EventType
 
+/**
+ * Available only in secure contexts.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MIDIMessageEvent)
+ */
 external interface MIDIMessageEventInit : EventInit {
     var data: Uint8Array?
 }

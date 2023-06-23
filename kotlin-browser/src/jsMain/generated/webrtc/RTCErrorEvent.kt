@@ -10,6 +10,7 @@ import web.events.Event
 import web.events.EventInit
 import web.events.EventType
 
+/** [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCErrorEvent) */
 external interface RTCErrorEventInit : EventInit {
     var error: RTCError
 }

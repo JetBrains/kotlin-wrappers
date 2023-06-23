@@ -9,6 +9,11 @@ package web.uievents
 import web.events.EventTarget
 import web.events.EventType
 
+/**
+ * Focus-related events like focus, blur, focusin, or focusout.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FocusEvent)
+ */
 external interface FocusEventInit : UIEventInit {
     var relatedTarget: EventTarget?
 }

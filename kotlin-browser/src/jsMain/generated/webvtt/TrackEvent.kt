@@ -10,6 +10,11 @@ import web.events.Event
 import web.events.EventInit
 import web.events.EventType
 
+/**
+ * The TrackEvent interface, part of the HTML DOM specification, is used for events which represent changes to the set of available tracks on an HTML media element; these events are addtrack and removetrack.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TrackEvent)
+ */
 external interface TrackEventInit : EventInit {
     var track: TextTrack?
 }

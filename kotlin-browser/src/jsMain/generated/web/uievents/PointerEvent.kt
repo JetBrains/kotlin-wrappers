@@ -9,6 +9,11 @@ package web.uievents
 import js.core.ReadonlyArray
 import web.events.EventType
 
+/**
+ * The state of a DOM event produced by a pointer such as the geometry of the contact point, the device type that generated the event, the amount of pressure that was applied on the contact surface, etc.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PointerEvent)
+ */
 external interface PointerEventInit : MouseEventInit {
     var coalescedEvents: ReadonlyArray<PointerEvent>?
     var height: Double?

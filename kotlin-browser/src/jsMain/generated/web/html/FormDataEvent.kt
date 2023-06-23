@@ -11,6 +11,7 @@ import web.events.EventInit
 import web.events.EventType
 import web.http.FormData
 
+/** [MDN Reference](https://developer.mozilla.org/docs/Web/API/FormDataEvent) */
 external interface FormDataEventInit : EventInit {
     var formData: FormData
 }

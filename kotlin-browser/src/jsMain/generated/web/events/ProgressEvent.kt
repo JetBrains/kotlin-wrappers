@@ -8,6 +8,11 @@ package web.events
 
 import js.core.JsLong
 
+/**
+ * Events measuring progress of an underlying process, like an HTTP request (for an XMLHttpRequest, or the loading of the underlying resource of an <img>, <audio>, <video>, <style> or <link>).
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ProgressEvent)
+ */
 external interface ProgressEventInit : EventInit {
     var lengthComputable: Boolean?
     var loaded: JsLong?

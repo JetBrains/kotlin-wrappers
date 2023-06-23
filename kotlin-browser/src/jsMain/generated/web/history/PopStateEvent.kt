@@ -10,6 +10,11 @@ import web.events.Event
 import web.events.EventInit
 import web.events.EventType
 
+/**
+ * PopStateEvent is an event handler for the popstate event on the window.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PopStateEvent)
+ */
 external interface PopStateEventInit : EventInit {
     var state: Any?
 }

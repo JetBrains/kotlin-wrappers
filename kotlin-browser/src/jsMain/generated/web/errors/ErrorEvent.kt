@@ -10,6 +10,11 @@ import web.events.Event
 import web.events.EventInit
 import web.events.EventType
 
+/**
+ * Events providing information related to errors in scripts or in files.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ErrorEvent)
+ */
 external interface ErrorEventInit : EventInit {
     var colno: Int?
     var error: Any?

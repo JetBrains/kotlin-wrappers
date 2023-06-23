@@ -11,6 +11,7 @@ import web.events.EventInit
 import web.events.EventType
 import kotlin.js.Promise
 
+/** [MDN Reference](https://developer.mozilla.org/docs/Web/API/PromiseRejectionEvent) */
 external interface PromiseRejectionEventInit : EventInit {
     var promise: Promise<*>
     var reason: Any?

@@ -10,6 +10,11 @@ import web.events.Event
 import web.events.EventInit
 import web.events.EventType
 
+/**
+ * A CloseEvent is sent to clients using WebSockets when the connection is closed. This is delivered to the listener indicated by the WebSocket object's onclose attribute.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CloseEvent)
+ */
 external interface CloseEventInit : EventInit {
     var code: Int?
     var reason: String?

@@ -10,6 +10,11 @@ import web.events.Event
 import web.events.EventInit
 import web.events.EventType
 
+/**
+ * A StorageEvent is sent to a window when a storage area it has access to is changed within the context of another document.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StorageEvent)
+ */
 external interface StorageEventInit : EventInit {
     var key: String?
     var newValue: String?

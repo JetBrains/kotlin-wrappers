@@ -11,6 +11,11 @@ import web.events.EventInit
 import web.events.EventType
 import web.window.Window
 
+/**
+ * Simple user interface events.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/UIEvent)
+ */
 external interface UIEventInit : EventInit {
     var detail: Int?
     var view: Window?
