@@ -9,7 +9,7 @@ operator fun <T> AsyncIterator<T>.iterator(): SuspendableIterator<T> =
 private class AsyncIteratorAdapter<T>(
     private val source: AsyncIterator<T>,
 ) : SuspendableIterator<T> {
-    private var lastResult: JsIterator.Result<T, Void>? = null
+    private var lastResult: JsIterator.Result<T, *>? = null
 
     override suspend fun hasNext(): Boolean {
         val result = lastResult
