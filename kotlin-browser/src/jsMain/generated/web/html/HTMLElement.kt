@@ -84,5 +84,5 @@ abstract external class HTMLElement :
     fun showPopover()
 
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/togglePopover) */
-    fun togglePopover(force: Boolean = definedExternally)
+    fun togglePopover(force: Boolean = definedExternally): Boolean
 }
