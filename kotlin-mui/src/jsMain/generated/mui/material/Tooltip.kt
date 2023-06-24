@@ -197,10 +197,10 @@ external interface TooltipProps :
         var popper: react.Props? /* Partial<PopperProps> & TooltipComponentsPropsOverrides */
         var transition: react.Props? /* TransitionProps & TooltipComponentsPropsOverrides */
         var tooltip: react.Props? /* React.HTMLProps<HTMLDivElement> &
-  MUIStyledCommonProps &
+  MUIStyledCommonProps<Theme> &
   TooltipComponentsPropsOverrides */
         var arrow: react.Props? /* React.HTMLProps<HTMLSpanElement> &
-  MUIStyledCommonProps &
+  MUIStyledCommonProps<Theme> &
   TooltipComponentsPropsOverrides */
     }
 
