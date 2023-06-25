@@ -8,7 +8,7 @@
 package js.core
 
 sealed external interface HasSymbol {
-    interface asyncIterator<out V> {
+    interface asyncIterator<out V : Function<AsyncIterator<*>>> {
         @nativeGetter
         operator fun get(
             key: Symbol.asyncIterator,
