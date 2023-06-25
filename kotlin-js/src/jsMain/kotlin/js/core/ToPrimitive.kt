@@ -1,5 +1,5 @@
 package js.core
 
 typealias ToPrimitive = (
-    hint: String?,
+    hint: PrimitiveHint?,
 ) -> Any?
