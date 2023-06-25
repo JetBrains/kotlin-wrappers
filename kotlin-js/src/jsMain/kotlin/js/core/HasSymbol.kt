@@ -85,11 +85,11 @@ sealed external interface HasSymbol {
         ): V = definedExternally
     }
 
-    interface toStringTag<out V> {
+    interface toStringTag {
         @nativeGetter
         operator fun get(
             key: Symbol.toStringTag,
-        ): V = definedExternally
+        ): ToString = definedExternally
     }
 
     interface unscopables<out V> {
