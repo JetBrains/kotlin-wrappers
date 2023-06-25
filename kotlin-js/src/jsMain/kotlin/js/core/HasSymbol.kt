@@ -22,7 +22,7 @@ sealed external interface HasSymbol {
         ): V = definedExternally
     }
 
-    interface isConcatSpreadable<Boolean> {
+    interface isConcatSpreadable {
         @nativeGetter
         operator fun get(
             key: Symbol.isConcatSpreadable,
