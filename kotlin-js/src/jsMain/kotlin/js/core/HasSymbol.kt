@@ -15,7 +15,7 @@ sealed external interface HasSymbol {
         ): V = definedExternally
     }
 
-    interface hasInstance<out V> {
+    interface hasInstance<out V : HasInstance> {
         @nativeGetter
         operator fun get(
             key: Symbol.hasInstance,
