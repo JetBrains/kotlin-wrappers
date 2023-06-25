@@ -22,11 +22,11 @@ sealed external interface HasSymbol {
         ): V = definedExternally
     }
 
-    interface isConcatSpreadable<out V> {
+    interface isConcatSpreadable<Boolean> {
         @nativeGetter
         operator fun get(
             key: Symbol.isConcatSpreadable,
-        ): V = definedExternally
+        ): Boolean = definedExternally
     }
 
     interface iterator<out V : Function<JsIterator<*>>> {
