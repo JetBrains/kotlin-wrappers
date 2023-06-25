@@ -2,6 +2,7 @@
 
 package web.filesystem
 
+import js.collections.AsyncMapLike
 import js.core.ReadonlyArray
 import js.core.Void
 import kotlin.js.Promise
@@ -12,7 +13,8 @@ import kotlin.js.Promise
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemDirectoryHandle)
  */
 sealed external class FileSystemDirectoryHandle :
-    FileSystemHandle {
+    FileSystemHandle,
+    AsyncMapLike<String, FileSystemHandle> {
     /* val kind: "directory" */
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemDirectoryHandle/getDirectoryHandle) */
     fun getDirectoryHandle(
