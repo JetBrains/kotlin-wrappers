@@ -78,11 +78,11 @@ sealed external interface HasSymbol {
         ): V = definedExternally
     }
 
-    interface toPrimitive<out V> {
+    interface toPrimitive {
         @nativeGetter
         operator fun get(
             key: Symbol.toPrimitive,
-        ): V = definedExternally
+        ): ToPrimitive = definedExternally
     }
 
     interface toStringTag {
