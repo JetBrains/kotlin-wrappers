@@ -7,159 +7,159 @@
 package csstype
 
 interface NonStandardPseudosRuleBuilder<T : Any> : RuleBuilder<T> {
-    inline fun mozColorSwatchNonStandard(
+    inline fun mozColorSwatch(
         block: T.() -> Unit,
     ) {
-        "::-moz-color-swatchNon-standard"(block)
+        "::-moz-color-swatch"(block)
     }
 
-    inline fun mozFocusInnerNonStandard(
+    inline fun mozFocusInner(
         block: T.() -> Unit,
     ) {
-        "::-moz-focus-innerNon-standard"(block)
+        "::-moz-focus-inner"(block)
     }
 
-    inline fun mozListBulletNonStandard(
+    inline fun mozListBullet(
         block: T.() -> Unit,
     ) {
-        "::-moz-list-bulletNon-standard"(block)
+        "::-moz-list-bullet"(block)
     }
 
-    inline fun mozListNumberNonStandard(
+    inline fun mozListNumber(
         block: T.() -> Unit,
     ) {
-        "::-moz-list-numberNon-standard"(block)
+        "::-moz-list-number"(block)
     }
 
-    inline fun mozPageNonStandard(
+    inline fun mozPage(
         block: T.() -> Unit,
     ) {
-        "::-moz-pageNon-standard"(block)
+        "::-moz-page"(block)
     }
 
-    inline fun mozPageSequenceNonStandard(
+    inline fun mozPageSequence(
         block: T.() -> Unit,
     ) {
-        "::-moz-page-sequenceNon-standard"(block)
+        "::-moz-page-sequence"(block)
     }
 
-    inline fun mozProgressBarNonStandard(
+    inline fun mozProgressBar(
         block: T.() -> Unit,
     ) {
-        "::-moz-progress-barNon-standard"(block)
+        "::-moz-progress-bar"(block)
     }
 
-    inline fun mozRangeProgressNonStandard(
+    inline fun mozRangeProgress(
         block: T.() -> Unit,
     ) {
-        "::-moz-range-progressNon-standard"(block)
+        "::-moz-range-progress"(block)
     }
 
-    inline fun mozRangeThumbNonStandard(
+    inline fun mozRangeThumb(
         block: T.() -> Unit,
     ) {
-        "::-moz-range-thumbNon-standard"(block)
+        "::-moz-range-thumb"(block)
     }
 
-    inline fun mozRangeTrackNonStandard(
+    inline fun mozRangeTrack(
         block: T.() -> Unit,
     ) {
-        "::-moz-range-trackNon-standard"(block)
+        "::-moz-range-track"(block)
     }
 
-    inline fun mozScrolledPageSequenceNonStandard(
+    inline fun mozScrolledPageSequence(
         block: T.() -> Unit,
     ) {
-        "::-moz-scrolled-page-sequenceNon-standard"(block)
+        "::-moz-scrolled-page-sequence"(block)
     }
 
-    inline fun webkitInnerSpinButtonNonStandard(
+    inline fun webkitInnerSpinButton(
         block: T.() -> Unit,
     ) {
-        "::-webkit-inner-spin-buttonNon-standard"(block)
+        "::-webkit-inner-spin-button"(block)
     }
 
-    inline fun webkitMeterBarNonStandard(
+    inline fun webkitMeterBar(
         block: T.() -> Unit,
     ) {
-        "::-webkit-meter-barNon-standard"(block)
+        "::-webkit-meter-bar"(block)
     }
 
-    inline fun webkitMeterEvenLessGoodValueNonStandard(
+    inline fun webkitMeterEvenLessGoodValue(
         block: T.() -> Unit,
     ) {
-        "::-webkit-meter-even-less-good-valueNon-standard"(block)
+        "::-webkit-meter-even-less-good-value"(block)
     }
 
-    inline fun webkitMeterInnerElementNonStandard(
+    inline fun webkitMeterInnerElement(
         block: T.() -> Unit,
     ) {
-        "::-webkit-meter-inner-elementNon-standard"(block)
+        "::-webkit-meter-inner-element"(block)
     }
 
-    inline fun webkitMeterOptimumValueNonStandard(
+    inline fun webkitMeterOptimumValue(
         block: T.() -> Unit,
     ) {
-        "::-webkit-meter-optimum-valueNon-standard"(block)
+        "::-webkit-meter-optimum-value"(block)
     }
 
-    inline fun webkitMeterSuboptimumValueNonStandard(
+    inline fun webkitMeterSuboptimumValue(
         block: T.() -> Unit,
     ) {
-        "::-webkit-meter-suboptimum-valueNon-standard"(block)
+        "::-webkit-meter-suboptimum-value"(block)
     }
 
-    inline fun webkitOuterSpinButtonNonStandard(
+    inline fun webkitOuterSpinButton(
         block: T.() -> Unit,
     ) {
-        "::-webkit-outer-spin-buttonNon-standard"(block)
+        "::-webkit-outer-spin-button"(block)
     }
 
-    inline fun webkitProgressBarNonStandard(
+    inline fun webkitProgressBar(
         block: T.() -> Unit,
     ) {
-        "::-webkit-progress-barNon-standard"(block)
+        "::-webkit-progress-bar"(block)
     }
 
-    inline fun webkitProgressInnerElementNonStandard(
+    inline fun webkitProgressInnerElement(
         block: T.() -> Unit,
     ) {
-        "::-webkit-progress-inner-elementNon-standard"(block)
+        "::-webkit-progress-inner-element"(block)
     }
 
-    inline fun webkitProgressValueNonStandard(
+    inline fun webkitProgressValue(
         block: T.() -> Unit,
     ) {
-        "::-webkit-progress-valueNon-standard"(block)
+        "::-webkit-progress-value"(block)
     }
 
-    inline fun webkitScrollbarNonStandard(
+    inline fun webkitScrollbar(
         block: T.() -> Unit,
     ) {
-        "::-webkit-scrollbarNon-standard"(block)
+        "::-webkit-scrollbar"(block)
     }
 
-    inline fun webkitSearchCancelButtonNonStandard(
+    inline fun webkitSearchCancelButton(
         block: T.() -> Unit,
     ) {
-        "::-webkit-search-cancel-buttonNon-standard"(block)
+        "::-webkit-search-cancel-button"(block)
     }
 
-    inline fun webkitSearchResultsButtonNonStandard(
+    inline fun webkitSearchResultsButton(
         block: T.() -> Unit,
     ) {
-        "::-webkit-search-results-buttonNon-standard"(block)
+        "::-webkit-search-results-button"(block)
     }
 
-    inline fun webkitSliderRunnableTrackNonStandard(
+    inline fun webkitSliderRunnableTrack(
         block: T.() -> Unit,
     ) {
-        "::-webkit-slider-runnable-trackNon-standard"(block)
+        "::-webkit-slider-runnable-track"(block)
     }
 
-    inline fun webkitSliderThumbNonStandard(
+    inline fun webkitSliderThumb(
         block: T.() -> Unit,
     ) {
-        "::-webkit-slider-thumbNon-standard"(block)
+        "::-webkit-slider-thumb"(block)
     }
 }

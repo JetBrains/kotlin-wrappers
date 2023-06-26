@@ -37,13 +37,13 @@ interface ExperimentalPseudosRuleBuilder<T : Any> : RuleBuilder<T> {
         selector: Selector,
         block: T.() -> Unit,
     ) {
-        "::highlight()($selector)"(block)
+        "::highlight($selector)"(block)
     }
 
     inline fun highlight(
         selector: String,
         block: T.() -> Unit,
     ) {
-        "::highlight()($selector)"(block)
+        "::highlight($selector)"(block)
     }
 }
