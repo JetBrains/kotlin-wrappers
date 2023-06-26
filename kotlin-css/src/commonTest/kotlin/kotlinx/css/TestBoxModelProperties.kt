@@ -2,10 +2,10 @@ package kotlinx.css
 
 import kotlinx.css.properties.Border
 import kotlinx.css.properties.border
-import kotlinx.css.properties.borderTop
+import kotlinx.css.properties.borderBottom
 import kotlinx.css.properties.borderLeft
 import kotlinx.css.properties.borderRight
-import kotlinx.css.properties.borderBottom
+import kotlinx.css.properties.borderTop
 import kotlin.test.Test
 import kotlin.test.assertEquals
 

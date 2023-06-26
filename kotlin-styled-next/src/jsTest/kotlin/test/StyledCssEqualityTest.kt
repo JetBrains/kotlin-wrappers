@@ -4,7 +4,7 @@ import kotlinx.css.*
 import kotlinx.css.properties.KeyframesBuilder
 import kotlinx.css.properties.Timing
 import kotlinx.css.properties.s
-import styled.*
+import styled.animation
 import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertNotEquals
