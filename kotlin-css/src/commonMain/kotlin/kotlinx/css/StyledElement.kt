@@ -91,14 +91,20 @@ var StyledElement.backgroundClip: BackgroundClip by CssProperty()
 var StyledElement.backgroundColor: Color by CssProperty()
 var StyledElement.backgroundImage: Image by CssProperty()
 var StyledElement.backgroundOrigin: BackgroundOrigin by CssProperty()
+@Deprecated("Use backgroundPositionProp property instead")
 var StyledElement.backgroundPosition: String by CssProperty()
 var StyledElement.backgroundRepeat: BackgroundRepeat by CssProperty()
 var StyledElement.backgroundSize: String by CssProperty()
 
+@Deprecated("Use kotlinx.css.properties.border property instead")
 var StyledElement.border: String by CssProperty()
+@Deprecated("Use kotlinx.css.properties.borderTop property instead")
 var StyledElement.borderTop: String by CssProperty()
+@Deprecated("Use kotlinx.css.properties.borderRight property instead")
 var StyledElement.borderRight: String by CssProperty()
+@Deprecated("Use kotlinx.css.properties.borderBottom property instead")
 var StyledElement.borderBottom: String by CssProperty()
+@Deprecated("Use kotlinx.css.properties.borderLeft property instead")
 var StyledElement.borderLeft: String by CssProperty()
 
 var StyledElement.borderCollapse: BorderCollapse by CssProperty()
@@ -175,6 +181,7 @@ var StyledElement.gridTemplateRows: GridTemplateRows by CssProperty()
 var StyledElement.height: LinearDimension by CssProperty()
 var StyledElement.hyphens: Hyphens by CssProperty()
 
+@Deprecated("Use insetProp property instead")
 var StyledElement.inset: String by CssProperty()
 var StyledElement.isolation: Isolation by CssProperty()
 
@@ -186,6 +193,7 @@ var StyledElement.letterSpacing: LinearDimension by CssProperty()
 var StyledElement.lineHeight: LineHeight by CssProperty()
 var StyledElement.listStyleType: ListStyleType by CssProperty()
 
+@Deprecated("Use marginProp property instead")
 var StyledElement.margin: String by CssProperty()
 var StyledElement.marginTop: LinearDimension by CssProperty()
 var StyledElement.marginRight: LinearDimension by CssProperty()
@@ -211,6 +219,7 @@ var StyledElement.overflowY: Overflow by CssProperty()
 var StyledElement.overflowWrap: OverflowWrap by CssProperty()
 var StyledElement.overscrollBehavior: OverscrollBehavior by CssProperty()
 
+@Deprecated("Use paddingProp property instead")
 var StyledElement.padding: String by CssProperty()
 var StyledElement.paddingTop: LinearDimension by CssProperty()
 var StyledElement.paddingRight: LinearDimension by CssProperty()
@@ -307,6 +316,7 @@ private fun getShorthandValue(
     }
 }
 
+@Suppress("DEPRECATION")
 fun StyledElement.inset(
     top: LinearDimension,
     right: LinearDimension,
@@ -324,7 +334,101 @@ fun StyledElement.inset(vertical: LinearDimension, horizontal: LinearDimension) 
 fun StyledElement.inset(top: LinearDimension, horizontal: LinearDimension, bottom: LinearDimension) =
     inset(top, horizontal, bottom, horizontal)
 
-@Suppress("DuplicatedCode")
+data class Inset(
+    val top: LinearDimension,
+    val right: LinearDimension,
+    val bottom: LinearDimension,
+    val left: LinearDimension
+) : CssValue(
+    getShorthandValue(top, right, bottom, left)
+) {
+    constructor(all: LinearDimension) : this(all, all, all, all)
+    constructor(vertical: LinearDimension, horizontal: LinearDimension) : this(
+        vertical,
+        horizontal,
+        vertical,
+        horizontal
+    )
+
+    constructor(top: LinearDimension, horizontal: LinearDimension, bottom: LinearDimension) : this(
+        top,
+        horizontal,
+        bottom,
+        horizontal
+    )
+}
+
+var StyledElement.insetProp: Inset
+    get() = error("Write-only property")
+    set(value) {
+        declarations["inset"] = value.value
+    }
+
+data class Margin(
+    val top: LinearDimension,
+    val right: LinearDimension,
+    val bottom: LinearDimension,
+    val left: LinearDimension
+) : CssValue(
+    getShorthandValue(top, right, bottom, left)
+) {
+    constructor(all: LinearDimension) : this(all, all, all, all)
+    constructor(vertical: LinearDimension, horizontal: LinearDimension) : this(
+        vertical,
+        horizontal,
+        vertical,
+        horizontal
+    )
+
+    constructor(top: LinearDimension, horizontal: LinearDimension, bottom: LinearDimension) : this(
+        top,
+        horizontal,
+        bottom,
+        horizontal
+    )
+}
+
+var StyledElement.marginProp: Margin
+    set(value) {
+        declarations["margin"] = value.value
+    }
+    @Deprecated("Write-only property", level = DeprecationLevel.HIDDEN)
+    get() = error("")
+
+
+data class Padding(
+    val top: LinearDimension,
+    val right: LinearDimension,
+    val bottom: LinearDimension,
+    val left: LinearDimension
+) : CssValue(
+    getShorthandValue(top, right, bottom, left)
+) {
+    constructor(all: LinearDimension) : this(all, all, all, all)
+    constructor(vertical: LinearDimension, horizontal: LinearDimension) : this(
+        vertical,
+        horizontal,
+        vertical,
+        horizontal
+    )
+
+    constructor(top: LinearDimension, horizontal: LinearDimension, bottom: LinearDimension) : this(
+        top,
+        horizontal,
+        bottom,
+        horizontal
+    )
+}
+
+var StyledElement.paddingProp: Padding
+    set(value) {
+        declarations["padding"] = value.value
+    }
+    @Deprecated("Write-only property", level = DeprecationLevel.HIDDEN)
+    get() = error("")
+
+
+@Suppress("DEPRECATION", "DuplicatedCode")
 fun StyledElement.margin(
     top: LinearDimension? = null,
     right: LinearDimension? = null,
@@ -349,7 +453,7 @@ fun StyledElement.margin(vertical: LinearDimension? = null, horizontal: LinearDi
 fun StyledElement.margin(top: LinearDimension, horizontal: LinearDimension, bottom: LinearDimension) =
     margin(top, horizontal, bottom, horizontal)
 
-@Suppress("DuplicatedCode")
+@Suppress("DEPRECATION", "DuplicatedCode")
 fun StyledElement.padding(
     top: LinearDimension? = null,
     right: LinearDimension? = null,
@@ -374,6 +478,14 @@ fun StyledElement.padding(vertical: LinearDimension? = null, horizontal: LinearD
 fun StyledElement.padding(top: LinearDimension, horizontal: LinearDimension, bottom: LinearDimension) =
     padding(top, horizontal, bottom, horizontal)
 
+var StyledElement.backgroundPositionProp: RelativePosition
+    get() = RelativePosition(declarations["background-position"] as String)
+    @Suppress("DEPRECATION")
+    set(position) {
+        backgroundPosition = position.value
+    }
+
+@Deprecated("Use backgroundPositionProp instead")
 fun StyledElement.backgroundPosition(position: RelativePosition) {
-    backgroundPosition = position.value
+    backgroundPositionProp = position
 }
