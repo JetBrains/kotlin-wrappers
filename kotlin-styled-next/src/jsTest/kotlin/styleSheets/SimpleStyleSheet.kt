@@ -1,21 +1,18 @@
 package styleSheets
 
-import kotlinx.css.border
-import kotlinx.css.minHeight
-import kotlinx.css.padding
-import kotlinx.css.px
+import kotlinx.css.*
 import styled.StyleSheet
 
 internal class SimpleStyleSheet : StyleSheet(isStatic = false) {
     val simpleProperty by css {
         minHeight = 66.px
-        padding(0.px)
+        paddingProp = Padding(0.px)
     }
 
     val specificProperty by css {
         specific {
             padding(80.px)
-            border = "none"
+            borderStyle = BorderStyle.none
         }
     }
 }
