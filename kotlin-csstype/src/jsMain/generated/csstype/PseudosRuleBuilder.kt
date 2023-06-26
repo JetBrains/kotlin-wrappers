@@ -4,4 +4,6 @@ package csstype
 
 interface PseudosRuleBuilder<T : Any> :
     AdvancedPseudosRuleBuilder<T>,
-    SimplePseudosRuleBuilder<T>
+    SimplePseudosRuleBuilder<T>,
+    NonStandardPseudosRuleBuilder<T>,
+    ExperimentalPseudosRuleBuilder<T>
