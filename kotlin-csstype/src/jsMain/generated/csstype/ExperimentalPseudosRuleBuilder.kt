@@ -6,8 +6,6 @@
 
 package csstype
 
-import web.cssom.Selector
-
 interface ExperimentalPseudosRuleBuilder<T : Any> : RuleBuilder<T> {
     inline fun viewTransitionGroup(
         block: T.() -> Unit,
@@ -31,19 +29,5 @@ interface ExperimentalPseudosRuleBuilder<T : Any> : RuleBuilder<T> {
         block: T.() -> Unit,
     ) {
         "::view-transition-old"(block)
-    }
-
-    inline fun highlight(
-        selector: Selector,
-        block: T.() -> Unit,
-    ) {
-        "::highlight($selector)"(block)
-    }
-
-    inline fun highlight(
-        selector: String,
-        block: T.() -> Unit,
-    ) {
-        "::highlight($selector)"(block)
     }
 }
