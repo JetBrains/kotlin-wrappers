@@ -73,6 +73,12 @@ interface NonStandardPseudosRuleBuilder<T : Any> : RuleBuilder<T> {
         "::-moz-scrolled-page-sequence"(block)
     }
 
+    inline fun webkitColorSwatch(
+        block: T.() -> Unit,
+    ) {
+        "::-webkit-color-swatch"(block)
+    }
+
     inline fun webkitInnerSpinButton(
         block: T.() -> Unit,
     ) {
@@ -137,6 +143,54 @@ interface NonStandardPseudosRuleBuilder<T : Any> : RuleBuilder<T> {
         block: T.() -> Unit,
     ) {
         "::-webkit-scrollbar"(block)
+    }
+
+    inline fun webkitScrollbarButton(
+        block: T.() -> Unit,
+    ) {
+        "::-webkit-scrollbar-button"(block)
+    }
+
+    inline fun webkitScrollbarHorizontal(
+        block: T.() -> Unit,
+    ) {
+        "::-webkit-scrollbar:horizontal"(block)
+    }
+
+    inline fun webkitScrollbarThumb(
+        block: T.() -> Unit,
+    ) {
+        "::-webkit-scrollbar-thumb"(block)
+    }
+
+    inline fun webkitScrollbarTrack(
+        block: T.() -> Unit,
+    ) {
+        "::-webkit-scrollbar-track"(block)
+    }
+
+    inline fun webkitScrollbarTrackPiece(
+        block: T.() -> Unit,
+    ) {
+        "::-webkit-scrollbar-track-piece"(block)
+    }
+
+    inline fun webkitScrollbarVertical(
+        block: T.() -> Unit,
+    ) {
+        "::-webkit-scrollbar:vertical"(block)
+    }
+
+    inline fun webkitScrollbarCorner(
+        block: T.() -> Unit,
+    ) {
+        "::-webkit-scrollbar-corner"(block)
+    }
+
+    inline fun webkitResizer(
+        block: T.() -> Unit,
+    ) {
+        "::-webkit-resizer"(block)
     }
 
     inline fun webkitSearchCancelButton(
