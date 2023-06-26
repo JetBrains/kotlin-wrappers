@@ -10,7 +10,7 @@ import kotlin.test.assertEquals
 import kotlin.test.assertNotEquals
 
 /**
- * Check that [StyledCss] and [StyledKeyframes] with the same content are equal and have the same hash code
+ * Check that [CssBuilder] and [KeyframesBuilder] with the same content are equal and have the same hash code
  */
 class StyledCssEqualityTest : TestBase() {
     @Test
@@ -61,7 +61,7 @@ class StyledCssEqualityTest : TestBase() {
             animation(5.s, Timing.linear) {
                 addRotation()
             }
-            padding = "1px 2px 3px 4px"
+            paddingProp = Padding(1.px, 2.px, 3.px, 4.px)
         }
 
         val second = CssBuilder().apply {
@@ -69,7 +69,7 @@ class StyledCssEqualityTest : TestBase() {
             animation(5.s, Timing.linear) {
                 addRotation()
             }
-            padding = "1px 2px 3px 4px"
+            paddingProp = Padding(1.px, 2.px, 3.px, 4.px)
         }
 
         assertEquals(first.hashCode(), second.hashCode())
