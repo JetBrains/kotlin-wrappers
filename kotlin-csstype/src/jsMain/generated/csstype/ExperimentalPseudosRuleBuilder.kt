@@ -8,7 +8,7 @@ package csstype
 
 import web.cssom.Selector
 
-interface ExperimentalRuleBuilder<T : Any> : RuleBuilder<T> {
+interface ExperimentalPseudosRuleBuilder<T : Any> : RuleBuilder<T> {
     inline fun viewTransitionGroup(
         block: T.() -> Unit,
     ) {

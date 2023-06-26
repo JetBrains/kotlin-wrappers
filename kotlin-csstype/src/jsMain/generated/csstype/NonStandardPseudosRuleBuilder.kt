@@ -6,7 +6,7 @@
 
 package csstype
 
-interface NonStandardRuleBuilder<T : Any> : RuleBuilder<T> {
+interface NonStandardPseudosRuleBuilder<T : Any> : RuleBuilder<T> {
     inline fun mozColorSwatchNonStandard(
         block: T.() -> Unit,
     ) {
