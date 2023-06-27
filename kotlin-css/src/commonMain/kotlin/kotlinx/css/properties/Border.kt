@@ -2,7 +2,11 @@ package kotlinx.css.properties
 
 import kotlinx.css.*
 
-class Border(width: LinearDimension, style: BorderStyle, color: Color) : CssValue("$width $style $color")
+class Border(width: LinearDimension, style: BorderStyle, color: Color) : CssValue("$width $style $color") {
+    companion object {
+        val none = Border(0.px, BorderStyle.none, Color.transparent)
+    }
+}
 
 var StyledElement.border: Border
     set(value) {
