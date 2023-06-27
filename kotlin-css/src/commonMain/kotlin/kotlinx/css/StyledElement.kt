@@ -365,15 +365,13 @@ var StyledElement.insetProp: Inset
     }
 
 data class Margin(
-    val top: LinearDimension,
-    val right: LinearDimension,
-    val bottom: LinearDimension,
-    val left: LinearDimension
-) : CssValue(
-    getShorthandValue(top, right, bottom, left)
+    val top: LinearDimension? = null,
+    val right: LinearDimension? = null,
+    val bottom: LinearDimension? = null,
+    val left: LinearDimension? = null
 ) {
     constructor(all: LinearDimension) : this(all, all, all, all)
-    constructor(vertical: LinearDimension, horizontal: LinearDimension) : this(
+    constructor(vertical: LinearDimension? = null, horizontal: LinearDimension? = null) : this(
         vertical,
         horizontal,
         vertical,
@@ -390,22 +388,28 @@ data class Margin(
 
 var StyledElement.marginProp: Margin
     set(value) {
-        declarations["margin"] = value.value
+        val (top, right, bottom, left) = value
+        if (top != null && right != null && bottom != null && left != null) {
+            declarations["margin"] = getShorthandValue(top, right, bottom, left)
+        } else {
+            top?.let { this.marginTop = it }
+            right?.let { this.marginRight = it }
+            bottom?.let { this.marginBottom = it }
+            left?.let { this.marginLeft = it }
+        }
     }
     @Deprecated("Write-only property", level = DeprecationLevel.HIDDEN)
     get() = error("")
 
 
 data class Padding(
-    val top: LinearDimension,
-    val right: LinearDimension,
-    val bottom: LinearDimension,
-    val left: LinearDimension
-) : CssValue(
-    getShorthandValue(top, right, bottom, left)
+    val top: LinearDimension? = null,
+    val right: LinearDimension? = null,
+    val bottom: LinearDimension? = null,
+    val left: LinearDimension? = null
 ) {
     constructor(all: LinearDimension) : this(all, all, all, all)
-    constructor(vertical: LinearDimension, horizontal: LinearDimension) : this(
+    constructor(vertical: LinearDimension? = null, horizontal: LinearDimension? = null) : this(
         vertical,
         horizontal,
         vertical,
@@ -422,13 +426,22 @@ data class Padding(
 
 var StyledElement.paddingProp: Padding
     set(value) {
-        declarations["padding"] = value.value
+        val (top, right, bottom, left) = value
+        if (top != null && right != null && bottom != null && left != null) {
+            declarations["padding"] = getShorthandValue(top, right, bottom, left)
+        } else {
+            top?.let { this.paddingTop = it }
+            right?.let { this.paddingRight = it }
+            bottom?.let { this.paddingBottom = it }
+            left?.let { this.paddingLeft = it }
+        }
     }
     @Deprecated("Write-only property", level = DeprecationLevel.HIDDEN)
     get() = error("")
 
 
 @Suppress("DEPRECATION", "DuplicatedCode")
+@Deprecated("Use marginProp instead")
 fun StyledElement.margin(
     top: LinearDimension? = null,
     right: LinearDimension? = null,
@@ -445,14 +458,21 @@ fun StyledElement.margin(
     }
 }
 
+@Deprecated("Use marginProp instead")
+@Suppress("DEPRECATION")
 fun StyledElement.margin(all: LinearDimension?) = margin(all, all, all, all)
 
+@Deprecated("Use marginProp instead")
+@Suppress("DEPRECATION")
 fun StyledElement.margin(vertical: LinearDimension? = null, horizontal: LinearDimension? = null) =
     margin(vertical, horizontal, vertical, horizontal)
 
+@Deprecated("Use marginProp instead")
+@Suppress("DEPRECATION")
 fun StyledElement.margin(top: LinearDimension, horizontal: LinearDimension, bottom: LinearDimension) =
     margin(top, horizontal, bottom, horizontal)
 
+@Deprecated("Use paddingProp instead")
 @Suppress("DEPRECATION", "DuplicatedCode")
 fun StyledElement.padding(
     top: LinearDimension? = null,
@@ -470,11 +490,17 @@ fun StyledElement.padding(
     }
 }
 
+@Deprecated("Use paddingProp instead")
+@Suppress("DEPRECATION")
 fun StyledElement.padding(all: LinearDimension?) = padding(all, all, all, all)
 
+@Deprecated("Use paddingProp instead")
+@Suppress("DEPRECATION")
 fun StyledElement.padding(vertical: LinearDimension? = null, horizontal: LinearDimension? = null) =
     padding(vertical, horizontal, vertical, horizontal)
 
+@Deprecated("Use paddingProp instead")
+@Suppress("DEPRECATION")
 fun StyledElement.padding(top: LinearDimension, horizontal: LinearDimension, bottom: LinearDimension) =
     padding(top, horizontal, bottom, horizontal)
 

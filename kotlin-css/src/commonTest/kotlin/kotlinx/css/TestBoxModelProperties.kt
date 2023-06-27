@@ -49,6 +49,12 @@ class TestBoxModelProperties {
 
             """,
         ) { borderRight = borderProp },
+        PropertyTestCase(
+            """
+                border: 0 none transparent;
+
+            """,
+        ) { border = Border.none },
     )
 
     private val marginTestCases = listOf(
@@ -103,6 +109,34 @@ class TestBoxModelProperties {
 
             """,
         ) { paddingProp = Padding(10.px, 20.px, 30.px, 40.px) },
+        PropertyTestCase(
+            """
+                padding-right: 10px;
+                padding-left: 10px;
+
+            """,
+        ) { paddingProp = Padding(horizontal = 10.px) },
+        PropertyTestCase(
+            """
+                padding-top: 10px;
+                padding-bottom: 10px;
+
+            """,
+        ) { paddingProp = Padding(vertical = 10.px) },
+        PropertyTestCase(
+            """
+                padding-top: 10px;
+                padding-left: 10px;
+
+            """,
+        ) { paddingProp = Padding(top = 10.px, left = 10.px) },
+        PropertyTestCase(
+            """
+                padding-right: 10px;
+                padding-bottom: 10px;
+
+            """,
+        ) { paddingProp = Padding(bottom = 10.px, right = 10.px) },
     )
 
     private val insetTestCases = listOf(

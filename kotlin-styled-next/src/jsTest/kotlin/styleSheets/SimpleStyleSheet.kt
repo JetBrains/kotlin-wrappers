@@ -11,7 +11,7 @@ internal class SimpleStyleSheet : StyleSheet(isStatic = false) {
 
     val specificProperty by css {
         specific {
-            padding(80.px)
+            paddingProp = Padding(80.px)
             borderStyle = BorderStyle.none
         }
     }
