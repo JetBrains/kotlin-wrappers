@@ -1,7 +1,13 @@
+@file:Suppress(
+    "INVISIBLE_MEMBER",
+    "INVISIBLE_REFERENCE",
+)
+
 package js.promise
 
 import js.core.ReadonlyArray
 import js.core.Void
+import kotlin.internal.LowPriorityInOverloadResolution
 
 open external class Promise<out T>(
     executor: (resolve: (T) -> Unit, reject: (Throwable) -> Unit) -> Unit,
@@ -10,6 +16,7 @@ open external class Promise<out T>(
         onFulfilled: ((T) -> R)?,
     ): Promise<R>
 
+    @LowPriorityInOverloadResolution
     override fun <R> then(
         onFulfilled: ((T) -> PromiseResult<R>)?,
     ): Promise<R>
