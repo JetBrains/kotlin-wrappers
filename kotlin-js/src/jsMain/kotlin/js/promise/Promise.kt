@@ -23,9 +23,9 @@ open external class Promise<out T>(
     ): Promise<T>
 
     companion object {
-        fun <T> all(values: ReadonlyArray<Promise<T>>): Promise<ReadonlyArray<T>>
+        fun <T> all(values: ReadonlyArray<PromiseResult<T>>): Promise<ReadonlyArray<T>>
 
-        fun <T> race(values: ReadonlyArray<Promise<T>>): Promise<T>
+        fun <T> race(values: ReadonlyArray<PromiseResult<T>>): Promise<T>
 
         fun reject(reason: Throwable): Promise<Nothing>
 
