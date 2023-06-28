@@ -155,8 +155,6 @@ ${body}
                 configuration,
             )
 
-            const packageName = karakum.createPackageName(packageMappingResult.package)
-
             const outputFileName = karakum.packageToOutputFileName(
                 packageMappingResult.package,
                 fileName,
@@ -164,8 +162,8 @@ ${body}
             )
 
             result[path.resolve(output, outputFileName)] = karakum.createGeneratedFile(
-                outputFileName,
-                packageName,
+                packageMappingResult.package,
+                packageMappingResult.fileName,
                 declaration,
                 configuration,
             )
