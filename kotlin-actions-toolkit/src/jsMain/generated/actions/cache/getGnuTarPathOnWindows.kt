@@ -2,7 +2,7 @@
 
 package actions.cache
 
-import kotlinx.coroutines.await
+import js.promise.await
 
 suspend fun getGnuTarPathOnWindows(): String =
     getGnuTarPathOnWindowsAsync().await()

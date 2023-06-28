@@ -2,7 +2,7 @@
 
 package node.fs
 
-import kotlinx.coroutines.await
+import js.promise.await
 
 suspend fun rmdir(
     path: PathLike,

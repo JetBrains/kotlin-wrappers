@@ -3,7 +3,7 @@
 package node.fs
 
 import js.core.ReadonlyArray
-import kotlinx.coroutines.await
+import js.promise.await
 import node.buffer.Buffer
 import node.buffer.BufferEncoding
 

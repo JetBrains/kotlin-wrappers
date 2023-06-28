@@ -4,7 +4,7 @@ package actions.cache
 
 import actions.http.client.HttpClientResponse
 import js.promise.Promise
-import kotlinx.coroutines.await
+import js.promise.await
 
 suspend fun retryHttpClientResponse(
     name: String,

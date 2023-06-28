@@ -3,7 +3,7 @@
 package actions.exec
 
 import js.core.ReadonlyArray
-import kotlinx.coroutines.await
+import js.promise.await
 
 suspend fun getExecOutput(
     commandLine: String,

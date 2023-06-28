@@ -2,7 +2,7 @@
 
 package actions.glob
 
-import kotlinx.coroutines.await
+import js.promise.await
 
 suspend fun create(
     patterns: String,

@@ -2,7 +2,7 @@
 
 package node.test
 
-import kotlinx.coroutines.await
+import js.promise.await
 
 suspend fun test() {
     testAsync().await()

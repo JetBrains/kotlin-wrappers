@@ -2,7 +2,7 @@
 
 package node.stream
 
-import kotlinx.coroutines.await
+import js.promise.await
 
 suspend fun finished(
     stream: Any, /* NodeJS.ReadableStream | NodeJS.WritableStream | NodeJS.ReadWriteStream */

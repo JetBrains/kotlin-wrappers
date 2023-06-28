@@ -1,7 +1,7 @@
 package js.core
 
 import js.collections.SuspendableIterator
-import kotlinx.coroutines.await
+import js.promise.await
 
 operator fun <T> AsyncIterator<T>.iterator(): SuspendableIterator<T> =
     AsyncIteratorAdapter(this)

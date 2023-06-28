@@ -3,7 +3,7 @@
 package actions.io
 
 import js.core.ReadonlyArray
-import kotlinx.coroutines.await
+import js.promise.await
 
 suspend fun findInPath(
     tool: String,

@@ -1,6 +1,6 @@
 package react.dom.test
 
-import kotlinx.coroutines.await
+import js.promise.await
 import kotlin.contracts.InvocationKind
 import kotlin.contracts.contract
 

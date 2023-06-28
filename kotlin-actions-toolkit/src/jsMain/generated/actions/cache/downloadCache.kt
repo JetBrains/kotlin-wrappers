@@ -2,7 +2,7 @@
 
 package actions.cache
 
-import kotlinx.coroutines.await
+import js.promise.await
 
 suspend fun downloadCache(
     archiveLocation: String,

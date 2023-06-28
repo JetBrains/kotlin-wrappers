@@ -5,7 +5,7 @@ package actions.artifact
 import actions.http.client.HttpClientResponse
 import js.collections.ReadonlyMap
 import js.promise.Promise
-import kotlinx.coroutines.await
+import js.promise.await
 
 suspend fun retryHttpClientRequest(
     name: String,

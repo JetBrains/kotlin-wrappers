@@ -2,7 +2,7 @@
 
 package actions.artifact
 
-import kotlinx.coroutines.await
+import js.promise.await
 
 suspend fun digestForStream(
     stream: node.ReadableStream,

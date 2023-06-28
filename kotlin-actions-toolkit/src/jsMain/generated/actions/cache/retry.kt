@@ -3,7 +3,7 @@
 package actions.cache
 
 import js.promise.Promise
-import kotlinx.coroutines.await
+import js.promise.await
 
 suspend fun <T> retry(
     name: String,

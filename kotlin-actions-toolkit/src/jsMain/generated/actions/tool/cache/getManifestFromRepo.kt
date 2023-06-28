@@ -3,7 +3,7 @@
 package actions.tool.cache
 
 import js.core.ReadonlyArray
-import kotlinx.coroutines.await
+import js.promise.await
 
 suspend fun getManifestFromRepo(
     owner: String,

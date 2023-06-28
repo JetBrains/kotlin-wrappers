@@ -1,6 +1,6 @@
 package node.fs
 
-import kotlinx.coroutines.await
+import js.promise.await
 
 /**
  * Returns `true` if the path exists, `false` otherwise.

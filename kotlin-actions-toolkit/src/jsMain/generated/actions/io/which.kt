@@ -2,7 +2,7 @@
 
 package actions.io
 
-import kotlinx.coroutines.await
+import js.promise.await
 
 suspend fun which(
     tool: String,

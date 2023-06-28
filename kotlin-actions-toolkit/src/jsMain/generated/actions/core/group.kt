@@ -3,7 +3,7 @@
 package actions.core
 
 import js.promise.Promise
-import kotlinx.coroutines.await
+import js.promise.await
 
 suspend fun <T> group(
     name: String,

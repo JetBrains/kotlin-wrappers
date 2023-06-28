@@ -2,7 +2,7 @@
 
 package actions.tool.cache
 
-import kotlinx.coroutines.await
+import js.promise.await
 
 suspend fun cacheFile(
     sourceFile: String,

@@ -2,7 +2,7 @@
 
 package actions.core
 
-import kotlinx.coroutines.await
+import js.promise.await
 
 suspend fun getIDToken(): String =
     getIDTokenAsync().await()
