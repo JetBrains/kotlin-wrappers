@@ -1,3 +1,17 @@
+## pre.578
+
+**BREAKING CHANGE**
+
+`kotlin-css` now has a different syntax for setting `border`, `margin`, `padding`, and `inset` properties.
+
+```kotlin
+css {
+    margin(0.px) // old
+
+    margin = Margin(0.px) // new
+}
+```
+
 ## pre.542
 
 **BREAKING CHANGE**

@@ -10,7 +10,7 @@ open class StaticStyleSheet : StyleSheet("StaticStyleSheet") {
     }
 
     val property2 by css {
-        paddingProp = Padding(40.px)
+        padding = Padding(40.px)
         minHeight = 50.px
     }
 

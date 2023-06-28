@@ -61,7 +61,7 @@ With `kotlin-styled` you never have to leave Kotlin:
 fun RBuilder.div() {
     styledDiv {
         css {
-            padding(vertical = 16.px)
+            padding = Padding(vertical = 16.px)
 
             backgroundColor = Color.green
         }
@@ -77,8 +77,7 @@ have them separated to enable code reuse:
 ```kotlin
 object ComponentStyles : StyleSheet("ComponentStyles", isStatic = true) {
     val wrapper by css {
-        padding(vertical = 16.px)
-
+        padding = Padding(vertical = 16.px)
         backgroundColor = Color.green
     }
 }
@@ -193,8 +192,8 @@ To create a global stylesheet use the `CssBuilder` class and the `StyledComponen
 ```kotlin
 val styles = CssBuilder(allowClasses = false).apply {
     body {
-        margin(0.px)
-        padding(0.px)
+        margin = Margin(0.px)
+        padding = Padding(0.px)
     }
 
     "[draggable=\"true\"]" {

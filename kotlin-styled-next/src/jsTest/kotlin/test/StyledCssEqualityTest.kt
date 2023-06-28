@@ -61,7 +61,7 @@ class StyledCssEqualityTest : TestBase() {
             animation(5.s, Timing.linear) {
                 addRotation()
             }
-            paddingProp = Padding(1.px, 2.px, 3.px, 4.px)
+            padding = Padding(1.px, 2.px, 3.px, 4.px)
         }
 
         val second = CssBuilder().apply {
@@ -69,7 +69,7 @@ class StyledCssEqualityTest : TestBase() {
             animation(5.s, Timing.linear) {
                 addRotation()
             }
-            paddingProp = Padding(1.px, 2.px, 3.px, 4.px)
+            padding = Padding(1.px, 2.px, 3.px, 4.px)
         }
 
         assertEquals(first.hashCode(), second.hashCode())

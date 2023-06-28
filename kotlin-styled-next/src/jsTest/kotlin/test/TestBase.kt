@@ -63,7 +63,7 @@ open class TestBase {
         height = 18.px
         alignContent = Align.end
         appearance = Appearance.listbox
-        paddingProp = Padding(1.px, 2.px, 3.px, 4.px)
+        padding = Padding(1.px, 2.px, 3.px, 4.px)
     }
 
     protected fun Element.childAt(i: Int): Element {

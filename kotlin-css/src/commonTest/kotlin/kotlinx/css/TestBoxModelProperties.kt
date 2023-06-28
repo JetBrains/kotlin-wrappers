@@ -1,11 +1,6 @@
 package kotlinx.css
 
-import kotlinx.css.properties.Border
-import kotlinx.css.properties.border
-import kotlinx.css.properties.borderBottom
-import kotlinx.css.properties.borderLeft
-import kotlinx.css.properties.borderRight
-import kotlinx.css.properties.borderTop
+import kotlinx.css.properties.*
 import kotlin.test.Test
 import kotlin.test.assertEquals
 
@@ -63,25 +58,25 @@ class TestBoxModelProperties {
                 margin: 10px;
 
             """,
-        ) { marginProp = Margin(10.px) },
+        ) { margin = Margin(10.px) },
         PropertyTestCase(
             """
                 margin: 10px 20px;
 
             """,
-        ) { marginProp = Margin(10.px, 20.px) },
+        ) { margin = Margin(10.px, 20.px) },
         PropertyTestCase(
             """
                 margin: 10px 20px 30px;
 
             """,
-        ) { marginProp = Margin(10.px, 20.px, 30.px) },
+        ) { margin = Margin(10.px, 20.px, 30.px) },
         PropertyTestCase(
             """
                 margin: 10px 20px 30px 40px;
 
             """,
-        ) { marginProp = Margin(10.px, 20.px, 30.px, 40.px) },
+        ) { margin = Margin(10.px, 20.px, 30.px, 40.px) },
     )
 
     private val paddingTestCases = listOf(
@@ -90,53 +85,53 @@ class TestBoxModelProperties {
                 padding: 10px;
 
             """,
-        ) { paddingProp = Padding(10.px) },
+        ) { padding = Padding(10.px) },
         PropertyTestCase(
             """
                 padding: 10px 20px;
 
             """,
-        ) { paddingProp = Padding(10.px, 20.px) },
+        ) { padding = Padding(10.px, 20.px) },
         PropertyTestCase(
             """
                 padding: 10px 20px 30px;
 
             """,
-        ) { paddingProp = Padding(10.px, 20.px, 30.px) },
+        ) { padding = Padding(10.px, 20.px, 30.px) },
         PropertyTestCase(
             """
                 padding: 10px 20px 30px 40px;
 
             """,
-        ) { paddingProp = Padding(10.px, 20.px, 30.px, 40.px) },
+        ) { padding = Padding(10.px, 20.px, 30.px, 40.px) },
         PropertyTestCase(
             """
                 padding-right: 10px;
                 padding-left: 10px;
 
             """,
-        ) { paddingProp = Padding(horizontal = 10.px) },
+        ) { padding = Padding(horizontal = 10.px) },
         PropertyTestCase(
             """
                 padding-top: 10px;
                 padding-bottom: 10px;
 
             """,
-        ) { paddingProp = Padding(vertical = 10.px) },
+        ) { padding = Padding(vertical = 10.px) },
         PropertyTestCase(
             """
                 padding-top: 10px;
                 padding-left: 10px;
 
             """,
-        ) { paddingProp = Padding(top = 10.px, left = 10.px) },
+        ) { padding = Padding(top = 10.px, left = 10.px) },
         PropertyTestCase(
             """
                 padding-right: 10px;
                 padding-bottom: 10px;
 
             """,
-        ) { paddingProp = Padding(bottom = 10.px, right = 10.px) },
+        ) { padding = Padding(bottom = 10.px, right = 10.px) },
     )
 
     private val insetTestCases = listOf(
@@ -145,25 +140,25 @@ class TestBoxModelProperties {
                 inset: 10px;
 
             """,
-        ) { insetProp = Inset(10.px) },
+        ) { inset = Inset(10.px) },
         PropertyTestCase(
             """
                 inset: 10px 20px;
 
             """,
-        ) { insetProp = Inset(10.px, 20.px) },
+        ) { inset = Inset(10.px, 20.px) },
         PropertyTestCase(
             """
                 inset: 10px 20px 30px;
 
             """,
-        ) { insetProp = Inset(10.px, 20.px, 30.px) },
+        ) { inset = Inset(10.px, 20.px, 30.px) },
         PropertyTestCase(
             """
                 inset: 10px 20px 30px 40px;
 
             """,
-        ) { insetProp = Inset(10.px, 20.px, 30.px, 40.px) },
+        ) { inset = Inset(10.px, 20.px, 30.px, 40.px) },
     )
 
     private val backgroundPositionCases = listOf(
@@ -172,7 +167,7 @@ class TestBoxModelProperties {
                 background-position: center bottom;
 
             """
-        ) { backgroundPositionProp = RelativePosition.centerBottom }
+        ) { backgroundPosition = RelativePosition.centerBottom }
     )
 
 

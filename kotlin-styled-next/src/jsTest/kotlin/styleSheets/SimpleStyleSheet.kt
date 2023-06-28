@@ -6,12 +6,12 @@ import styled.StyleSheet
 internal class SimpleStyleSheet : StyleSheet(isStatic = false) {
     val simpleProperty by css {
         minHeight = 66.px
-        paddingProp = Padding(0.px)
+        padding = Padding(0.px)
     }
 
     val specificProperty by css {
         specific {
-            paddingProp = Padding(80.px)
+            padding = Padding(80.px)
             borderStyle = BorderStyle.none
         }
     }
