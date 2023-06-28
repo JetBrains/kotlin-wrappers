@@ -14,13 +14,13 @@ open external class Promise<out T>(
     open fun finally(onFinally: () -> Unit): Promise<T>
 
     companion object {
-        fun <S> all(values: ReadonlyArray<Promise<S>>): Promise<ReadonlyArray<S>>
+        fun <T> all(values: ReadonlyArray<Promise<T>>): Promise<ReadonlyArray<T>>
 
-        fun <S> race(values: ReadonlyArray<Promise<S>>): Promise<S>
+        fun <T> race(values: ReadonlyArray<Promise<T>>): Promise<T>
 
         fun reject(reason: Throwable): Promise<Nothing>
 
-        fun <S> resolve(value: S): Promise<S>
-        fun <S> resolve(value: Promise<S>): Promise<S>
+        fun <T> resolve(value: T): Promise<T>
+        fun <T> resolve(value: Promise<T>): Promise<T>
     }
 }
