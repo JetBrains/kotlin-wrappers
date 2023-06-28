@@ -1,5 +1,7 @@
 package js.promise
 
+import js.core.ReadonlyArray
+
 open external class Promise<out T>(
     executor: (resolve: (T) -> Unit, reject: (Throwable) -> Unit) -> Unit,
 ) {
@@ -12,9 +14,9 @@ open external class Promise<out T>(
     open fun finally(onFinally: () -> Unit): Promise<T>
 
     companion object {
-        fun <S> all(promise: Array<out Promise<S>>): Promise<Array<out S>>
+        fun <S> all(promise: ReadonlyArray<Promise<S>>): Promise<ReadonlyArray<S>>
 
-        fun <S> race(promise: Array<out Promise<S>>): Promise<S>
+        fun <S> race(promise: ReadonlyArray<Promise<S>>): Promise<S>
 
         fun reject(e: Throwable): Promise<Nothing>
 
