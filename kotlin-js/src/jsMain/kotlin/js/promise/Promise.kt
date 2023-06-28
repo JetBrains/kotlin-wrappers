@@ -47,6 +47,8 @@ open external class Promise<out T>(
 
         fun <T> allSettled(values: ReadonlyArray<PromiseResult<T>>): Promise<ReadonlyArray<PromiseSettledResult<T>>>
 
+        fun <T> any(values: ReadonlyArray<PromiseResult<T>>): Promise<T>
+
         fun <T> race(values: ReadonlyArray<PromiseResult<T>>): Promise<T>
 
         fun reject(reason: Throwable): Promise<Void>
