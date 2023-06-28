@@ -30,6 +30,7 @@ open external class Promise<out T>(
 
         fun reject(reason: Throwable? = definedExternally): Promise<Void>
 
+        fun resolve(): Promise<Void>
         fun <T> resolve(value: T): Promise<T>
         fun <T> resolve(value: Promise<T>): Promise<T>
     }
