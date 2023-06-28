@@ -1,6 +1,7 @@
 package js.promise
 
 import js.core.ReadonlyArray
+import js.core.Void
 
 open external class Promise<out T>(
     executor: (resolve: (T) -> Unit, reject: (Throwable) -> Unit) -> Unit,
@@ -27,7 +28,7 @@ open external class Promise<out T>(
 
         fun <T> race(values: ReadonlyArray<PromiseResult<T>>): Promise<T>
 
-        fun reject(reason: Throwable): Promise<Nothing>
+        fun reject(reason: Throwable): Promise<Void>
 
         fun <T> resolve(value: T): Promise<T>
         fun <T> resolve(value: Promise<T>): Promise<T>
