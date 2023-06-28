@@ -1,5 +1,7 @@
 package js.promise
 
+import js.errors.JsError
+
 sealed external interface PromiseLike<out T> :
     PromiseResult<T> {
     fun <R> then(
@@ -12,6 +14,6 @@ sealed external interface PromiseLike<out T> :
 
     fun <R> then(
         onFulfilled: ((T) -> R)?,
-        onRejected: ((Throwable) -> R)?,
+        onRejected: ((JsError) -> R)?,
     ): PromiseLike<R>
 }

@@ -7,6 +7,7 @@ package js.promise
 
 import js.core.ReadonlyArray
 import js.core.Void
+import js.errors.JsError
 import kotlin.internal.LowPriorityInOverloadResolution
 
 open external class Promise<out T>(
@@ -16,7 +17,7 @@ open external class Promise<out T>(
     constructor(
         executor: (
             resolve: PromiseResolve<T>,
-            reject: (Throwable) -> Unit,
+            reject: (JsError) -> Unit,
         ) -> Unit,
     )
 
@@ -31,11 +32,11 @@ open external class Promise<out T>(
 
     override fun <R> then(
         onFulfilled: ((T) -> R)?,
-        onRejected: ((Throwable) -> R)?,
+        onRejected: ((JsError) -> R)?,
     ): Promise<R>
 
     open fun <R> catch(
-        onRejected: (Throwable) -> R,
+        onRejected: (JsError) -> R,
     ): Promise<R>
 
     open fun finally(
@@ -51,7 +52,7 @@ open external class Promise<out T>(
 
         fun <T> race(values: ReadonlyArray<PromiseResult<T>>): Promise<T>
 
-        fun reject(reason: Throwable): Promise<Void>
+        fun reject(reason: JsError): Promise<Void>
 
         fun resolve(): Promise<Void>
         fun <T> resolve(value: T): Promise<T>
