@@ -5,6 +5,8 @@ import js.core.Void
 import kotlinx.coroutines.await
 import kotlin.js.Promise
 
+typealias Promise<T> = kotlin.js.Promise<T>
+
 inline fun Promise.Companion.resolve(): Promise<Void> =
     resolve(undefined)
 
