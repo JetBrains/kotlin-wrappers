@@ -49,7 +49,7 @@ open external class Promise<out T>(
 
         fun <T> race(values: ReadonlyArray<PromiseResult<T>>): Promise<T>
 
-        fun reject(reason: Throwable? = definedExternally): Promise<Void>
+        fun reject(reason: Throwable): Promise<Void>
 
         fun resolve(): Promise<Void>
         fun <T> resolve(value: T): Promise<T>
