@@ -11,6 +11,10 @@ open external class Promise<out T>(
     ): Promise<R>
 
     override fun <R> then(
+        onFulfilled: ((T) -> PromiseResult<R>)?,
+    ): Promise<R>
+
+    override fun <R> then(
         onFulfilled: ((T) -> R)?,
         onRejected: ((Throwable) -> R)?,
     ): Promise<R>
