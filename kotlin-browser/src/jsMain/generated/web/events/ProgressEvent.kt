@@ -19,7 +19,7 @@ external interface ProgressEventInit : EventInit {
     var total: JsLong?
 }
 
-open external class ProgressEvent<T : EventTarget>(
+open external class ProgressEvent<out T : EventTarget>(
     override val type: EventType<ProgressEvent<T>>,
     init: ProgressEventInit = definedExternally,
 ) : Event {
