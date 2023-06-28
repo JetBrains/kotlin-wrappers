@@ -108,7 +108,6 @@ module.exports = {
         const configuration = configurationService?.configuration
         if (configuration === undefined) throw new Error("EventPlugin.js can't work without ConfigurationService")
 
-        const inputRoots = configuration.inputRoots
         const output = configuration.output
         const result = {}
 
@@ -142,7 +141,6 @@ ${body}
             `
 
             const sourceFileInfoItem = karakum.createSourceFileInfoItem(
-                inputRoots,
                 events.sourceFileName,
                 configuration,
             )
