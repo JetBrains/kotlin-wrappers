@@ -10,7 +10,10 @@ import js.core.Void
 import kotlin.internal.LowPriorityInOverloadResolution
 
 open external class Promise<out T>(
-    executor: (resolve: (T) -> Unit, reject: (Throwable) -> Unit) -> Unit,
+    executor: (
+        resolve: PromiseResolve<T>,
+        reject: (Throwable) -> Unit,
+    ) -> Unit,
 ) : PromiseLike<T> {
     override fun <R> then(
         onFulfilled: ((T) -> R)?,
