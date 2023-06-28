@@ -4,7 +4,7 @@
 
 package cesium
 
-import kotlin.js.Promise
+import js.promise.Promise
 
 /**
  * Creates a [Cesium3DTileset] instance for the Google Photorealistic 3D Tiles tileset.

@@ -4,7 +4,7 @@
 
 package actions.artifact
 
-import kotlin.js.Promise
+import js.promise.Promise
 
 @JsName("createGZipFileOnDisk")
 external fun createGZipFileOnDiskAsync(

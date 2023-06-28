@@ -9,8 +9,8 @@
 package cesium
 
 import js.core.jso
+import js.promise.Promise
 import web.html.HTMLImageElement
-import kotlin.js.Promise
 
 /**
  * Provides functionality for ImageryProviders that have time dynamic imagery

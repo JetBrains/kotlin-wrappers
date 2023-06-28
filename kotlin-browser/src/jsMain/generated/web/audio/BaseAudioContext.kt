@@ -4,11 +4,11 @@ package web.audio
 
 import js.buffer.ArrayBuffer
 import js.core.ReadonlyArray
+import js.promise.Promise
 import js.typedarrays.Float32Array
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventTarget
-import kotlin.js.Promise
 
 /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/BaseAudioContext) */
 sealed external class BaseAudioContext :

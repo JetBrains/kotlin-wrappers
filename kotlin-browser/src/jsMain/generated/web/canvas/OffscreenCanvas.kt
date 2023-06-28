@@ -2,13 +2,13 @@
 
 package web.canvas
 
+import js.promise.Promise
 import web.buffer.Blob
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventTarget
 import webgl.WebGL2RenderingContext
 import webgl.WebGLRenderingContext
-import kotlin.js.Promise
 
 /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/OffscreenCanvas) */
 external class OffscreenCanvas(

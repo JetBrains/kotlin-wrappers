@@ -2,7 +2,7 @@
 
 package web.permissions
 
-import kotlin.js.Promise
+import js.promise.Promise
 
 /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Permissions) */
 sealed external class Permissions {

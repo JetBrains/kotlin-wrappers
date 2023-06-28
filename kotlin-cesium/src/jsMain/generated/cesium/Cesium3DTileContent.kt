@@ -5,7 +5,7 @@
 package cesium
 
 import js.core.ReadonlyArray
-import kotlin.js.Promise
+import js.promise.Promise
 
 /**
  * The content of a tile in a [Cesium3DTileset].

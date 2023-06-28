@@ -5,7 +5,7 @@
 package actions.exec
 
 import js.core.ReadonlyArray
-import kotlin.js.Promise
+import js.promise.Promise
 
 external class ToolRunner : node.events.EventEmitter {
     constructor(

@@ -9,7 +9,7 @@
 package tanstack.query.core
 
 import js.core.ReadonlyArray
-import kotlin.js.Promise
+import js.promise.Promise
 
 external interface MutationCacheConfig {
     var onError: (error: Any?, variables: Any?, context: Any?, mutation: Mutation<*, *, *, *>) -> Promise<*>?

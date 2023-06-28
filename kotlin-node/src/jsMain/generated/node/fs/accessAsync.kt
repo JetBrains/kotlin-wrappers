@@ -5,7 +5,7 @@
 package node.fs
 
 import js.core.Void
-import kotlin.js.Promise
+import js.promise.Promise
 
 /**
  * Tests a user's permissions for the file or directory specified by `path`.

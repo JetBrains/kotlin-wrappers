@@ -3,7 +3,7 @@
 package web.streams
 
 import js.core.Void
-import kotlin.js.Promise
+import js.promise.Promise
 
 /**
  * This Streams API interface is the object returned by WritableStream.getWriter() and once created locks the < writer to the WritableStream ensuring that no other streams can write to the underlying sink.

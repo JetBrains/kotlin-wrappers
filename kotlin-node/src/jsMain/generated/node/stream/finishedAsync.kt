@@ -5,7 +5,7 @@
 package node.stream
 
 import js.core.Void
-import kotlin.js.Promise
+import js.promise.Promise
 
 @JsName("finished")
 external fun finishedAsync(

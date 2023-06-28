@@ -5,7 +5,7 @@
 package webassembly
 
 import js.buffer.BufferSource
-import kotlin.js.Promise
+import js.promise.Promise
 
 external fun instantiate(
     bytes: BufferSource,

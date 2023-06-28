@@ -10,9 +10,9 @@ package cesium
 
 import js.core.ReadonlyArray
 import js.core.jso
+import js.promise.Promise
 import web.dom.Element
 import web.html.HTMLCanvasElement
-import kotlin.js.Promise
 
 /**
  * The container for all 3D graphical objects and state in a Cesium virtual scene.  Generally,

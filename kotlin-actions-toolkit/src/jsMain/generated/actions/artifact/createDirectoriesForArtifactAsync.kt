@@ -6,7 +6,7 @@ package actions.artifact
 
 import js.core.ReadonlyArray
 import js.core.Void
-import kotlin.js.Promise
+import js.promise.Promise
 
 @JsName("createDirectoriesForArtifact")
 external fun createDirectoriesForArtifactAsync(directories: ReadonlyArray<String>): Promise<Void>

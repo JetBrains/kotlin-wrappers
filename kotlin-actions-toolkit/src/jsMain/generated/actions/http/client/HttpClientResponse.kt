@@ -4,7 +4,7 @@
 
 package actions.http.client
 
-import kotlin.js.Promise
+import js.promise.Promise
 
 external class HttpClientResponse {
     constructor(message: node.http.IncomingMessage)

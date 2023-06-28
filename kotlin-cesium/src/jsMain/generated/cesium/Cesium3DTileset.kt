@@ -9,7 +9,7 @@
 package cesium
 
 import js.core.jso
-import kotlin.js.Promise
+import js.promise.Promise
 
 /**
  * A [3D Tiles tileset](https://github.com/CesiumGS/3d-tiles/tree/main/specification),

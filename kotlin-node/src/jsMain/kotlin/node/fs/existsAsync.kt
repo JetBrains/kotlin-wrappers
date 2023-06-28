@@ -1,6 +1,6 @@
 package node.fs
 
-import kotlin.js.Promise
+import js.promise.Promise
 
 /**
  * Returns `true` if the path exists, `false` otherwise.

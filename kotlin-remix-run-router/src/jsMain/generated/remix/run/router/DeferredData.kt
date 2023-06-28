@@ -5,9 +5,9 @@
 
 package remix.run.router
 
+import js.promise.Promise
 import web.abort.AbortSignal
 import web.http.ResponseInit
-import kotlin.js.Promise
 
 
 external class DeferredData {

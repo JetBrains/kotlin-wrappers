@@ -1,6 +1,7 @@
 package styled
 
 import js.core.jso
+import js.promise.Promise
 import kotlinx.css.CssBuilder
 import kotlinx.css.CssDsl
 import kotlinx.css.RuleSet
@@ -13,7 +14,6 @@ import react.dom.render
 import web.cssom.ClassName
 import web.dom.document
 import web.html.HTML.div
-import kotlin.js.Promise
 
 typealias AnyTagStyledBuilder = StyledDOMBuilder<CommonAttributeGroupFacade>
 typealias AnyBuilder = AnyTagStyledBuilder.() -> Unit
@@ -125,10 +125,12 @@ private fun injectGlobalKeyframeStyle(name: String, style: String) {
     if (style.startsWith("@-webkit-keyframes") || style.startsWith("@keyframes")) {
         injectGlobal(style)
     } else {
-        injectGlobals(arrayOf(
-            "@-webkit-keyframes $name {$style}",
-            "@keyframes $name {$style}"
-        ))
+        injectGlobals(
+            arrayOf(
+                "@-webkit-keyframes $name {$style}",
+                "@keyframes $name {$style}"
+            )
+        )
     }
 }
 

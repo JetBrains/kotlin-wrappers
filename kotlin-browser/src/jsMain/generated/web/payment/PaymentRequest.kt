@@ -4,10 +4,10 @@ package web.payment
 
 import js.core.ReadonlyArray
 import js.core.Void
+import js.promise.Promise
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventTarget
-import kotlin.js.Promise
 
 /**
  * This Payment Request API interface is the primary access point into the API, and lets web content and apps accept payments from the end user.

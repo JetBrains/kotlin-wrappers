@@ -5,7 +5,7 @@
 package node.fs
 
 import js.core.Void
-import kotlin.js.Promise
+import js.promise.Promise
 
 /**
  * Changes the access and modification times of a file in the same way as `fsPromises.utimes()`, with the difference that if the path refers to a

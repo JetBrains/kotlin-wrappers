@@ -11,7 +11,7 @@ package cesium
 import js.buffer.ArrayBuffer
 import js.core.ReadonlyArray
 import js.core.jso
-import kotlin.js.Promise
+import js.promise.Promise
 
 /**
  * Terrain data for a single tile from a Google Earth Enterprise server.

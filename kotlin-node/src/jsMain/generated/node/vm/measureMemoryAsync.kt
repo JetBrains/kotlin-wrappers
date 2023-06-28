@@ -4,7 +4,7 @@
 
 package node.vm
 
-import kotlin.js.Promise
+import js.promise.Promise
 
 /**
  * Measure the memory known to V8 and used by all contexts known to the

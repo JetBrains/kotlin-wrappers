@@ -4,7 +4,7 @@
 
 package actions.artifact
 
-import kotlin.js.Promise
+import js.promise.Promise
 
 @JsName("digestForStream")
 external fun digestForStreamAsync(stream: node.ReadableStream): Promise<StreamDigest>

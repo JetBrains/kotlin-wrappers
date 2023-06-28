@@ -3,10 +3,10 @@
 package web.cache
 
 import js.core.ReadonlyArray
+import js.promise.Promise
 import web.http.Request
 import web.http.Response
 import web.url.URL
-import kotlin.js.Promise
 
 /**
  * The storage for Cache objects.

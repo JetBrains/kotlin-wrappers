@@ -4,8 +4,8 @@
 
 package actions.tool.cache
 
+import js.promise.Promise
 import node.http.OutgoingHttpHeaders
-import kotlin.js.Promise
 
 @JsName("downloadTool")
 external fun downloadToolAsync(

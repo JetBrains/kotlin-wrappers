@@ -5,7 +5,7 @@
 package cesium
 
 import js.core.ReadonlyArray
-import kotlin.js.Promise
+import js.promise.Promise
 
 /**
  * An ordered collection of imagery layers.

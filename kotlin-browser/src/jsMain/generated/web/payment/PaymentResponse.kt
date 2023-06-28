@@ -3,8 +3,8 @@
 package web.payment
 
 import js.core.Void
+import js.promise.Promise
 import web.events.EventTarget
-import kotlin.js.Promise
 
 /**
  * This Payment Request API interface is returned after a user selects a payment method and approves a payment request.

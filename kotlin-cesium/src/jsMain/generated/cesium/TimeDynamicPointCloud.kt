@@ -9,7 +9,7 @@
 package cesium
 
 import js.core.jso
-import kotlin.js.Promise
+import js.promise.Promise
 
 /**
  * Provides playback of time-dynamic point cloud data.

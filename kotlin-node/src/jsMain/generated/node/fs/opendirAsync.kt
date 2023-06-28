@@ -4,7 +4,7 @@
 
 package node.fs
 
-import kotlin.js.Promise
+import js.promise.Promise
 
 /**
  * Asynchronously open a directory for iterative scanning. See the POSIX [`opendir(3)`](http://man7.org/linux/man-pages/man3/opendir.3.html) documentation for more detail.

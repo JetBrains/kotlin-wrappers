@@ -5,7 +5,7 @@
 package actions.exec
 
 import js.core.ReadonlyArray
-import kotlin.js.Promise
+import js.promise.Promise
 
 @JsName("getExecOutput")
 external fun getExecOutputAsync(

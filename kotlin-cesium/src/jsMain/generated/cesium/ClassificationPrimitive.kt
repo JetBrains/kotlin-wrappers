@@ -9,7 +9,7 @@
 package cesium
 
 import js.core.jso
-import kotlin.js.Promise
+import js.promise.Promise
 
 /**
  * A classification primitive represents a volume enclosing geometry in the [Scene] to be highlighted.

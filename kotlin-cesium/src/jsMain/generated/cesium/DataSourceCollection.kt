@@ -5,7 +5,7 @@
 package cesium
 
 import js.core.ReadonlyArray
-import kotlin.js.Promise
+import js.promise.Promise
 
 /**
  * A collection of [DataSource] instances.

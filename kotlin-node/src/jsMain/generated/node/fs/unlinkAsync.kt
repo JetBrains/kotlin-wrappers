@@ -5,7 +5,7 @@
 package node.fs
 
 import js.core.Void
-import kotlin.js.Promise
+import js.promise.Promise
 
 /**
  * If `path` refers to a symbolic link, then the link is removed without affecting

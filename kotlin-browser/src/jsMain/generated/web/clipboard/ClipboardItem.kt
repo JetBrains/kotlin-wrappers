@@ -4,8 +4,8 @@ package web.clipboard
 
 import js.core.ReadonlyArray
 import js.core.ReadonlyRecord
+import js.promise.Promise
 import web.buffer.Blob
-import kotlin.js.Promise
 
 /**
  * Available only in secure contexts.

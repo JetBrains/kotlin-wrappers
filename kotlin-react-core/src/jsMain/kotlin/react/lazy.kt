@@ -3,7 +3,7 @@
 
 package react
 
-import kotlin.js.Promise
+import js.promise.Promise
 
 // Lazy (16.6+)
 external fun <P : Props> lazy(

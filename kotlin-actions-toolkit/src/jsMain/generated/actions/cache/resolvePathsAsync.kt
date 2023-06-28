@@ -5,7 +5,7 @@
 package actions.cache
 
 import js.core.ReadonlyArray
-import kotlin.js.Promise
+import js.promise.Promise
 
 @JsName("resolvePaths")
 external fun resolvePathsAsync(patterns: ReadonlyArray<String>): Promise<ReadonlyArray<String>>

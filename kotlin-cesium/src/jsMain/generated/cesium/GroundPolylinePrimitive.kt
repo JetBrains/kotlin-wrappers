@@ -9,7 +9,7 @@
 package cesium
 
 import js.core.jso
-import kotlin.js.Promise
+import js.promise.Promise
 
 /**
  * A GroundPolylinePrimitive represents a polyline draped over the terrain or 3D Tiles in the [Scene].

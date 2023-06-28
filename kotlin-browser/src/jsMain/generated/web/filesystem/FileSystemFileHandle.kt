@@ -2,8 +2,8 @@
 
 package web.filesystem
 
+import js.promise.Promise
 import web.file.File
-import kotlin.js.Promise
 
 /**
  * Available only in secure contexts.

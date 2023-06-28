@@ -9,7 +9,7 @@
 
 package tanstack.query.core
 
-import kotlin.js.Promise
+import js.promise.Promise
 
 external interface MutationConfig<TData, TError, TVariables, TContext> {
     var mutationId: Int

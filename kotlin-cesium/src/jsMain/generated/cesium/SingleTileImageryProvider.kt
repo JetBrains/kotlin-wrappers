@@ -11,7 +11,7 @@ package cesium
 import js.core.ReadonlyArray
 import js.core.Void
 import js.core.jso
-import kotlin.js.Promise
+import js.promise.Promise
 
 /**
  * Provides a single, top-level imagery tile.  The single image is assumed to use a

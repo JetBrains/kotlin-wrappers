@@ -3,8 +3,8 @@
 package web.worklets
 
 import js.core.Void
+import js.promise.Promise
 import web.url.URL
-import kotlin.js.Promise
 
 /**
  * Available only in secure contexts.

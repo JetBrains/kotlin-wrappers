@@ -5,7 +5,7 @@
 package node.fs
 
 import js.core.Void
-import kotlin.js.Promise
+import js.promise.Promise
 
 /**
  * Truncates (shortens or extends the length) of the content at `path` to `len`bytes.

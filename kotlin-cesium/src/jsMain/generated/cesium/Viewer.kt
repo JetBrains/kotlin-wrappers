@@ -11,9 +11,9 @@ package cesium
 
 import js.core.ReadonlyArray
 import js.core.jso
+import js.promise.Promise
 import web.dom.Element
 import web.html.HTMLCanvasElement
-import kotlin.js.Promise
 
 /**
  * A base widget for building applications.  It composites all of the standard Cesium widgets into one reusable package.

@@ -4,7 +4,7 @@
 
 package actions.cache
 
-import kotlin.js.Promise
+import js.promise.Promise
 
 @JsName("getGnuTarPathOnWindows")
 external fun getGnuTarPathOnWindowsAsync(): Promise<String>

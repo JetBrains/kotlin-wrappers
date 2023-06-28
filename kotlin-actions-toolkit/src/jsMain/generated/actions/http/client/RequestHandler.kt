@@ -2,7 +2,7 @@
 
 package actions.http.client
 
-import kotlin.js.Promise
+import js.promise.Promise
 
 sealed external interface RequestHandler {
     fun prepareRequest(options: node.http.RequestOptions)

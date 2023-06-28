@@ -3,8 +3,8 @@
 package web.filesystem
 
 import js.core.Void
+import js.promise.Promise
 import web.streams.WritableStream
-import kotlin.js.Promise
 
 /**
  * Available only in secure contexts.

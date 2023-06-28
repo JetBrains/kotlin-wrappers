@@ -6,10 +6,10 @@
 
 package web.window
 
+import js.promise.Promise
 import web.events.Event
 import web.events.EventInit
 import web.events.EventType
-import kotlin.js.Promise
 
 /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/PromiseRejectionEvent) */
 external interface PromiseRejectionEventInit : EventInit {

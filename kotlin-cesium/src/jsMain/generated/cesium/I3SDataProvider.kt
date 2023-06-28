@@ -10,7 +10,7 @@ package cesium
 
 import js.core.ReadonlyArray
 import js.core.jso
-import kotlin.js.Promise
+import js.promise.Promise
 
 /**
  * An I3SDataProvider is the main public class for I3S support. The url option

@@ -4,9 +4,9 @@
 
 package node.fs
 
+import js.promise.Promise
 import node.buffer.Buffer
 import node.buffer.BufferEncoding
-import kotlin.js.Promise
 
 /**
  * Asynchronously reads the entire contents of a file.

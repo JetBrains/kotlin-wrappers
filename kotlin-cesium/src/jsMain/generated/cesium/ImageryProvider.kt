@@ -5,7 +5,7 @@
 package cesium
 
 import js.core.ReadonlyArray
-import kotlin.js.Promise
+import js.promise.Promise
 
 /**
  * Provides imagery to be displayed on the surface of an ellipsoid.  This type describes an

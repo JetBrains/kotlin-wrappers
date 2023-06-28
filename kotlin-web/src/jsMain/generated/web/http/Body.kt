@@ -3,10 +3,10 @@
 package web.http
 
 import js.buffer.ArrayBuffer
+import js.promise.Promise
 import js.typedarrays.Uint8Array
 import web.buffer.Blob
 import web.streams.ReadableStream
-import kotlin.js.Promise
 
 @JsName("Object")
 sealed external class /* interface */ Body {

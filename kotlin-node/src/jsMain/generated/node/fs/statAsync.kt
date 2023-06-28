@@ -4,7 +4,7 @@
 
 package node.fs
 
-import kotlin.js.Promise
+import js.promise.Promise
 
 /**
  * Equivalent to `fsPromises.stat()` unless `path` refers to a symbolic link,

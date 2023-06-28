@@ -1,7 +1,7 @@
 package web.http
 
+import js.promise.Promise
 import web.url.URL
-import kotlin.js.Promise
 
 @JsName("fetch")
 external fun fetchAsync(

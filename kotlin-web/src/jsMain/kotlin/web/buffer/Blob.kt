@@ -3,9 +3,9 @@ package web.buffer
 import js.buffer.ArrayBuffer
 import js.core.JsLong
 import js.core.ReadonlyArray
+import js.promise.Promise
 import js.typedarrays.Uint8Array
 import web.streams.ReadableStream
-import kotlin.js.Promise
 
 /** A file-like object of immutable, raw data. Blobs represent data that isn't necessarily in a JavaScript-native format. The File interface is based on Blob, inheriting blob functionality and expanding it to support files on the user's system. */
 open external class Blob(

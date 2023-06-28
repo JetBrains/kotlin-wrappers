@@ -11,8 +11,8 @@ package cesium
 import js.core.ReadonlyArray
 import js.core.Void
 import js.core.jso
+import js.promise.Promise
 import web.html.HTMLCanvasElement
-import kotlin.js.Promise
 
 /**
  * An [ImageryProvider] that draws a box around every rendered tile in the tiling scheme, and draws

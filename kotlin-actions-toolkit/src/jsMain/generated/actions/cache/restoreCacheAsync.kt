@@ -5,7 +5,7 @@
 package actions.cache
 
 import js.core.ReadonlyArray
-import kotlin.js.Promise
+import js.promise.Promise
 
 @JsName("restoreCache")
 external fun restoreCacheAsync(

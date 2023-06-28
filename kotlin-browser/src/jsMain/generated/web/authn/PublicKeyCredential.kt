@@ -3,8 +3,8 @@
 package web.authn
 
 import js.buffer.ArrayBuffer
+import js.promise.Promise
 import web.credentials.Credential
-import kotlin.js.Promise
 
 /**
  * Available only in secure contexts.

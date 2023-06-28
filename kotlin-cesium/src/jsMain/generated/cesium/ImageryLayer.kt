@@ -10,7 +10,7 @@
 package cesium
 
 import js.core.jso
-import kotlin.js.Promise
+import js.promise.Promise
 
 /**
  * An imagery layer that displays tiled image data from a single imagery provider

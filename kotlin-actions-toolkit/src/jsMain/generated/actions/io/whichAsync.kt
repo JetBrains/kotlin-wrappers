@@ -4,7 +4,7 @@
 
 package actions.io
 
-import kotlin.js.Promise
+import js.promise.Promise
 
 @JsName("which")
 external fun whichAsync(

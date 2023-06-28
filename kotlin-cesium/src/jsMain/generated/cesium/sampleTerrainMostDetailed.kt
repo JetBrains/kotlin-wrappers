@@ -5,7 +5,7 @@
 package cesium
 
 import js.core.ReadonlyArray
-import kotlin.js.Promise
+import js.promise.Promise
 
 /**
  * Initiates a sampleTerrain() request at the maximum available tile level for a terrain dataset.

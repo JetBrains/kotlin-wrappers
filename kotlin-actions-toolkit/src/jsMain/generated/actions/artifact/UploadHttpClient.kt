@@ -6,7 +6,7 @@ package actions.artifact
 
 import js.core.ReadonlyArray
 import js.core.Void
-import kotlin.js.Promise
+import js.promise.Promise
 
 external class UploadHttpClient {
     constructor()

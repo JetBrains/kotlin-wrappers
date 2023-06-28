@@ -1,6 +1,6 @@
 package web.canvas
 
-import kotlin.js.Promise
+import js.promise.Promise
 
 external fun createImageBitmap(
     image: ImageBitmapSource,

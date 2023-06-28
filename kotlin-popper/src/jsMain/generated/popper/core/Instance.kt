@@ -2,7 +2,7 @@
 
 package popper.core
 
-import kotlin.js.Promise
+import js.promise.Promise
 
 external interface Instance {
     var state: State

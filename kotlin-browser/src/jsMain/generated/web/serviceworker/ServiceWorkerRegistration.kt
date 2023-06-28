@@ -4,13 +4,13 @@ package web.serviceworker
 
 import js.core.ReadonlyArray
 import js.core.Void
+import js.promise.Promise
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventTarget
 import web.notifications.Notification
 import web.notifications.NotificationOptions
 import web.push.PushManager
-import kotlin.js.Promise
 
 /**
  * This ServiceWorker API interface represents the service worker registration. You register a service worker to control one or more pages that share the same origin.

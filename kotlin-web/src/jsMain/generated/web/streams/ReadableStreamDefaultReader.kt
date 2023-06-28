@@ -2,7 +2,7 @@
 
 package web.streams
 
-import kotlin.js.Promise
+import js.promise.Promise
 
 /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStreamDefaultReader) */
 external class ReadableStreamDefaultReader<R>(

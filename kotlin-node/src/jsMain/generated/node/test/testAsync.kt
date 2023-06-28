@@ -5,7 +5,7 @@
 package node.test
 
 import js.core.Void
-import kotlin.js.Promise
+import js.promise.Promise
 
 /**
  * The `test()` function is the value imported from the test module. Each invocation of this

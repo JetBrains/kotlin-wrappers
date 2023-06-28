@@ -5,8 +5,8 @@
 package node.fs
 
 import js.core.Void
+import js.promise.Promise
 import node.buffer.BufferEncoding
-import kotlin.js.Promise
 
 /**
  * Asynchronously append data to a file, creating the file if it does not yet

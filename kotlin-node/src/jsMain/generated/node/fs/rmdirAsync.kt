@@ -5,7 +5,7 @@
 package node.fs
 
 import js.core.Void
-import kotlin.js.Promise
+import js.promise.Promise
 
 /**
  * Removes the directory identified by `path`.

@@ -9,7 +9,7 @@
 
 package tanstack.query.core
 
-import kotlin.js.Promise
+import js.promise.Promise
 
 typealias InfiniteQueryObserverListener<TData, TError> = (result: InfiniteQueryObserverResult<TData, TError>) -> Unit
 

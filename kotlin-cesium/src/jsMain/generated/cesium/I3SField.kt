@@ -4,7 +4,7 @@
 
 package cesium
 
-import kotlin.js.Promise
+import js.promise.Promise
 
 /**
  * This class implements an I3S Field which is custom data attached

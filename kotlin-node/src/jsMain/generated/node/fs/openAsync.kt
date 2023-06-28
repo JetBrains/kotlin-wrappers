@@ -4,7 +4,7 @@
 
 package node.fs
 
-import kotlin.js.Promise
+import js.promise.Promise
 
 /**
  * Opens a `FileHandle`.

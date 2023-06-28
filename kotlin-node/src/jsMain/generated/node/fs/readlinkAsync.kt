@@ -4,8 +4,8 @@
 
 package node.fs
 
+import js.promise.Promise
 import node.buffer.Buffer
-import kotlin.js.Promise
 
 /**
  * Reads the contents of the symbolic link referred to by `path`. See the POSIX [`readlink(2)`](http://man7.org/linux/man-pages/man2/readlink.2.html) documentation for more detail. The promise is

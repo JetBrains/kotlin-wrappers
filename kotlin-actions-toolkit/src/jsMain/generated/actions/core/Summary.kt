@@ -5,7 +5,7 @@
 package actions.core
 
 import js.core.ReadonlyArray
-import kotlin.js.Promise
+import js.promise.Promise
 
 external class Summary {
     constructor()

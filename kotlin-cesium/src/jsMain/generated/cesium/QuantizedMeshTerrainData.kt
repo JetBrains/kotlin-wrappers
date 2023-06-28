@@ -10,9 +10,9 @@ package cesium
 
 import js.core.ReadonlyArray
 import js.core.jso
+import js.promise.Promise
 import js.typedarrays.Uint16Array
 import js.typedarrays.Uint8Array
-import kotlin.js.Promise
 
 /**
  * Terrain data for a single tile where the terrain data is represented as a quantized mesh.  A quantized

@@ -4,8 +4,6 @@
 
 package js.promise
 
-import kotlin.js.Promise
-
 // T | PromiseLike<T>
 sealed external interface PromiseResult<out T>
 

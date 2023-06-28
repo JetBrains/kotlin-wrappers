@@ -4,6 +4,7 @@ package web.dom
 
 import js.core.ReadonlyArray
 import js.core.Void
+import js.promise.Promise
 import web.aria.ARIAMixin
 import web.cssom.StylePropertyMapReadOnly
 import web.events.Event
@@ -20,7 +21,6 @@ import web.scroll.ScrollToOptions
 import web.svg.SVGElement
 import web.svg.SVG_NAMESPACE
 import web.svg.SvgTagName
-import kotlin.js.Promise
 
 /**
  * Element is the most general base class from which all objects in a Document inherit. It only has methods and properties common to all kinds of elements. More specific classes inherit from Element.

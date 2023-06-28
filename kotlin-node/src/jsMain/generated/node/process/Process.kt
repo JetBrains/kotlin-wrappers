@@ -4,10 +4,10 @@ package node.process
 
 import js.collections.JsSet
 import js.core.ReadonlyArray
+import js.promise.Promise
 import node.Module
 import node.events.Event
 import node.events.EventType
-import kotlin.js.Promise
 
 sealed external interface Process : node.events.IEventEmitter {
     /**

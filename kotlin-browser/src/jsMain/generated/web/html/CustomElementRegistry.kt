@@ -2,8 +2,8 @@
 
 package web.html
 
+import js.promise.Promise
 import web.dom.Node
-import kotlin.js.Promise
 
 /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CustomElementRegistry) */
 sealed external class CustomElementRegistry {

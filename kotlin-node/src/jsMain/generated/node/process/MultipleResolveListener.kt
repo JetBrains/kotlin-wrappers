@@ -2,7 +2,7 @@
 
 package node.process
 
-import kotlin.js.Promise
+import js.promise.Promise
 
 typealias MultipleResolveListener = (
     type: MultipleResolveType,

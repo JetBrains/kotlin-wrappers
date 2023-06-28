@@ -4,8 +4,8 @@ package actions.artifact
 
 import actions.http.client.HttpClientResponse
 import js.collections.ReadonlyMap
+import js.promise.Promise
 import kotlinx.coroutines.await
-import kotlin.js.Promise
 
 suspend fun retry(
     name: String,

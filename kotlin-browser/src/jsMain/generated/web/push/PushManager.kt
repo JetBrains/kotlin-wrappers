@@ -3,8 +3,8 @@
 package web.push
 
 import js.core.ReadonlyArray
+import js.promise.Promise
 import web.permissions.PermissionState
-import kotlin.js.Promise
 
 /**
  * This Push API interface provides a way to receive notifications from third-party servers as well as request URLs for push notifications.

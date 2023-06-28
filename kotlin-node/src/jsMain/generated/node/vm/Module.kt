@@ -6,7 +6,7 @@ package node.vm
 
 import js.core.ReadonlyArray
 import js.core.Void
-import kotlin.js.Promise
+import js.promise.Promise
 
 open external class Module {
     /**

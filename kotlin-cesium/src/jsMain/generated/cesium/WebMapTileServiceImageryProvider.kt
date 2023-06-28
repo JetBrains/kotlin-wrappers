@@ -11,7 +11,7 @@ package cesium
 import js.core.ReadonlyArray
 import js.core.Void
 import js.core.jso
-import kotlin.js.Promise
+import js.promise.Promise
 
 /**
  * Provides tiled imagery served by [WMTS 1.0.0](http://www.opengeospatial.org/standards/wmts) compliant servers.

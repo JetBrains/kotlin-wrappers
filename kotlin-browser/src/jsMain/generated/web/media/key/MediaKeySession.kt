@@ -5,10 +5,10 @@ package web.media.key
 import js.buffer.BufferSource
 import js.core.EpochTimeStamp
 import js.core.Void
+import js.promise.Promise
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventTarget
-import kotlin.js.Promise
 
 /**
  * This EncryptedMediaExtensions API interface represents a context for message exchange with a content decryption module (CDM).

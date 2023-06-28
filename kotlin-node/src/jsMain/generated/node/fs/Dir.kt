@@ -6,8 +6,8 @@ package node.fs
 
 import js.core.AsyncIterable
 import js.core.Void
+import js.promise.Promise
 import node.ErrnoException
-import kotlin.js.Promise
 
 external class Dir : AsyncIterable<Dirent> {
     /**

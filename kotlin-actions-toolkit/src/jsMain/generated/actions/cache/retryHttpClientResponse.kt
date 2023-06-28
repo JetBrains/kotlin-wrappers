@@ -3,8 +3,8 @@
 package actions.cache
 
 import actions.http.client.HttpClientResponse
+import js.promise.Promise
 import kotlinx.coroutines.await
-import kotlin.js.Promise
 
 suspend fun retryHttpClientResponse(
     name: String,

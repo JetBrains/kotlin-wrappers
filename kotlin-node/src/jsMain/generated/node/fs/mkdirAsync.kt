@@ -4,7 +4,7 @@
 
 package node.fs
 
-import kotlin.js.Promise
+import js.promise.Promise
 
 /**
  * Asynchronous mkdir(2) - create a directory.

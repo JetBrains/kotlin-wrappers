@@ -2,10 +2,10 @@
 
 package web.notifications
 
+import js.promise.Promise
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventTarget
-import kotlin.js.Promise
 
 /**
  * This Notifications API interface is used to configure and display desktop notifications to the user.

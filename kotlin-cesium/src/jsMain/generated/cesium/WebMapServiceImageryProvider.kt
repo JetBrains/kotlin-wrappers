@@ -10,7 +10,7 @@ package cesium
 
 import js.core.ReadonlyArray
 import js.core.jso
-import kotlin.js.Promise
+import js.promise.Promise
 
 /**
  * Provides tiled imagery hosted by a Web Map Service (WMS) server.

@@ -9,7 +9,7 @@
 package cesium
 
 import js.core.ReadonlyArray
-import kotlin.js.Promise
+import js.promise.Promise
 
 /**
  * Provides geocoding via a [OpenCage](https://opencagedata.com/) server.

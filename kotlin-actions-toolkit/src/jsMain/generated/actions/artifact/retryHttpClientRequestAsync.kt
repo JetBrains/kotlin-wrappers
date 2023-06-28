@@ -6,7 +6,7 @@ package actions.artifact
 
 import actions.http.client.HttpClientResponse
 import js.collections.ReadonlyMap
-import kotlin.js.Promise
+import js.promise.Promise
 
 @JsName("retryHttpClientRequest")
 external fun retryHttpClientRequestAsync(

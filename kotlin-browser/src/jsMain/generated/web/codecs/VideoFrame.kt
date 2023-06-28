@@ -5,9 +5,9 @@ package web.codecs
 import js.buffer.BufferSource
 import js.core.JsLong
 import js.core.ReadonlyArray
+import js.promise.Promise
 import web.canvas.CanvasImageSource
 import web.geometry.DOMRectReadOnly
-import kotlin.js.Promise
 
 /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoFrame) */
 external class VideoFrame(

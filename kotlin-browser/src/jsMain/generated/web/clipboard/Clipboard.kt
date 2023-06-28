@@ -3,8 +3,8 @@
 package web.clipboard
 
 import js.core.Void
+import js.promise.Promise
 import web.events.EventTarget
-import kotlin.js.Promise
 
 /**
  * Available only in secure contexts.

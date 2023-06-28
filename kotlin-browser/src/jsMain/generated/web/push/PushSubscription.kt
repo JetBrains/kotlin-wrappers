@@ -4,7 +4,7 @@ package web.push
 
 import js.buffer.ArrayBuffer
 import js.core.EpochTimeStamp
-import kotlin.js.Promise
+import js.promise.Promise
 
 /**
  * This Push API interface provides a subcription's URL endpoint and allows unsubscription from a push service.

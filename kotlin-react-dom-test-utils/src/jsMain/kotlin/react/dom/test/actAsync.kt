@@ -3,7 +3,7 @@
 
 package react.dom.test
 
-import kotlin.js.Promise
+import js.promise.Promise
 
 @JsName("act")
 external fun <T> actAsync(

@@ -3,9 +3,9 @@
 package web.audio
 
 import js.core.Void
+import js.promise.Promise
 import web.html.HTMLMediaElement
 import web.media.streams.MediaStream
-import kotlin.js.Promise
 
 /**
  * An audio-processing graph built from audio modules linked together, each represented by an AudioNode.

@@ -4,7 +4,7 @@
 
 package cesium
 
-import kotlin.js.Promise
+import js.promise.Promise
 
 /**
  * Exports an EntityCollection as a KML document. Only Point, Billboard, Model, Path, Polygon, Polyline geometries

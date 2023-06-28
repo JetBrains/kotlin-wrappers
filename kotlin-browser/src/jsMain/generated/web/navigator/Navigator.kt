@@ -4,6 +4,7 @@ package web.navigator
 
 import js.core.ReadonlyArray
 import js.core.Void
+import js.promise.Promise
 import web.clipboard.Clipboard
 import web.credentials.CredentialsContainer
 import web.gamepad.Gamepad
@@ -23,7 +24,6 @@ import web.url.URL
 import web.useractivation.UserActivation
 import web.vibration.VibratePattern
 import web.wakelock.WakeLock
-import kotlin.js.Promise
 
 /**
  * The state and the identity of the user agent. It allows scripts to query it and to register themselves to carry on some activities.

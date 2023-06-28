@@ -1,4 +1,5 @@
 import js.core.asList
+import js.promise.Promise
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.promise
@@ -24,7 +25,6 @@ import web.html.HTMLStyleElement
 import web.timers.requestAnimationFrame
 import kotlin.coroutines.resume
 import kotlin.coroutines.suspendCoroutine
-import kotlin.js.Promise
 import kotlin.test.assertEquals
 import kotlin.test.assertNotNull
 import kotlin.time.Duration
@@ -185,7 +185,7 @@ internal suspend fun waitForAnimationFrame() {
 /** Hack for Flow emit function not to crash in inner js code */
 private suspend fun waitFlowCoroutine() {
     suspendCoroutine<Unit> { continuation ->
-        Promise.Companion.resolve(Unit).then {
+        Promise.resolve(Unit).then {
             continuation.resume(Unit)
         }
     }

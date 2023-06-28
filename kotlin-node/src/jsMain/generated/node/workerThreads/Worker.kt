@@ -5,11 +5,11 @@
 package node.workerThreads
 
 import js.core.ReadonlyArray
+import js.promise.Promise
 import node.events.Event
 import node.events.EventType
 import node.stream.Readable
 import node.stream.Writable
-import kotlin.js.Promise
 
 external class Worker : node.events.EventEmitter {
     /**

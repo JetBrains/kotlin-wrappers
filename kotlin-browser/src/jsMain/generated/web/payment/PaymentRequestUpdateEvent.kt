@@ -6,10 +6,10 @@
 
 package web.payment
 
+import js.promise.Promise
 import web.events.Event
 import web.events.EventInit
 import web.events.EventType
-import kotlin.js.Promise
 
 /**
  * This Payment Request API interface enables a web page to update the details of a PaymentRequest in response to a user action.

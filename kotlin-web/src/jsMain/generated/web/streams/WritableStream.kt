@@ -3,7 +3,7 @@
 package web.streams
 
 import js.core.Void
-import kotlin.js.Promise
+import js.promise.Promise
 
 /**
  * This Streams API interface provides a standard abstraction for writing streaming data to a destination, known as a sink. This object comes with built-in backpressure and queuing.

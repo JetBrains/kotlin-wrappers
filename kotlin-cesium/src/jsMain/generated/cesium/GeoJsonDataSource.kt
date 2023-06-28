@@ -9,7 +9,7 @@
 
 package cesium
 
-import kotlin.js.Promise
+import js.promise.Promise
 
 /**
  * A [DataSource] which processes both

@@ -5,7 +5,7 @@
 package actions.artifact
 
 import js.core.Void
-import kotlin.js.Promise
+import js.promise.Promise
 
 @JsName("rmFile")
 external fun rmFileAsync(filePath: String): Promise<Void>

@@ -3,7 +3,7 @@
 package web.credentials
 
 import js.core.Void
-import kotlin.js.Promise
+import js.promise.Promise
 
 /**
  * Available only in secure contexts.

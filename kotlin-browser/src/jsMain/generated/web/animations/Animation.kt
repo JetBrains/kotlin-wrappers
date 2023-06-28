@@ -2,10 +2,10 @@
 
 package web.animations
 
+import js.promise.Promise
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventTarget
-import kotlin.js.Promise
 
 /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Animation) */
 open external class Animation(

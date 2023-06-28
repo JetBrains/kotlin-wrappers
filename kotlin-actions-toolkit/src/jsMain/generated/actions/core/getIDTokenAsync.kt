@@ -4,7 +4,7 @@
 
 package actions.core
 
-import kotlin.js.Promise
+import js.promise.Promise
 
 @JsName("getIDToken")
 external fun getIDTokenAsync(aud: String = definedExternally): Promise<String>

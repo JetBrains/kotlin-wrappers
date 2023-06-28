@@ -5,7 +5,7 @@
 package node.fs
 
 import js.core.Void
-import kotlin.js.Promise
+import js.promise.Promise
 
 /**
  * Asynchronously writes data to a file, replacing the file if it already exists.`data` can be a string, a buffer, an

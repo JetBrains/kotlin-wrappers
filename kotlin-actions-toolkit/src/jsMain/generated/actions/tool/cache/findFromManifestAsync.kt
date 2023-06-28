@@ -5,7 +5,7 @@
 package actions.tool.cache
 
 import js.core.ReadonlyArray
-import kotlin.js.Promise
+import js.promise.Promise
 
 @JsName("findFromManifest")
 external fun findFromManifestAsync(

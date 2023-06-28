@@ -4,12 +4,12 @@
 package react.popper
 
 import js.core.ReadonlyArray
+import js.promise.Promise
 import popper.core.Modifier
 import popper.core.Placement
 import popper.core.PositioningStrategy
 import popper.core.ReferenceElement
 import react.*
-import kotlin.js.Promise
 
 external interface PopperArrowProps :
     PropsWithRef<Any>,

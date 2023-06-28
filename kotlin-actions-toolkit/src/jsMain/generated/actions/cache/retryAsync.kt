@@ -4,7 +4,7 @@
 
 package actions.cache
 
-import kotlin.js.Promise
+import js.promise.Promise
 
 @JsName("retry")
 external fun <T> retryAsync(

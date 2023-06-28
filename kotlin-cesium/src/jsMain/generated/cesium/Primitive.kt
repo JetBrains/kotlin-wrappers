@@ -10,7 +10,7 @@ package cesium
 
 import js.core.ReadonlyArray
 import js.core.jso
-import kotlin.js.Promise
+import js.promise.Promise
 
 /**
  * A primitive represents geometry in the [Scene].  The geometry can be from a single [GeometryInstance]

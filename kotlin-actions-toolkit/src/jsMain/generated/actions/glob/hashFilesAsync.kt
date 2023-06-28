@@ -4,7 +4,7 @@
 
 package actions.glob
 
-import kotlin.js.Promise
+import js.promise.Promise
 
 @JsName("hashFiles")
 external fun hashFilesAsync(

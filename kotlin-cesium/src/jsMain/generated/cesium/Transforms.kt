@@ -8,7 +8,7 @@
 
 package cesium
 
-import kotlin.js.Promise
+import js.promise.Promise
 
 /**
  * Contains functions for transforming positions to various reference frames.

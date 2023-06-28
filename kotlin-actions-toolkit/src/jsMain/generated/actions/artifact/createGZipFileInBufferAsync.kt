@@ -4,8 +4,8 @@
 
 package actions.artifact
 
+import js.promise.Promise
 import node.buffer.Buffer
-import kotlin.js.Promise
 
 @JsName("createGZipFileInBuffer")
 external fun createGZipFileInBufferAsync(originalFilePath: String): Promise<Buffer>

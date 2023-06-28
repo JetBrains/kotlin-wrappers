@@ -5,7 +5,7 @@
 package node.fs
 
 import js.core.Void
-import kotlin.js.Promise
+import js.promise.Promise
 
 /**
  * Asynchronously copies `src` to `dest`. By default, `dest` is overwritten if it

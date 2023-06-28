@@ -12,7 +12,7 @@ package cesium
 
 import js.core.Void
 import js.core.jso
-import kotlin.js.Promise
+import js.promise.Promise
 
 /**
  * A simple [TerrainProvider] that gets height values from a callback function.

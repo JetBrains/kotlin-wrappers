@@ -6,7 +6,7 @@ package actions.http.client
 
 import js.core.ReadonlyArray
 import js.errors.JsError
-import kotlin.js.Promise
+import js.promise.Promise
 
 external class HttpClient {
     var userAgent: String?

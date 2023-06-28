@@ -6,8 +6,8 @@ package muix.pickers
 
 import js.core.ReadonlyArray
 import js.core.Void
+import js.promise.Promise
 import web.cssom.ClassName
-import kotlin.js.Promise
 
 external interface CalendarPickerProps<TDate> : react.PropsWithClassName {
     var autoFocus: Boolean?

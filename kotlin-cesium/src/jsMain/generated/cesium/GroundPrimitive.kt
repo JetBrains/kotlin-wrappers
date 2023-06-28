@@ -9,7 +9,7 @@
 package cesium
 
 import js.core.jso
-import kotlin.js.Promise
+import js.promise.Promise
 
 /**
  * A ground primitive represents geometry draped over terrain or 3D Tiles in the [Scene].

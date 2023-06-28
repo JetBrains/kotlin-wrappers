@@ -3,9 +3,9 @@
 package webrtc
 
 import js.core.Void
+import js.promise.Promise
 import web.media.streams.MediaStream
 import web.media.streams.MediaStreamTrack
-import kotlin.js.Promise
 
 /**
  * Provides the ability to control and obtain details about how a particular MediaStreamTrack is encoded and sent to a remote peer.

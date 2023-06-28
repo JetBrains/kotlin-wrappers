@@ -4,7 +4,7 @@
 
 package actions.tool.cache
 
-import kotlin.js.Promise
+import js.promise.Promise
 
 @JsName("extract7z")
 external fun extract7zAsync(

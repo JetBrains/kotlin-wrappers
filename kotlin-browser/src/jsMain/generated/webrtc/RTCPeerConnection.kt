@@ -4,13 +4,13 @@ package webrtc
 
 import js.core.ReadonlyArray
 import js.core.Void
+import js.promise.Promise
 import web.crypto.Algorithm
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventTarget
 import web.media.streams.MediaStream
 import web.media.streams.MediaStreamTrack
-import kotlin.js.Promise
 
 /**
  * A WebRTC connection between the local computer and a remote peer. It provides methods to connect to a remote peer, maintain and monitor the connection, and close the connection once it's no longer needed.

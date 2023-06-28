@@ -10,7 +10,7 @@
 package cesium
 
 import js.core.Void
-import kotlin.js.Promise
+import js.promise.Promise
 
 /**
  * <div class="notice">

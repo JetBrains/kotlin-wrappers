@@ -4,7 +4,7 @@
 
 package actions.core
 
-import kotlin.js.Promise
+import js.promise.Promise
 
 @JsName("group")
 external fun <T> groupAsync(

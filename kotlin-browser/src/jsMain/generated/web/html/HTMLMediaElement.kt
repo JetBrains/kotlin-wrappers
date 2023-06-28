@@ -3,6 +3,7 @@
 package web.html
 
 import js.core.Void
+import js.promise.Promise
 import web.events.Event
 import web.events.EventHandler
 import web.media.key.MediaKeys
@@ -11,7 +12,6 @@ import web.remoteplayback.RemotePlayback
 import webvtt.TextTrack
 import webvtt.TextTrackKind
 import webvtt.TextTrackList
-import kotlin.js.Promise
 
 /**
  * Adds to HTMLElement the properties and methods needed to support basic media-related capabilities that are common to audio and video.

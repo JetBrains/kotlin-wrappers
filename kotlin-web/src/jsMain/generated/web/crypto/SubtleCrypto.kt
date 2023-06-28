@@ -5,7 +5,7 @@ package web.crypto
 import js.buffer.ArrayBuffer
 import js.buffer.BufferSource
 import js.core.ReadonlyArray
-import kotlin.js.Promise
+import js.promise.Promise
 
 /**
  * This Web Crypto API interface provides a number of low-level cryptographic functions. It is accessed via the Crypto.subtle properties available in a window context (via Window.crypto).

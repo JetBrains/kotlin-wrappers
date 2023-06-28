@@ -10,8 +10,8 @@
 package tanstack.query.core
 
 import js.core.EpochTimeStamp
+import js.promise.Promise
 import web.abort.AbortSignal
-import kotlin.js.Promise
 
 external interface QueryConfig<TQueryFnData, TError, TData, TQueryKey : QueryKey> {
     var cache: QueryCache

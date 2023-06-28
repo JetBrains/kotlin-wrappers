@@ -4,7 +4,7 @@
 
 package cesium
 
-import kotlin.js.Promise
+import js.promise.Promise
 
 /**
  * Creates an [IonImageryProvider] instance for ion's default global base imagery layer, currently Bing Maps.

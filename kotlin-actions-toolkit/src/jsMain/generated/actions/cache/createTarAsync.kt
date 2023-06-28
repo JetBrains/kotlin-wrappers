@@ -6,7 +6,7 @@ package actions.cache
 
 import js.core.ReadonlyArray
 import js.core.Void
-import kotlin.js.Promise
+import js.promise.Promise
 
 @JsName("createTar")
 external fun createTarAsync(

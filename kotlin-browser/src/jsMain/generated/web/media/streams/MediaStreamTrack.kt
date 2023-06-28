@@ -3,10 +3,10 @@
 package web.media.streams
 
 import js.core.Void
+import js.promise.Promise
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventTarget
-import kotlin.js.Promise
 
 /**
  * A single media track within a stream; typically, these are audio or video tracks, but other track types may exist as well.

@@ -5,7 +5,7 @@
 package actions.cache
 
 import js.core.Void
-import kotlin.js.Promise
+import js.promise.Promise
 
 @JsName("downloadCacheStorageSDK")
 external fun downloadCacheStorageSDKAsync(

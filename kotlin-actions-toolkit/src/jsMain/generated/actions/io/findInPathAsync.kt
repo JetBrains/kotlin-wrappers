@@ -5,7 +5,7 @@
 package actions.io
 
 import js.core.ReadonlyArray
-import kotlin.js.Promise
+import js.promise.Promise
 
 @JsName("findInPath")
 external fun findInPathAsync(tool: String): Promise<ReadonlyArray<String>>

@@ -5,7 +5,7 @@
 package actions.io
 
 import js.core.Void
-import kotlin.js.Promise
+import js.promise.Promise
 
 @JsName("rmRF")
 external fun rmRFAsync(inputPath: String): Promise<Void>

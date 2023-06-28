@@ -2,7 +2,7 @@
 
 package web.wakelock
 
-import kotlin.js.Promise
+import js.promise.Promise
 
 /**
  * Available only in secure contexts.

@@ -8,7 +8,7 @@
 
 package actions.http.client
 
-import kotlin.js.Promise
+import js.promise.Promise
 
 external class BasicCredentialHandler : RequestHandler {
     var username: String

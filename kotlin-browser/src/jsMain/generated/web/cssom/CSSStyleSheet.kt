@@ -2,7 +2,7 @@
 
 package web.cssom
 
-import kotlin.js.Promise
+import js.promise.Promise
 
 /**
  * A single CSS style sheet. It inherits properties and methods from its parent, StyleSheet.

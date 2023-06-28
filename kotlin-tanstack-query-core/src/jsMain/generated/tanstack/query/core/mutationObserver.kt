@@ -9,7 +9,7 @@
 
 package tanstack.query.core
 
-import kotlin.js.Promise
+import js.promise.Promise
 
 typealias MutationObserverListener<TData, TError, TVariables, TContext> = (result: MutationObserverResult<TData, TError, TVariables, TContext>) -> Unit
 

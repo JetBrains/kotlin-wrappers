@@ -4,7 +4,7 @@ package web.fonts
 
 import js.buffer.ArrayBuffer
 import js.buffer.ArrayBufferView
-import kotlin.js.Promise
+import js.promise.Promise
 
 /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/FontFace) */
 external class FontFace(

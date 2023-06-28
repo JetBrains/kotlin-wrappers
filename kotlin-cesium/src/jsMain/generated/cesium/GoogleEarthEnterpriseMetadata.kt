@@ -5,7 +5,7 @@
 package cesium
 
 import js.buffer.ArrayBuffer
-import kotlin.js.Promise
+import js.promise.Promise
 
 /**
  * <div class="notice">

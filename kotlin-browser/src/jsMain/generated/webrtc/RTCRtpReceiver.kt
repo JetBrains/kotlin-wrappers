@@ -3,8 +3,8 @@
 package webrtc
 
 import js.core.ReadonlyArray
+import js.promise.Promise
 import web.media.streams.MediaStreamTrack
-import kotlin.js.Promise
 
 /**
  * This WebRTC API interface manages the reception and decoding of data for a MediaStreamTrack on an RTCPeerConnection.

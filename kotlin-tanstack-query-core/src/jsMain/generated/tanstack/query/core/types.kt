@@ -10,8 +10,8 @@ import js.core.EpochTimeStamp
 import js.core.ReadonlyArray
 import js.core.Record
 import js.core.Void
+import js.promise.Promise
 import web.abort.AbortSignal
-import kotlin.js.Promise
 
 // readonly unknown[]
 external interface QueryKey

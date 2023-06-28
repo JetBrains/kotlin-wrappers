@@ -4,8 +4,8 @@
 
 package node.fs
 
+import js.promise.Promise
 import node.buffer.Buffer
-import kotlin.js.Promise
 
 /**
  * Determines the actual location of `path` using the same semantics as the`fs.realpath.native()` function.

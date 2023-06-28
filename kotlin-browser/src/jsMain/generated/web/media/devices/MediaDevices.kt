@@ -3,13 +3,13 @@
 package web.media.devices
 
 import js.core.ReadonlyArray
+import js.promise.Promise
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventTarget
 import web.media.streams.MediaStream
 import web.media.streams.MediaStreamConstraints
 import web.media.streams.MediaTrackSupportedConstraints
-import kotlin.js.Promise
 
 /**
  * Provides access to connected media input devices like cameras and microphones, as well as screen sharing. In essence, it lets you obtain access to any hardware source of media data.

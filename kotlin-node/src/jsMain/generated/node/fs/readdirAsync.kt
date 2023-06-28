@@ -5,9 +5,9 @@
 package node.fs
 
 import js.core.ReadonlyArray
+import js.promise.Promise
 import node.buffer.Buffer
 import node.buffer.BufferEncoding
-import kotlin.js.Promise
 
 /**
  * Reads the contents of a directory.

@@ -10,11 +10,11 @@ package cesium
 
 import js.core.ReadonlyArray
 import js.core.jso
+import js.promise.Promise
 import web.buffer.Blob
 import web.dom.Document
 import web.dom.Element
 import web.html.HTMLCanvasElement
-import kotlin.js.Promise
 
 /**
  * A [DataSource] which processes Keyhole Markup Language 2.2 (KML).

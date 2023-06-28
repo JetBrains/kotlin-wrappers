@@ -8,7 +8,7 @@
 
 package cesium
 
-import kotlin.js.Promise
+import js.promise.Promise
 
 /**
  * A helper to manage async operations of a terrain provider.

@@ -2,7 +2,7 @@
 
 package web.gamepad
 
-import kotlin.js.Promise
+import js.promise.Promise
 
 /**
  * This Gamepad API interface represents hardware in the controller designed to provide haptic feedback to the user (if available), most commonly vibration hardware.

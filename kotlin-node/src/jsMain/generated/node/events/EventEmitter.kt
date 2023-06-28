@@ -7,7 +7,7 @@ package node.events
 import js.core.AsyncIterable
 import js.core.ReadonlyArray
 import js.core.Symbol
-import kotlin.js.Promise
+import js.promise.Promise
 
 open external class EventEmitter : IEventEmitter {
     constructor(options: EventEmitterOptions = definedExternally)

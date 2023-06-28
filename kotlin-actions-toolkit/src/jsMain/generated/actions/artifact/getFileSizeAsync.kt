@@ -4,7 +4,7 @@
 
 package actions.artifact
 
-import kotlin.js.Promise
+import js.promise.Promise
 
 @JsName("getFileSize")
 external fun getFileSizeAsync(filePath: String): Promise<Number>

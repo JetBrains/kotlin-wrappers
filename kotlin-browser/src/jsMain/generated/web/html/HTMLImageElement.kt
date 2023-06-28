@@ -3,8 +3,8 @@
 package web.html
 
 import js.core.Void
+import js.promise.Promise
 import web.http.ReferrerPolicy
-import kotlin.js.Promise
 
 /**
  * Provides special properties and methods for manipulating <img> elements.

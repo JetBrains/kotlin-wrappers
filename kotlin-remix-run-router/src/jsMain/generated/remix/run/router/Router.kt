@@ -4,9 +4,9 @@
 
 package remix.run.router
 
+import js.promise.Promise
 import web.abort.AbortController
 import web.url.URL
-import kotlin.js.Promise
 
 /**
  * A Router instance manages all navigation and data loading/mutations

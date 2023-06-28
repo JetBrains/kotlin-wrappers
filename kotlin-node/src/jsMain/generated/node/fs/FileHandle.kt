@@ -5,8 +5,8 @@ package node.fs
 import js.buffer.ArrayBufferView
 import js.core.ReadonlyArray
 import js.core.Void
+import js.promise.Promise
 import node.buffer.BufferEncoding
-import kotlin.js.Promise
 
 sealed external interface FileHandle {
     /**

@@ -3,6 +3,7 @@
 package web.dom
 
 import js.core.Void
+import js.promise.Promise
 import web.events.Event
 import web.events.EventHandler
 import web.fonts.FontFaceSource
@@ -17,7 +18,6 @@ import web.svg.SvgTagName
 import web.url.URL
 import web.window.WindowProxy
 import web.xpath.XPathEvaluatorBase
-import kotlin.js.Promise
 
 /**
  * Any web page loaded in the browser and serves as an entry point into the web page's content, which is the DOM tree.

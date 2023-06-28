@@ -5,7 +5,7 @@ package web.filesystem
 import js.collections.AsyncMapLike
 import js.core.ReadonlyArray
 import js.core.Void
-import kotlin.js.Promise
+import js.promise.Promise
 
 /**
  * Available only in secure contexts.

@@ -10,7 +10,7 @@ package cesium
 
 import js.core.ReadonlyArray
 import js.core.jso
-import kotlin.js.Promise
+import js.promise.Promise
 
 /**
  * A [VoxelProvider] that fetches voxel data from a 3D Tiles tileset.

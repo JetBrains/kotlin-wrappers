@@ -3,10 +3,10 @@
 package web.wakelock
 
 import js.core.Void
+import js.promise.Promise
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventTarget
-import kotlin.js.Promise
 
 /**
  * Available only in secure contexts.

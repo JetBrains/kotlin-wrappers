@@ -3,8 +3,8 @@
 package node.test
 
 import js.core.Void
+import js.promise.Promise
 import web.abort.AbortSignal
-import kotlin.js.Promise
 
 sealed external interface TestContext {
     /**

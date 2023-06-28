@@ -9,7 +9,7 @@
 package cesium
 
 import js.core.Void
-import kotlin.js.Promise
+import js.promise.Promise
 
 /**
  * Provides terrain or other geometry for the surface of an ellipsoid.  The surface geometry is

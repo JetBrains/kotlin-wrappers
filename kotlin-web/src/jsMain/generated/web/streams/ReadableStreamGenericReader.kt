@@ -7,7 +7,7 @@
 package web.streams
 
 import js.core.Void
-import kotlin.js.Promise
+import js.promise.Promise
 
 sealed external interface ReadableStreamGenericReader {
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStreamBYOBReader/closed) */

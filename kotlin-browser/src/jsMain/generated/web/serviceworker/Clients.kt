@@ -4,8 +4,8 @@ package web.serviceworker
 
 import js.core.ReadonlyArray
 import js.core.Void
+import js.promise.Promise
 import web.url.URL
-import kotlin.js.Promise
 
 sealed external class Clients {
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Clients/claim) */

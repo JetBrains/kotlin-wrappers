@@ -5,7 +5,7 @@
 package actions.cache
 
 import actions.http.client.HttpClientResponse
-import kotlin.js.Promise
+import js.promise.Promise
 
 @JsName("retryHttpClientResponse")
 external fun retryHttpClientResponseAsync(

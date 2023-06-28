@@ -4,8 +4,8 @@
 
 package webassembly
 
+import js.promise.Promise
 import web.http.Response
-import kotlin.js.Promise
 
 external fun compileStreaming(
     source: Response,

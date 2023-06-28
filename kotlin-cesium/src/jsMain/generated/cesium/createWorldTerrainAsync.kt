@@ -4,7 +4,7 @@
 
 package cesium
 
-import kotlin.js.Promise
+import js.promise.Promise
 
 /**
  * Creates a [CesiumTerrainProvider] instance for the [Cesium World Terrain](https://cesium.com/content/#cesium-world-terrain).

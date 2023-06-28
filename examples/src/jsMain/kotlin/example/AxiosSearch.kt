@@ -2,6 +2,7 @@ package example
 
 import emotion.react.css
 import js.core.jso
+import js.promise.Promise
 import react.FC
 import react.Props
 import react.dom.html.ReactHTML.br
@@ -12,7 +13,6 @@ import react.dom.html.ReactHTML.p
 import react.useState
 import web.cssom.Color
 import web.html.InputType
-import kotlin.js.Promise
 
 /**
  * An example of using axios to fetch remote data by Scott_Huang@qq.com (Zhiliang.Huang@gmail.com)

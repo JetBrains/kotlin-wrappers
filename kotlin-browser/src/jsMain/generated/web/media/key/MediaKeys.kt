@@ -3,7 +3,7 @@
 package web.media.key
 
 import js.buffer.BufferSource
-import kotlin.js.Promise
+import js.promise.Promise
 
 /**
  * This EncryptedMediaExtensions API interface the represents a set of keys that an associated HTMLMediaElement can use for decryption of media data during playback.

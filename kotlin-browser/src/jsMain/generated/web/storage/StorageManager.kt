@@ -2,8 +2,8 @@
 
 package web.storage
 
+import js.promise.Promise
 import web.filesystem.FileSystemDirectoryHandle
-import kotlin.js.Promise
 
 /**
  * Available only in secure contexts.

@@ -10,7 +10,7 @@ package cesium
 
 import js.core.ReadonlyArray
 import js.core.jso
-import kotlin.js.Promise
+import js.promise.Promise
 
 /**
  * A primitive that renders voxel data from a [VoxelProvider].

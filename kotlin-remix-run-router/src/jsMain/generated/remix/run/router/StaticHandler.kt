@@ -4,8 +4,8 @@
 
 package remix.run.router
 
+import js.promise.Promise
 import web.http.Request
-import kotlin.js.Promise
 
 /**
  * A StaticHandler instance manages a singular SSR navigation/fetch event
