@@ -45,6 +45,8 @@ open external class Promise<out T>(
     companion object {
         fun <T> all(values: ReadonlyArray<PromiseResult<T>>): Promise<ReadonlyArray<T>>
 
+        fun <T> allSettled(values: ReadonlyArray<PromiseResult<T>>): Promise<ReadonlyArray<PromiseSettledResult<T>>>
+
         fun <T> race(values: ReadonlyArray<PromiseResult<T>>): Promise<T>
 
         fun reject(reason: Throwable? = definedExternally): Promise<Void>
