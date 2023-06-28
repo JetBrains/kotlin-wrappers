@@ -4,12 +4,12 @@ import js.core.ReadonlyArray
 
 open external class Promise<out T>(
     executor: (resolve: (T) -> Unit, reject: (Throwable) -> Unit) -> Unit,
-) {
-    open fun <R> then(
+) : PromiseLike<T> {
+    override fun <R> then(
         onFulfilled: ((T) -> R)?,
     ): Promise<R>
 
-    open fun <R> then(
+    override fun <R> then(
         onFulfilled: ((T) -> R)?,
         onRejected: ((Throwable) -> R)?,
     ): Promise<R>
