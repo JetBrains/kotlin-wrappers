@@ -5,11 +5,11 @@ import js.core.ReadonlyArray
 open external class Promise<out T>(
     executor: (resolve: (T) -> Unit, reject: (Throwable) -> Unit) -> Unit,
 ) {
-    open fun <S> then(onFulfilled: ((T) -> S)?): Promise<S>
+    open fun <R> then(onFulfilled: ((T) -> R)?): Promise<R>
 
-    open fun <S> then(onFulfilled: ((T) -> S)?, onRejected: ((Throwable) -> S)?): Promise<S>
+    open fun <R> then(onFulfilled: ((T) -> R)?, onRejected: ((Throwable) -> R)?): Promise<R>
 
-    open fun <S> catch(onRejected: (Throwable) -> S): Promise<S>
+    open fun <R> catch(onRejected: (Throwable) -> R): Promise<R>
 
     open fun finally(onFinally: () -> Unit): Promise<T>
 

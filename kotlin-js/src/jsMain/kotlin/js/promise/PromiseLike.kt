@@ -2,12 +2,12 @@ package js.promise
 
 sealed external interface PromiseLike<out T> :
     PromiseResult<T> {
-    fun <S> then(
-        onFulfilled: ((T) -> S)?,
-    ): PromiseLike<S>
+    fun <R> then(
+        onFulfilled: ((T) -> R)?,
+    ): PromiseLike<R>
 
-    fun <S> then(
-        onFulfilled: ((T) -> S)?,
-        onRejected: ((Throwable) -> S)?,
-    ): PromiseLike<S>
+    fun <R> then(
+        onFulfilled: ((T) -> R)?,
+        onRejected: ((Throwable) -> R)?,
+    ): PromiseLike<R>
 }
