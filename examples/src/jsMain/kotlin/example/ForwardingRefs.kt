@@ -31,7 +31,7 @@ val FancyInput = ForwardRef<_, FancyInputProps> { props ->
     }
 }
 
-val ForwardingRefsApp = VFC {
+val ForwardingRefsApp = FC {
     val fancyInputRef = useRef<Focusable>()
 
     useEffectOnce {

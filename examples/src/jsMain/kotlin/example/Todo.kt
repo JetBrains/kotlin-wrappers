@@ -1,12 +1,15 @@
 package example
 
-import react.*
+import react.FC
+import react.Props
 import react.dom.html.ReactHTML.button
 import react.dom.html.ReactHTML.div
 import react.dom.html.ReactHTML.h3
 import react.dom.html.ReactHTML.input
 import react.dom.html.ReactHTML.li
 import react.dom.html.ReactHTML.ul
+import react.useMemo
+import react.useState
 import web.html.InputType
 
 /**
@@ -64,7 +67,7 @@ val Todo = FC<TodoProps> { props ->
     }
 }
 
-val TodoApp = VFC {
+val TodoApp = FC {
     val items = useMemo { listOf("Hello", "World") }
 
     Todo {

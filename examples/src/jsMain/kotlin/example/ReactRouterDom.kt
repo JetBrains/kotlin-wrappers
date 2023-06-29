@@ -1,7 +1,7 @@
 package example
 
 import js.core.jso
-import react.VFC
+import react.FC
 import react.create
 import react.dom.html.ReactHTML.div
 import react.dom.html.ReactHTML.h2
@@ -15,7 +15,7 @@ import react.router.dom.Link
 import react.router.dom.createBrowserRouter
 import react.router.useParams
 
-val Root = VFC {
+val Root = FC {
     nav {
         ul {
             li {
@@ -45,19 +45,19 @@ val Root = VFC {
     Outlet()
 }
 
-val Home = VFC {
+val Home = FC {
     h2 {
         +"Home"
     }
 }
 
-val About = VFC {
+val About = FC {
     h2 {
         +"About"
     }
 }
 
-val Topics = VFC {
+val Topics = FC {
     div {
         h2 {
             +"Topics"
@@ -84,9 +84,9 @@ val Topics = VFC {
     }
 }
 
-val Topic = VFC {
+val Topic = FC {
     val topicId = useParams()["topicId"]
-        ?: return@VFC
+        ?: return@FC
 
     h3 {
         +"Requested topic ID: $topicId"
@@ -126,6 +126,6 @@ val appRouter = createBrowserRouter(
     )
 )
 
-val ReactRouterDomApp = VFC {
+val ReactRouterDomApp = FC {
     RouterProvider { router = appRouter }
 }
