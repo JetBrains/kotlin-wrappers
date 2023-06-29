@@ -63,7 +63,7 @@ sealed external interface LanguageServiceHost : GetEffectiveTypeRootsHost, Minim
      */
     val getCustomTransformers: (() -> CustomTransformers?)?
     val isKnownTypesPackageName: ((name: String) -> Boolean)?
-    val installPackage: ((options: InstallPackageOptions) -> kotlin.js.Promise<ApplyCodeActionCommandResult>)?
+    val installPackage: ((options: InstallPackageOptions) -> js.promise.Promise<ApplyCodeActionCommandResult>)?
     val writeFile: ((
         fileName: String,
         content: String,

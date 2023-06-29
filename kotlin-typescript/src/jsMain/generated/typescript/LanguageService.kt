@@ -338,12 +338,12 @@ sealed external interface LanguageService {
     fun applyCodeActionCommand(
         action: CodeActionCommand,
         formatSettings: FormatCodeSettings = definedExternally,
-    ): kotlin.js.Promise<ApplyCodeActionCommandResult>
+    ): js.promise.Promise<ApplyCodeActionCommandResult>
 
     fun applyCodeActionCommand(
         action: ReadonlyArray<CodeActionCommand>,
         formatSettings: FormatCodeSettings = definedExternally,
-    ): kotlin.js.Promise<ReadonlyArray<ApplyCodeActionCommandResult>>
+    ): js.promise.Promise<ReadonlyArray<ApplyCodeActionCommandResult>>
 
     fun applyCodeActionCommand(
         action: dynamic, /* CodeActionCommand | CodeActionCommand[] */
