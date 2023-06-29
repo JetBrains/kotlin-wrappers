@@ -3,7 +3,10 @@
   <component name="JavaProjectCodeInsightSettings">
     <excluded-names>
       <name>kotlin.browser.*</name>
+      <name>kotlin.js.Promise</name>
       <name>kotlinx.browser.*</name>
+      <name>kotlinx.coroutines.asDeferred</name>
+      <name>kotlinx.coroutines.await</name>
       <name>kotlinx.dom.*</name>
       <name>org.khronos.*</name>
       <name>org.w3c.*</name>
