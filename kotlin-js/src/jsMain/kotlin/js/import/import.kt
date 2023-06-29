@@ -1,10 +1,10 @@
 package js.import
 
-import js.promise.PromiseLike
+import js.promise.Promise
 
 external fun <T : Any> import(
     path: String,
-): PromiseLike<T>
+): Promise<T>
 
 external object import {
     val meta: ImportMeta
