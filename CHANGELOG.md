@@ -1,3 +1,14 @@
+## pre.580
+
+**BREAKING CHANGE**
+
+Modern `Promise` introduced
+
+Migration plan:
+* `kotlin.js.Promise` -> `js.promise.Promise`
+* `kotlinx.coroutines.await` -> `js.promise.await`
+* `kotlinx.coroutines.asDeferred` -> `js.promise.asDeferred`
+
 ## pre.578
 
 **BREAKING CHANGE**
