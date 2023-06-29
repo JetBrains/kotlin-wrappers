@@ -21,15 +21,12 @@ open external class Promise<out T>(
         ) -> Unit,
     )
 
+    @LowPriorityInOverloadResolution
     override fun <R> then(
         onFulfilled: ((T) -> R)?,
     ): Promise<R>
 
     @LowPriorityInOverloadResolution
-    override fun <R> then(
-        onFulfilled: ((T) -> PromiseResult<R>)?,
-    ): Promise<R>
-
     override fun <R> then(
         onFulfilled: ((T) -> R)?,
         onRejected: ((JsError) -> R)?,
@@ -59,3 +56,17 @@ open external class Promise<out T>(
         fun <T> resolve(value: PromiseResult<T>): Promise<T>
     }
 }
+
+// From original WA from `kotlin.js.Promise`
+inline fun <T, R> Promise<Promise<T>>.then(
+    noinline onFulfilled: ((T) -> R)?
+): Promise<R> =
+    unsafeCast<Promise<T>>()
+        .then(onFulfilled)
+
+inline fun <T, R> Promise<Promise<T>>.then(
+    noinline onFulfilled: ((T) -> R)?,
+    noinline onRejected: ((JsError) -> R)?
+): Promise<R> =
+    unsafeCast<Promise<T>>()
+        .then(onFulfilled, onRejected)
