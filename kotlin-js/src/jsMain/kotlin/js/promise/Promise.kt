@@ -57,6 +57,9 @@ open external class Promise<out T>(
     }
 }
 
+inline fun <T> Promise<Promise<T>>.then(): Promise<T> =
+    unsafeCast<Promise<T>>()
+
 // From original WA from `kotlin.js.Promise`
 inline fun <T, R> Promise<Promise<T>>.then(
     noinline onFulfilled: ((T) -> R)?
