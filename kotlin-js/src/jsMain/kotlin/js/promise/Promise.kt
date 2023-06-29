@@ -5,6 +5,7 @@
 
 package js.promise
 
+import js.core.JsIterable
 import js.core.ReadonlyArray
 import js.core.Void
 import js.errors.JsError
@@ -41,12 +42,16 @@ open external class Promise<out T>(
     ): Promise<T>
 
     companion object {
+        fun <T> all(values: JsIterable<PromiseResult<T>>): Promise<ReadonlyArray<T>>
         fun <T> all(values: ReadonlyArray<PromiseResult<T>>): Promise<ReadonlyArray<T>>
 
+        fun <T> allSettled(values: JsIterable<PromiseResult<T>>): Promise<ReadonlyArray<PromiseSettledResult<T>>>
         fun <T> allSettled(values: ReadonlyArray<PromiseResult<T>>): Promise<ReadonlyArray<PromiseSettledResult<T>>>
 
+        fun <T> any(values: JsIterable<PromiseResult<T>>): Promise<T>
         fun <T> any(values: ReadonlyArray<PromiseResult<T>>): Promise<T>
 
+        fun <T> race(values: JsIterable<PromiseResult<T>>): Promise<T>
         fun <T> race(values: ReadonlyArray<PromiseResult<T>>): Promise<T>
 
         fun reject(reason: JsError): Promise<Void>
