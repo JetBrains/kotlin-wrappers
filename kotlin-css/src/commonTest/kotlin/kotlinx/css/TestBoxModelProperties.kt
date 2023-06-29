@@ -1,6 +1,5 @@
 package kotlinx.css
 
-import kotlinx.css.properties.*
 import kotlin.test.Test
 import kotlin.test.assertEquals
 

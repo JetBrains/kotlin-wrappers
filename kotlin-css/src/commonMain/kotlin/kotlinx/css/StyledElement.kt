@@ -91,6 +91,13 @@ var StyledElement.backgroundClip: BackgroundClip by CssProperty()
 var StyledElement.backgroundColor: Color by CssProperty()
 var StyledElement.backgroundImage: Image by CssProperty()
 var StyledElement.backgroundOrigin: BackgroundOrigin by CssProperty()
+
+var StyledElement.backgroundPosition: RelativePosition
+    get() = RelativePosition(declarations["background-position"] as String)
+    set(position) {
+        declarations["background-position"] = position.value
+    }
+
 var StyledElement.backgroundRepeat: BackgroundRepeat by CssProperty()
 var StyledElement.backgroundSize: String by CssProperty()
 
@@ -276,7 +283,7 @@ fun StyledElement.flex(flex: Flex) {
     }
 }
 
-private fun getShorthandValue(
+internal fun getShorthandValue(
     top: LinearDimension,
     right: LinearDimension,
     bottom: LinearDimension,
@@ -296,114 +303,4 @@ private fun getShorthandValue(
         }
     }
 }
-
-data class Inset(
-    val top: LinearDimension,
-    val right: LinearDimension,
-    val bottom: LinearDimension,
-    val left: LinearDimension
-) : CssValue(
-    getShorthandValue(top, right, bottom, left)
-) {
-    constructor(all: LinearDimension) : this(all, all, all, all)
-    constructor(vertical: LinearDimension, horizontal: LinearDimension) : this(
-        vertical,
-        horizontal,
-        vertical,
-        horizontal
-    )
-
-    constructor(top: LinearDimension, horizontal: LinearDimension, bottom: LinearDimension) : this(
-        top,
-        horizontal,
-        bottom,
-        horizontal
-    )
-}
-
-var StyledElement.inset: Inset
-    get() = error("Write-only property")
-    set(value) {
-        declarations["inset"] = value.value
-    }
-
-data class Margin(
-    val top: LinearDimension? = null,
-    val right: LinearDimension? = null,
-    val bottom: LinearDimension? = null,
-    val left: LinearDimension? = null
-) {
-    constructor(all: LinearDimension) : this(all, all, all, all)
-    constructor(vertical: LinearDimension? = null, horizontal: LinearDimension? = null) : this(
-        vertical,
-        horizontal,
-        vertical,
-        horizontal
-    )
-
-    constructor(top: LinearDimension, horizontal: LinearDimension, bottom: LinearDimension) : this(
-        top,
-        horizontal,
-        bottom,
-        horizontal
-    )
-}
-
-var StyledElement.margin: Margin
-    set(value) {
-        val (top, right, bottom, left) = value
-        if (top != null && right != null && bottom != null && left != null) {
-            declarations["margin"] = getShorthandValue(top, right, bottom, left)
-        } else {
-            top?.let { this.marginTop = it }
-            right?.let { this.marginRight = it }
-            bottom?.let { this.marginBottom = it }
-            left?.let { this.marginLeft = it }
-        }
-    }
-    @Deprecated("Write-only property", level = DeprecationLevel.HIDDEN)
-    get() = error("")
-
-data class Padding(
-    val top: LinearDimension? = null,
-    val right: LinearDimension? = null,
-    val bottom: LinearDimension? = null,
-    val left: LinearDimension? = null
-) {
-    constructor(all: LinearDimension) : this(all, all, all, all)
-    constructor(vertical: LinearDimension? = null, horizontal: LinearDimension? = null) : this(
-        vertical,
-        horizontal,
-        vertical,
-        horizontal
-    )
-
-    constructor(top: LinearDimension, horizontal: LinearDimension, bottom: LinearDimension) : this(
-        top,
-        horizontal,
-        bottom,
-        horizontal
-    )
-}
-
-var StyledElement.padding: Padding
-    set(value) {
-        val (top, right, bottom, left) = value
-        if (top != null && right != null && bottom != null && left != null) {
-            declarations["padding"] = getShorthandValue(top, right, bottom, left)
-        } else {
-            top?.let { this.paddingTop = it }
-            right?.let { this.paddingRight = it }
-            bottom?.let { this.paddingBottom = it }
-            left?.let { this.paddingLeft = it }
-        }
-    }
-    @Deprecated("Write-only property", level = DeprecationLevel.HIDDEN)
-    get() = error("")
-
-var StyledElement.backgroundPosition: RelativePosition
-    get() = RelativePosition(declarations["background-position"] as String)
-    set(position) {
-        declarations["background-position"] = position.value
-    }
 
