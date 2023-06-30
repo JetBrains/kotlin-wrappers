@@ -1,0 +1,4 @@
+package electron
+
+
+typealias BrowserWindowConstructorOptions = electron.core.BrowserWindowConstructorOptions

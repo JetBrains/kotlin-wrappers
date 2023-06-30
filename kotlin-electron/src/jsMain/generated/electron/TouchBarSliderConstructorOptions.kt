@@ -1,0 +1,4 @@
+package electron
+
+
+typealias TouchBarSliderConstructorOptions = electron.core.TouchBarSliderConstructorOptions

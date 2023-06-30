@@ -1,4 +1,0 @@
-package electron.crossprocessexports
-
-
-typealias TouchBarSegmentedControlConstructorOptions = electron.core.TouchBarSegmentedControlConstructorOptions

@@ -1,4 +1,0 @@
-package electron.crossprocessexports
-
-
-typealias MoveToApplicationsFolderOptions = electron.core.MoveToApplicationsFolderOptions

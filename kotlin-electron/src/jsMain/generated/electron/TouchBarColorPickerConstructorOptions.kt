@@ -1,0 +1,4 @@
+package electron
+
+
+typealias TouchBarColorPickerConstructorOptions = electron.core.TouchBarColorPickerConstructorOptions

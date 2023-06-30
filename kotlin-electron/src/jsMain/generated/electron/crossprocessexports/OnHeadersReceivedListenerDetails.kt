@@ -1,4 +1,0 @@
-package electron.crossprocessexports
-
-
-typealias OnHeadersReceivedListenerDetails = electron.core.OnHeadersReceivedListenerDetails

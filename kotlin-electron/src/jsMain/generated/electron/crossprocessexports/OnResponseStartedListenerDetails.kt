@@ -1,4 +1,0 @@
-package electron.crossprocessexports
-
-
-typealias OnResponseStartedListenerDetails = electron.core.OnResponseStartedListenerDetails

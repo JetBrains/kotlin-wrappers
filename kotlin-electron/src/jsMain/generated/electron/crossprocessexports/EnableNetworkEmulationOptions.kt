@@ -1,4 +1,0 @@
-package electron.crossprocessexports
-
-
-typealias EnableNetworkEmulationOptions = electron.core.EnableNetworkEmulationOptions

@@ -17,7 +17,8 @@
         "electron/electron#Electron": "INTERNAL_ENTITY"
     },
     "packageNameMapper": {
-        "electron/([^/]+)\\.kt": "electron/core/$1.kt"
+        "electron/([^/]+)\\.kt": "electron/core/$1.kt",
+        "electron/crossprocessexports/(.+)\\.kt": "electron/$1.kt"
     },
     "importInjector": {
         "AddRepresentationOptions.kt": [

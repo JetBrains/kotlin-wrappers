@@ -1,4 +1,0 @@
-package electron.crossprocessexports
-
-
-typealias TouchBarLabelConstructorOptions = electron.core.TouchBarLabelConstructorOptions

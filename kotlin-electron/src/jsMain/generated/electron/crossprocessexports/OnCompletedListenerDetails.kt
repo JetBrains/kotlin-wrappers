@@ -1,4 +1,0 @@
-package electron.crossprocessexports
-
-
-typealias OnCompletedListenerDetails = electron.core.OnCompletedListenerDetails

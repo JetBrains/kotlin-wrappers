@@ -1,4 +1,0 @@
-package electron.crossprocessexports
-
-
-typealias AuthenticationResponseDetails = electron.core.AuthenticationResponseDetails

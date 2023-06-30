@@ -1,3 +1,0 @@
-package electron.crossprocessexports
-
-typealias ProtocolResponseUploadData = electron.core.ProtocolResponseUploadData

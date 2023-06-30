@@ -1,3 +1,0 @@
-package electron.crossprocessexports
-
-typealias AddRepresentationOptions = electron.core.AddRepresentationOptions

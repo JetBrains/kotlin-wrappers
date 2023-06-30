@@ -1,4 +1,0 @@
-package electron.crossprocessexports
-
-
-typealias TouchBarSliderConstructorOptions = electron.core.TouchBarSliderConstructorOptions

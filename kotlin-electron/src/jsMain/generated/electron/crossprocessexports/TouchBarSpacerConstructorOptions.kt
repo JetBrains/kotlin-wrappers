@@ -1,4 +1,0 @@
-package electron.crossprocessexports
-
-
-typealias TouchBarSpacerConstructorOptions = electron.core.TouchBarSpacerConstructorOptions

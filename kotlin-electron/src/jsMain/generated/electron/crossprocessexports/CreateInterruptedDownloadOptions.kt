@@ -1,4 +1,0 @@
-package electron.crossprocessexports
-
-
-typealias CreateInterruptedDownloadOptions = electron.core.CreateInterruptedDownloadOptions

@@ -1,4 +1,0 @@
-package electron.crossprocessexports
-
-
-typealias PermissionRequestHandlerHandlerDetails = electron.core.PermissionRequestHandlerHandlerDetails
