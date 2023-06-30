@@ -1,0 +1,4 @@
+package electron.renderer
+
+
+typealias EnableNetworkEmulationOptions = electron.EnableNetworkEmulationOptions

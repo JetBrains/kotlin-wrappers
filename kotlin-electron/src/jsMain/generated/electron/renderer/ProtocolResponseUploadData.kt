@@ -1,0 +1,3 @@
+package electron.renderer
+
+typealias ProtocolResponseUploadData = electron.ProtocolResponseUploadData

@@ -1,0 +1,4 @@
+package electron.main
+
+
+typealias OnResponseStartedListenerDetails = electron.OnResponseStartedListenerDetails
