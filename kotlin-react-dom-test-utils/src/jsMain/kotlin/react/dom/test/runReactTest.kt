@@ -4,7 +4,8 @@ import js.core.globalThis
 import kotlinx.coroutines.test.TestResult
 import kotlinx.coroutines.test.TestScope
 import kotlinx.coroutines.test.runTest
-import react.VFC
+import react.FC
+import react.Props
 import web.dom.document
 import web.html.HTML.div
 import web.html.HTMLElement
@@ -23,7 +24,7 @@ fun runReactTest(
 }
 
 fun runReactTest(
-    component: VFC,
+    component: FC<Props>,
     testBody: suspend TestScope.(container: HTMLElement) -> Unit,
 ): TestResult =
     runReactTest { container ->

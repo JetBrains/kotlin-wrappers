@@ -2,11 +2,11 @@ package react
 
 fun FC(
     block: ChildrenBuilder.() -> Unit,
-): VFC {
+): FC<Props> {
     val component = {
         createElementOrNull(block)
     }
-    return component.unsafeCast<VFC>()
+    return component.unsafeCast<FC<Props>>()
 }
 
 fun <P : Props> FC(
@@ -21,7 +21,7 @@ fun <P : Props> FC(
 fun FC(
     displayName: String,
     block: ChildrenBuilder.() -> Unit,
-): VFC {
+): FC<Props> {
     val component = FC(block)
     component.displayName = displayName
     return component
