@@ -3,4 +3,4 @@
 package electron.crossprocessexports
 
 
-open external class TouchBar : electron.TouchBar
+open external class TouchBar : electron.core.TouchBar

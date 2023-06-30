@@ -1,4 +1,4 @@
 package electron.renderer
 
 
-typealias HidDeviceRemovedDetails = electron.HidDeviceRemovedDetails
+typealias HidDeviceRemovedDetails = electron.core.HidDeviceRemovedDetails

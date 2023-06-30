@@ -1,4 +1,4 @@
 package electron.crossprocessexports
 
 
-typealias Request = electron.Request
+typealias Request = electron.core.Request

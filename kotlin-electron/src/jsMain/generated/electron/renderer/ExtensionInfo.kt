@@ -1,4 +1,4 @@
 package electron.renderer
 
 
-typealias ExtensionInfo = electron.ExtensionInfo
+typealias ExtensionInfo = electron.core.ExtensionInfo

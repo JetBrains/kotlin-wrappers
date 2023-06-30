@@ -1,4 +1,4 @@
 package electron.common
 
 
-typealias AuthenticationResponseDetails = electron.AuthenticationResponseDetails
+typealias AuthenticationResponseDetails = electron.core.AuthenticationResponseDetails

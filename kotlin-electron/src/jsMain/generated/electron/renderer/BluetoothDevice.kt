@@ -1,4 +1,4 @@
 package electron.renderer
 
 
-typealias BluetoothDevice = electron.BluetoothDevice
+typealias BluetoothDevice = electron.core.BluetoothDevice

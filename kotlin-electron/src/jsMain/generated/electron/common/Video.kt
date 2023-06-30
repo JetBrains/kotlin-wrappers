@@ -1,4 +1,4 @@
 package electron.common
 
 
-typealias Video = electron.Video
+typealias Video = electron.core.Video

@@ -1,4 +1,4 @@
 package electron.common
 
 
-typealias UploadFile = electron.UploadFile
+typealias UploadFile = electron.core.UploadFile

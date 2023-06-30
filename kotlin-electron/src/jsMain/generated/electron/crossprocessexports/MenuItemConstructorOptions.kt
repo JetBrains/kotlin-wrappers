@@ -1,4 +1,4 @@
 package electron.crossprocessexports
 
 
-typealias MenuItemConstructorOptions = electron.MenuItemConstructorOptions
+typealias MenuItemConstructorOptions = electron.core.MenuItemConstructorOptions

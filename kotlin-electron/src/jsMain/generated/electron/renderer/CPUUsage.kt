@@ -1,4 +1,4 @@
 package electron.renderer
 
 
-typealias CPUUsage = electron.CPUUsage
+typealias CPUUsage = electron.core.CPUUsage

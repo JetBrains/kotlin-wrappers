@@ -1,4 +1,4 @@
 package electron.common
 
 
-typealias Params = electron.Params
+typealias Params = electron.core.Params

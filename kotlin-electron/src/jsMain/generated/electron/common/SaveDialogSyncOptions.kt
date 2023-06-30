@@ -1,4 +1,4 @@
 package electron.common
 
 
-typealias SaveDialogSyncOptions = electron.SaveDialogSyncOptions
+typealias SaveDialogSyncOptions = electron.core.SaveDialogSyncOptions

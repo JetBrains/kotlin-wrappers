@@ -1,4 +1,4 @@
 package electron.crossprocessexports
 
 
-typealias ProcessMetric = electron.ProcessMetric
+typealias ProcessMetric = electron.core.ProcessMetric

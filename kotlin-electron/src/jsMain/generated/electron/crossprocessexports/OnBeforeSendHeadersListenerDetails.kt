@@ -1,4 +1,4 @@
 package electron.crossprocessexports
 
 
-typealias OnBeforeSendHeadersListenerDetails = electron.OnBeforeSendHeadersListenerDetails
+typealias OnBeforeSendHeadersListenerDetails = electron.core.OnBeforeSendHeadersListenerDetails

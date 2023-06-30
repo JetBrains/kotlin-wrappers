@@ -1,4 +1,4 @@
 package electron.renderer
 
 
-typealias Request = electron.Request
+typealias Request = electron.core.Request

@@ -1,4 +1,4 @@
 package electron.main
 
 
-typealias TouchBarButton = electron.TouchBarButton
+typealias TouchBarButton = electron.core.TouchBarButton

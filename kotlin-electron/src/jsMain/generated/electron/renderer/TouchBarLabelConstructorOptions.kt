@@ -1,4 +1,4 @@
 package electron.renderer
 
 
-typealias TouchBarLabelConstructorOptions = electron.TouchBarLabelConstructorOptions
+typealias TouchBarLabelConstructorOptions = electron.core.TouchBarLabelConstructorOptions

@@ -1,3 +1,3 @@
 package electron.main
 
-typealias Debugger = electron.Debugger
+typealias Debugger = electron.core.Debugger

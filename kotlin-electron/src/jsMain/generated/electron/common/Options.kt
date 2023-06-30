@@ -1,4 +1,4 @@
 package electron.common
 
 
-typealias Options = electron.Options
+typealias Options = electron.core.Options

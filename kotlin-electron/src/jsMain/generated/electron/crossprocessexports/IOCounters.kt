@@ -1,4 +1,4 @@
 package electron.crossprocessexports
 
 
-typealias IOCounters = electron.IOCounters
+typealias IOCounters = electron.core.IOCounters

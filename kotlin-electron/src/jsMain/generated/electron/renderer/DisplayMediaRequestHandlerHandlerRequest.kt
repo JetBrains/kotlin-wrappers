@@ -1,4 +1,4 @@
 package electron.renderer
 
 
-typealias DisplayMediaRequestHandlerHandlerRequest = electron.DisplayMediaRequestHandlerHandlerRequest
+typealias DisplayMediaRequestHandlerHandlerRequest = electron.core.DisplayMediaRequestHandlerHandlerRequest

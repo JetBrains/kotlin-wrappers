@@ -1,4 +1,4 @@
 package electron.common
 
 
-typealias DevicePermissionHandlerHandlerDetails = electron.DevicePermissionHandlerHandlerDetails
+typealias DevicePermissionHandlerHandlerDetails = electron.core.DevicePermissionHandlerHandlerDetails

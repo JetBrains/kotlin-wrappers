@@ -1,3 +1,3 @@
 package electron.main
 
-typealias Session = electron.Session
+typealias Session = electron.core.Session

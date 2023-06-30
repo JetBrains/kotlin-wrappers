@@ -1,4 +1,4 @@
 package electron.main
 
 
-typealias AnimationSettings = electron.AnimationSettings
+typealias AnimationSettings = electron.core.AnimationSettings

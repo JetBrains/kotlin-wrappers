@@ -1,3 +1,3 @@
 package electron.crossprocessexports
 
-typealias WebFrame = electron.WebFrame
+typealias WebFrame = electron.core.WebFrame

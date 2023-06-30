@@ -1,4 +1,4 @@
 package electron.crossprocessexports
 
 
-typealias SaveDialogOptions = electron.SaveDialogOptions
+typealias SaveDialogOptions = electron.core.SaveDialogOptions

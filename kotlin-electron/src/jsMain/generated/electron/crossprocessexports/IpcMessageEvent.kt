@@ -1,4 +1,4 @@
 package electron.crossprocessexports
 
 
-typealias IpcMessageEvent = electron.IpcMessageEvent
+typealias IpcMessageEvent = electron.core.IpcMessageEvent

@@ -1,4 +1,4 @@
 package electron.common
 
 
-typealias ImportCertificateOptions = electron.ImportCertificateOptions
+typealias ImportCertificateOptions = electron.core.ImportCertificateOptions

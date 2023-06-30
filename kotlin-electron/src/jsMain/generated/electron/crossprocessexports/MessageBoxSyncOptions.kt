@@ -1,4 +1,4 @@
 package electron.crossprocessexports
 
 
-typealias MessageBoxSyncOptions = electron.MessageBoxSyncOptions
+typealias MessageBoxSyncOptions = electron.core.MessageBoxSyncOptions

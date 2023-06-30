@@ -1,4 +1,4 @@
 package electron.crossprocessexports
 
 
-typealias Point = electron.Point
+typealias Point = electron.core.Point

@@ -1,4 +1,4 @@
 package electron.renderer
 
 
-typealias Referrer = electron.Referrer
+typealias Referrer = electron.core.Referrer

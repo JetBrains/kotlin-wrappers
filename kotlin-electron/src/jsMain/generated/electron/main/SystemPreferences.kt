@@ -1,3 +1,3 @@
 package electron.main
 
-typealias SystemPreferences = electron.SystemPreferences
+typealias SystemPreferences = electron.core.SystemPreferences

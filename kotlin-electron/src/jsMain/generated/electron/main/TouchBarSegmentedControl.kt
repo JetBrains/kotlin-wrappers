@@ -1,3 +1,3 @@
 package electron.main
 
-typealias TouchBarSegmentedControl = electron.TouchBarSegmentedControl
+typealias TouchBarSegmentedControl = electron.core.TouchBarSegmentedControl

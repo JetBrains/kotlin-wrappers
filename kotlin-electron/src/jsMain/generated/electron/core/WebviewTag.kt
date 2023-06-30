@@ -274,7 +274,7 @@ external interface WebviewTag {
      * Captures a snapshot of the page within `rect`. Omitting `rect` will capture the
      * whole visible page.
      */
-    fun capturePage(rect: Rectangle = definedExternally): Promise<electron.NativeImage>
+    fun capturePage(rect: Rectangle = definedExternally): Promise<NativeImage>
 
     /**
      * Clears the navigation history.

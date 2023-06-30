@@ -1,4 +1,4 @@
 package electron.main
 
 
-typealias ResizeOptions = electron.ResizeOptions
+typealias ResizeOptions = electron.core.ResizeOptions

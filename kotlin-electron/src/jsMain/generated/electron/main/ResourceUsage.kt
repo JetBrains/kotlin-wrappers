@@ -1,4 +1,4 @@
 package electron.main
 
 
-typealias ResourceUsage = electron.ResourceUsage
+typealias ResourceUsage = electron.core.ResourceUsage

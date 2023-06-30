@@ -1,4 +1,4 @@
 package electron.renderer
 
 
-typealias DidNavigateEvent = electron.DidNavigateEvent
+typealias DidNavigateEvent = electron.core.DidNavigateEvent

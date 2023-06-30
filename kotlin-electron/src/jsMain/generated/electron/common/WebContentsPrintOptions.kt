@@ -1,4 +1,4 @@
 package electron.common
 
 
-typealias WebContentsPrintOptions = electron.WebContentsPrintOptions
+typealias WebContentsPrintOptions = electron.core.WebContentsPrintOptions

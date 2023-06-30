@@ -1,4 +1,4 @@
 package electron.renderer
 
 
-typealias JumpListCategory = electron.JumpListCategory
+typealias JumpListCategory = electron.core.JumpListCategory

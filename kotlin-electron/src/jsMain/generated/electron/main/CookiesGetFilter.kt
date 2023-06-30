@@ -1,4 +1,4 @@
 package electron.main
 
 
-typealias CookiesGetFilter = electron.CookiesGetFilter
+typealias CookiesGetFilter = electron.core.CookiesGetFilter

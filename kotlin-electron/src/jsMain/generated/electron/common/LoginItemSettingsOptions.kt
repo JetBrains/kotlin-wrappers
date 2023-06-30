@@ -1,4 +1,4 @@
 package electron.common
 
 
-typealias LoginItemSettingsOptions = electron.LoginItemSettingsOptions
+typealias LoginItemSettingsOptions = electron.core.LoginItemSettingsOptions

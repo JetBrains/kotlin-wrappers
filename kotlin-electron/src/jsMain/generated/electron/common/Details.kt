@@ -1,4 +1,4 @@
 package electron.common
 
 
-typealias Details = electron.Details
+typealias Details = electron.core.Details

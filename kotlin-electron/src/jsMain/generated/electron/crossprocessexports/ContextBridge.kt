@@ -1,4 +1,4 @@
 package electron.crossprocessexports
 
 
-typealias ContextBridge = electron.ContextBridge
+typealias ContextBridge = electron.core.ContextBridge

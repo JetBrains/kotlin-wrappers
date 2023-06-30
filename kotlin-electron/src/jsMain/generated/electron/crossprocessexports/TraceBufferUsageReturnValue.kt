@@ -1,4 +1,4 @@
 package electron.crossprocessexports
 
 
-typealias TraceBufferUsageReturnValue = electron.TraceBufferUsageReturnValue
+typealias TraceBufferUsageReturnValue = electron.core.TraceBufferUsageReturnValue

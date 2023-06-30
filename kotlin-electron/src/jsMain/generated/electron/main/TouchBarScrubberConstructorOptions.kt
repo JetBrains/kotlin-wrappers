@@ -1,4 +1,4 @@
 package electron.main
 
 
-typealias TouchBarScrubberConstructorOptions = electron.TouchBarScrubberConstructorOptions
+typealias TouchBarScrubberConstructorOptions = electron.core.TouchBarScrubberConstructorOptions

@@ -1,4 +1,4 @@
 package electron.main
 
 
-typealias GPUFeatureStatus = electron.GPUFeatureStatus
+typealias GPUFeatureStatus = electron.core.GPUFeatureStatus

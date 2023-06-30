@@ -1,4 +1,4 @@
 package electron.main
 
 
-typealias DidFrameNavigateEvent = electron.DidFrameNavigateEvent
+typealias DidFrameNavigateEvent = electron.core.DidFrameNavigateEvent

@@ -1,4 +1,4 @@
 package electron.crossprocessexports
 
 
-typealias PreconnectOptions = electron.PreconnectOptions
+typealias PreconnectOptions = electron.core.PreconnectOptions

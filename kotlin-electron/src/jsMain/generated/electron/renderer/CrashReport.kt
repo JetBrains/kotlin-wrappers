@@ -1,3 +1,3 @@
 package electron.renderer
 
-typealias CrashReport = electron.CrashReport
+typealias CrashReport = electron.core.CrashReport

@@ -1,4 +1,4 @@
 package electron.crossprocessexports
 
 
-typealias CPUUsage = electron.CPUUsage
+typealias CPUUsage = electron.core.CPUUsage

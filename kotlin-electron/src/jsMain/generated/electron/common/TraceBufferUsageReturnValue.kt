@@ -1,4 +1,4 @@
 package electron.common
 
 
-typealias TraceBufferUsageReturnValue = electron.TraceBufferUsageReturnValue
+typealias TraceBufferUsageReturnValue = electron.core.TraceBufferUsageReturnValue

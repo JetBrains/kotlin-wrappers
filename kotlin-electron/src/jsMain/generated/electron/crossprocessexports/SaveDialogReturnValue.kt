@@ -1,4 +1,4 @@
 package electron.crossprocessexports
 
 
-typealias SaveDialogReturnValue = electron.SaveDialogReturnValue
+typealias SaveDialogReturnValue = electron.core.SaveDialogReturnValue

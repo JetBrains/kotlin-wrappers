@@ -1,3 +1,3 @@
 package electron.main
 
-typealias IncomingMessage = electron.IncomingMessage
+typealias IncomingMessage = electron.core.IncomingMessage

@@ -1,4 +1,4 @@
 package electron.main
 
 
-typealias DidRedirectNavigationEvent = electron.DidRedirectNavigationEvent
+typealias DidRedirectNavigationEvent = electron.core.DidRedirectNavigationEvent

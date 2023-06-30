@@ -1,4 +1,4 @@
 package electron.crossprocessexports
 
 
-typealias CreateFromBufferOptions = electron.CreateFromBufferOptions
+typealias CreateFromBufferOptions = electron.core.CreateFromBufferOptions

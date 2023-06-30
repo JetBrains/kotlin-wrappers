@@ -1,3 +1,3 @@
 package electron.renderer
 
-typealias MessageBoxOptions = electron.MessageBoxOptions
+typealias MessageBoxOptions = electron.core.MessageBoxOptions

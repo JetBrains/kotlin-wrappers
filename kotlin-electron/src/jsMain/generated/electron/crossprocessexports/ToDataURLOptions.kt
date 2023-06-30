@@ -1,4 +1,4 @@
 package electron.crossprocessexports
 
 
-typealias ToDataURLOptions = electron.ToDataURLOptions
+typealias ToDataURLOptions = electron.core.ToDataURLOptions

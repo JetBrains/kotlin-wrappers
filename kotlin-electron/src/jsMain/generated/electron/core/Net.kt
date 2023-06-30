@@ -31,7 +31,7 @@ external interface Net {
      * This method will resolve hosts from the default session. To resolve a host from
      * another session, use ses.resolveHost().
      */
-    fun resolveHost(host: String, options: ResolveHostOptions = definedExternally): Promise<electron.ResolvedHost>
+    fun resolveHost(host: String, options: ResolveHostOptions = definedExternally): Promise<ResolvedHost>
 
     /**
      * A `boolean` property. Whether there is currently internet connection.

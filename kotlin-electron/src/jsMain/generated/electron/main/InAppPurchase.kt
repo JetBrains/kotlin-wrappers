@@ -1,3 +1,3 @@
 package electron.main
 
-typealias InAppPurchase = electron.InAppPurchase
+typealias InAppPurchase = electron.core.InAppPurchase

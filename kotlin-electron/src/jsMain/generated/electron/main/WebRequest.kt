@@ -1,4 +1,4 @@
 package electron.main
 
 
-typealias WebRequest = electron.WebRequest
+typealias WebRequest = electron.core.WebRequest

@@ -1,3 +1,3 @@
 package electron.common
 
-typealias CrashReport = electron.CrashReport
+typealias CrashReport = electron.core.CrashReport

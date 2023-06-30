@@ -1,4 +1,4 @@
 package electron.renderer
 
 
-typealias MouseWheelInputEvent = electron.MouseWheelInputEvent
+typealias MouseWheelInputEvent = electron.core.MouseWheelInputEvent

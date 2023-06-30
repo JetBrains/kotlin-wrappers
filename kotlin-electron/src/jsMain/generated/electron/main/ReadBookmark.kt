@@ -1,4 +1,4 @@
 package electron.main
 
 
-typealias ReadBookmark = electron.ReadBookmark
+typealias ReadBookmark = electron.core.ReadBookmark

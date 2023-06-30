@@ -3,4 +3,4 @@
 package electron.crossprocessexports
 
 
-open external class MessageChannelMain : electron.MessageChannelMain
+open external class MessageChannelMain : electron.core.MessageChannelMain

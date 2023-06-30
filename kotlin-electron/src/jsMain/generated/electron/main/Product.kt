@@ -1,4 +1,4 @@
 package electron.main
 
 
-typealias Product = electron.Product
+typealias Product = electron.core.Product

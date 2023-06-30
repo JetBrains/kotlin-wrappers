@@ -1,4 +1,4 @@
 package electron.renderer
 
 
-typealias TitleOptions = electron.TitleOptions
+typealias TitleOptions = electron.core.TitleOptions

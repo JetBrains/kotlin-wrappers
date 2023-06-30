@@ -1,4 +1,4 @@
 package electron.crossprocessexports
 
 
-typealias ClientRequestConstructorOptions = electron.ClientRequestConstructorOptions
+typealias ClientRequestConstructorOptions = electron.core.ClientRequestConstructorOptions

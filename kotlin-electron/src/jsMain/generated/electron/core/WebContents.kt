@@ -1419,7 +1419,7 @@ external class WebContents : NodeEventEmitter {
      * hidden and the capturer count is non-zero. If you would like the page to stay
      * hidden, you should ensure that `stayHidden` is set to true.
      */
-    fun capturePage(rect: Rectangle = definedExternally, opts: Opts = definedExternally): Promise<electron.NativeImage>
+    fun capturePage(rect: Rectangle = definedExternally, opts: Opts = definedExternally): Promise<NativeImage>
 
     /**
      * Clears the navigation history.
@@ -1573,7 +1573,7 @@ external class WebContents : NodeEventEmitter {
      *
      * Resolves with a `PrinterInfo[]`
      */
-    fun getPrintersAsync(): Promise<js.core.ReadonlyArray<electron.PrinterInfo>>
+    fun getPrintersAsync(): Promise<js.core.ReadonlyArray<PrinterInfo>>
 
     /**
      * The Chromium internal `pid` of the associated renderer. Can be compared to the

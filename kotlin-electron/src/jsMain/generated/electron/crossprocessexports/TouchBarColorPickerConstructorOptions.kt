@@ -1,4 +1,4 @@
 package electron.crossprocessexports
 
 
-typealias TouchBarColorPickerConstructorOptions = electron.TouchBarColorPickerConstructorOptions
+typealias TouchBarColorPickerConstructorOptions = electron.core.TouchBarColorPickerConstructorOptions

@@ -1,4 +1,4 @@
 package electron.common
 
 
-typealias ClearStorageDataOptions = electron.ClearStorageDataOptions
+typealias ClearStorageDataOptions = electron.core.ClearStorageDataOptions

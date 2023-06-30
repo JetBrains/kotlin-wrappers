@@ -1,4 +1,4 @@
 package electron.crossprocessexports
 
 
-typealias DevicePermissionHandlerHandlerDetails = electron.DevicePermissionHandlerHandlerDetails
+typealias DevicePermissionHandlerHandlerDetails = electron.core.DevicePermissionHandlerHandlerDetails

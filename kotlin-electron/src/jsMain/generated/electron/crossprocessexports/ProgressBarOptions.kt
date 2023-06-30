@@ -1,4 +1,4 @@
 package electron.crossprocessexports
 
 
-typealias ProgressBarOptions = electron.ProgressBarOptions
+typealias ProgressBarOptions = electron.core.ProgressBarOptions

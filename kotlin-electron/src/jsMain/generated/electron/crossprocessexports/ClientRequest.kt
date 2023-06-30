@@ -1,3 +1,3 @@
 package electron.crossprocessexports
 
-typealias ClientRequest = electron.ClientRequest
+typealias ClientRequest = electron.core.ClientRequest

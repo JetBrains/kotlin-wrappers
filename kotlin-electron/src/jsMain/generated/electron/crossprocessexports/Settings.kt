@@ -1,4 +1,4 @@
 package electron.crossprocessexports
 
 
-typealias Settings = electron.Settings
+typealias Settings = electron.core.Settings

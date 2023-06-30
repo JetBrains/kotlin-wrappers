@@ -1,4 +1,4 @@
 package electron.main
 
 
-typealias PopupOptions = electron.PopupOptions
+typealias PopupOptions = electron.core.PopupOptions

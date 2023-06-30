@@ -1,4 +1,4 @@
 package electron.renderer
 
 
-typealias ProtocolResponse = electron.ProtocolResponse
+typealias ProtocolResponse = electron.core.ProtocolResponse

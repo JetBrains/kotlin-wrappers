@@ -1,4 +1,4 @@
 package electron.common
 
 
-typealias CrashReporter = electron.CrashReporter
+typealias CrashReporter = electron.core.CrashReporter

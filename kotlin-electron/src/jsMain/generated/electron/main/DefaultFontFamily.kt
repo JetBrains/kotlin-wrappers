@@ -1,4 +1,4 @@
 package electron.main
 
 
-typealias DefaultFontFamily = electron.DefaultFontFamily
+typealias DefaultFontFamily = electron.core.DefaultFontFamily

@@ -1,4 +1,4 @@
 package electron.crossprocessexports
 
 
-typealias ThumbarButton = electron.ThumbarButton
+typealias ThumbarButton = electron.core.ThumbarButton

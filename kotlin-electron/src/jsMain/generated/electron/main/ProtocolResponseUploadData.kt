@@ -1,3 +1,3 @@
 package electron.main
 
-typealias ProtocolResponseUploadData = electron.ProtocolResponseUploadData
+typealias ProtocolResponseUploadData = electron.core.ProtocolResponseUploadData

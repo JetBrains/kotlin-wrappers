@@ -1,4 +1,4 @@
 package electron.renderer
 
 
-typealias StartLoggingOptions = electron.StartLoggingOptions
+typealias StartLoggingOptions = electron.core.StartLoggingOptions

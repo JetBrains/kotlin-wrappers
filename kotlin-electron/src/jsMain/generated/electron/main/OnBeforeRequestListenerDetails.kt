@@ -1,4 +1,4 @@
 package electron.main
 
 
-typealias OnBeforeRequestListenerDetails = electron.OnBeforeRequestListenerDetails
+typealias OnBeforeRequestListenerDetails = electron.core.OnBeforeRequestListenerDetails

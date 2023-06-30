@@ -1,4 +1,4 @@
 package electron.renderer
 
 
-typealias Margins = electron.Margins
+typealias Margins = electron.core.Margins

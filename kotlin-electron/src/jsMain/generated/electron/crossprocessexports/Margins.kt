@@ -1,4 +1,4 @@
 package electron.crossprocessexports
 
 
-typealias Margins = electron.Margins
+typealias Margins = electron.core.Margins

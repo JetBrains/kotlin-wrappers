@@ -1,4 +1,4 @@
 package electron.common
 
 
-typealias ClearCodeCachesOptions = electron.ClearCodeCachesOptions
+typealias ClearCodeCachesOptions = electron.core.ClearCodeCachesOptions

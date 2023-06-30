@@ -1,4 +1,4 @@
 package electron.crossprocessexports
 
 
-typealias PrintToPDFOptions = electron.PrintToPDFOptions
+typealias PrintToPDFOptions = electron.core.PrintToPDFOptions

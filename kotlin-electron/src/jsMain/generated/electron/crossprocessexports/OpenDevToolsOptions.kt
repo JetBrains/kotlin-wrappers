@@ -1,4 +1,4 @@
 package electron.crossprocessexports
 
 
-typealias OpenDevToolsOptions = electron.OpenDevToolsOptions
+typealias OpenDevToolsOptions = electron.core.OpenDevToolsOptions

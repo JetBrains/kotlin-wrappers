@@ -1,3 +1,3 @@
 package electron.main
 
-typealias TouchBarOtherItemsProxy = electron.TouchBarOtherItemsProxy
+typealias TouchBarOtherItemsProxy = electron.core.TouchBarOtherItemsProxy

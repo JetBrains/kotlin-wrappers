@@ -1,4 +1,4 @@
 package electron.renderer
 
 
-typealias ServiceWorkerInfo = electron.ServiceWorkerInfo
+typealias ServiceWorkerInfo = electron.core.ServiceWorkerInfo

@@ -1,3 +1,3 @@
 package electron.crossprocessexports
 
-typealias MimeTypedBuffer = electron.MimeTypedBuffer
+typealias MimeTypedBuffer = electron.core.MimeTypedBuffer

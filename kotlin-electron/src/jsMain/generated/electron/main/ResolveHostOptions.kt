@@ -1,4 +1,4 @@
 package electron.main
 
 
-typealias ResolveHostOptions = electron.ResolveHostOptions
+typealias ResolveHostOptions = electron.core.ResolveHostOptions

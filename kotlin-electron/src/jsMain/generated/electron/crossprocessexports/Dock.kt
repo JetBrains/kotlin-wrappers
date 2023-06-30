@@ -1,3 +1,3 @@
 package electron.crossprocessexports
 
-typealias Dock = electron.Dock
+typealias Dock = electron.core.Dock

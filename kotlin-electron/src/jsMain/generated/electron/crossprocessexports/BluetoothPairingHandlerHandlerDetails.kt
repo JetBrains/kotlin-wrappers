@@ -1,4 +1,4 @@
 package electron.crossprocessexports
 
 
-typealias BluetoothPairingHandlerHandlerDetails = electron.BluetoothPairingHandlerHandlerDetails
+typealias BluetoothPairingHandlerHandlerDetails = electron.core.BluetoothPairingHandlerHandlerDetails

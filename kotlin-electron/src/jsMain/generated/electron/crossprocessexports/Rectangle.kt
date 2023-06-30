@@ -1,4 +1,4 @@
 package electron.crossprocessexports
 
 
-typealias Rectangle = electron.Rectangle
+typealias Rectangle = electron.core.Rectangle

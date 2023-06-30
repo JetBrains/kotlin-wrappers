@@ -1,4 +1,4 @@
 package electron.crossprocessexports
 
 
-typealias RegistrationCompletedDetails = electron.RegistrationCompletedDetails
+typealias RegistrationCompletedDetails = electron.core.RegistrationCompletedDetails

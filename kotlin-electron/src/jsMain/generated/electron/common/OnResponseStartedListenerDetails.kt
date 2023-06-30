@@ -1,4 +1,4 @@
 package electron.common
 
 
-typealias OnResponseStartedListenerDetails = electron.OnResponseStartedListenerDetails
+typealias OnResponseStartedListenerDetails = electron.core.OnResponseStartedListenerDetails

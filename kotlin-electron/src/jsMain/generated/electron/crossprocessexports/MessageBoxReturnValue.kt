@@ -1,4 +1,4 @@
 package electron.crossprocessexports
 
 
-typealias MessageBoxReturnValue = electron.MessageBoxReturnValue
+typealias MessageBoxReturnValue = electron.core.MessageBoxReturnValue

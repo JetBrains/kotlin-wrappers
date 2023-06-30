@@ -1,4 +1,4 @@
 package electron.crossprocessexports
 
 
-typealias Result = electron.Result
+typealias Result = electron.core.Result

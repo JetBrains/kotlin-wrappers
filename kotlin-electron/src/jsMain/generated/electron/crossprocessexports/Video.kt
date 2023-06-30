@@ -1,4 +1,4 @@
 package electron.crossprocessexports
 
 
-typealias Video = electron.Video
+typealias Video = electron.core.Video

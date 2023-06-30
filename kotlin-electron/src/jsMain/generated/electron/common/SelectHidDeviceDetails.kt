@@ -1,4 +1,4 @@
 package electron.common
 
 
-typealias SelectHidDeviceDetails = electron.SelectHidDeviceDetails
+typealias SelectHidDeviceDetails = electron.core.SelectHidDeviceDetails

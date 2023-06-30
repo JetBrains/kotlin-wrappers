@@ -1,4 +1,4 @@
 package electron.common
 
 
-typealias OpenDialogOptions = electron.OpenDialogOptions
+typealias OpenDialogOptions = electron.core.OpenDialogOptions

@@ -1,4 +1,4 @@
 package electron.renderer
 
 
-typealias ContextMenuParams = electron.ContextMenuParams
+typealias ContextMenuParams = electron.core.ContextMenuParams

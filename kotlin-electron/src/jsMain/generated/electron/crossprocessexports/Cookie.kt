@@ -1,4 +1,4 @@
 package electron.crossprocessexports
 
 
-typealias Cookie = electron.Cookie
+typealias Cookie = electron.core.Cookie

@@ -1,4 +1,4 @@
 package electron.crossprocessexports
 
 
-typealias InsertCSSOptions = electron.InsertCSSOptions
+typealias InsertCSSOptions = electron.core.InsertCSSOptions

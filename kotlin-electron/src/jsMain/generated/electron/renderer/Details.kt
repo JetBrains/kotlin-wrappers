@@ -1,4 +1,4 @@
 package electron.renderer
 
 
-typealias Details = electron.Details
+typealias Details = electron.core.Details

@@ -1,4 +1,4 @@
 package electron.renderer
 
 
-typealias Privileges = electron.Privileges
+typealias Privileges = electron.core.Privileges

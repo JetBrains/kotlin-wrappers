@@ -1,4 +1,4 @@
 package electron.crossprocessexports
 
 
-typealias BluetoothDevice = electron.BluetoothDevice
+typealias BluetoothDevice = electron.core.BluetoothDevice

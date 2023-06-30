@@ -1,4 +1,4 @@
 package electron.crossprocessexports
 
 
-typealias UsbDeviceAddedDetails = electron.UsbDeviceAddedDetails
+typealias UsbDeviceAddedDetails = electron.core.UsbDeviceAddedDetails

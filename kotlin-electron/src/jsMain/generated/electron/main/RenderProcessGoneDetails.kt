@@ -1,4 +1,4 @@
 package electron.main
 
 
-typealias RenderProcessGoneDetails = electron.RenderProcessGoneDetails
+typealias RenderProcessGoneDetails = electron.core.RenderProcessGoneDetails

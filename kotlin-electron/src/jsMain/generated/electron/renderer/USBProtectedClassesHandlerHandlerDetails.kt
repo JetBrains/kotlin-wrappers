@@ -1,4 +1,4 @@
 package electron.renderer
 
 
-typealias USBProtectedClassesHandlerHandlerDetails = electron.USBProtectedClassesHandlerHandlerDetails
+typealias USBProtectedClassesHandlerHandlerDetails = electron.core.USBProtectedClassesHandlerHandlerDetails

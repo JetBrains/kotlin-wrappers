@@ -1,4 +1,4 @@
 package electron.crossprocessexports
 
 
-typealias SourcesOptions = electron.SourcesOptions
+typealias SourcesOptions = electron.core.SourcesOptions

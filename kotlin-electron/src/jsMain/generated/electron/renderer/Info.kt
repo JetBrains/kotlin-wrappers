@@ -1,4 +1,4 @@
 package electron.renderer
 
 
-typealias Info = electron.Info
+typealias Info = electron.core.Info

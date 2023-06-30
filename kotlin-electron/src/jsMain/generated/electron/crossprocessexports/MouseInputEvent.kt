@@ -1,4 +1,4 @@
 package electron.crossprocessexports
 
 
-typealias MouseInputEvent = electron.MouseInputEvent
+typealias MouseInputEvent = electron.core.MouseInputEvent

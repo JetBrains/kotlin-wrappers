@@ -1,4 +1,4 @@
 package electron.crossprocessexports
 
 
-typealias CallbackResponse = electron.CallbackResponse
+typealias CallbackResponse = electron.core.CallbackResponse

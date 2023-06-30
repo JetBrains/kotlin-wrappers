@@ -1,3 +1,3 @@
 package electron.crossprocessexports
 
-typealias CrashReport = electron.CrashReport
+typealias CrashReport = electron.core.CrashReport

@@ -1,3 +1,3 @@
 package electron.crossprocessexports
 
-typealias DesktopCapturer = electron.DesktopCapturer
+typealias DesktopCapturer = electron.core.DesktopCapturer

@@ -1,4 +1,4 @@
 package electron.crossprocessexports
 
 
-typealias SerialPortRevokedDetails = electron.SerialPortRevokedDetails
+typealias SerialPortRevokedDetails = electron.core.SerialPortRevokedDetails

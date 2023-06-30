@@ -1,4 +1,4 @@
 package electron.renderer
 
 
-typealias ConfigureHostResolverOptions = electron.ConfigureHostResolverOptions
+typealias ConfigureHostResolverOptions = electron.core.ConfigureHostResolverOptions

@@ -1,4 +1,4 @@
 package electron.crossprocessexports
 
 
-typealias ResizeOptions = electron.ResizeOptions
+typealias ResizeOptions = electron.core.ResizeOptions

@@ -1,4 +1,4 @@
 package electron.common
 
 
-typealias ShortcutDetails = electron.ShortcutDetails
+typealias ShortcutDetails = electron.core.ShortcutDetails

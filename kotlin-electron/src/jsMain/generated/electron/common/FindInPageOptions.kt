@@ -1,4 +1,4 @@
 package electron.common
 
 
-typealias FindInPageOptions = electron.FindInPageOptions
+typealias FindInPageOptions = electron.core.FindInPageOptions

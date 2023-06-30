@@ -1,4 +1,4 @@
 package electron.main
 
 
-typealias ProcessMemoryInfo = electron.ProcessMemoryInfo
+typealias ProcessMemoryInfo = electron.core.ProcessMemoryInfo

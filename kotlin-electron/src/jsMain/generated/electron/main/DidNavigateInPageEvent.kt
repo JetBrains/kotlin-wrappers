@@ -1,4 +1,4 @@
 package electron.main
 
 
-typealias DidNavigateInPageEvent = electron.DidNavigateInPageEvent
+typealias DidNavigateInPageEvent = electron.core.DidNavigateInPageEvent

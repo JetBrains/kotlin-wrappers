@@ -1,4 +1,4 @@
 package electron.main
 
 
-typealias GlobalShortcut = electron.GlobalShortcut
+typealias GlobalShortcut = electron.core.GlobalShortcut

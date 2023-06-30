@@ -1,3 +1,3 @@
 package electron.main
 
-typealias Net = electron.Net
+typealias Net = electron.core.Net

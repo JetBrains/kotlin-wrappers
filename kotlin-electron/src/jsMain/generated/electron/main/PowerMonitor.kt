@@ -1,4 +1,4 @@
 package electron.main
 
 
-typealias PowerMonitor = electron.PowerMonitor
+typealias PowerMonitor = electron.core.PowerMonitor

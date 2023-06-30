@@ -1,4 +1,4 @@
 package electron.common
 
 
-typealias MessageDetails = electron.MessageDetails
+typealias MessageDetails = electron.core.MessageDetails

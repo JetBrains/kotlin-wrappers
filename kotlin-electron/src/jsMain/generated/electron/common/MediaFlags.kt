@@ -1,4 +1,4 @@
 package electron.common
 
 
-typealias MediaFlags = electron.MediaFlags
+typealias MediaFlags = electron.core.MediaFlags

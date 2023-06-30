@@ -1,4 +1,4 @@
 package electron.renderer
 
 
-typealias Options = electron.Options
+typealias Options = electron.core.Options

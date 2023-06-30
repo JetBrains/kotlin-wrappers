@@ -1,3 +1,3 @@
 package electron.crossprocessexports
 
-typealias NativeImage = electron.NativeImage
+typealias NativeImage = electron.core.NativeImage

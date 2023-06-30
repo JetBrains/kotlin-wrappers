@@ -1,4 +1,4 @@
 package electron.crossprocessexports
 
 
-typealias DidFrameNavigateEvent = electron.DidFrameNavigateEvent
+typealias DidFrameNavigateEvent = electron.core.DidFrameNavigateEvent

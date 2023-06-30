@@ -1,4 +1,4 @@
 package electron.renderer
 
 
-typealias SelectUsbDeviceDetails = electron.SelectUsbDeviceDetails
+typealias SelectUsbDeviceDetails = electron.core.SelectUsbDeviceDetails

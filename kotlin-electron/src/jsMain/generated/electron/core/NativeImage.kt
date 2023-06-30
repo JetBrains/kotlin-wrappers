@@ -185,7 +185,7 @@ external class NativeImage {
          *
          * @platform darwin,win32
          */
-        fun createThumbnailFromPath(path: String, size: Size): Promise<electron.NativeImage>
+        fun createThumbnailFromPath(path: String, size: Size): Promise<NativeImage>
     }
 
 }

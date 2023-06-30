@@ -1,4 +1,4 @@
 package electron.renderer
 
 
-typealias FocusOptions = electron.FocusOptions
+typealias FocusOptions = electron.core.FocusOptions

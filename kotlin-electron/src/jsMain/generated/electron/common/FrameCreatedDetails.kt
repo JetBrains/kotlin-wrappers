@@ -1,4 +1,4 @@
 package electron.common
 
 
-typealias FrameCreatedDetails = electron.FrameCreatedDetails
+typealias FrameCreatedDetails = electron.core.FrameCreatedDetails

@@ -1,4 +1,4 @@
 package electron.common
 
 
-typealias TouchBarSegmentedControlConstructorOptions = electron.TouchBarSegmentedControlConstructorOptions
+typealias TouchBarSegmentedControlConstructorOptions = electron.core.TouchBarSegmentedControlConstructorOptions

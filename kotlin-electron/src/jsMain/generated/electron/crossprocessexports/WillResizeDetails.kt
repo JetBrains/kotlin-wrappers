@@ -1,4 +1,4 @@
 package electron.crossprocessexports
 
 
-typealias WillResizeDetails = electron.WillResizeDetails
+typealias WillResizeDetails = electron.core.WillResizeDetails

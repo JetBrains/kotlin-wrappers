@@ -1,4 +1,4 @@
 package electron.common
 
 
-typealias BlinkMemoryInfo = electron.BlinkMemoryInfo
+typealias BlinkMemoryInfo = electron.core.BlinkMemoryInfo

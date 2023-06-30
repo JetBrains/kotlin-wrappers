@@ -1,4 +1,4 @@
 package electron.crossprocessexports
 
 
-typealias LoadFileOptions = electron.LoadFileOptions
+typealias LoadFileOptions = electron.core.LoadFileOptions

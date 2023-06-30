@@ -1,4 +1,4 @@
 package electron.main
 
 
-typealias IpcMessageEvent = electron.IpcMessageEvent
+typealias IpcMessageEvent = electron.core.IpcMessageEvent

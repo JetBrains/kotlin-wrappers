@@ -1,4 +1,4 @@
 package electron.renderer
 
 
-typealias SharedWorkerInfo = electron.SharedWorkerInfo
+typealias SharedWorkerInfo = electron.core.SharedWorkerInfo

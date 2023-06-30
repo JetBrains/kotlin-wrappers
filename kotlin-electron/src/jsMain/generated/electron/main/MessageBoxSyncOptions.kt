@@ -1,4 +1,4 @@
 package electron.main
 
 
-typealias MessageBoxSyncOptions = electron.MessageBoxSyncOptions
+typealias MessageBoxSyncOptions = electron.core.MessageBoxSyncOptions

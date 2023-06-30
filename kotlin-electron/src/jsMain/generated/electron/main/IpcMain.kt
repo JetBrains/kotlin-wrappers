@@ -1,4 +1,4 @@
 package electron.main
 
 
-typealias IpcMain = electron.IpcMain
+typealias IpcMain = electron.core.IpcMain

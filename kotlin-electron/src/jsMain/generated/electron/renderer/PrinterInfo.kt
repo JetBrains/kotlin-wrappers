@@ -1,4 +1,4 @@
 package electron.renderer
 
 
-typealias PrinterInfo = electron.PrinterInfo
+typealias PrinterInfo = electron.core.PrinterInfo

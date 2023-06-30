@@ -1,4 +1,4 @@
 package electron.common
 
 
-typealias HidDeviceRevokedDetails = electron.HidDeviceRevokedDetails
+typealias HidDeviceRevokedDetails = electron.core.HidDeviceRevokedDetails

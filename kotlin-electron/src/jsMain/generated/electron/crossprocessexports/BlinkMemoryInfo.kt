@@ -1,4 +1,4 @@
 package electron.crossprocessexports
 
 
-typealias BlinkMemoryInfo = electron.BlinkMemoryInfo
+typealias BlinkMemoryInfo = electron.core.BlinkMemoryInfo

@@ -1,4 +1,4 @@
 package electron.renderer
 
 
-typealias PurchaseProductOpts = electron.PurchaseProductOpts
+typealias PurchaseProductOpts = electron.core.PurchaseProductOpts

@@ -1,4 +1,4 @@
 package electron.main
 
 
-typealias OnSendHeadersListenerDetails = electron.OnSendHeadersListenerDetails
+typealias OnSendHeadersListenerDetails = electron.core.OnSendHeadersListenerDetails

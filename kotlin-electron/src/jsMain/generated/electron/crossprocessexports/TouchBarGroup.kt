@@ -1,3 +1,3 @@
 package electron.crossprocessexports
 
-typealias TouchBarGroup = electron.TouchBarGroup
+typealias TouchBarGroup = electron.core.TouchBarGroup

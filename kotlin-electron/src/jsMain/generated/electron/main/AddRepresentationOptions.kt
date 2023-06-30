@@ -1,3 +1,3 @@
 package electron.main
 
-typealias AddRepresentationOptions = electron.AddRepresentationOptions
+typealias AddRepresentationOptions = electron.core.AddRepresentationOptions

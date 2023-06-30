@@ -1,4 +1,4 @@
 package electron.renderer
 
 
-typealias BrowserWindowConstructorOptions = electron.BrowserWindowConstructorOptions
+typealias BrowserWindowConstructorOptions = electron.core.BrowserWindowConstructorOptions

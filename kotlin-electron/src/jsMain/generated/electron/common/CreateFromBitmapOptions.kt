@@ -1,4 +1,4 @@
 package electron.common
 
 
-typealias CreateFromBitmapOptions = electron.CreateFromBitmapOptions
+typealias CreateFromBitmapOptions = electron.core.CreateFromBitmapOptions

@@ -1,4 +1,4 @@
 package electron.main
 
 
-typealias WebSource = electron.WebSource
+typealias WebSource = electron.core.WebSource

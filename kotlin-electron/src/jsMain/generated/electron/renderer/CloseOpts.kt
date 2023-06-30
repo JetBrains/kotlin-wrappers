@@ -1,4 +1,4 @@
 package electron.renderer
 
 
-typealias CloseOpts = electron.CloseOpts
+typealias CloseOpts = electron.core.CloseOpts

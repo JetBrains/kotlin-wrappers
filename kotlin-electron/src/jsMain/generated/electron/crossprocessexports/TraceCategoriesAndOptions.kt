@@ -1,4 +1,4 @@
 package electron.crossprocessexports
 
 
-typealias TraceCategoriesAndOptions = electron.TraceCategoriesAndOptions
+typealias TraceCategoriesAndOptions = electron.core.TraceCategoriesAndOptions

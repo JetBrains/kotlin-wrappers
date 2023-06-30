@@ -1,3 +1,3 @@
 package electron.crossprocessexports
 
-typealias SystemPreferences = electron.SystemPreferences
+typealias SystemPreferences = electron.core.SystemPreferences

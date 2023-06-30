@@ -1,4 +1,4 @@
 package electron.renderer
 
 
-typealias ResourceUsage = electron.ResourceUsage
+typealias ResourceUsage = electron.core.ResourceUsage

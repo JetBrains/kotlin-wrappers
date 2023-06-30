@@ -1,4 +1,4 @@
 package electron.crossprocessexports
 
 
-typealias SerialPort = electron.SerialPort
+typealias SerialPort = electron.core.SerialPort

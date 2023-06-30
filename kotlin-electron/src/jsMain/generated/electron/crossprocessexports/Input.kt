@@ -1,4 +1,4 @@
 package electron.crossprocessexports
 
 
-typealias Input = electron.Input
+typealias Input = electron.core.Input

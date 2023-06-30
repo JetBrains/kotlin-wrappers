@@ -1,4 +1,4 @@
 package electron.main
 
 
-typealias InputEvent = electron.InputEvent
+typealias InputEvent = electron.core.InputEvent

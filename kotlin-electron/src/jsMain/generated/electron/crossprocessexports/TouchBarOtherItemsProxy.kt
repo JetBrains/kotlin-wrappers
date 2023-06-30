@@ -1,3 +1,3 @@
 package electron.crossprocessexports
 
-typealias TouchBarOtherItemsProxy = electron.TouchBarOtherItemsProxy
+typealias TouchBarOtherItemsProxy = electron.core.TouchBarOtherItemsProxy

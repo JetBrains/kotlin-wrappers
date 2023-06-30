@@ -1,4 +1,4 @@
 package electron.main
 
 
-typealias PermissionCheckHandlerHandlerDetails = electron.PermissionCheckHandlerHandlerDetails
+typealias PermissionCheckHandlerHandlerDetails = electron.core.PermissionCheckHandlerHandlerDetails

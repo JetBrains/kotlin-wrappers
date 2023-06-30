@@ -1,4 +1,4 @@
 package electron.crossprocessexports
 
 
-typealias SystemMemoryInfo = electron.SystemMemoryInfo
+typealias SystemMemoryInfo = electron.core.SystemMemoryInfo

@@ -1,4 +1,4 @@
 package electron.common
 
 
-typealias WebviewTagPrintOptions = electron.WebviewTagPrintOptions
+typealias WebviewTagPrintOptions = electron.core.WebviewTagPrintOptions

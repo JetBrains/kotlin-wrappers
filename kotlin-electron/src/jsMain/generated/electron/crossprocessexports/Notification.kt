@@ -3,4 +3,4 @@
 package electron.crossprocessexports
 
 
-open external class Notification : electron.Notification
+open external class Notification : electron.core.Notification

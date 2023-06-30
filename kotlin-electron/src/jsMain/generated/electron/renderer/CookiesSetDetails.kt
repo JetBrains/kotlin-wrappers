@@ -1,4 +1,4 @@
 package electron.renderer
 
 
-typealias CookiesSetDetails = electron.CookiesSetDetails
+typealias CookiesSetDetails = electron.core.CookiesSetDetails

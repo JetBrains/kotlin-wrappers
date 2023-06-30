@@ -1,4 +1,4 @@
 package electron.crossprocessexports
 
 
-typealias FromPartitionOptions = electron.FromPartitionOptions
+typealias FromPartitionOptions = electron.core.FromPartitionOptions

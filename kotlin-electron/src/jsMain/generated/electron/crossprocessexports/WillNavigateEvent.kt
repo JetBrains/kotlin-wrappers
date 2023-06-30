@@ -1,4 +1,4 @@
 package electron.crossprocessexports
 
 
-typealias WillNavigateEvent = electron.WillNavigateEvent
+typealias WillNavigateEvent = electron.core.WillNavigateEvent

@@ -1,4 +1,4 @@
 package electron.common
 
 
-typealias CreateFromBufferOptions = electron.CreateFromBufferOptions
+typealias CreateFromBufferOptions = electron.core.CreateFromBufferOptions

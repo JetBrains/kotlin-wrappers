@@ -1,3 +1,3 @@
 package electron.crossprocessexports
 
-typealias AutoUpdater = electron.AutoUpdater
+typealias AutoUpdater = electron.core.AutoUpdater

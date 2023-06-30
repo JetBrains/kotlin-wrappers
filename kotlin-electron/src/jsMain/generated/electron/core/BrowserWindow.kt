@@ -554,7 +554,7 @@ open external class BrowserWindow : NodeEventEmitter {
      * non-zero. If you would like the page to stay hidden, you should ensure that
      * `stayHidden` is set to true.
      */
-    fun capturePage(rect: Rectangle = definedExternally, opts: Opts = definedExternally): Promise<electron.NativeImage>
+    fun capturePage(rect: Rectangle = definedExternally, opts: Opts = definedExternally): Promise<NativeImage>
 
     /**
      * Moves window to the center of the screen.

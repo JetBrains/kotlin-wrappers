@@ -1,4 +1,4 @@
 package electron.renderer
 
 
-typealias PopupOptions = electron.PopupOptions
+typealias PopupOptions = electron.core.PopupOptions

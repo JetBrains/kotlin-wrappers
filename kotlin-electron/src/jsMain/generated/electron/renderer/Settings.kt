@@ -1,4 +1,4 @@
 package electron.renderer
 
 
-typealias Settings = electron.Settings
+typealias Settings = electron.core.Settings

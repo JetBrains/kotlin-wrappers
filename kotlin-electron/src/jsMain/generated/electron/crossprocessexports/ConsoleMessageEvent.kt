@@ -1,4 +1,4 @@
 package electron.crossprocessexports
 
 
-typealias ConsoleMessageEvent = electron.ConsoleMessageEvent
+typealias ConsoleMessageEvent = electron.core.ConsoleMessageEvent

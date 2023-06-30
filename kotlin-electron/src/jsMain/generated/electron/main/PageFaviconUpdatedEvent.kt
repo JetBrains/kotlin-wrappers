@@ -1,4 +1,4 @@
 package electron.main
 
 
-typealias PageFaviconUpdatedEvent = electron.PageFaviconUpdatedEvent
+typealias PageFaviconUpdatedEvent = electron.core.PageFaviconUpdatedEvent

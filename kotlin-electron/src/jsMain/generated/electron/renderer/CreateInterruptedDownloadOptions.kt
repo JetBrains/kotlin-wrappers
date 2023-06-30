@@ -1,4 +1,4 @@
 package electron.renderer
 
 
-typealias CreateInterruptedDownloadOptions = electron.CreateInterruptedDownloadOptions
+typealias CreateInterruptedDownloadOptions = electron.core.CreateInterruptedDownloadOptions

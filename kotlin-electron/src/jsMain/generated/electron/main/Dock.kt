@@ -1,3 +1,3 @@
 package electron.main
 
-typealias Dock = electron.Dock
+typealias Dock = electron.core.Dock

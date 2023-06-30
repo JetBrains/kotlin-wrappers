@@ -1,4 +1,4 @@
 package electron.common
 
 
-typealias WillResizeDetails = electron.WillResizeDetails
+typealias WillResizeDetails = electron.core.WillResizeDetails

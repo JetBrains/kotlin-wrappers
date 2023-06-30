@@ -1,4 +1,4 @@
 package electron.main
 
 
-typealias PowerSaveBlocker = electron.PowerSaveBlocker
+typealias PowerSaveBlocker = electron.core.PowerSaveBlocker

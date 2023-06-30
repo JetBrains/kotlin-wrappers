@@ -1,4 +1,4 @@
 package electron.main
 
 
-typealias USBProtectedClassesHandlerHandlerDetails = electron.USBProtectedClassesHandlerHandlerDetails
+typealias USBProtectedClassesHandlerHandlerDetails = electron.core.USBProtectedClassesHandlerHandlerDetails

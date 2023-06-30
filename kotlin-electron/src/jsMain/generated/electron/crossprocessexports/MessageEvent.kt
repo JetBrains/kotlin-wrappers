@@ -1,4 +1,4 @@
 package electron.crossprocessexports
 
 
-typealias MessageEvent = electron.MessageEvent
+typealias MessageEvent = electron.core.MessageEvent

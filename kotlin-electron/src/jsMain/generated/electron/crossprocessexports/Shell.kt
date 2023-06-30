@@ -1,3 +1,3 @@
 package electron.crossprocessexports
 
-typealias Shell = electron.Shell
+typealias Shell = electron.core.Shell

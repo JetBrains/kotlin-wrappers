@@ -1,4 +1,4 @@
 package electron.main
 
 
-typealias Transaction = electron.Transaction
+typealias Transaction = electron.core.Transaction

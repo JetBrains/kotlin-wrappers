@@ -1,4 +1,4 @@
 package electron.renderer
 
 
-typealias CallbackResponse = electron.CallbackResponse
+typealias CallbackResponse = electron.core.CallbackResponse

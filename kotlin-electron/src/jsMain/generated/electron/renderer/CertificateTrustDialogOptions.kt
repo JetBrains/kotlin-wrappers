@@ -1,4 +1,4 @@
 package electron.renderer
 
 
-typealias CertificateTrustDialogOptions = electron.CertificateTrustDialogOptions
+typealias CertificateTrustDialogOptions = electron.core.CertificateTrustDialogOptions

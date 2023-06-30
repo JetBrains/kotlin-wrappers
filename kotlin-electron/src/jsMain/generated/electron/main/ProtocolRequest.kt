@@ -1,4 +1,4 @@
 package electron.main
 
 
-typealias ProtocolRequest = electron.ProtocolRequest
+typealias ProtocolRequest = electron.core.ProtocolRequest

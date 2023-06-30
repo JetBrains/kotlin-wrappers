@@ -1,4 +1,4 @@
 package electron.main
 
 
-typealias SerialPortRevokedDetails = electron.SerialPortRevokedDetails
+typealias SerialPortRevokedDetails = electron.core.SerialPortRevokedDetails

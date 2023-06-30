@@ -1,4 +1,4 @@
 package electron.main
 
 
-typealias AppDetailsOptions = electron.AppDetailsOptions
+typealias AppDetailsOptions = electron.core.AppDetailsOptions

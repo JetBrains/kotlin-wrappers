@@ -1,4 +1,4 @@
 package electron.crossprocessexports
 
 
-typealias ContinueActivityDetails = electron.ContinueActivityDetails
+typealias ContinueActivityDetails = electron.core.ContinueActivityDetails

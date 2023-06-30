@@ -1,4 +1,4 @@
 package electron.crossprocessexports
 
 
-typealias BrowserViewConstructorOptions = electron.BrowserViewConstructorOptions
+typealias BrowserViewConstructorOptions = electron.core.BrowserViewConstructorOptions

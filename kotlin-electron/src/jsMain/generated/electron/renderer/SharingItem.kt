@@ -1,4 +1,4 @@
 package electron.renderer
 
 
-typealias SharingItem = electron.SharingItem
+typealias SharingItem = electron.core.SharingItem

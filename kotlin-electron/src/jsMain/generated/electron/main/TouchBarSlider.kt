@@ -1,3 +1,3 @@
 package electron.main
 
-typealias TouchBarSlider = electron.TouchBarSlider
+typealias TouchBarSlider = electron.core.TouchBarSlider

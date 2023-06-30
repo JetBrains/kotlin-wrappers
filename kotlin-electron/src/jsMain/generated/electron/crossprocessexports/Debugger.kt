@@ -1,3 +1,3 @@
 package electron.crossprocessexports
 
-typealias Debugger = electron.Debugger
+typealias Debugger = electron.core.Debugger

@@ -1,4 +1,4 @@
 package electron.renderer
 
 
-typealias LoadExtensionOptions = electron.LoadExtensionOptions
+typealias LoadExtensionOptions = electron.core.LoadExtensionOptions

@@ -1,4 +1,4 @@
 package electron.common
 
 
-typealias IOCounters = electron.IOCounters
+typealias IOCounters = electron.core.IOCounters

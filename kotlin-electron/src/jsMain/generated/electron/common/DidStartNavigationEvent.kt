@@ -1,4 +1,4 @@
 package electron.common
 
 
-typealias DidStartNavigationEvent = electron.DidStartNavigationEvent
+typealias DidStartNavigationEvent = electron.core.DidStartNavigationEvent

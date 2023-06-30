@@ -1,4 +1,4 @@
 package electron.main
 
 
-typealias TitleBarOverlayOptions = electron.TitleBarOverlayOptions
+typealias TitleBarOverlayOptions = electron.core.TitleBarOverlayOptions

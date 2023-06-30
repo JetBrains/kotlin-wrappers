@@ -3,4 +3,4 @@
 package electron.main
 
 
-open external class Menu : electron.Menu
+open external class Menu : electron.core.Menu

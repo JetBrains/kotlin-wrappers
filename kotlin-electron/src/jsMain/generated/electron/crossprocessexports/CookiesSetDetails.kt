@@ -1,4 +1,4 @@
 package electron.crossprocessexports
 
 
-typealias CookiesSetDetails = electron.CookiesSetDetails
+typealias CookiesSetDetails = electron.core.CookiesSetDetails

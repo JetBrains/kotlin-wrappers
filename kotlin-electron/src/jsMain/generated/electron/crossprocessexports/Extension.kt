@@ -1,4 +1,4 @@
 package electron.crossprocessexports
 
 
-typealias Extension = electron.Extension
+typealias Extension = electron.core.Extension

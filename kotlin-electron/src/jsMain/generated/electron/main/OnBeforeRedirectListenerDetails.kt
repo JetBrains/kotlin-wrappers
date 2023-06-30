@@ -1,4 +1,4 @@
 package electron.main
 
 
-typealias OnBeforeRedirectListenerDetails = electron.OnBeforeRedirectListenerDetails
+typealias OnBeforeRedirectListenerDetails = electron.core.OnBeforeRedirectListenerDetails

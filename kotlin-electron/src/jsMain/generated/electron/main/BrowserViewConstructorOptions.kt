@@ -1,4 +1,4 @@
 package electron.main
 
 
-typealias BrowserViewConstructorOptions = electron.BrowserViewConstructorOptions
+typealias BrowserViewConstructorOptions = electron.core.BrowserViewConstructorOptions

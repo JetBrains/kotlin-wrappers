@@ -3,4 +3,4 @@
 package electron.main
 
 
-open external class Tray : electron.Tray
+open external class Tray : electron.core.Tray

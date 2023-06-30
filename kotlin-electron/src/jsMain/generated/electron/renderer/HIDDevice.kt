@@ -1,4 +1,4 @@
 package electron.renderer
 
 
-typealias HIDDevice = electron.HIDDevice
+typealias HIDDevice = electron.core.HIDDevice

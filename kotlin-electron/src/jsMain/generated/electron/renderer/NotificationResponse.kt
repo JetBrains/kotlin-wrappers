@@ -1,4 +1,4 @@
 package electron.renderer
 
 
-typealias NotificationResponse = electron.NotificationResponse
+typealias NotificationResponse = electron.core.NotificationResponse

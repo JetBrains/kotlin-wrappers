@@ -1,4 +1,4 @@
 package electron.common
 
 
-typealias Settings = electron.Settings
+typealias Settings = electron.core.Settings

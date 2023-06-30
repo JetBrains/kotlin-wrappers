@@ -1,4 +1,4 @@
 package electron.crossprocessexports
 
 
-typealias PageTitleUpdatedEvent = electron.PageTitleUpdatedEvent
+typealias PageTitleUpdatedEvent = electron.core.PageTitleUpdatedEvent

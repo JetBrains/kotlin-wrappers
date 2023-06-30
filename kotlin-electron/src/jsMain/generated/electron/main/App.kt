@@ -1,3 +1,3 @@
 package electron.main
 
-typealias App = electron.App
+typealias App = electron.core.App

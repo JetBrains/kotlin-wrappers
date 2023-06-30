@@ -1,4 +1,4 @@
 package electron.renderer
 
 
-typealias Item = electron.Item
+typealias Item = electron.core.Item

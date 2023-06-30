@@ -1,4 +1,4 @@
 package electron.main
 
 
-typealias ApplicationInfoForProtocolReturnValue = electron.ApplicationInfoForProtocolReturnValue
+typealias ApplicationInfoForProtocolReturnValue = electron.core.ApplicationInfoForProtocolReturnValue

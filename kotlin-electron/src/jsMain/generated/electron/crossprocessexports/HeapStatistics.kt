@@ -1,4 +1,4 @@
 package electron.crossprocessexports
 
 
-typealias HeapStatistics = electron.HeapStatistics
+typealias HeapStatistics = electron.core.HeapStatistics

@@ -1,3 +1,3 @@
 package electron.main
 
-typealias WebFrameMain = electron.WebFrameMain
+typealias WebFrameMain = electron.core.WebFrameMain

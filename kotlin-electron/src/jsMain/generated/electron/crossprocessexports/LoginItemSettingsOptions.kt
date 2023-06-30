@@ -1,4 +1,4 @@
 package electron.crossprocessexports
 
 
-typealias LoginItemSettingsOptions = electron.LoginItemSettingsOptions
+typealias LoginItemSettingsOptions = electron.core.LoginItemSettingsOptions

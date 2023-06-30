@@ -1,4 +1,4 @@
 package electron.main
 
 
-typealias OnCompletedListenerDetails = electron.OnCompletedListenerDetails
+typealias OnCompletedListenerDetails = electron.core.OnCompletedListenerDetails

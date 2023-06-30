@@ -1,3 +1,3 @@
 package electron.crossprocessexports
 
-typealias ServiceWorkers = electron.ServiceWorkers
+typealias ServiceWorkers = electron.core.ServiceWorkers

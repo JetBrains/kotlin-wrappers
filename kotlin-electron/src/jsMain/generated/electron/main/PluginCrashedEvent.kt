@@ -1,4 +1,4 @@
 package electron.main
 
 
-typealias PluginCrashedEvent = electron.PluginCrashedEvent
+typealias PluginCrashedEvent = electron.core.PluginCrashedEvent

@@ -1,4 +1,4 @@
 package electron.common
 
 
-typealias ScrubberItem = electron.ScrubberItem
+typealias ScrubberItem = electron.core.ScrubberItem

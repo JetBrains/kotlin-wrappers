@@ -1,4 +1,4 @@
 package electron.main
 
 
-typealias ContextMenuEvent = electron.ContextMenuEvent
+typealias ContextMenuEvent = electron.core.ContextMenuEvent

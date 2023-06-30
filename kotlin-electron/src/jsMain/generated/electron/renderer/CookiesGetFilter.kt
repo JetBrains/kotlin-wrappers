@@ -1,4 +1,4 @@
 package electron.renderer
 
 
-typealias CookiesGetFilter = electron.CookiesGetFilter
+typealias CookiesGetFilter = electron.core.CookiesGetFilter

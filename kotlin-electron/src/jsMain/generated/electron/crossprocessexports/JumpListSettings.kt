@@ -1,4 +1,4 @@
 package electron.crossprocessexports
 
 
-typealias JumpListSettings = electron.JumpListSettings
+typealias JumpListSettings = electron.core.JumpListSettings

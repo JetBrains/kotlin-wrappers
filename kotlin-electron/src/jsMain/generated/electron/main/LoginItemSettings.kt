@@ -1,4 +1,4 @@
 package electron.main
 
 
-typealias LoginItemSettings = electron.LoginItemSettings
+typealias LoginItemSettings = electron.core.LoginItemSettings

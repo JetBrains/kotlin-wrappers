@@ -1,4 +1,4 @@
 package electron.crossprocessexports
 
 
-typealias GPUFeatureStatus = electron.GPUFeatureStatus
+typealias GPUFeatureStatus = electron.core.GPUFeatureStatus

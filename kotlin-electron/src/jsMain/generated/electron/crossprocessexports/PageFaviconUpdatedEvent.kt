@@ -1,4 +1,4 @@
 package electron.crossprocessexports
 
 
-typealias PageFaviconUpdatedEvent = electron.PageFaviconUpdatedEvent
+typealias PageFaviconUpdatedEvent = electron.core.PageFaviconUpdatedEvent

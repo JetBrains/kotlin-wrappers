@@ -1,4 +1,4 @@
 package electron.crossprocessexports
 
 
-typealias Config = electron.Config
+typealias Config = electron.core.Config

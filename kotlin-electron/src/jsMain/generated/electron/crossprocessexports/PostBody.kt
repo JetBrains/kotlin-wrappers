@@ -1,4 +1,4 @@
 package electron.crossprocessexports
 
 
-typealias PostBody = electron.PostBody
+typealias PostBody = electron.core.PostBody

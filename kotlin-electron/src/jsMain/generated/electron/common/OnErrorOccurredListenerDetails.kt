@@ -1,4 +1,4 @@
 package electron.common
 
 
-typealias OnErrorOccurredListenerDetails = electron.OnErrorOccurredListenerDetails
+typealias OnErrorOccurredListenerDetails = electron.core.OnErrorOccurredListenerDetails

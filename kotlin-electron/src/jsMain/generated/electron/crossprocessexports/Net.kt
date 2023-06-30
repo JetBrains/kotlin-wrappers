@@ -1,3 +1,3 @@
 package electron.crossprocessexports
 
-typealias Net = electron.Net
+typealias Net = electron.core.Net

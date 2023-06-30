@@ -1,4 +1,4 @@
 package electron.main
 
 
-typealias JumpListCategory = electron.JumpListCategory
+typealias JumpListCategory = electron.core.JumpListCategory

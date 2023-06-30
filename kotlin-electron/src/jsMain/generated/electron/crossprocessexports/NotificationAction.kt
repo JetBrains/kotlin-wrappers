@@ -1,4 +1,4 @@
 package electron.crossprocessexports
 
 
-typealias NotificationAction = electron.NotificationAction
+typealias NotificationAction = electron.core.NotificationAction

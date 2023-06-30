@@ -1,3 +1,3 @@
 package electron.main
 
-typealias IpcRendererEvent = electron.IpcRendererEvent
+typealias IpcRendererEvent = electron.core.IpcRendererEvent

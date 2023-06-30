@@ -1,4 +1,4 @@
 package electron.common
 
 
-typealias MessageEvent = electron.MessageEvent
+typealias MessageEvent = electron.core.MessageEvent

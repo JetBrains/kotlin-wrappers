@@ -1,3 +1,3 @@
 package electron.main
 
-typealias PushNotifications = electron.PushNotifications
+typealias PushNotifications = electron.core.PushNotifications

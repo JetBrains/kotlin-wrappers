@@ -1,4 +1,4 @@
 package electron.renderer
 
 
-typealias ImportCertificateOptions = electron.ImportCertificateOptions
+typealias ImportCertificateOptions = electron.core.ImportCertificateOptions

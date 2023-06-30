@@ -1,4 +1,4 @@
 package electron.renderer
 
 
-typealias DisplayBalloonOptions = electron.DisplayBalloonOptions
+typealias DisplayBalloonOptions = electron.core.DisplayBalloonOptions

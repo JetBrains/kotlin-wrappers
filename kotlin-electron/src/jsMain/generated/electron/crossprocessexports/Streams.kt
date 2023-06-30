@@ -1,4 +1,4 @@
 package electron.crossprocessexports
 
 
-typealias Streams = electron.Streams
+typealias Streams = electron.core.Streams

@@ -1,4 +1,4 @@
 package electron.main
 
 
-typealias Result = electron.Result
+typealias Result = electron.core.Result

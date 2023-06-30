@@ -1,4 +1,4 @@
 package electron.renderer
 
 
-typealias DidChangeThemeColorEvent = electron.DidChangeThemeColorEvent
+typealias DidChangeThemeColorEvent = electron.core.DidChangeThemeColorEvent

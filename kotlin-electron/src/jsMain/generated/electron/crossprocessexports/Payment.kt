@@ -1,4 +1,4 @@
 package electron.crossprocessexports
 
 
-typealias Payment = electron.Payment
+typealias Payment = electron.core.Payment

@@ -1,4 +1,4 @@
 package electron.main
 
 
-typealias NativeTheme = electron.NativeTheme
+typealias NativeTheme = electron.core.NativeTheme

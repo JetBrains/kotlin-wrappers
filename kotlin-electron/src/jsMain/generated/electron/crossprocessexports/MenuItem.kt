@@ -3,4 +3,4 @@
 package electron.crossprocessexports
 
 
-open external class MenuItem : electron.MenuItem
+open external class MenuItem : electron.core.MenuItem

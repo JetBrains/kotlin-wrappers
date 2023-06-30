@@ -1,4 +1,4 @@
 package electron.renderer
 
 
-typealias TraceConfig = electron.TraceConfig
+typealias TraceConfig = electron.core.TraceConfig

@@ -1,4 +1,4 @@
 package electron.renderer
 
 
-typealias Result = electron.Result
+typealias Result = electron.core.Result

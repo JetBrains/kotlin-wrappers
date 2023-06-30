@@ -1,4 +1,4 @@
 package electron.crossprocessexports
 
 
-typealias ScrubberItem = electron.ScrubberItem
+typealias ScrubberItem = electron.core.ScrubberItem

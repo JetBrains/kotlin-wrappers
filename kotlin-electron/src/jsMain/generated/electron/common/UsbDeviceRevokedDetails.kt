@@ -1,4 +1,4 @@
 package electron.common
 
 
-typealias UsbDeviceRevokedDetails = electron.UsbDeviceRevokedDetails
+typealias UsbDeviceRevokedDetails = electron.core.UsbDeviceRevokedDetails

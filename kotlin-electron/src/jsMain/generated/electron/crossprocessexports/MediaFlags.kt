@@ -1,4 +1,4 @@
 package electron.crossprocessexports
 
 
-typealias MediaFlags = electron.MediaFlags
+typealias MediaFlags = electron.core.MediaFlags

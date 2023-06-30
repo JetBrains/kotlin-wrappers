@@ -1,4 +1,4 @@
 package electron.crossprocessexports
 
 
-typealias NotificationConstructorOptions = electron.NotificationConstructorOptions
+typealias NotificationConstructorOptions = electron.core.NotificationConstructorOptions

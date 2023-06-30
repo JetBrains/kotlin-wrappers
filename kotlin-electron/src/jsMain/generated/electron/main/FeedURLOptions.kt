@@ -1,4 +1,4 @@
 package electron.main
 
 
-typealias FeedURLOptions = electron.FeedURLOptions
+typealias FeedURLOptions = electron.core.FeedURLOptions

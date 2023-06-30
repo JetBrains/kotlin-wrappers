@@ -1,4 +1,4 @@
 package electron.renderer
 
 
-typealias ConsoleMessageEvent = electron.ConsoleMessageEvent
+typealias ConsoleMessageEvent = electron.core.ConsoleMessageEvent

@@ -1,4 +1,4 @@
 package electron.common
 
 
-typealias Task = electron.Task
+typealias Task = electron.core.Task

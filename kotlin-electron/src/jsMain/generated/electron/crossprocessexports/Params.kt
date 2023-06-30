@@ -1,4 +1,4 @@
 package electron.crossprocessexports
 
 
-typealias Params = electron.Params
+typealias Params = electron.core.Params

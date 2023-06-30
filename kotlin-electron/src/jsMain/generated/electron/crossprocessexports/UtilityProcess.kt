@@ -1,3 +1,3 @@
 package electron.crossprocessexports
 
-typealias UtilityProcess = electron.UtilityProcess
+typealias UtilityProcess = electron.core.UtilityProcess

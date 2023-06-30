@@ -1,4 +1,4 @@
 package electron.crossprocessexports
 
 
-typealias TitleBarOverlay = electron.TitleBarOverlay
+typealias TitleBarOverlay = electron.core.TitleBarOverlay

@@ -1,4 +1,4 @@
 package electron.crossprocessexports
 
 
-typealias ForkOptions = electron.ForkOptions
+typealias ForkOptions = electron.core.ForkOptions

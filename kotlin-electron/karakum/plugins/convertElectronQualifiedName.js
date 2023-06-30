@@ -6,7 +6,7 @@ module.exports = function (node, context, render) {
         && ts.isIdentifier(node.left)
         && node.left.text === "Electron"
     ) {
-        return `electron.${render(node.right)}`
+        return `electron.core.${render(node.right)}`
     }
 
     if (
@@ -14,7 +14,7 @@ module.exports = function (node, context, render) {
         && ts.isIdentifier(node.expression)
         && node.expression.text === "Electron"
     ) {
-        return `electron.${render(node.name)}`
+        return `electron.core.${render(node.name)}`
     }
 
     return null

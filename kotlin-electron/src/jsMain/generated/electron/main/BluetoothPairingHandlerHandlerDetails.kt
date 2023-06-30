@@ -1,4 +1,4 @@
 package electron.main
 
 
-typealias BluetoothPairingHandlerHandlerDetails = electron.BluetoothPairingHandlerHandlerDetails
+typealias BluetoothPairingHandlerHandlerDetails = electron.core.BluetoothPairingHandlerHandlerDetails

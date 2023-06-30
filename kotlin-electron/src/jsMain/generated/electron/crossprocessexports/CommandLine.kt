@@ -1,4 +1,4 @@
 package electron.crossprocessexports
 
 
-typealias CommandLine = electron.CommandLine
+typealias CommandLine = electron.core.CommandLine

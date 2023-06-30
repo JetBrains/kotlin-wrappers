@@ -1,4 +1,4 @@
 package electron.crossprocessexports
 
 
-typealias WebRequestFilter = electron.WebRequestFilter
+typealias WebRequestFilter = electron.core.WebRequestFilter

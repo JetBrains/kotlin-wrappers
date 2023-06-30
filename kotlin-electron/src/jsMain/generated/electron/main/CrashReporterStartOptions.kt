@@ -1,4 +1,4 @@
 package electron.main
 
 
-typealias CrashReporterStartOptions = electron.CrashReporterStartOptions
+typealias CrashReporterStartOptions = electron.core.CrashReporterStartOptions

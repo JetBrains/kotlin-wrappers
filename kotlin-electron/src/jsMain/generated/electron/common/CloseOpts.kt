@@ -1,4 +1,4 @@
 package electron.common
 
 
-typealias CloseOpts = electron.CloseOpts
+typealias CloseOpts = electron.core.CloseOpts

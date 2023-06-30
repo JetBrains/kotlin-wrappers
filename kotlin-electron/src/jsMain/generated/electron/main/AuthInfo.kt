@@ -1,4 +1,4 @@
 package electron.main
 
 
-typealias AuthInfo = electron.AuthInfo
+typealias AuthInfo = electron.core.AuthInfo

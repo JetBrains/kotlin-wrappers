@@ -1,4 +1,4 @@
 package electron.main
 
 
-typealias Screen = electron.Screen
+typealias Screen = electron.core.Screen

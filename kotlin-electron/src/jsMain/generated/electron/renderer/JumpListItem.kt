@@ -1,4 +1,4 @@
 package electron.renderer
 
 
-typealias JumpListItem = electron.JumpListItem
+typealias JumpListItem = electron.core.JumpListItem

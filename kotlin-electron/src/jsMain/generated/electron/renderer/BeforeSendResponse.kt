@@ -1,4 +1,4 @@
 package electron.renderer
 
 
-typealias BeforeSendResponse = electron.BeforeSendResponse
+typealias BeforeSendResponse = electron.core.BeforeSendResponse

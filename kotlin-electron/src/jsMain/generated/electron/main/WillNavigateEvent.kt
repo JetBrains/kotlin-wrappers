@@ -1,4 +1,4 @@
 package electron.main
 
 
-typealias WillNavigateEvent = electron.WillNavigateEvent
+typealias WillNavigateEvent = electron.core.WillNavigateEvent

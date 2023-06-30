@@ -3,4 +3,4 @@
 package electron.main
 
 
-open external class TouchBar : electron.TouchBar
+open external class TouchBar : electron.core.TouchBar

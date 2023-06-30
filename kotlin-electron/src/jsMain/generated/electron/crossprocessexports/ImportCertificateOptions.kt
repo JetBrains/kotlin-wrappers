@@ -1,4 +1,4 @@
 package electron.crossprocessexports
 
 
-typealias ImportCertificateOptions = electron.ImportCertificateOptions
+typealias ImportCertificateOptions = electron.core.ImportCertificateOptions

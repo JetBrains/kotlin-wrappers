@@ -1,4 +1,4 @@
 package electron.common
 
 
-typealias TouchBarSliderConstructorOptions = electron.TouchBarSliderConstructorOptions
+typealias TouchBarSliderConstructorOptions = electron.core.TouchBarSliderConstructorOptions

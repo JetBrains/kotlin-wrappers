@@ -1,3 +1,3 @@
 package electron.renderer
 
-typealias UploadData = electron.UploadData
+typealias UploadData = electron.core.UploadData

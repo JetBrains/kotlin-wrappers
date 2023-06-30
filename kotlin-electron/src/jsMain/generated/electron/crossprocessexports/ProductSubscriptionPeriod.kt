@@ -1,4 +1,4 @@
 package electron.crossprocessexports
 
 
-typealias ProductSubscriptionPeriod = electron.ProductSubscriptionPeriod
+typealias ProductSubscriptionPeriod = electron.core.ProductSubscriptionPeriod

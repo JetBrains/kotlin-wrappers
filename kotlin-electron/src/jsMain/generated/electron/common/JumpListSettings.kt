@@ -1,4 +1,4 @@
 package electron.common
 
 
-typealias JumpListSettings = electron.JumpListSettings
+typealias JumpListSettings = electron.core.JumpListSettings

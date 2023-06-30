@@ -1,4 +1,4 @@
 package electron.renderer
 
 
-typealias PermissionRequestHandlerHandlerDetails = electron.PermissionRequestHandlerHandlerDetails
+typealias PermissionRequestHandlerHandlerDetails = electron.core.PermissionRequestHandlerHandlerDetails

@@ -1,4 +1,4 @@
 package electron.renderer
 
 
-typealias OpenDevToolsOptions = electron.OpenDevToolsOptions
+typealias OpenDevToolsOptions = electron.core.OpenDevToolsOptions

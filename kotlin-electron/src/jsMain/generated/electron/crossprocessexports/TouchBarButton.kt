@@ -1,4 +1,4 @@
 package electron.crossprocessexports
 
 
-typealias TouchBarButton = electron.TouchBarButton
+typealias TouchBarButton = electron.core.TouchBarButton

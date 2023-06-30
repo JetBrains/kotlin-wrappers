@@ -1,4 +1,4 @@
 package electron.main
 
 
-typealias DidFailLoadEvent = electron.DidFailLoadEvent
+typealias DidFailLoadEvent = electron.core.DidFailLoadEvent

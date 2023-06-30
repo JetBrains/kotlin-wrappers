@@ -1,4 +1,4 @@
 package electron.crossprocessexports
 
 
-typealias DevtoolsOpenUrlEvent = electron.DevtoolsOpenUrlEvent
+typealias DevtoolsOpenUrlEvent = electron.core.DevtoolsOpenUrlEvent

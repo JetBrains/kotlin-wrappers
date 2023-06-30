@@ -1,4 +1,4 @@
 package electron.crossprocessexports
 
 
-typealias OnErrorOccurredListenerDetails = electron.OnErrorOccurredListenerDetails
+typealias OnErrorOccurredListenerDetails = electron.core.OnErrorOccurredListenerDetails

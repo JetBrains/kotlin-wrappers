@@ -1,4 +1,4 @@
 package electron.renderer
 
 
-typealias DevtoolsOpenUrlEvent = electron.DevtoolsOpenUrlEvent
+typealias DevtoolsOpenUrlEvent = electron.core.DevtoolsOpenUrlEvent

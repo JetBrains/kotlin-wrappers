@@ -1,3 +1,3 @@
 package electron.crossprocessexports
 
-typealias TouchBarScrubber = electron.TouchBarScrubber
+typealias TouchBarScrubber = electron.core.TouchBarScrubber

@@ -1,4 +1,4 @@
 package electron.main
 
 
-typealias Protocol = electron.Protocol
+typealias Protocol = electron.core.Protocol

@@ -1,4 +1,4 @@
 package electron.crossprocessexports
 
 
-typealias ProtocolResponse = electron.ProtocolResponse
+typealias ProtocolResponse = electron.core.ProtocolResponse

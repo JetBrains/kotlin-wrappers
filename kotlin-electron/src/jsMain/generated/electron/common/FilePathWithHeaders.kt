@@ -1,4 +1,4 @@
 package electron.common
 
 
-typealias FilePathWithHeaders = electron.FilePathWithHeaders
+typealias FilePathWithHeaders = electron.core.FilePathWithHeaders

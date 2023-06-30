@@ -1,4 +1,4 @@
 package electron.main
 
 
-typealias DesktopCapturerSource = electron.DesktopCapturerSource
+typealias DesktopCapturerSource = electron.core.DesktopCapturerSource

@@ -1,3 +1,3 @@
 package electron.main
 
-typealias TouchBarColorPicker = electron.TouchBarColorPicker
+typealias TouchBarColorPicker = electron.core.TouchBarColorPicker

@@ -1,4 +1,4 @@
 package electron.crossprocessexports
 
 
-typealias MemoryUsageDetails = electron.MemoryUsageDetails
+typealias MemoryUsageDetails = electron.core.MemoryUsageDetails

@@ -1,4 +1,4 @@
 package electron.crossprocessexports
 
 
-typealias GlobalShortcut = electron.GlobalShortcut
+typealias GlobalShortcut = electron.core.GlobalShortcut

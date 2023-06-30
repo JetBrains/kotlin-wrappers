@@ -1,4 +1,4 @@
 package electron.crossprocessexports
 
 
-typealias DidCreateWindowDetails = electron.DidCreateWindowDetails
+typealias DidCreateWindowDetails = electron.core.DidCreateWindowDetails

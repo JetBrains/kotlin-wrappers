@@ -1,4 +1,4 @@
 package electron.crossprocessexports
 
 
-typealias OpenDialogOptions = electron.OpenDialogOptions
+typealias OpenDialogOptions = electron.core.OpenDialogOptions

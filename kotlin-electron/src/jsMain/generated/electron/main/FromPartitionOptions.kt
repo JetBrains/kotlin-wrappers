@@ -1,4 +1,4 @@
 package electron.main
 
 
-typealias FromPartitionOptions = electron.FromPartitionOptions
+typealias FromPartitionOptions = electron.core.FromPartitionOptions

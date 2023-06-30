@@ -1,3 +1,3 @@
 package electron.main
 
-typealias WebContents = electron.WebContents
+typealias WebContents = electron.core.WebContents

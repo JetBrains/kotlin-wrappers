@@ -3,4 +3,4 @@
 package electron.crossprocessexports
 
 
-open external class ShareMenu : electron.ShareMenu
+open external class ShareMenu : electron.core.ShareMenu

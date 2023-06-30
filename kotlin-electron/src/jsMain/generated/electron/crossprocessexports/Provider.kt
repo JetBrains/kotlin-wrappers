@@ -1,4 +1,4 @@
 package electron.crossprocessexports
 
 
-typealias Provider = electron.Provider
+typealias Provider = electron.core.Provider

@@ -1,4 +1,4 @@
 package electron.renderer
 
 
-typealias ResizeOptions = electron.ResizeOptions
+typealias ResizeOptions = electron.core.ResizeOptions

@@ -1,3 +1,3 @@
 package electron.common
 
-typealias Clipboard = electron.Clipboard
+typealias Clipboard = electron.core.Clipboard

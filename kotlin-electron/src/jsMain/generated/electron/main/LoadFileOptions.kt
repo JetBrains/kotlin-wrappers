@@ -1,4 +1,4 @@
 package electron.main
 
 
-typealias LoadFileOptions = electron.LoadFileOptions
+typealias LoadFileOptions = electron.core.LoadFileOptions

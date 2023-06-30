@@ -1,3 +1,3 @@
 package electron.crossprocessexports
 
-typealias UploadRawData = electron.UploadRawData
+typealias UploadRawData = electron.core.UploadRawData

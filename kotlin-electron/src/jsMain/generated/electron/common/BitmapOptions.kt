@@ -1,4 +1,4 @@
 package electron.common
 
 
-typealias BitmapOptions = electron.BitmapOptions
+typealias BitmapOptions = electron.core.BitmapOptions

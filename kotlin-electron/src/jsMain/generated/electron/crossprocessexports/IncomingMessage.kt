@@ -1,3 +1,3 @@
 package electron.crossprocessexports
 
-typealias IncomingMessage = electron.IncomingMessage
+typealias IncomingMessage = electron.core.IncomingMessage

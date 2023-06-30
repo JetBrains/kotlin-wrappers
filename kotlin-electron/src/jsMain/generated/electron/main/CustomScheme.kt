@@ -1,4 +1,4 @@
 package electron.main
 
 
-typealias CustomScheme = electron.CustomScheme
+typealias CustomScheme = electron.core.CustomScheme

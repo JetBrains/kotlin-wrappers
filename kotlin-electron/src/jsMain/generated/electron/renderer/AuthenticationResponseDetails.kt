@@ -1,4 +1,4 @@
 package electron.renderer
 
 
-typealias AuthenticationResponseDetails = electron.AuthenticationResponseDetails
+typealias AuthenticationResponseDetails = electron.core.AuthenticationResponseDetails

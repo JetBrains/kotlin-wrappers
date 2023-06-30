@@ -1,4 +1,4 @@
 package electron.common
 
 
-typealias ProcessMetric = electron.ProcessMetric
+typealias ProcessMetric = electron.core.ProcessMetric

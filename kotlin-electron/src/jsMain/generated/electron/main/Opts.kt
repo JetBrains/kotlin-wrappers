@@ -1,4 +1,4 @@
 package electron.main
 
 
-typealias Opts = electron.Opts
+typealias Opts = electron.core.Opts

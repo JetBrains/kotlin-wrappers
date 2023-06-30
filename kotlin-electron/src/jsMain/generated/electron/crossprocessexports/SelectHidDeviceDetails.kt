@@ -1,4 +1,4 @@
 package electron.crossprocessexports
 
 
-typealias SelectHidDeviceDetails = electron.SelectHidDeviceDetails
+typealias SelectHidDeviceDetails = electron.core.SelectHidDeviceDetails

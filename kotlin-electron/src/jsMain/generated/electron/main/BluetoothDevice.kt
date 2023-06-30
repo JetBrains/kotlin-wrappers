@@ -1,4 +1,4 @@
 package electron.main
 
 
-typealias BluetoothDevice = electron.BluetoothDevice
+typealias BluetoothDevice = electron.core.BluetoothDevice

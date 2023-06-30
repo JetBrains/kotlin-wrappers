@@ -3,4 +3,4 @@
 package electron.crossprocessexports
 
 
-open external class BrowserView : electron.BrowserView
+open external class BrowserView : electron.core.BrowserView

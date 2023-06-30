@@ -1,4 +1,4 @@
 package electron.main
 
 
-typealias DidFrameFinishLoadEvent = electron.DidFrameFinishLoadEvent
+typealias DidFrameFinishLoadEvent = electron.core.DidFrameFinishLoadEvent

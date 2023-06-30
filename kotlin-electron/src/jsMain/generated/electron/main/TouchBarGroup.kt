@@ -1,3 +1,3 @@
 package electron.main
 
-typealias TouchBarGroup = electron.TouchBarGroup
+typealias TouchBarGroup = electron.core.TouchBarGroup

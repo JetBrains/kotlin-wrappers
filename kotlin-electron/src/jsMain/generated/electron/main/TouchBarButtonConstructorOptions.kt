@@ -1,4 +1,4 @@
 package electron.main
 
 
-typealias TouchBarButtonConstructorOptions = electron.TouchBarButtonConstructorOptions
+typealias TouchBarButtonConstructorOptions = electron.core.TouchBarButtonConstructorOptions

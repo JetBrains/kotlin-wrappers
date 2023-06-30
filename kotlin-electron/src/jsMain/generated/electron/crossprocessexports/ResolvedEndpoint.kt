@@ -1,4 +1,4 @@
 package electron.crossprocessexports
 
 
-typealias ResolvedEndpoint = electron.ResolvedEndpoint
+typealias ResolvedEndpoint = electron.core.ResolvedEndpoint

@@ -1,4 +1,4 @@
 package electron.common
 
 
-typealias ClientRequestConstructorOptions = electron.ClientRequestConstructorOptions
+typealias ClientRequestConstructorOptions = electron.core.ClientRequestConstructorOptions

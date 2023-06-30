@@ -1,4 +1,4 @@
 package electron.crossprocessexports
 
 
-typealias SSLConfigConfig = electron.SSLConfigConfig
+typealias SSLConfigConfig = electron.core.SSLConfigConfig

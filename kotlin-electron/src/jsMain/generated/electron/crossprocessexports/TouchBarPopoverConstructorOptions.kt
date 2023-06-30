@@ -1,4 +1,4 @@
 package electron.crossprocessexports
 
 
-typealias TouchBarPopoverConstructorOptions = electron.TouchBarPopoverConstructorOptions
+typealias TouchBarPopoverConstructorOptions = electron.core.TouchBarPopoverConstructorOptions

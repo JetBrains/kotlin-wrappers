@@ -1,3 +1,3 @@
 package electron.crossprocessexports
 
-typealias SafeStorage = electron.SafeStorage
+typealias SafeStorage = electron.core.SafeStorage

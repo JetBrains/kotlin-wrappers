@@ -65,7 +65,7 @@ external interface Dialog {
      * The `browserWindow` argument allows the dialog to attach itself to a parent
      * window, making it modal.
      */
-    fun showMessageBox(browserWindow: BrowserWindow, options: MessageBoxOptions): Promise<electron.MessageBoxReturnValue>
+    fun showMessageBox(browserWindow: BrowserWindow, options: MessageBoxOptions): Promise<MessageBoxReturnValue>
 
     /**
      * resolves with a promise containing the following properties:
@@ -79,7 +79,7 @@ external interface Dialog {
      * The `browserWindow` argument allows the dialog to attach itself to a parent
      * window, making it modal.
      */
-    fun showMessageBox(options: MessageBoxOptions): Promise<electron.MessageBoxReturnValue>
+    fun showMessageBox(options: MessageBoxOptions): Promise<MessageBoxReturnValue>
 
     /**
      * the index of the clicked button.
@@ -130,7 +130,7 @@ external interface Dialog {
      * and a directory selector, so if you set `properties` to `['openFile',
      * 'openDirectory']` on these platforms, a directory selector will be shown.
      */
-    fun showOpenDialog(browserWindow: BrowserWindow, options: OpenDialogOptions): Promise<electron.OpenDialogReturnValue>
+    fun showOpenDialog(browserWindow: BrowserWindow, options: OpenDialogOptions): Promise<OpenDialogReturnValue>
 
     /**
      * Resolve with an object containing the following:
@@ -157,7 +157,7 @@ external interface Dialog {
      * and a directory selector, so if you set `properties` to `['openFile',
      * 'openDirectory']` on these platforms, a directory selector will be shown.
      */
-    fun showOpenDialog(options: OpenDialogOptions): Promise<electron.OpenDialogReturnValue>
+    fun showOpenDialog(options: OpenDialogOptions): Promise<OpenDialogReturnValue>
 
     /**
      * the file paths chosen by the user; if the dialog is cancelled it returns
@@ -219,7 +219,7 @@ external interface Dialog {
      * **Note:** On macOS, using the asynchronous version is recommended to avoid
      * issues when expanding and collapsing the dialog.
      */
-    fun showSaveDialog(browserWindow: BrowserWindow, options: SaveDialogOptions): Promise<electron.SaveDialogReturnValue>
+    fun showSaveDialog(browserWindow: BrowserWindow, options: SaveDialogOptions): Promise<SaveDialogReturnValue>
 
     /**
      * Resolve with an object containing the following:
@@ -241,7 +241,7 @@ external interface Dialog {
      * **Note:** On macOS, using the asynchronous version is recommended to avoid
      * issues when expanding and collapsing the dialog.
      */
-    fun showSaveDialog(options: SaveDialogOptions): Promise<electron.SaveDialogReturnValue>
+    fun showSaveDialog(options: SaveDialogOptions): Promise<SaveDialogReturnValue>
 
     /**
      * the path of the file chosen by the user; if the dialog is cancelled it returns

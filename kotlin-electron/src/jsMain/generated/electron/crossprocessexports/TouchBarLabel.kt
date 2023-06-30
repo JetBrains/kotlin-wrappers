@@ -1,3 +1,3 @@
 package electron.crossprocessexports
 
-typealias TouchBarLabel = electron.TouchBarLabel
+typealias TouchBarLabel = electron.core.TouchBarLabel

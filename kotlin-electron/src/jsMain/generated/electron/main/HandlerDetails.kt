@@ -1,4 +1,4 @@
 package electron.main
 
 
-typealias HandlerDetails = electron.HandlerDetails
+typealias HandlerDetails = electron.core.HandlerDetails

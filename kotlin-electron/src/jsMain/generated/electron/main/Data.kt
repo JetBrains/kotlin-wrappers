@@ -1,4 +1,4 @@
 package electron.main
 
 
-typealias Data = electron.Data
+typealias Data = electron.core.Data

@@ -1,4 +1,4 @@
 package electron.crossprocessexports
 
 
-typealias CreateFromBitmapOptions = electron.CreateFromBitmapOptions
+typealias CreateFromBitmapOptions = electron.core.CreateFromBitmapOptions

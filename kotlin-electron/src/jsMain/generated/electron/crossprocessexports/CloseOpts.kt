@@ -1,4 +1,4 @@
 package electron.crossprocessexports
 
 
-typealias CloseOpts = electron.CloseOpts
+typealias CloseOpts = electron.core.CloseOpts

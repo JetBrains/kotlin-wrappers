@@ -1,4 +1,4 @@
 package electron.common
 
 
-typealias OpenExternalOptions = electron.OpenExternalOptions
+typealias OpenExternalOptions = electron.core.OpenExternalOptions

@@ -1,4 +1,4 @@
 package electron.crossprocessexports
 
 
-typealias DidStartNavigationEvent = electron.DidStartNavigationEvent
+typealias DidStartNavigationEvent = electron.core.DidStartNavigationEvent

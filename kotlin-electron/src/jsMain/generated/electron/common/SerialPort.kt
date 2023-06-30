@@ -1,4 +1,4 @@
 package electron.common
 
 
-typealias SerialPort = electron.SerialPort
+typealias SerialPort = electron.core.SerialPort

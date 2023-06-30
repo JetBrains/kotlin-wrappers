@@ -3,4 +3,4 @@
 package electron.main
 
 
-open external class ShareMenu : electron.ShareMenu
+open external class ShareMenu : electron.core.ShareMenu

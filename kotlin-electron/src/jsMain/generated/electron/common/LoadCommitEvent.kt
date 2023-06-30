@@ -1,4 +1,4 @@
 package electron.common
 
 
-typealias LoadCommitEvent = electron.LoadCommitEvent
+typealias LoadCommitEvent = electron.core.LoadCommitEvent

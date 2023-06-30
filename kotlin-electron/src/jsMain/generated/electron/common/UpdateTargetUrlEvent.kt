@@ -1,4 +1,4 @@
 package electron.common
 
 
-typealias UpdateTargetUrlEvent = electron.UpdateTargetUrlEvent
+typealias UpdateTargetUrlEvent = electron.core.UpdateTargetUrlEvent

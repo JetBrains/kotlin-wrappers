@@ -1,4 +1,4 @@
 package electron.common
 
 
-typealias Point = electron.Point
+typealias Point = electron.core.Point

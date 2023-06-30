@@ -1,3 +1,3 @@
 package electron.main
 
-typealias NetLog = electron.NetLog
+typealias NetLog = electron.core.NetLog

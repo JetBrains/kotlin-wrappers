@@ -1,3 +1,3 @@
 package electron.crossprocessexports
 
-typealias TouchBarSpacer = electron.TouchBarSpacer
+typealias TouchBarSpacer = electron.core.TouchBarSpacer

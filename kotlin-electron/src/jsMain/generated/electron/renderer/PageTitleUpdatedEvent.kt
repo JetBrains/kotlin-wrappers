@@ -1,4 +1,4 @@
 package electron.renderer
 
 
-typealias PageTitleUpdatedEvent = electron.PageTitleUpdatedEvent
+typealias PageTitleUpdatedEvent = electron.core.PageTitleUpdatedEvent

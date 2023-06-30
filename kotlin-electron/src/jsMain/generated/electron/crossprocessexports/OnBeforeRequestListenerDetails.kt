@@ -1,4 +1,4 @@
 package electron.crossprocessexports
 
 
-typealias OnBeforeRequestListenerDetails = electron.OnBeforeRequestListenerDetails
+typealias OnBeforeRequestListenerDetails = electron.core.OnBeforeRequestListenerDetails

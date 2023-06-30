@@ -1,4 +1,4 @@
 package electron.common
 
 
-typealias LoadURLOptions = electron.LoadURLOptions
+typealias LoadURLOptions = electron.core.LoadURLOptions

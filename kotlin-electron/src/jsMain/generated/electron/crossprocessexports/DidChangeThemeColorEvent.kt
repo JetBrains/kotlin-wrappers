@@ -1,4 +1,4 @@
 package electron.crossprocessexports
 
 
-typealias DidChangeThemeColorEvent = electron.DidChangeThemeColorEvent
+typealias DidChangeThemeColorEvent = electron.core.DidChangeThemeColorEvent

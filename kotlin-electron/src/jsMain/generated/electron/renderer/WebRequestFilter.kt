@@ -1,4 +1,4 @@
 package electron.renderer
 
 
-typealias WebRequestFilter = electron.WebRequestFilter
+typealias WebRequestFilter = electron.core.WebRequestFilter

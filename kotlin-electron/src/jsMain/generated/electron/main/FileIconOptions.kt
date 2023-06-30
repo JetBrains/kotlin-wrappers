@@ -1,4 +1,4 @@
 package electron.main
 
 
-typealias FileIconOptions = electron.FileIconOptions
+typealias FileIconOptions = electron.core.FileIconOptions

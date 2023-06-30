@@ -1,4 +1,4 @@
 package electron.common
 
 
-typealias WebPreferences = electron.WebPreferences
+typealias WebPreferences = electron.core.WebPreferences

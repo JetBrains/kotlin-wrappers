@@ -1,4 +1,4 @@
 package electron.renderer
 
 
-typealias DefaultFontFamily = electron.DefaultFontFamily
+typealias DefaultFontFamily = electron.core.DefaultFontFamily

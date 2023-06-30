@@ -1,4 +1,4 @@
 package electron.main
 
 
-typealias SSLConfigConfig = electron.SSLConfigConfig
+typealias SSLConfigConfig = electron.core.SSLConfigConfig

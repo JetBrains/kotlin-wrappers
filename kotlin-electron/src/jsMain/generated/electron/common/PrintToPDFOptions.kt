@@ -1,4 +1,4 @@
 package electron.common
 
 
-typealias PrintToPDFOptions = electron.PrintToPDFOptions
+typealias PrintToPDFOptions = electron.core.PrintToPDFOptions

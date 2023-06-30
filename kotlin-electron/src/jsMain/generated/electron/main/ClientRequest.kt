@@ -1,3 +1,3 @@
 package electron.main
 
-typealias ClientRequest = electron.ClientRequest
+typealias ClientRequest = electron.core.ClientRequest

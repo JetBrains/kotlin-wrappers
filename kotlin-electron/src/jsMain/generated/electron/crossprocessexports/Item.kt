@@ -1,4 +1,4 @@
 package electron.crossprocessexports
 
 
-typealias Item = electron.Item
+typealias Item = electron.core.Item

@@ -1,4 +1,4 @@
 package electron.main
 
 
-typealias IgnoreMouseEventsOptions = electron.IgnoreMouseEventsOptions
+typealias IgnoreMouseEventsOptions = electron.core.IgnoreMouseEventsOptions

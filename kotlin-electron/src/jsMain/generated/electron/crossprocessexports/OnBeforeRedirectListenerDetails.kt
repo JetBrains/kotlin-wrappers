@@ -1,4 +1,4 @@
 package electron.crossprocessexports
 
 
-typealias OnBeforeRedirectListenerDetails = electron.OnBeforeRedirectListenerDetails
+typealias OnBeforeRedirectListenerDetails = electron.core.OnBeforeRedirectListenerDetails

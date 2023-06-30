@@ -1,4 +1,4 @@
 package electron.common
 
 
-typealias RelaunchOptions = electron.RelaunchOptions
+typealias RelaunchOptions = electron.core.RelaunchOptions

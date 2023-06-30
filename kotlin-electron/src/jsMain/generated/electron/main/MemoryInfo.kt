@@ -1,4 +1,4 @@
 package electron.main
 
 
-typealias MemoryInfo = electron.MemoryInfo
+typealias MemoryInfo = electron.core.MemoryInfo

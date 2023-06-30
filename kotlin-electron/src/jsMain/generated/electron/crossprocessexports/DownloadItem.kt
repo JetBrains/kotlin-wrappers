@@ -1,3 +1,3 @@
 package electron.crossprocessexports
 
-typealias DownloadItem = electron.DownloadItem
+typealias DownloadItem = electron.core.DownloadItem

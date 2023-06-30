@@ -1,4 +1,4 @@
 package electron.crossprocessexports
 
 
-typealias StartLoggingOptions = electron.StartLoggingOptions
+typealias StartLoggingOptions = electron.core.StartLoggingOptions

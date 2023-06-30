@@ -1,4 +1,4 @@
 package electron.crossprocessexports
 
 
-typealias HeadersReceivedResponse = electron.HeadersReceivedResponse
+typealias HeadersReceivedResponse = electron.core.HeadersReceivedResponse

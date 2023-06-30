@@ -1,4 +1,4 @@
 package electron.common
 
 
-typealias HeadersReceivedResponse = electron.HeadersReceivedResponse
+typealias HeadersReceivedResponse = electron.core.HeadersReceivedResponse

@@ -1,4 +1,4 @@
 package electron.crossprocessexports
 
 
-typealias FocusOptions = electron.FocusOptions
+typealias FocusOptions = electron.core.FocusOptions

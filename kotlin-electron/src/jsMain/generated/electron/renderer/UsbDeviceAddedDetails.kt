@@ -1,4 +1,4 @@
 package electron.renderer
 
 
-typealias UsbDeviceAddedDetails = electron.UsbDeviceAddedDetails
+typealias UsbDeviceAddedDetails = electron.core.UsbDeviceAddedDetails

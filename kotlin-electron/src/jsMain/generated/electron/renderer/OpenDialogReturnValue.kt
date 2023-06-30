@@ -1,4 +1,4 @@
 package electron.renderer
 
 
-typealias OpenDialogReturnValue = electron.OpenDialogReturnValue
+typealias OpenDialogReturnValue = electron.core.OpenDialogReturnValue

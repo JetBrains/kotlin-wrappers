@@ -1,4 +1,4 @@
 package electron.crossprocessexports
 
 
-typealias HandlerDetails = electron.HandlerDetails
+typealias HandlerDetails = electron.core.HandlerDetails

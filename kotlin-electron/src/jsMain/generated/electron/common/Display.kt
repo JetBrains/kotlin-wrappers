@@ -1,4 +1,4 @@
 package electron.common
 
 
-typealias Display = electron.Display
+typealias Display = electron.core.Display

@@ -1,4 +1,4 @@
 package electron.main
 
 
-typealias USBDevice = electron.USBDevice
+typealias USBDevice = electron.core.USBDevice

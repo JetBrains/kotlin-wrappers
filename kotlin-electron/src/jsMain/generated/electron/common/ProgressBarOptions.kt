@@ -1,4 +1,4 @@
 package electron.common
 
 
-typealias ProgressBarOptions = electron.ProgressBarOptions
+typealias ProgressBarOptions = electron.core.ProgressBarOptions

@@ -1,4 +1,4 @@
 package electron.main
 
 
-typealias KeyboardEvent = electron.KeyboardEvent
+typealias KeyboardEvent = electron.core.KeyboardEvent

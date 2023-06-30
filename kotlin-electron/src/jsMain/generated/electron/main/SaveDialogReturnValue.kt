@@ -1,4 +1,4 @@
 package electron.main
 
 
-typealias SaveDialogReturnValue = electron.SaveDialogReturnValue
+typealias SaveDialogReturnValue = electron.core.SaveDialogReturnValue

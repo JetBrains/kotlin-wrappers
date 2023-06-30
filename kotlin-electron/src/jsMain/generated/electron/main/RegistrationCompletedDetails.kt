@@ -1,4 +1,4 @@
 package electron.main
 
 
-typealias RegistrationCompletedDetails = electron.RegistrationCompletedDetails
+typealias RegistrationCompletedDetails = electron.core.RegistrationCompletedDetails

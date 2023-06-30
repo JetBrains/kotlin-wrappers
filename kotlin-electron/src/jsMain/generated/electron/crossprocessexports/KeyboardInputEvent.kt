@@ -1,4 +1,4 @@
 package electron.crossprocessexports
 
 
-typealias KeyboardInputEvent = electron.KeyboardInputEvent
+typealias KeyboardInputEvent = electron.core.KeyboardInputEvent

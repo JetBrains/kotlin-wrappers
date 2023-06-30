@@ -1,4 +1,4 @@
 package electron.renderer
 
 
-typealias OnBeforeSendHeadersListenerDetails = electron.OnBeforeSendHeadersListenerDetails
+typealias OnBeforeSendHeadersListenerDetails = electron.core.OnBeforeSendHeadersListenerDetails

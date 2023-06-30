@@ -1,4 +1,4 @@
 package electron.renderer
 
 
-typealias EditFlags = electron.EditFlags
+typealias EditFlags = electron.core.EditFlags

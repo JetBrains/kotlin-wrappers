@@ -1,3 +1,3 @@
 package electron.main
 
-typealias UploadRawData = electron.UploadRawData
+typealias UploadRawData = electron.core.UploadRawData

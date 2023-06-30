@@ -1,4 +1,4 @@
 package electron.crossprocessexports
 
 
-typealias SharingItem = electron.SharingItem
+typealias SharingItem = electron.core.SharingItem

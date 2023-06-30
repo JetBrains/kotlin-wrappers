@@ -1,4 +1,4 @@
 package electron.main
 
 
-typealias UploadProgress = electron.UploadProgress
+typealias UploadProgress = electron.core.UploadProgress

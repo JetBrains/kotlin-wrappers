@@ -1,3 +1,3 @@
 package electron.main
 
-typealias TouchBarPopover = electron.TouchBarPopover
+typealias TouchBarPopover = electron.core.TouchBarPopover

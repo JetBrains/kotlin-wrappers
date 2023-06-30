@@ -1,4 +1,4 @@
 package electron.main
 
 
-typealias Response = electron.Response
+typealias Response = electron.core.Response

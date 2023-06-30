@@ -1,4 +1,4 @@
 package electron.crossprocessexports
 
 
-typealias ConfigureHostResolverOptions = electron.ConfigureHostResolverOptions
+typealias ConfigureHostResolverOptions = electron.core.ConfigureHostResolverOptions

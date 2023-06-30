@@ -1,4 +1,4 @@
 package electron.crossprocessexports
 
 
-typealias Size = electron.Size
+typealias Size = electron.core.Size

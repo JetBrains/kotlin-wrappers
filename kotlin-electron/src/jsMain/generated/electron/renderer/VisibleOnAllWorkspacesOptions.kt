@@ -1,4 +1,4 @@
 package electron.renderer
 
 
-typealias VisibleOnAllWorkspacesOptions = electron.VisibleOnAllWorkspacesOptions
+typealias VisibleOnAllWorkspacesOptions = electron.core.VisibleOnAllWorkspacesOptions

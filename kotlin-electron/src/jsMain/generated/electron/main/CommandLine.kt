@@ -1,4 +1,4 @@
 package electron.main
 
 
-typealias CommandLine = electron.CommandLine
+typealias CommandLine = electron.core.CommandLine

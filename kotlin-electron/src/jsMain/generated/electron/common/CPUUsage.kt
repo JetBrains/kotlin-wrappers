@@ -1,4 +1,4 @@
 package electron.common
 
 
-typealias CPUUsage = electron.CPUUsage
+typealias CPUUsage = electron.core.CPUUsage

@@ -1,4 +1,4 @@
 package electron.crossprocessexports
 
 
-typealias VisibleOnAllWorkspacesOptions = electron.VisibleOnAllWorkspacesOptions
+typealias VisibleOnAllWorkspacesOptions = electron.core.VisibleOnAllWorkspacesOptions

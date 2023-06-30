@@ -1,4 +1,4 @@
 package electron.common
 
 
-typealias DidCreateWindowDetails = electron.DidCreateWindowDetails
+typealias DidCreateWindowDetails = electron.core.DidCreateWindowDetails

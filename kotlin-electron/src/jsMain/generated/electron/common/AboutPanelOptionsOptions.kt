@@ -1,4 +1,4 @@
 package electron.common
 
 
-typealias AboutPanelOptionsOptions = electron.AboutPanelOptionsOptions
+typealias AboutPanelOptionsOptions = electron.core.AboutPanelOptionsOptions

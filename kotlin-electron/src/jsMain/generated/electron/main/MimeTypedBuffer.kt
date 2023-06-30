@@ -1,3 +1,3 @@
 package electron.main
 
-typealias MimeTypedBuffer = electron.MimeTypedBuffer
+typealias MimeTypedBuffer = electron.core.MimeTypedBuffer

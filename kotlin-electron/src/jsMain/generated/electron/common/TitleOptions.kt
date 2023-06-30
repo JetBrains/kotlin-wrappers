@@ -1,4 +1,4 @@
 package electron.common
 
 
-typealias TitleOptions = electron.TitleOptions
+typealias TitleOptions = electron.core.TitleOptions

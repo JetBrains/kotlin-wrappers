@@ -1,4 +1,4 @@
 package electron.common
 
 
-typealias ForkOptions = electron.ForkOptions
+typealias ForkOptions = electron.core.ForkOptions

@@ -1,4 +1,4 @@
 package electron.main
 
 
-typealias MoveToApplicationsFolderOptions = electron.MoveToApplicationsFolderOptions
+typealias MoveToApplicationsFolderOptions = electron.core.MoveToApplicationsFolderOptions

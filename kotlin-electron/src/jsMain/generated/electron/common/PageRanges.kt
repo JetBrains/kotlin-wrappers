@@ -1,4 +1,4 @@
 package electron.common
 
 
-typealias PageRanges = electron.PageRanges
+typealias PageRanges = electron.core.PageRanges

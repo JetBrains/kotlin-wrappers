@@ -1,4 +1,4 @@
 package electron.main
 
 
-typealias UsbDeviceRemovedDetails = electron.UsbDeviceRemovedDetails
+typealias UsbDeviceRemovedDetails = electron.core.UsbDeviceRemovedDetails

@@ -1,4 +1,4 @@
 package electron.crossprocessexports
 
 
-typealias ServiceWorkerInfo = electron.ServiceWorkerInfo
+typealias ServiceWorkerInfo = electron.core.ServiceWorkerInfo

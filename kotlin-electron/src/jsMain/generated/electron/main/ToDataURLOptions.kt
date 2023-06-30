@@ -1,4 +1,4 @@
 package electron.main
 
 
-typealias ToDataURLOptions = electron.ToDataURLOptions
+typealias ToDataURLOptions = electron.core.ToDataURLOptions

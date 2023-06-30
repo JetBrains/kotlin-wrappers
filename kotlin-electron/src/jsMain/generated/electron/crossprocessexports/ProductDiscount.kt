@@ -1,4 +1,4 @@
 package electron.crossprocessexports
 
 
-typealias ProductDiscount = electron.ProductDiscount
+typealias ProductDiscount = electron.core.ProductDiscount

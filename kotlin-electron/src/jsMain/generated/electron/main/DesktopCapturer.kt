@@ -1,3 +1,3 @@
 package electron.main
 
-typealias DesktopCapturer = electron.DesktopCapturer
+typealias DesktopCapturer = electron.core.DesktopCapturer

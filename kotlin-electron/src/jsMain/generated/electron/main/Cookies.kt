@@ -1,3 +1,3 @@
 package electron.main
 
-typealias Cookies = electron.Cookies
+typealias Cookies = electron.core.Cookies

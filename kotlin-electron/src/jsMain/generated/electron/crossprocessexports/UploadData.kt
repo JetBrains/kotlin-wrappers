@@ -1,3 +1,3 @@
 package electron.crossprocessexports
 
-typealias UploadData = electron.UploadData
+typealias UploadData = electron.core.UploadData

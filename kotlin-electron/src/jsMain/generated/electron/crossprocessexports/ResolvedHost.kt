@@ -1,4 +1,4 @@
 package electron.crossprocessexports
 
 
-typealias ResolvedHost = electron.ResolvedHost
+typealias ResolvedHost = electron.core.ResolvedHost

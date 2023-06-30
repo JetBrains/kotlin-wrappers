@@ -1,4 +1,4 @@
 package electron.crossprocessexports
 
 
-typealias UploadFile = electron.UploadFile
+typealias UploadFile = electron.core.UploadFile

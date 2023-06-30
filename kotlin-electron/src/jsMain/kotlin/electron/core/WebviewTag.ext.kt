@@ -1,4 +1,4 @@
-package electron
+package electron.core
 
 import web.html.HTMLElement
 

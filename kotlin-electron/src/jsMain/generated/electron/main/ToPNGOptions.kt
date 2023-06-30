@@ -1,4 +1,4 @@
 package electron.main
 
 
-typealias ToPNGOptions = electron.ToPNGOptions
+typealias ToPNGOptions = electron.core.ToPNGOptions

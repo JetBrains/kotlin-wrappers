@@ -1,4 +1,4 @@
 package electron.common
 
 
-typealias TouchBarSpacerConstructorOptions = electron.TouchBarSpacerConstructorOptions
+typealias TouchBarSpacerConstructorOptions = electron.core.TouchBarSpacerConstructorOptions

@@ -1,4 +1,4 @@
 package electron.renderer
 
 
-typealias FoundInPageEvent = electron.FoundInPageEvent
+typealias FoundInPageEvent = electron.core.FoundInPageEvent

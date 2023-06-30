@@ -1,4 +1,4 @@
 package electron.crossprocessexports
 
 
-typealias TitleOptions = electron.TitleOptions
+typealias TitleOptions = electron.core.TitleOptions

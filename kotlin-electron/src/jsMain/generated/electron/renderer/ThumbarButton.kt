@@ -1,4 +1,4 @@
 package electron.renderer
 
 
-typealias ThumbarButton = electron.ThumbarButton
+typealias ThumbarButton = electron.core.ThumbarButton

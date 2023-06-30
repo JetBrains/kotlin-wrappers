@@ -1,4 +1,4 @@
 package electron.crossprocessexports
 
 
-typealias TraceConfig = electron.TraceConfig
+typealias TraceConfig = electron.core.TraceConfig

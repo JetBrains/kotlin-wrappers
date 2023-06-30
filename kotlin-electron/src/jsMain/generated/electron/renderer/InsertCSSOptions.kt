@@ -1,4 +1,4 @@
 package electron.renderer
 
 
-typealias InsertCSSOptions = electron.InsertCSSOptions
+typealias InsertCSSOptions = electron.core.InsertCSSOptions

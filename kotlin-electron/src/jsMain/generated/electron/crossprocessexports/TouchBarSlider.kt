@@ -1,3 +1,3 @@
 package electron.crossprocessexports
 
-typealias TouchBarSlider = electron.TouchBarSlider
+typealias TouchBarSlider = electron.core.TouchBarSlider

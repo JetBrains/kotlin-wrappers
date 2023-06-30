@@ -1,4 +1,4 @@
 package electron.renderer
 
 
-typealias Certificate = electron.Certificate
+typealias Certificate = electron.core.Certificate

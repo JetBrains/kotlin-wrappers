@@ -1,4 +1,4 @@
 package electron.common
 
 
-typealias LaunchItems = electron.LaunchItems
+typealias LaunchItems = electron.core.LaunchItems

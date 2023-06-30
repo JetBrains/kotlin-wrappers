@@ -1,4 +1,4 @@
 package electron.common
 
 
-typealias FileFilter = electron.FileFilter
+typealias FileFilter = electron.core.FileFilter

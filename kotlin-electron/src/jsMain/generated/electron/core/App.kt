@@ -900,7 +900,7 @@ external interface App : node.events.IEventEmitter {
      *
      * @platform darwin,win32
      */
-    fun getApplicationInfoForProtocol(url: String): Promise<electron.ApplicationInfoForProtocolReturnValue>
+    fun getApplicationInfoForProtocol(url: String): Promise<ApplicationInfoForProtocolReturnValue>
 
     /**
      * Name of the application handling the protocol, or an empty string if there is no
@@ -952,7 +952,7 @@ external interface App : node.events.IEventEmitter {
      * On _Linux_ and _macOS_, icons depend on the application associated with file
      * mime type.
      */
-    fun getFileIcon(path: String, options: FileIconOptions = definedExternally): Promise<electron.NativeImage>
+    fun getFileIcon(path: String, options: FileIconOptions = definedExternally): Promise<NativeImage>
 
     /**
      * The Graphics Feature Status from `chrome://gpu/`.

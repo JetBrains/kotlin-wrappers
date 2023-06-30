@@ -1,3 +1,3 @@
 package electron.crossprocessexports
 
-typealias Dialog = electron.Dialog
+typealias Dialog = electron.core.Dialog

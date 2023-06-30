@@ -1,4 +1,4 @@
 package electron.crossprocessexports
 
 
-typealias PrinterInfo = electron.PrinterInfo
+typealias PrinterInfo = electron.core.PrinterInfo

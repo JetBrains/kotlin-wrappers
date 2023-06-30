@@ -1,4 +1,4 @@
 package electron.crossprocessexports
 
 
-typealias AuthInfo = electron.AuthInfo
+typealias AuthInfo = electron.core.AuthInfo

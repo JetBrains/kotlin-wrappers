@@ -1,4 +1,4 @@
 package electron.common
 
 
-typealias MouseInputEvent = electron.MouseInputEvent
+typealias MouseInputEvent = electron.core.MouseInputEvent

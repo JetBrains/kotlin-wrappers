@@ -1,4 +1,4 @@
 package electron.common
 
 
-typealias Payment = electron.Payment
+typealias Payment = electron.core.Payment

@@ -1,4 +1,4 @@
 package electron.common
 
 
-typealias TouchBarGroupConstructorOptions = electron.TouchBarGroupConstructorOptions
+typealias TouchBarGroupConstructorOptions = electron.core.TouchBarGroupConstructorOptions

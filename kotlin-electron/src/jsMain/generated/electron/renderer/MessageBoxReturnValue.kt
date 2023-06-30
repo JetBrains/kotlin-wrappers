@@ -1,4 +1,4 @@
 package electron.renderer
 
 
-typealias MessageBoxReturnValue = electron.MessageBoxReturnValue
+typealias MessageBoxReturnValue = electron.core.MessageBoxReturnValue

@@ -1,4 +1,4 @@
 package electron.main
 
 
-typealias PaymentDiscount = electron.PaymentDiscount
+typealias PaymentDiscount = electron.core.PaymentDiscount

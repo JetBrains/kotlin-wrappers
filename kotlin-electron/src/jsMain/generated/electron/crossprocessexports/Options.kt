@@ -1,4 +1,4 @@
 package electron.crossprocessexports
 
 
-typealias Options = electron.Options
+typealias Options = electron.core.Options

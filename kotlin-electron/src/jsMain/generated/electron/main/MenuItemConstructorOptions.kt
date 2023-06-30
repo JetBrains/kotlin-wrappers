@@ -1,4 +1,4 @@
 package electron.main
 
 
-typealias MenuItemConstructorOptions = electron.MenuItemConstructorOptions
+typealias MenuItemConstructorOptions = electron.core.MenuItemConstructorOptions

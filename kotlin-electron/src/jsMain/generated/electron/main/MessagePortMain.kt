@@ -1,3 +1,3 @@
 package electron.main
 
-typealias MessagePortMain = electron.MessagePortMain
+typealias MessagePortMain = electron.core.MessagePortMain

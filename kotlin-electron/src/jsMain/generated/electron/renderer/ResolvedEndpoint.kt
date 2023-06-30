@@ -1,4 +1,4 @@
 package electron.renderer
 
 
-typealias ResolvedEndpoint = electron.ResolvedEndpoint
+typealias ResolvedEndpoint = electron.core.ResolvedEndpoint

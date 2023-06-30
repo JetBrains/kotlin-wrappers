@@ -1,4 +1,4 @@
 package electron.main
 
 
-typealias Env = electron.Env
+typealias Env = electron.core.Env

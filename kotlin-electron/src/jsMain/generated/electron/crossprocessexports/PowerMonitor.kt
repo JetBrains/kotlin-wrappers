@@ -1,4 +1,4 @@
 package electron.crossprocessexports
 
 
-typealias PowerMonitor = electron.PowerMonitor
+typealias PowerMonitor = electron.core.PowerMonitor

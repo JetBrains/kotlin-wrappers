@@ -655,7 +655,7 @@ external class Session : NodeEventEmitter {
      * **Note:** Loading extensions into in-memory (non-persistent) sessions is not
      * supported and will throw an error.
      */
-    fun loadExtension(path: String, options: LoadExtensionOptions = definedExternally): Promise<electron.Extension>
+    fun loadExtension(path: String, options: LoadExtensionOptions = definedExternally): Promise<Extension>
 
     /**
      * Preconnects the given number of sockets to an origin.
@@ -682,7 +682,7 @@ external class Session : NodeEventEmitter {
     /**
      * Resolves with the resolved IP addresses for the `host`.
      */
-    fun resolveHost(host: String, options: ResolveHostOptions = definedExternally): Promise<electron.ResolvedHost>
+    fun resolveHost(host: String, options: ResolveHostOptions = definedExternally): Promise<ResolvedHost>
 
     /**
      * Resolves with the proxy information for `url`.

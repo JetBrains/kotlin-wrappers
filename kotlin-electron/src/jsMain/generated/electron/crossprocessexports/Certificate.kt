@@ -1,4 +1,4 @@
 package electron.crossprocessexports
 
 
-typealias Certificate = electron.Certificate
+typealias Certificate = electron.core.Certificate

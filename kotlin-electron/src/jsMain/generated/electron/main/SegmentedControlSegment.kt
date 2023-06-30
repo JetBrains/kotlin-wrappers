@@ -1,4 +1,4 @@
 package electron.main
 
 
-typealias SegmentedControlSegment = electron.SegmentedControlSegment
+typealias SegmentedControlSegment = electron.core.SegmentedControlSegment

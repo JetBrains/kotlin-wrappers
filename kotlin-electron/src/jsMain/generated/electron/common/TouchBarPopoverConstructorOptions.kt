@@ -1,4 +1,4 @@
 package electron.common
 
 
-typealias TouchBarPopoverConstructorOptions = electron.TouchBarPopoverConstructorOptions
+typealias TouchBarPopoverConstructorOptions = electron.core.TouchBarPopoverConstructorOptions

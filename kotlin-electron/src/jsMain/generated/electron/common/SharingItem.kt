@@ -1,4 +1,4 @@
 package electron.common
 
 
-typealias SharingItem = electron.SharingItem
+typealias SharingItem = electron.core.SharingItem

@@ -1,4 +1,4 @@
 package electron.main
 
 
-typealias Certificate = electron.Certificate
+typealias Certificate = electron.core.Certificate

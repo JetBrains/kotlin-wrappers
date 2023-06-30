@@ -1,4 +1,4 @@
 package electron.crossprocessexports
 
 
-typealias ShortcutDetails = electron.ShortcutDetails
+typealias ShortcutDetails = electron.core.ShortcutDetails

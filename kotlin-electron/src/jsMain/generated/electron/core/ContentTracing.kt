@@ -27,7 +27,7 @@ external interface ContentTracing {
      * Get the maximum usage across processes of trace buffer as a percentage of the
      * full state.
      */
-    fun getTraceBufferUsage(): Promise<electron.TraceBufferUsageReturnValue>
+    fun getTraceBufferUsage(): Promise<TraceBufferUsageReturnValue>
 
     /**
      * resolved once all child processes have acknowledged the `startRecording`

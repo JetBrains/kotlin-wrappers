@@ -1,4 +1,4 @@
 package electron.common
 
 
-typealias OpenDialogSyncOptions = electron.OpenDialogSyncOptions
+typealias OpenDialogSyncOptions = electron.core.OpenDialogSyncOptions

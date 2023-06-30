@@ -1,4 +1,4 @@
 package electron.crossprocessexports
 
 
-typealias MessageDetails = electron.MessageDetails
+typealias MessageDetails = electron.core.MessageDetails

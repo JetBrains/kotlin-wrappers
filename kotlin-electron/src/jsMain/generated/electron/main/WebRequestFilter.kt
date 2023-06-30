@@ -1,4 +1,4 @@
 package electron.main
 
 
-typealias WebRequestFilter = electron.WebRequestFilter
+typealias WebRequestFilter = electron.core.WebRequestFilter

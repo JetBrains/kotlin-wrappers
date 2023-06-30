@@ -1,4 +1,4 @@
 package electron.crossprocessexports
 
 
-typealias CertificateTrustDialogOptions = electron.CertificateTrustDialogOptions
+typealias CertificateTrustDialogOptions = electron.core.CertificateTrustDialogOptions

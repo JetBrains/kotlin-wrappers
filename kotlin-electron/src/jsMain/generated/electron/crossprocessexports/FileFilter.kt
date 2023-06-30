@@ -1,4 +1,4 @@
 package electron.crossprocessexports
 
 
-typealias FileFilter = electron.FileFilter
+typealias FileFilter = electron.core.FileFilter

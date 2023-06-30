@@ -1,4 +1,4 @@
 package electron.main
 
 
-typealias EnableNetworkEmulationOptions = electron.EnableNetworkEmulationOptions
+typealias EnableNetworkEmulationOptions = electron.core.EnableNetworkEmulationOptions

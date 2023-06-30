@@ -1,4 +1,4 @@
 package electron.crossprocessexports
 
 
-typealias RenderProcessGoneDetails = electron.RenderProcessGoneDetails
+typealias RenderProcessGoneDetails = electron.core.RenderProcessGoneDetails

@@ -1,4 +1,4 @@
 package electron.common
 
 
-typealias Rectangle = electron.Rectangle
+typealias Rectangle = electron.core.Rectangle

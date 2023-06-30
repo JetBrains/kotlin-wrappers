@@ -1,4 +1,4 @@
 package electron.crossprocessexports
 
 
-typealias IpcMain = electron.IpcMain
+typealias IpcMain = electron.core.IpcMain

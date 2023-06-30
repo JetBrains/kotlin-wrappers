@@ -1,4 +1,4 @@
 package electron.main
 
 
-typealias ContinueActivityDetails = electron.ContinueActivityDetails
+typealias ContinueActivityDetails = electron.core.ContinueActivityDetails

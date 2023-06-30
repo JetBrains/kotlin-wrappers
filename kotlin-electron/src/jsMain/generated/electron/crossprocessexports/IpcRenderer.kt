@@ -1,3 +1,3 @@
 package electron.crossprocessexports
 
-typealias IpcRenderer = electron.IpcRenderer
+typealias IpcRenderer = electron.core.IpcRenderer

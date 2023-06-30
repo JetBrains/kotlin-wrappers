@@ -1,4 +1,4 @@
 package electron.crossprocessexports
 
 
-typealias Env = electron.Env
+typealias Env = electron.core.Env

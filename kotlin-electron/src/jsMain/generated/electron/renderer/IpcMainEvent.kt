@@ -1,4 +1,4 @@
 package electron.renderer
 
 
-typealias IpcMainEvent = electron.IpcMainEvent
+typealias IpcMainEvent = electron.core.IpcMainEvent

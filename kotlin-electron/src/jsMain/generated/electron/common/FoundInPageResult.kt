@@ -1,4 +1,4 @@
 package electron.common
 
 
-typealias FoundInPageResult = electron.FoundInPageResult
+typealias FoundInPageResult = electron.core.FoundInPageResult

@@ -1,4 +1,4 @@
 package electron.main
 
 
-typealias UserDefaultTypes = electron.UserDefaultTypes
+typealias UserDefaultTypes = electron.core.UserDefaultTypes
