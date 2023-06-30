@@ -1,4 +1,4 @@
-@file:JsModule("electron/electron")
+@file:JsModule("INTERNAL_ENTITY")
 
 package electron
 

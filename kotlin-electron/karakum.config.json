@@ -10,7 +10,11 @@
     "libraryNameOutputPrefix": true,
     "granularity": "top-level",
     "moduleNameMapper": {
-        "(.*)#.+": "$1"
+        "electron/electron#Electron.Main": "electron/main",
+        "electron/electron#Electron.Common": "electron/common",
+        "electron/electron#Electron.Renderer": "electron/renderer",
+        "electron/electron#Electron.CrossProcessExports": "electron",
+        "electron/electron#Electron": "INTERNAL_ENTITY"
     },
     "importInjector": {
         "AddRepresentationOptions.kt": [

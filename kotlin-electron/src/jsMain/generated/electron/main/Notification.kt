@@ -1,4 +1,4 @@
-@file:JsModule("electron/electron")
+@file:JsModule("electron/main")
 
 package electron.main
 
