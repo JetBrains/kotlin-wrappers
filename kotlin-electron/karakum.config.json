@@ -16,6 +16,9 @@
         "electron/electron#Electron.CrossProcessExports": "electron",
         "electron/electron#Electron": "INTERNAL_ENTITY"
     },
+    "packageNameMapper": {
+        "electron/([^/]+)\\.kt": "electron/core/$1.kt"
+    },
     "importInjector": {
         "AddRepresentationOptions.kt": [
             "node.buffer.Buffer"
