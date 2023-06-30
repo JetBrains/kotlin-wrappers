@@ -31,7 +31,7 @@ open external class QueryClient(config: QueryClientConfig = definedExternally) {
 
     open fun <TQueryFnData, TError, TData, TQueryKey : QueryKey> ensureQueryData(
         queryKey: TQueryKey,
-        queryFn: QueryFunction<TQueryFnData, TQueryKey>,
+        queryFn: QueryFunction<TQueryFnData, TQueryKey, *>,
         options: FetchQueryOptions<TQueryFnData, TError, TData, TQueryKey> = definedExternally,
     ): Promise<TData>
 
@@ -118,7 +118,7 @@ open external class QueryClient(config: QueryClientConfig = definedExternally) {
 
     open fun <TQueryFnData, TError, TData, TQueryKey : QueryKey> fetchQuery(
         queryKey: TQueryKey,
-        queryFn: QueryFunction<TQueryFnData, TQueryKey>,
+        queryFn: QueryFunction<TQueryFnData, TQueryKey, *>,
         options: FetchQueryOptions<TQueryFnData, TError, TData, TQueryKey> = definedExternally,
     ): Promise<TData>
 
@@ -130,7 +130,7 @@ open external class QueryClient(config: QueryClientConfig = definedExternally) {
 
     open fun <TQueryFnData, TError, TData, TQueryKey : QueryKey> prefetchQuery(
         queryKey: TQueryKey,
-        queryFn: QueryFunction<TQueryFnData, TQueryKey>,
+        queryFn: QueryFunction<TQueryFnData, TQueryKey, *>,
         options: FetchQueryOptions<TQueryFnData, TError, TData, TQueryKey> = definedExternally,
     ): Promise<Unit>
 
@@ -142,7 +142,7 @@ open external class QueryClient(config: QueryClientConfig = definedExternally) {
 
     open fun <TQueryFnData, TError, TData, TQueryKey : QueryKey> fetchInfiniteQuery(
         queryKey: TQueryKey,
-        queryFn: QueryFunction<TQueryFnData, TQueryKey>,
+        queryFn: QueryFunction<TQueryFnData, TQueryKey, *>,
         options: FetchInfiniteQueryOptions<TQueryFnData, TError, TData, TQueryKey> = definedExternally,
     ): Promise<InfiniteData<TData>>
 
@@ -154,7 +154,7 @@ open external class QueryClient(config: QueryClientConfig = definedExternally) {
 
     open fun <TQueryFnData, TError, TData, TQueryKey : QueryKey> prefetchInfiniteQuery(
         queryKey: TQueryKey,
-        queryFn: QueryFunction<TQueryFnData, TQueryKey>,
+        queryFn: QueryFunction<TQueryFnData, TQueryKey, *>,
         options: FetchInfiniteQueryOptions<TQueryFnData, TError, TData, TQueryKey> = definedExternally,
     ): Promise<Unit>
 

@@ -16,6 +16,6 @@ external fun <TQueryFnData, TError, TData, TQueryKey : QueryKey> useInfiniteQuer
 
 external fun <TQueryFnData, TError, TData, TQueryKey : QueryKey> useInfiniteQuery(
     queryKey: TQueryKey,
-    queryFn: QueryFunction<TQueryFnData, TQueryKey>,
+    queryFn: QueryFunction<TQueryFnData, TQueryKey, *>,
     options: UseInfiniteQueryOptions<TQueryFnData, TError, TData, TQueryFnData, TQueryKey> = definedExternally,
 ): UseInfiniteQueryResult<TData, TError>

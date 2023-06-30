@@ -16,6 +16,6 @@ external fun <TQueryFnData, TError, TData, TQueryKey : QueryKey> useQuery(
 
 external fun <TQueryFnData, TError, TData, TQueryKey : QueryKey> useQuery(
     queryKey: TQueryKey,
-    queryFn: QueryFunction<TQueryFnData, TQueryKey>,
+    queryFn: QueryFunction<TQueryFnData, TQueryKey, *>,
     options: UseQueryOptions<TQueryFnData, TError, TData, TQueryKey> = definedExternally,
 ): UseQueryResult<TData, TError>

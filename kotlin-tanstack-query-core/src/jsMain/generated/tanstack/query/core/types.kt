@@ -16,7 +16,7 @@ import web.abort.AbortSignal
 // readonly unknown[]
 external interface QueryKey
 
-typealias QueryFunction<T, TQueryKey> = (context: QueryFunctionContext<TQueryKey, *>) -> Promise<T>
+typealias QueryFunction<T, TQueryKey, TPageParam> = (context: QueryFunctionContext<TQueryKey, TPageParam>) -> Promise<T>
 
 external interface QueryFunctionContext<TQueryKey : QueryKey, TPageParam> {
     var queryKey: TQueryKey
@@ -47,7 +47,7 @@ external interface QueryOptions<TQueryFnData, TError, TData, TQueryKey : QueryKe
     var retryDelay: RetryDelayValue<TError>
     var networkMode: NetworkMode
     var cacheTime: JsDuration
-    var queryFn: QueryFunction<TQueryFnData, TQueryKey>
+    var queryFn: QueryFunction<TQueryFnData, TQueryKey, *>
     var queryHash: String
     var queryKey: TQueryKey
     var queryKeyHashFn: QueryKeyHashFunction<TQueryKey>
