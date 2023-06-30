@@ -1,5 +1,4 @@
 @file:JsModule("electron/electron")
-@file:JsQualifier("Electron.Renderer")
 
 package electron.renderer
 

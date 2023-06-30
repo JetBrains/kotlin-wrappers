@@ -1,5 +1,4 @@
 @file:JsModule("electron/electron")
-@file:JsQualifier("Electron.Common")
 
 package electron.common
 

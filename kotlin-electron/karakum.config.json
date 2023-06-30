@@ -9,6 +9,9 @@
     "libraryName": "electron",
     "libraryNameOutputPrefix": true,
     "granularity": "top-level",
+    "moduleNameMapper": {
+        "(.*)#.+": "$1"
+    },
     "importInjector": {
         "AddRepresentationOptions.kt": [
             "node.buffer.Buffer"
