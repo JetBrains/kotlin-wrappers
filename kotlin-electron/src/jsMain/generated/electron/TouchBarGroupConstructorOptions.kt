@@ -1,0 +1,4 @@
+package electron
+
+
+typealias TouchBarGroupConstructorOptions = electron.core.TouchBarGroupConstructorOptions

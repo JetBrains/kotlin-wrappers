@@ -1,0 +1,4 @@
+package electron
+
+
+typealias USBProtectedClassesHandlerHandlerDetails = electron.core.USBProtectedClassesHandlerHandlerDetails

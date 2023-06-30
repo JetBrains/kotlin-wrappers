@@ -2,12 +2,200 @@
     "input": [
         "<nodeModules>/electron/electron.d.ts"
     ],
-    "ignoreInput": [],
+    "ignoreInput": [
+        "**/@types/node/**"
+    ],
     "output": "src/jsMain/generated",
     "libraryName": "electron",
     "libraryNameOutputPrefix": true,
     "granularity": "top-level",
+    "moduleNameMapper": {
+        "electron/electron#Electron.Main": "electron/main",
+        "electron/electron#Electron.Common": "electron/common",
+        "electron/electron#Electron.Renderer": "electron/renderer",
+        "electron/electron#Electron.CrossProcessExports": "electron",
+        "electron/electron#Electron": "INTERNAL_ENTITY"
+    },
+    "packageNameMapper": {
+        "electron/([^/]+)\\.kt": "electron/core/$1.kt",
+        "electron/crossprocessexports/(.+)\\.kt": "electron/$1.kt"
+    },
     "importInjector": {
-
+        "AddRepresentationOptions.kt": [
+            "node.buffer.Buffer"
+        ],
+        "App.kt": [
+            "kotlin.js.Promise"
+        ],
+        "AutoUpdater.kt": [
+            "kotlin.js.Date"
+        ],
+        "BrowserWindow.kt": [
+            "kotlin.js.Promise",
+            "node.buffer.Buffer",
+            "node.events.EventEmitter as NodeEventEmitter"
+        ],
+        "ClientRequest.kt": [
+            "node.buffer.Buffer",
+            "node.events.EventEmitter as NodeEventEmitter"
+        ],
+        "Clipboard.kt": [
+            "node.buffer.Buffer"
+        ],
+        "ContentTracing.kt": [
+            "kotlin.js.Promise"
+        ],
+        "Cookies.kt": [
+            "kotlin.js.Promise",
+            "node.events.EventEmitter as NodeEventEmitter"
+        ],
+        "CrashReport.kt": [
+            "kotlin.js.Date"
+        ],
+        "Debugger.kt": [
+            "kotlin.js.Promise",
+            "node.events.EventEmitter as NodeEventEmitter"
+        ],
+        "DesktopCapturer.kt": [
+            "kotlin.js.Promise"
+        ],
+        "Dialog.kt": [
+            "kotlin.js.Promise"
+        ],
+        "Dock.kt": [
+            "kotlin.js.Promise"
+        ],
+        "DownloadItem.kt": [
+            "node.buffer.Buffer",
+            "node.events.EventEmitter as NodeEventEmitter"
+        ],
+        "IncomingMessage.kt": [
+            "node.buffer.Buffer",
+            "node.events.EventEmitter as NodeEventEmitter"
+        ],
+        "InAppPurchase.kt": [
+            "kotlin.js.Promise"
+        ],
+        "IpcRenderer.kt": [
+            "kotlin.js.Promise",
+            "web.messaging.MessagePort"
+        ],
+        "IpcRendererEvent.kt": [
+            "web.messaging.MessagePort"
+        ],
+        "MessageBoxOptions.kt": [
+            "web.abort.AbortSignal"
+        ],
+        "MessageChannelMain.kt": [
+            "node.events.EventEmitter as NodeEventEmitter"
+        ],
+        "MessagePortMain.kt": [
+            "node.events.EventEmitter as NodeEventEmitter"
+        ],
+        "MimeTypedBuffer.kt": [
+            "node.buffer.Buffer"
+        ],
+        "NativeImage.kt": [
+            "kotlin.js.Promise",
+            "node.buffer.Buffer"
+        ],
+        "Net.kt": [
+            "kotlin.js.Promise"
+        ],
+        "NetLog.kt": [
+            "kotlin.js.Promise"
+        ],
+        "Notification.kt": [
+            "node.events.EventEmitter as NodeEventEmitter"
+        ],
+        "PushNotifications.kt": [
+            "kotlin.js.Promise"
+        ],
+        "SafeStorage.kt": [
+            "node.buffer.Buffer"
+        ],
+        "ServiceWorkers.kt": [
+            "node.events.EventEmitter as NodeEventEmitter"
+        ],
+        "Session.kt": [
+            "kotlin.js.Promise",
+            "node.buffer.Buffer",
+            "node.events.EventEmitter as NodeEventEmitter"
+        ],
+        "Shell.kt": [
+            "kotlin.js.Promise"
+        ],
+        "ShareMenu.kt": [
+            "node.events.EventEmitter as NodeEventEmitter"
+        ],
+        "SystemPreferences.kt": [
+            "kotlin.js.Promise"
+        ],
+        "TouchBarColorPicker.kt": [
+            "node.events.EventEmitter as NodeEventEmitter"
+        ],
+        "TouchBarGroup.kt": [
+            "node.events.EventEmitter as NodeEventEmitter"
+        ],
+        "TouchBarLabel.kt": [
+            "node.events.EventEmitter as NodeEventEmitter"
+        ],
+        "TouchBarOtherItemsProxy.kt": [
+            "node.events.EventEmitter as NodeEventEmitter"
+        ],
+        "TouchBarPopover.kt": [
+            "node.events.EventEmitter as NodeEventEmitter"
+        ],
+        "TouchBarScrubber.kt": [
+            "node.events.EventEmitter as NodeEventEmitter"
+        ],
+        "TouchBarSegmentedControl.kt": [
+            "node.events.EventEmitter as NodeEventEmitter"
+        ],
+        "TouchBarSlider.kt": [
+            "node.events.EventEmitter as NodeEventEmitter"
+        ],
+        "TouchBarSpacer.kt": [
+            "node.events.EventEmitter as NodeEventEmitter"
+        ],
+        "Tray.kt": [
+            "node.events.EventEmitter as NodeEventEmitter"
+        ],
+        "UploadData.kt": [
+            "node.buffer.Buffer"
+        ],
+        "UploadRawData.kt": [
+            "node.buffer.Buffer"
+        ],
+        "UtilityProcess.kt": [
+            "node.events.EventEmitter as NodeEventEmitter"
+        ],
+        "WebContents.kt": [
+            "kotlin.js.Promise",
+            "node.buffer.Buffer",
+            "node.events.EventEmitter as NodeEventEmitter"
+        ],
+        "WebFrame.kt": [
+            "kotlin.js.Promise"
+        ],
+        "WebFrameMain.kt": [
+            "kotlin.js.Promise",
+            "node.events.EventEmitter as NodeEventEmitter"
+        ],
+        "WebviewTag.kt": [
+            "kotlin.js.Promise",
+            "js.typedarrays.Uint8Array"
+        ],
+        "namespace.kt": [
+            "node.events.EventEmitter"
+        ]
+    },
+    "namespaceStrategy": {
+        "Electron": "package",
+        "electron": "ignore",
+        "electron/main": "ignore",
+        "electron/common": "ignore",
+        "electron/renderer": "ignore",
+        "original-fs": "ignore"
     }
 }

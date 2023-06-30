@@ -1,0 +1,4 @@
+package electron.renderer
+
+
+typealias TouchBarScrubberConstructorOptions = electron.core.TouchBarScrubberConstructorOptions

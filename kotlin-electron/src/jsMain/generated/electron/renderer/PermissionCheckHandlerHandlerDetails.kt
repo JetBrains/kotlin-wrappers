@@ -1,0 +1,4 @@
+package electron.renderer
+
+
+typealias PermissionCheckHandlerHandlerDetails = electron.core.PermissionCheckHandlerHandlerDetails

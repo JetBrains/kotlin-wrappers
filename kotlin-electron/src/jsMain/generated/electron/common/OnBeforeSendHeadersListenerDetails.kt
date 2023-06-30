@@ -1,0 +1,4 @@
+package electron.common
+
+
+typealias OnBeforeSendHeadersListenerDetails = electron.core.OnBeforeSendHeadersListenerDetails

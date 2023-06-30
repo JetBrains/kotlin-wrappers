@@ -1,0 +1,4 @@
+package electron
+
+
+typealias DevicePermissionHandlerHandlerDetails = electron.core.DevicePermissionHandlerHandlerDetails

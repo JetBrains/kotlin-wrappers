@@ -1,0 +1,4 @@
+package electron
+
+
+typealias TouchBarLabelConstructorOptions = electron.core.TouchBarLabelConstructorOptions

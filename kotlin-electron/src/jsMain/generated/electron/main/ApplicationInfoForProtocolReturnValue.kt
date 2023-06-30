@@ -1,0 +1,4 @@
+package electron.main
+
+
+typealias ApplicationInfoForProtocolReturnValue = electron.core.ApplicationInfoForProtocolReturnValue
