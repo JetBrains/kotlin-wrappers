@@ -4,14 +4,8 @@
 
 package remix.run.router
 
-import web.http.FormData
-
 /**
- * Options for a navigate() call for a Form navigation
+ * Options for a navigate() call for a submission navigation
  */
 
-sealed external interface SubmissionNavigateOptions : BaseNavigateOptions {
-    var formMethod: HTMLFormMethod?
-    var formEncType: FormEncType?
-    var formData: FormData
-}
+sealed external interface SubmissionNavigateOptions : BaseNavigateOptions, BaseSubmissionOptions

@@ -8,4 +8,4 @@ package remix.run.router
 /**
  * Options to pass to fetch()
  */
-typealias RouterFetchOptions = Any /* Omit<LinkNavigateOptions, "replace"> | Omit<SubmissionNavigateOptions, "replace"> */
+typealias RouterFetchOptions = Any /* LoadFetchOptions | SubmitFetchOptions */

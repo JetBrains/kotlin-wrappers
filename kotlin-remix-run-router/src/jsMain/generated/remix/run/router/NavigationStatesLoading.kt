@@ -1,13 +1,13 @@
 package remix.run.router
 
-import web.http.FormData
-
 
 sealed external interface NavigationStatesLoading {
     var state: String
     var location: Location
-    var formMethod: FormMethod?
+    var formMethod: Any /* LowerCaseFormMethod | "GET" | "POST" | "PUT" | "PATCH" | "DELETE" */?
     var formAction: String?
     var formEncType: FormEncType?
-    var formData: FormData?
+    var formData: Any??
+    var json: JsonValue??
+    var text: String??
 }

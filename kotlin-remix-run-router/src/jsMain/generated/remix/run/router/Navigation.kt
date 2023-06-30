@@ -5,4 +5,4 @@
 package remix.run.router
 
 
-sealed external interface Navigation /* export declare type Navigation = NavigationStates[keyof NavigationStates]; */
+sealed external interface Navigation /* export type Navigation = NavigationStates[keyof NavigationStates]; */

@@ -8,4 +8,6 @@ sealed external interface NavigationStatesIdle {
     var formAction: Nothing?
     var formEncType: Nothing?
     var formData: Nothing?
+    var json: Nothing?
+    var text: Nothing?
 }

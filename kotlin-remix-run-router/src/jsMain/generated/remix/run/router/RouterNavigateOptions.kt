@@ -6,6 +6,6 @@ package remix.run.router
 
 
 /**
- * Options to pass to navigate() for either a Link or Form navigation
+ * Options to pass to navigate() for a navigation
  */
 typealias RouterNavigateOptions = Any /* LinkNavigateOptions | SubmissionNavigateOptions */

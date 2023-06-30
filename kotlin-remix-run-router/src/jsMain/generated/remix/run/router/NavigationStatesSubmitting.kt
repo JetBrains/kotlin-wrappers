@@ -1,7 +1,5 @@
 package remix.run.router
 
-import web.http.FormData
-
 
 sealed external interface NavigationStatesSubmitting {
     var state: String
@@ -9,5 +7,7 @@ sealed external interface NavigationStatesSubmitting {
     var formMethod: FormMethod
     var formAction: String
     var formEncType: FormEncType
-    var formData: FormData
+    var formData: Any?
+    var json: JsonValue?
+    var text: String?
 }

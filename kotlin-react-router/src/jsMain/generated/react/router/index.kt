@@ -10,8 +10,6 @@ package react.router
 
 /* import { AbortedDeferredError, Action as NavigationType, createPath, defer, generatePath, isRouteErrorResponse, json, matchPath, matchRoutes, parsePath, redirect, resolvePath } from "@remix-run/router"; */
 
-/* import startTransitionImpl from "./lib/polyfills/start-transition"; */
-
 /* import type { AwaitProps, MemoryRouterProps, NavigateProps, OutletProps, RouteProps, PathRouteProps, LayoutRouteProps, IndexRouteProps, RouterProps, RoutesProps, RouterProviderProps, FutureConfig } from "./lib/components"; */
 
 /* import { createRoutesFromChildren, renderMatches, Await, MemoryRouter, Navigate, Outlet, Route, Router, RouterProvider, Routes } from "./lib/components"; */
@@ -29,4 +27,4 @@ package react.router
 /* export { AbortedDeferredError, Await, MemoryRouter, Navigate, NavigationType, Outlet, Route, Router, RouterProvider, Routes, createPath, createRoutesFromChildren, createRoutesFromChildren as createRoutesFromElements, defer, isRouteErrorResponse, generatePath, json, matchPath, matchRoutes, parsePath, redirect, renderMatches, resolvePath, useActionData, useAsyncError, useAsyncValue, useBlocker as unstable_useBlocker, useHref, useInRouterContext, useLoaderData, useLocation, useMatch, useMatches, useNavigate, useNavigation, useNavigationType, useOutlet, useOutletContext, useParams, useResolvedPath, useRevalidator, useRouteError, useRouteLoaderData, useRoutes, }; */
 
 /** @internal */
-/* export { NavigationContext as UNSAFE_NavigationContext, LocationContext as UNSAFE_LocationContext, RouteContext as UNSAFE_RouteContext, DataRouterContext as UNSAFE_DataRouterContext, DataRouterStateContext as UNSAFE_DataRouterStateContext, mapRouteProperties as UNSAFE_mapRouteProperties, useRouteId as UNSAFE_useRouteId, useRoutesImpl as UNSAFE_useRoutesImpl, startTransitionImpl as UNSAFE_startTransitionImpl, }; */
+/* export { NavigationContext as UNSAFE_NavigationContext, LocationContext as UNSAFE_LocationContext, RouteContext as UNSAFE_RouteContext, DataRouterContext as UNSAFE_DataRouterContext, DataRouterStateContext as UNSAFE_DataRouterStateContext, mapRouteProperties as UNSAFE_mapRouteProperties, useRouteId as UNSAFE_useRouteId, useRoutesImpl as UNSAFE_useRoutesImpl, }; */

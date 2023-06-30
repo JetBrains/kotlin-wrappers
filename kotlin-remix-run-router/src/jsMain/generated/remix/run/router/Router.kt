@@ -104,7 +104,7 @@ sealed external interface Router {
      * @param href    href to fetch
      * @param opts    Fetcher options, (method, submission, etc.)
      */
-    fun fetch(key: String, routeId: String, href: String?, opts: RouterNavigateOptions = definedExternally): Unit
+    fun fetch(key: String, routeId: String, href: String?, opts: RouterFetchOptions = definedExternally): Unit
 
     /**
      * @internal

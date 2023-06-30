@@ -21,6 +21,12 @@ sealed external interface FormProps : react.Props, react.PropsWithRef<HTMLFormEl
     var routerMethod: HTMLFormMethod?
 
     /**
+     * `<form encType>` - enhancing beyond the normal string type and limiting
+     * to the built-in browser supported values
+     */
+    var encType: Any /* "application/x-www-form-urlencoded" | "multipart/form-data" | "text/plain" */?
+
+    /**
      * Normal `<form action>` but supports React Router's relative paths.
      */
     override var action: String?

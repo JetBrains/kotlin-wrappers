@@ -6,7 +6,9 @@ sealed external interface FetcherStatesIdle<TData> {
     var formMethod: Nothing?
     var formAction: Nothing?
     var formEncType: Nothing?
+    var text: Nothing?
     var formData: Nothing?
+    var json: Nothing?
     var data: TData?
     var String: Boolean?
 }

@@ -1,14 +1,14 @@
 package remix.run.router
 
-import web.http.FormData
-
 
 sealed external interface FetcherStatesLoading<TData> {
     var state: String
-    var formMethod: FormMethod?
+    var formMethod: Any /* LowerCaseFormMethod | "GET" | "POST" | "PUT" | "PATCH" | "DELETE" */?
     var formAction: String?
     var formEncType: FormEncType?
-    var formData: FormData?
+    var text: String??
+    var formData: Any??
+    var json: JsonValue??
     var data: TData?
     var String: Boolean?
 }

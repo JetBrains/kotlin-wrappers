@@ -5,10 +5,8 @@
 package remix.run.router
 
 
-sealed external interface BaseNavigateOptions {
+sealed external interface BaseNavigateOptions : BaseNavigateOrFetchOptions {
     var replace: Boolean?
     var state: Any?
-    var preventScrollReset: Boolean?
-    var relative: RelativeRoutingType?
     var fromRouteId: String?
 }

@@ -10,6 +10,6 @@ import remix.run.router.Fetcher
 
 sealed external interface FetcherWithComponents<TData> : Fetcher<TData> {
     var Form: ForwardRefExoticComponent<FormProps>
-    var submit: (target: SubmitTarget, options: SubmitOptions? /* use undefined for default */) -> Unit
+    var submit: FetcherSubmitFunction
     var load: (href: String) -> Unit
 }

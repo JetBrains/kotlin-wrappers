@@ -23,7 +23,7 @@ sealed external interface SubmitOptions {
     var action: String?
 
     /**
-     * The action URL used to submit the form. Overrides `<form encType>`.
+     * The encoding used to submit the form. Overrides `<form encType>`.
      * Defaults to "application/x-www-form-urlencoded".
      */
     var encType: FormEncType?
