@@ -5,7 +5,10 @@
         "**/LowerCaseFormMethod.kt",
         "**/UpperCaseFormMethod.kt",
         "**/V7_FormMethod.kt",
-        "**/V7_MutationFormMethod.kt"
+        "**/V7_MutationFormMethod.kt",
+        "**/JsonArray.kt",
+        "**/JsonObject.kt",
+        "**/JsonPrimitive.kt"
     ],
     "libraryName": "@remix-run/router",
     "libraryNameOutputPrefix": true,

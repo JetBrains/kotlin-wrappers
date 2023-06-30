@@ -12,6 +12,11 @@
         "**/react-router/**"
     ],
     "output": "src/jsMain/generated",
+    "ignoreOutput": [
+        "**/JsonArray.kt",
+        "**/JsonObject.kt",
+        "**/JsonPrimitive.kt"
+    ],
     "libraryName": "react-router-dom",
     "libraryNameOutputPrefix": true,
     "granularity": "top-level",
