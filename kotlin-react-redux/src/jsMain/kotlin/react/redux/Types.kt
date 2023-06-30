@@ -30,6 +30,6 @@ typealias Selector<S, OP, P> = (S, OP) -> P
 
 typealias SelectorFactory<S, A, R, OP, P> = ((A) -> R, FactoryOptions<P>) -> Selector<S, OP, P>
 
-interface DispatchProps<A, R> : Props {
+external interface DispatchProps<A, R> : Props {
     var dispatch: (A) -> R
 }
