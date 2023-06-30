@@ -4,7 +4,7 @@
 
 Modern `Promise` introduced
 
-Migration plan:
+Replace the imports as follows to migrate:
 * `kotlin.js.Promise` -> `js.promise.Promise`
 * `kotlinx.coroutines.await` -> `js.promise.await`
 * `kotlinx.coroutines.asDeferred` -> `js.promise.asDeferred`
@@ -13,7 +13,7 @@ Migration plan:
 
 **BREAKING CHANGE**
 
-`kotlin-css` now has a different syntax for setting `border`, `margin`, `padding`, and `inset` properties.
+`kotlin-css` now has a different syntax for setting `backgroundPosition`, `border`, `inset`, `margin`, `padding`, and `textDecoration` properties.
 
 ```kotlin
 css {
