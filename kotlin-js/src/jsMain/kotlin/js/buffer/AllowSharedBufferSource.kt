@@ -1,5 +1,3 @@
-// Automatically generated - do not modify!
-
-package web.encoding
+package js.buffer
 
 typealias AllowSharedBufferSource = Any /* ArrayBuffer | ArrayBufferView */

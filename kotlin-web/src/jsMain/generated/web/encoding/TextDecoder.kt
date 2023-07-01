@@ -2,6 +2,8 @@
 
 package web.encoding
 
+import js.buffer.AllowSharedBufferSource
+
 /**
  * A decoder for a specific method, that is a specific character encoding, like utf-8, iso-8859-2, koi8, cp1261, gbk, etc. A decoder takes a stream of bytes as input and emits a stream of code points. For a more scalable, non-native library, see StringView – a C-like representation of strings based on typed arrays.
  *
