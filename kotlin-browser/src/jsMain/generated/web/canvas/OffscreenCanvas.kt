@@ -7,8 +7,7 @@ import web.buffer.Blob
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventTarget
-import webgl.WebGL2RenderingContext
-import webgl.WebGLRenderingContext
+import webgl.*
 
 /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/OffscreenCanvas) */
 external class OffscreenCanvas(
@@ -55,28 +54,23 @@ external class OffscreenCanvas(
      */
     fun getContext(
         contextId: RenderingContextId.canvas,
-        options: Any? = definedExternally,
+        options: CanvasRenderingContext2DSettings = definedExternally,
     ): OffscreenCanvasRenderingContext2D?
 
     fun getContext(
         contextId: RenderingContextId.bitmaprenderer,
-        options: Any? = definedExternally,
+        options: ImageBitmapRenderingContextSettings = definedExternally,
     ): ImageBitmapRenderingContext?
 
     fun getContext(
         contextId: RenderingContextId.webgl,
-        options: Any? = definedExternally,
+        options: WebGLContextAttributes = definedExternally,
     ): WebGLRenderingContext?
 
     fun getContext(
         contextId: RenderingContextId.webgl2,
-        options: Any? = definedExternally,
+        options: WebGLContextAttributes = definedExternally,
     ): WebGL2RenderingContext?
-
-    fun getContext(
-        contextId: OffscreenRenderingContextId,
-        options: Any? = definedExternally,
-    ): Any /* OffscreenRenderingContext */?
 
     /**
      * Returns a newly created ImageBitmap object with the image in the OffscreenCanvas object. The image in the OffscreenCanvas object is replaced with a new blank image.
