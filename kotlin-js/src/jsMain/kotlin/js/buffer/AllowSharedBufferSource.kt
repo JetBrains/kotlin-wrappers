@@ -1,3 +1,4 @@
 package js.buffer
 
-typealias AllowSharedBufferSource = Any /* ArrayBuffer | ArrayBufferView */
+/* ArrayBuffer | ArrayBufferView */
+sealed external interface AllowSharedBufferSource
