@@ -7,7 +7,7 @@ package js.buffer
 external class SharedArrayBuffer(
     override val byteLength: Int,
 ) : ArrayBufferLike,
-    BufferSource {
+    AllowSharedBufferSource {
     override fun slice(
         begin: Int,
         end: Int,

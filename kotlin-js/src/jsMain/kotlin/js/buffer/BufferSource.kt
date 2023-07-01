@@ -1,3 +1,4 @@
 package js.buffer
 
-sealed external interface BufferSource
+sealed external interface BufferSource :
+    AllowSharedBufferSource
