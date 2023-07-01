@@ -2,8 +2,8 @@
 
 package webgl
 
+import js.buffer.AllowSharedBufferSource
 import js.buffer.ArrayBufferView
-import js.buffer.BufferSource
 
 sealed external interface WebGLRenderingContextOverloads {
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/bufferData) */
@@ -15,7 +15,7 @@ sealed external interface WebGLRenderingContextOverloads {
 
     fun bufferData(
         target: GLenum,
-        data: BufferSource?,
+        data: AllowSharedBufferSource?,
         usage: GLenum,
     )
 
@@ -23,7 +23,7 @@ sealed external interface WebGLRenderingContextOverloads {
     fun bufferSubData(
         target: GLenum,
         offset: GLintptr,
-        data: BufferSource,
+        data: AllowSharedBufferSource,
     )
 
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/compressedTexImage2D) */

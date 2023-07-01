@@ -2,7 +2,7 @@
 
 package web.codecs
 
-import js.buffer.BufferSource
+import js.buffer.AllowSharedBufferSource
 import js.core.JsLong
 import js.core.ReadonlyArray
 import js.promise.Promise
@@ -15,7 +15,7 @@ external class VideoFrame(
     init: VideoFrameInit = definedExternally,
 ) {
     constructor(
-        data: BufferSource,
+        data: AllowSharedBufferSource,
         init: VideoFrameBufferInit,
     )
 
@@ -58,7 +58,7 @@ external class VideoFrame(
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoFrame/close) */
     fun close()
     fun copyTo(
-        destination: BufferSource,
+        destination: AllowSharedBufferSource,
         options: VideoFrameCopyToOptions = definedExternally,
     ): Promise<ReadonlyArray<PlaneLayout>>
 }

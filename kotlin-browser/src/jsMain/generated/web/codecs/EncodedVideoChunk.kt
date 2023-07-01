@@ -2,7 +2,7 @@
 
 package web.codecs
 
-import js.buffer.BufferSource
+import js.buffer.AllowSharedBufferSource
 import js.core.JsLong
 
 /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/EncodedVideoChunk) */
@@ -22,5 +22,5 @@ external class EncodedVideoChunk(
     val type: EncodedVideoChunkType
 
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/EncodedVideoChunk/copyTo) */
-    fun copyTo(destination: BufferSource)
+    fun copyTo(destination: AllowSharedBufferSource)
 }

@@ -2,11 +2,11 @@
 
 package web.codecs
 
-import js.buffer.BufferSource
+import js.buffer.AllowSharedBufferSource
 import js.core.JsLong
 
 sealed external interface EncodedVideoChunkInit {
-    var data: BufferSource
+    var data: AllowSharedBufferSource
     var duration: Double?
     var timestamp: JsLong
     var type: EncodedVideoChunkType
