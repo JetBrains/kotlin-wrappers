@@ -635,8 +635,6 @@ external class Viewer(
      * @property [selectedTerrainProviderViewModel] The view model for the current base terrain layer, if not supplied the first available base layer is used.  This value is only valid if `baseLayerPicker` is set to true.
      * @property [terrainProviderViewModels] The array of ProviderViewModels to be selectable from the BaseLayerPicker.  This value is only valid if `baseLayerPicker` is set to true.
      *   Default value - `createDefaultTerrainProviderViewModels()`
-     * @property [imageryProvider] The imagery provider to use.  This value is only valid if `baseLayerPicker` is set to false. Deprecated.
-     *   Default value - [createWorldImagery()][createWorldImagery]
      * @property [baseLayer] The bottommost imagery layer applied to the globe. If set to `false`, no imagery provider will be added. This value is only valid if `baseLayerPicker` is set to false.
      *   Default value - `ImageryLayer.fromWorldImagery()`
      * @property [terrainProvider] The terrain provider to use
@@ -709,7 +707,6 @@ external class Viewer(
         var imageryProviderViewModels: ReadonlyArray<ProviderViewModel>?
         var selectedTerrainProviderViewModel: ProviderViewModel?
         var terrainProviderViewModels: ReadonlyArray<ProviderViewModel>?
-        var imageryProvider: dynamic
         var baseLayer: dynamic
         var terrainProvider: TerrainProvider?
         var terrain: Terrain?

@@ -55,18 +55,6 @@ external class EllipsoidTerrainProvider(options: ConstructorOptions? = definedEx
     override val tilingScheme: GeographicTilingScheme
 
     /**
-     * Gets a value indicating whether or not the provider is ready for use.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/EllipsoidTerrainProvider.html#ready">Online Documentation</a>
-     */
-    override val ready: Boolean
-
-    /**
-     * Gets a promise that resolves to true when the provider is ready for use.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/EllipsoidTerrainProvider.html#readyPromise">Online Documentation</a>
-     */
-    override val readyPromise: Promise<Boolean>
-
-    /**
      * Gets a value indicating whether or not the provider includes a water mask.  The water mask
      * indicates which areas of the globe are water rather than land, so they can be rendered
      * as a reflective surface with animated waves.

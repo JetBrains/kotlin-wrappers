@@ -113,7 +113,7 @@ external class ScreenSpaceCameraController(scene: Scene) {
     /**
      * The input that allows the user to pan around the map. This only applies in 2D and Columbus view modes.
      *
-     * The type came be a [CameraEventType], `undefined`, an object with `eventType`
+     * The type can be a [CameraEventType], `undefined`, an object with `eventType`
      * and `modifier` properties with types `CameraEventType` and [KeyboardEventModifier],
      * or an array of any of the preceding.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ScreenSpaceCameraController.html#translateEventTypes">Online Documentation</a>
@@ -123,7 +123,7 @@ external class ScreenSpaceCameraController(scene: Scene) {
     /**
      * The input that allows the user to zoom in/out.
      *
-     * The type came be a [CameraEventType], `undefined`, an object with `eventType`
+     * The type can be a [CameraEventType], `undefined`, an object with `eventType`
      * and `modifier` properties with types `CameraEventType` and [KeyboardEventModifier],
      * or an array of any of the preceding.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ScreenSpaceCameraController.html#zoomEventTypes">Online Documentation</a>
@@ -133,7 +133,7 @@ external class ScreenSpaceCameraController(scene: Scene) {
     /**
      * The input that allows the user to rotate around the globe or another object. This only applies in 3D and Columbus view modes.
      *
-     * The type came be a [CameraEventType], `undefined`, an object with `eventType`
+     * The type can be a [CameraEventType], `undefined`, an object with `eventType`
      * and `modifier` properties with types `CameraEventType` and [KeyboardEventModifier],
      * or an array of any of the preceding.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ScreenSpaceCameraController.html#rotateEventTypes">Online Documentation</a>
@@ -143,7 +143,7 @@ external class ScreenSpaceCameraController(scene: Scene) {
     /**
      * The input that allows the user to tilt in 3D and Columbus view or twist in 2D.
      *
-     * The type came be a [CameraEventType], `undefined`, an object with `eventType`
+     * The type can be a [CameraEventType], `undefined`, an object with `eventType`
      * and `modifier` properties with types `CameraEventType` and [KeyboardEventModifier],
      * or an array of any of the preceding.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ScreenSpaceCameraController.html#tiltEventTypes">Online Documentation</a>
@@ -153,7 +153,7 @@ external class ScreenSpaceCameraController(scene: Scene) {
     /**
      * The input that allows the user to change the direction the camera is viewing. This only applies in 3D and Columbus view modes.
      *
-     * The type came be a [CameraEventType], `undefined`, an object with `eventType`
+     * The type can be a [CameraEventType], `undefined`, an object with `eventType`
      * and `modifier` properties with types `CameraEventType` and [KeyboardEventModifier],
      * or an array of any of the preceding.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ScreenSpaceCameraController.html#lookEventTypes">Online Documentation</a>

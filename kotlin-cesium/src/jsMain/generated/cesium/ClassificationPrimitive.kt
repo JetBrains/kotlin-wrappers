@@ -9,7 +9,6 @@
 package cesium
 
 import js.core.jso
-import js.promise.Promise
 
 /**
  * A classification primitive represents a volume enclosing geometry in the [Scene] to be highlighted.
@@ -158,12 +157,6 @@ external class ClassificationPrimitive(options: ConstructorOptions? = definedExt
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ClassificationPrimitive.html#ready">Online Documentation</a>
      */
     val ready: Boolean
-
-    /**
-     * Gets a promise that resolves when the primitive is ready to render.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ClassificationPrimitive.html#readyPromise">Online Documentation</a>
-     */
-    val readyPromise: Promise<ClassificationPrimitive>
 
     /**
      * Called when [Viewer] or [CesiumWidget] render the scene to

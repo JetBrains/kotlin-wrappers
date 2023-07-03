@@ -56,18 +56,6 @@ sealed external class GoogleEarthEnterpriseTerrainProvider : TerrainProvider {
     override val errorEvent: DefaultEvent
 
     /**
-     * Gets a value indicating whether or not the provider is ready for use.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GoogleEarthEnterpriseTerrainProvider.html#ready">Online Documentation</a>
-     */
-    override val ready: Boolean
-
-    /**
-     * Gets a promise that resolves to true when the provider is ready for use.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GoogleEarthEnterpriseTerrainProvider.html#readyPromise">Online Documentation</a>
-     */
-    override val readyPromise: Promise<Boolean>
-
-    /**
      * Gets the credit to display when this terrain provider is active.  Typically this is used to credit
      * the source of the terrain.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GoogleEarthEnterpriseTerrainProvider.html#credit">Online Documentation</a>
@@ -154,15 +142,11 @@ sealed external class GoogleEarthEnterpriseTerrainProvider : TerrainProvider {
      * Initialization options for GoogleEarthEnterpriseTerrainProvider constructor
      * @property [ellipsoid] The ellipsoid.  If not specified, the WGS84 ellipsoid is used.
      * @property [credit] A credit for the data source, which is displayed on the canvas.
-     * @property [url] The url of the Google Earth Enterprise server hosting the imagery. Deprecated.
-     * @property [metadata] A metadata object that can be used to share metadata requests with a GoogleEarthEnterpriseImageryProvider. Deprecated.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GoogleEarthEnterpriseTerrainProvider.html#.ConstructorOptions">Online Documentation</a>
      */
     interface ConstructorOptions {
         var ellipsoid: Ellipsoid?
         var credit: Credit?
-        var url: Resource?
-        var metadata: GoogleEarthEnterpriseMetadata?
     }
 
     companion object {

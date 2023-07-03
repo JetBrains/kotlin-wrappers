@@ -14,18 +14,6 @@ import js.promise.Promise
  */
 abstract external class VoxelProvider {
     /**
-     * Gets a value indicating whether or not the provider is ready for use.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/VoxelProvider.html#ready">Online Documentation</a>
-     */
-    abstract val ready: Boolean
-
-    /**
-     * Gets the promise that will be resolved when the provider is ready for use.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/VoxelProvider.html#readyPromise">Online Documentation</a>
-     */
-    abstract val readyPromise: Promise<VoxelProvider>
-
-    /**
      * A transform from local space to global space. If undefined, the identity matrix will be used instead.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/VoxelProvider.html#globalTransform">Online Documentation</a>
      */

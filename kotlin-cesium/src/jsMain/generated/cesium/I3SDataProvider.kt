@@ -91,19 +91,6 @@ external class I3SDataProvider(options: ConstructorOptions) {
     val extent: Rectangle
 
     /**
-     * Gets the promise that will be resolved when the I3S scene is loaded.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/I3SDataProvider.html#readyPromise">Online Documentation</a>
-     */
-    val readyPromise: Promise<I3SDataProvider>
-
-    /**
-     * When `true`, the I3S scene is loaded.
-     * This is set to `true` right before [I3SDataProvider.readyPromise] is resolved.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/I3SDataProvider.html#ready">Online Documentation</a>
-     */
-    val ready: Boolean
-
-    /**
      * The resource used to fetch the I3S dataset.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/I3SDataProvider.html#resource">Online Documentation</a>
      */
@@ -132,7 +119,6 @@ external class I3SDataProvider(options: ConstructorOptions) {
 
     /**
      * Initialization options for the I3SDataProvider constructor
-     * @property [url] The url of the I3S dataset. Deprecated.
      * @property [name] The name of the I3S dataset.
      * @property [show] Determines if the dataset will be shown.
      *   Default value - `true`
@@ -143,7 +129,6 @@ external class I3SDataProvider(options: ConstructorOptions) {
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/I3SDataProvider.html#.ConstructorOptions">Online Documentation</a>
      */
     interface ConstructorOptions {
-        var url: Resource?
         var name: String?
         var show: Boolean?
         var geoidTiledTerrainProvider: dynamic

@@ -84,7 +84,7 @@ external class KmlTour(
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/KmlTour.html#play">Online Documentation</a>
      */
     fun play(
-        widget: dynamic,
+        widget: CesiumWidget,
         cameraOptions: Any? = definedExternally,
     )
 

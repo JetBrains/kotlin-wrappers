@@ -30,7 +30,6 @@ import js.promise.Promise
 sealed external class TileMapServiceImageryProvider {
     /**
      * Initialization options for the TileMapServiceImageryProvider constructor
-     * @property [url] Path to image tiles on server. Deprecated
      * @property [fileExtension] The file extension for images on the server.
      *   Default value - `'png'`
      * @property [credit] A credit for the data source, which is displayed on the canvas.
@@ -58,7 +57,6 @@ sealed external class TileMapServiceImageryProvider {
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TileMapServiceImageryProvider.html#.ConstructorOptions">Online Documentation</a>
      */
     interface ConstructorOptions {
-        var url: dynamic
         var fileExtension: String?
         var credit: Credit?
         var minimumLevel: Int?

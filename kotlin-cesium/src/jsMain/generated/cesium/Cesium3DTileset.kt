@@ -548,31 +548,6 @@ external class Cesium3DTileset(options: ConstructorOptions) {
     val properties: Any
 
     /**
-     * When `true`, the tileset's root tile is loaded and the tileset is ready to render.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileset.html#ready">Online Documentation</a>
-     */
-    val ready: Boolean
-
-    /**
-     * Gets the promise that will be resolved when the tileset's root tile is loaded and the tileset is ready to render.
-     *
-     * This promise is resolved at the end of the frame before the first frame the tileset is rendered in.
-     * ```
-     * tileset.readyPromise.then(function(tileset) {
-     *     // tile.properties is not defined until readyPromise resolves.
-     *     const properties = tileset.properties;
-     *     if (defined(properties)) {
-     *         for (const name in properties) {
-     *             console.log(properties[name]);
-     *         }
-     *     }
-     * });
-     * ```
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileset.html#readyPromise">Online Documentation</a>
-     */
-    val readyPromise: Promise<Cesium3DTileset>
-
-    /**
      * When `true`, all tiles that meet the screen space error this frame are loaded. The tileset is
      * completely loaded for this view.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileset.html#tilesLoaded">Online Documentation</a>
@@ -668,6 +643,40 @@ external class Cesium3DTileset(options: ConstructorOptions) {
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileset.html#maximumMemoryUsage">Online Documentation</a>
      */
     var maximumMemoryUsage: Int
+
+    /**
+     * The amount of GPU memory (in bytes) used to cache tiles. This memory usage is estimated from
+     * geometry, textures, and batch table textures of loaded tiles. For point clouds, this value also
+     * includes per-point metadata.
+     *
+     * Tiles not in view are unloaded to enforce this.
+     *
+     * If decreasing this value results in unloading tiles, the tiles are unloaded the next frame.
+     *
+     * If tiles sized more than `cacheBytes` are needed to meet the
+     * desired screen space error, determined by [Cesium3DTileset.maximumScreenSpaceError],
+     * for the current view, then the memory usage of the tiles loaded will exceed
+     * `cacheBytes` by up to `maximumCacheOverflowBytes`.
+     * For example, if `cacheBytes` is 500000, but 600000 bytes
+     * of tiles are needed to meet the screen space error, then 600000 bytes of tiles
+     * may be loaded (if `maximumCacheOverflowBytes` is at least 100000).
+     * When these tiles go out of view, they will be unloaded.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileset.html#cacheBytes">Online Documentation</a>
+     */
+    var cacheBytes: Int
+
+    /**
+     * The maximum additional amount of GPU memory (in bytes) that will be used to cache tiles.
+     *
+     * If tiles sized more than `cacheBytes` plus `maximumCacheOverflowBytes`
+     * are needed to meet the desired screen space error, determined by
+     * [Cesium3DTileset.maximumScreenSpaceError] for the current view, then
+     * [Cesium3DTileset.memoryAdjustedScreenSpaceError] will be adjusted
+     * until the tiles required to meet the adjusted screen space error use less
+     * than `cacheBytes` plus `maximumCacheOverflowBytes`.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileset.html#maximumCacheOverflowBytes">Online Documentation</a>
+     */
+    var maximumCacheOverflowBytes: Int
 
     /**
      * Options for controlling point size based on geometric error and eye dome lighting.
@@ -839,7 +848,7 @@ external class Cesium3DTileset(options: ConstructorOptions) {
     /**
      * Unloads all tiles that weren't selected the previous frame.  This can be used to
      * explicitly manage the tile cache and reduce the total number of tiles loaded below
-     * [Cesium3DTileset.maximumMemoryUsage].
+     * [Cesium3DTileset.cacheBytes].
      *
      * Tile unloads occur at the next frame to keep all the WebGL delete calls
      * within the render loop.
@@ -881,7 +890,6 @@ external class Cesium3DTileset(options: ConstructorOptions) {
 
     /**
      * Initialization options for the Cesium3DTileset constructor
-     * @property [.url] The url to a tileset JSON file. Deprecated.
      * @property [show] Determines if the tileset will be shown.
      *   Default value - `true`
      * @property [modelMatrix] A 4x4 transformation matrix that transforms the tileset's root tile.
@@ -894,8 +902,12 @@ external class Cesium3DTileset(options: ConstructorOptions) {
      *   Default value - [ShadowMode.ENABLED]
      * @property [maximumScreenSpaceError] The maximum screen space error used to drive level of detail refinement.
      *   Default value - `16`
-     * @property [maximumMemoryUsage] The maximum amount of memory in MB that can be used by the tileset.
+     * @property [maximumMemoryUsage] The maximum amount of memory in MB that can be used by the tileset. Deprecated.
      *   Default value - `512`
+     * @property [cacheBytes] The size (in bytes) to which the tile cache will be trimmed, if the cache contains tiles not needed for the current view.
+     *   Default value - `536870912`
+     * @property [maximumCacheOverflowBytes] The maximum additional memory (in bytes) to allow for cache headroom, if more than [Cesium3DTileset.cacheBytes] are needed for the current view.
+     *   Default value - `536870912`
      * @property [cullWithChildrenBounds] Optimization option. Whether to cull tiles using the union of their children bounding volumes.
      *   Default value - `true`
      * @property [cullRequestsWhileMoving] Optimization option. Don't request tiles that will likely be unused when they come back because of the camera's movement. This optimization only applies to stationary tilesets.
@@ -1001,6 +1013,8 @@ external class Cesium3DTileset(options: ConstructorOptions) {
         var shadows: ShadowMode?
         var maximumScreenSpaceError: Int?
         var maximumMemoryUsage: Int?
+        var cacheBytes: Int?
+        var maximumCacheOverflowBytes: Int?
         var cullWithChildrenBounds: Boolean?
         var cullRequestsWhileMoving: Boolean?
         var cullRequestsWhileMovingMultiplier: Double?

@@ -2,14 +2,9 @@
 
 @file:JsModule("cesium")
 
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package cesium
 
 import js.core.ReadonlyArray
-import js.core.jso
 import js.promise.Promise
 
 /**
@@ -18,26 +13,7 @@ import js.promise.Promise
  * Implements the [VoxelProvider] interface.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTilesVoxelProvider.html">Online Documentation</a>
  */
-external class Cesium3DTilesVoxelProvider(options: ConstructorOptions) {
-    /**
-     * @property [url] The URL to a tileset JSON file. Deprecated.
-     */
-    interface ConstructorOptions {
-        var url: dynamic
-    }
-
-    /**
-     * Gets the promise that will be resolved when the provider is ready for use.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTilesVoxelProvider.html#readyPromise">Online Documentation</a>
-     */
-    val readyPromise: Promise<Cesium3DTilesVoxelProvider>
-
-    /**
-     * Gets a value indicating whether or not the provider is ready for use.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTilesVoxelProvider.html#ready">Online Documentation</a>
-     */
-    val ready: Boolean
-
+external class Cesium3DTilesVoxelProvider(options: Any) {
     /**
      * A transform from local space to global space. If undefined, the identity matrix will be used instead.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTilesVoxelProvider.html#globalTransform">Online Documentation</a>
@@ -173,8 +149,3 @@ external class Cesium3DTilesVoxelProvider(options: ConstructorOptions) {
         fun fromUrl(url: String): Promise<Cesium3DTilesVoxelProvider>
     }
 }
-
-inline fun Cesium3DTilesVoxelProvider(
-    block: Cesium3DTilesVoxelProvider.ConstructorOptions.() -> Unit,
-): Cesium3DTilesVoxelProvider =
-    Cesium3DTilesVoxelProvider(options = jso(block))

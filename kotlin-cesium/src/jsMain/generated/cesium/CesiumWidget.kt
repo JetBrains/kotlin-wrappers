@@ -3,11 +3,13 @@
 @file:JsModule("cesium")
 
 @file:Suppress(
+    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
     "EXTERNAL_CLASS_CONSTRUCTOR_PROPERTY_PARAMETER",
 )
 
 package cesium
 
+import js.core.jso
 import web.dom.Element
 import web.html.HTMLCanvasElement
 
@@ -43,20 +45,17 @@ import web.html.HTMLCanvasElement
  *
  * @constructor
  * @property [container] The DOM element that will contain the widget.
- * @param [baseLayer] The bottommost imagery layer applied to the globe. If set to `false`, no imagery provider will be added.
- *   Default value - `ImageryLayer.fromWorldImagery()`
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CesiumWidget.html">Online Documentation</a>
  */
 external class CesiumWidget(
     val container: Element,
     options: ConstructorOptions? = definedExternally,
-    baseLayer: dynamic = definedExternally,
 ) {
     /**
      * @property [clock] The clock to use to control current time.
      *   Default value - [Clock()][Clock]
-     * @property [imageryProvider] The imagery provider to serve as the base layer. If set to `false`, no imagery provider will be added. Deprecated.
-     *   Default value - [createWorldImagery()][createWorldImagery]
+     * @property [baseLayer] The bottommost imagery layer applied to the globe. If set to `false`, no imagery provider will be added.
+     *   Default value - `ImageryLayer.fromWorldImagery()`
      * @property [terrainProvider] The terrain provider.
      *   Default value - [EllipsoidTerrainProvider][EllipsoidTerrainProvider]
      * @property [terrain] A terrain object which handles asynchronous terrain provider. Can only specify if options.terrainProvider is undefined.
@@ -100,7 +99,7 @@ external class CesiumWidget(
      */
     interface ConstructorOptions {
         var clock: Clock?
-        var imageryProvider: dynamic
+        var baseLayer: dynamic
         var terrainProvider: TerrainProvider?
         var terrain: Terrain?
         var skyBox: dynamic
@@ -275,3 +274,9 @@ external class CesiumWidget(
      */
     fun render()
 }
+
+inline fun CesiumWidget(
+    container: Element,
+    block: CesiumWidget.ConstructorOptions.() -> Unit,
+): CesiumWidget =
+    CesiumWidget(container, options = jso(block))

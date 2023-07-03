@@ -38,27 +38,12 @@ external class CreditDisplay(
     viewport: HTMLElement? = definedExternally,
 ) {
     /**
-     * Adds a credit to the list of current credits to be displayed in the credit container
-     * for the next frame
-     * @param [credit] The credit to display
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CreditDisplay.html#addCredit">Online Documentation</a>
-     */
-    fun addCredit(credit: Credit)
-
-    /**
      * Adds a [Credit] that will show on screen or in the lightbox until
      * the next frame. This is mostly for internal use. Use [CreditDisplay.addStaticCredit] to add a persistent credit to the screen.
      * @param [credit] The credit to display in the next frame.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CreditDisplay.html#addCreditToNextFrame">Online Documentation</a>
      */
     fun addCreditToNextFrame(credit: Credit)
-
-    /**
-     * Adds credits that will persist until they are removed
-     * @param [credit] The credit to added to defaults
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CreditDisplay.html#addDefaultCredit">Online Documentation</a>
-     */
-    fun addDefaultCredit(credit: Credit)
 
     /**
      * Adds a [Credit] that will show on screen or in the lightbox until removed with [CreditDisplay.removeStaticCredit].
@@ -83,13 +68,6 @@ external class CreditDisplay(
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CreditDisplay.html#removeStaticCredit">Online Documentation</a>
      */
     fun removeStaticCredit(credit: Credit)
-
-    /**
-     * Removes a default credit.
-     * @param [credit] The credit to be removed from defaults
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CreditDisplay.html#removeDefaultCredit">Online Documentation</a>
-     */
-    fun removeDefaultCredit(credit: Credit)
 
     /**
      * Updates the credit display before a new frame is rendered.

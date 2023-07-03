@@ -8,7 +8,7 @@ package cesium
  *   Default value - `0.0`
  * @property [pitch] The pitch in radians
  *   Default value - `-Math.PI_OVER_TWO`
- * @property [roll] The roll in meters
+ * @property [roll] The roll in radians
  *   Default value - `0.0`
  */
 external interface HeadingPitchRollValues : CameraOrientation {

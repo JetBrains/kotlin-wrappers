@@ -169,12 +169,6 @@ external class GroundPolylinePrimitive(options: ConstructorOptions? = definedExt
     val ready: Boolean
 
     /**
-     * Gets a promise that resolves when the primitive is ready to render.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GroundPolylinePrimitive.html#readyPromise">Online Documentation</a>
-     */
-    val readyPromise: Promise<GroundPolylinePrimitive>
-
-    /**
      * This property is for debugging only; it is not for production use nor is it optimized.
      *
      * If true, draws the shadow volume for each geometry in the primitive.

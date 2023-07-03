@@ -128,20 +128,8 @@ external class ArcGisMapServerImageryProvider(options: ConstructorOptions? = def
     val errorEvent: DefaultEvent
 
     /**
-     * Gets a value indicating whether or not the provider is ready for use.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ArcGisMapServerImageryProvider.html#ready">Online Documentation</a>
-     */
-    val ready: Boolean
-
-    /**
-     * Gets a promise that resolves to true when the provider is ready for use.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ArcGisMapServerImageryProvider.html#readyPromise">Online Documentation</a>
-     */
-    val readyPromise: Promise<Boolean>
-
-    /**
      * Gets the credit to display when this imagery provider is active.  Typically this is used to credit
-     * the source of the imagery.  This function should not be called before [ArcGisMapServerImageryProvider.ready] returns true.
+     * the source of the imagery.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ArcGisMapServerImageryProvider.html#credit">Online Documentation</a>
      */
     val credit: Credit
@@ -168,72 +156,6 @@ external class ArcGisMapServerImageryProvider(options: ConstructorOptions? = def
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ArcGisMapServerImageryProvider.html#layers">Online Documentation</a>
      */
     var layers: String
-
-    /**
-     * The default alpha blending value of this provider, with 0.0 representing fully transparent and
-     * 1.0 representing fully opaque.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ArcGisMapServerImageryProvider.html#defaultAlpha">Online Documentation</a>
-     */
-    var defaultAlpha: Double?
-
-    /**
-     * The default alpha blending value on the night side of the globe of this provider, with 0.0 representing fully transparent and
-     * 1.0 representing fully opaque.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ArcGisMapServerImageryProvider.html#defaultNightAlpha">Online Documentation</a>
-     */
-    var defaultNightAlpha: Double?
-
-    /**
-     * The default alpha blending value on the day side of the globe of this provider, with 0.0 representing fully transparent and
-     * 1.0 representing fully opaque.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ArcGisMapServerImageryProvider.html#defaultDayAlpha">Online Documentation</a>
-     */
-    var defaultDayAlpha: Double?
-
-    /**
-     * The default brightness of this provider.  1.0 uses the unmodified imagery color.  Less than 1.0
-     * makes the imagery darker while greater than 1.0 makes it brighter.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ArcGisMapServerImageryProvider.html#defaultBrightness">Online Documentation</a>
-     */
-    var defaultBrightness: Double?
-
-    /**
-     * The default contrast of this provider.  1.0 uses the unmodified imagery color.  Less than 1.0 reduces
-     * the contrast while greater than 1.0 increases it.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ArcGisMapServerImageryProvider.html#defaultContrast">Online Documentation</a>
-     */
-    var defaultContrast: Double?
-
-    /**
-     * The default hue of this provider in radians. 0.0 uses the unmodified imagery color.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ArcGisMapServerImageryProvider.html#defaultHue">Online Documentation</a>
-     */
-    var defaultHue: Double?
-
-    /**
-     * The default saturation of this provider. 1.0 uses the unmodified imagery color. Less than 1.0 reduces the
-     * saturation while greater than 1.0 increases it.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ArcGisMapServerImageryProvider.html#defaultSaturation">Online Documentation</a>
-     */
-    var defaultSaturation: Double?
-
-    /**
-     * The default gamma correction to apply to this provider.  1.0 uses the unmodified imagery color.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ArcGisMapServerImageryProvider.html#defaultGamma">Online Documentation</a>
-     */
-    var defaultGamma: Double?
-
-    /**
-     * The default texture minification filter to apply to this provider.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ArcGisMapServerImageryProvider.html#defaultMinificationFilter">Online Documentation</a>
-     */
-    var defaultMinificationFilter: TextureMinificationFilter
-
-    /**
-     * The default texture magnification filter to apply to this provider.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ArcGisMapServerImageryProvider.html#defaultMagnificationFilter">Online Documentation</a>
-     */
-    var defaultMagnificationFilter: TextureMagnificationFilter
 
     /**
      * Gets the credits to be displayed when a given tile is displayed.
@@ -289,8 +211,6 @@ external class ArcGisMapServerImageryProvider(options: ConstructorOptions? = def
 
     /**
      * Initialization options for the ArcGisMapServerImageryProvider constructor
-     * @property [url] The URL of the ArcGIS MapServer service. Deprecated.
-     * @property [token] The ArcGIS token used to authenticate with the ArcGIS MapServer service. Deprecated.
      * @property [tileDiscardPolicy] The policy that determines if a tile
      *   is invalid and should be discarded.  If this value is not specified, a default
      *   [DiscardMissingTileImagePolicy] is used for tiled map servers, and a
@@ -331,8 +251,6 @@ external class ArcGisMapServerImageryProvider(options: ConstructorOptions? = def
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ArcGisMapServerImageryProvider.html#.ConstructorOptions">Online Documentation</a>
      */
     interface ConstructorOptions {
-        var url: Resource?
-        var token: String?
         var tileDiscardPolicy: TileDiscardPolicy?
         var usePreCachedTilesIfAvailable: Boolean?
         var layers: String?

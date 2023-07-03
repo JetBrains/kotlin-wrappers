@@ -362,7 +362,7 @@ external class Scene(options: ConstructorOptions) {
     val drawingBufferHeight: Double
 
     /**
-     * The drawingBufferHeight of the underlying GL context.
+     * The drawingBufferWidth of the underlying GL context.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Scene.html#drawingBufferWidth">Online Documentation</a>
      */
     val drawingBufferWidth: Double

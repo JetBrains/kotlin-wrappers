@@ -81,18 +81,6 @@ sealed external class CesiumTerrainProvider : TerrainProvider {
     override val tilingScheme: GeographicTilingScheme
 
     /**
-     * Gets a value indicating whether or not the provider is ready for use.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CesiumTerrainProvider.html#ready">Online Documentation</a>
-     */
-    override val ready: Boolean
-
-    /**
-     * Gets a promise that resolves to true when the provider is ready for use.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CesiumTerrainProvider.html#readyPromise">Online Documentation</a>
-     */
-    override val readyPromise: Promise<Boolean>
-
-    /**
      * Gets a value indicating whether or not the provider includes a water mask.  The water mask
      * indicates which areas of the globe are water rather than land, so they can be rendered
      * as a reflective surface with animated waves.
@@ -193,7 +181,6 @@ sealed external class CesiumTerrainProvider : TerrainProvider {
      *   Default value - `true`
      * @property [ellipsoid] The ellipsoid.  If not specified, the WGS84 ellipsoid is used.
      * @property [credit] A credit for the data source, which is displayed on the canvas.
-     * @property [url] The URL of the Cesium terrain server. Deprecated.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CesiumTerrainProvider.html#.ConstructorOptions">Online Documentation</a>
      */
     interface ConstructorOptions {
@@ -202,7 +189,6 @@ sealed external class CesiumTerrainProvider : TerrainProvider {
         var requestMetadata: Boolean?
         var ellipsoid: Ellipsoid?
         var credit: Credit?
-        var url: dynamic
     }
 
     companion object {

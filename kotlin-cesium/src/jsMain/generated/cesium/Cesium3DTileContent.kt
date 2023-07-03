@@ -5,7 +5,6 @@
 package cesium
 
 import js.core.ReadonlyArray
-import js.promise.Promise
 
 /**
  * The content of a tile in a [Cesium3DTileset].
@@ -69,12 +68,6 @@ abstract external class Cesium3DTileContent {
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileContent.html#ready">Online Documentation</a>
      */
     abstract val ready: Boolean
-
-    /**
-     * Gets the promise that will be resolved when the tile's content is ready to render.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileContent.html#readyPromise">Online Documentation</a>
-     */
-    abstract val readyPromise: Promise<Cesium3DTileContent>
 
     /**
      * Gets the tileset for this tile.

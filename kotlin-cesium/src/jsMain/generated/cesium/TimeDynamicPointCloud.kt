@@ -9,7 +9,6 @@
 package cesium
 
 import js.core.jso
-import js.promise.Promise
 
 /**
  * Provides playback of time-dynamic point cloud data.
@@ -157,12 +156,6 @@ external class TimeDynamicPointCloud(options: ConstructorOptions) {
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TimeDynamicPointCloud.html#boundingSphere">Online Documentation</a>
      */
     val boundingSphere: BoundingSphere
-
-    /**
-     * Gets the promise that will be resolved when the point cloud renders a frame for the first time.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TimeDynamicPointCloud.html#readyPromise">Online Documentation</a>
-     */
-    val readyPromise: Promise<TimeDynamicPointCloud>
 
     /**
      * Marks the point cloud's [TimeDynamicPointCloud.style] as dirty, which forces all

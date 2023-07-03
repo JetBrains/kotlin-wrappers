@@ -84,18 +84,6 @@ external class SingleTileImageryProvider(options: ConstructorOptions) {
     val errorEvent: DefaultEvent
 
     /**
-     * Gets a value indicating whether or not the provider is ready for use.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/SingleTileImageryProvider.html#ready">Online Documentation</a>
-     */
-    val ready: Boolean
-
-    /**
-     * Gets a promise that resolves to true when the provider is ready for use.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/SingleTileImageryProvider.html#readyPromise">Online Documentation</a>
-     */
-    val readyPromise: Promise<Boolean>
-
-    /**
      * Gets the credit to display when this imagery provider is active.  Typically this is used to credit
      * the source of the imagery.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/SingleTileImageryProvider.html#credit">Online Documentation</a>
@@ -111,72 +99,6 @@ external class SingleTileImageryProvider(options: ConstructorOptions) {
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/SingleTileImageryProvider.html#hasAlphaChannel">Online Documentation</a>
      */
     val hasAlphaChannel: Boolean
-
-    /**
-     * The default alpha blending value of this provider, with 0.0 representing fully transparent and
-     * 1.0 representing fully opaque.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/SingleTileImageryProvider.html#defaultAlpha">Online Documentation</a>
-     */
-    var defaultAlpha: Double?
-
-    /**
-     * The default alpha blending value on the night side of the globe of this provider, with 0.0 representing fully transparent and
-     * 1.0 representing fully opaque.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/SingleTileImageryProvider.html#defaultNightAlpha">Online Documentation</a>
-     */
-    var defaultNightAlpha: Double?
-
-    /**
-     * The default alpha blending value on the day side of the globe of this provider, with 0.0 representing fully transparent and
-     * 1.0 representing fully opaque.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/SingleTileImageryProvider.html#defaultDayAlpha">Online Documentation</a>
-     */
-    var defaultDayAlpha: Double?
-
-    /**
-     * The default brightness of this provider.  1.0 uses the unmodified imagery color.  Less than 1.0
-     * makes the imagery darker while greater than 1.0 makes it brighter.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/SingleTileImageryProvider.html#defaultBrightness">Online Documentation</a>
-     */
-    var defaultBrightness: Double?
-
-    /**
-     * The default contrast of this provider.  1.0 uses the unmodified imagery color.  Less than 1.0 reduces
-     * the contrast while greater than 1.0 increases it.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/SingleTileImageryProvider.html#defaultContrast">Online Documentation</a>
-     */
-    var defaultContrast: Double?
-
-    /**
-     * The default hue of this provider in radians. 0.0 uses the unmodified imagery color.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/SingleTileImageryProvider.html#defaultHue">Online Documentation</a>
-     */
-    var defaultHue: Double?
-
-    /**
-     * The default saturation of this provider. 1.0 uses the unmodified imagery color. Less than 1.0 reduces the
-     * saturation while greater than 1.0 increases it.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/SingleTileImageryProvider.html#defaultSaturation">Online Documentation</a>
-     */
-    var defaultSaturation: Double?
-
-    /**
-     * The default gamma correction to apply to this provider.  1.0 uses the unmodified imagery color.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/SingleTileImageryProvider.html#defaultGamma">Online Documentation</a>
-     */
-    var defaultGamma: Double?
-
-    /**
-     * The default texture minification filter to apply to this provider.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/SingleTileImageryProvider.html#defaultMinificationFilter">Online Documentation</a>
-     */
-    var defaultMinificationFilter: TextureMinificationFilter
-
-    /**
-     * The default texture magnification filter to apply to this provider.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/SingleTileImageryProvider.html#defaultMagnificationFilter">Online Documentation</a>
-     */
-    var defaultMagnificationFilter: TextureMagnificationFilter
 
     /**
      * Gets the credits to be displayed when a given tile is displayed.

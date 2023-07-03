@@ -210,22 +210,6 @@ external class ImageryLayer(
      * producing the overall bounds of imagery that can be produced by this layer.
      * ```
      * // Zoom to an imagery layer.
-     * imageryLayer.getViewableRectangle().then(function (rectangle) {
-     *     return camera.flyTo({
-     *         destination: rectangle
-     *     });
-     * });
-     * ```
-     * @return A promise to a rectangle which defines the overall bounds of imagery that can be produced by this layer.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ImageryLayer.html#getViewableRectangle">Online Documentation</a>
-     */
-    fun getViewableRectangle(): Promise<Rectangle>
-
-    /**
-     * Computes the intersection of this layer's rectangle with the imagery provider's availability rectangle,
-     * producing the overall bounds of imagery that can be produced by this layer.
-     * ```
-     * // Zoom to an imagery layer.
      * const imageryRectangle = imageryLayer.getImageryRectangle();
      * scene.camera.flyTo({
      *     destination: rectangle

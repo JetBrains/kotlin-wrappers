@@ -206,12 +206,6 @@ external class GroundPrimitive(options: ConstructorOptions? = definedExternally)
     val ready: Boolean
 
     /**
-     * Gets a promise that resolves when the primitive is ready to render.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GroundPrimitive.html#readyPromise">Online Documentation</a>
-     */
-    val readyPromise: Promise<GroundPrimitive>
-
-    /**
      * Called when [Viewer] or [CesiumWidget] render the scene to
      * get the draw commands needed to render this primitive.
      *

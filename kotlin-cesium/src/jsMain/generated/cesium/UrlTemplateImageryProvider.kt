@@ -175,18 +175,6 @@ external class UrlTemplateImageryProvider(options: ConstructorOptions) {
     val errorEvent: DefaultEvent
 
     /**
-     * Gets a value indicating whether or not the provider is ready for use.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/UrlTemplateImageryProvider.html#ready">Online Documentation</a>
-     */
-    val ready: Boolean
-
-    /**
-     * Gets a promise that resolves to true when the provider is ready for use.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/UrlTemplateImageryProvider.html#readyPromise">Online Documentation</a>
-     */
-    val readyPromise: Promise<Boolean>
-
-    /**
      * Gets the credit to display when this imagery provider is active.  Typically this is used to credit
      * the source of the imagery.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/UrlTemplateImageryProvider.html#credit">Online Documentation</a>
@@ -202,82 +190,6 @@ external class UrlTemplateImageryProvider(options: ConstructorOptions) {
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/UrlTemplateImageryProvider.html#hasAlphaChannel">Online Documentation</a>
      */
     val hasAlphaChannel: Boolean
-
-    /**
-     * The default alpha blending value of this provider, with 0.0 representing fully transparent and
-     * 1.0 representing fully opaque.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/UrlTemplateImageryProvider.html#defaultAlpha">Online Documentation</a>
-     */
-    var defaultAlpha: Double?
-
-    /**
-     * The default alpha blending value on the night side of the globe of this provider, with 0.0 representing fully transparent and
-     * 1.0 representing fully opaque.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/UrlTemplateImageryProvider.html#defaultNightAlpha">Online Documentation</a>
-     */
-    var defaultNightAlpha: Double?
-
-    /**
-     * The default alpha blending value on the day side of the globe of this provider, with 0.0 representing fully transparent and
-     * 1.0 representing fully opaque.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/UrlTemplateImageryProvider.html#defaultDayAlpha">Online Documentation</a>
-     */
-    var defaultDayAlpha: Double?
-
-    /**
-     * The default brightness of this provider.  1.0 uses the unmodified imagery color.  Less than 1.0
-     * makes the imagery darker while greater than 1.0 makes it brighter.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/UrlTemplateImageryProvider.html#defaultBrightness">Online Documentation</a>
-     */
-    var defaultBrightness: Double?
-
-    /**
-     * The default contrast of this provider.  1.0 uses the unmodified imagery color.  Less than 1.0 reduces
-     * the contrast while greater than 1.0 increases it.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/UrlTemplateImageryProvider.html#defaultContrast">Online Documentation</a>
-     */
-    var defaultContrast: Double?
-
-    /**
-     * The default hue of this provider in radians. 0.0 uses the unmodified imagery color.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/UrlTemplateImageryProvider.html#defaultHue">Online Documentation</a>
-     */
-    var defaultHue: Double?
-
-    /**
-     * The default saturation of this provider. 1.0 uses the unmodified imagery color. Less than 1.0 reduces the
-     * saturation while greater than 1.0 increases it.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/UrlTemplateImageryProvider.html#defaultSaturation">Online Documentation</a>
-     */
-    var defaultSaturation: Double?
-
-    /**
-     * The default gamma correction to apply to this provider.  1.0 uses the unmodified imagery color.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/UrlTemplateImageryProvider.html#defaultGamma">Online Documentation</a>
-     */
-    var defaultGamma: Double?
-
-    /**
-     * The default texture minification filter to apply to this provider.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/UrlTemplateImageryProvider.html#defaultMinificationFilter">Online Documentation</a>
-     */
-    var defaultMinificationFilter: TextureMinificationFilter
-
-    /**
-     * The default texture magnification filter to apply to this provider.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/UrlTemplateImageryProvider.html#defaultMagnificationFilter">Online Documentation</a>
-     */
-    var defaultMagnificationFilter: TextureMagnificationFilter
-
-    /**
-     * Reinitializes this instance.  Reinitializing an instance already in use is supported, but it is not
-     * recommended because existing tiles provided by the imagery provider will not be updated.
-     * @param [options] Any of the options that may be passed to the [UrlTemplateImageryProvider] constructor.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/UrlTemplateImageryProvider.html#reinitialize">Online Documentation</a>
-     */
-    fun reinitialize(options: Promise<Any>)
-
-    fun reinitialize(options: Any)
 
     /**
      * Gets the credits to be displayed when a given tile is displayed.
@@ -333,7 +245,6 @@ external class UrlTemplateImageryProvider(options: ConstructorOptions) {
 
     /**
      * Initialization options for the UrlTemplateImageryProvider constructor
-     * @property [options] Object with the following properties:
      * @property [url] The URL template to use to request tiles.  It has the following keywords:
      *   - `{z}`: The level of the tile in the tiling scheme.  Level zero is the root of the quadtree pyramid.
      *   - `{x}`: The tile X coordinate in the tiling scheme, where 0 is the Westernmost tile.
@@ -422,7 +333,6 @@ external class UrlTemplateImageryProvider(options: ConstructorOptions) {
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/UrlTemplateImageryProvider.html#.ConstructorOptions">Online Documentation</a>
      */
     interface ConstructorOptions {
-        var options: dynamic
         var url: Resource
         var pickFeaturesUrl: Resource?
         var urlSchemeZeroPadding: Any?

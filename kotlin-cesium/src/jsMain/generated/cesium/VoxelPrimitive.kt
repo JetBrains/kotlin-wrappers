@@ -10,7 +10,6 @@ package cesium
 
 import js.core.ReadonlyArray
 import js.core.jso
-import js.promise.Promise
 
 /**
  * A primitive that renders voxel data from a [VoxelProvider].
@@ -36,12 +35,6 @@ external class VoxelPrimitive(options: ConstructorOptions? = definedExternally) 
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/VoxelPrimitive.html#ready">Online Documentation</a>
      */
     val ready: Boolean
-
-    /**
-     * Gets the promise that will be resolved when the primitive is ready for use.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/VoxelPrimitive.html#readyPromise">Online Documentation</a>
-     */
-    val readyPromise: Promise<VoxelPrimitive>
 
     /**
      * Gets the [VoxelProvider] associated with this primitive.

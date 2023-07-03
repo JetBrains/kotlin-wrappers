@@ -14,18 +14,6 @@ import js.promise.Promise
  */
 abstract external class ImageryProvider {
     /**
-     * Gets a value indicating whether or not the provider is ready for use.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ImageryProvider.html#ready">Online Documentation</a>
-     */
-    abstract val ready: Boolean
-
-    /**
-     * Gets a promise that resolves to true when the provider is ready for use.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ImageryProvider.html#readyPromise">Online Documentation</a>
-     */
-    abstract val readyPromise: Promise<Boolean>
-
-    /**
      * Gets the rectangle, in radians, of the imagery provided by the instance.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ImageryProvider.html#rectangle">Online Documentation</a>
      */
@@ -103,72 +91,6 @@ abstract external class ImageryProvider {
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ImageryProvider.html#hasAlphaChannel">Online Documentation</a>
      */
     abstract val hasAlphaChannel: Boolean
-
-    /**
-     * The default alpha blending value of this provider, with 0.0 representing fully transparent and
-     * 1.0 representing fully opaque.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ImageryProvider.html#defaultAlpha">Online Documentation</a>
-     */
-    abstract var defaultAlpha: Double?
-
-    /**
-     * The default alpha blending value on the night side of the globe of this provider, with 0.0 representing fully transparent and
-     * 1.0 representing fully opaque.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ImageryProvider.html#defaultNightAlpha">Online Documentation</a>
-     */
-    abstract var defaultNightAlpha: Double?
-
-    /**
-     * The default alpha blending value on the day side of the globe of this provider, with 0.0 representing fully transparent and
-     * 1.0 representing fully opaque.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ImageryProvider.html#defaultDayAlpha">Online Documentation</a>
-     */
-    abstract var defaultDayAlpha: Double?
-
-    /**
-     * The default brightness of this provider.  1.0 uses the unmodified imagery color.  Less than 1.0
-     * makes the imagery darker while greater than 1.0 makes it brighter.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ImageryProvider.html#defaultBrightness">Online Documentation</a>
-     */
-    abstract var defaultBrightness: Double?
-
-    /**
-     * The default contrast of this provider.  1.0 uses the unmodified imagery color.  Less than 1.0 reduces
-     * the contrast while greater than 1.0 increases it.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ImageryProvider.html#defaultContrast">Online Documentation</a>
-     */
-    abstract var defaultContrast: Double?
-
-    /**
-     * The default hue of this provider in radians. 0.0 uses the unmodified imagery color.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ImageryProvider.html#defaultHue">Online Documentation</a>
-     */
-    abstract var defaultHue: Double?
-
-    /**
-     * The default saturation of this provider. 1.0 uses the unmodified imagery color. Less than 1.0 reduces the
-     * saturation while greater than 1.0 increases it.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ImageryProvider.html#defaultSaturation">Online Documentation</a>
-     */
-    abstract var defaultSaturation: Double?
-
-    /**
-     * The default gamma correction to apply to this provider.  1.0 uses the unmodified imagery color.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ImageryProvider.html#defaultGamma">Online Documentation</a>
-     */
-    abstract var defaultGamma: Double?
-
-    /**
-     * The default texture minification filter to apply to this provider.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ImageryProvider.html#defaultMinificationFilter">Online Documentation</a>
-     */
-    abstract var defaultMinificationFilter: TextureMinificationFilter
-
-    /**
-     * The default texture magnification filter to apply to this provider.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ImageryProvider.html#defaultMagnificationFilter">Online Documentation</a>
-     */
-    abstract var defaultMagnificationFilter: TextureMagnificationFilter
 
     /**
      * Gets the credits to be displayed when a given tile is displayed.
