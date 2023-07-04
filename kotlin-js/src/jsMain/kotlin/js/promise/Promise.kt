@@ -26,9 +26,9 @@ external class Promise<out T>(
         onRejected: (JsError) -> R,
     ): Promise<R>
 
-    fun <R> catch(
-        onRejected: (JsError) -> R,
-    ): Promise<R>
+    fun catch(
+        onRejected: (JsError) -> @UnsafeVariance T,
+    ): Promise<T>
 
     fun finally(
         onFinally: () -> Unit,
