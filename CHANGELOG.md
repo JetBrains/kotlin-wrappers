@@ -1,3 +1,14 @@
+## pre.585
+
+**BREAKING CHANGE**
+
+`Promise` methods fixed
+
+Replace `Promise` method calls to migrate:
+
+* `Promise.then(Promise)` -> `Promise.flatThen(Promise)`
+* `Promise.catch(Promise)` -> `Promise.flatCatch(Promise)`
+
 ## pre.580
 
 **BREAKING CHANGE**
@@ -5,6 +16,7 @@
 Modern `Promise` introduced
 
 Replace the imports as follows to migrate:
+
 * `kotlin.js.Promise` -> `js.promise.Promise`
 * `kotlinx.coroutines.await` -> `js.promise.await`
 * `kotlinx.coroutines.asDeferred` -> `js.promise.asDeferred`
