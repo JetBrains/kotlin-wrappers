@@ -11,7 +11,8 @@ import js.core.Void
 import js.errors.JsError
 import kotlin.internal.LowPriorityInOverloadResolution
 
-open external class Promise<out T>(
+/* open */
+external class Promise<out T>(
     executor: (resolve: PromiseResolve<T>) -> Unit,
 ) : PromiseLike<T> {
 
@@ -33,11 +34,11 @@ open external class Promise<out T>(
         onRejected: ((JsError) -> R)?,
     ): Promise<R>
 
-    open fun <R> catch(
+    fun <R> catch(
         onRejected: (JsError) -> R,
     ): Promise<R>
 
-    open fun finally(
+    fun finally(
         onFinally: () -> Unit,
     ): Promise<T>
 
