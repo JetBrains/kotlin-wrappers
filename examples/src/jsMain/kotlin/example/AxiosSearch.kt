@@ -3,6 +3,7 @@ package example
 import emotion.react.css
 import js.core.jso
 import js.promise.Promise
+import js.promise.catch
 import react.FC
 import react.Props
 import react.dom.html.ReactHTML.br
