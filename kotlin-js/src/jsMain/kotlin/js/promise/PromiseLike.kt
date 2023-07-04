@@ -12,4 +12,15 @@ sealed external interface PromiseLike<out T> :
         onFulfilled: (T) -> R,
         onRejected: (JsError) -> R,
     ): PromiseLike<R>
+
+    @JsName("then")
+    fun <R> flatThen(
+        onFulfilled: (T) -> PromiseResult<R>,
+    ): PromiseLike<R>
+
+    @JsName("then")
+    fun <R> flatThen(
+        onFulfilled: (T) -> PromiseResult<R>,
+        onRejected: (JsError) -> PromiseResult<R>,
+    ): PromiseLike<R>
 }

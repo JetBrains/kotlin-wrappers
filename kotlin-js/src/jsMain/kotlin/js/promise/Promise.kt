@@ -26,6 +26,15 @@ external class Promise<out T>(
         onRejected: (JsError) -> R,
     ): Promise<R>
 
+    override fun <R> flatThen(
+        onFulfilled: (T) -> PromiseResult<R>,
+    ): Promise<R>
+
+    override fun <R> flatThen(
+        onFulfilled: (T) -> PromiseResult<R>,
+        onRejected: (JsError) -> PromiseResult<R>,
+    ): Promise<R>
+
     fun catch(
         onRejected: (JsError) -> @UnsafeVariance T,
     ): Promise<T>
