@@ -2,6 +2,8 @@
 
 package js.atomic
 
+import js.core.BigInt
+import js.typedarrays.BigInt64Array
 import js.typedarrays.Int32Array
 import js.typedarrays.TypedArray
 
@@ -113,6 +115,19 @@ external object Atomics {
     ): WaitResult
 
     /**
+     * If the value at the given position in the array is equal to the provided value, the current
+     * agent is put to sleep causing execution to suspend until the timeout expires (returning
+     * `"timed-out"`) or until the agent is awoken (returning `"ok"`); otherwise, returns
+     * `"not-equal"`.
+     */
+    fun wait(
+        typedArray: BigInt64Array,
+        index: Int,
+        value: BigInt,
+        timeout: Int = definedExternally,
+    ): WaitResult
+
+    /**
      * Wakes up sleeping agents that are waiting on the given index of the array, returning the
      * number of agents that were awoken.
      * @param typedArray A shared Int32Array.
@@ -121,6 +136,19 @@ external object Atomics {
      */
     fun notify(
         typedArray: Int32Array,
+        index: Int,
+        count: Int = definedExternally,
+    ): Int
+
+    /**
+     * Wakes up sleeping agents that are waiting on the given index of the array, returning the
+     * number of agents that were awoken.
+     * @param typedArray A shared BigInt64Array.
+     * @param index The position in the typedArray to wake up on.
+     * @param count The number of sleeping agents to notify. Defaults to +Infinity.
+     */
+    fun notify(
+        typedArray: BigInt64Array,
         index: Int,
         count: Int = definedExternally,
     ): Int
