@@ -5,11 +5,11 @@ import js.errors.JsError
 sealed external interface PromiseLike<out T> :
     PromiseResult<T> {
     fun <R> then(
-        onFulfilled: ((T) -> R)?,
+        onFulfilled: (T) -> R,
     ): PromiseLike<R>
 
     fun <R> then(
-        onFulfilled: ((T) -> R)?,
-        onRejected: ((JsError) -> R)?,
+        onFulfilled: (T) -> R,
+        onRejected: (JsError) -> R,
     ): PromiseLike<R>
 }

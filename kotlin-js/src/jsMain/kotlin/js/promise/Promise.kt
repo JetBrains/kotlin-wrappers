@@ -18,12 +18,12 @@ external class Promise<out T>(
     )
 
     override fun <R> then(
-        onFulfilled: ((T) -> R)?,
+        onFulfilled: (T) -> R,
     ): Promise<R>
 
     override fun <R> then(
-        onFulfilled: ((T) -> R)?,
-        onRejected: ((JsError) -> R)?,
+        onFulfilled: (T) -> R,
+        onRejected: (JsError) -> R,
     ): Promise<R>
 
     fun <R> catch(
