@@ -22,4 +22,22 @@ class PromiseTest {
 
         assertEquals(43, value)
     }
+
+    @Test
+    fun catch() = runTest {
+        val value: Int = Promise.reject(Error())
+            .catch { 44 }
+            .await()
+
+        assertEquals(44, value)
+    }
+
+    @Test
+    fun flatCatch() = runTest {
+        val value: Int = Promise.reject(Error())
+            .flatCatch { Promise.resolve(44) }
+            .await()
+
+        assertEquals(44, value)
+    }
 }
