@@ -55,7 +55,7 @@ external class Promise<out T>(
         fun <T> race(values: JsIterable<PromiseResult<T>>): Promise<T>
         fun <T> race(values: ReadonlyArray<PromiseResult<T>>): Promise<T>
 
-        fun reject(reason: JsError): Promise<Void>
+        fun reject(reason: JsError): Promise<Nothing>
 
         fun resolve(): Promise<Void>
         fun <T> resolve(value: T): Promise<T>
