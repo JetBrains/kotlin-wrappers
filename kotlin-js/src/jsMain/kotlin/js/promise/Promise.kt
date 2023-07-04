@@ -41,6 +41,12 @@ external class Promise<out T>(
         onRejected: (JsError) -> @UnsafeVariance T,
     ): Promise<T>
 
+    @PublishedApi
+    @JsName("catch")
+    internal fun flatCatchInternal(
+        onRejected: (JsError) -> PromiseResult<@UnsafeVariance T>,
+    ): Promise<T>
+
     fun finally(
         onFinally: () -> Unit,
     ): Promise<T>
@@ -70,3 +76,8 @@ inline fun <T> Promise<T>.catch(
     noinline onRejected: (JsError) -> T,
 ): Promise<T> =
     catchInternal(onRejected = onRejected)
+
+inline fun <T> Promise<T>.flatCatch(
+    noinline onRejected: (JsError) -> PromiseResult<T>,
+): Promise<T> =
+    flatCatchInternal(onRejected = onRejected)
