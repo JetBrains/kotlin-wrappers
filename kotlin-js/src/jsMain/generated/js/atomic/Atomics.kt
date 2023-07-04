@@ -110,7 +110,7 @@ external object Atomics {
         index: Int,
         value: Int,
         timeout: Int = definedExternally,
-    ): String /* "ok" | "not-equal" | "timed-out" */
+    ): WaitResult
 
     /**
      * Wakes up sleeping agents that are waiting on the given index of the array, returning the
