@@ -1,15 +1,9 @@
-@file:Suppress(
-    "INVISIBLE_MEMBER",
-    "INVISIBLE_REFERENCE",
-)
-
 package js.promise
 
 import js.core.JsIterable
 import js.core.ReadonlyArray
 import js.core.Void
 import js.errors.JsError
-import kotlin.internal.LowPriorityInOverloadResolution
 
 /* open */
 external class Promise<out T>(
@@ -23,12 +17,10 @@ external class Promise<out T>(
         ) -> Unit,
     )
 
-    @LowPriorityInOverloadResolution
     override fun <R> then(
         onFulfilled: ((T) -> R)?,
     ): Promise<R>
 
-    @LowPriorityInOverloadResolution
     override fun <R> then(
         onFulfilled: ((T) -> R)?,
         onRejected: ((JsError) -> R)?,
@@ -62,20 +54,3 @@ external class Promise<out T>(
         fun <T> resolve(value: PromiseResult<T>): Promise<T>
     }
 }
-
-inline fun <T> Promise<Promise<T>>.then(): Promise<T> =
-    unsafeCast<Promise<T>>()
-
-// From original WA from `kotlin.js.Promise`
-inline fun <T, R> Promise<Promise<T>>.then(
-    noinline onFulfilled: ((T) -> R)?
-): Promise<R> =
-    unsafeCast<Promise<T>>()
-        .then(onFulfilled)
-
-inline fun <T, R> Promise<Promise<T>>.then(
-    noinline onFulfilled: ((T) -> R)?,
-    noinline onRejected: ((JsError) -> R)?
-): Promise<R> =
-    unsafeCast<Promise<T>>()
-        .then(onFulfilled, onRejected)
