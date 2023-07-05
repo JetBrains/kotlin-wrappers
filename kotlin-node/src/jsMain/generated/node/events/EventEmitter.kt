@@ -4,7 +4,7 @@
 
 package node.events
 
-import js.core.AsyncIterable
+import js.core.AsyncIterableIterator
 import js.core.ReadonlyArray
 import js.core.Symbol
 import js.promise.Promise
@@ -226,7 +226,7 @@ open external class EventEmitter : IEventEmitter {
             emitter: IEventEmitter,
             event: EventType,
             options: StaticEventEmitterOptions = definedExternally,
-        ): AsyncIterable.Iterator<*>
+        ): AsyncIterableIterator<*>
 
         /**
          * A class method that returns the number of listeners for the given `eventName`registered on the given `emitter`.
