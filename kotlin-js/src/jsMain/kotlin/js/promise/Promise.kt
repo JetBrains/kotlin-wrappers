@@ -5,8 +5,7 @@ import js.core.ReadonlyArray
 import js.core.Void
 import js.errors.JsError
 
-/* open */
-external class Promise<out T>(
+open external class Promise<out T>(
     executor: (resolve: PromiseResolve<T>) -> Unit,
 ) : PromiseLike<T> {
 
@@ -17,20 +16,20 @@ external class Promise<out T>(
         ) -> Unit,
     )
 
-    override fun <R> then(
+    final override fun <R> then(
         onFulfilled: (T) -> R,
     ): Promise<R>
 
-    override fun <R> then(
+    final override fun <R> then(
         onFulfilled: (T) -> R,
         onRejected: (JsError) -> R,
     ): Promise<R>
 
-    override fun <R> flatThen(
+    final override fun <R> flatThen(
         onFulfilled: (T) -> PromiseResult<R>,
     ): Promise<R>
 
-    override fun <R> flatThen(
+    final override fun <R> flatThen(
         onFulfilled: (T) -> PromiseResult<R>,
         onRejected: (JsError) -> PromiseResult<R>,
     ): Promise<R>
