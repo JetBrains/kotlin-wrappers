@@ -2,9 +2,7 @@
 
 **BREAKING CHANGE**
 
-`Promise` methods fixed
-
-Replace `Promise` method calls to migrate:
+Removed a hack `Promise<Promise<T>>.then` method. Replace the usages as follows to migrate:
 
 * `Promise.then(Promise)` -> `Promise.flatThen(Promise)`
 * `Promise.catch(Promise)` -> `Promise.flatCatch(Promise)`
