@@ -1,13 +1,7 @@
 package js.core
 
-inline fun <T> JsIterator.Result<T, *>.asYieldOrNull(): JsIterator.YieldResult<T>? =
-    takeIf { !it.done }.unsafeCast<JsIterator.YieldResult<T>?>()
+fun <T> IteratorResult<T, *>.asYieldOrNull(): IteratorYieldResult<T> =
+    takeIf { !it.done }.unsafeCast<IteratorYieldResult<T>?>()
 
-inline fun <T> JsIterator.Result<T, *>.asYield(): JsIterator.YieldResult<T> =
+fun <T> IteratorResult<T, *>.asYield(): IteratorYieldResult<T> =
     checkNotNull(asYieldOrNull())
-
-inline fun <TReturn> JsIterator.Result<*, TReturn>.asReturnOrNull(): JsIterator.ReturnResult<TReturn>? =
-    takeIf { it.done }.unsafeCast<JsIterator.ReturnResult<TReturn>?>()
-
-inline fun <TReturn> JsIterator.Result<*, TReturn>.asReturn(): JsIterator.ReturnResult<TReturn> =
-    checkNotNull(asReturnOrNull())
