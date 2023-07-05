@@ -1,6 +1,6 @@
 package js.collections
 
-import js.core.JsIterable
+import js.core.IterableIterator
 import js.core.JsIterator
 import js.core.JsTuple2
 import js.core.ReadonlyArray
@@ -15,9 +15,9 @@ external class JsSet<T> : ReadonlySet<T> {
     fun add(value: T): JsSet<T>
     fun clear()
     fun delete(value: T)
-    override fun entries(): JsIterable.Iterator<JsTuple2<T, T>>
+    override fun entries(): IterableIterator<JsTuple2<T, T>>
     override fun has(value: T): Boolean
     override fun forEach(action: (value: T) -> Unit)
-    override fun keys(): JsIterable.Iterator<T>
-    override fun values(): JsIterable.Iterator<T>
+    override fun keys(): IterableIterator<T>
+    override fun values(): IterableIterator<T>
 }

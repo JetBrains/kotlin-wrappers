@@ -2,7 +2,7 @@ package js.typedarrays
 
 import js.buffer.ArrayBufferView
 import js.collections.ListLike
-import js.core.JsIterable
+import js.core.IterableIterator
 import js.core.JsTuple2
 import js.core.ReadonlyArray
 
@@ -219,9 +219,9 @@ sealed external class TypedArray<S : TypedArray<S, T>, T : Any /* Number */> :
         end: Int
     ): S
 
-    override fun entries(): JsIterable.Iterator<JsTuple2<Int, T>>
+    override fun entries(): IterableIterator<JsTuple2<Int, T>>
 
-    override fun keys(): JsIterable.Iterator<Int>
+    override fun keys(): IterableIterator<Int>
 
-    override fun values(): JsIterable.Iterator<T>
+    override fun values(): IterableIterator<T>
 }

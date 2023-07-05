@@ -1,6 +1,6 @@
 package js.collections
 
-import js.core.JsIterable
+import js.core.IterableIterator
 import js.core.JsTuple2
 import js.core.ReadonlyArray
 
@@ -15,10 +15,10 @@ external class JsMap<K, V> : ReadonlyMap<K, V> {
     fun delete(key: K): Boolean
     operator fun set(key: K, value: V): JsMap<K, V>
 
-    override fun entries(): JsIterable.Iterator<JsTuple2<K, V>>
+    override fun entries(): IterableIterator<JsTuple2<K, V>>
     override fun forEach(action: (value: V, key: K) -> Unit)
     override operator fun get(key: K): V?
     override fun has(key: K): Boolean
-    override fun keys(): JsIterable.Iterator<K>
-    override fun values(): JsIterable.Iterator<V>
+    override fun keys(): IterableIterator<K>
+    override fun values(): IterableIterator<V>
 }

@@ -3,7 +3,7 @@
 package web.http
 
 import js.collections.MapLike
-import js.core.JsIterable
+import js.core.IterableIterator
 import js.core.JsTuple2
 import js.core.ReadonlyArray
 
@@ -39,8 +39,8 @@ external class Headers(
         value: String,
     )
 
-    override fun entries(): JsIterable.Iterator<JsTuple2<String, String>>
-    override fun keys(): JsIterable.Iterator<String>
-    override fun values(): JsIterable.Iterator<String>
+    override fun entries(): IterableIterator<JsTuple2<String, String>>
+    override fun keys(): IterableIterator<String>
+    override fun values(): IterableIterator<String>
     override fun forEach(action: (value: String, key: String) -> Unit)
 }

@@ -4,10 +4,7 @@
 
 package node.buffer
 
-import js.core.BigInt
-import js.core.JsIterable
-import js.core.JsTuple2
-import js.core.ReadonlyArray
+import js.core.*
 import js.typedarrays.TypedArray
 import js.typedarrays.Uint8Array
 
@@ -1886,7 +1883,7 @@ external class Buffer : Uint8Array {
      * ```
      * @since v1.1.0
      */
-    override fun entries(): JsIterable.Iterator<JsTuple2<Int, Byte>>
+    override fun entries(): IterableIterator<JsTuple2<Int, Byte>>
 
     /**
      * Equivalent to `buf.indexOf() !== -1`.
@@ -1944,7 +1941,7 @@ external class Buffer : Uint8Array {
      * ```
      * @since v1.1.0
      */
-    override fun keys(): JsIterable.Iterator<Int>
+    override fun keys(): IterableIterator<Int>
 
     /**
      * Creates and returns an [iterator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols) for `buf` values (bytes). This function is
@@ -1979,7 +1976,7 @@ external class Buffer : Uint8Array {
      * ```
      * @since v1.1.0
      */
-    override fun values(): JsIterable.Iterator<Byte>
+    override fun values(): IterableIterator<Byte>
 
     companion object {
         /**
