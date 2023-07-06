@@ -163,4 +163,34 @@ external object Atomics {
         index: Int,
         value: T,
     ): T
+
+    /**
+     * A non-blocking, asynchronous version of wait which is usable on the main thread.
+     * Waits asynchronously on a shared memory location and returns a Promise
+     * @param typedArray A shared Int32Array or BigInt64Array.
+     * @param index The position in the typedArray to wait on.
+     * @param value The expected value to test.
+     * @param [timeout] The expected value to test.
+     */
+    fun waitAsync(
+        typedArray: Int32Array,
+        index: Int,
+        value: Int,
+        timeout: Int = definedExternally,
+    ): WaitResult
+
+    /**
+     * A non-blocking, asynchronous version of wait which is usable on the main thread.
+     * Waits asynchronously on a shared memory location and returns a Promise
+     * @param typedArray A shared Int32Array or BigInt64Array.
+     * @param index The position in the typedArray to wait on.
+     * @param value The expected value to test.
+     * @param [timeout] The expected value to test.
+     */
+    fun waitAsync(
+        typedArray: BigInt64Array,
+        index: Int,
+        value: BigInt,
+        timeout: Int = definedExternally,
+    ): WaitResult
 }
