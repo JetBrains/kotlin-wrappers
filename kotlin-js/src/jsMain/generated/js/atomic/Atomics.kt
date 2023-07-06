@@ -112,7 +112,7 @@ external object Atomics {
         index: Int,
         value: Int,
         timeout: Int = definedExternally,
-    ): WaitResult
+    ): WaitStatus
 
     /**
      * If the value at the given position in the array is equal to the provided value, the current
@@ -125,7 +125,7 @@ external object Atomics {
         index: Int,
         value: BigInt,
         timeout: Int = definedExternally,
-    ): WaitResult
+    ): WaitStatus
 
     /**
      * Wakes up sleeping agents that are waiting on the given index of the array, returning the

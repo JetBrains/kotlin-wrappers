@@ -9,10 +9,10 @@ package js.atomic
 
 // language=JavaScript
 @JsName("""(/*union*/{ok: 'ok', notEqual: 'not-equal', timedOut: 'timed-out' }/*union*/)""")
-sealed external interface WaitResult {
+sealed external interface WaitStatus {
     companion object {
-        val ok: WaitResult
-        val notEqual: WaitResult
-        val timedOut: WaitResult
+        val ok: WaitStatus
+        val notEqual: WaitStatus
+        val timedOut: WaitStatus
     }
 }
