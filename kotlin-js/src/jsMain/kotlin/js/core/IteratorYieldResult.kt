@@ -1,6 +1,19 @@
+@file:Suppress("WRONG_JS_QUALIFIER")
+// language=JavaScript
+@file:JsQualifier(
+    """({
+    __guard__: {
+        [Symbol.hasInstance](instance) {
+            return instance && (typeof instance === 'object') && !instance.done
+        }
+    }
+  })"""
+)
+
 package js.core
 
-sealed external interface IteratorYieldResult<out TYield> :
+@JsName("__guard__")
+sealed external class IteratorYieldResult<out TYield> :
     IteratorResult<TYield, Void> {
     val value: TYield
 }

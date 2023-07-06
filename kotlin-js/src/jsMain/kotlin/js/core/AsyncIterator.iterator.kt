@@ -27,6 +27,7 @@ private class AsyncIteratorAdapter<T>(
 
         lastResult = null
 
-        return result.asYield().value
+        result as IteratorYieldResult<T>
+        return result.value
     }
 }
