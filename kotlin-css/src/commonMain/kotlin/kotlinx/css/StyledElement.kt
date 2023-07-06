@@ -95,7 +95,7 @@ var StyledElement.backgroundOrigin: BackgroundOrigin by CssProperty()
 var StyledElement.backgroundPosition: RelativePosition
     get() = RelativePosition(declarations["background-position"] as String)
     set(position) {
-        declarations["background-position"] = position.value
+        put("background-position", position.value)
     }
 
 var StyledElement.backgroundRepeat: BackgroundRepeat by CssProperty()

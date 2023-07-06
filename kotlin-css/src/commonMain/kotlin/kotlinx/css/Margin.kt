@@ -26,7 +26,7 @@ var StyledElement.margin: Margin
     set(value) {
         val (top, right, bottom, left) = value
         if (top != null && right != null && bottom != null && left != null) {
-            declarations["margin"] = getShorthandValue(top, right, bottom, left)
+            put("margin", getShorthandValue(top, right, bottom, left))
         } else {
             top?.let { this.marginTop = it }
             right?.let { this.marginRight = it }

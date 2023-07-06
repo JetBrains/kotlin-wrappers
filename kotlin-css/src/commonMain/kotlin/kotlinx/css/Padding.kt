@@ -26,7 +26,7 @@ var StyledElement.padding: Padding
     set(value) {
         val (top, right, bottom, left) = value
         if (top != null && right != null && bottom != null && left != null) {
-            declarations["padding"] = getShorthandValue(top, right, bottom, left)
+            put("padding", getShorthandValue(top, right, bottom, left))
         } else {
             top?.let { this.paddingTop = it }
             right?.let { this.paddingRight = it }

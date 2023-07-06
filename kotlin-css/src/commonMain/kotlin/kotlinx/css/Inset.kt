@@ -27,5 +27,5 @@ data class Inset(
 var StyledElement.inset: Inset
     get() = error("Write-only property")
     set(value) {
-        declarations["inset"] = value.value
+        put("inset", value.value)
     }
