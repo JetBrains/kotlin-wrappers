@@ -13,6 +13,14 @@ enum class TextDecorationLine {
     override fun toString() = name.hyphenize()
 }
 
+enum class TextDecorationStyle {
+    initial, inherit, unset,
+
+    solid, double, dotted, dashed, wavy;
+
+    override fun toString() = name
+}
+
 
 class TextDecoration(
     private val lines: Set<TextDecorationLine>,
@@ -31,12 +39,4 @@ class TextDecoration(
             color?.let { append(" $it") }
         }
     }
-}
-
-enum class TextDecorationStyle {
-    initial, inherit, unset,
-
-    solid, double, dotted, dashed, wavy;
-
-    override fun toString() = name
 }
