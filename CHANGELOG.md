@@ -1,3 +1,21 @@
+## pre.588
+
+**BREAKING CHANGE**
+
+`kotlin-css` now has a different syntax for setting the `flex` property.
+
+```kotlin
+css {
+    // Before
+    flex(Flex.GROW)
+    flex(1, 0, LinearDimension.auto)
+
+    // After
+    flex = Flex.GROW
+    flex = Flex(1, 0, LinearDimension.auto)
+}
+```
+
 ## pre.586
 
 **BREAKING CHANGE**

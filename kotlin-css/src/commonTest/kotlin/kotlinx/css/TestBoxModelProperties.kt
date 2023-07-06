@@ -76,42 +76,70 @@ class TestBoxModelProperties {
                 flex: 1;
 
             """
-        ) { flexProperty = FlexProperty(1) },
+        ) { flex = Flex(1) },
 
         PropertyTestCase(
             """
                 flex: 10px;
 
             """
-        ) { flexProperty = FlexProperty(10.px) },
+        ) { flex = Flex(10.px) },
 
         PropertyTestCase(
             """
                 flex: 1 1;
 
             """
-        ) { flexProperty = FlexProperty(1, 1) },
+        ) { flex = Flex(1, 1) },
 
         PropertyTestCase(
             """
                 flex: 1 10px;
 
             """
-        ) { flexProperty = FlexProperty(1, 10.px) },
+        ) { flex = Flex(1, 10.px) },
 
         PropertyTestCase(
             """
                 flex: 1 1 fit-content;
 
             """
-        ) { flexProperty = FlexProperty(1, 1, FlexBasis.fitContent) },
+        ) { flex = Flex(1, 1, FlexBasis.fitContent) },
 
         PropertyTestCase(
             """
                 flex: 1 1 10px;
 
             """
-        ) { flexProperty = FlexProperty(1, 1, 10.px) },
+        ) { flex = Flex(1, 1, 10.px) },
+
+        PropertyTestCase(
+            """
+                flex: 0 0 auto;
+
+            """
+        ) { flex = Flex.NONE },
+
+        PropertyTestCase(
+            """
+                flex: 1 0 auto;
+
+            """
+        ) { flex = Flex.GROW },
+
+        PropertyTestCase(
+            """
+                flex: 0 1 auto;
+
+            """
+        ) { flex = Flex.SHRINK },
+
+        PropertyTestCase(
+            """
+                flex: 1 1 auto;
+
+            """
+        ) { flex = Flex.GROW_SHRINK },
     )
 
     /**
