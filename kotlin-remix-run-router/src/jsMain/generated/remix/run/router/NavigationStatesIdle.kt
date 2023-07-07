@@ -2,7 +2,7 @@ package remix.run.router
 
 
 sealed external interface NavigationStatesIdle {
-    var state: String
+    var state: String /* "idle" */
     var location: Nothing?
     var formMethod: Nothing?
     var formAction: Nothing?
