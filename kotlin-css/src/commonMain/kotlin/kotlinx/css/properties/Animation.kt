@@ -38,13 +38,13 @@ enum class PlayState {
 
 
 class Animation(
-    val duration: Time,
-    private val timing: Timing,
-    private val delay: Time,
-    private val iterationCount: IterationCount,
-    private val direction: AnimationDirection,
-    private val fillMode: FillMode,
-    private val playState: PlayState,
+    val duration: Time = 0.s,
+    private val timing: Timing = Timing.ease,
+    private val delay: Time = 0.s,
+    private val iterationCount: IterationCount = 1.times,
+    private val direction: AnimationDirection = AnimationDirection.normal,
+    private val fillMode: FillMode = FillMode.none,
+    private val playState: PlayState = PlayState.running,
     val name: String,
 ) {
     override fun toString() = "$duration $timing $delay $iterationCount $direction $fillMode $playState $name"

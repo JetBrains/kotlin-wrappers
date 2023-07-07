@@ -1,9 +1,10 @@
 package kotlinx.css.properties
 
-import kotlinx.css.*
-import kotlin.reflect.KProperty
+import kotlinx.css.StyleList
+import kotlinx.css.StyledElement
+import kotlinx.css.transition
 
-class Transition(val property: String, val duration: Time, private val timing: Timing, private val delay: Time) {
+class Transition(val property: String = "all", val duration: Time = 0.s, private val timing: Timing = Timing.ease, private val delay: Time = 0.s) {
     override fun toString() = "$property $duration $timing $delay"
 }
 
@@ -20,25 +21,4 @@ fun StyledElement.transition(
     delay: Time = 0.s,
 ) {
     transition += Transition(property, duration, timing, delay)
-}
-
-fun StyledElement.transition(
-    property: KProperty<*>,
-    duration: Time = 0.s,
-    timing: Timing = Timing.ease,
-    delay: Time = 0.s,
-) = transition(property.name.hyphenize(), duration, timing, delay)
-
-fun CssBuilder.delayUnhover(
-    vararg properties: KProperty<*>,
-    duration: Time = 300.ms,
-    timing: Timing = Timing.materialDeceleration,
-    delay: Time = 0.s,
-) = !hover {
-    when {
-        properties.isNotEmpty() -> properties.forEach {
-            transition(it, duration, timing, delay)
-        }
-        else -> transition("all", duration, timing, delay)
-    }
 }

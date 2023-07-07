@@ -3,12 +3,12 @@ package kotlinx.css.properties
 import kotlinx.css.*
 
 class BoxShadow(
-    private var inset: Boolean,
-    private var offsetX: LinearDimension,
-    private var offsetY: LinearDimension,
-    private var blurRadius: LinearDimension,
-    private var spreadRadius: LinearDimension,
-    var color: Color,
+    private var inset: Boolean = false,
+    private var offsetX: LinearDimension = 0.px,
+    private var offsetY: LinearDimension = 0.px,
+    private var blurRadius: LinearDimension = 0.px,
+    private var spreadRadius: LinearDimension = 0.px,
+    var color: Color = Color.currentColor,
 ) {
     override fun toString() = buildString {
         if (inset) append("inset ")
@@ -23,7 +23,7 @@ class BoxShadows : StyleList<BoxShadow>(", ") {
 }
 
 fun StyledElement.boxShadow(
-    color: Color,
+    color: Color = Color.currentColor,
     offsetX: LinearDimension = 0.px,
     offsetY: LinearDimension = 0.px,
     blurRadius: LinearDimension = 0.px,
@@ -33,7 +33,7 @@ fun StyledElement.boxShadow(
 }
 
 fun StyledElement.boxShadowInset(
-    color: Color,
+    color: Color = Color.currentColor,
     offsetX: LinearDimension = 0.px,
     offsetY: LinearDimension = 0.px,
     blurRadius: LinearDimension = 0.px,
