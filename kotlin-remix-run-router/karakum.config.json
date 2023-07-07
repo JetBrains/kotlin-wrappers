@@ -101,5 +101,11 @@
         "TrackedPromise.kt": [
             "js.promise.Promise"
         ]
+    },
+    "compilerOptions": {
+        "lib": [
+            "lib.esnext.d.ts",
+            "lib.dom.d.ts"
+        ]
     }
 }

@@ -1,5 +1,6 @@
 package remix.run.router
 
+import web.http.FormData
 import web.url.URL
 
 
@@ -12,7 +13,7 @@ sealed external interface ShouldRevalidateFunctionArgs {
     var formAction: (String)?
     var formEncType: (FormEncType)?
     var text: String?
-    var formData: Any?
+    var formData: FormData?
     var json: JsonValue?
     var actionResult: DataResult?
     var defaultShouldRevalidate: Boolean

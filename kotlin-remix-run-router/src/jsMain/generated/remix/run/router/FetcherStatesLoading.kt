@@ -1,14 +1,16 @@
 package remix.run.router
 
+import web.http.FormData
+
 
 sealed external interface FetcherStatesLoading<TData> {
-    var state: String
-    var formMethod: Any /* LowerCaseFormMethod | "GET" | "POST" | "PUT" | "PATCH" | "DELETE" */?
+    var state: String /* "loading" */
+    var formMethod: (Any /* Submission["formMethod"] | undefined */)?
     var formAction: String?
     var formEncType: FormEncType?
     var text: String?
-    var formData: Any?
+    var formData: FormData?
     var json: JsonValue?
     var data: TData?
-    var String: Boolean?
+    /* " _hasFetcherDoneAnything "?: boolean; */
 }
