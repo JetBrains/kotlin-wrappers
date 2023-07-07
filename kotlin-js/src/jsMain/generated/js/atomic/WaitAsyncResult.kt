@@ -3,6 +3,7 @@
 @file:JsQualifier(
     """({
     __guard__: {
+        name: `WaitAsyncResult`,
         [Symbol.hasInstance](instance) {
             return instance && (typeof instance === 'object') && (instance.async === true)
         }

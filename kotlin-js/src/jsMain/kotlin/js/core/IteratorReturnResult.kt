@@ -3,6 +3,7 @@
 @file:JsQualifier(
     """({
     __guard__: {
+        name: `IteratorReturnResult`,
         [Symbol.hasInstance](instance) {
             return instance && (typeof instance === 'object') && (instance.done === true)
         }
