@@ -38,17 +38,15 @@ enum class PlayState {
 
 
 class Animation(
-    val duration: Time = 0.s,
-    private val timing: Timing = Timing.ease,
-    private val delay: Time = 0.s,
-    private val iterationCount: IterationCount = 1.times,
-    private val direction: AnimationDirection = AnimationDirection.normal,
-    private val fillMode: FillMode = FillMode.none,
-    private val playState: PlayState = PlayState.running,
-    val name: String,
-) {
-    override fun toString() = "$duration $timing $delay $iterationCount $direction $fillMode $playState $name"
-}
+    duration: Time = 0.s,
+    timing: Timing = Timing.ease,
+    delay: Time = 0.s,
+    iterationCount: IterationCount = 1.times,
+    direction: AnimationDirection = AnimationDirection.normal,
+    fillMode: FillMode = FillMode.none,
+    playState: PlayState = PlayState.running,
+    name: String,
+) : CssValue("$duration $timing $delay $iterationCount $direction $fillMode $playState $name")
 
 class Animations : StyleList<Animation>(", ") {
     companion object {
