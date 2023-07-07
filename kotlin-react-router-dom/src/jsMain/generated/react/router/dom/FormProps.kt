@@ -1,7 +1,3 @@
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package react.router.dom
 
 import remix.run.router.HTMLFormMethod
@@ -24,7 +20,11 @@ sealed external interface FormProps : react.Props, react.PropsWithRef<HTMLFormEl
      * `<form encType>` - enhancing beyond the normal string type and limiting
      * to the built-in browser supported values
      */
-    override var encType: String? /* "application/x-www-form-urlencoded" | "multipart/form-data" | "text/plain" */
+    @Deprecated(message = "use routerEncType", level = DeprecationLevel.HIDDEN)
+    override var encType: String?
+
+    @JsName("encType")
+    var routerEncType: FormPropsEncType?
 
     /**
      * Normal `<form action>` but supports React Router's relative paths.

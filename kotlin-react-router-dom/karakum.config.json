@@ -3,14 +3,6 @@
         "<nodeModules>/react-router-dom/dist/dom.d.ts",
         "<nodeModules>/react-router-dom/dist/index.d.ts"
     ],
-    "ignoreInput": [
-        "**/@remix-run/router/**",
-        "**/@types/prop-types/**",
-        "**/@types/react/**",
-        "**/@types/scheduler/**",
-        "**/csstype/**",
-        "**/react-router/**"
-    ],
     "output": "src/jsMain/generated",
     "ignoreOutput": [
         "**/JsonArray.kt",

@@ -4,6 +4,7 @@ module.exports = (node, context, render) => {
     if (
         ts.isUnionTypeNode(node)
 
+        && node.parent
         && ts.isPropertySignature(node.parent)
         && ts.isIdentifier(node.parent.name)
         && (

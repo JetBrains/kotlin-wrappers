@@ -4,6 +4,7 @@ module.exports = (node, context, render) => {
     if (
         ts.isUnionTypeNode(node)
 
+        && node.parent
         && ts.isParameter(node.parent)
         && ts.isIdentifier(node.parent.name)
         && node.parent.name.text === "nextInit"

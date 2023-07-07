@@ -8,6 +8,7 @@ const overriddenProps = {
     },
     "FormProps": {
         "method": ["routerMethod", "String"],
+        "encType": ["routerEncType", "String"],
         "action": null,
         "onSubmit": null,
     },
