@@ -2,7 +2,9 @@
 
 package kotlinx.css.properties
 
-import kotlinx.css.*
+import kotlinx.css.CssValue
+import kotlinx.css.StyleList
+import kotlinx.css.hyphenize
 
 class IterationCount(override val value: String) : CssValue(value) {
     companion object {
@@ -38,31 +40,18 @@ enum class PlayState {
 
 
 class Animation(
+    name: String,
     duration: Time = 0.s,
     timing: Timing = Timing.ease,
     delay: Time = 0.s,
     iterationCount: IterationCount = 1.times,
     direction: AnimationDirection = AnimationDirection.normal,
     fillMode: FillMode = FillMode.none,
-    playState: PlayState = PlayState.running,
-    name: String,
+    playState: PlayState = PlayState.running
 ) : CssValue("$duration $timing $delay $iterationCount $direction $fillMode $playState $name")
 
 class Animations : StyleList<Animation>(", ") {
     companion object {
         val none = Animations()
     }
-}
-
-fun StyledElement.animation(
-    name: String,
-    duration: Time = 0.s,
-    timing: Timing = Timing.ease,
-    delay: Time = 0.s,
-    iterationCount: IterationCount = 1.times,
-    direction: AnimationDirection = AnimationDirection.normal,
-    fillMode: FillMode = FillMode.none,
-    playState: PlayState = PlayState.running,
-) {
-    animation += Animation(duration, timing, delay, iterationCount, direction, fillMode, playState, name)
 }

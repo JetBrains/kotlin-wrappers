@@ -1,3 +1,20 @@
+## pre.592
+
+**BREAKING CHANGE**
+
+Although it is unlikely that someone was using this signature directly (the implementation in `kotlin-styled` / `kotlin-styled-next` is normally used instead) it is technically still a breaking
+change.
+
+```kotlin
+css {
+    // Before
+    animation("animation", 1.s, Timing.easeIn, 0.5.s)
+
+    // After
+    animation += Animation("animation", 1.s, Timing.easeIn, 0.5.s)
+}
+```
+
 ## pre.591
 
 **BREAKING CHANGE**
@@ -63,9 +80,11 @@ Replace the imports as follows to migrate:
 
 ```kotlin
 css {
-    margin(0.px) // old
+    // Before
+    margin(0.px)
 
-    margin = Margin(0.px) // new
+    // After
+    margin = Margin(0.px)
 }
 ```
 

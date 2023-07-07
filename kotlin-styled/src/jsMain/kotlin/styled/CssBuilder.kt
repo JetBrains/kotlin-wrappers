@@ -1,6 +1,7 @@
 package styled
 
 import kotlinx.css.CssBuilder
+import kotlinx.css.animation
 import kotlinx.css.properties.*
 
 fun CssBuilder.animation(
@@ -12,7 +13,10 @@ fun CssBuilder.animation(
     fillMode: FillMode = FillMode.none,
     playState: PlayState = PlayState.running,
     handler: KeyframesBuilder.() -> Unit,
-) = animation(keyframes(indent, handler), duration, timing, delay, iterationCount, direction, fillMode, playState)
+) {
+    val name = keyframes(indent, handler)
+    animation += Animation(name, duration, timing, delay, iterationCount, direction, fillMode, playState)
+}
 
 inline fun keyframes(indent: String = "", handler: KeyframesBuilder.() -> Unit): String {
     val builder = KeyframesBuilder(indent)

@@ -1,6 +1,7 @@
 package styled
 
 import kotlinx.css.CssBuilder
+import kotlinx.css.animation
 import kotlinx.css.properties.*
 
 fun CssBuilder.animation(
@@ -14,5 +15,5 @@ fun CssBuilder.animation(
     builder: KeyframesBuilder.() -> Unit,
 ) {
     val name = GlobalStyles.scheduleToInject(builder)
-    animation(name, duration, timing, delay, iterationCount, direction, fillMode, playState)
+    animation += Animation(name, duration, timing, delay, iterationCount, direction, fillMode, playState)
 }
