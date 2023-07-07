@@ -1,3 +1,21 @@
+## pre.591
+
+**BREAKING CHANGE**
+
+`kotlin-css` now has a different syntax for setting `boxShadow` and `transition` properties.
+
+```kotlin
+css {
+    // Before
+    boxShadow(Color.black, 1.px, 2.px, 3.px, 4.px)
+    transition("all", 0.15.s, Timing.linear, 0.5.s)
+
+    // After
+    boxShadow += BoxShadow(Color.black, 1.px, 2.px, 3.px, 4.px)
+    transition += Transition("background-color", 0.15.s, Timing.linear, 0.5.s)
+}
+```
+
 ## pre.588
 
 **BREAKING CHANGE**

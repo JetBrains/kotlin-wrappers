@@ -355,7 +355,7 @@ class ElementTest : TestBase() {
     @Test
     fun declarationsPrefixed() {
         val css = CssBuilder().apply {
-            transition("all", 200.ms, Timing.linear)
+            transition += Transition("all", 200.ms, Timing.linear)
         }
         val rule = css.getCssRules(".someClass").first()
         assertContains(rule, "-moz-transition: all 200ms linear 0s")

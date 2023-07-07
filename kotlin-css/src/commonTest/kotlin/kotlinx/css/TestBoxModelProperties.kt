@@ -274,11 +274,6 @@ class TestBoxModelProperties {
     )
 
 
-    data class PropertyTestCase(
-        val expected: String,
-        val propRuleSet: RuleSet,
-    )
-
     @Test
     fun testProperties() {
         (backgroundPositionCases + borderTestCases + flexTestCases + insetTestCases + marginTestCases + paddingTestCases).forEach { (expected, propRuleSet) ->
