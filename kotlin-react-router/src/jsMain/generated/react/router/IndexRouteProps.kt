@@ -1,7 +1,3 @@
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package react.router
 
 import remix.run.router.ActionFunction
@@ -22,8 +18,8 @@ sealed external interface IndexRouteProps : react.Props {
     var handle: Any?
     var index: Boolean
     var children: Nothing?
-    var element: react.ReactNode?
-    var errorElement: react.ReactNode?
+    var element: (react.ReactNode)?
+    var errorElement: (react.ReactNode)?
     var Component: react.ComponentType<*>?
     var ErrorBoundary: react.ComponentType<*>?
 }

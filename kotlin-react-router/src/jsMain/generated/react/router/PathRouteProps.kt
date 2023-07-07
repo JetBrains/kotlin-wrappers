@@ -1,7 +1,3 @@
-@file:Suppress(
-    "NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE",
-)
-
 package react.router
 
 import remix.run.router.ActionFunction
@@ -21,8 +17,8 @@ sealed external interface PathRouteProps : react.PropsWithChildren {
     var shouldRevalidate: ShouldRevalidateFunction?
     var handle: Any?
     var index: Boolean?
-    var element: react.ReactNode?
-    var errorElement: react.ReactNode?
+    var element: (react.ReactNode)?
+    var errorElement: (react.ReactNode)?
     var Component: react.ComponentType<*>?
     var ErrorBoundary: react.ComponentType<*>?
 }

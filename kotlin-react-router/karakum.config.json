@@ -1,11 +1,6 @@
 {
     "input": "<nodeModules>/react-router/dist/**/*.d.ts",
     "ignoreInput": [
-        "**/@remix-run/router/**",
-        "**/@types/prop-types/**",
-        "**/@types/react/**",
-        "**/@types/scheduler/**",
-        "**/csstype/**",
         "**/react-router/dist/lib/polyfills/**"
     ],
     "output": "src/jsMain/generated",
