@@ -17,7 +17,7 @@ private class AsyncIteratorAdapter<T>(
 
         lastResult = result
 
-        return !result.done
+        return result is IteratorYieldResult<T>
     }
 
     override fun next(): T {
