@@ -27,6 +27,7 @@ external class Object internal constructor() {
         fun keys(o: Any): ReadonlyArray<String>
         fun <T> preventExtensions(o: T): T
         fun <T> seal(o: T): T
+        fun <T : Any> setPrototypeOf(o: T, proto: Any?): T
         fun <T : Any> values(o: ReadonlyRecord<*, T>): ReadonlyArray<T>
         fun values(o: Any): ReadonlyArray<Any?>
     }
