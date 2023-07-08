@@ -9,8 +9,8 @@ external class Object internal constructor() {
 
     companion object {
         fun <T : Any, R : T> assign(dest: R, vararg src: T?): R
-        fun <T : Any> create(o: T?, properties: dynamic = definedExternally): T
-        fun <T : Any> defineProperties(o: T, properties: dynamic): T
+        fun <T : Any> create(o: T?, properties: PropertyDescriptorMap = definedExternally): T
+        fun <T : Any> defineProperties(o: T, properties: PropertyDescriptorMap): T
         fun <T : Any, P> defineProperty(o: T, p: PropertyKey, attributes: PropertyDescriptor<P>): T
         fun <T : Any> entries(o: ReadonlyRecord<String, T>): ReadonlyArray<JsTuple2<String, T>>
         fun entries(o: Any): ReadonlyArray<JsTuple2<String, Any?>>
