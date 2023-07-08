@@ -20,5 +20,7 @@ open external class Float32Array(
 
     companion object {
         val BYTES_PER_ELEMENT: Int
+
+        fun of(vararg items: Float): Float32Array
     }
 }

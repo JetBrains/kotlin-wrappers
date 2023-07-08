@@ -20,5 +20,7 @@ open external class Float64Array(
 
     companion object {
         val BYTES_PER_ELEMENT: Int
+
+        fun of(vararg items: Double): Float64Array
     }
 }

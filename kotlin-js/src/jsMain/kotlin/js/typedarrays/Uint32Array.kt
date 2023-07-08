@@ -20,5 +20,7 @@ open external class Uint32Array(
 
     companion object {
         val BYTES_PER_ELEMENT: Int
+
+        fun of(vararg items: Int): Uint32Array
     }
 }

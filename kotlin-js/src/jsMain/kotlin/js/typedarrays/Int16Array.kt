@@ -20,5 +20,7 @@ open external class Int16Array(
 
     companion object {
         val BYTES_PER_ELEMENT: Int
+
+        fun of(vararg items: Short): Int16Array
     }
 }

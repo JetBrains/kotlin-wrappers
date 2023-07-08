@@ -20,5 +20,7 @@ open external class Uint8ClampedArray(
 
     companion object {
         val BYTES_PER_ELEMENT: Int
+
+        fun of(vararg items: Byte): Uint8ClampedArray
     }
 }
