@@ -13,7 +13,7 @@ external object Reflect {
      */
     fun <T : Any> construct(
         target: JsClass<T>,
-        argumentsList: ReadonlyArray<*>,
+        argumentsList: ReadonlyArray<Any?>,
     ): T
 
     /**

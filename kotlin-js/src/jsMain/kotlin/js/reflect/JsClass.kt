@@ -1,10 +1,7 @@
 package js.reflect
 
-inline fun <T : Any> JsClass<T>.newInstance(): T =
-    newInstance(this)
-
-@Suppress("UNUSED_PARAMETER")
-fun <T : Any> newInstance(
-    clazz: JsClass<T>,
-): T =
-    js("new clazz()")
+fun <T : Any> JsClass<T>.newInstance(): T =
+    Reflect.construct(
+        target = this,
+        argumentsList = emptyArray(),
+    )
