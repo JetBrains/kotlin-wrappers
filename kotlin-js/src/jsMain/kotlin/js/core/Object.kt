@@ -11,11 +11,11 @@ external class Object internal constructor() {
         fun <T : Any, R : T> assign(dest: R, vararg src: T?): R
         fun <T : Any> create(o: T?, properties: PropertyDescriptorMap = definedExternally): T
         fun <T : Any> defineProperties(o: T, properties: PropertyDescriptorMap): T
-        fun <T : Any, P> defineProperty(o: T, p: PropertyKey, attributes: PropertyDescriptor<P>): T
+        fun <T : Any, P> defineProperty(o: T, p: PropertyKey, attributes: TypedPropertyDescriptor<P>): T
         fun <T : Any> entries(o: ReadonlyRecord<String, T>): ReadonlyArray<JsTuple2<String, T>>
         fun entries(o: Any): ReadonlyArray<JsTuple2<String, Any?>>
         fun <R, T : R> freeze(o: T): R
-        fun <T> getOwnPropertyDescriptor(o: Any, p: PropertyKey): PropertyDescriptor<T>?
+        fun <T> getOwnPropertyDescriptor(o: Any, p: PropertyKey): TypedPropertyDescriptor<T>?
         fun getOwnPropertyNames(o: Any): ReadonlyArray<String>
         fun getOwnPropertySymbols(o: Any): ReadonlyArray<Symbol>
         fun <P : Any, T : P> getPrototypeOf(o: T): P

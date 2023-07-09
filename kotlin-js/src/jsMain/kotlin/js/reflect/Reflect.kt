@@ -1,8 +1,8 @@
 package js.reflect
 
-import js.core.PropertyDescriptor
 import js.core.PropertyKey
 import js.core.ReadonlyArray
+import js.core.TypedPropertyDescriptor
 
 external object Reflect {
     /**
@@ -26,7 +26,7 @@ external object Reflect {
     fun defineProperty(
         target: Any,
         propertyKey: PropertyKey,
-        attributes: PropertyDescriptor<*>,
+        attributes: TypedPropertyDescriptor<*>,
     ): Boolean
 
     /**
@@ -59,7 +59,7 @@ external object Reflect {
     fun getOwnPropertyDescriptor(
         target: Any,
         propertyKey: PropertyKey,
-    ): PropertyDescriptor<*>
+    ): TypedPropertyDescriptor<*>
 
     /**
      * Returns the prototype of an object.

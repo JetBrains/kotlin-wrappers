@@ -1,6 +1,6 @@
 package js.core
 
-external interface PropertyDescriptor<T> {
+external interface TypedPropertyDescriptor<T> {
     var configurable: Boolean?
     var enumerable: Boolean?
     var value: T?

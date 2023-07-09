@@ -1,3 +1,3 @@
 package js.core
 
-typealias PropertyDescriptorMap = ReadonlyRecord<PropertyKey, PropertyDescriptor<*>>
+typealias PropertyDescriptorMap = ReadonlyRecord<PropertyKey, TypedPropertyDescriptor<*>>

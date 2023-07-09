@@ -5,10 +5,10 @@ external interface ProxyHandler<T : Any> {
 
     var apply: ((target: T, thisArg: Any, argArray: ReadonlyArray<Any>) -> Any)?
     var construct: ((target: T, argArray: ReadonlyArray<Any>, newTarget: Function<*>) -> Any)?
-    var defineProperty: ((target: T, p: PropertyName, attributes: PropertyDescriptor<*>) -> Boolean)?
+    var defineProperty: ((target: T, p: PropertyName, attributes: TypedPropertyDescriptor<*>) -> Boolean)?
     var deleteProperty: ((target: T, p: PropertyName) -> Boolean)?
     var get: ((target: T, p: PropertyName, receiver: Any) -> Any)?
-    var getOwnPropertyDescriptor: ((target: T, p: PropertyName) -> PropertyDescriptor<*>)?
+    var getOwnPropertyDescriptor: ((target: T, p: PropertyName) -> TypedPropertyDescriptor<*>)?
     var getPrototypeOf: ((target: T) -> Any?)?
     var has: ((target: T, p: PropertyName) -> Boolean)?
     var isExtensible: ((target: T) -> Boolean)?
