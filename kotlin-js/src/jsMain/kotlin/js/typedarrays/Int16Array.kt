@@ -20,7 +20,5 @@ open external class Int16Array(
 
     companion object : TypedArrayCompanion<Int16Array, Short> {
         val BYTES_PER_ELEMENT: Int
-
-        fun of(vararg items: Short): Int16Array
     }
 }

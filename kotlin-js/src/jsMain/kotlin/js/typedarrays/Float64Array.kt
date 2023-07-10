@@ -20,7 +20,5 @@ open external class Float64Array(
 
     companion object : TypedArrayCompanion<Float64Array, Double> {
         val BYTES_PER_ELEMENT: Int
-
-        fun of(vararg items: Double): Float64Array
     }
 }

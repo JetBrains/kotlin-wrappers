@@ -21,7 +21,5 @@ open external class BigUint64Array(
 
     companion object : TypedArrayCompanion<BigUint64Array, BigInt> {
         val BYTES_PER_ELEMENT: Int
-
-        fun of(vararg items: BigInt): BigUint64Array
     }
 }
