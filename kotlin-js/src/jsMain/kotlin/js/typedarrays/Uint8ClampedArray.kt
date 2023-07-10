@@ -18,7 +18,7 @@ open external class Uint8ClampedArray(
     constructor(elements: JsIterable<Byte>)
     constructor(elements: ReadonlyArray<Byte>)
 
-    companion object {
+    companion object : TypedArrayCompanion<Uint8ClampedArray, Byte> {
         val BYTES_PER_ELEMENT: Int
 
         fun of(vararg items: Byte): Uint8ClampedArray

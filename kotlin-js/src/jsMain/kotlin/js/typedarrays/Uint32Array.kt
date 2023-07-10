@@ -18,7 +18,7 @@ open external class Uint32Array(
     constructor(elements: JsIterable<Int>)
     constructor(elements: ReadonlyArray<Int>)
 
-    companion object {
+    companion object : TypedArrayCompanion<Uint32Array, Int> {
         val BYTES_PER_ELEMENT: Int
 
         fun of(vararg items: Int): Uint32Array

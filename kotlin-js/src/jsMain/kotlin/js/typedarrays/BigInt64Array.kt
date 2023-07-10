@@ -19,7 +19,7 @@ open external class BigInt64Array(
     constructor(elements: JsIterable<BigInt>)
     constructor(elements: ReadonlyArray<BigInt>)
 
-    companion object {
+    companion object : TypedArrayCompanion<BigInt64Array, BigInt> {
         val BYTES_PER_ELEMENT: Int
 
         fun of(vararg items: BigInt): BigInt64Array

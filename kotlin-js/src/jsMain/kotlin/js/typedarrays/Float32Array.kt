@@ -18,7 +18,7 @@ open external class Float32Array(
     constructor(elements: JsIterable<Float>)
     constructor(elements: ReadonlyArray<Float>)
 
-    companion object {
+    companion object : TypedArrayCompanion<Float32Array, Float> {
         val BYTES_PER_ELEMENT: Int
 
         fun of(vararg items: Float): Float32Array

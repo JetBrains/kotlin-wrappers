@@ -18,7 +18,7 @@ open external class Uint16Array(
     constructor(elements: JsIterable<Short>)
     constructor(elements: ReadonlyArray<Short>)
 
-    companion object {
+    companion object : TypedArrayCompanion<Uint16Array, Short> {
         val BYTES_PER_ELEMENT: Int
 
         fun of(vararg items: Short): Uint16Array

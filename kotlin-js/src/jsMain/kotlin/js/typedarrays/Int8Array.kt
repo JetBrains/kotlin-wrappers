@@ -18,7 +18,7 @@ open external class Int8Array(
     constructor(elements: JsIterable<Byte>)
     constructor(elements: ReadonlyArray<Byte>)
 
-    companion object {
+    companion object : TypedArrayCompanion<Int8Array, Byte> {
         val BYTES_PER_ELEMENT: Int
 
         fun of(vararg items: Byte): Int8Array
