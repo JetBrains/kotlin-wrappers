@@ -7,7 +7,7 @@ abstract class CssValue(open val value: String) {
 }
 
 enum class Align {
-    initial, inherit, unset,
+    inherit, initial, revert, revertLayer, unset,
 
     auto, stretch, center, start, end, selfStart, selfEnd, flexStart, flexEnd, baseline;
 
@@ -15,6 +15,8 @@ enum class Align {
 }
 
 enum class Appearance {
+    inherit, initial, revert, revertLayer, unset,
+
     none,
     auto,
     menulistButton,
@@ -37,13 +39,15 @@ enum class Appearance {
 }
 
 enum class BackgroundAttachment {
-    initial, inherit, unset,
+    inherit, initial, revert, revertLayer, unset,
 
     scroll, fixed, local;
+
+    override fun toString() = name.hyphenize()
 }
 
 enum class BackgroundClip {
-    initial, inherit, unset,
+    inherit, initial, revert, revertLayer, unset,
 
     borderBox, paddingBox, contentBox, text;
 
@@ -51,7 +55,7 @@ enum class BackgroundClip {
 }
 
 enum class BackgroundOrigin {
-    initial, inherit, unset,
+    inherit, initial, revert, revertLayer, unset,
 
     borderBox, paddingBox, contentBox;
 
@@ -59,7 +63,7 @@ enum class BackgroundOrigin {
 }
 
 enum class BackgroundRepeat {
-    initial, inherit, unset,
+    inherit, initial, revert, revertLayer, unset,
 
     repeatX, repeatY, repeat, noRepeat;
 
@@ -67,19 +71,23 @@ enum class BackgroundRepeat {
 }
 
 enum class BorderCollapse {
-    initial, inherit, unset,
+    inherit, initial, revert, revertLayer, unset,
 
     separate, collapse;
+
+    override fun toString() = name.hyphenize()
 }
 
 enum class BorderStyle {
-    initial, inherit, unset,
+    inherit, initial, revert, revertLayer, unset,
 
     none, dotted, dashed, solid;
+
+    override fun toString() = name.hyphenize()
 }
 
 enum class BoxSizing {
-    initial, inherit, unset,
+    inherit, initial, revert, revertLayer, unset,
 
     contentBox, borderBox;
 
@@ -95,19 +103,23 @@ enum class BreakInside {
 }
 
 enum class Clear {
-    initial, inherit, unset,
+    inherit, initial, revert, revertLayer, unset,
 
     none, left, right, both;
+
+    override fun toString() = name.hyphenize()
 }
 
 enum class Contain {
-    initial, inherit, unset,
+    inherit, initial, revert, revertLayer, unset,
 
     none, strict, content, size, layout, style, paint;
+
+    override fun toString() = name.hyphenize()
 }
 
 enum class Cursor {
-    initial, inherit, unset,
+    inherit, initial, revert, revertLayer, unset,
 
     auto, default, none, // General
     contextMenu, help, pointer, progress, wait, // Links & status
@@ -122,13 +134,15 @@ enum class Cursor {
 }
 
 enum class Direction {
-    initial, inherit, unset,
+    inherit, initial, revert, revertLayer, unset,
 
     ltr, rtl;
+
+    override fun toString() = name.hyphenize()
 }
 
 enum class Display {
-    initial, inherit, unset,
+    inherit, initial, revert, revertLayer, unset,
 
     block, `inline`, runIn,
 
@@ -147,8 +161,10 @@ enum class Display {
 
 class FlexBasis(override val value: String) : CssValue(value) {
     companion object {
-        val initial = FlexBasis("initial")
         val inherit = FlexBasis("inherit")
+        val initial = FlexBasis("initial")
+        val revert = FlexBasis("revert")
+        val revertLayer = FlexBasis("revert-layer")
         val unset = FlexBasis("unset")
 
         val auto = FlexBasis("auto")
@@ -164,7 +180,7 @@ class FlexBasis(override val value: String) : CssValue(value) {
 val LinearDimension.basis get() = FlexBasis(toString())
 
 enum class FlexDirection {
-    initial, inherit, unset,
+    inherit, initial, revert, revertLayer, unset,
 
     column, columnReverse, row, rowReverse;
 
@@ -172,7 +188,7 @@ enum class FlexDirection {
 }
 
 enum class FlexWrap {
-    initial, inherit, unset,
+    inherit, initial, revert, revertLayer, unset,
 
     nowrap, wrap, wrapReverse;
 
@@ -180,7 +196,7 @@ enum class FlexWrap {
 }
 
 enum class Float {
-    initial, inherit, unset,
+    inherit, initial, revert, revertLayer, unset,
 
     left, right, none;
 
@@ -188,15 +204,19 @@ enum class Float {
 }
 
 enum class FontStyle {
-    initial, inherit, unset,
+    inherit, initial, revert, revertLayer, unset,
 
     normal, italic;
+
+    override fun toString() = name.hyphenize()
 }
 
 class FontWeight(override val value: String) : CssValue(value) {
     companion object {
-        val initial = FontWeight("initial")
         val inherit = FontWeight("inherit")
+        val initial = FontWeight("initial")
+        val revert = FontWeight("revert")
+        val revertLayer = FontWeight("revert-layer")
         val unset = FontWeight("unset")
 
         val normal = FontWeight("normal")
@@ -233,8 +253,10 @@ class GridAutoColumns(override val value: String) : CssValue(value) {
 
 class GridAutoFlow private constructor(override val value: String) : CssValue(value) {
     companion object {
-        val initial = GridAutoFlow("initial")
         val inherit = GridAutoFlow("inherit")
+        val initial = GridAutoFlow("initial")
+        val revert = GridAutoFlow("revert")
+        val revertLayer = GridAutoFlow("revert-layer")
         val unset = GridAutoFlow("unset")
 
         val column = GridAutoFlow("column")
@@ -346,9 +368,11 @@ class GridTemplateRows(override val value: String) : CssValue(value) {
 }
 
 enum class Hyphens {
-    initial, inherit, unset,
+    inherit, initial, revert, revertLayer, unset,
 
     none, manual, auto;
+
+    override fun toString() = name.hyphenize()
 }
 
 class Image(override val value: String) : CssValue(value) {
@@ -358,13 +382,15 @@ class Image(override val value: String) : CssValue(value) {
 }
 
 enum class Isolation {
-    initial, inherit, revert, unset,
+    inherit, initial, revert, revertLayer, unset,
 
     auto, isolate;
+
+    override fun toString() = name.hyphenize()
 }
 
 enum class JustifyContent {
-    initial, inherit, unset,
+    inherit, initial, revert, revertLayer, unset,
 
     center,
     start,
@@ -387,7 +413,7 @@ enum class JustifyContent {
 }
 
 enum class JustifyItems {
-    initial, inherit, unset,
+    inherit, initial, revert, revertLayer, unset,
 
     auto,
     normal,
@@ -415,7 +441,7 @@ enum class ListStylePosition {
 }
 
 enum class ListStyleType {
-    initial, inherit, unset,
+    inherit, initial, revert, revertLayer, unset,
 
     none, disc, circle, square, decimal;
 
@@ -423,7 +449,7 @@ enum class ListStyleType {
 }
 
 enum class ObjectFit {
-    initial, inherit, unset,
+    inherit, initial, revert, revertLayer, unset,
 
     contain, cover, fill, none, scaleDown;
 
@@ -443,9 +469,11 @@ class Order(override val value: String) : CssValue(value) {
 }
 
 enum class Outline {
-    initial, inherit, unset,
+    inherit, initial, revert, revertLayer, unset,
 
     none;
+
+    override fun toString() = name.hyphenize()
 }
 
 enum class OutlineStyle {
@@ -457,9 +485,11 @@ enum class OutlineStyle {
 }
 
 enum class Overflow {
-    initial, inherit, unset,
+    inherit, initial, revert, revertLayer, unset,
 
     visible, hidden, scroll, auto;
+
+    override fun toString() = name.hyphenize()
 }
 
 enum class OverflowAnchor {
@@ -471,7 +501,7 @@ enum class OverflowAnchor {
 }
 
 enum class OverflowWrap {
-    initial, inherit, unset,
+    inherit, initial, revert, revertLayer, unset,
 
     normal, anywhere, breakWord;
 
@@ -479,47 +509,59 @@ enum class OverflowWrap {
 }
 
 enum class OverscrollBehavior {
-    initial, inherit, unset,
+    inherit, initial, revert, revertLayer, unset,
 
     auto, contain, none;
+
+    override fun toString() = name.hyphenize()
 }
 
 enum class PointerEvents {
-    initial, inherit, unset,
+    inherit, initial, revert, revertLayer, unset,
 
     auto, none;
+
+    override fun toString() = name.hyphenize()
 }
 
 enum class Position {
-    initial, inherit, unset,
+    inherit, initial, revert, revertLayer, unset,
 
     static, relative, absolute, fixed, sticky;
+
+    override fun toString() = name.hyphenize()
 }
 
 enum class Resize {
+    inherit, initial, revert, revertLayer, unset,
+
     none, both,
 
     horizontal, vertical,
 
-    block, inline,
+    block, inline;
 
-    inherit, initial, unset;
+    override fun toString() = name.hyphenize()
 }
 
 enum class ScrollBehavior {
-    initial, inherit, unset,
+    inherit, initial, revert, revertLayer, unset,
 
     auto, smooth;
+
+    override fun toString() = name.hyphenize()
 }
 
 enum class TableLayout {
-    initial, inherit, unset,
+    inherit, initial, revert, revertLayer, unset,
 
     auto, fixed;
+
+    override fun toString() = name.hyphenize()
 }
 
 enum class TextAlign {
-    initial, inherit, unset,
+    inherit, initial, revert, revertLayer, unset,
 
     left, right, center, justify, justifyAll, start, end, matchParent;
 
@@ -527,13 +569,15 @@ enum class TextAlign {
 }
 
 enum class TextOverflow {
-    initial, inherit, unset,
+    inherit, initial, revert, revertLayer, unset,
 
     clip, ellipsis;
+
+    override fun toString() = name.hyphenize()
 }
 
 enum class TextTransform {
-    initial, inherit, unset,
+    inherit, initial, revert, revertLayer, unset,
 
     capitalize, uppercase, lowercase, none, fullWidth;
 
@@ -549,15 +593,19 @@ enum class TouchAction {
 }
 
 enum class UserSelect {
-    initial, inherit, unset,
+    inherit, initial, revert, revertLayer, unset,
 
     none, auto, text, contain, all;
+
+    override fun toString() = name.hyphenize()
 }
 
 class VerticalAlign(override val value: String) : CssValue(value) {
     companion object {
-        val initial = VerticalAlign("initial")
         val inherit = VerticalAlign("inherit")
+        val initial = VerticalAlign("initial")
+        val revert = VerticalAlign("revert")
+        val revertLayer = VerticalAlign("revert-layer")
         val unset = VerticalAlign("unset")
 
         val baseline = VerticalAlign("baseline")
@@ -575,13 +623,15 @@ val LinearDimension.up get() = VerticalAlign(toString())
 val LinearDimension.down get() = VerticalAlign((-this).toString())
 
 enum class Visibility {
-    initial, inherit, unset,
+    inherit, initial, revert, revertLayer, unset,
 
     visible, hidden, collapse;
+
+    override fun toString() = name.hyphenize()
 }
 
 enum class WhiteSpace {
-    initial, inherit, unset,
+    inherit, initial, revert, revertLayer, unset,
 
     normal, nowrap, pre, preWrap, preLine;
 
@@ -589,7 +639,7 @@ enum class WhiteSpace {
 }
 
 enum class WordBreak {
-    initial, inherit, unset,
+    inherit, initial, revert, revertLayer, unset,
 
     normal, breakAll, breakWord, keepAll;
 
@@ -597,7 +647,7 @@ enum class WordBreak {
 }
 
 enum class WordWrap {
-    initial, inherit, unset,
+    inherit, initial, revert, revertLayer, unset,
 
     normal, breakWord;
 
@@ -615,6 +665,8 @@ class RelativePosition(override val value: String) : CssValue(value) {
     companion object {
         val inherit = RelativePosition("inherit")
         val initial = RelativePosition("initial")
+        val revert = RelativePosition("revert")
+        val revertLayer = RelativePosition("revert-layer")
         val unset = RelativePosition("unset")
 
         val left = RelativePosition("left")
