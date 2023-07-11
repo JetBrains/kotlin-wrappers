@@ -36,3 +36,18 @@ var StyledElement.padding: Padding
     }
     @Deprecated("Write-only property", level = DeprecationLevel.HIDDEN)
     get() = error("")
+
+var StyledElement.scrollPadding: Padding
+    set(value) {
+        val (top, right, bottom, left) = value
+        if (top != null && right != null && bottom != null && left != null) {
+            put("scroll-padding", getShorthandValue(top, right, bottom, left))
+        } else {
+            top?.let { this.scrollPaddingTop = it }
+            right?.let { this.scrollPaddingRight = it }
+            bottom?.let { this.scrollPaddingBottom = it }
+            left?.let { this.scrollPaddingLeft = it }
+        }
+    }
+    @Deprecated("Write-only property", level = DeprecationLevel.HIDDEN)
+    get() = error("")

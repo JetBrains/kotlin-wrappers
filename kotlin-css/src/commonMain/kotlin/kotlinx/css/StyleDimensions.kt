@@ -10,6 +10,7 @@ open class LinearDimension(override val value: String) : CssValue(value) {
         val inherit = LinearDimension("inherit")
         val available = LinearDimension("available") // old name
         val fillAvailable = LinearDimension("fill-available") // new name
+        val webkitFillAvailable = LinearDimension("-webkit-fill-available")
         val borderBox = LinearDimension("border-box")
         val contentBox = LinearDimension("content-box")
         val maxContent = LinearDimension("max-content")

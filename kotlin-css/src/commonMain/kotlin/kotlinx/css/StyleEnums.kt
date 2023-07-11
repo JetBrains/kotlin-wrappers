@@ -86,6 +86,14 @@ enum class BoxSizing {
     override fun toString() = name.hyphenize()
 }
 
+enum class BreakInside {
+    inherit, initial, revert, revertLayer, unset,
+
+    auto, avoid, avoidPage, avoidColumn, avoidRegion;
+
+    override fun toString() = name.hyphenize()
+}
+
 enum class Clear {
     initial, inherit, unset,
 
@@ -398,6 +406,14 @@ enum class JustifyItems {
     override fun toString() = name.hyphenize()
 }
 
+enum class ListStylePosition {
+    inherit, initial, revert, revertLayer, unset,
+
+    inside, outside;
+
+    override fun toString() = name.hyphenize()
+}
+
 enum class ListStyleType {
     initial, inherit, unset,
 
@@ -444,6 +460,14 @@ enum class Overflow {
     initial, inherit, unset,
 
     visible, hidden, scroll, auto;
+}
+
+enum class OverflowAnchor {
+    inherit, initial, revert, revertLayer, unset,
+
+    auto, none;
+
+    override fun toString() = name.hyphenize()
 }
 
 enum class OverflowWrap {
@@ -512,6 +536,14 @@ enum class TextTransform {
     initial, inherit, unset,
 
     capitalize, uppercase, lowercase, none, fullWidth;
+
+    override fun toString() = name.hyphenize()
+}
+
+enum class TouchAction {
+    inherit, initial, revert, revertLayer, unset,
+
+    auto, none, panX, panLeft, panRight, panY, panUp, panDown, pinchZoom, manipulation;
 
     override fun toString() = name.hyphenize()
 }

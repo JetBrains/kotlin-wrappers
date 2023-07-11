@@ -36,3 +36,18 @@ var StyledElement.margin: Margin
     }
     @Deprecated("Write-only property", level = DeprecationLevel.HIDDEN)
     get() = error("")
+
+var StyledElement.scrollMargin: Margin
+    set(value) {
+        val (top, right, bottom, left) = value
+        if (top != null && right != null && bottom != null && left != null) {
+            put("scroll-margin", getShorthandValue(top, right, bottom, left))
+        } else {
+            top?.let { this.scrollMarginTop = it }
+            right?.let { this.scrollMarginRight = it }
+            bottom?.let { this.scrollMarginBottom = it }
+            left?.let { this.scrollMarginLeft = it }
+        }
+    }
+    @Deprecated("Write-only property", level = DeprecationLevel.HIDDEN)
+    get() = error("")
