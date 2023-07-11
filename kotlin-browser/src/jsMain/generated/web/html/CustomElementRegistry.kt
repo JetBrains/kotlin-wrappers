@@ -17,6 +17,9 @@ sealed external class CustomElementRegistry {
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CustomElementRegistry/get) */
     operator fun get(name: String): CustomElementConstructor?
 
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CustomElementRegistry/getName) */
+    fun getName(constructor: CustomElementConstructor): String?
+
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CustomElementRegistry/upgrade) */
     fun upgrade(root: Node)
 
