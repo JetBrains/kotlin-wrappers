@@ -176,6 +176,13 @@ abstract external class HTMLMediaElement :
     val seeking: Boolean
 
     /**
+     * Available only in secure contexts.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/sinkId)
+     */
+    val sinkId: String
+
+    /**
      * The address or URL of the a media resource that is to be considered.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/src)
@@ -239,6 +246,13 @@ abstract external class HTMLMediaElement :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/setMediaKeys)
      */
     fun setMediaKeys(mediaKeys: MediaKeys?): Promise<Void>
+
+    /**
+     * Available only in secure contexts.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/setSinkId)
+     */
+    fun setSinkId(sinkId: String): Promise<Void>
     val NETWORK_EMPTY: Short
     val NETWORK_IDLE: Short
     val NETWORK_LOADING: Short
