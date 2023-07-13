@@ -1,3 +1,3 @@
-package js.core
+package js.reflect
 
 typealias HasInstance = (instance: Any?) -> Boolean
