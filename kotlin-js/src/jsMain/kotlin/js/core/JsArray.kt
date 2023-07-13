@@ -24,18 +24,18 @@ sealed external class JsArray {
 
         fun <T, U> from(
             source: JsIterator<T>,
-            map: (item: T, index: Int) -> U,
+            transform: (item: T, index: Int) -> U,
         ): ReadonlyArray<U>
 
         fun <T, U> from(
             source: JsIterable<T>,
-            map: (item: T, index: Int) -> U,
+            transform: (item: T, index: Int) -> U,
         ): ReadonlyArray<U>
 
         @LowPriorityInOverloadResolution
         fun <T, U> from(
             source: ArrayLike<T>,
-            map: (item: T, index: Int) -> U,
+            transform: (item: T, index: Int) -> U,
         ): ReadonlyArray<U>
 
         fun <T> fromAsync(source: AsyncIterable<T>): Promise<ReadonlyArray<T>>
@@ -46,17 +46,17 @@ sealed external class JsArray {
 
         fun <T, U> fromAsync(
             source: AsyncIterable<T>,
-            map: (item: T, index: Int) -> U,
+            transform: (item: T, index: Int) -> U,
         ): Promise<ReadonlyArray<U>>
 
         fun <T, U> fromAsync(
             source: JsIterable<PromiseResult<T>>,
-            map: (item: T, index: Int) -> U,
+            transform: (item: T, index: Int) -> U,
         ): Promise<ReadonlyArray<U>>
 
         fun <T, U> fromAsync(
             source: ReadonlyArray<PromiseResult<T>>, /* ArrayLike */
-            map: (item: T, index: Int) -> U,
+            transform: (item: T, index: Int) -> U,
         ): Promise<ReadonlyArray<U>>
     }
 }
