@@ -7,7 +7,7 @@
 
 package js.core
 
-external interface toStringSymbolHolder {
+external interface ToStringSymbolHolder {
     @nativeGetter
     operator fun get(
         key: Symbol.toStringTag,
