@@ -29,13 +29,6 @@ sealed external interface HasSymbol {
         ): V = definedExternally
     }
 
-    interface toPrimitive {
-        @nativeGetter
-        operator fun get(
-            key: Symbol.toPrimitive,
-        ): ToPrimitive = definedExternally
-    }
-
     interface toStringTag {
         @nativeGetter
         operator fun get(
