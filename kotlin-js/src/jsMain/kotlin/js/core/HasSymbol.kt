@@ -22,59 +22,10 @@ sealed external interface HasSymbol {
         ): V = definedExternally
     }
 
-    interface isConcatSpreadable {
-        @nativeGetter
-        operator fun get(
-            key: Symbol.isConcatSpreadable,
-        ): Boolean = definedExternally
-    }
-
     interface iterator<out V : Function<JsIterator<*>>> {
         @nativeGetter
         operator fun get(
             key: Symbol.iterator,
-        ): V = definedExternally
-    }
-
-    interface match<out V> {
-        @nativeGetter
-        operator fun get(
-            key: Symbol.match,
-        ): V = definedExternally
-    }
-
-    interface matchAll<out V> {
-        @nativeGetter
-        operator fun get(
-            key: Symbol.matchAll,
-        ): V = definedExternally
-    }
-
-    interface replace<out V> {
-        @nativeGetter
-        operator fun get(
-            key: Symbol.replace,
-        ): V = definedExternally
-    }
-
-    interface search<out V> {
-        @nativeGetter
-        operator fun get(
-            key: Symbol.search,
-        ): V = definedExternally
-    }
-
-    interface species<out V> {
-        @nativeGetter
-        operator fun get(
-            key: Symbol.species,
-        ): V = definedExternally
-    }
-
-    interface split<out V> {
-        @nativeGetter
-        operator fun get(
-            key: Symbol.split,
         ): V = definedExternally
     }
 
@@ -90,12 +41,5 @@ sealed external interface HasSymbol {
         operator fun get(
             key: Symbol.toStringTag,
         ): ToString = definedExternally
-    }
-
-    interface unscopables<out V> {
-        @nativeGetter
-        operator fun get(
-            key: Symbol.unscopables,
-        ): V = definedExternally
     }
 }
