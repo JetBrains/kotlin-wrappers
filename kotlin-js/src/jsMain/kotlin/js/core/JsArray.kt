@@ -5,8 +5,11 @@
 
 package js.core
 
+import js.iterable.AsyncIterable
 import js.iterable.JsIterable
 import js.iterable.JsIterator
+import js.promise.Promise
+import js.promise.PromiseResult
 import kotlin.internal.LowPriorityInOverloadResolution
 
 @JsName("Array")
@@ -34,5 +37,26 @@ sealed external class JsArray {
             source: ArrayLike<T>,
             map: (item: T, index: Int) -> U,
         ): ReadonlyArray<U>
+
+        fun <T> fromAsync(source: AsyncIterable<T>): Promise<ReadonlyArray<T>>
+
+        fun <T> fromAsync(source: JsIterable<PromiseResult<T>>): Promise<ReadonlyArray<T>>
+
+        fun <T> fromAsync(source: ReadonlyArray<PromiseResult<T>> /* ArrayLike */): Promise<ReadonlyArray<T>>
+
+        fun <T, U> fromAsync(
+            source: AsyncIterable<T>,
+            map: (item: T, index: Int) -> U,
+        ): Promise<ReadonlyArray<U>>
+
+        fun <T, U> fromAsync(
+            source: JsIterable<PromiseResult<T>>,
+            map: (item: T, index: Int) -> U,
+        ): Promise<ReadonlyArray<U>>
+
+        fun <T, U> fromAsync(
+            source: ReadonlyArray<PromiseResult<T>>, /* ArrayLike */
+            map: (item: T, index: Int) -> U,
+        ): Promise<ReadonlyArray<U>>
     }
 }
