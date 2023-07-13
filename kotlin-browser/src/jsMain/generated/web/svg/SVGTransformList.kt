@@ -3,7 +3,7 @@
 package web.svg
 
 import js.core.ArrayLike
-import js.core.JsIterable
+import js.iterable.JsIterable
 import web.geometry.DOMMatrix2DInit
 import web.geometry.DOMMatrixReadOnly
 

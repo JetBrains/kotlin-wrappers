@@ -3,8 +3,8 @@
 package web.cssom
 
 import js.collections.MapLike
-import js.core.JsIterable
 import js.core.ReadonlyArray
+import js.iterable.JsIterable
 
 /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/StylePropertyMapReadOnly) */
 sealed external class StylePropertyMapReadOnly :

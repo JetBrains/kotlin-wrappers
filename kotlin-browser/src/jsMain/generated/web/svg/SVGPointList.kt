@@ -3,7 +3,7 @@
 package web.svg
 
 import js.core.ArrayLike
-import js.core.JsIterable
+import js.iterable.JsIterable
 import web.geometry.DOMPoint
 
 /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPointList) */

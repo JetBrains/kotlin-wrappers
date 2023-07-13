@@ -3,10 +3,10 @@
 package web.url
 
 import js.collections.MapLike
-import js.core.IterableIterator
 import js.core.JsTuple2
 import js.core.ReadonlyArray
 import js.core.ReadonlyRecord
+import js.iterable.IterableIterator
 
 /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/URLSearchParams) */
 external class URLSearchParams(

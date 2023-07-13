@@ -4,7 +4,7 @@
 
 package node.fs
 
-import js.core.AsyncIterable
+import js.iterable.AsyncIterable
 import node.buffer.BufferEncoding
 
 /**

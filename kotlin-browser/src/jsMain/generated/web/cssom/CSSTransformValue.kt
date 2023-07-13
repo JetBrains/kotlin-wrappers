@@ -3,9 +3,9 @@
 package web.cssom
 
 import js.collections.ListLike
-import js.core.IterableIterator
 import js.core.JsTuple2
 import js.core.ReadonlyArray
+import js.iterable.IterableIterator
 import web.geometry.DOMMatrix
 
 /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSTransformValue) */

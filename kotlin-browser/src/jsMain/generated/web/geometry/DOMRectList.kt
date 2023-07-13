@@ -3,7 +3,7 @@
 package web.geometry
 
 import js.core.ArrayLike
-import js.core.JsIterable
+import js.iterable.JsIterable
 
 sealed external class DOMRectList :
     ArrayLike<DOMRect>,

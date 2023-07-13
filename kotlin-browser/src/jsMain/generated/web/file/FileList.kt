@@ -3,7 +3,7 @@
 package web.file
 
 import js.core.ArrayLike
-import js.core.JsIterable
+import js.iterable.JsIterable
 
 /**
  * An object of this type is returned by the files property of the HTML <input> element; this lets you access the list of files selected with the <input type="file"> element. It's also used for a list of files dropped into web content when using the drag and drop API; see the DataTransfer object for details on this usage.

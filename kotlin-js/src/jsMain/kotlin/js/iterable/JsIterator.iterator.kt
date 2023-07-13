@@ -1,4 +1,4 @@
-package js.core
+package js.iterable
 
 operator fun <T> JsIterator<T>.iterator(): Iterator<T> =
     iterator {

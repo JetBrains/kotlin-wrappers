@@ -3,7 +3,7 @@
 package web.cssom
 
 import js.core.ArrayLike
-import js.core.JsIterable
+import js.iterable.JsIterable
 
 /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaList) */
 sealed external class MediaList :

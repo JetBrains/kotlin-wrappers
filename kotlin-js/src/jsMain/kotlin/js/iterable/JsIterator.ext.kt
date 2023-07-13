@@ -1,4 +1,7 @@
-package js.core
+package js.iterable
+
+import js.core.JsArray
+import js.core.ReadonlyArray
 
 fun <T> JsIterator<T>.asSequence(): Sequence<T> =
     iterator().asSequence()

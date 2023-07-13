@@ -1,6 +1,7 @@
-package js.core
+package js.iterable
 
 import js.collections.JsSet
+import js.core.Symbol
 import kotlin.test.Test
 import kotlin.test.assertEquals
 

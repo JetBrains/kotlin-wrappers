@@ -2,8 +2,8 @@
 
 package typescript
 
-import js.core.JsIterator
 import js.core.JsTuple2
+import js.iterable.JsIterator
 
 /** ES6 Map interface, only read methods included. */
 sealed external interface ReadonlyESMap<K, V> : ReadonlyCollection<K> {

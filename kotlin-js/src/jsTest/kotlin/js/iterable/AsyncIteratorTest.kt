@@ -1,4 +1,4 @@
-package js.core
+package js.iterable
 
 import kotlinx.coroutines.test.runTest
 import kotlin.test.Test

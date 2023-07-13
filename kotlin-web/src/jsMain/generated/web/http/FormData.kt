@@ -3,9 +3,9 @@
 package web.http
 
 import js.collections.MapLike
-import js.core.IterableIterator
 import js.core.JsTuple2
 import js.core.ReadonlyArray
+import js.iterable.IterableIterator
 import web.buffer.Blob
 import web.events.EventTarget
 

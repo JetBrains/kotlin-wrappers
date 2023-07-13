@@ -3,7 +3,7 @@
 package web.cssom
 
 import js.core.ArrayLike
-import js.core.JsIterable
+import js.iterable.JsIterable
 
 /**
  * A CSSRuleList is an (indirect-modify only) array-like object containing an ordered collection of CSSRule objects.

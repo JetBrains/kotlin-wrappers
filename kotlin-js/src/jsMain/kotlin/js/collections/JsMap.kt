@@ -1,8 +1,8 @@
 package js.collections
 
-import js.core.IterableIterator
 import js.core.JsTuple2
 import js.core.ReadonlyArray
+import js.iterable.IterableIterator
 
 @JsName("Map")
 external class JsMap<K, V> : ReadonlyMap<K, V> {

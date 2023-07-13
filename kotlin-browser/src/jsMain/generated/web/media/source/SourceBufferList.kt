@@ -3,7 +3,7 @@
 package web.media.source
 
 import js.core.ArrayLike
-import js.core.JsIterable
+import js.iterable.JsIterable
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventTarget

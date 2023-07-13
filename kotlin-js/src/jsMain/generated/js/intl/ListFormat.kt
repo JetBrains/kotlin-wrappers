@@ -4,8 +4,8 @@
 
 package js.intl
 
-import js.core.JsIterable
 import js.core.ReadonlyArray
+import js.iterable.JsIterable
 
 external class ListFormat(
     locales: BCP47LanguageTag = definedExternally,

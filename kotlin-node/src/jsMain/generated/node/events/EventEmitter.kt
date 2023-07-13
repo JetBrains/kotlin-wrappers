@@ -4,9 +4,9 @@
 
 package node.events
 
-import js.core.AsyncIterableIterator
 import js.core.ReadonlyArray
 import js.core.Symbol
+import js.iterable.AsyncIterableIterator
 import js.promise.Promise
 
 open external class EventEmitter : IEventEmitter {

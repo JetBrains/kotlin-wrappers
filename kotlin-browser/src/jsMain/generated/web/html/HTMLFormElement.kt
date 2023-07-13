@@ -3,7 +3,7 @@
 package web.html
 
 import js.core.ArrayLike
-import js.core.JsIterable
+import js.iterable.JsIterable
 import web.dom.DOMTokenList
 import web.dom.Element
 import web.window.WindowTarget

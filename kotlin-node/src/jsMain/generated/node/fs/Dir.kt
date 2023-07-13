@@ -4,8 +4,8 @@
 
 package node.fs
 
-import js.core.AsyncIterable
 import js.core.Void
+import js.iterable.AsyncIterable
 import js.promise.Promise
 import node.ErrnoException
 

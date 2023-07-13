@@ -1,8 +1,8 @@
 package js.collections
 
-import js.core.AsyncIterable
-import js.core.AsyncIterableIterator
 import js.core.JsTuple2
+import js.iterable.AsyncIterable
+import js.iterable.AsyncIterableIterator
 
 external interface AsyncMapLike<K, out V> :
     AsyncIterable<JsTuple2<K, V>> {

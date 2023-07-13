@@ -5,6 +5,8 @@
 
 package js.core
 
+import js.iterable.JsIterable
+import js.iterable.JsIterator
 import kotlin.internal.LowPriorityInOverloadResolution
 
 @JsName("Array")

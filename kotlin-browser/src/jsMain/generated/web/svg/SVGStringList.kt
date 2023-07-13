@@ -3,7 +3,7 @@
 package web.svg
 
 import js.core.ArrayLike
-import js.core.JsIterable
+import js.iterable.JsIterable
 
 /**
  * The SVGStringList defines a list of DOMString objects.

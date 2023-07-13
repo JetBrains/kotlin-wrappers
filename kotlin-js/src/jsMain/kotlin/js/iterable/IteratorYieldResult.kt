@@ -11,7 +11,9 @@
   })"""
 )
 
-package js.core
+package js.iterable
+
+import js.core.Void
 
 @JsName("__guard__")
 sealed external class IteratorYieldResult<out TYield> :

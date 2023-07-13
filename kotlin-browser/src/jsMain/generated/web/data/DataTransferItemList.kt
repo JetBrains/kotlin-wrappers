@@ -3,7 +3,7 @@
 package web.data
 
 import js.core.ArrayLike
-import js.core.JsIterable
+import js.iterable.JsIterable
 import web.file.File
 
 /**

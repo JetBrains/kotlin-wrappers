@@ -3,7 +3,7 @@
 package webvtt
 
 import js.core.ArrayLike
-import js.core.JsIterable
+import js.iterable.JsIterable
 
 /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrackCueList) */
 sealed external class TextTrackCueList :

@@ -3,7 +3,7 @@
 package web.dom
 
 import js.core.ArrayLike
-import js.core.JsIterable
+import js.iterable.JsIterable
 
 /**
  * A type returned by some APIs which contains a list of DOMString (strings).

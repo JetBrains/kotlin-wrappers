@@ -2,7 +2,7 @@
 
 package typescript
 
-import js.core.JsIterator
+import js.iterable.JsIterator
 
 /** Common read methods for ES6 Map/Set. */
 sealed external interface ReadonlyCollection<K> {

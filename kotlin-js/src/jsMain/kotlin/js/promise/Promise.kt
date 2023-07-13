@@ -1,9 +1,9 @@
 package js.promise
 
-import js.core.JsIterable
 import js.core.ReadonlyArray
 import js.core.Void
 import js.errors.JsError
+import js.iterable.JsIterable
 
 open external class Promise<out T>(
     executor: (resolve: PromiseResolve<T>) -> Unit,

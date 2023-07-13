@@ -3,7 +3,7 @@
 package web.cssom
 
 import js.core.ArrayLike
-import js.core.JsIterable
+import js.iterable.JsIterable
 
 /**
  * An object that is a CSS declaration block, and exposes style information and various style-related methods and properties.

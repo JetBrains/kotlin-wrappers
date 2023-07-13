@@ -2,7 +2,7 @@
 
 package web.html
 
-import js.core.JsIterable
+import js.iterable.JsIterable
 import web.dom.NodeListOf
 
 /**

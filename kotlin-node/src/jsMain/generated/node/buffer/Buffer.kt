@@ -5,6 +5,7 @@
 package node.buffer
 
 import js.core.*
+import js.iterable.IterableIterator
 import js.typedarrays.TypedArray
 import js.typedarrays.Uint8Array
 

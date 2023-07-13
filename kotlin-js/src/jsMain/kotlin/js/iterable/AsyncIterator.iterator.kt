@@ -1,6 +1,5 @@
-package js.core
+package js.iterable
 
-import js.collections.SuspendableIterator
 import js.promise.await
 
 operator fun <T> AsyncIterator<T>.iterator(): SuspendableIterator<T> =

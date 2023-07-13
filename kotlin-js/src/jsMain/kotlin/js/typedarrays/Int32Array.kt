@@ -5,8 +5,8 @@
 package js.typedarrays
 
 import js.buffer.ArrayBufferLike
-import js.core.JsIterable
 import js.core.ReadonlyArray
+import js.iterable.JsIterable
 
 open external class Int32Array(
     override val buffer: ArrayBufferLike,

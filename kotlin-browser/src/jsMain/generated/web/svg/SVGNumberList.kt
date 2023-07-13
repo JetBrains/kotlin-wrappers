@@ -3,7 +3,7 @@
 package web.svg
 
 import js.core.ArrayLike
-import js.core.JsIterable
+import js.iterable.JsIterable
 
 /**
  * The SVGNumberList defines a list of SVGNumber objects.
