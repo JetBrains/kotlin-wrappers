@@ -28,11 +28,4 @@ sealed external interface HasSymbol {
             key: Symbol.iterator,
         ): V = definedExternally
     }
-
-    interface toStringTag {
-        @nativeGetter
-        operator fun get(
-            key: Symbol.toStringTag,
-        ): ToString = definedExternally
-    }
 }
