@@ -9,7 +9,7 @@ package js.iterable
 
 import js.core.Symbol
 
-external interface IteratorSymbolHolder<out V : Function<JsIterator<*>>> {
+sealed external interface IteratorSymbolHolder<out V : Function<JsIterator<*>>> {
     @nativeGetter
     operator fun get(
         key: Symbol.iterator,
