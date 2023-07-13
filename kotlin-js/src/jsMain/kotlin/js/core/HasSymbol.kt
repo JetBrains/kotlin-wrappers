@@ -15,11 +15,11 @@ sealed external interface HasSymbol {
         ): V = definedExternally
     }
 
-    interface hasInstance<out V : HasInstance> {
+    interface hasInstance {
         @nativeGetter
         operator fun get(
             key: Symbol.hasInstance,
-        ): V = definedExternally
+        ): HasInstance = definedExternally
     }
 
     interface iterator<out V : Function<JsIterator<*>>> {
