@@ -6,8 +6,7 @@ external interface GPUFeatureStatus {
     /**
      * Canvas.
      */
-    var String /* '2d_canvas' */: String
-
+    /* '2d_canvas': string; */
     /**
      * Flash.
      */
