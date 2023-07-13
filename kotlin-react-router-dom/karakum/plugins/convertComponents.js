@@ -1,4 +1,4 @@
-const ts = require("typescript");
+import ts from "typescript";
 
 function isReactElement(node) {
     return ts.isTypeReferenceNode(node)
@@ -21,7 +21,7 @@ function isNull(type) {
         && type.literal.kind === ts.SyntaxKind.NullKeyword
 }
 
-module.exports = function (node, context, render) {
+export default function (node, context, render) {
     if (
         ts.isFunctionDeclaration(node)
 

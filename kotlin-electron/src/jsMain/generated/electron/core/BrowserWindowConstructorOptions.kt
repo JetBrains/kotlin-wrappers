@@ -155,7 +155,7 @@ external interface BrowserWindowConstructorOptions {
      * visual effects, you can also leave it undefined so the executable's icon will be
      * used.
      */
-    var icon: Any /* (NativeImage) | (string) */?
+    var icon: (Any /* (NativeImage) | (string) */)?
 
     /**
      * Whether window should be shown when created. Default is `true`.
@@ -352,5 +352,5 @@ external interface BrowserWindowConstructorOptions {
      * Variables. Specifying `true` will result in an overlay with default system
      * colors. Default is `false`.
      */
-    var titleBarOverlay: Any /* (TitleBarOverlay) | (boolean) */?
+    var titleBarOverlay: (Any /* (TitleBarOverlay) | (boolean) */)?
 }

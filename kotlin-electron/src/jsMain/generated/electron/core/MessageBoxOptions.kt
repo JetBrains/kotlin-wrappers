@@ -55,7 +55,7 @@ external interface MessageBoxOptions {
      * Initial checked state of the checkbox. `false` by default.
      */
     var checkboxChecked: Boolean?
-    var icon: Any /* (NativeImage) | (string) */?
+    var icon: (Any /* (NativeImage) | (string) */)?
 
     /**
      * Custom width of the text in the message box.

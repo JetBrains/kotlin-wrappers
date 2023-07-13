@@ -1,4 +1,4 @@
-const ts = require("typescript");
+import ts from "typescript";
 
 const overriddenProps = {
     "KeyboardInputEvent": {
@@ -12,7 +12,7 @@ const overriddenProps = {
     },
 }
 
-module.exports = function (node, context, render) {
+export default function (node, context, render) {
     if (
         ts.isPropertySignature(node)
         && ts.isInterfaceDeclaration(node.parent)

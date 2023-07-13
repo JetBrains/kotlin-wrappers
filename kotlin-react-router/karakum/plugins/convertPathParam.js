@@ -1,6 +1,6 @@
-const ts = require("typescript");
+import ts from "typescript";
 
-module.exports = function (node) {
+export default function (node) {
     const isUseMatch = node.parent?.parent?.parent !== undefined
         && ts.isFunctionDeclaration(node.parent.parent.parent)
         && node.parent.parent.parent.name.text === "useMatch"

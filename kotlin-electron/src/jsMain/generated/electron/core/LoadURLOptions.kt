@@ -5,7 +5,7 @@ external interface LoadURLOptions {
     /**
      * An HTTP Referrer url.
      */
-    var httpReferrer: Any /* (string) | (Referrer) */?
+    var httpReferrer: (Any /* (string) | (Referrer) */)?
 
     /**
      * A user agent originating the request.

@@ -10,12 +10,12 @@ external interface TouchBarScrubberConstructorOptions {
     /**
      * Called when the user taps an item that was not the last tapped item.
      */
-    var select: (selectedIndex: Double) -> Unit?
+    var select: ((selectedIndex: Double) -> Unit)?
 
     /**
      * Called when the user taps any item.
      */
-    var highlight: (highlightedIndex: Double) -> Unit?
+    var highlight: ((highlightedIndex: Double) -> Unit)?
 
     /**
      * Selected item style. Can be `background`, `outline` or `none`. Defaults to

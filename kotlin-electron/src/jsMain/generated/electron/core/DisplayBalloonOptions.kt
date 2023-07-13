@@ -5,7 +5,7 @@ external interface DisplayBalloonOptions {
     /**
      * Icon to use when `iconType` is `custom`.
      */
-    var icon: Any /* (NativeImage) | (string) */?
+    var icon: (Any /* (NativeImage) | (string) */)?
 
     /**
      * Can be `none`, `info`, `warning`, `error` or `custom`. Default is `custom`.

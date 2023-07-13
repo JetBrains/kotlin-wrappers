@@ -53,7 +53,7 @@ open external class MenuItem {
     /**
      * A `NativeImage | string` (optional) indicating the item's icon, if set.
      */
-    var icon: Any /* (NativeImage) | (string) */?
+    var icon: (Any /* (NativeImage) | (string) */)?
 
     /**
      * A `string` indicating the item's unique id, this property can be dynamically

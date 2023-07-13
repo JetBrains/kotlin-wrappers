@@ -1,6 +1,6 @@
-const ts = require("typescript");
+import ts from "typescript";
 
-module.exports = {
+export default {
     setup(context) {
     },
 

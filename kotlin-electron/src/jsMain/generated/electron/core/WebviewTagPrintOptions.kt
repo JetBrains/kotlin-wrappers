@@ -76,5 +76,5 @@ external interface WebviewTagPrintOptions {
      * Specify page size of the printed document. Can be `A3`, `A4`, `A5`, `Legal`,
      * `Letter`, `Tabloid` or an Object containing `height` in microns.
      */
-    var pageSize: Any /* (string) | (Size) */?
+    var pageSize: (Any /* (string) | (Size) */)?
 }

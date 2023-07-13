@@ -14,7 +14,7 @@ external interface ProtocolResponse {
      * is a `Buffer`. When returning `string` as response, this is a `string`. This is
      * ignored for other types of responses.
      */
-    var data: Any /* (Buffer) | (string) | (NodeJS.ReadableStream) */?
+    var data: (Any /* (Buffer) | (string) | (NodeJS.ReadableStream) */)?
 
     /**
      * When assigned, the `request` will fail with the `error` number . For the

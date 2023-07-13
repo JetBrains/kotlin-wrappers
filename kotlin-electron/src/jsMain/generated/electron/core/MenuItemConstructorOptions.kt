@@ -6,7 +6,7 @@ external interface MenuItemConstructorOptions {
      * Will be called with `click(menuItem, browserWindow, event)` when the menu item
      * is clicked.
      */
-    var click: (menuItem: MenuItem, browserWindow: Any /* (BrowserWindow) | (undefined) */, event: KeyboardEvent) -> Unit?
+    var click: ((menuItem: MenuItem, browserWindow: Any /* (BrowserWindow) | (undefined) */, event: KeyboardEvent) -> Unit)?
 
     /**
      * Can be `undo`, `redo`, `cut`, `copy`, `paste`, `pasteAndMatchStyle`, `delete`,
@@ -37,7 +37,7 @@ external interface MenuItemConstructorOptions {
      */
     var toolTip: String?
     var accelerator: Accelerator?
-    var icon: Any /* (NativeImage) | (string) */?
+    var icon: (Any /* (NativeImage) | (string) */)?
 
     /**
      * If false, the menu item will be greyed out and unclickable.
@@ -82,7 +82,7 @@ external interface MenuItemConstructorOptions {
      * the `type: 'submenu'` can be omitted. If the value is not a `Menu` then it will
      * be automatically converted to one using `Menu.buildFromTemplate`.
      */
-    var submenu: Any /* (MenuItemConstructorOptions[]) | (Menu) */?
+    var submenu: (Any /* (MenuItemConstructorOptions[]) | (Menu) */)?
 
     /**
      * Unique within a single menu. If defined then it can be used as a reference to

@@ -1,5 +1,5 @@
-const ts = require("typescript");
-const karakum = require("karakum");
+import ts from "typescript";
+import * as karakum from "karakum";
 
 const propsWithRef = {
     "LinkProps": "HTMLAnchorElement",
@@ -13,7 +13,7 @@ const overriddenProps = {
     },
 }
 
-module.exports = function (node, context, render) {
+export default function (node, context, render) {
     if (
         ts.isInterfaceDeclaration(node)
         && node.name.text.endsWith("Props")

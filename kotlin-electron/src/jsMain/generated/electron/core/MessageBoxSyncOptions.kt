@@ -35,7 +35,7 @@ external interface MessageBoxSyncOptions {
      * Extra information of the message.
      */
     var detail: String?
-    var icon: Any /* (NativeImage) | (string) */?
+    var icon: (Any /* (NativeImage) | (string) */)?
 
     /**
      * Custom width of the text in the message box.

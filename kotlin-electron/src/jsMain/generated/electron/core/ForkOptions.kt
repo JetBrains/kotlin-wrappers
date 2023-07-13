@@ -26,7 +26,7 @@ external interface ForkOptions {
      * `stdin` will always be ignored. For example, the supported values will be
      * processed as following:
      */
-    var stdio: Any /* (Array<'pipe' | 'ignore' | 'inherit'>) | (string) */?
+    var stdio: (Any /* (Array<'pipe' | 'ignore' | 'inherit'>) | (string) */)?
 
     /**
      * Name of the process that will appear in `name` property of `child-process-gone`

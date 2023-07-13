@@ -15,5 +15,5 @@ external interface TouchBarColorPickerConstructorOptions {
     /**
      * Function to call when a color is selected.
      */
-    var change: (color: String) -> Unit?
+    var change: ((color: String) -> Unit)?
 }

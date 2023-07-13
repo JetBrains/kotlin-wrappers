@@ -1,6 +1,6 @@
-const path = require("node:path");
-const ts = require("typescript");
-const karakum = require("karakum");
+import path from "node:path";
+import ts from "typescript";
+import * as karakum from "karakum";
 
 const eventHandlerMethods = new Set([
     // nodejs style events
@@ -49,7 +49,7 @@ function extractEventContainer(node) {
     return null
 }
 
-module.exports = {
+export default {
     setup(context) {
         this.events = new Map()
     },

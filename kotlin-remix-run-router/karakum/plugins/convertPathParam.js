@@ -1,6 +1,6 @@
-const ts = require("typescript");
+import ts from "typescript";
 
-module.exports = function (node) {
+export default function (node) {
     const isGeneratePath = node.parent?.parent !== undefined
         && ts.isFunctionDeclaration(node.parent.parent)
         && node.parent.parent.name.text === "generatePath"

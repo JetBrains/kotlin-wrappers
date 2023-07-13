@@ -1,6 +1,6 @@
-const ts = require("typescript");
+import ts from "typescript";
 
-module.exports = function (node, context, render) {
+export default function (node, context, render) {
     if (
         ts.isIntersectionTypeNode(node)
         && node.types[1]

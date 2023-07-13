@@ -25,5 +25,5 @@ external interface TouchBarSliderConstructorOptions {
     /**
      * Function to call when the slider is changed.
      */
-    var change: (newValue: Double) -> Unit?
+    var change: ((newValue: Double) -> Unit)?
 }

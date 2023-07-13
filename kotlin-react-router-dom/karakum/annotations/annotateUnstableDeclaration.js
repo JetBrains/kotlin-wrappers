@@ -1,11 +1,11 @@
-const ts = require("typescript")
+import ts from "typescript"
 
 const unstableDeclarations = [
     "HistoryRouter",
     "usePrompt",
 ]
 
-module.exports = (node) => {
+export default (node) => {
     if (
         ts.isFunctionDeclaration(node)
         && node.name

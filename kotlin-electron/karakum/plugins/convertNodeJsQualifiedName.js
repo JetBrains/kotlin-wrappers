@@ -1,4 +1,4 @@
-const ts = require("typescript");
+import ts from "typescript";
 
 function convertNodePackageQualifiedName(node, context, render) {
     if (
@@ -11,7 +11,7 @@ function convertNodePackageQualifiedName(node, context, render) {
     return null
 }
 
-module.exports = function (node, context, render) {
+export default function (node, context, render) {
     if (
         ts.isQualifiedName(node)
         && ts.isIdentifier(node.left)

@@ -30,7 +30,7 @@ external interface NotificationConstructorOptions {
     /**
      * An icon to use in the notification.
      */
-    var icon: Any /* (string) | (NativeImage) */?
+    var icon: (Any /* (string) | (NativeImage) */)?
 
     /**
      * Whether or not to add an inline reply option to the notification.

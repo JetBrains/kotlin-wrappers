@@ -26,5 +26,5 @@ external interface TouchBarSegmentedControlConstructorOptions {
     /**
      * Called when the user selects a new segment.
      */
-    var change: (selectedIndex: Double, isSelected: Boolean) -> Unit?
+    var change: ((selectedIndex: Double, isSelected: Boolean) -> Unit)?
 }

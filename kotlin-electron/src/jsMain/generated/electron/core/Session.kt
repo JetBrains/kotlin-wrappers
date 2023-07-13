@@ -83,7 +83,10 @@ external class Session : NodeEventEmitter {
      * by using `ses.setPermissionCheckHandler(handler)` and
      * `ses.setDevicePermissionHandler(handler)`.
      */
-    fun on(event: SessionEvent.SELECT_HID_DEVICE, listener: (event: Event, details: SelectHidDeviceDetails, callback: (deviceId: Any /* (string) | (null) */) -> Unit) -> Unit): Unit /* this */
+    fun on(
+        event: SessionEvent.SELECT_HID_DEVICE,
+        listener: (event: Event, details: SelectHidDeviceDetails, callback: (deviceId: Any /* (string) | (null) */ /* use undefined for default */) -> Unit) -> Unit
+    ): Unit /* this */
 
     /**
      * Emitted when a serial port needs to be selected when a call to
@@ -242,7 +245,11 @@ external class Session : NodeEventEmitter {
         ) -> Unit
     ): Unit /* this */
 
-    fun once(event: SessionEvent.SELECT_HID_DEVICE, listener: (event: Event, details: SelectHidDeviceDetails, callback: (deviceId: Any /* (string) | (null) */) -> Unit) -> Unit): Unit /* this */
+    fun once(
+        event: SessionEvent.SELECT_HID_DEVICE,
+        listener: (event: Event, details: SelectHidDeviceDetails, callback: (deviceId: Any /* (string) | (null) */ /* use undefined for default */) -> Unit) -> Unit
+    ): Unit /* this */
+
     fun once(
         event: SessionEvent.SELECT_SERIAL_PORT,
         listener: (event: Event, portList: js.core.ReadonlyArray<SerialPort>, webContents: WebContents, callback: (portId: String) -> Unit) -> Unit
@@ -323,7 +330,7 @@ external class Session : NodeEventEmitter {
 
     fun addListener(
         event: SessionEvent.SELECT_HID_DEVICE,
-        listener: (event: Event, details: SelectHidDeviceDetails, callback: (deviceId: Any /* (string) | (null) */) -> Unit) -> Unit
+        listener: (event: Event, details: SelectHidDeviceDetails, callback: (deviceId: Any /* (string) | (null) */ /* use undefined for default */) -> Unit) -> Unit
     ): Unit /* this */
 
     fun addListener(
@@ -406,7 +413,7 @@ external class Session : NodeEventEmitter {
 
     fun removeListener(
         event: SessionEvent.SELECT_HID_DEVICE,
-        listener: (event: Event, details: SelectHidDeviceDetails, callback: (deviceId: Any /* (string) | (null) */) -> Unit) -> Unit
+        listener: (event: Event, details: SelectHidDeviceDetails, callback: (deviceId: Any /* (string) | (null) */ /* use undefined for default */) -> Unit) -> Unit
     ): Unit /* this */
 
     fun removeListener(

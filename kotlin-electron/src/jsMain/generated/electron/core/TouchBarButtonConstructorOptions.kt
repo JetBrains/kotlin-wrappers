@@ -20,7 +20,7 @@ external interface TouchBarButtonConstructorOptions {
     /**
      * Button icon.
      */
-    var icon: Any /* (NativeImage) | (string) */?
+    var icon: (Any /* (NativeImage) | (string) */)?
 
     /**
      * Can be `left`, `right` or `overlay`. Defaults to `overlay`.
@@ -30,7 +30,7 @@ external interface TouchBarButtonConstructorOptions {
     /**
      * Function to call when the button is clicked.
      */
-    var click: () -> Unit?
+    var click: (() -> Unit)?
 
     /**
      * Whether the button is in an enabled state.  Default is `true`.

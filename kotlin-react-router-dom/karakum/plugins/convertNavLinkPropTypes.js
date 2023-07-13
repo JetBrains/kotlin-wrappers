@@ -1,6 +1,6 @@
-const ts = require("typescript")
+import ts from "typescript"
 
-module.exports = (node, context, render) => {
+export default (node, context, render) => {
     if (
         ts.isUnionTypeNode(node)
 

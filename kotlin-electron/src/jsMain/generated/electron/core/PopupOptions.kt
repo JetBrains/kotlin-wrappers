@@ -30,5 +30,5 @@ external interface PopupOptions {
     /**
      * Called when menu is closed.
      */
-    var callback: () -> Unit?
+    var callback: (() -> Unit)?
 }

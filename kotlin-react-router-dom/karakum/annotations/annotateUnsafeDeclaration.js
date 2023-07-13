@@ -1,10 +1,10 @@
-const ts = require("typescript")
+import ts from "typescript"
 
 const unsafeDeclarations = [
     "useScrollRestoration",
 ]
 
-module.exports = (node) => {
+export default (node) => {
     if (
         ts.isFunctionDeclaration(node)
         && node.name

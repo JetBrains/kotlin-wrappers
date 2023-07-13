@@ -1,6 +1,6 @@
-const ts = require("typescript");
+import ts from "typescript";
 
-module.exports = function (node) {
+export default function (node) {
     if (
         ts.isMappedTypeNode(node)
         && ts.isParameter(node.parent)

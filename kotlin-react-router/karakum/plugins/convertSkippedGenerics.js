@@ -1,6 +1,6 @@
-const ts = require("typescript");
+import ts from "typescript";
 
-module.exports = function (node, context, render) {
+export default function (node, context, render) {
     if (
         ts.isTypeReferenceNode(node)
         && ts.isQualifiedName(node.typeName)

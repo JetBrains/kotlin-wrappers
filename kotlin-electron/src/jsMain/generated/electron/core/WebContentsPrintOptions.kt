@@ -77,5 +77,5 @@ external interface WebContentsPrintOptions {
      * `A5`, `A6`, `Legal`, `Letter`, `Tabloid` or an Object containing `height` and
      * `width`.
      */
-    var pageSize: Any /* (string) | (Size) */?
+    var pageSize: (Any /* (string) | (Size) */)?
 }

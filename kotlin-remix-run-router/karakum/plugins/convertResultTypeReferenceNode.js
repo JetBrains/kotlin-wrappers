@@ -1,7 +1,7 @@
-const ts = require("typescript");
-const karakum = require("karakum");
+import ts from "typescript";
+import * as karakum from "karakum";
 
-module.exports = function (node, context) {
+export default function (node, context) {
     if (
         ts.isTypeReferenceNode(node)
         && ts.isQualifiedName(node.typeName)

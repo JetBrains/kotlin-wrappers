@@ -1,5 +1,5 @@
-const ts = require("typescript");
-const karakum = require("karakum");
+import ts from "typescript";
+import * as karakum from "karakum";
 
 const propertyNames = {
     modifiers: "modifier",
@@ -9,7 +9,7 @@ const propertyNames = {
     types: "type",
 }
 
-module.exports = (node) => {
+export default (node) => {
     if (
         node.parent
         && ts.isTypeReferenceNode(node.parent)

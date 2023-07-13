@@ -27,7 +27,7 @@ external interface PrintToPDFOptions {
      * `A5`, `A6`, `Legal`, `Letter`, `Tabloid`, `Ledger`, or an Object containing
      * `height` and `width` in inches. Defaults to `Letter`.
      */
-    var pageSize: Any /* (string) | (Size) */?
+    var pageSize: (Any /* (string) | (Size) */)?
     var margins: Margins?
 
     /**
