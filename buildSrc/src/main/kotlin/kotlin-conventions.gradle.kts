@@ -3,6 +3,10 @@ import org.jetbrains.kotlin.gradle.dsl.KotlinJsCompile
 import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
 import org.jetbrains.kotlin.gradle.plugin.KotlinMultiplatformPluginWrapper
 
+plugins {
+    id("npm-conventions")
+}
+
 tasks.withType<KotlinCompile<*>>().configureEach {
     kotlinOptions {
         allWarningsAsErrors = true
