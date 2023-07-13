@@ -6,24 +6,24 @@ val NPM_CONFIGURATIONS = listOf(
     "jsMainImplementation",
 )
 
-// TODO: remove `afterEvaluate` usage
-afterEvaluate {
-    // TODO: find better task
-    tasks.named("jsPackageJson") {
-        doFirst {
-            addResolutions()
+val npmResolutions by tasks.registering {
+    doLast {
+        val yarnExtension = rootProject.the<YarnRootExtension>()
+
+        for (dependency in project.getNpmDependencies()) {
+            val version = dependency.version
+            if (version.startsWith("^")) {
+                yarnExtension.resolution(dependency.name, version.removePrefix("^"))
+            }
         }
     }
 }
 
-fun addResolutions() {
-    val yarnExtension = rootProject.the<YarnRootExtension>()
-
-    for (dependency in project.getNpmDependencies()) {
-        val version = dependency.version
-        if (version.startsWith("^")) {
-            yarnExtension.resolution(dependency.name, version.removePrefix("^"))
-        }
+// TODO: remove `afterEvaluate` usage
+afterEvaluate {
+    // TODO: find better task
+    tasks.named("jsPackageJson") {
+        dependsOn(npmResolutions)
     }
 }
 
