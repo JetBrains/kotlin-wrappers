@@ -1,4 +1,4 @@
 package js.iterable
 
 external interface AsyncIterable<out T> :
-    HasSymbol.asyncIterator<() -> AsyncIterator<T>>
+    AsyncIteratorSymbolHolder<() -> AsyncIterator<T>>

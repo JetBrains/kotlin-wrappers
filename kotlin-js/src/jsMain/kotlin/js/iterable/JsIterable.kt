@@ -1,4 +1,4 @@
 package js.iterable
 
 external interface JsIterable<out T> :
-    HasSymbol.iterator<() -> JsIterator<T>>
+    IteratorSymbolHolder<() -> JsIterator<T>>
