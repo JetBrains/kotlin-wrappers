@@ -28,7 +28,3 @@ sealed external interface Symbol {
         fun keyFor(symbol: Symbol): String?
     }
 }
-
-external fun Symbol(
-    description: String = definedExternally,
-): Symbol
