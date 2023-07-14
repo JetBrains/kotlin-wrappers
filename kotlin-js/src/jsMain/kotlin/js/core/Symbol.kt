@@ -1,12 +1,20 @@
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
+@file:Suppress("WRONG_JS_QUALIFIER")
+// language=JavaScript
+@file:JsQualifier(
+    """({
+    __type_plus_guard__: Object.setPrototypeOf({
+        [Symbol.hasInstance](instance) {
+            return typeof instance === 'symbol'
+        }
+    }, Symbol)
+  })"""
 )
 
 package js.core
 
-sealed external interface Symbol {
+@JsName("__type_plus_guard__")
+sealed external class Symbol {
     val description: String?
-        get() = definedExternally
 
     object asyncIterator : Symbol
     object hasInstance : Symbol
