@@ -2,8 +2,38 @@ package js.core
 
 import kotlin.test.Test
 import kotlin.test.assertEquals
+import kotlin.test.assertFalse
+import kotlin.test.assertTrue
 
 class BigIntTest {
+    @Test
+    fun isForNumberBigInt() {
+        val s: Any = 13.n
+
+        assertTrue(s is BigInt)
+    }
+
+    @Test
+    fun isForStringBigInt() {
+        val s: Any = "42".n
+
+        assertTrue(s is BigInt)
+    }
+
+    @Test
+    fun isForObject() {
+        val a = Any()
+
+        assertFalse(a is BigInt)
+    }
+
+    @Test
+    fun isForString() {
+        val a: Any = "bigint"
+
+        assertFalse(a is BigInt)
+    }
+
     @Test
     fun unaryMinus() {
         assertEquals(-13.n, BigInt("-13"))

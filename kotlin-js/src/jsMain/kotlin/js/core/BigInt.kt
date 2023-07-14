@@ -1,10 +1,19 @@
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
+@file:Suppress("WRONG_JS_QUALIFIER")
+// language=JavaScript
+@file:JsQualifier(
+    """({
+    __type_plus_guard__: Object.setPrototypeOf({
+        [Symbol.hasInstance](instance) {
+            return typeof instance === 'bigint'
+        }
+    }, BigInt)
+  })"""
 )
 
 package js.core
 
-sealed external interface BigInt {
+@JsName("__type_plus_guard__")
+sealed external class BigInt {
     /**
      * Returns a string representation of an object.
      * @param radix Specifies a radix for converting numeric values to strings.
