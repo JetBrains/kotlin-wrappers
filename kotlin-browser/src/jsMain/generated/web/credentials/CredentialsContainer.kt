@@ -21,5 +21,5 @@ sealed external class CredentialsContainer {
     fun preventSilentAccess(): Promise<Void>
 
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CredentialsContainer/store) */
-    fun store(credential: Credential): Promise<Credential>
+    fun store(credential: Credential): Promise<Void>
 }

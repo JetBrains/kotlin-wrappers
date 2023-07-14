@@ -368,6 +368,12 @@ sealed external class SubtleCrypto {
 
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/generateKey) */
     fun generateKey(
+        algorithm: Ed25519,
+        extractable: Boolean,
+        keyUsages: ReadonlyArray<KeyUsage /* "sign" | "verify" */>,
+    ): Promise<CryptoKeyPair>
+
+    fun generateKey(
         algorithm: RsaHashedKeyGenParams,
         extractable: Boolean,
         keyUsages: ReadonlyArray<KeyUsage>,
