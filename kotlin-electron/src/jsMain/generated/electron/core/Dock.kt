@@ -50,7 +50,7 @@ external class Dock {
      *
      * @platform darwin
      */
-    fun getMenu(): Any /* (Menu) | (null) */
+    fun getMenu(): Menu?
 
     /**
      * Hides the dock icon.
@@ -78,9 +78,9 @@ external class Dock {
      *
      * @platform darwin
      */
-    fun setIcon(image: (NativeImage)): Unit
+    fun setIcon(image: NativeImage): Unit
 
-    fun setIcon(image: (String)): Unit
+    fun setIcon(image: String): Unit
 
     /**
      * Sets the application's dock menu.

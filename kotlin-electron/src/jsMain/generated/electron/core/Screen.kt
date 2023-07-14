@@ -44,9 +44,7 @@ external interface Screen : node.events.IEventEmitter {
      *
      * @platform win32
      */
-    fun dipToScreenRect(window: (BrowserWindow), rect: Rectangle): Rectangle
-
-    fun dipToScreenRect(window: (Nothing?), rect: Rectangle): Rectangle
+    fun dipToScreenRect(window: BrowserWindow?, rect: Rectangle): Rectangle
 
     /**
      * An array of displays that are currently available.
@@ -90,7 +88,5 @@ external interface Screen : node.events.IEventEmitter {
      *
      * @platform win32
      */
-    fun screenToDipRect(window: (BrowserWindow), rect: Rectangle): Rectangle
-
-    fun screenToDipRect(window: (Nothing?), rect: Rectangle): Rectangle
+    fun screenToDipRect(window: BrowserWindow?, rect: Rectangle): Rectangle
 }

@@ -85,7 +85,7 @@ external class Session : NodeEventEmitter {
      */
     fun on(
         event: SessionEvent.SELECT_HID_DEVICE,
-        listener: (event: Event, details: SelectHidDeviceDetails, callback: (deviceId: Any /* (string) | (null) */ /* use undefined for default */) -> Unit) -> Unit
+        listener: (event: Event, details: SelectHidDeviceDetails, callback: (deviceId: String? /* use undefined for default */) -> Unit) -> Unit
     ): Unit /* this */
 
     /**
@@ -247,7 +247,7 @@ external class Session : NodeEventEmitter {
 
     fun once(
         event: SessionEvent.SELECT_HID_DEVICE,
-        listener: (event: Event, details: SelectHidDeviceDetails, callback: (deviceId: Any /* (string) | (null) */ /* use undefined for default */) -> Unit) -> Unit
+        listener: (event: Event, details: SelectHidDeviceDetails, callback: (deviceId: String? /* use undefined for default */) -> Unit) -> Unit
     ): Unit /* this */
 
     fun once(
@@ -330,7 +330,7 @@ external class Session : NodeEventEmitter {
 
     fun addListener(
         event: SessionEvent.SELECT_HID_DEVICE,
-        listener: (event: Event, details: SelectHidDeviceDetails, callback: (deviceId: Any /* (string) | (null) */ /* use undefined for default */) -> Unit) -> Unit
+        listener: (event: Event, details: SelectHidDeviceDetails, callback: (deviceId: String? /* use undefined for default */) -> Unit) -> Unit
     ): Unit /* this */
 
     fun addListener(
@@ -413,7 +413,7 @@ external class Session : NodeEventEmitter {
 
     fun removeListener(
         event: SessionEvent.SELECT_HID_DEVICE,
-        listener: (event: Event, details: SelectHidDeviceDetails, callback: (deviceId: Any /* (string) | (null) */ /* use undefined for default */) -> Unit) -> Unit
+        listener: (event: Event, details: SelectHidDeviceDetails, callback: (deviceId: String? /* use undefined for default */) -> Unit) -> Unit
     ): Unit /* this */
 
     fun removeListener(
@@ -613,7 +613,7 @@ external class Session : NodeEventEmitter {
      * The absolute file system path where data for this session is persisted on disk.
      * For in memory sessions this returns `null`.
      */
-    fun getStoragePath(): Any /* (string) | (null) */
+    fun getStoragePath(): String?
 
     /**
      * The user agent for this session.
@@ -706,9 +706,7 @@ external class Session : NodeEventEmitter {
      *
      * @platform win32,linux
      */
-    fun setBluetoothPairingHandler(handler: ((details: BluetoothPairingHandlerHandlerDetails, callback: (response: Response) -> Unit) -> Unit)): Unit
-
-    fun setBluetoothPairingHandler(handler: (Nothing?)): Unit
+    fun setBluetoothPairingHandler(handler: ((details: BluetoothPairingHandlerHandlerDetails, callback: (response: Response) -> Unit) -> Unit)?): Unit
 
     /**
      * Sets the certificate verify proc for `session`, the `proc` will be called with
@@ -721,9 +719,7 @@ external class Session : NodeEventEmitter {
      *
      * > **NOTE:** The result of this procedure is cached by the network service.
      */
-    fun setCertificateVerifyProc(proc: ((request: Request, callback: (verificationResult: Double) -> Unit) -> Unit)): Unit
-
-    fun setCertificateVerifyProc(proc: (Nothing?)): Unit
+    fun setCertificateVerifyProc(proc: ((request: Request, callback: (verificationResult: Double) -> Unit) -> Unit)?): Unit
 
     /**
      * Sets the directory to store the generated JS code cache for this session. The
@@ -750,9 +746,7 @@ external class Session : NodeEventEmitter {
      * handling the `select-hid-device` event) and then read from that storage with
      * `setDevicePermissionHandler`.
      */
-    fun setDevicePermissionHandler(handler: ((details: DevicePermissionHandlerHandlerDetails) -> Boolean)): Unit
-
-    fun setDevicePermissionHandler(handler: (Nothing?)): Unit
+    fun setDevicePermissionHandler(handler: ((details: DevicePermissionHandlerHandlerDetails) -> Boolean)?): Unit
 
     /**
      * This handler will be called when web content requests access to display media
@@ -764,9 +758,7 @@ external class Session : NodeEventEmitter {
      *
      * Passing `null` instead of a function resets the handler to its default state.
      */
-    fun setDisplayMediaRequestHandler(handler: ((request: DisplayMediaRequestHandlerHandlerRequest, callback: (streams: Streams) -> Unit) -> Unit)): Unit
-
-    fun setDisplayMediaRequestHandler(handler: (Nothing?)): Unit
+    fun setDisplayMediaRequestHandler(handler: ((request: DisplayMediaRequestHandlerHandlerRequest, callback: (streams: Streams) -> Unit) -> Unit)?): Unit
 
     /**
      * Sets download saving directory. By default, the download directory will be the
@@ -782,9 +774,7 @@ external class Session : NodeEventEmitter {
      * make a permission request if the check is denied. To clear the handler, call
      * `setPermissionCheckHandler(null)`.
      */
-    fun setPermissionCheckHandler(handler: ((webContents: Any /* (WebContents) | (null) */, permission: String, requestingOrigin: String, details: PermissionCheckHandlerHandlerDetails) -> Boolean)): Unit
-
-    fun setPermissionCheckHandler(handler: (Nothing?)): Unit
+    fun setPermissionCheckHandler(handler: ((webContents: WebContents?, permission: String, requestingOrigin: String, details: PermissionCheckHandlerHandlerDetails) -> Boolean)?): Unit
 
     /**
      * Sets the handler which can be used to respond to permission requests for the
@@ -794,9 +784,7 @@ external class Session : NodeEventEmitter {
      * `setPermissionCheckHandler` to get complete permission handling. Most web APIs
      * do a permission check and then make a permission request if the check is denied.
      */
-    fun setPermissionRequestHandler(handler: ((webContents: WebContents, permission: Temp1, callback: (permissionGranted: Boolean) -> Unit, details: PermissionRequestHandlerHandlerDetails) -> Unit)): Unit
-
-    fun setPermissionRequestHandler(handler: (Nothing?)): Unit
+    fun setPermissionRequestHandler(handler: ((webContents: WebContents, permission: Temp0, callback: (permissionGranted: Boolean) -> Unit, details: PermissionRequestHandlerHandlerDetails) -> Unit)?): Unit
 
     /**
      * Adds scripts that will be executed on ALL web contents that are associated with
@@ -930,9 +918,7 @@ external class Session : NodeEventEmitter {
      * classes (this is also the default behavior if a handler is not defined). To
      * clear the handler, call `setUSBProtectedClassesHandler(null)`.
      */
-    fun setUSBProtectedClassesHandler(handler: ((details: USBProtectedClassesHandlerHandlerDetails) -> js.core.ReadonlyArray<String>)): Unit
-
-    fun setUSBProtectedClassesHandler(handler: (Nothing?)): Unit
+    fun setUSBProtectedClassesHandler(handler: ((details: USBProtectedClassesHandlerHandlerDetails) -> js.core.ReadonlyArray<String>)?): Unit
 
     /**
      * Overrides the `userAgent` and `acceptLanguages` for this session.
@@ -987,7 +973,7 @@ external class Session : NodeEventEmitter {
      * session is persisted on disk.  For in memory sessions this returns `null`.
      *
      */
-    val storagePath: Any /* (string) | (null) */
+    val storagePath: String?
 
     /**
      * A `WebRequest` object for this session.

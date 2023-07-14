@@ -5,27 +5,22 @@ package electron.core
     "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
-@JsName("""(/*union*/{appearanceBased: 'appearance-based', light: 'light', dark: 'dark', titlebar: 'titlebar', selection: 'selection', menu: 'menu', popover: 'popover', sidebar: 'sidebar', mediumLight: 'medium-light', ultraDark: 'ultra-dark', header: 'header', sheet: 'sheet', window: 'window', hud: 'hud', fullscreenUi: 'fullscreen-ui', tooltip: 'tooltip', content: 'content', underWindow: 'under-window', underPage: 'under-page'}/*union*/)""")
+@JsName("""(/*union*/{clipboardRead: 'clipboard-read', clipboardSanitizedWrite: 'clipboard-sanitized-write', media: 'media', displayCapture: 'display-capture', mediaKeySystem: 'mediaKeySystem', geolocation: 'geolocation', notifications: 'notifications', midi: 'midi', midiSysex: 'midiSysex', pointerLock: 'pointerLock', fullscreen: 'fullscreen', openExternal: 'openExternal', windowManagement: 'window-management', unknown: 'unknown'}/*union*/)""")
 sealed external interface Temp0 {
     companion object {
-        val appearanceBased: Temp0
-        val light: Temp0
-        val dark: Temp0
-        val titlebar: Temp0
-        val selection: Temp0
-        val menu: Temp0
-        val popover: Temp0
-        val sidebar: Temp0
-        val mediumLight: Temp0
-        val ultraDark: Temp0
-        val header: Temp0
-        val sheet: Temp0
-        val window: Temp0
-        val hud: Temp0
-        val fullscreenUi: Temp0
-        val tooltip: Temp0
-        val content: Temp0
-        val underWindow: Temp0
-        val underPage: Temp0
+        val clipboardRead: Temp0
+        val clipboardSanitizedWrite: Temp0
+        val media: Temp0
+        val displayCapture: Temp0
+        val mediaKeySystem: Temp0
+        val geolocation: Temp0
+        val notifications: Temp0
+        val midi: Temp0
+        val midiSysex: Temp0
+        val pointerLock: Temp0
+        val fullscreen: Temp0
+        val openExternal: Temp0
+        val windowManagement: Temp0
+        val unknown: Temp0
     }
 }

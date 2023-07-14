@@ -134,7 +134,7 @@ external class WebFrameMain : NodeEventEmitter {
      * be `null` if `frame` is the top frame in the frame hierarchy.
      *
      */
-    val parent: Any /* (WebFrameMain) | (null) */
+    val parent: WebFrameMain?
 
     /**
      * An `Integer` representing the Chromium internal `pid` of the process which owns
@@ -157,7 +157,7 @@ external class WebFrameMain : NodeEventEmitter {
      * `frame` belongs.
      *
      */
-    val top: Any /* (WebFrameMain) | (null) */
+    val top: WebFrameMain?
 
     /**
      * A `string` representing the current URL of the frame.
@@ -179,7 +179,7 @@ external class WebFrameMain : NodeEventEmitter {
          * A frame with the given process and routing IDs, or `undefined` if there is no
          * WebFrameMain associated with the given IDs.
          */
-        fun fromId(processId: Double, routingId: Double): Any /* (WebFrameMain) | (undefined) */
+        fun fromId(processId: Double, routingId: Double): WebFrameMain?
     }
 
 }

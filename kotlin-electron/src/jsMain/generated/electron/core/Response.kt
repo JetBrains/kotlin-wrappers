@@ -14,5 +14,5 @@ external interface Response {
      * When the `pairingKind` is `providePin` this value should be the required pin for
      * the Bluetooth device.
      */
-    var pin: Any /* (string) | (null) */
+    var pin: String?
 }

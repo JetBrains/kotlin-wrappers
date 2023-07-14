@@ -39,7 +39,7 @@ open external class Menu {
     /**
      * the item with the specified `id`
      */
-    fun getMenuItemById(id: String): Any /* (MenuItem) | (null) */
+    fun getMenuItemById(id: String): MenuItem?
 
     /**
      * Inserts the `menuItem` to the `pos` position of the menu.
@@ -75,7 +75,7 @@ open external class Menu {
          * **Note:** The returned `Menu` instance doesn't support dynamic addition or
          * removal of menu items. Instance properties can still be dynamically modified.
          */
-        fun getApplicationMenu(): Any /* (Menu) | (null) */
+        fun getApplicationMenu(): Menu?
 
         /**
          * Sends the `action` to the first responder of application. This is used for
@@ -109,9 +109,7 @@ open external class Menu {
          * one. It contains standard items such as `File`, `Edit`, `View`, `Window` and
          * `Help`.
          */
-        fun setApplicationMenu(menu: (Menu)): Unit
-
-        fun setApplicationMenu(menu: (Nothing?)): Unit
+        fun setApplicationMenu(menu: Menu?): Unit
     }
 
 }

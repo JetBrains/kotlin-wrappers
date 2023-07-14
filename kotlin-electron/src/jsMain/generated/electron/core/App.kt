@@ -1487,9 +1487,7 @@ external interface App : node.events.IEventEmitter {
      *
      * @platform win32
      */
-    fun setJumpList(categories: (js.core.ReadonlyArray<JumpListCategory>)): (AppSetJumpListResult)
-
-    fun setJumpList(categories: (Nothing?)): (AppSetJumpListResult)
+    fun setJumpList(categories: js.core.ReadonlyArray<JumpListCategory>?): (AppSetJumpListResult)
 
     /**
      * To work with Electron's `autoUpdater` on Windows, which uses Squirrel, you'll
@@ -1631,7 +1629,7 @@ external interface App : node.events.IEventEmitter {
      * A `Menu | null` property that returns `Menu` if one has been set and `null`
      * otherwise. Users can pass a Menu to set this property.
      */
-    var applicationMenu: Any /* (Menu) | (null) */
+    var applicationMenu: Menu?
 
     /**
      * An `Integer` property that returns the badge count for current app. Setting the

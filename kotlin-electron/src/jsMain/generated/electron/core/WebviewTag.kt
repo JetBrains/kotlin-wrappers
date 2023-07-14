@@ -533,11 +533,11 @@ external interface WebviewTag {
      *
      * See webContents.sendInputEvent for detailed description of `event` object.
      */
-    fun sendInputEvent(event: (MouseInputEvent)): Promise<Unit>
+    fun sendInputEvent(event: MouseInputEvent): Promise<Unit>
 
-    fun sendInputEvent(event: (MouseWheelInputEvent)): Promise<Unit>
+    fun sendInputEvent(event: MouseWheelInputEvent): Promise<Unit>
 
-    fun sendInputEvent(event: (KeyboardInputEvent)): Promise<Unit>
+    fun sendInputEvent(event: KeyboardInputEvent): Promise<Unit>
 
     /**
      * Send an asynchronous message to renderer process via `channel`, you can also

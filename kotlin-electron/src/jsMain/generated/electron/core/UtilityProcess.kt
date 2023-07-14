@@ -87,7 +87,7 @@ external class UtilityProcess : NodeEventEmitter {
      * `undefined`. When the child process exits, then the value is `undefined` after
      * the `exit` event is emitted.
      */
-    var pid: Any /* (number) | (undefined) */
+    var pid: Double?
 
     /**
      * A `NodeJS.ReadableStream | null` that represents the child process's stderr. If
@@ -95,7 +95,7 @@ external class UtilityProcess : NodeEventEmitter {
      * then this will be `null`. When the child process exits, then the value is `null`
      * after the `exit` event is emitted.
      */
-    var stderr: Any /* (NodeJS.ReadableStream) | (null) */
+    var stderr: node.ReadableStream?
 
     /**
      * A `NodeJS.ReadableStream | null` that represents the child process's stdout. If
@@ -103,7 +103,7 @@ external class UtilityProcess : NodeEventEmitter {
      * then this will be `null`. When the child process exits, then the value is `null`
      * after the `exit` event is emitted.
      */
-    var stdout: Any /* (NodeJS.ReadableStream) | (null) */
+    var stdout: node.ReadableStream?
 
     companion object {
         // Docs: https://electronjs.org/docs/api/utility-process

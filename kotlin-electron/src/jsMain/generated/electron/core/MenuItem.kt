@@ -135,7 +135,7 @@ open external class MenuItem {
      *
      * @platform darwin
      */
-    val userAccelerator: Any /* (Accelerator) | (null) */
+    val userAccelerator: Accelerator?
 
     /**
      * A `boolean` indicating whether the item is visible, this property can be

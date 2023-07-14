@@ -551,9 +551,9 @@ open external class Tray : NodeEventEmitter {
     /**
      * Tray
      */
-    constructor (image: (NativeImage), guid: String = definedExternally)
+    constructor (image: NativeImage, guid: String = definedExternally)
 
-    constructor (image: (String), guid: String = definedExternally)
+    constructor (image: String, guid: String = definedExternally)
 
     /**
      * Closes an open context menu, as set by `tray.setContextMenu()`.
@@ -630,9 +630,7 @@ open external class Tray : NodeEventEmitter {
     /**
      * Sets the context menu for this icon.
      */
-    fun setContextMenu(menu: (Menu)): Unit
-
-    fun setContextMenu(menu: (Nothing?)): Unit
+    fun setContextMenu(menu: Menu?): Unit
 
     /**
      * Sets the option to ignore double click events. Ignoring these events allows you
@@ -647,18 +645,18 @@ open external class Tray : NodeEventEmitter {
     /**
      * Sets the `image` associated with this tray icon.
      */
-    fun setImage(image: (NativeImage)): Unit
+    fun setImage(image: NativeImage): Unit
 
-    fun setImage(image: (String)): Unit
+    fun setImage(image: String): Unit
 
     /**
      * Sets the `image` associated with this tray icon when pressed on macOS.
      *
      * @platform darwin
      */
-    fun setPressedImage(image: (NativeImage)): Unit
+    fun setPressedImage(image: NativeImage): Unit
 
-    fun setPressedImage(image: (String)): Unit
+    fun setPressedImage(image: String): Unit
 
     /**
      * Sets the title displayed next to the tray icon in the status bar (Support ANSI

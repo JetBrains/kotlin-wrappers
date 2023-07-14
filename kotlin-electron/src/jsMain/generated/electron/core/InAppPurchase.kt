@@ -43,9 +43,9 @@ external interface InAppPurchase : node.events.IEventEmitter {
      * You should listen for the `transactions-updated` event as soon as possible and
      * certainly before you call `purchaseProduct`.
      */
-    fun purchaseProduct(productID: String, opts: (Double) = definedExternally): Promise<Boolean>
+    fun purchaseProduct(productID: String, opts: Double = definedExternally): Promise<Boolean>
 
-    fun purchaseProduct(productID: String, opts: (PurchaseProductOpts) = definedExternally): Promise<Boolean>
+    fun purchaseProduct(productID: String, opts: PurchaseProductOpts = definedExternally): Promise<Boolean>
 
     /**
      * Restores finished transactions. This method can be called either to install

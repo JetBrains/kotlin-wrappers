@@ -6,7 +6,7 @@ external interface MenuItemConstructorOptions {
      * Will be called with `click(menuItem, browserWindow, event)` when the menu item
      * is clicked.
      */
-    var click: ((menuItem: MenuItem, browserWindow: Any /* (BrowserWindow) | (undefined) */, event: KeyboardEvent) -> Unit)?
+    var click: ((menuItem: MenuItem, browserWindow: BrowserWindow?, event: KeyboardEvent) -> Unit)?
 
     /**
      * Can be `undo`, `redo`, `cut`, `copy`, `paste`, `pasteAndMatchStyle`, `delete`,

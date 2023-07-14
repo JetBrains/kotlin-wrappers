@@ -614,7 +614,7 @@ open external class BrowserWindow : NodeEventEmitter {
      *
      * @experimental
      */
-    fun getBrowserView(): Any /* (BrowserView) | (null) */
+    fun getBrowserView(): BrowserView?
 
     /**
      * an array of all BrowserViews that have been attached with `addBrowserView` or
@@ -690,7 +690,7 @@ open external class BrowserWindow : NodeEventEmitter {
     /**
      * The parent window or `null` if there is no parent.
      */
-    fun getParentWindow(): Any /* (BrowserWindow) | (null) */
+    fun getParentWindow(): BrowserWindow?
 
     /**
      * Contains the window's current position.
@@ -1141,9 +1141,7 @@ open external class BrowserWindow : NodeEventEmitter {
      * supplied will default to their current values.
      */
     fun setBounds(bounds: Rectangle, animate: Boolean = definedExternally): Unit
-    fun setBrowserView(browserView: (BrowserView)): Unit
-
-    fun setBrowserView(browserView: (Nothing?)): Unit
+    fun setBrowserView(browserView: BrowserView?): Unit
 
     /**
      * Sets whether the window can be manually closed by user. On Linux does nothing.
@@ -1230,9 +1228,9 @@ open external class BrowserWindow : NodeEventEmitter {
      *
      * @platform win32,linux
      */
-    fun setIcon(icon: (NativeImage)): Unit
+    fun setIcon(icon: NativeImage): Unit
 
-    fun setIcon(icon: (String)): Unit
+    fun setIcon(icon: String): Unit
 
     /**
      * Makes the window ignore all mouse events.
@@ -1265,9 +1263,7 @@ open external class BrowserWindow : NodeEventEmitter {
      *
      * @platform linux,win32
      */
-    fun setMenu(menu: (Menu)): Unit
-
-    fun setMenu(menu: (Nothing?)): Unit
+    fun setMenu(menu: Menu?): Unit
 
     /**
      * Sets whether the menu bar should be visible. If the menu bar is auto-hide, users
@@ -1311,17 +1307,13 @@ open external class BrowserWindow : NodeEventEmitter {
      *
      * @platform win32
      */
-    fun setOverlayIcon(overlay: (NativeImage), description: String): Unit
-
-    fun setOverlayIcon(overlay: (Nothing?), description: String): Unit
+    fun setOverlayIcon(overlay: NativeImage?, description: String): Unit
 
     /**
      * Sets `parent` as current window's parent window, passing `null` will turn
      * current window into a top-level window.
      */
-    fun setParentWindow(parent: (BrowserWindow)): Unit
-
-    fun setParentWindow(parent: (Nothing?)): Unit
+    fun setParentWindow(parent: BrowserWindow?): Unit
 
     /**
      * Moves window to `x` and `y`.
@@ -1488,9 +1480,7 @@ open external class BrowserWindow : NodeEventEmitter {
      *
      * @platform darwin
      */
-    fun setTouchBar(touchBar: (TouchBar)): Unit
-
-    fun setTouchBar(touchBar: (Nothing?)): Unit
+    fun setTouchBar(touchBar: TouchBar?): Unit
 
     /**
      * Set a custom position for the traffic light buttons in frameless window.
@@ -1508,9 +1498,7 @@ open external class BrowserWindow : NodeEventEmitter {
      *
      * @platform darwin
      */
-    fun setVibrancy(type: ((Temp0))): Unit
-
-    fun setVibrancy(type: (Nothing?)): Unit
+    fun setVibrancy(type: BrowserWindowSetVibrancyType?): Unit
 
     /**
      * Sets whether the window should be visible on all workspaces.
@@ -1743,18 +1731,18 @@ open external class BrowserWindow : NodeEventEmitter {
          * The window that owns the given `browserView`. If the given view is not attached
          * to any window, returns `null`.
          */
-        fun fromBrowserView(browserView: BrowserView): Any /* (BrowserWindow) | (null) */
+        fun fromBrowserView(browserView: BrowserView): BrowserWindow?
 
         /**
          * The window with the given `id`.
          */
-        fun fromId(id: Double): Any /* (BrowserWindow) | (null) */
+        fun fromId(id: Double): BrowserWindow?
 
         /**
          * The window that owns the given `webContents` or `null` if the contents are not
          * owned by a window.
          */
-        fun fromWebContents(webContents: WebContents): Any /* (BrowserWindow) | (null) */
+        fun fromWebContents(webContents: WebContents): BrowserWindow?
 
         /**
          * An array of all opened browser windows.
@@ -1764,7 +1752,7 @@ open external class BrowserWindow : NodeEventEmitter {
         /**
          * The window that is focused in this application, otherwise returns `null`.
          */
-        fun getFocusedWindow(): Any /* (BrowserWindow) | (null) */
+        fun getFocusedWindow(): BrowserWindow?
     }
 
 }

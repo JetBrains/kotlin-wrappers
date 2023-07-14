@@ -21,9 +21,9 @@ external interface Net {
      * would be used to issue both secure and insecure HTTP requests according to the
      * specified protocol scheme in the `options` object.
      */
-    fun request(options: (ClientRequestConstructorOptions)): ClientRequest
+    fun request(options: ClientRequestConstructorOptions): ClientRequest
 
-    fun request(options: (String)): ClientRequest
+    fun request(options: String): ClientRequest
 
     /**
      * Resolves with the resolved IP addresses for the `host`.

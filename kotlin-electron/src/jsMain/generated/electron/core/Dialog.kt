@@ -177,7 +177,7 @@ external interface Dialog {
      * and a directory selector, so if you set `properties` to `['openFile',
      * 'openDirectory']` on these platforms, a directory selector will be shown.
      */
-    fun showOpenDialogSync(browserWindow: BrowserWindow, options: OpenDialogSyncOptions): Any /* (string[]) | (undefined) */
+    fun showOpenDialogSync(browserWindow: BrowserWindow, options: OpenDialogSyncOptions): js.core.ReadonlyArray<String>?
 
     /**
      * the file paths chosen by the user; if the dialog is cancelled it returns
@@ -197,7 +197,7 @@ external interface Dialog {
      * and a directory selector, so if you set `properties` to `['openFile',
      * 'openDirectory']` on these platforms, a directory selector will be shown.
      */
-    fun showOpenDialogSync(options: OpenDialogSyncOptions): Any /* (string[]) | (undefined) */
+    fun showOpenDialogSync(options: OpenDialogSyncOptions): js.core.ReadonlyArray<String>?
 
     /**
      * Resolve with an object containing the following:
@@ -253,7 +253,7 @@ external interface Dialog {
      * The `filters` specifies an array of file types that can be displayed, see
      * `dialog.showOpenDialog` for an example.
      */
-    fun showSaveDialogSync(browserWindow: BrowserWindow, options: SaveDialogSyncOptions): Any /* (string) | (undefined) */
+    fun showSaveDialogSync(browserWindow: BrowserWindow, options: SaveDialogSyncOptions): String?
 
     /**
      * the path of the file chosen by the user; if the dialog is cancelled it returns
@@ -265,5 +265,5 @@ external interface Dialog {
      * The `filters` specifies an array of file types that can be displayed, see
      * `dialog.showOpenDialog` for an example.
      */
-    fun showSaveDialogSync(options: SaveDialogSyncOptions): Any /* (string) | (undefined) */
+    fun showSaveDialogSync(options: SaveDialogSyncOptions): String?
 }

@@ -182,7 +182,7 @@ external interface WebFrame : node.events.IEventEmitter {
      * in the current renderer process.
      *
      */
-    val firstChild: Any /* (WebFrame) | (null) */
+    val firstChild: WebFrame?
 
     /**
      * A `WebFrame | null` representing next sibling frame, the property would be
@@ -190,7 +190,7 @@ external interface WebFrame : node.events.IEventEmitter {
      * not in the current renderer process.
      *
      */
-    val nextSibling: Any /* (WebFrame) | (null) */
+    val nextSibling: WebFrame?
 
     /**
      * A `WebFrame | null` representing the frame which opened `webFrame`, the property
@@ -198,14 +198,14 @@ external interface WebFrame : node.events.IEventEmitter {
      * process.
      *
      */
-    val opener: Any /* (WebFrame) | (null) */
+    val opener: WebFrame?
 
     /**
      * A `WebFrame | null` representing parent frame of `webFrame`, the property would
      * be `null` if `webFrame` is top or parent is not in the current renderer process.
      *
      */
-    val parent: Any /* (WebFrame) | (null) */
+    val parent: WebFrame?
 
     /**
      * An `Integer` representing the unique frame id in the current renderer process.
@@ -221,5 +221,5 @@ external interface WebFrame : node.events.IEventEmitter {
      * current renderer process.
      *
      */
-    val top: Any /* (WebFrame) | (null) */
+    val top: WebFrame?
 }

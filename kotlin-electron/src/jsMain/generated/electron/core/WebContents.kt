@@ -197,7 +197,7 @@ external class WebContents : NodeEventEmitter {
             /**
              * Theme color is in format of '#rrggbb'. It is `null` when no theme color is set.
              */
-            color: Any /* (string) | (null) */
+            color: String?
         ) -> Unit
     ): Unit /* this */
 
@@ -697,7 +697,7 @@ external class WebContents : NodeEventEmitter {
             /**
              * Theme color is in format of '#rrggbb'. It is `null` when no theme color is set.
              */
-            color: Any /* (string) | (null) */
+            color: String?
         ) -> Unit
     ): Unit /* this */
 
@@ -949,7 +949,7 @@ external class WebContents : NodeEventEmitter {
             /**
              * Theme color is in format of '#rrggbb'. It is `null` when no theme color is set.
              */
-            color: Any /* (string) | (null) */
+            color: String?
         ) -> Unit
     ): Unit /* this */
 
@@ -1205,7 +1205,7 @@ external class WebContents : NodeEventEmitter {
             /**
              * Theme color is in format of '#rrggbb'. It is `null` when no theme color is set.
              */
-            color: Any /* (string) | (null) */
+            color: String?
         ) -> Unit
     ): Unit /* this */
 
@@ -1903,11 +1903,11 @@ external class WebContents : NodeEventEmitter {
      * Sends an input `event` to the page. **Note:** The `BrowserWindow` containing the
      * contents needs to be focused for `sendInputEvent()` to work.
      */
-    fun sendInputEvent(inputEvent: (MouseInputEvent)): Unit
+    fun sendInputEvent(inputEvent: MouseInputEvent): Unit
 
-    fun sendInputEvent(inputEvent: (MouseWheelInputEvent)): Unit
+    fun sendInputEvent(inputEvent: MouseWheelInputEvent): Unit
 
-    fun sendInputEvent(inputEvent: (KeyboardInputEvent)): Unit
+    fun sendInputEvent(inputEvent: KeyboardInputEvent): Unit
 
     /**
      * Send an asynchronous message to a specific frame in a renderer process via
@@ -1927,9 +1927,9 @@ external class WebContents : NodeEventEmitter {
      *
      * You can also read `frameId` from all incoming IPC messages in the main process.
      */
-    fun sendToFrame(frameId: (Double), channel: String, vararg args: Any? /* js.core.ReadonlyArray<Any?> */): Unit
+    fun sendToFrame(frameId: Double, channel: String, vararg args: Any? /* js.core.ReadonlyArray<Any?> */): Unit
 
-    fun sendToFrame(frameId: (js.core.JsTuple2<Double, Double>), channel: String, vararg args: Any? /* js.core.ReadonlyArray<Any?> */): Unit
+    fun sendToFrame(frameId: js.core.JsTuple2<Double, Double>, channel: String, vararg args: Any? /* js.core.ReadonlyArray<Any?> */): Unit
 
     /**
      * Mute the audio on the current web page.
@@ -2123,7 +2123,7 @@ external class WebContents : NodeEventEmitter {
      * the DevTools has been closed.
      *
      */
-    val devToolsWebContents: Any /* (WebContents) | (null) */
+    val devToolsWebContents: WebContents?
 
     /**
      * An `Integer` property that sets the frame rate of the web contents to the
@@ -2227,19 +2227,19 @@ external class WebContents : NodeEventEmitter {
          * When communicating with the Chrome DevTools Protocol, it can be useful to lookup
          * a WebContents instance based on its assigned TargetID.
          */
-        fun fromDevToolsTargetId(targetId: String): Any /* (WebContents) | (undefined) */
+        fun fromDevToolsTargetId(targetId: String): WebContents?
 
         /**
          * A WebContents instance with the given WebFrameMain, or `undefined` if there is
          * no WebContents associated with the given WebFrameMain.
          */
-        fun fromFrame(frame: WebFrameMain): Any /* (WebContents) | (undefined) */
+        fun fromFrame(frame: WebFrameMain): WebContents?
 
         /**
          * A WebContents instance with the given ID, or `undefined` if there is no
          * WebContents associated with the given ID.
          */
-        fun fromId(id: Double): Any /* (WebContents) | (undefined) */
+        fun fromId(id: Double): WebContents?
 
         /**
          * An array of all `WebContents` instances. This will contain web contents for all
@@ -2250,7 +2250,7 @@ external class WebContents : NodeEventEmitter {
         /**
          * The web contents that is focused in this application, otherwise returns `null`.
          */
-        fun getFocusedWebContents(): Any /* (WebContents) | (null) */
+        fun getFocusedWebContents(): WebContents?
     }
 
 }

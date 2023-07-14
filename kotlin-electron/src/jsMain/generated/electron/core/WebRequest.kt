@@ -9,17 +9,13 @@ external class WebRequest {
      * The `listener` will be called with `listener(details)` when a server initiated
      * redirect is about to occur.
      */
-    fun onBeforeRedirect(filter: WebRequestFilter, listener: ((details: OnBeforeRedirectListenerDetails) -> Unit)): Unit
-
-    fun onBeforeRedirect(filter: WebRequestFilter, listener: (Nothing?)): Unit
+    fun onBeforeRedirect(filter: WebRequestFilter, listener: ((details: OnBeforeRedirectListenerDetails) -> Unit)?): Unit
 
     /**
      * The `listener` will be called with `listener(details)` when a server initiated
      * redirect is about to occur.
      */
-    fun onBeforeRedirect(listener: ((details: OnBeforeRedirectListenerDetails) -> Unit)): Unit
-
-    fun onBeforeRedirect(listener: (Nothing?)): Unit
+    fun onBeforeRedirect(listener: ((details: OnBeforeRedirectListenerDetails) -> Unit)?): Unit
 
     /**
      * The `listener` will be called with `listener(details, callback)` when a request
@@ -31,9 +27,7 @@ external class WebRequest {
      *
      * Some examples of valid `urls`:
      */
-    fun onBeforeRequest(filter: WebRequestFilter, listener: ((details: OnBeforeRequestListenerDetails, callback: (response: CallbackResponse) -> Unit) -> Unit)): Unit
-
-    fun onBeforeRequest(filter: WebRequestFilter, listener: (Nothing?)): Unit
+    fun onBeforeRequest(filter: WebRequestFilter, listener: ((details: OnBeforeRequestListenerDetails, callback: (response: CallbackResponse) -> Unit) -> Unit)?): Unit
 
     /**
      * The `listener` will be called with `listener(details, callback)` when a request
@@ -45,9 +39,7 @@ external class WebRequest {
      *
      * Some examples of valid `urls`:
      */
-    fun onBeforeRequest(listener: ((details: OnBeforeRequestListenerDetails, callback: (response: CallbackResponse) -> Unit) -> Unit)): Unit
-
-    fun onBeforeRequest(listener: (Nothing?)): Unit
+    fun onBeforeRequest(listener: ((details: OnBeforeRequestListenerDetails, callback: (response: CallbackResponse) -> Unit) -> Unit)?): Unit
 
     /**
      * The `listener` will be called with `listener(details, callback)` before sending
@@ -56,9 +48,7 @@ external class WebRequest {
      *
      * The `callback` has to be called with a `response` object.
      */
-    fun onBeforeSendHeaders(filter: WebRequestFilter, listener: ((details: OnBeforeSendHeadersListenerDetails, callback: (beforeSendResponse: BeforeSendResponse) -> Unit) -> Unit)): Unit
-
-    fun onBeforeSendHeaders(filter: WebRequestFilter, listener: (Nothing?)): Unit
+    fun onBeforeSendHeaders(filter: WebRequestFilter, listener: ((details: OnBeforeSendHeadersListenerDetails, callback: (beforeSendResponse: BeforeSendResponse) -> Unit) -> Unit)?): Unit
 
     /**
      * The `listener` will be called with `listener(details, callback)` before sending
@@ -67,39 +57,29 @@ external class WebRequest {
      *
      * The `callback` has to be called with a `response` object.
      */
-    fun onBeforeSendHeaders(listener: ((details: OnBeforeSendHeadersListenerDetails, callback: (beforeSendResponse: BeforeSendResponse) -> Unit) -> Unit)): Unit
-
-    fun onBeforeSendHeaders(listener: (Nothing?)): Unit
+    fun onBeforeSendHeaders(listener: ((details: OnBeforeSendHeadersListenerDetails, callback: (beforeSendResponse: BeforeSendResponse) -> Unit) -> Unit)?): Unit
 
     /**
      * The `listener` will be called with `listener(details)` when a request is
      * completed.
      */
-    fun onCompleted(filter: WebRequestFilter, listener: ((details: OnCompletedListenerDetails) -> Unit)): Unit
-
-    fun onCompleted(filter: WebRequestFilter, listener: (Nothing?)): Unit
+    fun onCompleted(filter: WebRequestFilter, listener: ((details: OnCompletedListenerDetails) -> Unit)?): Unit
 
     /**
      * The `listener` will be called with `listener(details)` when a request is
      * completed.
      */
-    fun onCompleted(listener: ((details: OnCompletedListenerDetails) -> Unit)): Unit
-
-    fun onCompleted(listener: (Nothing?)): Unit
+    fun onCompleted(listener: ((details: OnCompletedListenerDetails) -> Unit)?): Unit
 
     /**
      * The `listener` will be called with `listener(details)` when an error occurs.
      */
-    fun onErrorOccurred(filter: WebRequestFilter, listener: ((details: OnErrorOccurredListenerDetails) -> Unit)): Unit
-
-    fun onErrorOccurred(filter: WebRequestFilter, listener: (Nothing?)): Unit
+    fun onErrorOccurred(filter: WebRequestFilter, listener: ((details: OnErrorOccurredListenerDetails) -> Unit)?): Unit
 
     /**
      * The `listener` will be called with `listener(details)` when an error occurs.
      */
-    fun onErrorOccurred(listener: ((details: OnErrorOccurredListenerDetails) -> Unit)): Unit
-
-    fun onErrorOccurred(listener: (Nothing?)): Unit
+    fun onErrorOccurred(listener: ((details: OnErrorOccurredListenerDetails) -> Unit)?): Unit
 
     /**
      * The `listener` will be called with `listener(details, callback)` when HTTP
@@ -107,9 +87,7 @@ external class WebRequest {
      *
      * The `callback` has to be called with a `response` object.
      */
-    fun onHeadersReceived(filter: WebRequestFilter, listener: ((details: OnHeadersReceivedListenerDetails, callback: (headersReceivedResponse: HeadersReceivedResponse) -> Unit) -> Unit)): Unit
-
-    fun onHeadersReceived(filter: WebRequestFilter, listener: (Nothing?)): Unit
+    fun onHeadersReceived(filter: WebRequestFilter, listener: ((details: OnHeadersReceivedListenerDetails, callback: (headersReceivedResponse: HeadersReceivedResponse) -> Unit) -> Unit)?): Unit
 
     /**
      * The `listener` will be called with `listener(details, callback)` when HTTP
@@ -117,43 +95,33 @@ external class WebRequest {
      *
      * The `callback` has to be called with a `response` object.
      */
-    fun onHeadersReceived(listener: ((details: OnHeadersReceivedListenerDetails, callback: (headersReceivedResponse: HeadersReceivedResponse) -> Unit) -> Unit)): Unit
-
-    fun onHeadersReceived(listener: (Nothing?)): Unit
+    fun onHeadersReceived(listener: ((details: OnHeadersReceivedListenerDetails, callback: (headersReceivedResponse: HeadersReceivedResponse) -> Unit) -> Unit)?): Unit
 
     /**
      * The `listener` will be called with `listener(details)` when first byte of the
      * response body is received. For HTTP requests, this means that the status line
      * and response headers are available.
      */
-    fun onResponseStarted(filter: WebRequestFilter, listener: ((details: OnResponseStartedListenerDetails) -> Unit)): Unit
-
-    fun onResponseStarted(filter: WebRequestFilter, listener: (Nothing?)): Unit
+    fun onResponseStarted(filter: WebRequestFilter, listener: ((details: OnResponseStartedListenerDetails) -> Unit)?): Unit
 
     /**
      * The `listener` will be called with `listener(details)` when first byte of the
      * response body is received. For HTTP requests, this means that the status line
      * and response headers are available.
      */
-    fun onResponseStarted(listener: ((details: OnResponseStartedListenerDetails) -> Unit)): Unit
-
-    fun onResponseStarted(listener: (Nothing?)): Unit
+    fun onResponseStarted(listener: ((details: OnResponseStartedListenerDetails) -> Unit)?): Unit
 
     /**
      * The `listener` will be called with `listener(details)` just before a request is
      * going to be sent to the server, modifications of previous `onBeforeSendHeaders`
      * response are visible by the time this listener is fired.
      */
-    fun onSendHeaders(filter: WebRequestFilter, listener: ((details: OnSendHeadersListenerDetails) -> Unit)): Unit
-
-    fun onSendHeaders(filter: WebRequestFilter, listener: (Nothing?)): Unit
+    fun onSendHeaders(filter: WebRequestFilter, listener: ((details: OnSendHeadersListenerDetails) -> Unit)?): Unit
 
     /**
      * The `listener` will be called with `listener(details)` just before a request is
      * going to be sent to the server, modifications of previous `onBeforeSendHeaders`
      * response are visible by the time this listener is fired.
      */
-    fun onSendHeaders(listener: ((details: OnSendHeadersListenerDetails) -> Unit)): Unit
-
-    fun onSendHeaders(listener: (Nothing?)): Unit
+    fun onSendHeaders(listener: ((details: OnSendHeadersListenerDetails) -> Unit)?): Unit
 }

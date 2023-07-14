@@ -395,9 +395,7 @@ external interface SystemPreferences : node.events.IEventEmitter {
      * @deprecated
      * @platform darwin
      */
-    fun setAppLevelAppearance(appearance: ((Temp2))): Unit
-
-    fun setAppLevelAppearance(appearance: (Nothing?)): Unit
+    fun setAppLevelAppearance(appearance: SystemPreferencesSetAppLevelAppearanceAppearance?): Unit
 
     /**
      * Set the value of `key` in `NSUserDefaults`.
@@ -425,9 +423,7 @@ external interface SystemPreferences : node.events.IEventEmitter {
      *
      * @platform darwin
      */
-    fun subscribeLocalNotification(event: (String), callback: (event: String, userInfo: js.core.ReadonlyRecord<String, Any>, `object`: String) -> Unit): Double
-
-    fun subscribeLocalNotification(event: (Nothing?), callback: (event: String, userInfo: js.core.ReadonlyRecord<String, Any>, `object`: String) -> Unit): Double
+    fun subscribeLocalNotification(event: String?, callback: (event: String, userInfo: js.core.ReadonlyRecord<String, Any>, `object`: String) -> Unit): Double
 
     /**
      * The ID of this subscription
@@ -454,9 +450,7 @@ external interface SystemPreferences : node.events.IEventEmitter {
      *
      * @platform darwin
      */
-    fun subscribeNotification(event: (String), callback: (event: String, userInfo: js.core.ReadonlyRecord<String, Any>, `object`: String) -> Unit): Double
-
-    fun subscribeNotification(event: (Nothing?), callback: (event: String, userInfo: js.core.ReadonlyRecord<String, Any>, `object`: String) -> Unit): Double
+    fun subscribeNotification(event: String?, callback: (event: String, userInfo: js.core.ReadonlyRecord<String, Any>, `object`: String) -> Unit): Double
 
     /**
      * The ID of this subscription
@@ -470,9 +464,7 @@ external interface SystemPreferences : node.events.IEventEmitter {
      *
      * @platform darwin
      */
-    fun subscribeWorkspaceNotification(event: (String), callback: (event: String, userInfo: js.core.ReadonlyRecord<String, Any>, `object`: String) -> Unit): Double
-
-    fun subscribeWorkspaceNotification(event: (Nothing?), callback: (event: String, userInfo: js.core.ReadonlyRecord<String, Any>, `object`: String) -> Unit): Double
+    fun subscribeWorkspaceNotification(event: String?, callback: (event: String, userInfo: js.core.ReadonlyRecord<String, Any>, `object`: String) -> Unit): Double
 
     /**
      * Same as `unsubscribeNotification`, but removes the subscriber from
