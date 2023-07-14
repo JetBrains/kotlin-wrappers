@@ -69,8 +69,7 @@ external interface MutationSetStateAction<TData, TError, TVariables, TContext> {
 
 typealias MutationAction<TData, TError, TVariables, TContext> = Union /* ContinueAction | ErrorAction<TError> | FailedAction<TError> | LoadingAction<TVariables, TContext> | PauseAction | SetStateAction<TData, TError, TVariables, TContext> | SuccessAction<TData> */
 
-open external class Mutation<TData, TError, TVariables, TContext>(config: MutationConfig<TData, TError, TVariables, TContext>) :
-    Removable {
+open external class Mutation<TData, TError, TVariables, TContext>(config: MutationConfig<TData, TError, TVariables, TContext>) : Removable {
     open var state: MutationState<TData, TError, TVariables, TContext>
     open var options: MutationOptions<TData, TError, TVariables, TContext>
     open var mutationId: Int

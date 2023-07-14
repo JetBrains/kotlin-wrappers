@@ -56,8 +56,7 @@ typealias MutationCacheNotifyEvent = Union /* NotifyEventMutationAdded | NotifyE
 
 typealias MutationCacheListener = (event: MutationCacheNotifyEvent) -> Unit
 
-open external class MutationCache(config: MutationCacheConfig = definedExternally) :
-    Subscribable<MutationCacheListener> {
+open external class MutationCache(config: MutationCacheConfig = definedExternally) : Subscribable<MutationCacheListener> {
     open var config: MutationCacheConfig
     open fun <TData, TError, TVariables, TContext> build(
         client: QueryClient,
