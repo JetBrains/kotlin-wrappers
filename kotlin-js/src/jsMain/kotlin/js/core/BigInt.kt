@@ -1,4 +1,7 @@
-@file:Suppress("WRONG_JS_QUALIFIER")
+@file:Suppress(
+    "WRONG_JS_QUALIFIER",
+    "EXTERNAL_TYPE_EXTENDS_NON_EXTERNAL_TYPE",
+)
 // language=JavaScript
 @file:JsQualifier(
     """({
@@ -13,7 +16,10 @@
 package js.core
 
 @JsName("__type_plus_guard__")
-sealed external class BigInt {
+sealed external class BigInt :
+    BigIntComparableAdapter,
+    Comparable<BigInt> {
+
     /**
      * Returns a string representation of an object.
      * @param radix Specifies a radix for converting numeric values to strings.
