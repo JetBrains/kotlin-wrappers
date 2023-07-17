@@ -11,6 +11,11 @@ sealed external class TypedArray<S : TypedArray<S, T>, T : Comparable<T> /* Numb
     ArrayBufferView,
     ListLike<T> {
 
+    /**
+     * The size in bytes of each element in the array.
+     */
+    val BYTES_PER_ELEMENT: Int
+
     override val byteLength: Int
 
     /**
