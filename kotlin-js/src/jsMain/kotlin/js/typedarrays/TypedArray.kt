@@ -7,7 +7,7 @@ import js.core.ReadonlyArray
 import js.iterable.IterableIterator
 
 @JsName("DONT_USE_IS_AS_OPERATORS_WITH_SYNTHETIC_TYPED_ARRAY")
-sealed external class TypedArray<S : TypedArray<S, T>, T : Any /* Number */> :
+sealed external class TypedArray<S : TypedArray<S, T>, T : Comparable<T> /* Number? */> :
     ArrayBufferView,
     ListLike<T> {
 

@@ -13,7 +13,7 @@ external object Atomics {
      * Until this atomic operation completes, any other read or write operation against the array
      * will block.
      */
-    fun <T : Any> add(
+    fun <T : Comparable<T>> add(
         typedArray: TypedArray<*, T>,
         index: Int,
         value: T,
@@ -24,7 +24,7 @@ external object Atomics {
      * returning the original value. Until this atomic operation completes, any other read or
      * write operation against the array will block.
      */
-    fun <T : Any> and(
+    fun <T : Comparable<T>> and(
         typedArray: TypedArray<*, T>,
         index: Int,
         value: T,
@@ -35,7 +35,7 @@ external object Atomics {
      * expected value, returning the original value. Until this atomic operation completes, any
      * other read or write operation against the array will block.
      */
-    fun <T : Any> compareExchange(
+    fun <T : Comparable<T>> compareExchange(
         typedArray: TypedArray<*, T>,
         index: Int,
         expectedValue: T,
@@ -47,7 +47,7 @@ external object Atomics {
      * this atomic operation completes, any other read or write operation against the array will
      * block.
      */
-    fun <T : Any> exchange(
+    fun <T : Comparable<T>> exchange(
         typedArray: TypedArray<*, T>,
         index: Int,
         value: T,
@@ -64,7 +64,7 @@ external object Atomics {
      * Returns the value at the given position in the array. Until this atomic operation completes,
      * any other read or write operation against the array will block.
      */
-    fun <T : Any> load(
+    fun <T : Comparable<T>> load(
         typedArray: TypedArray<*, T>,
         index: Int,
     ): T
@@ -74,7 +74,7 @@ external object Atomics {
      * returning the original value. Until this atomic operation completes, any other read or write
      * operation against the array will block.
      */
-    fun <T : Any> or(
+    fun <T : Comparable<T>> or(
         typedArray: TypedArray<*, T>,
         index: Int,
         value: T,
@@ -84,7 +84,7 @@ external object Atomics {
      * Stores a value at the given position in the array, returning the new value. Until this
      * atomic operation completes, any other read or write operation against the array will block.
      */
-    fun <T : Any> store(
+    fun <T : Comparable<T>> store(
         typedArray: TypedArray<*, T>,
         index: Int,
         value: T,
@@ -95,7 +95,7 @@ external object Atomics {
      * value. Until this atomic operation completes, any other read or write operation against the
      * array will block.
      */
-    fun <T : Any> sub(
+    fun <T : Comparable<T>> sub(
         typedArray: TypedArray<*, T>,
         index: Int,
         value: T,
@@ -158,7 +158,7 @@ external object Atomics {
      * returning the original value. Until this atomic operation completes, any other read or write
      * operation against the array will block.
      */
-    fun <T : Any> xor(
+    fun <T : Comparable<T>> xor(
         typedArray: TypedArray<*, T>,
         index: Int,
         value: T,
