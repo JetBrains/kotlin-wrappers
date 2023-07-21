@@ -42,6 +42,8 @@ external interface InfiniteData<TData> {
 
 external interface QueryMeta : Record<String, Any>
 
+typealias NotifyOnChangeProps = Union /* Array<keyof InfiniteQueryObserverResult> | 'all' | (() => Array<keyof InfiniteQueryObserverResult> | 'all') */
+
 external interface QueryOptions<TQueryFnData, TError, TData, TQueryKey : QueryKey> {
     var retry: RetryValue<TError>
     var retryDelay: RetryDelayValue<TError>
@@ -73,7 +75,7 @@ external interface QueryObserverOptions<TQueryFnData, TError, TData, TQueryData,
     var refetchOnReconnect: (query: Query<TQueryFnData, TError, TQueryData, TQueryKey>) -> Boolean /* | boolean | 'always' */
     var refetchOnMount: (query: Query<TQueryFnData, TError, TQueryData, TQueryKey>) -> Boolean /* | boolean | 'always' */
     var retryOnMount: Boolean
-    var notifyOnChangeProps: Any /* Array<keyof InfiniteQueryObserverResult> | 'all' */
+    var notifyOnChangeProps: NotifyOnChangeProps
     var onSuccess: (data: TData) -> Unit
     var onError: (err: TError) -> Unit
     var onSettled: (data: TData?, error: TError?) -> Unit
