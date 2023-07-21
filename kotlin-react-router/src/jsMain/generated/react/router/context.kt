@@ -17,7 +17,7 @@ external val DataRouterContext: react.Context<DataRouterContextObject?>
 
 
 @JsName("UNSAFE_DataRouterStateContext")
-external val DataRouterStateContext: react.Context</* import("@remix-run/router") */ RouterState?>
+external val DataRouterStateContext: react.Context<(/* import("@remix-run/router") */ RouterState)?>
 
 
 external val AwaitContext: react.Context<TrackedPromise?>
