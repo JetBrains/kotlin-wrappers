@@ -32,7 +32,10 @@ sealed external class RTCRtpSender {
     fun replaceTrack(withTrack: MediaStreamTrack?): Promise<Void>
 
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpSender/setParameters) */
-    fun setParameters(parameters: RTCRtpSendParameters): Promise<Void>
+    fun setParameters(
+        parameters: RTCRtpSendParameters,
+        setParameterOptions: RTCSetParameterOptions = definedExternally,
+    ): Promise<Void>
 
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpSender/setStreams) */
     fun setStreams(vararg streams: MediaStream)
