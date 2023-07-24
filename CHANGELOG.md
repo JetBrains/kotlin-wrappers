@@ -1,3 +1,7 @@
+## pre.600
+
+* Kotlin `1.9.0` support
+
 ## pre.592
 
 **BREAKING CHANGE**
