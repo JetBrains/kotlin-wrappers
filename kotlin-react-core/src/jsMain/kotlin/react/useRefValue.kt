@@ -1,4 +1,8 @@
 @file:Suppress(
+    "WRONG_BODY_OF_EXTERNAL_DECLARATION",
+    "INLINE_EXTERNAL_DECLARATION",
+    "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
+    "DECLARATION_CANT_BE_INLINED",
     "NOTHING_TO_INLINE",
 )
 
@@ -24,8 +28,7 @@ inline fun <T : Any> useRefValue(
     useRef(initialValue)
         .unsafeCast<RefValueInstance<T>>()
 
-// TODO: make external in IR
-sealed class RefValueInstance<T> {
+sealed external interface RefValueInstance<T> {
     inline operator fun getValue(
         thisRef: Nothing?,
         property: KProperty<*>,

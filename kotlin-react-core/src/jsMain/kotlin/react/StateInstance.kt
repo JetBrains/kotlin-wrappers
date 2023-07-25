@@ -1,4 +1,8 @@
 @file:Suppress(
+    "WRONG_BODY_OF_EXTERNAL_DECLARATION",
+    "INLINE_EXTERNAL_DECLARATION",
+    "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
+    "DECLARATION_CANT_BE_INLINED",
     "NOTHING_TO_INLINE",
 )
 
@@ -10,8 +14,7 @@ import kotlin.reflect.KProperty
  * Only works inside [fc]
  * @see <a href="https://reactjs.org/docs/hooks-state.html#hooks-and-function-components">Hooks and Function Components</a>
  */
-// TODO: make external in IR
-sealed class StateInstance<T> {
+sealed external interface StateInstance<T> {
     inline operator fun component1(): T =
         asDynamic()[0].unsafeCast<T>()
 

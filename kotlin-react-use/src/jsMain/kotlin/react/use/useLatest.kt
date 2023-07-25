@@ -1,4 +1,8 @@
 @file:Suppress(
+    "WRONG_BODY_OF_EXTERNAL_DECLARATION",
+    "INLINE_EXTERNAL_DECLARATION",
+    "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
+    "DECLARATION_CANT_BE_INLINED",
     "NOTHING_TO_INLINE",
 )
 
@@ -20,8 +24,7 @@ fun <T> useLatest(
     return ref.unsafeCast<LatestInstance<T>>()
 }
 
-// TODO: make external in IR
-sealed class LatestInstance<T> {
+sealed external interface LatestInstance<T> {
     inline operator fun getValue(
         thisRef: Void,
         property: KProperty<*>,
