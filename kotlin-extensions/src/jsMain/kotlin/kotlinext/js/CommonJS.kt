@@ -14,7 +14,7 @@ external object require {
     fun resolve(module: String): String
 
     // Note: require.context is a webpack-specific function
-    fun context(directory: String, useSubdirectories: Boolean, regExp: RegExp): Context
+    fun context(directory: String, useSubdirectories: Boolean = definedExternally, regExp: RegExp = definedExternally, mode: String = definedExternally): Context
 }
 
 external fun require(module: String): dynamic
