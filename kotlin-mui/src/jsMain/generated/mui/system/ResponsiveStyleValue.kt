@@ -4,8 +4,6 @@ package mui.system
 
 import js.core.Record
 
-import js.core.set
-
 external interface ResponsiveStyleValue<T : Any>
 
 @Suppress("NOTHING_TO_INLINE")
