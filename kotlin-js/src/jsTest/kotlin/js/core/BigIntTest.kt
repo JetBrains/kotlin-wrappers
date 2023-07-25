@@ -1,9 +1,6 @@
 package js.core
 
-import kotlin.test.Test
-import kotlin.test.assertEquals
-import kotlin.test.assertFalse
-import kotlin.test.assertTrue
+import kotlin.test.*
 
 class BigIntTest {
     @Test
@@ -66,5 +63,16 @@ class BigIntTest {
         assertEquals(-3.n, -16.n / 5.n)
         assertEquals(3.n, 42.n / 13.n)
         assertEquals(-3.n, -42.n / 13.n)
+    }
+
+    @Ignore
+    @Test
+    fun comparable() {
+        val sortedNumbers = listOf(13.n, 42.n, 7.n).sorted()
+
+        assertEquals(
+            listOf(7.n, 13.n, 42.n),
+            sortedNumbers,
+        )
     }
 }
