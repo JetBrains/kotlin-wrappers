@@ -1,4 +1,7 @@
 @file:Suppress(
+    "WRONG_BODY_OF_EXTERNAL_DECLARATION",
+    "INLINE_EXTERNAL_DECLARATION",
+    "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
     "DECLARATION_CANT_BE_INLINED",
     "NOTHING_TO_INLINE",
 )
@@ -10,23 +13,23 @@ sealed external interface JsTuple {
     val size: Int
 }
 
-sealed interface JsTuple1<out A> : JsTuple {
+sealed external interface JsTuple1<out A> : JsTuple {
     inline operator fun component1(): A = asDynamic()[0]
 }
 
-sealed interface JsTuple2<out A, out B> : JsTuple1<A> {
+sealed external interface JsTuple2<out A, out B> : JsTuple1<A> {
     inline operator fun component2(): B = asDynamic()[1]
 }
 
-sealed interface JsTuple3<out A, out B, out C> : JsTuple2<A, B> {
+sealed external interface JsTuple3<out A, out B, out C> : JsTuple2<A, B> {
     inline operator fun component3(): C = asDynamic()[2]
 }
 
-sealed interface JsTuple4<out A, out B, out C, out D> : JsTuple3<A, B, C> {
+sealed external interface JsTuple4<out A, out B, out C, out D> : JsTuple3<A, B, C> {
     inline operator fun component4(): D = asDynamic()[3]
 }
 
-sealed interface JsTuple5<out A, out B, out C, out D, out E> : JsTuple4<A, B, C, D> {
+sealed external interface JsTuple5<out A, out B, out C, out D, out E> : JsTuple4<A, B, C, D> {
     inline operator fun component5(): E = asDynamic()[4]
 }
 
