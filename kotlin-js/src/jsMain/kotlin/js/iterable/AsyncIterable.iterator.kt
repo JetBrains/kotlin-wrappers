@@ -2,5 +2,8 @@ package js.iterable
 
 import js.core.Symbol
 
-operator fun <T> AsyncIterable<T>.iterator(): SuspendableIterator<T> =
-    get(Symbol.asyncIterator)().iterator()
+@PublishedApi
+internal fun <T> iteratorFor(
+    source: AsyncIterable<T>,
+): SuspendableIterator<T> =
+    source[Symbol.asyncIterator]().iterator()

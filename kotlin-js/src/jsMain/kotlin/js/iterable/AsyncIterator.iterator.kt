@@ -2,8 +2,11 @@ package js.iterable
 
 import js.promise.await
 
-operator fun <T> AsyncIterator<T>.iterator(): SuspendableIterator<T> =
-    AsyncIteratorAdapter(this)
+@PublishedApi
+internal fun <T> iteratorFor(
+    source: AsyncIterator<T>,
+): SuspendableIterator<T> =
+    AsyncIteratorAdapter(source)
 
 private class AsyncIteratorAdapter<T>(
     private val source: AsyncIterator<T>,

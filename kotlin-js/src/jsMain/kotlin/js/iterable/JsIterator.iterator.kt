@@ -1,9 +1,12 @@
 package js.iterable
 
-operator fun <T> JsIterator<T>.iterator(): Iterator<T> =
+@PublishedApi
+internal fun <T> iteratorFor(
+    source: JsIterator<T>
+): Iterator<T> =
     iterator {
         do {
-            val result = next() as? IteratorYieldResult<T>
+            val result = source.next() as? IteratorYieldResult<T>
                 ?: break
 
             yield(result.value)

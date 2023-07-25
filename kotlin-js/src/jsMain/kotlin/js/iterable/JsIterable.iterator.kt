@@ -2,5 +2,8 @@ package js.iterable
 
 import js.core.Symbol
 
-operator fun <T> JsIterable<T>.iterator(): Iterator<T> =
-    get(Symbol.iterator)().iterator()
+@PublishedApi
+internal fun <T> iteratorFor(
+    source: JsIterable<T>,
+): Iterator<T> =
+    source[Symbol.iterator]().iterator()
