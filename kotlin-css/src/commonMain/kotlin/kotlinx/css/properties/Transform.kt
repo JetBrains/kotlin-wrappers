@@ -20,7 +20,10 @@ class Transforms : StyleList<Transform>(" ") {
     }
 }
 
-fun StyledElement.transform(builder: Transforms.() -> Unit) = transform.builder()
+fun StyledElement.transform(builder: Transforms.() -> Unit) {
+    transform.clear()
+    transform.builder()
+}
 
 fun Transforms.add(name: String, vararg args: Any) {
     this += Transform(name, args)
