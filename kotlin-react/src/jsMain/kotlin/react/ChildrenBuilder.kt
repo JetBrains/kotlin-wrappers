@@ -58,42 +58,26 @@ sealed interface ChildrenBuilder {
         +create(block)
     }
 
-    operator fun <T, P : PropsWithValue<T>> ElementType<P>.invoke(
+    operator fun <T> Context<T>.invoke(
         value: T,
+        block: ChildrenBuilder.() -> Unit,
     ) {
-        +create(value = value)
-    }
-
-    operator fun <T, P> ElementType<P>.invoke(
-        value: T,
-        block: @ReactDsl P.() -> Unit,
-    ) where P : PropsWithValue<T>,
-            P : ChildrenBuilder {
-        this {
+        Provider {
             this.value = value
 
             block()
         }
     }
 
-    operator fun <T> Context<T>.invoke(
-        value: T,
-        block: ChildrenBuilder.() -> Unit,
-    ) {
-        Provider(
-            value = value,
-            block = block,
-        )
-    }
-
     operator fun <T : Any> RequiredContext<T>.invoke(
         value: T,
         block: ChildrenBuilder.() -> Unit,
     ) {
-        Provider(
-            value = value,
-            block = block,
-        )
+        Provider {
+            this.value = value
+
+            block()
+        }
     }
 }
 
