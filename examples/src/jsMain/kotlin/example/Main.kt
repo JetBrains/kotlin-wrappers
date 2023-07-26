@@ -30,7 +30,7 @@ enum class Theme(
 val ThemeContext = createContext(Theme.LIGHT)
 
 val MainApp = FC<PropsWithChildren> { props ->
-    ThemeContext.Provider(Theme.DARK) {
+    ThemeContext(Theme.DARK) {
         div {
             ThemeContext.Consumer {
                 children = { theme ->
