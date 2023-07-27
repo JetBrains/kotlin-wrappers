@@ -216,6 +216,7 @@ var StyledElement.textAlign: TextAlign by CssProperty()
 var StyledElement.textDecoration: TextDecoration by CssProperty()
 var StyledElement.textOverflow: TextOverflow by CssProperty()
 var StyledElement.textTransform: TextTransform by CssProperty()
+var StyledElement.textWrap: TextWrap by CssProperty()
 var StyledElement.top: LinearDimension by CssProperty()
 var StyledElement.touchAction: TouchAction by CssProperty()
 var StyledElement.transform by CssProperty { Transforms() }

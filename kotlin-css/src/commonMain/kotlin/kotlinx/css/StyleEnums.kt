@@ -584,6 +584,14 @@ enum class TextTransform {
     override fun toString() = name.hyphenize()
 }
 
+enum class TextWrap {
+    inherit, initial, revert, revertLayer, unset,
+
+    wrap, nowrap, balance, pretty;
+
+    override fun toString() = name.hyphenize()
+}
+
 enum class TouchAction {
     inherit, initial, revert, revertLayer, unset,
 
