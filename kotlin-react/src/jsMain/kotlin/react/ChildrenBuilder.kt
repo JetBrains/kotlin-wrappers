@@ -58,6 +58,15 @@ sealed interface ChildrenBuilder {
         +create(block)
     }
 
+    @Deprecated("Unsafe call. `value` type check doesn't work")
+    operator fun <T, P : PropsWithValue<T>> ElementType<P>.invoke(
+        value: T,
+    ) {
+        this {
+            this.value = value
+        }
+    }
+
     operator fun <T> Provider<T>.invoke(
         value: T,
         block: ChildrenBuilder.() -> Unit,
