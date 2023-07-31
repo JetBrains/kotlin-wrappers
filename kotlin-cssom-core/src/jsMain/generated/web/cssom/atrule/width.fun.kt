@@ -3,9 +3,9 @@
 package web.cssom.atrule
 
 import web.cssom.Length
-import web.cssom.MediaQuery
+import web.cssom.SizeQuery
 
 fun width(
     value: Length,
-): MediaQuery =
-    MediaQuery("(width:$value)")
+): SizeQuery =
+    SizeQuery("(width:$value)")

@@ -3,9 +3,9 @@
 package web.cssom.atrule
 
 import web.cssom.Length
-import web.cssom.MediaQuery
+import web.cssom.SizeQuery
 
 fun minWidth(
     value: Length,
-): MediaQuery =
-    MediaQuery("(min-width:$value)")
+): SizeQuery =
+    SizeQuery("(min-width:$value)")

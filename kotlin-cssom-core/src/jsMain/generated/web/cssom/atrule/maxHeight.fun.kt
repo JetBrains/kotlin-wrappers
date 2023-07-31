@@ -3,9 +3,9 @@
 package web.cssom.atrule
 
 import web.cssom.Length
-import web.cssom.MediaQuery
+import web.cssom.SizeQuery
 
 fun maxHeight(
     value: Length,
-): MediaQuery =
-    MediaQuery("(max-height:$value)")
+): SizeQuery =
+    SizeQuery("(max-height:$value)")
