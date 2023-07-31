@@ -6,7 +6,7 @@
 
 package web.cssom
 
-external interface ContainerQuery
+sealed external interface ContainerQuery
 
 inline fun ContainerQuery(
     value: String,

@@ -6,7 +6,7 @@
 
 package web.cssom
 
-external interface SizeQuery :
+sealed external interface SizeQuery :
     ContainerQuery,
     MediaQuery
 
