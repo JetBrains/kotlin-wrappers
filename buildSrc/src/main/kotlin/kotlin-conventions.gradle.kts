@@ -12,6 +12,7 @@ tasks.withType<KotlinCompile<*>>().configureEach {
         allWarningsAsErrors = true
 
         freeCompilerArgs += listOf(
+            "-opt-in=kotlin.ExperimentalStdlibApi",
             "-opt-in=kotlin.contracts.ExperimentalContracts",
         )
     }
