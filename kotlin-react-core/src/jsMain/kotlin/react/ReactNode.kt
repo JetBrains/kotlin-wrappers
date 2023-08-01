@@ -6,6 +6,7 @@ package react
 
 import js.core.ReadonlyArray
 
+@JsExternalInheritorsOnly
 sealed external interface ReactNode
 
 inline fun ReactNode(
