@@ -17,8 +17,8 @@ import js.promise.Promise
  * on a [Globe].
  * ```
  * // Add an OpenStreetMaps layer
- * const imageryLayer = new ImageryLayer(OpenStreetMapImageryProvider({
- *   url: "https://a.tile.openstreetmap.org/"
+ * const imageryLayer = new ImageryLayer(new OpenStreetMapImageryProvider({
+ *   url: "https://tile.openstreetmap.org/"
  * })),
  * scene.imageryLayers.add(imageryLayer);
  * ```

@@ -17,7 +17,7 @@ import js.core.jso
  * [Tile Usage Policy](http://wiki.openstreetmap.org/wiki/Tile_usage_policy).
  * ```
  * const osm = new OpenStreetMapImageryProvider({
- *     url : 'https://a.tile.openstreetmap.org/'
+ *     url : 'https://tile.openstreetmap.org/'
  * });
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/OpenStreetMapImageryProvider.html">Online Documentation</a>
@@ -26,7 +26,7 @@ external class OpenStreetMapImageryProvider(options: ConstructorOptions) {
     /**
      * Initialization options for the OpenStreetMapImageryProvider constructor
      * @property [url] The OpenStreetMap server url.
-     *   Default value - `'https://a.tile.openstreetmap.org'`
+     *   Default value - `'https://tile.openstreetmap.org'`
      * @property [fileExtension] The file extension for images on the server.
      *   Default value - `'png'`
      * @property [rectangle] The rectangle of the layer.

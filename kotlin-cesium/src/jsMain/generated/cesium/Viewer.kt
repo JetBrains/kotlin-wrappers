@@ -29,8 +29,8 @@ import web.html.HTMLCanvasElement
  *     // Hide the base layer picker
  *     baseLayerPicker: false,
  *     // Use OpenStreetMaps
- *     baseLayer: new ImageryLayer(OpenStreetMapImageryProvider({
- *       url: "https://a.tile.openstreetmap.org/"
+ *     baseLayer: new ImageryLayer(new OpenStreetMapImageryProvider({
+ *       url: "https://tile.openstreetmap.org/"
  *     })),
  *     skyBox: new SkyBox({
  *       sources: {

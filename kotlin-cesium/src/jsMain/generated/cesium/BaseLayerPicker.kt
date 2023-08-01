@@ -35,7 +35,7 @@ import web.dom.Element
  * map of the world.\nhttp://www.openstreetmap.org",
  *      creationFunction: function() {
  *          return new OpenStreetMapImageryProvider({
- *              url: "https://a.tile.openstreetmap.org/"
+ *              url: "https://tile.openstreetmap.org/"
  *          });
  *      }
  *  }));
