@@ -713,6 +713,9 @@ sealed external class CSSStyleDeclaration :
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/mask-type) */
     var maskType: String
 
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/math-depth) */
+    var mathDepth: String
+
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/math-style) */
     var mathStyle: String
 
