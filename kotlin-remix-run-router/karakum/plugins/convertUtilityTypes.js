@@ -10,6 +10,8 @@ export default function (node, context, render) {
             || node.typeName.text === "Exclude"
             || node.typeName.text === "Pick"
             || node.typeName.text === "Omit"
+            // custom
+            || node.typeName.text === "RequireOne"
         )
     ) {
         return render(node.typeArguments[0])

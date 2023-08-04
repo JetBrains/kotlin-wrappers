@@ -32,6 +32,11 @@ sealed external interface SubmitOptions {
     var replace: Boolean?
 
     /**
+     * State object to add to the history stack entry for this navigation
+     */
+    var state: Any?
+
+    /**
      * Determines whether the form action is relative to the route hierarchy or
      * the pathname.  Use this if you want to opt out of navigating the route
      * hierarchy and want to instead route based on /-delimited URL segments

@@ -6,7 +6,7 @@ const overriddenProps = {
         "style": "styleFn",
         "children": "childrenFn",
     },
-    "FormProps": {
+    "FetcherFormProps": {
         "method": ["routerMethod", "String"],
         "encType": ["routerEncType", "String"],
         "action": null,

@@ -8,7 +8,8 @@
         "**/V7_MutationFormMethod.kt",
         "**/JsonArray.kt",
         "**/JsonObject.kt",
-        "**/JsonPrimitive.kt"
+        "**/JsonPrimitive.kt",
+        "**/RequireOne.kt"
     ],
     "libraryName": "@remix-run/router",
     "libraryNameOutputPrefix": true,

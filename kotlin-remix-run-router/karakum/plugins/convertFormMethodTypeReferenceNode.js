@@ -49,6 +49,8 @@ export default function (node) {
 
     if (
         ts.isIndexedAccessTypeNode(node)
+
+        && node.parent
         && ts.isPropertySignature(node.parent)
         && ts.isIdentifier(node.parent.name)
         && node.parent.name.text === "formMethod"
