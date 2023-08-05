@@ -18,11 +18,11 @@ sealed interface ChildrenBuilder {
     }
 
     operator fun String?.unaryPlus() {
-        +ReactNode(this)
+        addChild(ReactNode(this))
     }
 
     operator fun Char.unaryPlus() {
-        +ReactNode(this)
+        addChild(ReactNode(this))
     }
 
     fun <P : Props> child(
