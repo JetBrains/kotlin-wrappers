@@ -13,18 +13,8 @@ internal inline var ChildrenBuilder.children: ReadonlyArray<ReactNode?>?
 
 @ReactDsl
 sealed interface ChildrenBuilder {
-    fun child(
-        element: ReactNode?,
-    ) {
-        if (children != null) {
-            children.asDynamic().push(element)
-        } else {
-            children = arrayOf(element)
-        }
-    }
-
     operator fun ReactNode?.unaryPlus() {
-        child(this)
+        addChild(this)
     }
 
     operator fun String?.unaryPlus() {
@@ -91,6 +81,16 @@ sealed interface ChildrenBuilder {
             value = value,
             block = block,
         )
+    }
+}
+
+private fun ChildrenBuilder.addChild(
+    element: ReactNode?,
+) {
+    if (children != null) {
+        children.asDynamic().push(element)
+    } else {
+        children = arrayOf(element)
     }
 }
 
