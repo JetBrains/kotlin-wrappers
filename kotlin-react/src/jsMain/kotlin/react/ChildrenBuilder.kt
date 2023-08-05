@@ -1,6 +1,5 @@
 package react
 
-import js.core.Object
 import js.core.ReadonlyArray
 import js.core.Symbol
 
@@ -14,10 +13,6 @@ internal inline var ChildrenBuilder.children: ReadonlyArray<ReactNode?>?
 
 @ReactDsl
 sealed interface ChildrenBuilder {
-    operator fun Props?.unaryPlus() {
-        Object.assign(this@ChildrenBuilder, this)
-    }
-
     fun child(
         element: ReactNode?,
     ) {
