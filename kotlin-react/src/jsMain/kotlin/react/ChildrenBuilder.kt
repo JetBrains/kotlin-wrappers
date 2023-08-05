@@ -56,18 +56,19 @@ sealed interface ChildrenBuilder {
         value: T,
         block: ChildrenBuilder.() -> Unit,
     ) {
-        this {
-            this.value = value
-
-            block()
-        }
+        addChild(
+            provider = this,
+            value = value,
+            block = block,
+        )
     }
 
     operator fun <T> Context<T>.invoke(
         value: T,
         block: ChildrenBuilder.() -> Unit,
     ) {
-        Provider(
+        addChild(
+            context = this,
             value = value,
             block = block,
         )
@@ -77,7 +78,8 @@ sealed interface ChildrenBuilder {
         value: T,
         block: ChildrenBuilder.() -> Unit,
     ) {
-        Provider(
+        addChild(
+            context = this,
             value = value,
             block = block,
         )
@@ -92,6 +94,42 @@ private fun ChildrenBuilder.addChild(
     } else {
         children = arrayOf(element)
     }
+}
+
+private fun <T> ChildrenBuilder.addChild(
+    provider: Provider<T>,
+    value: T,
+    block: ChildrenBuilder.() -> Unit,
+) {
+    provider {
+        this.value = value
+
+        block()
+    }
+}
+
+private fun <T> ChildrenBuilder.addChild(
+    context: Context<T>,
+    value: T,
+    block: ChildrenBuilder.() -> Unit,
+) {
+    addChild(
+        provider = context.Provider,
+        value = value,
+        block = block,
+    )
+}
+
+private fun <T : Any> ChildrenBuilder.addChild(
+    context: RequiredContext<T>,
+    value: T,
+    block: ChildrenBuilder.() -> Unit,
+) {
+    addChild(
+        provider = context.Provider,
+        value = value,
+        block = block,
+    )
 }
 
 @JsName("createChildrenBuilder")
