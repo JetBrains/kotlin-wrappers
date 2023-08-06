@@ -1,3 +1,13 @@
+@file:Suppress(
+    "WRONG_BODY_OF_EXTERNAL_DECLARATION",
+    "WRONG_EXTERNAL_DECLARATION",
+    "EXTENSION_FUNCTION_IN_EXTERNAL_DECLARATION",
+    "INLINE_EXTERNAL_DECLARATION",
+    "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
+    "DECLARATION_CANT_BE_INLINED",
+    "NOTHING_TO_INLINE",
+)
+
 package react
 
 import js.core.ReadonlyArray
@@ -13,32 +23,32 @@ internal inline var ChildrenBuilder.children: ReadonlyArray<ReactNode?>?
     }
 
 @ReactDsl
-sealed interface ChildrenBuilder {
-    operator fun ReactNode?.unaryPlus() {
+sealed external interface ChildrenBuilder {
+    inline operator fun ReactNode?.unaryPlus() {
         addChild(this)
     }
 
-    operator fun String?.unaryPlus() {
+    inline operator fun String?.unaryPlus() {
         addChild(ReactNode(this))
     }
 
-    operator fun Char.unaryPlus() {
+    inline operator fun Char.unaryPlus() {
         addChild(ReactNode(this))
     }
 
-    fun <P : Props> child(
+    inline fun <P : Props> child(
         type: ElementType<P>,
         props: P,
     ) {
         addChild(type, props)
     }
 
-    operator fun <P : Props> ElementType<P>.invoke() {
+    inline operator fun <P : Props> ElementType<P>.invoke() {
         addChild(this)
     }
 
-    operator fun <P> ElementType<P>.invoke(
-        block: @ReactDsl P.() -> Unit,
+    inline operator fun <P> ElementType<P>.invoke(
+        noinline block: @ReactDsl P.() -> Unit,
     ) where P : Props,
             P : ChildrenBuilder {
         addChild(
@@ -48,7 +58,7 @@ sealed interface ChildrenBuilder {
     }
 
     @Deprecated("Unsafe call. `value` type check doesn't work")
-    operator fun <T, P : PropsWithValue<T>> ElementType<P>.invoke(
+    inline operator fun <T, P : PropsWithValue<T>> ElementType<P>.invoke(
         value: T,
     ) {
         addChild(
@@ -57,9 +67,9 @@ sealed interface ChildrenBuilder {
         )
     }
 
-    operator fun <T> Provider<T>.invoke(
+    inline operator fun <T> Provider<T>.invoke(
         value: T,
-        block: ChildrenBuilder.() -> Unit,
+        noinline block: ChildrenBuilder.() -> Unit,
     ) {
         addChild(
             provider = this,
@@ -68,9 +78,9 @@ sealed interface ChildrenBuilder {
         )
     }
 
-    operator fun <T> Context<T>.invoke(
+    inline operator fun <T> Context<T>.invoke(
         value: T,
-        block: ChildrenBuilder.() -> Unit,
+        noinline block: ChildrenBuilder.() -> Unit,
     ) {
         addChild(
             context = this,
@@ -79,9 +89,9 @@ sealed interface ChildrenBuilder {
         )
     }
 
-    operator fun <T : Any> RequiredContext<T>.invoke(
+    inline operator fun <T : Any> RequiredContext<T>.invoke(
         value: T,
-        block: ChildrenBuilder.() -> Unit,
+        noinline block: ChildrenBuilder.() -> Unit,
     ) {
         addChild(
             context = this,
@@ -91,7 +101,8 @@ sealed interface ChildrenBuilder {
     }
 }
 
-private fun ChildrenBuilder.addChild(
+@PublishedApi
+internal fun ChildrenBuilder.addChild(
     element: ReactNode?,
 ) {
     if (children != null) {
@@ -101,20 +112,23 @@ private fun ChildrenBuilder.addChild(
     }
 }
 
-private fun <P : Props> ChildrenBuilder.addChild(
+@PublishedApi
+internal fun <P : Props> ChildrenBuilder.addChild(
     type: ElementType<P>,
 ) {
     addChild(createElement(type))
 }
 
-private fun <P : Props> ChildrenBuilder.addChild(
+@PublishedApi
+internal fun <P : Props> ChildrenBuilder.addChild(
     type: ElementType<P>,
     props: P,
 ) {
     addChild(createElement(type, props))
 }
 
-private fun <P> ChildrenBuilder.addChild(
+@PublishedApi
+internal fun <P> ChildrenBuilder.addChild(
     type: ElementType<P>,
     block: P.() -> Unit,
 ) where P : Props,
@@ -122,7 +136,8 @@ private fun <P> ChildrenBuilder.addChild(
     addChild(type.create(block))
 }
 
-private fun <T> ChildrenBuilder.addChild(
+@PublishedApi
+internal fun <T> ChildrenBuilder.addChild(
     provider: Provider<T>,
     value: T,
     block: ChildrenBuilder.() -> Unit,
@@ -136,7 +151,8 @@ private fun <T> ChildrenBuilder.addChild(
     )
 }
 
-private fun <T> ChildrenBuilder.addChild(
+@PublishedApi
+internal fun <T> ChildrenBuilder.addChild(
     context: Context<T>,
     value: T,
     block: ChildrenBuilder.() -> Unit,
@@ -148,7 +164,8 @@ private fun <T> ChildrenBuilder.addChild(
     )
 }
 
-private fun <T : Any> ChildrenBuilder.addChild(
+@PublishedApi
+internal fun <T : Any> ChildrenBuilder.addChild(
     context: RequiredContext<T>,
     value: T,
     block: ChildrenBuilder.() -> Unit,
