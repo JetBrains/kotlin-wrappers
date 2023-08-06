@@ -41,7 +41,10 @@ sealed interface ChildrenBuilder {
         block: @ReactDsl P.() -> Unit,
     ) where P : Props,
             P : ChildrenBuilder {
-        +create(block)
+        addChild(
+            type = this,
+            block = block,
+        )
     }
 
     @Deprecated("Unsafe call. `value` type check doesn't work")
@@ -111,16 +114,26 @@ private fun <P : Props> ChildrenBuilder.addChild(
     addChild(createElement(type, props))
 }
 
+private fun <P> ChildrenBuilder.addChild(
+    type: ElementType<P>,
+    block: P.() -> Unit,
+) where P : Props,
+        P : ChildrenBuilder {
+    addChild(type.create(block))
+}
+
 private fun <T> ChildrenBuilder.addChild(
     provider: Provider<T>,
     value: T,
     block: ChildrenBuilder.() -> Unit,
 ) {
-    provider {
-        this.value = value
-
-        block()
-    }
+    addChild(
+        type = provider,
+        block = {
+            this.value = value
+            block()
+        }
+    )
 }
 
 private fun <T> ChildrenBuilder.addChild(
