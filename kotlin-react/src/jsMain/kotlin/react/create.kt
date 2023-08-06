@@ -10,14 +10,8 @@ fun <P> ElementType<P>.create(
 ): ReactElement<P>
         where P : Props,
               P : ChildrenBuilder {
-    val builder: ChildrenBuilder = jso()
-
-    val props = builder
-        .unsafeCast<P>()
-        .apply(block)
-
-    val children = builder.children
-        ?: emptyArray()
+    val props: P = jso(block)
+    val children = props.children ?: emptyArray()
 
     return createElement(
         type = this,
