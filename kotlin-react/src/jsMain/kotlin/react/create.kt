@@ -1,5 +1,7 @@
 package react
 
+import js.core.jso
+
 fun <P : Props> ElementType<P>.create(): ReactElement<P> =
     createElement(this)
 
@@ -8,7 +10,7 @@ fun <P> ElementType<P>.create(
 ): ReactElement<P>
         where P : Props,
               P : ChildrenBuilder {
-    val builder = ChildrenBuilder()
+    val builder: ChildrenBuilder = jso()
 
     val props = builder
         .unsafeCast<P>()

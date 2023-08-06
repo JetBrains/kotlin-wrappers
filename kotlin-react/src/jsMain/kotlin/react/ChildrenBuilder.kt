@@ -176,9 +176,3 @@ internal fun <T : Any> ChildrenBuilder.addChild(
         block = block,
     )
 }
-
-@JsName("createChildrenBuilder")
-internal fun ChildrenBuilder(): ChildrenBuilder =
-    ChildrenBuilderImpl()
-
-private class ChildrenBuilderImpl : ChildrenBuilder
