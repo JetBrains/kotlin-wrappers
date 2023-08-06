@@ -29,11 +29,11 @@ sealed interface ChildrenBuilder {
         type: ElementType<P>,
         props: P,
     ) {
-        +createElement(type, props)
+        addChild(type, props)
     }
 
     operator fun <P : Props> ElementType<P>.invoke() {
-        +createElement(this)
+        addChild(this)
     }
 
     operator fun <P> ElementType<P>.invoke(
@@ -94,6 +94,19 @@ private fun ChildrenBuilder.addChild(
     } else {
         children = arrayOf(element)
     }
+}
+
+private fun <P : Props> ChildrenBuilder.addChild(
+    type: ElementType<P>,
+) {
+    addChild(createElement(type))
+}
+
+private fun <P : Props> ChildrenBuilder.addChild(
+    type: ElementType<P>,
+    props: P,
+) {
+    addChild(createElement(type, props))
 }
 
 private fun <T> ChildrenBuilder.addChild(
