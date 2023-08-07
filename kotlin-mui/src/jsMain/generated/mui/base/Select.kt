@@ -13,11 +13,11 @@ package mui.base
  *
  * Demos:
  *
- * - [Select](https://mui.com/base/react-select/)
+ * - [Select](https://mui.com/base-ui/react-select/)
  *
  * API:
  *
- * - [Select API](https://mui.com/base/react-select/components-api/#select)
+ * - [Select API](https://mui.com/base-ui/react-select/components-api/#select)
  */
 @JsName("default")
 external val Select: react.FC<SelectProps<*>>

@@ -9,11 +9,11 @@ package mui.base
  *
  * Demos:
  *
- * - [Popper](https://mui.com/base/react-popper/)
+ * - [Popper](https://mui.com/base-ui/react-popper/)
  *
  * API:
  *
- * - [Popper API](https://mui.com/base/react-popper/components-api/#popper)
+ * - [Popper API](https://mui.com/base-ui/react-popper/components-api/#popper)
  */
 @JsName("default")
 external val Popper: react.FC<PopperProps>

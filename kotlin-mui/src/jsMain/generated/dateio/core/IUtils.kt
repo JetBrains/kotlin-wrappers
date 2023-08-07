@@ -108,7 +108,10 @@ external interface IUtils<TDate : Any> {
     fun getCurrentLocaleCode(): String
     fun is12HourCycleInCurrentLocale(): Boolean
 
-    /** Returns user readable format (taking into account localized format tokens), useful to render helper text for input (e.g. placeholder). For luxon always returns empty string. */
+    /**
+     * Returns user readable format (taking into account localized format tokens), useful to render helper text for input (e.g. placeholder).
+     * If helper can not be created and **for luxon** always returns empty string.
+     * */
     fun getFormatHelperText(format: String): String
 
     fun isNull(value: TDate?): Boolean
@@ -123,11 +126,13 @@ external interface IUtils<TDate : Any> {
 
     fun isAfter(value: TDate, comparing: TDate): Boolean
     fun isAfterDay(value: TDate, comparing: TDate): Boolean
+    fun isAfterMonth(value: TDate, comparing: TDate): Boolean
     fun isAfterYear(value: TDate, comparing: TDate): Boolean
 
-    fun isBeforeDay(value: TDate, comparing: TDate): Boolean
-    fun isBeforeYear(value: TDate, comparing: TDate): Boolean
     fun isBefore(value: TDate, comparing: TDate): Boolean
+    fun isBeforeDay(value: TDate, comparing: TDate): Boolean
+    fun isBeforeMonth(value: TDate, comparing: TDate): Boolean
+    fun isBeforeYear(value: TDate, comparing: TDate): Boolean
 
     fun isWithinRange(value: TDate, range: JsTuple2<TDate, TDate>): Boolean
 

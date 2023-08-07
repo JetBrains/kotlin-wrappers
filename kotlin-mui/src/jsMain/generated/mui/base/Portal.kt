@@ -10,11 +10,11 @@ package mui.base
  *
  * Demos:
  *
- * - [Portal](https://mui.com/base/react-portal/)
+ * - [Portal](https://mui.com/base-ui/react-portal/)
  *
  * API:
  *
- * - [Portal API](https://mui.com/base/react-portal/components-api/#portal)
+ * - [Portal API](https://mui.com/base-ui/react-portal/components-api/#portal)
  */
 @JsName("default")
 external val Portal: react.FC<PortalProps>

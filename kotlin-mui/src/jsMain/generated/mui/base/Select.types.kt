@@ -13,6 +13,15 @@ external interface SelectOwnProps<OptionValue> :
     react.PropsWithChildren,
     react.PropsWithClassName {
     /**
+     * A function used to determine if two options' values are equal.
+     * By default, reference equality is used.
+     *
+     * There is a performance impact when using the `areOptionsEqual` prop (proportional to the number of options).
+     * Therefore, it's recommented to use the default reference equality comparison whenever possible.
+     */
+    var areOptionsEqual: ((a: OptionValue, b: OptionValue) -> Boolean)?
+
+    /**
      * If `true`, the select element is focused during the first mount
      * @default false
      */

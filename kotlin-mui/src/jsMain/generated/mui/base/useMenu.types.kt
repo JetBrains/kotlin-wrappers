@@ -2,6 +2,8 @@
 
 package mui.base
 
+import js.core.ReadonlyArray
+
 external interface UseMenuParameters {
     /**
      * If `true`, the menu will be initially open.
@@ -14,6 +16,11 @@ external interface UseMenuParameters {
      * This is the controlled equivalent of the `defaultOpen` parameter.
      */
     var open: Boolean?
+
+    /**
+     * Callback fired when the menu items change.
+     */
+    var onItemsChange: ((items: ReadonlyArray<String>) -> Unit)?
 
     /**
      * Callback fired when the menu is opened or closed.

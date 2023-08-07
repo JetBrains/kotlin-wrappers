@@ -12,11 +12,11 @@ package mui.base
  *
  * Demos:
  *
- * - [Badge](https://mui.com/base/react-badge/)
+ * - [Badge](https://mui.com/base-ui/react-badge/)
  *
  * API:
  *
- * - [Badge API](https://mui.com/base/react-badge/components-api/#badge)
+ * - [Badge API](https://mui.com/base-ui/react-badge/components-api/#badge)
  */
 @JsName("default")
 external val Badge: react.FC<BadgeProps>

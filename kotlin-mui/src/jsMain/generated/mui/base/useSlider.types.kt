@@ -176,6 +176,13 @@ external interface UseSliderReturnValue {
     var getThumbProps: react.Props /* <TOther extends EventHandlers = {}>(otherHandlers?: TOther) => UseSliderThumbSlotProps<TOther> */
 
     /**
+     * Resolver for the thumb slot's style prop.
+     * @param index of the currently moved thumb
+     * @returns props that should be spread on the style prop of thumb slot
+     */
+    var getThumbStyle: (index: Number) -> Any
+
+    /**
      * The marks of the slider. Marks indicate predetermined values to which the user can move the slider.
      */
     var marks: dynamic

@@ -41,11 +41,11 @@ external interface ClickAwayListenerProps : react.Props {
  *
  * Demos:
  *
- * - [Click-Away Listener](https://mui.com/base/react-click-away-listener/)
+ * - [Click-Away Listener](https://mui.com/base-ui/react-click-away-listener/)
  *
  * API:
  *
- * - [ClickAwayListener API](https://mui.com/base/react-click-away-listener/components-api/#click-away-listener)
+ * - [ClickAwayListener API](https://mui.com/base-ui/react-click-away-listener/components-api/#click-away-listener)
  */
 @JsName("default")
 external val ClickAwayListener: react.FC<ClickAwayListenerProps>

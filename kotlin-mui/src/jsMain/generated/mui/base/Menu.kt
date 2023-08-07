@@ -12,11 +12,11 @@ package mui.base
  *
  * Demos:
  *
- * - [Menu](https://mui.com/base/react-menu/)
+ * - [Menu](https://mui.com/base-ui/react-menu/)
  *
  * API:
  *
- * - [Menu API](https://mui.com/base/react-menu/components-api/#menu)
+ * - [Menu API](https://mui.com/base-ui/react-menu/components-api/#menu)
  */
 @JsName("default")
 external val Menu: react.FC<MenuProps>

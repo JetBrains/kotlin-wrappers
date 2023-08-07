@@ -9,11 +9,11 @@ package mui.base
  *
  * Demos:
  *
- * - [Select](https://mui.com/base/react-select/)
+ * - [Select](https://mui.com/base-ui/react-select/)
  *
  * API:
  *
- * - [Option API](https://mui.com/base/react-select/components-api/#option)
+ * - [Option API](https://mui.com/base-ui/react-select/components-api/#option)
  */
 @JsName("default")
 external val Option: react.FC<OptionProps<*>>
