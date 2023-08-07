@@ -2,6 +2,7 @@
 
 package mui.base
 
+import js.core.ReadonlyArray
 import web.cssom.ClassName
 
 external interface MenuProps :
@@ -9,15 +10,22 @@ external interface MenuProps :
     react.dom.html.HTMLAttributes<web.html.HTMLUListElement>
 
 external interface MenuActions {
+    /**
+     * Dispatches an action that can cause a change to the menu's internal state.
+     */
     fun dispatch(action: Any /* ListAction<string> */)
+
+    /**
+     * Resets the highlighted item.
+     */
+    fun resetHighlight()
 }
 
 external interface MenuOwnProps :
     react.PropsWithChildren,
     react.PropsWithClassName {
     /**
-     * A ref with imperative actions.
-     * It allows to select the first or last menu item.
+     * A ref with imperative actions that can be performed on the menu.
      */
     var actions: react.Ref<MenuActions>?
 
@@ -35,6 +43,11 @@ external interface MenuOwnProps :
     var defaultOpen: Boolean?
 
     var listboxId: String?
+
+    /**
+     * Function called when the items displayed in the menu change.
+     */
+    var onItemsChange: ((items: ReadonlyArray<String>) -> Unit)?
 
     /**
      * Triggered when focus leaves the menu and the menu should close.

@@ -10,12 +10,13 @@ package mui.lab
 import web.cssom.ClassName
 
 // language=JavaScript
-@JsName("""(/*union*/{root: 'MuiTimelineContent-root', positionRight: 'MuiTimelineContent-positionRight', positionLeft: 'MuiTimelineContent-positionLeft', positionAlternate: 'MuiTimelineContent-positionAlternate'}/*union*/)""")
+@JsName("""(/*union*/{root: 'MuiTimelineContent-root', positionRight: 'MuiTimelineContent-positionRight', positionLeft: 'MuiTimelineContent-positionLeft', positionAlternate: 'MuiTimelineContent-positionAlternate', positionAlternateReverse: 'MuiTimelineContent-positionAlternateReverse'}/*union*/)""")
 sealed external interface MuiTimelineContent {
     companion object {
         val root: ClassName
         val positionRight: ClassName
         val positionLeft: ClassName
         val positionAlternate: ClassName
+        val positionAlternateReverse: ClassName
     }
 }

@@ -30,7 +30,7 @@ package mui.base
  *
  * Demos:
  *
- * - [Form Control](https://mui.com/base/react-form-control/)
+ * - [Form Control](https://mui.com/base-ui/react-form-control/)
  * - [Input](https://mui.com/joy-ui/react-input/)
  * - [Checkbox](https://mui.com/material-ui/react-checkbox/)
  * - [Radio Group](https://mui.com/material-ui/react-radio-button/)
@@ -39,7 +39,7 @@ package mui.base
  *
  * API:
  *
- * - [FormControl API](https://mui.com/base/react-form-control/components-api/#form-control)
+ * - [FormControl API](https://mui.com/base-ui/react-form-control/components-api/#form-control)
  */
 @JsName("default")
 external val FormControl: react.FC<FormControlProps>

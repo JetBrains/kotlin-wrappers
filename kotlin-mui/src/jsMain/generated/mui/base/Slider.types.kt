@@ -6,6 +6,14 @@ external interface SliderProps :
     SliderOwnProps,
     react.dom.html.HTMLAttributes<web.html.HTMLSpanElement>
 
+external interface SliderThumbSlotState {
+    var focused: Boolean
+
+    var active: Boolean
+
+    var index: Number
+}
+
 external interface SliderOwnProps :
     UseSliderParameters {
     /**
@@ -45,7 +53,7 @@ external interface SliderOwnProps :
         var root: react.Props? /* SlotComponentProps<'span', SliderRootSlotPropsOverrides, SliderOwnerState> */
         var track: react.Props? /* SlotComponentProps<'span', SliderTrackSlotPropsOverrides, SliderOwnerState> */
         var rail: react.Props? /* SlotComponentProps<'span', SliderRailSlotPropsOverrides, SliderOwnerState> */
-        var thumb: react.Props? /* SlotComponentProps<'span', SliderThumbSlotPropsOverrides, SliderOwnerState> */
+        var thumb: react.Props? /* SlotComponentPropsWithSlotState<'span', SliderThumbSlotPropsOverrides, SliderOwnerState, SliderThumbSlotState> */
         var mark: react.Props? /* SlotComponentProps<'span', SliderMarkSlotPropsOverrides, SliderOwnerState> */
         var markLabel: react.Props? /* SlotComponentProps<'span', SliderMarkLabelSlotPropsOverrides, SliderOwnerState> */
         var valueLabel: react.Props? /* SlotComponentProps<React.ElementType, SliderValueLabelSlotPropsOverrides, SliderOwnerState> */

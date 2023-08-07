@@ -13,11 +13,11 @@ package mui.base
  *
  * Demos:
  *
- * - [Switch](https://mui.com/base/react-switch/)
+ * - [Switch](https://mui.com/base-ui/react-switch/)
  *
  * API:
  *
- * - [Switch API](https://mui.com/base/react-switch/components-api/#switch)
+ * - [Switch API](https://mui.com/base-ui/react-switch/components-api/#switch)
  */
 @JsName("default")
 external val Switch: react.FC<SwitchProps>

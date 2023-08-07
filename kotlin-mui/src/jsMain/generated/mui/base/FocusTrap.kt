@@ -9,11 +9,11 @@ package mui.base
  *
  * Demos:
  *
- * - [Focus Trap](https://mui.com/base/react-focus-trap/)
+ * - [Focus Trap](https://mui.com/base-ui/react-focus-trap/)
  *
  * API:
  *
- * - [FocusTrap API](https://mui.com/base/react-focus-trap/components-api/#focus-trap)
+ * - [FocusTrap API](https://mui.com/base-ui/react-focus-trap/components-api/#focus-trap)
  */
 @JsName("default")
 external val FocusTrap: react.FC<FocusTrapProps>

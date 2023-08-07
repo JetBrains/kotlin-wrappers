@@ -107,6 +107,16 @@ external interface ModalOwnProps : react.Props {
 }['bivarianceHack'] */
 
     /**
+     * A function called when a transition enters.
+     */
+    var onTransitionEnter: (() -> Unit)?
+
+    /**
+     * A function called when a transition has exited.
+     */
+    var onTransitionExited: (() -> Unit)?
+
+    /**
      * If `true`, the component is shown.
      */
     var open: Boolean

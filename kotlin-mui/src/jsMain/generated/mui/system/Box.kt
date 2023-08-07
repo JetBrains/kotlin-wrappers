@@ -12,12 +12,6 @@ external interface BoxProps :
     override var children: react.ReactNode?
 
     /**
-     * The component used for the root node.
-     * Either a string to use a HTML element or a component.
-     */
-    override var component: react.ElementType<*>?
-
-    /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
     override var sx: SxProps<Theme>?

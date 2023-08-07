@@ -23,11 +23,11 @@ package mui.base
  *
  * Demos:
  *
- * - [Modal](https://mui.com/base/react-modal/)
+ * - [Modal](https://mui.com/base-ui/react-modal/)
  *
  * API:
  *
- * - [Modal API](https://mui.com/base/react-modal/components-api/#modal)
+ * - [Modal API](https://mui.com/base-ui/react-modal/components-api/#modal)
  */
 @JsName("default")
 external val Modal: react.FC<ModalProps>

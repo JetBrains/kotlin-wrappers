@@ -8,11 +8,11 @@ package mui.base
  *
  * Demos:
  *
- * - [Tabs](https://mui.com/base/react-tabs/)
+ * - [Tabs](https://mui.com/base-ui/react-tabs/)
  *
  * API:
  *
- * - [Tabs API](https://mui.com/base/react-tabs/components-api/#tabs)
+ * - [Tabs API](https://mui.com/base-ui/react-tabs/components-api/#tabs)
  */
 @JsName("default")
 external val Tabs: react.FC<TabsProps>

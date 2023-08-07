@@ -16,4 +16,7 @@ external interface TimelineContentClasses {
 
     /** Styles applied to the root element if `position="alternate"`. */
     var positionAlternate: ClassName
+
+    /** Styles applied to the root element if `position="alternate-reverse"`. */
+    var positionAlternateReverse: ClassName
 }
