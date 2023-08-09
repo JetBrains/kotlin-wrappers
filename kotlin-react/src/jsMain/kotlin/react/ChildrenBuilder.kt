@@ -14,7 +14,7 @@ import js.core.ReadonlyArray
 import js.core.Symbol
 import js.core.jso
 
-private val CHILD_ARRAY = Symbol("@@child-array")
+private val CHILD_ARRAY: Symbol = Symbol("@@child-array")
 
 internal inline var ChildrenBuilder.childArray: ReadonlyArray<ReactNode?>?
     get() = asDynamic()[CHILD_ARRAY]
