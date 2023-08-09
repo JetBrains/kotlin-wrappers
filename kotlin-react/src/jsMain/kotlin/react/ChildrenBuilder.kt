@@ -25,15 +25,15 @@ internal inline var ChildrenBuilder.childArray: ReadonlyArray<ReactNode?>?
 @ReactDsl
 sealed external interface ChildrenBuilder {
     inline operator fun ReactNode?.unaryPlus() {
-        addChild(this)
+        addChildNode(this)
     }
 
     inline operator fun String?.unaryPlus() {
-        addChild(ReactNode(this))
+        addChildNode(ReactNode(this))
     }
 
     inline operator fun Char.unaryPlus() {
-        addChild(ReactNode(this))
+        addChildNode(ReactNode(this))
     }
 
     inline fun <P : Props> child(
@@ -102,7 +102,7 @@ sealed external interface ChildrenBuilder {
 }
 
 @PublishedApi
-internal fun ChildrenBuilder.addChild(
+internal fun ChildrenBuilder.addChildNode(
     element: ReactNode?,
 ) {
     if (childArray != null) {
@@ -116,7 +116,7 @@ internal fun ChildrenBuilder.addChild(
 internal fun <P : Props> ChildrenBuilder.addChild(
     type: ElementType<P>,
 ) {
-    addChild(createElement(type))
+    addChildNode(createElement(type))
 }
 
 @PublishedApi
@@ -124,7 +124,7 @@ internal fun <P : Props> ChildrenBuilder.addChild(
     type: ElementType<P>,
     props: P,
 ) {
-    addChild(createElement(type, props))
+    addChildNode(createElement(type, props))
 }
 
 @PublishedApi
@@ -133,7 +133,7 @@ internal fun <P> ChildrenBuilder.addChild(
     block: P.() -> Unit,
 ) where P : Props,
         P : ChildrenBuilder {
-    addChild(type.create(block))
+    addChildNode(type.create(block))
 }
 
 @PublishedApi
