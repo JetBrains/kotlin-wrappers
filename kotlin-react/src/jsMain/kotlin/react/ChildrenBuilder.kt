@@ -154,7 +154,13 @@ internal fun <P> ChildrenBuilder.addChild(
     block: P.() -> Unit,
 ) where P : Props,
         P : ChildrenBuilder {
-    addChildNode(type.create(block))
+    val props: P = jso(block)
+
+    addChildElement(
+        type = type,
+        props = props,
+        children = props.childArray,
+    )
 }
 
 @PublishedApi
