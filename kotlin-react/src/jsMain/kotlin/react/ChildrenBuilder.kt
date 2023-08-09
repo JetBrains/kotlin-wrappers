@@ -137,7 +137,7 @@ private fun <P : Props> ChildrenBuilder.addChildElement(
 internal fun <P : Props> ChildrenBuilder.addChild(
     type: ElementType<P>,
 ) {
-    addChildNode(createElement(type))
+    addChildElement(type)
 }
 
 @PublishedApi
@@ -145,7 +145,7 @@ internal fun <P : Props> ChildrenBuilder.addChild(
     type: ElementType<P>,
     props: P,
 ) {
-    addChildNode(createElement(type, props))
+    addChildElement(type, props)
 }
 
 @PublishedApi
