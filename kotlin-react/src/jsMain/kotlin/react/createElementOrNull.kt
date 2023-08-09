@@ -10,16 +10,8 @@ internal fun createElementOrNull(
         .childArray
         ?: return null
 
-    if (children.isEmpty())
-        return null
-
-    if (children.size == 1) {
-        val child = children.single()
-            ?: return null
-
-        if (isValidElement(child))
-            return child.unsafeCast<ReactElement<*>>()
-    }
-
-    return createElement(Fragment, children = children)
+    return createElement(
+        type = Fragment,
+        children = children,
+    )
 }
