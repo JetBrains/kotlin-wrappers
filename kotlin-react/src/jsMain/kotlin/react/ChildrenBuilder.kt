@@ -112,6 +112,27 @@ internal fun ChildrenBuilder.addChildNode(
     }
 }
 
+private fun <P : Props> ChildrenBuilder.addChildElement(
+    type: ElementType<P>,
+    props: P? = null,
+    children: ReadonlyArray<ReactNode?>? = null,
+) {
+    val element = if (children != null) {
+        createElement(
+            type = type,
+            props = props,
+            children = children,
+        )
+    } else {
+        createElement(
+            type = type,
+            props = props,
+        )
+    }
+
+    addChildNode(element)
+}
+
 @PublishedApi
 internal fun <P : Props> ChildrenBuilder.addChild(
     type: ElementType<P>,
