@@ -11,13 +11,13 @@ sealed external interface ReactElement<P : Props> : ReactNode {
 
 external fun <P : Props> createElement(
     type: ElementType<P>,
-    props: P = definedExternally,
+    props: P? = definedExternally,
     vararg children: ReactNode?,
 ): ReactElement<P>
 
 external fun <P : Props> cloneElement(
     element: ReactElement<P>,
-    props: P = definedExternally,
+    props: P? = definedExternally,
     vararg children: ReactNode?,
 ): ReactElement<P>
 
