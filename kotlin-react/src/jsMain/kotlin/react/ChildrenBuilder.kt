@@ -14,12 +14,12 @@ import js.core.ReadonlyArray
 import js.core.Symbol
 import js.core.jso
 
-private val CHILDREN = Symbol("@@children")
+private val CHILD_ARRAY = Symbol("@@child-array")
 
-internal inline var ChildrenBuilder.children: ReadonlyArray<ReactNode?>?
-    get() = asDynamic()[CHILDREN]
+internal inline var ChildrenBuilder.childArray: ReadonlyArray<ReactNode?>?
+    get() = asDynamic()[CHILD_ARRAY]
     private set(value) {
-        asDynamic()[CHILDREN] = value
+        asDynamic()[CHILD_ARRAY] = value
     }
 
 @ReactDsl
@@ -105,10 +105,10 @@ sealed external interface ChildrenBuilder {
 internal fun ChildrenBuilder.addChild(
     element: ReactNode?,
 ) {
-    if (children != null) {
-        children.asDynamic().push(element)
+    if (childArray != null) {
+        childArray.asDynamic().push(element)
     } else {
-        children = arrayOf(element)
+        childArray = arrayOf(element)
     }
 }
 

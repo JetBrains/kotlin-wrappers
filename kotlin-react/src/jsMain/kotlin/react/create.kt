@@ -11,7 +11,7 @@ fun <P> ElementType<P>.create(
         where P : Props,
               P : ChildrenBuilder {
     val props: P = jso(block)
-    val children = props.children ?: emptyArray()
+    val children = props.childArray ?: emptyArray()
 
     return createElement(
         type = this,
