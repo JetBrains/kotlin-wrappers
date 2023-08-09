@@ -103,12 +103,12 @@ sealed external interface ChildrenBuilder {
 
 @PublishedApi
 internal fun ChildrenBuilder.addChildNode(
-    element: ReactNode?,
+    node: ReactNode?,
 ) {
     if (childArray != null) {
-        childArray.asDynamic().push(element)
+        childArray.asDynamic().push(node)
     } else {
-        childArray = arrayOf(element)
+        childArray = arrayOf(node)
     }
 }
 
