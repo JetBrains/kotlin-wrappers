@@ -24,7 +24,6 @@ private inline var ChildrenBuilder.childArray: ReadonlyArray<ReactNode?>?
 
 fun ChildrenBuilder.getChildArray(): ReadonlyArray<ReactNode?>? = childArray
 
-@ReactDsl
 sealed external interface ChildrenBuilder {
     inline operator fun ReactNode?.unaryPlus() {
         addChildNode(this)
