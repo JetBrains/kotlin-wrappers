@@ -22,7 +22,11 @@ private inline var ChildrenBuilder.childArray: ReadonlyArray<ReactNode?>?
         asDynamic()[CHILD_ARRAY] = value
     }
 
-fun ChildrenBuilder.getChildArray(): ReadonlyArray<ReactNode?>? = childArray
+fun ChildrenBuilder.getChildArray(): ReadonlyArray<ReactNode?>? =
+    asDynamic()[CHILD_ARRAY]
+
+fun Props.getChildArray(): ReadonlyArray<ReactNode?>? =
+    asDynamic()[CHILD_ARRAY]
 
 sealed external interface ChildrenBuilder {
     inline operator fun ReactNode?.unaryPlus() {
@@ -48,10 +52,9 @@ sealed external interface ChildrenBuilder {
         addChild(this)
     }
 
-    inline operator fun <P> ElementType<P>.invoke(
+    inline operator fun <P : Props> ElementType<P>.invoke(
         noinline block: @ReactDsl P.() -> Unit,
-    ) where P : Props,
-            P : ChildrenBuilder {
+    ) {
         addChild(
             type = this,
             block = block,
@@ -155,17 +158,16 @@ internal fun <P : Props> ChildrenBuilder.addChild(
 }
 
 @PublishedApi
-internal fun <P> ChildrenBuilder.addChild(
+internal fun <P : Props> ChildrenBuilder.addChild(
     type: ElementType<P>,
     block: P.() -> Unit,
-) where P : Props,
-        P : ChildrenBuilder {
+) {
     val props: P = jso(block)
 
     addChildElement(
         type = type,
         props = props,
-        children = props.childArray,
+        children = props.getChildArray(),
     )
 }
 

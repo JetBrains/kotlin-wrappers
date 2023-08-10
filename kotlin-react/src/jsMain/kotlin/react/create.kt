@@ -5,11 +5,9 @@ import js.core.jso
 fun <P : Props> ElementType<P>.create(): ReactElement<P> =
     createElement(this)
 
-fun <P> ElementType<P>.create(
+fun <P : Props> ElementType<P>.create(
     block: @ReactDsl P.() -> Unit,
-): ReactElement<P>
-        where P : Props,
-              P : ChildrenBuilder {
+): ReactElement<P> {
     val props: P = jso(block)
     val children = props.getChildArray() ?: emptyArray()
 
