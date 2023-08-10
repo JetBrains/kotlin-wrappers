@@ -7,7 +7,7 @@ internal fun createElementOrNull(
     block: ChildrenBuilder.() -> Unit,
 ): ReactElement<*>? {
     val children: ReadonlyArray<ReactNode?> = jso(block)
-        .childArray
+        .getChildArray()
         ?: return null
 
     return createElement(

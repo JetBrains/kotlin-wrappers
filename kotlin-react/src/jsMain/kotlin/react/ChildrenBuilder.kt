@@ -16,11 +16,13 @@ import js.core.jso
 
 private val CHILD_ARRAY: Symbol = Symbol("@@child-array")
 
-internal inline var ChildrenBuilder.childArray: ReadonlyArray<ReactNode?>?
+private inline var ChildrenBuilder.childArray: ReadonlyArray<ReactNode?>?
     get() = asDynamic()[CHILD_ARRAY]
-    private set(value) {
+    set(value) {
         asDynamic()[CHILD_ARRAY] = value
     }
+
+fun ChildrenBuilder.getChildArray(): ReadonlyArray<ReactNode?>? = childArray
 
 @ReactDsl
 sealed external interface ChildrenBuilder {
