@@ -14,6 +14,7 @@ import js.core.ReadonlyArray
 import js.core.Symbol
 import js.core.jso
 
+// child array
 private val CHILD_ARRAY: Symbol = Symbol("@@child-array")
 
 private inline var ChildrenBuilder.childArray: ReadonlyArray<ReactNode?>?
@@ -27,6 +28,23 @@ fun ChildrenBuilder.getChildArray(): ReadonlyArray<ReactNode?>? =
 
 fun Props.getChildArray(): ReadonlyArray<ReactNode?>? =
     asDynamic()[CHILD_ARRAY]
+
+// default key
+private val DEFAULT_KEY: Symbol = Symbol("@@default-key")
+
+private inline var ChildrenBuilder.defaultKey: Key?
+    get() = asDynamic()[DEFAULT_KEY]
+    set(value) {
+        asDynamic()[DEFAULT_KEY] = value
+    }
+
+// for compiler plugins
+private fun setDefaultKey(
+    builder: ChildrenBuilder,
+    key: Key,
+) {
+    builder.defaultKey = key
+}
 
 sealed external interface ChildrenBuilder {
     inline operator fun ReactNode?.unaryPlus() {
