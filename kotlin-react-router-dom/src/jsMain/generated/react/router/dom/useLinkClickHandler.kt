@@ -13,5 +13,5 @@ import web.uievents.MouseEvent
  */
 external fun <E : Element /* default is HTMLAnchorElement */> useLinkClickHandler(
     to: To,
-    options: UseLinkClickHandlerOptions = definedExternally
+    options: UseLinkClickHandlerOptions = definedExternally,
 ): (event: react.dom.events.MouseEvent<E, MouseEvent>) -> Unit

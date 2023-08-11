@@ -17,6 +17,15 @@ sealed external interface Navigator {
     var createHref: (to: To) -> String
     var encodeLocation: ((to: To) -> Path)?
     var go: (delta: Double) -> Unit
-    fun push(to: To, state: remix.run.router.LocationState? = definedExternally, opts: NavigateOptions = definedExternally): Unit
-    fun replace(to: To, state: remix.run.router.LocationState? = definedExternally, opts: NavigateOptions = definedExternally): Unit
+    fun push(
+        to: To,
+        state: remix.run.router.LocationState? = definedExternally,
+        opts: NavigateOptions = definedExternally,
+    ): Unit
+
+    fun replace(
+        to: To,
+        state: remix.run.router.LocationState? = definedExternally,
+        opts: NavigateOptions = definedExternally,
+    ): Unit
 }

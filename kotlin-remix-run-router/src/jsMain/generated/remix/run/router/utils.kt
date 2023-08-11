@@ -41,4 +41,11 @@ external val defer: DeferFunction
  */
 external val redirect: RedirectFunction
 
+/**
+ * A redirect response that will force a document reload to the new location.
+ * Sets the status code and the `Location` header.
+ * Defaults to "302 Found".
+ */
+external val redirectDocument: RedirectFunction
+
 /* export {}; */

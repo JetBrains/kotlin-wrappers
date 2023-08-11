@@ -18,5 +18,6 @@ typealias SubmitFunction = (
      * Options that override the `<form>`'s own attributes. Required when
      * submitting arbitrary data without a backing `<form>`.
      */
-    options: SubmitOptions? /* use undefined for default */
+    options: SubmitOptions?,
+    /* use undefined for default */
 ) -> Unit

@@ -3,4 +3,7 @@
 package react.router.dom
 
 
-external fun useFormAction(action: String = definedExternally, options: UseFormActionOptions = definedExternally): String
+external fun useFormAction(
+    action: String = definedExternally,
+    options: UseFormActionOptions = definedExternally,
+): String

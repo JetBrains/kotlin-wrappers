@@ -5,7 +5,8 @@ import remix.run.router.To
 import web.html.HTMLAnchorElement
 
 
-sealed external interface LinkProps : react.Props, react.PropsWithRef<HTMLAnchorElement>, react.dom.html.AnchorHTMLAttributes<HTMLAnchorElement> {
+sealed external interface LinkProps : react.Props, react.PropsWithRef<HTMLAnchorElement>,
+    react.dom.html.AnchorHTMLAttributes<HTMLAnchorElement> {
     var reloadDocument: Boolean?
     var replace: Boolean?
     var state: remix.run.router.LocationState?

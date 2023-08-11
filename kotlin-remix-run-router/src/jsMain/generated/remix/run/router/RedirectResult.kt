@@ -10,4 +10,5 @@ sealed external interface RedirectResult {
     var status: Double
     var location: String
     var revalidate: Boolean
+    var reloadDocument: Boolean?
 }

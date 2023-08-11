@@ -11,8 +11,10 @@ function isReactElement(node) {
 function isJsxElement(node) {
     return ts.isTypeReferenceNode(node)
         && ts.isQualifiedName(node.typeName)
-        && ts.isIdentifier(node.typeName.left)
-        && node.typeName.left.text === "JSX"
+        && ts.isQualifiedName(node.typeName.left)
+        && ts.isIdentifier(node.typeName.left.left)
+        && node.typeName.left.left.text === "React"
+        && node.typeName.left.right.text === "JSX"
         && node.typeName.right.text === "Element"
 }
 
