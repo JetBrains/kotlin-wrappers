@@ -9,6 +9,10 @@ import web.http.Request
 
 sealed external interface StaticHandler {
     var dataRoutes: js.core.ReadonlyArray<AgnosticDataRouteObject>
-    fun query(request: Request, opts: StaticHandlerQueryOpts = definedExternally): Promise<Any /* StaticHandlerContext | Response */>
+    fun query(
+        request: Request,
+        opts: StaticHandlerQueryOpts = definedExternally,
+    ): Promise<Any /* StaticHandlerContext | Response */>
+
     fun queryRoute(request: Request, opts: StaticHandlerQueryRouteOpts = definedExternally): Promise<Any?>
 }

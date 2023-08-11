@@ -8,4 +8,7 @@ package remix.run.router
  *
  * @see https://reactrouter.com/utils/generate-path
  */
-external fun generatePath(originalPath: String, params: js.core.ReadonlyRecord<String, String> = definedExternally): String
+external fun generatePath(
+    originalPath: String,
+    params: js.core.ReadonlyRecord<String, String> = definedExternally,
+): String

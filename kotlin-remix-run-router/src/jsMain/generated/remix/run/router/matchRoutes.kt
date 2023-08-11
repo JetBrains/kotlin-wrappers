@@ -11,11 +11,11 @@ package remix.run.router
 external fun <RouteObjectType : AgnosticRouteObject /* default is AgnosticRouteObject */> matchRoutes(
     routes: js.core.ReadonlyArray<RouteObjectType>,
     locationArg: Location,
-    basename: String = definedExternally
+    basename: String = definedExternally,
 ): js.core.ReadonlyArray<AgnosticRouteMatch<RouteObjectType>>?
 
 external fun <RouteObjectType : AgnosticRouteObject /* default is AgnosticRouteObject */> matchRoutes(
     routes: js.core.ReadonlyArray<RouteObjectType>,
     locationArg: String,
-    basename: String = definedExternally
+    basename: String = definedExternally,
 ): js.core.ReadonlyArray<AgnosticRouteMatch<RouteObjectType>>?
