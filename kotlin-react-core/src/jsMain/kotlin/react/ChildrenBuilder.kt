@@ -61,16 +61,6 @@ sealed external interface ChildrenBuilder {
         )
     }
 
-    @Deprecated("Unsafe call. `value` type check doesn't work")
-    inline operator fun <T, P : PropsWithValue<T>> ElementType<P>.invoke(
-        value: T,
-    ) {
-        addChild(
-            type = this,
-            props = jso { this.value = value },
-        )
-    }
-
     inline operator fun <T> Provider<T>.invoke(
         value: T,
         noinline block: @ReactDsl ChildrenBuilder.() -> Unit,
