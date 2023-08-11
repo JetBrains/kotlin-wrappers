@@ -121,23 +121,43 @@ internal fun ChildrenBuilder.addChildNode(
     }
 }
 
+private fun <P : Props> childProps(
+    props: P?,
+    defaultKey: Key?,
+): P? {
+    defaultKey ?: return props
+
+    props ?: return jso {
+        key = defaultKey
+    }
+
+    if (props.key != null)
+        return props
+
+    return jso {
+        +props
+
+        key = defaultKey
+    }
+}
+
 private fun <P : Props> ChildrenBuilder.addChildElement(
     type: ElementType<P>,
     props: P? = null,
     children: ReadonlyArray<ReactNode?>? = null,
-    @Suppress("UNUSED_PARAMETER")
     defaultKey: Key?,
 ) {
+    val childProps = childProps(props, defaultKey)
     val element = if (children != null) {
         createElement(
             type = type,
-            props = props,
+            props = childProps,
             children = children,
         )
     } else {
         createElement(
             type = type,
-            props = props,
+            props = childProps,
         )
     }
 
