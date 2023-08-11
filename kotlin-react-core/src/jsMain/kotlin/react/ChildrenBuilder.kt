@@ -32,18 +32,15 @@ fun Props.getChildArray(): ReadonlyArray<ReactNode?>? =
 // default key
 private val DEFAULT_KEY: Symbol = Symbol("@@default-key")
 
-private inline var ChildrenBuilder.defaultKey: Key?
-    get() = asDynamic()[DEFAULT_KEY]
-    set(value) {
-        asDynamic()[DEFAULT_KEY] = value
-    }
+private inline fun ChildrenBuilder.getDefaultKey(): Key? =
+    asDynamic()[DEFAULT_KEY]
 
 // for compiler plugins
 private fun setDefaultKey(
     builder: ChildrenBuilder,
     key: Key,
 ) {
-    builder.defaultKey = key
+    builder.asDynamic()[DEFAULT_KEY] = key
 }
 
 sealed external interface ChildrenBuilder {
