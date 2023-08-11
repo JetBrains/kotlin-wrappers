@@ -1,7 +1,7 @@
 package react
 
 fun FC(
-    block: ChildrenBuilder.() -> Unit,
+    block: @ReactDsl ChildrenBuilder.() -> Unit,
 ): FC<Props> {
     val component = {
         createElementOrNull(block)
@@ -10,7 +10,7 @@ fun FC(
 }
 
 fun <P : Props> FC(
-    block: ChildrenBuilder.(props: P) -> Unit,
+    block: @ReactDsl ChildrenBuilder.(props: P) -> Unit,
 ): FC<P> {
     val component = { props: P ->
         createElementOrNull { block(props) }
@@ -20,7 +20,7 @@ fun <P : Props> FC(
 
 fun FC(
     displayName: String,
-    block: ChildrenBuilder.() -> Unit,
+    block: @ReactDsl ChildrenBuilder.() -> Unit,
 ): FC<Props> {
     val component = FC(block)
     component.displayName = displayName
@@ -29,7 +29,7 @@ fun FC(
 
 fun <P : Props> FC(
     displayName: String,
-    block: ChildrenBuilder.(props: P) -> Unit,
+    block: @ReactDsl ChildrenBuilder.(props: P) -> Unit,
 ): FC<P> {
     val component = FC(block)
     component.displayName = displayName

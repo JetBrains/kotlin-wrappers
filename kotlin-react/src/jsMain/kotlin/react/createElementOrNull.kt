@@ -4,7 +4,7 @@ import js.core.ReadonlyArray
 import js.core.jso
 
 internal fun createElementOrNull(
-    block: ChildrenBuilder.() -> Unit,
+    block: @ReactDsl ChildrenBuilder.() -> Unit,
 ): ReactElement<*>? {
     val children: ReadonlyArray<ReactNode?> = jso(block)
         .getChildArray()

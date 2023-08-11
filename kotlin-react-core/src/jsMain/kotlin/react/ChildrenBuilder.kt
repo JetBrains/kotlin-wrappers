@@ -73,7 +73,7 @@ sealed external interface ChildrenBuilder {
 
     inline operator fun <T> Provider<T>.invoke(
         value: T,
-        noinline block: ChildrenBuilder.() -> Unit,
+        noinline block: @ReactDsl ChildrenBuilder.() -> Unit,
     ) {
         addChild(
             provider = this,
@@ -84,7 +84,7 @@ sealed external interface ChildrenBuilder {
 
     inline operator fun <T> Context<T>.invoke(
         value: T,
-        noinline block: ChildrenBuilder.() -> Unit,
+        noinline block: @ReactDsl ChildrenBuilder.() -> Unit,
     ) {
         addChild(
             context = this,
@@ -95,7 +95,7 @@ sealed external interface ChildrenBuilder {
 
     inline operator fun <T : Any> RequiredContext<T>.invoke(
         value: T,
-        noinline block: ChildrenBuilder.() -> Unit,
+        noinline block: @ReactDsl ChildrenBuilder.() -> Unit,
     ) {
         addChild(
             context = this,
@@ -175,7 +175,7 @@ internal fun <P : Props> ChildrenBuilder.addChild(
 internal fun <T> ChildrenBuilder.addChild(
     provider: Provider<T>,
     value: T,
-    block: ChildrenBuilder.() -> Unit,
+    block: @ReactDsl ChildrenBuilder.() -> Unit,
 ) {
     addChild(
         type = provider,
@@ -190,7 +190,7 @@ internal fun <T> ChildrenBuilder.addChild(
 internal fun <T> ChildrenBuilder.addChild(
     context: Context<T>,
     value: T,
-    block: ChildrenBuilder.() -> Unit,
+    block: @ReactDsl ChildrenBuilder.() -> Unit,
 ) {
     addChild(
         provider = context.Provider,
@@ -203,7 +203,7 @@ internal fun <T> ChildrenBuilder.addChild(
 internal fun <T : Any> ChildrenBuilder.addChild(
     context: RequiredContext<T>,
     value: T,
-    block: ChildrenBuilder.() -> Unit,
+    block: @ReactDsl ChildrenBuilder.() -> Unit,
 ) {
     addChild(
         provider = context.Provider,

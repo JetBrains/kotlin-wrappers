@@ -4,7 +4,7 @@ import js.core.Object
 import js.core.jso
 
 fun <T : Any, P : PropsWithRef<T>> ForwardRef(
-    block: ChildrenBuilder.(props: P) -> Unit,
+    block: @ReactDsl ChildrenBuilder.(props: P) -> Unit,
 ): ForwardRefExoticComponent<P> =
     rawForwardRef { props, forwardedRef ->
         val finalProps = forwardRefProps(props, forwardedRef)
