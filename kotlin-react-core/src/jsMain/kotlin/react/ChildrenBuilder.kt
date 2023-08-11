@@ -125,6 +125,8 @@ private fun <P : Props> ChildrenBuilder.addChildElement(
     type: ElementType<P>,
     props: P? = null,
     children: ReadonlyArray<ReactNode?>? = null,
+    @Suppress("UNUSED_PARAMETER")
+    defaultKey: Key?,
 ) {
     val element = if (children != null) {
         createElement(
@@ -148,6 +150,7 @@ internal fun <P : Props> ChildrenBuilder.addChild(
 ) {
     addChildElement(
         type = type,
+        defaultKey = getDefaultKey()
     )
 }
 
@@ -159,6 +162,7 @@ internal fun <P : Props> ChildrenBuilder.addChild(
     addChildElement(
         type = type,
         props = props,
+        defaultKey = getDefaultKey()
     )
 }
 
@@ -167,12 +171,14 @@ internal fun <P : Props> ChildrenBuilder.addChild(
     type: ElementType<P>,
     block: P.() -> Unit,
 ) {
+    val defaultKey = getDefaultKey()
     val props: P = jso(block)
 
     addChildElement(
         type = type,
         props = props,
         children = props.getChildArray(),
+        defaultKey = defaultKey,
     )
 }
 
