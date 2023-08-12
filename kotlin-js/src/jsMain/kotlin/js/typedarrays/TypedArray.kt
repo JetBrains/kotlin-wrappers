@@ -3,12 +3,14 @@ package js.typedarrays
 import js.buffer.ArrayBufferView
 import js.collections.ListLike
 import js.core.JsTuple2
+import js.core.MutableArrayLike
 import js.core.ReadonlyArray
 import js.iterable.IterableIterator
 
 @JsName("DONT_USE_IS_AS_OPERATORS_WITH_SYNTHETIC_TYPED_ARRAY")
 sealed external class TypedArray<S : TypedArray<S, T>, T : Comparable<T> /* Number? */> :
     ArrayBufferView,
+    MutableArrayLike<T>,
     ListLike<T> {
 
     /**
