@@ -12,6 +12,7 @@ package react
 
 import js.core.ReadonlyArray
 import js.core.Symbol
+import js.core.delete
 import js.core.jso
 
 // child array
@@ -32,8 +33,11 @@ fun Props.getChildArray(): ReadonlyArray<ReactNode?>? =
 // default key
 private val DEFAULT_KEY: Symbol = Symbol("@@default-key")
 
-private inline fun ChildrenBuilder.getDefaultKey(): Key? =
-    asDynamic()[DEFAULT_KEY]
+private fun ChildrenBuilder.getDefaultKey(): Key? {
+    val key: Key? = asDynamic()[DEFAULT_KEY]
+    delete(asDynamic()[DEFAULT_KEY])
+    return key
+}
 
 // for compiler plugins
 private fun setDefaultKey(
