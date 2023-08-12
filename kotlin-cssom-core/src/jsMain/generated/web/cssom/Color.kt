@@ -2,6 +2,7 @@
 
 @file:Suppress(
     "NAME_CONTAINS_ILLEGAL_CHARS",
+    "WRONG_EXTERNAL_DECLARATION",
 )
 
 package web.cssom
@@ -16,7 +17,8 @@ package web.cssom
 
 // language=JavaScript
 @JsName("""(/*union*/{currentcolor: 'currentcolor'}/*union*/)""")
-sealed external class Color : ColorType {
+external class Color
+private constructor() : ColorType {
     companion object {
         val currentcolor: Color
     }
