@@ -30,9 +30,11 @@ fun Props.getChildArray(): ReadonlyArray<ReactNode?>? =
     asDynamic()[CHILD_ARRAY]
 
 // default key
-private val DEFAULT_KEY: Symbol = Symbol("@@default-key")
+@PublishedApi
+internal val DEFAULT_KEY: Symbol = Symbol("@@default-key")
 
-private inline fun ChildrenBuilder.getDefaultKey(): Key? =
+@PublishedApi
+internal inline fun ChildrenBuilder.getDefaultKey(): Key? =
     asDynamic()[DEFAULT_KEY]
 
 // for compiler plugins
@@ -68,7 +70,7 @@ sealed external interface ChildrenBuilder {
     }
 
     inline operator fun <P : Props> ElementType<P>.invoke(
-        noinline block: @ReactDsl P.() -> Unit,
+        block: @ReactDsl P.() -> Unit,
     ) {
         addChild(
             type = this,
@@ -78,7 +80,7 @@ sealed external interface ChildrenBuilder {
 
     inline operator fun <T> Provider<T>.invoke(
         value: T,
-        noinline block: @ReactDsl ChildrenBuilder.() -> Unit,
+        block: @ReactDsl ChildrenBuilder.() -> Unit,
     ) {
         addChild(
             provider = this,
@@ -89,7 +91,7 @@ sealed external interface ChildrenBuilder {
 
     inline operator fun <T> Context<T>.invoke(
         value: T,
-        noinline block: @ReactDsl ChildrenBuilder.() -> Unit,
+        block: @ReactDsl ChildrenBuilder.() -> Unit,
     ) {
         addChild(
             context = this,
@@ -100,7 +102,7 @@ sealed external interface ChildrenBuilder {
 
     inline operator fun <T : Any> RequiredContext<T>.invoke(
         value: T,
-        noinline block: @ReactDsl ChildrenBuilder.() -> Unit,
+        block: @ReactDsl ChildrenBuilder.() -> Unit,
     ) {
         addChild(
             context = this,
@@ -141,7 +143,8 @@ private fun <P : Props> childProps(
     }
 }
 
-private fun <P : Props> ChildrenBuilder.addChildElement(
+@PublishedApi
+internal fun <P : Props> ChildrenBuilder.addChildElement(
     type: ElementType<P>,
     props: P? = null,
     children: ReadonlyArray<ReactNode?>? = null,
@@ -187,7 +190,7 @@ internal fun <P : Props> ChildrenBuilder.addChild(
 }
 
 @PublishedApi
-internal fun <P : Props> ChildrenBuilder.addChild(
+internal inline fun <P : Props> ChildrenBuilder.addChild(
     type: ElementType<P>,
     block: P.() -> Unit,
 ) {
@@ -203,7 +206,7 @@ internal fun <P : Props> ChildrenBuilder.addChild(
 }
 
 @PublishedApi
-internal fun <T> ChildrenBuilder.addChild(
+internal inline fun <T> ChildrenBuilder.addChild(
     provider: Provider<T>,
     value: T,
     block: @ReactDsl ChildrenBuilder.() -> Unit,
@@ -218,7 +221,7 @@ internal fun <T> ChildrenBuilder.addChild(
 }
 
 @PublishedApi
-internal fun <T> ChildrenBuilder.addChild(
+internal inline fun <T> ChildrenBuilder.addChild(
     context: Context<T>,
     value: T,
     block: @ReactDsl ChildrenBuilder.() -> Unit,
@@ -231,7 +234,7 @@ internal fun <T> ChildrenBuilder.addChild(
 }
 
 @PublishedApi
-internal fun <T : Any> ChildrenBuilder.addChild(
+internal inline fun <T : Any> ChildrenBuilder.addChild(
     context: RequiredContext<T>,
     value: T,
     block: @ReactDsl ChildrenBuilder.() -> Unit,
