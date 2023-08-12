@@ -10,6 +10,8 @@ package web.cssom
  * `Color` declared as class for better multiplatform support
  * - Java - `java.awt.Color`
  * - iOS - `platform.UIKit.UIColor`
+ *
+ * [K2 issue](https://youtrack.jetbrains.com/issue/KT-60856)
  */
 
 // language=JavaScript
