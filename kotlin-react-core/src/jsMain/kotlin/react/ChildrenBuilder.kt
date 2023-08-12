@@ -92,6 +92,15 @@ sealed external interface ChildrenBuilder {
     }
 
     inline operator fun <T> ContextType<T>.invoke(
+        noinline block: @ReactDsl ProviderProps<T>.() -> Unit,
+    ) {
+        addChild(
+            type = Provider,
+            block = block,
+        )
+    }
+
+    inline operator fun <T> ContextType<T>.invoke(
         value: T,
         noinline block: @ReactDsl ChildrenBuilder.() -> Unit,
     ) {
