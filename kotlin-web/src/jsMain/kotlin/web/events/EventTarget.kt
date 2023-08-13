@@ -20,7 +20,7 @@ open external class EventTarget : IEventTarget {
 
 fun <T : Event> EventTarget.addEventHandler(
     type: EventType<T>,
-    handler: (T) -> Unit,
+    handler: EventHandler<T>,
 ): () -> Unit =
     addEventHandler(
         type = type,
@@ -31,7 +31,7 @@ fun <T : Event> EventTarget.addEventHandler(
 fun <T : Event> EventTarget.addEventHandler(
     type: EventType<T>,
     options: AddEventListenerOptions?,
-    handler: (T) -> Unit,
+    handler: EventHandler<T>,
 ): () -> Unit {
     addEventListener(
         type = type,
