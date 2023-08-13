@@ -19,6 +19,9 @@ sealed external class RTCRtpSender {
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpSender/track) */
     val track: MediaStreamTrack?
 
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpSender/transform) */
+    var transform: RTCRtpTransform?
+
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpSender/transport) */
     val transport: RTCDtlsTransport?
 
