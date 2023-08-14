@@ -7,10 +7,7 @@
 package csstype
 
 import js.core.jso
-import web.cssom.ClassName
-import web.cssom.FontFace
-import web.cssom.MediaQuery
-import web.cssom.Selector
+import web.cssom.*
 
 interface RuleBuilder<T : Any> : Rules {
     inline fun media(
@@ -25,6 +22,20 @@ interface RuleBuilder<T : Any> : Rules {
         block: T.() -> Unit,
     ) {
         set(Selector("@media $query"), jso(block))
+    }
+
+    inline fun container(
+        query: ContainerQuery,
+        block: T.() -> Unit,
+    ) {
+        set(Selector("@container $query"), jso(block))
+    }
+
+    inline fun container(
+        query: String,
+        block: T.() -> Unit,
+    ) {
+        set(Selector("@container $query"), jso(block))
     }
 
     inline fun fontFace(
