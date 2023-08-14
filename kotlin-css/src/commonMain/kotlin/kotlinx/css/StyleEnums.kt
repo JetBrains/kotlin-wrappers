@@ -118,6 +118,26 @@ enum class Contain {
     override fun toString() = name.hyphenize()
 }
 
+class ContainerName(override val value: String) : CssValue(value) {
+    constructor(vararg value: String) : this(value.joinToString(" "))
+
+    companion object {
+        val inherit = FlexBasis("inherit")
+        val initial = FlexBasis("initial")
+        val revert = FlexBasis("revert")
+        val revertLayer = FlexBasis("revert-layer")
+        val unset = FlexBasis("unset")
+    }
+}
+
+enum class ContainerType {
+    inherit, initial, revert, revertLayer, unset,
+
+    normal, size, inlineSize;
+
+    override fun toString() = name.hyphenize()
+}
+
 enum class Cursor {
     inherit, initial, revert, revertLayer, unset,
 

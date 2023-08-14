@@ -191,6 +191,8 @@ interface CssBuilder : StyledElement, RuleContainer {
 
     fun container(query: String, block: RuleSet) = "@container $query"(block)
 
+    fun container(container: ContainerName, query: String, block: RuleSet) = "@container $container $query"(block)
+
     fun fontFace(block: RuleSet) = rule("@font-face", passStaticClassesToParent = false, repeatable = true, block = block)
 
     fun retina(block: RuleSet) {
