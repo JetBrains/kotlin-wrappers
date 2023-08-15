@@ -8,6 +8,10 @@ import node.events.EventEmitter as NodeEventEmitter
 
 
 open external class BrowserWindow : NodeEventEmitter {
+    /**
+     * BrowserWindow
+     */
+    constructor (options: BrowserWindowConstructorOptions = definedExternally)
 // Docs: https://electronjs.org/docs/api/browser-window
     /**
      * Emitted when the window is set or unset to show always on top of other windows.
@@ -519,11 +523,6 @@ open external class BrowserWindow : NodeEventEmitter {
             newBounds: Rectangle, details: WillResizeDetails
         ) -> Unit
     ): Unit /* this */
-
-    /**
-     * BrowserWindow
-     */
-    constructor (options: BrowserWindowConstructorOptions = definedExternally)
 
     /**
      * Replacement API for setBrowserView supporting work with multi browser views.

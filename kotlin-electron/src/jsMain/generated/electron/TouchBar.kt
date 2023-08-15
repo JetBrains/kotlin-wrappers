@@ -3,4 +3,6 @@
 package electron
 
 
-open external class TouchBar : electron.core.TouchBar
+open external class TouchBar : electron.core.TouchBar {
+    constructor (options: TouchBarConstructorOptions)
+}

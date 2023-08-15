@@ -3,4 +3,6 @@
 package electron.main
 
 
-open external class Notification : electron.core.Notification
+open external class Notification : electron.core.Notification {
+    constructor (options: NotificationConstructorOptions = definedExternally)
+}

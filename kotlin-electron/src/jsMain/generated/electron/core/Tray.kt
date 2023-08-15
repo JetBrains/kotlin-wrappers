@@ -2,10 +2,17 @@
 
 package electron.core
 
+import electron.NativeImage
 import node.events.EventEmitter as NodeEventEmitter
 
 
 open external class Tray : NodeEventEmitter {
+    /**
+     * Tray
+     */
+    constructor (image: NativeImage, guid: String = definedExternally)
+
+    constructor (image: String, guid: String = definedExternally)
 // Docs: https://electronjs.org/docs/api/tray
     /**
      * Emitted when the tray balloon is clicked.
@@ -547,13 +554,6 @@ open external class Tray : NodeEventEmitter {
             bounds: Rectangle
         ) -> Unit
     ): Unit /* this */
-
-    /**
-     * Tray
-     */
-    constructor (image: NativeImage, guid: String = definedExternally)
-
-    constructor (image: String, guid: String = definedExternally)
 
     /**
      * Closes an open context menu, as set by `tray.setContextMenu()`.

@@ -3,4 +3,6 @@
 package electron
 
 
-open external class BrowserView : electron.core.BrowserView
+open external class BrowserView : electron.core.BrowserView {
+    constructor (options: BrowserViewConstructorOptions = definedExternally)
+}

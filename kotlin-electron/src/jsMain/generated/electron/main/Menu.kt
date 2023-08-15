@@ -3,4 +3,6 @@
 package electron.main
 
 
-open external class Menu : electron.core.Menu
+open external class Menu : electron.core.Menu {
+    constructor ()
+}

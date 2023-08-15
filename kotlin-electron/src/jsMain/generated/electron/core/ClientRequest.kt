@@ -7,6 +7,12 @@ import node.events.EventEmitter as NodeEventEmitter
 
 
 external class ClientRequest : NodeEventEmitter {
+    /**
+     * ClientRequest
+     */
+    constructor (options: ClientRequestConstructorOptions)
+
+    constructor (options: String)
 // Docs: https://electronjs.org/docs/api/client-request
     /**
      * Emitted when the `request` is aborted. The `abort` event will not be fired if
@@ -169,13 +175,6 @@ external class ClientRequest : NodeEventEmitter {
             response: IncomingMessage
         ) -> Unit
     ): Unit /* this */
-
-    /**
-     * ClientRequest
-     */
-    constructor (options: ClientRequestConstructorOptions)
-
-    constructor (options: String)
 
     /**
      * Cancels an ongoing HTTP transaction. If the request has already emitted the

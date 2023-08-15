@@ -4,6 +4,10 @@ package electron.core
 
 
 open external class Menu {
+    /**
+     * Menu
+     */
+    constructor ()
 // Docs: https://electronjs.org/docs/api/menu
     /**
      * Emitted when a popup is closed either manually or with `menu.closePopup()`.
@@ -20,11 +24,6 @@ open external class Menu {
     fun addListener(event: MenuEvent.MENU_WILL_SHOW, listener: (event: Event) -> Unit): Unit /* this */
     fun removeListener(event: MenuEvent.MENU_WILL_CLOSE, listener: (event: Event) -> Unit): Unit /* this */
     fun removeListener(event: MenuEvent.MENU_WILL_SHOW, listener: (event: Event) -> Unit): Unit /* this */
-
-    /**
-     * Menu
-     */
-    constructor ()
 
     /**
      * Appends the `menuItem` to the menu.

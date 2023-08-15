@@ -6,6 +6,11 @@ import node.events.EventEmitter as NodeEventEmitter
 
 
 open external class Notification : NodeEventEmitter {
+    /**
+     * Notification
+     */
+    constructor (options: NotificationConstructorOptions = definedExternally)
+
     // Docs: https://electronjs.org/docs/api/notification
     fun on(
         event: NotificationEvent.ACTION, listener: (
@@ -167,11 +172,6 @@ open external class Notification : NodeEventEmitter {
     ): Unit /* this */
 
     fun removeListener(event: NotificationEvent.SHOW, listener: (event: Event) -> Unit): Unit /* this */
-
-    /**
-     * Notification
-     */
-    constructor (options: NotificationConstructorOptions = definedExternally)
 
     /**
      * Dismisses the notification.

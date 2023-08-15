@@ -3,4 +3,6 @@
 package electron
 
 
-open external class MenuItem : electron.core.MenuItem
+open external class MenuItem : electron.core.MenuItem {
+    constructor (options: MenuItemConstructorOptions)
+}

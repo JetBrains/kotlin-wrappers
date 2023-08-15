@@ -159,7 +159,8 @@
             "node.events.EventEmitter as NodeEventEmitter"
         ],
         "Tray.kt": [
-            "node.events.EventEmitter as NodeEventEmitter"
+            "node.events.EventEmitter as NodeEventEmitter",
+            "electron.NativeImage"
         ],
         "UploadData.kt": [
             "node.buffer.Buffer"
