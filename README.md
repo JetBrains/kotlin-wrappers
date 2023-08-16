@@ -73,7 +73,7 @@ Just declare `kotlin-wrappers-bom` and specify the modules you need:
 val kotlinWrappersVersion = "1.0.0-pre.615"
 
 dependencies {
-    implementation(enforcedPlatform("org.jetbrains.kotlin-wrappers:kotlin-wrappers-bom:$kotlinWrappersVersion"))
+    implementation(platform("org.jetbrains.kotlin-wrappers:kotlin-wrappers-bom:$kotlinWrappersVersion"))
     implementation("org.jetbrains.kotlin-wrappers:kotlin-emotion")
     implementation("org.jetbrains.kotlin-wrappers:kotlin-react")
     implementation("org.jetbrains.kotlin-wrappers:kotlin-react-dom")
@@ -91,7 +91,7 @@ fun kotlinw(target: String): String =
 val kotlinWrappersVersion = "1.0.0-pre.615"
 
 dependencies {
-    implementation(enforcedPlatform(kotlinw("wrappers-bom:$kotlinWrappersVersion")))
+    implementation(platform(kotlinw("wrappers-bom:$kotlinWrappersVersion")))
     implementation(kotlinw("emotion"))
     implementation(kotlinw("react"))
     implementation(kotlinw("react-dom"))
