@@ -16,6 +16,9 @@ external class Notification(
     title: String,
     options: NotificationOptions = definedExternally,
 ) : EventTarget {
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/badge) */
+    val badge: String
+
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/body) */
     val body: String
 
