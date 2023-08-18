@@ -28,12 +28,12 @@ inline fun url(
     "url($value)".unsafeCast<Url>()
 
 inline fun <T : Any> `var`(
-    name: Variable<T>,
+    name: CustomPropertyName<T>,
 ): T? =
     "var($name)".unsafeCast<T?>()
 
 inline fun <T : Any> `var`(
-    name: Variable<T>,
+    name: CustomPropertyName<T>,
     fallback: T,
 ): T =
     "var($name,$fallback)".unsafeCast<T>()

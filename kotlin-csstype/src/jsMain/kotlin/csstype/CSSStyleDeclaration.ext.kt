@@ -1,13 +1,13 @@
 package csstype
 
 import web.cssom.CSSStyleDeclaration
-import web.cssom.Variable
+import web.cssom.CustomPropertyName
 
 operator fun <T : Any> CSSStyleDeclaration.get(
-    variable: Variable<T>,
+    name: CustomPropertyName<T>,
 ): T? {
     val value = getPropertyValue(
-        property = variable.unsafeCast<String>(),
+        property = name.unsafeCast<String>(),
     )
 
     return if (value.isNotEmpty()) {
@@ -16,11 +16,11 @@ operator fun <T : Any> CSSStyleDeclaration.get(
 }
 
 inline operator fun <T : Any> CSSStyleDeclaration.set(
-    variable: Variable<T>,
+    name: CustomPropertyName<T>,
     value: T?,
 ) {
     setProperty(
-        property = variable.unsafeCast<String>(),
+        property = name.unsafeCast<String>(),
         value = value.unsafeCast<String?>(),
     )
 }

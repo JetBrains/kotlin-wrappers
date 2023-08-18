@@ -2,8 +2,8 @@
 
 package csstype
 
+import web.cssom.CustomProperties
 import web.cssom.StandardProperties
-import web.cssom.VariableRecord
 
 @CssDsl
-external interface Properties : StandardProperties, VariableRecord
+external interface Properties : StandardProperties, CustomProperties

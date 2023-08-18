@@ -6,17 +6,17 @@
 
 package web.cssom
 
-external interface VariableRecord {
+external interface CustomProperties {
     @nativeGetter
     @Suppress("DEPRECATION")
     operator fun <T : Any> get(
-        name: Variable<T>,
+        name: CustomPropertyName<T>,
     ): T?
 
     @nativeSetter
     @Suppress("DEPRECATION")
     operator fun <T : Any> set(
-        name: Variable<T>,
+        name: CustomPropertyName<T>,
         value: T?,
     )
 }
