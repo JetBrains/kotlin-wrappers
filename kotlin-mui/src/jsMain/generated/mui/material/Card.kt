@@ -12,7 +12,7 @@ import mui.material.styles.Theme
 import mui.system.SxProps
 
 external interface CardProps :
-    PaperOwnProps,
+    PaperProps,
     mui.system.PropsWithSx,
     mui.types.PropsWithComponent {
     /**
