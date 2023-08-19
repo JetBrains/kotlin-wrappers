@@ -9,6 +9,7 @@ import mui.system.SxProps
 
 external interface FormLabelProps :
     react.dom.html.LabelHTMLAttributes<web.html.HTMLLabelElement>,
+    mui.types.PropsWithComponent,
     FormLabelOwnProps
 
 external interface FormLabelOwnProps :

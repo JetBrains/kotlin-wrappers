@@ -4,7 +4,14 @@
 
 package mui.lab
 
-external interface TabListProps : react.Props
+external interface TabListProps :
+    react.PropsWithChildren,
+    mui.types.PropsWithComponent {
+    /**
+     * A list of `<Tab />` elements.
+     */
+    override var children: react.ReactNode?
+}
 
 /**
  *

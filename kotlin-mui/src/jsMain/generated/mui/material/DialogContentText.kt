@@ -4,7 +4,22 @@
 
 package mui.material
 
-external interface DialogContentTextProps : react.Props
+import mui.material.styles.Theme
+import mui.system.SxProps
+
+external interface DialogContentTextProps :
+    mui.system.PropsWithSx,
+    mui.types.PropsWithComponent {
+    /**
+     * Override or extend the styles applied to the component.
+     */
+    var classes: DialogContentTextClasses?
+
+    /**
+     * The system prop that allows defining system overrides as well as additional CSS styles.
+     */
+    override var sx: SxProps<Theme>?
+}
 
 /**
  *
