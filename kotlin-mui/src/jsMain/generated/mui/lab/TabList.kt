@@ -5,6 +5,7 @@
 package mui.lab
 
 external interface TabListProps :
+    mui.material.TabsProps,
     react.PropsWithChildren,
     mui.types.PropsWithComponent {
     /**

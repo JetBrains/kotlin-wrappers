@@ -8,13 +8,10 @@ import mui.material.styles.Theme
 import mui.system.SxProps
 
 external interface TypographyProps :
-    TypographyOwnProps,
     react.dom.html.HTMLAttributes<web.html.HTMLSpanElement>,
-    mui.types.PropsWithComponent
-
-external interface TypographyOwnProps :
     react.PropsWithChildren,
-    mui.system.PropsWithSx {
+    mui.system.PropsWithSx,
+    mui.types.PropsWithComponent {
     /**
      * Set the text-align on the component.
      * @default 'inherit'

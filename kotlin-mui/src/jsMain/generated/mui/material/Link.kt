@@ -26,7 +26,7 @@ external interface LinkProps :
      * The color of the link.
      * @default 'primary'
      */
-    var color: dynamic /* TypographyOwnProps['color'] */
+    var color: dynamic /* TypographyProps['color'] */
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
@@ -48,7 +48,7 @@ external interface LinkProps :
      * Applies the theme typography styles.
      * @default 'inherit'
      */
-    var variant: dynamic /* TypographyOwnProps['variant'] */
+    var variant: dynamic /* TypographyProps['variant'] */
 }
 
 /**

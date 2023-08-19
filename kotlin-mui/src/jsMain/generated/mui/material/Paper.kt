@@ -8,13 +8,10 @@ import mui.material.styles.Theme
 import mui.system.SxProps
 
 external interface PaperProps :
-    PaperOwnProps,
     react.dom.html.HTMLAttributes<web.html.HTMLDivElement>,
-    mui.types.PropsWithComponent
-
-external interface PaperOwnProps :
     react.PropsWithChildren,
-    mui.system.PropsWithSx {
+    mui.system.PropsWithSx,
+    mui.types.PropsWithComponent {
     /**
      * The content of the component.
      */
