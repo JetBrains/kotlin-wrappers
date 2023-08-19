@@ -3,7 +3,13 @@
 package mui.system
 
 external interface StackProps :
-    StackBaseProps
+    StackBaseProps,
+    PropsWithSx {
+    /**
+     * The system prop, which allows defining system overrides as well as additional CSS styles.
+     */
+    override var sx: SxProps<Theme>?
+}
 
 external interface StackBaseProps : react.PropsWithChildren {
     /**
