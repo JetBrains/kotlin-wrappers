@@ -13,10 +13,20 @@ import mui.system.SxProps
 import web.cssom.ClassName
 
 external interface BadgeProps :
-    mui.base.BadgeProps,
+    BadgeOwnProps,
+    react.dom.html.HTMLAttributes<web.html.HTMLSpanElement>,
+    mui.types.PropsWithComponent
+
+external interface BadgeOrigin {
+    var vertical: BadgeOriginVertical
+
+    var horizontal: BadgeOriginHorizontal
+}
+
+external interface BadgeOwnProps :
+    react.PropsWithChildren,
     react.PropsWithClassName,
-    mui.system.PropsWithSx,
-    mui.types.PropsWithComponent {
+    mui.system.PropsWithSx {
     /**
      * The anchor of the badge.
      * @default {
@@ -25,6 +35,16 @@ external interface BadgeProps :
      * }
      */
     var anchorOrigin: BadgeOrigin?
+
+    /**
+     * The content rendered within the badge.
+     */
+    var badgeContent: react.ReactNode?
+
+    /**
+     * The badge will be added relative to this node.
+     */
+    override var children: react.ReactNode?
 
     /**
      * Override or extend the styles applied to the component.
@@ -71,10 +91,51 @@ external interface BadgeProps :
     }
 
     /**
+     * If `true`, the badge is invisible.
+     * @default false
+     */
+    var invisible: Boolean?
+
+    /**
+     * Max count to show.
+     * @default 99
+     */
+    var max: Number?
+
+    /**
      * Wrapped shape the badge should overlap.
      * @default 'rectangular'
      */
     var overlap: BadgeOverlap?
+
+    /**
+     * The props used for each slot inside the Badge.
+     * @default {}
+     */
+    var slotProps: SlotProps?
+
+    interface SlotProps {
+        var root: react.Props? /* SlotComponentProps<'span', BadgeRootSlotPropsOverrides, BadgeOwnerState> */
+        var badge: react.Props? /* SlotComponentProps<'span', BadgeBadgeSlotPropsOverrides, BadgeOwnerState> */
+    }
+
+    /**
+     * The components used for each slot inside the Badge.
+     * Either a string to use a HTML element or a component.
+     * @default {}
+     */
+    var slots: Slots?
+
+    interface Slots {
+        var root: react.ElementType<*>?
+        var badge: react.ElementType<*>?
+    }
+
+    /**
+     * Controls whether the badge is hidden when `badgeContent` is zero.
+     * @default false
+     */
+    var showZero: Boolean?
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
@@ -86,12 +147,6 @@ external interface BadgeProps :
      * @default 'standard'
      */
     var variant: BadgeVariant?
-}
-
-external interface BadgeOrigin {
-    var vertical: BadgeOriginVertical
-
-    var horizontal: BadgeOriginHorizontal
 }
 
 /**
