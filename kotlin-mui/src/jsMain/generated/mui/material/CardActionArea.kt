@@ -14,6 +14,7 @@ import web.cssom.ClassName
 
 external interface CardActionAreaProps :
     mui.system.PropsWithSx,
+    mui.types.PropsWithComponent,
     ButtonBaseProps {
     /**
      * Override or extend the styles applied to the component.

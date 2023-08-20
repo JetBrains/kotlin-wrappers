@@ -10,7 +10,8 @@ import mui.system.SxProps
 external interface AccordionSummaryProps :
     react.dom.html.HTMLAttributes<web.html.HTMLDivElement>,
     react.PropsWithChildren,
-    mui.system.PropsWithSx {
+    mui.system.PropsWithSx,
+    mui.types.PropsWithComponent {
     /**
      * The content of the component.
      */

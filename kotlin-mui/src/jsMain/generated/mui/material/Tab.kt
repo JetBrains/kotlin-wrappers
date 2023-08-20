@@ -13,7 +13,8 @@ import mui.system.SxProps
 
 external interface TabProps :
     react.dom.html.HTMLAttributes<web.html.HTMLDivElement>,
-    mui.system.PropsWithSx {
+    mui.system.PropsWithSx,
+    mui.types.PropsWithComponent {
     /**
      * This prop isn't supported.
      * Use the `component` prop if you need to change the children structure.
