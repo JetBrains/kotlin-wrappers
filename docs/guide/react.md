@@ -71,15 +71,12 @@ loops, etc.
 ### Defining a component without properties
 
 As we've seen, if you don't need any special props in your component, you can use `FC<Props>`.
-If you want to simplify, you can use the `VFC` (Void Function Component) convenience function instead:
 
 ```kotlin
-private val SimpleComponent = VFC("SimpleComponent") {
+private val SimpleComponent = FC<Props>("SimpleComponent") {
     // ...
 }
 ```
-
-`VFC` is also a typealias for the `FC<Props>`.
 
 ### What about class components?
 
@@ -294,7 +291,7 @@ fun useCards(): List<String> {
     return cardsInDeck
 }
 // now we can use this hook in any component!
-val randomFact = VFC {
+val randomFact = FC<Props> {
     val cardsInDeck = useCards()
     h3 {
         for (card in cardsInDeck) {
