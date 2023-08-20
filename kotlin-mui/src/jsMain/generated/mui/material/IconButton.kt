@@ -2,6 +2,10 @@
 
 @file:JsModule("@mui/material/IconButton")
 
+@file:Suppress(
+    "VAR_TYPE_MISMATCH_ON_OVERRIDE",
+)
+
 package mui.material
 
 import mui.material.styles.Theme
@@ -10,7 +14,8 @@ import mui.system.SxProps
 external interface IconButtonProps :
     react.dom.html.ButtonHTMLAttributes<web.html.HTMLButtonElement>,
     react.PropsWithChildren,
-    mui.system.PropsWithSx {
+    mui.system.PropsWithSx,
+    ButtonBaseProps {
     /**
      * The icon to display.
      */
@@ -19,7 +24,7 @@ external interface IconButtonProps :
     /**
      * Override or extend the styles applied to the component.
      */
-    var classes: IconButtonClasses?
+    override var classes: IconButtonClasses?
 
     /**
      * The color of the component.

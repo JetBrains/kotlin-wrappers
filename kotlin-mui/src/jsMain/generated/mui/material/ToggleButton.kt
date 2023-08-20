@@ -14,7 +14,8 @@ import mui.system.SxProps
 external interface ToggleButtonProps :
     react.dom.html.ButtonHTMLAttributes<web.html.HTMLButtonElement>,
     react.PropsWithChildren,
-    mui.system.PropsWithSx {
+    mui.system.PropsWithSx,
+    ButtonBaseProps {
     /**
      * The content of the component.
      */
