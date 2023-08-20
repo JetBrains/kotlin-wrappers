@@ -76,7 +76,7 @@ external interface UseListParameters<ItemValue, State, CustomAction, CustomActio
     var isItemDisabled: ((itemValue: ItemValue, index: Number) -> Boolean)?
 
     /**
-     * Ref of the list root DOM element.
+     * Ref to the list root DOM element.
      */
     var rootRef: react.Ref<web.dom.Element>?
 

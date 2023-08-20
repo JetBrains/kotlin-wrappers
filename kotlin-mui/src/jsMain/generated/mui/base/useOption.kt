@@ -5,6 +5,6 @@
 package mui.base
 
 @JsName("default")
-external fun useOption(
-    params: UseOptionParameters,
+external fun <Value> useOption(
+    params: UseOptionParameters<Value>,
 ): UseOptionReturnValue

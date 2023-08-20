@@ -5,7 +5,7 @@ package mui.base
 import js.core.ReadonlyArray
 import web.html.HTMLElement
 
-external interface CreateFilterOptionsConfig<T> {
+external interface CreateFilterOptionsConfig<Value> {
     var ignoreAccents: Boolean?
 
     var ignoreCase: Boolean?
@@ -14,15 +14,15 @@ external interface CreateFilterOptionsConfig<T> {
 
     var matchFrom: MatchFrom?
 
-    var stringify: ((option: T) -> String)?
+    var stringify: ((option: Value) -> String)?
 
     var trim: Boolean?
 }
 
-external interface FilterOptionsState<T> {
+external interface FilterOptionsState<Value> {
     var inputValue: String
 
-    var getOptionLabel: (option: T) -> String
+    var getOptionLabel: (option: Value) -> String
 }
 
 external interface AutocompleteGroupedOption {
@@ -35,7 +35,7 @@ external interface AutocompleteGroupedOption {
     var options: dynamic
 }
 
-external interface UseAutocompleteProps<T> : react.Props {
+external interface UseAutocompleteProps<Value> : react.Props {
     /**
      * @internal The prefix of the state class name, temporary for Joy UI
      * @default 'Mui'
@@ -145,11 +145,11 @@ external interface UseAutocompleteProps<T> : react.Props {
      * A function that determines the filtered options to be rendered on search.
      *
      * @default createFilterOptions()
-     * @param {T[]} options The options to render.
+     * @param {Value[]} options The options to render.
      * @param {object} state The state of the component.
-     * @returns {T[]}
+     * @returns {Value[]}
      */
-    var filterOptions: ((options: ReadonlyArray<T>, state: FilterOptionsState<T>) -> ReadonlyArray<T>)?
+    var filterOptions: ((options: ReadonlyArray<Value>, state: FilterOptionsState<Value>) -> ReadonlyArray<Value>)?
 
     /**
      * If `true`, hide the selected options from the list box.
@@ -166,10 +166,10 @@ external interface UseAutocompleteProps<T> : react.Props {
     /**
      * Used to determine the disabled state for a given option.
      *
-     * @param {T} option The option to test.
+     * @param {Value} option The option to test.
      * @returns {boolean}
      */
-    var getOptionDisabled: ((option: T) -> Boolean)?
+    var getOptionDisabled: ((option: Value) -> Boolean)?
 
     /**
      * Used to determine the string value for a given option.
@@ -177,20 +177,20 @@ external interface UseAutocompleteProps<T> : react.Props {
      *
      * If used in free solo mode, it must accept both the type of the options and a string.
      *
-     * @param {T} option
+     * @param {Value} option
      * @returns {string}
      * @default (option) => option.label ?? option
      */
-    var getOptionLabel: ((option: T /* or AutocompleteFreeSoloValueMapping<FreeSolo> */) -> String)?
+    var getOptionLabel: ((option: Value /* or AutocompleteFreeSoloValueMapping<FreeSolo> */) -> String)?
 
     /**
      * If provided, the options will be grouped under the returned string.
      * The groupBy value is also used as the text for group headings when `renderGroup` is not provided.
      *
-     * @param {T} options The options to group.
+     * @param {Value} options The options to group.
      * @returns {string}
      */
-    var groupBy: ((option: T) -> String)?
+    var groupBy: ((option: Value) -> String)?
 
     /**
      * If `true`, the component handles the "Home" and "End" keys when the popup is open.
@@ -221,11 +221,11 @@ external interface UseAutocompleteProps<T> : react.Props {
      * Uses strict equality by default.
      * ⚠️ Both arguments need to be handled, an option can only match with one value.
      *
-     * @param {T} option The option to test.
-     * @param {T} value The value to test against.
+     * @param {Value} option The option to test.
+     * @param {Value} value The value to test against.
      * @returns {boolean}
      */
-    var isOptionEqualToValue: ((option: T, value: T) -> Boolean)?
+    var isOptionEqualToValue: ((option: Value, value: Value) -> Boolean)?
 
     /**
      * If `true`, `value` must be an array and the menu will support multiple selections.
@@ -237,7 +237,7 @@ external interface UseAutocompleteProps<T> : react.Props {
      * Callback fired when the value changes.
      *
      * @param {React.SyntheticEvent} event The event source of the callback.
-     * @param {T|T[]} value The new value of the component.
+     * @param {Value|Value[]} value The new value of the component.
      * @param {string} reason One of "createOption", "selectOption", "removeOption", "blur" or "clear".
      * @param {string} [details]
      */
@@ -245,7 +245,7 @@ external interface UseAutocompleteProps<T> : react.Props {
         event: react.dom.events.SyntheticEvent<*, *>,
         value: dynamic,
         reason: AutocompleteChangeReason,
-        details: AutocompleteChangeDetails<T>?,
+        details: AutocompleteChangeDetails<Value>?,
     ) -> Unit)?
 
     /**
@@ -261,12 +261,12 @@ external interface UseAutocompleteProps<T> : react.Props {
      * Callback fired when the highlight option changes.
      *
      * @param {React.SyntheticEvent} event The event source of the callback.
-     * @param {T} option The highlighted option.
+     * @param {Value} option The highlighted option.
      * @param {string} reason Can be: `"keyboard"`, `"auto"`, `"mouse"`, `"touch"`.
      */
     var onHighlightChange: ((
         event: react.dom.events.SyntheticEvent<*, *>,
-        option: T?,
+        option: Value?,
         reason: AutocompleteHighlightChangeReason,
     ) -> Unit)?
 
@@ -305,7 +305,7 @@ external interface UseAutocompleteProps<T> : react.Props {
     /**
      * Array of options.
      */
-    var options: ReadonlyArray<T>
+    var options: ReadonlyArray<Value>
 
     /**
      * If `true`, the component becomes readonly. It is also supported for multiple tags where the tag cannot be deleted.
@@ -326,20 +326,20 @@ external interface UseAutocompleteProps<T> : react.Props {
      * The value must have reference equality with the option in order to be selected.
      * You can customize the equality behavior with the `isOptionEqualToValue` prop.
      */
-    var value: Any? /* AutocompleteValue<T, Multiple, DisableClearable, FreeSolo> */
+    var value: Any? /* AutocompleteValue<Value, Multiple, DisableClearable, FreeSolo> */
 }
 
-external interface AutocompleteChangeDetails<T> {
-    var option: T
+external interface AutocompleteChangeDetails<Value> {
+    var option: Value
 }
 
-external interface UseAutocompleteRenderedOption<T> {
-    var option: T
+external interface UseAutocompleteRenderedOption<Value> {
+    var option: Value
 
     var index: Number
 }
 
-external interface UseAutocompleteReturnValue<T> {
+external interface UseAutocompleteReturnValue<Value> {
     /**
      * Resolver for the root slot's props.
      * @param externalProps props for the root slot
@@ -388,7 +388,7 @@ external interface UseAutocompleteReturnValue<T> {
      * @returns props that should be spread on the li element
      */
     var getOptionProps: (
-        renderedOption: UseAutocompleteRenderedOption<T>,
+        renderedOption: UseAutocompleteRenderedOption<Value>,
     ) -> react.dom.html.HTMLAttributes<web.html.HTMLLIElement>
 
     /**
@@ -404,7 +404,7 @@ external interface UseAutocompleteReturnValue<T> {
     /**
      * The value of the autocomplete.
      */
-    var value: Any /* AutocompleteValue<T, Multiple, DisableClearable, FreeSolo> */
+    var value: Any /* AutocompleteValue<Value, Multiple, DisableClearable, FreeSolo> */
 
     /**
      * If `true`, the component input has some values.
@@ -443,7 +443,7 @@ external interface UseAutocompleteReturnValue<T> {
     var focusedTag: Number
 
     /**
-     * The options to render. It's either `T[]` or `AutocompleteGroupedOption<T>[]` if the groupBy prop is provided.
+     * The options to render. It's either `Value[]` or `AutocompleteGroupedOption<Value>[]` if the groupBy prop is provided.
      */
-    var groupedOptions: Any /* T[] | Array<AutocompleteGroupedOption<T>> */
+    var groupedOptions: Any /* Value[] | Array<AutocompleteGroupedOption<Value>> */
 }

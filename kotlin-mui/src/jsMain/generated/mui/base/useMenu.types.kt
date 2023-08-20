@@ -6,16 +6,9 @@ import js.core.ReadonlyArray
 
 external interface UseMenuParameters {
     /**
-     * If `true`, the menu will be initially open.
-     * @default false
+     * The id of the menu. If not provided, it will be generated.
      */
-    var defaultOpen: Boolean?
-
-    /**
-     * If `true`, the menu will be open.
-     * This is the controlled equivalent of the `defaultOpen` parameter.
-     */
-    var open: Boolean?
+    var id: String?
 
     /**
      * Callback fired when the menu items change.
@@ -23,17 +16,7 @@ external interface UseMenuParameters {
     var onItemsChange: ((items: ReadonlyArray<String>) -> Unit)?
 
     /**
-     * Callback fired when the menu is opened or closed.
-     */
-    var onOpenChange: ((open: Boolean) -> Unit)?
-
-    /**
-     * Id of the menu listbox.
-     */
-    var listboxId: String?
-
-    /**
-     * Ref of the menu listbox.
+     * The ref to the menu's listbox node.
      */
     var listboxRef: react.Ref<web.dom.Element>?
 }
@@ -51,7 +34,7 @@ external interface UseMenuReturnValue {
     var dispatch: (action: Any /* ListAction<string> */) -> Unit
 
     /**
-     * Resolver for the listbox component's props.
+     * Resolver for the listbox slot's props.
      * @param otherHandlers event handlers for the listbox component
      * @returns props that should be spread on the listbox component
      */
@@ -63,7 +46,7 @@ external interface UseMenuReturnValue {
     var highlightedValue: String?
 
     /**
-     * The ref to the listbox DOM node.
+     * The ref to the menu's listbox node.
      */
     var listboxRef: react.RefCallback<web.dom.Element>?
 
@@ -76,11 +59,9 @@ external interface UseMenuReturnValue {
      * If `true`, the menu is open.
      */
     var open: Boolean
-}
 
-external interface MenuInternalState {
     /**
-     * If `true`, the menu is open.
+     * An element that triggers the visibility of the menu.
      */
-    var open: Boolean
+    var triggerElement: web.html.HTMLElement?
 }

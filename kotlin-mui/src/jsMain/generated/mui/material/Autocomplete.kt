@@ -8,8 +8,8 @@ import js.core.ReadonlyArray
 import mui.material.styles.Theme
 import mui.system.SxProps
 
-external interface AutocompleteProps<T> :
-    mui.base.UseAutocompleteProps<T>,
+external interface AutocompleteProps<Value> :
+    mui.base.UseAutocompleteProps<Value>,
     mui.system.StandardProps,
     react.dom.html.HTMLAttributes<web.html.HTMLDivElement>,
     mui.system.PropsWithSx {
@@ -184,30 +184,30 @@ external interface AutocompleteProps<T> :
      * Render the option, use `getOptionLabel` by default.
      *
      * @param {object} props The props to apply on the li element.
-     * @param {T} option The option to render.
+     * @param {Value} option The option to render.
      * @param {object} state The state of each option.
      * @param {object} ownerState The state of the Autocomplete component.
      * @returns {ReactNode}
      */
     var renderOption: ((
         props: react.dom.html.HTMLAttributes<web.html.HTMLLIElement>,
-        option: T,
+        option: Value,
         state: AutocompleteRenderOptionState,
-        ownerState: AutocompleteProps<T>, /* AutocompleteOwnerState<T> */
+        ownerState: AutocompleteProps<Value>, /* AutocompleteOwnerState<Value> */
     ) -> react.ReactNode)?
 
     /**
      * Render the selected value.
      *
-     * @param {T[]} value The `value` provided to the component.
+     * @param {Value[]} value The `value` provided to the component.
      * @param {function} getTagProps A tag props getter.
      * @param {object} ownerState The state of the Autocomplete component.
      * @returns {ReactNode}
      */
     var renderTags: ((
-        value: ReadonlyArray<T>,
+        value: ReadonlyArray<Value>,
         getTagProps: Function<*>, /* AutocompleteRenderGetTagProps */
-        ownerState: AutocompleteProps<T>, /* AutocompleteOwnerState<T> */
+        ownerState: AutocompleteProps<Value>, /* AutocompleteOwnerState<Value> */
     ) -> react.ReactNode)?
 
     /**

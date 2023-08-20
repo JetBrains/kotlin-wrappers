@@ -2,12 +2,18 @@
 
 @file:JsModule("@mui/material/CardHeader")
 
+@file:Suppress(
+    "VAR_TYPE_MISMATCH_ON_OVERRIDE",
+)
+
 package mui.material
 
 import mui.material.styles.Theme
 import mui.system.SxProps
 
-external interface CardHeaderProps : mui.system.PropsWithSx {
+external interface CardHeaderProps :
+    react.dom.html.HTMLAttributes<web.html.HTMLDivElement>,
+    mui.system.PropsWithSx {
     /**
      * The action to display in the card header.
      */
@@ -51,7 +57,7 @@ external interface CardHeaderProps : mui.system.PropsWithSx {
     /**
      * The content of the component.
      */
-    var title: react.ReactNode?
+    override var title: react.ReactNode?
 
     /**
      * These props will be forwarded to the title

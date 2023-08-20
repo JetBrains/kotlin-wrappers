@@ -7,7 +7,7 @@ import web.cssom.ClassName
 
 external interface MenuProps :
     MenuOwnProps,
-    react.dom.html.HTMLAttributes<web.html.HTMLUListElement>
+    react.dom.html.HTMLAttributes<web.html.HTMLDivElement>
 
 external interface MenuActions {
     /**
@@ -29,36 +29,14 @@ external interface MenuOwnProps :
      */
     var actions: react.Ref<MenuActions>?
 
-    /**
-     * An HTML element, [virtualElement](https://popper.js.org/docs/v2/virtual-elements/),
-     * or a function that returns either.
-     * It's used to set the position of the popper.
-     */
-    var anchorEl: dynamic /* PopperProps['anchorEl'] */
-
     override var children: react.ReactNode?
 
     override var className: ClassName?
-
-    var defaultOpen: Boolean?
-
-    var listboxId: String?
 
     /**
      * Function called when the items displayed in the menu change.
      */
     var onItemsChange: ((items: ReadonlyArray<String>) -> Unit)?
-
-    /**
-     * Triggered when focus leaves the menu and the menu should close.
-     */
-    var onOpenChange: ((open: Boolean) -> Unit)?
-
-    /**
-     * Controls whether the menu is displayed.
-     * @default false
-     */
-    var open: Boolean?
 
     /**
      * The props used for each slot inside the Menu.
@@ -67,7 +45,7 @@ external interface MenuOwnProps :
     var slotProps: SlotProps?
 
     interface SlotProps {
-        var root: react.Props? /* SlotComponentProps<typeof Popper, MenuRootSlotPropsOverrides, MenuOwnerState> */
+        var root: react.Props? /* SlotComponentProps<'div', MenuRootSlotPropsOverrides, MenuOwnerState> & Partial<React.ComponentPropsWithoutRef<typeof Popper>> */
         var listbox: react.Props? /* SlotComponentProps<'ul', MenuListboxSlotPropsOverrides, MenuOwnerState> */
     }
 
@@ -81,8 +59,8 @@ external interface MenuOwnProps :
 
 external interface MenuSlots {
     /**
-     * The component that renders the root.
-     * @default Popper
+     * The component that renders the popup element.
+     * @default 'div'
      */
     var root: react.ElementType<*>?
 

@@ -2,30 +2,6 @@
 
 package mui.base
 
-external interface UseButtonRootSlotOwnProps : react.Props {
-    // var `aria-disabled`: dynamic /* React.AriaAttributes['aria-disabled'] */
-
-    var disabled: Boolean?
-
-    var tabIndex: Int?
-
-    var type: dynamic /* React.ButtonHTMLAttributes<HTMLButtonElement>['type'] */
-
-    var role: react.dom.aria.AriaRole?
-
-    var onBlur: react.dom.events.FocusEventHandler<*>
-
-    var onFocus: react.dom.events.FocusEventHandler<*>
-
-    var onKeyDown: dynamic
-
-    var onKeyUp: dynamic
-
-    var onMouseDown: react.dom.events.MouseEventHandler<*>
-
-    var onMouseLeave: react.dom.events.MouseEventHandler<*>
-}
-
 external interface UseButtonParameters {
     /**
      * If `true`, the component is disabled.
@@ -54,6 +30,30 @@ external interface UseButtonParameters {
      * @default 'button'
      */
     var type: dynamic /* React.ButtonHTMLAttributes<HTMLButtonElement>['type'] */
+}
+
+external interface UseButtonRootSlotOwnProps : react.Props {
+    // var `aria-disabled`: dynamic /* React.AriaAttributes['aria-disabled'] */
+
+    var disabled: Boolean?
+
+    var tabIndex: Int?
+
+    var type: dynamic /* React.ButtonHTMLAttributes<HTMLButtonElement>['type'] */
+
+    var role: react.dom.aria.AriaRole?
+
+    var onBlur: react.dom.events.FocusEventHandler<*>
+
+    var onFocus: react.dom.events.FocusEventHandler<*>
+
+    var onKeyDown: dynamic
+
+    var onKeyUp: dynamic
+
+    var onMouseDown: react.dom.events.MouseEventHandler<*>
+
+    var onMouseLeave: react.dom.events.MouseEventHandler<*>
 }
 
 external interface UseButtonReturnValue {
