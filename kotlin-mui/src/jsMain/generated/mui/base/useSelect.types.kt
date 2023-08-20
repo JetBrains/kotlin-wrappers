@@ -103,7 +103,7 @@ external interface UseSelectParameters<OptionValue, Multiple> {
     var value: Any? /* SelectValue<OptionValue, Multiple> */
 }
 
-external interface UseSelectReturnValue<Value> {
+external interface UseSelectReturnValue<Value, Multiple> {
     /**
      * If `true`, the trigger button is active (pressed).
      */
