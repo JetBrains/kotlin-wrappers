@@ -15,7 +15,8 @@ external interface AccordionProps :
     react.dom.html.HTMLAttributes<web.html.HTMLDivElement>,
     react.PropsWithChildren,
     mui.system.PropsWithSx,
-    mui.types.PropsWithComponent {
+    mui.types.PropsWithComponent,
+    PaperProps {
     /**
      * The content of the component.
      */
