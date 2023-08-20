@@ -10,12 +10,14 @@ package mui.material
 import web.cssom.ClassName
 
 // language=JavaScript
-@JsName("""(/*union*/{root: 'MuiCheckbox-root', indeterminate: 'MuiCheckbox-indeterminate', colorPrimary: 'MuiCheckbox-colorPrimary', colorSecondary: 'MuiCheckbox-colorSecondary'}/*union*/)""")
+@JsName("""(/*union*/{root: 'MuiCheckbox-root', indeterminate: 'MuiCheckbox-indeterminate', colorPrimary: 'MuiCheckbox-colorPrimary', colorSecondary: 'MuiCheckbox-colorSecondary', sizeSmall: 'MuiCheckbox-sizeSmall', sizeMedium: 'MuiCheckbox-sizeMedium'}/*union*/)""")
 sealed external interface MuiCheckbox {
     companion object {
         val root: ClassName
         val indeterminate: ClassName
         val colorPrimary: ClassName
         val colorSecondary: ClassName
+        val sizeSmall: ClassName
+        val sizeMedium: ClassName
     }
 }

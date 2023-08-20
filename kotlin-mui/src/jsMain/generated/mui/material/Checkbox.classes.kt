@@ -5,7 +5,7 @@ package mui.material
 import web.cssom.ClassName
 
 external interface CheckboxClasses {
-    /** Styles applied to the root element. */
+    /** Class name applied to the root element. */
     var root: ClassName
 
     /** State class applied to the root element if `checked={true}`. */
@@ -17,9 +17,15 @@ external interface CheckboxClasses {
     /** State class applied to the root element if `indeterminate={true}`. */
     var indeterminate: ClassName
 
-    /** Styles applied to the root element if `color="primary"`. */
+    /** State class applied to the root element if `color="primary"`. */
     var colorPrimary: ClassName
 
-    /** Styles applied to the root element if `color="secondary"`. */
+    /** State class applied to the root element if `color="secondary"`. */
     var colorSecondary: ClassName
+
+    /** State class applied to the root element if `size="small"`. */
+    var sizeSmall: ClassName
+
+    /** State class applied to the root element if `size="medium"`. */
+    var sizeMedium: ClassName
 }
