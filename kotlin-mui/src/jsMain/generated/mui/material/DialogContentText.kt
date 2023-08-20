@@ -2,18 +2,23 @@
 
 @file:JsModule("@mui/material/DialogContentText")
 
+@file:Suppress(
+    "VAR_TYPE_MISMATCH_ON_OVERRIDE",
+)
+
 package mui.material
 
 import mui.material.styles.Theme
 import mui.system.SxProps
 
 external interface DialogContentTextProps :
+    TypographyProps,
     mui.system.PropsWithSx,
     mui.types.PropsWithComponent {
     /**
      * Override or extend the styles applied to the component.
      */
-    var classes: DialogContentTextClasses?
+    override var classes: DialogContentTextClasses?
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.

@@ -2,12 +2,17 @@
 
 @file:JsModule("@mui/material/DialogTitle")
 
+@file:Suppress(
+    "VAR_TYPE_MISMATCH_ON_OVERRIDE",
+)
+
 package mui.material
 
 import mui.material.styles.Theme
 import mui.system.SxProps
 
 external interface DialogTitleProps :
+    TypographyProps,
     react.PropsWithChildren,
     mui.system.PropsWithSx,
     mui.types.PropsWithComponent {
@@ -19,7 +24,7 @@ external interface DialogTitleProps :
     /**
      * Override or extend the styles applied to the component.
      */
-    var classes: DialogTitleClasses?
+    override var classes: DialogTitleClasses?
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
