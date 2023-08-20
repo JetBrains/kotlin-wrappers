@@ -14,6 +14,7 @@ import mui.system.SxProps
 import web.cssom.ClassName
 
 external interface ModalProps :
+    react.dom.html.HTMLAttributes<web.html.HTMLDivElement>,
     react.PropsWithClassName,
     mui.system.PropsWithSx,
     mui.types.PropsWithComponent,

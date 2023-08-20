@@ -11,7 +11,7 @@ package mui.material
 import mui.material.styles.Theme
 import mui.system.SxProps
 
-external interface SelectProps<T> :
+external interface SelectProps<Value> :
     mui.system.StandardProps,
     InputProps,
     react.PropsWithChildren,
@@ -47,7 +47,7 @@ external interface SelectProps<T> :
     /**
      * The default value. Use when the component is not controlled.
      */
-    var defaultValue: T?
+    var defaultValue: Value?
 
     /**
      * If `true`, a value is displayed even if no items are selected.
@@ -114,7 +114,7 @@ external interface SelectProps<T> :
     /**
      * Callback fired when a menu item is selected.
      *
-     * @param {SelectChangeEvent<T>} event The event source of the callback.
+     * @param {SelectChangeEvent<Value>} event The event source of the callback.
      * You can pull out the new value by accessing `event.target.value` (any).
      * **Warning**: This is a generic event, not a change event, unless the change event is caused by browser autofill.
      * @param {object} [child] The react element that was selected when `native` is `false` (default).
@@ -150,7 +150,7 @@ external interface SelectProps<T> :
      * @param {any} value The `value` provided to the component.
      * @returns {ReactNode}
      */
-    var renderValue: ((value: T) -> react.ReactNode)?
+    var renderValue: ((value: Value) -> react.ReactNode)?
 
     /**
      * Props applied to the clickable div element.

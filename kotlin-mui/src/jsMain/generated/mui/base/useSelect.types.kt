@@ -2,8 +2,8 @@
 
 package mui.base
 
-external interface SelectOptionDefinition {
-    var value: Any
+external interface SelectOptionDefinition<Value> {
+    var value: Value
 
     var disabled: Boolean?
 
@@ -160,7 +160,7 @@ external interface UseSelectReturnValue<Value> {
     /**
      * The value of the highlighted option.
      */
-    var highlightedOption: dynamic
+    var highlightedOption: Value?
 
     /**
      * Ref to the listbox slot DOM node.

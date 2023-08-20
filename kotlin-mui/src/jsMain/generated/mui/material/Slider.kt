@@ -10,6 +10,7 @@ import web.cssom.ClassName
 import web.events.Event
 
 external interface SliderProps :
+    react.dom.html.HTMLAttributes<web.html.HTMLSpanElement>,
     react.PropsWithClassName,
     mui.system.PropsWithSx,
     mui.types.PropsWithComponent {
@@ -96,7 +97,7 @@ external interface SliderProps :
     /**
      * The default value. Use when the component is not controlled.
      */
-    var defaultValue: dynamic
+    override var defaultValue: dynamic
 
     /**
      * If `true`, the component is disabled.
@@ -252,7 +253,7 @@ external interface SliderProps :
     /**
      * Tab index attribute of the hidden `input` element.
      */
-    var tabIndex: Int?
+    override var tabIndex: Int?
 
     /**
      * The track presentation:

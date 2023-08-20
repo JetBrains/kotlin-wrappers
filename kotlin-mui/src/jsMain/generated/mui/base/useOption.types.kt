@@ -2,8 +2,8 @@
 
 package mui.base
 
-external interface SelectOption<TValue> {
-    var value: Any
+external interface SelectOption<Value> {
+    var value: Value
 
     var label: react.ReactNode
 
@@ -12,12 +12,12 @@ external interface SelectOption<TValue> {
     var id: String?
 }
 
-external interface UseOptionParameters {
+external interface UseOptionParameters<Value> {
     var disabled: Boolean
 
     var label: react.ReactNode
 
-    var value: Any
+    var value: Value
 
     var rootRef: react.Ref<web.dom.Element>?
 
