@@ -2,19 +2,25 @@
 
 @file:JsModule("@mui/material/CardActionArea")
 
+@file:Suppress(
+    "VAR_TYPE_MISMATCH_ON_OVERRIDE",
+)
+
 package mui.material
 
 import mui.material.styles.Theme
 import mui.system.SxProps
 import web.cssom.ClassName
 
-external interface CardActionAreaProps : mui.system.PropsWithSx {
+external interface CardActionAreaProps :
+    mui.system.PropsWithSx,
+    ButtonBaseProps {
     /**
      * Override or extend the styles applied to the component.
      */
-    var classes: CardActionAreaClasses?
+    override var classes: CardActionAreaClasses?
 
-    var focusVisibleClassName: ClassName?
+    override var focusVisibleClassName: ClassName?
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.

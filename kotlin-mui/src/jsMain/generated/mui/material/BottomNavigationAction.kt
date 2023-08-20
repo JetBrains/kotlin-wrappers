@@ -2,6 +2,10 @@
 
 @file:JsModule("@mui/material/BottomNavigationAction")
 
+@file:Suppress(
+    "VAR_TYPE_MISMATCH_ON_OVERRIDE",
+)
+
 package mui.material
 
 import mui.material.styles.Theme
@@ -9,7 +13,8 @@ import mui.system.SxProps
 
 external interface BottomNavigationActionProps :
     react.PropsWithChildren,
-    mui.system.PropsWithSx {
+    mui.system.PropsWithSx,
+    ButtonBaseProps {
     /**
      * This prop isn't supported.
      * Use the `component` prop if you need to change the children structure.
@@ -19,7 +24,7 @@ external interface BottomNavigationActionProps :
     /**
      * Override or extend the styles applied to the component.
      */
-    var classes: BottomNavigationActionClasses?
+    override var classes: BottomNavigationActionClasses?
 
     /**
      * The icon to display.
@@ -48,7 +53,7 @@ external interface BottomNavigationActionProps :
     /**
      * You can provide your own value. Otherwise, we fallback to the child position index.
      */
-    var value: Any?
+    override var value: Any?
 }
 
 /**

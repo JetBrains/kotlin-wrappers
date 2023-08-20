@@ -2,6 +2,10 @@
 
 @file:JsModule("@mui/material/Fab")
 
+@file:Suppress(
+    "VAR_TYPE_MISMATCH_ON_OVERRIDE",
+)
+
 package mui.material
 
 import mui.material.styles.Theme
@@ -10,7 +14,8 @@ import mui.system.SxProps
 external interface FabProps :
     react.dom.html.ButtonHTMLAttributes<web.html.HTMLButtonElement>,
     react.PropsWithChildren,
-    mui.system.PropsWithSx {
+    mui.system.PropsWithSx,
+    ButtonBaseProps {
     /**
      * The content of the component.
      */
@@ -19,7 +24,7 @@ external interface FabProps :
     /**
      * Override or extend the styles applied to the component.
      */
-    var classes: FabClasses?
+    override var classes: FabClasses?
 
     /**
      * The color of the component.
@@ -44,7 +49,7 @@ external interface FabProps :
     /**
      * If `true`, the ripple effect is disabled.
      */
-    var disableRipple: Boolean?
+    override var disableRipple: Boolean?
 
     /**
      * The URL to link to when the button is clicked.

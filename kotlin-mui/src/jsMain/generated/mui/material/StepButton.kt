@@ -2,6 +2,10 @@
 
 @file:JsModule("@mui/material/StepButton")
 
+@file:Suppress(
+    "VAR_TYPE_MISMATCH_ON_OVERRIDE",
+)
+
 package mui.material
 
 import mui.material.styles.Theme
@@ -9,7 +13,8 @@ import mui.system.SxProps
 
 external interface StepButtonProps :
     react.PropsWithChildren,
-    mui.system.PropsWithSx {
+    mui.system.PropsWithSx,
+    ButtonBaseProps {
     /**
      * Can be a `StepLabel` or a node to place inside `StepLabel` as children.
      */
@@ -18,7 +23,7 @@ external interface StepButtonProps :
     /**
      * Override or extend the styles applied to the component.
      */
-    var classes: StepButtonClasses?
+    override var classes: StepButtonClasses?
 
     /**
      * The icon displayed by the step label.
