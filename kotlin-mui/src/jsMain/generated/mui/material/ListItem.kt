@@ -9,7 +9,8 @@ import mui.system.SxProps
 
 external interface ListItemProps :
     ListItemBaseProps,
-    react.dom.html.HTMLAttributes<web.html.HTMLElement> {
+    react.dom.html.HTMLAttributes<web.html.HTMLElement>,
+    mui.types.PropsWithComponent {
     /**
      * The components used for each slot inside.
      *

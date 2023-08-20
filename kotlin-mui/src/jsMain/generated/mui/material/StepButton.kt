@@ -14,6 +14,7 @@ import mui.system.SxProps
 external interface StepButtonProps :
     react.PropsWithChildren,
     mui.system.PropsWithSx,
+    mui.types.PropsWithComponent,
     ButtonBaseProps {
     /**
      * Can be a `StepLabel` or a node to place inside `StepLabel` as children.

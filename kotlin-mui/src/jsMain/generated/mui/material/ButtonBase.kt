@@ -11,7 +11,8 @@ import web.cssom.ClassName
 external interface ButtonBaseProps :
     react.dom.html.ButtonHTMLAttributes<web.html.HTMLButtonElement>,
     react.PropsWithChildren,
-    mui.system.PropsWithSx {
+    mui.system.PropsWithSx,
+    mui.types.PropsWithComponent {
     /**
      * A ref for imperative actions.
      * It currently only supports `focusVisible()` action.

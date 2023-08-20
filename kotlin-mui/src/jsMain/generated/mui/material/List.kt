@@ -10,7 +10,8 @@ import mui.system.SxProps
 external interface ListProps :
     react.dom.html.HTMLAttributes<web.html.HTMLUListElement>,
     react.PropsWithChildren,
-    mui.system.PropsWithSx {
+    mui.system.PropsWithSx,
+    mui.types.PropsWithComponent {
     /**
      * The content of the component.
      */

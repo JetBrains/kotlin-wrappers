@@ -14,6 +14,7 @@ import mui.system.SxProps
 external interface BottomNavigationActionProps :
     react.PropsWithChildren,
     mui.system.PropsWithSx,
+    mui.types.PropsWithComponent,
     ButtonBaseProps {
     /**
      * This prop isn't supported.

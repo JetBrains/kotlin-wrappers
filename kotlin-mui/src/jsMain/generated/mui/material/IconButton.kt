@@ -15,6 +15,7 @@ external interface IconButtonProps :
     react.dom.html.ButtonHTMLAttributes<web.html.HTMLButtonElement>,
     react.PropsWithChildren,
     mui.system.PropsWithSx,
+    mui.types.PropsWithComponent,
     ButtonBaseProps {
     /**
      * The icon to display.
