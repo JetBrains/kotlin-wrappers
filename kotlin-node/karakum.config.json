@@ -1,0 +1,37 @@
+{
+    "input": [
+        "<nodeModules>/@types/node/dgram.d.ts"
+    ],
+    "output": "src/jsMain/generated",
+    "libraryName": "node",
+    "libraryNameOutputPrefix": true,
+    "granularity": "top-level",
+    "moduleNameMapper": {
+        "^node/dgram": "node:dgram",
+        "^dgram": "node:dgram"
+    },
+    "packageNameMapper": {
+        "^node/dgram/namespace.kt": "node/dgram/nodeNamespace.kt",
+        "^node/dgram.kt": "node/dgram/dgram.kt",
+        "^dgram": "node/dgram"
+    },
+    "importInjector": {
+        "createSocket.kt": [
+            "node.buffer.Buffer"
+        ],
+        "Socket.kt": [
+            "js.core.ReadonlyArray",
+            "js.typedarrays.Uint8Array",
+            "node.buffer.Buffer",
+            "node.events.EventEmitter",
+            "node.net.AddressInfo"
+        ],
+        "SocketOptions.kt": [
+            "node.events.Abortable"
+        ]
+    },
+    "namespaceStrategy": {
+        "dgram": "package",
+        "node:dgram": "ignore"
+    }
+}
