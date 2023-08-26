@@ -99,12 +99,7 @@ external class Socket : EventEmitter {
      * @since v0.1.99
      * @param callback with no parameters. Called when binding is complete.
      */
-    fun bind(
-        port: Double = definedExternally,
-        address: String = definedExternally,
-        callback: () -> Unit = definedExternally,
-    ): Unit /* this */
-
+    fun bind(port: Double = definedExternally, address: String = definedExternally, callback: () -> Unit = definedExternally): Unit /* this */
     fun bind(port: Double = definedExternally, callback: () -> Unit = definedExternally): Unit /* this */
     fun bind(callback: () -> Unit = definedExternally): Unit /* this */
     fun bind(options: BindOptions, callback: () -> Unit = definedExternally): Unit /* this */
@@ -282,45 +277,16 @@ external class Socket : EventEmitter {
      * @param address Destination host name or IP address.
      * @param callback Called when the message has been sent.
      */
-    fun send(
-        msg: String,
-        port: Double = definedExternally,
-        address: String = definedExternally,
-        callback: (error: Error?, bytes: Double) -> Unit = definedExternally,
-    ): Unit
+    fun send(msg: String, port: Double = definedExternally, address: String = definedExternally, callback: (error: Error?, bytes: Double) -> Unit = definedExternally)
 
-    fun send(
-        msg: Uint8Array,
-        port: Double = definedExternally,
-        address: String = definedExternally,
-        callback: (error: Error?, bytes: Double) -> Unit = definedExternally,
-    ): Unit
+    fun send(msg: Uint8Array, port: Double = definedExternally, address: String = definedExternally, callback: (error: Error?, bytes: Double) -> Unit = definedExternally): Unit
 
-    fun send(
-        msg: ReadonlyArray<Any?>,
-        port: Double = definedExternally,
-        address: String = definedExternally,
-        callback: (error: Error?, bytes: Double) -> Unit = definedExternally,
-    ): Unit
+    fun send(msg: ReadonlyArray<Any?>, port: Double = definedExternally, address: String = definedExternally, callback: (error: Error?, bytes: Double) -> Unit = definedExternally): Unit
+    fun send(msg: String, port: Double = definedExternally, callback: (error: Error?, bytes: Double) -> Unit = definedExternally): Unit
 
-    fun send(
-        msg: String,
-        port: Double = definedExternally,
-        callback: (error: Error?, bytes: Double) -> Unit = definedExternally,
-    ): Unit
+    fun send(msg: Uint8Array, port: Double = definedExternally, callback: (error: Error?, bytes: Double) -> Unit = definedExternally): Unit
 
-    fun send(
-        msg: Uint8Array,
-        port: Double = definedExternally,
-        callback: (error: Error?, bytes: Double) -> Unit = definedExternally,
-    ): Unit
-
-    fun send(
-        msg: ReadonlyArray<Any?>,
-        port: Double = definedExternally,
-        callback: (error: Error?, bytes: Double) -> Unit = definedExternally,
-    ): Unit
-
+    fun send(msg: ReadonlyArray<Any?>, port: Double = definedExternally, callback: (error: Error?, bytes: Double) -> Unit = definedExternally): Unit
     fun send(msg: String, callback: (error: Error?, bytes: Double) -> Unit = definedExternally): Unit
 
     fun send(msg: Uint8Array, callback: (error: Error?, bytes: Double) -> Unit = definedExternally): Unit
@@ -332,7 +298,7 @@ external class Socket : EventEmitter {
         length: Double,
         port: Double = definedExternally,
         address: String = definedExternally,
-        callback: (error: Error?, bytes: Double) -> Unit = definedExternally,
+        callback: (error: Error?, bytes: Double) -> Unit = definedExternally
     ): Unit
 
     fun send(
@@ -341,38 +307,15 @@ external class Socket : EventEmitter {
         length: Double,
         port: Double = definedExternally,
         address: String = definedExternally,
-        callback: (error: Error?, bytes: Double) -> Unit = definedExternally,
+        callback: (error: Error?, bytes: Double) -> Unit = definedExternally
     ): Unit
 
-    fun send(
-        msg: String,
-        offset: Double,
-        length: Double,
-        port: Double = definedExternally,
-        callback: (error: Error?, bytes: Double) -> Unit = definedExternally,
-    ): Unit
+    fun send(msg: String, offset: Double, length: Double, port: Double = definedExternally, callback: (error: Error?, bytes: Double) -> Unit = definedExternally): Unit
 
-    fun send(
-        msg: Uint8Array,
-        offset: Double,
-        length: Double,
-        port: Double = definedExternally,
-        callback: (error: Error?, bytes: Double) -> Unit = definedExternally,
-    ): Unit
+    fun send(msg: Uint8Array, offset: Double, length: Double, port: Double = definedExternally, callback: (error: Error?, bytes: Double) -> Unit = definedExternally): Unit
+    fun send(msg: String, offset: Double, length: Double, callback: (error: Error?, bytes: Double) -> Unit = definedExternally): Unit
 
-    fun send(
-        msg: String,
-        offset: Double,
-        length: Double,
-        callback: (error: Error?, bytes: Double) -> Unit = definedExternally,
-    ): Unit
-
-    fun send(
-        msg: Uint8Array,
-        offset: Double,
-        length: Double,
-        callback: (error: Error?, bytes: Double) -> Unit = definedExternally,
-    ): Unit
+    fun send(msg: Uint8Array, offset: Double, length: Double, callback: (error: Error?, bytes: Double) -> Unit = definedExternally): Unit
 
     /**
      * Sets or clears the `SO_BROADCAST` socket option. When set to `true`, UDP
@@ -523,11 +466,7 @@ external class Socket : EventEmitter {
      * port, listening on all interfaces.
      * @since v13.1.0, v12.16.0
      */
-    fun addSourceSpecificMembership(
-        sourceAddress: String,
-        groupAddress: String,
-        multicastInterface: String = definedExternally,
-    ): Unit
+    fun addSourceSpecificMembership(sourceAddress: String, groupAddress: String, multicastInterface: String = definedExternally): Unit
 
     /**
      * Instructs the kernel to leave a source-specific multicast channel at the given`sourceAddress` and `groupAddress` using the `IP_DROP_SOURCE_MEMBERSHIP`socket option. This method is
@@ -539,11 +478,7 @@ external class Socket : EventEmitter {
      * drop membership on all valid interfaces.
      * @since v13.1.0, v12.16.0
      */
-    fun dropSourceSpecificMembership(
-        sourceAddress: String,
-        groupAddress: String,
-        multicastInterface: String = definedExternally,
-    ): Unit
+    fun dropSourceSpecificMembership(sourceAddress: String, groupAddress: String, multicastInterface: String = definedExternally): Unit
 
     /**
      * events.EventEmitter
@@ -590,8 +525,5 @@ external class Socket : EventEmitter {
     fun prependOnceListener(event: SocketEvent.CONNECT, listener: () -> Unit): Unit /* this */
     fun prependOnceListener(event: SocketEvent.ERROR, listener: (err: Error) -> Unit): Unit /* this */
     fun prependOnceListener(event: SocketEvent.LISTENING, listener: () -> Unit): Unit /* this */
-    fun prependOnceListener(
-        event: SocketEvent.MESSAGE,
-        listener: (msg: Buffer, rinfo: RemoteInfo) -> Unit,
-    ): Unit /* this */
+    fun prependOnceListener(event: SocketEvent.MESSAGE, listener: (msg: Buffer, rinfo: RemoteInfo) -> Unit): Unit /* this */
 }

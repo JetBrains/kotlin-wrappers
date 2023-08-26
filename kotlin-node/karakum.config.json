@@ -1,37 +1,58 @@
 {
     "input": [
-        "<nodeModules>/@types/node/dgram.d.ts"
+        "<nodeModules>/@types/node/dgram.d.ts",
+        "<nodeModules>/@types/node/dns.d.ts"
     ],
     "output": "src/jsMain/generated",
+    "ignoreOutput": [
+        "**/__promisify__.kt",
+
+        "**/dns/lookupservice/**",
+        "**/dns/resolve/**"
+    ],
     "libraryName": "node",
     "libraryNameOutputPrefix": true,
     "granularity": "top-level",
     "moduleNameMapper": {
         "^node/dgram": "node:dgram",
-        "^dgram": "node:dgram"
+        "^dgram": "node:dgram",
+
+        "^node/dns": "node:dns",
+        "^dns": "node:dns"
     },
     "packageNameMapper": {
         "^node/dgram/namespace.kt": "node/dgram/nodeNamespace.kt",
         "^node/dgram.kt": "node/dgram/dgram.kt",
-        "^dgram": "node/dgram"
+        "^dgram": "node/dgram",
+
+        "^node/dns/namespace.kt": "node/dns/nodeNamespace.kt",
+        "^node/dns.kt": "node/dns/dns.kt",
+        "^dns": "node/dns"
     },
     "importInjector": {
-        "createSocket.kt": [
+        "dgram/createSocket.kt": [
             "node.buffer.Buffer"
         ],
-        "Socket.kt": [
+        "dgram/Socket.kt": [
             "js.core.ReadonlyArray",
             "js.typedarrays.Uint8Array",
             "node.buffer.Buffer",
             "node.events.EventEmitter",
             "node.net.AddressInfo"
         ],
-        "SocketOptions.kt": [
+        "dgram/SocketOptions.kt": [
             "node.events.Abortable"
+        ],
+
+        "dns/setServers.kt": [
+            "js.core.ReadonlyArray"
         ]
     },
     "namespaceStrategy": {
         "dgram": "package",
-        "node:dgram": "ignore"
+        "node:dgram": "ignore",
+
+        "dns": "package",
+        "node:dns": "ignore"
     }
 }
