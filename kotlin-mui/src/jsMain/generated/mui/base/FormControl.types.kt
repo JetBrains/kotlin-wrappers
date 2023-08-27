@@ -8,11 +8,13 @@ external interface FormControlProps :
     FormControlOwnProps,
     react.dom.html.HTMLAttributes<web.html.HTMLDivElement>
 
-external interface FormControlOwnProps : react.PropsWithClassName {
+external interface FormControlOwnProps :
+    react.PropsWithChildren,
+    react.PropsWithClassName {
     /**
      * The content of the component.
      */
-    var children: react.ReactNode? /* or (state: FormControlState) -> react.ReactNode*/
+    override var children: react.ReactNode?
 
     /**
      * Class name applied to the root element.
