@@ -8,7 +8,7 @@ external interface ClickAwayListenerProps : react.PropsWithChildren {
     /**
      * The wrapped element.
      */
-    override var children: react.ReactNode?
+    override var children: react.ReactNode? /* react.ReactElement<*>? */
 
     /**
      * If `true`, the React tree is ignored and only the DOM tree is considered.

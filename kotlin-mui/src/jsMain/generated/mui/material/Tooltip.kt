@@ -25,7 +25,7 @@ external interface TooltipProps :
     /**
      * Tooltip reference element.
      */
-    override var children: react.ReactNode?
+    override var children: react.ReactNode? /* react.ReactElement<*>? */
 
     /**
      * Override or extend the styles applied to the component.

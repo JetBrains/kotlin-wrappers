@@ -32,7 +32,7 @@ external interface FocusTrapProps : react.PropsWithChildren {
     /**
      * A single child content element.
      */
-    override var children: react.ReactNode?
+    override var children: react.ReactNode? /* react.ReactElement<*>? */
 
     /**
      * If `true`, the focus trap will not automatically shift focus to itself when it opens, and

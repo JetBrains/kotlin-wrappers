@@ -19,7 +19,7 @@ external interface SlideProps :
     /**
      * A single child content element.
      */
-    override var children: react.ReactNode?
+    override var children: react.ReactNode? /* react.ReactElement<*>? */
 
     /**
      * An HTML element, or a function that returns one.

@@ -309,7 +309,7 @@ external interface SliderOwnerState {
 external interface SliderValueLabelProps :
     react.dom.html.HTMLAttributes<web.html.HTMLSpanElement>,
     react.PropsWithChildren {
-    override var children: react.ReactNode?
+    override var children: react.ReactNode? /* react.ReactElement<*>? */
 
     var index: Number
 

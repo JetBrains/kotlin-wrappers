@@ -17,7 +17,7 @@ external interface GrowProps :
     /**
      * A single child content element.
      */
-    override var children: react.ReactNode?
+    override var children: react.ReactNode? /* react.ReactElement<*>? */
 
     /**
      * The transition timing function.
