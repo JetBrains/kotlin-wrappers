@@ -28,7 +28,7 @@ external interface UseInputParameters {
 
     var onFocus: react.dom.events.FocusEventHandler<web.html.HTMLElement>?
 
-    var inputRef: react.Ref<web.html.HTMLInputElement /* or web.html.HTMLTextAreaElement*/>?
+    var inputRef: react.Ref<dynamic>?
 
     /**
      * If `true`, the `input` element is required.

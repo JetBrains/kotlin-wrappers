@@ -16,6 +16,7 @@ import web.dom.Element
 
 external interface ModalProps :
     react.dom.html.HTMLAttributes<web.html.HTMLDivElement>,
+    react.PropsWithChildren,
     react.PropsWithClassName,
     mui.system.PropsWithSx,
     mui.types.PropsWithComponent,
@@ -45,7 +46,7 @@ external interface ModalProps :
     /**
      * A single child content element.
      */
-    var children: react.ReactNode?
+    override var children: react.ReactNode?
 
     /**
      * Override or extend the styles applied to the component.

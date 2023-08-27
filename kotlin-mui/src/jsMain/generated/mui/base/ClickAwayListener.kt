@@ -4,11 +4,11 @@
 
 package mui.base
 
-external interface ClickAwayListenerProps : react.Props {
+external interface ClickAwayListenerProps : react.PropsWithChildren {
     /**
      * The wrapped element.
      */
-    var children: react.ReactElement<*>
+    override var children: react.ReactNode?
 
     /**
      * If `true`, the React tree is ignored and only the DOM tree is considered.

@@ -307,8 +307,9 @@ external interface SliderOwnerState {
 
 @Suppress("VIRTUAL_MEMBER_HIDDEN")
 external interface SliderValueLabelProps :
-    react.dom.html.HTMLAttributes<web.html.HTMLSpanElement> {
-    var children: react.ReactElement<*>
+    react.dom.html.HTMLAttributes<web.html.HTMLSpanElement>,
+    react.PropsWithChildren {
+    override var children: react.ReactNode?
 
     var index: Number
 

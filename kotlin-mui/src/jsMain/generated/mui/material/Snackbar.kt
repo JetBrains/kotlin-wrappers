@@ -14,6 +14,7 @@ import mui.system.SxProps
 external interface SnackbarProps :
     mui.system.StandardProps,
     react.dom.html.HTMLAttributes<web.html.HTMLDivElement>,
+    react.PropsWithChildren,
     mui.system.PropsWithSx {
     /**
      * The action to display. It renders after the message, at the end of the snackbar.
@@ -40,7 +41,7 @@ external interface SnackbarProps :
     /**
      * Replace the `SnackbarContent` component.
      */
-    var children: react.ReactElement<*>?
+    override var children: react.ReactNode?
 
     /**
      * Override or extend the styles applied to the component.

@@ -9,11 +9,11 @@ external interface ModalProps :
     ModalOwnProps,
     react.dom.html.HTMLAttributes<web.html.HTMLDivElement>
 
-external interface ModalOwnProps : react.Props {
+external interface ModalOwnProps : react.PropsWithChildren {
     /**
      * A single child content element.
      */
-    var children: react.ReactNode?
+    override var children: react.ReactNode?
 
     /**
      * When set to true the Modal waits until a nested Transition is completed before closing.

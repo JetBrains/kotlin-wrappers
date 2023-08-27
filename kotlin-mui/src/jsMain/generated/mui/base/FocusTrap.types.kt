@@ -5,7 +5,7 @@ package mui.base
 import js.core.ReadonlyArray
 import web.html.HTMLElement
 
-external interface FocusTrapProps : react.Props {
+external interface FocusTrapProps : react.PropsWithChildren {
     /**
      * If `true`, focus is locked.
      */
@@ -32,7 +32,7 @@ external interface FocusTrapProps : react.Props {
     /**
      * A single child content element.
      */
-    var children: react.ReactElement<*>
+    override var children: react.ReactNode?
 
     /**
      * If `true`, the focus trap will not automatically shift focus to itself when it opens, and

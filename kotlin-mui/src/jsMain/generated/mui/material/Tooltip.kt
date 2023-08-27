@@ -14,6 +14,7 @@ import mui.system.SxProps
 external interface TooltipProps :
     mui.system.StandardProps,
     react.dom.html.HTMLAttributes<web.html.HTMLDivElement>,
+    react.PropsWithChildren,
     mui.system.PropsWithSx {
     /**
      * If `true`, adds an arrow to the tooltip.
@@ -24,7 +25,7 @@ external interface TooltipProps :
     /**
      * Tooltip reference element.
      */
-    var children: react.ReactElement<*>
+    override var children: react.ReactNode?
 
     /**
      * Override or extend the styles applied to the component.

@@ -7,7 +7,8 @@ package mui.material
 import web.dom.Element
 
 external interface SlideProps :
-    mui.material.transitions.TransitionProps {
+    mui.material.transitions.TransitionProps,
+    react.PropsWithChildren {
     /**
      * Perform the enter transition when it first mounts if `in` is also `true`.
      * Set this to `false` to disable this behavior.
@@ -18,7 +19,7 @@ external interface SlideProps :
     /**
      * A single child content element.
      */
-    var children: react.ReactElement<*>
+    override var children: react.ReactNode?
 
     /**
      * An HTML element, or a function that returns one.

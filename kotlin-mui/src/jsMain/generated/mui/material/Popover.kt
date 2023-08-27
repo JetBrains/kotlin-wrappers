@@ -61,7 +61,7 @@ external interface PopoverProps :
     /**
      * The content of the component.
      */
-    /* override */ var children: react.ReactNode?
+    override var children: react.ReactNode?
 
     /**
      * Override or extend the styles applied to the component.

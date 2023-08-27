@@ -29,7 +29,7 @@ external interface DialogProps :
     /**
      * Dialog children, usually the included sub-components.
      */
-    /* override */ var children: react.ReactNode?
+    override var children: react.ReactNode?
 
     /**
      * Override or extend the styles applied to the component.
