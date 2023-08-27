@@ -277,7 +277,7 @@ external class Socket : EventEmitter {
      * @param address Destination host name or IP address.
      * @param callback Called when the message has been sent.
      */
-    fun send(msg: String, port: Double = definedExternally, address: String = definedExternally, callback: (error: Error?, bytes: Double) -> Unit = definedExternally)
+    fun send(msg: String, port: Double = definedExternally, address: String = definedExternally, callback: (error: Error?, bytes: Double) -> Unit = definedExternally): Unit
 
     fun send(msg: Uint8Array, port: Double = definedExternally, address: String = definedExternally, callback: (error: Error?, bytes: Double) -> Unit = definedExternally): Unit
 

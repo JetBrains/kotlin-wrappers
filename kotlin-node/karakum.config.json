@@ -1,7 +1,8 @@
 {
     "input": [
         "<nodeModules>/@types/node/dgram.d.ts",
-        "<nodeModules>/@types/node/dns.d.ts"
+        "<nodeModules>/@types/node/dns.d.ts",
+        "<nodeModules>/@types/node/tls.d.ts"
     ],
     "output": "src/jsMain/generated",
     "ignoreOutput": [
@@ -18,7 +19,10 @@
         "^dgram": "node:dgram",
 
         "^node/dns": "node:dns",
-        "^dns": "node:dns"
+        "^dns": "node:dns",
+
+        "^node/tls": "node:tls",
+        "^tls": "node:tls"
     },
     "packageNameMapper": {
         "^node/dgram/namespace.kt": "node/dgram/nodeNamespace.kt",
@@ -27,7 +31,11 @@
 
         "^node/dns/namespace.kt": "node/dns/nodeNamespace.kt",
         "^node/dns.kt": "node/dns/dns.kt",
-        "^dns": "node/dns"
+        "^dns": "node/dns",
+
+        "^node/tls/namespace.kt": "node/tls/nodeNamespace.kt",
+        "^node/tls.kt": "node/tls/tls.kt",
+        "^tls": "node/tls"
     },
     "importInjector": {
         "dgram/createSocket.kt": [
@@ -46,6 +54,31 @@
 
         "dns/setServers.kt": [
             "js.core.ReadonlyArray"
+        ],
+
+        "tls/ConnectionOptions.kt": [
+            "node.buffer.Buffer"
+        ],
+        "tls/PeerCertificate.kt": [
+            "node.buffer.Buffer"
+        ],
+        "tls/SecureContextOptions.kt": [
+            "node.buffer.Buffer"
+        ],
+        "tls/Server.kt": [
+            "node.buffer.Buffer"
+        ],
+        "tls/TLSSocket.kt": [
+            "node.buffer.Buffer"
+        ],
+        "tls/TLSSocketOptions.kt": [
+            "node.buffer.Buffer"
+        ],
+        "TlsOptions.kt": [
+            "node.buffer.Buffer"
+        ],
+        "tls/namespace.kt": [
+            "js.core.ReadonlyArray"
         ]
     },
     "namespaceStrategy": {
@@ -53,6 +86,9 @@
         "node:dgram": "ignore",
 
         "dns": "package",
-        "node:dns": "ignore"
+        "node:dns": "ignore",
+
+        "tls": "package",
+        "node:tls": "ignore"
     }
 }

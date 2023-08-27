@@ -10,7 +10,13 @@ const overriddenProps = {
         "all": null,
     },
     "ResolveWithTtlOptions": {
-        "ttl": null
+        "ttl": null,
+    },
+
+    // tls
+    "TlsOptions": {
+        "sessionTimeout": null,
+        "ticketKeys": null,
     }
 }
 

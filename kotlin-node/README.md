@@ -11,3 +11,5 @@ Declarations in [src/jsMain/generatedLegacy](./src/jsMain/generatedLegacy) are g
 ### TODO:
 
 1) Fix numeric types
+2) Unseal interfaces in `generatedLegacy`:
+   * `ServerOpts`

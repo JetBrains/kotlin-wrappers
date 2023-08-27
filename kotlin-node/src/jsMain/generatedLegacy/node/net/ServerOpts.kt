@@ -2,7 +2,7 @@
 
 package node.net
 
-sealed external interface ServerOpts {
+external interface ServerOpts {
     /**
      * Indicates whether half-opened TCP connections are allowed.
      * @default false

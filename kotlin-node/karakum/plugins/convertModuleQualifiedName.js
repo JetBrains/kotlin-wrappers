@@ -1,20 +1,28 @@
 import ts from "typescript";
 
-export default function (node, context, render) {
-    if (
-        ts.isQualifiedName(node)
-        && ts.isIdentifier(node.left)
-        && node.left.text === "dns"
-    ) {
-        return `node.dns.${render(node.right)}`
-    }
+const modules = [
+    "dns",
+    "net",
+    "stream",
+]
 
-    if (
-        ts.isPropertyAccessExpression(node)
-        && ts.isIdentifier(node.expression)
-        && node.expression.text === "dns"
-    ) {
-        return `node.dns.${render(node.name)}`
+export default function (node, context, render) {
+    for (const module of modules) {
+        if (
+            ts.isQualifiedName(node)
+            && ts.isIdentifier(node.left)
+            && node.left.text === module
+        ) {
+            return `node.${module}.${render(node.right)}`
+        }
+
+        if (
+            ts.isPropertyAccessExpression(node)
+            && ts.isIdentifier(node.expression)
+            && node.expression.text === module
+        ) {
+            return `node.${module}.${render(node.name)}`
+        }
     }
 
     return null
