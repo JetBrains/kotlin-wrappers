@@ -61,6 +61,18 @@ external interface UseSelectParameters<OptionValue, Multiple> {
     var multiple: Any? /* Multiple */
 
     /**
+     * The `name` attribute of the hidden input element.
+     * This is useful when the select is embedded in a form and you want to access the selected value in the form data.
+     */
+    var name: String?
+
+    /**
+     * If `true`, the select embedded in a form must have a selected value.
+     * Otherwise, the form submission will fail.
+     */
+    var required: Boolean?
+
+    /**
      * Callback fired when an option is selected.
      */
     var onChange: Any? /* (event: React.MouseEvent | React.KeyboardEvent | React.FocusEvent | null, value: SelectValue<OptionValue, Multiple>) => void */
@@ -86,6 +98,13 @@ external interface UseSelectParameters<OptionValue, Multiple> {
      * If this parameter is set, options defined as JSX children are ignored.
      */
     var options: dynamic
+
+    /**
+     * A function to convert the currently selected value to a string.
+     * Used to set a value of a hidden input associated with the select,
+     * so that the selected value can be posted with a form.
+     */
+    var getSerializedValue: Any? /* (option: SelectValue<SelectOption<OptionValue>, Multiple>) => React.InputHTMLAttributes<HTMLInputElement>['value'] */
 
     /**
      * A function used to convert the option label to a string.
@@ -136,6 +155,12 @@ external interface UseSelectReturnValue<Value, Multiple> {
      * @returns props that should be spread on the button slot
      */
     var getButtonProps: react.Props /* <OtherHandlers extends EventHandlers = {}>(otherHandlers?: OtherHandlers) => UseSelectButtonSlotProps<OtherHandlers> */
+
+    /**
+     * Resolver for the hidden input slot's props.
+     * @returns HTML input attributes that should be spread on the hidden input slot
+     */
+    var getHiddenInputProps: react.Props /* <OtherHandlers extends EventHandlers = {}>(otherHandlers?: OtherHandlers) => UseSelectHiddenInputSlotProps<OtherHandlers> */
 
     /**
      * Resolver for the listbox slot's props.

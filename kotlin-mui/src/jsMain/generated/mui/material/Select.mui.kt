@@ -10,9 +10,10 @@ package mui.material
 import web.cssom.ClassName
 
 // language=JavaScript
-@JsName("""(/*union*/{select: 'MuiSelect-select', multiple: 'MuiSelect-multiple', filled: 'MuiSelect-filled', outlined: 'MuiSelect-outlined', standard: 'MuiSelect-standard', icon: 'MuiSelect-icon', iconOpen: 'MuiSelect-iconOpen', iconFilled: 'MuiSelect-iconFilled', iconOutlined: 'MuiSelect-iconOutlined', iconStandard: 'MuiSelect-iconStandard', nativeInput: 'MuiSelect-nativeInput'}/*union*/)""")
+@JsName("""(/*union*/{root: 'MuiSelect-root', select: 'MuiSelect-select', multiple: 'MuiSelect-multiple', filled: 'MuiSelect-filled', outlined: 'MuiSelect-outlined', standard: 'MuiSelect-standard', icon: 'MuiSelect-icon', iconOpen: 'MuiSelect-iconOpen', iconFilled: 'MuiSelect-iconFilled', iconOutlined: 'MuiSelect-iconOutlined', iconStandard: 'MuiSelect-iconStandard', nativeInput: 'MuiSelect-nativeInput'}/*union*/)""")
 sealed external interface MuiSelect {
     companion object {
+        val root: ClassName
         val select: ClassName
         val multiple: ClassName
         val filled: ClassName

@@ -118,6 +118,12 @@ external interface SelectOwnProps<OptionValue> :
     }
 
     /**
+     * If `true`, the Select cannot be empty when submitting form.
+     * @default false
+     */
+    var required: Boolean?
+
+    /**
      * The components used for each slot inside the Select.
      * Either a string to use a HTML element or a component.
      * @default {}
