@@ -127,11 +127,6 @@ external interface BaseTextFieldProps :
     var onFocus: react.dom.events.FocusEventHandler<web.html.HTMLElement>?
 
     /**
-     * @ignore
-     */
-    var onClick: react.dom.events.MouseEventHandler<web.html.HTMLElement>?
-
-    /**
      * The short hint displayed in the `input` before the user enters a value.
      */
     var placeholder: String?

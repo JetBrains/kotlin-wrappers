@@ -5,6 +5,9 @@ package mui.material
 import web.cssom.ClassName
 
 external interface SelectClasses {
+    /** Styles applied to the root element. */
+    var root: ClassName
+
     /** Styles applied to the select component `select` class. */
     var select: ClassName
 
