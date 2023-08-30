@@ -25,6 +25,7 @@ external class Virtualizer<TScrollElement : EventTarget /* Element | Window */, 
     var setOptions: (opts: VirtualizerOptions<TScrollElement, TItemElement>) -> Unit
     var calculateRange: () -> ItemRange
     var indexFromElement: (node: TItemElement) -> Int
+    var resizeItem: (index: Int, size: Int) -> Unit
     var measureElement: (node: TItemElement?) -> Unit
     var getVirtualItems: () -> ReadonlyArray<VirtualItem>
     var getVirtualItemForOffset: (offset: Int) -> VirtualItem

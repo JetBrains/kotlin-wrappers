@@ -29,6 +29,7 @@ external interface VirtualizerOptions<TScrollElement : EventTarget /* Element | 
     var rangeExtractor: ((range: Range) -> ReadonlyArray<Int>)?
     var scrollMargin: Int?
     var scrollingDelay: Int?
+    var elementKeyAttribute: String?
     var indexAttribute: String?
     var initialMeasurementsCache: ReadonlyArray<VirtualItem>?
     var lanes: Int?
