@@ -40,7 +40,7 @@ private fun ChildrenBuilder.getDefaultKey(): Key? {
 }
 
 // for compiler plugins
-private fun setDefaultKey(
+internal fun setDefaultKey(
     builder: ChildrenBuilder,
     key: Key,
 ) {
