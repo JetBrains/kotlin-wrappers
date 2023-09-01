@@ -67,10 +67,12 @@ sealed external interface ChildrenBuilder {
         addChild(type, props)
     }
 
+    @ElementBuilder
     inline operator fun <P : Props> ElementType<P>.invoke() {
         addChild(this)
     }
 
+    @ElementBuilder
     inline operator fun <P : Props> ElementType<P>.invoke(
         noinline block: @ReactDsl P.() -> Unit,
     ) {
@@ -80,6 +82,7 @@ sealed external interface ChildrenBuilder {
         )
     }
 
+    @ElementBuilder
     inline operator fun <T> Provider<T>.invoke(
         value: T,
         noinline block: @ReactDsl ChildrenBuilder.() -> Unit,
@@ -91,6 +94,7 @@ sealed external interface ChildrenBuilder {
         )
     }
 
+    @ElementBuilder
     inline operator fun <T> ContextType<T>.invoke(
         noinline block: @ReactDsl ProviderProps<T>.() -> Unit,
     ) {
@@ -100,6 +104,7 @@ sealed external interface ChildrenBuilder {
         )
     }
 
+    @ElementBuilder
     inline operator fun <T> ContextType<T>.invoke(
         value: T,
         noinline block: @ReactDsl ChildrenBuilder.() -> Unit,
