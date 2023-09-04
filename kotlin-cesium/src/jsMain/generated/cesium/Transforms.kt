@@ -293,10 +293,10 @@ external object Transforms {
      * at a given time.  This function may return undefined if the data necessary to
      * do the transformation is not yet loaded.
      * ```
-     * // Transform a point from the ICRF axes to the Fixed axes.
+     * // Transform a point from the Fixed axes to the ICRF axes.
      * const now = JulianDate.now();
      * const pointInFixed = Cartesian3.fromDegrees(0.0, 0.0);
-     * const fixedToIcrf = Transforms.computeIcrfToFixedMatrix(now);
+     * const fixedToIcrf = Transforms.computeFixedToIcrfMatrix(now);
      * let pointInInertial = new Cartesian3();
      * if (defined(fixedToIcrf)) {
      *     pointInInertial = Matrix3.multiplyByVector(fixedToIcrf, pointInFixed, pointInInertial);

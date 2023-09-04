@@ -73,4 +73,11 @@ external object FeatureDetection {
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/FeatureDetection.html#.supportsWebgl2">Online Documentation</a>
      */
     fun supportsWebgl2(scene: Scene): Boolean
+
+    /**
+     * Detects whether the current browser supports ECMAScript modules in web workers.
+     * @return true if the browser supports ECMAScript modules in web workers.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/FeatureDetection.html#.supportsEsmWebWorkers">Online Documentation</a>
+     */
+    fun supportsEsmWebWorkers(): Boolean
 }

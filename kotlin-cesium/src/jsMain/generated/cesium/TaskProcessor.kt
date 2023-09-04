@@ -59,7 +59,7 @@ external class TaskProcessor(
 
     /**
      * Posts a message to a web worker with configuration to initialize loading
-     * and compiling a web assembly module asychronously, as well as an optional
+     * and compiling a web assembly module asynchronously, as well as an optional
      * fallback JavaScript module to use if Web Assembly is not supported.
      * @return A promise that resolves to the result when the web worker has loaded and compiled the web assembly module and is ready to process tasks.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TaskProcessor.html#initWebAssemblyModule">Online Documentation</a>

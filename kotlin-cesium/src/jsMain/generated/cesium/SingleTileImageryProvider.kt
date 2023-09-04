@@ -14,8 +14,9 @@ import js.core.jso
 import js.promise.Promise
 
 /**
- * Provides a single, top-level imagery tile.  The single image is assumed to use a
- * [GeographicTilingScheme].
+ * Provides a single, top-level imagery tile.  The single image is assumed to be in
+ * the Geographic projection (i.e. WGS84 / EPSG:4326),
+ * and will be rendered using a [GeographicTilingScheme].
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/SingleTileImageryProvider.html">Online Documentation</a>
  */
 external class SingleTileImageryProvider(options: ConstructorOptions) {
@@ -177,17 +178,18 @@ external class SingleTileImageryProvider(options: ConstructorOptions) {
          * ```
          * @param [url] The url for the tile
          * @param [options] Object describing initialization options.
+         * @return The resolved SingleTileImageryProvider.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/SingleTileImageryProvider.html#.fromUrl">Online Documentation</a>
          */
         fun fromUrl(
             url: Resource,
             options: dynamic = definedExternally,
-        )
+        ): Promise<SingleTileImageryProvider>
 
         fun fromUrl(
             url: String,
             options: dynamic = definedExternally,
-        )
+        ): Promise<SingleTileImageryProvider>
 
         /**
          * Initialization options for the SingleTileImageryProvider constructor when using SingleTileImageryProvider.fromUrl
