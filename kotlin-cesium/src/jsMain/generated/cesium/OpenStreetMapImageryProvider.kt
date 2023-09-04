@@ -29,6 +29,8 @@ external class OpenStreetMapImageryProvider(options: ConstructorOptions) {
      *   Default value - `'https://tile.openstreetmap.org'`
      * @property [fileExtension] The file extension for images on the server.
      *   Default value - `'png'`
+     * @property [retinaTiles] When true, request tiles at the 2x resolution for retina displays.
+     *   Default value - `false`
      * @property [rectangle] The rectangle of the layer.
      *   Default value - [Rectangle.MAX_VALUE]
      * @property [minimumLevel] The minimum level-of-detail supported by the imagery provider.
@@ -42,6 +44,7 @@ external class OpenStreetMapImageryProvider(options: ConstructorOptions) {
     interface ConstructorOptions {
         var url: String?
         var fileExtension: String?
+        var retinaTiles: Boolean?
         var rectangle: Rectangle?
         var minimumLevel: Int?
         var maximumLevel: Int?

@@ -20,6 +20,9 @@ import web.dom.Element
  * it replaces the current terrain provider.  Each item in the available providers list contains a name,
  * a representative icon, and a tooltip to display more information when hovered. The list is initially
  * empty, and must be configured before use, as illustrated in the below example.
+ *
+ * By default, the BaseLayerPicker uses a default list of example providers for demonstration purposes.
+ * Notably some of these providers, such as <a href="https://developers.arcgis.com" target="_blank">Esri ArcGIS</a> and <a href="https://docs.stadiamaps.com/ target="_blank">Stadia Maps</a>, have seperate terms of service and require authentication for production use.
  * ```
  * // In HTML head, include a link to the BaseLayerPicker.css stylesheet,
  * // and in the body, include: <div id="baseLayerPickerContainer"
