@@ -59,10 +59,10 @@ external interface UseButtonRootSlotOwnProps : react.Props {
 external interface UseButtonReturnValue {
     /**
      * Resolver for the root slot's props.
-     * @param otherHandlers event handlers for the root slot
+     * @param externalProps additional props for the root slot
      * @returns props that should be spread on the root slot
      */
-    var getRootProps: react.Props /* <TOther extends EventHandlers = {}>(otherHandlers?: TOther) => UseButtonRootSlotProps<TOther> */
+    var getRootProps: react.Props /* <ExternalProps extends Record<string, any> = {}>(externalProps?: ExternalProps) => UseButtonRootSlotProps<ExternalProps> */
 
     /**
      * If `true`, the component is being focused using keyboard.
