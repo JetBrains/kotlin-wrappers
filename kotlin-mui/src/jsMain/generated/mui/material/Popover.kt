@@ -85,6 +85,7 @@ external interface PopoverProps :
 
     /**
      * Specifies how close to the edge of the window the popover can appear.
+     * If null, the popover will not be constrained by the window.
      * @default 16
      */
     var marginThreshold: Number?
