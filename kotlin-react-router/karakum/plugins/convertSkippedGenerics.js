@@ -13,5 +13,28 @@ export default function (node, context, render) {
     ) {
         return `${render(node.typeName)}<*>`
     }
+
+    if (
+        ts.isTypeReferenceNode(node)
+        && ts.isIdentifier(node.typeName)
+        && (
+            node.typeName.text === "Location"
+        )
+        && !node.typeArguments
+    ) {
+        return `${render(node.typeName)}<*>`
+    }
+
+    if (
+        ts.isTypeReferenceNode(node)
+        && ts.isIdentifier(node.typeName)
+        && (
+            node.typeName.text === "UIMatch"
+        )
+        && !node.typeArguments
+    ) {
+        return `${render(node.typeName)}<*, *>`
+    }
+
     return null
 }

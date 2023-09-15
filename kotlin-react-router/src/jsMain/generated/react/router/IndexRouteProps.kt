@@ -11,8 +11,8 @@ sealed external interface IndexRouteProps : react.Props {
     var path: String?
     var id: String?
     var lazy: LazyRouteFunction<RouteObject>?
-    var loader: LoaderFunction?
-    var action: ActionFunction?
+    var loader: LoaderFunction<Any?>?
+    var action: ActionFunction<Any?>?
     var hasErrorBoundary: Boolean?
     var shouldRevalidate: ShouldRevalidateFunction?
     var handle: Any?

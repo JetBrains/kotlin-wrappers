@@ -14,4 +14,4 @@ import remix.run.router.Location
  *
  * @see https://reactrouter.com/hooks/use-location
  */
-external fun useLocation(): Location
+external fun useLocation(): Location<*>

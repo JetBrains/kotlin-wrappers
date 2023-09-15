@@ -21,7 +21,7 @@ sealed external interface History {
     /**
      * The current location. This value is mutable.
      */
-    val location: Location
+    val location: Location<*>
 
     /**
      * Returns a valid href for the given `to` value that may be used as
@@ -55,7 +55,7 @@ sealed external interface History {
      * @param to - The new URL
      * @param state - Data to associate with the new location
      */
-    fun push(to: To, state: LocationState? = definedExternally): Unit
+    fun push(to: To, state: Any? = definedExternally): Unit
 
     /**
      * Replaces the current location in the history stack with a new one.  The
@@ -64,7 +64,7 @@ sealed external interface History {
      * @param to - The new URL
      * @param state - Data to associate with the new location
      */
-    fun replace(to: To, state: LocationState? = definedExternally): Unit
+    fun replace(to: To, state: Any? = definedExternally): Unit
 
     /**
      * Navigates `n` entries backward/forward in the history stack relative to the

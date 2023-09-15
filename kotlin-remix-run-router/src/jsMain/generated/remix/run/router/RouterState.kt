@@ -16,7 +16,7 @@ sealed external interface RouterState {
     /**
      * The current location reflected by the router
      */
-    var location: Location
+    var location: Location<*>
 
     /**
      * The current set of route matches

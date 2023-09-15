@@ -10,5 +10,4 @@ sealed external interface FetcherStatesIdle<TData> {
     var formData: Nothing?
     var json: Nothing?
     var data: TData?
-    /* " _hasFetcherDoneAnything "?: boolean; */
 }

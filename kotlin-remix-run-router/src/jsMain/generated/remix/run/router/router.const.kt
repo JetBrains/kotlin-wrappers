@@ -7,7 +7,7 @@ package remix.run.router
 
 /* import { Action as HistoryAction } from "./history"; */
 
-/* import type { DeferredData, AgnosticDataRouteMatch, AgnosticDataRouteObject, FormEncType, DetectErrorBoundaryFunction, RouteData, AgnosticRouteObject, Submission, AgnosticRouteMatch, HTMLFormMethod, MapRoutePropertiesFunction } from "./utils"; */
+/* import type { AgnosticDataRouteMatch, AgnosticDataRouteObject, AgnosticRouteObject, DeferredData, DetectErrorBoundaryFunction, FormEncType, HTMLFormMethod, MapRoutePropertiesFunction, RouteData, Submission, UIMatch } from "./utils"; */
 
 external val IDLE_NAVIGATION: NavigationStatesIdle
 

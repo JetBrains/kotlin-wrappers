@@ -6,11 +6,11 @@ package remix.run.router
  * URL path, as well as possibly some arbitrary state and a key.
  */
 
-sealed external interface Location : Path {
+sealed external interface Location<State /* default is Any? */> : Path {
     /**
      * A value of arbitrary data associated with this location.
      */
-    var state: LocationState?
+    var state: State
 
     /**
      * A unique string associated with this location. May be used to safely store

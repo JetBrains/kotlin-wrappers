@@ -12,5 +12,4 @@ sealed external interface FetcherStatesSubmitting<TData> {
     var formData: FormData?
     var json: JsonValue?
     var data: TData?
-    /* " _hasFetcherDoneAnything "?: boolean; */
 }

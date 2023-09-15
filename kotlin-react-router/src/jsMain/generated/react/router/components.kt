@@ -3,10 +3,10 @@
 package react.router
 
 
-/* import * as React from "react"; */
-
-/* import type { TrackedPromise, InitialEntry, Location, Router as RemixRouter, To, LazyRouteFunction, RelativeRoutingType } from "@remix-run/router"; */
+/* import type { InitialEntry, LazyRouteFunction, Location, RelativeRoutingType, Router as RemixRouter, To, TrackedPromise } from "@remix-run/router"; */
 
 /* import { Action as NavigationType } from "@remix-run/router"; */
 
-/* import type { IndexRouteObject, RouteMatch, RouteObject, Navigator, NonIndexRouteObject } from "./context"; */
+/* import * as React from "react"; */
+
+/* import type { IndexRouteObject, Navigator, NonIndexRouteObject, RouteMatch, RouteObject } from "./context"; */

@@ -5,5 +5,5 @@ sealed external interface BlockerBlocked {
     var state: String /* "blocked" */
     fun reset(): Unit
     fun proceed(): Unit
-    var location: Location
+    var location: Location<*>
 }

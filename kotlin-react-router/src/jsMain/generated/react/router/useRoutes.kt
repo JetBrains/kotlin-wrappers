@@ -14,7 +14,7 @@ import remix.run.router.Location
  */
 external fun useRoutes(
     routes: js.core.ReadonlyArray<RouteObject>,
-    locationArg: Location = definedExternally,
+    locationArg: Location<*> = definedExternally,
 ): react.ReactElement<*>?
 
 external fun useRoutes(

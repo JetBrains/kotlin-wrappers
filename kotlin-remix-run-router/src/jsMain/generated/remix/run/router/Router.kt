@@ -117,7 +117,7 @@ sealed external interface Router {
      * Utility function to create an href for the given location
      * @param location
      */
-    fun createHref(location: Location): String
+    fun createHref(location: Location<*>): String
 
     fun createHref(location: URL): String
 

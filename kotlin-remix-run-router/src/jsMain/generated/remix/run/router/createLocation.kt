@@ -9,13 +9,13 @@ package remix.run.router
 external fun createLocation(
     current: String,
     to: To,
-    state: LocationState? = definedExternally,
+    state: Any? = definedExternally,
     key: String = definedExternally,
-): Location
+): Location<*>
 
 external fun createLocation(
-    current: Location,
+    current: Location<*>,
     to: To,
-    state: LocationState? = definedExternally,
+    state: Any? = definedExternally,
     key: String = definedExternally,
-): Location
+): Location<*>

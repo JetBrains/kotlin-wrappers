@@ -8,7 +8,7 @@ import web.http.Headers
 
 sealed external interface StaticHandlerContext {
     var basename: String?
-    var location: Location
+    var location: Location<Any?>
     var matches: js.core.ReadonlyArray<AgnosticDataRouteMatch>
     var loaderData: RouteData
     var actionData: RouteData?
