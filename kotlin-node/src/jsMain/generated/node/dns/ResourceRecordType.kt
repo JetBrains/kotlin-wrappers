@@ -5,7 +5,7 @@ package node.dns
     "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
-@JsName("""(/*union*/{A: 'A', AAAA: 'AAAA', ANY: 'ANY', CNAME: 'CNAME', MX: 'MX', NAPTR: 'NAPTR', NS: 'NS', PTR: 'PTR', SOA: 'SOA', SRV: 'SRV', TXT: 'TXT'}/*union*/)""")
+@JsName("""(/*union*/{A: 'A', AAAA: 'AAAA', ANY: 'ANY', CNAME: 'CNAME', MX: 'MX', NAPTR: 'NAPTR', NS: 'NS', PTR: 'PTR', SOA: 'SOA', SRV: 'SRV', TXT: 'TXT', CAA: 'CAA'}/*union*/)""")
 sealed external interface ResourceRecordType {
     object A : ResourceRecordType
     object AAAA : ResourceRecordType
@@ -18,4 +18,5 @@ sealed external interface ResourceRecordType {
     object SOA : ResourceRecordType
     object SRV : ResourceRecordType
     object TXT : ResourceRecordType
+    object CAA : ResourceRecordType
 }

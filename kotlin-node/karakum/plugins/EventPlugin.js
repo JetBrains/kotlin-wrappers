@@ -67,7 +67,7 @@ export default {
             if (!symbol) return
 
             const sourceFileName = node.getSourceFile()?.fileName ?? "generated.d.ts"
-            const namespace = karakum.findClosest(node, ts.isModuleDeclaration)
+            const namespace = typeScriptService?.findClosest(node, ts.isModuleDeclaration)
 
             const events = this.events.get(symbol) ?? {
                 sourceFileName,
@@ -108,11 +108,11 @@ export default {
     generate(context) {
         const configurationService = context.lookupService(karakum.configurationServiceKey)
         const configuration = configurationService?.configuration
-        if (configuration === undefined) throw new Error("EventPlugin.js can't work without ConfigurationService")
+        if (configuration === undefined) throw new Error("EventPlugin can't work without ConfigurationService")
 
         const namespaceInfoService = context.lookupService(karakum.namespaceInfoServiceKey)
         const resolveNamespaceStrategy = namespaceInfoService?.resolveNamespaceStrategy?.bind(namespaceInfoService)
-        if (resolveNamespaceStrategy === undefined) throw new Error("AnonymousDeclarationPlugin can't work without NamespaceInfoService")
+        if (resolveNamespaceStrategy === undefined) throw new Error("EventPlugin can't work without NamespaceInfoService")
 
         const declarations = Array.from(this.events.values()).map(events => {
             const name = `${events.containerName}Event`

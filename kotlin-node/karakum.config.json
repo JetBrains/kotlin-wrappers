@@ -2,6 +2,7 @@
     "input": [
         "<nodeModules>/@types/node/dgram.d.ts",
         "<nodeModules>/@types/node/dns.d.ts",
+        "<nodeModules>/@types/node/dns/promises.d.ts",
         "<nodeModules>/@types/node/tls.d.ts"
     ],
     "output": "src/jsMain/generated",
@@ -9,7 +10,12 @@
         "**/__promisify__.kt",
 
         "**/dns/lookupservice/**",
-        "**/dns/resolve/**"
+        "**/dns/resolve/**",
+        "**/dns/Resolver.kt",
+        "**/dns/getServersAsync.kt",
+        "**/dns/setDefaultResultOrderAsync.kt",
+        "**/dns/SetDefaultResultOrderOrderAsync.kt",
+        "**/dns/setServersAsync.kt"
     ],
     "libraryName": "node",
     "libraryNameOutputPrefix": true,
@@ -25,6 +31,9 @@
         "^tls": "node:tls"
     },
     "packageNameMapper": {
+        "promises/(.+)\\.kt": "$1Async.kt",
+        "SuspendAsync.kt": "Suspend.kt",
+
         "^node/dgram/namespace.kt": "node/dgram/nodeNamespace.kt",
         "^node/dgram.kt": "node/dgram/dgram.kt",
         "^dgram": "node/dgram",
@@ -38,6 +47,13 @@
         "^tls": "node/tls"
     },
     "importInjector": {
+        "Async.kt": [
+            "js.promise.Promise"
+        ],
+        "Suspend.kt": [
+            "js.promise.await"
+        ],
+
         "dgram/createSocket.kt": [
             "node.buffer.Buffer"
         ],
@@ -54,6 +70,9 @@
 
         "dns/setServers.kt": [
             "js.core.ReadonlyArray"
+        ],
+        "dns/ResolverAsync.kt": [
+            "js.promise.await"
         ],
 
         "tls/ConnectionOptions.kt": [
@@ -90,5 +109,8 @@
 
         "tls": "package",
         "node:tls": "ignore"
+    },
+    "conflictResolutionStrategy": {
+        "LookupServiceResultPayload": "replace"
     }
 }

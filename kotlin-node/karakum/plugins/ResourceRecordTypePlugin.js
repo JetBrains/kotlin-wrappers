@@ -12,9 +12,14 @@ function isRrtypeParameterType(node) {
         && node.parent.parent.name.text === "rrtype"
 
         && node.parent.parent.parent
-        && ts.isFunctionDeclaration(node.parent.parent.parent)
-        && node.parent.parent.parent.name
-        && node.parent.parent.parent.name.text === "resolve"
+        && (
+            (
+                ts.isFunctionDeclaration(node.parent.parent.parent)
+                && node.parent.parent.parent.name
+                && node.parent.parent.parent.name.text === "resolve"
+            )
+            || ts.isCallSignatureDeclaration(node.parent.parent.parent)
+        )
     )
 }
 
@@ -27,8 +32,15 @@ export default {
 
     traverse(node, context) {
         if (ts.isStringLiteral(node) && isRrtypeParameterType(node)) {
-            this.sourceFileName = node.getSourceFile()?.fileName ?? "generated.d.ts"
-            this.namespace = karakum.findClosest(node, ts.isModuleDeclaration)
+            const typeScriptService = context.lookupService(karakum.typeScriptServiceKey)
+
+            const sourceFileName = node.getSourceFile()?.fileName ?? "generated.d.ts"
+
+            // generate the same entity for promise and callback API
+            if (!sourceFileName.endsWith("promises.d.ts")) {
+                this.sourceFileName = sourceFileName
+                this.namespace = typeScriptService?.findClosest(node, ts.isModuleDeclaration)
+            }
 
             this.rrtypes.add(node.text)
         }
@@ -45,11 +57,11 @@ export default {
     generate(context) {
         const configurationService = context.lookupService(karakum.configurationServiceKey)
         const configuration = configurationService?.configuration
-        if (configuration === undefined) throw new Error("EventPlugin.js can't work without ConfigurationService")
+        if (configuration === undefined) throw new Error("ResourceRecordTypePlugin can't work without ConfigurationService")
 
         const namespaceInfoService = context.lookupService(karakum.namespaceInfoServiceKey)
         const resolveNamespaceStrategy = namespaceInfoService?.resolveNamespaceStrategy?.bind(namespaceInfoService)
-        if (resolveNamespaceStrategy === undefined) throw new Error("AnonymousDeclarationPlugin can't work without NamespaceInfoService")
+        if (resolveNamespaceStrategy === undefined) throw new Error("ResourceRecordTypePlugin can't work without NamespaceInfoService")
 
         const name = "ResourceRecordType"
 
