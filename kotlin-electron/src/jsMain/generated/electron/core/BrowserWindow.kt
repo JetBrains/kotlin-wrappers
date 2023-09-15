@@ -16,7 +16,10 @@ open external class BrowserWindow : NodeEventEmitter {
     /**
      * Emitted when the window is set or unset to show always on top of other windows.
      */
-    fun on(event: BrowserWindowEvent.ALWAYS_ON_TOP_CHANGED, listener: (event: Event, isAlwaysOnTop: Boolean) -> Unit): Unit /* this */
+    fun on(
+        event: BrowserWindowEvent.ALWAYS_ON_TOP_CHANGED,
+        listener: (event: Event, isAlwaysOnTop: Boolean) -> Unit,
+    ): Unit /* this */
 
     /**
      * Emitted when an App Command is invoked. These are typically related to keyboard
@@ -131,7 +134,10 @@ open external class BrowserWindow : NodeEventEmitter {
      * will prevent the native window's title from changing. `explicitSet` is false
      * when title is synthesized from file URL.
      */
-    fun on(event: BrowserWindowEvent.PAGE_TITLE_UPDATED, listener: (event: Event, title: String, explicitSet: Boolean) -> Unit): Unit /* this */
+    fun on(
+        event: BrowserWindowEvent.PAGE_TITLE_UPDATED,
+        listener: (event: Event, title: String, explicitSet: Boolean) -> Unit,
+    ): Unit /* this */
 
     /**
      * Emitted when the web page has been rendered (while not being shown) and window
@@ -178,7 +184,10 @@ open external class BrowserWindow : NodeEventEmitter {
      *
      * @platform darwin
      */
-    fun on(event: BrowserWindowEvent.ROTATE_GESTURE, listener: (event: Event, rotation: Double) -> Unit): Unit /* this */
+    fun on(
+        event: BrowserWindowEvent.ROTATE_GESTURE,
+        listener: (event: Event, rotation: Double) -> Unit,
+    ): Unit /* this */
 
     /**
      * Emitted when scroll wheel event phase has begun.
@@ -269,13 +278,14 @@ open external class BrowserWindow : NodeEventEmitter {
      * @platform win32
      */
     fun on(
-        event: BrowserWindowEvent.SYSTEM_CONTEXT_MENU, listener: (
+        event: BrowserWindowEvent.SYSTEM_CONTEXT_MENU,
+        listener: (
             event: Event,
             /**
              * The screen coordinates the context menu was triggered at
              */
-            point: Point
-        ) -> Unit
+            point: Point,
+        ) -> Unit,
     ): Unit /* this */
 
     /**
@@ -298,13 +308,14 @@ open external class BrowserWindow : NodeEventEmitter {
      * @platform darwin,win32
      */
     fun on(
-        event: BrowserWindowEvent.WILL_MOVE, listener: (
+        event: BrowserWindowEvent.WILL_MOVE,
+        listener: (
             event: Event,
             /**
              * Location the window is being moved to.
              */
-            newBounds: Rectangle
-        ) -> Unit
+            newBounds: Rectangle,
+        ) -> Unit,
     ): Unit /* this */
 
     /**
@@ -326,16 +337,22 @@ open external class BrowserWindow : NodeEventEmitter {
      * @platform darwin,win32
      */
     fun on(
-        event: BrowserWindowEvent.WILL_RESIZE, listener: (
+        event: BrowserWindowEvent.WILL_RESIZE,
+        listener: (
             event: Event,
             /**
              * Size the window is being resized to.
              */
-            newBounds: Rectangle, details: WillResizeDetails
-        ) -> Unit
+            newBounds: Rectangle,
+            details: WillResizeDetails,
+        ) -> Unit,
     ): Unit /* this */
 
-    fun once(event: BrowserWindowEvent.ALWAYS_ON_TOP_CHANGED, listener: (event: Event, isAlwaysOnTop: Boolean) -> Unit): Unit /* this */
+    fun once(
+        event: BrowserWindowEvent.ALWAYS_ON_TOP_CHANGED,
+        listener: (event: Event, isAlwaysOnTop: Boolean) -> Unit,
+    ): Unit /* this */
+
     fun once(event: BrowserWindowEvent.APP_COMMAND, listener: (event: Event, command: String) -> Unit): Unit /* this */
     fun once(event: BrowserWindowEvent.BLUR, listener: Function<*>): Unit /* this */
     fun once(event: BrowserWindowEvent.CLOSE, listener: (event: Event) -> Unit): Unit /* this */
@@ -351,13 +368,21 @@ open external class BrowserWindow : NodeEventEmitter {
     fun once(event: BrowserWindowEvent.MOVE, listener: Function<*>): Unit /* this */
     fun once(event: BrowserWindowEvent.MOVED, listener: Function<*>): Unit /* this */
     fun once(event: BrowserWindowEvent.NEW_WINDOW_FOR_TAB, listener: Function<*>): Unit /* this */
-    fun once(event: BrowserWindowEvent.PAGE_TITLE_UPDATED, listener: (event: Event, title: String, explicitSet: Boolean) -> Unit): Unit /* this */
+    fun once(
+        event: BrowserWindowEvent.PAGE_TITLE_UPDATED,
+        listener: (event: Event, title: String, explicitSet: Boolean) -> Unit,
+    ): Unit /* this */
+
     fun once(event: BrowserWindowEvent.READY_TO_SHOW, listener: Function<*>): Unit /* this */
     fun once(event: BrowserWindowEvent.RESIZE, listener: Function<*>): Unit /* this */
     fun once(event: BrowserWindowEvent.RESIZED, listener: Function<*>): Unit /* this */
     fun once(event: BrowserWindowEvent.RESPONSIVE, listener: Function<*>): Unit /* this */
     fun once(event: BrowserWindowEvent.RESTORE, listener: Function<*>): Unit /* this */
-    fun once(event: BrowserWindowEvent.ROTATE_GESTURE, listener: (event: Event, rotation: Double) -> Unit): Unit /* this */
+    fun once(
+        event: BrowserWindowEvent.ROTATE_GESTURE,
+        listener: (event: Event, rotation: Double) -> Unit,
+    ): Unit /* this */
+
     fun once(event: BrowserWindowEvent.SCROLL_TOUCH_BEGIN, listener: Function<*>): Unit /* this */
     fun once(event: BrowserWindowEvent.SCROLL_TOUCH_EDGE, listener: Function<*>): Unit /* this */
     fun once(event: BrowserWindowEvent.SCROLL_TOUCH_END, listener: Function<*>): Unit /* this */
@@ -367,39 +392,51 @@ open external class BrowserWindow : NodeEventEmitter {
     fun once(event: BrowserWindowEvent.SHOW, listener: Function<*>): Unit /* this */
     fun once(event: BrowserWindowEvent.SWIPE, listener: (event: Event, direction: String) -> Unit): Unit /* this */
     fun once(
-        event: BrowserWindowEvent.SYSTEM_CONTEXT_MENU, listener: (
+        event: BrowserWindowEvent.SYSTEM_CONTEXT_MENU,
+        listener: (
             event: Event,
             /**
              * The screen coordinates the context menu was triggered at
              */
-            point: Point
-        ) -> Unit
+            point: Point,
+        ) -> Unit,
     ): Unit /* this */
 
     fun once(event: BrowserWindowEvent.UNMAXIMIZE, listener: Function<*>): Unit /* this */
     fun once(event: BrowserWindowEvent.UNRESPONSIVE, listener: Function<*>): Unit /* this */
     fun once(
-        event: BrowserWindowEvent.WILL_MOVE, listener: (
+        event: BrowserWindowEvent.WILL_MOVE,
+        listener: (
             event: Event,
             /**
              * Location the window is being moved to.
              */
-            newBounds: Rectangle
-        ) -> Unit
+            newBounds: Rectangle,
+        ) -> Unit,
     ): Unit /* this */
 
     fun once(
-        event: BrowserWindowEvent.WILL_RESIZE, listener: (
+        event: BrowserWindowEvent.WILL_RESIZE,
+        listener: (
             event: Event,
             /**
              * Size the window is being resized to.
              */
-            newBounds: Rectangle, details: WillResizeDetails
-        ) -> Unit
+            newBounds: Rectangle,
+            details: WillResizeDetails,
+        ) -> Unit,
     ): Unit /* this */
 
-    fun addListener(event: BrowserWindowEvent.ALWAYS_ON_TOP_CHANGED, listener: (event: Event, isAlwaysOnTop: Boolean) -> Unit): Unit /* this */
-    fun addListener(event: BrowserWindowEvent.APP_COMMAND, listener: (event: Event, command: String) -> Unit): Unit /* this */
+    fun addListener(
+        event: BrowserWindowEvent.ALWAYS_ON_TOP_CHANGED,
+        listener: (event: Event, isAlwaysOnTop: Boolean) -> Unit,
+    ): Unit /* this */
+
+    fun addListener(
+        event: BrowserWindowEvent.APP_COMMAND,
+        listener: (event: Event, command: String) -> Unit,
+    ): Unit /* this */
+
     fun addListener(event: BrowserWindowEvent.BLUR, listener: Function<*>): Unit /* this */
     fun addListener(event: BrowserWindowEvent.CLOSE, listener: (event: Event) -> Unit): Unit /* this */
     fun addListener(event: BrowserWindowEvent.CLOSED, listener: Function<*>): Unit /* this */
@@ -414,13 +451,21 @@ open external class BrowserWindow : NodeEventEmitter {
     fun addListener(event: BrowserWindowEvent.MOVE, listener: Function<*>): Unit /* this */
     fun addListener(event: BrowserWindowEvent.MOVED, listener: Function<*>): Unit /* this */
     fun addListener(event: BrowserWindowEvent.NEW_WINDOW_FOR_TAB, listener: Function<*>): Unit /* this */
-    fun addListener(event: BrowserWindowEvent.PAGE_TITLE_UPDATED, listener: (event: Event, title: String, explicitSet: Boolean) -> Unit): Unit /* this */
+    fun addListener(
+        event: BrowserWindowEvent.PAGE_TITLE_UPDATED,
+        listener: (event: Event, title: String, explicitSet: Boolean) -> Unit,
+    ): Unit /* this */
+
     fun addListener(event: BrowserWindowEvent.READY_TO_SHOW, listener: Function<*>): Unit /* this */
     fun addListener(event: BrowserWindowEvent.RESIZE, listener: Function<*>): Unit /* this */
     fun addListener(event: BrowserWindowEvent.RESIZED, listener: Function<*>): Unit /* this */
     fun addListener(event: BrowserWindowEvent.RESPONSIVE, listener: Function<*>): Unit /* this */
     fun addListener(event: BrowserWindowEvent.RESTORE, listener: Function<*>): Unit /* this */
-    fun addListener(event: BrowserWindowEvent.ROTATE_GESTURE, listener: (event: Event, rotation: Double) -> Unit): Unit /* this */
+    fun addListener(
+        event: BrowserWindowEvent.ROTATE_GESTURE,
+        listener: (event: Event, rotation: Double) -> Unit,
+    ): Unit /* this */
+
     fun addListener(event: BrowserWindowEvent.SCROLL_TOUCH_BEGIN, listener: Function<*>): Unit /* this */
     fun addListener(event: BrowserWindowEvent.SCROLL_TOUCH_EDGE, listener: Function<*>): Unit /* this */
     fun addListener(event: BrowserWindowEvent.SCROLL_TOUCH_END, listener: Function<*>): Unit /* this */
@@ -428,41 +473,57 @@ open external class BrowserWindow : NodeEventEmitter {
     fun addListener(event: BrowserWindowEvent.SHEET_BEGIN, listener: Function<*>): Unit /* this */
     fun addListener(event: BrowserWindowEvent.SHEET_END, listener: Function<*>): Unit /* this */
     fun addListener(event: BrowserWindowEvent.SHOW, listener: Function<*>): Unit /* this */
-    fun addListener(event: BrowserWindowEvent.SWIPE, listener: (event: Event, direction: String) -> Unit): Unit /* this */
     fun addListener(
-        event: BrowserWindowEvent.SYSTEM_CONTEXT_MENU, listener: (
+        event: BrowserWindowEvent.SWIPE,
+        listener: (event: Event, direction: String) -> Unit,
+    ): Unit /* this */
+
+    fun addListener(
+        event: BrowserWindowEvent.SYSTEM_CONTEXT_MENU,
+        listener: (
             event: Event,
             /**
              * The screen coordinates the context menu was triggered at
              */
-            point: Point
-        ) -> Unit
+            point: Point,
+        ) -> Unit,
     ): Unit /* this */
 
     fun addListener(event: BrowserWindowEvent.UNMAXIMIZE, listener: Function<*>): Unit /* this */
     fun addListener(event: BrowserWindowEvent.UNRESPONSIVE, listener: Function<*>): Unit /* this */
     fun addListener(
-        event: BrowserWindowEvent.WILL_MOVE, listener: (
+        event: BrowserWindowEvent.WILL_MOVE,
+        listener: (
             event: Event,
             /**
              * Location the window is being moved to.
              */
-            newBounds: Rectangle
-        ) -> Unit
+            newBounds: Rectangle,
+        ) -> Unit,
     ): Unit /* this */
 
     fun addListener(
-        event: BrowserWindowEvent.WILL_RESIZE, listener: (
+        event: BrowserWindowEvent.WILL_RESIZE,
+        listener: (
             event: Event,
             /**
              * Size the window is being resized to.
              */
-            newBounds: Rectangle, details: WillResizeDetails
-        ) -> Unit
+            newBounds: Rectangle,
+            details: WillResizeDetails,
+        ) -> Unit,
     ): Unit /* this */
 
-    fun removeListener(event: BrowserWindowEvent.ALWAYS_ON_TOP_CHANGED, listener: (event: Event, isAlwaysOnTop: Boolean) -> Unit): Unit /* this */
-    fun removeListener(event: BrowserWindowEvent.APP_COMMAND, listener: (event: Event, command: String) -> Unit): Unit /* this */
+    fun removeListener(
+        event: BrowserWindowEvent.ALWAYS_ON_TOP_CHANGED,
+        listener: (event: Event, isAlwaysOnTop: Boolean) -> Unit,
+    ): Unit /* this */
+
+    fun removeListener(
+        event: BrowserWindowEvent.APP_COMMAND,
+        listener: (event: Event, command: String) -> Unit,
+    ): Unit /* this */
+
     fun removeListener(event: BrowserWindowEvent.BLUR, listener: Function<*>): Unit /* this */
     fun removeListener(event: BrowserWindowEvent.CLOSE, listener: (event: Event) -> Unit): Unit /* this */
     fun removeListener(event: BrowserWindowEvent.CLOSED, listener: Function<*>): Unit /* this */
@@ -477,13 +538,21 @@ open external class BrowserWindow : NodeEventEmitter {
     fun removeListener(event: BrowserWindowEvent.MOVE, listener: Function<*>): Unit /* this */
     fun removeListener(event: BrowserWindowEvent.MOVED, listener: Function<*>): Unit /* this */
     fun removeListener(event: BrowserWindowEvent.NEW_WINDOW_FOR_TAB, listener: Function<*>): Unit /* this */
-    fun removeListener(event: BrowserWindowEvent.PAGE_TITLE_UPDATED, listener: (event: Event, title: String, explicitSet: Boolean) -> Unit): Unit /* this */
+    fun removeListener(
+        event: BrowserWindowEvent.PAGE_TITLE_UPDATED,
+        listener: (event: Event, title: String, explicitSet: Boolean) -> Unit,
+    ): Unit /* this */
+
     fun removeListener(event: BrowserWindowEvent.READY_TO_SHOW, listener: Function<*>): Unit /* this */
     fun removeListener(event: BrowserWindowEvent.RESIZE, listener: Function<*>): Unit /* this */
     fun removeListener(event: BrowserWindowEvent.RESIZED, listener: Function<*>): Unit /* this */
     fun removeListener(event: BrowserWindowEvent.RESPONSIVE, listener: Function<*>): Unit /* this */
     fun removeListener(event: BrowserWindowEvent.RESTORE, listener: Function<*>): Unit /* this */
-    fun removeListener(event: BrowserWindowEvent.ROTATE_GESTURE, listener: (event: Event, rotation: Double) -> Unit): Unit /* this */
+    fun removeListener(
+        event: BrowserWindowEvent.ROTATE_GESTURE,
+        listener: (event: Event, rotation: Double) -> Unit,
+    ): Unit /* this */
+
     fun removeListener(event: BrowserWindowEvent.SCROLL_TOUCH_BEGIN, listener: Function<*>): Unit /* this */
     fun removeListener(event: BrowserWindowEvent.SCROLL_TOUCH_EDGE, listener: Function<*>): Unit /* this */
     fun removeListener(event: BrowserWindowEvent.SCROLL_TOUCH_END, listener: Function<*>): Unit /* this */
@@ -491,37 +560,45 @@ open external class BrowserWindow : NodeEventEmitter {
     fun removeListener(event: BrowserWindowEvent.SHEET_BEGIN, listener: Function<*>): Unit /* this */
     fun removeListener(event: BrowserWindowEvent.SHEET_END, listener: Function<*>): Unit /* this */
     fun removeListener(event: BrowserWindowEvent.SHOW, listener: Function<*>): Unit /* this */
-    fun removeListener(event: BrowserWindowEvent.SWIPE, listener: (event: Event, direction: String) -> Unit): Unit /* this */
     fun removeListener(
-        event: BrowserWindowEvent.SYSTEM_CONTEXT_MENU, listener: (
+        event: BrowserWindowEvent.SWIPE,
+        listener: (event: Event, direction: String) -> Unit,
+    ): Unit /* this */
+
+    fun removeListener(
+        event: BrowserWindowEvent.SYSTEM_CONTEXT_MENU,
+        listener: (
             event: Event,
             /**
              * The screen coordinates the context menu was triggered at
              */
-            point: Point
-        ) -> Unit
+            point: Point,
+        ) -> Unit,
     ): Unit /* this */
 
     fun removeListener(event: BrowserWindowEvent.UNMAXIMIZE, listener: Function<*>): Unit /* this */
     fun removeListener(event: BrowserWindowEvent.UNRESPONSIVE, listener: Function<*>): Unit /* this */
     fun removeListener(
-        event: BrowserWindowEvent.WILL_MOVE, listener: (
+        event: BrowserWindowEvent.WILL_MOVE,
+        listener: (
             event: Event,
             /**
              * Location the window is being moved to.
              */
-            newBounds: Rectangle
-        ) -> Unit
+            newBounds: Rectangle,
+        ) -> Unit,
     ): Unit /* this */
 
     fun removeListener(
-        event: BrowserWindowEvent.WILL_RESIZE, listener: (
+        event: BrowserWindowEvent.WILL_RESIZE,
+        listener: (
             event: Event,
             /**
              * Size the window is being resized to.
              */
-            newBounds: Rectangle, details: WillResizeDetails
-        ) -> Unit
+            newBounds: Rectangle,
+            details: WillResizeDetails,
+        ) -> Unit,
     ): Unit /* this */
 
     /**
@@ -553,7 +630,10 @@ open external class BrowserWindow : NodeEventEmitter {
      * non-zero. If you would like the page to stay hidden, you should ensure that
      * `stayHidden` is set to true.
      */
-    fun capturePage(rect: Rectangle = definedExternally, opts: Opts = definedExternally): Promise<NativeImage>
+    fun capturePage(
+        rect: Rectangle = definedExternally,
+        opts: Opts = definedExternally,
+    ): Promise<NativeImage>
 
     /**
      * Moves window to the center of the screen.
@@ -1041,7 +1121,11 @@ open external class BrowserWindow : NodeEventEmitter {
      * setting this, the window is still a normal window, not a toolbox window which
      * can not be focused on.
      */
-    fun setAlwaysOnTop(flag: Boolean, level: BrowserWindowSetAlwaysOnTopLevel = definedExternally, relativeLevel: Double = definedExternally): Unit
+    fun setAlwaysOnTop(
+        flag: Boolean,
+        level: BrowserWindowSetAlwaysOnTopLevel = definedExternally,
+        relativeLevel: Double = definedExternally,
+    ): Unit
 
     /**
      * Sets the properties for the window's taskbar button.

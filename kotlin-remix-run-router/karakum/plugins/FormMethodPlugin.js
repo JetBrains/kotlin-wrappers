@@ -70,6 +70,6 @@ ${body}
     },
 
     generate() {
-        return {};
+        return [];
     },
 }

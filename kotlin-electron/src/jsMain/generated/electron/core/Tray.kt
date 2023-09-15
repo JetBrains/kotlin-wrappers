@@ -43,7 +43,8 @@ open external class Tray : NodeEventEmitter {
      * activation, which might not necessarily be left mouse click.
      */
     fun on(
-        event: TrayEvent.CLICK, listener: (
+        event: TrayEvent.CLICK,
+        listener: (
             event: KeyboardEvent,
             /**
              * The bounds of tray icon.
@@ -52,8 +53,8 @@ open external class Tray : NodeEventEmitter {
             /**
              * The position of the event.
              */
-            position: Point
-        ) -> Unit
+            position: Point,
+        ) -> Unit,
     ): Unit /* this */
 
     /**
@@ -62,13 +63,14 @@ open external class Tray : NodeEventEmitter {
      * @platform darwin,win32
      */
     fun on(
-        event: TrayEvent.DOUBLE_CLICK, listener: (
+        event: TrayEvent.DOUBLE_CLICK,
+        listener: (
             event: KeyboardEvent,
             /**
              * The bounds of tray icon.
              */
-            bounds: Rectangle
-        ) -> Unit
+            bounds: Rectangle,
+        ) -> Unit,
     ): Unit /* this */
 
     /**
@@ -105,13 +107,14 @@ open external class Tray : NodeEventEmitter {
      * @platform darwin
      */
     fun on(
-        event: TrayEvent.DROP_FILES, listener: (
+        event: TrayEvent.DROP_FILES,
+        listener: (
             event: Event,
             /**
              * The paths of the dropped files.
              */
-            files: js.core.ReadonlyArray<String>
-        ) -> Unit
+            files: js.core.ReadonlyArray<String>,
+        ) -> Unit,
     ): Unit /* this */
 
     /**
@@ -120,13 +123,14 @@ open external class Tray : NodeEventEmitter {
      * @platform darwin
      */
     fun on(
-        event: TrayEvent.DROP_TEXT, listener: (
+        event: TrayEvent.DROP_TEXT,
+        listener: (
             event: Event,
             /**
              * the dropped text string.
              */
-            text: String
-        ) -> Unit
+            text: String,
+        ) -> Unit,
     ): Unit /* this */
 
     /**
@@ -135,13 +139,14 @@ open external class Tray : NodeEventEmitter {
      * @platform darwin
      */
     fun on(
-        event: TrayEvent.MOUSE_DOWN, listener: (
+        event: TrayEvent.MOUSE_DOWN,
+        listener: (
             event: KeyboardEvent,
             /**
              * The position of the event.
              */
-            position: Point
-        ) -> Unit
+            position: Point,
+        ) -> Unit,
     ): Unit /* this */
 
     /**
@@ -150,13 +155,14 @@ open external class Tray : NodeEventEmitter {
      * @platform darwin
      */
     fun on(
-        event: TrayEvent.MOUSE_ENTER, listener: (
+        event: TrayEvent.MOUSE_ENTER,
+        listener: (
             event: KeyboardEvent,
             /**
              * The position of the event.
              */
-            position: Point
-        ) -> Unit
+            position: Point,
+        ) -> Unit,
     ): Unit /* this */
 
     /**
@@ -165,13 +171,14 @@ open external class Tray : NodeEventEmitter {
      * @platform darwin
      */
     fun on(
-        event: TrayEvent.MOUSE_LEAVE, listener: (
+        event: TrayEvent.MOUSE_LEAVE,
+        listener: (
             event: KeyboardEvent,
             /**
              * The position of the event.
              */
-            position: Point
-        ) -> Unit
+            position: Point,
+        ) -> Unit,
     ): Unit /* this */
 
     /**
@@ -180,13 +187,14 @@ open external class Tray : NodeEventEmitter {
      * @platform darwin,win32
      */
     fun on(
-        event: TrayEvent.MOUSE_MOVE, listener: (
+        event: TrayEvent.MOUSE_MOVE,
+        listener: (
             event: KeyboardEvent,
             /**
              * The position of the event.
              */
-            position: Point
-        ) -> Unit
+            position: Point,
+        ) -> Unit,
     ): Unit /* this */
 
     /**
@@ -198,13 +206,14 @@ open external class Tray : NodeEventEmitter {
      * @platform darwin
      */
     fun on(
-        event: TrayEvent.MOUSE_UP, listener: (
+        event: TrayEvent.MOUSE_UP,
+        listener: (
             event: KeyboardEvent,
             /**
              * The position of the event.
              */
-            position: Point
-        ) -> Unit
+            position: Point,
+        ) -> Unit,
     ): Unit /* this */
 
     /**
@@ -213,20 +222,22 @@ open external class Tray : NodeEventEmitter {
      * @platform darwin,win32
      */
     fun on(
-        event: TrayEvent.RIGHT_CLICK, listener: (
+        event: TrayEvent.RIGHT_CLICK,
+        listener: (
             event: KeyboardEvent,
             /**
              * The bounds of tray icon.
              */
-            bounds: Rectangle
-        ) -> Unit
+            bounds: Rectangle,
+        ) -> Unit,
     ): Unit /* this */
 
     fun once(event: TrayEvent.BALLOON_CLICK, listener: Function<*>): Unit /* this */
     fun once(event: TrayEvent.BALLOON_CLOSED, listener: Function<*>): Unit /* this */
     fun once(event: TrayEvent.BALLOON_SHOW, listener: Function<*>): Unit /* this */
     fun once(
-        event: TrayEvent.CLICK, listener: (
+        event: TrayEvent.CLICK,
+        listener: (
             event: KeyboardEvent,
             /**
              * The bounds of tray icon.
@@ -235,18 +246,19 @@ open external class Tray : NodeEventEmitter {
             /**
              * The position of the event.
              */
-            position: Point
-        ) -> Unit
+            position: Point,
+        ) -> Unit,
     ): Unit /* this */
 
     fun once(
-        event: TrayEvent.DOUBLE_CLICK, listener: (
+        event: TrayEvent.DOUBLE_CLICK,
+        listener: (
             event: KeyboardEvent,
             /**
              * The bounds of tray icon.
              */
-            bounds: Rectangle
-        ) -> Unit
+            bounds: Rectangle,
+        ) -> Unit,
     ): Unit /* this */
 
     fun once(event: TrayEvent.DRAG_END, listener: Function<*>): Unit /* this */
@@ -254,90 +266,99 @@ open external class Tray : NodeEventEmitter {
     fun once(event: TrayEvent.DRAG_LEAVE, listener: Function<*>): Unit /* this */
     fun once(event: TrayEvent.DROP, listener: Function<*>): Unit /* this */
     fun once(
-        event: TrayEvent.DROP_FILES, listener: (
+        event: TrayEvent.DROP_FILES,
+        listener: (
             event: Event,
             /**
              * The paths of the dropped files.
              */
-            files: js.core.ReadonlyArray<String>
-        ) -> Unit
+            files: js.core.ReadonlyArray<String>,
+        ) -> Unit,
     ): Unit /* this */
 
     fun once(
-        event: TrayEvent.DROP_TEXT, listener: (
+        event: TrayEvent.DROP_TEXT,
+        listener: (
             event: Event,
             /**
              * the dropped text string.
              */
-            text: String
-        ) -> Unit
+            text: String,
+        ) -> Unit,
     ): Unit /* this */
 
     fun once(
-        event: TrayEvent.MOUSE_DOWN, listener: (
+        event: TrayEvent.MOUSE_DOWN,
+        listener: (
             event: KeyboardEvent,
             /**
              * The position of the event.
              */
-            position: Point
-        ) -> Unit
+            position: Point,
+        ) -> Unit,
     ): Unit /* this */
 
     fun once(
-        event: TrayEvent.MOUSE_ENTER, listener: (
+        event: TrayEvent.MOUSE_ENTER,
+        listener: (
             event: KeyboardEvent,
             /**
              * The position of the event.
              */
-            position: Point
-        ) -> Unit
+            position: Point,
+        ) -> Unit,
     ): Unit /* this */
 
     fun once(
-        event: TrayEvent.MOUSE_LEAVE, listener: (
+        event: TrayEvent.MOUSE_LEAVE,
+        listener: (
             event: KeyboardEvent,
             /**
              * The position of the event.
              */
-            position: Point
-        ) -> Unit
+            position: Point,
+        ) -> Unit,
     ): Unit /* this */
 
     fun once(
-        event: TrayEvent.MOUSE_MOVE, listener: (
+        event: TrayEvent.MOUSE_MOVE,
+        listener: (
             event: KeyboardEvent,
             /**
              * The position of the event.
              */
-            position: Point
-        ) -> Unit
+            position: Point,
+        ) -> Unit,
     ): Unit /* this */
 
     fun once(
-        event: TrayEvent.MOUSE_UP, listener: (
+        event: TrayEvent.MOUSE_UP,
+        listener: (
             event: KeyboardEvent,
             /**
              * The position of the event.
              */
-            position: Point
-        ) -> Unit
+            position: Point,
+        ) -> Unit,
     ): Unit /* this */
 
     fun once(
-        event: TrayEvent.RIGHT_CLICK, listener: (
+        event: TrayEvent.RIGHT_CLICK,
+        listener: (
             event: KeyboardEvent,
             /**
              * The bounds of tray icon.
              */
-            bounds: Rectangle
-        ) -> Unit
+            bounds: Rectangle,
+        ) -> Unit,
     ): Unit /* this */
 
     fun addListener(event: TrayEvent.BALLOON_CLICK, listener: Function<*>): Unit /* this */
     fun addListener(event: TrayEvent.BALLOON_CLOSED, listener: Function<*>): Unit /* this */
     fun addListener(event: TrayEvent.BALLOON_SHOW, listener: Function<*>): Unit /* this */
     fun addListener(
-        event: TrayEvent.CLICK, listener: (
+        event: TrayEvent.CLICK,
+        listener: (
             event: KeyboardEvent,
             /**
              * The bounds of tray icon.
@@ -346,18 +367,19 @@ open external class Tray : NodeEventEmitter {
             /**
              * The position of the event.
              */
-            position: Point
-        ) -> Unit
+            position: Point,
+        ) -> Unit,
     ): Unit /* this */
 
     fun addListener(
-        event: TrayEvent.DOUBLE_CLICK, listener: (
+        event: TrayEvent.DOUBLE_CLICK,
+        listener: (
             event: KeyboardEvent,
             /**
              * The bounds of tray icon.
              */
-            bounds: Rectangle
-        ) -> Unit
+            bounds: Rectangle,
+        ) -> Unit,
     ): Unit /* this */
 
     fun addListener(event: TrayEvent.DRAG_END, listener: Function<*>): Unit /* this */
@@ -365,90 +387,99 @@ open external class Tray : NodeEventEmitter {
     fun addListener(event: TrayEvent.DRAG_LEAVE, listener: Function<*>): Unit /* this */
     fun addListener(event: TrayEvent.DROP, listener: Function<*>): Unit /* this */
     fun addListener(
-        event: TrayEvent.DROP_FILES, listener: (
+        event: TrayEvent.DROP_FILES,
+        listener: (
             event: Event,
             /**
              * The paths of the dropped files.
              */
-            files: js.core.ReadonlyArray<String>
-        ) -> Unit
+            files: js.core.ReadonlyArray<String>,
+        ) -> Unit,
     ): Unit /* this */
 
     fun addListener(
-        event: TrayEvent.DROP_TEXT, listener: (
+        event: TrayEvent.DROP_TEXT,
+        listener: (
             event: Event,
             /**
              * the dropped text string.
              */
-            text: String
-        ) -> Unit
+            text: String,
+        ) -> Unit,
     ): Unit /* this */
 
     fun addListener(
-        event: TrayEvent.MOUSE_DOWN, listener: (
+        event: TrayEvent.MOUSE_DOWN,
+        listener: (
             event: KeyboardEvent,
             /**
              * The position of the event.
              */
-            position: Point
-        ) -> Unit
+            position: Point,
+        ) -> Unit,
     ): Unit /* this */
 
     fun addListener(
-        event: TrayEvent.MOUSE_ENTER, listener: (
+        event: TrayEvent.MOUSE_ENTER,
+        listener: (
             event: KeyboardEvent,
             /**
              * The position of the event.
              */
-            position: Point
-        ) -> Unit
+            position: Point,
+        ) -> Unit,
     ): Unit /* this */
 
     fun addListener(
-        event: TrayEvent.MOUSE_LEAVE, listener: (
+        event: TrayEvent.MOUSE_LEAVE,
+        listener: (
             event: KeyboardEvent,
             /**
              * The position of the event.
              */
-            position: Point
-        ) -> Unit
+            position: Point,
+        ) -> Unit,
     ): Unit /* this */
 
     fun addListener(
-        event: TrayEvent.MOUSE_MOVE, listener: (
+        event: TrayEvent.MOUSE_MOVE,
+        listener: (
             event: KeyboardEvent,
             /**
              * The position of the event.
              */
-            position: Point
-        ) -> Unit
+            position: Point,
+        ) -> Unit,
     ): Unit /* this */
 
     fun addListener(
-        event: TrayEvent.MOUSE_UP, listener: (
+        event: TrayEvent.MOUSE_UP,
+        listener: (
             event: KeyboardEvent,
             /**
              * The position of the event.
              */
-            position: Point
-        ) -> Unit
+            position: Point,
+        ) -> Unit,
     ): Unit /* this */
 
     fun addListener(
-        event: TrayEvent.RIGHT_CLICK, listener: (
+        event: TrayEvent.RIGHT_CLICK,
+        listener: (
             event: KeyboardEvent,
             /**
              * The bounds of tray icon.
              */
-            bounds: Rectangle
-        ) -> Unit
+            bounds: Rectangle,
+        ) -> Unit,
     ): Unit /* this */
 
     fun removeListener(event: TrayEvent.BALLOON_CLICK, listener: Function<*>): Unit /* this */
     fun removeListener(event: TrayEvent.BALLOON_CLOSED, listener: Function<*>): Unit /* this */
     fun removeListener(event: TrayEvent.BALLOON_SHOW, listener: Function<*>): Unit /* this */
     fun removeListener(
-        event: TrayEvent.CLICK, listener: (
+        event: TrayEvent.CLICK,
+        listener: (
             event: KeyboardEvent,
             /**
              * The bounds of tray icon.
@@ -457,18 +488,19 @@ open external class Tray : NodeEventEmitter {
             /**
              * The position of the event.
              */
-            position: Point
-        ) -> Unit
+            position: Point,
+        ) -> Unit,
     ): Unit /* this */
 
     fun removeListener(
-        event: TrayEvent.DOUBLE_CLICK, listener: (
+        event: TrayEvent.DOUBLE_CLICK,
+        listener: (
             event: KeyboardEvent,
             /**
              * The bounds of tray icon.
              */
-            bounds: Rectangle
-        ) -> Unit
+            bounds: Rectangle,
+        ) -> Unit,
     ): Unit /* this */
 
     fun removeListener(event: TrayEvent.DRAG_END, listener: Function<*>): Unit /* this */
@@ -476,83 +508,91 @@ open external class Tray : NodeEventEmitter {
     fun removeListener(event: TrayEvent.DRAG_LEAVE, listener: Function<*>): Unit /* this */
     fun removeListener(event: TrayEvent.DROP, listener: Function<*>): Unit /* this */
     fun removeListener(
-        event: TrayEvent.DROP_FILES, listener: (
+        event: TrayEvent.DROP_FILES,
+        listener: (
             event: Event,
             /**
              * The paths of the dropped files.
              */
-            files: js.core.ReadonlyArray<String>
-        ) -> Unit
+            files: js.core.ReadonlyArray<String>,
+        ) -> Unit,
     ): Unit /* this */
 
     fun removeListener(
-        event: TrayEvent.DROP_TEXT, listener: (
+        event: TrayEvent.DROP_TEXT,
+        listener: (
             event: Event,
             /**
              * the dropped text string.
              */
-            text: String
-        ) -> Unit
+            text: String,
+        ) -> Unit,
     ): Unit /* this */
 
     fun removeListener(
-        event: TrayEvent.MOUSE_DOWN, listener: (
+        event: TrayEvent.MOUSE_DOWN,
+        listener: (
             event: KeyboardEvent,
             /**
              * The position of the event.
              */
-            position: Point
-        ) -> Unit
+            position: Point,
+        ) -> Unit,
     ): Unit /* this */
 
     fun removeListener(
-        event: TrayEvent.MOUSE_ENTER, listener: (
+        event: TrayEvent.MOUSE_ENTER,
+        listener: (
             event: KeyboardEvent,
             /**
              * The position of the event.
              */
-            position: Point
-        ) -> Unit
+            position: Point,
+        ) -> Unit,
     ): Unit /* this */
 
     fun removeListener(
-        event: TrayEvent.MOUSE_LEAVE, listener: (
+        event: TrayEvent.MOUSE_LEAVE,
+        listener: (
             event: KeyboardEvent,
             /**
              * The position of the event.
              */
-            position: Point
-        ) -> Unit
+            position: Point,
+        ) -> Unit,
     ): Unit /* this */
 
     fun removeListener(
-        event: TrayEvent.MOUSE_MOVE, listener: (
+        event: TrayEvent.MOUSE_MOVE,
+        listener: (
             event: KeyboardEvent,
             /**
              * The position of the event.
              */
-            position: Point
-        ) -> Unit
+            position: Point,
+        ) -> Unit,
     ): Unit /* this */
 
     fun removeListener(
-        event: TrayEvent.MOUSE_UP, listener: (
+        event: TrayEvent.MOUSE_UP,
+        listener: (
             event: KeyboardEvent,
             /**
              * The position of the event.
              */
-            position: Point
-        ) -> Unit
+            position: Point,
+        ) -> Unit,
     ): Unit /* this */
 
     fun removeListener(
-        event: TrayEvent.RIGHT_CLICK, listener: (
+        event: TrayEvent.RIGHT_CLICK,
+        listener: (
             event: KeyboardEvent,
             /**
              * The bounds of tray icon.
              */
-            bounds: Rectangle
-        ) -> Unit
+            bounds: Rectangle,
+        ) -> Unit,
     ): Unit /* this */
 
     /**

@@ -13,7 +13,8 @@ external class Cookies : NodeEventEmitter {
      * expired.
      */
     fun on(
-        event: CookiesEvent.CHANGED, listener: (
+        event: CookiesEvent.CHANGED,
+        listener: (
             event: Event,
             /**
              * The cookie that was changed.
@@ -26,12 +27,13 @@ external class Cookies : NodeEventEmitter {
             /**
              * `true` if the cookie was removed, `false` otherwise.
              */
-            removed: Boolean
-        ) -> Unit
+            removed: Boolean,
+        ) -> Unit,
     ): Unit /* this */
 
     fun once(
-        event: CookiesEvent.CHANGED, listener: (
+        event: CookiesEvent.CHANGED,
+        listener: (
             event: Event,
             /**
              * The cookie that was changed.
@@ -44,12 +46,13 @@ external class Cookies : NodeEventEmitter {
             /**
              * `true` if the cookie was removed, `false` otherwise.
              */
-            removed: Boolean
-        ) -> Unit
+            removed: Boolean,
+        ) -> Unit,
     ): Unit /* this */
 
     fun addListener(
-        event: CookiesEvent.CHANGED, listener: (
+        event: CookiesEvent.CHANGED,
+        listener: (
             event: Event,
             /**
              * The cookie that was changed.
@@ -62,12 +65,13 @@ external class Cookies : NodeEventEmitter {
             /**
              * `true` if the cookie was removed, `false` otherwise.
              */
-            removed: Boolean
-        ) -> Unit
+            removed: Boolean,
+        ) -> Unit,
     ): Unit /* this */
 
     fun removeListener(
-        event: CookiesEvent.CHANGED, listener: (
+        event: CookiesEvent.CHANGED,
+        listener: (
             event: Event,
             /**
              * The cookie that was changed.
@@ -80,8 +84,8 @@ external class Cookies : NodeEventEmitter {
             /**
              * `true` if the cookie was removed, `false` otherwise.
              */
-            removed: Boolean
-        ) -> Unit
+            removed: Boolean,
+        ) -> Unit,
     ): Unit /* this */
 
     /**

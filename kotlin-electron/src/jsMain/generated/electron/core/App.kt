@@ -14,13 +14,14 @@ external interface App : node.events.IEventEmitter {
      * @platform darwin,win32
      */
     fun on(
-        event: AppEvent.ACCESSIBILITY_SUPPORT_CHANGED, listener: (
+        event: AppEvent.ACCESSIBILITY_SUPPORT_CHANGED,
+        listener: (
             event: Event,
             /**
              * `true` when Chrome's accessibility support is enabled, `false` otherwise.
              */
-            accessibilitySupportEnabled: Boolean
-        ) -> Unit
+            accessibilitySupportEnabled: Boolean,
+        ) -> Unit,
     ): Unit /* this */
 
     /**
@@ -40,7 +41,8 @@ external interface App : node.events.IEventEmitter {
      * @platform darwin
      */
     fun on(
-        event: AppEvent.ACTIVITY_WAS_CONTINUED, listener: (
+        event: AppEvent.ACTIVITY_WAS_CONTINUED,
+        listener: (
             event: Event,
             /**
              * A string identifying the activity. Maps to `NSUserActivity.activityType`.
@@ -49,8 +51,8 @@ external interface App : node.events.IEventEmitter {
             /**
              * Contains app-specific state stored by the activity.
              */
-            userInfo: Any?
-        ) -> Unit
+            userInfo: Any?,
+        ) -> Unit,
     ): Unit /* this */
 
     /**
@@ -70,17 +72,26 @@ external interface App : node.events.IEventEmitter {
     /**
      * Emitted when a browserWindow gets blurred.
      */
-    fun on(event: AppEvent.BROWSER_WINDOW_BLUR, listener: (event: Event, window: BrowserWindow) -> Unit): Unit /* this */
+    fun on(
+        event: AppEvent.BROWSER_WINDOW_BLUR,
+        listener: (event: Event, window: BrowserWindow) -> Unit,
+    ): Unit /* this */
 
     /**
      * Emitted when a new browserWindow is created.
      */
-    fun on(event: AppEvent.BROWSER_WINDOW_CREATED, listener: (event: Event, window: BrowserWindow) -> Unit): Unit /* this */
+    fun on(
+        event: AppEvent.BROWSER_WINDOW_CREATED,
+        listener: (event: Event, window: BrowserWindow) -> Unit,
+    ): Unit /* this */
 
     /**
      * Emitted when a browserWindow gets focused.
      */
-    fun on(event: AppEvent.BROWSER_WINDOW_FOCUS, listener: (event: Event, window: BrowserWindow) -> Unit): Unit /* this */
+    fun on(
+        event: AppEvent.BROWSER_WINDOW_FOCUS,
+        listener: (event: Event, window: BrowserWindow) -> Unit,
+    ): Unit /* this */
 
     /**
      * Emitted when failed to verify the `certificate` for `url`, to trust the
@@ -88,13 +99,15 @@ external interface App : node.events.IEventEmitter {
      * `event.preventDefault()` and call `callback(true)`.
      */
     fun on(
-        event: AppEvent.CERTIFICATE_ERROR, listener: (
+        event: AppEvent.CERTIFICATE_ERROR,
+        listener: (
             event: Event, webContents: WebContents, url: String,
             /**
              * The error code
              */
-            error: String, certificate: Certificate, callback: (isTrusted: Boolean) -> Unit, isMainFrame: Boolean
-        ) -> Unit
+            error: String,
+            certificate: Certificate, callback: (isTrusted: Boolean) -> Unit, isMainFrame: Boolean,
+        ) -> Unit,
     ): Unit /* this */
 
     /**
@@ -116,7 +129,8 @@ external interface App : node.events.IEventEmitter {
      * @platform darwin
      */
     fun on(
-        event: AppEvent.CONTINUE_ACTIVITY, listener: (
+        event: AppEvent.CONTINUE_ACTIVITY,
+        listener: (
             event: Event,
             /**
              * A string identifying the activity. Maps to `NSUserActivity.activityType`.
@@ -125,8 +139,9 @@ external interface App : node.events.IEventEmitter {
             /**
              * Contains app-specific state stored by the activity on another device.
              */
-            userInfo: Any?, details: ContinueActivityDetails
-        ) -> Unit
+            userInfo: Any?,
+            details: ContinueActivityDetails,
+        ) -> Unit,
     ): Unit /* this */
 
     /**
@@ -136,7 +151,8 @@ external interface App : node.events.IEventEmitter {
      * @platform darwin
      */
     fun on(
-        event: AppEvent.CONTINUE_ACTIVITY_ERROR, listener: (
+        event: AppEvent.CONTINUE_ACTIVITY_ERROR,
+        listener: (
             event: Event,
             /**
              * A string identifying the activity. Maps to `NSUserActivity.activityType`.
@@ -145,8 +161,8 @@ external interface App : node.events.IEventEmitter {
             /**
              * A string with the error's localized description.
              */
-            error: String
-        ) -> Unit
+            error: String,
+        ) -> Unit,
     ): Unit /* this */
 
     /**
@@ -188,7 +204,7 @@ external interface App : node.events.IEventEmitter {
      */
     fun on(
         event: AppEvent.LOGIN,
-        listener: (event: Event, webContents: WebContents, authenticationResponseDetails: AuthenticationResponseDetails, authInfo: AuthInfo, callback: (username: String? /* use undefined for default */, password: String? /* use undefined for default */) -> Unit) -> Unit
+        listener: (event: Event, webContents: WebContents, authenticationResponseDetails: AuthenticationResponseDetails, authInfo: AuthInfo, callback: (username: String? /* use undefined for default */, password: String? /* use undefined for default */) -> Unit) -> Unit,
     ): Unit /* this */
 
     /**
@@ -246,13 +262,19 @@ external interface App : node.events.IEventEmitter {
      * this event has already fired and `app.whenReady()` to get a Promise that is
      * fulfilled when Electron is initialized.
      */
-    fun on(event: AppEvent.READY, listener: (event: Event, launchInfo: Any /* (Record<string, any>) | (NotificationResponse) */) -> Unit): Unit /* this */
+    fun on(
+        event: AppEvent.READY,
+        listener: (event: Event, launchInfo: Any /* (Record<string, any>) | (NotificationResponse) */) -> Unit,
+    ): Unit /* this */
 
     /**
      * Emitted when the renderer process unexpectedly disappears.  This is normally
      * because it was crashed or killed.
      */
-    fun on(event: AppEvent.RENDER_PROCESS_GONE, listener: (event: Event, webContents: WebContents, details: RenderProcessGoneDetails) -> Unit): Unit /* this */
+    fun on(
+        event: AppEvent.RENDER_PROCESS_GONE,
+        listener: (event: Event, webContents: WebContents, details: RenderProcessGoneDetails) -> Unit,
+    ): Unit /* this */
 
     /**
      * Emitted when the renderer process of `webContents` crashes or is killed.
@@ -264,7 +286,10 @@ external interface App : node.events.IEventEmitter {
      *
      * @deprecated
      */
-    fun on(event: AppEvent.RENDERER_PROCESS_CRASHED, listener: (event: Event, webContents: WebContents, killed: Boolean) -> Unit): Unit /* this */
+    fun on(
+        event: AppEvent.RENDERER_PROCESS_CRASHED,
+        listener: (event: Event, webContents: WebContents, killed: Boolean) -> Unit,
+    ): Unit /* this */
 
     /**
      * This event will be emitted inside the primary instance of your application when
@@ -289,7 +314,8 @@ external interface App : node.events.IEventEmitter {
      * `--original-process-start-time`.
      */
     fun on(
-        event: AppEvent.SECOND_INSTANCE, listener: (
+        event: AppEvent.SECOND_INSTANCE,
+        listener: (
             event: Event,
             /**
              * An array of the second instance's command line arguments
@@ -302,8 +328,8 @@ external interface App : node.events.IEventEmitter {
             /**
              * A JSON object of additional data passed from the second instance
              */
-            additionalData: Any?
-        ) -> Unit
+            additionalData: Any?,
+        ) -> Unit,
     ): Unit /* this */
 
     /**
@@ -316,7 +342,7 @@ external interface App : node.events.IEventEmitter {
      */
     fun on(
         event: AppEvent.SELECT_CLIENT_CERTIFICATE,
-        listener: (event: Event, webContents: WebContents, url: String, certificateList: js.core.ReadonlyArray<Certificate>, callback: (certificate: Certificate? /* use undefined for default */) -> Unit) -> Unit
+        listener: (event: Event, webContents: WebContents, url: String, certificateList: js.core.ReadonlyArray<Certificate>, callback: (certificate: Certificate? /* use undefined for default */) -> Unit) -> Unit,
     ): Unit /* this */
 
     /**
@@ -334,7 +360,8 @@ external interface App : node.events.IEventEmitter {
      * @platform darwin
      */
     fun on(
-        event: AppEvent.UPDATE_ACTIVITY_STATE, listener: (
+        event: AppEvent.UPDATE_ACTIVITY_STATE,
+        listener: (
             event: Event,
             /**
              * A string identifying the activity. Maps to `NSUserActivity.activityType`.
@@ -343,14 +370,17 @@ external interface App : node.events.IEventEmitter {
             /**
              * Contains app-specific state stored by the activity.
              */
-            userInfo: Any?
-        ) -> Unit
+            userInfo: Any?,
+        ) -> Unit,
     ): Unit /* this */
 
     /**
      * Emitted when a new webContents is created.
      */
-    fun on(event: AppEvent.WEB_CONTENTS_CREATED, listener: (event: Event, webContents: WebContents) -> Unit): Unit /* this */
+    fun on(
+        event: AppEvent.WEB_CONTENTS_CREATED,
+        listener: (event: Event, webContents: WebContents) -> Unit,
+    ): Unit /* this */
 
     /**
      * Emitted during Handoff before an activity from a different device wants to be
@@ -360,13 +390,14 @@ external interface App : node.events.IEventEmitter {
      * @platform darwin
      */
     fun on(
-        event: AppEvent.WILL_CONTINUE_ACTIVITY, listener: (
+        event: AppEvent.WILL_CONTINUE_ACTIVITY,
+        listener: (
             event: Event,
             /**
              * A string identifying the activity. Maps to `NSUserActivity.activityType`.
              */
-            type: String
-        ) -> Unit
+            type: String,
+        ) -> Unit,
     ): Unit /* this */
 
     /**
@@ -404,18 +435,20 @@ external interface App : node.events.IEventEmitter {
      */
     fun on(event: AppEvent.WINDOW_ALL_CLOSED, listener: Function<*>): Unit /* this */
     fun once(
-        event: AppEvent.ACCESSIBILITY_SUPPORT_CHANGED, listener: (
+        event: AppEvent.ACCESSIBILITY_SUPPORT_CHANGED,
+        listener: (
             event: Event,
             /**
              * `true` when Chrome's accessibility support is enabled, `false` otherwise.
              */
-            accessibilitySupportEnabled: Boolean
-        ) -> Unit
+            accessibilitySupportEnabled: Boolean,
+        ) -> Unit,
     ): Unit /* this */
 
     fun once(event: AppEvent.ACTIVATE, listener: (event: Event, hasVisibleWindows: Boolean) -> Unit): Unit /* this */
     fun once(
-        event: AppEvent.ACTIVITY_WAS_CONTINUED, listener: (
+        event: AppEvent.ACTIVITY_WAS_CONTINUED,
+        listener: (
             event: Event,
             /**
              * A string identifying the activity. Maps to `NSUserActivity.activityType`.
@@ -424,27 +457,42 @@ external interface App : node.events.IEventEmitter {
             /**
              * Contains app-specific state stored by the activity.
              */
-            userInfo: Any?
-        ) -> Unit
+            userInfo: Any?,
+        ) -> Unit,
     ): Unit /* this */
 
     fun once(event: AppEvent.BEFORE_QUIT, listener: (event: Event) -> Unit): Unit /* this */
-    fun once(event: AppEvent.BROWSER_WINDOW_BLUR, listener: (event: Event, window: BrowserWindow) -> Unit): Unit /* this */
-    fun once(event: AppEvent.BROWSER_WINDOW_CREATED, listener: (event: Event, window: BrowserWindow) -> Unit): Unit /* this */
-    fun once(event: AppEvent.BROWSER_WINDOW_FOCUS, listener: (event: Event, window: BrowserWindow) -> Unit): Unit /* this */
     fun once(
-        event: AppEvent.CERTIFICATE_ERROR, listener: (
+        event: AppEvent.BROWSER_WINDOW_BLUR,
+        listener: (event: Event, window: BrowserWindow) -> Unit,
+    ): Unit /* this */
+
+    fun once(
+        event: AppEvent.BROWSER_WINDOW_CREATED,
+        listener: (event: Event, window: BrowserWindow) -> Unit,
+    ): Unit /* this */
+
+    fun once(
+        event: AppEvent.BROWSER_WINDOW_FOCUS,
+        listener: (event: Event, window: BrowserWindow) -> Unit,
+    ): Unit /* this */
+
+    fun once(
+        event: AppEvent.CERTIFICATE_ERROR,
+        listener: (
             event: Event, webContents: WebContents, url: String,
             /**
              * The error code
              */
-            error: String, certificate: Certificate, callback: (isTrusted: Boolean) -> Unit, isMainFrame: Boolean
-        ) -> Unit
+            error: String,
+            certificate: Certificate, callback: (isTrusted: Boolean) -> Unit, isMainFrame: Boolean,
+        ) -> Unit,
     ): Unit /* this */
 
     fun once(event: AppEvent.CHILD_PROCESS_GONE, listener: (event: Event, details: Details) -> Unit): Unit /* this */
     fun once(
-        event: AppEvent.CONTINUE_ACTIVITY, listener: (
+        event: AppEvent.CONTINUE_ACTIVITY,
+        listener: (
             event: Event,
             /**
              * A string identifying the activity. Maps to `NSUserActivity.activityType`.
@@ -453,12 +501,14 @@ external interface App : node.events.IEventEmitter {
             /**
              * Contains app-specific state stored by the activity on another device.
              */
-            userInfo: Any?, details: ContinueActivityDetails
-        ) -> Unit
+            userInfo: Any?,
+            details: ContinueActivityDetails,
+        ) -> Unit,
     ): Unit /* this */
 
     fun once(
-        event: AppEvent.CONTINUE_ACTIVITY_ERROR, listener: (
+        event: AppEvent.CONTINUE_ACTIVITY_ERROR,
+        listener: (
             event: Event,
             /**
              * A string identifying the activity. Maps to `NSUserActivity.activityType`.
@@ -467,8 +517,8 @@ external interface App : node.events.IEventEmitter {
             /**
              * A string with the error's localized description.
              */
-            error: String
-        ) -> Unit
+            error: String,
+        ) -> Unit,
     ): Unit /* this */
 
     fun once(event: AppEvent.DID_BECOME_ACTIVE, listener: (event: Event) -> Unit): Unit /* this */
@@ -476,18 +526,31 @@ external interface App : node.events.IEventEmitter {
     fun once(event: AppEvent.GPU_PROCESS_CRASHED, listener: (event: Event, killed: Boolean) -> Unit): Unit /* this */
     fun once(
         event: AppEvent.LOGIN,
-        listener: (event: Event, webContents: WebContents, authenticationResponseDetails: AuthenticationResponseDetails, authInfo: AuthInfo, callback: (username: String? /* use undefined for default */, password: String? /* use undefined for default */) -> Unit) -> Unit
+        listener: (event: Event, webContents: WebContents, authenticationResponseDetails: AuthenticationResponseDetails, authInfo: AuthInfo, callback: (username: String? /* use undefined for default */, password: String? /* use undefined for default */) -> Unit) -> Unit,
     ): Unit /* this */
 
     fun once(event: AppEvent.NEW_WINDOW_FOR_TAB, listener: (event: Event) -> Unit): Unit /* this */
     fun once(event: AppEvent.OPEN_FILE, listener: (event: Event, path: String) -> Unit): Unit /* this */
     fun once(event: AppEvent.OPEN_URL, listener: (event: Event, url: String) -> Unit): Unit /* this */
     fun once(event: AppEvent.QUIT, listener: (event: Event, exitCode: Double) -> Unit): Unit /* this */
-    fun once(event: AppEvent.READY, listener: (event: Event, launchInfo: Any /* (Record<string, any>) | (NotificationResponse) */) -> Unit): Unit /* this */
-    fun once(event: AppEvent.RENDER_PROCESS_GONE, listener: (event: Event, webContents: WebContents, details: RenderProcessGoneDetails) -> Unit): Unit /* this */
-    fun once(event: AppEvent.RENDERER_PROCESS_CRASHED, listener: (event: Event, webContents: WebContents, killed: Boolean) -> Unit): Unit /* this */
     fun once(
-        event: AppEvent.SECOND_INSTANCE, listener: (
+        event: AppEvent.READY,
+        listener: (event: Event, launchInfo: Any /* (Record<string, any>) | (NotificationResponse) */) -> Unit,
+    ): Unit /* this */
+
+    fun once(
+        event: AppEvent.RENDER_PROCESS_GONE,
+        listener: (event: Event, webContents: WebContents, details: RenderProcessGoneDetails) -> Unit,
+    ): Unit /* this */
+
+    fun once(
+        event: AppEvent.RENDERER_PROCESS_CRASHED,
+        listener: (event: Event, webContents: WebContents, killed: Boolean) -> Unit,
+    ): Unit /* this */
+
+    fun once(
+        event: AppEvent.SECOND_INSTANCE,
+        listener: (
             event: Event,
             /**
              * An array of the second instance's command line arguments
@@ -500,18 +563,19 @@ external interface App : node.events.IEventEmitter {
             /**
              * A JSON object of additional data passed from the second instance
              */
-            additionalData: Any?
-        ) -> Unit
+            additionalData: Any?,
+        ) -> Unit,
     ): Unit /* this */
 
     fun once(
         event: AppEvent.SELECT_CLIENT_CERTIFICATE,
-        listener: (event: Event, webContents: WebContents, url: String, certificateList: js.core.ReadonlyArray<Certificate>, callback: (certificate: Certificate? /* use undefined for default */) -> Unit) -> Unit
+        listener: (event: Event, webContents: WebContents, url: String, certificateList: js.core.ReadonlyArray<Certificate>, callback: (certificate: Certificate? /* use undefined for default */) -> Unit) -> Unit,
     ): Unit /* this */
 
     fun once(event: AppEvent.SESSION_CREATED, listener: (session: Session) -> Unit): Unit /* this */
     fun once(
-        event: AppEvent.UPDATE_ACTIVITY_STATE, listener: (
+        event: AppEvent.UPDATE_ACTIVITY_STATE,
+        listener: (
             event: Event,
             /**
              * A string identifying the activity. Maps to `NSUserActivity.activityType`.
@@ -520,37 +584,48 @@ external interface App : node.events.IEventEmitter {
             /**
              * Contains app-specific state stored by the activity.
              */
-            userInfo: Any?
-        ) -> Unit
+            userInfo: Any?,
+        ) -> Unit,
     ): Unit /* this */
 
-    fun once(event: AppEvent.WEB_CONTENTS_CREATED, listener: (event: Event, webContents: WebContents) -> Unit): Unit /* this */
     fun once(
-        event: AppEvent.WILL_CONTINUE_ACTIVITY, listener: (
+        event: AppEvent.WEB_CONTENTS_CREATED,
+        listener: (event: Event, webContents: WebContents) -> Unit,
+    ): Unit /* this */
+
+    fun once(
+        event: AppEvent.WILL_CONTINUE_ACTIVITY,
+        listener: (
             event: Event,
             /**
              * A string identifying the activity. Maps to `NSUserActivity.activityType`.
              */
-            type: String
-        ) -> Unit
+            type: String,
+        ) -> Unit,
     ): Unit /* this */
 
     fun once(event: AppEvent.WILL_FINISH_LAUNCHING, listener: Function<*>): Unit /* this */
     fun once(event: AppEvent.WILL_QUIT, listener: (event: Event) -> Unit): Unit /* this */
     fun once(event: AppEvent.WINDOW_ALL_CLOSED, listener: Function<*>): Unit /* this */
     fun addListener(
-        event: AppEvent.ACCESSIBILITY_SUPPORT_CHANGED, listener: (
+        event: AppEvent.ACCESSIBILITY_SUPPORT_CHANGED,
+        listener: (
             event: Event,
             /**
              * `true` when Chrome's accessibility support is enabled, `false` otherwise.
              */
-            accessibilitySupportEnabled: Boolean
-        ) -> Unit
+            accessibilitySupportEnabled: Boolean,
+        ) -> Unit,
     ): Unit /* this */
 
-    fun addListener(event: AppEvent.ACTIVATE, listener: (event: Event, hasVisibleWindows: Boolean) -> Unit): Unit /* this */
     fun addListener(
-        event: AppEvent.ACTIVITY_WAS_CONTINUED, listener: (
+        event: AppEvent.ACTIVATE,
+        listener: (event: Event, hasVisibleWindows: Boolean) -> Unit,
+    ): Unit /* this */
+
+    fun addListener(
+        event: AppEvent.ACTIVITY_WAS_CONTINUED,
+        listener: (
             event: Event,
             /**
              * A string identifying the activity. Maps to `NSUserActivity.activityType`.
@@ -559,27 +634,46 @@ external interface App : node.events.IEventEmitter {
             /**
              * Contains app-specific state stored by the activity.
              */
-            userInfo: Any?
-        ) -> Unit
+            userInfo: Any?,
+        ) -> Unit,
     ): Unit /* this */
 
     fun addListener(event: AppEvent.BEFORE_QUIT, listener: (event: Event) -> Unit): Unit /* this */
-    fun addListener(event: AppEvent.BROWSER_WINDOW_BLUR, listener: (event: Event, window: BrowserWindow) -> Unit): Unit /* this */
-    fun addListener(event: AppEvent.BROWSER_WINDOW_CREATED, listener: (event: Event, window: BrowserWindow) -> Unit): Unit /* this */
-    fun addListener(event: AppEvent.BROWSER_WINDOW_FOCUS, listener: (event: Event, window: BrowserWindow) -> Unit): Unit /* this */
     fun addListener(
-        event: AppEvent.CERTIFICATE_ERROR, listener: (
+        event: AppEvent.BROWSER_WINDOW_BLUR,
+        listener: (event: Event, window: BrowserWindow) -> Unit,
+    ): Unit /* this */
+
+    fun addListener(
+        event: AppEvent.BROWSER_WINDOW_CREATED,
+        listener: (event: Event, window: BrowserWindow) -> Unit,
+    ): Unit /* this */
+
+    fun addListener(
+        event: AppEvent.BROWSER_WINDOW_FOCUS,
+        listener: (event: Event, window: BrowserWindow) -> Unit,
+    ): Unit /* this */
+
+    fun addListener(
+        event: AppEvent.CERTIFICATE_ERROR,
+        listener: (
             event: Event, webContents: WebContents, url: String,
             /**
              * The error code
              */
-            error: String, certificate: Certificate, callback: (isTrusted: Boolean) -> Unit, isMainFrame: Boolean
-        ) -> Unit
+            error: String,
+            certificate: Certificate, callback: (isTrusted: Boolean) -> Unit, isMainFrame: Boolean,
+        ) -> Unit,
     ): Unit /* this */
 
-    fun addListener(event: AppEvent.CHILD_PROCESS_GONE, listener: (event: Event, details: Details) -> Unit): Unit /* this */
     fun addListener(
-        event: AppEvent.CONTINUE_ACTIVITY, listener: (
+        event: AppEvent.CHILD_PROCESS_GONE,
+        listener: (event: Event, details: Details) -> Unit,
+    ): Unit /* this */
+
+    fun addListener(
+        event: AppEvent.CONTINUE_ACTIVITY,
+        listener: (
             event: Event,
             /**
              * A string identifying the activity. Maps to `NSUserActivity.activityType`.
@@ -588,12 +682,14 @@ external interface App : node.events.IEventEmitter {
             /**
              * Contains app-specific state stored by the activity on another device.
              */
-            userInfo: Any?, details: ContinueActivityDetails
-        ) -> Unit
+            userInfo: Any?,
+            details: ContinueActivityDetails,
+        ) -> Unit,
     ): Unit /* this */
 
     fun addListener(
-        event: AppEvent.CONTINUE_ACTIVITY_ERROR, listener: (
+        event: AppEvent.CONTINUE_ACTIVITY_ERROR,
+        listener: (
             event: Event,
             /**
              * A string identifying the activity. Maps to `NSUserActivity.activityType`.
@@ -602,27 +698,44 @@ external interface App : node.events.IEventEmitter {
             /**
              * A string with the error's localized description.
              */
-            error: String
-        ) -> Unit
+            error: String,
+        ) -> Unit,
     ): Unit /* this */
 
     fun addListener(event: AppEvent.DID_BECOME_ACTIVE, listener: (event: Event) -> Unit): Unit /* this */
     fun addListener(event: AppEvent.GPU_INFO_UPDATE, listener: Function<*>): Unit /* this */
-    fun addListener(event: AppEvent.GPU_PROCESS_CRASHED, listener: (event: Event, killed: Boolean) -> Unit): Unit /* this */
+    fun addListener(
+        event: AppEvent.GPU_PROCESS_CRASHED,
+        listener: (event: Event, killed: Boolean) -> Unit,
+    ): Unit /* this */
+
     fun addListener(
         event: AppEvent.LOGIN,
-        listener: (event: Event, webContents: WebContents, authenticationResponseDetails: AuthenticationResponseDetails, authInfo: AuthInfo, callback: (username: String? /* use undefined for default */, password: String? /* use undefined for default */) -> Unit) -> Unit
+        listener: (event: Event, webContents: WebContents, authenticationResponseDetails: AuthenticationResponseDetails, authInfo: AuthInfo, callback: (username: String? /* use undefined for default */, password: String? /* use undefined for default */) -> Unit) -> Unit,
     ): Unit /* this */
 
     fun addListener(event: AppEvent.NEW_WINDOW_FOR_TAB, listener: (event: Event) -> Unit): Unit /* this */
     fun addListener(event: AppEvent.OPEN_FILE, listener: (event: Event, path: String) -> Unit): Unit /* this */
     fun addListener(event: AppEvent.OPEN_URL, listener: (event: Event, url: String) -> Unit): Unit /* this */
     fun addListener(event: AppEvent.QUIT, listener: (event: Event, exitCode: Double) -> Unit): Unit /* this */
-    fun addListener(event: AppEvent.READY, listener: (event: Event, launchInfo: Any /* (Record<string, any>) | (NotificationResponse) */) -> Unit): Unit /* this */
-    fun addListener(event: AppEvent.RENDER_PROCESS_GONE, listener: (event: Event, webContents: WebContents, details: RenderProcessGoneDetails) -> Unit): Unit /* this */
-    fun addListener(event: AppEvent.RENDERER_PROCESS_CRASHED, listener: (event: Event, webContents: WebContents, killed: Boolean) -> Unit): Unit /* this */
     fun addListener(
-        event: AppEvent.SECOND_INSTANCE, listener: (
+        event: AppEvent.READY,
+        listener: (event: Event, launchInfo: Any /* (Record<string, any>) | (NotificationResponse) */) -> Unit,
+    ): Unit /* this */
+
+    fun addListener(
+        event: AppEvent.RENDER_PROCESS_GONE,
+        listener: (event: Event, webContents: WebContents, details: RenderProcessGoneDetails) -> Unit,
+    ): Unit /* this */
+
+    fun addListener(
+        event: AppEvent.RENDERER_PROCESS_CRASHED,
+        listener: (event: Event, webContents: WebContents, killed: Boolean) -> Unit,
+    ): Unit /* this */
+
+    fun addListener(
+        event: AppEvent.SECOND_INSTANCE,
+        listener: (
             event: Event,
             /**
              * An array of the second instance's command line arguments
@@ -635,18 +748,19 @@ external interface App : node.events.IEventEmitter {
             /**
              * A JSON object of additional data passed from the second instance
              */
-            additionalData: Any?
-        ) -> Unit
+            additionalData: Any?,
+        ) -> Unit,
     ): Unit /* this */
 
     fun addListener(
         event: AppEvent.SELECT_CLIENT_CERTIFICATE,
-        listener: (event: Event, webContents: WebContents, url: String, certificateList: js.core.ReadonlyArray<Certificate>, callback: (certificate: Certificate? /* use undefined for default */) -> Unit) -> Unit
+        listener: (event: Event, webContents: WebContents, url: String, certificateList: js.core.ReadonlyArray<Certificate>, callback: (certificate: Certificate? /* use undefined for default */) -> Unit) -> Unit,
     ): Unit /* this */
 
     fun addListener(event: AppEvent.SESSION_CREATED, listener: (session: Session) -> Unit): Unit /* this */
     fun addListener(
-        event: AppEvent.UPDATE_ACTIVITY_STATE, listener: (
+        event: AppEvent.UPDATE_ACTIVITY_STATE,
+        listener: (
             event: Event,
             /**
              * A string identifying the activity. Maps to `NSUserActivity.activityType`.
@@ -655,37 +769,48 @@ external interface App : node.events.IEventEmitter {
             /**
              * Contains app-specific state stored by the activity.
              */
-            userInfo: Any?
-        ) -> Unit
+            userInfo: Any?,
+        ) -> Unit,
     ): Unit /* this */
 
-    fun addListener(event: AppEvent.WEB_CONTENTS_CREATED, listener: (event: Event, webContents: WebContents) -> Unit): Unit /* this */
     fun addListener(
-        event: AppEvent.WILL_CONTINUE_ACTIVITY, listener: (
+        event: AppEvent.WEB_CONTENTS_CREATED,
+        listener: (event: Event, webContents: WebContents) -> Unit,
+    ): Unit /* this */
+
+    fun addListener(
+        event: AppEvent.WILL_CONTINUE_ACTIVITY,
+        listener: (
             event: Event,
             /**
              * A string identifying the activity. Maps to `NSUserActivity.activityType`.
              */
-            type: String
-        ) -> Unit
+            type: String,
+        ) -> Unit,
     ): Unit /* this */
 
     fun addListener(event: AppEvent.WILL_FINISH_LAUNCHING, listener: Function<*>): Unit /* this */
     fun addListener(event: AppEvent.WILL_QUIT, listener: (event: Event) -> Unit): Unit /* this */
     fun addListener(event: AppEvent.WINDOW_ALL_CLOSED, listener: Function<*>): Unit /* this */
     fun removeListener(
-        event: AppEvent.ACCESSIBILITY_SUPPORT_CHANGED, listener: (
+        event: AppEvent.ACCESSIBILITY_SUPPORT_CHANGED,
+        listener: (
             event: Event,
             /**
              * `true` when Chrome's accessibility support is enabled, `false` otherwise.
              */
-            accessibilitySupportEnabled: Boolean
-        ) -> Unit
+            accessibilitySupportEnabled: Boolean,
+        ) -> Unit,
     ): Unit /* this */
 
-    fun removeListener(event: AppEvent.ACTIVATE, listener: (event: Event, hasVisibleWindows: Boolean) -> Unit): Unit /* this */
     fun removeListener(
-        event: AppEvent.ACTIVITY_WAS_CONTINUED, listener: (
+        event: AppEvent.ACTIVATE,
+        listener: (event: Event, hasVisibleWindows: Boolean) -> Unit,
+    ): Unit /* this */
+
+    fun removeListener(
+        event: AppEvent.ACTIVITY_WAS_CONTINUED,
+        listener: (
             event: Event,
             /**
              * A string identifying the activity. Maps to `NSUserActivity.activityType`.
@@ -694,27 +819,46 @@ external interface App : node.events.IEventEmitter {
             /**
              * Contains app-specific state stored by the activity.
              */
-            userInfo: Any?
-        ) -> Unit
+            userInfo: Any?,
+        ) -> Unit,
     ): Unit /* this */
 
     fun removeListener(event: AppEvent.BEFORE_QUIT, listener: (event: Event) -> Unit): Unit /* this */
-    fun removeListener(event: AppEvent.BROWSER_WINDOW_BLUR, listener: (event: Event, window: BrowserWindow) -> Unit): Unit /* this */
-    fun removeListener(event: AppEvent.BROWSER_WINDOW_CREATED, listener: (event: Event, window: BrowserWindow) -> Unit): Unit /* this */
-    fun removeListener(event: AppEvent.BROWSER_WINDOW_FOCUS, listener: (event: Event, window: BrowserWindow) -> Unit): Unit /* this */
     fun removeListener(
-        event: AppEvent.CERTIFICATE_ERROR, listener: (
+        event: AppEvent.BROWSER_WINDOW_BLUR,
+        listener: (event: Event, window: BrowserWindow) -> Unit,
+    ): Unit /* this */
+
+    fun removeListener(
+        event: AppEvent.BROWSER_WINDOW_CREATED,
+        listener: (event: Event, window: BrowserWindow) -> Unit,
+    ): Unit /* this */
+
+    fun removeListener(
+        event: AppEvent.BROWSER_WINDOW_FOCUS,
+        listener: (event: Event, window: BrowserWindow) -> Unit,
+    ): Unit /* this */
+
+    fun removeListener(
+        event: AppEvent.CERTIFICATE_ERROR,
+        listener: (
             event: Event, webContents: WebContents, url: String,
             /**
              * The error code
              */
-            error: String, certificate: Certificate, callback: (isTrusted: Boolean) -> Unit, isMainFrame: Boolean
-        ) -> Unit
+            error: String,
+            certificate: Certificate, callback: (isTrusted: Boolean) -> Unit, isMainFrame: Boolean,
+        ) -> Unit,
     ): Unit /* this */
 
-    fun removeListener(event: AppEvent.CHILD_PROCESS_GONE, listener: (event: Event, details: Details) -> Unit): Unit /* this */
     fun removeListener(
-        event: AppEvent.CONTINUE_ACTIVITY, listener: (
+        event: AppEvent.CHILD_PROCESS_GONE,
+        listener: (event: Event, details: Details) -> Unit,
+    ): Unit /* this */
+
+    fun removeListener(
+        event: AppEvent.CONTINUE_ACTIVITY,
+        listener: (
             event: Event,
             /**
              * A string identifying the activity. Maps to `NSUserActivity.activityType`.
@@ -723,12 +867,14 @@ external interface App : node.events.IEventEmitter {
             /**
              * Contains app-specific state stored by the activity on another device.
              */
-            userInfo: Any?, details: ContinueActivityDetails
-        ) -> Unit
+            userInfo: Any?,
+            details: ContinueActivityDetails,
+        ) -> Unit,
     ): Unit /* this */
 
     fun removeListener(
-        event: AppEvent.CONTINUE_ACTIVITY_ERROR, listener: (
+        event: AppEvent.CONTINUE_ACTIVITY_ERROR,
+        listener: (
             event: Event,
             /**
              * A string identifying the activity. Maps to `NSUserActivity.activityType`.
@@ -737,27 +883,44 @@ external interface App : node.events.IEventEmitter {
             /**
              * A string with the error's localized description.
              */
-            error: String
-        ) -> Unit
+            error: String,
+        ) -> Unit,
     ): Unit /* this */
 
     fun removeListener(event: AppEvent.DID_BECOME_ACTIVE, listener: (event: Event) -> Unit): Unit /* this */
     fun removeListener(event: AppEvent.GPU_INFO_UPDATE, listener: Function<*>): Unit /* this */
-    fun removeListener(event: AppEvent.GPU_PROCESS_CRASHED, listener: (event: Event, killed: Boolean) -> Unit): Unit /* this */
+    fun removeListener(
+        event: AppEvent.GPU_PROCESS_CRASHED,
+        listener: (event: Event, killed: Boolean) -> Unit,
+    ): Unit /* this */
+
     fun removeListener(
         event: AppEvent.LOGIN,
-        listener: (event: Event, webContents: WebContents, authenticationResponseDetails: AuthenticationResponseDetails, authInfo: AuthInfo, callback: (username: String? /* use undefined for default */, password: String? /* use undefined for default */) -> Unit) -> Unit
+        listener: (event: Event, webContents: WebContents, authenticationResponseDetails: AuthenticationResponseDetails, authInfo: AuthInfo, callback: (username: String? /* use undefined for default */, password: String? /* use undefined for default */) -> Unit) -> Unit,
     ): Unit /* this */
 
     fun removeListener(event: AppEvent.NEW_WINDOW_FOR_TAB, listener: (event: Event) -> Unit): Unit /* this */
     fun removeListener(event: AppEvent.OPEN_FILE, listener: (event: Event, path: String) -> Unit): Unit /* this */
     fun removeListener(event: AppEvent.OPEN_URL, listener: (event: Event, url: String) -> Unit): Unit /* this */
     fun removeListener(event: AppEvent.QUIT, listener: (event: Event, exitCode: Double) -> Unit): Unit /* this */
-    fun removeListener(event: AppEvent.READY, listener: (event: Event, launchInfo: Any /* (Record<string, any>) | (NotificationResponse) */) -> Unit): Unit /* this */
-    fun removeListener(event: AppEvent.RENDER_PROCESS_GONE, listener: (event: Event, webContents: WebContents, details: RenderProcessGoneDetails) -> Unit): Unit /* this */
-    fun removeListener(event: AppEvent.RENDERER_PROCESS_CRASHED, listener: (event: Event, webContents: WebContents, killed: Boolean) -> Unit): Unit /* this */
     fun removeListener(
-        event: AppEvent.SECOND_INSTANCE, listener: (
+        event: AppEvent.READY,
+        listener: (event: Event, launchInfo: Any /* (Record<string, any>) | (NotificationResponse) */) -> Unit,
+    ): Unit /* this */
+
+    fun removeListener(
+        event: AppEvent.RENDER_PROCESS_GONE,
+        listener: (event: Event, webContents: WebContents, details: RenderProcessGoneDetails) -> Unit,
+    ): Unit /* this */
+
+    fun removeListener(
+        event: AppEvent.RENDERER_PROCESS_CRASHED,
+        listener: (event: Event, webContents: WebContents, killed: Boolean) -> Unit,
+    ): Unit /* this */
+
+    fun removeListener(
+        event: AppEvent.SECOND_INSTANCE,
+        listener: (
             event: Event,
             /**
              * An array of the second instance's command line arguments
@@ -770,18 +933,19 @@ external interface App : node.events.IEventEmitter {
             /**
              * A JSON object of additional data passed from the second instance
              */
-            additionalData: Any?
-        ) -> Unit
+            additionalData: Any?,
+        ) -> Unit,
     ): Unit /* this */
 
     fun removeListener(
         event: AppEvent.SELECT_CLIENT_CERTIFICATE,
-        listener: (event: Event, webContents: WebContents, url: String, certificateList: js.core.ReadonlyArray<Certificate>, callback: (certificate: Certificate? /* use undefined for default */) -> Unit) -> Unit
+        listener: (event: Event, webContents: WebContents, url: String, certificateList: js.core.ReadonlyArray<Certificate>, callback: (certificate: Certificate? /* use undefined for default */) -> Unit) -> Unit,
     ): Unit /* this */
 
     fun removeListener(event: AppEvent.SESSION_CREATED, listener: (session: Session) -> Unit): Unit /* this */
     fun removeListener(
-        event: AppEvent.UPDATE_ACTIVITY_STATE, listener: (
+        event: AppEvent.UPDATE_ACTIVITY_STATE,
+        listener: (
             event: Event,
             /**
              * A string identifying the activity. Maps to `NSUserActivity.activityType`.
@@ -790,19 +954,24 @@ external interface App : node.events.IEventEmitter {
             /**
              * Contains app-specific state stored by the activity.
              */
-            userInfo: Any?
-        ) -> Unit
+            userInfo: Any?,
+        ) -> Unit,
     ): Unit /* this */
 
-    fun removeListener(event: AppEvent.WEB_CONTENTS_CREATED, listener: (event: Event, webContents: WebContents) -> Unit): Unit /* this */
     fun removeListener(
-        event: AppEvent.WILL_CONTINUE_ACTIVITY, listener: (
+        event: AppEvent.WEB_CONTENTS_CREATED,
+        listener: (event: Event, webContents: WebContents) -> Unit,
+    ): Unit /* this */
+
+    fun removeListener(
+        event: AppEvent.WILL_CONTINUE_ACTIVITY,
+        listener: (
             event: Event,
             /**
              * A string identifying the activity. Maps to `NSUserActivity.activityType`.
              */
-            type: String
-        ) -> Unit
+            type: String,
+        ) -> Unit,
     ): Unit /* this */
 
     fun removeListener(event: AppEvent.WILL_FINISH_LAUNCHING, listener: Function<*>): Unit /* this */
@@ -1193,7 +1362,11 @@ external interface App : node.events.IEventEmitter {
      * The API uses the Windows Registry and `LSCopyDefaultHandlerForURLScheme`
      * internally.
      */
-    fun isDefaultProtocolClient(protocol: String, path: String = definedExternally, args: js.core.ReadonlyArray<String> = definedExternally): Boolean
+    fun isDefaultProtocolClient(
+        protocol: String,
+        path: String = definedExternally,
+        args: js.core.ReadonlyArray<String> = definedExternally,
+    ): Boolean
 
     /**
      * whether or not the current OS version allows for native emoji pickers.
@@ -1316,7 +1489,11 @@ external interface App : node.events.IEventEmitter {
      *
      * @platform darwin,win32
      */
-    fun removeAsDefaultProtocolClient(protocol: String, path: String = definedExternally, args: js.core.ReadonlyArray<String> = definedExternally): Boolean
+    fun removeAsDefaultProtocolClient(
+        protocol: String,
+        path: String = definedExternally,
+        args: js.core.ReadonlyArray<String> = definedExternally,
+    ): Boolean
 
     /**
      * The return value of this method indicates whether or not this instance of your
@@ -1432,7 +1609,11 @@ external interface App : node.events.IEventEmitter {
      * The API uses the Windows Registry and `LSSetDefaultHandlerForURLScheme`
      * internally.
      */
-    fun setAsDefaultProtocolClient(protocol: String, path: String = definedExternally, args: js.core.ReadonlyArray<String> = definedExternally): Boolean
+    fun setAsDefaultProtocolClient(
+        protocol: String,
+        path: String = definedExternally,
+        args: js.core.ReadonlyArray<String> = definedExternally,
+    ): Boolean
 
     /**
      * Whether the call succeeded.

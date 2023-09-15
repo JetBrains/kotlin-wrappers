@@ -6,13 +6,14 @@ import kotlin.js.Promise
 external interface SystemPreferences : node.events.IEventEmitter {
     // Docs: https://electronjs.org/docs/api/system-preferences
     fun on(
-        event: SystemPreferencesEvent.ACCENT_COLOR_CHANGED, listener: (
+        event: SystemPreferencesEvent.ACCENT_COLOR_CHANGED,
+        listener: (
             event: Event,
             /**
              * The new RGBA color the user assigned to be their system accent color.
              */
-            newColor: String
-        ) -> Unit
+            newColor: String,
+        ) -> Unit,
     ): Unit /* this */
 
     fun on(event: SystemPreferencesEvent.COLOR_CHANGED, listener: (event: Event) -> Unit): Unit /* this */
@@ -24,13 +25,14 @@ external interface SystemPreferences : node.events.IEventEmitter {
      * @platform win32
      */
     fun on(
-        event: SystemPreferencesEvent.HIGH_CONTRAST_COLOR_SCHEME_CHANGED, listener: (
+        event: SystemPreferencesEvent.HIGH_CONTRAST_COLOR_SCHEME_CHANGED,
+        listener: (
             event: Event,
             /**
              * `true` if a high contrast theme is being used, `false` otherwise.
              */
-            highContrastColorScheme: Boolean
-        ) -> Unit
+            highContrastColorScheme: Boolean,
+        ) -> Unit,
     ): Unit /* this */
 
     /**
@@ -40,110 +42,120 @@ external interface SystemPreferences : node.events.IEventEmitter {
      * @platform win32
      */
     fun on(
-        event: SystemPreferencesEvent.INVERTED_COLOR_SCHEME_CHANGED, listener: (
+        event: SystemPreferencesEvent.INVERTED_COLOR_SCHEME_CHANGED,
+        listener: (
             event: Event,
             /**
              * `true` if an inverted color scheme (a high contrast color scheme with light text
              * and dark backgrounds) is being used, `false` otherwise.
              */
-            invertedColorScheme: Boolean
-        ) -> Unit
+            invertedColorScheme: Boolean,
+        ) -> Unit,
     ): Unit /* this */
 
     fun once(
-        event: SystemPreferencesEvent.ACCENT_COLOR_CHANGED, listener: (
+        event: SystemPreferencesEvent.ACCENT_COLOR_CHANGED,
+        listener: (
             event: Event,
             /**
              * The new RGBA color the user assigned to be their system accent color.
              */
-            newColor: String
-        ) -> Unit
+            newColor: String,
+        ) -> Unit,
     ): Unit /* this */
 
     fun once(event: SystemPreferencesEvent.COLOR_CHANGED, listener: (event: Event) -> Unit): Unit /* this */
     fun once(
-        event: SystemPreferencesEvent.HIGH_CONTRAST_COLOR_SCHEME_CHANGED, listener: (
+        event: SystemPreferencesEvent.HIGH_CONTRAST_COLOR_SCHEME_CHANGED,
+        listener: (
             event: Event,
             /**
              * `true` if a high contrast theme is being used, `false` otherwise.
              */
-            highContrastColorScheme: Boolean
-        ) -> Unit
+            highContrastColorScheme: Boolean,
+        ) -> Unit,
     ): Unit /* this */
 
     fun once(
-        event: SystemPreferencesEvent.INVERTED_COLOR_SCHEME_CHANGED, listener: (
+        event: SystemPreferencesEvent.INVERTED_COLOR_SCHEME_CHANGED,
+        listener: (
             event: Event,
             /**
              * `true` if an inverted color scheme (a high contrast color scheme with light text
              * and dark backgrounds) is being used, `false` otherwise.
              */
-            invertedColorScheme: Boolean
-        ) -> Unit
+            invertedColorScheme: Boolean,
+        ) -> Unit,
     ): Unit /* this */
 
     fun addListener(
-        event: SystemPreferencesEvent.ACCENT_COLOR_CHANGED, listener: (
+        event: SystemPreferencesEvent.ACCENT_COLOR_CHANGED,
+        listener: (
             event: Event,
             /**
              * The new RGBA color the user assigned to be their system accent color.
              */
-            newColor: String
-        ) -> Unit
+            newColor: String,
+        ) -> Unit,
     ): Unit /* this */
 
     fun addListener(event: SystemPreferencesEvent.COLOR_CHANGED, listener: (event: Event) -> Unit): Unit /* this */
     fun addListener(
-        event: SystemPreferencesEvent.HIGH_CONTRAST_COLOR_SCHEME_CHANGED, listener: (
+        event: SystemPreferencesEvent.HIGH_CONTRAST_COLOR_SCHEME_CHANGED,
+        listener: (
             event: Event,
             /**
              * `true` if a high contrast theme is being used, `false` otherwise.
              */
-            highContrastColorScheme: Boolean
-        ) -> Unit
+            highContrastColorScheme: Boolean,
+        ) -> Unit,
     ): Unit /* this */
 
     fun addListener(
-        event: SystemPreferencesEvent.INVERTED_COLOR_SCHEME_CHANGED, listener: (
+        event: SystemPreferencesEvent.INVERTED_COLOR_SCHEME_CHANGED,
+        listener: (
             event: Event,
             /**
              * `true` if an inverted color scheme (a high contrast color scheme with light text
              * and dark backgrounds) is being used, `false` otherwise.
              */
-            invertedColorScheme: Boolean
-        ) -> Unit
+            invertedColorScheme: Boolean,
+        ) -> Unit,
     ): Unit /* this */
 
     fun removeListener(
-        event: SystemPreferencesEvent.ACCENT_COLOR_CHANGED, listener: (
+        event: SystemPreferencesEvent.ACCENT_COLOR_CHANGED,
+        listener: (
             event: Event,
             /**
              * The new RGBA color the user assigned to be their system accent color.
              */
-            newColor: String
-        ) -> Unit
+            newColor: String,
+        ) -> Unit,
     ): Unit /* this */
 
     fun removeListener(event: SystemPreferencesEvent.COLOR_CHANGED, listener: (event: Event) -> Unit): Unit /* this */
     fun removeListener(
-        event: SystemPreferencesEvent.HIGH_CONTRAST_COLOR_SCHEME_CHANGED, listener: (
+        event: SystemPreferencesEvent.HIGH_CONTRAST_COLOR_SCHEME_CHANGED,
+        listener: (
             event: Event,
             /**
              * `true` if a high contrast theme is being used, `false` otherwise.
              */
-            highContrastColorScheme: Boolean
-        ) -> Unit
+            highContrastColorScheme: Boolean,
+        ) -> Unit,
     ): Unit /* this */
 
     fun removeListener(
-        event: SystemPreferencesEvent.INVERTED_COLOR_SCHEME_CHANGED, listener: (
+        event: SystemPreferencesEvent.INVERTED_COLOR_SCHEME_CHANGED,
+        listener: (
             event: Event,
             /**
              * `true` if an inverted color scheme (a high contrast color scheme with light text
              * and dark backgrounds) is being used, `false` otherwise.
              */
-            invertedColorScheme: Boolean
-        ) -> Unit
+            invertedColorScheme: Boolean,
+        ) -> Unit,
     ): Unit /* this */
 
     /**
@@ -349,7 +361,11 @@ external interface SystemPreferences : node.events.IEventEmitter {
      *
      * @platform darwin
      */
-    fun postNotification(event: String, userInfo: js.core.ReadonlyRecord<String, Any>, deliverImmediately: Boolean = definedExternally): Unit
+    fun postNotification(
+        event: String,
+        userInfo: js.core.ReadonlyRecord<String, Any>,
+        deliverImmediately: Boolean = definedExternally,
+    ): Unit
 
     /**
      * Posts `event` as native notifications of macOS. The `userInfo` is an Object that
@@ -423,7 +439,10 @@ external interface SystemPreferences : node.events.IEventEmitter {
      *
      * @platform darwin
      */
-    fun subscribeLocalNotification(event: String?, callback: (event: String, userInfo: js.core.ReadonlyRecord<String, Any>, `object`: String) -> Unit): Double
+    fun subscribeLocalNotification(
+        event: String?,
+        callback: (event: String, userInfo: js.core.ReadonlyRecord<String, Any>, `object`: String) -> Unit,
+    ): Double
 
     /**
      * The ID of this subscription
@@ -450,7 +469,10 @@ external interface SystemPreferences : node.events.IEventEmitter {
      *
      * @platform darwin
      */
-    fun subscribeNotification(event: String?, callback: (event: String, userInfo: js.core.ReadonlyRecord<String, Any>, `object`: String) -> Unit): Double
+    fun subscribeNotification(
+        event: String?,
+        callback: (event: String, userInfo: js.core.ReadonlyRecord<String, Any>, `object`: String) -> Unit,
+    ): Double
 
     /**
      * The ID of this subscription
@@ -464,7 +486,10 @@ external interface SystemPreferences : node.events.IEventEmitter {
      *
      * @platform darwin
      */
-    fun subscribeWorkspaceNotification(event: String?, callback: (event: String, userInfo: js.core.ReadonlyRecord<String, Any>, `object`: String) -> Unit): Double
+    fun subscribeWorkspaceNotification(
+        event: String?,
+        callback: (event: String, userInfo: js.core.ReadonlyRecord<String, Any>, `object`: String) -> Unit,
+    ): Double
 
     /**
      * Same as `unsubscribeNotification`, but removes the subscriber from

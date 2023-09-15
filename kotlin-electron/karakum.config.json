@@ -198,5 +198,9 @@
         "electron/common": "ignore",
         "electron/renderer": "ignore",
         "original-fs": "ignore"
+    },
+    "conflictResolutionStrategy": {
+        "DownloadItemDoneListenerState": "replace",
+        "DownloadItemUpdatedListenerState": "replace"
     }
 }

@@ -13,13 +13,14 @@ open external class Notification : NodeEventEmitter {
 
     // Docs: https://electronjs.org/docs/api/notification
     fun on(
-        event: NotificationEvent.ACTION, listener: (
+        event: NotificationEvent.ACTION,
+        listener: (
             event: Event,
             /**
              * The index of the action that was activated.
              */
-            index: Double
-        ) -> Unit
+            index: Double,
+        ) -> Unit,
     ): Unit /* this */
 
     /**
@@ -42,13 +43,14 @@ open external class Notification : NodeEventEmitter {
      * @platform win32
      */
     fun on(
-        event: NotificationEvent.FAILED, listener: (
+        event: NotificationEvent.FAILED,
+        listener: (
             event: Event,
             /**
              * The error encountered during execution of the `show()` method.
              */
-            error: String
-        ) -> Unit
+            error: String,
+        ) -> Unit,
     ): Unit /* this */
 
     /**
@@ -58,13 +60,14 @@ open external class Notification : NodeEventEmitter {
      * @platform darwin
      */
     fun on(
-        event: NotificationEvent.REPLY, listener: (
+        event: NotificationEvent.REPLY,
+        listener: (
             event: Event,
             /**
              * The string the user entered into the inline reply field.
              */
-            reply: String
-        ) -> Unit
+            reply: String,
+        ) -> Unit,
     ): Unit /* this */
 
     /**
@@ -74,101 +77,110 @@ open external class Notification : NodeEventEmitter {
      */
     fun on(event: NotificationEvent.SHOW, listener: (event: Event) -> Unit): Unit /* this */
     fun once(
-        event: NotificationEvent.ACTION, listener: (
+        event: NotificationEvent.ACTION,
+        listener: (
             event: Event,
             /**
              * The index of the action that was activated.
              */
-            index: Double
-        ) -> Unit
+            index: Double,
+        ) -> Unit,
     ): Unit /* this */
 
     fun once(event: NotificationEvent.CLICK, listener: (event: Event) -> Unit): Unit /* this */
     fun once(event: NotificationEvent.CLOSE, listener: (event: Event) -> Unit): Unit /* this */
     fun once(
-        event: NotificationEvent.FAILED, listener: (
+        event: NotificationEvent.FAILED,
+        listener: (
             event: Event,
             /**
              * The error encountered during execution of the `show()` method.
              */
-            error: String
-        ) -> Unit
+            error: String,
+        ) -> Unit,
     ): Unit /* this */
 
     fun once(
-        event: NotificationEvent.REPLY, listener: (
+        event: NotificationEvent.REPLY,
+        listener: (
             event: Event,
             /**
              * The string the user entered into the inline reply field.
              */
-            reply: String
-        ) -> Unit
+            reply: String,
+        ) -> Unit,
     ): Unit /* this */
 
     fun once(event: NotificationEvent.SHOW, listener: (event: Event) -> Unit): Unit /* this */
     fun addListener(
-        event: NotificationEvent.ACTION, listener: (
+        event: NotificationEvent.ACTION,
+        listener: (
             event: Event,
             /**
              * The index of the action that was activated.
              */
-            index: Double
-        ) -> Unit
+            index: Double,
+        ) -> Unit,
     ): Unit /* this */
 
     fun addListener(event: NotificationEvent.CLICK, listener: (event: Event) -> Unit): Unit /* this */
     fun addListener(event: NotificationEvent.CLOSE, listener: (event: Event) -> Unit): Unit /* this */
     fun addListener(
-        event: NotificationEvent.FAILED, listener: (
+        event: NotificationEvent.FAILED,
+        listener: (
             event: Event,
             /**
              * The error encountered during execution of the `show()` method.
              */
-            error: String
-        ) -> Unit
+            error: String,
+        ) -> Unit,
     ): Unit /* this */
 
     fun addListener(
-        event: NotificationEvent.REPLY, listener: (
+        event: NotificationEvent.REPLY,
+        listener: (
             event: Event,
             /**
              * The string the user entered into the inline reply field.
              */
-            reply: String
-        ) -> Unit
+            reply: String,
+        ) -> Unit,
     ): Unit /* this */
 
     fun addListener(event: NotificationEvent.SHOW, listener: (event: Event) -> Unit): Unit /* this */
     fun removeListener(
-        event: NotificationEvent.ACTION, listener: (
+        event: NotificationEvent.ACTION,
+        listener: (
             event: Event,
             /**
              * The index of the action that was activated.
              */
-            index: Double
-        ) -> Unit
+            index: Double,
+        ) -> Unit,
     ): Unit /* this */
 
     fun removeListener(event: NotificationEvent.CLICK, listener: (event: Event) -> Unit): Unit /* this */
     fun removeListener(event: NotificationEvent.CLOSE, listener: (event: Event) -> Unit): Unit /* this */
     fun removeListener(
-        event: NotificationEvent.FAILED, listener: (
+        event: NotificationEvent.FAILED,
+        listener: (
             event: Event,
             /**
              * The error encountered during execution of the `show()` method.
              */
-            error: String
-        ) -> Unit
+            error: String,
+        ) -> Unit,
     ): Unit /* this */
 
     fun removeListener(
-        event: NotificationEvent.REPLY, listener: (
+        event: NotificationEvent.REPLY,
+        listener: (
             event: Event,
             /**
              * The string the user entered into the inline reply field.
              */
-            reply: String
-        ) -> Unit
+            reply: String,
+        ) -> Unit,
     ): Unit /* this */
 
     fun removeListener(event: NotificationEvent.SHOW, listener: (event: Event) -> Unit): Unit /* this */

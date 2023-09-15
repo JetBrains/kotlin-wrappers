@@ -61,6 +61,6 @@ ${members}
     },
 
     generate() {
-        return {};
+        return [];
     },
 }

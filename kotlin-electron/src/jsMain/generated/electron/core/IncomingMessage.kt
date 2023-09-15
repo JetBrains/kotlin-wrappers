@@ -18,12 +18,13 @@ external class IncomingMessage : NodeEventEmitter {
      * applicative code.
      */
     fun on(
-        event: IncomingMessageEvent.DATA, listener: (
+        event: IncomingMessageEvent.DATA,
+        listener: (
             /**
              * A chunk of response body's data.
              */
-            chunk: Buffer
-        ) -> Unit
+            chunk: Buffer,
+        ) -> Unit,
     ): Unit /* this */
 
     /**
@@ -44,36 +45,39 @@ external class IncomingMessage : NodeEventEmitter {
     fun on(event: IncomingMessageEvent.ERROR, listener: Function<*>): Unit /* this */
     fun once(event: IncomingMessageEvent.ABORTED, listener: Function<*>): Unit /* this */
     fun once(
-        event: IncomingMessageEvent.DATA, listener: (
+        event: IncomingMessageEvent.DATA,
+        listener: (
             /**
              * A chunk of response body's data.
              */
-            chunk: Buffer
-        ) -> Unit
+            chunk: Buffer,
+        ) -> Unit,
     ): Unit /* this */
 
     fun once(event: IncomingMessageEvent.END, listener: Function<*>): Unit /* this */
     fun once(event: IncomingMessageEvent.ERROR, listener: Function<*>): Unit /* this */
     fun addListener(event: IncomingMessageEvent.ABORTED, listener: Function<*>): Unit /* this */
     fun addListener(
-        event: IncomingMessageEvent.DATA, listener: (
+        event: IncomingMessageEvent.DATA,
+        listener: (
             /**
              * A chunk of response body's data.
              */
-            chunk: Buffer
-        ) -> Unit
+            chunk: Buffer,
+        ) -> Unit,
     ): Unit /* this */
 
     fun addListener(event: IncomingMessageEvent.END, listener: Function<*>): Unit /* this */
     fun addListener(event: IncomingMessageEvent.ERROR, listener: Function<*>): Unit /* this */
     fun removeListener(event: IncomingMessageEvent.ABORTED, listener: Function<*>): Unit /* this */
     fun removeListener(
-        event: IncomingMessageEvent.DATA, listener: (
+        event: IncomingMessageEvent.DATA,
+        listener: (
             /**
              * A chunk of response body's data.
              */
-            chunk: Buffer
-        ) -> Unit
+            chunk: Buffer,
+        ) -> Unit,
     ): Unit /* this */
 
     fun removeListener(event: IncomingMessageEvent.END, listener: Function<*>): Unit /* this */

@@ -27,7 +27,11 @@ external interface WebFrame : node.events.IEventEmitter {
      * invoked by a gesture from the user. Setting `userGesture` to `true` will remove
      * this limitation.
      */
-    fun executeJavaScript(code: String, userGesture: Boolean = definedExternally, callback: (result: Any?, error: Throwable /* JsError */) -> Unit = definedExternally): Promise<Any?>
+    fun executeJavaScript(
+        code: String,
+        userGesture: Boolean = definedExternally,
+        callback: (result: Any?, error: Throwable /* JsError */) -> Unit = definedExternally,
+    ): Promise<Any?>
 
     /**
      * A promise that resolves with the result of the executed code or is rejected if
@@ -43,7 +47,7 @@ external interface WebFrame : node.events.IEventEmitter {
         worldId: Double,
         scripts: js.core.ReadonlyArray<WebSource>,
         userGesture: Boolean = definedExternally,
-        callback: (result: Any?, error: Throwable /* JsError */) -> Unit = definedExternally
+        callback: (result: Any?, error: Throwable /* JsError */) -> Unit = definedExternally,
     ): Promise<Any?>
 
     /**

@@ -19,9 +19,16 @@ external class MessagePortMain : NodeEventEmitter {
     fun once(event: MessagePortMainEvent.CLOSE, listener: Function<*>): Unit /* this */
     fun once(event: MessagePortMainEvent.MESSAGE, listener: (messageEvent: MessageEvent) -> Unit): Unit /* this */
     fun addListener(event: MessagePortMainEvent.CLOSE, listener: Function<*>): Unit /* this */
-    fun addListener(event: MessagePortMainEvent.MESSAGE, listener: (messageEvent: MessageEvent) -> Unit): Unit /* this */
+    fun addListener(
+        event: MessagePortMainEvent.MESSAGE,
+        listener: (messageEvent: MessageEvent) -> Unit,
+    ): Unit /* this */
+
     fun removeListener(event: MessagePortMainEvent.CLOSE, listener: Function<*>): Unit /* this */
-    fun removeListener(event: MessagePortMainEvent.MESSAGE, listener: (messageEvent: MessageEvent) -> Unit): Unit /* this */
+    fun removeListener(
+        event: MessagePortMainEvent.MESSAGE,
+        listener: (messageEvent: MessageEvent) -> Unit,
+    ): Unit /* this */
 
     /**
      * Disconnects the port, so it is no longer active.

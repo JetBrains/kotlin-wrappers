@@ -11,13 +11,14 @@ external class ServiceWorkers : NodeEventEmitter {
      * Emitted when a service worker logs something to the console.
      */
     fun on(
-        event: ServiceWorkersEvent.CONSOLE_MESSAGE, listener: (
+        event: ServiceWorkersEvent.CONSOLE_MESSAGE,
+        listener: (
             event: Event,
             /**
              * Information about the console message
              */
-            messageDetails: MessageDetails
-        ) -> Unit
+            messageDetails: MessageDetails,
+        ) -> Unit,
     ): Unit /* this */
 
     /**
@@ -26,73 +27,80 @@ external class ServiceWorkers : NodeEventEmitter {
      * Chrome extension is loaded.
      */
     fun on(
-        event: ServiceWorkersEvent.REGISTRATION_COMPLETED, listener: (
+        event: ServiceWorkersEvent.REGISTRATION_COMPLETED,
+        listener: (
             event: Event,
             /**
              * Information about the registered service worker
              */
-            details: RegistrationCompletedDetails
-        ) -> Unit
+            details: RegistrationCompletedDetails,
+        ) -> Unit,
     ): Unit /* this */
 
     fun once(
-        event: ServiceWorkersEvent.CONSOLE_MESSAGE, listener: (
+        event: ServiceWorkersEvent.CONSOLE_MESSAGE,
+        listener: (
             event: Event,
             /**
              * Information about the console message
              */
-            messageDetails: MessageDetails
-        ) -> Unit
+            messageDetails: MessageDetails,
+        ) -> Unit,
     ): Unit /* this */
 
     fun once(
-        event: ServiceWorkersEvent.REGISTRATION_COMPLETED, listener: (
+        event: ServiceWorkersEvent.REGISTRATION_COMPLETED,
+        listener: (
             event: Event,
             /**
              * Information about the registered service worker
              */
-            details: RegistrationCompletedDetails
-        ) -> Unit
+            details: RegistrationCompletedDetails,
+        ) -> Unit,
     ): Unit /* this */
 
     fun addListener(
-        event: ServiceWorkersEvent.CONSOLE_MESSAGE, listener: (
+        event: ServiceWorkersEvent.CONSOLE_MESSAGE,
+        listener: (
             event: Event,
             /**
              * Information about the console message
              */
-            messageDetails: MessageDetails
-        ) -> Unit
+            messageDetails: MessageDetails,
+        ) -> Unit,
     ): Unit /* this */
 
     fun addListener(
-        event: ServiceWorkersEvent.REGISTRATION_COMPLETED, listener: (
+        event: ServiceWorkersEvent.REGISTRATION_COMPLETED,
+        listener: (
             event: Event,
             /**
              * Information about the registered service worker
              */
-            details: RegistrationCompletedDetails
-        ) -> Unit
+            details: RegistrationCompletedDetails,
+        ) -> Unit,
     ): Unit /* this */
 
     fun removeListener(
-        event: ServiceWorkersEvent.CONSOLE_MESSAGE, listener: (
+        event: ServiceWorkersEvent.CONSOLE_MESSAGE,
+        listener: (
             event: Event,
             /**
              * Information about the console message
              */
-            messageDetails: MessageDetails
-        ) -> Unit
+            messageDetails: MessageDetails,
+        ) -> Unit,
     ): Unit /* this */
 
     fun removeListener(
-        event: ServiceWorkersEvent.REGISTRATION_COMPLETED, listener: (
+        event: ServiceWorkersEvent.REGISTRATION_COMPLETED,
+        listener: (
             event: Event,
             /**
              * Information about the registered service worker
              */
-            details: RegistrationCompletedDetails
-        ) -> Unit
+            details: RegistrationCompletedDetails,
+        ) -> Unit,
     ): Unit /* this */
 
     /**

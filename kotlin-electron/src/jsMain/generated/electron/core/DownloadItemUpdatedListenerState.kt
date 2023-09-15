@@ -6,9 +6,9 @@ package electron.core
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 @JsName("""(/*union*/{progressing: 'progressing', interrupted: 'interrupted'}/*union*/)""")
-sealed external interface DownloadItemOnListenerState {
+sealed external interface DownloadItemUpdatedListenerState {
     companion object {
-        val progressing: DownloadItemOnListenerState
-        val interrupted: DownloadItemOnListenerState
+        val progressing: DownloadItemUpdatedListenerState
+        val interrupted: DownloadItemUpdatedListenerState
     }
 }

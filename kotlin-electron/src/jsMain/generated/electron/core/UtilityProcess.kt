@@ -10,13 +10,14 @@ external class UtilityProcess : NodeEventEmitter {
      * Emitted after the child process ends.
      */
     fun on(
-        event: UtilityProcessEvent.EXIT, listener: (
+        event: UtilityProcessEvent.EXIT,
+        listener: (
             /**
              * Contains the exit code for the process obtained from waitpid on posix, or
              * GetExitCodeProcess on windows.
              */
-            code: Double
-        ) -> Unit
+            code: Double,
+        ) -> Unit,
     ): Unit /* this */
 
     /**
@@ -30,37 +31,40 @@ external class UtilityProcess : NodeEventEmitter {
      */
     fun on(event: UtilityProcessEvent.SPAWN, listener: Function<*>): Unit /* this */
     fun once(
-        event: UtilityProcessEvent.EXIT, listener: (
+        event: UtilityProcessEvent.EXIT,
+        listener: (
             /**
              * Contains the exit code for the process obtained from waitpid on posix, or
              * GetExitCodeProcess on windows.
              */
-            code: Double
-        ) -> Unit
+            code: Double,
+        ) -> Unit,
     ): Unit /* this */
 
     fun once(event: UtilityProcessEvent.MESSAGE, listener: (message: Any?) -> Unit): Unit /* this */
     fun once(event: UtilityProcessEvent.SPAWN, listener: Function<*>): Unit /* this */
     fun addListener(
-        event: UtilityProcessEvent.EXIT, listener: (
+        event: UtilityProcessEvent.EXIT,
+        listener: (
             /**
              * Contains the exit code for the process obtained from waitpid on posix, or
              * GetExitCodeProcess on windows.
              */
-            code: Double
-        ) -> Unit
+            code: Double,
+        ) -> Unit,
     ): Unit /* this */
 
     fun addListener(event: UtilityProcessEvent.MESSAGE, listener: (message: Any?) -> Unit): Unit /* this */
     fun addListener(event: UtilityProcessEvent.SPAWN, listener: Function<*>): Unit /* this */
     fun removeListener(
-        event: UtilityProcessEvent.EXIT, listener: (
+        event: UtilityProcessEvent.EXIT,
+        listener: (
             /**
              * Contains the exit code for the process obtained from waitpid on posix, or
              * GetExitCodeProcess on windows.
              */
-            code: Double
-        ) -> Unit
+            code: Double,
+        ) -> Unit,
     ): Unit /* this */
 
     fun removeListener(event: UtilityProcessEvent.MESSAGE, listener: (message: Any?) -> Unit): Unit /* this */
@@ -107,7 +111,11 @@ external class UtilityProcess : NodeEventEmitter {
 
     companion object {
         // Docs: https://electronjs.org/docs/api/utility-process
-        fun fork(modulePath: String, args: js.core.ReadonlyArray<String> = definedExternally, options: ForkOptions = definedExternally): UtilityProcess
+        fun fork(
+            modulePath: String,
+            args: js.core.ReadonlyArray<String> = definedExternally,
+            options: ForkOptions = definedExternally,
+        ): UtilityProcess
     }
 
 }

@@ -13,20 +13,22 @@ external class Debugger : NodeEventEmitter {
      * `webContents` is closed or devtools is invoked for the attached `webContents`.
      */
     fun on(
-        event: DebuggerEvent.DETACH, listener: (
+        event: DebuggerEvent.DETACH,
+        listener: (
             event: Event,
             /**
              * Reason for detaching debugger.
              */
-            reason: String
-        ) -> Unit
+            reason: String,
+        ) -> Unit,
     ): Unit /* this */
 
     /**
      * Emitted whenever the debugging target issues an instrumentation event.
      */
     fun on(
-        event: DebuggerEvent.MESSAGE, listener: (
+        event: DebuggerEvent.MESSAGE,
+        listener: (
             event: Event,
             /**
              * Method name.
@@ -41,22 +43,24 @@ external class Debugger : NodeEventEmitter {
              * Unique identifier of attached debugging session, will match the value sent from
              * `debugger.sendCommand`.
              */
-            sessionId: String
-        ) -> Unit
+            sessionId: String,
+        ) -> Unit,
     ): Unit /* this */
 
     fun once(
-        event: DebuggerEvent.DETACH, listener: (
+        event: DebuggerEvent.DETACH,
+        listener: (
             event: Event,
             /**
              * Reason for detaching debugger.
              */
-            reason: String
-        ) -> Unit
+            reason: String,
+        ) -> Unit,
     ): Unit /* this */
 
     fun once(
-        event: DebuggerEvent.MESSAGE, listener: (
+        event: DebuggerEvent.MESSAGE,
+        listener: (
             event: Event,
             /**
              * Method name.
@@ -71,22 +75,24 @@ external class Debugger : NodeEventEmitter {
              * Unique identifier of attached debugging session, will match the value sent from
              * `debugger.sendCommand`.
              */
-            sessionId: String
-        ) -> Unit
+            sessionId: String,
+        ) -> Unit,
     ): Unit /* this */
 
     fun addListener(
-        event: DebuggerEvent.DETACH, listener: (
+        event: DebuggerEvent.DETACH,
+        listener: (
             event: Event,
             /**
              * Reason for detaching debugger.
              */
-            reason: String
-        ) -> Unit
+            reason: String,
+        ) -> Unit,
     ): Unit /* this */
 
     fun addListener(
-        event: DebuggerEvent.MESSAGE, listener: (
+        event: DebuggerEvent.MESSAGE,
+        listener: (
             event: Event,
             /**
              * Method name.
@@ -101,22 +107,24 @@ external class Debugger : NodeEventEmitter {
              * Unique identifier of attached debugging session, will match the value sent from
              * `debugger.sendCommand`.
              */
-            sessionId: String
-        ) -> Unit
+            sessionId: String,
+        ) -> Unit,
     ): Unit /* this */
 
     fun removeListener(
-        event: DebuggerEvent.DETACH, listener: (
+        event: DebuggerEvent.DETACH,
+        listener: (
             event: Event,
             /**
              * Reason for detaching debugger.
              */
-            reason: String
-        ) -> Unit
+            reason: String,
+        ) -> Unit,
     ): Unit /* this */
 
     fun removeListener(
-        event: DebuggerEvent.MESSAGE, listener: (
+        event: DebuggerEvent.MESSAGE,
+        listener: (
             event: Event,
             /**
              * Method name.
@@ -131,8 +139,8 @@ external class Debugger : NodeEventEmitter {
              * Unique identifier of attached debugging session, will match the value sent from
              * `debugger.sendCommand`.
              */
-            sessionId: String
-        ) -> Unit
+            sessionId: String,
+        ) -> Unit,
     ): Unit /* this */
 
     /**
@@ -157,5 +165,9 @@ external class Debugger : NodeEventEmitter {
      *
      * Send given command to the debugging target.
      */
-    fun sendCommand(method: String, commandParams: Any? = definedExternally, sessionId: String = definedExternally): Promise<Any?>
+    fun sendCommand(
+        method: String,
+        commandParams: Any? = definedExternally,
+        sessionId: String = definedExternally,
+    ): Promise<Any?>
 }

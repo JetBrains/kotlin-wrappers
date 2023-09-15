@@ -19,13 +19,14 @@ external class DownloadItem : NodeEventEmitter {
      * * `interrupted` - The download has interrupted and can not resume.
      */
     fun on(
-        event: DownloadItemEvent.DONE, listener: (
+        event: DownloadItemEvent.DONE,
+        listener: (
             event: Event,
             /**
              * Can be `completed`, `cancelled` or `interrupted`.
              */
-            state: (DownloadItemOnListenerState)
-        ) -> Unit
+            state: (DownloadItemDoneListenerState),
+        ) -> Unit,
     ): Unit /* this */
 
     /**
@@ -37,73 +38,80 @@ external class DownloadItem : NodeEventEmitter {
      * * `interrupted` - The download has interrupted and can be resumed.
      */
     fun on(
-        event: DownloadItemEvent.UPDATED, listener: (
+        event: DownloadItemEvent.UPDATED,
+        listener: (
             event: Event,
             /**
              * Can be `progressing` or `interrupted`.
              */
-            state: (DownloadItemOnListenerState)
-        ) -> Unit
+            state: (DownloadItemUpdatedListenerState),
+        ) -> Unit,
     ): Unit /* this */
 
     fun once(
-        event: DownloadItemEvent.DONE, listener: (
+        event: DownloadItemEvent.DONE,
+        listener: (
             event: Event,
             /**
              * Can be `completed`, `cancelled` or `interrupted`.
              */
-            state: (DownloadItemOnceListenerState)
-        ) -> Unit
+            state: (DownloadItemDoneListenerState),
+        ) -> Unit,
     ): Unit /* this */
 
     fun once(
-        event: DownloadItemEvent.UPDATED, listener: (
+        event: DownloadItemEvent.UPDATED,
+        listener: (
             event: Event,
             /**
              * Can be `progressing` or `interrupted`.
              */
-            state: (DownloadItemOnceListenerState)
-        ) -> Unit
+            state: (DownloadItemUpdatedListenerState),
+        ) -> Unit,
     ): Unit /* this */
 
     fun addListener(
-        event: DownloadItemEvent.DONE, listener: (
+        event: DownloadItemEvent.DONE,
+        listener: (
             event: Event,
             /**
              * Can be `completed`, `cancelled` or `interrupted`.
              */
-            state: (DownloadItemAddListenerListenerState)
-        ) -> Unit
+            state: (DownloadItemDoneListenerState),
+        ) -> Unit,
     ): Unit /* this */
 
     fun addListener(
-        event: DownloadItemEvent.UPDATED, listener: (
+        event: DownloadItemEvent.UPDATED,
+        listener: (
             event: Event,
             /**
              * Can be `progressing` or `interrupted`.
              */
-            state: (DownloadItemAddListenerListenerState)
-        ) -> Unit
+            state: (DownloadItemUpdatedListenerState),
+        ) -> Unit,
     ): Unit /* this */
 
     fun removeListener(
-        event: DownloadItemEvent.DONE, listener: (
+        event: DownloadItemEvent.DONE,
+        listener: (
             event: Event,
             /**
              * Can be `completed`, `cancelled` or `interrupted`.
              */
-            state: (DownloadItemRemoveListenerListenerState)
-        ) -> Unit
+            state: (DownloadItemDoneListenerState),
+        ) -> Unit,
     ): Unit /* this */
 
     fun removeListener(
-        event: DownloadItemEvent.UPDATED, listener: (
+        event: DownloadItemEvent.UPDATED,
+        listener: (
             event: Event,
             /**
              * Can be `progressing` or `interrupted`.
              */
-            state: (DownloadItemRemoveListenerListenerState)
-        ) -> Unit
+            state: (DownloadItemUpdatedListenerState),
+        ) -> Unit,
     ): Unit /* this */
 
     /**

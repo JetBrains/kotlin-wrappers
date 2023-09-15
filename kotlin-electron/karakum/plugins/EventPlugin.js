@@ -1,4 +1,3 @@
-import path from "node:path";
 import ts from "typescript";
 import * as karakum from "karakum";
 
@@ -68,9 +67,13 @@ export default {
             const symbol = typeChecker?.getSymbolAtLocation(name)
             if (!symbol) return
 
+            const sourceFileName = node.getSourceFile()?.fileName ?? "generated.d.ts"
+            const namespace = typeScriptService?.findClosest(node, ts.isModuleDeclaration)
+
             const events = this.events.get(symbol) ?? {
+                sourceFileName,
+                namespace,
                 containerName: name.text,
-                sourceFileName: node.getSourceFile()?.fileName ?? "generated.d.ts",
                 eventNames: new Set()
             }
 
@@ -106,12 +109,13 @@ export default {
     generate(context) {
         const configurationService = context.lookupService(karakum.configurationServiceKey)
         const configuration = configurationService?.configuration
-        if (configuration === undefined) throw new Error("EventPlugin.js can't work without ConfigurationService")
+        if (configuration === undefined) throw new Error("EventPlugin can't work without ConfigurationService")
 
-        const output = configuration.output
-        const result = {}
+        const namespaceInfoService = context.lookupService(karakum.namespaceInfoServiceKey)
+        const resolveNamespaceStrategy = namespaceInfoService?.resolveNamespaceStrategy?.bind(namespaceInfoService)
+        if (resolveNamespaceStrategy === undefined) throw new Error("EventPlugin can't work without NamespaceInfoService")
 
-        for (const events of this.events.values()) {
+        const declarations = Array.from(this.events.values()).map(events => {
             const name = `${events.containerName}Event`
 
             const entries = Array.from(events.eventNames).map(eventName => {
@@ -140,33 +144,14 @@ ${body}
 }
             `
 
-            const sourceFileInfoItem = karakum.createSourceFileInfoItem(
-                events.sourceFileName,
-                configuration,
-            )
+            return {
+                sourceFileName: events.sourceFileName,
+                namespace: events.namespace,
+                fileName: `${name}.kt`,
+                body: declaration,
+            }
+        })
 
-            const fileName = `${name}.kt`
-
-            const packageMappingResult = karakum.applyPackageNameMapper(
-                sourceFileInfoItem.package,
-                fileName,
-                configuration,
-            )
-
-            const outputFileName = karakum.packageToOutputFileName(
-                packageMappingResult.package,
-                fileName,
-                configuration,
-            )
-
-            result[path.resolve(output, outputFileName)] = karakum.createGeneratedFile(
-                packageMappingResult.package,
-                packageMappingResult.fileName,
-                declaration,
-                configuration,
-            )
-        }
-
-        return result;
+        return karakum.generateDerivedDeclarations(declarations, configuration, resolveNamespaceStrategy);
     },
 }

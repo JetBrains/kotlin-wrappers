@@ -65,7 +65,10 @@ external interface Dialog {
      * The `browserWindow` argument allows the dialog to attach itself to a parent
      * window, making it modal.
      */
-    fun showMessageBox(browserWindow: BrowserWindow, options: MessageBoxOptions): Promise<MessageBoxReturnValue>
+    fun showMessageBox(
+        browserWindow: BrowserWindow,
+        options: MessageBoxOptions,
+    ): Promise<MessageBoxReturnValue>
 
     /**
      * resolves with a promise containing the following properties:
@@ -130,7 +133,10 @@ external interface Dialog {
      * and a directory selector, so if you set `properties` to `['openFile',
      * 'openDirectory']` on these platforms, a directory selector will be shown.
      */
-    fun showOpenDialog(browserWindow: BrowserWindow, options: OpenDialogOptions): Promise<OpenDialogReturnValue>
+    fun showOpenDialog(
+        browserWindow: BrowserWindow,
+        options: OpenDialogOptions,
+    ): Promise<OpenDialogReturnValue>
 
     /**
      * Resolve with an object containing the following:
@@ -219,7 +225,10 @@ external interface Dialog {
      * **Note:** On macOS, using the asynchronous version is recommended to avoid
      * issues when expanding and collapsing the dialog.
      */
-    fun showSaveDialog(browserWindow: BrowserWindow, options: SaveDialogOptions): Promise<SaveDialogReturnValue>
+    fun showSaveDialog(
+        browserWindow: BrowserWindow,
+        options: SaveDialogOptions,
+    ): Promise<SaveDialogReturnValue>
 
     /**
      * Resolve with an object containing the following:
