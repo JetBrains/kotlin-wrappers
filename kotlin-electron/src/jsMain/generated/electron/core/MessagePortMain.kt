@@ -10,21 +10,21 @@ external class MessagePortMain : NodeEventEmitter {
     /**
      * Emitted when the remote end of a MessagePortMain object becomes disconnected.
      */
-    fun on(event: MessagePortMainEvent.CLOSE, listener: Function<*>): Unit /* this */
+    fun on(event: MessagePortMainEvent.CLOSE, listener: Function<Unit>): Unit /* this */
 
     /**
      * Emitted when a MessagePortMain object receives a message.
      */
     fun on(event: MessagePortMainEvent.MESSAGE, listener: (messageEvent: MessageEvent) -> Unit): Unit /* this */
-    fun once(event: MessagePortMainEvent.CLOSE, listener: Function<*>): Unit /* this */
+    fun once(event: MessagePortMainEvent.CLOSE, listener: Function<Unit>): Unit /* this */
     fun once(event: MessagePortMainEvent.MESSAGE, listener: (messageEvent: MessageEvent) -> Unit): Unit /* this */
-    fun addListener(event: MessagePortMainEvent.CLOSE, listener: Function<*>): Unit /* this */
+    fun addListener(event: MessagePortMainEvent.CLOSE, listener: Function<Unit>): Unit /* this */
     fun addListener(
         event: MessagePortMainEvent.MESSAGE,
         listener: (messageEvent: MessageEvent) -> Unit,
     ): Unit /* this */
 
-    fun removeListener(event: MessagePortMainEvent.CLOSE, listener: Function<*>): Unit /* this */
+    fun removeListener(event: MessagePortMainEvent.CLOSE, listener: Function<Unit>): Unit /* this */
     fun removeListener(
         event: MessagePortMainEvent.MESSAGE,
         listener: (messageEvent: MessageEvent) -> Unit,

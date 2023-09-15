@@ -9,10 +9,10 @@ external interface NativeTheme : node.events.IEventEmitter {
      * `shouldUseHighContrastColors` or `shouldUseInvertedColorScheme` has changed. You
      * will have to check them to determine which one has changed.
      */
-    fun on(event: NativeThemeEvent.UPDATED, listener: Function<*>): Unit /* this */
-    fun once(event: NativeThemeEvent.UPDATED, listener: Function<*>): Unit /* this */
-    fun addListener(event: NativeThemeEvent.UPDATED, listener: Function<*>): Unit /* this */
-    fun removeListener(event: NativeThemeEvent.UPDATED, listener: Function<*>): Unit /* this */
+    fun on(event: NativeThemeEvent.UPDATED, listener: Function<Unit>): Unit /* this */
+    fun once(event: NativeThemeEvent.UPDATED, listener: Function<Unit>): Unit /* this */
+    fun addListener(event: NativeThemeEvent.UPDATED, listener: Function<Unit>): Unit /* this */
+    fun removeListener(event: NativeThemeEvent.UPDATED, listener: Function<Unit>): Unit /* this */
 
     /**
      * A `boolean` indicating whether Chromium is in forced colors mode, controlled by

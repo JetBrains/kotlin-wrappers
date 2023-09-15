@@ -19,7 +19,7 @@ open external class Tray : NodeEventEmitter {
      *
      * @platform win32
      */
-    fun on(event: TrayEvent.BALLOON_CLICK, listener: Function<*>): Unit /* this */
+    fun on(event: TrayEvent.BALLOON_CLICK, listener: Function<Unit>): Unit /* this */
 
     /**
      * Emitted when the tray balloon is closed because of timeout or user manually
@@ -27,14 +27,14 @@ open external class Tray : NodeEventEmitter {
      *
      * @platform win32
      */
-    fun on(event: TrayEvent.BALLOON_CLOSED, listener: Function<*>): Unit /* this */
+    fun on(event: TrayEvent.BALLOON_CLOSED, listener: Function<Unit>): Unit /* this */
 
     /**
      * Emitted when the tray balloon shows.
      *
      * @platform win32
      */
-    fun on(event: TrayEvent.BALLOON_SHOW, listener: Function<*>): Unit /* this */
+    fun on(event: TrayEvent.BALLOON_SHOW, listener: Function<Unit>): Unit /* this */
 
     /**
      * Emitted when the tray icon is clicked.
@@ -78,28 +78,28 @@ open external class Tray : NodeEventEmitter {
      *
      * @platform darwin
      */
-    fun on(event: TrayEvent.DRAG_END, listener: Function<*>): Unit /* this */
+    fun on(event: TrayEvent.DRAG_END, listener: Function<Unit>): Unit /* this */
 
     /**
      * Emitted when a drag operation enters the tray icon.
      *
      * @platform darwin
      */
-    fun on(event: TrayEvent.DRAG_ENTER, listener: Function<*>): Unit /* this */
+    fun on(event: TrayEvent.DRAG_ENTER, listener: Function<Unit>): Unit /* this */
 
     /**
      * Emitted when a drag operation exits the tray icon.
      *
      * @platform darwin
      */
-    fun on(event: TrayEvent.DRAG_LEAVE, listener: Function<*>): Unit /* this */
+    fun on(event: TrayEvent.DRAG_LEAVE, listener: Function<Unit>): Unit /* this */
 
     /**
      * Emitted when any dragged items are dropped on the tray icon.
      *
      * @platform darwin
      */
-    fun on(event: TrayEvent.DROP, listener: Function<*>): Unit /* this */
+    fun on(event: TrayEvent.DROP, listener: Function<Unit>): Unit /* this */
 
     /**
      * Emitted when dragged files are dropped in the tray icon.
@@ -232,9 +232,9 @@ open external class Tray : NodeEventEmitter {
         ) -> Unit,
     ): Unit /* this */
 
-    fun once(event: TrayEvent.BALLOON_CLICK, listener: Function<*>): Unit /* this */
-    fun once(event: TrayEvent.BALLOON_CLOSED, listener: Function<*>): Unit /* this */
-    fun once(event: TrayEvent.BALLOON_SHOW, listener: Function<*>): Unit /* this */
+    fun once(event: TrayEvent.BALLOON_CLICK, listener: Function<Unit>): Unit /* this */
+    fun once(event: TrayEvent.BALLOON_CLOSED, listener: Function<Unit>): Unit /* this */
+    fun once(event: TrayEvent.BALLOON_SHOW, listener: Function<Unit>): Unit /* this */
     fun once(
         event: TrayEvent.CLICK,
         listener: (
@@ -261,10 +261,10 @@ open external class Tray : NodeEventEmitter {
         ) -> Unit,
     ): Unit /* this */
 
-    fun once(event: TrayEvent.DRAG_END, listener: Function<*>): Unit /* this */
-    fun once(event: TrayEvent.DRAG_ENTER, listener: Function<*>): Unit /* this */
-    fun once(event: TrayEvent.DRAG_LEAVE, listener: Function<*>): Unit /* this */
-    fun once(event: TrayEvent.DROP, listener: Function<*>): Unit /* this */
+    fun once(event: TrayEvent.DRAG_END, listener: Function<Unit>): Unit /* this */
+    fun once(event: TrayEvent.DRAG_ENTER, listener: Function<Unit>): Unit /* this */
+    fun once(event: TrayEvent.DRAG_LEAVE, listener: Function<Unit>): Unit /* this */
+    fun once(event: TrayEvent.DROP, listener: Function<Unit>): Unit /* this */
     fun once(
         event: TrayEvent.DROP_FILES,
         listener: (
@@ -353,9 +353,9 @@ open external class Tray : NodeEventEmitter {
         ) -> Unit,
     ): Unit /* this */
 
-    fun addListener(event: TrayEvent.BALLOON_CLICK, listener: Function<*>): Unit /* this */
-    fun addListener(event: TrayEvent.BALLOON_CLOSED, listener: Function<*>): Unit /* this */
-    fun addListener(event: TrayEvent.BALLOON_SHOW, listener: Function<*>): Unit /* this */
+    fun addListener(event: TrayEvent.BALLOON_CLICK, listener: Function<Unit>): Unit /* this */
+    fun addListener(event: TrayEvent.BALLOON_CLOSED, listener: Function<Unit>): Unit /* this */
+    fun addListener(event: TrayEvent.BALLOON_SHOW, listener: Function<Unit>): Unit /* this */
     fun addListener(
         event: TrayEvent.CLICK,
         listener: (
@@ -382,10 +382,10 @@ open external class Tray : NodeEventEmitter {
         ) -> Unit,
     ): Unit /* this */
 
-    fun addListener(event: TrayEvent.DRAG_END, listener: Function<*>): Unit /* this */
-    fun addListener(event: TrayEvent.DRAG_ENTER, listener: Function<*>): Unit /* this */
-    fun addListener(event: TrayEvent.DRAG_LEAVE, listener: Function<*>): Unit /* this */
-    fun addListener(event: TrayEvent.DROP, listener: Function<*>): Unit /* this */
+    fun addListener(event: TrayEvent.DRAG_END, listener: Function<Unit>): Unit /* this */
+    fun addListener(event: TrayEvent.DRAG_ENTER, listener: Function<Unit>): Unit /* this */
+    fun addListener(event: TrayEvent.DRAG_LEAVE, listener: Function<Unit>): Unit /* this */
+    fun addListener(event: TrayEvent.DROP, listener: Function<Unit>): Unit /* this */
     fun addListener(
         event: TrayEvent.DROP_FILES,
         listener: (
@@ -474,9 +474,9 @@ open external class Tray : NodeEventEmitter {
         ) -> Unit,
     ): Unit /* this */
 
-    fun removeListener(event: TrayEvent.BALLOON_CLICK, listener: Function<*>): Unit /* this */
-    fun removeListener(event: TrayEvent.BALLOON_CLOSED, listener: Function<*>): Unit /* this */
-    fun removeListener(event: TrayEvent.BALLOON_SHOW, listener: Function<*>): Unit /* this */
+    fun removeListener(event: TrayEvent.BALLOON_CLICK, listener: Function<Unit>): Unit /* this */
+    fun removeListener(event: TrayEvent.BALLOON_CLOSED, listener: Function<Unit>): Unit /* this */
+    fun removeListener(event: TrayEvent.BALLOON_SHOW, listener: Function<Unit>): Unit /* this */
     fun removeListener(
         event: TrayEvent.CLICK,
         listener: (
@@ -503,10 +503,10 @@ open external class Tray : NodeEventEmitter {
         ) -> Unit,
     ): Unit /* this */
 
-    fun removeListener(event: TrayEvent.DRAG_END, listener: Function<*>): Unit /* this */
-    fun removeListener(event: TrayEvent.DRAG_ENTER, listener: Function<*>): Unit /* this */
-    fun removeListener(event: TrayEvent.DRAG_LEAVE, listener: Function<*>): Unit /* this */
-    fun removeListener(event: TrayEvent.DROP, listener: Function<*>): Unit /* this */
+    fun removeListener(event: TrayEvent.DRAG_END, listener: Function<Unit>): Unit /* this */
+    fun removeListener(event: TrayEvent.DRAG_ENTER, listener: Function<Unit>): Unit /* this */
+    fun removeListener(event: TrayEvent.DRAG_LEAVE, listener: Function<Unit>): Unit /* this */
+    fun removeListener(event: TrayEvent.DROP, listener: Function<Unit>): Unit /* this */
     fun removeListener(
         event: TrayEvent.DROP_FILES,
         listener: (

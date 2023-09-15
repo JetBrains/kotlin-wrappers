@@ -8,26 +8,26 @@ external interface PowerMonitor : node.events.IEventEmitter {
      *
      * @platform darwin,win32
      */
-    fun on(event: PowerMonitorEvent.LOCK_SCREEN, listener: Function<*>): Unit /* this */
+    fun on(event: PowerMonitorEvent.LOCK_SCREEN, listener: Function<Unit>): Unit /* this */
 
     /**
      * Emitted when the system changes to AC power.
      *
      * @platform darwin,win32
      */
-    fun on(event: PowerMonitorEvent.ON_AC, listener: Function<*>): Unit /* this */
+    fun on(event: PowerMonitorEvent.ON_AC, listener: Function<Unit>): Unit /* this */
 
     /**
      * Emitted when system changes to battery power.
      *
      * @platform darwin
      */
-    fun on(event: PowerMonitorEvent.ON_BATTERY, listener: Function<*>): Unit /* this */
+    fun on(event: PowerMonitorEvent.ON_BATTERY, listener: Function<Unit>): Unit /* this */
 
     /**
      * Emitted when system is resuming.
      */
-    fun on(event: PowerMonitorEvent.RESUME, listener: Function<*>): Unit /* this */
+    fun on(event: PowerMonitorEvent.RESUME, listener: Function<Unit>): Unit /* this */
 
     /**
      * Emitted when the system is about to reboot or shut down. If the event handler
@@ -37,7 +37,7 @@ external interface PowerMonitor : node.events.IEventEmitter {
      *
      * @platform linux,darwin
      */
-    fun on(event: PowerMonitorEvent.SHUTDOWN, listener: Function<*>): Unit /* this */
+    fun on(event: PowerMonitorEvent.SHUTDOWN, listener: Function<Unit>): Unit /* this */
 
     /**
      * Notification of a change in the operating system's advertised speed limit for
@@ -46,12 +46,12 @@ external interface PowerMonitor : node.events.IEventEmitter {
      *
      * @platform darwin,win32
      */
-    fun on(event: PowerMonitorEvent.SPEED_LIMIT_CHANGE, listener: Function<*>): Unit /* this */
+    fun on(event: PowerMonitorEvent.SPEED_LIMIT_CHANGE, listener: Function<Unit>): Unit /* this */
 
     /**
      * Emitted when the system is suspending.
      */
-    fun on(event: PowerMonitorEvent.SUSPEND, listener: Function<*>): Unit /* this */
+    fun on(event: PowerMonitorEvent.SUSPEND, listener: Function<Unit>): Unit /* this */
 
     /**
      * Emitted when the thermal state of the system changes. Notification of a change
@@ -135,14 +135,14 @@ external interface PowerMonitor : node.events.IEventEmitter {
      *
      * @platform darwin
      */
-    fun on(event: PowerMonitorEvent.THERMAL_STATE_CHANGE, listener: Function<*>): Unit /* this */
+    fun on(event: PowerMonitorEvent.THERMAL_STATE_CHANGE, listener: Function<Unit>): Unit /* this */
 
     /**
      * Emitted as soon as the systems screen is unlocked.
      *
      * @platform darwin,win32
      */
-    fun on(event: PowerMonitorEvent.UNLOCK_SCREEN, listener: Function<*>): Unit /* this */
+    fun on(event: PowerMonitorEvent.UNLOCK_SCREEN, listener: Function<Unit>): Unit /* this */
 
     /**
      * Emitted when a login session is activated. See documentation for more
@@ -150,7 +150,7 @@ external interface PowerMonitor : node.events.IEventEmitter {
      *
      * @platform darwin
      */
-    fun on(event: PowerMonitorEvent.USER_DID_BECOME_ACTIVE, listener: Function<*>): Unit /* this */
+    fun on(event: PowerMonitorEvent.USER_DID_BECOME_ACTIVE, listener: Function<Unit>): Unit /* this */
 
     /**
      * Emitted when a login session is deactivated. See documentation for more
@@ -158,40 +158,40 @@ external interface PowerMonitor : node.events.IEventEmitter {
      *
      * @platform darwin
      */
-    fun on(event: PowerMonitorEvent.USER_DID_RESIGN_ACTIVE, listener: Function<*>): Unit /* this */
-    fun once(event: PowerMonitorEvent.LOCK_SCREEN, listener: Function<*>): Unit /* this */
-    fun once(event: PowerMonitorEvent.ON_AC, listener: Function<*>): Unit /* this */
-    fun once(event: PowerMonitorEvent.ON_BATTERY, listener: Function<*>): Unit /* this */
-    fun once(event: PowerMonitorEvent.RESUME, listener: Function<*>): Unit /* this */
-    fun once(event: PowerMonitorEvent.SHUTDOWN, listener: Function<*>): Unit /* this */
-    fun once(event: PowerMonitorEvent.SPEED_LIMIT_CHANGE, listener: Function<*>): Unit /* this */
-    fun once(event: PowerMonitorEvent.SUSPEND, listener: Function<*>): Unit /* this */
-    fun once(event: PowerMonitorEvent.THERMAL_STATE_CHANGE, listener: Function<*>): Unit /* this */
-    fun once(event: PowerMonitorEvent.UNLOCK_SCREEN, listener: Function<*>): Unit /* this */
-    fun once(event: PowerMonitorEvent.USER_DID_BECOME_ACTIVE, listener: Function<*>): Unit /* this */
-    fun once(event: PowerMonitorEvent.USER_DID_RESIGN_ACTIVE, listener: Function<*>): Unit /* this */
-    fun addListener(event: PowerMonitorEvent.LOCK_SCREEN, listener: Function<*>): Unit /* this */
-    fun addListener(event: PowerMonitorEvent.ON_AC, listener: Function<*>): Unit /* this */
-    fun addListener(event: PowerMonitorEvent.ON_BATTERY, listener: Function<*>): Unit /* this */
-    fun addListener(event: PowerMonitorEvent.RESUME, listener: Function<*>): Unit /* this */
-    fun addListener(event: PowerMonitorEvent.SHUTDOWN, listener: Function<*>): Unit /* this */
-    fun addListener(event: PowerMonitorEvent.SPEED_LIMIT_CHANGE, listener: Function<*>): Unit /* this */
-    fun addListener(event: PowerMonitorEvent.SUSPEND, listener: Function<*>): Unit /* this */
-    fun addListener(event: PowerMonitorEvent.THERMAL_STATE_CHANGE, listener: Function<*>): Unit /* this */
-    fun addListener(event: PowerMonitorEvent.UNLOCK_SCREEN, listener: Function<*>): Unit /* this */
-    fun addListener(event: PowerMonitorEvent.USER_DID_BECOME_ACTIVE, listener: Function<*>): Unit /* this */
-    fun addListener(event: PowerMonitorEvent.USER_DID_RESIGN_ACTIVE, listener: Function<*>): Unit /* this */
-    fun removeListener(event: PowerMonitorEvent.LOCK_SCREEN, listener: Function<*>): Unit /* this */
-    fun removeListener(event: PowerMonitorEvent.ON_AC, listener: Function<*>): Unit /* this */
-    fun removeListener(event: PowerMonitorEvent.ON_BATTERY, listener: Function<*>): Unit /* this */
-    fun removeListener(event: PowerMonitorEvent.RESUME, listener: Function<*>): Unit /* this */
-    fun removeListener(event: PowerMonitorEvent.SHUTDOWN, listener: Function<*>): Unit /* this */
-    fun removeListener(event: PowerMonitorEvent.SPEED_LIMIT_CHANGE, listener: Function<*>): Unit /* this */
-    fun removeListener(event: PowerMonitorEvent.SUSPEND, listener: Function<*>): Unit /* this */
-    fun removeListener(event: PowerMonitorEvent.THERMAL_STATE_CHANGE, listener: Function<*>): Unit /* this */
-    fun removeListener(event: PowerMonitorEvent.UNLOCK_SCREEN, listener: Function<*>): Unit /* this */
-    fun removeListener(event: PowerMonitorEvent.USER_DID_BECOME_ACTIVE, listener: Function<*>): Unit /* this */
-    fun removeListener(event: PowerMonitorEvent.USER_DID_RESIGN_ACTIVE, listener: Function<*>): Unit /* this */
+    fun on(event: PowerMonitorEvent.USER_DID_RESIGN_ACTIVE, listener: Function<Unit>): Unit /* this */
+    fun once(event: PowerMonitorEvent.LOCK_SCREEN, listener: Function<Unit>): Unit /* this */
+    fun once(event: PowerMonitorEvent.ON_AC, listener: Function<Unit>): Unit /* this */
+    fun once(event: PowerMonitorEvent.ON_BATTERY, listener: Function<Unit>): Unit /* this */
+    fun once(event: PowerMonitorEvent.RESUME, listener: Function<Unit>): Unit /* this */
+    fun once(event: PowerMonitorEvent.SHUTDOWN, listener: Function<Unit>): Unit /* this */
+    fun once(event: PowerMonitorEvent.SPEED_LIMIT_CHANGE, listener: Function<Unit>): Unit /* this */
+    fun once(event: PowerMonitorEvent.SUSPEND, listener: Function<Unit>): Unit /* this */
+    fun once(event: PowerMonitorEvent.THERMAL_STATE_CHANGE, listener: Function<Unit>): Unit /* this */
+    fun once(event: PowerMonitorEvent.UNLOCK_SCREEN, listener: Function<Unit>): Unit /* this */
+    fun once(event: PowerMonitorEvent.USER_DID_BECOME_ACTIVE, listener: Function<Unit>): Unit /* this */
+    fun once(event: PowerMonitorEvent.USER_DID_RESIGN_ACTIVE, listener: Function<Unit>): Unit /* this */
+    fun addListener(event: PowerMonitorEvent.LOCK_SCREEN, listener: Function<Unit>): Unit /* this */
+    fun addListener(event: PowerMonitorEvent.ON_AC, listener: Function<Unit>): Unit /* this */
+    fun addListener(event: PowerMonitorEvent.ON_BATTERY, listener: Function<Unit>): Unit /* this */
+    fun addListener(event: PowerMonitorEvent.RESUME, listener: Function<Unit>): Unit /* this */
+    fun addListener(event: PowerMonitorEvent.SHUTDOWN, listener: Function<Unit>): Unit /* this */
+    fun addListener(event: PowerMonitorEvent.SPEED_LIMIT_CHANGE, listener: Function<Unit>): Unit /* this */
+    fun addListener(event: PowerMonitorEvent.SUSPEND, listener: Function<Unit>): Unit /* this */
+    fun addListener(event: PowerMonitorEvent.THERMAL_STATE_CHANGE, listener: Function<Unit>): Unit /* this */
+    fun addListener(event: PowerMonitorEvent.UNLOCK_SCREEN, listener: Function<Unit>): Unit /* this */
+    fun addListener(event: PowerMonitorEvent.USER_DID_BECOME_ACTIVE, listener: Function<Unit>): Unit /* this */
+    fun addListener(event: PowerMonitorEvent.USER_DID_RESIGN_ACTIVE, listener: Function<Unit>): Unit /* this */
+    fun removeListener(event: PowerMonitorEvent.LOCK_SCREEN, listener: Function<Unit>): Unit /* this */
+    fun removeListener(event: PowerMonitorEvent.ON_AC, listener: Function<Unit>): Unit /* this */
+    fun removeListener(event: PowerMonitorEvent.ON_BATTERY, listener: Function<Unit>): Unit /* this */
+    fun removeListener(event: PowerMonitorEvent.RESUME, listener: Function<Unit>): Unit /* this */
+    fun removeListener(event: PowerMonitorEvent.SHUTDOWN, listener: Function<Unit>): Unit /* this */
+    fun removeListener(event: PowerMonitorEvent.SPEED_LIMIT_CHANGE, listener: Function<Unit>): Unit /* this */
+    fun removeListener(event: PowerMonitorEvent.SUSPEND, listener: Function<Unit>): Unit /* this */
+    fun removeListener(event: PowerMonitorEvent.THERMAL_STATE_CHANGE, listener: Function<Unit>): Unit /* this */
+    fun removeListener(event: PowerMonitorEvent.UNLOCK_SCREEN, listener: Function<Unit>): Unit /* this */
+    fun removeListener(event: PowerMonitorEvent.USER_DID_BECOME_ACTIVE, listener: Function<Unit>): Unit /* this */
+    fun removeListener(event: PowerMonitorEvent.USER_DID_RESIGN_ACTIVE, listener: Function<Unit>): Unit /* this */
 
     /**
      * The system's current thermal state. Can be `unknown`, `nominal`, `fair`,

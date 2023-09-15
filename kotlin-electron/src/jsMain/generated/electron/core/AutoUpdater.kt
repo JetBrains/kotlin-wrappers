@@ -13,12 +13,12 @@ external interface AutoUpdater : node.events.IEventEmitter {
      * perform actions before the windows are closed while a process is quitting, as
      * well as listening to `before-quit`.
      */
-    fun on(event: AutoUpdaterEvent.BEFORE_QUIT_FOR_UPDATE, listener: Function<*>): Unit /* this */
+    fun on(event: AutoUpdaterEvent.BEFORE_QUIT_FOR_UPDATE, listener: Function<Unit>): Unit /* this */
 
     /**
      * Emitted when checking if an update has started.
      */
-    fun on(event: AutoUpdaterEvent.CHECKING_FOR_UPDATE, listener: Function<*>): Unit /* this */
+    fun on(event: AutoUpdaterEvent.CHECKING_FOR_UPDATE, listener: Function<Unit>): Unit /* this */
 
     /**
      * Emitted when there is an error while updating.
@@ -29,7 +29,7 @@ external interface AutoUpdater : node.events.IEventEmitter {
      * Emitted when there is an available update. The update is downloaded
      * automatically.
      */
-    fun on(event: AutoUpdaterEvent.UPDATE_AVAILABLE, listener: Function<*>): Unit /* this */
+    fun on(event: AutoUpdaterEvent.UPDATE_AVAILABLE, listener: Function<Unit>): Unit /* this */
 
     /**
      * Emitted when an update has been downloaded.
@@ -47,41 +47,41 @@ external interface AutoUpdater : node.events.IEventEmitter {
     /**
      * Emitted when there is no available update.
      */
-    fun on(event: AutoUpdaterEvent.UPDATE_NOT_AVAILABLE, listener: Function<*>): Unit /* this */
-    fun once(event: AutoUpdaterEvent.BEFORE_QUIT_FOR_UPDATE, listener: Function<*>): Unit /* this */
-    fun once(event: AutoUpdaterEvent.CHECKING_FOR_UPDATE, listener: Function<*>): Unit /* this */
+    fun on(event: AutoUpdaterEvent.UPDATE_NOT_AVAILABLE, listener: Function<Unit>): Unit /* this */
+    fun once(event: AutoUpdaterEvent.BEFORE_QUIT_FOR_UPDATE, listener: Function<Unit>): Unit /* this */
+    fun once(event: AutoUpdaterEvent.CHECKING_FOR_UPDATE, listener: Function<Unit>): Unit /* this */
     fun once(event: AutoUpdaterEvent.ERROR, listener: (error: Throwable /* JsError */) -> Unit): Unit /* this */
-    fun once(event: AutoUpdaterEvent.UPDATE_AVAILABLE, listener: Function<*>): Unit /* this */
+    fun once(event: AutoUpdaterEvent.UPDATE_AVAILABLE, listener: Function<Unit>): Unit /* this */
     fun once(
         event: AutoUpdaterEvent.UPDATE_DOWNLOADED,
         listener: (event: Event, releaseNotes: String, releaseName: String, releaseDate: Date, updateURL: String) -> Unit,
     ): Unit /* this */
 
-    fun once(event: AutoUpdaterEvent.UPDATE_NOT_AVAILABLE, listener: Function<*>): Unit /* this */
-    fun addListener(event: AutoUpdaterEvent.BEFORE_QUIT_FOR_UPDATE, listener: Function<*>): Unit /* this */
-    fun addListener(event: AutoUpdaterEvent.CHECKING_FOR_UPDATE, listener: Function<*>): Unit /* this */
+    fun once(event: AutoUpdaterEvent.UPDATE_NOT_AVAILABLE, listener: Function<Unit>): Unit /* this */
+    fun addListener(event: AutoUpdaterEvent.BEFORE_QUIT_FOR_UPDATE, listener: Function<Unit>): Unit /* this */
+    fun addListener(event: AutoUpdaterEvent.CHECKING_FOR_UPDATE, listener: Function<Unit>): Unit /* this */
     fun addListener(event: AutoUpdaterEvent.ERROR, listener: (error: Throwable /* JsError */) -> Unit): Unit /* this */
-    fun addListener(event: AutoUpdaterEvent.UPDATE_AVAILABLE, listener: Function<*>): Unit /* this */
+    fun addListener(event: AutoUpdaterEvent.UPDATE_AVAILABLE, listener: Function<Unit>): Unit /* this */
     fun addListener(
         event: AutoUpdaterEvent.UPDATE_DOWNLOADED,
         listener: (event: Event, releaseNotes: String, releaseName: String, releaseDate: Date, updateURL: String) -> Unit,
     ): Unit /* this */
 
-    fun addListener(event: AutoUpdaterEvent.UPDATE_NOT_AVAILABLE, listener: Function<*>): Unit /* this */
-    fun removeListener(event: AutoUpdaterEvent.BEFORE_QUIT_FOR_UPDATE, listener: Function<*>): Unit /* this */
-    fun removeListener(event: AutoUpdaterEvent.CHECKING_FOR_UPDATE, listener: Function<*>): Unit /* this */
+    fun addListener(event: AutoUpdaterEvent.UPDATE_NOT_AVAILABLE, listener: Function<Unit>): Unit /* this */
+    fun removeListener(event: AutoUpdaterEvent.BEFORE_QUIT_FOR_UPDATE, listener: Function<Unit>): Unit /* this */
+    fun removeListener(event: AutoUpdaterEvent.CHECKING_FOR_UPDATE, listener: Function<Unit>): Unit /* this */
     fun removeListener(
         event: AutoUpdaterEvent.ERROR,
         listener: (error: Throwable /* JsError */) -> Unit,
     ): Unit /* this */
 
-    fun removeListener(event: AutoUpdaterEvent.UPDATE_AVAILABLE, listener: Function<*>): Unit /* this */
+    fun removeListener(event: AutoUpdaterEvent.UPDATE_AVAILABLE, listener: Function<Unit>): Unit /* this */
     fun removeListener(
         event: AutoUpdaterEvent.UPDATE_DOWNLOADED,
         listener: (event: Event, releaseNotes: String, releaseName: String, releaseDate: Date, updateURL: String) -> Unit,
     ): Unit /* this */
 
-    fun removeListener(event: AutoUpdaterEvent.UPDATE_NOT_AVAILABLE, listener: Function<*>): Unit /* this */
+    fun removeListener(event: AutoUpdaterEvent.UPDATE_NOT_AVAILABLE, listener: Function<Unit>): Unit /* this */
 
     /**
      * Asks the server whether there is an update. You must call `setFeedURL` before

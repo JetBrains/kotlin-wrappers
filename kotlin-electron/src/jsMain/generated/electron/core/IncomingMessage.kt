@@ -11,7 +11,7 @@ external class IncomingMessage : NodeEventEmitter {
     /**
      * Emitted when a request has been canceled during an ongoing HTTP transaction.
      */
-    fun on(event: IncomingMessageEvent.ABORTED, listener: Function<*>): Unit /* this */
+    fun on(event: IncomingMessageEvent.ABORTED, listener: Function<Unit>): Unit /* this */
 
     /**
      * The `data` event is the usual method of transferring response data into
@@ -30,7 +30,7 @@ external class IncomingMessage : NodeEventEmitter {
     /**
      * Indicates that response body has ended. Must be placed before 'data' event.
      */
-    fun on(event: IncomingMessageEvent.END, listener: Function<*>): Unit /* this */
+    fun on(event: IncomingMessageEvent.END, listener: Function<Unit>): Unit /* this */
 
     /**
      * Returns:
@@ -42,8 +42,8 @@ external class IncomingMessage : NodeEventEmitter {
      * streaming, an `error` event will be emitted on the response object and a `close`
      * event will subsequently follow on the request object.
      */
-    fun on(event: IncomingMessageEvent.ERROR, listener: Function<*>): Unit /* this */
-    fun once(event: IncomingMessageEvent.ABORTED, listener: Function<*>): Unit /* this */
+    fun on(event: IncomingMessageEvent.ERROR, listener: Function<Unit>): Unit /* this */
+    fun once(event: IncomingMessageEvent.ABORTED, listener: Function<Unit>): Unit /* this */
     fun once(
         event: IncomingMessageEvent.DATA,
         listener: (
@@ -54,9 +54,9 @@ external class IncomingMessage : NodeEventEmitter {
         ) -> Unit,
     ): Unit /* this */
 
-    fun once(event: IncomingMessageEvent.END, listener: Function<*>): Unit /* this */
-    fun once(event: IncomingMessageEvent.ERROR, listener: Function<*>): Unit /* this */
-    fun addListener(event: IncomingMessageEvent.ABORTED, listener: Function<*>): Unit /* this */
+    fun once(event: IncomingMessageEvent.END, listener: Function<Unit>): Unit /* this */
+    fun once(event: IncomingMessageEvent.ERROR, listener: Function<Unit>): Unit /* this */
+    fun addListener(event: IncomingMessageEvent.ABORTED, listener: Function<Unit>): Unit /* this */
     fun addListener(
         event: IncomingMessageEvent.DATA,
         listener: (
@@ -67,9 +67,9 @@ external class IncomingMessage : NodeEventEmitter {
         ) -> Unit,
     ): Unit /* this */
 
-    fun addListener(event: IncomingMessageEvent.END, listener: Function<*>): Unit /* this */
-    fun addListener(event: IncomingMessageEvent.ERROR, listener: Function<*>): Unit /* this */
-    fun removeListener(event: IncomingMessageEvent.ABORTED, listener: Function<*>): Unit /* this */
+    fun addListener(event: IncomingMessageEvent.END, listener: Function<Unit>): Unit /* this */
+    fun addListener(event: IncomingMessageEvent.ERROR, listener: Function<Unit>): Unit /* this */
+    fun removeListener(event: IncomingMessageEvent.ABORTED, listener: Function<Unit>): Unit /* this */
     fun removeListener(
         event: IncomingMessageEvent.DATA,
         listener: (
@@ -80,8 +80,8 @@ external class IncomingMessage : NodeEventEmitter {
         ) -> Unit,
     ): Unit /* this */
 
-    fun removeListener(event: IncomingMessageEvent.END, listener: Function<*>): Unit /* this */
-    fun removeListener(event: IncomingMessageEvent.ERROR, listener: Function<*>): Unit /* this */
+    fun removeListener(event: IncomingMessageEvent.END, listener: Function<Unit>): Unit /* this */
+    fun removeListener(event: IncomingMessageEvent.ERROR, listener: Function<Unit>): Unit /* this */
 
     /**
      * A `Record<string, string | string[]>` representing the HTTP response headers.

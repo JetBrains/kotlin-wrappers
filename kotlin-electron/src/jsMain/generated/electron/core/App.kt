@@ -177,7 +177,7 @@ external interface App : node.events.IEventEmitter {
     /**
      * Emitted whenever there is a GPU info update.
      */
-    fun on(event: AppEvent.GPU_INFO_UPDATE, listener: Function<*>): Unit /* this */
+    fun on(event: AppEvent.GPU_INFO_UPDATE, listener: Function<Unit>): Unit /* this */
 
     /**
      * Emitted when the GPU process crashes or is killed.
@@ -408,7 +408,7 @@ external interface App : node.events.IEventEmitter {
      *
      * In most cases, you should do everything in the `ready` event handler.
      */
-    fun on(event: AppEvent.WILL_FINISH_LAUNCHING, listener: Function<*>): Unit /* this */
+    fun on(event: AppEvent.WILL_FINISH_LAUNCHING, listener: Function<Unit>): Unit /* this */
 
     /**
      * Emitted when all windows have been closed and the application will quit. Calling
@@ -433,7 +433,7 @@ external interface App : node.events.IEventEmitter {
      * `will-quit` event, and in this case the `window-all-closed` event would not be
      * emitted.
      */
-    fun on(event: AppEvent.WINDOW_ALL_CLOSED, listener: Function<*>): Unit /* this */
+    fun on(event: AppEvent.WINDOW_ALL_CLOSED, listener: Function<Unit>): Unit /* this */
     fun once(
         event: AppEvent.ACCESSIBILITY_SUPPORT_CHANGED,
         listener: (
@@ -522,7 +522,7 @@ external interface App : node.events.IEventEmitter {
     ): Unit /* this */
 
     fun once(event: AppEvent.DID_BECOME_ACTIVE, listener: (event: Event) -> Unit): Unit /* this */
-    fun once(event: AppEvent.GPU_INFO_UPDATE, listener: Function<*>): Unit /* this */
+    fun once(event: AppEvent.GPU_INFO_UPDATE, listener: Function<Unit>): Unit /* this */
     fun once(event: AppEvent.GPU_PROCESS_CRASHED, listener: (event: Event, killed: Boolean) -> Unit): Unit /* this */
     fun once(
         event: AppEvent.LOGIN,
@@ -604,9 +604,9 @@ external interface App : node.events.IEventEmitter {
         ) -> Unit,
     ): Unit /* this */
 
-    fun once(event: AppEvent.WILL_FINISH_LAUNCHING, listener: Function<*>): Unit /* this */
+    fun once(event: AppEvent.WILL_FINISH_LAUNCHING, listener: Function<Unit>): Unit /* this */
     fun once(event: AppEvent.WILL_QUIT, listener: (event: Event) -> Unit): Unit /* this */
-    fun once(event: AppEvent.WINDOW_ALL_CLOSED, listener: Function<*>): Unit /* this */
+    fun once(event: AppEvent.WINDOW_ALL_CLOSED, listener: Function<Unit>): Unit /* this */
     fun addListener(
         event: AppEvent.ACCESSIBILITY_SUPPORT_CHANGED,
         listener: (
@@ -703,7 +703,7 @@ external interface App : node.events.IEventEmitter {
     ): Unit /* this */
 
     fun addListener(event: AppEvent.DID_BECOME_ACTIVE, listener: (event: Event) -> Unit): Unit /* this */
-    fun addListener(event: AppEvent.GPU_INFO_UPDATE, listener: Function<*>): Unit /* this */
+    fun addListener(event: AppEvent.GPU_INFO_UPDATE, listener: Function<Unit>): Unit /* this */
     fun addListener(
         event: AppEvent.GPU_PROCESS_CRASHED,
         listener: (event: Event, killed: Boolean) -> Unit,
@@ -789,9 +789,9 @@ external interface App : node.events.IEventEmitter {
         ) -> Unit,
     ): Unit /* this */
 
-    fun addListener(event: AppEvent.WILL_FINISH_LAUNCHING, listener: Function<*>): Unit /* this */
+    fun addListener(event: AppEvent.WILL_FINISH_LAUNCHING, listener: Function<Unit>): Unit /* this */
     fun addListener(event: AppEvent.WILL_QUIT, listener: (event: Event) -> Unit): Unit /* this */
-    fun addListener(event: AppEvent.WINDOW_ALL_CLOSED, listener: Function<*>): Unit /* this */
+    fun addListener(event: AppEvent.WINDOW_ALL_CLOSED, listener: Function<Unit>): Unit /* this */
     fun removeListener(
         event: AppEvent.ACCESSIBILITY_SUPPORT_CHANGED,
         listener: (
@@ -888,7 +888,7 @@ external interface App : node.events.IEventEmitter {
     ): Unit /* this */
 
     fun removeListener(event: AppEvent.DID_BECOME_ACTIVE, listener: (event: Event) -> Unit): Unit /* this */
-    fun removeListener(event: AppEvent.GPU_INFO_UPDATE, listener: Function<*>): Unit /* this */
+    fun removeListener(event: AppEvent.GPU_INFO_UPDATE, listener: Function<Unit>): Unit /* this */
     fun removeListener(
         event: AppEvent.GPU_PROCESS_CRASHED,
         listener: (event: Event, killed: Boolean) -> Unit,
@@ -974,9 +974,9 @@ external interface App : node.events.IEventEmitter {
         ) -> Unit,
     ): Unit /* this */
 
-    fun removeListener(event: AppEvent.WILL_FINISH_LAUNCHING, listener: Function<*>): Unit /* this */
+    fun removeListener(event: AppEvent.WILL_FINISH_LAUNCHING, listener: Function<Unit>): Unit /* this */
     fun removeListener(event: AppEvent.WILL_QUIT, listener: (event: Event) -> Unit): Unit /* this */
-    fun removeListener(event: AppEvent.WINDOW_ALL_CLOSED, listener: Function<*>): Unit /* this */
+    fun removeListener(event: AppEvent.WINDOW_ALL_CLOSED, listener: Function<Unit>): Unit /* this */
 
     /**
      * Adds `path` to the recent documents list.

@@ -29,7 +29,7 @@ external class UtilityProcess : NodeEventEmitter {
     /**
      * Emitted once the child process has spawned successfully.
      */
-    fun on(event: UtilityProcessEvent.SPAWN, listener: Function<*>): Unit /* this */
+    fun on(event: UtilityProcessEvent.SPAWN, listener: Function<Unit>): Unit /* this */
     fun once(
         event: UtilityProcessEvent.EXIT,
         listener: (
@@ -42,7 +42,7 @@ external class UtilityProcess : NodeEventEmitter {
     ): Unit /* this */
 
     fun once(event: UtilityProcessEvent.MESSAGE, listener: (message: Any?) -> Unit): Unit /* this */
-    fun once(event: UtilityProcessEvent.SPAWN, listener: Function<*>): Unit /* this */
+    fun once(event: UtilityProcessEvent.SPAWN, listener: Function<Unit>): Unit /* this */
     fun addListener(
         event: UtilityProcessEvent.EXIT,
         listener: (
@@ -55,7 +55,7 @@ external class UtilityProcess : NodeEventEmitter {
     ): Unit /* this */
 
     fun addListener(event: UtilityProcessEvent.MESSAGE, listener: (message: Any?) -> Unit): Unit /* this */
-    fun addListener(event: UtilityProcessEvent.SPAWN, listener: Function<*>): Unit /* this */
+    fun addListener(event: UtilityProcessEvent.SPAWN, listener: Function<Unit>): Unit /* this */
     fun removeListener(
         event: UtilityProcessEvent.EXIT,
         listener: (
@@ -68,7 +68,7 @@ external class UtilityProcess : NodeEventEmitter {
     ): Unit /* this */
 
     fun removeListener(event: UtilityProcessEvent.MESSAGE, listener: (message: Any?) -> Unit): Unit /* this */
-    fun removeListener(event: UtilityProcessEvent.SPAWN, listener: Function<*>): Unit /* this */
+    fun removeListener(event: UtilityProcessEvent.SPAWN, listener: Function<Unit>): Unit /* this */
 
     /**
      * Terminates the process gracefully. On POSIX, it uses SIGTERM but will ensure the

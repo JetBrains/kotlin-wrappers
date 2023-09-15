@@ -18,14 +18,14 @@ external class ClientRequest : NodeEventEmitter {
      * Emitted when the `request` is aborted. The `abort` event will not be fired if
      * the `request` is already closed.
      */
-    fun on(event: ClientRequestEvent.ABORT, listener: Function<*>): Unit /* this */
+    fun on(event: ClientRequestEvent.ABORT, listener: Function<Unit>): Unit /* this */
 
     /**
      * Emitted as the last event in the HTTP request-response transaction. The `close`
      * event indicates that no more events will be emitted on either the `request` or
      * `response` objects.
      */
-    fun on(event: ClientRequestEvent.CLOSE, listener: Function<*>): Unit /* this */
+    fun on(event: ClientRequestEvent.CLOSE, listener: Function<Unit>): Unit /* this */
 
     /**
      * Emitted when the `net` module fails to issue a network request. Typically when
@@ -47,7 +47,7 @@ external class ClientRequest : NodeEventEmitter {
      * Emitted just after the last chunk of the `request`'s data has been written into
      * the `request` object.
      */
-    fun on(event: ClientRequestEvent.FINISH, listener: Function<*>): Unit /* this */
+    fun on(event: ClientRequestEvent.FINISH, listener: Function<Unit>): Unit /* this */
 
     /**
      * Emitted when an authenticating proxy is asking for user credentials.
@@ -86,8 +86,8 @@ external class ClientRequest : NodeEventEmitter {
         ) -> Unit,
     ): Unit /* this */
 
-    fun once(event: ClientRequestEvent.ABORT, listener: Function<*>): Unit /* this */
-    fun once(event: ClientRequestEvent.CLOSE, listener: Function<*>): Unit /* this */
+    fun once(event: ClientRequestEvent.ABORT, listener: Function<Unit>): Unit /* this */
+    fun once(event: ClientRequestEvent.CLOSE, listener: Function<Unit>): Unit /* this */
     fun once(
         event: ClientRequestEvent.ERROR,
         listener: (
@@ -99,7 +99,7 @@ external class ClientRequest : NodeEventEmitter {
         ) -> Unit,
     ): Unit /* this */
 
-    fun once(event: ClientRequestEvent.FINISH, listener: Function<*>): Unit /* this */
+    fun once(event: ClientRequestEvent.FINISH, listener: Function<Unit>): Unit /* this */
     fun once(
         event: ClientRequestEvent.LOGIN,
         listener: (authInfo: AuthInfo, callback: (username: String? /* use undefined for default */, password: String? /* use undefined for default */) -> Unit) -> Unit,
@@ -120,8 +120,8 @@ external class ClientRequest : NodeEventEmitter {
         ) -> Unit,
     ): Unit /* this */
 
-    fun addListener(event: ClientRequestEvent.ABORT, listener: Function<*>): Unit /* this */
-    fun addListener(event: ClientRequestEvent.CLOSE, listener: Function<*>): Unit /* this */
+    fun addListener(event: ClientRequestEvent.ABORT, listener: Function<Unit>): Unit /* this */
+    fun addListener(event: ClientRequestEvent.CLOSE, listener: Function<Unit>): Unit /* this */
     fun addListener(
         event: ClientRequestEvent.ERROR,
         listener: (
@@ -133,7 +133,7 @@ external class ClientRequest : NodeEventEmitter {
         ) -> Unit,
     ): Unit /* this */
 
-    fun addListener(event: ClientRequestEvent.FINISH, listener: Function<*>): Unit /* this */
+    fun addListener(event: ClientRequestEvent.FINISH, listener: Function<Unit>): Unit /* this */
     fun addListener(
         event: ClientRequestEvent.LOGIN,
         listener: (authInfo: AuthInfo, callback: (username: String? /* use undefined for default */, password: String? /* use undefined for default */) -> Unit) -> Unit,
@@ -154,8 +154,8 @@ external class ClientRequest : NodeEventEmitter {
         ) -> Unit,
     ): Unit /* this */
 
-    fun removeListener(event: ClientRequestEvent.ABORT, listener: Function<*>): Unit /* this */
-    fun removeListener(event: ClientRequestEvent.CLOSE, listener: Function<*>): Unit /* this */
+    fun removeListener(event: ClientRequestEvent.ABORT, listener: Function<Unit>): Unit /* this */
+    fun removeListener(event: ClientRequestEvent.CLOSE, listener: Function<Unit>): Unit /* this */
     fun removeListener(
         event: ClientRequestEvent.ERROR,
         listener: (
@@ -167,7 +167,7 @@ external class ClientRequest : NodeEventEmitter {
         ) -> Unit,
     ): Unit /* this */
 
-    fun removeListener(event: ClientRequestEvent.FINISH, listener: Function<*>): Unit /* this */
+    fun removeListener(event: ClientRequestEvent.FINISH, listener: Function<Unit>): Unit /* this */
     fun removeListener(
         event: ClientRequestEvent.LOGIN,
         listener: (authInfo: AuthInfo, callback: (username: String? /* use undefined for default */, password: String? /* use undefined for default */) -> Unit) -> Unit,
