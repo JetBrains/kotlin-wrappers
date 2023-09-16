@@ -5,16 +5,22 @@ package muix.tree.view
 import js.core.ReadonlyArray
 import mui.material.styles.Theme
 import mui.system.SxProps
+import web.cssom.ClassName
 
 external interface TreeViewPropsBase :
-    mui.system.StandardProps,
     react.dom.html.HTMLAttributes<web.html.HTMLUListElement>,
     react.PropsWithChildren,
+    react.PropsWithClassName,
     mui.system.PropsWithSx {
     /**
      * The content of the component.
      */
     override var children: react.ReactNode?
+
+    /**
+     * className applied to the root element.
+     */
+    override var className: ClassName?
 
     /**
      * Override or extend the styles applied to the component.
@@ -33,7 +39,8 @@ external interface TreeViewPropsBase :
     var defaultEndIcon: react.ReactNode?
 
     /**
-     * Expanded node ids. (Uncontrolled)
+     * Expanded node ids.
+     * Used when the item's expansion are not controlled.
      * @default []
      */
     var defaultExpanded: ReadonlyArray<String>?
@@ -62,7 +69,8 @@ external interface TreeViewPropsBase :
     var disableSelection: Boolean?
 
     /**
-     * Expanded node ids. (Controlled)
+     * Expanded node ids.
+     * Used when the item's expansion are controlled.
      */
     var expanded: ReadonlyArray<String>?
 

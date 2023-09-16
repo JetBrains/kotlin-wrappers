@@ -4,16 +4,22 @@ package muix.tree.view
 
 import mui.material.styles.Theme
 import mui.system.SxProps
+import web.cssom.ClassName
 
 external interface TreeItemProps :
-    mui.system.StandardProps,
     react.dom.html.HTMLAttributes<web.html.HTMLLIElement>,
     react.PropsWithChildren,
+    react.PropsWithClassName,
     mui.system.PropsWithSx {
     /**
      * The content of the component.
      */
     override var children: react.ReactNode?
+
+    /**
+     * className applied to the root element.
+     */
+    override var className: ClassName?
 
     /**
      * Override or extend the styles applied to the component.
@@ -32,7 +38,7 @@ external interface TreeItemProps :
     var ContentComponent: react.ComponentType<TreeItemContentProps>?
 
     /**
-     * Props applied to ContentComponent
+     * Props applied to ContentComponent.
      */
     var ContentProps: react.dom.html.HTMLAttributes<web.html.HTMLElement>?
 
@@ -43,7 +49,7 @@ external interface TreeItemProps :
     var disabled: Boolean?
 
     /**
-     * The icon displayed next to a end node.
+     * The icon displayed next to an end node.
      */
     var endIcon: react.ReactNode?
 
