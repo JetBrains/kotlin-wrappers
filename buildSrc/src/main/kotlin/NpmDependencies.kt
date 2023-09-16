@@ -8,6 +8,7 @@ private val STRICT_VERSION_REQUIRED = setOf(
     "@mui/material",
     "@mui/icons-material",
     "@mui/lab",
+    "@mui/x-tree-view",
     "@mui/x-date-pickers",
 )
 

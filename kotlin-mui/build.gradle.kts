@@ -10,5 +10,6 @@ dependencies {
 
     jsMainApi(npmv("@mui/material"))
     jsMainApi(npmv("@mui/lab"))
+    jsMainApi(npmv("@mui/x-tree-view"))
     jsMainApi(npmv("@mui/x-date-pickers"))
 }

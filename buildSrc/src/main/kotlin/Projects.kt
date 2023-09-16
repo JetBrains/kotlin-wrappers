@@ -14,6 +14,7 @@ private val TARGET_ALIASES = mapOf(
     "@mui/material" to "mui",
     "@mui/icons-material" to "mui-icons",
     "@mui/lab" to "mui-lab",
+    "@mui/x-tree-view" to "muix-tree-view",
     "@mui/x-date-pickers" to "muix-date-pickers",
 
     "@popperjs/core" to "popper",
