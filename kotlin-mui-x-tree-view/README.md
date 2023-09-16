@@ -1,6 +1,6 @@
-[![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-muix-tree-view)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-muix-tree-view)
+[![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-mui-x-tree-view)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-mui-x-tree-view)
 
-# kotlin-muix-tree-view
+# kotlin-mui-x-tree-view
 
 Kotlin wrapper for [MUI X Tree View](https://mui.com/x/react-tree-view/).
 

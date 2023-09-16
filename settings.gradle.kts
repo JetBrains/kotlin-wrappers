@@ -63,7 +63,7 @@ include("kotlin-mui")
 include("kotlin-mui-icons")
 
 // Kotlin/JS: MUI X Tree View wrappers
-include("kotlin-muix-tree-view")
+include("kotlin-mui-x-tree-view")
 
 // Kotlin/JS: Node.js wrappers
 include("kotlin-node")
