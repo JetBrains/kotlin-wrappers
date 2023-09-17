@@ -5,4 +5,5 @@ package tanstack.table.core
 external interface ColumnPinningOptions {
     var onColumnPinningChange: OnChangeFn<ColumnPinningState>?
     var enablePinning: Boolean?
+    var enableColumnPinning: Boolean?
 }
