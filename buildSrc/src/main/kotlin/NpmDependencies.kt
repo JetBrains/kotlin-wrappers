@@ -9,6 +9,7 @@ private val STRICT_VERSION_REQUIRED = setOf(
     "@mui/icons-material",
     "@mui/lab",
     "@mui/x-date-pickers",
+    "@mui/x-tree-view",
 )
 
 private fun Project.npmVersion(name: String): String {
