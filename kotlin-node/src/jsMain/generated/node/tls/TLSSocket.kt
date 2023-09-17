@@ -3,6 +3,7 @@
 package node.tls
 
 import node.buffer.Buffer
+import node.crypto.X509Certificate
 
 /**
  * Performs transparent encryption of written data and all required TLS
@@ -247,7 +248,7 @@ external class TLSSocket : node.net.Socket {
      * If there is no peer certificate, or the socket has been destroyed,`undefined` will be returned.
      * @since v15.9.0
      */
-    fun getPeerX509Certificate(): Any?
+    fun getPeerX509Certificate(): X509Certificate?
 
     /**
      * Returns the local certificate as an `X509Certificate` object.
@@ -255,7 +256,7 @@ external class TLSSocket : node.net.Socket {
      * If there is no local certificate, or the socket has been destroyed,`undefined` will be returned.
      * @since v15.9.0
      */
-    fun getX509Certificate(): Any?
+    fun getX509Certificate(): X509Certificate?
 
     /**
      * Keying material is used for validations to prevent different kind of attacks in

@@ -64,10 +64,26 @@ external class Server : node.net.Server {
      * 6. keylog
      */
     fun addListener(event: String, listener: Function<Any?> /* (...args: any[]) => void */): Unit /* this */
-    fun addListener(event: ServerEvent.TLSCLIENTERROR, listener: (err: Error, tlsSocket: TLSSocket) -> Unit): Unit /* this */
-    fun addListener(event: ServerEvent.NEWSESSION, listener: (sessionId: Buffer, sessionData: Buffer, callback: () -> Unit) -> Unit): Unit /* this */
-    fun addListener(event: ServerEvent.OCSPREQUEST, listener: (certificate: Buffer, issuer: Buffer, callback: (err: Error?, resp: Buffer) -> Unit) -> Unit): Unit /* this */
-    fun addListener(event: ServerEvent.RESUMESESSION, listener: (sessionId: Buffer, callback: (err: Error?, sessionData: Buffer?) -> Unit) -> Unit): Unit /* this */
+    fun addListener(
+        event: ServerEvent.TLSCLIENTERROR,
+        listener: (err: Error, tlsSocket: TLSSocket) -> Unit,
+    ): Unit /* this */
+
+    fun addListener(
+        event: ServerEvent.NEWSESSION,
+        listener: (sessionId: Buffer, sessionData: Buffer, callback: () -> Unit) -> Unit,
+    ): Unit /* this */
+
+    fun addListener(
+        event: ServerEvent.OCSPREQUEST,
+        listener: (certificate: Buffer, issuer: Buffer, callback: (err: Error?, resp: Buffer) -> Unit) -> Unit,
+    ): Unit /* this */
+
+    fun addListener(
+        event: ServerEvent.RESUMESESSION,
+        listener: (sessionId: Buffer, callback: (err: Error?, sessionData: Buffer?) -> Unit) -> Unit,
+    ): Unit /* this */
+
     fun addListener(event: ServerEvent.SECURECONNECTION, listener: (tlsSocket: TLSSocket) -> Unit): Unit /* this */
     fun addListener(event: ServerEvent.KEYLOG, listener: (line: Buffer, tlsSocket: TLSSocket) -> Unit): Unit /* this */
     fun emit(event: String, vararg args: Any? /* js.core.ReadonlyArray<Any?> */): Boolean
@@ -75,36 +91,114 @@ external class Server : node.net.Server {
     fun emit(event: js.core.Symbol, vararg args: Any? /* js.core.ReadonlyArray<Any?> */): Boolean
     fun emit(event: ServerEvent.TLSCLIENTERROR, err: Error, tlsSocket: TLSSocket): Boolean
     fun emit(event: ServerEvent.NEWSESSION, sessionId: Buffer, sessionData: Buffer, callback: () -> Unit): Boolean
-    fun emit(event: ServerEvent.OCSPREQUEST, certificate: Buffer, issuer: Buffer, callback: (err: Error?, resp: Buffer) -> Unit): Boolean
-    fun emit(event: ServerEvent.RESUMESESSION, sessionId: Buffer, callback: (err: Error?, sessionData: Buffer?) -> Unit): Boolean
+    fun emit(
+        event: ServerEvent.OCSPREQUEST,
+        certificate: Buffer,
+        issuer: Buffer,
+        callback: (err: Error?, resp: Buffer) -> Unit,
+    ): Boolean
+
+    fun emit(
+        event: ServerEvent.RESUMESESSION,
+        sessionId: Buffer,
+        callback: (err: Error?, sessionData: Buffer?) -> Unit,
+    ): Boolean
+
     fun emit(event: ServerEvent.SECURECONNECTION, tlsSocket: TLSSocket): Boolean
     fun emit(event: ServerEvent.KEYLOG, line: Buffer, tlsSocket: TLSSocket): Boolean
     fun on(event: String, listener: Function<Any?> /* (...args: any[]) => void */): Unit /* this */
     fun on(event: ServerEvent.TLSCLIENTERROR, listener: (err: Error, tlsSocket: TLSSocket) -> Unit): Unit /* this */
-    fun on(event: ServerEvent.NEWSESSION, listener: (sessionId: Buffer, sessionData: Buffer, callback: () -> Unit) -> Unit): Unit /* this */
-    fun on(event: ServerEvent.OCSPREQUEST, listener: (certificate: Buffer, issuer: Buffer, callback: (err: Error?, resp: Buffer) -> Unit) -> Unit): Unit /* this */
-    fun on(event: ServerEvent.RESUMESESSION, listener: (sessionId: Buffer, callback: (err: Error?, sessionData: Buffer?) -> Unit) -> Unit): Unit /* this */
+    fun on(
+        event: ServerEvent.NEWSESSION,
+        listener: (sessionId: Buffer, sessionData: Buffer, callback: () -> Unit) -> Unit,
+    ): Unit /* this */
+
+    fun on(
+        event: ServerEvent.OCSPREQUEST,
+        listener: (certificate: Buffer, issuer: Buffer, callback: (err: Error?, resp: Buffer) -> Unit) -> Unit,
+    ): Unit /* this */
+
+    fun on(
+        event: ServerEvent.RESUMESESSION,
+        listener: (sessionId: Buffer, callback: (err: Error?, sessionData: Buffer?) -> Unit) -> Unit,
+    ): Unit /* this */
+
     fun on(event: ServerEvent.SECURECONNECTION, listener: (tlsSocket: TLSSocket) -> Unit): Unit /* this */
     fun on(event: ServerEvent.KEYLOG, listener: (line: Buffer, tlsSocket: TLSSocket) -> Unit): Unit /* this */
     fun once(event: String, listener: Function<Any?> /* (...args: any[]) => void */): Unit /* this */
     fun once(event: ServerEvent.TLSCLIENTERROR, listener: (err: Error, tlsSocket: TLSSocket) -> Unit): Unit /* this */
-    fun once(event: ServerEvent.NEWSESSION, listener: (sessionId: Buffer, sessionData: Buffer, callback: () -> Unit) -> Unit): Unit /* this */
-    fun once(event: ServerEvent.OCSPREQUEST, listener: (certificate: Buffer, issuer: Buffer, callback: (err: Error?, resp: Buffer) -> Unit) -> Unit): Unit /* this */
-    fun once(event: ServerEvent.RESUMESESSION, listener: (sessionId: Buffer, callback: (err: Error?, sessionData: Buffer?) -> Unit) -> Unit): Unit /* this */
+    fun once(
+        event: ServerEvent.NEWSESSION,
+        listener: (sessionId: Buffer, sessionData: Buffer, callback: () -> Unit) -> Unit,
+    ): Unit /* this */
+
+    fun once(
+        event: ServerEvent.OCSPREQUEST,
+        listener: (certificate: Buffer, issuer: Buffer, callback: (err: Error?, resp: Buffer) -> Unit) -> Unit,
+    ): Unit /* this */
+
+    fun once(
+        event: ServerEvent.RESUMESESSION,
+        listener: (sessionId: Buffer, callback: (err: Error?, sessionData: Buffer?) -> Unit) -> Unit,
+    ): Unit /* this */
+
     fun once(event: ServerEvent.SECURECONNECTION, listener: (tlsSocket: TLSSocket) -> Unit): Unit /* this */
     fun once(event: ServerEvent.KEYLOG, listener: (line: Buffer, tlsSocket: TLSSocket) -> Unit): Unit /* this */
     fun prependListener(event: String, listener: Function<Any?> /* (...args: any[]) => void */): Unit /* this */
-    fun prependListener(event: ServerEvent.TLSCLIENTERROR, listener: (err: Error, tlsSocket: TLSSocket) -> Unit): Unit /* this */
-    fun prependListener(event: ServerEvent.NEWSESSION, listener: (sessionId: Buffer, sessionData: Buffer, callback: () -> Unit) -> Unit): Unit /* this */
-    fun prependListener(event: ServerEvent.OCSPREQUEST, listener: (certificate: Buffer, issuer: Buffer, callback: (err: Error?, resp: Buffer) -> Unit) -> Unit): Unit /* this */
-    fun prependListener(event: ServerEvent.RESUMESESSION, listener: (sessionId: Buffer, callback: (err: Error?, sessionData: Buffer?) -> Unit) -> Unit): Unit /* this */
+    fun prependListener(
+        event: ServerEvent.TLSCLIENTERROR,
+        listener: (err: Error, tlsSocket: TLSSocket) -> Unit,
+    ): Unit /* this */
+
+    fun prependListener(
+        event: ServerEvent.NEWSESSION,
+        listener: (sessionId: Buffer, sessionData: Buffer, callback: () -> Unit) -> Unit,
+    ): Unit /* this */
+
+    fun prependListener(
+        event: ServerEvent.OCSPREQUEST,
+        listener: (certificate: Buffer, issuer: Buffer, callback: (err: Error?, resp: Buffer) -> Unit) -> Unit,
+    ): Unit /* this */
+
+    fun prependListener(
+        event: ServerEvent.RESUMESESSION,
+        listener: (sessionId: Buffer, callback: (err: Error?, sessionData: Buffer?) -> Unit) -> Unit,
+    ): Unit /* this */
+
     fun prependListener(event: ServerEvent.SECURECONNECTION, listener: (tlsSocket: TLSSocket) -> Unit): Unit /* this */
-    fun prependListener(event: ServerEvent.KEYLOG, listener: (line: Buffer, tlsSocket: TLSSocket) -> Unit): Unit /* this */
+    fun prependListener(
+        event: ServerEvent.KEYLOG,
+        listener: (line: Buffer, tlsSocket: TLSSocket) -> Unit,
+    ): Unit /* this */
+
     fun prependOnceListener(event: String, listener: Function<Any?> /* (...args: any[]) => void */): Unit /* this */
-    fun prependOnceListener(event: ServerEvent.TLSCLIENTERROR, listener: (err: Error, tlsSocket: TLSSocket) -> Unit): Unit /* this */
-    fun prependOnceListener(event: ServerEvent.NEWSESSION, listener: (sessionId: Buffer, sessionData: Buffer, callback: () -> Unit) -> Unit): Unit /* this */
-    fun prependOnceListener(event: ServerEvent.OCSPREQUEST, listener: (certificate: Buffer, issuer: Buffer, callback: (err: Error?, resp: Buffer) -> Unit) -> Unit): Unit /* this */
-    fun prependOnceListener(event: ServerEvent.RESUMESESSION, listener: (sessionId: Buffer, callback: (err: Error?, sessionData: Buffer?) -> Unit) -> Unit): Unit /* this */
-    fun prependOnceListener(event: ServerEvent.SECURECONNECTION, listener: (tlsSocket: TLSSocket) -> Unit): Unit /* this */
-    fun prependOnceListener(event: ServerEvent.KEYLOG, listener: (line: Buffer, tlsSocket: TLSSocket) -> Unit): Unit /* this */
+    fun prependOnceListener(
+        event: ServerEvent.TLSCLIENTERROR,
+        listener: (err: Error, tlsSocket: TLSSocket) -> Unit,
+    ): Unit /* this */
+
+    fun prependOnceListener(
+        event: ServerEvent.NEWSESSION,
+        listener: (sessionId: Buffer, sessionData: Buffer, callback: () -> Unit) -> Unit,
+    ): Unit /* this */
+
+    fun prependOnceListener(
+        event: ServerEvent.OCSPREQUEST,
+        listener: (certificate: Buffer, issuer: Buffer, callback: (err: Error?, resp: Buffer) -> Unit) -> Unit,
+    ): Unit /* this */
+
+    fun prependOnceListener(
+        event: ServerEvent.RESUMESESSION,
+        listener: (sessionId: Buffer, callback: (err: Error?, sessionData: Buffer?) -> Unit) -> Unit,
+    ): Unit /* this */
+
+    fun prependOnceListener(
+        event: ServerEvent.SECURECONNECTION,
+        listener: (tlsSocket: TLSSocket) -> Unit,
+    ): Unit /* this */
+
+    fun prependOnceListener(
+        event: ServerEvent.KEYLOG,
+        listener: (line: Buffer, tlsSocket: TLSSocket) -> Unit,
+    ): Unit /* this */
 }

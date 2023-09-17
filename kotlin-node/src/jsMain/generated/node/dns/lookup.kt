@@ -45,12 +45,31 @@ package node.dns
  * If this method is invoked as its `util.promisify()` ed version, and `all`is not set to `true`, it returns a `Promise` for an `Object` with `address` and`family` properties.
  * @since v0.1.90
  */
-external fun lookup(hostname: String, family: Double, callback: (err: node.ErrnoException?, address: String, family: Double) -> Unit): Unit
+external fun lookup(
+    hostname: String,
+    family: Double,
+    callback: (err: node.ErrnoException?, address: String, family: Double) -> Unit,
+): Unit
 
-external fun lookup(hostname: String, options: LookupOneOptions, callback: (err: node.ErrnoException?, address: String, family: Double) -> Unit): Unit
+external fun lookup(
+    hostname: String,
+    options: LookupOneOptions,
+    callback: (err: node.ErrnoException?, address: String, family: Double) -> Unit,
+): Unit
 
-external fun lookup(hostname: String, options: LookupAllOptions, callback: (err: node.ErrnoException?, addresses: js.core.ReadonlyArray<LookupAddress>) -> Unit): Unit
+external fun lookup(
+    hostname: String,
+    options: LookupAllOptions,
+    callback: (err: node.ErrnoException?, addresses: js.core.ReadonlyArray<LookupAddress>) -> Unit,
+): Unit
 
-external fun lookup(hostname: String, options: LookupOptions, callback: (err: node.ErrnoException?, address: Any /* string | LookupAddress[] */, family: Double) -> Unit): Unit
+external fun lookup(
+    hostname: String,
+    options: LookupOptions,
+    callback: (err: node.ErrnoException?, address: Any /* string | LookupAddress[] */, family: Double) -> Unit,
+): Unit
 
-external fun lookup(hostname: String, callback: (err: node.ErrnoException?, address: String, family: Double) -> Unit): Unit
+external fun lookup(
+    hostname: String,
+    callback: (err: node.ErrnoException?, address: String, family: Double) -> Unit,
+): Unit

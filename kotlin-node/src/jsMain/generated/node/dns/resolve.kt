@@ -15,32 +15,79 @@ package node.dns
  * @param hostname Host name to resolve.
  * @param [rrtype='A'] Resource record type.
  */
-external fun resolve(hostname: String, callback: (err: node.ErrnoException?, addresses: js.core.ReadonlyArray<String>) -> Unit): Unit
+external fun resolve(
+    hostname: String,
+    callback: (err: node.ErrnoException?, addresses: js.core.ReadonlyArray<String>) -> Unit,
+): Unit
 
-external fun resolve(hostname: String, rrtype: ResourceRecordType.A, callback: (err: node.ErrnoException?, addresses: js.core.ReadonlyArray<String>) -> Unit): Unit
+external fun resolve(
+    hostname: String,
+    rrtype: ResourceRecordType.A,
+    callback: (err: node.ErrnoException?, addresses: js.core.ReadonlyArray<String>) -> Unit,
+): Unit
 
-external fun resolve(hostname: String, rrtype: ResourceRecordType.AAAA, callback: (err: node.ErrnoException?, addresses: js.core.ReadonlyArray<String>) -> Unit): Unit
+external fun resolve(
+    hostname: String,
+    rrtype: ResourceRecordType.AAAA,
+    callback: (err: node.ErrnoException?, addresses: js.core.ReadonlyArray<String>) -> Unit,
+): Unit
 
-external fun resolve(hostname: String, rrtype: ResourceRecordType.ANY, callback: (err: node.ErrnoException?, addresses: js.core.ReadonlyArray<AnyRecord>) -> Unit): Unit
+external fun resolve(
+    hostname: String,
+    rrtype: ResourceRecordType.ANY,
+    callback: (err: node.ErrnoException?, addresses: js.core.ReadonlyArray<AnyRecord>) -> Unit,
+): Unit
 
-external fun resolve(hostname: String, rrtype: ResourceRecordType.CNAME, callback: (err: node.ErrnoException?, addresses: js.core.ReadonlyArray<String>) -> Unit): Unit
+external fun resolve(
+    hostname: String,
+    rrtype: ResourceRecordType.CNAME,
+    callback: (err: node.ErrnoException?, addresses: js.core.ReadonlyArray<String>) -> Unit,
+): Unit
 
-external fun resolve(hostname: String, rrtype: ResourceRecordType.MX, callback: (err: node.ErrnoException?, addresses: js.core.ReadonlyArray<MxRecord>) -> Unit): Unit
+external fun resolve(
+    hostname: String,
+    rrtype: ResourceRecordType.MX,
+    callback: (err: node.ErrnoException?, addresses: js.core.ReadonlyArray<MxRecord>) -> Unit,
+): Unit
 
-external fun resolve(hostname: String, rrtype: ResourceRecordType.NAPTR, callback: (err: node.ErrnoException?, addresses: js.core.ReadonlyArray<NaptrRecord>) -> Unit): Unit
+external fun resolve(
+    hostname: String,
+    rrtype: ResourceRecordType.NAPTR,
+    callback: (err: node.ErrnoException?, addresses: js.core.ReadonlyArray<NaptrRecord>) -> Unit,
+): Unit
 
-external fun resolve(hostname: String, rrtype: ResourceRecordType.NS, callback: (err: node.ErrnoException?, addresses: js.core.ReadonlyArray<String>) -> Unit): Unit
+external fun resolve(
+    hostname: String,
+    rrtype: ResourceRecordType.NS,
+    callback: (err: node.ErrnoException?, addresses: js.core.ReadonlyArray<String>) -> Unit,
+): Unit
 
-external fun resolve(hostname: String, rrtype: ResourceRecordType.PTR, callback: (err: node.ErrnoException?, addresses: js.core.ReadonlyArray<String>) -> Unit): Unit
+external fun resolve(
+    hostname: String,
+    rrtype: ResourceRecordType.PTR,
+    callback: (err: node.ErrnoException?, addresses: js.core.ReadonlyArray<String>) -> Unit,
+): Unit
 
-external fun resolve(hostname: String, rrtype: ResourceRecordType.SOA, callback: (err: node.ErrnoException?, addresses: SoaRecord) -> Unit): Unit
+external fun resolve(
+    hostname: String,
+    rrtype: ResourceRecordType.SOA,
+    callback: (err: node.ErrnoException?, addresses: SoaRecord) -> Unit,
+): Unit
 
-external fun resolve(hostname: String, rrtype: ResourceRecordType.SRV, callback: (err: node.ErrnoException?, addresses: js.core.ReadonlyArray<SrvRecord>) -> Unit): Unit
+external fun resolve(
+    hostname: String,
+    rrtype: ResourceRecordType.SRV,
+    callback: (err: node.ErrnoException?, addresses: js.core.ReadonlyArray<SrvRecord>) -> Unit,
+): Unit
 
-external fun resolve(hostname: String, rrtype: ResourceRecordType.TXT, callback: (err: node.ErrnoException?, addresses: js.core.ReadonlyArray<js.core.ReadonlyArray<String>>) -> Unit): Unit
+external fun resolve(
+    hostname: String,
+    rrtype: ResourceRecordType.TXT,
+    callback: (err: node.ErrnoException?, addresses: js.core.ReadonlyArray<js.core.ReadonlyArray<String>>) -> Unit,
+): Unit
 
 external fun resolve(
     hostname: String,
     rrtype: String,
-    callback: (err: node.ErrnoException?, addresses: Any /* string[] | MxRecord[] | NaptrRecord[] | SoaRecord | SrvRecord[] | string[][] | AnyRecord[] */) -> Unit
+    callback: (err: node.ErrnoException?, addresses: Any /* string[] | MxRecord[] | NaptrRecord[] | SoaRecord | SrvRecord[] | string[][] | AnyRecord[] */) -> Unit,
 ): Unit

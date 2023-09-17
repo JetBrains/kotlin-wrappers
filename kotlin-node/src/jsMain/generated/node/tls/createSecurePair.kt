@@ -40,5 +40,5 @@ external fun createSecurePair(
     context: SecureContext = definedExternally,
     isServer: Boolean = definedExternally,
     requestCert: Boolean = definedExternally,
-    rejectUnauthorized: Boolean = definedExternally
+    rejectUnauthorized: Boolean = definedExternally,
 ): SecurePair

@@ -8,4 +8,7 @@ package node.dns
  * contain an array of name server records available for `hostname`(e.g. `['ns1.example.com', 'ns2.example.com']`).
  * @since v0.1.90
  */
-external fun resolveNs(hostname: String, callback: (err: node.ErrnoException?, addresses: js.core.ReadonlyArray<String>) -> Unit): Unit
+external fun resolveNs(
+    hostname: String,
+    callback: (err: node.ErrnoException?, addresses: js.core.ReadonlyArray<String>) -> Unit,
+): Unit

@@ -1,0 +1,29 @@
+package node.crypto
+
+
+sealed external interface X509CheckOptions {
+    /**
+     * @default 'always'
+     */
+    var subject: (X509CheckOptionsSubject)?
+
+    /**
+     * @default true
+     */
+    var wildcards: Boolean?
+
+    /**
+     * @default true
+     */
+    var partialWildcards: Boolean?
+
+    /**
+     * @default false
+     */
+    var multiLabelWildcards: Boolean?
+
+    /**
+     * @default false
+     */
+    var singleLabelSubdomains: Boolean?
+}

@@ -2,6 +2,14 @@ import ts from "typescript";
 import * as karakum from "karakum";
 
 const overriddenProps = {
+    // crypto
+    "GeneratePrimeOptionsArrayBuffer": {
+        "bigint": null,
+    },
+    "GeneratePrimeOptionsBigInt": {
+        "bigint": "requiredBigInt",
+    },
+
     // dns
     "LookupAllOptions": {
         "all": "requiredAll",

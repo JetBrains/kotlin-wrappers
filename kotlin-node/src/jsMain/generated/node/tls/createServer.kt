@@ -44,4 +44,7 @@ package node.tls
  */
 external fun createServer(secureConnectionListener: (socket: TLSSocket) -> Unit = definedExternally): Server
 
-external fun createServer(options: TlsOptions, secureConnectionListener: (socket: TLSSocket) -> Unit = definedExternally): Server
+external fun createServer(
+    options: TlsOptions,
+    secureConnectionListener: (socket: TLSSocket) -> Unit = definedExternally,
+): Server

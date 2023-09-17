@@ -33,4 +33,7 @@ package node.dns
  * DNS server operators may choose not to respond to `ANY`queries. It may be better to call individual methods like {@link resolve4},{@link resolveMx}, and so on. For more details, see [RFC
      * 8482](https://tools.ietf.org/html/rfc8482).
  */
-external fun resolveAny(hostname: String, callback: (err: node.ErrnoException?, addresses: js.core.ReadonlyArray<AnyRecord>) -> Unit): Unit
+external fun resolveAny(
+    hostname: String,
+    callback: (err: node.ErrnoException?, addresses: js.core.ReadonlyArray<AnyRecord>) -> Unit,
+): Unit

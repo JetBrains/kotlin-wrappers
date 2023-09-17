@@ -6,6 +6,13 @@ export default function (node, context, render) {
         && ts.isIdentifier(node.left)
         && node.left.text === "NodeJS"
     ) {
+        if (node.right.text === "ArrayBufferView") {
+            return `js.buffer.ArrayBufferView`
+        }
+        if (node.right.text === "TypedArray") {
+            return `js.typedarrays.TypedArray`
+        }
+
         return `node.${render(node.right)}`
     }
 

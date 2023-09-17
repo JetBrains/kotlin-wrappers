@@ -27,6 +27,12 @@ import node.buffer.Buffer
  * @param options Available options are:
  * @param callback Attached as a listener for `'message'` events. Optional.
  */
-external fun createSocket(type: SocketType, callback: (msg: Buffer, rinfo: RemoteInfo) -> Unit = definedExternally): Socket
+external fun createSocket(
+    type: SocketType,
+    callback: (msg: Buffer, rinfo: RemoteInfo) -> Unit = definedExternally,
+): Socket
 
-external fun createSocket(options: SocketOptions, callback: (msg: Buffer, rinfo: RemoteInfo) -> Unit = definedExternally): Socket
+external fun createSocket(
+    options: SocketOptions,
+    callback: (msg: Buffer, rinfo: RemoteInfo) -> Unit = definedExternally,
+): Socket

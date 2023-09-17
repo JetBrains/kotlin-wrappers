@@ -23,4 +23,8 @@ package node.dns
  * If this method is invoked as its `util.promisify()` ed version, it returns a`Promise` for an `Object` with `hostname` and `service` properties.
  * @since v0.11.14
  */
-external fun lookupService(address: String, port: Double, callback: (err: node.ErrnoException?, hostname: String, service: String) -> Unit): Unit
+external fun lookupService(
+    address: String,
+    port: Double,
+    callback: (err: node.ErrnoException?, hostname: String, service: String) -> Unit,
+): Unit

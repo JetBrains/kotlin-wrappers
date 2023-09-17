@@ -10,4 +10,7 @@ package node.dns
  * treated separately.
  * @since v0.1.27
  */
-external fun resolveTxt(hostname: String, callback: (err: node.ErrnoException?, addresses: js.core.ReadonlyArray<js.core.ReadonlyArray<String>>) -> Unit): Unit
+external fun resolveTxt(
+    hostname: String,
+    callback: (err: node.ErrnoException?, addresses: js.core.ReadonlyArray<js.core.ReadonlyArray<String>>) -> Unit,
+): Unit
