@@ -8,9 +8,29 @@ import mui.material.styles.Theme
 import mui.system.SxProps
 
 external interface TabsProps :
+    TabsOwnProps,
+    react.dom.html.HTMLAttributes<web.html.HTMLDivElement>,
+    mui.types.PropsWithComponent
+
+external interface TabsOwnerState : TabsProps {
+    var vertical: Boolean
+
+    var fixed: Boolean
+
+    var hideScrollbar: Boolean
+
+    var scrollableX: Boolean
+
+    var scrollableY: Boolean
+
+    override var centered: Boolean?
+
+    var scrollButtonsHideMobile: Boolean
+}
+
+external interface TabsOwnProps :
     react.PropsWithChildren,
-    mui.system.PropsWithSx,
-    mui.types.PropsWithComponent {
+    mui.system.PropsWithSx {
     /**
      * Callback fired when the component mounts.
      * This is useful when you want to trigger an action programmatically.
@@ -135,7 +155,7 @@ external interface TabsProps :
      * Props applied to the tab indicator element.
      * @default  {}
      */
-    var TabIndicatorProps: react.Props? /* React.HTMLAttributes<HTMLDivElement> & { sx?: SxProps<Theme> } */
+    var TabIndicatorProps: react.Props? /* React.HTMLAttributes<HTMLDivElement> & { sx?: SxProps<Theme>; } */
 
     /**
      * Props applied to the [`TabScrollButton`](/material-ui/api/tab-scroll-button/) element.
@@ -178,22 +198,6 @@ external interface TabsProps :
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
     override var sx: SxProps<Theme>?
-}
-
-external interface TabsOwnerState {
-    var vertical: Boolean
-
-    var fixed: Boolean
-
-    var hideScrollbar: Boolean
-
-    var scrollableX: Boolean
-
-    var scrollableY: Boolean
-
-    var centered: Boolean
-
-    var scrollButtonsHideMobile: Boolean
 }
 
 external interface TabsActions {

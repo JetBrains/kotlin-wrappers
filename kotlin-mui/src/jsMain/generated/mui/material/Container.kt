@@ -8,10 +8,13 @@ import mui.material.styles.Theme
 import mui.system.SxProps
 
 external interface ContainerProps :
+    ContainerOwnProps,
     react.dom.html.HTMLAttributes<web.html.HTMLDivElement>,
+    mui.types.PropsWithComponent
+
+external interface ContainerOwnProps :
     react.PropsWithChildren,
-    mui.system.PropsWithSx,
-    mui.types.PropsWithComponent {
+    mui.system.PropsWithSx {
     override var children: react.ReactNode?
 
     /**

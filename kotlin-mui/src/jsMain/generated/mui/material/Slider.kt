@@ -10,10 +10,21 @@ import web.cssom.ClassName
 import web.events.Event
 
 external interface SliderProps :
+    SliderOwnProps,
     react.dom.html.HTMLAttributes<web.html.HTMLSpanElement>,
+    mui.types.PropsWithComponent
+
+external interface SliderOwnerState {
+    var dragging: Boolean
+
+    var marked: Boolean
+
+    var focusedThumbIndex: Number
+}
+
+external interface SliderOwnProps :
     react.PropsWithClassName,
-    mui.system.PropsWithSx,
-    mui.types.PropsWithComponent {
+    mui.system.PropsWithSx {
     /**
      * The label of the slider.
      */
@@ -97,7 +108,7 @@ external interface SliderProps :
     /**
      * The default value. Use when the component is not controlled.
      */
-    override var defaultValue: dynamic
+    var defaultValue: dynamic
 
     /**
      * If `true`, the component is disabled.
@@ -253,7 +264,7 @@ external interface SliderProps :
     /**
      * Tab index attribute of the hidden `input` element.
      */
-    override var tabIndex: Int?
+    var tabIndex: Int?
 
     /**
      * The track presentation:
@@ -295,14 +306,6 @@ external interface SliderProps :
      * }
      */
     var valueLabelFormat: String? /* or (value: Number, index: Number) -> react.ReactNode*/
-}
-
-external interface SliderOwnerState {
-    var dragging: Boolean
-
-    var marked: Boolean
-
-    var focusedThumbIndex: Number
 }
 
 @Suppress("VIRTUAL_MEMBER_HIDDEN")

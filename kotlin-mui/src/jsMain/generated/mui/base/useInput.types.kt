@@ -87,14 +87,14 @@ external interface UseInputReturnValue {
      * @param externalProps props for the input slot
      * @returns props that should be spread on the input slot
      */
-    var getInputProps: react.Props /* <TOther extends Record<string, any> = {}>(externalProps?: TOther) => UseInputInputSlotProps<TOther> */
+    var getInputProps: react.Props /* <ExternalProps extends Record<string, any> = {}>(externalProps?: ExternalProps) => UseInputInputSlotProps<ExternalProps> */
 
     /**
      * Resolver for the root slot's props.
      * @param externalProps props for the root slot
      * @returns props that should be spread on the root slot
      */
-    var getRootProps: react.Props /* <TOther extends Record<string, any> = {}>(externalProps?: TOther) => UseInputRootSlotProps<TOther> */
+    var getRootProps: react.Props /* <ExternalProps extends Record<string, any> = {}>(externalProps?: ExternalProps) => UseInputRootSlotProps<ExternalProps> */
 
     var inputRef: react.RefCallback<web.html.HTMLInputElement /* or web.html.HTMLTextAreaElement*/>?
 

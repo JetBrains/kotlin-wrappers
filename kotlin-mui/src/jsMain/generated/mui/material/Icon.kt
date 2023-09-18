@@ -9,10 +9,13 @@ import mui.system.SxProps
 import web.cssom.ClassName
 
 external interface IconProps :
+    IconOwnProps,
     react.dom.html.HTMLAttributes<web.html.HTMLSpanElement>,
+    mui.types.PropsWithComponent
+
+external interface IconOwnProps :
     react.PropsWithChildren,
-    mui.system.PropsWithSx,
-    mui.types.PropsWithComponent {
+    mui.system.PropsWithSx {
     /**
      * The base class applied to the icon. Defaults to 'material-icons', but can be changed to any
      * other base class that suits the icon font you're using (e.g. material-icons-rounded, fas, etc).

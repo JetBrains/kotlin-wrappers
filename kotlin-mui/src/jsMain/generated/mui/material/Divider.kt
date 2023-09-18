@@ -8,9 +8,13 @@ import mui.material.styles.Theme
 import mui.system.SxProps
 
 external interface DividerProps :
+    DividerOwnProps,
+    react.dom.html.HTMLAttributes<web.html.HTMLHRElement>,
+    mui.types.PropsWithComponent
+
+external interface DividerOwnProps :
     react.PropsWithChildren,
-    mui.system.PropsWithSx,
-    mui.types.PropsWithComponent {
+    mui.system.PropsWithSx {
     /**
      * Absolutely position the element.
      * @default false

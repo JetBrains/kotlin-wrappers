@@ -8,10 +8,13 @@ import mui.material.styles.Theme
 import mui.system.SxProps
 
 external interface TableRowProps :
+    TableRowOwnProps,
     react.dom.html.HTMLAttributes<web.html.HTMLTableRowElement>,
+    mui.types.PropsWithComponent
+
+external interface TableRowOwnProps :
     react.PropsWithChildren,
-    mui.system.PropsWithSx,
-    mui.types.PropsWithComponent {
+    mui.system.PropsWithSx {
     /**
      * Should be valid <tr> children such as `TableCell`.
      */

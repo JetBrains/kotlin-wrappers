@@ -8,10 +8,13 @@ import mui.material.styles.Theme
 import mui.system.SxProps
 
 external interface TableSortLabelProps :
+    TableSortLabelOwnProps,
     react.dom.html.HTMLAttributes<web.html.HTMLSpanElement>,
+    mui.types.PropsWithComponent
+
+external interface TableSortLabelOwnProps :
     react.PropsWithChildren,
-    mui.system.PropsWithSx,
-    mui.types.PropsWithComponent {
+    mui.system.PropsWithSx {
     /**
      * If `true`, the label will have the active styling (should be true for the sorted column).
      * @default false

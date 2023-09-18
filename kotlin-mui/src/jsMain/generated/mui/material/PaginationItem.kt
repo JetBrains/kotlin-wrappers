@@ -8,9 +8,11 @@ import mui.material.styles.Theme
 import mui.system.SxProps
 
 external interface PaginationItemProps :
+    PaginationItemOwnProps,
     react.dom.html.HTMLAttributes<web.html.HTMLDivElement>,
-    mui.system.PropsWithSx,
-    mui.types.PropsWithComponent {
+    mui.types.PropsWithComponent
+
+external interface PaginationItemOwnProps : mui.system.PropsWithSx {
     /**
      * Override or extend the styles applied to the component.
      */

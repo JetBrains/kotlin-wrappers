@@ -8,10 +8,13 @@ import mui.material.styles.Theme
 import mui.system.SxProps
 
 external interface ImageListProps :
+    ImageListOwnProps,
     react.dom.html.HTMLAttributes<web.html.HTMLUListElement>,
+    mui.types.PropsWithComponent
+
+external interface ImageListOwnProps :
     react.PropsWithChildren,
-    mui.system.PropsWithSx,
-    mui.types.PropsWithComponent {
+    mui.system.PropsWithSx {
     /**
      * The content of the component, normally `ImageListItem`s.
      */

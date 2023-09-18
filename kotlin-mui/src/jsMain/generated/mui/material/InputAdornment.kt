@@ -8,10 +8,13 @@ import mui.material.styles.Theme
 import mui.system.SxProps
 
 external interface InputAdornmentProps :
+    InputAdornmentOwnProps,
     react.dom.html.HTMLAttributes<web.html.HTMLDivElement>,
+    mui.types.PropsWithComponent
+
+external interface InputAdornmentOwnProps :
     react.PropsWithChildren,
-    mui.system.PropsWithSx,
-    mui.types.PropsWithComponent {
+    mui.system.PropsWithSx {
     /**
      * Override or extend the styles applied to the component.
      */

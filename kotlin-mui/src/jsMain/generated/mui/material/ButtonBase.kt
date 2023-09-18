@@ -9,10 +9,13 @@ import mui.system.SxProps
 import web.cssom.ClassName
 
 external interface ButtonBaseProps :
+    ButtonBaseOwnProps,
     react.dom.html.ButtonHTMLAttributes<web.html.HTMLButtonElement>,
+    mui.types.PropsWithComponent
+
+external interface ButtonBaseOwnProps :
     react.PropsWithChildren,
-    mui.system.PropsWithSx,
-    mui.types.PropsWithComponent {
+    mui.system.PropsWithSx {
     /**
      * A ref for imperative actions.
      * It currently only supports `focusVisible()` action.
@@ -40,7 +43,7 @@ external interface ButtonBaseProps :
      * If `true`, the component is disabled.
      * @default false
      */
-    override var disabled: Boolean?
+    var disabled: Boolean?
 
     /**
      * If `true`, the ripple effect is disabled.
@@ -93,7 +96,7 @@ external interface ButtonBaseProps :
     /**
      * @default 0
      */
-    override var tabIndex: Int?
+    var tabIndex: Int?
 
     /**
      * Props applied to the `TouchRipple` element.

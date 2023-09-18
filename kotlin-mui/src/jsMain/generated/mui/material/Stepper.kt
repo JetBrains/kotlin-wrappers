@@ -12,11 +12,15 @@ import mui.material.styles.Theme
 import mui.system.SxProps
 
 external interface StepperProps :
+    StepperOwnProps,
     react.dom.html.HTMLAttributes<web.html.HTMLDivElement>,
-    react.PropsWithChildren,
-    mui.system.PropsWithSx,
     mui.types.PropsWithComponent,
     mui.system.StandardProps,
+    PaperProps
+
+external interface StepperOwnProps :
+    react.PropsWithChildren,
+    mui.system.PropsWithSx,
     PaperProps {
     /**
      * Set the active step (zero based index).

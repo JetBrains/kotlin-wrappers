@@ -12,10 +12,14 @@ import mui.material.styles.Theme
 import mui.system.SxProps
 
 external interface ToggleButtonProps :
+    ToggleButtonOwnProps,
     react.dom.html.ButtonHTMLAttributes<web.html.HTMLButtonElement>,
+    mui.types.PropsWithComponent,
+    ButtonBaseProps
+
+external interface ToggleButtonOwnProps :
     react.PropsWithChildren,
     mui.system.PropsWithSx,
-    mui.types.PropsWithComponent,
     ButtonBaseProps {
     /**
      * The content of the component.

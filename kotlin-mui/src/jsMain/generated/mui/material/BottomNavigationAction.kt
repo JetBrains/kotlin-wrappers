@@ -12,9 +12,13 @@ import mui.material.styles.Theme
 import mui.system.SxProps
 
 external interface BottomNavigationActionProps :
+    BottomNavigationActionOwnProps,
+    mui.types.PropsWithComponent,
+    ButtonBaseProps
+
+external interface BottomNavigationActionOwnProps :
     react.PropsWithChildren,
     mui.system.PropsWithSx,
-    mui.types.PropsWithComponent,
     ButtonBaseProps {
     /**
      * This prop isn't supported.

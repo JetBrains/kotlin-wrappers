@@ -9,11 +9,14 @@ import mui.system.SxProps
 
 external interface LoadingButtonProps :
     mui.material.ButtonProps,
-    mui.system.PropsWithSx {
+    LoadingButtonOwnProps,
+    react.dom.html.ButtonHTMLAttributes<web.html.HTMLButtonElement>
+
+external interface LoadingButtonOwnProps : mui.system.PropsWithSx {
     /**
      * Override or extend the styles applied to the component.
      */
-    override var classes: dynamic
+    var classes: dynamic
 
     /**
      * If `true`, the loading indicator is shown and the button becomes disabled.

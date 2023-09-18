@@ -8,10 +8,13 @@ import mui.material.styles.Theme
 import mui.system.SxProps
 
 external interface FormHelperTextProps :
+    FormHelperTextOwnProps,
     react.dom.html.HTMLAttributes<web.html.HTMLParagraphElement>,
+    mui.types.PropsWithComponent
+
+external interface FormHelperTextOwnProps :
     react.PropsWithChildren,
-    mui.system.PropsWithSx,
-    mui.types.PropsWithComponent {
+    mui.system.PropsWithSx {
     /**
      * The content of the component.
      *

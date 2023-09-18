@@ -8,10 +8,13 @@ import mui.material.styles.Theme
 import mui.system.SxProps
 
 external interface ButtonProps :
+    ButtonOwnProps,
     react.dom.html.ButtonHTMLAttributes<web.html.HTMLButtonElement>,
+    mui.types.PropsWithComponent
+
+external interface ButtonOwnProps :
     react.PropsWithChildren,
-    mui.system.PropsWithSx,
-    mui.types.PropsWithComponent {
+    mui.system.PropsWithSx {
     /**
      * The content of the component.
      */
@@ -34,7 +37,7 @@ external interface ButtonProps :
      * If `true`, the component is disabled.
      * @default false
      */
-    override var disabled: Boolean?
+    var disabled: Boolean?
 
     /**
      * If `true`, no elevation is used.

@@ -8,10 +8,13 @@ import mui.material.styles.Theme
 import mui.system.SxProps
 
 external interface ToolbarProps :
+    ToolbarOwnProps,
     react.dom.html.HTMLAttributes<web.html.HTMLDivElement>,
+    mui.types.PropsWithComponent
+
+external interface ToolbarOwnProps :
     react.PropsWithChildren,
-    mui.system.PropsWithSx,
-    mui.types.PropsWithComponent {
+    mui.system.PropsWithSx {
     /**
      * The Toolbar children, usually a mixture of `IconButton`, `Button` and `Typography`.
      * The Toolbar is a flex container, allowing flex item properties to be used to lay out the children.

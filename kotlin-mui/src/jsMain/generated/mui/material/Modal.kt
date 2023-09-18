@@ -15,12 +15,31 @@ import web.cssom.ClassName
 import web.dom.Element
 
 external interface ModalProps :
+    ModalOwnProps,
     react.dom.html.HTMLAttributes<web.html.HTMLDivElement>,
+    mui.types.PropsWithComponent
+
+external interface ModalOwnerState {
+    var exited: Boolean
+}
+
+external interface ModalSlots {
+    /**
+     * The component that renders the root.
+     * @default 'div'
+     */
+    var root: react.ElementType<*>?
+
+    /**
+     * The component that renders the backdrop.
+     */
+    var backdrop: react.ElementType<*>?
+}
+
+external interface ModalOwnProps :
     react.PropsWithChildren,
     react.PropsWithClassName,
-    mui.system.PropsWithSx,
-    mui.types.PropsWithComponent,
-    mui.base.ModalProps {
+    mui.system.PropsWithSx {
     /**
      * A backdrop component. This prop enables custom backdrop rendering.
      * @deprecated Use `slots.backdrop` instead. While this prop currently works, it will be removed in the next major version.
@@ -92,11 +111,7 @@ external interface ModalProps :
 
     interface ComponentsProps {
         var root: react.Props? /* SlotComponentProps<'div', ModalComponentsPropsOverrides, ModalOwnerState> */
-        var backdrop: react.Props? /* SlotComponentProps<
-  typeof Backdrop,
-  ModalComponentsPropsOverrides,
-  ModalOwnerState
-> */
+        var backdrop: react.Props? /* SlotComponentProps<typeof Backdrop, ModalComponentsPropsOverrides, ModalOwnerState> */
     }
 
     /**
@@ -212,34 +227,13 @@ external interface ModalProps :
 
     interface SlotProps {
         var root: react.Props? /* SlotComponentProps<'div', ModalComponentsPropsOverrides, ModalOwnerState> */
-        var backdrop: react.Props? /* SlotComponentProps<
-  typeof Backdrop,
-  ModalComponentsPropsOverrides,
-  ModalOwnerState
-> */
+        var backdrop: react.Props? /* SlotComponentProps<typeof Backdrop, ModalComponentsPropsOverrides, ModalOwnerState> */
     }
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
     override var sx: SxProps<Theme>?
-}
-
-external interface ModalOwnerState {
-    var exited: Boolean
-}
-
-external interface ModalSlots {
-    /**
-     * The component that renders the root.
-     * @default 'div'
-     */
-    var root: react.ElementType<*>?
-
-    /**
-     * The component that renders the backdrop.
-     */
-    var backdrop: react.ElementType<*>?
 }
 
 /**

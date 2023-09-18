@@ -62,7 +62,7 @@ external interface UseSnackbarReturnValue {
      * @param externalProps props for the root slot
      * @returns props that should be spread on the root slot
      */
-    var getRootProps: react.Props /* <TOther extends Record<string, ((event: any) => void) | undefined> = {}>(externalProps?: TOther) => UseSnackbarRootSlotProps<TOther> */
+    var getRootProps: react.Props /* <ExternalProps extends Record<string, unknown> = {}>(externalProps?: ExternalProps) => UseSnackbarRootSlotProps<ExternalProps> */
 
     /**
      * Callback fired when a "click away" event is detected.

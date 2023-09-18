@@ -8,9 +8,20 @@ import mui.material.styles.Theme
 import mui.system.SxProps
 
 external interface TablePaginationProps :
-    TablePaginationBaseProps,
-    mui.system.PropsWithSx,
-    mui.types.PropsWithComponent {
+    TablePaginationOwnProps,
+    mui.types.PropsWithComponent
+
+external interface LabelDisplayedRowsArgs {
+    var from: Number
+
+    var to: Number
+
+    var count: Number
+
+    var page: Number
+}
+
+external interface TablePaginationOwnProps : mui.system.PropsWithSx {
     /**
      * The component used for displaying the actions.
      * Either a string to use a HTML element or a component.
@@ -129,16 +140,6 @@ external interface TablePaginationProps :
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
     override var sx: SxProps<Theme>?
-}
-
-external interface LabelDisplayedRowsArgs {
-    var from: Number
-
-    var to: Number
-
-    var count: Number
-
-    var page: Number
 }
 
 /**

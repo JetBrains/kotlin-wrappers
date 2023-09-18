@@ -12,9 +12,13 @@ import mui.material.styles.Theme
 import mui.system.SxProps
 
 external interface AppBarProps :
+    AppBarOwnProps,
     react.dom.html.HTMLAttributes<web.html.HTMLDivElement>,
-    mui.system.PropsWithSx,
     mui.types.PropsWithComponent,
+    PaperProps
+
+external interface AppBarOwnProps :
+    mui.system.PropsWithSx,
     PaperProps {
     /**
      * Override or extend the styles applied to the component.

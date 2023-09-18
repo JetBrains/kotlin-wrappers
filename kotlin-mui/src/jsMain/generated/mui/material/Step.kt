@@ -8,11 +8,14 @@ import mui.material.styles.Theme
 import mui.system.SxProps
 
 external interface StepProps :
+    StepOwnProps,
     react.dom.html.HTMLAttributes<web.html.HTMLDivElement>,
-    react.PropsWithChildren,
-    mui.system.PropsWithSx,
     mui.types.PropsWithComponent,
-    mui.system.StandardProps {
+    mui.system.StandardProps
+
+external interface StepOwnProps :
+    react.PropsWithChildren,
+    mui.system.PropsWithSx {
     /**
      * Sets the step as active. Is passed to child components.
      */
