@@ -108,6 +108,9 @@ sealed external class CSSStyleDeclaration :
     var backgroundSize: String
     var baselineShift: String
 
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/baseline-source) */
+    var baselineSource: String
+
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/block-size) */
     var blockSize: String
 
@@ -754,6 +757,9 @@ sealed external class CSSStyleDeclaration :
 
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/offset) */
     var offset: String
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/offset-anchor) */
+    var offsetAnchor: String
 
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/offset-distance) */
     var offsetDistance: String
