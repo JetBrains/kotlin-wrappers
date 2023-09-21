@@ -8,8 +8,8 @@
 
 package web.events
 
-open external class EventTarget : IEventTarget {
-    override fun <T : Event> addEventListener(
+open external class EventTarget {
+    fun <T : Event> addEventListener(
         type: EventType<T>,
         callback: EventHandler<T>,
         options: AddEventListenerOptions?,
@@ -37,7 +37,7 @@ open external class EventTarget : IEventTarget {
             options = options,
         )
 
-    override fun <T : Event> removeEventListener(
+    fun <T : Event> removeEventListener(
         type: EventType<T>,
         callback: EventHandler<T>,
         options: EventListenerOptions?,

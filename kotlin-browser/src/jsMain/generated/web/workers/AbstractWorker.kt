@@ -1,12 +1,16 @@
 // Automatically generated - do not modify!
 
+@file:Suppress(
+    "INTERFACE_WITH_SUPERCLASS",
+)
+
 package web.workers
 
 import web.errors.ErrorEvent
 import web.events.EventHandler
-import web.events.IEventTarget
+import web.events.EventTarget
 
-external interface AbstractWorker : IEventTarget {
+external interface AbstractWorker : EventTarget {
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorker/error_event) */
     var onerror: EventHandler<ErrorEvent>?
         get() = definedExternally
