@@ -22,6 +22,7 @@ sealed external interface RTCOutboundRtpStreamStats :
     var retransmittedBytesSent: Number?
     var retransmittedPacketsSent: Number?
     var rid: String?
+    var rtxSsrc: Number?
     var targetBitrate: Number?
     var totalEncodeTime: Number?
     var totalEncodedBytesTarget: Number?

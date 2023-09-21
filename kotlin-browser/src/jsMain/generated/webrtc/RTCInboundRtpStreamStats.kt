@@ -26,8 +26,8 @@ sealed external interface RTCInboundRtpStreamStats :
     var jitterBufferDelay: Number?
     var jitterBufferEmittedCount: Int?
     var keyFramesDecoded: Number?
-    override var kind: String
     var lastPacketReceivedTimestamp: DOMHighResTimeStamp?
+    var mid: String?
     var nackCount: Int?
     var packetsDiscarded: Number?
     var pliCount: Int?
@@ -42,4 +42,5 @@ sealed external interface RTCInboundRtpStreamStats :
     var totalSamplesDuration: Number?
     var totalSamplesReceived: Number?
     var totalSquaredInterFrameDelay: Number?
+    var trackIdentifier: String
 }
