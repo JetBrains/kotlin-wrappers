@@ -56,7 +56,7 @@
 
         "^node/buffer/namespace.kt": "node/buffer/nodeNamespace.kt",
         "^node/buffer/global/namespace.kt": "node/buffer/nodeGlobalNamespace.kt",
-        "^node/buffer.kt": "node/buffer/buffer.kt",
+        "^node/buffer.kt": "node/buffer/bufferModule.kt",
         "^buffer/global/namespace.kt": "node/buffer/globalNamespace.kt",
         "^buffer": "node/buffer",
         "buffer/global/(.+)\\.kt": "buffer/$1.kt",
@@ -64,6 +64,9 @@
         "^node/crypto/namespace.kt": "node/crypto/nodeNamespace.kt",
         "^node/crypto.kt": "node/crypto/crypto.kt",
         "^crypto": "node/crypto",
+        "crypto/sign.kt": "crypto/sign.fun.kt",
+        "crypto/verify.kt": "crypto/verify.fun.kt",
+        "crypto/diffieHellman.kt": "crypto/diffieHellman.fun.kt",
 
         "^node/dgram/namespace.kt": "node/dgram/nodeNamespace.kt",
         "^node/dgram.kt": "node/dgram/dgram.kt",
@@ -165,7 +168,7 @@
         "crypto/createSecretKey.kt": [
             "node.buffer.BufferEncoding"
         ],
-        "crypto/diffieHellman.kt": [
+        "crypto/diffieHellman.fun.kt": [
             "node.buffer.Buffer",
             "node.buffer.BufferEncoding"
         ],
@@ -222,7 +225,7 @@
         "crypto/scryptSync.kt": [
             "node.buffer.Buffer"
         ],
-        "crypto/sign.kt": [
+        "crypto/sign.fun.kt": [
             "node.buffer.Buffer"
         ],
 
