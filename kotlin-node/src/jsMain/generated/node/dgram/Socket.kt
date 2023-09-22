@@ -100,12 +100,12 @@ external class Socket : EventEmitter {
      * @param callback with no parameters. Called when binding is complete.
      */
     fun bind(
-        port: Double = definedExternally,
+        port: Number = definedExternally,
         address: String = definedExternally,
         callback: () -> Unit = definedExternally,
     ): Unit /* this */
 
-    fun bind(port: Double = definedExternally, callback: () -> Unit = definedExternally): Unit /* this */
+    fun bind(port: Number = definedExternally, callback: () -> Unit = definedExternally): Unit /* this */
     fun bind(callback: () -> Unit = definedExternally): Unit /* this */
     fun bind(options: BindOptions, callback: () -> Unit = definedExternally): Unit /* this */
 
@@ -130,8 +130,8 @@ external class Socket : EventEmitter {
      * @since v12.0.0
      * @param callback Called when the connection is completed or on error.
      */
-    fun connect(port: Double, address: String = definedExternally, callback: () -> Unit = definedExternally): Unit
-    fun connect(port: Double, callback: () -> Unit): Unit
+    fun connect(port: Number, address: String = definedExternally, callback: () -> Unit = definedExternally): Unit
+    fun connect(port: Number, callback: () -> Unit): Unit
 
     /**
      * A synchronous function that disassociates a connected `dgram.Socket` from
@@ -284,94 +284,94 @@ external class Socket : EventEmitter {
      */
     fun send(
         msg: String,
-        port: Double = definedExternally,
+        port: Number = definedExternally,
         address: String = definedExternally,
-        callback: (error: Error?, bytes: Double) -> Unit = definedExternally,
+        callback: (error: Error?, bytes: Number) -> Unit = definedExternally,
     ): Unit
 
     fun send(
         msg: Uint8Array,
-        port: Double = definedExternally,
+        port: Number = definedExternally,
         address: String = definedExternally,
-        callback: (error: Error?, bytes: Double) -> Unit = definedExternally,
+        callback: (error: Error?, bytes: Number) -> Unit = definedExternally,
     ): Unit
 
     fun send(
         msg: ReadonlyArray<Any?>,
-        port: Double = definedExternally,
+        port: Number = definedExternally,
         address: String = definedExternally,
-        callback: (error: Error?, bytes: Double) -> Unit = definedExternally,
+        callback: (error: Error?, bytes: Number) -> Unit = definedExternally,
     ): Unit
 
     fun send(
         msg: String,
-        port: Double = definedExternally,
-        callback: (error: Error?, bytes: Double) -> Unit = definedExternally,
+        port: Number = definedExternally,
+        callback: (error: Error?, bytes: Number) -> Unit = definedExternally,
     ): Unit
 
     fun send(
         msg: Uint8Array,
-        port: Double = definedExternally,
-        callback: (error: Error?, bytes: Double) -> Unit = definedExternally,
+        port: Number = definedExternally,
+        callback: (error: Error?, bytes: Number) -> Unit = definedExternally,
     ): Unit
 
     fun send(
         msg: ReadonlyArray<Any?>,
-        port: Double = definedExternally,
-        callback: (error: Error?, bytes: Double) -> Unit = definedExternally,
+        port: Number = definedExternally,
+        callback: (error: Error?, bytes: Number) -> Unit = definedExternally,
     ): Unit
 
-    fun send(msg: String, callback: (error: Error?, bytes: Double) -> Unit = definedExternally): Unit
+    fun send(msg: String, callback: (error: Error?, bytes: Number) -> Unit = definedExternally): Unit
 
-    fun send(msg: Uint8Array, callback: (error: Error?, bytes: Double) -> Unit = definedExternally): Unit
+    fun send(msg: Uint8Array, callback: (error: Error?, bytes: Number) -> Unit = definedExternally): Unit
 
-    fun send(msg: ReadonlyArray<Any?>, callback: (error: Error?, bytes: Double) -> Unit = definedExternally): Unit
+    fun send(msg: ReadonlyArray<Any?>, callback: (error: Error?, bytes: Number) -> Unit = definedExternally): Unit
     fun send(
         msg: String,
-        offset: Double,
-        length: Double,
-        port: Double = definedExternally,
+        offset: Number,
+        length: Number,
+        port: Number = definedExternally,
         address: String = definedExternally,
-        callback: (error: Error?, bytes: Double) -> Unit = definedExternally,
+        callback: (error: Error?, bytes: Number) -> Unit = definedExternally,
     ): Unit
 
     fun send(
         msg: Uint8Array,
-        offset: Double,
-        length: Double,
-        port: Double = definedExternally,
+        offset: Number,
+        length: Number,
+        port: Number = definedExternally,
         address: String = definedExternally,
-        callback: (error: Error?, bytes: Double) -> Unit = definedExternally,
+        callback: (error: Error?, bytes: Number) -> Unit = definedExternally,
     ): Unit
 
     fun send(
         msg: String,
-        offset: Double,
-        length: Double,
-        port: Double = definedExternally,
-        callback: (error: Error?, bytes: Double) -> Unit = definedExternally,
+        offset: Number,
+        length: Number,
+        port: Number = definedExternally,
+        callback: (error: Error?, bytes: Number) -> Unit = definedExternally,
     ): Unit
 
     fun send(
         msg: Uint8Array,
-        offset: Double,
-        length: Double,
-        port: Double = definedExternally,
-        callback: (error: Error?, bytes: Double) -> Unit = definedExternally,
+        offset: Number,
+        length: Number,
+        port: Number = definedExternally,
+        callback: (error: Error?, bytes: Number) -> Unit = definedExternally,
     ): Unit
 
     fun send(
         msg: String,
-        offset: Double,
-        length: Double,
-        callback: (error: Error?, bytes: Double) -> Unit = definedExternally,
+        offset: Number,
+        length: Number,
+        callback: (error: Error?, bytes: Number) -> Unit = definedExternally,
     ): Unit
 
     fun send(
         msg: Uint8Array,
-        offset: Double,
-        length: Double,
-        callback: (error: Error?, bytes: Double) -> Unit = definedExternally,
+        offset: Number,
+        length: Number,
+        callback: (error: Error?, bytes: Number) -> Unit = definedExternally,
     ): Unit
 
     /**
@@ -463,7 +463,7 @@ external class Socket : EventEmitter {
      * This method throws `EBADF` if called on an unbound socket.
      * @since v0.3.8
      */
-    fun setMulticastTTL(ttl: Double): Double
+    fun setMulticastTTL(ttl: Number): Double
 
     /**
      * Sets the `SO_RCVBUF` socket option. Sets the maximum socket receive buffer
@@ -472,7 +472,7 @@ external class Socket : EventEmitter {
      * This method throws `ERR_SOCKET_BUFFER_SIZE` if called on an unbound socket.
      * @since v8.7.0
      */
-    fun setRecvBufferSize(size: Double): Unit
+    fun setRecvBufferSize(size: Number): Unit
 
     /**
      * Sets the `SO_SNDBUF` socket option. Sets the maximum socket send buffer
@@ -481,7 +481,7 @@ external class Socket : EventEmitter {
      * This method throws `ERR_SOCKET_BUFFER_SIZE` if called on an unbound socket.
      * @since v8.7.0
      */
-    fun setSendBufferSize(size: Double): Unit
+    fun setSendBufferSize(size: Number): Unit
 
     /**
      * Sets the `IP_TTL` socket option. While TTL generally stands for "Time to Live",
@@ -496,7 +496,7 @@ external class Socket : EventEmitter {
      * This method throws `EBADF` if called on an unbound socket.
      * @since v0.1.101
      */
-    fun setTTL(ttl: Double): Double
+    fun setTTL(ttl: Number): Double
 
     /**
      * By default, binding a socket will cause it to block the Node.js process from

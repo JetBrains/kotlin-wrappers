@@ -222,7 +222,7 @@ external class TLSSocket : node.net.Socket {
      * @since v0.11.11
      * @param [size=16384] The maximum TLS fragment size. The maximum value is `16384`.
      */
-    fun setMaxSendFragment(size: Double): Boolean
+    fun setMaxSendFragment(size: Number): Boolean
 
     /**
      * Disables TLS renegotiation for this `TLSSocket` instance. Once called, attempts
@@ -286,7 +286,7 @@ external class TLSSocket : node.net.Socket {
      * @param context Optionally provide a context.
      * @return requested bytes of the keying material
      */
-    fun exportKeyingMaterial(length: Double, label: String, context: Buffer): Buffer
+    fun exportKeyingMaterial(length: Number, label: String, context: Buffer): Buffer
     fun addListener(event: String, listener: Function<Any?> /* (...args: any[]) => void */): Unit /* this */
     fun addListener(event: TLSSocketEvent.OCSPRESPONSE, listener: (response: Buffer) -> Unit): Unit /* this */
     fun addListener(event: TLSSocketEvent.SECURECONNECT, listener: () -> Unit): Unit /* this */

@@ -24,4 +24,4 @@ import js.promise.Promise
  */
 
 @JsName("lookupService")
-external fun lookupServiceAsync(address: String, port: Double): Promise<LookupServiceResultPayload>
+external fun lookupServiceAsync(address: String, port: Number): Promise<LookupServiceResultPayload>

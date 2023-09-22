@@ -3,7 +3,7 @@ package node.dns
 import js.promise.await
 
 
-suspend fun lookup(hostname: String, family: Double): LookupAddress =
+suspend fun lookup(hostname: String, family: Number): LookupAddress =
     lookupAsync(
         hostname, family
     ).await()

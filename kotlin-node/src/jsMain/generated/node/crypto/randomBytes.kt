@@ -56,6 +56,6 @@ import node.buffer.Buffer
  * @param size The number of bytes to generate. The `size` must not be larger than `2**31 - 1`.
  * @return if the `callback` function is not provided.
  */
-external fun randomBytes(size: Double): Buffer
+external fun randomBytes(size: Number): Buffer
 
-external fun randomBytes(size: Double, callback: (err: Error?, buf: Buffer) -> Unit): Unit
+external fun randomBytes(size: Number, callback: (err: Error?, buf: Buffer) -> Unit): Unit

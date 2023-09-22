@@ -25,6 +25,6 @@ package node.dns
  */
 external fun lookupService(
     address: String,
-    port: Double,
+    port: Number,
     callback: (err: node.ErrnoException?, hostname: String, service: String) -> Unit,
 ): Unit

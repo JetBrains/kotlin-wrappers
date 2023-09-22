@@ -57,8 +57,8 @@ import node.buffer.Buffer
 external fun pbkdf2(
     password: BinaryLike,
     salt: BinaryLike,
-    iterations: Double,
-    keylen: Double,
+    iterations: Number,
+    keylen: Number,
     digest: String,
     callback: (err: Error?, derivedKey: Buffer) -> Unit,
 ): Unit

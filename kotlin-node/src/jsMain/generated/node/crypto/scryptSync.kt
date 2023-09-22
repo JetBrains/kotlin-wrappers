@@ -37,6 +37,6 @@ import node.buffer.Buffer
 external fun scryptSync(
     password: BinaryLike,
     salt: BinaryLike,
-    keylen: Double,
+    keylen: Number,
     options: ScryptOptions = definedExternally,
 ): Buffer

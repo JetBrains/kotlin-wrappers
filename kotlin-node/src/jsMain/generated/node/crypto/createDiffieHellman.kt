@@ -20,7 +20,7 @@ import js.buffer.ArrayBuffer
  * @param [generator=2]
  * @param generatorEncoding The `encoding` of the `generator` string.
  */
-external fun createDiffieHellman(primeLength: Double, generator: Double = definedExternally): DiffieHellman
+external fun createDiffieHellman(primeLength: Number, generator: Number = definedExternally): DiffieHellman
 
 external fun createDiffieHellman(prime: ArrayBuffer, generator: Double = definedExternally): DiffieHellman
 

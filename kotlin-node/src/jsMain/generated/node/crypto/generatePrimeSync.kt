@@ -31,10 +31,10 @@ import js.buffer.ArrayBuffer
  * @since v15.8.0
  * @param size The size (in bits) of the prime to generate.
  */
-external fun generatePrimeSync(size: Double): ArrayBuffer
+external fun generatePrimeSync(size: Number): ArrayBuffer
 
-external fun generatePrimeSync(size: Double, options: GeneratePrimeOptionsBigInt): js.core.BigInt
+external fun generatePrimeSync(size: Number, options: GeneratePrimeOptionsBigInt): js.core.BigInt
 
-external fun generatePrimeSync(size: Double, options: GeneratePrimeOptionsArrayBuffer): ArrayBuffer
+external fun generatePrimeSync(size: Number, options: GeneratePrimeOptionsArrayBuffer): ArrayBuffer
 
-external fun generatePrimeSync(size: Double, options: GeneratePrimeOptions): Any /* ArrayBuffer | bigint */
+external fun generatePrimeSync(size: Number, options: GeneratePrimeOptions): Any /* ArrayBuffer | bigint */

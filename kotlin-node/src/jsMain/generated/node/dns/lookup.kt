@@ -47,14 +47,14 @@ package node.dns
  */
 external fun lookup(
     hostname: String,
-    family: Double,
-    callback: (err: node.ErrnoException?, address: String, family: Double) -> Unit,
+    family: Number,
+    callback: (err: node.ErrnoException?, address: String, family: Number) -> Unit,
 ): Unit
 
 external fun lookup(
     hostname: String,
     options: LookupOneOptions,
-    callback: (err: node.ErrnoException?, address: String, family: Double) -> Unit,
+    callback: (err: node.ErrnoException?, address: String, family: Number) -> Unit,
 ): Unit
 
 external fun lookup(
@@ -66,10 +66,10 @@ external fun lookup(
 external fun lookup(
     hostname: String,
     options: LookupOptions,
-    callback: (err: node.ErrnoException?, address: Any /* string | LookupAddress[] */, family: Double) -> Unit,
+    callback: (err: node.ErrnoException?, address: Any /* string | LookupAddress[] */, family: Number) -> Unit,
 ): Unit
 
 external fun lookup(
     hostname: String,
-    callback: (err: node.ErrnoException?, address: String, family: Double) -> Unit,
+    callback: (err: node.ErrnoException?, address: String, family: Number) -> Unit,
 ): Unit

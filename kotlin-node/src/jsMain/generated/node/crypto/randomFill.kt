@@ -82,13 +82,13 @@ external fun <T : js.buffer.ArrayBufferView> randomFill(buffer: T, callback: (er
 
 external fun <T : js.buffer.ArrayBufferView> randomFill(
     buffer: T,
-    offset: Double,
+    offset: Number,
     callback: (err: Error?, buf: T) -> Unit,
 ): Unit
 
 external fun <T : js.buffer.ArrayBufferView> randomFill(
     buffer: T,
-    offset: Double,
-    size: Double,
+    offset: Number,
+    size: Number,
     callback: (err: Error?, buf: T) -> Unit,
 ): Unit

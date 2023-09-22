@@ -27,7 +27,7 @@ external fun sign(
     data: js.buffer.ArrayBufferView,
     key: KeyLike,
     callback: (error: Error?, data: Buffer) -> Unit,
-)
+): Unit
 
 external fun sign(
     algorithm: String?,

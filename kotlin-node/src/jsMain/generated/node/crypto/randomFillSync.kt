@@ -46,6 +46,6 @@ package node.crypto
  */
 external fun <T : js.buffer.ArrayBufferView> randomFillSync(
     buffer: T,
-    offset: Double = definedExternally,
-    size: Double = definedExternally,
+    offset: Number = definedExternally,
+    size: Number = definedExternally,
 ): T

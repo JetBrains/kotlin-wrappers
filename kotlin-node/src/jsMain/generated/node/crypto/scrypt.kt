@@ -41,14 +41,14 @@ import node.buffer.Buffer
 external fun scrypt(
     password: BinaryLike,
     salt: BinaryLike,
-    keylen: Double,
+    keylen: Number,
     callback: (err: Error?, derivedKey: Buffer) -> Unit,
 ): Unit
 
 external fun scrypt(
     password: BinaryLike,
     salt: BinaryLike,
-    keylen: Double,
+    keylen: Number,
     options: ScryptOptions,
     callback: (err: Error?, derivedKey: Buffer) -> Unit,
 ): Unit

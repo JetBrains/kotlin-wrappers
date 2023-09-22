@@ -36,7 +36,7 @@ external fun hkdf(
     irm: BinaryLike,
     salt: BinaryLike,
     info: BinaryLike,
-    keylen: Double,
+    keylen: Number,
     callback: (err: Error?, derivedKey: ArrayBuffer) -> Unit,
 ): Unit
 
@@ -45,6 +45,6 @@ external fun hkdf(
     irm: KeyObject,
     salt: BinaryLike,
     info: BinaryLike,
-    keylen: Double,
+    keylen: Number,
     callback: (err: Error?, derivedKey: ArrayBuffer) -> Unit,
 ): Unit

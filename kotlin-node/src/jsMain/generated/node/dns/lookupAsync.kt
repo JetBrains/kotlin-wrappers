@@ -50,7 +50,7 @@ import js.promise.Promise
  */
 
 @JsName("lookup")
-external fun lookupAsync(hostname: String, family: Double): Promise<LookupAddress>
+external fun lookupAsync(hostname: String, family: Number): Promise<LookupAddress>
 
 
 @JsName("lookup")

@@ -49,10 +49,10 @@ package node.crypto
  * @param max End of random range (exclusive).
  * @param callback `function(err, n) {}`.
  */
-external fun randomInt(max: Double): Double
+external fun randomInt(max: Number): Double
 
-external fun randomInt(min: Double, max: Double): Double
+external fun randomInt(min: Number, max: Number): Double
 
-external fun randomInt(max: Double, callback: (err: Error?, value: Double) -> Unit): Unit
+external fun randomInt(max: Number, callback: (err: Error?, value: Number) -> Unit): Unit
 
-external fun randomInt(min: Double, max: Double, callback: (err: Error?, value: Double) -> Unit): Unit
+external fun randomInt(min: Number, max: Number, callback: (err: Error?, value: Number) -> Unit): Unit

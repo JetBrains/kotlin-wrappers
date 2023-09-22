@@ -49,7 +49,7 @@ import node.buffer.Buffer
 external fun pbkdf2Sync(
     password: BinaryLike,
     salt: BinaryLike,
-    iterations: Double,
-    keylen: Double,
+    iterations: Number,
+    keylen: Number,
     digest: String,
 ): Buffer
