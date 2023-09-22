@@ -1,68 +1,21 @@
-// Automatically generated - do not modify!
-
-@file:JsModule("node:buffer")
-
 package node.buffer
 
-import js.core.*
-import js.iterable.IterableIterator
-import js.typedarrays.TypedArray
+import js.buffer.ArrayBuffer
+import js.buffer.SharedArrayBuffer
+import js.core.ReadonlyArray
 import js.typedarrays.Uint8Array
 
-external class Buffer : Uint8Array {
-    /**
-     * Allocates a new buffer containing the given {str}.
-     *
-     * @param str String to store in buffer.
-     * @param encoding encoding to use, optional.  Default is 'utf8'
-     * @deprecated since v10.0.0 - Use `Buffer.from(string[, encoding])` instead.
-     */
-    constructor(
-        str: String,
-        encoding: BufferEncoding = definedExternally,
-    )
 
-    /**
-     * Allocates a new buffer of {size} octets.
-     *
-     * @param size count of octets to allocate.
-     * @deprecated since v10.0.0 - Use `Buffer.alloc()` instead (also see `Buffer.allocUnsafe()`).
-     */
-    constructor(size: Number)
+@JsModule("node:buffer")
+sealed external class Buffer : Uint8Array {
+    constructor (str: String, encoding: BufferEncoding = definedExternally)
+    constructor (size: Double)
+    constructor (array: Uint8Array)
+    constructor (arrayBuffer: ArrayBuffer)
 
-    /**
-     * Allocates a new buffer containing the given {array} of octets.
-     *
-     * @param array The octets to store.
-     * @deprecated since v10.0.0 - Use `Buffer.from(array)` instead.
-     */
-    constructor(array: Uint8Array)
-
-    /**
-     * Produces a Buffer backed by the same allocated memory as
-     * the given {ArrayBuffer}/{SharedArrayBuffer}.
-     *
-     *
-     * @param arrayBuffer The ArrayBuffer with which to share memory.
-     * @deprecated since v10.0.0 - Use `Buffer.from(arrayBuffer[, byteOffset[, length]])` instead.
-     */
-    constructor(arrayBuffer: Any /* ArrayBuffer | SharedArrayBuffer */)
-
-    /**
-     * Allocates a new buffer containing the given {array} of octets.
-     *
-     * @param array The octets to store.
-     * @deprecated since v10.0.0 - Use `Buffer.from(array)` instead.
-     */
-    constructor(array: ReadonlyArray<Any>)
-
-    /**
-     * Copies the passed {buffer} data onto a new {Buffer} instance.
-     *
-     * @param buffer The buffer to copy.
-     * @deprecated since v10.0.0 - Use `Buffer.from(buffer)` instead.
-     */
-    constructor(buffer: Buffer)
+    constructor (arrayBuffer: SharedArrayBuffer)
+    constructor (array: ReadonlyArray<Any?>)
+    constructor (buffer: Buffer)
 
     /**
      * Writes `string` to `buf` at `offset` according to the character encoding in`encoding`. The `length` parameter is the number of bytes to write. If `buf` did
@@ -93,23 +46,9 @@ external class Buffer : Uint8Array {
      * @param [encoding='utf8'] The character encoding of `string`.
      * @return Number of bytes written.
      */
-    fun write(
-        string: String,
-        encoding: BufferEncoding = definedExternally,
-    ): Number
-
-    fun write(
-        string: String,
-        offset: Number,
-        encoding: BufferEncoding = definedExternally,
-    ): Number
-
-    fun write(
-        string: String,
-        offset: Number,
-        length: Number,
-        encoding: BufferEncoding = definedExternally,
-    ): Number
+    fun write(string: String, encoding: BufferEncoding = definedExternally): Double
+    fun write(string: String, offset: Double, encoding: BufferEncoding = definedExternally): Double
+    fun write(string: String, offset: Double, length: Double, encoding: BufferEncoding = definedExternally): Double
 
     /**
      * Decodes `buf` to a string according to the specified character encoding in`encoding`. `start` and `end` may be passed to decode only a subset of `buf`.
@@ -151,8 +90,8 @@ external class Buffer : Uint8Array {
      */
     fun toString(
         encoding: BufferEncoding = definedExternally,
-        start: Number = definedExternally,
-        end: Number = definedExternally,
+        start: Double = definedExternally,
+        end: Double = definedExternally,
     ): String
 
     /**
@@ -182,7 +121,7 @@ external class Buffer : Uint8Array {
      * ```
      * @since v0.9.2
      */
-    fun toJSON(): Any
+    fun toJSON(): BufferToJSONResult
 
     /**
      * Returns `true` if both `buf` and `otherBuffer` have exactly the same bytes,`false` otherwise. Equivalent to `buf.compare(otherBuffer) === 0`.
@@ -260,10 +199,10 @@ external class Buffer : Uint8Array {
      */
     fun compare(
         target: Uint8Array,
-        targetStart: Number = definedExternally,
-        targetEnd: Number = definedExternally,
-        sourceStart: Number = definedExternally,
-        sourceEnd: Number = definedExternally,
+        targetStart: Double = definedExternally,
+        targetEnd: Double = definedExternally,
+        sourceStart: Double = definedExternally,
+        sourceEnd: Double = definedExternally,
     ): Int /* -1 | 0 | 1 */
 
     /**
@@ -321,10 +260,10 @@ external class Buffer : Uint8Array {
      */
     fun copy(
         target: Uint8Array,
-        targetStart: Number = definedExternally,
-        sourceStart: Number = definedExternally,
-        sourceEnd: Number = definedExternally,
-    ): Number
+        targetStart: Double = definedExternally,
+        sourceStart: Double = definedExternally,
+        sourceEnd: Double = definedExternally,
+    ): Double
 
     /**
      * Returns a new `Buffer` that references the same memory as the original, but
@@ -359,10 +298,7 @@ external class Buffer : Uint8Array {
      * @param [start=0] Where the new `Buffer` will start.
      * @param [end=buf.length] Where the new `Buffer` will end (not inclusive).
      */
-    fun slice(
-        start: Number = definedExternally,
-        end: Number = definedExternally,
-    ): Buffer
+    fun slice(start: Double = definedExternally, end: Double = definedExternally): Buffer
 
     /**
      * Returns a new `Buffer` that references the same memory as the original, but
@@ -423,10 +359,7 @@ external class Buffer : Uint8Array {
      * @param [start=0] Where the new `Buffer` will start.
      * @param [end=buf.length] Where the new `Buffer` will end (not inclusive).
      */
-    fun subarray(
-        start: Number = definedExternally,
-        end: Number = definedExternally,
-    ): Buffer
+    fun subarray(start: Double = definedExternally, end: Double = definedExternally): Buffer
 
     /**
      * Writes `value` to `buf` at the specified `offset` as big-endian.
@@ -448,10 +381,7 @@ external class Buffer : Uint8Array {
      * @param [offset=0] Number of bytes to skip before starting to write. Must satisfy: `0 <= offset <= buf.length - 8`.
      * @return `offset` plus the number of bytes written.
      */
-    fun writeBigInt64BE(
-        value: BigInt,
-        offset: Number = definedExternally,
-    ): Number
+    fun writeBigInt64BE(value: js.core.BigInt, offset: Double = definedExternally): Double
 
     /**
      * Writes `value` to `buf` at the specified `offset` as little-endian.
@@ -473,10 +403,7 @@ external class Buffer : Uint8Array {
      * @param [offset=0] Number of bytes to skip before starting to write. Must satisfy: `0 <= offset <= buf.length - 8`.
      * @return `offset` plus the number of bytes written.
      */
-    fun writeBigInt64LE(
-        value: BigInt,
-        offset: Number = definedExternally,
-    ): Number
+    fun writeBigInt64LE(value: js.core.BigInt, offset: Double = definedExternally): Double
 
     /**
      * Writes `value` to `buf` at the specified `offset` as big-endian.
@@ -498,19 +425,13 @@ external class Buffer : Uint8Array {
      * @param [offset=0] Number of bytes to skip before starting to write. Must satisfy: `0 <= offset <= buf.length - 8`.
      * @return `offset` plus the number of bytes written.
      */
-    fun writeBigUInt64BE(
-        value: BigInt,
-        offset: Number = definedExternally,
-    ): Number
+    fun writeBigUInt64BE(value: js.core.BigInt, offset: Double = definedExternally): Double
 
     /**
      * @alias Buffer.writeBigUInt64BE
      * @since v14.10.0, v12.19.0
      */
-    fun writeBigUint64BE(
-        value: BigInt,
-        offset: Number = definedExternally,
-    ): Number
+    fun writeBigUint64BE(value: js.core.BigInt, offset: Double = definedExternally): Double
 
     /**
      * Writes `value` to `buf` at the specified `offset` as little-endian
@@ -532,19 +453,13 @@ external class Buffer : Uint8Array {
      * @param [offset=0] Number of bytes to skip before starting to write. Must satisfy: `0 <= offset <= buf.length - 8`.
      * @return `offset` plus the number of bytes written.
      */
-    fun writeBigUInt64LE(
-        value: BigInt,
-        offset: Number = definedExternally,
-    ): Number
+    fun writeBigUInt64LE(value: js.core.BigInt, offset: Double = definedExternally): Double
 
     /**
      * @alias Buffer.writeBigUInt64LE
      * @since v14.10.0, v12.19.0
      */
-    fun writeBigUint64LE(
-        value: BigInt,
-        offset: Number = definedExternally,
-    ): Number
+    fun writeBigUint64LE(value: js.core.BigInt, offset: Double = definedExternally): Double
 
     /**
      * Writes `byteLength` bytes of `value` to `buf` at the specified `offset`as little-endian. Supports up to 48 bits of accuracy. Behavior is undefined
@@ -568,21 +483,13 @@ external class Buffer : Uint8Array {
      * @param byteLength Number of bytes to write. Must satisfy `0 < byteLength <= 6`.
      * @return `offset` plus the number of bytes written.
      */
-    fun writeUIntLE(
-        value: Number,
-        offset: Number,
-        byteLength: Number,
-    ): Number
+    fun writeUIntLE(value: Double, offset: Double, byteLength: Double): Double
 
     /**
      * @alias Buffer.writeUIntLE
      * @since v14.9.0, v12.19.0
      */
-    fun writeUintLE(
-        value: Number,
-        offset: Number,
-        byteLength: Number,
-    ): Number
+    fun writeUintLE(value: Double, offset: Double, byteLength: Double): Double
 
     /**
      * Writes `byteLength` bytes of `value` to `buf` at the specified `offset`as big-endian. Supports up to 48 bits of accuracy. Behavior is undefined
@@ -606,21 +513,13 @@ external class Buffer : Uint8Array {
      * @param byteLength Number of bytes to write. Must satisfy `0 < byteLength <= 6`.
      * @return `offset` plus the number of bytes written.
      */
-    fun writeUIntBE(
-        value: Number,
-        offset: Number,
-        byteLength: Number,
-    ): Number
+    fun writeUIntBE(value: Double, offset: Double, byteLength: Double): Double
 
     /**
      * @alias Buffer.writeUIntBE
      * @since v14.9.0, v12.19.0
      */
-    fun writeUintBE(
-        value: Number,
-        offset: Number,
-        byteLength: Number,
-    ): Number
+    fun writeUintBE(value: Double, offset: Double, byteLength: Double): Double
 
     /**
      * Writes `byteLength` bytes of `value` to `buf` at the specified `offset`as little-endian. Supports up to 48 bits of accuracy. Behavior is undefined
@@ -642,11 +541,7 @@ external class Buffer : Uint8Array {
      * @param byteLength Number of bytes to write. Must satisfy `0 < byteLength <= 6`.
      * @return `offset` plus the number of bytes written.
      */
-    fun writeIntLE(
-        value: Number,
-        offset: Number,
-        byteLength: Number,
-    ): Number
+    fun writeIntLE(value: Double, offset: Double, byteLength: Double): Double
 
     /**
      * Writes `byteLength` bytes of `value` to `buf` at the specified `offset`as big-endian. Supports up to 48 bits of accuracy. Behavior is undefined when`value` is anything other than a
@@ -668,11 +563,7 @@ external class Buffer : Uint8Array {
      * @param byteLength Number of bytes to write. Must satisfy `0 < byteLength <= 6`.
      * @return `offset` plus the number of bytes written.
      */
-    fun writeIntBE(
-        value: Number,
-        offset: Number,
-        byteLength: Number,
-    ): Number
+    fun writeIntBE(value: Double, offset: Double, byteLength: Double): Double
 
     /**
      * Reads an unsigned, big-endian 64-bit integer from `buf` at the specified`offset`.
@@ -690,13 +581,13 @@ external class Buffer : Uint8Array {
      * @since v12.0.0, v10.20.0
      * @param [offset=0] Number of bytes to skip before starting to read. Must satisfy: `0 <= offset <= buf.length - 8`.
      */
-    fun readBigUInt64BE(offset: Number = definedExternally): BigInt
+    fun readBigUInt64BE(offset: Double = definedExternally): js.core.BigInt
 
     /**
      * @alias Buffer.readBigUInt64BE
      * @since v14.10.0, v12.19.0
      */
-    fun readBigUint64BE(offset: Number = definedExternally): BigInt
+    fun readBigUint64BE(offset: Double = definedExternally): js.core.BigInt
 
     /**
      * Reads an unsigned, little-endian 64-bit integer from `buf` at the specified`offset`.
@@ -714,13 +605,13 @@ external class Buffer : Uint8Array {
      * @since v12.0.0, v10.20.0
      * @param [offset=0] Number of bytes to skip before starting to read. Must satisfy: `0 <= offset <= buf.length - 8`.
      */
-    fun readBigUInt64LE(offset: Number = definedExternally): BigInt
+    fun readBigUInt64LE(offset: Double = definedExternally): js.core.BigInt
 
     /**
      * @alias Buffer.readBigUInt64LE
      * @since v14.10.0, v12.19.0
      */
-    fun readBigUint64LE(offset: Number = definedExternally): BigInt
+    fun readBigUint64LE(offset: Double = definedExternally): js.core.BigInt
 
     /**
      * Reads a signed, big-endian 64-bit integer from `buf` at the specified `offset`.
@@ -730,7 +621,7 @@ external class Buffer : Uint8Array {
      * @since v12.0.0, v10.20.0
      * @param [offset=0] Number of bytes to skip before starting to read. Must satisfy: `0 <= offset <= buf.length - 8`.
      */
-    fun readBigInt64BE(offset: Number = definedExternally): BigInt
+    fun readBigInt64BE(offset: Double = definedExternally): js.core.BigInt
 
     /**
      * Reads a signed, little-endian 64-bit integer from `buf` at the specified`offset`.
@@ -740,7 +631,7 @@ external class Buffer : Uint8Array {
      * @since v12.0.0, v10.20.0
      * @param [offset=0] Number of bytes to skip before starting to read. Must satisfy: `0 <= offset <= buf.length - 8`.
      */
-    fun readBigInt64LE(offset: Number = definedExternally): BigInt
+    fun readBigInt64LE(offset: Double = definedExternally): js.core.BigInt
 
     /**
      * Reads `byteLength` number of bytes from `buf` at the specified `offset`and interprets the result as an unsigned, little-endian integer supporting
@@ -760,19 +651,13 @@ external class Buffer : Uint8Array {
      * @param offset Number of bytes to skip before starting to read. Must satisfy `0 <= offset <= buf.length - byteLength`.
      * @param byteLength Number of bytes to read. Must satisfy `0 < byteLength <= 6`.
      */
-    fun readUIntLE(
-        offset: Number,
-        byteLength: Number,
-    ): Number
+    fun readUIntLE(offset: Double, byteLength: Double): Double
 
     /**
      * @alias Buffer.readUIntLE
      * @since v14.9.0, v12.19.0
      */
-    fun readUintLE(
-        offset: Number,
-        byteLength: Number,
-    ): Number
+    fun readUintLE(offset: Double, byteLength: Double): Double
 
     /**
      * Reads `byteLength` number of bytes from `buf` at the specified `offset`and interprets the result as an unsigned big-endian integer supporting
@@ -794,19 +679,13 @@ external class Buffer : Uint8Array {
      * @param offset Number of bytes to skip before starting to read. Must satisfy `0 <= offset <= buf.length - byteLength`.
      * @param byteLength Number of bytes to read. Must satisfy `0 < byteLength <= 6`.
      */
-    fun readUIntBE(
-        offset: Number,
-        byteLength: Number,
-    ): Number
+    fun readUIntBE(offset: Double, byteLength: Double): Double
 
     /**
      * @alias Buffer.readUIntBE
      * @since v14.9.0, v12.19.0
      */
-    fun readUintBE(
-        offset: Number,
-        byteLength: Number,
-    ): Number
+    fun readUintBE(offset: Double, byteLength: Double): Double
 
     /**
      * Reads `byteLength` number of bytes from `buf` at the specified `offset`and interprets the result as a little-endian, two's complement signed value
@@ -824,10 +703,7 @@ external class Buffer : Uint8Array {
      * @param offset Number of bytes to skip before starting to read. Must satisfy `0 <= offset <= buf.length - byteLength`.
      * @param byteLength Number of bytes to read. Must satisfy `0 < byteLength <= 6`.
      */
-    fun readIntLE(
-        offset: Number,
-        byteLength: Number,
-    ): Number
+    fun readIntLE(offset: Double, byteLength: Double): Double
 
     /**
      * Reads `byteLength` number of bytes from `buf` at the specified `offset`and interprets the result as a big-endian, two's complement signed value
@@ -849,10 +725,7 @@ external class Buffer : Uint8Array {
      * @param offset Number of bytes to skip before starting to read. Must satisfy `0 <= offset <= buf.length - byteLength`.
      * @param byteLength Number of bytes to read. Must satisfy `0 < byteLength <= 6`.
      */
-    fun readIntBE(
-        offset: Number,
-        byteLength: Number,
-    ): Number
+    fun readIntBE(offset: Double, byteLength: Double): Double
 
     /**
      * Reads an unsigned 8-bit integer from `buf` at the specified `offset`.
@@ -874,13 +747,13 @@ external class Buffer : Uint8Array {
      * @since v0.5.0
      * @param [offset=0] Number of bytes to skip before starting to read. Must satisfy `0 <= offset <= buf.length - 1`.
      */
-    fun readUInt8(offset: Number = definedExternally): Number
+    fun readUInt8(offset: Double = definedExternally): Double
 
     /**
      * @alias Buffer.readUInt8
      * @since v14.9.0, v12.19.0
      */
-    fun readUint8(offset: Number = definedExternally): Number
+    fun readUint8(offset: Double = definedExternally): Double
 
     /**
      * Reads an unsigned, little-endian 16-bit integer from `buf` at the specified`offset`.
@@ -902,13 +775,13 @@ external class Buffer : Uint8Array {
      * @since v0.5.5
      * @param [offset=0] Number of bytes to skip before starting to read. Must satisfy `0 <= offset <= buf.length - 2`.
      */
-    fun readUInt16LE(offset: Number = definedExternally): Number
+    fun readUInt16LE(offset: Double = definedExternally): Double
 
     /**
      * @alias Buffer.readUInt16LE
      * @since v14.9.0, v12.19.0
      */
-    fun readUint16LE(offset: Number = definedExternally): Number
+    fun readUint16LE(offset: Double = definedExternally): Double
 
     /**
      * Reads an unsigned, big-endian 16-bit integer from `buf` at the specified`offset`.
@@ -928,13 +801,13 @@ external class Buffer : Uint8Array {
      * @since v0.5.5
      * @param [offset=0] Number of bytes to skip before starting to read. Must satisfy `0 <= offset <= buf.length - 2`.
      */
-    fun readUInt16BE(offset: Number = definedExternally): Number
+    fun readUInt16BE(offset: Double = definedExternally): Double
 
     /**
      * @alias Buffer.readUInt16BE
      * @since v14.9.0, v12.19.0
      */
-    fun readUint16BE(offset: Number = definedExternally): Number
+    fun readUint16BE(offset: Double = definedExternally): Double
 
     /**
      * Reads an unsigned, little-endian 32-bit integer from `buf` at the specified`offset`.
@@ -954,13 +827,13 @@ external class Buffer : Uint8Array {
      * @since v0.5.5
      * @param [offset=0] Number of bytes to skip before starting to read. Must satisfy `0 <= offset <= buf.length - 4`.
      */
-    fun readUInt32LE(offset: Number = definedExternally): Number
+    fun readUInt32LE(offset: Double = definedExternally): Double
 
     /**
      * @alias Buffer.readUInt32LE
      * @since v14.9.0, v12.19.0
      */
-    fun readUint32LE(offset: Number = definedExternally): Number
+    fun readUint32LE(offset: Double = definedExternally): Double
 
     /**
      * Reads an unsigned, big-endian 32-bit integer from `buf` at the specified`offset`.
@@ -978,13 +851,13 @@ external class Buffer : Uint8Array {
      * @since v0.5.5
      * @param [offset=0] Number of bytes to skip before starting to read. Must satisfy `0 <= offset <= buf.length - 4`.
      */
-    fun readUInt32BE(offset: Number = definedExternally): Number
+    fun readUInt32BE(offset: Double = definedExternally): Double
 
     /**
      * @alias Buffer.readUInt32BE
      * @since v14.9.0, v12.19.0
      */
-    fun readUint32BE(offset: Number = definedExternally): Number
+    fun readUint32BE(offset: Double = definedExternally): Double
 
     /**
      * Reads a signed 8-bit integer from `buf` at the specified `offset`.
@@ -1006,7 +879,7 @@ external class Buffer : Uint8Array {
      * @since v0.5.0
      * @param [offset=0] Number of bytes to skip before starting to read. Must satisfy `0 <= offset <= buf.length - 1`.
      */
-    fun readInt8(offset: Number = definedExternally): Number
+    fun readInt8(offset: Double = definedExternally): Double
 
     /**
      * Reads a signed, little-endian 16-bit integer from `buf` at the specified`offset`.
@@ -1026,7 +899,7 @@ external class Buffer : Uint8Array {
      * @since v0.5.5
      * @param [offset=0] Number of bytes to skip before starting to read. Must satisfy `0 <= offset <= buf.length - 2`.
      */
-    fun readInt16LE(offset: Number = definedExternally): Number
+    fun readInt16LE(offset: Double = definedExternally): Double
 
     /**
      * Reads a signed, big-endian 16-bit integer from `buf` at the specified `offset`.
@@ -1044,7 +917,7 @@ external class Buffer : Uint8Array {
      * @since v0.5.5
      * @param [offset=0] Number of bytes to skip before starting to read. Must satisfy `0 <= offset <= buf.length - 2`.
      */
-    fun readInt16BE(offset: Number = definedExternally): Number
+    fun readInt16BE(offset: Double = definedExternally): Double
 
     /**
      * Reads a signed, little-endian 32-bit integer from `buf` at the specified`offset`.
@@ -1064,7 +937,7 @@ external class Buffer : Uint8Array {
      * @since v0.5.5
      * @param [offset=0] Number of bytes to skip before starting to read. Must satisfy `0 <= offset <= buf.length - 4`.
      */
-    fun readInt32LE(offset: Number = definedExternally): Number
+    fun readInt32LE(offset: Double = definedExternally): Double
 
     /**
      * Reads a signed, big-endian 32-bit integer from `buf` at the specified `offset`.
@@ -1082,7 +955,7 @@ external class Buffer : Uint8Array {
      * @since v0.5.5
      * @param [offset=0] Number of bytes to skip before starting to read. Must satisfy `0 <= offset <= buf.length - 4`.
      */
-    fun readInt32BE(offset: Number = definedExternally): Number
+    fun readInt32BE(offset: Double = definedExternally): Double
 
     /**
      * Reads a 32-bit, little-endian float from `buf` at the specified `offset`.
@@ -1100,7 +973,7 @@ external class Buffer : Uint8Array {
      * @since v0.11.15
      * @param [offset=0] Number of bytes to skip before starting to read. Must satisfy `0 <= offset <= buf.length - 4`.
      */
-    fun readFloatLE(offset: Number = definedExternally): Number
+    fun readFloatLE(offset: Double = definedExternally): Double
 
     /**
      * Reads a 32-bit, big-endian float from `buf` at the specified `offset`.
@@ -1116,7 +989,7 @@ external class Buffer : Uint8Array {
      * @since v0.11.15
      * @param [offset=0] Number of bytes to skip before starting to read. Must satisfy `0 <= offset <= buf.length - 4`.
      */
-    fun readFloatBE(offset: Number = definedExternally): Number
+    fun readFloatBE(offset: Double = definedExternally): Double
 
     /**
      * Reads a 64-bit, little-endian double from `buf` at the specified `offset`.
@@ -1134,7 +1007,7 @@ external class Buffer : Uint8Array {
      * @since v0.11.15
      * @param [offset=0] Number of bytes to skip before starting to read. Must satisfy `0 <= offset <= buf.length - 8`.
      */
-    fun readDoubleLE(offset: Number = definedExternally): Number
+    fun readDoubleLE(offset: Double = definedExternally): Double
 
     /**
      * Reads a 64-bit, big-endian double from `buf` at the specified `offset`.
@@ -1150,8 +1023,7 @@ external class Buffer : Uint8Array {
      * @since v0.11.15
      * @param [offset=0] Number of bytes to skip before starting to read. Must satisfy `0 <= offset <= buf.length - 8`.
      */
-    fun readDoubleBE(offset: Number = definedExternally): Number
-    override fun reverse(): Buffer
+    fun readDoubleBE(offset: Double = definedExternally): Double
 
     /**
      * Interprets `buf` as an array of unsigned 16-bit integers and swaps the
@@ -1269,19 +1141,13 @@ external class Buffer : Uint8Array {
      * @param [offset=0] Number of bytes to skip before starting to write. Must satisfy `0 <= offset <= buf.length - 1`.
      * @return `offset` plus the number of bytes written.
      */
-    fun writeUInt8(
-        value: Number,
-        offset: Number = definedExternally,
-    ): Number
+    fun writeUInt8(value: Double, offset: Double = definedExternally): Double
 
     /**
      * @alias Buffer.writeUInt8
      * @since v14.9.0, v12.19.0
      */
-    fun writeUint8(
-        value: Number,
-        offset: Number = definedExternally,
-    ): Number
+    fun writeUint8(value: Double, offset: Double = definedExternally): Double
 
     /**
      * Writes `value` to `buf` at the specified `offset` as little-endian. The `value`must be a valid unsigned 16-bit integer. Behavior is undefined when `value` is
@@ -1305,19 +1171,13 @@ external class Buffer : Uint8Array {
      * @param [offset=0] Number of bytes to skip before starting to write. Must satisfy `0 <= offset <= buf.length - 2`.
      * @return `offset` plus the number of bytes written.
      */
-    fun writeUInt16LE(
-        value: Number,
-        offset: Number = definedExternally,
-    ): Number
+    fun writeUInt16LE(value: Double, offset: Double = definedExternally): Double
 
     /**
      * @alias Buffer.writeUInt16LE
      * @since v14.9.0, v12.19.0
      */
-    fun writeUint16LE(
-        value: Number,
-        offset: Number = definedExternally,
-    ): Number
+    fun writeUint16LE(value: Double, offset: Double = definedExternally): Double
 
     /**
      * Writes `value` to `buf` at the specified `offset` as big-endian. The `value`must be a valid unsigned 16-bit integer. Behavior is undefined when `value`is anything other than an
@@ -1341,19 +1201,13 @@ external class Buffer : Uint8Array {
      * @param [offset=0] Number of bytes to skip before starting to write. Must satisfy `0 <= offset <= buf.length - 2`.
      * @return `offset` plus the number of bytes written.
      */
-    fun writeUInt16BE(
-        value: Number,
-        offset: Number = definedExternally,
-    ): Number
+    fun writeUInt16BE(value: Double, offset: Double = definedExternally): Double
 
     /**
      * @alias Buffer.writeUInt16BE
      * @since v14.9.0, v12.19.0
      */
-    fun writeUint16BE(
-        value: Number,
-        offset: Number = definedExternally,
-    ): Number
+    fun writeUint16BE(value: Double, offset: Double = definedExternally): Double
 
     /**
      * Writes `value` to `buf` at the specified `offset` as little-endian. The `value`must be a valid unsigned 32-bit integer. Behavior is undefined when `value` is
@@ -1376,19 +1230,13 @@ external class Buffer : Uint8Array {
      * @param [offset=0] Number of bytes to skip before starting to write. Must satisfy `0 <= offset <= buf.length - 4`.
      * @return `offset` plus the number of bytes written.
      */
-    fun writeUInt32LE(
-        value: Number,
-        offset: Number = definedExternally,
-    ): Number
+    fun writeUInt32LE(value: Double, offset: Double = definedExternally): Double
 
     /**
      * @alias Buffer.writeUInt32LE
      * @since v14.9.0, v12.19.0
      */
-    fun writeUint32LE(
-        value: Number,
-        offset: Number = definedExternally,
-    ): Number
+    fun writeUint32LE(value: Double, offset: Double = definedExternally): Double
 
     /**
      * Writes `value` to `buf` at the specified `offset` as big-endian. The `value`must be a valid unsigned 32-bit integer. Behavior is undefined when `value`is anything other than an
@@ -1411,19 +1259,13 @@ external class Buffer : Uint8Array {
      * @param [offset=0] Number of bytes to skip before starting to write. Must satisfy `0 <= offset <= buf.length - 4`.
      * @return `offset` plus the number of bytes written.
      */
-    fun writeUInt32BE(
-        value: Number,
-        offset: Number = definedExternally,
-    ): Number
+    fun writeUInt32BE(value: Double, offset: Double = definedExternally): Double
 
     /**
      * @alias Buffer.writeUInt32BE
      * @since v14.9.0, v12.19.0
      */
-    fun writeUint32BE(
-        value: Number,
-        offset: Number = definedExternally,
-    ): Number
+    fun writeUint32BE(value: Double, offset: Double = definedExternally): Double
 
     /**
      * Writes `value` to `buf` at the specified `offset`. `value` must be a valid
@@ -1448,10 +1290,7 @@ external class Buffer : Uint8Array {
      * @param [offset=0] Number of bytes to skip before starting to write. Must satisfy `0 <= offset <= buf.length - 1`.
      * @return `offset` plus the number of bytes written.
      */
-    fun writeInt8(
-        value: Number,
-        offset: Number = definedExternally,
-    ): Number
+    fun writeInt8(value: Double, offset: Double = definedExternally): Double
 
     /**
      * Writes `value` to `buf` at the specified `offset` as little-endian.  The `value`must be a valid signed 16-bit integer. Behavior is undefined when `value` is
@@ -1474,10 +1313,7 @@ external class Buffer : Uint8Array {
      * @param [offset=0] Number of bytes to skip before starting to write. Must satisfy `0 <= offset <= buf.length - 2`.
      * @return `offset` plus the number of bytes written.
      */
-    fun writeInt16LE(
-        value: Number,
-        offset: Number = definedExternally,
-    ): Number
+    fun writeInt16LE(value: Double, offset: Double = definedExternally): Double
 
     /**
      * Writes `value` to `buf` at the specified `offset` as big-endian.  The `value`must be a valid signed 16-bit integer. Behavior is undefined when `value` is
@@ -1500,10 +1336,7 @@ external class Buffer : Uint8Array {
      * @param [offset=0] Number of bytes to skip before starting to write. Must satisfy `0 <= offset <= buf.length - 2`.
      * @return `offset` plus the number of bytes written.
      */
-    fun writeInt16BE(
-        value: Number,
-        offset: Number = definedExternally,
-    ): Number
+    fun writeInt16BE(value: Double, offset: Double = definedExternally): Double
 
     /**
      * Writes `value` to `buf` at the specified `offset` as little-endian. The `value`must be a valid signed 32-bit integer. Behavior is undefined when `value` is
@@ -1526,10 +1359,7 @@ external class Buffer : Uint8Array {
      * @param [offset=0] Number of bytes to skip before starting to write. Must satisfy `0 <= offset <= buf.length - 4`.
      * @return `offset` plus the number of bytes written.
      */
-    fun writeInt32LE(
-        value: Number,
-        offset: Number = definedExternally,
-    ): Number
+    fun writeInt32LE(value: Double, offset: Double = definedExternally): Double
 
     /**
      * Writes `value` to `buf` at the specified `offset` as big-endian. The `value`must be a valid signed 32-bit integer. Behavior is undefined when `value` is
@@ -1552,10 +1382,7 @@ external class Buffer : Uint8Array {
      * @param [offset=0] Number of bytes to skip before starting to write. Must satisfy `0 <= offset <= buf.length - 4`.
      * @return `offset` plus the number of bytes written.
      */
-    fun writeInt32BE(
-        value: Number,
-        offset: Number = definedExternally,
-    ): Number
+    fun writeInt32BE(value: Double, offset: Double = definedExternally): Double
 
     /**
      * Writes `value` to `buf` at the specified `offset` as little-endian. Behavior is
@@ -1576,10 +1403,7 @@ external class Buffer : Uint8Array {
      * @param [offset=0] Number of bytes to skip before starting to write. Must satisfy `0 <= offset <= buf.length - 4`.
      * @return `offset` plus the number of bytes written.
      */
-    fun writeFloatLE(
-        value: Number,
-        offset: Number = definedExternally,
-    ): Number
+    fun writeFloatLE(value: Double, offset: Double = definedExternally): Double
 
     /**
      * Writes `value` to `buf` at the specified `offset` as big-endian. Behavior is
@@ -1600,10 +1424,7 @@ external class Buffer : Uint8Array {
      * @param [offset=0] Number of bytes to skip before starting to write. Must satisfy `0 <= offset <= buf.length - 4`.
      * @return `offset` plus the number of bytes written.
      */
-    fun writeFloatBE(
-        value: Number,
-        offset: Number = definedExternally,
-    ): Number
+    fun writeFloatBE(value: Double, offset: Double = definedExternally): Double
 
     /**
      * Writes `value` to `buf` at the specified `offset` as little-endian. The `value`must be a JavaScript number. Behavior is undefined when `value` is anything
@@ -1624,10 +1445,7 @@ external class Buffer : Uint8Array {
      * @param [offset=0] Number of bytes to skip before starting to write. Must satisfy `0 <= offset <= buf.length - 8`.
      * @return `offset` plus the number of bytes written.
      */
-    fun writeDoubleLE(
-        value: Number,
-        offset: Number = definedExternally,
-    ): Number
+    fun writeDoubleLE(value: Double, offset: Double = definedExternally): Double
 
     /**
      * Writes `value` to `buf` at the specified `offset` as big-endian. The `value`must be a JavaScript number. Behavior is undefined when `value` is anything
@@ -1648,10 +1466,7 @@ external class Buffer : Uint8Array {
      * @param [offset=0] Number of bytes to skip before starting to write. Must satisfy `0 <= offset <= buf.length - 8`.
      * @return `offset` plus the number of bytes written.
      */
-    fun writeDoubleBE(
-        value: Number,
-        offset: Number = definedExternally,
-    ): Number
+    fun writeDoubleBE(value: Double, offset: Double = definedExternally): Double
 
     /**
      * Fills `buf` with the specified `value`. If the `offset` and `end` are not given,
@@ -1707,11 +1522,25 @@ external class Buffer : Uint8Array {
      * @return A reference to `buf`.
      */
     fun fill(
-        value: Any, /* string | Uint8Array | number */
-        offset: Number = definedExternally,
-        end: Number = definedExternally,
+        value: String,
+        offset: Double = definedExternally,
+        end: Double = definedExternally,
         encoding: BufferEncoding = definedExternally,
-    ): Buffer
+    ): Unit /* this */
+
+    fun fill(
+        value: Uint8Array,
+        offset: Double = definedExternally,
+        end: Double = definedExternally,
+        encoding: BufferEncoding = definedExternally,
+    ): Unit /* this */
+
+    fun fill(
+        value: Double,
+        offset: Double = definedExternally,
+        end: Double = definedExternally,
+        encoding: BufferEncoding = definedExternally,
+    ): Unit /* this */
 
     /**
      * If `value` is:
@@ -1782,10 +1611,22 @@ external class Buffer : Uint8Array {
      * @return The index of the first occurrence of `value` in `buf`, or `-1` if `buf` does not contain `value`.
      */
     fun indexOf(
-        value: Any, /* string | number | Uint8Array */
-        byteOffset: Number = definedExternally,
+        value: String,
+        byteOffset: Double = definedExternally,
         encoding: BufferEncoding = definedExternally,
-    ): Number
+    ): Double
+
+    fun indexOf(
+        value: Double,
+        byteOffset: Double = definedExternally,
+        encoding: BufferEncoding = definedExternally,
+    ): Double
+
+    fun indexOf(
+        value: Uint8Array,
+        byteOffset: Double = definedExternally,
+        encoding: BufferEncoding = definedExternally,
+    ): Double
 
     /**
      * Identical to `buf.indexOf()`, except the last occurrence of `value` is found
@@ -1855,36 +1696,22 @@ external class Buffer : Uint8Array {
      * @return The index of the last occurrence of `value` in `buf`, or `-1` if `buf` does not contain `value`.
      */
     fun lastIndexOf(
-        value: Any, /* string | number | Uint8Array */
-        byteOffset: Number = definedExternally,
+        value: String,
+        byteOffset: Double = definedExternally,
         encoding: BufferEncoding = definedExternally,
-    ): Number
+    ): Double
 
-    /**
-     * Creates and returns an [iterator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols) of `[index, byte]` pairs from the contents
-     * of `buf`.
-     *
-     * ```js
-     * import { Buffer } from 'buffer';
-     *
-     * // Log the entire contents of a `Buffer`.
-     *
-     * const buf = Buffer.from('buffer');
-     *
-     * for (const pair of buf.entries()) {
-     *   console.log(pair);
-     * }
-     * // Prints:
-     * //   [0, 98]
-     * //   [1, 117]
-     * //   [2, 102]
-     * //   [3, 102]
-     * //   [4, 101]
-     * //   [5, 114]
-     * ```
-     * @since v1.1.0
-     */
-    override fun entries(): IterableIterator<JsTuple2<Int, Byte>>
+    fun lastIndexOf(
+        value: Double,
+        byteOffset: Double = definedExternally,
+        encoding: BufferEncoding = definedExternally,
+    ): Double
+
+    fun lastIndexOf(
+        value: Uint8Array,
+        byteOffset: Double = definedExternally,
+        encoding: BufferEncoding = definedExternally,
+    ): Double
 
     /**
      * Equivalent to `buf.indexOf() !== -1`.
@@ -1916,68 +1743,22 @@ external class Buffer : Uint8Array {
      * @return `true` if `value` was found in `buf`, `false` otherwise.
      */
     fun includes(
-        value: Any, /* string | number | Buffer */
-        byteOffset: Number = definedExternally,
+        value: String,
+        byteOffset: Double = definedExternally,
         encoding: BufferEncoding = definedExternally,
     ): Boolean
 
-    /**
-     * Creates and returns an [iterator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols) of `buf` keys (indices).
-     *
-     * ```js
-     * import { Buffer } from 'buffer';
-     *
-     * const buf = Buffer.from('buffer');
-     *
-     * for (const key of buf.keys()) {
-     *   console.log(key);
-     * }
-     * // Prints:
-     * //   0
-     * //   1
-     * //   2
-     * //   3
-     * //   4
-     * //   5
-     * ```
-     * @since v1.1.0
-     */
-    override fun keys(): IterableIterator<Int>
+    fun includes(
+        value: Double,
+        byteOffset: Double = definedExternally,
+        encoding: BufferEncoding = definedExternally,
+    ): Boolean
 
-    /**
-     * Creates and returns an [iterator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols) for `buf` values (bytes). This function is
-     * called automatically when a `Buffer` is used in a `for..of` statement.
-     *
-     * ```js
-     * import { Buffer } from 'buffer';
-     *
-     * const buf = Buffer.from('buffer');
-     *
-     * for (const value of buf.values()) {
-     *   console.log(value);
-     * }
-     * // Prints:
-     * //   98
-     * //   117
-     * //   102
-     * //   102
-     * //   101
-     * //   114
-     *
-     * for (const value of buf) {
-     *   console.log(value);
-     * }
-     * // Prints:
-     * //   98
-     * //   117
-     * //   102
-     * //   102
-     * //   101
-     * //   114
-     * ```
-     * @since v1.1.0
-     */
-    override fun values(): IterableIterator<Byte>
+    fun includes(
+        value: Buffer,
+        byteOffset: Double = definedExternally,
+        encoding: BufferEncoding = definedExternally,
+    ): Boolean
 
     companion object {
         /**
@@ -1998,41 +1779,34 @@ external class Buffer : Uint8Array {
          * @since v5.10.0
          */
         fun from(
-            arrayBuffer: Any, /* WithImplicitCoercion<ArrayBuffer | SharedArrayBuffer> */
-            byteOffset: Number = definedExternally,
-            length: Number = definedExternally,
+            arrayBuffer: WithImplicitCoercion<Any /* ArrayBuffer | SharedArrayBuffer */>,
+            byteOffset: Double = definedExternally,
+            length: Double = definedExternally,
         ): Buffer
 
         /**
          * Creates a new Buffer using the passed {data}
          * @param data data to create a new Buffer
          */
-        fun from(data: Uint8Array /* | ReadonlyArray<number> */): Buffer
-        fun from(data: Any /* WithImplicitCoercion<Uint8Array | ReadonlyArray<number> | string> */): Buffer
+        fun from(data: Uint8Array): Buffer
+
+        fun from(data: ReadonlyArray<Double>): Buffer
+        fun from(data: WithImplicitCoercion<Any /* Uint8Array | ReadonlyArray<number> | string */>): Buffer
+
         /**
          * Creates a new Buffer containing the given JavaScript string {str}.
          * If provided, the {encoding} parameter identifies the character encoding.
          * If not provided, {encoding} defaults to 'utf8'.
          */
+        fun from(str: WithImplicitCoercion<String>, encoding: BufferEncoding = definedExternally): Buffer
 
-        // HIDDEN METHOD START
-        /*
-        from(
-            str:
-                | WithImplicitCoercion<string>
-                | {
-                      [Symbol.toPrimitive](hint: 'string'): string;
-                  },
-            encoding?: BufferEncoding,
-        ): Buffer
-        */
-        // HIDDEN METHOD END
+        fun from(str: js.core.toPrimitiveSymbolHolder, encoding: BufferEncoding = definedExternally): Buffer
 
         /**
          * Creates a new Buffer using the passed {data}
          * @param values to create a new Buffer
          */
-        fun of(vararg items: Number): Buffer
+        fun of(vararg items: Any? /* js.core.ReadonlyArray<Double> */): Buffer
 
         /**
          * Returns `true` if `obj` is a `Buffer`, `false` otherwise.
@@ -2048,7 +1822,7 @@ external class Buffer : Uint8Array {
          * ```
          * @since v0.1.101
          */
-        fun isBuffer(obj: Any): Boolean /* obj is Buffer */
+        fun isBuffer(obj: Any?): Boolean
 
         /**
          * Returns `true` if `encoding` is the name of a supported character encoding,
@@ -2072,7 +1846,7 @@ external class Buffer : Uint8Array {
          * @since v0.9.1
          * @param encoding A character encoding name to check.
          */
-        fun isEncoding(encoding: String): Boolean /* encoding is BufferEncoding */
+        fun isEncoding(encoding: String): Boolean
 
         /**
          * Returns the byte length of a string when encoded using `encoding`.
@@ -2096,17 +1870,20 @@ external class Buffer : Uint8Array {
          *
          * When `string` is a
          * `Buffer`/[`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView)/[`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/-
- * Reference/Global_Objects/TypedArray)/[`ArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer)/[`SharedArrayBuffer`](https://develop-
- * er.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer), the byte length as reported by `.byteLength`is returned.
+             * Reference/Global_Objects/TypedArray)/[`ArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer)/[`SharedArrayBuffer`](https://develop-
+             * er.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer), the byte length as reported by `.byteLength`is returned.
          * @since v0.1.90
          * @param string A value to calculate the length of.
          * @param [encoding='utf8'] If `string` is a string, this is its encoding.
          * @return The number of bytes contained within `string`.
          */
-        fun byteLength(
-            string: Any, /* string | NodeJS.ArrayBufferView | ArrayBuffer | SharedArrayBuffer */
-            encoding: BufferEncoding = definedExternally,
-        ): Number
+        fun byteLength(string: String, encoding: BufferEncoding = definedExternally): Double
+
+        fun byteLength(string: js.buffer.ArrayBufferView, encoding: BufferEncoding = definedExternally): Double
+
+        fun byteLength(string: ArrayBuffer, encoding: BufferEncoding = definedExternally): Double
+
+        fun byteLength(string: SharedArrayBuffer, encoding: BufferEncoding = definedExternally): Double
 
         /**
          * Returns a new `Buffer` which is the result of concatenating all the `Buffer`instances in the `list` together.
@@ -2146,10 +1923,7 @@ external class Buffer : Uint8Array {
          * @param list List of `Buffer` or {@link Uint8Array} instances to concatenate.
          * @param totalLength Total length of the `Buffer` instances in `list` when concatenated.
          */
-        fun concat(
-            list: ReadonlyArray<Uint8Array>,
-            totalLength: Number = definedExternally,
-        ): Buffer
+        fun concat(list: ReadonlyArray<Uint8Array>, totalLength: Double = definedExternally): Buffer
 
         /**
          * Copies the underlying memory of `view` into a new `Buffer`.
@@ -2159,9 +1933,9 @@ external class Buffer : Uint8Array {
          * @param length The number of elements from `view` to copy.
          */
         fun copyBytesFrom(
-            view: TypedArray<*, *>,
-            offset: Number = definedExternally,
-            length: Number = definedExternally,
+            view: js.typedarrays.TypedArray<*, *>,
+            offset: Double = definedExternally,
+            length: Double = definedExternally,
         ): Buffer
 
         /**
@@ -2181,10 +1955,7 @@ external class Buffer : Uint8Array {
          * @since v0.11.13
          * @return Either `-1`, `0`, or `1`, depending on the result of the comparison. See `compare` for details.
          */
-        fun compare(
-            buf1: Uint8Array,
-            buf2: Uint8Array,
-        ): Int /* -1 | 0 | 1 */
+        fun compare(buf1: Uint8Array, buf2: Uint8Array): Int /* -1 | 0 | 1 */
 
         /**
          * Allocates a new `Buffer` of `size` bytes. If `fill` is `undefined`, the`Buffer` will be zero-filled.
@@ -2233,11 +2004,11 @@ external class Buffer : Uint8Array {
          * @param [fill=0] A value to pre-fill the new `Buffer` with.
          * @param [encoding='utf8'] If `fill` is a string, this is its encoding.
          */
-        fun alloc(
-            size: Number,
-            fill: Any /* string | Buffer | number */ = definedExternally,
-            encoding: BufferEncoding = definedExternally,
-        ): Buffer
+        fun alloc(size: Double, fill: String = definedExternally, encoding: BufferEncoding = definedExternally): Buffer
+
+        fun alloc(size: Double, fill: Buffer = definedExternally, encoding: BufferEncoding = definedExternally): Buffer
+
+        fun alloc(size: Double, fill: Double = definedExternally, encoding: BufferEncoding = definedExternally): Buffer
 
         /**
          * Allocates a new `Buffer` of `size` bytes. If `size` is larger than {@link constants.MAX_LENGTH} or smaller than 0, `ERR_INVALID_ARG_VALUE` is thrown.
@@ -2275,7 +2046,7 @@ external class Buffer : Uint8Array {
          * @since v5.10.0
          * @param size The desired length of the new `Buffer`.
          */
-        fun allocUnsafe(size: Number): Buffer
+        fun allocUnsafe(size: Double): Buffer
 
         /**
          * Allocates a new `Buffer` of `size` bytes. If `size` is larger than {@link constants.MAX_LENGTH} or smaller than 0, `ERR_INVALID_ARG_VALUE` is thrown. A zero-length `Buffer` is created
@@ -2321,13 +2092,14 @@ external class Buffer : Uint8Array {
          * @since v5.12.0
          * @param size The desired length of the new `Buffer`.
          */
-        fun allocUnsafeSlow(size: Number): Buffer
+        fun allocUnsafeSlow(size: Double): Buffer
 
         /**
          * This is the size (in bytes) of pre-allocated internal `Buffer` instances used
          * for pooling. This value may be modified.
          * @since v0.11.3
          */
-        var poolSize: Number
+        var poolSize: Double
     }
+
 }

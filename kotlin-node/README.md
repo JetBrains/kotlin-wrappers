@@ -14,3 +14,4 @@ Declarations in [src/jsMain/generatedLegacy](./src/jsMain/generatedLegacy) are g
 2) Unseal interfaces in `generatedLegacy`:
    * `ServerOpts`
 3) Improve anonymous type extraction (`privateKeyEncoding`)
+4) Get rid of `WithImplicitCoercion`

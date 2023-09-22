@@ -1,13 +1,10 @@
-// Automatically generated - do not modify!
+package node.buffer
 
-@file:Suppress(
+
+@Suppress(
     "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
-
-package node.buffer
-
-// language=JavaScript
 @JsName("""(/*union*/{ascii: 'ascii', utf8: 'utf8', utf16le: 'utf16le', ucs2: 'ucs2', latin1: 'latin1', binary: 'binary'}/*union*/)""")
 sealed external interface TranscodeEncoding {
     companion object {

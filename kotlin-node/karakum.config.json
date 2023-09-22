@@ -1,5 +1,6 @@
 {
     "input": [
+        "<nodeModules>/@types/node/buffer.d.ts",
         "<nodeModules>/@types/node/crypto.d.ts",
         "<nodeModules>/@types/node/dgram.d.ts",
         "<nodeModules>/@types/node/dns.d.ts",
@@ -9,6 +10,15 @@
     "output": "src/jsMain/generated",
     "ignoreOutput": [
         "**/__promisify__.kt",
+
+        "**/buffer/atob.kt",
+        "**/buffer/btoa.kt",
+        "**/buffer/__Blob.kt",
+        "**/buffer/Blob.kt",
+        "**/buffer/BlobOptions.kt",
+        "**/buffer/File.kt",
+        "**/buffer/FileOptions.kt",
+        "**/buffer/FileOptionsEndings.kt",
 
         "**/crypto/generatekeypair/**",
         "**/crypto/webcrypto/**",
@@ -25,6 +35,9 @@
     "libraryNameOutputPrefix": true,
     "granularity": "top-level",
     "moduleNameMapper": {
+        "^node/buffer": "node:buffer",
+        "^buffer": "node:buffer",
+
         "^node/crypto": "node:crypto",
         "^crypto": "node:crypto",
 
@@ -40,6 +53,13 @@
     "packageNameMapper": {
         "promises/(.+)\\.kt": "$1Async.kt",
         "SuspendAsync.kt": "Suspend.kt",
+
+        "^node/buffer/namespace.kt": "node/buffer/nodeNamespace.kt",
+        "^node/buffer/global/namespace.kt": "node/buffer/nodeGlobalNamespace.kt",
+        "^node/buffer.kt": "node/buffer/buffer.kt",
+        "^buffer/global/namespace.kt": "node/buffer/globalNamespace.kt",
+        "^buffer": "node/buffer",
+        "buffer/global/(.+)\\.kt": "buffer/$1.kt",
 
         "^node/crypto/namespace.kt": "node/crypto/nodeNamespace.kt",
         "^node/crypto.kt": "node/crypto/crypto.kt",
@@ -63,6 +83,28 @@
         ],
         "Suspend.kt": [
             "js.promise.await"
+        ],
+
+        "buffer/Buffer.kt": [
+            "js.buffer.ArrayBuffer",
+            "js.buffer.SharedArrayBuffer",
+            "js.core.ReadonlyArray",
+            "js.typedarrays.Uint8Array"
+        ],
+        "buffer/File.kt": [
+            "web.buffer.Blob"
+        ],
+        "buffer/isAscii.kt": [
+            "js.buffer.ArrayBuffer"
+        ],
+        "buffer/isUtf8.kt": [
+            "js.buffer.ArrayBuffer"
+        ],
+        "buffer/resolveObjectURL.kt": [
+            "web.buffer.Blob"
+        ],
+        "buffer/transcode.kt": [
+            "js.typedarrays.Uint8Array"
         ],
 
         "crypto/Certificate.kt": [
@@ -232,6 +274,9 @@
         ]
     },
     "namespaceStrategy": {
+        "buffer": "package",
+        "node:buffer": "ignore",
+
         "crypto": "package",
         "node:crypto": "ignore",
 
