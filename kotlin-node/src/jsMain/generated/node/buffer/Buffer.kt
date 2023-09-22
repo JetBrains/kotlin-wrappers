@@ -6,7 +6,6 @@ import js.core.ReadonlyArray
 import js.typedarrays.Uint8Array
 
 
-@JsModule("node:buffer")
 sealed external class Buffer : Uint8Array {
     constructor (str: String, encoding: BufferEncoding = definedExternally)
     constructor (size: Number)

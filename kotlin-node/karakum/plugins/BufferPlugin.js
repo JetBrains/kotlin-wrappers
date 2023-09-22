@@ -84,7 +84,6 @@ ${staticMembers}
             `
 
             return `
-@JsModule("node:buffer")
 ${karakum.ifPresent(inheritanceModifier, it => `${it} `)}external class Buffer${karakum.ifPresent(heritageClauses, it => ` : ${it}`)} {
 ${constructors}\n${members}\n${companionObject}
 }
