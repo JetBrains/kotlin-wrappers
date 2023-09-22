@@ -46,239 +46,239 @@ import node.buffer.Buffer
 external fun generateKeyPair(
     type: KeyType.rsa,
     options: RSAKeyPairPemPemOptions,
-    callback: (err: Error?, publicKey: String, privateKey: String) -> Unit,
+    callback: (err: Throwable /* JsError */?, publicKey: String, privateKey: String) -> Unit,
 ): Unit
 
 external fun generateKeyPair(
     type: KeyType.rsa,
     options: RSAKeyPairPemDerOptions,
-    callback: (err: Error?, publicKey: String, privateKey: Buffer) -> Unit,
+    callback: (err: Throwable /* JsError */?, publicKey: String, privateKey: Buffer) -> Unit,
 ): Unit
 
 external fun generateKeyPair(
     type: KeyType.rsa,
     options: RSAKeyPairDerPemOptions,
-    callback: (err: Error?, publicKey: Buffer, privateKey: String) -> Unit,
+    callback: (err: Throwable /* JsError */?, publicKey: Buffer, privateKey: String) -> Unit,
 ): Unit
 
 external fun generateKeyPair(
     type: KeyType.rsa,
     options: RSAKeyPairDerDerOptions,
-    callback: (err: Error?, publicKey: Buffer, privateKey: Buffer) -> Unit,
+    callback: (err: Throwable /* JsError */?, publicKey: Buffer, privateKey: Buffer) -> Unit,
 ): Unit
 
 external fun generateKeyPair(
     type: KeyType.rsa,
     options: RSAKeyPairKeyObjectOptions,
-    callback: (err: Error?, publicKey: KeyObject, privateKey: KeyObject) -> Unit,
+    callback: (err: Throwable /* JsError */?, publicKey: KeyObject, privateKey: KeyObject) -> Unit,
 ): Unit
 
 external fun generateKeyPair(
     type: KeyType.rsaPss,
     options: RSAPSSKeyPairPemPemOptions,
-    callback: (err: Error?, publicKey: String, privateKey: String) -> Unit,
+    callback: (err: Throwable /* JsError */?, publicKey: String, privateKey: String) -> Unit,
 ): Unit
 
 external fun generateKeyPair(
     type: KeyType.rsaPss,
     options: RSAPSSKeyPairPemDerOptions,
-    callback: (err: Error?, publicKey: String, privateKey: Buffer) -> Unit,
+    callback: (err: Throwable /* JsError */?, publicKey: String, privateKey: Buffer) -> Unit,
 ): Unit
 
 external fun generateKeyPair(
     type: KeyType.rsaPss,
     options: RSAPSSKeyPairDerPemOptions,
-    callback: (err: Error?, publicKey: Buffer, privateKey: String) -> Unit,
+    callback: (err: Throwable /* JsError */?, publicKey: Buffer, privateKey: String) -> Unit,
 ): Unit
 
 external fun generateKeyPair(
     type: KeyType.rsaPss,
     options: RSAPSSKeyPairDerDerOptions,
-    callback: (err: Error?, publicKey: Buffer, privateKey: Buffer) -> Unit,
+    callback: (err: Throwable /* JsError */?, publicKey: Buffer, privateKey: Buffer) -> Unit,
 ): Unit
 
 external fun generateKeyPair(
     type: KeyType.rsaPss,
     options: RSAPSSKeyPairKeyObjectOptions,
-    callback: (err: Error?, publicKey: KeyObject, privateKey: KeyObject) -> Unit,
+    callback: (err: Throwable /* JsError */?, publicKey: KeyObject, privateKey: KeyObject) -> Unit,
 ): Unit
 
 external fun generateKeyPair(
     type: KeyType.dsa,
     options: DSAKeyPairPemPemOptions,
-    callback: (err: Error?, publicKey: String, privateKey: String) -> Unit,
+    callback: (err: Throwable /* JsError */?, publicKey: String, privateKey: String) -> Unit,
 ): Unit
 
 external fun generateKeyPair(
     type: KeyType.dsa,
     options: DSAKeyPairPemDerOptions,
-    callback: (err: Error?, publicKey: String, privateKey: Buffer) -> Unit,
+    callback: (err: Throwable /* JsError */?, publicKey: String, privateKey: Buffer) -> Unit,
 ): Unit
 
 external fun generateKeyPair(
     type: KeyType.dsa,
     options: DSAKeyPairDerPemOptions,
-    callback: (err: Error?, publicKey: Buffer, privateKey: String) -> Unit,
+    callback: (err: Throwable /* JsError */?, publicKey: Buffer, privateKey: String) -> Unit,
 ): Unit
 
 external fun generateKeyPair(
     type: KeyType.dsa,
     options: DSAKeyPairDerDerOptions,
-    callback: (err: Error?, publicKey: Buffer, privateKey: Buffer) -> Unit,
+    callback: (err: Throwable /* JsError */?, publicKey: Buffer, privateKey: Buffer) -> Unit,
 ): Unit
 
 external fun generateKeyPair(
     type: KeyType.dsa,
     options: DSAKeyPairKeyObjectOptions,
-    callback: (err: Error?, publicKey: KeyObject, privateKey: KeyObject) -> Unit,
+    callback: (err: Throwable /* JsError */?, publicKey: KeyObject, privateKey: KeyObject) -> Unit,
 ): Unit
 
 external fun generateKeyPair(
     type: KeyType.ec,
     options: ECKeyPairPemPemOptions,
-    callback: (err: Error?, publicKey: String, privateKey: String) -> Unit,
+    callback: (err: Throwable /* JsError */?, publicKey: String, privateKey: String) -> Unit,
 ): Unit
 
 external fun generateKeyPair(
     type: KeyType.ec,
     options: ECKeyPairPemDerOptions,
-    callback: (err: Error?, publicKey: String, privateKey: Buffer) -> Unit,
+    callback: (err: Throwable /* JsError */?, publicKey: String, privateKey: Buffer) -> Unit,
 ): Unit
 
 external fun generateKeyPair(
     type: KeyType.ec,
     options: ECKeyPairDerPemOptions,
-    callback: (err: Error?, publicKey: Buffer, privateKey: String) -> Unit,
+    callback: (err: Throwable /* JsError */?, publicKey: Buffer, privateKey: String) -> Unit,
 ): Unit
 
 external fun generateKeyPair(
     type: KeyType.ec,
     options: ECKeyPairDerDerOptions,
-    callback: (err: Error?, publicKey: Buffer, privateKey: Buffer) -> Unit,
+    callback: (err: Throwable /* JsError */?, publicKey: Buffer, privateKey: Buffer) -> Unit,
 ): Unit
 
 external fun generateKeyPair(
     type: KeyType.ec,
     options: ECKeyPairKeyObjectOptions,
-    callback: (err: Error?, publicKey: KeyObject, privateKey: KeyObject) -> Unit,
+    callback: (err: Throwable /* JsError */?, publicKey: KeyObject, privateKey: KeyObject) -> Unit,
 ): Unit
 
 external fun generateKeyPair(
     type: KeyType.ed25519,
     options: ED25519KeyPairPemPemOptions,
-    callback: (err: Error?, publicKey: String, privateKey: String) -> Unit,
+    callback: (err: Throwable /* JsError */?, publicKey: String, privateKey: String) -> Unit,
 ): Unit
 
 external fun generateKeyPair(
     type: KeyType.ed25519,
     options: ED25519KeyPairPemDerOptions,
-    callback: (err: Error?, publicKey: String, privateKey: Buffer) -> Unit,
+    callback: (err: Throwable /* JsError */?, publicKey: String, privateKey: Buffer) -> Unit,
 ): Unit
 
 external fun generateKeyPair(
     type: KeyType.ed25519,
     options: ED25519KeyPairDerPemOptions,
-    callback: (err: Error?, publicKey: Buffer, privateKey: String) -> Unit,
+    callback: (err: Throwable /* JsError */?, publicKey: Buffer, privateKey: String) -> Unit,
 ): Unit
 
 external fun generateKeyPair(
     type: KeyType.ed25519,
     options: ED25519KeyPairDerDerOptions,
-    callback: (err: Error?, publicKey: Buffer, privateKey: Buffer) -> Unit,
+    callback: (err: Throwable /* JsError */?, publicKey: Buffer, privateKey: Buffer) -> Unit,
 ): Unit
 
 external fun generateKeyPair(
     type: KeyType.ed25519,
     options: ED25519KeyPairKeyObjectOptions?,
-    callback: (err: Error?, publicKey: KeyObject, privateKey: KeyObject) -> Unit,
+    callback: (err: Throwable /* JsError */?, publicKey: KeyObject, privateKey: KeyObject) -> Unit,
 ): Unit
 
 external fun generateKeyPair(
     type: KeyType.ed448,
     options: ED448KeyPairPemPemOptions,
-    callback: (err: Error?, publicKey: String, privateKey: String) -> Unit,
+    callback: (err: Throwable /* JsError */?, publicKey: String, privateKey: String) -> Unit,
 ): Unit
 
 external fun generateKeyPair(
     type: KeyType.ed448,
     options: ED448KeyPairPemDerOptions,
-    callback: (err: Error?, publicKey: String, privateKey: Buffer) -> Unit,
+    callback: (err: Throwable /* JsError */?, publicKey: String, privateKey: Buffer) -> Unit,
 ): Unit
 
 external fun generateKeyPair(
     type: KeyType.ed448,
     options: ED448KeyPairDerPemOptions,
-    callback: (err: Error?, publicKey: Buffer, privateKey: String) -> Unit,
+    callback: (err: Throwable /* JsError */?, publicKey: Buffer, privateKey: String) -> Unit,
 ): Unit
 
 external fun generateKeyPair(
     type: KeyType.ed448,
     options: ED448KeyPairDerDerOptions,
-    callback: (err: Error?, publicKey: Buffer, privateKey: Buffer) -> Unit,
+    callback: (err: Throwable /* JsError */?, publicKey: Buffer, privateKey: Buffer) -> Unit,
 ): Unit
 
 external fun generateKeyPair(
     type: KeyType.ed448,
     options: ED448KeyPairKeyObjectOptions?,
-    callback: (err: Error?, publicKey: KeyObject, privateKey: KeyObject) -> Unit,
+    callback: (err: Throwable /* JsError */?, publicKey: KeyObject, privateKey: KeyObject) -> Unit,
 ): Unit
 
 external fun generateKeyPair(
     type: KeyType.x25519,
     options: X25519KeyPairPemPemOptions,
-    callback: (err: Error?, publicKey: String, privateKey: String) -> Unit,
+    callback: (err: Throwable /* JsError */?, publicKey: String, privateKey: String) -> Unit,
 ): Unit
 
 external fun generateKeyPair(
     type: KeyType.x25519,
     options: X25519KeyPairPemDerOptions,
-    callback: (err: Error?, publicKey: String, privateKey: Buffer) -> Unit,
+    callback: (err: Throwable /* JsError */?, publicKey: String, privateKey: Buffer) -> Unit,
 ): Unit
 
 external fun generateKeyPair(
     type: KeyType.x25519,
     options: X25519KeyPairDerPemOptions,
-    callback: (err: Error?, publicKey: Buffer, privateKey: String) -> Unit,
+    callback: (err: Throwable /* JsError */?, publicKey: Buffer, privateKey: String) -> Unit,
 ): Unit
 
 external fun generateKeyPair(
     type: KeyType.x25519,
     options: X25519KeyPairDerDerOptions,
-    callback: (err: Error?, publicKey: Buffer, privateKey: Buffer) -> Unit,
+    callback: (err: Throwable /* JsError */?, publicKey: Buffer, privateKey: Buffer) -> Unit,
 ): Unit
 
 external fun generateKeyPair(
     type: KeyType.x25519,
     options: X25519KeyPairKeyObjectOptions?,
-    callback: (err: Error?, publicKey: KeyObject, privateKey: KeyObject) -> Unit,
+    callback: (err: Throwable /* JsError */?, publicKey: KeyObject, privateKey: KeyObject) -> Unit,
 ): Unit
 
 external fun generateKeyPair(
     type: KeyType.x448,
     options: X448KeyPairPemPemOptions,
-    callback: (err: Error?, publicKey: String, privateKey: String) -> Unit,
+    callback: (err: Throwable /* JsError */?, publicKey: String, privateKey: String) -> Unit,
 ): Unit
 
 external fun generateKeyPair(
     type: KeyType.x448,
     options: X448KeyPairPemDerOptions,
-    callback: (err: Error?, publicKey: String, privateKey: Buffer) -> Unit,
+    callback: (err: Throwable /* JsError */?, publicKey: String, privateKey: Buffer) -> Unit,
 ): Unit
 
 external fun generateKeyPair(
     type: KeyType.x448,
     options: X448KeyPairDerPemOptions,
-    callback: (err: Error?, publicKey: Buffer, privateKey: String) -> Unit,
+    callback: (err: Throwable /* JsError */?, publicKey: Buffer, privateKey: String) -> Unit,
 ): Unit
 
 external fun generateKeyPair(
     type: KeyType.x448,
     options: X448KeyPairDerDerOptions,
-    callback: (err: Error?, publicKey: Buffer, privateKey: Buffer) -> Unit,
+    callback: (err: Throwable /* JsError */?, publicKey: Buffer, privateKey: Buffer) -> Unit,
 ): Unit
 
 external fun generateKeyPair(
     type: KeyType.x448,
     options: X448KeyPairKeyObjectOptions?,
-    callback: (err: Error?, publicKey: KeyObject, privateKey: KeyObject) -> Unit,
+    callback: (err: Throwable /* JsError */?, publicKey: KeyObject, privateKey: KeyObject) -> Unit,
 ): Unit

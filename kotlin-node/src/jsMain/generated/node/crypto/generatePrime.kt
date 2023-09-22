@@ -31,22 +31,22 @@ import js.buffer.ArrayBuffer
  * @since v15.8.0
  * @param size The size (in bits) of the prime to generate.
  */
-external fun generatePrime(size: Number, callback: (err: Error?, prime: ArrayBuffer) -> Unit): Unit
+external fun generatePrime(size: Number, callback: (err: Throwable /* JsError */?, prime: ArrayBuffer) -> Unit): Unit
 
 external fun generatePrime(
     size: Number,
     options: GeneratePrimeOptionsBigInt,
-    callback: (err: Error?, prime: js.core.BigInt) -> Unit,
+    callback: (err: Throwable /* JsError */?, prime: js.core.BigInt) -> Unit,
 ): Unit
 
 external fun generatePrime(
     size: Number,
     options: GeneratePrimeOptionsArrayBuffer,
-    callback: (err: Error?, prime: ArrayBuffer) -> Unit,
+    callback: (err: Throwable /* JsError */?, prime: ArrayBuffer) -> Unit,
 ): Unit
 
 external fun generatePrime(
     size: Number,
     options: GeneratePrimeOptions,
-    callback: (err: Error?, prime: Any /* ArrayBuffer | bigint */) -> Unit,
+    callback: (err: Throwable /* JsError */?, prime: Any /* ArrayBuffer | bigint */) -> Unit,
 ): Unit

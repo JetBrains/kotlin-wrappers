@@ -10,7 +10,7 @@ sealed external interface ConnectionOptions : SecureContextOptions, CommonConnec
 
     var socket: node.stream.Duplex?// Establish secure connection on a given socket rather than creating a new socket
 
-    var checkServerIdentity: ((hostname: String, cert: PeerCertificate) -> Error?)?
+    var checkServerIdentity: ((hostname: String, cert: PeerCertificate) -> Throwable /* JsError */?)?
     var servername: String?// SNI TLS Extension
 
     var session: Buffer?

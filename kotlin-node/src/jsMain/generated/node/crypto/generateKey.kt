@@ -22,5 +22,5 @@ package node.crypto
 external fun generateKey(
     type: GenerateKeyType,
     options: GenerateKeyOptions,
-    callback: (err: Error?, key: KeyObject) -> Unit,
+    callback: (err: Throwable /* JsError */?, key: KeyObject) -> Unit,
 ): Unit

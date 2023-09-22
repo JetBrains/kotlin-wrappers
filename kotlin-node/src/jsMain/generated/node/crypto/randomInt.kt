@@ -53,6 +53,6 @@ external fun randomInt(max: Number): Double
 
 external fun randomInt(min: Number, max: Number): Double
 
-external fun randomInt(max: Number, callback: (err: Error?, value: Number) -> Unit): Unit
+external fun randomInt(max: Number, callback: (err: Throwable /* JsError */?, value: Number) -> Unit): Unit
 
-external fun randomInt(min: Number, max: Number, callback: (err: Error?, value: Number) -> Unit): Unit
+external fun randomInt(min: Number, max: Number, callback: (err: Throwable /* JsError */?, value: Number) -> Unit): Unit

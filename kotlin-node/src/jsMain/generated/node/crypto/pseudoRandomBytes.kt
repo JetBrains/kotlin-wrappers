@@ -6,4 +6,4 @@ import node.buffer.Buffer
 
 external fun pseudoRandomBytes(size: Number): Buffer
 
-external fun pseudoRandomBytes(size: Number, callback: (err: Error?, buf: Buffer) -> Unit): Unit
+external fun pseudoRandomBytes(size: Number, callback: (err: Throwable /* JsError */?, buf: Buffer) -> Unit): Unit

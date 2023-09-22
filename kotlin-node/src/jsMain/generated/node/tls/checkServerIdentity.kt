@@ -26,4 +26,4 @@ package node.tls
  * @param hostname The host name or IP address to verify the certificate against.
  * @param cert A `certificate object` representing the peer's certificate.
  */
-external fun checkServerIdentity(hostname: String, cert: PeerCertificate): Error?
+external fun checkServerIdentity(hostname: String, cert: PeerCertificate): Throwable /* JsError */?

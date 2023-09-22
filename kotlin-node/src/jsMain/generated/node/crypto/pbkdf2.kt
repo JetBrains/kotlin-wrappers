@@ -60,5 +60,5 @@ external fun pbkdf2(
     iterations: Number,
     keylen: Number,
     digest: String,
-    callback: (err: Error?, derivedKey: Buffer) -> Unit,
+    callback: (err: Throwable /* JsError */?, derivedKey: Buffer) -> Unit,
 ): Unit

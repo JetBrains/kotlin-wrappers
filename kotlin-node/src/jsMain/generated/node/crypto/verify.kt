@@ -52,7 +52,7 @@ external fun verify(
     data: js.buffer.ArrayBufferView,
     key: KeyLike,
     signature: js.buffer.ArrayBufferView,
-    callback: (error: Error?, result: Boolean) -> Unit,
+    callback: (error: Throwable /* JsError */?, result: Boolean) -> Unit,
 ): Unit
 
 external fun verify(
@@ -60,7 +60,7 @@ external fun verify(
     data: js.buffer.ArrayBufferView,
     key: VerifyKeyObjectInput,
     signature: js.buffer.ArrayBufferView,
-    callback: (error: Error?, result: Boolean) -> Unit,
+    callback: (error: Throwable /* JsError */?, result: Boolean) -> Unit,
 ): Unit
 
 external fun verify(
@@ -68,7 +68,7 @@ external fun verify(
     data: js.buffer.ArrayBufferView,
     key: VerifyPublicKeyInput,
     signature: js.buffer.ArrayBufferView,
-    callback: (error: Error?, result: Boolean) -> Unit,
+    callback: (error: Throwable /* JsError */?, result: Boolean) -> Unit,
 ): Unit
 
 external fun verify(
@@ -76,5 +76,5 @@ external fun verify(
     data: js.buffer.ArrayBufferView,
     key: VerifyJsonWebKeyInput,
     signature: js.buffer.ArrayBufferView,
-    callback: (error: Error?, result: Boolean) -> Unit,
+    callback: (error: Throwable /* JsError */?, result: Boolean) -> Unit,
 ): Unit

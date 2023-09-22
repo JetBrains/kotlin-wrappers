@@ -36,7 +36,7 @@ sealed external interface CommonConnectionOptions {
      * SecureContext.) If SNICallback wasn't provided the default callback
      * with high-level API will be used (see below).
      */
-    var SNICallback: ((servername: String, cb: (err: Error?, ctx: SecureContext? /* use undefined for default */) -> Unit) -> Unit)?
+    var SNICallback: ((servername: String, cb: (err: Throwable /* JsError */?, ctx: SecureContext? /* use undefined for default */) -> Unit) -> Unit)?
 
     /**
      * If true the server will reject any connection which is not

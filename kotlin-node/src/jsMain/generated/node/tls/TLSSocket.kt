@@ -34,7 +34,7 @@ external class TLSSocket : node.net.Socket {
      * property is set only when `tlsSocket.authorized === false`.
      * @since v0.11.4
      */
-    var authorizationError: Error
+    var authorizationError: Throwable /* JsError */
 
     /**
      * Always returns `true`. This may be used to distinguish TLS sockets from regular`net.Socket` instances.
@@ -207,7 +207,7 @@ external class TLSSocket : node.net.Socket {
      * an error, unless the `tlsSocket` has been destroyed, in which case `callback` will not be called at all.
      * @return `true` if renegotiation was initiated, `false` otherwise.
      */
-    fun renegotiate(options: TLSSocketRenegotiateOptions, callback: (err: Error?) -> Unit): Boolean?
+    fun renegotiate(options: TLSSocketRenegotiateOptions, callback: (err: Throwable /* JsError */?) -> Unit): Boolean?
 
     /**
      * The `tlsSocket.setMaxSendFragment()` method sets the maximum TLS fragment size.
