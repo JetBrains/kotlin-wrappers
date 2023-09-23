@@ -13,5 +13,5 @@ sealed external interface SocketOptions : Abortable {
     var ipv6Only: Boolean?
     var recvBufferSize: Double?
     var sendBufferSize: Double?
-    var lookup: ((hostname: String, options: node.dns.LookupOneOptions, callback: (err: node.ErrnoException?, address: String, family: Number) -> Unit) -> Unit)?
+    var lookup: ((hostname: String, options: node.dns.LookupOneOptions, callback: (err: node.ErrnoException?, address: String, family: Double) -> Unit) -> Unit)?
 }

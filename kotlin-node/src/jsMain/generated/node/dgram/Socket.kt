@@ -286,51 +286,51 @@ external class Socket : EventEmitter {
         msg: String,
         port: Number = definedExternally,
         address: String = definedExternally,
-        callback: (error: Throwable /* JsError */?, bytes: Number) -> Unit = definedExternally,
+        callback: (error: Throwable /* JsError */?, bytes: Double) -> Unit = definedExternally,
     ): Unit
 
     fun send(
         msg: Uint8Array,
         port: Number = definedExternally,
         address: String = definedExternally,
-        callback: (error: Throwable /* JsError */?, bytes: Number) -> Unit = definedExternally,
+        callback: (error: Throwable /* JsError */?, bytes: Double) -> Unit = definedExternally,
     ): Unit
 
     fun send(
         msg: ReadonlyArray<Any?>,
         port: Number = definedExternally,
         address: String = definedExternally,
-        callback: (error: Throwable /* JsError */?, bytes: Number) -> Unit = definedExternally,
+        callback: (error: Throwable /* JsError */?, bytes: Double) -> Unit = definedExternally,
     ): Unit
 
     fun send(
         msg: String,
         port: Number = definedExternally,
-        callback: (error: Throwable /* JsError */?, bytes: Number) -> Unit = definedExternally,
+        callback: (error: Throwable /* JsError */?, bytes: Double) -> Unit = definedExternally,
     ): Unit
 
     fun send(
         msg: Uint8Array,
         port: Number = definedExternally,
-        callback: (error: Throwable /* JsError */?, bytes: Number) -> Unit = definedExternally,
+        callback: (error: Throwable /* JsError */?, bytes: Double) -> Unit = definedExternally,
     ): Unit
 
     fun send(
         msg: ReadonlyArray<Any?>,
         port: Number = definedExternally,
-        callback: (error: Throwable /* JsError */?, bytes: Number) -> Unit = definedExternally,
+        callback: (error: Throwable /* JsError */?, bytes: Double) -> Unit = definedExternally,
     ): Unit
 
-    fun send(msg: String, callback: (error: Throwable /* JsError */?, bytes: Number) -> Unit = definedExternally): Unit
+    fun send(msg: String, callback: (error: Throwable /* JsError */?, bytes: Double) -> Unit = definedExternally): Unit
 
     fun send(
         msg: Uint8Array,
-        callback: (error: Throwable /* JsError */?, bytes: Number) -> Unit = definedExternally,
+        callback: (error: Throwable /* JsError */?, bytes: Double) -> Unit = definedExternally,
     ): Unit
 
     fun send(
         msg: ReadonlyArray<Any?>,
-        callback: (error: Throwable /* JsError */?, bytes: Number) -> Unit = definedExternally,
+        callback: (error: Throwable /* JsError */?, bytes: Double) -> Unit = definedExternally,
     ): Unit
 
     fun send(
@@ -339,7 +339,7 @@ external class Socket : EventEmitter {
         length: Number,
         port: Number = definedExternally,
         address: String = definedExternally,
-        callback: (error: Throwable /* JsError */?, bytes: Number) -> Unit = definedExternally,
+        callback: (error: Throwable /* JsError */?, bytes: Double) -> Unit = definedExternally,
     ): Unit
 
     fun send(
@@ -348,7 +348,7 @@ external class Socket : EventEmitter {
         length: Number,
         port: Number = definedExternally,
         address: String = definedExternally,
-        callback: (error: Throwable /* JsError */?, bytes: Number) -> Unit = definedExternally,
+        callback: (error: Throwable /* JsError */?, bytes: Double) -> Unit = definedExternally,
     ): Unit
 
     fun send(
@@ -356,7 +356,7 @@ external class Socket : EventEmitter {
         offset: Number,
         length: Number,
         port: Number = definedExternally,
-        callback: (error: Throwable /* JsError */?, bytes: Number) -> Unit = definedExternally,
+        callback: (error: Throwable /* JsError */?, bytes: Double) -> Unit = definedExternally,
     ): Unit
 
     fun send(
@@ -364,21 +364,21 @@ external class Socket : EventEmitter {
         offset: Number,
         length: Number,
         port: Number = definedExternally,
-        callback: (error: Throwable /* JsError */?, bytes: Number) -> Unit = definedExternally,
+        callback: (error: Throwable /* JsError */?, bytes: Double) -> Unit = definedExternally,
     ): Unit
 
     fun send(
         msg: String,
         offset: Number,
         length: Number,
-        callback: (error: Throwable /* JsError */?, bytes: Number) -> Unit = definedExternally,
+        callback: (error: Throwable /* JsError */?, bytes: Double) -> Unit = definedExternally,
     ): Unit
 
     fun send(
         msg: Uint8Array,
         offset: Number,
         length: Number,
-        callback: (error: Throwable /* JsError */?, bytes: Number) -> Unit = definedExternally,
+        callback: (error: Throwable /* JsError */?, bytes: Double) -> Unit = definedExternally,
     ): Unit
 
     /**
