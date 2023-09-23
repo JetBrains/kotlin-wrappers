@@ -12,7 +12,5 @@ sealed external interface DSAKeyPairOptions<PubF : KeyFormat, PrivF : KeyFormat>
      */
     var divisorLength: Double
     var publicKeyEncoding: DSAKeyPairOptionsPublicKeyEncoding<PubF>
-    var privateKeyEncoding: Any /* BasePrivateKeyEncodingOptions<PrivF> & {
-    type: 'pkcs8';
-} */
+    var privateKeyEncoding: DSAKeyPairOptionsPrivateKeyEncoding<PrivF>
 }

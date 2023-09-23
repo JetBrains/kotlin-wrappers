@@ -13,7 +13,5 @@ sealed external interface RSAKeyPairOptions<PubF : KeyFormat, PrivF : KeyFormat>
      */
     var publicExponent: Double?
     var publicKeyEncoding: RSAKeyPairOptionsPublicKeyEncoding<PubF>
-    var privateKeyEncoding: Any /* BasePrivateKeyEncodingOptions<PrivF> & {
-    type: 'pkcs1' | 'pkcs8';
-} */
+    var privateKeyEncoding: RSAKeyPairOptionsPrivateKeyEncoding<PrivF>
 }

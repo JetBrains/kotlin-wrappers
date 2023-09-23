@@ -28,7 +28,5 @@ sealed external interface RSAPSSKeyPairOptions<PubF : KeyFormat, PrivF : KeyForm
      */
     var saltLength: String?
     var publicKeyEncoding: RSAPSSKeyPairOptionsPublicKeyEncoding<PubF>
-    var privateKeyEncoding: Any /* BasePrivateKeyEncodingOptions<PrivF> & {
-    type: 'pkcs8';
-} */
+    var privateKeyEncoding: RSAPSSKeyPairOptionsPrivateKeyEncoding<PrivF>
 }
