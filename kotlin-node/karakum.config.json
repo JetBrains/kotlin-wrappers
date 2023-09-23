@@ -5,6 +5,7 @@
         "<nodeModules>/@types/node/dgram.d.ts",
         "<nodeModules>/@types/node/dns.d.ts",
         "<nodeModules>/@types/node/dns/promises.d.ts",
+        "<nodeModules>/@types/node/fs.d.ts",
         "<nodeModules>/@types/node/tls.d.ts"
     ],
     "output": "src/jsMain/generated",
@@ -29,7 +30,12 @@
         "**/dns/getServersAsync.kt",
         "**/dns/setDefaultResultOrderAsync.kt",
         "**/dns/SetDefaultResultOrderOrderAsync.kt",
-        "**/dns/setServersAsync.kt"
+        "**/dns/setServersAsync.kt",
+
+        "**/fs/read/**",
+        "**/fs/readdir/**",
+        "**/fs/readfile/**",
+        "**/fs/write/**"
     ],
     "libraryName": "node",
     "libraryNameOutputPrefix": true,
@@ -46,6 +52,9 @@
 
         "^node/dns": "node:dns",
         "^dns": "node:dns",
+
+        "^node/fs": "node:fs",
+        "^fs": "node:fs",
 
         "^node/tls": "node:tls",
         "^tls": "node:tls"
@@ -75,6 +84,10 @@
         "^node/dns/namespace.kt": "node/dns/nodeNamespace.kt",
         "^node/dns.kt": "node/dns/dns.kt",
         "^dns": "node/dns",
+
+        "^node/fs/namespace.kt": "node/fs/nodeNamespace.kt",
+        "^node/fs.kt": "node/fs/fs.kt",
+        "^fs": "node/fs",
 
         "^node/tls/namespace.kt": "node/tls/nodeNamespace.kt",
         "^node/tls.kt": "node/tls/tls.kt",
@@ -110,75 +123,11 @@
             "js.typedarrays.Uint8Array"
         ],
 
-        "crypto/Certificate.kt": [
-            "node.buffer.Buffer"
-        ],
-        "crypto/Cipher.kt": [
-            "node.buffer.Buffer",
-            "node.buffer.BufferEncoding"
-        ],
-        "crypto/CipherCCM.kt": [
-            "node.buffer.Buffer"
-        ],
-        "crypto/CipherGCM.kt": [
-            "node.buffer.Buffer"
-        ],
-        "crypto/CipherOCB.kt": [
-            "node.buffer.Buffer"
-        ],
-        "crypto/Decipher.kt": [
-            "node.buffer.Buffer",
-            "node.buffer.BufferEncoding"
-        ],
-        "crypto/DiffieHellman.kt": [
-            "node.buffer.Buffer",
-            "node.buffer.BufferEncoding"
-        ],
-        "crypto/DiffieHellmanGroupConstructor.kt": [
-            "node.buffer.Buffer"
-        ],
-        "crypto/ECDH.kt": [
-            "node.buffer.Buffer"
-        ],
-        "crypto/Hash.kt": [
-            "node.buffer.Buffer"
-        ],
-        "crypto/Hmac.kt": [
-            "node.buffer.Buffer"
-        ],
-        "crypto/KeyObject.kt": [
-            "node.buffer.Buffer"
-        ],
-        "crypto/Sign.kt": [
-            "node.buffer.Buffer"
-        ],
         "crypto/X509Certificate.kt": [
-            "node.buffer.Buffer",
             "node.tls.PeerCertificate"
         ],
         "crypto/createDiffieHellman.kt": [
             "js.buffer.ArrayBuffer"
-        ],
-        "crypto/createPrivateKey.kt": [
-            "node.buffer.Buffer"
-        ],
-        "crypto/createPublicKey.kt": [
-            "node.buffer.Buffer"
-        ],
-        "crypto/createSecretKey.kt": [
-            "node.buffer.BufferEncoding"
-        ],
-        "crypto/diffieHellman.fun.kt": [
-            "node.buffer.Buffer",
-            "node.buffer.BufferEncoding"
-        ],
-        "crypto/generateKeyPair.kt": [
-            "node.buffer.Buffer",
-            "node.buffer.BufferEncoding"
-        ],
-        "crypto/generateKeyPairSync.kt": [
-            "node.buffer.Buffer",
-            "node.buffer.BufferEncoding"
         ],
         "crypto/generatePrime.kt": [
             "js.buffer.ArrayBuffer"
@@ -192,50 +141,10 @@
         "crypto/hkdfSync.kt": [
             "js.buffer.ArrayBuffer"
         ],
-        "crypto/namespace.kt": [
-            "node.buffer.BufferEncoding"
-        ],
-        "crypto/pbkdf2.kt": [
-            "node.buffer.Buffer"
-        ],
-        "crypto/pbkdf2Sync.kt": [
-            "node.buffer.Buffer"
-        ],
-        "crypto/privateDecrypt.kt": [
-            "node.buffer.Buffer"
-        ],
-        "crypto/privateEncrypt.kt": [
-            "node.buffer.Buffer"
-        ],
-        "crypto/pseudoRandomBytes.kt": [
-            "node.buffer.Buffer"
-        ],
-        "crypto/publicDecrypt.kt": [
-            "node.buffer.Buffer"
-        ],
-        "crypto/publicEncrypt.kt": [
-            "node.buffer.Buffer"
-        ],
-        "crypto/randomBytes.kt": [
-            "node.buffer.Buffer"
-        ],
-        "crypto/scrypt.kt": [
-            "node.buffer.Buffer"
-        ],
-        "crypto/scryptSync.kt": [
-            "node.buffer.Buffer"
-        ],
-        "crypto/sign.fun.kt": [
-            "node.buffer.Buffer"
-        ],
 
-        "dgram/createSocket.kt": [
-            "node.buffer.Buffer"
-        ],
         "dgram/Socket.kt": [
             "js.core.ReadonlyArray",
             "js.typedarrays.Uint8Array",
-            "node.buffer.Buffer",
             "node.events.EventEmitter",
             "node.net.AddressInfo"
         ],
@@ -250,27 +159,8 @@
             "js.promise.await"
         ],
 
-        "tls/ConnectionOptions.kt": [
-            "node.buffer.Buffer"
-        ],
-        "tls/PeerCertificate.kt": [
-            "node.buffer.Buffer"
-        ],
-        "tls/SecureContextOptions.kt": [
-            "node.buffer.Buffer"
-        ],
-        "tls/Server.kt": [
-            "node.buffer.Buffer"
-        ],
         "tls/TLSSocket.kt": [
-            "node.buffer.Buffer",
             "node.crypto.X509Certificate"
-        ],
-        "tls/TLSSocketOptions.kt": [
-            "node.buffer.Buffer"
-        ],
-        "TlsOptions.kt": [
-            "node.buffer.Buffer"
         ],
         "tls/namespace.kt": [
             "js.core.ReadonlyArray"
@@ -288,6 +178,9 @@
 
         "dns": "package",
         "node:dns": "ignore",
+
+        "fs": "package",
+        "node:fs": "ignore",
 
         "tls": "package",
         "node:tls": "ignore"
