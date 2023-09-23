@@ -6,6 +6,8 @@ import react.ComponentType
 external interface SelectComponentsConfig<Option : Any, Group : GroupBase<Option>> {
     var ClearIndicator: ComponentType<ClearIndicatorProps>?
     var DropdownIndicator: ComponentType<DropdownIndicatorProps>?
+    var Group: ComponentType<GroupProps<Option, Group>>?
+    var GroupHeading: ComponentType<GroupHeadingProps<Option, Group>>?
     var Menu: ComponentType<MenuProps>?
     var MultiValueRemove: ComponentType<MultiValueRemoveProps<Option, Group>>?
     var MultiValueContainer: ComponentType<MultiValueGenericProps<Option, Group>>?

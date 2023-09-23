@@ -21,11 +21,13 @@ fun <P : Props> Styles(
 }
 
 
-external interface StylesConfig<Option, Group : GroupBase<Option>> {
+external interface StylesConfig<Option : Any, Group : GroupBase<Option>> {
     var clearIndicator: StylesConfigFunction<ClearIndicatorProps>?
     var container: StylesConfigFunction<ContainerProps>?
     var control: StylesConfigFunction<ControlProps>
     var dropdownIndicator: StylesConfigFunction<DropdownIndicatorProps>?
+    var group: StylesConfigFunction<GroupProps<Option, Group>>?
+    var groupHeading: StylesConfigFunction<GroupHeadingProps<Option, Group>>?
     var indicatorsContainer: StylesConfigFunction<IndicatorsContainerProps>?
     var indicatorSeparator: StylesConfigFunction<IndicatorSeparatorProps>?
     var input: StylesConfigFunction<InputSpecificProps>?
@@ -39,7 +41,7 @@ external interface StylesConfig<Option, Group : GroupBase<Option>> {
     var valueContainer: StylesConfigFunction<ValueContainerProps>?
 }
 
-inline fun <Option, Group : GroupBase<Option>> StylesConfig(
+inline fun <Option : Any, Group : GroupBase<Option>> StylesConfig(
     block: StylesConfig<Option, Group>.() -> Unit,
 ): StylesConfig<Option, Group> =
     jso(block)
