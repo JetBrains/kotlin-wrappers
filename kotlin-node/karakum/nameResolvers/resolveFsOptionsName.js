@@ -66,6 +66,30 @@ export default (node, context) => {
             infix = "Buffer"
         }
 
+        if (
+            ts.isIntersectionTypeNode(node)
+            && node.types[0]
+            && ts.isTypeReferenceNode(node.types[0])
+            && ts.isIdentifier(node.types[0].typeName)
+            && node.types[0].typeName.text === "ObjectEncodingOptions"
+        ) {
+            if (
+                node.types[1]
+                && ts.isTypeLiteralNode(node.types[1])
+                && node.types[1].members.some(member => (
+                    ts.isPropertySignature(member)
+                    && ts.isIdentifier(member.name)
+                    && member.name.text === "withFileTypes"
+                    && ts.isLiteralTypeNode(member.type)
+                    && member.type.literal.kind === ts.SyntaxKind.TrueKeyword
+                ))
+            ) {
+                infix = "WithFileTypes"
+            } else {
+                infix = ""
+            }
+        }
+
         return `${karakum.capitalize(parentName)}${infix}${karakum.capitalize(parameterName)}`
     }
 
@@ -128,7 +152,7 @@ export default (node, context) => {
         || parentName === "lstat"
         || parentName === "watchFile"
     ) {
-        let infix = parentName === "stat" ? "Simple" : ""
+        let infix = parentName === "stat" || parentName === "watchFile" ? "Simple" : ""
 
         if (
             ts.isIntersectionTypeNode(node)
@@ -146,7 +170,9 @@ export default (node, context) => {
         }
 
         return `${karakum.capitalize(parentName)}${infix}${karakum.capitalize(parameterName)}`
-    }if (
+    }
+
+    if (
         parentName === "mkdir"
         || parentName === "mkdirSync"
     ) {

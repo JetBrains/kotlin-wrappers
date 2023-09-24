@@ -176,6 +176,12 @@
         "fs/StatsBase.kt": [
             "kotlin.js.Date"
         ],
+        "fs/StatWatcher.kt": [
+            "node.events.EventEmitter"
+        ],
+        "fs/WatchOptions.kt": [
+            "node.events.Abortable"
+        ],
         "fs/appendFile.kt": [
             "js.typedarrays.Uint8Array"
         ],
