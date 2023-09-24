@@ -11,6 +11,7 @@
     "output": "src/jsMain/generated",
     "ignoreOutput": [
         "**/__promisify__.kt",
+        "**/__promisify__*.kt",
 
         "**/buffer/atob.kt",
         "**/buffer/btoa.kt",
@@ -30,12 +31,7 @@
         "**/dns/getServersAsync.kt",
         "**/dns/setDefaultResultOrderAsync.kt",
         "**/dns/SetDefaultResultOrderOrderAsync.kt",
-        "**/dns/setServersAsync.kt",
-
-        "**/fs/read/**",
-        "**/fs/readdir/**",
-        "**/fs/readfile/**",
-        "**/fs/write/**"
+        "**/dns/setServersAsync.kt"
     ],
     "libraryName": "node",
     "libraryNameOutputPrefix": true,
@@ -88,6 +84,8 @@
         "^node/fs/namespace.kt": "node/fs/nodeNamespace.kt",
         "^node/fs.kt": "node/fs/fs.kt",
         "^fs": "node/fs",
+        "fs/StatfsOptions.kt": "fs/StatfsOptions.fun.kt",
+        "fs/realpathsync/native.kt": "fs/realpathSync/native.kt",
 
         "^node/tls/namespace.kt": "node/tls/nodeNamespace.kt",
         "^node/tls.kt": "node/tls/tls.kt",
@@ -157,6 +155,60 @@
         ],
         "dns/ResolverAsync.kt": [
             "js.promise.await"
+        ],
+
+        "fs/Dir.kt": [
+            "js.iterable.AsyncIterable",
+            "js.promise.Promise"
+        ],
+        "fs/FSWatcher.kt": [
+            "node.events.EventEmitter"
+        ],
+        "fs/ReadFileOptions.kt": [
+            "node.events.Abortable"
+        ],
+        "fs/ReadFileBufferOptions.kt": [
+            "node.events.Abortable"
+        ],
+        "fs/ReadFileStringOptions.kt": [
+            "node.events.Abortable"
+        ],
+        "fs/StatsBase.kt": [
+            "kotlin.js.Date"
+        ],
+        "fs/appendFile.kt": [
+            "js.typedarrays.Uint8Array"
+        ],
+        "fs/appendFileSync.kt": [
+            "js.typedarrays.Uint8Array"
+        ],
+        "fs/cp.kt": [
+            "node.url.URL"
+        ],
+        "fs/cpSync.kt": [
+            "node.url.URL"
+        ],
+        "fs/readv.kt": [
+            "js.core.ReadonlyArray"
+        ],
+        "fs/readvSync.kt": [
+            "js.core.ReadonlyArray"
+        ],
+        "fs/realpath/native.kt": [
+            "node.fs.BufferEncodingOption",
+            "node.fs.EncodingOption",
+            "node.fs.PathLike"
+        ],
+        "fs/realpathSync/native.kt": [
+            "node.fs.BufferEncodingOption",
+            "node.fs.EncodingOption",
+            "node.fs.PathLike"
+        ],
+        "fs/writev.kt": [
+            "js.core.ReadonlyArray"
+        ],
+        "fs/writevSync.kt": [
+            "js.core.ReadonlyArray"
         ],
 
         "tls/TLSSocket.kt": [
