@@ -13,6 +13,7 @@ tasks.withType<KotlinCompile<*>>().configureEach {
 
         freeCompilerArgs += listOf(
             "-opt-in=kotlin.ExperimentalStdlibApi",
+            "-opt-in=kotlin.ExperimentalUnsignedTypes",
             "-opt-in=kotlin.contracts.ExperimentalContracts",
         )
     }
