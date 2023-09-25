@@ -12,7 +12,7 @@ open external class EventTarget {
     fun <T : Event> addEventListener(
         type: EventType<T>,
         callback: EventHandler<T>,
-        options: AddEventListenerOptions?,
+        options: AddEventListenerOptions? = definedExternally,
     )
 
     inline fun <T : Event> addEventHandler(
@@ -40,7 +40,7 @@ open external class EventTarget {
     fun <T : Event> removeEventListener(
         type: EventType<T>,
         callback: EventHandler<T>,
-        options: EventListenerOptions?,
+        options: EventListenerOptions? = definedExternally,
     )
 
     fun dispatchEvent(
