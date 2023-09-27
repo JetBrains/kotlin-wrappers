@@ -1,8 +1,7 @@
 package react.select
 
 import js.core.Record
-
-sealed external interface ActionMeta<Option> : Record<String, Any> {
+sealed external interface ActionMeta<Option> {
     var action: String
     var option: Option?
     var removedValue: Option?
