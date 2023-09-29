@@ -1,12 +1,17 @@
 import ts from "typescript"
 
 const interfacesWithSuperclass = [
+    // crypto
     "CipherCCM",
     "CipherGCM",
     "CipherOCB",
     "DecipherCCM",
     "DecipherGCM",
     "DecipherOCB",
+
+    // fs
+    "FSWatcher",
+    "StatWatcher",
 ]
 
 export default (node) => {

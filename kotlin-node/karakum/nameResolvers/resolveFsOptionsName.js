@@ -22,12 +22,24 @@ export default (node, context) => {
 
     const parameterName = parameter.name.text
 
-    const functionNode = getParent(parameter)
-    if (!functionNode) return null
-    if (!ts.isFunctionDeclaration(functionNode)) return null
-    if (functionNode.name === undefined) return null
+    let parentName
 
-    const parentName = functionNode.name.text
+    const functionNodeOrCallSignature = getParent(parameter)
+    if (!functionNodeOrCallSignature) return null
+
+    if (ts.isFunctionDeclaration(functionNodeOrCallSignature)) {
+        if (functionNodeOrCallSignature.name === undefined) return null
+
+        parentName = functionNodeOrCallSignature.name.text
+    } else if (ts.isCallSignatureDeclaration(functionNodeOrCallSignature)) {
+        const interfaceNode = getParent(functionNodeOrCallSignature)
+        if (!interfaceNode) return null
+        if (!ts.isInterfaceDeclaration(interfaceNode)) return null
+
+        parentName = interfaceNode.name.text
+    } else {
+        return null
+    }
 
     if (
         parentName === "readdir"
@@ -194,6 +206,62 @@ export default (node, context) => {
         }
 
         return `${karakum.capitalize(parentName)}${infix}${karakum.capitalize(parameterName)}`
+    }
+
+    if (parentName === "StatSyncFn") {
+        let primaryInfix = "Simple"
+        let secondaryInfix = "ThrowIfNoEntry"
+
+        if (
+            ts.isIntersectionTypeNode(node)
+            && node.types[1]
+            && ts.isTypeLiteralNode(node.types[1])
+            && node.types[1].members.some(member => (
+                ts.isPropertySignature(member)
+                && ts.isIdentifier(member.name)
+                && member.name.text === "bigint"
+                && ts.isLiteralTypeNode(member.type)
+                && member.type.literal.kind === ts.SyntaxKind.TrueKeyword
+            ))
+        ) {
+            primaryInfix = "BigInt"
+        }
+
+        if (
+            ts.isIntersectionTypeNode(node)
+            && node.types[1]
+            && ts.isTypeLiteralNode(node.types[1])
+            && node.types[1].members.some(member => (
+                ts.isPropertySignature(member)
+                && ts.isIdentifier(member.name)
+                && member.name.text === "throwIfNoEntry"
+                && ts.isLiteralTypeNode(member.type)
+                && member.type.literal.kind === ts.SyntaxKind.FalseKeyword
+            ))
+        ) {
+            secondaryInfix = ""
+        }
+
+        if (
+            ts.isIntersectionTypeNode(node)
+            && node.types[1]
+            && ts.isTypeLiteralNode(node.types[1])
+            && node.types[1].members.some(member => (
+                ts.isPropertySignature(member)
+                && ts.isIdentifier(member.name)
+                && member.name.text === "throwIfNoEntry"
+                && ts.isUnionTypeNode(member.type)
+                && member.type.types[0]
+                && ts.isLiteralTypeNode(member.type.types[0])
+                && member.type.types[0].literal.kind === ts.SyntaxKind.FalseKeyword
+            ))
+        ) {
+            // it is not `throwIfNoEntry` options and they are not simple
+            primaryInfix = ""
+            secondaryInfix = ""
+        }
+
+        return `${karakum.capitalize(parentName)}${primaryInfix}${secondaryInfix}${karakum.capitalize(parameterName)}`
     }
 
     return `${karakum.capitalize(parentName)}${karakum.capitalize(parameterName)}`
