@@ -86,6 +86,7 @@
         "^fs": "node/fs",
         "fs/StatfsOptions.kt": "fs/StatfsOptions.fun.kt",
         "fs/realpathsync/native.kt": "fs/realpathSync/native.kt",
+        "fs/symlink/Type.kt": "fs/SymlinkType.kt",
 
         "^node/tls/namespace.kt": "node/tls/nodeNamespace.kt",
         "^node/tls.kt": "node/tls/tls.kt",

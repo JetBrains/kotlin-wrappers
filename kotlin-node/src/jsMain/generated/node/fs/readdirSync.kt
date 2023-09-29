@@ -45,10 +45,6 @@ external fun readdirSync(
     options: (ReaddirSyncOptions)? = definedExternally,
 ): Any /* string[] | Buffer[] */
 
-external fun readdirSync(
-    path: PathLike,
-    options: node.buffer.BufferEncoding? = definedExternally,
-): Any /* string[] | Buffer[] */
 
 /**
  * Synchronous readdir(3) - read a directory.

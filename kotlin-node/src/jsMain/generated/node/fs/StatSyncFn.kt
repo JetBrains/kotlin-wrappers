@@ -1,7 +1,7 @@
 package node.fs
 
 
-sealed external interface StatSyncFn : Function {
+sealed external interface StatSyncFn {
 
     @Suppress("DEPRECATION")
     @nativeInvoke

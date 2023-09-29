@@ -27,4 +27,3 @@ external fun mkdtempSync(prefix: String, options: BufferEncodingOption): node.bu
  * Generates six random characters to be appended behind a required prefix to create a unique temporary directory.
  * @param options The encoding (or an object specifying the encoding), used as the encoding of the result. If not provided, `'utf8'` is used.
  */
-external fun mkdtempSync(prefix: String, options: EncodingOption = definedExternally): Any /* string | Buffer */

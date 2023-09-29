@@ -1,4 +1,4 @@
-package node.fs.symlink
+package node.fs
 
 
 @Suppress(
@@ -6,10 +6,10 @@ package node.fs.symlink
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 @JsName("""(/*union*/{dir: 'dir', file: 'file', junction: 'junction'}/*union*/)""")
-sealed external interface Type {
+sealed external interface SymlinkType {
     companion object {
-        val dir: Type
-        val file: Type
-        val junction: Type
+        val dir: SymlinkType
+        val file: SymlinkType
+        val junction: SymlinkType
     }
 }
