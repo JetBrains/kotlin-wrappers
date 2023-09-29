@@ -1,7 +1,5 @@
 package node.tls
 
-import node.buffer.Buffer
-
 
 sealed external interface TLSSocketOptions : SecureContextOptions, CommonConnectionOptions {
     /**
@@ -18,7 +16,7 @@ sealed external interface TLSSocketOptions : SecureContextOptions, CommonConnect
     /**
      * An optional Buffer instance containing a TLS session.
      */
-    var session: Buffer?
+    var session: node.buffer.Buffer?
 
     /**
      * If true, specifies that the OCSP status request extension will be

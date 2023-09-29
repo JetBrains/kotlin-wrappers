@@ -1,7 +1,5 @@
 package node.tls
 
-import node.buffer.Buffer
-
 
 sealed external interface ConnectionOptions : SecureContextOptions, CommonConnectionOptions {
     var host: String?
@@ -13,7 +11,7 @@ sealed external interface ConnectionOptions : SecureContextOptions, CommonConnec
     var checkServerIdentity: ((hostname: String, cert: PeerCertificate) -> Throwable /* JsError */?)?
     var servername: String?// SNI TLS Extension
 
-    var session: Buffer?
+    var session: node.buffer.Buffer?
     var minDHSize: Double?
     var lookup: node.net.LookupFunction?
     var timeout: Double?

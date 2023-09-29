@@ -2,7 +2,6 @@
 
 package node.crypto
 
-import node.buffer.Buffer
 
 /**
  * Decrypts `buffer` with `privateKey`. `buffer` was previously encrypted using
@@ -12,6 +11,6 @@ import node.buffer.Buffer
  * object, the `padding` property can be passed. Otherwise, this function uses`RSA_PKCS1_OAEP_PADDING`.
  * @since v0.11.14
  */
-external fun privateDecrypt(privateKey: RsaPrivateKey, buffer: js.buffer.ArrayBufferView): Buffer
+external fun privateDecrypt(privateKey: RsaPrivateKey, buffer: js.buffer.ArrayBufferView): node.buffer.Buffer
 
-external fun privateDecrypt(privateKey: KeyLike, buffer: js.buffer.ArrayBufferView): Buffer
+external fun privateDecrypt(privateKey: KeyLike, buffer: js.buffer.ArrayBufferView): node.buffer.Buffer

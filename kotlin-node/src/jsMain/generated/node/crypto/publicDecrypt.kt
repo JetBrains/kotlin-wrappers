@@ -2,7 +2,6 @@
 
 package node.crypto
 
-import node.buffer.Buffer
 
 /**
  * Decrypts `buffer` with `key`.`buffer` was previously encrypted using
@@ -15,8 +14,8 @@ import node.buffer.Buffer
  * be passed instead of a public key.
  * @since v1.1.0
  */
-external fun publicDecrypt(key: RsaPublicKey, buffer: js.buffer.ArrayBufferView): Buffer
+external fun publicDecrypt(key: RsaPublicKey, buffer: js.buffer.ArrayBufferView): node.buffer.Buffer
 
-external fun publicDecrypt(key: RsaPrivateKey, buffer: js.buffer.ArrayBufferView): Buffer
+external fun publicDecrypt(key: RsaPrivateKey, buffer: js.buffer.ArrayBufferView): node.buffer.Buffer
 
-external fun publicDecrypt(key: KeyLike, buffer: js.buffer.ArrayBufferView): Buffer
+external fun publicDecrypt(key: KeyLike, buffer: js.buffer.ArrayBufferView): node.buffer.Buffer

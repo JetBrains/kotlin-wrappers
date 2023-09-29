@@ -2,7 +2,6 @@
 
 package node.crypto
 
-import node.buffer.Buffer
 
 /**
  * Generates a new asymmetric key pair of the given `type`. RSA, RSA-PSS, DSA, EC,
@@ -47,11 +46,20 @@ import node.buffer.Buffer
  */
 external fun generateKeyPairSync(type: KeyType.rsa, options: RSAKeyPairPemPemOptions): KeyPairSyncResult<String, String>
 
-external fun generateKeyPairSync(type: KeyType.rsa, options: RSAKeyPairPemDerOptions): KeyPairSyncResult<String, Buffer>
+external fun generateKeyPairSync(
+    type: KeyType.rsa,
+    options: RSAKeyPairPemDerOptions,
+): KeyPairSyncResult<String, node.buffer.Buffer>
 
-external fun generateKeyPairSync(type: KeyType.rsa, options: RSAKeyPairDerPemOptions): KeyPairSyncResult<Buffer, String>
+external fun generateKeyPairSync(
+    type: KeyType.rsa,
+    options: RSAKeyPairDerPemOptions,
+): KeyPairSyncResult<node.buffer.Buffer, String>
 
-external fun generateKeyPairSync(type: KeyType.rsa, options: RSAKeyPairDerDerOptions): KeyPairSyncResult<Buffer, Buffer>
+external fun generateKeyPairSync(
+    type: KeyType.rsa,
+    options: RSAKeyPairDerDerOptions,
+): KeyPairSyncResult<node.buffer.Buffer, node.buffer.Buffer>
 
 external fun generateKeyPairSync(type: KeyType.rsa, options: RSAKeyPairKeyObjectOptions): KeyPairKeyObjectResult
 
@@ -63,37 +71,55 @@ external fun generateKeyPairSync(
 external fun generateKeyPairSync(
     type: KeyType.rsaPss,
     options: RSAPSSKeyPairPemDerOptions,
-): KeyPairSyncResult<String, Buffer>
+): KeyPairSyncResult<String, node.buffer.Buffer>
 
 external fun generateKeyPairSync(
     type: KeyType.rsaPss,
     options: RSAPSSKeyPairDerPemOptions,
-): KeyPairSyncResult<Buffer, String>
+): KeyPairSyncResult<node.buffer.Buffer, String>
 
 external fun generateKeyPairSync(
     type: KeyType.rsaPss,
     options: RSAPSSKeyPairDerDerOptions,
-): KeyPairSyncResult<Buffer, Buffer>
+): KeyPairSyncResult<node.buffer.Buffer, node.buffer.Buffer>
 
 external fun generateKeyPairSync(type: KeyType.rsaPss, options: RSAPSSKeyPairKeyObjectOptions): KeyPairKeyObjectResult
 
 external fun generateKeyPairSync(type: KeyType.dsa, options: DSAKeyPairPemPemOptions): KeyPairSyncResult<String, String>
 
-external fun generateKeyPairSync(type: KeyType.dsa, options: DSAKeyPairPemDerOptions): KeyPairSyncResult<String, Buffer>
+external fun generateKeyPairSync(
+    type: KeyType.dsa,
+    options: DSAKeyPairPemDerOptions,
+): KeyPairSyncResult<String, node.buffer.Buffer>
 
-external fun generateKeyPairSync(type: KeyType.dsa, options: DSAKeyPairDerPemOptions): KeyPairSyncResult<Buffer, String>
+external fun generateKeyPairSync(
+    type: KeyType.dsa,
+    options: DSAKeyPairDerPemOptions,
+): KeyPairSyncResult<node.buffer.Buffer, String>
 
-external fun generateKeyPairSync(type: KeyType.dsa, options: DSAKeyPairDerDerOptions): KeyPairSyncResult<Buffer, Buffer>
+external fun generateKeyPairSync(
+    type: KeyType.dsa,
+    options: DSAKeyPairDerDerOptions,
+): KeyPairSyncResult<node.buffer.Buffer, node.buffer.Buffer>
 
 external fun generateKeyPairSync(type: KeyType.dsa, options: DSAKeyPairKeyObjectOptions): KeyPairKeyObjectResult
 
 external fun generateKeyPairSync(type: KeyType.ec, options: ECKeyPairPemPemOptions): KeyPairSyncResult<String, String>
 
-external fun generateKeyPairSync(type: KeyType.ec, options: ECKeyPairPemDerOptions): KeyPairSyncResult<String, Buffer>
+external fun generateKeyPairSync(
+    type: KeyType.ec,
+    options: ECKeyPairPemDerOptions,
+): KeyPairSyncResult<String, node.buffer.Buffer>
 
-external fun generateKeyPairSync(type: KeyType.ec, options: ECKeyPairDerPemOptions): KeyPairSyncResult<Buffer, String>
+external fun generateKeyPairSync(
+    type: KeyType.ec,
+    options: ECKeyPairDerPemOptions,
+): KeyPairSyncResult<node.buffer.Buffer, String>
 
-external fun generateKeyPairSync(type: KeyType.ec, options: ECKeyPairDerDerOptions): KeyPairSyncResult<Buffer, Buffer>
+external fun generateKeyPairSync(
+    type: KeyType.ec,
+    options: ECKeyPairDerDerOptions,
+): KeyPairSyncResult<node.buffer.Buffer, node.buffer.Buffer>
 
 external fun generateKeyPairSync(type: KeyType.ec, options: ECKeyPairKeyObjectOptions): KeyPairKeyObjectResult
 
@@ -105,17 +131,17 @@ external fun generateKeyPairSync(
 external fun generateKeyPairSync(
     type: KeyType.ed25519,
     options: ED25519KeyPairPemDerOptions,
-): KeyPairSyncResult<String, Buffer>
+): KeyPairSyncResult<String, node.buffer.Buffer>
 
 external fun generateKeyPairSync(
     type: KeyType.ed25519,
     options: ED25519KeyPairDerPemOptions,
-): KeyPairSyncResult<Buffer, String>
+): KeyPairSyncResult<node.buffer.Buffer, String>
 
 external fun generateKeyPairSync(
     type: KeyType.ed25519,
     options: ED25519KeyPairDerDerOptions,
-): KeyPairSyncResult<Buffer, Buffer>
+): KeyPairSyncResult<node.buffer.Buffer, node.buffer.Buffer>
 
 external fun generateKeyPairSync(
     type: KeyType.ed25519,
@@ -130,17 +156,17 @@ external fun generateKeyPairSync(
 external fun generateKeyPairSync(
     type: KeyType.ed448,
     options: ED448KeyPairPemDerOptions,
-): KeyPairSyncResult<String, Buffer>
+): KeyPairSyncResult<String, node.buffer.Buffer>
 
 external fun generateKeyPairSync(
     type: KeyType.ed448,
     options: ED448KeyPairDerPemOptions,
-): KeyPairSyncResult<Buffer, String>
+): KeyPairSyncResult<node.buffer.Buffer, String>
 
 external fun generateKeyPairSync(
     type: KeyType.ed448,
     options: ED448KeyPairDerDerOptions,
-): KeyPairSyncResult<Buffer, Buffer>
+): KeyPairSyncResult<node.buffer.Buffer, node.buffer.Buffer>
 
 external fun generateKeyPairSync(
     type: KeyType.ed448,
@@ -155,17 +181,17 @@ external fun generateKeyPairSync(
 external fun generateKeyPairSync(
     type: KeyType.x25519,
     options: X25519KeyPairPemDerOptions,
-): KeyPairSyncResult<String, Buffer>
+): KeyPairSyncResult<String, node.buffer.Buffer>
 
 external fun generateKeyPairSync(
     type: KeyType.x25519,
     options: X25519KeyPairDerPemOptions,
-): KeyPairSyncResult<Buffer, String>
+): KeyPairSyncResult<node.buffer.Buffer, String>
 
 external fun generateKeyPairSync(
     type: KeyType.x25519,
     options: X25519KeyPairDerDerOptions,
-): KeyPairSyncResult<Buffer, Buffer>
+): KeyPairSyncResult<node.buffer.Buffer, node.buffer.Buffer>
 
 external fun generateKeyPairSync(
     type: KeyType.x25519,
@@ -180,17 +206,17 @@ external fun generateKeyPairSync(
 external fun generateKeyPairSync(
     type: KeyType.x448,
     options: X448KeyPairPemDerOptions,
-): KeyPairSyncResult<String, Buffer>
+): KeyPairSyncResult<String, node.buffer.Buffer>
 
 external fun generateKeyPairSync(
     type: KeyType.x448,
     options: X448KeyPairDerPemOptions,
-): KeyPairSyncResult<Buffer, String>
+): KeyPairSyncResult<node.buffer.Buffer, String>
 
 external fun generateKeyPairSync(
     type: KeyType.x448,
     options: X448KeyPairDerDerOptions,
-): KeyPairSyncResult<Buffer, Buffer>
+): KeyPairSyncResult<node.buffer.Buffer, node.buffer.Buffer>
 
 external fun generateKeyPairSync(
     type: KeyType.x448,

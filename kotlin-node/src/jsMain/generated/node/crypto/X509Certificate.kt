@@ -2,7 +2,6 @@
 
 package node.crypto
 
-import node.buffer.Buffer
 import node.tls.PeerCertificate
 
 /**
@@ -99,7 +98,7 @@ external class X509Certificate {
      * A `Buffer` containing the DER encoding of this certificate.
      * @since v15.6.0
      */
-    val raw: Buffer
+    val raw: node.buffer.Buffer
 
     /**
      * The serial number of this certificate.

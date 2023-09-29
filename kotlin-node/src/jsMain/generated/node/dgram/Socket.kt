@@ -4,7 +4,6 @@ package node.dgram
 
 import js.core.ReadonlyArray
 import js.typedarrays.Uint8Array
-import node.buffer.Buffer
 import node.events.EventEmitter
 import node.net.AddressInfo
 
@@ -565,7 +564,11 @@ external class Socket : EventEmitter {
     fun addListener(event: SocketEvent.CONNECT, listener: () -> Unit): Unit /* this */
     fun addListener(event: SocketEvent.ERROR, listener: (err: Throwable /* JsError */) -> Unit): Unit /* this */
     fun addListener(event: SocketEvent.LISTENING, listener: () -> Unit): Unit /* this */
-    fun addListener(event: SocketEvent.MESSAGE, listener: (msg: Buffer, rinfo: RemoteInfo) -> Unit): Unit /* this */
+    fun addListener(
+        event: SocketEvent.MESSAGE,
+        listener: (msg: node.buffer.Buffer, rinfo: RemoteInfo) -> Unit,
+    ): Unit /* this */
+
     fun emit(event: String, vararg args: Any? /* js.core.ReadonlyArray<Any?> */): Boolean
 
     fun emit(event: js.core.Symbol, vararg args: Any? /* js.core.ReadonlyArray<Any?> */): Boolean
@@ -573,25 +576,33 @@ external class Socket : EventEmitter {
     fun emit(event: SocketEvent.CONNECT): Boolean
     fun emit(event: SocketEvent.ERROR, err: Throwable /* JsError */): Boolean
     fun emit(event: SocketEvent.LISTENING): Boolean
-    fun emit(event: SocketEvent.MESSAGE, msg: Buffer, rinfo: RemoteInfo): Boolean
+    fun emit(event: SocketEvent.MESSAGE, msg: node.buffer.Buffer, rinfo: RemoteInfo): Boolean
     fun on(event: String, listener: Function<Any?> /* (...args: any[]) => void */): Unit /* this */
     fun on(event: SocketEvent.CLOSE, listener: () -> Unit): Unit /* this */
     fun on(event: SocketEvent.CONNECT, listener: () -> Unit): Unit /* this */
     fun on(event: SocketEvent.ERROR, listener: (err: Throwable /* JsError */) -> Unit): Unit /* this */
     fun on(event: SocketEvent.LISTENING, listener: () -> Unit): Unit /* this */
-    fun on(event: SocketEvent.MESSAGE, listener: (msg: Buffer, rinfo: RemoteInfo) -> Unit): Unit /* this */
+    fun on(event: SocketEvent.MESSAGE, listener: (msg: node.buffer.Buffer, rinfo: RemoteInfo) -> Unit): Unit /* this */
     fun once(event: String, listener: Function<Any?> /* (...args: any[]) => void */): Unit /* this */
     fun once(event: SocketEvent.CLOSE, listener: () -> Unit): Unit /* this */
     fun once(event: SocketEvent.CONNECT, listener: () -> Unit): Unit /* this */
     fun once(event: SocketEvent.ERROR, listener: (err: Throwable /* JsError */) -> Unit): Unit /* this */
     fun once(event: SocketEvent.LISTENING, listener: () -> Unit): Unit /* this */
-    fun once(event: SocketEvent.MESSAGE, listener: (msg: Buffer, rinfo: RemoteInfo) -> Unit): Unit /* this */
+    fun once(
+        event: SocketEvent.MESSAGE,
+        listener: (msg: node.buffer.Buffer, rinfo: RemoteInfo) -> Unit,
+    ): Unit /* this */
+
     fun prependListener(event: String, listener: Function<Any?> /* (...args: any[]) => void */): Unit /* this */
     fun prependListener(event: SocketEvent.CLOSE, listener: () -> Unit): Unit /* this */
     fun prependListener(event: SocketEvent.CONNECT, listener: () -> Unit): Unit /* this */
     fun prependListener(event: SocketEvent.ERROR, listener: (err: Throwable /* JsError */) -> Unit): Unit /* this */
     fun prependListener(event: SocketEvent.LISTENING, listener: () -> Unit): Unit /* this */
-    fun prependListener(event: SocketEvent.MESSAGE, listener: (msg: Buffer, rinfo: RemoteInfo) -> Unit): Unit /* this */
+    fun prependListener(
+        event: SocketEvent.MESSAGE,
+        listener: (msg: node.buffer.Buffer, rinfo: RemoteInfo) -> Unit,
+    ): Unit /* this */
+
     fun prependOnceListener(event: String, listener: Function<Any?> /* (...args: any[]) => void */): Unit /* this */
     fun prependOnceListener(event: SocketEvent.CLOSE, listener: () -> Unit): Unit /* this */
     fun prependOnceListener(event: SocketEvent.CONNECT, listener: () -> Unit): Unit /* this */
@@ -599,6 +610,6 @@ external class Socket : EventEmitter {
     fun prependOnceListener(event: SocketEvent.LISTENING, listener: () -> Unit): Unit /* this */
     fun prependOnceListener(
         event: SocketEvent.MESSAGE,
-        listener: (msg: Buffer, rinfo: RemoteInfo) -> Unit,
+        listener: (msg: node.buffer.Buffer, rinfo: RemoteInfo) -> Unit,
     ): Unit /* this */
 }

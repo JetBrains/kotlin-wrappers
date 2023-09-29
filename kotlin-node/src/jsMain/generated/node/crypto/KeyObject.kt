@@ -2,7 +2,6 @@
 
 package node.crypto
 
-import node.buffer.Buffer
 
 /**
  * Node.js uses a `KeyObject` class to represent a symmetric or asymmetric key,
@@ -59,7 +58,7 @@ external class KeyObject {
      * @since v15.7.0
      */
     var asymmetricKeyDetails: AsymmetricKeyDetails?
-    fun export(options: KeyExportOptions<KeyFormat.der> = definedExternally): Buffer
+    fun export(options: KeyExportOptions<KeyFormat.der> = definedExternally): node.buffer.Buffer
     fun export(options: JwkKeyExportOptions = definedExternally): JsonWebKey
 
     /**

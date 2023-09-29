@@ -2,8 +2,6 @@
 
 package node.crypto
 
-import node.buffer.Buffer
-import node.buffer.BufferEncoding
 
 /**
  * Instances of the `Cipher` class are used to encrypt data. The class can be
@@ -140,8 +138,8 @@ open external class Cipher : node.stream.Transform {
      * @param inputEncoding The `encoding` of the data.
      * @param outputEncoding The `encoding` of the return value.
      */
-    fun update(data: BinaryLike): Buffer
-    fun update(data: String, inputEncoding: Encoding): Buffer
+    fun update(data: BinaryLike): node.buffer.Buffer
+    fun update(data: String, inputEncoding: Encoding): node.buffer.Buffer
     fun update(data: String, inputEncoding: Encoding?, outputEncoding: Encoding): String
     fun update(data: js.buffer.ArrayBufferView, inputEncoding: Nothing?, outputEncoding: Encoding): String
 
@@ -153,8 +151,8 @@ open external class Cipher : node.stream.Transform {
      * @param outputEncoding The `encoding` of the return value.
      * @return Any remaining enciphered contents. If `outputEncoding` is specified, a string is returned. If an `outputEncoding` is not provided, a {@link Buffer} is returned.
      */
-    fun final(): Buffer
-    fun final(outputEncoding: BufferEncoding): String
+    fun final(): node.buffer.Buffer
+    fun final(outputEncoding: node.buffer.BufferEncoding): String
 
     /**
      * When using block encryption algorithms, the `Cipher` class will automatically

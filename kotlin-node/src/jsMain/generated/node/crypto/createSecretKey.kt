@@ -2,7 +2,6 @@
 
 package node.crypto
 
-import node.buffer.BufferEncoding
 
 /**
  * Creates and returns a new key object containing a secret key for symmetric
@@ -12,4 +11,4 @@ import node.buffer.BufferEncoding
  */
 external fun createSecretKey(key: js.buffer.ArrayBufferView): KeyObject
 
-external fun createSecretKey(key: String, encoding: BufferEncoding): KeyObject
+external fun createSecretKey(key: String, encoding: node.buffer.BufferEncoding): KeyObject

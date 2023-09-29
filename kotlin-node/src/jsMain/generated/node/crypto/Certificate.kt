@@ -2,7 +2,6 @@
 
 package node.crypto
 
-import node.buffer.Buffer
 
 /**
  * SPKAC is a Certificate Signing Request mechanism originally implemented by
@@ -24,7 +23,7 @@ external class Certificate {
      * @returns The challenge component of the `spkac` data structure,
      * which includes a public key and a challenge.
      */
-    fun exportChallenge(spkac: BinaryLike): Buffer
+    fun exportChallenge(spkac: BinaryLike): node.buffer.Buffer
 
     /**
      * @deprecated
@@ -33,7 +32,7 @@ external class Certificate {
      * @returns The public key component of the `spkac` data structure,
      * which includes a public key and a challenge.
      */
-    fun exportPublicKey(spkac: BinaryLike, encoding: String = definedExternally): Buffer
+    fun exportPublicKey(spkac: BinaryLike, encoding: String = definedExternally): node.buffer.Buffer
 
     /**
      * @deprecated
@@ -56,7 +55,7 @@ external class Certificate {
          * @param encoding The `encoding` of the `spkac` string.
          * @return The challenge component of the `spkac` data structure, which includes a public key and a challenge.
          */
-        fun exportChallenge(spkac: BinaryLike): Buffer
+        fun exportChallenge(spkac: BinaryLike): node.buffer.Buffer
 
         /**
          * ```js
@@ -70,7 +69,7 @@ external class Certificate {
          * @param encoding The `encoding` of the `spkac` string.
          * @return The public key component of the `spkac` data structure, which includes a public key and a challenge.
          */
-        fun exportPublicKey(spkac: BinaryLike, encoding: String = definedExternally): Buffer
+        fun exportPublicKey(spkac: BinaryLike, encoding: String = definedExternally): node.buffer.Buffer
 
         /**
          * ```js

@@ -2,7 +2,6 @@
 
 package node.tls
 
-import node.buffer.Buffer
 
 /**
  * Accepts encrypted connections using TLS or SSL.
@@ -32,7 +31,7 @@ external class Server : node.net.Server {
      * @since v3.0.0
      * @return A 48-byte buffer containing the session ticket keys.
      */
-    fun getTicketKeys(): Buffer
+    fun getTicketKeys(): node.buffer.Buffer
 
     /**
      * The `server.setSecureContext()` method replaces the secure context of an
@@ -52,7 +51,7 @@ external class Server : node.net.Server {
      * @since v3.0.0
      * @param keys A 48-byte buffer containing the session ticket keys.
      */
-    fun setTicketKeys(keys: Buffer): Unit
+    fun setTicketKeys(keys: node.buffer.Buffer): Unit
 
     /**
      * events.EventEmitter
@@ -71,41 +70,51 @@ external class Server : node.net.Server {
 
     fun addListener(
         event: ServerEvent.NEWSESSION,
-        listener: (sessionId: Buffer, sessionData: Buffer, callback: () -> Unit) -> Unit,
+        listener: (sessionId: node.buffer.Buffer, sessionData: node.buffer.Buffer, callback: () -> Unit) -> Unit,
     ): Unit /* this */
 
     fun addListener(
         event: ServerEvent.OCSPREQUEST,
-        listener: (certificate: Buffer, issuer: Buffer, callback: (err: Throwable /* JsError */?, resp: Buffer) -> Unit) -> Unit,
+        listener: (certificate: node.buffer.Buffer, issuer: node.buffer.Buffer, callback: (err: Throwable /* JsError */?, resp: node.buffer.Buffer) -> Unit) -> Unit,
     ): Unit /* this */
 
     fun addListener(
         event: ServerEvent.RESUMESESSION,
-        listener: (sessionId: Buffer, callback: (err: Throwable /* JsError */?, sessionData: Buffer?) -> Unit) -> Unit,
+        listener: (sessionId: node.buffer.Buffer, callback: (err: Throwable /* JsError */?, sessionData: node.buffer.Buffer?) -> Unit) -> Unit,
     ): Unit /* this */
 
     fun addListener(event: ServerEvent.SECURECONNECTION, listener: (tlsSocket: TLSSocket) -> Unit): Unit /* this */
-    fun addListener(event: ServerEvent.KEYLOG, listener: (line: Buffer, tlsSocket: TLSSocket) -> Unit): Unit /* this */
+    fun addListener(
+        event: ServerEvent.KEYLOG,
+        listener: (line: node.buffer.Buffer, tlsSocket: TLSSocket) -> Unit,
+    ): Unit /* this */
+
     fun emit(event: String, vararg args: Any? /* js.core.ReadonlyArray<Any?> */): Boolean
 
     fun emit(event: js.core.Symbol, vararg args: Any? /* js.core.ReadonlyArray<Any?> */): Boolean
     fun emit(event: ServerEvent.TLSCLIENTERROR, err: Throwable /* JsError */, tlsSocket: TLSSocket): Boolean
-    fun emit(event: ServerEvent.NEWSESSION, sessionId: Buffer, sessionData: Buffer, callback: () -> Unit): Boolean
+    fun emit(
+        event: ServerEvent.NEWSESSION,
+        sessionId: node.buffer.Buffer,
+        sessionData: node.buffer.Buffer,
+        callback: () -> Unit,
+    ): Boolean
+
     fun emit(
         event: ServerEvent.OCSPREQUEST,
-        certificate: Buffer,
-        issuer: Buffer,
-        callback: (err: Throwable /* JsError */?, resp: Buffer) -> Unit,
+        certificate: node.buffer.Buffer,
+        issuer: node.buffer.Buffer,
+        callback: (err: Throwable /* JsError */?, resp: node.buffer.Buffer) -> Unit,
     ): Boolean
 
     fun emit(
         event: ServerEvent.RESUMESESSION,
-        sessionId: Buffer,
-        callback: (err: Throwable /* JsError */?, sessionData: Buffer?) -> Unit,
+        sessionId: node.buffer.Buffer,
+        callback: (err: Throwable /* JsError */?, sessionData: node.buffer.Buffer?) -> Unit,
     ): Boolean
 
     fun emit(event: ServerEvent.SECURECONNECTION, tlsSocket: TLSSocket): Boolean
-    fun emit(event: ServerEvent.KEYLOG, line: Buffer, tlsSocket: TLSSocket): Boolean
+    fun emit(event: ServerEvent.KEYLOG, line: node.buffer.Buffer, tlsSocket: TLSSocket): Boolean
     fun on(event: String, listener: Function<Any?> /* (...args: any[]) => void */): Unit /* this */
     fun on(
         event: ServerEvent.TLSCLIENTERROR,
@@ -114,21 +123,25 @@ external class Server : node.net.Server {
 
     fun on(
         event: ServerEvent.NEWSESSION,
-        listener: (sessionId: Buffer, sessionData: Buffer, callback: () -> Unit) -> Unit,
+        listener: (sessionId: node.buffer.Buffer, sessionData: node.buffer.Buffer, callback: () -> Unit) -> Unit,
     ): Unit /* this */
 
     fun on(
         event: ServerEvent.OCSPREQUEST,
-        listener: (certificate: Buffer, issuer: Buffer, callback: (err: Throwable /* JsError */?, resp: Buffer) -> Unit) -> Unit,
+        listener: (certificate: node.buffer.Buffer, issuer: node.buffer.Buffer, callback: (err: Throwable /* JsError */?, resp: node.buffer.Buffer) -> Unit) -> Unit,
     ): Unit /* this */
 
     fun on(
         event: ServerEvent.RESUMESESSION,
-        listener: (sessionId: Buffer, callback: (err: Throwable /* JsError */?, sessionData: Buffer?) -> Unit) -> Unit,
+        listener: (sessionId: node.buffer.Buffer, callback: (err: Throwable /* JsError */?, sessionData: node.buffer.Buffer?) -> Unit) -> Unit,
     ): Unit /* this */
 
     fun on(event: ServerEvent.SECURECONNECTION, listener: (tlsSocket: TLSSocket) -> Unit): Unit /* this */
-    fun on(event: ServerEvent.KEYLOG, listener: (line: Buffer, tlsSocket: TLSSocket) -> Unit): Unit /* this */
+    fun on(
+        event: ServerEvent.KEYLOG,
+        listener: (line: node.buffer.Buffer, tlsSocket: TLSSocket) -> Unit,
+    ): Unit /* this */
+
     fun once(event: String, listener: Function<Any?> /* (...args: any[]) => void */): Unit /* this */
     fun once(
         event: ServerEvent.TLSCLIENTERROR,
@@ -137,21 +150,25 @@ external class Server : node.net.Server {
 
     fun once(
         event: ServerEvent.NEWSESSION,
-        listener: (sessionId: Buffer, sessionData: Buffer, callback: () -> Unit) -> Unit,
+        listener: (sessionId: node.buffer.Buffer, sessionData: node.buffer.Buffer, callback: () -> Unit) -> Unit,
     ): Unit /* this */
 
     fun once(
         event: ServerEvent.OCSPREQUEST,
-        listener: (certificate: Buffer, issuer: Buffer, callback: (err: Throwable /* JsError */?, resp: Buffer) -> Unit) -> Unit,
+        listener: (certificate: node.buffer.Buffer, issuer: node.buffer.Buffer, callback: (err: Throwable /* JsError */?, resp: node.buffer.Buffer) -> Unit) -> Unit,
     ): Unit /* this */
 
     fun once(
         event: ServerEvent.RESUMESESSION,
-        listener: (sessionId: Buffer, callback: (err: Throwable /* JsError */?, sessionData: Buffer?) -> Unit) -> Unit,
+        listener: (sessionId: node.buffer.Buffer, callback: (err: Throwable /* JsError */?, sessionData: node.buffer.Buffer?) -> Unit) -> Unit,
     ): Unit /* this */
 
     fun once(event: ServerEvent.SECURECONNECTION, listener: (tlsSocket: TLSSocket) -> Unit): Unit /* this */
-    fun once(event: ServerEvent.KEYLOG, listener: (line: Buffer, tlsSocket: TLSSocket) -> Unit): Unit /* this */
+    fun once(
+        event: ServerEvent.KEYLOG,
+        listener: (line: node.buffer.Buffer, tlsSocket: TLSSocket) -> Unit,
+    ): Unit /* this */
+
     fun prependListener(event: String, listener: Function<Any?> /* (...args: any[]) => void */): Unit /* this */
     fun prependListener(
         event: ServerEvent.TLSCLIENTERROR,
@@ -160,23 +177,23 @@ external class Server : node.net.Server {
 
     fun prependListener(
         event: ServerEvent.NEWSESSION,
-        listener: (sessionId: Buffer, sessionData: Buffer, callback: () -> Unit) -> Unit,
+        listener: (sessionId: node.buffer.Buffer, sessionData: node.buffer.Buffer, callback: () -> Unit) -> Unit,
     ): Unit /* this */
 
     fun prependListener(
         event: ServerEvent.OCSPREQUEST,
-        listener: (certificate: Buffer, issuer: Buffer, callback: (err: Throwable /* JsError */?, resp: Buffer) -> Unit) -> Unit,
+        listener: (certificate: node.buffer.Buffer, issuer: node.buffer.Buffer, callback: (err: Throwable /* JsError */?, resp: node.buffer.Buffer) -> Unit) -> Unit,
     ): Unit /* this */
 
     fun prependListener(
         event: ServerEvent.RESUMESESSION,
-        listener: (sessionId: Buffer, callback: (err: Throwable /* JsError */?, sessionData: Buffer?) -> Unit) -> Unit,
+        listener: (sessionId: node.buffer.Buffer, callback: (err: Throwable /* JsError */?, sessionData: node.buffer.Buffer?) -> Unit) -> Unit,
     ): Unit /* this */
 
     fun prependListener(event: ServerEvent.SECURECONNECTION, listener: (tlsSocket: TLSSocket) -> Unit): Unit /* this */
     fun prependListener(
         event: ServerEvent.KEYLOG,
-        listener: (line: Buffer, tlsSocket: TLSSocket) -> Unit,
+        listener: (line: node.buffer.Buffer, tlsSocket: TLSSocket) -> Unit,
     ): Unit /* this */
 
     fun prependOnceListener(event: String, listener: Function<Any?> /* (...args: any[]) => void */): Unit /* this */
@@ -187,17 +204,17 @@ external class Server : node.net.Server {
 
     fun prependOnceListener(
         event: ServerEvent.NEWSESSION,
-        listener: (sessionId: Buffer, sessionData: Buffer, callback: () -> Unit) -> Unit,
+        listener: (sessionId: node.buffer.Buffer, sessionData: node.buffer.Buffer, callback: () -> Unit) -> Unit,
     ): Unit /* this */
 
     fun prependOnceListener(
         event: ServerEvent.OCSPREQUEST,
-        listener: (certificate: Buffer, issuer: Buffer, callback: (err: Throwable /* JsError */?, resp: Buffer) -> Unit) -> Unit,
+        listener: (certificate: node.buffer.Buffer, issuer: node.buffer.Buffer, callback: (err: Throwable /* JsError */?, resp: node.buffer.Buffer) -> Unit) -> Unit,
     ): Unit /* this */
 
     fun prependOnceListener(
         event: ServerEvent.RESUMESESSION,
-        listener: (sessionId: Buffer, callback: (err: Throwable /* JsError */?, sessionData: Buffer?) -> Unit) -> Unit,
+        listener: (sessionId: node.buffer.Buffer, callback: (err: Throwable /* JsError */?, sessionData: node.buffer.Buffer?) -> Unit) -> Unit,
     ): Unit /* this */
 
     fun prependOnceListener(
@@ -207,6 +224,6 @@ external class Server : node.net.Server {
 
     fun prependOnceListener(
         event: ServerEvent.KEYLOG,
-        listener: (line: Buffer, tlsSocket: TLSSocket) -> Unit,
+        listener: (line: node.buffer.Buffer, tlsSocket: TLSSocket) -> Unit,
     ): Unit /* this */
 }

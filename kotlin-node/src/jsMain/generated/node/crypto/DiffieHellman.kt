@@ -2,8 +2,6 @@
 
 package node.crypto
 
-import node.buffer.Buffer
-import node.buffer.BufferEncoding
 
 /**
  * The `DiffieHellman` class is a utility for creating Diffie-Hellman key
@@ -45,7 +43,7 @@ external class DiffieHellman {
      * @since v0.5.0
      * @param encoding The `encoding` of the return value.
      */
-    fun generateKeys(): Buffer
+    fun generateKeys(): node.buffer.Buffer
     fun generateKeys(encoding: BinaryToTextEncoding): String
 
     /**
@@ -65,7 +63,7 @@ external class DiffieHellman {
         otherPublicKey: js.buffer.ArrayBufferView,
         inputEncoding: Nothing? = definedExternally,
         outputEncoding: Nothing? = definedExternally,
-    ): Buffer
+    ): node.buffer.Buffer
 
     fun computeSecret(
         otherPublicKey: js.buffer.ArrayBufferView,
@@ -77,7 +75,7 @@ external class DiffieHellman {
         otherPublicKey: String,
         inputEncoding: BinaryToTextEncoding,
         outputEncoding: Nothing? = definedExternally,
-    ): Buffer
+    ): node.buffer.Buffer
 
     fun computeSecret(
         otherPublicKey: String,
@@ -92,7 +90,7 @@ external class DiffieHellman {
      * @since v0.5.0
      * @param encoding The `encoding` of the return value.
      */
-    fun getPrime(): Buffer
+    fun getPrime(): node.buffer.Buffer
     fun getPrime(encoding: BinaryToTextEncoding): String
 
     /**
@@ -102,7 +100,7 @@ external class DiffieHellman {
      * @since v0.5.0
      * @param encoding The `encoding` of the return value.
      */
-    fun getGenerator(): Buffer
+    fun getGenerator(): node.buffer.Buffer
     fun getGenerator(encoding: BinaryToTextEncoding): String
 
     /**
@@ -112,7 +110,7 @@ external class DiffieHellman {
      * @since v0.5.0
      * @param encoding The `encoding` of the return value.
      */
-    fun getPublicKey(): Buffer
+    fun getPublicKey(): node.buffer.Buffer
     fun getPublicKey(encoding: BinaryToTextEncoding): String
 
     /**
@@ -122,7 +120,7 @@ external class DiffieHellman {
      * @since v0.5.0
      * @param encoding The `encoding` of the return value.
      */
-    fun getPrivateKey(): Buffer
+    fun getPrivateKey(): node.buffer.Buffer
     fun getPrivateKey(encoding: BinaryToTextEncoding): String
 
     /**
@@ -133,7 +131,7 @@ external class DiffieHellman {
      * @param encoding The `encoding` of the `publicKey` string.
      */
     fun setPublicKey(publicKey: js.buffer.ArrayBufferView): Unit
-    fun setPublicKey(publicKey: String, encoding: BufferEncoding): Unit
+    fun setPublicKey(publicKey: String, encoding: node.buffer.BufferEncoding): Unit
 
     /**
      * Sets the Diffie-Hellman private key. If the `encoding` argument is provided,`privateKey` is expected
@@ -143,7 +141,7 @@ external class DiffieHellman {
      * @param encoding The `encoding` of the `privateKey` string.
      */
     fun setPrivateKey(privateKey: js.buffer.ArrayBufferView): Unit
-    fun setPrivateKey(privateKey: String, encoding: BufferEncoding): Unit
+    fun setPrivateKey(privateKey: String, encoding: node.buffer.BufferEncoding): Unit
 
     /**
      * A bit field containing any warnings and/or errors resulting from a check

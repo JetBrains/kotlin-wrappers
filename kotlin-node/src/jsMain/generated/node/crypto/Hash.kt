@@ -2,7 +2,6 @@
 
 package node.crypto
 
-import node.buffer.Buffer
 
 /**
  * The `Hash` class is a utility for creating hash digests of data. It can be
@@ -128,6 +127,6 @@ external class Hash : node.stream.Transform {
      * @since v0.1.92
      * @param encoding The `encoding` of the return value.
      */
-    fun digest(): Buffer
+    fun digest(): node.buffer.Buffer
     fun digest(encoding: BinaryToTextEncoding): String
 }

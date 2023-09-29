@@ -1,7 +1,5 @@
 package node.tls
 
-import node.buffer.Buffer
-
 
 sealed external interface TlsOptions : SecureContextOptions, CommonConnectionOptions, node.net.ServerOpts {
     /**
@@ -22,7 +20,7 @@ sealed external interface TlsOptions : SecureContextOptions, CommonConnectionOpt
     /**
      * 48-bytes of cryptographically strong pseudo-random data.
      */
-    override var ticketKeys: Buffer?
+    override var ticketKeys: node.buffer.Buffer?
 
     /**
      *

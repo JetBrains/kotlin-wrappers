@@ -2,7 +2,6 @@
 
 package node.crypto
 
-import node.buffer.Buffer
 
 /**
  * The `Hmac` class is a utility for creating cryptographic HMAC digests. It can
@@ -95,6 +94,6 @@ external class Hmac : node.stream.Transform {
      * @since v0.1.94
      * @param encoding The `encoding` of the return value.
      */
-    fun digest(): Buffer
+    fun digest(): node.buffer.Buffer
     fun digest(encoding: BinaryToTextEncoding): String
 }

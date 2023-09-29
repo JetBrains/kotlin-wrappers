@@ -1,7 +1,5 @@
 package node.tls
 
-import node.buffer.Buffer
-
 
 sealed external interface SecureContextOptions {
     /**
@@ -169,7 +167,7 @@ sealed external interface SecureContextOptions {
      * 48-bytes of cryptographically strong pseudo-random data.
      * See Session Resumption for more information.
      */
-    var ticketKeys: Buffer?
+    var ticketKeys: node.buffer.Buffer?
 
     /**
      * The number of seconds after which a TLS session created by the

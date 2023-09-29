@@ -2,7 +2,6 @@
 
 package node.crypto
 
-import node.buffer.Buffer
 
 /**
  * The `Sign` class is a utility for generating signatures. It can be used in one
@@ -94,11 +93,11 @@ external class Sign : node.stream.Writable {
      * called. Multiple calls to `sign.sign()` will result in an error being thrown.
      * @since v0.1.92
      */
-    fun sign(privateKey: KeyLike): Buffer
+    fun sign(privateKey: KeyLike): node.buffer.Buffer
 
-    fun sign(privateKey: SignKeyObjectInput): Buffer
+    fun sign(privateKey: SignKeyObjectInput): node.buffer.Buffer
 
-    fun sign(privateKey: SignPrivateKeyInput): Buffer
+    fun sign(privateKey: SignPrivateKeyInput): node.buffer.Buffer
     fun sign(privateKey: KeyLike, outputFormat: BinaryToTextEncoding): String
 
     fun sign(privateKey: SignKeyObjectInput, outputFormat: BinaryToTextEncoding): String

@@ -2,8 +2,6 @@
 
 package node.crypto
 
-import node.buffer.Buffer
-import node.buffer.BufferEncoding
 
 /**
  * Instances of the `Decipher` class are used to decrypt data. The class can be
@@ -128,9 +126,9 @@ open external class Decipher : node.stream.Transform {
      * @param inputEncoding The `encoding` of the `data` string.
      * @param outputEncoding The `encoding` of the return value.
      */
-    fun update(data: js.buffer.ArrayBufferView): Buffer
+    fun update(data: js.buffer.ArrayBufferView): node.buffer.Buffer
     fun update(data: js.buffer.ArrayBufferView, inputEncoding: Nothing?, outputEncoding: Encoding): String
-    fun update(data: String, inputEncoding: Encoding): Buffer
+    fun update(data: String, inputEncoding: Encoding): node.buffer.Buffer
     fun update(data: String, inputEncoding: Encoding?, outputEncoding: Encoding): String
 
     /**
@@ -141,8 +139,8 @@ open external class Decipher : node.stream.Transform {
      * @param outputEncoding The `encoding` of the return value.
      * @return Any remaining deciphered contents. If `outputEncoding` is specified, a string is returned. If an `outputEncoding` is not provided, a {@link Buffer} is returned.
      */
-    fun final(): Buffer
-    fun final(outputEncoding: BufferEncoding): String
+    fun final(): node.buffer.Buffer
+    fun final(outputEncoding: node.buffer.BufferEncoding): String
 
     /**
      * When data has been encrypted without standard block padding, calling`decipher.setAutoPadding(false)` will disable automatic padding to prevent `decipher.final()` from checking for and

@@ -2,7 +2,6 @@
 
 package node.crypto
 
-import node.buffer.Buffer
 
 /**
  * Creates and returns a new key object containing a private key. If `key` is a
@@ -16,6 +15,6 @@ external fun createPrivateKey(key: PrivateKeyInput): KeyObject
 
 external fun createPrivateKey(key: String): KeyObject
 
-external fun createPrivateKey(key: Buffer): KeyObject
+external fun createPrivateKey(key: node.buffer.Buffer): KeyObject
 
 external fun createPrivateKey(key: JsonWebKeyInput): KeyObject

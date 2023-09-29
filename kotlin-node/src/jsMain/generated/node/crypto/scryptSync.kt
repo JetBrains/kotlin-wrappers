@@ -2,7 +2,6 @@
 
 package node.crypto
 
-import node.buffer.Buffer
 
 /**
  * Provides a synchronous [scrypt](https://en.wikipedia.org/wiki/Scrypt) implementation. Scrypt is a password-based
@@ -39,4 +38,4 @@ external fun scryptSync(
     salt: BinaryLike,
     keylen: Number,
     options: ScryptOptions = definedExternally,
-): Buffer
+): node.buffer.Buffer

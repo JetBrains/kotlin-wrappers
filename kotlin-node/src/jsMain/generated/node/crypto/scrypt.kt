@@ -2,7 +2,6 @@
 
 package node.crypto
 
-import node.buffer.Buffer
 
 /**
  * Provides an asynchronous [scrypt](https://en.wikipedia.org/wiki/Scrypt) implementation. Scrypt is a password-based
@@ -42,7 +41,7 @@ external fun scrypt(
     password: BinaryLike,
     salt: BinaryLike,
     keylen: Number,
-    callback: (err: Throwable /* JsError */?, derivedKey: Buffer) -> Unit,
+    callback: (err: Throwable /* JsError */?, derivedKey: node.buffer.Buffer) -> Unit,
 ): Unit
 
 external fun scrypt(
@@ -50,5 +49,5 @@ external fun scrypt(
     salt: BinaryLike,
     keylen: Number,
     options: ScryptOptions,
-    callback: (err: Throwable /* JsError */?, derivedKey: Buffer) -> Unit,
+    callback: (err: Throwable /* JsError */?, derivedKey: node.buffer.Buffer) -> Unit,
 ): Unit

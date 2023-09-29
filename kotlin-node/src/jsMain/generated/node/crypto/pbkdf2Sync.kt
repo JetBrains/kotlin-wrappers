@@ -2,7 +2,6 @@
 
 package node.crypto
 
-import node.buffer.Buffer
 
 /**
  * Provides a synchronous Password-Based Key Derivation Function 2 (PBKDF2)
@@ -52,4 +51,4 @@ external fun pbkdf2Sync(
     iterations: Number,
     keylen: Number,
     digest: String,
-): Buffer
+): node.buffer.Buffer

@@ -2,7 +2,6 @@
 
 package node.crypto
 
-import node.buffer.Buffer
 
 /**
  * Provides an asynchronous Password-Based Key Derivation Function 2 (PBKDF2)
@@ -60,5 +59,5 @@ external fun pbkdf2(
     iterations: Number,
     keylen: Number,
     digest: String,
-    callback: (err: Throwable /* JsError */?, derivedKey: Buffer) -> Unit,
+    callback: (err: Throwable /* JsError */?, derivedKey: node.buffer.Buffer) -> Unit,
 ): Unit
