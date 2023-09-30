@@ -5,6 +5,7 @@ plugins {
 }
 
 dependencies {
+    jsMainApi(project(":kotlin-mui-system"))
     jsMainApi(project(":kotlin-react-dom"))
     jsMainApi(project(":kotlin-popper"))
 
