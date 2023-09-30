@@ -41,9 +41,6 @@ external fun mkdirAsync(path: PathLike, options: (MkdirAsyncOptions)? = definedE
  * should be created. If a string is passed, it is parsed as an octal integer. If not specified, defaults to `0o777`.
  */
 
-@JsName("mkdir")
-external fun mkdirAsync(path: PathLike, options: Mode? = definedExternally): Promise<String?>
-
 
 @JsName("mkdir")
 external fun mkdirAsync(path: PathLike, options: MakeDirectoryOptions? = definedExternally): Promise<String?>

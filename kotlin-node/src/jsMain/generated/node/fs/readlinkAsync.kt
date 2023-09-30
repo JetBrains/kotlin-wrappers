@@ -40,12 +40,6 @@ external fun readlinkAsync(path: PathLike, options: BufferEncodingOption): Promi
  * @param options The encoding (or an object specifying the encoding), used as the encoding of the result. If not provided, `'utf8'` is used.
  */
 
-@JsName("readlink")
-external fun readlinkAsync(
-    path: PathLike,
-    options: ObjectEncodingOptions? = definedExternally,
-): Promise<Any /* string | Buffer */>
-
 
 @JsName("readlink")
 external fun readlinkAsync(path: PathLike, options: String? = definedExternally): Promise<Any /* string | Buffer */>

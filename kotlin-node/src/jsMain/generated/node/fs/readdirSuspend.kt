@@ -33,24 +33,6 @@ suspend fun readdir(path: PathLike, options: String /* 'buffer' */): js.core.Rea
     ).await()
 
 
-suspend fun readdir(
-    path: PathLike,
-    options: (ReaddirAsyncOptions)? = undefined.unsafeCast<Nothing>(),
-): Any /* string[] | Buffer[] */ =
-    readdirAsync(
-        path, options
-    ).await()
-
-
-suspend fun readdir(
-    path: PathLike,
-    options: node.buffer.BufferEncoding? = undefined.unsafeCast<Nothing>(),
-): Any /* string[] | Buffer[] */ =
-    readdirAsync(
-        path, options
-    ).await()
-
-
 suspend fun readdir(path: PathLike, options: ReaddirWithFileTypesAsyncOptions): js.core.ReadonlyArray<Dirent> =
     readdirAsync(
         path, options

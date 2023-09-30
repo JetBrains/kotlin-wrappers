@@ -39,10 +39,6 @@ external fun watch(
     options: WatchBufferAsyncOptions,
 ): AsyncIterable<FileChangeInfo<node.buffer.Buffer>>
 
-external fun watch(
-    filename: PathLike,
-    options: String, /* 'buffer' */
-): AsyncIterable<FileChangeInfo<node.buffer.Buffer>>
 
 /**
  * Watch for changes on `filename`, where `filename` is either a file or a directory, returning an `FSWatcher`.
@@ -67,10 +63,7 @@ external fun watch(
  * If `persistent` is not supplied, the default of `true` is used.
  * If `recursive` is not supplied, the default of `false` is used.
  */
-external fun watch(
-    filename: PathLike,
-    options: WatchOptions,
-): Any /* AsyncIterable<FileChangeInfo<string>> | AsyncIterable<FileChangeInfo<Buffer>> */
+
 
 external fun watch(
     filename: PathLike,

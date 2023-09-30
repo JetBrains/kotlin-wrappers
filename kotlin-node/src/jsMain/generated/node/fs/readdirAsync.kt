@@ -69,19 +69,6 @@ external fun readdirAsync(
  * @param options The encoding (or an object specifying the encoding), used as the encoding of the result. If not provided, `'utf8'` is used.
  */
 
-@JsName("readdir")
-external fun readdirAsync(
-    path: PathLike,
-    options: (ReaddirAsyncOptions)? = definedExternally,
-): Promise<Any /* string[] | Buffer[] */>
-
-
-@JsName("readdir")
-external fun readdirAsync(
-    path: PathLike,
-    options: node.buffer.BufferEncoding? = definedExternally,
-): Promise<Any /* string[] | Buffer[] */>
-
 
 /**
  * Asynchronous readdir(3) - read a directory.

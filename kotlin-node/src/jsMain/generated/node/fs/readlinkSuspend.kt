@@ -21,15 +21,6 @@ suspend fun readlink(path: PathLike, options: BufferEncodingOption): node.buffer
     ).await()
 
 
-suspend fun readlink(
-    path: PathLike,
-    options: ObjectEncodingOptions? = undefined.unsafeCast<Nothing>(),
-): Any /* string | Buffer */ =
-    readlinkAsync(
-        path, options
-    ).await()
-
-
 suspend fun readlink(path: PathLike, options: String? = undefined.unsafeCast<Nothing>()): Any /* string | Buffer */ =
     readlinkAsync(
         path, options
