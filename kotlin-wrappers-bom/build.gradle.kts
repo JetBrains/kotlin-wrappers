@@ -18,6 +18,7 @@ dependencies {
         api(project(":kotlin-mui"))
         api(project(":kotlin-mui-base"))
         api(project(":kotlin-mui-icons"))
+        api(project(":kotlin-mui-lab"))
         api(project(":kotlin-mui-system"))
         api(project(":kotlin-muix-tree-view"))
         api(project(":kotlin-node"))
