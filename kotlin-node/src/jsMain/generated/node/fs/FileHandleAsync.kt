@@ -462,7 +462,7 @@ sealed external interface FileHandle {
      * @since v18.11.0
      * @param options See `filehandle.createReadStream()` for the options.
      */
-    fun readLines(options: CreateReadStreamOptions = definedExternally): ReadlineInterface
+    fun readLines(options: CreateReadStreamOptions = definedExternally): Any
 
     /**
      * @since v10.0.0
