@@ -166,6 +166,7 @@
         ],
         "fs/FileHandleAsync.kt": [
             "js.core.ReadonlyArray",
+            "js.promise.await",
             "js.typedarrays.Uint8Array",
             "web.streams.ReadableStream"
         ],
@@ -309,6 +310,9 @@
         "StatBigIntOptsAsync.kt": "replace",
         "StatSimpleOptsAsync.kt": "replace",
         "StatfsBigIntOptsAsync.kt": "replace",
-        "StatfsOptsAsync.kt": "replace"
+        "StatfsOptsAsync.kt": "replace",
+        "FileHandleStatOptsAsync.kt": "replace",
+        "FileHandleWriteResultPayloadAsync.kt": "replace",
+        "FileHandleWriteStringResultPayloadAsync.kt": "replace"
     }
 }

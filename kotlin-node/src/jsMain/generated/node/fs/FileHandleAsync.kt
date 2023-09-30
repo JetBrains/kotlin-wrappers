@@ -2,6 +2,7 @@ package node.fs
 
 import js.core.ReadonlyArray
 import js.promise.Promise
+import js.promise.await
 import js.typedarrays.Uint8Array
 import web.streams.ReadableStream
 
@@ -22,13 +23,78 @@ sealed external interface FileHandle {
      * @since v10.0.0
      * @return Fulfills with `undefined` upon success.
      */
-    fun appendFile(data: String, options: (FileHandleAppendFileAsyncOptions)? = definedExternally): Promise<Unit>
 
-    fun appendFile(data: String, options: node.buffer.BufferEncoding? = definedExternally): Promise<Unit>
+    @JsName("appendFile")
+    fun appendFileAsync(data: String, options: (FileHandleAppendFileAsyncOptions)? = definedExternally): Promise<Unit>
 
-    fun appendFile(data: Uint8Array, options: (FileHandleAppendFileAsyncOptions)? = definedExternally): Promise<Unit>
 
-    fun appendFile(data: Uint8Array, options: node.buffer.BufferEncoding? = definedExternally): Promise<Unit>
+    @JsName("appendFile")
+    fun appendFileAsync(data: String, options: node.buffer.BufferEncoding? = definedExternally): Promise<Unit>
+
+
+    @JsName("appendFile")
+    fun appendFileAsync(
+        data: Uint8Array,
+        options: (FileHandleAppendFileAsyncOptions)? = definedExternally,
+    ): Promise<Unit>
+
+
+    @JsName("appendFile")
+    fun appendFileAsync(data: Uint8Array, options: node.buffer.BufferEncoding? = definedExternally): Promise<Unit>
+
+
+    @Suppress(
+        "WRONG_BODY_OF_EXTERNAL_DECLARATION",
+        "INLINE_EXTERNAL_DECLARATION",
+        "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
+        "DECLARATION_CANT_BE_INLINED",
+    )
+    suspend inline fun appendFile(
+        data: String,
+        options: (FileHandleAppendFileAsyncOptions)? = definedExternally,
+    ): Unit =
+        appendFileAsync(
+            data, options
+        ).await()
+
+
+    @Suppress(
+        "WRONG_BODY_OF_EXTERNAL_DECLARATION",
+        "INLINE_EXTERNAL_DECLARATION",
+        "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
+        "DECLARATION_CANT_BE_INLINED",
+    )
+    suspend inline fun appendFile(data: String, options: node.buffer.BufferEncoding? = definedExternally): Unit =
+        appendFileAsync(
+            data, options
+        ).await()
+
+
+    @Suppress(
+        "WRONG_BODY_OF_EXTERNAL_DECLARATION",
+        "INLINE_EXTERNAL_DECLARATION",
+        "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
+        "DECLARATION_CANT_BE_INLINED",
+    )
+    suspend inline fun appendFile(
+        data: Uint8Array,
+        options: (FileHandleAppendFileAsyncOptions)? = definedExternally,
+    ): Unit =
+        appendFileAsync(
+            data, options
+        ).await()
+
+
+    @Suppress(
+        "WRONG_BODY_OF_EXTERNAL_DECLARATION",
+        "INLINE_EXTERNAL_DECLARATION",
+        "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
+        "DECLARATION_CANT_BE_INLINED",
+    )
+    suspend inline fun appendFile(data: Uint8Array, options: node.buffer.BufferEncoding? = definedExternally): Unit =
+        appendFileAsync(
+            data, options
+        ).await()
 
     /**
      * Changes the ownership of the file. A wrapper for [`chown(2)`](http://man7.org/linux/man-pages/man2/chown.2.html).
@@ -37,7 +103,21 @@ sealed external interface FileHandle {
      * @param gid The file's new group's group id.
      * @return Fulfills with `undefined` upon success.
      */
-    fun chown(uid: Number, gid: Number): Promise<Unit>
+
+    @JsName("chown")
+    fun chownAsync(uid: Number, gid: Number): Promise<Unit>
+
+
+    @Suppress(
+        "WRONG_BODY_OF_EXTERNAL_DECLARATION",
+        "INLINE_EXTERNAL_DECLARATION",
+        "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
+        "DECLARATION_CANT_BE_INLINED",
+    )
+    suspend inline fun chown(uid: Number, gid: Number): Unit =
+        chownAsync(
+            uid, gid
+        ).await()
 
     /**
      * Modifies the permissions on the file. See [`chmod(2)`](http://man7.org/linux/man-pages/man2/chmod.2.html).
@@ -45,7 +125,21 @@ sealed external interface FileHandle {
      * @param mode the file mode bit mask.
      * @return Fulfills with `undefined` upon success.
      */
-    fun chmod(mode: Mode): Promise<Unit>
+
+    @JsName("chmod")
+    fun chmodAsync(mode: Mode): Promise<Unit>
+
+
+    @Suppress(
+        "WRONG_BODY_OF_EXTERNAL_DECLARATION",
+        "INLINE_EXTERNAL_DECLARATION",
+        "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
+        "DECLARATION_CANT_BE_INLINED",
+    )
+    suspend inline fun chmod(mode: Mode): Unit =
+        chmodAsync(
+            mode
+        ).await()
 
     /**
      * Unlike the 16 kb default `highWaterMark` for a `stream.Readable`, the stream
@@ -128,7 +222,21 @@ sealed external interface FileHandle {
      * @since v10.0.0
      * @return Fulfills with `undefined` upon success.
      */
-    fun datasync(): Promise<Unit>
+
+    @JsName("datasync")
+    fun datasyncAsync(): Promise<Unit>
+
+
+    @Suppress(
+        "WRONG_BODY_OF_EXTERNAL_DECLARATION",
+        "INLINE_EXTERNAL_DECLARATION",
+        "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
+        "DECLARATION_CANT_BE_INLINED",
+    )
+    suspend inline fun datasync(): Unit =
+        datasyncAsync(
+
+        ).await()
 
     /**
      * Request that all data for the open file descriptor is flushed to the storage
@@ -137,7 +245,21 @@ sealed external interface FileHandle {
      * @since v10.0.0
      * @return Fufills with `undefined` upon success.
      */
-    fun sync(): Promise<Unit>
+
+    @JsName("sync")
+    fun syncAsync(): Promise<Unit>
+
+
+    @Suppress(
+        "WRONG_BODY_OF_EXTERNAL_DECLARATION",
+        "INLINE_EXTERNAL_DECLARATION",
+        "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
+        "DECLARATION_CANT_BE_INLINED",
+    )
+    suspend inline fun sync(): Unit =
+        syncAsync(
+
+        ).await()
 
     /**
      * Reads data from the file and stores that in the given buffer.
@@ -152,14 +274,47 @@ sealed external interface FileHandle {
      * integer, the current file position will remain unchanged.
      * @return Fulfills upon success with an object with two properties:
      */
-    fun <T : js.buffer.ArrayBufferView> read(
+
+    @JsName("read")
+    fun <T : js.buffer.ArrayBufferView> readAsync(
         buffer: T,
         offset: Double? = definedExternally,
         length: Double? = definedExternally,
         position: Double? = definedExternally,
     ): Promise<FileReadResult<T>>
 
-    fun <T : js.buffer.ArrayBufferView /* default is node.buffer.Buffer */> read(options: FileReadOptions<T> = definedExternally): Promise<FileReadResult<T>>
+
+    @Suppress(
+        "WRONG_BODY_OF_EXTERNAL_DECLARATION",
+        "INLINE_EXTERNAL_DECLARATION",
+        "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
+        "DECLARATION_CANT_BE_INLINED",
+    )
+    suspend inline fun <T : js.buffer.ArrayBufferView> read(
+        buffer: T,
+        offset: Double? = definedExternally,
+        length: Double? = definedExternally,
+        position: Double? = definedExternally,
+    ): FileReadResult<T> =
+        readAsync(
+            buffer, offset, length, position
+        ).await()
+
+
+    @JsName("read")
+    fun <T : js.buffer.ArrayBufferView /* default is node.buffer.Buffer */> readAsync(options: FileReadOptions<T> = definedExternally): Promise<FileReadResult<T>>
+
+
+    @Suppress(
+        "WRONG_BODY_OF_EXTERNAL_DECLARATION",
+        "INLINE_EXTERNAL_DECLARATION",
+        "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
+        "DECLARATION_CANT_BE_INLINED",
+    )
+    suspend inline fun <T : js.buffer.ArrayBufferView /* default is node.buffer.Buffer */> read(options: FileReadOptions<T> = definedExternally): FileReadResult<T> =
+        readAsync(
+            options
+        ).await()
 
     /**
      * Returns a `ReadableStream` that may be used to read the files data.
@@ -199,7 +354,21 @@ sealed external interface FileHandle {
      * @return Fulfills upon a successful read with the contents of the file. If no encoding is specified (using `options.encoding`), the data is returned as a {Buffer} object. Otherwise, the
      * data will be a string.
      */
-    fun readFile(options: (FileHandleReadFileBufferAsyncOptions)? = definedExternally): Promise<node.buffer.Buffer>
+
+    @JsName("readFile")
+    fun readFileAsync(options: (FileHandleReadFileBufferAsyncOptions)? = definedExternally): Promise<node.buffer.Buffer>
+
+
+    @Suppress(
+        "WRONG_BODY_OF_EXTERNAL_DECLARATION",
+        "INLINE_EXTERNAL_DECLARATION",
+        "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
+        "DECLARATION_CANT_BE_INLINED",
+    )
+    suspend inline fun readFile(options: (FileHandleReadFileBufferAsyncOptions)? = definedExternally): node.buffer.Buffer =
+        readFileAsync(
+            options
+        ).await()
 
     /**
      * Asynchronously reads the entire contents of a file. The underlying file will _not_ be closed automatically.
@@ -207,9 +376,37 @@ sealed external interface FileHandle {
      * @param options An object that may contain an optional flag.
      * If a flag is not provided, it defaults to `'r'`.
      */
-    fun readFile(options: FileHandleReadFileStringAsyncOptions): Promise<String>
 
-    fun readFile(options: node.buffer.BufferEncoding): Promise<String>
+    @JsName("readFile")
+    fun readFileAsync(options: FileHandleReadFileStringAsyncOptions): Promise<String>
+
+
+    @JsName("readFile")
+    fun readFileAsync(options: node.buffer.BufferEncoding): Promise<String>
+
+
+    @Suppress(
+        "WRONG_BODY_OF_EXTERNAL_DECLARATION",
+        "INLINE_EXTERNAL_DECLARATION",
+        "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
+        "DECLARATION_CANT_BE_INLINED",
+    )
+    suspend inline fun readFile(options: FileHandleReadFileStringAsyncOptions): String =
+        readFileAsync(
+            options
+        ).await()
+
+
+    @Suppress(
+        "WRONG_BODY_OF_EXTERNAL_DECLARATION",
+        "INLINE_EXTERNAL_DECLARATION",
+        "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
+        "DECLARATION_CANT_BE_INLINED",
+    )
+    suspend inline fun readFile(options: node.buffer.BufferEncoding): String =
+        readFileAsync(
+            options
+        ).await()
 
     /**
      * Asynchronously reads the entire contents of a file. The underlying file will _not_ be closed automatically.
@@ -217,9 +414,37 @@ sealed external interface FileHandle {
      * @param options An object that may contain an optional flag.
      * If a flag is not provided, it defaults to `'r'`.
      */
-    fun readFile(options: (FileHandleReadFileAsyncOptions)? = definedExternally): Promise<Any /* string | Buffer */>
 
-    fun readFile(options: node.buffer.BufferEncoding? = definedExternally): Promise<Any /* string | Buffer */>
+    @JsName("readFile")
+    fun readFileAsync(options: (FileHandleReadFileAsyncOptions)? = definedExternally): Promise<Any /* string | Buffer */>
+
+
+    @JsName("readFile")
+    fun readFileAsync(options: node.buffer.BufferEncoding? = definedExternally): Promise<Any /* string | Buffer */>
+
+
+    @Suppress(
+        "WRONG_BODY_OF_EXTERNAL_DECLARATION",
+        "INLINE_EXTERNAL_DECLARATION",
+        "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
+        "DECLARATION_CANT_BE_INLINED",
+    )
+    suspend inline fun readFile(options: (FileHandleReadFileAsyncOptions)? = definedExternally): Any /* string | Buffer */ =
+        readFileAsync(
+            options
+        ).await()
+
+
+    @Suppress(
+        "WRONG_BODY_OF_EXTERNAL_DECLARATION",
+        "INLINE_EXTERNAL_DECLARATION",
+        "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
+        "DECLARATION_CANT_BE_INLINED",
+    )
+    suspend inline fun readFile(options: node.buffer.BufferEncoding? = definedExternally): Any /* string | Buffer */ =
+        readFileAsync(
+            options
+        ).await()
 
     /**
      * Convenience method to create a `readline` interface and stream over the file. For example:
@@ -243,9 +468,53 @@ sealed external interface FileHandle {
      * @since v10.0.0
      * @return Fulfills with an {fs.Stats} for the file.
      */
-    fun stat(opts: FileHandleStatOpts = definedExternally): Promise<Stats>
-    fun stat(opts: FileHandleStatBigIntOpts): Promise<BigIntStats>
-    fun stat(opts: StatOptions = definedExternally): Promise<Any /* Stats | BigIntStats */>
+
+    @JsName("stat")
+    fun statAsync(opts: FileHandleStatOpts = definedExternally): Promise<Stats>
+
+
+    @Suppress(
+        "WRONG_BODY_OF_EXTERNAL_DECLARATION",
+        "INLINE_EXTERNAL_DECLARATION",
+        "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
+        "DECLARATION_CANT_BE_INLINED",
+    )
+    suspend inline fun stat(opts: FileHandleStatOpts = definedExternally): Stats =
+        statAsync(
+            opts
+        ).await()
+
+
+    @JsName("stat")
+    fun statAsync(opts: FileHandleStatBigIntOpts): Promise<BigIntStats>
+
+
+    @Suppress(
+        "WRONG_BODY_OF_EXTERNAL_DECLARATION",
+        "INLINE_EXTERNAL_DECLARATION",
+        "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
+        "DECLARATION_CANT_BE_INLINED",
+    )
+    suspend inline fun stat(opts: FileHandleStatBigIntOpts): BigIntStats =
+        statAsync(
+            opts
+        ).await()
+
+
+    @JsName("stat")
+    fun statAsync(opts: StatOptions = definedExternally): Promise<Any /* Stats | BigIntStats */>
+
+
+    @Suppress(
+        "WRONG_BODY_OF_EXTERNAL_DECLARATION",
+        "INLINE_EXTERNAL_DECLARATION",
+        "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
+        "DECLARATION_CANT_BE_INLINED",
+    )
+    suspend inline fun stat(opts: StatOptions = definedExternally): Any /* Stats | BigIntStats */ =
+        statAsync(
+            opts
+        ).await()
 
     /**
      * Truncates the file.
@@ -275,13 +544,41 @@ sealed external interface FileHandle {
      * @param [len=0]
      * @return Fulfills with `undefined` upon success.
      */
-    fun truncate(len: Number = definedExternally): Promise<Unit>
+
+    @JsName("truncate")
+    fun truncateAsync(len: Number = definedExternally): Promise<Unit>
+
+
+    @Suppress(
+        "WRONG_BODY_OF_EXTERNAL_DECLARATION",
+        "INLINE_EXTERNAL_DECLARATION",
+        "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
+        "DECLARATION_CANT_BE_INLINED",
+    )
+    suspend inline fun truncate(len: Number = definedExternally): Unit =
+        truncateAsync(
+            len
+        ).await()
 
     /**
      * Change the file system timestamps of the object referenced by the `FileHandle` then resolves the promise with no arguments upon success.
      * @since v10.0.0
      */
-    fun utimes(atime: TimeLike, mtime: TimeLike): Promise<Unit>
+
+    @JsName("utimes")
+    fun utimesAsync(atime: TimeLike, mtime: TimeLike): Promise<Unit>
+
+
+    @Suppress(
+        "WRONG_BODY_OF_EXTERNAL_DECLARATION",
+        "INLINE_EXTERNAL_DECLARATION",
+        "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
+        "DECLARATION_CANT_BE_INLINED",
+    )
+    suspend inline fun utimes(atime: TimeLike, mtime: TimeLike): Unit =
+        utimesAsync(
+            atime, mtime
+        ).await()
 
     /**
      * Asynchronously writes data to a file, replacing the file if it already exists.`data` can be a string, a buffer, an
@@ -301,13 +598,69 @@ sealed external interface FileHandle {
      * beginning of the file.
      * @since v10.0.0
      */
-    fun writeFile(data: String, options: FileHandleWriteFileAsyncOptions = definedExternally): Promise<Unit>
 
-    fun writeFile(data: String, options: node.buffer.BufferEncoding? = definedExternally): Promise<Unit>
+    @JsName("writeFile")
+    fun writeFileAsync(data: String, options: FileHandleWriteFileAsyncOptions = definedExternally): Promise<Unit>
 
-    fun writeFile(data: Uint8Array, options: FileHandleWriteFileAsyncOptions = definedExternally): Promise<Unit>
 
-    fun writeFile(data: Uint8Array, options: node.buffer.BufferEncoding? = definedExternally): Promise<Unit>
+    @JsName("writeFile")
+    fun writeFileAsync(data: String, options: node.buffer.BufferEncoding? = definedExternally): Promise<Unit>
+
+
+    @JsName("writeFile")
+    fun writeFileAsync(data: Uint8Array, options: FileHandleWriteFileAsyncOptions = definedExternally): Promise<Unit>
+
+
+    @JsName("writeFile")
+    fun writeFileAsync(data: Uint8Array, options: node.buffer.BufferEncoding? = definedExternally): Promise<Unit>
+
+
+    @Suppress(
+        "WRONG_BODY_OF_EXTERNAL_DECLARATION",
+        "INLINE_EXTERNAL_DECLARATION",
+        "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
+        "DECLARATION_CANT_BE_INLINED",
+    )
+    suspend inline fun writeFile(data: String, options: FileHandleWriteFileAsyncOptions = definedExternally): Unit =
+        writeFileAsync(
+            data, options
+        ).await()
+
+
+    @Suppress(
+        "WRONG_BODY_OF_EXTERNAL_DECLARATION",
+        "INLINE_EXTERNAL_DECLARATION",
+        "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
+        "DECLARATION_CANT_BE_INLINED",
+    )
+    suspend inline fun writeFile(data: String, options: node.buffer.BufferEncoding? = definedExternally): Unit =
+        writeFileAsync(
+            data, options
+        ).await()
+
+
+    @Suppress(
+        "WRONG_BODY_OF_EXTERNAL_DECLARATION",
+        "INLINE_EXTERNAL_DECLARATION",
+        "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
+        "DECLARATION_CANT_BE_INLINED",
+    )
+    suspend inline fun writeFile(data: Uint8Array, options: FileHandleWriteFileAsyncOptions = definedExternally): Unit =
+        writeFileAsync(
+            data, options
+        ).await()
+
+
+    @Suppress(
+        "WRONG_BODY_OF_EXTERNAL_DECLARATION",
+        "INLINE_EXTERNAL_DECLARATION",
+        "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
+        "DECLARATION_CANT_BE_INLINED",
+    )
+    suspend inline fun writeFile(data: Uint8Array, options: node.buffer.BufferEncoding? = definedExternally): Unit =
+        writeFileAsync(
+            data, options
+        ).await()
 
     /**
      * Write `buffer` to the file.
@@ -327,18 +680,55 @@ sealed external interface FileHandle {
      * @param position The offset from the beginning of the file where the data from `buffer` should be written. If `position` is not a `number`, the data will be written at the current position.
      * See the POSIX pwrite(2) documentation for more detail.
      */
-    fun <TBuffer : Uint8Array> write(
+
+    @JsName("write")
+    fun <TBuffer : Uint8Array> writeAsync(
         buffer: TBuffer,
         offset: Double? = definedExternally,
         length: Double? = definedExternally,
         position: Double? = definedExternally,
     ): Promise<FileHandleWriteResultPayload<TBuffer>>
 
-    fun write(
+
+    @Suppress(
+        "WRONG_BODY_OF_EXTERNAL_DECLARATION",
+        "INLINE_EXTERNAL_DECLARATION",
+        "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
+        "DECLARATION_CANT_BE_INLINED",
+    )
+    suspend inline fun <TBuffer : Uint8Array> write(
+        buffer: TBuffer,
+        offset: Double? = definedExternally,
+        length: Double? = definedExternally,
+        position: Double? = definedExternally,
+    ): FileHandleWriteResultPayload<TBuffer> =
+        writeAsync(
+            buffer, offset, length, position
+        ).await()
+
+
+    @JsName("write")
+    fun writeAsync(
         data: String,
         position: Double? = definedExternally,
         encoding: node.buffer.BufferEncoding? = definedExternally,
     ): Promise<FileHandleWriteStringResultPayload>
+
+
+    @Suppress(
+        "WRONG_BODY_OF_EXTERNAL_DECLARATION",
+        "INLINE_EXTERNAL_DECLARATION",
+        "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
+        "DECLARATION_CANT_BE_INLINED",
+    )
+    suspend inline fun write(
+        data: String,
+        position: Double? = definedExternally,
+        encoding: node.buffer.BufferEncoding? = definedExternally,
+    ): FileHandleWriteStringResultPayload =
+        writeAsync(
+            data, position, encoding
+        ).await()
 
     /**
      * Write an array of [ArrayBufferView](https://developer.mozilla.org/en-US/docs/Web/API/ArrayBufferView) s to the file.
@@ -355,10 +745,27 @@ sealed external interface FileHandle {
      * @param position The offset from the beginning of the file where the data from `buffers` should be written. If `position` is not a `number`, the data will be written at the current
      * position.
      */
-    fun writev(
+
+    @JsName("writev")
+    fun writevAsync(
         buffers: ReadonlyArray<js.buffer.ArrayBufferView>,
         position: Number = definedExternally,
     ): Promise<WriteVResult>
+
+
+    @Suppress(
+        "WRONG_BODY_OF_EXTERNAL_DECLARATION",
+        "INLINE_EXTERNAL_DECLARATION",
+        "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
+        "DECLARATION_CANT_BE_INLINED",
+    )
+    suspend inline fun writev(
+        buffers: ReadonlyArray<js.buffer.ArrayBufferView>,
+        position: Number = definedExternally,
+    ): WriteVResult =
+        writevAsync(
+            buffers, position
+        ).await()
 
     /**
      * Read from a file and write to an array of [ArrayBufferView](https://developer.mozilla.org/en-US/docs/Web/API/ArrayBufferView) s
@@ -366,10 +773,27 @@ sealed external interface FileHandle {
      * @param position The offset from the beginning of the file where the data should be read from. If `position` is not a `number`, the data will be read from the current position.
      * @return Fulfills upon success an object containing two properties:
      */
-    fun readv(
+
+    @JsName("readv")
+    fun readvAsync(
         buffers: ReadonlyArray<js.buffer.ArrayBufferView>,
         position: Number = definedExternally,
     ): Promise<ReadVResult>
+
+
+    @Suppress(
+        "WRONG_BODY_OF_EXTERNAL_DECLARATION",
+        "INLINE_EXTERNAL_DECLARATION",
+        "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
+        "DECLARATION_CANT_BE_INLINED",
+    )
+    suspend inline fun readv(
+        buffers: ReadonlyArray<js.buffer.ArrayBufferView>,
+        position: Number = definedExternally,
+    ): ReadVResult =
+        readvAsync(
+            buffers, position
+        ).await()
 
     /**
      * Closes the file handle after waiting for any pending operation on the handle to
@@ -388,5 +812,20 @@ sealed external interface FileHandle {
      * @since v10.0.0
      * @return Fulfills with `undefined` upon success.
      */
-    fun close(): Promise<Unit>
+
+    @JsName("close")
+    fun closeAsync(): Promise<Unit>
+
+
+    @Suppress(
+        "WRONG_BODY_OF_EXTERNAL_DECLARATION",
+        "INLINE_EXTERNAL_DECLARATION",
+        "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
+        "DECLARATION_CANT_BE_INLINED",
+    )
+    suspend inline fun close(): Unit =
+        closeAsync(
+
+        ).await()
+
 }

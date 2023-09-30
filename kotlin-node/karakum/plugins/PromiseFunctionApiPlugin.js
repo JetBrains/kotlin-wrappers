@@ -116,8 +116,8 @@ export default {
                 ?.map(typeParameter => next(typeParameter))
                 ?.join(", ")
 
-            const promiseReturnType = next(node.type)
-            const returnType = next(node.type.typeArguments[0])
+            const returnType = next(node.type)
+            const returnTypePayload = next(node.type.typeArguments[0])
 
             const body = karakum.convertParameterDeclarations(node, context, next, {
                 strategy: "function",
@@ -128,7 +128,7 @@ export default {
                     }
 
                     return `
-suspend fun ${karakum.ifPresent(typeParameters, it => `<${it}> `)}${name}(${parameters})${karakum.ifPresent(returnType, it => `: ${it}`)} =
+suspend fun ${karakum.ifPresent(typeParameters, it => `<${it}> `)}${name}(${parameters})${karakum.ifPresent(returnTypePayload, it => `: ${it}`)} =
     ${name}Async(
         ${signature.map((it, index) => ts.isIdentifier(it.parameter.name) ? it.parameter.name.text : `param${index}`).join(", ")}
     ).await()
@@ -154,7 +154,7 @@ suspend fun ${karakum.ifPresent(typeParameters, it => `<${it}> `)}${name}(${para
 
                     return `
 @JsName("${node.name.text}")
-external fun ${karakum.ifPresent(typeParameters, it => `<${it}> `)}${name}Async(${parameters})${karakum.ifPresent(promiseReturnType, it => `: ${it}`)}
+external fun ${karakum.ifPresent(typeParameters, it => `<${it}> `)}${name}Async(${parameters})${karakum.ifPresent(returnType, it => `: ${it}`)}
                     `
                 }
             })
