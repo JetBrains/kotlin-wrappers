@@ -3,7 +3,7 @@ import * as karakum from "karakum";
 
 export default (node, context) => {
     const sourceFileName = node.getSourceFile()?.fileName ?? "generated.d.ts"
-    if (!sourceFileName.endsWith("fs.d.ts")) return null
+    if (!sourceFileName.endsWith("fs.d.ts") && !sourceFileName.endsWith("fs/promises.d.ts")) return null
 
     const typeScriptService = context.lookupService(karakum.typeScriptServiceKey)
     const getParent = typeScriptService?.getParent.bind(typeScriptService) ?? (node => node.parent)
@@ -24,21 +24,37 @@ export default (node, context) => {
 
     let parentName
 
-    const functionNodeOrCallSignature = getParent(parameter)
-    if (!functionNodeOrCallSignature) return null
+    const signatureDeclaration = getParent(parameter)
+    if (!signatureDeclaration) return null
 
-    if (ts.isFunctionDeclaration(functionNodeOrCallSignature)) {
-        if (functionNodeOrCallSignature.name === undefined) return null
+    if (ts.isFunctionDeclaration(signatureDeclaration)) {
+        if (signatureDeclaration.name === undefined) return null
 
-        parentName = functionNodeOrCallSignature.name.text
-    } else if (ts.isCallSignatureDeclaration(functionNodeOrCallSignature)) {
-        const interfaceNode = getParent(functionNodeOrCallSignature)
+        parentName = signatureDeclaration.name.text
+    } else if (ts.isCallSignatureDeclaration(signatureDeclaration)) {
+        const interfaceNode = getParent(signatureDeclaration)
         if (!interfaceNode) return null
         if (!ts.isInterfaceDeclaration(interfaceNode)) return null
 
         parentName = interfaceNode.name.text
+    } else if (ts.isMethodSignature(signatureDeclaration)) {
+        if (signatureDeclaration.name === undefined) return null
+
+        const interfaceNode = getParent(signatureDeclaration)
+        if (!interfaceNode) return null
+        if (!ts.isInterfaceDeclaration(interfaceNode)) return null
+
+        parentName = `${karakum.capitalize(interfaceNode.name.text)}${karakum.capitalize(signatureDeclaration.name.text)}`
     } else {
         return null
+    }
+
+    let postfix = ""
+    if (
+        parameterName === "options"
+        && sourceFileName.endsWith("fs/promises.d.ts")
+    ) {
+        postfix = "Async"
     }
 
     if (
@@ -102,12 +118,13 @@ export default (node, context) => {
             }
         }
 
-        return `${karakum.capitalize(parentName)}${infix}${karakum.capitalize(parameterName)}`
+        return `${karakum.capitalize(parentName)}${infix}${postfix}${karakum.capitalize(parameterName)}`
     }
 
     if (
         parentName === "readFile"
         || parentName === "readFileSync"
+        || parentName === "FileHandleReadFile"
     ) {
         let infix = "Buffer"
 
@@ -151,7 +168,7 @@ export default (node, context) => {
             infix = ""
         }
 
-        return `${karakum.capitalize(parentName)}${infix}${karakum.capitalize(parameterName)}`
+        return `${karakum.capitalize(parentName)}${infix}${postfix}${karakum.capitalize(parameterName)}`
     }
 
     if (
@@ -163,6 +180,7 @@ export default (node, context) => {
         || parentName === "fstatSync"
         || parentName === "lstat"
         || parentName === "watchFile"
+        || parentName === "FileHandleStat"
     ) {
         let infix = parentName === "stat" || parentName === "watchFile" ? "Simple" : ""
 
@@ -181,7 +199,7 @@ export default (node, context) => {
             infix = "BigInt"
         }
 
-        return `${karakum.capitalize(parentName)}${infix}${karakum.capitalize(parameterName)}`
+        return `${karakum.capitalize(parentName)}${infix}${postfix}${karakum.capitalize(parameterName)}`
     }
 
     if (
@@ -205,7 +223,7 @@ export default (node, context) => {
             infix = "Recursive"
         }
 
-        return `${karakum.capitalize(parentName)}${infix}${karakum.capitalize(parameterName)}`
+        return `${karakum.capitalize(parentName)}${infix}${postfix}${karakum.capitalize(parameterName)}`
     }
 
     if (parentName === "StatSyncFn") {
@@ -261,8 +279,8 @@ export default (node, context) => {
             secondaryInfix = ""
         }
 
-        return `${karakum.capitalize(parentName)}${primaryInfix}${secondaryInfix}${karakum.capitalize(parameterName)}`
+        return `${karakum.capitalize(parentName)}${primaryInfix}${secondaryInfix}${postfix}${karakum.capitalize(parameterName)}`
     }
 
-    return `${karakum.capitalize(parentName)}${karakum.capitalize(parameterName)}`
+    return `${karakum.capitalize(parentName)}${postfix}${karakum.capitalize(parameterName)}`
 }

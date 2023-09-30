@@ -46,10 +46,12 @@ export default {
                 ?.map(typeParameter => next(typeParameter))
                 ?.join(", ")
 
+            const promiseReturnType = next(node.type)
             const returnType = next(node.type.typeArguments[0])
 
             const body = karakum.convertParameterDeclarations(node, context, next, {
                 strategy: "function",
+                defaultValue: "undefined.unsafeCast<Nothing>()",
                 template: (parameters, signature) => {
                     return `
 suspend fun ${karakum.ifPresent(typeParameters, it => `<${it}> `)}${name}(${parameters})${karakum.ifPresent(returnType, it => `: ${it}`)} =
@@ -69,21 +71,15 @@ suspend fun ${karakum.ifPresent(typeParameters, it => `<${it}> `)}${name}(${para
 
             this.promiseApiDeclarations.push(nodeInfo)
 
-            return `
+            return karakum.convertParameterDeclarations(node, context, next, {
+                strategy: "function",
+                template: parameters => {
+                    return `
 @JsName("${node.name.text}")
-${next(node)}
-            `
-        }
-
-        if (
-            ts.isIdentifier(node)
-            && node.parent
-            && (
-                isPromiseFunction(node.parent)
-                && node.parent.name === node
-            )
-        ) {
-            return `${node.text}Async`
+external fun ${karakum.ifPresent(typeParameters, it => `<${it}> `)}${name}Async(${parameters})${karakum.ifPresent(promiseReturnType, it => `: ${it}`)}
+                    `
+                }
+            })
         }
 
         return null

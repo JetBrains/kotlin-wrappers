@@ -6,6 +6,7 @@
         "<nodeModules>/@types/node/dns.d.ts",
         "<nodeModules>/@types/node/dns/promises.d.ts",
         "<nodeModules>/@types/node/fs.d.ts",
+        "<nodeModules>/@types/node/fs/promises.d.ts",
         "<nodeModules>/@types/node/tls.d.ts"
     ],
     "output": "src/jsMain/generated",
@@ -58,6 +59,7 @@
     "packageNameMapper": {
         "promises/(.+)\\.kt": "$1Async.kt",
         "SuspendAsync.kt": "Suspend.kt",
+        "AsyncOptionsAsync.kt": "OptionsAsync.kt",
 
         "^node/buffer/namespace.kt": "node/buffer/nodeNamespace.kt",
         "^node/buffer/global/namespace.kt": "node/buffer/nodeGlobalNamespace.kt",
@@ -162,16 +164,36 @@
             "js.iterable.AsyncIterable",
             "js.promise.Promise"
         ],
+        "fs/FileHandleAsync.kt": [
+            "js.core.ReadonlyArray",
+            "js.typedarrays.Uint8Array",
+            "web.streams.ReadableStream"
+        ],
+        "fs/FileHandleWriteFileOptionsAsync.kt": [
+            "node.events.Abortable"
+        ],
+        "fs/FileHandleWriteResultPayloadAsync.kt": [
+            "js.typedarrays.Uint8Array"
+        ],
         "fs/FSWatcher.kt": [
             "node.events.EventEmitter"
         ],
         "fs/ReadFileOptions.kt": [
             "node.events.Abortable"
         ],
+        "fs/ReadFileOptionsAsync.kt": [
+            "node.events.Abortable"
+        ],
         "fs/ReadFileBufferOptions.kt": [
             "node.events.Abortable"
         ],
+        "fs/ReadFileBufferOptionsAsync.kt": [
+            "node.events.Abortable"
+        ],
         "fs/ReadFileStringOptions.kt": [
+            "node.events.Abortable"
+        ],
+        "fs/ReadFileStringOptionsAsync.kt": [
             "node.events.Abortable"
         ],
         "fs/StatsBase.kt": [
@@ -186,13 +208,25 @@
         "fs/appendFile.kt": [
             "js.typedarrays.Uint8Array"
         ],
+        "fs/appendFileAsync.kt": [
+            "js.typedarrays.Uint8Array"
+        ],
         "fs/appendFileSync.kt": [
+            "js.typedarrays.Uint8Array"
+        ],
+        "fs/appendFileSuspend.kt": [
             "js.typedarrays.Uint8Array"
         ],
         "fs/cp.kt": [
             "node.url.URL"
         ],
+        "fs/cpAsync.kt": [
+            "node.url.URL"
+        ],
         "fs/cpSync.kt": [
+            "node.url.URL"
+        ],
+        "fs/cpSuspend.kt": [
             "node.url.URL"
         ],
         "fs/readv.kt": [
@@ -210,6 +244,20 @@
             "node.fs.BufferEncodingOption",
             "node.fs.EncodingOption",
             "node.fs.PathLike"
+        ],
+        "fs/watchAsync.kt": [
+            "js.iterable.AsyncIterable"
+        ],
+        "fs/writeFileAsync.kt": [
+            "js.iterable.AsyncIterable",
+            "node.stream.Stream"
+        ],
+        "fs/writeFileSuspend.kt": [
+            "js.iterable.AsyncIterable",
+            "node.stream.Stream"
+        ],
+        "fs/WriteFileOptionsAsync.kt": [
+            "node.events.Abortable"
         ],
         "fs/writev.kt": [
             "js.core.ReadonlyArray"
@@ -245,6 +293,22 @@
         "node:tls": "ignore"
     },
     "conflictResolutionStrategy": {
-        "LookupServiceResultPayload": "replace"
+        "LookupServiceResultPayload": "replace",
+        "AppendFileOptionsAsync": "replace",
+        "WriteFileOptionsAsync": "replace",
+        "LstatBigIntOptsAsync": "replace",
+        "LstatOptsAsync": "replace",
+        "MkdirOptionsAsync.kt": "replace",
+        "MkdirRecursiveOptionsAsync.kt": "replace",
+        "ReadFileOptionsAsync.kt": "replace",
+        "ReadFileBufferOptionsAsync.kt": "replace",
+        "ReadFileStringOptionsAsync.kt": "replace",
+        "ReaddirBufferOptionsAsync.kt": "replace",
+        "ReaddirOptionsAsync.kt": "replace",
+        "ReaddirWithFileTypesOptionsAsync.kt": "replace",
+        "StatBigIntOptsAsync.kt": "replace",
+        "StatSimpleOptsAsync.kt": "replace",
+        "StatfsBigIntOptsAsync.kt": "replace",
+        "StatfsOptsAsync.kt": "replace"
     }
 }

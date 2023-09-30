@@ -22,7 +22,7 @@ function convertAsyncProperty(name, propertyType, context, render) {
             return `
 @JsName("${name}")
 fun ${karakum.ifPresent(typeParameters, it => `<${it}> `)}${name}Async(${parameters})${karakum.ifPresent(returnType, it => `: ${it}`)}
-                    `
+            `
         }
     })
 

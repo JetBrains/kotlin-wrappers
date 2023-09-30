@@ -10,4 +10,4 @@ package node.fs
  * this API: {@link symlink}.
  * @since v0.1.31
  */
-external fun symlinkSync(target: PathLike, path: PathLike, type: SymlinkType? = definedExternally)
+external fun symlinkSync(target: PathLike, path: PathLike, type: SymlinkType? = definedExternally): Unit

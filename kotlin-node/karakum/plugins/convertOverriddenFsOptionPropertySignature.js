@@ -3,7 +3,7 @@ import * as karakum from "karakum";
 
 export default function (node, context, render) {
     const sourceFileName = node.getSourceFile()?.fileName ?? "generated.d.ts"
-    if (!sourceFileName.endsWith("fs.d.ts")) return null
+    if (!sourceFileName.endsWith("fs.d.ts") && !sourceFileName.endsWith("fs/promises.d.ts")) return null
 
     if (
         ts.isPropertySignature(node)
