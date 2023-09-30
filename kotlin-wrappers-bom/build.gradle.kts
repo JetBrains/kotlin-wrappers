@@ -17,6 +17,7 @@ dependencies {
         api(project(":kotlin-js"))
         api(project(":kotlin-mui"))
         api(project(":kotlin-mui-icons"))
+        api(project(":kotlin-mui-system"))
         api(project(":kotlin-muix-tree-view"))
         api(project(":kotlin-node"))
         api(project(":kotlin-popper"))
