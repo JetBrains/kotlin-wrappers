@@ -59,11 +59,17 @@ include("kotlin-js")
 // Kotlin/JS: Material UI wrappers
 include("kotlin-mui")
 
+// Kotlin/JS: MUI Base UI wrappers
+include("kotlin-mui-base")
+
 // Kotlin/JS: Material UI Icons wrappers
 include("kotlin-mui-icons")
 
 // Kotlin/JS: MUI Lab wrappers
 include("kotlin-mui-lab")
+
+// Kotlin/JS: MUI System wrappers
+include("kotlin-mui-system")
 
 // Kotlin/JS: MUI X Tree View wrappers
 include("kotlin-muix-tree-view")
