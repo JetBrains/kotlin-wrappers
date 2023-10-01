@@ -1,6 +1,6 @@
 package node.fs
 
 
-external interface FileHandleStatOpts : StatOptions {
+sealed external interface FileHandleStatOpts : StatOptions {
     override var bigint: Boolean?
 }

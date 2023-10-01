@@ -3,4 +3,4 @@ package node.fs
 import node.events.Abortable
 
 
-external interface FileHandleWriteFileAsyncOptions : ObjectEncodingOptions, FlagAndOpenMode, Abortable
+sealed external interface FileHandleWriteFileAsyncOptions : ObjectEncodingOptions, FlagAndOpenMode, Abortable

@@ -1,6 +1,6 @@
 package node.fs
 
 
-external interface MkdirSyncOptions : MakeDirectoryOptions {
+sealed external interface MkdirSyncOptions : MakeDirectoryOptions {
     override var recursive: Boolean?
 }

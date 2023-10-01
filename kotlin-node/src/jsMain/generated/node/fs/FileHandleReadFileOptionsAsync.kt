@@ -1,6 +1,6 @@
 package node.fs
 
 
-external interface FileHandleReadFileAsyncOptions : ObjectEncodingOptions {
+sealed external interface FileHandleReadFileAsyncOptions : ObjectEncodingOptions {
     var flag: OpenMode?
 }

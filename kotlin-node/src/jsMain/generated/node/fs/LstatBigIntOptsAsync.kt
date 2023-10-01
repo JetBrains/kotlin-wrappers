@@ -1,7 +1,7 @@
 package node.fs
 
 
-external interface LstatBigIntOpts : StatOptions {
+sealed external interface LstatBigIntOpts : StatOptions {
     @JsName("bigint")
     var requiredBigInt: Boolean
 }

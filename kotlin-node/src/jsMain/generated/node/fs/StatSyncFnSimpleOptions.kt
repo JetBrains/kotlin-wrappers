@@ -1,7 +1,7 @@
 package node.fs
 
 
-external interface StatSyncFnSimpleOptions : StatSyncOptions {
+sealed external interface StatSyncFnSimpleOptions : StatSyncOptions {
     override var bigint: Boolean?
 
     @JsName("throwIfNoEntry")

@@ -1,4 +1,4 @@
 package node.fs
 
 
-external interface FileHandleAppendFileAsyncOptions : ObjectEncodingOptions, FlagAndOpenMode
+sealed external interface FileHandleAppendFileAsyncOptions : ObjectEncodingOptions, FlagAndOpenMode

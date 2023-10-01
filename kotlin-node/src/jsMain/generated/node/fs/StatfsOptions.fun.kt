@@ -1,6 +1,6 @@
 package node.fs
 
 
-external interface StatfsOptions : StatFsOptions {
+sealed external interface StatfsOptions : StatFsOptions {
     override var bigint: Boolean?
 }

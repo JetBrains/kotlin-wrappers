@@ -1,6 +1,6 @@
 package node.fs
 
 
-external interface ReaddirAsyncOptions : ObjectEncodingOptions {
+sealed external interface ReaddirAsyncOptions : ObjectEncodingOptions {
     var withFileTypes: Boolean?
 }

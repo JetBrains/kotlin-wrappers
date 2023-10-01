@@ -1,7 +1,7 @@
 package node.fs
 
 
-external interface MkdirRecursiveOptions : MakeDirectoryOptions {
+sealed external interface MkdirRecursiveOptions : MakeDirectoryOptions {
     @JsName("recursive")
     var requiredRecursive: Boolean
 }
