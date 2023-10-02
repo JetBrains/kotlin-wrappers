@@ -12,10 +12,14 @@ import mui.material.styles.Theme
 import mui.system.SxProps
 
 external interface IconButtonProps :
+    IconButtonOwnProps,
     react.dom.html.ButtonHTMLAttributes<web.html.HTMLButtonElement>,
+    mui.types.PropsWithComponent,
+    ButtonBaseProps
+
+external interface IconButtonOwnProps :
     react.PropsWithChildren,
     mui.system.PropsWithSx,
-    mui.types.PropsWithComponent,
     ButtonBaseProps {
     /**
      * The icon to display.

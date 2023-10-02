@@ -12,10 +12,14 @@ import mui.material.styles.Theme
 import mui.system.SxProps
 
 external interface SvgIconProps :
+    SvgIconOwnProps,
     react.dom.svg.SVGAttributes<web.svg.SVGSVGElement>,
+    mui.types.PropsWithComponent
+
+external interface SvgIconOwnProps :
     react.PropsWithChildren,
     mui.system.PropsWithSx,
-    mui.types.PropsWithComponent {
+    react.dom.svg.SVGAttributes<web.svg.SVGSVGElement> {
     /**
      * Node passed into the SVG element.
      */

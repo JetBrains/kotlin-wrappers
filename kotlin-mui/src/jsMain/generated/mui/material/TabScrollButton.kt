@@ -2,14 +2,17 @@
 
 @file:JsModule("@mui/material/TabScrollButton")
 
+@file:Suppress(
+    "VAR_TYPE_MISMATCH_ON_OVERRIDE",
+)
+
 package mui.material
 
 import mui.material.styles.Theme
 import mui.system.SxProps
 
 external interface TabScrollButtonProps :
-    mui.system.StandardProps,
-    react.dom.html.HTMLAttributes<web.html.HTMLDivElement>,
+    ButtonBaseProps,
     react.PropsWithChildren,
     mui.system.PropsWithSx {
     /**
@@ -20,7 +23,7 @@ external interface TabScrollButtonProps :
     /**
      * Override or extend the styles applied to the component.
      */
-    var classes: TabScrollButtonClasses?
+    override var classes: TabScrollButtonClasses?
 
     /**
      * The components used for each slot inside.
@@ -62,7 +65,7 @@ external interface TabScrollButtonProps :
      * If `true`, the component is disabled.
      * @default false
      */
-    var disabled: Boolean?
+    override var disabled: Boolean?
 
     /**
      * The component orientation (layout flow direction).

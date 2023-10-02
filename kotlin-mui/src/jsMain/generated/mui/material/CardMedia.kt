@@ -8,9 +8,12 @@ import mui.material.styles.Theme
 import mui.system.SxProps
 
 external interface CardMediaProps :
+    CardMediaOwnProps,
+    mui.types.PropsWithComponent
+
+external interface CardMediaOwnProps :
     react.PropsWithChildren,
-    mui.system.PropsWithSx,
-    mui.types.PropsWithComponent {
+    mui.system.PropsWithSx {
     /**
      * The content of the component.
      */

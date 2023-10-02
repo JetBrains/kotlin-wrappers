@@ -31,25 +31,25 @@ external interface HiddenProps : react.PropsWithChildren {
     var initialWidth: dynamic
 
     /**
-     * If `true`, screens this size and down are hidden.
+     * If `true`, component is hidden on screens below (but not including) this size.
      * @default false
      */
     var lgDown: Boolean?
 
     /**
-     * If `true`, screens this size and up are hidden.
+     * If `true`, component is hidden on screens this size and above.
      * @default false
      */
     var lgUp: Boolean?
 
     /**
-     * If `true`, screens this size and down are hidden.
+     * If `true`, component is hidden on screens below (but not including) this size.
      * @default false
      */
     var mdDown: Boolean?
 
     /**
-     * If `true`, screens this size and up are hidden.
+     * If `true`, component is hidden on screens this size and above.
      * @default false
      */
     var mdUp: Boolean?
@@ -60,37 +60,37 @@ external interface HiddenProps : react.PropsWithChildren {
     var only: dynamic
 
     /**
-     * If `true`, screens this size and down are hidden.
+     * If `true`, component is hidden on screens below (but not including) this size.
      * @default false
      */
     var smDown: Boolean?
 
     /**
-     * If `true`, screens this size and up are hidden.
+     * If `true`, component is hidden on screens this size and above.
      * @default false
      */
     var smUp: Boolean?
 
     /**
-     * If `true`, screens this size and down are hidden.
+     * If `true`, component is hidden on screens below (but not including) this size.
      * @default false
      */
     var xlDown: Boolean?
 
     /**
-     * If `true`, screens this size and up are hidden.
+     * If `true`, component is hidden on screens this size and above.
      * @default false
      */
     var xlUp: Boolean?
 
     /**
-     * If `true`, screens this size and down are hidden.
+     * If `true`, component is hidden on screens below (but not including) this size.
      * @default false
      */
     var xsDown: Boolean?
 
     /**
-     * If `true`, screens this size and up are hidden.
+     * If `true`, component is hidden on screens this size and above.
      * @default false
      */
     var xsUp: Boolean?

@@ -13,8 +13,12 @@ import mui.system.SxProps
 import web.cssom.ClassName
 
 external interface CardActionAreaProps :
-    mui.system.PropsWithSx,
+    CardActionAreaOwnProps,
     mui.types.PropsWithComponent,
+    ButtonBaseProps
+
+external interface CardActionAreaOwnProps :
+    mui.system.PropsWithSx,
     ButtonBaseProps {
     /**
      * Override or extend the styles applied to the component.

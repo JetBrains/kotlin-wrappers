@@ -12,10 +12,14 @@ import mui.material.styles.Theme
 import mui.system.SxProps
 
 external interface InputLabelProps :
+    InputLabelOwnProps,
     react.dom.html.LabelHTMLAttributes<web.html.HTMLLabelElement>,
+    mui.types.PropsWithComponent,
+    FormLabelOwnProps
+
+external interface InputLabelOwnProps :
     react.PropsWithChildren,
     mui.system.PropsWithSx,
-    mui.types.PropsWithComponent,
     FormLabelOwnProps {
     /**
      * The content of the component.

@@ -83,7 +83,7 @@ external interface UseSliderParameters {
      * The component orientation.
      * @default 'horizontal'
      */
-    var orientation: mui.types.Orientation?
+    var orientation: mui.material.Orientation?
 
     /**
      * The ref attached to the root of the Slider.

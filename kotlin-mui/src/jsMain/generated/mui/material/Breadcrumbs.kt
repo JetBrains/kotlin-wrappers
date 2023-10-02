@@ -8,10 +8,17 @@ import mui.material.styles.Theme
 import mui.system.SxProps
 
 external interface BreadcrumbsProps :
+    BreadcrumbsOwnProps,
     react.dom.html.HTMLAttributes<web.html.HTMLElement>,
+    mui.types.PropsWithComponent
+
+external interface BreadcrumbsOwnerState {
+    var expanded: Boolean
+}
+
+external interface BreadcrumbsOwnProps :
     react.PropsWithChildren,
-    mui.system.PropsWithSx,
-    mui.types.PropsWithComponent {
+    mui.system.PropsWithSx {
     /**
      * The content of the component.
      */
@@ -87,10 +94,6 @@ external interface BreadcrumbsProps :
     override var sx: SxProps<Theme>?
 }
 
-external interface BreadcrumbsOwnerState {
-    var expanded: Boolean
-}
-
 /**
  *
  * Demos:
@@ -100,6 +103,7 @@ external interface BreadcrumbsOwnerState {
  * API:
  *
  * - [Breadcrumbs API](https://mui.com/material-ui/api/breadcrumbs/)
+ * - inherits [Typography API](https://mui.com/material-ui/api/typography/)
  */
 @JsName("default")
 external val Breadcrumbs: react.FC<BreadcrumbsProps>

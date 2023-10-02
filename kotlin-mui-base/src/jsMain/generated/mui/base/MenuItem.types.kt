@@ -10,12 +10,13 @@ external interface MenuItemProps :
 
 external interface MenuItemOwnProps :
     react.PropsWithChildren,
-    react.PropsWithClassName {
+    react.PropsWithClassName,
+    react.dom.html.LiHTMLAttributes<web.html.HTMLLIElement> {
     override var children: react.ReactNode?
 
     override var className: ClassName?
 
-    var onClick: react.dom.events.MouseEventHandler<web.html.HTMLLIElement>?
+    override var onClick: react.dom.events.MouseEventHandler<web.html.HTMLLIElement>?
 
     /**
      * If `true`, the menu item will be disabled.

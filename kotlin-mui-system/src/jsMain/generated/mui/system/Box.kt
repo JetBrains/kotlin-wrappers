@@ -5,25 +5,28 @@
 package mui.system
 
 external interface BoxProps :
+    BoxOwnProps,
     react.dom.html.HTMLAttributes<web.html.HTMLDivElement>,
+    mui.types.PropsWithComponent
+
+external interface CustomSystemProps : react.Props
+
+external interface BoxOwnProps :
     react.PropsWithChildren,
-    PropsWithSx,
-    mui.types.PropsWithComponent {
+    PropsWithSx {
     override var children: react.ReactNode?
 
     /**
      * The component used for the root node.
      * Either a string to use a HTML element or a component.
      */
-    override var component: react.ElementType<*>?
+    var component: react.ElementType<*>?
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
     override var sx: SxProps<Theme>?
 }
-
-external interface CustomSystemProps : react.Props
 
 /**
  *

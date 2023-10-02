@@ -10,11 +10,12 @@ package mui.material
 import web.cssom.ClassName
 
 // language=JavaScript
-@JsName("""(/*union*/{root: 'MuiRadio-root', colorPrimary: 'MuiRadio-colorPrimary', colorSecondary: 'MuiRadio-colorSecondary'}/*union*/)""")
+@JsName("""(/*union*/{root: 'MuiRadio-root', colorPrimary: 'MuiRadio-colorPrimary', colorSecondary: 'MuiRadio-colorSecondary', sizeSmall: 'MuiRadio-sizeSmall'}/*union*/)""")
 sealed external interface MuiRadio {
     companion object {
         val root: ClassName
         val colorPrimary: ClassName
         val colorSecondary: ClassName
+        val sizeSmall: ClassName
     }
 }

@@ -8,9 +8,13 @@ import mui.material.styles.Theme
 import mui.system.SxProps
 
 external interface MenuItemProps :
+    MenuItemOwnProps,
     react.dom.html.LiHTMLAttributes<web.html.HTMLLIElement>,
+    mui.types.PropsWithComponent
+
+external interface MenuItemOwnProps :
     mui.system.PropsWithSx,
-    mui.types.PropsWithComponent {
+    react.dom.html.LiHTMLAttributes<web.html.HTMLLIElement> {
     /**
      * If `true`, the list item is focused during the first mount.
      * Focus will also be triggered if the value changes from false to true.

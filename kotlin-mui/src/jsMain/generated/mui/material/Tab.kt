@@ -12,9 +12,13 @@ import mui.material.styles.Theme
 import mui.system.SxProps
 
 external interface TabProps :
-    react.dom.html.HTMLAttributes<web.html.HTMLDivElement>,
+    TabOwnProps,
+    react.dom.html.ButtonHTMLAttributes<web.html.HTMLButtonElement>,
+    mui.types.PropsWithComponent
+
+external interface TabOwnProps :
     mui.system.PropsWithSx,
-    mui.types.PropsWithComponent {
+    react.dom.html.ButtonHTMLAttributes<web.html.HTMLButtonElement> {
     /**
      * This prop isn't supported.
      * Use the `component` prop if you need to change the children structure.
@@ -62,7 +66,7 @@ external interface TabProps :
     /**
      * You can provide your own value. Otherwise, we fallback to the child position index.
      */
-    var value: Any?
+    override var value: Any?
 
     /**
      * Tab labels appear in a single row.

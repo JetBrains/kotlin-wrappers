@@ -23,6 +23,9 @@ external interface ButtonGroupClasses {
     /** State class applied to the child elements if `disabled={true}`. */
     var disabled: ClassName
 
+    /** Styles applied to the first button in the button group. */
+    var firstButton: ClassName
+
     /** Styles applied to the root element if `fullWidth={true}`. */
     var fullWidth: ClassName
 
@@ -82,4 +85,10 @@ external interface ButtonGroupClasses {
 
     /** Styles applied to the children if `variant="contained"` and `color="secondary"`. */
     var groupedContainedSecondary: ClassName
+
+    /** Styles applied to the last button in the button group. */
+    var lastButton: ClassName
+
+    /** Styles applied to buttons in the middle of the button group. */
+    var middleButton: ClassName
 }

@@ -12,9 +12,11 @@ import mui.material.styles.Theme
 import mui.system.SxProps
 
 external interface CardProps :
-    PaperOwnProps,
-    mui.system.PropsWithSx,
-    mui.types.PropsWithComponent {
+    CardOwnProps,
+    react.dom.html.HTMLAttributes<web.html.HTMLDivElement>,
+    mui.types.PropsWithComponent
+
+external interface CardOwnProps : mui.system.PropsWithSx {
     /**
      * Override or extend the styles applied to the component.
      */

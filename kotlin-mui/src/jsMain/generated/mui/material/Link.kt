@@ -8,10 +8,13 @@ import mui.material.styles.Theme
 import mui.system.SxProps
 
 external interface LinkProps :
+    LinkOwnProps,
     react.dom.html.AnchorHTMLAttributes<web.html.HTMLAnchorElement>,
+    mui.types.PropsWithComponent
+
+external interface LinkOwnProps :
     react.PropsWithChildren,
-    mui.system.PropsWithSx,
-    mui.types.PropsWithComponent {
+    mui.system.PropsWithSx {
     /**
      * The content of the component.
      */
