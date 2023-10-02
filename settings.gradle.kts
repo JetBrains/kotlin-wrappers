@@ -71,6 +71,9 @@ include("kotlin-mui-lab")
 // Kotlin/JS: MUI System wrappers
 include("kotlin-mui-system")
 
+// Kotlin/JS: MUI X Date Pickers wrappers
+include("kotlin-muix-date-pickers")
+
 // Kotlin/JS: MUI X Tree View wrappers
 include("kotlin-muix-tree-view")
 
