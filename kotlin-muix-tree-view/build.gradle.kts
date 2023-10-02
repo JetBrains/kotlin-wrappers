@@ -5,7 +5,7 @@ plugins {
 }
 
 dependencies {
-    jsMainApi(project(":kotlin-mui-system"))
+    jsMainApi(project(":kotlin-mui"))
 
     jsMainApi(npmv("@mui/x-tree-view"))
 }
