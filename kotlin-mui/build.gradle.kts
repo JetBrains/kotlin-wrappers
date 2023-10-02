@@ -10,6 +10,5 @@ dependencies {
     jsMainApi(project(":kotlin-react-dom"))
 
     jsMainApi(npmv("@mui/material"))
-    jsMainApi(npmv("@mui/lab"))
     jsMainApi(npmv("@mui/x-date-pickers"))
 }

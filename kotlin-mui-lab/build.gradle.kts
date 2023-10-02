@@ -5,5 +5,7 @@ plugins {
 }
 
 dependencies {
+    jsMainApi(project(":kotlin-mui"))
+
     jsMainApi(npmv("@mui/lab"))
 }
