@@ -62,6 +62,22 @@ external class PrimitiveCollection {
     val length: Int
 
     /**
+     * An event that is raised when a primitive is added to the collection.
+     * Event handlers are passed the primitive that was added.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PrimitiveCollection.html#primitiveAdded">Online Documentation</a>
+     */
+    val primitiveAdded: DefaultEvent
+
+    /**
+     * An event that is raised when a primitive is removed from the collection.
+     * Event handlers are passed the primitive that was removed.
+     *
+     * Note: Depending on the destroyPrimitives constructor option, the primitive may already be destroyed.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PrimitiveCollection.html#primitiveRemoved">Online Documentation</a>
+     */
+    val primitiveRemoved: DefaultEvent
+
+    /**
      * Adds a primitive to the collection.
      * ```
      * const billboards = scene.primitives.add(new BillboardCollection());

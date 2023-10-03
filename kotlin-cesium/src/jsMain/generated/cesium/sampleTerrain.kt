@@ -30,10 +30,19 @@ import js.promise.Promise
  * const updatedPositions = await sampleTerrain(terrainProvider, 11, positions);
  * // positions[0].height and positions[1].height have been updated.
  * // updatedPositions is just a reference to positions.
+ *
+ * // To handle tile errors, pass true for the rejectOnTileFail parameter.
+ * try {
+ *    const updatedPositions = await sampleTerrain(terrainProvider, 11, positions, true);
+ * } catch (error) {
+ *   // A tile request error occurred.
+ * }
  * ```
  * @param [terrainProvider] The terrain provider from which to query heights.
  * @param [level] The terrain level-of-detail from which to query terrain heights.
  * @param [positions] The positions to update with terrain heights.
+ * @param [rejectOnTileFail] If true, for a failed terrain tile request the promise will be rejected. If false, returned heights will be undefined.
+ *   Default value - `false`
  * @return A promise that resolves to the provided list of positions when terrain the query has completed.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/sampleTerrain.html">Online Documentation</a>
  */
@@ -41,4 +50,5 @@ external fun sampleTerrain(
     terrainProvider: TerrainProvider,
     level: Int,
     positions: ReadonlyArray<Cartographic>,
+    rejectOnTileFail: Boolean? = definedExternally,
 ): Promise<ReadonlyArray<Cartographic>>

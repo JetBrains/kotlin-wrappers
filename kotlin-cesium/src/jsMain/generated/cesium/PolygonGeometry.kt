@@ -215,6 +215,24 @@ external class PolygonGeometry(options: ConstructorOptions) {
         )
 
         /**
+         * Computes a rectangle which encloses the polygon defined by the list of positions, including cases over the international date line and the poles.
+         * @param [positions] A linear ring defining the outer boundary of the polygon.
+         * @param [ellipsoid] The ellipsoid to be used as a reference.
+         *   Default value - [Ellipsoid.WGS84]
+         * @param [arcType] The type of line the polygon edges must follow. Valid options are [ArcType.GEODESIC] and [ArcType.RHUMB].
+         *   Default value - [ArcType.GEODESIC]
+         * @param [result] An object in which to store the result.
+         * @return The result rectangle
+         * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PolygonGeometry.html#.computeRectangleFromPositions">Online Documentation</a>
+         */
+        fun computeRectangleFromPositions(
+            positions: ReadonlyArray<Cartesian3>,
+            ellipsoid: Ellipsoid? = definedExternally,
+            arcType: ArcType? = definedExternally,
+            result: Rectangle? = definedExternally,
+        ): Rectangle
+
+        /**
          * Returns the bounding rectangle given the provided options
          * @param [result] An object in which to store the result.
          * @return The result rectangle
