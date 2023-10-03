@@ -626,25 +626,6 @@ external class Cesium3DTileset(options: ConstructorOptions) {
     var maximumScreenSpaceError: Int
 
     /**
-     * The maximum amount of GPU memory (in MB) that may be used to cache tiles. This value is estimated from
-     * geometry, textures, and batch table textures of loaded tiles. For point clouds, this value also
-     * includes per-point metadata.
-     *
-     * Tiles not in view are unloaded to enforce this.
-     *
-     * If decreasing this value results in unloading tiles, the tiles are unloaded the next frame.
-     *
-     * If tiles sized more than `maximumMemoryUsage` are needed
-     * to meet the desired screen space error, determined by [Cesium3DTileset.maximumScreenSpaceError],
-     * for the current view, then the memory usage of the tiles loaded will exceed
-     * `maximumMemoryUsage`.  For example, if the maximum is 256 MB, but
-     * 300 MB of tiles are needed to meet the screen space error, then 300 MB of tiles may be loaded.  When
-     * these tiles go out of view, they will be unloaded.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileset.html#maximumMemoryUsage">Online Documentation</a>
-     */
-    var maximumMemoryUsage: Int
-
-    /**
      * The amount of GPU memory (in bytes) used to cache tiles. This memory usage is estimated from
      * geometry, textures, and batch table textures of loaded tiles. For point clouds, this value also
      * includes per-point metadata.
@@ -902,8 +883,6 @@ external class Cesium3DTileset(options: ConstructorOptions) {
      *   Default value - [ShadowMode.ENABLED]
      * @property [maximumScreenSpaceError] The maximum screen space error used to drive level of detail refinement.
      *   Default value - `16`
-     * @property [maximumMemoryUsage] The maximum amount of memory in MB that can be used by the tileset. Deprecated.
-     *   Default value - `512`
      * @property [cacheBytes] The size (in bytes) to which the tile cache will be trimmed, if the cache contains tiles not needed for the current view.
      *   Default value - `536870912`
      * @property [maximumCacheOverflowBytes] The maximum additional memory (in bytes) to allow for cache headroom, if more than [Cesium3DTileset.cacheBytes] are needed for the current view.
@@ -1012,7 +991,6 @@ external class Cesium3DTileset(options: ConstructorOptions) {
         var modelForwardAxis: Axis?
         var shadows: ShadowMode?
         var maximumScreenSpaceError: Int?
-        var maximumMemoryUsage: Int?
         var cacheBytes: Int?
         var maximumCacheOverflowBytes: Int?
         var cullWithChildrenBounds: Boolean?

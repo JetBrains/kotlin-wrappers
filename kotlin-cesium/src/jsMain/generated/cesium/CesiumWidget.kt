@@ -69,7 +69,7 @@ external class CesiumWidget(
      *   Default value - `true`
      * @property [mapProjection] The map projection to use in 2D and Columbus View modes.
      *   Default value - [GeographicProjection()][GeographicProjection]
-     * @property [globe] The globe to use in the scene.  If set to `false`, no globe will be added.
+     * @property [globe] The globe to use in the scene.  If set to `false`, no globe will be added and the sky atmosphere will be hidden by default.
      *   Default value - [Globe(mapProjection.ellipsoid)][Globe]
      * @property [useDefaultRenderLoop] True if this widget should control the render loop, false otherwise.
      *   Default value - `true`

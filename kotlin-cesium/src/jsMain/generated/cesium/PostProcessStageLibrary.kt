@@ -64,16 +64,16 @@ external object PostProcessStageLibrary {
      * This stage is not supported in 2D.
      * ```
      * // multiple silhouette effects
-     * const yellowEdge = PostProcessLibrary.createEdgeDetectionStage();
+     * const yellowEdge = PostProcessStageLibrary.createEdgeDetectionStage();
      * yellowEdge.uniforms.color = Color.YELLOW;
      * yellowEdge.selected = [feature0];
      *
-     * const greenEdge = PostProcessLibrary.createEdgeDetectionStage();
+     * const greenEdge = PostProcessStageLibrary.createEdgeDetectionStage();
      * greenEdge.uniforms.color = Color.LIME;
      * greenEdge.selected = [feature1];
      *
      * // draw edges around feature0 and feature1
-     * postProcessStages.add(PostProcessLibrary.createSilhouetteStage([yellowEdge, greenEdge]);
+     * postProcessStages.add(PostProcessStageLibrary.createSilhouetteStage([yellowEdge, greenEdge]);
      * ```
      * @return A post-process stage that applies an edge detection effect.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PostProcessStageLibrary.html#.createEdgeDetectionStage">Online Documentation</a>
