@@ -5,14 +5,16 @@
 package mui.material
 
 external interface MenuListProps :
+    MenuListOwnProps,
     react.dom.html.HTMLAttributes<web.html.HTMLUListElement>,
-    react.PropsWithChildren,
-    mui.types.PropsWithComponent {
+    mui.types.PropsWithComponent
+
+external interface MenuListOwnProps : react.PropsWithChildren {
     /**
      * If `true`, will focus the `[role="menu"]` container and move into tab order.
      * @default false
      */
-    override var autoFocus: Boolean?
+    var autoFocus: Boolean?
 
     /**
      * If `true`, will focus the first menuitem if `variant="menu"` or selected item

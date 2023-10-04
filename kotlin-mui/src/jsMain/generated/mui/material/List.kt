@@ -8,10 +8,13 @@ import mui.material.styles.Theme
 import mui.system.SxProps
 
 external interface ListProps :
+    ListOwnProps,
     react.dom.html.HTMLAttributes<web.html.HTMLUListElement>,
+    mui.types.PropsWithComponent
+
+external interface ListOwnProps :
     react.PropsWithChildren,
-    mui.system.PropsWithSx,
-    mui.types.PropsWithComponent {
+    mui.system.PropsWithSx {
     /**
      * The content of the component.
      */

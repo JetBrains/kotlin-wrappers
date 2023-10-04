@@ -8,8 +8,8 @@ import mui.material.styles.Theme
 import mui.system.SxProps
 
 external interface ListItemButtonProps :
-    ListItemButtonBaseProps,
-    react.dom.html.HTMLAttributes<web.html.HTMLElement>,
+    ListItemButtonOwnProps,
+    react.dom.html.HTMLAttributes<web.html.HTMLDivElement>,
     mui.types.PropsWithComponent
 
 external interface ListItemButtonBaseProps :
@@ -75,6 +75,9 @@ external interface ListItemButtonBaseProps :
      */
     override var sx: SxProps<Theme>?
 }
+
+external interface ListItemButtonOwnProps :
+    ListItemButtonBaseProps
 
 /**
  *

@@ -12,10 +12,13 @@ import mui.material.styles.Theme
 import mui.system.SxProps
 
 external interface DialogTitleProps :
+    DialogTitleOwnProps,
+    mui.types.PropsWithComponent
+
+external interface DialogTitleOwnProps :
     TypographyProps,
     react.PropsWithChildren,
-    mui.system.PropsWithSx,
-    mui.types.PropsWithComponent {
+    mui.system.PropsWithSx {
     /**
      * The content of the component.
      */
@@ -41,6 +44,7 @@ external interface DialogTitleProps :
  * API:
  *
  * - [DialogTitle API](https://mui.com/material-ui/api/dialog-title/)
+ * - inherits [Typography API](https://mui.com/material-ui/api/typography/)
  */
 @JsName("default")
 external val DialogTitle: react.FC<DialogTitleProps>

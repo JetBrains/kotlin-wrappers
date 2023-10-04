@@ -8,10 +8,13 @@ import mui.material.styles.Theme
 import mui.system.SxProps
 
 external interface TableProps :
+    TableOwnProps,
     react.dom.html.TableHTMLAttributes<web.html.HTMLTableElement>,
+    mui.types.PropsWithComponent
+
+external interface TableOwnProps :
     react.PropsWithChildren,
-    mui.system.PropsWithSx,
-    mui.types.PropsWithComponent {
+    mui.system.PropsWithSx {
     /**
      * The content of the table, normally `TableHead` and `TableBody`.
      */

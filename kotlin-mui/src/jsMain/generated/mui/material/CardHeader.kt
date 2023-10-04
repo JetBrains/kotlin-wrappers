@@ -12,8 +12,12 @@ import mui.material.styles.Theme
 import mui.system.SxProps
 
 external interface CardHeaderProps :
-    react.dom.html.HTMLAttributes<web.html.HTMLDivElement>,
-    mui.system.PropsWithSx {
+    CardHeaderOwnProps,
+    react.dom.html.HTMLAttributes<web.html.HTMLDivElement>
+
+external interface CardHeaderOwnProps :
+    mui.system.PropsWithSx,
+    react.dom.html.HTMLAttributes<web.html.HTMLDivElement> {
     /**
      * The action to display in the card header.
      */

@@ -19,4 +19,7 @@ external interface RadioClasses {
 
     /** Styles applied to the root element if `color="secondary"`. */
     var colorSecondary: ClassName
+
+    /** Styles applied to the root element if `size="small"`. */
+    var sizeSmall: ClassName
 }

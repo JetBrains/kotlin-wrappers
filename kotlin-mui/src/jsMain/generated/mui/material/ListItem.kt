@@ -8,65 +8,8 @@ import mui.material.styles.Theme
 import mui.system.SxProps
 
 external interface ListItemProps :
-    ListItemBaseProps,
-    react.dom.html.HTMLAttributes<web.html.HTMLElement>,
-    mui.types.PropsWithComponent {
-    /**
-     * The components used for each slot inside.
-     *
-     * This prop is an alias for the `slots` prop.
-     * It's recommended to use the `slots` prop instead.
-     *
-     * @default {}
-     */
-    var components: Components?
-
-    interface Components {
-        var Root: react.ElementType<*>?
-    }
-
-    /**
-     * The extra props for the slot components.
-     * You can override the existing props or add new ones.
-     *
-     * This prop is an alias for the `slotProps` prop.
-     * It's recommended to use the `slotProps` prop instead, as `componentsProps` will be deprecated in the future.
-     *
-     * @default {}
-     */
-    var componentsProps: ComponentsProps?
-
-    interface ComponentsProps {
-        var root: react.Props? /* React.HTMLAttributes<HTMLDivElement> & ListItemComponentsPropsOverrides */
-    }
-
-    /**
-     * The extra props for the slot components.
-     * You can override the existing props or add new ones.
-     *
-     * This prop is an alias for the `componentsProps` prop, which will be deprecated in the future.
-     *
-     * @default {}
-     */
-    var slotProps: SlotProps?
-
-    interface SlotProps {
-        var root: react.Props? /* React.HTMLAttributes<HTMLDivElement> & ListItemComponentsPropsOverrides */
-    }
-
-    /**
-     * The components used for each slot inside.
-     *
-     * This prop is an alias for the `components` prop, which will be deprecated in the future.
-     *
-     * @default {}
-     */
-    var slots: Slots?
-
-    interface Slots {
-        var root: react.ElementType<*>?
-    }
-}
+    ListItemOwnProps,
+    mui.types.PropsWithComponent
 
 external interface ListItemBaseProps :
     react.PropsWithChildren,
@@ -158,6 +101,65 @@ external interface ListItemBaseProps :
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
     override var sx: SxProps<Theme>?
+}
+
+external interface ListItemOwnProps :
+    ListItemBaseProps {
+    /**
+     * The components used for each slot inside.
+     *
+     * This prop is an alias for the `slots` prop.
+     * It's recommended to use the `slots` prop instead.
+     *
+     * @default {}
+     */
+    var components: Components?
+
+    interface Components {
+        var Root: react.ElementType<*>?
+    }
+
+    /**
+     * The extra props for the slot components.
+     * You can override the existing props or add new ones.
+     *
+     * This prop is an alias for the `slotProps` prop.
+     * It's recommended to use the `slotProps` prop instead, as `componentsProps` will be deprecated in the future.
+     *
+     * @default {}
+     */
+    var componentsProps: ComponentsProps?
+
+    interface ComponentsProps {
+        var root: react.Props? /* React.HTMLAttributes<HTMLDivElement> & ListItemComponentsPropsOverrides */
+    }
+
+    /**
+     * The extra props for the slot components.
+     * You can override the existing props or add new ones.
+     *
+     * This prop is an alias for the `componentsProps` prop, which will be deprecated in the future.
+     *
+     * @default {}
+     */
+    var slotProps: SlotProps?
+
+    interface SlotProps {
+        var root: react.Props? /* React.HTMLAttributes<HTMLDivElement> & ListItemComponentsPropsOverrides */
+    }
+
+    /**
+     * The components used for each slot inside.
+     *
+     * This prop is an alias for the `components` prop, which will be deprecated in the future.
+     *
+     * @default {}
+     */
+    var slots: Slots?
+
+    interface Slots {
+        var root: react.ElementType<*>?
+    }
 }
 
 /**

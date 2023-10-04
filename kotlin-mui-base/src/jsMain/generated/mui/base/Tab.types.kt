@@ -7,11 +7,12 @@ external interface TabProps :
     react.dom.html.ButtonHTMLAttributes<web.html.HTMLButtonElement>
 
 external interface TabOwnProps :
-    ButtonOwnProps {
+    ButtonOwnProps,
+    react.dom.html.ButtonHTMLAttributes<web.html.HTMLButtonElement> {
     /**
      * You can provide your own value. Otherwise, it falls back to the child position index.
      */
-    var value: dynamic
+    override var value: dynamic
 
     /**
      * Callback invoked when new value is being set.

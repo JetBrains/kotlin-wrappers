@@ -12,9 +12,13 @@ import mui.material.styles.Theme
 import mui.system.SxProps
 
 external interface ChipProps :
+    ChipOwnProps,
     react.dom.html.HTMLAttributes<web.html.HTMLDivElement>,
+    mui.types.PropsWithComponent
+
+external interface ChipOwnProps :
     mui.system.PropsWithSx,
-    mui.types.PropsWithComponent {
+    react.dom.html.HTMLAttributes<web.html.HTMLDivElement> {
     /**
      * The Avatar element to display.
      */

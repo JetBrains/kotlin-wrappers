@@ -8,10 +8,13 @@ import mui.material.styles.Theme
 import mui.system.SxProps
 
 external interface SkeletonProps :
+    SkeletonOwnProps,
     react.dom.html.HTMLAttributes<web.html.HTMLSpanElement>,
+    mui.types.PropsWithComponent
+
+external interface SkeletonOwnProps :
     react.PropsWithChildren,
-    mui.system.PropsWithSx,
-    mui.types.PropsWithComponent {
+    mui.system.PropsWithSx {
     /**
      * The animation.
      * If `false` the animation effect is disabled.

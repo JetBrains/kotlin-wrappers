@@ -11,7 +11,7 @@ import web.cssom.ClassName
 
 // language=JavaScript
 @JsName(
-    """(/*union*/{root: 'MuiButtonGroup-root', contained: 'MuiButtonGroup-contained', outlined: 'MuiButtonGroup-outlined', text: 'MuiButtonGroup-text', disableElevation: 'MuiButtonGroup-disableElevation', fullWidth: 'MuiButtonGroup-fullWidth', vertical: 'MuiButtonGroup-vertical', grouped: 'MuiButtonGroup-grouped', groupedHorizontal: 'MuiButtonGroup-groupedHorizontal', groupedVertical: 'MuiButtonGroup-groupedVertical', groupedText: 'MuiButtonGroup-groupedText', groupedTextHorizontal: 'MuiButtonGroup-groupedTextHorizontal', groupedTextVertical: 'MuiButtonGroup-groupedTextVertical', groupedTextPrimary: 'MuiButtonGroup-groupedTextPrimary', groupedTextSecondary: 'MuiButtonGroup-groupedTextSecondary', groupedOutlined: 'MuiButtonGroup-groupedOutlined', groupedOutlinedHorizontal: 'MuiButtonGroup-groupedOutlinedHorizontal', groupedOutlinedVertical: 'MuiButtonGroup-groupedOutlinedVertical', groupedOutlinedPrimary: 'MuiButtonGroup-groupedOutlinedPrimary', groupedOutlinedSecondary: 'MuiButtonGroup-groupedOutlinedSecondary', groupedContained: 'MuiButtonGroup-groupedContained', groupedContainedHorizontal: 'MuiButtonGroup-groupedContainedHorizontal', groupedContainedVertical: 'MuiButtonGroup-groupedContainedVertical', groupedContainedPrimary: 'MuiButtonGroup-groupedContainedPrimary', groupedContainedSecondary: 'MuiButtonGroup-groupedContainedSecondary'}/*union*/)"""
+    """(/*union*/{root: 'MuiButtonGroup-root', contained: 'MuiButtonGroup-contained', outlined: 'MuiButtonGroup-outlined', text: 'MuiButtonGroup-text', disableElevation: 'MuiButtonGroup-disableElevation', firstButton: 'MuiButtonGroup-firstButton', fullWidth: 'MuiButtonGroup-fullWidth', vertical: 'MuiButtonGroup-vertical', grouped: 'MuiButtonGroup-grouped', groupedHorizontal: 'MuiButtonGroup-groupedHorizontal', groupedVertical: 'MuiButtonGroup-groupedVertical', groupedText: 'MuiButtonGroup-groupedText', groupedTextHorizontal: 'MuiButtonGroup-groupedTextHorizontal', groupedTextVertical: 'MuiButtonGroup-groupedTextVertical', groupedTextPrimary: 'MuiButtonGroup-groupedTextPrimary', groupedTextSecondary: 'MuiButtonGroup-groupedTextSecondary', groupedOutlined: 'MuiButtonGroup-groupedOutlined', groupedOutlinedHorizontal: 'MuiButtonGroup-groupedOutlinedHorizontal', groupedOutlinedVertical: 'MuiButtonGroup-groupedOutlinedVertical', groupedOutlinedPrimary: 'MuiButtonGroup-groupedOutlinedPrimary', groupedOutlinedSecondary: 'MuiButtonGroup-groupedOutlinedSecondary', groupedContained: 'MuiButtonGroup-groupedContained', groupedContainedHorizontal: 'MuiButtonGroup-groupedContainedHorizontal', groupedContainedVertical: 'MuiButtonGroup-groupedContainedVertical', groupedContainedPrimary: 'MuiButtonGroup-groupedContainedPrimary', groupedContainedSecondary: 'MuiButtonGroup-groupedContainedSecondary', lastButton: 'MuiButtonGroup-lastButton', middleButton: 'MuiButtonGroup-middleButton'}/*union*/)"""
 )
 sealed external interface MuiButtonGroup {
     companion object {
@@ -20,6 +20,7 @@ sealed external interface MuiButtonGroup {
         val outlined: ClassName
         val text: ClassName
         val disableElevation: ClassName
+        val firstButton: ClassName
         val fullWidth: ClassName
         val vertical: ClassName
         val grouped: ClassName
@@ -40,5 +41,7 @@ sealed external interface MuiButtonGroup {
         val groupedContainedVertical: ClassName
         val groupedContainedPrimary: ClassName
         val groupedContainedSecondary: ClassName
+        val lastButton: ClassName
+        val middleButton: ClassName
     }
 }

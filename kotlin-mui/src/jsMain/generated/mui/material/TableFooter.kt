@@ -8,10 +8,13 @@ import mui.material.styles.Theme
 import mui.system.SxProps
 
 external interface TableFooterProps :
+    TableFooterOwnProps,
     react.dom.html.HTMLAttributes<web.html.HTMLTableSectionElement>,
+    mui.types.PropsWithComponent
+
+external interface TableFooterOwnProps :
     react.PropsWithChildren,
-    mui.system.PropsWithSx,
-    mui.types.PropsWithComponent {
+    mui.system.PropsWithSx {
     /**
      * The content of the component, normally `TableRow`.
      */
