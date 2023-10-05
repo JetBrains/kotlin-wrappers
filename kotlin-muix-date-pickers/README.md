@@ -2,7 +2,7 @@
 
 # kotlin-muix-date-pickers
 
-Kotlin wrapper for [MUI X Tree View](https://mui.com/x/react-date-pickers/).
+Kotlin wrapper for [MUI X Date Pickers](https://mui.com/x/react-date-pickers/).
 
 ### Internals
 
