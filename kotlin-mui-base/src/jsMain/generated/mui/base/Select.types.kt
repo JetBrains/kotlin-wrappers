@@ -106,6 +106,11 @@ external interface SelectOwnProps<OptionValue> :
     var renderValue: Any? /* (option: SelectValue<SelectOption<OptionValue>, Multiple>) => React.ReactNode */
 
     /**
+     * Text to show when there is no selected value.
+     */
+    var placeholder: react.ReactNode?
+
+    /**
      * The props used for each slot inside the Input.
      * @default {}
      */

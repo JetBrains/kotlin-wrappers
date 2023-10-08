@@ -26,7 +26,7 @@ external interface UseTabsListReturnValue {
      * @param externalProps props for the root slot
      * @returns props that should be spread on the root slot
      */
-    var getRootProps: react.Props /* <TOther extends Record<string, any> = {}>(externalProps?: TOther) => UseTabsListRootSlotProps<TOther> */
+    var getRootProps: react.Props /* <ExternalProps extends Record<string, unknown> = {}>(externalProps?: ExternalProps) => UseTabsListRootSlotProps<ExternalProps> */
 
     /**
      * The value of the currently highlighted tab.

@@ -41,6 +41,7 @@ external interface UseListParameters<ItemValue, State, CustomAction, CustomActio
     /**
      * The focus management strategy used by the list.
      * Controls the attributes used to set focus on the list items.
+     * @default 'activeDescendant'
      */
     var focusManagement: FocusManagementType?
 
@@ -187,7 +188,12 @@ external interface UseListReturnValue {
 
     var dispatch: (action: Any /* CustomAction | ListAction<ItemValue> */) -> Unit
 
-    var getRootProps: Any /* <TOther extends EventHandlers = {}>(otherHandlers?: TOther) => UseListRootSlotProps<TOther> */
+    /**
+     * Resolver for the root slot's props.
+     * @param externalProps additional props for the root slot
+     * @returns props that should be spread on the root slot
+     */
+    var getRootProps: react.Props /* <ExternalProps extends Record<string, unknown> = {}>(externalProps?: ExternalProps) => UseListRootSlotProps<ExternalProps> */
 
     var rootRef: react.RefCallback<web.dom.Element>?
 

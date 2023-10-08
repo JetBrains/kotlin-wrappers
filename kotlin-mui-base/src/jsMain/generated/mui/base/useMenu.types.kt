@@ -35,10 +35,10 @@ external interface UseMenuReturnValue {
 
     /**
      * Resolver for the listbox slot's props.
-     * @param otherHandlers event handlers for the listbox component
+     * @param externalProps additional props for the listbox component
      * @returns props that should be spread on the listbox component
      */
-    var getListboxProps: Any /* <TOther extends EventHandlers>(otherHandlers?: TOther) => UseMenuListboxSlotProps */
+    var getListboxProps: Any /* <ExternalProps extends Record<string, unknown> = {}>(externalProps?: ExternalProps) => UseMenuListboxSlotProps */
 
     /**
      * The highlighted option in the menu listbox.
