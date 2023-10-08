@@ -5,7 +5,7 @@
 package mui.lab
 
 /**
- * @deprecated The TreeItem component was moved from `@mui/lab` to `@mui/x-date-pickers`. More information about this migration on our blog: https://mui.com/blog/lab-tree-view-to-mui-x/.
+ * @deprecated The TreeItem component was moved from `@mui/lab` to `@mui/x-tree-view`. More information about this migration on our blog: https://mui.com/blog/lab-tree-view-to-mui-x/.
  * @ignore - do not document.
  */
 @JsName("default")
