@@ -19,5 +19,4 @@ package mui.base
  *
  * - [Snackbar API](https://mui.com/base-ui/react-snackbar/components-api/#snackbar)
  */
-@JsName("Snackbar")
 external val Snackbar: react.FC<SnackbarProps>

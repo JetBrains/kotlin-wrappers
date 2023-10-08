@@ -41,5 +41,4 @@ package mui.base
  *
  * - [FormControl API](https://mui.com/base-ui/react-form-control/components-api/#form-control)
  */
-@JsName("FormControl")
 external val FormControl: react.FC<FormControlProps>

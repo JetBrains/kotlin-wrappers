@@ -15,5 +15,4 @@ package mui.base
  *
  * - [Popper API](https://mui.com/base-ui/react-popper/components-api/#popper)
  */
-@JsName("Popper")
 external val Popper: react.FC<PopperProps>

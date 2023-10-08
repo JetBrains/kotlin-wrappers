@@ -14,5 +14,4 @@ package mui.base
  *
  * - [TabsList API](https://mui.com/base-ui/react-tabs/components-api/#tabs-list)
  */
-@JsName("TabsList")
 external val TabsList: react.FC<TabsListProps>

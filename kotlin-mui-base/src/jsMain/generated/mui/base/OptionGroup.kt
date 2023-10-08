@@ -15,5 +15,4 @@ package mui.base
  *
  * - [OptionGroup API](https://mui.com/base-ui/react-select/components-api/#option-group)
  */
-@JsName("OptionGroup")
 external val OptionGroup: react.FC<OptionGroupProps>

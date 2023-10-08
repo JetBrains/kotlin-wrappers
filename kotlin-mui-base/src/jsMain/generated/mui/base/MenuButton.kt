@@ -14,5 +14,4 @@ package mui.base
  *
  * - [MenuButton API](https://mui.com/base-ui/react-menu/components-api/#menu-button)
  */
-@JsName("MenuButton")
 external val MenuButton: react.FC<MenuButtonProps>

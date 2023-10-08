@@ -15,5 +15,4 @@ package mui.base
  *
  * - [TablePagination API](https://mui.com/base-ui/react-table-pagination/components-api/#table-pagination)
  */
-@JsName("TablePagination")
 external val TablePagination: react.FC<TablePaginationProps>

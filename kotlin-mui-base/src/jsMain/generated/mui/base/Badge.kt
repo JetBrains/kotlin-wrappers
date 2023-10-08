@@ -18,5 +18,4 @@ package mui.base
  *
  * - [Badge API](https://mui.com/base-ui/react-badge/components-api/#badge)
  */
-@JsName("Badge")
 external val Badge: react.FC<BadgeProps>

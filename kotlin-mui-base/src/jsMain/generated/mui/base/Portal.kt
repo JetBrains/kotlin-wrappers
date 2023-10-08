@@ -16,5 +16,4 @@ package mui.base
  *
  * - [Portal API](https://mui.com/base-ui/react-portal/components-api/#portal)
  */
-@JsName("Portal")
 external val Portal: react.FC<PortalProps>

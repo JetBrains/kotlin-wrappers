@@ -18,5 +18,4 @@ package mui.base
  *
  * - [Tab API](https://mui.com/base-ui/react-tabs/components-api/#tab)
  */
-@JsName("Tab")
 external val Tab: react.FC<TabProps>

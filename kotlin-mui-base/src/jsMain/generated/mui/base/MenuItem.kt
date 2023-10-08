@@ -14,5 +14,4 @@ package mui.base
  *
  * - [MenuItem API](https://mui.com/base-ui/react-menu/components-api/#menu-item)
  */
-@JsName("MenuItem")
 external val MenuItem: react.FC<MenuItemProps>
