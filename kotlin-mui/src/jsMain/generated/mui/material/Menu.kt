@@ -76,31 +76,6 @@ external interface MenuProps :
     var PopoverClasses: PopoverClasses?
 
     /**
-     * The components used for each slot inside.
-     *
-     * @default {}
-     */
-    var slots: Slots?
-
-    interface Slots {
-        var root: react.ElementType<*>?
-        var paper: react.ElementType<*>?
-    }
-
-    /**
-     * The extra props for the slot components.
-     * You can override the existing props or add new ones.
-     *
-     * @default {}
-     */
-    var slotProps: SlotProps?
-
-    interface SlotProps {
-        var root: react.Props? /* SlotComponentProps<typeof Menu, {}, MenuOwnerState> */
-        var paper: react.Props? /* SlotComponentProps<typeof Paper, {}, {}> */
-    }
-
-    /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
     override var sx: SxProps<Theme>?
