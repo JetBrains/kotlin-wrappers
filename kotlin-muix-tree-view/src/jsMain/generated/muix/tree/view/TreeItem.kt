@@ -5,5 +5,4 @@
 package muix.tree.view
 
 
-@JsName("default")
 external val TreeItem: react.FC<TreeItemProps>
