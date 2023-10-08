@@ -31,4 +31,5 @@ external interface CalendarPickerSkeletonProps :
  *
  * - [CalendarPickerSkeleton API](https://mui.com/x/api/date-pickers/calendar-picker-skeleton/)
  */
+@JsName("CalendarPickerSkeleton")
 external val CalendarPickerSkeleton: react.FC<CalendarPickerSkeletonProps>
