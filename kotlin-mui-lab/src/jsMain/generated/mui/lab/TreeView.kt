@@ -9,4 +9,4 @@ package mui.lab
  * @ignore - do not document.
  */
 @JsName("default")
-external val TreeView: react.FC<muix.tree.view.TreeViewPropsBase /* SingleSelectTreeViewProps or MultiSelectTreeViewProps */>
+external val TreeView: react.FC<muix.tree.view.TreeViewProps>
