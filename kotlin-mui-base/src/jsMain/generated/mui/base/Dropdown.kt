@@ -14,5 +14,5 @@ package mui.base
  *
  * - [Dropdown API](https://mui.com/base-ui/react-menu/components-api/#dropdown)
  */
-@JsName("default")
+@JsName("Dropdown")
 external val Dropdown: react.FC<DropdownProps>

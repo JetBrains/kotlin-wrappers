@@ -15,5 +15,5 @@ package mui.base
  *
  * - [Option API](https://mui.com/base-ui/react-select/components-api/#option)
  */
-@JsName("default")
+@JsName("Option")
 external val Option: react.FC<OptionProps<*>>
