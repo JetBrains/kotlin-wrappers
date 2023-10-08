@@ -156,24 +156,24 @@ external interface UseSliderReturnValue {
 
     /**
      * Resolver for the hidden input slot's props.
-     * @param otherHandlers props for the hidden input slot
+     * @param externalProps props for the hidden input slot
      * @returns props that should be spread on the hidden input slot
      */
-    var getHiddenInputProps: react.Props /* <TOther extends EventHandlers = {}>(otherHandlers?: TOther) => UseSliderHiddenInputProps<TOther> */
+    var getHiddenInputProps: react.Props /* <ExternalProps extends Record<string, unknown> = {}>(externalProps?: ExternalProps) => UseSliderHiddenInputProps<ExternalProps> */
 
     /**
      * Resolver for the root slot's props.
-     * @param otherHandlers props for the root slot
+     * @param externalProps props for the root slot
      * @returns props that should be spread on the root slot
      */
-    var getRootProps: react.Props /* <TOther extends EventHandlers = {}>(otherHandlers?: TOther) => UseSliderRootSlotProps<TOther> */
+    var getRootProps: react.Props /* <ExternalProps extends Record<string, unknown> = {}>(externalProps?: ExternalProps) => UseSliderRootSlotProps<ExternalProps> */
 
     /**
      * Resolver for the thumb slot's props.
-     * @param otherHandlers props for the thumb slot
+     * @param externalProps props for the thumb slot
      * @returns props that should be spread on the thumb slot
      */
-    var getThumbProps: react.Props /* <TOther extends EventHandlers = {}>(otherHandlers?: TOther) => UseSliderThumbSlotProps<TOther> */
+    var getThumbProps: react.Props /* <ExternalProps extends Record<string, unknown> = {}>(externalProps?: ExternalProps) => UseSliderThumbSlotProps<ExternalProps> */
 
     /**
      * Resolver for the thumb slot's style prop.
