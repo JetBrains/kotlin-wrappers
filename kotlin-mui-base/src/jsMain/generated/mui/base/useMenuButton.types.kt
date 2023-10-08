@@ -29,8 +29,10 @@ external interface UseMenuButtonReturnValue {
 
     /**
      * Resolver for the root slot's props.
+     * @param externalProps props for the root slot
+     * @returns props that should be spread on the root slot
      */
-    var getRootProps: Any /* (otherHandlers?: EventHandlers) => UseMenuButtonRootSlotProps */
+    var getRootProps: Any /* <ExternalProps extends Record<string, unknown> = {}>(externalProps?: ExternalProps) => UseMenuButtonRootSlotProps<ExternalProps> */
 
     var open: Boolean
 

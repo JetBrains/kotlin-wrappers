@@ -25,10 +25,10 @@ external interface UseMenuItemParameters {
 external interface UseMenuItemReturnValue {
     /**
      * Resolver for the root slot's props.
-     * @param otherHandlers event handlers for the root slot
+     * @param externalProps event handlers for the root slot
      * @returns props that should be spread on the root slot
      */
-    var getRootProps: react.Props /* <TOther extends EventHandlers = {}>(otherHandlers?: TOther) => UseMenuItemRootSlotProps<TOther> */
+    var getRootProps: react.Props /* <ExternalProps extends Record<string, unknown> = {}>(externalProps?: ExternalProps) => UseMenuItemRootSlotProps<ExternalProps> */
 
     /**
      * If `true`, the component is disabled.

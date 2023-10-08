@@ -19,14 +19,6 @@ external interface UseTabPanelParameters {
     var value: dynamic
 }
 
-external interface UseTabPanelRootSlotProps : react.Props {
-    // var `aria-labelledby`: String?
-
-    var hidden: Boolean?
-
-    var id: String?
-}
-
 external interface UseTabPanelReturnValue {
     /**
      * If `true`, it indicates that the tab panel will be hidden.
@@ -35,9 +27,10 @@ external interface UseTabPanelReturnValue {
 
     /**
      * Resolver for the root slot's props.
+     * @param externalProps additional props for the root slot
      * @returns props that should be spread on the root slot
      */
-    var getRootProps: () -> UseTabPanelRootSlotProps
+    var getRootProps: react.Props /* <ExternalProps extends Record<string, unknown> = {}>(externalProps?: ExternalProps) => UseTabPanelRootSlotProps<ExternalProps> */
 
     var rootRef: react.Ref<web.html.HTMLElement>
 }
