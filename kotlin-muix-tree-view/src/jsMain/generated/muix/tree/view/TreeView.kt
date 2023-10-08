@@ -14,5 +14,5 @@ package muix.tree.view
  *
  * - [TreeView API](https://mui.com/x/api/tree-view/tree-view/)
  */
-@JsName("default")
+@JsName("TreeView")
 external val TreeView: react.FC<TreeViewPropsBase /* SingleSelectTreeViewProps or MultiSelectTreeViewProps */>

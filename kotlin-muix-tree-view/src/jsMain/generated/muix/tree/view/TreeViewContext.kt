@@ -7,5 +7,5 @@ package muix.tree.view
 external interface TreeViewContextProps : react.Props, TreeViewContextValue
 
 
-@JsName("default")
+@JsName("TreeViewContext")
 external val TreeViewContext: react.FC<TreeViewContextProps>
