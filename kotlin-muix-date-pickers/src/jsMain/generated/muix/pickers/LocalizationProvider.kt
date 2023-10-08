@@ -45,5 +45,4 @@ external interface MuiPickersAdapterContextValue {
 }
 
 
-@JsName("LocalizationProvider")
 external val LocalizationProvider: react.FC<LocalizationProviderProps>
