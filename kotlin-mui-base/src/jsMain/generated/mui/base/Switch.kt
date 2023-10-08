@@ -19,5 +19,4 @@ package mui.base
  *
  * - [Switch API](https://mui.com/base-ui/react-switch/components-api/#switch)
  */
-@JsName("default")
 external val Switch: react.FC<SwitchProps>

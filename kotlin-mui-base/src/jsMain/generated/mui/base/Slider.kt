@@ -14,5 +14,4 @@ package mui.base
  *
  * - [Slider API](https://mui.com/base-ui/react-slider/components-api/#slider)
  */
-@JsName("default")
 external val Slider: react.FC<SliderProps>

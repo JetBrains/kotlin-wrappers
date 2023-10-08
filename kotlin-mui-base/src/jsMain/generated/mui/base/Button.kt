@@ -15,5 +15,4 @@ package mui.base
  *
  * - [Button API](https://mui.com/base-ui/react-button/components-api/#button)
  */
-@JsName("default")
 external val Button: react.FC<ButtonProps>

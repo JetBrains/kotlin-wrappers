@@ -29,5 +29,4 @@ package mui.base
  *
  * - [Modal API](https://mui.com/base-ui/react-modal/components-api/#modal)
  */
-@JsName("default")
 external val Modal: react.FC<ModalProps>

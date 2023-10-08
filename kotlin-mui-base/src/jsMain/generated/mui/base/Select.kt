@@ -19,5 +19,4 @@ package mui.base
  *
  * - [Select API](https://mui.com/base-ui/react-select/components-api/#select)
  */
-@JsName("default")
 external val Select: react.FC<SelectProps<*>>

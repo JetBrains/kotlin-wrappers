@@ -18,5 +18,4 @@ package mui.base
  *
  * - [Input API](https://mui.com/base-ui/react-input/components-api/#input)
  */
-@JsName("default")
 external val Input: react.FC<InputProps>
