@@ -29,7 +29,7 @@ sealed external interface AnnotationProperties {
     var startColumn: Number?
 
     /**
-     * The start column for the annotation. Cannot be sent when `startLine` and `endLine` are different values.
+     * The end column for the annotation. Cannot be sent when `startLine` and `endLine` are different values.
      * Defaults to `startColumn` when `startColumn` is provided.
      */
     var endColumn: Number?
