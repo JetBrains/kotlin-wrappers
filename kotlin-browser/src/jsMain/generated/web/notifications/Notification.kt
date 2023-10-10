@@ -46,6 +46,9 @@ external class Notification(
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/show_event) */
     var onshow: EventHandler<Event>?
 
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/requireInteraction) */
+    val requireInteraction: Boolean
+
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/silent) */
     val silent: Boolean?
 

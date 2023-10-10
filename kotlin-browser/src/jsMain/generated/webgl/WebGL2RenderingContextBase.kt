@@ -73,7 +73,7 @@ sealed external interface WebGL2RenderingContextBase {
         buffer: GLenum,
         drawbuffer: GLint,
         values: Float32List,
-        srcOffset: GLuint?,
+        srcOffset: Int /* GLuint */?,
     )
 
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/clearBuffer) */
@@ -81,7 +81,7 @@ sealed external interface WebGL2RenderingContextBase {
         buffer: GLenum,
         drawbuffer: GLint,
         values: Int32List,
-        srcOffset: GLuint?,
+        srcOffset: Int /* GLuint */?,
     )
 
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/clearBuffer) */
@@ -89,7 +89,7 @@ sealed external interface WebGL2RenderingContextBase {
         buffer: GLenum,
         drawbuffer: GLint,
         values: Uint32List,
-        srcOffset: GLuint?,
+        srcOffset: Int /* GLuint */?,
     )
 
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/clientWaitSync) */
@@ -121,7 +121,7 @@ sealed external interface WebGL2RenderingContextBase {
         depth: GLsizei,
         border: GLint,
         srcData: ArrayBufferView,
-        srcOffset: GLuint?,
+        srcOffset: Int /* GLuint */?,
         srcLengthOverride: GLuint?,
     )
 
@@ -151,7 +151,7 @@ sealed external interface WebGL2RenderingContextBase {
         depth: GLsizei,
         format: GLenum,
         srcData: ArrayBufferView,
-        srcOffset: GLuint?,
+        srcOffset: Int /* GLuint */?,
         srcLengthOverride: GLuint?,
     )
 
@@ -280,7 +280,7 @@ sealed external interface WebGL2RenderingContextBase {
         target: GLenum,
         srcByteOffset: GLintptr,
         dstBuffer: ArrayBufferView,
-        dstOffset: GLuint?,
+        dstOffset: Int /* GLuint */?,
         length: GLuint?,
     )
 
@@ -459,7 +459,7 @@ sealed external interface WebGL2RenderingContextBase {
         format: GLenum,
         type: GLenum,
         srcData: ArrayBufferView,
-        srcOffset: GLuint,
+        srcOffset: Int, /* GLuint */
     )
 
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/texStorage2D) */
@@ -522,7 +522,7 @@ sealed external interface WebGL2RenderingContextBase {
         format: GLenum,
         type: GLenum,
         srcData: ArrayBufferView?,
-        srcOffset: GLuint?,
+        srcOffset: Int /* GLuint */?,
     )
 
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/transformFeedbackVaryings) */
@@ -542,7 +542,7 @@ sealed external interface WebGL2RenderingContextBase {
     fun uniform1uiv(
         location: WebGLUniformLocation?,
         data: Uint32List,
-        srcOffset: GLuint?,
+        srcOffset: Int /* GLuint */?,
         srcLength: GLuint?,
     )
 
@@ -557,7 +557,7 @@ sealed external interface WebGL2RenderingContextBase {
     fun uniform2uiv(
         location: WebGLUniformLocation?,
         data: Uint32List,
-        srcOffset: GLuint?,
+        srcOffset: Int /* GLuint */?,
         srcLength: GLuint?,
     )
 
@@ -573,7 +573,7 @@ sealed external interface WebGL2RenderingContextBase {
     fun uniform3uiv(
         location: WebGLUniformLocation?,
         data: Uint32List,
-        srcOffset: GLuint?,
+        srcOffset: Int /* GLuint */?,
         srcLength: GLuint?,
     )
 
@@ -590,7 +590,7 @@ sealed external interface WebGL2RenderingContextBase {
     fun uniform4uiv(
         location: WebGLUniformLocation?,
         data: Uint32List,
-        srcOffset: GLuint?,
+        srcOffset: Int /* GLuint */?,
         srcLength: GLuint?,
     )
 
@@ -606,7 +606,7 @@ sealed external interface WebGL2RenderingContextBase {
         location: WebGLUniformLocation?,
         transpose: GLboolean,
         data: Float32List,
-        srcOffset: GLuint?,
+        srcOffset: Int /* GLuint */?,
         srcLength: GLuint?,
     )
 
@@ -615,7 +615,7 @@ sealed external interface WebGL2RenderingContextBase {
         location: WebGLUniformLocation?,
         transpose: GLboolean,
         data: Float32List,
-        srcOffset: GLuint?,
+        srcOffset: Int /* GLuint */?,
         srcLength: GLuint?,
     )
 
@@ -624,7 +624,7 @@ sealed external interface WebGL2RenderingContextBase {
         location: WebGLUniformLocation?,
         transpose: GLboolean,
         data: Float32List,
-        srcOffset: GLuint?,
+        srcOffset: Int /* GLuint */?,
         srcLength: GLuint?,
     )
 
@@ -633,7 +633,7 @@ sealed external interface WebGL2RenderingContextBase {
         location: WebGLUniformLocation?,
         transpose: GLboolean,
         data: Float32List,
-        srcOffset: GLuint?,
+        srcOffset: Int /* GLuint */?,
         srcLength: GLuint?,
     )
 
@@ -642,7 +642,7 @@ sealed external interface WebGL2RenderingContextBase {
         location: WebGLUniformLocation?,
         transpose: GLboolean,
         data: Float32List,
-        srcOffset: GLuint?,
+        srcOffset: Int /* GLuint */?,
         srcLength: GLuint?,
     )
 
@@ -651,7 +651,7 @@ sealed external interface WebGL2RenderingContextBase {
         location: WebGLUniformLocation?,
         transpose: GLboolean,
         data: Float32List,
-        srcOffset: GLuint?,
+        srcOffset: Int /* GLuint */?,
         srcLength: GLuint?,
     )
 

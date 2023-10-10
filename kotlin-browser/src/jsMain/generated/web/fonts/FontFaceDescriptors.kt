@@ -11,6 +11,5 @@ sealed external interface FontFaceDescriptors {
     var stretch: String?
     var style: String?
     var unicodeRange: String?
-    var variant: String?
     var weight: String?
 }
