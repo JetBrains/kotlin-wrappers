@@ -154,4 +154,5 @@ external class HttpClient {
      * @param serverUrl  The server URL where the request will be sent. For example, https://api.github.com
      */
     fun getAgent(serverUrl: String): node.http.Agent
+    fun getAgentDispatcher(serverUrl: String): Any /* ProxyAgent */?
 }

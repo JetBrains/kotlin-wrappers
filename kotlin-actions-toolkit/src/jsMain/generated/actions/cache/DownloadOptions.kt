@@ -21,6 +21,12 @@ sealed external interface DownloadOptions {
     var downloadConcurrency: Number?
 
     /**
+     * Indicates whether to use Actions HttpClient with concurrency
+     * for Azure Blob Storage
+     */
+    var concurrentBlobDownloads: Boolean?
+
+    /**
      * Maximum time for each download request, in milliseconds (this
      * option only applies when using the Azure SDK)
      *
