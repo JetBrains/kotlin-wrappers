@@ -49,6 +49,12 @@ open external class MouseEvent(
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/ctrlKey) */
     val ctrlKey: Boolean
 
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/layerX) */
+    val layerX: Int
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/layerY) */
+    val layerY: Int
+
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/metaKey) */
     val metaKey: Boolean
 

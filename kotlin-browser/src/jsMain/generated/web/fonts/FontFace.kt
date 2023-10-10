@@ -57,9 +57,6 @@ external class FontFace(
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/FontFace/unicodeRange) */
     var unicodeRange: String
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/FontFace/variant) */
-    var variant: String
-
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/FontFace/weight) */
     var weight: String
 

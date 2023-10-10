@@ -12,6 +12,12 @@ sealed external interface CanvasTextDrawingStyles {
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/fontKerning) */
     var fontKerning: CanvasFontKerning
 
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/fontStretch) */
+    var fontStretch: CanvasFontStretch
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/fontVariantCaps) */
+    var fontVariantCaps: CanvasFontVariantCaps
+
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/letterSpacing) */
     var letterSpacing: String
 
