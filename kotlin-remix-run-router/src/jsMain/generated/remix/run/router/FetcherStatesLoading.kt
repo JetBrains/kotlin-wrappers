@@ -3,7 +3,7 @@ package remix.run.router
 import web.http.FormData
 
 
-sealed external interface FetcherStatesLoading<TData> {
+sealed external interface FetcherStatesLoading<TData /* default is Any? */> {
     var state: String /* "loading" */
     var formMethod: (Any /* Submission["formMethod"] | undefined */)?
     var formAction: (String)?

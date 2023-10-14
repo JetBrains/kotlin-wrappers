@@ -10,8 +10,6 @@ sealed external interface MapRoutePropertiesFunction {
 
     @Suppress("DEPRECATION")
     @nativeInvoke
-    operator fun invoke(route: AgnosticRouteObject): Any /* {
-    hasErrorBoundary: boolean;
-} & Record<string, any> */
+    operator fun invoke(route: AgnosticRouteObject): MapRoutePropertiesFunctionResult
 
 }

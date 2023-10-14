@@ -5,6 +5,7 @@ export default (node) => {
         ts.isInterfaceDeclaration(node)
         || ts.isTypeAliasDeclaration(node)
         || ts.isTypeLiteralNode(node)
+        || ts.isIntersectionTypeNode(node)
     ) {
         return "sealed"
     }
