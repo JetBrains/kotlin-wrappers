@@ -1,5 +1,6 @@
 {
     "input": [
+        "<nodeModules>/@types/node/async_hooks.d.ts",
         "<nodeModules>/@types/node/buffer.d.ts",
         "<nodeModules>/@types/node/crypto.d.ts",
         "<nodeModules>/@types/node/dgram.d.ts",
@@ -42,6 +43,9 @@
     "libraryNameOutputPrefix": true,
     "granularity": "top-level",
     "moduleNameMapper": {
+        "^node/async_hooks": "node:async_hooks",
+        "^async_hooks": "node:async_hooks",
+
         "^node/buffer": "node:buffer",
         "^buffer": "node:buffer",
 
@@ -67,6 +71,10 @@
         "promises/(.+)\\.kt": "$1Async.kt",
         "SuspendAsync.kt": "Suspend.kt",
         "AsyncOptionsAsync.kt": "OptionsAsync.kt",
+
+        "^node/async_hooks/namespace.kt": "node/asyncHooks/nodeNamespace.kt",
+        "^node/asyncHooks.kt": "node/asyncHooks/asyncHooks.kt",
+        "^async_hooks": "node/asyncHooks",
 
         "^node/buffer/namespace.kt": "node/buffer/nodeNamespace.kt",
         "^node/buffer/global/namespace.kt": "node/buffer/nodeGlobalNamespace.kt",
@@ -299,6 +307,9 @@
         ]
     },
     "namespaceStrategy": {
+        "async_hooks": "package",
+        "node:async_hooks": "ignore",
+
         "buffer": "package",
         "node:buffer": "ignore",
 

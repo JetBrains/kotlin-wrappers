@@ -1,8 +1,7 @@
-// Automatically generated - do not modify!
-
 @file:JsModule("node:async_hooks")
 
 package node.asyncHooks
+
 
 /**
  * Resource objects returned by `executionAsyncResource()` are most often internal

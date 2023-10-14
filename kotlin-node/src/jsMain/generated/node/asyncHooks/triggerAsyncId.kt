@@ -1,8 +1,7 @@
-// Automatically generated - do not modify!
-
 @file:JsModule("node:async_hooks")
 
 package node.asyncHooks
+
 
 /**
  * ```js
@@ -24,4 +23,4 @@ package node.asyncHooks
  * the section on `promise execution tracking`.
  * @return The ID of the resource responsible for calling the callback that is currently being executed.
  */
-external fun triggerAsyncId(): Number
+external fun triggerAsyncId(): Double

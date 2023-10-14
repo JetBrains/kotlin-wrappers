@@ -1,8 +1,7 @@
-// Automatically generated - do not modify!
-
 @file:JsModule("node:async_hooks")
 
 package node.asyncHooks
+
 
 /**
  * Registers functions to be called for different lifetime events of each async
@@ -46,6 +45,4 @@ package node.asyncHooks
  * @param callbacks The `Hook Callbacks` to register
  * @return Instance used for disabling and enabling hooks
  */
-external fun createHook(
-    callbacks: HookCallbacks,
-): AsyncHook
+external fun createHook(callbacks: HookCallbacks): AsyncHook

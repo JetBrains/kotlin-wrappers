@@ -1,13 +1,12 @@
-// Automatically generated - do not modify!
-
 package node.asyncHooks
+
 
 sealed external interface AsyncResourceOptions {
     /**
      * The ID of the execution context that created this async event.
      * @default executionAsyncId()
      */
-    var triggerAsyncId: Number?
+    var triggerAsyncId: Double?
 
     /**
      * Disables automatic `emitDestroy` when the object is garbage collected.

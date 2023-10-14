@@ -1,8 +1,7 @@
-// Automatically generated - do not modify!
-
 @file:JsModule("node:async_hooks")
 
 package node.asyncHooks
+
 
 /**
  * ```js
@@ -35,4 +34,4 @@ package node.asyncHooks
  * @since v8.1.0
  * @return The `asyncId` of the current execution context. Useful to track when something calls.
  */
-external fun executionAsyncId(): Number
+external fun executionAsyncId(): Double
