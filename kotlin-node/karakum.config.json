@@ -7,7 +7,9 @@
         "<nodeModules>/@types/node/dns/promises.d.ts",
         "<nodeModules>/@types/node/fs.d.ts",
         "<nodeModules>/@types/node/fs/promises.d.ts",
-        "<nodeModules>/@types/node/tls.d.ts"
+        "<nodeModules>/@types/node/tls.d.ts",
+        "<nodeModules>/@types/node/readline.d.ts",
+        "<nodeModules>/@types/node/readline/promises.d.ts"
     ],
     "output": "src/jsMain/generated",
     "ignoreOutput": [
@@ -32,7 +34,9 @@
         "**/dns/getServersAsync.kt",
         "**/dns/setDefaultResultOrderAsync.kt",
         "**/dns/SetDefaultResultOrderOrderAsync.kt",
-        "**/dns/setServersAsync.kt"
+        "**/dns/setServersAsync.kt",
+
+        "**/readline/createInterface.kt"
     ],
     "libraryName": "node",
     "libraryNameOutputPrefix": true,
@@ -54,7 +58,10 @@
         "^fs": "node:fs",
 
         "^node/tls": "node:tls",
-        "^tls": "node:tls"
+        "^tls": "node:tls",
+
+        "^node/readline": "node:readline",
+        "^readline": "node:readline"
     },
     "packageNameMapper": {
         "promises/(.+)\\.kt": "$1Async.kt",
@@ -92,7 +99,11 @@
 
         "^node/tls/namespace.kt": "node/tls/nodeNamespace.kt",
         "^node/tls.kt": "node/tls/tls.kt",
-        "^tls": "node/tls"
+        "^tls": "node/tls",
+
+        "^node/readline/namespace.kt": "node/readline/nodeNamespace.kt",
+        "^node/readline.kt": "node/readline/readlineNamespace.kt",
+        "^readline": "node/readline"
     },
     "importInjector": {
         "Async.kt": [
@@ -168,7 +179,8 @@
             "js.core.ReadonlyArray",
             "js.promise.await",
             "js.typedarrays.Uint8Array",
-            "web.streams.ReadableStream"
+            "web.streams.ReadableStream",
+            "node.readline.Interface as ReadlineInterface"
         ],
         "fs/FileHandleWriteFileOptionsAsync.kt": [
             "node.events.Abortable"
@@ -272,6 +284,18 @@
         ],
         "tls/namespace.kt": [
             "js.core.ReadonlyArray"
+        ],
+
+        "readline/Interface.kt": [
+            "node.events.EventEmitter",
+            "node.events.Abortable"
+        ],
+        "readline/InterfaceAsync.kt": [
+            "js.promise.await",
+            "node.events.Abortable"
+        ],
+        "readline/ReadlineAsync.kt": [
+            "js.promise.await"
         ]
     },
     "namespaceStrategy": {
@@ -291,7 +315,10 @@
         "node:fs": "ignore",
 
         "tls": "package",
-        "node:tls": "ignore"
+        "node:tls": "ignore",
+
+        "readline": "package",
+        "node:readline": "ignore"
     },
     "conflictResolutionStrategy": {
         "LookupServiceResultPayload": "replace",

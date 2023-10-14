@@ -5,6 +5,7 @@ import js.promise.Promise
 import js.promise.await
 import js.typedarrays.Uint8Array
 import web.streams.ReadableStream
+import node.readline.Interface as ReadlineInterface
 
 // TODO: Add `EventEmitter` close
 
@@ -462,7 +463,7 @@ sealed external interface FileHandle {
      * @since v18.11.0
      * @param options See `filehandle.createReadStream()` for the options.
      */
-    fun readLines(options: CreateReadStreamOptions = definedExternally): Any
+    fun readLines(options: CreateReadStreamOptions = definedExternally): ReadlineInterface
 
     /**
      * @since v10.0.0
