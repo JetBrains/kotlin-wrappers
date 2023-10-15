@@ -18,12 +18,12 @@ external class Virtualizer<TScrollElement : EventTarget /* Element | Window */, 
     var scrollOffset: Int
     var scrollDirection: ScrollDirection?
     var measureElementCache: ReadonlyMap<Key, TItemElement>
-    var range: ItemRange
+    var range: ItemRange?
 
     constructor(opts: VirtualizerOptions<TScrollElement, TItemElement>)
 
     var setOptions: (opts: VirtualizerOptions<TScrollElement, TItemElement>) -> Unit
-    var calculateRange: () -> ItemRange
+    var calculateRange: () -> ItemRange?
     var indexFromElement: (node: TItemElement) -> Int
     var resizeItem: (item: VirtualItem, size: Int) -> Unit
     var measureElement: (node: TItemElement?) -> Unit
