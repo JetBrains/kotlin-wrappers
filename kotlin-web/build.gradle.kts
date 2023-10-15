@@ -8,4 +8,5 @@ dependencies {
     jsMainApi(project(":kotlin-js"))
 
     jsMainImplementation(kotlinxCoroutines("core"))
+    jsMainImplementation(seskarCore())
 }
