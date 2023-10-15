@@ -10,4 +10,6 @@ dependencies {
     jsMainApi(project(":kotlin-web"))
 
     jsMainImplementation(seskarCore())
+
+    jsTestImplementation(kotlin("test-js"))
 }
