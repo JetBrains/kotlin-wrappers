@@ -6,6 +6,7 @@
 
 package web.animations
 
+import seskar.js.JsValue
 import web.events.Event
 import web.events.EventInit
 import web.events.EventType
@@ -26,5 +27,11 @@ open external class AnimationPlaybackEvent(
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/AnimationPlaybackEvent/timelineTime) */
     val timelineTime: CSSNumberish?
 
-    companion object
+    companion object {
+        @JsValue("cancel")
+        val CANCEL: EventType<AnimationPlaybackEvent>
+
+        @JsValue("finish")
+        val FINISH: EventType<AnimationPlaybackEvent>
+    }
 }

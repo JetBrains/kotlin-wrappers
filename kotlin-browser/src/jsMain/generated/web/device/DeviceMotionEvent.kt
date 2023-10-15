@@ -6,6 +6,7 @@
 
 package web.device
 
+import seskar.js.JsValue
 import web.events.Event
 import web.events.EventInit
 import web.events.EventType
@@ -39,5 +40,8 @@ open external class DeviceMotionEvent(
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/DeviceMotionEvent/rotationRate) */
     val rotationRate: DeviceMotionEventRotationRate?
 
-    companion object
+    companion object {
+        @JsValue("devicemotion")
+        val DEVICE_MOTION: EventType<DeviceMotionEvent>
+    }
 }

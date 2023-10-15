@@ -6,6 +6,7 @@
 
 package web.media.streams
 
+import seskar.js.JsValue
 import web.events.Event
 import web.events.EventInit
 import web.events.EventType
@@ -26,5 +27,11 @@ open external class MediaStreamTrackEvent(
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStreamTrackEvent/track) */
     val track: MediaStreamTrack
 
-    companion object
+    companion object {
+        @JsValue("addtrack")
+        val ADD_TRACK: EventType<MediaStreamTrackEvent>
+
+        @JsValue("removetrack")
+        val REMOVE_TRACK: EventType<MediaStreamTrackEvent>
+    }
 }

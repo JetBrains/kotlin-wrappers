@@ -6,6 +6,7 @@
 
 package webrtc
 
+import seskar.js.JsValue
 import web.events.Event
 import web.events.EventInit
 import web.events.EventType
@@ -22,5 +23,8 @@ open external class RTCDataChannelEvent(
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDataChannelEvent/channel) */
     val channel: RTCDataChannel
 
-    companion object
+    companion object {
+        @JsValue("datachannel")
+        val DATA_CHANNEL: EventType<RTCDataChannelEvent>
+    }
 }

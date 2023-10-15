@@ -7,6 +7,7 @@
 package web.events
 
 import js.core.JsLong
+import seskar.js.JsValue
 
 external interface ProgressEventInit : EventInit {
     var lengthComputable: Boolean?
@@ -33,5 +34,26 @@ open external class ProgressEvent<out T : EventTarget>(
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/ProgressEvent/total) */
     val total: JsLong
 
-    companion object
+    companion object {
+        @JsValue("abort")
+        val ABORT: EventType<ProgressEvent<*>>
+
+        @JsValue("error")
+        val ERROR: EventType<ProgressEvent<*>>
+
+        @JsValue("load")
+        val LOAD: EventType<ProgressEvent<*>>
+
+        @JsValue("loadend")
+        val LOAD_END: EventType<ProgressEvent<*>>
+
+        @JsValue("loadstart")
+        val LOAD_START: EventType<ProgressEvent<*>>
+
+        @JsValue("progress")
+        val PROGRESS: EventType<ProgressEvent<*>>
+
+        @JsValue("timeout")
+        val TIMEOUT: EventType<ProgressEvent<*>>
+    }
 }

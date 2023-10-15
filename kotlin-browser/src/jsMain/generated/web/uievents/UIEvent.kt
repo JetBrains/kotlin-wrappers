@@ -6,6 +6,7 @@
 
 package web.uievents
 
+import seskar.js.JsValue
 import web.events.Event
 import web.events.EventInit
 import web.events.EventType
@@ -31,5 +32,11 @@ open external class UIEvent(
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/UIEvent/view) */
     val view: Window?
 
-    companion object
+    companion object {
+        @JsValue("abort")
+        val ABORT: EventType<UIEvent>
+
+        @JsValue("resize")
+        val RESIZE: EventType<UIEvent>
+    }
 }

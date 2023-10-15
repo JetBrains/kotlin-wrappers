@@ -6,6 +6,7 @@
 
 package web.speech
 
+import seskar.js.JsValue
 import web.events.EventType
 
 external interface SpeechSynthesisErrorEventInit : SpeechSynthesisEventInit {
@@ -20,5 +21,8 @@ open external class SpeechSynthesisErrorEvent(
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesisErrorEvent/error) */
     val error: SpeechSynthesisErrorCode
 
-    companion object
+    companion object {
+        @JsValue("error")
+        val ERROR: EventType<SpeechSynthesisErrorEvent>
+    }
 }

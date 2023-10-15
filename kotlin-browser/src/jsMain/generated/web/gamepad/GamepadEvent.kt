@@ -6,6 +6,7 @@
 
 package web.gamepad
 
+import seskar.js.JsValue
 import web.events.Event
 import web.events.EventInit
 import web.events.EventType
@@ -27,5 +28,11 @@ open external class GamepadEvent(
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/GamepadEvent/gamepad) */
     val gamepad: Gamepad
 
-    companion object
+    companion object {
+        @JsValue("gamepadconnected")
+        val GAMEPAD_CONNECTED: EventType<GamepadEvent>
+
+        @JsValue("gamepaddisconnected")
+        val GAMEPAD_DISCONNECTED: EventType<GamepadEvent>
+    }
 }

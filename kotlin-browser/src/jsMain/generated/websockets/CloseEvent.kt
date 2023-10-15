@@ -6,6 +6,7 @@
 
 package websockets
 
+import seskar.js.JsValue
 import web.events.Event
 import web.events.EventInit
 import web.events.EventType
@@ -46,5 +47,8 @@ open external class CloseEvent(
      */
     val wasClean: Boolean
 
-    companion object
+    companion object {
+        @JsValue("close")
+        val CLOSE: EventType<CloseEvent>
+    }
 }

@@ -6,6 +6,7 @@
 
 package web.errors
 
+import seskar.js.JsValue
 import web.events.Event
 import web.events.EventInit
 import web.events.EventType
@@ -42,5 +43,8 @@ open external class ErrorEvent(
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/ErrorEvent/message) */
     val message: String
 
-    companion object
+    companion object {
+        @JsValue("error")
+        val ERROR: EventType<ErrorEvent>
+    }
 }

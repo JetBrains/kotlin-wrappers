@@ -6,6 +6,7 @@
 
 package web.html
 
+import seskar.js.JsValue
 import web.events.Event
 import web.events.EventInit
 import web.events.EventType
@@ -26,5 +27,8 @@ open external class SubmitEvent(
      */
     val submitter: HTMLElement?
 
-    companion object
+    companion object {
+        @JsValue("submit")
+        val SUBMIT: EventType<SubmitEvent>
+    }
 }

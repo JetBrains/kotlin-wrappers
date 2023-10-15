@@ -6,6 +6,7 @@
 
 package web.uievents
 
+import seskar.js.JsValue
 import web.data.DataTransfer
 import web.events.EventType
 
@@ -29,5 +30,26 @@ open external class DragEvent(
      */
     val dataTransfer: DataTransfer?
 
-    companion object
+    companion object {
+        @JsValue("drag")
+        val DRAG: EventType<DragEvent>
+
+        @JsValue("dragend")
+        val DRAG_END: EventType<DragEvent>
+
+        @JsValue("dragenter")
+        val DRAG_ENTER: EventType<DragEvent>
+
+        @JsValue("dragleave")
+        val DRAG_LEAVE: EventType<DragEvent>
+
+        @JsValue("dragover")
+        val DRAG_OVER: EventType<DragEvent>
+
+        @JsValue("dragstart")
+        val DRAG_START: EventType<DragEvent>
+
+        @JsValue("drop")
+        val DROP: EventType<DragEvent>
+    }
 }

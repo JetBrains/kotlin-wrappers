@@ -6,6 +6,7 @@
 
 package web.speech
 
+import seskar.js.JsValue
 import web.events.Event
 import web.events.EventInit
 import web.events.EventType
@@ -42,5 +43,23 @@ open external class SpeechSynthesisEvent(
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesisEvent/utterance) */
     val utterance: SpeechSynthesisUtterance
 
-    companion object
+    companion object {
+        @JsValue("boundary")
+        val BOUNDARY: EventType<SpeechSynthesisEvent>
+
+        @JsValue("end")
+        val END: EventType<SpeechSynthesisEvent>
+
+        @JsValue("mark")
+        val MARK: EventType<SpeechSynthesisEvent>
+
+        @JsValue("pause")
+        val PAUSE: EventType<SpeechSynthesisEvent>
+
+        @JsValue("resume")
+        val RESUME: EventType<SpeechSynthesisEvent>
+
+        @JsValue("start")
+        val START: EventType<SpeechSynthesisEvent>
+    }
 }

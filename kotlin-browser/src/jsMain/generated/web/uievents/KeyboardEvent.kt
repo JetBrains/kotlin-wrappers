@@ -6,6 +6,7 @@
 
 package web.uievents
 
+import seskar.js.JsValue
 import web.events.EventType
 import web.keyboard.KeyCode
 import web.keyboard.ModifierKeyCode
@@ -66,5 +67,14 @@ open external class KeyboardEvent(
         val DOM_KEY_LOCATION_LEFT: Short
         val DOM_KEY_LOCATION_RIGHT: Short
         val DOM_KEY_LOCATION_NUMPAD: Short
+
+        @JsValue("keydown")
+        val KEY_DOWN: EventType<KeyboardEvent>
+
+        @JsValue("keypress")
+        val KEY_PRESS: EventType<KeyboardEvent>
+
+        @JsValue("keyup")
+        val KEY_UP: EventType<KeyboardEvent>
     }
 }

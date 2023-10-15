@@ -8,6 +8,7 @@ package web.serviceworker
 
 import js.core.Void
 import js.promise.Promise
+import seskar.js.JsValue
 import web.events.EventType
 import web.http.Request
 import web.http.Response
@@ -49,5 +50,8 @@ open external class FetchEvent(
     fun respondWith(r: Response)
     fun respondWith(r: Promise<Response>)
 
-    companion object
+    companion object {
+        @JsValue("fetch")
+        val FETCH: EventType<FetchEvent>
+    }
 }

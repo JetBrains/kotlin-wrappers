@@ -6,6 +6,7 @@
 
 package webvtt
 
+import seskar.js.JsValue
 import web.events.Event
 import web.events.EventInit
 import web.events.EventType
@@ -30,5 +31,11 @@ open external class TrackEvent(
      */
     val track: TextTrack?
 
-    companion object
+    companion object {
+        @JsValue("addtrack")
+        val ADD_TRACK: EventType<TrackEvent>
+
+        @JsValue("removetrack")
+        val REMOVE_TRACK: EventType<TrackEvent>
+    }
 }

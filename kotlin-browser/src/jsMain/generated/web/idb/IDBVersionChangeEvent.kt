@@ -7,6 +7,7 @@
 package web.idb
 
 import js.core.JsLong
+import seskar.js.JsValue
 import web.events.Event
 import web.events.EventInit
 import web.events.EventType
@@ -31,5 +32,14 @@ open external class IDBVersionChangeEvent(
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBVersionChangeEvent/oldVersion) */
     val oldVersion: JsLong
 
-    companion object
+    companion object {
+        @JsValue("blocked")
+        val BLOCKED: EventType<IDBVersionChangeEvent>
+
+        @JsValue("upgradeneeded")
+        val UPGRADENEEDED: EventType<IDBVersionChangeEvent>
+
+        @JsValue("versionchange")
+        val VERSION_CHANGE: EventType<IDBVersionChangeEvent>
+    }
 }

@@ -6,6 +6,7 @@
 
 package web.animations
 
+import seskar.js.JsValue
 import web.events.Event
 import web.events.EventInit
 import web.events.EventType
@@ -34,5 +35,17 @@ open external class AnimationEvent(
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/AnimationEvent/pseudoElement) */
     val pseudoElement: String
 
-    companion object
+    companion object {
+        @JsValue("animationcancel")
+        val ANIMATION_CANCEL: EventType<AnimationEvent>
+
+        @JsValue("animationend")
+        val ANIMATION_END: EventType<AnimationEvent>
+
+        @JsValue("animationiteration")
+        val ANIMATION_ITERATION: EventType<AnimationEvent>
+
+        @JsValue("animationstart")
+        val ANIMATION_START: EventType<AnimationEvent>
+    }
 }

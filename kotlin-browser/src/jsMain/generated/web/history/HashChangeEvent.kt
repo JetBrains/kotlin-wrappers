@@ -6,6 +6,7 @@
 
 package web.history
 
+import seskar.js.JsValue
 import web.events.Event
 import web.events.EventInit
 import web.events.EventType
@@ -38,5 +39,8 @@ open external class HashChangeEvent(
      */
     val oldURL: String
 
-    companion object
+    companion object {
+        @JsValue("hashchange")
+        val HASH_CHANGE: EventType<HashChangeEvent>
+    }
 }

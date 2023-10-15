@@ -2,7 +2,9 @@
 
 package web.window
 
+import seskar.js.JsValue
 import web.events.Event
+import web.events.EventType
 
 /**
  * The beforeunload event is fired when the window, the document and its resources are about to be unloaded.
@@ -12,5 +14,8 @@ import web.events.Event
 sealed external class BeforeUnloadEvent : Event {
     var returnValue: Any?
 
-    companion object
+    companion object {
+        @JsValue("beforeunload")
+        val BEFORE_UNLOAD: EventType<BeforeUnloadEvent>
+    }
 }

@@ -6,6 +6,7 @@
 
 package web.serviceworker
 
+import seskar.js.JsValue
 import web.events.EventType
 import web.notifications.Notification
 
@@ -29,5 +30,11 @@ open external class NotificationEvent(
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/NotificationEvent/notification) */
     val notification: Notification
 
-    companion object
+    companion object {
+        @JsValue("notificationclick")
+        val NOTIFICATION_CLICK: EventType<NotificationEvent>
+
+        @JsValue("notificationclose")
+        val NOTIFICATION_CLOSE: EventType<NotificationEvent>
+    }
 }

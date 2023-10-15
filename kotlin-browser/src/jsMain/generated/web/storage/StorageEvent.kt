@@ -6,6 +6,7 @@
 
 package web.storage
 
+import seskar.js.JsValue
 import web.events.Event
 import web.events.EventInit
 import web.events.EventType
@@ -62,5 +63,8 @@ open external class StorageEvent(
      */
     val url: String
 
-    companion object
+    companion object {
+        @JsValue("storage")
+        val STORAGE: EventType<StorageEvent>
+    }
 }

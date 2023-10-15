@@ -6,6 +6,7 @@
 
 package web.uievents
 
+import seskar.js.JsValue
 import web.events.EventTarget
 import web.events.EventType
 
@@ -25,5 +26,17 @@ open external class FocusEvent(
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/FocusEvent/relatedTarget) */
     val relatedTarget: EventTarget?
 
-    companion object
+    companion object {
+        @JsValue("blur")
+        val BLUR: EventType<FocusEvent>
+
+        @JsValue("focus")
+        val FOCUS: EventType<FocusEvent>
+
+        @JsValue("focusin")
+        val FOCUS_IN: EventType<FocusEvent>
+
+        @JsValue("focusout")
+        val FOCUS_OUT: EventType<FocusEvent>
+    }
 }

@@ -6,6 +6,7 @@
 
 package web.device
 
+import seskar.js.JsValue
 import web.events.Event
 import web.events.EventInit
 import web.events.EventType
@@ -39,5 +40,8 @@ open external class DeviceOrientationEvent(
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/DeviceOrientationEvent/gamma) */
     val gamma: Double?
 
-    companion object
+    companion object {
+        @JsValue("deviceorientation")
+        val DEVICE_ORIENTATION: EventType<DeviceOrientationEvent>
+    }
 }

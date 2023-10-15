@@ -7,6 +7,7 @@
 package web.uievents
 
 import js.core.ReadonlyArray
+import seskar.js.JsValue
 import web.data.DataTransfer
 import web.events.EventType
 
@@ -38,5 +39,8 @@ open external class InputEvent(
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/InputEvent/getTargetRanges) */
     fun getTargetRanges(): ReadonlyArray<Any /* StaticRange */>
 
-    companion object
+    companion object {
+        @JsValue("beforeinput")
+        val BEFORE_INPUT: EventType<InputEvent>
+    }
 }

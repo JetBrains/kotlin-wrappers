@@ -6,6 +6,7 @@
 
 package web.html
 
+import seskar.js.JsValue
 import web.events.Event
 import web.events.EventInit
 import web.events.EventType
@@ -27,5 +28,8 @@ open external class FormDataEvent(
      */
     val formData: FormData
 
-    companion object
+    companion object {
+        @JsValue("formdata")
+        val FORM_DATA: EventType<FormDataEvent>
+    }
 }

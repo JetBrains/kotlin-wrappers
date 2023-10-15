@@ -7,6 +7,7 @@
 package web.serviceworker
 
 import js.core.ReadonlyArray
+import seskar.js.JsValue
 import web.events.EventType
 import web.messaging.MessagePort
 
@@ -42,5 +43,8 @@ open external class ExtendableMessageEvent(
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/ExtendableMessageEvent/source) */
     val source: Any /* Client | ServiceWorker | MessagePort */?
 
-    companion object
+    companion object {
+        @JsValue("message")
+        val MESSAGE: EventType<ExtendableMessageEvent>
+    }
 }

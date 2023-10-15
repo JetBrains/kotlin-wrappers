@@ -7,6 +7,7 @@
 package web.messaging
 
 import js.core.ReadonlyArray
+import seskar.js.JsValue
 import web.events.Event
 import web.events.EventInit
 import web.events.EventType
@@ -63,5 +64,11 @@ open external class MessageEvent<out T>(
      */
     val source: MessageEventSource?
 
-    companion object
+    companion object {
+        @JsValue("message")
+        val MESSAGE: EventType<MessageEvent<*>>
+
+        @JsValue("messageerror")
+        val MESSAGE_ERROR: EventType<MessageEvent<*>>
+    }
 }
