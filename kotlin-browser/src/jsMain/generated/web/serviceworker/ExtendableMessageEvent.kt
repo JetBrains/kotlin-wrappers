@@ -10,11 +10,6 @@ import js.core.ReadonlyArray
 import web.events.EventType
 import web.messaging.MessagePort
 
-/**
- * This ServiceWorker API interface represents the event object of a message event fired on a service worker (when a channel message is received on the ServiceWorkerGlobalScope from another context) — extends the lifetime of such events.
- *
- * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ExtendableMessageEvent)
- */
 external interface ExtendableMessageEventInit : ExtendableEventInit {
     var data: Any?
     var lastEventId: String?
@@ -23,6 +18,11 @@ external interface ExtendableMessageEventInit : ExtendableEventInit {
     var source: Any /* Client | ServiceWorker | MessagePort */?
 }
 
+/**
+ * This ServiceWorker API interface represents the event object of a message event fired on a service worker (when a channel message is received on the ServiceWorkerGlobalScope from another context) — extends the lifetime of such events.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ExtendableMessageEvent)
+ */
 open external class ExtendableMessageEvent(
     override val type: EventType<ExtendableMessageEvent>,
     init: ExtendableMessageEventInit = definedExternally,

@@ -10,12 +10,6 @@ import web.events.Event
 import web.events.EventInit
 import web.events.EventType
 
-/**
- * The DeviceOrientationEvent provides web developers with information from the physical orientation of the device running the web page.
- * Available only in secure contexts.
- *
- * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DeviceOrientationEvent)
- */
 external interface DeviceOrientationEventInit : EventInit {
     var absolute: Boolean?
     var alpha: Double?
@@ -23,6 +17,12 @@ external interface DeviceOrientationEventInit : EventInit {
     var gamma: Double?
 }
 
+/**
+ * The DeviceOrientationEvent provides web developers with information from the physical orientation of the device running the web page.
+ * Available only in secure contexts.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DeviceOrientationEvent)
+ */
 open external class DeviceOrientationEvent(
     override val type: EventType<DeviceOrientationEvent>,
     init: DeviceOrientationEventInit = definedExternally,

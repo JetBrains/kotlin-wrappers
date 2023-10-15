@@ -10,7 +10,6 @@ import web.events.Event
 import web.events.EventInit
 import web.events.EventType
 
-/** [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnectionIceErrorEvent) */
 external interface RTCPeerConnectionIceErrorEventInit : EventInit {
     var address: String?
     var errorCode: Int
@@ -19,6 +18,7 @@ external interface RTCPeerConnectionIceErrorEventInit : EventInit {
     var url: String?
 }
 
+/** [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnectionIceErrorEvent) */
 open external class RTCPeerConnectionIceErrorEvent(
     override val type: EventType<RTCPeerConnectionIceErrorEvent>,
     init: RTCPeerConnectionIceErrorEventInit,

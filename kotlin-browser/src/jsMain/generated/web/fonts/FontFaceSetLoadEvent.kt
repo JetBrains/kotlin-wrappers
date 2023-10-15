@@ -11,11 +11,11 @@ import web.events.Event
 import web.events.EventInit
 import web.events.EventType
 
-/** [MDN Reference](https://developer.mozilla.org/docs/Web/API/FontFaceSetLoadEvent) */
 external interface FontFaceSetLoadEventInit : EventInit {
     var fontfaces: ReadonlyArray<FontFace>?
 }
 
+/** [MDN Reference](https://developer.mozilla.org/docs/Web/API/FontFaceSetLoadEvent) */
 open external class FontFaceSetLoadEvent(
     override val type: EventType<FontFaceSetLoadEvent>,
     init: FontFaceSetLoadEventInit = definedExternally,

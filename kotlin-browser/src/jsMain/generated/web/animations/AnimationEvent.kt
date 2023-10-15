@@ -10,17 +10,17 @@ import web.events.Event
 import web.events.EventInit
 import web.events.EventType
 
-/**
- * Events providing information related to animations.
- *
- * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AnimationEvent)
- */
 external interface AnimationEventInit : EventInit {
     var animationName: String?
     var elapsedTime: Double?
     var pseudoElement: String?
 }
 
+/**
+ * Events providing information related to animations.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AnimationEvent)
+ */
 open external class AnimationEvent(
     override val type: EventType<AnimationEvent>,
     init: AnimationEventInit = definedExternally,

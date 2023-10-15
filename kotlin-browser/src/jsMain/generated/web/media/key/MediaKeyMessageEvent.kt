@@ -11,17 +11,17 @@ import web.events.Event
 import web.events.EventInit
 import web.events.EventType
 
+external interface MediaKeyMessageEventInit : EventInit {
+    var message: ArrayBuffer
+    var messageType: MediaKeyMessageType
+}
+
 /**
  * This EncryptedMediaExtensions API interface contains the content and related data when the content decryption module generates a message for the session.
  * Available only in secure contexts.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeyMessageEvent)
  */
-external interface MediaKeyMessageEventInit : EventInit {
-    var message: ArrayBuffer
-    var messageType: MediaKeyMessageType
-}
-
 open external class MediaKeyMessageEvent(
     override val type: EventType<MediaKeyMessageEvent>,
     init: MediaKeyMessageEventInit,

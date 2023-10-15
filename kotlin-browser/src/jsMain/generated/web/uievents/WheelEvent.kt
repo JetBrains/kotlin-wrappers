@@ -8,11 +8,6 @@ package web.uievents
 
 import web.events.EventType
 
-/**
- * Events that occur due to the user moving a mouse wheel or similar input device.
- *
- * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WheelEvent)
- */
 external interface WheelEventInit : MouseEventInit {
     var deltaMode: Short?
     var deltaX: Double?
@@ -20,6 +15,11 @@ external interface WheelEventInit : MouseEventInit {
     var deltaZ: Double?
 }
 
+/**
+ * Events that occur due to the user moving a mouse wheel or similar input device.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WheelEvent)
+ */
 open external class WheelEvent(
     override val type: EventType<WheelEvent>,
     init: WheelEventInit = definedExternally,

@@ -8,15 +8,15 @@ package web.uievents
 
 import web.events.EventType
 
+external interface CompositionEventInit : UIEventInit {
+    var data: String?
+}
+
 /**
  * The DOM CompositionEvent represents events that occur due to the user indirectly entering text.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CompositionEvent)
  */
-external interface CompositionEventInit : UIEventInit {
-    var data: String?
-}
-
 open external class CompositionEvent(
     override val type: EventType<CompositionEvent>,
     init: CompositionEventInit = definedExternally,

@@ -10,7 +10,6 @@ import js.core.ReadonlyArray
 import web.data.DataTransfer
 import web.events.EventType
 
-/** [MDN Reference](https://developer.mozilla.org/docs/Web/API/InputEvent) */
 external interface InputEventInit : UIEventInit {
     var data: String?
     var dataTransfer: DataTransfer?
@@ -19,6 +18,7 @@ external interface InputEventInit : UIEventInit {
     var targetRanges: ReadonlyArray<Any /* StaticRange */>?
 }
 
+/** [MDN Reference](https://developer.mozilla.org/docs/Web/API/InputEvent) */
 open external class InputEvent(
     override val type: EventType<InputEvent>,
     init: InputEventInit = definedExternally,

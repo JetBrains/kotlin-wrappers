@@ -10,11 +10,6 @@ import web.events.EventTarget
 import web.events.EventType
 import web.keyboard.ModifierKeyCode
 
-/**
- * Events that occur due to the user interacting with a pointing device (such as a mouse). Common events using this interface include click, dblclick, mouseup, mousedown.
- *
- * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent)
- */
 external interface MouseEventInit : EventModifierInit {
     var button: Short?
     var buttons: Short?
@@ -27,6 +22,11 @@ external interface MouseEventInit : EventModifierInit {
     var screenY: Int?
 }
 
+/**
+ * Events that occur due to the user interacting with a pointing device (such as a mouse). Common events using this interface include click, dblclick, mouseup, mousedown.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent)
+ */
 open external class MouseEvent(
     override val type: EventType<MouseEvent>,
     init: MouseEventInit = definedExternally,

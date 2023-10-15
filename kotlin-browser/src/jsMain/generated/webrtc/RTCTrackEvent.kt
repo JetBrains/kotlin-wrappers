@@ -13,7 +13,6 @@ import web.events.EventType
 import web.media.streams.MediaStream
 import web.media.streams.MediaStreamTrack
 
-/** [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCTrackEvent) */
 external interface RTCTrackEventInit : EventInit {
     var receiver: RTCRtpReceiver
     var streams: ReadonlyArray<MediaStream>?
@@ -21,6 +20,7 @@ external interface RTCTrackEventInit : EventInit {
     var transceiver: RTCRtpTransceiver
 }
 
+/** [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCTrackEvent) */
 open external class RTCTrackEvent(
     override val type: EventType<RTCTrackEvent>,
     init: RTCTrackEventInit,

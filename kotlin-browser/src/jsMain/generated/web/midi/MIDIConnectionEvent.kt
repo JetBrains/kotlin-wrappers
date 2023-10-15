@@ -10,15 +10,15 @@ import web.events.Event
 import web.events.EventInit
 import web.events.EventType
 
+external interface MIDIConnectionEventInit : EventInit {
+    var port: MIDIPort?
+}
+
 /**
  * Available only in secure contexts.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MIDIConnectionEvent)
  */
-external interface MIDIConnectionEventInit : EventInit {
-    var port: MIDIPort?
-}
-
 open external class MIDIConnectionEvent(
     override val type: EventType<MIDIConnectionEvent>,
     init: MIDIConnectionEventInit = definedExternally,

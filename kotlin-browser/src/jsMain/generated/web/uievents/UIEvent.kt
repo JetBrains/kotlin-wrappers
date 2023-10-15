@@ -11,16 +11,16 @@ import web.events.EventInit
 import web.events.EventType
 import web.window.Window
 
-/**
- * Simple user interface events.
- *
- * [MDN Reference](https://developer.mozilla.org/docs/Web/API/UIEvent)
- */
 external interface UIEventInit : EventInit {
     var detail: Int?
     var view: Window?
 }
 
+/**
+ * Simple user interface events.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/UIEvent)
+ */
 open external class UIEvent(
     override val type: EventType<UIEvent>,
     init: UIEventInit = definedExternally,

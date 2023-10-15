@@ -11,12 +11,12 @@ import web.buffer.Blob
 import web.events.Event
 import web.events.EventType
 
-/** [MDN Reference](https://developer.mozilla.org/docs/Web/API/BlobEvent) */
 external interface BlobEventInit {
     var data: Blob
     var timecode: DOMHighResTimeStamp?
 }
 
+/** [MDN Reference](https://developer.mozilla.org/docs/Web/API/BlobEvent) */
 open external class BlobEvent(
     override val type: EventType<BlobEvent>,
     init: BlobEventInit,

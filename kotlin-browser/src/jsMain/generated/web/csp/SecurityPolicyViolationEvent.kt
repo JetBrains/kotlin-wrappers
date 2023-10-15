@@ -10,11 +10,6 @@ import web.events.Event
 import web.events.EventInit
 import web.events.EventType
 
-/**
- * Inherits from Event, and represents the event object of an event sent on a document or worker when its content security policy is violated.
- *
- * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SecurityPolicyViolationEvent)
- */
 external interface SecurityPolicyViolationEventInit : EventInit {
     var blockedURI: String?
     var columnNumber: Int?
@@ -30,6 +25,11 @@ external interface SecurityPolicyViolationEventInit : EventInit {
     var violatedDirective: String
 }
 
+/**
+ * Inherits from Event, and represents the event object of an event sent on a document or worker when its content security policy is violated.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SecurityPolicyViolationEvent)
+ */
 open external class SecurityPolicyViolationEvent(
     override val type: EventType<SecurityPolicyViolationEvent>,
     init: SecurityPolicyViolationEventInit = definedExternally,

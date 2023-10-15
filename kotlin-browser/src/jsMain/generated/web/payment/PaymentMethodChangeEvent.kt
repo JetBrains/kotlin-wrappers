@@ -8,16 +8,16 @@ package web.payment
 
 import web.events.EventType
 
-/**
- * Available only in secure contexts.
- *
- * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentMethodChangeEvent)
- */
 external interface PaymentMethodChangeEventInit : PaymentRequestUpdateEventInit {
     var methodDetails: Any?
     var methodName: String?
 }
 
+/**
+ * Available only in secure contexts.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentMethodChangeEvent)
+ */
 open external class PaymentMethodChangeEvent(
     override val type: EventType<PaymentMethodChangeEvent>,
     init: PaymentMethodChangeEventInit = definedExternally,

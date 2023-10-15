@@ -11,11 +11,6 @@ import web.events.Event
 import web.events.EventInit
 import web.events.EventType
 
-/**
- * A message received by a target object.
- *
- * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MessageEvent)
- */
 external interface MessageEventInit<T> : EventInit {
     var data: T?
     var lastEventId: String?
@@ -24,6 +19,11 @@ external interface MessageEventInit<T> : EventInit {
     var source: MessageEventSource?
 }
 
+/**
+ * A message received by a target object.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MessageEvent)
+ */
 open external class MessageEvent<out T>(
     override val type: EventType<MessageEvent<T>>,
     init: MessageEventInit<T> = definedExternally,

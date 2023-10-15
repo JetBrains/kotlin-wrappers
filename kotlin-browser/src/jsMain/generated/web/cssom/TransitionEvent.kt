@@ -10,17 +10,17 @@ import web.events.Event
 import web.events.EventInit
 import web.events.EventType
 
-/**
- * Events providing information related to transitions.
- *
- * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TransitionEvent)
- */
 external interface TransitionEventInit : EventInit {
     var elapsedTime: Double?
     var propertyName: String?
     var pseudoElement: String?
 }
 
+/**
+ * Events providing information related to transitions.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TransitionEvent)
+ */
 open external class TransitionEvent(
     override val type: EventType<TransitionEvent>,
     init: TransitionEventInit = definedExternally,

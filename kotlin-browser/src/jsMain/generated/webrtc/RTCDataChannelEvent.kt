@@ -10,11 +10,11 @@ import web.events.Event
 import web.events.EventInit
 import web.events.EventType
 
-/** [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDataChannelEvent) */
 external interface RTCDataChannelEventInit : EventInit {
     var channel: RTCDataChannel
 }
 
+/** [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDataChannelEvent) */
 open external class RTCDataChannelEvent(
     override val type: EventType<RTCDataChannelEvent>,
     init: RTCDataChannelEventInit,

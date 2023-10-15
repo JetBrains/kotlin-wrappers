@@ -10,11 +10,6 @@ import web.events.Event
 import web.events.EventInit
 import web.events.EventType
 
-/**
- * This Web Speech API interface contains information about the current state of SpeechSynthesisUtterance objects that have been processed in the speech service.
- *
- * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesisEvent)
- */
 external interface SpeechSynthesisEventInit : EventInit {
     var charIndex: Int?
     var charLength: Int?
@@ -23,6 +18,11 @@ external interface SpeechSynthesisEventInit : EventInit {
     var utterance: SpeechSynthesisUtterance
 }
 
+/**
+ * This Web Speech API interface contains information about the current state of SpeechSynthesisUtterance objects that have been processed in the speech service.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesisEvent)
+ */
 open external class SpeechSynthesisEvent(
     override val type: EventType<SpeechSynthesisEvent>,
     init: SpeechSynthesisEventInit,

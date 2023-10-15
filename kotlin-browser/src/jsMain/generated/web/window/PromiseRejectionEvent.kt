@@ -11,12 +11,12 @@ import web.events.Event
 import web.events.EventInit
 import web.events.EventType
 
-/** [MDN Reference](https://developer.mozilla.org/docs/Web/API/PromiseRejectionEvent) */
 external interface PromiseRejectionEventInit : EventInit {
     var promise: Promise<*>
     var reason: Any?
 }
 
+/** [MDN Reference](https://developer.mozilla.org/docs/Web/API/PromiseRejectionEvent) */
 open external class PromiseRejectionEvent(
     override val type: EventType<PromiseRejectionEvent>,
     init: PromiseRejectionEventInit,
