@@ -1,3 +1,22 @@
+## pre.634
+
+**BREAKING CHANGE**
+
+Event type constants moved into event companions.
+
+```kotlin
+// Before
+import web.uievents.CLICK // OLD IMPORT
+import web.uievents.MouseEvent
+
+element.addEventHandler(MouseEvent.CLICK) { }
+
+// After
+import web . uievents . MouseEvent
+
+        element.addEventHandler(MouseEvent.CLICK) { }
+```
+
 ## pre.600
 
 * Kotlin `1.9.0` support
