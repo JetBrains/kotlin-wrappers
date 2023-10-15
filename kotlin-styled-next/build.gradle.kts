@@ -1,5 +1,3 @@
-import org.jetbrains.kotlin.gradle.dsl.KotlinCompile
-
 plugins {
     kotlin("multiplatform")
     `kotlin-conventions`
@@ -17,10 +15,6 @@ kotlin {
             }
         }
     }
-}
-
-tasks.withType<KotlinCompile<*>>().configureEach {
-    kotlinOptions.freeCompilerArgs += "-opt-in=kotlin.time.ExperimentalTime"
 }
 
 dependencies {
