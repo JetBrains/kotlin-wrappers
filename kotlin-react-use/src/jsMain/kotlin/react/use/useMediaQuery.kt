@@ -3,7 +3,6 @@ package react.use
 import react.useEffect
 import react.useMemo
 import react.useState
-import web.cssom.CHANGE
 import web.cssom.MediaQuery
 import web.cssom.MediaQueryListEvent
 import web.cssom.matchMedia

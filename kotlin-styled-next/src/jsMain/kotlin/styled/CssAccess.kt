@@ -10,7 +10,6 @@ import web.dom.document
 import web.html.HTMLAnchorElement
 import web.location.location
 import web.storage.localStorage
-import web.uievents.CLICK
 import web.uievents.MouseEvent
 import web.url.URL
 import web.window.window
