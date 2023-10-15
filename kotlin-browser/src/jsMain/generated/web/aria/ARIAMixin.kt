@@ -43,6 +43,11 @@ external interface ARIAMixin {
         get() = definedExternally
         set(value) = definedExternally
 
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/ariaDescription) */
+    var ariaDescription: String?
+        get() = definedExternally
+        set(value) = definedExternally
+
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/ariaDisabled) */
     var ariaDisabled: String?
         get() = definedExternally
