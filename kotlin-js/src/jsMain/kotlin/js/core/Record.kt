@@ -6,7 +6,7 @@
 
 package js.core
 
-external interface Record<K : Any, V : Any>
+external interface Record<K : Any, V>
     : ReadonlyRecord<K, V> {
     @nativeSetter
     operator fun set(
@@ -15,10 +15,10 @@ external interface Record<K : Any, V : Any>
     ): Unit = definedExternally
 }
 
-fun <K : Any, V : Any> Record(): Record<K, V> =
+fun <K : Any, V> Record(): Record<K, V> =
     jso()
 
-fun <K : Any, V : Any> Record(
+fun <K : Any, V> Record(
     block: Record<K, V>.() -> Unit,
 ): Record<K, V> =
     jso(block)

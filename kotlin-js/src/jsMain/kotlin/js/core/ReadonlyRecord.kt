@@ -6,7 +6,7 @@
 
 package js.core
 
-external interface ReadonlyRecord<K : Any, out V : Any> {
+external interface ReadonlyRecord<K : Any, out V> {
     @nativeGetter
     operator fun get(
         key: K,
