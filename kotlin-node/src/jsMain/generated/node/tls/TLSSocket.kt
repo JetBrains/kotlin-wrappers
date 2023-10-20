@@ -46,7 +46,7 @@ external class TLSSocket : node.net.Socket {
      * Before a handshake has completed, this value is always null.
      * When a handshake is completed but not ALPN protocol was selected, tlsSocket.alpnProtocol equals false.
      */
-    var alpnProtocol: (Any /* string | false | null */)?
+    var alpnProtocol: Any? /* string | false | null */
 
     /**
      * Returns an object representing the local certificate. The returned object has
@@ -59,7 +59,7 @@ external class TLSSocket : node.net.Socket {
      * socket has been destroyed, `null` will be returned.
      * @since v11.2.0
      */
-    fun getCertificate(): (Any /* PeerCertificate | object | null */)?
+    fun getCertificate(): Any? /* PeerCertificate | object | null */
 
     /**
      * Returns an object containing information on the negotiated cipher suite.
@@ -89,7 +89,7 @@ external class TLSSocket : node.net.Socket {
      * For example: `{ type: 'ECDH', name: 'prime256v1', size: 256 }`.
      * @since v5.0.0
      */
-    fun getEphemeralKeyInfo(): (Any /* EphemeralKeyInfo | object | null */)?
+    fun getEphemeralKeyInfo(): Any? /* EphemeralKeyInfo | object | null */
 
     /**
      * As the `Finished` messages are message digests of the complete handshake

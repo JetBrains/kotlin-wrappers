@@ -7,7 +7,7 @@ sealed external interface SecureContextOptions {
      * the well-known CAs curated by Mozilla. Mozilla's CAs are completely
      * replaced when CAs are explicitly specified using this option.
      */
-    var ca: (Any /* string | Buffer | Array<string | Buffer> | undefined */)?
+    var ca: Any? /* string | Buffer | Array<string | Buffer> | undefined */
 
     /**
      *  Cert chains in PEM format. One cert chain should be provided per
@@ -20,7 +20,7 @@ sealed external interface SecureContextOptions {
      *  intermediate certificates are not provided, the peer will not be
      *  able to validate the certificate, and the handshake will fail.
      */
-    var cert: (Any /* string | Buffer | Array<string | Buffer> | undefined */)?
+    var cert: Any? /* string | Buffer | Array<string | Buffer> | undefined */
 
     /**
      *  Colon-separated list of supported signature algorithms. The list
@@ -46,14 +46,14 @@ sealed external interface SecureContextOptions {
     /**
      * PEM formatted CRLs (Certificate Revocation Lists).
      */
-    var crl: (Any /* string | Buffer | Array<string | Buffer> | undefined */)?
+    var crl: Any? /* string | Buffer | Array<string | Buffer> | undefined */
 
     /**
      * `'auto'` or custom Diffie-Hellman parameters, required for non-ECDHE perfect forward secrecy.
      * If omitted or invalid, the parameters are silently discarded and DHE ciphers will not be available.
      * ECDHE-based perfect forward secrecy will still be available.
      */
-    var dhparam: (Any /* string | Buffer | undefined */)?
+    var dhparam: Any? /* string | Buffer | undefined */
 
     /**
      * A string describing a named curve or a colon separated list of curve
@@ -83,7 +83,7 @@ sealed external interface SecureContextOptions {
      * object.passphrase is optional. Encrypted keys will be decrypted with
      * object.passphrase if provided, or options.passphrase if it is not.
      */
-    var key: (Any /* string | Buffer | Array<string | Buffer | KeyObject> | undefined */)?
+    var key: Any? /* string | Buffer | Array<string | Buffer | KeyObject> | undefined */
 
     /**
      * Name of an OpenSSL engine to get private key from. Should be used
@@ -135,7 +135,7 @@ sealed external interface SecureContextOptions {
      * object.passphrase is optional. Encrypted PFX will be decrypted with
      * object.passphrase if provided, or options.passphrase if it is not.
      */
-    var pfx: (Any /* string | Buffer | Array<string | Buffer | PxfObject> | undefined */)?
+    var pfx: Any? /* string | Buffer | Array<string | Buffer | PxfObject> | undefined */
 
     /**
      * Optionally affect the OpenSSL protocol behavior, which is not

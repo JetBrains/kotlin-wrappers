@@ -41,7 +41,7 @@ sealed external interface TlsOptions : SecureContextOptions, CommonConnectionOpt
      * requires explicitly specifying a cipher suite with the `ciphers` option.
      * More information can be found in the RFC 4279.
      */
-    fun pskCallback(socket: TLSSocket, identity: String): (Any /* DataView | NodeJS.TypedArray | null */)?
+    fun pskCallback(socket: TLSSocket, identity: String): Any? /* DataView | NodeJS.TypedArray | null */
 
     /**
      * hint to send to a client to help

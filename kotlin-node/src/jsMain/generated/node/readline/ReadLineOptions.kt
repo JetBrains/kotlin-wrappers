@@ -4,7 +4,7 @@ package node.readline
 sealed external interface ReadLineOptions {
     var input: node.ReadableStream
     var output: node.WritableStream?
-    var completer: (Any /* Completer | AsyncCompleter | undefined */)?
+    var completer: Any? /* Completer | AsyncCompleter | undefined */
     var terminal: Boolean?
 
     /**

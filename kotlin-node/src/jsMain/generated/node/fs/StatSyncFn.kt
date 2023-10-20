@@ -38,6 +38,6 @@ sealed external interface StatSyncFn {
     operator fun invoke(
         path: PathLike,
         options: StatSyncOptions = definedExternally,
-    ): (Any /* Stats | BigIntStats | undefined */)?
+    ): Any? /* Stats | BigIntStats | undefined */
 
 }
