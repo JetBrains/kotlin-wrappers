@@ -16,7 +16,7 @@ external interface VirtualizerOptions<TScrollElement : EventTarget /* Element | 
     var observeElementOffset: (instance: Virtualizer<TScrollElement, TItemElement>, cb: (offset: Int) -> Unit) -> (() -> Unit)?
     var debug: Any?
     var initialRect: Rect?
-    var onChange: ((instance: Virtualizer<TScrollElement, TItemElement>) -> Unit)?
+    var onChange: ((instance: Virtualizer<TScrollElement, TItemElement>, sync: Boolean) -> Unit)?
     var measureElement: ((element: TItemElement, entry: ResizeObserverEntry?, instance: Virtualizer<TScrollElement, TItemElement>) -> Int)?
     var overscan: Int?
     var horizontal: Boolean?
