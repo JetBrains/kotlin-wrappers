@@ -4,7 +4,6 @@ package react.router.dom
 
 import remix.run.router.To
 
-
 /**
  * Return a boolean indicating if there is an active view transition to the
  * given href.  You can use this value to render CSS classes or viewTransitionName

@@ -1,6 +1,5 @@
 package react.router.dom
 
-
 typealias ViewTransitionContextObject = Any /* {
     isTransitioning: false;
 } | {
