@@ -8,6 +8,9 @@ import web.events.EventType
 inline val Event.Companion.DOM_CONTENT_LOADED: EventType<Event>
     get() = EventType("DOMContentLoaded")
 
+inline val Event.Companion.BEFORETOGGLE: EventType<Event>
+    get() = EventType("beforetoggle")
+
 inline val Event.Companion.CANCEL: EventType<Event>
     get() = EventType("cancel")
 

@@ -54,6 +54,11 @@ external interface GlobalEventHandlers {
         get() = definedExternally
         set(value) = definedExternally
 
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/beforetoggle_event) */
+    var onbeforetoggle: EventHandler<Event>?
+        get() = definedExternally
+        set(value) = definedExternally
+
     /**
      * Fires when the object loses the input focus.
      * @param ev The focus event.

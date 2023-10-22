@@ -12,7 +12,7 @@ import web.events.EventType
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BeforeUnloadEvent)
  */
 sealed external class BeforeUnloadEvent : Event {
-    var returnValue: Any?
+
 
     companion object {
         @JsValue("beforeunload")

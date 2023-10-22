@@ -26,6 +26,8 @@ sealed external class CSSRule {
     val KEYFRAMES_RULE: Short
     val KEYFRAME_RULE: Short
     val SUPPORTS_RULE: Short
+    val COUNTER_STYLE_RULE: Short
+    val FONT_FEATURE_VALUES_RULE: Short
 
     companion object {
         val STYLE_RULE: Short
@@ -38,5 +40,7 @@ sealed external class CSSRule {
         val KEYFRAMES_RULE: Short
         val KEYFRAME_RULE: Short
         val SUPPORTS_RULE: Short
+        val COUNTER_STYLE_RULE: Short
+        val FONT_FEATURE_VALUES_RULE: Short
     }
 }

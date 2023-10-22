@@ -25,6 +25,7 @@ sealed external class PublicKeyCredential :
     fun getClientExtensionResults(): AuthenticationExtensionsClientOutputs
 
     companion object {
+        /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/PublicKeyCredential/isConditionalMediationAvailable) */
         fun isConditionalMediationAvailable(): Promise<Boolean>
 
         /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/PublicKeyCredential/isUserVerifyingPlatformAuthenticatorAvailable_static) */
