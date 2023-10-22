@@ -1,3 +1,10 @@
+## pre.635
+
+**BREAKING CHANGE**
+
+* React Router
+  * Legacy API removed (`Router`, `Route` components)
+
 ## pre.634
 
 **BREAKING CHANGE**
