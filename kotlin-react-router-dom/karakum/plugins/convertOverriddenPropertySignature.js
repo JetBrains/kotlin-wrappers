@@ -5,6 +5,7 @@ const overriddenProps = {
         "className": "classNameFn",
         "style": "styleFn",
         "children": "childrenFn",
+        "unstable_viewTransition": null,
     },
     "FetcherFormProps": {
         "method": ["routerMethod", "String"],

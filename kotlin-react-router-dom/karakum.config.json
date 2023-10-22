@@ -81,6 +81,12 @@
     "NavLinkProps.kt": [
       "web.html.HTMLAnchorElement"
     ],
+      "Router.kt": [
+          "web.window.Window"
+      ],
+      "RouterProvider.kt": [
+          "react.router.RouterProviderProps"
+      ],
     "ScrollRestorationProps.kt": [
       "remix.run.router.GetScrollRestorationKeyFunction"
     ],
@@ -115,6 +121,12 @@
     ],
     "useSearchParams.kt": [
       "web.url.URLSearchParams"
+    ],
+      "useViewTransitionState.kt": [
+          "remix.run.router.To"
+      ],
+      "UseViewTransitionStateOpts.kt": [
+          "remix.run.router.RelativeRoutingType"
     ]
   },
   "conflictResolutionStrategy": {
