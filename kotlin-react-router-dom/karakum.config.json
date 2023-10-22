@@ -78,9 +78,6 @@
       "remix.run.router.To",
       "remix.run.router.RelativeRoutingType"
     ],
-    "NavLinkProps.kt": [
-      "web.html.HTMLAnchorElement"
-    ],
       "Router.kt": [
           "web.window.Window"
       ],
@@ -127,7 +124,10 @@
       ],
       "UseViewTransitionStateOpts.kt": [
           "remix.run.router.RelativeRoutingType"
-    ]
+      ],
+      "ViewTransition": [
+          "js.promise.Promise"
+      ]
   },
   "conflictResolutionStrategy": {
     "NavLinkOptions": "replace"
