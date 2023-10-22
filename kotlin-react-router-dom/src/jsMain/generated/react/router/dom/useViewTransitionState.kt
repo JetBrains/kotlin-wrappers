@@ -2,6 +2,8 @@
 
 package react.router.dom
 
+import remix.run.router.To
+
 
 /**
  * Return a boolean indicating if there is an active view transition to the

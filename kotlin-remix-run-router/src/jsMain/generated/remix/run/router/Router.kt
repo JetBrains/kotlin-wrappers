@@ -3,6 +3,7 @@ package remix.run.router
 import js.promise.Promise
 import web.abort.AbortController
 import web.url.URL
+import web.window.Window
 
 /**
  * A Router instance manages all navigation and data loading/mutations

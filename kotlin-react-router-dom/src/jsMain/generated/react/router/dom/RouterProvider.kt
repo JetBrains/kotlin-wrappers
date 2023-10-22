@@ -2,6 +2,8 @@
 
 package react.router.dom
 
+import react.router.RouterProviderProps
+
 
 /**
  * Given a Remix Router instance, render the appropriate UI

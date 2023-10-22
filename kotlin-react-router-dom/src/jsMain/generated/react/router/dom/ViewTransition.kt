@@ -1,5 +1,7 @@
 package react.router.dom
 
+import js.promise.Promise
+
 
 sealed external interface ViewTransition {
     var finished: Promise<Unit>

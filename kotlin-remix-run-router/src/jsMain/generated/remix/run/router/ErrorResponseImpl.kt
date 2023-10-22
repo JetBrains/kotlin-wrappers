@@ -15,7 +15,7 @@ package remix.run.router
 external class ErrorResponseImpl : ErrorResponse {
     constructor (status: Double, statusText: String?, data: Any?, internal: Boolean = definedExternally)
 
-    var status: Double
-    var statusText: String
-    var data: Any?
+    override var status: Double
+    override var statusText: String
+    override var data: Any?
 }
