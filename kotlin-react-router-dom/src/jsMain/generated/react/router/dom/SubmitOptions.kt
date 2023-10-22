@@ -48,4 +48,9 @@ sealed external interface SubmitOptions {
      * navigation when using the <ScrollRestoration> component
      */
     var preventScrollReset: Boolean?
+
+    /**
+     * Enable view transitions on this submission navigation
+     */
+    var unstable_viewTransition: Boolean?
 }

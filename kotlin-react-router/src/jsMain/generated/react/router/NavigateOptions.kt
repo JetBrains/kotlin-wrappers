@@ -8,4 +8,5 @@ sealed external interface NavigateOptions {
     var state: Any?
     var preventScrollReset: Boolean?
     var relative: RelativeRoutingType?
+    var unstable_viewTransition: Boolean?
 }

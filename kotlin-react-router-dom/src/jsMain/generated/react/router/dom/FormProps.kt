@@ -20,4 +20,9 @@ sealed external interface FormProps : react.Props, react.PropsWithRef<HTMLFormEl
      * State object to add to the history stack entry for this navigation
      */
     var state: Any?
+
+    /**
+     * Enable view transitions on this Form navigation
+     */
+    var unstable_viewTransition: Boolean?
 }
