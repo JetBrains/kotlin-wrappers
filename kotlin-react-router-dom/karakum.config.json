@@ -7,7 +7,11 @@
   "ignoreOutput": [
     "**/JsonArray.kt",
     "**/JsonObject.kt",
-    "**/JsonPrimitive.kt"
+    "**/JsonPrimitive.kt",
+    "**/BrowserRouter.kt",
+    "**/HashRouter.kt",
+    "**/HistoryRouter.kt",
+    "**/*RouterProps.kt"
   ],
   "libraryName": "react-router-dom",
   "libraryNameOutputPrefix": true,

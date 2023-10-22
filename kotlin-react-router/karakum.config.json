@@ -6,7 +6,15 @@
   "output": "src/jsMain/generated",
   "ignoreOutput": [
     "**/IndexRouteObject.kt",
-    "**/NonIndexRouteObject.kt"
+    "**/NonIndexRouteObject.kt",
+    "**/createRoutesFromChildren.kt",
+    "**/MemoryRouter.kt",
+    "**/Router.kt",
+    "**/*RouterProps.kt",
+    "**/Routes.kt",
+    "**/*RoutesProps.kt",
+    "**/*Route.kt",
+    "**/*RouteProps.kt"
   ],
   "libraryName": "react-router",
   "libraryNameOutputPrefix": true,
