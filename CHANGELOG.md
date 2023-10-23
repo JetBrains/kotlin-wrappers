@@ -134,6 +134,15 @@ Core CSSOM types moved from the `csstype` package to `web.cssom`
 
 Kotlin/JS Legacy compiler support removed
 
+## pre.517
+
+**BREAKING CHANGE**
+
+* Union declarations changed
+  * Values moved in companion object
+  * Before - `import node.process.Platform.win32`
+  * After - `import node.process.Platform.Companion.win32`
+
 ## pre.506
 
 **BREAKING CHANGE**
