@@ -3,7 +3,7 @@
 package react.dom.html
 
 import web.dom.Element
-import web.html.CrossOrigin
+import web.http.CrossOrigin
 
 external interface MediaHTMLAttributes<T : Element> : HTMLAttributes<T> {
     var autoPlay: Boolean?

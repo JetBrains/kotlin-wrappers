@@ -4,6 +4,7 @@ package web.html
 
 import js.core.Void
 import js.promise.Promise
+import web.http.CrossOrigin
 import web.http.ReferrerPolicy
 
 /**

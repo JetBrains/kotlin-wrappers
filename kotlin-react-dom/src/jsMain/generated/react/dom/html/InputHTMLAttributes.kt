@@ -4,9 +4,9 @@ package react.dom.html
 
 import react.dom.events.ChangeEventHandler
 import web.dom.Element
-import web.html.CrossOrigin
 import web.html.EnterKeyHint
 import web.html.InputType
+import web.http.CrossOrigin
 import web.window.WindowName
 
 external interface InputHTMLAttributes<T : Element> : HTMLAttributes<T> {

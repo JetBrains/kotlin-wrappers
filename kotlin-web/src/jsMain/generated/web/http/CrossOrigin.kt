@@ -5,7 +5,7 @@
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
-package web.html
+package web.http
 
 // language=JavaScript
 @JsName("""(/*union*/{anonymous: 'anonymous', useCredentials: 'use-credentials', none: ''}/*union*/)""")

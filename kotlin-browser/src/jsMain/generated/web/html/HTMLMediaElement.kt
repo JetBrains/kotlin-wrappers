@@ -6,6 +6,7 @@ import js.core.Void
 import js.promise.Promise
 import web.events.Event
 import web.events.EventHandler
+import web.http.CrossOrigin
 import web.media.key.MediaKeys
 import web.media.source.TimeRanges
 import web.remoteplayback.RemotePlayback

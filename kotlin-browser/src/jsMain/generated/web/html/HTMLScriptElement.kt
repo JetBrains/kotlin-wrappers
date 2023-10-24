@@ -2,6 +2,7 @@
 
 package web.html
 
+import web.http.CrossOrigin
 import web.http.ReferrerPolicy
 
 /**

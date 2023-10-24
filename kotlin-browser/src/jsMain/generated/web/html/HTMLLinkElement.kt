@@ -4,6 +4,7 @@ package web.html
 
 import web.cssom.LinkStyle
 import web.dom.DOMTokenList
+import web.http.CrossOrigin
 import web.http.ReferrerPolicy
 
 /**

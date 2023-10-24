@@ -6,7 +6,7 @@ import react.dom.DOMAttributes
 import react.dom.aria.AriaAttributes
 import react.dom.aria.AriaRole
 import web.dom.Element
-import web.html.CrossOrigin
+import web.http.CrossOrigin
 import web.window.WindowTarget
 
 external interface SVGAttributes<T : Element> :
