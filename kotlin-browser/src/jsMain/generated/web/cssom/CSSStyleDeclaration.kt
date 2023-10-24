@@ -767,6 +767,9 @@ sealed external class CSSStyleDeclaration :
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/offset-path) */
     var offsetPath: String
 
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/offset-position) */
+    var offsetPosition: String
+
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/offset-rotate) */
     var offsetRotate: String
 

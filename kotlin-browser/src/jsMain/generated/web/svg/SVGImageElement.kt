@@ -2,6 +2,8 @@
 
 package web.svg
 
+import web.http.CrossOrigin
+
 /**
  * Corresponds to the <image> element.
  *
@@ -10,6 +12,9 @@ package web.svg
 sealed external class SVGImageElement :
     SVGGraphicsElement,
     SVGURIReference {
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGImageElement/crossorigin) */
+    var crossOrigin: CrossOrigin?
+
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGImageElement/height) */
     val height: SVGAnimatedLength
 
