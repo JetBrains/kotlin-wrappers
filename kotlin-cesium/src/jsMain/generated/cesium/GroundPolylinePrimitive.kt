@@ -8,6 +8,7 @@
 
 package cesium
 
+import js.core.Void
 import js.core.jso
 import js.promise.Promise
 
@@ -230,7 +231,7 @@ external class GroundPolylinePrimitive(options: ConstructorOptions? = definedExt
          * @return A promise that will resolve once the terrain heights have been loaded.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GroundPolylinePrimitive.html#.initializeTerrainHeights">Online Documentation</a>
          */
-        fun initializeTerrainHeights(): Promise<Unit>
+        fun initializeTerrainHeights(): Promise<Void>
 
         /**
          * Checks if the given Scene supports GroundPolylinePrimitives.

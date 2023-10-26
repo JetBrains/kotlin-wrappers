@@ -5,6 +5,7 @@
 package cesium
 
 import js.core.ReadonlyArray
+import js.core.Void
 import js.promise.Promise
 
 /**
@@ -73,7 +74,7 @@ sealed external class I3SNode {
      * @return A promise that is resolved when the I3S Node fields are loaded
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/I3SNode.html#loadFields">Online Documentation</a>
      */
-    fun loadFields(): Promise<Unit>
+    fun loadFields(): Promise<Void>
 
     /**
      * Returns the fields for a given picked position
