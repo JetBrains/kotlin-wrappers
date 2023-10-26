@@ -9,6 +9,17 @@ import js.promise.Promise
 /**
  * Creates a [Cesium3DTileset] instance for the Google Photorealistic 3D Tiles tileset.
  * ```
+ * const viewer = new Viewer("cesiumContainer");
+ *
+ * try {
+ *   const tileset = await createGooglePhotorealistic3DTileset();
+ *   viewer.scene.primitives.add(tileset));
+ * } catch (error) {
+ *   console.log(`Error creating tileset: ${error}`);
+ * }
+ * ```
+ * ```
+ * // Use your own Google Maps API key
  * GoogleMaps.defaultApiKey = "your-api-key";
  *
  * const viewer = new Viewer("cesiumContainer");
