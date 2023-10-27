@@ -20,6 +20,12 @@ export default (node) => {
                     node.name.text === "Interface"
                 )
             )
+            || (
+                sourceFileName.endsWith("child_process.d.ts")
+                && (
+                    node.name.text === "ChildProcess"
+                )
+            )
         )
     ) {
         return "open"

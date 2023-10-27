@@ -1,6 +1,12 @@
 import ts from "typescript"
 
 const interfacesWithSuperclass = [
+    // child_process
+    "ChildProcessByStdio",
+    "ChildProcessWithoutNullStreams",
+    "ExecException",
+    "PromiseWithChild",
+
     // crypto
     "CipherCCM",
     "CipherGCM",

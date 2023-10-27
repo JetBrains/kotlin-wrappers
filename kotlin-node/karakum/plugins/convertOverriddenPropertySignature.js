@@ -2,6 +2,47 @@ import ts from "typescript";
 import * as karakum from "karakum";
 
 const overriddenProps = {
+    // child_process
+    "ChildProcessByStdio": {
+        "stdin": "boundStdin",
+        "stdout": "boundStdout",
+        "stderr": "boundStderr",
+        "stdio": "boundStdio",
+    },
+    "ChildProcessWithoutNullStreams": {
+        "stdin": "requiredStdin",
+        "stdout": "requiredStdout",
+        "stderr": "requiredStderr",
+        "stdio": "requiredStdio",
+    },
+    "ExecFileOptions": {
+        "signal": null,
+    },
+    "ExecFileSyncOptionsWithBufferEncoding": {
+        "encoding": "bufferEncoding",
+    },
+    "ExecFileSyncOptionsWithStringEncoding": {
+        "encoding": "stringEncoding",
+    },
+    "ExecSyncOptionsWithBufferEncoding": {
+        "encoding": "bufferEncoding",
+    },
+    "ExecSyncOptionsWithStringEncoding": {
+        "encoding": "stringEncoding",
+    },
+    "SpawnSyncOptionsWithBufferEncoding": {
+        "encoding": "bufferEncoding",
+    },
+    "SpawnSyncOptionsWithStringEncoding": {
+        "encoding": "stringEncoding",
+    },
+    "SpawnOptionsWithStdioTuple": {
+        "stdio": "stdioTuple",
+    },
+    "SpawnOptionsWithoutStdio": {
+        "stdio": null,
+    },
+
     // crypto
     "GeneratePrimeOptionsArrayBuffer": {
         "bigint": null,

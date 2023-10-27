@@ -1,6 +1,7 @@
 {
     "input": [
         "<nodeModules>/@types/node/async_hooks.d.ts",
+        "<nodeModules>/@types/node/child_process.d.ts",
         "<nodeModules>/@types/node/buffer.d.ts",
         "<nodeModules>/@types/node/crypto.d.ts",
         "<nodeModules>/@types/node/dgram.d.ts",
@@ -16,6 +17,9 @@
     "ignoreOutput": [
         "**/__promisify__.kt",
         "**/__promisify__*.kt",
+
+        "**/childProcess/exec/**",
+        "**/childProcess/execfile/**",
 
         "**/buffer/atob.kt",
         "**/buffer/btoa.kt",
@@ -46,6 +50,9 @@
         "^node/async_hooks": "node:async_hooks",
         "^async_hooks": "node:async_hooks",
 
+        "^node/child_process": "node:child_process",
+        "^child_process": "node:child_process",
+
         "^node/buffer": "node:buffer",
         "^buffer": "node:buffer",
 
@@ -75,6 +82,10 @@
         "^node/async_hooks/namespace.kt": "node/asyncHooks/nodeNamespace.kt",
         "^node/asyncHooks.kt": "node/asyncHooks/asyncHooks.kt",
         "^async_hooks": "node/asyncHooks",
+
+        "^node/child_process/namespace.kt": "node/childProcess/nodeNamespace.kt",
+        "^node/childProcess.kt": "node/childProcess/childProcessNamespace.kt",
+        "^child_process": "node/childProcess",
 
         "^node/buffer/namespace.kt": "node/buffer/nodeNamespace.kt",
         "^node/buffer/global/namespace.kt": "node/buffer/nodeGlobalNamespace.kt",
@@ -141,6 +152,63 @@
         ],
         "buffer/transcode.kt": [
             "js.typedarrays.Uint8Array"
+        ],
+
+        "childProcess/ChildProcess.kt": [
+            "node.events.EventEmitter",
+            "node.stream.Pipe",
+            "node.stream.Readable",
+            "node.stream.Writable"
+        ],
+        "childProcess/ChildProcessByStdio.kt": [
+            "node.stream.Readable",
+            "node.stream.Writable"
+        ],
+        "childProcess/ChildProcessWithoutNullStreams.kt": [
+            "node.stream.Readable",
+            "node.stream.Writable"
+        ],
+        "childProcess/CommonSpawnOptions.kt": [
+            "node.events.Abortable"
+        ],
+        "childProcess/ExecFileOptions.kt": [
+            "node.events.Abortable",
+            "web.abort.AbortSignal"
+        ],
+        "childProcess/ExecOptions.kt": [
+            "web.abort.AbortSignal"
+        ],
+        "childProcess/ForkOptions.kt": [
+            "node.events.Abortable"
+        ],
+        "childProcess/MessagingOptions.kt": [
+            "node.events.Abortable"
+        ],
+        "childProcess/ExecFileObjectEncodingOptions.kt": [
+            "node.fs.ObjectEncodingOptions"
+        ],
+        "childProcess/ExecObjectEncodingOptions.kt": [
+            "node.fs.ObjectEncodingOptions"
+        ],
+        "childProcess/PromiseWithChild.kt": [
+            "js.promise.Promise"
+        ],
+        "childProcess/execFile.kt": [
+            "js.core.ReadonlyArray"
+        ],
+        "childProcess/execFileSync.kt": [
+            "js.core.ReadonlyArray"
+        ],
+        "childProcess/fork.kt": [
+            "js.core.ReadonlyArray"
+        ],
+        "childProcess/spawn.kt": [
+            "js.core.ReadonlyArray",
+            "node.stream.Readable",
+            "node.stream.Writable"
+        ],
+        "childProcess/spawnSync.kt": [
+            "js.core.ReadonlyArray"
         ],
 
         "crypto/X509Certificate.kt": [
@@ -310,6 +378,9 @@
         "async_hooks": "package",
         "node:async_hooks": "ignore",
 
+        "child_process": "package",
+        "node:child_process": "ignore",
+
         "buffer": "package",
         "node:buffer": "ignore",
 
@@ -351,6 +422,8 @@
         "StatfsOptsAsync.kt": "replace",
         "FileHandleStatOptsAsync.kt": "replace",
         "FileHandleWriteResultPayloadAsync.kt": "replace",
-        "FileHandleWriteStringResultPayloadAsync.kt": "replace"
+        "FileHandleWriteStringResultPayloadAsync.kt": "replace",
+        "ExecStringOptions.kt": "replace",
+        "ExecFileObjectEncodingOptions.kt": "replace"
     }
 }

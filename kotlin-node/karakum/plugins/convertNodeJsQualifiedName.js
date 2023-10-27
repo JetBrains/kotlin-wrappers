@@ -12,6 +12,12 @@ export default function (node, context, render) {
         if (node.right.text === "TypedArray") {
             return `js.typedarrays.TypedArray`
         }
+        if (node.right.text === "Signals") {
+            return `node.process.Signals`
+        }
+        if (node.right.text === "ProcessEnv") {
+            return `node.process.ProcessEnv`
+        }
 
         return `node.${render(node.right)}`
     }

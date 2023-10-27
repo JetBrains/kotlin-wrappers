@@ -2,7 +2,7 @@
 
 package node
 
-sealed external interface ErrnoException /* : Error */ {
+external interface ErrnoException /* : Error */ {
     var errno: Number?
     var code: String?
     var path: String?

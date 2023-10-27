@@ -1,0 +1,7 @@
+package node.childProcess
+
+
+sealed external interface SpawnSyncOptionsWithStringEncoding : SpawnSyncOptions {
+    @JsName("encoding")
+    var stringEncoding: node.buffer.BufferEncoding
+}
