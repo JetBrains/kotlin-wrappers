@@ -23,9 +23,6 @@ val moduleDefinition = if (findProperty("modular") == "true") "commonjs" else "u
 
 tasks.withType<KotlinJsCompile>().configureEach {
     kotlinOptions {
-        sourceMap = false
-        sourceMapEmbedSources = null
-        sourceMapPrefix = null
         moduleKind = moduleDefinition
     }
 }
