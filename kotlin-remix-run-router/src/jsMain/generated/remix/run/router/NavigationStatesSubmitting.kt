@@ -10,6 +10,6 @@ sealed external interface NavigationStatesSubmitting {
     var formAction: String
     var formEncType: FormEncType
     var formData: FormData?
-    var json: JsonValue?
+    var json: JsonValue
     var text: String?
 }

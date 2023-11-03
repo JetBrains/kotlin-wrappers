@@ -17,7 +17,7 @@ sealed external interface ShouldRevalidateFunctionArgs {
     var formEncType: (FormEncType)?
     var text: String?
     var formData: FormData?
-    var json: JsonValue?
+    var json: JsonValue
     var actionResult: Any?
     var defaultShouldRevalidate: Boolean
 }

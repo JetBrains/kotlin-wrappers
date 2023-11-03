@@ -72,7 +72,8 @@
         "Router.kt": [
             "js.promise.Promise",
             "web.url.URL",
-            "web.abort.AbortController"
+            "web.abort.AbortController",
+            "web.window.Window"
         ],
         "RouterInit.kt": [
             "web.window.Window"

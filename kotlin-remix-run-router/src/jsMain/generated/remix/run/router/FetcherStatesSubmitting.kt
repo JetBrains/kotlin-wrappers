@@ -10,6 +10,6 @@ sealed external interface FetcherStatesSubmitting<TData /* default is Any? */> {
     var formEncType: FormEncType
     var text: String?
     var formData: FormData?
-    var json: JsonValue?
+    var json: JsonValue
     var data: TData?
 }

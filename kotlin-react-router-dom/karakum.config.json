@@ -82,12 +82,12 @@
       "remix.run.router.To",
       "remix.run.router.RelativeRoutingType"
     ],
-      "Router.kt": [
-          "web.window.Window"
-      ],
-      "RouterProvider.kt": [
-          "react.router.RouterProviderProps"
-      ],
+    "Router.kt": [
+      "web.window.Window"
+    ],
+    "RouterProvider.kt": [
+      "react.router.RouterProviderProps"
+    ],
     "ScrollRestorationProps.kt": [
       "remix.run.router.GetScrollRestorationKeyFunction"
     ],
@@ -123,17 +123,23 @@
     "useSearchParams.kt": [
       "web.url.URLSearchParams"
     ],
-      "useViewTransitionState.kt": [
-          "remix.run.router.To"
-      ],
-      "UseViewTransitionStateOpts.kt": [
-          "remix.run.router.RelativeRoutingType"
-      ],
-      "ViewTransition": [
-          "js.promise.Promise"
-      ]
+    "useViewTransitionState.kt": [
+      "remix.run.router.To"
+    ],
+    "UseViewTransitionStateOpts.kt": [
+      "remix.run.router.RelativeRoutingType"
+    ],
+    "ViewTransition": [
+      "js.promise.Promise"
+    ]
   },
   "conflictResolutionStrategy": {
     "NavLinkOptions": "replace"
+  },
+  "compilerOptions": {
+    "lib": [
+      "lib.esnext.d.ts",
+      "lib.dom.d.ts"
+    ]
   }
 }

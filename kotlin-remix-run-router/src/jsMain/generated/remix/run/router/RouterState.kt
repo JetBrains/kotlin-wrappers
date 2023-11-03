@@ -34,7 +34,7 @@ sealed external interface RouterState {
      *  - false -> do not restore scroll at all (used during submissions)
      *  - null -> don't have a saved position, scroll to hash or top of page
      */
-    var restoreScrollPosition: (Any /* number | false | null */)?
+    var restoreScrollPosition: Any? /* number | false | null */
 
     /**
      * Indicate whether this navigation should skip resetting the scroll position

@@ -1,4 +1,4 @@
 package remix.run.router
 
 
-typealias JsonValue = Any /* JsonPrimitive | JsonObject | JsonArray */
+typealias JsonValue = Any? /* JsonPrimitive | JsonObject | JsonArray */

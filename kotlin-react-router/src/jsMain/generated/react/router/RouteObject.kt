@@ -17,8 +17,8 @@ sealed external interface RouteObject {
     var handle: Any?
     var index: Boolean?
     var children: js.core.ReadonlyArray<RouteObject>?
-    var element: (react.ReactNode)?
-    var errorElement: (react.ReactNode)?
+    var element: react.ReactNode?
+    var errorElement: react.ReactNode?
     var Component: react.ComponentType<*>?
     var ErrorBoundary: react.ComponentType<*>?
     var lazy: LazyRouteFunction<RouteObject>?

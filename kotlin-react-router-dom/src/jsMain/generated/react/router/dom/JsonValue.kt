@@ -1,4 +1,4 @@
 package react.router.dom
 
 
-typealias JsonValue = Any /* JsonPrimitive | JsonObject | JsonArray */
+typealias JsonValue = Any? /* JsonPrimitive | JsonObject | JsonArray */
