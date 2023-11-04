@@ -211,6 +211,24 @@
             "js.core.ReadonlyArray"
         ],
 
+        "crypto/Cipher.kt": [
+            "node.stream.TransformOptions"
+        ],
+        "crypto/Decipher.kt": [
+            "node.stream.TransformOptions"
+        ],
+        "crypto/Hash.kt": [
+            "node.stream.TransformOptions"
+        ],
+        "crypto/Hmac.kt": [
+            "node.stream.TransformOptions"
+        ],
+        "crypto/Sign.kt": [
+            "node.stream.WritableOptions"
+        ],
+        "crypto/Verify.kt": [
+            "node.stream.WritableOptions"
+        ],
         "crypto/X509Certificate.kt": [
             "node.tls.PeerCertificate"
         ],
@@ -285,6 +303,9 @@
         "fs/ReadFileStringOptionsAsync.kt": [
             "node.events.Abortable"
         ],
+        "fs/ReadStream.kt": [
+            "node.stream.ReadableOptions"
+        ],
         "fs/StatsBase.kt": [
             "kotlin.js.Date"
         ],
@@ -293,6 +314,9 @@
         ],
         "fs/WatchOptions.kt": [
             "node.events.Abortable"
+        ],
+        "fs/WriteStream.kt": [
+            "node.stream.WritableOptions"
         ],
         "fs/appendFile.kt": [
             "js.typedarrays.Uint8Array"
@@ -425,5 +449,10 @@
         "FileHandleWriteStringResultPayloadAsync.kt": "replace",
         "ExecStringOptions.kt": "replace",
         "ExecFileObjectEncodingOptions.kt": "replace"
+    },
+    "compilerOptions": {
+        "types": [
+            "@types/node"
+        ]
     }
 }
