@@ -1,24 +1,42 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package popper.core
 
-// language=JavaScript
-@JsName("""(/*union*/{beforeRead: 'beforeRead', read: 'read', afterRead: 'afterRead', beforeMain: 'beforeMain', main: 'main', afterMain: 'afterMain', beforeWrite: 'beforeWrite', write: 'write', afterWrite: 'afterWrite'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface ModifierPhases {
     companion object {
+        @JsValue("beforeRead")
         val beforeRead: ModifierPhases
+
+        @JsValue("read")
         val read: ModifierPhases
+
+        @JsValue("afterRead")
         val afterRead: ModifierPhases
+
+        @JsValue("beforeMain")
         val beforeMain: ModifierPhases
+
+        @JsValue("main")
         val main: ModifierPhases
+
+        @JsValue("afterMain")
         val afterMain: ModifierPhases
+
+        @JsValue("beforeWrite")
         val beforeWrite: ModifierPhases
+
+        @JsValue("write")
         val write: ModifierPhases
+
+        @JsValue("afterWrite")
         val afterWrite: ModifierPhases
     }
 }

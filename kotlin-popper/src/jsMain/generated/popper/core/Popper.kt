@@ -1,10 +1,8 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-)
-
 package popper.core
 
-@JsName("'popper'")
+import seskar.js.JsValue
+
+@JsValue("popper")
 external val Popper: Name

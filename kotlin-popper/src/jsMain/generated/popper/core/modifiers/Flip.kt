@@ -1,12 +1,9 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-)
-
 package popper.core.modifiers
 
 import js.core.ReadonlyArray
+import seskar.js.JsValue
 
 external interface FlipOptions {
     var mainAxis: Boolean
@@ -20,5 +17,5 @@ external interface FlipOptions {
     var allowedAutoPlacements: ReadonlyArray<popper.core.Placement>
 }
 
-@JsName("'flip'")
+@JsValue("flip")
 external val Flip: popper.core.ModifierName<FlipOptions>

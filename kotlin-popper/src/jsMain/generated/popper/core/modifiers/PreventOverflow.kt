@@ -1,10 +1,8 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-)
-
 package popper.core.modifiers
+
+import seskar.js.JsValue
 
 sealed external interface TetherOffsetType
 
@@ -24,5 +22,5 @@ external interface PreventOverflowOptions {
     var padding: popper.core.Padding
 }
 
-@JsName("'preventOverflow'")
+@JsValue("preventOverflow")
 external val PreventOverflow: popper.core.ModifierName<PreventOverflowOptions>

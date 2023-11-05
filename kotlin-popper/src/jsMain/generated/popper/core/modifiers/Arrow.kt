@@ -1,10 +1,8 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-)
-
 package popper.core.modifiers
+
+import seskar.js.JsValue
 
 external interface PaddingType
 
@@ -13,5 +11,5 @@ external interface ArrowOptions {
     var padding: PaddingType
 }
 
-@JsName("'arrow'")
+@JsValue("arrow")
 external val Arrow: popper.core.ModifierName<ArrowOptions>

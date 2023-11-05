@@ -1,15 +1,13 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-)
-
 package popper.core.modifiers
+
+import seskar.js.JsValue
 
 external interface EventListenersOptions {
     var scroll: Boolean
     var resize: Boolean
 }
 
-@JsName("'eventListeners'")
+@JsValue("eventListeners")
 external val EventListeners: popper.core.ModifierName<EventListenersOptions>
