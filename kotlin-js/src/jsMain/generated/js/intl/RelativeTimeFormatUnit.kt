@@ -1,31 +1,63 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package js.intl
 
-// language=JavaScript
-@JsName("""(/*union*/{year: 'year', years: 'years', quarter: 'quarter', quarters: 'quarters', month: 'month', months: 'months', week: 'week', weeks: 'weeks', day: 'day', days: 'days', hour: 'hour', hours: 'hours', minute: 'minute', minutes: 'minutes', second: 'second', seconds: 'seconds'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface RelativeTimeFormatUnit {
     companion object {
+        @JsValue("year")
         val year: RelativeTimeFormatUnit
+
+        @JsValue("years")
         val years: RelativeTimeFormatUnit
+
+        @JsValue("quarter")
         val quarter: RelativeTimeFormatUnit
+
+        @JsValue("quarters")
         val quarters: RelativeTimeFormatUnit
+
+        @JsValue("month")
         val month: RelativeTimeFormatUnit
+
+        @JsValue("months")
         val months: RelativeTimeFormatUnit
+
+        @JsValue("week")
         val week: RelativeTimeFormatUnit
+
+        @JsValue("weeks")
         val weeks: RelativeTimeFormatUnit
+
+        @JsValue("day")
         val day: RelativeTimeFormatUnit
+
+        @JsValue("days")
         val days: RelativeTimeFormatUnit
+
+        @JsValue("hour")
         val hour: RelativeTimeFormatUnit
+
+        @JsValue("hours")
         val hours: RelativeTimeFormatUnit
+
+        @JsValue("minute")
         val minute: RelativeTimeFormatUnit
+
+        @JsValue("minutes")
         val minutes: RelativeTimeFormatUnit
+
+        @JsValue("second")
         val second: RelativeTimeFormatUnit
+
+        @JsValue("seconds")
         val seconds: RelativeTimeFormatUnit
     }
 }

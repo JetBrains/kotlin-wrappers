@@ -1,17 +1,21 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package js.intl
 
-// language=JavaScript
-@JsName("""(/*union*/{cardinal: 'cardinal', ordinal: 'ordinal'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface PluralRuleType {
     companion object {
+        @JsValue("cardinal")
         val cardinal: PluralRuleType
+
+        @JsValue("ordinal")
         val ordinal: PluralRuleType
     }
 }

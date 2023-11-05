@@ -1,21 +1,33 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package js.intl
 
-// language=JavaScript
-@JsName("""(/*union*/{zero: 'zero', one: 'one', two: 'two', few: 'few', many: 'many', other: 'other'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface LDMLPluralRule {
     companion object {
+        @JsValue("zero")
         val zero: LDMLPluralRule
+
+        @JsValue("one")
         val one: LDMLPluralRule
+
+        @JsValue("two")
         val two: LDMLPluralRule
+
+        @JsValue("few")
         val few: LDMLPluralRule
+
+        @JsValue("many")
         val many: LDMLPluralRule
+
+        @JsValue("other")
         val other: LDMLPluralRule
     }
 }

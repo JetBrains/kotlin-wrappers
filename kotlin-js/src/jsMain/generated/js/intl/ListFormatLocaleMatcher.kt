@@ -1,17 +1,21 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package js.intl
 
-// language=JavaScript
-@JsName("""(/*union*/{lookup: 'lookup', bestFit: 'best fit'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface ListFormatLocaleMatcher {
     companion object {
+        @JsValue("lookup")
         val lookup: ListFormatLocaleMatcher
+
+        @JsValue("best fit")
         val bestFit: ListFormatLocaleMatcher
     }
 }
