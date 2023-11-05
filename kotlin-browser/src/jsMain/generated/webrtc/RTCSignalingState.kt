@@ -1,21 +1,33 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package webrtc
 
-// language=JavaScript
-@JsName("""(/*union*/{closed: 'closed', haveLocalOffer: 'have-local-offer', haveLocalPranswer: 'have-local-pranswer', haveRemoteOffer: 'have-remote-offer', haveRemotePranswer: 'have-remote-pranswer', stable: 'stable'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface RTCSignalingState {
     companion object {
+        @JsValue("closed")
         val closed: RTCSignalingState
+
+        @JsValue("have-local-offer")
         val haveLocalOffer: RTCSignalingState
+
+        @JsValue("have-local-pranswer")
         val haveLocalPranswer: RTCSignalingState
+
+        @JsValue("have-remote-offer")
         val haveRemoteOffer: RTCSignalingState
+
+        @JsValue("have-remote-pranswer")
         val haveRemotePranswer: RTCSignalingState
+
+        @JsValue("stable")
         val stable: RTCSignalingState
     }
 }

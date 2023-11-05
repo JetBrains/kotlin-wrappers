@@ -1,20 +1,30 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package webrtc
 
-// language=JavaScript
-@JsName("""(/*union*/{closed: 'closed', connected: 'connected', connecting: 'connecting', failed: 'failed', new: 'new'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface RTCDtlsTransportState {
     companion object {
+        @JsValue("closed")
         val closed: RTCDtlsTransportState
+
+        @JsValue("connected")
         val connected: RTCDtlsTransportState
+
+        @JsValue("connecting")
         val connecting: RTCDtlsTransportState
+
+        @JsValue("failed")
         val failed: RTCDtlsTransportState
+
+        @JsValue("new")
         val new: RTCDtlsTransportState
     }
 }

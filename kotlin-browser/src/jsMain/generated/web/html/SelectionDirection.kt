@@ -1,18 +1,24 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package web.html
 
-// language=JavaScript
-@JsName("""(/*union*/{forward: 'forward', backward: 'backward', none: 'none'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface SelectionDirection {
     companion object {
+        @JsValue("forward")
         val forward: SelectionDirection
+
+        @JsValue("backward")
         val backward: SelectionDirection
+
+        @JsValue("none")
         val none: SelectionDirection
     }
 }

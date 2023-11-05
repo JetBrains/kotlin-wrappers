@@ -1,20 +1,30 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package webvtt
 
-// language=JavaScript
-@JsName("""(/*union*/{captions: 'captions', chapters: 'chapters', descriptions: 'descriptions', metadata: 'metadata', subtitles: 'subtitles'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface TextTrackKind {
     companion object {
+        @JsValue("captions")
         val captions: TextTrackKind
+
+        @JsValue("chapters")
         val chapters: TextTrackKind
+
+        @JsValue("descriptions")
         val descriptions: TextTrackKind
+
+        @JsValue("metadata")
         val metadata: TextTrackKind
+
+        @JsValue("subtitles")
         val subtitles: TextTrackKind
     }
 }

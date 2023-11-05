@@ -1,18 +1,24 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package web.media.recorder
 
-// language=JavaScript
-@JsName("""(/*union*/{inactive: 'inactive', paused: 'paused', recording: 'recording'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface RecordingState {
     companion object {
+        @JsValue("inactive")
         val inactive: RecordingState
+
+        @JsValue("paused")
         val paused: RecordingState
+
+        @JsValue("recording")
         val recording: RecordingState
     }
 }

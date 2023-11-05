@@ -1,18 +1,24 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package web.dom.observers
 
-// language=JavaScript
-@JsName("""(/*union*/{attributes: 'attributes', characterData: 'characterData', childList: 'childList'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface MutationRecordType {
     companion object {
+        @JsValue("attributes")
         val attributes: MutationRecordType
+
+        @JsValue("characterData")
         val characterData: MutationRecordType
+
+        @JsValue("childList")
         val childList: MutationRecordType
     }
 }

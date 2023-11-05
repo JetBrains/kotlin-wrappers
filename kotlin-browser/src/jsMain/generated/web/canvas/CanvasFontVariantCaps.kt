@@ -1,22 +1,36 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package web.canvas
 
-// language=JavaScript
-@JsName("""(/*union*/{allPetiteCaps: 'all-petite-caps', allSmallCaps: 'all-small-caps', normal: 'normal', petiteCaps: 'petite-caps', smallCaps: 'small-caps', titlingCaps: 'titling-caps', unicase: 'unicase'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface CanvasFontVariantCaps {
     companion object {
+        @JsValue("all-petite-caps")
         val allPetiteCaps: CanvasFontVariantCaps
+
+        @JsValue("all-small-caps")
         val allSmallCaps: CanvasFontVariantCaps
+
+        @JsValue("normal")
         val normal: CanvasFontVariantCaps
+
+        @JsValue("petite-caps")
         val petiteCaps: CanvasFontVariantCaps
+
+        @JsValue("small-caps")
         val smallCaps: CanvasFontVariantCaps
+
+        @JsValue("titling-caps")
         val titlingCaps: CanvasFontVariantCaps
+
+        @JsValue("unicase")
         val unicase: CanvasFontVariantCaps
     }
 }

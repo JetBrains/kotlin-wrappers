@@ -1,24 +1,42 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package web.media.session
 
-// language=JavaScript
-@JsName("""(/*union*/{nexttrack: 'nexttrack', pause: 'pause', play: 'play', previoustrack: 'previoustrack', seekbackward: 'seekbackward', seekforward: 'seekforward', seekto: 'seekto', skipad: 'skipad', stop: 'stop'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface MediaSessionAction {
     companion object {
+        @JsValue("nexttrack")
         val nexttrack: MediaSessionAction
+
+        @JsValue("pause")
         val pause: MediaSessionAction
+
+        @JsValue("play")
         val play: MediaSessionAction
+
+        @JsValue("previoustrack")
         val previoustrack: MediaSessionAction
+
+        @JsValue("seekbackward")
         val seekbackward: MediaSessionAction
+
+        @JsValue("seekforward")
         val seekforward: MediaSessionAction
+
+        @JsValue("seekto")
         val seekto: MediaSessionAction
+
+        @JsValue("skipad")
         val skipad: MediaSessionAction
+
+        @JsValue("stop")
         val stop: MediaSessionAction
     }
 }

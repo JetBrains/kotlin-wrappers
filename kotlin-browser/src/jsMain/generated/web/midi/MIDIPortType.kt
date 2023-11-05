@@ -1,17 +1,21 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package web.midi
 
-// language=JavaScript
-@JsName("""(/*union*/{input: 'input', output: 'output'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface MIDIPortType {
     companion object {
+        @JsValue("input")
         val input: MIDIPortType
+
+        @JsValue("output")
         val output: MIDIPortType
     }
 }

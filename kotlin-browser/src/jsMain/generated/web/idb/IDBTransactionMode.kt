@@ -1,18 +1,24 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package web.idb
 
-// language=JavaScript
-@JsName("""(/*union*/{readonly: 'readonly', readwrite: 'readwrite', versionchange: 'versionchange'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface IDBTransactionMode {
     companion object {
+        @JsValue("readonly")
         val readonly: IDBTransactionMode
+
+        @JsValue("readwrite")
         val readwrite: IDBTransactionMode
+
+        @JsValue("versionchange")
         val versionchange: IDBTransactionMode
     }
 }

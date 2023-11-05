@@ -1,19 +1,27 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package web.serviceworker
 
-// language=JavaScript
-@JsName("""(/*union*/{all: 'all', sharedworker: 'sharedworker', window: 'window', worker: 'worker'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface ClientTypes {
     companion object {
+        @JsValue("all")
         val all: ClientTypes
+
+        @JsValue("sharedworker")
         val sharedworker: ClientTypes
+
+        @JsValue("window")
         val window: ClientTypes
+
+        @JsValue("worker")
         val worker: ClientTypes
     }
 }

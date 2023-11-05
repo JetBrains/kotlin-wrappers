@@ -1,19 +1,27 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package web.fonts
 
-// language=JavaScript
-@JsName("""(/*union*/{error: 'error', loaded: 'loaded', loading: 'loading', unloaded: 'unloaded'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface FontFaceLoadStatus {
     companion object {
+        @JsValue("error")
         val error: FontFaceLoadStatus
+
+        @JsValue("loaded")
         val loaded: FontFaceLoadStatus
+
+        @JsValue("loading")
         val loading: FontFaceLoadStatus
+
+        @JsValue("unloaded")
         val unloaded: FontFaceLoadStatus
     }
 }

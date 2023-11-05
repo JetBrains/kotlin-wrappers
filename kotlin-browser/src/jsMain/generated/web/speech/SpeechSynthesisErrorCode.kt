@@ -1,27 +1,51 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package web.speech
 
-// language=JavaScript
-@JsName("""(/*union*/{audioBusy: 'audio-busy', audioHardware: 'audio-hardware', canceled: 'canceled', interrupted: 'interrupted', invalidArgument: 'invalid-argument', languageUnavailable: 'language-unavailable', network: 'network', notAllowed: 'not-allowed', synthesisFailed: 'synthesis-failed', synthesisUnavailable: 'synthesis-unavailable', textTooLong: 'text-too-long', voiceUnavailable: 'voice-unavailable'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface SpeechSynthesisErrorCode {
     companion object {
+        @JsValue("audio-busy")
         val audioBusy: SpeechSynthesisErrorCode
+
+        @JsValue("audio-hardware")
         val audioHardware: SpeechSynthesisErrorCode
+
+        @JsValue("canceled")
         val canceled: SpeechSynthesisErrorCode
+
+        @JsValue("interrupted")
         val interrupted: SpeechSynthesisErrorCode
+
+        @JsValue("invalid-argument")
         val invalidArgument: SpeechSynthesisErrorCode
+
+        @JsValue("language-unavailable")
         val languageUnavailable: SpeechSynthesisErrorCode
+
+        @JsValue("network")
         val network: SpeechSynthesisErrorCode
+
+        @JsValue("not-allowed")
         val notAllowed: SpeechSynthesisErrorCode
+
+        @JsValue("synthesis-failed")
         val synthesisFailed: SpeechSynthesisErrorCode
+
+        @JsValue("synthesis-unavailable")
         val synthesisUnavailable: SpeechSynthesisErrorCode
+
+        @JsValue("text-too-long")
         val textTooLong: SpeechSynthesisErrorCode
+
+        @JsValue("voice-unavailable")
         val voiceUnavailable: SpeechSynthesisErrorCode
     }
 }

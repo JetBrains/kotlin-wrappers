@@ -1,22 +1,36 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package webrtc
 
-// language=JavaScript
-@JsName("""(/*union*/{dataChannelFailure: 'data-channel-failure', dtlsFailure: 'dtls-failure', fingerprintFailure: 'fingerprint-failure', hardwareEncoderError: 'hardware-encoder-error', hardwareEncoderNotAvailable: 'hardware-encoder-not-available', sctpFailure: 'sctp-failure', sdpSyntaxError: 'sdp-syntax-error'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface RTCErrorDetailType {
     companion object {
+        @JsValue("data-channel-failure")
         val dataChannelFailure: RTCErrorDetailType
+
+        @JsValue("dtls-failure")
         val dtlsFailure: RTCErrorDetailType
+
+        @JsValue("fingerprint-failure")
         val fingerprintFailure: RTCErrorDetailType
+
+        @JsValue("hardware-encoder-error")
         val hardwareEncoderError: RTCErrorDetailType
+
+        @JsValue("hardware-encoder-not-available")
         val hardwareEncoderNotAvailable: RTCErrorDetailType
+
+        @JsValue("sctp-failure")
         val sctpFailure: RTCErrorDetailType
+
+        @JsValue("sdp-syntax-error")
         val sdpSyntaxError: RTCErrorDetailType
     }
 }

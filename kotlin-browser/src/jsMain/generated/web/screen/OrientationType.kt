@@ -1,19 +1,27 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package web.screen
 
-// language=JavaScript
-@JsName("""(/*union*/{landscapePrimary: 'landscape-primary', landscapeSecondary: 'landscape-secondary', portraitPrimary: 'portrait-primary', portraitSecondary: 'portrait-secondary'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface OrientationType {
     companion object {
+        @JsValue("landscape-primary")
         val landscapePrimary: OrientationType
+
+        @JsValue("landscape-secondary")
         val landscapeSecondary: OrientationType
+
+        @JsValue("portrait-primary")
         val portraitPrimary: OrientationType
+
+        @JsValue("portrait-secondary")
         val portraitSecondary: OrientationType
     }
 }

@@ -1,18 +1,24 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package webrtc
 
-// language=JavaScript
-@JsName("""(/*union*/{balanced: 'balanced', maintainFramerate: 'maintain-framerate', maintainResolution: 'maintain-resolution'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface RTCDegradationPreference {
     companion object {
+        @JsValue("balanced")
         val balanced: RTCDegradationPreference
+
+        @JsValue("maintain-framerate")
         val maintainFramerate: RTCDegradationPreference
+
+        @JsValue("maintain-resolution")
         val maintainResolution: RTCDegradationPreference
     }
 }

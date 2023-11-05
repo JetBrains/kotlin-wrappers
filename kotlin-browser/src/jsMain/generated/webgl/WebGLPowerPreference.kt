@@ -1,18 +1,24 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package webgl
 
-// language=JavaScript
-@JsName("""(/*union*/{default: 'default', highPerformance: 'high-performance', lowPower: 'low-power'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface WebGLPowerPreference {
     companion object {
+        @JsValue("default")
         val default: WebGLPowerPreference
+
+        @JsValue("high-performance")
         val highPerformance: WebGLPowerPreference
+
+        @JsValue("low-power")
         val lowPower: WebGLPowerPreference
     }
 }

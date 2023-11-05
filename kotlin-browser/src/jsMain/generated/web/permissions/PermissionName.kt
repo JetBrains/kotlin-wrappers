@@ -1,21 +1,33 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package web.permissions
 
-// language=JavaScript
-@JsName("""(/*union*/{geolocation: 'geolocation', notifications: 'notifications', persistentStorage: 'persistent-storage', push: 'push', screenWakeLock: 'screen-wake-lock', xrSpatialTracking: 'xr-spatial-tracking'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface PermissionName {
     companion object {
+        @JsValue("geolocation")
         val geolocation: PermissionName
+
+        @JsValue("notifications")
         val notifications: PermissionName
+
+        @JsValue("persistent-storage")
         val persistentStorage: PermissionName
+
+        @JsValue("push")
         val push: PermissionName
+
+        @JsValue("screen-wake-lock")
         val screenWakeLock: PermissionName
+
+        @JsValue("xr-spatial-tracking")
         val xrSpatialTracking: PermissionName
     }
 }

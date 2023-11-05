@@ -1,18 +1,24 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package web.codecs
 
-// language=JavaScript
-@JsName("""(/*union*/{bt470bg: 'bt470bg', bt709: 'bt709', smpte170m: 'smpte170m'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface VideoColorPrimaries {
     companion object {
+        @JsValue("bt470bg")
         val bt470bg: VideoColorPrimaries
+
+        @JsValue("bt709")
         val bt709: VideoColorPrimaries
+
+        @JsValue("smpte170m")
         val smpte170m: VideoColorPrimaries
     }
 }

@@ -1,19 +1,27 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package web.html
 
-// language=JavaScript
-@JsName("""(/*union*/{end: 'end', preserve: 'preserve', select: 'select', start: 'start'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface SelectionMode {
     companion object {
+        @JsValue("end")
         val end: SelectionMode
+
+        @JsValue("preserve")
         val preserve: SelectionMode
+
+        @JsValue("select")
         val select: SelectionMode
+
+        @JsValue("start")
         val start: SelectionMode
     }
 }

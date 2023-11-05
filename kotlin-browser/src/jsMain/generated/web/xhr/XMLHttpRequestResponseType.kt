@@ -1,21 +1,33 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package web.xhr
 
-// language=JavaScript
-@JsName("""(/*union*/{none: '', arraybuffer: 'arraybuffer', blob: 'blob', document: 'document', json: 'json', text: 'text'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface XMLHttpRequestResponseType {
     companion object {
+        @JsValue("")
         val none: XMLHttpRequestResponseType
+
+        @JsValue("arraybuffer")
         val arraybuffer: XMLHttpRequestResponseType
+
+        @JsValue("blob")
         val blob: XMLHttpRequestResponseType
+
+        @JsValue("document")
         val document: XMLHttpRequestResponseType
+
+        @JsValue("json")
         val json: XMLHttpRequestResponseType
+
+        @JsValue("text")
         val text: XMLHttpRequestResponseType
     }
 }

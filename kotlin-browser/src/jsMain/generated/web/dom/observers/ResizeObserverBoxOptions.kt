@@ -1,18 +1,24 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package web.dom.observers
 
-// language=JavaScript
-@JsName("""(/*union*/{borderBox: 'border-box', contentBox: 'content-box', devicePixelContentBox: 'device-pixel-content-box'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface ResizeObserverBoxOptions {
     companion object {
+        @JsValue("border-box")
         val borderBox: ResizeObserverBoxOptions
+
+        @JsValue("content-box")
         val contentBox: ResizeObserverBoxOptions
+
+        @JsValue("device-pixel-content-box")
         val devicePixelContentBox: ResizeObserverBoxOptions
     }
 }

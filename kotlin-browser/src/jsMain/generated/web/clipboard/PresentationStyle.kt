@@ -1,18 +1,24 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package web.clipboard
 
-// language=JavaScript
-@JsName("""(/*union*/{attachment: 'attachment', inline: 'inline', unspecified: 'unspecified'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface PresentationStyle {
     companion object {
+        @JsValue("attachment")
         val attachment: PresentationStyle
+
+        @JsValue("inline")
         val inline: PresentationStyle
+
+        @JsValue("unspecified")
         val unspecified: PresentationStyle
     }
 }

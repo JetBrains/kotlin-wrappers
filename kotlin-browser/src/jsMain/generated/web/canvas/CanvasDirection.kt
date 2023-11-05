@@ -1,18 +1,24 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package web.canvas
 
-// language=JavaScript
-@JsName("""(/*union*/{inherit: 'inherit', ltr: 'ltr', rtl: 'rtl'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface CanvasDirection {
     companion object {
+        @JsValue("inherit")
         val inherit: CanvasDirection
+
+        @JsValue("ltr")
         val ltr: CanvasDirection
+
+        @JsValue("rtl")
         val rtl: CanvasDirection
     }
 }

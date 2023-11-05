@@ -1,17 +1,21 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package web.media.source
 
-// language=JavaScript
-@JsName("""(/*union*/{decode: 'decode', network: 'network'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface EndOfStreamError {
     companion object {
+        @JsValue("decode")
         val decode: EndOfStreamError
+
+        @JsValue("network")
         val network: EndOfStreamError
     }
 }

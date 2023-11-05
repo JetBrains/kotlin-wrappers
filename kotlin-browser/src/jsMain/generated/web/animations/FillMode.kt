@@ -1,20 +1,30 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package web.animations
 
-// language=JavaScript
-@JsName("""(/*union*/{auto: 'auto', backwards: 'backwards', both: 'both', forwards: 'forwards', none: 'none'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface FillMode {
     companion object {
+        @JsValue("auto")
         val auto: FillMode
+
+        @JsValue("backwards")
         val backwards: FillMode
+
+        @JsValue("both")
         val both: FillMode
+
+        @JsValue("forwards")
         val forwards: FillMode
+
+        @JsValue("none")
         val none: FillMode
     }
 }

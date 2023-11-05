@@ -1,19 +1,27 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package web.animations
 
-// language=JavaScript
-@JsName("""(/*union*/{accumulate: 'accumulate', add: 'add', auto: 'auto', replace: 'replace'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface CompositeOperationOrAuto {
     companion object {
+        @JsValue("accumulate")
         val accumulate: CompositeOperationOrAuto
+
+        @JsValue("add")
         val add: CompositeOperationOrAuto
+
+        @JsValue("auto")
         val auto: CompositeOperationOrAuto
+
+        @JsValue("replace")
         val replace: CompositeOperationOrAuto
     }
 }

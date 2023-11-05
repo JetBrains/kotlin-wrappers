@@ -1,20 +1,30 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package webrtc
 
-// language=JavaScript
-@JsName("""(/*union*/{inactive: 'inactive', recvonly: 'recvonly', sendonly: 'sendonly', sendrecv: 'sendrecv', stopped: 'stopped'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface RTCRtpTransceiverDirection {
     companion object {
+        @JsValue("inactive")
         val inactive: RTCRtpTransceiverDirection
+
+        @JsValue("recvonly")
         val recvonly: RTCRtpTransceiverDirection
+
+        @JsValue("sendonly")
         val sendonly: RTCRtpTransceiverDirection
+
+        @JsValue("sendrecv")
         val sendrecv: RTCRtpTransceiverDirection
+
+        @JsValue("stopped")
         val stopped: RTCRtpTransceiverDirection
     }
 }

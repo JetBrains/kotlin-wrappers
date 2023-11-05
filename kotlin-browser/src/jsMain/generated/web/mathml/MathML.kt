@@ -1,14 +1,11 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-)
-
 package web.mathml
 
+import seskar.js.JsValue
 import web.dom.ElementNamespace
 
-@JsName("'http://www.w3.org/1998/Math/MathML'")
+@JsValue("http://www.w3.org/1998/Math/MathML")
 external object MATHML_NAMESPACE : ElementNamespace
 
 object MathML {

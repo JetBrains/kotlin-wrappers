@@ -1,22 +1,36 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package web.cssom
 
-// language=JavaScript
-@JsName("""(/*union*/{clamp: 'clamp', invert: 'invert', max: 'max', min: 'min', negate: 'negate', product: 'product', sum: 'sum'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface CSSMathOperator {
     companion object {
+        @JsValue("clamp")
         val clamp: CSSMathOperator
+
+        @JsValue("invert")
         val invert: CSSMathOperator
+
+        @JsValue("max")
         val max: CSSMathOperator
+
+        @JsValue("min")
         val min: CSSMathOperator
+
+        @JsValue("negate")
         val negate: CSSMathOperator
+
+        @JsValue("product")
         val product: CSSMathOperator
+
+        @JsValue("sum")
         val sum: CSSMathOperator
     }
 }

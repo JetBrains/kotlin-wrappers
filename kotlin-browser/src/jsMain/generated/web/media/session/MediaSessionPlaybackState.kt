@@ -1,18 +1,24 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package web.media.session
 
-// language=JavaScript
-@JsName("""(/*union*/{none: 'none', paused: 'paused', playing: 'playing'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface MediaSessionPlaybackState {
     companion object {
+        @JsValue("none")
         val none: MediaSessionPlaybackState
+
+        @JsValue("paused")
         val paused: MediaSessionPlaybackState
+
+        @JsValue("playing")
         val playing: MediaSessionPlaybackState
     }
 }

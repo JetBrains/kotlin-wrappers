@@ -1,18 +1,24 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package web.idb
 
-// language=JavaScript
-@JsName("""(/*union*/{default: 'default', relaxed: 'relaxed', strict: 'strict'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface IDBTransactionDurability {
     companion object {
+        @JsValue("default")
         val default: IDBTransactionDurability
+
+        @JsValue("relaxed")
         val relaxed: IDBTransactionDurability
+
+        @JsValue("strict")
         val strict: IDBTransactionDurability
     }
 }

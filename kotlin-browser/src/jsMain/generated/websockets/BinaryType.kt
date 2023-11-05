@@ -1,17 +1,21 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package websockets
 
-// language=JavaScript
-@JsName("""(/*union*/{arraybuffer: 'arraybuffer', blob: 'blob'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface BinaryType {
     companion object {
+        @JsValue("arraybuffer")
         val arraybuffer: BinaryType
+
+        @JsValue("blob")
         val blob: BinaryType
     }
 }

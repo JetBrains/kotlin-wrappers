@@ -1,17 +1,21 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package web.html
 
-// language=JavaScript
-@JsName("""(/*union*/{billing: 'billing', shipping: 'shipping'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface AutoFillAddressKind {
     companion object {
+        @JsValue("billing")
         val billing: AutoFillAddressKind
+
+        @JsValue("shipping")
         val shipping: AutoFillAddressKind
     }
 }

@@ -1,22 +1,36 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package web.html
 
-// language=JavaScript
-@JsName("""(/*union*/{enter: 'enter', done: 'done', go: 'go', next: 'next', previous: 'previous', search: 'search', send: 'send'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface EnterKeyHint {
     companion object {
+        @JsValue("enter")
         val enter: EnterKeyHint
+
+        @JsValue("done")
         val done: EnterKeyHint
+
+        @JsValue("go")
         val go: EnterKeyHint
+
+        @JsValue("next")
         val next: EnterKeyHint
+
+        @JsValue("previous")
         val previous: EnterKeyHint
+
+        @JsValue("search")
         val search: EnterKeyHint
+
+        @JsValue("send")
         val send: EnterKeyHint
     }
 }

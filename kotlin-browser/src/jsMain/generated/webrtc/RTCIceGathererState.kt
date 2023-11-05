@@ -1,18 +1,24 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package webrtc
 
-// language=JavaScript
-@JsName("""(/*union*/{complete: 'complete', gathering: 'gathering', new: 'new'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface RTCIceGathererState {
     companion object {
+        @JsValue("complete")
         val complete: RTCIceGathererState
+
+        @JsValue("gathering")
         val gathering: RTCIceGathererState
+
+        @JsValue("new")
         val new: RTCIceGathererState
     }
 }

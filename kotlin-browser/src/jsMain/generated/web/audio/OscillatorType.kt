@@ -1,20 +1,30 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package web.audio
 
-// language=JavaScript
-@JsName("""(/*union*/{custom: 'custom', sawtooth: 'sawtooth', sine: 'sine', square: 'square', triangle: 'triangle'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface OscillatorType {
     companion object {
+        @JsValue("custom")
         val custom: OscillatorType
+
+        @JsValue("sawtooth")
         val sawtooth: OscillatorType
+
+        @JsValue("sine")
         val sine: OscillatorType
+
+        @JsValue("square")
         val square: OscillatorType
+
+        @JsValue("triangle")
         val triangle: OscillatorType
     }
 }

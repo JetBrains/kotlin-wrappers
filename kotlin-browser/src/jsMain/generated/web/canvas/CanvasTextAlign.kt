@@ -1,20 +1,30 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package web.canvas
 
-// language=JavaScript
-@JsName("""(/*union*/{center: 'center', end: 'end', left: 'left', right: 'right', start: 'start'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface CanvasTextAlign {
     companion object {
+        @JsValue("center")
         val center: CanvasTextAlign
+
+        @JsValue("end")
         val end: CanvasTextAlign
+
+        @JsValue("left")
         val left: CanvasTextAlign
+
+        @JsValue("right")
         val right: CanvasTextAlign
+
+        @JsValue("start")
         val start: CanvasTextAlign
     }
 }

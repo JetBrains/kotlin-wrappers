@@ -1,18 +1,24 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package web.canvas
 
-// language=JavaScript
-@JsName("""(/*union*/{flipY: 'flipY', fromImage: 'from-image', none: 'none'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface ImageOrientation {
     companion object {
+        @JsValue("flipY")
         val flipY: ImageOrientation
+
+        @JsValue("from-image")
         val fromImage: ImageOrientation
+
+        @JsValue("none")
         val none: ImageOrientation
     }
 }

@@ -1,17 +1,21 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package web.filesystem
 
-// language=JavaScript
-@JsName("""(/*union*/{directory: 'directory', file: 'file'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface FileSystemHandleKind {
     companion object {
+        @JsValue("directory")
         val directory: FileSystemHandleKind
+
+        @JsValue("file")
         val file: FileSystemHandleKind
     }
 }

@@ -1,18 +1,24 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package webrtc
 
-// language=JavaScript
-@JsName("""(/*union*/{balanced: 'balanced', maxBundle: 'max-bundle', maxCompat: 'max-compat'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface RTCBundlePolicy {
     companion object {
+        @JsValue("balanced")
         val balanced: RTCBundlePolicy
+
+        @JsValue("max-bundle")
         val maxBundle: RTCBundlePolicy
+
+        @JsValue("max-compat")
         val maxCompat: RTCBundlePolicy
     }
 }

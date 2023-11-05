@@ -1,18 +1,24 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package web.media.capabilities
 
-// language=JavaScript
-@JsName("""(/*union*/{hlg: 'hlg', pq: 'pq', srgb: 'srgb'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface TransferFunction {
     companion object {
+        @JsValue("hlg")
         val hlg: TransferFunction
+
+        @JsValue("pq")
         val pq: TransferFunction
+
+        @JsValue("srgb")
         val srgb: TransferFunction
     }
 }

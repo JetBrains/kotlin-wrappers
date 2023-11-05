@@ -1,17 +1,21 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package web.media.streams
 
-// language=JavaScript
-@JsName("""(/*union*/{ended: 'ended', live: 'live'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface MediaStreamTrackState {
     companion object {
+        @JsValue("ended")
         val ended: MediaStreamTrackState
+
+        @JsValue("live")
         val live: MediaStreamTrackState
     }
 }

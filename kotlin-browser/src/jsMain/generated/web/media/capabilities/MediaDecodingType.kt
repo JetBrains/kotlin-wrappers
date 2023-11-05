@@ -1,18 +1,24 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package web.media.capabilities
 
-// language=JavaScript
-@JsName("""(/*union*/{file: 'file', mediaSource: 'media-source', webrtc: 'webrtc'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface MediaDecodingType {
     companion object {
+        @JsValue("file")
         val file: MediaDecodingType
+
+        @JsValue("media-source")
         val mediaSource: MediaDecodingType
+
+        @JsValue("webrtc")
         val webrtc: MediaDecodingType
     }
 }

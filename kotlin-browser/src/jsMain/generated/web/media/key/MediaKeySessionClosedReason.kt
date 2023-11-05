@@ -1,20 +1,30 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package web.media.key
 
-// language=JavaScript
-@JsName("""(/*union*/{closedByApplication: 'closed-by-application', hardwareContextReset: 'hardware-context-reset', internalError: 'internal-error', releaseAcknowledged: 'release-acknowledged', resourceEvicted: 'resource-evicted'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface MediaKeySessionClosedReason {
     companion object {
+        @JsValue("closed-by-application")
         val closedByApplication: MediaKeySessionClosedReason
+
+        @JsValue("hardware-context-reset")
         val hardwareContextReset: MediaKeySessionClosedReason
+
+        @JsValue("internal-error")
         val internalError: MediaKeySessionClosedReason
+
+        @JsValue("release-acknowledged")
         val releaseAcknowledged: MediaKeySessionClosedReason
+
+        @JsValue("resource-evicted")
         val resourceEvicted: MediaKeySessionClosedReason
     }
 }

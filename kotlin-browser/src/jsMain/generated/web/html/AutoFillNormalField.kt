@@ -1,53 +1,123 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package web.html
 
-// language=JavaScript
-@JsName(
-    """(/*union*/{additionalName: 'additional-name', addressLevel1: 'address-level1', addressLevel2: 'address-level2', addressLevel3: 'address-level3', addressLevel4: 'address-level4', addressLine1: 'address-line1', addressLine2: 'address-line2', addressLine3: 'address-line3', bdayDay: 'bday-day', bdayMonth: 'bday-month', bdayYear: 'bday-year', ccCsc: 'cc-csc', ccExp: 'cc-exp', ccExpMonth: 'cc-exp-month', ccExpYear: 'cc-exp-year', ccFamilyName: 'cc-family-name', ccGivenName: 'cc-given-name', ccName: 'cc-name', ccNumber: 'cc-number', ccType: 'cc-type', country: 'country', countryName: 'country-name', currentPassword: 'current-password', familyName: 'family-name', givenName: 'given-name', honorificPrefix: 'honorific-prefix', honorificSuffix: 'honorific-suffix', name: 'name', newPassword: 'new-password', oneTimeCode: 'one-time-code', organization: 'organization', postalCode: 'postal-code', streetAddress: 'street-address', transactionAmount: 'transaction-amount', transactionCurrency: 'transaction-currency', username: 'username'}/*union*/)"""
-)
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface AutoFillNormalField {
     companion object {
+        @JsValue("additional-name")
         val additionalName: AutoFillNormalField
+
+        @JsValue("address-level1")
         val addressLevel1: AutoFillNormalField
+
+        @JsValue("address-level2")
         val addressLevel2: AutoFillNormalField
+
+        @JsValue("address-level3")
         val addressLevel3: AutoFillNormalField
+
+        @JsValue("address-level4")
         val addressLevel4: AutoFillNormalField
+
+        @JsValue("address-line1")
         val addressLine1: AutoFillNormalField
+
+        @JsValue("address-line2")
         val addressLine2: AutoFillNormalField
+
+        @JsValue("address-line3")
         val addressLine3: AutoFillNormalField
+
+        @JsValue("bday-day")
         val bdayDay: AutoFillNormalField
+
+        @JsValue("bday-month")
         val bdayMonth: AutoFillNormalField
+
+        @JsValue("bday-year")
         val bdayYear: AutoFillNormalField
+
+        @JsValue("cc-csc")
         val ccCsc: AutoFillNormalField
+
+        @JsValue("cc-exp")
         val ccExp: AutoFillNormalField
+
+        @JsValue("cc-exp-month")
         val ccExpMonth: AutoFillNormalField
+
+        @JsValue("cc-exp-year")
         val ccExpYear: AutoFillNormalField
+
+        @JsValue("cc-family-name")
         val ccFamilyName: AutoFillNormalField
+
+        @JsValue("cc-given-name")
         val ccGivenName: AutoFillNormalField
+
+        @JsValue("cc-name")
         val ccName: AutoFillNormalField
+
+        @JsValue("cc-number")
         val ccNumber: AutoFillNormalField
+
+        @JsValue("cc-type")
         val ccType: AutoFillNormalField
+
+        @JsValue("country")
         val country: AutoFillNormalField
+
+        @JsValue("country-name")
         val countryName: AutoFillNormalField
+
+        @JsValue("current-password")
         val currentPassword: AutoFillNormalField
+
+        @JsValue("family-name")
         val familyName: AutoFillNormalField
+
+        @JsValue("given-name")
         val givenName: AutoFillNormalField
+
+        @JsValue("honorific-prefix")
         val honorificPrefix: AutoFillNormalField
+
+        @JsValue("honorific-suffix")
         val honorificSuffix: AutoFillNormalField
+
+        @JsValue("name")
         val name: AutoFillNormalField
+
+        @JsValue("new-password")
         val newPassword: AutoFillNormalField
+
+        @JsValue("one-time-code")
         val oneTimeCode: AutoFillNormalField
+
+        @JsValue("organization")
         val organization: AutoFillNormalField
+
+        @JsValue("postal-code")
         val postalCode: AutoFillNormalField
+
+        @JsValue("street-address")
         val streetAddress: AutoFillNormalField
+
+        @JsValue("transaction-amount")
         val transactionAmount: AutoFillNormalField
+
+        @JsValue("transaction-currency")
         val transactionCurrency: AutoFillNormalField
+
+        @JsValue("username")
         val username: AutoFillNormalField
     }
 }

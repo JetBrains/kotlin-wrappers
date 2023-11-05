@@ -1,14 +1,11 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-)
-
 package web.svg
 
+import seskar.js.JsValue
 import web.dom.ElementNamespace
 
-@JsName("'http://www.w3.org/2000/svg'")
+@JsValue("http://www.w3.org/2000/svg")
 external object SVG_NAMESPACE : ElementNamespace
 
 object SVG {

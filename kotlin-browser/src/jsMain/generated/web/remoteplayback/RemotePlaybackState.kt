@@ -1,18 +1,24 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package web.remoteplayback
 
-// language=JavaScript
-@JsName("""(/*union*/{connected: 'connected', connecting: 'connecting', disconnected: 'disconnected'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface RemotePlaybackState {
     companion object {
+        @JsValue("connected")
         val connected: RemotePlaybackState
+
+        @JsValue("connecting")
         val connecting: RemotePlaybackState
+
+        @JsValue("disconnected")
         val disconnected: RemotePlaybackState
     }
 }
