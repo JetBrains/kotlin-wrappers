@@ -49,6 +49,12 @@ sealed external class BingMapsImageryProvider {
     val mapStyle: BingMapsStyle
 
     /**
+     * Gets the additional map layer options as defined in [https://learn.microsoft.com/en-us/bingmaps/rest-services/imagery/get-imagery-metadata#template-parameters]/
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BingMapsImageryProvider.html#mapLayer">Online Documentation</a>
+     */
+    val mapLayer: String
+
+    /**
      * The culture to use when requesting Bing Maps imagery. Not
      * all cultures are supported. See [http://msdn.microsoft.com/en-us/library/hh441729.aspx]
      * for information on the supported cultures.
@@ -183,6 +189,7 @@ sealed external class BingMapsImageryProvider {
      *   By default, tiles are loaded using the same protocol as the page.
      * @property [mapStyle] The type of Bing Maps imagery to load.
      *   Default value - [BingMapsStyle.AERIAL]
+     * @property [mapLayer] Additional display layer options as defined on [https://learn.microsoft.com/en-us/bingmaps/rest-services/imagery/get-imagery-metadata#template-parameters]
      * @property [culture] The culture to use when requesting Bing Maps imagery. Not
      *   all cultures are supported. See [http://msdn.microsoft.com/en-us/library/hh441729.aspx]
      *   for information on the supported cultures.
@@ -198,6 +205,7 @@ sealed external class BingMapsImageryProvider {
         var key: String?
         var tileProtocol: String?
         var mapStyle: BingMapsStyle?
+        var mapLayer: String?
         var culture: String?
         var ellipsoid: Ellipsoid?
         var tileDiscardPolicy: TileDiscardPolicy?
