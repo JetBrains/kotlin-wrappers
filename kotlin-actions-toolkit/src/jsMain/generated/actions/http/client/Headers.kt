@@ -1,17 +1,21 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package actions.http.client
 
-// language=JavaScript
-@JsName("""(/*union*/{Accept: 'accept', ContentType: 'content-type'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface Headers {
     companion object {
+        @JsValue("accept")
         val Accept: Headers
+
+        @JsValue("content-type")
         val ContentType: Headers
     }
 }

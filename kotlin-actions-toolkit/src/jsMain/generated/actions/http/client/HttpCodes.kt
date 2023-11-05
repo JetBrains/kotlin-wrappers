@@ -1,42 +1,96 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package actions.http.client
 
-// language=JavaScript
-@JsName("""(/*union*/{OK: 200, MultipleChoices: 300, MovedPermanently: 301, ResourceMoved: 302, SeeOther: 303, NotModified: 304, UseProxy: 305, SwitchProxy: 306, TemporaryRedirect: 307, PermanentRedirect: 308, BadRequest: 400, Unauthorized: 401, PaymentRequired: 402, Forbidden: 403, NotFound: 404, MethodNotAllowed: 405, NotAcceptable: 406, ProxyAuthenticationRequired: 407, RequestTimeout: 408, Conflict: 409, Gone: 410, TooManyRequests: 429, InternalServerError: 500, NotImplemented: 501, BadGateway: 502, ServiceUnavailable: 503, GatewayTimeout: 504}/*union*/)""")
+import seskar.js.JsIntValue
+import seskar.js.JsUnion
+
+@JsUnion
 sealed external interface HttpCodes {
     companion object {
+        @JsIntValue(200)
         val OK: HttpCodes
+
+        @JsIntValue(300)
         val MultipleChoices: HttpCodes
+
+        @JsIntValue(301)
         val MovedPermanently: HttpCodes
+
+        @JsIntValue(302)
         val ResourceMoved: HttpCodes
+
+        @JsIntValue(303)
         val SeeOther: HttpCodes
+
+        @JsIntValue(304)
         val NotModified: HttpCodes
+
+        @JsIntValue(305)
         val UseProxy: HttpCodes
+
+        @JsIntValue(306)
         val SwitchProxy: HttpCodes
+
+        @JsIntValue(307)
         val TemporaryRedirect: HttpCodes
+
+        @JsIntValue(308)
         val PermanentRedirect: HttpCodes
+
+        @JsIntValue(400)
         val BadRequest: HttpCodes
+
+        @JsIntValue(401)
         val Unauthorized: HttpCodes
+
+        @JsIntValue(402)
         val PaymentRequired: HttpCodes
+
+        @JsIntValue(403)
         val Forbidden: HttpCodes
+
+        @JsIntValue(404)
         val NotFound: HttpCodes
+
+        @JsIntValue(405)
         val MethodNotAllowed: HttpCodes
+
+        @JsIntValue(406)
         val NotAcceptable: HttpCodes
+
+        @JsIntValue(407)
         val ProxyAuthenticationRequired: HttpCodes
+
+        @JsIntValue(408)
         val RequestTimeout: HttpCodes
+
+        @JsIntValue(409)
         val Conflict: HttpCodes
+
+        @JsIntValue(410)
         val Gone: HttpCodes
+
+        @JsIntValue(429)
         val TooManyRequests: HttpCodes
+
+        @JsIntValue(500)
         val InternalServerError: HttpCodes
+
+        @JsIntValue(501)
         val NotImplemented: HttpCodes
+
+        @JsIntValue(502)
         val BadGateway: HttpCodes
+
+        @JsIntValue(503)
         val ServiceUnavailable: HttpCodes
+
+        @JsIntValue(504)
         val GatewayTimeout: HttpCodes
     }
 }

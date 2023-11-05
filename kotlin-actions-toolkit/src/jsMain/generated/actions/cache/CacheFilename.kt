@@ -1,17 +1,21 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package actions.cache
 
-// language=JavaScript
-@JsName("""(/*union*/{Gzip: 'cache.tgz', Zstd: 'cache.tzst'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface CacheFilename {
     companion object {
+        @JsValue("cache.tgz")
         val Gzip: CacheFilename
+
+        @JsValue("cache.tzst")
         val Zstd: CacheFilename
     }
 }
