@@ -1,21 +1,33 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package web.cssom
 
-// language=JavaScript
-@JsName("""(/*union*/{bidiOverride: 'bidi-override', embed: 'embed', isolate: 'isolate', isolateOverride: 'isolate-override', normal: 'normal', plaintext: 'plaintext'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface UnicodeBidi {
     companion object {
+        @JsValue("bidi-override")
         val bidiOverride: UnicodeBidi
+
+        @JsValue("embed")
         val embed: UnicodeBidi
+
+        @JsValue("isolate")
         val isolate: UnicodeBidi
+
+        @JsValue("isolate-override")
         val isolateOverride: UnicodeBidi
+
+        @JsValue("normal")
         val normal: UnicodeBidi
+
+        @JsValue("plaintext")
         val plaintext: UnicodeBidi
     }
 }

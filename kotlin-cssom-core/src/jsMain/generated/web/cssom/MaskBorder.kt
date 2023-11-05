@@ -1,21 +1,33 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package web.cssom
 
-// language=JavaScript
-@JsName("""(/*union*/{alpha: 'alpha', luminance: 'luminance', repeat: 'repeat', round: 'round', space: 'space', stretch: 'stretch'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface MaskBorder {
     companion object {
+        @JsValue("alpha")
         val alpha: MaskBorder
+
+        @JsValue("luminance")
         val luminance: MaskBorder
+
+        @JsValue("repeat")
         val repeat: MaskBorder
+
+        @JsValue("round")
         val round: MaskBorder
+
+        @JsValue("space")
         val space: MaskBorder
+
+        @JsValue("stretch")
         val stretch: MaskBorder
     }
 }

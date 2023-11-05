@@ -1,22 +1,36 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package web.cssom
 
-// language=JavaScript
-@JsName("""(/*union*/{borderBox: 'border-box', contentBox: 'content-box', paddingBox: 'padding-box', fillBox: 'fill-box', marginBox: 'margin-box', strokeBox: 'stroke-box', viewBox: 'view-box'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface ClipPath {
     companion object {
+        @JsValue("border-box")
         val borderBox: ClipPath
+
+        @JsValue("content-box")
         val contentBox: ClipPath
+
+        @JsValue("padding-box")
         val paddingBox: ClipPath
+
+        @JsValue("fill-box")
         val fillBox: ClipPath
+
+        @JsValue("margin-box")
         val marginBox: ClipPath
+
+        @JsValue("stroke-box")
         val strokeBox: ClipPath
+
+        @JsValue("view-box")
         val viewBox: ClipPath
     }
 }

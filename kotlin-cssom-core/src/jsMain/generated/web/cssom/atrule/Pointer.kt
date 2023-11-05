@@ -1,18 +1,24 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package web.cssom.atrule
 
-// language=JavaScript
-@JsName("""(/*union*/{none: 'none', coarse: 'coarse', fine: 'fine'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface Pointer {
     companion object {
+        @JsValue("none")
         val none: Pointer
+
+        @JsValue("coarse")
         val coarse: Pointer
+
+        @JsValue("fine")
         val fine: Pointer
     }
 }

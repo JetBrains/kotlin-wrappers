@@ -1,17 +1,21 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package web.cssom
 
-// language=JavaScript
-@JsName("""(/*union*/{closestSide: 'closest-side', farthestSide: 'farthest-side'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface ShapeRadius {
     companion object {
+        @JsValue("closest-side")
         val closestSide: ShapeRadius
+
+        @JsValue("farthest-side")
         val farthestSide: ShapeRadius
     }
 }

@@ -1,18 +1,24 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package web.cssom
 
-// language=JavaScript
-@JsName("""(/*union*/{dark: 'dark', light: 'light', normal: 'normal'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface ColorScheme {
     companion object {
+        @JsValue("dark")
         val dark: ColorScheme
+
+        @JsValue("light")
         val light: ColorScheme
+
+        @JsValue("normal")
         val normal: ColorScheme
     }
 }

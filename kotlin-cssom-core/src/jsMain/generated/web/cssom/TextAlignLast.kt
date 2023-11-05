@@ -1,21 +1,33 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package web.cssom
 
-// language=JavaScript
-@JsName("""(/*union*/{center: 'center', end: 'end', justify: 'justify', left: 'left', right: 'right', start: 'start'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface TextAlignLast {
     companion object {
+        @JsValue("center")
         val center: TextAlignLast
+
+        @JsValue("end")
         val end: TextAlignLast
+
+        @JsValue("justify")
         val justify: TextAlignLast
+
+        @JsValue("left")
         val left: TextAlignLast
+
+        @JsValue("right")
         val right: TextAlignLast
+
+        @JsValue("start")
         val start: TextAlignLast
     }
 }

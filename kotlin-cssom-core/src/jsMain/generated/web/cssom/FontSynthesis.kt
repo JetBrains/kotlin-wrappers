@@ -1,18 +1,24 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package web.cssom
 
-// language=JavaScript
-@JsName("""(/*union*/{smallCaps: 'small-caps', style: 'style', weight: 'weight'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface FontSynthesis {
     companion object {
+        @JsValue("small-caps")
         val smallCaps: FontSynthesis
+
+        @JsValue("style")
         val style: FontSynthesis
+
+        @JsValue("weight")
         val weight: FontSynthesis
     }
 }

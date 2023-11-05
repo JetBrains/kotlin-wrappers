@@ -1,19 +1,27 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package web.cssom
 
-// language=JavaScript
-@JsName("""(/*union*/{fromFont: 'from-font', left: 'left', right: 'right', under: 'under'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface TextUnderlinePosition {
     companion object {
+        @JsValue("from-font")
         val fromFont: TextUnderlinePosition
+
+        @JsValue("left")
         val left: TextUnderlinePosition
+
+        @JsValue("right")
         val right: TextUnderlinePosition
+
+        @JsValue("under")
         val under: TextUnderlinePosition
     }
 }

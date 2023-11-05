@@ -1,24 +1,42 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package web.cssom
 
-// language=JavaScript
-@JsName("""(/*union*/{dashed: 'dashed', dotted: 'dotted', double: 'double', groove: 'groove', hidden: 'hidden', inset: 'inset', outset: 'outset', ridge: 'ridge', solid: 'solid'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface LineStyle : LineStyleProperty {
     companion object {
+        @JsValue("dashed")
         val dashed: LineStyle
+
+        @JsValue("dotted")
         val dotted: LineStyle
+
+        @JsValue("double")
         val double: LineStyle
+
+        @JsValue("groove")
         val groove: LineStyle
+
+        @JsValue("hidden")
         val hidden: LineStyle
+
+        @JsValue("inset")
         val inset: LineStyle
+
+        @JsValue("outset")
         val outset: LineStyle
+
+        @JsValue("ridge")
         val ridge: LineStyle
+
+        @JsValue("solid")
         val solid: LineStyle
     }
 }

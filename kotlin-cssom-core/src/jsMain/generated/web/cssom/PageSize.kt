@@ -1,25 +1,45 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package web.cssom
 
-// language=JavaScript
-@JsName("""(/*union*/{A3: 'A3', A4: 'A4', A5: 'A5', B4: 'B4', B5: 'B5', JISB4: 'JIS-B4', JISB5: 'JIS-B5', ledger: 'ledger', legal: 'legal', letter: 'letter'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface PageSize {
     companion object {
+        @JsValue("A3")
         val A3: PageSize
+
+        @JsValue("A4")
         val A4: PageSize
+
+        @JsValue("A5")
         val A5: PageSize
+
+        @JsValue("B4")
         val B4: PageSize
+
+        @JsValue("B5")
         val B5: PageSize
+
+        @JsValue("JIS-B4")
         val JISB4: PageSize
+
+        @JsValue("JIS-B5")
         val JISB5: PageSize
+
+        @JsValue("ledger")
         val ledger: PageSize
+
+        @JsValue("legal")
         val legal: PageSize
+
+        @JsValue("letter")
         val letter: PageSize
     }
 }

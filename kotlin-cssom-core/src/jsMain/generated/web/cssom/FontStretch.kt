@@ -1,24 +1,42 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package web.cssom
 
-// language=JavaScript
-@JsName("""(/*union*/{condensed: 'condensed', expanded: 'expanded', extraCondensed: 'extra-condensed', extraExpanded: 'extra-expanded', normal: 'normal', semiCondensed: 'semi-condensed', semiExpanded: 'semi-expanded', ultraCondensed: 'ultra-condensed', ultraExpanded: 'ultra-expanded'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface FontStretch {
     companion object {
+        @JsValue("condensed")
         val condensed: FontStretch
+
+        @JsValue("expanded")
         val expanded: FontStretch
+
+        @JsValue("extra-condensed")
         val extraCondensed: FontStretch
+
+        @JsValue("extra-expanded")
         val extraExpanded: FontStretch
+
+        @JsValue("normal")
         val normal: FontStretch
+
+        @JsValue("semi-condensed")
         val semiCondensed: FontStretch
+
+        @JsValue("semi-expanded")
         val semiExpanded: FontStretch
+
+        @JsValue("ultra-condensed")
         val ultraCondensed: FontStretch
+
+        @JsValue("ultra-expanded")
         val ultraExpanded: FontStretch
     }
 }

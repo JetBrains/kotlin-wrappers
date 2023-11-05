@@ -1,20 +1,28 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
     "NOTHING_TO_INLINE",
 )
 
 package web.cssom
 
-// language=JavaScript
-@JsName("""(/*union*/{content: 'content', fitContent: 'fit-content', maxContent: 'max-content', minContent: 'min-content'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface Flex {
     companion object {
+        @JsValue("content")
         val content: Flex
+
+        @JsValue("fit-content")
         val fitContent: Flex
+
+        @JsValue("max-content")
         val maxContent: Flex
+
+        @JsValue("min-content")
         val minContent: Flex
     }
 }

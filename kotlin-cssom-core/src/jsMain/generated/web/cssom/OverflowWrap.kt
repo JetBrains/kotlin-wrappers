@@ -1,18 +1,24 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package web.cssom
 
-// language=JavaScript
-@JsName("""(/*union*/{anywhere: 'anywhere', breakWord: 'break-word', normal: 'normal'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface OverflowWrap {
     companion object {
+        @JsValue("anywhere")
         val anywhere: OverflowWrap
+
+        @JsValue("break-word")
         val breakWord: OverflowWrap
+
+        @JsValue("normal")
         val normal: OverflowWrap
     }
 }

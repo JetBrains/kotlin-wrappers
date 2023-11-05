@@ -1,24 +1,40 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
     "NOTHING_TO_INLINE",
 )
 
 package web.cssom
 
-// language=JavaScript
-@JsName("""(/*union*/{ease: 'ease', easeIn: 'ease-in', easeInOut: 'ease-in-out', easeOut: 'ease-out', stepEnd: 'step-end', stepStart: 'step-start', linear: 'linear', all: 'all'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface Transition {
     companion object {
+        @JsValue("ease")
         val ease: Transition
+
+        @JsValue("ease-in")
         val easeIn: Transition
+
+        @JsValue("ease-in-out")
         val easeInOut: Transition
+
+        @JsValue("ease-out")
         val easeOut: Transition
+
+        @JsValue("step-end")
         val stepEnd: Transition
+
+        @JsValue("step-start")
         val stepStart: Transition
+
+        @JsValue("linear")
         val linear: Transition
+
+        @JsValue("all")
         val all: Transition
     }
 }

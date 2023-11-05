@@ -1,17 +1,21 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package web.cssom
 
-// language=JavaScript
-@JsName("""(/*union*/{crispEdges: 'crisp-edges', pixelated: 'pixelated'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface ImageRendering {
     companion object {
+        @JsValue("crisp-edges")
         val crispEdges: ImageRendering
+
+        @JsValue("pixelated")
         val pixelated: ImageRendering
     }
 }

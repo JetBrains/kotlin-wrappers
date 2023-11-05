@@ -1,21 +1,33 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package web.cssom
 
-// language=JavaScript
-@JsName("""(/*union*/{fitContent: 'fit-content', intrinsic: 'intrinsic', maxContent: 'max-content', minContent: 'min-content', minIntrinsic: 'min-intrinsic', normal: 'normal'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface Length : LengthType {
     companion object {
+        @JsValue("fit-content")
         val fitContent: LengthType.FitContent
+
+        @JsValue("intrinsic")
         val intrinsic: LengthType.Intrinsic
+
+        @JsValue("max-content")
         val maxContent: LengthType.MaxContent
+
+        @JsValue("min-content")
         val minContent: LengthType.MinContent
+
+        @JsValue("min-intrinsic")
         val minIntrinsic: LengthType.MinIntrinsic
+
+        @JsValue("normal")
         val normal: LengthType.Normal
     }
 }

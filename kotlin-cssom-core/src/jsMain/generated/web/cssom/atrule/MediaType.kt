@@ -1,20 +1,25 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package web.cssom.atrule
 
+import seskar.js.JsUnion
+import seskar.js.JsValue
 import web.cssom.MediaQuery
 
-// language=JavaScript
-@JsName("""(/*union*/{all: 'all', print: 'print', screen: 'screen'}/*union*/)""")
+@JsUnion
 sealed external interface MediaType : MediaQuery {
     companion object {
+        @JsValue("all")
         val all: MediaType
+
+        @JsValue("print")
         val print: MediaType
+
+        @JsValue("screen")
         val screen: MediaType
     }
 }

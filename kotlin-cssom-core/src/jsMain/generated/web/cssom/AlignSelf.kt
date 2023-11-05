@@ -1,25 +1,45 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package web.cssom
 
-// language=JavaScript
-@JsName("""(/*union*/{center: 'center', end: 'end', flexEnd: 'flex-end', flexStart: 'flex-start', selfEnd: 'self-end', selfStart: 'self-start', start: 'start', baseline: 'baseline', normal: 'normal', stretch: 'stretch'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface AlignSelf {
     companion object {
+        @JsValue("center")
         val center: AlignSelf
+
+        @JsValue("end")
         val end: AlignSelf
+
+        @JsValue("flex-end")
         val flexEnd: AlignSelf
+
+        @JsValue("flex-start")
         val flexStart: AlignSelf
+
+        @JsValue("self-end")
         val selfEnd: AlignSelf
+
+        @JsValue("self-start")
         val selfStart: AlignSelf
+
+        @JsValue("start")
         val start: AlignSelf
+
+        @JsValue("baseline")
         val baseline: AlignSelf
+
+        @JsValue("normal")
         val normal: AlignSelf
+
+        @JsValue("stretch")
         val stretch: AlignSelf
     }
 }

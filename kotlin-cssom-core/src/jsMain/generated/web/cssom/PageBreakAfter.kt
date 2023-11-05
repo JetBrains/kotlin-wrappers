@@ -1,21 +1,33 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package web.cssom
 
-// language=JavaScript
-@JsName("""(/*union*/{always: 'always', avoid: 'avoid', left: 'left', recto: 'recto', right: 'right', verso: 'verso'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface PageBreakAfter {
     companion object {
+        @JsValue("always")
         val always: PageBreakAfter
+
+        @JsValue("avoid")
         val avoid: PageBreakAfter
+
+        @JsValue("left")
         val left: PageBreakAfter
+
+        @JsValue("recto")
         val recto: PageBreakAfter
+
+        @JsValue("right")
         val right: PageBreakAfter
+
+        @JsValue("verso")
         val verso: PageBreakAfter
     }
 }

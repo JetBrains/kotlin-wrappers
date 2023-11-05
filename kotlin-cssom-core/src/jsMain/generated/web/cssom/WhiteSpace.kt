@@ -1,21 +1,33 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package web.cssom
 
-// language=JavaScript
-@JsName("""(/*union*/{breakSpaces: 'break-spaces', normal: 'normal', nowrap: 'nowrap', pre: 'pre', preLine: 'pre-line', preWrap: 'pre-wrap'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface WhiteSpace {
     companion object {
+        @JsValue("break-spaces")
         val breakSpaces: WhiteSpace
+
+        @JsValue("normal")
         val normal: WhiteSpace
+
+        @JsValue("nowrap")
         val nowrap: WhiteSpace
+
+        @JsValue("pre")
         val pre: WhiteSpace
+
+        @JsValue("pre-line")
         val preLine: WhiteSpace
+
+        @JsValue("pre-wrap")
         val preWrap: WhiteSpace
     }
 }

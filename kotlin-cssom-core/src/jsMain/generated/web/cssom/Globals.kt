@@ -1,20 +1,30 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package web.cssom
 
-// language=JavaScript
-@JsName("""(/*union*/{inherit: 'inherit', initial: 'initial', revert: 'revert', revertLayer: 'revert-layer', unset: 'unset'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface Globals : GlobalsType {
     companion object {
+        @JsValue("inherit")
         val inherit: Globals
+
+        @JsValue("initial")
         val initial: Globals
+
+        @JsValue("revert")
         val revert: Globals
+
+        @JsValue("revert-layer")
         val revertLayer: Globals
+
+        @JsValue("unset")
         val unset: Globals
     }
 }

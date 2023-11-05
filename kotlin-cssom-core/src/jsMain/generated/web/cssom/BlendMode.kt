@@ -1,31 +1,63 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package web.cssom
 
-// language=JavaScript
-@JsName("""(/*union*/{color: 'color', colorBurn: 'color-burn', colorDodge: 'color-dodge', darken: 'darken', difference: 'difference', exclusion: 'exclusion', hardLight: 'hard-light', hue: 'hue', lighten: 'lighten', luminosity: 'luminosity', multiply: 'multiply', normal: 'normal', overlay: 'overlay', saturation: 'saturation', screen: 'screen', softLight: 'soft-light'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface BlendMode : BlendModeProperty {
     companion object {
+        @JsValue("color")
         val color: BlendMode
+
+        @JsValue("color-burn")
         val colorBurn: BlendMode
+
+        @JsValue("color-dodge")
         val colorDodge: BlendMode
+
+        @JsValue("darken")
         val darken: BlendMode
+
+        @JsValue("difference")
         val difference: BlendMode
+
+        @JsValue("exclusion")
         val exclusion: BlendMode
+
+        @JsValue("hard-light")
         val hardLight: BlendMode
+
+        @JsValue("hue")
         val hue: BlendMode
+
+        @JsValue("lighten")
         val lighten: BlendMode
+
+        @JsValue("luminosity")
         val luminosity: BlendMode
+
+        @JsValue("multiply")
         val multiply: BlendMode
+
+        @JsValue("normal")
         val normal: BlendMode
+
+        @JsValue("overlay")
         val overlay: BlendMode
+
+        @JsValue("saturation")
         val saturation: BlendMode
+
+        @JsValue("screen")
         val screen: BlendMode
+
+        @JsValue("soft-light")
         val softLight: BlendMode
     }
 }

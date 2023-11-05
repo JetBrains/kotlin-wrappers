@@ -1,22 +1,36 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package web.cssom
 
-// language=JavaScript
-@JsName("""(/*union*/{circle: 'circle', dot: 'dot', doubleCircle: 'double-circle', filled: 'filled', open: 'open', sesame: 'sesame', triangle: 'triangle'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface TextEmphasis {
     companion object {
+        @JsValue("circle")
         val circle: TextEmphasis
+
+        @JsValue("dot")
         val dot: TextEmphasis
+
+        @JsValue("double-circle")
         val doubleCircle: TextEmphasis
+
+        @JsValue("filled")
         val filled: TextEmphasis
+
+        @JsValue("open")
         val open: TextEmphasis
+
+        @JsValue("sesame")
         val sesame: TextEmphasis
+
+        @JsValue("triangle")
         val triangle: TextEmphasis
     }
 }

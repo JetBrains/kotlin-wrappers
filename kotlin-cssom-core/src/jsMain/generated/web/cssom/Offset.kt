@@ -1,27 +1,51 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package web.cssom
 
-// language=JavaScript
-@JsName("""(/*union*/{bottom: 'bottom', center: 'center', left: 'left', right: 'right', top: 'top', borderBox: 'border-box', contentBox: 'content-box', paddingBox: 'padding-box', fillBox: 'fill-box', marginBox: 'margin-box', strokeBox: 'stroke-box', viewBox: 'view-box'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface Offset {
     companion object {
+        @JsValue("bottom")
         val bottom: Offset
+
+        @JsValue("center")
         val center: Offset
+
+        @JsValue("left")
         val left: Offset
+
+        @JsValue("right")
         val right: Offset
+
+        @JsValue("top")
         val top: Offset
+
+        @JsValue("border-box")
         val borderBox: Offset
+
+        @JsValue("content-box")
         val contentBox: Offset
+
+        @JsValue("padding-box")
         val paddingBox: Offset
+
+        @JsValue("fill-box")
         val fillBox: Offset
+
+        @JsValue("margin-box")
         val marginBox: Offset
+
+        @JsValue("stroke-box")
         val strokeBox: Offset
+
+        @JsValue("view-box")
         val viewBox: Offset
     }
 }

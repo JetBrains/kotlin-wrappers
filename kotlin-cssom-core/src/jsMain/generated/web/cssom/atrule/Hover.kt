@@ -1,17 +1,21 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package web.cssom.atrule
 
-// language=JavaScript
-@JsName("""(/*union*/{none: 'none', hover: 'hover'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface Hover {
     companion object {
+        @JsValue("none")
         val none: Hover
+
+        @JsValue("hover")
         val hover: Hover
     }
 }

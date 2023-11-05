@@ -1,27 +1,51 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package web.cssom
 
-// language=JavaScript
-@JsName("""(/*union*/{center: 'center', end: 'end', flexEnd: 'flex-end', flexStart: 'flex-start', selfEnd: 'self-end', selfStart: 'self-start', start: 'start', baseline: 'baseline', left: 'left', normal: 'normal', right: 'right', stretch: 'stretch'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface JustifySelf {
     companion object {
+        @JsValue("center")
         val center: JustifySelf
+
+        @JsValue("end")
         val end: JustifySelf
+
+        @JsValue("flex-end")
         val flexEnd: JustifySelf
+
+        @JsValue("flex-start")
         val flexStart: JustifySelf
+
+        @JsValue("self-end")
         val selfEnd: JustifySelf
+
+        @JsValue("self-start")
         val selfStart: JustifySelf
+
+        @JsValue("start")
         val start: JustifySelf
+
+        @JsValue("baseline")
         val baseline: JustifySelf
+
+        @JsValue("left")
         val left: JustifySelf
+
+        @JsValue("normal")
         val normal: JustifySelf
+
+        @JsValue("right")
         val right: JustifySelf
+
+        @JsValue("stretch")
         val stretch: JustifySelf
     }
 }

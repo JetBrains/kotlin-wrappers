@@ -1,23 +1,39 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package web.cssom
 
-// language=JavaScript
-@JsName("""(/*union*/{manipulation: 'manipulation', panDown: 'pan-down', panLeft: 'pan-left', panRight: 'pan-right', panUp: 'pan-up', panX: 'pan-x', panY: 'pan-y', pinchZoom: 'pinch-zoom'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface TouchAction {
     companion object {
+        @JsValue("manipulation")
         val manipulation: TouchAction
+
+        @JsValue("pan-down")
         val panDown: TouchAction
+
+        @JsValue("pan-left")
         val panLeft: TouchAction
+
+        @JsValue("pan-right")
         val panRight: TouchAction
+
+        @JsValue("pan-up")
         val panUp: TouchAction
+
+        @JsValue("pan-x")
         val panX: TouchAction
+
+        @JsValue("pan-y")
         val panY: TouchAction
+
+        @JsValue("pinch-zoom")
         val pinchZoom: TouchAction
     }
 }

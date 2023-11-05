@@ -1,442 +1,1290 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package web.cssom
 
-// language=JavaScript
-@JsName(
-    """(/*union*/{accentColor: 'accent-color', alignContent: 'align-content', alignItems: 'align-items', alignSelf: 'align-self', alignTracks: 'align-tracks', all: 'all', animation: 'animation', animationComposition: 'animation-composition', animationDelay: 'animation-delay', animationDirection: 'animation-direction', animationDuration: 'animation-duration', animationFillMode: 'animation-fill-mode', animationIterationCount: 'animation-iteration-count', animationName: 'animation-name', animationPlayState: 'animation-play-state', animationTimeline: 'animation-timeline', animationTimingFunction: 'animation-timing-function', appearance: 'appearance', aspectRatio: 'aspect-ratio', backdropFilter: 'backdrop-filter', backfaceVisibility: 'backface-visibility', background: 'background', backgroundAttachment: 'background-attachment', backgroundBlendMode: 'background-blend-mode', backgroundClip: 'background-clip', backgroundColor: 'background-color', backgroundImage: 'background-image', backgroundOrigin: 'background-origin', backgroundPosition: 'background-position', backgroundPositionX: 'background-position-x', backgroundPositionY: 'background-position-y', backgroundRepeat: 'background-repeat', backgroundSize: 'background-size', blockOverflow: 'block-overflow', blockSize: 'block-size', border: 'border', borderBlock: 'border-block', borderBlockColor: 'border-block-color', borderBlockEnd: 'border-block-end', borderBlockEndColor: 'border-block-end-color', borderBlockEndStyle: 'border-block-end-style', borderBlockEndWidth: 'border-block-end-width', borderBlockStart: 'border-block-start', borderBlockStartColor: 'border-block-start-color', borderBlockStartStyle: 'border-block-start-style', borderBlockStartWidth: 'border-block-start-width', borderBlockStyle: 'border-block-style', borderBlockWidth: 'border-block-width', borderBottom: 'border-bottom', borderBottomColor: 'border-bottom-color', borderBottomLeftRadius: 'border-bottom-left-radius', borderBottomRightRadius: 'border-bottom-right-radius', borderBottomStyle: 'border-bottom-style', borderBottomWidth: 'border-bottom-width', borderCollapse: 'border-collapse', borderColor: 'border-color', borderEndEndRadius: 'border-end-end-radius', borderEndStartRadius: 'border-end-start-radius', borderImage: 'border-image', borderImageOutset: 'border-image-outset', borderImageRepeat: 'border-image-repeat', borderImageSlice: 'border-image-slice', borderImageSource: 'border-image-source', borderImageWidth: 'border-image-width', borderInline: 'border-inline', borderInlineColor: 'border-inline-color', borderInlineEnd: 'border-inline-end', borderInlineEndColor: 'border-inline-end-color', borderInlineEndStyle: 'border-inline-end-style', borderInlineEndWidth: 'border-inline-end-width', borderInlineStart: 'border-inline-start', borderInlineStartColor: 'border-inline-start-color', borderInlineStartStyle: 'border-inline-start-style', borderInlineStartWidth: 'border-inline-start-width', borderInlineStyle: 'border-inline-style', borderInlineWidth: 'border-inline-width', borderLeft: 'border-left', borderLeftColor: 'border-left-color', borderLeftStyle: 'border-left-style', borderLeftWidth: 'border-left-width', borderRadius: 'border-radius', borderRight: 'border-right', borderRightColor: 'border-right-color', borderRightStyle: 'border-right-style', borderRightWidth: 'border-right-width', borderSpacing: 'border-spacing', borderStartEndRadius: 'border-start-end-radius', borderStartStartRadius: 'border-start-start-radius', borderStyle: 'border-style', borderTop: 'border-top', borderTopColor: 'border-top-color', borderTopLeftRadius: 'border-top-left-radius', borderTopRightRadius: 'border-top-right-radius', borderTopStyle: 'border-top-style', borderTopWidth: 'border-top-width', borderWidth: 'border-width', bottom: 'bottom', boxDecorationBreak: 'box-decoration-break', boxShadow: 'box-shadow', boxSizing: 'box-sizing', breakAfter: 'break-after', breakBefore: 'break-before', breakInside: 'break-inside', captionSide: 'caption-side', caret: 'caret', caretColor: 'caret-color', caretShape: 'caret-shape', clear: 'clear', clipPath: 'clip-path', color: 'color', colorAdjust: 'color-adjust', colorScheme: 'color-scheme', columnCount: 'column-count', columnFill: 'column-fill', columnGap: 'column-gap', columnRule: 'column-rule', columnRuleColor: 'column-rule-color', columnRuleStyle: 'column-rule-style', columnRuleWidth: 'column-rule-width', columnSpan: 'column-span', columnWidth: 'column-width', columns: 'columns', contain: 'contain', containIntrinsicBlockSize: 'contain-intrinsic-block-size', containIntrinsicHeight: 'contain-intrinsic-height', containIntrinsicInlineSize: 'contain-intrinsic-inline-size', containIntrinsicSize: 'contain-intrinsic-size', containIntrinsicWidth: 'contain-intrinsic-width', container: 'container', containerName: 'container-name', containerType: 'container-type', content: 'content', contentVisibility: 'content-visibility', counterIncrement: 'counter-increment', counterReset: 'counter-reset', counterSet: 'counter-set', cursor: 'cursor', direction: 'direction', display: 'display', emptyCells: 'empty-cells', filter: 'filter', flex: 'flex', flexBasis: 'flex-basis', flexDirection: 'flex-direction', flexFlow: 'flex-flow', flexGrow: 'flex-grow', flexShrink: 'flex-shrink', flexWrap: 'flex-wrap', float: 'float', font: 'font', fontFamily: 'font-family', fontFeatureSettings: 'font-feature-settings', fontKerning: 'font-kerning', fontLanguageOverride: 'font-language-override', fontOpticalSizing: 'font-optical-sizing', fontPalette: 'font-palette', fontSize: 'font-size', fontSizeAdjust: 'font-size-adjust', fontSmooth: 'font-smooth', fontStretch: 'font-stretch', fontStyle: 'font-style', fontSynthesis: 'font-synthesis', fontVariant: 'font-variant', fontVariantAlternates: 'font-variant-alternates', fontVariantCaps: 'font-variant-caps', fontVariantEastAsian: 'font-variant-east-asian', fontVariantEmoji: 'font-variant-emoji', fontVariantLigatures: 'font-variant-ligatures', fontVariantNumeric: 'font-variant-numeric', fontVariantPosition: 'font-variant-position', fontVariationSettings: 'font-variation-settings', fontWeight: 'font-weight', forcedColorAdjust: 'forced-color-adjust', gap: 'gap', grid: 'grid', gridArea: 'grid-area', gridAutoColumns: 'grid-auto-columns', gridAutoFlow: 'grid-auto-flow', gridAutoRows: 'grid-auto-rows', gridColumn: 'grid-column', gridColumnEnd: 'grid-column-end', gridColumnStart: 'grid-column-start', gridRow: 'grid-row', gridRowEnd: 'grid-row-end', gridRowStart: 'grid-row-start', gridTemplate: 'grid-template', gridTemplateAreas: 'grid-template-areas', gridTemplateColumns: 'grid-template-columns', gridTemplateRows: 'grid-template-rows', hangingPunctuation: 'hanging-punctuation', height: 'height', hyphenateCharacter: 'hyphenate-character', hyphenateLimitChars: 'hyphenate-limit-chars', hyphens: 'hyphens', imageOrientation: 'image-orientation', imageRendering: 'image-rendering', imageResolution: 'image-resolution', initialLetter: 'initial-letter', inlineSize: 'inline-size', inputSecurity: 'input-security', inset: 'inset', insetBlock: 'inset-block', insetBlockEnd: 'inset-block-end', insetBlockStart: 'inset-block-start', insetInline: 'inset-inline', insetInlineEnd: 'inset-inline-end', insetInlineStart: 'inset-inline-start', isolation: 'isolation', justifyContent: 'justify-content', justifyItems: 'justify-items', justifySelf: 'justify-self', justifyTracks: 'justify-tracks', left: 'left', letterSpacing: 'letter-spacing', lineBreak: 'line-break', lineClamp: 'line-clamp', lineHeight: 'line-height', lineHeightStep: 'line-height-step', listStyle: 'list-style', listStyleImage: 'list-style-image', listStylePosition: 'list-style-position', listStyleType: 'list-style-type', margin: 'margin', marginBlock: 'margin-block', marginBlockEnd: 'margin-block-end', marginBlockStart: 'margin-block-start', marginBottom: 'margin-bottom', marginInline: 'margin-inline', marginInlineEnd: 'margin-inline-end', marginInlineStart: 'margin-inline-start', marginLeft: 'margin-left', marginRight: 'margin-right', marginTop: 'margin-top', marginTrim: 'margin-trim', mask: 'mask', maskBorder: 'mask-border', maskBorderMode: 'mask-border-mode', maskBorderOutset: 'mask-border-outset', maskBorderRepeat: 'mask-border-repeat', maskBorderSlice: 'mask-border-slice', maskBorderSource: 'mask-border-source', maskBorderWidth: 'mask-border-width', maskClip: 'mask-clip', maskComposite: 'mask-composite', maskImage: 'mask-image', maskMode: 'mask-mode', maskOrigin: 'mask-origin', maskPosition: 'mask-position', maskRepeat: 'mask-repeat', maskSize: 'mask-size', maskType: 'mask-type', mathDepth: 'math-depth', mathShift: 'math-shift', mathStyle: 'math-style', maxBlockSize: 'max-block-size', maxHeight: 'max-height', maxInlineSize: 'max-inline-size', maxLines: 'max-lines', maxWidth: 'max-width', minBlockSize: 'min-block-size', minHeight: 'min-height', minInlineSize: 'min-inline-size', minWidth: 'min-width', mixBlendMode: 'mix-blend-mode', motion: 'motion', motionDistance: 'motion-distance', motionPath: 'motion-path', motionRotation: 'motion-rotation', objectFit: 'object-fit', objectPosition: 'object-position', offset: 'offset', offsetAnchor: 'offset-anchor', offsetDistance: 'offset-distance', offsetPath: 'offset-path', offsetPosition: 'offset-position', offsetRotate: 'offset-rotate', offsetRotation: 'offset-rotation', opacity: 'opacity', order: 'order', orphans: 'orphans', outline: 'outline', outlineColor: 'outline-color', outlineOffset: 'outline-offset', outlineStyle: 'outline-style', outlineWidth: 'outline-width', overflow: 'overflow', overflowAnchor: 'overflow-anchor', overflowBlock: 'overflow-block', overflowClipBox: 'overflow-clip-box', overflowClipMargin: 'overflow-clip-margin', overflowInline: 'overflow-inline', overflowWrap: 'overflow-wrap', overflowX: 'overflow-x', overflowY: 'overflow-y', overscrollBehavior: 'overscroll-behavior', overscrollBehaviorBlock: 'overscroll-behavior-block', overscrollBehaviorInline: 'overscroll-behavior-inline', overscrollBehaviorX: 'overscroll-behavior-x', overscrollBehaviorY: 'overscroll-behavior-y', padding: 'padding', paddingBlock: 'padding-block', paddingBlockEnd: 'padding-block-end', paddingBlockStart: 'padding-block-start', paddingBottom: 'padding-bottom', paddingInline: 'padding-inline', paddingInlineEnd: 'padding-inline-end', paddingInlineStart: 'padding-inline-start', paddingLeft: 'padding-left', paddingRight: 'padding-right', paddingTop: 'padding-top', page: 'page', pageBreakAfter: 'page-break-after', pageBreakBefore: 'page-break-before', pageBreakInside: 'page-break-inside', paintOrder: 'paint-order', perspective: 'perspective', perspectiveOrigin: 'perspective-origin', placeContent: 'place-content', placeItems: 'place-items', placeSelf: 'place-self', pointerEvents: 'pointer-events', position: 'position', printColorAdjust: 'print-color-adjust', quotes: 'quotes', resize: 'resize', right: 'right', rotate: 'rotate', rowGap: 'row-gap', rubyAlign: 'ruby-align', rubyMerge: 'ruby-merge', rubyPosition: 'ruby-position', scale: 'scale', scrollBehavior: 'scroll-behavior', scrollMargin: 'scroll-margin', scrollMarginBlock: 'scroll-margin-block', scrollMarginBlockEnd: 'scroll-margin-block-end', scrollMarginBlockStart: 'scroll-margin-block-start', scrollMarginBottom: 'scroll-margin-bottom', scrollMarginInline: 'scroll-margin-inline', scrollMarginInlineEnd: 'scroll-margin-inline-end', scrollMarginInlineStart: 'scroll-margin-inline-start', scrollMarginLeft: 'scroll-margin-left', scrollMarginRight: 'scroll-margin-right', scrollMarginTop: 'scroll-margin-top', scrollPadding: 'scroll-padding', scrollPaddingBlock: 'scroll-padding-block', scrollPaddingBlockEnd: 'scroll-padding-block-end', scrollPaddingBlockStart: 'scroll-padding-block-start', scrollPaddingBottom: 'scroll-padding-bottom', scrollPaddingInline: 'scroll-padding-inline', scrollPaddingInlineEnd: 'scroll-padding-inline-end', scrollPaddingInlineStart: 'scroll-padding-inline-start', scrollPaddingLeft: 'scroll-padding-left', scrollPaddingRight: 'scroll-padding-right', scrollPaddingTop: 'scroll-padding-top', scrollSnapAlign: 'scroll-snap-align', scrollSnapMargin: 'scroll-snap-margin', scrollSnapMarginBottom: 'scroll-snap-margin-bottom', scrollSnapMarginLeft: 'scroll-snap-margin-left', scrollSnapMarginRight: 'scroll-snap-margin-right', scrollSnapMarginTop: 'scroll-snap-margin-top', scrollSnapStop: 'scroll-snap-stop', scrollSnapType: 'scroll-snap-type', scrollTimeline: 'scroll-timeline', scrollTimelineAxis: 'scroll-timeline-axis', scrollTimelineName: 'scroll-timeline-name', scrollbarColor: 'scrollbar-color', scrollbarGutter: 'scrollbar-gutter', scrollbarWidth: 'scrollbar-width', shapeImageThreshold: 'shape-image-threshold', shapeMargin: 'shape-margin', shapeOutside: 'shape-outside', tabSize: 'tab-size', tableLayout: 'table-layout', textAlign: 'text-align', textAlignLast: 'text-align-last', textCombineUpright: 'text-combine-upright', textDecoration: 'text-decoration', textDecorationColor: 'text-decoration-color', textDecorationLine: 'text-decoration-line', textDecorationSkip: 'text-decoration-skip', textDecorationSkipInk: 'text-decoration-skip-ink', textDecorationStyle: 'text-decoration-style', textDecorationThickness: 'text-decoration-thickness', textEmphasis: 'text-emphasis', textEmphasisColor: 'text-emphasis-color', textEmphasisPosition: 'text-emphasis-position', textEmphasisStyle: 'text-emphasis-style', textIndent: 'text-indent', textJustify: 'text-justify', textOrientation: 'text-orientation', textOverflow: 'text-overflow', textRendering: 'text-rendering', textShadow: 'text-shadow', textSizeAdjust: 'text-size-adjust', textTransform: 'text-transform', textUnderlineOffset: 'text-underline-offset', textUnderlinePosition: 'text-underline-position', top: 'top', touchAction: 'touch-action', transform: 'transform', transformBox: 'transform-box', transformOrigin: 'transform-origin', transformStyle: 'transform-style', transition: 'transition', transitionDelay: 'transition-delay', transitionDuration: 'transition-duration', transitionProperty: 'transition-property', transitionTimingFunction: 'transition-timing-function', translate: 'translate', unicodeBidi: 'unicode-bidi', userSelect: 'user-select', verticalAlign: 'vertical-align', viewTransitionName: 'view-transition-name', visibility: 'visibility', whiteSpace: 'white-space', widows: 'widows', width: 'width', willChange: 'will-change', wordBreak: 'word-break', wordSpacing: 'word-spacing', wordWrap: 'word-wrap', writingMode: 'writing-mode', zIndex: 'z-index', zoom: 'zoom'}/*union*/)"""
-)
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface PropertyName : Ident {
     companion object {
+        @JsValue("accent-color")
         val accentColor: PropertyName
+
+        @JsValue("align-content")
         val alignContent: PropertyName
+
+        @JsValue("align-items")
         val alignItems: PropertyName
+
+        @JsValue("align-self")
         val alignSelf: PropertyName
+
+        @JsValue("align-tracks")
         val alignTracks: PropertyName
+
+        @JsValue("all")
         val all: PropertyName
+
+        @JsValue("animation")
         val animation: PropertyName
+
+        @JsValue("animation-composition")
         val animationComposition: PropertyName
+
+        @JsValue("animation-delay")
         val animationDelay: PropertyName
+
+        @JsValue("animation-direction")
         val animationDirection: PropertyName
+
+        @JsValue("animation-duration")
         val animationDuration: PropertyName
+
+        @JsValue("animation-fill-mode")
         val animationFillMode: PropertyName
+
+        @JsValue("animation-iteration-count")
         val animationIterationCount: PropertyName
+
+        @JsValue("animation-name")
         val animationName: PropertyName
+
+        @JsValue("animation-play-state")
         val animationPlayState: PropertyName
+
+        @JsValue("animation-timeline")
         val animationTimeline: PropertyName
+
+        @JsValue("animation-timing-function")
         val animationTimingFunction: PropertyName
+
+        @JsValue("appearance")
         val appearance: PropertyName
+
+        @JsValue("aspect-ratio")
         val aspectRatio: PropertyName
+
+        @JsValue("backdrop-filter")
         val backdropFilter: PropertyName
+
+        @JsValue("backface-visibility")
         val backfaceVisibility: PropertyName
+
+        @JsValue("background")
         val background: PropertyName
+
+        @JsValue("background-attachment")
         val backgroundAttachment: PropertyName
+
+        @JsValue("background-blend-mode")
         val backgroundBlendMode: PropertyName
+
+        @JsValue("background-clip")
         val backgroundClip: PropertyName
+
+        @JsValue("background-color")
         val backgroundColor: PropertyName
+
+        @JsValue("background-image")
         val backgroundImage: PropertyName
+
+        @JsValue("background-origin")
         val backgroundOrigin: PropertyName
+
+        @JsValue("background-position")
         val backgroundPosition: PropertyName
+
+        @JsValue("background-position-x")
         val backgroundPositionX: PropertyName
+
+        @JsValue("background-position-y")
         val backgroundPositionY: PropertyName
+
+        @JsValue("background-repeat")
         val backgroundRepeat: PropertyName
+
+        @JsValue("background-size")
         val backgroundSize: PropertyName
+
+        @JsValue("block-overflow")
         val blockOverflow: PropertyName
+
+        @JsValue("block-size")
         val blockSize: PropertyName
+
+        @JsValue("border")
         val border: PropertyName
+
+        @JsValue("border-block")
         val borderBlock: PropertyName
+
+        @JsValue("border-block-color")
         val borderBlockColor: PropertyName
+
+        @JsValue("border-block-end")
         val borderBlockEnd: PropertyName
+
+        @JsValue("border-block-end-color")
         val borderBlockEndColor: PropertyName
+
+        @JsValue("border-block-end-style")
         val borderBlockEndStyle: PropertyName
+
+        @JsValue("border-block-end-width")
         val borderBlockEndWidth: PropertyName
+
+        @JsValue("border-block-start")
         val borderBlockStart: PropertyName
+
+        @JsValue("border-block-start-color")
         val borderBlockStartColor: PropertyName
+
+        @JsValue("border-block-start-style")
         val borderBlockStartStyle: PropertyName
+
+        @JsValue("border-block-start-width")
         val borderBlockStartWidth: PropertyName
+
+        @JsValue("border-block-style")
         val borderBlockStyle: PropertyName
+
+        @JsValue("border-block-width")
         val borderBlockWidth: PropertyName
+
+        @JsValue("border-bottom")
         val borderBottom: PropertyName
+
+        @JsValue("border-bottom-color")
         val borderBottomColor: PropertyName
+
+        @JsValue("border-bottom-left-radius")
         val borderBottomLeftRadius: PropertyName
+
+        @JsValue("border-bottom-right-radius")
         val borderBottomRightRadius: PropertyName
+
+        @JsValue("border-bottom-style")
         val borderBottomStyle: PropertyName
+
+        @JsValue("border-bottom-width")
         val borderBottomWidth: PropertyName
+
+        @JsValue("border-collapse")
         val borderCollapse: PropertyName
+
+        @JsValue("border-color")
         val borderColor: PropertyName
+
+        @JsValue("border-end-end-radius")
         val borderEndEndRadius: PropertyName
+
+        @JsValue("border-end-start-radius")
         val borderEndStartRadius: PropertyName
+
+        @JsValue("border-image")
         val borderImage: PropertyName
+
+        @JsValue("border-image-outset")
         val borderImageOutset: PropertyName
+
+        @JsValue("border-image-repeat")
         val borderImageRepeat: PropertyName
+
+        @JsValue("border-image-slice")
         val borderImageSlice: PropertyName
+
+        @JsValue("border-image-source")
         val borderImageSource: PropertyName
+
+        @JsValue("border-image-width")
         val borderImageWidth: PropertyName
+
+        @JsValue("border-inline")
         val borderInline: PropertyName
+
+        @JsValue("border-inline-color")
         val borderInlineColor: PropertyName
+
+        @JsValue("border-inline-end")
         val borderInlineEnd: PropertyName
+
+        @JsValue("border-inline-end-color")
         val borderInlineEndColor: PropertyName
+
+        @JsValue("border-inline-end-style")
         val borderInlineEndStyle: PropertyName
+
+        @JsValue("border-inline-end-width")
         val borderInlineEndWidth: PropertyName
+
+        @JsValue("border-inline-start")
         val borderInlineStart: PropertyName
+
+        @JsValue("border-inline-start-color")
         val borderInlineStartColor: PropertyName
+
+        @JsValue("border-inline-start-style")
         val borderInlineStartStyle: PropertyName
+
+        @JsValue("border-inline-start-width")
         val borderInlineStartWidth: PropertyName
+
+        @JsValue("border-inline-style")
         val borderInlineStyle: PropertyName
+
+        @JsValue("border-inline-width")
         val borderInlineWidth: PropertyName
+
+        @JsValue("border-left")
         val borderLeft: PropertyName
+
+        @JsValue("border-left-color")
         val borderLeftColor: PropertyName
+
+        @JsValue("border-left-style")
         val borderLeftStyle: PropertyName
+
+        @JsValue("border-left-width")
         val borderLeftWidth: PropertyName
+
+        @JsValue("border-radius")
         val borderRadius: PropertyName
+
+        @JsValue("border-right")
         val borderRight: PropertyName
+
+        @JsValue("border-right-color")
         val borderRightColor: PropertyName
+
+        @JsValue("border-right-style")
         val borderRightStyle: PropertyName
+
+        @JsValue("border-right-width")
         val borderRightWidth: PropertyName
+
+        @JsValue("border-spacing")
         val borderSpacing: PropertyName
+
+        @JsValue("border-start-end-radius")
         val borderStartEndRadius: PropertyName
+
+        @JsValue("border-start-start-radius")
         val borderStartStartRadius: PropertyName
+
+        @JsValue("border-style")
         val borderStyle: PropertyName
+
+        @JsValue("border-top")
         val borderTop: PropertyName
+
+        @JsValue("border-top-color")
         val borderTopColor: PropertyName
+
+        @JsValue("border-top-left-radius")
         val borderTopLeftRadius: PropertyName
+
+        @JsValue("border-top-right-radius")
         val borderTopRightRadius: PropertyName
+
+        @JsValue("border-top-style")
         val borderTopStyle: PropertyName
+
+        @JsValue("border-top-width")
         val borderTopWidth: PropertyName
+
+        @JsValue("border-width")
         val borderWidth: PropertyName
+
+        @JsValue("bottom")
         val bottom: PropertyName
+
+        @JsValue("box-decoration-break")
         val boxDecorationBreak: PropertyName
+
+        @JsValue("box-shadow")
         val boxShadow: PropertyName
+
+        @JsValue("box-sizing")
         val boxSizing: PropertyName
+
+        @JsValue("break-after")
         val breakAfter: PropertyName
+
+        @JsValue("break-before")
         val breakBefore: PropertyName
+
+        @JsValue("break-inside")
         val breakInside: PropertyName
+
+        @JsValue("caption-side")
         val captionSide: PropertyName
+
+        @JsValue("caret")
         val caret: PropertyName
+
+        @JsValue("caret-color")
         val caretColor: PropertyName
+
+        @JsValue("caret-shape")
         val caretShape: PropertyName
+
+        @JsValue("clear")
         val clear: PropertyName
+
+        @JsValue("clip-path")
         val clipPath: PropertyName
+
+        @JsValue("color")
         val color: PropertyName
+
+        @JsValue("color-adjust")
         val colorAdjust: PropertyName
+
+        @JsValue("color-scheme")
         val colorScheme: PropertyName
+
+        @JsValue("column-count")
         val columnCount: PropertyName
+
+        @JsValue("column-fill")
         val columnFill: PropertyName
+
+        @JsValue("column-gap")
         val columnGap: PropertyName
+
+        @JsValue("column-rule")
         val columnRule: PropertyName
+
+        @JsValue("column-rule-color")
         val columnRuleColor: PropertyName
+
+        @JsValue("column-rule-style")
         val columnRuleStyle: PropertyName
+
+        @JsValue("column-rule-width")
         val columnRuleWidth: PropertyName
+
+        @JsValue("column-span")
         val columnSpan: PropertyName
+
+        @JsValue("column-width")
         val columnWidth: PropertyName
+
+        @JsValue("columns")
         val columns: PropertyName
+
+        @JsValue("contain")
         val contain: PropertyName
+
+        @JsValue("contain-intrinsic-block-size")
         val containIntrinsicBlockSize: PropertyName
+
+        @JsValue("contain-intrinsic-height")
         val containIntrinsicHeight: PropertyName
+
+        @JsValue("contain-intrinsic-inline-size")
         val containIntrinsicInlineSize: PropertyName
+
+        @JsValue("contain-intrinsic-size")
         val containIntrinsicSize: PropertyName
+
+        @JsValue("contain-intrinsic-width")
         val containIntrinsicWidth: PropertyName
+
+        @JsValue("container")
         val container: PropertyName
+
+        @JsValue("container-name")
         val containerName: PropertyName
+
+        @JsValue("container-type")
         val containerType: PropertyName
+
+        @JsValue("content")
         val content: PropertyName
+
+        @JsValue("content-visibility")
         val contentVisibility: PropertyName
+
+        @JsValue("counter-increment")
         val counterIncrement: PropertyName
+
+        @JsValue("counter-reset")
         val counterReset: PropertyName
+
+        @JsValue("counter-set")
         val counterSet: PropertyName
+
+        @JsValue("cursor")
         val cursor: PropertyName
+
+        @JsValue("direction")
         val direction: PropertyName
+
+        @JsValue("display")
         val display: PropertyName
+
+        @JsValue("empty-cells")
         val emptyCells: PropertyName
+
+        @JsValue("filter")
         val filter: PropertyName
+
+        @JsValue("flex")
         val flex: PropertyName
+
+        @JsValue("flex-basis")
         val flexBasis: PropertyName
+
+        @JsValue("flex-direction")
         val flexDirection: PropertyName
+
+        @JsValue("flex-flow")
         val flexFlow: PropertyName
+
+        @JsValue("flex-grow")
         val flexGrow: PropertyName
+
+        @JsValue("flex-shrink")
         val flexShrink: PropertyName
+
+        @JsValue("flex-wrap")
         val flexWrap: PropertyName
+
+        @JsValue("float")
         val float: PropertyName
+
+        @JsValue("font")
         val font: PropertyName
+
+        @JsValue("font-family")
         val fontFamily: PropertyName
+
+        @JsValue("font-feature-settings")
         val fontFeatureSettings: PropertyName
+
+        @JsValue("font-kerning")
         val fontKerning: PropertyName
+
+        @JsValue("font-language-override")
         val fontLanguageOverride: PropertyName
+
+        @JsValue("font-optical-sizing")
         val fontOpticalSizing: PropertyName
+
+        @JsValue("font-palette")
         val fontPalette: PropertyName
+
+        @JsValue("font-size")
         val fontSize: PropertyName
+
+        @JsValue("font-size-adjust")
         val fontSizeAdjust: PropertyName
+
+        @JsValue("font-smooth")
         val fontSmooth: PropertyName
+
+        @JsValue("font-stretch")
         val fontStretch: PropertyName
+
+        @JsValue("font-style")
         val fontStyle: PropertyName
+
+        @JsValue("font-synthesis")
         val fontSynthesis: PropertyName
+
+        @JsValue("font-variant")
         val fontVariant: PropertyName
+
+        @JsValue("font-variant-alternates")
         val fontVariantAlternates: PropertyName
+
+        @JsValue("font-variant-caps")
         val fontVariantCaps: PropertyName
+
+        @JsValue("font-variant-east-asian")
         val fontVariantEastAsian: PropertyName
+
+        @JsValue("font-variant-emoji")
         val fontVariantEmoji: PropertyName
+
+        @JsValue("font-variant-ligatures")
         val fontVariantLigatures: PropertyName
+
+        @JsValue("font-variant-numeric")
         val fontVariantNumeric: PropertyName
+
+        @JsValue("font-variant-position")
         val fontVariantPosition: PropertyName
+
+        @JsValue("font-variation-settings")
         val fontVariationSettings: PropertyName
+
+        @JsValue("font-weight")
         val fontWeight: PropertyName
+
+        @JsValue("forced-color-adjust")
         val forcedColorAdjust: PropertyName
+
+        @JsValue("gap")
         val gap: PropertyName
+
+        @JsValue("grid")
         val grid: PropertyName
+
+        @JsValue("grid-area")
         val gridArea: PropertyName
+
+        @JsValue("grid-auto-columns")
         val gridAutoColumns: PropertyName
+
+        @JsValue("grid-auto-flow")
         val gridAutoFlow: PropertyName
+
+        @JsValue("grid-auto-rows")
         val gridAutoRows: PropertyName
+
+        @JsValue("grid-column")
         val gridColumn: PropertyName
+
+        @JsValue("grid-column-end")
         val gridColumnEnd: PropertyName
+
+        @JsValue("grid-column-start")
         val gridColumnStart: PropertyName
+
+        @JsValue("grid-row")
         val gridRow: PropertyName
+
+        @JsValue("grid-row-end")
         val gridRowEnd: PropertyName
+
+        @JsValue("grid-row-start")
         val gridRowStart: PropertyName
+
+        @JsValue("grid-template")
         val gridTemplate: PropertyName
+
+        @JsValue("grid-template-areas")
         val gridTemplateAreas: PropertyName
+
+        @JsValue("grid-template-columns")
         val gridTemplateColumns: PropertyName
+
+        @JsValue("grid-template-rows")
         val gridTemplateRows: PropertyName
+
+        @JsValue("hanging-punctuation")
         val hangingPunctuation: PropertyName
+
+        @JsValue("height")
         val height: PropertyName
+
+        @JsValue("hyphenate-character")
         val hyphenateCharacter: PropertyName
+
+        @JsValue("hyphenate-limit-chars")
         val hyphenateLimitChars: PropertyName
+
+        @JsValue("hyphens")
         val hyphens: PropertyName
+
+        @JsValue("image-orientation")
         val imageOrientation: PropertyName
+
+        @JsValue("image-rendering")
         val imageRendering: PropertyName
+
+        @JsValue("image-resolution")
         val imageResolution: PropertyName
+
+        @JsValue("initial-letter")
         val initialLetter: PropertyName
+
+        @JsValue("inline-size")
         val inlineSize: PropertyName
+
+        @JsValue("input-security")
         val inputSecurity: PropertyName
+
+        @JsValue("inset")
         val inset: PropertyName
+
+        @JsValue("inset-block")
         val insetBlock: PropertyName
+
+        @JsValue("inset-block-end")
         val insetBlockEnd: PropertyName
+
+        @JsValue("inset-block-start")
         val insetBlockStart: PropertyName
+
+        @JsValue("inset-inline")
         val insetInline: PropertyName
+
+        @JsValue("inset-inline-end")
         val insetInlineEnd: PropertyName
+
+        @JsValue("inset-inline-start")
         val insetInlineStart: PropertyName
+
+        @JsValue("isolation")
         val isolation: PropertyName
+
+        @JsValue("justify-content")
         val justifyContent: PropertyName
+
+        @JsValue("justify-items")
         val justifyItems: PropertyName
+
+        @JsValue("justify-self")
         val justifySelf: PropertyName
+
+        @JsValue("justify-tracks")
         val justifyTracks: PropertyName
+
+        @JsValue("left")
         val left: PropertyName
+
+        @JsValue("letter-spacing")
         val letterSpacing: PropertyName
+
+        @JsValue("line-break")
         val lineBreak: PropertyName
+
+        @JsValue("line-clamp")
         val lineClamp: PropertyName
+
+        @JsValue("line-height")
         val lineHeight: PropertyName
+
+        @JsValue("line-height-step")
         val lineHeightStep: PropertyName
+
+        @JsValue("list-style")
         val listStyle: PropertyName
+
+        @JsValue("list-style-image")
         val listStyleImage: PropertyName
+
+        @JsValue("list-style-position")
         val listStylePosition: PropertyName
+
+        @JsValue("list-style-type")
         val listStyleType: PropertyName
+
+        @JsValue("margin")
         val margin: PropertyName
+
+        @JsValue("margin-block")
         val marginBlock: PropertyName
+
+        @JsValue("margin-block-end")
         val marginBlockEnd: PropertyName
+
+        @JsValue("margin-block-start")
         val marginBlockStart: PropertyName
+
+        @JsValue("margin-bottom")
         val marginBottom: PropertyName
+
+        @JsValue("margin-inline")
         val marginInline: PropertyName
+
+        @JsValue("margin-inline-end")
         val marginInlineEnd: PropertyName
+
+        @JsValue("margin-inline-start")
         val marginInlineStart: PropertyName
+
+        @JsValue("margin-left")
         val marginLeft: PropertyName
+
+        @JsValue("margin-right")
         val marginRight: PropertyName
+
+        @JsValue("margin-top")
         val marginTop: PropertyName
+
+        @JsValue("margin-trim")
         val marginTrim: PropertyName
+
+        @JsValue("mask")
         val mask: PropertyName
+
+        @JsValue("mask-border")
         val maskBorder: PropertyName
+
+        @JsValue("mask-border-mode")
         val maskBorderMode: PropertyName
+
+        @JsValue("mask-border-outset")
         val maskBorderOutset: PropertyName
+
+        @JsValue("mask-border-repeat")
         val maskBorderRepeat: PropertyName
+
+        @JsValue("mask-border-slice")
         val maskBorderSlice: PropertyName
+
+        @JsValue("mask-border-source")
         val maskBorderSource: PropertyName
+
+        @JsValue("mask-border-width")
         val maskBorderWidth: PropertyName
+
+        @JsValue("mask-clip")
         val maskClip: PropertyName
+
+        @JsValue("mask-composite")
         val maskComposite: PropertyName
+
+        @JsValue("mask-image")
         val maskImage: PropertyName
+
+        @JsValue("mask-mode")
         val maskMode: PropertyName
+
+        @JsValue("mask-origin")
         val maskOrigin: PropertyName
+
+        @JsValue("mask-position")
         val maskPosition: PropertyName
+
+        @JsValue("mask-repeat")
         val maskRepeat: PropertyName
+
+        @JsValue("mask-size")
         val maskSize: PropertyName
+
+        @JsValue("mask-type")
         val maskType: PropertyName
+
+        @JsValue("math-depth")
         val mathDepth: PropertyName
+
+        @JsValue("math-shift")
         val mathShift: PropertyName
+
+        @JsValue("math-style")
         val mathStyle: PropertyName
+
+        @JsValue("max-block-size")
         val maxBlockSize: PropertyName
+
+        @JsValue("max-height")
         val maxHeight: PropertyName
+
+        @JsValue("max-inline-size")
         val maxInlineSize: PropertyName
+
+        @JsValue("max-lines")
         val maxLines: PropertyName
+
+        @JsValue("max-width")
         val maxWidth: PropertyName
+
+        @JsValue("min-block-size")
         val minBlockSize: PropertyName
+
+        @JsValue("min-height")
         val minHeight: PropertyName
+
+        @JsValue("min-inline-size")
         val minInlineSize: PropertyName
+
+        @JsValue("min-width")
         val minWidth: PropertyName
+
+        @JsValue("mix-blend-mode")
         val mixBlendMode: PropertyName
+
+        @JsValue("motion")
         val motion: PropertyName
+
+        @JsValue("motion-distance")
         val motionDistance: PropertyName
+
+        @JsValue("motion-path")
         val motionPath: PropertyName
+
+        @JsValue("motion-rotation")
         val motionRotation: PropertyName
+
+        @JsValue("object-fit")
         val objectFit: PropertyName
+
+        @JsValue("object-position")
         val objectPosition: PropertyName
+
+        @JsValue("offset")
         val offset: PropertyName
+
+        @JsValue("offset-anchor")
         val offsetAnchor: PropertyName
+
+        @JsValue("offset-distance")
         val offsetDistance: PropertyName
+
+        @JsValue("offset-path")
         val offsetPath: PropertyName
+
+        @JsValue("offset-position")
         val offsetPosition: PropertyName
+
+        @JsValue("offset-rotate")
         val offsetRotate: PropertyName
+
+        @JsValue("offset-rotation")
         val offsetRotation: PropertyName
+
+        @JsValue("opacity")
         val opacity: PropertyName
+
+        @JsValue("order")
         val order: PropertyName
+
+        @JsValue("orphans")
         val orphans: PropertyName
+
+        @JsValue("outline")
         val outline: PropertyName
+
+        @JsValue("outline-color")
         val outlineColor: PropertyName
+
+        @JsValue("outline-offset")
         val outlineOffset: PropertyName
+
+        @JsValue("outline-style")
         val outlineStyle: PropertyName
+
+        @JsValue("outline-width")
         val outlineWidth: PropertyName
+
+        @JsValue("overflow")
         val overflow: PropertyName
+
+        @JsValue("overflow-anchor")
         val overflowAnchor: PropertyName
+
+        @JsValue("overflow-block")
         val overflowBlock: PropertyName
+
+        @JsValue("overflow-clip-box")
         val overflowClipBox: PropertyName
+
+        @JsValue("overflow-clip-margin")
         val overflowClipMargin: PropertyName
+
+        @JsValue("overflow-inline")
         val overflowInline: PropertyName
+
+        @JsValue("overflow-wrap")
         val overflowWrap: PropertyName
+
+        @JsValue("overflow-x")
         val overflowX: PropertyName
+
+        @JsValue("overflow-y")
         val overflowY: PropertyName
+
+        @JsValue("overscroll-behavior")
         val overscrollBehavior: PropertyName
+
+        @JsValue("overscroll-behavior-block")
         val overscrollBehaviorBlock: PropertyName
+
+        @JsValue("overscroll-behavior-inline")
         val overscrollBehaviorInline: PropertyName
+
+        @JsValue("overscroll-behavior-x")
         val overscrollBehaviorX: PropertyName
+
+        @JsValue("overscroll-behavior-y")
         val overscrollBehaviorY: PropertyName
+
+        @JsValue("padding")
         val padding: PropertyName
+
+        @JsValue("padding-block")
         val paddingBlock: PropertyName
+
+        @JsValue("padding-block-end")
         val paddingBlockEnd: PropertyName
+
+        @JsValue("padding-block-start")
         val paddingBlockStart: PropertyName
+
+        @JsValue("padding-bottom")
         val paddingBottom: PropertyName
+
+        @JsValue("padding-inline")
         val paddingInline: PropertyName
+
+        @JsValue("padding-inline-end")
         val paddingInlineEnd: PropertyName
+
+        @JsValue("padding-inline-start")
         val paddingInlineStart: PropertyName
+
+        @JsValue("padding-left")
         val paddingLeft: PropertyName
+
+        @JsValue("padding-right")
         val paddingRight: PropertyName
+
+        @JsValue("padding-top")
         val paddingTop: PropertyName
+
+        @JsValue("page")
         val page: PropertyName
+
+        @JsValue("page-break-after")
         val pageBreakAfter: PropertyName
+
+        @JsValue("page-break-before")
         val pageBreakBefore: PropertyName
+
+        @JsValue("page-break-inside")
         val pageBreakInside: PropertyName
+
+        @JsValue("paint-order")
         val paintOrder: PropertyName
+
+        @JsValue("perspective")
         val perspective: PropertyName
+
+        @JsValue("perspective-origin")
         val perspectiveOrigin: PropertyName
+
+        @JsValue("place-content")
         val placeContent: PropertyName
+
+        @JsValue("place-items")
         val placeItems: PropertyName
+
+        @JsValue("place-self")
         val placeSelf: PropertyName
+
+        @JsValue("pointer-events")
         val pointerEvents: PropertyName
+
+        @JsValue("position")
         val position: PropertyName
+
+        @JsValue("print-color-adjust")
         val printColorAdjust: PropertyName
+
+        @JsValue("quotes")
         val quotes: PropertyName
+
+        @JsValue("resize")
         val resize: PropertyName
+
+        @JsValue("right")
         val right: PropertyName
+
+        @JsValue("rotate")
         val rotate: PropertyName
+
+        @JsValue("row-gap")
         val rowGap: PropertyName
+
+        @JsValue("ruby-align")
         val rubyAlign: PropertyName
+
+        @JsValue("ruby-merge")
         val rubyMerge: PropertyName
+
+        @JsValue("ruby-position")
         val rubyPosition: PropertyName
+
+        @JsValue("scale")
         val scale: PropertyName
+
+        @JsValue("scroll-behavior")
         val scrollBehavior: PropertyName
+
+        @JsValue("scroll-margin")
         val scrollMargin: PropertyName
+
+        @JsValue("scroll-margin-block")
         val scrollMarginBlock: PropertyName
+
+        @JsValue("scroll-margin-block-end")
         val scrollMarginBlockEnd: PropertyName
+
+        @JsValue("scroll-margin-block-start")
         val scrollMarginBlockStart: PropertyName
+
+        @JsValue("scroll-margin-bottom")
         val scrollMarginBottom: PropertyName
+
+        @JsValue("scroll-margin-inline")
         val scrollMarginInline: PropertyName
+
+        @JsValue("scroll-margin-inline-end")
         val scrollMarginInlineEnd: PropertyName
+
+        @JsValue("scroll-margin-inline-start")
         val scrollMarginInlineStart: PropertyName
+
+        @JsValue("scroll-margin-left")
         val scrollMarginLeft: PropertyName
+
+        @JsValue("scroll-margin-right")
         val scrollMarginRight: PropertyName
+
+        @JsValue("scroll-margin-top")
         val scrollMarginTop: PropertyName
+
+        @JsValue("scroll-padding")
         val scrollPadding: PropertyName
+
+        @JsValue("scroll-padding-block")
         val scrollPaddingBlock: PropertyName
+
+        @JsValue("scroll-padding-block-end")
         val scrollPaddingBlockEnd: PropertyName
+
+        @JsValue("scroll-padding-block-start")
         val scrollPaddingBlockStart: PropertyName
+
+        @JsValue("scroll-padding-bottom")
         val scrollPaddingBottom: PropertyName
+
+        @JsValue("scroll-padding-inline")
         val scrollPaddingInline: PropertyName
+
+        @JsValue("scroll-padding-inline-end")
         val scrollPaddingInlineEnd: PropertyName
+
+        @JsValue("scroll-padding-inline-start")
         val scrollPaddingInlineStart: PropertyName
+
+        @JsValue("scroll-padding-left")
         val scrollPaddingLeft: PropertyName
+
+        @JsValue("scroll-padding-right")
         val scrollPaddingRight: PropertyName
+
+        @JsValue("scroll-padding-top")
         val scrollPaddingTop: PropertyName
+
+        @JsValue("scroll-snap-align")
         val scrollSnapAlign: PropertyName
+
+        @JsValue("scroll-snap-margin")
         val scrollSnapMargin: PropertyName
+
+        @JsValue("scroll-snap-margin-bottom")
         val scrollSnapMarginBottom: PropertyName
+
+        @JsValue("scroll-snap-margin-left")
         val scrollSnapMarginLeft: PropertyName
+
+        @JsValue("scroll-snap-margin-right")
         val scrollSnapMarginRight: PropertyName
+
+        @JsValue("scroll-snap-margin-top")
         val scrollSnapMarginTop: PropertyName
+
+        @JsValue("scroll-snap-stop")
         val scrollSnapStop: PropertyName
+
+        @JsValue("scroll-snap-type")
         val scrollSnapType: PropertyName
+
+        @JsValue("scroll-timeline")
         val scrollTimeline: PropertyName
+
+        @JsValue("scroll-timeline-axis")
         val scrollTimelineAxis: PropertyName
+
+        @JsValue("scroll-timeline-name")
         val scrollTimelineName: PropertyName
+
+        @JsValue("scrollbar-color")
         val scrollbarColor: PropertyName
+
+        @JsValue("scrollbar-gutter")
         val scrollbarGutter: PropertyName
+
+        @JsValue("scrollbar-width")
         val scrollbarWidth: PropertyName
+
+        @JsValue("shape-image-threshold")
         val shapeImageThreshold: PropertyName
+
+        @JsValue("shape-margin")
         val shapeMargin: PropertyName
+
+        @JsValue("shape-outside")
         val shapeOutside: PropertyName
+
+        @JsValue("tab-size")
         val tabSize: PropertyName
+
+        @JsValue("table-layout")
         val tableLayout: PropertyName
+
+        @JsValue("text-align")
         val textAlign: PropertyName
+
+        @JsValue("text-align-last")
         val textAlignLast: PropertyName
+
+        @JsValue("text-combine-upright")
         val textCombineUpright: PropertyName
+
+        @JsValue("text-decoration")
         val textDecoration: PropertyName
+
+        @JsValue("text-decoration-color")
         val textDecorationColor: PropertyName
+
+        @JsValue("text-decoration-line")
         val textDecorationLine: PropertyName
+
+        @JsValue("text-decoration-skip")
         val textDecorationSkip: PropertyName
+
+        @JsValue("text-decoration-skip-ink")
         val textDecorationSkipInk: PropertyName
+
+        @JsValue("text-decoration-style")
         val textDecorationStyle: PropertyName
+
+        @JsValue("text-decoration-thickness")
         val textDecorationThickness: PropertyName
+
+        @JsValue("text-emphasis")
         val textEmphasis: PropertyName
+
+        @JsValue("text-emphasis-color")
         val textEmphasisColor: PropertyName
+
+        @JsValue("text-emphasis-position")
         val textEmphasisPosition: PropertyName
+
+        @JsValue("text-emphasis-style")
         val textEmphasisStyle: PropertyName
+
+        @JsValue("text-indent")
         val textIndent: PropertyName
+
+        @JsValue("text-justify")
         val textJustify: PropertyName
+
+        @JsValue("text-orientation")
         val textOrientation: PropertyName
+
+        @JsValue("text-overflow")
         val textOverflow: PropertyName
+
+        @JsValue("text-rendering")
         val textRendering: PropertyName
+
+        @JsValue("text-shadow")
         val textShadow: PropertyName
+
+        @JsValue("text-size-adjust")
         val textSizeAdjust: PropertyName
+
+        @JsValue("text-transform")
         val textTransform: PropertyName
+
+        @JsValue("text-underline-offset")
         val textUnderlineOffset: PropertyName
+
+        @JsValue("text-underline-position")
         val textUnderlinePosition: PropertyName
+
+        @JsValue("top")
         val top: PropertyName
+
+        @JsValue("touch-action")
         val touchAction: PropertyName
+
+        @JsValue("transform")
         val transform: PropertyName
+
+        @JsValue("transform-box")
         val transformBox: PropertyName
+
+        @JsValue("transform-origin")
         val transformOrigin: PropertyName
+
+        @JsValue("transform-style")
         val transformStyle: PropertyName
+
+        @JsValue("transition")
         val transition: PropertyName
+
+        @JsValue("transition-delay")
         val transitionDelay: PropertyName
+
+        @JsValue("transition-duration")
         val transitionDuration: PropertyName
+
+        @JsValue("transition-property")
         val transitionProperty: PropertyName
+
+        @JsValue("transition-timing-function")
         val transitionTimingFunction: PropertyName
+
+        @JsValue("translate")
         val translate: PropertyName
+
+        @JsValue("unicode-bidi")
         val unicodeBidi: PropertyName
+
+        @JsValue("user-select")
         val userSelect: PropertyName
+
+        @JsValue("vertical-align")
         val verticalAlign: PropertyName
+
+        @JsValue("view-transition-name")
         val viewTransitionName: PropertyName
+
+        @JsValue("visibility")
         val visibility: PropertyName
+
+        @JsValue("white-space")
         val whiteSpace: PropertyName
+
+        @JsValue("widows")
         val widows: PropertyName
+
+        @JsValue("width")
         val width: PropertyName
+
+        @JsValue("will-change")
         val willChange: PropertyName
+
+        @JsValue("word-break")
         val wordBreak: PropertyName
+
+        @JsValue("word-spacing")
         val wordSpacing: PropertyName
+
+        @JsValue("word-wrap")
         val wordWrap: PropertyName
+
+        @JsValue("writing-mode")
         val writingMode: PropertyName
+
+        @JsValue("z-index")
         val zIndex: PropertyName
+
+        @JsValue("zoom")
         val zoom: PropertyName
     }
 }

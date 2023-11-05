@@ -1,31 +1,63 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package web.cssom
 
-// language=JavaScript
-@JsName("""(/*union*/{charset: '@charset', counterStyle: '@counter-style', document: '@document', fontFace: '@font-face', fontFeatureValues: '@font-feature-values', fontPaletteValues: '@font-palette-values', import: '@import', keyframes: '@keyframes', layer: '@layer', media: '@media', namespace: '@namespace', page: '@page', property: '@property', scrollTimeline: '@scroll-timeline', supports: '@supports', viewport: '@viewport'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface AtRules {
     companion object {
+        @JsValue("@charset")
         val charset: AtRules
+
+        @JsValue("@counter-style")
         val counterStyle: AtRules
+
+        @JsValue("@document")
         val document: AtRules
+
+        @JsValue("@font-face")
         val fontFace: AtRules
+
+        @JsValue("@font-feature-values")
         val fontFeatureValues: AtRules
+
+        @JsValue("@font-palette-values")
         val fontPaletteValues: AtRules
+
+        @JsValue("@import")
         val import: AtRules
+
+        @JsValue("@keyframes")
         val keyframes: AtRules
+
+        @JsValue("@layer")
         val layer: AtRules
+
+        @JsValue("@media")
         val media: AtRules
+
+        @JsValue("@namespace")
         val namespace: AtRules
+
+        @JsValue("@page")
         val page: AtRules
+
+        @JsValue("@property")
         val property: AtRules
+
+        @JsValue("@scroll-timeline")
         val scrollTimeline: AtRules
+
+        @JsValue("@supports")
         val supports: AtRules
+
+        @JsValue("@viewport")
         val viewport: AtRules
     }
 }

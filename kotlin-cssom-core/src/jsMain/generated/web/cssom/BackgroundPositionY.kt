@@ -1,20 +1,30 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package web.cssom
 
-// language=JavaScript
-@JsName("""(/*union*/{bottom: 'bottom', center: 'center', top: 'top', yEnd: 'y-end', yStart: 'y-start'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface BackgroundPositionY {
     companion object {
+        @JsValue("bottom")
         val bottom: BackgroundPositionY
+
+        @JsValue("center")
         val center: BackgroundPositionY
+
+        @JsValue("top")
         val top: BackgroundPositionY
+
+        @JsValue("y-end")
         val yEnd: BackgroundPositionY
+
+        @JsValue("y-start")
         val yStart: BackgroundPositionY
     }
 }

@@ -1,18 +1,24 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package web.cssom
 
-// language=JavaScript
-@JsName("""(/*union*/{normal: 'normal', sub: 'sub', super: 'super'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface FontVariantPosition {
     companion object {
+        @JsValue("normal")
         val normal: FontVariantPosition
+
+        @JsValue("sub")
         val sub: FontVariantPosition
+
+        @JsValue("super")
         val `super`: FontVariantPosition
     }
 }

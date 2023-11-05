@@ -1,19 +1,21 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
     "NOTHING_TO_INLINE",
 )
 
 package web.cssom
 
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
 sealed external interface BoxShadow
 
-// language=JavaScript
-@JsName("""(/*union*/{inset: 'inset'}/*union*/)""")
+@JsUnion
 sealed external interface BoxShadowInset {
     companion object {
+        @JsValue("inset")
         val inset: BoxShadowInset
     }
 }

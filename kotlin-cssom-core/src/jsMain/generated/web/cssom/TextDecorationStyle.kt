@@ -1,20 +1,30 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package web.cssom
 
-// language=JavaScript
-@JsName("""(/*union*/{dashed: 'dashed', dotted: 'dotted', double: 'double', solid: 'solid', wavy: 'wavy'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface TextDecorationStyle {
     companion object {
+        @JsValue("dashed")
         val dashed: TextDecorationStyle
+
+        @JsValue("dotted")
         val dotted: TextDecorationStyle
+
+        @JsValue("double")
         val double: TextDecorationStyle
+
+        @JsValue("solid")
         val solid: TextDecorationStyle
+
+        @JsValue("wavy")
         val wavy: TextDecorationStyle
     }
 }

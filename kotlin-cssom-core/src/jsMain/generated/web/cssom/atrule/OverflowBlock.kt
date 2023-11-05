@@ -1,19 +1,27 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package web.cssom.atrule
 
-// language=JavaScript
-@JsName("""(/*union*/{none: 'none', scroll: 'scroll', optionalPaged: 'optional-paged', paged: 'paged'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface OverflowBlock {
     companion object {
+        @JsValue("none")
         val none: OverflowBlock
+
+        @JsValue("scroll")
         val scroll: OverflowBlock
+
+        @JsValue("optional-paged")
         val optionalPaged: OverflowBlock
+
+        @JsValue("paged")
         val paged: OverflowBlock
     }
 }

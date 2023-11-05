@@ -1,21 +1,33 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package web.cssom
 
-// language=JavaScript
-@JsName("""(/*union*/{closeQuote: 'close-quote', noCloseQuote: 'no-close-quote', noOpenQuote: 'no-open-quote', openQuote: 'open-quote', contents: 'contents', normal: 'normal'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface Content {
     companion object {
+        @JsValue("close-quote")
         val closeQuote: Content
+
+        @JsValue("no-close-quote")
         val noCloseQuote: Content
+
+        @JsValue("no-open-quote")
         val noOpenQuote: Content
+
+        @JsValue("open-quote")
         val openQuote: Content
+
+        @JsValue("contents")
         val contents: Content
+
+        @JsValue("normal")
         val normal: Content
     }
 }

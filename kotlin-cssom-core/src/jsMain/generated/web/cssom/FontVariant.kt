@@ -1,50 +1,114 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package web.cssom
 
-// language=JavaScript
-@JsName(
-    """(/*union*/{jis04: 'jis04', jis78: 'jis78', jis83: 'jis83', jis90: 'jis90', simplified: 'simplified', traditional: 'traditional', allPetiteCaps: 'all-petite-caps', allSmallCaps: 'all-small-caps', commonLigatures: 'common-ligatures', contextual: 'contextual', diagonalFractions: 'diagonal-fractions', discretionaryLigatures: 'discretionary-ligatures', fullWidth: 'full-width', historicalForms: 'historical-forms', historicalLigatures: 'historical-ligatures', liningNums: 'lining-nums', noCommonLigatures: 'no-common-ligatures', noContextual: 'no-contextual', noDiscretionaryLigatures: 'no-discretionary-ligatures', noHistoricalLigatures: 'no-historical-ligatures', normal: 'normal', oldstyleNums: 'oldstyle-nums', ordinal: 'ordinal', petiteCaps: 'petite-caps', proportionalNums: 'proportional-nums', proportionalWidth: 'proportional-width', ruby: 'ruby', slashedZero: 'slashed-zero', smallCaps: 'small-caps', stackedFractions: 'stacked-fractions', tabularNums: 'tabular-nums', titlingCaps: 'titling-caps', unicase: 'unicase'}/*union*/)"""
-)
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface FontVariant {
     companion object {
+        @JsValue("jis04")
         val jis04: FontVariant
+
+        @JsValue("jis78")
         val jis78: FontVariant
+
+        @JsValue("jis83")
         val jis83: FontVariant
+
+        @JsValue("jis90")
         val jis90: FontVariant
+
+        @JsValue("simplified")
         val simplified: FontVariant
+
+        @JsValue("traditional")
         val traditional: FontVariant
+
+        @JsValue("all-petite-caps")
         val allPetiteCaps: FontVariant
+
+        @JsValue("all-small-caps")
         val allSmallCaps: FontVariant
+
+        @JsValue("common-ligatures")
         val commonLigatures: FontVariant
+
+        @JsValue("contextual")
         val contextual: FontVariant
+
+        @JsValue("diagonal-fractions")
         val diagonalFractions: FontVariant
+
+        @JsValue("discretionary-ligatures")
         val discretionaryLigatures: FontVariant
+
+        @JsValue("full-width")
         val fullWidth: FontVariant
+
+        @JsValue("historical-forms")
         val historicalForms: FontVariant
+
+        @JsValue("historical-ligatures")
         val historicalLigatures: FontVariant
+
+        @JsValue("lining-nums")
         val liningNums: FontVariant
+
+        @JsValue("no-common-ligatures")
         val noCommonLigatures: FontVariant
+
+        @JsValue("no-contextual")
         val noContextual: FontVariant
+
+        @JsValue("no-discretionary-ligatures")
         val noDiscretionaryLigatures: FontVariant
+
+        @JsValue("no-historical-ligatures")
         val noHistoricalLigatures: FontVariant
+
+        @JsValue("normal")
         val normal: FontVariant
+
+        @JsValue("oldstyle-nums")
         val oldstyleNums: FontVariant
+
+        @JsValue("ordinal")
         val ordinal: FontVariant
+
+        @JsValue("petite-caps")
         val petiteCaps: FontVariant
+
+        @JsValue("proportional-nums")
         val proportionalNums: FontVariant
+
+        @JsValue("proportional-width")
         val proportionalWidth: FontVariant
+
+        @JsValue("ruby")
         val ruby: FontVariant
+
+        @JsValue("slashed-zero")
         val slashedZero: FontVariant
+
+        @JsValue("small-caps")
         val smallCaps: FontVariant
+
+        @JsValue("stacked-fractions")
         val stackedFractions: FontVariant
+
+        @JsValue("tabular-nums")
         val tabularNums: FontVariant
+
+        @JsValue("titling-caps")
         val titlingCaps: FontVariant
+
+        @JsValue("unicase")
         val unicase: FontVariant
     }
 }

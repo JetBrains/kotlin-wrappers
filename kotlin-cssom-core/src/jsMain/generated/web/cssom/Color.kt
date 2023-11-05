@@ -1,11 +1,12 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "WRONG_EXTERNAL_DECLARATION",
 )
 
 package web.cssom
+
+import seskar.js.JsValue
 
 /*
  * `Color` declared as class for better multiplatform support
@@ -15,11 +16,11 @@ package web.cssom
  * [K2 issue](https://youtrack.jetbrains.com/issue/KT-60856)
  */
 
-// language=JavaScript
-@JsName("""(/*union*/{currentcolor: 'currentcolor'}/*union*/)""")
+@JsName("null")
 external class Color
 private constructor() : ColorType {
     companion object {
+        @JsValue("currentcolor")
         val currentcolor: Color
     }
 }

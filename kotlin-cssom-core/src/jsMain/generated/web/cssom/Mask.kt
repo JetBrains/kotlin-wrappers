@@ -1,41 +1,93 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package web.cssom
 
-// language=JavaScript
-@JsName("""(/*union*/{bottom: 'bottom', center: 'center', left: 'left', right: 'right', top: 'top', noRepeat: 'no-repeat', repeat: 'repeat', repeatX: 'repeat-x', repeatY: 'repeat-y', round: 'round', space: 'space', borderBox: 'border-box', contentBox: 'content-box', paddingBox: 'padding-box', fillBox: 'fill-box', marginBox: 'margin-box', strokeBox: 'stroke-box', viewBox: 'view-box', add: 'add', exclude: 'exclude', intersect: 'intersect', subtract: 'subtract', alpha: 'alpha', luminance: 'luminance', matchSource: 'match-source', noClip: 'no-clip'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface Mask {
     companion object {
+        @JsValue("bottom")
         val bottom: Mask
+
+        @JsValue("center")
         val center: Mask
+
+        @JsValue("left")
         val left: Mask
+
+        @JsValue("right")
         val right: Mask
+
+        @JsValue("top")
         val top: Mask
+
+        @JsValue("no-repeat")
         val noRepeat: Mask
+
+        @JsValue("repeat")
         val repeat: Mask
+
+        @JsValue("repeat-x")
         val repeatX: Mask
+
+        @JsValue("repeat-y")
         val repeatY: Mask
+
+        @JsValue("round")
         val round: Mask
+
+        @JsValue("space")
         val space: Mask
+
+        @JsValue("border-box")
         val borderBox: Mask
+
+        @JsValue("content-box")
         val contentBox: Mask
+
+        @JsValue("padding-box")
         val paddingBox: Mask
+
+        @JsValue("fill-box")
         val fillBox: Mask
+
+        @JsValue("margin-box")
         val marginBox: Mask
+
+        @JsValue("stroke-box")
         val strokeBox: Mask
+
+        @JsValue("view-box")
         val viewBox: Mask
+
+        @JsValue("add")
         val add: Mask
+
+        @JsValue("exclude")
         val exclude: Mask
+
+        @JsValue("intersect")
         val intersect: Mask
+
+        @JsValue("subtract")
         val subtract: Mask
+
+        @JsValue("alpha")
         val alpha: Mask
+
+        @JsValue("luminance")
         val luminance: Mask
+
+        @JsValue("match-source")
         val matchSource: Mask
+
+        @JsValue("no-clip")
         val noClip: Mask
     }
 }

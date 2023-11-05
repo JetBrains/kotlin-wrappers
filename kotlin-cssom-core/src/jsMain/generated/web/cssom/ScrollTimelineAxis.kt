@@ -1,19 +1,27 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package web.cssom
 
-// language=JavaScript
-@JsName("""(/*union*/{block: 'block', horizontal: 'horizontal', inline: 'inline', vertical: 'vertical'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface ScrollTimelineAxis {
     companion object {
+        @JsValue("block")
         val block: ScrollTimelineAxis
+
+        @JsValue("horizontal")
         val horizontal: ScrollTimelineAxis
+
+        @JsValue("inline")
         val inline: ScrollTimelineAxis
+
+        @JsValue("vertical")
         val vertical: ScrollTimelineAxis
     }
 }

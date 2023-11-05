@@ -1,20 +1,30 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package web.cssom
 
-// language=JavaScript
-@JsName("""(/*union*/{absolute: 'absolute', fixed: 'fixed', relative: 'relative', static: 'static', sticky: 'sticky'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface Position {
     companion object {
+        @JsValue("absolute")
         val absolute: Position
+
+        @JsValue("fixed")
         val fixed: Position
+
+        @JsValue("relative")
         val relative: Position
+
+        @JsValue("static")
         val static: Position
+
+        @JsValue("sticky")
         val sticky: Position
     }
 }

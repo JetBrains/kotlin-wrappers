@@ -1,20 +1,30 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package web.cssom
 
-// language=JavaScript
-@JsName("""(/*union*/{both: 'both', inlineEnd: 'inline-end', inlineStart: 'inline-start', left: 'left', right: 'right'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface Clear {
     companion object {
+        @JsValue("both")
         val both: Clear
+
+        @JsValue("inline-end")
         val inlineEnd: Clear
+
+        @JsValue("inline-start")
         val inlineStart: Clear
+
+        @JsValue("left")
         val left: Clear
+
+        @JsValue("right")
         val right: Clear
     }
 }

@@ -1,19 +1,27 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package web.cssom
 
-// language=JavaScript
-@JsName("""(/*union*/{block: 'block', fallback: 'fallback', optional: 'optional', swap: 'swap'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface FontDisplay {
     companion object {
+        @JsValue("block")
         val block: FontDisplay
+
+        @JsValue("fallback")
         val fallback: FontDisplay
+
+        @JsValue("optional")
         val optional: FontDisplay
+
+        @JsValue("swap")
         val swap: FontDisplay
     }
 }

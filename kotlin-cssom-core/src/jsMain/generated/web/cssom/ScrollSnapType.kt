@@ -1,20 +1,30 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package web.cssom
 
-// language=JavaScript
-@JsName("""(/*union*/{block: 'block', both: 'both', inline: 'inline', x: 'x', y: 'y'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface ScrollSnapType {
     companion object {
+        @JsValue("block")
         val block: ScrollSnapType
+
+        @JsValue("both")
         val both: ScrollSnapType
+
+        @JsValue("inline")
         val inline: ScrollSnapType
+
+        @JsValue("x")
         val x: ScrollSnapType
+
+        @JsValue("y")
         val y: ScrollSnapType
     }
 }

@@ -1,21 +1,33 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package web.cssom
 
-// language=JavaScript
-@JsName("""(/*union*/{blink: 'blink', grammarError: 'grammar-error', lineThrough: 'line-through', overline: 'overline', spellingError: 'spelling-error', underline: 'underline'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface TextDecorationLine {
     companion object {
+        @JsValue("blink")
         val blink: TextDecorationLine
+
+        @JsValue("grammar-error")
         val grammarError: TextDecorationLine
+
+        @JsValue("line-through")
         val lineThrough: TextDecorationLine
+
+        @JsValue("overline")
         val overline: TextDecorationLine
+
+        @JsValue("spelling-error")
         val spellingError: TextDecorationLine
+
+        @JsValue("underline")
         val underline: TextDecorationLine
     }
 }

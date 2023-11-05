@@ -1,26 +1,48 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package web.cssom
 
-// language=JavaScript
-@JsName("""(/*union*/{spaceAround: 'space-around', spaceBetween: 'space-between', spaceEvenly: 'space-evenly', stretch: 'stretch', center: 'center', end: 'end', flexEnd: 'flex-end', flexStart: 'flex-start', start: 'start', baseline: 'baseline', normal: 'normal'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface AlignContent {
     companion object {
+        @JsValue("space-around")
         val spaceAround: AlignContent
+
+        @JsValue("space-between")
         val spaceBetween: AlignContent
+
+        @JsValue("space-evenly")
         val spaceEvenly: AlignContent
+
+        @JsValue("stretch")
         val stretch: AlignContent
+
+        @JsValue("center")
         val center: AlignContent
+
+        @JsValue("end")
         val end: AlignContent
+
+        @JsValue("flex-end")
         val flexEnd: AlignContent
+
+        @JsValue("flex-start")
         val flexStart: AlignContent
+
+        @JsValue("start")
         val start: AlignContent
+
+        @JsValue("baseline")
         val baseline: AlignContent
+
+        @JsValue("normal")
         val normal: AlignContent
     }
 }

@@ -1,17 +1,21 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package web.cssom
 
-// language=JavaScript
-@JsName("""(/*union*/{collapse: 'collapse', separate: 'separate'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface BorderCollapse {
     companion object {
+        @JsValue("collapse")
         val collapse: BorderCollapse
+
+        @JsValue("separate")
         val separate: BorderCollapse
     }
 }

@@ -1,17 +1,21 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package web.cssom
 
-// language=JavaScript
-@JsName("""(/*union*/{hidden: 'hidden', visible: 'visible'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface ContentVisibility {
     companion object {
+        @JsValue("hidden")
         val hidden: ContentVisibility
+
+        @JsValue("visible")
         val visible: ContentVisibility
     }
 }

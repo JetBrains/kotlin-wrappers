@@ -1,17 +1,19 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
     "NOTHING_TO_INLINE",
 )
 
 package web.cssom
 
-// language=JavaScript
-@JsName("""(/*union*/{invert: 'invert'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface Outline {
     companion object {
+        @JsValue("invert")
         val invert: Outline
     }
 }

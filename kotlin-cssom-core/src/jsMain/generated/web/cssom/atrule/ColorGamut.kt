@@ -1,18 +1,24 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package web.cssom.atrule
 
-// language=JavaScript
-@JsName("""(/*union*/{srgb: 'srgb', p3: 'p3', rec2020: 'rec2020'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface ColorGamut {
     companion object {
+        @JsValue("srgb")
         val srgb: ColorGamut
+
+        @JsValue("p3")
         val p3: ColorGamut
+
+        @JsValue("rec2020")
         val rec2020: ColorGamut
     }
 }

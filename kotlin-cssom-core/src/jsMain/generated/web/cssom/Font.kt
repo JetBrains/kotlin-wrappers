@@ -1,22 +1,34 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
     "NOTHING_TO_INLINE",
 )
 
 package web.cssom
 
-// language=JavaScript
-@JsName("""(/*union*/{caption: 'caption', icon: 'icon', menu: 'menu', messageBox: 'message-box', smallCaption: 'small-caption', statusBar: 'status-bar'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface Font {
     companion object {
+        @JsValue("caption")
         val caption: Font
+
+        @JsValue("icon")
         val icon: Font
+
+        @JsValue("menu")
         val menu: Font
+
+        @JsValue("message-box")
         val messageBox: Font
+
+        @JsValue("small-caption")
         val smallCaption: Font
+
+        @JsValue("status-bar")
         val statusBar: Font
     }
 }

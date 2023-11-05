@@ -1,18 +1,24 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package web.cssom
 
-// language=JavaScript
-@JsName("""(/*union*/{fixed: 'fixed', local: 'local', scroll: 'scroll'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface BackgroundAttachment {
     companion object {
+        @JsValue("fixed")
         val fixed: BackgroundAttachment
+
+        @JsValue("local")
         val local: BackgroundAttachment
+
+        @JsValue("scroll")
         val scroll: BackgroundAttachment
     }
 }

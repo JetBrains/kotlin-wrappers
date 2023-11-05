@@ -1,20 +1,30 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package web.cssom
 
-// language=JavaScript
-@JsName("""(/*union*/{capitalize: 'capitalize', fullSizeKana: 'full-size-kana', fullWidth: 'full-width', lowercase: 'lowercase', uppercase: 'uppercase'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface TextTransform {
     companion object {
+        @JsValue("capitalize")
         val capitalize: TextTransform
+
+        @JsValue("full-size-kana")
         val fullSizeKana: TextTransform
+
+        @JsValue("full-width")
         val fullWidth: TextTransform
+
+        @JsValue("lowercase")
         val lowercase: TextTransform
+
+        @JsValue("uppercase")
         val uppercase: TextTransform
     }
 }

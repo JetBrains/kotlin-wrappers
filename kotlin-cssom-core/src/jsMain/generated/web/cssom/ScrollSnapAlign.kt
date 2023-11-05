@@ -1,18 +1,24 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package web.cssom
 
-// language=JavaScript
-@JsName("""(/*union*/{center: 'center', end: 'end', start: 'start'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface ScrollSnapAlign {
     companion object {
+        @JsValue("center")
         val center: ScrollSnapAlign
+
+        @JsValue("end")
         val end: ScrollSnapAlign
+
+        @JsValue("start")
         val start: ScrollSnapAlign
     }
 }

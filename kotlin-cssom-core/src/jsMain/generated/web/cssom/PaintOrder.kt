@@ -1,19 +1,27 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package web.cssom
 
-// language=JavaScript
-@JsName("""(/*union*/{fill: 'fill', markers: 'markers', normal: 'normal', stroke: 'stroke'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface PaintOrder {
     companion object {
+        @JsValue("fill")
         val fill: PaintOrder
+
+        @JsValue("markers")
         val markers: PaintOrder
+
+        @JsValue("normal")
         val normal: PaintOrder
+
+        @JsValue("stroke")
         val stroke: PaintOrder
     }
 }

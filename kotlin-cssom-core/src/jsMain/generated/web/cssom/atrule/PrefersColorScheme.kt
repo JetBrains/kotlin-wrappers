@@ -1,17 +1,21 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package web.cssom.atrule
 
-// language=JavaScript
-@JsName("""(/*union*/{light: 'light', dark: 'dark'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface PrefersColorScheme {
     companion object {
+        @JsValue("light")
         val light: PrefersColorScheme
+
+        @JsValue("dark")
         val dark: PrefersColorScheme
     }
 }

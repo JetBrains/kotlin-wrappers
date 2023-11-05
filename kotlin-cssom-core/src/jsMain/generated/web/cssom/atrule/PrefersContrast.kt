@@ -1,19 +1,27 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package web.cssom.atrule
 
-// language=JavaScript
-@JsName("""(/*union*/{noPreference: 'no-preference', more: 'more', less: 'less', custom: 'custom'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface PrefersContrast {
     companion object {
+        @JsValue("no-preference")
         val noPreference: PrefersContrast
+
+        @JsValue("more")
         val more: PrefersContrast
+
+        @JsValue("less")
         val less: PrefersContrast
+
+        @JsValue("custom")
         val custom: PrefersContrast
     }
 }

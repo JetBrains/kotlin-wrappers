@@ -1,22 +1,36 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package web.cssom
 
-// language=JavaScript
-@JsName("""(/*union*/{column: 'column', columnReverse: 'column-reverse', nowrap: 'nowrap', row: 'row', rowReverse: 'row-reverse', wrap: 'wrap', wrapReverse: 'wrap-reverse'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface FlexFlow {
     companion object {
+        @JsValue("column")
         val column: FlexFlow
+
+        @JsValue("column-reverse")
         val columnReverse: FlexFlow
+
+        @JsValue("nowrap")
         val nowrap: FlexFlow
+
+        @JsValue("row")
         val row: FlexFlow
+
+        @JsValue("row-reverse")
         val rowReverse: FlexFlow
+
+        @JsValue("wrap")
         val wrap: FlexFlow
+
+        @JsValue("wrap-reverse")
         val wrapReverse: FlexFlow
     }
 }

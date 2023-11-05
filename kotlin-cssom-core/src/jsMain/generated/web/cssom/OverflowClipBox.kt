@@ -1,17 +1,21 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package web.cssom
 
-// language=JavaScript
-@JsName("""(/*union*/{contentBox: 'content-box', paddingBox: 'padding-box'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface OverflowClipBox {
     companion object {
+        @JsValue("content-box")
         val contentBox: OverflowClipBox
+
+        @JsValue("padding-box")
         val paddingBox: OverflowClipBox
     }
 }
