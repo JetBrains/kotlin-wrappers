@@ -2,6 +2,7 @@ plugins {
     kotlin("multiplatform")
     `kotlin-conventions`
     `publish-conventions`
+    seskar()
 }
 
 dependencies {
@@ -17,4 +18,5 @@ dependencies {
 
     jsMainApi(project(":kotlin-node"))
     jsMainImplementation(kotlinxCoroutines("core"))
+    jsMainImplementation(seskarCore())
 }
