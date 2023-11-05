@@ -1,19 +1,27 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package web.performance
 
-// language=JavaScript
-@JsName("""(/*union*/{back_forward: 'back_forward', navigate: 'navigate', prerender: 'prerender', reload: 'reload'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface NavigationTimingType {
     companion object {
+        @JsValue("back_forward")
         val back_forward: NavigationTimingType
+
+        @JsValue("navigate")
         val navigate: NavigationTimingType
+
+        @JsValue("prerender")
         val prerender: NavigationTimingType
+
+        @JsValue("reload")
         val reload: NavigationTimingType
     }
 }

@@ -1,18 +1,24 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package web.http
 
-// language=JavaScript
-@JsName("""(/*union*/{error: 'error', follow: 'follow', manual: 'manual'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface RequestRedirect {
     companion object {
+        @JsValue("error")
         val error: RequestRedirect
+
+        @JsValue("follow")
         val follow: RequestRedirect
+
+        @JsValue("manual")
         val manual: RequestRedirect
     }
 }

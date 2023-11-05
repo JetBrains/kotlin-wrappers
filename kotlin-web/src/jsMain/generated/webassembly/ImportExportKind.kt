@@ -1,19 +1,27 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package webassembly
 
-// language=JavaScript
-@JsName("""(/*union*/{function: 'function', global: 'global', memory: 'memory', table: 'table'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface ImportExportKind {
     companion object {
+        @JsValue("function")
         val function: ImportExportKind
+
+        @JsValue("global")
         val global: ImportExportKind
+
+        @JsValue("memory")
         val memory: ImportExportKind
+
+        @JsValue("table")
         val table: ImportExportKind
     }
 }

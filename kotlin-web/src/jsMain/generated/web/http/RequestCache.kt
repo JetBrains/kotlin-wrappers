@@ -1,21 +1,33 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package web.http
 
-// language=JavaScript
-@JsName("""(/*union*/{default: 'default', forceCache: 'force-cache', noCache: 'no-cache', noStore: 'no-store', onlyIfCached: 'only-if-cached', reload: 'reload'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface RequestCache {
     companion object {
+        @JsValue("default")
         val default: RequestCache
+
+        @JsValue("force-cache")
         val forceCache: RequestCache
+
+        @JsValue("no-cache")
         val noCache: RequestCache
+
+        @JsValue("no-store")
         val noStore: RequestCache
+
+        @JsValue("only-if-cached")
         val onlyIfCached: RequestCache
+
+        @JsValue("reload")
         val reload: RequestCache
     }
 }

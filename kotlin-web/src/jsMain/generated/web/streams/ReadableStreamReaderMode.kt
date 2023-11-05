@@ -1,16 +1,18 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package web.streams
 
-// language=JavaScript
-@JsName("""(/*union*/{byob: 'byob'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface ReadableStreamReaderMode {
     companion object {
+        @JsValue("byob")
         val byob: ReadableStreamReaderMode
     }
 }

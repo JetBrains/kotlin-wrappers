@@ -1,24 +1,42 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package web.http
 
-// language=JavaScript
-@JsName("""(/*union*/{none: '', noReferrer: 'no-referrer', noReferrerWhenDowngrade: 'no-referrer-when-downgrade', origin: 'origin', originWhenCrossOrigin: 'origin-when-cross-origin', sameOrigin: 'same-origin', strictOrigin: 'strict-origin', strictOriginWhenCrossOrigin: 'strict-origin-when-cross-origin', unsafeUrl: 'unsafe-url'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface ReferrerPolicy {
     companion object {
+        @JsValue("")
         val none: ReferrerPolicy
+
+        @JsValue("no-referrer")
         val noReferrer: ReferrerPolicy
+
+        @JsValue("no-referrer-when-downgrade")
         val noReferrerWhenDowngrade: ReferrerPolicy
+
+        @JsValue("origin")
         val origin: ReferrerPolicy
+
+        @JsValue("origin-when-cross-origin")
         val originWhenCrossOrigin: ReferrerPolicy
+
+        @JsValue("same-origin")
         val sameOrigin: ReferrerPolicy
+
+        @JsValue("strict-origin")
         val strictOrigin: ReferrerPolicy
+
+        @JsValue("strict-origin-when-cross-origin")
         val strictOriginWhenCrossOrigin: ReferrerPolicy
+
+        @JsValue("unsafe-url")
         val unsafeUrl: ReferrerPolicy
     }
 }

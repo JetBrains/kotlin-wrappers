@@ -1,19 +1,27 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package web.http
 
-// language=JavaScript
-@JsName("""(/*union*/{cors: 'cors', navigate: 'navigate', noCors: 'no-cors', sameOrigin: 'same-origin'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface RequestMode {
     companion object {
+        @JsValue("cors")
         val cors: RequestMode
+
+        @JsValue("navigate")
         val navigate: RequestMode
+
+        @JsValue("no-cors")
         val noCors: RequestMode
+
+        @JsValue("same-origin")
         val sameOrigin: RequestMode
     }
 }

@@ -1,35 +1,75 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package web.http
 
-// language=JavaScript
-@JsName("""(/*union*/{none: '', audio: 'audio', audioworklet: 'audioworklet', document: 'document', embed: 'embed', font: 'font', frame: 'frame', iframe: 'iframe', image: 'image', manifest: 'manifest', object: 'object', paintworklet: 'paintworklet', report: 'report', script: 'script', sharedworker: 'sharedworker', style: 'style', track: 'track', video: 'video', worker: 'worker', xslt: 'xslt'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface RequestDestination {
     companion object {
+        @JsValue("")
         val none: RequestDestination
+
+        @JsValue("audio")
         val audio: RequestDestination
+
+        @JsValue("audioworklet")
         val audioworklet: RequestDestination
+
+        @JsValue("document")
         val document: RequestDestination
+
+        @JsValue("embed")
         val embed: RequestDestination
+
+        @JsValue("font")
         val font: RequestDestination
+
+        @JsValue("frame")
         val frame: RequestDestination
+
+        @JsValue("iframe")
         val iframe: RequestDestination
+
+        @JsValue("image")
         val image: RequestDestination
+
+        @JsValue("manifest")
         val manifest: RequestDestination
+
+        @JsValue("object")
         val `object`: RequestDestination
+
+        @JsValue("paintworklet")
         val paintworklet: RequestDestination
+
+        @JsValue("report")
         val report: RequestDestination
+
+        @JsValue("script")
         val script: RequestDestination
+
+        @JsValue("sharedworker")
         val sharedworker: RequestDestination
+
+        @JsValue("style")
         val style: RequestDestination
+
+        @JsValue("track")
         val track: RequestDestination
+
+        @JsValue("video")
         val video: RequestDestination
+
+        @JsValue("worker")
         val worker: RequestDestination
+
+        @JsValue("xslt")
         val xslt: RequestDestination
     }
 }
