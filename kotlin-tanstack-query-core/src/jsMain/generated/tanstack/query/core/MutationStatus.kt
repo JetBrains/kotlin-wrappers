@@ -1,19 +1,27 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package tanstack.query.core
 
-// language=JavaScript
-@JsName("""(/*union*/{idle: 'idle', loading: 'loading', success: 'success', error: 'error'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface MutationStatus {
     companion object {
+        @JsValue("idle")
         val idle: MutationStatus
+
+        @JsValue("loading")
         val loading: MutationStatus
+
+        @JsValue("success")
         val success: MutationStatus
+
+        @JsValue("error")
         val error: MutationStatus
     }
 }

@@ -1,22 +1,36 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package tanstack.query.core
 
-// language=JavaScript
-@JsName("""(/*union*/{added: 'added', removed: 'removed', updated: 'updated', observerAdded: 'observerAdded', observerRemoved: 'observerRemoved', observerResultsUpdated: 'observerResultsUpdated', observerOptionsUpdated: 'observerOptionsUpdated'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface NotifyEventType {
     companion object {
+        @JsValue("added")
         val added: NotifyEventType
+
+        @JsValue("removed")
         val removed: NotifyEventType
+
+        @JsValue("updated")
         val updated: NotifyEventType
+
+        @JsValue("observerAdded")
         val observerAdded: NotifyEventType
+
+        @JsValue("observerRemoved")
         val observerRemoved: NotifyEventType
+
+        @JsValue("observerResultsUpdated")
         val observerResultsUpdated: NotifyEventType
+
+        @JsValue("observerOptionsUpdated")
         val observerOptionsUpdated: NotifyEventType
     }
 }

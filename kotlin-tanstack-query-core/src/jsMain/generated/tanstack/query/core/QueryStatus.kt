@@ -1,18 +1,24 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package tanstack.query.core
 
-// language=JavaScript
-@JsName("""(/*union*/{loading: 'loading', error: 'error', success: 'success'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface QueryStatus {
     companion object {
+        @JsValue("loading")
         val loading: QueryStatus
+
+        @JsValue("error")
         val error: QueryStatus
+
+        @JsValue("success")
         val success: QueryStatus
     }
 }
