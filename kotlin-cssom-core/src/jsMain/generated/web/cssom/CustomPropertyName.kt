@@ -9,6 +9,6 @@ package web.cssom
 sealed external interface CustomPropertyName<T : Any>
 
 inline fun <T : Any> CustomPropertyName(
-    name: String,
+    value: String,
 ): CustomPropertyName<T> =
-    name.unsafeCast<CustomPropertyName<T>>()
+    value.unsafeCast<CustomPropertyName<T>>()
