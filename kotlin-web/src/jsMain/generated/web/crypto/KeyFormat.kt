@@ -1,17 +1,32 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package web.crypto
 
-// language=JavaScript
-@JsName("""(/*union*/{jwk: 'jwk', pkcs8: 'pkcs8', raw: 'raw', spki: 'spki'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface KeyFormat {
-    object jwk : KeyFormat
-    object pkcs8 : KeyFormat
-    object raw : KeyFormat
-    object spki : KeyFormat
+    companion object {
+        @JsValue("jwk")
+        val jwk: jwk
+
+        @JsValue("pkcs8")
+        val pkcs8: pkcs8
+
+        @JsValue("raw")
+        val raw: raw
+
+        @JsValue("spki")
+        val spki: spki
+    }
+
+    interface jwk : KeyFormat
+    interface pkcs8 : KeyFormat
+    interface raw : KeyFormat
+    interface spki : KeyFormat
 }
