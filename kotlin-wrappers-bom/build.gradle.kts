@@ -17,7 +17,7 @@ dependencies {
         api(project(":kotlin-js"))
         api(project(":kotlin-mui-material"))
         api(project(":kotlin-mui-base"))
-        api(project(":kotlin-mui-icons"))
+        api(project(":kotlin-mui-icons-material"))
         api(project(":kotlin-mui-lab"))
         api(project(":kotlin-mui-system"))
         api(project(":kotlin-muix-date-pickers"))
