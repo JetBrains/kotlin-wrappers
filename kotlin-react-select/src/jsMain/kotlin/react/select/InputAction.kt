@@ -1,17 +1,25 @@
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package react.select
 
-// language=JavaScript
-@JsName("""(/*union*/{setValue: 'set-value', inputChange: 'input-change', inputBlur: 'input-blur', menuClose: 'menu-close'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface InputAction {
     companion object {
+        @JsValue("set-value")
         val setValue: InputAction
+
+        @JsValue("input-change")
         val inputChange: InputAction
+
+        @JsValue("input-blur")
         val inputBlur: InputAction
+
+        @JsValue("menu-close")
         val menuClose: InputAction
     }
 }

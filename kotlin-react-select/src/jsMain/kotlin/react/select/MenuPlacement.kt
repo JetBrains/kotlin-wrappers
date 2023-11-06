@@ -1,15 +1,22 @@
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package react.select
 
-@JsName("""(/*union*/{ AUTO: 'auto', BOTTOM: 'bottom', TOP: 'top' }/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface MenuPlacement {
     companion object {
-        val AUTO: MenuPlacement
-        val BOTTOM: MenuPlacement
-        val TOP: MenuPlacement
+        @JsValue("auto")
+        val auto: MenuPlacement
+
+        @JsValue("bottom")
+        val bottom: MenuPlacement
+
+        @JsValue("top")
+        val top: MenuPlacement
     }
 }

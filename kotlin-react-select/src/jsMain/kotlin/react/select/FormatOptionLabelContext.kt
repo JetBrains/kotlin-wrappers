@@ -1,14 +1,19 @@
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package react.select
 
-@JsName("""(/*union*/{ MENU: 'menu', VALUE: 'value' }/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface FormatOptionLabelContext {
     companion object {
-        val MENU: FormatOptionLabelContext
-        val VALUE: FormatOptionLabelContext
+        @JsValue("menu")
+        val menu: FormatOptionLabelContext
+
+        @JsValue("value")
+        val value: FormatOptionLabelContext
     }
 }
