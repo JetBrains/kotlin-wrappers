@@ -23,9 +23,9 @@ sealed external interface WaitStatus {
         val timedOut: timedOut
     }
 
-    interface ok : WaitAsyncStatus
-    interface notEqual : WaitSyncStatus
-    interface timedOut : WaitAsyncStatus, WaitSyncStatus
+    sealed interface ok : WaitAsyncStatus
+    sealed interface notEqual : WaitSyncStatus
+    sealed interface timedOut : WaitAsyncStatus, WaitSyncStatus
 }
 
 sealed external interface WaitAsyncStatus : WaitStatus
