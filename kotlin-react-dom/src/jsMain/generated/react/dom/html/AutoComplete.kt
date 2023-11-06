@@ -1,71 +1,177 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package react.dom.html
 
-// language=JavaScript
-@JsName(
-    """(/*union*/{off: 'off', on: 'on', name: 'name', honorificPrefix: 'honorific-prefix', givenName: 'given-name', additionalName: 'additional-name', familyName: 'family-name', honorificSuffix: 'honorific-suffix', nickname: 'nickname', email: 'email', username: 'username', newPassword: 'new-password', currentPassword: 'current-password', oneTimeCode: 'one-time-code', organizationTitle: 'organization-title', organization: 'organization', streetAddress: 'street-address', addressLine1: 'address-line1', addressLine2: 'address-line2', addressLine3: 'address-line3', addressLevel4: 'address-level4', addressLevel3: 'address-level3', addressLevel2: 'address-level2', addressLevel1: 'address-level1', country: 'country', countryName: 'country-name', postalCode: 'postal-code', ccName: 'cc-name', ccGivenName: 'cc-given-name', ccAdditionalName: 'cc-additional-name', ccFamilyName: 'cc-family-name', ccNumber: 'cc-number', ccExp: 'cc-exp', ccExpMonth: 'cc-exp-month', ccExpYear: 'cc-exp-year', ccCsc: 'cc-csc', ccType: 'cc-type', transactionCurrency: 'transaction-currency', transactionAmount: 'transaction-amount', language: 'language', bday: 'bday', bdayDay: 'bday-day', bdayMonth: 'bday-month', bdayYear: 'bday-year', sex: 'sex', tel: 'tel', telCountryCode: 'tel-country-code', telNational: 'tel-national', telAreaCode: 'tel-area-code', telLocal: 'tel-local', telExtension: 'tel-extension', impp: 'impp', url: 'url', photo: 'photo'}/*union*/)"""
-)
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface AutoComplete {
     companion object {
+        @JsValue("off")
         val off: AutoComplete
+
+        @JsValue("on")
         val on: AutoComplete
+
+        @JsValue("name")
         val name: AutoComplete
+
+        @JsValue("honorific-prefix")
         val honorificPrefix: AutoComplete
+
+        @JsValue("given-name")
         val givenName: AutoComplete
+
+        @JsValue("additional-name")
         val additionalName: AutoComplete
+
+        @JsValue("family-name")
         val familyName: AutoComplete
+
+        @JsValue("honorific-suffix")
         val honorificSuffix: AutoComplete
+
+        @JsValue("nickname")
         val nickname: AutoComplete
+
+        @JsValue("email")
         val email: AutoComplete
+
+        @JsValue("username")
         val username: AutoComplete
+
+        @JsValue("new-password")
         val newPassword: AutoComplete
+
+        @JsValue("current-password")
         val currentPassword: AutoComplete
+
+        @JsValue("one-time-code")
         val oneTimeCode: AutoComplete
+
+        @JsValue("organization-title")
         val organizationTitle: AutoComplete
+
+        @JsValue("organization")
         val organization: AutoComplete
+
+        @JsValue("street-address")
         val streetAddress: AutoComplete
+
+        @JsValue("address-line1")
         val addressLine1: AutoComplete
+
+        @JsValue("address-line2")
         val addressLine2: AutoComplete
+
+        @JsValue("address-line3")
         val addressLine3: AutoComplete
+
+        @JsValue("address-level4")
         val addressLevel4: AutoComplete
+
+        @JsValue("address-level3")
         val addressLevel3: AutoComplete
+
+        @JsValue("address-level2")
         val addressLevel2: AutoComplete
+
+        @JsValue("address-level1")
         val addressLevel1: AutoComplete
+
+        @JsValue("country")
         val country: AutoComplete
+
+        @JsValue("country-name")
         val countryName: AutoComplete
+
+        @JsValue("postal-code")
         val postalCode: AutoComplete
+
+        @JsValue("cc-name")
         val ccName: AutoComplete
+
+        @JsValue("cc-given-name")
         val ccGivenName: AutoComplete
+
+        @JsValue("cc-additional-name")
         val ccAdditionalName: AutoComplete
+
+        @JsValue("cc-family-name")
         val ccFamilyName: AutoComplete
+
+        @JsValue("cc-number")
         val ccNumber: AutoComplete
+
+        @JsValue("cc-exp")
         val ccExp: AutoComplete
+
+        @JsValue("cc-exp-month")
         val ccExpMonth: AutoComplete
+
+        @JsValue("cc-exp-year")
         val ccExpYear: AutoComplete
+
+        @JsValue("cc-csc")
         val ccCsc: AutoComplete
+
+        @JsValue("cc-type")
         val ccType: AutoComplete
+
+        @JsValue("transaction-currency")
         val transactionCurrency: AutoComplete
+
+        @JsValue("transaction-amount")
         val transactionAmount: AutoComplete
+
+        @JsValue("language")
         val language: AutoComplete
+
+        @JsValue("bday")
         val bday: AutoComplete
+
+        @JsValue("bday-day")
         val bdayDay: AutoComplete
+
+        @JsValue("bday-month")
         val bdayMonth: AutoComplete
+
+        @JsValue("bday-year")
         val bdayYear: AutoComplete
+
+        @JsValue("sex")
         val sex: AutoComplete
+
+        @JsValue("tel")
         val tel: AutoComplete
+
+        @JsValue("tel-country-code")
         val telCountryCode: AutoComplete
+
+        @JsValue("tel-national")
         val telNational: AutoComplete
+
+        @JsValue("tel-area-code")
         val telAreaCode: AutoComplete
+
+        @JsValue("tel-local")
         val telLocal: AutoComplete
+
+        @JsValue("tel-extension")
         val telExtension: AutoComplete
+
+        @JsValue("impp")
         val impp: AutoComplete
+
+        @JsValue("url")
         val url: AutoComplete
+
+        @JsValue("photo")
         val photo: AutoComplete
     }
 }

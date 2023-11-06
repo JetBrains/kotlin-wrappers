@@ -1,21 +1,33 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package react.dom.aria
 
-// language=JavaScript
-@JsName("""(/*union*/{none: 'none', copy: 'copy', execute: 'execute', link: 'link', move: 'move', popup: 'popup'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface AriaDropEffect {
     companion object {
+        @JsValue("none")
         val none: AriaDropEffect
+
+        @JsValue("copy")
         val copy: AriaDropEffect
+
+        @JsValue("execute")
         val execute: AriaDropEffect
+
+        @JsValue("link")
         val link: AriaDropEffect
+
+        @JsValue("move")
         val move: AriaDropEffect
+
+        @JsValue("popup")
         val popup: AriaDropEffect
     }
 }

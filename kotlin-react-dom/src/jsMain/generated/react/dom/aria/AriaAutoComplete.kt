@@ -1,19 +1,27 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package react.dom.aria
 
-// language=JavaScript
-@JsName("""(/*union*/{none: 'none', inline: 'inline', list: 'list', both: 'both'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface AriaAutoComplete {
     companion object {
+        @JsValue("none")
         val none: AriaAutoComplete
+
+        @JsValue("inline")
         val inline: AriaAutoComplete
+
+        @JsValue("list")
         val list: AriaAutoComplete
+
+        @JsValue("both")
         val both: AriaAutoComplete
     }
 }

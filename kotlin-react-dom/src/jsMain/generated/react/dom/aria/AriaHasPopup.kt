@@ -1,22 +1,36 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package react.dom.aria
 
-// language=JavaScript
-@JsName("""(/*union*/{false: 'false', true: 'true', menu: 'menu', listbox: 'listbox', tree: 'tree', grid: 'grid', dialog: 'dialog'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface AriaHasPopup {
     companion object {
+        @JsValue("false")
         val `false`: AriaHasPopup
+
+        @JsValue("true")
         val `true`: AriaHasPopup
+
+        @JsValue("menu")
         val menu: AriaHasPopup
+
+        @JsValue("listbox")
         val listbox: AriaHasPopup
+
+        @JsValue("tree")
         val tree: AriaHasPopup
+
+        @JsValue("grid")
         val grid: AriaHasPopup
+
+        @JsValue("dialog")
         val dialog: AriaHasPopup
     }
 }

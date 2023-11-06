@@ -1,19 +1,27 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package react.dom.html
 
-// language=JavaScript
-@JsName("""(/*union*/{top: 'top', middle: 'middle', bottom: 'bottom', baseline: 'baseline'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface TdVAlign {
     companion object {
+        @JsValue("top")
         val top: TdVAlign
+
+        @JsValue("middle")
         val middle: TdVAlign
+
+        @JsValue("bottom")
         val bottom: TdVAlign
+
+        @JsValue("baseline")
         val baseline: TdVAlign
     }
 }

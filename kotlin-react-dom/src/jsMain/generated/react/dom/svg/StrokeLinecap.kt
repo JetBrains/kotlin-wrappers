@@ -1,19 +1,27 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package react.dom.svg
 
-// language=JavaScript
-@JsName("""(/*union*/{butt: 'butt', round: 'round', square: 'square', inherit: 'inherit'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface StrokeLinecap {
     companion object {
+        @JsValue("butt")
         val butt: StrokeLinecap
+
+        @JsValue("round")
         val round: StrokeLinecap
+
+        @JsValue("square")
         val square: StrokeLinecap
+
+        @JsValue("inherit")
         val inherit: StrokeLinecap
     }
 }

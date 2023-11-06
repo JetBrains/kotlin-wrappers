@@ -1,20 +1,30 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package react.dom.html
 
-// language=JavaScript
-@JsName("""(/*union*/{none: 'none', groups: 'groups', rows: 'rows', columns: 'columns', all: 'all'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface TableRules {
     companion object {
+        @JsValue("none")
         val none: TableRules
+
+        @JsValue("groups")
         val groups: TableRules
+
+        @JsValue("rows")
         val rows: TableRules
+
+        @JsValue("columns")
         val columns: TableRules
+
+        @JsValue("all")
         val all: TableRules
     }
 }

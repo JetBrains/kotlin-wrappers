@@ -1,19 +1,27 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package react.dom.html
 
-// language=JavaScript
-@JsName("""(/*union*/{false: 'false', true: 'true', user: 'user', environment: 'environment'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface Capture {
     companion object {
+        @JsValue("false")
         val `false`: Capture
+
+        @JsValue("true")
         val `true`: Capture
+
+        @JsValue("user")
         val user: Capture
+
+        @JsValue("environment")
         val environment: Capture
     }
 }

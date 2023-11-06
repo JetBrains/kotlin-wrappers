@@ -1,18 +1,24 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package react.dom.aria
 
-// language=JavaScript
-@JsName("""(/*union*/{false: 'false', mixed: 'mixed', true: 'true'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface AriaPressed {
     companion object {
+        @JsValue("false")
         val `false`: AriaPressed
+
+        @JsValue("mixed")
         val mixed: AriaPressed
+
+        @JsValue("true")
         val `true`: AriaPressed
     }
 }

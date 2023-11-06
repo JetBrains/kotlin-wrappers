@@ -1,20 +1,30 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package react.dom.html
 
-// language=JavaScript
-@JsName("""(/*union*/{left: 'left', center: 'center', right: 'right', justify: 'justify', char: 'char'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface TdAlign {
     companion object {
+        @JsValue("left")
         val left: TdAlign
+
+        @JsValue("center")
         val center: TdAlign
+
+        @JsValue("right")
         val right: TdAlign
+
+        @JsValue("justify")
         val justify: TdAlign
+
+        @JsValue("char")
         val char: TdAlign
     }
 }

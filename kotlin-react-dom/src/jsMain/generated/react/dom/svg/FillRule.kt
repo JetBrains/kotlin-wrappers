@@ -1,18 +1,24 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package react.dom.svg
 
-// language=JavaScript
-@JsName("""(/*union*/{nonzero: 'nonzero', evenodd: 'evenodd', inherit: 'inherit'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface FillRule {
     companion object {
+        @JsValue("nonzero")
         val nonzero: FillRule
+
+        @JsValue("evenodd")
         val evenodd: FillRule
+
+        @JsValue("inherit")
         val inherit: FillRule
     }
 }

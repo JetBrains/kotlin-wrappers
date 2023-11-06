@@ -1,18 +1,24 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package react.dom.events
 
-// language=JavaScript
-@JsName("""(/*union*/{mouse: 'mouse', pen: 'pen', touch: 'touch'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface PointerType {
     companion object {
+        @JsValue("mouse")
         val mouse: PointerType
+
+        @JsValue("pen")
         val pen: PointerType
+
+        @JsValue("touch")
         val touch: PointerType
     }
 }
