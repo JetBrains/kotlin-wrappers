@@ -115,38 +115,38 @@ sealed external interface WebGLExtension {
         val WEBGL_multi_draw: WEBGL_multi_draw
     }
 
-    interface ANGLE_instanced_arrays : WebGLExtension
-    interface EXT_blend_minmax : WebGLExtension
-    interface EXT_color_buffer_float : WebGLExtension
-    interface EXT_color_buffer_half_float : WebGLExtension
-    interface EXT_float_blend : WebGLExtension
-    interface EXT_frag_depth : WebGLExtension
-    interface EXT_sRGB : WebGLExtension
-    interface EXT_shader_texture_lod : WebGLExtension
-    interface EXT_texture_compression_bptc : WebGLExtension
-    interface EXT_texture_compression_rgtc : WebGLExtension
-    interface EXT_texture_filter_anisotropic : WebGLExtension
-    interface KHR_parallel_shader_compile : WebGLExtension
-    interface OES_element_index_uint : WebGLExtension
-    interface OES_fbo_render_mipmap : WebGLExtension
-    interface OES_standard_derivatives : WebGLExtension
-    interface OES_texture_float : WebGLExtension
-    interface OES_texture_float_linear : WebGLExtension
-    interface OES_texture_half_float : WebGLExtension
-    interface OES_texture_half_float_linear : WebGLExtension
-    interface OES_vertex_array_object : WebGLExtension
-    interface OVR_multiview2 : WebGLExtension
-    interface WEBGL_color_buffer_float : WebGLExtension
-    interface WEBGL_compressed_texture_astc : WebGLExtension
-    interface WEBGL_compressed_texture_etc : WebGLExtension
-    interface WEBGL_compressed_texture_etc1 : WebGLExtension
-    interface WEBGL_compressed_texture_pvrtc : WebGLExtension
-    interface WEBGL_compressed_texture_s3tc : WebGLExtension
-    interface WEBGL_compressed_texture_s3tc_srgb : WebGLExtension
-    interface WEBGL_debug_renderer_info : WebGLExtension
-    interface WEBGL_debug_shaders : WebGLExtension
-    interface WEBGL_depth_texture : WebGLExtension
-    interface WEBGL_draw_buffers : WebGLExtension
-    interface WEBGL_lose_context : WebGLExtension
-    interface WEBGL_multi_draw : WebGLExtension
+    sealed interface ANGLE_instanced_arrays : WebGLExtension
+    sealed interface EXT_blend_minmax : WebGLExtension
+    sealed interface EXT_color_buffer_float : WebGLExtension
+    sealed interface EXT_color_buffer_half_float : WebGLExtension
+    sealed interface EXT_float_blend : WebGLExtension
+    sealed interface EXT_frag_depth : WebGLExtension
+    sealed interface EXT_sRGB : WebGLExtension
+    sealed interface EXT_shader_texture_lod : WebGLExtension
+    sealed interface EXT_texture_compression_bptc : WebGLExtension
+    sealed interface EXT_texture_compression_rgtc : WebGLExtension
+    sealed interface EXT_texture_filter_anisotropic : WebGLExtension
+    sealed interface KHR_parallel_shader_compile : WebGLExtension
+    sealed interface OES_element_index_uint : WebGLExtension
+    sealed interface OES_fbo_render_mipmap : WebGLExtension
+    sealed interface OES_standard_derivatives : WebGLExtension
+    sealed interface OES_texture_float : WebGLExtension
+    sealed interface OES_texture_float_linear : WebGLExtension
+    sealed interface OES_texture_half_float : WebGLExtension
+    sealed interface OES_texture_half_float_linear : WebGLExtension
+    sealed interface OES_vertex_array_object : WebGLExtension
+    sealed interface OVR_multiview2 : WebGLExtension
+    sealed interface WEBGL_color_buffer_float : WebGLExtension
+    sealed interface WEBGL_compressed_texture_astc : WebGLExtension
+    sealed interface WEBGL_compressed_texture_etc : WebGLExtension
+    sealed interface WEBGL_compressed_texture_etc1 : WebGLExtension
+    sealed interface WEBGL_compressed_texture_pvrtc : WebGLExtension
+    sealed interface WEBGL_compressed_texture_s3tc : WebGLExtension
+    sealed interface WEBGL_compressed_texture_s3tc_srgb : WebGLExtension
+    sealed interface WEBGL_debug_renderer_info : WebGLExtension
+    sealed interface WEBGL_debug_shaders : WebGLExtension
+    sealed interface WEBGL_depth_texture : WebGLExtension
+    sealed interface WEBGL_draw_buffers : WebGLExtension
+    sealed interface WEBGL_lose_context : WebGLExtension
+    sealed interface WEBGL_multi_draw : WebGLExtension
 }
