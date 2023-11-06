@@ -1,34 +1,72 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package typescript
 
-// language=JavaScript
-@JsName("""(/*union*/{Class: 1, Interface: 2, Reference: 4, Tuple: 8, Anonymous: 16, Mapped: 32, Instantiated: 64, ObjectLiteral: 128, EvolvingArray: 256, ObjectLiteralPatternWithComputedProperties: 512, ReverseMapped: 1024, JsxAttributes: 2048, JSLiteral: 4096, FreshLiteral: 8192, ArrayLiteral: 16384, ClassOrInterface: 3, ContainsSpread: 2097152, ObjectRestType: 4194304, InstantiationExpressionType: 8388608,}/*union*/)""")
+import seskar.js.JsIntValue
+import seskar.js.JsUnion
+
+@JsUnion
 sealed external interface ObjectFlags {
     companion object {
+        @JsIntValue(1)
         val Class: ObjectFlags
+
+        @JsIntValue(2)
         val Interface: ObjectFlags
+
+        @JsIntValue(4)
         val Reference: ObjectFlags
+
+        @JsIntValue(8)
         val Tuple: ObjectFlags
+
+        @JsIntValue(16)
         val Anonymous: ObjectFlags
+
+        @JsIntValue(32)
         val Mapped: ObjectFlags
+
+        @JsIntValue(64)
         val Instantiated: ObjectFlags
+
+        @JsIntValue(128)
         val ObjectLiteral: ObjectFlags
+
+        @JsIntValue(256)
         val EvolvingArray: ObjectFlags
+
+        @JsIntValue(512)
         val ObjectLiteralPatternWithComputedProperties: ObjectFlags
+
+        @JsIntValue(1024)
         val ReverseMapped: ObjectFlags
+
+        @JsIntValue(2048)
         val JsxAttributes: ObjectFlags
+
+        @JsIntValue(4096)
         val JSLiteral: ObjectFlags
+
+        @JsIntValue(8192)
         val FreshLiteral: ObjectFlags
+
+        @JsIntValue(16384)
         val ArrayLiteral: ObjectFlags
+
+        @JsIntValue(3)
         val ClassOrInterface: ObjectFlags
+
+        @JsIntValue(2097152)
         val ContainsSpread: ObjectFlags
+
+        @JsIntValue(4194304)
         val ObjectRestType: ObjectFlags
+
+        @JsIntValue(8388608)
         val InstantiationExpressionType: ObjectFlags
     }
 }

@@ -1,24 +1,35 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package typescript
 
+import seskar.js.JsIntValue
+import seskar.js.JsUnion
+
 /** Return code used by getEmitOutput function to indicate status of the function */
-// language=JavaScript
-@JsName("""(/*union*/{Success: 0, DiagnosticsPresent_OutputsSkipped: 1, DiagnosticsPresent_OutputsGenerated: 2, InvalidProject_OutputsSkipped: 3, ProjectReferenceCycle_OutputsSkipped: 4, ProjectReferenceCycle_OutputsSkupped: 4}/*union*/)""")
+@JsUnion
 sealed external interface ExitStatus {
     companion object {
+        @JsIntValue(0)
         val Success: ExitStatus
+
+        @JsIntValue(1)
         val DiagnosticsPresent_OutputsSkipped: ExitStatus
+
+        @JsIntValue(2)
         val DiagnosticsPresent_OutputsGenerated: ExitStatus
+
+        @JsIntValue(3)
         val InvalidProject_OutputsSkipped: ExitStatus
+
+        @JsIntValue(4)
         val ProjectReferenceCycle_OutputsSkipped: ExitStatus
 
         /** @deprecated Use ProjectReferenceCycle_OutputsSkipped instead. */
+        @JsIntValue(4)
         val ProjectReferenceCycle_OutputsSkupped: ExitStatus
     }
 }

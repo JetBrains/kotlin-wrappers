@@ -1,17 +1,21 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package typescript
 
-// language=JavaScript
-@JsName("""(/*union*/{UpdateGraph: 'UpdateGraph', CreatePackageJsonAutoImportProvider: 'CreatePackageJsonAutoImportProvider'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface PerformanceEventKind {
     companion object {
+        @JsValue("UpdateGraph")
         val UpdateGraph: PerformanceEventKind
+
+        @JsValue("CreatePackageJsonAutoImportProvider")
         val CreatePackageJsonAutoImportProvider: PerformanceEventKind
     }
 }

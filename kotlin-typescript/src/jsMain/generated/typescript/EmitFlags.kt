@@ -1,44 +1,102 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package typescript
 
-// language=JavaScript
-@JsName("""(/*union*/{None: 0, SingleLine: 1, AdviseOnEmitNode: 2, NoSubstitution: 4, CapturesThis: 8, NoLeadingSourceMap: 16, NoTrailingSourceMap: 32, NoSourceMap: 48, NoNestedSourceMaps: 64, NoTokenLeadingSourceMaps: 128, NoTokenTrailingSourceMaps: 256, NoTokenSourceMaps: 384, NoLeadingComments: 512, NoTrailingComments: 1024, NoComments: 1536, NoNestedComments: 2048, HelperName: 4096, ExportName: 8192, LocalName: 16384, InternalName: 32768, Indented: 65536, NoIndentation: 131072, AsyncFunctionBody: 262144, ReuseTempVariableScope: 524288, CustomPrologue: 1048576, NoHoisting: 2097152, HasEndOfDeclarationMarker: 4194304, Iterator: 8388608, NoAsciiEscaping: 16777216,}/*union*/)""")
+import seskar.js.JsIntValue
+import seskar.js.JsUnion
+
+@JsUnion
 sealed external interface EmitFlags {
     companion object {
+        @JsIntValue(0)
         val None: EmitFlags
+
+        @JsIntValue(1)
         val SingleLine: EmitFlags
+
+        @JsIntValue(2)
         val AdviseOnEmitNode: EmitFlags
+
+        @JsIntValue(4)
         val NoSubstitution: EmitFlags
+
+        @JsIntValue(8)
         val CapturesThis: EmitFlags
+
+        @JsIntValue(16)
         val NoLeadingSourceMap: EmitFlags
+
+        @JsIntValue(32)
         val NoTrailingSourceMap: EmitFlags
+
+        @JsIntValue(48)
         val NoSourceMap: EmitFlags
+
+        @JsIntValue(64)
         val NoNestedSourceMaps: EmitFlags
+
+        @JsIntValue(128)
         val NoTokenLeadingSourceMaps: EmitFlags
+
+        @JsIntValue(256)
         val NoTokenTrailingSourceMaps: EmitFlags
+
+        @JsIntValue(384)
         val NoTokenSourceMaps: EmitFlags
+
+        @JsIntValue(512)
         val NoLeadingComments: EmitFlags
+
+        @JsIntValue(1024)
         val NoTrailingComments: EmitFlags
+
+        @JsIntValue(1536)
         val NoComments: EmitFlags
+
+        @JsIntValue(2048)
         val NoNestedComments: EmitFlags
+
+        @JsIntValue(4096)
         val HelperName: EmitFlags
+
+        @JsIntValue(8192)
         val ExportName: EmitFlags
+
+        @JsIntValue(16384)
         val LocalName: EmitFlags
+
+        @JsIntValue(32768)
         val InternalName: EmitFlags
+
+        @JsIntValue(65536)
         val Indented: EmitFlags
+
+        @JsIntValue(131072)
         val NoIndentation: EmitFlags
+
+        @JsIntValue(262144)
         val AsyncFunctionBody: EmitFlags
+
+        @JsIntValue(524288)
         val ReuseTempVariableScope: EmitFlags
+
+        @JsIntValue(1048576)
         val CustomPrologue: EmitFlags
+
+        @JsIntValue(2097152)
         val NoHoisting: EmitFlags
+
+        @JsIntValue(4194304)
         val HasEndOfDeclarationMarker: EmitFlags
+
+        @JsIntValue(8388608)
         val Iterator: EmitFlags
+
+        @JsIntValue(16777216)
         val NoAsciiEscaping: EmitFlags
     }
 }

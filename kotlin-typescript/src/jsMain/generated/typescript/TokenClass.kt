@@ -1,25 +1,45 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package typescript
 
-// language=JavaScript
-@JsName("""(/*union*/{Punctuation: 0, Keyword: 1, Operator: 2, Comment: 3, Whitespace: 4, Identifier: 5, NumberLiteral: 6, BigIntLiteral: 7, StringLiteral: 8, RegExpLiteral: 9}/*union*/)""")
+import seskar.js.JsIntValue
+import seskar.js.JsUnion
+
+@JsUnion
 sealed external interface TokenClass {
     companion object {
+        @JsIntValue(0)
         val Punctuation: TokenClass
+
+        @JsIntValue(1)
         val Keyword: TokenClass
+
+        @JsIntValue(2)
         val Operator: TokenClass
+
+        @JsIntValue(3)
         val Comment: TokenClass
+
+        @JsIntValue(4)
         val Whitespace: TokenClass
+
+        @JsIntValue(5)
         val Identifier: TokenClass
+
+        @JsIntValue(6)
         val NumberLiteral: TokenClass
+
+        @JsIntValue(7)
         val BigIntLiteral: TokenClass
+
+        @JsIntValue(8)
         val StringLiteral: TokenClass
+
+        @JsIntValue(9)
         val RegExpLiteral: TokenClass
     }
 }

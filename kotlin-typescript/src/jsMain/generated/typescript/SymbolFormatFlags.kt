@@ -1,20 +1,30 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package typescript
 
-// language=JavaScript
-@JsName("""(/*union*/{None: 0, WriteTypeParametersOrArguments: 1, UseOnlyExternalAliasing: 2, AllowAnyNodeKind: 4, UseAliasDefinedOutsideCurrentScope: 8,}/*union*/)""")
+import seskar.js.JsIntValue
+import seskar.js.JsUnion
+
+@JsUnion
 sealed external interface SymbolFormatFlags {
     companion object {
+        @JsIntValue(0)
         val None: SymbolFormatFlags
+
+        @JsIntValue(1)
         val WriteTypeParametersOrArguments: SymbolFormatFlags
+
+        @JsIntValue(2)
         val UseOnlyExternalAliasing: SymbolFormatFlags
+
+        @JsIntValue(4)
         val AllowAnyNodeKind: SymbolFormatFlags
+
+        @JsIntValue(8)
         val UseAliasDefinedOutsideCurrentScope: SymbolFormatFlags
     }
 }

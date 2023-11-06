@@ -1,18 +1,24 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package typescript
 
-// language=JavaScript
-@JsName("""(/*union*/{Type: 'Type', Parameter: 'Parameter', Enum: 'Enum'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface InlayHintKind {
     companion object {
+        @JsValue("Type")
         val Type: InlayHintKind
+
+        @JsValue("Parameter")
         val Parameter: InlayHintKind
+
+        @JsValue("Enum")
         val Enum: InlayHintKind
     }
 }

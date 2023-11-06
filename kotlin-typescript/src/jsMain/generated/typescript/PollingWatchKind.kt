@@ -1,19 +1,27 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package typescript
 
-// language=JavaScript
-@JsName("""(/*union*/{FixedInterval: 0, PriorityInterval: 1, DynamicPriority: 2, FixedChunkSize: 3}/*union*/)""")
+import seskar.js.JsIntValue
+import seskar.js.JsUnion
+
+@JsUnion
 sealed external interface PollingWatchKind {
     companion object {
+        @JsIntValue(0)
         val FixedInterval: PollingWatchKind
+
+        @JsIntValue(1)
         val PriorityInterval: PollingWatchKind
+
+        @JsIntValue(2)
         val DynamicPriority: PollingWatchKind
+
+        @JsIntValue(3)
         val FixedChunkSize: PollingWatchKind
     }
 }

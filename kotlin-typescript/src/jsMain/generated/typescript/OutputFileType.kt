@@ -1,18 +1,24 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package typescript
 
-// language=JavaScript
-@JsName("""(/*union*/{JavaScript: 0, SourceMap: 1, Declaration: 2}/*union*/)""")
+import seskar.js.JsIntValue
+import seskar.js.JsUnion
+
+@JsUnion
 sealed external interface OutputFileType {
     companion object {
+        @JsIntValue(0)
         val JavaScript: OutputFileType
+
+        @JsIntValue(1)
         val SourceMap: OutputFileType
+
+        @JsIntValue(2)
         val Declaration: OutputFileType
     }
 }

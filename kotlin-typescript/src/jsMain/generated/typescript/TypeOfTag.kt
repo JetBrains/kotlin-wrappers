@@ -1,23 +1,39 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package typescript
 
-// language=JavaScript
-@JsName("""(/*union*/{undefined: 'undefined', number: 'number', bigint: 'bigint', boolean: 'boolean', string: 'string', symbol: 'symbol', object: 'object', function: 'function'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface TypeOfTag {
     companion object {
+        @JsValue("undefined")
         val undefined: TypeOfTag
+
+        @JsValue("number")
         val number: TypeOfTag
+
+        @JsValue("bigint")
         val bigint: TypeOfTag
+
+        @JsValue("boolean")
         val boolean: TypeOfTag
+
+        @JsValue("string")
         val string: TypeOfTag
+
+        @JsValue("symbol")
         val symbol: TypeOfTag
+
+        @JsValue("object")
         val `object`: TypeOfTag
+
+        @JsValue("function")
         val function: TypeOfTag
     }
 }

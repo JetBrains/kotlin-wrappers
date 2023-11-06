@@ -1,18 +1,24 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package typescript
 
-// language=JavaScript
-@JsName("""(/*union*/{None: 0, Block: 1, Smart: 2}/*union*/)""")
+import seskar.js.JsIntValue
+import seskar.js.JsUnion
+
+@JsUnion
 sealed external interface IndentStyle {
     companion object {
+        @JsIntValue(0)
         val None: IndentStyle
+
+        @JsIntValue(1)
         val Block: IndentStyle
+
+        @JsIntValue(2)
         val Smart: IndentStyle
     }
 }

@@ -1,18 +1,24 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package typescript
 
-// language=JavaScript
-@JsName("""(/*union*/{Created: 0, Changed: 1, Deleted: 2}/*union*/)""")
+import seskar.js.JsIntValue
+import seskar.js.JsUnion
+
+@JsUnion
 sealed external interface FileWatcherEventKind {
     companion object {
+        @JsIntValue(0)
         val Created: FileWatcherEventKind
+
+        @JsIntValue(1)
         val Changed: FileWatcherEventKind
+
+        @JsIntValue(2)
         val Deleted: FileWatcherEventKind
     }
 }

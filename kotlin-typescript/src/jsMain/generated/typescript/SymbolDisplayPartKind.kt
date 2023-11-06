@@ -1,40 +1,90 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package typescript
 
-// language=JavaScript
-@JsName("""(/*union*/{aliasName: 0, className: 1, enumName: 2, fieldName: 3, interfaceName: 4, keyword: 5, lineBreak: 6, numericLiteral: 7, stringLiteral: 8, localName: 9, methodName: 10, moduleName: 11, operator: 12, parameterName: 13, propertyName: 14, punctuation: 15, space: 16, text: 17, typeParameterName: 18, enumMemberName: 19, functionName: 20, regularExpressionLiteral: 21, link: 22, linkName: 23, linkText: 24}/*union*/)""")
+import seskar.js.JsIntValue
+import seskar.js.JsUnion
+
+@JsUnion
 sealed external interface SymbolDisplayPartKind {
     companion object {
+        @JsIntValue(0)
         val aliasName: SymbolDisplayPartKind
+
+        @JsIntValue(1)
         val className: SymbolDisplayPartKind
+
+        @JsIntValue(2)
         val enumName: SymbolDisplayPartKind
+
+        @JsIntValue(3)
         val fieldName: SymbolDisplayPartKind
+
+        @JsIntValue(4)
         val interfaceName: SymbolDisplayPartKind
+
+        @JsIntValue(5)
         val keyword: SymbolDisplayPartKind
+
+        @JsIntValue(6)
         val lineBreak: SymbolDisplayPartKind
+
+        @JsIntValue(7)
         val numericLiteral: SymbolDisplayPartKind
+
+        @JsIntValue(8)
         val stringLiteral: SymbolDisplayPartKind
+
+        @JsIntValue(9)
         val localName: SymbolDisplayPartKind
+
+        @JsIntValue(10)
         val methodName: SymbolDisplayPartKind
+
+        @JsIntValue(11)
         val moduleName: SymbolDisplayPartKind
+
+        @JsIntValue(12)
         val operator: SymbolDisplayPartKind
+
+        @JsIntValue(13)
         val parameterName: SymbolDisplayPartKind
+
+        @JsIntValue(14)
         val propertyName: SymbolDisplayPartKind
+
+        @JsIntValue(15)
         val punctuation: SymbolDisplayPartKind
+
+        @JsIntValue(16)
         val space: SymbolDisplayPartKind
+
+        @JsIntValue(17)
         val text: SymbolDisplayPartKind
+
+        @JsIntValue(18)
         val typeParameterName: SymbolDisplayPartKind
+
+        @JsIntValue(19)
         val enumMemberName: SymbolDisplayPartKind
+
+        @JsIntValue(20)
         val functionName: SymbolDisplayPartKind
+
+        @JsIntValue(21)
         val regularExpressionLiteral: SymbolDisplayPartKind
+
+        @JsIntValue(22)
         val link: SymbolDisplayPartKind
+
+        @JsIntValue(23)
         val linkName: SymbolDisplayPartKind
+
+        @JsIntValue(24)
         val linkText: SymbolDisplayPartKind
     }
 }

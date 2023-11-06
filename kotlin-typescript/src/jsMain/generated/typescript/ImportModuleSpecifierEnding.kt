@@ -1,19 +1,27 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package typescript
 
-// language=JavaScript
-@JsName("""(/*union*/{auto: 'auto', minimal: 'minimal', index: 'index', js: 'js'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface ImportModuleSpecifierEnding {
     companion object {
+        @JsValue("auto")
         val auto: ImportModuleSpecifierEnding
+
+        @JsValue("minimal")
         val minimal: ImportModuleSpecifierEnding
+
+        @JsValue("index")
         val index: ImportModuleSpecifierEnding
+
+        @JsValue("js")
         val js: ImportModuleSpecifierEnding
     }
 }

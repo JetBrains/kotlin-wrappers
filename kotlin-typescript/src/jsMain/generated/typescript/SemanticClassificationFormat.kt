@@ -1,17 +1,21 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package typescript
 
-// language=JavaScript
-@JsName("""(/*union*/{Original: 'original', TwentyTwenty: '2020'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface SemanticClassificationFormat {
     companion object {
+        @JsValue("original")
         val Original: SemanticClassificationFormat
+
+        @JsValue("2020")
         val TwentyTwenty: SemanticClassificationFormat
     }
 }

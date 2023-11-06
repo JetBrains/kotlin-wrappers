@@ -1,22 +1,36 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package typescript
 
-// language=JavaScript
-@JsName("""(/*union*/{None: 0, InMultiLineCommentTrivia: 1, InSingleQuoteStringLiteral: 2, InDoubleQuoteStringLiteral: 3, InTemplateHeadOrNoSubstitutionTemplate: 4, InTemplateMiddleOrTail: 5, InTemplateSubstitutionPosition: 6}/*union*/)""")
+import seskar.js.JsIntValue
+import seskar.js.JsUnion
+
+@JsUnion
 sealed external interface EndOfLineState {
     companion object {
+        @JsIntValue(0)
         val None: EndOfLineState
+
+        @JsIntValue(1)
         val InMultiLineCommentTrivia: EndOfLineState
+
+        @JsIntValue(2)
         val InSingleQuoteStringLiteral: EndOfLineState
+
+        @JsIntValue(3)
         val InDoubleQuoteStringLiteral: EndOfLineState
+
+        @JsIntValue(4)
         val InTemplateHeadOrNoSubstitutionTemplate: EndOfLineState
+
+        @JsIntValue(5)
         val InTemplateMiddleOrTail: EndOfLineState
+
+        @JsIntValue(6)
         val InTemplateSubstitutionPosition: EndOfLineState
     }
 }

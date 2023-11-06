@@ -1,19 +1,27 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package typescript
 
-// language=JavaScript
-@JsName("""(/*union*/{exact: 'exact', prefix: 'prefix', substring: 'substring', camelCase: 'camelCase'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface MatchKind {
     companion object {
+        @JsValue("exact")
         val exact: MatchKind
+
+        @JsValue("prefix")
         val prefix: MatchKind
+
+        @JsValue("substring")
         val substring: MatchKind
+
+        @JsValue("camelCase")
         val camelCase: MatchKind
     }
 }

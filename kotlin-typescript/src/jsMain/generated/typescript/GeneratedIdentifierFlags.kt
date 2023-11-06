@@ -1,20 +1,30 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package typescript
 
-// language=JavaScript
-@JsName("""(/*union*/{None: 0, ReservedInNestedScopes: 8, Optimistic: 16, FileLevel: 32, AllowNameSubstitution: 64}/*union*/)""")
+import seskar.js.JsIntValue
+import seskar.js.JsUnion
+
+@JsUnion
 sealed external interface GeneratedIdentifierFlags {
     companion object {
+        @JsIntValue(0)
         val None: GeneratedIdentifierFlags
+
+        @JsIntValue(8)
         val ReservedInNestedScopes: GeneratedIdentifierFlags
+
+        @JsIntValue(16)
         val Optimistic: GeneratedIdentifierFlags
+
+        @JsIntValue(32)
         val FileLevel: GeneratedIdentifierFlags
+
+        @JsIntValue(64)
         val AllowNameSubstitution: GeneratedIdentifierFlags
     }
 }

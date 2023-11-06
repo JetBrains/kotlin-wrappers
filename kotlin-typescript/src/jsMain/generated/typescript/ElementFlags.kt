@@ -1,23 +1,39 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package typescript
 
-// language=JavaScript
-@JsName("""(/*union*/{Required: 1, Optional: 2, Rest: 4, Variadic: 8, Fixed: 3, Variable: 12, NonRequired: 14, NonRest: 11}/*union*/)""")
+import seskar.js.JsIntValue
+import seskar.js.JsUnion
+
+@JsUnion
 sealed external interface ElementFlags {
     companion object {
+        @JsIntValue(1)
         val Required: ElementFlags
+
+        @JsIntValue(2)
         val Optional: ElementFlags
+
+        @JsIntValue(4)
         val Rest: ElementFlags
+
+        @JsIntValue(8)
         val Variadic: ElementFlags
+
+        @JsIntValue(3)
         val Fixed: ElementFlags
+
+        @JsIntValue(12)
         val Variable: ElementFlags
+
+        @JsIntValue(14)
         val NonRequired: ElementFlags
+
+        @JsIntValue(11)
         val NonRest: ElementFlags
     }
 }

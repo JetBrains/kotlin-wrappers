@@ -1,19 +1,27 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package typescript
 
-// language=JavaScript
-@JsName("""(/*union*/{Classic: 1, NodeJs: 2, Node16: 3, NodeNext: 99}/*union*/)""")
+import seskar.js.JsIntValue
+import seskar.js.JsUnion
+
+@JsUnion
 sealed external interface ModuleResolutionKind {
     companion object {
+        @JsIntValue(1)
         val Classic: ModuleResolutionKind
+
+        @JsIntValue(2)
         val NodeJs: ModuleResolutionKind
+
+        @JsIntValue(3)
         val Node16: ModuleResolutionKind
+
+        @JsIntValue(99)
         val NodeNext: ModuleResolutionKind
     }
 }

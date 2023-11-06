@@ -1,18 +1,24 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package typescript
 
-// language=JavaScript
-@JsName("""(/*union*/{Semantic: 0, PartialSemantic: 1, Syntactic: 2}/*union*/)""")
+import seskar.js.JsIntValue
+import seskar.js.JsUnion
+
+@JsUnion
 sealed external interface LanguageServiceMode {
     companion object {
+        @JsIntValue(0)
         val Semantic: LanguageServiceMode
+
+        @JsIntValue(1)
         val PartialSemantic: LanguageServiceMode
+
+        @JsIntValue(2)
         val Syntactic: LanguageServiceMode
     }
 }

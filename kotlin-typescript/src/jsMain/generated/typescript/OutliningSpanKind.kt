@@ -1,26 +1,31 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package typescript
 
-// language=JavaScript
-@JsName("""(/*union*/{Comment: 'comment', Region: 'region', Code: 'code', Imports: 'imports'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface OutliningSpanKind {
     companion object {
         /** Single or multi-line comments */
+        @JsValue("comment")
         val Comment: OutliningSpanKind
 
         /** Sections marked by '// #region' and '// #endregion' comments */
+        @JsValue("region")
         val Region: OutliningSpanKind
 
         /** Declarations and expressions */
+        @JsValue("code")
         val Code: OutliningSpanKind
 
         /** Contiguous blocks of import declarations */
+        @JsValue("imports")
         val Imports: OutliningSpanKind
     }
 }

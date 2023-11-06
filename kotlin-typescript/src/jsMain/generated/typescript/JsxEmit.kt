@@ -1,21 +1,33 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package typescript
 
-// language=JavaScript
-@JsName("""(/*union*/{None: 0, Preserve: 1, React: 2, ReactNative: 3, ReactJSX: 4, ReactJSXDev: 5}/*union*/)""")
+import seskar.js.JsIntValue
+import seskar.js.JsUnion
+
+@JsUnion
 sealed external interface JsxEmit {
     companion object {
+        @JsIntValue(0)
         val None: JsxEmit
+
+        @JsIntValue(1)
         val Preserve: JsxEmit
+
+        @JsIntValue(2)
         val React: JsxEmit
+
+        @JsIntValue(3)
         val ReactNative: JsxEmit
+
+        @JsIntValue(4)
         val ReactJSX: JsxEmit
+
+        @JsIntValue(5)
         val ReactJSXDev: JsxEmit
     }
 }

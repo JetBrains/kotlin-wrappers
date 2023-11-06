@@ -1,18 +1,24 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package typescript
 
-// language=JavaScript
-@JsName("""(/*union*/{auto: 'auto', braces: 'braces', none: 'none'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface JsxAttributeCompletionStyle {
     companion object {
+        @JsValue("auto")
         val auto: JsxAttributeCompletionStyle
+
+        @JsValue("braces")
         val braces: JsxAttributeCompletionStyle
+
+        @JsValue("none")
         val none: JsxAttributeCompletionStyle
     }
 }

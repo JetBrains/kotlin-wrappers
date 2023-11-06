@@ -1,18 +1,24 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package typescript
 
-// language=JavaScript
-@JsName("""(/*union*/{Remove: 0, Preserve: 1, Error: 2}/*union*/)""")
+import seskar.js.JsIntValue
+import seskar.js.JsUnion
+
+@JsUnion
 sealed external interface ImportsNotUsedAsValues {
     companion object {
+        @JsIntValue(0)
         val Remove: ImportsNotUsedAsValues
+
+        @JsIntValue(1)
         val Preserve: ImportsNotUsedAsValues
+
+        @JsIntValue(2)
         val Error: ImportsNotUsedAsValues
     }
 }

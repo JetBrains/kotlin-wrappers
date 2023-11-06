@@ -1,22 +1,36 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package typescript
 
-// language=JavaScript
-@JsName("""(/*union*/{None: 0, MayIncludeAutoImports: 1, IsImportStatementCompletion: 2, IsContinuation: 4, ResolvedModuleSpecifiers: 8, ResolvedModuleSpecifiersBeyondLimit: 16, MayIncludeMethodSnippets: 32}/*union*/)""")
+import seskar.js.JsIntValue
+import seskar.js.JsUnion
+
+@JsUnion
 sealed external interface CompletionInfoFlags {
     companion object {
+        @JsIntValue(0)
         val None: CompletionInfoFlags
+
+        @JsIntValue(1)
         val MayIncludeAutoImports: CompletionInfoFlags
+
+        @JsIntValue(2)
         val IsImportStatementCompletion: CompletionInfoFlags
+
+        @JsIntValue(4)
         val IsContinuation: CompletionInfoFlags
+
+        @JsIntValue(8)
         val ResolvedModuleSpecifiers: CompletionInfoFlags
+
+        @JsIntValue(16)
         val ResolvedModuleSpecifiersBeyondLimit: CompletionInfoFlags
+
+        @JsIntValue(32)
         val MayIncludeMethodSnippets: CompletionInfoFlags
     }
 }

@@ -1,41 +1,89 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package typescript
 
-// language=JavaScript
-@JsName("""(/*union*/{None: 0, NoTruncation: 1, WriteArrayAsGenericType: 2, UseStructuralFallback: 8, WriteTypeArgumentsOfSignature: 32, UseFullyQualifiedType: 64, SuppressAnyReturnType: 256, MultilineObjectLiterals: 1024, WriteClassExpressionAsTypeLiteral: 2048, UseTypeOfFunction: 4096, OmitParameterModifiers: 8192, UseAliasDefinedOutsideCurrentScope: 16384, UseSingleQuotesForStringLiteralType: 268435456, NoTypeReduction: 536870912, OmitThisParameter: 33554432, AllowUniqueESSymbolType: 1048576, AddUndefined: 131072, WriteArrowStyleSignature: 262144, InArrayType: 524288, InElementType: 2097152, InFirstTypeArgument: 4194304, InTypeAlias: 8388608, /** @deprecated */ WriteOwnNameForAnyLike: 0, NodeBuilderFlagsMask: 848330091}/*union*/)""")
+import seskar.js.JsIntValue
+import seskar.js.JsUnion
+
+@JsUnion
 sealed external interface TypeFormatFlags {
     companion object {
+        @JsIntValue(0)
         val None: TypeFormatFlags
+
+        @JsIntValue(1)
         val NoTruncation: TypeFormatFlags
+
+        @JsIntValue(2)
         val WriteArrayAsGenericType: TypeFormatFlags
+
+        @JsIntValue(8)
         val UseStructuralFallback: TypeFormatFlags
+
+        @JsIntValue(32)
         val WriteTypeArgumentsOfSignature: TypeFormatFlags
+
+        @JsIntValue(64)
         val UseFullyQualifiedType: TypeFormatFlags
+
+        @JsIntValue(256)
         val SuppressAnyReturnType: TypeFormatFlags
+
+        @JsIntValue(1024)
         val MultilineObjectLiterals: TypeFormatFlags
+
+        @JsIntValue(2048)
         val WriteClassExpressionAsTypeLiteral: TypeFormatFlags
+
+        @JsIntValue(4096)
         val UseTypeOfFunction: TypeFormatFlags
+
+        @JsIntValue(8192)
         val OmitParameterModifiers: TypeFormatFlags
+
+        @JsIntValue(16384)
         val UseAliasDefinedOutsideCurrentScope: TypeFormatFlags
+
+        @JsIntValue(268435456)
         val UseSingleQuotesForStringLiteralType: TypeFormatFlags
+
+        @JsIntValue(536870912)
         val NoTypeReduction: TypeFormatFlags
+
+        @JsIntValue(33554432)
         val OmitThisParameter: TypeFormatFlags
+
+        @JsIntValue(1048576)
         val AllowUniqueESSymbolType: TypeFormatFlags
+
+        @JsIntValue(131072)
         val AddUndefined: TypeFormatFlags
+
+        @JsIntValue(262144)
         val WriteArrowStyleSignature: TypeFormatFlags
+
+        @JsIntValue(524288)
         val InArrayType: TypeFormatFlags
+
+        @JsIntValue(2097152)
         val InElementType: TypeFormatFlags
+
+        @JsIntValue(4194304)
         val InFirstTypeArgument: TypeFormatFlags
+
+        @JsIntValue(8388608)
         val InTypeAlias: TypeFormatFlags
+
+        @JsIntValue(0)
         val
                 /** @deprecated */
                 WriteOwnNameForAnyLike: TypeFormatFlags
+
+        @JsIntValue(848330091)
         val NodeBuilderFlagsMask: TypeFormatFlags
     }
 }

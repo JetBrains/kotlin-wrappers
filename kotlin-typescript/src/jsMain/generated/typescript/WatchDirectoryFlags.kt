@@ -1,17 +1,21 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package typescript
 
-// language=JavaScript
-@JsName("""(/*union*/{None: 0, Recursive: 1}/*union*/)""")
+import seskar.js.JsIntValue
+import seskar.js.JsUnion
+
+@JsUnion
 sealed external interface WatchDirectoryFlags {
     companion object {
+        @JsIntValue(0)
         val None: WatchDirectoryFlags
+
+        @JsIntValue(1)
         val Recursive: WatchDirectoryFlags
     }
 }

@@ -1,22 +1,36 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package typescript
 
-// language=JavaScript
-@JsName("""(/*union*/{SourceFile: 0, Expression: 1, IdentifierName: 2, MappedTypeParameter: 3, Unspecified: 4, EmbeddedStatement: 5, JsxAttributeValue: 6}/*union*/)""")
+import seskar.js.JsIntValue
+import seskar.js.JsUnion
+
+@JsUnion
 sealed external interface EmitHint {
     companion object {
+        @JsIntValue(0)
         val SourceFile: EmitHint
+
+        @JsIntValue(1)
         val Expression: EmitHint
+
+        @JsIntValue(2)
         val IdentifierName: EmitHint
+
+        @JsIntValue(3)
         val MappedTypeParameter: EmitHint
+
+        @JsIntValue(4)
         val Unspecified: EmitHint
+
+        @JsIntValue(5)
         val EmbeddedStatement: EmitHint
+
+        @JsIntValue(6)
         val JsxAttributeValue: EmitHint
     }
 }

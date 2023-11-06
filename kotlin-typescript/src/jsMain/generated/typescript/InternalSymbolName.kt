@@ -1,32 +1,66 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package typescript
 
-// language=JavaScript
-@JsName("""(/*union*/{Call: '__call', Constructor: '__constructor', New: '__new', Index: '__index', ExportStar: '__export', Global: '__global', Missing: '__missing', Type: '__type', Object: '__object', JSXAttributes: '__jsxAttributes', Class: '__class', Function: '__function', Computed: '__computed', Resolving: '__resolving__', ExportEquals: 'export=', Default: 'default', This: 'this'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface InternalSymbolName {
     companion object {
+        @JsValue("__call")
         val Call: InternalSymbolName
+
+        @JsValue("__constructor")
         val Constructor: InternalSymbolName
+
+        @JsValue("__new")
         val New: InternalSymbolName
+
+        @JsValue("__index")
         val Index: InternalSymbolName
+
+        @JsValue("__export")
         val ExportStar: InternalSymbolName
+
+        @JsValue("__global")
         val Global: InternalSymbolName
+
+        @JsValue("__missing")
         val Missing: InternalSymbolName
+
+        @JsValue("__type")
         val Type: InternalSymbolName
+
+        @JsValue("__object")
         val Object: InternalSymbolName
+
+        @JsValue("__jsxAttributes")
         val JSXAttributes: InternalSymbolName
+
+        @JsValue("__class")
         val Class: InternalSymbolName
+
+        @JsValue("__function")
         val Function: InternalSymbolName
+
+        @JsValue("__computed")
         val Computed: InternalSymbolName
+
+        @JsValue("__resolving__")
         val Resolving: InternalSymbolName
+
+        @JsValue("export=")
         val ExportEquals: InternalSymbolName
+
+        @JsValue("default")
         val Default: InternalSymbolName
+
+        @JsValue("this")
         val This: InternalSymbolName
     }
 }

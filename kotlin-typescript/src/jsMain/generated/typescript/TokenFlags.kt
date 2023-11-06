@@ -1,21 +1,33 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package typescript
 
-// language=JavaScript
-@JsName("""(/*union*/{None: 0, Scientific: 16, Octal: 32, HexSpecifier: 64, BinarySpecifier: 128, OctalSpecifier: 256,}/*union*/)""")
+import seskar.js.JsIntValue
+import seskar.js.JsUnion
+
+@JsUnion
 sealed external interface TokenFlags {
     companion object {
+        @JsIntValue(0)
         val None: TokenFlags
+
+        @JsIntValue(16)
         val Scientific: TokenFlags
+
+        @JsIntValue(32)
         val Octal: TokenFlags
+
+        @JsIntValue(64)
         val HexSpecifier: TokenFlags
+
+        @JsIntValue(128)
         val BinarySpecifier: TokenFlags
+
+        @JsIntValue(256)
         val OctalSpecifier: TokenFlags
     }
 }
