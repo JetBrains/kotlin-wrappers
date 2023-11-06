@@ -12,7 +12,6 @@ private val TARGET_ALIASES = mapOf(
     "emotion" to "emotion-react",
 
     "@mui/icons-material" to "mui-icons",
-    "@mui/lab" to "mui-lab",
     "@mui/x-date-pickers" to "muix-date-pickers",
     "@mui/x-tree-view" to "muix-tree-view",
 
