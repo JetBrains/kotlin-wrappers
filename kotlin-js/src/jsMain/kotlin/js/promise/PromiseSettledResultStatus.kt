@@ -1,19 +1,17 @@
+// Automatically generated - do not modify!
+
 @file:Suppress(
+    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package js.promise
 
-import seskar.js.JsUnion
-import seskar.js.JsValue
-
-@JsUnion
+// language=JavaScript
+@JsName("""(/*union*/{fulfilled: 'fulfilled', rejected: 'rejected'}/*union*/)""")
 sealed external interface PromiseSettledResultStatus {
     companion object {
-        @JsValue("fulfilled")
         val fulfilled: PromiseSettledResultStatus
-
-        @JsValue("rejected")
         val rejected: PromiseSettledResultStatus
     }
 }
