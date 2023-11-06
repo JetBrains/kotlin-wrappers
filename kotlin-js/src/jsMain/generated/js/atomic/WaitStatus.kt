@@ -1,19 +1,31 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package js.atomic
 
-// language=JavaScript
-@JsName("""(/*union*/{ok: 'ok', notEqual: 'not-equal', timedOut: 'timed-out' }/*union*/)""")
-sealed external interface WaitStatus {
+import seskar.js.JsUnion
+import seskar.js.JsValue
 
-    object ok : WaitAsyncStatus
-    object notEqual : WaitSyncStatus
-    object timedOut : WaitAsyncStatus, WaitSyncStatus
+@JsUnion
+sealed external interface WaitStatus {
+    companion object {
+
+        @JsValue("ok")
+        val ok: ok
+
+        @JsValue("not-equal")
+        val notEqual: notEqual
+
+        @JsValue("timed-out")
+        val timedOut: timedOut
+    }
+
+    interface ok : WaitAsyncStatus
+    interface notEqual : WaitSyncStatus
+    interface timedOut : WaitAsyncStatus, WaitSyncStatus
 }
 
 sealed external interface WaitAsyncStatus : WaitStatus
