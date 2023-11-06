@@ -60,7 +60,7 @@ include("kotlin-history")
 include("kotlin-js")
 
 // Kotlin/JS: Material UI wrappers
-include("kotlin-mui")
+include("kotlin-mui-material")
 
 // Kotlin/JS: MUI Base UI wrappers
 include("kotlin-mui-base")
