@@ -1,15 +1,19 @@
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package web.buffer
 
-// language=JavaScript
-@JsName("""(/*union*/{native: 'native', transparent: 'transparent'}/*union*/)""")
+import seskar.js.JsUnion
+import seskar.js.JsValue
+
+@JsUnion
 sealed external interface EndingType {
     companion object {
+        @JsValue("native")
         val native: EndingType
+
+        @JsValue("transparent")
         val transparent: EndingType
     }
 }
