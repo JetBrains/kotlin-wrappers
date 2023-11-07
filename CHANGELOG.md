@@ -1,3 +1,13 @@
+## pre.639
+
+**BREAKING CHANGE**
+
+* MUI subproject names fixed
+    * `kotlin-mui` -> `kotlin-mui-material`
+    * `kotlin-icons` -> `kotlin-icons-material`
+* React Select
+    * Union names in lower case (like in original)
+
 ## pre.635
 
 **BREAKING CHANGE**
