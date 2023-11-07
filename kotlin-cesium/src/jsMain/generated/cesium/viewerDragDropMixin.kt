@@ -19,7 +19,7 @@ import web.dom.Element
  * });
  * ```
  * @param [viewer] The viewer instance.
- * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/viewerDragDropMixin.html">Online Documentation</a>
+ * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#viewerDragDropMixin">Online Documentation</a>
  */
 external fun viewerDragDropMixin(
     viewer: Viewer,

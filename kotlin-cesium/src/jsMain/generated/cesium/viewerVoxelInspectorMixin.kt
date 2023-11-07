@@ -13,6 +13,6 @@ package cesium
  * viewer.extend(viewerVoxelInspectorMixin);
  * ```
  * @param [viewer] The viewer instance.
- * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/viewerVoxelInspectorMixin.html">Online Documentation</a>
+ * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#viewerVoxelInspectorMixin">Online Documentation</a>
  */
 external fun viewerVoxelInspectorMixin(viewer: Viewer)

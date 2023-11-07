@@ -13,7 +13,7 @@ package cesium
  * @param [relative] The relative Uri.
  * @param [base] The base Uri.
  * @return The absolute Uri of the given relative Uri.
- * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/getAbsoluteUri.html">Online Documentation</a>
+ * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#getAbsoluteUri">Online Documentation</a>
  */
 external fun getAbsoluteUri(
     relative: String,

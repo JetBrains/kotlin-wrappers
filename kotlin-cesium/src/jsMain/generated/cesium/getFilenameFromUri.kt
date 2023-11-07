@@ -12,6 +12,6 @@ package cesium
  * ```
  * @param [uri] The Uri.
  * @return The last segment of the Uri.
- * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/getFilenameFromUri.html">Online Documentation</a>
+ * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#getFilenameFromUri">Online Documentation</a>
  */
 external fun getFilenameFromUri(uri: String): String

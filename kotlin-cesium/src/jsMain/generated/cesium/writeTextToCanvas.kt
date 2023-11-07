@@ -13,7 +13,7 @@ import web.html.HTMLCanvasElement
  * @return A new canvas with the given text drawn into it.  The dimensions object
  *   from measureText will also be added to the returned canvas. If text is
  *   blank, returns undefined.
- * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/writeTextToCanvas.html">Online Documentation</a>
+ * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#writeTextToCanvas">Online Documentation</a>
  */
 external fun writeTextToCanvas(
     text: String,

@@ -10,6 +10,6 @@ package cesium
  * measured from.  This function uses performance.now() if it is available, or Date.now()
  * otherwise.
  * @return The timestamp in milliseconds since some unspecified reference time.
- * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/getTimestamp.html">Online Documentation</a>
+ * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#getTimestamp">Online Documentation</a>
  */
 external fun getTimestamp(): Double

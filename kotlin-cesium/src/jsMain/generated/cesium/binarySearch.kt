@@ -24,7 +24,7 @@ import js.core.ReadonlyArray
  *   does not exist, the return value is a negative number which is the bitwise complement (~)
  *   of the index before which the itemToFind should be inserted in order to maintain the
  *   sorted order of the array.
- * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/binarySearch.html">Online Documentation</a>
+ * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#binarySearch">Online Documentation</a>
  */
 external fun binarySearch(
     array: ReadonlyArray<Any>,

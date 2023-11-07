@@ -12,6 +12,6 @@ package cesium
  * ```
  * @param [uri] The Uri.
  * @return The extension of the Uri.
- * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/getExtensionFromUri.html">Online Documentation</a>
+ * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#getExtensionFromUri">Online Documentation</a>
  */
 external fun getExtensionFromUri(uri: String): String

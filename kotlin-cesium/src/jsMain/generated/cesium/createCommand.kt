@@ -14,7 +14,7 @@ package cesium
  * @param [func] The function to execute.
  * @param [canExecute] A boolean indicating whether the function can currently be executed.
  *   Default value - `true`
- * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/createCommand.html">Online Documentation</a>
+ * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#createCommand">Online Documentation</a>
  */
 external fun createCommand(
     func: Function<*>,

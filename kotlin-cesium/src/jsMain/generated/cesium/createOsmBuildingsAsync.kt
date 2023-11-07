@@ -43,7 +43,7 @@ import js.promise.Promise
  * ```
  * @param [options] Construction options. Any options allowed by the [Cesium3DTileset] constructor
  *   may be specified here. In addition to those, the following properties are supported:
- * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/createOsmBuildingsAsync.html">Online Documentation</a>
+ * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#createOsmBuildingsAsync">Online Documentation</a>
  */
 external fun createOsmBuildingsAsync(options: CreateOsmBuildingsAsyncOptions? = definedExternally): Promise<Cesium3DTileset>
 

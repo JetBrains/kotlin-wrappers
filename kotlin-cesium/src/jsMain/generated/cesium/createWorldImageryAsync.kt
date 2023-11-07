@@ -26,7 +26,7 @@ import js.promise.Promise
  *   console.log(`There was an error creating world imagery: ${error}`);
  * }
  * ```
- * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/createWorldImageryAsync.html">Online Documentation</a>
+ * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#createWorldImageryAsync">Online Documentation</a>
  */
 external fun createWorldImageryAsync(options: CreateWorldImageryAsyncOptions? = definedExternally): Promise<IonImageryProvider>
 

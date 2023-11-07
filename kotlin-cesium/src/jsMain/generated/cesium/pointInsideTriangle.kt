@@ -19,7 +19,7 @@ package cesium
  * @param [p1] The second point of the triangle.
  * @param [p2] The third point of the triangle.
  * @return `true` if the point is inside the triangle; otherwise, `false`.
- * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/pointInsideTriangle.html">Online Documentation</a>
+ * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#pointInsideTriangle">Online Documentation</a>
  */
 external fun pointInsideTriangle(
     point: Cartesian3,

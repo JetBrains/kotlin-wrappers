@@ -13,7 +13,7 @@ import web.canvas.ImageData
  * @param [width] The width of the image. If not defined, then image.width is assigned.
  * @param [height] The height of the image. If not defined, then image.height is assigned.
  * @return The pixels of the image.
- * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/getImagePixels.html">Online Documentation</a>
+ * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#getImagePixels">Online Documentation</a>
  */
 external fun getImagePixels(
     image: dynamic,

@@ -36,7 +36,7 @@ import js.core.ReadonlyArray
  * });
  * ```
  * @return A new [Material] instance.
- * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/createElevationBandMaterial.html">Online Documentation</a>
+ * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#createElevationBandMaterial">Online Documentation</a>
  */
 external fun createElevationBandMaterial(options: CreateElevationBandMaterialOptions): Material
 

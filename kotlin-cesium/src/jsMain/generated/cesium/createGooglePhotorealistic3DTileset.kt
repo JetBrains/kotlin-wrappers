@@ -34,7 +34,7 @@ import js.promise.Promise
  * @param [key] Your API key to access Google Photorealistic 3D Tiles. See [https://developers.google.com/maps/documentation/javascript/get-api-key] for instructions on how to create your own key.
  *   Default value - [GoogleMaps.defaultApiKey]
  * @param [options] An object describing initialization options.
- * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/createGooglePhotorealistic3DTileset.html">Online Documentation</a>
+ * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#createGooglePhotorealistic3DTileset">Online Documentation</a>
  */
 external fun createGooglePhotorealistic3DTileset(
     key: String? = definedExternally,

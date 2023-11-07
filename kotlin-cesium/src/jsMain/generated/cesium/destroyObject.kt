@@ -24,7 +24,7 @@ package cesium
  * @param [object] The object to destroy.
  * @param [message] The message to include in the exception that is thrown if
  *   a destroyed object's function is called.
- * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/destroyObject.html">Online Documentation</a>
+ * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#destroyObject">Online Documentation</a>
  */
 external fun destroyObject(
     obj: Any,

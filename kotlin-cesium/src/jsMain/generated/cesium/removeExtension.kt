@@ -9,7 +9,7 @@ package cesium
  * @param [gltf] A javascript object containing a glTF asset.
  * @param [extension] The extension to remove.
  * @return The extension data removed from gltf.extensions.
- * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/removeExtension.html">Online Documentation</a>
+ * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#removeExtension">Online Documentation</a>
  */
 external fun removeExtension(
     gltf: Any,

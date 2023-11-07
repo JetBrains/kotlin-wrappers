@@ -16,7 +16,7 @@ package cesium
  * ```
  * @param [viewer] The viewer instance.
  * @param [options] An object with properties.
- * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/viewerPerformanceWatchdogMixin.html">Online Documentation</a>
+ * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#viewerPerformanceWatchdogMixin">Online Documentation</a>
  */
 external fun viewerPerformanceWatchdogMixin(
     viewer: Viewer,

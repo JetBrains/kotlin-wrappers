@@ -30,7 +30,7 @@ import js.promise.Promise
  *   });
  * ```
  * @return A promise that resolved to an object containing the KML string and a dictionary of external file blobs, or a kmz file as a blob if options.kmz is true.
- * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/exportKml.html">Online Documentation</a>
+ * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#exportKml">Online Documentation</a>
  */
 external fun exportKml(options: ExportKmlOptions): Promise<dynamic>
 

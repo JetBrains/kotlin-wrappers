@@ -20,7 +20,7 @@ package cesium
  * @param [p2] The third point of the triangle, corresponding to the barycentric z-axis.
  * @param [result] The object onto which to store the result.
  * @return The modified result parameter or a new Cartesian3 instance if one was not provided. If the triangle is degenerate the function will return undefined.
- * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/barycentricCoordinates.html">Online Documentation</a>
+ * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#barycentricCoordinates">Online Documentation</a>
  */
 external fun barycentricCoordinates(
     point: Cartesian3,

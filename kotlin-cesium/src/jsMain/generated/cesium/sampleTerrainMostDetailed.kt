@@ -33,7 +33,7 @@ import js.promise.Promise
  *   Default value - `false`
  * @return A promise that resolves to the provided list of positions when terrain the query has completed.  This
  *   promise will reject if the terrain provider's `availability` property is undefined.
- * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/sampleTerrainMostDetailed.html">Online Documentation</a>
+ * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#sampleTerrainMostDetailed">Online Documentation</a>
  */
 external fun sampleTerrainMostDetailed(
     terrainProvider: TerrainProvider,

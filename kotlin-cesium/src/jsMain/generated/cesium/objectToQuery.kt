@@ -17,6 +17,6 @@ package cesium
  * ```
  * @param [obj] The object containing data to encode.
  * @return An encoded query string.
- * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/objectToQuery.html">Online Documentation</a>
+ * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#objectToQuery">Online Documentation</a>
  */
 external fun objectToQuery(obj: Any): String

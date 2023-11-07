@@ -6,6 +6,6 @@ package cesium
 
 /**
  * Loads the gltf object
- * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/loadGltfJson.html">Online Documentation</a>
+ * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#loadGltfJson">Online Documentation</a>
  */
 external fun loadGltfJson()

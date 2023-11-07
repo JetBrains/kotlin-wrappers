@@ -11,6 +11,6 @@ package cesium
  * ```
  * @param [year] The year to be tested.
  * @return True if `year` is a leap year.
- * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/isLeapYear.html">Online Documentation</a>
+ * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#isLeapYear">Online Documentation</a>
  */
 external fun isLeapYear(year: Int): Boolean

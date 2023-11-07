@@ -19,7 +19,7 @@ import js.core.ReadonlyArray
  * @param [array] The array to sort.
  * @param [comparator] The function to use to compare elements in the array.
  * @param [userDefinedObject] Any item to pass as the third parameter to `comparator`.
- * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/mergeSort.html">Online Documentation</a>
+ * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#mergeSort">Online Documentation</a>
  */
 external fun mergeSort(
     array: ReadonlyArray<Any>,

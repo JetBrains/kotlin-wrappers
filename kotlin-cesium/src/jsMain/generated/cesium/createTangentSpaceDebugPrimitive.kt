@@ -17,7 +17,7 @@ package cesium
  * }));
  * ```
  * @return A new `Primitive` instance with geometry for the vectors.
- * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/createTangentSpaceDebugPrimitive.html">Online Documentation</a>
+ * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#createTangentSpaceDebugPrimitive">Online Documentation</a>
  */
 external fun createTangentSpaceDebugPrimitive(options: CreateTangentSpaceDebugPrimitiveOptions): Primitive
 

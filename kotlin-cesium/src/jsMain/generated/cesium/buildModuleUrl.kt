@@ -17,6 +17,6 @@ package cesium
  * ```
  * @param [relativeUrl] The relative path.
  * @return The absolutely URL representation of the provided path.
- * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/buildModuleUrl.html">Online Documentation</a>
+ * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#buildModuleUrl">Online Documentation</a>
  */
 external fun buildModuleUrl(relativeUrl: String): String

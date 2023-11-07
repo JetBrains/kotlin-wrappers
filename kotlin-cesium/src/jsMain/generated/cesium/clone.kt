@@ -10,7 +10,7 @@ package cesium
  * @param [deep] If true, all properties will be deep cloned recursively.
  *   Default value - `false`
  * @return The cloned object.
- * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/clone.html">Online Documentation</a>
+ * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#clone">Online Documentation</a>
  */
 external fun clone(
     obj: Any,

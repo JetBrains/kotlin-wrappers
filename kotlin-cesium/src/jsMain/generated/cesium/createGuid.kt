@@ -9,6 +9,6 @@ package cesium
  * ```
  * this.guid = createGuid();
  * ```
- * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/createGuid.html">Online Documentation</a>
+ * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#createGuid">Online Documentation</a>
  */
 external fun createGuid(): String

@@ -19,6 +19,6 @@ package cesium
  * ```
  * @param [queryString] The query string.
  * @return An object containing the parameters parsed from the query string.
- * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/queryToObject.html">Online Documentation</a>
+ * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#queryToObject">Online Documentation</a>
  */
 external fun queryToObject(queryString: String): Any

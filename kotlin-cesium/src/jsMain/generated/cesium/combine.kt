@@ -32,7 +32,7 @@ package cesium
  * @param [deep] Perform a recursive merge.
  *   Default value - `false`
  * @return The combined object containing all properties from both objects.
- * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/combine.html">Online Documentation</a>
+ * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#combine">Online Documentation</a>
  */
 external fun combine(
     object1: Any? = definedExternally,

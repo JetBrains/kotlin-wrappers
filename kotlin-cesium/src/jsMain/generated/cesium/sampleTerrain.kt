@@ -44,7 +44,7 @@ import js.promise.Promise
  * @param [rejectOnTileFail] If true, for a failed terrain tile request the promise will be rejected. If false, returned heights will be undefined.
  *   Default value - `false`
  * @return A promise that resolves to the provided list of positions when terrain the query has completed.
- * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/sampleTerrain.html">Online Documentation</a>
+ * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#sampleTerrain">Online Documentation</a>
  */
 external fun sampleTerrain(
     terrainProvider: TerrainProvider,

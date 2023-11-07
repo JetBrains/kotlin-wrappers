@@ -13,6 +13,6 @@ package cesium
  * viewer.extend(viewerCesium3DTilesInspectorMixin);
  * ```
  * @param [viewer] The viewer instance.
- * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/viewerCesium3DTilesInspectorMixin.html">Online Documentation</a>
+ * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#viewerCesium3DTilesInspectorMixin">Online Documentation</a>
  */
 external fun viewerCesium3DTilesInspectorMixin(viewer: Viewer)
