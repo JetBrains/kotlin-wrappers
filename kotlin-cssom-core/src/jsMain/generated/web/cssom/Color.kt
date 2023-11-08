@@ -7,6 +7,7 @@
 package web.cssom
 
 import seskar.js.JsValue
+import seskar.js.JsVirtual
 
 /*
  * `Color` declared as class for better multiplatform support
@@ -16,7 +17,7 @@ import seskar.js.JsValue
  * [K2 issue](https://youtrack.jetbrains.com/issue/KT-60856)
  */
 
-@JsName("null")
+@JsVirtual
 external class Color
 private constructor() : ColorType {
     companion object {
