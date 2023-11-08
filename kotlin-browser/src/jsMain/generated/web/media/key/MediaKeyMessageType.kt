@@ -6,10 +6,10 @@
 
 package web.media.key
 
-import seskar.js.JsUnion
 import seskar.js.JsValue
+import seskar.js.JsVirtual
 
-@JsUnion
+@JsVirtual
 sealed external interface MediaKeyMessageType {
     companion object {
         @JsValue("individualization-request")

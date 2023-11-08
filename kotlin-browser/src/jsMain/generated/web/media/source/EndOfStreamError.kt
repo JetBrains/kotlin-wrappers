@@ -6,10 +6,10 @@
 
 package web.media.source
 
-import seskar.js.JsUnion
 import seskar.js.JsValue
+import seskar.js.JsVirtual
 
-@JsUnion
+@JsVirtual
 sealed external interface EndOfStreamError {
     companion object {
         @JsValue("decode")

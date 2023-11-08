@@ -6,10 +6,10 @@
 
 package web.audio
 
-import seskar.js.JsUnion
 import seskar.js.JsValue
+import seskar.js.JsVirtual
 
-@JsUnion
+@JsVirtual
 sealed external interface AudioContextLatencyCategory {
     companion object {
         @JsValue("balanced")

@@ -6,10 +6,10 @@
 
 package react.dom.aria
 
-import seskar.js.JsUnion
 import seskar.js.JsValue
+import seskar.js.JsVirtual
 
-@JsUnion
+@JsVirtual
 sealed external interface AriaRelevant {
     companion object {
         @JsValue("additions")

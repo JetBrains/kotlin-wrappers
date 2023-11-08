@@ -6,10 +6,10 @@
 
 package webgl
 
-import seskar.js.JsUnion
 import seskar.js.JsValue
+import seskar.js.JsVirtual
 
-@JsUnion
+@JsVirtual
 sealed external interface WebGLExtension {
     companion object {
         @JsValue("ANGLE_instanced_arrays")

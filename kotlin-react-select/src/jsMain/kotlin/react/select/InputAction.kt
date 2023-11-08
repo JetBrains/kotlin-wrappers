@@ -4,10 +4,10 @@
 
 package react.select
 
-import seskar.js.JsUnion
 import seskar.js.JsValue
+import seskar.js.JsVirtual
 
-@JsUnion
+@JsVirtual
 sealed external interface InputAction {
     companion object {
         @JsValue("set-value")

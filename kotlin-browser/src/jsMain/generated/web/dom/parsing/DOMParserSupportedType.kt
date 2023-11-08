@@ -6,10 +6,10 @@
 
 package web.dom.parsing
 
-import seskar.js.JsUnion
 import seskar.js.JsValue
+import seskar.js.JsVirtual
 
-@JsUnion
+@JsVirtual
 sealed external interface DOMParserSupportedType {
     companion object {
         @JsValue("application/xhtml+xml")

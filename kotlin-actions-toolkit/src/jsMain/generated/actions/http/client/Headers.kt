@@ -6,10 +6,10 @@
 
 package actions.http.client
 
-import seskar.js.JsUnion
 import seskar.js.JsValue
+import seskar.js.JsVirtual
 
-@JsUnion
+@JsVirtual
 sealed external interface Headers {
     companion object {
         @JsValue("accept")

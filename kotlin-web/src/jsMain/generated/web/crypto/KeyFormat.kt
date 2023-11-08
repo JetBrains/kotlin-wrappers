@@ -6,10 +6,10 @@
 
 package web.crypto
 
-import seskar.js.JsUnion
 import seskar.js.JsValue
+import seskar.js.JsVirtual
 
-@JsUnion
+@JsVirtual
 sealed external interface KeyFormat {
     companion object {
         @JsValue("jwk")

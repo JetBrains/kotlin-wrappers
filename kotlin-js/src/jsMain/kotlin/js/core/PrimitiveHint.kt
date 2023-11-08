@@ -4,10 +4,10 @@
 
 package js.core
 
-import seskar.js.JsUnion
 import seskar.js.JsValue
+import seskar.js.JsVirtual
 
-@JsUnion
+@JsVirtual
 sealed external interface PrimitiveHint {
     companion object {
         @JsValue("number")

@@ -6,10 +6,10 @@
 
 package web.serviceworker
 
-import seskar.js.JsUnion
 import seskar.js.JsValue
+import seskar.js.JsVirtual
 
-@JsUnion
+@JsVirtual
 sealed external interface ServiceWorkerUpdateViaCache {
     companion object {
         @JsValue("all")

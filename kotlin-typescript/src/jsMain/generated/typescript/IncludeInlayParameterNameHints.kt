@@ -6,10 +6,10 @@
 
 package typescript
 
-import seskar.js.JsUnion
 import seskar.js.JsValue
+import seskar.js.JsVirtual
 
-@JsUnion
+@JsVirtual
 sealed external interface IncludeInlayParameterNameHints {
     companion object {
         @JsValue("none")

@@ -6,10 +6,10 @@
 
 package web.canvas
 
-import seskar.js.JsUnion
 import seskar.js.JsValue
+import seskar.js.JsVirtual
 
-@JsUnion
+@JsVirtual
 sealed external interface CanvasFontVariantCaps {
     companion object {
         @JsValue("all-petite-caps")

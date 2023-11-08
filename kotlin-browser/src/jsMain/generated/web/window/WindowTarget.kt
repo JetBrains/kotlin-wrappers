@@ -6,10 +6,10 @@
 
 package web.window
 
-import seskar.js.JsUnion
 import seskar.js.JsValue
+import seskar.js.JsVirtual
 
-@JsUnion
+@JsVirtual
 sealed external interface WindowTarget {
     companion object {
         @JsValue("_self")

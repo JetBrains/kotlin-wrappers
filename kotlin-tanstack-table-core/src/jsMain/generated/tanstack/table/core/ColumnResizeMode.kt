@@ -6,10 +6,10 @@
 
 package tanstack.table.core
 
-import seskar.js.JsUnion
 import seskar.js.JsValue
+import seskar.js.JsVirtual
 
-@JsUnion
+@JsVirtual
 sealed external interface ColumnResizeMode {
     companion object {
         @JsValue("onChange")

@@ -6,10 +6,10 @@
 
 package web.codecs
 
-import seskar.js.JsUnion
 import seskar.js.JsValue
+import seskar.js.JsVirtual
 
-@JsUnion
+@JsVirtual
 sealed external interface VideoTransferCharacteristics {
     companion object {
         @JsValue("bt709")

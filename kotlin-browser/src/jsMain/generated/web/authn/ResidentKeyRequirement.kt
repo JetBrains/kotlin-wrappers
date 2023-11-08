@@ -6,10 +6,10 @@
 
 package web.authn
 
-import seskar.js.JsUnion
 import seskar.js.JsValue
+import seskar.js.JsVirtual
 
-@JsUnion
+@JsVirtual
 sealed external interface ResidentKeyRequirement {
     companion object {
         @JsValue("discouraged")

@@ -8,10 +8,10 @@ package webassembly
 
 import js.core.BigInt
 import js.core.Void
-import seskar.js.JsUnion
 import seskar.js.JsValue
+import seskar.js.JsVirtual
 
-@JsUnion
+@JsVirtual
 sealed external interface ValueType<T> {
     companion object {
         @JsValue("anyfunc")

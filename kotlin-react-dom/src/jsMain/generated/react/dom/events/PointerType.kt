@@ -6,10 +6,10 @@
 
 package react.dom.events
 
-import seskar.js.JsUnion
 import seskar.js.JsValue
+import seskar.js.JsVirtual
 
-@JsUnion
+@JsVirtual
 sealed external interface PointerType {
     companion object {
         @JsValue("mouse")

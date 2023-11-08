@@ -6,10 +6,10 @@
 
 package web.cssom
 
-import seskar.js.JsUnion
 import seskar.js.JsValue
+import seskar.js.JsVirtual
 
-@JsUnion
+@JsVirtual
 sealed external interface FontVariantNumeric {
     companion object {
         @JsValue("diagonal-fractions")

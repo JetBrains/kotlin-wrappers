@@ -6,10 +6,10 @@
 
 package web.media.capabilities
 
-import seskar.js.JsUnion
 import seskar.js.JsValue
+import seskar.js.JsVirtual
 
-@JsUnion
+@JsVirtual
 sealed external interface MediaEncodingType {
     companion object {
         @JsValue("record")

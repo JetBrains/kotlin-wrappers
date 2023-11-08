@@ -6,10 +6,10 @@
 
 package web.credentials
 
-import seskar.js.JsUnion
 import seskar.js.JsValue
+import seskar.js.JsVirtual
 
-@JsUnion
+@JsVirtual
 sealed external interface CredentialMediationRequirement {
     companion object {
         @JsValue("conditional")

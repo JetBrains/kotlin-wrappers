@@ -6,10 +6,10 @@
 
 package actions.artifact
 
-import seskar.js.JsUnion
 import seskar.js.JsValue
+import seskar.js.JsVirtual
 
-@JsUnion
+@JsVirtual
 sealed external interface CRC64DigestEncoding {
     companion object {
         @JsValue("hex")

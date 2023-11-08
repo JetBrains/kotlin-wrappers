@@ -7,9 +7,9 @@
 package typescript
 
 import seskar.js.JsIntValue
-import seskar.js.JsUnion
+import seskar.js.JsVirtual
 
-@JsUnion
+@JsVirtual
 sealed external interface TokenClass {
     companion object {
         @JsIntValue(0)

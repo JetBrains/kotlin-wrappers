@@ -5,7 +5,7 @@ plugins {
 }
 
 kotlin {
-    jvmToolchain(11)
+    // jvmToolchain(11)
     jvm()
     js()
 

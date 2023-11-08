@@ -6,11 +6,11 @@
 
 package web.cssom.atrule
 
-import seskar.js.JsUnion
 import seskar.js.JsValue
+import seskar.js.JsVirtual
 import web.cssom.MediaQuery
 
-@JsUnion
+@JsVirtual
 sealed external interface MediaType : MediaQuery {
     companion object {
         @JsValue("all")

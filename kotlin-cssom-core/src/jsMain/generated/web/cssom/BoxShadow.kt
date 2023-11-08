@@ -7,12 +7,12 @@
 
 package web.cssom
 
-import seskar.js.JsUnion
 import seskar.js.JsValue
+import seskar.js.JsVirtual
 
 sealed external interface BoxShadow
 
-@JsUnion
+@JsVirtual
 sealed external interface BoxShadowInset {
     companion object {
         @JsValue("inset")

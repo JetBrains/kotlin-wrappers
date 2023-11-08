@@ -6,10 +6,10 @@
 
 package web.html
 
-import seskar.js.JsUnion
 import seskar.js.JsValue
+import seskar.js.JsVirtual
 
-@JsUnion
+@JsVirtual
 sealed external interface AutoFillNormalField {
     companion object {
         @JsValue("additional-name")

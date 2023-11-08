@@ -6,10 +6,10 @@
 
 package web.permissions
 
-import seskar.js.JsUnion
 import seskar.js.JsValue
+import seskar.js.JsVirtual
 
-@JsUnion
+@JsVirtual
 sealed external interface PermissionState {
     companion object {
         @JsValue("denied")
