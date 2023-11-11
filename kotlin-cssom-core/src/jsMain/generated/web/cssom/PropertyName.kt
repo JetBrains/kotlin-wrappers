@@ -10,1281 +10,1281 @@ import seskar.js.JsValue
 import seskar.js.JsVirtual
 
 @JsVirtual
-sealed external interface PropertyName : Ident {
+sealed external interface PropertyName<T : Any> : Ident {
     companion object {
         @JsValue("accent-color")
-        val accentColor: PropertyName
+        val accentColor: PropertyName<AccentColor>
 
         @JsValue("align-content")
-        val alignContent: PropertyName
+        val alignContent: PropertyName<AlignContent>
 
         @JsValue("align-items")
-        val alignItems: PropertyName
+        val alignItems: PropertyName<AlignItems>
 
         @JsValue("align-self")
-        val alignSelf: PropertyName
+        val alignSelf: PropertyName<AlignSelf>
 
         @JsValue("align-tracks")
-        val alignTracks: PropertyName
+        val alignTracks: PropertyName<AlignTracks>
 
         @JsValue("all")
-        val all: PropertyName
+        val all: PropertyName<All>
 
         @JsValue("animation")
-        val animation: PropertyName
+        val animation: PropertyName<Animation>
 
         @JsValue("animation-composition")
-        val animationComposition: PropertyName
+        val animationComposition: PropertyName<AnimationComposition>
 
         @JsValue("animation-delay")
-        val animationDelay: PropertyName
+        val animationDelay: PropertyName<AnimationDelay>
 
         @JsValue("animation-direction")
-        val animationDirection: PropertyName
+        val animationDirection: PropertyName<AnimationDirection>
 
         @JsValue("animation-duration")
-        val animationDuration: PropertyName
+        val animationDuration: PropertyName<AnimationDuration>
 
         @JsValue("animation-fill-mode")
-        val animationFillMode: PropertyName
+        val animationFillMode: PropertyName<AnimationFillMode>
 
         @JsValue("animation-iteration-count")
-        val animationIterationCount: PropertyName
+        val animationIterationCount: PropertyName<AnimationIterationCount>
 
         @JsValue("animation-name")
-        val animationName: PropertyName
+        val animationName: PropertyName<AnimationName>
 
         @JsValue("animation-play-state")
-        val animationPlayState: PropertyName
+        val animationPlayState: PropertyName<AnimationPlayState>
 
         @JsValue("animation-timeline")
-        val animationTimeline: PropertyName
+        val animationTimeline: PropertyName<AnimationTimeline>
 
         @JsValue("animation-timing-function")
-        val animationTimingFunction: PropertyName
+        val animationTimingFunction: PropertyName<AnimationTimingFunction>
 
         @JsValue("appearance")
-        val appearance: PropertyName
+        val appearance: PropertyName<Appearance>
 
         @JsValue("aspect-ratio")
-        val aspectRatio: PropertyName
+        val aspectRatio: PropertyName<AspectRatio>
 
         @JsValue("backdrop-filter")
-        val backdropFilter: PropertyName
+        val backdropFilter: PropertyName<BackdropFilter>
 
         @JsValue("backface-visibility")
-        val backfaceVisibility: PropertyName
+        val backfaceVisibility: PropertyName<BackfaceVisibility>
 
         @JsValue("background")
-        val background: PropertyName
+        val background: PropertyName<Background>
 
         @JsValue("background-attachment")
-        val backgroundAttachment: PropertyName
+        val backgroundAttachment: PropertyName<BackgroundAttachment>
 
         @JsValue("background-blend-mode")
-        val backgroundBlendMode: PropertyName
+        val backgroundBlendMode: PropertyName<BackgroundBlendMode>
 
         @JsValue("background-clip")
-        val backgroundClip: PropertyName
+        val backgroundClip: PropertyName<BackgroundClip>
 
         @JsValue("background-color")
-        val backgroundColor: PropertyName
+        val backgroundColor: PropertyName<BackgroundColor>
 
         @JsValue("background-image")
-        val backgroundImage: PropertyName
+        val backgroundImage: PropertyName<BackgroundImage>
 
         @JsValue("background-origin")
-        val backgroundOrigin: PropertyName
+        val backgroundOrigin: PropertyName<BackgroundOrigin>
 
         @JsValue("background-position")
-        val backgroundPosition: PropertyName
+        val backgroundPosition: PropertyName<BackgroundPosition>
 
         @JsValue("background-position-x")
-        val backgroundPositionX: PropertyName
+        val backgroundPositionX: PropertyName<BackgroundPositionX>
 
         @JsValue("background-position-y")
-        val backgroundPositionY: PropertyName
+        val backgroundPositionY: PropertyName<BackgroundPositionY>
 
         @JsValue("background-repeat")
-        val backgroundRepeat: PropertyName
+        val backgroundRepeat: PropertyName<BackgroundRepeat>
 
         @JsValue("background-size")
-        val backgroundSize: PropertyName
+        val backgroundSize: PropertyName<BackgroundSize>
 
         @JsValue("block-overflow")
-        val blockOverflow: PropertyName
+        val blockOverflow: PropertyName<BlockOverflow>
 
         @JsValue("block-size")
-        val blockSize: PropertyName
+        val blockSize: PropertyName<BlockSize>
 
         @JsValue("border")
-        val border: PropertyName
+        val border: PropertyName<Border>
 
         @JsValue("border-block")
-        val borderBlock: PropertyName
+        val borderBlock: PropertyName<BorderBlock>
 
         @JsValue("border-block-color")
-        val borderBlockColor: PropertyName
+        val borderBlockColor: PropertyName<BorderBlockColor>
 
         @JsValue("border-block-end")
-        val borderBlockEnd: PropertyName
+        val borderBlockEnd: PropertyName<BorderBlockEnd>
 
         @JsValue("border-block-end-color")
-        val borderBlockEndColor: PropertyName
+        val borderBlockEndColor: PropertyName<BorderBlockEndColor>
 
         @JsValue("border-block-end-style")
-        val borderBlockEndStyle: PropertyName
+        val borderBlockEndStyle: PropertyName<BorderBlockEndStyle>
 
         @JsValue("border-block-end-width")
-        val borderBlockEndWidth: PropertyName
+        val borderBlockEndWidth: PropertyName<BorderBlockEndWidth>
 
         @JsValue("border-block-start")
-        val borderBlockStart: PropertyName
+        val borderBlockStart: PropertyName<BorderBlockStart>
 
         @JsValue("border-block-start-color")
-        val borderBlockStartColor: PropertyName
+        val borderBlockStartColor: PropertyName<BorderBlockStartColor>
 
         @JsValue("border-block-start-style")
-        val borderBlockStartStyle: PropertyName
+        val borderBlockStartStyle: PropertyName<BorderBlockStartStyle>
 
         @JsValue("border-block-start-width")
-        val borderBlockStartWidth: PropertyName
+        val borderBlockStartWidth: PropertyName<BorderBlockStartWidth>
 
         @JsValue("border-block-style")
-        val borderBlockStyle: PropertyName
+        val borderBlockStyle: PropertyName<BorderBlockStyle>
 
         @JsValue("border-block-width")
-        val borderBlockWidth: PropertyName
+        val borderBlockWidth: PropertyName<BorderBlockWidth>
 
         @JsValue("border-bottom")
-        val borderBottom: PropertyName
+        val borderBottom: PropertyName<BorderBottom>
 
         @JsValue("border-bottom-color")
-        val borderBottomColor: PropertyName
+        val borderBottomColor: PropertyName<BorderBottomColor>
 
         @JsValue("border-bottom-left-radius")
-        val borderBottomLeftRadius: PropertyName
+        val borderBottomLeftRadius: PropertyName<BorderBottomLeftRadius>
 
         @JsValue("border-bottom-right-radius")
-        val borderBottomRightRadius: PropertyName
+        val borderBottomRightRadius: PropertyName<BorderBottomRightRadius>
 
         @JsValue("border-bottom-style")
-        val borderBottomStyle: PropertyName
+        val borderBottomStyle: PropertyName<BorderBottomStyle>
 
         @JsValue("border-bottom-width")
-        val borderBottomWidth: PropertyName
+        val borderBottomWidth: PropertyName<BorderBottomWidth>
 
         @JsValue("border-collapse")
-        val borderCollapse: PropertyName
+        val borderCollapse: PropertyName<BorderCollapse>
 
         @JsValue("border-color")
-        val borderColor: PropertyName
+        val borderColor: PropertyName<BorderColor>
 
         @JsValue("border-end-end-radius")
-        val borderEndEndRadius: PropertyName
+        val borderEndEndRadius: PropertyName<BorderEndEndRadius>
 
         @JsValue("border-end-start-radius")
-        val borderEndStartRadius: PropertyName
+        val borderEndStartRadius: PropertyName<BorderEndStartRadius>
 
         @JsValue("border-image")
-        val borderImage: PropertyName
+        val borderImage: PropertyName<BorderImage>
 
         @JsValue("border-image-outset")
-        val borderImageOutset: PropertyName
+        val borderImageOutset: PropertyName<BorderImageOutset>
 
         @JsValue("border-image-repeat")
-        val borderImageRepeat: PropertyName
+        val borderImageRepeat: PropertyName<BorderImageRepeat>
 
         @JsValue("border-image-slice")
-        val borderImageSlice: PropertyName
+        val borderImageSlice: PropertyName<BorderImageSlice>
 
         @JsValue("border-image-source")
-        val borderImageSource: PropertyName
+        val borderImageSource: PropertyName<BorderImageSource>
 
         @JsValue("border-image-width")
-        val borderImageWidth: PropertyName
+        val borderImageWidth: PropertyName<BorderImageWidth>
 
         @JsValue("border-inline")
-        val borderInline: PropertyName
+        val borderInline: PropertyName<BorderInline>
 
         @JsValue("border-inline-color")
-        val borderInlineColor: PropertyName
+        val borderInlineColor: PropertyName<BorderInlineColor>
 
         @JsValue("border-inline-end")
-        val borderInlineEnd: PropertyName
+        val borderInlineEnd: PropertyName<BorderInlineEnd>
 
         @JsValue("border-inline-end-color")
-        val borderInlineEndColor: PropertyName
+        val borderInlineEndColor: PropertyName<BorderInlineEndColor>
 
         @JsValue("border-inline-end-style")
-        val borderInlineEndStyle: PropertyName
+        val borderInlineEndStyle: PropertyName<BorderInlineEndStyle>
 
         @JsValue("border-inline-end-width")
-        val borderInlineEndWidth: PropertyName
+        val borderInlineEndWidth: PropertyName<BorderInlineEndWidth>
 
         @JsValue("border-inline-start")
-        val borderInlineStart: PropertyName
+        val borderInlineStart: PropertyName<BorderInlineStart>
 
         @JsValue("border-inline-start-color")
-        val borderInlineStartColor: PropertyName
+        val borderInlineStartColor: PropertyName<BorderInlineStartColor>
 
         @JsValue("border-inline-start-style")
-        val borderInlineStartStyle: PropertyName
+        val borderInlineStartStyle: PropertyName<BorderInlineStartStyle>
 
         @JsValue("border-inline-start-width")
-        val borderInlineStartWidth: PropertyName
+        val borderInlineStartWidth: PropertyName<BorderInlineStartWidth>
 
         @JsValue("border-inline-style")
-        val borderInlineStyle: PropertyName
+        val borderInlineStyle: PropertyName<BorderInlineStyle>
 
         @JsValue("border-inline-width")
-        val borderInlineWidth: PropertyName
+        val borderInlineWidth: PropertyName<BorderInlineWidth>
 
         @JsValue("border-left")
-        val borderLeft: PropertyName
+        val borderLeft: PropertyName<BorderLeft>
 
         @JsValue("border-left-color")
-        val borderLeftColor: PropertyName
+        val borderLeftColor: PropertyName<BorderLeftColor>
 
         @JsValue("border-left-style")
-        val borderLeftStyle: PropertyName
+        val borderLeftStyle: PropertyName<BorderLeftStyle>
 
         @JsValue("border-left-width")
-        val borderLeftWidth: PropertyName
+        val borderLeftWidth: PropertyName<BorderLeftWidth>
 
         @JsValue("border-radius")
-        val borderRadius: PropertyName
+        val borderRadius: PropertyName<BorderRadius>
 
         @JsValue("border-right")
-        val borderRight: PropertyName
+        val borderRight: PropertyName<BorderRight>
 
         @JsValue("border-right-color")
-        val borderRightColor: PropertyName
+        val borderRightColor: PropertyName<BorderRightColor>
 
         @JsValue("border-right-style")
-        val borderRightStyle: PropertyName
+        val borderRightStyle: PropertyName<BorderRightStyle>
 
         @JsValue("border-right-width")
-        val borderRightWidth: PropertyName
+        val borderRightWidth: PropertyName<BorderRightWidth>
 
         @JsValue("border-spacing")
-        val borderSpacing: PropertyName
+        val borderSpacing: PropertyName<BorderSpacing>
 
         @JsValue("border-start-end-radius")
-        val borderStartEndRadius: PropertyName
+        val borderStartEndRadius: PropertyName<BorderStartEndRadius>
 
         @JsValue("border-start-start-radius")
-        val borderStartStartRadius: PropertyName
+        val borderStartStartRadius: PropertyName<BorderStartStartRadius>
 
         @JsValue("border-style")
-        val borderStyle: PropertyName
+        val borderStyle: PropertyName<BorderStyle>
 
         @JsValue("border-top")
-        val borderTop: PropertyName
+        val borderTop: PropertyName<BorderTop>
 
         @JsValue("border-top-color")
-        val borderTopColor: PropertyName
+        val borderTopColor: PropertyName<BorderTopColor>
 
         @JsValue("border-top-left-radius")
-        val borderTopLeftRadius: PropertyName
+        val borderTopLeftRadius: PropertyName<BorderTopLeftRadius>
 
         @JsValue("border-top-right-radius")
-        val borderTopRightRadius: PropertyName
+        val borderTopRightRadius: PropertyName<BorderTopRightRadius>
 
         @JsValue("border-top-style")
-        val borderTopStyle: PropertyName
+        val borderTopStyle: PropertyName<BorderTopStyle>
 
         @JsValue("border-top-width")
-        val borderTopWidth: PropertyName
+        val borderTopWidth: PropertyName<BorderTopWidth>
 
         @JsValue("border-width")
-        val borderWidth: PropertyName
+        val borderWidth: PropertyName<BorderWidth>
 
         @JsValue("bottom")
-        val bottom: PropertyName
+        val bottom: PropertyName<Bottom>
 
         @JsValue("box-decoration-break")
-        val boxDecorationBreak: PropertyName
+        val boxDecorationBreak: PropertyName<BoxDecorationBreak>
 
         @JsValue("box-shadow")
-        val boxShadow: PropertyName
+        val boxShadow: PropertyName<BoxShadow>
 
         @JsValue("box-sizing")
-        val boxSizing: PropertyName
+        val boxSizing: PropertyName<BoxSizing>
 
         @JsValue("break-after")
-        val breakAfter: PropertyName
+        val breakAfter: PropertyName<BreakAfter>
 
         @JsValue("break-before")
-        val breakBefore: PropertyName
+        val breakBefore: PropertyName<BreakBefore>
 
         @JsValue("break-inside")
-        val breakInside: PropertyName
+        val breakInside: PropertyName<BreakInside>
 
         @JsValue("caption-side")
-        val captionSide: PropertyName
+        val captionSide: PropertyName<CaptionSide>
 
         @JsValue("caret")
-        val caret: PropertyName
+        val caret: PropertyName<Caret>
 
         @JsValue("caret-color")
-        val caretColor: PropertyName
+        val caretColor: PropertyName<CaretColor>
 
         @JsValue("caret-shape")
-        val caretShape: PropertyName
+        val caretShape: PropertyName<CaretShape>
 
         @JsValue("clear")
-        val clear: PropertyName
+        val clear: PropertyName<Clear>
 
         @JsValue("clip-path")
-        val clipPath: PropertyName
+        val clipPath: PropertyName<ClipPath>
 
         @JsValue("color")
-        val color: PropertyName
+        val color: PropertyName<ColorProperty>
 
         @JsValue("color-adjust")
-        val colorAdjust: PropertyName
+        val colorAdjust: PropertyName<PrintColorAdjust>
 
         @JsValue("color-scheme")
-        val colorScheme: PropertyName
+        val colorScheme: PropertyName<ColorScheme>
 
         @JsValue("column-count")
-        val columnCount: PropertyName
+        val columnCount: PropertyName<ColumnCount>
 
         @JsValue("column-fill")
-        val columnFill: PropertyName
+        val columnFill: PropertyName<ColumnFill>
 
         @JsValue("column-gap")
-        val columnGap: PropertyName
+        val columnGap: PropertyName<ColumnGap>
 
         @JsValue("column-rule")
-        val columnRule: PropertyName
+        val columnRule: PropertyName<ColumnRule>
 
         @JsValue("column-rule-color")
-        val columnRuleColor: PropertyName
+        val columnRuleColor: PropertyName<ColumnRuleColor>
 
         @JsValue("column-rule-style")
-        val columnRuleStyle: PropertyName
+        val columnRuleStyle: PropertyName<ColumnRuleStyle>
 
         @JsValue("column-rule-width")
-        val columnRuleWidth: PropertyName
+        val columnRuleWidth: PropertyName<ColumnRuleWidth>
 
         @JsValue("column-span")
-        val columnSpan: PropertyName
+        val columnSpan: PropertyName<ColumnSpan>
 
         @JsValue("column-width")
-        val columnWidth: PropertyName
+        val columnWidth: PropertyName<ColumnWidth>
 
         @JsValue("columns")
-        val columns: PropertyName
+        val columns: PropertyName<Columns>
 
         @JsValue("contain")
-        val contain: PropertyName
+        val contain: PropertyName<Contain>
 
         @JsValue("contain-intrinsic-block-size")
-        val containIntrinsicBlockSize: PropertyName
+        val containIntrinsicBlockSize: PropertyName<ContainIntrinsicBlockSize>
 
         @JsValue("contain-intrinsic-height")
-        val containIntrinsicHeight: PropertyName
+        val containIntrinsicHeight: PropertyName<ContainIntrinsicHeight>
 
         @JsValue("contain-intrinsic-inline-size")
-        val containIntrinsicInlineSize: PropertyName
+        val containIntrinsicInlineSize: PropertyName<ContainIntrinsicInlineSize>
 
         @JsValue("contain-intrinsic-size")
-        val containIntrinsicSize: PropertyName
+        val containIntrinsicSize: PropertyName<ContainIntrinsicSize>
 
         @JsValue("contain-intrinsic-width")
-        val containIntrinsicWidth: PropertyName
+        val containIntrinsicWidth: PropertyName<ContainIntrinsicWidth>
 
         @JsValue("container")
-        val container: PropertyName
+        val container: PropertyName<Container>
 
         @JsValue("container-name")
-        val containerName: PropertyName
+        val containerName: PropertyName<ContainerName>
 
         @JsValue("container-type")
-        val containerType: PropertyName
+        val containerType: PropertyName<ContainerType>
 
         @JsValue("content")
-        val content: PropertyName
+        val content: PropertyName<Content>
 
         @JsValue("content-visibility")
-        val contentVisibility: PropertyName
+        val contentVisibility: PropertyName<ContentVisibility>
 
         @JsValue("counter-increment")
-        val counterIncrement: PropertyName
+        val counterIncrement: PropertyName<CounterIncrement>
 
         @JsValue("counter-reset")
-        val counterReset: PropertyName
+        val counterReset: PropertyName<CounterReset>
 
         @JsValue("counter-set")
-        val counterSet: PropertyName
+        val counterSet: PropertyName<CounterSet>
 
         @JsValue("cursor")
-        val cursor: PropertyName
+        val cursor: PropertyName<Cursor>
 
         @JsValue("direction")
-        val direction: PropertyName
+        val direction: PropertyName<Direction>
 
         @JsValue("display")
-        val display: PropertyName
+        val display: PropertyName<Display>
 
         @JsValue("empty-cells")
-        val emptyCells: PropertyName
+        val emptyCells: PropertyName<EmptyCells>
 
         @JsValue("filter")
-        val filter: PropertyName
+        val filter: PropertyName<Filter>
 
         @JsValue("flex")
-        val flex: PropertyName
+        val flex: PropertyName<Flex>
 
         @JsValue("flex-basis")
-        val flexBasis: PropertyName
+        val flexBasis: PropertyName<FlexBasis>
 
         @JsValue("flex-direction")
-        val flexDirection: PropertyName
+        val flexDirection: PropertyName<FlexDirection>
 
         @JsValue("flex-flow")
-        val flexFlow: PropertyName
+        val flexFlow: PropertyName<FlexFlow>
 
         @JsValue("flex-grow")
-        val flexGrow: PropertyName
+        val flexGrow: PropertyName<FlexGrow>
 
         @JsValue("flex-shrink")
-        val flexShrink: PropertyName
+        val flexShrink: PropertyName<FlexShrink>
 
         @JsValue("flex-wrap")
-        val flexWrap: PropertyName
+        val flexWrap: PropertyName<FlexWrap>
 
         @JsValue("float")
-        val float: PropertyName
+        val float: PropertyName<Float>
 
         @JsValue("font")
-        val font: PropertyName
+        val font: PropertyName<Font>
 
         @JsValue("font-family")
-        val fontFamily: PropertyName
+        val fontFamily: PropertyName<FontFamily>
 
         @JsValue("font-feature-settings")
-        val fontFeatureSettings: PropertyName
+        val fontFeatureSettings: PropertyName<FontFeatureSettings>
 
         @JsValue("font-kerning")
-        val fontKerning: PropertyName
+        val fontKerning: PropertyName<FontKerning>
 
         @JsValue("font-language-override")
-        val fontLanguageOverride: PropertyName
+        val fontLanguageOverride: PropertyName<FontLanguageOverride>
 
         @JsValue("font-optical-sizing")
-        val fontOpticalSizing: PropertyName
+        val fontOpticalSizing: PropertyName<FontOpticalSizing>
 
         @JsValue("font-palette")
-        val fontPalette: PropertyName
+        val fontPalette: PropertyName<FontPalette>
 
         @JsValue("font-size")
-        val fontSize: PropertyName
+        val fontSize: PropertyName<FontSize>
 
         @JsValue("font-size-adjust")
-        val fontSizeAdjust: PropertyName
+        val fontSizeAdjust: PropertyName<FontSizeAdjust>
 
         @JsValue("font-smooth")
-        val fontSmooth: PropertyName
+        val fontSmooth: PropertyName<FontSmooth>
 
         @JsValue("font-stretch")
-        val fontStretch: PropertyName
+        val fontStretch: PropertyName<FontStretch>
 
         @JsValue("font-style")
-        val fontStyle: PropertyName
+        val fontStyle: PropertyName<FontStyle>
 
         @JsValue("font-synthesis")
-        val fontSynthesis: PropertyName
+        val fontSynthesis: PropertyName<FontSynthesis>
 
         @JsValue("font-variant")
-        val fontVariant: PropertyName
+        val fontVariant: PropertyName<FontVariant>
 
         @JsValue("font-variant-alternates")
-        val fontVariantAlternates: PropertyName
+        val fontVariantAlternates: PropertyName<FontVariantAlternates>
 
         @JsValue("font-variant-caps")
-        val fontVariantCaps: PropertyName
+        val fontVariantCaps: PropertyName<FontVariantCaps>
 
         @JsValue("font-variant-east-asian")
-        val fontVariantEastAsian: PropertyName
+        val fontVariantEastAsian: PropertyName<FontVariantEastAsian>
 
         @JsValue("font-variant-emoji")
-        val fontVariantEmoji: PropertyName
+        val fontVariantEmoji: PropertyName<FontVariantEmoji>
 
         @JsValue("font-variant-ligatures")
-        val fontVariantLigatures: PropertyName
+        val fontVariantLigatures: PropertyName<FontVariantLigatures>
 
         @JsValue("font-variant-numeric")
-        val fontVariantNumeric: PropertyName
+        val fontVariantNumeric: PropertyName<FontVariantNumeric>
 
         @JsValue("font-variant-position")
-        val fontVariantPosition: PropertyName
+        val fontVariantPosition: PropertyName<FontVariantPosition>
 
         @JsValue("font-variation-settings")
-        val fontVariationSettings: PropertyName
+        val fontVariationSettings: PropertyName<FontVariationSettings>
 
         @JsValue("font-weight")
-        val fontWeight: PropertyName
+        val fontWeight: PropertyName<FontWeight>
 
         @JsValue("forced-color-adjust")
-        val forcedColorAdjust: PropertyName
+        val forcedColorAdjust: PropertyName<ForcedColorAdjust>
 
         @JsValue("gap")
-        val gap: PropertyName
+        val gap: PropertyName<Gap>
 
         @JsValue("grid")
-        val grid: PropertyName
+        val grid: PropertyName<Grid>
 
         @JsValue("grid-area")
-        val gridArea: PropertyName
+        val gridArea: PropertyName<GridArea>
 
         @JsValue("grid-auto-columns")
-        val gridAutoColumns: PropertyName
+        val gridAutoColumns: PropertyName<GridAutoColumns>
 
         @JsValue("grid-auto-flow")
-        val gridAutoFlow: PropertyName
+        val gridAutoFlow: PropertyName<GridAutoFlow>
 
         @JsValue("grid-auto-rows")
-        val gridAutoRows: PropertyName
+        val gridAutoRows: PropertyName<GridAutoRows>
 
         @JsValue("grid-column")
-        val gridColumn: PropertyName
+        val gridColumn: PropertyName<GridColumn>
 
         @JsValue("grid-column-end")
-        val gridColumnEnd: PropertyName
+        val gridColumnEnd: PropertyName<GridColumnEnd>
 
         @JsValue("grid-column-start")
-        val gridColumnStart: PropertyName
+        val gridColumnStart: PropertyName<GridColumnStart>
 
         @JsValue("grid-row")
-        val gridRow: PropertyName
+        val gridRow: PropertyName<GridRow>
 
         @JsValue("grid-row-end")
-        val gridRowEnd: PropertyName
+        val gridRowEnd: PropertyName<GridRowEnd>
 
         @JsValue("grid-row-start")
-        val gridRowStart: PropertyName
+        val gridRowStart: PropertyName<GridRowStart>
 
         @JsValue("grid-template")
-        val gridTemplate: PropertyName
+        val gridTemplate: PropertyName<GridTemplate>
 
         @JsValue("grid-template-areas")
-        val gridTemplateAreas: PropertyName
+        val gridTemplateAreas: PropertyName<GridTemplateAreas>
 
         @JsValue("grid-template-columns")
-        val gridTemplateColumns: PropertyName
+        val gridTemplateColumns: PropertyName<GridTemplateColumns>
 
         @JsValue("grid-template-rows")
-        val gridTemplateRows: PropertyName
+        val gridTemplateRows: PropertyName<GridTemplateRows>
 
         @JsValue("hanging-punctuation")
-        val hangingPunctuation: PropertyName
+        val hangingPunctuation: PropertyName<HangingPunctuation>
 
         @JsValue("height")
-        val height: PropertyName
+        val height: PropertyName<Height>
 
         @JsValue("hyphenate-character")
-        val hyphenateCharacter: PropertyName
+        val hyphenateCharacter: PropertyName<HyphenateCharacter>
 
         @JsValue("hyphenate-limit-chars")
-        val hyphenateLimitChars: PropertyName
+        val hyphenateLimitChars: PropertyName<HyphenateLimitChars>
 
         @JsValue("hyphens")
-        val hyphens: PropertyName
+        val hyphens: PropertyName<Hyphens>
 
         @JsValue("image-orientation")
-        val imageOrientation: PropertyName
+        val imageOrientation: PropertyName<ImageOrientation>
 
         @JsValue("image-rendering")
-        val imageRendering: PropertyName
+        val imageRendering: PropertyName<ImageRendering>
 
         @JsValue("image-resolution")
-        val imageResolution: PropertyName
+        val imageResolution: PropertyName<ImageResolution>
 
         @JsValue("initial-letter")
-        val initialLetter: PropertyName
+        val initialLetter: PropertyName<InitialLetter>
 
         @JsValue("inline-size")
-        val inlineSize: PropertyName
+        val inlineSize: PropertyName<InlineSize>
 
         @JsValue("input-security")
-        val inputSecurity: PropertyName
+        val inputSecurity: PropertyName<InputSecurity>
 
         @JsValue("inset")
-        val inset: PropertyName
+        val inset: PropertyName<Inset>
 
         @JsValue("inset-block")
-        val insetBlock: PropertyName
+        val insetBlock: PropertyName<InsetBlock>
 
         @JsValue("inset-block-end")
-        val insetBlockEnd: PropertyName
+        val insetBlockEnd: PropertyName<InsetBlockEnd>
 
         @JsValue("inset-block-start")
-        val insetBlockStart: PropertyName
+        val insetBlockStart: PropertyName<InsetBlockStart>
 
         @JsValue("inset-inline")
-        val insetInline: PropertyName
+        val insetInline: PropertyName<InsetInline>
 
         @JsValue("inset-inline-end")
-        val insetInlineEnd: PropertyName
+        val insetInlineEnd: PropertyName<InsetInlineEnd>
 
         @JsValue("inset-inline-start")
-        val insetInlineStart: PropertyName
+        val insetInlineStart: PropertyName<InsetInlineStart>
 
         @JsValue("isolation")
-        val isolation: PropertyName
+        val isolation: PropertyName<Isolation>
 
         @JsValue("justify-content")
-        val justifyContent: PropertyName
+        val justifyContent: PropertyName<JustifyContent>
 
         @JsValue("justify-items")
-        val justifyItems: PropertyName
+        val justifyItems: PropertyName<JustifyItems>
 
         @JsValue("justify-self")
-        val justifySelf: PropertyName
+        val justifySelf: PropertyName<JustifySelf>
 
         @JsValue("justify-tracks")
-        val justifyTracks: PropertyName
+        val justifyTracks: PropertyName<JustifyTracks>
 
         @JsValue("left")
-        val left: PropertyName
+        val left: PropertyName<Left>
 
         @JsValue("letter-spacing")
-        val letterSpacing: PropertyName
+        val letterSpacing: PropertyName<LetterSpacing>
 
         @JsValue("line-break")
-        val lineBreak: PropertyName
+        val lineBreak: PropertyName<LineBreak>
 
         @JsValue("line-clamp")
-        val lineClamp: PropertyName
+        val lineClamp: PropertyName<LineClamp>
 
         @JsValue("line-height")
-        val lineHeight: PropertyName
+        val lineHeight: PropertyName<LineHeight>
 
         @JsValue("line-height-step")
-        val lineHeightStep: PropertyName
+        val lineHeightStep: PropertyName<LineHeightStep>
 
         @JsValue("list-style")
-        val listStyle: PropertyName
+        val listStyle: PropertyName<ListStyle>
 
         @JsValue("list-style-image")
-        val listStyleImage: PropertyName
+        val listStyleImage: PropertyName<ListStyleImage>
 
         @JsValue("list-style-position")
-        val listStylePosition: PropertyName
+        val listStylePosition: PropertyName<ListStylePosition>
 
         @JsValue("list-style-type")
-        val listStyleType: PropertyName
+        val listStyleType: PropertyName<ListStyleType>
 
         @JsValue("margin")
-        val margin: PropertyName
+        val margin: PropertyName<Margin>
 
         @JsValue("margin-block")
-        val marginBlock: PropertyName
+        val marginBlock: PropertyName<MarginBlock>
 
         @JsValue("margin-block-end")
-        val marginBlockEnd: PropertyName
+        val marginBlockEnd: PropertyName<MarginBlockEnd>
 
         @JsValue("margin-block-start")
-        val marginBlockStart: PropertyName
+        val marginBlockStart: PropertyName<MarginBlockStart>
 
         @JsValue("margin-bottom")
-        val marginBottom: PropertyName
+        val marginBottom: PropertyName<MarginBottom>
 
         @JsValue("margin-inline")
-        val marginInline: PropertyName
+        val marginInline: PropertyName<MarginInline>
 
         @JsValue("margin-inline-end")
-        val marginInlineEnd: PropertyName
+        val marginInlineEnd: PropertyName<MarginInlineEnd>
 
         @JsValue("margin-inline-start")
-        val marginInlineStart: PropertyName
+        val marginInlineStart: PropertyName<MarginInlineStart>
 
         @JsValue("margin-left")
-        val marginLeft: PropertyName
+        val marginLeft: PropertyName<MarginLeft>
 
         @JsValue("margin-right")
-        val marginRight: PropertyName
+        val marginRight: PropertyName<MarginRight>
 
         @JsValue("margin-top")
-        val marginTop: PropertyName
+        val marginTop: PropertyName<MarginTop>
 
         @JsValue("margin-trim")
-        val marginTrim: PropertyName
+        val marginTrim: PropertyName<MarginTrim>
 
         @JsValue("mask")
-        val mask: PropertyName
+        val mask: PropertyName<Mask>
 
         @JsValue("mask-border")
-        val maskBorder: PropertyName
+        val maskBorder: PropertyName<MaskBorder>
 
         @JsValue("mask-border-mode")
-        val maskBorderMode: PropertyName
+        val maskBorderMode: PropertyName<MaskBorderMode>
 
         @JsValue("mask-border-outset")
-        val maskBorderOutset: PropertyName
+        val maskBorderOutset: PropertyName<MaskBorderOutset>
 
         @JsValue("mask-border-repeat")
-        val maskBorderRepeat: PropertyName
+        val maskBorderRepeat: PropertyName<MaskBorderRepeat>
 
         @JsValue("mask-border-slice")
-        val maskBorderSlice: PropertyName
+        val maskBorderSlice: PropertyName<MaskBorderSlice>
 
         @JsValue("mask-border-source")
-        val maskBorderSource: PropertyName
+        val maskBorderSource: PropertyName<MaskBorderSource>
 
         @JsValue("mask-border-width")
-        val maskBorderWidth: PropertyName
+        val maskBorderWidth: PropertyName<MaskBorderWidth>
 
         @JsValue("mask-clip")
-        val maskClip: PropertyName
+        val maskClip: PropertyName<MaskClip>
 
         @JsValue("mask-composite")
-        val maskComposite: PropertyName
+        val maskComposite: PropertyName<MaskComposite>
 
         @JsValue("mask-image")
-        val maskImage: PropertyName
+        val maskImage: PropertyName<MaskImage>
 
         @JsValue("mask-mode")
-        val maskMode: PropertyName
+        val maskMode: PropertyName<MaskMode>
 
         @JsValue("mask-origin")
-        val maskOrigin: PropertyName
+        val maskOrigin: PropertyName<MaskOrigin>
 
         @JsValue("mask-position")
-        val maskPosition: PropertyName
+        val maskPosition: PropertyName<MaskPosition>
 
         @JsValue("mask-repeat")
-        val maskRepeat: PropertyName
+        val maskRepeat: PropertyName<MaskRepeat>
 
         @JsValue("mask-size")
-        val maskSize: PropertyName
+        val maskSize: PropertyName<MaskSize>
 
         @JsValue("mask-type")
-        val maskType: PropertyName
+        val maskType: PropertyName<MaskType>
 
         @JsValue("math-depth")
-        val mathDepth: PropertyName
+        val mathDepth: PropertyName<MathDepth>
 
         @JsValue("math-shift")
-        val mathShift: PropertyName
+        val mathShift: PropertyName<MathShift>
 
         @JsValue("math-style")
-        val mathStyle: PropertyName
+        val mathStyle: PropertyName<MathStyle>
 
         @JsValue("max-block-size")
-        val maxBlockSize: PropertyName
+        val maxBlockSize: PropertyName<MaxBlockSize>
 
         @JsValue("max-height")
-        val maxHeight: PropertyName
+        val maxHeight: PropertyName<MaxHeight>
 
         @JsValue("max-inline-size")
-        val maxInlineSize: PropertyName
+        val maxInlineSize: PropertyName<MaxInlineSize>
 
         @JsValue("max-lines")
-        val maxLines: PropertyName
+        val maxLines: PropertyName<MaxLines>
 
         @JsValue("max-width")
-        val maxWidth: PropertyName
+        val maxWidth: PropertyName<MaxWidth>
 
         @JsValue("min-block-size")
-        val minBlockSize: PropertyName
+        val minBlockSize: PropertyName<MinBlockSize>
 
         @JsValue("min-height")
-        val minHeight: PropertyName
+        val minHeight: PropertyName<MinHeight>
 
         @JsValue("min-inline-size")
-        val minInlineSize: PropertyName
+        val minInlineSize: PropertyName<MinInlineSize>
 
         @JsValue("min-width")
-        val minWidth: PropertyName
+        val minWidth: PropertyName<MinWidth>
 
         @JsValue("mix-blend-mode")
-        val mixBlendMode: PropertyName
+        val mixBlendMode: PropertyName<MixBlendMode>
 
         @JsValue("motion")
-        val motion: PropertyName
+        val motion: PropertyName<Offset>
 
         @JsValue("motion-distance")
-        val motionDistance: PropertyName
+        val motionDistance: PropertyName<Offset>
 
         @JsValue("motion-path")
-        val motionPath: PropertyName
+        val motionPath: PropertyName<OffsetPath>
 
         @JsValue("motion-rotation")
-        val motionRotation: PropertyName
+        val motionRotation: PropertyName<OffsetRotate>
 
         @JsValue("object-fit")
-        val objectFit: PropertyName
+        val objectFit: PropertyName<ObjectFit>
 
         @JsValue("object-position")
-        val objectPosition: PropertyName
+        val objectPosition: PropertyName<ObjectPosition>
 
         @JsValue("offset")
-        val offset: PropertyName
+        val offset: PropertyName<Offset>
 
         @JsValue("offset-anchor")
-        val offsetAnchor: PropertyName
+        val offsetAnchor: PropertyName<OffsetAnchor>
 
         @JsValue("offset-distance")
-        val offsetDistance: PropertyName
+        val offsetDistance: PropertyName<OffsetDistance>
 
         @JsValue("offset-path")
-        val offsetPath: PropertyName
+        val offsetPath: PropertyName<OffsetPath>
 
         @JsValue("offset-position")
-        val offsetPosition: PropertyName
+        val offsetPosition: PropertyName<OffsetPosition>
 
         @JsValue("offset-rotate")
-        val offsetRotate: PropertyName
+        val offsetRotate: PropertyName<OffsetRotate>
 
         @JsValue("offset-rotation")
-        val offsetRotation: PropertyName
+        val offsetRotation: PropertyName<OffsetRotate>
 
         @JsValue("opacity")
-        val opacity: PropertyName
+        val opacity: PropertyName<Opacity>
 
         @JsValue("order")
-        val order: PropertyName
+        val order: PropertyName<Order>
 
         @JsValue("orphans")
-        val orphans: PropertyName
+        val orphans: PropertyName<Orphans>
 
         @JsValue("outline")
-        val outline: PropertyName
+        val outline: PropertyName<Outline>
 
         @JsValue("outline-color")
-        val outlineColor: PropertyName
+        val outlineColor: PropertyName<OutlineColor>
 
         @JsValue("outline-offset")
-        val outlineOffset: PropertyName
+        val outlineOffset: PropertyName<OutlineOffset>
 
         @JsValue("outline-style")
-        val outlineStyle: PropertyName
+        val outlineStyle: PropertyName<OutlineStyle>
 
         @JsValue("outline-width")
-        val outlineWidth: PropertyName
+        val outlineWidth: PropertyName<OutlineWidth>
 
         @JsValue("overflow")
-        val overflow: PropertyName
+        val overflow: PropertyName<Overflow>
 
         @JsValue("overflow-anchor")
-        val overflowAnchor: PropertyName
+        val overflowAnchor: PropertyName<OverflowAnchor>
 
         @JsValue("overflow-block")
-        val overflowBlock: PropertyName
+        val overflowBlock: PropertyName<Overflow>
 
         @JsValue("overflow-clip-box")
-        val overflowClipBox: PropertyName
+        val overflowClipBox: PropertyName<OverflowClipBox>
 
         @JsValue("overflow-clip-margin")
-        val overflowClipMargin: PropertyName
+        val overflowClipMargin: PropertyName<OverflowClipMargin>
 
         @JsValue("overflow-inline")
-        val overflowInline: PropertyName
+        val overflowInline: PropertyName<Overflow>
 
         @JsValue("overflow-wrap")
-        val overflowWrap: PropertyName
+        val overflowWrap: PropertyName<OverflowWrap>
 
         @JsValue("overflow-x")
-        val overflowX: PropertyName
+        val overflowX: PropertyName<Overflow>
 
         @JsValue("overflow-y")
-        val overflowY: PropertyName
+        val overflowY: PropertyName<Overflow>
 
         @JsValue("overscroll-behavior")
-        val overscrollBehavior: PropertyName
+        val overscrollBehavior: PropertyName<OverscrollBehavior>
 
         @JsValue("overscroll-behavior-block")
-        val overscrollBehaviorBlock: PropertyName
+        val overscrollBehaviorBlock: PropertyName<OverscrollBehavior>
 
         @JsValue("overscroll-behavior-inline")
-        val overscrollBehaviorInline: PropertyName
+        val overscrollBehaviorInline: PropertyName<OverscrollBehavior>
 
         @JsValue("overscroll-behavior-x")
-        val overscrollBehaviorX: PropertyName
+        val overscrollBehaviorX: PropertyName<OverscrollBehavior>
 
         @JsValue("overscroll-behavior-y")
-        val overscrollBehaviorY: PropertyName
+        val overscrollBehaviorY: PropertyName<OverscrollBehavior>
 
         @JsValue("padding")
-        val padding: PropertyName
+        val padding: PropertyName<Padding>
 
         @JsValue("padding-block")
-        val paddingBlock: PropertyName
+        val paddingBlock: PropertyName<PaddingBlock>
 
         @JsValue("padding-block-end")
-        val paddingBlockEnd: PropertyName
+        val paddingBlockEnd: PropertyName<PaddingBlockEnd>
 
         @JsValue("padding-block-start")
-        val paddingBlockStart: PropertyName
+        val paddingBlockStart: PropertyName<PaddingBlockStart>
 
         @JsValue("padding-bottom")
-        val paddingBottom: PropertyName
+        val paddingBottom: PropertyName<PaddingBottom>
 
         @JsValue("padding-inline")
-        val paddingInline: PropertyName
+        val paddingInline: PropertyName<PaddingInline>
 
         @JsValue("padding-inline-end")
-        val paddingInlineEnd: PropertyName
+        val paddingInlineEnd: PropertyName<PaddingInlineEnd>
 
         @JsValue("padding-inline-start")
-        val paddingInlineStart: PropertyName
+        val paddingInlineStart: PropertyName<PaddingInlineStart>
 
         @JsValue("padding-left")
-        val paddingLeft: PropertyName
+        val paddingLeft: PropertyName<PaddingLeft>
 
         @JsValue("padding-right")
-        val paddingRight: PropertyName
+        val paddingRight: PropertyName<PaddingRight>
 
         @JsValue("padding-top")
-        val paddingTop: PropertyName
+        val paddingTop: PropertyName<PaddingTop>
 
         @JsValue("page")
-        val page: PropertyName
+        val page: PropertyName<Page>
 
         @JsValue("page-break-after")
-        val pageBreakAfter: PropertyName
+        val pageBreakAfter: PropertyName<PageBreakAfter>
 
         @JsValue("page-break-before")
-        val pageBreakBefore: PropertyName
+        val pageBreakBefore: PropertyName<PageBreakBefore>
 
         @JsValue("page-break-inside")
-        val pageBreakInside: PropertyName
+        val pageBreakInside: PropertyName<PageBreakInside>
 
         @JsValue("paint-order")
-        val paintOrder: PropertyName
+        val paintOrder: PropertyName<PaintOrder>
 
         @JsValue("perspective")
-        val perspective: PropertyName
+        val perspective: PropertyName<Perspective>
 
         @JsValue("perspective-origin")
-        val perspectiveOrigin: PropertyName
+        val perspectiveOrigin: PropertyName<PerspectiveOrigin>
 
         @JsValue("place-content")
-        val placeContent: PropertyName
+        val placeContent: PropertyName<PlaceContent>
 
         @JsValue("place-items")
-        val placeItems: PropertyName
+        val placeItems: PropertyName<PlaceItems>
 
         @JsValue("place-self")
-        val placeSelf: PropertyName
+        val placeSelf: PropertyName<PlaceSelf>
 
         @JsValue("pointer-events")
-        val pointerEvents: PropertyName
+        val pointerEvents: PropertyName<PointerEvents>
 
         @JsValue("position")
-        val position: PropertyName
+        val position: PropertyName<Position>
 
         @JsValue("print-color-adjust")
-        val printColorAdjust: PropertyName
+        val printColorAdjust: PropertyName<PrintColorAdjust>
 
         @JsValue("quotes")
-        val quotes: PropertyName
+        val quotes: PropertyName<Quotes>
 
         @JsValue("resize")
-        val resize: PropertyName
+        val resize: PropertyName<Resize>
 
         @JsValue("right")
-        val right: PropertyName
+        val right: PropertyName<Right>
 
         @JsValue("rotate")
-        val rotate: PropertyName
+        val rotate: PropertyName<Rotate>
 
         @JsValue("row-gap")
-        val rowGap: PropertyName
+        val rowGap: PropertyName<RowGap>
 
         @JsValue("ruby-align")
-        val rubyAlign: PropertyName
+        val rubyAlign: PropertyName<RubyAlign>
 
         @JsValue("ruby-merge")
-        val rubyMerge: PropertyName
+        val rubyMerge: PropertyName<RubyMerge>
 
         @JsValue("ruby-position")
-        val rubyPosition: PropertyName
+        val rubyPosition: PropertyName<RubyPosition>
 
         @JsValue("scale")
-        val scale: PropertyName
+        val scale: PropertyName<Scale>
 
         @JsValue("scroll-behavior")
-        val scrollBehavior: PropertyName
+        val scrollBehavior: PropertyName<ScrollBehavior>
 
         @JsValue("scroll-margin")
-        val scrollMargin: PropertyName
+        val scrollMargin: PropertyName<ScrollMargin>
 
         @JsValue("scroll-margin-block")
-        val scrollMarginBlock: PropertyName
+        val scrollMarginBlock: PropertyName<ScrollMarginBlock>
 
         @JsValue("scroll-margin-block-end")
-        val scrollMarginBlockEnd: PropertyName
+        val scrollMarginBlockEnd: PropertyName<ScrollMarginBlockEnd>
 
         @JsValue("scroll-margin-block-start")
-        val scrollMarginBlockStart: PropertyName
+        val scrollMarginBlockStart: PropertyName<ScrollMarginBlockStart>
 
         @JsValue("scroll-margin-bottom")
-        val scrollMarginBottom: PropertyName
+        val scrollMarginBottom: PropertyName<ScrollMarginBottom>
 
         @JsValue("scroll-margin-inline")
-        val scrollMarginInline: PropertyName
+        val scrollMarginInline: PropertyName<ScrollMarginInline>
 
         @JsValue("scroll-margin-inline-end")
-        val scrollMarginInlineEnd: PropertyName
+        val scrollMarginInlineEnd: PropertyName<ScrollMarginInlineEnd>
 
         @JsValue("scroll-margin-inline-start")
-        val scrollMarginInlineStart: PropertyName
+        val scrollMarginInlineStart: PropertyName<ScrollMarginInlineStart>
 
         @JsValue("scroll-margin-left")
-        val scrollMarginLeft: PropertyName
+        val scrollMarginLeft: PropertyName<ScrollMarginLeft>
 
         @JsValue("scroll-margin-right")
-        val scrollMarginRight: PropertyName
+        val scrollMarginRight: PropertyName<ScrollMarginRight>
 
         @JsValue("scroll-margin-top")
-        val scrollMarginTop: PropertyName
+        val scrollMarginTop: PropertyName<ScrollMarginTop>
 
         @JsValue("scroll-padding")
-        val scrollPadding: PropertyName
+        val scrollPadding: PropertyName<ScrollPadding>
 
         @JsValue("scroll-padding-block")
-        val scrollPaddingBlock: PropertyName
+        val scrollPaddingBlock: PropertyName<ScrollPaddingBlock>
 
         @JsValue("scroll-padding-block-end")
-        val scrollPaddingBlockEnd: PropertyName
+        val scrollPaddingBlockEnd: PropertyName<ScrollPaddingBlockEnd>
 
         @JsValue("scroll-padding-block-start")
-        val scrollPaddingBlockStart: PropertyName
+        val scrollPaddingBlockStart: PropertyName<ScrollPaddingBlockStart>
 
         @JsValue("scroll-padding-bottom")
-        val scrollPaddingBottom: PropertyName
+        val scrollPaddingBottom: PropertyName<ScrollPaddingBottom>
 
         @JsValue("scroll-padding-inline")
-        val scrollPaddingInline: PropertyName
+        val scrollPaddingInline: PropertyName<ScrollPaddingInline>
 
         @JsValue("scroll-padding-inline-end")
-        val scrollPaddingInlineEnd: PropertyName
+        val scrollPaddingInlineEnd: PropertyName<ScrollPaddingInlineEnd>
 
         @JsValue("scroll-padding-inline-start")
-        val scrollPaddingInlineStart: PropertyName
+        val scrollPaddingInlineStart: PropertyName<ScrollPaddingInlineStart>
 
         @JsValue("scroll-padding-left")
-        val scrollPaddingLeft: PropertyName
+        val scrollPaddingLeft: PropertyName<ScrollPaddingLeft>
 
         @JsValue("scroll-padding-right")
-        val scrollPaddingRight: PropertyName
+        val scrollPaddingRight: PropertyName<ScrollPaddingRight>
 
         @JsValue("scroll-padding-top")
-        val scrollPaddingTop: PropertyName
+        val scrollPaddingTop: PropertyName<ScrollPaddingTop>
 
         @JsValue("scroll-snap-align")
-        val scrollSnapAlign: PropertyName
+        val scrollSnapAlign: PropertyName<ScrollSnapAlign>
 
         @JsValue("scroll-snap-margin")
-        val scrollSnapMargin: PropertyName
+        val scrollSnapMargin: PropertyName<ScrollMargin>
 
         @JsValue("scroll-snap-margin-bottom")
-        val scrollSnapMarginBottom: PropertyName
+        val scrollSnapMarginBottom: PropertyName<ScrollMarginBottom>
 
         @JsValue("scroll-snap-margin-left")
-        val scrollSnapMarginLeft: PropertyName
+        val scrollSnapMarginLeft: PropertyName<ScrollMarginLeft>
 
         @JsValue("scroll-snap-margin-right")
-        val scrollSnapMarginRight: PropertyName
+        val scrollSnapMarginRight: PropertyName<ScrollMarginRight>
 
         @JsValue("scroll-snap-margin-top")
-        val scrollSnapMarginTop: PropertyName
+        val scrollSnapMarginTop: PropertyName<ScrollMarginTop>
 
         @JsValue("scroll-snap-stop")
-        val scrollSnapStop: PropertyName
+        val scrollSnapStop: PropertyName<ScrollSnapStop>
 
         @JsValue("scroll-snap-type")
-        val scrollSnapType: PropertyName
+        val scrollSnapType: PropertyName<ScrollSnapType>
 
         @JsValue("scroll-timeline")
-        val scrollTimeline: PropertyName
+        val scrollTimeline: PropertyName<ScrollTimeline>
 
         @JsValue("scroll-timeline-axis")
-        val scrollTimelineAxis: PropertyName
+        val scrollTimelineAxis: PropertyName<ScrollTimelineAxis>
 
         @JsValue("scroll-timeline-name")
-        val scrollTimelineName: PropertyName
+        val scrollTimelineName: PropertyName<ScrollTimelineName>
 
         @JsValue("scrollbar-color")
-        val scrollbarColor: PropertyName
+        val scrollbarColor: PropertyName<ScrollbarColor>
 
         @JsValue("scrollbar-gutter")
-        val scrollbarGutter: PropertyName
+        val scrollbarGutter: PropertyName<ScrollbarGutter>
 
         @JsValue("scrollbar-width")
-        val scrollbarWidth: PropertyName
+        val scrollbarWidth: PropertyName<ScrollbarWidth>
 
         @JsValue("shape-image-threshold")
-        val shapeImageThreshold: PropertyName
+        val shapeImageThreshold: PropertyName<ShapeImageThreshold>
 
         @JsValue("shape-margin")
-        val shapeMargin: PropertyName
+        val shapeMargin: PropertyName<ShapeMargin>
 
         @JsValue("shape-outside")
-        val shapeOutside: PropertyName
+        val shapeOutside: PropertyName<ShapeOutside>
 
         @JsValue("tab-size")
-        val tabSize: PropertyName
+        val tabSize: PropertyName<TabSize>
 
         @JsValue("table-layout")
-        val tableLayout: PropertyName
+        val tableLayout: PropertyName<TableLayout>
 
         @JsValue("text-align")
-        val textAlign: PropertyName
+        val textAlign: PropertyName<TextAlign>
 
         @JsValue("text-align-last")
-        val textAlignLast: PropertyName
+        val textAlignLast: PropertyName<TextAlignLast>
 
         @JsValue("text-combine-upright")
-        val textCombineUpright: PropertyName
+        val textCombineUpright: PropertyName<TextCombineUpright>
 
         @JsValue("text-decoration")
-        val textDecoration: PropertyName
+        val textDecoration: PropertyName<TextDecoration>
 
         @JsValue("text-decoration-color")
-        val textDecorationColor: PropertyName
+        val textDecorationColor: PropertyName<TextDecorationColor>
 
         @JsValue("text-decoration-line")
-        val textDecorationLine: PropertyName
+        val textDecorationLine: PropertyName<TextDecorationLine>
 
         @JsValue("text-decoration-skip")
-        val textDecorationSkip: PropertyName
+        val textDecorationSkip: PropertyName<TextDecorationSkip>
 
         @JsValue("text-decoration-skip-ink")
-        val textDecorationSkipInk: PropertyName
+        val textDecorationSkipInk: PropertyName<TextDecorationSkipInk>
 
         @JsValue("text-decoration-style")
-        val textDecorationStyle: PropertyName
+        val textDecorationStyle: PropertyName<TextDecorationStyle>
 
         @JsValue("text-decoration-thickness")
-        val textDecorationThickness: PropertyName
+        val textDecorationThickness: PropertyName<TextDecorationThickness>
 
         @JsValue("text-emphasis")
-        val textEmphasis: PropertyName
+        val textEmphasis: PropertyName<TextEmphasis>
 
         @JsValue("text-emphasis-color")
-        val textEmphasisColor: PropertyName
+        val textEmphasisColor: PropertyName<TextEmphasisColor>
 
         @JsValue("text-emphasis-position")
-        val textEmphasisPosition: PropertyName
+        val textEmphasisPosition: PropertyName<TextEmphasisPosition>
 
         @JsValue("text-emphasis-style")
-        val textEmphasisStyle: PropertyName
+        val textEmphasisStyle: PropertyName<TextEmphasisStyle>
 
         @JsValue("text-indent")
-        val textIndent: PropertyName
+        val textIndent: PropertyName<TextIndent>
 
         @JsValue("text-justify")
-        val textJustify: PropertyName
+        val textJustify: PropertyName<TextJustify>
 
         @JsValue("text-orientation")
-        val textOrientation: PropertyName
+        val textOrientation: PropertyName<TextOrientation>
 
         @JsValue("text-overflow")
-        val textOverflow: PropertyName
+        val textOverflow: PropertyName<TextOverflow>
 
         @JsValue("text-rendering")
-        val textRendering: PropertyName
+        val textRendering: PropertyName<TextRendering>
 
         @JsValue("text-shadow")
-        val textShadow: PropertyName
+        val textShadow: PropertyName<TextShadow>
 
         @JsValue("text-size-adjust")
-        val textSizeAdjust: PropertyName
+        val textSizeAdjust: PropertyName<TextSizeAdjust>
 
         @JsValue("text-transform")
-        val textTransform: PropertyName
+        val textTransform: PropertyName<TextTransform>
 
         @JsValue("text-underline-offset")
-        val textUnderlineOffset: PropertyName
+        val textUnderlineOffset: PropertyName<TextUnderlineOffset>
 
         @JsValue("text-underline-position")
-        val textUnderlinePosition: PropertyName
+        val textUnderlinePosition: PropertyName<TextUnderlinePosition>
 
         @JsValue("top")
-        val top: PropertyName
+        val top: PropertyName<Top>
 
         @JsValue("touch-action")
-        val touchAction: PropertyName
+        val touchAction: PropertyName<TouchAction>
 
         @JsValue("transform")
-        val transform: PropertyName
+        val transform: PropertyName<Transform>
 
         @JsValue("transform-box")
-        val transformBox: PropertyName
+        val transformBox: PropertyName<TransformBox>
 
         @JsValue("transform-origin")
-        val transformOrigin: PropertyName
+        val transformOrigin: PropertyName<TransformOrigin>
 
         @JsValue("transform-style")
-        val transformStyle: PropertyName
+        val transformStyle: PropertyName<TransformStyle>
 
         @JsValue("transition")
-        val transition: PropertyName
+        val transition: PropertyName<Transition>
 
         @JsValue("transition-delay")
-        val transitionDelay: PropertyName
+        val transitionDelay: PropertyName<TransitionDelay>
 
         @JsValue("transition-duration")
-        val transitionDuration: PropertyName
+        val transitionDuration: PropertyName<TransitionDuration>
 
         @JsValue("transition-property")
-        val transitionProperty: PropertyName
+        val transitionProperty: PropertyName<TransitionProperty>
 
         @JsValue("transition-timing-function")
-        val transitionTimingFunction: PropertyName
+        val transitionTimingFunction: PropertyName<TransitionTimingFunction>
 
         @JsValue("translate")
-        val translate: PropertyName
+        val translate: PropertyName<Translate>
 
         @JsValue("unicode-bidi")
-        val unicodeBidi: PropertyName
+        val unicodeBidi: PropertyName<UnicodeBidi>
 
         @JsValue("user-select")
-        val userSelect: PropertyName
+        val userSelect: PropertyName<UserSelect>
 
         @JsValue("vertical-align")
-        val verticalAlign: PropertyName
+        val verticalAlign: PropertyName<VerticalAlign>
 
         @JsValue("view-transition-name")
-        val viewTransitionName: PropertyName
+        val viewTransitionName: PropertyName<ViewTransitionName>
 
         @JsValue("visibility")
-        val visibility: PropertyName
+        val visibility: PropertyName<Visibility>
 
         @JsValue("white-space")
-        val whiteSpace: PropertyName
+        val whiteSpace: PropertyName<WhiteSpace>
 
         @JsValue("widows")
-        val widows: PropertyName
+        val widows: PropertyName<Widows>
 
         @JsValue("width")
-        val width: PropertyName
+        val width: PropertyName<Width>
 
         @JsValue("will-change")
-        val willChange: PropertyName
+        val willChange: PropertyName<WillChange>
 
         @JsValue("word-break")
-        val wordBreak: PropertyName
+        val wordBreak: PropertyName<WordBreak>
 
         @JsValue("word-spacing")
-        val wordSpacing: PropertyName
+        val wordSpacing: PropertyName<WordSpacing>
 
         @JsValue("word-wrap")
-        val wordWrap: PropertyName
+        val wordWrap: PropertyName<WordWrap>
 
         @JsValue("writing-mode")
-        val writingMode: PropertyName
+        val writingMode: PropertyName<WritingMode>
 
         @JsValue("z-index")
-        val zIndex: PropertyName
+        val zIndex: PropertyName<ZIndex>
 
         @JsValue("zoom")
-        val zoom: PropertyName
+        val zoom: PropertyName<Zoom>
     }
 }
