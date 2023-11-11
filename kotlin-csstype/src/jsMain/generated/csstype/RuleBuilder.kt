@@ -17,13 +17,6 @@ interface RuleBuilder<T : Any> : Rules {
         set(Selector("@media $query"), jso(block))
     }
 
-    inline fun media(
-        query: String,
-        block: T.() -> Unit,
-    ) {
-        set(Selector("@media $query"), jso(block))
-    }
-
     inline fun container(
         query: ContainerQuery,
         block: T.() -> Unit,
@@ -32,10 +25,11 @@ interface RuleBuilder<T : Any> : Rules {
     }
 
     inline fun container(
-        query: String,
+        containerName: ContainerName,
+        query: ContainerQuery,
         block: T.() -> Unit,
     ) {
-        set(Selector("@container $query"), jso(block))
+        set(Selector("@container $containerName $query"), jso(block))
     }
 
     inline fun fontFace(
