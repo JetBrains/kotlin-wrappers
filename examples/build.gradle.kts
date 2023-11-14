@@ -9,9 +9,12 @@ dependencies {
     jsMainImplementation(project(":kotlin-react"))
     jsMainImplementation(project(":kotlin-react-dom"))
     jsMainImplementation(project(":kotlin-react-router-dom"))
+    jsMainImplementation(project(":kotlin-popper"))
 
     jsMainImplementation(kotlinxHtml("js"))
 
     jsMainImplementation(npm("react-quill", "1.3.5"))
     jsMainImplementation(npm("axios", "0.21.1"))
+
+    jsTestImplementation(kotlin("test-js"))
 }
