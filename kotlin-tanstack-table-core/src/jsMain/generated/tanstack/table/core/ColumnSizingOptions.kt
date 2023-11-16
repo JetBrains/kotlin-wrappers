@@ -3,8 +3,8 @@
 package tanstack.table.core
 
 external interface ColumnSizingOptions {
-    var enableColumnResizing: Boolean?
     var columnResizeMode: ColumnResizeMode?
+    var enableColumnResizing: Boolean?
     var onColumnSizingChange: OnChangeFn<ColumnSizingState>?
     var onColumnSizingInfoChange: OnChangeFn<ColumnSizingInfoState>?
 }

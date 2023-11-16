@@ -3,12 +3,16 @@
 package tanstack.table.core
 
 external interface RowSelectionRow {
+    var getCanMultiSelect: () -> Boolean
+    var getCanSelect: () -> Boolean
+    var getCanSelectSubRows: () -> Boolean
+    var getIsAllSubRowsSelected: () -> Boolean
     var getIsSelected: () -> Boolean
     var getIsSomeSelected: () -> Boolean
-    var getIsAllSubRowsSelected: () -> Boolean
-    var getCanSelect: () -> Boolean
-    var getCanMultiSelect: () -> Boolean
-    var getCanSelectSubRows: () -> Boolean
-    var toggleSelected: (value: Boolean?) -> Unit
     var getToggleSelectedHandler: () -> (event: Any) -> Unit
+    var toggleSelected: (value: Boolean?, opts: ToggleSelectedOptions?) -> Unit
+
+    sealed interface ToggleSelectedOptions {
+        var selectChildren: Boolean?
+    }
 }

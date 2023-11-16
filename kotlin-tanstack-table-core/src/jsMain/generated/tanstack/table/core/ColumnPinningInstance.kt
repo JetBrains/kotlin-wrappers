@@ -5,10 +5,10 @@ package tanstack.table.core
 import js.core.ReadonlyArray
 
 external interface ColumnPinningInstance<TData : RowData> {
-    var setColumnPinning: (updater: Updater<ColumnPinningState>) -> Unit
-    var resetColumnPinning: (defaultState: Boolean?) -> Unit
+    var getCenterLeafColumns: () -> ReadonlyArray<Column<TData, *>>
     var getIsSomeColumnsPinned: (position: ColumnPinningPosition?) -> Boolean
     var getLeftLeafColumns: () -> ReadonlyArray<Column<TData, *>>
     var getRightLeafColumns: () -> ReadonlyArray<Column<TData, *>>
-    var getCenterLeafColumns: () -> ReadonlyArray<Column<TData, *>>
+    var resetColumnPinning: (defaultState: Boolean?) -> Unit
+    var setColumnPinning: (updater: Updater<ColumnPinningState>) -> Unit
 }

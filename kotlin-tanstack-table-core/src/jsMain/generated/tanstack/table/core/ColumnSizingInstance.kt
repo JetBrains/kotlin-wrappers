@@ -3,12 +3,12 @@
 package tanstack.table.core
 
 external interface ColumnSizingInstance {
-    var setColumnSizing: (updater: Updater<ColumnSizingState>) -> Unit
-    var setColumnSizingInfo: (updater: Updater<ColumnSizingInfoState>) -> Unit
+    var getCenterTotalSize: () -> Int
+    var getLeftTotalSize: () -> Int
+    var getRightTotalSize: () -> Int
+    var getTotalSize: () -> Int
     var resetColumnSizing: (defaultState: Boolean?) -> Unit
     var resetHeaderSizeInfo: (defaultState: Boolean?) -> Unit
-    var getTotalSize: () -> Int
-    var getLeftTotalSize: () -> Int
-    var getCenterTotalSize: () -> Int
-    var getRightTotalSize: () -> Int
+    var setColumnSizing: (updater: Updater<ColumnSizingState>) -> Unit
+    var setColumnSizingInfo: (updater: Updater<ColumnSizingInfoState>) -> Unit
 }

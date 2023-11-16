@@ -7,14 +7,14 @@ import js.core.JsTuple2
 
 external interface FiltersColumn<TData : RowData> {
     var getAutoFilterFn: () -> FilterFn<TData>
-    var getFilterFn: () -> FilterFn<TData>
-    var setFilterValue: (updater: Updater<*>) -> Unit
     var getCanFilter: () -> Boolean
     var getCanGlobalFilter: () -> Boolean
-    var getFacetedRowModel: () -> RowModel<TData>
-    var getIsFiltered: () -> Boolean
-    var getFilterValue: () -> Any
-    var getFilterIndex: () -> Int
-    var getFacetedUniqueValues: () -> JsMap<Any, Int>
     var getFacetedMinMaxValues: () -> JsTuple2<Int, Int>?
+    var getFacetedRowModel: () -> RowModel<TData>
+    var getFacetedUniqueValues: () -> JsMap<Any, Int>
+    var getFilterFn: () -> FilterFn<TData>
+    var getFilterIndex: () -> Int
+    var getFilterValue: () -> Any
+    var getIsFiltered: () -> Boolean
+    var setFilterValue: (updater: Updater<*>) -> Unit
 }

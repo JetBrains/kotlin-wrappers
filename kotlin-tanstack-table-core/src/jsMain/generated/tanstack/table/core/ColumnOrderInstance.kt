@@ -3,6 +3,6 @@
 package tanstack.table.core
 
 external interface ColumnOrderInstance<TData : RowData> {
-    var setColumnOrder: (updater: Updater<ColumnOrderState>) -> Unit
     var resetColumnOrder: (defaultState: Boolean?) -> Unit
+    var setColumnOrder: (updater: Updater<ColumnOrderState>) -> Unit
 }

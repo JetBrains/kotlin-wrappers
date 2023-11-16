@@ -3,9 +3,9 @@
 package tanstack.table.core
 
 external interface ExpandedRow {
-    var toggleExpanded: (expanded: Boolean?) -> Unit
-    var getIsExpanded: () -> Boolean
     var getCanExpand: () -> Boolean
     var getIsAllParentsExpanded: () -> Boolean
+    var getIsExpanded: () -> Boolean
     var getToggleExpandedHandler: () -> () -> Unit
+    var toggleExpanded: (expanded: Boolean?) -> Unit
 }
