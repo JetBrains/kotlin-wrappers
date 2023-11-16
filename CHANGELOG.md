@@ -1,3 +1,10 @@
+## pre.643
+
+**BREAKING CHANGE**
+
+* CommonJS module kind by default
+    * Preparing for migration on ES module kind
+
 ## pre.639
 
 **BREAKING CHANGE**
