@@ -1,5 +1,4 @@
 @file:JsModule("react-dom/client")
-@file:JsNonModule
 
 package react.dom.client
 
