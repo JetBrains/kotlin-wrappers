@@ -1,5 +1,4 @@
 @file:JsModule("@emotion/react")
-@file:JsNonModule
 
 package emotion.react
 

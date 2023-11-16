@@ -1,5 +1,4 @@
 @file:JsModule("@emotion/styled")
-@file:JsNonModule
 
 package emotion.styled
 

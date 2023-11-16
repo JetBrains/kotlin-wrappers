@@ -1,5 +1,4 @@
 @file:JsModule("@emotion/cache")
-@file:JsNonModule
 
 package emotion.cache
 
