@@ -151,7 +151,7 @@ sealed external interface Router {
      * Get/create a fetcher for the given key
      * @param key
      */
-    fun <TData /* default is Any? */> getFetcher(key: String = definedExternally): Fetcher<TData>
+    fun <TData /* default is Any? */> getFetcher(key: String): Fetcher<TData>
 
     /**
      * @internal
@@ -160,7 +160,7 @@ sealed external interface Router {
      * Delete the fetcher for a given key
      * @param key
      */
-    fun deleteFetcher(key: String = definedExternally): Unit
+    fun deleteFetcher(key: String): Unit
 
     /**
      * @internal

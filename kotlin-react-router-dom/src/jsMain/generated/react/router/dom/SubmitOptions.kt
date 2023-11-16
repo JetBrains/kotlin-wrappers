@@ -28,6 +28,16 @@ sealed external interface SubmitOptions {
     var encType: FormEncType?
 
     /**
+     * Indicate a specific fetcherKey to use when using navigate=false
+     */
+    var fetcherKey: String?
+
+    /**
+     * navigate=false will use a fetcher instead of a navigation
+     */
+    var navigate: Boolean?
+
+    /**
      * Set `true` to replace the current entry in the browser's history stack
      * instead of creating a new one (i.e. stay on "the same page"). Defaults
      * to `false`.
@@ -51,6 +61,11 @@ sealed external interface SubmitOptions {
      * navigation when using the <ScrollRestoration> component
      */
     var preventScrollReset: Boolean?
+
+    /**
+     * Enable flushSync for this navigation's state updates
+     */
+    var unstable_flushSync: Boolean?
 
     /**
      * Enable view transitions on this submission navigation

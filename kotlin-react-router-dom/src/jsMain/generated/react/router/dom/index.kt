@@ -13,7 +13,7 @@ package react.router.dom
 
 /* import type { FutureConfig, Location, NavigateOptions, RelativeRoutingType, RouteObject, RouterProviderProps, To } from "react-router"; */
 
-/* import type { Fetcher, FormEncType, FormMethod, FutureConfig as RouterFutureConfig, GetScrollRestorationKeyFunction, History, HTMLFormMethod, HydrationState, Router as RemixRouter, V7_FormMethod } from "@remix-run/router"; */
+/* import type { Fetcher, FormEncType, FormMethod, FutureConfig as RouterFutureConfig, GetScrollRestorationKeyFunction, History, HTMLFormMethod, HydrationState, Router as RemixRouter, V7_FormMethod, BlockerFunction } from "@remix-run/router"; */
 
 /* import type { SubmitOptions, ParamKeyValuePair, URLSearchParamsInit, SubmitTarget } from "./dom"; */
 
@@ -25,7 +25,7 @@ package react.router.dom
 
 /* export type { ActionFunction, ActionFunctionArgs, AwaitProps, unstable_Blocker, unstable_BlockerFunction, DataRouteMatch, DataRouteObject, ErrorResponse, Fetcher, Hash, IndexRouteObject, IndexRouteProps, JsonFunction, LazyRouteFunction, LayoutRouteProps, LoaderFunction, LoaderFunctionArgs, Location, MemoryRouterProps, NavigateFunction, NavigateOptions, NavigateProps, Navigation, Navigator, NonIndexRouteObject, OutletProps, Params, ParamParseKey, Path, PathMatch, Pathname, PathPattern, PathRouteProps, RedirectFunction, RelativeRoutingType, RouteMatch, RouteObject, RouteProps, RouterProps, RouterProviderProps, RoutesProps, Search, ShouldRevalidateFunction, ShouldRevalidateFunctionArgs, To, UIMatch, } from "react-router"; */
 
-/* export { AbortedDeferredError, Await, MemoryRouter, Navigate, NavigationType, Outlet, Route, Router, Routes, createMemoryRouter, createPath, createRoutesFromChildren, createRoutesFromElements, defer, isRouteErrorResponse, generatePath, json, matchPath, matchRoutes, parsePath, redirect, redirectDocument, renderMatches, resolvePath, useActionData, useAsyncError, useAsyncValue, unstable_useBlocker, useHref, useInRouterContext, useLoaderData, useLocation, useMatch, useMatches, useNavigate, useNavigation, useNavigationType, useOutlet, useOutletContext, useParams, useResolvedPath, useRevalidator, useRouteError, useRouteLoaderData, useRoutes, } from "react-router"; */
+/* export { AbortedDeferredError, Await, MemoryRouter, Navigate, NavigationType, Outlet, Route, Router, Routes, createMemoryRouter, createPath, createRoutesFromChildren, createRoutesFromElements, defer, isRouteErrorResponse, generatePath, json, matchPath, matchRoutes, parsePath, redirect, redirectDocument, renderMatches, resolvePath, useActionData, useAsyncError, useAsyncValue, useBlocker, useHref, useInRouterContext, useLoaderData, useLocation, useMatch, useMatches, useNavigate, useNavigation, useNavigationType, useOutlet, useOutletContext, useParams, useResolvedPath, useRevalidator, useRouteError, useRouteLoaderData, useRoutes, } from "react-router"; */
 
 /** @internal */
 /* export { UNSAFE_DataRouterContext, UNSAFE_DataRouterStateContext, UNSAFE_NavigationContext, UNSAFE_LocationContext, UNSAFE_RouteContext, UNSAFE_useRouteId, } from "react-router"; */
@@ -40,6 +40,10 @@ package react.router.dom
 external val ViewTransitionContext: react.Context<ViewTransitionContextObject>
 
 /* export { ViewTransitionContext as UNSAFE_ViewTransitionContext }; */
+
+external val FetchersContext: react.Context<FetchersContextObject>
+
+/* export { FetchersContext as UNSAFE_FetchersContext }; */
 
 
 /* export { HistoryRouter as unstable_HistoryRouter }; */

@@ -17,5 +17,4 @@ sealed external interface NavLinkProps : react.Props, react.PropsWithRef<HTMLAnc
 
     @JsName("style")
     var styleFn: ((props: NavLinkRenderProps) -> react.CSSProperties?)?
-    override var unstable_viewTransition: Boolean?
 }

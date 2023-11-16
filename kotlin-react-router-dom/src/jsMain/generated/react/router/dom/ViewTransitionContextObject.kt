@@ -7,6 +7,7 @@ typealias ViewTransitionContextObject = Any /* {
     isTransitioning: false;
 } | {
     isTransitioning: true;
+    flushSync: boolean;
     currentLocation: Location;
     nextLocation: Location;
 } */

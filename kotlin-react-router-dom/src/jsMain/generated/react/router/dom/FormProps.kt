@@ -8,6 +8,16 @@ import web.html.HTMLFormElement
 
 sealed external interface FormProps : react.Props, react.PropsWithRef<HTMLFormElement>, FetcherFormProps {
     /**
+     * Indicate a specific fetcherKey to use when using navigate=false
+     */
+    var fetcherKey: String?
+
+    /**
+     * navigate=false will use a fetcher instead of a navigation
+     */
+    var navigate: Boolean?
+
+    /**
      * Forces a full document navigation instead of a fetch.
      */
     var reloadDocument: Boolean?

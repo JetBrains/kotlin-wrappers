@@ -4,6 +4,6 @@ package react.router.dom
 
 
 sealed external interface UsePromptOptions {
-    var `when`: Boolean
+    var `when`: Any /* boolean | BlockerFunction */
     var message: String
 }
