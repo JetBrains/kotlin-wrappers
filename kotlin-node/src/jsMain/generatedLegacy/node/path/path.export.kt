@@ -3,5 +3,4 @@
 package node.path
 
 @JsModule("node:path")
-@JsNonModule
 external val path: PlatformPath
