@@ -19,11 +19,9 @@ tasks.withType<KotlinCompile<*>>().configureEach {
     }
 }
 
-val moduleDefinition = if (findProperty("modular") == "true") "commonjs" else "umd"
-
 tasks.withType<KotlinJsCompile>().configureEach {
     kotlinOptions {
-        moduleKind = moduleDefinition
+        moduleKind = "commonjs"
     }
 }
 
