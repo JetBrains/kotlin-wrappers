@@ -1,5 +1,4 @@
 @file:JsModule("react-dom/test-utils")
-@file:JsNonModule
 
 package react.dom.test
 
