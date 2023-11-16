@@ -19,7 +19,6 @@ external interface ReactQuillProps : Props {
 }
 
 @JsModule("react-quill")
-@JsNonModule
 external val ReactQuill: ComponentClass<ReactQuillProps>
 
 val QuillApp = FC {

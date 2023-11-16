@@ -22,7 +22,6 @@ import web.html.InputType
  */
 
 @JsModule("axios")
-@JsNonModule
 external fun <T> axios(config: AxiosConfigSettings): Promise<AxiosResponse<T>>
 
 // Type definition
