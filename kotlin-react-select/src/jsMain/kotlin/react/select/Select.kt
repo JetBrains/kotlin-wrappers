@@ -1,5 +1,4 @@
 @file:JsModule("react-select")
-@file:JsNonModule
 
 package react.select
 
