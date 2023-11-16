@@ -1,5 +1,4 @@
 @file:JsModule("react-popper")
-@file:JsNonModule
 
 package react.popper
 
