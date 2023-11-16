@@ -1,5 +1,4 @@
 @file:JsModule("react-redux")
-@file:JsNonModule
 
 package react.redux
 
@@ -40,6 +39,3 @@ external fun <S, R> createSelectorHook(context: Context<*>): (selector: (S) -> R
 external fun <A, R> createDispatchHook(context: Context<*>): () -> ((A) -> R)
 
 external fun <S, A, R> createStoreHook(context: Context<*>): () -> Store<S, A, R>
-
-
-
