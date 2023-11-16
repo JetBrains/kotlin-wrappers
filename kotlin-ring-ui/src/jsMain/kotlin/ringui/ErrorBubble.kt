@@ -1,5 +1,4 @@
 @file:JsModule("@jetbrains/ring-ui/components/error-bubble/error-bubble")
-@file:JsNonModule
 
 package ringui
 

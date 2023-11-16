@@ -1,5 +1,4 @@
 @file:JsModule("@jetbrains/ring-ui/components/dialog/dialog")
-@file:JsNonModule
 
 package ringui
 

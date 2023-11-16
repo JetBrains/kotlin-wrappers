@@ -1,5 +1,4 @@
 @file:JsModule("@jetbrains/ring-ui/components/icon/icon")
-@file:JsNonModule
 
 package ringui
 

@@ -1,5 +1,4 @@
 @file:JsModule("@jetbrains/ring-ui/components/grid/grid")
-@file:JsNonModule
 
 package ringui
 

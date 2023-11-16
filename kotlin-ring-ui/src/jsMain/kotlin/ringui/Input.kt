@@ -1,5 +1,4 @@
 @file:JsModule("@jetbrains/ring-ui/components/input/input")
-@file:JsNonModule
 
 package ringui
 

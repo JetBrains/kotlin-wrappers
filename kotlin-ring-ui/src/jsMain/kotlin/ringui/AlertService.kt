@@ -1,5 +1,4 @@
 @file:JsModule("@jetbrains/ring-ui/components/alert-service/alert-service")
-@file:JsNonModule
 
 package ringui
 

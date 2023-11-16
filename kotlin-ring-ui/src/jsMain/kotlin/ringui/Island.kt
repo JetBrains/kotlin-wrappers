@@ -1,5 +1,4 @@
 @file:JsModule("@jetbrains/ring-ui/components/island/island")
-@file:JsNonModule
 
 package ringui
 

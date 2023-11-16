@@ -1,5 +1,4 @@
 @file:JsModule("@jetbrains/ring-ui/components/error-message/error-message")
-@file:JsNonModule
 
 package ringui
 

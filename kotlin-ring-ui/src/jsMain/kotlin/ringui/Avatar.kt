@@ -1,5 +1,4 @@
 @file:JsModule("@jetbrains/ring-ui/components/avatar/avatar")
-@file:JsNonModule
 
 package ringui
 

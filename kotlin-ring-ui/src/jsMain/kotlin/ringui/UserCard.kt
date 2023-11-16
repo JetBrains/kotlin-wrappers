@@ -1,5 +1,4 @@
 @file:JsModule("@jetbrains/ring-ui/components/user-card/user-card")
-@file:JsNonModule
 
 package ringui
 

@@ -1,5 +1,4 @@
 @file:JsModule("@jetbrains/ring-ui/components/tabs/tabs")
-@file:JsNonModule
 
 package ringui
 

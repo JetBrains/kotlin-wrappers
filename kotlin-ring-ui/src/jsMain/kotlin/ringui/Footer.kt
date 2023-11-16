@@ -1,5 +1,4 @@
 @file:JsModule("@jetbrains/ring-ui/components/footer/footer")
-@file:JsNonModule
 
 package ringui
 

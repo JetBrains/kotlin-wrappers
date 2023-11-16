@@ -1,5 +1,4 @@
 @file:JsModule("@jetbrains/ring-ui/components/dropdown/dropdown")
-@file:JsNonModule
 
 package ringui
 
