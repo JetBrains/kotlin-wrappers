@@ -3,6 +3,5 @@
 
 package react.router.dom
 
-import js.collections.JsMap
 
-typealias FetchersContextObject = JsMap<String, Any?>
+typealias FetchersContextObject = js.collections.ReadonlyMap<String, Any?>

@@ -4,6 +4,7 @@ package react.router.dom
 
 import remix.run.router.Fetcher
 
-sealed external interface Temp2 : Fetcher<Any?> {
+
+sealed external interface UseFetchersResultItem : Fetcher<Any?> {
     var key: String
 }

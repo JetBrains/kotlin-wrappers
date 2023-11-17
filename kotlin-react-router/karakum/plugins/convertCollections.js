@@ -12,5 +12,21 @@ export default function (node, context, render) {
     ) {
         return "js.core.ReadonlyRecord"
     }
+
+    if (
+        ts.isIdentifier(node)
+        && ts.isTypeReferenceNode(node.parent)
+        && node.text === "Map"
+    ) {
+        return "js.collections.ReadonlyMap"
+    }
+
+    if (
+        ts.isIdentifier(node)
+        && ts.isTypeReferenceNode(node.parent)
+        && node.text === "Set"
+    ) {
+        return "js.collections.ReadonlySet"
+    }
     return null
 }

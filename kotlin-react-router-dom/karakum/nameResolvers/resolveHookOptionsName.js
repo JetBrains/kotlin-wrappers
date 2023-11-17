@@ -16,6 +16,16 @@ export default (node) => {
         && ts.isParameter(node.parent)
         && node.parent.parent
         && ts.isFunctionDeclaration(node.parent.parent)
+        && node.parent.parent.name.text === "useFetcher"
+    ) {
+        return "UseFetcherOptions"
+    }
+
+    if (
+        node.parent
+        && ts.isParameter(node.parent)
+        && node.parent.parent
+        && ts.isFunctionDeclaration(node.parent.parent)
         && node.parent.parent.name.text === "useFormAction"
     ) {
         return "UseFormActionOptions"

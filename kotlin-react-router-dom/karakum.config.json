@@ -103,7 +103,7 @@
     "useBeforeUnload.kt": [
       "web.window.BeforeUnloadEvent"
     ],
-    "useFetchers.kt": [
+    "UseFetchersResultItem.kt": [
       "remix.run.router.Fetcher"
     ],
     "UseFormActionOptions.kt": [

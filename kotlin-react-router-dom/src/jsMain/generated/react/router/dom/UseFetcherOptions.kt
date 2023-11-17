@@ -3,6 +3,6 @@
 package react.router.dom
 
 
-sealed external interface Temp1 {
+sealed external interface UseFetcherOptions {
     var key: String?
 }
