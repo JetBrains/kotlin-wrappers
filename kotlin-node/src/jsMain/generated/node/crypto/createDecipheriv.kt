@@ -34,30 +34,10 @@ package node.crypto
  * @since v0.1.94
  * @param options `stream.transform` options
  */
-external fun createDecipheriv(
-    algorithm: CipherCCMTypes,
-    key: CipherKey,
-    iv: BinaryLike,
-    options: CipherCCMOptions,
-): DecipherCCM
+external fun createDecipheriv(algorithm: CipherCCMTypes, key: CipherKey, iv: BinaryLike, options: CipherCCMOptions): DecipherCCM
 
-external fun createDecipheriv(
-    algorithm: CipherOCBTypes,
-    key: CipherKey,
-    iv: BinaryLike,
-    options: CipherOCBOptions,
-): DecipherOCB
+external fun createDecipheriv(algorithm: CipherOCBTypes, key: CipherKey, iv: BinaryLike, options: CipherOCBOptions): DecipherOCB
 
-external fun createDecipheriv(
-    algorithm: CipherGCMTypes,
-    key: CipherKey,
-    iv: BinaryLike,
-    options: CipherGCMOptions = definedExternally,
-): DecipherGCM
+external fun createDecipheriv(algorithm: CipherGCMTypes, key: CipherKey, iv: BinaryLike, options: CipherGCMOptions = definedExternally): DecipherGCM
 
-external fun createDecipheriv(
-    algorithm: String,
-    key: CipherKey,
-    iv: BinaryLike?,
-    options: node.stream.TransformOptions = definedExternally,
-): Decipher
+external fun createDecipheriv(algorithm: String, key: CipherKey, iv: BinaryLike?, options: node.stream.TransformOptions = definedExternally): Decipher

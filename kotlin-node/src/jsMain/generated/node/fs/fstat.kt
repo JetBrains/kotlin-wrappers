@@ -13,20 +13,8 @@ package node.fs
  */
 external fun fstat(fd: Number, callback: (err: node.ErrnoException?, stats: Stats) -> Unit): Unit
 
-external fun fstat(
-    fd: Number,
-    options: (FstatOptions)?,
-    callback: (err: node.ErrnoException?, stats: Stats) -> Unit,
-): Unit
+external fun fstat(fd: Number, options: (FstatOptions)?, callback: (err: node.ErrnoException?, stats: Stats) -> Unit): Unit
 
-external fun fstat(
-    fd: Number,
-    options: FstatBigIntOptions,
-    callback: (err: node.ErrnoException?, stats: BigIntStats) -> Unit,
-): Unit
+external fun fstat(fd: Number, options: FstatBigIntOptions, callback: (err: node.ErrnoException?, stats: BigIntStats) -> Unit): Unit
 
-external fun fstat(
-    fd: Number,
-    options: StatOptions?,
-    callback: (err: node.ErrnoException?, stats: Any /* Stats | BigIntStats */) -> Unit,
-): Unit
+external fun fstat(fd: Number, options: StatOptions?, callback: (err: node.ErrnoException?, stats: Any /* Stats | BigIntStats */) -> Unit): Unit

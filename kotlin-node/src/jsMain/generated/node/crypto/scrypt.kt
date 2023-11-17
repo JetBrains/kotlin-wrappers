@@ -39,17 +39,6 @@ package node.crypto
  * ```
  * @since v10.5.0
  */
-external fun scrypt(
-    password: BinaryLike,
-    salt: BinaryLike,
-    keylen: Number,
-    callback: (err: Throwable /* JsError */?, derivedKey: node.buffer.Buffer) -> Unit,
-): Unit
+external fun scrypt(password: BinaryLike, salt: BinaryLike, keylen: Number, callback: (err: Throwable /* JsError */?, derivedKey: node.buffer.Buffer) -> Unit): Unit
 
-external fun scrypt(
-    password: BinaryLike,
-    salt: BinaryLike,
-    keylen: Number,
-    options: ScryptOptions,
-    callback: (err: Throwable /* JsError */?, derivedKey: node.buffer.Buffer) -> Unit,
-): Unit
+external fun scrypt(password: BinaryLike, salt: BinaryLike, keylen: Number, options: ScryptOptions, callback: (err: Throwable /* JsError */?, derivedKey: node.buffer.Buffer) -> Unit): Unit

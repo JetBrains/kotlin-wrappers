@@ -31,33 +31,21 @@ package node.fs
  * dependent name for that object.
  * @since v0.1.31
  */
-external fun realpath(
-    path: PathLike,
-    options: EncodingOption,
-    callback: (err: node.ErrnoException?, resolvedPath: String) -> Unit,
-): Unit
+external fun realpath(path: PathLike, options: EncodingOption, callback: (err: node.ErrnoException?, resolvedPath: String) -> Unit): Unit
 
 /**
  * Asynchronous realpath(3) - return the canonicalized absolute pathname.
  * @param path A path to a file. If a URL is provided, it must use the `file:` protocol.
  * @param options The encoding (or an object specifying the encoding), used as the encoding of the result. If not provided, `'utf8'` is used.
  */
-external fun realpath(
-    path: PathLike,
-    options: BufferEncodingOption,
-    callback: (err: node.ErrnoException?, resolvedPath: node.buffer.Buffer) -> Unit,
-): Unit
+external fun realpath(path: PathLike, options: BufferEncodingOption, callback: (err: node.ErrnoException?, resolvedPath: node.buffer.Buffer) -> Unit): Unit
 
 /**
  * Asynchronous realpath(3) - return the canonicalized absolute pathname.
  * @param path A path to a file. If a URL is provided, it must use the `file:` protocol.
  * @param options The encoding (or an object specifying the encoding), used as the encoding of the result. If not provided, `'utf8'` is used.
  */
-external fun realpath(
-    path: PathLike,
-    options: EncodingOption,
-    callback: (err: node.ErrnoException?, resolvedPath: Any /* string | Buffer */) -> Unit,
-): Unit
+external fun realpath(path: PathLike, options: EncodingOption, callback: (err: node.ErrnoException?, resolvedPath: Any /* string | Buffer */) -> Unit): Unit
 
 /**
  * Asynchronous realpath(3) - return the canonicalized absolute pathname.

@@ -53,14 +53,6 @@ import js.typedarrays.Uint8Array
  * @since v0.6.7
  * @param path filename or file descriptor
  */
-external fun appendFileSync(
-    path: PathOrFileDescriptor,
-    data: String,
-    options: WriteFileOptions = definedExternally,
-): Unit
+external fun appendFileSync(path: PathOrFileDescriptor, data: String, options: WriteFileOptions = definedExternally): Unit
 
-external fun appendFileSync(
-    path: PathOrFileDescriptor,
-    data: Uint8Array,
-    options: WriteFileOptions = definedExternally,
-): Unit
+external fun appendFileSync(path: PathOrFileDescriptor, data: Uint8Array, options: WriteFileOptions = definedExternally): Unit

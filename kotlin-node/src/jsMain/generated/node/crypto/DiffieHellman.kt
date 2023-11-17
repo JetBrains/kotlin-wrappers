@@ -61,29 +61,10 @@ external class DiffieHellman {
      * @param inputEncoding The `encoding` of an `otherPublicKey` string.
      * @param outputEncoding The `encoding` of the return value.
      */
-    fun computeSecret(
-        otherPublicKey: js.buffer.ArrayBufferView,
-        inputEncoding: Nothing? = definedExternally,
-        outputEncoding: Nothing? = definedExternally,
-    ): node.buffer.Buffer
-
-    fun computeSecret(
-        otherPublicKey: js.buffer.ArrayBufferView,
-        inputEncoding: Nothing?,
-        outputEncoding: BinaryToTextEncoding,
-    ): String
-
-    fun computeSecret(
-        otherPublicKey: String,
-        inputEncoding: BinaryToTextEncoding,
-        outputEncoding: Nothing? = definedExternally,
-    ): node.buffer.Buffer
-
-    fun computeSecret(
-        otherPublicKey: String,
-        inputEncoding: BinaryToTextEncoding,
-        outputEncoding: BinaryToTextEncoding,
-    ): String
+    fun computeSecret(otherPublicKey: js.buffer.ArrayBufferView, inputEncoding: Nothing? = definedExternally, outputEncoding: Nothing? = definedExternally): node.buffer.Buffer
+    fun computeSecret(otherPublicKey: js.buffer.ArrayBufferView, inputEncoding: Nothing?, outputEncoding: BinaryToTextEncoding): String
+    fun computeSecret(otherPublicKey: String, inputEncoding: BinaryToTextEncoding, outputEncoding: Nothing? = definedExternally): node.buffer.Buffer
+    fun computeSecret(otherPublicKey: String, inputEncoding: BinaryToTextEncoding, outputEncoding: BinaryToTextEncoding): String
 
     /**
      * Returns the Diffie-Hellman prime in the specified `encoding`.

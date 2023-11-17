@@ -15,30 +15,10 @@ sealed external class DiffieHellmanGroup {
 
     fun generateKeys(): node.buffer.Buffer
     fun generateKeys(encoding: BinaryToTextEncoding): String
-    fun computeSecret(
-        otherPublicKey: js.buffer.ArrayBufferView,
-        inputEncoding: Nothing? = definedExternally,
-        outputEncoding: Nothing? = definedExternally,
-    ): node.buffer.Buffer
-
-    fun computeSecret(
-        otherPublicKey: String,
-        inputEncoding: BinaryToTextEncoding,
-        outputEncoding: Nothing? = definedExternally,
-    ): node.buffer.Buffer
-
-    fun computeSecret(
-        otherPublicKey: js.buffer.ArrayBufferView,
-        inputEncoding: Nothing?,
-        outputEncoding: BinaryToTextEncoding,
-    ): String
-
-    fun computeSecret(
-        otherPublicKey: String,
-        inputEncoding: BinaryToTextEncoding,
-        outputEncoding: BinaryToTextEncoding,
-    ): String
-
+    fun computeSecret(otherPublicKey: js.buffer.ArrayBufferView, inputEncoding: Nothing? = definedExternally, outputEncoding: Nothing? = definedExternally): node.buffer.Buffer
+    fun computeSecret(otherPublicKey: String, inputEncoding: BinaryToTextEncoding, outputEncoding: Nothing? = definedExternally): node.buffer.Buffer
+    fun computeSecret(otherPublicKey: js.buffer.ArrayBufferView, inputEncoding: Nothing?, outputEncoding: BinaryToTextEncoding): String
+    fun computeSecret(otherPublicKey: String, inputEncoding: BinaryToTextEncoding, outputEncoding: BinaryToTextEncoding): String
     fun getPrime(): node.buffer.Buffer
     fun getPrime(encoding: BinaryToTextEncoding): String
     fun getGenerator(): node.buffer.Buffer

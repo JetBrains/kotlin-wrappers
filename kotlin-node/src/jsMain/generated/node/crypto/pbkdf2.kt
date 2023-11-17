@@ -55,11 +55,4 @@ package node.crypto
  * negative performance implications for some applications; see the `UV_THREADPOOL_SIZE` documentation for more information.
  * @since v0.5.5
  */
-external fun pbkdf2(
-    password: BinaryLike,
-    salt: BinaryLike,
-    iterations: Number,
-    keylen: Number,
-    digest: String,
-    callback: (err: Throwable /* JsError */?, derivedKey: node.buffer.Buffer) -> Unit,
-): Unit
+external fun pbkdf2(password: BinaryLike, salt: BinaryLike, iterations: Number, keylen: Number, digest: String, callback: (err: Throwable /* JsError */?, derivedKey: node.buffer.Buffer) -> Unit): Unit

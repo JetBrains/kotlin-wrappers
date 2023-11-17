@@ -26,19 +26,9 @@ open external class _Interface : EventEmitter {
      *
      * @see https://nodejs.org/dist/latest-v10.x/docs/api/readline.html#readline_class_interface
      */
-    constructor (
-        input: node.ReadableStream,
-        output: node.WritableStream = definedExternally,
-        completer: Completer = definedExternally,
-        terminal: Boolean = definedExternally,
-    )
+    constructor (input: node.ReadableStream, output: node.WritableStream = definedExternally, completer: Completer = definedExternally, terminal: Boolean = definedExternally)
 
-    constructor (
-        input: node.ReadableStream,
-        output: node.WritableStream = definedExternally,
-        completer: AsyncCompleter = definedExternally,
-        terminal: Boolean = definedExternally,
-    )
+    constructor (input: node.ReadableStream, output: node.WritableStream = definedExternally, completer: AsyncCompleter = definedExternally, terminal: Boolean = definedExternally)
 
     /**
      * NOTE: According to the documentation:
@@ -266,11 +256,7 @@ open external class _Interface : EventEmitter {
     fun addListener(event: InterfaceEvent.SIGCONT, listener: () -> Unit): Unit /* this */
     fun addListener(event: InterfaceEvent.SIGINT, listener: () -> Unit): Unit /* this */
     fun addListener(event: InterfaceEvent.SIGTSTP, listener: () -> Unit): Unit /* this */
-    fun addListener(
-        event: InterfaceEvent.HISTORY,
-        listener: (history: js.core.ReadonlyArray<String>) -> Unit,
-    ): Unit /* this */
-
+    fun addListener(event: InterfaceEvent.HISTORY, listener: (history: js.core.ReadonlyArray<String>) -> Unit): Unit /* this */
     fun emit(event: String, vararg args: Any? /* js.core.ReadonlyArray<Any?> */): Boolean
 
     fun emit(event: js.core.Symbol, vararg args: Any? /* js.core.ReadonlyArray<Any?> */): Boolean
@@ -308,11 +294,7 @@ open external class _Interface : EventEmitter {
     fun prependListener(event: InterfaceEvent.SIGCONT, listener: () -> Unit): Unit /* this */
     fun prependListener(event: InterfaceEvent.SIGINT, listener: () -> Unit): Unit /* this */
     fun prependListener(event: InterfaceEvent.SIGTSTP, listener: () -> Unit): Unit /* this */
-    fun prependListener(
-        event: InterfaceEvent.HISTORY,
-        listener: (history: js.core.ReadonlyArray<String>) -> Unit,
-    ): Unit /* this */
-
+    fun prependListener(event: InterfaceEvent.HISTORY, listener: (history: js.core.ReadonlyArray<String>) -> Unit): Unit /* this */
     fun prependOnceListener(event: String, listener: Function<Any?> /* (...args: any[]) => void */): Unit /* this */
     fun prependOnceListener(event: InterfaceEvent.CLOSE, listener: () -> Unit): Unit /* this */
     fun prependOnceListener(event: InterfaceEvent.LINE, listener: (input: String) -> Unit): Unit /* this */
@@ -321,8 +303,5 @@ open external class _Interface : EventEmitter {
     fun prependOnceListener(event: InterfaceEvent.SIGCONT, listener: () -> Unit): Unit /* this */
     fun prependOnceListener(event: InterfaceEvent.SIGINT, listener: () -> Unit): Unit /* this */
     fun prependOnceListener(event: InterfaceEvent.SIGTSTP, listener: () -> Unit): Unit /* this */
-    fun prependOnceListener(
-        event: InterfaceEvent.HISTORY,
-        listener: (history: js.core.ReadonlyArray<String>) -> Unit,
-    ): Unit /* this */
+    fun prependOnceListener(event: InterfaceEvent.HISTORY, listener: (history: js.core.ReadonlyArray<String>) -> Unit): Unit /* this */
 }

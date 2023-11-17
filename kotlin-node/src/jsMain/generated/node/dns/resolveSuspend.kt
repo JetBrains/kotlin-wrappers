@@ -77,19 +77,13 @@ suspend fun resolve(hostname: String, rrtype: ResourceRecordType.SRV): js.core.R
     ).await()
 
 
-suspend fun resolve(
-    hostname: String,
-    rrtype: ResourceRecordType.TXT,
-): js.core.ReadonlyArray<js.core.ReadonlyArray<String>> =
+suspend fun resolve(hostname: String, rrtype: ResourceRecordType.TXT): js.core.ReadonlyArray<js.core.ReadonlyArray<String>> =
     resolveAsync(
         hostname, rrtype
     ).await()
 
 
-suspend fun resolve(
-    hostname: String,
-    rrtype: String,
-): Any /* string[] | MxRecord[] | NaptrRecord[] | SoaRecord | SrvRecord[] | string[][] | AnyRecord[] */ =
+suspend fun resolve(hostname: String, rrtype: String): Any /* string[] | MxRecord[] | NaptrRecord[] | SoaRecord | SrvRecord[] | string[][] | AnyRecord[] */ =
     resolveAsync(
         hostname, rrtype
     ).await()

@@ -17,10 +17,7 @@ suspend fun statfs(path: PathLike, opts: StatfsBigIntOpts): BigIntStatsFs =
     ).await()
 
 
-suspend fun statfs(
-    path: PathLike,
-    opts: StatFsOptions = undefined.unsafeCast<Nothing>(),
-): Any /* StatsFs | BigIntStatsFs */ =
+suspend fun statfs(path: PathLike, opts: StatFsOptions = undefined.unsafeCast<Nothing>()): Any /* StatsFs | BigIntStatsFs */ =
     statfsAsync(
         path, opts
     ).await()

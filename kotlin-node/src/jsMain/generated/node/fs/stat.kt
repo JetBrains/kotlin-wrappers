@@ -89,20 +89,8 @@ package node.fs
  */
 external fun stat(path: PathLike, callback: (err: node.ErrnoException?, stats: Stats) -> Unit): Unit
 
-external fun stat(
-    path: PathLike,
-    options: (StatSimpleOptions)?,
-    callback: (err: node.ErrnoException?, stats: Stats) -> Unit,
-): Unit
+external fun stat(path: PathLike, options: (StatSimpleOptions)?, callback: (err: node.ErrnoException?, stats: Stats) -> Unit): Unit
 
-external fun stat(
-    path: PathLike,
-    options: StatBigIntOptions,
-    callback: (err: node.ErrnoException?, stats: BigIntStats) -> Unit,
-): Unit
+external fun stat(path: PathLike, options: StatBigIntOptions, callback: (err: node.ErrnoException?, stats: BigIntStats) -> Unit): Unit
 
-external fun stat(
-    path: PathLike,
-    options: StatOptions?,
-    callback: (err: node.ErrnoException?, stats: Any /* Stats | BigIntStats */) -> Unit,
-): Unit
+external fun stat(path: PathLike, options: StatOptions?, callback: (err: node.ErrnoException?, stats: Any /* Stats | BigIntStats */) -> Unit): Unit

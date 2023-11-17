@@ -18,68 +18,37 @@ package node.fs
  * If `options.withFileTypes` is set to `true`, the `files` array will contain `fs.Dirent` objects.
  * @since v0.1.8
  */
-external fun readdir(
-    path: PathLike,
-    options: (ReaddirStringOptions)?,
-    callback: (err: node.ErrnoException?, files: js.core.ReadonlyArray<String>) -> Unit,
-): Unit
+external fun readdir(path: PathLike, options: (ReaddirStringOptions)?, callback: (err: node.ErrnoException?, files: js.core.ReadonlyArray<String>) -> Unit): Unit
 
-external fun readdir(
-    path: PathLike,
-    options: node.buffer.BufferEncoding?,
-    callback: (err: node.ErrnoException?, files: js.core.ReadonlyArray<String>) -> Unit,
-): Unit
+external fun readdir(path: PathLike, options: node.buffer.BufferEncoding?, callback: (err: node.ErrnoException?, files: js.core.ReadonlyArray<String>) -> Unit): Unit
 
 /**
  * Asynchronous readdir(3) - read a directory.
  * @param path A path to a file. If a URL is provided, it must use the `file:` protocol.
  * @param options The encoding (or an object specifying the encoding), used as the encoding of the result. If not provided, `'utf8'` is used.
  */
-external fun readdir(
-    path: PathLike,
-    options: ReaddirBufferOptions,
-    callback: (err: node.ErrnoException?, files: js.core.ReadonlyArray<node.buffer.Buffer>) -> Unit,
-): Unit
+external fun readdir(path: PathLike, options: ReaddirBufferOptions, callback: (err: node.ErrnoException?, files: js.core.ReadonlyArray<node.buffer.Buffer>) -> Unit): Unit
 
-external fun readdir(
-    path: PathLike,
-    options: String, /* 'buffer' */
-    callback: (err: node.ErrnoException?, files: js.core.ReadonlyArray<node.buffer.Buffer>) -> Unit,
-): Unit
+external fun readdir(path: PathLike, options: String /* 'buffer' */, callback: (err: node.ErrnoException?, files: js.core.ReadonlyArray<node.buffer.Buffer>) -> Unit): Unit
 
 /**
  * Asynchronous readdir(3) - read a directory.
  * @param path A path to a file. If a URL is provided, it must use the `file:` protocol.
  * @param options The encoding (or an object specifying the encoding), used as the encoding of the result. If not provided, `'utf8'` is used.
  */
-external fun readdir(
-    path: PathLike,
-    options: (ReaddirOptions)?,
-    callback: (err: node.ErrnoException?, files: Any /* string[] | Buffer[] */) -> Unit,
-): Unit
+external fun readdir(path: PathLike, options: (ReaddirOptions)?, callback: (err: node.ErrnoException?, files: Any /* string[] | Buffer[] */) -> Unit): Unit
 
-external fun readdir(
-    path: PathLike,
-    options: node.buffer.BufferEncoding?,
-    callback: (err: node.ErrnoException?, files: Any /* string[] | Buffer[] */) -> Unit,
-): Unit
+external fun readdir(path: PathLike, options: node.buffer.BufferEncoding?, callback: (err: node.ErrnoException?, files: Any /* string[] | Buffer[] */) -> Unit): Unit
 
 /**
  * Asynchronous readdir(3) - read a directory.
  * @param path A path to a file. If a URL is provided, it must use the `file:` protocol.
  */
-external fun readdir(
-    path: PathLike,
-    callback: (err: node.ErrnoException?, files: js.core.ReadonlyArray<String>) -> Unit,
-): Unit
+external fun readdir(path: PathLike, callback: (err: node.ErrnoException?, files: js.core.ReadonlyArray<String>) -> Unit): Unit
 
 /**
  * Asynchronous readdir(3) - read a directory.
  * @param path A path to a file. If a URL is provided, it must use the `file:` protocol.
  * @param options If called with `withFileTypes: true` the result data will be an array of Dirent.
  */
-external fun readdir(
-    path: PathLike,
-    options: ReaddirWithFileTypesOptions,
-    callback: (err: node.ErrnoException?, files: js.core.ReadonlyArray<Dirent>) -> Unit,
-): Unit
+external fun readdir(path: PathLike, options: ReaddirWithFileTypesOptions, callback: (err: node.ErrnoException?, files: js.core.ReadonlyArray<Dirent>) -> Unit): Unit

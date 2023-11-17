@@ -25,17 +25,9 @@ package node.fs
  * @since v0.5.10
  * @param listener
  */
-external fun watch(
-    filename: PathLike,
-    options: WatchBufferOptions,
-    listener: WatchListener<node.buffer.Buffer> = definedExternally,
-): FSWatcher
+external fun watch(filename: PathLike, options: WatchBufferOptions, listener: WatchListener<node.buffer.Buffer> = definedExternally): FSWatcher
 
-external fun watch(
-    filename: PathLike,
-    options: String, /* 'buffer' */
-    listener: WatchListener<node.buffer.Buffer> = definedExternally,
-): FSWatcher
+external fun watch(filename: PathLike, options: String /* 'buffer' */, listener: WatchListener<node.buffer.Buffer> = definedExternally): FSWatcher
 
 /**
  * Watch for changes on `filename`, where `filename` is either a file or a directory, returning an `FSWatcher`.
@@ -45,17 +37,9 @@ external fun watch(
  * If `persistent` is not supplied, the default of `true` is used.
  * If `recursive` is not supplied, the default of `false` is used.
  */
-external fun watch(
-    filename: PathLike,
-    options: WatchOptions? = definedExternally,
-    listener: WatchListener<String> = definedExternally,
-): FSWatcher
+external fun watch(filename: PathLike, options: WatchOptions? = definedExternally, listener: WatchListener<String> = definedExternally): FSWatcher
 
-external fun watch(
-    filename: PathLike,
-    options: node.buffer.BufferEncoding? = definedExternally,
-    listener: WatchListener<String> = definedExternally,
-): FSWatcher
+external fun watch(filename: PathLike, options: node.buffer.BufferEncoding? = definedExternally, listener: WatchListener<String> = definedExternally): FSWatcher
 
 /**
  * Watch for changes on `filename`, where `filename` is either a file or a directory, returning an `FSWatcher`.
@@ -65,17 +49,9 @@ external fun watch(
  * If `persistent` is not supplied, the default of `true` is used.
  * If `recursive` is not supplied, the default of `false` is used.
  */
-external fun watch(
-    filename: PathLike,
-    options: WatchOptions,
-    listener: WatchListener<Any /* string | Buffer */> = definedExternally,
-): FSWatcher
+external fun watch(filename: PathLike, options: WatchOptions, listener: WatchListener<Any /* string | Buffer */> = definedExternally): FSWatcher
 
-external fun watch(
-    filename: PathLike,
-    options: String,
-    listener: WatchListener<Any /* string | Buffer */> = definedExternally,
-): FSWatcher
+external fun watch(filename: PathLike, options: String, listener: WatchListener<Any /* string | Buffer */> = definedExternally): FSWatcher
 
 /**
  * Watch for changes on `filename`, where `filename` is either a file or a directory, returning an `FSWatcher`.

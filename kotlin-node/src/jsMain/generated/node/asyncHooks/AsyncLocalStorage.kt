@@ -112,11 +112,7 @@ external class AsyncLocalStorage<T> {
      * ```
      * @since v13.10.0, v12.17.0
      */
-    fun <R, TArgs : js.core.ReadonlyArray<Any?>> run(
-        store: T,
-        callback: Function<Any?>, /* (...args: TArgs) => R */
-        vararg args: Any?, /* TArgs */
-    ): R
+    fun <R, TArgs : js.core.ReadonlyArray<Any?>> run(store: T, callback: Function<Any?> /* (...args: TArgs) => R */, vararg args: Any? /* TArgs */): R
 
     /**
      * Runs a function synchronously outside of a context and returns its
@@ -146,10 +142,7 @@ external class AsyncLocalStorage<T> {
      * @since v13.10.0, v12.17.0
      * @experimental
      */
-    fun <R, TArgs : js.core.ReadonlyArray<Any?>> exit(
-        callback: Function<Any?>, /* (...args: TArgs) => R */
-        vararg args: Any?, /* TArgs */
-    ): R
+    fun <R, TArgs : js.core.ReadonlyArray<Any?>> exit(callback: Function<Any?> /* (...args: TArgs) => R */, vararg args: Any? /* TArgs */): R
 
     /**
      * Transitions into the context for the remainder of the current

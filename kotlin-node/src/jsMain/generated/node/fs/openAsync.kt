@@ -21,16 +21,8 @@ import js.promise.Promise
  */
 
 @JsName("open")
-external fun openAsync(
-    path: PathLike,
-    flags: String = definedExternally,
-    mode: Mode = definedExternally,
-): Promise<FileHandle>
+external fun openAsync(path: PathLike, flags: String = definedExternally, mode: Mode = definedExternally): Promise<FileHandle>
 
 
 @JsName("open")
-external fun openAsync(
-    path: PathLike,
-    flags: Double = definedExternally,
-    mode: Mode = definedExternally,
-): Promise<FileHandle>
+external fun openAsync(path: PathLike, flags: Double = definedExternally, mode: Mode = definedExternally): Promise<FileHandle>

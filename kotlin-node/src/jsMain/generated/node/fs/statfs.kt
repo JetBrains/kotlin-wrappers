@@ -13,20 +13,8 @@ package node.fs
  */
 external fun statfs(path: PathLike, callback: (err: node.ErrnoException?, stats: StatsFs) -> Unit): Unit
 
-external fun statfs(
-    path: PathLike,
-    options: (StatfsOptions)?,
-    callback: (err: node.ErrnoException?, stats: StatsFs) -> Unit,
-): Unit
+external fun statfs(path: PathLike, options: (StatfsOptions)?, callback: (err: node.ErrnoException?, stats: StatsFs) -> Unit): Unit
 
-external fun statfs(
-    path: PathLike,
-    options: StatfsBigIntOptions,
-    callback: (err: node.ErrnoException?, stats: BigIntStatsFs) -> Unit,
-): Unit
+external fun statfs(path: PathLike, options: StatfsBigIntOptions, callback: (err: node.ErrnoException?, stats: BigIntStatsFs) -> Unit): Unit
 
-external fun statfs(
-    path: PathLike,
-    options: StatFsOptions?,
-    callback: (err: node.ErrnoException?, stats: Any /* StatsFs | BigIntStatsFs */) -> Unit,
-): Unit
+external fun statfs(path: PathLike, options: StatFsOptions?, callback: (err: node.ErrnoException?, stats: Any /* StatsFs | BigIntStatsFs */) -> Unit): Unit

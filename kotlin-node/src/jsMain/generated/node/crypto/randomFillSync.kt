@@ -46,8 +46,4 @@ package node.crypto
  * @param [size=buffer.length - offset]
  * @return The object passed as `buffer` argument.
  */
-external fun <T : js.buffer.ArrayBufferView> randomFillSync(
-    buffer: T,
-    offset: Number = definedExternally,
-    size: Number = definedExternally,
-): T
+external fun <T : js.buffer.ArrayBufferView> randomFillSync(buffer: T, offset: Number = definedExternally, size: Number = definedExternally): T

@@ -29,10 +29,7 @@ package node.fs
  * @since v0.1.8
  * @param path filename or file descriptor
  */
-external fun readFileSync(
-    path: PathOrFileDescriptor,
-    options: (ReadFileSyncBufferOptions)? = definedExternally,
-): node.buffer.Buffer
+external fun readFileSync(path: PathOrFileDescriptor, options: (ReadFileSyncBufferOptions)? = definedExternally): node.buffer.Buffer
 
 /**
  * Synchronously reads the entire contents of a file.
@@ -52,12 +49,6 @@ external fun readFileSync(path: PathOrFileDescriptor, options: node.buffer.Buffe
  * @param options Either the encoding for the result, or an object that contains the encoding and an optional flag.
  * If a flag is not provided, it defaults to `'r'`.
  */
-external fun readFileSync(
-    path: PathOrFileDescriptor,
-    options: (ReadFileSyncOptions)? = definedExternally,
-): Any /* string | Buffer */
+external fun readFileSync(path: PathOrFileDescriptor, options: (ReadFileSyncOptions)? = definedExternally): Any /* string | Buffer */
 
-external fun readFileSync(
-    path: PathOrFileDescriptor,
-    options: node.buffer.BufferEncoding? = definedExternally,
-): Any /* string | Buffer */
+external fun readFileSync(path: PathOrFileDescriptor, options: node.buffer.BufferEncoding? = definedExternally): Any /* string | Buffer */

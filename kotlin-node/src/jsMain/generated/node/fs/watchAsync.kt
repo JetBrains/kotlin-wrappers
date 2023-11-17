@@ -36,10 +36,7 @@ import js.iterable.AsyncIterable
  * @since v15.9.0, v14.18.0
  * @return of objects with the properties:
  */
-external fun watch(
-    filename: PathLike,
-    options: WatchBufferAsyncOptions,
-): AsyncIterable<FileChangeInfo<node.buffer.Buffer>>
+external fun watch(filename: PathLike, options: WatchBufferAsyncOptions): AsyncIterable<FileChangeInfo<node.buffer.Buffer>>
 
 
 /**
@@ -52,10 +49,7 @@ external fun watch(
  */
 external fun watch(filename: PathLike, options: WatchOptions = definedExternally): AsyncIterable<FileChangeInfo<String>>
 
-external fun watch(
-    filename: PathLike,
-    options: node.buffer.BufferEncoding = definedExternally,
-): AsyncIterable<FileChangeInfo<String>>
+external fun watch(filename: PathLike, options: node.buffer.BufferEncoding = definedExternally): AsyncIterable<FileChangeInfo<String>>
 
 /**
  * Watch for changes on `filename`, where `filename` is either a file or a directory, returning an `FSWatcher`.
@@ -67,7 +61,4 @@ external fun watch(
  */
 
 
-external fun watch(
-    filename: PathLike,
-    options: String,
-): Any /* AsyncIterable<FileChangeInfo<string>> | AsyncIterable<FileChangeInfo<Buffer>> */
+external fun watch(filename: PathLike, options: String): Any /* AsyncIterable<FileChangeInfo<string>> | AsyncIterable<FileChangeInfo<Buffer>> */

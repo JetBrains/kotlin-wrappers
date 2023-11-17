@@ -35,9 +35,4 @@ package node.crypto
  * ```
  * @since v10.5.0
  */
-external fun scryptSync(
-    password: BinaryLike,
-    salt: BinaryLike,
-    keylen: Number,
-    options: ScryptOptions = definedExternally,
-): node.buffer.Buffer
+external fun scryptSync(password: BinaryLike, salt: BinaryLike, keylen: Number, options: ScryptOptions = definedExternally): node.buffer.Buffer

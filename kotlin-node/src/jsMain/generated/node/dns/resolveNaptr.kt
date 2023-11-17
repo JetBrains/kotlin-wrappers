@@ -28,7 +28,4 @@ package node.dns
  * ```
  * @since v0.9.12
  */
-external fun resolveNaptr(
-    hostname: String,
-    callback: (err: node.ErrnoException?, addresses: js.core.ReadonlyArray<NaptrRecord>) -> Unit,
-): Unit
+external fun resolveNaptr(hostname: String, callback: (err: node.ErrnoException?, addresses: js.core.ReadonlyArray<NaptrRecord>) -> Unit): Unit

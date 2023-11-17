@@ -12,8 +12,4 @@ import js.core.ReadonlyArray
  * @since v12.9.0
  * @return The number of bytes written.
  */
-external fun writevSync(
-    fd: Number,
-    buffers: ReadonlyArray<js.buffer.ArrayBufferView>,
-    position: Number = definedExternally,
-): Double
+external fun writevSync(fd: Number, buffers: ReadonlyArray<js.buffer.ArrayBufferView>, position: Number = definedExternally): Double

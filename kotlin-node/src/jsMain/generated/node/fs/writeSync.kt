@@ -11,13 +11,7 @@ package node.fs
  * @since v0.1.21
  * @return The number of bytes written.
  */
-external fun writeSync(
-    fd: Number,
-    buffer: js.buffer.ArrayBufferView,
-    offset: Double? = definedExternally,
-    length: Double? = definedExternally,
-    position: Double? = definedExternally,
-): Double
+external fun writeSync(fd: Number, buffer: js.buffer.ArrayBufferView, offset: Double? = definedExternally, length: Double? = definedExternally, position: Double? = definedExternally): Double
 
 /**
  * Synchronously writes `string` to the file referenced by the supplied file descriptor, returning the number of bytes written.
@@ -26,9 +20,4 @@ external fun writeSync(
  * @param position The offset from the beginning of the file where this data should be written. If not supplied, defaults to the current position.
  * @param encoding The expected string encoding.
  */
-external fun writeSync(
-    fd: Number,
-    string: String,
-    position: Double? = definedExternally,
-    encoding: node.buffer.BufferEncoding? = definedExternally,
-): Double
+external fun writeSync(fd: Number, string: String, position: Double? = definedExternally, encoding: node.buffer.BufferEncoding? = definedExternally): Double

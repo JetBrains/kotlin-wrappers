@@ -15,20 +15,8 @@ package node.fs
  */
 external fun lstat(path: PathLike, callback: (err: node.ErrnoException?, stats: Stats) -> Unit): Unit
 
-external fun lstat(
-    path: PathLike,
-    options: (LstatOptions)?,
-    callback: (err: node.ErrnoException?, stats: Stats) -> Unit,
-): Unit
+external fun lstat(path: PathLike, options: (LstatOptions)?, callback: (err: node.ErrnoException?, stats: Stats) -> Unit): Unit
 
-external fun lstat(
-    path: PathLike,
-    options: LstatBigIntOptions,
-    callback: (err: node.ErrnoException?, stats: BigIntStats) -> Unit,
-): Unit
+external fun lstat(path: PathLike, options: LstatBigIntOptions, callback: (err: node.ErrnoException?, stats: BigIntStats) -> Unit): Unit
 
-external fun lstat(
-    path: PathLike,
-    options: StatOptions?,
-    callback: (err: node.ErrnoException?, stats: Any /* Stats | BigIntStats */) -> Unit,
-): Unit
+external fun lstat(path: PathLike, options: StatOptions?, callback: (err: node.ErrnoException?, stats: Any /* Stats | BigIntStats */) -> Unit): Unit

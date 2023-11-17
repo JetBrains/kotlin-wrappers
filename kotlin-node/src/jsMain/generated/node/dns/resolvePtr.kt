@@ -10,7 +10,4 @@ package node.dns
  * be an array of strings containing the reply records.
  * @since v6.0.0
  */
-external fun resolvePtr(
-    hostname: String,
-    callback: (err: node.ErrnoException?, addresses: js.core.ReadonlyArray<String>) -> Unit,
-): Unit
+external fun resolvePtr(hostname: String, callback: (err: node.ErrnoException?, addresses: js.core.ReadonlyArray<String>) -> Unit): Unit

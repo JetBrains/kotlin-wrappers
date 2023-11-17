@@ -57,22 +57,13 @@ external fun <TBuffer : js.buffer.ArrayBufferView> write(
  * @param fd A file descriptor.
  * @param offset The part of the buffer to be written. If not supplied, defaults to `0`.
  */
-external fun <TBuffer : js.buffer.ArrayBufferView> write(
-    fd: Number,
-    buffer: TBuffer,
-    offset: Double?,
-    callback: (err: node.ErrnoException?, written: Double, buffer: TBuffer) -> Unit,
-): Unit
+external fun <TBuffer : js.buffer.ArrayBufferView> write(fd: Number, buffer: TBuffer, offset: Double?, callback: (err: node.ErrnoException?, written: Double, buffer: TBuffer) -> Unit): Unit
 
 /**
  * Asynchronously writes `buffer` to the file referenced by the supplied file descriptor.
  * @param fd A file descriptor.
  */
-external fun <TBuffer : js.buffer.ArrayBufferView> write(
-    fd: Number,
-    buffer: TBuffer,
-    callback: (err: node.ErrnoException?, written: Double, buffer: TBuffer) -> Unit,
-): Unit
+external fun <TBuffer : js.buffer.ArrayBufferView> write(fd: Number, buffer: TBuffer, callback: (err: node.ErrnoException?, written: Double, buffer: TBuffer) -> Unit): Unit
 
 /**
  * Asynchronously writes `string` to the file referenced by the supplied file descriptor.
@@ -81,13 +72,7 @@ external fun <TBuffer : js.buffer.ArrayBufferView> write(
  * @param position The offset from the beginning of the file where this data should be written. If not supplied, defaults to the current position.
  * @param encoding The expected string encoding.
  */
-external fun write(
-    fd: Number,
-    string: String,
-    position: Double?,
-    encoding: node.buffer.BufferEncoding?,
-    callback: (err: node.ErrnoException?, written: Double, str: String) -> Unit,
-): Unit
+external fun write(fd: Number, string: String, position: Double?, encoding: node.buffer.BufferEncoding?, callback: (err: node.ErrnoException?, written: Double, str: String) -> Unit): Unit
 
 /**
  * Asynchronously writes `string` to the file referenced by the supplied file descriptor.
@@ -95,20 +80,11 @@ external fun write(
  * @param string A string to write.
  * @param position The offset from the beginning of the file where this data should be written. If not supplied, defaults to the current position.
  */
-external fun write(
-    fd: Number,
-    string: String,
-    position: Double?,
-    callback: (err: node.ErrnoException?, written: Double, str: String) -> Unit,
-): Unit
+external fun write(fd: Number, string: String, position: Double?, callback: (err: node.ErrnoException?, written: Double, str: String) -> Unit): Unit
 
 /**
  * Asynchronously writes `string` to the file referenced by the supplied file descriptor.
  * @param fd A file descriptor.
  * @param string A string to write.
  */
-external fun write(
-    fd: Number,
-    string: String,
-    callback: (err: node.ErrnoException?, written: Double, str: String) -> Unit,
-): Unit
+external fun write(fd: Number, string: String, callback: (err: node.ErrnoException?, written: Double, str: String) -> Unit): Unit

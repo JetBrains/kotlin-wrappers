@@ -15,14 +15,6 @@ package node.fs
  * @since v0.1.29
  * @param file filename or file descriptor
  */
-external fun writeFileSync(
-    file: PathOrFileDescriptor,
-    data: String,
-    options: WriteFileOptions = definedExternally,
-): Unit
+external fun writeFileSync(file: PathOrFileDescriptor, data: String, options: WriteFileOptions = definedExternally): Unit
 
-external fun writeFileSync(
-    file: PathOrFileDescriptor,
-    data: js.buffer.ArrayBufferView,
-    options: WriteFileOptions = definedExternally,
-): Unit
+external fun writeFileSync(file: PathOrFileDescriptor, data: js.buffer.ArrayBufferView, options: WriteFileOptions = definedExternally): Unit

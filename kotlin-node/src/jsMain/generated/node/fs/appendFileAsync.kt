@@ -23,64 +23,32 @@ import js.typedarrays.Uint8Array
  */
 
 @JsName("appendFile")
-external fun appendFileAsync(
-    path: PathLike,
-    data: String,
-    options: (AppendFileAsyncOptions)? = definedExternally,
-): Promise<Unit>
+external fun appendFileAsync(path: PathLike, data: String, options: (AppendFileAsyncOptions)? = definedExternally): Promise<Unit>
 
 
 @JsName("appendFile")
-external fun appendFileAsync(
-    path: PathLike,
-    data: String,
-    options: node.buffer.BufferEncoding? = definedExternally,
-): Promise<Unit>
+external fun appendFileAsync(path: PathLike, data: String, options: node.buffer.BufferEncoding? = definedExternally): Promise<Unit>
 
 
 @JsName("appendFile")
-external fun appendFileAsync(
-    path: PathLike,
-    data: Uint8Array,
-    options: (AppendFileAsyncOptions)? = definedExternally,
-): Promise<Unit>
+external fun appendFileAsync(path: PathLike, data: Uint8Array, options: (AppendFileAsyncOptions)? = definedExternally): Promise<Unit>
 
 
 @JsName("appendFile")
-external fun appendFileAsync(
-    path: PathLike,
-    data: Uint8Array,
-    options: node.buffer.BufferEncoding? = definedExternally,
-): Promise<Unit>
+external fun appendFileAsync(path: PathLike, data: Uint8Array, options: node.buffer.BufferEncoding? = definedExternally): Promise<Unit>
 
 
 @JsName("appendFile")
-external fun appendFileAsync(
-    path: FileHandle,
-    data: String,
-    options: (AppendFileAsyncOptions)? = definedExternally,
-): Promise<Unit>
+external fun appendFileAsync(path: FileHandle, data: String, options: (AppendFileAsyncOptions)? = definedExternally): Promise<Unit>
 
 
 @JsName("appendFile")
-external fun appendFileAsync(
-    path: FileHandle,
-    data: String,
-    options: node.buffer.BufferEncoding? = definedExternally,
-): Promise<Unit>
+external fun appendFileAsync(path: FileHandle, data: String, options: node.buffer.BufferEncoding? = definedExternally): Promise<Unit>
 
 
 @JsName("appendFile")
-external fun appendFileAsync(
-    path: FileHandle,
-    data: Uint8Array,
-    options: (AppendFileAsyncOptions)? = definedExternally,
-): Promise<Unit>
+external fun appendFileAsync(path: FileHandle, data: Uint8Array, options: (AppendFileAsyncOptions)? = definedExternally): Promise<Unit>
 
 
 @JsName("appendFile")
-external fun appendFileAsync(
-    path: FileHandle,
-    data: Uint8Array,
-    options: node.buffer.BufferEncoding? = definedExternally,
-): Promise<Unit>
+external fun appendFileAsync(path: FileHandle, data: Uint8Array, options: node.buffer.BufferEncoding? = definedExternally): Promise<Unit>

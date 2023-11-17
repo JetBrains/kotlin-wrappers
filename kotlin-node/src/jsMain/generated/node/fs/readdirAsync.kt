@@ -32,17 +32,11 @@ import js.promise.Promise
  */
 
 @JsName("readdir")
-external fun readdirAsync(
-    path: PathLike,
-    options: (ReaddirAsyncOptions)? = definedExternally,
-): Promise<js.core.ReadonlyArray<String>>
+external fun readdirAsync(path: PathLike, options: (ReaddirAsyncOptions)? = definedExternally): Promise<js.core.ReadonlyArray<String>>
 
 
 @JsName("readdir")
-external fun readdirAsync(
-    path: PathLike,
-    options: node.buffer.BufferEncoding? = definedExternally,
-): Promise<js.core.ReadonlyArray<String>>
+external fun readdirAsync(path: PathLike, options: node.buffer.BufferEncoding? = definedExternally): Promise<js.core.ReadonlyArray<String>>
 
 
 /**
@@ -52,17 +46,11 @@ external fun readdirAsync(
  */
 
 @JsName("readdir")
-external fun readdirAsync(
-    path: PathLike,
-    options: ReaddirBufferAsyncOptions,
-): Promise<js.core.ReadonlyArray<node.buffer.Buffer>>
+external fun readdirAsync(path: PathLike, options: ReaddirBufferAsyncOptions): Promise<js.core.ReadonlyArray<node.buffer.Buffer>>
 
 
 @JsName("readdir")
-external fun readdirAsync(
-    path: PathLike,
-    options: String, /* 'buffer' */
-): Promise<js.core.ReadonlyArray<node.buffer.Buffer>>
+external fun readdirAsync(path: PathLike, options: String /* 'buffer' */): Promise<js.core.ReadonlyArray<node.buffer.Buffer>>
 
 
 /**
@@ -79,7 +67,4 @@ external fun readdirAsync(
  */
 
 @JsName("readdir")
-external fun readdirAsync(
-    path: PathLike,
-    options: ReaddirWithFileTypesAsyncOptions,
-): Promise<js.core.ReadonlyArray<Dirent>>
+external fun readdirAsync(path: PathLike, options: ReaddirWithFileTypesAsyncOptions): Promise<js.core.ReadonlyArray<Dirent>>

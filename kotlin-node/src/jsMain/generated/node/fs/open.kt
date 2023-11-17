@@ -22,12 +22,7 @@ package node.fs
  * @param [flags='r'] See `support of file system `flags``.
  * @param [mode=0o666]
  */
-external fun open(
-    path: PathLike,
-    flags: OpenMode?,
-    mode: Mode?,
-    callback: (err: node.ErrnoException?, fd: Double) -> Unit,
-): Unit
+external fun open(path: PathLike, flags: OpenMode?, mode: Mode?, callback: (err: node.ErrnoException?, fd: Double) -> Unit): Unit
 
 /**
  * Asynchronous open(2) - open and possibly create a file. If the file is created, its mode will be `0o666`.

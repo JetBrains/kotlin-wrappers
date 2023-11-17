@@ -38,9 +38,6 @@ sealed external interface StatSyncFn {
 
     @Suppress("DEPRECATION")
     @nativeInvoke
-    operator fun invoke(
-        path: PathLike,
-        options: StatSyncOptions = definedExternally,
-    ): Any? /* Stats | BigIntStats | undefined */
+    operator fun invoke(path: PathLike, options: StatSyncOptions = definedExternally): Any? /* Stats | BigIntStats | undefined */
 
 }

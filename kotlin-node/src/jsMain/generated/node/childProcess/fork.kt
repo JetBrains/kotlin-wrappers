@@ -57,8 +57,4 @@ import js.core.ReadonlyArray
  */
 external fun fork(modulePath: String, options: ForkOptions = definedExternally): ChildProcess
 
-external fun fork(
-    modulePath: String,
-    args: ReadonlyArray<String> = definedExternally,
-    options: ForkOptions = definedExternally,
-): ChildProcess
+external fun fork(modulePath: String, args: ReadonlyArray<String> = definedExternally, options: ForkOptions = definedExternally): ChildProcess

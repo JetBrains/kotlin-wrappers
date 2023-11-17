@@ -63,27 +63,11 @@ external class Verify : node.stream.Writable {
     fun verify(`object`: VerifyPublicKeyInput, signature: js.buffer.ArrayBufferView): Boolean
 
     fun verify(`object`: VerifyJsonWebKeyInput, signature: js.buffer.ArrayBufferView): Boolean
-    fun verify(
-        `object`: KeyLike,
-        signature: String,
-        signature_format: BinaryToTextEncoding = definedExternally,
-    ): Boolean
+    fun verify(`object`: KeyLike, signature: String, signature_format: BinaryToTextEncoding = definedExternally): Boolean
 
-    fun verify(
-        `object`: VerifyKeyObjectInput,
-        signature: String,
-        signature_format: BinaryToTextEncoding = definedExternally,
-    ): Boolean
+    fun verify(`object`: VerifyKeyObjectInput, signature: String, signature_format: BinaryToTextEncoding = definedExternally): Boolean
 
-    fun verify(
-        `object`: VerifyPublicKeyInput,
-        signature: String,
-        signature_format: BinaryToTextEncoding = definedExternally,
-    ): Boolean
+    fun verify(`object`: VerifyPublicKeyInput, signature: String, signature_format: BinaryToTextEncoding = definedExternally): Boolean
 
-    fun verify(
-        `object`: VerifyJsonWebKeyInput,
-        signature: String,
-        signature_format: BinaryToTextEncoding = definedExternally,
-    ): Boolean
+    fun verify(`object`: VerifyJsonWebKeyInput, signature: String, signature_format: BinaryToTextEncoding = definedExternally): Boolean
 }
