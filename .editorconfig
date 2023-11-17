@@ -235,9 +235,9 @@ ij_html_space_inside_empty_tag = false
 ij_html_text_wrap = normal
 
 [{*.kt,*.kts}]
+ij_kotlin_code_style_defaults = KOTLIN_OFFICIAL
 ij_kotlin_allow_trailing_comma = true
 ij_kotlin_allow_trailing_comma_on_call_site = false
-ij_kotlin_code_style_defaults = KOTLIN_OFFICIAL
 
 [{*.markdown,*.md}]
 ij_markdown_force_one_space_after_blockquote_symbol = true
