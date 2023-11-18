@@ -12,8 +12,9 @@
 
 package js.core
 
+@JsExternalInheritorsOnly
 @JsName("__type_plus_guard__")
-sealed external class Symbol {
+open external class Symbol {
     val description: String?
 
     object asyncIterator : Symbol
