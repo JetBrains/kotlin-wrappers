@@ -7,28 +7,28 @@ class BigIntTest {
     fun isForNumberBigInt() {
         val s: Any = 13.n
 
-        assertTrue(s is BigInt)
+        assertIs<BigInt>(s)
     }
 
     @Test
     fun isForStringBigInt() {
         val s: Any = "42".n
 
-        assertTrue(s is BigInt)
+        assertIs<BigInt>(s)
     }
 
     @Test
     fun isForObject() {
         val a = Any()
 
-        assertFalse(a is BigInt)
+        assertIsNot<BigInt>(a)
     }
 
     @Test
     fun isForString() {
         val a: Any = "bigint"
 
-        assertFalse(a is BigInt)
+        assertIsNot<BigInt>(a)
     }
 
     @Test

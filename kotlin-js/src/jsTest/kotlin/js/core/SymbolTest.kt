@@ -1,35 +1,35 @@
 package js.core
 
 import kotlin.test.Test
-import kotlin.test.assertFalse
-import kotlin.test.assertTrue
+import kotlin.test.assertIs
+import kotlin.test.assertIsNot
 
 class SymbolTest {
     @Test
     fun isForWellKnownSymbol() {
         val s: Any = Symbol.hasInstance
 
-        assertTrue(s is Symbol)
+        assertIs<Symbol>(s)
     }
 
     @Test
     fun isForCustomSymbol() {
         val s: Any = Symbol("custom.symbol")
 
-        assertTrue(s is Symbol)
+        assertIs<Symbol>(s)
     }
 
     @Test
     fun isForObject() {
         val a = Any()
 
-        assertFalse(a is Symbol)
+        assertIsNot<Symbol>(a)
     }
 
     @Test
     fun isForString() {
         val a: Any = "symbol"
 
-        assertFalse(a is Symbol)
+        assertIsNot<Symbol>(a)
     }
 }
