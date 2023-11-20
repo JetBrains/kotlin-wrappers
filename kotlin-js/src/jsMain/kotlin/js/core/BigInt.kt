@@ -21,6 +21,9 @@
 
 package js.core
 
+import seskar.js.JsPrimitive
+
+@JsPrimitive
 @JsName("__type_plus_guard__")
 sealed external class BigInt :
     BigIntComparableAdapter,

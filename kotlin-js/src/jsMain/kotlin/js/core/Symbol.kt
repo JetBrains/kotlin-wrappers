@@ -12,6 +12,9 @@
 
 package js.core
 
+import seskar.js.JsPrimitive
+
+@JsPrimitive
 @JsExternalInheritorsOnly
 @JsName("__type_plus_guard__")
 open external class Symbol {
