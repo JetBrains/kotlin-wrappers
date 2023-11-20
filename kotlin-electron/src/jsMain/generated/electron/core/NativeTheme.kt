@@ -4,7 +4,9 @@
 package electron.core
 
 
-external interface NativeTheme : node.events.IEventEmitter {
+@Suppress("INTERFACE_WITH_SUPERCLASS")
+
+external interface NativeTheme : node.events.EventEmitter {
 // Docs: https://electronjs.org/docs/api/native-theme
     /**
      * Emitted when something in the underlying NativeTheme has changed. This normally

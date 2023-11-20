@@ -6,7 +6,9 @@ package electron.core
 import kotlin.js.Promise
 
 
-external interface WebFrame : node.events.IEventEmitter {
+@Suppress("INTERFACE_WITH_SUPERCLASS")
+
+external interface WebFrame : node.events.EventEmitter {
 // Docs: https://electronjs.org/docs/api/web-frame
     /**
      * Attempts to free memory that is no longer being used (like images from a
@@ -30,11 +32,7 @@ external interface WebFrame : node.events.IEventEmitter {
      * invoked by a gesture from the user. Setting `userGesture` to `true` will remove
      * this limitation.
      */
-    fun executeJavaScript(
-        code: String,
-        userGesture: Boolean = definedExternally,
-        callback: (result: Any?, error: Throwable /* JsError */) -> Unit = definedExternally,
-    ): Promise<Any?>
+    fun executeJavaScript(code: String, userGesture: Boolean = definedExternally, callback: (result: Any?, error: Throwable /* JsError */) -> Unit = definedExternally): Promise<Any?>
 
     /**
      * A promise that resolves with the result of the executed code or is rejected if

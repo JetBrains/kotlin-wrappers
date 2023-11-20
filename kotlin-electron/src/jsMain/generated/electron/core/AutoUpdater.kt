@@ -6,7 +6,9 @@ package electron.core
 import kotlin.js.Date
 
 
-external interface AutoUpdater : node.events.IEventEmitter {
+@Suppress("INTERFACE_WITH_SUPERCLASS")
+
+external interface AutoUpdater : node.events.EventEmitter {
 // Docs: https://electronjs.org/docs/api/auto-updater
     /**
      * This event is emitted after a user calls `quitAndInstall()`.
@@ -42,10 +44,7 @@ external interface AutoUpdater : node.events.IEventEmitter {
      * **Note:** It is not strictly necessary to handle this event. A successfully
      * downloaded update will still be applied the next time the application starts.
      */
-    fun on(
-        event: AutoUpdaterEvent.UPDATE_DOWNLOADED,
-        listener: (event: Event, releaseNotes: String, releaseName: String, releaseDate: Date, updateURL: String) -> Unit,
-    ): Unit /* this */
+    fun on(event: AutoUpdaterEvent.UPDATE_DOWNLOADED, listener: (event: Event, releaseNotes: String, releaseName: String, releaseDate: Date, updateURL: String) -> Unit): Unit /* this */
 
     /**
      * Emitted when there is no available update.
@@ -55,35 +54,19 @@ external interface AutoUpdater : node.events.IEventEmitter {
     fun once(event: AutoUpdaterEvent.CHECKING_FOR_UPDATE, listener: Function<Unit>): Unit /* this */
     fun once(event: AutoUpdaterEvent.ERROR, listener: (error: Throwable /* JsError */) -> Unit): Unit /* this */
     fun once(event: AutoUpdaterEvent.UPDATE_AVAILABLE, listener: Function<Unit>): Unit /* this */
-    fun once(
-        event: AutoUpdaterEvent.UPDATE_DOWNLOADED,
-        listener: (event: Event, releaseNotes: String, releaseName: String, releaseDate: Date, updateURL: String) -> Unit,
-    ): Unit /* this */
-
+    fun once(event: AutoUpdaterEvent.UPDATE_DOWNLOADED, listener: (event: Event, releaseNotes: String, releaseName: String, releaseDate: Date, updateURL: String) -> Unit): Unit /* this */
     fun once(event: AutoUpdaterEvent.UPDATE_NOT_AVAILABLE, listener: Function<Unit>): Unit /* this */
     fun addListener(event: AutoUpdaterEvent.BEFORE_QUIT_FOR_UPDATE, listener: Function<Unit>): Unit /* this */
     fun addListener(event: AutoUpdaterEvent.CHECKING_FOR_UPDATE, listener: Function<Unit>): Unit /* this */
     fun addListener(event: AutoUpdaterEvent.ERROR, listener: (error: Throwable /* JsError */) -> Unit): Unit /* this */
     fun addListener(event: AutoUpdaterEvent.UPDATE_AVAILABLE, listener: Function<Unit>): Unit /* this */
-    fun addListener(
-        event: AutoUpdaterEvent.UPDATE_DOWNLOADED,
-        listener: (event: Event, releaseNotes: String, releaseName: String, releaseDate: Date, updateURL: String) -> Unit,
-    ): Unit /* this */
-
+    fun addListener(event: AutoUpdaterEvent.UPDATE_DOWNLOADED, listener: (event: Event, releaseNotes: String, releaseName: String, releaseDate: Date, updateURL: String) -> Unit): Unit /* this */
     fun addListener(event: AutoUpdaterEvent.UPDATE_NOT_AVAILABLE, listener: Function<Unit>): Unit /* this */
     fun removeListener(event: AutoUpdaterEvent.BEFORE_QUIT_FOR_UPDATE, listener: Function<Unit>): Unit /* this */
     fun removeListener(event: AutoUpdaterEvent.CHECKING_FOR_UPDATE, listener: Function<Unit>): Unit /* this */
-    fun removeListener(
-        event: AutoUpdaterEvent.ERROR,
-        listener: (error: Throwable /* JsError */) -> Unit,
-    ): Unit /* this */
-
+    fun removeListener(event: AutoUpdaterEvent.ERROR, listener: (error: Throwable /* JsError */) -> Unit): Unit /* this */
     fun removeListener(event: AutoUpdaterEvent.UPDATE_AVAILABLE, listener: Function<Unit>): Unit /* this */
-    fun removeListener(
-        event: AutoUpdaterEvent.UPDATE_DOWNLOADED,
-        listener: (event: Event, releaseNotes: String, releaseName: String, releaseDate: Date, updateURL: String) -> Unit,
-    ): Unit /* this */
-
+    fun removeListener(event: AutoUpdaterEvent.UPDATE_DOWNLOADED, listener: (event: Event, releaseNotes: String, releaseName: String, releaseDate: Date, updateURL: String) -> Unit): Unit /* this */
     fun removeListener(event: AutoUpdaterEvent.UPDATE_NOT_AVAILABLE, listener: Function<Unit>): Unit /* this */
 
     /**

@@ -57,11 +57,7 @@ external interface Shell {
      *
      * @platform win32
      */
-    fun writeShortcutLink(
-        shortcutPath: String,
-        operation: ShellWriteShortcutLinkOperation,
-        options: ShortcutDetails,
-    ): Boolean
+    fun writeShortcutLink(shortcutPath: String, operation: ShellWriteShortcutLinkOperation, options: ShortcutDetails): Boolean
 
     /**
      * Whether the shortcut was created successfully.

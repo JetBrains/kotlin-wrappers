@@ -9,65 +9,65 @@ import js.core.Symbol
 import js.iterable.AsyncIterableIterator
 import js.promise.Promise
 
-open external class EventEmitter : IEventEmitter {
+open external class EventEmitter {
     constructor(options: EventEmitterOptions = definedExternally)
 
-    override fun addListener(
+    open fun addListener(
         event: EventType,
         listener: Function<Unit>,
     ) /* : this */
 
-    override fun on(
+    open fun on(
         event: EventType,
         listener: Function<Unit>,
     ) /* : this */
 
-    override fun once(
+    open fun once(
         event: EventType,
         listener: Function<Unit>,
     ) /* : this */
 
-    override fun removeListener(
+    open fun removeListener(
         event: EventType,
         listener: Function<Unit>,
     ) /* : this */
 
-    override fun off(
+    open fun off(
         event: EventType,
         listener: Function<Unit>,
     ) /* : this */
 
-    override fun removeAllListeners(event: EventType) /* : this */
+    open fun removeAllListeners(event: EventType) /* : this */
 
-    override fun setMaxListeners(n: Number) /* : this */
+    open fun setMaxListeners(n: Number) /* : this */
 
-    override fun getMaxListeners(): Number
+    open fun getMaxListeners(): Number
 
-    override fun listeners(event: EventType): ReadonlyArray<Function<*>>
+    open fun listeners(event: EventType): ReadonlyArray<Function<*>>
 
-    override fun rawListeners(event: EventType): ReadonlyArray<Function<*>>
+    open fun rawListeners(event: EventType): ReadonlyArray<Function<*>>
 
-    override fun emit(
+    open fun emit(
         event: EventType,
         vararg args: Any,
     ): Boolean
 
-    override fun listenerCount(
+    open fun listenerCount(
         event: EventType,
         listener: Function<*>,
     ): Number
 
-    override fun prependListener(
+    open fun prependListener(
         event: EventType,
         listener: Function<Unit>,
     ) /* : this */
 
-    override fun prependOnceListener(
+    open fun prependOnceListener(
         event: EventType,
         listener: Function<Unit>,
     ) /* : this */
 
-    override fun eventNames(): ReadonlyArray<String /* | Symbol */>
+    open fun eventNames(): ReadonlyArray<String /* | Symbol */>
 
     companion object {
         /**
@@ -223,7 +223,7 @@ open external class EventEmitter : IEventEmitter {
          * @return that iterates `eventName` events emitted by the `emitter`
          */
         fun on(
-            emitter: IEventEmitter,
+            emitter: EventEmitter,
             event: EventType,
             options: StaticEventEmitterOptions = definedExternally,
         ): AsyncIterableIterator<*>
@@ -245,7 +245,7 @@ open external class EventEmitter : IEventEmitter {
          * @param eventName The event name
          */
         fun listenerCount(
-            emitter: IEventEmitter,
+            emitter: EventEmitter,
             event: EventType,
         ): Number
 

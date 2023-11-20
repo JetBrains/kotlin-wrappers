@@ -2,7 +2,8 @@
 
 package node
 
-external interface ReadableStream : node.events.IEventEmitter {
+@Suppress("INTERFACE_WITH_SUPERCLASS")
+external interface ReadableStream : node.events.EventEmitter {
     var readable: Boolean
     fun read(size: Number = definedExternally): Any /* string | Buffer */
     fun setEncoding(encoding: node.buffer.BufferEncoding) /* : this */

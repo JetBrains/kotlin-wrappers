@@ -4,7 +4,9 @@
 package electron.core
 
 
-external interface Screen : node.events.IEventEmitter {
+@Suppress("INTERFACE_WITH_SUPERCLASS")
+
+external interface Screen : node.events.EventEmitter {
 // Docs: https://electronjs.org/docs/api/screen
     /**
      * Emitted when `newDisplay` has been added.
@@ -16,51 +18,21 @@ external interface Screen : node.events.IEventEmitter {
      * an array of strings that describe the changes. Possible changes are `bounds`,
      * `workArea`, `scaleFactor` and `rotation`.
      */
-    fun on(
-        event: ScreenEvent.DISPLAY_METRICS_CHANGED,
-        listener: (event: Event, display: Display, changedMetrics: js.core.ReadonlyArray<String>) -> Unit,
-    ): Unit /* this */
+    fun on(event: ScreenEvent.DISPLAY_METRICS_CHANGED, listener: (event: Event, display: Display, changedMetrics: js.core.ReadonlyArray<String>) -> Unit): Unit /* this */
 
     /**
      * Emitted when `oldDisplay` has been removed.
      */
     fun on(event: ScreenEvent.DISPLAY_REMOVED, listener: (event: Event, oldDisplay: Display) -> Unit): Unit /* this */
     fun once(event: ScreenEvent.DISPLAY_ADDED, listener: (event: Event, newDisplay: Display) -> Unit): Unit /* this */
-    fun once(
-        event: ScreenEvent.DISPLAY_METRICS_CHANGED,
-        listener: (event: Event, display: Display, changedMetrics: js.core.ReadonlyArray<String>) -> Unit,
-    ): Unit /* this */
-
+    fun once(event: ScreenEvent.DISPLAY_METRICS_CHANGED, listener: (event: Event, display: Display, changedMetrics: js.core.ReadonlyArray<String>) -> Unit): Unit /* this */
     fun once(event: ScreenEvent.DISPLAY_REMOVED, listener: (event: Event, oldDisplay: Display) -> Unit): Unit /* this */
-    fun addListener(
-        event: ScreenEvent.DISPLAY_ADDED,
-        listener: (event: Event, newDisplay: Display) -> Unit,
-    ): Unit /* this */
-
-    fun addListener(
-        event: ScreenEvent.DISPLAY_METRICS_CHANGED,
-        listener: (event: Event, display: Display, changedMetrics: js.core.ReadonlyArray<String>) -> Unit,
-    ): Unit /* this */
-
-    fun addListener(
-        event: ScreenEvent.DISPLAY_REMOVED,
-        listener: (event: Event, oldDisplay: Display) -> Unit,
-    ): Unit /* this */
-
-    fun removeListener(
-        event: ScreenEvent.DISPLAY_ADDED,
-        listener: (event: Event, newDisplay: Display) -> Unit,
-    ): Unit /* this */
-
-    fun removeListener(
-        event: ScreenEvent.DISPLAY_METRICS_CHANGED,
-        listener: (event: Event, display: Display, changedMetrics: js.core.ReadonlyArray<String>) -> Unit,
-    ): Unit /* this */
-
-    fun removeListener(
-        event: ScreenEvent.DISPLAY_REMOVED,
-        listener: (event: Event, oldDisplay: Display) -> Unit,
-    ): Unit /* this */
+    fun addListener(event: ScreenEvent.DISPLAY_ADDED, listener: (event: Event, newDisplay: Display) -> Unit): Unit /* this */
+    fun addListener(event: ScreenEvent.DISPLAY_METRICS_CHANGED, listener: (event: Event, display: Display, changedMetrics: js.core.ReadonlyArray<String>) -> Unit): Unit /* this */
+    fun addListener(event: ScreenEvent.DISPLAY_REMOVED, listener: (event: Event, oldDisplay: Display) -> Unit): Unit /* this */
+    fun removeListener(event: ScreenEvent.DISPLAY_ADDED, listener: (event: Event, newDisplay: Display) -> Unit): Unit /* this */
+    fun removeListener(event: ScreenEvent.DISPLAY_METRICS_CHANGED, listener: (event: Event, display: Display, changedMetrics: js.core.ReadonlyArray<String>) -> Unit): Unit /* this */
+    fun removeListener(event: ScreenEvent.DISPLAY_REMOVED, listener: (event: Event, oldDisplay: Display) -> Unit): Unit /* this */
 
     /**
      * Converts a screen DIP point to a screen physical point. The DPI scale is

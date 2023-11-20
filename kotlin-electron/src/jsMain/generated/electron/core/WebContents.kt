@@ -94,10 +94,7 @@ external class WebContents : NodeEventEmitter {
     /**
      * Emitted when there is a new context menu that needs to be handled.
      */
-    fun on(
-        event: WebContentsEvent.CONTEXT_MENU,
-        listener: (event: Event, params: ContextMenuParams) -> Unit,
-    ): Unit /* this */
+    fun on(event: WebContentsEvent.CONTEXT_MENU, listener: (event: Event, params: ContextMenuParams) -> Unit): Unit /* this */
 
     /**
      * Emitted when the renderer process crashes or is killed.
@@ -224,10 +221,7 @@ external class WebContents : NodeEventEmitter {
      * See `window.open()` for more details and how to use this in conjunction with
      * `webContents.setWindowOpenHandler`.
      */
-    fun on(
-        event: WebContentsEvent.DID_CREATE_WINDOW,
-        listener: (window: BrowserWindow, details: DidCreateWindowDetails) -> Unit,
-    ): Unit /* this */
+    fun on(event: WebContentsEvent.DID_CREATE_WINDOW, listener: (window: BrowserWindow, details: DidCreateWindowDetails) -> Unit): Unit /* this */
 
     /**
      * This event is like `did-finish-load` but emitted when the load failed. The full
@@ -256,10 +250,7 @@ external class WebContents : NodeEventEmitter {
     /**
      * Emitted when a frame has done navigation.
      */
-    fun on(
-        event: WebContentsEvent.DID_FRAME_FINISH_LOAD,
-        listener: (event: Event, isMainFrame: Boolean, frameProcessId: Double, frameRoutingId: Double) -> Unit,
-    ): Unit /* this */
+    fun on(event: WebContentsEvent.DID_FRAME_FINISH_LOAD, listener: (event: Event, isMainFrame: Boolean, frameProcessId: Double, frameRoutingId: Double) -> Unit): Unit /* this */
 
     /**
      * Emitted when any frame navigation is done.
@@ -313,10 +304,7 @@ external class WebContents : NodeEventEmitter {
      * navigation outside of the page. Examples of this occurring are when anchor links
      * are clicked or when the DOM `hashchange` event is triggered.
      */
-    fun on(
-        event: WebContentsEvent.DID_NAVIGATE_IN_PAGE,
-        listener: (event: Event, url: String, isMainFrame: Boolean, frameProcessId: Double, frameRoutingId: Double) -> Unit,
-    ): Unit /* this */
+    fun on(event: WebContentsEvent.DID_NAVIGATE_IN_PAGE, listener: (event: Event, url: String, isMainFrame: Boolean, frameProcessId: Double, frameRoutingId: Double) -> Unit): Unit /* this */
 
     /**
      * Emitted after a server side redirect occurs during navigation.  For example a
@@ -382,19 +370,13 @@ external class WebContents : NodeEventEmitter {
      * Emitted when the mainFrame, an `<iframe>`, or a nested `<iframe>` is loaded
      * within the page.
      */
-    fun on(
-        event: WebContentsEvent.FRAME_CREATED,
-        listener: (event: Event, details: FrameCreatedDetails) -> Unit,
-    ): Unit /* this */
+    fun on(event: WebContentsEvent.FRAME_CREATED, listener: (event: Event, details: FrameCreatedDetails) -> Unit): Unit /* this */
 
     /**
      * Emitted when an input event is sent to the WebContents. See InputEvent for
      * details.
      */
-    fun on(
-        event: WebContentsEvent.INPUT_EVENT,
-        listener: (event: Event, inputEvent: InputEvent) -> Unit,
-    ): Unit /* this */
+    fun on(event: WebContentsEvent.INPUT_EVENT, listener: (event: Event, inputEvent: InputEvent) -> Unit): Unit /* this */
 
     /**
      * Emitted when the renderer process sends an asynchronous message via
@@ -403,10 +385,7 @@ external class WebContents : NodeEventEmitter {
      * See also `webContents.ipc`, which provides an `IpcMain`-like interface for
      * responding to IPC messages specifically from this WebContents.
      */
-    fun on(
-        event: WebContentsEvent.IPC_MESSAGE,
-        listener: Function<Any?>, /* (event: Event, channel: string, ...args: any[]) => void */
-    ): Unit /* this */
+    fun on(event: WebContentsEvent.IPC_MESSAGE, listener: Function<Any?> /* (event: Event, channel: string, ...args: any[]) => void */): Unit /* this */
 
     /**
      * Emitted when the renderer process sends a synchronous message via
@@ -415,10 +394,7 @@ external class WebContents : NodeEventEmitter {
      * See also `webContents.ipc`, which provides an `IpcMain`-like interface for
      * responding to IPC messages specifically from this WebContents.
      */
-    fun on(
-        event: WebContentsEvent.IPC_MESSAGE_SYNC,
-        listener: Function<Any?>, /* (event: Event, channel: string, ...args: any[]) => void */
-    ): Unit /* this */
+    fun on(event: WebContentsEvent.IPC_MESSAGE_SYNC, listener: Function<Any?> /* (event: Event, channel: string, ...args: any[]) => void */): Unit /* this */
 
     /**
      * Emitted when the window leaves a full-screen state triggered by HTML API.
@@ -463,10 +439,7 @@ external class WebContents : NodeEventEmitter {
      * Fired when page title is set during navigation. `explicitSet` is false when
      * title is synthesized from file url.
      */
-    fun on(
-        event: WebContentsEvent.PAGE_TITLE_UPDATED,
-        listener: (event: Event, title: String, explicitSet: Boolean) -> Unit,
-    ): Unit /* this */
+    fun on(event: WebContentsEvent.PAGE_TITLE_UPDATED, listener: (event: Event, title: String, explicitSet: Boolean) -> Unit): Unit /* this */
 
     /**
      * Emitted when a new frame is generated. Only the dirty area is passed in the
@@ -486,10 +459,7 @@ external class WebContents : NodeEventEmitter {
     /**
      * Emitted when a plugin process has crashed.
      */
-    fun on(
-        event: WebContentsEvent.PLUGIN_CRASHED,
-        listener: (event: Event, name: String, version: String) -> Unit,
-    ): Unit /* this */
+    fun on(event: WebContentsEvent.PLUGIN_CRASHED, listener: (event: Event, name: String, version: String) -> Unit): Unit /* this */
 
     /**
      * Emitted when the `WebContents` preferred size has changed.
@@ -513,19 +483,13 @@ external class WebContents : NodeEventEmitter {
      * Emitted when the preload script `preloadPath` throws an unhandled exception
      * `error`.
      */
-    fun on(
-        event: WebContentsEvent.PRELOAD_ERROR,
-        listener: (event: Event, preloadPath: String, error: Throwable /* JsError */) -> Unit,
-    ): Unit /* this */
+    fun on(event: WebContentsEvent.PRELOAD_ERROR, listener: (event: Event, preloadPath: String, error: Throwable /* JsError */) -> Unit): Unit /* this */
 
     /**
      * Emitted when the renderer process unexpectedly disappears.  This is normally
      * because it was crashed or killed.
      */
-    fun on(
-        event: WebContentsEvent.RENDER_PROCESS_GONE,
-        listener: (event: Event, details: RenderProcessGoneDetails) -> Unit,
-    ): Unit /* this */
+    fun on(event: WebContentsEvent.RENDER_PROCESS_GONE, listener: (event: Event, details: RenderProcessGoneDetails) -> Unit): Unit /* this */
 
     /**
      * Emitted when the unresponsive web page becomes responsive again.
@@ -547,10 +511,7 @@ external class WebContents : NodeEventEmitter {
      * `select-bluetooth-device` to fire multiple times until `callback` is called with
      * either a device id or an empty string to cancel the request.
      */
-    fun on(
-        event: WebContentsEvent.SELECT_BLUETOOTH_DEVICE,
-        listener: (event: Event, devices: js.core.ReadonlyArray<BluetoothDevice>, callback: (deviceId: String) -> Unit) -> Unit,
-    ): Unit /* this */
+    fun on(event: WebContentsEvent.SELECT_BLUETOOTH_DEVICE, listener: (event: Event, devices: js.core.ReadonlyArray<BluetoothDevice>, callback: (deviceId: String) -> Unit) -> Unit): Unit /* this */
 
     /**
      * Emitted when a client certificate is requested.
@@ -711,11 +672,7 @@ external class WebContents : NodeEventEmitter {
         ) -> Unit,
     ): Unit /* this */
 
-    fun once(
-        event: WebContentsEvent.CONTEXT_MENU,
-        listener: (event: Event, params: ContextMenuParams) -> Unit,
-    ): Unit /* this */
-
+    fun once(event: WebContentsEvent.CONTEXT_MENU, listener: (event: Event, params: ContextMenuParams) -> Unit): Unit /* this */
     fun once(event: WebContentsEvent.CRASHED, listener: (event: Event, killed: Boolean) -> Unit): Unit /* this */
     fun once(
         event: WebContentsEvent.CURSOR_CHANGED,
@@ -774,11 +731,7 @@ external class WebContents : NodeEventEmitter {
         ) -> Unit,
     ): Unit /* this */
 
-    fun once(
-        event: WebContentsEvent.DID_CREATE_WINDOW,
-        listener: (window: BrowserWindow, details: DidCreateWindowDetails) -> Unit,
-    ): Unit /* this */
-
+    fun once(event: WebContentsEvent.DID_CREATE_WINDOW, listener: (window: BrowserWindow, details: DidCreateWindowDetails) -> Unit): Unit /* this */
     fun once(
         event: WebContentsEvent.DID_FAIL_LOAD,
         listener: (event: Event, errorCode: Double, errorDescription: String, validatedURL: String, isMainFrame: Boolean, frameProcessId: Double, frameRoutingId: Double) -> Unit,
@@ -790,11 +743,7 @@ external class WebContents : NodeEventEmitter {
     ): Unit /* this */
 
     fun once(event: WebContentsEvent.DID_FINISH_LOAD, listener: Function<Unit>): Unit /* this */
-    fun once(
-        event: WebContentsEvent.DID_FRAME_FINISH_LOAD,
-        listener: (event: Event, isMainFrame: Boolean, frameProcessId: Double, frameRoutingId: Double) -> Unit,
-    ): Unit /* this */
-
+    fun once(event: WebContentsEvent.DID_FRAME_FINISH_LOAD, listener: (event: Event, isMainFrame: Boolean, frameProcessId: Double, frameRoutingId: Double) -> Unit): Unit /* this */
     fun once(
         event: WebContentsEvent.DID_FRAME_NAVIGATE,
         listener: (
@@ -826,11 +775,7 @@ external class WebContents : NodeEventEmitter {
         ) -> Unit,
     ): Unit /* this */
 
-    fun once(
-        event: WebContentsEvent.DID_NAVIGATE_IN_PAGE,
-        listener: (event: Event, url: String, isMainFrame: Boolean, frameProcessId: Double, frameRoutingId: Double) -> Unit,
-    ): Unit /* this */
-
+    fun once(event: WebContentsEvent.DID_NAVIGATE_IN_PAGE, listener: (event: Event, url: String, isMainFrame: Boolean, frameProcessId: Double, frameRoutingId: Double) -> Unit): Unit /* this */
     fun once(
         event: WebContentsEvent.DID_REDIRECT_NAVIGATION,
         listener: (event: Event, url: String, isInPlace: Boolean, isMainFrame: Boolean, frameProcessId: Double, frameRoutingId: Double) -> Unit,
@@ -847,26 +792,10 @@ external class WebContents : NodeEventEmitter {
     fun once(event: WebContentsEvent.ENTER_HTML_FULL_SCREEN, listener: Function<Unit>): Unit /* this */
     fun once(event: WebContentsEvent.FOCUS, listener: Function<Unit>): Unit /* this */
     fun once(event: WebContentsEvent.FOUND_IN_PAGE, listener: (event: Event, result: Result) -> Unit): Unit /* this */
-    fun once(
-        event: WebContentsEvent.FRAME_CREATED,
-        listener: (event: Event, details: FrameCreatedDetails) -> Unit,
-    ): Unit /* this */
-
-    fun once(
-        event: WebContentsEvent.INPUT_EVENT,
-        listener: (event: Event, inputEvent: InputEvent) -> Unit,
-    ): Unit /* this */
-
-    fun once(
-        event: WebContentsEvent.IPC_MESSAGE,
-        listener: Function<Any?>, /* (event: Event, channel: string, ...args: any[]) => void */
-    ): Unit /* this */
-
-    fun once(
-        event: WebContentsEvent.IPC_MESSAGE_SYNC,
-        listener: Function<Any?>, /* (event: Event, channel: string, ...args: any[]) => void */
-    ): Unit /* this */
-
+    fun once(event: WebContentsEvent.FRAME_CREATED, listener: (event: Event, details: FrameCreatedDetails) -> Unit): Unit /* this */
+    fun once(event: WebContentsEvent.INPUT_EVENT, listener: (event: Event, inputEvent: InputEvent) -> Unit): Unit /* this */
+    fun once(event: WebContentsEvent.IPC_MESSAGE, listener: Function<Any?> /* (event: Event, channel: string, ...args: any[]) => void */): Unit /* this */
+    fun once(event: WebContentsEvent.IPC_MESSAGE_SYNC, listener: Function<Any?> /* (event: Event, channel: string, ...args: any[]) => void */): Unit /* this */
     fun once(event: WebContentsEvent.LEAVE_HTML_FULL_SCREEN, listener: Function<Unit>): Unit /* this */
     fun once(
         event: WebContentsEvent.LOGIN,
@@ -886,11 +815,7 @@ external class WebContents : NodeEventEmitter {
         ) -> Unit,
     ): Unit /* this */
 
-    fun once(
-        event: WebContentsEvent.PAGE_TITLE_UPDATED,
-        listener: (event: Event, title: String, explicitSet: Boolean) -> Unit,
-    ): Unit /* this */
-
+    fun once(event: WebContentsEvent.PAGE_TITLE_UPDATED, listener: (event: Event, title: String, explicitSet: Boolean) -> Unit): Unit /* this */
     fun once(
         event: WebContentsEvent.PAINT,
         listener: (
@@ -902,11 +827,7 @@ external class WebContents : NodeEventEmitter {
         ) -> Unit,
     ): Unit /* this */
 
-    fun once(
-        event: WebContentsEvent.PLUGIN_CRASHED,
-        listener: (event: Event, name: String, version: String) -> Unit,
-    ): Unit /* this */
-
+    fun once(event: WebContentsEvent.PLUGIN_CRASHED, listener: (event: Event, name: String, version: String) -> Unit): Unit /* this */
     fun once(
         event: WebContentsEvent.PREFERRED_SIZE_CHANGED,
         listener: (
@@ -919,22 +840,10 @@ external class WebContents : NodeEventEmitter {
         ) -> Unit,
     ): Unit /* this */
 
-    fun once(
-        event: WebContentsEvent.PRELOAD_ERROR,
-        listener: (event: Event, preloadPath: String, error: Throwable /* JsError */) -> Unit,
-    ): Unit /* this */
-
-    fun once(
-        event: WebContentsEvent.RENDER_PROCESS_GONE,
-        listener: (event: Event, details: RenderProcessGoneDetails) -> Unit,
-    ): Unit /* this */
-
+    fun once(event: WebContentsEvent.PRELOAD_ERROR, listener: (event: Event, preloadPath: String, error: Throwable /* JsError */) -> Unit): Unit /* this */
+    fun once(event: WebContentsEvent.RENDER_PROCESS_GONE, listener: (event: Event, details: RenderProcessGoneDetails) -> Unit): Unit /* this */
     fun once(event: WebContentsEvent.RESPONSIVE, listener: Function<Unit>): Unit /* this */
-    fun once(
-        event: WebContentsEvent.SELECT_BLUETOOTH_DEVICE,
-        listener: (event: Event, devices: js.core.ReadonlyArray<BluetoothDevice>, callback: (deviceId: String) -> Unit) -> Unit,
-    ): Unit /* this */
-
+    fun once(event: WebContentsEvent.SELECT_BLUETOOTH_DEVICE, listener: (event: Event, devices: js.core.ReadonlyArray<BluetoothDevice>, callback: (deviceId: String) -> Unit) -> Unit): Unit /* this */
     fun once(
         event: WebContentsEvent.SELECT_CLIENT_CERTIFICATE,
         listener: (event: Event, url: String, certificateList: js.core.ReadonlyArray<Certificate>, callback: (certificate: Certificate) -> Unit) -> Unit,
@@ -1033,11 +942,7 @@ external class WebContents : NodeEventEmitter {
         ) -> Unit,
     ): Unit /* this */
 
-    fun addListener(
-        event: WebContentsEvent.CONTEXT_MENU,
-        listener: (event: Event, params: ContextMenuParams) -> Unit,
-    ): Unit /* this */
-
+    fun addListener(event: WebContentsEvent.CONTEXT_MENU, listener: (event: Event, params: ContextMenuParams) -> Unit): Unit /* this */
     fun addListener(event: WebContentsEvent.CRASHED, listener: (event: Event, killed: Boolean) -> Unit): Unit /* this */
     fun addListener(
         event: WebContentsEvent.CURSOR_CHANGED,
@@ -1096,11 +1001,7 @@ external class WebContents : NodeEventEmitter {
         ) -> Unit,
     ): Unit /* this */
 
-    fun addListener(
-        event: WebContentsEvent.DID_CREATE_WINDOW,
-        listener: (window: BrowserWindow, details: DidCreateWindowDetails) -> Unit,
-    ): Unit /* this */
-
+    fun addListener(event: WebContentsEvent.DID_CREATE_WINDOW, listener: (window: BrowserWindow, details: DidCreateWindowDetails) -> Unit): Unit /* this */
     fun addListener(
         event: WebContentsEvent.DID_FAIL_LOAD,
         listener: (event: Event, errorCode: Double, errorDescription: String, validatedURL: String, isMainFrame: Boolean, frameProcessId: Double, frameRoutingId: Double) -> Unit,
@@ -1112,11 +1013,7 @@ external class WebContents : NodeEventEmitter {
     ): Unit /* this */
 
     fun addListener(event: WebContentsEvent.DID_FINISH_LOAD, listener: Function<Unit>): Unit /* this */
-    fun addListener(
-        event: WebContentsEvent.DID_FRAME_FINISH_LOAD,
-        listener: (event: Event, isMainFrame: Boolean, frameProcessId: Double, frameRoutingId: Double) -> Unit,
-    ): Unit /* this */
-
+    fun addListener(event: WebContentsEvent.DID_FRAME_FINISH_LOAD, listener: (event: Event, isMainFrame: Boolean, frameProcessId: Double, frameRoutingId: Double) -> Unit): Unit /* this */
     fun addListener(
         event: WebContentsEvent.DID_FRAME_NAVIGATE,
         listener: (
@@ -1148,11 +1045,7 @@ external class WebContents : NodeEventEmitter {
         ) -> Unit,
     ): Unit /* this */
 
-    fun addListener(
-        event: WebContentsEvent.DID_NAVIGATE_IN_PAGE,
-        listener: (event: Event, url: String, isMainFrame: Boolean, frameProcessId: Double, frameRoutingId: Double) -> Unit,
-    ): Unit /* this */
-
+    fun addListener(event: WebContentsEvent.DID_NAVIGATE_IN_PAGE, listener: (event: Event, url: String, isMainFrame: Boolean, frameProcessId: Double, frameRoutingId: Double) -> Unit): Unit /* this */
     fun addListener(
         event: WebContentsEvent.DID_REDIRECT_NAVIGATION,
         listener: (event: Event, url: String, isInPlace: Boolean, isMainFrame: Boolean, frameProcessId: Double, frameRoutingId: Double) -> Unit,
@@ -1168,31 +1061,11 @@ external class WebContents : NodeEventEmitter {
     fun addListener(event: WebContentsEvent.DOM_READY, listener: Function<Unit>): Unit /* this */
     fun addListener(event: WebContentsEvent.ENTER_HTML_FULL_SCREEN, listener: Function<Unit>): Unit /* this */
     fun addListener(event: WebContentsEvent.FOCUS, listener: Function<Unit>): Unit /* this */
-    fun addListener(
-        event: WebContentsEvent.FOUND_IN_PAGE,
-        listener: (event: Event, result: Result) -> Unit,
-    ): Unit /* this */
-
-    fun addListener(
-        event: WebContentsEvent.FRAME_CREATED,
-        listener: (event: Event, details: FrameCreatedDetails) -> Unit,
-    ): Unit /* this */
-
-    fun addListener(
-        event: WebContentsEvent.INPUT_EVENT,
-        listener: (event: Event, inputEvent: InputEvent) -> Unit,
-    ): Unit /* this */
-
-    fun addListener(
-        event: WebContentsEvent.IPC_MESSAGE,
-        listener: Function<Any?>, /* (event: Event, channel: string, ...args: any[]) => void */
-    ): Unit /* this */
-
-    fun addListener(
-        event: WebContentsEvent.IPC_MESSAGE_SYNC,
-        listener: Function<Any?>, /* (event: Event, channel: string, ...args: any[]) => void */
-    ): Unit /* this */
-
+    fun addListener(event: WebContentsEvent.FOUND_IN_PAGE, listener: (event: Event, result: Result) -> Unit): Unit /* this */
+    fun addListener(event: WebContentsEvent.FRAME_CREATED, listener: (event: Event, details: FrameCreatedDetails) -> Unit): Unit /* this */
+    fun addListener(event: WebContentsEvent.INPUT_EVENT, listener: (event: Event, inputEvent: InputEvent) -> Unit): Unit /* this */
+    fun addListener(event: WebContentsEvent.IPC_MESSAGE, listener: Function<Any?> /* (event: Event, channel: string, ...args: any[]) => void */): Unit /* this */
+    fun addListener(event: WebContentsEvent.IPC_MESSAGE_SYNC, listener: Function<Any?> /* (event: Event, channel: string, ...args: any[]) => void */): Unit /* this */
     fun addListener(event: WebContentsEvent.LEAVE_HTML_FULL_SCREEN, listener: Function<Unit>): Unit /* this */
     fun addListener(
         event: WebContentsEvent.LOGIN,
@@ -1212,11 +1085,7 @@ external class WebContents : NodeEventEmitter {
         ) -> Unit,
     ): Unit /* this */
 
-    fun addListener(
-        event: WebContentsEvent.PAGE_TITLE_UPDATED,
-        listener: (event: Event, title: String, explicitSet: Boolean) -> Unit,
-    ): Unit /* this */
-
+    fun addListener(event: WebContentsEvent.PAGE_TITLE_UPDATED, listener: (event: Event, title: String, explicitSet: Boolean) -> Unit): Unit /* this */
     fun addListener(
         event: WebContentsEvent.PAINT,
         listener: (
@@ -1228,11 +1097,7 @@ external class WebContents : NodeEventEmitter {
         ) -> Unit,
     ): Unit /* this */
 
-    fun addListener(
-        event: WebContentsEvent.PLUGIN_CRASHED,
-        listener: (event: Event, name: String, version: String) -> Unit,
-    ): Unit /* this */
-
+    fun addListener(event: WebContentsEvent.PLUGIN_CRASHED, listener: (event: Event, name: String, version: String) -> Unit): Unit /* this */
     fun addListener(
         event: WebContentsEvent.PREFERRED_SIZE_CHANGED,
         listener: (
@@ -1245,16 +1110,8 @@ external class WebContents : NodeEventEmitter {
         ) -> Unit,
     ): Unit /* this */
 
-    fun addListener(
-        event: WebContentsEvent.PRELOAD_ERROR,
-        listener: (event: Event, preloadPath: String, error: Throwable /* JsError */) -> Unit,
-    ): Unit /* this */
-
-    fun addListener(
-        event: WebContentsEvent.RENDER_PROCESS_GONE,
-        listener: (event: Event, details: RenderProcessGoneDetails) -> Unit,
-    ): Unit /* this */
-
+    fun addListener(event: WebContentsEvent.PRELOAD_ERROR, listener: (event: Event, preloadPath: String, error: Throwable /* JsError */) -> Unit): Unit /* this */
+    fun addListener(event: WebContentsEvent.RENDER_PROCESS_GONE, listener: (event: Event, details: RenderProcessGoneDetails) -> Unit): Unit /* this */
     fun addListener(event: WebContentsEvent.RESPONSIVE, listener: Function<Unit>): Unit /* this */
     fun addListener(
         event: WebContentsEvent.SELECT_BLUETOOTH_DEVICE,
@@ -1267,11 +1124,7 @@ external class WebContents : NodeEventEmitter {
     ): Unit /* this */
 
     fun addListener(event: WebContentsEvent.UNRESPONSIVE, listener: Function<Unit>): Unit /* this */
-    fun addListener(
-        event: WebContentsEvent.UPDATE_TARGET_URL,
-        listener: (event: Event, url: String) -> Unit,
-    ): Unit /* this */
-
+    fun addListener(event: WebContentsEvent.UPDATE_TARGET_URL, listener: (event: Event, url: String) -> Unit): Unit /* this */
     fun addListener(
         event: WebContentsEvent.WILL_ATTACH_WEBVIEW,
         listener: (
@@ -1289,11 +1142,7 @@ external class WebContents : NodeEventEmitter {
         ) -> Unit,
     ): Unit /* this */
 
-    fun addListener(
-        event: WebContentsEvent.WILL_NAVIGATE,
-        listener: (event: Event, url: String) -> Unit,
-    ): Unit /* this */
-
+    fun addListener(event: WebContentsEvent.WILL_NAVIGATE, listener: (event: Event, url: String) -> Unit): Unit /* this */
     fun addListener(event: WebContentsEvent.WILL_PREVENT_UNLOAD, listener: (event: Event) -> Unit): Unit /* this */
     fun addListener(
         event: WebContentsEvent.WILL_REDIRECT,
@@ -1367,16 +1216,8 @@ external class WebContents : NodeEventEmitter {
         ) -> Unit,
     ): Unit /* this */
 
-    fun removeListener(
-        event: WebContentsEvent.CONTEXT_MENU,
-        listener: (event: Event, params: ContextMenuParams) -> Unit,
-    ): Unit /* this */
-
-    fun removeListener(
-        event: WebContentsEvent.CRASHED,
-        listener: (event: Event, killed: Boolean) -> Unit,
-    ): Unit /* this */
-
+    fun removeListener(event: WebContentsEvent.CONTEXT_MENU, listener: (event: Event, params: ContextMenuParams) -> Unit): Unit /* this */
+    fun removeListener(event: WebContentsEvent.CRASHED, listener: (event: Event, killed: Boolean) -> Unit): Unit /* this */
     fun removeListener(
         event: WebContentsEvent.CURSOR_CHANGED,
         listener: (
@@ -1434,11 +1275,7 @@ external class WebContents : NodeEventEmitter {
         ) -> Unit,
     ): Unit /* this */
 
-    fun removeListener(
-        event: WebContentsEvent.DID_CREATE_WINDOW,
-        listener: (window: BrowserWindow, details: DidCreateWindowDetails) -> Unit,
-    ): Unit /* this */
-
+    fun removeListener(event: WebContentsEvent.DID_CREATE_WINDOW, listener: (window: BrowserWindow, details: DidCreateWindowDetails) -> Unit): Unit /* this */
     fun removeListener(
         event: WebContentsEvent.DID_FAIL_LOAD,
         listener: (event: Event, errorCode: Double, errorDescription: String, validatedURL: String, isMainFrame: Boolean, frameProcessId: Double, frameRoutingId: Double) -> Unit,
@@ -1450,11 +1287,7 @@ external class WebContents : NodeEventEmitter {
     ): Unit /* this */
 
     fun removeListener(event: WebContentsEvent.DID_FINISH_LOAD, listener: Function<Unit>): Unit /* this */
-    fun removeListener(
-        event: WebContentsEvent.DID_FRAME_FINISH_LOAD,
-        listener: (event: Event, isMainFrame: Boolean, frameProcessId: Double, frameRoutingId: Double) -> Unit,
-    ): Unit /* this */
-
+    fun removeListener(event: WebContentsEvent.DID_FRAME_FINISH_LOAD, listener: (event: Event, isMainFrame: Boolean, frameProcessId: Double, frameRoutingId: Double) -> Unit): Unit /* this */
     fun removeListener(
         event: WebContentsEvent.DID_FRAME_NAVIGATE,
         listener: (
@@ -1506,31 +1339,11 @@ external class WebContents : NodeEventEmitter {
     fun removeListener(event: WebContentsEvent.DOM_READY, listener: Function<Unit>): Unit /* this */
     fun removeListener(event: WebContentsEvent.ENTER_HTML_FULL_SCREEN, listener: Function<Unit>): Unit /* this */
     fun removeListener(event: WebContentsEvent.FOCUS, listener: Function<Unit>): Unit /* this */
-    fun removeListener(
-        event: WebContentsEvent.FOUND_IN_PAGE,
-        listener: (event: Event, result: Result) -> Unit,
-    ): Unit /* this */
-
-    fun removeListener(
-        event: WebContentsEvent.FRAME_CREATED,
-        listener: (event: Event, details: FrameCreatedDetails) -> Unit,
-    ): Unit /* this */
-
-    fun removeListener(
-        event: WebContentsEvent.INPUT_EVENT,
-        listener: (event: Event, inputEvent: InputEvent) -> Unit,
-    ): Unit /* this */
-
-    fun removeListener(
-        event: WebContentsEvent.IPC_MESSAGE,
-        listener: Function<Any?>, /* (event: Event, channel: string, ...args: any[]) => void */
-    ): Unit /* this */
-
-    fun removeListener(
-        event: WebContentsEvent.IPC_MESSAGE_SYNC,
-        listener: Function<Any?>, /* (event: Event, channel: string, ...args: any[]) => void */
-    ): Unit /* this */
-
+    fun removeListener(event: WebContentsEvent.FOUND_IN_PAGE, listener: (event: Event, result: Result) -> Unit): Unit /* this */
+    fun removeListener(event: WebContentsEvent.FRAME_CREATED, listener: (event: Event, details: FrameCreatedDetails) -> Unit): Unit /* this */
+    fun removeListener(event: WebContentsEvent.INPUT_EVENT, listener: (event: Event, inputEvent: InputEvent) -> Unit): Unit /* this */
+    fun removeListener(event: WebContentsEvent.IPC_MESSAGE, listener: Function<Any?> /* (event: Event, channel: string, ...args: any[]) => void */): Unit /* this */
+    fun removeListener(event: WebContentsEvent.IPC_MESSAGE_SYNC, listener: Function<Any?> /* (event: Event, channel: string, ...args: any[]) => void */): Unit /* this */
     fun removeListener(event: WebContentsEvent.LEAVE_HTML_FULL_SCREEN, listener: Function<Unit>): Unit /* this */
     fun removeListener(
         event: WebContentsEvent.LOGIN,
@@ -1550,11 +1363,7 @@ external class WebContents : NodeEventEmitter {
         ) -> Unit,
     ): Unit /* this */
 
-    fun removeListener(
-        event: WebContentsEvent.PAGE_TITLE_UPDATED,
-        listener: (event: Event, title: String, explicitSet: Boolean) -> Unit,
-    ): Unit /* this */
-
+    fun removeListener(event: WebContentsEvent.PAGE_TITLE_UPDATED, listener: (event: Event, title: String, explicitSet: Boolean) -> Unit): Unit /* this */
     fun removeListener(
         event: WebContentsEvent.PAINT,
         listener: (
@@ -1566,11 +1375,7 @@ external class WebContents : NodeEventEmitter {
         ) -> Unit,
     ): Unit /* this */
 
-    fun removeListener(
-        event: WebContentsEvent.PLUGIN_CRASHED,
-        listener: (event: Event, name: String, version: String) -> Unit,
-    ): Unit /* this */
-
+    fun removeListener(event: WebContentsEvent.PLUGIN_CRASHED, listener: (event: Event, name: String, version: String) -> Unit): Unit /* this */
     fun removeListener(
         event: WebContentsEvent.PREFERRED_SIZE_CHANGED,
         listener: (
@@ -1583,16 +1388,8 @@ external class WebContents : NodeEventEmitter {
         ) -> Unit,
     ): Unit /* this */
 
-    fun removeListener(
-        event: WebContentsEvent.PRELOAD_ERROR,
-        listener: (event: Event, preloadPath: String, error: Throwable /* JsError */) -> Unit,
-    ): Unit /* this */
-
-    fun removeListener(
-        event: WebContentsEvent.RENDER_PROCESS_GONE,
-        listener: (event: Event, details: RenderProcessGoneDetails) -> Unit,
-    ): Unit /* this */
-
+    fun removeListener(event: WebContentsEvent.PRELOAD_ERROR, listener: (event: Event, preloadPath: String, error: Throwable /* JsError */) -> Unit): Unit /* this */
+    fun removeListener(event: WebContentsEvent.RENDER_PROCESS_GONE, listener: (event: Event, details: RenderProcessGoneDetails) -> Unit): Unit /* this */
     fun removeListener(event: WebContentsEvent.RESPONSIVE, listener: Function<Unit>): Unit /* this */
     fun removeListener(
         event: WebContentsEvent.SELECT_BLUETOOTH_DEVICE,
@@ -1605,11 +1402,7 @@ external class WebContents : NodeEventEmitter {
     ): Unit /* this */
 
     fun removeListener(event: WebContentsEvent.UNRESPONSIVE, listener: Function<Unit>): Unit /* this */
-    fun removeListener(
-        event: WebContentsEvent.UPDATE_TARGET_URL,
-        listener: (event: Event, url: String) -> Unit,
-    ): Unit /* this */
-
+    fun removeListener(event: WebContentsEvent.UPDATE_TARGET_URL, listener: (event: Event, url: String) -> Unit): Unit /* this */
     fun removeListener(
         event: WebContentsEvent.WILL_ATTACH_WEBVIEW,
         listener: (
@@ -1627,11 +1420,7 @@ external class WebContents : NodeEventEmitter {
         ) -> Unit,
     ): Unit /* this */
 
-    fun removeListener(
-        event: WebContentsEvent.WILL_NAVIGATE,
-        listener: (event: Event, url: String) -> Unit,
-    ): Unit /* this */
-
+    fun removeListener(event: WebContentsEvent.WILL_NAVIGATE, listener: (event: Event, url: String) -> Unit): Unit /* this */
     fun removeListener(event: WebContentsEvent.WILL_PREVENT_UNLOAD, listener: (event: Event) -> Unit): Unit /* this */
     fun removeListener(
         event: WebContentsEvent.WILL_REDIRECT,
@@ -1704,10 +1493,7 @@ external class WebContents : NodeEventEmitter {
      * hidden and the capturer count is non-zero. If you would like the page to stay
      * hidden, you should ensure that `stayHidden` is set to true.
      */
-    fun capturePage(
-        rect: Rectangle = definedExternally,
-        opts: Opts = definedExternally,
-    ): Promise<NativeImage>
+    fun capturePage(rect: Rectangle = definedExternally, opts: Opts = definedExternally): Promise<NativeImage>
 
     /**
      * Clears the navigation history.
@@ -1789,11 +1575,7 @@ external class WebContents : NodeEventEmitter {
      *
      * Works like `executeJavaScript` but evaluates `scripts` in an isolated context.
      */
-    fun executeJavaScriptInIsolatedWorld(
-        worldId: Double,
-        scripts: js.core.ReadonlyArray<WebSource>,
-        userGesture: Boolean = definedExternally,
-    ): Promise<Any?>
+    fun executeJavaScriptInIsolatedWorld(worldId: Double, scripts: js.core.ReadonlyArray<WebSource>, userGesture: Boolean = definedExternally): Promise<Any?>
 
     /**
      * The request id used for the request.
@@ -2095,11 +1877,7 @@ external class WebContents : NodeEventEmitter {
      *
      * For example:
      */
-    fun postMessage(
-        channel: String,
-        message: Any?,
-        transfer: js.core.ReadonlyArray<MessagePortMain> = definedExternally,
-    ): Unit
+    fun postMessage(channel: String, message: Any?, transfer: js.core.ReadonlyArray<MessagePortMain> = definedExternally): Unit
 
     /**
      * When a custom `pageSize` is passed, Chromium attempts to validate platform
@@ -2115,10 +1893,7 @@ external class WebContents : NodeEventEmitter {
      *
      * Example usage:
      */
-    fun print(
-        options: WebContentsPrintOptions = definedExternally,
-        callback: (success: Boolean, failureReason: String) -> Unit = definedExternally,
-    ): Unit
+    fun print(options: WebContentsPrintOptions = definedExternally, callback: (success: Boolean, failureReason: String) -> Unit = definedExternally): Unit
 
     /**
      * Resolves with the generated PDF data.
@@ -2228,11 +2003,7 @@ external class WebContents : NodeEventEmitter {
      */
     fun sendToFrame(frameId: Double, channel: String, vararg args: Any? /* js.core.ReadonlyArray<Any?> */): Unit
 
-    fun sendToFrame(
-        frameId: js.core.JsTuple2<Double, Double>,
-        channel: String,
-        vararg args: Any?, /* js.core.ReadonlyArray<Any?> */
-    ): Unit
+    fun sendToFrame(frameId: js.core.JsTuple2<Double, Double>, channel: String, vararg args: Any? /* js.core.ReadonlyArray<Any?> */): Unit
 
     /**
      * Mute the audio on the current web page.

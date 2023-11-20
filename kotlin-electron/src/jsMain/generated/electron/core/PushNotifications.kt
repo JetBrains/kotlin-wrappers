@@ -6,7 +6,9 @@ package electron.core
 import kotlin.js.Promise
 
 
-external interface PushNotifications : node.events.IEventEmitter {
+@Suppress("INTERFACE_WITH_SUPERCLASS")
+
+external interface PushNotifications : node.events.EventEmitter {
 // Docs: https://electronjs.org/docs/api/push-notifications
     /**
      * Emitted when the app receives a remote notification while running. See:
@@ -38,25 +40,10 @@ external interface PushNotifications : node.events.IEventEmitter {
      *
      * @platform darwin
      */
-    fun on(
-        event: PushNotificationsEvent.RECEIVED_APNS_NOTIFICATION,
-        listener: (event: Event, userInfo: js.core.ReadonlyRecord<String, Any>) -> Unit,
-    ): Unit /* this */
-
-    fun once(
-        event: PushNotificationsEvent.RECEIVED_APNS_NOTIFICATION,
-        listener: (event: Event, userInfo: js.core.ReadonlyRecord<String, Any>) -> Unit,
-    ): Unit /* this */
-
-    fun addListener(
-        event: PushNotificationsEvent.RECEIVED_APNS_NOTIFICATION,
-        listener: (event: Event, userInfo: js.core.ReadonlyRecord<String, Any>) -> Unit,
-    ): Unit /* this */
-
-    fun removeListener(
-        event: PushNotificationsEvent.RECEIVED_APNS_NOTIFICATION,
-        listener: (event: Event, userInfo: js.core.ReadonlyRecord<String, Any>) -> Unit,
-    ): Unit /* this */
+    fun on(event: PushNotificationsEvent.RECEIVED_APNS_NOTIFICATION, listener: (event: Event, userInfo: js.core.ReadonlyRecord<String, Any>) -> Unit): Unit /* this */
+    fun once(event: PushNotificationsEvent.RECEIVED_APNS_NOTIFICATION, listener: (event: Event, userInfo: js.core.ReadonlyRecord<String, Any>) -> Unit): Unit /* this */
+    fun addListener(event: PushNotificationsEvent.RECEIVED_APNS_NOTIFICATION, listener: (event: Event, userInfo: js.core.ReadonlyRecord<String, Any>) -> Unit): Unit /* this */
+    fun removeListener(event: PushNotificationsEvent.RECEIVED_APNS_NOTIFICATION, listener: (event: Event, userInfo: js.core.ReadonlyRecord<String, Any>) -> Unit): Unit /* this */
 
     /**
      * Registers the app with Apple Push Notification service (APNS) to receive Badge,

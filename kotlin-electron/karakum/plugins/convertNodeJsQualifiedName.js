@@ -5,7 +5,7 @@ function convertNodePackageQualifiedName(node, context, render) {
         ts.isIdentifier(node)
         && node.text === "EventEmitter"
     ) {
-        return `node.events.IEventEmitter`
+        return `node.events.EventEmitter`
     }
 
     return null

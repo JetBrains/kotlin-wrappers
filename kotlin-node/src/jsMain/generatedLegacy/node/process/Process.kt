@@ -9,7 +9,8 @@ import node.Module
 import node.events.Event
 import node.events.EventType
 
-sealed external interface Process : node.events.IEventEmitter {
+@Suppress("INTERFACE_WITH_SUPERCLASS")
+sealed external interface Process : node.events.EventEmitter {
     /**
      * The `process.stdout` property returns a stream connected to`stdout` (fd `1`). It is a `net.Socket` (which is a `Duplex` stream) unless fd `1` refers to a file, in which case it is
      * a `Writable` stream.

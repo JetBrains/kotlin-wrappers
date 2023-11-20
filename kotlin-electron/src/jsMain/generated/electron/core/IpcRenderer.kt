@@ -7,7 +7,9 @@ import web.messaging.MessagePort
 import kotlin.js.Promise
 
 
-external interface IpcRenderer : node.events.IEventEmitter {
+@Suppress("INTERFACE_WITH_SUPERCLASS")
+
+external interface IpcRenderer : node.events.EventEmitter {
 // Docs: https://electronjs.org/docs/api/ipc-renderer
     /**
      * Resolves with the response from the main process.
@@ -45,19 +47,13 @@ external interface IpcRenderer : node.events.IEventEmitter {
      * Listens to `channel`, when a new message arrives `listener` would be called with
      * `listener(event, args...)`.
      */
-    fun on(
-        channel: String,
-        listener: Function<Any?>, /* (event: IpcRendererEvent, ...args: any[]) => void */
-    ): Unit /* this */
+    fun on(channel: String, listener: Function<Any?> /* (event: IpcRendererEvent, ...args: any[]) => void */): Unit /* this */
 
     /**
      * Adds a one time `listener` function for the event. This `listener` is invoked
      * only the next time a message is sent to `channel`, after which it is removed.
      */
-    fun once(
-        channel: String,
-        listener: Function<Any?>, /* (event: IpcRendererEvent, ...args: any[]) => void */
-    ): Unit /* this */
+    fun once(channel: String, listener: Function<Any?> /* (event: IpcRendererEvent, ...args: any[]) => void */): Unit /* this */
 
     /**
      * Send a message to the main process, optionally transferring ownership of zero or
@@ -72,11 +68,7 @@ external interface IpcRenderer : node.events.IEventEmitter {
      * For more information on using `MessagePort` and `MessageChannel`, see the MDN
      * documentation.
      */
-    fun postMessage(
-        channel: String,
-        message: Any?,
-        transfer: js.core.ReadonlyArray<MessagePort> = definedExternally,
-    ): Unit
+    fun postMessage(channel: String, message: Any?, transfer: js.core.ReadonlyArray<MessagePort> = definedExternally): Unit
 
     /**
      * Removes all listeners, or those of the specified `channel`.

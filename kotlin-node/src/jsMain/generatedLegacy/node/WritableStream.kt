@@ -2,7 +2,8 @@
 
 package node
 
-external interface WritableStream : node.events.IEventEmitter {
+@Suppress("INTERFACE_WITH_SUPERCLASS")
+external interface WritableStream : node.events.EventEmitter {
     var writable: Boolean
     fun write(
         chunk: Any, /* Uint8Array | string */

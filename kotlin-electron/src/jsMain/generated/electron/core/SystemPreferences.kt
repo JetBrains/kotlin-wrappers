@@ -6,7 +6,9 @@ package electron.core
 import kotlin.js.Promise
 
 
-external interface SystemPreferences : node.events.IEventEmitter {
+@Suppress("INTERFACE_WITH_SUPERCLASS")
+
+external interface SystemPreferences : node.events.EventEmitter {
     // Docs: https://electronjs.org/docs/api/system-preferences
     fun on(
         event: SystemPreferencesEvent.ACCENT_COLOR_CHANGED,
@@ -364,11 +366,7 @@ external interface SystemPreferences : node.events.IEventEmitter {
      *
      * @platform darwin
      */
-    fun postNotification(
-        event: String,
-        userInfo: js.core.ReadonlyRecord<String, Any>,
-        deliverImmediately: Boolean = definedExternally,
-    ): Unit
+    fun postNotification(event: String, userInfo: js.core.ReadonlyRecord<String, Any>, deliverImmediately: Boolean = definedExternally): Unit
 
     /**
      * Posts `event` as native notifications of macOS. The `userInfo` is an Object that
@@ -442,10 +440,7 @@ external interface SystemPreferences : node.events.IEventEmitter {
      *
      * @platform darwin
      */
-    fun subscribeLocalNotification(
-        event: String?,
-        callback: (event: String, userInfo: js.core.ReadonlyRecord<String, Any>, `object`: String) -> Unit,
-    ): Double
+    fun subscribeLocalNotification(event: String?, callback: (event: String, userInfo: js.core.ReadonlyRecord<String, Any>, `object`: String) -> Unit): Double
 
     /**
      * The ID of this subscription
@@ -472,10 +467,7 @@ external interface SystemPreferences : node.events.IEventEmitter {
      *
      * @platform darwin
      */
-    fun subscribeNotification(
-        event: String?,
-        callback: (event: String, userInfo: js.core.ReadonlyRecord<String, Any>, `object`: String) -> Unit,
-    ): Double
+    fun subscribeNotification(event: String?, callback: (event: String, userInfo: js.core.ReadonlyRecord<String, Any>, `object`: String) -> Unit): Double
 
     /**
      * The ID of this subscription
@@ -489,10 +481,7 @@ external interface SystemPreferences : node.events.IEventEmitter {
      *
      * @platform darwin
      */
-    fun subscribeWorkspaceNotification(
-        event: String?,
-        callback: (event: String, userInfo: js.core.ReadonlyRecord<String, Any>, `object`: String) -> Unit,
-    ): Double
+    fun subscribeWorkspaceNotification(event: String?, callback: (event: String, userInfo: js.core.ReadonlyRecord<String, Any>, `object`: String) -> Unit): Double
 
     /**
      * Same as `unsubscribeNotification`, but removes the subscriber from

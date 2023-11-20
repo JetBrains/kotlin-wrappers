@@ -4,7 +4,9 @@
 package electron.core
 
 
-external interface PowerMonitor : node.events.IEventEmitter {
+@Suppress("INTERFACE_WITH_SUPERCLASS")
+
+external interface PowerMonitor : node.events.EventEmitter {
 // Docs: https://electronjs.org/docs/api/power-monitor
     /**
      * Emitted when the system is about to lock the screen.

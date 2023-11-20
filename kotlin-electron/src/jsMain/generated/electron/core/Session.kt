@@ -19,10 +19,7 @@ external class Session : NodeEventEmitter {
      *   * from a crash.
      *   * if the extension requested it (`chrome.runtime.reload()`).
      */
-    fun on(
-        event: SessionEvent.EXTENSION_LOADED,
-        listener: (event: Event, extension: Extension) -> Unit,
-    ): Unit /* this */
+    fun on(event: SessionEvent.EXTENSION_LOADED, listener: (event: Event, extension: Extension) -> Unit): Unit /* this */
 
     /**
      * Emitted after an extension is loaded and all necessary browser state is
@@ -34,10 +31,7 @@ external class Session : NodeEventEmitter {
      * Emitted after an extension is unloaded. This occurs when
      * `Session.removeExtension` is called.
      */
-    fun on(
-        event: SessionEvent.EXTENSION_UNLOADED,
-        listener: (event: Event, extension: Extension) -> Unit,
-    ): Unit /* this */
+    fun on(event: SessionEvent.EXTENSION_UNLOADED, listener: (event: Event, extension: Extension) -> Unit): Unit /* this */
 
     /**
      * Emitted after `navigator.hid.requestDevice` has been called and
@@ -46,10 +40,7 @@ external class Session : NodeEventEmitter {
      * when using a UI to ask users to pick a device so that the UI can be updated with
      * the newly added device.
      */
-    fun on(
-        event: SessionEvent.HID_DEVICE_ADDED,
-        listener: (event: Event, details: HidDeviceAddedDetails) -> Unit,
-    ): Unit /* this */
+    fun on(event: SessionEvent.HID_DEVICE_ADDED, listener: (event: Event, details: HidDeviceAddedDetails) -> Unit): Unit /* this */
 
     /**
      * Emitted after `navigator.hid.requestDevice` has been called and
@@ -58,20 +49,14 @@ external class Session : NodeEventEmitter {
      * UI to ask users to pick a device so that the UI can be updated to remove the
      * specified device.
      */
-    fun on(
-        event: SessionEvent.HID_DEVICE_REMOVED,
-        listener: (event: Event, details: HidDeviceRemovedDetails) -> Unit,
-    ): Unit /* this */
+    fun on(event: SessionEvent.HID_DEVICE_REMOVED, listener: (event: Event, details: HidDeviceRemovedDetails) -> Unit): Unit /* this */
 
     /**
      * Emitted after `HIDDevice.forget()` has been called.  This event can be used to
      * help maintain persistent storage of permissions when
      * `setDevicePermissionHandler` is used.
      */
-    fun on(
-        event: SessionEvent.HID_DEVICE_REVOKED,
-        listener: (event: Event, details: HidDeviceRevokedDetails) -> Unit,
-    ): Unit /* this */
+    fun on(event: SessionEvent.HID_DEVICE_REVOKED, listener: (event: Event, details: HidDeviceRevokedDetails) -> Unit): Unit /* this */
 
     /**
      * Emitted when a render process requests preconnection to a URL, generally due to
@@ -138,10 +123,7 @@ external class Session : NodeEventEmitter {
      * when using a UI to ask users to pick a port so that the UI can be updated with
      * the newly added port.
      */
-    fun on(
-        event: SessionEvent.SERIAL_PORT_ADDED,
-        listener: (event: Event, port: SerialPort, webContents: WebContents) -> Unit,
-    ): Unit /* this */
+    fun on(event: SessionEvent.SERIAL_PORT_ADDED, listener: (event: Event, port: SerialPort, webContents: WebContents) -> Unit): Unit /* this */
 
     /**
      * Emitted after `navigator.serial.requestPort` has been called and
@@ -150,20 +132,14 @@ external class Session : NodeEventEmitter {
      * when using a UI to ask users to pick a port so that the UI can be updated to
      * remove the specified port.
      */
-    fun on(
-        event: SessionEvent.SERIAL_PORT_REMOVED,
-        listener: (event: Event, port: SerialPort, webContents: WebContents) -> Unit,
-    ): Unit /* this */
+    fun on(event: SessionEvent.SERIAL_PORT_REMOVED, listener: (event: Event, port: SerialPort, webContents: WebContents) -> Unit): Unit /* this */
 
     /**
      * Emitted after `SerialPort.forget()` has been called.  This event can be used to
      * help maintain persistent storage of permissions when
      * `setDevicePermissionHandler` is used.
      */
-    fun on(
-        event: SessionEvent.SERIAL_PORT_REVOKED,
-        listener: (event: Event, details: SerialPortRevokedDetails) -> Unit,
-    ): Unit /* this */
+    fun on(event: SessionEvent.SERIAL_PORT_REVOKED, listener: (event: Event, details: SerialPortRevokedDetails) -> Unit): Unit /* this */
 
     /**
      * Emitted when a hunspell dictionary file starts downloading
@@ -230,10 +206,7 @@ external class Session : NodeEventEmitter {
      * when using a UI to ask users to pick a device so that the UI can be updated with
      * the newly added device.
      */
-    fun on(
-        event: SessionEvent.USB_DEVICE_ADDED,
-        listener: (event: Event, details: UsbDeviceAddedDetails) -> Unit,
-    ): Unit /* this */
+    fun on(event: SessionEvent.USB_DEVICE_ADDED, listener: (event: Event, details: UsbDeviceAddedDetails) -> Unit): Unit /* this */
 
     /**
      * Emitted after `navigator.usb.requestDevice` has been called and
@@ -242,20 +215,14 @@ external class Session : NodeEventEmitter {
      * UI to ask users to pick a device so that the UI can be updated to remove the
      * specified device.
      */
-    fun on(
-        event: SessionEvent.USB_DEVICE_REMOVED,
-        listener: (event: Event, details: UsbDeviceRemovedDetails) -> Unit,
-    ): Unit /* this */
+    fun on(event: SessionEvent.USB_DEVICE_REMOVED, listener: (event: Event, details: UsbDeviceRemovedDetails) -> Unit): Unit /* this */
 
     /**
      * Emitted after `USBDevice.forget()` has been called.  This event can be used to
      * help maintain persistent storage of permissions when
      * `setDevicePermissionHandler` is used.
      */
-    fun on(
-        event: SessionEvent.USB_DEVICE_REVOKED,
-        listener: (event: Event, details: UsbDeviceRevokedDetails) -> Unit,
-    ): Unit /* this */
+    fun on(event: SessionEvent.USB_DEVICE_REVOKED, listener: (event: Event, details: UsbDeviceRevokedDetails) -> Unit): Unit /* this */
 
     /**
      * Emitted when Electron is about to download `item` in `webContents`.
@@ -263,41 +230,13 @@ external class Session : NodeEventEmitter {
      * Calling `event.preventDefault()` will cancel the download and `item` will not be
      * available from next tick of the process.
      */
-    fun on(
-        event: SessionEvent.WILL_DOWNLOAD,
-        listener: (event: Event, item: DownloadItem, webContents: WebContents) -> Unit,
-    ): Unit /* this */
-
-    fun once(
-        event: SessionEvent.EXTENSION_LOADED,
-        listener: (event: Event, extension: Extension) -> Unit,
-    ): Unit /* this */
-
-    fun once(
-        event: SessionEvent.EXTENSION_READY,
-        listener: (event: Event, extension: Extension) -> Unit,
-    ): Unit /* this */
-
-    fun once(
-        event: SessionEvent.EXTENSION_UNLOADED,
-        listener: (event: Event, extension: Extension) -> Unit,
-    ): Unit /* this */
-
-    fun once(
-        event: SessionEvent.HID_DEVICE_ADDED,
-        listener: (event: Event, details: HidDeviceAddedDetails) -> Unit,
-    ): Unit /* this */
-
-    fun once(
-        event: SessionEvent.HID_DEVICE_REMOVED,
-        listener: (event: Event, details: HidDeviceRemovedDetails) -> Unit,
-    ): Unit /* this */
-
-    fun once(
-        event: SessionEvent.HID_DEVICE_REVOKED,
-        listener: (event: Event, details: HidDeviceRevokedDetails) -> Unit,
-    ): Unit /* this */
-
+    fun on(event: SessionEvent.WILL_DOWNLOAD, listener: (event: Event, item: DownloadItem, webContents: WebContents) -> Unit): Unit /* this */
+    fun once(event: SessionEvent.EXTENSION_LOADED, listener: (event: Event, extension: Extension) -> Unit): Unit /* this */
+    fun once(event: SessionEvent.EXTENSION_READY, listener: (event: Event, extension: Extension) -> Unit): Unit /* this */
+    fun once(event: SessionEvent.EXTENSION_UNLOADED, listener: (event: Event, extension: Extension) -> Unit): Unit /* this */
+    fun once(event: SessionEvent.HID_DEVICE_ADDED, listener: (event: Event, details: HidDeviceAddedDetails) -> Unit): Unit /* this */
+    fun once(event: SessionEvent.HID_DEVICE_REMOVED, listener: (event: Event, details: HidDeviceRemovedDetails) -> Unit): Unit /* this */
+    fun once(event: SessionEvent.HID_DEVICE_REVOKED, listener: (event: Event, details: HidDeviceRevokedDetails) -> Unit): Unit /* this */
     fun once(
         event: SessionEvent.PRECONNECT,
         listener: (
@@ -329,21 +268,9 @@ external class Session : NodeEventEmitter {
         listener: (event: Event, details: SelectUsbDeviceDetails, callback: (deviceId: String? /* use undefined for default */) -> Unit) -> Unit,
     ): Unit /* this */
 
-    fun once(
-        event: SessionEvent.SERIAL_PORT_ADDED,
-        listener: (event: Event, port: SerialPort, webContents: WebContents) -> Unit,
-    ): Unit /* this */
-
-    fun once(
-        event: SessionEvent.SERIAL_PORT_REMOVED,
-        listener: (event: Event, port: SerialPort, webContents: WebContents) -> Unit,
-    ): Unit /* this */
-
-    fun once(
-        event: SessionEvent.SERIAL_PORT_REVOKED,
-        listener: (event: Event, details: SerialPortRevokedDetails) -> Unit,
-    ): Unit /* this */
-
+    fun once(event: SessionEvent.SERIAL_PORT_ADDED, listener: (event: Event, port: SerialPort, webContents: WebContents) -> Unit): Unit /* this */
+    fun once(event: SessionEvent.SERIAL_PORT_REMOVED, listener: (event: Event, port: SerialPort, webContents: WebContents) -> Unit): Unit /* this */
+    fun once(event: SessionEvent.SERIAL_PORT_REVOKED, listener: (event: Event, details: SerialPortRevokedDetails) -> Unit): Unit /* this */
     fun once(
         event: SessionEvent.SPELLCHECK_DICTIONARY_DOWNLOAD_BEGIN,
         listener: (
@@ -388,56 +315,16 @@ external class Session : NodeEventEmitter {
         ) -> Unit,
     ): Unit /* this */
 
-    fun once(
-        event: SessionEvent.USB_DEVICE_ADDED,
-        listener: (event: Event, details: UsbDeviceAddedDetails) -> Unit,
-    ): Unit /* this */
-
-    fun once(
-        event: SessionEvent.USB_DEVICE_REMOVED,
-        listener: (event: Event, details: UsbDeviceRemovedDetails) -> Unit,
-    ): Unit /* this */
-
-    fun once(
-        event: SessionEvent.USB_DEVICE_REVOKED,
-        listener: (event: Event, details: UsbDeviceRevokedDetails) -> Unit,
-    ): Unit /* this */
-
-    fun once(
-        event: SessionEvent.WILL_DOWNLOAD,
-        listener: (event: Event, item: DownloadItem, webContents: WebContents) -> Unit,
-    ): Unit /* this */
-
-    fun addListener(
-        event: SessionEvent.EXTENSION_LOADED,
-        listener: (event: Event, extension: Extension) -> Unit,
-    ): Unit /* this */
-
-    fun addListener(
-        event: SessionEvent.EXTENSION_READY,
-        listener: (event: Event, extension: Extension) -> Unit,
-    ): Unit /* this */
-
-    fun addListener(
-        event: SessionEvent.EXTENSION_UNLOADED,
-        listener: (event: Event, extension: Extension) -> Unit,
-    ): Unit /* this */
-
-    fun addListener(
-        event: SessionEvent.HID_DEVICE_ADDED,
-        listener: (event: Event, details: HidDeviceAddedDetails) -> Unit,
-    ): Unit /* this */
-
-    fun addListener(
-        event: SessionEvent.HID_DEVICE_REMOVED,
-        listener: (event: Event, details: HidDeviceRemovedDetails) -> Unit,
-    ): Unit /* this */
-
-    fun addListener(
-        event: SessionEvent.HID_DEVICE_REVOKED,
-        listener: (event: Event, details: HidDeviceRevokedDetails) -> Unit,
-    ): Unit /* this */
-
+    fun once(event: SessionEvent.USB_DEVICE_ADDED, listener: (event: Event, details: UsbDeviceAddedDetails) -> Unit): Unit /* this */
+    fun once(event: SessionEvent.USB_DEVICE_REMOVED, listener: (event: Event, details: UsbDeviceRemovedDetails) -> Unit): Unit /* this */
+    fun once(event: SessionEvent.USB_DEVICE_REVOKED, listener: (event: Event, details: UsbDeviceRevokedDetails) -> Unit): Unit /* this */
+    fun once(event: SessionEvent.WILL_DOWNLOAD, listener: (event: Event, item: DownloadItem, webContents: WebContents) -> Unit): Unit /* this */
+    fun addListener(event: SessionEvent.EXTENSION_LOADED, listener: (event: Event, extension: Extension) -> Unit): Unit /* this */
+    fun addListener(event: SessionEvent.EXTENSION_READY, listener: (event: Event, extension: Extension) -> Unit): Unit /* this */
+    fun addListener(event: SessionEvent.EXTENSION_UNLOADED, listener: (event: Event, extension: Extension) -> Unit): Unit /* this */
+    fun addListener(event: SessionEvent.HID_DEVICE_ADDED, listener: (event: Event, details: HidDeviceAddedDetails) -> Unit): Unit /* this */
+    fun addListener(event: SessionEvent.HID_DEVICE_REMOVED, listener: (event: Event, details: HidDeviceRemovedDetails) -> Unit): Unit /* this */
+    fun addListener(event: SessionEvent.HID_DEVICE_REVOKED, listener: (event: Event, details: HidDeviceRevokedDetails) -> Unit): Unit /* this */
     fun addListener(
         event: SessionEvent.PRECONNECT,
         listener: (
@@ -469,21 +356,9 @@ external class Session : NodeEventEmitter {
         listener: (event: Event, details: SelectUsbDeviceDetails, callback: (deviceId: String? /* use undefined for default */) -> Unit) -> Unit,
     ): Unit /* this */
 
-    fun addListener(
-        event: SessionEvent.SERIAL_PORT_ADDED,
-        listener: (event: Event, port: SerialPort, webContents: WebContents) -> Unit,
-    ): Unit /* this */
-
-    fun addListener(
-        event: SessionEvent.SERIAL_PORT_REMOVED,
-        listener: (event: Event, port: SerialPort, webContents: WebContents) -> Unit,
-    ): Unit /* this */
-
-    fun addListener(
-        event: SessionEvent.SERIAL_PORT_REVOKED,
-        listener: (event: Event, details: SerialPortRevokedDetails) -> Unit,
-    ): Unit /* this */
-
+    fun addListener(event: SessionEvent.SERIAL_PORT_ADDED, listener: (event: Event, port: SerialPort, webContents: WebContents) -> Unit): Unit /* this */
+    fun addListener(event: SessionEvent.SERIAL_PORT_REMOVED, listener: (event: Event, port: SerialPort, webContents: WebContents) -> Unit): Unit /* this */
+    fun addListener(event: SessionEvent.SERIAL_PORT_REVOKED, listener: (event: Event, details: SerialPortRevokedDetails) -> Unit): Unit /* this */
     fun addListener(
         event: SessionEvent.SPELLCHECK_DICTIONARY_DOWNLOAD_BEGIN,
         listener: (
@@ -528,56 +403,16 @@ external class Session : NodeEventEmitter {
         ) -> Unit,
     ): Unit /* this */
 
-    fun addListener(
-        event: SessionEvent.USB_DEVICE_ADDED,
-        listener: (event: Event, details: UsbDeviceAddedDetails) -> Unit,
-    ): Unit /* this */
-
-    fun addListener(
-        event: SessionEvent.USB_DEVICE_REMOVED,
-        listener: (event: Event, details: UsbDeviceRemovedDetails) -> Unit,
-    ): Unit /* this */
-
-    fun addListener(
-        event: SessionEvent.USB_DEVICE_REVOKED,
-        listener: (event: Event, details: UsbDeviceRevokedDetails) -> Unit,
-    ): Unit /* this */
-
-    fun addListener(
-        event: SessionEvent.WILL_DOWNLOAD,
-        listener: (event: Event, item: DownloadItem, webContents: WebContents) -> Unit,
-    ): Unit /* this */
-
-    fun removeListener(
-        event: SessionEvent.EXTENSION_LOADED,
-        listener: (event: Event, extension: Extension) -> Unit,
-    ): Unit /* this */
-
-    fun removeListener(
-        event: SessionEvent.EXTENSION_READY,
-        listener: (event: Event, extension: Extension) -> Unit,
-    ): Unit /* this */
-
-    fun removeListener(
-        event: SessionEvent.EXTENSION_UNLOADED,
-        listener: (event: Event, extension: Extension) -> Unit,
-    ): Unit /* this */
-
-    fun removeListener(
-        event: SessionEvent.HID_DEVICE_ADDED,
-        listener: (event: Event, details: HidDeviceAddedDetails) -> Unit,
-    ): Unit /* this */
-
-    fun removeListener(
-        event: SessionEvent.HID_DEVICE_REMOVED,
-        listener: (event: Event, details: HidDeviceRemovedDetails) -> Unit,
-    ): Unit /* this */
-
-    fun removeListener(
-        event: SessionEvent.HID_DEVICE_REVOKED,
-        listener: (event: Event, details: HidDeviceRevokedDetails) -> Unit,
-    ): Unit /* this */
-
+    fun addListener(event: SessionEvent.USB_DEVICE_ADDED, listener: (event: Event, details: UsbDeviceAddedDetails) -> Unit): Unit /* this */
+    fun addListener(event: SessionEvent.USB_DEVICE_REMOVED, listener: (event: Event, details: UsbDeviceRemovedDetails) -> Unit): Unit /* this */
+    fun addListener(event: SessionEvent.USB_DEVICE_REVOKED, listener: (event: Event, details: UsbDeviceRevokedDetails) -> Unit): Unit /* this */
+    fun addListener(event: SessionEvent.WILL_DOWNLOAD, listener: (event: Event, item: DownloadItem, webContents: WebContents) -> Unit): Unit /* this */
+    fun removeListener(event: SessionEvent.EXTENSION_LOADED, listener: (event: Event, extension: Extension) -> Unit): Unit /* this */
+    fun removeListener(event: SessionEvent.EXTENSION_READY, listener: (event: Event, extension: Extension) -> Unit): Unit /* this */
+    fun removeListener(event: SessionEvent.EXTENSION_UNLOADED, listener: (event: Event, extension: Extension) -> Unit): Unit /* this */
+    fun removeListener(event: SessionEvent.HID_DEVICE_ADDED, listener: (event: Event, details: HidDeviceAddedDetails) -> Unit): Unit /* this */
+    fun removeListener(event: SessionEvent.HID_DEVICE_REMOVED, listener: (event: Event, details: HidDeviceRemovedDetails) -> Unit): Unit /* this */
+    fun removeListener(event: SessionEvent.HID_DEVICE_REVOKED, listener: (event: Event, details: HidDeviceRevokedDetails) -> Unit): Unit /* this */
     fun removeListener(
         event: SessionEvent.PRECONNECT,
         listener: (
@@ -609,21 +444,9 @@ external class Session : NodeEventEmitter {
         listener: (event: Event, details: SelectUsbDeviceDetails, callback: (deviceId: String? /* use undefined for default */) -> Unit) -> Unit,
     ): Unit /* this */
 
-    fun removeListener(
-        event: SessionEvent.SERIAL_PORT_ADDED,
-        listener: (event: Event, port: SerialPort, webContents: WebContents) -> Unit,
-    ): Unit /* this */
-
-    fun removeListener(
-        event: SessionEvent.SERIAL_PORT_REMOVED,
-        listener: (event: Event, port: SerialPort, webContents: WebContents) -> Unit,
-    ): Unit /* this */
-
-    fun removeListener(
-        event: SessionEvent.SERIAL_PORT_REVOKED,
-        listener: (event: Event, details: SerialPortRevokedDetails) -> Unit,
-    ): Unit /* this */
-
+    fun removeListener(event: SessionEvent.SERIAL_PORT_ADDED, listener: (event: Event, port: SerialPort, webContents: WebContents) -> Unit): Unit /* this */
+    fun removeListener(event: SessionEvent.SERIAL_PORT_REMOVED, listener: (event: Event, port: SerialPort, webContents: WebContents) -> Unit): Unit /* this */
+    fun removeListener(event: SessionEvent.SERIAL_PORT_REVOKED, listener: (event: Event, details: SerialPortRevokedDetails) -> Unit): Unit /* this */
     fun removeListener(
         event: SessionEvent.SPELLCHECK_DICTIONARY_DOWNLOAD_BEGIN,
         listener: (
@@ -668,25 +491,10 @@ external class Session : NodeEventEmitter {
         ) -> Unit,
     ): Unit /* this */
 
-    fun removeListener(
-        event: SessionEvent.USB_DEVICE_ADDED,
-        listener: (event: Event, details: UsbDeviceAddedDetails) -> Unit,
-    ): Unit /* this */
-
-    fun removeListener(
-        event: SessionEvent.USB_DEVICE_REMOVED,
-        listener: (event: Event, details: UsbDeviceRemovedDetails) -> Unit,
-    ): Unit /* this */
-
-    fun removeListener(
-        event: SessionEvent.USB_DEVICE_REVOKED,
-        listener: (event: Event, details: UsbDeviceRevokedDetails) -> Unit,
-    ): Unit /* this */
-
-    fun removeListener(
-        event: SessionEvent.WILL_DOWNLOAD,
-        listener: (event: Event, item: DownloadItem, webContents: WebContents) -> Unit,
-    ): Unit /* this */
+    fun removeListener(event: SessionEvent.USB_DEVICE_ADDED, listener: (event: Event, details: UsbDeviceAddedDetails) -> Unit): Unit /* this */
+    fun removeListener(event: SessionEvent.USB_DEVICE_REMOVED, listener: (event: Event, details: UsbDeviceRemovedDetails) -> Unit): Unit /* this */
+    fun removeListener(event: SessionEvent.USB_DEVICE_REVOKED, listener: (event: Event, details: UsbDeviceRevokedDetails) -> Unit): Unit /* this */
+    fun removeListener(event: SessionEvent.WILL_DOWNLOAD, listener: (event: Event, item: DownloadItem, webContents: WebContents) -> Unit): Unit /* this */
 
     /**
      * Whether the word was successfully written to the custom dictionary. This API

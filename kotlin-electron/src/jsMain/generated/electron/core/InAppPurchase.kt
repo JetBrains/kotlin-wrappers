@@ -6,7 +6,9 @@ package electron.core
 import kotlin.js.Promise
 
 
-external interface InAppPurchase : node.events.IEventEmitter {
+@Suppress("INTERFACE_WITH_SUPERCLASS")
+
+external interface InAppPurchase : node.events.EventEmitter {
     // Docs: https://electronjs.org/docs/api/in-app-purchase
     fun on(event: InAppPurchaseEvent.TRANSACTIONS_UPDATED, listener: Function<Unit>): Unit /* this */
     fun once(event: InAppPurchaseEvent.TRANSACTIONS_UPDATED, listener: Function<Unit>): Unit /* this */

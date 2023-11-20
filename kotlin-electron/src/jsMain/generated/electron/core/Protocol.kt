@@ -12,10 +12,7 @@ external interface Protocol {
      * Intercepts `scheme` protocol and uses `handler` as the protocol's new handler
      * which sends a `Buffer` as a response.
      */
-    fun interceptBufferProtocol(
-        scheme: String,
-        handler: (request: ProtocolRequest, callback: (response: Any /* (Buffer) | (ProtocolResponse) */) -> Unit) -> Unit,
-    ): Boolean
+    fun interceptBufferProtocol(scheme: String, handler: (request: ProtocolRequest, callback: (response: Any /* (Buffer) | (ProtocolResponse) */) -> Unit) -> Unit): Boolean
 
     /**
      * Whether the protocol was successfully intercepted
@@ -23,10 +20,7 @@ external interface Protocol {
      * Intercepts `scheme` protocol and uses `handler` as the protocol's new handler
      * which sends a file as a response.
      */
-    fun interceptFileProtocol(
-        scheme: String,
-        handler: (request: ProtocolRequest, callback: (response: Any /* (string) | (ProtocolResponse) */) -> Unit) -> Unit,
-    ): Boolean
+    fun interceptFileProtocol(scheme: String, handler: (request: ProtocolRequest, callback: (response: Any /* (string) | (ProtocolResponse) */) -> Unit) -> Unit): Boolean
 
     /**
      * Whether the protocol was successfully intercepted
@@ -34,10 +28,7 @@ external interface Protocol {
      * Intercepts `scheme` protocol and uses `handler` as the protocol's new handler
      * which sends a new HTTP request as a response.
      */
-    fun interceptHttpProtocol(
-        scheme: String,
-        handler: (request: ProtocolRequest, callback: (response: ProtocolResponse) -> Unit) -> Unit,
-    ): Boolean
+    fun interceptHttpProtocol(scheme: String, handler: (request: ProtocolRequest, callback: (response: ProtocolResponse) -> Unit) -> Unit): Boolean
 
     /**
      * Whether the protocol was successfully intercepted
@@ -45,10 +36,7 @@ external interface Protocol {
      * Same as `protocol.registerStreamProtocol`, except that it replaces an existing
      * protocol handler.
      */
-    fun interceptStreamProtocol(
-        scheme: String,
-        handler: (request: ProtocolRequest, callback: (response: Any /* (NodeJS.ReadableStream) | (ProtocolResponse) */) -> Unit) -> Unit,
-    ): Boolean
+    fun interceptStreamProtocol(scheme: String, handler: (request: ProtocolRequest, callback: (response: Any /* (NodeJS.ReadableStream) | (ProtocolResponse) */) -> Unit) -> Unit): Boolean
 
     /**
      * Whether the protocol was successfully intercepted
@@ -56,10 +44,7 @@ external interface Protocol {
      * Intercepts `scheme` protocol and uses `handler` as the protocol's new handler
      * which sends a `string` as a response.
      */
-    fun interceptStringProtocol(
-        scheme: String,
-        handler: (request: ProtocolRequest, callback: (response: Any /* (string) | (ProtocolResponse) */) -> Unit) -> Unit,
-    ): Boolean
+    fun interceptStringProtocol(scheme: String, handler: (request: ProtocolRequest, callback: (response: Any /* (string) | (ProtocolResponse) */) -> Unit) -> Unit): Boolean
 
     /**
      * Whether `scheme` is already intercepted.
@@ -82,10 +67,7 @@ external interface Protocol {
      *
      * Example:
      */
-    fun registerBufferProtocol(
-        scheme: String,
-        handler: (request: ProtocolRequest, callback: (response: Any /* (Buffer) | (ProtocolResponse) */) -> Unit) -> Unit,
-    ): Boolean
+    fun registerBufferProtocol(scheme: String, handler: (request: ProtocolRequest, callback: (response: Any /* (Buffer) | (ProtocolResponse) */) -> Unit) -> Unit): Boolean
 
     /**
      * Whether the protocol was successfully registered
@@ -101,10 +83,7 @@ external interface Protocol {
      * By default the `scheme` is treated like `http:`, which is parsed differently
      * from protocols that follow the "generic URI syntax" like `file:`.
      */
-    fun registerFileProtocol(
-        scheme: String,
-        handler: (request: ProtocolRequest, callback: (response: Any /* (string) | (ProtocolResponse) */) -> Unit) -> Unit,
-    ): Boolean
+    fun registerFileProtocol(scheme: String, handler: (request: ProtocolRequest, callback: (response: Any /* (string) | (ProtocolResponse) */) -> Unit) -> Unit): Boolean
 
     /**
      * Whether the protocol was successfully registered
@@ -114,10 +93,7 @@ external interface Protocol {
      * The usage is the same with `registerFileProtocol`, except that the `callback`
      * should be called with an object that has the `url` property.
      */
-    fun registerHttpProtocol(
-        scheme: String,
-        handler: (request: ProtocolRequest, callback: (response: ProtocolResponse) -> Unit) -> Unit,
-    ): Boolean
+    fun registerHttpProtocol(scheme: String, handler: (request: ProtocolRequest, callback: (response: ProtocolResponse) -> Unit) -> Unit): Boolean
 
     /**
      * **Note:** This method can only be used before the `ready` event of the `app`
@@ -172,10 +148,7 @@ external interface Protocol {
      * It is possible to pass any object that implements the readable stream API (emits
      * `data`/`end`/`error` events). For example, here's how a file could be returned:
      */
-    fun registerStreamProtocol(
-        scheme: String,
-        handler: (request: ProtocolRequest, callback: (response: Any /* (NodeJS.ReadableStream) | (ProtocolResponse) */) -> Unit) -> Unit,
-    ): Boolean
+    fun registerStreamProtocol(scheme: String, handler: (request: ProtocolRequest, callback: (response: Any /* (NodeJS.ReadableStream) | (ProtocolResponse) */) -> Unit) -> Unit): Boolean
 
     /**
      * Whether the protocol was successfully registered
@@ -186,10 +159,7 @@ external interface Protocol {
      * should be called with either a `string` or an object that has the `data`
      * property.
      */
-    fun registerStringProtocol(
-        scheme: String,
-        handler: (request: ProtocolRequest, callback: (response: Any /* (string) | (ProtocolResponse) */) -> Unit) -> Unit,
-    ): Boolean
+    fun registerStringProtocol(scheme: String, handler: (request: ProtocolRequest, callback: (response: Any /* (string) | (ProtocolResponse) */) -> Unit) -> Unit): Boolean
 
     /**
      * Whether the protocol was successfully unintercepted

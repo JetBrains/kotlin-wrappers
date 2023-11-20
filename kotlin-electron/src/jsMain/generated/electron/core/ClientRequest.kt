@@ -202,17 +202,9 @@ external class ClientRequest : NodeEventEmitter {
      * Sends the last chunk of the request data. Subsequent write or end operations
      * will not be allowed. The `finish` event is emitted just after the end operation.
      */
-    fun end(
-        chunk: String = definedExternally,
-        encoding: String = definedExternally,
-        callback: () -> Unit = definedExternally,
-    ): Unit
+    fun end(chunk: String = definedExternally, encoding: String = definedExternally, callback: () -> Unit = definedExternally): Unit
 
-    fun end(
-        chunk: Buffer = definedExternally,
-        encoding: String = definedExternally,
-        callback: () -> Unit = definedExternally,
-    ): Unit
+    fun end(chunk: Buffer = definedExternally, encoding: String = definedExternally, callback: () -> Unit = definedExternally): Unit
 
     /**
      * Continues any pending redirection. Can only be called during a `'redirect'`
