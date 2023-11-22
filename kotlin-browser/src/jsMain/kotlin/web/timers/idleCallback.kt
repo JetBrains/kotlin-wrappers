@@ -10,7 +10,7 @@ sealed external class IdleDeadline {
 }
 
 typealias IdleRequestCallback = (
-    deadline: IdleDeadline
+    deadline: IdleDeadline,
 ) -> Unit
 
 external fun requestIdleCallback(
