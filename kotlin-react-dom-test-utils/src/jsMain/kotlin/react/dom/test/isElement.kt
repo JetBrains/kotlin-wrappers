@@ -6,5 +6,5 @@ package react.dom.test
  * Returns `true` if `element` is any React element.
  */
 external fun isElement(
-    element: Any?
+    element: Any?,
 ): Boolean
