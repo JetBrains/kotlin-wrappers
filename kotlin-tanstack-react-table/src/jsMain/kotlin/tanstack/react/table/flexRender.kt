@@ -15,5 +15,5 @@ external fun <TData : RowData, TValue> flexRender(
 
 external fun <T : Any> flexRender(
     Comp: ColumnDefTemplate<out T>?,
-    props: T
+    props: T,
 ): ReactNode?
