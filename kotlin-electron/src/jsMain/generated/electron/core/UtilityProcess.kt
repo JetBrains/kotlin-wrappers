@@ -113,7 +113,11 @@ external class UtilityProcess : NodeEventEmitter {
 
     companion object {
         // Docs: https://electronjs.org/docs/api/utility-process
-        fun fork(modulePath: String, args: js.core.ReadonlyArray<String> = definedExternally, options: ForkOptions = definedExternally): UtilityProcess
+        fun fork(
+            modulePath: String,
+            args: js.core.ReadonlyArray<String> = definedExternally,
+            options: ForkOptions = definedExternally,
+        ): UtilityProcess
     }
 
 }

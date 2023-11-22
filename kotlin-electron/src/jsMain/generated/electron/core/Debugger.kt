@@ -167,5 +167,9 @@ external class Debugger : NodeEventEmitter {
      *
      * Send given command to the debugging target.
      */
-    fun sendCommand(method: String, commandParams: Any? = definedExternally, sessionId: String = definedExternally): Promise<Any?>
+    fun sendCommand(
+        method: String,
+        commandParams: Any? = definedExternally,
+        sessionId: String = definedExternally,
+    ): Promise<Any?>
 }

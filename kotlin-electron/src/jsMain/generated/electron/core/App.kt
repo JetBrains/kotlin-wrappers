@@ -77,17 +77,26 @@ external interface App : node.events.EventEmitter {
     /**
      * Emitted when a browserWindow gets blurred.
      */
-    fun on(event: AppEvent.BROWSER_WINDOW_BLUR, listener: (event: Event, window: BrowserWindow) -> Unit): Unit /* this */
+    fun on(
+        event: AppEvent.BROWSER_WINDOW_BLUR,
+        listener: (event: Event, window: BrowserWindow) -> Unit,
+    ): Unit /* this */
 
     /**
      * Emitted when a new browserWindow is created.
      */
-    fun on(event: AppEvent.BROWSER_WINDOW_CREATED, listener: (event: Event, window: BrowserWindow) -> Unit): Unit /* this */
+    fun on(
+        event: AppEvent.BROWSER_WINDOW_CREATED,
+        listener: (event: Event, window: BrowserWindow) -> Unit,
+    ): Unit /* this */
 
     /**
      * Emitted when a browserWindow gets focused.
      */
-    fun on(event: AppEvent.BROWSER_WINDOW_FOCUS, listener: (event: Event, window: BrowserWindow) -> Unit): Unit /* this */
+    fun on(
+        event: AppEvent.BROWSER_WINDOW_FOCUS,
+        listener: (event: Event, window: BrowserWindow) -> Unit,
+    ): Unit /* this */
 
     /**
      * Emitted when failed to verify the `certificate` for `url`, to trust the
@@ -258,13 +267,19 @@ external interface App : node.events.EventEmitter {
      * this event has already fired and `app.whenReady()` to get a Promise that is
      * fulfilled when Electron is initialized.
      */
-    fun on(event: AppEvent.READY, listener: (event: Event, launchInfo: Any /* (Record<string, any>) | (NotificationResponse) */) -> Unit): Unit /* this */
+    fun on(
+        event: AppEvent.READY,
+        listener: (event: Event, launchInfo: Any /* (Record<string, any>) | (NotificationResponse) */) -> Unit,
+    ): Unit /* this */
 
     /**
      * Emitted when the renderer process unexpectedly disappears.  This is normally
      * because it was crashed or killed.
      */
-    fun on(event: AppEvent.RENDER_PROCESS_GONE, listener: (event: Event, webContents: WebContents, details: RenderProcessGoneDetails) -> Unit): Unit /* this */
+    fun on(
+        event: AppEvent.RENDER_PROCESS_GONE,
+        listener: (event: Event, webContents: WebContents, details: RenderProcessGoneDetails) -> Unit,
+    ): Unit /* this */
 
     /**
      * Emitted when the renderer process of `webContents` crashes or is killed.
@@ -276,7 +291,10 @@ external interface App : node.events.EventEmitter {
      *
      * @deprecated
      */
-    fun on(event: AppEvent.RENDERER_PROCESS_CRASHED, listener: (event: Event, webContents: WebContents, killed: Boolean) -> Unit): Unit /* this */
+    fun on(
+        event: AppEvent.RENDERER_PROCESS_CRASHED,
+        listener: (event: Event, webContents: WebContents, killed: Boolean) -> Unit,
+    ): Unit /* this */
 
     /**
      * This event will be emitted inside the primary instance of your application when
@@ -364,7 +382,10 @@ external interface App : node.events.EventEmitter {
     /**
      * Emitted when a new webContents is created.
      */
-    fun on(event: AppEvent.WEB_CONTENTS_CREATED, listener: (event: Event, webContents: WebContents) -> Unit): Unit /* this */
+    fun on(
+        event: AppEvent.WEB_CONTENTS_CREATED,
+        listener: (event: Event, webContents: WebContents) -> Unit,
+    ): Unit /* this */
 
     /**
      * Emitted during Handoff before an activity from a different device wants to be
@@ -446,9 +467,21 @@ external interface App : node.events.EventEmitter {
     ): Unit /* this */
 
     fun once(event: AppEvent.BEFORE_QUIT, listener: (event: Event) -> Unit): Unit /* this */
-    fun once(event: AppEvent.BROWSER_WINDOW_BLUR, listener: (event: Event, window: BrowserWindow) -> Unit): Unit /* this */
-    fun once(event: AppEvent.BROWSER_WINDOW_CREATED, listener: (event: Event, window: BrowserWindow) -> Unit): Unit /* this */
-    fun once(event: AppEvent.BROWSER_WINDOW_FOCUS, listener: (event: Event, window: BrowserWindow) -> Unit): Unit /* this */
+    fun once(
+        event: AppEvent.BROWSER_WINDOW_BLUR,
+        listener: (event: Event, window: BrowserWindow) -> Unit,
+    ): Unit /* this */
+
+    fun once(
+        event: AppEvent.BROWSER_WINDOW_CREATED,
+        listener: (event: Event, window: BrowserWindow) -> Unit,
+    ): Unit /* this */
+
+    fun once(
+        event: AppEvent.BROWSER_WINDOW_FOCUS,
+        listener: (event: Event, window: BrowserWindow) -> Unit,
+    ): Unit /* this */
+
     fun once(
         event: AppEvent.CERTIFICATE_ERROR,
         listener: (
@@ -505,9 +538,21 @@ external interface App : node.events.EventEmitter {
     fun once(event: AppEvent.OPEN_FILE, listener: (event: Event, path: String) -> Unit): Unit /* this */
     fun once(event: AppEvent.OPEN_URL, listener: (event: Event, url: String) -> Unit): Unit /* this */
     fun once(event: AppEvent.QUIT, listener: (event: Event, exitCode: Double) -> Unit): Unit /* this */
-    fun once(event: AppEvent.READY, listener: (event: Event, launchInfo: Any /* (Record<string, any>) | (NotificationResponse) */) -> Unit): Unit /* this */
-    fun once(event: AppEvent.RENDER_PROCESS_GONE, listener: (event: Event, webContents: WebContents, details: RenderProcessGoneDetails) -> Unit): Unit /* this */
-    fun once(event: AppEvent.RENDERER_PROCESS_CRASHED, listener: (event: Event, webContents: WebContents, killed: Boolean) -> Unit): Unit /* this */
+    fun once(
+        event: AppEvent.READY,
+        listener: (event: Event, launchInfo: Any /* (Record<string, any>) | (NotificationResponse) */) -> Unit,
+    ): Unit /* this */
+
+    fun once(
+        event: AppEvent.RENDER_PROCESS_GONE,
+        listener: (event: Event, webContents: WebContents, details: RenderProcessGoneDetails) -> Unit,
+    ): Unit /* this */
+
+    fun once(
+        event: AppEvent.RENDERER_PROCESS_CRASHED,
+        listener: (event: Event, webContents: WebContents, killed: Boolean) -> Unit,
+    ): Unit /* this */
+
     fun once(
         event: AppEvent.SECOND_INSTANCE,
         listener: (
@@ -548,7 +593,11 @@ external interface App : node.events.EventEmitter {
         ) -> Unit,
     ): Unit /* this */
 
-    fun once(event: AppEvent.WEB_CONTENTS_CREATED, listener: (event: Event, webContents: WebContents) -> Unit): Unit /* this */
+    fun once(
+        event: AppEvent.WEB_CONTENTS_CREATED,
+        listener: (event: Event, webContents: WebContents) -> Unit,
+    ): Unit /* this */
+
     fun once(
         event: AppEvent.WILL_CONTINUE_ACTIVITY,
         listener: (
@@ -574,7 +623,11 @@ external interface App : node.events.EventEmitter {
         ) -> Unit,
     ): Unit /* this */
 
-    fun addListener(event: AppEvent.ACTIVATE, listener: (event: Event, hasVisibleWindows: Boolean) -> Unit): Unit /* this */
+    fun addListener(
+        event: AppEvent.ACTIVATE,
+        listener: (event: Event, hasVisibleWindows: Boolean) -> Unit,
+    ): Unit /* this */
+
     fun addListener(
         event: AppEvent.ACTIVITY_WAS_CONTINUED,
         listener: (
@@ -591,9 +644,21 @@ external interface App : node.events.EventEmitter {
     ): Unit /* this */
 
     fun addListener(event: AppEvent.BEFORE_QUIT, listener: (event: Event) -> Unit): Unit /* this */
-    fun addListener(event: AppEvent.BROWSER_WINDOW_BLUR, listener: (event: Event, window: BrowserWindow) -> Unit): Unit /* this */
-    fun addListener(event: AppEvent.BROWSER_WINDOW_CREATED, listener: (event: Event, window: BrowserWindow) -> Unit): Unit /* this */
-    fun addListener(event: AppEvent.BROWSER_WINDOW_FOCUS, listener: (event: Event, window: BrowserWindow) -> Unit): Unit /* this */
+    fun addListener(
+        event: AppEvent.BROWSER_WINDOW_BLUR,
+        listener: (event: Event, window: BrowserWindow) -> Unit,
+    ): Unit /* this */
+
+    fun addListener(
+        event: AppEvent.BROWSER_WINDOW_CREATED,
+        listener: (event: Event, window: BrowserWindow) -> Unit,
+    ): Unit /* this */
+
+    fun addListener(
+        event: AppEvent.BROWSER_WINDOW_FOCUS,
+        listener: (event: Event, window: BrowserWindow) -> Unit,
+    ): Unit /* this */
+
     fun addListener(
         event: AppEvent.CERTIFICATE_ERROR,
         listener: (
@@ -606,7 +671,11 @@ external interface App : node.events.EventEmitter {
         ) -> Unit,
     ): Unit /* this */
 
-    fun addListener(event: AppEvent.CHILD_PROCESS_GONE, listener: (event: Event, details: Details) -> Unit): Unit /* this */
+    fun addListener(
+        event: AppEvent.CHILD_PROCESS_GONE,
+        listener: (event: Event, details: Details) -> Unit,
+    ): Unit /* this */
+
     fun addListener(
         event: AppEvent.CONTINUE_ACTIVITY,
         listener: (
@@ -640,7 +709,11 @@ external interface App : node.events.EventEmitter {
 
     fun addListener(event: AppEvent.DID_BECOME_ACTIVE, listener: (event: Event) -> Unit): Unit /* this */
     fun addListener(event: AppEvent.GPU_INFO_UPDATE, listener: Function<Unit>): Unit /* this */
-    fun addListener(event: AppEvent.GPU_PROCESS_CRASHED, listener: (event: Event, killed: Boolean) -> Unit): Unit /* this */
+    fun addListener(
+        event: AppEvent.GPU_PROCESS_CRASHED,
+        listener: (event: Event, killed: Boolean) -> Unit,
+    ): Unit /* this */
+
     fun addListener(
         event: AppEvent.LOGIN,
         listener: (event: Event, webContents: WebContents, authenticationResponseDetails: AuthenticationResponseDetails, authInfo: AuthInfo, callback: (username: String? /* use undefined for default */, password: String? /* use undefined for default */) -> Unit) -> Unit,
@@ -650,9 +723,21 @@ external interface App : node.events.EventEmitter {
     fun addListener(event: AppEvent.OPEN_FILE, listener: (event: Event, path: String) -> Unit): Unit /* this */
     fun addListener(event: AppEvent.OPEN_URL, listener: (event: Event, url: String) -> Unit): Unit /* this */
     fun addListener(event: AppEvent.QUIT, listener: (event: Event, exitCode: Double) -> Unit): Unit /* this */
-    fun addListener(event: AppEvent.READY, listener: (event: Event, launchInfo: Any /* (Record<string, any>) | (NotificationResponse) */) -> Unit): Unit /* this */
-    fun addListener(event: AppEvent.RENDER_PROCESS_GONE, listener: (event: Event, webContents: WebContents, details: RenderProcessGoneDetails) -> Unit): Unit /* this */
-    fun addListener(event: AppEvent.RENDERER_PROCESS_CRASHED, listener: (event: Event, webContents: WebContents, killed: Boolean) -> Unit): Unit /* this */
+    fun addListener(
+        event: AppEvent.READY,
+        listener: (event: Event, launchInfo: Any /* (Record<string, any>) | (NotificationResponse) */) -> Unit,
+    ): Unit /* this */
+
+    fun addListener(
+        event: AppEvent.RENDER_PROCESS_GONE,
+        listener: (event: Event, webContents: WebContents, details: RenderProcessGoneDetails) -> Unit,
+    ): Unit /* this */
+
+    fun addListener(
+        event: AppEvent.RENDERER_PROCESS_CRASHED,
+        listener: (event: Event, webContents: WebContents, killed: Boolean) -> Unit,
+    ): Unit /* this */
+
     fun addListener(
         event: AppEvent.SECOND_INSTANCE,
         listener: (
@@ -693,7 +778,11 @@ external interface App : node.events.EventEmitter {
         ) -> Unit,
     ): Unit /* this */
 
-    fun addListener(event: AppEvent.WEB_CONTENTS_CREATED, listener: (event: Event, webContents: WebContents) -> Unit): Unit /* this */
+    fun addListener(
+        event: AppEvent.WEB_CONTENTS_CREATED,
+        listener: (event: Event, webContents: WebContents) -> Unit,
+    ): Unit /* this */
+
     fun addListener(
         event: AppEvent.WILL_CONTINUE_ACTIVITY,
         listener: (
@@ -719,7 +808,11 @@ external interface App : node.events.EventEmitter {
         ) -> Unit,
     ): Unit /* this */
 
-    fun removeListener(event: AppEvent.ACTIVATE, listener: (event: Event, hasVisibleWindows: Boolean) -> Unit): Unit /* this */
+    fun removeListener(
+        event: AppEvent.ACTIVATE,
+        listener: (event: Event, hasVisibleWindows: Boolean) -> Unit,
+    ): Unit /* this */
+
     fun removeListener(
         event: AppEvent.ACTIVITY_WAS_CONTINUED,
         listener: (
@@ -736,9 +829,21 @@ external interface App : node.events.EventEmitter {
     ): Unit /* this */
 
     fun removeListener(event: AppEvent.BEFORE_QUIT, listener: (event: Event) -> Unit): Unit /* this */
-    fun removeListener(event: AppEvent.BROWSER_WINDOW_BLUR, listener: (event: Event, window: BrowserWindow) -> Unit): Unit /* this */
-    fun removeListener(event: AppEvent.BROWSER_WINDOW_CREATED, listener: (event: Event, window: BrowserWindow) -> Unit): Unit /* this */
-    fun removeListener(event: AppEvent.BROWSER_WINDOW_FOCUS, listener: (event: Event, window: BrowserWindow) -> Unit): Unit /* this */
+    fun removeListener(
+        event: AppEvent.BROWSER_WINDOW_BLUR,
+        listener: (event: Event, window: BrowserWindow) -> Unit,
+    ): Unit /* this */
+
+    fun removeListener(
+        event: AppEvent.BROWSER_WINDOW_CREATED,
+        listener: (event: Event, window: BrowserWindow) -> Unit,
+    ): Unit /* this */
+
+    fun removeListener(
+        event: AppEvent.BROWSER_WINDOW_FOCUS,
+        listener: (event: Event, window: BrowserWindow) -> Unit,
+    ): Unit /* this */
+
     fun removeListener(
         event: AppEvent.CERTIFICATE_ERROR,
         listener: (
@@ -751,7 +856,11 @@ external interface App : node.events.EventEmitter {
         ) -> Unit,
     ): Unit /* this */
 
-    fun removeListener(event: AppEvent.CHILD_PROCESS_GONE, listener: (event: Event, details: Details) -> Unit): Unit /* this */
+    fun removeListener(
+        event: AppEvent.CHILD_PROCESS_GONE,
+        listener: (event: Event, details: Details) -> Unit,
+    ): Unit /* this */
+
     fun removeListener(
         event: AppEvent.CONTINUE_ACTIVITY,
         listener: (
@@ -785,7 +894,11 @@ external interface App : node.events.EventEmitter {
 
     fun removeListener(event: AppEvent.DID_BECOME_ACTIVE, listener: (event: Event) -> Unit): Unit /* this */
     fun removeListener(event: AppEvent.GPU_INFO_UPDATE, listener: Function<Unit>): Unit /* this */
-    fun removeListener(event: AppEvent.GPU_PROCESS_CRASHED, listener: (event: Event, killed: Boolean) -> Unit): Unit /* this */
+    fun removeListener(
+        event: AppEvent.GPU_PROCESS_CRASHED,
+        listener: (event: Event, killed: Boolean) -> Unit,
+    ): Unit /* this */
+
     fun removeListener(
         event: AppEvent.LOGIN,
         listener: (event: Event, webContents: WebContents, authenticationResponseDetails: AuthenticationResponseDetails, authInfo: AuthInfo, callback: (username: String? /* use undefined for default */, password: String? /* use undefined for default */) -> Unit) -> Unit,
@@ -795,9 +908,21 @@ external interface App : node.events.EventEmitter {
     fun removeListener(event: AppEvent.OPEN_FILE, listener: (event: Event, path: String) -> Unit): Unit /* this */
     fun removeListener(event: AppEvent.OPEN_URL, listener: (event: Event, url: String) -> Unit): Unit /* this */
     fun removeListener(event: AppEvent.QUIT, listener: (event: Event, exitCode: Double) -> Unit): Unit /* this */
-    fun removeListener(event: AppEvent.READY, listener: (event: Event, launchInfo: Any /* (Record<string, any>) | (NotificationResponse) */) -> Unit): Unit /* this */
-    fun removeListener(event: AppEvent.RENDER_PROCESS_GONE, listener: (event: Event, webContents: WebContents, details: RenderProcessGoneDetails) -> Unit): Unit /* this */
-    fun removeListener(event: AppEvent.RENDERER_PROCESS_CRASHED, listener: (event: Event, webContents: WebContents, killed: Boolean) -> Unit): Unit /* this */
+    fun removeListener(
+        event: AppEvent.READY,
+        listener: (event: Event, launchInfo: Any /* (Record<string, any>) | (NotificationResponse) */) -> Unit,
+    ): Unit /* this */
+
+    fun removeListener(
+        event: AppEvent.RENDER_PROCESS_GONE,
+        listener: (event: Event, webContents: WebContents, details: RenderProcessGoneDetails) -> Unit,
+    ): Unit /* this */
+
+    fun removeListener(
+        event: AppEvent.RENDERER_PROCESS_CRASHED,
+        listener: (event: Event, webContents: WebContents, killed: Boolean) -> Unit,
+    ): Unit /* this */
+
     fun removeListener(
         event: AppEvent.SECOND_INSTANCE,
         listener: (
@@ -838,7 +963,11 @@ external interface App : node.events.EventEmitter {
         ) -> Unit,
     ): Unit /* this */
 
-    fun removeListener(event: AppEvent.WEB_CONTENTS_CREATED, listener: (event: Event, webContents: WebContents) -> Unit): Unit /* this */
+    fun removeListener(
+        event: AppEvent.WEB_CONTENTS_CREATED,
+        listener: (event: Event, webContents: WebContents) -> Unit,
+    ): Unit /* this */
+
     fun removeListener(
         event: AppEvent.WILL_CONTINUE_ACTIVITY,
         listener: (
@@ -1238,7 +1367,11 @@ external interface App : node.events.EventEmitter {
      * The API uses the Windows Registry and `LSCopyDefaultHandlerForURLScheme`
      * internally.
      */
-    fun isDefaultProtocolClient(protocol: String, path: String = definedExternally, args: js.core.ReadonlyArray<String> = definedExternally): Boolean
+    fun isDefaultProtocolClient(
+        protocol: String,
+        path: String = definedExternally,
+        args: js.core.ReadonlyArray<String> = definedExternally,
+    ): Boolean
 
     /**
      * whether or not the current OS version allows for native emoji pickers.
@@ -1361,7 +1494,11 @@ external interface App : node.events.EventEmitter {
      *
      * @platform darwin,win32
      */
-    fun removeAsDefaultProtocolClient(protocol: String, path: String = definedExternally, args: js.core.ReadonlyArray<String> = definedExternally): Boolean
+    fun removeAsDefaultProtocolClient(
+        protocol: String,
+        path: String = definedExternally,
+        args: js.core.ReadonlyArray<String> = definedExternally,
+    ): Boolean
 
     /**
      * The return value of this method indicates whether or not this instance of your
@@ -1477,7 +1614,11 @@ external interface App : node.events.EventEmitter {
      * The API uses the Windows Registry and `LSSetDefaultHandlerForURLScheme`
      * internally.
      */
-    fun setAsDefaultProtocolClient(protocol: String, path: String = definedExternally, args: js.core.ReadonlyArray<String> = definedExternally): Boolean
+    fun setAsDefaultProtocolClient(
+        protocol: String,
+        path: String = definedExternally,
+        args: js.core.ReadonlyArray<String> = definedExternally,
+    ): Boolean
 
     /**
      * Whether the call succeeded.

@@ -170,7 +170,10 @@ external class NativeImage {
          *
          * @platform darwin
          */
-        fun createFromNamedImage(imageName: String, hslShift: js.core.ReadonlyArray<Double> = definedExternally): NativeImage
+        fun createFromNamedImage(
+            imageName: String,
+            hslShift: js.core.ReadonlyArray<Double> = definedExternally,
+        ): NativeImage
 
         /**
          * Creates a new `NativeImage` instance from a file located at `path`. This method

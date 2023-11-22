@@ -39,7 +39,11 @@ external class WebFrameMain : NodeEventEmitter {
      *
      * For example:
      */
-    fun postMessage(channel: String, message: Any?, transfer: js.core.ReadonlyArray<MessagePortMain> = definedExternally): Unit
+    fun postMessage(
+        channel: String,
+        message: Any?,
+        transfer: js.core.ReadonlyArray<MessagePortMain> = definedExternally,
+    ): Unit
 
     /**
      * Whether the reload was initiated successfully. Only results in `false` when the

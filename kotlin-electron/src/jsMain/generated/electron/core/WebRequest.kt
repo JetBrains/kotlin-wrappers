@@ -11,7 +11,10 @@ external class WebRequest {
      * The `listener` will be called with `listener(details)` when a server initiated
      * redirect is about to occur.
      */
-    fun onBeforeRedirect(filter: WebRequestFilter, listener: ((details: OnBeforeRedirectListenerDetails) -> Unit)?): Unit
+    fun onBeforeRedirect(
+        filter: WebRequestFilter,
+        listener: ((details: OnBeforeRedirectListenerDetails) -> Unit)?,
+    ): Unit
 
     /**
      * The `listener` will be called with `listener(details)` when a server initiated
@@ -29,7 +32,10 @@ external class WebRequest {
      *
      * Some examples of valid `urls`:
      */
-    fun onBeforeRequest(filter: WebRequestFilter, listener: ((details: OnBeforeRequestListenerDetails, callback: (response: CallbackResponse) -> Unit) -> Unit)?): Unit
+    fun onBeforeRequest(
+        filter: WebRequestFilter,
+        listener: ((details: OnBeforeRequestListenerDetails, callback: (response: CallbackResponse) -> Unit) -> Unit)?,
+    ): Unit
 
     /**
      * The `listener` will be called with `listener(details, callback)` when a request
@@ -50,7 +56,10 @@ external class WebRequest {
      *
      * The `callback` has to be called with a `response` object.
      */
-    fun onBeforeSendHeaders(filter: WebRequestFilter, listener: ((details: OnBeforeSendHeadersListenerDetails, callback: (beforeSendResponse: BeforeSendResponse) -> Unit) -> Unit)?): Unit
+    fun onBeforeSendHeaders(
+        filter: WebRequestFilter,
+        listener: ((details: OnBeforeSendHeadersListenerDetails, callback: (beforeSendResponse: BeforeSendResponse) -> Unit) -> Unit)?,
+    ): Unit
 
     /**
      * The `listener` will be called with `listener(details, callback)` before sending
@@ -89,7 +98,10 @@ external class WebRequest {
      *
      * The `callback` has to be called with a `response` object.
      */
-    fun onHeadersReceived(filter: WebRequestFilter, listener: ((details: OnHeadersReceivedListenerDetails, callback: (headersReceivedResponse: HeadersReceivedResponse) -> Unit) -> Unit)?): Unit
+    fun onHeadersReceived(
+        filter: WebRequestFilter,
+        listener: ((details: OnHeadersReceivedListenerDetails, callback: (headersReceivedResponse: HeadersReceivedResponse) -> Unit) -> Unit)?,
+    ): Unit
 
     /**
      * The `listener` will be called with `listener(details, callback)` when HTTP
@@ -104,7 +116,10 @@ external class WebRequest {
      * response body is received. For HTTP requests, this means that the status line
      * and response headers are available.
      */
-    fun onResponseStarted(filter: WebRequestFilter, listener: ((details: OnResponseStartedListenerDetails) -> Unit)?): Unit
+    fun onResponseStarted(
+        filter: WebRequestFilter,
+        listener: ((details: OnResponseStartedListenerDetails) -> Unit)?,
+    ): Unit
 
     /**
      * The `listener` will be called with `listener(details)` when first byte of the
