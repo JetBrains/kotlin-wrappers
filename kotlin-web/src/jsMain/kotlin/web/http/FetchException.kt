@@ -1,5 +1,5 @@
 package web.http
 
 class FetchException(
-    cause: Throwable
+    cause: Throwable,
 ) : IllegalStateException(cause)
