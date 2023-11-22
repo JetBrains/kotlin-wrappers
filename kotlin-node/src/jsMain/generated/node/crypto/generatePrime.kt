@@ -35,8 +35,20 @@ import js.buffer.ArrayBuffer
  */
 external fun generatePrime(size: Number, callback: (err: Throwable /* JsError */?, prime: ArrayBuffer) -> Unit): Unit
 
-external fun generatePrime(size: Number, options: GeneratePrimeOptionsBigInt, callback: (err: Throwable /* JsError */?, prime: js.core.BigInt) -> Unit): Unit
+external fun generatePrime(
+    size: Number,
+    options: GeneratePrimeOptionsBigInt,
+    callback: (err: Throwable /* JsError */?, prime: js.core.BigInt) -> Unit,
+): Unit
 
-external fun generatePrime(size: Number, options: GeneratePrimeOptionsArrayBuffer, callback: (err: Throwable /* JsError */?, prime: ArrayBuffer) -> Unit): Unit
+external fun generatePrime(
+    size: Number,
+    options: GeneratePrimeOptionsArrayBuffer,
+    callback: (err: Throwable /* JsError */?, prime: ArrayBuffer) -> Unit,
+): Unit
 
-external fun generatePrime(size: Number, options: GeneratePrimeOptions, callback: (err: Throwable /* JsError */?, prime: Any /* ArrayBuffer | bigint */) -> Unit): Unit
+external fun generatePrime(
+    size: Number,
+    options: GeneratePrimeOptions,
+    callback: (err: Throwable /* JsError */?, prime: Any /* ArrayBuffer | bigint */) -> Unit,
+): Unit

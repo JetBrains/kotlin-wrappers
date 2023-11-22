@@ -66,9 +66,19 @@ package node.fs
  * @since v0.1.29
  * @param file filename or file descriptor
  */
-external fun writeFile(file: PathOrFileDescriptor, data: String, options: WriteFileOptions, callback: NoParamCallback): Unit
+external fun writeFile(
+    file: PathOrFileDescriptor,
+    data: String,
+    options: WriteFileOptions,
+    callback: NoParamCallback,
+): Unit
 
-external fun writeFile(file: PathOrFileDescriptor, data: js.buffer.ArrayBufferView, options: WriteFileOptions, callback: NoParamCallback): Unit
+external fun writeFile(
+    file: PathOrFileDescriptor,
+    data: js.buffer.ArrayBufferView,
+    options: WriteFileOptions,
+    callback: NoParamCallback,
+): Unit
 
 /**
  * Asynchronously writes data to a file, replacing the file if it already exists.

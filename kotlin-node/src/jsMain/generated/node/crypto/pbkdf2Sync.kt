@@ -47,4 +47,10 @@ package node.crypto
  * An array of supported digest functions can be retrieved using {@link getHashes}.
  * @since v0.9.3
  */
-external fun pbkdf2Sync(password: BinaryLike, salt: BinaryLike, iterations: Number, keylen: Number, digest: String): node.buffer.Buffer
+external fun pbkdf2Sync(
+    password: BinaryLike,
+    salt: BinaryLike,
+    iterations: Number,
+    keylen: Number,
+    digest: String,
+): node.buffer.Buffer

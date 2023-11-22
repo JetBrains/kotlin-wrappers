@@ -62,23 +62,39 @@ package node.fs
  * ```
  * @since v5.10.0
  */
-external fun mkdtemp(prefix: String, options: EncodingOption, callback: (err: node.ErrnoException?, folder: String) -> Unit): Unit
+external fun mkdtemp(
+    prefix: String,
+    options: EncodingOption,
+    callback: (err: node.ErrnoException?, folder: String) -> Unit,
+): Unit
 
 /**
  * Asynchronously creates a unique temporary directory.
  * Generates six random characters to be appended behind a required prefix to create a unique temporary directory.
  * @param options The encoding (or an object specifying the encoding), used as the encoding of the result. If not provided, `'utf8'` is used.
  */
-external fun mkdtemp(prefix: String, options: String /* 'buffer' */, callback: (err: node.ErrnoException?, folder: node.buffer.Buffer) -> Unit): Unit
+external fun mkdtemp(
+    prefix: String,
+    options: String, /* 'buffer' */
+    callback: (err: node.ErrnoException?, folder: node.buffer.Buffer) -> Unit,
+): Unit
 
-external fun mkdtemp(prefix: String, options: MkdtempOptions, callback: (err: node.ErrnoException?, folder: node.buffer.Buffer) -> Unit): Unit
+external fun mkdtemp(
+    prefix: String,
+    options: MkdtempOptions,
+    callback: (err: node.ErrnoException?, folder: node.buffer.Buffer) -> Unit,
+): Unit
 
 /**
  * Asynchronously creates a unique temporary directory.
  * Generates six random characters to be appended behind a required prefix to create a unique temporary directory.
  * @param options The encoding (or an object specifying the encoding), used as the encoding of the result. If not provided, `'utf8'` is used.
  */
-external fun mkdtemp(prefix: String, options: EncodingOption, callback: (err: node.ErrnoException?, folder: Any /* string | Buffer */) -> Unit): Unit
+external fun mkdtemp(
+    prefix: String,
+    options: EncodingOption,
+    callback: (err: node.ErrnoException?, folder: Any /* string | Buffer */) -> Unit,
+): Unit
 
 /**
  * Asynchronously creates a unique temporary directory.

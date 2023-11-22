@@ -25,10 +25,25 @@ external fun cp(source: URL, destination: String, callback: (err: node.ErrnoExce
 
 external fun cp(source: URL, destination: URL, callback: (err: node.ErrnoException?) -> Unit): Unit
 
-external fun cp(source: String, destination: String, opts: CopyOptions, callback: (err: node.ErrnoException?) -> Unit): Unit
+external fun cp(
+    source: String,
+    destination: String,
+    opts: CopyOptions,
+    callback: (err: node.ErrnoException?) -> Unit,
+): Unit
 
-external fun cp(source: String, destination: URL, opts: CopyOptions, callback: (err: node.ErrnoException?) -> Unit): Unit
+external fun cp(
+    source: String,
+    destination: URL,
+    opts: CopyOptions,
+    callback: (err: node.ErrnoException?) -> Unit,
+): Unit
 
-external fun cp(source: URL, destination: String, opts: CopyOptions, callback: (err: node.ErrnoException?) -> Unit): Unit
+external fun cp(
+    source: URL,
+    destination: String,
+    opts: CopyOptions,
+    callback: (err: node.ErrnoException?) -> Unit,
+): Unit
 
 external fun cp(source: URL, destination: URL, opts: CopyOptions, callback: (err: node.ErrnoException?) -> Unit): Unit

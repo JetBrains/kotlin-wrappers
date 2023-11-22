@@ -53,7 +53,11 @@ package node.fs
  */
 external fun watchFile(filename: PathLike, options: (WatchFileSimpleOptions)?, listener: StatsListener): StatWatcher
 
-external fun watchFile(filename: PathLike, options: (WatchFileBigIntOptions)?, listener: BigIntStatsListener): StatWatcher
+external fun watchFile(
+    filename: PathLike,
+    options: (WatchFileBigIntOptions)?,
+    listener: BigIntStatsListener,
+): StatWatcher
 
 /**
  * Watch for changes on `filename`. The callback `listener` will be called each time the file is accessed.

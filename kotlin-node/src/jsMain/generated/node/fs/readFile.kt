@@ -71,7 +71,11 @@ package node.fs
  * @since v0.1.29
  * @param path filename or file descriptor
  */
-external fun readFile(path: PathOrFileDescriptor, options: (ReadFileBufferOptions)?, callback: (err: node.ErrnoException?, data: node.buffer.Buffer) -> Unit): Unit
+external fun readFile(
+    path: PathOrFileDescriptor,
+    options: (ReadFileBufferOptions)?,
+    callback: (err: node.ErrnoException?, data: node.buffer.Buffer) -> Unit,
+): Unit
 
 /**
  * Asynchronously reads the entire contents of a file.
@@ -80,9 +84,17 @@ external fun readFile(path: PathOrFileDescriptor, options: (ReadFileBufferOption
  * @param options Either the encoding for the result, or an object that contains the encoding and an optional flag.
  * If a flag is not provided, it defaults to `'r'`.
  */
-external fun readFile(path: PathOrFileDescriptor, options: ReadFileStringOptions, callback: (err: node.ErrnoException?, data: String) -> Unit): Unit
+external fun readFile(
+    path: PathOrFileDescriptor,
+    options: ReadFileStringOptions,
+    callback: (err: node.ErrnoException?, data: String) -> Unit,
+): Unit
 
-external fun readFile(path: PathOrFileDescriptor, options: node.buffer.BufferEncoding, callback: (err: node.ErrnoException?, data: String) -> Unit): Unit
+external fun readFile(
+    path: PathOrFileDescriptor,
+    options: node.buffer.BufferEncoding,
+    callback: (err: node.ErrnoException?, data: String) -> Unit,
+): Unit
 
 /**
  * Asynchronously reads the entire contents of a file.
@@ -91,13 +103,24 @@ external fun readFile(path: PathOrFileDescriptor, options: node.buffer.BufferEnc
  * @param options Either the encoding for the result, or an object that contains the encoding and an optional flag.
  * If a flag is not provided, it defaults to `'r'`.
  */
-external fun readFile(path: PathOrFileDescriptor, options: (ReadFileOptions)?, callback: (err: node.ErrnoException?, data: Any /* string | Buffer */) -> Unit): Unit
+external fun readFile(
+    path: PathOrFileDescriptor,
+    options: (ReadFileOptions)?,
+    callback: (err: node.ErrnoException?, data: Any /* string | Buffer */) -> Unit,
+): Unit
 
-external fun readFile(path: PathOrFileDescriptor, options: node.buffer.BufferEncoding?, callback: (err: node.ErrnoException?, data: Any /* string | Buffer */) -> Unit): Unit
+external fun readFile(
+    path: PathOrFileDescriptor,
+    options: node.buffer.BufferEncoding?,
+    callback: (err: node.ErrnoException?, data: Any /* string | Buffer */) -> Unit,
+): Unit
 
 /**
  * Asynchronously reads the entire contents of a file.
  * @param path A path to a file. If a URL is provided, it must use the `file:` protocol.
  * If a file descriptor is provided, the underlying file will _not_ be closed automatically.
  */
-external fun readFile(path: PathOrFileDescriptor, callback: (err: node.ErrnoException?, data: node.buffer.Buffer) -> Unit): Unit
+external fun readFile(
+    path: PathOrFileDescriptor,
+    callback: (err: node.ErrnoException?, data: node.buffer.Buffer) -> Unit,
+): Unit

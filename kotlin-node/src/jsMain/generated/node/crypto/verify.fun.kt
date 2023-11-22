@@ -21,15 +21,41 @@ package node.crypto
  * If the `callback` function is provided this function uses libuv's threadpool.
  * @since v12.0.0
  */
-external fun verify(algorithm: String?, data: js.buffer.ArrayBufferView, key: KeyLike, signature: js.buffer.ArrayBufferView): Boolean
+external fun verify(
+    algorithm: String?,
+    data: js.buffer.ArrayBufferView,
+    key: KeyLike,
+    signature: js.buffer.ArrayBufferView,
+): Boolean
 
-external fun verify(algorithm: String?, data: js.buffer.ArrayBufferView, key: VerifyKeyObjectInput, signature: js.buffer.ArrayBufferView): Boolean
+external fun verify(
+    algorithm: String?,
+    data: js.buffer.ArrayBufferView,
+    key: VerifyKeyObjectInput,
+    signature: js.buffer.ArrayBufferView,
+): Boolean
 
-external fun verify(algorithm: String?, data: js.buffer.ArrayBufferView, key: VerifyPublicKeyInput, signature: js.buffer.ArrayBufferView): Boolean
+external fun verify(
+    algorithm: String?,
+    data: js.buffer.ArrayBufferView,
+    key: VerifyPublicKeyInput,
+    signature: js.buffer.ArrayBufferView,
+): Boolean
 
-external fun verify(algorithm: String?, data: js.buffer.ArrayBufferView, key: VerifyJsonWebKeyInput, signature: js.buffer.ArrayBufferView): Boolean
+external fun verify(
+    algorithm: String?,
+    data: js.buffer.ArrayBufferView,
+    key: VerifyJsonWebKeyInput,
+    signature: js.buffer.ArrayBufferView,
+): Boolean
 
-external fun verify(algorithm: String?, data: js.buffer.ArrayBufferView, key: KeyLike, signature: js.buffer.ArrayBufferView, callback: (error: Throwable /* JsError */?, result: Boolean) -> Unit): Unit
+external fun verify(
+    algorithm: String?,
+    data: js.buffer.ArrayBufferView,
+    key: KeyLike,
+    signature: js.buffer.ArrayBufferView,
+    callback: (error: Throwable /* JsError */?, result: Boolean) -> Unit,
+): Unit
 
 external fun verify(
     algorithm: String?,

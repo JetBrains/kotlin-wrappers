@@ -60,80 +60,160 @@ import node.stream.Stream
  */
 
 @JsName("writeFile")
-external fun writeFileAsync(file: PathLike, data: String, options: (WriteFileAsyncOptions)? = definedExternally): Promise<Unit>
+external fun writeFileAsync(
+    file: PathLike,
+    data: String,
+    options: (WriteFileAsyncOptions)? = definedExternally,
+): Promise<Unit>
 
 
 @JsName("writeFile")
-external fun writeFileAsync(file: PathLike, data: String, options: node.buffer.BufferEncoding? = definedExternally): Promise<Unit>
+external fun writeFileAsync(
+    file: PathLike,
+    data: String,
+    options: node.buffer.BufferEncoding? = definedExternally,
+): Promise<Unit>
 
 
 @JsName("writeFile")
-external fun writeFileAsync(file: PathLike, data: js.buffer.ArrayBufferView, options: (WriteFileAsyncOptions)? = definedExternally): Promise<Unit>
+external fun writeFileAsync(
+    file: PathLike,
+    data: js.buffer.ArrayBufferView,
+    options: (WriteFileAsyncOptions)? = definedExternally,
+): Promise<Unit>
 
 
 @JsName("writeFile")
-external fun writeFileAsync(file: PathLike, data: js.buffer.ArrayBufferView, options: node.buffer.BufferEncoding? = definedExternally): Promise<Unit>
+external fun writeFileAsync(
+    file: PathLike,
+    data: js.buffer.ArrayBufferView,
+    options: node.buffer.BufferEncoding? = definedExternally,
+): Promise<Unit>
 
 
 @JsName("writeFile")
-external fun writeFileAsync(file: PathLike, data: Iterable<Any /* string | NodeJS.ArrayBufferView */>, options: (WriteFileAsyncOptions)? = definedExternally): Promise<Unit>
+external fun writeFileAsync(
+    file: PathLike,
+    data: Iterable<Any /* string | NodeJS.ArrayBufferView */>,
+    options: (WriteFileAsyncOptions)? = definedExternally,
+): Promise<Unit>
 
 
 @JsName("writeFile")
-external fun writeFileAsync(file: PathLike, data: Iterable<Any /* string | NodeJS.ArrayBufferView */>, options: node.buffer.BufferEncoding? = definedExternally): Promise<Unit>
+external fun writeFileAsync(
+    file: PathLike,
+    data: Iterable<Any /* string | NodeJS.ArrayBufferView */>,
+    options: node.buffer.BufferEncoding? = definedExternally,
+): Promise<Unit>
 
 
 @JsName("writeFile")
-external fun writeFileAsync(file: PathLike, data: AsyncIterable<Any /* string | NodeJS.ArrayBufferView */>, options: (WriteFileAsyncOptions)? = definedExternally): Promise<Unit>
+external fun writeFileAsync(
+    file: PathLike,
+    data: AsyncIterable<Any /* string | NodeJS.ArrayBufferView */>,
+    options: (WriteFileAsyncOptions)? = definedExternally,
+): Promise<Unit>
 
 
 @JsName("writeFile")
-external fun writeFileAsync(file: PathLike, data: AsyncIterable<Any /* string | NodeJS.ArrayBufferView */>, options: node.buffer.BufferEncoding? = definedExternally): Promise<Unit>
+external fun writeFileAsync(
+    file: PathLike,
+    data: AsyncIterable<Any /* string | NodeJS.ArrayBufferView */>,
+    options: node.buffer.BufferEncoding? = definedExternally,
+): Promise<Unit>
 
 
 @JsName("writeFile")
-external fun writeFileAsync(file: PathLike, data: Stream, options: (WriteFileAsyncOptions)? = definedExternally): Promise<Unit>
+external fun writeFileAsync(
+    file: PathLike,
+    data: Stream,
+    options: (WriteFileAsyncOptions)? = definedExternally,
+): Promise<Unit>
 
 
 @JsName("writeFile")
-external fun writeFileAsync(file: PathLike, data: Stream, options: node.buffer.BufferEncoding? = definedExternally): Promise<Unit>
+external fun writeFileAsync(
+    file: PathLike,
+    data: Stream,
+    options: node.buffer.BufferEncoding? = definedExternally,
+): Promise<Unit>
 
 
 @JsName("writeFile")
-external fun writeFileAsync(file: FileHandle, data: String, options: (WriteFileAsyncOptions)? = definedExternally): Promise<Unit>
+external fun writeFileAsync(
+    file: FileHandle,
+    data: String,
+    options: (WriteFileAsyncOptions)? = definedExternally,
+): Promise<Unit>
 
 
 @JsName("writeFile")
-external fun writeFileAsync(file: FileHandle, data: String, options: node.buffer.BufferEncoding? = definedExternally): Promise<Unit>
+external fun writeFileAsync(
+    file: FileHandle,
+    data: String,
+    options: node.buffer.BufferEncoding? = definedExternally,
+): Promise<Unit>
 
 
 @JsName("writeFile")
-external fun writeFileAsync(file: FileHandle, data: js.buffer.ArrayBufferView, options: (WriteFileAsyncOptions)? = definedExternally): Promise<Unit>
+external fun writeFileAsync(
+    file: FileHandle,
+    data: js.buffer.ArrayBufferView,
+    options: (WriteFileAsyncOptions)? = definedExternally,
+): Promise<Unit>
 
 
 @JsName("writeFile")
-external fun writeFileAsync(file: FileHandle, data: js.buffer.ArrayBufferView, options: node.buffer.BufferEncoding? = definedExternally): Promise<Unit>
+external fun writeFileAsync(
+    file: FileHandle,
+    data: js.buffer.ArrayBufferView,
+    options: node.buffer.BufferEncoding? = definedExternally,
+): Promise<Unit>
 
 
 @JsName("writeFile")
-external fun writeFileAsync(file: FileHandle, data: Iterable<Any /* string | NodeJS.ArrayBufferView */>, options: (WriteFileAsyncOptions)? = definedExternally): Promise<Unit>
+external fun writeFileAsync(
+    file: FileHandle,
+    data: Iterable<Any /* string | NodeJS.ArrayBufferView */>,
+    options: (WriteFileAsyncOptions)? = definedExternally,
+): Promise<Unit>
 
 
 @JsName("writeFile")
-external fun writeFileAsync(file: FileHandle, data: Iterable<Any /* string | NodeJS.ArrayBufferView */>, options: node.buffer.BufferEncoding? = definedExternally): Promise<Unit>
+external fun writeFileAsync(
+    file: FileHandle,
+    data: Iterable<Any /* string | NodeJS.ArrayBufferView */>,
+    options: node.buffer.BufferEncoding? = definedExternally,
+): Promise<Unit>
 
 
 @JsName("writeFile")
-external fun writeFileAsync(file: FileHandle, data: AsyncIterable<Any /* string | NodeJS.ArrayBufferView */>, options: (WriteFileAsyncOptions)? = definedExternally): Promise<Unit>
+external fun writeFileAsync(
+    file: FileHandle,
+    data: AsyncIterable<Any /* string | NodeJS.ArrayBufferView */>,
+    options: (WriteFileAsyncOptions)? = definedExternally,
+): Promise<Unit>
 
 
 @JsName("writeFile")
-external fun writeFileAsync(file: FileHandle, data: AsyncIterable<Any /* string | NodeJS.ArrayBufferView */>, options: node.buffer.BufferEncoding? = definedExternally): Promise<Unit>
+external fun writeFileAsync(
+    file: FileHandle,
+    data: AsyncIterable<Any /* string | NodeJS.ArrayBufferView */>,
+    options: node.buffer.BufferEncoding? = definedExternally,
+): Promise<Unit>
 
 
 @JsName("writeFile")
-external fun writeFileAsync(file: FileHandle, data: Stream, options: (WriteFileAsyncOptions)? = definedExternally): Promise<Unit>
+external fun writeFileAsync(
+    file: FileHandle,
+    data: Stream,
+    options: (WriteFileAsyncOptions)? = definedExternally,
+): Promise<Unit>
 
 
 @JsName("writeFile")
-external fun writeFileAsync(file: FileHandle, data: Stream, options: node.buffer.BufferEncoding? = definedExternally): Promise<Unit>
+external fun writeFileAsync(
+    file: FileHandle,
+    data: Stream,
+    options: node.buffer.BufferEncoding? = definedExternally,
+): Promise<Unit>

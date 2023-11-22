@@ -25,14 +25,32 @@ external fun spawnSync(command: String): SpawnSyncReturns<node.buffer.Buffer>
 
 external fun spawnSync(command: String, options: SpawnSyncOptionsWithStringEncoding): SpawnSyncReturns<String>
 
-external fun spawnSync(command: String, options: SpawnSyncOptionsWithBufferEncoding): SpawnSyncReturns<node.buffer.Buffer>
+external fun spawnSync(
+    command: String,
+    options: SpawnSyncOptionsWithBufferEncoding,
+): SpawnSyncReturns<node.buffer.Buffer>
 
-external fun spawnSync(command: String, options: SpawnSyncOptions = definedExternally): SpawnSyncReturns<Any /* string | Buffer */>
+external fun spawnSync(
+    command: String,
+    options: SpawnSyncOptions = definedExternally,
+): SpawnSyncReturns<Any /* string | Buffer */>
 
 external fun spawnSync(command: String, args: ReadonlyArray<String>): SpawnSyncReturns<node.buffer.Buffer>
 
-external fun spawnSync(command: String, args: ReadonlyArray<String>, options: SpawnSyncOptionsWithStringEncoding): SpawnSyncReturns<String>
+external fun spawnSync(
+    command: String,
+    args: ReadonlyArray<String>,
+    options: SpawnSyncOptionsWithStringEncoding,
+): SpawnSyncReturns<String>
 
-external fun spawnSync(command: String, args: ReadonlyArray<String>, options: SpawnSyncOptionsWithBufferEncoding): SpawnSyncReturns<node.buffer.Buffer>
+external fun spawnSync(
+    command: String,
+    args: ReadonlyArray<String>,
+    options: SpawnSyncOptionsWithBufferEncoding,
+): SpawnSyncReturns<node.buffer.Buffer>
 
-external fun spawnSync(command: String, args: ReadonlyArray<String> = definedExternally, options: SpawnSyncOptions = definedExternally): SpawnSyncReturns<Any /* string | Buffer */>
+external fun spawnSync(
+    command: String,
+    args: ReadonlyArray<String> = definedExternally,
+    options: SpawnSyncOptions = definedExternally,
+): SpawnSyncReturns<Any /* string | Buffer */>

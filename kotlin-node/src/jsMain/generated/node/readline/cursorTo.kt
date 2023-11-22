@@ -12,4 +12,9 @@ package node.readline
  * @param callback Invoked once the operation completes.
  * @return `false` if `stream` wishes for the calling code to wait for the `'drain'` event to be emitted before continuing to write additional data; otherwise `true`.
  */
-external fun cursorTo(stream: node.WritableStream, x: Number, y: Number = definedExternally, callback: () -> Unit = definedExternally): Boolean
+external fun cursorTo(
+    stream: node.WritableStream,
+    x: Number,
+    y: Number = definedExternally,
+    callback: () -> Unit = definedExternally,
+): Boolean

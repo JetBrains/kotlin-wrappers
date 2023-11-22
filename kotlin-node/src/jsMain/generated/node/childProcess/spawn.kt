@@ -127,43 +127,106 @@ import node.stream.Writable
  * @param command The command to run.
  * @param args List of string arguments.
  */
-external fun spawn(command: String, options: SpawnOptionsWithoutStdio = definedExternally): ChildProcessWithoutNullStreams
+external fun spawn(
+    command: String,
+    options: SpawnOptionsWithoutStdio = definedExternally,
+): ChildProcessWithoutNullStreams
 
-external fun spawn(command: String, options: SpawnOptionsWithStdioTuple<StdioPipe, StdioPipe, StdioPipe>): ChildProcessByStdio<Writable, Readable, Readable>
+external fun spawn(
+    command: String,
+    options: SpawnOptionsWithStdioTuple<StdioPipe, StdioPipe, StdioPipe>,
+): ChildProcessByStdio<Writable, Readable, Readable>
 
-external fun spawn(command: String, options: SpawnOptionsWithStdioTuple<StdioPipe, StdioPipe, StdioNull>): ChildProcessByStdio<Writable, Readable, Nothing?>
+external fun spawn(
+    command: String,
+    options: SpawnOptionsWithStdioTuple<StdioPipe, StdioPipe, StdioNull>,
+): ChildProcessByStdio<Writable, Readable, Nothing?>
 
-external fun spawn(command: String, options: SpawnOptionsWithStdioTuple<StdioPipe, StdioNull, StdioPipe>): ChildProcessByStdio<Writable, Nothing?, Readable>
+external fun spawn(
+    command: String,
+    options: SpawnOptionsWithStdioTuple<StdioPipe, StdioNull, StdioPipe>,
+): ChildProcessByStdio<Writable, Nothing?, Readable>
 
-external fun spawn(command: String, options: SpawnOptionsWithStdioTuple<StdioNull, StdioPipe, StdioPipe>): ChildProcessByStdio<Nothing?, Readable, Readable>
+external fun spawn(
+    command: String,
+    options: SpawnOptionsWithStdioTuple<StdioNull, StdioPipe, StdioPipe>,
+): ChildProcessByStdio<Nothing?, Readable, Readable>
 
-external fun spawn(command: String, options: SpawnOptionsWithStdioTuple<StdioPipe, StdioNull, StdioNull>): ChildProcessByStdio<Writable, Nothing?, Nothing?>
+external fun spawn(
+    command: String,
+    options: SpawnOptionsWithStdioTuple<StdioPipe, StdioNull, StdioNull>,
+): ChildProcessByStdio<Writable, Nothing?, Nothing?>
 
-external fun spawn(command: String, options: SpawnOptionsWithStdioTuple<StdioNull, StdioPipe, StdioNull>): ChildProcessByStdio<Nothing?, Readable, Nothing?>
+external fun spawn(
+    command: String,
+    options: SpawnOptionsWithStdioTuple<StdioNull, StdioPipe, StdioNull>,
+): ChildProcessByStdio<Nothing?, Readable, Nothing?>
 
-external fun spawn(command: String, options: SpawnOptionsWithStdioTuple<StdioNull, StdioNull, StdioPipe>): ChildProcessByStdio<Nothing?, Nothing?, Readable>
+external fun spawn(
+    command: String,
+    options: SpawnOptionsWithStdioTuple<StdioNull, StdioNull, StdioPipe>,
+): ChildProcessByStdio<Nothing?, Nothing?, Readable>
 
-external fun spawn(command: String, options: SpawnOptionsWithStdioTuple<StdioNull, StdioNull, StdioNull>): ChildProcessByStdio<Nothing?, Nothing?, Nothing?>
+external fun spawn(
+    command: String,
+    options: SpawnOptionsWithStdioTuple<StdioNull, StdioNull, StdioNull>,
+): ChildProcessByStdio<Nothing?, Nothing?, Nothing?>
 
 external fun spawn(command: String, options: SpawnOptions): ChildProcess
 
 // overloads of spawn with 'args'
-external fun spawn(command: String, args: ReadonlyArray<String> = definedExternally, options: SpawnOptionsWithoutStdio = definedExternally): ChildProcessWithoutNullStreams
+external fun spawn(
+    command: String,
+    args: ReadonlyArray<String> = definedExternally,
+    options: SpawnOptionsWithoutStdio = definedExternally,
+): ChildProcessWithoutNullStreams
 
-external fun spawn(command: String, args: ReadonlyArray<String>, options: SpawnOptionsWithStdioTuple<StdioPipe, StdioPipe, StdioPipe>): ChildProcessByStdio<Writable, Readable, Readable>
+external fun spawn(
+    command: String,
+    args: ReadonlyArray<String>,
+    options: SpawnOptionsWithStdioTuple<StdioPipe, StdioPipe, StdioPipe>,
+): ChildProcessByStdio<Writable, Readable, Readable>
 
-external fun spawn(command: String, args: ReadonlyArray<String>, options: SpawnOptionsWithStdioTuple<StdioPipe, StdioPipe, StdioNull>): ChildProcessByStdio<Writable, Readable, Nothing?>
+external fun spawn(
+    command: String,
+    args: ReadonlyArray<String>,
+    options: SpawnOptionsWithStdioTuple<StdioPipe, StdioPipe, StdioNull>,
+): ChildProcessByStdio<Writable, Readable, Nothing?>
 
-external fun spawn(command: String, args: ReadonlyArray<String>, options: SpawnOptionsWithStdioTuple<StdioPipe, StdioNull, StdioPipe>): ChildProcessByStdio<Writable, Nothing?, Readable>
+external fun spawn(
+    command: String,
+    args: ReadonlyArray<String>,
+    options: SpawnOptionsWithStdioTuple<StdioPipe, StdioNull, StdioPipe>,
+): ChildProcessByStdio<Writable, Nothing?, Readable>
 
-external fun spawn(command: String, args: ReadonlyArray<String>, options: SpawnOptionsWithStdioTuple<StdioNull, StdioPipe, StdioPipe>): ChildProcessByStdio<Nothing?, Readable, Readable>
+external fun spawn(
+    command: String,
+    args: ReadonlyArray<String>,
+    options: SpawnOptionsWithStdioTuple<StdioNull, StdioPipe, StdioPipe>,
+): ChildProcessByStdio<Nothing?, Readable, Readable>
 
-external fun spawn(command: String, args: ReadonlyArray<String>, options: SpawnOptionsWithStdioTuple<StdioPipe, StdioNull, StdioNull>): ChildProcessByStdio<Writable, Nothing?, Nothing?>
+external fun spawn(
+    command: String,
+    args: ReadonlyArray<String>,
+    options: SpawnOptionsWithStdioTuple<StdioPipe, StdioNull, StdioNull>,
+): ChildProcessByStdio<Writable, Nothing?, Nothing?>
 
-external fun spawn(command: String, args: ReadonlyArray<String>, options: SpawnOptionsWithStdioTuple<StdioNull, StdioPipe, StdioNull>): ChildProcessByStdio<Nothing?, Readable, Nothing?>
+external fun spawn(
+    command: String,
+    args: ReadonlyArray<String>,
+    options: SpawnOptionsWithStdioTuple<StdioNull, StdioPipe, StdioNull>,
+): ChildProcessByStdio<Nothing?, Readable, Nothing?>
 
-external fun spawn(command: String, args: ReadonlyArray<String>, options: SpawnOptionsWithStdioTuple<StdioNull, StdioNull, StdioPipe>): ChildProcessByStdio<Nothing?, Nothing?, Readable>
+external fun spawn(
+    command: String,
+    args: ReadonlyArray<String>,
+    options: SpawnOptionsWithStdioTuple<StdioNull, StdioNull, StdioPipe>,
+): ChildProcessByStdio<Nothing?, Nothing?, Readable>
 
-external fun spawn(command: String, args: ReadonlyArray<String>, options: SpawnOptionsWithStdioTuple<StdioNull, StdioNull, StdioNull>): ChildProcessByStdio<Nothing?, Nothing?, Nothing?>
+external fun spawn(
+    command: String,
+    args: ReadonlyArray<String>,
+    options: SpawnOptionsWithStdioTuple<StdioNull, StdioNull, StdioNull>,
+): ChildProcessByStdio<Nothing?, Nothing?, Nothing?>
 
 external fun spawn(command: String, args: ReadonlyArray<String>, options: SpawnOptions): ChildProcess

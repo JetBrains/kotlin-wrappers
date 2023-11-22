@@ -8,5 +8,8 @@ package node.crypto
 
 sealed external interface DecipherGCM : Decipher {
     fun setAuthTag(buffer: js.buffer.ArrayBufferView): Unit /* this */
-    fun setAAD(buffer: js.buffer.ArrayBufferView, options: DecipherGCMSetAADOptions = definedExternally): Unit /* this */
+    fun setAAD(
+        buffer: js.buffer.ArrayBufferView,
+        options: DecipherGCMSetAADOptions = definedExternally,
+    ): Unit /* this */
 }

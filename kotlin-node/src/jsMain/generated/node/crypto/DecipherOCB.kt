@@ -8,5 +8,8 @@ package node.crypto
 
 sealed external interface DecipherOCB : Decipher {
     fun setAuthTag(buffer: js.buffer.ArrayBufferView): Unit /* this */
-    fun setAAD(buffer: js.buffer.ArrayBufferView, options: DecipherOCBSetAADOptions = definedExternally): Unit /* this */
+    fun setAAD(
+        buffer: js.buffer.ArrayBufferView,
+        options: DecipherOCBSetAADOptions = definedExternally,
+    ): Unit /* this */
 }

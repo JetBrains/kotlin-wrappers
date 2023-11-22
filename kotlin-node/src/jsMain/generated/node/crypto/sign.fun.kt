@@ -23,8 +23,23 @@ external fun sign(algorithm: String?, data: js.buffer.ArrayBufferView, key: Sign
 
 external fun sign(algorithm: String?, data: js.buffer.ArrayBufferView, key: SignPrivateKeyInput): node.buffer.Buffer
 
-external fun sign(algorithm: String?, data: js.buffer.ArrayBufferView, key: KeyLike, callback: (error: Throwable /* JsError */?, data: node.buffer.Buffer) -> Unit): Unit
+external fun sign(
+    algorithm: String?,
+    data: js.buffer.ArrayBufferView,
+    key: KeyLike,
+    callback: (error: Throwable /* JsError */?, data: node.buffer.Buffer) -> Unit,
+): Unit
 
-external fun sign(algorithm: String?, data: js.buffer.ArrayBufferView, key: SignKeyObjectInput, callback: (error: Throwable /* JsError */?, data: node.buffer.Buffer) -> Unit): Unit
+external fun sign(
+    algorithm: String?,
+    data: js.buffer.ArrayBufferView,
+    key: SignKeyObjectInput,
+    callback: (error: Throwable /* JsError */?, data: node.buffer.Buffer) -> Unit,
+): Unit
 
-external fun sign(algorithm: String?, data: js.buffer.ArrayBufferView, key: SignPrivateKeyInput, callback: (error: Throwable /* JsError */?, data: node.buffer.Buffer) -> Unit): Unit
+external fun sign(
+    algorithm: String?,
+    data: js.buffer.ArrayBufferView,
+    key: SignPrivateKeyInput,
+    callback: (error: Throwable /* JsError */?, data: node.buffer.Buffer) -> Unit,
+): Unit

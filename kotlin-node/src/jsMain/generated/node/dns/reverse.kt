@@ -13,4 +13,7 @@ package node.dns
  * one of the `DNS error codes`.
  * @since v0.1.16
  */
-external fun reverse(ip: String, callback: (err: node.ErrnoException?, hostnames: js.core.ReadonlyArray<String>) -> Unit): Unit
+external fun reverse(
+    ip: String,
+    callback: (err: node.ErrnoException?, hostnames: js.core.ReadonlyArray<String>) -> Unit,
+): Unit

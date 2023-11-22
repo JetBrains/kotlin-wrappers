@@ -90,13 +90,24 @@ package node.childProcess
  * @param command The command to run, with space-separated arguments.
  * @param callback called with the output when process terminates.
  */
-external fun exec(command: String, callback: (error: ExecException?, stdout: String, stderr: String) -> Unit = definedExternally): ChildProcess
+external fun exec(
+    command: String,
+    callback: (error: ExecException?, stdout: String, stderr: String) -> Unit = definedExternally,
+): ChildProcess
 
 // `options` with `"buffer"` or `null` for `encoding` means stdout/stderr are definitely `Buffer`.
-external fun exec(command: String, options: ExecBufferOptions, callback: (error: ExecException?, stdout: node.buffer.Buffer, stderr: node.buffer.Buffer) -> Unit = definedExternally): ChildProcess
+external fun exec(
+    command: String,
+    options: ExecBufferOptions,
+    callback: (error: ExecException?, stdout: node.buffer.Buffer, stderr: node.buffer.Buffer) -> Unit = definedExternally,
+): ChildProcess
 
 // `options` with well known `encoding` means stdout/stderr are definitely `string`.
-external fun exec(command: String, options: ExecStringOptions, callback: (error: ExecException?, stdout: String, stderr: String) -> Unit = definedExternally): ChildProcess
+external fun exec(
+    command: String,
+    options: ExecStringOptions,
+    callback: (error: ExecException?, stdout: String, stderr: String) -> Unit = definedExternally,
+): ChildProcess
 
 // `options` with an `encoding` whose type is `string` means stdout/stderr could either be `Buffer` or `string`.
 // There is no guarantee the `encoding` is unknown as `string` is a superset of `BufferEncoding`.
@@ -107,7 +118,11 @@ external fun exec(
 ): ChildProcess
 
 // `options` without an `encoding` means stdout/stderr are definitely `string`.
-external fun exec(command: String, options: ExecOptions, callback: (error: ExecException?, stdout: String, stderr: String) -> Unit = definedExternally): ChildProcess
+external fun exec(
+    command: String,
+    options: ExecOptions,
+    callback: (error: ExecException?, stdout: String, stderr: String) -> Unit = definedExternally,
+): ChildProcess
 
 // fallback if nothing else matches. Worst case is always `string | Buffer`.
 external fun exec(

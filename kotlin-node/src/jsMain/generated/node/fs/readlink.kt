@@ -17,21 +17,33 @@ package node.fs
  * the link path returned will be passed as a `Buffer` object.
  * @since v0.1.31
  */
-external fun readlink(path: PathLike, options: EncodingOption, callback: (err: node.ErrnoException?, linkString: String) -> Unit): Unit
+external fun readlink(
+    path: PathLike,
+    options: EncodingOption,
+    callback: (err: node.ErrnoException?, linkString: String) -> Unit,
+): Unit
 
 /**
  * Asynchronous readlink(2) - read value of a symbolic link.
  * @param path A path to a file. If a URL is provided, it must use the `file:` protocol.
  * @param options The encoding (or an object specifying the encoding), used as the encoding of the result. If not provided, `'utf8'` is used.
  */
-external fun readlink(path: PathLike, options: BufferEncodingOption, callback: (err: node.ErrnoException?, linkString: node.buffer.Buffer) -> Unit): Unit
+external fun readlink(
+    path: PathLike,
+    options: BufferEncodingOption,
+    callback: (err: node.ErrnoException?, linkString: node.buffer.Buffer) -> Unit,
+): Unit
 
 /**
  * Asynchronous readlink(2) - read value of a symbolic link.
  * @param path A path to a file. If a URL is provided, it must use the `file:` protocol.
  * @param options The encoding (or an object specifying the encoding), used as the encoding of the result. If not provided, `'utf8'` is used.
  */
-external fun readlink(path: PathLike, options: EncodingOption, callback: (err: node.ErrnoException?, linkString: Any /* string | Buffer */) -> Unit): Unit
+external fun readlink(
+    path: PathLike,
+    options: EncodingOption,
+    callback: (err: node.ErrnoException?, linkString: Any /* string | Buffer */) -> Unit,
+): Unit
 
 /**
  * Asynchronous readlink(2) - read value of a symbolic link.

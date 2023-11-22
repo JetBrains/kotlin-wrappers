@@ -12,7 +12,13 @@ package node.fs
  * this API: {@link read}.
  * @since v0.1.21
  */
-external fun readSync(fd: Number, buffer: js.buffer.ArrayBufferView, offset: Number, length: Number, position: ReadPosition?): Double
+external fun readSync(
+    fd: Number,
+    buffer: js.buffer.ArrayBufferView,
+    offset: Number,
+    length: Number,
+    position: ReadPosition?,
+): Double
 
 /**
  * Similar to the above `fs.readSync` function, this version takes an optional `options` object.

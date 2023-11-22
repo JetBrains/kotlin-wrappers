@@ -18,9 +18,15 @@ package node.fs
  * If `options.withFileTypes` is set to `true`, the result will contain `fs.Dirent` objects.
  * @since v0.1.21
  */
-external fun readdirSync(path: PathLike, options: (ReaddirSyncStringOptions)? = definedExternally): js.core.ReadonlyArray<String>
+external fun readdirSync(
+    path: PathLike,
+    options: (ReaddirSyncStringOptions)? = definedExternally,
+): js.core.ReadonlyArray<String>
 
-external fun readdirSync(path: PathLike, options: node.buffer.BufferEncoding? = definedExternally): js.core.ReadonlyArray<String>
+external fun readdirSync(
+    path: PathLike,
+    options: node.buffer.BufferEncoding? = definedExternally,
+): js.core.ReadonlyArray<String>
 
 /**
  * Synchronous readdir(3) - read a directory.
@@ -36,7 +42,10 @@ external fun readdirSync(path: PathLike, options: String /* 'buffer' */): js.cor
  * @param path A path to a file. If a URL is provided, it must use the `file:` protocol.
  * @param options The encoding (or an object specifying the encoding), used as the encoding of the result. If not provided, `'utf8'` is used.
  */
-external fun readdirSync(path: PathLike, options: (ReaddirSyncOptions)? = definedExternally): Any /* string[] | Buffer[] */
+external fun readdirSync(
+    path: PathLike,
+    options: (ReaddirSyncOptions)? = definedExternally,
+): Any /* string[] | Buffer[] */
 
 
 /**

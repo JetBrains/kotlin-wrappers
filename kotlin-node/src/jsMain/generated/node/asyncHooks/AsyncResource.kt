@@ -77,7 +77,11 @@ external class AsyncResource {
      * @param thisArg The receiver to be used for the function call.
      * @param args Optional arguments to pass to the function.
      */
-    fun <This, Result> runInAsyncScope(fn: Function<Any?> /* (this: This, ...args: any[]) => Result */, thisArg: This = definedExternally, vararg args: Any? /* js.core.ReadonlyArray<Any?> */): Result
+    fun <This, Result> runInAsyncScope(
+        fn: Function<Any?>, /* (this: This, ...args: any[]) => Result */
+        thisArg: This = definedExternally,
+        vararg args: Any?, /* js.core.ReadonlyArray<Any?> */
+    ): Result
 
     /**
      * Call all `destroy` hooks. This should only ever be called once. An error will
@@ -109,7 +113,11 @@ external class AsyncResource {
          * @param fn The function to bind to the current execution context.
          * @param type An optional name to associate with the underlying `AsyncResource`.
          */
-        fun <Func : Function<Any?> /* (this: ThisArg, ...args: any[]) => any */, ThisArg> bind(fn: Func, type: String = definedExternally, thisArg: ThisArg = definedExternally): Func
+        fun <Func : Function<Any?> /* (this: ThisArg, ...args: any[]) => any */, ThisArg> bind(
+            fn: Func,
+            type: String = definedExternally,
+            thisArg: ThisArg = definedExternally,
+        ): Func
     }
 
 }

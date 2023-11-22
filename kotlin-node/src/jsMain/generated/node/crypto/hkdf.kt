@@ -33,6 +33,20 @@ import js.buffer.ArrayBuffer
  * @param keylen The length of the key to generate. Must be greater than 0. The maximum allowable value is `255` times the number of bytes produced by the selected digest function (e.g. `sha512`
  * generates 64-byte hashes, making the maximum HKDF output 16320 bytes).
  */
-external fun hkdf(digest: String, irm: BinaryLike, salt: BinaryLike, info: BinaryLike, keylen: Number, callback: (err: Throwable /* JsError */?, derivedKey: ArrayBuffer) -> Unit): Unit
+external fun hkdf(
+    digest: String,
+    irm: BinaryLike,
+    salt: BinaryLike,
+    info: BinaryLike,
+    keylen: Number,
+    callback: (err: Throwable /* JsError */?, derivedKey: ArrayBuffer) -> Unit,
+): Unit
 
-external fun hkdf(digest: String, irm: KeyObject, salt: BinaryLike, info: BinaryLike, keylen: Number, callback: (err: Throwable /* JsError */?, derivedKey: ArrayBuffer) -> Unit): Unit
+external fun hkdf(
+    digest: String,
+    irm: KeyObject,
+    salt: BinaryLike,
+    info: BinaryLike,
+    keylen: Number,
+    callback: (err: Throwable /* JsError */?, derivedKey: ArrayBuffer) -> Unit,
+): Unit

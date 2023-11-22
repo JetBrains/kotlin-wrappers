@@ -86,7 +86,11 @@ external class WriteStream : node.stream.Writable {
     fun once(event: js.core.Symbol, listener: Function<Any?> /* (...args: any[]) => void */): Unit /* this */
     fun prependListener(event: WriteStreamEvent.CLOSE, listener: () -> Unit): Unit /* this */
     fun prependListener(event: WriteStreamEvent.DRAIN, listener: () -> Unit): Unit /* this */
-    fun prependListener(event: WriteStreamEvent.ERROR, listener: (err: Throwable /* JsError */) -> Unit): Unit /* this */
+    fun prependListener(
+        event: WriteStreamEvent.ERROR,
+        listener: (err: Throwable /* JsError */) -> Unit,
+    ): Unit /* this */
+
     fun prependListener(event: WriteStreamEvent.FINISH, listener: () -> Unit): Unit /* this */
     fun prependListener(event: WriteStreamEvent.OPEN, listener: (fd: Double) -> Unit): Unit /* this */
     fun prependListener(event: WriteStreamEvent.PIPE, listener: (src: node.stream.Readable) -> Unit): Unit /* this */
@@ -97,13 +101,28 @@ external class WriteStream : node.stream.Writable {
     fun prependListener(event: js.core.Symbol, listener: Function<Any?> /* (...args: any[]) => void */): Unit /* this */
     fun prependOnceListener(event: WriteStreamEvent.CLOSE, listener: () -> Unit): Unit /* this */
     fun prependOnceListener(event: WriteStreamEvent.DRAIN, listener: () -> Unit): Unit /* this */
-    fun prependOnceListener(event: WriteStreamEvent.ERROR, listener: (err: Throwable /* JsError */) -> Unit): Unit /* this */
+    fun prependOnceListener(
+        event: WriteStreamEvent.ERROR,
+        listener: (err: Throwable /* JsError */) -> Unit,
+    ): Unit /* this */
+
     fun prependOnceListener(event: WriteStreamEvent.FINISH, listener: () -> Unit): Unit /* this */
     fun prependOnceListener(event: WriteStreamEvent.OPEN, listener: (fd: Double) -> Unit): Unit /* this */
-    fun prependOnceListener(event: WriteStreamEvent.PIPE, listener: (src: node.stream.Readable) -> Unit): Unit /* this */
+    fun prependOnceListener(
+        event: WriteStreamEvent.PIPE,
+        listener: (src: node.stream.Readable) -> Unit,
+    ): Unit /* this */
+
     fun prependOnceListener(event: WriteStreamEvent.READY, listener: () -> Unit): Unit /* this */
-    fun prependOnceListener(event: WriteStreamEvent.UNPIPE, listener: (src: node.stream.Readable) -> Unit): Unit /* this */
+    fun prependOnceListener(
+        event: WriteStreamEvent.UNPIPE,
+        listener: (src: node.stream.Readable) -> Unit,
+    ): Unit /* this */
+
     fun prependOnceListener(event: String, listener: Function<Any?> /* (...args: any[]) => void */): Unit /* this */
 
-    fun prependOnceListener(event: js.core.Symbol, listener: Function<Any?> /* (...args: any[]) => void */): Unit /* this */
+    fun prependOnceListener(
+        event: js.core.Symbol,
+        listener: Function<Any?>, /* (...args: any[]) => void */
+    ): Unit /* this */
 }

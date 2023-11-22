@@ -47,6 +47,14 @@ package node.crypto
  * @since v0.1.94
  * @param options `stream.transform` options
  */
-external fun createHmac(algorithm: String, key: BinaryLike, options: node.stream.TransformOptions = definedExternally): Hmac
+external fun createHmac(
+    algorithm: String,
+    key: BinaryLike,
+    options: node.stream.TransformOptions = definedExternally,
+): Hmac
 
-external fun createHmac(algorithm: String, key: KeyObject, options: node.stream.TransformOptions = definedExternally): Hmac
+external fun createHmac(
+    algorithm: String,
+    key: KeyObject,
+    options: node.stream.TransformOptions = definedExternally,
+): Hmac

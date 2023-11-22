@@ -90,7 +90,11 @@ sealed external class Buffer : Uint8Array {
      * @param [start=0] The byte offset to start decoding at.
      * @param [end=buf.length] The byte offset to stop decoding at (not inclusive).
      */
-    fun toString(encoding: BufferEncoding = definedExternally, start: Number = definedExternally, end: Number = definedExternally): String
+    fun toString(
+        encoding: BufferEncoding = definedExternally,
+        start: Number = definedExternally,
+        end: Number = definedExternally,
+    ): String
 
     /**
      * Returns a JSON representation of `buf`. [`JSON.stringify()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify) implicitly calls
@@ -256,7 +260,12 @@ sealed external class Buffer : Uint8Array {
      * @param [sourceEnd=buf.length] The offset within `buf` at which to stop copying (not inclusive).
      * @return The number of bytes copied.
      */
-    fun copy(target: Uint8Array, targetStart: Number = definedExternally, sourceStart: Number = definedExternally, sourceEnd: Number = definedExternally): Double
+    fun copy(
+        target: Uint8Array,
+        targetStart: Number = definedExternally,
+        sourceStart: Number = definedExternally,
+        sourceEnd: Number = definedExternally,
+    ): Double
 
     /**
      * Returns a new `Buffer` that references the same memory as the original, but
@@ -1514,11 +1523,26 @@ sealed external class Buffer : Uint8Array {
      * @param [encoding='utf8'] The encoding for `value` if `value` is a string.
      * @return A reference to `buf`.
      */
-    fun fill(value: String, offset: Number = definedExternally, end: Number = definedExternally, encoding: BufferEncoding = definedExternally): Unit /* this */
+    fun fill(
+        value: String,
+        offset: Number = definedExternally,
+        end: Number = definedExternally,
+        encoding: BufferEncoding = definedExternally,
+    ): Unit /* this */
 
-    fun fill(value: Uint8Array, offset: Number = definedExternally, end: Number = definedExternally, encoding: BufferEncoding = definedExternally): Unit /* this */
+    fun fill(
+        value: Uint8Array,
+        offset: Number = definedExternally,
+        end: Number = definedExternally,
+        encoding: BufferEncoding = definedExternally,
+    ): Unit /* this */
 
-    fun fill(value: Double, offset: Number = definedExternally, end: Number = definedExternally, encoding: BufferEncoding = definedExternally): Unit /* this */
+    fun fill(
+        value: Double,
+        offset: Number = definedExternally,
+        end: Number = definedExternally,
+        encoding: BufferEncoding = definedExternally,
+    ): Unit /* this */
 
     /**
      * If `value` is:
@@ -1588,11 +1612,23 @@ sealed external class Buffer : Uint8Array {
      * @param [encoding='utf8'] If `value` is a string, this is the encoding used to determine the binary representation of the string that will be searched for in `buf`.
      * @return The index of the first occurrence of `value` in `buf`, or `-1` if `buf` does not contain `value`.
      */
-    fun indexOf(value: String, byteOffset: Number = definedExternally, encoding: BufferEncoding = definedExternally): Double
+    fun indexOf(
+        value: String,
+        byteOffset: Number = definedExternally,
+        encoding: BufferEncoding = definedExternally,
+    ): Double
 
-    fun indexOf(value: Double, byteOffset: Number = definedExternally, encoding: BufferEncoding = definedExternally): Double
+    fun indexOf(
+        value: Double,
+        byteOffset: Number = definedExternally,
+        encoding: BufferEncoding = definedExternally,
+    ): Double
 
-    fun indexOf(value: Uint8Array, byteOffset: Number = definedExternally, encoding: BufferEncoding = definedExternally): Double
+    fun indexOf(
+        value: Uint8Array,
+        byteOffset: Number = definedExternally,
+        encoding: BufferEncoding = definedExternally,
+    ): Double
 
     /**
      * Identical to `buf.indexOf()`, except the last occurrence of `value` is found
@@ -1661,11 +1697,23 @@ sealed external class Buffer : Uint8Array {
      * @param [encoding='utf8'] If `value` is a string, this is the encoding used to determine the binary representation of the string that will be searched for in `buf`.
      * @return The index of the last occurrence of `value` in `buf`, or `-1` if `buf` does not contain `value`.
      */
-    fun lastIndexOf(value: String, byteOffset: Number = definedExternally, encoding: BufferEncoding = definedExternally): Double
+    fun lastIndexOf(
+        value: String,
+        byteOffset: Number = definedExternally,
+        encoding: BufferEncoding = definedExternally,
+    ): Double
 
-    fun lastIndexOf(value: Double, byteOffset: Number = definedExternally, encoding: BufferEncoding = definedExternally): Double
+    fun lastIndexOf(
+        value: Double,
+        byteOffset: Number = definedExternally,
+        encoding: BufferEncoding = definedExternally,
+    ): Double
 
-    fun lastIndexOf(value: Uint8Array, byteOffset: Number = definedExternally, encoding: BufferEncoding = definedExternally): Double
+    fun lastIndexOf(
+        value: Uint8Array,
+        byteOffset: Number = definedExternally,
+        encoding: BufferEncoding = definedExternally,
+    ): Double
 
     /**
      * Equivalent to `buf.indexOf() !== -1`.
@@ -1696,11 +1744,23 @@ sealed external class Buffer : Uint8Array {
      * @param [encoding='utf8'] If `value` is a string, this is its encoding.
      * @return `true` if `value` was found in `buf`, `false` otherwise.
      */
-    fun includes(value: String, byteOffset: Number = definedExternally, encoding: BufferEncoding = definedExternally): Boolean
+    fun includes(
+        value: String,
+        byteOffset: Number = definedExternally,
+        encoding: BufferEncoding = definedExternally,
+    ): Boolean
 
-    fun includes(value: Double, byteOffset: Number = definedExternally, encoding: BufferEncoding = definedExternally): Boolean
+    fun includes(
+        value: Double,
+        byteOffset: Number = definedExternally,
+        encoding: BufferEncoding = definedExternally,
+    ): Boolean
 
-    fun includes(value: Buffer, byteOffset: Number = definedExternally, encoding: BufferEncoding = definedExternally): Boolean
+    fun includes(
+        value: Buffer,
+        byteOffset: Number = definedExternally,
+        encoding: BufferEncoding = definedExternally,
+    ): Boolean
 
     companion object {
         /**
@@ -1720,7 +1780,11 @@ sealed external class Buffer : Uint8Array {
          * `Buffer.from(array)` and `Buffer.from(string)` may also use the internal`Buffer` pool like `Buffer.allocUnsafe()` does.
          * @since v5.10.0
          */
-        fun from(arrayBuffer: WithImplicitCoercion<Any /* ArrayBuffer | SharedArrayBuffer */>, byteOffset: Number = definedExternally, length: Number = definedExternally): Buffer
+        fun from(
+            arrayBuffer: WithImplicitCoercion<Any /* ArrayBuffer | SharedArrayBuffer */>,
+            byteOffset: Number = definedExternally,
+            length: Number = definedExternally,
+        ): Buffer
 
         /**
          * Creates a new Buffer using the passed {data}
@@ -1870,7 +1934,11 @@ sealed external class Buffer : Uint8Array {
          * @param offset The starting offset within `view`.
          * @param length The number of elements from `view` to copy.
          */
-        fun copyBytesFrom(view: js.typedarrays.TypedArray<*, *>, offset: Number = definedExternally, length: Number = definedExternally): Buffer
+        fun copyBytesFrom(
+            view: js.typedarrays.TypedArray<*, *>,
+            offset: Number = definedExternally,
+            length: Number = definedExternally,
+        ): Buffer
 
         /**
          * Compares `buf1` to `buf2`, typically for the purpose of sorting arrays of`Buffer` instances. This is equivalent to calling `buf1.compare(buf2)`.

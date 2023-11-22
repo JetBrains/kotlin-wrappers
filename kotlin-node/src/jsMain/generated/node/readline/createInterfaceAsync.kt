@@ -53,7 +53,12 @@ package node.readline
  * }
  * ```
  */
-external fun createInterface(input: node.ReadableStream, output: node.WritableStream = definedExternally, completer: Completer = definedExternally, terminal: Boolean = definedExternally): Interface
+external fun createInterface(
+    input: node.ReadableStream,
+    output: node.WritableStream = definedExternally,
+    completer: Completer = definedExternally,
+    terminal: Boolean = definedExternally,
+): Interface
 
 external fun createInterface(
     input: node.ReadableStream,

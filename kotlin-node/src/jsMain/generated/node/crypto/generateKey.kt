@@ -21,4 +21,8 @@ package node.crypto
  * @since v15.0.0
  * @param type The intended use of the generated secret key. Currently accepted values are `'hmac'` and `'aes'`.
  */
-external fun generateKey(type: GenerateKeyType, options: GenerateKeyOptions, callback: (err: Throwable /* JsError */?, key: KeyObject) -> Unit): Unit
+external fun generateKey(
+    type: GenerateKeyType,
+    options: GenerateKeyOptions,
+    callback: (err: Throwable /* JsError */?, key: KeyObject) -> Unit,
+): Unit

@@ -10,4 +10,7 @@ package node.dns
  * will contain an array of canonical name records available for the `hostname`(e.g. `['bar.example.com']`).
  * @since v0.3.2
  */
-external fun resolveCname(hostname: String, callback: (err: node.ErrnoException?, addresses: js.core.ReadonlyArray<String>) -> Unit): Unit
+external fun resolveCname(
+    hostname: String,
+    callback: (err: node.ErrnoException?, addresses: js.core.ReadonlyArray<String>) -> Unit,
+): Unit

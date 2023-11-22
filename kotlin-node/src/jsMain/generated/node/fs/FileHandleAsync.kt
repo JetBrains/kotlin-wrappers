@@ -37,7 +37,10 @@ sealed external interface FileHandle {
 
 
     @JsName("appendFile")
-    fun appendFileAsync(data: Uint8Array, options: (FileHandleAppendFileAsyncOptions)? = definedExternally): Promise<Unit>
+    fun appendFileAsync(
+        data: Uint8Array,
+        options: (FileHandleAppendFileAsyncOptions)? = definedExternally,
+    ): Promise<Unit>
 
 
     @JsName("appendFile")
@@ -50,7 +53,10 @@ sealed external interface FileHandle {
         "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
         "DECLARATION_CANT_BE_INLINED",
     )
-    suspend inline fun appendFile(data: String, options: (FileHandleAppendFileAsyncOptions)? = definedExternally): Unit =
+    suspend inline fun appendFile(
+        data: String,
+        options: (FileHandleAppendFileAsyncOptions)? = definedExternally,
+    ): Unit =
         appendFileAsync(
             data, options
         ).await()
@@ -74,7 +80,10 @@ sealed external interface FileHandle {
         "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
         "DECLARATION_CANT_BE_INLINED",
     )
-    suspend inline fun appendFile(data: Uint8Array, options: (FileHandleAppendFileAsyncOptions)? = definedExternally): Unit =
+    suspend inline fun appendFile(
+        data: Uint8Array,
+        options: (FileHandleAppendFileAsyncOptions)? = definedExternally,
+    ): Unit =
         appendFileAsync(
             data, options
         ).await()
@@ -640,7 +649,10 @@ sealed external interface FileHandle {
         "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
         "DECLARATION_CANT_BE_INLINED",
     )
-    suspend inline fun writeFile(data: Uint8Array, options: (FileHandleWriteFileAsyncOptions)? = definedExternally): Unit =
+    suspend inline fun writeFile(
+        data: Uint8Array,
+        options: (FileHandleWriteFileAsyncOptions)? = definedExternally,
+    ): Unit =
         writeFileAsync(
             data, options
         ).await()
@@ -703,7 +715,11 @@ sealed external interface FileHandle {
 
 
     @JsName("write")
-    fun writeAsync(data: String, position: Double? = definedExternally, encoding: node.buffer.BufferEncoding? = definedExternally): Promise<FileHandleWriteStringResultPayload>
+    fun writeAsync(
+        data: String,
+        position: Double? = definedExternally,
+        encoding: node.buffer.BufferEncoding? = definedExternally,
+    ): Promise<FileHandleWriteStringResultPayload>
 
 
     @Suppress(
@@ -712,7 +728,11 @@ sealed external interface FileHandle {
         "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
         "DECLARATION_CANT_BE_INLINED",
     )
-    suspend inline fun write(data: String, position: Double? = definedExternally, encoding: node.buffer.BufferEncoding? = definedExternally): FileHandleWriteStringResultPayload =
+    suspend inline fun write(
+        data: String,
+        position: Double? = definedExternally,
+        encoding: node.buffer.BufferEncoding? = definedExternally,
+    ): FileHandleWriteStringResultPayload =
         writeAsync(
             data, position, encoding
         ).await()
@@ -734,7 +754,10 @@ sealed external interface FileHandle {
      */
 
     @JsName("writev")
-    fun writevAsync(buffers: ReadonlyArray<js.buffer.ArrayBufferView>, position: Number = definedExternally): Promise<WriteVResult>
+    fun writevAsync(
+        buffers: ReadonlyArray<js.buffer.ArrayBufferView>,
+        position: Number = definedExternally,
+    ): Promise<WriteVResult>
 
 
     @Suppress(
@@ -743,7 +766,10 @@ sealed external interface FileHandle {
         "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
         "DECLARATION_CANT_BE_INLINED",
     )
-    suspend inline fun writev(buffers: ReadonlyArray<js.buffer.ArrayBufferView>, position: Number = definedExternally): WriteVResult =
+    suspend inline fun writev(
+        buffers: ReadonlyArray<js.buffer.ArrayBufferView>,
+        position: Number = definedExternally,
+    ): WriteVResult =
         writevAsync(
             buffers, position
         ).await()
@@ -756,7 +782,10 @@ sealed external interface FileHandle {
      */
 
     @JsName("readv")
-    fun readvAsync(buffers: ReadonlyArray<js.buffer.ArrayBufferView>, position: Number = definedExternally): Promise<ReadVResult>
+    fun readvAsync(
+        buffers: ReadonlyArray<js.buffer.ArrayBufferView>,
+        position: Number = definedExternally,
+    ): Promise<ReadVResult>
 
 
     @Suppress(
@@ -765,7 +794,10 @@ sealed external interface FileHandle {
         "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
         "DECLARATION_CANT_BE_INLINED",
     )
-    suspend inline fun readv(buffers: ReadonlyArray<js.buffer.ArrayBufferView>, position: Number = definedExternally): ReadVResult =
+    suspend inline fun readv(
+        buffers: ReadonlyArray<js.buffer.ArrayBufferView>,
+        position: Number = definedExternally,
+    ): ReadVResult =
         readvAsync(
             buffers, position
         ).await()

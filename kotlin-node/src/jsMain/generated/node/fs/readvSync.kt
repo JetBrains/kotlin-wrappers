@@ -12,4 +12,8 @@ import js.core.ReadonlyArray
  * @since v13.13.0, v12.17.0
  * @return The number of bytes read.
  */
-external fun readvSync(fd: Number, buffers: ReadonlyArray<js.buffer.ArrayBufferView>, position: Number = definedExternally): Double
+external fun readvSync(
+    fd: Number,
+    buffers: ReadonlyArray<js.buffer.ArrayBufferView>,
+    position: Number = definedExternally,
+): Double

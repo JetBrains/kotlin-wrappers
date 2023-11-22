@@ -24,4 +24,7 @@ package node.dns
  * ```
  * @since v0.1.27
  */
-external fun resolveSrv(hostname: String, callback: (err: node.ErrnoException?, addresses: js.core.ReadonlyArray<SrvRecord>) -> Unit): Unit
+external fun resolveSrv(
+    hostname: String,
+    callback: (err: node.ErrnoException?, addresses: js.core.ReadonlyArray<SrvRecord>) -> Unit,
+): Unit

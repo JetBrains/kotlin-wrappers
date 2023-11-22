@@ -183,28 +183,40 @@ external class Resolver {
 
 
     @JsName("resolve")
-    fun resolveAsync(hostname: String, rrtype: ResourceRecordType.TXT): Promise<js.core.ReadonlyArray<js.core.ReadonlyArray<String>>>
+    fun resolveAsync(
+        hostname: String,
+        rrtype: ResourceRecordType.TXT,
+    ): Promise<js.core.ReadonlyArray<js.core.ReadonlyArray<String>>>
 
 
     @Suppress(
         "WRONG_BODY_OF_EXTERNAL_DECLARATION",
         "INLINE_EXTERNAL_DECLARATION",
     )
-    suspend inline fun resolve(hostname: String, rrtype: ResourceRecordType.TXT): js.core.ReadonlyArray<js.core.ReadonlyArray<String>> =
+    suspend inline fun resolve(
+        hostname: String,
+        rrtype: ResourceRecordType.TXT,
+    ): js.core.ReadonlyArray<js.core.ReadonlyArray<String>> =
         resolveAsync(
             hostname, rrtype
         ).await()
 
 
     @JsName("resolve")
-    fun resolveAsync(hostname: String, rrtype: String): Promise<Any /* string[] | SoaRecord | MxRecord[] | NaptrRecord[] | SrvRecord[] | string[][] | AnyRecord[] */>
+    fun resolveAsync(
+        hostname: String,
+        rrtype: String,
+    ): Promise<Any /* string[] | SoaRecord | MxRecord[] | NaptrRecord[] | SrvRecord[] | string[][] | AnyRecord[] */>
 
 
     @Suppress(
         "WRONG_BODY_OF_EXTERNAL_DECLARATION",
         "INLINE_EXTERNAL_DECLARATION",
     )
-    suspend inline fun resolve(hostname: String, rrtype: String): Any /* string[] | SoaRecord | MxRecord[] | NaptrRecord[] | SrvRecord[] | string[][] | AnyRecord[] */ =
+    suspend inline fun resolve(
+        hostname: String,
+        rrtype: String,
+    ): Any /* string[] | SoaRecord | MxRecord[] | NaptrRecord[] | SrvRecord[] | string[][] | AnyRecord[] */ =
         resolveAsync(
             hostname, rrtype
         ).await()
@@ -232,7 +244,10 @@ external class Resolver {
         "WRONG_BODY_OF_EXTERNAL_DECLARATION",
         "INLINE_EXTERNAL_DECLARATION",
     )
-    suspend inline fun resolve4(hostname: String, options: ResolveWithTtlOptions): js.core.ReadonlyArray<RecordWithTtl> =
+    suspend inline fun resolve4(
+        hostname: String,
+        options: ResolveWithTtlOptions,
+    ): js.core.ReadonlyArray<RecordWithTtl> =
         resolve4Async(
             hostname, options
         ).await()
@@ -274,7 +289,10 @@ external class Resolver {
         "WRONG_BODY_OF_EXTERNAL_DECLARATION",
         "INLINE_EXTERNAL_DECLARATION",
     )
-    suspend inline fun resolve6(hostname: String, options: ResolveWithTtlOptions): js.core.ReadonlyArray<RecordWithTtl> =
+    suspend inline fun resolve6(
+        hostname: String,
+        options: ResolveWithTtlOptions,
+    ): js.core.ReadonlyArray<RecordWithTtl> =
         resolve6Async(
             hostname, options
         ).await()

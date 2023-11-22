@@ -59,9 +59,19 @@ import js.typedarrays.Uint8Array
  * @since v0.6.7
  * @param path filename or file descriptor
  */
-external fun appendFile(path: PathOrFileDescriptor, data: String, options: WriteFileOptions, callback: NoParamCallback): Unit
+external fun appendFile(
+    path: PathOrFileDescriptor,
+    data: String,
+    options: WriteFileOptions,
+    callback: NoParamCallback,
+): Unit
 
-external fun appendFile(path: PathOrFileDescriptor, data: Uint8Array, options: WriteFileOptions, callback: NoParamCallback): Unit
+external fun appendFile(
+    path: PathOrFileDescriptor,
+    data: Uint8Array,
+    options: WriteFileOptions,
+    callback: NoParamCallback,
+): Unit
 
 /**
  * Asynchronously append data to a file, creating the file if it does not exist.

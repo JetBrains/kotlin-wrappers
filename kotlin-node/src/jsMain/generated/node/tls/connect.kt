@@ -53,6 +53,15 @@ package node.tls
  */
 external fun connect(options: ConnectionOptions, secureConnectListener: () -> Unit = definedExternally): TLSSocket
 
-external fun connect(port: Number, host: String = definedExternally, options: ConnectionOptions = definedExternally, secureConnectListener: () -> Unit = definedExternally): TLSSocket
+external fun connect(
+    port: Number,
+    host: String = definedExternally,
+    options: ConnectionOptions = definedExternally,
+    secureConnectListener: () -> Unit = definedExternally,
+): TLSSocket
 
-external fun connect(port: Number, options: ConnectionOptions = definedExternally, secureConnectListener: () -> Unit = definedExternally): TLSSocket
+external fun connect(
+    port: Number,
+    options: ConnectionOptions = definedExternally,
+    secureConnectListener: () -> Unit = definedExternally,
+): TLSSocket

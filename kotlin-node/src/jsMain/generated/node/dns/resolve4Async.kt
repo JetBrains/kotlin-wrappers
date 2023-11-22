@@ -18,7 +18,10 @@ external fun resolve4Async(hostname: String): Promise<js.core.ReadonlyArray<Stri
 
 
 @JsName("resolve4")
-external fun resolve4Async(hostname: String, options: ResolveWithTtlOptions): Promise<js.core.ReadonlyArray<RecordWithTtl>>
+external fun resolve4Async(
+    hostname: String,
+    options: ResolveWithTtlOptions,
+): Promise<js.core.ReadonlyArray<RecordWithTtl>>
 
 
 @JsName("resolve4")

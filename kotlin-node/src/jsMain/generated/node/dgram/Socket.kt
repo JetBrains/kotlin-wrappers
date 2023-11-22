@@ -100,7 +100,12 @@ external class Socket : EventEmitter {
      * @since v0.1.99
      * @param callback with no parameters. Called when binding is complete.
      */
-    fun bind(port: Number = definedExternally, address: String = definedExternally, callback: () -> Unit = definedExternally): Unit /* this */
+    fun bind(
+        port: Number = definedExternally,
+        address: String = definedExternally,
+        callback: () -> Unit = definedExternally,
+    ): Unit /* this */
+
     fun bind(port: Number = definedExternally, callback: () -> Unit = definedExternally): Unit /* this */
     fun bind(callback: () -> Unit = definedExternally): Unit /* this */
     fun bind(options: BindOptions, callback: () -> Unit = definedExternally): Unit /* this */
@@ -278,9 +283,19 @@ external class Socket : EventEmitter {
      * @param address Destination host name or IP address.
      * @param callback Called when the message has been sent.
      */
-    fun send(msg: String, port: Number = definedExternally, address: String = definedExternally, callback: (error: Throwable /* JsError */?, bytes: Double) -> Unit = definedExternally): Unit
+    fun send(
+        msg: String,
+        port: Number = definedExternally,
+        address: String = definedExternally,
+        callback: (error: Throwable /* JsError */?, bytes: Double) -> Unit = definedExternally,
+    ): Unit
 
-    fun send(msg: Uint8Array, port: Number = definedExternally, address: String = definedExternally, callback: (error: Throwable /* JsError */?, bytes: Double) -> Unit = definedExternally): Unit
+    fun send(
+        msg: Uint8Array,
+        port: Number = definedExternally,
+        address: String = definedExternally,
+        callback: (error: Throwable /* JsError */?, bytes: Double) -> Unit = definedExternally,
+    ): Unit
 
     fun send(
         msg: ReadonlyArray<Any?>,
@@ -289,16 +304,36 @@ external class Socket : EventEmitter {
         callback: (error: Throwable /* JsError */?, bytes: Double) -> Unit = definedExternally,
     ): Unit
 
-    fun send(msg: String, port: Number = definedExternally, callback: (error: Throwable /* JsError */?, bytes: Double) -> Unit = definedExternally): Unit
+    fun send(
+        msg: String,
+        port: Number = definedExternally,
+        callback: (error: Throwable /* JsError */?, bytes: Double) -> Unit = definedExternally,
+    ): Unit
 
-    fun send(msg: Uint8Array, port: Number = definedExternally, callback: (error: Throwable /* JsError */?, bytes: Double) -> Unit = definedExternally): Unit
+    fun send(
+        msg: Uint8Array,
+        port: Number = definedExternally,
+        callback: (error: Throwable /* JsError */?, bytes: Double) -> Unit = definedExternally,
+    ): Unit
 
-    fun send(msg: ReadonlyArray<Any?>, port: Number = definedExternally, callback: (error: Throwable /* JsError */?, bytes: Double) -> Unit = definedExternally): Unit
+    fun send(
+        msg: ReadonlyArray<Any?>,
+        port: Number = definedExternally,
+        callback: (error: Throwable /* JsError */?, bytes: Double) -> Unit = definedExternally,
+    ): Unit
+
     fun send(msg: String, callback: (error: Throwable /* JsError */?, bytes: Double) -> Unit = definedExternally): Unit
 
-    fun send(msg: Uint8Array, callback: (error: Throwable /* JsError */?, bytes: Double) -> Unit = definedExternally): Unit
+    fun send(
+        msg: Uint8Array,
+        callback: (error: Throwable /* JsError */?, bytes: Double) -> Unit = definedExternally,
+    ): Unit
 
-    fun send(msg: ReadonlyArray<Any?>, callback: (error: Throwable /* JsError */?, bytes: Double) -> Unit = definedExternally): Unit
+    fun send(
+        msg: ReadonlyArray<Any?>,
+        callback: (error: Throwable /* JsError */?, bytes: Double) -> Unit = definedExternally,
+    ): Unit
+
     fun send(
         msg: String,
         offset: Number,
@@ -317,12 +352,35 @@ external class Socket : EventEmitter {
         callback: (error: Throwable /* JsError */?, bytes: Double) -> Unit = definedExternally,
     ): Unit
 
-    fun send(msg: String, offset: Number, length: Number, port: Number = definedExternally, callback: (error: Throwable /* JsError */?, bytes: Double) -> Unit = definedExternally): Unit
+    fun send(
+        msg: String,
+        offset: Number,
+        length: Number,
+        port: Number = definedExternally,
+        callback: (error: Throwable /* JsError */?, bytes: Double) -> Unit = definedExternally,
+    ): Unit
 
-    fun send(msg: Uint8Array, offset: Number, length: Number, port: Number = definedExternally, callback: (error: Throwable /* JsError */?, bytes: Double) -> Unit = definedExternally): Unit
-    fun send(msg: String, offset: Number, length: Number, callback: (error: Throwable /* JsError */?, bytes: Double) -> Unit = definedExternally): Unit
+    fun send(
+        msg: Uint8Array,
+        offset: Number,
+        length: Number,
+        port: Number = definedExternally,
+        callback: (error: Throwable /* JsError */?, bytes: Double) -> Unit = definedExternally,
+    ): Unit
 
-    fun send(msg: Uint8Array, offset: Number, length: Number, callback: (error: Throwable /* JsError */?, bytes: Double) -> Unit = definedExternally): Unit
+    fun send(
+        msg: String,
+        offset: Number,
+        length: Number,
+        callback: (error: Throwable /* JsError */?, bytes: Double) -> Unit = definedExternally,
+    ): Unit
+
+    fun send(
+        msg: Uint8Array,
+        offset: Number,
+        length: Number,
+        callback: (error: Throwable /* JsError */?, bytes: Double) -> Unit = definedExternally,
+    ): Unit
 
     /**
      * Sets or clears the `SO_BROADCAST` socket option. When set to `true`, UDP
@@ -473,7 +531,11 @@ external class Socket : EventEmitter {
      * port, listening on all interfaces.
      * @since v13.1.0, v12.16.0
      */
-    fun addSourceSpecificMembership(sourceAddress: String, groupAddress: String, multicastInterface: String = definedExternally): Unit
+    fun addSourceSpecificMembership(
+        sourceAddress: String,
+        groupAddress: String,
+        multicastInterface: String = definedExternally,
+    ): Unit
 
     /**
      * Instructs the kernel to leave a source-specific multicast channel at the given`sourceAddress` and `groupAddress` using the `IP_DROP_SOURCE_MEMBERSHIP`socket option. This method is
@@ -485,7 +547,11 @@ external class Socket : EventEmitter {
      * drop membership on all valid interfaces.
      * @since v13.1.0, v12.16.0
      */
-    fun dropSourceSpecificMembership(sourceAddress: String, groupAddress: String, multicastInterface: String = definedExternally): Unit
+    fun dropSourceSpecificMembership(
+        sourceAddress: String,
+        groupAddress: String,
+        multicastInterface: String = definedExternally,
+    ): Unit
 
     /**
      * events.EventEmitter
@@ -500,7 +566,11 @@ external class Socket : EventEmitter {
     fun addListener(event: SocketEvent.CONNECT, listener: () -> Unit): Unit /* this */
     fun addListener(event: SocketEvent.ERROR, listener: (err: Throwable /* JsError */) -> Unit): Unit /* this */
     fun addListener(event: SocketEvent.LISTENING, listener: () -> Unit): Unit /* this */
-    fun addListener(event: SocketEvent.MESSAGE, listener: (msg: node.buffer.Buffer, rinfo: RemoteInfo) -> Unit): Unit /* this */
+    fun addListener(
+        event: SocketEvent.MESSAGE,
+        listener: (msg: node.buffer.Buffer, rinfo: RemoteInfo) -> Unit,
+    ): Unit /* this */
+
     fun emit(event: String, vararg args: Any? /* js.core.ReadonlyArray<Any?> */): Boolean
 
     fun emit(event: js.core.Symbol, vararg args: Any? /* js.core.ReadonlyArray<Any?> */): Boolean
@@ -520,17 +590,28 @@ external class Socket : EventEmitter {
     fun once(event: SocketEvent.CONNECT, listener: () -> Unit): Unit /* this */
     fun once(event: SocketEvent.ERROR, listener: (err: Throwable /* JsError */) -> Unit): Unit /* this */
     fun once(event: SocketEvent.LISTENING, listener: () -> Unit): Unit /* this */
-    fun once(event: SocketEvent.MESSAGE, listener: (msg: node.buffer.Buffer, rinfo: RemoteInfo) -> Unit): Unit /* this */
+    fun once(
+        event: SocketEvent.MESSAGE,
+        listener: (msg: node.buffer.Buffer, rinfo: RemoteInfo) -> Unit,
+    ): Unit /* this */
+
     fun prependListener(event: String, listener: Function<Any?> /* (...args: any[]) => void */): Unit /* this */
     fun prependListener(event: SocketEvent.CLOSE, listener: () -> Unit): Unit /* this */
     fun prependListener(event: SocketEvent.CONNECT, listener: () -> Unit): Unit /* this */
     fun prependListener(event: SocketEvent.ERROR, listener: (err: Throwable /* JsError */) -> Unit): Unit /* this */
     fun prependListener(event: SocketEvent.LISTENING, listener: () -> Unit): Unit /* this */
-    fun prependListener(event: SocketEvent.MESSAGE, listener: (msg: node.buffer.Buffer, rinfo: RemoteInfo) -> Unit): Unit /* this */
+    fun prependListener(
+        event: SocketEvent.MESSAGE,
+        listener: (msg: node.buffer.Buffer, rinfo: RemoteInfo) -> Unit,
+    ): Unit /* this */
+
     fun prependOnceListener(event: String, listener: Function<Any?> /* (...args: any[]) => void */): Unit /* this */
     fun prependOnceListener(event: SocketEvent.CLOSE, listener: () -> Unit): Unit /* this */
     fun prependOnceListener(event: SocketEvent.CONNECT, listener: () -> Unit): Unit /* this */
     fun prependOnceListener(event: SocketEvent.ERROR, listener: (err: Throwable /* JsError */) -> Unit): Unit /* this */
     fun prependOnceListener(event: SocketEvent.LISTENING, listener: () -> Unit): Unit /* this */
-    fun prependOnceListener(event: SocketEvent.MESSAGE, listener: (msg: node.buffer.Buffer, rinfo: RemoteInfo) -> Unit): Unit /* this */
+    fun prependOnceListener(
+        event: SocketEvent.MESSAGE,
+        listener: (msg: node.buffer.Buffer, rinfo: RemoteInfo) -> Unit,
+    ): Unit /* this */
 }

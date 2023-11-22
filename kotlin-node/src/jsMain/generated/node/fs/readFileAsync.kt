@@ -50,11 +50,17 @@ import js.promise.Promise
  */
 
 @JsName("readFile")
-external fun readFileAsync(path: PathLike, options: (ReadFileBufferAsyncOptions)? = definedExternally): Promise<node.buffer.Buffer>
+external fun readFileAsync(
+    path: PathLike,
+    options: (ReadFileBufferAsyncOptions)? = definedExternally,
+): Promise<node.buffer.Buffer>
 
 
 @JsName("readFile")
-external fun readFileAsync(path: FileHandle, options: (ReadFileBufferAsyncOptions)? = definedExternally): Promise<node.buffer.Buffer>
+external fun readFileAsync(
+    path: FileHandle,
+    options: (ReadFileBufferAsyncOptions)? = definedExternally,
+): Promise<node.buffer.Buffer>
 
 
 /**
@@ -90,16 +96,28 @@ external fun readFileAsync(path: FileHandle, options: node.buffer.BufferEncoding
  */
 
 @JsName("readFile")
-external fun readFileAsync(path: PathLike, options: (ReadFileAsyncOptions)? = definedExternally): Promise<Any /* string | Buffer */>
+external fun readFileAsync(
+    path: PathLike,
+    options: (ReadFileAsyncOptions)? = definedExternally,
+): Promise<Any /* string | Buffer */>
 
 
 @JsName("readFile")
-external fun readFileAsync(path: PathLike, options: node.buffer.BufferEncoding? = definedExternally): Promise<Any /* string | Buffer */>
+external fun readFileAsync(
+    path: PathLike,
+    options: node.buffer.BufferEncoding? = definedExternally,
+): Promise<Any /* string | Buffer */>
 
 
 @JsName("readFile")
-external fun readFileAsync(path: FileHandle, options: (ReadFileAsyncOptions)? = definedExternally): Promise<Any /* string | Buffer */>
+external fun readFileAsync(
+    path: FileHandle,
+    options: (ReadFileAsyncOptions)? = definedExternally,
+): Promise<Any /* string | Buffer */>
 
 
 @JsName("readFile")
-external fun readFileAsync(path: FileHandle, options: node.buffer.BufferEncoding? = definedExternally): Promise<Any /* string | Buffer */>
+external fun readFileAsync(
+    path: FileHandle,
+    options: node.buffer.BufferEncoding? = definedExternally,
+): Promise<Any /* string | Buffer */>

@@ -11,8 +11,19 @@ package node.dns
  * @since v0.1.16
  * @param hostname Host name to resolve.
  */
-external fun resolve4(hostname: String, callback: (err: node.ErrnoException?, addresses: js.core.ReadonlyArray<String>) -> Unit): Unit
+external fun resolve4(
+    hostname: String,
+    callback: (err: node.ErrnoException?, addresses: js.core.ReadonlyArray<String>) -> Unit,
+): Unit
 
-external fun resolve4(hostname: String, options: ResolveWithTtlOptions, callback: (err: node.ErrnoException?, addresses: js.core.ReadonlyArray<RecordWithTtl>) -> Unit): Unit
+external fun resolve4(
+    hostname: String,
+    options: ResolveWithTtlOptions,
+    callback: (err: node.ErrnoException?, addresses: js.core.ReadonlyArray<RecordWithTtl>) -> Unit,
+): Unit
 
-external fun resolve4(hostname: String, options: ResolveOptions, callback: (err: node.ErrnoException?, addresses: Any /* string[] | RecordWithTtl[] */) -> Unit): Unit
+external fun resolve4(
+    hostname: String,
+    options: ResolveOptions,
+    callback: (err: node.ErrnoException?, addresses: Any /* string[] | RecordWithTtl[] */) -> Unit,
+): Unit

@@ -30,7 +30,15 @@ package node.crypto
 external fun createDecipher(algorithm: CipherCCMTypes, password: BinaryLike, options: CipherCCMOptions): DecipherCCM
 
 /** @deprecated since v10.0.0 use `createDecipheriv()` */
-external fun createDecipher(algorithm: CipherGCMTypes, password: BinaryLike, options: CipherGCMOptions = definedExternally): DecipherGCM
+external fun createDecipher(
+    algorithm: CipherGCMTypes,
+    password: BinaryLike,
+    options: CipherGCMOptions = definedExternally,
+): DecipherGCM
 
 /** @deprecated since v10.0.0 use `createDecipheriv()` */
-external fun createDecipher(algorithm: String, password: BinaryLike, options: node.stream.TransformOptions = definedExternally): Decipher
+external fun createDecipher(
+    algorithm: String,
+    password: BinaryLike,
+    options: node.stream.TransformOptions = definedExternally,
+): Decipher

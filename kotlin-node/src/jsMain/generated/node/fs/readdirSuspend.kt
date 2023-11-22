@@ -5,13 +5,19 @@ package node.fs
 import js.promise.await
 
 
-suspend fun readdir(path: PathLike, options: (ReaddirAsyncOptions)? = undefined.unsafeCast<Nothing>()): js.core.ReadonlyArray<String> =
+suspend fun readdir(
+    path: PathLike,
+    options: (ReaddirAsyncOptions)? = undefined.unsafeCast<Nothing>(),
+): js.core.ReadonlyArray<String> =
     readdirAsync(
         path, options
     ).await()
 
 
-suspend fun readdir(path: PathLike, options: node.buffer.BufferEncoding? = undefined.unsafeCast<Nothing>()): js.core.ReadonlyArray<String> =
+suspend fun readdir(
+    path: PathLike,
+    options: node.buffer.BufferEncoding? = undefined.unsafeCast<Nothing>(),
+): js.core.ReadonlyArray<String> =
     readdirAsync(
         path, options
     ).await()

@@ -49,7 +49,10 @@ external fun resolveAsync(hostname: String, rrtype: ResourceRecordType.MX): Prom
 
 
 @JsName("resolve")
-external fun resolveAsync(hostname: String, rrtype: ResourceRecordType.NAPTR): Promise<js.core.ReadonlyArray<NaptrRecord>>
+external fun resolveAsync(
+    hostname: String,
+    rrtype: ResourceRecordType.NAPTR,
+): Promise<js.core.ReadonlyArray<NaptrRecord>>
 
 
 @JsName("resolve")
@@ -69,8 +72,14 @@ external fun resolveAsync(hostname: String, rrtype: ResourceRecordType.SRV): Pro
 
 
 @JsName("resolve")
-external fun resolveAsync(hostname: String, rrtype: ResourceRecordType.TXT): Promise<js.core.ReadonlyArray<js.core.ReadonlyArray<String>>>
+external fun resolveAsync(
+    hostname: String,
+    rrtype: ResourceRecordType.TXT,
+): Promise<js.core.ReadonlyArray<js.core.ReadonlyArray<String>>>
 
 
 @JsName("resolve")
-external fun resolveAsync(hostname: String, rrtype: String): Promise<Any /* string[] | MxRecord[] | NaptrRecord[] | SoaRecord | SrvRecord[] | string[][] | AnyRecord[] */>
+external fun resolveAsync(
+    hostname: String,
+    rrtype: String,
+): Promise<Any /* string[] | MxRecord[] | NaptrRecord[] | SoaRecord | SrvRecord[] | string[][] | AnyRecord[] */>

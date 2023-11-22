@@ -40,6 +40,13 @@ external fun <TBuffer : js.buffer.ArrayBufferView> read(
  * `position` defaults to `null`
  * @since v12.17.0, 13.11.0
  */
-external fun <TBuffer : js.buffer.ArrayBufferView> read(fd: Number, options: ReadAsyncOptions<TBuffer>, callback: (err: node.ErrnoException?, bytesRead: Double, buffer: TBuffer) -> Unit): Unit
+external fun <TBuffer : js.buffer.ArrayBufferView> read(
+    fd: Number,
+    options: ReadAsyncOptions<TBuffer>,
+    callback: (err: node.ErrnoException?, bytesRead: Double, buffer: TBuffer) -> Unit,
+): Unit
 
-external fun read(fd: Number, callback: (err: node.ErrnoException?, bytesRead: Double, buffer: js.buffer.ArrayBufferView) -> Unit): Unit
+external fun read(
+    fd: Number,
+    callback: (err: node.ErrnoException?, bytesRead: Double, buffer: js.buffer.ArrayBufferView) -> Unit,
+): Unit
