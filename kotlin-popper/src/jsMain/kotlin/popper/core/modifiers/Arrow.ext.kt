@@ -12,9 +12,9 @@ inline fun PaddingFunction(
 ): PaddingType = fn.unsafeCast<PaddingType>()
 
 inline fun Padding(
-    padding: Double
+    padding: Double,
 ): PaddingType = padding.unsafeCast<PaddingType>()
 
 inline fun Padding(
-    block: Padding.() -> Unit
+    block: Padding.() -> Unit,
 ): PaddingType = jso(block).unsafeCast<PaddingType>()
