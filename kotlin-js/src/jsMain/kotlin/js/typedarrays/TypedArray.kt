@@ -28,12 +28,12 @@ sealed external class TypedArray<S : TypedArray<S, T>, T : Comparable<T> /* Numb
 
     fun set(
         array: S,
-        offset: Int = definedExternally
+        offset: Int = definedExternally,
     )
 
     fun set(
         array: ReadonlyArray<T>,
-        offset: Int = definedExternally
+        offset: Int = definedExternally,
     )
 
     /**
@@ -223,7 +223,7 @@ sealed external class TypedArray<S : TypedArray<S, T>, T : Comparable<T> /* Numb
 
     fun subarray(
         start: Int,
-        end: Int
+        end: Int,
     ): S
 
     override fun entries(): IterableIterator<JsTuple2<Int, T>>

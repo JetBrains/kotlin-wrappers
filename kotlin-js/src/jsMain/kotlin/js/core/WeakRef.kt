@@ -1,7 +1,7 @@
 package js.core
 
 external class WeakRef<T : Any>(
-    target: T
+    target: T,
 ) {
     /**
      * Returns the WeakRef instance's target object, or undefined if the target object has been
