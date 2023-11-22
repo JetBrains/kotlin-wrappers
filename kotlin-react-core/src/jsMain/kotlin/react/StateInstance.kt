@@ -38,7 +38,7 @@ sealed external interface StateInstance<T> {
 
 inline fun <T> StateInstance(
     value: T,
-    setter: StateSetter<T>
+    setter: StateSetter<T>,
 ): StateInstance<T> =
     arrayOf(value, setter)
         .unsafeCast<StateInstance<T>>()
