@@ -18,19 +18,19 @@ class KeyframesBuilder {
     private val keyframes: Keyframes = Record()
 
     operator fun Percentage.invoke(
-        block: Properties.() -> Unit
+        block: Properties.() -> Unit,
     ) {
         keyframes[this] = jso(block)
     }
 
     fun from(
-        block: Properties.() -> Unit
+        block: Properties.() -> Unit,
     ) {
         FROM_PERCENTAGE(block)
     }
 
     fun to(
-        block: Properties.() -> Unit
+        block: Properties.() -> Unit,
     ) {
         TO_PERCENTAGE(block)
     }
