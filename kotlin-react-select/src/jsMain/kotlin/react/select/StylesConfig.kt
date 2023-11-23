@@ -35,6 +35,7 @@ external interface StylesConfig<Option : Any, Group : GroupBase<Option>> {
     var menu: StylesConfigFunction<MenuProps>?
     var menuList: StylesConfigFunction<MenuListProps<Option, Group>>?
     var menuPortal: StylesConfigFunction<MenuPortalProps>? /* PortalStyleArgs */
+    var noOptionsMessage: StylesConfigFunction<NoOptionsMessageProps>?
     var option: StylesConfigFunction<OptionProps<Option, Group>>?
     var placeholder: StylesConfigFunction<PlaceholderProps>?
     var singleValue: StylesConfigFunction<SingleValueProps<Option, Group>>?
