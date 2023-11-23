@@ -8,6 +8,7 @@ external interface SelectComponentsConfig<Option : Any, Group : GroupBase<Option
     var DropdownIndicator: ComponentType<DropdownIndicatorProps>?
     var Group: ComponentType<GroupProps<Option, Group>>?
     var GroupHeading: ComponentType<GroupHeadingProps<Option, Group>>?
+    var LoadingIndicator: ComponentType<LoadingIndicatorProps>?
     var Menu: ComponentType<MenuProps>?
     var MultiValueRemove: ComponentType<MultiValueRemoveProps<Option, Group>>?
     var MultiValueContainer: ComponentType<MultiValueGenericProps<Option, Group>>?
