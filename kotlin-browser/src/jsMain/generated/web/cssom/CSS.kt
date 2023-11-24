@@ -77,9 +77,11 @@ external object CSS {
 
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSS/factory_functions_static) */
     fun grad(value: Number): CSSUnitValue
+    fun ic(value: Number): CSSUnitValue
 
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSS/factory_functions_static) */
     fun kHz(value: Number): CSSUnitValue
+    fun lh(value: Number): CSSUnitValue
 
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSS/factory_functions_static) */
     fun lvb(value: Number): CSSUnitValue
@@ -128,6 +130,7 @@ external object CSS {
 
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSS/factory_functions_static) */
     fun rem(value: Number): CSSUnitValue
+    fun rlh(value: Number): CSSUnitValue
 
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSS/factory_functions_static) */
     fun s(value: Number): CSSUnitValue

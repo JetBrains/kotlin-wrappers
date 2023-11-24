@@ -413,6 +413,9 @@ sealed external class CSSStyleDeclaration :
 
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/cursor) */
     var cursor: String
+    var cx: String
+    var cy: String
+    var d: String
 
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/direction) */
     var direction: String
@@ -551,9 +554,13 @@ sealed external class CSSStyleDeclaration :
 
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/grid-column-end) */
     var gridColumnEnd: String
+    var gridColumnGap: String
 
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/grid-column-start) */
     var gridColumnStart: String
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/gap) */
+    var gridGap: String
 
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/grid-row) */
     var gridRow: String
@@ -907,6 +914,7 @@ sealed external class CSSStyleDeclaration :
 
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/quotes) */
     var quotes: String
+    var r: String
 
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/resize) */
     var resize: String
@@ -922,6 +930,8 @@ sealed external class CSSStyleDeclaration :
 
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/ruby-position) */
     var rubyPosition: String
+    var rx: String
+    var ry: String
 
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/scale) */
     var scale: String
@@ -1004,8 +1014,14 @@ sealed external class CSSStyleDeclaration :
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/scroll-snap-type) */
     var scrollSnapType: String
 
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/scrollbar-color) */
+    var scrollbarColor: String
+
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/scrollbar-gutter) */
     var scrollbarGutter: String
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/scrollbar-width) */
+    var scrollbarWidth: String
 
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/shape-image-threshold) */
     var shapeImageThreshold: String
@@ -1138,6 +1154,7 @@ sealed external class CSSStyleDeclaration :
 
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/user-select) */
     var userSelect: String
+    var vectorEffect: String
 
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/vertical-align) */
     var verticalAlign: String
@@ -1183,6 +1200,8 @@ sealed external class CSSStyleDeclaration :
 
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/writing-mode) */
     var writingMode: String
+    var x: String
+    var y: String
 
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/z-index) */
     var zIndex: String

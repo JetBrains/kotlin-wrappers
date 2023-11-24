@@ -94,11 +94,7 @@ abstract external class HTMLInputElement :
      */
     var height: Double
 
-    /**
-     * When set, overrides the rendering of checkbox controls so that the current value is not visible.
-     *
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/indeterminate)
-     */
+    /** When set, overrides the rendering of checkbox controls so that the current value is not visible. */
     var indeterminate: Boolean
 
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/labels) */
