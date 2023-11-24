@@ -12,7 +12,7 @@ external class WriteStream : node.net.Socket {
     constructor(fd: Number)
 
     override fun addListener(
-        event: EventType,
+        eventName: EventType,
         listener: Function<Unit>,
     ) /* : this */
 
@@ -22,13 +22,13 @@ external class WriteStream : node.net.Socket {
     ) /* : this */
 
     override fun emit(
-        event: EventType,
-        vararg args: Any,
+        eventName: EventType,
+        vararg args: Any?,
     ): Boolean
 
     fun emit(event: Event.RESIZE): Boolean
     override fun on(
-        event: EventType,
+        eventName: EventType,
         listener: Function<Unit>,
     ) /* : this */
 
@@ -38,7 +38,7 @@ external class WriteStream : node.net.Socket {
     ) /* : this */
 
     override fun once(
-        event: EventType,
+        eventName: EventType,
         listener: Function<Unit>,
     ) /* : this */
 
@@ -48,7 +48,7 @@ external class WriteStream : node.net.Socket {
     ) /* : this */
 
     override fun prependListener(
-        event: EventType,
+        eventName: EventType,
         listener: Function<Unit>,
     ) /* : this */
 
@@ -58,7 +58,7 @@ external class WriteStream : node.net.Socket {
     ) /* : this */
 
     override fun prependOnceListener(
-        event: EventType,
+        eventName: EventType,
         listener: Function<Unit>,
     ) /* : this */
 

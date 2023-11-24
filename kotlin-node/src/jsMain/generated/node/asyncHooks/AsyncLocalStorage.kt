@@ -114,7 +114,7 @@ external class AsyncLocalStorage<T> {
      */
     fun <R, TArgs : js.core.ReadonlyArray<Any?>> run(
         store: T,
-        callback: Function<Any?>, /* (...args: TArgs) => R */
+        callback: Function<R>, /* (...args: TArgs) => R */
         vararg args: Any?, /* TArgs */
     ): R
 
@@ -147,7 +147,7 @@ external class AsyncLocalStorage<T> {
      * @experimental
      */
     fun <R, TArgs : js.core.ReadonlyArray<Any?>> exit(
-        callback: Function<Any?>, /* (...args: TArgs) => R */
+        callback: Function<R>, /* (...args: TArgs) => R */
         vararg args: Any?, /* TArgs */
     ): R
 

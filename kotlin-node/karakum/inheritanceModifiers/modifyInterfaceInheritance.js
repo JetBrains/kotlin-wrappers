@@ -12,6 +12,12 @@ export default (node) => {
                     node.name.text === "ObjectEncodingOptions"
                 )
             )
+            || (
+                sourceFileName.endsWith("events.d.ts")
+                && (
+                    node.name.text === "Abortable"
+                )
+            )
         )
     ) {
         return ""

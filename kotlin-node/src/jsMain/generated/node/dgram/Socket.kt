@@ -561,7 +561,7 @@ external class Socket : EventEmitter {
      * 4. listening
      * 5. message
      */
-    fun addListener(event: String, listener: Function<Any?> /* (...args: any[]) => void */): Unit /* this */
+    fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
     fun addListener(event: SocketEvent.CLOSE, listener: () -> Unit): Unit /* this */
     fun addListener(event: SocketEvent.CONNECT, listener: () -> Unit): Unit /* this */
     fun addListener(event: SocketEvent.ERROR, listener: (err: Throwable /* JsError */) -> Unit): Unit /* this */
@@ -579,13 +579,13 @@ external class Socket : EventEmitter {
     fun emit(event: SocketEvent.ERROR, err: Throwable /* JsError */): Boolean
     fun emit(event: SocketEvent.LISTENING): Boolean
     fun emit(event: SocketEvent.MESSAGE, msg: node.buffer.Buffer, rinfo: RemoteInfo): Boolean
-    fun on(event: String, listener: Function<Any?> /* (...args: any[]) => void */): Unit /* this */
+    fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
     fun on(event: SocketEvent.CLOSE, listener: () -> Unit): Unit /* this */
     fun on(event: SocketEvent.CONNECT, listener: () -> Unit): Unit /* this */
     fun on(event: SocketEvent.ERROR, listener: (err: Throwable /* JsError */) -> Unit): Unit /* this */
     fun on(event: SocketEvent.LISTENING, listener: () -> Unit): Unit /* this */
     fun on(event: SocketEvent.MESSAGE, listener: (msg: node.buffer.Buffer, rinfo: RemoteInfo) -> Unit): Unit /* this */
-    fun once(event: String, listener: Function<Any?> /* (...args: any[]) => void */): Unit /* this */
+    fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
     fun once(event: SocketEvent.CLOSE, listener: () -> Unit): Unit /* this */
     fun once(event: SocketEvent.CONNECT, listener: () -> Unit): Unit /* this */
     fun once(event: SocketEvent.ERROR, listener: (err: Throwable /* JsError */) -> Unit): Unit /* this */
@@ -595,7 +595,7 @@ external class Socket : EventEmitter {
         listener: (msg: node.buffer.Buffer, rinfo: RemoteInfo) -> Unit,
     ): Unit /* this */
 
-    fun prependListener(event: String, listener: Function<Any?> /* (...args: any[]) => void */): Unit /* this */
+    fun prependListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
     fun prependListener(event: SocketEvent.CLOSE, listener: () -> Unit): Unit /* this */
     fun prependListener(event: SocketEvent.CONNECT, listener: () -> Unit): Unit /* this */
     fun prependListener(event: SocketEvent.ERROR, listener: (err: Throwable /* JsError */) -> Unit): Unit /* this */
@@ -605,7 +605,7 @@ external class Socket : EventEmitter {
         listener: (msg: node.buffer.Buffer, rinfo: RemoteInfo) -> Unit,
     ): Unit /* this */
 
-    fun prependOnceListener(event: String, listener: Function<Any?> /* (...args: any[]) => void */): Unit /* this */
+    fun prependOnceListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
     fun prependOnceListener(event: SocketEvent.CLOSE, listener: () -> Unit): Unit /* this */
     fun prependOnceListener(event: SocketEvent.CONNECT, listener: () -> Unit): Unit /* this */
     fun prependOnceListener(event: SocketEvent.ERROR, listener: (err: Throwable /* JsError */) -> Unit): Unit /* this */

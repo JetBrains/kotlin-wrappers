@@ -139,7 +139,7 @@ external class MessagePort : node.events.EventEmitter {
     ) /* : this */
 
     override fun addListener(
-        event: EventType,
+        eventName: EventType,
         listener: Function<Unit>,
     ) /* : this */
 
@@ -155,8 +155,8 @@ external class MessagePort : node.events.EventEmitter {
     ): Boolean
 
     override fun emit(
-        event: EventType,
-        vararg args: Any,
+        eventName: EventType,
+        vararg args: Any?,
     ): Boolean
 
     fun on(
@@ -175,7 +175,7 @@ external class MessagePort : node.events.EventEmitter {
     ) /* : this */
 
     override fun on(
-        event: EventType,
+        eventName: EventType,
         listener: Function<Unit>,
     ) /* : this */
 
@@ -195,7 +195,7 @@ external class MessagePort : node.events.EventEmitter {
     ) /* : this */
 
     override fun once(
-        event: EventType,
+        eventName: EventType,
         listener: Function<Unit>,
     ) /* : this */
 
@@ -215,7 +215,7 @@ external class MessagePort : node.events.EventEmitter {
     ) /* : this */
 
     override fun prependListener(
-        event: EventType,
+        eventName: EventType,
         listener: Function<Unit>,
     ) /* : this */
 
@@ -235,7 +235,7 @@ external class MessagePort : node.events.EventEmitter {
     ) /* : this */
 
     override fun prependOnceListener(
-        event: EventType,
+        eventName: EventType,
         listener: Function<Unit>,
     ) /* : this */
 
@@ -255,7 +255,7 @@ external class MessagePort : node.events.EventEmitter {
     ) /* : this */
 
     override fun removeListener(
-        event: EventType,
+        eventName: EventType,
         listener: Function<Unit>,
     ) /* : this */
 
@@ -275,7 +275,7 @@ external class MessagePort : node.events.EventEmitter {
     ) /* : this */
 
     override fun off(
-        event: EventType,
+        eventName: EventType,
         listener: Function<Unit>,
     ) /* : this */
 }

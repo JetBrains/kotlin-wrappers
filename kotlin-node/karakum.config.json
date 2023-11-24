@@ -7,6 +7,7 @@
         "<nodeModules>/@types/node/dgram.d.ts",
         "<nodeModules>/@types/node/dns.d.ts",
         "<nodeModules>/@types/node/dns/promises.d.ts",
+        "<nodeModules>/@types/node/events.d.ts",
         "<nodeModules>/@types/node/fs.d.ts",
         "<nodeModules>/@types/node/fs/promises.d.ts",
         "<nodeModules>/@types/node/tls.d.ts",
@@ -41,6 +42,8 @@
         "**/dns/SetDefaultResultOrderOrderAsync.kt",
         "**/dns/setServersAsync.kt",
 
+        "**/events/global/nodejs/EventEmitter.kt",
+
         "**/readline/createInterface.kt"
     ],
     "libraryName": "node",
@@ -64,6 +67,9 @@
 
         "^node/dns": "node:dns",
         "^dns": "node:dns",
+
+        "^node/events": "node:events",
+        "^events": "node:events",
 
         "^node/fs": "node:fs",
         "^fs": "node:fs",
@@ -108,6 +114,12 @@
         "^node/dns/namespace.kt": "node/dns/nodeNamespace.kt",
         "^node/dns.kt": "node/dns/dns.kt",
         "^dns": "node/dns",
+
+        "^node/events/namespace.kt": "node/events/nodeNamespace.kt",
+        "^node/events.kt": "node/events/events.kt",
+        "^events/eventemitter/namespace.kt": "node/events/eventEmitterNamespace.kt",
+        "^events": "node/events",
+        "events/eventemitter/Abortable.kt": "events/Abortable.kt",
 
         "^node/fs/namespace.kt": "node/fs/nodeNamespace.kt",
         "^node/fs.kt": "node/fs/fs.kt",
@@ -265,6 +277,17 @@
             "js.promise.await"
         ],
 
+        "events/Abortable.kt": [
+            "web.abort.AbortSignal"
+        ],
+        "events/EventEmitter.kt": [
+            "js.iterable.AsyncIterableIterator",
+            "js.promise.Promise"
+        ],
+        "events/StaticEventEmitterOptions.kt": [
+            "web.abort.AbortSignal"
+        ],
+
         "fs/Dir.kt": [
             "js.iterable.AsyncIterable",
             "js.promise.Promise"
@@ -416,6 +439,9 @@
 
         "dns": "package",
         "node:dns": "ignore",
+
+        "events": "package",
+        "node:events": "ignore",
 
         "fs": "package",
         "node:fs": "ignore",

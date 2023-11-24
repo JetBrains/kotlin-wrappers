@@ -129,7 +129,7 @@ open external class Server<
      */
     open fun closeIdleConnections()
     override fun addListener(
-        event: EventType,
+        eventName: EventType,
         listener: Function<Unit>,
     ) /* : this */
 
@@ -203,8 +203,8 @@ open external class Server<
     ) /* : this */
 
     override fun emit(
-        event: EventType,
-        vararg args: Any,
+        eventName: EventType,
+        vararg args: Any?,
     ): Boolean
 
     override fun emit(event: Event.CLOSE): Boolean
@@ -264,7 +264,7 @@ open external class Server<
     ): Boolean
 
     override fun on(
-        event: EventType,
+        eventName: EventType,
         listener: Function<Unit>,
     ) /* : this */
 
@@ -338,7 +338,7 @@ open external class Server<
     ) /* : this */
 
     override fun once(
-        event: EventType,
+        eventName: EventType,
         listener: Function<Unit>,
     ) /* : this */
 
@@ -412,7 +412,7 @@ open external class Server<
     ) /* : this */
 
     override fun prependListener(
-        event: EventType,
+        eventName: EventType,
         listener: Function<Unit>,
     ) /* : this */
 
@@ -486,7 +486,7 @@ open external class Server<
     ) /* : this */
 
     override fun prependOnceListener(
-        event: EventType,
+        eventName: EventType,
         listener: Function<Unit>,
     ) /* : this */
 

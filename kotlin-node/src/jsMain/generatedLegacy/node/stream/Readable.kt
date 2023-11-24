@@ -450,7 +450,7 @@ open external class Readable : Stream, node.ReadableStream {
     ) /* : this */
 
     override fun addListener(
-        event: EventType,
+        eventName: EventType,
         listener: Function<Unit>,
     ) /* : this */
 
@@ -470,8 +470,8 @@ open external class Readable : Stream, node.ReadableStream {
     open fun emit(event: Event.READABLE): Boolean
     open fun emit(event: Event.RESUME): Boolean
     override fun emit(
-        event: EventType,
-        vararg args: Any,
+        eventName: EventType,
+        vararg args: Any?,
     ): Boolean
 
     open fun on(
@@ -510,7 +510,7 @@ open external class Readable : Stream, node.ReadableStream {
     ) /* : this */
 
     override fun on(
-        event: EventType,
+        eventName: EventType,
         listener: Function<Unit>,
     ) /* : this */
 
@@ -550,7 +550,7 @@ open external class Readable : Stream, node.ReadableStream {
     ) /* : this */
 
     override fun once(
-        event: EventType,
+        eventName: EventType,
         listener: Function<Unit>,
     ) /* : this */
 
@@ -590,7 +590,7 @@ open external class Readable : Stream, node.ReadableStream {
     ) /* : this */
 
     override fun prependListener(
-        event: EventType,
+        eventName: EventType,
         listener: Function<Unit>,
     ) /* : this */
 
@@ -630,7 +630,7 @@ open external class Readable : Stream, node.ReadableStream {
     ) /* : this */
 
     override fun prependOnceListener(
-        event: EventType,
+        eventName: EventType,
         listener: Function<Unit>,
     ) /* : this */
 
@@ -670,7 +670,7 @@ open external class Readable : Stream, node.ReadableStream {
     ) /* : this */
 
     override fun removeListener(
-        event: EventType,
+        eventName: EventType,
         listener: Function<Unit>,
     ) /* : this */
     /* [Symbol.asyncIterator](): AsyncIterableIterator<any> */

@@ -325,7 +325,7 @@ open external class Writable : Stream, node.WritableStream {
     ) /* : this */
 
     override fun addListener(
-        event: EventType,
+        eventName: EventType,
         listener: Function<Unit>,
     ) /* : this */
 
@@ -348,8 +348,8 @@ open external class Writable : Stream, node.WritableStream {
     ): Boolean
 
     override fun emit(
-        event: EventType,
-        vararg args: Any,
+        eventName: EventType,
+        vararg args: Any?,
     ): Boolean
 
     open fun on(
@@ -383,7 +383,7 @@ open external class Writable : Stream, node.WritableStream {
     ) /* : this */
 
     override fun on(
-        event: EventType,
+        eventName: EventType,
         listener: Function<Unit>,
     ) /* : this */
 
@@ -418,7 +418,7 @@ open external class Writable : Stream, node.WritableStream {
     ) /* : this */
 
     override fun once(
-        event: EventType,
+        eventName: EventType,
         listener: Function<Unit>,
     ) /* : this */
 
@@ -453,7 +453,7 @@ open external class Writable : Stream, node.WritableStream {
     ) /* : this */
 
     override fun prependListener(
-        event: EventType,
+        eventName: EventType,
         listener: Function<Unit>,
     ) /* : this */
 
@@ -488,7 +488,7 @@ open external class Writable : Stream, node.WritableStream {
     ) /* : this */
 
     override fun prependOnceListener(
-        event: EventType,
+        eventName: EventType,
         listener: Function<Unit>,
     ) /* : this */
 
@@ -523,7 +523,7 @@ open external class Writable : Stream, node.WritableStream {
     ) /* : this */
 
     override fun removeListener(
-        event: EventType,
+        eventName: EventType,
         listener: Function<Unit>,
     ) /* : this */
 

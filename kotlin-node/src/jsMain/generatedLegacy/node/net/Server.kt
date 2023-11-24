@@ -200,7 +200,7 @@ open external class Server : node.events.EventEmitter {
      *   5. drop
      */
     override fun addListener(
-        event: EventType,
+        eventName: EventType,
         listener: Function<Unit>,
     ) /* : this */
 
@@ -230,8 +230,8 @@ open external class Server : node.events.EventEmitter {
     ) /* : this */
 
     override fun emit(
-        event: EventType,
-        vararg args: Any,
+        eventName: EventType,
+        vararg args: Any?,
     ): Boolean
 
     open fun emit(event: Event.CLOSE): Boolean
@@ -252,7 +252,7 @@ open external class Server : node.events.EventEmitter {
     ): Boolean
 
     override fun on(
-        event: EventType,
+        eventName: EventType,
         listener: Function<Unit>,
     ) /* : this */
 
@@ -282,7 +282,7 @@ open external class Server : node.events.EventEmitter {
     ) /* : this */
 
     override fun once(
-        event: EventType,
+        eventName: EventType,
         listener: Function<Unit>,
     ) /* : this */
 
@@ -312,7 +312,7 @@ open external class Server : node.events.EventEmitter {
     ) /* : this */
 
     override fun prependListener(
-        event: EventType,
+        eventName: EventType,
         listener: Function<Unit>,
     ) /* : this */
 
@@ -342,7 +342,7 @@ open external class Server : node.events.EventEmitter {
     ) /* : this */
 
     override fun prependOnceListener(
-        event: EventType,
+        eventName: EventType,
         listener: Function<Unit>,
     ) /* : this */
 

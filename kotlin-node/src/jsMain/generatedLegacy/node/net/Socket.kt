@@ -343,7 +343,7 @@ open external class Socket : Duplex {
      *   9. timeout
      */
     override fun addListener(
-        event: EventType,
+        eventName: EventType,
         listener: Function<Unit>,
     ) /* : this */
 
@@ -398,8 +398,8 @@ open external class Socket : Duplex {
     ) /* : this */
 
     override fun emit(
-        event: EventType,
-        vararg args: Any,
+        eventName: EventType,
+        vararg args: Any?,
     ): Boolean
 
     open fun emit(
@@ -431,7 +431,7 @@ open external class Socket : Duplex {
     open fun emit(event: Event.READY): Boolean
     open fun emit(event: Event.TIMEOUT): Boolean
     override fun on(
-        event: EventType,
+        eventName: EventType,
         listener: Function<Unit>,
     ) /* : this */
 
@@ -486,7 +486,7 @@ open external class Socket : Duplex {
     ) /* : this */
 
     override fun once(
-        event: EventType,
+        eventName: EventType,
         listener: Function<Unit>,
     ) /* : this */
 
@@ -541,7 +541,7 @@ open external class Socket : Duplex {
     ) /* : this */
 
     override fun prependListener(
-        event: EventType,
+        eventName: EventType,
         listener: Function<Unit>,
     ) /* : this */
 
@@ -596,7 +596,7 @@ open external class Socket : Duplex {
     ) /* : this */
 
     override fun prependOnceListener(
-        event: EventType,
+        eventName: EventType,
         listener: Function<Unit>,
     ) /* : this */
 

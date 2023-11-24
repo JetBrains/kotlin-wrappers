@@ -288,7 +288,7 @@ external class TLSSocket : node.net.Socket {
      * @return requested bytes of the keying material
      */
     fun exportKeyingMaterial(length: Number, label: String, context: node.buffer.Buffer): node.buffer.Buffer
-    fun addListener(event: String, listener: Function<Any?> /* (...args: any[]) => void */): Unit /* this */
+    fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
     fun addListener(
         event: TLSSocketEvent.OCSPRESPONSE,
         listener: (response: node.buffer.Buffer) -> Unit,
@@ -304,17 +304,17 @@ external class TLSSocket : node.net.Socket {
     fun emit(event: TLSSocketEvent.SECURECONNECT): Boolean
     fun emit(event: TLSSocketEvent.SESSION, session: node.buffer.Buffer): Boolean
     fun emit(event: TLSSocketEvent.KEYLOG, line: node.buffer.Buffer): Boolean
-    fun on(event: String, listener: Function<Any?> /* (...args: any[]) => void */): Unit /* this */
+    fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
     fun on(event: TLSSocketEvent.OCSPRESPONSE, listener: (response: node.buffer.Buffer) -> Unit): Unit /* this */
     fun on(event: TLSSocketEvent.SECURECONNECT, listener: () -> Unit): Unit /* this */
     fun on(event: TLSSocketEvent.SESSION, listener: (session: node.buffer.Buffer) -> Unit): Unit /* this */
     fun on(event: TLSSocketEvent.KEYLOG, listener: (line: node.buffer.Buffer) -> Unit): Unit /* this */
-    fun once(event: String, listener: Function<Any?> /* (...args: any[]) => void */): Unit /* this */
+    fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
     fun once(event: TLSSocketEvent.OCSPRESPONSE, listener: (response: node.buffer.Buffer) -> Unit): Unit /* this */
     fun once(event: TLSSocketEvent.SECURECONNECT, listener: () -> Unit): Unit /* this */
     fun once(event: TLSSocketEvent.SESSION, listener: (session: node.buffer.Buffer) -> Unit): Unit /* this */
     fun once(event: TLSSocketEvent.KEYLOG, listener: (line: node.buffer.Buffer) -> Unit): Unit /* this */
-    fun prependListener(event: String, listener: Function<Any?> /* (...args: any[]) => void */): Unit /* this */
+    fun prependListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
     fun prependListener(
         event: TLSSocketEvent.OCSPRESPONSE,
         listener: (response: node.buffer.Buffer) -> Unit,
@@ -323,7 +323,7 @@ external class TLSSocket : node.net.Socket {
     fun prependListener(event: TLSSocketEvent.SECURECONNECT, listener: () -> Unit): Unit /* this */
     fun prependListener(event: TLSSocketEvent.SESSION, listener: (session: node.buffer.Buffer) -> Unit): Unit /* this */
     fun prependListener(event: TLSSocketEvent.KEYLOG, listener: (line: node.buffer.Buffer) -> Unit): Unit /* this */
-    fun prependOnceListener(event: String, listener: Function<Any?> /* (...args: any[]) => void */): Unit /* this */
+    fun prependOnceListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
     fun prependOnceListener(
         event: TLSSocketEvent.OCSPRESPONSE,
         listener: (response: node.buffer.Buffer) -> Unit,

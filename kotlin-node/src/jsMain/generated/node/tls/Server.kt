@@ -64,7 +64,7 @@ external class Server : node.net.Server {
      * 5. secureConnection
      * 6. keylog
      */
-    fun addListener(event: String, listener: Function<Any?> /* (...args: any[]) => void */): Unit /* this */
+    fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
     fun addListener(
         event: ServerEvent.TLSCLIENTERROR,
         listener: (err: Throwable /* JsError */, tlsSocket: TLSSocket) -> Unit,
@@ -117,7 +117,7 @@ external class Server : node.net.Server {
 
     fun emit(event: ServerEvent.SECURECONNECTION, tlsSocket: TLSSocket): Boolean
     fun emit(event: ServerEvent.KEYLOG, line: node.buffer.Buffer, tlsSocket: TLSSocket): Boolean
-    fun on(event: String, listener: Function<Any?> /* (...args: any[]) => void */): Unit /* this */
+    fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
     fun on(
         event: ServerEvent.TLSCLIENTERROR,
         listener: (err: Throwable /* JsError */, tlsSocket: TLSSocket) -> Unit,
@@ -144,7 +144,7 @@ external class Server : node.net.Server {
         listener: (line: node.buffer.Buffer, tlsSocket: TLSSocket) -> Unit,
     ): Unit /* this */
 
-    fun once(event: String, listener: Function<Any?> /* (...args: any[]) => void */): Unit /* this */
+    fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
     fun once(
         event: ServerEvent.TLSCLIENTERROR,
         listener: (err: Throwable /* JsError */, tlsSocket: TLSSocket) -> Unit,
@@ -171,7 +171,7 @@ external class Server : node.net.Server {
         listener: (line: node.buffer.Buffer, tlsSocket: TLSSocket) -> Unit,
     ): Unit /* this */
 
-    fun prependListener(event: String, listener: Function<Any?> /* (...args: any[]) => void */): Unit /* this */
+    fun prependListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
     fun prependListener(
         event: ServerEvent.TLSCLIENTERROR,
         listener: (err: Throwable /* JsError */, tlsSocket: TLSSocket) -> Unit,
@@ -198,7 +198,7 @@ external class Server : node.net.Server {
         listener: (line: node.buffer.Buffer, tlsSocket: TLSSocket) -> Unit,
     ): Unit /* this */
 
-    fun prependOnceListener(event: String, listener: Function<Any?> /* (...args: any[]) => void */): Unit /* this */
+    fun prependOnceListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
     fun prependOnceListener(
         event: ServerEvent.TLSCLIENTERROR,
         listener: (err: Throwable /* JsError */, tlsSocket: TLSSocket) -> Unit,

@@ -31,7 +31,7 @@ sealed external interface TestsStream : node.ReadableStream {
     ) /* : this */
 
     override fun addListener(
-        event: EventType,
+        eventName: EventType,
         listener: Function<Unit>,
     ) /* : this */
 
@@ -61,8 +61,8 @@ sealed external interface TestsStream : node.ReadableStream {
     ): Boolean
 
     override fun emit(
-        event: EventType,
-        vararg args: Any,
+        eventName: EventType,
+        vararg args: Any?,
     ): Boolean
 
     fun on(
@@ -91,7 +91,7 @@ sealed external interface TestsStream : node.ReadableStream {
     ) /* : this */
 
     override fun on(
-        event: EventType,
+        eventName: EventType,
         listener: Function<Unit>,
     ) /* : this */
 
@@ -121,7 +121,7 @@ sealed external interface TestsStream : node.ReadableStream {
     ) /* : this */
 
     override fun once(
-        event: EventType,
+        eventName: EventType,
         listener: Function<Unit>,
     ) /* : this */
 
@@ -151,7 +151,7 @@ sealed external interface TestsStream : node.ReadableStream {
     ) /* : this */
 
     override fun prependListener(
-        event: EventType,
+        eventName: EventType,
         listener: Function<Unit>,
     ) /* : this */
 
@@ -181,7 +181,7 @@ sealed external interface TestsStream : node.ReadableStream {
     ) /* : this */
 
     override fun prependOnceListener(
-        event: EventType,
+        eventName: EventType,
         listener: Function<Unit>,
     ) /* : this */
 }

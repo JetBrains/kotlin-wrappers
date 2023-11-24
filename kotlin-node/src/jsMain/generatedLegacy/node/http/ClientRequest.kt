@@ -238,7 +238,7 @@ external class ClientRequest : OutgoingMessage<IncomingMessage> {
     ) /* : this */
 
     override fun addListener(
-        event: EventType,
+        eventName: EventType,
         listener: Function<Unit>,
     ) /* : this */
 
@@ -324,7 +324,7 @@ external class ClientRequest : OutgoingMessage<IncomingMessage> {
     ) /* : this */
 
     override fun on(
-        event: EventType,
+        eventName: EventType,
         listener: Function<Unit>,
     ) /* : this */
 
@@ -410,7 +410,7 @@ external class ClientRequest : OutgoingMessage<IncomingMessage> {
     ) /* : this */
 
     override fun once(
-        event: EventType,
+        eventName: EventType,
         listener: Function<Unit>,
     ) /* : this */
 
@@ -496,7 +496,7 @@ external class ClientRequest : OutgoingMessage<IncomingMessage> {
     ) /* : this */
 
     override fun prependListener(
-        event: EventType,
+        eventName: EventType,
         listener: Function<Unit>,
     ) /* : this */
 
@@ -582,7 +582,7 @@ external class ClientRequest : OutgoingMessage<IncomingMessage> {
     ) /* : this */
 
     override fun prependOnceListener(
-        event: EventType,
+        eventName: EventType,
         listener: Function<Unit>,
     ) /* : this */
 }

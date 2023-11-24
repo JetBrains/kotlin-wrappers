@@ -1419,7 +1419,7 @@ sealed external interface Process : node.events.EventEmitter {
     ) /* : this */
 
     override fun on(
-        event: EventType,
+        eventName: EventType,
         listener: Function<Unit>,
     ) /* : this */
 
@@ -1484,7 +1484,7 @@ sealed external interface Process : node.events.EventEmitter {
     ) /* : this */
 
     override fun once(
-        event: EventType,
+        eventName: EventType,
         listener: Function<Unit>,
     ) /* : this */
 

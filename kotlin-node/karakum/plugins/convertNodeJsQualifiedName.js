@@ -12,6 +12,9 @@ export default function (node, context, render) {
         if (node.right.text === "TypedArray") {
             return `js.typedarrays.TypedArray`
         }
+        if (node.right.text === "EventEmitter") {
+            return `node.events.EventEmitter`
+        }
         if (node.right.text === "Signals") {
             return `node.process.Signals`
         }
