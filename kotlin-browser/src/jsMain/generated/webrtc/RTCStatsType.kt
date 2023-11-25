@@ -30,6 +30,9 @@ sealed external interface RTCStatsType {
         @JsValue("local-candidate")
         val localCandidate: RTCStatsType
 
+        @JsValue("media-playout")
+        val mediaPlayout: RTCStatsType
+
         @JsValue("media-source")
         val mediaSource: RTCStatsType
 

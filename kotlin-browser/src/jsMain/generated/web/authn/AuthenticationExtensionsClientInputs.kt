@@ -6,4 +6,5 @@ sealed external interface AuthenticationExtensionsClientInputs {
     var appid: String?
     var credProps: Boolean?
     var hmacCreateSecret: Boolean?
+    var minPinLength: Boolean?
 }

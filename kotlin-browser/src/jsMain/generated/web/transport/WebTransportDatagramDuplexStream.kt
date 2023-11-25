@@ -15,7 +15,7 @@ sealed external class WebTransportDatagramDuplexStream {
     var incomingHighWaterMark: Int
 
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebTransportDatagramDuplexStream/incomingMaxAge) */
-    var incomingMaxAge: Int
+    var incomingMaxAge: Int?
 
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebTransportDatagramDuplexStream/maxDatagramSize) */
     val maxDatagramSize: Int
@@ -24,7 +24,7 @@ sealed external class WebTransportDatagramDuplexStream {
     var outgoingHighWaterMark: Int
 
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebTransportDatagramDuplexStream/outgoingMaxAge) */
-    var outgoingMaxAge: Int
+    var outgoingMaxAge: Int?
 
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebTransportDatagramDuplexStream/readable) */
     val readable: ReadableStream<*>
