@@ -12,7 +12,7 @@ open external class Promise<out T>(
     constructor(
         executor: (
             resolve: PromiseResolve<T>,
-            reject: (JsError) -> Unit,
+            reject: PromiseReject,
         ) -> Unit,
     )
 
