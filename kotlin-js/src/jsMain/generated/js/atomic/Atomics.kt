@@ -70,6 +70,32 @@ external object Atomics {
     ): T
 
     /**
+     * Wakes up sleeping agents that are waiting on the given index of the array, returning the
+     * number of agents that were awoken.
+     * @param typedArray A shared Int32Array.
+     * @param index The position in the typedArray to wake up on.
+     * @param count The number of sleeping agents to notify. Defaults to +Infinity.
+     */
+    fun notify(
+        typedArray: Int32Array,
+        index: Int,
+        count: Int = definedExternally,
+    ): Int
+
+    /**
+     * Wakes up sleeping agents that are waiting on the given index of the array, returning the
+     * number of agents that were awoken.
+     * @param typedArray A shared BigInt64Array.
+     * @param index The position in the typedArray to wake up on.
+     * @param count The number of sleeping agents to notify. Defaults to +Infinity.
+     */
+    fun notify(
+        typedArray: BigInt64Array,
+        index: Int,
+        count: Int = definedExternally,
+    ): Int
+
+    /**
      * Stores the bitwise OR of a value with the value at the given position in the array,
      * returning the original value. Until this atomic operation completes, any other read or write
      * operation against the array will block.
@@ -128,43 +154,6 @@ external object Atomics {
     ): WaitStatus
 
     /**
-     * Wakes up sleeping agents that are waiting on the given index of the array, returning the
-     * number of agents that were awoken.
-     * @param typedArray A shared Int32Array.
-     * @param index The position in the typedArray to wake up on.
-     * @param count The number of sleeping agents to notify. Defaults to +Infinity.
-     */
-    fun notify(
-        typedArray: Int32Array,
-        index: Int,
-        count: Int = definedExternally,
-    ): Int
-
-    /**
-     * Wakes up sleeping agents that are waiting on the given index of the array, returning the
-     * number of agents that were awoken.
-     * @param typedArray A shared BigInt64Array.
-     * @param index The position in the typedArray to wake up on.
-     * @param count The number of sleeping agents to notify. Defaults to +Infinity.
-     */
-    fun notify(
-        typedArray: BigInt64Array,
-        index: Int,
-        count: Int = definedExternally,
-    ): Int
-
-    /**
-     * Stores the bitwise XOR of a value with the value at the given position in the array,
-     * returning the original value. Until this atomic operation completes, any other read or write
-     * operation against the array will block.
-     */
-    fun <T : Comparable<T>> xor(
-        typedArray: TypedArray<*, T>,
-        index: Int,
-        value: T,
-    ): T
-
-    /**
      * A non-blocking, asynchronous version of wait which is usable on the main thread.
      * Waits asynchronously on a shared memory location and returns a Promise
      * @param typedArray A shared Int32Array or BigInt64Array.
@@ -193,4 +182,15 @@ external object Atomics {
         value: BigInt,
         timeout: Int = definedExternally,
     ): WaitResult
+
+    /**
+     * Stores the bitwise XOR of a value with the value at the given position in the array,
+     * returning the original value. Until this atomic operation completes, any other read or write
+     * operation against the array will block.
+     */
+    fun <T : Comparable<T>> xor(
+        typedArray: TypedArray<*, T>,
+        index: Int,
+        value: T,
+    ): T
 }
