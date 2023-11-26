@@ -59,7 +59,7 @@ open external class Event(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Event/eventPhase)
      */
-    val eventPhase: Number
+    val eventPhase: Short
 
     /**
      * Returns true if event was dispatched by the user agent, and false otherwise.
