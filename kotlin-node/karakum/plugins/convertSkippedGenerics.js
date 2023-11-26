@@ -41,5 +41,14 @@ export default function (node, context, render) {
         return `${render(node.typeName)}<*>`
     }
 
+    if (
+        ts.isExpressionWithTypeArguments(node)
+        && ts.isIdentifier(node.expression)
+        && node.expression.text === "OutgoingMessage"
+        && !node.typeArguments
+    ) {
+        return `${render(node.expression)}<IncomingMessage>`
+    }
+
     return null
 }

@@ -10,6 +10,7 @@
         "<nodeModules>/@types/node/events.d.ts",
         "<nodeModules>/@types/node/fs.d.ts",
         "<nodeModules>/@types/node/fs/promises.d.ts",
+        "<nodeModules>/@types/node/http.d.ts",
         "<nodeModules>/@types/node/tls.d.ts",
         "<nodeModules>/@types/node/readline.d.ts",
         "<nodeModules>/@types/node/readline/promises.d.ts"
@@ -74,6 +75,9 @@
         "^node/fs": "node:fs",
         "^fs": "node:fs",
 
+        "^node/http": "node:http",
+        "^http": "node:http",
+
         "^node/tls": "node:tls",
         "^tls": "node:tls",
 
@@ -127,6 +131,10 @@
         "fs/StatfsOptions.kt": "fs/StatfsOptions.fun.kt",
         "fs/realpathsync/native.kt": "fs/realpathSync/native.kt",
         "fs/symlink/Type.kt": "fs/SymlinkType.kt",
+
+        "^node/http/namespace.kt": "node/http/nodeNamespace.kt",
+        "^node/http.kt": "node/http/http.kt",
+        "^http": "node/http",
 
         "^node/tls/namespace.kt": "node/tls/nodeNamespace.kt",
         "^node/tls.kt": "node/tls/tls.kt",
@@ -402,6 +410,44 @@
             "js.core.ReadonlyArray"
         ],
 
+        "http/Agent.kt": [
+            "node.events.EventEmitter",
+            "node.net.Socket"
+        ],
+        "http/AgentOptions.kt": [
+            "node.net.TcpSocketConnectOpts"
+        ],
+        "http/ClientRequest.kt": [
+            "node.url.URL",
+            "node.net.Socket"
+        ],
+        "http/ClientRequestArgs.kt": [
+            "web.abort.AbortSignal",
+            "node.url.URL",
+            "node.net.Socket",
+            "node.net.LookupFunction"
+        ],
+        "http/IncomingMessage.kt": [
+            "node.net.Socket"
+        ],
+        "http/OutgoingMessage.kt": [
+            "js.core.ReadonlyArray",
+            "node.net.Socket"
+        ],
+        "http/Server.kt": [
+            "node.net.Server as NetServer",
+            "node.net.Socket"
+        ],
+        "http/ServerResponse.kt": [
+            "node.net.Socket"
+        ],
+        "http/get.kt": [
+            "node.url.URL"
+        ],
+        "http/request.kt": [
+            "node.url.URL"
+        ],
+
         "tls/TLSSocket.kt": [
             "node.crypto.X509Certificate"
         ],
@@ -445,6 +491,9 @@
 
         "fs": "package",
         "node:fs": "ignore",
+
+        "http": "package",
+        "node:http": "ignore",
 
         "tls": "package",
         "node:tls": "ignore",

@@ -62,6 +62,11 @@ const overriddenProps = {
         "ttl": null,
     },
 
+    // http
+    "AgentOptions": {
+        "keepAlive": null
+    },
+
     // tls
     "TlsOptions": {
         "sessionTimeout": null,

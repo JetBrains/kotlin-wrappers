@@ -15,7 +15,6 @@ export default (node, context) => {
     if (!ts.isIdentifier(callbackParameter.name)) return null
 
     const callbackParameterName = callbackParameter.name.text
-    console.log("callbackParameterName: ", callbackParameterName)
     if (callbackParameterName !== "state") return null
 
     const functionType = getParent(callbackParameter)

@@ -26,6 +26,13 @@ export default (node) => {
                     node.name.text === "ChildProcess"
                 )
             )
+            || (
+                sourceFileName.endsWith("http.d.ts")
+                && (
+                    node.name.text === "IncomingMessage"
+                    || node.name.text === "OutgoingMessage"
+                )
+            )
         )
     ) {
         return "open"

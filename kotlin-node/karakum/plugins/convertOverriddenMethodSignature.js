@@ -6,6 +6,11 @@ const overriddenProps = {
     "X509Certificate": {
         "toString": null,
     },
+
+    // http
+    "ClientRequest": {
+        "setTimeout": "setClientRequestTimeout",
+    },
 }
 
 export default function (node, context, render) {
@@ -24,6 +29,26 @@ export default function (node, context, render) {
             ?.join(", ")
 
         const returnType = node.type && render(node.type)
+
+        const overrideConfig = overriddenProps[node.parent.name.text][node.name.text]
+
+        const hasAlias = overrideConfig !== null
+
+        if (hasAlias) {
+            const alias = overrideConfig
+
+            const jsName = `@JsName("${name}")`
+
+            return karakum.convertParameterDeclarations(node, context, render, {
+                strategy: "function",
+                template: parameters => {
+                    return `
+${jsName}
+fun ${karakum.ifPresent(typeParameters, it => `<${it}> `)}${alias}(${parameters})${karakum.ifPresent(returnType, it => `: ${it}`)}
+                    `
+                }
+            })
+        }
 
         return karakum.convertParameterDeclarations(node, context, render, {
             strategy: "function",
