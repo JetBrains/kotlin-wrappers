@@ -21,9 +21,6 @@ sealed external class Gamepad {
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Gamepad/connected) */
     val connected: Boolean
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Gamepad/hapticActuators) */
-    val hapticActuators: ReadonlyArray<GamepadHapticActuator>
-
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Gamepad/id) */
     val id: String
 

@@ -17,4 +17,5 @@ abstract external class HTMLTemplateElement :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTemplateElement/content)
      */
     val content: DocumentFragment
+    var shadowRootMode: String
 }

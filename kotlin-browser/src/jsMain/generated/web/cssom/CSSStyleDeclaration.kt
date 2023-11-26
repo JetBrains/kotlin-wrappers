@@ -1032,6 +1032,7 @@ sealed external class CSSStyleDeclaration :
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/shape-outside) */
     var shapeOutside: String
     var shapeRendering: String
+    var speak: String
     var stopColor: String
     var stopOpacity: String
     var stroke: String
@@ -1112,6 +1113,9 @@ sealed external class CSSStyleDeclaration :
 
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/text-underline-position) */
     var textUnderlinePosition: String
+
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/text-wrap) */
+    var textWrap: String
 
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/top) */
     var top: String

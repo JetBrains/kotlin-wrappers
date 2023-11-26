@@ -48,9 +48,6 @@ external class FileReader :
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileReader/readAsArrayBuffer) */
     fun readAsArrayBuffer(blob: Blob)
 
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileReader/readAsBinaryString) */
-    fun readAsBinaryString(blob: Blob)
-
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileReader/readAsDataURL) */
     fun readAsDataURL(blob: Blob)
 
