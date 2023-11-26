@@ -2,7 +2,6 @@
 
 package tanstack.query.core
 
-external interface InvalidateQueryFilters<TPageData>
-    : QueryFilters, RefetchPageFilters<TPageData> {
+external interface InvalidateQueryFilters : QueryFilters {
     var refetchType: QueryTypeFilter /* | 'none' */
 }

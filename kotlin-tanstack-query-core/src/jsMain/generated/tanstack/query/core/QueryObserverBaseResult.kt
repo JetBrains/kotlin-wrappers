@@ -18,17 +18,16 @@ external interface QueryObserverBaseResult<TData, TError> {
     val isFetchedAfterMount: Boolean
     val isFetching: Boolean
     val isLoading: Boolean
+    val isPending: Boolean
     val isLoadingError: Boolean
     val isInitialLoading: Boolean
     val isPaused: Boolean
     val isPlaceholderData: Boolean
-    val isPreviousData: Boolean
     val isRefetchError: Boolean
     val isRefetching: Boolean
     val isStale: Boolean
     val isSuccess: Boolean
-    val refetch: (options: RefetchOptions? /* & RefetchQueryFilters<TPageData> */) -> Promise<QueryObserverResult<TData, TError>>
-    val remove: () -> Unit
+    val refetch: (options: RefetchOptions?) -> Promise<QueryObserverResult<TData, TError>>
     val status: QueryStatus
     val fetchStatus: FetchStatus
 }

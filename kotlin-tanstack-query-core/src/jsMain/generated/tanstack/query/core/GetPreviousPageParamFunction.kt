@@ -6,6 +6,4 @@
 
 package tanstack.query.core
 
-import js.core.ReadonlyArray
-
-typealias GetPreviousPageParamFunction<TQueryFnData> = (firstPage: TQueryFnData, allPages: ReadonlyArray<TQueryFnData>) -> Any
+typealias GetPreviousPageParamFunction<TPageParam, TQueryFnData> = Union /* (firstPage: TQueryFnData, allPages: Array<TQueryFnData>, firstPageParam: TPageParam, allPageParams: Array<TPageParam>) => TPageParam? | null */

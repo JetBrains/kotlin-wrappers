@@ -6,7 +6,7 @@ external interface MutationObserverBaseResult<TData, TError, TVariables, TContex
     : MutationState<TData, TError, TVariables, TContext> {
     val isError: Boolean
     val isIdle: Boolean
-    val isLoading: Boolean
+    val isPending: Boolean
     val isSuccess: Boolean
     val mutate: MutateFunction<TData, TError, TVariables, TContext>
     val reset: () -> Unit

@@ -5,6 +5,6 @@
 package tanstack.query.core
 
 external fun hasNextPage(
-    options: QueryOptions<*, *, *, *>,
-    pages: Page = definedExternally,
-): Boolean?
+    options: InfiniteQueryPageParamsOptions<*, *>,
+    data: InfiniteData<*, *> = definedExternally,
+): Boolean

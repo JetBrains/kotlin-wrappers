@@ -2,7 +2,7 @@
 
 package tanstack.query.core
 
-external interface FetchQueryOptions<TQueryFnData, TError, TData, TQueryKey : QueryKey>
-    : QueryOptions<TQueryFnData, TError, TData, TQueryKey> {
+external interface FetchQueryOptions<TQueryFnData, TError, TData, TQueryKey : QueryKey, TPageParam>
+    : QueryOptions<TQueryFnData, TError, TData, TQueryKey, TPageParam> {
     var staleTime: JsDuration
 }

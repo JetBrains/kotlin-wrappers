@@ -4,7 +4,7 @@ package tanstack.query.core
 
 import js.core.ReadonlyArray
 
-external interface InfiniteData<TData> {
+external interface InfiniteData<TData, TPageParam> {
     var pages: ReadonlyArray<TData>
-    var pageParams: ReadonlyArray<PageParam>
+    var pageParams: ReadonlyArray<TPageParam>
 }

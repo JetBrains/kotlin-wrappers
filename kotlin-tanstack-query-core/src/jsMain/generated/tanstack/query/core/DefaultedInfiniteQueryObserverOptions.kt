@@ -6,4 +6,4 @@
 
 package tanstack.query.core
 
-typealias DefaultedInfiniteQueryObserverOptions<TQueryFnData, TError, TData, TQueryData, TQueryKey> = Union /* WithRequired<InfiniteQueryObserverOptions<TQueryFnData, TError, TData, TQueryData, TQueryKey>, 'useErrorBoundary' | 'refetchOnReconnect'> */
+typealias DefaultedInfiniteQueryObserverOptions<TQueryFnData, TError, TData, TQueryData, TQueryKey, TPageParam> = Union /* WithRequired<InfiniteQueryObserverOptions<TQueryFnData, TError, TData, TQueryData, TQueryKey, TPageParam>, 'throwOnError' | 'refetchOnReconnect'> */

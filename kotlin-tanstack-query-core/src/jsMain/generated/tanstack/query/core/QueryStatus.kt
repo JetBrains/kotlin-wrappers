@@ -12,8 +12,8 @@ import seskar.js.JsVirtual
 @JsVirtual
 sealed external interface QueryStatus {
     companion object {
-        @JsValue("loading")
-        val loading: QueryStatus
+        @JsValue("pending")
+        val pending: QueryStatus
 
         @JsValue("error")
         val error: QueryStatus

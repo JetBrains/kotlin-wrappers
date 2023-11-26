@@ -10,9 +10,7 @@ open external class Query<TQueryFnData, TError, TData, TQueryKey : QueryKey>(con
     Removable {
     open var queryKey: TQueryKey
     open var queryHash: String
-    open var options: QueryOptions<TQueryFnData, TError, TData, TQueryKey>
-    open var initialState: QueryState<TData, TError>
-    open var revertState: QueryState<TData, TError>
+    open var options: QueryOptions<TQueryFnData, TError, TData, TQueryKey, *>
     open var state: QueryState<TData, TError>
     open var isFetchingOptimistic: Boolean
     open var meta: QueryMeta?
@@ -41,7 +39,7 @@ open external class Query<TQueryFnData, TError, TData, TQueryKey : QueryKey>(con
     open fun getObserversCount(): Int
     open fun invalidate()
     open fun fetch(
-        options: QueryOptions<TQueryFnData, TError, TData, TQueryKey> = definedExternally,
+        options: QueryOptions<TQueryFnData, TError, TData, TQueryKey, *> = definedExternally,
         fetchOptions: FetchOptions = definedExternally,
     ): Promise<TData>
 }

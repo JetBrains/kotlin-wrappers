@@ -3,8 +3,6 @@
 package tanstack.query.core
 
 external interface DehydrateOptions {
-    var dehydrateMutations: Boolean
-    var dehydrateQueries: Boolean
-    var shouldDehydrateMutation: ShouldDehydrateMutationFunction
-    var shouldDehydrateQuery: ShouldDehydrateQueryFunction
+    var shouldDehydrateMutation: (mutation: Mutation<*, *, *, *>) -> Boolean
+    var shouldDehydrateQuery: (query: Query<*, *, *, *>) -> Boolean
 }

@@ -2,4 +2,4 @@
 
 package tanstack.query.core
 
-typealias OnlineManagerSetupFn = (setOnline: (online: Boolean?) -> Unit) -> (() -> Unit)?
+typealias OnlineManagerSetupFn = (setOnline: Listener) -> (() -> Unit)?

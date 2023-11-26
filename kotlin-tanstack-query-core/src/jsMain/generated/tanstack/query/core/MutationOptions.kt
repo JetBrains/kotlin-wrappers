@@ -7,7 +7,6 @@ import js.promise.Promise
 external interface MutationOptions<TData, TError, TVariables, TContext> {
     var mutationFn: MutationFunction<TData, TVariables>
     var mutationKey: MutationKey
-    var variables: TVariables
     var onMutate: (variables: TVariables) -> Promise<TContext?>?
     var onSuccess: (data: TData, variables: TVariables, context: TContext?) -> Promise<*>?
     var onError: (error: TError, variables: TVariables, context: TContext?) -> Promise<*>?
@@ -15,7 +14,7 @@ external interface MutationOptions<TData, TError, TVariables, TContext> {
     var retry: RetryValue<TError>
     var retryDelay: RetryDelayValue<TError>
     var networkMode: NetworkMode
-    var cacheTime: JsDuration
+    var gcTime: JsDuration
     var _defaulted: Boolean
     var meta: MutationMeta
 }

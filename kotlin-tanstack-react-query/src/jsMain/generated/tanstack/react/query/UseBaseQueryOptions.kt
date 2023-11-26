@@ -6,4 +6,4 @@ import tanstack.query.core.QueryKey
 import tanstack.query.core.QueryObserverOptions
 
 external interface UseBaseQueryOptions<TQueryFnData, TError, TData, TQueryData, TQueryKey : QueryKey>
-    : ContextOptions, QueryObserverOptions<TQueryFnData, TError, TData, TQueryData, TQueryKey>
+    : QueryObserverOptions<TQueryFnData, TError, TData, TQueryData, TQueryKey, Any?>

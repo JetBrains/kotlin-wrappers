@@ -2,5 +2,5 @@
 
 package tanstack.query.core
 
-// readonly unknown[] 
+// ReadonlyArray<unknown>
 external interface QueryKey

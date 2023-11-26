@@ -5,15 +5,9 @@
 package tanstack.react.query
 
 import tanstack.query.core.MutationFilters
-import tanstack.query.core.MutationKey
+import tanstack.query.core.QueryClient
 
 external fun useIsMutating(
     filters: MutationFilters = definedExternally,
-    options: UseIsMutatingOptions = definedExternally,
-): Int
-
-external fun useIsMutating(
-    mutationKey: MutationKey = definedExternally,
-    filters: MutationFilters = definedExternally,
-    options: UseIsMutatingOptions = definedExternally,
+    queryClient: QueryClient = definedExternally,
 ): Int

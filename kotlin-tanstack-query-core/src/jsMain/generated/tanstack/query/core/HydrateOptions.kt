@@ -3,7 +3,7 @@
 package tanstack.query.core
 
 external interface DefaultHydrateOptions {
-    var queries: QueryOptions<*, *, *, *>
+    var queries: QueryOptions<*, *, *, *, *>
     var mutations: MutationOptions<*, *, *, *>
 }
 

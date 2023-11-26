@@ -4,5 +4,4 @@ package tanstack.query.core
 
 external interface FetchPreviousPageOptions : ResultOptions {
     var cancelRefetch: Boolean
-    var pageParam: PageParam
 }

@@ -4,7 +4,7 @@
 
 package tanstack.query.core
 
-external fun <TData, TOptions : QueryOptions<*, *, *, *>> replaceData(
+external fun <TData, TOptions : QueryOptions<*, *, *, *, *>> replaceData(
     prevData: TData?,
     data: TData,
     options: TOptions,

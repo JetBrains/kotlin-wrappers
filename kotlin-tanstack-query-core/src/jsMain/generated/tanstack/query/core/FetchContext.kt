@@ -9,7 +9,7 @@ external interface FetchContext<TQueryFnData, TError, TData, TQueryKey : QueryKe
     var fetchFn: () -> Promise<*>?
     var fetchOptions: FetchOptions
     var signal: AbortSignal
-    var options: QueryOptions<TQueryFnData, TError, TData, *>
+    var options: QueryOptions<TQueryFnData, TError, TData, *, *>
     var queryKey: TQueryKey
     var state: QueryState<TData, TError>
 }

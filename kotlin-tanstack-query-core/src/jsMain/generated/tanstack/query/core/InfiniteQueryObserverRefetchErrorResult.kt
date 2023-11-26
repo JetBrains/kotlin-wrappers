@@ -4,10 +4,10 @@ package tanstack.query.core
 
 external interface InfiniteQueryObserverRefetchErrorResult<TData, TError>
     : InfiniteQueryObserverResult<TData, TError> {
-    override val data: InfiniteData<TData>
+    override val data: TData
     override val error: TError
     override val isError: True
-    override val isLoading: False
+    override val isPending: False
     override val isLoadingError: False
     override val isRefetchError: True
     override val isSuccess: False

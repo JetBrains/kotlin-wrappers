@@ -4,5 +4,5 @@ package tanstack.query.core
 
 external interface FetchOptions {
     var cancelRefetch: Boolean
-    var meta: Any
+    var meta: FetchMeta
 }

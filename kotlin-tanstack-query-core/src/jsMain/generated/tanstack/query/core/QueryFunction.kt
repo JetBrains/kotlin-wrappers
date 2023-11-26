@@ -6,6 +6,6 @@
 
 package tanstack.query.core
 
-import js.promise.Promise
+import js.promise.PromiseResult
 
-typealias QueryFunction<T, TQueryKey, TPageParam> = (context: QueryFunctionContext<TQueryKey, TPageParam>) -> Promise<T>
+typealias QueryFunction<T, TQueryKey, TPageParam> = (context: QueryFunctionContext<TQueryKey, TPageParam>) -> PromiseResult<T>

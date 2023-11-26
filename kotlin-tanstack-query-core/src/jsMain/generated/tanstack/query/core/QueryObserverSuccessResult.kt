@@ -9,7 +9,7 @@ external interface QueryObserverSuccessResult<TData, TError>
     override val data: TData
     override val error: Void
     override val isError: False
-    override val isLoading: False
+    override val isPending: False
     override val isLoadingError: False
     override val isRefetchError: False
     override val isSuccess: True

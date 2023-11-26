@@ -6,5 +6,5 @@ package tanstack.query.core
 
 external fun <TQueryKey : QueryKey> hashQueryKeyByOptions(
     queryKey: TQueryKey,
-    options: QueryOptions<*, *, *, TQueryKey> = definedExternally,
+    options: QueryOptions<*, *, *, TQueryKey, *> = definedExternally,
 ): String

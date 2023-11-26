@@ -1,6 +1,9 @@
 // Automatically generated - do not modify!
 
+@file:Suppress(
+    "UNUSED_TYPEALIAS_PARAMETER",
+)
+
 package tanstack.query.core
 
-external interface FetchInfiniteQueryOptions<TQueryFnData, TError, TData, TQueryKey : QueryKey>
-    : FetchQueryOptions<TQueryFnData, TError, InfiniteData<TData>, TQueryKey>
+typealias FetchInfiniteQueryOptions<TQueryFnData, TError, TData, TQueryKey, TPageParam> = Any

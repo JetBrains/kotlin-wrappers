@@ -14,11 +14,11 @@ open external class MutationObserver<TData, TError, TVariables, TContext>(
     protected open fun bindMethods()
     open fun setOptions(options: MutationObserverOptions<TData, TError, TVariables, TContext> = definedExternally)
     override fun onUnsubscribe()
-    open fun onMutationUpdate(action: MutationAction<TData, TError, TVariables, TContext>)
+    open fun onMutationUpdate(action: Action_1<TData, TError, TVariables, TContext>)
     open fun getCurrentResult(): MutationObserverResult<TData, TError, TVariables, TContext>
     open fun reset()
     open fun mutate(
-        variables: TVariables = definedExternally,
+        variables: TVariables,
         options: MutateOptions<TData, TError, TVariables, TContext> = definedExternally,
     ): Promise<TData>
 }

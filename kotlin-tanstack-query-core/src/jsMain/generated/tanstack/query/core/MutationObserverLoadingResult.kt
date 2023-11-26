@@ -7,10 +7,11 @@ import js.core.Void
 external interface MutationObserverLoadingResult<TData, TError, TVariables, TContext>
     : MutationObserverResult<TData, TError, TVariables, TContext> {
     override val data: Void
+    override val variables: TVariables
     override val error: Void
     override val isError: False
     override val isIdle: False
-    override val isLoading: True
+    override val isPending: True
     override val isSuccess: False
-    override val status: MutationStatus /* 'loading' */
+    override val status: MutationStatus /* 'pending' */
 }

@@ -15,8 +15,8 @@ sealed external interface MutationStatus {
         @JsValue("idle")
         val idle: MutationStatus
 
-        @JsValue("loading")
-        val loading: MutationStatus
+        @JsValue("pending")
+        val pending: MutationStatus
 
         @JsValue("success")
         val success: MutationStatus

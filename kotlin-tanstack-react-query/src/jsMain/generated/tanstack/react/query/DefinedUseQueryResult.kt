@@ -2,4 +2,6 @@
 
 package tanstack.react.query
 
-typealias DefinedUseQueryResult<TData, TError> = DefinedUseBaseQueryResult<TData, TError>
+import tanstack.query.core.DefinedQueryObserverResult
+
+typealias DefinedUseQueryResult<TData, TError> = DefinedQueryObserverResult<TData, TError>
