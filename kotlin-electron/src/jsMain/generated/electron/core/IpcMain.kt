@@ -26,7 +26,7 @@ external interface IpcMain : node.events.EventEmitter {
      */
     fun handle(
         channel: String,
-        listener: Function<Any?>, /* (event: IpcMainInvokeEvent, ...args: any[]) => (Promise<void>) | (any) */
+        listener: Function<Any? /* (Promise<void>) | (any) */>, /* (event: IpcMainInvokeEvent, ...args: any[]) => (Promise<void>) | (any) */
     ): Unit
 
     /**
@@ -35,7 +35,7 @@ external interface IpcMain : node.events.EventEmitter {
      */
     fun handleOnce(
         channel: String,
-        listener: Function<Any?>, /* (event: IpcMainInvokeEvent, ...args: any[]) => (Promise<void>) | (any) */
+        listener: Function<Any? /* (Promise<void>) | (any) */>, /* (event: IpcMainInvokeEvent, ...args: any[]) => (Promise<void>) | (any) */
     ): Unit
 
     /**
@@ -44,7 +44,7 @@ external interface IpcMain : node.events.EventEmitter {
      */
     fun on(
         channel: String,
-        listener: Function<Any?>, /* (event: IpcMainEvent, ...args: any[]) => void */
+        listener: Function<Unit>, /* (event: IpcMainEvent, ...args: any[]) => void */
     ): Unit /* this */
 
     /**
@@ -53,7 +53,7 @@ external interface IpcMain : node.events.EventEmitter {
      */
     fun once(
         channel: String,
-        listener: Function<Any?>, /* (event: IpcMainEvent, ...args: any[]) => void */
+        listener: Function<Unit>, /* (event: IpcMainEvent, ...args: any[]) => void */
     ): Unit /* this */
 
     /**
@@ -70,5 +70,5 @@ external interface IpcMain : node.events.EventEmitter {
      * Removes the specified `listener` from the listener array for the specified
      * `channel`.
      */
-    fun removeListener(channel: String, listener: Function<Any?> /* (...args: any[]) => void */): Unit /* this */
+    fun removeListener(channel: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
 }

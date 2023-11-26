@@ -405,7 +405,7 @@ external class WebContents : NodeEventEmitter {
      */
     fun on(
         event: WebContentsEvent.IPC_MESSAGE,
-        listener: Function<Any?>, /* (event: Event, channel: string, ...args: any[]) => void */
+        listener: Function<Unit>, /* (event: Event, channel: string, ...args: any[]) => void */
     ): Unit /* this */
 
     /**
@@ -417,7 +417,7 @@ external class WebContents : NodeEventEmitter {
      */
     fun on(
         event: WebContentsEvent.IPC_MESSAGE_SYNC,
-        listener: Function<Any?>, /* (event: Event, channel: string, ...args: any[]) => void */
+        listener: Function<Unit>, /* (event: Event, channel: string, ...args: any[]) => void */
     ): Unit /* this */
 
     /**
@@ -859,12 +859,12 @@ external class WebContents : NodeEventEmitter {
 
     fun once(
         event: WebContentsEvent.IPC_MESSAGE,
-        listener: Function<Any?>, /* (event: Event, channel: string, ...args: any[]) => void */
+        listener: Function<Unit>, /* (event: Event, channel: string, ...args: any[]) => void */
     ): Unit /* this */
 
     fun once(
         event: WebContentsEvent.IPC_MESSAGE_SYNC,
-        listener: Function<Any?>, /* (event: Event, channel: string, ...args: any[]) => void */
+        listener: Function<Unit>, /* (event: Event, channel: string, ...args: any[]) => void */
     ): Unit /* this */
 
     fun once(event: WebContentsEvent.LEAVE_HTML_FULL_SCREEN, listener: Function<Unit>): Unit /* this */
@@ -1185,12 +1185,12 @@ external class WebContents : NodeEventEmitter {
 
     fun addListener(
         event: WebContentsEvent.IPC_MESSAGE,
-        listener: Function<Any?>, /* (event: Event, channel: string, ...args: any[]) => void */
+        listener: Function<Unit>, /* (event: Event, channel: string, ...args: any[]) => void */
     ): Unit /* this */
 
     fun addListener(
         event: WebContentsEvent.IPC_MESSAGE_SYNC,
-        listener: Function<Any?>, /* (event: Event, channel: string, ...args: any[]) => void */
+        listener: Function<Unit>, /* (event: Event, channel: string, ...args: any[]) => void */
     ): Unit /* this */
 
     fun addListener(event: WebContentsEvent.LEAVE_HTML_FULL_SCREEN, listener: Function<Unit>): Unit /* this */
@@ -1523,12 +1523,12 @@ external class WebContents : NodeEventEmitter {
 
     fun removeListener(
         event: WebContentsEvent.IPC_MESSAGE,
-        listener: Function<Any?>, /* (event: Event, channel: string, ...args: any[]) => void */
+        listener: Function<Unit>, /* (event: Event, channel: string, ...args: any[]) => void */
     ): Unit /* this */
 
     fun removeListener(
         event: WebContentsEvent.IPC_MESSAGE_SYNC,
-        listener: Function<Any?>, /* (event: Event, channel: string, ...args: any[]) => void */
+        listener: Function<Unit>, /* (event: Event, channel: string, ...args: any[]) => void */
     ): Unit /* this */
 
     fun removeListener(event: WebContentsEvent.LEAVE_HTML_FULL_SCREEN, listener: Function<Unit>): Unit /* this */
