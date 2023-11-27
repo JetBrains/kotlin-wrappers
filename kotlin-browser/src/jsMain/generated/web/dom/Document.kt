@@ -4,6 +4,7 @@ package web.dom
 
 import js.core.Void
 import js.promise.Promise
+import web.animations.DocumentTimeline
 import web.events.Event
 import web.events.EventHandler
 import web.fonts.FontFaceSource
@@ -247,7 +248,7 @@ abstract external class Document :
     val scrollingElement: Element?
 
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/timeline) */
-    val timeline: dynamic /* DocumentTimeline */
+    val timeline: DocumentTimeline
 
     /**
      * Contains the title of the document.
