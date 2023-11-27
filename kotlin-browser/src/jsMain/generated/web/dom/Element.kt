@@ -30,7 +30,7 @@ import web.svg.SvgTagName
 abstract external class Element :
     Node,
     ARIAMixin,
-    /* Animatable, */
+    Animatable,
     ChildNode,
     InnerHTML,
     NonDocumentTypeChildNode,
