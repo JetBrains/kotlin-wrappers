@@ -9,7 +9,7 @@ import web.events.EventTarget
 import web.fonts.FontFaceSource
 import web.window.PromiseRejectionEvent
 
-sealed external class WorkerGlobalScope :
+abstract external class WorkerGlobalScope :
     EventTarget,
     FontFaceSource {
     /**
