@@ -33,6 +33,13 @@ export default (node) => {
                     || node.name.text === "OutgoingMessage"
                 )
             )
+            || (
+                sourceFileName.endsWith("net.d.ts")
+                && (
+                    node.name.text === "Server"
+                    || node.name.text === "Socket"
+                )
+            )
         )
     ) {
         return "open"

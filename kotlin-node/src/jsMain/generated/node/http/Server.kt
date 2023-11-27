@@ -122,7 +122,7 @@ external class Server<Request : IncomingMessage, Response : ServerResponse<*>> :
      * @since v18.2.0
      */
     fun closeIdleConnections(): Unit
-    fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
+    override fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
     fun addListener(event: ServerEvent.CLOSE, listener: () -> Unit): Unit /* this */
     fun addListener(event: ServerEvent.CONNECTION, listener: (socket: Socket) -> Unit): Unit /* this */
     fun addListener(event: ServerEvent.ERROR, listener: (err: Throwable /* JsError */) -> Unit): Unit /* this */
@@ -150,7 +150,7 @@ external class Server<Request : IncomingMessage, Response : ServerResponse<*>> :
         listener: (req: Request, socket: node.stream.Duplex, head: node.buffer.Buffer) -> Unit,
     ): Unit /* this */
 
-    fun emit(event: String, vararg args: Any? /* js.core.ReadonlyArray<Any?> */): Boolean
+    override fun emit(event: String, vararg args: Any? /* js.core.ReadonlyArray<Any?> */): Boolean
     fun emit(event: ServerEvent.CLOSE): Boolean
     fun emit(event: ServerEvent.CONNECTION, socket: Socket): Boolean
     fun emit(event: ServerEvent.ERROR, err: Throwable /* JsError */): Boolean
@@ -162,7 +162,7 @@ external class Server<Request : IncomingMessage, Response : ServerResponse<*>> :
     fun emit(event: ServerEvent.DROPREQUEST, req: Request, socket: node.stream.Duplex): Boolean
     fun emit(event: ServerEvent.REQUEST, req: Request, res: Response): Boolean
     fun emit(event: ServerEvent.UPGRADE, req: Request, socket: node.stream.Duplex, head: node.buffer.Buffer): Boolean
-    fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
+    override fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
     fun on(event: ServerEvent.CLOSE, listener: () -> Unit): Unit /* this */
     fun on(event: ServerEvent.CONNECTION, listener: (socket: Socket) -> Unit): Unit /* this */
     fun on(event: ServerEvent.ERROR, listener: (err: Throwable /* JsError */) -> Unit): Unit /* this */
@@ -190,7 +190,7 @@ external class Server<Request : IncomingMessage, Response : ServerResponse<*>> :
         listener: (req: Request, socket: node.stream.Duplex, head: node.buffer.Buffer) -> Unit,
     ): Unit /* this */
 
-    fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
+    override fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
     fun once(event: ServerEvent.CLOSE, listener: () -> Unit): Unit /* this */
     fun once(event: ServerEvent.CONNECTION, listener: (socket: Socket) -> Unit): Unit /* this */
     fun once(event: ServerEvent.ERROR, listener: (err: Throwable /* JsError */) -> Unit): Unit /* this */
@@ -218,7 +218,11 @@ external class Server<Request : IncomingMessage, Response : ServerResponse<*>> :
         listener: (req: Request, socket: node.stream.Duplex, head: node.buffer.Buffer) -> Unit,
     ): Unit /* this */
 
-    fun prependListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
+    override fun prependListener(
+        event: String,
+        listener: Function<Unit>, /* (...args: any[]) => void */
+    ): Unit /* this */
+
     fun prependListener(event: ServerEvent.CLOSE, listener: () -> Unit): Unit /* this */
     fun prependListener(event: ServerEvent.CONNECTION, listener: (socket: Socket) -> Unit): Unit /* this */
     fun prependListener(event: ServerEvent.ERROR, listener: (err: Throwable /* JsError */) -> Unit): Unit /* this */
@@ -250,7 +254,11 @@ external class Server<Request : IncomingMessage, Response : ServerResponse<*>> :
         listener: (req: Request, socket: node.stream.Duplex, head: node.buffer.Buffer) -> Unit,
     ): Unit /* this */
 
-    fun prependOnceListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
+    override fun prependOnceListener(
+        event: String,
+        listener: Function<Unit>, /* (...args: any[]) => void */
+    ): Unit /* this */
+
     fun prependOnceListener(event: ServerEvent.CLOSE, listener: () -> Unit): Unit /* this */
     fun prependOnceListener(event: ServerEvent.CONNECTION, listener: (socket: Socket) -> Unit): Unit /* this */
     fun prependOnceListener(event: ServerEvent.ERROR, listener: (err: Throwable /* JsError */) -> Unit): Unit /* this */

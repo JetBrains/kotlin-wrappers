@@ -11,6 +11,7 @@
         "<nodeModules>/@types/node/fs.d.ts",
         "<nodeModules>/@types/node/fs/promises.d.ts",
         "<nodeModules>/@types/node/http.d.ts",
+        "<nodeModules>/@types/node/net.d.ts",
         "<nodeModules>/@types/node/tls.d.ts",
         "<nodeModules>/@types/node/readline.d.ts",
         "<nodeModules>/@types/node/readline/promises.d.ts"
@@ -78,6 +79,9 @@
         "^node/http": "node:http",
         "^http": "node:http",
 
+        "^node/net": "node:net",
+        "^net": "node:net",
+
         "^node/tls": "node:tls",
         "^tls": "node:tls",
 
@@ -135,6 +139,10 @@
         "^node/http/namespace.kt": "node/http/nodeNamespace.kt",
         "^node/http.kt": "node/http/http.kt",
         "^http": "node/http",
+
+        "^node/net/namespace.kt": "node/net/nodeNamespace.kt",
+        "^node/net.kt": "node/net/net.kt",
+        "^net": "node/net",
 
         "^node/tls/namespace.kt": "node/tls/nodeNamespace.kt",
         "^node/tls.kt": "node/tls/tls.kt",
@@ -448,6 +456,22 @@
             "node.url.URL"
         ],
 
+        "net/ListenOptions.kt": [
+            "node.events.Abortable"
+        ],
+        "net/OnReadOpts.kt": [
+            "js.typedarrays.Uint8Array"
+        ],
+        "net/Server.kt": [
+            "node.events.EventEmitter"
+        ],
+        "net/Socket.kt": [
+            "js.typedarrays.Uint8Array"
+        ],
+        "net/SocketConstructorOpts.kt": [
+            "web.abort.AbortSignal"
+        ],
+
         "tls/TLSSocket.kt": [
             "node.crypto.X509Certificate"
         ],
@@ -494,6 +518,9 @@
 
         "http": "package",
         "node:http": "ignore",
+
+        "net": "package",
+        "node:net": "ignore",
 
         "tls": "package",
         "node:tls": "ignore",

@@ -18,6 +18,13 @@ export default (node) => {
                     node.name.text === "Abortable"
                 )
             )
+            || (
+                sourceFileName.endsWith("net.d.ts")
+                && (
+                    node.name.text === "ServerOpts"
+                    || node.name.text === "TcpSocketConnectOpts"
+                )
+            )
         )
     ) {
         return ""
