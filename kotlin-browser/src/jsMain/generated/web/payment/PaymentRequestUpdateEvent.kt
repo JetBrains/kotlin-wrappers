@@ -6,7 +6,7 @@
 
 package web.payment
 
-import js.promise.Promise
+import js.promise.PromiseLike
 import web.events.Event
 import web.events.EventInit
 import web.events.EventType
@@ -25,7 +25,7 @@ open external class PaymentRequestUpdateEvent(
 ) : Event {
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentRequestUpdateEvent/updateWith) */
     fun updateWith(detailsPromise: PaymentDetailsUpdate)
-    fun updateWith(detailsPromise: Promise<PaymentDetailsUpdate> /* PromiseLike */)
+    fun updateWith(detailsPromise: PromiseLike<PaymentDetailsUpdate>)
 
     companion object
 }

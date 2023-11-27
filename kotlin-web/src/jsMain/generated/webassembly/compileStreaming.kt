@@ -5,6 +5,7 @@
 package webassembly
 
 import js.promise.Promise
+import js.promise.PromiseLike
 import web.http.Response
 
 external fun compileStreaming(
@@ -12,5 +13,5 @@ external fun compileStreaming(
 ): Promise<Module>
 
 external fun compileStreaming(
-    source: Promise<Response>,
+    source: PromiseLike<Response>,
 ): Promise<Module>

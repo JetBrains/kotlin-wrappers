@@ -8,6 +8,7 @@ package web.serviceworker
 
 import js.core.Void
 import js.promise.Promise
+import js.promise.PromiseLike
 import seskar.js.JsValue
 import web.events.EventType
 import web.http.Request
@@ -48,7 +49,7 @@ open external class FetchEvent(
 
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/FetchEvent/respondWith) */
     fun respondWith(r: Response)
-    fun respondWith(r: Promise<Response>)
+    fun respondWith(r: PromiseLike<Response>)
 
     companion object {
         @JsValue("fetch")

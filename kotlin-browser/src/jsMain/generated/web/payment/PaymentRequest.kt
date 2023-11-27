@@ -5,6 +5,7 @@ package web.payment
 import js.core.ReadonlyArray
 import js.core.Void
 import js.promise.Promise
+import js.promise.PromiseLike
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventTarget
@@ -33,5 +34,5 @@ external class PaymentRequest(
 
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentRequest/show) */
     fun show(detailsPromise: PaymentDetailsUpdate = definedExternally): Promise<PaymentResponse>
-    fun show(detailsPromise: Promise<PaymentDetailsUpdate> /* PromiseLike */): Promise<PaymentResponse>
+    fun show(detailsPromise: PromiseLike<PaymentDetailsUpdate>): Promise<PaymentResponse>
 }

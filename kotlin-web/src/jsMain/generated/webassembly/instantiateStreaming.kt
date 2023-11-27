@@ -5,6 +5,7 @@
 package webassembly
 
 import js.promise.Promise
+import js.promise.PromiseLike
 import web.http.Response
 
 external fun instantiateStreaming(
@@ -13,6 +14,6 @@ external fun instantiateStreaming(
 ): Promise<WebAssemblyInstantiatedSource>
 
 external fun instantiateStreaming(
-    source: Promise<Response>,
+    source: PromiseLike<Response>,
     importObject: Imports = definedExternally,
 ): Promise<WebAssemblyInstantiatedSource>
