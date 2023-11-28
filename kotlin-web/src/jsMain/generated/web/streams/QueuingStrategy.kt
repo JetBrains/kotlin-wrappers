@@ -3,6 +3,6 @@
 package web.streams
 
 sealed external interface QueuingStrategy<T> {
-    var highWaterMark: Int?
-    var size: QueuingStrategySize<T>?
+    val highWaterMark: Int?
+    val size: QueuingStrategySize<T>?
 }
