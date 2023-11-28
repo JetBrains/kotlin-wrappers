@@ -19,7 +19,7 @@ internal class CSSOMSheet(
     val type: RuleType,
     val removeMode: RemoveMode = RemoveMode.OnBrowserIdle,
     private var cleanTimeout: Int = 30000,
-    maxRulesPerSheet: Int? = DEFAULT_MAX_RULES_PER_SHEET
+    maxRulesPerSheet: Int? = DEFAULT_MAX_RULES_PER_SHEET,
 ) : AbstractSheet(type, maxRulesPerSheet) {
     private val groups = LinkedHashMap<GroupId, RulesGroup>()
     internal val scheduledGroups = LinkedHashMap<GroupId, Rules>()
@@ -41,10 +41,10 @@ internal class CSSOMSheet(
         }
         setTimeout({
             if (!!globalThis.requestIdleCallback && removeMode == RemoveMode.OnBrowserIdle) {
-                requestIdleCallback {
+                requestIdleCallback({
                     isCleanRequested = false
                     clean()
-                }
+                })
             } else {
                 isCleanRequested = false
                 clean()
