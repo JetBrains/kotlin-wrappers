@@ -5,8 +5,8 @@ plugins {
 }
 
 dependencies {
-    jsMainApi(project(":kotlin-react-legacy"))
-    jsMainApi(project(":kotlin-react-dom"))
+    jsMainApi(projects.kotlinReactLegacy)
+    jsMainApi(projects.kotlinReactDom)
 
     jsMainImplementation(npmv("@jetbrains/ring-ui"))
 }

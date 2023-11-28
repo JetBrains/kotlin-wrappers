@@ -5,9 +5,9 @@ plugins {
 }
 
 dependencies {
-    jsMainApi(project(":kotlin-cssom-core"))
-    jsMainApi(project(":kotlin-js"))
-    jsMainApi(project(":kotlin-browser"))
+    jsMainApi(projects.kotlinCssomCore)
+    jsMainApi(projects.kotlinJs)
+    jsMainApi(projects.kotlinBrowser)
 
     jsMainApi(devNpmv("csstype"))
 }

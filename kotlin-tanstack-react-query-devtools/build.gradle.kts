@@ -5,7 +5,7 @@ plugins {
 }
 
 dependencies {
-    jsMainApi(project(":kotlin-react-core"))
+    jsMainApi(projects.kotlinReactCore)
 
     jsMainApi(npmv("@tanstack/react-query-devtools"))
 }

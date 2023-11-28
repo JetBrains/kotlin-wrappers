@@ -5,8 +5,8 @@ plugins {
 }
 
 dependencies {
-    jsMainApi(project(":kotlin-mui-material"))
-    jsMainApi(project(":kotlin-muix-tree-view"))
+    jsMainApi(projects.kotlinMuiMaterial)
+    jsMainApi(projects.kotlinMuixTreeView)
 
     jsMainApi(npmv("@mui/lab"))
 }

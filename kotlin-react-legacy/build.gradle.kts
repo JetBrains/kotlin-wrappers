@@ -5,7 +5,7 @@ plugins {
 }
 
 dependencies {
-    jsMainApi(project(":kotlin-extensions"))
-    jsMainApi(project(":kotlin-js"))
-    jsMainApi(project(":kotlin-react-core"))
+    jsMainApi(projects.kotlinExtensions)
+    jsMainApi(projects.kotlinJs)
+    jsMainApi(projects.kotlinReactCore)
 }

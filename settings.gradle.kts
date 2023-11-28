@@ -1,5 +1,7 @@
 rootProject.name = "kotlin-wrappers"
 
+enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
+
 pluginManagement {
     resolutionStrategy {
         plugins {

@@ -6,8 +6,8 @@ plugins {
 }
 
 dependencies {
-    jsMainApi(project(":kotlin-react-core"))
-    jsMainApi(project(":kotlin-tanstack-query-core"))
+    jsMainApi(projects.kotlinReactCore)
+    jsMainApi(projects.kotlinTanstackQueryCore)
 
     jsMainImplementation(seskarCore())
 

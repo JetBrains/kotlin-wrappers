@@ -5,10 +5,10 @@ plugins {
 }
 
 dependencies {
-    jsMainApi(project(":kotlin-extensions"))
-    jsMainApi(project(":kotlin-js"))
-    jsMainApi(project(":kotlin-react-legacy"))
-    jsMainApi(project(":kotlin-react-dom"))
+    jsMainApi(projects.kotlinExtensions)
+    jsMainApi(projects.kotlinJs)
+    jsMainApi(projects.kotlinReactLegacy)
+    jsMainApi(projects.kotlinReactDom)
 
     jsMainApi(kotlinxHtml("js"))
 }

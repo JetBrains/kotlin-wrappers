@@ -18,11 +18,11 @@ kotlin {
 }
 
 dependencies {
-    jsMainApi(project(":kotlin-extensions"))
-    jsMainApi(project(":kotlin-js"))
-    jsMainApi(project(":kotlin-css"))
-    jsMainApi(project(":kotlin-react-legacy"))
-    jsMainApi(project(":kotlin-react-dom-legacy"))
+    jsMainApi(projects.kotlinExtensions)
+    jsMainApi(projects.kotlinJs)
+    jsMainApi(projects.kotlinCss)
+    jsMainApi(projects.kotlinReactLegacy)
+    jsMainApi(projects.kotlinReactDomLegacy)
 
     jsMainApi(kotlinxHtml("js"))
 

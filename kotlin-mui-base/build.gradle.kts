@@ -5,8 +5,8 @@ plugins {
 }
 
 dependencies {
-    jsMainApi(project(":kotlin-mui-system"))
-    jsMainApi(project(":kotlin-popper"))
+    jsMainApi(projects.kotlinMuiSystem)
+    jsMainApi(projects.kotlinPopper)
 
     jsMainApi(npmv("@mui/base"))
 }

@@ -5,8 +5,8 @@ plugins {
 }
 
 dependencies {
-    jsMainApi(project(":kotlin-react-core"))
-    jsMainApi(project(":kotlin-react-dom"))
+    jsMainApi(projects.kotlinReactCore)
+    jsMainApi(projects.kotlinReactDom)
 
     jsMainApi(npmv("react-beautiful-dnd"))
 }

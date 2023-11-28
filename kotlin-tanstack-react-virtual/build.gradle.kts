@@ -5,9 +5,9 @@ plugins {
 }
 
 dependencies {
-    jsMainApi(project(":kotlin-js"))
-    jsMainApi(project(":kotlin-browser"))
-    jsMainApi(project(":kotlin-tanstack-virtual-core"))
+    jsMainApi(projects.kotlinJs)
+    jsMainApi(projects.kotlinBrowser)
+    jsMainApi(projects.kotlinTanstackVirtualCore)
 
     jsMainApi(npmv("@tanstack/react-virtual"))
 }

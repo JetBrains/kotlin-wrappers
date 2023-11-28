@@ -5,7 +5,7 @@ plugins {
 }
 
 dependencies {
-    jsMainApi(project(":kotlin-react-dom"))
+    jsMainApi(projects.kotlinReactDom)
 
     jsMainApi(npmv("@mui/system"))
 }

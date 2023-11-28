@@ -5,5 +5,5 @@ plugins {
 }
 
 dependencies {
-    jsMainApi(project(":kotlin-js"))
+    jsMainApi(projects.kotlinJs)
 }

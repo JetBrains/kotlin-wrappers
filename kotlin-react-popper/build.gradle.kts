@@ -5,8 +5,8 @@ plugins {
 }
 
 dependencies {
-    jsMainApi(project(":kotlin-popper"))
-    jsMainApi(project(":kotlin-react-core"))
+    jsMainApi(projects.kotlinPopper)
+    jsMainApi(projects.kotlinReactCore)
 
     jsMainApi(npmv("react-popper"))
 }

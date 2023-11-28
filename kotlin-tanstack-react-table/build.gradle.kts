@@ -5,8 +5,8 @@ plugins {
 }
 
 dependencies {
-    jsMainApi(project(":kotlin-react-core"))
-    jsMainApi(project(":kotlin-tanstack-table-core"))
+    jsMainApi(projects.kotlinReactCore)
+    jsMainApi(projects.kotlinTanstackTableCore)
 
     jsMainApi(npmv("@tanstack/react-table"))
 }

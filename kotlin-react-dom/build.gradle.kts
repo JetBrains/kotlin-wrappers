@@ -6,9 +6,9 @@ plugins {
 }
 
 dependencies {
-    jsMainApi(project(":kotlin-js"))
-    jsMainApi(project(":kotlin-browser"))
-    jsMainApi(project(":kotlin-react-core"))
+    jsMainApi(projects.kotlinJs)
+    jsMainApi(projects.kotlinBrowser)
+    jsMainApi(projects.kotlinReactCore)
 
     jsMainImplementation(seskarCore())
 

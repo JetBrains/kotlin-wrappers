@@ -5,10 +5,10 @@ plugins {
 }
 
 dependencies {
-    jsMainApi(project(":kotlin-extensions"))
-    jsMainApi(project(":kotlin-js"))
-    jsMainApi(project(":kotlin-react-legacy"))
-    jsMainApi(project(":kotlin-redux"))
+    jsMainApi(projects.kotlinExtensions)
+    jsMainApi(projects.kotlinJs)
+    jsMainApi(projects.kotlinReactLegacy)
+    jsMainApi(projects.kotlinRedux)
 
     jsMainApi(npmv("react-redux"))
 }

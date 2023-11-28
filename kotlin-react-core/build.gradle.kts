@@ -5,8 +5,8 @@ plugins {
 }
 
 dependencies {
-    jsMainApi(project(":kotlin-js"))
-    jsMainApi(project(":kotlin-csstype"))
+    jsMainApi(projects.kotlinJs)
+    jsMainApi(projects.kotlinCsstype)
 
     jsTestImplementation(kotlin("test-js"))
 

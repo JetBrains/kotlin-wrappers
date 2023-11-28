@@ -5,9 +5,9 @@ plugins {
 }
 
 dependencies {
-    jsMainApi(project(":kotlin-csstype"))
-    jsMainApi(project(":kotlin-browser"))
-    jsMainApi(project(":kotlin-react-core"))
+    jsMainApi(projects.kotlinCsstype)
+    jsMainApi(projects.kotlinBrowser)
+    jsMainApi(projects.kotlinReactCore)
 
     jsMainApi(npmv("@emotion/cache"))
     jsMainApi(npmv("@emotion/css"))

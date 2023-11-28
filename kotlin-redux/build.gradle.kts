@@ -6,8 +6,8 @@ plugins {
 }
 
 dependencies {
-    jsMainApi(project(":kotlin-extensions"))
-    jsMainApi(project(":kotlin-js"))
+    jsMainApi(projects.kotlinExtensions)
+    jsMainApi(projects.kotlinJs)
     jsMainApi(kotlinxSerialization("json"))
 
     jsMainApi(npmv("redux"))

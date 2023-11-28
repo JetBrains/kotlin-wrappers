@@ -5,7 +5,7 @@ plugins {
 }
 
 dependencies {
-    jsMainApi(project(":kotlin-react"))
+    jsMainApi(projects.kotlinReact)
 
     jsMainImplementation(kotlinxCoroutines("core"))
 }

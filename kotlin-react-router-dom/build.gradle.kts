@@ -6,9 +6,9 @@ plugins {
 }
 
 dependencies {
-    jsMainApi(project(":kotlin-browser"))
-    jsMainApi(project(":kotlin-react-router"))
-    jsMainApi(project(":kotlin-react-dom"))
+    jsMainApi(projects.kotlinBrowser)
+    jsMainApi(projects.kotlinReactRouter)
+    jsMainApi(projects.kotlinReactDom)
 
     jsMainApi(npmv("react-router-dom"))
 }

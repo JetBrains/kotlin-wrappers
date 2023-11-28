@@ -6,9 +6,9 @@ plugins {
 }
 
 dependencies {
-    jsMainApi(project(":kotlin-emotion"))
-    jsMainApi(project(":kotlin-react"))
-    jsMainApi(project(":kotlin-react-dom"))
+    jsMainApi(projects.kotlinEmotion)
+    jsMainApi(projects.kotlinReact)
+    jsMainApi(projects.kotlinReactDom)
 
     jsMainImplementation(seskarCore())
 

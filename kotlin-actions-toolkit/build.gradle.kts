@@ -16,7 +16,7 @@ dependencies {
     jsMainApi(npmv("@actions/io"))
     jsMainApi(npmv("@actions/tool-cache"))
 
-    jsMainApi(project(":kotlin-node"))
+    jsMainApi(projects.kotlinNode)
     jsMainImplementation(kotlinxCoroutines("core"))
     jsMainImplementation(seskarCore())
 }

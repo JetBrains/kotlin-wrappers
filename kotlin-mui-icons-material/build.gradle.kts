@@ -5,7 +5,7 @@ plugins {
 }
 
 dependencies {
-    jsMainApi(project(":kotlin-mui-material"))
+    jsMainApi(projects.kotlinMuiMaterial)
 
     jsMainApi(npmv("@mui/icons-material"))
 }

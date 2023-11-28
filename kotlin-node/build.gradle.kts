@@ -9,8 +9,8 @@ plugins {
 }
 
 dependencies {
-    jsMainApi(project(":kotlin-js"))
-    jsMainApi(project(":kotlin-web"))
+    jsMainApi(projects.kotlinJs)
+    jsMainApi(projects.kotlinWeb)
     jsMainImplementation(kotlinxCoroutines("core"))
 
     jsMainApi(devNpmv("@types/node"))
