@@ -5,7 +5,7 @@ import js.errors.name
 import js.promise.catch
 import kotlinx.coroutines.suspendCancellableCoroutine
 import web.abort.AbortController
-import web.errors.DOMExceptionName
+import web.errors.DOMException
 import web.url.URL
 import kotlin.coroutines.resume
 import kotlin.coroutines.resumeWithException
@@ -30,7 +30,7 @@ suspend fun fetch(
         fetchAsync(request)
             .then { continuation.resume(it) }
             .catch { error ->
-                if (error.name != DOMExceptionName.AbortError) {
+                if (error.name != DOMException.AbortError) {
                     continuation.resumeWithException(FetchException(error))
                 }
             }
