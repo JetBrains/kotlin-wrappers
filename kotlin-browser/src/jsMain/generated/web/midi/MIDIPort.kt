@@ -3,7 +3,6 @@
 package web.midi
 
 import js.promise.Promise
-import web.events.Event
 import web.events.EventHandler
 import web.events.EventTarget
 
@@ -27,7 +26,7 @@ sealed external class MIDIPort :
     val name: String?
 
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/MIDIPort/statechange_event) */
-    var onstatechange: EventHandler<Event>?
+    var onstatechange: EventHandler<MIDIConnectionEvent>?
 
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/MIDIPort/state) */
     val state: MIDIPortDeviceState
