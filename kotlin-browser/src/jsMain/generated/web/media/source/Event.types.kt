@@ -5,14 +5,8 @@ package web.media.source
 import web.events.Event
 import web.events.EventType
 
-inline val Event.Companion.ABORT: EventType<Event>
-    get() = EventType("abort")
-
 inline val Event.Companion.ADD_SOURCE_BUFFER: EventType<Event>
     get() = EventType("addsourcebuffer")
-
-inline val Event.Companion.ERROR: EventType<Event>
-    get() = EventType("error")
 
 inline val Event.Companion.REMOVE_SOURCE_BUFFER: EventType<Event>
     get() = EventType("removesourcebuffer")

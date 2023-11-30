@@ -11,20 +11,11 @@ inline val Event.Companion.DOM_CONTENT_LOADED: EventType<Event>
 inline val Event.Companion.BEFORE_TOGGLE: EventType<Event>
     get() = EventType("beforetoggle")
 
-inline val Event.Companion.CANCEL: EventType<Event>
-    get() = EventType("cancel")
-
 inline val Event.Companion.CAN_PLAY: EventType<Event>
     get() = EventType("canplay")
 
 inline val Event.Companion.CAN_PLAY_THROUGH: EventType<Event>
     get() = EventType("canplaythrough")
-
-inline val Event.Companion.CHANGE: EventType<Event>
-    get() = EventType("change")
-
-inline val Event.Companion.CLOSE: EventType<Event>
-    get() = EventType("close")
 
 inline val Event.Companion.CUE_CHANGE: EventType<Event>
     get() = EventType("cuechange")

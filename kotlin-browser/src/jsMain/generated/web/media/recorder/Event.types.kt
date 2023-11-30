@@ -5,9 +5,6 @@ package web.media.recorder
 import web.events.Event
 import web.events.EventType
 
-inline val Event.Companion.ERROR: EventType<Event>
-    get() = EventType("error")
-
 inline val Event.Companion.PAUSE: EventType<Event>
     get() = EventType("pause")
 
