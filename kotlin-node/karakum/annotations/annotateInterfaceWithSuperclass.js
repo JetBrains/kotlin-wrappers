@@ -1,6 +1,11 @@
 import ts from "typescript"
 
 const interfacesWithSuperclass = [
+    // globals
+    "ErrnoException",
+    "ReadableStream",
+    "WritableStream",
+
     // child_process
     "ChildProcessByStdio",
     "ChildProcessWithoutNullStreams",

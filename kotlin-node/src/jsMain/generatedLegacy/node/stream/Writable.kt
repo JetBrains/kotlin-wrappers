@@ -4,6 +4,8 @@
 
 package node.stream
 
+import js.typedarrays.Uint8Array
+import node.buffer.BufferEncoding
 import node.events.Event
 import node.events.EventType
 
@@ -14,6 +16,12 @@ open external class Writable : Stream, node.WritableStream {
      * @since v11.4.0
      */
     override /* val */ var writable: Boolean
+
+    override fun write(buffer: Uint8Array, cb: (err: Throwable?) -> Unit): Boolean
+
+    override fun write(buffer: String, cb: (err: Throwable?) -> Unit): Boolean
+
+    override fun write(str: String, encoding: BufferEncoding, cb: (err: Throwable?) -> Unit): Boolean
 
     /**
      * Is `true` after `writable.end()` has been called. This property
@@ -83,7 +91,7 @@ open external class Writable : Stream, node.WritableStream {
 
     open fun _write(
         chunk: Any,
-        encoding: node.buffer.BufferEncoding,
+        encoding: BufferEncoding,
         callback: (error: Error?) -> Unit,
     )
 
@@ -163,14 +171,8 @@ open external class Writable : Stream, node.WritableStream {
      * @param callback Callback for when this chunk of data is flushed.
      * @return `false` if the stream wishes for the calling code to wait for the `'drain'` event to be emitted before continuing to write additional data; otherwise `true`.
      */
-    override fun write(
+    fun write(
         chunk: Any,
-        callback: (error: Error?) -> Unit,
-    ): Boolean
-
-    override fun write(
-        str: String,
-        encoding: node.buffer.BufferEncoding,
         callback: (error: Error?) -> Unit,
     ): Boolean
 
@@ -179,7 +181,7 @@ open external class Writable : Stream, node.WritableStream {
      * @since v0.11.15
      * @param encoding The new default encoding
      */
-    open fun setDefaultEncoding(encoding: node.buffer.BufferEncoding) /* : this */
+    open fun setDefaultEncoding(encoding: BufferEncoding) /* : this */
 
     /**
      * Calling the `writable.end()` method signals that no more data will be written
@@ -203,16 +205,21 @@ open external class Writable : Stream, node.WritableStream {
      * @param encoding The encoding if `chunk` is a string
      * @param callback Callback for when the stream is finished.
      */
-    override fun end(callback: () -> Unit) /* : this */
-    override fun end(
+    override fun end(cb: () -> Unit) /* : this */
+
+    override fun end(data: String, cb: () -> Unit)
+
+    override fun end(data: Uint8Array, cb: () -> Unit)
+
+    fun end(
         chunk: Any,
         callback: () -> Unit,
     ) /* : this */
 
     override fun end(
         str: String,
-        encoding: node.buffer.BufferEncoding,
-        callback: () -> Unit,
+        encoding: BufferEncoding,
+        cb: () -> Unit,
     ) /* : this */
 
     /**

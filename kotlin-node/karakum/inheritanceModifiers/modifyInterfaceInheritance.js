@@ -25,6 +25,16 @@ export default (node) => {
                     || node.name.text === "TcpSocketConnectOpts"
                 )
             )
+            || (
+                sourceFileName.endsWith("globals.d.ts")
+                && (
+                    node.name.text === "ErrnoException"
+                    || node.name.text === "ReadableStream"
+                    || node.name.text === "ReadWriteStream"
+                    || node.name.text === "WritableStream"
+                    || node.name.text === "RefCounted"
+                )
+            )
         )
     ) {
         return ""

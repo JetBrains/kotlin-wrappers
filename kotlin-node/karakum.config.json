@@ -9,6 +9,7 @@
         "<nodeModules>/@types/node/dns/promises.d.ts",
         "<nodeModules>/@types/node/events.d.ts",
         "<nodeModules>/@types/node/fs.d.ts",
+        "<nodeModules>/@types/node/globals.d.ts",
         "<nodeModules>/@types/node/fs/promises.d.ts",
         "<nodeModules>/@types/node/http.d.ts",
         "<nodeModules>/@types/node/net.d.ts",
@@ -18,6 +19,27 @@
     ],
     "output": "src/jsMain/generated",
     "ignoreOutput": [
+        "**/NodeRequire.kt",
+        "**/NodeRequireResolve.kt",
+        "**/NodeModule.kt",
+        "**/Dict.kt",
+        "**/ReadOnlyDict.kt",
+
+        "**/AbortController.kt",
+        "**/AbortSignal.kt",
+        "**/Array.kt",
+        "**/ReadonlyArray.kt",
+        "**/String.kt",
+        "**/structuredClone.kt",
+
+        "**/ArrayBufferView.kt",
+        "**/TypedArray.kt",
+        "**/Uint8ClampedArray.kt",
+        "**/*8Array.kt",
+        "**/*16Array.kt",
+        "**/*32Array.kt",
+        "**/*64Array.kt",
+
         "**/__promisify__.kt",
         "**/__promisify__*.kt",
 
@@ -93,6 +115,9 @@
         "SuspendAsync.kt": "Suspend.kt",
         "AsyncOptionsAsync.kt": "OptionsAsync.kt",
 
+        "^node/RequireResolve.kt": "node/NodeRequireResolve.kt",
+        "^nodejs": "node",
+
         "^node/async_hooks/namespace.kt": "node/asyncHooks/nodeNamespace.kt",
         "^node/asyncHooks.kt": "node/asyncHooks/asyncHooks.kt",
         "^async_hooks": "node/asyncHooks",
@@ -158,6 +183,19 @@
         ],
         "Suspend.kt": [
             "js.promise.await"
+        ],
+
+        "ReadableStream.kt": [
+            "js.typedarrays.Uint8Array",
+            "node.events.EventEmitter"
+        ],
+        "Require.kt": [
+            "node.Module",
+            "node.Module as NodeModule"
+        ],
+        "WritableStream.kt": [
+            "js.typedarrays.Uint8Array",
+            "node.events.EventEmitter"
         ],
 
         "buffer/Buffer.kt": [
@@ -492,6 +530,8 @@
         ]
     },
     "namespaceStrategy": {
+        "NodeJS": "package",
+
         "async_hooks": "package",
         "node:async_hooks": "ignore",
 

@@ -4,6 +4,10 @@
 
 package node.stream
 
+import js.typedarrays.Uint8Array
+import node.ReadableStreamPipeOptions
+import node.WritableStream
+import node.buffer.BufferEncoding
 import node.events.Event
 import node.events.EventType
 
@@ -33,7 +37,7 @@ open external class Readable : Stream, node.ReadableStream {
      * Getter for the property `encoding` of a given `Readable` stream. The `encoding`property can be set using the `readable.setEncoding()` method.
      * @since v12.7.0
      */
-    open val readableEncoding: node.buffer.BufferEncoding?
+    open val readableEncoding: BufferEncoding?
 
     /**
      * Becomes `true` when `'end'` event is emitted.
@@ -193,7 +197,7 @@ open external class Readable : Stream, node.ReadableStream {
      * @since v0.9.4
      * @param encoding The encoding to use.
      */
-    override fun setEncoding(encoding: node.buffer.BufferEncoding) /* : this */
+    override fun setEncoding(encoding: BufferEncoding) /* : this */
 
     /**
      * The `readable.pause()` method will cause a stream in flowing mode to stop
@@ -256,6 +260,8 @@ open external class Readable : Stream, node.ReadableStream {
      */
     override fun isPaused(): Boolean
 
+    override fun <T : WritableStream> pipe(destination: T, options: ReadableStreamPipeOptions): T
+
     /**
      * The `readable.unpipe()` method detaches a `Writable` stream previously attached
      * using the {@link pipe} method.
@@ -282,7 +288,11 @@ open external class Readable : Stream, node.ReadableStream {
      * @since v0.9.4
      * @param destination Optional specific stream to unpipe
      */
-    override fun unpipe(destination: node.WritableStream) /* : this */
+    override fun unpipe(destination: WritableStream) /* : this */
+
+    override fun unshift(chunk: String, encoding: BufferEncoding)
+
+    override fun unshift(chunk: Uint8Array, encoding: BufferEncoding)
 
     /**
      * Passing `chunk` as `null` signals the end of the stream (EOF) and behaves the
@@ -349,9 +359,9 @@ open external class Readable : Stream, node.ReadableStream {
      * streams, `chunk` may be any JavaScript value.
      * @param encoding Encoding of string chunks. Must be a valid `Buffer` encoding, such as `'utf8'` or `'ascii'`.
      */
-    override fun unshift(
+    fun unshift(
         chunk: Any,
-        encoding: node.buffer.BufferEncoding,
+        encoding: BufferEncoding,
     )
 
     /**
@@ -379,10 +389,10 @@ open external class Readable : Stream, node.ReadableStream {
      * @since v0.9.4
      * @param stream An "old style" readable stream
      */
-    override fun wrap(stream: node.ReadableStream) /* : this */
+    override fun wrap(oldStream: node.ReadableStream) /* : this */
     open fun push(
         chunk: Any,
-        encoding: node.buffer.BufferEncoding = definedExternally,
+        encoding: BufferEncoding = definedExternally,
     ): Boolean
 
     open fun _destroy(
