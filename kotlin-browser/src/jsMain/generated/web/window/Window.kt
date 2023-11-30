@@ -43,6 +43,20 @@ sealed external class Window :
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/innerWidth) */
     val innerWidth: Int
 
+    /**
+     * Returns true if the location bar is visible; otherwise, returns false.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/locationbar)
+     */
+    val locationbar: BarProp
+
+    /**
+     * Returns true if the menu bar is visible; otherwise, returns false.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/menubar)
+     */
+    val menubar: BarProp
+
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/name) */
     var name: WindowName
 
@@ -78,6 +92,13 @@ sealed external class Window :
      */
     val parent: WindowProxy
 
+    /**
+     * Returns true if the personal bar is visible; otherwise, returns false.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/personalbar)
+     */
+    val personalbar: BarProp
+
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/screenLeft) */
     val screenLeft: Int
 
@@ -95,6 +116,27 @@ sealed external class Window :
 
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/scrollY) */
     val scrollY: Double
+
+    /**
+     * Returns true if the scrollbars are visible; otherwise, returns false.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/scrollbars)
+     */
+    val scrollbars: BarProp
+
+    /**
+     * Returns true if the status bar is visible; otherwise, returns false.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/statusbar)
+     */
+    val statusbar: BarProp
+
+    /**
+     * Returns true if the toolbar is visible; otherwise, returns false.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/toolbar)
+     */
+    val toolbar: BarProp
 
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/top) */
     val top: WindowProxy?
