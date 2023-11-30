@@ -4,7 +4,7 @@
     "EXTERNAL_CLASS_CONSTRUCTOR_PROPERTY_PARAMETER",
 )
 
-package web.window
+package web.pip
 
 import web.events.Event
 import web.events.EventInit

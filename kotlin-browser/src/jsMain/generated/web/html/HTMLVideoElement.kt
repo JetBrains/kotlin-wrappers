@@ -5,7 +5,7 @@ package web.html
 import js.promise.Promise
 import web.events.Event
 import web.events.EventHandler
-import web.window.PictureInPictureWindow
+import web.pip.PictureInPictureWindow
 
 /**
  * Provides special properties and methods for manipulating video objects. It also inherits properties and methods of HTMLMediaElement and HTMLElement.
