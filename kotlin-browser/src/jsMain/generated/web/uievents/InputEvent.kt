@@ -38,7 +38,7 @@ open external class InputEvent(
     val isComposing: Boolean
 
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/InputEvent/getTargetRanges) */
-    fun getTargetRanges(): ReadonlyArray<Any /* StaticRange */>
+    fun getTargetRanges(): ReadonlyArray<StaticRange>
 
     companion object {
         @JsValue("beforeinput")
