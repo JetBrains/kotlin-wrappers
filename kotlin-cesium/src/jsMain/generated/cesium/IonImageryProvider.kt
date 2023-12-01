@@ -179,7 +179,7 @@ sealed external class IonImageryProvider {
          */
         fun fromAssetId(
             assetId: Int,
-            options: ConstructorOptions,
+            options: ConstructorOptions? = definedExternally,
         ): Promise<IonImageryProvider>
     }
 }

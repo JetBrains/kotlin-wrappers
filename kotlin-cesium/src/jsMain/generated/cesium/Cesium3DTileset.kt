@@ -1065,7 +1065,7 @@ external class Cesium3DTileset(options: ConstructorOptions) {
          */
         fun fromIonAssetId(
             assetId: Int,
-            options: ConstructorOptions,
+            options: ConstructorOptions? = definedExternally,
         ): Promise<Cesium3DTileset>
 
         /**
