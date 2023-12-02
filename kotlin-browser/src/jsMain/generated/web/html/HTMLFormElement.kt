@@ -13,7 +13,8 @@ import web.window.WindowTarget
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFormElement)
  */
-abstract external class HTMLFormElement :
+open external class HTMLFormElement
+protected constructor() :
     HTMLElement,
     ArrayLike<Element>,
     JsIterable<Element> {
@@ -58,6 +59,13 @@ abstract external class HTMLFormElement :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFormElement/enctype)
      */
     var enctype: String
+
+    /**
+     * Sets or retrieves the number of objects in a collection.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFormElement/length)
+     */
+    override val length: Int
 
     /**
      * Sets or retrieves how to send the form data to the server.
