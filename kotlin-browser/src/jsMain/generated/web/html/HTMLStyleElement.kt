@@ -10,7 +10,8 @@ import web.cssom.MediaQuery
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLStyleElement)
  */
-abstract external class HTMLStyleElement :
+open external class HTMLStyleElement
+protected constructor() :
     HTMLElement,
     LinkStyle {
     /**

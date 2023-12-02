@@ -12,7 +12,8 @@ import web.http.ReferrerPolicy
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLLinkElement)
  */
-abstract external class HTMLLinkElement :
+open external class HTMLLinkElement
+protected constructor() :
     HTMLElement,
     LinkStyle {
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLLinkElement/as) */
