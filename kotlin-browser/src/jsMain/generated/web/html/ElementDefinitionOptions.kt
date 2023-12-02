@@ -3,5 +3,5 @@
 package web.html
 
 sealed external interface ElementDefinitionOptions {
-    var extends: String?
+    var extends: HtmlTagName<*>?
 }

@@ -2,4 +2,4 @@
 
 package web.html
 
-typealias CustomElementConstructor = JsClass<out HTMLElement>
+typealias CustomElementConstructor<T /* : HTMLElement */> = JsClass<T>
