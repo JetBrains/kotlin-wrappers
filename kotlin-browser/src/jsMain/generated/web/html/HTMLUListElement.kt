@@ -8,4 +8,5 @@ package web.html
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLUListElement)
  */
 open external class HTMLUListElement
-protected constructor() : HTMLElement
+protected constructor() :
+    HTMLElement

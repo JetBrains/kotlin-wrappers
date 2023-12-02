@@ -8,7 +8,8 @@ package web.html
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOListElement)
  */
 open external class HTMLOListElement
-protected constructor() : HTMLElement {
+protected constructor() :
+    HTMLElement {
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOListElement/reversed) */
     var reversed: Boolean
 

@@ -8,7 +8,8 @@ package web.html
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTimeElement)
  */
 open external class HTMLTimeElement
-protected constructor() : HTMLElement {
+protected constructor() :
+    HTMLElement {
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTimeElement/dateTime) */
     var dateTime: String
 }

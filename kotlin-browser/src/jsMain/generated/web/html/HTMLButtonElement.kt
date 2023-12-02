@@ -11,7 +11,8 @@ import web.window.WindowName
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLButtonElement)
  */
 open external class HTMLButtonElement
-protected constructor() : HTMLElement,
+protected constructor() :
+    HTMLElement,
     PopoverInvokerElement {
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLButtonElement/disabled) */
     var disabled: Boolean

@@ -8,4 +8,5 @@ package web.html
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLDListElement)
  */
 open external class HTMLDListElement
-protected constructor() : HTMLElement
+protected constructor() :
+    HTMLElement

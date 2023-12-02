@@ -10,7 +10,8 @@ import webvtt.TextTrack
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTrackElement)
  */
 open external class HTMLTrackElement
-protected constructor() : HTMLElement {
+protected constructor() :
+    HTMLElement {
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTrackElement/default) */
     var default: Boolean
 

@@ -14,7 +14,8 @@ import webgl.WebGLRenderingContext
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLCanvasElement)
  */
 open external class HTMLCanvasElement
-protected constructor() : HTMLElement {
+protected constructor() :
+    HTMLElement {
     /**
      * Gets or sets the height of a canvas element on a document.
      *

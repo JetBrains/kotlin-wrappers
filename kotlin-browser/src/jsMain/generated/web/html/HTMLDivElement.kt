@@ -8,4 +8,5 @@ package web.html
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLDivElement)
  */
 open external class HTMLDivElement
-protected constructor() : HTMLElement
+protected constructor() :
+    HTMLElement

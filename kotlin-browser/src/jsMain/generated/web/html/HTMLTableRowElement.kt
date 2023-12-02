@@ -8,7 +8,8 @@ package web.html
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableRowElement)
  */
 open external class HTMLTableRowElement
-protected constructor() : HTMLElement {
+protected constructor() :
+    HTMLElement {
     /**
      * Retrieves a collection of all cells in the table row.
      *

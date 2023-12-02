@@ -8,4 +8,5 @@ package web.html
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLHtmlElement)
  */
 open external class HTMLHtmlElement
-protected constructor() : HTMLElement
+protected constructor() :
+    HTMLElement

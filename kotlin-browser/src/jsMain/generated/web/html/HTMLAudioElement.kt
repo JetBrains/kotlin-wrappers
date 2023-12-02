@@ -8,4 +8,5 @@ package web.html
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAudioElement)
  */
 open external class HTMLAudioElement
-protected constructor() : HTMLMediaElement
+protected constructor() :
+    HTMLMediaElement

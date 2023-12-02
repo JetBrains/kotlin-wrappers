@@ -8,4 +8,5 @@ package web.html
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLUnknownElement)
  */
 open external class HTMLUnknownElement
-protected constructor() : HTMLElement
+protected constructor() :
+    HTMLElement

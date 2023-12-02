@@ -13,7 +13,8 @@ import web.pip.PictureInPictureWindow
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLVideoElement)
  */
 open external class HTMLVideoElement
-protected constructor() : HTMLMediaElement {
+protected constructor() :
+    HTMLMediaElement {
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLVideoElement/disablePictureInPicture) */
     var disablePictureInPicture: Boolean
 

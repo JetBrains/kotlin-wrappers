@@ -13,7 +13,8 @@ import web.window.WindowProxy
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLIFrameElement)
  */
 open external class HTMLIFrameElement
-protected constructor() : HTMLElement {
+protected constructor() :
+    HTMLElement {
     var allow: String
     var allowFullscreen: Boolean
 

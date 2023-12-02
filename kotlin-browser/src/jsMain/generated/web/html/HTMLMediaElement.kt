@@ -20,7 +20,8 @@ import webvtt.TextTrackList
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement)
  */
 open external class HTMLMediaElement
-protected constructor() : HTMLElement {
+protected constructor() :
+    HTMLElement {
     /**
      * Gets or sets a value that indicates whether to start playing the media automatically.
      *

@@ -8,4 +8,5 @@ package web.html
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLPictureElement)
  */
 open external class HTMLPictureElement
-protected constructor() : HTMLElement
+protected constructor() :
+    HTMLElement

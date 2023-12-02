@@ -8,7 +8,8 @@ package web.html
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLLIElement)
  */
 open external class HTMLLIElement
-protected constructor() : HTMLElement {
+protected constructor() :
+    HTMLElement {
     /** Sets or retrieves the value of a list item. */
     var value: Double
 }

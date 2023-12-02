@@ -8,7 +8,8 @@ package web.html
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOptGroupElement)
  */
 open external class HTMLOptGroupElement
-protected constructor() : HTMLElement {
+protected constructor() :
+    HTMLElement {
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOptGroupElement/disabled) */
     var disabled: Boolean
 

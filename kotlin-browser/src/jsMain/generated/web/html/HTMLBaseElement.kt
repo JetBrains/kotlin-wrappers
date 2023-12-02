@@ -10,7 +10,8 @@ import web.window.WindowTarget
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLBaseElement)
  */
 open external class HTMLBaseElement
-protected constructor() : HTMLElement {
+protected constructor() :
+    HTMLElement {
     /**
      * Gets or sets the baseline URL on which relative links are based.
      *

@@ -13,7 +13,8 @@ import web.dom.HTMLOrSVGElement
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement)
  */
 open external class HTMLElement
-protected constructor() : Element,
+protected constructor() :
+    Element,
     ElementCSSInlineStyle,
     ElementContentEditable,
     GlobalEventHandlers,

@@ -8,4 +8,5 @@ package web.html
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLParagraphElement)
  */
 open external class HTMLParagraphElement
-protected constructor() : HTMLElement
+protected constructor() :
+    HTMLElement

@@ -13,7 +13,8 @@ import web.http.ReferrerPolicy
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLImageElement)
  */
 open external class HTMLImageElement
-protected constructor() : HTMLElement {
+protected constructor() :
+    HTMLElement {
     /**
      * Sets or retrieves a text alternative to the graphic.
      *

@@ -11,7 +11,8 @@ import web.window.WindowProxy
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLObjectElement)
  */
 open external class HTMLObjectElement
-protected constructor() : HTMLElement {
+protected constructor() :
+    HTMLElement {
     /**
      * Retrieves the document object of the page or frame.
      *
