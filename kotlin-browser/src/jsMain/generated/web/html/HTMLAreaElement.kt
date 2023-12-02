@@ -11,7 +11,8 @@ import web.window.WindowTarget
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAreaElement)
  */
-abstract external class HTMLAreaElement :
+open external class HTMLAreaElement
+protected constructor() :
     HTMLElement,
     HTMLHyperlinkElementUtils {
     /**

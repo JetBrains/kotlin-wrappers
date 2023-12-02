@@ -11,7 +11,8 @@ import web.window.WindowTarget
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAnchorElement)
  */
-abstract external class HTMLAnchorElement :
+open external class HTMLAnchorElement
+protected constructor() :
     HTMLElement,
     HTMLHyperlinkElementUtils {
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAnchorElement/download) */
