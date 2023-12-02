@@ -2,6 +2,6 @@
 
 package web.html
 
-sealed external interface ElementDefinitionOptions {
-    var extends: HtmlTagName<*>?
+sealed external interface ElementDefinitionOptions<T : HTMLElement> {
+    var extends: HtmlTagName<T>?
 }

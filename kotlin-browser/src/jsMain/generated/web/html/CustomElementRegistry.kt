@@ -8,10 +8,10 @@ import web.dom.Node
 /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CustomElementRegistry) */
 sealed external class CustomElementRegistry {
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CustomElementRegistry/define) */
-    fun <T : HTMLElement> define(
+    fun <T : P, P : HTMLElement> define(
         name: HtmlTagName<T>,
         constructor: CustomElementConstructor<T>,
-        options: ElementDefinitionOptions = definedExternally,
+        options: ElementDefinitionOptions<P> = definedExternally,
     )
 
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CustomElementRegistry/get) */
