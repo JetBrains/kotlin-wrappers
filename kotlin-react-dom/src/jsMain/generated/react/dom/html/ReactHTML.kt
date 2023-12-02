@@ -237,9 +237,6 @@ object ReactHTML {
     inline val p: IntrinsicType<HTMLAttributes<HTMLParagraphElement>>
         get() = IntrinsicType("p")
 
-    inline val param: IntrinsicType<ParamHTMLAttributes<HTMLParamElement>>
-        get() = IntrinsicType("param")
-
     inline val picture: IntrinsicType<HTMLAttributes<HTMLElement>>
         get() = IntrinsicType("picture")
 
