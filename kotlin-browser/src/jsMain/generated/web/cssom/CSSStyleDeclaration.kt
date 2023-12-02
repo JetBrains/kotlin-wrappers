@@ -554,13 +554,9 @@ sealed external class CSSStyleDeclaration :
 
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/grid-column-end) */
     var gridColumnEnd: String
-    var gridColumnGap: String
 
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/grid-column-start) */
     var gridColumnStart: String
-
-    /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/gap) */
-    var gridGap: String
 
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/grid-row) */
     var gridRow: String
@@ -1032,7 +1028,6 @@ sealed external class CSSStyleDeclaration :
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/shape-outside) */
     var shapeOutside: String
     var shapeRendering: String
-    var speak: String
     var stopColor: String
     var stopOpacity: String
     var stroke: String
