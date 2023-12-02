@@ -7,8 +7,8 @@ package web.html
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableSectionElement)
  */
-abstract external class HTMLTableSectionElement :
-    HTMLElement {
+open external class HTMLTableSectionElement
+protected constructor() : HTMLElement {
     /**
      * Sets or retrieves the number of horizontal rows contained in the object.
      *

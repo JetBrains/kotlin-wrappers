@@ -7,8 +7,8 @@ package web.html
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLModElement)
  */
-abstract external class HTMLModElement :
-    HTMLElement {
+open external class HTMLModElement
+protected constructor() : HTMLElement {
     /**
      * Sets or retrieves reference information about the object.
      *

@@ -7,8 +7,8 @@ package web.html
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLDataListElement)
  */
-abstract external class HTMLDataListElement :
-    HTMLElement {
+open external class HTMLDataListElement
+protected constructor() : HTMLElement {
     /**
      * Returns an HTMLCollection of the option elements of the datalist element.
      *

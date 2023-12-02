@@ -9,8 +9,8 @@ import web.dom.NodeListOf
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMeterElement)
  */
-abstract external class HTMLMeterElement :
-    HTMLElement {
+open external class HTMLMeterElement
+protected constructor() : HTMLElement {
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMeterElement/high) */
     var high: Double
 

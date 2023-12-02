@@ -10,8 +10,8 @@ import web.dom.NodeListOf
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement)
  */
-abstract external class HTMLSelectElement :
-    HTMLElement,
+open external class HTMLSelectElement
+protected constructor() : HTMLElement,
     JsIterable<HTMLOptionElement> {
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/autocomplete) */
     var autocomplete: AutoFill

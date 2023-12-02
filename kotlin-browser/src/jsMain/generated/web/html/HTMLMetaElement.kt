@@ -9,8 +9,8 @@ import web.cssom.MediaQuery
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMetaElement)
  */
-abstract external class HTMLMetaElement :
-    HTMLElement {
+open external class HTMLMetaElement
+protected constructor() : HTMLElement {
     /** Gets or sets meta-information to associate with httpEquiv or name. */
     var content: String
 

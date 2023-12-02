@@ -7,8 +7,8 @@ import web.dom.Element
 import web.dom.Node
 
 /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSlotElement) */
-abstract external class HTMLSlotElement :
-    HTMLElement {
+open external class HTMLSlotElement
+protected constructor() : HTMLElement {
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSlotElement/name) */
     var name: String
 

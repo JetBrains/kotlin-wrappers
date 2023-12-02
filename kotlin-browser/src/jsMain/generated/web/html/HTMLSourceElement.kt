@@ -9,8 +9,8 @@ import web.cssom.MediaQuery
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSourceElement)
  */
-abstract external class HTMLSourceElement :
-    HTMLElement {
+open external class HTMLSourceElement
+protected constructor() : HTMLElement {
     var height: Double
 
     /**

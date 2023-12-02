@@ -7,8 +7,8 @@ package web.html
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLLabelElement)
  */
-abstract external class HTMLLabelElement :
-    HTMLElement {
+open external class HTMLLabelElement
+protected constructor() : HTMLElement {
     /**
      * Returns the form control that is associated with this element.
      *

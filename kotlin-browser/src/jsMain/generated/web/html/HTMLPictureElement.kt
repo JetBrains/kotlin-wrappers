@@ -7,5 +7,5 @@ package web.html
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLPictureElement)
  */
-abstract external class HTMLPictureElement :
-    HTMLElement
+open external class HTMLPictureElement
+protected constructor() : HTMLElement

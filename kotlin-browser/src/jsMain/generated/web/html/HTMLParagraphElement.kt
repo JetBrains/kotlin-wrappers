@@ -7,5 +7,5 @@ package web.html
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLParagraphElement)
  */
-abstract external class HTMLParagraphElement :
-    HTMLElement
+open external class HTMLParagraphElement
+protected constructor() : HTMLElement

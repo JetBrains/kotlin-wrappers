@@ -7,8 +7,8 @@ package web.html
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOptionElement)
  */
-abstract external class HTMLOptionElement :
-    HTMLElement {
+open external class HTMLOptionElement
+protected constructor() : HTMLElement {
     /**
      * Sets or retrieves the status of an option.
      *

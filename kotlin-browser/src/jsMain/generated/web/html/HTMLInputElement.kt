@@ -14,8 +14,8 @@ import kotlin.js.Date
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement)
  */
-abstract external class HTMLInputElement :
-    HTMLElement,
+open external class HTMLInputElement
+protected constructor() : HTMLElement,
     PopoverInvokerElement {
     /** Sets or retrieves a comma-separated list of content types. */
     var accept: String

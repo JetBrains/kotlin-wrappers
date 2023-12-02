@@ -7,8 +7,8 @@ package web.html
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFieldSetElement)
  */
-abstract external class HTMLFieldSetElement :
-    HTMLElement {
+open external class HTMLFieldSetElement
+protected constructor() : HTMLElement {
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFieldSetElement/disabled) */
     var disabled: Boolean
 

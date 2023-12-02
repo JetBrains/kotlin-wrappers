@@ -7,8 +7,8 @@ package web.html
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableCellElement)
  */
-abstract external class HTMLTableCellElement :
-    HTMLElement {
+open external class HTMLTableCellElement
+protected constructor() : HTMLElement {
     /**
      * Sets or retrieves abbreviated text for the object.
      *

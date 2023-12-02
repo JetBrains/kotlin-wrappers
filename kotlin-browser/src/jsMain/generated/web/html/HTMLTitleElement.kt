@@ -7,8 +7,8 @@ package web.html
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTitleElement)
  */
-abstract external class HTMLTitleElement :
-    HTMLElement {
+open external class HTMLTitleElement
+protected constructor() : HTMLElement {
     /**
      * Retrieves or sets the text of the object as a string.
      *

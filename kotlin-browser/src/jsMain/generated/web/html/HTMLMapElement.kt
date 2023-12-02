@@ -7,8 +7,8 @@ package web.html
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMapElement)
  */
-abstract external class HTMLMapElement :
-    HTMLElement {
+open external class HTMLMapElement
+protected constructor() : HTMLElement {
     /**
      * Retrieves a collection of the area objects defined for the given map object.
      *

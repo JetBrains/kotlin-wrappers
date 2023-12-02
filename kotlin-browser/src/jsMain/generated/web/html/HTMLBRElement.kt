@@ -7,5 +7,5 @@ package web.html
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLBRElement)
  */
-abstract external class HTMLBRElement :
-    HTMLElement
+open external class HTMLBRElement
+protected constructor() : HTMLElement

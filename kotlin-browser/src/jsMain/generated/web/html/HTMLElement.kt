@@ -12,8 +12,8 @@ import web.dom.HTMLOrSVGElement
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement)
  */
-abstract external class HTMLElement :
-    Element,
+open external class HTMLElement
+protected constructor() : Element,
     ElementCSSInlineStyle,
     ElementContentEditable,
     GlobalEventHandlers,

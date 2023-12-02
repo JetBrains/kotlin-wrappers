@@ -7,5 +7,5 @@ package web.html
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSpanElement)
  */
-abstract external class HTMLSpanElement :
-    HTMLElement
+open external class HTMLSpanElement
+protected constructor() : HTMLElement

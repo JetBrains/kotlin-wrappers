@@ -8,5 +8,5 @@ package web.html
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLParamElement)
  */
-abstract external class HTMLParamElement :
-    HTMLElement
+open external class HTMLParamElement
+protected constructor() : HTMLElement

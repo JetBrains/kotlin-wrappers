@@ -7,8 +7,8 @@ package web.html
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLQuoteElement)
  */
-abstract external class HTMLQuoteElement :
-    HTMLElement {
+open external class HTMLQuoteElement
+protected constructor() : HTMLElement {
     /**
      * Sets or retrieves reference information about the object.
      *

@@ -10,8 +10,8 @@ import web.http.ReferrerPolicy
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLScriptElement)
  */
-abstract external class HTMLScriptElement :
-    HTMLElement {
+open external class HTMLScriptElement
+protected constructor() : HTMLElement {
     var async: Boolean
     var crossOrigin: CrossOrigin?
 

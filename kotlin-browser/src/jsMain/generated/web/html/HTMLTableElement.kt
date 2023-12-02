@@ -7,8 +7,8 @@ package web.html
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableElement)
  */
-abstract external class HTMLTableElement :
-    HTMLElement {
+open external class HTMLTableElement
+protected constructor() : HTMLElement {
     /**
      * Retrieves the caption object of a table.
      *

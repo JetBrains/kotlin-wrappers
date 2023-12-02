@@ -9,8 +9,8 @@ import web.dom.NodeListOf
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement)
  */
-abstract external class HTMLTextAreaElement :
-    HTMLElement {
+open external class HTMLTextAreaElement
+protected constructor() : HTMLElement {
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/autocomplete) */
     var autocomplete: AutoFill
 

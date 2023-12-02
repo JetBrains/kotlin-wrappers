@@ -7,5 +7,5 @@ package web.html
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableCaptionElement)
  */
-abstract external class HTMLTableCaptionElement :
-    HTMLElement
+open external class HTMLTableCaptionElement
+protected constructor() : HTMLElement

@@ -7,5 +7,5 @@ package web.html
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLHRElement)
  */
-abstract external class HTMLHRElement :
-    HTMLElement
+open external class HTMLHRElement
+protected constructor() : HTMLElement

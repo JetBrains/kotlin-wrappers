@@ -7,8 +7,8 @@ package web.html
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLLegendElement)
  */
-abstract external class HTMLLegendElement :
-    HTMLElement {
+open external class HTMLLegendElement
+protected constructor() : HTMLElement {
     /** Retrieves a reference to the form that the object is embedded in. */
     val form: HTMLFormElement?
 }

@@ -7,5 +7,5 @@ package web.html
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLHeadElement)
  */
-abstract external class HTMLHeadElement :
-    HTMLElement
+open external class HTMLHeadElement
+protected constructor() : HTMLElement

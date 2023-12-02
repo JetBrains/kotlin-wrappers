@@ -9,8 +9,8 @@ import web.dom.Document
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLEmbedElement)
  */
-abstract external class HTMLEmbedElement :
-    HTMLElement {
+open external class HTMLEmbedElement
+protected constructor() : HTMLElement {
     /** Sets or retrieves the height of the object. */
     var height: String
 
