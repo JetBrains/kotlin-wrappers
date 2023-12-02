@@ -9,6 +9,7 @@ import web.window.WindowEventHandlers
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLBodyElement)
  */
-abstract external class HTMLBodyElement :
+open external class HTMLBodyElement
+protected constructor() :
     HTMLElement,
     WindowEventHandlers
