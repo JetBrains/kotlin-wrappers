@@ -2,5 +2,8 @@
 
 package web.dom
 
+import web.canvas.CanvasImageSource
+
 // HTMLImageElement | SVGImageElement
-external interface HTMLOrSVGImageElement
+external interface HTMLOrSVGImageElement :
+    CanvasImageSource

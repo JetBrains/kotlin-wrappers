@@ -15,6 +15,8 @@ external class OffscreenCanvas(
     width: Number,
     height: Number,
 ) : EventTarget,
+    CanvasImageSource,
+    TexImageSource,
     Transferable {
     /**
      * These attributes return the dimensions of the OffscreenCanvas object's bitmap.

@@ -9,12 +9,15 @@ import js.promise.Promise
 import web.canvas.CanvasImageSource
 import web.geometry.DOMRectReadOnly
 import web.messaging.Transferable
+import webgl.TexImageSource
 
 /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoFrame) */
 external class VideoFrame(
     image: CanvasImageSource,
     init: VideoFrameInit = definedExternally,
-) : Transferable {
+) : CanvasImageSource,
+    TexImageSource,
+    Transferable {
     constructor(
         data: AllowSharedBufferSource,
         init: VideoFrameBufferInit,

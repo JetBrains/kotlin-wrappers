@@ -4,6 +4,7 @@ package web.html
 
 import web.canvas.*
 import web.media.streams.MediaStream
+import webgl.TexImageSource
 import webgl.WebGL2RenderingContext
 import webgl.WebGLContextAttributes
 import webgl.WebGLRenderingContext
@@ -15,7 +16,9 @@ import webgl.WebGLRenderingContext
  */
 open external class HTMLCanvasElement
 protected constructor() :
-    HTMLElement {
+    HTMLElement,
+    CanvasImageSource,
+    TexImageSource {
     /**
      * Gets or sets the height of a canvas element on a document.
      *

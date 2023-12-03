@@ -7,6 +7,7 @@ import js.promise.Promise
 import web.dom.HTMLOrSVGImageElement
 import web.http.CrossOrigin
 import web.http.ReferrerPolicy
+import webgl.TexImageSource
 
 /**
  * Provides special properties and methods for manipulating <img> elements.
@@ -16,6 +17,7 @@ import web.http.ReferrerPolicy
 open external class HTMLImageElement
 protected constructor() :
     HTMLElement,
+    TexImageSource,
     HTMLOrSVGImageElement {
     /**
      * Sets or retrieves a text alternative to the graphic.

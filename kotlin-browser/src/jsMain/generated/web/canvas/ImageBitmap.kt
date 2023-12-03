@@ -3,9 +3,12 @@
 package web.canvas
 
 import web.messaging.Transferable
+import webgl.TexImageSource
 
 /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageBitmap) */
 sealed external class ImageBitmap :
+    CanvasImageSource,
+    TexImageSource,
     Transferable {
     /**
      * Returns the intrinsic height of the image, in CSS pixels.

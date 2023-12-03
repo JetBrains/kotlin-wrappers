@@ -3,9 +3,11 @@
 package web.html
 
 import js.promise.Promise
+import web.canvas.CanvasImageSource
 import web.events.Event
 import web.events.EventHandler
 import web.pip.PictureInPictureWindow
+import webgl.TexImageSource
 
 /**
  * Provides special properties and methods for manipulating video objects. It also inherits properties and methods of HTMLMediaElement and HTMLElement.
@@ -14,7 +16,9 @@ import web.pip.PictureInPictureWindow
  */
 open external class HTMLVideoElement
 protected constructor() :
-    HTMLMediaElement {
+    HTMLMediaElement,
+    CanvasImageSource,
+    TexImageSource {
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLVideoElement/disablePictureInPicture) */
     var disablePictureInPicture: Boolean
 
