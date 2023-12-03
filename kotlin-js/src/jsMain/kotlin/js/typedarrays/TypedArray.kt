@@ -1,3 +1,7 @@
+@file:Suppress(
+    "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
+)
+
 package js.typedarrays
 
 import js.buffer.ArrayBufferView
@@ -7,8 +11,7 @@ import js.core.MutableArrayLike
 import js.core.ReadonlyArray
 import js.iterable.IterableIterator
 
-@JsName("DONT_USE_IS_AS_OPERATORS_WITH_SYNTHETIC_TYPED_ARRAY")
-sealed external class TypedArray<S : TypedArray<S, T>, T : Comparable<T> /* Number? */> :
+sealed external interface TypedArray<S : TypedArray<S, T>, T : Comparable<T> /* Number? */> :
     ArrayBufferView,
     MutableArrayLike<T>,
     ListLike<T> {
@@ -17,24 +20,26 @@ sealed external class TypedArray<S : TypedArray<S, T>, T : Comparable<T> /* Numb
      * The size in bytes of each element in the array.
      */
     val BYTES_PER_ELEMENT: Int
+        get() = definedExternally
 
     override val byteLength: Int
+        get() = definedExternally
 
     /**
      * Returns the item located at the specified index.
      * @param index The zero-based index of the desired code unit. A negative index will count back from the last item.
      */
-    fun at(index: Int): T?
+    fun at(index: Int): T? = definedExternally
 
     fun set(
         array: S,
         offset: Int = definedExternally,
-    )
+    ): Unit = definedExternally
 
     fun set(
         array: ReadonlyArray<T>,
         offset: Int = definedExternally,
-    )
+    ): Unit = definedExternally
 
     /**
      * Returns the this object after copying a section of the array identified by start and end
@@ -49,7 +54,7 @@ sealed external class TypedArray<S : TypedArray<S, T>, T : Comparable<T> /* Numb
         target: Int,
         start: Int,
         end: Int = definedExternally,
-    ): S
+    ): S = definedExternally
 
     /**
      * Determines whether all the members of an array satisfy the specified test.
@@ -61,7 +66,7 @@ sealed external class TypedArray<S : TypedArray<S, T>, T : Comparable<T> /* Numb
      */
     fun every(
         predicate: (value: T) -> Unit,
-    ): Boolean
+    ): Boolean = definedExternally
 
     /**
      * Changes all array elements from `start` to `end` index to a static `value` and returns the modified array
@@ -75,7 +80,7 @@ sealed external class TypedArray<S : TypedArray<S, T>, T : Comparable<T> /* Numb
         value: T,
         start: Int = definedExternally,
         end: Int = definedExternally,
-    ): S
+    ): S = definedExternally
 
     /**
      * Returns the elements of an array that meet the condition specified in a callback function.
@@ -86,7 +91,7 @@ sealed external class TypedArray<S : TypedArray<S, T>, T : Comparable<T> /* Numb
      */
     fun filter(
         predicate: (value: T) -> Boolean,
-    ): S
+    ): S = definedExternally
 
     /**
      * Returns the value of the first element in the array where predicate is true, and undefined
@@ -99,7 +104,7 @@ sealed external class TypedArray<S : TypedArray<S, T>, T : Comparable<T> /* Numb
      */
     fun find(
         predicate: (value: T) -> Boolean,
-    ): T?
+    ): T? = definedExternally
 
     /**
      * Returns the index of the first element in the array where predicate is true, and -1
@@ -112,7 +117,7 @@ sealed external class TypedArray<S : TypedArray<S, T>, T : Comparable<T> /* Numb
      */
     fun findIndex(
         predicate: (value: T) -> Boolean,
-    ): Int
+    ): Int = definedExternally
 
     /**
      * Performs the specified action for each element in an array.
@@ -121,7 +126,9 @@ sealed external class TypedArray<S : TypedArray<S, T>, T : Comparable<T> /* Numb
      * @param thisArg  An object to which the this keyword can refer in the callbackfn function.
      * If thisArg is omitted, undefined is used as the this value.
      */
-    override fun forEach(action: (item: T) -> Unit)
+    override fun forEach(
+        action: (item: T) -> Unit,
+    ): Unit = definedExternally
 
     /**
      * Determines whether an array includes a certain element, returning true or false as appropriate.
@@ -131,7 +138,7 @@ sealed external class TypedArray<S : TypedArray<S, T>, T : Comparable<T> /* Numb
     fun includes(
         searchElement: T,
         fromIndex: Int = definedExternally,
-    ): Boolean
+    ): Boolean = definedExternally
 
     /**
      * Returns the index of the first occurrence of a value in an array.
@@ -142,14 +149,16 @@ sealed external class TypedArray<S : TypedArray<S, T>, T : Comparable<T> /* Numb
     fun indexOf(
         searchElement: T,
         fromIndex: Int = definedExternally,
-    ): Int
+    ): Int = definedExternally
 
     /**
      * Adds all the elements of an array separated by the specified separator string.
      * @param separator A string used to separate one element of an array from the next in the
      * resulting String. If omitted, the array elements are separated with a comma.
      */
-    fun join(separator: String = definedExternally): String
+    fun join(
+        separator: String = definedExternally,
+    ): String = definedExternally
 
     /**
      * Returns the index of the last occurrence of a value in an array.
@@ -160,7 +169,7 @@ sealed external class TypedArray<S : TypedArray<S, T>, T : Comparable<T> /* Numb
     fun lastIndexOf(
         searchElement: T,
         fromIndex: Int = definedExternally,
-    ): Int
+    ): Int = definedExternally
 
     /**
      * Calls a defined callback function on each element of an array, and returns an array that
@@ -170,14 +179,16 @@ sealed external class TypedArray<S : TypedArray<S, T>, T : Comparable<T> /* Numb
      * @param thisArg An object to which the this keyword can refer in the callbackfn function.
      * If thisArg is omitted, undefined is used as the this value.
      */
-    fun map(transform: (value: T) -> T): S
+    fun map(
+        transform: (value: T) -> T,
+    ): S = definedExternally
 
     // TODO: reduce methods
 
     /**
      * Reverses the elements in an Array.
      */
-    open fun reverse(): S
+    fun reverse(): S = definedExternally
 
     /**
      * Returns a section of an array.
@@ -187,7 +198,7 @@ sealed external class TypedArray<S : TypedArray<S, T>, T : Comparable<T> /* Numb
     fun slice(
         start: Int = definedExternally,
         end: Int = definedExternally,
-    ): S
+    ): S = definedExternally
 
     /**
      * Determines whether the specified callback function returns true for any element of an array.
@@ -197,7 +208,9 @@ sealed external class TypedArray<S : TypedArray<S, T>, T : Comparable<T> /* Numb
      * @param thisArg An object to which the this keyword can refer in the predicate function.
      * If thisArg is omitted, undefined is used as the this value.
      */
-    fun some(predicate: (value: T) -> Boolean): Boolean
+    fun some(
+        predicate: (value: T) -> Boolean,
+    ): Boolean = definedExternally
 
     /**
      * Sorts an array.
@@ -210,25 +223,25 @@ sealed external class TypedArray<S : TypedArray<S, T>, T : Comparable<T> /* Numb
      */
     fun sort(
         comparison: (a: T, b: T) -> Int = definedExternally,
-    ): S
+    ): S = definedExternally
 
     /**
      * Converts a number to a string by using the current locale.
      */
-    fun toLocaleString(): String
+    fun toLocaleString(): String = definedExternally
 
     /** Returns the primitive value of the specified object. */
-    fun valueOf(): S
+    fun valueOf(): S = definedExternally
 
 
     fun subarray(
         start: Int,
         end: Int,
-    ): S
+    ): S = definedExternally
 
-    override fun entries(): IterableIterator<JsTuple2<Int, T>>
+    override fun entries(): IterableIterator<JsTuple2<Int, T>> = definedExternally
 
-    override fun keys(): IterableIterator<Int>
+    override fun keys(): IterableIterator<Int> = definedExternally
 
-    override fun values(): IterableIterator<T>
+    override fun values(): IterableIterator<T> = definedExternally
 }
