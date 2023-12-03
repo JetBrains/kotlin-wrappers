@@ -13,6 +13,7 @@ import web.events.EventTarget
  */
 sealed external class MessagePort :
     EventTarget,
+    MessageEventSource,
     Transferable {
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/MessagePort/message_event) */
     var onmessage: EventHandler<MessageEvent<*>>?

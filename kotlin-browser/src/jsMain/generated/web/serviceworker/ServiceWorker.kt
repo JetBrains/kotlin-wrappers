@@ -6,6 +6,7 @@ import js.core.ReadonlyArray
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventTarget
+import web.messaging.MessageEventSource
 import web.messaging.StructuredSerializeOptions
 import web.messaging.Transferable
 import web.workers.AbstractWorker
@@ -18,7 +19,8 @@ import web.workers.AbstractWorker
  */
 sealed external class ServiceWorker :
     EventTarget,
-    AbstractWorker {
+    AbstractWorker,
+    MessageEventSource {
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorker/statechange_event) */
     var onstatechange: EventHandler<Event>?
 

@@ -2,4 +2,10 @@
 
 package web.messaging
 
-typealias MessageEventSource = Any /* WindowProxy | MessagePort | ServiceWorker */
+/**
+ * Union of:
+ * - `WindowProxy`
+ * - `MessagePort`
+ * - `ServiceWorker`
+ */
+external interface MessageEventSource

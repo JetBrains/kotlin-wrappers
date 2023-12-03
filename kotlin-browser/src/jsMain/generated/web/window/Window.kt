@@ -10,6 +10,7 @@ import web.dom.Element
 import web.dom.GlobalEventHandlers
 import web.events.EventHandler
 import web.events.EventTarget
+import web.messaging.MessageEventSource
 import web.messaging.Transferable
 import web.scroll.ScrollToOptions
 import web.selection.Selection
@@ -23,7 +24,8 @@ import web.url.URL
 sealed external class Window :
     EventTarget,
     GlobalEventHandlers,
-    WindowEventHandlers {
+    WindowEventHandlers,
+    MessageEventSource {
     /**
      * Returns true if the window has been closed, false otherwise.
      *
