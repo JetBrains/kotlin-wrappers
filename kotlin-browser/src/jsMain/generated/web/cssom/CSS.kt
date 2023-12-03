@@ -2,9 +2,11 @@
 
 package web.cssom
 
+import web.cssom.highlight.HighlightRegistry
+
 external object CSS {
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSS/highlights_static) */
-    var highlights: Any /* HighlightRegistry */
+    var highlights: HighlightRegistry
 
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSS/factory_functions_static) */
     fun Hz(value: Number): CSSUnitValue

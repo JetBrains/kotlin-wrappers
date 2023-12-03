@@ -26,7 +26,7 @@ external class RTCIceCandidate(
     val port: Int?
 
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCIceCandidate/priority) */
-    val priority: Number?
+    val priority: Int?
 
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCIceCandidate/protocol) */
     val protocol: RTCIceProtocol?
