@@ -2,4 +2,4 @@
 
 package web.http
 
-typealias BodyInit = Any /* ReadableStream | XMLHttpRequestBodyInit */
+typealias BodyInit = Any /* ReadableStream | Blob | BufferSource | FormData | URLSearchParams | string */

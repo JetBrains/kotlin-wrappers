@@ -2,10 +2,14 @@
 
 package web.xhr
 
+import js.buffer.BufferSource
+import web.buffer.Blob
 import web.dom.Document
 import web.events.Event
 import web.events.EventHandler
+import web.http.FormData
 import web.url.URL
+import web.url.URLSearchParams
 
 /**
  * Use XMLHttpRequest (XHR) objects to interact with servers. You can retrieve data from a URL without having to do a full page refresh. This enables a Web page to update just part of a page without disrupting what the user is doing.
@@ -165,7 +169,11 @@ open external class XMLHttpRequest :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/send)
      */
     fun send(body: Document? = definedExternally)
-    fun send(body: XMLHttpRequestBodyInit?)
+    fun send(body: Blob?)
+    fun send(body: BufferSource?)
+    fun send(body: FormData?)
+    fun send(body: URLSearchParams?)
+    fun send(body: String?)
 
     /**
      * Combines a header in author request headers.
