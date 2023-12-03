@@ -13,7 +13,7 @@ import web.events.ProgressEvent
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileReader)
  */
-external class FileReader :
+open external class FileReader :
     EventTarget {
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileReader/error) */
     val error: DOMException?

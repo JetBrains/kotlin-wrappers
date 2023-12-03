@@ -9,7 +9,7 @@ import js.typedarrays.Uint8Array
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextEncoder)
  */
-external class TextEncoder :
+open external class TextEncoder :
     TextEncoderCommon {
     /**
      * Returns the result of running UTF-8's encoder.

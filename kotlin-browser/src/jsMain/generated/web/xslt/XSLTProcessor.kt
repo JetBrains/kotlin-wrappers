@@ -11,7 +11,7 @@ import web.dom.Node
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XSLTProcessor)
  */
-external class XSLTProcessor {
+open external class XSLTProcessor {
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/XSLTProcessor/clearParameters) */
     fun clearParameters()
 

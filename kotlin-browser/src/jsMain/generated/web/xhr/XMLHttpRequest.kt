@@ -12,7 +12,7 @@ import web.url.URL
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest)
  */
-external class XMLHttpRequest :
+open external class XMLHttpRequest :
     XMLHttpRequestEventTarget {
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/readystatechange_event) */
     var onreadystatechange: EventHandler<Event>?

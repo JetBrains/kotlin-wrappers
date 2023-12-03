@@ -7,7 +7,7 @@ package web.abort
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AbortController)
  */
-external class AbortController {
+open external class AbortController {
     /**
      * Returns the AbortSignal object associated with this object.
      *

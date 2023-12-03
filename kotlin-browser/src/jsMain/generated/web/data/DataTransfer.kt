@@ -11,7 +11,7 @@ import web.file.FileList
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DataTransfer)
  */
-external class DataTransfer {
+open external class DataTransfer {
     /**
      * Returns the kind of operation that is currently selected. If the kind of operation isn't one of those that is allowed by the effectAllowed attribute, then the operation will fail.
      *
