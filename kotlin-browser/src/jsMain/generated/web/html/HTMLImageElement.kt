@@ -4,6 +4,7 @@ package web.html
 
 import js.core.Void
 import js.promise.Promise
+import web.dom.HTMLOrSVGImageElement
 import web.http.CrossOrigin
 import web.http.ReferrerPolicy
 
@@ -14,7 +15,8 @@ import web.http.ReferrerPolicy
  */
 open external class HTMLImageElement
 protected constructor() :
-    HTMLElement {
+    HTMLElement,
+    HTMLOrSVGImageElement {
     /**
      * Sets or retrieves a text alternative to the graphic.
      *

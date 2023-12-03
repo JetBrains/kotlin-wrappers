@@ -2,4 +2,5 @@
 
 package web.dom
 
-typealias HTMLOrSVGImageElement = Any /* HTMLImageElement | SVGImageElement */
+// HTMLImageElement | SVGImageElement
+external interface HTMLOrSVGImageElement

@@ -2,4 +2,5 @@
 
 package web.dom
 
-typealias HTMLOrSVGScriptElement = Any /* HTMLScriptElement | SVGScriptElement */
+// HTMLScriptElement | SVGScriptElement
+external interface HTMLOrSVGScriptElement

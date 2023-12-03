@@ -2,6 +2,8 @@
 
 package web.svg
 
+import web.dom.HTMLOrSVGScriptElement
+
 /**
  * Corresponds to the SVG <script> element.
  *
@@ -9,6 +11,7 @@ package web.svg
  */
 sealed external class SVGScriptElement :
     SVGElement,
-    SVGURIReference {
+    SVGURIReference,
+    HTMLOrSVGScriptElement {
     var type: String
 }

@@ -2,6 +2,7 @@
 
 package web.html
 
+import web.dom.HTMLOrSVGScriptElement
 import web.http.CrossOrigin
 import web.http.ReferrerPolicy
 
@@ -12,7 +13,8 @@ import web.http.ReferrerPolicy
  */
 open external class HTMLScriptElement
 protected constructor() :
-    HTMLElement {
+    HTMLElement,
+    HTMLOrSVGScriptElement {
     var async: Boolean
     var crossOrigin: CrossOrigin?
 
