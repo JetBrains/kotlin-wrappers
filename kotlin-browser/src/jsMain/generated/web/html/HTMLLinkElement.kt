@@ -23,6 +23,9 @@ protected constructor() :
     var crossOrigin: CrossOrigin?
     var disabled: Boolean
 
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLLinkElement/fetchPriority) */
+    var fetchPriority: String
+
     /** Sets or retrieves a destination URL or an anchor point. */
     var href: String
 

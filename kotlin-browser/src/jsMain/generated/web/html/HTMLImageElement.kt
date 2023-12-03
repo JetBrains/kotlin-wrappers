@@ -38,6 +38,9 @@ protected constructor() :
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/decoding) */
     var decoding: ImageDecoding
 
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/fetchPriority) */
+    var fetchPriority: String
+
     /**
      * Sets or retrieves the height of the object.
      *

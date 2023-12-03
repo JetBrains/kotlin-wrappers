@@ -3,11 +3,15 @@
 package web.cssom
 
 external object CSS {
+    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSS/highlights_static) */
+    var highlights: Any /* HighlightRegistry */
+
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSS/factory_functions_static) */
     fun Hz(value: Number): CSSUnitValue
 
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSS/factory_functions_static) */
     fun Q(value: Number): CSSUnitValue
+    fun cap(value: Number): CSSUnitValue
 
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSS/factory_functions_static) */
     fun ch(value: Number): CSSUnitValue
@@ -124,12 +128,16 @@ external object CSS {
 
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSS/factory_functions_static) */
     fun rad(value: Number): CSSUnitValue
+    fun rcap(value: Number): CSSUnitValue
+    fun rch(value: Number): CSSUnitValue
 
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSS/registerProperty_static) */
     fun registerProperty(definition: PropertyDefinition)
 
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSS/factory_functions_static) */
     fun rem(value: Number): CSSUnitValue
+    fun rex(value: Number): CSSUnitValue
+    fun ric(value: Number): CSSUnitValue
     fun rlh(value: Number): CSSUnitValue
 
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSS/factory_functions_static) */

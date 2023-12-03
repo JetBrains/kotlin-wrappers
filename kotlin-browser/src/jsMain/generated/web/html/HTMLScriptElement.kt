@@ -18,6 +18,7 @@ protected constructor() :
 
     /** Sets or retrieves the status of the script. */
     var defer: Boolean
+    var fetchPriority: String
     var integrity: String
     var noModule: Boolean
 
