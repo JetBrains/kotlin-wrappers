@@ -1,9 +1,12 @@
 // Automatically generated - do not modify!
 
+@file:Suppress(
+    "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
+)
+
 package web.canvas
 
-@JsName("Object")
-sealed external class /* interface */ CanvasPath {
+sealed external interface CanvasPath {
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/arc) */
     fun arc(
         x: Number,
@@ -12,7 +15,7 @@ sealed external class /* interface */ CanvasPath {
         startAngle: Number,
         endAngle: Number,
         counterclockwise: Boolean = definedExternally,
-    )
+    ): Unit = definedExternally
 
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/arcTo) */
     fun arcTo(
@@ -21,7 +24,7 @@ sealed external class /* interface */ CanvasPath {
         x2: Number,
         y2: Number,
         radius: Number,
-    )
+    ): Unit = definedExternally
 
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/bezierCurveTo) */
     fun bezierCurveTo(
@@ -31,10 +34,10 @@ sealed external class /* interface */ CanvasPath {
         cp2y: Number,
         x: Number,
         y: Number,
-    )
+    ): Unit = definedExternally
 
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/closePath) */
-    fun closePath()
+    fun closePath(): Unit = definedExternally
 
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/ellipse) */
     fun ellipse(
@@ -46,19 +49,19 @@ sealed external class /* interface */ CanvasPath {
         startAngle: Number,
         endAngle: Number,
         counterclockwise: Boolean = definedExternally,
-    )
+    ): Unit = definedExternally
 
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/lineTo) */
     fun lineTo(
         x: Number,
         y: Number,
-    )
+    ): Unit = definedExternally
 
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/moveTo) */
     fun moveTo(
         x: Number,
         y: Number,
-    )
+    ): Unit = definedExternally
 
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/quadraticCurveTo) */
     fun quadraticCurveTo(
@@ -66,7 +69,7 @@ sealed external class /* interface */ CanvasPath {
         cpy: Number,
         x: Number,
         y: Number,
-    )
+    ): Unit = definedExternally
 
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/rect) */
     fun rect(
@@ -74,7 +77,7 @@ sealed external class /* interface */ CanvasPath {
         y: Number,
         w: Number,
         h: Number,
-    )
+    ): Unit = definedExternally
 
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/roundRect) */
     fun roundRect(
@@ -83,5 +86,5 @@ sealed external class /* interface */ CanvasPath {
         w: Number,
         h: Number,
         radii: Any /* number | DOMPointInit | (number | DOMPointInit)[] */ = definedExternally,
-    )
+    ): Unit = definedExternally
 }
