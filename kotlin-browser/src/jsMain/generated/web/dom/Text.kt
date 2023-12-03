@@ -7,7 +7,7 @@ package web.dom
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Text)
  */
-sealed external class Text(
+external class Text(
     data: String = definedExternally,
 ) : CharacterData,
     Slottable {

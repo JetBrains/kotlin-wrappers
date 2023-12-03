@@ -7,6 +7,6 @@ package web.dom
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Comment)
  */
-sealed external class Comment(
+external class Comment(
     data: String = definedExternally,
 ) : CharacterData
