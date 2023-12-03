@@ -2,4 +2,7 @@
 
 package web.cssom.highlight
 
-sealed external class HighlightRegistry
+import js.collections.MutableMapLike
+
+sealed external class HighlightRegistry :
+    MutableMapLike<String, Highlight>

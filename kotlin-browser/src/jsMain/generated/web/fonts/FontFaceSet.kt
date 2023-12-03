@@ -2,6 +2,7 @@
 
 package web.fonts
 
+import js.collections.MutableSetLike
 import js.core.ReadonlyArray
 import js.promise.Promise
 import web.events.Event
@@ -11,7 +12,8 @@ import web.events.EventTarget
 /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/FontFaceSet) */
 external class FontFaceSet(
     initialFaces: ReadonlyArray<FontFace>,
-) : EventTarget {
+) : EventTarget,
+    MutableSetLike<FontFace> {
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/FontFaceSet/loading_event) */
     var onloading: EventHandler<Event>?
 
@@ -38,6 +40,4 @@ external class FontFaceSet(
         font: String,
         text: String = definedExternally,
     ): Promise<ReadonlyArray<FontFace>>
-
-    fun forEach(action: (item: FontFace) -> Unit)
 }
