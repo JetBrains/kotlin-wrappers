@@ -7,13 +7,15 @@ import web.buffer.Blob
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventTarget
+import web.messaging.Transferable
 import webgl.*
 
 /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/OffscreenCanvas) */
 external class OffscreenCanvas(
     width: Number,
     height: Number,
-) : EventTarget {
+) : EventTarget,
+    Transferable {
     /**
      * These attributes return the dimensions of the OffscreenCanvas object's bitmap.
      *

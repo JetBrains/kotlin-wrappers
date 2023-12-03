@@ -2,8 +2,11 @@
 
 package web.canvas
 
+import web.messaging.Transferable
+
 /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageBitmap) */
-sealed external class ImageBitmap {
+sealed external class ImageBitmap :
+    Transferable {
     /**
      * Returns the intrinsic height of the image, in CSS pixels.
      *

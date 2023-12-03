@@ -8,12 +8,13 @@ import js.core.ReadonlyArray
 import js.promise.Promise
 import web.canvas.CanvasImageSource
 import web.geometry.DOMRectReadOnly
+import web.messaging.Transferable
 
 /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoFrame) */
 external class VideoFrame(
     image: CanvasImageSource,
     init: VideoFrameInit = definedExternally,
-) {
+) : Transferable {
     constructor(
         data: AllowSharedBufferSource,
         init: VideoFrameBufferInit,

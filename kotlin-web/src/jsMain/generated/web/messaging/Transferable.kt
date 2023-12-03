@@ -2,4 +2,5 @@
 
 package web.messaging
 
-typealias Transferable = Any /* OffscreenCanvas | ImageBitmap | MessagePort | ReadableStream | WritableStream | TransformStream | VideoFrame | ArrayBuffer */
+// OffscreenCanvas | ImageBitmap | MessagePort | ReadableStream | WritableStream | TransformStream | VideoFrame | ArrayBuffer
+external interface Transferable            
