@@ -9,7 +9,7 @@ import web.html.HTMLElement
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DocumentFragment)
  */
-abstract external class DocumentFragment :
+open external class DocumentFragment :
     Node,
     NonElementParentNode,
     ParentNode {

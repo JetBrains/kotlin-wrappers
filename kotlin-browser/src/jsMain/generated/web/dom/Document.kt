@@ -25,7 +25,7 @@ import web.xpath.XPathEvaluatorBase
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document)
  */
-abstract external class Document :
+open external class Document :
     Node,
     DocumentOrShadowRoot,
     FontFaceSource,

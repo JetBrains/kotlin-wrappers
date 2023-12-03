@@ -1,5 +1,9 @@
 // Automatically generated - do not modify!
 
+@file:Suppress(
+    "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
+)
+
 package web.dom
 
 import js.core.ReadonlyArray
@@ -18,9 +22,12 @@ external interface DocumentOrShadowRoot {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/activeElement)
      */
     val activeElement: Element?
+        get() = definedExternally
 
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/adoptedStyleSheets) */
     var adoptedStyleSheets: ReadonlyArray<CSSStyleSheet>
+        get() = definedExternally
+        set(value) = definedExternally
 
     /**
      * Returns document's fullscreen element.
@@ -28,12 +35,15 @@ external interface DocumentOrShadowRoot {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/fullscreenElement)
      */
     val fullscreenElement: Element?
+        get() = definedExternally
 
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/pictureInPictureElement) */
     val pictureInPictureElement: Element?
+        get() = definedExternally
 
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/pointerLockElement) */
     val pointerLockElement: Element?
+        get() = definedExternally
 
     /**
      * Retrieves a collection of styleSheet objects representing the style sheets that correspond to each instance of a link or style object in the document.
@@ -41,6 +51,7 @@ external interface DocumentOrShadowRoot {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/styleSheets)
      */
     val styleSheets: StyleSheetList
+        get() = definedExternally
 
     /**
      * Returns the element for the specified x coordinate and the specified y coordinate.
@@ -50,13 +61,13 @@ external interface DocumentOrShadowRoot {
     fun elementFromPoint(
         x: Number,
         y: Number,
-    ): Element?
+    ): Element? = definedExternally
 
     fun elementsFromPoint(
         x: Number,
         y: Number,
-    ): ReadonlyArray<Element>
+    ): ReadonlyArray<Element> = definedExternally
 
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/getAnimations) */
-    fun getAnimations(): ReadonlyArray<Animation>
+    fun getAnimations(): ReadonlyArray<Animation> = definedExternally
 }
