@@ -5,6 +5,7 @@ package web.http
 import js.collections.MapLike
 import js.core.JsTuple2
 import js.core.ReadonlyArray
+import js.core.ReadonlyRecord
 import js.iterable.IterableIterator
 
 /**
@@ -13,8 +14,11 @@ import js.iterable.IterableIterator
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Headers)
  */
 external class Headers(
-    init: HeadersInit = definedExternally,
+    init: ReadonlyArray<JsTuple2<String, String>> = definedExternally,
 ) : MapLike<String, String> {
+    constructor(init: ReadonlyRecord<String, String> = definedExternally)
+    constructor(init: Headers)
+
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Headers/append) */
     fun append(
         name: String,

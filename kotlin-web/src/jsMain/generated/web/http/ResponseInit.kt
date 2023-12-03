@@ -3,7 +3,7 @@
 package web.http
 
 sealed external interface ResponseInit {
-    var headers: HeadersInit?
+    var headers: Headers?
     var status: Int?
     var statusText: String?
 }

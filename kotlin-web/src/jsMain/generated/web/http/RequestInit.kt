@@ -16,7 +16,7 @@ sealed external interface RequestInit {
     var credentials: RequestCredentials?
 
     /** A Headers object, an object literal, or an array of two-item arrays to set request's headers. */
-    var headers: HeadersInit?
+    var headers: Headers?
 
     /** A cryptographic hash of the resource to be fetched by request. Sets request's integrity. */
     var integrity: String?
