@@ -9,7 +9,7 @@ import js.collections.ListLike
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NodeList)
  */
-sealed external class NodeList<T : Node> :
+abstract external class NodeList<T : Node> :
     ListLike<T> {
     /**
      * Returns the node with index index from the collection. The nodes are sorted in tree order.
