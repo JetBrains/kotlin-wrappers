@@ -7,7 +7,6 @@
 package web.media.recorder
 
 import js.core.DOMHighResTimeStamp
-import seskar.js.JsValue
 import web.buffer.Blob
 import web.events.Event
 import web.events.EventType
@@ -28,8 +27,5 @@ open external class BlobEvent(
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/BlobEvent/timecode) */
     val timecode: DOMHighResTimeStamp
 
-    companion object {
-        @JsValue("dataavailable")
-        val DATA_AVAILABLE: EventType<BlobEvent>
-    }
+    companion object : BlobEventTypes
 }

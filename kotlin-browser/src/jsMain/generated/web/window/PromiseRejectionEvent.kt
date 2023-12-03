@@ -7,7 +7,6 @@
 package web.window
 
 import js.promise.Promise
-import seskar.js.JsValue
 import web.events.Event
 import web.events.EventInit
 import web.events.EventType
@@ -28,11 +27,5 @@ open external class PromiseRejectionEvent(
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/PromiseRejectionEvent/reason) */
     val reason: Any?
 
-    companion object {
-        @JsValue("rejectionhandled")
-        val REJECTION_HANDLED: EventType<PromiseRejectionEvent>
-
-        @JsValue("unhandledrejection")
-        val UNHANDLED_REJECTION: EventType<PromiseRejectionEvent>
-    }
+    companion object : PromiseRejectionEventTypes
 }

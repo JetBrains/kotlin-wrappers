@@ -6,7 +6,6 @@
 
 package webrtc
 
-import seskar.js.JsValue
 import web.events.Event
 import web.events.EventInit
 import web.events.EventType
@@ -28,8 +27,5 @@ open external class RTCPeerConnectionIceEvent(
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnectionIceEvent/candidate) */
     val candidate: RTCIceCandidate?
 
-    companion object {
-        @JsValue("icecandidate")
-        val ICE_CANDIDATE: EventType<RTCPeerConnectionIceEvent>
-    }
+    companion object : RTCPeerConnectionIceEventTypes
 }

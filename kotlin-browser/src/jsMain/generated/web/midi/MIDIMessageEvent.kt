@@ -7,7 +7,6 @@
 package web.midi
 
 import js.typedarrays.Uint8Array
-import seskar.js.JsValue
 import web.events.Event
 import web.events.EventInit
 import web.events.EventType
@@ -28,8 +27,5 @@ open external class MIDIMessageEvent(
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/MIDIMessageEvent/data) */
     val data: Uint8Array?
 
-    companion object {
-        @JsValue("midimessage")
-        val MIDI_MESSAGE: EventType<MIDIMessageEvent>
-    }
+    companion object : MIDIMessageEventTypes
 }

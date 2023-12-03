@@ -6,7 +6,6 @@
 
 package web.uievents
 
-import seskar.js.JsValue
 import web.events.EventType
 
 external interface CompositionEventInit : UIEventInit {
@@ -25,14 +24,5 @@ open external class CompositionEvent(
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CompositionEvent/data) */
     val data: String
 
-    companion object {
-        @JsValue("compositionend")
-        val COMPOSITION_END: EventType<CompositionEvent>
-
-        @JsValue("compositionstart")
-        val COMPOSITION_START: EventType<CompositionEvent>
-
-        @JsValue("compositionupdate")
-        val COMPOSITION_UPDATE: EventType<CompositionEvent>
-    }
+    companion object : CompositionEventTypes
 }

@@ -6,7 +6,6 @@
 
 package web.history
 
-import seskar.js.JsValue
 import web.events.Event
 import web.events.EventInit
 import web.events.EventType
@@ -31,8 +30,5 @@ open external class PopStateEvent(
      */
     val state: Any?
 
-    companion object {
-        @JsValue("popstate")
-        val POP_STATE: EventType<PopStateEvent>
-    }
+    companion object : PopStateEventTypes
 }

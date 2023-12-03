@@ -8,7 +8,6 @@
 package web.uievents
 
 import js.core.ReadonlyArray
-import seskar.js.JsValue
 import web.events.EventType
 
 external interface TouchEventInit : EventModifierInit {
@@ -48,17 +47,5 @@ open external class TouchEvent(
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/TouchEvent/touches) */
     val touches: TouchList
 
-    companion object {
-        @JsValue("touchcancel")
-        val TOUCH_CANCEL: EventType<TouchEvent>
-
-        @JsValue("touchend")
-        val TOUCH_END: EventType<TouchEvent>
-
-        @JsValue("touchmove")
-        val TOUCH_MOVE: EventType<TouchEvent>
-
-        @JsValue("touchstart")
-        val TOUCH_START: EventType<TouchEvent>
-    }
+    companion object : TouchEventTypes
 }

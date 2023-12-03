@@ -6,7 +6,6 @@
 
 package web.audio
 
-import seskar.js.JsValue
 import web.events.Event
 import web.events.EventInit
 import web.events.EventType
@@ -27,8 +26,5 @@ open external class OfflineAudioCompletionEvent(
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/OfflineAudioCompletionEvent/renderedBuffer) */
     val renderedBuffer: AudioBuffer
 
-    companion object {
-        @JsValue("complete")
-        val COMPLETE: EventType<OfflineAudioCompletionEvent>
-    }
+    companion object : OfflineAudioCompletionEventTypes
 }

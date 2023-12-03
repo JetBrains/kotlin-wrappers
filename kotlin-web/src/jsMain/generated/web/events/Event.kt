@@ -8,7 +8,6 @@ package web.events
 
 import js.core.DOMHighResTimeStamp
 import js.core.ReadonlyArray
-import seskar.js.JsValue
 
 external interface EventInit {
     var bubbles: Boolean?
@@ -120,37 +119,10 @@ open external class Event(
     val AT_TARGET: Short
     val BUBBLING_PHASE: Short
 
-    companion object {
+    companion object : EventTypes {
         val NONE: Short
         val CAPTURING_PHASE: Short
         val AT_TARGET: Short
         val BUBBLING_PHASE: Short
-
-        @JsValue("abort")
-        val ABORT: EventType<Event>
-
-        @JsValue("cancel")
-        val CANCEL: EventType<Event>
-
-        @JsValue("change")
-        val CHANGE: EventType<Event>
-
-        @JsValue("close")
-        val CLOSE: EventType<Event>
-
-        @JsValue("closing")
-        val CLOSING: EventType<Event>
-
-        @JsValue("complete")
-        val COMPLETE: EventType<Event>
-
-        @JsValue("error")
-        val ERROR: EventType<Event>
-
-        @JsValue("open")
-        val OPEN: EventType<Event>
-
-        @JsValue("success")
-        val SUCCESS: EventType<Event>
     }
 }

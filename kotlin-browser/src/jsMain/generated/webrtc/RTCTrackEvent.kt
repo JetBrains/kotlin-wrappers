@@ -7,7 +7,6 @@
 package webrtc
 
 import js.core.ReadonlyArray
-import seskar.js.JsValue
 import web.events.Event
 import web.events.EventInit
 import web.events.EventType
@@ -38,8 +37,5 @@ open external class RTCTrackEvent(
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCTrackEvent/transceiver) */
     val transceiver: RTCRtpTransceiver
 
-    companion object {
-        @JsValue("track")
-        val TRACK: EventType<RTCTrackEvent>
-    }
+    companion object : RTCTrackEventTypes
 }

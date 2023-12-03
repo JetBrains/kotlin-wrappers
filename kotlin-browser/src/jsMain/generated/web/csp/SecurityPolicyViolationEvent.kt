@@ -6,7 +6,6 @@
 
 package web.csp
 
-import seskar.js.JsValue
 import web.events.Event
 import web.events.EventInit
 import web.events.EventType
@@ -71,8 +70,5 @@ open external class SecurityPolicyViolationEvent(
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/SecurityPolicyViolationEvent/violatedDirective) */
     val violatedDirective: String
 
-    companion object {
-        @JsValue("securitypolicyviolation")
-        val SECURITY_POLICY_VIOLATION: EventType<SecurityPolicyViolationEvent>
-    }
+    companion object : SecurityPolicyViolationEventTypes
 }

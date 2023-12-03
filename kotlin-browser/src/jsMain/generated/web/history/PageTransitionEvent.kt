@@ -6,7 +6,6 @@
 
 package web.history
 
-import seskar.js.JsValue
 import web.events.Event
 import web.events.EventInit
 import web.events.EventType
@@ -40,11 +39,5 @@ open external class PageTransitionEvent(
      */
     val persisted: Boolean
 
-    companion object {
-        @JsValue("pagehide")
-        val PAGE_HIDE: EventType<PageTransitionEvent>
-
-        @JsValue("pageshow")
-        val PAGE_SHOW: EventType<PageTransitionEvent>
-    }
+    companion object : PageTransitionEventTypes
 }

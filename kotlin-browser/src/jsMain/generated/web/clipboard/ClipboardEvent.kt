@@ -6,7 +6,6 @@
 
 package web.clipboard
 
-import seskar.js.JsValue
 import web.data.DataTransfer
 import web.events.Event
 import web.events.EventInit
@@ -28,14 +27,5 @@ open external class ClipboardEvent(
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/ClipboardEvent/clipboardData) */
     val clipboardData: DataTransfer?
 
-    companion object {
-        @JsValue("copy")
-        val COPY: EventType<ClipboardEvent>
-
-        @JsValue("cut")
-        val CUT: EventType<ClipboardEvent>
-
-        @JsValue("paste")
-        val PASTE: EventType<ClipboardEvent>
-    }
+    companion object : ClipboardEventTypes
 }

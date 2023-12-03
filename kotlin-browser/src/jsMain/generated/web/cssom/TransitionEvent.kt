@@ -6,7 +6,6 @@
 
 package web.cssom
 
-import seskar.js.JsValue
 import web.events.Event
 import web.events.EventInit
 import web.events.EventType
@@ -35,17 +34,5 @@ open external class TransitionEvent(
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/TransitionEvent/pseudoElement) */
     val pseudoElement: String
 
-    companion object {
-        @JsValue("transitioncancel")
-        val TRANSITION_CANCEL: EventType<TransitionEvent>
-
-        @JsValue("transitionend")
-        val TRANSITION_END: EventType<TransitionEvent>
-
-        @JsValue("transitionrun")
-        val TRANSITION_RUN: EventType<TransitionEvent>
-
-        @JsValue("transitionstart")
-        val TRANSITION_START: EventType<TransitionEvent>
-    }
+    companion object : TransitionEventTypes
 }

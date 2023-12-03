@@ -7,7 +7,6 @@
 package web.serviceworker
 
 import js.promise.Promise
-import seskar.js.JsValue
 import web.events.Event
 import web.events.EventInit
 import web.events.EventType
@@ -26,11 +25,5 @@ open external class ExtendableEvent(
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/ExtendableEvent/waitUntil) */
     fun waitUntil(f: Promise<*>)
 
-    companion object {
-        @JsValue("activate")
-        val ACTIVATE: EventType<ExtendableEvent>
-
-        @JsValue("install")
-        val INSTALL: EventType<ExtendableEvent>
-    }
+    companion object : ExtendableEventTypes
 }

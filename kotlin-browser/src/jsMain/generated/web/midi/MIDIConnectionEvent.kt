@@ -6,7 +6,6 @@
 
 package web.midi
 
-import seskar.js.JsValue
 import web.events.Event
 import web.events.EventInit
 import web.events.EventType
@@ -27,8 +26,5 @@ open external class MIDIConnectionEvent(
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/MIDIConnectionEvent/port) */
     val port: MIDIPort?
 
-    companion object {
-        @JsValue("statechange")
-        val STATE_CHANGE: EventType<MIDIConnectionEvent>
-    }
+    companion object : MIDIConnectionEventTypes
 }

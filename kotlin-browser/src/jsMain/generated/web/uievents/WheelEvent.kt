@@ -6,7 +6,6 @@
 
 package web.uievents
 
-import seskar.js.JsValue
 import web.events.EventType
 
 external interface WheelEventInit : MouseEventInit {
@@ -40,12 +39,9 @@ open external class WheelEvent(
     val DOM_DELTA_LINE: Short
     val DOM_DELTA_PAGE: Short
 
-    companion object {
+    companion object : WheelEventTypes {
         val DOM_DELTA_PIXEL: Short
         val DOM_DELTA_LINE: Short
         val DOM_DELTA_PAGE: Short
-
-        @JsValue("wheel")
-        val WHEEL: EventType<WheelEvent>
     }
 }

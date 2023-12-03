@@ -6,7 +6,6 @@
 
 package web.push
 
-import seskar.js.JsValue
 import web.events.EventType
 import web.serviceworker.ExtendableEvent
 import web.serviceworker.ExtendableEventInit
@@ -28,8 +27,5 @@ open external class PushEvent(
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/PushEvent/data) */
     val data: PushMessageData?
 
-    companion object {
-        @JsValue("push")
-        val PUSH: EventType<PushEvent>
-    }
+    companion object : PushEventTypes
 }

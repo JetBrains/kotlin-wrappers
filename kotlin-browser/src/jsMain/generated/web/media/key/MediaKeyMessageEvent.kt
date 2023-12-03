@@ -7,7 +7,6 @@
 package web.media.key
 
 import js.buffer.ArrayBuffer
-import seskar.js.JsValue
 import web.events.Event
 import web.events.EventInit
 import web.events.EventType
@@ -33,8 +32,5 @@ open external class MediaKeyMessageEvent(
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeyMessageEvent/messageType) */
     val messageType: MediaKeyMessageType
 
-    companion object {
-        @JsValue("message")
-        val MESSAGE: EventType<MediaKeyMessageEvent>
-    }
+    companion object : MediaKeyMessageEventTypes
 }
