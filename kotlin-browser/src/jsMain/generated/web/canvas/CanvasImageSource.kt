@@ -2,5 +2,13 @@
 
 package web.canvas
 
-// HTMLOrSVGImageElement | HTMLVideoElement | HTMLCanvasElement | ImageBitmap | OffscreenCanvas | VideoFrame
+/**
+ * Union of:
+ * - `HTMLOrSVGImageElement`
+ * - `HTMLVideoElement`
+ * - `HTMLCanvasElement`
+ * - `ImageBitmap`
+ * - `OffscreenCanvas`
+ * - `VideoFrame`
+ */
 external interface CanvasImageSource

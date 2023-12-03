@@ -2,5 +2,14 @@
 
 package webgl
 
-// ImageBitmap | ImageData | HTMLImageElement | HTMLCanvasElement | HTMLVideoElement | OffscreenCanvas | VideoFrame
+/**
+ * Union of:
+ * - `ImageBitmap`
+ * - `ImageData`
+ * - `HTMLImageElement`
+ * - `HTMLCanvasElement`
+ * - `HTMLVideoElement`
+ * - `OffscreenCanvas`
+ * - `VideoFrame`
+ */
 external interface TexImageSource

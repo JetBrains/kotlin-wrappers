@@ -2,5 +2,9 @@
 
 package web.dom
 
-// HTMLScriptElement | SVGScriptElement
+/**
+ * Union of:
+ * - `HTMLScriptElement`
+ * - `SVGScriptElement`
+ */
 external interface HTMLOrSVGScriptElement

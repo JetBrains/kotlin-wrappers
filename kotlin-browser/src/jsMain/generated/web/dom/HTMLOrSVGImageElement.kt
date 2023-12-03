@@ -4,6 +4,10 @@ package web.dom
 
 import web.canvas.CanvasImageSource
 
-// HTMLImageElement | SVGImageElement
+/**
+ * Union of:
+ * - `HTMLImageElement`
+ * - `SVGImageElement`
+ */
 external interface HTMLOrSVGImageElement :
     CanvasImageSource
