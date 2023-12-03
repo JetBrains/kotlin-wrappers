@@ -1,8 +1,14 @@
+@file:Suppress(
+    "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
+)
+
 package js.typedarrays
 
-@JsName("DONT_USE_IS_AS_OPERATORS_WITH_SYNTHETIC_TYPED_ARRAY_COMPANION")
-sealed external class TypedArrayCompanion<S : TypedArray<S, T>, T : Comparable<T> /* Number? */> {
+sealed external interface TypedArrayCompanion<S : TypedArray<S, T>, T : Comparable<T> /* Number? */> {
     val BYTES_PER_ELEMENT: Int
+        get() = definedExternally
 
-    fun of(vararg items: T): S
+    fun of(
+        vararg items: T,
+    ): S = definedExternally
 }
