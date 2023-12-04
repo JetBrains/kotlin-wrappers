@@ -8,6 +8,7 @@ import js.promise.Promise
 import js.promise.PromiseLike
 import web.http.Response
 
+/** [MDN Reference](https://developer.mozilla.org/docs/WebAssembly/JavaScript_interface/compileStreaming_static) */
 external fun compileStreaming(
     source: Response,
 ): Promise<Module>

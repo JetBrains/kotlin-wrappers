@@ -7,6 +7,7 @@ package webassembly
 import js.buffer.BufferSource
 import js.promise.Promise
 
+/** [MDN Reference](https://developer.mozilla.org/docs/WebAssembly/JavaScript_interface/instantiate_static) */
 external fun instantiate(
     bytes: BufferSource,
     importObject: Imports = definedExternally,
