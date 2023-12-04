@@ -11,7 +11,7 @@ import js.core.MutableArrayLike
 import js.core.ReadonlyArray
 import js.iterable.IterableIterator
 
-sealed external interface TypedArray<S : TypedArray<S, T>, T : Comparable<T> /* Number? */> :
+sealed external class TypedArray<S : TypedArray<S, T>, T : Comparable<T> /* Number? */> :
     ArrayBufferView,
     MutableArrayLike<T>,
     ListLike<T> {
@@ -20,26 +20,24 @@ sealed external interface TypedArray<S : TypedArray<S, T>, T : Comparable<T> /* 
      * The size in bytes of each element in the array.
      */
     val BYTES_PER_ELEMENT: Int
-        get() = definedExternally
 
     override val byteLength: Int
-        get() = definedExternally
 
     /**
      * Returns the item located at the specified index.
      * @param index The zero-based index of the desired code unit. A negative index will count back from the last item.
      */
-    fun at(index: Int): T? = definedExternally
+    fun at(index: Int): T?
 
     fun set(
         array: S,
         offset: Int = definedExternally,
-    ): Unit = definedExternally
+    )
 
     fun set(
         array: ReadonlyArray<T>,
         offset: Int = definedExternally,
-    ): Unit = definedExternally
+    )
 
     /**
      * Returns the this object after copying a section of the array identified by start and end
@@ -54,7 +52,7 @@ sealed external interface TypedArray<S : TypedArray<S, T>, T : Comparable<T> /* 
         target: Int,
         start: Int,
         end: Int = definedExternally,
-    ): S = definedExternally
+    ): S
 
     /**
      * Determines whether all the members of an array satisfy the specified test.
@@ -66,7 +64,7 @@ sealed external interface TypedArray<S : TypedArray<S, T>, T : Comparable<T> /* 
      */
     fun every(
         predicate: (value: T) -> Unit,
-    ): Boolean = definedExternally
+    ): Boolean
 
     /**
      * Changes all array elements from `start` to `end` index to a static `value` and returns the modified array
@@ -80,7 +78,7 @@ sealed external interface TypedArray<S : TypedArray<S, T>, T : Comparable<T> /* 
         value: T,
         start: Int = definedExternally,
         end: Int = definedExternally,
-    ): S = definedExternally
+    ): S
 
     /**
      * Returns the elements of an array that meet the condition specified in a callback function.
@@ -91,7 +89,7 @@ sealed external interface TypedArray<S : TypedArray<S, T>, T : Comparable<T> /* 
      */
     fun filter(
         predicate: (value: T) -> Boolean,
-    ): S = definedExternally
+    ): S
 
     /**
      * Returns the value of the first element in the array where predicate is true, and undefined
@@ -104,7 +102,7 @@ sealed external interface TypedArray<S : TypedArray<S, T>, T : Comparable<T> /* 
      */
     fun find(
         predicate: (value: T) -> Boolean,
-    ): T? = definedExternally
+    ): T?
 
     /**
      * Returns the index of the first element in the array where predicate is true, and -1
@@ -117,7 +115,7 @@ sealed external interface TypedArray<S : TypedArray<S, T>, T : Comparable<T> /* 
      */
     fun findIndex(
         predicate: (value: T) -> Boolean,
-    ): Int = definedExternally
+    ): Int
 
     /**
      * Performs the specified action for each element in an array.
@@ -128,7 +126,7 @@ sealed external interface TypedArray<S : TypedArray<S, T>, T : Comparable<T> /* 
      */
     override fun forEach(
         action: (item: T) -> Unit,
-    ): Unit = definedExternally
+    )
 
     /**
      * Determines whether an array includes a certain element, returning true or false as appropriate.
@@ -138,7 +136,7 @@ sealed external interface TypedArray<S : TypedArray<S, T>, T : Comparable<T> /* 
     fun includes(
         searchElement: T,
         fromIndex: Int = definedExternally,
-    ): Boolean = definedExternally
+    ): Boolean
 
     /**
      * Returns the index of the first occurrence of a value in an array.
@@ -149,7 +147,7 @@ sealed external interface TypedArray<S : TypedArray<S, T>, T : Comparable<T> /* 
     fun indexOf(
         searchElement: T,
         fromIndex: Int = definedExternally,
-    ): Int = definedExternally
+    ): Int
 
     /**
      * Adds all the elements of an array separated by the specified separator string.
@@ -158,7 +156,7 @@ sealed external interface TypedArray<S : TypedArray<S, T>, T : Comparable<T> /* 
      */
     fun join(
         separator: String = definedExternally,
-    ): String = definedExternally
+    ): String
 
     /**
      * Returns the index of the last occurrence of a value in an array.
@@ -169,7 +167,7 @@ sealed external interface TypedArray<S : TypedArray<S, T>, T : Comparable<T> /* 
     fun lastIndexOf(
         searchElement: T,
         fromIndex: Int = definedExternally,
-    ): Int = definedExternally
+    ): Int
 
     /**
      * Calls a defined callback function on each element of an array, and returns an array that
@@ -181,14 +179,14 @@ sealed external interface TypedArray<S : TypedArray<S, T>, T : Comparable<T> /* 
      */
     fun map(
         transform: (value: T) -> T,
-    ): S = definedExternally
+    ): S
 
     // TODO: reduce methods
 
     /**
      * Reverses the elements in an Array.
      */
-    fun reverse(): S = definedExternally
+    fun reverse(): S
 
     /**
      * Returns a section of an array.
@@ -198,7 +196,7 @@ sealed external interface TypedArray<S : TypedArray<S, T>, T : Comparable<T> /* 
     fun slice(
         start: Int = definedExternally,
         end: Int = definedExternally,
-    ): S = definedExternally
+    ): S
 
     /**
      * Determines whether the specified callback function returns true for any element of an array.
@@ -210,7 +208,7 @@ sealed external interface TypedArray<S : TypedArray<S, T>, T : Comparable<T> /* 
      */
     fun some(
         predicate: (value: T) -> Boolean,
-    ): Boolean = definedExternally
+    ): Boolean
 
     /**
      * Sorts an array.
@@ -223,25 +221,25 @@ sealed external interface TypedArray<S : TypedArray<S, T>, T : Comparable<T> /* 
      */
     fun sort(
         comparison: (a: T, b: T) -> Int = definedExternally,
-    ): S = definedExternally
+    ): S
 
     /**
      * Converts a number to a string by using the current locale.
      */
-    fun toLocaleString(): String = definedExternally
+    fun toLocaleString(): String
 
     /** Returns the primitive value of the specified object. */
-    fun valueOf(): S = definedExternally
+    fun valueOf(): S
 
 
     fun subarray(
         start: Int,
         end: Int,
-    ): S = definedExternally
+    ): S
 
-    override fun entries(): IterableIterator<JsTuple2<Int, T>> = definedExternally
+    override fun entries(): IterableIterator<JsTuple2<Int, T>>
 
-    override fun keys(): IterableIterator<Int> = definedExternally
+    override fun keys(): IterableIterator<Int>
 
-    override fun values(): IterableIterator<T> = definedExternally
+    override fun values(): IterableIterator<T>
 }
