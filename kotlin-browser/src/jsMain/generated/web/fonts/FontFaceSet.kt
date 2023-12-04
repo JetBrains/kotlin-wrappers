@@ -3,7 +3,9 @@
 package web.fonts
 
 import js.collections.MutableSetLike
+import js.core.JsTuple2
 import js.core.ReadonlyArray
+import js.iterable.IterableIterator
 import js.promise.Promise
 import web.events.Event
 import web.events.EventHandler
@@ -40,4 +42,15 @@ external class FontFaceSet(
         font: String,
         text: String = definedExternally,
     ): Promise<ReadonlyArray<FontFace>>
+
+    override val size: Int
+
+    override fun add(value: FontFace)
+    override fun clear()
+    override fun delete(value: FontFace): Boolean
+    override fun entries(): IterableIterator<JsTuple2<FontFace, FontFace>>
+    override fun forEach(action: (value: FontFace) -> Unit)
+    override fun has(value: FontFace): Boolean
+    override fun keys(): IterableIterator<FontFace>
+    override fun values(): IterableIterator<FontFace>
 }
