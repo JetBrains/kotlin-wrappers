@@ -31,5 +31,4 @@ class TypedArrayTest {
 
         assertIs<TypedArrayCompanion<*, *>>(a)
     }
-
 }
