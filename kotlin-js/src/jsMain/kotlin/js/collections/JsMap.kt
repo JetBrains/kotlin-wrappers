@@ -13,12 +13,11 @@ external class JsMap<K, V> : MutableMapLike<K, V> {
 
     override fun clear()
     override fun delete(key: K): Boolean
-    override operator fun set(key: K, value: V)
-
     override fun entries(): IterableIterator<JsTuple2<K, V>>
     override fun forEach(action: (value: V, key: K) -> Unit)
     override operator fun get(key: K): V?
     override fun has(key: K): Boolean
     override fun keys(): IterableIterator<K>
+    override operator fun set(key: K, value: V)
     override fun values(): IterableIterator<V>
 }
