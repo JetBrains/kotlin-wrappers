@@ -1,5 +1,5 @@
 // Automatically generated - do not modify!
 
-package webrtc
+package web.timers
 
 typealias VoidFunction = () -> Unit
