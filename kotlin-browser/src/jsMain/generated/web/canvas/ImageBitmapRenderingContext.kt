@@ -2,8 +2,13 @@
 
 package web.canvas
 
+import web.rendering.OffscreenRenderingContext
+import web.rendering.RenderingContext
+
 /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageBitmapRenderingContext) */
-sealed external class ImageBitmapRenderingContext {
+sealed external class ImageBitmapRenderingContext :
+    OffscreenRenderingContext,
+    RenderingContext {
     /** Returns the canvas element that the context is bound to. */
     val canvas: Any /* HTMLCanvasElement | OffscreenCanvas */
 

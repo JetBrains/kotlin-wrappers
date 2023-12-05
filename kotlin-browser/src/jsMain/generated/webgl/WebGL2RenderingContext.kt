@@ -2,10 +2,15 @@
 
 package webgl
 
+import web.rendering.OffscreenRenderingContext
+import web.rendering.RenderingContext
+
 sealed external class WebGL2RenderingContext :
     WebGL2RenderingContextBase,
     WebGL2RenderingContextOverloads,
-    WebGLRenderingContextBase {
+    WebGLRenderingContextBase,
+    OffscreenRenderingContext,
+    RenderingContext {
 
     companion object {
         val READ_BUFFER: GLenum

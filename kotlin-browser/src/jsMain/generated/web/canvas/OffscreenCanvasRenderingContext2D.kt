@@ -2,6 +2,8 @@
 
 package web.canvas
 
+import web.rendering.OffscreenRenderingContext
+
 /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/OffscreenCanvasRenderingContext2D) */
 sealed external class OffscreenCanvasRenderingContext2D :
     CanvasCompositing,
@@ -18,7 +20,8 @@ sealed external class OffscreenCanvasRenderingContext2D :
     CanvasState,
     CanvasText,
     CanvasTextDrawingStyles,
-    CanvasTransform {
+    CanvasTransform,
+    OffscreenRenderingContext {
     val canvas: OffscreenCanvas
 
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/OffscreenCanvasRenderingContext2D/commit) */

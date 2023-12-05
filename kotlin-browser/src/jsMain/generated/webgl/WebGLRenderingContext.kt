@@ -2,9 +2,14 @@
 
 package webgl
 
+import web.rendering.OffscreenRenderingContext
+import web.rendering.RenderingContext
+
 sealed external class WebGLRenderingContext :
     WebGLRenderingContextBase,
-    WebGLRenderingContextOverloads {
+    WebGLRenderingContextOverloads,
+    OffscreenRenderingContext,
+    RenderingContext {
 
     companion object {
         val DEPTH_BUFFER_BIT: GLenum

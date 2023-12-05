@@ -3,6 +3,7 @@
 package web.canvas
 
 import web.html.HTMLCanvasElement
+import web.rendering.RenderingContext
 
 /**
  * The CanvasRenderingContext2D interface, part of the Canvas API, provides the 2D rendering context for the drawing surface of a <canvas> element. It is used for drawing shapes, text, images, and other objects.
@@ -25,7 +26,8 @@ sealed external class CanvasRenderingContext2D :
     CanvasText,
     CanvasTextDrawingStyles,
     CanvasTransform,
-    CanvasUserInterface {
+    CanvasUserInterface,
+    RenderingContext {
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/canvas) */
     val canvas: HTMLCanvasElement
 
