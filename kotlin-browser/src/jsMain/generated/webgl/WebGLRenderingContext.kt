@@ -2,8 +2,10 @@
 
 package webgl
 
+import seskar.js.JsValue
 import web.rendering.OffscreenRenderingContext
 import web.rendering.RenderingContext
+import web.rendering.RenderingContextId
 
 sealed external class WebGLRenderingContext :
     WebGLRenderingContextBase,
@@ -308,5 +310,8 @@ sealed external class WebGLRenderingContext :
         val CONTEXT_LOST_WEBGL: GLenum
         val UNPACK_COLORSPACE_CONVERSION_WEBGL: GLenum
         val BROWSER_DEFAULT_WEBGL: GLenum
+
+        @JsValue("webgl")
+        val ID: RenderingContextId<WebGLRenderingContext, WebGLContextAttributes>
     }
 }

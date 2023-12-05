@@ -2,12 +2,12 @@
 
 package web.html
 
-import web.canvas.*
+import web.canvas.CanvasImageSource
+import web.canvas.OffscreenCanvas
 import web.media.streams.MediaStream
+import web.rendering.RenderingContext
+import web.rendering.RenderingContextId
 import webgl.TexImageSource
-import webgl.WebGL2RenderingContext
-import webgl.WebGLContextAttributes
-import webgl.WebGLRenderingContext
 
 /**
  * Provides properties and methods for manipulating the layout and presentation of <canvas> elements. The HTMLCanvasElement interface also inherits the properties and methods of the HTMLElement interface.
@@ -42,25 +42,10 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLCanvasElement/getContext)
      */
-    fun getContext(
-        contextId: RenderingContextId.canvas,
-        options: CanvasRenderingContext2DSettings = definedExternally,
-    ): CanvasRenderingContext2D?
-
-    fun getContext(
-        contextId: RenderingContextId.bitmaprenderer,
-        options: ImageBitmapRenderingContextSettings = definedExternally,
-    ): ImageBitmapRenderingContext?
-
-    fun getContext(
-        contextId: RenderingContextId.webgl,
-        options: WebGLContextAttributes = definedExternally,
-    ): WebGLRenderingContext?
-
-    fun getContext(
-        contextId: RenderingContextId.webgl2,
-        options: WebGLContextAttributes = definedExternally,
-    ): WebGL2RenderingContext?
+    fun <T : RenderingContext, O : Any> getContext(
+        contextId: RenderingContextId<T, O>,
+        options: O? = definedExternally,
+    ): T?
 
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLCanvasElement/toBlob) */
     fun toBlob(
