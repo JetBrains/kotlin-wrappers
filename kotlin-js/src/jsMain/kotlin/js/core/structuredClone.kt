@@ -2,5 +2,5 @@ package js.core
 
 external fun <T> structuredClone(
     value: T,
-    /* options: StructuredSerializeOptions = definedExternally, */
+    options: StructuredSerializeOptions? = definedExternally,
 ): T
