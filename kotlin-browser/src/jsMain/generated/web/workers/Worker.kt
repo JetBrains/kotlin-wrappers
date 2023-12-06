@@ -3,11 +3,11 @@
 package web.workers
 
 import js.core.ReadonlyArray
+import js.core.StructuredSerializeOptions
+import js.core.Transferable
 import web.events.EventHandler
 import web.events.EventTarget
 import web.messaging.MessageEvent
-import web.messaging.StructuredSerializeOptions
-import web.messaging.Transferable
 import web.url.URL
 
 /**

@@ -4,6 +4,7 @@ package web.window
 
 import js.core.ArrayLike
 import js.core.ReadonlyArray
+import js.core.Transferable
 import web.device.DeviceMotionEvent
 import web.device.DeviceOrientationEvent
 import web.dom.Element
@@ -11,7 +12,6 @@ import web.dom.GlobalEventHandlers
 import web.events.EventHandler
 import web.events.EventTarget
 import web.messaging.MessageEventSource
-import web.messaging.Transferable
 import web.scroll.ScrollToOptions
 import web.selection.Selection
 import web.url.URL

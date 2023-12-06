@@ -2,12 +2,12 @@
 
 package web.canvas
 
+import js.core.Transferable
 import js.promise.Promise
 import web.buffer.Blob
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventTarget
-import web.messaging.Transferable
 import web.rendering.OffscreenRenderingContext
 import web.rendering.RenderingContextId
 import webgl.*

@@ -1,8 +1,6 @@
 // Automatically generated - do not modify!
 
-package web.messaging
-
-import js.core.ReadonlyArray
+package js.core
 
 external interface StructuredSerializeOptions {
     var transfer: ReadonlyArray<Transferable>?

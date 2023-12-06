@@ -2,9 +2,9 @@
 
 package web.streams
 
+import js.core.Transferable
 import js.core.Void
 import js.promise.Promise
-import web.messaging.Transferable
 
 /**
  * This Streams API interface provides a standard abstraction for writing streaming data to a destination, known as a sink. This object comes with built-in backpressure and queuing.

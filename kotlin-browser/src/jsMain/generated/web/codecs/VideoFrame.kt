@@ -5,10 +5,10 @@ package web.codecs
 import js.buffer.AllowSharedBufferSource
 import js.core.JsLong
 import js.core.ReadonlyArray
+import js.core.Transferable
 import js.promise.Promise
 import web.canvas.CanvasImageSource
 import web.geometry.DOMRectReadOnly
-import web.messaging.Transferable
 import webgl.TexImageSource
 
 /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoFrame) */

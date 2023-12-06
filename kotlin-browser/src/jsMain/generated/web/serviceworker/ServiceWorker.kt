@@ -3,12 +3,12 @@
 package web.serviceworker
 
 import js.core.ReadonlyArray
+import js.core.StructuredSerializeOptions
+import js.core.Transferable
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventTarget
 import web.messaging.MessageEventSource
-import web.messaging.StructuredSerializeOptions
-import web.messaging.Transferable
 import web.workers.AbstractWorker
 
 /**

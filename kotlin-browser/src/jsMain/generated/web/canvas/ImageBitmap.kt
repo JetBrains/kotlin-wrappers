@@ -2,7 +2,7 @@
 
 package web.canvas
 
-import web.messaging.Transferable
+import js.core.Transferable
 import webgl.TexImageSource
 
 /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageBitmap) */

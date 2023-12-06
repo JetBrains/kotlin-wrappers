@@ -1,6 +1,6 @@
 // Automatically generated - do not modify!
 
-package web.messaging
+package js.core
 
 import js.buffer.ArrayBuffer
 

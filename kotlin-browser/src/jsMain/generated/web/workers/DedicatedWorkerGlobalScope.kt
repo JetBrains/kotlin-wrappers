@@ -3,10 +3,10 @@
 package web.workers
 
 import js.core.ReadonlyArray
+import js.core.StructuredSerializeOptions
+import js.core.Transferable
 import web.events.EventHandler
 import web.messaging.MessageEvent
-import web.messaging.StructuredSerializeOptions
-import web.messaging.Transferable
 
 sealed external class DedicatedWorkerGlobalScope :
     WorkerGlobalScope {

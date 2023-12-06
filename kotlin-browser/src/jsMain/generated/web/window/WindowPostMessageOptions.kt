@@ -2,7 +2,7 @@
 
 package web.window
 
-import web.messaging.StructuredSerializeOptions
+import js.core.StructuredSerializeOptions
 
 sealed external interface WindowPostMessageOptions :
     StructuredSerializeOptions {

@@ -3,8 +3,8 @@
 package web.serviceworker
 
 import js.core.ReadonlyArray
-import web.messaging.StructuredSerializeOptions
-import web.messaging.Transferable
+import js.core.StructuredSerializeOptions
+import js.core.Transferable
 
 sealed external class Client {
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Client/frameType) */
