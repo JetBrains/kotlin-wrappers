@@ -1,4 +1,4 @@
-package web.timers
+package web.animations
 
 sealed external interface FrameRequestId
 
