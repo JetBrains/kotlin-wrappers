@@ -6,8 +6,8 @@ import js.promise.Promise
 import web.canvas.CanvasImageSource
 import web.events.Event
 import web.events.EventHandler
+import web.gl.TexImageSource
 import web.pip.PictureInPictureWindow
-import webgl.TexImageSource
 
 /**
  * Provides special properties and methods for manipulating video objects. It also inherits properties and methods of HTMLMediaElement and HTMLElement.

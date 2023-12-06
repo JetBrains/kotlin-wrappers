@@ -8,9 +8,9 @@ import web.buffer.Blob
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventTarget
+import web.gl.TexImageSource
 import web.rendering.OffscreenRenderingContext
 import web.rendering.RenderingContextId
-import webgl.*
 
 /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/OffscreenCanvas) */
 external class OffscreenCanvas(

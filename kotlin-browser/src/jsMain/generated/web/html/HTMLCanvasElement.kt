@@ -4,10 +4,10 @@ package web.html
 
 import web.canvas.CanvasImageSource
 import web.canvas.OffscreenCanvas
+import web.gl.TexImageSource
 import web.media.streams.MediaStream
 import web.rendering.RenderingContext
 import web.rendering.RenderingContextId
-import webgl.TexImageSource
 
 /**
  * Provides properties and methods for manipulating the layout and presentation of <canvas> elements. The HTMLCanvasElement interface also inherits the properties and methods of the HTMLElement interface.

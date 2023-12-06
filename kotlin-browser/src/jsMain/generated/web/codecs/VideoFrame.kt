@@ -9,7 +9,7 @@ import js.core.Transferable
 import js.promise.Promise
 import web.canvas.CanvasImageSource
 import web.geometry.DOMRectReadOnly
-import webgl.TexImageSource
+import web.gl.TexImageSource
 
 /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoFrame) */
 external class VideoFrame(

@@ -5,9 +5,9 @@ package web.html
 import js.core.Void
 import js.promise.Promise
 import web.dom.HTMLOrSVGImageElement
+import web.gl.TexImageSource
 import web.http.CrossOrigin
 import web.http.ReferrerPolicy
-import webgl.TexImageSource
 
 /**
  * Provides special properties and methods for manipulating <img> elements.

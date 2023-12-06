@@ -3,7 +3,7 @@
 package web.canvas
 
 import js.core.Transferable
-import webgl.TexImageSource
+import web.gl.TexImageSource
 
 /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageBitmap) */
 sealed external class ImageBitmap :
