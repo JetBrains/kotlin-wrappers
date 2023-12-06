@@ -3,7 +3,7 @@ package styled.sheets
 import js.core.asList
 import js.core.globalThis
 import web.html.HTMLStyleElement
-import web.timers.requestIdleCallback
+import web.scheduling.requestIdleCallback
 import web.timers.setTimeout
 
 private typealias Rules = Iterable<String>
