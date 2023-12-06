@@ -2,8 +2,6 @@
 
 package js.core
 
-import js.buffer.ArrayBuffer
-
 /**
  * Union of:
  * - `OffscreenCanvas`
@@ -16,9 +14,3 @@ import js.buffer.ArrayBuffer
  * - `ArrayBuffer`
  */
 external interface Transferable
-
-inline fun ArrayBuffer.asTransferable(): Transferable =
-    unsafeCast<Transferable>()
-
-inline fun Transferable.asArrayBufferOrNull(): ArrayBuffer? =
-    asDynamic() as? ArrayBuffer    

@@ -4,10 +4,13 @@
 
 package js.buffer
 
+import js.core.Transferable
+
 external class ArrayBuffer(
     override val byteLength: Int,
 ) : ArrayBufferLike,
-    BufferSource {
+    BufferSource,
+    Transferable {
     override fun slice(
         begin: Int,
         end: Int,
