@@ -1,5 +1,5 @@
 // Automatically generated - do not modify!
 
-package web.timers
+package web.scheduling
 
 typealias VoidFunction = () -> Unit
