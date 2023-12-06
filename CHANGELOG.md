@@ -1,3 +1,14 @@
+## pre.661
+
+**BREAKING CHANGE**
+
+* Root `web` package
+    * `webassembly` -> `web.assembly`
+    * `webgl` -> `web.gl`
+    * `webrtc` -> `web.rtc`
+    * `websockets` -> `web.sockets`
+    * `webvtt` -> `web.vtt`
+
 ## pre.660
 
 **BREAKING CHANGE**
@@ -31,7 +42,7 @@
 **BREAKING CHANGE**
 
 * React Router
-  * Legacy API removed (`Router`, `Route` components)
+    * Legacy API removed (`Router`, `Route` components)
 
 ## pre.634
 
@@ -47,9 +58,9 @@ import web.uievents.MouseEvent
 element.addEventHandler(MouseEvent.CLICK) { }
 
 // After
-import web.uievents.MouseEvent
+import web . uievents . MouseEvent
 
-element.addEventHandler(MouseEvent.CLICK) { }
+        element.addEventHandler(MouseEvent.CLICK) { }
 ```
 
 ## pre.600
@@ -60,7 +71,8 @@ element.addEventHandler(MouseEvent.CLICK) { }
 
 **BREAKING CHANGE**
 
-Although it is unlikely that someone was using this signature directly (the implementation in `kotlin-styled` / `kotlin-styled-next` is normally used instead) it is technically still a breaking
+Although it is unlikely that someone was using this signature directly (the implementation
+in `kotlin-styled` / `kotlin-styled-next` is normally used instead) it is technically still a breaking
 change.
 
 ```kotlin
@@ -134,7 +146,8 @@ Replace the imports as follows to migrate:
 
 **BREAKING CHANGE**
 
-`kotlin-css` now has a different syntax for setting `backgroundPosition`, `border`, `inset`, `margin`, `padding`, and `textDecoration` properties.
+`kotlin-css` now has a different syntax for setting `backgroundPosition`, `border`, `inset`, `margin`, `padding`,
+and `textDecoration` properties.
 
 ```kotlin
 css {
@@ -167,9 +180,9 @@ Kotlin/JS Legacy compiler support removed
 **BREAKING CHANGE**
 
 * Union declarations changed
-  * Values moved into companion object
-  * Before: `import node.process.Platform.win32`
-  * After: `import node.process.Platform.Companion.win32`
+    * Values moved into companion object
+    * Before: `import node.process.Platform.win32`
+    * After: `import node.process.Platform.Companion.win32`
 
 ## pre.506
 
@@ -181,7 +194,8 @@ Strict `createContext` signature (aligned with TS version)
 
 **BREAKING CHANGE**
 
-`fun StyledElement.grow(grow: Grow)` renamed to `fun StyledElement.flex(flex: Flex)`. Please update your code accordingly if you're using `kotlin-css`.
+`fun StyledElement.grow(grow: Grow)` renamed to `fun StyledElement.flex(flex: Flex)`. Please update your code
+accordingly if you're using `kotlin-css`.
 
 ## pre.467
 
@@ -300,7 +314,8 @@ directly. They are therefore more complete and up-to-date.
 To choose the migration path, apply the same reasoning as the one described above for `kotlin-react`: you could either
 ignore the new APIs and keep using the old ones, perform a gradual migration, or migrate "cold turkey" style.
 
-Please do note that `kotlin-styled` and `kotlin-styled-next` are only compatible with the legacy API. If you're migrating
+Please do note that `kotlin-styled` and `kotlin-styled-next` are only compatible with the legacy API. If you're
+migrating
 to the new API, you are going to need to switch to `kotlin-emotion`.
 
 ## pre.280
