@@ -1,6 +1,6 @@
 // Automatically generated - do not modify!
 
-package webvtt
+package web.vtt
 
 /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/VTTRegion) */
 sealed external class VTTRegion {

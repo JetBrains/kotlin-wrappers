@@ -2,7 +2,7 @@
 
 package web.html
 
-import webvtt.TextTrack
+import web.vtt.TextTrack
 
 /**
  * The HTMLTrackElement

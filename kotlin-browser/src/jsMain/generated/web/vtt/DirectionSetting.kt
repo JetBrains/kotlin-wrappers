@@ -4,18 +4,21 @@
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
-package webvtt
+package web.vtt
 
 import seskar.js.JsValue
 import seskar.js.JsVirtual
 
 @JsVirtual
-sealed external interface ScrollSetting {
+sealed external interface DirectionSetting {
     companion object {
         @JsValue("")
-        val none: ScrollSetting
+        val none: DirectionSetting
 
-        @JsValue("up")
-        val up: ScrollSetting
+        @JsValue("lr")
+        val lr: DirectionSetting
+
+        @JsValue("rl")
+        val rl: DirectionSetting
     }
 }

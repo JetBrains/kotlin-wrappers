@@ -1,6 +1,6 @@
 // Automatically generated - do not modify!
 
-package webvtt
+package web.vtt
 
 import js.core.ArrayLike
 import js.iterable.JsIterable

@@ -1,5 +1,5 @@
 // Automatically generated - do not modify!
 
-package webvtt
+package web.vtt
 
 typealias LineAndPositionSetting = Any /* number | AutoKeyword */

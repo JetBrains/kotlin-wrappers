@@ -1,6 +1,6 @@
 // Automatically generated - do not modify!
 
-package webvtt
+package web.vtt
 
 import web.events.Event
 import web.events.EventHandler

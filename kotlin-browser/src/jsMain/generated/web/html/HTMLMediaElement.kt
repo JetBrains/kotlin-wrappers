@@ -10,9 +10,9 @@ import web.http.CrossOrigin
 import web.media.key.MediaKeys
 import web.media.source.TimeRanges
 import web.remoteplayback.RemotePlayback
-import webvtt.TextTrack
-import webvtt.TextTrackKind
-import webvtt.TextTrackList
+import web.vtt.TextTrack
+import web.vtt.TextTrackKind
+import web.vtt.TextTrackList
 
 /**
  * Adds to HTMLElement the properties and methods needed to support basic media-related capabilities that are common to audio and video.

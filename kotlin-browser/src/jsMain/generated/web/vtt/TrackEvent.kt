@@ -4,7 +4,7 @@
     "EXTERNAL_CLASS_CONSTRUCTOR_PROPERTY_PARAMETER",
 )
 
-package webvtt
+package web.vtt
 
 import web.events.Event
 import web.events.EventInit
