@@ -2,7 +2,7 @@
 
 @file:JsQualifier("WebAssembly")
 
-package webassembly
+package web.assembly
 
 import js.promise.Promise
 import js.promise.PromiseLike

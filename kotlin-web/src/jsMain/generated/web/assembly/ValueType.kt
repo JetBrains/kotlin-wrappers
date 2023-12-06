@@ -4,7 +4,7 @@
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
-package webassembly
+package web.assembly
 
 import js.core.BigInt
 import js.core.Void

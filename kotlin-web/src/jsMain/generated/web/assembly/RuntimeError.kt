@@ -2,10 +2,10 @@
 
 @file:JsQualifier("WebAssembly")
 
-package webassembly
+package web.assembly
 
 import js.errors.JsError
 
-external class LinkError(
+external class RuntimeError(
     message: String = definedExternally,
 ) : JsError

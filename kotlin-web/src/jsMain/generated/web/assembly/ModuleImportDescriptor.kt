@@ -1,8 +1,9 @@
 // Automatically generated - do not modify!
 
-package webassembly
+package web.assembly
 
-sealed external interface ModuleExportDescriptor {
+sealed external interface ModuleImportDescriptor {
     var kind: ImportExportKind
+    var module: String
     var name: String
 }
