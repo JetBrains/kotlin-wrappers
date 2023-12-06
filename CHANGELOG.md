@@ -1,3 +1,14 @@
+## pre.660
+
+**BREAKING CHANGE**
+
+* Fixed packages for top-level functions:
+    * `web.animations`
+        * `requestAnimationFrame`
+    * `web.scheduling`
+        * `queueMicrotask`
+        * `requestIdleCallback`
+
 ## pre.643
 
 **BREAKING CHANGE**
