@@ -4,7 +4,7 @@
     "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
 )
 
-package websockets
+package web.sockets
 
 import seskar.js.JsValue
 import web.events.EventType

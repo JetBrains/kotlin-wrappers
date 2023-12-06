@@ -9,7 +9,7 @@ import web.events.Event
 import web.events.EventHandler
 import web.events.EventTarget
 import web.messaging.MessageEvent
-import websockets.BinaryType
+import web.sockets.BinaryType
 
 /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDataChannel) */
 sealed external class RTCDataChannel :

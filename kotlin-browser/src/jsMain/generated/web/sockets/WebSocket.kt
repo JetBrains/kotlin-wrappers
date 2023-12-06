@@ -1,6 +1,6 @@
 // Automatically generated - do not modify!
 
-package websockets
+package web.sockets
 
 import js.buffer.ArrayBufferLike
 import js.buffer.ArrayBufferView
