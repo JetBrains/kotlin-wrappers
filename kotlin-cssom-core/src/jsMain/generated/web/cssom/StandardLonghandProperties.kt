@@ -221,7 +221,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/animation-range-end">MDN</a>
      */
-    var animationRangeEnd: AnimationRangeEnd?
+    var animationRangeEnd: AnimationRange?
 
     /**
      * The **`animation-range-start`** CSS property is used to set the start of an animation's attachment range along its timeline, i.e. where along the timeline an animation will start.
@@ -236,7 +236,7 @@ external interface StandardLonghandProperties {
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/animation-range-start">MDN</a>
      */
-    var animationRangeStart: AnimationRangeStart?
+    var animationRangeStart: AnimationRange?
 
     /**
      * The **`animation-timeline`** CSS property specifies the timeline that is used to control the progress of an animation.

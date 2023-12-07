@@ -61,10 +61,10 @@ sealed external interface PropertyName<T : Any> : Ident {
         val animationRange: PropertyName<AnimationRange>
 
         @JsValue("animation-range-end")
-        val animationRangeEnd: PropertyName<AnimationRangeEnd>
+        val animationRangeEnd: PropertyName<AnimationRange>
 
         @JsValue("animation-range-start")
-        val animationRangeStart: PropertyName<AnimationRangeStart>
+        val animationRangeStart: PropertyName<AnimationRange>
 
         @JsValue("animation-timeline")
         val animationTimeline: PropertyName<AnimationTimeline>

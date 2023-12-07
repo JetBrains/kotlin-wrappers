@@ -3,6 +3,7 @@
 package web.cssom
 
 sealed external interface LengthProperty :
+    AnimationRange,
     AutoLengthProperty,
     Background,
     BackgroundPosition,
