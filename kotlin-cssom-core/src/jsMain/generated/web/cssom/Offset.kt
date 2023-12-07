@@ -27,25 +27,7 @@ sealed external interface Offset {
         @JsValue("top")
         val top: Offset
 
-        @JsValue("border-box")
-        val borderBox: Offset
-
-        @JsValue("content-box")
-        val contentBox: Offset
-
-        @JsValue("padding-box")
-        val paddingBox: Offset
-
-        @JsValue("fill-box")
-        val fillBox: Offset
-
-        @JsValue("margin-box")
-        val marginBox: Offset
-
-        @JsValue("stroke-box")
-        val strokeBox: Offset
-
-        @JsValue("view-box")
-        val viewBox: Offset
+        @JsValue("normal")
+        val normal: Offset
     }
 }

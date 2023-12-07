@@ -2,4 +2,4 @@
 
 package web.cssom
 
-sealed external interface OffsetPath
+sealed external interface ViewTimelineName

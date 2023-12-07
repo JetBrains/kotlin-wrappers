@@ -33,6 +33,19 @@ external interface StandardShorthandProperties {
     var animation: Animation?
 
     /**
+     * The **`animation-range`** CSS shorthand property is used to set the start and end of an animation's attachment range along its timeline, i.e. where along the timeline an animation will start and end.
+     *
+     * **Syntax**: `[ <'animation-range-start'> <'animation-range-end'>? ]#`
+     *
+     *    | Chrome  | Firefox | Safari | Edge | IE  |
+     *    | :-----: | :-----: | :----: | :--: | :-: |
+     *    |   115   |   No    |   No   | n/a  | No  |
+     *
+     * @see <a href="https://developer.mozilla.org/docs/Web/CSS/animation-range">MDN</a>
+     */
+    var animationRange: AnimationRange?
+
+    /**
      * The **`background`** shorthand CSS property sets all background style properties at once, such as color, image, origin and size, or repeat method.
      *
      * **Syntax**: `[ <bg-layer> , ]* <final-bg-layer>`
@@ -304,11 +317,11 @@ external interface StandardShorthandProperties {
     /**
      * The **`contain-intrinsic-size`** CSS shorthand property sets the size of an element that a browser will use for layout when the element is subject to size containment.
      *
-     * **Syntax**: `[ none | <length> | auto <length> ]{1,2}`
+     * **Syntax**: `[ auto? [ none | <length> ] ]{1,2}`
      *
      *    | Chrome | Firefox | Safari | Edge | IE  |
      *    | :----: | :-----: | :----: | :--: | :-: |
-     *    |   83   |   107   |   No   | n/a  | No  |
+     *    |   83   |   107   |   17   | n/a  | No  |
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/contain-intrinsic-size">MDN</a>
      */
@@ -549,9 +562,10 @@ external interface StandardShorthandProperties {
      *
      * **Syntax**: `<mask-layer>#`
      *
-     *    | Chrome | Firefox | Safari  | Edge  | IE  |
-     *    | :----: | :-----: | :-----: | :---: | :-: |
-     *    |   1    |    2    |   3.1   | 12-79 | No  |
+     *    | Chrome | Firefox |  Safari   | Edge  | IE  |
+     *    | :----: | :-----: | :-------: | :---: | :-: |
+     *    |   1    |   53    |   15.4    | 12-79 | No  |
+     *    |        |         |    3.1′   |       |     |
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/mask">MDN</a>
      */
@@ -562,9 +576,10 @@ external interface StandardShorthandProperties {
      *
      * **Syntax**: `<'mask-border-source'> || <'mask-border-slice'> [ / <'mask-border-width'>? [ / <'mask-border-outset'> ]? ]? || <'mask-border-repeat'> || <'mask-border-mode'>`
      *
-     *    |              Chrome              | Firefox |               Safari               | Edge | IE  |
-     *    | :------------------------------: | :-----: | :--------------------------------: | :--: | :-: |
-     *    |   1   _(-webkit-mask-box-image)_ |   No    |   3.1   _(-webkit-mask-box-image)_ | n/a  | No  |
+     *    |              Chrome              | Firefox |             Safari             | Edge | IE  |
+     *    | :------------------------------: | :-----: | :----------------------------: | :--: | :-: |
+     *    |   1   _(-webkit-mask-box-image)_ |   No    |              17.2              | n/a  | No  |
+     *    |                                  |         | 3.1 _(-webkit-mask-box-image)_ |      |     |
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/mask-border">MDN</a>
      */
@@ -603,9 +618,9 @@ external interface StandardShorthandProperties {
      *
      * **Syntax**: `[ <'outline-color'> || <'outline-style'> || <'outline-width'> ]`
      *
-     *    | Chrome | Firefox | Safari  |  Edge  |  IE   |
-     *    | :----: | :-----: | :-----: | :----: | :---: |
-     *    |   94   |   88    |   1.2   |   94   |   8   |
+     *    | Chrome | Firefox |  Safari  |  Edge  |  IE   |
+     *    | :----: | :-----: | :------: | :----: | :---: |
+     *    |   94   |   88    |   16.4   |   94   |   8   |
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/outline">MDN</a>
      */
@@ -738,9 +753,9 @@ external interface StandardShorthandProperties {
      *
      * **Syntax**: `<length>{1,2}`
      *
-     *    | Chrome | Firefox |  Safari  | Edge | IE  |
-     *    | :----: | :-----: | :------: | :--: | :-: |
-     *    |   69   |   68    |   14.1   | n/a  | No  |
+     *    | Chrome | Firefox | Safari | Edge | IE  |
+     *    | :----: | :-----: | :----: | :--: | :-: |
+     *    |   69   |   68    |   15   | n/a  | No  |
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/scroll-margin-block">MDN</a>
      */
@@ -751,9 +766,9 @@ external interface StandardShorthandProperties {
      *
      * **Syntax**: `<length>{1,2}`
      *
-     *    | Chrome | Firefox |  Safari  | Edge | IE  |
-     *    | :----: | :-----: | :------: | :--: | :-: |
-     *    |   69   |   68    |   14.1   | n/a  | No  |
+     *    | Chrome | Firefox | Safari | Edge | IE  |
+     *    | :----: | :-----: | :----: | :--: | :-: |
+     *    |   69   |   68    |   15   | n/a  | No  |
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/scroll-margin-inline">MDN</a>
      */
@@ -815,11 +830,11 @@ external interface StandardShorthandProperties {
     /**
      * The **`scroll-timeline`** CSS shorthand property defines a name that can be used to identify the source element of a scroll timeline, along with the scrollbar axis that should provide the timeline.
      *
-     * **Syntax**: `[<'scroll-timeline-name'> <'scroll-timeline-axis'>?]#`
+     * **Syntax**: `[ <'scroll-timeline-name'> <'scroll-timeline-axis'>? ]#`
      *
-     *    | Chrome | Firefox | Safari | Edge | IE  |
-     *    | :----: | :-----: | :----: | :--: | :-: |
-     *    |   No   |   n/a   |   No   | n/a  | No  |
+     *    | Chrome  | Firefox | Safari | Edge | IE  |
+     *    | :-----: | :-----: | :----: | :--: | :-: |
+     *    |   115   |   n/a   |   No   | n/a  | No  |
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/scroll-timeline">MDN</a>
      */
@@ -860,9 +875,22 @@ external interface StandardShorthandProperties {
      *    | Chrome  | Firefox |  Safari   |  Edge  |   IE   |
      *    | :-----: | :-----: | :-------: | :----: | :----: |
      *    |   26    |   16    |     9     |   12   |   10   |
-     *    |    1′   |    4′   |    3.1′   |        |        |
+     *    |    1′   |         |    3.1′   |        |        |
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/transition">MDN</a>
      */
     var transition: Transition?
+
+    /**
+     * The **`view-timeline`** CSS shorthand property is used to define a _named view progress timeline_, which is progressed through based on the change in visibility of an element (known as the _subject_) inside a scrollable element (_scroller_). `view-timeline` is set on the subject.
+     *
+     * **Syntax**: `[ <'view-timeline-name'> <'view-timeline-axis'>? ]#`
+     *
+     *    | Chrome  | Firefox | Safari | Edge | IE  |
+     *    | :-----: | :-----: | :----: | :--: | :-: |
+     *    |   115   |   n/a   |   No   | n/a  | No  |
+     *
+     * @see <a href="https://developer.mozilla.org/docs/Web/CSS/view-timeline">MDN</a>
+     */
+    var viewTimeline: ViewTimeline?
 }

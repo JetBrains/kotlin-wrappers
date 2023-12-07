@@ -51,8 +51,14 @@ sealed external interface AtRules {
         @JsValue("@property")
         val property: AtRules
 
+        @JsValue("@scope")
+        val scope: AtRules
+
         @JsValue("@scroll-timeline")
         val scrollTimeline: AtRules
+
+        @JsValue("@starting-style")
+        val startingStyle: AtRules
 
         @JsValue("@supports")
         val supports: AtRules

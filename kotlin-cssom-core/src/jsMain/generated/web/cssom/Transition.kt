@@ -36,6 +36,12 @@ sealed external interface Transition {
 
         @JsValue("all")
         val all: Transition
+
+        @JsValue("allow-discrete")
+        val allowDiscrete: Transition
+
+        @JsValue("normal")
+        val normal: Transition
     }
 }
 

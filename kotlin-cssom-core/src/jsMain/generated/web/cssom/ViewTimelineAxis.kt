@@ -10,18 +10,18 @@ import seskar.js.JsValue
 import seskar.js.JsVirtual
 
 @JsVirtual
-sealed external interface ScrollTimelineAxis {
+sealed external interface ViewTimelineAxis {
     companion object {
         @JsValue("block")
-        val block: ScrollTimelineAxis
+        val block: ViewTimelineAxis
 
         @JsValue("inline")
-        val inline: ScrollTimelineAxis
+        val inline: ViewTimelineAxis
 
         @JsValue("x")
-        val x: ScrollTimelineAxis
+        val x: ViewTimelineAxis
 
         @JsValue("y")
-        val y: ScrollTimelineAxis
+        val y: ViewTimelineAxis
     }
 }

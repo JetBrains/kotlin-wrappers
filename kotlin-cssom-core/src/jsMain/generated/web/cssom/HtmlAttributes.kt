@@ -51,6 +51,9 @@ sealed external interface HtmlAttributes {
         @JsValue("[async]")
         val async: HtmlAttributes
 
+        @JsValue("[attributionsrc]")
+        val attributionsrc: HtmlAttributes
+
         @JsValue("[autobuffer]")
         val autobuffer: HtmlAttributes
 
@@ -78,11 +81,17 @@ sealed external interface HtmlAttributes {
         @JsValue("[bgcolor]")
         val bgcolor: HtmlAttributes
 
+        @JsValue("[blocking]")
+        val blocking: HtmlAttributes
+
         @JsValue("[border]")
         val border: HtmlAttributes
 
         @JsValue("[bottommargin]")
         val bottommargin: HtmlAttributes
+
+        @JsValue("[browsingtopics]")
+        val browsingtopics: HtmlAttributes
 
         @JsValue("[capture]")
         val capture: HtmlAttributes
@@ -116,9 +125,6 @@ sealed external interface HtmlAttributes {
 
         @JsValue("[clear]")
         val clear: HtmlAttributes
-
-        @JsValue("[code]")
-        val code: HtmlAttributes
 
         @JsValue("[codebase]")
         val codebase: HtmlAttributes
@@ -161,12 +167,6 @@ sealed external interface HtmlAttributes {
 
         @JsValue("[data]")
         val data: HtmlAttributes
-
-        @JsValue("[datafld]")
-        val datafld: HtmlAttributes
-
-        @JsValue("[datasrc]")
-        val datasrc: HtmlAttributes
 
         @JsValue("[datetime]")
         val datetime: HtmlAttributes
@@ -354,9 +354,6 @@ sealed external interface HtmlAttributes {
         @JsValue("[maxlength]")
         val maxlength: HtmlAttributes
 
-        @JsValue("[mayscript]")
-        val mayscript: HtmlAttributes
-
         @JsValue("[media]")
         val media: HtmlAttributes
 
@@ -374,6 +371,9 @@ sealed external interface HtmlAttributes {
 
         @JsValue("[moz-opaque]")
         val mozOpaque: HtmlAttributes
+
+        @JsValue("[mozactionhint]")
+        val mozactionhint: HtmlAttributes
 
         @JsValue("[mozallowfullscreen]")
         val mozallowfullscreen: HtmlAttributes
@@ -411,9 +411,6 @@ sealed external interface HtmlAttributes {
         @JsValue("[nowrap]")
         val nowrap: HtmlAttributes
 
-        @JsValue("[object]")
-        val `object`: HtmlAttributes
-
         @JsValue("[onerror]")
         val onerror: HtmlAttributes
 
@@ -435,11 +432,17 @@ sealed external interface HtmlAttributes {
         @JsValue("[placeholder]")
         val placeholder: HtmlAttributes
 
+        @JsValue("[popover]")
+        val popover: HtmlAttributes
+
+        @JsValue("[popovertarget]")
+        val popovertarget: HtmlAttributes
+
+        @JsValue("[popovertargetaction]")
+        val popovertargetaction: HtmlAttributes
+
         @JsValue("[poster]")
         val poster: HtmlAttributes
-
-        @JsValue("[prefetch]")
-        val prefetch: HtmlAttributes
 
         @JsValue("[preload]")
         val preload: HtmlAttributes
@@ -476,30 +479,6 @@ sealed external interface HtmlAttributes {
 
         @JsValue("[rules]")
         val rules: HtmlAttributes
-
-        @JsValue("[sandbox-allow-downloads]")
-        val sandboxAllowDownloads: HtmlAttributes
-
-        @JsValue("[sandbox-allow-modals]")
-        val sandboxAllowModals: HtmlAttributes
-
-        @JsValue("[sandbox-allow-popups-to-escape-sandbox]")
-        val sandboxAllowPopupsToEscapeSandbox: HtmlAttributes
-
-        @JsValue("[sandbox-allow-popups]")
-        val sandboxAllowPopups: HtmlAttributes
-
-        @JsValue("[sandbox-allow-presentation]")
-        val sandboxAllowPresentation: HtmlAttributes
-
-        @JsValue("[sandbox-allow-same-origin]")
-        val sandboxAllowSameOrigin: HtmlAttributes
-
-        @JsValue("[sandbox-allow-storage-access-by-user-activation]")
-        val sandboxAllowStorageAccessByUserActivation: HtmlAttributes
-
-        @JsValue("[sandbox-allow-top-navigation-by-user-activation]")
-        val sandboxAllowTopNavigationByUserActivation: HtmlAttributes
 
         @JsValue("[sandbox]")
         val sandbox: HtmlAttributes

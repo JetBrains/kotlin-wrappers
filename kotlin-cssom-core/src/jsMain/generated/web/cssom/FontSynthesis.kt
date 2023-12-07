@@ -12,6 +12,9 @@ import seskar.js.JsVirtual
 @JsVirtual
 sealed external interface FontSynthesis {
     companion object {
+        @JsValue("position")
+        val position: FontSynthesis
+
         @JsValue("small-caps")
         val smallCaps: FontSynthesis
 

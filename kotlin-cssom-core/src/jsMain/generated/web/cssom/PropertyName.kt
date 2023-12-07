@@ -57,6 +57,15 @@ sealed external interface PropertyName<T : Any> : Ident {
         @JsValue("animation-play-state")
         val animationPlayState: PropertyName<AnimationPlayState>
 
+        @JsValue("animation-range")
+        val animationRange: PropertyName<AnimationRange>
+
+        @JsValue("animation-range-end")
+        val animationRangeEnd: PropertyName<AnimationRangeEnd>
+
+        @JsValue("animation-range-start")
+        val animationRangeStart: PropertyName<AnimationRangeStart>
+
         @JsValue("animation-timeline")
         val animationTimeline: PropertyName<AnimationTimeline>
 
@@ -498,6 +507,18 @@ sealed external interface PropertyName<T : Any> : Ident {
         @JsValue("font-synthesis")
         val fontSynthesis: PropertyName<FontSynthesis>
 
+        @JsValue("font-synthesis-position")
+        val fontSynthesisPosition: PropertyName<FontSynthesisPosition>
+
+        @JsValue("font-synthesis-small-caps")
+        val fontSynthesisSmallCaps: PropertyName<FontSynthesisSmallCaps>
+
+        @JsValue("font-synthesis-style")
+        val fontSynthesisStyle: PropertyName<FontSynthesisStyle>
+
+        @JsValue("font-synthesis-weight")
+        val fontSynthesisWeight: PropertyName<FontSynthesisWeight>
+
         @JsValue("font-variant")
         val fontVariant: PropertyName<FontVariant>
 
@@ -765,6 +786,9 @@ sealed external interface PropertyName<T : Any> : Ident {
         @JsValue("mask-type")
         val maskType: PropertyName<MaskType>
 
+        @JsValue("masonry-auto-flow")
+        val masonryAutoFlow: PropertyName<MasonryAutoFlow>
+
         @JsValue("math-depth")
         val mathDepth: PropertyName<MathDepth>
 
@@ -893,6 +917,9 @@ sealed external interface PropertyName<T : Any> : Ident {
 
         @JsValue("overflow-y")
         val overflowY: PropertyName<Overflow>
+
+        @JsValue("overlay")
+        val overlay: PropertyName<Overlay>
 
         @JsValue("overscroll-behavior")
         val overscrollBehavior: PropertyName<OverscrollBehavior>
@@ -1206,6 +1233,12 @@ sealed external interface PropertyName<T : Any> : Ident {
         @JsValue("text-underline-position")
         val textUnderlinePosition: PropertyName<TextUnderlinePosition>
 
+        @JsValue("text-wrap")
+        val textWrap: PropertyName<TextWrap>
+
+        @JsValue("timeline-scope")
+        val timelineScope: PropertyName<TimelineScope>
+
         @JsValue("top")
         val top: PropertyName<Top>
 
@@ -1226,6 +1259,9 @@ sealed external interface PropertyName<T : Any> : Ident {
 
         @JsValue("transition")
         val transition: PropertyName<Transition>
+
+        @JsValue("transition-behavior")
+        val transitionBehavior: PropertyName<TransitionBehavior>
 
         @JsValue("transition-delay")
         val transitionDelay: PropertyName<TransitionDelay>
@@ -1251,6 +1287,18 @@ sealed external interface PropertyName<T : Any> : Ident {
         @JsValue("vertical-align")
         val verticalAlign: PropertyName<VerticalAlign>
 
+        @JsValue("view-timeline")
+        val viewTimeline: PropertyName<ViewTimeline>
+
+        @JsValue("view-timeline-axis")
+        val viewTimelineAxis: PropertyName<ViewTimelineAxis>
+
+        @JsValue("view-timeline-inset")
+        val viewTimelineInset: PropertyName<ViewTimelineInset>
+
+        @JsValue("view-timeline-name")
+        val viewTimelineName: PropertyName<ViewTimelineName>
+
         @JsValue("view-transition-name")
         val viewTransitionName: PropertyName<ViewTransitionName>
 
@@ -1259,6 +1307,12 @@ sealed external interface PropertyName<T : Any> : Ident {
 
         @JsValue("white-space")
         val whiteSpace: PropertyName<WhiteSpace>
+
+        @JsValue("white-space-collapse")
+        val whiteSpaceCollapse: PropertyName<WhiteSpaceCollapse>
+
+        @JsValue("white-space-trim")
+        val whiteSpaceTrim: PropertyName<WhiteSpaceTrim>
 
         @JsValue("widows")
         val widows: PropertyName<Widows>
