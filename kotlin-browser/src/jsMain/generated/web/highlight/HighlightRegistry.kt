@@ -1,6 +1,6 @@
 // Automatically generated - do not modify!
 
-package web.cssom.highlight
+package web.highlight
 
 import js.collections.MutableMapLike
 

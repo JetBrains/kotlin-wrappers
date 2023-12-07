@@ -2,7 +2,7 @@
 
 package web.cssom
 
-import web.cssom.highlight.HighlightRegistry
+import web.highlight.HighlightRegistry
 
 external object CSS {
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSS/highlights_static) */
