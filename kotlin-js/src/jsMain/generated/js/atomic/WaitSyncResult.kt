@@ -1,19 +1,11 @@
-@file:Suppress("WRONG_JS_QUALIFIER")
-// language=JavaScript
-@file:JsQualifier(
-    """({
-    __guard__: {
-        name: `WaitSyncResult`,
-        [Symbol.hasInstance](instance) {
-            return instance && (typeof instance === 'object') && (instance.async === false)
-        }
-    }
-  })"""
-)
-
 package js.atomic
 
-@JsName("__guard__")
+import seskar.js.JsTypeGuard
+
+@JsTypeGuard(
+    property = "async",
+    value = "false",
+)
 sealed external class WaitSyncResult : WaitResult {
     val value: WaitSyncStatus
 }
