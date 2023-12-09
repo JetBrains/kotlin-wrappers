@@ -2,4 +2,9 @@
 
 package web.streams
 
-typealias ReadableStreamController = Any /* ReadableStreamDefaultController<T> | ReadableByteStreamController */
+/**
+ * Union of:
+ * - `ReadableStreamDefaultController`
+ * - `ReadableByteStreamController`
+ */
+sealed external interface ReadableStreamController<T>

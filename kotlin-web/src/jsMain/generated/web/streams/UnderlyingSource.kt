@@ -5,7 +5,7 @@ package web.streams
 sealed external interface UnderlyingSource<R> {
     var autoAllocateChunkSize: Int?
     var cancel: UnderlyingSourceCancelCallback?
-    var pull: UnderlyingSourcePullCallback?
-    var start: UnderlyingSourceStartCallback?
+    var pull: UnderlyingSourcePullCallback<R>?
+    var start: UnderlyingSourceStartCallback<R>?
     var type: ReadableStreamType?
 }

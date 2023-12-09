@@ -5,6 +5,6 @@ package web.streams
 import js.core.Void
 import js.promise.PromiseLike
 
-typealias UnderlyingSourcePullCallback = (
-    controller: ReadableStreamController,
+typealias UnderlyingSourcePullCallback<R> = (
+    controller: ReadableStreamController<R>,
 ) -> PromiseLike<Void>?
