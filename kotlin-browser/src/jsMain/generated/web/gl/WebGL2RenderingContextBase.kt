@@ -266,14 +266,14 @@ sealed external interface WebGL2RenderingContextBase {
         program: WebGLProgram,
         uniformBlockIndex: GLuint,
         pname: GLenum,
-    ): Any
+    ): Any?
 
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/getActiveUniforms) */
     fun getActiveUniforms(
         program: WebGLProgram,
         uniformIndices: ReadonlyArray<GLuint>,
         pname: GLenum,
-    ): Any
+    ): Any?
 
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/getBufferSubData) */
     fun getBufferSubData(
@@ -294,14 +294,14 @@ sealed external interface WebGL2RenderingContextBase {
     fun getIndexedParameter(
         target: GLenum,
         index: GLuint,
-    ): Any
+    ): Any?
 
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/getInternalformatParameter) */
     fun getInternalformatParameter(
         target: GLenum,
         internalformat: GLenum,
         pname: GLenum,
-    ): Any
+    ): Any?
 
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/getQuery) */
     fun getQuery(
@@ -313,19 +313,19 @@ sealed external interface WebGL2RenderingContextBase {
     fun getQueryParameter(
         query: WebGLQuery,
         pname: GLenum,
-    ): Any
+    ): Any?
 
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/getSamplerParameter) */
     fun getSamplerParameter(
         sampler: WebGLSampler,
         pname: GLenum,
-    ): Any
+    ): Any?
 
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/getSyncParameter) */
     fun getSyncParameter(
         sync: WebGLSync,
         pname: GLenum,
-    ): Any
+    ): Any?
 
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/getTransformFeedbackVarying) */
     fun getTransformFeedbackVarying(
