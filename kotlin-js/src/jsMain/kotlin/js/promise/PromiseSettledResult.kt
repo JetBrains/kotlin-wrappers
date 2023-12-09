@@ -1,16 +1,12 @@
 package js.promise
 
-sealed external interface PromiseSettledResult<T> {
-    val status: PromiseSettledResultStatus
-}
+sealed external interface PromiseSettledResult<T>
 
 fun <T> PromiseSettledResult<T>.toResult(): Result<T> =
-    when (status) {
-        PromiseSettledResultStatus.fulfilled,
-        -> Result.success(unsafeCast<PromiseFulfilledResult<T>>().value)
+    when (this) {
+        is PromiseFulfilledResult,
+        -> Result.success(value)
 
-        PromiseSettledResultStatus.rejected,
-        -> Result.failure(unsafeCast<PromiseRejectedResult>().reason)
-
-        else -> error("Unknown settled result `$status`")
+        is PromiseRejectedResult,
+        -> Result.failure(reason)
     }

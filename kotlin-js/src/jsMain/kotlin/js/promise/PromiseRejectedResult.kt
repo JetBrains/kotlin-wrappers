@@ -1,8 +1,14 @@
 package js.promise
 
+import js.core.Void
 import js.errors.JsError
+import seskar.js.JsTypeGuard
 
-sealed external interface PromiseRejectedResult {
-    // status: PromiseSettledResultStatus.rejected
+@JsTypeGuard(
+    property = "status",
+    value = "'rejected'",
+)
+external class PromiseRejectedResult :
+    PromiseSettledResult<Void> {
     val reason: JsError
 }

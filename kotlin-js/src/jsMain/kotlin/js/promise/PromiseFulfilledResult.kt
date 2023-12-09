@@ -1,7 +1,12 @@
 package js.promise
 
-sealed external interface PromiseFulfilledResult<T>
+import seskar.js.JsTypeGuard
+
+@JsTypeGuard(
+    property = "status",
+    value = "'fulfilled'",
+)
+external class PromiseFulfilledResult<T>
     : PromiseSettledResult<T> {
-    // status: PromiseSettledResultStatus.fulfilled
     val value: T
 }
