@@ -6,12 +6,15 @@ plugins {
     `kotlin-conventions`
     `publish-conventions`
     karakum()
+    seskar()
 }
 
 dependencies {
     jsMainApi(projects.kotlinJs)
     jsMainApi(projects.kotlinWeb)
+
     jsMainImplementation(kotlinxCoroutines("core"))
+    jsMainImplementation(seskarCore())
 
     jsMainApi(devNpmv("@types/node"))
 }

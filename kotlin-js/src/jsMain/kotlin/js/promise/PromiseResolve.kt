@@ -1,14 +1,14 @@
 package js.promise
 
+import seskar.js.JsNative
+
 sealed external interface PromiseResolve<T> {
-    @nativeInvoke
-    @Suppress("DEPRECATION")
+    @JsNative
     operator fun invoke(
         value: T,
     )
 
-    @nativeInvoke
-    @Suppress("DEPRECATION")
+    @JsNative
     operator fun invoke(
         value: PromiseResult<T>,
     )

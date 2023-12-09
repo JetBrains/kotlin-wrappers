@@ -4,13 +4,13 @@
 package node
 
 import node.Module
+import seskar.js.JsNative
 import node.Module as NodeModule
 
 
 sealed external interface Require {
 
-    @Suppress("DEPRECATION")
-    @nativeInvoke
+    @JsNative
     operator fun invoke(id: String): Any?
 
     var resolve: RequireResolve

@@ -1,18 +1,17 @@
 package react.dom.test
 
 import js.core.jso
+import seskar.js.JsNative
 import web.dom.Element
 import web.events.EventInit
 
 sealed external interface EventSimulator<O : EventInit> {
-    @nativeInvoke
-    @Suppress("DEPRECATION")
+    @JsNative
     operator fun invoke(
         element: Element, /* | Component<any> */
     )
 
-    @nativeInvoke
-    @Suppress("DEPRECATION")
+    @JsNative
     operator fun invoke(
         element: Element, /* | Component<any> */
         options: O,

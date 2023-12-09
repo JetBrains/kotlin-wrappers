@@ -3,11 +3,12 @@
 
 package node
 
+import seskar.js.JsNative
+
 
 sealed external interface RequireResolve {
 
-    @Suppress("DEPRECATION")
-    @nativeInvoke
+    @JsNative
     operator fun invoke(id: String, options: RequireResolveOptions = definedExternally): String
 
     fun paths(request: String): js.core.ReadonlyArray<String>?

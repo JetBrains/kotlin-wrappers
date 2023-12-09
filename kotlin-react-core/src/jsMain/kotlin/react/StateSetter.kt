@@ -1,14 +1,14 @@
 package react
 
+import seskar.js.JsNative
+
 sealed external interface StateSetter<T> {
-    @nativeInvoke
-    @Suppress("DEPRECATION")
+    @JsNative
     operator fun invoke(
         value: T,
     )
 
-    @nativeInvoke
-    @Suppress("DEPRECATION")
+    @JsNative
     operator fun invoke(
         transform: (T) -> T,
     )
