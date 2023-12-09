@@ -1,14 +1,14 @@
 @file:Suppress(
-    "DEPRECATION",
-    "NATIVE_INDEXER_KEY_SHOULD_BE_STRING_OR_NUMBER",
     "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
 )
 
 package js.core
 
+import seskar.js.JsNative
+
 external interface Record<K : Any, V>
     : ReadonlyRecord<K, V> {
-    @nativeSetter
+    @JsNative
     operator fun set(
         key: K,
         value: V,

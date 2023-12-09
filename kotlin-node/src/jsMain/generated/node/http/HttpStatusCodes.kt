@@ -2,39 +2,25 @@
 
 package node.http
 
+import seskar.js.JsNative
+
 
 sealed external interface HttpStatusCodes {
 
 
-    @Suppress(
-        "DEPRECATION",
-        "NATIVE_INDEXER_KEY_SHOULD_BE_STRING_OR_NUMBER",
-    )
-    @nativeGetter
+    @JsNative
     operator fun get(key: Number): String?
 
 
-    @Suppress(
-        "DEPRECATION",
-        "NATIVE_INDEXER_KEY_SHOULD_BE_STRING_OR_NUMBER",
-    )
-    @nativeSetter
+    @JsNative
     operator fun set(key: Number, value: String?)
 
 
-    @Suppress(
-        "DEPRECATION",
-        "NATIVE_INDEXER_KEY_SHOULD_BE_STRING_OR_NUMBER",
-    )
-    @nativeGetter
+    @JsNative
     operator fun get(key: String): String?
 
 
-    @Suppress(
-        "DEPRECATION",
-        "NATIVE_INDEXER_KEY_SHOULD_BE_STRING_OR_NUMBER",
-    )
-    @nativeSetter
+    @JsNative
     operator fun set(key: String, value: String?)
 
 

@@ -3,6 +3,8 @@
 
 package remix.run.router
 
+import seskar.js.JsNative
+
 
 /**
  * Map of routeId -> data returned from a loader/action/error
@@ -11,19 +13,11 @@ package remix.run.router
 sealed external interface RouteData {
 
 
-    @Suppress(
-        "DEPRECATION",
-        "NATIVE_INDEXER_KEY_SHOULD_BE_STRING_OR_NUMBER",
-    )
-    @nativeGetter
+    @JsNative
     operator fun get(key: String): Any?
 
 
-    @Suppress(
-        "DEPRECATION",
-        "NATIVE_INDEXER_KEY_SHOULD_BE_STRING_OR_NUMBER",
-    )
-    @nativeSetter
+    @JsNative
     operator fun set(key: String, value: Any?)
 
 

@@ -1,20 +1,16 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "NATIVE_INDEXER_KEY_SHOULD_BE_STRING_OR_NUMBER",
-)
-
 package web.cssom
 
+import seskar.js.JsNative
+
 external interface CustomProperties {
-    @nativeGetter
-    @Suppress("DEPRECATION")
+    @JsNative
     operator fun <T : Any> get(
         name: CustomPropertyName<T>,
     ): T?
 
-    @nativeSetter
-    @Suppress("DEPRECATION")
+    @JsNative
     operator fun <T : Any> set(
         name: CustomPropertyName<T>,
         value: T?,

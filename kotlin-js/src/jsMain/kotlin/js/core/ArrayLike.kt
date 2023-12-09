@@ -1,13 +1,15 @@
+@file:Suppress(
+    "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
+)
+
 package js.core
+
+import seskar.js.JsNative
 
 external interface ArrayLike<out T> {
     val length: Int
 
-    @nativeGetter
-    @Suppress(
-        "DEPRECATION",
-        "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
-    )
+    @JsNative
     operator fun get(
         index: Int,
     ): T = definedExternally

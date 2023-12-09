@@ -3,6 +3,7 @@
 
 package node.crypto
 
+import seskar.js.JsNative
 
 sealed external interface JsonWebKey {
     var crv: String?
@@ -19,20 +20,10 @@ sealed external interface JsonWebKey {
     var x: String?
     var y: String?
 
-
-    @Suppress(
-        "DEPRECATION",
-        "NATIVE_INDEXER_KEY_SHOULD_BE_STRING_OR_NUMBER",
-    )
-    @nativeGetter
+    @JsNative
     operator fun get(key: String): Any?
 
-
-    @Suppress(
-        "DEPRECATION",
-        "NATIVE_INDEXER_KEY_SHOULD_BE_STRING_OR_NUMBER",
-    )
-    @nativeSetter
+    @JsNative
     operator fun set(key: String, value: Any?)
 
 
