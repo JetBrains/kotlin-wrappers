@@ -12,21 +12,6 @@ import seskar.js.JsVirtual
 @JsVirtual
 sealed external interface Offset {
     companion object {
-        @JsValue("bottom")
-        val bottom: Offset
-
-        @JsValue("center")
-        val center: Offset
-
-        @JsValue("left")
-        val left: Offset
-
-        @JsValue("right")
-        val right: Offset
-
-        @JsValue("top")
-        val top: Offset
-
         @JsValue("normal")
         val normal: Offset
     }

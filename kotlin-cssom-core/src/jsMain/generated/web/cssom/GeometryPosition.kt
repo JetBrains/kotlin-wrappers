@@ -14,6 +14,7 @@ sealed external interface GeometryPosition :
     BackgroundPosition,
     MaskPosition,
     ObjectPosition,
+    Offset,
     OffsetAnchor,
     OffsetPosition,
     PerspectiveOrigin,
