@@ -1,5 +1,5 @@
 plugins {
-    `kotlin-library-conventions`
+    `kotlin-legacy-library-conventions`
 }
 
 kotlin {
