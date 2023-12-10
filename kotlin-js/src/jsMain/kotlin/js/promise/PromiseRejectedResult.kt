@@ -8,7 +8,8 @@ import seskar.js.JsTypeGuard
     property = "status",
     value = "'rejected'",
 )
-external class PromiseRejectedResult :
+external class PromiseRejectedResult
+protected constructor() :
     PromiseSettledResult<Void> {
     val reason: JsError
 }

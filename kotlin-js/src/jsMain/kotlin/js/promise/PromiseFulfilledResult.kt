@@ -7,6 +7,7 @@ import seskar.js.JsTypeGuard
     value = "'fulfilled'",
 )
 external class PromiseFulfilledResult<T>
-    : PromiseSettledResult<T> {
+protected constructor() :
+    PromiseSettledResult<T> {
     val value: T
 }
