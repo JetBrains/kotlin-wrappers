@@ -1,7 +1,9 @@
 // Automatically generated - do not modify!
 
-package web.dom
+package web.ranges
 
+import web.dom.DocumentFragment
+import web.dom.Node
 import web.geometry.DOMRect
 import web.geometry.DOMRectList
 

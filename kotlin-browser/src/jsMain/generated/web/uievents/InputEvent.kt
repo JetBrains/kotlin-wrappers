@@ -8,8 +8,8 @@ package web.uievents
 
 import js.core.ReadonlyArray
 import web.data.DataTransfer
-import web.dom.StaticRange
 import web.events.EventType
+import web.ranges.StaticRange
 
 external interface InputEventInit : UIEventInit {
     var data: String?

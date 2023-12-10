@@ -1,6 +1,8 @@
 // Automatically generated - do not modify!
 
-package web.dom
+package web.ranges
+
+import web.dom.Node
 
 /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/AbstractRange) */
 sealed external class AbstractRange {

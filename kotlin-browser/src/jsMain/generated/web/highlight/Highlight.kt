@@ -5,7 +5,7 @@ package web.highlight
 import js.collections.MutableSetLike
 import js.core.JsTuple2
 import js.iterable.IterableIterator
-import web.dom.AbstractRange
+import web.ranges.AbstractRange
 
 external class Highlight(
     vararg initialRanges: AbstractRange,

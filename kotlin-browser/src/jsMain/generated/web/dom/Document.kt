@@ -12,6 +12,7 @@ import web.html.*
 import web.mathml.MATHML_NAMESPACE
 import web.mathml.MathMLElement
 import web.mathml.MathMLTagName
+import web.ranges.Range
 import web.selection.Selection
 import web.svg.SVGElement
 import web.svg.SVG_NAMESPACE

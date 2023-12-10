@@ -1,6 +1,8 @@
 // Automatically generated - do not modify!
 
-package web.dom
+package web.ranges
+
+import web.dom.Node
 
 sealed external interface StaticRangeInit {
     var endContainer: Node
