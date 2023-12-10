@@ -2,6 +2,4 @@
 
 package js.atomic
 
-sealed external interface WaitResult {
-    // val async: Boolean
-}
+sealed external interface WaitResult
