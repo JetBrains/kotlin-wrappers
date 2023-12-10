@@ -1,7 +1,6 @@
 import org.jetbrains.kotlin.gradle.dsl.KotlinCompile
 
 plugins {
-    kotlin("multiplatform")
     `kotlin-conventions`
     `publish-conventions`
     seskar()
