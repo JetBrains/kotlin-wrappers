@@ -1,11 +1,21 @@
 import org.jetbrains.kotlin.gradle.dsl.KotlinCompile
 import org.jetbrains.kotlin.gradle.dsl.KotlinJsCompile
-import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
-import org.jetbrains.kotlin.gradle.plugin.KotlinMultiplatformPluginWrapper
 
 plugins {
     kotlin("multiplatform")
     id("npm-conventions")
+}
+
+kotlin {
+    js {
+        moduleName = project.name
+        browser()
+    }
+
+    val generatedDir = projectDir.resolve("src/jsMain/generated")
+    if (generatedDir.exists()) {
+        sourceSets["jsMain"].kotlin.srcDir(generatedDir)
+    }
 }
 
 tasks.withType<KotlinCompile<*>>().configureEach {
@@ -24,19 +34,5 @@ tasks.withType<KotlinJsCompile>().configureEach {
     kotlinOptions {
         moduleKind = "commonjs"
         useEsClasses = true
-    }
-}
-
-plugins.withType<KotlinMultiplatformPluginWrapper> {
-    extensions.configure<KotlinMultiplatformExtension> {
-        js {
-            moduleName = project.name
-            browser()
-        }
-
-        val generatedDir = projectDir.resolve("src/jsMain/generated")
-        if (generatedDir.exists()) {
-            sourceSets["jsMain"].kotlin.srcDir(generatedDir)
-        }
     }
 }

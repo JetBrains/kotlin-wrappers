@@ -1,6 +1,5 @@
 plugins {
     `kotlin-library-conventions`
-    seskar()
 }
 
 dependencies {
@@ -16,5 +15,4 @@ dependencies {
 
     jsMainApi(projects.kotlinNode)
     jsMainImplementation(kotlinxCoroutines("core"))
-    jsMainImplementation(seskarCore())
 }

@@ -4,7 +4,6 @@ import org.jetbrains.kotlin.gradle.plugin.KotlinMultiplatformPluginWrapper
 plugins {
     `kotlin-library-conventions`
     karakum()
-    seskar()
 }
 
 dependencies {
@@ -12,7 +11,6 @@ dependencies {
     jsMainApi(projects.kotlinWeb)
 
     jsMainImplementation(kotlinxCoroutines("core"))
-    jsMainImplementation(seskarCore())
 
     jsMainApi(devNpmv("@types/node"))
 }
