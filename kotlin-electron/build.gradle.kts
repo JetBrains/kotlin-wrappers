@@ -1,6 +1,5 @@
 plugins {
-    `kotlin-conventions`
-    `publish-conventions`
+    `kotlin-library-conventions`
     karakum()
 }
 

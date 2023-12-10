@@ -1,8 +1,7 @@
 import org.jetbrains.kotlin.gradle.dsl.KotlinCompile
 
 plugins {
-    `kotlin-conventions`
-    `publish-conventions`
+    `kotlin-library-conventions`
     seskar()
 }
 

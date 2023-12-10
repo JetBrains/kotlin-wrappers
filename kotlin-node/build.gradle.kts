@@ -2,8 +2,7 @@ import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
 import org.jetbrains.kotlin.gradle.plugin.KotlinMultiplatformPluginWrapper
 
 plugins {
-    `kotlin-conventions`
-    `publish-conventions`
+    `kotlin-library-conventions`
     karakum()
     seskar()
 }

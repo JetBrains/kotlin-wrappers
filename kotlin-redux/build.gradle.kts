@@ -1,8 +1,7 @@
 plugins {
     kotlin("multiplatform")
     kotlin("plugin.serialization")
-    `kotlin-conventions`
-    `publish-conventions`
+    `kotlin-library-conventions`
 }
 
 dependencies {
