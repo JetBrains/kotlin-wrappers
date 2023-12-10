@@ -4,6 +4,7 @@ package web.dom.observers
 
 import js.core.ReadonlyArray
 import web.dom.Element
+import web.dom.ParentNode
 
 /**
  * provides a way to asynchronously observe changes in the intersection of a target element with an ancestor element or with a top-level document's viewport.
@@ -15,7 +16,7 @@ external class IntersectionObserver(
     options: IntersectionObserverInit = definedExternally,
 ) {
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/IntersectionObserver/root) */
-    val root: Element /* | Document */?
+    val root: ParentNode /* Element | Document */?
 
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/IntersectionObserver/rootMargin) */
     val rootMargin: String

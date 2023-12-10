@@ -3,10 +3,10 @@
 package web.dom.observers
 
 import js.core.ReadonlyArray
-import web.dom.Element
+import web.dom.ParentNode
 
 sealed external interface IntersectionObserverInit {
-    var root: Element /* | Document */?
+    var root: ParentNode /* Element | Document */?
     var rootMargin: String?
     var threshold: ReadonlyArray<Double>?
 }
