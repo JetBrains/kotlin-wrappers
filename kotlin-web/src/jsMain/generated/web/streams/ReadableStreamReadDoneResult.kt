@@ -2,8 +2,14 @@
 
 package web.streams
 
-sealed external interface ReadableStreamReadDoneResult<T> :
+import seskar.js.JsTypeGuard
+
+@JsTypeGuard(
+    property = "done",
+    value = "true",
+)
+external class ReadableStreamReadDoneResult<T>
+protected constructor() :
     ReadableStreamReadResult<T> {
-    var done: Boolean /* true */
     var value: T?
 }
