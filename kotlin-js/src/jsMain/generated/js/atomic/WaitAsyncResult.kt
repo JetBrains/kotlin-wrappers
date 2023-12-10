@@ -7,6 +7,7 @@ import seskar.js.JsTypeGuard
     property = "async",
     value = "true",
 )
-sealed external class WaitAsyncResult : WaitResult {
+sealed external class WaitAsyncResult :
+    WaitResult {
     val value: Promise<WaitAsyncStatus>
 }
