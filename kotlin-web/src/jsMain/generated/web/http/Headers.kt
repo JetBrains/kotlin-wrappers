@@ -16,7 +16,7 @@ import js.iterable.IterableIterator
 external class Headers(
     init: ReadonlyArray<JsTuple2<String, String>> = definedExternally,
 ) : MapLike<String, String> {
-    constructor(init: ReadonlyRecord<String, String> = definedExternally)
+    constructor(init: ReadonlyRecord<String, String>)
     constructor(init: Headers)
 
     /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/Headers/append) */

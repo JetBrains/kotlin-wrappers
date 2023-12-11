@@ -12,7 +12,7 @@ import js.iterable.IterableIterator
 external class URLSearchParams(
     init: ReadonlyArray<JsTuple2<String, String>> = definedExternally,
 ) : MapLike<String, String> {
-    constructor(init: ReadonlyRecord<String, String> = definedExternally)
+    constructor(init: ReadonlyRecord<String, String>)
     constructor(init: String)
     constructor(init: URLSearchParams)
 
