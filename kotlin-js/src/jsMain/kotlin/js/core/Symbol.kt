@@ -1,22 +1,9 @@
-@file:Suppress("WRONG_JS_QUALIFIER")
-// language=JavaScript
-@file:JsQualifier(
-    """({
-    __type_plus_guard__: Object.setPrototypeOf({
-        [Symbol.hasInstance](instance) {
-            return typeof instance === 'symbol'
-        }
-    }, Symbol)
-  })"""
-)
-
 package js.core
 
 import seskar.js.JsPrimitive
 
 @JsPrimitive
 @JsExternalInheritorsOnly
-@JsName("__type_plus_guard__")
 open external class Symbol {
     val description: String?
 

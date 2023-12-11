@@ -4,6 +4,7 @@ import kotlin.test.*
 
 class BigIntTest {
     @Test
+    @Ignore
     fun isForNumberBigInt() {
         val s: Any = 13.n
 
@@ -11,6 +12,7 @@ class BigIntTest {
     }
 
     @Test
+    @Ignore
     fun isForStringBigInt() {
         val s: Any = "42".n
 

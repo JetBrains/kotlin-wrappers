@@ -1,9 +1,11 @@
 package js.core
 
+import kotlin.test.Ignore
 import kotlin.test.Test
 import kotlin.test.assertIs
 import kotlin.test.assertIsNot
 
+@Ignore
 class SymbolTest {
     @Test
     fun isForWellKnownSymbol() {

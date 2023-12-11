@@ -1,30 +1,15 @@
 @file:Suppress(
     "WRONG_BODY_OF_EXTERNAL_DECLARATION",
     "INLINE_EXTERNAL_DECLARATION",
-    "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
-    "DECLARATION_CANT_BE_INLINED",
     "NOTHING_TO_INLINE",
 
-    "WRONG_JS_QUALIFIER",
     "EXTERNAL_TYPE_EXTENDS_NON_EXTERNAL_TYPE",
 )
-// language=JavaScript
-@file:JsQualifier(
-    """({
-    __type_plus_guard__: Object.setPrototypeOf({
-        [Symbol.hasInstance](instance) {
-            return typeof instance === 'bigint'
-        }
-    }, BigInt)
-  })"""
-)
-
 package js.core
 
 import seskar.js.JsPrimitive
 
 @JsPrimitive
-@JsName("__type_plus_guard__")
 sealed external class BigInt :
     BigIntComparableAdapter,
     Comparable<BigInt> {
