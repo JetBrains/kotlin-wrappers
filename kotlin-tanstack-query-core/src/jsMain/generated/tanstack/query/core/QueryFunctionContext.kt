@@ -6,4 +6,11 @@
 
 package tanstack.query.core
 
-typealias QueryFunctionContext<TQueryKey, TPageParam> = Any
+import web.abort.AbortSignal
+
+external interface QueryFunctionContext<TQueryKey : QueryKey, TPageParam> {
+    var queryKey: TQueryKey
+    var signal: AbortSignal
+    var pageParam: TPageParam
+    var meta: QueryMeta?
+}
