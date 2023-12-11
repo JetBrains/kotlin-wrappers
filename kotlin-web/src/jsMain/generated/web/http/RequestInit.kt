@@ -29,6 +29,7 @@ sealed external interface RequestInit {
 
     /** A string to indicate whether the request will use CORS, or will be restricted to same-origin URLs. Sets request's mode. */
     var mode: RequestMode?
+    var priority: RequestPriority?
 
     /** A string indicating whether request follows redirects, results in an error upon encountering a redirect, or returns the redirect (in an opaque fashion). Sets request's redirect. */
     var redirect: RequestRedirect?
