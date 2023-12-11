@@ -8,7 +8,7 @@ import kotlin.time.DurationUnit.MILLISECONDS
 /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/setTimeout) */
 external fun setTimeout(
     handler: TimerHandler,
-    timeout: Int,
+    timeout: Int = definedExternally,
 ): Timeout
 
 fun setTimeout(
