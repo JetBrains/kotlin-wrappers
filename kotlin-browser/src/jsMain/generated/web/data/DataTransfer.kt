@@ -21,7 +21,7 @@ open external class DataTransfer {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DataTransfer/dropEffect)
      */
-    var dropEffect: String /* "none" | "copy" | "link" | "move" */
+    var dropEffect: DropEffect
 
     /**
      * Returns the kinds of operations that are to be allowed.
@@ -32,7 +32,7 @@ open external class DataTransfer {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DataTransfer/effectAllowed)
      */
-    var effectAllowed: String /* "none" | "copy" | "copyLink" | "copyMove" | "link" | "linkMove" | "move" | "all" | "uninitialized" */
+    var effectAllowed: AllowedEffect
 
     /**
      * Returns a FileList of the files being dragged, if any.
