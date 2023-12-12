@@ -8,7 +8,7 @@ external interface QueryOptions<TQueryFnData, TError, TData, TQueryKey : QueryKe
     var networkMode: NetworkMode
     var gcTime: JsDuration
     var queryFn: QueryFunction<TQueryFnData, TQueryKey, TPageParam>
-    var persister: QueryPersister<NoInfer<TQueryFnData>, NoInfer<TQueryKey>, NoInfer<TPageParam>>
+    var persister: QueryPersister<TQueryFnData, TQueryKey, TPageParam>
     var queryHash: String
     var queryKey: TQueryKey
     var queryKeyHashFn: QueryKeyHashFunction<TQueryKey>
