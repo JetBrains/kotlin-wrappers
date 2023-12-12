@@ -6,4 +6,6 @@
 
 package tanstack.query.core
 
-typealias QueryPersister<T, TQueryKey, TPageParam> = Any
+import js.promise.PromiseResult
+
+typealias QueryPersister<T, TQueryKey, TPageParam> = (queryFn: QueryFunction<T, TQueryKey, TPageParam>, context: QueryFunctionContext<TQueryKey, *>, query: Query<*, *, *, *>) -> PromiseResult<T>
