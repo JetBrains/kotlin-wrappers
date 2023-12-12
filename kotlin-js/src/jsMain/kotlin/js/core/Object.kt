@@ -19,6 +19,12 @@ external class Object internal constructor() {
         fun getOwnPropertyNames(o: Any): ReadonlyArray<String>
         fun getOwnPropertySymbols(o: Any): ReadonlyArray<Symbol>
         fun <P : Any, T : P> getPrototypeOf(o: T): P
+
+        fun <T : Any, K : PropertyKey> groupBy(
+            items: ReadonlyArray<T>,
+            keySelector: (value: T, index: Int) -> PropertyKey,
+        ): ReadonlyRecord<K, ReadonlyArray<T>>
+
         fun hasOwn(o: Any, v: PropertyKey): Boolean
         fun `is`(value1: Any?, value2: Any?): Boolean
         fun isExtensible(o: Any): Boolean
