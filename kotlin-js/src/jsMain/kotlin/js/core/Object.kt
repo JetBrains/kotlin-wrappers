@@ -22,7 +22,7 @@ external class Object internal constructor() {
 
         fun <T : Any, K : PropertyKey> groupBy(
             items: ReadonlyArray<T>,
-            keySelector: (value: T, index: Int) -> PropertyKey,
+            keySelector: (value: T, index: Int) -> K,
         ): ReadonlyRecord<K, ReadonlyArray<T>>
 
         fun hasOwn(o: Any, v: PropertyKey): Boolean
