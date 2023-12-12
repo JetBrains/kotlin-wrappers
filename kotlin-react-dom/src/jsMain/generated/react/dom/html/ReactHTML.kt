@@ -3,6 +3,8 @@
 package react.dom.html
 
 import react.IntrinsicType
+import web.components.HTMLSlotElement
+import web.components.HTMLTemplateElement
 import web.html.*
 
 object ReactHTML {
