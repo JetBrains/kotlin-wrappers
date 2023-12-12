@@ -1,9 +1,11 @@
 // Automatically generated - do not modify!
 
-package web.html
+package web.components
 
 import js.promise.Promise
 import web.dom.Node
+import web.html.HTMLElement
+import web.html.HtmlTagName
 
 /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/CustomElementRegistry) */
 sealed external class CustomElementRegistry {

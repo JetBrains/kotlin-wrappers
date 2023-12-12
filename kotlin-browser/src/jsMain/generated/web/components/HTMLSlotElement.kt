@@ -1,10 +1,11 @@
 // Automatically generated - do not modify!
 
-package web.html
+package web.components
 
 import js.core.ReadonlyArray
 import web.dom.Element
 import web.dom.Node
+import web.html.HTMLElement
 
 /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSlotElement) */
 open external class HTMLSlotElement

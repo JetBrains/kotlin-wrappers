@@ -1,6 +1,6 @@
 // Automatically generated - do not modify!
 
-package web.html
+package web.components
 
 sealed external interface AssignedNodesOptions {
     var flatten: Boolean?

@@ -2,6 +2,9 @@
 
 package web.html
 
+import web.components.HTMLSlotElement
+import web.components.HTMLTemplateElement
+
 object HTML {
     inline val a: HtmlTagName<HTMLAnchorElement>
         get() = HtmlTagName("a")

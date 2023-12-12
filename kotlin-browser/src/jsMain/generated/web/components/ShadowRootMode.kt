@@ -4,18 +4,18 @@
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
-package web.html
+package web.components
 
 import seskar.js.JsValue
 import seskar.js.JsVirtual
 
 @JsVirtual
-sealed external interface SlotAssignmentMode {
+sealed external interface ShadowRootMode {
     companion object {
-        @JsValue("manual")
-        val manual: SlotAssignmentMode
+        @JsValue("closed")
+        val closed: ShadowRootMode
 
-        @JsValue("named")
-        val named: SlotAssignmentMode
+        @JsValue("open")
+        val open: ShadowRootMode
     }
 }

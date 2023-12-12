@@ -1,9 +1,13 @@
 // Automatically generated - do not modify!
 
-package web.html
+package web.components
 
 import web.aria.ARIAMixin
 import web.dom.NodeList
+import web.html.HTMLElement
+import web.html.HTMLFormElement
+import web.html.ValidityState
+import web.html.ValidityStateFlags
 
 /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals) */
 sealed external class ElementInternals :

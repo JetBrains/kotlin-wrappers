@@ -1,6 +1,6 @@
 // Automatically generated - do not modify!
 
-package web.html
+package web.components
 
 import web.dom.DocumentFragment
 import web.dom.DocumentOrShadowRoot

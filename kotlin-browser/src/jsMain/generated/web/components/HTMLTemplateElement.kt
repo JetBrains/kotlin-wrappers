@@ -1,8 +1,9 @@
 // Automatically generated - do not modify!
 
-package web.html
+package web.components
 
 import web.dom.DocumentFragment
+import web.html.HTMLElement
 
 /**
  * Enables access to the contents of an HTML <template> element.

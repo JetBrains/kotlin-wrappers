@@ -2,6 +2,7 @@
 
 package web.html
 
+import web.components.ElementInternals
 import web.cssom.ElementCSSInlineStyle
 import web.dom.Element
 import web.dom.GlobalEventHandlers

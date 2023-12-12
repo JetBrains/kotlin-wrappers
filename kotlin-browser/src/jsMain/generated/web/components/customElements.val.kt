@@ -1,5 +1,5 @@
 // Automatically generated - do not modify!
 
-package web.html
+package web.components
 
 external val customElements: CustomElementRegistry
