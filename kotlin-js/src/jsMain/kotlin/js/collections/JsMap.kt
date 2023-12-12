@@ -20,4 +20,11 @@ external class JsMap<K, V> : MutableMapLike<K, V> {
     override fun keys(): IterableIterator<K>
     override operator fun set(key: K, value: V)
     override fun values(): IterableIterator<V>
+
+    companion object {
+        fun <T : Any, K> groupBy(
+            items: ReadonlyArray<T>,
+            keySelector: (value: T, index: Int) -> K,
+        ): JsMap<K, ReadonlyArray<T>>
+    }
 }
