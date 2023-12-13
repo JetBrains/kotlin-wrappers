@@ -3,12 +3,10 @@
 
 package node
 
-import seskar.js.JsNative
-
 
 sealed external interface RequireResolve {
 
-    @JsNative
+    @seskar.js.JsNative
     operator fun invoke(id: String, options: RequireResolveOptions = definedExternally): String
 
     fun paths(request: String): js.core.ReadonlyArray<String>?

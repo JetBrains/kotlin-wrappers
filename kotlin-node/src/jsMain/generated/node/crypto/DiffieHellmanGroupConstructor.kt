@@ -3,13 +3,11 @@
 
 package node.crypto
 
-import seskar.js.JsNative
-
 
 sealed external class DiffieHellmanGroup {
     /* new (name: string): DiffieHellmanGroup; */
 
-    @JsNative
+    @seskar.js.JsNative
     operator fun invoke(name: String): DiffieHellmanGroup
 
     constructor ()

@@ -44,7 +44,6 @@
       "remix.run.router.HydrationState"
     ],
     "FetcherWithComponents.kt": [
-      "react.ForwardRefExoticComponent",
       "remix.run.router.Fetcher"
     ],
     "FormProps.kt": [

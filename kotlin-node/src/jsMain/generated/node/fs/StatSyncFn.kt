@@ -3,30 +3,34 @@
 
 package node.fs
 
-import seskar.js.JsNative
-
 
 sealed external interface StatSyncFn {
 
-    @JsNative
+    @seskar.js.JsNative
     operator fun invoke(path: PathLike, options: Nothing? = definedExternally): Stats
 
-    @JsNative
+
+    @seskar.js.JsNative
     operator fun invoke(path: PathLike, options: StatSyncFnSimpleOptions = definedExternally): Stats?
 
-    @JsNative
+
+    @seskar.js.JsNative
     operator fun invoke(path: PathLike, options: StatSyncFnBigIntOptions): BigIntStats?
 
-    @JsNative
+
+    @seskar.js.JsNative
     operator fun invoke(path: PathLike, options: StatSyncFnSimpleThrowIfNoEntryOptions = definedExternally): Stats
 
-    @JsNative
+
+    @seskar.js.JsNative
     operator fun invoke(path: PathLike, options: StatSyncFnBigIntThrowIfNoEntryOptions): BigIntStats
 
-    @JsNative
+
+    @seskar.js.JsNative
     operator fun invoke(path: PathLike, options: StatSyncFnOptions): Any /* Stats | BigIntStats */
 
-    @JsNative
+
+    @seskar.js.JsNative
     operator fun invoke(
         path: PathLike,
         options: StatSyncOptions = definedExternally,

@@ -3,8 +3,6 @@
 
 package remix.run.router
 
-import seskar.js.JsNative
-
 
 /**
  * Map of routeId -> data returned from a loader/action/error
@@ -13,11 +11,11 @@ import seskar.js.JsNative
 sealed external interface RouteData {
 
 
-    @JsNative
+    @seskar.js.JsNative
     operator fun get(key: String): Any?
 
 
-    @JsNative
+    @seskar.js.JsNative
     operator fun set(key: String, value: Any?)
 
 

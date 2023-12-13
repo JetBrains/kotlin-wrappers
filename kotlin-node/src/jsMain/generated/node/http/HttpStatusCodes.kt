@@ -2,25 +2,23 @@
 
 package node.http
 
-import seskar.js.JsNative
-
 
 sealed external interface HttpStatusCodes {
 
 
-    @JsNative
+    @seskar.js.JsNative
     operator fun get(key: Number): String?
 
 
-    @JsNative
+    @seskar.js.JsNative
     operator fun set(key: Number, value: String?)
 
 
-    @JsNative
+    @seskar.js.JsNative
     operator fun get(key: String): String?
 
 
-    @JsNative
+    @seskar.js.JsNative
     operator fun set(key: String, value: String?)
 
 

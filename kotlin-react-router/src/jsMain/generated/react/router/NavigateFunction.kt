@@ -4,7 +4,6 @@
 package react.router
 
 import remix.run.router.To
-import seskar.js.JsNative
 
 /**
  * The interface for the navigate() function returned from useNavigate().
@@ -12,11 +11,11 @@ import seskar.js.JsNative
 
 sealed external interface NavigateFunction {
 
-    @JsNative
+    @seskar.js.JsNative
     operator fun invoke(to: To, options: NavigateOptions = definedExternally): Unit
 
 
-    @JsNative
+    @seskar.js.JsNative
     operator fun invoke(delta: Double): Unit
 
 }

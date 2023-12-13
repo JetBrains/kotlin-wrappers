@@ -3,8 +3,6 @@
 
 package remix.run.router
 
-import seskar.js.JsNative
-
 
 /**
  * Function provided by the framework-aware layers to set any framework-specific
@@ -13,7 +11,7 @@ import seskar.js.JsNative
 
 sealed external interface MapRoutePropertiesFunction {
 
-    @JsNative
+    @seskar.js.JsNative
     operator fun invoke(route: AgnosticRouteObject): MapRoutePropertiesFunctionResult
 
 }
