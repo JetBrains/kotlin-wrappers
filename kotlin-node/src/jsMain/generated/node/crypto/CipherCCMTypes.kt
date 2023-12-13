@@ -4,16 +4,20 @@
 package node.crypto
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{aes128Ccm: 'aes-128-ccm', aes192Ccm: 'aes-192-ccm', aes256Ccm: 'aes-256-ccm', chacha20Poly1305: 'chacha20-poly1305'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface CipherCCMTypes {
     companion object {
+        @seskar.js.JsValue("aes-128-ccm")
         val aes128Ccm: CipherCCMTypes
+
+        @seskar.js.JsValue("aes-192-ccm")
         val aes192Ccm: CipherCCMTypes
+
+        @seskar.js.JsValue("aes-256-ccm")
         val aes256Ccm: CipherCCMTypes
+
+        @seskar.js.JsValue("chacha20-poly1305")
         val chacha20Poly1305: CipherCCMTypes
     }
 }

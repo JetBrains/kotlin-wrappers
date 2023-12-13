@@ -3,19 +3,29 @@
 package electron.core
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{none: 'none', image: 'image', audio: 'audio', video: 'video', canvas: 'canvas', file: 'file', plugin: 'plugin'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface ContextMenuParamsMediaType {
     companion object {
+        @seskar.js.JsValue("none")
         val none: ContextMenuParamsMediaType
+
+        @seskar.js.JsValue("image")
         val image: ContextMenuParamsMediaType
+
+        @seskar.js.JsValue("audio")
         val audio: ContextMenuParamsMediaType
+
+        @seskar.js.JsValue("video")
         val video: ContextMenuParamsMediaType
+
+        @seskar.js.JsValue("canvas")
         val canvas: ContextMenuParamsMediaType
+
+        @seskar.js.JsValue("file")
         val file: ContextMenuParamsMediaType
+
+        @seskar.js.JsValue("plugin")
         val plugin: ContextMenuParamsMediaType
     }
 }

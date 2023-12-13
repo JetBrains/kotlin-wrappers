@@ -3,15 +3,17 @@
 package electron.core
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{clearSelection: 'clearSelection', keepSelection: 'keepSelection', activateSelection: 'activateSelection'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface WebviewTagStopFindInPageAction {
     companion object {
+        @seskar.js.JsValue("clearSelection")
         val clearSelection: WebviewTagStopFindInPageAction
+
+        @seskar.js.JsValue("keepSelection")
         val keepSelection: WebviewTagStopFindInPageAction
+
+        @seskar.js.JsValue("activateSelection")
         val activateSelection: WebviewTagStopFindInPageAction
     }
 }

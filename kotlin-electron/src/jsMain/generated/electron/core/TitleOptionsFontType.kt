@@ -3,14 +3,14 @@
 package electron.core
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{monospaced: 'monospaced', monospacedDigit: 'monospacedDigit'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface TitleOptionsFontType {
     companion object {
+        @seskar.js.JsValue("monospaced")
         val monospaced: TitleOptionsFontType
+
+        @seskar.js.JsValue("monospacedDigit")
         val monospacedDigit: TitleOptionsFontType
     }
 }

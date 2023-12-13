@@ -10,18 +10,26 @@ package remix.run.router
  * ignored.
  */
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{lazy: 'lazy', caseSensitive: 'caseSensitive', path: 'path', id: 'id', index: 'index', children: 'children'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface ImmutableRouteKey {
     companion object {
+        @seskar.js.JsValue("lazy")
         val lazy: ImmutableRouteKey
+
+        @seskar.js.JsValue("caseSensitive")
         val caseSensitive: ImmutableRouteKey
+
+        @seskar.js.JsValue("path")
         val path: ImmutableRouteKey
+
+        @seskar.js.JsValue("id")
         val id: ImmutableRouteKey
+
+        @seskar.js.JsValue("index")
         val index: ImmutableRouteKey
+
+        @seskar.js.JsValue("children")
         val children: ImmutableRouteKey
     }
 }

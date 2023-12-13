@@ -3,17 +3,23 @@
 package electron.core
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{none: 'none', info: 'info', warning: 'warning', error: 'error', custom: 'custom'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface DisplayBalloonOptionsIconType {
     companion object {
+        @seskar.js.JsValue("none")
         val none: DisplayBalloonOptionsIconType
+
+        @seskar.js.JsValue("info")
         val info: DisplayBalloonOptionsIconType
+
+        @seskar.js.JsValue("warning")
         val warning: DisplayBalloonOptionsIconType
+
+        @seskar.js.JsValue("error")
         val error: DisplayBalloonOptionsIconType
+
+        @seskar.js.JsValue("custom")
         val custom: DisplayBalloonOptionsIconType
     }
 }

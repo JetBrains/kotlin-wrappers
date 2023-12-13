@@ -6,21 +6,35 @@ package node.buffer
 
 // Buffer class
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{ascii: 'ascii', utf8: 'utf8', utf16le: 'utf16le', ucs2: 'ucs2', base64: 'base64', base64url: 'base64url', latin1: 'latin1', binary: 'binary', hex: 'hex'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface BufferEncoding {
     companion object {
+        @seskar.js.JsValue("ascii")
         val ascii: BufferEncoding
+
+        @seskar.js.JsValue("utf8")
         val utf8: BufferEncoding
+
+        @seskar.js.JsValue("utf16le")
         val utf16le: BufferEncoding
+
+        @seskar.js.JsValue("ucs2")
         val ucs2: BufferEncoding
+
+        @seskar.js.JsValue("base64")
         val base64: BufferEncoding
+
+        @seskar.js.JsValue("base64url")
         val base64url: BufferEncoding
+
+        @seskar.js.JsValue("latin1")
         val latin1: BufferEncoding
+
+        @seskar.js.JsValue("binary")
         val binary: BufferEncoding
+
+        @seskar.js.JsValue("hex")
         val hex: BufferEncoding
         /*
         Duplicated names were generated:

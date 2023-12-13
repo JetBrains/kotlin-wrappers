@@ -3,16 +3,20 @@
 package node.crypto
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{latin1: 'latin1', hex: 'hex', base64: 'base64', base64url: 'base64url'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface ECDHConvertKeyOutputEncoding {
     companion object {
+        @seskar.js.JsValue("latin1")
         val latin1: ECDHConvertKeyOutputEncoding
+
+        @seskar.js.JsValue("hex")
         val hex: ECDHConvertKeyOutputEncoding
+
+        @seskar.js.JsValue("base64")
         val base64: ECDHConvertKeyOutputEncoding
+
+        @seskar.js.JsValue("base64url")
         val base64url: ECDHConvertKeyOutputEncoding
     }
 }

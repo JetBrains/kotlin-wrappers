@@ -3,15 +3,17 @@
 package node.crypto
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{always: 'always', default: 'default', never: 'never'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface X509CheckOptionsSubject {
     companion object {
+        @seskar.js.JsValue("always")
         val always: X509CheckOptionsSubject
+
+        @seskar.js.JsValue("default")
         val default: X509CheckOptionsSubject
+
+        @seskar.js.JsValue("never")
         val never: X509CheckOptionsSubject
     }
 }

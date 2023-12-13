@@ -3,21 +3,35 @@
 package electron.core
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{blue: 'blue', brown: 'brown', gray: 'gray', green: 'green', orange: 'orange', pink: 'pink', purple: 'purple', red: 'red', yellow: 'yellow'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface SystemPreferencesGetSystemColorColor {
     companion object {
+        @seskar.js.JsValue("blue")
         val blue: SystemPreferencesGetSystemColorColor
+
+        @seskar.js.JsValue("brown")
         val brown: SystemPreferencesGetSystemColorColor
+
+        @seskar.js.JsValue("gray")
         val gray: SystemPreferencesGetSystemColorColor
+
+        @seskar.js.JsValue("green")
         val green: SystemPreferencesGetSystemColorColor
+
+        @seskar.js.JsValue("orange")
         val orange: SystemPreferencesGetSystemColorColor
+
+        @seskar.js.JsValue("pink")
         val pink: SystemPreferencesGetSystemColorColor
+
+        @seskar.js.JsValue("purple")
         val purple: SystemPreferencesGetSystemColorColor
+
+        @seskar.js.JsValue("red")
         val red: SystemPreferencesGetSystemColorColor
+
+        @seskar.js.JsValue("yellow")
         val yellow: SystemPreferencesGetSystemColorColor
     }
 }

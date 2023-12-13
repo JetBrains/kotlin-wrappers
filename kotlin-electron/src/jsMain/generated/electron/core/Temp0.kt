@@ -3,26 +3,50 @@
 package electron.core
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{clipboardRead: 'clipboard-read', clipboardSanitizedWrite: 'clipboard-sanitized-write', media: 'media', displayCapture: 'display-capture', mediaKeySystem: 'mediaKeySystem', geolocation: 'geolocation', notifications: 'notifications', midi: 'midi', midiSysex: 'midiSysex', pointerLock: 'pointerLock', fullscreen: 'fullscreen', openExternal: 'openExternal', windowManagement: 'window-management', unknown: 'unknown'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface Temp0 {
     companion object {
+        @seskar.js.JsValue("clipboard-read")
         val clipboardRead: Temp0
+
+        @seskar.js.JsValue("clipboard-sanitized-write")
         val clipboardSanitizedWrite: Temp0
+
+        @seskar.js.JsValue("media")
         val media: Temp0
+
+        @seskar.js.JsValue("display-capture")
         val displayCapture: Temp0
+
+        @seskar.js.JsValue("mediaKeySystem")
         val mediaKeySystem: Temp0
+
+        @seskar.js.JsValue("geolocation")
         val geolocation: Temp0
+
+        @seskar.js.JsValue("notifications")
         val notifications: Temp0
+
+        @seskar.js.JsValue("midi")
         val midi: Temp0
+
+        @seskar.js.JsValue("midiSysex")
         val midiSysex: Temp0
+
+        @seskar.js.JsValue("pointerLock")
         val pointerLock: Temp0
+
+        @seskar.js.JsValue("fullscreen")
         val fullscreen: Temp0
+
+        @seskar.js.JsValue("openExternal")
         val openExternal: Temp0
+
+        @seskar.js.JsValue("window-management")
         val windowManagement: Temp0
+
+        @seskar.js.JsValue("unknown")
         val unknown: Temp0
     }
 }

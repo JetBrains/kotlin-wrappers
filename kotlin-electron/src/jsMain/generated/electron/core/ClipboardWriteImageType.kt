@@ -3,14 +3,14 @@
 package electron.core
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{selection: 'selection', clipboard: 'clipboard'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface ClipboardWriteImageType {
     companion object {
+        @seskar.js.JsValue("selection")
         val selection: ClipboardWriteImageType
+
+        @seskar.js.JsValue("clipboard")
         val clipboard: ClipboardWriteImageType
     }
 }

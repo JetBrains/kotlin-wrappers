@@ -3,17 +3,23 @@
 package electron.core
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{untrusted: 'untrusted', low: 'low', medium: 'medium', high: 'high', unknown: 'unknown'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface ProcessMetricIntegrityLevel {
     companion object {
+        @seskar.js.JsValue("untrusted")
         val untrusted: ProcessMetricIntegrityLevel
+
+        @seskar.js.JsValue("low")
         val low: ProcessMetricIntegrityLevel
+
+        @seskar.js.JsValue("medium")
         val medium: ProcessMetricIntegrityLevel
+
+        @seskar.js.JsValue("high")
         val high: ProcessMetricIntegrityLevel
+
+        @seskar.js.JsValue("unknown")
         val unknown: ProcessMetricIntegrityLevel
     }
 }

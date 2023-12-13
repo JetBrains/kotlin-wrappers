@@ -3,16 +3,20 @@
 package electron.core
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{tasks: 'tasks', frequent: 'frequent', recent: 'recent', custom: 'custom'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface JumpListCategoryType {
     companion object {
+        @seskar.js.JsValue("tasks")
         val tasks: JumpListCategoryType
+
+        @seskar.js.JsValue("frequent")
         val frequent: JumpListCategoryType
+
+        @seskar.js.JsValue("recent")
         val recent: JumpListCategoryType
+
+        @seskar.js.JsValue("custom")
         val custom: JumpListCategoryType
     }
 }

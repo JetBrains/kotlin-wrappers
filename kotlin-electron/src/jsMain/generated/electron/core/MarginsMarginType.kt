@@ -3,16 +3,20 @@
 package electron.core
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{default: 'default', none: 'none', printableArea: 'printableArea', custom: 'custom'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface MarginsMarginType {
     companion object {
+        @seskar.js.JsValue("default")
         val default: MarginsMarginType
+
+        @seskar.js.JsValue("none")
         val none: MarginsMarginType
+
+        @seskar.js.JsValue("printableArea")
         val printableArea: MarginsMarginType
+
+        @seskar.js.JsValue("custom")
         val custom: MarginsMarginType
     }
 }

@@ -3,15 +3,17 @@
 package electron.core
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{hid: 'hid', serial: 'serial', usb: 'usb'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface DevicePermissionHandlerHandlerDetailsDeviceType {
     companion object {
+        @seskar.js.JsValue("hid")
         val hid: DevicePermissionHandlerHandlerDetailsDeviceType
+
+        @seskar.js.JsValue("serial")
         val serial: DevicePermissionHandlerHandlerDetailsDeviceType
+
+        @seskar.js.JsValue("usb")
         val usb: DevicePermissionHandlerHandlerDetailsDeviceType
     }
 }

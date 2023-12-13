@@ -3,76 +3,194 @@
 package electron.core
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName(
-    """(/*union*/{`3dDarkShadow`: '3d-dark-shadow', `3dFace`: '3d-face', `3dHighlight`: '3d-highlight', `3dLight`: '3d-light', `3dShadow`: '3d-shadow', activeBorder: 'active-border', activeCaption: 'active-caption', activeCaptionGradient: 'active-caption-gradient', appWorkspace: 'app-workspace', buttonText: 'button-text', captionText: 'caption-text', desktop: 'desktop', disabledText: 'disabled-text', highlight: 'highlight', highlightText: 'highlight-text', hotlight: 'hotlight', inactiveBorder: 'inactive-border', inactiveCaption: 'inactive-caption', inactiveCaptionGradient: 'inactive-caption-gradient', inactiveCaptionText: 'inactive-caption-text', infoBackground: 'info-background', infoText: 'info-text', menu: 'menu', menuHighlight: 'menu-highlight', menubar: 'menubar', menuText: 'menu-text', scrollbar: 'scrollbar', window: 'window', windowFrame: 'window-frame', windowText: 'window-text', alternateSelectedControlText: 'alternate-selected-control-text', controlBackground: 'control-background', control: 'control', controlText: 'control-text', disabledControlText: 'disabled-control-text', findHighlight: 'find-highlight', grid: 'grid', headerText: 'header-text', keyboardFocusIndicator: 'keyboard-focus-indicator', label: 'label', link: 'link', placeholderText: 'placeholder-text', quaternaryLabel: 'quaternary-label', scrubberTexturedBackground: 'scrubber-textured-background', secondaryLabel: 'secondary-label', selectedContentBackground: 'selected-content-background', selectedControl: 'selected-control', selectedControlText: 'selected-control-text', selectedMenuItemText: 'selected-menu-item-text', selectedTextBackground: 'selected-text-background', selectedText: 'selected-text', separator: 'separator', shadow: 'shadow', tertiaryLabel: 'tertiary-label', textBackground: 'text-background', text: 'text', underPageBackground: 'under-page-background', unemphasizedSelectedContentBackground: 'unemphasized-selected-content-background', unemphasizedSelectedTextBackground: 'unemphasized-selected-text-background', unemphasizedSelectedText: 'unemphasized-selected-text', windowBackground: 'window-background', windowFrameText: 'window-frame-text'}/*union*/)"""
-)
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface SystemPreferencesGetColorColor {
     companion object {
+        @seskar.js.JsValue("3d-dark-shadow")
         val `3dDarkShadow`: SystemPreferencesGetColorColor
+
+        @seskar.js.JsValue("3d-face")
         val `3dFace`: SystemPreferencesGetColorColor
+
+        @seskar.js.JsValue("3d-highlight")
         val `3dHighlight`: SystemPreferencesGetColorColor
+
+        @seskar.js.JsValue("3d-light")
         val `3dLight`: SystemPreferencesGetColorColor
+
+        @seskar.js.JsValue("3d-shadow")
         val `3dShadow`: SystemPreferencesGetColorColor
+
+        @seskar.js.JsValue("active-border")
         val activeBorder: SystemPreferencesGetColorColor
+
+        @seskar.js.JsValue("active-caption")
         val activeCaption: SystemPreferencesGetColorColor
+
+        @seskar.js.JsValue("active-caption-gradient")
         val activeCaptionGradient: SystemPreferencesGetColorColor
+
+        @seskar.js.JsValue("app-workspace")
         val appWorkspace: SystemPreferencesGetColorColor
+
+        @seskar.js.JsValue("button-text")
         val buttonText: SystemPreferencesGetColorColor
+
+        @seskar.js.JsValue("caption-text")
         val captionText: SystemPreferencesGetColorColor
+
+        @seskar.js.JsValue("desktop")
         val desktop: SystemPreferencesGetColorColor
+
+        @seskar.js.JsValue("disabled-text")
         val disabledText: SystemPreferencesGetColorColor
+
+        @seskar.js.JsValue("highlight")
         val highlight: SystemPreferencesGetColorColor
+
+        @seskar.js.JsValue("highlight-text")
         val highlightText: SystemPreferencesGetColorColor
+
+        @seskar.js.JsValue("hotlight")
         val hotlight: SystemPreferencesGetColorColor
+
+        @seskar.js.JsValue("inactive-border")
         val inactiveBorder: SystemPreferencesGetColorColor
+
+        @seskar.js.JsValue("inactive-caption")
         val inactiveCaption: SystemPreferencesGetColorColor
+
+        @seskar.js.JsValue("inactive-caption-gradient")
         val inactiveCaptionGradient: SystemPreferencesGetColorColor
+
+        @seskar.js.JsValue("inactive-caption-text")
         val inactiveCaptionText: SystemPreferencesGetColorColor
+
+        @seskar.js.JsValue("info-background")
         val infoBackground: SystemPreferencesGetColorColor
+
+        @seskar.js.JsValue("info-text")
         val infoText: SystemPreferencesGetColorColor
+
+        @seskar.js.JsValue("menu")
         val menu: SystemPreferencesGetColorColor
+
+        @seskar.js.JsValue("menu-highlight")
         val menuHighlight: SystemPreferencesGetColorColor
+
+        @seskar.js.JsValue("menubar")
         val menubar: SystemPreferencesGetColorColor
+
+        @seskar.js.JsValue("menu-text")
         val menuText: SystemPreferencesGetColorColor
+
+        @seskar.js.JsValue("scrollbar")
         val scrollbar: SystemPreferencesGetColorColor
+
+        @seskar.js.JsValue("window")
         val window: SystemPreferencesGetColorColor
+
+        @seskar.js.JsValue("window-frame")
         val windowFrame: SystemPreferencesGetColorColor
+
+        @seskar.js.JsValue("window-text")
         val windowText: SystemPreferencesGetColorColor
+
+        @seskar.js.JsValue("alternate-selected-control-text")
         val alternateSelectedControlText: SystemPreferencesGetColorColor
+
+        @seskar.js.JsValue("control-background")
         val controlBackground: SystemPreferencesGetColorColor
+
+        @seskar.js.JsValue("control")
         val control: SystemPreferencesGetColorColor
+
+        @seskar.js.JsValue("control-text")
         val controlText: SystemPreferencesGetColorColor
+
+        @seskar.js.JsValue("disabled-control-text")
         val disabledControlText: SystemPreferencesGetColorColor
+
+        @seskar.js.JsValue("find-highlight")
         val findHighlight: SystemPreferencesGetColorColor
+
+        @seskar.js.JsValue("grid")
         val grid: SystemPreferencesGetColorColor
+
+        @seskar.js.JsValue("header-text")
         val headerText: SystemPreferencesGetColorColor
+
+        @seskar.js.JsValue("keyboard-focus-indicator")
         val keyboardFocusIndicator: SystemPreferencesGetColorColor
+
+        @seskar.js.JsValue("label")
         val label: SystemPreferencesGetColorColor
+
+        @seskar.js.JsValue("link")
         val link: SystemPreferencesGetColorColor
+
+        @seskar.js.JsValue("placeholder-text")
         val placeholderText: SystemPreferencesGetColorColor
+
+        @seskar.js.JsValue("quaternary-label")
         val quaternaryLabel: SystemPreferencesGetColorColor
+
+        @seskar.js.JsValue("scrubber-textured-background")
         val scrubberTexturedBackground: SystemPreferencesGetColorColor
+
+        @seskar.js.JsValue("secondary-label")
         val secondaryLabel: SystemPreferencesGetColorColor
+
+        @seskar.js.JsValue("selected-content-background")
         val selectedContentBackground: SystemPreferencesGetColorColor
+
+        @seskar.js.JsValue("selected-control")
         val selectedControl: SystemPreferencesGetColorColor
+
+        @seskar.js.JsValue("selected-control-text")
         val selectedControlText: SystemPreferencesGetColorColor
+
+        @seskar.js.JsValue("selected-menu-item-text")
         val selectedMenuItemText: SystemPreferencesGetColorColor
+
+        @seskar.js.JsValue("selected-text-background")
         val selectedTextBackground: SystemPreferencesGetColorColor
+
+        @seskar.js.JsValue("selected-text")
         val selectedText: SystemPreferencesGetColorColor
+
+        @seskar.js.JsValue("separator")
         val separator: SystemPreferencesGetColorColor
+
+        @seskar.js.JsValue("shadow")
         val shadow: SystemPreferencesGetColorColor
+
+        @seskar.js.JsValue("tertiary-label")
         val tertiaryLabel: SystemPreferencesGetColorColor
+
+        @seskar.js.JsValue("text-background")
         val textBackground: SystemPreferencesGetColorColor
+
+        @seskar.js.JsValue("text")
         val text: SystemPreferencesGetColorColor
+
+        @seskar.js.JsValue("under-page-background")
         val underPageBackground: SystemPreferencesGetColorColor
+
+        @seskar.js.JsValue("unemphasized-selected-content-background")
         val unemphasizedSelectedContentBackground: SystemPreferencesGetColorColor
+
+        @seskar.js.JsValue("unemphasized-selected-text-background")
         val unemphasizedSelectedTextBackground: SystemPreferencesGetColorColor
+
+        @seskar.js.JsValue("unemphasized-selected-text")
         val unemphasizedSelectedText: SystemPreferencesGetColorColor
+
+        @seskar.js.JsValue("window-background")
         val windowBackground: SystemPreferencesGetColorColor
+
+        @seskar.js.JsValue("window-frame-text")
         val windowFrameText: SystemPreferencesGetColorColor
         /*
         Duplicated names were generated:

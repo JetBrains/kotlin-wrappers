@@ -4,15 +4,17 @@
 package node.crypto
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{ascii: 'ascii', binary: 'binary', ucs2: 'ucs2'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface LegacyCharacterEncoding {
     companion object {
+        @seskar.js.JsValue("ascii")
         val ascii: LegacyCharacterEncoding
+
+        @seskar.js.JsValue("binary")
         val binary: LegacyCharacterEncoding
+
+        @seskar.js.JsValue("ucs2")
         val ucs2: LegacyCharacterEncoding
         /*
         Duplicated names were generated:

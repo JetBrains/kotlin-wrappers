@@ -3,15 +3,17 @@
 package electron.core
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{noUserGestureRequired: 'no-user-gesture-required', userGestureRequired: 'user-gesture-required', documentUserActivationRequired: 'document-user-activation-required'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface WebPreferencesAutoplayPolicy {
     companion object {
+        @seskar.js.JsValue("no-user-gesture-required")
         val noUserGestureRequired: WebPreferencesAutoplayPolicy
+
+        @seskar.js.JsValue("user-gesture-required")
         val userGestureRequired: WebPreferencesAutoplayPolicy
+
+        @seskar.js.JsValue("document-user-activation-required")
         val documentUserActivationRequired: WebPreferencesAutoplayPolicy
     }
 }

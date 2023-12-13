@@ -3,17 +3,23 @@
 package electron.core
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{notDetermined: 'not-determined', granted: 'granted', denied: 'denied', restricted: 'restricted', unknown: 'unknown'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface SystemPreferencesGetMediaAccessStatusResult {
     companion object {
+        @seskar.js.JsValue("not-determined")
         val notDetermined: SystemPreferencesGetMediaAccessStatusResult
+
+        @seskar.js.JsValue("granted")
         val granted: SystemPreferencesGetMediaAccessStatusResult
+
+        @seskar.js.JsValue("denied")
         val denied: SystemPreferencesGetMediaAccessStatusResult
+
+        @seskar.js.JsValue("restricted")
         val restricted: SystemPreferencesGetMediaAccessStatusResult
+
+        @seskar.js.JsValue("unknown")
         val unknown: SystemPreferencesGetMediaAccessStatusResult
     }
 }

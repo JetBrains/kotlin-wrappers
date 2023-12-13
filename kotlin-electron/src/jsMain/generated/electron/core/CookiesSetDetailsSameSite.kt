@@ -3,16 +3,20 @@
 package electron.core
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{unspecified: 'unspecified', noRestriction: 'no_restriction', lax: 'lax', strict: 'strict'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface CookiesSetDetailsSameSite {
     companion object {
+        @seskar.js.JsValue("unspecified")
         val unspecified: CookiesSetDetailsSameSite
+
+        @seskar.js.JsValue("no_restriction")
         val noRestriction: CookiesSetDetailsSameSite
+
+        @seskar.js.JsValue("lax")
         val lax: CookiesSetDetailsSameSite
+
+        @seskar.js.JsValue("strict")
         val strict: CookiesSetDetailsSameSite
     }
 }

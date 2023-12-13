@@ -3,17 +3,23 @@
 package electron.core
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{default: 'default', foregroundTab: 'foreground-tab', backgroundTab: 'background-tab', newWindow: 'new-window', other: 'other'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface DidCreateWindowDetailsDisposition {
     companion object {
+        @seskar.js.JsValue("default")
         val default: DidCreateWindowDetailsDisposition
+
+        @seskar.js.JsValue("foreground-tab")
         val foregroundTab: DidCreateWindowDetailsDisposition
+
+        @seskar.js.JsValue("background-tab")
         val backgroundTab: DidCreateWindowDetailsDisposition
+
+        @seskar.js.JsValue("new-window")
         val newWindow: DidCreateWindowDetailsDisposition
+
+        @seskar.js.JsValue("other")
         val other: DidCreateWindowDetailsDisposition
     }
 }

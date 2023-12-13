@@ -3,15 +3,17 @@
 package electron.core
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{followWindow: 'followWindow', active: 'active', inactive: 'inactive'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface BrowserWindowConstructorOptionsVisualEffectState {
     companion object {
+        @seskar.js.JsValue("followWindow")
         val followWindow: BrowserWindowConstructorOptionsVisualEffectState
+
+        @seskar.js.JsValue("active")
         val active: BrowserWindowConstructorOptionsVisualEffectState
+
+        @seskar.js.JsValue("inactive")
         val inactive: BrowserWindowConstructorOptionsVisualEffectState
     }
 }

@@ -3,14 +3,14 @@
 package electron.core
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{microphone: 'microphone', camera: 'camera'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface SystemPreferencesAskForMediaAccessMediaType {
     companion object {
+        @seskar.js.JsValue("microphone")
         val microphone: SystemPreferencesAskForMediaAccessMediaType
+
+        @seskar.js.JsValue("camera")
         val camera: SystemPreferencesAskForMediaAccessMediaType
     }
 }

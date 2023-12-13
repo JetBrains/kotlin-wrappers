@@ -3,17 +3,23 @@
 package electron.core
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{showHiddenFiles: 'showHiddenFiles', createDirectory: 'createDirectory', treatPackageAsDirectory: 'treatPackageAsDirectory', showOverwriteConfirmation: 'showOverwriteConfirmation', dontAddToRecent: 'dontAddToRecent'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface SaveDialogOptionsProperty {
     companion object {
+        @seskar.js.JsValue("showHiddenFiles")
         val showHiddenFiles: SaveDialogOptionsProperty
+
+        @seskar.js.JsValue("createDirectory")
         val createDirectory: SaveDialogOptionsProperty
+
+        @seskar.js.JsValue("treatPackageAsDirectory")
         val treatPackageAsDirectory: SaveDialogOptionsProperty
+
+        @seskar.js.JsValue("showOverwriteConfirmation")
         val showOverwriteConfirmation: SaveDialogOptionsProperty
+
+        @seskar.js.JsValue("dontAddToRecent")
         val dontAddToRecent: SaveDialogOptionsProperty
     }
 }

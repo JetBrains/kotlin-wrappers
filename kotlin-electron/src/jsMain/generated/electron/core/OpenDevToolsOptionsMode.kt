@@ -3,17 +3,23 @@
 package electron.core
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{left: 'left', right: 'right', bottom: 'bottom', undocked: 'undocked', detach: 'detach'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface OpenDevToolsOptionsMode {
     companion object {
+        @seskar.js.JsValue("left")
         val left: OpenDevToolsOptionsMode
+
+        @seskar.js.JsValue("right")
         val right: OpenDevToolsOptionsMode
+
+        @seskar.js.JsValue("bottom")
         val bottom: OpenDevToolsOptionsMode
+
+        @seskar.js.JsValue("undocked")
         val undocked: OpenDevToolsOptionsMode
+
+        @seskar.js.JsValue("detach")
         val detach: OpenDevToolsOptionsMode
     }
 }

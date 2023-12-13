@@ -3,16 +3,20 @@
 package electron.core
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{default: 'default', hidden: 'hidden', hiddenInset: 'hiddenInset', customButtonsOnHover: 'customButtonsOnHover'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface BrowserWindowConstructorOptionsTitleBarStyle {
     companion object {
+        @seskar.js.JsValue("default")
         val default: BrowserWindowConstructorOptionsTitleBarStyle
+
+        @seskar.js.JsValue("hidden")
         val hidden: BrowserWindowConstructorOptionsTitleBarStyle
+
+        @seskar.js.JsValue("hiddenInset")
         val hiddenInset: BrowserWindowConstructorOptionsTitleBarStyle
+
+        @seskar.js.JsValue("customButtonsOnHover")
         val customButtonsOnHover: BrowserWindowConstructorOptionsTitleBarStyle
     }
 }

@@ -4,14 +4,14 @@
 package node.crypto
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{der: 'der', ieeeP1363: 'ieee-p1363'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface DSAEncoding {
     companion object {
+        @seskar.js.JsValue("der")
         val der: DSAEncoding
+
+        @seskar.js.JsValue("ieee-p1363")
         val ieeeP1363: DSAEncoding
     }
 }

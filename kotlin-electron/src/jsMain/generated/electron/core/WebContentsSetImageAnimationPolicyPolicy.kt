@@ -3,15 +3,17 @@
 package electron.core
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{animate: 'animate', animateOnce: 'animateOnce', noAnimation: 'noAnimation'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface WebContentsSetImageAnimationPolicyPolicy {
     companion object {
+        @seskar.js.JsValue("animate")
         val animate: WebContentsSetImageAnimationPolicyPolicy
+
+        @seskar.js.JsValue("animateOnce")
         val animateOnce: WebContentsSetImageAnimationPolicyPolicy
+
+        @seskar.js.JsValue("noAnimation")
         val noAnimation: WebContentsSetImageAnimationPolicyPolicy
     }
 }

@@ -3,21 +3,35 @@
 package electron.core
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{Browser: 'Browser', Tab: 'Tab', Utility: 'Utility', Zygote: 'Zygote', SandboxHelper: 'Sandbox helper', GPU: 'GPU', PepperPlugin: 'Pepper Plugin', PepperPluginBroker: 'Pepper Plugin Broker', Unknown: 'Unknown'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface ProcessMetricType {
     companion object {
+        @seskar.js.JsValue("Browser")
         val Browser: ProcessMetricType
+
+        @seskar.js.JsValue("Tab")
         val Tab: ProcessMetricType
+
+        @seskar.js.JsValue("Utility")
         val Utility: ProcessMetricType
+
+        @seskar.js.JsValue("Zygote")
         val Zygote: ProcessMetricType
+
+        @seskar.js.JsValue("Sandbox helper")
         val SandboxHelper: ProcessMetricType
+
+        @seskar.js.JsValue("GPU")
         val GPU: ProcessMetricType
+
+        @seskar.js.JsValue("Pepper Plugin")
         val PepperPlugin: ProcessMetricType
+
+        @seskar.js.JsValue("Pepper Plugin Broker")
         val PepperPluginBroker: ProcessMetricType
+
+        @seskar.js.JsValue("Unknown")
         val Unknown: ProcessMetricType
     }
 }

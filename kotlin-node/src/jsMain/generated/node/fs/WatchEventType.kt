@@ -4,14 +4,14 @@
 package node.fs
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{rename: 'rename', change: 'change'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface WatchEventType {
     companion object {
+        @seskar.js.JsValue("rename")
         val rename: WatchEventType
+
+        @seskar.js.JsValue("change")
         val change: WatchEventType
     }
 }

@@ -3,20 +3,32 @@
 package electron.core
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{default: 'default', unsafeUrl: 'unsafe-url', noReferrerWhenDowngrade: 'no-referrer-when-downgrade', noReferrer: 'no-referrer', origin: 'origin', strictOriginWhenCrossOrigin: 'strict-origin-when-cross-origin', sameOrigin: 'same-origin', strictOrigin: 'strict-origin'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface ReferrerPolicy {
     companion object {
+        @seskar.js.JsValue("default")
         val default: ReferrerPolicy
+
+        @seskar.js.JsValue("unsafe-url")
         val unsafeUrl: ReferrerPolicy
+
+        @seskar.js.JsValue("no-referrer-when-downgrade")
         val noReferrerWhenDowngrade: ReferrerPolicy
+
+        @seskar.js.JsValue("no-referrer")
         val noReferrer: ReferrerPolicy
+
+        @seskar.js.JsValue("origin")
         val origin: ReferrerPolicy
+
+        @seskar.js.JsValue("strict-origin-when-cross-origin")
         val strictOriginWhenCrossOrigin: ReferrerPolicy
+
+        @seskar.js.JsValue("same-origin")
         val sameOrigin: ReferrerPolicy
+
+        @seskar.js.JsValue("strict-origin")
         val strictOrigin: ReferrerPolicy
     }
 }

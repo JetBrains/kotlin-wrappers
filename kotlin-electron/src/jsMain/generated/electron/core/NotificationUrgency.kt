@@ -3,15 +3,17 @@
 package electron.core
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{normal: 'normal', critical: 'critical', low: 'low'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface NotificationUrgency {
     companion object {
+        @seskar.js.JsValue("normal")
         val normal: NotificationUrgency
+
+        @seskar.js.JsValue("critical")
         val critical: NotificationUrgency
+
+        @seskar.js.JsValue("low")
         val low: NotificationUrgency
     }
 }

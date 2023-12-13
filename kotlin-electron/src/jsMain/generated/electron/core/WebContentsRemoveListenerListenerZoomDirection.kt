@@ -3,14 +3,14 @@
 package electron.core
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{`in`: 'in', out: 'out'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface WebContentsRemoveListenerListenerZoomDirection {
     companion object {
+        @seskar.js.JsValue("in")
         val `in`: WebContentsRemoveListenerListenerZoomDirection
+
+        @seskar.js.JsValue("out")
         val out: WebContentsRemoveListenerListenerZoomDirection
     }
 }

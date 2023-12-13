@@ -3,15 +3,17 @@
 package electron.core
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{simplex: 'simplex', shortEdge: 'shortEdge', longEdge: 'longEdge'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface WebContentsPrintOptionsDuplexMode {
     companion object {
+        @seskar.js.JsValue("simplex")
         val simplex: WebContentsPrintOptionsDuplexMode
+
+        @seskar.js.JsValue("shortEdge")
         val shortEdge: WebContentsPrintOptionsDuplexMode
+
+        @seskar.js.JsValue("longEdge")
         val longEdge: WebContentsPrintOptionsDuplexMode
     }
 }

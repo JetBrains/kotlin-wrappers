@@ -3,14 +3,14 @@
 package electron.core
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{json: 'json', default: 'default'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface FeedURLOptionsServerType {
     companion object {
+        @seskar.js.JsValue("json")
         val json: FeedURLOptionsServerType
+
+        @seskar.js.JsValue("default")
         val default: FeedURLOptionsServerType
     }
 }

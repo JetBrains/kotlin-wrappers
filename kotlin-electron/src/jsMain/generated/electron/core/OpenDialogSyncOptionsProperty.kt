@@ -3,21 +3,35 @@
 package electron.core
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{openFile: 'openFile', openDirectory: 'openDirectory', multiSelections: 'multiSelections', showHiddenFiles: 'showHiddenFiles', createDirectory: 'createDirectory', promptToCreate: 'promptToCreate', noResolveAliases: 'noResolveAliases', treatPackageAsDirectory: 'treatPackageAsDirectory', dontAddToRecent: 'dontAddToRecent'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface OpenDialogSyncOptionsProperty {
     companion object {
+        @seskar.js.JsValue("openFile")
         val openFile: OpenDialogSyncOptionsProperty
+
+        @seskar.js.JsValue("openDirectory")
         val openDirectory: OpenDialogSyncOptionsProperty
+
+        @seskar.js.JsValue("multiSelections")
         val multiSelections: OpenDialogSyncOptionsProperty
+
+        @seskar.js.JsValue("showHiddenFiles")
         val showHiddenFiles: OpenDialogSyncOptionsProperty
+
+        @seskar.js.JsValue("createDirectory")
         val createDirectory: OpenDialogSyncOptionsProperty
+
+        @seskar.js.JsValue("promptToCreate")
         val promptToCreate: OpenDialogSyncOptionsProperty
+
+        @seskar.js.JsValue("noResolveAliases")
         val noResolveAliases: OpenDialogSyncOptionsProperty
+
+        @seskar.js.JsValue("treatPackageAsDirectory")
         val treatPackageAsDirectory: OpenDialogSyncOptionsProperty
+
+        @seskar.js.JsValue("dontAddToRecent")
         val dontAddToRecent: OpenDialogSyncOptionsProperty
     }
 }

@@ -3,25 +3,47 @@
 package electron.core
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{mainFrame: 'mainFrame', subFrame: 'subFrame', stylesheet: 'stylesheet', script: 'script', image: 'image', font: 'font', `object`: 'object', xhr: 'xhr', ping: 'ping', cspReport: 'cspReport', media: 'media', webSocket: 'webSocket', other: 'other'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface OnSendHeadersListenerDetailsResourceType {
     companion object {
+        @seskar.js.JsValue("mainFrame")
         val mainFrame: OnSendHeadersListenerDetailsResourceType
+
+        @seskar.js.JsValue("subFrame")
         val subFrame: OnSendHeadersListenerDetailsResourceType
+
+        @seskar.js.JsValue("stylesheet")
         val stylesheet: OnSendHeadersListenerDetailsResourceType
+
+        @seskar.js.JsValue("script")
         val script: OnSendHeadersListenerDetailsResourceType
+
+        @seskar.js.JsValue("image")
         val image: OnSendHeadersListenerDetailsResourceType
+
+        @seskar.js.JsValue("font")
         val font: OnSendHeadersListenerDetailsResourceType
+
+        @seskar.js.JsValue("object")
         val `object`: OnSendHeadersListenerDetailsResourceType
+
+        @seskar.js.JsValue("xhr")
         val xhr: OnSendHeadersListenerDetailsResourceType
+
+        @seskar.js.JsValue("ping")
         val ping: OnSendHeadersListenerDetailsResourceType
+
+        @seskar.js.JsValue("cspReport")
         val cspReport: OnSendHeadersListenerDetailsResourceType
+
+        @seskar.js.JsValue("media")
         val media: OnSendHeadersListenerDetailsResourceType
+
+        @seskar.js.JsValue("webSocket")
         val webSocket: OnSendHeadersListenerDetailsResourceType
+
+        @seskar.js.JsValue("other")
         val other: OnSendHeadersListenerDetailsResourceType
     }
 }

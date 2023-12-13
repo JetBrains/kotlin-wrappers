@@ -3,15 +3,17 @@
 package electron.core
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{follow: 'follow', error: 'error', manual: 'manual'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface ClientRequestConstructorOptionsRedirect {
     companion object {
+        @seskar.js.JsValue("follow")
         val follow: ClientRequestConstructorOptionsRedirect
+
+        @seskar.js.JsValue("error")
         val error: ClientRequestConstructorOptionsRedirect
+
+        @seskar.js.JsValue("manual")
         val manual: ClientRequestConstructorOptionsRedirect
     }
 }

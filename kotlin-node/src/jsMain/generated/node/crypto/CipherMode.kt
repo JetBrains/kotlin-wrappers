@@ -4,23 +4,41 @@
 package node.crypto
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{cbc: 'cbc', ccm: 'ccm', cfb: 'cfb', ctr: 'ctr', ecb: 'ecb', gcm: 'gcm', ocb: 'ocb', ofb: 'ofb', stream: 'stream', wrap: 'wrap', xts: 'xts'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface CipherMode {
     companion object {
+        @seskar.js.JsValue("cbc")
         val cbc: CipherMode
+
+        @seskar.js.JsValue("ccm")
         val ccm: CipherMode
+
+        @seskar.js.JsValue("cfb")
         val cfb: CipherMode
+
+        @seskar.js.JsValue("ctr")
         val ctr: CipherMode
+
+        @seskar.js.JsValue("ecb")
         val ecb: CipherMode
+
+        @seskar.js.JsValue("gcm")
         val gcm: CipherMode
+
+        @seskar.js.JsValue("ocb")
         val ocb: CipherMode
+
+        @seskar.js.JsValue("ofb")
         val ofb: CipherMode
+
+        @seskar.js.JsValue("stream")
         val stream: CipherMode
+
+        @seskar.js.JsValue("wrap")
         val wrap: CipherMode
+
+        @seskar.js.JsValue("xts")
         val xts: CipherMode
     }
 }

@@ -4,15 +4,17 @@
 package node.fs
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{dir: 'dir', file: 'file', junction: 'junction'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface SymlinkType {
     companion object {
+        @seskar.js.JsValue("dir")
         val dir: SymlinkType
+
+        @seskar.js.JsValue("file")
         val file: SymlinkType
+
+        @seskar.js.JsValue("junction")
         val junction: SymlinkType
     }
 }

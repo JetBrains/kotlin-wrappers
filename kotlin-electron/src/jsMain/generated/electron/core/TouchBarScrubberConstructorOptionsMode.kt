@@ -3,14 +3,14 @@
 package electron.core
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{fixed: 'fixed', free: 'free'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface TouchBarScrubberConstructorOptionsMode {
     companion object {
+        @seskar.js.JsValue("fixed")
         val fixed: TouchBarScrubberConstructorOptionsMode
+
+        @seskar.js.JsValue("free")
         val free: TouchBarScrubberConstructorOptionsMode
     }
 }

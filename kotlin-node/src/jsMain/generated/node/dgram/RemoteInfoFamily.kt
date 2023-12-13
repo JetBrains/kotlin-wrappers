@@ -3,14 +3,14 @@
 package node.dgram
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{IPv4: 'IPv4', IPv6: 'IPv6'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface RemoteInfoFamily {
     companion object {
+        @seskar.js.JsValue("IPv4")
         val IPv4: RemoteInfoFamily
+
+        @seskar.js.JsValue("IPv6")
         val IPv6: RemoteInfoFamily
     }
 }

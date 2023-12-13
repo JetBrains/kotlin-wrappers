@@ -3,15 +3,17 @@
 package electron.core
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{payAsYouGo: 'payAsYouGo', payUpFront: 'payUpFront', freeTrial: 'freeTrial'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface ProductDiscountPaymentMode {
     companion object {
+        @seskar.js.JsValue("payAsYouGo")
         val payAsYouGo: ProductDiscountPaymentMode
+
+        @seskar.js.JsValue("payUpFront")
         val payUpFront: ProductDiscountPaymentMode
+
+        @seskar.js.JsValue("freeTrial")
         val freeTrial: ProductDiscountPaymentMode
     }
 }

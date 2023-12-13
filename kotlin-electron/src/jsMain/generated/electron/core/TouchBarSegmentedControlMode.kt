@@ -3,15 +3,17 @@
 package electron.core
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{single: 'single', multiple: 'multiple', buttons: 'buttons'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface TouchBarSegmentedControlMode {
     companion object {
+        @seskar.js.JsValue("single")
         val single: TouchBarSegmentedControlMode
+
+        @seskar.js.JsValue("multiple")
         val multiple: TouchBarSegmentedControlMode
+
+        @seskar.js.JsValue("buttons")
         val buttons: TouchBarSegmentedControlMode
     }
 }

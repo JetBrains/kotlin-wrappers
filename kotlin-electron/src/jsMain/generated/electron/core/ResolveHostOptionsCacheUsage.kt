@@ -3,15 +3,17 @@
 package electron.core
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{allowed: 'allowed', staleAllowed: 'staleAllowed', disallowed: 'disallowed'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface ResolveHostOptionsCacheUsage {
     companion object {
+        @seskar.js.JsValue("allowed")
         val allowed: ResolveHostOptionsCacheUsage
+
+        @seskar.js.JsValue("staleAllowed")
         val staleAllowed: ResolveHostOptionsCacheUsage
+
+        @seskar.js.JsValue("disallowed")
         val disallowed: ResolveHostOptionsCacheUsage
     }
 }

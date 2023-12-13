@@ -3,15 +3,17 @@
 package electron.core
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{left: 'left', middle: 'middle', right: 'right'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface MouseInputEventButton {
     companion object {
+        @seskar.js.JsValue("left")
         val left: MouseInputEventButton
+
+        @seskar.js.JsValue("middle")
         val middle: MouseInputEventButton
+
+        @seskar.js.JsValue("right")
         val right: MouseInputEventButton
     }
 }

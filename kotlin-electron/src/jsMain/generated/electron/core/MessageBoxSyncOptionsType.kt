@@ -3,17 +3,23 @@
 package electron.core
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{none: 'none', info: 'info', error: 'error', question: 'question', warning: 'warning'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface MessageBoxSyncOptionsType {
     companion object {
+        @seskar.js.JsValue("none")
         val none: MessageBoxSyncOptionsType
+
+        @seskar.js.JsValue("info")
         val info: MessageBoxSyncOptionsType
+
+        @seskar.js.JsValue("error")
         val error: MessageBoxSyncOptionsType
+
+        @seskar.js.JsValue("question")
         val question: MessageBoxSyncOptionsType
+
+        @seskar.js.JsValue("warning")
         val warning: MessageBoxSyncOptionsType
     }
 }

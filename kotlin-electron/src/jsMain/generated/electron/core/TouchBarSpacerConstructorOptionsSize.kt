@@ -3,15 +3,17 @@
 package electron.core
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{small: 'small', large: 'large', flexible: 'flexible'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface TouchBarSpacerConstructorOptionsSize {
     companion object {
+        @seskar.js.JsValue("small")
         val small: TouchBarSpacerConstructorOptionsSize
+
+        @seskar.js.JsValue("large")
         val large: TouchBarSpacerConstructorOptionsSize
+
+        @seskar.js.JsValue("flexible")
         val flexible: TouchBarSpacerConstructorOptionsSize
     }
 }

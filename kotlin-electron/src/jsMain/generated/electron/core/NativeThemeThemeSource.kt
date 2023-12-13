@@ -3,15 +3,17 @@
 package electron.core
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{system: 'system', light: 'light', dark: 'dark'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface NativeThemeThemeSource {
     companion object {
+        @seskar.js.JsValue("system")
         val system: NativeThemeThemeSource
+
+        @seskar.js.JsValue("light")
         val light: NativeThemeThemeSource
+
+        @seskar.js.JsValue("dark")
         val dark: NativeThemeThemeSource
     }
 }

@@ -3,31 +3,65 @@
 package electron.core
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{appearanceBased: 'appearance-based', light: 'light', dark: 'dark', titlebar: 'titlebar', selection: 'selection', menu: 'menu', popover: 'popover', sidebar: 'sidebar', mediumLight: 'medium-light', ultraDark: 'ultra-dark', header: 'header', sheet: 'sheet', window: 'window', hud: 'hud', fullscreenUi: 'fullscreen-ui', tooltip: 'tooltip', content: 'content', underWindow: 'under-window', underPage: 'under-page'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface BrowserWindowConstructorOptionsVibrancy {
     companion object {
+        @seskar.js.JsValue("appearance-based")
         val appearanceBased: BrowserWindowConstructorOptionsVibrancy
+
+        @seskar.js.JsValue("light")
         val light: BrowserWindowConstructorOptionsVibrancy
+
+        @seskar.js.JsValue("dark")
         val dark: BrowserWindowConstructorOptionsVibrancy
+
+        @seskar.js.JsValue("titlebar")
         val titlebar: BrowserWindowConstructorOptionsVibrancy
+
+        @seskar.js.JsValue("selection")
         val selection: BrowserWindowConstructorOptionsVibrancy
+
+        @seskar.js.JsValue("menu")
         val menu: BrowserWindowConstructorOptionsVibrancy
+
+        @seskar.js.JsValue("popover")
         val popover: BrowserWindowConstructorOptionsVibrancy
+
+        @seskar.js.JsValue("sidebar")
         val sidebar: BrowserWindowConstructorOptionsVibrancy
+
+        @seskar.js.JsValue("medium-light")
         val mediumLight: BrowserWindowConstructorOptionsVibrancy
+
+        @seskar.js.JsValue("ultra-dark")
         val ultraDark: BrowserWindowConstructorOptionsVibrancy
+
+        @seskar.js.JsValue("header")
         val header: BrowserWindowConstructorOptionsVibrancy
+
+        @seskar.js.JsValue("sheet")
         val sheet: BrowserWindowConstructorOptionsVibrancy
+
+        @seskar.js.JsValue("window")
         val window: BrowserWindowConstructorOptionsVibrancy
+
+        @seskar.js.JsValue("hud")
         val hud: BrowserWindowConstructorOptionsVibrancy
+
+        @seskar.js.JsValue("fullscreen-ui")
         val fullscreenUi: BrowserWindowConstructorOptionsVibrancy
+
+        @seskar.js.JsValue("tooltip")
         val tooltip: BrowserWindowConstructorOptionsVibrancy
+
+        @seskar.js.JsValue("content")
         val content: BrowserWindowConstructorOptionsVibrancy
+
+        @seskar.js.JsValue("under-window")
         val underWindow: BrowserWindowConstructorOptionsVibrancy
+
+        @seskar.js.JsValue("under-page")
         val underPage: BrowserWindowConstructorOptionsVibrancy
     }
 }

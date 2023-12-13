@@ -3,14 +3,14 @@
 package node.crypto
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{pkcs1: 'pkcs1', spki: 'spki'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface ECKeyPairOptionsPublicKeyEncodingType {
     companion object {
+        @seskar.js.JsValue("pkcs1")
         val pkcs1: ECKeyPairOptionsPublicKeyEncodingType
+
+        @seskar.js.JsValue("spki")
         val spki: ECKeyPairOptionsPublicKeyEncodingType
     }
 }

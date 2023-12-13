@@ -3,16 +3,20 @@
 package electron.core
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{recordUntilFull: 'record-until-full', recordContinuously: 'record-continuously', recordAsMuchAsPossible: 'record-as-much-as-possible', traceToConsole: 'trace-to-console'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface TraceConfigRecording_mode {
     companion object {
+        @seskar.js.JsValue("record-until-full")
         val recordUntilFull: TraceConfigRecording_mode
+
+        @seskar.js.JsValue("record-continuously")
         val recordContinuously: TraceConfigRecording_mode
+
+        @seskar.js.JsValue("record-as-much-as-possible")
         val recordAsMuchAsPossible: TraceConfigRecording_mode
+
+        @seskar.js.JsValue("trace-to-console")
         val traceToConsole: TraceConfigRecording_mode
     }
 }

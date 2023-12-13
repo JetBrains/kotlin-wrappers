@@ -4,15 +4,17 @@
 package node.crypto
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{secret: 'secret', public: 'public', private: 'private'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface KeyObjectType {
     companion object {
+        @seskar.js.JsValue("secret")
         val secret: KeyObjectType
+
+        @seskar.js.JsValue("public")
         val public: KeyObjectType
+
+        @seskar.js.JsValue("private")
         val private: KeyObjectType
     }
 }

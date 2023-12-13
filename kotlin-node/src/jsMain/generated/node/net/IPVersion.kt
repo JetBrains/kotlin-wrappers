@@ -4,14 +4,14 @@
 package node.net
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{ipv4: 'ipv4', ipv6: 'ipv6'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface IPVersion {
     companion object {
+        @seskar.js.JsValue("ipv4")
         val ipv4: IPVersion
+
+        @seskar.js.JsValue("ipv6")
         val ipv6: IPVersion
     }
 }

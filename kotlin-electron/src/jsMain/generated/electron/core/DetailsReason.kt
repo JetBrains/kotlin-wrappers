@@ -3,19 +3,29 @@
 package electron.core
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{cleanExit: 'clean-exit', abnormalExit: 'abnormal-exit', killed: 'killed', crashed: 'crashed', oom: 'oom', launchFailed: 'launch-failed', integrityFailure: 'integrity-failure'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface DetailsReason {
     companion object {
+        @seskar.js.JsValue("clean-exit")
         val cleanExit: DetailsReason
+
+        @seskar.js.JsValue("abnormal-exit")
         val abnormalExit: DetailsReason
+
+        @seskar.js.JsValue("killed")
         val killed: DetailsReason
+
+        @seskar.js.JsValue("crashed")
         val crashed: DetailsReason
+
+        @seskar.js.JsValue("oom")
         val oom: DetailsReason
+
+        @seskar.js.JsValue("launch-failed")
         val launchFailed: DetailsReason
+
+        @seskar.js.JsValue("integrity-failure")
         val integrityFailure: DetailsReason
     }
 }

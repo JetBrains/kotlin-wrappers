@@ -4,17 +4,23 @@
 package node.net
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{opening: 'opening', open: 'open', readOnly: 'readOnly', writeOnly: 'writeOnly', closed: 'closed'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface SocketReadyState {
     companion object {
+        @seskar.js.JsValue("opening")
         val opening: SocketReadyState
+
+        @seskar.js.JsValue("open")
         val open: SocketReadyState
+
+        @seskar.js.JsValue("readOnly")
         val readOnly: SocketReadyState
+
+        @seskar.js.JsValue("writeOnly")
         val writeOnly: SocketReadyState
+
+        @seskar.js.JsValue("closed")
         val closed: SocketReadyState
     }
 }

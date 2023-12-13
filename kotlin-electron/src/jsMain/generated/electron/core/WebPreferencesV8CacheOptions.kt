@@ -3,16 +3,20 @@
 package electron.core
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{none: 'none', code: 'code', bypassHeatCheck: 'bypassHeatCheck', bypassHeatCheckAndEagerCompile: 'bypassHeatCheckAndEagerCompile'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface WebPreferencesV8CacheOptions {
     companion object {
+        @seskar.js.JsValue("none")
         val none: WebPreferencesV8CacheOptions
+
+        @seskar.js.JsValue("code")
         val code: WebPreferencesV8CacheOptions
+
+        @seskar.js.JsValue("bypassHeatCheck")
         val bypassHeatCheck: WebPreferencesV8CacheOptions
+
+        @seskar.js.JsValue("bypassHeatCheckAndEagerCompile")
         val bypassHeatCheckAndEagerCompile: WebPreferencesV8CacheOptions
     }
 }

@@ -3,15 +3,17 @@
 package electron.core
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{task: 'task', separator: 'separator', file: 'file'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface JumpListItemType {
     companion object {
+        @seskar.js.JsValue("task")
         val task: JumpListItemType
+
+        @seskar.js.JsValue("separator")
         val separator: JumpListItemType
+
+        @seskar.js.JsValue("file")
         val file: JumpListItemType
     }
 }

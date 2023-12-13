@@ -3,25 +3,47 @@
 package electron.core
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{mainFrame: 'mainFrame', subFrame: 'subFrame', stylesheet: 'stylesheet', script: 'script', image: 'image', font: 'font', `object`: 'object', xhr: 'xhr', ping: 'ping', cspReport: 'cspReport', media: 'media', webSocket: 'webSocket', other: 'other'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface OnBeforeRequestListenerDetailsResourceType {
     companion object {
+        @seskar.js.JsValue("mainFrame")
         val mainFrame: OnBeforeRequestListenerDetailsResourceType
+
+        @seskar.js.JsValue("subFrame")
         val subFrame: OnBeforeRequestListenerDetailsResourceType
+
+        @seskar.js.JsValue("stylesheet")
         val stylesheet: OnBeforeRequestListenerDetailsResourceType
+
+        @seskar.js.JsValue("script")
         val script: OnBeforeRequestListenerDetailsResourceType
+
+        @seskar.js.JsValue("image")
         val image: OnBeforeRequestListenerDetailsResourceType
+
+        @seskar.js.JsValue("font")
         val font: OnBeforeRequestListenerDetailsResourceType
+
+        @seskar.js.JsValue("object")
         val `object`: OnBeforeRequestListenerDetailsResourceType
+
+        @seskar.js.JsValue("xhr")
         val xhr: OnBeforeRequestListenerDetailsResourceType
+
+        @seskar.js.JsValue("ping")
         val ping: OnBeforeRequestListenerDetailsResourceType
+
+        @seskar.js.JsValue("cspReport")
         val cspReport: OnBeforeRequestListenerDetailsResourceType
+
+        @seskar.js.JsValue("media")
         val media: OnBeforeRequestListenerDetailsResourceType
+
+        @seskar.js.JsValue("webSocket")
         val webSocket: OnBeforeRequestListenerDetailsResourceType
+
+        @seskar.js.JsValue("other")
         val other: OnBeforeRequestListenerDetailsResourceType
     }
 }

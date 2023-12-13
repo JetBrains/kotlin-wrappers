@@ -3,19 +3,29 @@
 package electron.core
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{bottom: 'bottom', left: 'left', right: 'right', topLeft: 'top-left', topRight: 'top-right', bottomLeft: 'bottom-left', bottomRight: 'bottom-right'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface WillResizeDetailsEdge {
     companion object {
+        @seskar.js.JsValue("bottom")
         val bottom: WillResizeDetailsEdge
+
+        @seskar.js.JsValue("left")
         val left: WillResizeDetailsEdge
+
+        @seskar.js.JsValue("right")
         val right: WillResizeDetailsEdge
+
+        @seskar.js.JsValue("top-left")
         val topLeft: WillResizeDetailsEdge
+
+        @seskar.js.JsValue("top-right")
         val topRight: WillResizeDetailsEdge
+
+        @seskar.js.JsValue("bottom-left")
         val bottomLeft: WillResizeDetailsEdge
+
+        @seskar.js.JsValue("bottom-right")
         val bottomRight: WillResizeDetailsEdge
     }
 }

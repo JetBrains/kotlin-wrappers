@@ -3,15 +3,17 @@
 package electron.core
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{completed: 'completed', cancelled: 'cancelled', interrupted: 'interrupted'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface DownloadItemDoneListenerState {
     companion object {
+        @seskar.js.JsValue("completed")
         val completed: DownloadItemDoneListenerState
+
+        @seskar.js.JsValue("cancelled")
         val cancelled: DownloadItemDoneListenerState
+
+        @seskar.js.JsValue("interrupted")
         val interrupted: DownloadItemDoneListenerState
     }
 }

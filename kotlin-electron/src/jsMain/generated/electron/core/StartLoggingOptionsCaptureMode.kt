@@ -3,15 +3,17 @@
 package electron.core
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{default: 'default', includeSensitive: 'includeSensitive', everything: 'everything'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface StartLoggingOptionsCaptureMode {
     companion object {
+        @seskar.js.JsValue("default")
         val default: StartLoggingOptionsCaptureMode
+
+        @seskar.js.JsValue("includeSensitive")
         val includeSensitive: StartLoggingOptionsCaptureMode
+
+        @seskar.js.JsValue("everything")
         val everything: StartLoggingOptionsCaptureMode
     }
 }

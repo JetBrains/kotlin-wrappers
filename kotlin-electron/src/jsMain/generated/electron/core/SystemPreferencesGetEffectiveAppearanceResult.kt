@@ -3,15 +3,17 @@
 package electron.core
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{dark: 'dark', light: 'light', unknown: 'unknown'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface SystemPreferencesGetEffectiveAppearanceResult {
     companion object {
+        @seskar.js.JsValue("dark")
         val dark: SystemPreferencesGetEffectiveAppearanceResult
+
+        @seskar.js.JsValue("light")
         val light: SystemPreferencesGetEffectiveAppearanceResult
+
+        @seskar.js.JsValue("unknown")
         val unknown: SystemPreferencesGetEffectiveAppearanceResult
     }
 }

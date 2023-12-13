@@ -4,14 +4,14 @@
 package node.childProcess
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{json: 'json', advanced: 'advanced'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface SerializationType {
     companion object {
+        @seskar.js.JsValue("json")
         val json: SerializationType
+
+        @seskar.js.JsValue("advanced")
         val advanced: SerializationType
     }
 }

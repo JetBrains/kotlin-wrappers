@@ -3,20 +3,32 @@
 package electron.core
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{normal: 'normal', floating: 'floating', tornOffMenu: 'torn-off-menu', modalPanel: 'modal-panel', mainMenu: 'main-menu', status: 'status', popUpMenu: 'pop-up-menu', screenSaver: 'screen-saver'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface BrowserWindowSetAlwaysOnTopLevel {
     companion object {
+        @seskar.js.JsValue("normal")
         val normal: BrowserWindowSetAlwaysOnTopLevel
+
+        @seskar.js.JsValue("floating")
         val floating: BrowserWindowSetAlwaysOnTopLevel
+
+        @seskar.js.JsValue("torn-off-menu")
         val tornOffMenu: BrowserWindowSetAlwaysOnTopLevel
+
+        @seskar.js.JsValue("modal-panel")
         val modalPanel: BrowserWindowSetAlwaysOnTopLevel
+
+        @seskar.js.JsValue("main-menu")
         val mainMenu: BrowserWindowSetAlwaysOnTopLevel
+
+        @seskar.js.JsValue("status")
         val status: BrowserWindowSetAlwaysOnTopLevel
+
+        @seskar.js.JsValue("pop-up-menu")
         val popUpMenu: BrowserWindowSetAlwaysOnTopLevel
+
+        @seskar.js.JsValue("screen-saver")
         val screenSaver: BrowserWindowSetAlwaysOnTopLevel
     }
 }

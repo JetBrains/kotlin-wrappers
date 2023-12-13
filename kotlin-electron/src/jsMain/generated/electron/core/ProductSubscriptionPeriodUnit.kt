@@ -3,16 +3,20 @@
 package electron.core
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{day: 'day', week: 'week', month: 'month', year: 'year'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface ProductSubscriptionPeriodUnit {
     companion object {
+        @seskar.js.JsValue("day")
         val day: ProductSubscriptionPeriodUnit
+
+        @seskar.js.JsValue("week")
         val week: ProductSubscriptionPeriodUnit
+
+        @seskar.js.JsValue("month")
         val month: ProductSubscriptionPeriodUnit
+
+        @seskar.js.JsValue("year")
         val year: ProductSubscriptionPeriodUnit
     }
 }

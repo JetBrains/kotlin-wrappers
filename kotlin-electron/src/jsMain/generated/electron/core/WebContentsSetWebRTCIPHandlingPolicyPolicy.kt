@@ -3,16 +3,20 @@
 package electron.core
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{default: 'default', defaultPublicInterfaceOnly: 'default_public_interface_only', defaultPublicAndPrivateInterfaces: 'default_public_and_private_interfaces', disableNonProxiedUdp: 'disable_non_proxied_udp'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface WebContentsSetWebRTCIPHandlingPolicyPolicy {
     companion object {
+        @seskar.js.JsValue("default")
         val default: WebContentsSetWebRTCIPHandlingPolicyPolicy
+
+        @seskar.js.JsValue("default_public_interface_only")
         val defaultPublicInterfaceOnly: WebContentsSetWebRTCIPHandlingPolicyPolicy
+
+        @seskar.js.JsValue("default_public_and_private_interfaces")
         val defaultPublicAndPrivateInterfaces: WebContentsSetWebRTCIPHandlingPolicyPolicy
+
+        @seskar.js.JsValue("disable_non_proxied_udp")
         val disableNonProxiedUdp: WebContentsSetWebRTCIPHandlingPolicyPolicy
     }
 }

@@ -3,16 +3,20 @@
 package electron.core
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{rawKeyDown: 'rawKeyDown', keyDown: 'keyDown', keyUp: 'keyUp', char: 'char'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface KeyboardInputEventType {
     companion object {
+        @seskar.js.JsValue("rawKeyDown")
         val rawKeyDown: KeyboardInputEventType
+
+        @seskar.js.JsValue("keyDown")
         val keyDown: KeyboardInputEventType
+
+        @seskar.js.JsValue("keyUp")
         val keyUp: KeyboardInputEventType
+
+        @seskar.js.JsValue("char")
         val char: KeyboardInputEventType
     }
 }

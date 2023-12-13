@@ -3,15 +3,17 @@
 package electron.core
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{available: 'available', unavailable: 'unavailable', unknown: 'unknown'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface DisplayAccelerometerSupport {
     companion object {
+        @seskar.js.JsValue("available")
         val available: DisplayAccelerometerSupport
+
+        @seskar.js.JsValue("unavailable")
         val unavailable: DisplayAccelerometerSupport
+
+        @seskar.js.JsValue("unknown")
         val unknown: DisplayAccelerometerSupport
     }
 }

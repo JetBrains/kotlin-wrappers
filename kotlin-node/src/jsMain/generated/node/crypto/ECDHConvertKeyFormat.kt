@@ -3,15 +3,17 @@
 package node.crypto
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{uncompressed: 'uncompressed', compressed: 'compressed', hybrid: 'hybrid'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface ECDHConvertKeyFormat {
     companion object {
+        @seskar.js.JsValue("uncompressed")
         val uncompressed: ECDHConvertKeyFormat
+
+        @seskar.js.JsValue("compressed")
         val compressed: ECDHConvertKeyFormat
+
+        @seskar.js.JsValue("hybrid")
         val hybrid: ECDHConvertKeyFormat
     }
 }

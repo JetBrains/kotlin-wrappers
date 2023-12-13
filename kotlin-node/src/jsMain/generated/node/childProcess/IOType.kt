@@ -4,16 +4,20 @@
 package node.childProcess
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{overlapped: 'overlapped', pipe: 'pipe', ignore: 'ignore', inherit: 'inherit'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface IOType {
     companion object {
+        @seskar.js.JsValue("overlapped")
         val overlapped: IOType
+
+        @seskar.js.JsValue("pipe")
         val pipe: IOType
+
+        @seskar.js.JsValue("ignore")
         val ignore: IOType
+
+        @seskar.js.JsValue("inherit")
         val inherit: IOType
     }
 }

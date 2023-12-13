@@ -3,23 +3,41 @@
 package electron.core
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{none: 'none', mouse: 'mouse', keyboard: 'keyboard', touch: 'touch', touchMenu: 'touchMenu', longPress: 'longPress', longTap: 'longTap', touchHandle: 'touchHandle', stylus: 'stylus', adjustSelection: 'adjustSelection', adjustSelectionReset: 'adjustSelectionReset'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface ContextMenuParamsMenuSourceType {
     companion object {
+        @seskar.js.JsValue("none")
         val none: ContextMenuParamsMenuSourceType
+
+        @seskar.js.JsValue("mouse")
         val mouse: ContextMenuParamsMenuSourceType
+
+        @seskar.js.JsValue("keyboard")
         val keyboard: ContextMenuParamsMenuSourceType
+
+        @seskar.js.JsValue("touch")
         val touch: ContextMenuParamsMenuSourceType
+
+        @seskar.js.JsValue("touchMenu")
         val touchMenu: ContextMenuParamsMenuSourceType
+
+        @seskar.js.JsValue("longPress")
         val longPress: ContextMenuParamsMenuSourceType
+
+        @seskar.js.JsValue("longTap")
         val longTap: ContextMenuParamsMenuSourceType
+
+        @seskar.js.JsValue("touchHandle")
         val touchHandle: ContextMenuParamsMenuSourceType
+
+        @seskar.js.JsValue("stylus")
         val stylus: ContextMenuParamsMenuSourceType
+
+        @seskar.js.JsValue("adjustSelection")
         val adjustSelection: ContextMenuParamsMenuSourceType
+
+        @seskar.js.JsValue("adjustSelectionReset")
         val adjustSelectionReset: ContextMenuParamsMenuSourceType
     }
 }

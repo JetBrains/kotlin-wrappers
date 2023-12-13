@@ -3,24 +3,44 @@
 package electron.core
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{mainFrame: 'mainFrame', subFrame: 'subFrame', stylesheet: 'stylesheet', script: 'script', image: 'image', font: 'font', `object`: 'object', xhr: 'xhr', ping: 'ping', cspReport: 'cspReport', media: 'media', webSocket: 'webSocket'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface WebRequestFilterType {
     companion object {
+        @seskar.js.JsValue("mainFrame")
         val mainFrame: WebRequestFilterType
+
+        @seskar.js.JsValue("subFrame")
         val subFrame: WebRequestFilterType
+
+        @seskar.js.JsValue("stylesheet")
         val stylesheet: WebRequestFilterType
+
+        @seskar.js.JsValue("script")
         val script: WebRequestFilterType
+
+        @seskar.js.JsValue("image")
         val image: WebRequestFilterType
+
+        @seskar.js.JsValue("font")
         val font: WebRequestFilterType
+
+        @seskar.js.JsValue("object")
         val `object`: WebRequestFilterType
+
+        @seskar.js.JsValue("xhr")
         val xhr: WebRequestFilterType
+
+        @seskar.js.JsValue("ping")
         val ping: WebRequestFilterType
+
+        @seskar.js.JsValue("cspReport")
         val cspReport: WebRequestFilterType
+
+        @seskar.js.JsValue("media")
         val media: WebRequestFilterType
+
+        @seskar.js.JsValue("webSocket")
         val webSocket: WebRequestFilterType
     }
 }

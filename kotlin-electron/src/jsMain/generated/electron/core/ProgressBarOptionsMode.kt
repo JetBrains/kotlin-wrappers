@@ -3,17 +3,23 @@
 package electron.core
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{none: 'none', normal: 'normal', indeterminate: 'indeterminate', error: 'error', paused: 'paused'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface ProgressBarOptionsMode {
     companion object {
+        @seskar.js.JsValue("none")
         val none: ProgressBarOptionsMode
+
+        @seskar.js.JsValue("normal")
         val normal: ProgressBarOptionsMode
+
+        @seskar.js.JsValue("indeterminate")
         val indeterminate: ProgressBarOptionsMode
+
+        @seskar.js.JsValue("error")
         val error: ProgressBarOptionsMode
+
+        @seskar.js.JsValue("paused")
         val paused: ProgressBarOptionsMode
     }
 }

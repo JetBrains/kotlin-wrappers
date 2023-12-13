@@ -3,14 +3,14 @@
 package node.dns
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{ipv4first: 'ipv4first', verbatim: 'verbatim'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface SetDefaultResultOrderOrder {
     companion object {
+        @seskar.js.JsValue("ipv4first")
         val ipv4first: SetDefaultResultOrderOrder
+
+        @seskar.js.JsValue("verbatim")
         val verbatim: SetDefaultResultOrderOrder
     }
 }

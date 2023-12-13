@@ -3,17 +3,23 @@
 package electron.core
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{normal: 'normal', separator: 'separator', submenu: 'submenu', checkbox: 'checkbox', radio: 'radio'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface MenuItemConstructorOptionsType {
     companion object {
+        @seskar.js.JsValue("normal")
         val normal: MenuItemConstructorOptionsType
+
+        @seskar.js.JsValue("separator")
         val separator: MenuItemConstructorOptionsType
+
+        @seskar.js.JsValue("submenu")
         val submenu: MenuItemConstructorOptionsType
+
+        @seskar.js.JsValue("checkbox")
         val checkbox: MenuItemConstructorOptionsType
+
+        @seskar.js.JsValue("radio")
         val radio: MenuItemConstructorOptionsType
     }
 }

@@ -4,14 +4,14 @@
 package remix.run.router
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{idle: 'idle', loading: 'loading'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface RevalidationState {
     companion object {
+        @seskar.js.JsValue("idle")
         val idle: RevalidationState
+
+        @seskar.js.JsValue("loading")
         val loading: RevalidationState
     }
 }

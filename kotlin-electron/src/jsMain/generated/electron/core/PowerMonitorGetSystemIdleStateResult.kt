@@ -3,16 +3,20 @@
 package electron.core
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{active: 'active', idle: 'idle', locked: 'locked', unknown: 'unknown'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface PowerMonitorGetSystemIdleStateResult {
     companion object {
+        @seskar.js.JsValue("active")
         val active: PowerMonitorGetSystemIdleStateResult
+
+        @seskar.js.JsValue("idle")
         val idle: PowerMonitorGetSystemIdleStateResult
+
+        @seskar.js.JsValue("locked")
         val locked: PowerMonitorGetSystemIdleStateResult
+
+        @seskar.js.JsValue("unknown")
         val unknown: PowerMonitorGetSystemIdleStateResult
     }
 }

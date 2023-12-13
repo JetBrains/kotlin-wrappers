@@ -3,15 +3,17 @@
 package electron.core
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{HTMLOnly: 'HTMLOnly', HTMLComplete: 'HTMLComplete', MHTML: 'MHTML'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface WebContentsSavePageSaveType {
     companion object {
+        @seskar.js.JsValue("HTMLOnly")
         val HTMLOnly: WebContentsSavePageSaveType
+
+        @seskar.js.JsValue("HTMLComplete")
         val HTMLComplete: WebContentsSavePageSaveType
+
+        @seskar.js.JsValue("MHTML")
         val MHTML: WebContentsSavePageSaveType
     }
 }

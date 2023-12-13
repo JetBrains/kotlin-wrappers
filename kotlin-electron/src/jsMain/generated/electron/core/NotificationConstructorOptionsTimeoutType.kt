@@ -3,14 +3,14 @@
 package electron.core
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{default: 'default', never: 'never'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface NotificationConstructorOptionsTimeoutType {
     companion object {
+        @seskar.js.JsValue("default")
         val default: NotificationConstructorOptionsTimeoutType
+
+        @seskar.js.JsValue("never")
         val never: NotificationConstructorOptionsTimeoutType
     }
 }

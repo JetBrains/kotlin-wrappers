@@ -3,17 +3,23 @@
 package electron.core
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{purchasing: 'purchasing', purchased: 'purchased', failed: 'failed', restored: 'restored', deferred: 'deferred'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface TransactionTransactionState {
     companion object {
+        @seskar.js.JsValue("purchasing")
         val purchasing: TransactionTransactionState
+
+        @seskar.js.JsValue("purchased")
         val purchased: TransactionTransactionState
+
+        @seskar.js.JsValue("failed")
         val failed: TransactionTransactionState
+
+        @seskar.js.JsValue("restored")
         val restored: TransactionTransactionState
+
+        @seskar.js.JsValue("deferred")
         val deferred: TransactionTransactionState
     }
 }

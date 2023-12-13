@@ -3,19 +3,29 @@
 package electron.core
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{Utility: 'Utility', Zygote: 'Zygote', SandboxHelper: 'Sandbox helper', GPU: 'GPU', PepperPlugin: 'Pepper Plugin', PepperPluginBroker: 'Pepper Plugin Broker', Unknown: 'Unknown'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface DetailsType {
     companion object {
+        @seskar.js.JsValue("Utility")
         val Utility: DetailsType
+
+        @seskar.js.JsValue("Zygote")
         val Zygote: DetailsType
+
+        @seskar.js.JsValue("Sandbox helper")
         val SandboxHelper: DetailsType
+
+        @seskar.js.JsValue("GPU")
         val GPU: DetailsType
+
+        @seskar.js.JsValue("Pepper Plugin")
         val PepperPlugin: DetailsType
+
+        @seskar.js.JsValue("Pepper Plugin Broker")
         val PepperPluginBroker: DetailsType
+
+        @seskar.js.JsValue("Unknown")
         val Unknown: DetailsType
     }
 }

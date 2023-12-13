@@ -3,14 +3,14 @@
 package electron.core
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{desktop: 'desktop', mobile: 'mobile'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface ParametersScreenPosition {
     companion object {
+        @seskar.js.JsValue("desktop")
         val desktop: ParametersScreenPosition
+
+        @seskar.js.JsValue("mobile")
         val mobile: ParametersScreenPosition
     }
 }

@@ -3,14 +3,14 @@
 package electron.core
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{video: 'video', audio: 'audio'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface PermissionRequestHandlerHandlerDetailsMediaType {
     companion object {
+        @seskar.js.JsValue("video")
         val video: PermissionRequestHandlerHandlerDetailsMediaType
+
+        @seskar.js.JsValue("audio")
         val audio: PermissionRequestHandlerHandlerDetailsMediaType
     }
 }

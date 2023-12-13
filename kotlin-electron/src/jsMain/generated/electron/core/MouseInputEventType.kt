@@ -3,19 +3,29 @@
 package electron.core
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{mouseDown: 'mouseDown', mouseUp: 'mouseUp', mouseEnter: 'mouseEnter', mouseLeave: 'mouseLeave', contextMenu: 'contextMenu', mouseWheel: 'mouseWheel', mouseMove: 'mouseMove'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface MouseInputEventType {
     companion object {
+        @seskar.js.JsValue("mouseDown")
         val mouseDown: MouseInputEventType
+
+        @seskar.js.JsValue("mouseUp")
         val mouseUp: MouseInputEventType
+
+        @seskar.js.JsValue("mouseEnter")
         val mouseEnter: MouseInputEventType
+
+        @seskar.js.JsValue("mouseLeave")
         val mouseLeave: MouseInputEventType
+
+        @seskar.js.JsValue("contextMenu")
         val contextMenu: MouseInputEventType
+
+        @seskar.js.JsValue("mouseWheel")
         val mouseWheel: MouseInputEventType
+
+        @seskar.js.JsValue("mouseMove")
         val mouseMove: MouseInputEventType
     }
 }

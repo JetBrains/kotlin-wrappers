@@ -4,18 +4,26 @@
 package node.buffer
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{ascii: 'ascii', utf8: 'utf8', utf16le: 'utf16le', ucs2: 'ucs2', latin1: 'latin1', binary: 'binary'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface TranscodeEncoding {
     companion object {
+        @seskar.js.JsValue("ascii")
         val ascii: TranscodeEncoding
+
+        @seskar.js.JsValue("utf8")
         val utf8: TranscodeEncoding
+
+        @seskar.js.JsValue("utf16le")
         val utf16le: TranscodeEncoding
+
+        @seskar.js.JsValue("ucs2")
         val ucs2: TranscodeEncoding
+
+        @seskar.js.JsValue("latin1")
         val latin1: TranscodeEncoding
+
+        @seskar.js.JsValue("binary")
         val binary: TranscodeEncoding
     }
 }

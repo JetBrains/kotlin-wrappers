@@ -4,14 +4,14 @@
 package node.dgram
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{udp4: 'udp4', udp6: 'udp6'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface SocketType {
     companion object {
+        @seskar.js.JsValue("udp4")
         val udp4: SocketType
+
+        @seskar.js.JsValue("udp6")
         val udp6: SocketType
     }
 }

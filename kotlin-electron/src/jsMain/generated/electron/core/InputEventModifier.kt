@@ -3,28 +3,56 @@
 package electron.core
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{shift: 'shift', control: 'control', ctrl: 'ctrl', alt: 'alt', meta: 'meta', command: 'command', cmd: 'cmd', isKeypad: 'isKeypad', isAutoRepeat: 'isAutoRepeat', leftButtonDown: 'leftButtonDown', middleButtonDown: 'middleButtonDown', rightButtonDown: 'rightButtonDown', capsLock: 'capsLock', numLock: 'numLock', left: 'left', right: 'right'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface InputEventModifier {
     companion object {
+        @seskar.js.JsValue("shift")
         val shift: InputEventModifier
+
+        @seskar.js.JsValue("control")
         val control: InputEventModifier
+
+        @seskar.js.JsValue("ctrl")
         val ctrl: InputEventModifier
+
+        @seskar.js.JsValue("alt")
         val alt: InputEventModifier
+
+        @seskar.js.JsValue("meta")
         val meta: InputEventModifier
+
+        @seskar.js.JsValue("command")
         val command: InputEventModifier
+
+        @seskar.js.JsValue("cmd")
         val cmd: InputEventModifier
+
+        @seskar.js.JsValue("isKeypad")
         val isKeypad: InputEventModifier
+
+        @seskar.js.JsValue("isAutoRepeat")
         val isAutoRepeat: InputEventModifier
+
+        @seskar.js.JsValue("leftButtonDown")
         val leftButtonDown: InputEventModifier
+
+        @seskar.js.JsValue("middleButtonDown")
         val middleButtonDown: InputEventModifier
+
+        @seskar.js.JsValue("rightButtonDown")
         val rightButtonDown: InputEventModifier
+
+        @seskar.js.JsValue("capsLock")
         val capsLock: InputEventModifier
+
+        @seskar.js.JsValue("numLock")
         val numLock: InputEventModifier
+
+        @seskar.js.JsValue("left")
         val left: InputEventModifier
+
+        @seskar.js.JsValue("right")
         val right: InputEventModifier
     }
 }

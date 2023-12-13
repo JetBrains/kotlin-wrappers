@@ -3,57 +3,137 @@
 package electron.core
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName(
-    """(/*union*/{undo: 'undo', redo: 'redo', cut: 'cut', copy: 'copy', paste: 'paste', pasteAndMatchStyle: 'pasteAndMatchStyle', delete: 'delete', selectAll: 'selectAll', reload: 'reload', forceReload: 'forceReload', toggleDevTools: 'toggleDevTools', resetZoom: 'resetZoom', zoomIn: 'zoomIn', zoomOut: 'zoomOut', toggleSpellChecker: 'toggleSpellChecker', togglefullscreen: 'togglefullscreen', window: 'window', minimize: 'minimize', close: 'close', help: 'help', about: 'about', services: 'services', hide: 'hide', hideOthers: 'hideOthers', unhide: 'unhide', quit: 'quit', startSpeaking: 'startSpeaking', stopSpeaking: 'stopSpeaking', zoom: 'zoom', front: 'front', appMenu: 'appMenu', fileMenu: 'fileMenu', editMenu: 'editMenu', viewMenu: 'viewMenu', shareMenu: 'shareMenu', recentDocuments: 'recentDocuments', toggleTabBar: 'toggleTabBar', selectNextTab: 'selectNextTab', selectPreviousTab: 'selectPreviousTab', mergeAllWindows: 'mergeAllWindows', clearRecentDocuments: 'clearRecentDocuments', moveTabToNewWindow: 'moveTabToNewWindow', windowMenu: 'windowMenu'}/*union*/)"""
-)
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface MenuItemRole {
     companion object {
+        @seskar.js.JsValue("undo")
         val undo: MenuItemRole
+
+        @seskar.js.JsValue("redo")
         val redo: MenuItemRole
+
+        @seskar.js.JsValue("cut")
         val cut: MenuItemRole
+
+        @seskar.js.JsValue("copy")
         val copy: MenuItemRole
+
+        @seskar.js.JsValue("paste")
         val paste: MenuItemRole
+
+        @seskar.js.JsValue("pasteAndMatchStyle")
         val pasteAndMatchStyle: MenuItemRole
+
+        @seskar.js.JsValue("delete")
         val delete: MenuItemRole
+
+        @seskar.js.JsValue("selectAll")
         val selectAll: MenuItemRole
+
+        @seskar.js.JsValue("reload")
         val reload: MenuItemRole
+
+        @seskar.js.JsValue("forceReload")
         val forceReload: MenuItemRole
+
+        @seskar.js.JsValue("toggleDevTools")
         val toggleDevTools: MenuItemRole
+
+        @seskar.js.JsValue("resetZoom")
         val resetZoom: MenuItemRole
+
+        @seskar.js.JsValue("zoomIn")
         val zoomIn: MenuItemRole
+
+        @seskar.js.JsValue("zoomOut")
         val zoomOut: MenuItemRole
+
+        @seskar.js.JsValue("toggleSpellChecker")
         val toggleSpellChecker: MenuItemRole
+
+        @seskar.js.JsValue("togglefullscreen")
         val togglefullscreen: MenuItemRole
+
+        @seskar.js.JsValue("window")
         val window: MenuItemRole
+
+        @seskar.js.JsValue("minimize")
         val minimize: MenuItemRole
+
+        @seskar.js.JsValue("close")
         val close: MenuItemRole
+
+        @seskar.js.JsValue("help")
         val help: MenuItemRole
+
+        @seskar.js.JsValue("about")
         val about: MenuItemRole
+
+        @seskar.js.JsValue("services")
         val services: MenuItemRole
+
+        @seskar.js.JsValue("hide")
         val hide: MenuItemRole
+
+        @seskar.js.JsValue("hideOthers")
         val hideOthers: MenuItemRole
+
+        @seskar.js.JsValue("unhide")
         val unhide: MenuItemRole
+
+        @seskar.js.JsValue("quit")
         val quit: MenuItemRole
+
+        @seskar.js.JsValue("startSpeaking")
         val startSpeaking: MenuItemRole
+
+        @seskar.js.JsValue("stopSpeaking")
         val stopSpeaking: MenuItemRole
+
+        @seskar.js.JsValue("zoom")
         val zoom: MenuItemRole
+
+        @seskar.js.JsValue("front")
         val front: MenuItemRole
+
+        @seskar.js.JsValue("appMenu")
         val appMenu: MenuItemRole
+
+        @seskar.js.JsValue("fileMenu")
         val fileMenu: MenuItemRole
+
+        @seskar.js.JsValue("editMenu")
         val editMenu: MenuItemRole
+
+        @seskar.js.JsValue("viewMenu")
         val viewMenu: MenuItemRole
+
+        @seskar.js.JsValue("shareMenu")
         val shareMenu: MenuItemRole
+
+        @seskar.js.JsValue("recentDocuments")
         val recentDocuments: MenuItemRole
+
+        @seskar.js.JsValue("toggleTabBar")
         val toggleTabBar: MenuItemRole
+
+        @seskar.js.JsValue("selectNextTab")
         val selectNextTab: MenuItemRole
+
+        @seskar.js.JsValue("selectPreviousTab")
         val selectPreviousTab: MenuItemRole
+
+        @seskar.js.JsValue("mergeAllWindows")
         val mergeAllWindows: MenuItemRole
+
+        @seskar.js.JsValue("clearRecentDocuments")
         val clearRecentDocuments: MenuItemRole
+
+        @seskar.js.JsValue("moveTabToNewWindow")
         val moveTabToNewWindow: MenuItemRole
+
+        @seskar.js.JsValue("windowMenu")
         val windowMenu: MenuItemRole
     }
 }

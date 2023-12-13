@@ -3,17 +3,23 @@
 package electron.core
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{any: 'any', system: 'system', dns: 'dns', mdns: 'mdns', localOnly: 'localOnly'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface ResolveHostOptionsSource {
     companion object {
+        @seskar.js.JsValue("any")
         val any: ResolveHostOptionsSource
+
+        @seskar.js.JsValue("system")
         val system: ResolveHostOptionsSource
+
+        @seskar.js.JsValue("dns")
         val dns: ResolveHostOptionsSource
+
+        @seskar.js.JsValue("mdns")
         val mdns: ResolveHostOptionsSource
+
+        @seskar.js.JsValue("localOnly")
         val localOnly: ResolveHostOptionsSource
     }
 }

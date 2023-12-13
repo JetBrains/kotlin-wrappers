@@ -3,4 +3,6 @@
 
 package electron
 
+import node.buffer.Buffer
+
 typealias SafeStorage = electron.core.SafeStorage

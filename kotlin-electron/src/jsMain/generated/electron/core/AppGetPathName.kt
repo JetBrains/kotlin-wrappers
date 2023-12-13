@@ -3,28 +3,56 @@
 package electron.core
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{home: 'home', appData: 'appData', userData: 'userData', sessionData: 'sessionData', temp: 'temp', exe: 'exe', module: 'module', desktop: 'desktop', documents: 'documents', downloads: 'downloads', music: 'music', pictures: 'pictures', videos: 'videos', recent: 'recent', logs: 'logs', crashDumps: 'crashDumps'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface AppGetPathName {
     companion object {
+        @seskar.js.JsValue("home")
         val home: AppGetPathName
+
+        @seskar.js.JsValue("appData")
         val appData: AppGetPathName
+
+        @seskar.js.JsValue("userData")
         val userData: AppGetPathName
+
+        @seskar.js.JsValue("sessionData")
         val sessionData: AppGetPathName
+
+        @seskar.js.JsValue("temp")
         val temp: AppGetPathName
+
+        @seskar.js.JsValue("exe")
         val exe: AppGetPathName
+
+        @seskar.js.JsValue("module")
         val module: AppGetPathName
+
+        @seskar.js.JsValue("desktop")
         val desktop: AppGetPathName
+
+        @seskar.js.JsValue("documents")
         val documents: AppGetPathName
+
+        @seskar.js.JsValue("downloads")
         val downloads: AppGetPathName
+
+        @seskar.js.JsValue("music")
         val music: AppGetPathName
+
+        @seskar.js.JsValue("pictures")
         val pictures: AppGetPathName
+
+        @seskar.js.JsValue("videos")
         val videos: AppGetPathName
+
+        @seskar.js.JsValue("recent")
         val recent: AppGetPathName
+
+        @seskar.js.JsValue("logs")
         val logs: AppGetPathName
+
+        @seskar.js.JsValue("crashDumps")
         val crashDumps: AppGetPathName
     }
 }

@@ -3,15 +3,17 @@
 package electron.core
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{confirm: 'confirm', confirmPin: 'confirmPin', providePin: 'providePin'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface BluetoothPairingHandlerHandlerDetailsPairingKind {
     companion object {
+        @seskar.js.JsValue("confirm")
         val confirm: BluetoothPairingHandlerHandlerDetailsPairingKind
+
+        @seskar.js.JsValue("confirmPin")
         val confirmPin: BluetoothPairingHandlerHandlerDetailsPairingKind
+
+        @seskar.js.JsValue("providePin")
         val providePin: BluetoothPairingHandlerHandlerDetailsPairingKind
     }
 }

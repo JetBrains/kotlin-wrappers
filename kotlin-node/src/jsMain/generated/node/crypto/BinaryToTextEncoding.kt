@@ -6,16 +6,20 @@ package node.crypto
 
 // https://nodejs.org/api/buffer.html#buffer_buffers_and_character_encodings
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{base64: 'base64', base64url: 'base64url', hex: 'hex', binary: 'binary'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface BinaryToTextEncoding {
     companion object {
+        @seskar.js.JsValue("base64")
         val base64: BinaryToTextEncoding
+
+        @seskar.js.JsValue("base64url")
         val base64url: BinaryToTextEncoding
+
+        @seskar.js.JsValue("hex")
         val hex: BinaryToTextEncoding
+
+        @seskar.js.JsValue("binary")
         val binary: BinaryToTextEncoding
     }
 }

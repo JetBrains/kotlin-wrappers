@@ -3,14 +3,14 @@
 package electron.core
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{preventAppSuspension: 'prevent-app-suspension', preventDisplaySleep: 'prevent-display-sleep'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface PowerSaveBlockerStartType {
     companion object {
+        @seskar.js.JsValue("prevent-app-suspension")
         val preventAppSuspension: PowerSaveBlockerStartType
+
+        @seskar.js.JsValue("prevent-display-sleep")
         val preventDisplaySleep: PowerSaveBlockerStartType
     }
 }

@@ -3,15 +3,17 @@
 package electron.core
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{create: 'create', update: 'update', replace: 'replace'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface ShellWriteShortcutLinkOperation {
     companion object {
+        @seskar.js.JsValue("create")
         val create: ShellWriteShortcutLinkOperation
+
+        @seskar.js.JsValue("update")
         val update: ShellWriteShortcutLinkOperation
+
+        @seskar.js.JsValue("replace")
         val replace: ShellWriteShortcutLinkOperation
     }
 }

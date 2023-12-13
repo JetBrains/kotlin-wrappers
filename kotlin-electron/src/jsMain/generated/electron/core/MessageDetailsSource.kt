@@ -3,25 +3,47 @@
 package electron.core
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{javascript: 'javascript', xml: 'xml', network: 'network', consoleApi: 'console-api', storage: 'storage', rendering: 'rendering', security: 'security', deprecation: 'deprecation', worker: 'worker', violation: 'violation', intervention: 'intervention', recommendation: 'recommendation', other: 'other'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface MessageDetailsSource {
     companion object {
+        @seskar.js.JsValue("javascript")
         val javascript: MessageDetailsSource
+
+        @seskar.js.JsValue("xml")
         val xml: MessageDetailsSource
+
+        @seskar.js.JsValue("network")
         val network: MessageDetailsSource
+
+        @seskar.js.JsValue("console-api")
         val consoleApi: MessageDetailsSource
+
+        @seskar.js.JsValue("storage")
         val storage: MessageDetailsSource
+
+        @seskar.js.JsValue("rendering")
         val rendering: MessageDetailsSource
+
+        @seskar.js.JsValue("security")
         val security: MessageDetailsSource
+
+        @seskar.js.JsValue("deprecation")
         val deprecation: MessageDetailsSource
+
+        @seskar.js.JsValue("worker")
         val worker: MessageDetailsSource
+
+        @seskar.js.JsValue("violation")
         val violation: MessageDetailsSource
+
+        @seskar.js.JsValue("intervention")
         val intervention: MessageDetailsSource
+
+        @seskar.js.JsValue("recommendation")
         val recommendation: MessageDetailsSource
+
+        @seskar.js.JsValue("other")
         val other: MessageDetailsSource
     }
 }

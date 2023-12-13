@@ -3,15 +3,17 @@
 package electron.core
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{left: 'left', right: 'right', overlay: 'overlay'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface TouchBarButtonConstructorOptionsIconPosition {
     companion object {
+        @seskar.js.JsValue("left")
         val left: TouchBarButtonConstructorOptionsIconPosition
+
+        @seskar.js.JsValue("right")
         val right: TouchBarButtonConstructorOptionsIconPosition
+
+        @seskar.js.JsValue("overlay")
         val overlay: TouchBarButtonConstructorOptionsIconPosition
     }
 }

@@ -3,20 +3,32 @@
 package electron.core
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{automatic: 'automatic', rounded: 'rounded', texturedRounded: 'textured-rounded', roundRect: 'round-rect', texturedSquare: 'textured-square', capsule: 'capsule', smallSquare: 'small-square', separated: 'separated'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface TouchBarSegmentedControlConstructorOptionsSegmentStyle {
     companion object {
+        @seskar.js.JsValue("automatic")
         val automatic: TouchBarSegmentedControlConstructorOptionsSegmentStyle
+
+        @seskar.js.JsValue("rounded")
         val rounded: TouchBarSegmentedControlConstructorOptionsSegmentStyle
+
+        @seskar.js.JsValue("textured-rounded")
         val texturedRounded: TouchBarSegmentedControlConstructorOptionsSegmentStyle
+
+        @seskar.js.JsValue("round-rect")
         val roundRect: TouchBarSegmentedControlConstructorOptionsSegmentStyle
+
+        @seskar.js.JsValue("textured-square")
         val texturedSquare: TouchBarSegmentedControlConstructorOptionsSegmentStyle
+
+        @seskar.js.JsValue("capsule")
         val capsule: TouchBarSegmentedControlConstructorOptionsSegmentStyle
+
+        @seskar.js.JsValue("small-square")
         val smallSquare: TouchBarSegmentedControlConstructorOptionsSegmentStyle
+
+        @seskar.js.JsValue("separated")
         val separated: TouchBarSegmentedControlConstructorOptionsSegmentStyle
     }
 }

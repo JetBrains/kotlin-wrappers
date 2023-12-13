@@ -3,15 +3,17 @@
 package electron.core
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{small: 'small', normal: 'normal', large: 'large'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface FileIconOptionsSize {
     companion object {
+        @seskar.js.JsValue("small")
         val small: FileIconOptionsSize
+
+        @seskar.js.JsValue("normal")
         val normal: FileIconOptionsSize
+
+        @seskar.js.JsValue("large")
         val large: FileIconOptionsSize
     }
 }

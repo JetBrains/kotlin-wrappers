@@ -3,14 +3,14 @@
 package node.http
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{fifo: 'fifo', lifo: 'lifo'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface AgentOptionsScheduling {
     companion object {
+        @seskar.js.JsValue("fifo")
         val fifo: AgentOptionsScheduling
+
+        @seskar.js.JsValue("lifo")
         val lifo: AgentOptionsScheduling
     }
 }

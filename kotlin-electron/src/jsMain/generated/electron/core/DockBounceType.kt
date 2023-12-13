@@ -3,14 +3,14 @@
 package electron.core
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{critical: 'critical', informational: 'informational'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface DockBounceType {
     companion object {
+        @seskar.js.JsValue("critical")
         val critical: DockBounceType
+
+        @seskar.js.JsValue("informational")
         val informational: DockBounceType
     }
 }

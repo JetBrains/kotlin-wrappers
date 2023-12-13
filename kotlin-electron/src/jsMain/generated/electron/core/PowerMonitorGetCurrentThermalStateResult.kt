@@ -3,17 +3,23 @@
 package electron.core
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{unknown: 'unknown', nominal: 'nominal', fair: 'fair', serious: 'serious', critical: 'critical'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface PowerMonitorGetCurrentThermalStateResult {
     companion object {
+        @seskar.js.JsValue("unknown")
         val unknown: PowerMonitorGetCurrentThermalStateResult
+
+        @seskar.js.JsValue("nominal")
         val nominal: PowerMonitorGetCurrentThermalStateResult
+
+        @seskar.js.JsValue("fair")
         val fair: PowerMonitorGetCurrentThermalStateResult
+
+        @seskar.js.JsValue("serious")
         val serious: PowerMonitorGetCurrentThermalStateResult
+
+        @seskar.js.JsValue("critical")
         val critical: PowerMonitorGetCurrentThermalStateResult
     }
 }

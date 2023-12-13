@@ -3,17 +3,23 @@
 package electron.core
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{explicit: 'explicit', overwrite: 'overwrite', expired: 'expired', evicted: 'evicted', expiredOverwrite: 'expired-overwrite'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface CookiesOnceListenerCause {
     companion object {
+        @seskar.js.JsValue("explicit")
         val explicit: CookiesOnceListenerCause
+
+        @seskar.js.JsValue("overwrite")
         val overwrite: CookiesOnceListenerCause
+
+        @seskar.js.JsValue("expired")
         val expired: CookiesOnceListenerCause
+
+        @seskar.js.JsValue("evicted")
         val evicted: CookiesOnceListenerCause
+
+        @seskar.js.JsValue("expired-overwrite")
         val expiredOverwrite: CookiesOnceListenerCause
     }
 }

@@ -3,17 +3,23 @@
 package electron.core
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{ok: 'ok', error: 'error', invalidSeparatorError: 'invalidSeparatorError', fileTypeRegistrationError: 'fileTypeRegistrationError', customCategoryAccessDeniedError: 'customCategoryAccessDeniedError'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface AppSetJumpListResult {
     companion object {
+        @seskar.js.JsValue("ok")
         val ok: AppSetJumpListResult
+
+        @seskar.js.JsValue("error")
         val error: AppSetJumpListResult
+
+        @seskar.js.JsValue("invalidSeparatorError")
         val invalidSeparatorError: AppSetJumpListResult
+
+        @seskar.js.JsValue("fileTypeRegistrationError")
         val fileTypeRegistrationError: AppSetJumpListResult
+
+        @seskar.js.JsValue("customCategoryAccessDeniedError")
         val customCategoryAccessDeniedError: AppSetJumpListResult
     }
 }

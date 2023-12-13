@@ -3,15 +3,17 @@
 package react.router.dom
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{applicationXWwwFormUrlencoded: 'application/x-www-form-urlencoded', multipartFormData: 'multipart/form-data', textPlain: 'text/plain'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface FetcherFormPropsEncType {
     companion object {
+        @seskar.js.JsValue("application/x-www-form-urlencoded")
         val applicationXWwwFormUrlencoded: FetcherFormPropsEncType
+
+        @seskar.js.JsValue("multipart/form-data")
         val multipartFormData: FetcherFormPropsEncType
+
+        @seskar.js.JsValue("text/plain")
         val textPlain: FetcherFormPropsEncType
     }
 }

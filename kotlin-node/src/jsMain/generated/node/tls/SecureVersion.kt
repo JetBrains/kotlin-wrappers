@@ -4,16 +4,20 @@
 package node.tls
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{TLSv13: 'TLSv1.3', TLSv12: 'TLSv1.2', TLSv11: 'TLSv1.1', TLSv1: 'TLSv1'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface SecureVersion {
     companion object {
+        @seskar.js.JsValue("TLSv1.3")
         val TLSv13: SecureVersion
+
+        @seskar.js.JsValue("TLSv1.2")
         val TLSv12: SecureVersion
+
+        @seskar.js.JsValue("TLSv1.1")
         val TLSv11: SecureVersion
+
+        @seskar.js.JsValue("TLSv1")
         val TLSv1: SecureVersion
     }
 }

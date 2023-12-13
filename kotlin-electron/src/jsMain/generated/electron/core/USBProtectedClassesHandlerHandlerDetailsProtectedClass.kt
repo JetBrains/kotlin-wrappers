@@ -3,19 +3,29 @@
 package electron.core
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{audio: 'audio', audioVideo: 'audio-video', hid: 'hid', massStorage: 'mass-storage', smartCard: 'smart-card', video: 'video', wireless: 'wireless'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface USBProtectedClassesHandlerHandlerDetailsProtectedClass {
     companion object {
+        @seskar.js.JsValue("audio")
         val audio: USBProtectedClassesHandlerHandlerDetailsProtectedClass
+
+        @seskar.js.JsValue("audio-video")
         val audioVideo: USBProtectedClassesHandlerHandlerDetailsProtectedClass
+
+        @seskar.js.JsValue("hid")
         val hid: USBProtectedClassesHandlerHandlerDetailsProtectedClass
+
+        @seskar.js.JsValue("mass-storage")
         val massStorage: USBProtectedClassesHandlerHandlerDetailsProtectedClass
+
+        @seskar.js.JsValue("smart-card")
         val smartCard: USBProtectedClassesHandlerHandlerDetailsProtectedClass
+
+        @seskar.js.JsValue("video")
         val video: USBProtectedClassesHandlerHandlerDetailsProtectedClass
+
+        @seskar.js.JsValue("wireless")
         val wireless: USBProtectedClassesHandlerHandlerDetailsProtectedClass
     }
 }

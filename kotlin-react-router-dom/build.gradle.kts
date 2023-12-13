@@ -9,4 +9,6 @@ dependencies {
     jsMainApi(projects.kotlinReactDom)
 
     jsMainApi(npmv("react-router-dom"))
+
+    jsTestImplementation(kotlin("test-js"))
 }

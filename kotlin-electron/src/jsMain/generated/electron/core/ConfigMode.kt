@@ -3,17 +3,23 @@
 package electron.core
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{direct: 'direct', autoDetect: 'auto_detect', pacScript: 'pac_script', fixedServers: 'fixed_servers', system: 'system'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface ConfigMode {
     companion object {
+        @seskar.js.JsValue("direct")
         val direct: ConfigMode
+
+        @seskar.js.JsValue("auto_detect")
         val autoDetect: ConfigMode
+
+        @seskar.js.JsValue("pac_script")
         val pacScript: ConfigMode
+
+        @seskar.js.JsValue("fixed_servers")
         val fixedServers: ConfigMode
+
+        @seskar.js.JsValue("system")
         val system: ConfigMode
     }
 }

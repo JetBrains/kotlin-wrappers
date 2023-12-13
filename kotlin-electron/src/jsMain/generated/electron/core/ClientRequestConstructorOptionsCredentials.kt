@@ -3,14 +3,14 @@
 package electron.core
 
 
-@Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-@JsName("""(/*union*/{include: 'include', omit: 'omit'}/*union*/)""")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@seskar.js.JsVirtual
 sealed external interface ClientRequestConstructorOptionsCredentials {
     companion object {
+        @seskar.js.JsValue("include")
         val include: ClientRequestConstructorOptionsCredentials
+
+        @seskar.js.JsValue("omit")
         val omit: ClientRequestConstructorOptionsCredentials
     }
 }
