@@ -1,6 +1,6 @@
 // Automatically generated - do not modify!
 
-package mui.types
+package mui.base
 
 import seskar.js.JsValue
 import seskar.js.JsVirtual
