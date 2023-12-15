@@ -1,16 +1,21 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package node.inspector
 
 import node.events.EventType
+import seskar.js.JsValue
+import seskar.js.JsVirtual
 
-// language=JavaScript
-@JsName("""(/*union*/{MESSAGE_ADDED: 'Console.messageAdded'}/*union*/)""")
-external object ConsoleEvent {
-    object MESSAGE_ADDED : EventType
+@JsVirtual
+sealed external interface ConsoleEvent {
+    companion object {
+        @JsValue("Console.messageAdded")
+        val MESSAGE_ADDED: EventType
+    }
+
+    sealed interface MESSAGE_ADDED : EventType
 }

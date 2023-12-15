@@ -1,17 +1,21 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package node.process
 
-// language=JavaScript
-@JsName("""(/*union*/{uncaughtException: 'uncaughtException', unhandledRejection: 'unhandledRejection'}/*union*/)""")
+import seskar.js.JsValue
+import seskar.js.JsVirtual
+
+@JsVirtual
 sealed external interface UncaughtExceptionOrigin {
     companion object {
+        @JsValue("uncaughtException")
         val uncaughtException: UncaughtExceptionOrigin
+
+        @JsValue("unhandledRejection")
         val unhandledRejection: UncaughtExceptionOrigin
     }
 }
