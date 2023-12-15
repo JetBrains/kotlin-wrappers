@@ -1,17 +1,21 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package node.vm
 
-// language=JavaScript
-@JsName("""(/*union*/{summary: 'summary', detailed: 'detailed'}/*union*/)""")
+import seskar.js.JsValue
+import seskar.js.JsVirtual
+
+@JsVirtual
 sealed external interface MeasureMemoryMode {
     companion object {
+        @JsValue("summary")
         val summary: MeasureMemoryMode
+
+        @JsValue("detailed")
         val detailed: MeasureMemoryMode
     }
 }

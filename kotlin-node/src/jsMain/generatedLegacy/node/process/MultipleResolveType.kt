@@ -1,17 +1,21 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package node.process
 
-// language=JavaScript
-@JsName("""(/*union*/{resolve: 'resolve', reject: 'reject'}/*union*/)""")
+import seskar.js.JsValue
+import seskar.js.JsVirtual
+
+@JsVirtual
 sealed external interface MultipleResolveType {
     companion object {
+        @JsValue("resolve")
         val resolve: MultipleResolveType
+
+        @JsValue("reject")
         val reject: MultipleResolveType
     }
 }

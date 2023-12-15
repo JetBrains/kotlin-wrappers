@@ -1,21 +1,33 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package node.vm
 
-// language=JavaScript
-@JsName("""(/*union*/{unlinked: 'unlinked', linking: 'linking', linked: 'linked', evaluating: 'evaluating', evaluated: 'evaluated', errored: 'errored'}/*union*/)""")
+import seskar.js.JsValue
+import seskar.js.JsVirtual
+
+@JsVirtual
 sealed external interface ModuleStatus {
     companion object {
+        @JsValue("unlinked")
         val unlinked: ModuleStatus
+
+        @JsValue("linking")
         val linking: ModuleStatus
+
+        @JsValue("linked")
         val linked: ModuleStatus
+
+        @JsValue("evaluating")
         val evaluating: ModuleStatus
+
+        @JsValue("evaluated")
         val evaluated: ModuleStatus
+
+        @JsValue("errored")
         val errored: ModuleStatus
     }
 }

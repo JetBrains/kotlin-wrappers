@@ -1,25 +1,45 @@
 // Automatically generated - do not modify!
 
 @file:Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package node.process
 
-// language=JavaScript
-@JsName("""(/*union*/{arm: 'arm', arm64: 'arm64', ia32: 'ia32', mips: 'mips', mipsel: 'mipsel', ppc: 'ppc', ppc64: 'ppc64', s390: 's390', s390x: 's390x', x64: 'x64'}/*union*/)""")
+import seskar.js.JsValue
+import seskar.js.JsVirtual
+
+@JsVirtual
 sealed external interface Architecture {
     companion object {
+        @JsValue("arm")
         val arm: Architecture
+
+        @JsValue("arm64")
         val arm64: Architecture
+
+        @JsValue("ia32")
         val ia32: Architecture
+
+        @JsValue("mips")
         val mips: Architecture
+
+        @JsValue("mipsel")
         val mipsel: Architecture
+
+        @JsValue("ppc")
         val ppc: Architecture
+
+        @JsValue("ppc64")
         val ppc64: Architecture
+
+        @JsValue("s390")
         val s390: Architecture
+
+        @JsValue("s390x")
         val s390x: Architecture
+
+        @JsValue("x64")
         val x64: Architecture
     }
 }
