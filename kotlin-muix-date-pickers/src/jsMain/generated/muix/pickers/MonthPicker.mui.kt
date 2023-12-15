@@ -2,17 +2,18 @@
 
 @file:Suppress(
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-    "NAME_CONTAINS_ILLEGAL_CHARS",
 )
 
 package muix.pickers
 
+import seskar.js.JsValue
+import seskar.js.JsVirtual
 import web.cssom.ClassName
 
-// language=JavaScript
-@JsName("""(/*union*/{root: 'MuiMonthPicker-root'}/*union*/)""")
+@JsVirtual
 sealed external interface MuiMonthPicker {
     companion object {
+        @JsValue("MuiMonthPicker-root")
         val root: ClassName
     }
 }

@@ -2,17 +2,25 @@
 
 package muix.pickers
 
+import seskar.js.JsValue
+import seskar.js.JsVirtual
+
 @Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
-// language=JavaScript
-@JsName("""(/*union*/{clear: 'clear', cancel: 'cancel', accept: 'accept', today: 'today'}/*union*/)""")
+@JsVirtual
 sealed external interface PickersActionBarAction {
     companion object {
+        @JsValue("clear")
         val clear: PickersActionBarAction
+
+        @JsValue("cancel")
         val cancel: PickersActionBarAction
+
+        @JsValue("accept")
         val accept: PickersActionBarAction
+
+        @JsValue("today")
         val today: PickersActionBarAction
     }
 }
