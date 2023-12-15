@@ -2,47 +2,102 @@
 
 @file:Suppress(
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-    "NAME_CONTAINS_ILLEGAL_CHARS",
 )
 
 package mui.material
 
+import seskar.js.JsValue
+import seskar.js.JsVirtual
 import web.cssom.ClassName
 
-// language=JavaScript
-@JsName(
-    """(/*union*/{root: 'MuiPaper-root', rounded: 'MuiPaper-rounded', outlined: 'MuiPaper-outlined', elevation: 'MuiPaper-elevation', elevation0: 'MuiPaper-elevation0', elevation1: 'MuiPaper-elevation1', elevation2: 'MuiPaper-elevation2', elevation3: 'MuiPaper-elevation3', elevation4: 'MuiPaper-elevation4', elevation5: 'MuiPaper-elevation5', elevation6: 'MuiPaper-elevation6', elevation7: 'MuiPaper-elevation7', elevation8: 'MuiPaper-elevation8', elevation9: 'MuiPaper-elevation9', elevation10: 'MuiPaper-elevation10', elevation11: 'MuiPaper-elevation11', elevation12: 'MuiPaper-elevation12', elevation13: 'MuiPaper-elevation13', elevation14: 'MuiPaper-elevation14', elevation15: 'MuiPaper-elevation15', elevation16: 'MuiPaper-elevation16', elevation17: 'MuiPaper-elevation17', elevation18: 'MuiPaper-elevation18', elevation19: 'MuiPaper-elevation19', elevation20: 'MuiPaper-elevation20', elevation21: 'MuiPaper-elevation21', elevation22: 'MuiPaper-elevation22', elevation23: 'MuiPaper-elevation23', elevation24: 'MuiPaper-elevation24'}/*union*/)"""
-)
+@JsVirtual
 sealed external interface MuiPaper {
     companion object {
+        @JsValue("MuiPaper-root")
         val root: ClassName
+
+        @JsValue("MuiPaper-rounded")
         val rounded: ClassName
+
+        @JsValue("MuiPaper-outlined")
         val outlined: ClassName
+
+        @JsValue("MuiPaper-elevation")
         val elevation: ClassName
+
+        @JsValue("MuiPaper-elevation0")
         val elevation0: ClassName
+
+        @JsValue("MuiPaper-elevation1")
         val elevation1: ClassName
+
+        @JsValue("MuiPaper-elevation2")
         val elevation2: ClassName
+
+        @JsValue("MuiPaper-elevation3")
         val elevation3: ClassName
+
+        @JsValue("MuiPaper-elevation4")
         val elevation4: ClassName
+
+        @JsValue("MuiPaper-elevation5")
         val elevation5: ClassName
+
+        @JsValue("MuiPaper-elevation6")
         val elevation6: ClassName
+
+        @JsValue("MuiPaper-elevation7")
         val elevation7: ClassName
+
+        @JsValue("MuiPaper-elevation8")
         val elevation8: ClassName
+
+        @JsValue("MuiPaper-elevation9")
         val elevation9: ClassName
+
+        @JsValue("MuiPaper-elevation10")
         val elevation10: ClassName
+
+        @JsValue("MuiPaper-elevation11")
         val elevation11: ClassName
+
+        @JsValue("MuiPaper-elevation12")
         val elevation12: ClassName
+
+        @JsValue("MuiPaper-elevation13")
         val elevation13: ClassName
+
+        @JsValue("MuiPaper-elevation14")
         val elevation14: ClassName
+
+        @JsValue("MuiPaper-elevation15")
         val elevation15: ClassName
+
+        @JsValue("MuiPaper-elevation16")
         val elevation16: ClassName
+
+        @JsValue("MuiPaper-elevation17")
         val elevation17: ClassName
+
+        @JsValue("MuiPaper-elevation18")
         val elevation18: ClassName
+
+        @JsValue("MuiPaper-elevation19")
         val elevation19: ClassName
+
+        @JsValue("MuiPaper-elevation20")
         val elevation20: ClassName
+
+        @JsValue("MuiPaper-elevation21")
         val elevation21: ClassName
+
+        @JsValue("MuiPaper-elevation22")
         val elevation22: ClassName
+
+        @JsValue("MuiPaper-elevation23")
         val elevation23: ClassName
+
+        @JsValue("MuiPaper-elevation24")
         val elevation24: ClassName
     }
 }

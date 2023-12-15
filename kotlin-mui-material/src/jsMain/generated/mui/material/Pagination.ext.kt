@@ -2,42 +2,50 @@
 
 package mui.material
 
+import seskar.js.JsValue
+import seskar.js.JsVirtual
+
 @Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
-// language=JavaScript
-@JsName("""(/*union*/{primary: 'primary', secondary: 'secondary', standard: 'standard'}/*union*/)""")
+@JsVirtual
 sealed external interface PaginationColor {
     companion object {
+        @JsValue("primary")
         val primary: PaginationColor
+
+        @JsValue("secondary")
         val secondary: PaginationColor
+
+        @JsValue("standard")
         val standard: PaginationColor
     }
 }
 
 @Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
-// language=JavaScript
-@JsName("""(/*union*/{text: 'text', outlined: 'outlined'}/*union*/)""")
+@JsVirtual
 sealed external interface PaginationVariant {
     companion object {
+        @JsValue("text")
         val text: PaginationVariant
+
+        @JsValue("outlined")
         val outlined: PaginationVariant
     }
 }
 
 @Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
-// language=JavaScript
-@JsName("""(/*union*/{circular: 'circular', rounded: 'rounded'}/*union*/)""")
+@JsVirtual
 sealed external interface PaginationShape {
     companion object {
+        @JsValue("circular")
         val circular: PaginationShape
+
+        @JsValue("rounded")
         val rounded: PaginationShape
     }
 }

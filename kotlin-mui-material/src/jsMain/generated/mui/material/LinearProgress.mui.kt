@@ -2,34 +2,69 @@
 
 @file:Suppress(
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-    "NAME_CONTAINS_ILLEGAL_CHARS",
 )
 
 package mui.material
 
+import seskar.js.JsValue
+import seskar.js.JsVirtual
 import web.cssom.ClassName
 
-// language=JavaScript
-@JsName("""(/*union*/{root: 'MuiLinearProgress-root', colorPrimary: 'MuiLinearProgress-colorPrimary', colorSecondary: 'MuiLinearProgress-colorSecondary', determinate: 'MuiLinearProgress-determinate', indeterminate: 'MuiLinearProgress-indeterminate', buffer: 'MuiLinearProgress-buffer', query: 'MuiLinearProgress-query', dashed: 'MuiLinearProgress-dashed', dashedColorPrimary: 'MuiLinearProgress-dashedColorPrimary', dashedColorSecondary: 'MuiLinearProgress-dashedColorSecondary', bar: 'MuiLinearProgress-bar', barColorPrimary: 'MuiLinearProgress-barColorPrimary', barColorSecondary: 'MuiLinearProgress-barColorSecondary', bar1Indeterminate: 'MuiLinearProgress-bar1Indeterminate', bar1Determinate: 'MuiLinearProgress-bar1Determinate', bar1Buffer: 'MuiLinearProgress-bar1Buffer', bar2Indeterminate: 'MuiLinearProgress-bar2Indeterminate', bar2Buffer: 'MuiLinearProgress-bar2Buffer'}/*union*/)""")
+@JsVirtual
 sealed external interface MuiLinearProgress {
     companion object {
+        @JsValue("MuiLinearProgress-root")
         val root: ClassName
+
+        @JsValue("MuiLinearProgress-colorPrimary")
         val colorPrimary: ClassName
+
+        @JsValue("MuiLinearProgress-colorSecondary")
         val colorSecondary: ClassName
+
+        @JsValue("MuiLinearProgress-determinate")
         val determinate: ClassName
+
+        @JsValue("MuiLinearProgress-indeterminate")
         val indeterminate: ClassName
+
+        @JsValue("MuiLinearProgress-buffer")
         val buffer: ClassName
+
+        @JsValue("MuiLinearProgress-query")
         val query: ClassName
+
+        @JsValue("MuiLinearProgress-dashed")
         val dashed: ClassName
+
+        @JsValue("MuiLinearProgress-dashedColorPrimary")
         val dashedColorPrimary: ClassName
+
+        @JsValue("MuiLinearProgress-dashedColorSecondary")
         val dashedColorSecondary: ClassName
+
+        @JsValue("MuiLinearProgress-bar")
         val bar: ClassName
+
+        @JsValue("MuiLinearProgress-barColorPrimary")
         val barColorPrimary: ClassName
+
+        @JsValue("MuiLinearProgress-barColorSecondary")
         val barColorSecondary: ClassName
+
+        @JsValue("MuiLinearProgress-bar1Indeterminate")
         val bar1Indeterminate: ClassName
+
+        @JsValue("MuiLinearProgress-bar1Determinate")
         val bar1Determinate: ClassName
+
+        @JsValue("MuiLinearProgress-bar1Buffer")
         val bar1Buffer: ClassName
+
+        @JsValue("MuiLinearProgress-bar2Indeterminate")
         val bar2Indeterminate: ClassName
+
+        @JsValue("MuiLinearProgress-bar2Buffer")
         val bar2Buffer: ClassName
     }
 }

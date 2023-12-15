@@ -2,15 +2,19 @@
 
 package mui.material
 
+import seskar.js.JsValue
+import seskar.js.JsVirtual
+
 @Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
-// language=JavaScript
-@JsName("""(/*union*/{flexStart: 'flex-start', center: 'center'}/*union*/)""")
+@JsVirtual
 sealed external interface ListItemButtonAlignItems {
     companion object {
+        @JsValue("flex-start")
         val flexStart: ListItemButtonAlignItems
+
+        @JsValue("center")
         val center: ListItemButtonAlignItems
     }
 }

@@ -2,57 +2,70 @@
 
 package mui.material
 
+import seskar.js.JsValue
+import seskar.js.JsVirtual
+
 @Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
-// language=JavaScript
-@JsName("""(/*union*/{standard: 'standard', scrollable: 'scrollable', fullWidth: 'fullWidth'}/*union*/)""")
+@JsVirtual
 sealed external interface TabsVariant {
     companion object {
+        @JsValue("standard")
         val standard: TabsVariant
+
+        @JsValue("scrollable")
         val scrollable: TabsVariant
+
+        @JsValue("fullWidth")
         val fullWidth: TabsVariant
     }
 }
 
 @Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
-// language=JavaScript
-@JsName("""(/*union*/{secondary: 'secondary', primary: 'primary'}/*union*/)""")
+@JsVirtual
 sealed external interface TabsIndicatorColor {
     companion object {
+        @JsValue("secondary")
         val secondary: TabsIndicatorColor
+
+        @JsValue("primary")
         val primary: TabsIndicatorColor
     }
 }
 
 @Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
-// language=JavaScript
-@JsName("""(/*union*/{secondary: 'secondary', primary: 'primary', inherit: 'inherit'}/*union*/)""")
+@JsVirtual
 sealed external interface TabsTextColor {
     companion object {
+        @JsValue("secondary")
         val secondary: TabsTextColor
+
+        @JsValue("primary")
         val primary: TabsTextColor
+
+        @JsValue("inherit")
         val inherit: TabsTextColor
     }
 }
 
 @Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
-// language=JavaScript
-@JsName("""(/*union*/{auto: 'auto', true: true, false: false}/*union*/)""")
+@JsVirtual
 sealed external interface TabsScrollButtons {
     companion object {
+        @JsValue("auto")
         val auto: TabsScrollButtons
+
+        @JsValue("`true`")
         val `true`: TabsScrollButtons
+
+        @JsValue("`false`")
         val `false`: TabsScrollButtons
     }
 }

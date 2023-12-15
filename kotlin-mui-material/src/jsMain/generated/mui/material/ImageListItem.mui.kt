@@ -2,22 +2,33 @@
 
 @file:Suppress(
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-    "NAME_CONTAINS_ILLEGAL_CHARS",
 )
 
 package mui.material
 
+import seskar.js.JsValue
+import seskar.js.JsVirtual
 import web.cssom.ClassName
 
-// language=JavaScript
-@JsName("""(/*union*/{root: 'MuiImageListItem-root', img: 'MuiImageListItem-img', standard: 'MuiImageListItem-standard', woven: 'MuiImageListItem-woven', masonry: 'MuiImageListItem-masonry', quilted: 'MuiImageListItem-quilted'}/*union*/)""")
+@JsVirtual
 sealed external interface MuiImageListItem {
     companion object {
+        @JsValue("MuiImageListItem-root")
         val root: ClassName
+
+        @JsValue("MuiImageListItem-img")
         val img: ClassName
+
+        @JsValue("MuiImageListItem-standard")
         val standard: ClassName
+
+        @JsValue("MuiImageListItem-woven")
         val woven: ClassName
+
+        @JsValue("MuiImageListItem-masonry")
         val masonry: ClassName
+
+        @JsValue("MuiImageListItem-quilted")
         val quilted: ClassName
     }
 }

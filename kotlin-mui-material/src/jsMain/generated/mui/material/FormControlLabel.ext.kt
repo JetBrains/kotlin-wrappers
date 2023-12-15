@@ -2,17 +2,25 @@
 
 package mui.material
 
+import seskar.js.JsValue
+import seskar.js.JsVirtual
+
 @Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
-// language=JavaScript
-@JsName("""(/*union*/{end: 'end', start: 'start', top: 'top', bottom: 'bottom'}/*union*/)""")
+@JsVirtual
 sealed external interface LabelPlacement {
     companion object {
+        @JsValue("end")
         val end: LabelPlacement
+
+        @JsValue("start")
         val start: LabelPlacement
+
+        @JsValue("top")
         val top: LabelPlacement
+
+        @JsValue("bottom")
         val bottom: LabelPlacement
     }
 }

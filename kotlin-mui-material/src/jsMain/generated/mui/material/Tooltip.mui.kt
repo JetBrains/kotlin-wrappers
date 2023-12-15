@@ -2,28 +2,51 @@
 
 @file:Suppress(
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-    "NAME_CONTAINS_ILLEGAL_CHARS",
 )
 
 package mui.material
 
+import seskar.js.JsValue
+import seskar.js.JsVirtual
 import web.cssom.ClassName
 
-// language=JavaScript
-@JsName("""(/*union*/{popper: 'MuiTooltip-popper', popperInteractive: 'MuiTooltip-popperInteractive', popperArrow: 'MuiTooltip-popperArrow', popperClose: 'MuiTooltip-popperClose', tooltip: 'MuiTooltip-tooltip', tooltipArrow: 'MuiTooltip-tooltipArrow', arrow: 'MuiTooltip-arrow', touch: 'MuiTooltip-touch', tooltipPlacementLeft: 'MuiTooltip-tooltipPlacementLeft', tooltipPlacementRight: 'MuiTooltip-tooltipPlacementRight', tooltipPlacementTop: 'MuiTooltip-tooltipPlacementTop', tooltipPlacementBottom: 'MuiTooltip-tooltipPlacementBottom'}/*union*/)""")
+@JsVirtual
 sealed external interface MuiTooltip {
     companion object {
+        @JsValue("MuiTooltip-popper")
         val popper: ClassName
+
+        @JsValue("MuiTooltip-popperInteractive")
         val popperInteractive: ClassName
+
+        @JsValue("MuiTooltip-popperArrow")
         val popperArrow: ClassName
+
+        @JsValue("MuiTooltip-popperClose")
         val popperClose: ClassName
+
+        @JsValue("MuiTooltip-tooltip")
         val tooltip: ClassName
+
+        @JsValue("MuiTooltip-tooltipArrow")
         val tooltipArrow: ClassName
+
+        @JsValue("MuiTooltip-arrow")
         val arrow: ClassName
+
+        @JsValue("MuiTooltip-touch")
         val touch: ClassName
+
+        @JsValue("MuiTooltip-tooltipPlacementLeft")
         val tooltipPlacementLeft: ClassName
+
+        @JsValue("MuiTooltip-tooltipPlacementRight")
         val tooltipPlacementRight: ClassName
+
+        @JsValue("MuiTooltip-tooltipPlacementTop")
         val tooltipPlacementTop: ClassName
+
+        @JsValue("MuiTooltip-tooltipPlacementBottom")
         val tooltipPlacementBottom: ClassName
     }
 }

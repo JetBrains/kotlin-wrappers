@@ -2,23 +2,36 @@
 
 @file:Suppress(
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-    "NAME_CONTAINS_ILLEGAL_CHARS",
 )
 
 package mui.material
 
+import seskar.js.JsValue
+import seskar.js.JsVirtual
 import web.cssom.ClassName
 
-// language=JavaScript
-@JsName("""(/*union*/{root: 'MuiStepConnector-root', horizontal: 'MuiStepConnector-horizontal', vertical: 'MuiStepConnector-vertical', alternativeLabel: 'MuiStepConnector-alternativeLabel', line: 'MuiStepConnector-line', lineHorizontal: 'MuiStepConnector-lineHorizontal', lineVertical: 'MuiStepConnector-lineVertical'}/*union*/)""")
+@JsVirtual
 sealed external interface MuiStepConnector {
     companion object {
+        @JsValue("MuiStepConnector-root")
         val root: ClassName
+
+        @JsValue("MuiStepConnector-horizontal")
         val horizontal: ClassName
+
+        @JsValue("MuiStepConnector-vertical")
         val vertical: ClassName
+
+        @JsValue("MuiStepConnector-alternativeLabel")
         val alternativeLabel: ClassName
+
+        @JsValue("MuiStepConnector-line")
         val line: ClassName
+
+        @JsValue("MuiStepConnector-lineHorizontal")
         val lineHorizontal: ClassName
+
+        @JsValue("MuiStepConnector-lineVertical")
         val lineVertical: ClassName
     }
 }

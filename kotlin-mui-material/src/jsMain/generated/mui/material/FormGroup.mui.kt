@@ -2,18 +2,21 @@
 
 @file:Suppress(
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-    "NAME_CONTAINS_ILLEGAL_CHARS",
 )
 
 package mui.material
 
+import seskar.js.JsValue
+import seskar.js.JsVirtual
 import web.cssom.ClassName
 
-// language=JavaScript
-@JsName("""(/*union*/{root: 'MuiFormGroup-root', row: 'MuiFormGroup-row'}/*union*/)""")
+@JsVirtual
 sealed external interface MuiFormGroup {
     companion object {
+        @JsValue("MuiFormGroup-root")
         val root: ClassName
+
+        @JsValue("MuiFormGroup-row")
         val row: ClassName
     }
 }

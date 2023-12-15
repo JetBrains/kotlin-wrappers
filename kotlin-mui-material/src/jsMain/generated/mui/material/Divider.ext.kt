@@ -2,30 +2,39 @@
 
 package mui.material
 
+import seskar.js.JsValue
+import seskar.js.JsVirtual
+
 @Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
-// language=JavaScript
-@JsName("""(/*union*/{fullWidth: 'fullWidth', inset: 'inset', middle: 'middle'}/*union*/)""")
+@JsVirtual
 sealed external interface DividerVariant {
     companion object {
+        @JsValue("fullWidth")
         val fullWidth: DividerVariant
+
+        @JsValue("inset")
         val inset: DividerVariant
+
+        @JsValue("middle")
         val middle: DividerVariant
     }
 }
 
 @Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
-// language=JavaScript
-@JsName("""(/*union*/{center: 'center', right: 'right', left: 'left'}/*union*/)""")
+@JsVirtual
 sealed external interface DividerTextAlign {
     companion object {
+        @JsValue("center")
         val center: DividerTextAlign
+
+        @JsValue("right")
         val right: DividerTextAlign
+
+        @JsValue("left")
         val left: DividerTextAlign
     }
 }

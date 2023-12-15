@@ -2,18 +2,28 @@
 
 package mui.material
 
+import seskar.js.JsValue
+import seskar.js.JsVirtual
+
 @Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
-// language=JavaScript
-@JsName("""(/*union*/{inherit: 'inherit', left: 'left', center: 'center', right: 'right', justify: 'justify'}/*union*/)""")
+@JsVirtual
 sealed external interface TypographyAlign {
     companion object {
+        @JsValue("inherit")
         val inherit: TypographyAlign
+
+        @JsValue("left")
         val left: TypographyAlign
+
+        @JsValue("center")
         val center: TypographyAlign
+
+        @JsValue("right")
         val right: TypographyAlign
+
+        @JsValue("justify")
         val justify: TypographyAlign
     }
 }

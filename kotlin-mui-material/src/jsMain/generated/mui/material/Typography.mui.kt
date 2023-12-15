@@ -2,38 +2,81 @@
 
 @file:Suppress(
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-    "NAME_CONTAINS_ILLEGAL_CHARS",
 )
 
 package mui.material
 
+import seskar.js.JsValue
+import seskar.js.JsVirtual
 import web.cssom.ClassName
 
-// language=JavaScript
-@JsName("""(/*union*/{root: 'MuiTypography-root', body2: 'MuiTypography-body2', body1: 'MuiTypography-body1', caption: 'MuiTypography-caption', button: 'MuiTypography-button', h1: 'MuiTypography-h1', h2: 'MuiTypography-h2', h3: 'MuiTypography-h3', h4: 'MuiTypography-h4', h5: 'MuiTypography-h5', h6: 'MuiTypography-h6', subtitle1: 'MuiTypography-subtitle1', subtitle2: 'MuiTypography-subtitle2', overline: 'MuiTypography-overline', inherit: 'MuiTypography-inherit', alignLeft: 'MuiTypography-alignLeft', alignCenter: 'MuiTypography-alignCenter', alignRight: 'MuiTypography-alignRight', alignJustify: 'MuiTypography-alignJustify', noWrap: 'MuiTypography-noWrap', gutterBottom: 'MuiTypography-gutterBottom', paragraph: 'MuiTypography-paragraph'}/*union*/)""")
+@JsVirtual
 sealed external interface MuiTypography {
     companion object {
+        @JsValue("MuiTypography-root")
         val root: ClassName
+
+        @JsValue("MuiTypography-body2")
         val body2: ClassName
+
+        @JsValue("MuiTypography-body1")
         val body1: ClassName
+
+        @JsValue("MuiTypography-caption")
         val caption: ClassName
+
+        @JsValue("MuiTypography-button")
         val button: ClassName
+
+        @JsValue("MuiTypography-h1")
         val h1: ClassName
+
+        @JsValue("MuiTypography-h2")
         val h2: ClassName
+
+        @JsValue("MuiTypography-h3")
         val h3: ClassName
+
+        @JsValue("MuiTypography-h4")
         val h4: ClassName
+
+        @JsValue("MuiTypography-h5")
         val h5: ClassName
+
+        @JsValue("MuiTypography-h6")
         val h6: ClassName
+
+        @JsValue("MuiTypography-subtitle1")
         val subtitle1: ClassName
+
+        @JsValue("MuiTypography-subtitle2")
         val subtitle2: ClassName
+
+        @JsValue("MuiTypography-overline")
         val overline: ClassName
+
+        @JsValue("MuiTypography-inherit")
         val inherit: ClassName
+
+        @JsValue("MuiTypography-alignLeft")
         val alignLeft: ClassName
+
+        @JsValue("MuiTypography-alignCenter")
         val alignCenter: ClassName
+
+        @JsValue("MuiTypography-alignRight")
         val alignRight: ClassName
+
+        @JsValue("MuiTypography-alignJustify")
         val alignJustify: ClassName
+
+        @JsValue("MuiTypography-noWrap")
         val noWrap: ClassName
+
+        @JsValue("MuiTypography-gutterBottom")
         val gutterBottom: ClassName
+
+        @JsValue("MuiTypography-paragraph")
         val paragraph: ClassName
     }
 }

@@ -2,33 +2,48 @@
 
 package mui.material
 
+import seskar.js.JsValue
+import seskar.js.JsVirtual
+
 @Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
-// language=JavaScript
-@JsName("""(/*union*/{default: 'default', primary: 'primary', secondary: 'secondary', error: 'error', info: 'info', success: 'success', warning: 'warning'}/*union*/)""")
+@JsVirtual
 sealed external interface ChipColor {
     companion object {
+        @JsValue("default")
         val default: ChipColor
+
+        @JsValue("primary")
         val primary: ChipColor
+
+        @JsValue("secondary")
         val secondary: ChipColor
+
+        @JsValue("error")
         val error: ChipColor
+
+        @JsValue("info")
         val info: ChipColor
+
+        @JsValue("success")
         val success: ChipColor
+
+        @JsValue("warning")
         val warning: ChipColor
     }
 }
 
 @Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
-// language=JavaScript
-@JsName("""(/*union*/{filled: 'filled', outlined: 'outlined'}/*union*/)""")
+@JsVirtual
 sealed external interface ChipVariant {
     companion object {
+        @JsValue("filled")
         val filled: ChipVariant
+
+        @JsValue("outlined")
         val outlined: ChipVariant
     }
 }

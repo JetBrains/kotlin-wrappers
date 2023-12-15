@@ -2,33 +2,66 @@
 
 @file:Suppress(
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-    "NAME_CONTAINS_ILLEGAL_CHARS",
 )
 
 package mui.material
 
+import seskar.js.JsValue
+import seskar.js.JsVirtual
 import web.cssom.ClassName
 
-// language=JavaScript
-@JsName("""(/*union*/{root: 'MuiInputBase-root', formControl: 'MuiInputBase-formControl', adornedStart: 'MuiInputBase-adornedStart', adornedEnd: 'MuiInputBase-adornedEnd', sizeSmall: 'MuiInputBase-sizeSmall', multiline: 'MuiInputBase-multiline', colorSecondary: 'MuiInputBase-colorSecondary', fullWidth: 'MuiInputBase-fullWidth', hiddenLabel: 'MuiInputBase-hiddenLabel', readOnly: 'MuiInputBase-readOnly', input: 'MuiInputBase-input', inputSizeSmall: 'MuiInputBase-inputSizeSmall', inputMultiline: 'MuiInputBase-inputMultiline', inputTypeSearch: 'MuiInputBase-inputTypeSearch', inputAdornedStart: 'MuiInputBase-inputAdornedStart', inputAdornedEnd: 'MuiInputBase-inputAdornedEnd', inputHiddenLabel: 'MuiInputBase-inputHiddenLabel'}/*union*/)""")
+@JsVirtual
 sealed external interface MuiInputBase {
     companion object {
+        @JsValue("MuiInputBase-root")
         val root: ClassName
+
+        @JsValue("MuiInputBase-formControl")
         val formControl: ClassName
+
+        @JsValue("MuiInputBase-adornedStart")
         val adornedStart: ClassName
+
+        @JsValue("MuiInputBase-adornedEnd")
         val adornedEnd: ClassName
+
+        @JsValue("MuiInputBase-sizeSmall")
         val sizeSmall: ClassName
+
+        @JsValue("MuiInputBase-multiline")
         val multiline: ClassName
+
+        @JsValue("MuiInputBase-colorSecondary")
         val colorSecondary: ClassName
+
+        @JsValue("MuiInputBase-fullWidth")
         val fullWidth: ClassName
+
+        @JsValue("MuiInputBase-hiddenLabel")
         val hiddenLabel: ClassName
+
+        @JsValue("MuiInputBase-readOnly")
         val readOnly: ClassName
+
+        @JsValue("MuiInputBase-input")
         val input: ClassName
+
+        @JsValue("MuiInputBase-inputSizeSmall")
         val inputSizeSmall: ClassName
+
+        @JsValue("MuiInputBase-inputMultiline")
         val inputMultiline: ClassName
+
+        @JsValue("MuiInputBase-inputTypeSearch")
         val inputTypeSearch: ClassName
+
+        @JsValue("MuiInputBase-inputAdornedStart")
         val inputAdornedStart: ClassName
+
+        @JsValue("MuiInputBase-inputAdornedEnd")
         val inputAdornedEnd: ClassName
+
+        @JsValue("MuiInputBase-inputHiddenLabel")
         val inputHiddenLabel: ClassName
     }
 }

@@ -2,25 +2,49 @@
 
 package mui.material
 
+import seskar.js.JsValue
+import seskar.js.JsVirtual
+
 @Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
-// language=JavaScript
-@JsName("""(/*union*/{bottomEnd: 'bottom-end', bottomStart: 'bottom-start', bottom: 'bottom', leftEnd: 'left-end', leftStart: 'left-start', left: 'left', rightEnd: 'right-end', rightStart: 'right-start', right: 'right', topEnd: 'top-end', topStart: 'top-start', top: 'top'}/*union*/)""")
+@JsVirtual
 sealed external interface TooltipPlacement {
     companion object {
+        @JsValue("bottom-end")
         val bottomEnd: TooltipPlacement
+
+        @JsValue("bottom-start")
         val bottomStart: TooltipPlacement
+
+        @JsValue("bottom")
         val bottom: TooltipPlacement
+
+        @JsValue("left-end")
         val leftEnd: TooltipPlacement
+
+        @JsValue("left-start")
         val leftStart: TooltipPlacement
+
+        @JsValue("left")
         val left: TooltipPlacement
+
+        @JsValue("right-end")
         val rightEnd: TooltipPlacement
+
+        @JsValue("right-start")
         val rightStart: TooltipPlacement
+
+        @JsValue("right")
         val right: TooltipPlacement
+
+        @JsValue("top-end")
         val topEnd: TooltipPlacement
+
+        @JsValue("top-start")
         val topStart: TooltipPlacement
+
+        @JsValue("top")
         val top: TooltipPlacement
     }
 }

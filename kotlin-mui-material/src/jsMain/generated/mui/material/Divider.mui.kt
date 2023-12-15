@@ -2,30 +2,57 @@
 
 @file:Suppress(
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-    "NAME_CONTAINS_ILLEGAL_CHARS",
 )
 
 package mui.material
 
+import seskar.js.JsValue
+import seskar.js.JsVirtual
 import web.cssom.ClassName
 
-// language=JavaScript
-@JsName("""(/*union*/{root: 'MuiDivider-root', absolute: 'MuiDivider-absolute', inset: 'MuiDivider-inset', fullWidth: 'MuiDivider-fullWidth', light: 'MuiDivider-light', middle: 'MuiDivider-middle', vertical: 'MuiDivider-vertical', flexItem: 'MuiDivider-flexItem', withChildren: 'MuiDivider-withChildren', withChildrenVertical: 'MuiDivider-withChildrenVertical', textAlignRight: 'MuiDivider-textAlignRight', textAlignLeft: 'MuiDivider-textAlignLeft', wrapper: 'MuiDivider-wrapper', wrapperVertical: 'MuiDivider-wrapperVertical'}/*union*/)""")
+@JsVirtual
 sealed external interface MuiDivider {
     companion object {
+        @JsValue("MuiDivider-root")
         val root: ClassName
+
+        @JsValue("MuiDivider-absolute")
         val absolute: ClassName
+
+        @JsValue("MuiDivider-inset")
         val inset: ClassName
+
+        @JsValue("MuiDivider-fullWidth")
         val fullWidth: ClassName
+
+        @JsValue("MuiDivider-light")
         val light: ClassName
+
+        @JsValue("MuiDivider-middle")
         val middle: ClassName
+
+        @JsValue("MuiDivider-vertical")
         val vertical: ClassName
+
+        @JsValue("MuiDivider-flexItem")
         val flexItem: ClassName
+
+        @JsValue("MuiDivider-withChildren")
         val withChildren: ClassName
+
+        @JsValue("MuiDivider-withChildrenVertical")
         val withChildrenVertical: ClassName
+
+        @JsValue("MuiDivider-textAlignRight")
         val textAlignRight: ClassName
+
+        @JsValue("MuiDivider-textAlignLeft")
         val textAlignLeft: ClassName
+
+        @JsValue("MuiDivider-wrapper")
         val wrapper: ClassName
+
+        @JsValue("MuiDivider-wrapperVertical")
         val wrapperVertical: ClassName
     }
 }

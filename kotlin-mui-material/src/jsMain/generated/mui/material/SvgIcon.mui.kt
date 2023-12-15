@@ -2,26 +2,45 @@
 
 @file:Suppress(
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-    "NAME_CONTAINS_ILLEGAL_CHARS",
 )
 
 package mui.material
 
+import seskar.js.JsValue
+import seskar.js.JsVirtual
 import web.cssom.ClassName
 
-// language=JavaScript
-@JsName("""(/*union*/{root: 'MuiSvgIcon-root', colorPrimary: 'MuiSvgIcon-colorPrimary', colorSecondary: 'MuiSvgIcon-colorSecondary', colorAction: 'MuiSvgIcon-colorAction', colorError: 'MuiSvgIcon-colorError', colorDisabled: 'MuiSvgIcon-colorDisabled', fontSizeInherit: 'MuiSvgIcon-fontSizeInherit', fontSizeSmall: 'MuiSvgIcon-fontSizeSmall', fontSizeMedium: 'MuiSvgIcon-fontSizeMedium', fontSizeLarge: 'MuiSvgIcon-fontSizeLarge'}/*union*/)""")
+@JsVirtual
 sealed external interface MuiSvgIcon {
     companion object {
+        @JsValue("MuiSvgIcon-root")
         val root: ClassName
+
+        @JsValue("MuiSvgIcon-colorPrimary")
         val colorPrimary: ClassName
+
+        @JsValue("MuiSvgIcon-colorSecondary")
         val colorSecondary: ClassName
+
+        @JsValue("MuiSvgIcon-colorAction")
         val colorAction: ClassName
+
+        @JsValue("MuiSvgIcon-colorError")
         val colorError: ClassName
+
+        @JsValue("MuiSvgIcon-colorDisabled")
         val colorDisabled: ClassName
+
+        @JsValue("MuiSvgIcon-fontSizeInherit")
         val fontSizeInherit: ClassName
+
+        @JsValue("MuiSvgIcon-fontSizeSmall")
         val fontSizeSmall: ClassName
+
+        @JsValue("MuiSvgIcon-fontSizeMedium")
         val fontSizeMedium: ClassName
+
+        @JsValue("MuiSvgIcon-fontSizeLarge")
         val fontSizeLarge: ClassName
     }
 }

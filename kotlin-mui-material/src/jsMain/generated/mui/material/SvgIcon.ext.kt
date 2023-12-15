@@ -2,37 +2,60 @@
 
 package mui.material
 
+import seskar.js.JsValue
+import seskar.js.JsVirtual
+
 @Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
-// language=JavaScript
-@JsName("""(/*union*/{inherit: 'inherit', action: 'action', disabled: 'disabled', primary: 'primary', secondary: 'secondary', error: 'error', info: 'info', success: 'success', warning: 'warning'}/*union*/)""")
+@JsVirtual
 sealed external interface SvgIconColor {
     companion object {
+        @JsValue("inherit")
         val inherit: SvgIconColor
+
+        @JsValue("action")
         val action: SvgIconColor
+
+        @JsValue("disabled")
         val disabled: SvgIconColor
+
+        @JsValue("primary")
         val primary: SvgIconColor
+
+        @JsValue("secondary")
         val secondary: SvgIconColor
+
+        @JsValue("error")
         val error: SvgIconColor
+
+        @JsValue("info")
         val info: SvgIconColor
+
+        @JsValue("success")
         val success: SvgIconColor
+
+        @JsValue("warning")
         val warning: SvgIconColor
     }
 }
 
 @Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
-// language=JavaScript
-@JsName("""(/*union*/{inherit: 'inherit', large: 'large', medium: 'medium', small: 'small'}/*union*/)""")
+@JsVirtual
 sealed external interface SvgIconSize {
     companion object {
+        @JsValue("inherit")
         val inherit: SvgIconSize
+
+        @JsValue("large")
         val large: SvgIconSize
+
+        @JsValue("medium")
         val medium: SvgIconSize
+
+        @JsValue("small")
         val small: SvgIconSize
     }
 }

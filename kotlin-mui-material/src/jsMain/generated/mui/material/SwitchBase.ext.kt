@@ -2,16 +2,22 @@
 
 package mui.material
 
+import seskar.js.JsValue
+import seskar.js.JsVirtual
+
 @Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
-// language=JavaScript
-@JsName("""(/*union*/{start: 'start', end: 'end', false: false}/*union*/)""")
+@JsVirtual
 sealed external interface SwitchBaseEdge {
     companion object {
+        @JsValue("start")
         val start: SwitchBaseEdge
+
+        @JsValue("end")
         val end: SwitchBaseEdge
+
+        @JsValue("`false`")
         val `false`: SwitchBaseEdge
     }
 }

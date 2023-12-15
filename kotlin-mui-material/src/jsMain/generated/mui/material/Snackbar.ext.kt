@@ -2,43 +2,53 @@
 
 package mui.material
 
+import seskar.js.JsValue
+import seskar.js.JsVirtual
+
 @Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
-// language=JavaScript
-@JsName("""(/*union*/{timeout: 'timeout', clickaway: 'clickaway', escapeKeyDown: 'escapeKeyDown'}/*union*/)""")
+@JsVirtual
 sealed external interface SnackbarCloseReason {
     companion object {
+        @JsValue("timeout")
         val timeout: SnackbarCloseReason
+
+        @JsValue("clickaway")
         val clickaway: SnackbarCloseReason
+
+        @JsValue("escapeKeyDown")
         val escapeKeyDown: SnackbarCloseReason
     }
 }
 
 @Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
-// language=JavaScript
-@JsName("""(/*union*/{top: 'top', bottom: 'bottom'}/*union*/)""")
+@JsVirtual
 sealed external interface SnackbarOriginVertical {
     companion object {
+        @JsValue("top")
         val top: SnackbarOriginVertical
+
+        @JsValue("bottom")
         val bottom: SnackbarOriginVertical
     }
 }
 
 @Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
-// language=JavaScript
-@JsName("""(/*union*/{left: 'left', center: 'center', right: 'right'}/*union*/)""")
+@JsVirtual
 sealed external interface SnackbarOriginHorizontal {
     companion object {
+        @JsValue("left")
         val left: SnackbarOriginHorizontal
+
+        @JsValue("center")
         val center: SnackbarOriginHorizontal
+
+        @JsValue("right")
         val right: SnackbarOriginHorizontal
     }
 }

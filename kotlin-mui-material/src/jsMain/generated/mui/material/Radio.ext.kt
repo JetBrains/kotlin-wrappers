@@ -2,20 +2,34 @@
 
 package mui.material
 
+import seskar.js.JsValue
+import seskar.js.JsVirtual
+
 @Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
-// language=JavaScript
-@JsName("""(/*union*/{primary: 'primary', secondary: 'secondary', error: 'error', info: 'info', success: 'success', warning: 'warning', default: 'default'}/*union*/)""")
+@JsVirtual
 sealed external interface RadioColor {
     companion object {
+        @JsValue("primary")
         val primary: RadioColor
+
+        @JsValue("secondary")
         val secondary: RadioColor
+
+        @JsValue("error")
         val error: RadioColor
+
+        @JsValue("info")
         val info: RadioColor
+
+        @JsValue("success")
         val success: RadioColor
+
+        @JsValue("warning")
         val warning: RadioColor
+
+        @JsValue("default")
         val default: RadioColor
     }
 }

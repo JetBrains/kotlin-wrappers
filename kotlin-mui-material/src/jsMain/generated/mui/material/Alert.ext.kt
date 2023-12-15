@@ -2,31 +2,42 @@
 
 package mui.material
 
+import seskar.js.JsValue
+import seskar.js.JsVirtual
+
 @Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
-// language=JavaScript
-@JsName("""(/*union*/{success: 'success', info: 'info', warning: 'warning', error: 'error'}/*union*/)""")
+@JsVirtual
 sealed external interface AlertColor {
     companion object {
+        @JsValue("success")
         val success: AlertColor
+
+        @JsValue("info")
         val info: AlertColor
+
+        @JsValue("warning")
         val warning: AlertColor
+
+        @JsValue("error")
         val error: AlertColor
     }
 }
 
 @Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
-// language=JavaScript
-@JsName("""(/*union*/{standard: 'standard', filled: 'filled', outlined: 'outlined'}/*union*/)""")
+@JsVirtual
 sealed external interface AlertVariant {
     companion object {
+        @JsValue("standard")
         val standard: AlertVariant
+
+        @JsValue("filled")
         val filled: AlertVariant
+
+        @JsValue("outlined")
         val outlined: AlertVariant
     }
 }

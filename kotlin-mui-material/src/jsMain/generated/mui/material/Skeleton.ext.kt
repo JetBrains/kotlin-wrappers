@@ -2,31 +2,42 @@
 
 package mui.material
 
+import seskar.js.JsValue
+import seskar.js.JsVirtual
+
 @Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
-// language=JavaScript
-@JsName("""(/*union*/{pulse: 'pulse', wave: 'wave', false: false}/*union*/)""")
+@JsVirtual
 sealed external interface SkeletonAnimation {
     companion object {
+        @JsValue("pulse")
         val pulse: SkeletonAnimation
+
+        @JsValue("wave")
         val wave: SkeletonAnimation
+
+        @JsValue("`false`")
         val `false`: SkeletonAnimation
     }
 }
 
 @Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
-// language=JavaScript
-@JsName("""(/*union*/{text: 'text', rectangular: 'rectangular', rounded: 'rounded', circular: 'circular'}/*union*/)""")
+@JsVirtual
 sealed external interface SkeletonVariant {
     companion object {
+        @JsValue("text")
         val text: SkeletonVariant
+
+        @JsValue("rectangular")
         val rectangular: SkeletonVariant
+
+        @JsValue("rounded")
         val rounded: SkeletonVariant
+
+        @JsValue("circular")
         val circular: SkeletonVariant
     }
 }
