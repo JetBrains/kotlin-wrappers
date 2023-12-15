@@ -24,7 +24,7 @@ sealed external interface LocaleOptions {
         set(value) = definedExternally
 
     /** The time keeping format convention used by the locale. */
-    var hourCycle: LocaleHourCycleKey?
+    var hourCycle: HourCycle?
         get() = definedExternally
         set(value) = definedExternally
 
