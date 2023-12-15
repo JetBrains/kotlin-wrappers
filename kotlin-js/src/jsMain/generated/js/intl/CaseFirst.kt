@@ -10,15 +10,15 @@ import seskar.js.JsValue
 import seskar.js.JsVirtual
 
 @JsVirtual
-sealed external interface LocaleCollationCaseFirst {
+sealed external interface CaseFirst {
     companion object {
         @JsValue("upper")
-        val upper: LocaleCollationCaseFirst
+        val upper: CaseFirst
 
         @JsValue("lower")
-        val lower: LocaleCollationCaseFirst
+        val lower: CaseFirst
 
         @JsValue("false")
-        val `false`: LocaleCollationCaseFirst
+        val `false`: CaseFirst
     }
 }

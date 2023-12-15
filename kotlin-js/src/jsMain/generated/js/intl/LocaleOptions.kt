@@ -14,7 +14,7 @@ sealed external interface LocaleOptions {
         set(value) = definedExternally
 
     /** Flag that defines whether case is taken into account for the locale's collation rules. */
-    var caseFirst: LocaleCollationCaseFirst?
+    var caseFirst: CaseFirst?
         get() = definedExternally
         set(value) = definedExternally
 
