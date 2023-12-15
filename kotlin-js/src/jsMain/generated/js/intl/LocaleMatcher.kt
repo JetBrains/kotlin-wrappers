@@ -12,10 +12,10 @@ import seskar.js.JsVirtual
 @JsVirtual
 sealed external interface LocaleMatcher {
     companion object {
-        @JsValue("best fit")
-        val bestFit: LocaleMatcher
-
         @JsValue("lookup")
         val lookup: LocaleMatcher
+
+        @JsValue("best fit")
+        val bestFit: LocaleMatcher
     }
 }

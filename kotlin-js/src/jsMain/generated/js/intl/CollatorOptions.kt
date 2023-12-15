@@ -4,7 +4,7 @@ package js.intl
 
 sealed external interface CollatorOptions {
     var usage: String /* "sort" | "search" */?
-    var localeMatcher: String /* "lookup" | "best fit" */?
+    var localeMatcher: LocaleMatcher?
     var numeric: Boolean?
     var caseFirst: String /* "upper" | "lower" | "false" */?
     var sensitivity: Sensitivity?

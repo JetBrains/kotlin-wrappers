@@ -3,7 +3,7 @@
 package js.intl
 
 sealed external interface PluralRulesOptions {
-    var localeMatcher: String /* "lookup" | "best fit" */?
+    var localeMatcher: LocaleMatcher?
     var type: PluralRuleType?
     var minimumIntegerDigits: Int?
     var minimumFractionDigits: Int?

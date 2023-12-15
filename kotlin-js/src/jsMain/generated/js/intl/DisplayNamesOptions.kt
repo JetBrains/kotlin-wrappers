@@ -3,7 +3,7 @@
 package js.intl
 
 sealed external interface DisplayNamesOptions {
-    var localeMatcher: RelativeTimeFormatLocaleMatcher?
+    var localeMatcher: LocaleMatcher?
     var style: RelativeTimeFormatStyle?
     var type: DisplayNamesType
     var languageDisplay: DisplayNamesLanguageDisplay?
