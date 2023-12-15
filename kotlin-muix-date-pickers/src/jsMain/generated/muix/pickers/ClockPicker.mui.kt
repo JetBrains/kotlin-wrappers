@@ -2,18 +2,21 @@
 
 @file:Suppress(
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-    "NAME_CONTAINS_ILLEGAL_CHARS",
 )
 
 package muix.pickers
 
+import seskar.js.JsValue
+import seskar.js.JsVirtual
 import web.cssom.ClassName
 
-// language=JavaScript
-@JsName("""(/*union*/{root: 'MuiClockPicker-root', arrowSwitcher: 'MuiClockPicker-arrowSwitcher'}/*union*/)""")
+@JsVirtual
 sealed external interface MuiClockPicker {
     companion object {
+        @JsValue("MuiClockPicker-root")
         val root: ClassName
+
+        @JsValue("MuiClockPicker-arrowSwitcher")
         val arrowSwitcher: ClassName
     }
 }

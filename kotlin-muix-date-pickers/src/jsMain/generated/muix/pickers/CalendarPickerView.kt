@@ -2,16 +2,22 @@
 
 package muix.pickers
 
+import seskar.js.JsValue
+import seskar.js.JsVirtual
+
 @Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
-// language=JavaScript
-@JsName("""(/*union*/{year: 'year', day: 'day', month: 'month'}/*union*/)""")
+@JsVirtual
 sealed external interface CalendarPickerView {
     companion object {
+        @JsValue("year")
         val year: CalendarPickerView
+
+        @JsValue("day")
         val day: CalendarPickerView
+
+        @JsValue("month")
         val month: CalendarPickerView
     }
 }
