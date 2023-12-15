@@ -14,7 +14,7 @@ import seskar.js.JsVirtual
 sealed external interface ConsoleEvent {
     companion object {
         @JsValue("Console.messageAdded")
-        val MESSAGE_ADDED: EventType
+        val MESSAGE_ADDED: MESSAGE_ADDED
     }
 
     sealed interface MESSAGE_ADDED : EventType
