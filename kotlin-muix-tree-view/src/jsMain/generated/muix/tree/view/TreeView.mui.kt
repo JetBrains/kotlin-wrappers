@@ -2,17 +2,18 @@
 
 @file:Suppress(
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-    "NAME_CONTAINS_ILLEGAL_CHARS",
 )
 
 package muix.tree.view
 
+import seskar.js.JsValue
+import seskar.js.JsVirtual
 import web.cssom.ClassName
 
-// language=JavaScript
-@JsName("""(/*union*/{root: 'MuiTreeView-root'}/*union*/)""")
+@JsVirtual
 sealed external interface MuiTreeView {
     companion object {
+        @JsValue("MuiTreeView-root")
         val root: ClassName
     }
 }
