@@ -2,17 +2,25 @@
 
 package mui.system
 
+import seskar.js.JsValue
+import seskar.js.JsVirtual
+
 @Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
-// language=JavaScript
-@JsName("""(/*union*/{row: 'row', rowReverse: 'row-reverse', column: 'column', columnReverse: 'column-reverse'}/*union*/)""")
+@JsVirtual
 sealed external interface StackDirection {
     companion object {
+        @JsValue("row")
         val row: StackDirection
+
+        @JsValue("row-reverse")
         val rowReverse: StackDirection
+
+        @JsValue("column")
         val column: StackDirection
+
+        @JsValue("column-reverse")
         val columnReverse: StackDirection
     }
 }
