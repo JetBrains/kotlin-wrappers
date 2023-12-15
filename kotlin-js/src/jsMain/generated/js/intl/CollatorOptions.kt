@@ -3,7 +3,7 @@
 package js.intl
 
 sealed external interface CollatorOptions {
-    var usage: String /* "sort" | "search" */?
+    var usage: CollatorUsage?
     var localeMatcher: LocaleMatcher?
     var numeric: Boolean?
     var caseFirst: CaseFirst?
