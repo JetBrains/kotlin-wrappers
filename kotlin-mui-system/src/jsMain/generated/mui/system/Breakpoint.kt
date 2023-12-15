@@ -2,18 +2,28 @@
 
 package mui.system
 
+import seskar.js.JsValue
+import seskar.js.JsVirtual
+
 @Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
-// language=JavaScript
-@JsName("""(/*union*/{xs: 'xs', sm: 'sm', md: 'md', lg: 'lg', xl: 'xl'}/*union*/)""")
+@JsVirtual
 sealed external interface Breakpoint {
     companion object {
+        @JsValue("xs")
         val xs: Breakpoint
+
+        @JsValue("sm")
         val sm: Breakpoint
+
+        @JsValue("md")
         val md: Breakpoint
+
+        @JsValue("lg")
         val lg: Breakpoint
+
+        @JsValue("xl")
         val xl: Breakpoint
     }
 }

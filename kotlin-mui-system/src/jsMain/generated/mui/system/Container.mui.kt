@@ -2,24 +2,39 @@
 
 @file:Suppress(
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-    "NAME_CONTAINS_ILLEGAL_CHARS",
 )
 
 package mui.system
 
+import seskar.js.JsValue
+import seskar.js.JsVirtual
 import web.cssom.ClassName
 
-// language=JavaScript
-@JsName("""(/*union*/{root: 'MuiContainer-root', disableGutters: 'MuiContainer-disableGutters', fixed: 'MuiContainer-fixed', maxWidthXs: 'MuiContainer-maxWidthXs', maxWidthSm: 'MuiContainer-maxWidthSm', maxWidthMd: 'MuiContainer-maxWidthMd', maxWidthLg: 'MuiContainer-maxWidthLg', maxWidthXl: 'MuiContainer-maxWidthXl'}/*union*/)""")
+@JsVirtual
 sealed external interface MuiContainer {
     companion object {
+        @JsValue("MuiContainer-root")
         val root: ClassName
+
+        @JsValue("MuiContainer-disableGutters")
         val disableGutters: ClassName
+
+        @JsValue("MuiContainer-fixed")
         val fixed: ClassName
+
+        @JsValue("MuiContainer-maxWidthXs")
         val maxWidthXs: ClassName
+
+        @JsValue("MuiContainer-maxWidthSm")
         val maxWidthSm: ClassName
+
+        @JsValue("MuiContainer-maxWidthMd")
         val maxWidthMd: ClassName
+
+        @JsValue("MuiContainer-maxWidthLg")
         val maxWidthLg: ClassName
+
+        @JsValue("MuiContainer-maxWidthXl")
         val maxWidthXl: ClassName
     }
 }
