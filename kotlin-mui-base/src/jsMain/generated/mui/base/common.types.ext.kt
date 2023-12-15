@@ -2,17 +2,25 @@
 
 package mui.base
 
+import seskar.js.JsValue
+import seskar.js.JsVirtual
+
 @Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
-// language=JavaScript
-@JsName("""(/*union*/{first: 'first', last: 'last', next: 'next', previous: 'previous'}/*union*/)""")
+@JsVirtual
 sealed external interface ItemAriaLabelType {
     companion object {
+        @JsValue("first")
         val first: ItemAriaLabelType
+
+        @JsValue("last")
         val last: ItemAriaLabelType
+
+        @JsValue("next")
         val next: ItemAriaLabelType
+
+        @JsValue("previous")
         val previous: ItemAriaLabelType
     }
 }

@@ -2,19 +2,24 @@
 
 @file:Suppress(
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-    "NAME_CONTAINS_ILLEGAL_CHARS",
 )
 
 package mui.base
 
+import seskar.js.JsValue
+import seskar.js.JsVirtual
 import web.cssom.ClassName
 
-// language=JavaScript
-@JsName("""(/*union*/{root: 'MuiModal-root', hidden: 'MuiModal-hidden', backdrop: 'MuiModal-backdrop'}/*union*/)""")
+@JsVirtual
 sealed external interface MuiModal {
     companion object {
+        @JsValue("MuiModal-root")
         val root: ClassName
+
+        @JsValue("MuiModal-hidden")
         val hidden: ClassName
+
+        @JsValue("MuiModal-backdrop")
         val backdrop: ClassName
     }
 }

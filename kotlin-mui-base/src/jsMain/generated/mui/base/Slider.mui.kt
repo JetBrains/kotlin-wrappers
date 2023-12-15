@@ -2,29 +2,54 @@
 
 @file:Suppress(
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-    "NAME_CONTAINS_ILLEGAL_CHARS",
 )
 
 package mui.base
 
+import seskar.js.JsValue
+import seskar.js.JsVirtual
 import web.cssom.ClassName
 
-// language=JavaScript
-@JsName("""(/*union*/{root: 'MuiSlider-root', marked: 'MuiSlider-marked', vertical: 'MuiSlider-vertical', dragging: 'MuiSlider-dragging', rail: 'MuiSlider-rail', track: 'MuiSlider-track', trackFalse: 'MuiSlider-trackFalse', trackInverted: 'MuiSlider-trackInverted', thumb: 'MuiSlider-thumb', mark: 'MuiSlider-mark', markActive: 'MuiSlider-markActive', markLabel: 'MuiSlider-markLabel', markLabelActive: 'MuiSlider-markLabelActive'}/*union*/)""")
+@JsVirtual
 sealed external interface MuiSlider {
     companion object {
+        @JsValue("MuiSlider-root")
         val root: ClassName
+
+        @JsValue("MuiSlider-marked")
         val marked: ClassName
+
+        @JsValue("MuiSlider-vertical")
         val vertical: ClassName
+
+        @JsValue("MuiSlider-dragging")
         val dragging: ClassName
+
+        @JsValue("MuiSlider-rail")
         val rail: ClassName
+
+        @JsValue("MuiSlider-track")
         val track: ClassName
+
+        @JsValue("MuiSlider-trackFalse")
         val trackFalse: ClassName
+
+        @JsValue("MuiSlider-trackInverted")
         val trackInverted: ClassName
+
+        @JsValue("MuiSlider-thumb")
         val thumb: ClassName
+
+        @JsValue("MuiSlider-mark")
         val mark: ClassName
+
+        @JsValue("MuiSlider-markActive")
         val markActive: ClassName
+
+        @JsValue("MuiSlider-markLabel")
         val markLabel: ClassName
+
+        @JsValue("MuiSlider-markLabelActive")
         val markLabelActive: ClassName
     }
 }

@@ -2,16 +2,22 @@
 
 package mui.base
 
+import seskar.js.JsValue
+import seskar.js.JsVirtual
+
 @Suppress(
-    "NAME_CONTAINS_ILLEGAL_CHARS",
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
-// language=JavaScript
-@JsName("""(/*union*/{timeout: 'timeout', clickaway: 'clickaway', escapeKeyDown: 'escapeKeyDown'}/*union*/)""")
+@JsVirtual
 sealed external interface SnackbarCloseReason {
     companion object {
+        @JsValue("timeout")
         val timeout: SnackbarCloseReason
+
+        @JsValue("clickaway")
         val clickaway: SnackbarCloseReason
+
+        @JsValue("escapeKeyDown")
         val escapeKeyDown: SnackbarCloseReason
     }
 }

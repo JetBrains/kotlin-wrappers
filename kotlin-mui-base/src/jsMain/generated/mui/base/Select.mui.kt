@@ -2,19 +2,24 @@
 
 @file:Suppress(
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-    "NAME_CONTAINS_ILLEGAL_CHARS",
 )
 
 package mui.base
 
+import seskar.js.JsValue
+import seskar.js.JsVirtual
 import web.cssom.ClassName
 
-// language=JavaScript
-@JsName("""(/*union*/{root: 'MuiSelect-root', listbox: 'MuiSelect-listbox', popper: 'MuiSelect-popper'}/*union*/)""")
+@JsVirtual
 sealed external interface MuiSelect {
     companion object {
+        @JsValue("MuiSelect-root")
         val root: ClassName
+
+        @JsValue("MuiSelect-listbox")
         val listbox: ClassName
+
+        @JsValue("MuiSelect-popper")
         val popper: ClassName
     }
 }

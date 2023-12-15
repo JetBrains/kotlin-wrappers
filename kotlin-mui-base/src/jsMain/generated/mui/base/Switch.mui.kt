@@ -2,21 +2,30 @@
 
 @file:Suppress(
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-    "NAME_CONTAINS_ILLEGAL_CHARS",
 )
 
 package mui.base
 
+import seskar.js.JsValue
+import seskar.js.JsVirtual
 import web.cssom.ClassName
 
-// language=JavaScript
-@JsName("""(/*union*/{root: 'MuiSwitch-root', input: 'MuiSwitch-input', track: 'MuiSwitch-track', thumb: 'MuiSwitch-thumb', readOnly: 'MuiSwitch-readOnly'}/*union*/)""")
+@JsVirtual
 sealed external interface MuiSwitch {
     companion object {
+        @JsValue("MuiSwitch-root")
         val root: ClassName
+
+        @JsValue("MuiSwitch-input")
         val input: ClassName
+
+        @JsValue("MuiSwitch-track")
         val track: ClassName
+
+        @JsValue("MuiSwitch-thumb")
         val thumb: ClassName
+
+        @JsValue("MuiSwitch-readOnly")
         val readOnly: ClassName
     }
 }
